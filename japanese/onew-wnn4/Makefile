@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/10 00:40:37 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/12 11:41:23 espie Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME=	ja-onew-wnn4-2.2.10
@@ -28,7 +28,7 @@ post-patch:
 		${ONEW_CONF} > ${WRKSRC}/ONEW_CONF
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libonew.a ${LOCALBASE}/lib/${LIB_NAME}
+	${INSTALL_DATA} ${WRKSRC}/libonew.a ${PREFIX}/lib/${LIB_NAME}
 	${INSTALL_DATA_DIR} ${PORT_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.ONEW ${PORT_DOCDIR}
 
