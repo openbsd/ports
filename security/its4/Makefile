@@ -3,7 +3,7 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/15 19:01:59 maja Exp $
 
 DISTNAME=	its4-1.0.1
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_CDROM=	"commercial.  licensing restrictions."
 PERMIT_DISTFILES_FTP=	"commercial.  licensing restrictions."
 
 MASTER_SITES=	see-do-fetch-target
+MIRROR_DISTFILE=no
 
 EXTRACT_SUFX=	.tgz
 
