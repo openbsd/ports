@@ -3,6 +3,6 @@ include/mm.h
 lib/libmm.a
 lib/libmm.la
 lib/libmm.so.10.0
+@exec /sbin/ldconfig -m %B
 man/man1/mm-config.1
 man/man3/mm.3
-@exec /sbin/ldconfig -m %B
