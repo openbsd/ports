@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/04/20 01:16:43 d Exp $
+# $OpenBSD: Makefile,v 1.10 1999/07/29 14:03:48 espie Exp $
 
 DISTNAME=       bison-1.27
 CATEGORIES=	devel
@@ -11,16 +11,11 @@ MASTER_SITE_SUBDIR= bison
 SEPARATE_BUILD=concurrent
 HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
+INFO_FILES=bison.info
 
 # bison installs bison.info*... remove our patch original before installing
 #
 pre-install:
 	@${RM} -f ${WRKSRC}/bison.info.orig
-
-post-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	 fi
-	@install-info ${PREFIX}/info/bison.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

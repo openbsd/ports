@@ -1,13 +1,12 @@
+@unexec install-info --delete --info-dir=%D/info %D/info/bison.info
 bin/bison
-share/bison.simple
-share/bison.hairy
-@unexec install-info --delete %D/info/bison.info %D/info/dir
 info/bison.info
 info/bison.info-1
 info/bison.info-2
 info/bison.info-3
 info/bison.info-4
 info/bison.info-5
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/bison.info %D/info/dir
 man/man1/bison.1
+share/bison.hairy
+share/bison.simple
+@exec install-info --info-dir=%D/info %D/info/bison.info
