@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_cf_data_pre,v 1.10 2003/07/07 17:44:44 brad Exp $
+$OpenBSD: patch-src_cf_data_pre,v 1.11 2003/07/08 20:43:21 brad Exp $
 --- src/cf.data.pre.orig	Wed May 21 10:34:38 2003
 +++ src/cf.data.pre	Fri May 30 10:17:35 2003
 @@ -2309,13 +2309,13 @@ DOC_END
@@ -6,14 +6,14 @@ $OpenBSD: patch-src_cf_data_pre,v 1.10 2003/07/07 17:44:44 brad Exp $
  NAME: cache_effective_user
  TYPE: string
 -DEFAULT: nobody
-+DEFAULT: squid
++DEFAULT: _squid
  LOC: Config.effectiveUser
  DOC_NONE
  
  NAME: cache_effective_group
  TYPE: string
 -DEFAULT: none
-+DEFAULT: squid
++DEFAULT: _squid
  LOC: Config.effectiveGroup
  DOC_START
  
