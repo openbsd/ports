@@ -1,0 +1,146 @@
+diff -u Makefile.orig Makefile
+--- Makefile.orig	Tue Aug 19 02:54:00 1997
++++ Makefile	Fri Jan 21 06:02:32 2000
+@@ -1,4 +1,5 @@
+-CFLAGS=	-g 
++CC=gcc
++CFLAGS=	-g  -Wall
+ LDFLAGS=
+ LIBS= -lpcap
+ TARGET= aproxyd
+diff -u arpcatch.c.orig arpcatch.c
+--- arpcatch.c.orig	Fri Aug 22 06:57:01 1997
++++ arpcatch.c	Fri Jan 21 07:12:04 2000
+@@ -37,6 +37,7 @@
+ 		}
+ 	}
+ 
++	printf("Starting on %s interface\n",device);
+ 	if(!(at = read_config(configfile))) {
+ 		perror("config file read");
+ 		exit(errno);
+@@ -50,6 +51,7 @@
+ 	read_loop(fd, at);
+ 
+ 	perror("read");
++return 1;
+ }	
+ 
+ /* needs cleaning up */
+@@ -63,7 +65,6 @@
+ 	struct ether_addr	*ea;
+ 	struct ether_arp 	*ah;
+ 
+-	struct in_addr foo;
+ 
+ 	for(;;) {
+ 		struct in_addr ia;
+@@ -129,7 +130,7 @@
+ 	
+ 	fd = bpf_open(device);
+ 	if(fd < 0) {
+-		perror("bpf open");
++		fprintf(stderr,"Error initializing bpf filter\nExiting..\n");
+ 		exit(errno);
+ 	}
+ 
+diff -u arpcatch.h.orig arpcatch.h
+--- arpcatch.h.orig	Tue Aug 19 03:51:02 1997
++++ arpcatch.h	Fri Jan 21 07:08:36 2000
+@@ -5,6 +5,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <string.h>
+ #include <errno.h>
+ #include <syslog.h>
+@@ -12,6 +13,7 @@
+ #include <limits.h>
+ #include <fcntl.h>
+ #include <assert.h>
++#include <ctype.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/param.h>
+@@ -25,8 +27,6 @@
+ 
+ #include <net/bpf.h>
+ #include <net/if.h>
+-#include <net/ethernet.h>
+-#include <net/if_arp.h>
+ #include <netinet/if_ether.h>
+ 
+ #include "list.h"
+@@ -76,5 +76,12 @@
+ int bpf_promisc(int, int);
+ 
+ table_t *read_config(char *);
++void chop(char *);
++void *NEW(const int);
++u_long resolve(char *);
++
++int arp_send(int, u_long *, u_long *, struct ether_addr *, struct ether_addr *);
++
++
+ 
+ #endif
+diff -u bpf.c.orig bpf.c
+--- bpf.c.orig	Tue Aug 19 03:38:20 1997
++++ bpf.c	Fri Jan 21 06:53:13 2000
+@@ -47,21 +47,26 @@
+ 
+ 	do {
+ 		snprintf(file, PATH_MAX, "/dev/bpf%d", i++);
+-		if((fd = open(file, O_RDWR)) < 0)
+-			continue;
+-	} while(errno == EBUSY && fd < 0);
++		fd = open(file, O_RDWR);
++	} while(fd < 0 && errno == EBUSY);
+ 	
+-	if(fd < 0)
++	if(fd < 0) {
++		perror("bpf open");
+ 		return(-1);
++	}
+ 
+ 	memset(&ifr, 0, sizeof(ifr));
+ 	strncpy(ifr.ifr_name, device, 15);
+ 	
+-	if(bpf_setbuf(fd, DEFAULT_BUFLEN) < 0)
++	if(bpf_setbuf(fd, DEFAULT_BUFLEN) < 0) {
++		perror("bpf setbuf");
+ 		return(-2);
++	}
+ 
+-	if(ioctl(fd, BIOCSETIF, (char *) &ifr) < 0)
++	if(ioctl(fd, BIOCSETIF, (char *) &ifr) < 0) {
++		perror("bpf ioctl");
+ 		return(-3);
++	}
+ 
+ 	return(fd);
+ }
+diff -u config.c.orig arpcatch/config.c
+--- config.c.orig	Mon Nov 24 16:18:54 1997
++++ config.c	Fri Jan 21 06:07:06 2000
+@@ -1,7 +1,6 @@
+ #include "arpcatch.h"
+ #include <sys/types.h>
+ #include <sys/socket.h>
+-#include <net/ethernet.h>
+ 
+ static list_t *add_host(char *buffer, list_t *hosts);
+ static int add_proxy(char *buffer, table_t *at);
+diff -u libtqbf.c.orig arpcatch/libtqbf.c
+--- libtqbf.c.orig	Tue Aug 19 02:02:13 1997
++++ libtqbf.c	Fri Jan 21 06:55:56 2000
+@@ -349,8 +349,6 @@
+ int jday (int month, int day, int year) {
+ 	int c, ya, jd;
+ 
+-	int brit_jd = 2361222;
+-
+ 	if (month > 2) 
+ 		month -= 3;
+ 	else 

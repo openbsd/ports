@@ -1,0 +1,36 @@
+
+ARP-catch
+1997 Thomas H. Ptacek
+------------------------------------------------------------------------
+
+This is a 4.4BSD program that implements, in userland, third-party
+proxy ARP. In a nutshell, this lets you proxy-ARP an arbitrary IP
+address to an arbitrary MAC address, from any machine on the network.
+This is useful if your router doesn't do proxy ARP, or does it only
+in an all-or-none fashion.
+
+This code will not work outside of 4.4BSD (it relies on BPF). Furthermore,
+it won't run on most 4.4BSD operating systems, because a problem with the
+standard BPF implementation (try spoofing your source ethernet frame
+address on NetBSD). I've made available an LKM that "fixes" the problem on
+FreeBSD 3.0; you can find it at http://www.enteract.com/~tqbf.
+
+There's not much to document here. The program is a daemon, and reads 
+a config file. The config file consists of "router" and "proxy" lines; a
+"router" line gives a symbolic name for a MAC address, ie:
+
+router gateway de:ad:be:ef:ca:fe
+
+... and a "proxy" line maps an IP address to a router name or a MAC
+address, ie:
+
+proxy 10.100.200.1 gateway
+proxy 10.100.200.2 ab:ad:ca:fe:00:11
+
+This is fairly esoteric stuff; read the code if you need to know more.
+
+If you have problems, questions, comments, bitches, etc, feel free to mail
+me at <tqbf@secnet.com>
+
+                                                         
+
