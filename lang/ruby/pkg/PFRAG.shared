@@ -1,11 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/10/26 00:35:51 krw Exp $
-lib/libruby.so.${REV}.4
+@comment $OpenBSD: PFRAG.shared,v 1.8 2001/10/26 01:25:06 krw Exp $
+lib/libruby.so.${REV}.5
 DYNLIBDIR(%B)
 lib/ruby/${REV}/${SUB}/curses.so
 lib/ruby/${REV}/${SUB}/dbm.so
+lib/ruby/${REV}/${SUB}/digest.so
 lib/ruby/${REV}/${SUB}/etc.so
 lib/ruby/${REV}/${SUB}/fcntl.so
-lib/ruby/${REV}/${SUB}/md5.so
 lib/ruby/${REV}/${SUB}/nkf.so
 lib/ruby/${REV}/${SUB}/pty.so
 lib/ruby/${REV}/${SUB}/readline.so

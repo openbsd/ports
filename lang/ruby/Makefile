@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/26 00:35:51 krw Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/26 01:25:05 krw Exp $
 
 COMMENT=	object oriented script language with threads
-VERSION=1.6.4
+VERSION=1.6.5
 DISTNAME=ruby-${VERSION}
 CATEGORIES = lang
 NEED_VERSION=	1.362
