@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2001/08/29 05:13:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.30 2001/09/21 05:53:53 kevlo Exp $
 
 COMMENT=	"XML parsing library"
 
-VERSION=	2.4.3
+VERSION=	2.4.5
 DISTNAME=	libxml2-${VERSION}
 PKGNAME=	libxml-${VERSION}
 CATEGORIES=	textproc
