@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/19 18:07:14 jasoni Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/21 00:46:00 matt Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 
@@ -8,7 +8,7 @@ COMMENT-tools=  "extra tools for python"
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
-NEED_VERSION=	1.363
+NEED_VERSION=	1.405
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
@@ -39,10 +39,10 @@ LIB_DEPENDS=	tk80.1.5::x11/tk/8.0
 SETUP_LOCAL+=	Setup.tk
 .endif
 
-CONFIGURE_STYLE= gnu dest
+CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl --enable-debug
-MAKE_FLAGS+=	OPT="${CFLAGS}"
+CONFIGURE_ENV=	OPT="${CFLAGS}" LDSHARED="cc -shared -fpic"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
 
