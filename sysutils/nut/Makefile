@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/09 06:48:48 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/21 06:16:58 marcm Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WEB_ROOT=		/var/www
 NUT_USER=		_ups
-NUT_ID=			528
+NUT_ID=			529
 NUT_STATEDIR=		/var/db/nut
 CONFDIR=		${SYSCONFDIR}/nut
 SUBST_VARS=		NUT_USER NUT_ID NUT_STATEDIR CONFDIR
