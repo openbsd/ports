@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2004/05/29 21:15:49 avsm Exp $
+# $OpenBSD: Makefile,v 1.114 2004/06/01 23:27:58 msf Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -59,6 +59,7 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-CSV_XS
+     SUBDIR += p5-Text-Diff
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Reform
      SUBDIR += p5-Text-Template
