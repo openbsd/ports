@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2003/11/27 19:39:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2004/01/05 13:53:35 espie Exp $
 
 COMMENT=		"library for manipulating ID3v1 and ID3v2 tags"
 
 VERSION=		3.8
-DISTNAME=		id3lib-${VERSION}.0
+DISTNAME=		id3lib-${VERSION}.3
 CATEGORIES=     	audio
 
 HOMEPAGE=		http://id3lib.sourceforge.net/
