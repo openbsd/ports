@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_pgpk_pgpkUI_c,v 1.1 2005/03/08 23:25:24 claudio Exp $
+--- apps/pgpk/pgpkUI.c.orig	Sat Feb  7 20:54:35 1998
++++ apps/pgpk/pgpkUI.c	Tue Mar  8 23:47:43 2005
+@@ -228,7 +228,7 @@ kdbTtyPutSigID(Boolean DisplayHeaders,
+ 			   PGPCert *cert)
+ {
+ 	byte buf[8];
+-	int i;
++	size_t i;
+ 
+     if(DisplayHeaders)
+ 		SpecifiedOutputString(TRUE, OutputType, 0, "");
