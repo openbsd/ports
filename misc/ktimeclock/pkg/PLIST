@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/07 06:56:39 kevlo Exp $
+bin/ktimeclock
+share/applnk/Utilities/ktimeclock.desktop
+share/apps/ktimeclock/ktimeclockui.rc
+share/apps/ktimeclock/pics/dockicon0.xpm
+share/apps/ktimeclock/pics/dockicon1.xpm
+share/apps/ktimeclock/pics/dockicon2.xpm
+share/apps/ktimeclock/pics/dockicon3.xpm
+share/apps/ktimeclock/pics/dockicon4.xpm
+share/apps/ktimeclock/pics/dockicon5.xpm
+share/apps/ktimeclock/pics/dockicon6.xpm
+share/apps/ktimeclock/pics/dockicon7.xpm
+share/doc/HTML/en/ktimeclock/add_project.png
+share/doc/HTML/en/ktimeclock/add_task.png
+share/doc/HTML/en/ktimeclock/configure-general.png
+share/doc/HTML/en/ktimeclock/configure-reports.png
+share/doc/HTML/en/ktimeclock/index.cache.bz2
+share/doc/HTML/en/ktimeclock/index.docbook
+share/doc/HTML/en/ktimeclock/window.png
+share/icons/hicolor/22x22/apps/ktimeclock.png
+share/icons/hicolor/32x32/apps/ktimeclock.png
+share/icons/hicolor/48x48/apps/ktimeclock.png
+share/icons/locolor/16x16/apps/ktimeclock.png
+share/icons/locolor/32x32/apps/ktimeclock.png
+@dirrm share/apps/ktimeclock/pics
+@dirrm share/apps/ktimeclock
+@dirrm share/doc/HTML/en/ktimeclock
