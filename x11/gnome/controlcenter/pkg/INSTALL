@@ -1,26 +1,22 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/09/13 21:38:02 todd Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/09/20 18:53:54 naddy Exp $
 
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-PKGNAME=control-center
-DEST_PFX=/etc
-SOURCE_PFX=${PREFIX}/share/${PKGNAME}
+P_NAME=control-center
+DEST_PFX=${SYSCONFDIR}
+SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
 
 
 do_post() {
 
     echo 
-    echo "*=================[ ${PKGNAME}"
+    echo "+--------------- ${P_NAME}"
 
-    # scrollkeeper
-    echo "*"
-    echo "* Running scrollkeeper-update..."
-    /usr/local/bin/scrollkeeper-update -p $(/usr/local/bin/scrollkeeper-config --pkglocalstatedir)
-    echo "*"
-    
     # install or take note of existing config files
-    install -d /etc/CORBA/servers
+    install -d ${SYSCONFDIR}/CORBA/servers
     for f in \
 	CORBA/servers/gnomecc.gnorba
     do
@@ -28,7 +24,7 @@ do_post() {
 	    OLD_CONFS="${OLD_CONFS} $f"
 	else
 	    if ! install -m 644 ${SOURCE_PFX}/$f ${DEST_PFX}/$f; then
-		echo "* ERROR: The following file could not be installed, exiting: ${DEST_PFX}/$f"
+		echo "| ERROR: The following file could not be installed, exiting: ${DEST_PFX}/$f"
 		exit 1
 	    fi
 	    NEW_CONFS="${NEW_CONFS} $f"
@@ -37,26 +33,26 @@ do_post() {
     
     # print status report
     if [ -n "${NEW_CONFS}" ]; then
-	echo "* The following NEW configuration files have been installed:"
-	echo "*"
+	echo "| The following NEW configuration files have been installed:"
+	echo "|"
 	for f in ${NEW_CONFS}; do
-	    echo "* ${DEST_PFX}/$f"
+	    echo "| ${DEST_PFX}/$f"
 	done 
     fi
     
     if [ -n "${OLD_CONFS}" ]; then
 	if [ -n "${NEW_CONFS}" ]; then
-	    echo "*"
+	    echo "|"
 	fi
-	echo "* The following OLD configuration files was found and have NOT been overwritten:"
-	echo "* You should however manually compare it to it's equivalent in ${SOURCE_PFX}"
-	echo "* and update your configuration if needed." 
-	echo "*"
+	echo "| The following OLD configuration files was found and have NOT been overwritten:"
+	echo "| You should however manually compare it to it's equivalent in ${SOURCE_PFX}"
+	echo "| and update your configuration if needed." 
+	echo "|"
 	for f in ${OLD_CONFS}; do
-	    echo "* ${DEST_PFX}/$f"
+	    echo "| ${DEST_PFX}/$f"
 	done 
     fi
-    echo "*================= ${PKGNAME} ]"
+    echo "+--------------- ${P_NAME}"
     echo 
 }
 

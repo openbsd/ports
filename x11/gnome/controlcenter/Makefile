@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/20 18:39:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/20 18:53:54 naddy Exp $
 
 COMMENT=		"GNOME control center"
 V=			1.4.0.1
@@ -34,7 +34,7 @@ post-extract:
 	    ${WRKSRC}/capplets/screensaver-properties/screensaver-desktops/Superquadrics.desktop.in;
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/control-center; \
-	cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/control-center/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/control-center; \
+	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/control-center/
 
 .include <bsd.port.mk>
