@@ -1,6 +1,6 @@
---- yacc/main.c.orig	Sun Aug 19 21:38:43 2001
-+++ yacc/main.c	Sun Aug 19 21:52:36 2001
-@@ -51,6 +51,14 @@
+--- yacc/main.c.orig	Thu Jul 12 14:54:23 2001
++++ yacc/main.c	Mon Aug 12 21:33:04 2002
+@@ -51,6 +51,14 @@ char *text_file_name;
  char *union_file_name;
  char *verbose_file_name;
  
@@ -15,7 +15,7 @@
  FILE *action_file;      /*  a temp file, used to save actions associated    */
                          /*  with rules until the parser is written          */
  FILE *entry_file;
-@@ -89,16 +97,29 @@
+@@ -89,16 +97,29 @@ char  *rassoc;
  short **derives;
  char *nullable;
  
@@ -45,7 +45,7 @@
      if (output_file && k > 0) {
        fclose(output_file); unlink(output_file_name);
      }
-@@ -283,11 +304,26 @@
+@@ -283,11 +304,26 @@ void create_file_names(void)
      union_file_name[len + 5] = 'u';
  
  #ifndef NO_UNIX
@@ -72,7 +72,7 @@
  
      len = strlen(file_prefix);
  
-@@ -328,15 +364,27 @@
+@@ -328,15 +364,27 @@ void open_files(void)
              open_error(input_file_name);
      }
  
@@ -100,7 +100,7 @@
      if (text_file == 0)
          open_error(text_file_name);
  
-@@ -352,7 +400,11 @@
+@@ -352,7 +400,11 @@ void open_files(void)
          defines_file = fopen(defines_file_name, "w");
          if (defines_file == 0)
              open_error(defines_file_name);

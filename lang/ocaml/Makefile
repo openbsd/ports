@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/21 21:09:17 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/08/25 20:44:40 naddy Exp $
 
 COMMENT=	"ML language based on complete class-based objective system"
 
-DISTNAME=	ocaml-3.02
+DISTNAME=	ocaml-3.06
 CATEGORIES=	lang
-NEED_VERSION=	1.515
-MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/
+MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/
@@ -32,13 +31,16 @@ LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3 \
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
-ALL_TARGET=	world bootstrap opt
+ALL_TARGET=	world bootstrap opt opt.opt
+
+NO_REGRESS=	Yes
 
 DOCFILES=	${DISTNAME}-refman.html.tar.gz
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html
-	@${INSTALL_DATA} ${WRKDIR}/htmlman/* ${PREFIX}/share/doc/ocaml/html
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
+	@${INSTALL_DATA} ${WRKDIR}/htmlman/*.{html,gif} ${PREFIX}/share/doc/ocaml/html
+	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* ${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
 
