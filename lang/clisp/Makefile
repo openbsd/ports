@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2001/08/01 02:38:30 shell Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/07 22:41:46 wilfried Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
-NOT_FOR_ARCHS=	powerpc sparc
+NOT_FOR_ARCHS=	powerpc sparc sparc64
 
 COMMENT=	"ANSI Common Lisp compiler"
 
