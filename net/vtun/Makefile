@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/05 07:22:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/10 06:06:27 kevlo Exp $
 
 DISTNAME=	vtun-2.3
 CATEGORIES=	net
-NEED_VERSION=	1.230
+NEED_VERSION=	1.310
 MASTER_SITES=	http://vtun.sourceforge.net/
 
 
@@ -15,14 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
-		--sysconfdir='$${DESTDIR}/etc' \
-		--localstatedir="/var" \
-		--with-crypto-headers="/usr/include/openssl" \
-		--with-crypto-lib="/usr/lib" \
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS=	--localstatedir="/var" \
+		--with-ssl-headers="/usr/include/openssl" \
+		--with-ssl-lib="/usr/lib" \
 		--with-lzo-headers="${LOCALBASE}/include" \
 		--with-lzo-lib="${LOCALBASE}/lib"
 
