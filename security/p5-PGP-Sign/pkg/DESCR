@@ -1,0 +1,14 @@
+This module sprung out of a need to do one thing and one thing only,
+do it securely, and do it well.  This module creates and checks
+detached signatures for data.  That's it.  If you want to do anything
+else that PGP lets you do, look elsewhere.  
+
+Currently this module only works with text data.  Support for binary
+data is high on the list of features I want to add.
+
+By default, it works with the GNU Privacy Guard (security/gnupg),
+and the following flavors are available for alternatives:
+
+Flavors:
+ pgp  - Use PGP 2.x
+ pgp5 - Use PGP 5.x
