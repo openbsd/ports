@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2000/03/04 11:57:45 camield Exp $
+# $OpenBSD: INSTALL,v 1.4 2000/09/15 12:08:20 camield Exp $
 #
 # Written by Camiel Dobbelaar <cd@sentia.nl>, 2000
 # This file is in the public domain.
@@ -38,15 +38,6 @@ confirm() {
 	set +o noglob
 }
 
-# create_group and create_user work like this:
-# 1) if user or group already exist: return (success)
-# 2) if uid or gid already exist: abort with exitcode 1 (fail)
-# 3) create user or group: abort with exitcode 1 if this operation fails,
-#    otherwise return (success) 
-# BUGS:
-# - no argument checking
-# - step 1) could do additional checking on the other password/group field(s)
-
 create_group()
 {
         GROUP=$1
@@ -54,18 +45,17 @@ create_group()
 
         echo -n "Checking group '$GROUP' with gid '$GID': "
 
-        if grep -q "^$GROUP:" /etc/group; then
-                echo "OK, group already exists." >&2
-                return
-        fi
-        cut -f3 -d':' /etc/group | grep -qw $GID
-        if [ $? == 0 ]; then
+	groupinfo -e $GROUP && {
+               	echo "OK, group already exists, but gid not checked." >&2
+               	return
+	}
+	groupinfo -e $GID && {
                 echo "ERR, gid taken." >&2
                 exit 1
-        fi
+	}
 	echo -n "group does not exist. Create? "
 	confirm
-        echo "$GROUP:*:$GID:" 2>/dev/null >>/etc/group || {
+	groupadd -g $GID $GROUP || {
                 echo "ERR, cannot append to /etc/group" >&2
                 exit 1
 	}
@@ -79,19 +69,18 @@ create_user()
         GECOS=$4; HOME=$5; SHELL=$6
         
         echo -n "Checking user '$NAME' with uid '$UID': "
-        
-        if grep -q "^$NAME:" /etc/passwd; then
-                echo "OK, user already exists." >&2
+       
+	userinfo -e $NAME && {
+                echo "OK, user already exists, but uid not checked." >&2
                 return
-        fi
-        cut -f3 -d':' /etc/passwd | grep -qw $UID
-        if [ $? == 0 ]; then
+	}
+	userinfo -e $UID && {
                 echo "ERR, uid taken." >&2
                 exit 1
-        fi
+	}
 	echo -n "user does not exist. Create? "
 	confirm
-        chpass -l -a "$NAME:*:$UID:$GID::::$GECOS:$HOME:$SHELL" 2>/dev/null || {
+        useradd -c $GECOS -d $HOME -g $GID -s $SHELL -u $UID $NAME || {
                 echo "ERR, cannot add user to database" >&2
                 exit 1
 	}
@@ -115,15 +104,13 @@ do_advice()
 	echo "and/or qmail-pop3d. It is installed as a dependency."
 	echo
 	echo "If you want to replace Sendmail on your system, be sure to look"
-	echo "at mailwrapper(8)."
-	echo "Here's a sample /etc/mailer.conf:"
+	echo "at mailwrapper(8). Here's a sample /etc/mailer.conf:"
 	echo
 	echo "sendmail        $QMAILDIR/bin/sendmail"
 	echo "send-mail       $QMAILDIR/bin/sendmail"
 	echo "mailq           $QMAILDIR/bin/qmail-qread"
 	echo " # you will need fastforward for newaliases to work"
 	echo "newaliases      $QMAILDIR/bin/newaliases"
-	echo " # not sure about these, mail corrections to this port's maintainer"
 	echo "hoststat        /usr/bin/true"
 	echo "purgestat       /usr/bin/true"
 	echo
