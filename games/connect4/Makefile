@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2003/03/31 18:00:40 sturm Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -12,9 +12,7 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.games/volume6/ \
-		ftp://ftp.uu.net/usenet/comp.sources.games/volume6/ \
-		ftp://ftp.funet.fi/pub/archive/comp.sources.games/volume6/
+MASTER_SITES= 	ftp://ftp.uu.net/usenet/comp.sources.games/volume6/
 EXTRACT_SUFX=	.Z
 EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | \
 		${_PERL_FIX_SHAR} | /bin/sh ;;
