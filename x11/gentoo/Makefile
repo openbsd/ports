@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/31 02:15:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/04 04:35:19 pvalchev Exp $
 
 COMMENT=		"GTK+ Graphical filemanager"
 
-VERSION=		0.11.30
+VERSION=		0.11.33
 DISTNAME=		gentoo-${VERSION}
 CATEGORIES=		x11	
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gentoo/}
-
 HOMEPAGE=		http://www.obsession.se/gentoo/
-
 MAINTAINER=		Jim Geovedi <jim@corebsd.or.id>
 
-LIB_DEPENDS= 		gtk.1.2,gdk.1.2::x11/gtk+ \
-			glib.1::devel/glib 
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gentoo/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,13 +17,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+LIB_DEPENDS= 		gtk.1.2,gdk.1.2::x11/gtk+ \
+			glib.1::devel/glib 
 
 CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
 
 post-install:
-	@cd ${WRKSRC} && \
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gentoo && \
-	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/gentoo
+	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${PREFIX}/man/man1/gentoo.1
+.for i in gentoorc gentoogtkrc
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/gentoo
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gentoo
+	@cd ${WRKSRC}/docs && \
+		tar cf - . | (cd ${PREFIX}/share/doc/gentoo; tar xf -) && \
+		rm -f ${PREFIX}/share/doc/gentoo/gentoo.1x
 
 .include <bsd.port.mk>

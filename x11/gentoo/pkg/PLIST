@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/06/10 07:03:26 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/09/04 04:35:19 pvalchev Exp $
 bin/gentoo
+man/man1/gentoo.1
 share/doc/gentoo/FAQ
 share/doc/gentoo/acks.html
 share/doc/gentoo/buttons.html
@@ -14,7 +15,6 @@ share/doc/gentoo/config/index.html
 share/doc/gentoo/config/template.html
 share/doc/gentoo/contribute.html
 share/doc/gentoo/dirpanes.html
-share/doc/gentoo/gentoo.1x
 share/doc/gentoo/gentoo.css
 share/doc/gentoo/gpl.html
 share/doc/gentoo/history.html
@@ -81,6 +81,8 @@ share/doc/gentoo/template.html
 share/doc/gentoo/template_toc.html
 share/doc/gentoo/types.html
 share/doc/gentoo/usage.html
+share/gentoo/gentoogtkrc
+share/gentoo/gentoorc
 share/gentoo/icons/AbiWord.xpm
 share/gentoo/icons/Amiga.xpm
 share/gentoo/icons/Animation.xpm
@@ -204,6 +206,9 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
+share/locale/fr/LC_MESSAGES/gentoo.mo
+share/locale/pl/LC_MESSAGES/gentoo.mo
+share/locale/sv/LC_MESSAGES/gentoo.mo
 @dirrm share/gentoo/icons
 @dirrm share/gentoo
 @dirrm share/doc/gentoo/scratch
