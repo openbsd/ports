@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:39 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/01 10:08:07 turan Exp $
 #
 
 DISTNAME=	exmh-1.6.9
@@ -6,7 +6,7 @@ CATEGORIES=	mail tk80
 IGNORE=		"has been superseded by exmh2"
 MIRROR_DISTFILE=no
 
-MAINTAINER=	marc@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	YES

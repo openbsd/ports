@@ -4,7 +4,7 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/01 10:08:08 turan Exp $
 #
 
 DISTNAME=		tinpre-1.4-19990216
@@ -14,7 +14,7 @@ CATEGORIES=		news
 NO_CDROM=		"NOFEE:	Can not sell"
 NO_PACKAGE=		"too much compile time configuration"
 
-MAINTAINER=     	marc@OpenBSD.ORG
+MAINTAINER=     	ports@openbsd.org
 
 MASTER_SITES=		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
 			ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \

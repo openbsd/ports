@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:05 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/01 10:08:08 turan Exp $
 #
 
 DISTNAME=		enscript-1.6.1
 CATEGORIES=     	print
 
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=		ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

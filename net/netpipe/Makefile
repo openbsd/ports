@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:57 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/01 10:08:07 turan Exp $
 #
 
 DISTNAME=		netpipes-4.1.1-export
 CATEGORIES=		net
 NEED_VERSION=		1.191
 
-MAINTAINER=		marc@OpenBSD.ORG
+MAINTAINER=		ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

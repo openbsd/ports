@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/22 17:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/01 10:08:07 turan Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 DISTNAME=       irc2.10.1
 PKGNAME=        irc-2.10.1
 CATEGORIES=	net
 
-MAINTAINER=	marc@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

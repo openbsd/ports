@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:47 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/01 10:08:07 turan Exp $
 #
 
 DISTNAME=	amanda-2.4.1p1
@@ -6,7 +6,7 @@ CATEGORIES=	misc
 
 NEED_VERSION=	1.64
 
-MAINTAINER=	marc@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

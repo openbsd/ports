@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:15 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/01 10:08:08 turan Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
 DISTNAME=       cfengine-1.4.12
 CATEGORIES=	sysutils
 
-MAINTAINER=	marc@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/01 10:08:08 turan Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
@@ -8,7 +8,7 @@ BROKEN=		"extremely old, needs updating"
 DISTNAME=	mozilla-19980728
 CATEGORIES=	www
 
-MAINTAINER=	marc@OpenBSD.org
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/source/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.mozilla.org/pub/mozilla/source/ \

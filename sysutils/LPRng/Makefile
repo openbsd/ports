@@ -3,13 +3,13 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.8 2000/02/22 17:08:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/01 10:08:08 turan Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
 
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=		ports@openbsd.org
 
 MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=		.tgz

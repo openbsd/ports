@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:41 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/01 10:08:07 turan Exp $
 
 DISTNAME=		nmh-1.0
 CATEGORIES=     	mail
 
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=		ports@openbsd.org
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

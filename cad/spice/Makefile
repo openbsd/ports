@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/10 23:14:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/01 10:08:06 turan Exp $
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
 CATEGORIES=     	cad
 
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=		ports@openbsd.org
 
 MASTER_SITES=		ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z

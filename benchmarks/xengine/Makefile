@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/10 23:14:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/01 10:08:03 turan Exp $
 
 PKGNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11
@@ -8,7 +8,7 @@ NEED_VERSION=	1.191
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
-MAINTAINER=	marc@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 DIST_SUBDIR=	xengine
 EXTRACT_CMD=	zcat
