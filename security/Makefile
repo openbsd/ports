@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2002/11/17 00:16:55 brad Exp $
+# $OpenBSD: Makefile,v 1.112 2002/11/17 01:49:52 mark Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -29,7 +29,6 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += gnupg
-     SUBDIR += gnupg,idea
      SUBDIR += gpa
      SUBDIR += gpgme
      SUBDIR += heimdal
