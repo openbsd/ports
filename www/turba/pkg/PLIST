@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/12 01:11:46 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/03 11:22:29 avsm Exp $
 horde/turba/COPYING
 horde/turba/README
 horde/turba/addobject.php
@@ -18,14 +18,19 @@ horde/turba/displayobject.php
 horde/turba/docs/CHANGES
 horde/turba/docs/CREDITS
 horde/turba/docs/INSTALL
+horde/turba/docs/LDAP
+horde/turba/docs/UPDATE
 horde/turba/docs/turba.dia
 horde/turba/docs/turba.pdf
 horde/turba/editobject.php
 horde/turba/editobjectaction.php
 horde/turba/graphics/add.gif
+horde/turba/graphics/checkbox.gif
+horde/turba/graphics/close.gif
 horde/turba/graphics/down.gif
 horde/turba/graphics/group.gif
 horde/turba/graphics/lhand.gif
+horde/turba/graphics/map.gif
 horde/turba/graphics/rhand.gif
 horde/turba/graphics/search.gif
 horde/turba/graphics/turba.gif
@@ -36,6 +41,7 @@ horde/turba/lib/.htaccess
 horde/turba/lib/AbstractObject.php
 horde/turba/lib/Driver.php
 horde/turba/lib/Driver/ldap.php
+horde/turba/lib/Driver/prefs.php
 horde/turba/lib/Driver/sql.php
 horde/turba/lib/Group.php
 horde/turba/lib/List.php
@@ -49,23 +55,30 @@ horde/turba/lib/ObjectView.php
 horde/turba/lib/ObjectView/List.php
 horde/turba/lib/ObjectView/PhotoID.php
 horde/turba/lib/Source.php
-horde/turba/lib/Turba.php
+horde/turba/lib/${HORDE_NAME}.php
 horde/turba/lib/api.php
 horde/turba/lib/base.php
 horde/turba/lib/version.php
 horde/turba/locale/.htaccess
+horde/turba/locale/bg_BG/LC_MESSAGES/turba.mo
+horde/turba/locale/ca_ES/LC_MESSAGES/turba.mo
 horde/turba/locale/cs_CZ/LC_MESSAGES/turba.mo
 horde/turba/locale/da_DK/LC_MESSAGES/turba.mo
 horde/turba/locale/de_DE/LC_MESSAGES/turba.mo
+horde/turba/locale/de_DE/help.xml
 horde/turba/locale/el_GR/LC_MESSAGES/turba.mo
+horde/turba/locale/en_US/help.xml
 horde/turba/locale/es_ES/LC_MESSAGES/turba.mo
 horde/turba/locale/et_EE/LC_MESSAGES/turba.mo
 horde/turba/locale/fi_FI/LC_MESSAGES/turba.mo
+horde/turba/locale/fi_FI/help.xml
 horde/turba/locale/fr_FR/LC_MESSAGES/turba.mo
 horde/turba/locale/hu_HU/LC_MESSAGES/turba.mo
 horde/turba/locale/it_IT/LC_MESSAGES/turba.mo
 horde/turba/locale/ja_JP/LC_MESSAGES/turba.mo
 horde/turba/locale/ko_KR/LC_MESSAGES/turba.mo
+horde/turba/locale/lt_LT/LC_MESSAGES/turba.mo
+horde/turba/locale/lv_LV/LC_MESSAGES/turba.mo
 horde/turba/locale/nb_NO/LC_MESSAGES/turba.mo
 horde/turba/locale/nl_NL/LC_MESSAGES/turba.mo
 horde/turba/locale/nn_NO/LC_MESSAGES/turba.mo
@@ -75,15 +88,19 @@ horde/turba/locale/pt_PT/LC_MESSAGES/turba.mo
 horde/turba/locale/ru_RU.KOI8-R/LC_MESSAGES/turba.mo
 horde/turba/locale/ru_RU/LC_MESSAGES/turba.mo
 horde/turba/locale/sk_SK/LC_MESSAGES/turba.mo
+horde/turba/locale/sk_SK/help.xml
 horde/turba/locale/sl_SI/LC_MESSAGES/turba.mo
 horde/turba/locale/sv_SE/LC_MESSAGES/turba.mo
 horde/turba/locale/uk_UA/LC_MESSAGES/turba.mo
 horde/turba/locale/zh_CN/LC_MESSAGES/turba.mo
 horde/turba/locale/zh_TW/LC_MESSAGES/turba.mo
 horde/turba/menu.php
+horde/turba/miniwindow.php
 horde/turba/po/.htaccess
 horde/turba/po/Makefile
 horde/turba/po/README
+horde/turba/po/bg_BG.po
+horde/turba/po/ca_ES.po
 horde/turba/po/cs_CZ.po
 horde/turba/po/da_DK.po
 horde/turba/po/de_DE.po
@@ -97,6 +114,8 @@ horde/turba/po/hu_HU.po
 horde/turba/po/it_IT.po
 horde/turba/po/ja_JP.po
 horde/turba/po/ko_KR.po
+horde/turba/po/lt_LT.po
+horde/turba/po/lv_LV.po
 horde/turba/po/nb_NO.po
 horde/turba/po/nl_NL.po
 horde/turba/po/nn_NO.po
@@ -109,13 +128,21 @@ horde/turba/po/shtool
 horde/turba/po/sk_SK.po
 horde/turba/po/sl_SI.po
 horde/turba/po/sv_SE.po
+horde/turba/po/turba.pot
 horde/turba/po/uk_UA.po
 horde/turba/po/xgettext.sh
 horde/turba/po/zh_CN.po
 horde/turba/po/zh_TW.po
 horde/turba/prefs.php
 horde/turba/scripts/.htaccess
+horde/turba/scripts/${HORDE_NAME}.reg
+horde/turba/scripts/drivers/mysql_create.sql
+horde/turba/scripts/drivers/mysql_upgrade_1.1_to_1.2.sql
+horde/turba/scripts/drivers/pgsql_create.sql
 horde/turba/scripts/drivers/turba.sql
+horde/turba/scripts/ldap/addou
+horde/turba/scripts/ldap/addou.pl
+horde/turba/scripts/ldap/core.schema.patch
 horde/turba/search.php
 horde/turba/status.php
 horde/turba/templates/.htaccess
@@ -126,8 +153,15 @@ horde/turba/templates/advanced/criteria.inc
 horde/turba/templates/advanced/foot.inc
 horde/turba/templates/advanced/head.inc
 horde/turba/templates/advanced/results_head.inc
-horde/turba/templates/browse/foot.inc
-horde/turba/templates/browse/head.inc
+horde/turba/templates/browse/actions.inc
+horde/turba/templates/browse/column_footers.inc
+horde/turba/templates/browse/column_headers.inc
+horde/turba/templates/browse/contactrow.inc
+horde/turba/templates/browse/footer.inc
+horde/turba/templates/browse/header.inc
+horde/turba/templates/browse/javascript.inc
+horde/turba/templates/browse/search.inc
+horde/turba/templates/browse/select.inc
 horde/turba/templates/common-footer.inc
 horde/turba/templates/common-header.inc
 horde/turba/templates/data/export.inc
@@ -137,21 +171,15 @@ horde/turba/templates/edit/edit.inc
 horde/turba/templates/index/css.inc
 horde/turba/templates/index/notconfigured.inc
 horde/turba/templates/menu/menu.inc
+horde/turba/templates/miniwindow/frames.inc
+horde/turba/templates/miniwindow/menu.inc
 horde/turba/templates/prefs/columnselect.inc
 horde/turba/templates/search/foot.inc
 horde/turba/templates/search/head.inc
 horde/turba/templates/search/row.inc
-horde/turba/templates/wml/common-footer.inc
-horde/turba/templates/wml/common-header.inc
-horde/turba/templates/wml/menu/menu.inc
-horde/turba/templates/wml/search/foot.inc
-horde/turba/templates/wml/search/head.inc
-horde/turba/templates/wml/search/row.inc
-@dirrm horde/turba/templates/wml/search
-@dirrm horde/turba/templates/wml/menu
-@dirrm horde/turba/templates/wml
 @dirrm horde/turba/templates/search
 @dirrm horde/turba/templates/prefs
+@dirrm horde/turba/templates/miniwindow
 @dirrm horde/turba/templates/menu
 @dirrm horde/turba/templates/index
 @dirrm horde/turba/templates/edit
@@ -161,6 +189,7 @@ horde/turba/templates/wml/search/row.inc
 @dirrm horde/turba/templates/advanced
 @dirrm horde/turba/templates/add
 @dirrm horde/turba/templates
+@dirrm horde/turba/scripts/ldap
 @dirrm horde/turba/scripts/drivers
 @dirrm horde/turba/scripts
 @dirrm horde/turba/po
@@ -192,6 +221,10 @@ horde/turba/templates/wml/search/row.inc
 @dirrm horde/turba/locale/nl_NL
 @dirrm horde/turba/locale/nb_NO/LC_MESSAGES
 @dirrm horde/turba/locale/nb_NO
+@dirrm horde/turba/locale/lv_LV/LC_MESSAGES
+@dirrm horde/turba/locale/lv_LV
+@dirrm horde/turba/locale/lt_LT/LC_MESSAGES
+@dirrm horde/turba/locale/lt_LT
 @dirrm horde/turba/locale/ko_KR/LC_MESSAGES
 @dirrm horde/turba/locale/ko_KR
 @dirrm horde/turba/locale/ja_JP/LC_MESSAGES
@@ -208,6 +241,7 @@ horde/turba/templates/wml/search/row.inc
 @dirrm horde/turba/locale/et_EE
 @dirrm horde/turba/locale/es_ES/LC_MESSAGES
 @dirrm horde/turba/locale/es_ES
+@dirrm horde/turba/locale/en_US
 @dirrm horde/turba/locale/el_GR/LC_MESSAGES
 @dirrm horde/turba/locale/el_GR
 @dirrm horde/turba/locale/de_DE/LC_MESSAGES
@@ -216,6 +250,10 @@ horde/turba/templates/wml/search/row.inc
 @dirrm horde/turba/locale/da_DK
 @dirrm horde/turba/locale/cs_CZ/LC_MESSAGES
 @dirrm horde/turba/locale/cs_CZ
+@dirrm horde/turba/locale/ca_ES/LC_MESSAGES
+@dirrm horde/turba/locale/ca_ES
+@dirrm horde/turba/locale/bg_BG/LC_MESSAGES
+@dirrm horde/turba/locale/bg_BG
 @dirrm horde/turba/locale
 @dirrm horde/turba/lib/ObjectView
 @dirrm horde/turba/lib/ListView
