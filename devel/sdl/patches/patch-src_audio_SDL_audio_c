@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_audio_SDL_audio_c,v 1.1.1.1 2001/04/19 18:55:40 obecian Exp $
+$OpenBSD: patch-src_audio_SDL_audio_c,v 1.2 2001/05/24 05:54:57 pvalchev Exp $
 --- src/audio/SDL_audio.c.orig	Wed Mar 21 10:19:56 2001
-+++ src/audio/SDL_audio.c	Fri Mar 30 08:44:02 2001
++++ src/audio/SDL_audio.c	Sat May 19 12:01:58 2001
 @@ -185,7 +185,7 @@ int SDL_AudioInit(const char *driver_nam
  	/* Select the proper audio driver */
  	audio = NULL;

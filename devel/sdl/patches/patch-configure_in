@@ -1,7 +1,28 @@
-$OpenBSD: patch-configure_in,v 1.4 2001/05/16 23:55:36 pvalchev Exp $
+$OpenBSD: patch-configure_in,v 1.5 2001/05/24 05:54:57 pvalchev Exp $
 --- configure.in.orig	Mon Mar 26 20:39:19 2001
-+++ configure.in	Wed May 16 17:45:33 2001
-@@ -1199,7 +1199,11 @@ case "$target" in
++++ configure.in	Sat May 19 12:01:23 2001
+@@ -289,6 +289,20 @@ CheckALSA()
+     fi
+ }
+ 
++dnl Find the OpenBSD native audio includes and libraries
++CheckOPENBSDAUDIO()
++{
++    AC_ARG_ENABLE(openbsdaudio,
++[  --enable-openbsdaudio   OpenBSD native audio support [default=no]],
++                  , enable_openbsdaudio=no)
++    if test x$enable_audio = xyes -a x$enable_openbsdaudio = xyes; then
++            CFLAGS="$CFLAGS -Dunix"
++            SYSTEM_LIBS="$SYSTEM_LIBS $ESD_LIBS"
++            AUDIO_SUBDIRS="$AUDIO_SUBDIRS obsd"
++            AUDIO_DRIVERS="$AUDIO_DRIVERS obsd/libaudio_obsd.la"
++    fi
++}
++
+ dnl Find the ESD includes and libraries
+ CheckESD()
+ {
+@@ -1199,7 +1213,11 @@ case "$target" in
              COPY_ARCH_SRC(src/thread, linux, SDL_systhread_c.h)
              COPY_ARCH_SRC(src/thread, linux, SDL_sysmutex.c)
              COPY_ARCH_SRC(src/thread, linux, SDL_sysmutex_c.h)
@@ -14,14 +35,37 @@ $OpenBSD: patch-configure_in,v 1.4 2001/05/16 23:55:36 pvalchev Exp $
              COPY_ARCH_SRC(src/thread, generic, SDL_syssem_c.h)
              COPY_ARCH_SRC(src/thread, linux, SDL_syscond.c)
              COPY_ARCH_SRC(src/thread, generic, SDL_syscond_c.h)
-@@ -1788,6 +1792,10 @@ fi
- 
- if test $ARCH = solaris; then
+@@ -1222,13 +1240,9 @@ case "$target" in
+         CheckAAlib
+         CheckOpenGL
+         CheckPTHREAD
++	CheckOPENBSDAUDIO
+         # Set up files for the main() stub
+         COPY_ARCH_SRC(src/main, linux, SDL_main.c)
+-        # Set up files for the audio library
+-        if test x$enable_audio = xyes; then
+-            AUDIO_SUBDIRS="$AUDIO_SUBDIRS sun"
+-            AUDIO_DRIVERS="$AUDIO_DRIVERS sun/libaudio_sun.la"
+-        fi
+         # Set up files for the joystick library
+         # (No joystick support yet)
+         if test x$enable_joystick = xyes; then
+@@ -1790,6 +1804,10 @@ if test $ARCH = solaris; then
    SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
-+fi
-+
-+if test $ARCH = openbsd; then
-+  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
  fi
  
++if test $ARCH = openbsd; then
++  SDL_RLD_FLAGS="-L${X11BASE}/lib -Wl,-rpath,\${exec_prefix}/lib -Wl,-rpath,${X11BASE}/lib"
++fi
++
  dnl Output the video drivers we use
+ if test x$enable_video = xtrue; then
+     if test "$VIDEO_SUBDIRS" = ""; then
+@@ -1852,6 +1870,7 @@ src/audio/esd/Makefile
+ src/audio/macrom/Makefile
+ src/audio/nas/Makefile
+ src/audio/nto/Makefile
++src/audio/obsd/Makefile
+ src/audio/paudio/Makefile
+ src/audio/sun/Makefile
+ src/audio/ums/Makefile
