@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: php3-enable,v 1.1 2000/04/17 19:29:47 jakob Exp $
+
+MODULE=y0y0y0/lib/libphp3.so
+INI=y0y0y0/share/doc/php3/php3.ini-dist
+
+if [ ! -f ${MODULE} ]; then
+    echo "can't find php3 module (${MODULE})"
+    exit 1
+else
+    echo "enabling php3 module..."
+    /usr/sbin/apxs -i -a -n php3 ${MODULE}
+    echo "note: a sample php3.ini file can be found as ${INI}"
+fi

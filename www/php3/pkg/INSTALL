@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1 2000/04/17 19:29:48 jakob Exp $
+#
+# php3 installation
+
+set -e
+
+echo
+echo "+---------------"
+echo "| To finish the install, you need to enable the php3"
+echo "| module using the following command"
+echo "|"
+echo "|   ${PKG_PREFIX}/sbin/php3-enable"
+echo "+---------------"
+echo
+
+exit 0

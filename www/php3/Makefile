@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:38:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/17 19:29:47 jakob Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
 CATEGORIES=	www lang
-FAKE=No
 
 MAINTAINER=     jakob@openbsd.org
 
@@ -21,21 +20,34 @@ PERMIT_DISTFILES_FTP=   Yes
 ONLY_FOR_ARCHS=	i386 m68k sparc mips
 
 GNU_CONFIGURE=	yes
+FAKE=		yes
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--without-pcre-regex \
+			--with-xml \
 			--with-config-file-path=/var/www/conf
 
-.if defined(USE_MYSQL)
-CONFIGURE_ARGS+=        --with-mysql 
-LIB_DEPENDS=		mysqlclient.6::databases/mysql
-PKGNAME=		php3-3.0.16-mysql
+BUILD_DEPENDS+=		${PREFIX}/lib/libexpat.a::textproc/expat
+
+FLAVORS=	mysql
+
+FLAVOR?=
+.if ${FLAVOR:L} == "mysql"
+CONFIGURE_ARGS+=	--with-mysql 
+BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a::databases/mysql
+.else
+CONFIGURE_ARGS+=	--without-mysql 
 .endif
 
-post-install:
-	${CHMOD} ${LIBMODE} `apxs -q LIBEXECDIR`/libphp3.so
+do-install:
+	${INSTALL_DATA} ${WRKBUILD}/libphp3.so ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php3
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/php3
-	${INSTALL_DATA} ${WRKSRC}/php3.ini-dist /var/www/conf/php3.ini
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/php3
+	${INSTALL_DATA} ${WRKSRC}/php3.ini-dist ${PREFIX}/share/doc/php3
+	sed 's,y0y0y0,${TRUEPREFIX},' \
+		<${FILESDIR}/php3-enable >${PREFIX}/sbin/php3-enable
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/php3-enable
+	chmod ${BINMODE} ${PREFIX}/sbin/php3-enable
 
 .include <bsd.port.mk>

@@ -1342,10 +1342,6 @@ share/doc/php3/security.html
 share/doc/php3/types.html
 share/doc/php3/variables.html
 share/doc/php3/x2176.html
-@dirrm share/doc/php3
-@cwd /usr/lib/apache/modules
-@cwd /usr/lib/apache/modules
-libphp3.so
-@cwd /var/www/conf
-@cwd /var/www/conf
-php3.ini
+share/doc/php3/php3.ini-dist
+lib/libphp3.so
+sbin/php3-enable
