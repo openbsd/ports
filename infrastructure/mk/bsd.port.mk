@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.680 2005/01/31 09:58:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.681 2005/01/31 10:12:24 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1373,8 +1373,15 @@ _internal-package _internal-lib-depends-check _internal-manpages-check:
 .  endif
 
 .else
+
+.  if ${ELF_TOOLCHAIN:L} == "no"
+_NEWLIB_DEPENDS_FLAGS=-o
+.  else
+_NEWLIB_DEPENDS_FLAGS=
+.  endif
 _internal-lib-depends-check _internal-newlib-depends-check: ${_PACKAGE_COOKIES}
-	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends ${_PACKAGE_COOKIES}
+	@perl ${PORTSDIR}/infrastructure/package/check-newlib-depends \
+		${_NEWLIB_DEPENDS_FLAGS} ${_PACKAGE_COOKIES}
 
 _internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
