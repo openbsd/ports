@@ -1,0 +1,14 @@
+Added extra ld options for the runtime system so it can find
+libgmp. There is code in mk/package.mk that will:
+	s/LOCALBASE/${LOCALBASE}/
+
+--- ghc/rts/package.conf.in.orig	Sat May 17 10:11:27 2003
++++ ghc/rts/package.conf.in	Wed Aug  6 15:12:45 2003
+@@ -133,6 +133,7 @@
+          , "-u", "GHCziWeak_runFinalizzerBatch_closure"
+          , "-u", "__stginit_Prelude"
+ #endif
++         , "-L", "LOCALBASE/lib"
+          ]
+ #ifdef HAVE_FRAMEWORK_HASKELLSUPPORT
+         , extra_frameworks  = [ "HaskellSupport" ]

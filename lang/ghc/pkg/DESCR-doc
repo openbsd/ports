@@ -3,5 +3,3 @@ compiler for the functional programming language Haskell 98.
 
 This package contains the users guide, build instructions, and
 library specifications from the Haskell web site.
-
-WWW: ${HOMEPAGE}

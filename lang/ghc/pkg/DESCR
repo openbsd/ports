@@ -7,5 +7,3 @@ concurrency, a foreign language interface, several type-system
 extensions, exceptions, and so on. GHC comes with a generational
 garbage collector, a space and time profiler, and a comprehensive
 set of libraries.
-
-WWW: ${HOMEPAGE}

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/03 18:07:27 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/08/12 13:25:18 avsm Exp $
 bin/ghc
 bin/ghc-6.0.1
 bin/ghc-pkg
 bin/ghc-pkg-6.0.1
-bin/ghci
-bin/ghci-6.0.1
+@comment bin/ghci
+@comment bin/ghci-6.0.1
 bin/ghcprof
 bin/hasktags
 bin/hp2ps
@@ -857,7 +857,6 @@ lib/ghc-6.0.1/libHSunix_p.a
 lib/ghc-6.0.1/libHSutil.a
 lib/ghc-6.0.1/libHSutil_cbits.a
 lib/ghc-6.0.1/libHSutil_p.a
-lib/ghc-6.0.1/libgmp.a
 lib/ghc-6.0.1/package.conf
 lib/ghc-6.0.1/parse-gcstats.prl
 lib/ghc-6.0.1/process-gcstats.prl

@@ -1,0 +1,15 @@
+Get the real gmp.h, not the obsolete one ghc brings with it
+
+--- ghc/includes/Makefile.orig	Sat Mar 22 02:45:56 2003
++++ ghc/includes/Makefile	Tue Aug  5 10:25:05 2003
+@@ -27,8 +27,8 @@
+ all :: $(H_CONFIG) NativeDefs.h
+ 
+ # gmp.h is copied from the GMP directory
+-gmp.h : $(FPTOOLS_TOP)/ghc/rts/gmp/gmp.h
+-	$(CP) $< $@
++gmp.h :
++	$(CP) $(LOCALBASE)/include/gmp.h $@
+ 
+ # The fptools configure script creates the configuration header file 
+ # and puts it in fptools/mk/config.h. We copy it down to here, prepending

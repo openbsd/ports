@@ -1,0 +1,18 @@
+substitute in the path to localbase in the runtime package file,
+so it can find libgmp.
+
+--- mk/package.mk.orig	Wed Aug  6 13:40:45 2003
++++ mk/package.mk	Wed Aug  6 13:41:06 2003
+@@ -9,10 +9,12 @@
+ ifeq "$(way)" ""
+ 
+ package.conf.inplace   : package.conf.in
++	perl -pi.bak -e 's,LOCALBASE,'$(LOCALBASE)',' $<
+ 	$(CPP) $(RAWCPP_FLAGS) -I$(GHC_INCLUDE_DIR) -x c $(PACKAGE_CPP_OPTS) $< \
+ 		| sed 's/^#.*$$//g' >$@
+ 
+ package.conf.installed : package.conf.in
++	perl -pi.bak -e 's,LOCALBASE,'$(LOCALBASE)',' $<
+ 	$(CPP) $(RAWCPP_FLAGS) -I$(GHC_INCLUDE_DIR) -DINSTALLING -x c $(PACKAGE_CPP_OPTS) $< \
+ 		| sed 's/^#.*$$//g' >$@
+ 
