@@ -1,7 +1,7 @@
-diff -u -r w2/tracker/display.c work/tracker/display.c
---- w2/tracker/display.c	Mon May  6 16:28:52 1996
-+++ work/tracker/display.c	Sun Sep 27 21:02:33 1998
-@@ -543,7 +543,14 @@
+$OpenBSD: patch-display_c,v 1.1 2001/04/10 00:52:01 espie Exp $
+--- display.c.orig	Mon May  6 16:28:52 1996
++++ display.c	Tue Apr 10 02:20:49 2001
+@@ -543,7 +543,14 @@ LOCAL void disp_offset(unsigned samp, un
  		copy3(note2name(note));
  		copy4(" off");
  		if (ch->samp->length)
@@ -17,4 +17,3 @@ diff -u -r w2/tracker/display.c work/tracker/display.c
  		else
  			copy3(empty);
  		*base++ = '%';
-

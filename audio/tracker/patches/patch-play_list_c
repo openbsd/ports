@@ -1,0 +1,12 @@
+$OpenBSD: patch-play_list_c,v 1.1 2001/04/10 00:52:01 espie Exp $
+--- play_list.c.orig	Mon May  6 23:53:20 1996
++++ play_list.c	Tue Apr 10 02:20:49 2001
+@@ -243,6 +243,8 @@ void randomize(void)
+ 	ENTRY e;
+ 	unsigned i, k;
+ 
++	if (idx == 0)
++		return;
+ 	for (i = idx-1; i > 0; i--)
+ 		{
+ 		k = random_range(i+1);

@@ -1,5 +1,6 @@
---- work/tracker/Docs/tracker.texinfo.orig	Thu Apr 11 19:21:05 1996
-+++ work/tracker/Docs/tracker.texinfo	Sat Mar 11 02:02:03 2000
+$OpenBSD: patch-Docs_tracker_texinfo,v 1.1 2001/04/10 00:51:59 espie Exp $
+--- Docs/tracker.texinfo.orig	Thu Apr 11 19:21:05 1996
++++ Docs/tracker.texinfo	Tue Apr 10 02:20:49 2001
 @@ -1,12 +1,17 @@
  \input texinfo
  
@@ -20,7 +21,7 @@
  @titlepage
  @title Tracker @value{VERSION}
  @subtitle Documentation rev. 1.0
-@@ -979,14 +984,14 @@
+@@ -979,14 +984,14 @@ filter for obvious reasons.
  * Other Architectures: Porting tracker.
  @end menu
  

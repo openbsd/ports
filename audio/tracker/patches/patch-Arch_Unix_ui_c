@@ -1,0 +1,38 @@
+$OpenBSD: patch-Arch_Unix_ui_c,v 1.1 2001/04/10 00:51:59 espie Exp $
+--- Arch/Unix/ui.c.orig	Tue May  7 17:21:34 1996
++++ Arch/Unix/ui.c	Tue Apr 10 02:30:14 2001
+@@ -169,6 +169,7 @@ typedef struct sgttyb TERM_SETUP;
+ #ifdef __hpux
+ #include <sys/bsdtty.h>
+ #endif
++#include <unistd.h>
+ 
+ LOCAL void nonblocking_io(void);
+ LOCAL void sane_tty(void);
+@@ -271,7 +272,7 @@ LOCAL void if_fg_sane_tty(void)
+ 	}
+ 
+ 
+-LOCAL void switch_mode(void)
++LOCAL void switch_mode(int sig)
+    {
+ 	TERM_SETUP zap;
+ 
+@@ -358,7 +359,7 @@ LOCAL void nonblocking_io(void)
+ 		_gs_opt(fileno(stdin), psanity);
+ #endif
+       }
+-   switch_mode();
++   switch_mode(0);
+    at_end(if_fg_sane_tty);
+    }
+ 
+@@ -385,7 +386,7 @@ LOCAL int may_getchar(void)
+    INIT_ONCE;
+ 
+    if (run_in_fg() && !is_fg)
+-      switch_mode();
++      switch_mode(0);
+ #ifdef OSK
+ 	if (run_in_fg() && (_gs_rdy(fileno(stdin)) > 0))
+ 		{

@@ -1,7 +1,7 @@
-diff -u -r w2/tracker/Docs/readme work/tracker/Docs/readme
---- w2/tracker/Docs/readme	Thu Apr 11 19:21:05 1996
-+++ work/tracker/Docs/readme	Sun Sep 27 17:16:04 1998
-@@ -5,6 +5,12 @@
+$OpenBSD: patch-Docs_readme,v 1.1 2001/04/10 00:51:59 espie Exp $
+--- Docs/readme.orig	Thu Apr 11 19:21:05 1996
++++ Docs/readme	Tue Apr 10 02:20:48 2001
+@@ -5,6 +5,12 @@ See the accompanying TeXinfo documentati
  From version 4.29 on, commercial use of tracker is forbidden without
  negotiating an agreement with me first.
  
@@ -14,11 +14,10 @@ diff -u -r w2/tracker/Docs/readme work/tracker/Docs/readme
  For personal use purposes: I've spent quite some time supporting this 
  program now.  If you use it much, and feel like it, you can send me
  some money, or software you've written for the amiga, I won't 
-@@ -37,5 +43,5 @@
+@@ -37,5 +43,5 @@ This said, my postal address is:
  I can deal with french francs, or US checks. Anything else you'll
  have to try.
  
 -	Marc Espie
 +	Marc Espie, Marc.Espie@openbsd.org
  
-

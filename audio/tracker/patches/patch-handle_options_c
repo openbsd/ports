@@ -1,0 +1,22 @@
+$OpenBSD: patch-handle_options_c,v 1.1 2001/04/10 00:52:01 espie Exp $
+--- handle_options.c.orig	Tue May  7 17:22:08 1996
++++ handle_options.c	Tue Apr 10 02:29:16 2001
+@@ -52,6 +52,7 @@
+ #include "tags.h"
+ #include "prefs.h"
+ #include "autoinit.h"
++#include "open.h"
+ 
+ #ifdef VOLUME_CONTROL
+ #ifdef __hpux
+@@ -235,7 +236,9 @@ void handle_options(int argc, char *argv
+ 		print_usage();
+ 		end_all(0);
+ 		}
+-	ask_freq = args[1].scalar * 1000;
++	ask_freq = args[1].scalar;
++	if (ask_freq < 1000)
++		ask_freq *= 1000;
+ 	stereo = args[2].scalar;
+ 	loop = args[3].scalar;
+ 	set_watched_scalar(OVERSAMPLE, args[4].scalar);

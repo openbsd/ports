@@ -1,7 +1,7 @@
-diff -u -r w2/tracker/parse_options.c work/tracker/parse_options.c
---- w2/tracker/parse_options.c	Tue May  7 00:48:28 1996
-+++ work/tracker/parse_options.c	Sun Sep 27 16:33:45 1998
-@@ -238,10 +238,11 @@
+$OpenBSD: patch-parse_options_c,v 1.1 2001/04/10 00:52:01 espie Exp $
+--- parse_options.c.orig	Tue May  7 00:48:28 1996
++++ parse_options.c	Tue Apr 10 02:20:49 2001
+@@ -238,10 +238,11 @@ LOCAL int do_option(char *text, char *ar
  				switch(type)
  					{
  				case 's':

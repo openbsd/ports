@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 14:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/10 00:51:59 espie Exp $
 
+COMMENT=	MOD player
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
-NEED_VERSION=	1.195
+NEED_VERSION=	1.383
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-USE_GMAKE=		Yes
+#USE_GMAKE=		Yes
 
 # OpenBSD has a special exemption. Other BSD should contact me (Marc Espie) 
 # for redistribution on the CD.
@@ -18,8 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/tracker
-PATCH_STRIP= 		-p2
 MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
+		CFLAGS_openbsd='-O3 -funroll-loops -finline-functions ${COPTS}' \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
 		COMPRESSION_FILE='$${DESTDIR}/etc/compression_methods' \
@@ -29,17 +30,17 @@ FAKE_FLAGS=	${MAKE_FLAGS}
 
 post-extract:
 	@mkdir -p ${WRKSRC}/Arch/OpenBSD
-	@cp files/audio.c files/config.h ${WRKSRC}/Arch/OpenBSD
+	@cp files/{audio.c,config.h} ${WRKSRC}/Arch/OpenBSD
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tracker
 	@${INSTALL_DATA_DIR} ${PREFIX}/lib/tracker
 	@cd ${WRKSRC}/Docs && \
-	makeinfo --no-split tracker.texinfo -o tracker.info && \
+	    makeinfo --no-split tracker.texinfo -o tracker.info && \
 	$(INSTALL_MAN) tracker.info ${PREFIX}/info && \
-	rm -f tracker.info *.orig
+	    rm -f tracker.info *.orig
 	cp -R ${WRKSRC}/Docs/* ${PREFIX}/share/doc/tracker
-	cp ${WRKSRC}/Lib/compression_methods ${PREFIX}/lib/tracker/compression_methods.sample
+	${INSTALL_DATA} ${WRKSRC}/Lib/compression_methods ${PREFIX}/lib/tracker/compression_methods.sample
 
 # there is a small test module included. This target tests that
 # - tracker correctly handles compressed files (only after install),

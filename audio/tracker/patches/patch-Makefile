@@ -1,6 +1,6 @@
-diff -u -r w2/tracker/Makefile work/tracker/Makefile
---- w2/tracker/Makefile	Tue May  7 17:20:50 1996
-+++ work/tracker/Makefile	Sun Sep 27 17:20:35 1998
+$OpenBSD: patch-Makefile,v 1.1 2001/04/10 00:51:59 espie Exp $
+--- Makefile.orig	Tue May  7 17:20:50 1996
++++ Makefile	Tue Apr 10 02:20:49 2001
 @@ -1,5 +1,5 @@
  # Makefile for any machine
 -# - based on my newer makefile and the GREATE
@@ -19,7 +19,7 @@ diff -u -r w2/tracker/Makefile work/tracker/Makefile
  #VPATH=..
  
  # The name of your C compiler. For most machines this will be
-@@ -20,7 +20,7 @@
+@@ -20,7 +20,7 @@ CC = gcc
  
  OPTS=-c 
  
@@ -28,7 +28,7 @@ diff -u -r w2/tracker/Makefile work/tracker/Makefile
  # Destination directory for tracker binaries and manpage.
  #
  # If you don't wish to use the 'make install' and 'make install.man'
-@@ -175,6 +175,15 @@
+@@ -175,6 +175,15 @@ EXE_freebsd = 
  UI_freebsd = Unix/
  SHELL_freebsd = /bin/sh
  
@@ -44,7 +44,7 @@ diff -u -r w2/tracker/Makefile work/tracker/Makefile
  CFLAGS_aix = -O
  LIBS_aix = -lm
  AUDIODIR_aix = Aix/
-@@ -250,7 +259,7 @@
+@@ -250,7 +259,7 @@ OBJ_SPLITMOD = split$O time$O st_read$O 
  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
  st_virt$O automaton$O
  
@@ -53,7 +53,7 @@ diff -u -r w2/tracker/Makefile work/tracker/Makefile
  
  config.h: $(CONFIG)config.h 
  	rm -f config.h
-@@ -272,9 +281,8 @@
+@@ -272,9 +281,8 @@ version.c: Makefile
  install: 
  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
@@ -64,4 +64,3 @@ diff -u -r w2/tracker/Makefile work/tracker/Makefile
  
  # no manpage available, use the texinfo manual.
  install.man:
-
