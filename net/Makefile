@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2002/03/08 16:58:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.200 2002/03/19 01:48:02 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += bing
      SUBDIR += bitchx
      SUBDIR += bnc
+     SUBDIR += cadaver
      SUBDIR += centericq
      SUBDIR += cidr
      SUBDIR += clog
