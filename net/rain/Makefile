@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/02 17:52:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 02:41:13 jcs Exp $
+
+BROKEN=		"doesn't send any data; always returns 'message too long'"
 
 DISTNAME=	rain-1.2.8
 CATEGORIES=	net security
