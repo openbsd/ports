@@ -1,7 +1,12 @@
+bin/cxpm
 bin/sxpm
 lib/libXpm.a
-lib/libXpm.so.4.10
+lib/libXpm.so.4.11
 @exec /sbin/ldconfig -m %B
 @exec ranlib %D/lib/libXpm.a
 include/X11/xpm.h
-man/man1/sxpm.1
+man/cat1/cxpm.0
+man/cat1/sxpm.0
+share/doc/xpm/FAQ.html
+share/doc/xpm/xpm.PS.gz
+@dirrm share/doc/xpm
