@@ -1,0 +1,32 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
+#
+# De-installation setup of mozilla
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+MOZ=${PREFIX}/mozilla
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	cd ${MOZ} && rm -f components/compreg.dat components/xpti.dat
+	;;
+    *)
+	echo "usage: $0 distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

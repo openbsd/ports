@@ -1,0 +1,5 @@
+The Mozilla Firebird project is a redesign of Mozilla's browser
+component, written using the XUL user interface language and designed
+to be cross-platform.
+
+WWW: ${HOMEPAGE}
