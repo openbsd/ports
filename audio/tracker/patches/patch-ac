@@ -1,0 +1,53 @@
+*** Arch/PCux/audio.c.orig	Fri Apr 12 12:30:37 1996
+--- Arch/PCux/audio.c	Thu May 21 20:30:57 1998
+***************
+*** 9,15 ****
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include "extern.h"
+! 
+  struct options_set *port_options=0;
+  
+  #define DEFAULT_BUFFERS
+--- 9,18 ----
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include "extern.h"
+! #include "prefs.h"
+! #include "autoinit.h"
+! #include "watched_var.h"
+! #include <sys/ioctl.h>
+  struct options_set *port_options=0;
+  
+  #define DEFAULT_BUFFERS
+***************
+*** 26,34 ****
+  #else
+  #ifndef __FreeBSD__
+  /*	This should be sys/soundcard.h	*/
+! #include <sys/soundcard.h>
+  #else
+! #include <machine/soundcard.h>
+  #endif
+  #endif
+  
+--- 29,37 ----
+  #else
+  #ifndef __FreeBSD__
+  /*	This should be sys/soundcard.h	*/
+! #include <soundcard.h>
+  #else
+! #include <soundcard.h>
+  #endif
+  #endif
+  
+***************
+*** 116,121 ****
+--- 119,125 ----
+  		}
+  	samples_max = buf_max / dsize;
+  	current_freq = f;
++ 	set_watched_scalar(FREQUENCY, f);
+  	total = 0;
+  	return f;
+     }
