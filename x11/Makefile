@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1998/01/25 22:31:18 angelos Exp $
+# $OpenBSD: Makefile,v 1.10 1998/01/25 22:43:14 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -93,7 +93,7 @@
 #    SUBDIR += xkeycaps
      SUBDIR += xloadimage
 #    SUBDIR += xlockmore
-#    SUBDIR += xmascot
+     SUBDIR += xmascot
 #    SUBDIR += xmbdfed
      SUBDIR += xmold
      SUBDIR += xpostit
