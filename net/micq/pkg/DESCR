@@ -1,6 +1,9 @@
-A text-based implementation of ICQ, independant of Mirabilis.
-Currently does not offer chat.  Still appears rough:  There's no
-command-line editing, and ANSI color codes are hardcoded in the
-program.
+mICQ is a very portable text-mode ICQ clone - it is known to compile
+under Linux, BSD, AIX, HPUX, Windows, AmigaOS and with restrictions
+BeOS. Originally written by Matthew D. Smith, a great part of mICQ has
+been rewritten by Rüdiger Kuhlmann, in particular the support for the
+new version 8 of the ICQ protocol that became necessary, the
+internationalization, the file transfer and some restructuring of the
+code.
 
 WWW: ${HOMEPAGE}

@@ -1,15 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/07/25 16:13:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/10/15 04:26:27 pvalchev Exp $
 bin/micq
+man/de/man1/micq.1
+man/de/man5/micqrc.5
+man/de/man7/micq.7
+man/es/man1/micq.1
+man/es/man7/micq.7
+man/fr/man1/micq.1
+man/fr/man5/micqrc.5
+man/fr/man7/micq.7
 man/man1/micq.1
 man/man5/micqrc.5
 man/man7/micq.7
+man/ru/man1/micq.1
+man/ru/man5/micqrc.5
+man/ru/man7/micq.7
 share/doc/micq/README
 share/doc/micq/README.SOCKS5
-share/doc/micq/commands.txt
 share/doc/micq/icq091.txt
+share/doc/micq/icqv7.txt
 share/micq/bg.i18n
 share/micq/br.i18n
-share/micq/cn.i18n
 share/micq/de.i18n
 share/micq/en.i18n
 share/micq/en_fun.i18n
@@ -25,5 +35,21 @@ share/micq/ru.i18n
 share/micq/se.i18n
 share/micq/uk.i18n
 share/micq/yu.i18n
+share/micq/zh_CN.i18n
 @dirrm share/micq
 @dirrm share/doc/micq
+@dirrm man/ru/man7
+@dirrm man/ru/man5
+@dirrm man/ru/man1
+@dirrm man/ru
+@dirrm man/fr/man7
+@dirrm man/fr/man5
+@dirrm man/fr/man1
+@dirrm man/fr
+@dirrm man/es/man7
+@dirrm man/es/man1
+@dirrm man/es
+@dirrm man/de/man7
+@dirrm man/de/man5
+@dirrm man/de/man1
+@dirrm man/de
