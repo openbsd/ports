@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/04 08:51:14 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/13 20:34:11 jasoni Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -6,9 +6,8 @@ PKGNAME=	redhat_base-6.2p4
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
-MASTER_SITES0=	${MASTER_SITES:S@${MASTER_SITE_SUBDIR}@${MASTER_SITE_SUBDIR0}@}
-MASTER_SITE_SUBDIR=	redhat/linux/6.2/en/os/i386/RedHat/RPMS
-MASTER_SITE_SUBDIR0=	redhat/linux/updates/6.2/en/os/i386
+MASTER_SITES=	${MASTER_SITE_REDHAT:=redhat/linux/6.2/en/os/i386/RedHat/RPMS/}
+MASTER_SITES0=	${MASTER_SITE_REDHAT:=redhat/linux/updates/6.2/en/os/i386/}
 
 DISTFILES=	${RPMS}
 
