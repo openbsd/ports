@@ -1,16 +1,90 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- configure.orig	2004-03-27 11:43:21.000000000 -0800
-+++ configure	2004-05-01 17:07:37.000000000 -0700
-@@ -7419,7 +7419,7 @@ if test -z "$aix_libpath"; then aix_libp
-       hardcode_shlibpath_var=no
-       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
- 	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
--	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+	hardcode_libdir_flag_spec='${wl}-R$libdir'
- 	export_dynamic_flag_spec='${wl}-E'
-       else
-        case $host_os in
-@@ -20088,13 +20088,13 @@ fi
+$OpenBSD: patch-configure,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- configure.orig	Wed Jul 14 08:51:11 2004
++++ configure	Mon Oct  4 19:45:02 2004
+@@ -3503,7 +3503,10 @@ else
+   # I'd rather use --version here, but apparently some GNU ld's only accept -v.
+ case `$LD -v 2>&1 </dev/null` in
+ *GNU* | *'with BFD'*)
+-  lt_cv_prog_gnu_ld=yes
++  case $host_os in
++    openbsd*) lt_cv_prog_gnu_ld=no ;;
++    *) lt_cv_prog_gnu_ld=yes ;;
++  esac
+   ;;
+ *)
+   lt_cv_prog_gnu_ld=no
+@@ -3720,12 +3723,10 @@ nto-qnx*)
+   ;;
+ 
+ openbsd*)
+-  lt_cv_file_magic_cmd=/usr/bin/file
+-  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|\.so|_pic\.a)$'
+   else
+-    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|_pic\.a)$'
+   fi
+   ;;
+ 
+@@ -8134,7 +8135,7 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=yes
+-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
++  library_names_spec='${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+@@ -10544,6 +10545,19 @@ if test -z "$aix_libpath"; then aix_libp
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd*)
++      hardcode_direct_CXX=yes
++      hardcode_shlibpath_var_CXX=no
++      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++        archive_expsym_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${
++wl}-retain-symbols-file,$export_symbols -o $lib'
++        export_dynamic_flag_spec_CXX='${wl}-E'
++        whole_archive_flag_spec_CXX="$wlarc"'--whole-archive$convenience '"$wlarc"'--no-whole-archive'
++      fi
++      output_verbose_link_cmd='echo'
++      ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -11853,7 +11867,7 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=yes
+-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
++  library_names_spec='${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+@@ -15023,7 +15037,7 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=yes
+-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
++  library_names_spec='${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+@@ -17391,7 +17405,7 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=yes
+-  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
++  library_names_spec='${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+@@ -20260,13 +20274,13 @@ fi
  
  
  
@@ -27,7 +101,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -20153,7 +20153,7 @@ fi
+@@ -20325,17 +20339,17 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
  echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
  if test $ac_cv_lib_pthread_pthread_create = yes; then
@@ -36,3 +110,27 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
  fi
  
  
+-OS_ARCH=`uname -s | sed -e 's|/|_|g'`
++#OS_ARCH=`uname -s | sed -e 's|/|_|g'`
+ # FreeBSD and OpenBSD have neither -lpthread nor integrated pthreads in libc.
+ # Instead -pthread is used to the compiler/linker to get pthreads working right.
+-if test x$OS_ARCH = xFreeBSD -o x$OS_ARCH = xOpenBSD; then
+-   CFLAGS="$CFLAGS -pthread"
+-   CXXFLAGS="$CXXFLAGS -pthread"
+-fi
++#if test x$OS_ARCH = xFreeBSD -o x$OS_ARCH = xOpenBSD; then
++#   CFLAGS="$CFLAGS -pthread"
++#   CXXFLAGS="$CXXFLAGS -pthread"
++#fi
+ 
+ 
+ 
+@@ -20912,7 +20926,7 @@ fi
+ 
+ 
+ for ac_header in fcntl.h sys/time.h unistd.h linux/videodev.h sys/soundcard.h \
+-endian.h machine/endian.h inttypes.h
++inttypes.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

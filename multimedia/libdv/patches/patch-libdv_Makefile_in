@@ -1,12 +1,29 @@
-$OpenBSD: patch-libdv_Makefile_in,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- libdv/Makefile.in.orig	2004-03-27 11:43:19.000000000 -0800
-+++ libdv/Makefile.in	2004-05-01 18:41:58.000000000 -0700
-@@ -78,7 +78,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+$OpenBSD: patch-libdv_Makefile_in,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- libdv/Makefile.in.orig	Wed Jul 14 08:41:22 2004
++++ libdv/Makefile.in	Mon Oct  4 20:31:18 2004
+@@ -95,6 +95,7 @@ am_testvlc_OBJECTS = testvlc.$(OBJEXT)
+ testvlc_OBJECTS = $(am_testvlc_OBJECTS)
+ testvlc_DEPENDENCIES = libdv.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++INCLUDES = -I$(top_srcdir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/YUY2.Plo ./$(DEPDIR)/YV12.Plo \
+@@ -180,7 +181,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ $(PTHREAD_LIBS)
- 
  LIBTOOL = $(SHELL) $(top_builddir)/libtool --silent
  LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -293,7 +294,7 @@ recode_LDADD = libdv.la
+ reppm_SOURCES = reppm.c
+ reppm_LDADD = libdv.la
+ enctest_SOURCES = enctest.c
+-enctest_LDADD = libdv.la $(PTHREAD_LIBS) 
++enctest_LDADD = libdv.la 
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 

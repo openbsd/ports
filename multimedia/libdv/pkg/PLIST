@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:04:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/10/13 01:44:20 jolan Exp $
 bin/dubdv
 @comment bin/dvconnect
 bin/encodedv
 bin/playdv
 include/libdv/
 include/libdv/dv.h
-include/libdv/dv1394.h
 include/libdv/dv_types.h
 lib/libdv.a
 lib/libdv.la

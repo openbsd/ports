@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/13 01:44:20 jolan Exp $
 
 COMMENT=		"Quasar DV codec"
 
-DISTNAME=		libdv-0.102
+DISTNAME=		libdv-0.103
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://libdv.sourceforge.net/
@@ -24,6 +24,7 @@ LIB_DEPENDS=		SDL.2::devel/sdl \
 			glib.1.2,gmodule.1.2::devel/glib \
 			popt.0::devel/popt
 
+SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

@@ -1,12 +1,29 @@
-$OpenBSD: patch-encodedv_Makefile_in,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- encodedv/Makefile.in.orig	2004-05-01 18:43:01.000000000 -0700
-+++ encodedv/Makefile.in	2004-05-01 18:43:54.000000000 -0700
-@@ -78,7 +78,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+$OpenBSD: patch-encodedv_Makefile_in,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- encodedv/Makefile.in.orig	Wed Jul 14 08:41:22 2004
++++ encodedv/Makefile.in	Mon Oct  4 20:32:22 2004
+@@ -78,6 +78,7 @@ am_steal_header_OBJECTS = steal_header.$
+ steal_header_OBJECTS = $(am_steal_header_OBJECTS)
+ steal_header_LDADD = $(LDADD)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++INCLUDES = -I$(top_srcdir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/dvavi.Po ./$(DEPDIR)/dvconnect.Po \
+@@ -150,7 +151,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = @LIBS@ $(PTHREAD_LIBS)
- 
  LIBTOOL = $(SHELL) $(top_builddir)/libtool --silent
  LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -238,7 +239,7 @@ scan_packet_headers_SOURCES = scan_packe
+ steal_header_SOURCES = steal_header.c
+ ppmqscale_SOURCES = ppmqscale.c
+ dvconnect_SOURCES = dvconnect.c
+-dvconnect_LDADD = $(PTHREAD_LIBS) $(POPT_LIB)
++dvconnect_LDADD = $(POPT_LIB)
+ dvavi_SOURCES = dvavi.c
+ dvavi_LDADD = ../libdv/libdv.la
+ all: all-am

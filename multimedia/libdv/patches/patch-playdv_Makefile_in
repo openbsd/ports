@@ -1,12 +1,20 @@
-$OpenBSD: patch-playdv_Makefile_in,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- playdv/Makefile.in.orig	2004-03-27 11:43:20.000000000 -0800
-+++ playdv/Makefile.in	2004-05-01 16:59:58.000000000 -0700
-@@ -171,7 +171,7 @@ bin_PROGRAMS = playdv
+$OpenBSD: patch-playdv_Makefile_in,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- playdv/Makefile.in.orig	Wed Jul 14 08:41:22 2004
++++ playdv/Makefile.in	Mon Oct  4 20:03:13 2004
+@@ -58,6 +58,7 @@ am__DEPENDENCIES_1 =
+ playdv_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) ../libdv/libdv.la $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++INCLUDES = -I$(top_srcdir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/display.Po ./$(DEPDIR)/oss.Po \
+@@ -202,7 +203,7 @@ CLEANFILES = 
+ AM_CFLAGS = $(SDL_CFLAGS) $(GTK_CFLAGS)
  noinst_HEADERS = display.h oss.h
- 
  playdv_SOURCES = playdv.c display.c display.h oss.c
 -playdv_LDADD = $(SDL_LIBS) $(GTK_LIBS) $(XV_LIB) ../libdv/libdv.la $(POPT_LIB)
 +playdv_LDADD = $(SDL_LIBS) $(GTK_LIBS) -lossaudio $(XV_LIB) ../libdv/libdv.la $(POPT_LIB)
- subdir = playdv
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ all: all-am
+ 
+ .SUFFIXES:

@@ -1,20 +1,40 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- ltmain.sh.orig	Sat Jun 26 10:40:33 2004
-+++ ltmain.sh	Sat Jun 26 10:40:54 2004
-@@ -2209,10 +2209,6 @@ EOF
- 	link_static=no # Whether the deplib will be linked statically
- 	if test -n "$library_names" &&
- 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
--	  if test "$installed" = no; then
--	    notinst_deplibs="$notinst_deplibs $lib"
--	    need_relink=yes
--	  fi
- 	  # This is a shared library
- 	
-       # Warn about portability, can't link against -module's on some systems (darwin)
-@@ -5705,40 +5701,6 @@ relink_command=\"$relink_command\""
+$OpenBSD: patch-ltmain_sh,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- ltmain.sh.orig	Wed Jul 14 09:13:47 2004
++++ ltmain.sh	Mon Oct  4 19:04:13 2004
+@@ -2154,10 +2154,17 @@ EOF
+ 	    absdir="$libdir"
+ 	  fi
+ 	else
+-	  dir="$ladir/$objdir"
+-	  absdir="$abs_ladir/$objdir"
+-	  # Remove this search path later
+-	  notinst_path="$notinst_path $abs_ladir"
++	  if test ! -f "$ladir/$objdir/$linklib" && test -f "$abs_ladir/$linklib"; then
++	    dir="$ladir"
++	    absdir="$abs_ladir"
++	    # Remove this search path later
++	    notinst_path="$notinst_path $abs_ladir"
++	  else
++	    dir="$ladir/$objdir"
++	    absdir="$abs_ladir/$objdir"
++	    # Remove this search path later
++	    notinst_path="$notinst_path $abs_ladir"
++	  fi
+ 	fi # $installed = yes
+ 	name=`$echo "X$laname" | $Xsed -e 's/\.la$//' -e 's/^lib//'`
+ 
+@@ -2471,7 +2478,7 @@ EOF
+ 	    add_dir=
+ 	    add=
+ 	    # Finalize command for both is simple: just hardcode it.
+-	    if test "$hardcode_direct" = yes; then
++	    if test "$hardcode_direct" = yes && test -f $libdir/$linklib; then
+ 	      add="$libdir/$linklib"
+ 	    elif test "$hardcode_minus_L" = yes; then
+ 	      add_dir="-L$libdir"
+@@ -5827,40 +5834,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = : && exit $EXIT_SUCCESS
  
 -    $echo "----------------------------------------------------------------------"
 -    $echo "Libraries have been installed in:"
@@ -50,6 +70,6 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
 -    $echo "----------------------------------------------------------------------"
-     exit 0
+     exit $EXIT_SUCCESS
      ;;
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-libdv_dv_c,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- libdv/dv.c.orig	2004-03-15 12:22:20.000000000 -0800
-+++ libdv/dv.c	2004-05-02 17:04:41.000000000 -0700
+$OpenBSD: patch-libdv_dv_c,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- libdv/dv.c.orig	Tue Jul  6 17:44:22 2004
++++ libdv/dv.c	Mon Oct  4 19:33:31 2004
 @@ -67,8 +67,12 @@
  #define DV_MB420_YUV_MMX(a,b,c,d,e) dv_mb420_YUY2_mmx(a,b,c,d,e)
  #endif 
@@ -13,4 +13,31 @@ $OpenBSD: patch-libdv_dv_c,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
 +#endif
  
  int dv_use_mmx;
- pthread_mutex_t dv_mutex = PTHREAD_MUTEX_INITIALIZER;
+ 
+@@ -791,7 +795,7 @@ dv_get_timestamp (dv_decoder_t *dv, char
+     int  id;
+ 
+   if ((id = dv -> ssyb_pack [0x13]) != 0xff) {
+-    sprintf (tstptr,
++    snprintf (tstptr, 128,
+              "%02d:%02d:%02d.%02d",
+              ((dv -> ssyb_data [id] [3] >> 4) & 0x03) * 10 +
+               (dv -> ssyb_data [id] [3] & 0x0f),
+@@ -846,7 +850,7 @@ dv_get_recording_datetime (dv_decoder_t 
+     year = dv -> ssyb_data [id1] [3];
+     year = (year & 0x0f) + 10 * ((year >> 4) & 0x0f);
+     year += (year < 25) ? 2000 : 1900;
+-    sprintf (dtptr,
++    snprintf (dtptr, 128,
+              "%04d-%02d-%02d %02d:%02d:%02d",
+              year,
+              ((dv -> ssyb_data [id1] [2] >> 4) & 0x01) * 10 +
+@@ -868,7 +872,7 @@ dv_get_recording_datetime (dv_decoder_t 
+     year = dv -> vaux_data [id1] [3];
+     year = (year & 0x0f) + 10 * ((year >> 4) & 0x0f);
+     year += (year < 25) ? 2000 : 1900;
+-    sprintf (dtptr,
++    snprintf (dtptr, 128,
+              "%04d-%02d-%02d %02d:%02d:%02d",
+              year,
+              ((dv -> vaux_data [id1] [2] >> 4) & 0x01) * 10 +

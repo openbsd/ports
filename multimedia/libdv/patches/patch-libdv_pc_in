@@ -1,0 +1,10 @@
+$OpenBSD: patch-libdv_pc_in,v 1.1 2004/10/13 01:44:20 jolan Exp $
+--- libdv.pc.in.orig	Mon Oct  4 20:37:07 2004
++++ libdv.pc.in	Mon Oct  4 20:37:32 2004
+@@ -7,5 +7,5 @@ Name: libdv 
+ Description: DV software codec
+ Requires: 
+ Version: @VERSION@
+-Libs: -L${libdir} -ldv @REQUIRES_NOPKGCONFIG@
++Libs: -L${libdir} -ldv -pthread @REQUIRES_NOPKGCONFIG@
+ Cflags: -I${includedir}

@@ -1,22 +1,8 @@
-$OpenBSD: patch-libdv_dv_types_h,v 1.1.1.1 2004/06/26 18:00:27 sturm Exp $
---- libdv/dv_types.h.orig	2002-12-31 15:03:40.000000000 -0800
-+++ libdv/dv_types.h	2004-05-02 13:12:28.000000000 -0700
-@@ -35,16 +35,23 @@
- #endif // HAVE_LIBPOPT
- 
- #include <stdlib.h>
-+#if HAVE_STDINT_H
- #include <stdint.h>
-+#endif
- #include <stdio.h>
- #include <time.h>
-+#if !defined(__OpenBSD__)
- #if HAVE_ENDIAN_H
- #include <endian.h>
- #elif HAVE_MACHINE_ENDIAN_H
- #include <machine/endian.h>
+$OpenBSD: patch-libdv_dv_types_h,v 1.2 2004/10/13 01:44:20 jolan Exp $
+--- libdv/dv_types.h.orig	Tue Jul 13 18:56:44 2004
++++ libdv/dv_types.h	Mon Oct  4 19:49:02 2004
+@@ -45,6 +45,9 @@
  #endif
-+#endif  /* OpenBSD */
  
  /* please tell me these are defined somewhere standard??? */
 +#if defined(__OpenBSD__)  /* HAVE_SYS_PARAM_H */
