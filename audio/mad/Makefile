@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/23 06:33:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/08 04:57:25 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
@@ -40,5 +40,9 @@ CONFIGURE_ARGS+= --enable-sso \
 		 --enable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 .include <bsd.port.mk>
