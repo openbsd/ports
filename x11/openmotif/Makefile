@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/01/21 18:36:56 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/01/21 20:06:29 brad Exp $
 
 VERSION=	2.1.30
 DISTNAME=	motif
@@ -35,7 +35,7 @@ PKGNAME:=	openmotif${SUBPACKAGE}-${VERSION}.${PATCHLEVEL}
 LIB_DEPENDS=	Xm.2::x11/openmotif
 .endif
 
-USE_X11=	yes
+USE_X11=	Yes
 
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
