@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.244 2000/04/01 14:57:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.245 2000/04/01 15:49:06 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -705,19 +705,20 @@ SED_PLIST?=
 SED_PLIST+=-e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared' -e '//d'
 SED_PLIST+=-e 's/@ARCH@/${ARCH}/'
 
+FLAVOR?=
+
 _FEXT:=
 .if defined(FLAVORS)
-.if defined(FLAVOR)
-.  for _i in ${FLAVOR:L}
-.    if empty(FLAVORS:L:M${_i})
+.  if defined(FLAVOR)
+.    for _i in ${FLAVOR:L}
+.      if empty(FLAVORS:L:M${_i})
 .BEGIN:
 	@echo >&2 "Unknown flavor: ${_i}"
 	@echo >&2 "Possible flavors are: ${FLAVORS}"
 	@exit 1
-.    endif
-.  endfor
-.endif
-FLAVOR?=
+.      endif
+.    endfor
+.  endif
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
 SED_PLIST+=-e '/%%${_i}%%/d'
