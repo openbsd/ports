@@ -1,13 +1,12 @@
---- DEFAULTS/Defaults.openbsd-	Wed Dec 17 10:58:30 1997
-+++ DEFAULTS/Defaults.openbsd	Wed Dec 17 10:58:56 1997
-@@ -19,15 +19,15 @@
+$OpenBSD: patch-DEFAULTS_Defaults_openbsd,v 1.1 2001/09/26 18:21:53 brad Exp $
+--- DEFAULTS/Defaults.openbsd.orig	Mon Mar 13 07:38:06 2000
++++ DEFAULTS/Defaults.openbsd	Wed Sep 26 11:40:08 2001
+@@ -19,15 +19,13 @@ DEFCCOM=	cc
  CWARNOPTS=
  
  DEFINCDIRS=	$(SRCROOT)/include
 -LDPATH=		-L/opt/schily/lib
 -#RUNPATH=	-R $(INS_BASE)/lib -R /opt/schily/lib -R $(OLIBSDIR)	Will probably not work
-+LDPATH=		-L/usr/local/lib
-+#RUNPATH=	-R $(INS_BASE)/lib -R /usr/local/lib -R $(OLIBSDIR)	Will probably not work
  
  ###########################################################################
  #
@@ -15,7 +14,7 @@
  #
  ###########################################################################
 -INS_BASE=	/opt/schily
-+INS_BASE=	/usr/local
++INS_BASE?=	/usr/local
  INS_KBASE=	/
  #
  DEFUMASK=	002
