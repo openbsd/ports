@@ -1,51 +1,98 @@
---- pftop.c.orig	Tue Sep 10 12:58:15 2002
-+++ pftop.c	Wed Jan  1 23:21:59 2003
-@@ -1439,8 +1439,8 @@ tb_print_fromto(struct pf_rule_addr *src
+--- pftop.c.orig	Thu Jan  9 23:01:15 2003
++++ pftop.c	Thu Jan  9 23:01:20 2003
+@@ -1382,10 +1382,10 @@
+ void
+ tb_print_addrw(struct pf_addr_wrap *addr, struct pf_addr *mask, u_int8_t af)
+ {
+-	if (addr->addr_dyn != NULL)
+-		tbprintf("(%s)", addr->addr.pfa.ifname);
++	if (addr->type == PF_ADDR_DYNIFTL)
++		tbprintf("(%s)", addr->v.ifname);
+ 	else
+-		tb_print_addr(&addr->addr, mask, af);
++		tb_print_addr(&addr->v.a.addr, mask, af);
+ }
+ #endif
+ 
+@@ -1433,39 +1433,40 @@
+ {
+ 	if (
+ #if OS_LEVEL > 31
+-	    PF_AZERO(&src->addr.addr, AF_INET6) &&
+-	    PF_AZERO(&dst->addr.addr, AF_INET6) &&
+-	    !src->noroute && !dst->noroute &&
++	    src->addr.type != PF_ADDR_NOROUTE &&
++	    dst->addr.type != PF_ADDR_NOROUTE &&
++	    PF_AZERO(&src->addr.v.a.addr, AF_INET6) &&
++	    PF_AZERO(&dst->addr.v.a.addr, AF_INET6) &&
+ #else
  	    PF_AZERO(&src->addr, AF_INET6) &&
  	    PF_AZERO(&dst->addr, AF_INET6) &&
  #endif
 -	    PF_AZERO(&src->mask, AF_INET6) &&
 -	    PF_AZERO(&dst->mask, AF_INET6) &&
-+	    PF_AZERO(&src->addr.mask, AF_INET6) &&
-+	    PF_AZERO(&dst->addr.mask, AF_INET6) &&
++	    PF_AZERO(&src->addr.v.a.mask, AF_INET6) &&
++	    PF_AZERO(&dst->addr.v.a.mask, AF_INET6) &&
  	    !src->port_op && !dst->port_op)
  		tbprintf("all ");
  	else {
-@@ -1456,15 +1456,15 @@ tb_print_fromto(struct pf_rule_addr *src
+ 		tbprintf("from ");
+ #if OS_LEVEL > 30
+-		if (src->noroute)
++		if (src->addr.type == PF_ADDR_NOROUTE)
+ 			tbprintf("no-route ");
+  #if OS_LEVEL > 31
+-		else if (PF_AZERO(&src->addr.addr, AF_INET6) &&
++		else if (PF_AZERO(&src->addr.v.a.addr, AF_INET6) &&
+  #else
+ 		else if (PF_AZERO(&src->addr, AF_INET6) &&
+  #endif
  #else
  		if (PF_AZERO(&src->addr, AF_INET6) &&
  #endif
 -		    PF_AZERO(&src->mask, AF_INET6))
-+		    PF_AZERO(&src->addr.mask, AF_INET6))
++		    PF_AZERO(&src->addr.v.a.mask, AF_INET6))
  			tbprintf("any ");
  		else {
  			if (src->not)
  				tbprintf("! ");
  #if OS_LEVEL > 31
 -			tb_print_addrw(&src->addr, &src->mask, af);
-+			tb_print_addrw(&src->addr, &src->addr.mask, af);
++			tb_print_addrw(&src->addr, &src->addr.v.a.mask, af);
  #else
 -			tb_print_addr(&src->addr, &src->mask, af);
-+			tb_print_addr(&src->addr, &src->addr.mask, af);
++			tb_print_addr(&src->addr, &src->addr.v.a.mask, af);
  #endif
  			tbprintf(" ");
  		}
-@@ -1485,15 +1485,15 @@ tb_print_fromto(struct pf_rule_addr *src
+@@ -1476,25 +1477,25 @@
+ 
+ 		tbprintf("to ");
+ #if OS_LEVEL > 30
+-		if (dst->noroute)
++		if (dst->addr.type == PF_ADDR_NOROUTE)
+ 			tbprintf("no-route ");
+  #if OS_LEVEL > 31
+-		else if (PF_AZERO(&dst->addr.addr, AF_INET6) &&
++		else if (PF_AZERO(&dst->addr.v.a.addr, AF_INET6) &&
+  #else
+ 		else if (PF_AZERO(&dst->addr, AF_INET6) &&
+  #endif
  #else
  		if (PF_AZERO(&dst->addr, AF_INET6) &&
  #endif
 -		    PF_AZERO(&dst->mask, AF_INET6))
-+		    PF_AZERO(&dst->addr.mask, AF_INET6))
++		    PF_AZERO(&dst->addr.v.a.mask, AF_INET6))
  			tbprintf("any ");
  		else {
  			if (dst->not)
  				tbprintf("! ");
  #if OS_LEVEL > 31
 -			tb_print_addrw(&dst->addr, &dst->mask, af);
-+			tb_print_addrw(&dst->addr, &dst->addr.mask, af);
++			tb_print_addrw(&dst->addr, &dst->addr.v.a.mask, af);
  #else
 -			tb_print_addr(&dst->addr, &dst->mask, af);
-+			tb_print_addr(&dst->addr, &dst->addr.mask, af);
++			tb_print_addr(&dst->addr, &dst->addr.v.a.mask, af);
  #endif
  			tbprintf(" ");
  		}
