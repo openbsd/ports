@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/23 14:44:41 danh Exp $
+# $OpenBSD: Makefile,v 1.7 2003/12/16 17:57:10 naddy Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=		bonobo,bonobox::x11/gnome/bonobo \
 			gnomevfs.::x11/gnome/vfs \
-			glade-gnome.4,glade.4::devel/libglade \
+			glade-gnome.4,glade.4::devel/libglade,gnome \
 			gnomeprint.::x11/gnome/print 
 
 USE_X11=		Yes
