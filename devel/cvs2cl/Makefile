@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/04 07:43:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/03 07:20:43 sturm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 COMMENT=	"generate GNU-style ChangeLogs from CVS repositories"
@@ -20,6 +20,7 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 WRKDIST=	${WRKDIR}/cvs2cl
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cvs2cl.pl ${PREFIX}/bin/cvs2cl

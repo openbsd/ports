@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/03 07:20:43 sturm Exp $
 
 COMMENT=	"scheme r5 library"
 
@@ -17,6 +17,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}/slib
 
+# BSD-like without modify
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -24,6 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/slib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/04 23:35:25 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.6 2004/02/03 07:20:43 sturm Exp $ 
 
 COMMENT=	"web-based CVS viewer module for Horde"
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_HORDE:=chora/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 EXTRACT_ONLY=
 
 PREFIX=		/var/www

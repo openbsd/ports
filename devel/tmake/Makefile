@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/02/02 16:34:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/03 07:20:42 sturm Exp $
 
 COMMENT=	"Cross-platform makefile tool from TrollTech"
 
@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 MODULES=	qt3
 MODQT_MT=	Yes
