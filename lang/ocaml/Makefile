@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/07 17:47:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/20 06:22:06 angelos Exp $
 
-DISTNAME=	ocaml-2.04
+DISTNAME=	ocaml-3.00
 CATEGORIES=	lang
 NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/
