@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 1999/08/24 07:08:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 1999/09/06 03:03:11 fgsch Exp $
 
-DISTNAME	=	blackbox-0.51.1
+DISTNAME	=	blackbox-0.51.2
 CATEGORIES	=	x11
 
 MAINTAINER	=	rohee@OpenBSD.ORG
 
-MASTER_SITES	=	ftp://balance.wiw.org/pub/blackbox/
+MASTER_SITES	=	ftp://portal.alug.org/pub/blackbox/0.5x.x/
 
 USE_X11		=	yes
 GNU_CONFIGURE	=	yes
