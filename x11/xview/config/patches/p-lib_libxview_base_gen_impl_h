@@ -1,0 +1,9 @@
+$OpenBSD: p-lib_libxview_base_gen_impl_h,v 1.1 2003/12/30 02:00:39 espie Exp $
+--- lib/libxview/base/gen_impl.h.orig	2003-12-30 02:52:10.000000000 +0100
++++ lib/libxview/base/gen_impl.h	2003-12-30 02:52:25.000000000 +0100
+@@ -39,4 +39,4 @@ typedef	struct	{
+     char		*instance_name;
+ } Generic_info;
+ 
+-#endif _gen_impl_h_already_included
++#endif /* _gen_impl_h_already_included */
