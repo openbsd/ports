@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/09 02:27:17 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/31 07:26:23 turan Exp $
+
+BROKEN=		bad packing lists, man/man1/bricons.1
 
 DISTNAME=	bricons
 PKGNAME=	bricons-3.0
