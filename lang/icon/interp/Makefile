@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2001/04/08 16:41:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/03 13:13:02 espie Exp $
 
 COMMENT=	"programming language with generators, X11 and more"
 COMMENT-no_x11=	"programming language with generators"
 COMMENT-compiler="icon compiler"
-VERSION=	9.3.2
-DISTNAME=	icon-interp-${VERSION}
+VERSION=	9.4
+DISTNAME=	icon.v940src
+PKGNAME=	icon-interp-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.387
-MASTER_SITES=	ftp://ftp.cs.arizona.edu:/icon/packages/unix/
-DIST_SUBDIR=	icon/${VERSION}
-DISTFILES=	unix.tgz
+MASTER_SITES= http://www.cs.arizona.edu/icon/ftp/packages/unix/
+#DIST_SUBDIR=	icon/${VERSION}
+DISTFILES=	icon.v940src.tgz
 
 MULTI_PACKAGES=	-compiler
 
@@ -25,7 +26,7 @@ HOMEPAGE=	http://www.cs.arizona.edu/icon/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-WRKDIST=	${WRKDIR}
+#WRKDIST=	${WRKDIR}
 
 FLAVORS=	no_x11
 FLAVOR?=	
@@ -33,7 +34,7 @@ FLAVOR?=
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
-ALL_TARGET=	Icon-icont Icon-iconc
+ALL_TARGET=	Icont Iconc
 
 LIBDIR=${TRUEPREFIX}/lib/icon
 
@@ -43,18 +44,13 @@ CONFIGURE_TARGET=Configure
 CONFIGURE_TARGET=X-Configure
 .endif
 
-pre-configure:
-	cp -R ${FILESDIR}/openbsd ${WRKSRC}/config/unix
-	if [ -f ${CONF_DIR}/${ARCH}_rswitch.c ] ; then \
-		ln -f ${CONF_DIR}/${ARCH}_rswitch.c ${CONF_DIR}/rswitch.c ;\
-	else \
-		touch ${CONF_DIR}/rswitch.c ;\
-		echo "#define NoCoexpr" \
-		    >>${WRKSRC}/config/unix/openbsd/define.h;\
-	fi 
-
 do-configure:
-	cd ${WRKSRC} && make ${CONFIGURE_TARGET} name=openbsd
+	cd ${WRKSRC} && ${MAKE} ${CONFIGURE_TARGET} name=openbsd
+
+post-build:
+	if [ x${NO_SHARED_LIBS:L} != "yes" ]; then \
+	    cd ${WRKSRC}/ipl/cfuncs && ${MAKE} ICONT=${WRKBUILD}/bin/icont; \
+	fi
 
 # We put a wrapper around icont for finding the library files when
 # they're installed
@@ -70,7 +66,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconc ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/rtt ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/icont ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/icon.1 ${PREFIX}/man/man1/icont.1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${PREFIX}/man/man1/icont.1
 	cd ${PREFIX}/man/man1 && ln -f icont.1 iconx.1
 	cd ${PREFIX}/man/man1 && ln -f icont.1 iconc.1
 	# Yes, this is only used by generated code !
@@ -82,5 +78,10 @@ do-install:
 	    ${WRKSRC}/bin/patchstr ${WRKINST}${LIBDIR}/icont ${TRUEPREFIX}/bin/iconx
 	cd ${PREFIX}/bin && \
 	    ${WRKSRC}/bin/patchstr ${PREFIX}/bin/iconc ${LIBDIR}/
+	if [ x${NO_SHARED_LIBS:L} != "yes" ]; then \
+	    ${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/ucode; \
+	    ${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/cfunc.u?  ${PREFIX}/share/ipl/ucode; \
+	    ${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/libcfunc.so ${PREFIX}/lib; \
+	fi
 
 .include <bsd.port.mk>
