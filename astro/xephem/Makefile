@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/19 02:20:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/05/29 06:49:56 kevlo Exp $
 
 DISTNAME=	xephem-3.2.2
 CATEGORIES=	astro
@@ -62,5 +62,7 @@ do-install:
 	       ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/tools; \
 	     fi; \
 	   done
+	${INSTALL_PROGRAM} ${WRKSRC}/GUI/xephem/xephem ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/GUI/xephem/xephem.0 ${PREFIX}/man/cat1
 
 .include <bsd.port.mk>

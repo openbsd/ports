@@ -1,3 +1,4 @@
+bin/xephem
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/auxil/README
 lib/X11/xephem/auxil/mars_db
@@ -39,7 +40,6 @@ lib/X11/xephem/tools/xephemdbd/xephemdbd.html
 lib/X11/xephem/tools/xephemdbd/xephemdbd.pl
 lib/X11/xephem/tools/jost2edb.awk
 lib/X11/xephem/tools/tle2edb.pl
-bin/xephem
 man/cat1/xephem.0
 @dirrm lib/X11/xephem/tools/xephemdbd
 @dirrm lib/X11/xephem/tools/gsc
