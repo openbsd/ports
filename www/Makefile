@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2000/04/11 20:23:14 rohee Exp $
+# $OpenBSD: Makefile,v 1.23 2000/04/17 23:52:58 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
 #    SUBDIR += Mosaic         # requires Motif
      SUBDIR += amaya          # requires Motif (lesstif works)
      SUBDIR += analog
-#    SUBDIR += apache-current
-#    SUBDIR += apache-php
-#    SUBDIR += apache-ssl
 #    SUBDIR += arena
 #    SUBDIR += ashe           # requires Motif
 #    SUBDIR += aswedit
@@ -15,7 +12,6 @@
      SUBDIR += cgiparse
 #    SUBDIR += chimera
 #    SUBDIR += comline
-     SUBDIR += communicator
      SUBDIR += decss
 #    SUBDIR += fxhtml
 #    SUBDIR += gn
@@ -27,16 +23,12 @@
 #    SUBDIR += libwww
 #    SUBDIR += linemode
      SUBDIR += links
-#    SUBDIR += linux-netscape4
 #    SUBDIR += mapedit
 #    SUBDIR += mhonarc
 #    SUBDIR += mmm
 #    SUBDIR += momspider
      SUBDIR += mozilla
-#    SUBDIR += netscape3
-#    SUBDIR += netscape4-communicator
-#    SUBDIR += netscape4-navigator
-     SUBDIR += navigator
+     SUBDIR += netscape
 #    SUBDIR += p5-Apache
 #    SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
@@ -48,8 +40,6 @@
 #    SUBDIR += p5-libwww
      SUBDIR += php3
      SUBDIR += squid
-#    SUBDIR += squid11
-#    SUBDIR += squid11-novm
      SUBDIR += transproxy
 #    SUBDIR += vrweb
 #    SUBDIR += w3
