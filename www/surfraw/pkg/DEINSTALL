@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/08/21 15:09:32 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/09/28 17:00:11 naddy Exp $
 #
 # De-installation setup of surfraw
 
@@ -38,7 +38,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -f ${CONFIG_FILE} ]; then
+	if [ "$PKG_DELETE_EXTRA" != Yes -a -f ${CONFIG_FILE} ]; then
 	    do_notice "$1"
 	fi
 	;;

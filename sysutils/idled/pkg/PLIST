@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/06/14 03:18:30 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/28 17:00:11 naddy Exp $
 libexec/idled
 man/man5/idled.cf.5
 man/man8/idled.8
 share/examples/idled/idled.cf.template
 @dirrm share/examples/idled
+@cwd ${SYSCONFDIR}
+@extra idled.cf

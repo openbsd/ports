@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/05/11 22:31:24 matt Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/28 17:00:11 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/enscript.info
 bin/diffpp
 bin/enscript
@@ -164,3 +164,5 @@ share/locale/sl/LC_MESSAGES/enscript.mo
 @dirrm share/enscript/afm
 @dirrm share/enscript
 @exec install-info --info-dir=%D/info %D/info/enscript.info
+@cwd ${SYSCONFDIR}
+@extra enscript.cfg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/01 09:52:16 form Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/09/28 17:00:11 naddy Exp $
 man/man5/ipfm.conf.5
 man/man8/ipfm.8
 sbin/ipfm
@@ -8,3 +8,6 @@ share/doc/ipfm/TODO
 share/examples/ipfm/ipfm.conf.sample
 @dirrm share/examples/ipfm
 @dirrm share/doc/ipfm
+@cwd ${SYSCONFDIR}
+@extra ipfm.conf
+@extraunexec rm -rf /var/log/ipfm

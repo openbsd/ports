@@ -1,4 +1,4 @@
-# $OpenBSD: DEINSTALL,v 1.1 2001/06/14 03:18:29 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/09/28 17:00:11 naddy Exp $
 #
 # idled de-installation
 
@@ -7,7 +7,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/idled.cf
 
-if [ -f $CONFIG_FILE ]; then
+if [ "$PKG_DELETE_EXTRA" != Yes -a -f $CONFIG_FILE ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"

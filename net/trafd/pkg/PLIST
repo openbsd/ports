@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/15 05:17:41 form Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/09/28 17:00:11 naddy Exp $
 sbin/trafd
 sbin/trafdump
 sbin/traflog
@@ -10,3 +10,8 @@ share/doc/trafd/README
 share/doc/trafd/traflog.format.sample
 share/doc/trafd/trafstart
 @dirrm share/doc/trafd
+@cwd ${SYSCONFDIR}
+@extra traflog.format
+@cwd /var/log
+@extra traffic.log
+@extraunexec rm -rf /var/trafd
