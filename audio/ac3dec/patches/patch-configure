@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure,v 1.2 2002/04/09 19:50:14 naddy Exp $
---- configure.orig	Thu Mar 30 02:51:49 2000
-+++ configure	Tue Apr  9 21:35:14 2002
-@@ -1273,7 +1273,11 @@ sparc-*) cat >> confdefs.h <<\EOF
+$OpenBSD: patch-configure,v 1.3 2003/06/22 18:34:38 pvalchev Exp $
+--- configure.orig	Wed Mar 29 17:51:49 2000
++++ configure	Fri Jun 13 00:50:14 2003
+@@ -528,7 +528,7 @@ fi
+ 
+ 
+ ac_aux_dir=
+-for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
++for ac_dir in ${GNUSYSTEM_AUX_DIR} $srcdir $srcdir/.. $srcdir/../..; do
+   if test -f $ac_dir/install-sh; then
+     ac_aux_dir=$ac_dir
+     ac_install_sh="$ac_aux_dir/install-sh -c"
+@@ -1273,8 +1273,16 @@ sparc-*) cat >> confdefs.h <<\EOF
  #define __sparc__ 1
  EOF
  ;;
@@ -12,5 +21,10 @@ $OpenBSD: patch-configure,v 1.2 2002/04/09 19:50:14 naddy Exp $
 +;;
 +ppc-*|powerpc-*) cat >> confdefs.h <<\EOF
  #define __ppc__ 1
++EOF
++;;
++vax-*) cat >> confdefs.h <<\EOF
++#define __vax__ 1
  EOF
  ;;
+ *) echo "$host is not currently supported by ac3dec"; exit 1;;
