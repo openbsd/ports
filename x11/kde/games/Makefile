@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	stable/1.1.2/distribution/tar/generic/source/bz2
 
 LIB_DEPENDS=		kdecore.1.::x11/kde/libs \
 			qt.1.45::x11/qt	\
-			jpeg.62::graphics/jpeg \
-			gif.4.1::graphics/giflib \
 			QwSpriteField.6.::x11/kde/support
 
 FAKE=			Yes
