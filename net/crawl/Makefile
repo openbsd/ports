@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/09/25 06:25:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.15 2003/12/08 17:42:34 sturm Exp $
 
 COMMENT=		"small and efficient HTTP crawler"
 
@@ -15,12 +15,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.monkey.org/~provos/
 
-LIB_DEPENDS=		db::databases/db
+LIB_DEPENDS=		db.3::databases/db/v3
 
 DESTDIRNAME=		install_prefix
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I/usr/local/include/db"
 
 WRKDIST=		${WRKDIR}/crawl
 

@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/06/07 03:57:05 pvalchev Exp $
---- configure.in.orig	Tue May 28 16:18:35 2002
-+++ configure.in	Tue May 28 16:18:44 2002
+$OpenBSD: patch-configure_in,v 1.2 2003/12/08 17:42:34 sturm Exp $
+--- configure.in.orig	2000-12-03 06:16:50.000000000 +0100
++++ configure.in	2003-12-03 23:11:27.000000000 +0100
+@@ -109,13 +109,13 @@ AC_ARG_WITH(db,
+ 	AC_DEFINE(HAVE_DB_185_H)
+ 	DBINC="-I$withval/dist"
+ 	DBLIB="-L$withval/dist -ldb"
+-     elif test -f $withval/include/db_185.h -a \
+-	       -f $withval/lib/libdb.a; then
++     elif test -f $withval/include/db/db_185.h -a \
++	       -f $withval/lib/db/libdb.a; then
+ 	owd=`pwd`
+ 	if cd $withval; then withval=`pwd`; cd $owd; fi
+ 	AC_DEFINE(HAVE_DB_185_H)
+-	DBINC="-I$withval/include"
+-	DBLIB="-L$withval/lib -ldb"
++	DBINC="-I$withval/include/db"
++	DBLIB="-L$withval/lib/db -ldb"
+      else
+         AC_ERROR(db_185.h or libdb.a not found in $withval or not configured with --enable-compat185)
+      fi
 @@ -307,7 +307,7 @@ AC_ARG_WITH(openssl,
  	owd=`pwd`
  	if cd $withval; then withval=`pwd`; cd $owd; fi
