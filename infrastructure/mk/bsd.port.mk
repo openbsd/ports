@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.360 2001/03/16 14:54:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.361 2001/03/16 14:56:41 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -541,13 +541,20 @@ PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.noshared
 PLIST?=		${PKGDIR}/PLIST${SUBPACKAGE}
 
 # Likewise for DESCR/MESSAGE/COMMENT
-.if !defined(COMMENT)
+.if defined(COMMENT${SUBPACKAGE}${_FEXT})
+_COMMENT=echo ${COMMENT${SUBPACKAGE}${_FEXT}:S/^-//}
+.elif defined(COMMENT${SUBPACKAGE})
+_COMMENT=echo ${COMMENT${SUBPACKAGE}:S/^-//}
+.else
 .  if exists(${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT})
-COMMENT=${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT}
+_COMMENT=cat ${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT}
 .  else
-COMMENT=	${PKGDIR}/COMMENT${SUBPACKAGE}
+_COMMENT=cat ${PKGDIR}/COMMENT${SUBPACKAGE}
 .  endif
 .endif
+
+${WRKPKG}/COMMENT${SUBPACKAGE}:
+	@${_COMMENT} >$@
 
 .if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
 MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
@@ -590,10 +597,10 @@ PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
 # Fill out package command, and package dependencies
-_PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${COMMENT}
+_PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
 # Note that if you override PKG_ARGS, you will not get correct dependencies
 .if !defined(PKG_ARGS)
-PKG_ARGS= -v -c '${COMMENT}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
+PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
 PKG_ARGS+=-P "`cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
@@ -2007,14 +2014,7 @@ describe:
 .  else
 	@echo -n "${PREFIX}|"
 .  endif
-	@case '${COMMENT}' in \
-		-*) echo -n '${COMMENT:S/^-//}|';; \
-		*)if [ -f '${COMMENT}' ]; then \
-			echo -n "`cat ${COMMENT}`|"; \
-		else \
-			echo -n "** No Description|"; \
-		fi;; \
-	esac; \
+	@echo -n "`${_COMMENT}`|"; \
 	if [ -f ${DESCR} ]; then \
 		echo -n "${DESCR:S,^${PORTSDIR}/,,}|"; \
 	else \
