@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2000/01/17 05:05:15 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/14 22:38:19 brad Exp $
 
-DISTNAME=	curl-6.4
+DISTNAME=	curl-6.5
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 		http://www.fts.frontec.se/~dast/stuff/ \
@@ -8,9 +8,18 @@ MASTER_SITES=	http://curl.haxx.nu/stuff/ \
 		ftp://ftp.win.or.jp/pub/network/www/misc/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 
+NEED_VERSION=	1.213
+
 MAINTAINER=	markus@openbsd.org
 
-GNU_CONFIGURE=	yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+FAKE=	Yes
+
+GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I/usr/include/ssl"
 
 MAKEFILES=	Makefile src/Makefile
