@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/08/07 15:13:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/09 19:23:54 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-danish=		"aspell dictionary for Danish"
@@ -25,8 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aspell
-
-LIB_DEPENDS=		pspell-modules.1::textproc/pspell
 
 # francais dictionary
 FRENCH_DIST=		aspell-dict-francais-0.05
@@ -60,6 +58,14 @@ MULTI_PACKAGES=		-french -swedish -dutch -danish
 PKGNAME$i=      	aspell$i-${V}${SV}
 .endfor
 
+SUBPACKAGE?=
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=		::textproc/aspell
+.else
+LIB_DEPENDS=		pspell-modules.1::textproc/pspell
+.endif
+
 post-patch:
 	@patch -s -d ${WRKDIR}/${FRENCH_DIST} \
 		< ${FILESDIR}/patch-francais-Makefile
@@ -67,34 +73,34 @@ post-patch:
 post-build:
 # francais
 	@echo "==> French dictionary"
-	@(cd ${WRKDIR}/${FRENCH_DIST}; ${MAKE_PROGRAM} WRKSRC=$(WRKSRC))
+	@cd ${WRKDIR}/${FRENCH_DIST}; ${MAKE_PROGRAM} WRKSRC=$(WRKSRC)
 # swedish
 	@echo "==> Swedish dictionary"
 	@cp ${FILESDIR}/swedish-Makefile ${WRKDIR}/${SWEDISH_DIST}/Makefile
-	@(cd ${WRKDIR}/${SWEDISH_DIST}; ${MAKE_PROGRAM} WRKSRC=$(WRKSRC))
+	@cd ${WRKDIR}/${SWEDISH_DIST}; ${MAKE_PROGRAM} WRKSRC=$(WRKSRC)
 # dutch
 	@echo "==> Dutch dictionary"
 	@cp ${FILESDIR}/dutch-Makefile	\
 		${WRKDIR}/${DUTCH_DIST}/nl-aspell/Makefile
-	@(cd ${WRKDIR}/${DUTCH_DIST}/nl-aspell; \
-	  ${MAKE_PROGRAM} WRKSRC=$(WRKSRC))
+	@cd ${WRKDIR}/${DUTCH_DIST}/nl-aspell; \
+	  ${MAKE_PROGRAM} WRKSRC=$(WRKSRC)
 # danish
 	@echo "==> Danish dictionary"
 	@cp ${FILESDIR}/danish-Makefile  ${WRKDIR}/${DANISH_DIST}/Makefile
-	@(cd ${WRKDIR}/${DANISH_DIST}; ${MAKE_PROGRAM} WRKSRC=$(WRKSRC))
+	@cd ${WRKDIR}/${DANISH_DIST}; ${MAKE_PROGRAM} WRKSRC=$(WRKSRC)
 
 post-install:
 # francais
-	@(cd ${WRKDIR}/${FRENCH_DIST}; \
-	 ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install)
+	@cd ${WRKDIR}/${FRENCH_DIST}; \
+	  ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install
 # swedish
-	@(cd ${WRKDIR}/${SWEDISH_DIST}; \
-	 ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install)
+	@cd ${WRKDIR}/${SWEDISH_DIST}; \
+	  ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install
 # dutch
-	@(cd ${WRKDIR}/${DUTCH_DIST}/nl-aspell; \
-          ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install)
+	@cd ${WRKDIR}/${DUTCH_DIST}/nl-aspell; \
+          ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install
 # danish
-	@(cd ${WRKDIR}/${DANISH_DIST}; \
-	  ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install)
+	@cd ${WRKDIR}/${DANISH_DIST}; \
+	  ${MAKE_PROGRAM} WRKSRC=$(WRKSRC) install
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-french,v 1.1.1.1 2001/05/23 21:25:43 lebel Exp $
-@pkgdep aspell-*
+@comment $OpenBSD: PLIST-french,v 1.2 2002/04/09 19:23:54 lebel Exp $
 lib/aspell/francais
 lib/aspell/french
 share/aspell/francais.dat
