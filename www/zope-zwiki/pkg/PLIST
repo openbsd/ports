@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/08/28 17:14:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/10/11 15:27:00 naddy Exp $
 lib/zope/lib/python/Products/ZWiki/CHANGES.txt
 lib/zope/lib/python/Products/ZWiki/CMF.py
 lib/zope/lib/python/Products/ZWiki/CMF.pyc
@@ -6,7 +6,6 @@ lib/zope/lib/python/Products/ZWiki/CMFInit.py
 lib/zope/lib/python/Products/ZWiki/CMFInit.pyc
 lib/zope/lib/python/Products/ZWiki/CatalogAwareness.py
 lib/zope/lib/python/Products/ZWiki/CatalogAwareness.pyc
-lib/zope/lib/python/Products/ZWiki/ChangeLog
 lib/zope/lib/python/Products/ZWiki/Defaults.py
 lib/zope/lib/python/Products/ZWiki/Defaults.pyc
 lib/zope/lib/python/Products/ZWiki/Diff.py
@@ -89,11 +88,17 @@ lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/backlinks.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/contentspage.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/diffform.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/editform.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/no_dtml.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/recentchanges.dtml
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/searchwiki.dtml
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/subscribeform.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/uploaded.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/useroptions.dtml
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wiki_icon.gif
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikifolder_edit.py
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikifolder_edit.pyc
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikifolder_edit_form.pt
+lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikinav_portlet.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_footer.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_header.pt
 lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone/wikipage_icon.gif
@@ -102,20 +107,18 @@ lib/zope/lib/python/Products/ZWiki/tests/__init__.py
 lib/zope/lib/python/Products/ZWiki/tests/__init__.pyc
 lib/zope/lib/python/Products/ZWiki/tests/support.py
 lib/zope/lib/python/Products/ZWiki/tests/support.pyc
-lib/zope/lib/python/Products/ZWiki/tests/testCataloging.py
-lib/zope/lib/python/Products/ZWiki/tests/testCataloging.pyc
-lib/zope/lib/python/Products/ZWiki/tests/testMailin.py
-lib/zope/lib/python/Products/ZWiki/tests/testMailin.pyc
-lib/zope/lib/python/Products/ZWiki/tests/testMailout.py
-lib/zope/lib/python/Products/ZWiki/tests/testMailout.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testCatalogAwareness.py
+lib/zope/lib/python/Products/ZWiki/tests/testCatalogAwareness.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testMail.py
+lib/zope/lib/python/Products/ZWiki/tests/testMail.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.py
 lib/zope/lib/python/Products/ZWiki/tests/testPurpleNumbers.pyc
-lib/zope/lib/python/Products/ZWiki/tests/testRendering.py
-lib/zope/lib/python/Products/ZWiki/tests/testRendering.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiPage.py
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiPage.pyc
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiWeb.py
 lib/zope/lib/python/Products/ZWiki/tests/testZWikiWeb.pyc
+lib/zope/lib/python/Products/ZWiki/tests/testmailin.py
+lib/zope/lib/python/Products/ZWiki/tests/testmailin.pyc
 lib/zope/lib/python/Products/ZWiki/version.txt
 @dirrm lib/zope/lib/python/Products/ZWiki/tests
 @dirrm lib/zope/lib/python/Products/ZWiki/skins/zwiki_plone

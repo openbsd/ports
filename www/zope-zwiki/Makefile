@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/08/28 17:14:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/10/11 15:27:00 naddy Exp $
 
 COMMENT=	"Wiki engine for Zope"
 
-VERSION=	0.21.1
+VERSION=	0.22.0
 DISTNAME=	ZWiki-${VERSION}
 PKGNAME=	zope-zwiki-${VERSION}
 CATEGORIES=	www
@@ -31,7 +31,6 @@ P_SUBDIRS=	Extensions content/basic content/tracker \
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_LOC} 
-	${INSTALL_DATA} ${WRKDIST}/ChangeLog ${INSTALL_LOC} 
 	${INSTALL_DATA} ${WRKDIST}/*.py ${INSTALL_LOC} 
 	${INSTALL_DATA} ${WRKDIST}/*.pyc ${INSTALL_LOC} 
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${INSTALL_LOC} 
