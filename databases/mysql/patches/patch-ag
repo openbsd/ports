@@ -1,14 +1,5 @@
 --- configure.orig	Wed Apr 28 21:03:38 1999
-+++ configure	Tue May 11 16:47:14 1999
-@@ -1780,7 +1780,7 @@
- if test "$GXX" = "yes"
- then
-   # mysqld requires this when compiled with gcc
--  CXXFLAGS="$CXXFLAGS -fno-implicit-templates"
-+  CXXFLAGS="$CXXFLAGS -fno-inline"
- fi
- 
- # Avoid bug in fcntl on some versions of linux
++++ configure	Wed Dec  1 19:22:50 1999
 @@ -2199,30 +2199,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
  echo "configure:2201: checking "how to check if pid exists"" >&5
