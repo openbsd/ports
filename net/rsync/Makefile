@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/11/26 18:22:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/26 19:41:21 espie Exp $
 # Version required: 2.2.0
 # Date created: 3 nov 98
 # Whom: Marc Espie (espie@openbsd.org)
@@ -11,7 +11,7 @@ CATEGORIES=net
 MAINTAINER=		espie@openbsd.org
 
 # to set
-MASTER_SITES=		ftp://samba.anu.edu.au/pub/rsync/
+MASTER_SITES=		ftp://rsync.samba.org/pub/rsync/
 
 GNU_CONFIGURE=		yes
 
