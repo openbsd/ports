@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2003/05/01 17:26:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.120 2003/05/02 04:07:41 margarida Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += gnupg
+     SUBDIR += gnutls
      SUBDIR += gpa
      SUBDIR += gpgme
      SUBDIR += hlfl
@@ -55,6 +56,7 @@
      SUBDIR += nessus
      SUBDIR += nessus,no_x11
      SUBDIR += nfsshell
+     SUBDIR += opencdk
      SUBDIR += outguess
      SUBDIR += p0f
      SUBDIR += p5-Authen-Radius
