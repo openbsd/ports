@@ -1,9 +1,9 @@
---- Makefile.in.orig	Tue Mar 12 17:55:24 2002
-+++ Makefile.in	Tue Mar 12 23:13:17 2002
-@@ -233,7 +233,7 @@
+--- Makefile.in.orig	Fri Nov 22 15:37:12 2002
++++ Makefile.in	Sat Nov 30 17:13:09 2002
+@@ -257,7 +257,7 @@
  # Instll the tests program sources as examples 
  #
- BASE_DIR = @HTML_DIR@
+ BASE_DIR = $(datadir)/doc
 -DOC_MODULE = libxml2-$(VERSION)
 +DOC_MODULE = libxml2
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
