@@ -1,0 +1,5 @@
+sbin/sniffit
+man/man5/sniffit.5
+man/man8/sniffit.8
+share/doc/sniffit/README.FIRST
+@dirrm share/doc/sniffit
