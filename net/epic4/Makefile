@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2000/04/18 23:56:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/02 12:57:51 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-DISTNAME=	epic4pre2.507
-PKGNAME=	epic4-pre2.507
+DISTNAME=	epic4pre2.508
+PKGNAME=	epic4-pre2.508
 CATEGORIES=	net
 NEED_VERSION=	1.234
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
@@ -11,8 +11,15 @@ MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
 MASTER_SITES1=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
-DISTFILES=	epic4pre2.507.tar.gz epic4pre2-help.tar.gz:1
-EXTRACT_ONLY=	epic4pre2.507.tar.gz
+DISTFILES=	epic4pre2.508.tar.gz epic4pre2-help.tar.gz:1
+EXTRACT_ONLY=	epic4pre2.508.tar.gz
+
+PATCHFILES=	epic4pre2.508-patch1
+.if defined(PATCH_DEBUG) && ${PATCH_DEBUG:U} == YES
+PATCH_DIST_ARGS=-d ${WRKDIST}/source -E ${PATCH_DIST_STRIP}
+.else
+PATCH_DIST_ARGS=-d ${WRKDIST}/source --forward --quiet -E ${PATCH_DIST_STRIP}
+.endif
 
 MAINTAINER=	brad@openbsd.org
 
