@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/19 18:51:30 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/12/10 22:38:36 couderc Exp $
 bin/rox
 man/man1/ROX-Filer.1
 man/man1/rox.1
@@ -14,18 +14,18 @@ rox/ROX-Filer/Help/Manual.html
 rox/ROX-Filer/Help/README
 rox/ROX-Filer/Help/README-es
 rox/ROX-Filer/Help/TODO
-rox/ROX-Filer/Help/ld-id2842228.html
-rox/ROX-Filer/Help/ld-id2846545.html
 rox/ROX-Filer/Messages/README
 rox/ROX-Filer/Messages/da.gmo
 rox/ROX-Filer/Messages/de.gmo
+rox/ROX-Filer/Messages/es.gmo
 rox/ROX-Filer/Messages/fr.gmo
 rox/ROX-Filer/Messages/hu.gmo
 rox/ROX-Filer/Messages/it.gmo
 rox/ROX-Filer/Messages/nl.gmo
+rox/ROX-Filer/Messages/no.gmo
 rox/ROX-Filer/Messages/pl.gmo
 rox/ROX-Filer/Messages/ru.gmo
-rox/ROX-Filer/Messages/sp.gmo
+rox/ROX-Filer/Messages/sv.gmo
 rox/ROX-Filer/Messages/zh_CN.gmo
 rox/ROX-Filer/Messages/zh_TW.gmo
 rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/ROX-Filer
@@ -33,8 +33,10 @@ rox/ROX-Filer/Options.xml
 rox/ROX-Filer/images/application.png
 rox/ROX-Filer/images/dirs.png
 rox/ROX-Filer/images/iconified.png
-rox/ROX-Filer/images/mount.png
-rox/ROX-Filer/images/mounted.png
+rox/ROX-Filer/images/rox-mount.png
+rox/ROX-Filer/images/rox-mounted.png
+rox/ROX-Filer/images/rox-show-details.png
+rox/ROX-Filer/images/rox-show-hidden.png
 rox/ROX-Filer/images/symlink.png
 rox/ROX-Filer/src/Docs/Makefile
 rox/ROX-Filer/src/Docs/Manual-fr.xml
@@ -53,6 +55,8 @@ rox/ROX-Filer/src/appmenu.c
 rox/ROX-Filer/src/appmenu.h
 rox/ROX-Filer/src/bind.c
 rox/ROX-Filer/src/bind.h
+rox/ROX-Filer/src/bookmarks.c
+rox/ROX-Filer/src/bookmarks.h
 rox/ROX-Filer/src/choices.c
 rox/ROX-Filer/src/choices.h
 rox/ROX-Filer/src/collection.c
@@ -112,14 +116,16 @@ rox/ROX-Filer/src/pixmaps.h
 rox/ROX-Filer/src/po/da.po
 rox/ROX-Filer/src/po/de.po
 rox/ROX-Filer/src/po/dist
+rox/ROX-Filer/src/po/es.po
 rox/ROX-Filer/src/po/fr.po
 rox/ROX-Filer/src/po/hu.po
 rox/ROX-Filer/src/po/it.po
 rox/ROX-Filer/src/po/make-mo
 rox/ROX-Filer/src/po/nl.po
+rox/ROX-Filer/src/po/no.po
 rox/ROX-Filer/src/po/pl.po
 rox/ROX-Filer/src/po/ru.po
-rox/ROX-Filer/src/po/sp.po
+rox/ROX-Filer/src/po/sv.po
 rox/ROX-Filer/src/po/tips.py
 rox/ROX-Filer/src/po/update-po
 rox/ROX-Filer/src/po/zh_CN.po
@@ -198,6 +204,7 @@ share/rox/Choices/MIME-icons/video.png
 share/rox/Choices/MIME-icons/video_mpeg.png
 share/rox/Choices/MIME-types/application_postscript
 share/rox/Choices/MIME-types/text
+share/rox/Choices/MIME-types/text_html
 @dirrm share/rox/Choices/MIME-types
 @dirrm share/rox/Choices/MIME-icons
 @dirrm share/rox/Choices
