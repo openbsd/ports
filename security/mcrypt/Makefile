@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/16 11:17:45 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/25 03:04:18 brad Exp $
 
 COMMENT=		extendable encryption program that supports many ciphers
 
 DISTNAME=		mcrypt-2.5.7
 CATEGORIES=     	security
-NEED_VERSION=		1.363
+NEED_VERSION=		1.474
 
 HOMEPAGE=		http://mcrypt.hellug.gr/mcrypt/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -19,8 +19,8 @@ MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
+MODULES=		gettext
 LIB_DEPENDS=		mcrypt.6::security/libmcrypt \
-			intl.1::devel/gettext \
 			ltdl.1::devel/libtool
 
 CONFIGURE_STYLE=	gnu
