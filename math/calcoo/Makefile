@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/15 17:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2002/07/29 10:57:51 naddy Exp $
 
 COMMENT=	"Gtk-based scientific calculator"
 
-DISTNAME=	calcoo-1.3.11
+DISTNAME=	calcoo-1.3.12
 CATEGORIES=	math
 HOMEPAGE=	http://calcoo.sourceforge.net/
 
