@@ -1,6 +1,6 @@
---- gcc/f/Make-lang.in.orig	Wed Jun  9 03:44:08 1999
-+++ gcc/f/Make-lang.in	Wed Jun  9 03:46:22 1999
-@@ -229,7 +229,7 @@
+--- gcc/f/Make-lang.in.orig	Wed Jun 21 22:11:14 2000
++++ gcc/f/Make-lang.in	Tue Jun 27 17:23:02 2000
+@@ -215,7 +215,7 @@ f/g77.info: $(srcdir)/f/g77.texi $(srcdi
  	esac
  	if [ -f lang-f77 ]; then \
  	  rm -f $(srcdir)/f/g77.info-*; \
@@ -9,25 +9,25 @@
  	else true; fi
  
  f/g77.dvi: $(srcdir)/f/g77.texi $(srcdir)/f/bugs.texi \
-@@ -348,16 +348,17 @@
+@@ -334,16 +334,17 @@ f77.install-info: f77.info installdirs
  	esac
- 	if [ -f $(libsubdir)/lang-f77 -a -f f/g77.info ] ; then \
+ 	if [ -f $(libsubdir)/lang-f77.info -a -f f/g77.info ] ; then \
  	  rm -f $(infodir)/g77.info*; \
 -	  for f in f/g77.info*; do \
-+  	  rm -f $(infodir)/$(G77_INSTALL_NAME).info*; \
-+  	  for f in f/$(G77_INSTALL_NAME).info*; do \
++	  rm -f $(infodir)/$(G77_INSTALL_NAME).info*; \
++	  for f in f/$(G77_INSTALL_NAME).info*; do \
  	      realfile=`echo $$f | sed -e 's|.*/\([^/]*\)$$|\1|'`; \
  	      $(INSTALL_DATA) $$f $(infodir)/$$realfile; \
  	  done; \
 -	  chmod a-x $(infodir)/g77.info*; \
-+  	  chmod a-x $(infodir)/$(G77_INSTALL_NAME).info*; \
++	  chmod a-x $(infodir)/$(G77_INSTALL_NAME).info*; \
  	else true; fi
- 	@if [ -f $(libsubdir)/lang-f77 -a -f $(srcdir)/f/g77.info ] ; then \
+ 	@if [ -f $(libsubdir)/lang-f77.info -a -f $(srcdir)/f/g77.info ] ; then \
  	  if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
 -	    echo " install-info --info-dir=$(infodir) $(infodir)/g77.info"; \
 -	    install-info --info-dir=$(infodir) $(infodir)/g77.info || : ; \
-+  	    echo " install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info"; \
-+  	    install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info || : ; \
++	    echo " install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info"; \
++	    install-info --info-dir=$(infodir) $(infodir)/$(G77_INSTALL_NAME).info || : ; \
  	  else : ; fi; \
  	else : ; fi
- 	rm -f $(libsubdir)/lang-f77
+ 	rm -f $(libsubdir)/lang-f77.info

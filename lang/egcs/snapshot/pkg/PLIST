@@ -1,8 +1,8 @@
 @option no-default-conflict
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
 bin/egcc
+bin/egccbug
 bin/ecpp
 @comment bin/eprotoize
 @comment bin/eunprotoize
@@ -52,6 +52,8 @@ info/egcc.info-28
 info/egcc.info-29
 info/egcc.info-3
 info/egcc.info-30
+info/egcc.info-31
+info/egcc.info-32
 info/egcc.info-4
 info/egcc.info-5
 info/egcc.info-6

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2000/04/18 23:34:45 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2000/06/27 22:14:26 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -11,7 +11,7 @@
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.270
+NEED_VERSION=	1.302
 MAINTAINER=	Marc.Espie@openbsd.org
 
 
@@ -81,7 +81,7 @@ MULTI_PACKAGES+=-java
 BUILD_DEPENDS+=	runtest::devel/dejagnu
 .endif
 
-LATEST_DATE=2000-03-13
+LATEST_DATE=2000-06-26
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -181,8 +181,6 @@ post-extract:
 
 # get openbsd configuration files where they should be
 post-patch:
-		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs rm
 	cp -R ${FILESDIR}/config/* ${WRKSRC}
 	cp -R ${FILESDIR}/include/* ${WRKSRC}/gcc/ginclude
 	cd ${WRKSRC} && contrib/gcc_update --touch
@@ -191,6 +189,7 @@ post-patch:
 	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC} && rm -rf texinfo
 
 
 
@@ -282,17 +281,12 @@ pre-build:
 	chmod a+x ${WRKSRC}/gcc/fixinc/openbsd-special
 	echo "cp ${WRKSRC}/gcc/fixinc/openbsd-special ${WRKBUILD}/gcc/fixinc.sh" >${WRKSRC}/gcc/fixinc/mkfixinc.sh
 
-# XXX we need to override do-build to get the warnings from within make
-do-build:
-	@{ cd ${WRKBUILD}; \
-	${MAKE_ENV} make ${ALL_TARGET} 2>warnings; } || \
-	{ echo "*** Make bootstrap failed."; \
-	echo "*** Look at ${WRKBUILD}/warnings for errors"; exit 1; }
-
 ####
 # Install & tests section 
 
 post-build:
+		# avoid packaging include copies along...
+	find ${WRKBUILD} -name \*.orig|xargs rm
 	mkdir -p ${WRKBUILD}/gcc/include/machine
 	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
 

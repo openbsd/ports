@@ -5,6 +5,9 @@
 bin/ec++
 bin/ec++filt
 bin/eg++
+bin/@GCCARCH@-c++
+bin/@GCCARCH@-g++
+lib/gcc-lib/@GCCARCH@/@VERSION@/include/cxxabi.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/typeinfo
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/exception
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/new
@@ -94,6 +97,7 @@ include/g++-3/set
 include/g++-3/set.h
 include/g++-3/slist
 include/g++-3/slist.h
+include/g++-3/sstream
 include/g++-3/stack
 include/g++-3/stack.h
 include/g++-3/std/bastring.cc

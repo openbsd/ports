@@ -1,0 +1,22 @@
+Recent changes to dwarf2out.c broke OpenBSD, and probably a lot of other
+platforms as well (most platforms that define DWARF2_UNWIND_INFO 0).
+
+If UNALIGNED_INT_ASM_OP is unavailable, dwarf2out.c does not provide a
+suitable definition for ASM_OUTPUT_DWARF_DATA2, even though it uses it.
+
+Tue Jun 27 20:59:01 CEST 2000	Marc Espie <espie@openbsd.org>
+	* dwarf2out.c (ASM_OUTPUT_DWARF_DATA2): provide in the
+	case where UNALIGNED_INT_ASM_OP is unavailable.
+
+--- gcc/dwarf2out.c.orig	Tue Jun 27 20:41:23 2000
++++ gcc/dwarf2out.c	Tue Jun 27 20:45:26 2000
+@@ -494,6 +494,9 @@ static void def_cfa_1		 	PARAMS ((const 
+ #define ASM_OUTPUT_DWARF_DELTA(FILE,LABEL1,LABEL2) \
+   ASM_OUTPUT_DWARF_DELTA4 (FILE,LABEL1,LABEL2)
+ 
++#define ASM_OUTPUT_DWARF_DATA2(FILE,VALUE) \
++  assemble_integer (GEN_INT (VALUE), 2, 1)
++
+ #define ASM_OUTPUT_DWARF_DATA4(FILE,VALUE) \
+   assemble_integer (GEN_INT (VALUE), 4, 1)
+ 
