@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/23 21:40:48 naddy Exp $
 
 COMMENT=	"BSD process resource limit and priority functions"
 
-DISTNAME=	BSD-Resource-1.15
+DISTNAME=	BSD-Resource-1.22
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 

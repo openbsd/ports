@@ -10,7 +10,10 @@ available.
 
 Also is provided
 
-        times()
+        times() -- which provides the same functionality as the one in
+                   core Perl, only with better time resolution.
 
-which provides the same functionality as the one in core Perl, only
-with better time resolution.
+        get_rlimits() -- a pure perl function with no BSD analog to
+                         find which limits are available
+
+
