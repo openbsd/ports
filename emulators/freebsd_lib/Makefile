@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/01/09 19:08:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2004/01/18 08:01:28 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-NO_SYSTRACE=	"creates .../emul/freebsd/var/run/ld.so.hints"
 
 PREFIX?=	${LOCALBASE}/emul/freebsd
 
