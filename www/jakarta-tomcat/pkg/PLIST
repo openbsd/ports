@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/17 12:18:18 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/07 13:12:19 reinhard Exp $
 tomcat/LICENSE
 tomcat/bin/ant
 tomcat/bin/antRun
@@ -23,9 +23,11 @@ tomcat/conf/web.dtd
 tomcat/conf/web.xml
 tomcat/conf/workers.properties
 tomcat/conf/wrapper.properties
+tomcat/doc/AJPv13.html
 tomcat/doc/JDBCRealm.howto
 tomcat/doc/NT-Service-howto.html
 tomcat/doc/Tomcat-Workers-HowTo.html
+tomcat/doc/Tomcat-on-NetWare-HowTo.html
 tomcat/doc/appdev/build.xml.txt
 tomcat/doc/appdev/contents.html
 tomcat/doc/appdev/deployment.html
@@ -52,11 +54,13 @@ tomcat/doc/mod_jk-howto.html
 tomcat/doc/readme
 tomcat/doc/tomcat-apache-howto.html
 tomcat/doc/tomcat-iis-howto.html
+tomcat/doc/tomcat-localization-howto.html
 tomcat/doc/tomcat-netscape-howto.html
 tomcat/doc/tomcat-ssl-howto.html
 tomcat/doc/uguide/images/banner.gif
 tomcat/doc/uguide/images/tomcat.gif
 tomcat/doc/uguide/style.css
+tomcat/doc/uguide/tomcat-security-unix.html
 tomcat/doc/uguide/tomcat-security.html
 tomcat/doc/uguide/tomcat_ug.html
 tomcat/lib/ant.jar
@@ -164,6 +168,7 @@ tomcat/src/org/apache/jasper/compiler/TagLibraries.java
 tomcat/src/org/apache/jasper/compiler/TagLibraryInfoImpl.java
 tomcat/src/org/apache/jasper/resources/messages.properties
 tomcat/src/org/apache/jasper/resources/messages_es.properties
+tomcat/src/org/apache/jasper/resources/messages_fr.properties
 tomcat/src/org/apache/jasper/resources/web-jsptaglib_1_1.dtd
 tomcat/src/org/apache/jasper/resources/web.dtd
 tomcat/src/org/apache/jasper/runtime/BodyContentImpl.java
@@ -200,6 +205,7 @@ tomcat/src/org/apache/tomcat/core/FacadeManager.java
 tomcat/src/org/apache/tomcat/core/Handler.java
 tomcat/src/org/apache/tomcat/core/LocalStrings.properties
 tomcat/src/org/apache/tomcat/core/LocalStrings_es.properties
+tomcat/src/org/apache/tomcat/core/LocalStrings_fr.properties
 tomcat/src/org/apache/tomcat/core/LocalStrings_se.properties
 tomcat/src/org/apache/tomcat/core/Request.java
 tomcat/src/org/apache/tomcat/core/RequestImpl.java
@@ -252,11 +258,13 @@ tomcat/src/org/apache/tomcat/request/StaticInterceptor.java
 tomcat/src/org/apache/tomcat/resources/LocalStrings.properties
 tomcat/src/org/apache/tomcat/resources/LocalStrings_en.properties
 tomcat/src/org/apache/tomcat/resources/LocalStrings_es.properties
+tomcat/src/org/apache/tomcat/resources/LocalStrings_fr.properties
 tomcat/src/org/apache/tomcat/resources/web.dtd
 tomcat/src/org/apache/tomcat/service/JNIEndpoint.java
 tomcat/src/org/apache/tomcat/service/JNIEndpointConnector.java
 tomcat/src/org/apache/tomcat/service/LocalStrings.properties
 tomcat/src/org/apache/tomcat/service/LocalStrings_es.properties
+tomcat/src/org/apache/tomcat/service/LocalStrings_fr.properties
 tomcat/src/org/apache/tomcat/service/PoolTcpConnector.java
 tomcat/src/org/apache/tomcat/service/PoolTcpEndpoint.java
 tomcat/src/org/apache/tomcat/service/SimpleTcpConnector.java
@@ -308,6 +316,7 @@ tomcat/src/org/apache/tomcat/util/FileUtil.java
 tomcat/src/org/apache/tomcat/util/HexUtils.java
 tomcat/src/org/apache/tomcat/util/LocalStrings.properties
 tomcat/src/org/apache/tomcat/util/LocalStrings_es.properties
+tomcat/src/org/apache/tomcat/util/LocalStrings_fr.properties
 tomcat/src/org/apache/tomcat/util/LocaleToCharsetMap.java
 tomcat/src/org/apache/tomcat/util/MessageBytes.java
 tomcat/src/org/apache/tomcat/util/MessageChars.java
@@ -331,6 +340,10 @@ tomcat/src/org/apache/tomcat/util/ThreadPool.java
 tomcat/src/org/apache/tomcat/util/ThreadPoolRunnable.java
 tomcat/src/org/apache/tomcat/util/URLUtil.java
 tomcat/src/org/apache/tomcat/util/WARUtil.java
+tomcat/src/org/apache/tomcat/util/compat/Action.java
+tomcat/src/org/apache/tomcat/util/compat/Jdk11Compat.java
+tomcat/src/org/apache/tomcat/util/compat/Jdk12Support.java
+tomcat/src/org/apache/tomcat/util/compat/SimpleClassLoader.java
 tomcat/src/org/apache/tomcat/util/package.html
 tomcat/src/org/apache/tomcat/util/pattern/Implication.java
 tomcat/src/org/apache/tomcat/util/pattern/ImplicationTable.java
@@ -349,6 +362,7 @@ tomcat/webapps/test.war
 @dirrm tomcat/webapps
 @dirrm tomcat/src/org/apache/tomcat/util/xml
 @dirrm tomcat/src/org/apache/tomcat/util/pattern
+@dirrm tomcat/src/org/apache/tomcat/util/compat
 @dirrm tomcat/src/org/apache/tomcat/util
 @dirrm tomcat/src/org/apache/tomcat/task
 @dirrm tomcat/src/org/apache/tomcat/startup

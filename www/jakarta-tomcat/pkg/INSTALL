@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/06/17 12:18:18 reinhard Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/07/07 13:12:19 reinhard Exp $
 #
 # Pre/post-installation setup of jakarta-tomcat
 
@@ -57,7 +57,8 @@ do_notice_conf()
     echo "| have NOT been changed. You may want to compare them to the current samples"
     echo "| in ${SAMPLE_CONFIG_DIR}, and update your configuration files"
     echo "| as needed."
-    echo "| The existing $1 log files in ${WORKDIR}/logs have NOT been deleted."
+    echo "| The existing $1 log files in ${WORKDIR}/logs" 
+    echo "| have NOT been deleted."
     echo "+---------------"
     echo
 }
