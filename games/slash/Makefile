@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 1999/05/09 21:51:50 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/26 21:39:39 espie Exp $
 
+NEED_VERSION=1.121
 DISTNAME=	slash-e8
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
-		http://www.rz.tu-ilmenau.de/~wi019/Slash/ \
 		${MASTER_SITE_GNU}
+
+MASTER_SITES0= http://www.rz.tu-ilmenau.de/~wi019/Slash/ 
+
 MASTER_SITE_SUBDIR= nethack
-DISTFILES=	nethack-3.2.2.tar.gz Slash-Unix.tar.gz
+DISTFILES=	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:0
 
 MAINTAINER=	espie@OpenBSD.ORG
 
