@@ -1,17 +1,16 @@
-# OpenBSD makefile for: trans
-# Version required:     1.20
-# Date created:         29 April 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/29 05:10:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/08 04:09:12 marc Exp $
 #
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20
 CATEGORIES=     converters russian
-MASTER_SITES=   http://www.kostis.net/freeware/
+
+NO_CDROM=	"LIC: Requires license for redistribution"
+RESTRICTED=	"no commercial use"
 
 MAINTAINER=     angelos@opensbd.org
+
+MASTER_SITES=   http://www.kostis.net/freeware/
 
 LIBDIR= ${PREFIX}/lib/trans
 ALL= transhtm transiso transce8 transtab checkiso checkuni
