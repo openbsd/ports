@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 20:19:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2004/01/02 18:02:34 espie Exp $
 
 COMMENT=	"terminal screen handling and optimisation"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MAKE_FLAGS=PASTHRU_DEFINE='-idirafter $${PERL_INC}'
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	PANELS MENUS FORMS
 
