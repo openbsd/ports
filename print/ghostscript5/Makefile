@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/04/18 23:39:49 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/06/10 04:30:07 brad Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
@@ -13,7 +13,7 @@ MAINTAINER=	ports@openbsd.org
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.1.3:${PORTSDIR}/graphics/png
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}
