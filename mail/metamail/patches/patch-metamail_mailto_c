@@ -1,0 +1,167 @@
+$OpenBSD: patch-metamail_mailto_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
+--- metamail/mailto.c.orig	Wed Feb  9 13:30:26 1994
++++ metamail/mailto.c	Wed Feb 20 14:09:51 2002
+@@ -195,7 +195,7 @@ tmpname() {
+         sprintf(s, "%s/mm.XXXXXX", tmproot);
+     }
+ #endif
+-    mktemp(s);
++/*    mktemp(s);*/
+     return(s);
+ }
+ 
+@@ -205,7 +205,7 @@ TildeHelp() {
+     FILE *fp;
+ 
+     strcpy(TmpName, tmpname());
+-    fp = fopen(TmpName, "w");
++    fp = fdopen(mkstemp(TmpName), "w");
+     if (!fp) fp = stdout;
+     fprintf(fp, "The following tilde escapes are BSD-mail-compatible:\n");
+     fprintf(fp, "~? Show help on tilde escapes\n");
+@@ -570,6 +570,7 @@ char **argv;
+         if (isupper(*sdum)) *sdum = tolower(*sdum);
+     }
+     if (strcmp(CharacterSet, "us-ascii")
++	 && strcmp(CharacterSet, "koi8-r")
+          && strncmp(CharacterSet, "iso-8859-", 9)) {
+         fprintf(stderr, "mailto:  Unsupported character set: %s\n", CharacterSet);
+         exit(-1);
+@@ -591,7 +592,7 @@ char **argv;
+     }
+     FirstPart = NewPart();
+     CurrentPart = FirstPart;
+-    fpout = fopen(CurrentPart->filename, "w");
++    fpout = fdopen(mkstemp(CurrentPart->filename), "w");
+     if (!fpout) {
+         fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
+         cleanexit(-1);
+@@ -678,7 +679,7 @@ char **argv;
+                     CurrentPart->next = NewPart();
+                     CurrentPart->next->prev = CurrentPart;
+                     CurrentPart = CurrentPart->next;
+-                    fpout = fopen(CurrentPart->filename, "w");
++                    fpout = fdopen(mkstemp(CurrentPart->filename), "w");
+                     if (!fpout) {
+                         fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
+                         cleanexit(-1);
+@@ -717,7 +718,7 @@ char **argv;
+                     CurrentPart = CurrentPart->next;
+                     CurrentPart->istext = 0;
+                     CurrentPart->content_type = "message/rfc822";
+-                    fpout = fopen(CurrentPart->filename, "w");
++                    fpout = fdopen(mkstemp(CurrentPart->filename), "w");
+                     if (!fpout) {
+                         fprintf(stderr, "mailto: Cannot open temporary file %s\n", CurrentPart->filename);
+                         break;
+@@ -729,7 +730,7 @@ char **argv;
+                     CurrentPart->next = NewPart();
+                     CurrentPart->next->prev = CurrentPart;
+                     CurrentPart = CurrentPart->next;
+-                    fpout = fopen(CurrentPart->filename, "w");
++                    fpout = fdopen(mkstemp(CurrentPart->filename), "w");
+                     if (!fpout) {
+                         fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
+                         cleanexit(-1);
+@@ -808,11 +809,11 @@ char **argv;
+                     char Cmd[TMPFILE_NAME_SIZE + 15];
+                     char *s=tmpname();
+                     fclose(fpout);
+-                    fptmp = fopen(s, "w");
++                    fptmp = fdopen(mkstemp(s), "w");
+                     WriteOutMessage(fptmp, ToList, Subject, CCList, FirstPart);
+                     TempCloseStyles(fptmp);
+                     fclose(fptmp);
+-                    fpout = fopen(CurrentPart->filename, "a");
++                    fpout = fdopen(mkstemp(CurrentPart->filename), "a");
+                     if (!fpout) {
+                         fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
+                         cleanexit(-1);
+@@ -969,7 +970,7 @@ char **argv;
+                     CurrentPart = CurrentPart->next;
+                     CurrentPart->istext = 0;
+                     CurrentPart->content_type = "message/rfc822";
+-                    fpout = fopen(CurrentPart->filename, "w");
++                    fpout = fdopen(mkstemp(CurrentPart->filename), "w");
+                     if (!fpout) {
+                         fprintf(stderr, "mailto: Cannot open temporary file %s\n", CurrentPart->filename);
+                         break;
+@@ -991,7 +992,7 @@ char **argv;
+                     CurrentPart->next = NewPart();
+                     CurrentPart->next->prev = CurrentPart;
+                     CurrentPart = CurrentPart->next;
+-                    fpout = fopen(CurrentPart->filename, "w");
++                    fpout = fdopen(mkstemp(CurrentPart->filename), "w");
+                     if (!fpout) {
+                         fprintf(stderr, "mailto:  Can't open temporary file %s\n", CurrentPart->filename);
+                         cleanexit(-1);
+@@ -1130,6 +1131,7 @@ struct mailpart *part;
+         if (part->isrich) {
+             if (strcmp(CharacterSet, "us-ascii")
+                  && (strncmp(CharacterSet, "iso-8859-", 9) 
++		     && strcmp(CharacterSet, "koi8-r")
+                       || part->encoding_type_needed != ENC_NONE)) {
+                 fprintf(fp, "Content-type: text/richtext; charset=\"%s\"\n", CharacterSet);
+             } else {
+@@ -1140,6 +1142,7 @@ struct mailpart *part;
+             WriteCtypeNicely(fp, part->content_type);
+             if (strcmp(CharacterSet, "us-ascii")
+                  && (strncmp(CharacterSet, "iso-8859-", 9) 
++		     && strcmp(CharacterSet, "koi8-r")
+                       || part->encoding_type_needed != ENC_NONE)) {
+                 fprintf(fp, "; charset=\"%s\"\n", CharacterSet);
+             } else fputs("\n", fp);
+@@ -1745,6 +1748,7 @@ CreateNewPart() {
+     }
+     printf("\n\nEnter your choice as a number from 0 to %d: ", i);
+     fflush(stdout);
++    *LineBuf = '\0';
+     fgets(LineBuf, sizeof(LineBuf), stdin);
+     ans = atoi(LineBuf);
+     if (ans == 0 || ans == 1) {
+@@ -1773,7 +1777,7 @@ CreateNewPart() {
+             printf("Cannot read %s, data insertion cancelled\n", sdum);
+             return(NULL);
+         }
+-        fpo = fopen(mp->filename, "w");
++        fpo = fdopen(mkstemp(mp->filename), "w");
+         if (!fpo) {
+             printf("Cannot open temporary file, data insertion cancelled\n");
+             return(NULL);
+@@ -1791,7 +1795,7 @@ CreateNewPart() {
+                 int ct;
+                 printf("\nEnter the MIME Content-type value for the data from file %s\n    (type '?' for a list of locally-valid content-types): ", sdum);
+                 fflush(stdout);
+-                gets(LineBuf);
++		fgets(LineBuf, sizeof(LineBuf), stdin);
+                 if (index(LineBuf, '/')) {
+                     char lc[100], *s, AnsBuf[100];
+                     strcpy(lc, LineBuf);
+@@ -1809,7 +1813,7 @@ CreateNewPart() {
+                     }
+                     if (mc) break;
+                     printf("The MIME content-type '%s' is not listed in your local mailcap files,\nand may not be a valid MIME type.  Do you want to use it anyway [no] ? ", LineBuf);
+-                    s = gets(AnsBuf);
++		    s = fgets(AnsBuf, sizeof(AnsBuf), stdin);
+                     while (s && *s && isspace((unsigned char) *s)) ++s;
+                     if (s && (*s == 'y' || *s == 'Y')) break;
+                     continue;
+@@ -1866,7 +1870,8 @@ CreateNewPart() {
+         mp->content_type = mc->contenttype;
+         mp->encoding_type_needed = WhichEncodingForFile(mp->filename, mp->content_type);
+     } else {
+-        char c, LineBuf[1000], *colon, *ctypebuf = NULL, *cencbuf = NULL, *s, *newfilename;
++        char LineBuf[1000], *colon, *ctypebuf = NULL, *cencbuf = NULL, *s, *newfilename;
++        int c;
+         FILE *fp, *fpout;
+         int inheaders=1, bct=0;
+ 
+@@ -1936,7 +1941,7 @@ CreateNewPart() {
+             mp->encoding_type_needed = ENC_NONE;
+         }
+         newfilename = tmpname();
+-        fpout = fopen(newfilename, "w");
++        fpout = fdopen(mkstemp(newfilename), "w");
+         if (!fpout) {
+             fprintf(stderr, "Cannot open file %s for writing, no data included.\n", newfilename);
+             free(CmdBuf);

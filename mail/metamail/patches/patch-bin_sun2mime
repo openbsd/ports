@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_sun2mime,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
+--- bin/sun2mime.orig	Sat Nov 13 07:54:05 1993
++++ bin/sun2mime	Wed Feb 20 14:06:43 2002
+@@ -11,7 +11,7 @@ if [ x$METAMAIL_TMPDIR = x ]; then
+ fi
+ TMPFILE=${METAMAIL_TMPDIR}/suntomime.$$
+ 
+-/bin/nawk '
++/usr/bin/awk '
+   BEGIN { printf("Content-type: multipart/mixed; boundary=--------\n\n")
+           RS=""; FS="\n"; mode="HEADER" }
+   mode == "HEADER" {

@@ -1,6 +1,7 @@
---- metamail/metamail.c.orig	Mon Nov 10 13:00:24 1997
-+++ metamail/metamail.c	Mon Nov 10 13:01:06 1997
-@@ -29,7 +29,7 @@
+$OpenBSD: patch-metamail_metamail_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
+--- metamail/metamail.c.orig	Wed Feb 20 14:06:43 2002
++++ metamail/metamail.c	Wed Feb 20 14:06:43 2002
+@@ -29,7 +29,7 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIE
  #ifdef BORLAND
  #define F_OK 0
  extern unsigned _stklen = 16384;
@@ -9,7 +10,7 @@
  #define WRITE_BINARY	"w"
  #else /* BORLAND */
  #ifdef MICROSOFT
-@@ -302,24 +302,6 @@
+@@ -302,24 +302,6 @@ char **argv;
      int retcode;
  
      modpath(AUXPATH);
@@ -34,7 +35,7 @@
      tmproot = getenv("METAMAIL_TMPDIR");
      if (!tmproot) tmproot="/tmp";
      mailheaders = getenv("MM_HEADERS");
-@@ -2489,14 +2471,14 @@
+@@ -2489,14 +2471,14 @@ char *name;
  {
  #ifdef AMIGA
      strcpy(name, "T:mmXXXXXX");

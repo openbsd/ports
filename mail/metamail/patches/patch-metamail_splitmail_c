@@ -1,0 +1,14 @@
+$OpenBSD: patch-metamail_splitmail_c,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
+--- metamail/splitmail.c.orig	Mon Jan 31 15:23:14 1994
++++ metamail/splitmail.c	Wed Feb 20 14:06:43 2002
+@@ -41,8 +41,8 @@ extern char *malloc(), *index(), *getmyn
+ #define VERBOSEDELIVERYCMD VerboseDeliveryCmd
+ #else
+ extern char *getenv();
+-#define NORMALDELIVERYCMD "/usr/lib/sendmail -t -oi"
+-#define VERBOSEDELIVERYCMD "/usr/lib/sendmail -t -v -oi"
++#define NORMALDELIVERYCMD "/usr/sbin/sendmail -t -oi"
++#define VERBOSEDELIVERYCMD "/usr/sbin/sendmail -t -v -oi"
+ #endif
+ 
+ usageexit() {

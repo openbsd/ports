@@ -1,6 +1,7 @@
---- Makefile.orig	Wed Jan 26 09:32:33 1994
-+++ Makefile	Sat Jul 25 22:42:41 1998
-@@ -38,7 +38,7 @@
+$OpenBSD: patch-Makefile,v 1.1 2002/02/20 21:18:02 pvalchev Exp $
+--- Makefile.orig	Wed Jan 26 10:32:33 1994
++++ Makefile	Wed Feb 20 14:06:43 2002
+@@ -38,7 +38,7 @@ FOOBAR-sun4=-Bstatic
  
  STATICFLAG=FOOBAR${HOST_ARCH}
  
@@ -9,7 +10,7 @@
  # The following is better if you want to make sure you run with SYSV defined
  # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
  # Also, for SGI Irix, compile in K&R mode
-@@ -49,9 +49,9 @@
+@@ -49,9 +49,9 @@ CFLAGS = -g -I.  ${$(STATICFLAG)} 
  # LDLIBS variable.
  #
  # For Sun and BSD systems, the following should work...
@@ -21,7 +22,7 @@
  # On SGI machines, we need -lsun for getpw...(), and -lc_s saves some space.
  # LDLIBS = -lsun -lc_s
  # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
-@@ -72,10 +72,10 @@
+@@ -72,10 +72,10 @@ CONFIGDIR = .
  #	install -s -c $(LOCALBINDIR) $$file
  #
  #INSTALL = cp
@@ -34,7 +35,7 @@
  #
  # This is where binaries should be copied
  LOCALBINDIR = ${INSTROOT}/bin
-@@ -91,14 +91,14 @@
+@@ -91,14 +91,14 @@ MAN4EXT = 4
  FONTSUFFIX=pcf
  
  # This is where the mailcap file should be put
@@ -52,7 +53,7 @@
  	(cd metamail ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"  LDLIBS="${LDLIBS}")
  	-${RM} bin/metamail
  	(cd bin; ${LN} ../metamail/metamail metamail)
-@@ -117,7 +117,7 @@
+@@ -117,7 +117,7 @@ basics::
  	(cd bin; ${LN} ../richmail/richtext richtext)
  	-${RM} bin/richtoatk
  	(cd bin; ${LN} ../richmail/richtoatk richtoatk)
@@ -61,7 +62,7 @@
  	-${RM} bin/shownonascii
  	(cd bin; ${LN} ../fonts/shownonascii shownonascii)
  	-${RM} bin/mailto-hebrew
-@@ -145,10 +145,12 @@
+@@ -145,10 +145,12 @@ install-all: basics 
  	    echo "installing man page $$target";\
  	    ${CP} $$file $$target; 		\
  	done)
