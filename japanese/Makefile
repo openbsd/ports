@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/22 23:44:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/24 18:39:14 espie Exp $
 
      SUBDIR += Wnn
      SUBDIR += Wnn-data
      SUBDIR += canna
+     SUBDIR += intlfonts
+     SUBDIR += funetfonts
      SUBDIR += groff
      SUBDIR += jvim
      SUBDIR += jvim-wnn4
