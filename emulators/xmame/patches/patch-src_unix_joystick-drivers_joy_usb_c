@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unix_joystick-drivers_joy_usb_c,v 1.1 2001/09/30 17:21:52 naddy Exp $
---- src/unix/joystick-drivers/joy_usb.c.orig	Sun Sep 30 17:43:03 2001
-+++ src/unix/joystick-drivers/joy_usb.c	Sun Sep 30 17:45:54 2001
-@@ -15,12 +15,12 @@ struct rc_option joy_usb_opts[] = {
+$OpenBSD: patch-src_unix_joystick-drivers_joy_usb_c,v 1.2 2002/01/10 02:09:53 naddy Exp $
+--- src/unix/joystick-drivers/joy_usb.c.orig	Mon Jul  2 02:03:49 2001
++++ src/unix/joystick-drivers/joy_usb.c	Tue Jan  1 19:24:47 2002
+@@ -15,13 +15,13 @@ struct rc_option joy_usb_opts[] = {
  
  #ifdef USB_JOYSTICK
  
@@ -13,7 +13,9 @@ $OpenBSD: patch-src_unix_joystick-drivers_joy_usb_c,v 1.1 2001/09/30 17:21:52 na
  #endif
  
 -#if defined(__ARCH_netbsd)
+-#include <usb.h>
 +#if defined(__ARCH_netbsd) || defined(__ARCH_openbsd)
- #include <usb.h>
++#include <usbhid.h>
  #elif defined(__ARCH_freebsd)
  #include <libusb.h>
+ #endif

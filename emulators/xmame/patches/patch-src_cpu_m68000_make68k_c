@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cpu_m68000_make68k_c,v 1.1 2002/01/10 02:09:53 naddy Exp $
+--- src/cpu/m68000/make68k.c.orig	Wed Aug 22 07:21:24 2001
++++ src/cpu/m68000/make68k.c	Tue Jan  1 19:21:13 2002
+@@ -7540,8 +7540,10 @@ void CodeSegmentBegin(void)
+    fprintf(fp, "\t\t EXTERN _OP_ROM\n");
+    fprintf(fp, "\t\t EXTERN _OP_RAM\n");
+ 
++/* if 0 on line 473
+    fprintf(fp, "\t\t EXTERN _opcode_entry\n");
+    fprintf(fp, "\t\t EXTERN _cur_mrhard\n");
++*/
+ 
+ #ifdef MAME_DEBUG
+    fprintf(fp, "\t\t EXTERN _m68k_illegal_opcode\n");

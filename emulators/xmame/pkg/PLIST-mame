@@ -1,62 +1,20 @@
-@comment $OpenBSD: PLIST-mame,v 1.2 2001/08/12 23:03:10 naddy Exp $
+@comment $OpenBSD: PLIST-mame,v 1.3 2002/01/10 02:09:53 naddy Exp $
 @pkgcfl xmame+xmess-*
 @pkgcfl xmess-*
 bin/xmame
 man/man6/xmame.6
+share/doc/xmame/README
 share/doc/xmame/changes.mame
-share/doc/xmame/changes.mess
 share/doc/xmame/changes.opengl
 share/doc/xmame/changes.unix
-share/doc/xmame/credits.txt
 share/doc/xmame/gamelist.mame
-share/doc/xmame/gamelist.mess
 share/doc/xmame/hsnew.txt
 share/doc/xmame/imgtool.txt
 share/doc/xmame/liesmich.unix
-share/doc/xmame/makedoc.sh
-share/doc/xmame/messold.txt
-share/doc/xmame/messroms.txt
 share/doc/xmame/multiplayer-readme.txt
 share/doc/xmame/readhist.txt
 share/doc/xmame/readme.mame
-share/doc/xmame/readme.mess
-share/doc/xmame/sysinfo/aim65.txt
-share/doc/xmame/sysinfo/bondwell.txt
-share/doc/xmame/sysinfo/c128.txt
-share/doc/xmame/sysinfo/c65.txt
-share/doc/xmame/sysinfo/comquest.txt
-share/doc/xmame/sysinfo/dream.txt
-share/doc/xmame/sysinfo/elf.txt
-share/doc/xmame/sysinfo/europc.txt
-share/doc/xmame/sysinfo/galaxy.txt
-share/doc/xmame/sysinfo/hp48s.txt
-share/doc/xmame/sysinfo/i8530286.txt
-share/doc/xmame/sysinfo/ibm8530.txt
-share/doc/xmame/sysinfo/ibmat.txt
-share/doc/xmame/sysinfo/ibmpc.txt
-share/doc/xmame/sysinfo/ibmpcjr.txt
-share/doc/xmame/sysinfo/lynx.txt
-share/doc/xmame/sysinfo/mk1.txt
-share/doc/xmame/sysinfo/mk2.txt
-share/doc/xmame/sysinfo/msx.txt
-share/doc/xmame/sysinfo/nc.txt
-share/doc/xmame/sysinfo/nc200.txt
-share/doc/xmame/sysinfo/neat.txt
-share/doc/xmame/sysinfo/pc1251.txt
-share/doc/xmame/sysinfo/pc1350.txt
-share/doc/xmame/sysinfo/pc1401.txt
-share/doc/xmame/sysinfo/pc1500.txt
-share/doc/xmame/sysinfo/pc1512.txt
-share/doc/xmame/sysinfo/pc1640.txt
-share/doc/xmame/sysinfo/pc200.txt
-share/doc/xmame/sysinfo/pcw16.txt
-share/doc/xmame/sysinfo/pong.txt
-share/doc/xmame/sysinfo/ssystem3.txt
-share/doc/xmame/sysinfo/studio2.txt
-share/doc/xmame/sysinfo/svision.txt
-share/doc/xmame/sysinfo/sym1.txt
-share/doc/xmame/sysinfo/t1000hx.txt
-share/doc/xmame/sysinfo/vip.txt
+share/doc/xmame/sysinfo.dat
 share/doc/xmame/xmame-doc-1.html
 share/doc/xmame/xmame-doc-2.html
 share/doc/xmame/xmame-doc-3.html
@@ -70,14 +28,18 @@ share/doc/xmame/xmame-doc.man.skel
 share/doc/xmame/xmame-doc.ps
 share/doc/xmame/xmame-doc.sgml
 share/doc/xmame/xmame-doc.txt
-share/doc/xmame/xmame.6
+share/doc/xmame/xmame-gdoc-1.html
+share/doc/xmame/xmame-gdoc-2.html
+share/doc/xmame/xmame-gdoc-3.html
+share/doc/xmame/xmame-gdoc-4.html
+share/doc/xmame/xmame-gdoc-5.html
+share/doc/xmame/xmame-gdoc-6.html
+share/doc/xmame/xmame-gdoc-7.html
+share/doc/xmame/xmame-gdoc.html
 share/doc/xmame/xmamerc.dist
-share/doc/xmame/xmess.6
-share/doc/xmame/xmessrc.dist
 share/xmame/cheat.dat
 share/xmame/hiscore.dat
 share/xmame/history.dat
 share/xmame/xmamerc
 @dirrm share/xmame
-@dirrm share/doc/xmame/sysinfo
 @dirrm share/doc/xmame

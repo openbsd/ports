@@ -1,67 +1,61 @@
-$OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.2 2001/09/30 17:21:52 naddy Exp $
---- src/unix/video-drivers/gltool.c.orig	Sun Apr  8 22:13:26 2001
-+++ src/unix/video-drivers/gltool.c	Sun Sep 30 17:51:42 2001
-@@ -355,7 +355,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
+$OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.3 2002/01/10 02:09:53 naddy Exp $
+--- src/unix/video-drivers/gltool.c.orig	Mon Jul  2 02:03:49 2001
++++ src/unix/video-drivers/gltool.c	Tue Jan  1 19:21:13 2002
+@@ -357,7 +357,7 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
    if (disp__glXGetProcAddress == NULL && __firstAccess)
    {
--      disp__glXGetProcAddress = dlsym (libHandleGL, "glXGetProcAddressARB");
-+      disp__glXGetProcAddress = dlsym (libHandleGL, SYMBOL_PREFIX
-+        "glXGetProcAddressARB");
+-      disp__glXGetProcAddress = (procPtr) dlsym (libHandleGL, "glXGetProcAddressARB");
++      disp__glXGetProcAddress = (procPtr) dlsym (libHandleGL, SYMBOL_PREFIX "glXGetProcAddressARB");
  
        if (disp__glXGetProcAddress != NULL && verbose)
        {
-@@ -365,7 +366,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
+@@ -367,7 +367,7 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
        if (disp__glXGetProcAddress == NULL)
        {
--	disp__glXGetProcAddress = dlsym (libHandleGL, "glXGetProcAddressEXT");
-+	disp__glXGetProcAddress = dlsym (libHandleGL, SYMBOL_PREFIX
-+	  "glXGetProcAddressEXT");
+-	disp__glXGetProcAddress = (procPtr) dlsym (libHandleGL, "glXGetProcAddressEXT");
++	disp__glXGetProcAddress = (procPtr) dlsym (libHandleGL, SYMBOL_PREFIX "glXGetProcAddressEXT");
  
  	if (disp__glXGetProcAddress != NULL && verbose)
  	{
-@@ -376,7 +378,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
+@@ -378,7 +378,7 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
        if (disp__glXGetProcAddress == NULL)
        {
--	disp__glXGetProcAddress = dlsym (libHandleGL, "glXGetProcAddress");
-+	disp__glXGetProcAddress = dlsym (libHandleGL, SYMBOL_PREFIX
-+	  "glXGetProcAddress");
+-	disp__glXGetProcAddress = (procPtr) dlsym (libHandleGL, "glXGetProcAddress");
++	disp__glXGetProcAddress = (procPtr) dlsym (libHandleGL, SYMBOL_PREFIX "glXGetProcAddress");
  
  	if (disp__glXGetProcAddress != NULL && verbose)
  	{
-@@ -392,7 +395,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
+@@ -394,7 +394,7 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  	fflush (NULL);
  	if (libHandleGLX != NULL)
  	{
--	  disp__glXGetProcAddress = dlsym (libHandleGLX, "glXGetProcAddressARB");
-+	  disp__glXGetProcAddress = dlsym (libHandleGLX, SYMBOL_PREFIX
-+	    "glXGetProcAddressARB");
+-	  disp__glXGetProcAddress = (procPtr) dlsym (libHandleGLX, "glXGetProcAddressARB");
++	  disp__glXGetProcAddress = (procPtr) dlsym (libHandleGLX, SYMBOL_PREFIX "glXGetProcAddressARB");
  
  	  if (disp__glXGetProcAddress != NULL && verbose)
  	  {
-@@ -402,7 +406,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
+@@ -404,7 +404,7 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
  	  if (disp__glXGetProcAddress == NULL)
  	  {
--	    disp__glXGetProcAddress = dlsym (libHandleGLX, "glXGetProcAddressEXT");
-+	    disp__glXGetProcAddress = dlsym (libHandleGLX, SYMBOL_PREFIX
-+	      "glXGetProcAddressEXT");
+-	    disp__glXGetProcAddress = (procPtr) dlsym (libHandleGLX, "glXGetProcAddressEXT");
++	    disp__glXGetProcAddress = (procPtr) dlsym (libHandleGLX, SYMBOL_PREFIX "glXGetProcAddressEXT");
  
  	    if (disp__glXGetProcAddress != NULL && verbose)
  	    {
-@@ -413,7 +418,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
+@@ -415,7 +415,7 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
  	  if (disp__glXGetProcAddress == NULL)
  	  {
--	    disp__glXGetProcAddress = dlsym (libHandleGLX, "glXGetProcAddress");
-+	    disp__glXGetProcAddress = dlsym (libHandleGLX, SYMBOL_PREFIX
-+	      "glXGetProcAddress");
+-	    disp__glXGetProcAddress = (procPtr) dlsym (libHandleGLX, "glXGetProcAddress");
++	    disp__glXGetProcAddress = (procPtr) dlsym (libHandleGLX, SYMBOL_PREFIX "glXGetProcAddress");
  
  	    if (disp__glXGetProcAddress != NULL && verbose)
  	    {
-@@ -539,7 +545,7 @@ void LIBAPIENTRY fetch_GL_FUNCS (const c
+@@ -541,7 +541,7 @@ void LIBAPIENTRY fetch_GL_FUNCS (const c
    if(!loadGLLibrary (libGLName, libGLUName))
    	return;
  

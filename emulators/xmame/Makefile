@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/30 17:21:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/10 02:09:52 naddy Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
 COMMENT-mess=	"emulates game consoles and old home computers"
 
-VERSION=	0.37b13.2
+VERSION=	0.37b15.2
 DISTNAME=	xmame-${VERSION}
 
-NEED_VERSION=	1.427
+NEED_VERSION=	1.500
 CATEGORIES=	emulators games
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/
@@ -44,38 +44,60 @@ PKGNAME=	xmame+xmess-${VERSION}
 PKGNAME-mame=	xmame-${VERSION}
 PKGNAME-mess=	xmess-${VERSION}
 
-FLAVORS=	x11 gl sdl
-FLAVOR?=	x11
+VIDEOF=		x11 gl sdl
 
-.if   ${FLAVOR} == "sdl"
-DISPLAY_METHOD= SDL
-LIB_DEPENDS+=	SDL.:sdl-*-!no_x11:devel/sdl
-.elif ${FLAVOR} == "gl"
-DISPLAY_METHOD=	xgl
-LIB_DEPENDS+=	jpeg.::graphics/jpeg
-.elif ${FLAVOR} == "x11"
-DISPLAY_METHOD=	x11
-.else
-.  for i in ${FLAVOR:L}
-.    if ${FLAVORS:L:M${i}}
+FLAVORS=	${VIDEOF}
+# FLAVORS+=	arts esd
+
+FLAVOR?=	x11 
+
+EXFL?=
+EXFI?=
+
+# Video flavors are mutually exclusive
+.for i in ${FLAVOR:L}
+.  if ${VIDEOF:L:M${i}}
 EXFL+=		${i}
-EXFI?=		${i}
+.    if empty (EXFI)
+EXFI+=		${i}
 .    endif
-.  endfor
-.  if ${EXFL} != ${EXFI}
-ERRORS+=	"Fatal: Mutually exclusive flavors: ${EXFL}."
 .  endif
+.endfor
+.if   ${EXFL} != ${EXFI}
+ERRORS+=        "Fatal: Mutually exclusive flavors: ${EXFL}."
 DISPLAY_METHOD=
 .endif
+
+.if   ${FLAVOR:L:Msdl}
+DISPLAY_METHOD= SDL
+LIB_DEPENDS+=	SDL.:sdl-*-!no_x11:devel/sdl
+.elif ${FLAVOR:L:Mgl}
+DISPLAY_METHOD=	xgl
+LIB_DEPENDS+=	jpeg.::graphics/jpeg
+.else
+DISPLAY_METHOD=	x11
+.endif
+
+# XXX coredump
+#.if  ${FLAVOR:L:Marts}
+#MAKE_FLAGS+=	SOUND_ARTS_SMOTEK=1
+#LIB_DEPENDS+=	artsc::x11/kde/libs2
+#.endif
+#
+#.if  ${FLAVOR:L:Mesd}
+#MAKE_FLAGS+=	SOUND_ESOUND=1
+#LIB_DEPENDS+=	esd::audio/esound
+#.endif
 
 MAKE_ENV=	PREFIX="${PREFIX}"
 MAKE_FILE=	Makefile.OpenBSD
 FAKE_FLAGS=	${MAKE_FLAGS}
-MAKE_FLAGS=	ARCH=openbsd \
+MAKE_FLAGS+=	ARCH=openbsd \
+		CC="${CC}" CFLAGS="${CFLAGS} -DRTLD_GLOBAL=0" \
 		DISPLAY_METHOD="${DISPLAY_METHOD}" \
 		INCLUDES="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
 		X11INC="-I${X11BASE}/include" X11LIB="-L${X11BASE}/lib" \
-		GLLIBS="-pthread" CFLAGS="-DRTLD_GLOBAL=0" \
+		GLLIBS="-pthread" \
 		INSTALL_PROGRAM_DIR="${INSTALL_PROGRAM_DIR}" \
 		INSTALL_MAN_DIR="${INSTALL_MAN_DIR}" \
 		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
@@ -87,7 +109,11 @@ MAKE_FLAGS=	ARCH=openbsd \
 		JOY_USB=1
 
 .if   ${MACHINE_ARCH} == "i386"
-MAKE_FLAGS+=	MY_CPU=i386
+BUILD_DEPENDS+=	nasm::devel/nasm
+MAKE_FLAGS+=	MY_CPU=i386 \
+		X86_ASM_68000=1 \
+		NASM_FMT="-f aoutb" \
+		ASM_STRIP="true"
 .  if   ${DISPLAY_METHOD} == "x11"
 MAKE_FLAGS+=	X11_DGA=1
 .  elif ${DISPLAY_METHOD} != "SDL"
@@ -100,22 +126,24 @@ MAKE_FLAGS+=	MY_CPU=${MACHINE_ARCH}
 MAKE_FLAGS+=	MY_CPU=risc
 .endif
 
+post-extract:
+	${UNZIP} -u ${FULLDISTDIR}/${HISCORE_FILE} -d ${WRKDIR}
+	${UNZIP} -u ${FULLDISTDIR}/${HISTORY_FILE} -d ${WRKDIR}
+	${UNZIP} -u ${FULLDISTDIR}/${CHEAT_FILE} -d ${WRKDIR}
+
 post-patch:
 	@cp ${FILESDIR}/${MAKE_FILE} ${WRKSRC}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmame/sysinfo
-	@cd ${WRKSRC}/doc && find . -type f \
-		-exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/xmame/{} \;
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmame
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xmame
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/xmame
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${FILESDIR}/xmame-${DISPLAY_METHOD}rc \
 		${PREFIX}/share/xmame/xmamerc
-	${UNZIP} -u ${FULLDISTDIR}/${HISCORE_FILE} -d ${WRKDIR}
-	${UNZIP} -u ${FULLDISTDIR}/${HISTORY_FILE} -d ${WRKDIR}
-	${UNZIP} -u ${FULLDISTDIR}/${CHEAT_FILE} -d ${WRKDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xmame
-	${INSTALL_DATA} ${WRKDIR}/*dat ${PREFIX}/share/xmame
-	${INSTALL_DATA} ${WRKDIR}/*txt ${PREFIX}/share/doc/xmame
+	${INSTALL_DATA} ${WRKDIR}/*.dat ${PREFIX}/share/xmame
+	${INSTALL_DATA} ${WRKDIR}/*.txt ${PREFIX}/share/doc/xmame
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xmess
 	${INSTALL_DATA} ${FILESDIR}/xmess-${DISPLAY_METHOD}rc \
 		${PREFIX}/share/xmess/xmessrc
