@@ -130,7 +130,7 @@ lib/X11/fonts/xcyrillic/misc/koi6x13.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi8x13.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koi9x15.pcf.gz
 lib/X11/fonts/xcyrillic/misc/koinil2.pcf.gz
-@dirrm lib/X11/fonts/xcyrillic/misc
-@dirrm lib/X11/fonts/xcyrillic/75dpi
 @dirrm lib/X11/fonts/xcyrillic/100dpi
+@dirrm lib/X11/fonts/xcyrillic/75dpi
+@dirrm lib/X11/fonts/xcyrillic/misc
 @dirrm lib/X11/fonts/xcyrillic
