@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/13 14:40:48 sturm Exp $
 #
 # Many variables moved to ../Makefile.inc
 
 COMMENT=	"French dictionary for the Amaya browser/page composer"
 
-PKGNAME=		amaya-french-dict-19961217
+PKGNAME=		amaya-french-dict-20011029
 DISTNAME=		French
 
 RUN_DEPENDS=		${DICT_RUN_DEPENDS}
