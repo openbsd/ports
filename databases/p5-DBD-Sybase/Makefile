@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/27 05:19:23 jcs Exp $
+# $OpenBSD: Makefile,v 1.6 2004/07/20 07:46:18 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Sybase database driver for the DBI module"
 
-DISTNAME=	DBD-Sybase-1.02
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	DBD-Sybase-1.04
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
 MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
@@ -24,5 +24,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl
 CONFIGURE_ENV+=	SYBASE=${LOCALBASE}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
