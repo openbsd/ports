@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/26 02:29:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/08/17 12:32:44 fgsch Exp $
 
 DISTNAME=	nasm-0.98
 CATEGORIES=	devel lang
-NEED_VERSION=	1.233
+NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= devel/lang/assemblers
 
 MAINTAINER=	angelos@openbsd.org
+HOMEPAGE=	http://www.web-sites.co.uk/nasm/
 
 #
 # The license is basically NOFEE but requires permission for inclusion
 # in a commercial procuct.  See License file for info.
 #
-LICENSE_TYPE=		RESTRICT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 FAKE_FLAGS=	INSTALLROOT=${WRKINST}
 
 post-install:
@@ -31,6 +30,6 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/doc/nasmdoc.ps ${PREFIX}/share/doc/nasm
 	${INSTALL_DATA} ${WRKBUILD}/doc/nasmdoc.txt ${PREFIX}/share/doc/nasm
 	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/nasm
-	${INSTALL_DATA} ${WRKBUILD}/doc/info/nasm.info $(PREFIX)/info
+	${INSTALL_DATA} ${WRKBUILD}/doc/info/* $(PREFIX)/info
 
 .include <bsd.port.mk>
