@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2003/06/08 00:10:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2003/10/08 12:12:52 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
 COMMENT-esd=	"ESounD module for portable audio output library"
 
-VERSION=	0.8.3
+VERSION=	0.8.4
 DISTNAME=	libao-${VERSION}
 PKGNAME-arts=	libao-arts-${VERSION}
 PKGNAME-esd=	libao-esd-${VERSION}
 CATEGORIES=    	audio
-HOMEPAGE=	http://www.vorbis.com/
+HOMEPAGE=	http://www.xiph.org/ao/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -19,10 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
-		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
-		http://www.casterclub.com/vorbis/unix/ \
-		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
+MASTER_SITES=	${HOMEPAGE}src/
 
 PSEUDO_FLAVORS=	no_arts no_esd
 FLAVOR?=	no_arts
@@ -45,6 +42,7 @@ CONFIGURE_ARGS+= --disable-arts
 .if ${FLAVOR:L:Mno_esd}
 CONFIGURE_ARGS+= --disable-esd
 .endif
+CONFIGURE_ARGS+= --disable-nas
 
 .if defined(PACKAGING)
 .  if   ${SUBPACKAGE} == "-arts"

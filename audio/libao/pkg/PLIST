@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/16 03:10:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/08 12:12:52 naddy Exp $
 include/ao/ao.h
 include/ao/os_types.h
 include/ao/plugin.h
 lib/libao.a
 lib/libao.la
+lib/pkgconfig/ao.pc
 man/man5/libao.conf.5
 share/aclocal/ao.m4
 share/doc/libao/ao_append_option.html
@@ -43,4 +44,6 @@ share/doc/libao/plugin-overview.html
 share/doc/libao/style.css
 %%SHARED%%
 @dirrm share/doc/libao
+@comment @dirrm share/aclocal
+@comment @dirrm lib/pkgconfig
 @dirrm include/ao

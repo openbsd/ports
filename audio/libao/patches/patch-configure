@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure,v 1.4 2002/07/20 00:52:45 naddy Exp $
---- configure.orig	Fri Jul 19 16:16:55 2002
-+++ configure	Fri Jul 19 22:32:31 2002
-@@ -5412,7 +5412,7 @@ if test -z "$GCC"; then
-                 PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
+$OpenBSD: patch-configure,v 1.5 2003/10/08 12:12:52 naddy Exp $
+--- configure.orig	2003-10-08 01:46:49.000000000 +0200
++++ configure	2003-10-08 01:48:27.000000000 +0200
+@@ -7816,7 +7816,7 @@ if test -z "$GCC"; then
          *)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
                  DEBUG="-g"
 -                CFLAGS="-O"
 +                CFLAGS=""
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -5432,9 +5432,9 @@ else
-                 CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char $SILLY_CARBON_PATH"
-                 PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char $SILLY_CARBON_PATH" ;;
+@@ -7839,9 +7839,9 @@ else
+                 PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char -Ddlsym=dlsym_auto_underscore" ;;
          *)
+                 PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
 -                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
 -                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
 -                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;

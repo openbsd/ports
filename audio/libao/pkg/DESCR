@@ -6,5 +6,3 @@ it currently supports:
    * AU files
    * WAV files
    * sun (OpenBSD's native sound system)
-
-WWW: ${HOMEPAGE}
