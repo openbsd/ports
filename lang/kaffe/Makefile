@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/29 20:41:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2003/05/23 05:03:46 pvalchev Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -39,7 +39,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # build/configuration variables
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ENV= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
