@@ -1,6 +1,6 @@
---- lib/Mail/SpamAssassin.pm.orig	Mon Sep  2 19:48:11 2002
-+++ lib/Mail/SpamAssassin.pm	Mon Sep  2 21:18:47 2002
-@@ -132,6 +132,8 @@ $HOME_URL = "http://spamassassin.org/";
+--- lib/Mail/SpamAssassin.pm.orig	Tue May 20 02:06:17 2003
++++ lib/Mail/SpamAssassin.pm	Thu May 22 09:31:17 2003
+@@ -142,6 +142,8 @@ $HOME_URL = "http://spamassassin.org/";
          '/etc/mail/spamassassin/user_prefs.template',
          '/usr/local/share/spamassassin/user_prefs.template',
          '/usr/share/spamassassin/user_prefs.template',
