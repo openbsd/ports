@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/03/29 15:01:53 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2001/04/20 15:09:11 espie Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
@@ -29,5 +29,5 @@ test:   build
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=Yes
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
 .endif
