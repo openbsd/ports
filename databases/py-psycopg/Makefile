@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2005/02/27 11:30:06 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/02/27 11:38:49 alek Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-WANTLIB=		crypto util
+WANTLIB=		crypto util pq
 
 PSEUDO_FLAVORS=	no_zope
 FLAVOR?=
@@ -43,6 +43,7 @@ FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}
 RUN_DEPENDS=	:zope-*:www/zope \
 		:py-psycopg-${VERSION}*:databases/py-psycopg
 PKG_ARCH=	*
+WANTLIB=
 .  endif
 .endif
 
