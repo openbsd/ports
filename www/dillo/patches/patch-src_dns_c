@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dns_c,v 1.5 2003/04/28 18:20:53 couderc Exp $
---- src/dns.c.orig	Tue Mar  4 21:50:40 2003
-+++ src/dns.c	Wed Apr 23 20:29:36 2003
+$OpenBSD: patch-src_dns_c,v 1.6 2003/05/04 18:33:59 couderc Exp $
+--- src/dns.c.orig	Wed Apr 30 13:39:42 2003
++++ src/dns.c	Wed Apr 30 13:40:05 2003
 @@ -30,14 +30,13 @@
  #include "dns.h"
  #include "list.h"
@@ -17,41 +17,3 @@ $OpenBSD: patch-src_dns_c,v 1.5 2003/04/28 18:20:53 couderc Exp $
  
  /*
   * Uncomment the following line for libc5 optimization
-@@ -304,7 +303,7 @@ static void *Dns_server(void *data)
-  */
- static void Dns_blocking_server(void)
- {
--   struct hostent *host;
-+   struct hostent *host = NULL;
-    gint index;
-    GSList *hosts = NULL;
- 
-@@ -313,12 +312,22 @@ static void Dns_blocking_server(void)
-    DEBUG_MSG(3, "Dns_blocking_server: dns_server[%d].hostname = %s\n",
-              index, dns_server[index].hostname);
- 
--   host = gethostbyname(dns_server[index].hostname);
--   if (host == NULL) {
--      DEBUG_MSG(3, "--> Dns_blocking_server: gethostbyname NULL return\n");
--   } else {
--      DEBUG_MSG(3, "--> Dns_blocking_server - good return\n");
--      hosts = Dns_note_hosts(hosts, AF_INET, host);
-+#ifdef ENABLE_IPV6
-+   if (ipv6_enabled) {
-+      host = gethostbyname2(dns_server[index].hostname, AF_INET6);
-+      if (host)
-+         hosts = Dns_note_hosts(hosts, AF_INET6, host);
-+   }
-+#endif
-+
-+   if (!host) {
-+      host = gethostbyname(dns_server[index].hostname);
-+      if (host == NULL) {
-+         DEBUG_MSG(3, "--> Dns_blocking_server: gethostbyname NULL return\n");
-+      } else {
-+         DEBUG_MSG(3, "--> Dns_blocking_server - good return\n");
-+         hosts = Dns_note_hosts(hosts, AF_INET, host);
-+      }
-    }
- 
-    /* write IP to server data channel */
