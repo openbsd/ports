@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2002/06/13 12:41:08 nino Exp $
+# $OpenBSD: Makefile,v 1.43 2003/05/17 07:35:24 margarida Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -24,6 +24,8 @@
      SUBDIR += glimmer
      SUBDIR += hexcurse
      SUBDIR += hexedit
+     SUBDIR += ht
+     SUBDIR += ht,no_x11
      SUBDIR += hnb 
      SUBDIR += jed
      SUBDIR += jed,no_x11
