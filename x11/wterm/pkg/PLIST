@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/07/03 05:08:57 brad Exp $
 bin/wterm
 @exec chmod 4755 %D/bin/wterm
