@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2003/02/16 19:00:09 margarida Exp $
+# $OpenBSD: Makefile,v 1.7 2003/04/27 15:23:57 margarida Exp $
 
-VERSION=	1.0.13
+VERSION=	1.0.17
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		http://maradns.3va.net/download/ \
