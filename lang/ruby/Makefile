@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/02/20 22:52:57 couderc Exp $
+# $OpenBSD: Makefile,v 1.28 2004/06/23 14:17:05 naddy Exp $
 
 COMMENT=		"object oriented script language with threads"
 
@@ -37,10 +37,10 @@ CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.4 \
 CONFIGURE_ARGS+=	--without-x11
 .endif
 
-NO_REGRESS=		Yes
+REGRESS_TARGET=	test
 
 REV=1.8
-SUB=${MACHINE_ARCH}-openbsd${OSREV}
+SUB=${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS=SUB REV
 
 .include <bsd.port.mk>

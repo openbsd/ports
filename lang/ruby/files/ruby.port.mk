@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.4 2004/02/20 22:52:58 couderc Exp $
+# $OpenBSD: ruby.port.mk,v 1.5 2004/06/23 14:17:05 naddy Exp $
 
 # ruby module
 
@@ -17,6 +17,6 @@ CONFIGURE_STYLE?=	simple
 CONFIGURE_SCRIPT?=	${LOCALBASE}/bin/ruby extconf.rb
 
 REV=1.8
-SUB=${MACHINE_ARCH}-openbsd${OSREV}
+SUB=${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS=SUB REV
 
