@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/10/02 09:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2001/04/18 14:35:07 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -17,6 +17,8 @@ _CMD+=category='${category}'
 _CMD+=maintainer='${maintainer}'
 .  endif
 SUBDIR != ${_CMD}
+.elif defined(SUBDIRLIST)
+SUBDIR != sed -e 's,[ 	]*\#.*,,' -e '/^[ 	]*$$/d' ${SUBDIRLIST}
 .else
 SUBDIR += archivers
 SUBDIR += astro
