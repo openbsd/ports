@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2005/02/11 12:43:46 alek Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
@@ -30,6 +30,7 @@ MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 MASTER_SITES:=	${MASTER_SITES:=development/CVSup/snapshots/}
 
 MULTI_PACKAGES=	-server
+SUBPACKAGE?=
 
 BUILD_DEPENDS=	::lang/ezm3
 
@@ -42,7 +43,9 @@ M3FLAGS=	 -DPREFIX=${PREFIX} -DX11BASE=${X11BASE}
 M3FLAGS+=	-DNOGUI
 .else
 USE_X11=	Yes
+.  if empty(SUBPACKAGE)
 WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xt 
+.  endif
 .endif
 
 MAKE_FLAGS=	M3FLAGS="${M3FLAGS}"
