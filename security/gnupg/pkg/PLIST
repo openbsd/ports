@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/10/30 12:52:32 markus Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/03/03 17:17:28 reinhard Exp $
 bin/gpg
 bin/gpgv
 lib/gnupg/rndunix
 lib/gnupg/rndegd
 lib/gnupg/tiger
+!%%idea%%
 man/man1/gpg.1
 man/man1/gpgv.1
 share/doc/gnupg/README

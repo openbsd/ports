@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/03 17:17:28 reinhard Exp $
+--- configure.in.orig	Tue Oct 17 15:29:31 2000
++++ configure.in	Sat Mar  3 17:21:37 2001
+@@ -260,7 +260,7 @@ AC_DEFINE_UNQUOTED(PRINTABLE_OS_NAME, "$
+ dnl  Fixme: Are these the best flags for OpenBSD????
+ case "${target}" in
+     *-openbsd*)
+-        NAME_OF_DEV_RANDOM="/dev/srandom"
++        NAME_OF_DEV_RANDOM="/dev/arandom"
+         NAME_OF_DEV_URANDOM="/dev/urandom"
+         DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
+         ;;

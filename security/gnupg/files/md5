@@ -1,3 +1,6 @@
 MD5 (gnupg-1.0.4.tar.gz) = bef2267bfe9b74a00906a78db34437f9
 RMD160 (gnupg-1.0.4.tar.gz) = 62fd2470c7eefb9e7c80d4e3337cce6547803157
 SHA1 (gnupg-1.0.4.tar.gz) = 7940d42ddf4e992152232b837e25f6b462622df5
+MD5 (idea.c) = 7d0557459e0a41da099ddbd837d4bd40
+RMD160 (idea.c) = 86ac117facd1fe498a6b964bce9ba1ce6e2ab094
+SHA1 (idea.c) = 1cbae164674dfb9da624e088fe7d66d7c0d4f17e

@@ -4,4 +4,8 @@ is nearly in compliance with RFC2440 (OpenPGP).
 
 IDEA and RSA plugins are available from ftp://ftp.gnupg.org/
 
+Flavor:
+idea
+	enables pgp compatiblity
+
 WWW: ${HOMEPAGE}

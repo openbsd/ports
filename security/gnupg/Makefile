@@ -1,19 +1,23 @@
-# $OpenBSD: Makefile,v 1.23 2000/12/23 16:48:06 reinhard Exp $
+# $OpenBSD: Makefile,v 1.24 2001/03/03 17:17:28 reinhard Exp $
 
 DISTNAME=	gnupg-1.0.4
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	security
-NEED_VERSION=	1.320
+NEED_VERSION=	1.358
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
-		ftp://openbsd.rug.ac.be/pub/gcrypt/ \
+		ftp://openbsd.rug.ac.be/pub/gcrypt/gnupg/ \
 		ftp://sunsite.auc.dk/pub/security/gcrypt/gnupg/ \
 		ftp://ftp.linux.it/pub/mirrors/gnupg/gnupg/ \
 		ftp://pgp.iijlab.net/pub/gnupg/gnupg/ \
 		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/ \
 		ftp://sunsite.icm.edu.pl/pub/security/gcrypt/gnupg/ \
 		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
-		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/
+		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/ \
+		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/
+MASTER_SITES0=	ftp://ftp.gnupg.org/pub/gcrypt/contrib/
+DISTFILES=	gnupg-1.0.4.tar.gz 
+EXTRACT_ONLY=	gnupg-1.0.4.tar.gz 
 
 HOMEPAGE=	http://www.gnupg.org/
 
@@ -25,11 +29,28 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS=	--with-included-gettext
 
 GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING doc/faq.html
+
+FLAVORS=	idea
+FLAVOR?=
+
+.if ${FLAVOR:L} == "idea"
+PERMIT_PACKAGE_CDROM=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
+PERMIT_PACKAGE_FTP=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
+PERMIT_DISTFILES_CDROM=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
+PERMIT_DISTFILES_FTP=	"patented algorithm (US patent 5,214,703, EPO patent 0482154, Japanese patent application 508119/1991)"
+# NB: idea.c is found in ${MASTER_SITES0}
+DISTFILES+=	idea.c
+PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_am 
+PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_in
+SED_PLIST+=	-e 's,^!%%idea%%,lib/gnupg/idea,'
+pre-patch:
+	@cp ${DISTDIR}/idea.c ${WRKSRC}/cipher
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${GNUPGDOCDIR}
