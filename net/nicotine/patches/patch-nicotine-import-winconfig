@@ -1,0 +1,9 @@
+$OpenBSD: patch-nicotine-import-winconfig,v 1.1.1.1 2004/02/16 21:16:06 xsa Exp $
+--- nicotine-import-winconfig.orig	2003-08-18 16:31:32.000000000 +0200
++++ nicotine-import-winconfig	2004-02-11 23:45:31.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python%%MODPY_VERSION%%
+ 
+ # Import the windows slsk config files in Nicotine.
+ # Geert Kloosterman <geertk@ai.rug.nl>

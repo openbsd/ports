@@ -1,0 +1,6 @@
+Nicotine is a SoulSeek client written in Python, based on the PySoulSeek
+project by Alexander Kanavin.
+
+It features, among other things, a completely rewritten graphical user
+interface which uses the PyGTK-2 toolkit and a less strict user request
+policy.

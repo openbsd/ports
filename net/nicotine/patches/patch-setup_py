@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2004/02/16 21:16:06 xsa Exp $
+--- setup.py.orig	2003-11-02 04:41:32.000000000 +0100
++++ setup.py	2004-02-12 02:16:00.000000000 +0100
+@@ -19,7 +19,7 @@ for mo in mo_dirs:
+ 	p, lang = os.path.split(mo)
+ 	if lang == "nicotine.pot":
+ 		continue
+-	translations.append((os.path.join(sys.prefix, "share", "locale", lang, "LC_MESSAGES"), [os.path.join(mo, "nicotine.mo")]))
++	translations.append((os.path.join("share", "locale", lang, "LC_MESSAGES"), [os.path.join(mo, "nicotine.mo")]))
+ 	
+ if sys.platform.startswith("win"):
+   try:
