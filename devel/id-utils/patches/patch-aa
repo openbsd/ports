@@ -1,0 +1,37 @@
+--- configure.in.orig	Wed Sep 29 00:58:44 1999
++++ configure.in	Wed Sep 29 02:20:37 1999
+@@ -127,7 +127,33 @@ AC_SUBST(LANGUAGE_MAP_FILE)
+ ################ Find a home for Emacs Lisp code #############################
+ ##############################################################################
+ 
+-AM_PATH_LISPDIR
++AC_ARG_WITH([emacs], 
++[  --with-emacs            check for emacs flavor], 
++[ sublisp=lisp
++if test "$withval" = "yes" -o "$withval" = "emacs"; then
++	lispdir="\$(prefix)/share/emacs/site-lisp"
++else
++	if test "$withval" = "xemacs"; then
++		lispdir="\$(prefix)/lib/xemacs/site-lisp"
++	else
++		if test "$withval" = "no"; then
++			lispdir=
++			sublisp=
++		else
++			AC_MSG_ERROR("Unknown value: --with-emacs=$withval")
++		fi
++	fi
++fi
++],
++[
++sublisp=
++lispdir=
++]
++)
++
++AC_SUBST(lispdir)
++
++AC_SUBST(sublisp)
+ 
+ ##############################################################################
+ ################ Generate the configure script ###############################

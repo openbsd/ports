@@ -9,6 +9,8 @@ bin/lid
 bin/mkid
 bin/xtokid
 info/id-utils.info
+share/emacs/site-lisp/id-utils.el
+share/emacs/site-lisp/id-utils.elc
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
 share/locale/fr/LC_MESSAGES/id-utils.mo
