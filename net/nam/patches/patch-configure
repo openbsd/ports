@@ -1,6 +1,7 @@
---- configure.orig	Thu Jan  6 19:27:09 2000
-+++ configure	Fri Jul 14 07:36:51 2000
-@@ -2598,7 +2598,7 @@
+$OpenBSD: patch-configure,v 1.1 2002/10/10 01:47:47 naddy Exp $
+--- configure.orig	Fri Jan  7 04:27:09 2000
++++ configure	Thu Oct 10 03:23:13 2002
+@@ -2598,7 +2598,7 @@ oldpath=$PATH
  # $d/unix works if $d is the 8.0 distribution
  # $d/bin is for the ns-allinone distribution (kind of hacky, isn't it?)
  PATH=$d/unix:$d/bin:$PATH
@@ -9,7 +10,7 @@
  do
  # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -3172,7 +3172,7 @@
+@@ -3172,7 +3172,7 @@ else
  fi
  
  
@@ -18,7 +19,7 @@
  OTCL_ALT_VERS=1.0
  
  OTCL_H_PLACES_D="$d \
-@@ -3360,7 +3360,7 @@
+@@ -3360,7 +3360,7 @@ else
  fi
  
  

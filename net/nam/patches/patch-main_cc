@@ -1,5 +1,6 @@
---- main.cc.orig	Fri Jul 14 07:17:51 2000
-+++ main.cc	Fri Jul 14 07:19:09 2000
+$OpenBSD: patch-main_cc,v 1.1 2002/10/10 01:47:48 naddy Exp $
+--- main.cc.orig	Fri Jan  7 04:27:10 2000
++++ main.cc	Thu Oct 10 03:23:13 2002
 @@ -48,6 +48,7 @@
  
  extern "C" {

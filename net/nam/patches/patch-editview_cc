@@ -1,0 +1,57 @@
+$OpenBSD: patch-editview_cc,v 1.1 2002/10/10 01:47:47 naddy Exp $
+--- editview.cc.orig	Thu Oct 10 03:28:17 2002
++++ editview.cc	Thu Oct 10 03:28:41 2002
+@@ -597,7 +597,7 @@ void EditView::xrect(float x0, float y0,
+ void EditView::line(float x0, float y0, float x1, float y1, int color)
+ {
+ 	if (objType_ != NONE)
+-		View::line(x0, y0, x1, y1, Paint::instance()->xor());
++		View::line(x0, y0, x1, y1, Paint::instance()->eor());
+ 	else 
+ 		View::line(x0, y0, x1, y1, color);
+ }
+@@ -605,7 +605,7 @@ void EditView::line(float x0, float y0, 
+ void EditView::rect(float x0, float y0, float x1, float y1, int color)
+ {
+ 	if (objType_ != NONE)
+-		View::rect(x0, y0, x1, y1, Paint::instance()->xor());
++		View::rect(x0, y0, x1, y1, Paint::instance()->eor());
+ 	else 
+ 		View::rect(x0, y0, x1, y1, color);
+ }
+@@ -613,7 +613,7 @@ void EditView::rect(float x0, float y0, 
+ void EditView::polygon(const float* x, const float* y, int n, int color)
+ {
+ 	if (objType_ != NONE)
+-		View::polygon(x, y, n, Paint::instance()->xor());
++		View::polygon(x, y, n, Paint::instance()->eor());
+ 	else 
+ 		View::polygon(x, y, n, color);
+ }
+@@ -621,7 +621,7 @@ void EditView::polygon(const float* x, c
+ void EditView::fill(const float* x, const float* y, int n, int color)
+ {
+ 	if (objType_ != NONE)
+-		View::fill(x, y, n, Paint::instance()->xor());
++		View::fill(x, y, n, Paint::instance()->eor());
+ 	else 
+ 		View::fill(x, y, n, color);
+ }
+@@ -629,7 +629,7 @@ void EditView::fill(const float* x, cons
+ void EditView::circle(float x, float y, float r, int color)
+ {
+ 	if (objType_ != NONE)
+-		View::circle(x, y, r, Paint::instance()->xor());
++		View::circle(x, y, r, Paint::instance()->eor());
+ 	else 
+ 		View::circle(x, y, r, color);
+ }
+@@ -645,7 +645,7 @@ void EditView::render()
+ {
+ 	// Here we can compute the clipping box for render
+ 	Paint *paint = Paint::instance();
+-	GC gc = paint->paint_to_gc(paint->xor());
++	GC gc = paint->paint_to_gc(paint->eor());
+ 
+ 	switch (objType_) {
+ 	case START_RUBBERBAND:

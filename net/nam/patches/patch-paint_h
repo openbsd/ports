@@ -1,0 +1,21 @@
+$OpenBSD: patch-paint_h,v 1.1 2002/10/10 01:47:48 naddy Exp $
+--- paint.h.orig	Thu Oct 10 03:26:57 2002
++++ paint.h	Thu Oct 10 03:27:31 2002
+@@ -67,7 +67,7 @@ class Paint { 
+ 	int lookupXor(const char *color, int linewidth);
+ 	inline int thick() { return (thick_); }
+ 	inline int thin() { return (thin_); }
+-	inline int xor() { return (xor_); }
++	inline int eor() { return (eor_); }
+  private:
+ 	void adjust();
+ 
+@@ -78,7 +78,7 @@ class Paint { 
+ 	rgb *rgb_;
+ 	int thick_;
+ 	int thin_;
+-	int xor_;
++	int eor_;
+ 	int background_;
+ };
+ 
