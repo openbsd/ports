@@ -8,7 +8,7 @@ You can
   bit for the gpg binary (most likely 'chmod u+s ${PREFIX}/bin/gpg').
 
 - enable swap encryption by setting vm.swapencrypt.enable=1 with
-  config(8). This is recommended.
+  sysctl(8). This is recommended.
 
 In the latter case you may want to get rid of the misleading 'using
 insecure memory' warning. Just put 'no-secmem-warning' to your
