@@ -1,0 +1,24 @@
+# $OpenBSD: DEINSTALL,v 1.1 2000/03/12 13:20:41 form Exp $
+#
+# xruskb de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/X11R6}
+AD_FILE=/var/X11/app-defaults/Xrus
+
+if [ -f ${AD_FILE} ]; then
+	echo
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to perform"
+	echo "| this step as root:"
+	echo "|"
+	echo "|           rm -f ${AD_FILE}"
+	echo "|"
+	echo "| Do not do this if you plan on re-installing $1"
+	echo "| at some future time."
+	echo "+---------------"
+	echo
+fi
+
+exit 0

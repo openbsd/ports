@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/05 18:30:41 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/12 13:20:41 form Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
@@ -7,12 +7,12 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	form@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FAKE=		Yes
 USE_X11=	Yes
 GNU_CONFIGURE=	Yes
 
@@ -34,8 +34,8 @@ pre-configure:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${X11BASE}/lib/X11/app-defaults/Xrus
-	${INSTALL_DATA} ${WRKSRC}/xrus.doc-english ${X11BASE}/share/xruskb/xrus.doc
-	${INSTALL_DATA} ${WRKSRC}/xrus.doc-koi8 ${X11BASE}/share/xruskb
+	${INSTALL_DATA} ${WRKSRC}/Xrus.ad ${PREFIX}/share/xruskb
+	${INSTALL_DATA} ${WRKSRC}/xrus.doc-english ${PREFIX}/share/xruskb/xrus.doc
+	${INSTALL_DATA} ${WRKSRC}/xrus.doc-koi8 ${PREFIX}/share/xruskb
 
 .include <bsd.port.mk>

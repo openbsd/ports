@@ -3,6 +3,7 @@ bin/xrusmodmap
 man/man1/xrus.1
 share/xruskb/DocumentL.xpm
 share/xruskb/DocumentY.xpm
+share/xruskb/Xrus.ad
 share/xruskb/jcuken-cp1251.xmm
 share/xruskb/jcuken-cp866.xmm
 share/xruskb/jcuken-cyr.xmm
