@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.27 2000/04/24 20:32:02 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2000/04/28 22:12:23 espie Exp $
 
 DISTNAME=	Wnn4.2
 
@@ -15,21 +15,21 @@ WNNBASE=${PREFIX}
 .if ${SUBPACKAGE} == "-dict"
 CATEGORIES=	japanese
 PREFIX=${WNNDICDIR}
-PKGNAME=	ja-Wnn-dict-4.2
+PKGNAME=	ja-Wnndict-4.2
 .elif ${SUBPACKAGE} == "-zh"
 CATEGORIES=	chinese
 PKGNAME=	zh-Wnn-4.2
 .elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
 PREFIX=${WNNDICDIR}
-PKGNAME=	zh-Wnn-dict-4.2
+PKGNAME=	zh-Wnndict-4.2
 .elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
 PKGNAME=	ko-Wnn-4.2
 .elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
 PREFIX=${WNNDICDIR}
-PKGNAME=	ko-Wnn-dict-4.2
+PKGNAME=	ko-Wnndict-4.2
 .elif ${SUBPACKAGE} == "-xwnmo"
 CATEGORIES=	japanese chinese korean
 PKGNAME=	Wnn-xwnmo-4.2
