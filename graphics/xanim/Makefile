@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/08/02 13:00:53 espie Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
-
-CDROM=        "NOFEE: can not sell"
 
 DISTNAME=xanim-2.80.1
 WRKDIST=${WRKDIR}/xanim2801
@@ -17,10 +15,10 @@ MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
 
 # License: NOFEE
-PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_CDROM=	No Fee
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	No Fee
 
 BASEDISTFILE=xanim2801.tar.gz
 DISTFILES=${BASEDISTFILE}
