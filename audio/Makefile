@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1998/07/24 03:11:20 downsj Exp $
+# $OpenBSD: Makefile,v 1.14 1999/02/07 05:22:28 marc Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -23,7 +23,7 @@
 #    SUBDIR += s3mod
      SUBDIR += sox
 #    SUBDIR += splay
-#    SUBDIR += timidity
+     SUBDIR += timidity
      SUBDIR += tosha
      SUBDIR += tracker
      SUBDIR += workman
