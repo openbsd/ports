@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/06/25 22:26:27 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/07/02 03:41:06 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -32,13 +32,13 @@ FLAVORS=	no_x11
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG" \
 		LIBS="libgd.la -lm -lpng -ljpeg -lz" \
 		INCLUDEDIRS="-I. -I/usr/local/include" \
-		LIBDIRS="-L. -L/usr/local/lib"
+		LIBDIRS="-L/usr/local/lib"
 FAKE_FLAGS+=	${MAKE_FLAGS}
 .else
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
 		LIBS="libgd.la -lm -lpng -lz -ljpeg -lttf -lXpm -lX11" \
 		INCLUDEDIRS="-I. -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11" \
-		LIBDIRS="-L. -L/usr/local/lib -L/usr/X11R6/lib"
+		LIBDIRS="-L/usr/local/lib -L/usr/X11R6/lib"
 FAKE_FLAGS+=	${MAKE_FLAGS}
 .endif
 
