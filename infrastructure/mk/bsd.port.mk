@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.393 2001/04/11 15:55:34 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.394 2001/04/11 16:06:07 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -171,12 +171,21 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # makesum		- Generate ${CHECKSUM_FILE} (only do this for your own ports!).
 # addsum		- update ${CHECKSUM_FILE} in a non-destructive way 
 #				  (your own ports only!)
+# obj			- pre-build ${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH} links
+#
 # readme		- Create a README.html file describing the category or package
+#				  (somewhat broken due to NEW_DEPENDS)
+
+
+# Somewhat obsolete targets:
 # list-distfiles- list the distribution and patch files used by a port.
 #				  Typical use is (from the top level of the ports tree)
 #				  make ECHO_MSG=: list-distfiles | tee some-file
-# obj			- pre-build ${WRKDIR} -> ${WRKOBJDIR}/${PKGPATH} links
+#				  (rely on mirror-maker instead)
 # print-depends - print all dependencies for the given package
+#				  (for new dependencies, use
+#				  build-depends-list/run-depends-list instead)
+#
 #
 # Default sequence for "all" is:  fetch checksum extract patch configure build
 #
@@ -191,8 +200,11 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # The sequence of hooks actually run is: 
 #
 # pre-patch `real distpatch' post-distpatch `real patch' post-patch
-# NEVER override the "regular" targets unless you want to open
-# a major can of worms.
+#
+# For historical reasons, you shouldn't override pre-extract and
+# do-extract. Rely on EXTRACT_ONLY and post-extract instead.
+
+
 
 .if exists(${.CURDIR}/../Makefile.inc)
 .include "${.CURDIR}/../Makefile.inc"
@@ -1859,7 +1871,7 @@ rebuild:
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
 	@${PKG_DELETE} -f ${FULLPKGNAME}
-	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
+	@rm -f ${_INSTALL_COOKIE}
 .endif
 
 
@@ -2070,11 +2082,6 @@ clean-depends:
 	done
 .  endif
 .endif
-
-################################################################
-# Everything after here are internal targets and really
-# shouldn't be touched by anybody but the release engineers.
-################################################################
 
 # This target generates an index entry suitable for aggregation into
 # a large index.  Format is:
