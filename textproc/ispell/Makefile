@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 1999/06/21 23:17:01 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/06/28 17:45:51 brad Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 NEED_VERSION=	1.89
 
 FRENCH_DICT=	francais-IREQ-1.4
-GERMAN_DICT=	hk2-deutch
+GERMAN_DICT=	hk2-deutsch
 
 DISTNAME=	ispell-3.1.20
 CATEGORIES=	textproc
@@ -28,7 +28,7 @@ pre-fetch pre-build pre-install:
 	@${ECHO} '******************************************************' 
 	@${ECHO} '* Note that you can build a french/english or a      *' 
 	@${ECHO} '* german/english version by setting the shell        *'
-	@${ECHO} '* variable ISPELL_FR or ISPELL_DE"                   *'
+	@${ECHO} '* variable ISPELL_FR or ISPELL_DE                    *'
 	@${ECHO} '******************************************************' 
 .elif defined(ISPELL_FR)
 EXTRA_DICT=	${FRENCH_DICT}.tar.gz
