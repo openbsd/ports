@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/10/06 01:41:14 kevlo Exp $
 bin/tcpflow
 man/man1/tcpflow.1
