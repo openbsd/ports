@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2003/08/16 06:57:50 pvalchev Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2003/11/24 18:52:05 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -69,6 +69,8 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .if ${FLAVOR:L:Mtls}
 .if defined(TLSVERSION)
 PKGNAME:=	${PKGNAME}.tls${TLSVERSION}
+
+TLSDISTNAME=	pfixtls-${TLSVERSION}-${TLSPFIXVERSION}-${TLSSSLVERSION}
 
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/old/
