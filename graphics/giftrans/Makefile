@@ -1,25 +1,30 @@
-# $OpenBSD: Makefile,v 1.12 2003/07/28 21:03:01 jolan Exp $
-# $FreeBSD: Makefile,v 1.2 1996/11/18 11:27:58 asami Exp $
+# $OpenBSD: Makefile,v 1.13 2004/04/22 12:53:41 xsa Exp $
 
 COMMENT=	"handle GIF89a transparent option and interlace mode"
 
 DISTNAME=	giftrans
 PKGNAME=        giftrans-1.12
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 
-PERMIT_PACKAGE_CDROM=	"no fee"
+# BSD-like, badly worded
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
+
+USE_X11=	Yes
+NO_REGRESS=	Yes
+
+do-configure:
+	@perl -pi -e 's,/usr/lib,${X11BASE}/lib,g' ${WRKSRC}/giftrans.c
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} giftrans.c -o giftrans
 
-NO_REGRESS=	Yes
-
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/giftrans ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/giftrans.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/giftrans ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/giftrans.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
