@@ -1,24 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2000/09/03 17:20:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/17 14:56:26 brad Exp $
 
-MULTI_PACKAGES=-pine -pico
-SUBPACKAGE?=
-
-VERSION=4.21
+VERSION=	4.21
 DISTNAME=	pine${VERSION}
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
-
-.if ${SUBPACKAGE} == "-pine"
-PKGNAME=	pine-${VERSION}
-CATEGORIES=	mail news
-.elif ${SUBPACKAGE} == "-pico"
-PKGNAME=	pico-${VERSION}
-CATEGORIES=	editors
-.else
-PKGNAME=	pine+pico-${VERSION}
-CATEGORIES=	mail news editors
-.endif
-NEED_VERSION=	1.310
 
 HOMEPAGE=	http://www.washington.edu/pine/
 
@@ -28,6 +14,22 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+
+MULTI_PACKAGES=	-pine -pico
+SUBPACKAGE?=
+
+.if ${SUBPACKAGE} == "-pine"
+PKGNAME=	pine-${VERSION}
+CATEGORIES=	mail news
+LIB_DEPENDS=	c-client.1::mail/c-client
+.elif ${SUBPACKAGE} == "-pico"
+PKGNAME=	pico-${VERSION}
+CATEGORIES=	editors
+.else
+PKGNAME=	pine+pico-${VERSION}
+CATEGORIES=	mail news editors
+LIB_DEPENDS=	c-client.1::mail/c-client
+.endif
 
 do-configure:
 	@cp -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
