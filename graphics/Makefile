@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2002/08/05 05:04:12 brad Exp $
+# $OpenBSD: Makefile,v 1.98 2002/08/28 20:53:15 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -75,6 +75,7 @@
      SUBDIR += p5-Image-Info
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
+     SUBDIR += p5-PerlMagick
 #    SUBDIR += pgperl
 #    SUBDIR += pgplot
 #    SUBDIR += photopc
