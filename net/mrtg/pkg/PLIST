@@ -1,7 +1,9 @@
 bin/rateup
 bin/cfgmaker
+bin/cfgmaker_ip
 bin/indexmaker
 bin/mrtg
+lib/mrtg/locales_mrtg.pm
 lib/mrtg/BER.pm
 lib/mrtg/SNMP_Session.pm
 lib/mrtg/SNMP_util.pm

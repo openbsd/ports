@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/04/27 19:25:27 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 1999/07/26 01:25:21 brad Exp $
 #
 # Pre/post-installation setup of mrtg
 
@@ -10,9 +10,24 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=/etc/mrtg.cfg
 
-cp ${PREFIX}/lib/mrtg/BER.pm /usr/lib/perl5/site_perl
-cp ${PREFIX}/lib/mrtg/SNMP_Session.pm /usr/lib/perl5/site_perl
-cp ${PREFIX}/lib/mrtg/SNMP_util.pm /usr/lib/perl5/site_perl
+# Function: tell the user where s/he needs to install the Perl modules
+#
+do_perl_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The Perl modules that come with MRTG need to be installed in"
+    echo "| the correct location for it to run properly. The correct"
+    echo "| installation paths are:"
+    echo "|"
+    echo "| older than and up to 2.5:	/usr/lib/perl5/site_perl"
+    echo "| -current:			/usr/local/libdata/perl5/site_perl"
+    echo "|"
+    echo "| Please copy the .pm files from ${PREFIX}/lib/mrtg to the"
+    echo "| correct path before trying to run MRTG."
+    echo "+---------------"
+    echo
+}
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -62,6 +77,7 @@ case $2 in
 	else
 	    do_install $1
 	fi
+	do_perl_notice
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

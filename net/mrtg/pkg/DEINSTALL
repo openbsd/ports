@@ -1,4 +1,4 @@
-# $OpenBSD: DEINSTALL,v 1.1 1999/04/27 19:25:27 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 1999/07/26 01:25:21 brad Exp $
 #
 # mrtg de-installation
 
@@ -7,9 +7,19 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=/etc/mrtg.cfg
 
-rm -f /usr/lib/perl5/site_perl/BER.pm
-rm -f /usr/lib/perl5/site_perl/SNMP_Session.pm
-rm -f /usr/lib/perl5/site_perl/SNMP_util.pm
+if [ -f /usr/lib/perl5/site_perl/BER.pm]; then
+    rm -f /usr/lib/perl5/site_perl/locales_mrtg.pm
+    rm -f /usr/lib/perl5/site_perl/BER.pm
+    rm -f /usr/lib/perl5/site_perl/SNMP_Session.pm
+    rm -f /usr/lib/perl5/site_perl/SNMP_util.pm
+fi
+
+if [ -f /usr/local/libdata/perl5/site_perl/BER.pm]; then
+    rm -f /usr/local/libdata/perl5/site_perl/locales_mrtg.pm
+    rm -f /usr/local/libdata/perl5/site_perl/BER.pm
+    rm -f /usr/local/libdata/perl5/site_perl/SNMP_Session.pm
+    rm -f /usr/local/libdata/perl5/site_perl/SNMP_util.pm
+fi
 
 if [ -f ${CONFIG_FILE} ]; then
     echo
