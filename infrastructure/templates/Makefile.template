@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.23 2000/10/22 16:06:26 espie Exp $
+# $OpenBSD: Makefile.template,v 1.24 2001/01/04 01:30:37 kevlo Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -98,6 +98,33 @@ MASTER_SITES=		???
 #CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV=		???
 #LIBTOOL_FLAGS=		???
+
+# Assume you have one multiple choice flavor: 1 2 3 and switches a b.
+# You would write
+#
+#FLAVORS=1 2 3 a b
+#FLAVOR?
+# grab multiple choice value
+#CHOICE=${FLAVOR:L:Na:Nb}
+# check that CHOICE is 1 OR 2 OR 3, or error out
+#.if ${CHOICE} == "1"
+# code for 1
+#.elif ${CHOICE} == "2"
+# code for 2
+#.elif ${CHOICE} == "3"
+# code for 3
+#.else
+#.BEGIN:
+#	@echo "Conflicting flavor: ${FLAVOR}"
+#	@exit 1
+#.endif
+# check for switches
+#.if ${FLAVOR:L:Ma}
+# code for a
+#.endif
+#.if ${FLAVOR:L:Mb}
+# code for b
+#.endif
 
 # Things that we don't want to do for this port/package
 # Generally, DON'T set anything to No if it's not needed.
