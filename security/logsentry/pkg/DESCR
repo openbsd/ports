@@ -2,7 +2,6 @@ Logsentry is a scheduled auditing tool that scans system log files
 for security violations and unusual activity. Reports of suspicious
 log entries are mailed to a specified user (usually root).
 
-Logsentry was formerly known as logcheck. Even though the package
-is now called logsentry-1.1.1, the actual files kept their names.
-
-WWW: ${HOMEPAGE}
+Logsentry was formerly known as logcheck. This OpenBSD port has renamed
+the script files used by logsentry to reflect this change. However,
+documenation located in ${DOC_DIR} may still use the old names.

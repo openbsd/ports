@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/03 12:41:30 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/20 17:36:40 sturm Exp $
 @pkgcfl logcheck-1.1.1
 bin/logtail
 share/doc/logsentry/CREDITS
@@ -6,10 +6,10 @@ share/doc/logsentry/INSTALL
 share/doc/logsentry/README
 share/doc/logsentry/README.how.to.interpret
 share/doc/logsentry/README.keywords
-share/examples/logsentry/logcheck.hacking
-share/examples/logsentry/logcheck.ignore
-share/examples/logsentry/logcheck.sh
-share/examples/logsentry/logcheck.violations
-share/examples/logsentry/logcheck.violations.ignore
+share/examples/logsentry/logsentry.hacking
+share/examples/logsentry/logsentry.ignore
+share/examples/logsentry/logsentry.sh
+share/examples/logsentry/logsentry.violations
+share/examples/logsentry/logsentry.violations.ignore
 @dirrm share/examples/logsentry
 @dirrm share/doc/logsentry

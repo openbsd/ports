@@ -23,7 +23,7 @@
  # use this directory for their "scratch" area. 
  
 -TMPDIR=/usr/local/etc/tmp
-+TMPDIR=%%LOGCHECK_TMP%%
++TMPDIR=%%LOGSENTRY_TMP%%
  
  # The 'grep' command. This command MUST support the
  # '-i' '-v' and '-f' flags!! The GNU grep does this by default (that's
@@ -32,7 +32,7 @@
  # "WIZ" besides ISS?), and obvious sendmail attacks/probes.
  
 -HACKING_FILE=/usr/local/etc/logcheck.hacking
-+HACKING_FILE=%%SYSCONFDIR%%/logsentry/logcheck.hacking
++HACKING_FILE=%%SYSCONFDIR%%/logsentry/logsentry.hacking
  
  # File of security violation patterns to specifically look for.
  # This file should contain keywords of information administrators should
@@ -41,7 +41,7 @@
  # items into this file to have them reported regularly.
  
 -VIOLATIONS_FILE=/usr/local/etc/logcheck.violations
-+VIOLATIONS_FILE=%%SYSCONFDIR%%/logsentry/logcheck.violations
++VIOLATIONS_FILE=%%SYSCONFDIR%%/logsentry/logsentry.violations
  
  # File that contains more complete sentences that have keywords from
  # the violations file. These keywords are normal and are not cause for 
@@ -50,7 +50,7 @@
  # Again, be careful what you put in here and DO NOT LEAVE IT EMPTY!
  
 -VIOLATIONS_IGNORE_FILE=/usr/local/etc/logcheck.violations.ignore
-+VIOLATIONS_IGNORE_FILE=%%SYSCONFDIR%%/logsentry/logcheck.violations.ignore
++VIOLATIONS_IGNORE_FILE=%%SYSCONFDIR%%/logsentry/logsentry.violations.ignore
  
  # This is the name of a file that contains patterns that we should
  # ignore if found in a log file. If you have repeated false alarms
@@ -58,7 +58,7 @@
  # Once again, be as specific as possible, and go easy on the wildcards
  
 -IGNORE_FILE=/usr/local/etc/logcheck.ignore
-+IGNORE_FILE=%%SYSCONFDIR%%/logsentry/logcheck.ignore
++IGNORE_FILE=%%SYSCONFDIR%%/logsentry/logsentry.ignore
  
  # The files are reported in the order of hacking, security 
  # violations, and unusual system events. Notice that this

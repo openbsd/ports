@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/02/02 08:20:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/20 17:36:40 sturm Exp $
 
 COMMENT=	"logfile auditing tool"
 
 DISTNAME=	logsentry-1.1.1
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	security
-
-HOMEPAGE=	http://www.psionic.com/products/logsentry.html
 
 MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
@@ -16,7 +14,8 @@ PERMIT_PACKAGE_FTP=    	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP= 	Yes
 
-MASTER_SITES=	http://www.psionic.com/downloads/
+MASTER_SITES=	http://www.insecure.dk/distfiles/ \
+		ftp://sensimilia.eu.org/pub/software/sys/
 
 NO_REGRESS=	Yes
 
@@ -26,7 +25,9 @@ DOC_DIR=	${PREFIX}/share/doc/logsentry
 DOC_FILES=	CREDITS INSTALL README README.how.to.interpret README.keywords
 CFG_DIR=	${PREFIX}/share/examples/logsentry
 CFG_FILES=	logcheck.sh logcheck.hacking logcheck.ignore \
-		 logcheck.violations logcheck.violations.ignore
+		logcheck.violations logcheck.violations.ignore
+
+SUBST_VARS+=	DOC_DIR
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/src/logtail ${WRKSRC}/src/logtail.c
@@ -35,14 +36,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/logtail ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 .for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOC_DIR}
 .endfor
 	${INSTALL_DATA_DIR} ${CFG_DIR}
 .for i in ${CFG_FILES}
-	${INSTALL_DATA} ${WRKSRC}/systems/generic/$i ${CFG_DIR}
+	${INSTALL_DATA} ${WRKSRC}/systems/generic/${i} \
+		${CFG_DIR}/${i:S/logcheck/logsentry/}
 .endfor
 	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},;' \
-	 -e 's,%%LOGCHECK_TMP%%,/var/tmp/logsentry,;' \
-	 -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},;' ${CFG_DIR}/logcheck.sh
+	 -e 's,%%LOGSENTRY_TMP%%,/var/tmp/logsentry,;' \
+	 -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},;' ${CFG_DIR}/logsentry.sh
 
 .include <bsd.port.mk> 

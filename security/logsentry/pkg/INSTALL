@@ -1,7 +1,7 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2003/01/24 23:29:17 sturm Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/20 17:36:40 sturm Exp $
 #
-# Pre/post-installation setup of logcheck
+# Pre/post-installation setup of logsentry
 
 # exit on errors, use a sane path and install prefix
 
@@ -33,13 +33,14 @@ do_install()
     if [ ! -d ${TMP_DIR} ]; then
        mkdir -m 600 ${TMP_DIR}
     fi
-    install -o root -g wheel -m 700 ${EXAMPLE_DIR}/logcheck.sh ${CONFIG_DIR}
-    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logcheck.hacking \
+    install -o root -g wheel -m 700 ${EXAMPLE_DIR}/logsentry.sh ${CONFIG_DIR}
+    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logsentry.hacking \
        ${CONFIG_DIR}
-    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logcheck.ignore ${CONFIG_DIR}
-    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logcheck.violations \
+    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logsentry.ignore \
        ${CONFIG_DIR}
-    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logcheck.violations.ignore \
+    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logsentry.violations \
+       ${CONFIG_DIR}
+    install -o root -g wheel -m 600 ${EXAMPLE_DIR}/logsentry.violations.ignore \
        ${CONFIG_DIR}
 
     echo
@@ -57,7 +58,7 @@ do_install()
     echo "| /var/log/daemon"
     echo "| /var/log/xferlog"
     echo "|"
-    echo "| Edit ${CONFIG_DIR}/logcheck.sh if you want to add more files."
+    echo "| Edit ${CONFIG_DIR}/logsentry.sh if you want to add more files."
     echo "|"
     echo "| Be sure to configure your crontab as indicated by"
     echo "| ${DOC_DIR}/INSTALL so that $1"
