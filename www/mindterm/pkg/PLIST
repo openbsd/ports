@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 21:42:31 danh Exp $
+htdocs/mindterm/mindterm_ie.cab
+htdocs/mindterm/mindterm_ns.jar
+htdocs/mindterm/mindtermfull.jar
+htdocs/mindterm/sample-ie.html
+htdocs/mindterm/sample-ns.html
+@dirrm htdocs/mindterm

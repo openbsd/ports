@@ -1,0 +1,7 @@
+MindTerm v1.99 is a SSH client program written in 100% pure Java.
+MindTerm can be run as a stand-alone program, or as an applet in a
+webpage.  Apart from supporting both ssh1 and ssh2, it has some
+unique features such as built in scp file transfer and a built in
+ftp-proxy which works with ordinary ftpds behind the sshd.
+
+WWW: ${HOMEPAGE}
