@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/18 13:51:37 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/22 21:32:45 shell Exp $
 
 
 COMMENT=		"python codes checker"
 
-VERSION=		0.7
+VERSION=		0.7.5
 DISTNAME=		pychecker-${VERSION}
 PKGNAME=		py-Checker-${VERSION}
 CATEGORIES=     	devel
