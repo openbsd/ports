@@ -1,5 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2001/03/26 18:59:02 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2002/07/15 06:29:20 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
+
+# XXX This will panic any vax
+NOT_FOR_ARCHS=	vax
 
 COMMENT=	"shared memory lib for apps with pre-forked process model"
 
