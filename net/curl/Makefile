@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/11/30 00:23:28 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/11/30 00:54:44 brad Exp $
 
 DISTNAME=	curl-6.2
 CATEGORIES=	net
@@ -25,7 +25,7 @@ post-configure:
 post-install:
 	@mkdir -p ${CURLDOCDIR}
 	@set -e; for f in ${CURLDOCFILES}; do \
-	 ${INSTALL_DATA} ${WRKSRC}/$${f} ${CURLDOCDIR}/; \
+	 ${INSTALL_DATA} ${WRKSRC}/$${f} ${CURLDOCDIR}; \
 	done
 
 .include <bsd.port.mk>
