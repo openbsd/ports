@@ -1,5 +1,3 @@
 lib/libslang.a
-lib/libslang.so.13.7
-@exec /sbin/ldconfig -m %B
 include/slcurses.h
 include/slang.h

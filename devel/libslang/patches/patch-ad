@@ -1,0 +1,12 @@
+--- configure.orig	Sun Jun  6 19:34:53 1999
++++ configure	Wed Jun 23 11:34:43 1999
+@@ -1952,7 +1952,8 @@
+ slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
+  awk '{ print ($1 - $2*10000 - $3*100) }'`
+ 
+-slang_minor_version=$slang_minor_version.$slang_mminor_version
++slang_major_version=$slang_major_version$slang_minor_version
++slang_minor_version=$slang_mminor_version
+ echo "$ac_t""$slang_major_version.$slang_minor_version" 1>&6
+ 
+ 
