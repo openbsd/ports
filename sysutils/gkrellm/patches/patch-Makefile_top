@@ -1,0 +1,36 @@
+$OpenBSD: patch-Makefile_top,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
+--- Makefile.top.orig	Sat Jan  6 17:08:34 2001
++++ Makefile.top	Thu Feb 15 18:56:45 2001
+@@ -65,18 +65,18 @@ GTOP_INCLUDE = -I$(GTOP_PREFIX)/include
+ GTOP_LIBS = -L$(GTOP_PREFIX)/lib -lgtop -lgtop_common -lgtop_sysdeps -lXau
+ 
+ 
+-INSTALLDIR=/usr/local/bin
+-INCLUDEDIR=/usr/local/include
++INSTALLDIR=${PREFIX}/bin
++INCLUDEDIR=${PREFIX}/include
+ INCLUDEMODE = 644
+ INCLUDEDIRMODE = 755
+ 
+-LOCALEDIR ?= /usr/share/locale
++LOCALEDIR ?= ${PREFIX}/share/locale
+ 
+ export GTK_CONFIG GTOP_INCLUDE GTOP_LIBS SYS_LIBS BINMODE
+ export INSTALLDIR INCLUDEDIR INCLUDEMODE INCLUDEDIRMODE LOCALEDIR
+ 
+-#enable_nls=1
+-#export enable_nls
++enable_nls=1
++export enable_nls
+ 
+ all gkrellm:
+ 	(cd locale && ${MAKE} all)
+@@ -116,7 +116,7 @@ netbsd:
+ openbsd:
+ 	(cd locale && ${MAKE} all)
+ 	(cd src && ${MAKE} GTK_CONFIG=gtk-config GTOP_LIBS= GTOP_INCLUDE= \
+-		PTHREAD_INC=-I/usr/local/include SYS_LIBS="-lkvm" gkrellm )
++		PTHREAD_INC=-I${LOCALBASE}/include SYS_LIBS="-lkvm" gkrellm )
+ 
+ gnome-gtop:
+ 	(cd locale && ${MAKE} all)

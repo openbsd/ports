@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_Makefile_src,v 1.1.1.1 2001/02/15 21:37:42 naddy Exp $
+--- src/Makefile.src.orig	Sun Jan 14 21:18:32 2001
++++ src/Makefile.src	Thu Feb 15 18:36:17 2001
+@@ -1,7 +1,7 @@
+ GTK_CONFIG ?= gtk-config
+ BINMODE ?= 755
+-INSTALLDIR ?= /usr/local/bin
+-INCLUDEDIR ?= /usr/local/include
++INSTALLDIR ?= ${PREFIX}/bin
++INCLUDEDIR ?= ${PREFIX}/include
+ INCLUDEMODE ?= 644
+ INCLUDEDIRMODE ?= 755
+ 
+@@ -13,7 +13,7 @@ IMLIB_INCLUDE = `imlib-config --cflags-g
+ GTK_LIB = `$(GTK_CONFIG) --libs gthread`
+ IMLIB_LIB = `imlib-config --libs-gdk`
+ 
+-FLAGS = -O2 -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE)
++FLAGS = -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE)
+ FLAGS+= $(PTHREAD_INC)
+ 
+ LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
+@@ -31,7 +31,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
+ endif
+ 
+ 
+-CC = gcc -Wall $(FLAGS) $(CFLAGS)
++CFLAGS += $(FLAGS)
+ 
+ OBJS =	main.o apm.o clock.o cpu.o disk.o fs.o hostname.o \
+ 	inet.o mail.o meminfo.o net.o proc.o sensors.o uptime.o \
