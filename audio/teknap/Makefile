@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/10 01:05:30 jasoni Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/27 19:07:17 jasoni Exp $
 
 COMMENT=	"console napster client"
 
-VERSION=	1.3f
+VERSION=	1.3g
 DISTNAME=	TekNap-${VERSION}
 PKGNAME=	teknap-${VERSION}
 CATEGORIES=	audio
