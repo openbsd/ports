@@ -1,0 +1,130 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2004/06/18 18:56:43 sturm Exp $
+--- configure.in.orig	2004-01-06 21:38:03.000000000 +0100
++++ configure.in	2004-06-10 14:18:55.000000000 +0200
+@@ -140,14 +140,24 @@ AC_FUNC_VPRINTF
+ AC_FUNC_STAT
+ AC_FUNC_STRCOLL
+ AC_TYPE_SIGNAL
+-AC_CHECK_FUNCS([strtol memalign ftruncate gettimeofday memset strerror strncasecmp stat floor atexit getpagesize memmove mkfifo vsscanf strptime])
++AC_CHECK_FUNCS([strtol memalign ftruncate gettimeofday memset strerror strncasecmp stat floor atexit getpagesize memmove mkfifo vsscanf strptime strlcat])
++AC_CHECK_LIB(m, lrint, AC_DEFINE(HAVE_LIBM_LRINT, 1, [Define if the lrint() function is in libm on your system]))
++
++case "$host_os" in
++  freebsd*|openbsd*|netbsd*|bsdi*|darwin*|rhapsody*)
++     AC_DEFINE([SYS_BSD], 1, [Define if your system is modern BSD])
++     ;;
++  *)
++     ;;
++esac
++
+ 
+ dnl for libavcodec
+ AC_CHECK_LIB(m, lrintf, AC_DEFINE([HAVE_LRINTF], 1, [define if you have the lrintf function]))
+ 
+ dnl Replace `main' with a function in pthread libs:
+  case "$host" in
+-   *-*-freebsd*)
++   *-*-freebsd*|*-*-openbsd*)
+     pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
+     pthread_lib="-pthread"
+     ;;
+@@ -214,7 +224,6 @@ if test "$enable_mmx_accel" != "no"; the
+ 		   have_asm_mmx=yes, have_asm_mmx=no)])
+    if test "x${have_asm_mmx}" != "xno"; then
+       AC_DEFINE([HAVE_ASM_MMX], 1, [Define if your CPU understands ASM MMX instructions])
+-      AC_DEFINE([HAVE_MMX], 1, [Define if your CPU understands MMX instructions])
+       have_asm_mmx=true
+       AC_MSG_RESULT([yes])
+    else
+@@ -416,16 +425,16 @@ if test x"$GCC" = x"yes"; then
+     dnl changequote([,])
+     OPT_CFLAGS=""
+     if test x${USE_MAINTAINER_MODE} != xno; then
+-       OPT_CFLAGS="$OPT_CFLAGS -O2 $CFLAGS"
++       OPT_CFLAGS="$OPT_CFLAGS $CFLAGS"
+     else
+-       OPT_CFLAGS="$OPT_CFLAGS -O3 $CFLAGS"
++       OPT_CFLAGS="$OPT_CFLAGS $CFLAGS"
+     fi
+-    AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
++    dnl AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
+ 
+     dnl -fomit-frame-pointer
+     if test x${USE_MAINTAINER_MODE} = xno; then
+        OPT_CFLAGS="-fomit-frame-pointer $CFLAGS"
+-       AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
++       dnl AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
+     fi
+ 
+ 
+@@ -446,11 +455,11 @@ dnl
+ 	i686-*) OPT_CFLAGS="$CFLAGS -mcpu=pentiumpro";;
+ 	k6-*)   OPT_CFLAGS="$CFLAGS -mcpu=k6";;
+ 	esac ;;
+-     esac
+-	AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
++     esac ;;
++	dnl AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
+     sparc-*)
+-	OPT_CFLAGS="$CFLAGS -mcpu=ultrasparc -mvis"
+-	AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
++	OPT_CFLAGS="$CFLAGS -mcpu=ultrasparc -mvis";;
++	dnl AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
+     mips-sgi-irix6.*)	dnl do we need to be that specific ?
+ 	OPT_CFLAGS="$CFLAGS -mabi=64"
+ 	AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS]);;
+@@ -476,7 +485,7 @@ AC_ARG_ENABLE([warnings],
+ if test x"$enable_warnings" = x"yes" -a x"$GCC" = x"yes"; then
+     dnl compiler warnings
+     OPT_CFLAGS="-Wall -Werror $CFLAGS"
+-    AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
++    dnl AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
+ fi
+ 
+ AC_SUBST(CFLAGS)
+@@ -486,12 +495,12 @@ AC_SUBST(LTLIBOBJS)
+ 
+ 
+ OPT_CFLAGS="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 $CFLAGS"
+-AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
+-AC_SUBST(CFLAGS)
++dnl AC_TRY_CFLAGS([$OPT_CFLAGS],[CFLAGS=$OPT_CFLAGS])
++dnl AC_SUBST(CFLAGS)
+ 
+ OPT_CXXFLAGS="$CXXFLAGS -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+-AC_TRY_CXXFLAGS([$OPT_CXXFLAGS],[CXXFLAGS=$OPT_CXXFLAGS])
+-AC_SUBST(CXXFLAGS)
++dnl AC_TRY_CXXFLAGS([$OPT_CXXFLAGS],[CXXFLAGS=$OPT_CXXFLAGS])
++dnl AC_SUBST(CXXFLAGS)
+ 
+ dnl
+ dnl fast integers
+@@ -939,12 +948,28 @@ dnl
+ dnl LIBFAME support
+ dnl
+ 
++# Check whether --with-libfame or --without-libfame was given.
++if test "${with_libfame+set}" = set; then
++  withval="$with_libfame"
++  case "${withval}" in
++  yes) ;;
++  no)  ;;
++  *) { { echo "$as_me:$LINENO: error: bad value ${withval} for --with-libfame" >&5
++echo "$as_me: error: bad value ${withval} for --with-libfame" >&2;}
++   { (exit 1); exit 1; }; } ;;
++esac
++else
++  with_libfame=yes
++fi;
++
+ have_libfame=no
++if test x$with_libfame = "x"yes ; then
+ AM_PATH_LIBFAME(,
+ [
+ 	AC_DEFINE([HAVE_LIBFAME], 1, [Have libfame support]) 
+ 	have_libfame=yes	
+ ])
++fi
+ AM_CONDITIONAL(HAVE_LIBFAME, test x"$have_libfame" = "xyes")
+ 
+ dnl

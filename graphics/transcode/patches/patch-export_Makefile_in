@@ -1,0 +1,12 @@
+$OpenBSD: patch-export_Makefile_in,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
+--- export/Makefile.in.orig	2004-06-14 02:25:57.000000000 +0200
++++ export/Makefile.in	2004-06-14 04:37:53.000000000 +0200
+@@ -323,7 +323,7 @@ INCLUDES = -I./ -I../ -I$(srcdir)/.. -I.
+ 
+ pkgdir = @MOD_PATH@
+ 
+-@HAVE_ASM_NASM_TRUE@MODS7 = export_mpeg.la 
++MODS7 = export_mpeg.la 
+ 
+ @HAVE_AVIFILE_TRUE@@HAVE_LAME_TRUE@MODS1 = export_af6.la
+ 

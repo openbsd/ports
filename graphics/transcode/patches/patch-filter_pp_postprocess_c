@@ -1,0 +1,16 @@
+$OpenBSD: patch-filter_pp_postprocess_c,v 1.1.1.1 2004/06/18 18:56:46 sturm Exp $
+--- filter/pp/postprocess.c.orig	2003-11-12 02:42:12.000000000 -0800
++++ filter/pp/postprocess.c	2004-04-27 19:16:19.000000000 -0700
+@@ -72,8 +72,10 @@ try to unroll inner for(x=0 ... loop to 
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#ifdef HAVE_MALLOC_H
+-#include <malloc.h>
++#ifndef SYS_BSD
++# ifdef HAVE_MALLOC_H
++# include <malloc.h>
++# endif
+ #endif
+ //#undef HAVE_MMX2
+ //#define HAVE_3DNOW

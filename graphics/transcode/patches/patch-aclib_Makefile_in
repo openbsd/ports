@@ -1,0 +1,169 @@
+$OpenBSD: patch-aclib_Makefile_in,v 1.1.1.1 2004/06/18 18:56:46 sturm Exp $
+--- aclib/Makefile.in.orig	2004-04-29 22:30:05.000000000 -0700
++++ aclib/Makefile.in	2004-04-29 22:32:07.000000000 -0700
+@@ -196,7 +196,6 @@ LIBLVE_CFLAGS = @LIBLVE_CFLAGS@
+ LIBLVE_LIBS = @LIBLVE_LIBS@
+ LIBMPEG3_CFLAGS = @LIBMPEG3_CFLAGS@
+ LIBMPEG3_LIBS = @LIBMPEG3_LIBS@
+-LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
+ LIBXML2CONFIG = @LIBXML2CONFIG@
+@@ -315,11 +314,11 @@ x_libraries = @x_libraries@
+ 
+ AUTOMAKE_OPTIONS = 1.3 foreign
+ 
+-noinst_LIBRARIES = libac.a
++noinst_LTLIBRARIES = libac.la
+ 
+ @HAVE_ASM_NASM_TRUE@ASM_SRC = memcpy.s rescale.s average.s swap.s asm_io.s
+ 
+-libac_a_SOURCES = cputest.c $(ASM_SRC)
++libac_la_SOURCES = cputest.c $(ASM_SRC)
+ 
+ EXTRA_DIST = \
+   ac.h \
+@@ -334,28 +333,27 @@ EXTRA_DIST = \
+ 
+ 
+ ASM = @NASM@
+-ASMFLAGS = @NASMFLAGS@ -g
++ASMFLAGS = @NASMFLAGS@
+ subdir = aclib
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-LIBRARIES = $(noinst_LIBRARIES)
++LTLIBRARIES = $(noinst_LTLIBRARIES)
+ 
+-libac_a_AR = $(AR) cru
+-libac_a_LIBADD =
+-am__libac_a_SOURCES_DIST = cputest.c memcpy.s rescale.s average.s swap.s \
+-	asm_io.s
+-@HAVE_ASM_NASM_TRUE@am__objects_1 = memcpy.$(OBJEXT) rescale.$(OBJEXT) \
+-@HAVE_ASM_NASM_TRUE@	average.$(OBJEXT) swap.$(OBJEXT) \
+-@HAVE_ASM_NASM_TRUE@	asm_io.$(OBJEXT)
+-am_libac_a_OBJECTS = cputest.$(OBJEXT) $(am__objects_1)
+-libac_a_OBJECTS = $(am_libac_a_OBJECTS)
++libac_la_LDFLAGS =
++libac_la_LIBADD =
++am__libac_la_SOURCES_DIST = cputest.c memcpy.s rescale.s average.s \
++	swap.s asm_io.s
++@HAVE_ASM_NASM_TRUE@am__objects_1 = memcpy.lo rescale.lo average.lo \
++@HAVE_ASM_NASM_TRUE@	swap.lo asm_io.lo
++am_libac_la_OBJECTS = cputest.lo $(am__objects_1)
++libac_la_OBJECTS = $(am_libac_la_OBJECTS)
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/autotools/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cputest.Po
++@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cputest.Plo
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+@@ -366,9 +364,9 @@ LINK = $(LIBTOOL) --mode=link $(CCLD) $(
+ CCASCOMPILE = $(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)
+ LTCCASCOMPILE = $(LIBTOOL) --mode=compile $(CCAS) $(AM_CCASFLAGS) \
+ 	$(CCASFLAGS)
+-DIST_SOURCES = $(am__libac_a_SOURCES_DIST)
++DIST_SOURCES = $(am__libac_la_SOURCES_DIST)
+ DIST_COMMON = $(srcdir)/Makefile.in Makefile.am
+-SOURCES = $(libac_a_SOURCES)
++SOURCES = $(libac_la_SOURCES)
+ 
+ all: all-am
+ 
+@@ -380,12 +378,16 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_
+ Makefile: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ 
+-clean-noinstLIBRARIES:
+-	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+-libac.a: $(libac_a_OBJECTS) $(libac_a_DEPENDENCIES) 
+-	-rm -f libac.a
+-	$(libac_a_AR) libac.a $(libac_a_OBJECTS) $(libac_a_LIBADD)
+-	$(RANLIB) libac.a
++clean-noinstLTLIBRARIES:
++	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
++	@list='$(noinst_LTLIBRARIES)'; for p in $$list; do \
++	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
++	  test "$$dir" = "$$p" && dir=.; \
++	  echo "rm -f \"$${dir}/so_locations\""; \
++	  rm -f "$${dir}/so_locations"; \
++	done
++libac.la: $(libac_la_OBJECTS) $(libac_la_DEPENDENCIES) 
++	$(LINK)  $(libac_la_LDFLAGS) $(libac_la_OBJECTS) $(libac_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -393,7 +395,7 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cputest.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cputest.Plo@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
+@@ -434,9 +436,6 @@ distclean-compile:
+ .s.obj:
+ 	$(CCASCOMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
+ 
+-.s.lo:
+-	$(LTCCASCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+-
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
+@@ -534,7 +533,7 @@ distdir: $(DISTFILES)
+ 	done
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(LIBRARIES)
++all-am: Makefile $(LTLIBRARIES)
+ 
+ installdirs:
+ install: install-am
+@@ -563,7 +562,7 @@ maintainer-clean-generic:
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-am
+ 
+-clean-am: clean-generic clean-libtool clean-noinstLIBRARIES \
++clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	mostlyclean-am
+ 
+ distclean: distclean-am
+@@ -613,7 +612,7 @@ ps-am:
+ uninstall-am: uninstall-info-am
+ 
+ .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
+-	clean-libtool clean-noinstLIBRARIES ctags distclean \
++	clean-libtool clean-noinstLTLIBRARIES ctags distclean \
+ 	distclean-compile distclean-generic distclean-libtool \
+ 	distclean-tags distdir dvi dvi-am info info-am install \
+ 	install-am install-data install-data-am install-exec \
+@@ -624,7 +623,21 @@ uninstall-am: uninstall-info-am
+ 	pdf-am ps ps-am tags uninstall uninstall-am uninstall-info-am
+ 
+ 
+-%.o: %.s ;	$(ASM) $(ASMFLAGS) -o $@ $<
++.s.lo:
++	$(ASM) $(ASMFLAGS) -o $@ `test -f '$<' || echo '$(scrdir)/'`$<
++	@new_name=".libs/`echo $@ | sed -e 's,\.lo$$,\.o,'`" && \
++		mv $@ $$new_name && \
++		echo "# $@ - a libtool object file" >> $@ && \
++		echo "# Generated by ltmain.sh - GNU libtool 1.5 (1.1220 2003/04/05 19:32:58)" >> $@ && \
++		echo "#" >> $@ && \
++		echo "# Please DO NOT delete this file!" >> $@ && \
++		echo "# It is necessary for linking the library." >> $@ && \
++		echo "" >> $@ && \
++		echo "# Name of the PIC object." >> $@ && \
++		echo "pic_object='$$new_name'" >> $@ && \
++		echo "" >> $@ && \
++		echo "# Name of the non-PIC object." >> $@ && \
++		echo "non_pic_object=none" >> $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

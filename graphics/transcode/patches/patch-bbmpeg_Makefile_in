@@ -1,0 +1,242 @@
+$OpenBSD: patch-bbmpeg_Makefile_in,v 1.1.1.1 2004/06/18 18:56:42 sturm Exp $
+--- bbmpeg/Makefile.in.orig	2004-04-29 22:31:01.000000000 -0700
++++ bbmpeg/Makefile.in	2004-04-29 22:32:07.000000000 -0700
+@@ -194,7 +194,6 @@ LIBLVE_CFLAGS = @LIBLVE_CFLAGS@
+ LIBLVE_LIBS = @LIBLVE_LIBS@
+ LIBMPEG3_CFLAGS = @LIBMPEG3_CFLAGS@
+ LIBMPEG3_LIBS = @LIBMPEG3_LIBS@
+-LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
+ LIBXML2CONFIG = @LIBXML2CONFIG@
+@@ -315,7 +314,7 @@ x_libraries = @x_libraries@
+ AUTOMAKE_OPTIONS = 1.3 foreign
+ DEFAULT_INCLUDES = -I$(top_srcdir) -I$(srcdir) -I$(top_builddir) -I. 
+ 
+-noinst_LIBRARIES = libbbmpeg.a
++noinst_LTLIBRARIES = libbbmpeg.la
+ 
+ @HAVE_ASM_NASM_TRUE@BB_SRC2 = fdct_mmx.s idct_mmx.s quant_mmx.s motion_mmx.s variance_mmx.s
+ 
+@@ -324,7 +323,7 @@ noinst_LIBRARIES = libbbmpeg.a
+ 
+ @HAVE_SSE_TRUE@BB_SRC3 = predict_sse.S
+ 
+-libbbmpeg_a_SOURCES = dovideo.c params.c bits.c puthdr.c putpic.c putmpg.c putvlc.c stats.c quantize.c predict.c ratectl.c idct.c motion.c transfrm.c fdctref.c resize.c $(BB_SRC1) $(BB_SRC2) $(BB_SRC3)
++libbbmpeg_la_SOURCES = dovideo.c params.c bits.c puthdr.c putpic.c putmpg.c putvlc.c stats.c quantize.c predict.c ratectl.c idct.c motion.c transfrm.c fdctref.c resize.c $(BB_SRC1) $(BB_SRC2) $(BB_SRC3)
+ 
+ noinst_HEADERS = mtable.h mplex.h mmx.h main.h imgresample.h gmo_read.h encaudio.h consts.h consts1.h common.h bbencode.h 
+ 
+@@ -369,42 +368,38 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-LIBRARIES = $(noinst_LIBRARIES)
++LTLIBRARIES = $(noinst_LTLIBRARIES)
+ 
+-libbbmpeg_a_AR = $(AR) cru
+-libbbmpeg_a_LIBADD =
+-am__libbbmpeg_a_SOURCES_DIST = dovideo.c params.c bits.c puthdr.c \
++libbbmpeg_la_LDFLAGS =
++libbbmpeg_la_LIBADD =
++am__libbbmpeg_la_SOURCES_DIST = dovideo.c params.c bits.c puthdr.c \
+ 	putpic.c putmpg.c putvlc.c stats.c quantize.c predict.c \
+ 	ratectl.c idct.c motion.c transfrm.c fdctref.c resize.c \
+ 	fdctdata.c idctdata.c quantdata.c predict_mmx.S fdct_mmx.s \
+ 	idct_mmx.s quant_mmx.s motion_mmx.s variance_mmx.s \
+ 	predict_sse.S
+-@HAVE_MMX_TRUE@am__objects_1 = fdctdata.$(OBJEXT) idctdata.$(OBJEXT) \
+-@HAVE_MMX_TRUE@	quantdata.$(OBJEXT) predict_mmx.$(OBJEXT)
+-@HAVE_ASM_NASM_TRUE@am__objects_2 = fdct_mmx.$(OBJEXT) \
+-@HAVE_ASM_NASM_TRUE@	idct_mmx.$(OBJEXT) quant_mmx.$(OBJEXT) \
+-@HAVE_ASM_NASM_TRUE@	motion_mmx.$(OBJEXT) variance_mmx.$(OBJEXT)
+-@HAVE_SSE_TRUE@am__objects_3 = predict_sse.$(OBJEXT)
+-am_libbbmpeg_a_OBJECTS = dovideo.$(OBJEXT) params.$(OBJEXT) \
+-	bits.$(OBJEXT) puthdr.$(OBJEXT) putpic.$(OBJEXT) \
+-	putmpg.$(OBJEXT) putvlc.$(OBJEXT) stats.$(OBJEXT) \
+-	quantize.$(OBJEXT) predict.$(OBJEXT) ratectl.$(OBJEXT) \
+-	idct.$(OBJEXT) motion.$(OBJEXT) transfrm.$(OBJEXT) \
+-	fdctref.$(OBJEXT) resize.$(OBJEXT) $(am__objects_1) \
+-	$(am__objects_2) $(am__objects_3)
+-libbbmpeg_a_OBJECTS = $(am_libbbmpeg_a_OBJECTS)
++@HAVE_MMX_TRUE@am__objects_1 = fdctdata.lo idctdata.lo quantdata.lo \
++@HAVE_MMX_TRUE@	predict_mmx.lo
++@HAVE_ASM_NASM_TRUE@am__objects_2 = fdct_mmx.lo idct_mmx.lo quant_mmx.lo \
++@HAVE_ASM_NASM_TRUE@	motion_mmx.lo variance_mmx.lo
++@HAVE_SSE_TRUE@am__objects_3 = predict_sse.lo
++am_libbbmpeg_la_OBJECTS = dovideo.lo params.lo bits.lo puthdr.lo \
++	putpic.lo putmpg.lo putvlc.lo stats.lo quantize.lo predict.lo \
++	ratectl.lo idct.lo motion.lo transfrm.lo fdctref.lo resize.lo \
++	$(am__objects_1) $(am__objects_2) $(am__objects_3)
++libbbmpeg_la_OBJECTS = $(am_libbbmpeg_la_OBJECTS)
+ depcomp = $(SHELL) $(top_srcdir)/autotools/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/bits.Po ./$(DEPDIR)/dovideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/fdctdata.Po ./$(DEPDIR)/fdctref.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/idct.Po ./$(DEPDIR)/idctdata.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/motion.Po ./$(DEPDIR)/params.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/predict.Po ./$(DEPDIR)/puthdr.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/putmpg.Po ./$(DEPDIR)/putpic.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/putvlc.Po ./$(DEPDIR)/quantdata.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/quantize.Po ./$(DEPDIR)/ratectl.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/resize.Po ./$(DEPDIR)/stats.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/transfrm.Po
++@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/bits.Plo ./$(DEPDIR)/dovideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/fdctdata.Plo ./$(DEPDIR)/fdctref.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/idct.Plo ./$(DEPDIR)/idctdata.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/motion.Plo ./$(DEPDIR)/params.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/predict.Plo ./$(DEPDIR)/puthdr.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/putmpg.Plo ./$(DEPDIR)/putpic.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/putvlc.Plo ./$(DEPDIR)/quantdata.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/quantize.Plo ./$(DEPDIR)/ratectl.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/resize.Plo ./$(DEPDIR)/stats.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/transfrm.Plo
+ CCASCOMPILE = $(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)
+ LTCCASCOMPILE = $(LIBTOOL) --mode=compile $(CCAS) $(AM_CCASFLAGS) \
+ 	$(CCASFLAGS)
+@@ -415,7 +410,7 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-DIST_SOURCES = $(am__libbbmpeg_a_SOURCES_DIST)
++DIST_SOURCES = $(am__libbbmpeg_la_SOURCES_DIST)
+ HEADERS = $(noinst_HEADERS)
+ 
+ 
+@@ -426,7 +421,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+ 	check-recursive installcheck-recursive
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.in Makefile.am
+ DIST_SUBDIRS = $(SUBDIRS)
+-SOURCES = $(libbbmpeg_a_SOURCES)
++SOURCES = $(libbbmpeg_la_SOURCES)
+ 
+ all: all-recursive
+ 
+@@ -438,12 +433,16 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_
+ Makefile: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ 
+-clean-noinstLIBRARIES:
+-	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+-libbbmpeg.a: $(libbbmpeg_a_OBJECTS) $(libbbmpeg_a_DEPENDENCIES) 
+-	-rm -f libbbmpeg.a
+-	$(libbbmpeg_a_AR) libbbmpeg.a $(libbbmpeg_a_OBJECTS) $(libbbmpeg_a_LIBADD)
+-	$(RANLIB) libbbmpeg.a
++clean-noinstLTLIBRARIES:
++	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
++	@list='$(noinst_LTLIBRARIES)'; for p in $$list; do \
++	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
++	  test "$$dir" = "$$p" && dir=.; \
++	  echo "rm -f \"$${dir}/so_locations\""; \
++	  rm -f "$${dir}/so_locations"; \
++	done
++libbbmpeg.la: $(libbbmpeg_la_OBJECTS) $(libbbmpeg_la_DEPENDENCIES) 
++	$(LINK)  $(libbbmpeg_la_LDFLAGS) $(libbbmpeg_la_OBJECTS) $(libbbmpeg_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -451,25 +450,25 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bits.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dovideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdctdata.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdctref.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idct.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idctdata.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/motion.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/params.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/predict.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/puthdr.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/putmpg.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/putpic.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/putvlc.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quantdata.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quantize.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ratectl.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/resize.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stats.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/transfrm.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bits.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dovideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdctdata.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdctref.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idct.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idctdata.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/motion.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/params.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/predict.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/puthdr.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/putmpg.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/putpic.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/putvlc.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quantdata.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/quantize.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ratectl.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/resize.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stats.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/transfrm.Plo@am__quote@
+ 
+ .S.o:
+ 	$(CCASCOMPILE) -c `test -f '$<' || echo '$(srcdir)/'`$<
+@@ -519,9 +518,6 @@ distclean-compile:
+ .s.obj:
+ 	$(CCASCOMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
+ 
+-.s.lo:
+-	$(LTCCASCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+-
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
+@@ -702,7 +698,7 @@ distdir: $(DISTFILES)
+ 	done
+ check-am: all-am
+ check: check-recursive
+-all-am: Makefile $(LIBRARIES) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ installdirs: installdirs-recursive
+ installdirs-am:
+ 
+@@ -732,7 +728,7 @@ maintainer-clean-generic:
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-recursive
+ 
+-clean-am: clean-generic clean-libtool clean-noinstLIBRARIES \
++clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	mostlyclean-am
+ 
+ distclean: distclean-recursive
+@@ -784,7 +780,7 @@ uninstall-am: uninstall-info-am
+ uninstall-info: uninstall-info-recursive
+ 
+ .PHONY: $(RECURSIVE_TARGETS) CTAGS GTAGS all all-am check check-am clean \
+-	clean-generic clean-libtool clean-noinstLIBRARIES \
++	clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	clean-recursive ctags ctags-recursive distclean \
+ 	distclean-compile distclean-generic distclean-libtool \
+ 	distclean-recursive distclean-tags distdir dvi dvi-am \
+@@ -802,7 +798,21 @@ uninstall-info: uninstall-info-recursive
+ 	uninstall-info-recursive uninstall-recursive
+ 
+ 
+-%.o: %.s ;	$(ASM) -g $(ASMFLAGS) -o $@ $<
++.s.lo:
++	$(ASM) $(ASMFLAGS) -o $@ `test -f '$<' || echo '$(scrdir)/'`$<
++	@new_name=".libs/`echo $@ | sed -e 's,\.lo$$,\.o,'`" && \
++		mv $@ $$new_name && \
++		echo "# $@ - a libtool object file" >> $@ && \
++		echo "# Generated by ltmain.sh - GNU libtool 1.5 (1.1220 2003/04/05 19:32:58)" >> $@ && \
++		echo "#" >> $@ && \
++		echo "# Please DO NOT delete this file!" >> $@ && \
++		echo "# It is necessary for linking the library." >> $@ && \
++		echo "" >> $@ && \
++		echo "# Name of the PIC object." >> $@ && \
++		echo "pic_object='$$new_name'" >> $@ && \
++		echo "" >> $@ && \
++		echo "# Name of the non-PIC object." >> $@ && \
++		echo "non_pic_object=none" >> $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

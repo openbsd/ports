@@ -1,0 +1,12 @@
+$OpenBSD: patch-libioaux_Makefile_in,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
+--- libioaux/Makefile.in.orig	2004-06-10 14:23:56.000000000 +0200
++++ libioaux/Makefile.in	2004-06-10 14:28:27.000000000 +0200
+@@ -69,7 +69,7 @@ CCAS = @CCAS@
+ CCASFLAGS = @CCASFLAGS@
+ CCDEPMODE = @CCDEPMODE@
+ 
+-CFLAGS = -O3 -funroll-loops -ffast-math -DLINUX -Wall @CFLAGS@
++CFLAGS = -funroll-loops -ffast-math -DLINUX -Wall @CFLAGS@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@

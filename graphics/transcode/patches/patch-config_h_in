@@ -1,0 +1,33 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
+--- config.h.in.orig	2004-01-06 12:38:37.000000000 -0800
++++ config.h.in	2004-04-27 19:15:44.000000000 -0700
+@@ -145,6 +145,9 @@
+ /* Have libmpeg3 support */
+ #undef HAVE_LIBMPEG3
+ 
++/* Define if the lrint() function is in libm on your system */
++#undef HAVE_LIBM_LRINT
++
+ /* libxml2 support */
+ #undef HAVE_LIBXML2
+ 
+@@ -256,6 +259,9 @@
+ /* Define to 1 if you have the <string.h> header file. */
+ #undef HAVE_STRING_H
+ 
++/* Define to 1 if you have the `strlcat' function. */
++#undef HAVE_STRLCAT
++
+ /* Define to 1 if you have the `strncasecmp' function. */
+ #undef HAVE_STRNCASECMP
+ 
+@@ -369,6 +375,9 @@
+ /* Define if this is Darwin / MacOSX OS */
+ #undef SYSTEM_DARWIN
+ 
++/* Define if your system is modern BSD */
++#undef SYS_BSD
++
+ /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
+ #undef TIME_WITH_SYS_TIME
+ 

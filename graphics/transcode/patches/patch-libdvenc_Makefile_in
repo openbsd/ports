@@ -1,0 +1,165 @@
+$OpenBSD: patch-libdvenc_Makefile_in,v 1.1.1.1 2004/06/18 18:56:48 sturm Exp $
+--- libdvenc/Makefile.in.orig	2004-01-06 21:39:17.000000000 +0100
++++ libdvenc/Makefile.in	2004-06-11 15:06:21.000000000 +0200
+@@ -66,7 +66,7 @@ CC = @CC@
+ CCAS = @CCAS@
+ CCASFLAGS = @CCASFLAGS@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = -O3 -g -funroll-loops -ffast-math -DLINUX @CFLAGS@ @DV_CFLAGS@
++CFLAGS = -g -funroll-loops -ffast-math -DLINUX @CFLAGS@ @DV_CFLAGS@
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
+@@ -193,7 +193,6 @@ LIBLVE_CFLAGS = @LIBLVE_CFLAGS@
+ LIBLVE_LIBS = @LIBLVE_LIBS@
+ LIBMPEG3_CFLAGS = @LIBMPEG3_CFLAGS@
+ LIBMPEG3_LIBS = @LIBMPEG3_LIBS@
+-LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
+ LIBXML2CONFIG = @LIBXML2CONFIG@
+@@ -316,14 +315,14 @@ DEFAULT_INCLUDES = -I$(top_srcdir) -I$(s
+ 
+ INCLUDES = -Wall -I./ -I../src -I$(srcdir)/../src
+ 
+-noinst_LIBRARIES = libdvenc.a
++noinst_LTLIBRARIES = libdvenc.la
+ 
+ DVENC1 = dvenc.c 
+ 
+ @HAVE_DV_TRUE@DVENC2 = enc_audio_input.c enc_input.c enc_output.c enc_output2.c 
+ @HAVE_DV_TRUE@@HAVE_X86CPU_TRUE@DVENC3 = rgbtoyuv.S encode_x86.S transpose_x86.S
+ 
+-libdvenc_a_SOURCES = $(DVENC1) $(DVENC2) $(DVENC3) 
++libdvenc_la_SOURCES = $(DVENC1) $(DVENC2) $(DVENC3) 
+ noinst_HEADERS = enc_output.h enc_input.h enc_audio_input.h dvenc.h 
+ 
+ EXTRA_DIST = README.encoder COPYRIGHT AUTHORS \
+@@ -348,29 +347,28 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-LIBRARIES = $(noinst_LIBRARIES)
++LTLIBRARIES = $(noinst_LTLIBRARIES)
+ 
+-libdvenc_a_AR = $(AR) cru
+-libdvenc_a_LIBADD =
+-am__libdvenc_a_SOURCES_DIST = dvenc.c enc_audio_input.c enc_input.c \
++libdvenc_la_LDFLAGS =
++libdvenc_la_LIBADD =
++am__libdvenc_la_SOURCES_DIST = dvenc.c enc_audio_input.c enc_input.c \
+ 	enc_output.c enc_output2.c rgbtoyuv.S encode_x86.S \
+ 	transpose_x86.S
+-am__objects_1 = dvenc.$(OBJEXT)
+-@HAVE_DV_TRUE@am__objects_2 = enc_audio_input.$(OBJEXT) \
+-@HAVE_DV_TRUE@	enc_input.$(OBJEXT) enc_output.$(OBJEXT) \
+-@HAVE_DV_TRUE@	enc_output2.$(OBJEXT)
+-@HAVE_DV_TRUE@@HAVE_X86CPU_TRUE@am__objects_3 = rgbtoyuv.$(OBJEXT) \
+-@HAVE_DV_TRUE@@HAVE_X86CPU_TRUE@	encode_x86.$(OBJEXT) \
+-@HAVE_DV_TRUE@@HAVE_X86CPU_TRUE@	transpose_x86.$(OBJEXT)
+-am_libdvenc_a_OBJECTS = $(am__objects_1) $(am__objects_2) \
++am__objects_1 = dvenc.lo
++@HAVE_DV_TRUE@am__objects_2 = enc_audio_input.lo enc_input.lo \
++@HAVE_DV_TRUE@	enc_output.lo enc_output2.lo
++@HAVE_DV_TRUE@@HAVE_X86CPU_TRUE@am__objects_3 = rgbtoyuv.lo \
++@HAVE_DV_TRUE@@HAVE_X86CPU_TRUE@	encode_x86.lo transpose_x86.lo
++am_libdvenc_la_OBJECTS = $(am__objects_1) $(am__objects_2) \
+ 	$(am__objects_3)
+-libdvenc_a_OBJECTS = $(am_libdvenc_a_OBJECTS)
++libdvenc_la_OBJECTS = $(am_libdvenc_la_OBJECTS)
+ depcomp = $(SHELL) $(top_srcdir)/autotools/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/dvenc.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/enc_audio_input.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/enc_input.Po ./$(DEPDIR)/enc_output.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/enc_output2.Po
++@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/dvenc.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/enc_audio_input.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/enc_input.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/enc_output.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/enc_output2.Plo
+ CCASCOMPILE = $(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)
+ LTCCASCOMPILE = $(LIBTOOL) --mode=compile $(CCAS) $(AM_CCASFLAGS) \
+ 	$(CCASFLAGS)
+@@ -381,12 +379,12 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-DIST_SOURCES = $(am__libdvenc_a_SOURCES_DIST)
++DIST_SOURCES = $(am__libdvenc_la_SOURCES_DIST)
+ HEADERS = $(noinst_HEADERS)
+ 
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.in AUTHORS \
+ 	Makefile.am
+-SOURCES = $(libdvenc_a_SOURCES)
++SOURCES = $(libdvenc_la_SOURCES)
+ 
+ all: all-am
+ 
+@@ -398,12 +396,16 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_
+ Makefile: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ 
+-clean-noinstLIBRARIES:
+-	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+-libdvenc.a: $(libdvenc_a_OBJECTS) $(libdvenc_a_DEPENDENCIES) 
+-	-rm -f libdvenc.a
+-	$(libdvenc_a_AR) libdvenc.a $(libdvenc_a_OBJECTS) $(libdvenc_a_LIBADD)
+-	$(RANLIB) libdvenc.a
++clean-noinstLTLIBRARIES:
++	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
++	@list='$(noinst_LTLIBRARIES)'; for p in $$list; do \
++	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
++	  test "$$dir" = "$$p" && dir=.; \
++	  echo "rm -f \"$${dir}/so_locations\""; \
++	  rm -f "$${dir}/so_locations"; \
++	done
++libdvenc.la: $(libdvenc_la_OBJECTS) $(libdvenc_la_DEPENDENCIES) 
++	$(LINK)  $(libdvenc_la_LDFLAGS) $(libdvenc_la_OBJECTS) $(libdvenc_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -411,11 +413,11 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dvenc.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_audio_input.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_input.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_output.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_output2.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dvenc.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_audio_input.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_input.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_output.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/enc_output2.Plo@am__quote@
+ 
+ .S.o:
+ 	$(CCASCOMPILE) -c `test -f '$<' || echo '$(srcdir)/'`$<
+@@ -556,7 +558,7 @@ distdir: $(DISTFILES)
+ 	done
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(LIBRARIES) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ 
+ installdirs:
+ install: install-am
+@@ -585,7 +587,7 @@ maintainer-clean-generic:
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-am
+ 
+-clean-am: clean-generic clean-libtool clean-noinstLIBRARIES \
++clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	mostlyclean-am
+ 
+ distclean: distclean-am
+@@ -635,7 +637,7 @@ ps-am:
+ uninstall-am: uninstall-info-am
+ 
+ .PHONY: CTAGS GTAGS all all-am check check-am clean clean-generic \
+-	clean-libtool clean-noinstLIBRARIES ctags distclean \
++	clean-libtool clean-noinstLTLIBRARIES ctags distclean \
+ 	distclean-compile distclean-generic distclean-libtool \
+ 	distclean-tags distdir dvi dvi-am info info-am install \
+ 	install-am install-data install-data-am install-exec \

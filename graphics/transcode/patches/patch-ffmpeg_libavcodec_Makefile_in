@@ -1,0 +1,447 @@
+$OpenBSD: patch-ffmpeg_libavcodec_Makefile_in,v 1.1.1.1 2004/06/18 18:56:51 sturm Exp $
+--- ffmpeg/libavcodec/Makefile.in.orig	2004-04-29 22:31:26.000000000 -0700
++++ ffmpeg/libavcodec/Makefile.in	2004-04-29 22:32:09.000000000 -0700
+@@ -193,7 +193,6 @@ LIBLVE_CFLAGS = @LIBLVE_CFLAGS@
+ LIBLVE_LIBS = @LIBLVE_LIBS@
+ LIBMPEG3_CFLAGS = @LIBMPEG3_CFLAGS@
+ LIBMPEG3_LIBS = @LIBMPEG3_LIBS@
+-LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
+ LIBXML2CONFIG = @LIBXML2CONFIG@
+@@ -335,9 +334,9 @@ INCLUDES = -I../../ 
+ 
+ AM_CFLAGS = -O2 -g -Wall -ffast-math $(ALTIVEC) $(X86) $(MMX) -DHAVE_AV_CONFIG_H -D_GNU_SOURCE --include=$(top_srcdir)/ffmpeg/av_config.h
+ 
+-noinst_LIBRARIES = libtcavcodec.a
++noinst_LTLIBRARIES = libtcavcodec.la
+ 
+-libtcavcodec_a_SOURCES = \
++libtcavcodec_la_SOURCES = \
+       common.c utils.c mem.c allcodecs.c \
+       mpegvideo.c jrevdct.c jfdctfst.c jfdctint.c \
+       mpegaudio.c ac3enc.c mjpeg.c resample.c dsputil.c \
+@@ -402,11 +401,11 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/autotools/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+-LIBRARIES = $(noinst_LIBRARIES)
++LTLIBRARIES = $(noinst_LTLIBRARIES)
+ 
+-libtcavcodec_a_AR = $(AR) cru
+-libtcavcodec_a_LIBADD =
+-am__libtcavcodec_a_SOURCES_DIST = common.c utils.c mem.c allcodecs.c \
++libtcavcodec_la_LDFLAGS =
++libtcavcodec_la_LIBADD =
++am__libtcavcodec_la_SOURCES_DIST = common.c utils.c mem.c allcodecs.c \
+ 	mpegvideo.c jrevdct.c jfdctfst.c jfdctint.c mpegaudio.c \
+ 	ac3enc.c mjpeg.c resample.c dsputil.c motion_est.c imgconvert.c \
+ 	imgresample.c mpeg12.c mpegaudiodec.c pcm.c simple_idct.c \
+@@ -423,92 +422,81 @@ am__libtcavcodec_a_SOURCES_DIST = common
+ 	ppc/mpegvideo_ppc.c ppc/dsputil_altivec.c \
+ 	ppc/mpegvideo_altivec.c ppc/idct_altivec.c ppc/fft_altivec.c \
+ 	ppc/gmc_altivec.c ppc/fdct_altivec.c
+-@HAVE_MMX_TRUE@am__objects_1 = fdct_mmx.$(OBJEXT) cputest.$(OBJEXT) \
+-@HAVE_MMX_TRUE@	dsputil_mmx.$(OBJEXT) mpegvideo_mmx.$(OBJEXT) \
+-@HAVE_MMX_TRUE@	idct_mmx.$(OBJEXT) motion_est_mmx.$(OBJEXT) \
+-@HAVE_MMX_TRUE@	simple_idct_mmx.$(OBJEXT) fft_sse.$(OBJEXT)
+-@ARCH_PPC_TRUE@am__objects_2 = dsputil_ppc.$(OBJEXT) \
+-@ARCH_PPC_TRUE@	mpegvideo_ppc.$(OBJEXT)
+-@CAN_COMPILE_C_ALTIVEC_TRUE@am__objects_3 = dsputil_altivec.$(OBJEXT) \
+-@CAN_COMPILE_C_ALTIVEC_TRUE@	mpegvideo_altivec.$(OBJEXT) \
+-@CAN_COMPILE_C_ALTIVEC_TRUE@	idct_altivec.$(OBJEXT) \
+-@CAN_COMPILE_C_ALTIVEC_TRUE@	fft_altivec.$(OBJEXT) \
+-@CAN_COMPILE_C_ALTIVEC_TRUE@	gmc_altivec.$(OBJEXT) \
+-@CAN_COMPILE_C_ALTIVEC_TRUE@	fdct_altivec.$(OBJEXT)
+-am_libtcavcodec_a_OBJECTS = common.$(OBJEXT) utils.$(OBJEXT) \
+-	mem.$(OBJEXT) allcodecs.$(OBJEXT) mpegvideo.$(OBJEXT) \
+-	jrevdct.$(OBJEXT) jfdctfst.$(OBJEXT) jfdctint.$(OBJEXT) \
+-	mpegaudio.$(OBJEXT) ac3enc.$(OBJEXT) mjpeg.$(OBJEXT) \
+-	resample.$(OBJEXT) dsputil.$(OBJEXT) motion_est.$(OBJEXT) \
+-	imgconvert.$(OBJEXT) imgresample.$(OBJEXT) mpeg12.$(OBJEXT) \
+-	mpegaudiodec.$(OBJEXT) pcm.$(OBJEXT) simple_idct.$(OBJEXT) \
+-	ratecontrol.$(OBJEXT) adpcm.$(OBJEXT) eval.$(OBJEXT) \
+-	dv.$(OBJEXT) error_resilience.$(OBJEXT) fft.$(OBJEXT) \
+-	mdct.$(OBJEXT) mace.$(OBJEXT) huffyuv.$(OBJEXT) cyuv.$(OBJEXT) \
+-	opts.$(OBJEXT) raw.$(OBJEXT) h264.$(OBJEXT) golomb.$(OBJEXT) \
+-	vp3.$(OBJEXT) asv1.$(OBJEXT) 4xm.$(OBJEXT) cabac.$(OBJEXT) \
+-	ffv1.$(OBJEXT) ra144.$(OBJEXT) ra288.$(OBJEXT) vcr1.$(OBJEXT) \
+-	cljr.$(OBJEXT) roqvideo.$(OBJEXT) dpcm.$(OBJEXT) \
+-	interplayvideo.$(OBJEXT) xan.$(OBJEXT) rpza.$(OBJEXT) \
+-	cinepak.$(OBJEXT) msrle.$(OBJEXT) msvideo1.$(OBJEXT) \
+-	vqavideo.$(OBJEXT) adx.$(OBJEXT) rational.$(OBJEXT) \
+-	faandct.$(OBJEXT) 8bps.$(OBJEXT) h263.$(OBJEXT) \
+-	msmpeg4.$(OBJEXT) h263dec.$(OBJEXT) svq1.$(OBJEXT) \
+-	rv10.$(OBJEXT) wmadec.$(OBJEXT) indeo3.$(OBJEXT) smc.$(OBJEXT) \
+-	parser.$(OBJEXT) flicvideo.$(OBJEXT) truemotion1.$(OBJEXT) \
+-	idcinvideo.$(OBJEXT) $(am__objects_1) $(am__objects_2) \
++@HAVE_MMX_TRUE@am__objects_1 = fdct_mmx.lo cputest.lo dsputil_mmx.lo \
++@HAVE_MMX_TRUE@	mpegvideo_mmx.lo idct_mmx.lo motion_est_mmx.lo \
++@HAVE_MMX_TRUE@	simple_idct_mmx.lo fft_sse.lo
++@ARCH_PPC_TRUE@am__objects_2 = dsputil_ppc.lo mpegvideo_ppc.lo
++@CAN_COMPILE_C_ALTIVEC_TRUE@am__objects_3 = dsputil_altivec.lo \
++@CAN_COMPILE_C_ALTIVEC_TRUE@	mpegvideo_altivec.lo \
++@CAN_COMPILE_C_ALTIVEC_TRUE@	idct_altivec.lo fft_altivec.lo \
++@CAN_COMPILE_C_ALTIVEC_TRUE@	gmc_altivec.lo fdct_altivec.lo
++am_libtcavcodec_la_OBJECTS = common.lo utils.lo mem.lo allcodecs.lo \
++	mpegvideo.lo jrevdct.lo jfdctfst.lo jfdctint.lo mpegaudio.lo \
++	ac3enc.lo mjpeg.lo resample.lo dsputil.lo motion_est.lo \
++	imgconvert.lo imgresample.lo mpeg12.lo mpegaudiodec.lo pcm.lo \
++	simple_idct.lo ratecontrol.lo adpcm.lo eval.lo dv.lo \
++	error_resilience.lo fft.lo mdct.lo mace.lo huffyuv.lo cyuv.lo \
++	opts.lo raw.lo h264.lo golomb.lo vp3.lo asv1.lo 4xm.lo cabac.lo \
++	ffv1.lo ra144.lo ra288.lo vcr1.lo cljr.lo roqvideo.lo dpcm.lo \
++	interplayvideo.lo xan.lo rpza.lo cinepak.lo msrle.lo \
++	msvideo1.lo vqavideo.lo adx.lo rational.lo faandct.lo 8bps.lo \
++	h263.lo msmpeg4.lo h263dec.lo svq1.lo rv10.lo wmadec.lo \
++	indeo3.lo smc.lo parser.lo flicvideo.lo truemotion1.lo \
++	idcinvideo.lo $(am__objects_1) $(am__objects_2) \
+ 	$(am__objects_3)
+-libtcavcodec_a_OBJECTS = $(am_libtcavcodec_a_OBJECTS)
++libtcavcodec_la_OBJECTS = $(am_libtcavcodec_la_OBJECTS)
+ depcomp = $(SHELL) $(top_srcdir)/autotools/depcomp
+ am__depfiles_maybe = depfiles
+-@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/4xm.Po ./$(DEPDIR)/8bps.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ac3enc.Po ./$(DEPDIR)/adpcm.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/adx.Po ./$(DEPDIR)/allcodecs.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/asv1.Po ./$(DEPDIR)/cabac.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/cinepak.Po ./$(DEPDIR)/cljr.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/common.Po ./$(DEPDIR)/cputest.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/cyuv.Po ./$(DEPDIR)/dpcm.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/dsputil.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/dsputil_altivec.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/dsputil_mmx.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/dsputil_ppc.Po ./$(DEPDIR)/dv.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/error_resilience.Po ./$(DEPDIR)/eval.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/faandct.Po ./$(DEPDIR)/fdct_altivec.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/fdct_mmx.Po ./$(DEPDIR)/fft.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/fft_altivec.Po ./$(DEPDIR)/fft_sse.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ffv1.Po ./$(DEPDIR)/flicvideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/gmc_altivec.Po ./$(DEPDIR)/golomb.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/h263.Po ./$(DEPDIR)/h263dec.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/h264.Po ./$(DEPDIR)/huffyuv.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/idcinvideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/idct_altivec.Po ./$(DEPDIR)/idct_mmx.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/imgconvert.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/imgresample.Po ./$(DEPDIR)/indeo3.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/interplayvideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/jfdctfst.Po ./$(DEPDIR)/jfdctint.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/jrevdct.Po ./$(DEPDIR)/mace.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mdct.Po ./$(DEPDIR)/mem.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mjpeg.Po ./$(DEPDIR)/motion_est.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/motion_est_mmx.Po ./$(DEPDIR)/mpeg12.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mpegaudio.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mpegaudiodec.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo_altivec.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo_mmx.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo_ppc.Po ./$(DEPDIR)/msmpeg4.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/msrle.Po ./$(DEPDIR)/msvideo1.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/opts.Po ./$(DEPDIR)/parser.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/pcm.Po ./$(DEPDIR)/ra144.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/ra288.Po ./$(DEPDIR)/ratecontrol.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/rational.Po ./$(DEPDIR)/raw.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/resample.Po ./$(DEPDIR)/roqvideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/rpza.Po ./$(DEPDIR)/rv10.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/simple_idct.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/simple_idct_mmx.Po ./$(DEPDIR)/smc.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/svq1.Po ./$(DEPDIR)/truemotion1.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/utils.Po ./$(DEPDIR)/vcr1.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/vp3.Po ./$(DEPDIR)/vqavideo.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/wmadec.Po ./$(DEPDIR)/xan.Po
++@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/4xm.Plo ./$(DEPDIR)/8bps.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/ac3enc.Plo ./$(DEPDIR)/adpcm.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/adx.Plo ./$(DEPDIR)/allcodecs.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/asv1.Plo ./$(DEPDIR)/cabac.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/cinepak.Plo ./$(DEPDIR)/cljr.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/common.Plo ./$(DEPDIR)/cputest.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/cyuv.Plo ./$(DEPDIR)/dpcm.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/dsputil.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/dsputil_altivec.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/dsputil_mmx.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/dsputil_ppc.Plo ./$(DEPDIR)/dv.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/error_resilience.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/eval.Plo ./$(DEPDIR)/faandct.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/fdct_altivec.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/fdct_mmx.Plo ./$(DEPDIR)/fft.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/fft_altivec.Plo ./$(DEPDIR)/fft_sse.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/ffv1.Plo ./$(DEPDIR)/flicvideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/gmc_altivec.Plo ./$(DEPDIR)/golomb.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/h263.Plo ./$(DEPDIR)/h263dec.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/h264.Plo ./$(DEPDIR)/huffyuv.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/idcinvideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/idct_altivec.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/idct_mmx.Plo ./$(DEPDIR)/imgconvert.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/imgresample.Plo ./$(DEPDIR)/indeo3.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/interplayvideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/jfdctfst.Plo ./$(DEPDIR)/jfdctint.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/jrevdct.Plo ./$(DEPDIR)/mace.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mdct.Plo ./$(DEPDIR)/mem.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mjpeg.Plo ./$(DEPDIR)/motion_est.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/motion_est_mmx.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mpeg12.Plo ./$(DEPDIR)/mpegaudio.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mpegaudiodec.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo_altivec.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo_mmx.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/mpegvideo_ppc.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/msmpeg4.Plo ./$(DEPDIR)/msrle.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/msvideo1.Plo ./$(DEPDIR)/opts.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/parser.Plo ./$(DEPDIR)/pcm.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/ra144.Plo ./$(DEPDIR)/ra288.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/ratecontrol.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/rational.Plo ./$(DEPDIR)/raw.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/resample.Plo ./$(DEPDIR)/roqvideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/rpza.Plo ./$(DEPDIR)/rv10.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/simple_idct.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/simple_idct_mmx.Plo ./$(DEPDIR)/smc.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/svq1.Plo ./$(DEPDIR)/truemotion1.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/utils.Plo ./$(DEPDIR)/vcr1.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/vp3.Plo ./$(DEPDIR)/vqavideo.Plo \
++@AMDEP_TRUE@	./$(DEPDIR)/wmadec.Plo ./$(DEPDIR)/xan.Plo
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+@@ -516,7 +504,7 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+-DIST_SOURCES = $(am__libtcavcodec_a_SOURCES_DIST)
++DIST_SOURCES = $(am__libtcavcodec_la_SOURCES_DIST)
+ HEADERS = $(noinst_HEADERS)
+ 
+ 
+@@ -527,7 +515,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+ 	check-recursive installcheck-recursive
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.in Makefile.am
+ DIST_SUBDIRS = $(SUBDIRS)
+-SOURCES = $(libtcavcodec_a_SOURCES)
++SOURCES = $(libtcavcodec_la_SOURCES)
+ 
+ all: all-recursive
+ 
+@@ -539,12 +527,16 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_
+ Makefile: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ 
+-clean-noinstLIBRARIES:
+-	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+-libtcavcodec.a: $(libtcavcodec_a_OBJECTS) $(libtcavcodec_a_DEPENDENCIES) 
+-	-rm -f libtcavcodec.a
+-	$(libtcavcodec_a_AR) libtcavcodec.a $(libtcavcodec_a_OBJECTS) $(libtcavcodec_a_LIBADD)
+-	$(RANLIB) libtcavcodec.a
++clean-noinstLTLIBRARIES:
++	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
++	@list='$(noinst_LTLIBRARIES)'; for p in $$list; do \
++	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
++	  test "$$dir" = "$$p" && dir=.; \
++	  echo "rm -f \"$${dir}/so_locations\""; \
++	  rm -f "$${dir}/so_locations"; \
++	done
++libtcavcodec.la: $(libtcavcodec_la_OBJECTS) $(libtcavcodec_la_DEPENDENCIES) 
++	$(LINK)  $(libtcavcodec_la_LDFLAGS) $(libtcavcodec_la_OBJECTS) $(libtcavcodec_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -552,90 +544,90 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/4xm.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/8bps.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ac3enc.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/adpcm.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/adx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/allcodecs.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/asv1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cabac.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cinepak.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cljr.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/common.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cputest.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cyuv.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dpcm.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil_altivec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil_mmx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil_ppc.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dv.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/error_resilience.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eval.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/faandct.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdct_altivec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdct_mmx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fft.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fft_altivec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fft_sse.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ffv1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/flicvideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gmc_altivec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/golomb.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/h263.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/h263dec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/h264.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/huffyuv.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idcinvideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idct_altivec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idct_mmx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imgconvert.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imgresample.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/indeo3.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interplayvideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jfdctfst.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jfdctint.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jrevdct.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mace.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mdct.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mem.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mjpeg.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/motion_est.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/motion_est_mmx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpeg12.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegaudio.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegaudiodec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo_altivec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo_mmx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo_ppc.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msmpeg4.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msrle.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvideo1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opts.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parser.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pcm.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ra144.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ra288.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ratecontrol.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rational.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/raw.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/resample.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/roqvideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rpza.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rv10.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/simple_idct.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/simple_idct_mmx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smc.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/svq1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/truemotion1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vcr1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vp3.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vqavideo.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wmadec.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xan.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/4xm.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/8bps.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ac3enc.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/adpcm.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/adx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/allcodecs.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/asv1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cabac.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cinepak.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cljr.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/common.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cputest.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cyuv.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dpcm.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil_altivec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil_mmx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dsputil_ppc.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dv.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/error_resilience.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eval.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/faandct.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdct_altivec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdct_mmx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fft.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fft_altivec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fft_sse.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ffv1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/flicvideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gmc_altivec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/golomb.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/h263.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/h263dec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/h264.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/huffyuv.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idcinvideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idct_altivec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idct_mmx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imgconvert.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imgresample.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/indeo3.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interplayvideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jfdctfst.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jfdctint.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jrevdct.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mace.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mdct.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mem.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mjpeg.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/motion_est.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/motion_est_mmx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpeg12.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegaudio.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegaudiodec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo_altivec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo_mmx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mpegvideo_ppc.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msmpeg4.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msrle.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvideo1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opts.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parser.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pcm.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ra144.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ra288.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ratecontrol.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rational.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/raw.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/resample.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/roqvideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rpza.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rv10.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/simple_idct.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/simple_idct_mmx.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/smc.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/svq1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/truemotion1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utils.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vcr1.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vp3.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vqavideo.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wmadec.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xan.Plo@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
+@@ -1378,7 +1370,7 @@ distdir: $(DISTFILES)
+ 	done
+ check-am: all-am
+ check: check-recursive
+-all-am: Makefile $(LIBRARIES) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ installdirs: installdirs-recursive
+ installdirs-am:
+ 
+@@ -1408,7 +1400,7 @@ maintainer-clean-generic:
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-recursive
+ 
+-clean-am: clean-generic clean-libtool clean-noinstLIBRARIES \
++clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	mostlyclean-am
+ 
+ distclean: distclean-recursive
+@@ -1460,7 +1452,7 @@ uninstall-am: uninstall-info-am
+ uninstall-info: uninstall-info-recursive
+ 
+ .PHONY: $(RECURSIVE_TARGETS) CTAGS GTAGS all all-am check check-am clean \
+-	clean-generic clean-libtool clean-noinstLIBRARIES \
++	clean-generic clean-libtool clean-noinstLTLIBRARIES \
+ 	clean-recursive ctags ctags-recursive distclean \
+ 	distclean-compile distclean-generic distclean-libtool \
+ 	distclean-recursive distclean-tags distdir dvi dvi-am \

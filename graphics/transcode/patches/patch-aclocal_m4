@@ -1,0 +1,67 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2004/06/18 18:56:43 sturm Exp $
+--- aclocal.m4.orig	2004-01-06 21:38:09.000000000 +0100
++++ aclocal.m4	2004-06-17 23:19:26.000000000 +0200
+@@ -473,11 +473,11 @@ if test x$with_vorbis = "x"yes ; then
+ 
+ 	AC_CHECK_LIB(vorbis, vorbis_info_init,
+        	[VORBIS_CFLAGS="-I$with_vorbis_i -I/usr/local/include" 
+-         VORBIS_LIBS="-L$with_vorbis_l -lvorbis -lm"
++         VORBIS_LIBS="-L$with_vorbis_l -lvorbis -logg -lm"
+        	AC_DEFINE(HAVE_VORBIS) 
+ 	hav_vorbis=yes
+ 	have_vorbis=yes], [have_vorbis=no], 
+-       	-L$with_vorbis_l -lvorbis)
++       	-L$with_vorbis_l -lvorbis -logg -lm)
+ fi   
+ AC_CHECK_FILE($with_vorbis_i/vorbis/codec.h, [vorbis_inc=yes])
+ if test x"$vorbis_inc" != xyes; then 
+@@ -679,8 +679,8 @@ AC_ARG_WITH(dv-libs,AC_HELP_STRING([--wi
+ 	  dv_libs="$withval", dv_libs="")
+ 
+ 
+-EXTRA_LIBS="$LIBS $GLIB_LIBS -ldl -lm"
+-DV_EXTRA_LIBS="$GLIB_LIBS -ldl -lm"
++EXTRA_LIBS="$LIBS $GLIB_LIBS -lm"
++DV_EXTRA_LIBS="$GLIB_LIBS -lm"
+ 
+ if test x$with_dv = "x"yes ; then
+ 
+@@ -747,8 +747,8 @@ AC_ARG_WITH(lzo-libs,AC_HELP_STRING([--w
+ 	  lzo_libs="$withval", lzo_libs="")
+ 
+ 
+-EXTRA_LIBS="$LIBS $GLIB_LIBS -ldl -lm"
+-LZO_EXTRA_LIBS="$GLIB_LIBS -ldl -lm"
++EXTRA_LIBS="$LIBS $GLIB_LIBS -lm"
++LZO_EXTRA_LIBS="$GLIB_LIBS -lm"
+ 
+ if test x$with_lzo = "x"yes ; then
+ 
+@@ -1024,7 +1024,7 @@ AC_ARG_WITH(qt-includes,AC_HELP_STRING([
+ AC_ARG_WITH(qt-libs,AC_HELP_STRING([--with-qt-libs=PFX],[prefix where local quicktime libs are installed (optional)]),
+ 	  qt_libs="$withval", qt_libs="")
+ 
+-EXTRA_LIBS="-lpng -lz -lpthread -lglib -ldl -lm -ldv"
++EXTRA_LIBS="-lpng -lz $pthread_lib -lglib -lm -ldv"
+ 
+ if test x$with_qt = "x"yes ; then
+ 
+@@ -1078,7 +1078,7 @@ AC_ARG_WITH(openqt-includes,AC_HELP_STRI
+ AC_ARG_WITH(openqt-libs,AC_HELP_STRING([--with-openqt-libs=PFX],[prefix where local openquicktime libs are installed (optional)]),
+ 	  openqt_libs="$withval", openqt_libs="")
+ 
+-EXTRA_LIBS="-lpng -lz -lpthread -lglib -ldl -lm"
++EXTRA_LIBS="-lpng -lz $pthread_lib -lglib -lm"
+ 
+ if test x$with_openqt = "x"yes ; then
+ 
+@@ -7114,7 +7114,8 @@ predeps=$lt_[]_LT_AC_TAGVAR(predeps, $1)
+ 
+ # Dependencies to place after the objects being linked to create a
+ # shared library.
+-postdeps=$lt_[]_LT_AC_TAGVAR(postdeps, $1)
++#postdeps=$lt_[]_LT_AC_TAGVAR(postdeps, $1)
++postdeps=
+ 
+ # The library search path used internally by the compiler when linking
+ # a shared library.
