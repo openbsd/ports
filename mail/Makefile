@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2001/08/30 15:29:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.78 2001/10/26 11:09:08 naddy Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -26,7 +26,6 @@
      SUBDIR += exmh2
      SUBDIR += faces
      SUBDIR += fetchmail
-     SUBDIR += fetchmail,kerberos4
      SUBDIR += grepmail
      SUBDIR += hypermail
      SUBDIR += hypermail,gdbm
