@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 1999/12/14 00:19:15 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2000/02/02 18:35:23 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
 
 # it only works right with a recent bsd.port.mk.
-NEED_VERSION=1.73
+NEED_VERSION=1.178
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -58,18 +58,16 @@ LATEST_DATE=1999-12-08
 #NEXT_DATE=1999-12-08
 #PATCH_DEBUG=yes
 
-LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
-DIRECTORY=egcs/snapshots/%SUBDIR%/
+LATEST=${LATEST_DATE:S/-//g}
+DIRECTORY=egcs/snapshots/%DATE%/
 .if defined(NEXT_DATE)
-NEXT != echo ${NEXT_DATE} | sed -e s/-//g;
+NEXT=${NEXT_DATE:S/-//g}
 DISTNAME=	egcs-${NEXT}
 .else
 DISTNAME=   egcs-${LATEST}
 .endif
 
 # getting the right archives where they should be
-MASTER_SITE_SUBDIR=${LATEST_DATE}
-PATCH_SITE_SUBDIR=${NEXT_DATE}
 
 DIST_SUBDIR=egcs
 
@@ -114,89 +112,90 @@ SUPDISTFILES+=egcs-${sub}-${LATEST}${EXTRACT_SUFX}
 .endif
 
 
-MASTER_SITES=	
-MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
-MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
-MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
-MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
-#MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
-#MASTER_SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
-#MASTER_SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
+SITES=	
+SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
+SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
+SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
+SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
+#SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
+#SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
+#SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
 
-MASTER_SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.fu-berlin.de/unix/languages/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
-#MASTER_SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
-#MASTER_SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-#MASTER_SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
-#MASTER_SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
+SITES+= ftp://ftp.fu-berlin.de/unix/languages/${DIRECTORY}
+SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
+SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
+SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
+SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
+#SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
+SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
+SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
+SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
+SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
+SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
+SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
+#SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
+#SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
+SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
+#SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
+SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
+SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
 
 # couldn't contact those, maybe they work ?
-MASTER_SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
-MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
-MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
+SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
+SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
+SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
+SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
+SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
+SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
+SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
 
-PATCH_SITES = ${MASTER_SITES}
+MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
 # add a possible next snapshot
 
 .if defined(NEXT)
+MASTER_SITES0=${SITES:S/%DATE%/${NEXT_DATE}/}
 .if defined(ONE_ARCHIVE)
-PATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz
+PATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz:0
 
 .else
-PATCHFILES=egcs-core-${LATEST}-${NEXT}.diff.gz
+PATCHFILES=egcs-core-${LATEST}-${NEXT}.diff.gz:0
 .if defined(MAKE_TESTS)
-PATCHFILES+=egcs-tests-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-tests-${LATEST}-${NEXT}.diff.gz:0
 .endif
 .if defined(MAKE_GXX)
-PATCHFILES+=egcs-g++-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-g++-${LATEST}-${NEXT}.diff.gz:0
 .if defined(MAKE_TESTS)
-PATCHFILES+=egcs-g++-tests-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-g++-tests-${LATEST}-${NEXT}.diff.gz:0
 .endif
 .endif
 .if defined(MAKE_FORTRAN)
-PATCHFILES+=egcs-g77-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-g77-${LATEST}-${NEXT}.diff.gz:0
 .if defined(MAKE_TESTS)
-PATCHFILES+=egcs-g77-testsuite-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-g77-testsuite-${LATEST}-${NEXT}.diff.gz:0
 .endif
 .endif
 .if defined(MAKE_JAVA)
-PATCHFILES+=egcs-java-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-java-${LATEST}-${NEXT}.diff.gz:0
 .endif
 .if defined(MAKE_OBJC)
-PATCHFILES+=egcs-objc-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-objc-${LATEST}-${NEXT}.diff.gz:0
 .endif
 .if defined(MAKE_CHILL)
-PATCHFILES+=egcs-chill-${LATEST}-${NEXT}.diff.gz
+PATCHFILES+=egcs-chill-${LATEST}-${NEXT}.diff.gz:0
 .endif
 .endif
 
-SUPPATCHFILES=egcs-${LATEST}-${NEXT}.diff.gz
+SUPDISTFILES=egcs-${LATEST}-${NEXT}.diff.gz:0
 .for sub in core tests g++ g77 java objc chill
-SUPPATCHFILES+=egcs-${sub}-${LATEST}-${NEXT}.diff.gz
+SUPDISTFILES+=egcs-${sub}-${LATEST}-${NEXT}.diff.gz:0
 .endfor
 
 .endif
