@@ -1,7 +1,7 @@
-$OpenBSD: patch-ipopd.8c,v 1.2 2001/09/24 22:01:49 jakob Exp $
+$OpenBSD: patch-ipopd.8c,v 1.3 2002/09/18 08:19:06 jakob Exp $
 
 --- src/ipopd/ipopd.8c.orig	Fri Jan 17 02:52:10 1992
-+++ src/ipopd/ipopd.8c	Sat Oct 16 23:59:21 1999
++++ src/ipopd/ipopd.8c	Sun Sep  8 14:55:16 2002
 @@ -1,11 +1,11 @@
 -.TH IPOPD 8C "January 16, 1992"
 +.TH IPOPD 8 "January 16, 1992"
@@ -17,7 +17,7 @@ $OpenBSD: patch-ipopd.8c,v 1.2 2001/09/24 22:01:49 jakob Exp $
  .SH DESCRIPTION
  .I IPOP2d
  and
-@@ -38,7 +38,7 @@
+@@ -38,7 +38,7 @@ port as indicated by the
  file (see
  .IR services (5)).
  .SH "SEE ALSO"

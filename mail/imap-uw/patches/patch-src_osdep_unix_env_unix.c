@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.2 2002/07/09 19:34:17 jakob Exp $
+$OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.3 2002/09/18 08:19:06 jakob Exp $
 
---- src/osdep/unix/env_unix.c.orig	Thu Dec 21 01:12:13 2000
-+++ src/osdep/unix/env_unix.c	Thu Jan 18 16:11:09 2001
-@@ -767,14 +767,12 @@
+--- src/osdep/unix/env_unix.c.orig	Tue Sep  3 08:39:10 2002
++++ src/osdep/unix/env_unix.c	Sun Sep  8 14:55:34 2002
+@@ -773,14 +773,12 @@ char *myhomedir ()
  static char *mymailboxdir ()
  {
    char *home = myhomedir ();
@@ -16,8 +16,8 @@ $OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.2 2002/07/09 19:34:17 jakob Exp $
 -  }
    return myMailboxDir ? myMailboxDir : "";
  }
-
-@@ -971,7 +971,8 @@ long dotlock_lock (char *file,DOTLOCK *b
+ 
+@@ -1036,7 +1034,8 @@ long dotlock_lock (char *file,DOTLOCK *b
        }
        close (pi[0]); close (pi[1]);
      }
@@ -27,4 +27,3 @@ $OpenBSD: patch-src_osdep_unix_env_unix.c,v 1.2 2002/07/09 19:34:17 jakob Exp $
        sprintf (tmp,"Mailbox vulnerable - directory %.80s",base->lock);
        if (s = strrchr (tmp,'/')) *s = '\0';
        strcat (tmp," must have 1777 protection");
- 
