@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 1999/02/25 04:49:58 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/12 15:23:33 brad Exp $
 # $FreeBSD: Makefile,v 1.7 1999/02/12 21:55:04 obrien Exp $
 
-DISTNAME=	proftpd-1.2.0pre2
+DISTNAME=	proftpd-1.2.0pre3
 PKGNAME=	proftpd-1.2.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	brad@openbsd.org
 
 MAN1=	ftpcount.1 ftpwho.1
 MAN8=	proftpd.8 ftpshut.8
