@@ -1,7 +1,7 @@
-$OpenBSD: patch-fzap_c,v 1.1 2002/03/24 07:30:43 jsyn Exp $
---- fzap.c.orig	Mon Feb 15 17:50:46 1999
-+++ fzap.c	Thu Apr  6 15:52:19 2000
-@@ -40,6 +40,7 @@
+$OpenBSD: patch-fzap_c,v 1.2 2003/12/30 23:02:16 pvalchev Exp $
+--- fzap.c.orig	1999-02-15 15:50:46.000000000 -0700
++++ fzap.c	2003-12-07 01:06:58.000000000 -0700
+@@ -40,6 +40,7 @@ void _fini()
  
  void _init()
  {
@@ -9,7 +9,7 @@ $OpenBSD: patch-fzap_c,v 1.1 2002/03/24 07:30:43 jsyn Exp $
      void *handle;
  
      handle = dlopen(LIB_PATH, 1);
-@@ -52,14 +53,15 @@
+@@ -52,14 +53,15 @@ void _init()
  	fprintf(stderr, "\n[fzap] dlopen error!\n");
  	return;
      }
@@ -27,7 +27,7 @@ $OpenBSD: patch-fzap_c,v 1.1 2002/03/24 07:30:43 jsyn Exp $
      char *lprt;
      void *handle;
  
-@@ -146,8 +148,8 @@
+@@ -146,8 +148,8 @@ CONNECT(__fd, __addr, __len)
  
  BIND(__fd, __addr, __len)
  {

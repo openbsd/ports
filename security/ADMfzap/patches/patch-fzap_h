@@ -1,6 +1,6 @@
-$OpenBSD: patch-fzap_h,v 1.1 2002/03/24 07:30:43 jsyn Exp $
---- fzap.h.orig	Mon Feb 15 18:50:43 1999
-+++ fzap.h	Thu Apr  6 15:51:10 2000
+$OpenBSD: patch-fzap_h,v 1.2 2003/12/30 23:02:16 pvalchev Exp $
+--- fzap.h.orig	1999-02-15 16:50:43.000000000 -0700
++++ fzap.h	2003-12-07 01:06:58.000000000 -0700
 @@ -1,8 +1,9 @@
 +#include <sys/param.h>
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-fzap_h,v 1.1 2002/03/24 07:30:43 jsyn Exp $
      va_start(ap, fmt);
      fprintf(stderr, "\n[fzap:DBG]\t");
      vfprintf(stderr, fmt, ap);
-@@ -47,12 +48,12 @@
+@@ -47,12 +48,12 @@ int (*old_connect) (int, const struct so
  #endif
  
  
