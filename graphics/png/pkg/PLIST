@@ -1,7 +1,7 @@
 include/png.h
 include/pngconf.h
 lib/libpng.a
-lib/libpng.so.1.3
+lib/libpng.so.1.6
 @exec /sbin/ldconfig -m %B
 man/man3/libpng.3
 man/man3/libpngpf.3

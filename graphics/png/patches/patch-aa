@@ -1,6 +1,6 @@
---- Makefile.orig	Sat May  8 13:28:29 1999
-+++ Makefile	Sat May  8 13:40:34 1999
-@@ -3,17 +3,18 @@
+--- Makefile.orig	Sun May 21 06:47:39 2000
++++ Makefile	Sun May 21 06:49:59 2000
+@@ -3,17 +3,19 @@
  # For conditions of distribution and use, see copyright notice in png.h
  
  # where make install puts libpng.a and png.h
@@ -18,14 +18,15 @@
 -CC=cc
 -CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
 -LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
-+VER=1.3
++VER=1.6
 +#CC=cc
 +#CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
++#LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
 +LDFLAGS=-L. -lpng -lz -lm
  
  #RANLIB=echo
  RANLIB=ranlib
-@@ -22,12 +23,20 @@
+@@ -22,12 +24,20 @@
  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
  	pngwtran.o pngmem.o pngerror.o pngpread.o
  
@@ -47,7 +48,7 @@
  pngtest: pngtest.o libpng.a
  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
  
-@@ -37,12 +46,10 @@
+@@ -37,12 +47,10 @@
  install: libpng.a
  	-@mkdir $(prefix)/include
  	-@mkdir $(prefix)/lib

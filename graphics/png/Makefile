@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2000/05/16 18:49:39 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/05/21 10:40:21 fgsch Exp $
 
-DISTNAME=       libpng-1.0.3
-PKGNAME=        png-1.0.3
+DISTNAME=       libpng-1.0.6
+PKGNAME=        png-1.0.6
 CATEGORIES=     graphics
 NEED_VERSION=	1.223
 MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 
+PATCHFILES=	libpng-1.0.6-patch-a.txt.gz \
+		libpng-1.0.6-patch-b.txt.gz \
+		libpng-1.0.6-patch-c.txt.gz
 
 MAINTAINER=     angelos@openbsd.org
 
@@ -15,9 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 FAKE=			Yes
-
-post-extract:
-	@chmod +w ${WRKSRC}/scripts
 
 pre-patch:
 	@cd ${WRKSRC} && cp scripts/makefile.std Makefile
