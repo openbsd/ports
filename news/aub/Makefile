@@ -3,7 +3,7 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1997/12/04 00:57:08 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/04 01:20:33 angelos Exp $
 #
 
 DISTNAME=	aub
@@ -35,8 +35,7 @@ do-install:
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/aub.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/doc/aub
 	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/BUG_FIXES ${PREFIX}/share/doc/aub
-	patch < files/aub-perl5.diff
-	echo "There is a patch to aub to run with perl5. You may find it in the files/ directory."
+	@echo "There is a patch to aub to run with perl5. You may find it in the files/ directory."
 
 #
 # There is a patch to aub to run with perl5.
