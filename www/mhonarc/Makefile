@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/11/28 00:06:59 margarida Exp $
+# $OpenBSD: Makefile,v 1.20 2003/12/08 00:43:45 margarida Exp $
 
 COMMENT=		"highly customizable e-mail to HTML converter"
 
@@ -25,6 +25,13 @@ post-extract:
 			@chmod -R u+w ${WRKDIST}
 
 CONFIGURE_STYLE=	perl
+
+CONFIGURE_ARGS=		PREFIX='$${${DESTDIRNAME}}${PREFIX}' \
+			INSTALLSITELIB='$${${DESTDIRNAME}}${PREFIX}/libdata/perl5/site_perl' \
+			INSTALLPRIVLIB='$${${DESTDIRNAME}}/usr/./libdata/perl5' \
+			INSTALLMAN1DIR='$${${DESTDIRNAME}}${PREFIX}/man/man1' \
+			INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3p'
+
 ALL_TARGET=		default
 
 EXAMPLES=		mha-preview mhasiteinit.pl mhonarc.vim *.mrc
