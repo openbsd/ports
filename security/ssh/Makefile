@@ -3,13 +3,13 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.20 1998/05/24 01:19:31 marc Exp $
+# $OpenBSD: Makefile,v 1.21 1998/05/24 01:22:11 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.23
+DISTNAME=       ssh-1.2.22
 CATEGORIES=	security net
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 
