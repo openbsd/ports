@@ -1,44 +1,176 @@
-$OpenBSD: patch-mergemaster_sh,v 1.3 2002/02/12 16:22:05 naddy Exp $
---- mergemaster.sh.orig	Tue Feb 12 14:28:36 2002
-+++ mergemaster.sh	Tue Feb 12 14:45:12 2002
-@@ -354,7 +354,7 @@ SOURCEDIR=${SOURCEDIR:-/usr/src/etc}
+$OpenBSD: patch-mergemaster_sh,v 1.4 2003/05/12 21:54:32 naddy Exp $
+--- mergemaster.sh.orig	Sat May 10 16:06:02 2003
++++ mergemaster.sh	Sat May 10 18:30:36 2003
+@@ -404,7 +404,7 @@ fi
  
  # Define what CVS $Id tag to look for to aid portability.
  #
 -CVS_ID_TAG=FreeBSD
 +CVS_ID_TAG=OpenBSD
  
- case "${RERUN}" in
- '')
-@@ -450,10 +450,7 @@ case "${RERUN}" in
+ delete_temproot () {
+   rm -rf "${TEMPROOT}" 2>/dev/null
+@@ -506,10 +506,7 @@ case "${RERUN}" in
        make DESTDIR=${DESTDIR} distrib-dirs
-       ;;
-     esac
--    make DESTDIR=${TEMPROOT} distrib-dirs &&
--    make MAKEOBJDIRPREFIX=${TEMPROOT}/usr/obj obj &&
--    make MAKEOBJDIRPREFIX=${TEMPROOT}/usr/obj DESTDIR=${TEMPROOT} \
--        -DNO_MAKEDEV_RUN distribution;} ||
-+    make DESTDIR=${TEMPROOT} -DNOMAKEDEV distribution-etc-root-var;} ||
-   { echo '';
-     echo "  *** FATAL ERROR: Cannot 'cd' to ${SOURCEDIR} and install files to";
-     echo "      the temproot environment";
-@@ -491,11 +488,6 @@ case "${RERUN}" in
+         ;;
+       esac
+-      make DESTDIR=${TEMPROOT} distrib-dirs &&
+-      make MAKEOBJDIRPREFIX=${TEMPROOT}/usr/obj obj &&
+-      make MAKEOBJDIRPREFIX=${TEMPROOT}/usr/obj DESTDIR=${TEMPROOT} \
+-          distribution;} ||
++      make DESTDIR=${TEMPROOT} -DNOMAKEDEV distribution-etc-root-var;} ||
+     { echo '';
+      echo "  *** FATAL ERROR: Cannot 'cd' to ${SOURCEDIR} and install files to";
+       echo "      the temproot environment";
+@@ -555,11 +552,6 @@ case "${RERUN}" in
       ;;
    esac
  
 -  # Avoid trying to update MAKEDEV if /dev is on a devfs
 -  if /sbin/sysctl vfs.devfs.generation > /dev/null 2>&1 ; then
--    rm ${TEMPROOT}/dev/MAKEDEV ${TEMPROOT}/dev/MAKEDEV.local
+-    rm -f ${TEMPROOT}/dev/MAKEDEV ${TEMPROOT}/dev/MAKEDEV.local
 -  fi
 -
    ;; # End of the "RERUN" test
  esac
  
-@@ -506,6 +498,7 @@ esac
- [ -f "${TEMPROOT}/etc/spwd.db" ] && rm "${TEMPROOT}/etc/spwd.db"
- [ -f "${TEMPROOT}/etc/passwd" ]  && rm "${TEMPROOT}/etc/passwd"
- [ -f "${TEMPROOT}/etc/pwd.db" ]  && rm "${TEMPROOT}/etc/pwd.db"
-+[ -f "${TEMPROOT}/etc/mail/aliases.db" ] && rm "${TEMPROOT}/etc/mail/aliases.db"
+@@ -569,9 +561,6 @@ esac
+ #
+ rm -f ${TEMPROOT}/etc/*.db ${TEMPROOT}/etc/passwd
  
+-# We only need to compare things like freebsd.cf once
+-find ${TEMPROOT}/usr/obj -type f -delete 2>/dev/null
+-
  # Get ready to start comparing files
+ 
+ # Check umask if not specified on the command line,
+@@ -605,50 +594,6 @@ fi
+ 
+ CONFIRMED_UMASK=${NEW_UMASK:-0022}
+ 
+-#
+-# Warn users who still have old rc files
+-#
+-for file in atm devfs diskless1 diskless2 isdn network network6 pccard \
+-  serial syscons sysctl alpha amd64 i386 ia64 sparc64; do
+-  if [ -f "${DESTDIR}/etc/rc.${file}" ]; then
+-    OLD_RC_PRESENT=1
+-    break
+-  fi
+-done
+-
+-case "${OLD_RC_PRESENT}" in
+-1)
+-  echo ''
+-  echo " *** There are elements of the old rc system in ${DESTDIR}/etc/."
+-  echo ''
+-  echo '     While these scripts will not hurt anything, they are not'
+-  echo '     functional on an up to date system, and can be removed.'
+-  echo ''
+-
+-  case "${AUTO_RUN}" in
+-  '')
+-    echo -n 'Move these files to /var/tmp/mergemaster/old_rc? [yes] '
+-    read MOVE_OLD_RC
+-
+-    case "${MOVE_OLD_RC}" in
+-    [nN]*) ;;
+-    *)
+-      mkdir -p /var/tmp/mergemaster/old_rc
+-        for file in atm devfs diskless1 diskless2 isdn network network6 pccard \
+-          serial syscons sysctl alpha amd64 i386 ia64 sparc64; do
+-          if [ -f "${DESTDIR}/etc/rc.${file}" ]; then
+-            mv ${DESTDIR}/etc/rc.${file} /var/tmp/mergemaster/old_rc/
+-          fi
+-        done
+-      echo '  The files have been moved'
+-      press_to_continue
+-      ;;
+-    esac
+-    ;;
+-  *) ;;
+-  esac
+-esac
+-
+ # Use the umask/mode information to install the files
+ # Create directories as needed
+ #
+@@ -666,12 +611,9 @@ do_install_and_rm () {
+   rm -f "${2}"
+ }
+ 
+-# 4095 = "obase=10;ibase=8;07777" | bc
+ find_mode () {
+-  local OCTAL
+-  OCTAL=$(( ~$(echo "obase=10; ibase=8; ${CONFIRMED_UMASK}" | bc) & 4095 &
+-    $(echo "obase=10; ibase=8; $(stat -f "%OMp%OLp" ${1})" | bc) )) 
+-  printf "%04o\n" ${OCTAL}
++  perl -e 'printf "%04o\n", (((stat("$ARGV[0]"))[2] & 07777) &~ \
++    oct("$ARGV[1]"))' "${1}" "${CONFIRMED_UMASK}"`
+ }
+ 
+ mm_install () {
+@@ -698,7 +640,9 @@ mm_install () {
+       NEED_NEWALIASES=yes
+       ;;
+     /etc/login.conf)
+-      NEED_CAP_MKDB=yes
++      if [ -f /etc/login.conf.db ]; then
++        NEED_CAP_MKDB=yes
++      fi
+       ;;
+     /etc/master.passwd)
+       do_install_and_rm 600 "${1}" "${DESTDIR}${INSTALL_DIR}"
+@@ -1015,47 +959,27 @@ fi
+ case "${COMP_CONFS}" in
+ '') ;;
+ *)
+-  . ${DESTDIR}/etc/defaults/rc.conf
++  . ${DESTDIR}/rc.conf
+ 
+   (echo ''
+-  echo "*** Comparing conf files: ${rc_conf_files}"
++  echo "*** Comparing conf files: ${local_rcconf}"
+ 
+-  for CONF_FILE in ${rc_conf_files}; do
++  for CONF_FILE in ${local_rcconf}; do
+     if [ -r "${DESTDIR}${CONF_FILE}" ]; then
+       echo ''
+       echo "*** From ${DESTDIR}${CONF_FILE}"
+-      echo "*** From ${DESTDIR}/etc/defaults/rc.conf"
++      echo "*** From ${DESTDIR}/etc/rc.conf"
+ 
+       for RC_CONF_VAR in `grep -i ^[a-z] ${DESTDIR}${CONF_FILE} |
+         cut -d '=' -f 1`; do
+         echo ''
+         grep -w ^${RC_CONF_VAR} ${DESTDIR}${CONF_FILE}
+-        grep -w ^${RC_CONF_VAR} ${DESTDIR}/etc/defaults/rc.conf ||
++        grep -w ^${RC_CONF_VAR} ${DESTDIR}/etc/rc.conf ||
+           echo ' * No default variable with this name'
+       done
+     fi
+   done) | ${PAGER}
+   echo ''
+-  ;;
+-esac
+-
+-case "${PRE_WORLD}" in
+-'') ;;
+-*)
+-  MAKE_CONF="${SOURCEDIR%etc}share/examples/etc/make.conf"
+-
+-  (echo ''
+-  echo '*** Comparing make variables'
+-  echo ''
+-  echo "*** From ${DESTDIR}/etc/make.conf"
+-  echo "*** From ${MAKE_CONF}"
+-
+-  for MAKE_VAR in `grep -i ^[a-z] ${DESTDIR}/etc/make.conf | cut -d '=' -f 1`; do
+-    echo ''
+-    grep -w ^${MAKE_VAR} ${DESTDIR}/etc/make.conf
+-    grep -w ^#${MAKE_VAR} ${MAKE_CONF} ||
+-      echo ' * No example variable with this name'
+-  done) | ${PAGER}
+   ;;
+ esac
  

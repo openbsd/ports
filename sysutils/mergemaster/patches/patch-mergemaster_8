@@ -1,8 +1,8 @@
-$OpenBSD: patch-mergemaster_8,v 1.3 2002/02/12 16:22:05 naddy Exp $
---- mergemaster.8.orig	Tue Feb 12 14:28:36 2002
-+++ mergemaster.8	Tue Feb 12 14:42:06 2002
-@@ -44,7 +44,7 @@
- is a Bourne shell script which is designed to aid you
+$OpenBSD: patch-mergemaster_8,v 1.4 2003/05/12 21:54:32 naddy Exp $
+--- mergemaster.8.orig	Sat May 10 16:06:02 2003
++++ mergemaster.8	Sat May 10 18:17:03 2003
+@@ -45,7 +45,7 @@ The
+ utility is a Bourne shell script which is designed to aid you
  in updating the various configuration and other files
  associated with
 -.Fx .
@@ -10,7 +10,7 @@ $OpenBSD: patch-mergemaster_8,v 1.3 2002/02/12 16:22:05 naddy Exp $
  It is
  .Sy HIGHLY
  recommended that you back up your
-@@ -81,13 +81,13 @@ By default it creates the temporary root
+@@ -82,13 +82,13 @@ By default it creates the temporary root
  .Pa /var/tmp/temproot
  and compares the
  .Xr cvs 1
@@ -26,8 +26,8 @@ $OpenBSD: patch-mergemaster_8,v 1.3 2002/02/12 16:22:05 naddy Exp $
 +also specify that the script ignore the $OpenBSD strings and
  compare every file.
  .Pp
- .Nm
-@@ -159,6 +159,13 @@ on a previously cleaned directory, skipp
+ The merge menu option is designed to let you easily combine your
+@@ -168,6 +168,13 @@ on a previously cleaned directory, skipp
  the temporary root environment.
  This option is compatible
  with all other options.
@@ -41,11 +41,37 @@ $OpenBSD: patch-mergemaster_8,v 1.3 2002/02/12 16:22:05 naddy Exp $
  .It Fl v
  Be more verbose about the process.
  You should probably use
-@@ -329,9 +336,9 @@ with all values commented out:
+@@ -197,14 +204,12 @@ destination directory.
+ .It Fl p
+ Pre-buildworld mode.
+ Compares only files known to be essential to the success of
+-{build|install}world,
+-including
+-.Pa /etc/make.conf .
++.Dq make build .
+ .It Fl C
+ After a standard
+ .Nm
+ run,
+-compares your rc.conf[.local] options to the defaults.
++compares your rc.conf.local options to the defaults.
+ .It Fl P
+ Preserve files that you replace in
+ .Pa /var/tmp/mergemaster/preserved-files-<date> ,
+@@ -317,7 +322,7 @@ with all values commented out:
+ #DIFF_FLAG='-u'
+ #
+ # Additional options for diff.  This will get unset when using -s.
+-#DIFF_OPTIONS='-I$\&FreeBSD:.*[$]'	# Ignores CVS Id tags
++#DIFF_OPTIONS='-I$\&OpenBSD:.*[$]'	# Ignores CVS Id tags
+ #
+ # Verbose mode includes more details and additional checks
+ #VERBOSE=
+@@ -366,9 +371,9 @@ with all values commented out:
  .Pp
  .Pa /usr/src/etc/Makefile
  .Rs
--.%O http://www.FreeBSD.org/handbook/makeworld.html
+-.%O http://www.FreeBSD.org/doc/handbook/makeworld.html
 -.%T The Cutting Edge (using make world)
 -.%A Nik Clayton
 +.%O http://www.openbsd.org/faq/upgrade-minifaq.html
@@ -54,7 +80,7 @@ $OpenBSD: patch-mergemaster_8,v 1.3 2002/02/12 16:22:05 naddy Exp $
  .Re
  .Sh DIAGNOSTICS
  Exit status is 0 on successful completion, or if the user bails out
-@@ -352,7 +359,7 @@ web pages in a much simpler form under t
+@@ -389,7 +394,7 @@ web pages in a much simpler form under t
  .Pa comproot
  on 13 March 1998. The idea for creating the
  temporary root environment comes from Nik Clayton's
