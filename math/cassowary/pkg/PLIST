@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/04/08 21:47:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/02/12 21:13:46 pvalchev Exp $
 bin/cassowary-config
 include/Cl.h
 include/ClC.h
@@ -26,8 +26,6 @@ include/cassowary/ClLinearInequality.h
 include/cassowary/ClMap.h
 include/cassowary/ClObjectiveVariable.h
 include/cassowary/ClPoint.h
-include/cassowary/ClReader.cc.h
-include/cassowary/ClReader.cc.h.h
 include/cassowary/ClReader.h
 include/cassowary/ClSet.h
 include/cassowary/ClSimplexSolver.h
@@ -43,7 +41,6 @@ include/cassowary/cassowary_scm.h
 include/cassowary/cl-snarf.h
 include/cassowary/cl_auto_ptr.h
 include/cassowary/config-inline.h
-include/cassowary/config.h
 include/cassowary/debug.h
 include/cassowary/timer.h
 lib/cassowary/tests/ClTests
