@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2003/10/18 19:44:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/03/02 21:20:12 xsa Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
-TIDYDATE=	4aug00
-DISTNAME=	tidy${TIDYDATE}
+TIDYDATE=	040205
+DISTNAME=	tidy_src_${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
 
 CATEGORIES=     www
 
-MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
+MAINTAINER=	Eduardo Alvarenga <eduardo@thrx.org>
 
-MASTER_SITES=	http://www.w3.org/People/Raggett/
-HOMEPAGE=	http://www.w3.org/People/Raggett/tidy/
-EXTRACT_SUFX=	.tgz
+HOMEPAGE=	http://tidy.sourceforge.net/
 
 # BSD-like, badly worded
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,18 +18,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# override program own Makefile (bad) settings
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MASTER_SITES=	${HOMEPAGE}src/ \
+		${HOMEPAGE}src/old/
+MASTER_SITES0=	${HOMEPAGE}docs/
+EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		tidy_docs_030610${EXTRACT_SUFX}:0
 
+USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
-do-install:
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/tab2space ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/tidy ${PREFIX}/bin
-	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKBUILD}/man_page.txt ${PREFIX}/man/man1/tidy.1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tidy
-	${INSTALL_DATA} ${WRKBUILD}/*.html ${WRKBUILD}/*.gif ${PREFIX}/share/doc/tidy
+WRKDIST=	${WRKDIR}/tidy
+WRKBUILD=	${WRKDIST}/build/gmake
+
+DOCDIR=		${PREFIX}/share/doc/tidy
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/htmldoc/*.{cfg,css,gif,html} ${DOCDIR}
+	${INSTALL_DATA_DIR} ${DOCDIR}/api
+	${INSTALL_DATA} ${WRKDIST}/htmldoc/api/* ${DOCDIR}/api
 
 .include <bsd.port.mk>
