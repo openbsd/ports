@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/04/18 18:01:34 lebel Exp $
+# $OpenBSD: Makefile,v 1.31 2002/05/13 13:28:07 lebel Exp $
 
 COMMENT=		"SLang-based newsreader"
 
@@ -6,10 +6,9 @@ VERSION=		0.9.7.4
 DISTNAME=		slrn-${VERSION}
 PKGNAME=		${DISTNAME}
 CATEGORIES=		news
-NEED_VERSION=		1.474
+NEED_VERSION=		1.528
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	slrn
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
 HOMEPAGE=		http://www.slrn.org/
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>

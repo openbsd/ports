@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/04/20 00:14:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 13:28:08 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-br=		"aspell dictionary for Breton"
@@ -23,7 +23,7 @@ SP=			p1
 PKGNAME=		aspell-${V}${SV}${SP}
 DISTNAME=		aspell-${SV}
 CATEGORIES=		textproc
-NEED_VERSION=		1.402
+NEED_VERSION=		1.528
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
@@ -35,8 +35,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	aspell
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=aspell/}
 MASTER_SITES1=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu

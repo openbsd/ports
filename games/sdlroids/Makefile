@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/28 22:40:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 13:28:07 lebel Exp $
 
 COMMENT=		"essentially an Asteroids clone"
 
 DISTNAME=		sdlroids-1.3.4
 CATEGORIES=		games
-NEED_VERSION=		1.419
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://david.hedbor.org/projects/sdlroids/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sdlroids
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdlroids/}
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/02 19:49:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 13:28:07 lebel Exp $
 
 COMMENT=		"library for manipulating ID3v1 and ID3v2 tags"
 
 VERSION=		3.8
 DISTNAME=		id3lib-${VERSION}.0pre2
 CATEGORIES=     	audio
-NEED_VERSION=		1.492
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://id3lib.sourceforge.net/
 
@@ -20,8 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	id3lib
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=id3lib/}
 
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
