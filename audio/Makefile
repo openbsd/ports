@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2002/05/22 22:49:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.86 2002/05/23 15:38:23 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -42,6 +42,7 @@
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
      SUBDIR += mixer.app
+     SUBDIR += mp3blaster
      SUBDIR += mp3cddb
      SUBDIR += mp3encode
      SUBDIR += mp3info
