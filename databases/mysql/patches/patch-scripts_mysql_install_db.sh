@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.13 2004/02/22 01:20:11 brad Exp $
---- scripts/mysql_install_db.sh.orig	2004-02-10 13:15:55.000000000 -0500
-+++ scripts/mysql_install_db.sh	2004-02-12 21:24:56.000000000 -0500
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.14 2004/05/16 04:30:39 brad Exp $
+--- scripts/mysql_install_db.sh.orig	2004-05-03 17:10:34.000000000 -0400
++++ scripts/mysql_install_db.sh	2004-05-14 00:22:34.000000000 -0400
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -63,12 +63,11 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.13 2004/02/22 01:20:11 brad Exp 
 +if [ $? -ne 0 ]
  then
 -  resolved=`$bindir/resolveip $hostname 2>&1`
--  if [ $? -ne 0 ]
 +  resolved=`$bindir/resolveip localhost 2>&1`
-+  if [ $? -eq 0 ]
+   if [ $? -ne 0 ]
    then
 -    resolved=`$bindir/resolveip localhost 2>&1`
--    if [ $? -eq 0 ]
+-    if [ $? -ne 0 ]
 -    then
 -      echo "Neither host '$hostname' and 'localhost' could not be looked up with"
 -      echo "$bindir/resolveip"

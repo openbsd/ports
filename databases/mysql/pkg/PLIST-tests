@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.6 2004/02/22 01:20:11 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.7 2004/05/16 04:30:39 brad Exp $
 share/mysql-test/README
 share/mysql-test/include/check_var_limit.inc
 share/mysql-test/include/have_bdb.inc
@@ -10,6 +10,7 @@ share/mysql-test/include/have_openssl_1.inc
 share/mysql-test/include/have_query_cache.inc
 share/mysql-test/include/master-slave.inc
 share/mysql-test/include/not_embedded.inc
+share/mysql-test/include/system_db_struct.inc
 share/mysql-test/install_test_db
 share/mysql-test/mysql-test-run
 share/mysql-test/r/alias.result
@@ -121,9 +122,11 @@ share/mysql-test/r/loaddata.result
 share/mysql-test/r/lock.result
 share/mysql-test/r/lock_multi.result
 share/mysql-test/r/lock_tables_lost_commit.result
+share/mysql-test/r/lowercase0.require
 share/mysql-test/r/lowercase2.require
 share/mysql-test/r/lowercase_table.result
 share/mysql-test/r/lowercase_table2.result
+share/mysql-test/r/lowercase_table3.result
 share/mysql-test/r/merge.result
 share/mysql-test/r/mix_innodb_myisam_binlog.result
 share/mysql-test/r/multi_update.result
@@ -192,13 +195,17 @@ share/mysql-test/r/rpl_log_pos.result
 share/mysql-test/r/rpl_master_pos_wait.result
 share/mysql-test/r/rpl_max_relay_size.result
 share/mysql-test/r/rpl_multi_delete.result
+share/mysql-test/r/rpl_multi_delete2.result
 share/mysql-test/r/rpl_multi_update.result
 share/mysql-test/r/rpl_mystery22.result
+share/mysql-test/r/rpl_optimize.result
 share/mysql-test/r/rpl_redirect.result
 share/mysql-test/r/rpl_relayspace.result
 share/mysql-test/r/rpl_replicate_do.result
 share/mysql-test/r/rpl_reset_slave.result
 share/mysql-test/r/rpl_rotate_logs.result
+share/mysql-test/r/rpl_server_id1.result
+share/mysql-test/r/rpl_server_id2.result
 share/mysql-test/r/rpl_skip_error.result
 share/mysql-test/r/rpl_sporadic_master.result
 share/mysql-test/r/rpl_trunc_binlog.result
@@ -217,9 +224,12 @@ share/mysql-test/r/slave-running.result
 share/mysql-test/r/slave-stopped.result
 share/mysql-test/r/status.result
 share/mysql-test/r/symlink.result
+share/mysql-test/r/system_mysql_db.result
+share/mysql-test/r/system_mysql_db_refs.result
 share/mysql-test/r/tablelock.result
 share/mysql-test/r/temp_table.result
 share/mysql-test/r/timezone.result
+share/mysql-test/r/true.require
 share/mysql-test/r/truncate.result
 share/mysql-test/r/type_blob.result
 share/mysql-test/r/type_date.result
@@ -363,8 +373,9 @@ share/mysql-test/t/lock_tables_lost_commit-master.opt
 share/mysql-test/t/lock_tables_lost_commit.test
 share/mysql-test/t/lowercase_table-master.opt
 share/mysql-test/t/lowercase_table.test
-share/mysql-test/t/lowercase_table2-master.opt
 share/mysql-test/t/lowercase_table2.test
+share/mysql-test/t/lowercase_table3-master.opt
+share/mysql-test/t/lowercase_table3.test
 share/mysql-test/t/merge.test
 share/mysql-test/t/mix_innodb_myisam_binlog.test
 share/mysql-test/t/multi_update-master.opt
@@ -455,8 +466,11 @@ share/mysql-test/t/rpl_master_pos_wait.test
 share/mysql-test/t/rpl_max_relay_size.test
 share/mysql-test/t/rpl_multi_delete-slave.opt
 share/mysql-test/t/rpl_multi_delete.test
+share/mysql-test/t/rpl_multi_delete2-slave.opt
+share/mysql-test/t/rpl_multi_delete2.test
 share/mysql-test/t/rpl_multi_update.test
 share/mysql-test/t/rpl_mystery22.test
+share/mysql-test/t/rpl_optimize.test
 share/mysql-test/t/rpl_redirect.test
 share/mysql-test/t/rpl_relayspace-slave.opt
 share/mysql-test/t/rpl_relayspace.test
@@ -467,6 +481,9 @@ share/mysql-test/t/rpl_rotate_logs-master.opt
 share/mysql-test/t/rpl_rotate_logs-slave.sh
 share/mysql-test/t/rpl_rotate_logs.slave-mi
 share/mysql-test/t/rpl_rotate_logs.test
+share/mysql-test/t/rpl_server_id1.test
+share/mysql-test/t/rpl_server_id2-slave.opt
+share/mysql-test/t/rpl_server_id2.test
 share/mysql-test/t/rpl_skip_error-slave.opt
 share/mysql-test/t/rpl_skip_error.test
 share/mysql-test/t/rpl_sporadic_master-master.opt
@@ -485,6 +502,10 @@ share/mysql-test/t/select_safe.test
 share/mysql-test/t/show_check.test
 share/mysql-test/t/status.test
 share/mysql-test/t/symlink.test
+share/mysql-test/t/system_mysql_db.test
+share/mysql-test/t/system_mysql_db_fix-master.opt
+share/mysql-test/t/system_mysql_db_fix.test
+share/mysql-test/t/system_mysql_db_refs.test
 share/mysql-test/t/tablelock.test
 share/mysql-test/t/temp_table.test
 share/mysql-test/t/timezone-master.opt
