@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.45 2002/07/22 22:44:24 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.46 2002/07/25 08:38:55 nino Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -123,20 +123,23 @@ MASTER_SITE_SOURCEFORGE+=	\
 	ftp://ftp.chg.ru/pub/sourceforge/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.rpmfind.net/linux/gnome.org/ \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
+	ftp://archive.progeny.com/GNOME/ \
+	ftp://ftp.acc.umu.se/pub/GNOME/	\
+	ftp://ftp.twoguys.org/GNOME/ \
+	http://east.dl.sourceforge.net/mirrors/gnome/ \
+	http://west.dl.sourceforge.net/mirrors/gnome/ \
+	ftp://planetmirror.com/pub/gnome/ \
+	ftp://ftp.easynet.nl/mirror/GNOME/ \
+	ftp://ftp.unina.it/pub/linux/GNOME \
+	ftp://ftp.belnet.be/mirror/ftp.gnome.org/pub/GNOME \
+	ftp://ftp.codefactory.se/pub/GNOME/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/ \
 	ftp://ftp.dit.upm.es/linux/gnome/ \
 	ftp://ftp.tr.gnome.org/pub/GNOME/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/ \
-	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/www.gnome.org/ \
-	http://east.dl.sourceforge.net/mirrors/gnome/ \
-	http://west.dl.sourceforge.net/mirrors/gnome/ \
-	ftp://ftp.uvsq.fr/pub/X11/gnome/ \
-	ftp://ftp.chg.ru/pub/X11/gnome/ \
-	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/
+	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/ \
+	ftp://ftp.cse.buffalo.edu/pub/Gnome/
 
 MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/CPAN/modules/by-module/ \
