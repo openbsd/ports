@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_history_h,v 1.1 2002/07/20 20:15:05 naddy Exp $
+--- src/history.h.orig	Sat Jul 20 19:28:11 2002
++++ src/history.h	Sat Jul 20 19:28:19 2002
+@@ -21,7 +21,7 @@ public:
+ 	const char *element();
+ 
+ private:
+-	vector<char *> v;
++	std::vector<char *> v;
+ 	unsigned int curpos;
+ 	std::vector<char *>::iterator it;
+ };
