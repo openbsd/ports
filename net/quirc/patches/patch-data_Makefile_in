@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_Makefile_in,v 1.6 2004/05/01 16:29:41 sturm Exp $
+--- data/Makefile.in.orig	2004-05-01 18:23:45.000000000 +0200
++++ data/Makefile.in	2004-05-01 18:24:02.000000000 +0200
+@@ -316,7 +316,7 @@ uninstall-am: uninstall-info-am uninstal
+ 
+ 
+ install-exec-local:
+-	rm -rf $(pkgdatadir)
++	rm -rf $(DESTDIR)$(pkgdatadir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
