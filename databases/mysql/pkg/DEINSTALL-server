@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL-server,v 1.6 2003/08/27 00:14:49 brad Exp $
+# $OpenBSD: DEINSTALL-server,v 1.7 2004/01/31 03:08:49 brad Exp $
 #
 # MySQL de-installation
 
@@ -17,8 +17,12 @@ echo "| to perform these steps as root:"
 echo "|"
 echo "|           userdel $MYSQLUSER"
 echo "|           groupdel $MYSQLGROUP"
-echo "|           rm -rf $DB_DIR"
-echo "|           rm -rf $SOCKET_DIR"
+if [ "$PKG_DELETE_EXTRA" != Yes -a -d $DB_DIR ]; then
+    echo "|           rm -rf $DB_DIR"
+fi
+if [ "$PKG_DELETE_EXTRA" != Yes -a -d $SOCKET_DIR ]; then
+    echo "|           rm -rf $SOCKET_DIR"
+fi
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"
 echo "| at some future time."

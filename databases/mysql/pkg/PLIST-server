@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.8 2003/12/30 20:07:27 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.9 2004/01/31 03:08:49 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -215,3 +215,5 @@ share/mysql/ukrainian/errmsg.txt
 @dirrm share/mysql
 @dirrm share/doc/mysql/Flags
 @dirrm share/doc/mysql
+@extraunexec rm -rf ${DB_DIR}
+@extraunexec rm -rf ${SOCKET_DIR}
