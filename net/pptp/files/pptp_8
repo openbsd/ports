@@ -1,4 +1,4 @@
-.\" $OpenBSD: pptp_8,v 1.2 2003/01/24 13:12:38 reinhard Exp $
+.\" $OpenBSD: pptp_8,v 1.3 2004/05/30 21:54:03 jmc Exp $
 .\" Manual page for pptp-1.1.0
 .\" Information gleaned from USING file in the distribution
 .\" SH section heading
@@ -39,7 +39,7 @@ pseudo-device
 configured.
 .Pp
 Build a kernel without "GRE encapsulation interface" support.
-(NB: look in /usr/src/sys/conf/GENERIC for "pseudo-device   gre     1".)
+(NB: look in /usr/src/sys/conf/GENERIC for "pseudo-device   gre".)
 .Pp
 The
 .Ar hostname
