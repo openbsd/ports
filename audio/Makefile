@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2003/12/09 02:35:36 margarida Exp $
+# $OpenBSD: Makefile,v 1.106 2003/12/10 21:31:54 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -31,6 +31,8 @@
      SUBDIR += liba52
      SUBDIR += libao,
      SUBDIR += libcdaudio
+     SUBDIR += libid3tag
+     SUBDIR += libmad
      SUBDIR += libmikmod
      SUBDIR += libmikmod,esd
      SUBDIR += libogg
@@ -39,7 +41,7 @@
      SUBDIR += libvorbis
      SUBDIR += libworkman
      SUBDIR += lopster
-     SUBDIR += mad
+     SUBDIR += madplay
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
      SUBDIR += mixer.app
