@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/26 10:55:29 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/04/01 08:40:37 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-DISTNAME=	epic4-2000
+DISTNAME=	epic4pre2.507
 CATEGORIES=	net
-NEED_VERSION=	1.218
-MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
+NEED_VERSION=	1.234
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
+		ftp://mirror.pipex.net/pub/epic/EPIC4-ALPHA/ \
+		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-ALPHA/
+MASTER_SITES1=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \
 		ftp://totem.fix.no/pub/mirrors/epic/EPIC4-BETA/
-DISTFILES=	epic4-2000.tar.gz epic4pre2-help.tar.gz
-EXTRACT_ONLY=	epic4-2000.tar.gz
-
+DISTFILES=	epic4pre2.507.tar.gz epic4pre2-help.tar.gz:1
+EXTRACT_ONLY=	epic4pre2.507.tar.gz
 
 MAINTAINER=	brad@openbsd.org
 
