@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2001/07/16 16:35:16 pvalchev Exp $
+--- src/Makefile.am.orig	Thu Jul  5 19:00:01 2001
++++ src/Makefile.am	Thu Jul  5 19:00:19 2001
+@@ -12,7 +12,6 @@ libSDLmm_la_SOURCES = sdlmm_global.cpp s
+ 	sdlmm_srect.cpp sdlmm_event.cpp sdlmm_audio.cpp sdlmm_timer.cpp \
+ 	sdlmm_joystick.cpp sdlmm_cd.cpp sdlmm_videoinfo.cpp
+ libSDLmm_la_LDFLAGS = 		\
+-        -release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ # The directory where the include files will be installed
