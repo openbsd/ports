@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.133 1999/11/10 13:46:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.134 1999/11/15 18:37:58 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -757,7 +757,7 @@ PLIST?=		${PKGDIR}/PLIST
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
-SORT_DEPENDS?=tsort|tail +2|tail -r
+SORT_DEPENDS?=tsort|tail -r
 
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${PLIST} -p ${PREFIX} -P "`${MAKE} package-depends|${SORT_DEPENDS}`"
@@ -2405,35 +2405,82 @@ _BUILD_DEP = ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
 
 _RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} 
 
+.if !target(recurse-build-depends)
+recurse-build-depends:
+.if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
+   defined(LIB_DEPENDS) || defined(DEPENDS) || defined(RUN_DEPENDS)
+	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
+	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
+		 | tr '\040' '\012' | sort -u`; do \
+		if cd $$dir 2>/dev/null; then \
+			if ! make _DEPEND_ECHO="echo $$pname" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done 
+.else
+	@pname=`make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
+.endif
+.endif
+
 .if !target(depends-list)
 depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
    defined(LIB_DEPENDS) || defined(DEPENDS)
-	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
-	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP}  \
-	   | tr '\040' '\012' | sort -u`; do \
+	@for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
-			make _DEPEND_ECHO="echo $$pname" package-name depends-list ${_DEPEND_THRU} || \
-				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
+			if ! make recurse-build-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+				exit 1; \
+			fi; \
 		else \
-			${ECHO_MSG} "Warning: \"$$dir\" non-existent" >&2; \
+			echo 1>&2  "*** Build dependencies bogus: \"$$dir\" non-existent"; \
+			exit 1; \
 		fi; \
 	done 
 .endif
 .endif
 
 # Build (recursively) a list of package dependencies suitable for tsort
-.if !target(package-depends)
-package-depends:
+.if !target(recurse-package-depends)
+recurse-package-depends:
 .if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@pname=`make _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
 	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
 		| tr '\040' '\012' | sort -u`; do \
 		if cd $$dir 2>/dev/null; then \
-			make _DEPEND_ECHO="echo $$pname" package-name package-depends ${_DEPEND_THRU} || \
-				${ECHO_MSG} "Error: problem in \"$$dir\"" >&2; \
+			if ! make _DEPEND_ECHO="echo $$pname" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
+				exit 1; \
+			fi; \
 		else \
-			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
+			echo 1>&2 "*** @pkgdep registration bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done
+.else
+	@pname=`make _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
+.endif
+.endif
+
+.if !target(package-depends)
+package-depends:
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
+	@for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
+		| tr '\040' '\012' | sort -u`; do \
+		if cd $$dir 2>/dev/null; then \
+			if ! make recurse-package-depends ${_DEPEND_THRU}; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2 "*** @pkgdep registration bogus: \"$$dir\" non-existent"; \
+			exit 1; \
 		fi; \
 	done
 .endif
@@ -2535,4 +2582,5 @@ tags:
    pre-extract pre-fetch pre-install pre-package pre-patch \
    pre-repackage print-depends-list print-package-depends readme \
    readmes real-extract real-fetch real-install reinstall \
-   repackage run-depends tags uninstall fetch-all print-depends
+   repackage run-depends tags uninstall fetch-all print-depends \
+   recurse-build-depends recurse-package-depends
