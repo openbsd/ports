@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/01 20:40:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/10 17:19:44 brad Exp $
 
 COMMENT=		"35 standard PostScript fonts with Adobe name aliases"
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU:=ghostscript/}
 
 WRKDIST=	${WRKDIR}
-USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
