@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/23 15:20:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/02 17:06:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
-COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.504
 VERSION=		3.0rc3
 DISTNAME=		kdebase-${VERSION}
-PKGNAME-plugins=	kdebase-ns-${VERSION}
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
 #MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITES=ftp://ftp.kde.org/pub/kde/%SUBDIR%/
+MASTER_SITES= http://gd.tuwien.ac.at/pub/kde/%SUBDIR%/
 MASTER_SITE_SUBDIR=	unstable/kde-${VERSION}/src
 EXTRACT_SUFX=		.tar.bz2
 
@@ -19,14 +17,7 @@ EXTRACT_SUFX=		.tar.bz2
 # duplicated over the place.
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-#MULTI_PACKAGES=-plugins
 MODULES=qt3
-
-SUBPACKAGE?=
-.if !defined(PACKAGING) || ${SUBPACKAGE} == "-plugins"
-USE_MOTIF=	any
-.endif
-
 
 LIB_DEPENDS= kdecore.4,DCOP,artskde,kabc,katepartinterfaces,kdefakes,kdefx,kdeprint,kdeprint_management,kdesasl,kdesu,kdeui,khtml,kio,kjava,kmid,kparts,kscreensaver,kscript,kspell,ktexteditor,vcard::x11/kde/libs3 \
 		ldap.2,lber:openldap-client-2.*:databases/openldap \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/23 17:12:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/02 17:06:23 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 CATEGORIES=		x11 x11/kde
@@ -8,7 +8,7 @@ DISTNAME=		kdegraphics-${VERSION}
 DIST_SUBDIR=		kde
 
 HOMEPAGE=		http://www.kde.org
-MASTER_SITES=ftp://ftp.kde.org/pub/kde/%SUBDIR%/
+MASTER_SITES= http://gd.tuwien.ac.at/pub/kde/%SUBDIR%/
 MASTER_SITE_SUBDIR=	unstable/kde-${VERSION}/src
 EXTRACT_SUFX=		.tar.bz2
 
