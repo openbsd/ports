@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.456 2001/09/14 15:04:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.457 2001/09/16 14:56:42 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -996,11 +996,16 @@ ERRORS+=	"Fatal: CATEGORIES is mandatory."
 
 
 CONFIGURE_SCRIPT?=	configure
-.if defined(SEPARATE_BUILD)
-_CONFIGURE_SCRIPT=${WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${CONFIGURE_SCRIPT:M/*}
+_CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT}
 .else
+.  if defined(SEPARATE_BUILD)
+_CONFIGURE_SCRIPT=${WRKSRC}/${CONFIGURE_SCRIPT}
+.  else
 _CONFIGURE_SCRIPT=./${CONFIGURE_SCRIPT}
+.  endif
 .endif
+
 CONFIGURE_ENV+=		PATH=${PORTPATH}
 
 .if defined(NO_SHARED_LIBS)
@@ -1595,8 +1600,6 @@ MODSIMPLE_configure= \
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
-MODGNU_configure= ${MODSIMPLE_configure}
-	
 # The real configure
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}

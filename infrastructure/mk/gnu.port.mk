@@ -1,10 +1,12 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.2 2001/09/03 02:00:48 brad Exp $
+# $OpenBSD: gnu.port.mk,v 1.3 2001/09/16 14:56:42 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
-# XXX - Kludge for these archictectures so we do not
+MODGNU_configure = ${MODSIMPLE_configure}
+
+# XXX - Kludge for these architectures so we do not
 #	have to patch all copies of config.guess
 #	throughout the ports tree.
 .if ${MACHINE} == "macppc" || ${MACHINE} == "mvmeppc"
