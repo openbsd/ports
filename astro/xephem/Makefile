@@ -1,20 +1,14 @@
-# OpenBSD makefile for:	xephem
-# Version required:     3.0
-# Date created:         Thu Aug  1 09:10:22 CDT 1996
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.3 1998/08/05 06:00:00 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/13 05:50:33 marc Exp $
 #
 
-DISTNAME=	xephem-3.1
+DISTNAME=	xephem-3.2.1
 CATEGORIES=	astro
 NO_CDROM=	"NOFEE:	Can not sell"
-MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.1/
+MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.2/
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	Xm\\.1\\.:${PORTSDIR}/x11/lesstif
-
+USE_MOTIF=	yes
 USE_IMAKE=	yes
 
 do-configure:
@@ -37,9 +31,6 @@ do-install:
 	@(cd ${WRKSRC}/GUI/xephem && \
 	 ${SED} -e 's,: .$$,: ${PREFIX}/lib/X11/xephem,' XEphem.ad > XEphem && \
 	 ${INSTALL_DATA} XEphem ${PREFIX}/lib/X11/app-defaults)
-	@(cd ${WRKSRC}/GUI/xephem && \
-	 ${SED} -e 's,: .$$,: ${PREFIX}/lib/X11/xephem,' XEphem.bw.ad > XEphem.bw && \
-	 ${INSTALL_DATA} XEphem.bw ${PREFIX}/lib/X11/app-defaults)
 	@${MKDIR} ${PREFIX}/lib/X11/xephem
 	@${MKDIR} ${PREFIX}/lib/X11/xephem/auxil
 	@( cd ${WRKSRC}/GUI/xephem/auxil; \
@@ -68,8 +59,7 @@ do-install:
 	@${ECHO} "*** The initial auxil, catalogs, and tools files have"
 	@${ECHO} "*** been placed in ${PREFIX}/lib/X11/xephem.  Move them"
 	@${ECHO} "*** where you will.  Once moved you MUST modify"
-	@${ECHO} "*** ${PREFIX}/lib/X11/app-defaults/XEphem and"
-	@${ECHO} "*** ${PREFIX}/lib/X11/app-defaults/XEphem.bw."
+	@${ECHO} "*** ${PREFIX}/lib/X11/app-defaults/XEphem"
 	@${ECHO} "*** At a minimum you must change XEphem.BaseDir."
 	@${ECHO} ""
 

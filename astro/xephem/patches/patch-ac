@@ -1,6 +1,6 @@
---- GUI/xephem/ps.c.~1~	Fri Nov 28 20:12:15 1997
-+++ GUI/xephem/ps.c	Tue Aug  4 21:13:53 1998
-@@ -1657,16 +1657,24 @@
+--- GUI/xephem/ps.c.orig	Wed Feb 24 22:16:01 1999
++++ GUI/xephem/ps.c	Fri Mar 12 11:46:34 1999
+@@ -1693,16 +1693,24 @@
  	if (wantp) {
  	    /* print */
  	    char name[1024];
