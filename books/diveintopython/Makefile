@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/28 16:41:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/29 12:15:05 xsa Exp $
 
 COMMENT=	"book about Python for experienced programmers"
 
@@ -28,6 +28,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 SUBST_VARS=	PORTSDIR
 
