@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/05/31 14:47:07 espie Exp $
 bin/xmake
 man/man1/xmake.1
