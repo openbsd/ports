@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/08/02 16:08:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/08 21:54:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64
 
@@ -71,12 +71,6 @@ CONFIGURE_ARGS+=--disable-mathml		\
 		--enable-image-decoders=png,gif,jpeg,bmp \
 		--enable-crypto			\
 		--disable-ldap
-
-# There is no problem with the propolice-enabled gcc3 on amd64 and sparc64,
-# but it is reported to still be broken on others.
-.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "sparc64"
-CFLAGS+=	-fno-stack-protector
-.endif
 
 CONFIGURE_ENV=	MOZ_THUNDERBIRD=1 \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
