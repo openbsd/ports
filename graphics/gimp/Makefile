@@ -1,42 +1,24 @@
-# OpenBSD makefile for:	gimp
-# Version required:	1.0.0
-# Date created:		1998-Jun-07
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.7 1998/06/14 08:10:27 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1998/11/08 01:38:42 marc Exp $
 #
 
 # What port/package will be created
 #
-DISTNAME=		gimp-1.0.0
+DISTNAME=		gimp-1.0.2
 EXTRANAME=		gimp-data-extras-1.0.0
 CATEGORIES=     	graphics x11
 
-# where to send bitches about this port
-#
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=		dugsong@openbsd.org
 
-# where the source files and patches can be fetched
-#
-MASTER_SITES=		ftp://ftp.gimp.org/pub/gimp/v1.0/v1.0.0/ \
-	ftp://ftp.ameth.org:/pub/mirrors/ftp.gimp.org/pub/gimp/v1.0/v1.0.0/
+MASTER_SITES=		ftp://ftp.gimp.org/pub/gimp/v1.0/v1.0.2/ \
+	ftp://ftp.ameth.org:/pub/mirrors/ftp.gimp.org/pub/gimp/v1.0/v1.0.2/
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${EXTRANAME}${EXTRACT_SUFX}
 
-# Dependencies
-#
 LIB_DEPENDS=		gtk\\.1\\.:${PORTSDIR}/x11/gtk+ \
 			jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 			mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
 			png\\.1\\.:${PORTSDIR}/graphics/png \
 			tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34
-OS_RELEASE!=		uname -r
-OS_HAS_XPM=		2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS+=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
 
-# build/configuration variables
-#
 USE_X11=		yes
 GNU_CONFIGURE=		yes
 .if (${MACHINE_ARCH} != "alpha")

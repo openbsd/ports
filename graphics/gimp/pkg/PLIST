@@ -2,6 +2,7 @@ include/libgimp/gimp.h
 include/libgimp/gimpenums.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpui.h
+include/libgimp/gimpfeatures.h
 @dirrm include/libgimp
 include/gck/gck.h
 include/gck/gckcolor.h
@@ -13,17 +14,17 @@ include/gck/gcktypes.h
 include/gck/gckui.h
 include/gck/gckvector.h
 @dirrm include/gck
-lib/libgimp.so.1.0
+lib/libgimp.so.1.2
 lib/libgimp.la
 lib/libgimp.a
-lib/libgimpui.so.1.0
+lib/libgimpui.so.1.2
 lib/libgimpui.la
 lib/libgimpui.a
 lib/libgck.so.1.0
 lib/libgck.la
 lib/libgck.a
-lib/gimp/1.0/plug-ins/libmegawidget.a
-lib/gimp/1.0/plug-ins/libgpc.a
+lib/libmegawidget.a
+lib/libgpc.a
 lib/gimp/1.0/plug-ins/MapObject
 lib/gimp/1.0/plug-ins/AlienMap
 lib/gimp/1.0/plug-ins/dbbrowser
@@ -154,6 +155,7 @@ bin/gimptool
 man/man1/gimp.1
 man/man1/gimptool.1
 man/man3/gpc.3
+share/aclocal/gimp.m4
 share/gimp/scripts/3d-outline.scm
 share/gimp/scripts/3dTruchet.scm
 share/gimp/scripts/add-bevel.scm
