@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/04 09:31:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/04 17:38:36 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2344,12 +2344,10 @@ share/wallpapers/kdm_bg.jpg
 share/wallpapers/only_k.jpg
 share/wallpapers/triplegears.jpg
 %%SHARED%%
-@dirrm share/wallpapers
 @exec mkdir -p %D/share/templates/.source/emptydir
 @dirrm share/templates/.source/emptydir
 @dirrm share/templates/.source
 @dirrm share/templates
-@dirrm share/sounds
 @dirrm share/services/useragentstrings
 @dirrm share/services/searchproviders
 @dirrm share/mimelnk/print
@@ -2439,13 +2437,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n
 @dirrm share/locale/en_US
 @dirrm share/locale
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2475,10 +2466,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
 @dirrm share/apps/kwin/pics
-@dirrm share/apps/kwin/icewm-themes
-@dirrm share/apps/kwin
-@dirrm share/apps/kthememgr/Themes
-@dirrm share/apps/kthememgr
 @dirrm share/apps/ksysguard/pics
 @dirrm share/apps/ksysguard
 @dirrm share/apps/ksplash/pics/locolor
@@ -2486,8 +2473,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/ksplash
 @dirrm share/apps/ksmserver/pics
 @dirrm share/apps/ksmserver
-@exec mkdir -p %D/share/apps/kscreensaver
-@dirrm share/apps/kscreensaver
 @dirrm share/apps/kpersonalizer/pics
 @dirrm share/apps/kpersonalizer
 @dirrm share/apps/konsole
@@ -2541,8 +2526,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kicker/icons/hicolor
 @dirrm share/apps/kicker/icons
 @dirrm share/apps/kicker/extensions
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khelpcenter/plugins/Tutorials
 @dirrm share/apps/khelpcenter/plugins
 @dirrm share/apps/khelpcenter
@@ -2560,11 +2543,9 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/kdisplay
 @dirrm share/apps/kdewizard/pics
 @dirrm share/apps/kdewizard
-@dirrm share/apps/kdesktop/programs
 @dirrm share/apps/kdesktop/pics
 @dirrm share/apps/kdesktop/patterns
 @dirrm share/apps/kdesktop/DesktopLinks
-@dirrm share/apps/kdesktop
 @dirrm share/apps/kdeprintfax/icons/hicolor/16x16/actions
 @dirrm share/apps/kdeprintfax/icons/hicolor/16x16
 @dirrm share/apps/kdeprintfax/icons/hicolor
@@ -2636,10 +2617,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/clockapplet
 @dirrm share/applnk/WordProcessing
 @dirrm share/applnk/Utilities
-@dirrm share/applnk/Toys
 @dirrm share/applnk/System/Terminal
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
 @dirrm share/applnk/Settings/WebBrowsing
 @dirrm share/applnk/Settings/System
 @dirrm share/applnk/Settings/Sound
@@ -2660,18 +2638,10 @@ share/wallpapers/triplegears.jpg
 @dirrm share/applnk/Multimedia
 @dirrm share/applnk/Internet/Terminal
 @dirrm share/applnk/Internet
-@dirrm share/applnk/Graphics
-@dirrm share/applnk/Games/TacticStrategy
 @dirrm share/applnk/Games/Roguelikes
-@dirrm share/applnk/Games/Card
-@dirrm share/applnk/Games/Board
-@dirrm share/applnk/Games/Arcade
-@dirrm share/applnk/Games
-@dirrm share/applnk/Edutainment
 @dirrm share/applnk/Editors
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm include/kwin
 @dirrm include/ksgrd

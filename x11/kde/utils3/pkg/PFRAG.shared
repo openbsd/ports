@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/04/04 17:38:36 espie Exp $
 lib/kde3/libkcharselectapplet.so.1.0
 lib/kde3/libkcm_kdf.so.0.0
 lib/kde3/libkcm_laptop.so.0.0
@@ -8,4 +8,4 @@ lib/libark.so.1.0
 lib/libkcalc.so.0.0
 lib/libklaptopdaemon.so.0.0
 DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/kde3)
+DYNLIBDIR(%D/lib/kde3)

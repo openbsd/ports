@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/04/04 17:38:36 espie Exp $
 bin/ark
 bin/efax
 bin/efix
@@ -217,20 +217,6 @@ share/services/arkpart.desktop
 share/services/klaptopdaemon.desktop
 share/services/kregexpeditorgui.desktop
 %%SHARED%%
-@dirrm share/services
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/klprfax
 @dirrm share/doc/HTML/en/klpq
 @dirrm share/doc/HTML/en/kljettool
@@ -243,8 +229,6 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/doc/HTML/en/kab
 @dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/en/KRegExpEditor
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/kregexpeditor/predefined/general
 @dirrm share/apps/kregexpeditor/predefined
 @dirrm share/apps/kregexpeditor/pics
@@ -262,8 +246,6 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/apps/klaptopdaemon
 @dirrm share/apps/kjots/pics
 @dirrm share/apps/kjots
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khexedit/toolbar
 @dirrm share/apps/khexedit
 @dirrm share/apps/kedit
@@ -277,12 +259,8 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/apps/ark/icons/hicolor
 @dirrm share/apps/ark/icons
 @dirrm share/apps/ark
-@dirrm share/apps
 @dirrm share/applnk/Utilities
-@dirrm share/applnk/System
 @dirrm share/applnk/Settings/PowerControl
 @dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Editors
-@dirrm share/applnk
-@dirrm lib/kde3
