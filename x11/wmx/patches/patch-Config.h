@@ -11,3 +11,12 @@
  #define CONFIG_NEW_WINDOW_COMMAND_OPTIONS 0
  // or, for example,
  //#define CONFIG_NEW_WINDOW_COMMAND_OPTIONS "-ls","-sb","-sl","1024",0
+@@ -373,7 +373,7 @@
+ // that you are not currently on, some strange things happen.
+ // (Patch due to Henri Naccache <henri@asu.edu>)
+ 
+-#define CONFIG_GNOME_COMPLIANCE   False
++#define CONFIG_GNOME_COMPLIANCE   True
+ 
+ // This lets you choose whether to keep the regular wmx
+ // mouse button behaviour, or go w/ the GNOME-described one.
