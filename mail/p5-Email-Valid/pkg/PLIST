@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1 2004/04/24 16:12:13 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/05/28 19:03:49 naddy Exp $
 ${P5SITE}/Email/Valid.pm
 @comment ${P5ARCH}/auto/Email/Valid/.packlist
 man/man3p/Email::Valid.3p
-@comment @dirrm man/man3p
+@dirrm man/man3p
 @comment @dirrm ${P5ARCH}/auto/Email/Valid
 @comment @dirrm ${P5ARCH}/auto/Email
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}
-@comment @dirrm ${P5SITE}/Email
+@dirrm ${P5SITE}/Email

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2004/04/24 16:13:50 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/05/28 19:03:49 naddy Exp $
 ${P5SITE}/Email/Find.pm
 ${P5SITE}/Email/Find/addrspec.pm
 @comment ${P5ARCH}/auto/Email/Find/.packlist
@@ -9,4 +9,3 @@ man/man3p/Email::Find::addrspec.3p
 @comment @dirrm ${P5ARCH}/auto
 @comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Email/Find
-@comment @dirrm ${P5SITE}/Email
