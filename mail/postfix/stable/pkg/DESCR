@@ -80,6 +80,8 @@ Flavors
 
 * ldap - Add support for doing table lookups using LDAP.
 
+* mysql - Add support for doing table lookups using MySQL.
+
 
 More information
 

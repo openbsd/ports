@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2001/09/28 23:32:47 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2001/09/28 23:35:18 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -25,7 +25,7 @@ MAKE_AUXLIBS?=
 
 ALL_TARGET=	default
 
-FLAVORS=	pcre sasl ldap
+FLAVORS=	pcre sasl ldap mysql
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
@@ -44,6 +44,12 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lkrb
 LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
 MAKE_CCARGS+=	-I${LOCALBASE}/include -DHAS_LDAP
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
+.endif
+
+.if ${FLAVOR:L:Mmysql}
+LIB_DEPENDS+=	mysqlclient.10:mysql-client-3.23.*:databases/mysql
+MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 do-configure:
