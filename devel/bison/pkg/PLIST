@@ -1,0 +1,11 @@
+@cwd /usr/local
+bin/bison
+share/bison.simple
+share/bison.hairy
+info/bison.info
+info/bison.info-1
+info/bison.info-2
+info/bison.info-3
+info/bison.info-4
+info/bison.info-5
+man/man1/bison.1
