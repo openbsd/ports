@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/03 07:36:32 dons Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 08:23:37 xsa Exp $
 
 COMMENT=	"Haskell cryptographic library"
 CATEGORIES=	security
@@ -10,7 +10,7 @@ MAINTAINER=	Don Stewart <dons@openbsd.org>
 HOMEPAGE=	http://www.haskell.org/crypto/
 DISTFILES=	crypto-${V}.tar
 
-MODULES=	ghc
+MODULES=	lang/ghc
 BUILD_DEPENDS+=	::devel/haddock
 
 WRKDIST=	${WRKDIR}/crypto

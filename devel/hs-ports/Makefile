@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/09 10:30:22 dons Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 08:23:37 xsa Exp $
 # $FreeBSD: ports/devel/hs-hpl/Makefile,v 1.11 2004/03/11 07:48:11 obraun Exp $
 
 # only for archs to which the GHC ffi has been ported
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.cse.unsw.edu.au/~chak/haskell/ports/
 MASTER_SITES=	${HOMEPAGE}
 DISTFILES=	ports-${V}.tar.gz
 
-MODULES=	ghc
+MODULES=	lang/ghc
 
 WRKDIST=	${WRKDIR}/ports-${V}
 USE_GMAKE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/05/16 23:37:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 08:23:37 xsa Exp $
 # $NetBSD: Makefile,v 1.29 2004/03/26 21:19:53 wiz Exp $
 
 COMMENT=	"portable Haskell compiler"
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=--installdir=${PREFIX}
 # if you use ghc to build nhc98, it will run 2.5x faster than with gcc
 # so we relegate the gcc path to archs with no ghc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc"
-MODULES=	ghc
+MODULES=	lang/ghc
 CONFIGURE_ARGS+=--buildwith=ghc
 .else
 CONFIGURE_ARGS+=--buildwith=gcc

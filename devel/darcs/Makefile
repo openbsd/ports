@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/07/31 03:18:29 dons Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/10 08:23:37 xsa Exp $
 
 COMMENT=	"advanced revision control system written in Haskell"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 MAINTAINER=	Don Stewart <dons@openbsd.org>
 
-MODULES=	ghc
+MODULES=	lang/ghc
 LIB_DEPENDS=	curl.2::net/curl
 
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/08 07:21:03 dons Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 08:23:37 xsa Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		"interface generator for Haskell to C bindings"
@@ -10,7 +10,7 @@ MAINTAINER=		Don Stewart <dons@openbsd.org>
 HOMEPAGE=		http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 MASTER_SITES=		${HOMEPAGE}
 
-MODULES=		ghc
+MODULES=		lang/ghc
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu

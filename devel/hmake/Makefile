@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/23 03:14:06 dons Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 08:23:37 xsa Exp $
 
 COMMENT=	"compilation manager for Haskell programs"
  
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.haskell.org/hmake/
 MAINTAINER=	Don Stewart <dons@openbsd.org>
 
-MODULES=	ghc
+MODULES=	lang/ghc
 
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
