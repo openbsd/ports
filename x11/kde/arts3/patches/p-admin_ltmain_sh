@@ -1,4 +1,4 @@
-$OpenBSD: patch-admin_ltmain_sh,v 1.1 2003/01/05 16:22:29 espie Exp $
+$OpenBSD: p-admin_ltmain_sh,v 1.1 2003/01/05 16:58:57 espie Exp $
 --- admin/ltmain.sh.orig	Sun Jan  5 16:49:09 2003
 +++ admin/ltmain.sh	Sun Jan  5 17:04:25 2003
 @@ -1249,6 +1249,17 @@ EOF
