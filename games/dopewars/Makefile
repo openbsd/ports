@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/08/27 02:42:36 brad Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
-DISTNAME=	dopewars-1.5.3
+DISTNAME=	dopewars-1.5.7
 CATEGORIES=	games
-NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
 HOMEPAGE=	http://dopewars.sourceforge.net/
@@ -21,9 +20,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES+=	gettext
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --enable-nls \
 		 --enable-strict \
+		 --disable-esd \
+		 --disable-glib2 \
+		 --disable-gui-server \
+		 --disable-plugins \
+		 --disable-sdl \
 		 --datadir="/var/games"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
