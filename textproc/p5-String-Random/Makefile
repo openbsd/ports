@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/07 12:49:02 sturm Exp $
 
 COMMENT=	"perl module for generating randoms strings"
 
-DISTNAME=	String-Random-0.198
+DISTNAME=	String-Random-0.20
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5 
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
+MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=   Yes
