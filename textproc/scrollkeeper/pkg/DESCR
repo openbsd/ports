@@ -5,5 +5,3 @@ sort, and search the document catalog.
 
 It will also be able to communicate with catalog servers on the Net to search
 for documents which are not on the local system. 
-
-WWW: ${HOMEPAGE}

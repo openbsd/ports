@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/06 20:44:08 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/08/23 19:54:23 marcm Exp $
 bin/gconftool-2
 include/gconf/2/gconf/gconf-changeset.h
 include/gconf/2/gconf/gconf-client.h
@@ -181,3 +181,9 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2
 @unexec rmdir %D/include/gconf 2>/dev/null || true
+@cwd ${SYSCONFDIR}
+@extra gconf/2/path
+@extra gconf/2/
+@extraunexec rmdir %D/gconf 2>/dev/null || true
+@comment conflicts with gconf1 at the moment...
+@comment @extraunexec rm -fr /var/db/gconf

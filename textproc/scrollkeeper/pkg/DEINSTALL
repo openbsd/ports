@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2002/11/30 04:41:29 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/08/23 19:54:23 marcm Exp $
 #
 
 set -e
@@ -10,23 +10,47 @@ FILES='
 scrollkeeper.conf
 '
 
-echo
-echo "+--------------- $1"
-echo "| To really remove $1 from your system you should also"
-echo "| remove the configuration files from the ${SYSCONFDIR} directory"
-echo "| and perform the following step as root:"
-echo "|"
-echo "| rm -rf /var/db/scrollkeeper"
-echo "|"
-echo "| If you are planning on installing $1 again in the future"
-echo "| you can leave it as it is."
-echo "|"
-echo "| FYI, the following configuration files belong to this package:"
-echo "|"
-for f in ${FILES}; do
-	echo "| ${SYSCONFDIR}/$f"
-done
-echo "+--------------- $1"
-echo
+do_notice()
+{
+	echo
+	echo "+--------------- $1"
+	echo "| To really remove $1 from your system you should also"
+	echo "| remove the configuration files from the ${SYSCONFDIR} directory"
+	echo "| and perform the following step as root:"
+	echo "|"
+	echo "| rm -rf /var/db/scrollkeeper"
+	echo "|"
+	echo "| If you are planning on installing $1 again in the future"
+	echo "| you can leave it as it is."
+	echo "|"
+	echo "| FYI, the following configuration files belong to this package:"
+	echo "|"
+	for f in ${FILES}; do
+		echo "| ${SYSCONFDIR}/$f"
+	done
+	echo "+--------------- $1"
+	echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname DEINSTALL" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	if [ "$PKG_DELETE_EXTRA" != Yes ]; then
+	    do_notice "$1"
+	fi
+	;;
+    *)
+	echo "usage: $0 distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
 
 exit 0
