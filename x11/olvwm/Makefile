@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:11 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/02/11 23:31:14 marc Exp $
 #
 
 DISTNAME=	olvwm4
@@ -14,7 +14,7 @@ MAINTAINER= ian@openbsd.org
 # PATCHFILES=	olvwm4.Patch01.Z
 # PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
