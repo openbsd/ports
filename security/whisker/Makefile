@@ -3,13 +3,13 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/05 01:37:21 espie Exp $
 
 PKGNAME=	whisker-1.3.0a
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
-FAKE=No
+FAKE=Yes
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -19,10 +19,8 @@ DISTNAME=	whisker
 
 WRKDIST=	${WRKDIR}/v1.3
 
-NO_CONFIGURE=	yes
-
 do-build:
-		(cd ${WRKSRC}; sed "s%y0y0y0%${PREFIX}%g" whisker.pl > whisker)
+		cd ${WRKSRC}; sed "s%y0y0y0%${PREFIX}%g" whisker.pl > whisker
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/whisker ${PREFIX}/bin

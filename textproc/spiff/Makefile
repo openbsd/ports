@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/09 17:38:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/05 01:35:13 espie Exp $
 #
 
 PKGNAME=	spiff-1.0
 DISTNAME=	spiff-1.0
 CATEGORIES=	textproc
-FAKE=No
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	ian@openbsd.org
