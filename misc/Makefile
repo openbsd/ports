@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2004/10/04 05:43:40 djm Exp $
+# $OpenBSD: Makefile,v 1.79 2004/10/14 13:24:51 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -43,7 +43,6 @@
      SUBDIR += jive
 #    SUBDIR += kdeutils
 #    SUBDIR += kp
-     SUBDIR += ktail
      SUBDIR += ktimeclock
 #    SUBDIR += less
      SUBDIR += libutf8
