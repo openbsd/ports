@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 1999/07/26 01:25:21 brad Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/01/21 00:58:11 brad Exp $
 #
 # Pre/post-installation setup of mrtg
 
@@ -20,8 +20,8 @@ do_perl_notice()
     echo "| the correct location for it to run properly. The correct"
     echo "| installation paths are:"
     echo "|"
-    echo "| older than and up to 2.5:	/usr/lib/perl5/site_perl"
-    echo "| -current:			/usr/local/libdata/perl5/site_perl"
+    echo "| 2.5 and older releases:	/usr/lib/perl5/site_perl"
+    echo "| 2.6 and -current:		/usr/local/libdata/perl5/site_perl"
     echo "|"
     echo "| Please copy the .pm files from ${PREFIX}/lib/mrtg to the"
     echo "| correct path before trying to run MRTG."
