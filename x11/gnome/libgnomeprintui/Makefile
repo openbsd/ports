@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/02 03:55:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/25 00:24:30 marcm Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
-DISTNAME=		libgnomeprintui-2.6.1
+DISTNAME=		libgnomeprintui-2.6.2
 CATEGORIES=		x11/gnome devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/

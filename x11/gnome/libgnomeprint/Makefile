@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/23 03:26:15 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/25 00:24:30 marcm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
-VERSION=		2.6.1
+VERSION=		2.6.2
 DISTNAME=		libgnomeprint-${VERSION}
 CATEGORIES=		devel
 

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/10/07 17:05:42 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/07/25 00:24:30 marcm Exp $
+lib/libgnomeprint-2-2.so.1.0
 lib/libgnomeprint/${VERSION}/modules/transports/libgnomeprint-custom.so
 lib/libgnomeprint/${VERSION}/modules/transports/libgnomeprint-file.so
 lib/libgnomeprint/${VERSION}/modules/transports/libgnomeprint-lpr.so
-lib/libgnomeprint-2-2.so.1.0
 DYNLIBDIR(%D/lib)
