@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/11 19:03:10 xsa Exp $
+%%SHARED%%
+share/doc/py-cdb/
+share/doc/py-cdb/README
+share/examples/py-cdb/
+share/examples/py-cdb/Example
