@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2004/12/09 06:41:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.272 2004/12/09 08:44:26 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -202,6 +202,7 @@
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Pod-Coverage
+     SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
