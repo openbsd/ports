@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/28 09:38:03 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/28 11:52:46 camield Exp $
 
 DISTNAME=	daemontools-0.61
 CATEGORIES=	sysutils
@@ -19,7 +19,7 @@ ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 pre-build:
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
+	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>
