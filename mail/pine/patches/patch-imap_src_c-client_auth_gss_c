@@ -1,0 +1,18 @@
+$OpenBSD: patch-imap_src_c-client_auth_gss_c,v 1.1 2002/12/01 20:57:10 jakob Exp $
+--- imap/src/c-client/auth_gss.c.orig	Thu Nov 22 05:07:04 2001
++++ imap/src/c-client/auth_gss.c	Sun Dec  1 15:17:47 2002
+@@ -19,8 +19,14 @@
+  */
+ 
+ #define PROTOTYPE(x) x
++
++#ifdef HEIMDAL
++#include <gssapi.h>
++#include <krb5.h>
++#else
+ #include <gssapi/gssapi_generic.h>
+ #include <gssapi/gssapi_krb5.h>
++#endif
+ 
+ long auth_gssapi_valid (void);
+ long auth_gssapi_client (authchallenge_t challenger,authrespond_t responder,

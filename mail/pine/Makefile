@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.46 2002/11/25 20:08:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.47 2002/12/01 20:57:10 jakob Exp $
 
-COMMENT=	"Program for Internet E-mail and News, with pico"
+COMMENT=	"program for Internet E-mail and News"
 COMMENT-pico=	"small text editor"
-COMMENT-pine=	"Program for Internet E-mail and News, without pico"
+COMMENT-pilot=	"file system browser"
 
-VERSION=	4.44
-PICO_VERSION=	4.2
+CATEGORIES=	mail news
+
+VERSION=	4.50
+PICO_VERSION=	4.3
+PILOT_VERSION=	2.0
+
 DISTNAME=	pine${VERSION}
-PKGNAME=	pine+pico-${VERSION}p1
-FULLPKGNAME-pico=pico-${PICO_VERSION}
-PKGNAME-pine=	pine-${VERSION}p1
+PKGNAME=	pine-${VERSION}
+PKGNAME-pico=	pico-${PICO_VERSION}
+PKGNAME-pilot=	pilot-${PILOT_VERSION}
+
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
 HOMEPAGE=	http://www.washington.edu/pine/
-
-BUILD_DEPENDS=	:c-client->=4.41:mail/c-client
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -29,27 +32,25 @@ NO_REGRESS=	Yes
 FLAVORS=	ldap
 FLAVOR?=
 
-MULTI_PACKAGES=	-pico -pine
+MULTI_PACKAGES=	-pico -pilot
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} == "-pico"
 CATEGORIES=	editors
-.elif ${SUBPACKAGE} == "-pine"
-CATEGORIES=	mail news
-LIB_DEPENDS=	c-client.4:c-client->=4.41:mail/c-client
-.else
-CATEGORIES=	mail news editors
-LIB_DEPENDS=	c-client.4:c-client->=4.41:mail/c-client
+.elif ${SUBPACKAGE} == "-pilot"
+CATEGORIES=	sysutils
 .endif
 
-.if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} != "-pico"
+.if ${FLAVOR:L} == "ldap" && ${SUBPACKAGE} == ""
 LIB_DEPENDS+=	ldap.2:openldap-client-2.*:databases/openldap
 .endif
 
-PINE_BUILD_FLAGS=	CC="${CC}" LOCALBASE="${LOCALBASE}"
+PINE_BUILD_FLAGS=	CC="${CC}" EXTRACFLAGS="${CFLAGS}" \
+			SSLTYPE="unix" EXTRAAUTHENTICATORS="gss" \
+			LOCALBASE="${LOCALBASE}"
 
 .if ${FLAVOR:L} == "ldap"
-PINE_BUILD_FLAGS+=	LDAPLIBS="-lldap -llber" \
+PINE_BUILD_FLAGS+=	LDAPLIBS="-L${LOCALBASE}/lib -lldap -llber" \
 			LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
 .endif
 

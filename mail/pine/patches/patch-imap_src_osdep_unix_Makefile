@@ -1,0 +1,23 @@
+$OpenBSD: patch-imap_src_osdep_unix_Makefile,v 1.1 2002/12/01 20:57:10 jakob Exp $
+--- imap/src/osdep/unix/Makefile.orig	Tue Oct 15 02:44:49 2002
++++ imap/src/osdep/unix/Makefile	Sun Dec  1 15:17:47 2002
+@@ -28,8 +28,8 @@ SSLTYPE=nopwd
+ 
+ # Extended flags needed for SSL.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
+-SSLCERTS=$(SSLDIR)/certs
++SSLDIR=/usr
++SSLCERTS=/etc/ssl
+ SSLINCLUDE=$(SSLDIR)/include
+ SSLLIB=$(SSLDIR)/lib
+ 
+@@ -234,7 +234,7 @@ bso:	# OpenBSD
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-O2 -pipe"
++	 BASECFLAGS="-pipe"
+ 
+ cvx:	# Convex
+ 	$(BUILD) `$(CAT) SPECIALS` OS=$@ \

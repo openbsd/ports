@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2000/07/10 22:54:33 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2002/12/01 20:57:10 jakob Exp $
 #
 # pine de-installation
 
