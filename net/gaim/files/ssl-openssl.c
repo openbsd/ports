@@ -1,3 +1,5 @@
+/*	$OpenBSD: ssl-openssl.c,v 1.2 2004/01/18 00:12:29 brad Exp $	*/
+
 /*
  * OpenSSL SSL-plugin for gaim
  *
