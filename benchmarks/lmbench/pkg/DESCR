@@ -1,4 +1,4 @@
-This is lmbench-1.0, a system performance measurement tool.  You can
+This is lmbench, a system performance measurement tool.  You can
 go to /usr/local/lib/lmbench and do one of the followings:
 
 make results (to run the benchmarks)

@@ -3,7 +3,7 @@
 # Date created:		Nov 27 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/27 17:42:23 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/01 08:28:33 marc Exp $
 #
 
 DISTNAME=	lmbench
@@ -28,6 +28,12 @@ test: build
 
 retest: build
 	@(cd ${WRKSRC}; make rerun)
+
+# This package comes with its own RCS directory which confuses patch.
+# Move it so patch doesn't get confused.
+#
+pre-patch:
+	@${MV} ${WRKSRC}/src/RCS ${WRKSRC}/src/RCS-
 
 pre-install:
 	[ -d ${PREFIX}/lib/lmbench ] || ${MKDIR} ${PREFIX}/lib/lmbench
