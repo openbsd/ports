@@ -1,0 +1,11 @@
+$OpenBSD: patch-kioslave_audiocd_audiocd_cpp,v 1.1 2003/06/18 16:55:17 espie Exp $
+--- kioslave/audiocd/audiocd.cpp.orig	Wed Jun 11 09:21:32 2003
++++ kioslave/audiocd/audiocd.cpp	Wed Jun 11 09:21:43 2003
+@@ -1374,6 +1374,7 @@ AudioCDProtocol::parseArgs(const KURL & 
+ 
+ }
+ 
++#undef swap16
+ inline int16_t swap16 (int16_t i)
+ {
+   return (((i >> 8) & 0xFF) | ((i << 8) & 0xFF00));
