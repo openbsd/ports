@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.2 2005/02/27 12:15:00 espie Exp $
---- gcc/config.gcc.orig	Wed Sep  8 17:16:10 2004
-+++ gcc/config.gcc	Sun Feb 27 13:04:14 2005
-@@ -961,11 +961,11 @@ x86_64-*-netbsd*)
+$OpenBSD: patch-gcc_config_gcc,v 1.3 2005/02/27 21:29:07 espie Exp $
+--- gcc/config.gcc.orig	Wed Feb 16 22:58:43 2005
++++ gcc/config.gcc	Sun Feb 27 20:06:06 2005
+@@ -965,11 +965,11 @@ x86_64-*-netbsd*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h"
  	;;
  i[34567]86-*-openbsd*)
@@ -18,7 +18,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.2 2005/02/27 12:15:00 espie Exp $
  	;;
  i[34567]86-*-coff*)
  	tm_file="${tm_file} i386/unix.h i386/bsd.h i386/gas.h dbxcoff.h i386/i386-coff.h"
-@@ -1995,7 +1995,8 @@ sparc-*-netbsdelf*)
+@@ -1999,7 +1999,8 @@ sparc-*-netbsdelf*)
  	;;
  sparc-*-openbsd*)
  	tm_defines=OBSD_OLD_GAS
