@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_mudix_c,v 1.1 2002/09/10 01:02:01 naddy Exp $
+--- src/mudix.c.orig	Tue Sep 10 02:56:59 2002
++++ src/mudix.c	Tue Sep 10 02:57:36 2002
+@@ -33,6 +33,7 @@
+ #include <arpa/telnet.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <signal.h>
+ #include <fcntl.h>
+ #include <netdb.h>

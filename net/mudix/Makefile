@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/10 16:05:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2002/09/10 01:02:00 naddy Exp $
 # $FreeBSD: ports/net/mudix/Makefile,v 1.6 2001/06/22 19:39:12 dwcjr Exp $
-# Original from: will
 
 COMMENT=	"ncurses-based MUD client with triggers, aliases, colors"
 
-DISTNAME=	mudix-4.1
+DISTNAME=	mudix-4.2
 CATEGORIES=	net games
-NEED_VERSION=	1.525
+HOMEPAGE=	http://dw.nl.eu.org/mudix.html
 
-HOMEPAGE=	http://dwizardry.dhs.org/mudix.html
 MAINTAINER=	Mathieu Braem <majeu@bsdaemon.be>
-MASTER_SITES=	http://dwizardry.dhs.org/mudix/
-
-CONFIGURE_STYLE=gnu
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	http://dw.nl.eu.org/mudix/
+
+CONFIGURE_STYLE=gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mudix ${PREFIX}/bin
