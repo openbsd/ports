@@ -1,0 +1,34 @@
+$OpenBSD: patch-Imakefile,v 1.1 2002/07/18 21:02:02 naddy Exp $
+--- Imakefile.orig	Fri Feb  3 01:25:44 1995
++++ Imakefile	Thu Jul 18 22:15:15 2002
+@@ -25,7 +25,7 @@ XCOMM the maximum level of compatibility
+ XCOMM will define yylineno.  If you get an "Undefined symbol: _yylineno"
+ XCOMM when linking, adjust this to work on your system.
+ 
+-#if defined(i386BsdArchitecture) || defined(LinuxArchitecture)
++#if defined(OpenBSDArchitecture) || defined(LinuxArchitecture)
+ # ifdef LexCmd
+ LEX = LexCmd -l
+ # else
+@@ -100,7 +100,7 @@ SpecialObjectRule(vdt.o,NullParameter,$(
+ SpecialObjectRule(LocPixmap.o,NullParameter,'-DBITMAPDIR="$(INCDIR)/bitmaps"')
+ SpecialObjectRule(twm.o,NullParameter,$(TWM_DEFS))
+ 
+-#if defined(UltrixArchitecture) || defined(AlphaArchitecture)
++#if !defined(OpenBSDArchitecture) && (defined(UltrixArchitecture) || defined(AlphaArchitecture))
+ SpecialObjectRule(menus.o,NullParameter,-Olimit 700)
+ #endif
+ 
+@@ -120,10 +120,10 @@ XCOMM	rm -f $(BINDIR)/twm
+ XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
+ 
+ #if (ProjectX < 5)
+-InstallNonExec(system.twmrc,$(TWMDIR))
++/* InstallNonExec(system.twmrc,$(TWMDIR))*/
+ /* InstallProgram(ssetroot,$(BINDIR)/xsetroot) */
+ #else
+-InstallNonExecFile(system.twmrc,$(TWMDIR))
++/* InstallNonExecFile(system.twmrc,$(TWMDIR)) */
+ /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
+ #endif
+ 

@@ -1,18 +1,11 @@
-# Makefile for:         tvtwm
-# Version required:     pl11
-# Date created:         5th December 1994
-# Whom:                 gpalmer
-#
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.13 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/07/18 21:02:02 naddy Exp $
 
 COMMENT=	"twm with a virtual desktop"
 
 DISTNAME=	tvtwm.pl11
-PKGNAME=	tvtwm-pl11
-
+PKGNAME=	tvtwm-0pl11
 CATEGORIES=	x11
-NEED_VERSION=	1.515
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
