@@ -1,6 +1,6 @@
-$OpenBSD: patch-Doc_Makefile_in,v 1.3 2002/07/01 15:34:04 lebel Exp $
---- Doc/Makefile.in.orig	Mon Jun 17 09:17:01 2002
-+++ Doc/Makefile.in	Mon Jul  1 10:00:35 2002
+$OpenBSD: patch-Doc_Makefile_in,v 1.4 2003/05/23 14:21:05 lebel Exp $
+--- Doc/Makefile.in.orig	Thu Feb 13 06:06:46 2003
++++ Doc/Makefile.in	Thu May 22 10:01:03 2003
 @@ -37,7 +37,7 @@ INSTALL         = @INSTALL@
  
  @DEFS_MK@
@@ -10,7 +10,7 @@ $OpenBSD: patch-Doc_Makefile_in,v 1.3 2002/07/01 15:34:04 lebel Exp $
  TEXI2DVI = texi2dvi
  DVIPS = dvips
  TEXI2HTML = texi2html -expand info -split chapter
-@@ -98,6 +98,7 @@ info: zsh.info
+@@ -99,6 +99,7 @@ info: zsh.info
  .PHONY: info
  
  zsh.info: $(sdir)/zsh.texi
@@ -18,7 +18,7 @@ $OpenBSD: patch-Doc_Makefile_in,v 1.3 2002/07/01 15:34:04 lebel Exp $
  	$(MAKEINFO) $(sdir)/zsh.texi
  
  .yo.1:
-@@ -242,11 +243,11 @@ Zsh/manmodmenu.yo: $(MODDOCSRC)
+@@ -245,11 +246,11 @@ Zsh/manmodmenu.yo: $(MODDOCSRC)
  # ========== DEPENDENCIES FOR INSTALLING ==========
  
  # install just installs the manual pages

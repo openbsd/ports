@@ -1,12 +1,254 @@
-$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.1 2002/07/01 15:34:04 lebel Exp $
---- Completion/BSD/Command/_bsd_pkg.orig	Fri Feb  1 09:28:31 2002
-+++ Completion/BSD/Command/_bsd_pkg	Mon Jul  1 10:02:45 2002
-@@ -18,7 +18,7 @@ _bsd_pkg_pkgfiles() {
-   paths=( "${(@)${(@s.:.)PKG_PATH}:#}" )
-   _files "$@" -g \*.tgz && ret=0
-   (( $#path )) && _files "$@" -W paths -g \*.tgz && ret=0
--  compadd "$@" - $pkgsdir/*.tgz && ret=0
-+  compadd "$@" - $pkgsdir/$(arch -s)/All/*.tgz && ret=0
+$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.2 2003/05/23 14:21:05 lebel Exp $
+--- Completion/BSD/Command/_bsd_pkg.orig	Tue Oct 15 13:59:37 2002
++++ Completion/BSD/Command/_bsd_pkg	Fri May 23 10:13:59 2003
+@@ -6,15 +6,19 @@ _bsd_pkg_pkgfiles() {
  
-   return ret
+   case $OSTYPE in
+   netbsd*)
+-    portsdir=/usr/pkgsrc
++    portsdir=${PORTSDIR:-/usr/pkgsrc}
++    pkgsdir=${PACKAGES:-$portsdir/packages}/All
++    ;;
++  openbsd*)
++    portsdir=${PORTSDIR:-/usr/ports}
++    pkgsdir=${PACKAGES:-$portsdir/packages}/$(arch -s)/All
+     ;;
+   *)
+     portsdir=${PORTSDIR:-/usr/ports}
++    pkgsdir=${PACKAGES:-$portsdir/packages}/All
+     ;;
+   esac
+ 
+-  pkgsdir=${PACKAGES:-$portsdir/packages}/All
+-
+   paths=( "${(@)${(@s.:.)PKG_PATH}:#}" )
+   _files "$@" -g '*.t[bg]z' && ret=0
+   (( $#path )) && _files "$@" -W paths -g '*.t[bg]z' && ret=0
+@@ -25,7 +29,7 @@ _bsd_pkg_pkgfiles() {
+ 
+ (( $+functions[_bsd_pkg_pkgs] )) ||
+ _bsd_pkg_pkgs() {
+-  compadd "$@" - ${PKG_DBDIR:-/var/db/pkg}/*(/:t)
++  compadd "$@" - ${PKG_DBDIR:-/var/db/pkg}/*(-/:t)
+ }
+ 
+ (( $+functions[_bsd_pkg_pkgs_and_files] )) ||
+@@ -48,11 +52,11 @@ _bsd_pkg() {
+   pkg_add)
+     flags=(
+       '-f[force installation]'
+-      '-I[don'\''t execute installation scripts]'
++      '-I[don''t execute installation scripts]'
+       '-M[run in master mode]'
+-      '-n[don'\''t really install packages]'
++      '-n[don''t really install packages]'
+       '-p[specify prefix]:prefix directory:_files -/'
+-      '-R[don'\''t record]'
++      '-R[don''t record]'
+       '-S[run in slave mode]'
+       '-t[specify mktemp template]:mktemp template:_files -/'
+       '-v[be verbose]'
+@@ -67,9 +71,9 @@ _bsd_pkg() {
+       ;;
+     netbsd*)
+       flags=(
+-	$flags[@]
+-	'-u[update]'
+-	'-V[show version and exit]'
++        $flags[@]
++        '-u[update]'
++        '-V[show version and exit]'
+       )
+       ;;
+     esac
+@@ -83,37 +87,37 @@ _bsd_pkg() {
+     case "$OSTYPE" in
+     freebsd*)
+       flags=(
+-	'-f[specify plist file]:plist file:_files'
+-	'(-b)-c[specify comment file]:comment file:_files'
+-	'(-b)-d[specify descr file]:descr file:_files'
+-	'-Y[assume YES for any questions asked]'
+-	'-N[assume NO for any questions asked]'
+-	'(-b)-O[packing list only mode]'
+-	'-v[be verbose]'
+-	'-h[force tar to follow symlinks]'
+-	'(-b)-i[specify pre-install script]:pre-install script:_files'
+-	'(-b)-I[specify post-install script]:post-install script:_files'
+-	'(-b)-P[specify initial dependencies]:dependencies:_bsd_pkg_pkgs'
+-	'(-b)-p[specify prefix]:prefix directory:_files -/'
+-	'(-b)-k[specify deinstall script]:deinstall script:_files'
+-	'(-b)-K[specify post-deinstall script]:post-deinstall script:_files'
+-	'(-b)-r[specify req script]:req script:_files'
+-	'(-b)-s[specify source directory]:source directory:_files -/'
+-	'(-b)-t[specify mktemp template]:mktemp template:_files'
+-	'(-b)-X[specify exclude file]:exclude file for tar:_files'
+-	'(-b)-D[specify message file]:message file:_files'
+-	'(-b)-m[specify mtree file]:mtree file:_files'
+-	'(-b)-o[specify origin]:origin:_files -W ${PORTSDIR\:-/usr/ports} -/'
+-	'-j[use bzip2]'
+-	'-z[use gzip]'
+-	'(-c -d -O -i -I -P -p -k -K -r -s -t -X -D -m -o)-b[specify pkgname]:pkgname:_bsd_pkg_pkgs'
+-	'*:package file name:_files'
++        '-f[specify plist file]:plist file:_files'
++        '(-b)-c[specify comment file]:comment file:_files'
++        '(-b)-d[specify descr file]:descr file:_files'
++        '-Y[assume YES for any questions asked]'
++        '-N[assume NO for any questions asked]'
++        '(-b)-O[packing list only mode]'
++        '-v[be verbose]'
++        '-h[force tar to follow symlinks]'
++        '(-b)-i[specify pre-install script]:pre-install script:_files'
++        '(-b)-I[specify post-install script]:post-install script:_files'
++        '(-b)-P[specify initial dependencies]:dependencies:_bsd_pkg_pkgs'
++        '(-b)-p[specify prefix]:prefix directory:_files -/'
++        '(-b)-k[specify deinstall script]:deinstall script:_files'
++        '(-b)-K[specify post-deinstall script]:post-deinstall script:_files'
++        '(-b)-r[specify req script]:req script:_files'
++        '(-b)-s[specify source directory]:source directory:_files -/'
++        '(-b)-t[specify mktemp template]:mktemp template:_files'
++        '(-b)-X[specify exclude file]:exclude file for tar:_files'
++        '(-b)-D[specify message file]:message file:_files'
++        '(-b)-m[specify mtree file]:mtree file:_files'
++        '(-b)-o[specify origin]:origin:_files -W ${PORTSDIR\:-/usr/ports} -/'
++        '-j[use bzip2]'
++        '-z[use gzip]'
++        '(-c -d -O -i -I -P -p -k -K -r -s -t -X -D -m -o)-b[specify pkgname]:pkgname:_bsd_pkg_pkgs'
++        '*:package file name:_files'
+       )
+       ;;
+     netbsd*)
+       # NetBSD users, improve me!
+       flags=(
+-	'*:package name:_bsd_pkg_pkgs'
++        '*:package name:_bsd_pkg_pkgs'
+       )
+       ;;
+     esac
+@@ -124,10 +128,10 @@ _bsd_pkg() {
+ 
+   pkg_delete)
+     flags=(
+-      '-D[don'\''t execute deinstallation scripts]'
++      '-D[don''t execute deinstallation scripts]'
+       '-d[remove empty directories]'
+       '-f[force deinstallation]'
+-      '-n[don'\''t really deinstall packages]'
++      '-n[don''t really deinstall packages]'
+       '-p[specify prefix]:prefix directory:_files -/'
+       '-v[be verbose]'
+     )
+@@ -136,35 +140,43 @@ _bsd_pkg() {
+     freebsd*)
+       flags=(
+         $flags[@]
+-	'(:)-a[delete all installed packages]'
++        '(:)-a[delete all installed packages]'
+         '-G[do not expand glob patterns]'
+-	'-i[be interactive]'
++        '-i[be interactive]'
+         '-r[delete recursively]'
+         '-x[use regular expression]'
+       )
+       ;;
+     netbsd*)
+       flags=(
+-	$flags[@]
+-	'(:)-a[delete all installed packages]'
+-	'-F[specify each package by an installed file]'
+-	'-i[be interactive]'
+-	'-O[only delete the package'\''s entries]'
++        $flags[@]
++        '(:)-a[delete all installed packages]'
++        '-F[specify each package by an installed file]'
++        '-i[be interactive]'
++        '-O[only delete the package''s entries]'
+         '-R[delete upward recursively]'
+         '-r[delete recursively]'
+-	'-V[show version and exit]'
++        '-V[show version and exit]'
+       )
+       ;;
+     esac
+ 
+-    _arguments -s \
+-      $flags[@] \
+-      '(-a)*:package name:_bsd_pkg_pkgs_and_files'
++    case "$OSTYPE" in
++    openbsd*)
++      _arguments -s \
++        $flags[@] \
++        '*:installed package name:_bsd_pkg_pkgs'
++      ;;
++    *)
++      _arguments -s \
++        $flags[@] \
++        '(-a)*:package name:_bsd_pkg_pkgs_and_files'
++      ;;
++    esac
+     ;;
+ 
+   pkg_info)
+     flags=(
+-      '(:)-a[show all installed packages]'
+       '-c[show comment fields]'
+       '-D[show install-message files]'
+       '-d[show long descriptions]'
+@@ -188,30 +200,41 @@ _bsd_pkg() {
+       flags=(
+         $flags[@]
+         '-G[do not expand glob patterns]'
+-	'-g[show files that'\''s modified]'
+-	'-o[show origin]'
+-	'-s[show total size occupied by each package]'
+-	'-t[specify mktemp template]:mktemp template:_files -/'
+-	'*-W[show which package the file belongs to]:file:_files'
+-	'-x[use regular expression]'
++        '-g[show files that are modified]'
++        '-o[show origin]'
++        '-s[show total size occupied by each package]'
++        '-t[specify mktemp template]:mktemp template:_files -/'
++        '*-W[show which package the file belongs to]:file:_files'
++        '-x[use regular expression]'
+       )
+       ;;
+     netbsd*)
+       flags=(
+-	$flags[@]
+-	'-B[show build information]'
+-	'-b[show RCS Id strings]'
+-	'-F[specify each package by an installed file]'
+-	'-S[show total size occupied by each package and its dependents]'
+-	'-s[show total size occupied by each package]'
+-	'-V[show version and exit]'
++        $flags[@]
++        '-B[show build information]'
++        '-b[show RCS Id strings]'
++        '-F[specify each package by an installed file]'
++        '-S[show total size occupied by each package and its dependents]'
++        '-s[show total size occupied by each package]'
++        '-V[show version and exit]'
+       )
+       ;;
+     esac
+ 
+-    _arguments -s \
+-      $flags[@] \
+-      '(-a)*:package name:_bsd_pkg_pkgs_and_files'
++    case "$OSTYPE" in
++    openbsd*)
++      _arguments -s \
++        '(* -)-a[show all installed packages]' \
++        $flags[@] \
++        '*:installed package name:_bsd_pkg_pkgs'
++      ;;
++    *)
++      _arguments -s \
++        '(:)-a[show all installed packages]' \
++        $flags[@] \
++        '(-a)*:package name:_bsd_pkg_pkgs_and_files'
++      ;;
++    esac
+     ;;
+   esac
  }
