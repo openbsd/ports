@@ -1,8 +1,8 @@
-lib/libFnlib.la
-lib/libFnlib.a
-lib/fnlib/fnrc.sample
-include/Fnlib.h
 include/Fnlib_types.h
+include/Fnlib.h
+lib/libFnlib.a
+lib/libFnlib.la
+lib/fnlib/fnrc.sample
 share/fnlib_fonts/e/17/032.png
 share/fnlib_fonts/e/17/033.png
 share/fnlib_fonts/e/17/034.png
