@@ -29,8 +29,6 @@ lib/expect5.25/libexpect525.a
 @exec ranlib %D/%F
 lib/libexpect525.a
 @exec ranlib %D/%F
-lib/libexpect525.so.1.2
-@exec /sbin/ldconfig -m %B
 man/man1/autoexpect.1
 man/man1/cryptdir.1
 man/man1/decryptdir.1
