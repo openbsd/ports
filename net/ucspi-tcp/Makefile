@@ -1,4 +1,4 @@
-# OpenBSD$
+# $OpenBSD: Makefile,v 1.3 2000/02/23 10:44:01 camield Exp $
 
 DISTNAME=	ucspi-tcp-0.84
 CATEGORIES=	net
@@ -9,14 +9,13 @@ MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/ \
 		ftp://mirror.uk.uu.net/pub/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
-		http://ftp.rifkin.technion.ac.il/pub/qmail/ \
+		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		http://koobera.math.uic.edu/www/software/ \
 		http://pobox.com/~djb/software/ 
 
 NO_CONFIGURE=	yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-NO_MTREE=	yes
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
