@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2004/06/22 08:13:11 brad Exp $
+# $OpenBSD: Makefile,v 1.72 2004/06/22 20:34:09 naddy Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--enable-runtime-cpudetection
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ARGS+=--disable-altivec
- .endif
+.endif
 
 FLAVORS=	arts esd sdl ggi debug mad win32 no_x11 aa
 FLAVOR?=
