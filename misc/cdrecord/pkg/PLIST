@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/05/06 02:29:57 lebel Exp $
-bin/cdrecord
-bin/cdda2wav
-man/man1/cdrecord.1
-man/man1/cdda2wav.1
-share/doc/cdrecord/README
-@dirrm share/doc/cdrecord
