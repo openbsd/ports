@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 15:12:31 fgsch Exp $
 
 COMMENT=	"scan mailboxes for messages matching a regular expression"
 
 DISTNAME=	mboxgrep-0.7.4
 CATEGORIES=	mail
-NEED_VERSION=	1.500
 
 HOMEPAGE=	http://mboxgrep.sourceforge.net/
 

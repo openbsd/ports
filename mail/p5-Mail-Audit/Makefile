@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 15:12:31 fgsch Exp $
 
 COMMENT=	"library for creating easy mail filters"
 
 DISTNAME=	Mail-Audit-2.1
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://simon-cozens.org/writings/mail-audit.html
 

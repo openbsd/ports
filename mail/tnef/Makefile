@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/28 15:33:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 15:12:31 fgsch Exp $
 
 COMMENT=	decode MS-TNEF MIME attachments
 
 DISTNAME=	tnef-1.1.1
 CATEGORIES=    	mail
-NEED_VERSION=	1.423
 
 HOMEPAGE=	http://world.std.com/~damned/software.html
 

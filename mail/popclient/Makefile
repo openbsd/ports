@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/29 15:12:31 fgsch Exp $
 # Whom:           Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"client for pop2, pop3, apop, rpop"
 
 DISTNAME=	popclient-3.0b6
 CATEGORIES=	mail
-NEED_VERSION=	1.402
 #FAKE=No
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 

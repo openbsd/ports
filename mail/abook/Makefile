@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2002/05/13 23:31:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/12/29 15:12:31 fgsch Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
 COMMENT=	"addressbook program with mutt support"
 
 DISTNAME=	abook-0.4.17
 CATEGORIES=	mail
-NEED_VERSION=	1.527
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=abook/}
 
 HOMEPAGE=	http://abook.sourceforge.net
