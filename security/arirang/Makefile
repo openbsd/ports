@@ -1,6 +1,6 @@
 COMMENT=	"powerful webserver security scanner"
 
-DISTNAME=	arirang-1.5
+DISTNAME=	arirang-1.6beta
 CATEGORIES= 	security
 NEED_VERSION= 	1.414
 
