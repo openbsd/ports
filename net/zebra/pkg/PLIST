@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/08/25 01:18:21 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/02/03 09:40:47 itojun Exp $
 sbin/bgpd
 sbin/ospfd
 sbin/ospf6d
@@ -16,7 +16,6 @@ man/man8/ripd.8
 man/man8/ripngd.8
 man/man8/zebra.8
 share/doc/zebra/README
-share/doc/zebra/README.mbgp
 share/examples/zebra/bgpd.conf.sample
 share/examples/zebra/bgpd.conf.sample2
 share/examples/zebra/ripd.conf.sample
