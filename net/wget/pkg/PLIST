@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/12/15 17:40:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/08/08 13:51:39 espie Exp $
 bin/wget
-@unexec install-info --delete --info-dir=%D/info %D/info/wget.info
-info/wget.info
-@exec install-info --info-dir=%D/info %D/info/wget.info
-man/man1/wget.1
+@info info/wget.info
+@man man/man1/wget.1
+share/examples/wget/
 share/examples/wget/sample.wgetrc
+@sample ${SYSCONFDIR}/wgetrc
 share/locale/bg/LC_MESSAGES/wget.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/wget.mo
 share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
@@ -31,59 +33,3 @@ share/locale/sv/LC_MESSAGES/wget.mo
 share/locale/tr/LC_MESSAGES/wget.mo
 share/locale/uk/LC_MESSAGES/wget.mo
 share/locale/zh_TW/LC_MESSAGES/wget.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale
-@dirrm share/examples/wget
-@cwd ${SYSCONFDIR}
-@extra wgetrc
