@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/08 16:29:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/28 02:40:24 pvalchev Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
@@ -28,7 +28,7 @@ USE_X11=		Yes
 SEPARATE_BUILD= 	concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXi"
 
 post-extract:
 	@perl -i -p -e 's/3GLE/3/;' ${WRKSRC}/man/*.man
