@@ -1,5 +1,5 @@
---- pty.c.orig	Mon Feb 11 07:44:18 2002
-+++ pty.c	Thu Feb 14 19:11:58 2002
+--- pty.c.orig	Fri Feb 14 08:44:20 2003
++++ pty.c	Thu Apr 24 09:24:57 2003
 @@ -32,6 +32,23 @@ RCS_ID("$Id: pty.c,v 1.6 1994/05/31 12:3
  #include "config.h"
  #include "screen.h"
@@ -24,7 +24,7 @@
  #ifndef sun
  # include <sys/ioctl.h>
  #endif
-@@ -323,25 +340,25 @@ int
+@@ -340,25 +357,25 @@ int
  OpenPTY(ttyn)
  char **ttyn;
  {
@@ -63,7 +63,7 @@
  	  if (eff_uid && access(TtyName, R_OK | W_OK))
  	    {
  	      close(f);
-@@ -364,9 +381,11 @@ char **ttyn;
+@@ -381,9 +398,11 @@ char **ttyn;
  #endif
  	  initmaster(f);
  	  *ttyn = TtyName;
