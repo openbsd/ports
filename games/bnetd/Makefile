@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/09 07:06:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 1999/11/11 03:48:53 kevlo Exp $
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
 MASTER_SITES=	http://www.bnetd.org/files/
 
-MAINTAINER=	brad@cvs.openbsd.org
+MAINTAINER=	kevlo@openbsd.org
 
 do-configure:
 	@(cd ${WRKSRC}/src; ${SETENV} CFLAGS="${CFLAGS}" \
