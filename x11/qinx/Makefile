@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/02/10 22:54:59 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/03/04 18:48:17 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		kdecore.6,DCOP,kdefx,kdeui::x11/kde/libs3 \
 		kdecorations::x11/kde/base3
 
-AUTOCONF_VERSION= 2.54
+AUTOCONF_VERSION= 2.57
 MODKDE_VERSION= 3.2
 MODULES=	kde
 
