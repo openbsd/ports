@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2004/02/15 20:59:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/06/08 20:21:24 danh Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"system to store and display time-series data"
 
-VERSION=	1.0.46
-DISTNAME=	rrdtool-${VERSION}
+RRDVERSION=	1.0.48
+DISTNAME=	rrdtool-${RRDVERSION}
 CATEGORIES=     net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/rrdtool/ \
@@ -21,12 +21,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-SUBST_VARS=	VERSION
+SUBST_VARS=	RRDVERSION
 
 FLAVORS=	tcl
 FLAVOR?=
 
-LIB_DEPENDS=	png.4::graphics/png
+LIB_DEPENDS=	png.4::graphics/png \
+		gd.18::graphics/gd
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static \
