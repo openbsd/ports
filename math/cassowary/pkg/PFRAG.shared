@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/01/19 16:45:03 reinhard Exp $
+lib/guile/site/cassowary/libconstraints.so.0.0
+lib/libcassowary.so.0.1
+DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/guile/site/cassowary)

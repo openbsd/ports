@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_Makefile_in,v 1.1.1.1 2001/01/19 16:45:03 reinhard Exp $
+--- docs/Makefile.in.orig	Sun Mar 12 22:15:11 2000
++++ docs/Makefile.in	Wed Jan 10 21:47:15 2001
+@@ -94,7 +94,7 @@ VERSION = @VERSION@
+ YACC = @YACC@
+ cassoguiledir = @cassoguiledir@
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc/cassowary
+ 
+ doc_DATA = cassowary-tr.pdf cassowary-tr.ps.gz
+ 
