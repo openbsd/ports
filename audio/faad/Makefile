@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/10/19 20:51:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/12/29 13:17:53 espie Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 
@@ -30,6 +30,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*
+.endif
+
+.include <bsd.own.mk>
+USE_GCC3?=No
+.if ${USE_GCC3:L} == "yes"
+MAKE_FLAGS+=libmp4v2_la_LIBADD=-lsupc++
 .endif
 
 post-patch:
