@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/05/19 06:08:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 1999/05/31 16:13:43 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -12,7 +12,7 @@
      SUBDIR += fragrouter
 #    SUBDIR += fwtk
      SUBDIR += gnupg
-#    SUBDIR += john
+     SUBDIR += john
      SUBDIR += libident
      SUBDIR += nbaudit
      SUBDIR += nessus
