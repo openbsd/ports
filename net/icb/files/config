@@ -48,8 +48,7 @@ DEFAULTHOST	= crater.unm.edu
 DEFAULTPORT	= 7326
 
 # Directory for support files
-LIBDIR = @PREFIX@/libdata
+LIBDIR = /etc
 
 # location of server database
-SERVERLIST = @PREFIX@/libdata/icbserverdb
-
+SERVERLIST = /etc/icb/icbserverdb

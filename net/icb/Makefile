@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/05/22 03:35:25 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/07/02 11:10:16 form Exp $
 # NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
 #
 
@@ -14,12 +14,15 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icb/icb ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/icbserverdb ${PREFIX}/libdata
-	${INSTALL} -d ${PREFIX}/libdata/icb
-	${INSTALL_SCRIPT} ${WRKSRC}/sample.icbrc \
-		${WRKSRC}/contrib/bartender \
-		${WRKSRC}/contrib/confuse \
-		${WRKSRC}/contrib/echofile \
-		${PREFIX}/libdata/icb
+	@if [ ! -d /etc/icb ]; then \
+		${INSTALL} -d /etc/icb; \
+		${INSTALL_SCRIPT} ${WRKSRC}/sample.icbrc \
+			${WRKSRC}/contrib/bartender \
+			${WRKSRC}/contrib/confuse \
+			${WRKSRC}/contrib/echofile \
+			/etc/icb; \
+		${INSTALL_SCRIPT} ${WRKSRC}/icbserverdb /etc/icb; \
+		chmod 644 /etc/icb/*; \
+	fi
 
 .include <bsd.port.mk>
