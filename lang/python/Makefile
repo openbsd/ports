@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/12/13 05:26:48 jasoni Exp $
+# $OpenBSD: Makefile,v 1.27 2001/01/19 06:59:12 jasoni Exp $
 
 VERSION=	2.0
 DISTNAME=	python-${VERSION}
@@ -32,6 +32,8 @@ CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
 
 WRKDIST=	${WRKDIR}/Python-${VERSION}
 
