@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 1999/03/27 21:11:31 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/03/28 21:51:48 brad Exp $
 
 DISTNAME=	WindowMaker-0.51.2
 CATEGORIES=	x11
-
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
 DATAFILES=	WindowMaker-data.tar.gz
@@ -23,10 +22,8 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
 		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
 		--with-libs-from="-L${PREFIX}/lib" --disable-debug
-CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib" \
-		CPPFLAGS="-I${PREFIX}/include"
-
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib"
 
 post-install:	
 		@${INSTALL_DATA} ${WRKDIR}/WindowMaker-data/pixmaps/* \
