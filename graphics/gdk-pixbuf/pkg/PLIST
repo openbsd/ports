@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/09/14 03:41:29 heko Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/09/29 20:45:39 naddy Exp $
 bin/gdk-pixbuf-config
 include/gdk-pixbuf/gdk-pixbuf-features.h
 include/gdk-pixbuf/gdk-pixbuf-loader.h
@@ -58,7 +58,6 @@ share/html/gdk-pixbuf/x3787.html
 %%SHARED%%
 @dirrm share/html/gdk-pixbuf
 @dirrm share/html
-@dirrm share/aclocal
 @exec mkdir -p %D/lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf
