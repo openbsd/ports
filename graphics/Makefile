@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 1999/12/05 18:15:38 dugsong Exp $
+# $OpenBSD: Makefile,v 1.37 1999/12/26 04:25:30 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -49,6 +49,7 @@
 #    SUBDIR += pixmap
 #    SUBDIR += plotmtv
      SUBDIR += png
+     SUBDIR += pngcrush
 #    SUBDIR += povray
 #    SUBDIR += qvplay
 #    SUBDIR += sced
