@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xvnc_programs_Xserver_include_servermd_h,v 1.1 2001/11/11 01:25:13 lebel Exp $
+--- Xvnc/programs/Xserver/include/servermd.h.orig	Sun Jun 11 08:00:52 2000
++++ Xvnc/programs/Xserver/include/servermd.h	Sat Nov 10 18:29:19 2001
+@@ -132,7 +132,7 @@ SOFTWARE.
+ 
+ #endif /* vax */
+ 
+-#if (defined(Lynx) && defined(__powerpc__))
++#if ((defined(__OpenBSD__) || defined(Lynx)) && defined(__powerpc__))
+ 
+ /* For now this is for Xvfb only */
+ #define IMAGE_BYTE_ORDER        MSBFirst

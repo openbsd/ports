@@ -1,0 +1,29 @@
+$OpenBSD: patch-Xvnc_config_cf_OpenBSD_cf,v 1.1 2001/11/11 01:25:13 lebel Exp $
+--- Xvnc/config/cf/OpenBSD.cf.orig	Sun Jun 11 08:00:51 2000
++++ Xvnc/config/cf/OpenBSD.cf	Sat Nov 10 18:42:55 2001
+@@ -105,6 +105,25 @@ XCOMM operating system:  OSName (OSMajor
+ # endif
+ #endif
+ 
++#if defined(SparcArchitecture)
++# define ServerOSDefines       -DDDXOSINIT
++# if defined(Sparc64Architecture)
++#  define ServerExtraDefines   GccGasOption -D_XSERVER64
++# else
++#  define ServerExtraDefines   GccGasOption
++# endif
++# define PexDynamicModule      NO
++# define XieDynamicModule      NO
++#endif
++
++#if defined(macppcArchitecture)
++# define ServerOSDefines       -DDDXOSINIT
++# define ServerExtraDefines    GccGasOption -D__macppc__
++# define PexDynamicModule      NO
++# define XieDynamicModule      NO
++# define XkbServerDefines      -DXKB_ALWAYS_USES_SOFT_REPEAT
++#endif
++
+ #define StandardDefines	-DCSRG_BASED
+ #define XawI18nDefines	-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
+ 
