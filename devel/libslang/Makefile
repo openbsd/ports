@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/08/02 12:35:05 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2004/10/19 03:07:56 brad Exp $
 
 COMMENT=	"stack-based interpreter for terminal applications"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/ \
 		http://gd.tuwien.ac.at/editors/davis/slang/v1.4/
 
 HOMEPAGE=	http://www.s-lang.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
