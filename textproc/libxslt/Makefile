@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2004/11/11 15:11:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2004/11/11 22:08:13 espie Exp $
 
 COMMENT=		"XSLT C Library for GNOME"
 
 DISTNAME=		libxslt-1.1.12
+PKGNAME=		$(DISTNAME)p0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://xmlsoft.org/XSLT/
@@ -24,5 +25,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-libxml-include-prefix='${LOCALBASE}/include/'
 CONFIGURE_ARGS+=	--without-python
+
+MAKE_FLAGS=	libxslt_la_LDFLAGS='-version-info 3:0:0' \
+		libexslt_la_VERSION='-version-info 9:0:0'
 
 .include <bsd.port.mk>

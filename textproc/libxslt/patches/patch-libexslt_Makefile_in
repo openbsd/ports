@@ -1,0 +1,13 @@
+$OpenBSD: patch-libexslt_Makefile_in,v 1.1 2004/11/11 22:08:13 espie Exp $
+--- libexslt/Makefile.in.orig	Thu Nov 11 22:24:52 2004
++++ libexslt/Makefile.in	Thu Nov 11 22:25:49 2004
+@@ -261,7 +261,8 @@ libexslt_la_SOURCES = \
+ 	dynamic.c
+ 
+ libexslt_la_LIBADD = $(top_builddir)/libxslt/libxslt.la $(EXTRA_LIBS)
+-libexslt_la_LDFLAGS = -version-info @LIBEXSLT_VERSION_INFO@ $(LIBGCRYPT_LIBS)
++libexslt_la_VERSION = -version-info @LIBEXSLT_VERSION_INFO@
++libexslt_la_LDFLAGS = $(libexslt_la_VERSION) $(LIBGCRYPT_LIBS)
+ man_MANS = libexslt.3
+ EXTRA_DIST = $(man_MANS)
+ all: all-am

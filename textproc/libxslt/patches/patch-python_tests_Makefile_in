@@ -1,6 +1,6 @@
---- python/tests/Makefile.in.orig	2004-03-23 04:41:40.000000000 -0800
-+++ python/tests/Makefile.in	2004-04-06 23:00:21.000000000 -0700
-@@ -190,7 +190,7 @@ sbindir = @sbindir@
+--- python/tests/Makefile.in.orig	Fri Oct 29 17:07:05 2004
++++ python/tests/Makefile.in	Thu Nov 11 22:19:21 2004
+@@ -196,7 +196,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@

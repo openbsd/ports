@@ -1,6 +1,6 @@
---- python/Makefile.in.orig	2004-03-23 04:41:40.000000000 -0800
-+++ python/Makefile.in	2004-04-06 22:59:10.000000000 -0700
-@@ -534,7 +534,7 @@ distdir: $(DISTFILES)
+--- python/Makefile.in.orig	Fri Oct 29 17:07:05 2004
++++ python/Makefile.in	Thu Nov 11 22:19:21 2004
+@@ -540,7 +540,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-recursive
@@ -9,7 +9,7 @@
  installdirs: installdirs-recursive
  installdirs-am:
  	$(mkdir_p) $(DESTDIR)$(pythondir)
-@@ -584,7 +584,7 @@ info: info-recursive
+@@ -590,7 +590,7 @@ info: info-recursive
  
  info-am:
  
