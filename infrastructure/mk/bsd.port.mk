@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.567 2003/07/30 19:31:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.568 2003/07/30 19:51:11 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2439,24 +2439,34 @@ uninstall deinstall:
 .endif
 
 .PHONY: \
-   addsum all build build-depends regress regress-depends checkpatch \
-   checksum clean clean-depends configure deinstall \
-   delete-package delete-package-links depends depends-list \
-   describe distclean do-build do-configure do-extract \
-   do-fetch do-install do-package do-patch extract list-distfiles \
-   fetch install lib-depends makesum \
-   package package-depends package-links \
-   package-noinstall patch plist update-plist update-patches post-build \
-   post-configure post-extract post-fetch post-install post-package \
-   post-patch pre-build pre-configure \
-   pre-extract pre-fetch pre-install pre-package pre-patch \
-   readme readmes rebuild reinstall \
-   repackage run-depends uninstall fetch-all print-depends \
-   recurse-build-depends recurse-package-depends \
-   distpatch do-distpatch post-distpatch show \
-   link-categories unlink-categories _package \
-   lib-depends-check homepage-links manpages-check \
-   _recurse-lib-depends-check _recurse-solve-package-depends \
-   _recurse-run-dir-depends run-dir-depends _recurse-all-dir-depends \
-   _build-dir-depends build-dir-depends all-dir-depends \
-   fetch-makefile _fetch-makefile
+	_build-dir-depends _fetch-makefile _package \
+	_print-packagename _recurse-all-dir-depends _recurse-run-dir-depends \
+	_recurse-solve-package-depends _recursive-lib-depends-check addsum \
+	all all-dir-depends build \
+	build-depends build-depends-list build-dir-depends \
+	checkpatch checksum clean \
+	clean-depends configure deinstall \
+	delete-package delete-package-links depends \
+	describe distclean distpatch \
+	do-build do-configure do-distpatch \
+	do-extract do-fetch do-install \
+	do-package do-regress extract \
+	fake fetch fetch-all \
+	fetch-makefile full-all-depends full-build-depends \
+	full-run-depends homepage-links install \
+	lib-depends lib-depends-check lib-depends-list \
+	link-categories makesum manpages-check \
+	package package-links patch \
+	plist post-build post-configure \
+	post-distpatch post-extract post-fetch \
+	post-install post-package post-patch \
+	post-regress pre-build pre-configure \
+	pre-extract pre-fake pre-fetch \
+	pre-install pre-package pre-patch \
+	pre-regress print-build-depends print-run-depends \
+	readme readmes rebuild \
+	refetch regress regress-depends \
+	reinstall repackage run-depends \
+	run-depends-list run-dir-depends show \
+	uninstall unlink-categories update-patches \
+	update-plist
