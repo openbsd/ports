@@ -33,4 +33,6 @@ FTP features:
   setting up bin/ls, shared libraries, et al. inside the public file area. 
 - publicfile provides EPLF LIST responses, including options "i", "s", and "m". 
 - publicfile supports restarted transfers. 
-- publicfile supports pipelining. 
+- publicfile supports pipelining.
+
+The 'compat' flavor replaces EPLF with old-style /bin/ls output.
