@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/09/27 00:44:52 marc Exp $
+# $OpenBSD: Makefile,v 1.19 2000/09/27 01:01:10 marc Exp $
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 
-LIB_DEPENDS=	tk83::x11/tk/8.3
+LIB_DEPENDS=	tk80::x11/tk/8.0
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-perl5=/usr/bin/perl \
