@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/11/08 16:52:12 pvalchev Exp $
 bin/webalizer
 bin/webazolver
 @man man/man1/webalizer.1
@@ -8,3 +8,4 @@ share/doc/webalizer/README
 share/doc/webalizer/README.FIRST
 share/examples/webalizer/
 share/examples/webalizer/sample.conf
+@sample ${SYSCONFDIR}/webalizer.conf
