@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/16 13:35:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	"CDDA reading utility with extra data verification features"
 
@@ -19,6 +19,8 @@ EXTRACT_SUFX=	.src.tgz
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_NEW=		Yes
 CONFIGURE_ENV=		GCC=${CC}
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdparanoia

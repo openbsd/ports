@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/17 20:56:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	"MPEG/audio Layer 1 and Layer 2 encoder/decoder"
 DISTNAME=	mpegaudio
 PKGNAME=	mpegaudio-3.9
 CATEGORIES=	audio
-NEED_VERSION=   1.515
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	.tar.Z
 
@@ -16,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	CC="${CC}"
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mpeg_musicin.1 ${PREFIX}/man/man1

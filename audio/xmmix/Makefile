@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2002/01/17 15:18:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/24 22:20:04 naddy Exp $
 
 COMMENT=	"Motif-based audio mixer"
 DISTNAME=	xmmix-1.2.2
 CATEGORIES=	audio
-NEED_VERSION=	1.504
 HOMEPAGE=	http://www.ibiblio.org/tkan/xmmix/
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
@@ -19,6 +18,7 @@ CONFIGURE_STYLE=	imake
 USE_MOTIF=		any
 
 WRKDIST=	${WRKDIR}/xmmix-1.2
+NO_REGRESS=	Yes
 
 post-install:
 	@ perl -pi -e 's,\@PREFIX@,${TRUEPREFIX},;' \

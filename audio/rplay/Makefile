@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/08/17 05:11:09 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	"network audio player"
 DISTNAME=	rplay-3.3.2
@@ -32,5 +32,7 @@ post-configure:
 		sed -e "s,/usr/local/etc,${SYSCONFDIR},g" ${ff} >${ff}.tmp; \
 		mv ${ff}.tmp ${ff}
 .endfor
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

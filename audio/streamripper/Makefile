@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/03 06:11:42 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=		"rip shoutcast streams to local mp3s"
 
@@ -27,5 +27,7 @@ do-install:
 .for file in ${DOC}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/streamripper
 .endfor
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	"u-law to gsm encoding audio converter and library"
 
 DISTNAME=	gsm-1.0.10
 CATEGORIES=	audio
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -18,6 +17,7 @@ MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)'
 FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_ROOT="${WRKINST}${PREFIX}"
 
 WRKDIST=	${WRKDIR}/gsm-1.0-pl10
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
 

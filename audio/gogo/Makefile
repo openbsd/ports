@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	"686 class CPU optimized mp3 encoder"
 DISTNAME=	gogo226a	
 PKGNAME=	gogo-2.26a
 CATEGORIES=	audio
-NEED_VERSION=	1.515
 MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
 HOMEPAGE=	http://homepage1.nifty.com/herumi/gogo_e.html
 EXTRACT_SUFX=	.tgz
@@ -22,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	E3DN=''
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gogo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/01 06:36:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/24 22:20:04 naddy Exp $
 
 COMMENT=	"premier dockable radio tuner"
 
@@ -33,5 +33,7 @@ WRKDIST=		${WRKDIR}/wmtune-1.0.1-combined/
 
 post-extract:
 	@cp files/wmtune.1 ${WRKDIST}
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

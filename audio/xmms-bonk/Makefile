@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/07 00:35:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/24 22:20:04 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -23,6 +23,8 @@ LIB_DEPENDS=	xmms.3::audio/xmms
 
 MAKE_ENV=	CXX="${CXX}"
 ALL_TARGET=
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xmms/Input/

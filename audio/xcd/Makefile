@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/07/17 21:44:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/24 22:20:04 naddy Exp $
 
 COMMENT=	"Tcl/Tk CD player"
 DISTNAME=	xcd-1.6
@@ -27,5 +27,7 @@ do-configure:
 	cd ${WRKDIST} && \
 		sed -e 's,wish4.1,wish8.3,' <xcd.in >xcd.in.new && \
 		mv -f xcd.in.new xcd.in
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

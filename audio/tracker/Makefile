@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	MOD player
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
-
-#USE_GMAKE=		Yes
 
 # OpenBSD has a special exemption. Other BSD should contact me (Marc Espie) 
 # for redistribution on the CD.
@@ -25,6 +23,8 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
 		COMPRESSION_FILE='$${DESTDIR}/etc/compression_methods' \
 		PREFIX='$${DESTDIR}/${PREFIX}'
+
+NO_REGRESS=	Yes
 
 FAKE_FLAGS=	${MAKE_FLAGS}
 

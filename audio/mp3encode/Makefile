@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/24 22:20:03 naddy Exp $
 
 COMMENT=	"MPEG layer I, II and III audio file encoder"
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
 CATEGORIES=	audio
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -18,6 +17,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/lsf/encoder
+NO_REGRESS=	Yes
 
 # Directories and extra files
 TABLE_LIB=	${PREFIX}/lib/mp3encode
