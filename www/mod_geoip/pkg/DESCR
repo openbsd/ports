@@ -1,0 +1,5 @@
+mod_geoip is an Apache module for finding the country that a web request
+originated from.  It uses the GeoIP library and database to perform
+the lookup.
+
+WWW: ${HOMEPAGE}
