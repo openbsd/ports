@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 1999/08/30 21:30:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.24 1999/10/29 00:21:02 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
      SUBDIR += ADMsmb
      SUBDIR += ADMsnmp
      SUBDIR += SSLeay
+     SUBDIR += antisniff
      SUBDIR += bounix
      SUBDIR += cfs
+     SUBDIR += cgichk
      SUBDIR += cops
      SUBDIR += crack
 #    SUBDIR += donkey
