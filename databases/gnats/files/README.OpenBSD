@@ -35,7 +35,7 @@ monkey-gnats: bugs
    where 'monkey' is replaced with the configured value of GNATS_SITE in
    y0y0y0/share/gnats/gnats-db/gnats-adm/config.
 
-6. If you built with FLAVOR=www, and want to run gnatsweb, add
+6. If you want to run gnatsweb, add
 
 127.0.0.1:view:
 

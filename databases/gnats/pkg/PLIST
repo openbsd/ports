@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/24 08:56:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/31 17:22:40 alek Exp $
 @newuser _gnats:501:daemon::GNATS database owner:${PREFIX}/share/gnats:/sbin/nologin
 bin/edit-pr
 bin/getclose
@@ -11,11 +11,18 @@ bin/sub-type
 @info info/gnats.info
 @info info/send-pr.info
 @info info/standards.info
+lib/gnatsweb
+libdata/perl5/site_perl/gnats.pm
 libexec/gnats/
 libexec/gnats/at-pr
 libexec/gnats/check-db
 libexec/gnats/delete-pr
 libexec/gnats/file-pr
+@mode 4555
+@owner _gnats
+libexec/gnats/gen-index
+@mode
+@owner
 libexec/gnats/gnats-edit-pr
 libexec/gnats/gnatsd
 libexec/gnats/mail-query
@@ -25,7 +32,17 @@ libexec/gnats/npr-addr
 libexec/gnats/npr-edit
 libexec/gnats/pr-addr
 libexec/gnats/pr-age
+@mode 4555
+@owner _gnats
+libexec/gnats/pr-edit
+@mode
+@owner
 libexec/gnats/pr-mail
+@mode 4555
+@owner _gnats
+libexec/gnats/queue-pr
+@mode
+@owner
 libexec/gnats/rmcat
 @man man/man1/edit-pr.1
 @man man/man1/query-pr.1
@@ -43,11 +60,6 @@ share/examples/gnats/
 share/examples/gnats/gnats-db.conf
 @sample ${SYSCONFDIR}/gnats-db.conf
 @owner _gnats
-@mode 4555
-libexec/gnats/gen-index
-libexec/gnats/pr-edit
-libexec/gnats/queue-pr
-@mode
 share/gnats/
 share/gnats/cygnus
 share/gnats/dist/
@@ -80,5 +92,4 @@ share/gnats/gnats-db/gnats-adm/states
 share/gnats/gnats-db/gnats-adm/submitters
 share/gnats/gnats-db/gnats-queue/
 share/gnats/gnats-db/pending/
-%%www%%
 @extraunexec crontab -u _gnats -r > /dev/null 2>&1
