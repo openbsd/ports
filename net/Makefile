@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2002/04/19 15:13:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.208 2002/04/20 01:42:20 jcs Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -103,6 +103,7 @@
      SUBDIR += nsping
      SUBDIR += ntop
      SUBDIR += ntp
+     SUBDIR += oidentd
      SUBDIR += oproute
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-Net-DNS
@@ -126,6 +127,7 @@
      SUBDIR += pdnsd
      SUBDIR += pop3gwd
      SUBDIR += pptp
+     SUBDIR += proftpd
      SUBDIR += proxy-suite
      SUBDIR += pure-ftpd
      SUBDIR += pure-ftpd,ldap
