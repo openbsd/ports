@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/08 02:39:48 shell Exp $
 
 COMMENT=	"client interface to LDAP servers"
 
@@ -14,11 +14,11 @@ HOMEPAGE=	http://perl-ldap.sourceforge.net/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-BUILD_DEPENDS=	::converters/p5-Convert-ASN1	\
-		::www/p5-URI			\
-		::security/p5-IO-Socket-SSL	\
-		::security/p5-Digest-MD5	\
-		::textproc/p5-XML-Parser
+BUILD_DEPENDS=	:p5-Convert-ASN1->0.07:converters/p5-Convert-ASN1 \
+		:p5-URI->=1.08:www/p5-URI \
+		:p5-IO-Socket-SSL-*:security/p5-IO-Socket-SSL \
+		:p5-Digest-MD5-*:security/p5-Digest-MD5 \
+		:p5-XML-Parser-*:textproc/p5-XML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
