@@ -1,0 +1,4 @@
+Algorithm::MarkovChain implements a class capable of creating a Markov
+chain, and then generating output based on it. 
+
+Please see 'perldoc Algorithm::MarkovChain' for more information.

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/09 05:45:24 kevlo Exp $
+libdata/perl5/site_perl/Algorithm/MarkovChain.pm
+man/man3/Algorithm::MarkovChain.3p
