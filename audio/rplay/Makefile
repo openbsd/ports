@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	rplay - Network audio player   
-# Version required:     3.3.0a1
+# Version required:     3.3.0
 # Date created:		December 4, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/04/10 01:32:02 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/26 03:55:51 angelos Exp $
 #
 
-DISTNAME=       rplay-3.3.0a1
+DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 

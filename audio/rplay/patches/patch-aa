@@ -1,8 +1,8 @@
-*** configure.orig	Thu Feb  1 19:30:38 1996
---- configure	Mon Dec 29 20:39:33 1997
+*** configure.orig	Thu Jun 18 13:29:36 1998
+--- configure	Thu Jun 25 23:21:29 1998
 ***************
-*** 2560,2565 ****
---- 2560,2567 ----
+*** 3239,3244 ****
+--- 3239,3246 ----
   fi
   fi
   
@@ -12,23 +12,19 @@
   if test -z "$RPLAY_TARGET"; then
   	echo 'Sorry, I could not figure out what type of system you have.'
 ***************
-*** 2589,2597 ****
-  
-  
-  if test "$no_x" = "yes" -o "$HAVE_FORMS" = "no"; then
-! 	BUILD_TARGETS="include lib adpcm gsm librplay rplayd rplay rptp doc"
-  else
-! 	BUILD_TARGETS="include lib adpcm gsm librplay rplayd rplay rptp xrplay doc"
+*** 3268,3274 ****
   fi
   
   
---- 2591,2599 ----
+! BUILD_TARGETS="include lib rx adpcm gsm librplay rplayd rplay rptp doc"
   
   
-  if test "$no_x" = "yes" -o "$HAVE_FORMS" = "no"; then
-! 	BUILD_TARGETS="include lib adpcm librplay rplayd rplay rptp doc"
-  else
-! 	BUILD_TARGETS="include lib adpcm librplay rplayd rplay rptp xrplay doc"
+  subdirs="rx"
+--- 3270,3276 ----
   fi
   
   
+! BUILD_TARGETS="include lib rx adpcm librplay rplayd rplay rptp doc"
+  
+  
+  subdirs="rx"
