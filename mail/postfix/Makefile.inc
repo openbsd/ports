@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile.inc,v 1.16 2002/04/19 21:11:57 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2002/05/15 06:20:04 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
 CATEGORIES=	mail
-NEED_VERSION=	1.491
+NEED_VERSION=	1.528
 
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/%SUBDIR%/ \
-		ftp://ftp.merit.edu/postfix/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/mail/postfix/%SUBDIR%/ \
-		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/%SUBDIR%/ \
-		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/%SUBDIR%/
+MASTER_SITE_POSTFIX=\
+		ftp://ftp.porcupine.org/mirrors/postfix-release/ \
+		ftp://ftp.merit.edu/postfix/ \
+		ftp://ftp.sunet.se/pub/unix/mail/postfix/ \
+		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
+		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
 
 DIST_SUBDIR=	postfix
 

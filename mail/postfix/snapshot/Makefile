@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2002/05/15 06:08:10 jakob Exp $
+# $OpenBSD: Makefile,v 1.43 2002/05/15 06:20:04 jakob Exp $
 
 VERSION=	1.1.10
 SNAPSHOT=	20020514
@@ -8,6 +8,6 @@ PKGNAME=	postfix-${VERSION}-${SNAPSHOT}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-MASTER_SITE_SUBDIR=	experimental
+MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 
 .include <bsd.port.mk>
