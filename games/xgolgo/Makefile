@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/10 02:06:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:07 espie Exp $
 #
 
 DISTNAME=	xeyes-g
 PKGNAME=	xgolgo-1.0
 CATEGORIES=	games
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@openbsd.org
 
@@ -16,11 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/misc/
 
-USE_IMAKE=		Yes
-NO_INSTALL_MANPAGES=	Yes
+CONFIGURE_STYLE=imake noman
 
 WRKDIST=	${WRKDIR}/xeyes
-FAKE=			Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/xeyes.man ${PREFIX}/man/man1/xgolgo.1

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/10 00:40:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:21 espie Exp $
 
 DISTNAME=	Canna35b2
 PKGNAME=	cannalib-3.5b2p1
-NEED_VERSION=	1.310
 
 CATEGORIES=	japanese
-NEED_VERSION=	1.300
+NEED_VERSION=	1.310
 
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna35/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:12 espie Exp $
 
 DISTNAME=	aub
 PKGNAME=	aub-2.0.5
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 
-FAKE=		Yes
 WRKDIST=	${WRKDIR}
 
 do-extract:

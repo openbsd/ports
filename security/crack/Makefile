@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/30 09:17:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:21 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/c50a
-FAKE=		Yes
 
 pre-configure:
 .if !defined(USE_DES)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/09/08 10:21:49 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:44:09 espie Exp $
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ LIB_DEPENDS=	xview.3.::x11/xview/lib
 
 WRKSRC=		${WRKDIST}/clients
 USE_X11=	Yes
-FAKE=		Yes
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 post-extract:

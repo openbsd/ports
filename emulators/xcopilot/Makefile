@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:57 espie Exp $
 
 DISTNAME=       xcopilot-0.6.6
 CATEGORIES=     emulators pilot
-FAKE=		Yes
+NEED_VERSION=		1.305
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   http://xcopilot.cuspy.com/build/
 
 USE_X11=	Yes
-
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

@@ -3,12 +3,13 @@
 # Date created:			  Thu Dec 16, 1999
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:06 espie Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 #
 
 DISTNAME=	pchar-1.2
 CATEGORIES=	net
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
@@ -18,9 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-ipv6
-FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pchar ${PREFIX}/sbin

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/10 02:06:59 angelos Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:49 espie Exp $
 
 DISTNAME=	lupe007
 PKGNAME=	lupe-0.07
 CATEGORIES=	x11
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/contrib/misc/
 
 MAINTAINER=	ports@openbsd.org
@@ -14,9 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 XMKMF=		xmkmf
-FAKE=		Yes
 
 WRKDIST=	${WRKDIR}/lupe
 

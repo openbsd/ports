@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/23 03:40:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:07 espie Exp $
 #
 
 DISTNAME=	slirp-1.0c
 CATEGORIES=	net
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 		ftp://freedom.wit.com/misc4/danjo/SLiRP/
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/slirp-1.0c/src
-HAS_CONFIGURE=		Yes
-FAKE=			Yes
+CONFIGURE_STYLE=	simple
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slirp ${PREFIX}/bin

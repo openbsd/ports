@@ -3,13 +3,13 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/07/10 02:06:58 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:44 espie Exp $
 #
 
 DISTNAME=	asclock
 PKGNAME=	asclock-1.0
 CATEGORIES=	x11
-NEED_VERSION=	1.240
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=		applications
 EXTRACT_SUFX=	.tgz
@@ -21,8 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake
 
 FLAVORS=english german portuguese dutch norwegian italian swedish spanish \
 hungarian breton french czech

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/26 23:44:00 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:43:42 espie Exp $
 
 DISTNAME=	AfterStep-1.8.0
 PKGNAME=	afterstep-1.8.0
 CATEGORIES=     x11
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
 HOMEPAGE=	http://www.afterstep.org/

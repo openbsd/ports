@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:12 espie Exp $
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
 
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 
 WRKSRC=${WRKDIST}/src
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 
 post-install:
 	@touch ${PREFIX}/lib/X11/xpat/xpat.log

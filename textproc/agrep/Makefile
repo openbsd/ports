@@ -3,7 +3,7 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:33 espie Exp $
 #
 
 DISTNAME=	agrep-2.04
@@ -23,7 +23,6 @@ MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
 ALL_TARGET=
 MAN1=		agrep.1
-FAKE=		Yes
 MAKE_FLAGS=	CFLAGS=${CFLAGS}
 
 do-install:

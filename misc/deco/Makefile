@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/15 05:33:02 form Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:45 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 DISTNAME=	deco383
 PKGNAME=	deco-3.8.3
 CATEGORIES=	misc
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.cronyx.ru/cronyx/deco/
 EXTRACT_SUFX=	.tgz
 

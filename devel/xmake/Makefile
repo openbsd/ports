@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/05/31 14:47:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:48 espie Exp $
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
 NEED_VERSION=	1.191
-FAKE=		Yes
 
 MAINTAINER=	ports@openbsd.org
 

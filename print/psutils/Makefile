@@ -2,7 +2,7 @@
 # Date created:         17 March 1998
 # Whom:                 mickey@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.9 2000/03/23 04:12:05 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:18 espie Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -57,7 +57,6 @@ FAKE_FLAGS=	\
 	PAPER=${PP} 
 .endfor
 
-FAKE=	Yes
 MAKE_FILE=Makefile.unix
 
 .include <bsd.port.mk>

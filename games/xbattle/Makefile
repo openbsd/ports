@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/07/10 02:06:49 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:02 espie Exp $
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
 MAINTAINER=	ports@openbsd.org
@@ -11,8 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 
 post-install:
 	@mkdir -p $(PREFIX)/share/doc/xbattle

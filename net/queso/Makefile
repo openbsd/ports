@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/09/24 07:04:13 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:07 espie Exp $
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
@@ -12,9 +12,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/queso

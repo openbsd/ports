@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:35 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 DISTNAME=		vrfy_990522
@@ -17,8 +17,6 @@ MASTER_SITES=		ftp://ftp.nikhef.nl/pub/network/
 EXTRACT_SUFX=		.tar.Z
 
 WRKDIST=		${WRKDIR}/
-
-FAKE=			Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/vrfy ${PREFIX}/bin

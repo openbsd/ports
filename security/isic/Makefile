@@ -3,12 +3,12 @@
 # Date created:		24 Jan 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:23 espie Exp $
 
 DISTNAME=	isic-0.05
 
 CATEGORIES=	security
-NEED_VERSION=	 1.301
+NEED_VERSION=	1.305
 
 MASTER_SITES=	http://expert.cc.purdue.edu/~frantzen/
 

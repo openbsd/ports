@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:26 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:42:38 espie Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
@@ -18,7 +18,6 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0
 
 USE_X11=	Yes
-FAKE=		Yes
 
 WRKDIST=		${WRKDIR}/mnm
 

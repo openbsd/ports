@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:31 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:50 espie Exp $
 # Original from: Angelos D. Keromytis
 
 DISTNAME=	mshell
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no explict license"
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
 post-extract:
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	awk '{if (/^#!/) x++} {if(x) print $$0'}| /bin/sh)

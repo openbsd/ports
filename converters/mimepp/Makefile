@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:41:40 espie Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 
 MAKE_FILE=		makefile.unx
 ALL_TARGET=		lib
-FAKE=			Yes
 
 INCLUDE=	address.h addrlist.h binhex.h body.h bodypart.h boyermor.h \
 		config.h datetime.h debug.h disptype.h entity.h enum.h \

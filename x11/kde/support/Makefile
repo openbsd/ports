@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:49 espie Exp $
 
 DISTNAME=	kdesupport-1.1.2	
 CATEGORIES=	x11 converters	
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-libjpeg \
 		--without-libgif \

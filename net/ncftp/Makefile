@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/20 10:04:50 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:04 espie Exp $
 
 DISTNAME=       	ncftp-3.0.1-src
 PKGNAME=		ncftp-3.0.1
 CATEGORIES=		net
-NEED_VERSION=		 1.307
+NEED_VERSION=		1.307
 MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=		shinobi@monkey.org

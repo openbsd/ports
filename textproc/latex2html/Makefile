@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:37 espie Exp $
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
@@ -18,7 +18,6 @@ RUN_DEPENDS=	ppmtogif::graphics/netpbm \
 		gs::print/ghostscript/gnu
 
 NO_BUILD=	Yes
-FAKE=		Yes
 
 DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
 		manual.aux manual.ind manhtml.tex eform.ps changebar.sty \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:02 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:39 espie Exp $
 
 DISTNAME=	btoa-5.2
 PKGNAME=	btoa-5.2.1
@@ -18,7 +18,6 @@ PATCHFILES=	btoa-5.2-patch1.gz
 MAKE_FLAGS=	DESTDIR=${PREFIX}
 MAKE_FILE=	Makefile.sun
 FAKE_FLAGS=	DESTDIR=${WRKINST}${PREFIX}
-FAKE=		Yes
 
 # Turn off the default from bsd.port.mk (-p0), which screws things up
 PATCH_DIST_STRIP=  

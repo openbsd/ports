@@ -3,11 +3,12 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:24 espie Exp $
 
 DISTNAME=	its4-1.0.1
 
 CATEGORIES=	security
+NEED_VERSION=	1.305
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -21,11 +22,9 @@ MIRROR_DISTFILE=no
 
 EXTRACT_SUFX=	.tgz
 
-HAS_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu dest
 
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
-	        --datadir='$${DESTDIR}${PREFIX}/share/its4'
+CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4'
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

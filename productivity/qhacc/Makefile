@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/02 09:06:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 15:43:19 espie Exp $
 
 DISTNAME=	qhacc-0.6.1a
 CATEGORIES=	productivity x11
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 HOMEPAGE=	http://www.ostrich-emulators.cx/~ryan/qhacc/
 MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.ostrich-emulators.cx/qhacc/

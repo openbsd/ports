@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/27 18:17:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:34 espie Exp $
 
 DISTNAME=	tkrat-2.0b9
 CATEGORIES=	mail x11
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www.dtek.chalmers.se/~maf/ratatosk/ \
 		ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
@@ -17,10 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=			Yes
-HAS_CONFIGURE=		Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
-		--with-tcl-bin="${LOCALBASE}/bin" \
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \
 		--with-tcl-include="${LOCALBASE}/include/tcl8.3 \
 			${LOCALBASE}/include/tk8.3"
 

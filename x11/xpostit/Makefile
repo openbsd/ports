@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/06/17 19:02:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:44:05 espie Exp $
 
 DISTNAME=	xpostit3.3.1
 PKGNAME=	xpostit-3.3.1
 CATEGORIES=	x11
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 
 # Not all servers archie could find actually still have it.  Alas, some
 # servers only have the comp.sources.x version, with its distfile named

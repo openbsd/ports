@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/23 03:34:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:09 espie Exp $
 
 DISTNAME=	tcptrace.5.2.1
 PKGNAME=	tcptrace-5.2.1
 CATEGORIES=	net
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
 
 MAINTAINER=	jethro@dqc.org
@@ -13,8 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=gnu
 
 ALL_TARGET=	tcptrace
 WRKDIST=	${WRKDIR}/tcptrace_5.2.1

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:00 espie Exp $
 
 DISTNAME=	netris-0.5
 CATEGORIES=	games
-FAKE=		Yes
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.netris.org/pub/netris/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HAS_CONFIGURE=	Yes
+CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT= Configure
 
 FAKE_FLAGS=DESTDIR=${WRKINST}${PREFIX}/bin

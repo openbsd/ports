@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/05/31 13:42:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:41:38 espie Exp $
 
 DISTNAME=	Seyon-2.14b
 PKGNAME=	seyon-2.14b
 CATEGORIES=	comms x11
-NEED_VERSION=	1.191
-FAKE=		Yes
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 EXTRACT_SUFX=	-tar.Z
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/seyon
 

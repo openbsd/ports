@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/20 13:08:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:43 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       ast53unx
@@ -27,7 +27,6 @@ EXTRACT_AFTER_ARGS=
 DIST_SUBDIR=    astrolog
 ALL_TARGET=     astrolog
 WRKDIST=	${WRKDIR}
-FAKE=		Yes
 
 do-install:
 	-@${INSTALL_DATA_DIR} ${PREFIX}/lib/astrolog

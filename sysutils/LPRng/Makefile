@@ -3,12 +3,12 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.13 2000/06/09 22:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:43:28 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
-NEED_VERSION=		1.210
+NEED_VERSION=		1.305
 
 MAINTAINER=		ports@openbsd.org
 
@@ -23,9 +23,8 @@ EXTRACT_SUFX=		.tgz
 NO_CDROM=		"To many copyrights/licences to verify destribution OK"
 
 HAS_CONFIGURE=		Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
-		--sysconfdir='$${DESTDIR}${SYSCONFDIR}' \
-		--with-sbindir='$${DESTDIR}${PREFIX}/sbin' \
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS=	--with-sbindir='$${DESTDIR}${PREFIX}/sbin' \
 		--with-filterdir='$${DESTDIR}${PREFIX}/libexec/filters' \
 		--with-lpd_conf_path='$${DESTDIR}${SYSCONFDIR}/lpd.conf' \
 		--with-lpd_perms_path='$${DESTDIR}${SYSCONFDIR}/lpd.perms' \

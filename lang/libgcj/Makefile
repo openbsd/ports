@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.9 2000/10/22 14:03:21 espie Exp $
+#	$OpenBSD: Makefile,v 1.10 2000/10/22 15:42:28 espie Exp $
 
 BROKEN=		"sources no longer exist"
 
@@ -11,7 +11,7 @@ BROKEN=		"sources no longer exist"
 #BUILD_DEPENDS+=	autoconf::devel/autoconf
 
 CATEGORIES=	lang
-NEED_VERSION=	 1.230
+NEED_VERSION=	 1.305
 FAKE=No
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
@@ -33,7 +33,7 @@ MASTER_SITES=	ftp://sourceware.cygnus.com/pub/java/
 
 #CFLAGS=		-O2 -g
 CFLAGS=		-O2
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE=gnu
 # If you use egcs-snapshot...
 #CONFIGURE_ENV=	CXX=ec++ CC=egcc
 

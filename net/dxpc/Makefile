@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/10 00:40:53 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 15:42:57 espie Exp $
 
 VERSION=	3.8.0
 DISTNAME=	dxpc-${VERSION}
 CATEGORIES=	net x11
-NEED_VERSION=	 1.309
+NEED_VERSION=	1.309
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

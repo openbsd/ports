@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/08 20:32:35 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 15:43:01 espie Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 DISTNAME=       irc2.10.1
 PKGNAME=        irc-2.10.1
 CATEGORIES=	net
-NEED_VERSION=	1.210
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@openbsd.org
 
@@ -34,7 +34,7 @@ MAN1=           irc.1
 MAN5=           iauth.conf.5
 MAN8=           ircd.8 iauth.8 ircdwatch.8
 
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE=gnu
 
 post-patch:
 	sed -e s,!!SYSLOG_FACILITY!!,$(SYSLOG_FACILITY), $(WRKSRC)/support/config.h.dist > $(WRKSRC)/support/config.h.dist.new

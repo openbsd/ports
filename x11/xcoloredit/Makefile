@@ -3,12 +3,13 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/07/10 02:07:01 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:58 espie Exp $
 #
 
 DISTNAME=	xcoloredit
 PKGNAME=	xcoloredit-1.2
 CATEGORIES=	x11
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 MAN1=		xcoloredit.1
 
 .include <bsd.port.mk>

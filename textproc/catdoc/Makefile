@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:34 espie Exp $
 
 DISTNAME=	catdoc-0.90b4
 CATEGORIES=	textproc
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -16,9 +16,7 @@ MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
 
 RUN_DEPENDS=	wish8.0::x11/tk/8.0
 
-FAKE=           Yes
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_STYLE=gnu dest
 
 #do-install:
 #	${INSTALL_PROGRAM} ${WRKSRC}/catdoc ${PREFIX}/bin

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/20 12:49:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:42:52 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	splitvt-1.6.3
 CATEGORIES=	misc
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
 
@@ -14,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=			Yes
-HAS_CONFIGURE=		Yes
+CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	Configure
 ALL_TARGET=
 

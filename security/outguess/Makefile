@@ -3,20 +3,19 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:25 espie Exp $
 
 DISTNAME=	outguess-0.13b
 
 CATEGORIES=	security
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 
 MASTER_SITES=	http://www.physnet.uni-hamburg.de/provos/ \
 		http://munitions.vipul.net/software/steganography/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 WRKDIST=	${WRKDIR}/outguess
 

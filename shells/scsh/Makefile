@@ -3,12 +3,12 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.9 2000/03/26 01:10:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:28 espie Exp $
 #
 
 DISTNAME=	scsh-0.5.1
 CATEGORIES=	shells lang
-NEED_VERSION=	1.233
+NEED_VERSION=	1.305
 
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
 STRIP=
@@ -21,10 +21,8 @@ PERMIT_DISTFILES_CDROM=	"required to notify authors"
 PERMIT_DISTFILES_FTP=	Yes
 
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_STYLE=	gnu dest
 ALL_TARGET=	enough
-FAKE=		Yes
 MAN1=		scsh.1
 
 post-install:

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:05 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 15:41:45 espie Exp $
 
 DISTNAME=       bison-1.27
 CATEGORIES=	devel
+NEED_VERSION=	1.305
 
 MAINTAINER=	David Leonard <d@openbsd.org>
 
@@ -14,10 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bison
 
-FAKE=		Yes
 SEPARATE_BUILD=concurrent
-HAS_CONFIGURE=	Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 INFO_FILES=	bison.info
 
 # bison installs bison.info*... remove our patch original before installing

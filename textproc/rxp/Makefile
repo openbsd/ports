@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/04 21:50:12 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:38 espie Exp $
 
 DISTNAME=	rxp-1.2
 CATEGORIES=	textproc
@@ -11,8 +11,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
-
-FAKE=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rxp ${PREFIX}/bin

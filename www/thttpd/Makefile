@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/04 21:54:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:41 espie Exp $
 
 DISTNAME=		thttpd-2.20
 CATEGORIES=     	www
-NEED_VERSION=		1.302
+NEED_VERSION=		1.305
 
 HOMEPAGE=		http://www.acme.com/software/thttpd/
 

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:01 espie Exp $
 
 DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games
-FAKE=		Yes
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= games/strategy
 

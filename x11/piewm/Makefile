@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/05 10:26:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:51 espie Exp $
 #
 
 DISTNAME=	piewm
 PKGNAME=	piewm-1.0
 CATEGORIES=	x11
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@OpenBSD.ORG
 
@@ -15,8 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 
 
 # piewm.tar.Z includes and old version of xpm, and also a bunch of .o

@@ -3,11 +3,11 @@
 # Date created:		7 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:42:17 espie Exp $
 
 DISTNAME=	gphoto-0.4.1
 CATEGORIES=	graphics
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 FAKE=No
 
 MASTER_SITES=	ftp://ftp.gphoto.org/projects/gphoto/pub/tar/0.4/
@@ -23,8 +23,6 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		Imlib.19::graphics/imlib \
 		Magick.4::graphics/ImageMagick
 
-GNU_CONFIGURE=	Yes
-
-USE_AUTOCONF=	Yes
+CONFIGURE_STYLE=autoconf
 
 .include <bsd.port.mk>

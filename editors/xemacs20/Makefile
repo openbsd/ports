@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/28 13:20:51 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/10/22 15:41:54 espie Exp $
 
 # use flavors for mule and compface support
 # e.g., make FLAVOR=mule
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 FAKE=		No
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
@@ -42,7 +42,7 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.1::graphics/png
 
 USE_GMAKE=	Yes
-HAS_CONFIGURE=	Yes
+CONFIGURE_STYLE=simple
 
 # Figure out our '${arch}-unknown-openbsd${vers}' string as xemacs
 # expects it to be.  Call it GCCARCH.

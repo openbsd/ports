@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/02 03:01:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 15:42:50 espie Exp $
 
 DISTNAME=		pdmenu_1.2.61
 PKGNAME=		pdmenu-1.2.61
 CATEGORIES=     	misc
-NEED_VERSION=		1.273
+NEED_VERSION=		1.305
 
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
 
@@ -18,10 +18,9 @@ MASTER_SITES=		http://kitenet.net/programs/code/pdmenu/
 
 LIB_DEPENDS=		slang.14::devel/libslang
 
-GNU_CONFIGURE=		Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		SLANG_LIB_LOC=${LOCALBASE}/lib \
 			SLANG_H_LOC=${LOCALBASE}/include/slang.h
-FAKE=			Yes
 FAKE_FLAGS=		INSTALL_PREFIX=${WRKINST}
 WRKDIST=		${WRKDIR}/pdmenu
 

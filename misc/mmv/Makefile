@@ -3,7 +3,7 @@
 # Date created:		June 6 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:31 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:49 espie Exp $
 #
 
 DISTNAME=	mmv
@@ -26,7 +26,6 @@ PERMIT_DISTFILES_FTP=	Yes
 DIST_SUBDIR=	${DISTNAME}
 WRKDIST=	${WRKDIR}
 PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
-FAKE=		Yes
 
 do-extract:
 	@rm -rf ${WRKDIR}

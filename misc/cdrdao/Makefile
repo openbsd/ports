@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 14:03:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 15:42:45 espie Exp $
 
 DISTNAME= 	cdrdao-1.1.3
 CATEGORIES=	audio misc
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www.ping.de/sites/daneb/
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 

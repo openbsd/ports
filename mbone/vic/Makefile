@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/22 14:03:28 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/22 15:42:42 espie Exp $
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -17,7 +17,7 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0
 
 USE_X11=	Yes
-USE_AUTOCONF=	Yes
+CONFIGURE_STYLE=	autoconf
 
 WRKDIST=		${WRKDIR}/vic
 

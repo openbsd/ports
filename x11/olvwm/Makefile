@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/05 16:10:27 ian Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 15:43:50 espie Exp $
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
@@ -23,8 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	xview.3.::x11/xview/lib
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 WRKDIST=	${WRKDIR}

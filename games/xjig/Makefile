@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:08 espie Exp $
 
 DISTNAME=	xjig-2.4
 CATEGORIES=	games
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FILE=	Makefile.Linux
-FAKE=			Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xjig

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:52 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117
 CATEGORIES=	editors
-NEED_VERSION=	1.223
+NEED_VERSION=	1.305
 MASTER_SITES0=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
@@ -27,9 +27,7 @@ FLAVOR?=
 
 PATCH_DIST_STRIP=-p1
 WRKSRC=	${WRKDIR}/${DISTNAME}/build
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
-FAKE=		Yes
+CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"/etc/vi.exrc\"' 
 CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
 

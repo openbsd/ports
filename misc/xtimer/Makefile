@@ -3,12 +3,13 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/07/12 01:48:11 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:54 espie Exp $
 #
 
 DISTNAME=	xtimer-8089
 PKGNAME=	xtimer-0.8089
 CATEGORIES=	misc
+NEED_VERSION=	1.305
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xtimer/
 
 MAINTAINER=	ports@openbsd.org

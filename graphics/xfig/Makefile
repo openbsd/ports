@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/10 02:06:54 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 15:42:20 espie Exp $
 
 DISTNAME=	xfig.3.2.3a
 PKGNAME=	xfig-3.2.3a
 CATEGORIES=	graphics x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/
 MASTER_SITE_SUBDIR= applications/drawing_tools/xfig
 
@@ -19,11 +19,10 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 RUN_DEPENDS=	fig2dev::print/transfig \
 		gv::print/gv
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
 		XFIGLIBDIR=${PREFIX}/lib/X11/xfig 
-FAKE=		Yes
 
 post-patch:
 	perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile

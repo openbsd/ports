@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:43 espie Exp $
 
 PKGNAME=	electricfence-2.0.5
 DISTNAME=	ElectricFence-2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
-FAKE=		Yes
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 

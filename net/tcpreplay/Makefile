@@ -3,12 +3,12 @@
 # Date created:		Oct 18 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:08 espie Exp $
 
 DISTNAME=	tcpreplay-1.0.1
 
 CATEGORIES=	net
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
@@ -22,9 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
 
-GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}'
-FAKE=		Yes
+CONFIGURE_STYLE=gnu dest
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpreplay ${PREFIX}/sbin

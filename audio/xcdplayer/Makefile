@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:47 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:29 espie Exp $
 
 DISTNAME=	xcdplayer-2.2
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
 		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z

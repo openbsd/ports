@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:43:17 espie Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 FAKE=No
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	latex::print/teTeX/base \
 		ispell::textproc/ispell
 LIB_DEPENDS=	xforms::x11/xforms
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=	gnu
 STRIP=
 CONFIGURE_ARGS+=--with-extra-lib=${LOCALBASE}/lib --with-extra-inc="${LOCALBASE}/include ${LOCALBASE}/include/X11"
 

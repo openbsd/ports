@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/16 16:13:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:40 espie Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
@@ -11,7 +11,7 @@ DISTFILES=	mozilla-source-M$M.tar.bz2
 BROKEN=		core dumps in dynamic library constructor
 
 CATEGORIES=	www
-NEED_VERSION=	 1.324
+NEED_VERSION=	1.324
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,9 +1,9 @@
 # $FreeBSD: ports/net/ipfm/Makefile,v 1.2 2000/04/09 18:11:44 cpiazza Exp $
-# $OpenBSD: Makefile,v 1.2 2000/10/09 06:13:36 form Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 15:43:00 espie Exp $
 
 DISTNAME=	ipfm-0.10.4
 CATEGORIES=     net
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes

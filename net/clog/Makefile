@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/21 14:50:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:57 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1997/11/05 11:39:40 obrien Exp $
 
 DISTNAME=	clog-1.6
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/clog
 ALL_TARGET=	freebsd
-FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clog ${PREFIX}/sbin

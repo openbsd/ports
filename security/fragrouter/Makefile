@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:23 espie Exp $
 
 DISTNAME=	fragrouter-1.6
 
 CATEGORIES=	security
+NEED_VERSION=	1.305
 
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 
@@ -14,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fragrouter ${PREFIX}/sbin

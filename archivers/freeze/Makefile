@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/10 19:00:59 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:23 espie Exp $
 
 DISTNAME=       freeze-2.5
 CATEGORIES=	archivers
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/unixfreeware/archive/ \
 		ftp://ftp.warwick.ac.uk/pub/compression/
 

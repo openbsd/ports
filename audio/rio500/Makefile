@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/04 21:54:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:41:27 espie Exp $
 
 DISTNAME=		rio500-0.7
 CATEGORIES=     	audio
-NEED_VERSION=		1.302
+NEED_VERSION=		1.305
 
 MASTER_SITES=		http://download.sourceforge.net/rio500/
 

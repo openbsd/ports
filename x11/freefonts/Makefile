@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 2000/05/17 15:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:47 espie Exp $
 #
 
 DISTNAME=	freefonts-0.10
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 USE_X11=	Yes
-FAKE=		Yes
 NO_BUILD=	Yes
 FREEFONTDIR=	${PREFIX}/lib/X11/fonts
 

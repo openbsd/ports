@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 14:02:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 15:41:28 espie Exp $
 
 DISTNAME=	TekNap-1.0
 PKGNAME=	teknap-1.0
 CATEGORIES=	audio
-NEED_VERSION=	1.270
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.teknap.com/pub/TekNap/
 
 HOMEPAGE=	http://www.TekNap.com/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/10 17:39:27 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 15:41:29 espie Exp $
 
 BROKEN=		spinlocks in a loop if stdin is null
 
 DISTNAME=	xmcd-2.3
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/xmcd

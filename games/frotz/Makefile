@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/23 05:04:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 15:41:59 espie Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
@@ -23,8 +23,6 @@ WRKDIST=		${WRKDIR}/frotz-2.32
 ALL_TARGET=		frotz
 
 CFLAGS+=		-DUSE_UNISTD_H -DCOLOR_SUPPORT -DEMACS_EDITING
-
-FAKE=			Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/frotz ${PREFIX}/bin

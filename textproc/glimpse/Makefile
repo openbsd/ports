@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/26 18:38:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:34 espie Exp $
 #
 
 DISTNAME=	glimpse-4.1
 CATEGORIES=	textproc databases
+NEED_VERSION=	1.305
 
 MAINTAINER=	weingart@openbsd.org
 
@@ -14,9 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 DISTFILES=	glimpse-4.1.src.tar.gz
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}'
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu dest
 
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure

@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:32 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:52 espie Exp $
 #
 
 DISTNAME=	tkinfo-2.5
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	wish8.3::x11/tk/8.3
 
-FAKE=		Yes
 NO_BUILD=	Yes
 
 do-install:

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:53 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:14 espie Exp $
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@openbsd.org
@@ -13,7 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=      Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 
 .include <bsd.port.mk>

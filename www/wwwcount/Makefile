@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/09 06:50:26 form Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 15:43:42 espie Exp $
 
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	http://wwwcount.yeehaw.net/mirror/%SUBDIR%/ \
 		http://mirror.njit.edu/counter/%SUBDIR%/ \
 		http://www.neonramp.com/Count/%SUBDIR%/ \

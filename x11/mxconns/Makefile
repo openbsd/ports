@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/05/15 21:58:40 beck Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:50 espie Exp $
 
 DISTNAME=	mxconns-3.1.4
 CATEGORIES=	x11 security
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	http://c.home.cern.ch/c/cons/www/mxconns/
 
 MAINTAINER=	dbt@meat.net
@@ -14,9 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=    Xm.1::x11/lesstif
 
-HAS_CONFIGURE=  yes
+CONFIGURE_STYLE=	simple
 EXTRACT_SUFX=   .tgz
-FAKE=Yes
 
 do-install:
 	install -c -o root -g bin -m 555 ${WRKBUILD}/mxconns ${PREFIX}/bin/mxconns

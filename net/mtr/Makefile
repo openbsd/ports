@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/04 21:54:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 15:43:04 espie Exp $
 
 DISTNAME=	mtr-0.42
 CATEGORIES=	net
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 

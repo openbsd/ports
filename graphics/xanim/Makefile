@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/10 00:40:34 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:19 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
 DISTNAME=xanim-2.80.1
 WRKDIST=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
-NEED_VERSION=	1.218
+NEED_VERSION=	1.305
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -68,8 +68,7 @@ post-extract:
 post-configure:
 	ln ${WRKSRC}/docs/xanim.man ${WRKSRC}
 
-FAKE=		Yes
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 DOCDIR=${PREFIX}/share/doc/xanim
 
 post-install:

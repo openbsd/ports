@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/09 17:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:42:43 espie Exp $
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
-NEED_VERSION=	1.64
+NEED_VERSION=	1.305
 FAKE=No
 
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \

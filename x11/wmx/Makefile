@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/04 21:54:08 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:54 espie Exp $
 
 DISTNAME=	wmx-6pre6
 PKGNAME=        wmx-6pre6
 CATEGORIES=	x11
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 
 MASTER_SITES=	http://www.all-day-breakfast.com/wmx/
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/

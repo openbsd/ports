@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/04 21:54:05 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:27 espie Exp $
 
 DISTNAME=	stunnel-3.8
 CATEGORIES=	security
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 

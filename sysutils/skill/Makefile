@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/09 18:21:22 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 15:43:30 espie Exp $
 
 DISTNAME=		skill-3.7@P8
 PKGNAME=		skill-3.7.9
@@ -16,10 +16,8 @@ WRKDIST=		${WRKDIR}/${PKGNAME}
 MASTER_SITES=		ftp://jaguar.cs.utah.edu/pub/skill/
 EXTRACT_SUFX=		_tar.Z
 
-FAKE=			yes
-
 do-configure:
-	@(cd ${WRKDIST}; ./Config)
+	@cd ${WRKDIST}; ./Config
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/skill ${PREFIX}/bin

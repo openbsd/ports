@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/05/27 23:33:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:35 espie Exp $
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
-FAKE=		Yes
 
 MAINTAINER=	ports@openbsd.org
 BROKEN="Tmpnam() warning is a genuine problem"

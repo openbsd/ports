@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/05/17 00:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:15 espie Exp $
 
 CATEGORIES=	print
 NEED_VERSION=	1.247
@@ -33,8 +33,6 @@ RUN_DEPENDS=${GSDIR}::print/ghostscript/aladdin
 GSDIR=${PREFIX}/share/ghostscript/5.50
 RUN_DEPENDS=${GSDIR}::print/ghostscript/gnu
 .endif
-
-FAKE=	Yes
 
 pre-fake:
 	mkdir -p ${GSDIR}

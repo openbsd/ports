@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/09 22:22:25 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:29 espie Exp $
 #
 # Based on FreeBSD port by Murray Stokely <murray@cdrom.com>
 
 DISTNAME=	mkhybrid-1.12b5.1
 CATEGORIES=	sysutils
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.ge.ucl.ac.uk/pub/linux/misc/ \
 	ftp://ftp.gwdg.de/pub/linux/misc/mkhybrid/attic/
 
@@ -15,8 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}${SYSCONFDIR}'
+CONFIGURE_STYLE=	gnu dest
 ALL_TARGET=	World
 MAN8=		mkhybrid.8 isoinfo.8
 

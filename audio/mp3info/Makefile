@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:02:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:26 espie Exp $
 
 DISTNAME=	mp3info-0.2.16
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://bimbo.hive.no/pub/mp3info/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/editors

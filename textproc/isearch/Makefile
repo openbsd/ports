@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/21 23:42:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:36 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
 
 #BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
@@ -6,6 +6,7 @@
 DISTNAME=	Isearch-1.14
 PKGNAME=	isearch-1.14	
 CATEGORIES=	textproc databases
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 
 MAINTAINER=	ports@OpenBSD.ORG
@@ -16,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE= 		Yes 
-FAKE=			Yes
+CONFIGURE_STYLE=	gnu
 MAKE_FLAGS=		CFLAGS='${CFLAGS} -DUNIX'
 FAKE_FLAGS=		INSTALL=${WRKINST}${PREFIX}/bin
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 14:03:34 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/22 15:43:01 espie Exp $
 
 DISTNAME=	libnet-1.0.1b
 CATEGORIES=	net
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www.packetfactory.net/Projects/libnet/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/Projects/libnet/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/05 01:30:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:52 espie Exp $
 #
 
 DISTNAME=	sliderule
 PKGNAME=	sliderule-1.0
 CATEGORIES=	x11
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@OpenBSD.ORG
 
@@ -14,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

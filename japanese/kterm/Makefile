@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/11 01:53:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:23 espie Exp $
 #
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

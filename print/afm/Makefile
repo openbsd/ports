@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:14 espie Exp $
 
 DISTNAME=	afm
 PKGNAME=	afm-1.0
@@ -6,7 +6,6 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.Z
 
-FAKE=Yes
 MAINTAINER=	David Leonard <d@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"

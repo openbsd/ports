@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:40 espie Exp $
 
 DISTNAME=       mpack-1.5-src
 PKGNAME=        mpack-1.5
@@ -12,7 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-FAKE=			Yes
 
 MASTER_SITES=   ftp://ftp.andrew.cmu.edu/pub/mpack/
 EXTRACT_SUFX=   .tar.Z

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/10 17:39:29 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:41:31 espie Exp $
 
 BROKEN=	"Obvious tmp race in api/load.c, to fix"
 DISTNAME=	xmp-1.1.5
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/players
 

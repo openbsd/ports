@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:06 espie Exp $
 #
 
 DISTNAME=	xevil1.5
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
 WRKDIST=	${WRKDIR}
 
 .include <bsd.port.mk>

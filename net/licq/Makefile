@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/16 21:38:38 jasoni Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 15:43:02 espie Exp $
 
 DISTNAME=	licq-0.61
 CATEGORIES=	net
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	http://licq.wibble.net/
 
 MAINTAINER=	ports@openbsd.org
@@ -14,11 +14,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	qt::x11/qt
 
-FAKE=		Yes
 USE_GMAKE=	Yes
-HAS_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	QT_MOC="${LOCALBASE}/bin/moc"
-CONFIGURE_ARGS=	--with-qt-includes=${LOCALBASE}/include/X11/qt \
-		--prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_ARGS=	--with-qt-includes=${LOCALBASE}/include/X11/qt
 
 .include <bsd.port.mk>

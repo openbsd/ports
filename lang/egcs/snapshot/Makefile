@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2000/10/10 00:40:47 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2000/10/22 15:42:26 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -11,7 +11,7 @@
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
 CATEGORIES=	lang 
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 

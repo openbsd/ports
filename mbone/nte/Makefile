@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:26 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/22 15:42:39 espie Exp $
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.7.0/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -18,8 +18,7 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0
 
 USE_GMAKE=	Yes
-HAS_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=simple
 
 WRKDIST=		${WRKDIR}/nte
 

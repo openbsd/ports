@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/27 09:03:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:33 espie Exp $
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
@@ -14,13 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=			Yes
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
 pre-install:
-	@(cd ${WRKSRC}/bin && rm -f *.orig)
-
-post-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	@cd ${WRKSRC}/bin && rm -f *.orig
 
 .include <bsd.port.mk>

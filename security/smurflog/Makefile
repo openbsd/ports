@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 14:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:27 espie Exp $
 
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www.nectar.com/distfiles/
 #		http://www.sy.net/security/ \
 #		http://www.bitchx.com/~humble/files/
@@ -14,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.smurflog

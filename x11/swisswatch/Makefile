@@ -3,11 +3,12 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/04/03 20:34:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:52 espie Exp $
 #
 
 DISTNAME=	swisswatch-0.06
 CATEGORIES=	x11
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/X/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
@@ -18,7 +19,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/10 00:40:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 15:42:22 espie Exp $
 
 CATEGORIES=	japanese x11
 DIST_SUBDIR=	ja-fonts
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 
 DISTNAME=		ja-fonts-funet
 

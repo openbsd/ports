@@ -3,12 +3,12 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:44:00 espie Exp $
 #
 
 DISTNAME=	xfce-3.4.4
 CATEGORIES=	x11
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

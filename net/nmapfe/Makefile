@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:05 espie Exp $
 # Original from: Zach Smith <key@aye.net>
 
 DISTNAME=	nmapfe-0.9.5
 CATEGORIES=	net security
-NEED_VERSION=	1.223
+NEED_VERSION=	1.305
 MASTER_SITES=	http://codebox.net/download/
 EXTRACT_SUFX=	.tgz
 
@@ -18,8 +18,7 @@ BUILD_DEPENDS=	nmap:net/nmap
 RUN_DEPENDS=	nmap:net/nmap
 LIB_DEPENDS=	gtk.1.2:x11/gtk+
 
-FAKE=		Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 
 WRKDIST=	${WRKDIR}/nmapfe
 

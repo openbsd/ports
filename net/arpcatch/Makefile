@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/21 14:53:54 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:55 espie Exp $
 
 DISTNAME=	arpcatch
 PKGNAME=	arpcatch
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
-FAKE=		Yes
 ALL_TARGET=
 INSTALL_TARGET=	install
 

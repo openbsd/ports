@@ -3,7 +3,7 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.9 2000/05/26 04:21:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:24 espie Exp $
 #
 
 DISTNAME=	gofer230a
@@ -23,8 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer
-
-FAKE=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${LIBDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/08 22:37:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:41:34 espie Exp $
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
@@ -17,7 +17,6 @@ DISTFILES=		sp3f4.kit.tar.Z sp3f4.patch.tar.Z
 
 USE_X11=		yes
 WRKDIST=		${WRKDIR}
-FAKE=			Yes
 
 # Apply the patches that make this 3f5
 #

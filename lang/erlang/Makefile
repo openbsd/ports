@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:27 espie Exp $
 #
 
 DISTNAME=		erlang-47.4.0
 CATEGORIES=     	lang
-NEED_VERSION=		1.210
+NEED_VERSION=		1.305
 FAKE=No
 
 MAINTAINER=		ports@openbsd.org
@@ -18,7 +18,7 @@ MASTER_SITES=		http://erlang.stacken.kth.se/download/ \
 EXTRACT_SUFX=		.base.tar.gz
 
 USE_GMAKE=		Yes
-USE_AUTOCONF=		Yes
+CONFIGURE_STYLE=	autoconf
 
 ALL_TARGET=		emulator new_libraries
 

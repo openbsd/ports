@@ -3,13 +3,12 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.9 2000/07/10 02:06:56 angelos Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:15 espie Exp $
 #
 
 DISTNAME=	bibview-2.2
 CATEGORIES=	databases print
-NEED_VERSION=	1.191
-#FAKE=No
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
 
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 WRKDIST=	${WRKDIR}/bibview-2.2
 
 .include <bsd.port.mk>

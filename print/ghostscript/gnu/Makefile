@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 13:26:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:16 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
@@ -58,7 +58,6 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 
 MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 FAKE_FLAGS=	${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
-FAKE=		Yes
 
 MAKE_FILE=	unixansi.mak
 MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2ps.1

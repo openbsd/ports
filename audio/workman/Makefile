@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/07/10 02:06:47 angelos Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 15:41:28 espie Exp $
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/WorkMan
 

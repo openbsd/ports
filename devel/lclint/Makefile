@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/10 00:40:29 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/22 15:41:48 espie Exp $
 
 DISTNAME=	lclint-2.5q
 CATEGORIES=	devel
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 MASTER_SITES=	http://lclint.cs.virginia.edu/
 MASTER_SITES0=	http://lclint.cs.virginia.edu/guide/
 
@@ -29,9 +29,7 @@ HOMEPAGE=	http://lclint.cs.virginia.edu/
 BUILD_DEPENDS=	bison::devel/bison
 
 USE_GMAKE=	Yes
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
-FAKE=		Yes
+CONFIGURE_STYLE=gnu dest
 
 DOCDIR=	${PREFIX}/share/doc/${DISTNAME}
 

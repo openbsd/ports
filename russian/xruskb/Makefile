@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/09 06:09:53 form Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/22 15:43:19 espie Exp $
 
 DISTNAME=	xruskb-1.13.0
 CATEGORIES=	russian x11
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>

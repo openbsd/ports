@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/12 17:18:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:41:55 espie Exp $
 
 DISTNAME=	xwpe-1.5.22a
 CATEGORIES=	editors
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.identicalsoftware.com/xwpe/ 
 MASTER_SITE_SUBDIR= apps/editors/X
@@ -16,10 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	xwpe
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I/usr/X11R6/include'
 FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX}
-FAKE=		Yes
 #SEPARATE_BUILD=	simple
 
 post-install:

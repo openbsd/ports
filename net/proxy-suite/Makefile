@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/09/25 07:40:14 camield Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:07 espie Exp $
 
 DISTNAME=	proxy-suite-1.7
 HOMEPAGE=	http://proxy-suite.suse.de
 CATEGORIES=    	net security
+NEED_VERSION=	1.305
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES= \

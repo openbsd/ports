@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/10 02:07:01 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:43:59 espie Exp $
 
 
 DISTNAME=		xdtm-2.5.8
 CATEGORIES=		x11
-NEED_VERSION=		1.191
+NEED_VERSION=		1.305
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=		Yes
-FAKE=			Yes
+CONFIGURE_STYLE=	imake
 WRKDIST=		${WRKDIR}/xdtm
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/04 21:53:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:56 espie Exp $
 
 VERSION=	9.0.0
 DISTNAME=	bind-${VERSION}
 CATEGORIES=	net
-NEED_VERSION=	1.302
+NEED_VERSION=	1.305
 
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
 		ftp://ftp.sunet.se/pub/network/isc/bind9/${VERSION}

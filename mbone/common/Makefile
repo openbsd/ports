@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:26 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 15:42:38 espie Exp $
 
 DISTNAME=       common-1.0.6
 CATEGORIES=	mbone
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES=   http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -17,8 +17,7 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0
 
 USE_GMAKE=	Yes
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=gnu
 
 WRKDIST=		${WRKDIR}/common
 

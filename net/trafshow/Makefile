@@ -3,11 +3,12 @@
 # Date created:         28 Jan 1998
 # Whom:                 mickey
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:11 espie Exp $
 #
 
 DISTNAME=	trafshow-3.1
 CATEGORIES=	net
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
 EXTRACT_SUFX=	.tgz
 
@@ -19,8 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/trafshow

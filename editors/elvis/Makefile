@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/23 12:38:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 15:41:49 espie Exp $
 
 DISTNAME=	elvis-2.1_4
 PKGNAME=	${DISTNAME:S/_/./}
 CATEGORIES=	editors
-NEED_VERSION=	1.303
+NEED_VERSION=	1.305
 
 HOMEPAGE=	http://www.fh-wedel.de/elvis/
 

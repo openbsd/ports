@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/28 23:37:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:49 espie Exp $
 
 DISTNAME=		mc-4.1.35
 CATEGORIES=		misc
+NEED_VERSION=		1.305
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mc
 
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=			No
 
-GNU_CONFIGURE=		Yes
+CONFIGURE_STYLE=	gnu
 
 BROKEN=			"security is bad; auditing on the way"
 

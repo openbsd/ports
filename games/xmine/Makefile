@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/07/10 02:06:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:09 espie Exp $
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3
 CATEGORIES=	games
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@openbsd.org
 
@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 LIB_DEPENDS=    Xaw3d.::x11/Xaw3d
 
-USE_IMAKE=      Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:41 espie Exp $
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20
@@ -15,7 +15,6 @@ MASTER_SITES=   http://www.kostis.net/freeware/
 
 LIBDIR= ${PREFIX}/lib/trans
 ALL= transhtm transiso transce8 transtab checkiso checkuni
-FAKE=			Yes
 
 do-install:
 	cd ${WRKSRC}/src && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:36 espie Exp $
 #
 
 DISTNAME=	calc-2.11.1t3.0
@@ -10,7 +10,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-FAKE=			Yes
 
 HOMEPAGE=	http://reality.sgi.com/chongo/calc
 MAINTAINER=	Niels Provos <provos@openbsd.org>

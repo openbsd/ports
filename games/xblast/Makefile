@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:49 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:03 espie Exp $
 #
 
 DISTNAME=       xblast-2.6.beta
 PKGNAME=	xblast-2.6b
 CATEGORIES=	games
-NEED_VERSION=	1.191
-FAKE=		Yes
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@openbsd.org
 
@@ -22,6 +21,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   http://www.ikp.uni-koeln.de/~vogel/archive/
 
 WRKDIST=	${WRKDIR}/XBlast-2.6.beta
-USE_IMAKE=      Yes
+CONFIGURE_STYLE=imake
 
 .include <bsd.port.mk>

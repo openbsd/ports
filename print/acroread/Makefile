@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:14 espie Exp $
 #
 
 DISTNAME=	linux-ar-40
@@ -28,7 +28,6 @@ WRKDIST=	${WRKDIR}/ILINXR.install
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
-FAKE=Yes
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/Acrobat4
 	@ReadInstallDir=${PREFIX}/Acrobat4 ${WRKSRC}/INSTALL

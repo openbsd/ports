@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/07/10 02:06:57 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:37 espie Exp $
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
 CATEGORIES=	textproc
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
@@ -14,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_MOTIF=	Yes
-USE_IMAKE=      Yes
+CONFIGURE_STYLE=	imake
 
 post-install:
 	@mkdir -p ${PREFIX}/lib/X11/mgdiff

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/07 01:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:43:29 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
 DISTNAME=       cfengine-1.4.12
 CATEGORIES=	sysutils
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@openbsd.org
 
@@ -16,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= cfengine
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_STYLE=	gnu dest
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .include <bsd.port.mk>

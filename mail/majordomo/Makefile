@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/23 20:17:03 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/22 15:42:32 espie Exp $
 
 DISTNAME=		majordomo-1.94.5
 CATEGORIES=     	mail
@@ -25,7 +25,6 @@ MAKE_FLAGS+=		W_MAJORDOMO_CF=majordomo.cf
 MAKE_FLAGS+=		POSIX=""
 ALL_TARGET=		wrapper
 
-FAKE=			Yes
 FAKE_FLAGS=		W_HOME=${WRKINST}${PREFIX}/lib/majordomo
 FAKE_FLAGS+=		MAN=${WRKINST}${PREFIX}/man
 FAKE_FLAGS+=		PERL=/usr/bin/perl

@@ -4,7 +4,7 @@
 DISTNAME=	kinput2-v3
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
-NEED_VERSION=   1.300
+NEED_VERSION=   1.305
 
 LICENSE_TYPE=	NOFEE
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/15 10:53:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/22 15:44:06 espie Exp $
 
 DISTNAME=	XPostitPlus-2.3
 CATEGORIES=	x11
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 

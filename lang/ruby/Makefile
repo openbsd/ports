@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/10 00:40:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:42:30 espie Exp $
 
 VERSION=1.4.6
 DISTNAME=ruby-${VERSION}
@@ -27,7 +27,7 @@ NO_CDROM="st.[ch] is rumored to be public domain, copyright unclear"
 LIB_DEPENDS=tcl83.:${PORTSDIR}/lang/tcl/8.3 \
             tk83.:${PORTSDIR}/x11/tk/8.3
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 SEPARATE_BUILD=	concurrent
 
 CONFIGURE_ENV=YACC=yacc
@@ -35,8 +35,6 @@ CONFIGURE_ARGS=${CONFIGURE_SHARED} \
     --with-tcl-include=${PREFIX}/include/tcl8.3 \
     --with-tk-include=${PREFIX}/include/tk8.3 \
     --with-X11-dir=${X11BASE} 
-
-USE_AUTOCONF=Yes
 
 # Force rebuild of parse.c with yacc
 post-extract: 

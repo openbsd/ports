@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:13 espie Exp $
 
 # The source code for xroach is the same under both directories
 # (4.4BSD-Lite and 4.4BSD-Lite2) on the dist site.
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/cat" BINDIR="${PREFIX}/bin" \
 		DESTDIR="${WRKINST}" BINOWN="root" BINMODE="755"
 

@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:43:05 espie Exp $
 #
 
 BROKEN=		compile errors.
@@ -9,7 +9,7 @@ DISTNAME=	ns-2.1b5
 DISTFILES=	ns-src-2.1b5.tar.gz
 PKGNAME=	ns-2.1b5
 CATEGORIES=	net
-NEED_VERSION=	1.230
+NEED_VERSION=	1.305
 MASTER_SITES= ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/mash.cs.berkeley.edu/dist/vint/ \
 http://www-mash.cs.berkeley.edu/dist/vint/
 
@@ -26,9 +26,8 @@ MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a::devel/tclcl
 RUN_DEPENDS=	${PREFIX}/bin/tclsh8.3::lang/tcl/8.3
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
-FAKE=		Yes
 
 ALL_TARGET=
 

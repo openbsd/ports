@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:28 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:42:41 espie Exp $
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
@@ -13,8 +13,6 @@ PERMIT_DISTFILES_CDROM=	"generally restrictive license"
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gsm.1.0::audio/gsm
-
-FAKE=		Yes
 
 MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 

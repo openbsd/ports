@@ -3,12 +3,12 @@
 # Date created:		14 Dec 1999
 # Whom:			dugsong@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:40 espie Exp $
 
 PKGNAME=	nscache-0.2p1
 
 CATEGORIES=	www
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 FAKE=No
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
@@ -20,8 +20,8 @@ DISTNAME=	nscache-0.2pl1
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
+CONFIGURE_STYLE=autoconf
 
-USE_AUTOCONF=	Yes
 
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/05/19 04:56:47 form Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:03 espie Exp $
 
 DISTNAME=	mirror-2.9
 CATEGORIES=	net
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 MAKE_FILE=	makefile
-FAKE=		Yes
 
 DOCDIR=		${PREFIX}/share/doc/mirror
 DOCS=		copyright.html index.html mirror-faq.html mirror.html \

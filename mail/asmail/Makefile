@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/26 22:03:46 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:30 espie Exp $
 
 DISTNAME=	asmail-0.56
 CATEGORIES=	mail
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gates.enemy.at/pub/
 MASTER_SITE_SUBDIR= asmail 

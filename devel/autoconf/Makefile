@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2000/10/10 00:40:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/10/22 15:41:44 espie Exp $
 
 DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= autoconf
 

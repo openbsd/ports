@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2000/10/22 14:03:10 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2000/10/22 15:41:53 espie Exp $
 
 DISTNAME=	vim-5.7
 CATEGORIES=	editors
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
 		ftp://ftp.oce.nl/pub/vim/unix/  \

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/07/10 02:06:54 angelos Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/22 15:42:20 espie Exp $
 
 DISTNAME=	xpaint-2.5.7
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.301
+NEED_VERSION=	1.305
 MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/
 
 MAINTAINER=	ports@openbsd.org

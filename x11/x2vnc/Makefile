@@ -3,11 +3,12 @@
 # Date created:         12 Jan 2000
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:55 espie Exp $
 
 DISTNAME=	x2vnc-1.0
 
 CATEGORIES=     x11
+NEED_VERSION=	1.305
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.hubbe.net/~hubbe/
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=	imake
 
 ALL_TARGET=	x2vnc
 

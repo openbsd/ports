@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/07/10 02:06:49 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:42:05 espie Exp $
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4
 CATEGORIES=	games
-NEED_VERSION=	1.191
+NEED_VERSION=	1.305
 
 MAINTAINER=	ports@openbsd.org
 
@@ -15,8 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 WRKDIST= ${WRKDIR}/xboing
-FAKE=		Yes
 
 .include <bsd.port.mk>

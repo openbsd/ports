@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:02:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:41:26 espie Exp $
 
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/Berkeley/mpeg2/conformance-bitstreams/audio/mpeg2/software/technical_report/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

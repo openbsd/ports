@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/10/10 00:40:46 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2000/10/22 15:42:27 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -171,7 +171,7 @@ post-patch:
 # configure section
 #
 
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE=gnu
 
 LANGS=c
 .if defined(MAKE_GXX)
@@ -192,8 +192,7 @@ LANGS+=java
 
 CONFIGURE_ENV=LANGUAGES='${LANGS}'  
 
-CONFIGURE_ARGS= --prefix=${PREFIX} \
---verbose --with-gnu-ld --with-gnu-as \
+CONFIGURE_ARGS=--verbose --with-gnu-ld --with-gnu-as \
 --program-transform-name=s,^,e, \
 --disable-subdir-texinfo \
 --disable-nls

@@ -3,15 +3,15 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.13 2000/07/10 02:09:50 angelos Exp $
-# $OpenBSD: Makefile,v 1.13 2000/07/10 02:09:50 angelos Exp $
+# $Id: Makefile,v 1.14 2000/10/22 15:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/22 15:42:47 espie Exp $
 #
 
 DISTNAME=	magicpoint-1.07a
 # question is for localized (i.e. Japanese) version
 PKGNAME?=	magicpoint-1.07a
-CATEGORIES=	misc
-NEED_VERSION=	 1.230
+CATEGORIES=	misc productivity
+NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	ports@openbsd.org
@@ -26,8 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS+=	ttf.1::print/freetype \
 		png.1::graphics/png
 
-USE_IMAKE=	Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=imake gnu
 CONFIGURE_ARGS=	--disable-vflib
 
 post-configure:

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 14:03:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:56 espie Exp $
 #
 
 DISTNAME=		x48-0.4.0
 CATEGORIES=		emulators
+NEED_VERSION=		1.305
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
@@ -14,9 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
 
-FAKE=			Yes
-USE_IMAKE=		Yes
-NO_INSTALL_MANPAGES=	Yes
+CONFIGURE_STYLE=imake noman
 
 post-install:
 	mkdir -p ${PREFIX}/share/x48

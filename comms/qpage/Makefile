@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:00 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:37 espie Exp $
 
 DISTNAME=	qpage-3.3
 CATEGORIES=	comms
-FAKE=		Yes
+NEED_VERSION=	1.305
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
-GNU_CONFIGURE=  yes
+CONFIGURE_STYLE=gnu
 
 pre-install:
 		@mv ${WRKSRC}/example.cf ${WRKSRC}/example-qpage.cf

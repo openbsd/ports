@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/04/06 16:32:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 15:44:04 espie Exp $
 #
 
 DISTNAME=	xmbdfed-4.4
@@ -34,7 +34,5 @@ MAKE_FLAGS=	CFLAGS='${CFLAGS}' STATIC='' \
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xmbdfed ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xmbdfed.man ${PREFIX}/man/man1/xmbdfed.1
-
-FAKE=		Yes
 
 .include <bsd.port.mk>

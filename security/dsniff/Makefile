@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 14:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/22 15:43:22 espie Exp $
 
 DISTNAME=	dsniff-2.2
 
 CATEGORIES=	security
-
 NEED_VERSION=	1.310
 
 MASTER_SITES=	http://www.monkey.org/~dugsong/dsniff/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/30 14:20:09 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 15:42:44 espie Exp $
 
 DISTNAME=	brs.4.00.l1
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=		${WRKDIR}/bible
 ALL_TARGET=		bible
 
-FAKE=		Yes
 MAKE_FLAGS=	DEST=${PREFIX}
 FAKE_FLAGS=	DEST=${WRKINST}${PREFIX}
 

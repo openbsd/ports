@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/07/10 02:06:54 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/22 15:42:35 espie Exp $
 
 DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.305
 
 # xfaces-sounds.tar.gz only in LOCAL_PORTS
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	No
 
 LIB_DEPENDS=	compface::mail/faces
 
-USE_IMAKE=	Yes
+CONFIGURE_STYLE=imake
 
 post-extract:
 	@ln -sf ../sounds ${WRKSRC}

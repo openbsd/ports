@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/23 15:31:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:04 espie Exp $
 #
 
 DISTNAME=		netpipes-4.1.1-export
@@ -16,6 +16,5 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.purplefrog.com/pub/netpipes/
 
 WRKDIST=		${WRKDIR}
-FAKE=			Yes
 
 .include <bsd.port.mk>
