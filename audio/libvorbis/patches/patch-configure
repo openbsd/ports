@@ -1,6 +1,18 @@
-$OpenBSD: patch-configure,v 1.7 2004/09/30 19:39:56 naddy Exp $
+$OpenBSD: patch-configure,v 1.8 2005/01/30 17:12:02 naddy Exp $
 --- configure.orig	Tue Sep 21 01:22:05 2004
-+++ configure	Thu Sep 23 20:23:14 2004
++++ configure	Mon Jan 24 18:06:12 2005
+@@ -2040,9 +2040,9 @@ fi
+ 
+ 
+ 
+-V_LIB_CURRENT=3
++V_LIB_CURRENT=4
+ V_LIB_REVISION=0
+-V_LIB_AGE=3
++V_LIB_AGE=0
+ VF_LIB_CURRENT=4
+ VF_LIB_REVISION=0
+ VF_LIB_AGE=1
 @@ -19245,7 +19245,7 @@ if test -z "$GCC"; then
  		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
  	*)
