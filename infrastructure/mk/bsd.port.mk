@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.304 2000/06/16 23:10:41 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.305 2000/06/16 23:53:40 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -105,6 +105,9 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # WRKBUILD		- The directory where the port is actually built, useful for 
 #                 ports that need a separate directory (default: ${WRKSRC}).
 #				  This is intended for GNU configure.
+# WRKPKG		- Subdirectory of WRKBUILD where package information gets
+#				  generated (default: ${WKRBUILD}/pkg, don't override unless
+#				  it conflicts with existing stuff.
 # WRKINST       - The directory where new ports get installed (default:
 #				  ${WRKDIR}/fake-${ARCH}
 # SEPARATE_BUILD
@@ -698,6 +701,8 @@ WRKBUILD?=		${WRKDIR}/build-${ARCH}${_FEXT}
 WRKBUILD?=		${WRKSRC}
 .endif
 
+WRKPKG?=		${WRKBUILD}/pkg
+
 .if defined(WRKOBJDIR)
 __canonical_PORTSDIR!=	cd ${PORTSDIR}; pwd -P
 __canonical_CURDIR!=	cd ${.CURDIR}; pwd -P
@@ -824,7 +829,7 @@ MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
 DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 # And create the actual files from sources
-${WRKBUILD}/PLIST${SUBPACKAGE}.gen: ${PLIST}
+${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 .  if defined(NO_SHARED_LIBS)
 	@sed -e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
@@ -835,40 +840,43 @@ ${WRKBUILD}/PLIST${SUBPACKAGE}.gen: ${PLIST}
 		${SED_PLIST} >$@.tmp && mv -f $@.tmp $@
 .  endif
 
-${WRKBUILD}/DESCR${SUBPACKAGE}: ${DESCR}
+${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
-
-.if defined(MESSAGE)
-${WRKBUILD}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
-	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
-.endif
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
 # Fill out package command, and package dependencies
-_PKG_PREREQ= ${WRKBUILD}/PLIST${SUBPACKAGE}.gen ${WRKBUILD}/DESCR${SUBPACKAGE} ${COMMENT}
+_PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${COMMENT}
 # Note that if you override PKG_ARGS, you will not get correct dependencies
 .if !defined(PKG_ARGS)
-PKG_ARGS= -v -c '${COMMENT}' -d ${WRKBUILD}/DESCR${SUBPACKAGE}
-PKG_ARGS+=-f ${WRKBUILD}/PLIST${SUBPACKAGE}.gen -p ${PREFIX} 
+PKG_ARGS= -v -c '${COMMENT}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
+PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
 PKG_ARGS+=-P "`cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
-PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
-_PKG_PREREQ+=${PKGDIR}/INSTALL${SUBPACKAGE}
+PKG_ARGS+=		-i ${WRKPKG}/INSTALL${SUBPACKAGE}
+_PKG_PREREQ+=${WRKPKG}/INSTALL${SUBPACKAGE}
+${WRKPKG}/INSTALL${SUBPACKAGE}: ${PKGDIR}/INSTALL${SUBPACKAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .  if exists(${PKGDIR}/DEINSTALL${SUBPACKAGE})
-PKG_ARGS+=		-k ${PKGDIR}/DEINSTALL${SUBPACKAGE}
-_PKG_PREREQ+=${PKGDIR}/DEINSTALL${SUBPACKAGE}
+PKG_ARGS+=		-k ${WRKPKG}/DEINSTALL${SUBPACKAGE}
+_PKG_PREREQ+=${WRKPKG}/DEINSTALL${SUBPACKAGE}
+${WRKPKG}/DEINSTALL${SUBPACKAGE}: ${PKGDIR}/DEINSTALL${SUBPACKAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .  if exists(${PKGDIR}/REQ${SUBPACKAGE})
-PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
-_PKG_PREREQ+=${PKGDIR}/REQ${SUBPACKAGE}
+PKG_ARGS+=		-r ${WRKPKG}/REQ${SUBPACKAGE}
+_PKG_PREREQ+=${WRKPKG}/REQ${SUBPACKAGE}
+${WRKPKG}/REQ${SUBPACKAGE}: ${PKGDIR}/REQ${SUBPACKAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .  if defined(MESSAGE)
-PKG_ARGS+=		-D ${WRKBUILD}/MESSAGE${SUBPACKAGE}
-_PKG_PREREQ+=${WRKBUILD}/MESSAGE${SUBPACKAGE}
+PKG_ARGS+=		-D ${WRKPKG}/MESSAGE${SUBPACKAGE}
+_PKG_PREREQ+=${WRKPKG}/MESSAGE${SUBPACKAGE}
+${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 .  endif
 .endif
 .if ${FAKE:U} == "YES"
@@ -1522,7 +1530,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
-	@mkdir -p ${WRKBUILD}
+	@mkdir -p ${WRKBUILD} ${WRKPKG}
 .if target(pre-configure)
 	@cd ${.CURDIR} && exec ${MAKE} pre-configure
 .endif
@@ -1786,7 +1794,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 # PLIST should normally hold no duplicates.
 # This is left as a warning, because stuff such as @exec %F/%D
 # completion may cause legitimate dups.
-	@duplicates=`sort <${WRKBUILD}/PLIST${SUBPACKAGE}.gen|uniq -d`; \
+	@duplicates=`sort <${WRKPKG}/PLIST${SUBPACKAGE}|uniq -d`; \
 	case "$${duplicates}" in "");; \
 		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
 	esac
