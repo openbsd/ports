@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2003/04/17 10:35:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.54 2003/04/17 22:16:18 wilfried Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -11,7 +11,7 @@ PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
-HOMEPAGE=		http://www.mplayerhq.hu
+HOMEPAGE=		http://www.mplayerhq.hu/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	"patents"
@@ -36,11 +36,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 .include <bsd.own.mk>
 
 .if ${ELF_TOOLCHAIN:L} == "no"
-BUILD_DEPENDS=	:binutils->=2.11.2:devel/binutils/stable
-MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
+BUILD_DEPENDS+=	:binutils->=2.11.2:devel/binutils/stable
+MAKE_ENV+=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
 CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as
 .endif
-LIB_DEPENDS=	png::graphics/png \
+LIB_DEPENDS+=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		mp3lame::audio/lame \
 		ungif,gif::graphics/libungif \
@@ -101,13 +101,13 @@ CONFIGURE_ARGS+=--disable-liblzo
 ERRORS+="Fatal: nonsense combination of flavors"
 .  else
 CONFIGURE_ARGS+=--disable-gui \
-	--disable-gl \
-	--disable-xv \
-	--disable-x11
+		--disable-gl \
+		--disable-xv \
+		--disable-x11
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \
-	--enable-gl
+		--enable-gl
 USE_X11=	Yes
 LIB_DEPENDS+= 	gtk,gdk::x11/gtk+
 .endif
