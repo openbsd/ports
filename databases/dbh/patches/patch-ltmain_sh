@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/12/15 06:00:12 jolan Exp $
---- ltmain.sh.orig	2003-08-29 19:58:21.000000000 -0500
-+++ ltmain.sh	2003-12-02 22:31:19.000000000 -0600
-@@ -5417,8 +5417,8 @@ relink_command=\"$relink_command\""
+$OpenBSD: patch-ltmain_sh,v 1.2 2004/12/26 02:51:52 jolan Exp $
+--- ltmain.sh.orig	Sat Oct  2 10:19:05 2004
++++ ltmain.sh	Tue Nov 16 21:07:34 2004
+@@ -5530,8 +5530,8 @@ relink_command=\"$relink_command\""
  	    for linkname
  	    do
  	      if test "$linkname" != "$realname"; then
