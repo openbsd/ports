@@ -8,3 +8,6 @@ and ${LOCALBASE}/lib/mozilla-plugins.
 
 To disable anti-aliasing (xft) altogether set GDK_USE_XFT=0 in the
 environment.
+
+Known problems:
+- Extensions do not work.
