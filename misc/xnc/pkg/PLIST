@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/31 12:54:27 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/15 17:41:08 espie Exp $
+@pkgcfl es-[0-9]*
 bin/bzip.xnc
 bin/es
 bin/groups.xnc
