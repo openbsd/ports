@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: Makefile,v 1.24 2004/09/24 09:08:22 espie Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -30,5 +30,7 @@ do-install:
 	@chown root:games ${PREFIX}/bin/connect4
 	@chmod 2755 ${PREFIX}/bin/connect4
 	${INSTALL_MAN} ${FILESDIR}/connect4.6 ${PREFIX}/man/man6
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/connect4
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/connect4/connect4.scores
 
 .include <bsd.port.mk>
