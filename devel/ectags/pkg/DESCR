@@ -1,0 +1,12 @@
+Exuberant Ctags is a multilanguage reimplementation of the much-
+underused ctags(1) program. It generates indexes of source code
+definitions which are used by a number of editors and tools.
+
+Support for Assembler, AWK, ASP, BETA, Bourne/Korn/Z Shell, C,
+C++, COBOL, Eiffel, Fortran, Java, Lisp, Makefile, Pascal, Perl,
+PHP, Python, REXX, Ruby, S-Lang, Scheme, Tcl, and Vim is present;
+in particular, the C/C++ parser is far less easily fooled by pre-
+processor conditional constructs than many other ctags(1) imple-
+mentations.
+
+WWW: ${HOMEPAGE}
