@@ -1,15 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/07/28 21:55:12 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/12/27 00:26:17 brad Exp $
 #
-# Pre/post-installation setup of gimp
+# Pre/post-installation setup of Gimp
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}/gimp
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/gimp
+CONFIG_DIR=${CONFDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/gimp/1.2
 
 do_notice()
 {
@@ -26,12 +23,12 @@ do_notice()
 do_install()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gimprc-sample $CONFIG_DIR/gimprc
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gimprc_user-sample $CONFIG_DIR/gimprc_user
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gtkrc-sample $CONFIG_DIR/gtkrc
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gtkrc_user-sample $CONFIG_DIR/gtkrc_user
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/ps-menurc-sample $CONFIG_DIR/ps-menurc
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/unitrc-sample $CONFIG_DIR/unitrc
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gimprc $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gimprc_user $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gtkrc $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gtkrc_user $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/ps-menurc $CONFIG_DIR
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/unitrc $CONFIG_DIR
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed into"
@@ -41,15 +38,11 @@ do_install()
     echo
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
 	: nothing to pre-install for this port

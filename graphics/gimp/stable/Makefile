@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/28 21:55:10 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/27 00:26:17 brad Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
-VERSION=	1.2.3
+VERSION=	1.2.5
 DISTNAME=	gimp-${VERSION}
 CATEGORIES=	graphics
 DIR=		gimp/v1.2/v${VERSION}
@@ -23,30 +23,20 @@ RUN_DEPENDS=	:wget-*:net/wget
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFDIR=	${SYSCONFDIR}/gimp/1.2
+SUBST_VARS=	CONFDIR
+
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-perl
+CONFIGURE_ARGS+= --disable-perl --disable-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-pre-extract:
-	@if [ -f ${LOCALBASE}/lib/libgimp.so.?.? ]; then \
-	   echo "+-------------------"; \
-	   echo "| ERROR: you MUST remove the existing gimp installation"; \
-	   echo "| before compiling this version. To fully remove run"; \
-	   echo "| these commands as user root"; \
-	   echo "|"; \
-	   echo "|      pkg_delete -f `pkg_info -e 'gimp-*'`"; \
-	   echo "|      ldconfig -R"; \
-	   echo "|"; \
-	   echo "+-------------------"; \
-	   exit 1; \
-	fi
 
 .include <bsd.port.mk>

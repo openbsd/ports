@@ -1,6 +1,6 @@
-$OpenBSD: patch-plug-ins_common_gz_c,v 1.1 2002/12/29 00:10:47 pvalchev Exp $
---- plug-ins/common/gz.c.orig	Sat Dec 28 14:57:34 2002
-+++ plug-ins/common/gz.c	Sat Dec 28 14:57:49 2002
+$OpenBSD: patch-plug-ins_common_gz_c,v 1.2 2003/12/27 00:26:17 brad Exp $
+--- plug-ins/common/gz.c.orig	Tue Sep 10 10:19:52 2002
++++ plug-ins/common/gz.c	Fri Feb 14 21:19:28 2003
 @@ -368,7 +368,7 @@ save_image (gchar  *filename,
  	g_message ("gz: dup2 failed: %s\n", g_strerror (errno));
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-plug-ins_common_gz_c,v 1.1 2002/12/29 00:10:47 pvalchev Exp $
        g_message ("gz: exec failed: gzip: %s\n", g_strerror (errno));
        g_free (tmpname);
        _exit(127);
-@@ -486,7 +486,7 @@ load_image (gchar             *filename,
+@@ -488,7 +488,7 @@ load_image (gchar             *filename,
  	}
  
        /* and unzip into it */

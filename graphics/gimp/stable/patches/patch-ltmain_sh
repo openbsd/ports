@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain.sh,v 1.1.1.1 2002/07/28 21:55:10 brad Exp $
---- ltmain.sh.orig	Sun Jul 28 15:41:41 2002
-+++ ltmain.sh	Sun Jul 28 15:45:42 2002
-@@ -1062,6 +1062,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.1 2003/12/27 00:26:17 brad Exp $
+--- ltmain.sh.orig	Mon May 19 18:45:50 2003
++++ ltmain.sh	Thu May 22 00:27:33 2003
+@@ -1082,6 +1082,17 @@ compiler."
  	continue
  	;;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-ltmain.sh,v 1.1.1.1 2002/07/28 21:55:10 brad Exp $
        -module)
  	module=yes
  	continue
-@@ -1747,11 +1758,6 @@ compiler."
+@@ -1767,11 +1778,6 @@ compiler."
  	    continue
  	  fi
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-ltmain.sh,v 1.1.1.1 2002/07/28 21:55:10 brad Exp $
  	  if test -n "$old_archive_from_expsyms_cmds"; then
  	    # figure out the soname
  	    set dummy $library_names
-@@ -4491,40 +4497,6 @@ relink_command=\"$relink_command\""
+@@ -4569,40 +4575,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
