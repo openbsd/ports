@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: check-libs,v 1.1 2001/10/24 11:57:34 espie Exp $
+# $OpenBSD: check-libs,v 1.2 2001/12/31 01:59:39 naddy Exp $
 
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -56,7 +56,7 @@ sub find_library
 
 my $error = 0;
 
-my %registered = map { s/(?:\.\d+)+//; s/\.$//; ($_, 1); }
+my %registered = map { s/.*\///; s/(?:\.\d+)+//; s/\.$//; ($_, 1); }
 	split(/[ ,\n]/, $ENV{'LIB_DEPENDS'});
 
 open(LIBS, '<', shift);
