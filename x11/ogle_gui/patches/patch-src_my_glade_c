@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_my_glade_c,v 1.1.1.1 2002/05/27 14:39:17 espie Exp $
+$OpenBSD: patch-src_my_glade_c,v 1.2 2002/06/15 23:53:50 espie Exp $
 
---- src/my_glade.c.orig	Tue Dec  4 19:36:57 2001
-+++ src/my_glade.c	Mon May 27 16:32:18 2002
-@@ -48,13 +48,58 @@ static void *my_dlsym(void *handle, char
+--- src/my_glade.c.orig	Sun Dec 16 18:50:08 2001
++++ src/my_glade.c	Sun Jun 16 01:13:28 2002
+@@ -48,6 +48,51 @@ static void *my_dlsym(void *handle, char
    return fun;
  }
  
@@ -47,17 +47,20 @@ $OpenBSD: patch-src_my_glade_c,v 1.1.1.1 2002/05/27 14:39:17 espie Exp $
 +}
 +#endif
 +
++#ifndef RTLD_NOW
++#define RTLD_NOW	0
++#endif
++
  // to be called first
  void my_glade_setup ()
  {
-   void *glade_lib;
-   char *home;
- 
--  glade_lib = dlopen (LIBGLADE_LIB, RTLD_NOW);
-+  glade_lib = dlopen (LIBGLADE_LIB, DL_LAZY);
+@@ -60,6 +105,10 @@ void my_glade_setup ()
+     // next, try without path
+     glade_lib = dlopen (LIBGLADE_LIB, RTLD_NOW);
+   }
 +#ifdef __OpenBSD__
 +  if (glade_lib == NULL)
-+      glade_lib = findlibrary(LIBGLADE_LIB);
++      glade_lib = findlibrary(LIBGLADE_LIBDIR "/" LIBGLADE_LIB);
 +#endif
    if (glade_lib == NULL) {
      fprintf(stderr, "Error during dlopen: %s\n", dlerror());
