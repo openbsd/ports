@@ -1,0 +1,87 @@
+$OpenBSD: patch-src_sc2code_libs_uio_hashtable_c,v 1.1 2004/10/16 00:28:22 jolan Exp $
+--- src/sc2code/libs/uio/hashtable.c.orig	Tue Jul  8 13:17:40 2003
++++ src/sc2code/libs/uio/hashtable.c	Fri Oct 15 14:10:12 2004
+@@ -169,8 +169,6 @@ HASHTABLE_(setup)(HASHTABLE_(HashTable) 
+ 			* hashTable->maxFillQuotient);
+ 	hashTable->entries = uio_calloc(hashTable->size,
+ 			sizeof (HASHTABLE_(HashEntry) *));
+-	memset(hashTable->entries, '\0',
+-			hashTable->size * sizeof (HASHTABLE_(HashEntry) *));
+ 	hashTable->numEntries = 0;
+ #ifdef HashTable_PROFILE
+ 	hashTable->numCollisions = 0;
+@@ -232,18 +230,26 @@ nextPower2(uio_uint32 x) {
+ //       there are outstanding iterators.
+ HASHTABLE_(Iterator) *
+ HASHTABLE_(getIterator)(const HASHTABLE_(HashTable) *hashTable) {
+-	HASHTABLE_(Iterator) *result;
++	HASHTABLE_(Iterator) *iterator;
+ 	uio_uint32 i;
+ 
+-	result = uio_malloc(sizeof (HASHTABLE_(Iterator)));
+-	result->hashTable = hashTable;
+-	i = 0;	
+-	while (i < hashTable->size &&
+-			hashTable->entries[i] == NULL)
+-		i++;
+-	result->bucketNr = i;
+-	result->entry = hashTable->entries[i];
+-	return result;
++	iterator = uio_malloc(sizeof (HASHTABLE_(Iterator)));
++	iterator->hashTable = hashTable;
++	
++	// Look for the first used bucket.
++	for (i = 0; i < iterator->hashTable->size; i++) {
++		if (iterator->hashTable->entries[i] != NULL) {
++			// Found a used bucket.
++			iterator->bucketNr = i;
++			iterator->entry = iterator->hashTable->entries[i];
++			return iterator;
++		}
++	}
++
++	// No entries were found.
++	iterator->bucketNr = i;
++	iterator->entry = NULL;
++	return iterator;
+ }
+ 
+ int
+@@ -261,22 +267,29 @@ HASHTABLE_(iteratorValue)(HASHTABLE_(Ite
+ 	return iterator->entry->value;
+ }
+ 
++// Should not be called if the iterator is already past the last entry.
+ HASHTABLE_(Iterator) *
+ HASHTABLE_(iteratorNext)(HASHTABLE_(Iterator) *iterator) {
+ 	uio_uint32 i;
+ 
+-	if (iterator->entry != NULL) {
+-		iterator->entry = iterator->entry->next;
+-		if (iterator->entry != NULL)
++	// If there's another entry in this bucket, use that.
++	iterator->entry = iterator->entry->next;
++	if (iterator->entry != NULL)
++		return iterator;
++
++	// Look for the next used bucket.
++	for (i = iterator->bucketNr + 1; i < iterator->hashTable->size; i++) {
++		if (iterator->hashTable->entries[i] != NULL) {
++			// Found another used bucket.
++			iterator->bucketNr = i;
++			iterator->entry = iterator->hashTable->entries[i];
+ 			return iterator;
++		}
+ 	}
+ 
+-	i = iterator->bucketNr + 1;
+-	while (i < iterator->hashTable->size &&
+-			iterator->hashTable->entries[i] == NULL)
+-		i++;
++	// No more entries were found.
+ 	iterator->bucketNr = i;
+-	iterator->entry = iterator->hashTable->entries[i];
++	iterator->entry = NULL;
+ 	return iterator;
+ }
+ 
