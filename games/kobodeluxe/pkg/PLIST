@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/15 13:43:18 wilfried Exp $
 @group games
 @mode 2555
 bin/kobodl
@@ -120,8 +120,6 @@ share/kobodeluxe/sfx/tububells2.agw
 share/kobodeluxe/sfx/warmpad1.agw
 share/kobodeluxe/sfx/xylophone1.agw
 share/kobodeluxe/sfx/xylophone2.agw
-@exec install -d -m 775 -o root -g games %B/../scores/
-@unexec rm -rf %B/../scores/
 @dirrm share/kobodeluxe/sfx
 @dirrm share/kobodeluxe/gfx
 @dirrm share/kobodeluxe

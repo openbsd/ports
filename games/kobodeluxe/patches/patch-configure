@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
+$OpenBSD: patch-configure,v 1.2 2003/04/15 13:43:18 wilfried Exp $
 --- configure.orig	Fri Jun 14 19:17:58 2002
-+++ configure	Thu Apr 10 03:17:41 2003
++++ configure	Mon Apr 14 14:08:00 2003
 @@ -3478,8 +3478,8 @@ echo $ECHO_N "checking target platform a
  build_macosx_bundle=no
  build_simple_bundle=no
@@ -8,7 +8,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/04/12 15:22:10 espie Exp $
 -DATADIR='$(datadir)/games/kobo-deluxe'
 -SCOREDIR='$(prefix)/games/kobo-deluxe/scores'
 +DATADIR='$(datadir)/kobodeluxe'
-+SCOREDIR='$(datadir)/kobodeluxe/scores'
++SCOREDIR='/var/games/kobodeluxe'
  CONFIGDIR='HOME>>'
  CONFIGFILE='.kobodlrc'
  EXEFILE=kobodl
