@@ -1,13 +1,10 @@
---- configure.orig	Fri Oct 22 16:41:10 1999
-+++ configure	Fri Oct 22 16:42:41 1999
-@@ -1155,6 +1155,19 @@
+--- configure.orig	Mon Mar 20 13:20:42 2000
++++ configure	Tue Sep 26 01:55:45 2000
+@@ -1155,6 +1155,16 @@
  	DSO=FREEBSD
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
 +    alpha-*-openbsd*)
-+	DSO=no
-+	;;
-+    powerpc-*-openbsd*)
 +	DSO=no
 +	;;
 +    *-openbsd*)
@@ -18,5 +15,5 @@
 +	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
 +	;;
      *-linux*)
- 	if [ -r /lib/libc.so.5 ]; then
+ 	if [ -r /lib/libc.so.6 || -r /lib/libc.so.5 ]; then
  	    DSOSUF=so.${DIST_MAJOR}
