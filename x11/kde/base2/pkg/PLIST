@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2002/04/03 16:38:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2002/04/08 18:13:05 naddy Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2360,8 +2360,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/l10n/ag
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
-@dirrm share/locale/C
-@dirrm share/locale
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
