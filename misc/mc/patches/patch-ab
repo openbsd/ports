@@ -1,0 +1,11 @@
+--- src/ext.c.orig	Sun Jan 16 01:20:19 2000
++++ src/ext.c	Sun Jan 16 01:20:38 2000
+@@ -133,7 +133,7 @@ exec_extension (char *filename, char *da
+     /* Note: this has to be done after the getlocalcopy call,
+      * since it uses tmpnam as well
+      */
+-    file_name = strdup (tmpnam (NULL));
++    file_name = strdup (mkstemp (NULL));
+ 
+     if ((cmd_file_fd = open (file_name, O_RDWR | O_CREAT | O_TRUNC | O_EXCL, 0600)) == -1){
+ 	message (1, MSG_ERROR, _(" Can't create temporary command file \n %s "),

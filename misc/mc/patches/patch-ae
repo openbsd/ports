@@ -1,0 +1,11 @@
+--- vfs/extfs.c.orig	Sun Jan 16 01:31:07 2000
++++ vfs/extfs.c	Sun Jan 16 01:31:27 2000
+@@ -749,7 +749,7 @@ static void *extfs_open (char *file, int
+     if (entry->inode->local_filename == NULL) {
+         char *cmd, *archive_name;
+         
+-        entry->inode->local_filename = strdup (tmpnam (NULL));
++        entry->inode->local_filename = strdup (mkstemp (NULL));
+ 	p = extfs_get_path_from_entry (entry);
+ 	q = name_quote (p, 0);
+ 	free (p);

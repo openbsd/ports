@@ -1,0 +1,43 @@
+bin/mc
+bin/mcedit
+bin/mcmfmt
+bin/mcserv
+lib/mc/FAQ
+lib/mc/bin/mcfn_install
+lib/mc/extfs/README
+lib/mc/extfs/a
+lib/mc/extfs/arfs
+lib/mc/extfs/cpio
+lib/mc/extfs/deb
+lib/mc/extfs/extfs.ini
+lib/mc/extfs/ftplist
+lib/mc/extfs/hp48
+lib/mc/extfs/lha
+lib/mc/extfs/lslR
+lib/mc/extfs/rar
+lib/mc/extfs/rpm
+lib/mc/extfs/zip
+lib/mc/extfs/zoo
+lib/mc/mc.ext
+lib/mc/mc.hint
+lib/mc/mc.hlp
+lib/mc/mc.lib
+lib/mc/mc.menu
+lib/mc/term/README.xterm
+lib/mc/term/ansi.ti
+lib/mc/term/linux.ti
+lib/mc/term/vt100.ti
+lib/mc/term/xterm.ad
+lib/mc/term/xterm.tcap
+lib/mc/term/xterm.ti
+man/man1/mc.1
+man/man1/mcedit.1
+man/man8/mcserv.8
+share/locale/es/LC_MESSAGES/mc.mo
+share/locale/fr/LC_MESSAGES/mc.mo
+share/locale/ru/LC_MESSAGES/mc.mo
+@dirrm share/icons/mc
+@dirrm share/icons
+@dirrm lib/mc/term
+@dirrm lib/mc/extfs
+@dirrm lib/mc/bin

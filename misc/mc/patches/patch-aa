@@ -1,0 +1,11 @@
+--- src/user.c.orig	Sun Jan 16 01:19:51 2000
++++ src/user.c	Sun Jan 16 01:20:08 2000
+@@ -497,7 +497,7 @@ void execute_menu_command (char *s)
+     int do_quote;
+     char prompt [80] = "";
+     int  col;
+-    char *file_name = tmpnam (0);
++    char *file_name = mkstemp (0);
+ 
+ #ifdef OS2_NT
+     /* OS/2 and NT requires the command to end in .cmd */
