@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/12/16 14:27:34 grange Exp $
+bin/dskform
+bin/dskid
+bin/dsktrans
+bin/md3serial
+include/libdsk.h
+lib/libdsk.a
+lib/libdsk.la
+man/man1/dskform.1
+man/man1/dskid.1
+man/man1/dsktrans.1
+man/man1/md3serial.1
+share/doc/libdsk/libdsk.pdf
+share/doc/libdsk/libdsk.txt
+%%SHARED%%
+@dirrm share/doc/libdsk

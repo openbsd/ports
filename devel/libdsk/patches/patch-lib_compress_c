@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_compress_c,v 1.1.1.1 2002/12/16 14:27:34 grange Exp $
+--- lib/compress.c.orig	Sun Dec 15 18:48:34 2002
++++ lib/compress.c	Sun Dec 15 18:49:40 2002
+@@ -24,6 +24,7 @@
+ #include "compi.h"
+ #include "comp.h"
+ #include <limits.h>
++#include <unistd.h>
+ /* LibDsk generalised compression support */
+ #ifdef LINUXFLOPPY
+ #include <sys/stat.h>

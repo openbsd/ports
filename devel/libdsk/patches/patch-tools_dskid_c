@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_dskid_c,v 1.1.1.1 2002/12/16 14:27:34 grange Exp $
+--- tools/dskid.c.orig	Sun Dec 15 19:18:59 2002
++++ tools/dskid.c	Thu Apr 11 01:46:42 2002
+@@ -90,7 +90,7 @@ int do_login(char *outfile, char *outtyp
+ 		       "Heads:          %d\n"
+                        "Sectors:      %3d\n"
+                        "First sector: %3d\n"
+-                       "Sector size: %4d\n"
++                       "Sector size: %4ld\n"
+ 		       "Data rate:      %d\n"
+ 		       "Record mode:  %s\n"
+ 		       "R/W gap:     0x%02x\n"

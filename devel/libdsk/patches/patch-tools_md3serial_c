@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_md3serial_c,v 1.1.1.1 2002/12/16 14:27:34 grange Exp $
+--- tools/md3serial.c.orig	Sun Dec 15 18:50:06 2002
++++ tools/md3serial.c	Sun Dec 15 18:50:33 2002
+@@ -24,6 +24,7 @@
+  * floppy disc. */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include "libdsk.h"
+ #include "utilopts.h"
+ 
