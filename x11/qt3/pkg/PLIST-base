@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-base,v 1.2 2003/01/09 23:06:30 espie Exp $
-@pkgcflname qt3-0.*
-@pkgcflname qt3-1.0
-@pkgcflname qt3-1.1
+@comment $OpenBSD: PLIST-base,v 1.3 2003/01/10 09:54:06 pvalchev Exp $
+@pkgcfl qt3-0.*
+@pkgcfl qt3-1.0
+@pkgcfl qt3-1.1
 include/X11/qt3/private/qapplication_p.h
 include/X11/qt3/private/qcolor_p.h
 include/X11/qt3/private/qcom_p.h
