@@ -3,8 +3,3 @@ By clicking on a circle, you can rotate all the lines protuding from
 the circle.
 
 The goal is to make all half-lines connect at the same time.
-
-Usage: circuit [-t] [-6] width height
-
--t: torus map
--6: use hexagons instead of squares.
