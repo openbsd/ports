@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2003/05/29 16:53:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.98 2003/06/14 10:25:00 shell Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -37,6 +37,7 @@
      SUBDIR += p5-Blatte
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
+     SUBDIR += p5-LibXML-Common
      SUBDIR += p5-Libxml
      SUBDIR += p5-Number-Format
      SUBDIR += p5-Pod-Escapes
