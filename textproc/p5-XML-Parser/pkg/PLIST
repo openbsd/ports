@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:06 espie Exp $
+${P5ARCH}/
+${P5ARCH}/XML/
+${P5ARCH}/XML/Parser/
 ${P5ARCH}/XML/Parser.pm
+${P5ARCH}/XML/Parser/Encodings/
 ${P5ARCH}/XML/Parser/Encodings/Japanese_Encodings.msg
 ${P5ARCH}/XML/Parser/Encodings/README
 ${P5ARCH}/XML/Parser/Encodings/big5.enc
@@ -20,17 +24,11 @@ ${P5ARCH}/XML/Parser/Encodings/x-sjis-jisx0221.enc
 ${P5ARCH}/XML/Parser/Encodings/x-sjis-unicode.enc
 ${P5ARCH}/XML/Parser/Expat.pm
 ${P5ARCH}/XML/Parser/LWPExternEnt.pl
-@comment ${P5ARCH}/auto/XML/Parser/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/XML/
+${P5ARCH}/auto/XML/Parser/
+${P5ARCH}/auto/XML/Parser/Expat/
 ${P5ARCH}/auto/XML/Parser/Expat/Expat.bs
 ${P5ARCH}/auto/XML/Parser/Expat/Expat.so
-man/man3p/XML::Parser.3p
-man/man3p/XML::Parser::Expat.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/XML/Parser/Expat
-@dirrm ${P5ARCH}/auto/XML/Parser
-@dirrm ${P5ARCH}/auto/XML
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/XML/Parser/Encodings
-@dirrm ${P5ARCH}/XML/Parser
-@dirrm ${P5ARCH}/XML
-@dirrm ${P5ARCH}
+@man man/man3p/XML::Parser.3p
+@man man/man3p/XML::Parser::Expat.3p

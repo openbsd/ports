@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/06/24 21:39:44 mjc Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:39:33 espie Exp $
 bin/modlogan
+lib/modlogan/
 lib/modlogan/libmla_input_bsdftpd.la
 lib/modlogan/libmla_input_clf.la
 lib/modlogan/libmla_input_cp_ims_login.la
@@ -56,7 +57,8 @@ lib/modlogan/libmla_processor_mail.la
 lib/modlogan/libmla_processor_null.la
 lib/modlogan/libmla_processor_telecom.la
 lib/modlogan/libmla_processor_web.la
-man/man1/modlogan.1
+@man man/man1/modlogan.1
+share/doc/modlogan/
 @comment share/doc/modlogan/Changes-0.7.0.txt
 @comment share/doc/modlogan/Changes-0.8.0.txt
 share/doc/modlogan/faq.txt
@@ -64,62 +66,59 @@ share/doc/modlogan/manual.txt
 share/doc/modlogan/translations.txt
 share/doc/modlogan/using-plugins.txt
 share/doc/modlogan/writing-plugins.txt
+share/examples/modlogan/
+@sample ${SYSCONFDIR}/modlogan/
 share/examples/modlogan/group.extension.conf
+@sample ${SYSCONFDIR}/modlogan/group.extension.conf
 share/examples/modlogan/group.host.conf
+@sample ${SYSCONFDIR}/modlogan/group.host.conf
 share/examples/modlogan/group.os.conf
+@sample ${SYSCONFDIR}/modlogan/group.os.conf
 share/examples/modlogan/group.searchengines.conf
+@sample ${SYSCONFDIR}/modlogan/group.searchengines.conf
 share/examples/modlogan/group.ua.conf
+@sample ${SYSCONFDIR}/modlogan/group.ua.conf
 share/examples/modlogan/group.url.conf
+@sample ${SYSCONFDIR}/modlogan/group.url.conf
 share/examples/modlogan/ignore.searchengines.conf
+@sample ${SYSCONFDIR}/modlogan/ignore.searchengines.conf
 share/examples/modlogan/match.os.conf
+@sample ${SYSCONFDIR}/modlogan/match.os.conf
 share/examples/modlogan/match.searchengines.conf
+@sample ${SYSCONFDIR}/modlogan/match.searchengines.conf
 share/examples/modlogan/match.ua.conf
+@sample ${SYSCONFDIR}/modlogan/match.ua.conf
 share/examples/modlogan/match.useragents.conf
+@sample ${SYSCONFDIR}/modlogan/match.useragents.conf
 share/examples/modlogan/modlogan.conf-dist
+@sample ${SYSCONFDIR}/modlogan/modlogan.conf
 share/examples/modlogan/modlogan.css-dist
+@sample ${SYSCONFDIR}/modlogan/modlogan.css
 share/examples/modlogan/modlogan.def.conf-dist
+@sample ${SYSCONFDIR}/modlogan/modlogan.def.conf
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/modlogan.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/modlogan.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/modlogan.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/modlogan.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/modlogan.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/modlogan.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/modlogan.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/modlogan.mo
 %%SHARED%%
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale
-@dirrm share/examples/modlogan
-@dirrm share/doc/modlogan
-@dirrm lib/modlogan
-@cwd ${SYSCONFDIR}
-@extra modlogan/group.extension.conf
-@extra modlogan/group.host.conf
-@extra modlogan/group.os.conf
-@extra modlogan/group.searchengines.conf
-@extra modlogan/group.ua.conf
-@extra modlogan/group.url.conf
-@extra modlogan/ignore.searchengines.conf
-@extra modlogan/match.os.conf
-@extra modlogan/match.searchengines.conf
-@extra modlogan/match.ua.conf
-@extra modlogan/match.useragents.conf
-@extra modlogan/modlogan.conf
-@extra modlogan/modlogan.css
-@extra modlogan/modlogan.def.conf
-@extra modlogan/

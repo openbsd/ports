@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/09/09 22:41:55 brad Exp $
-man/cat8/lsof.0
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:39:33 espie Exp $
+@man man/cat8/lsof.0
 sbin/lsof
+share/lsof/
 share/lsof/00MANIFEST
 share/lsof/00README
 share/lsof/big_brother.perl5
@@ -15,4 +16,3 @@ share/lsof/list_fields.perl
 share/lsof/shared.perl5
 share/lsof/watch_a_file.perl
 share/lsof/xusers.awk
-@dirrm share/lsof

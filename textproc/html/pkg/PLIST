@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/25 01:51:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:02 espie Exp $
+share/sgml/
+share/sgml/html/
+share/sgml/html/2.0/
 share/sgml/html/2.0/ISOlat1.sgml
 share/sgml/html/2.0/html-1.dtd
 share/sgml/html/2.0/html-1s.dtd
 share/sgml/html/2.0/html-s.dtd
 share/sgml/html/2.0/html.decl
 share/sgml/html/2.0/html.dtd
+share/sgml/html/3.2/
 share/sgml/html/3.2/HTML32.decl
 share/sgml/html/3.2/HTML32.dtd
 share/sgml/html/3.2/ISOlat1.ent
+share/sgml/html/4.0/
 share/sgml/html/4.0/HTML4.decl
 share/sgml/html/4.0/HTMLlat1.ent
 share/sgml/html/4.0/HTMLspecial.ent
@@ -15,6 +20,7 @@ share/sgml/html/4.0/HTMLsymbol.ent
 share/sgml/html/4.0/frameset.dtd
 share/sgml/html/4.0/loose.dtd
 share/sgml/html/4.0/strict.dtd
+share/sgml/html/4.01/
 share/sgml/html/4.01/HTML4.decl
 share/sgml/html/4.01/HTMLlat1.ent
 share/sgml/html/4.01/HTMLspecial.ent
@@ -23,9 +29,3 @@ share/sgml/html/4.01/frameset.dtd
 share/sgml/html/4.01/loose.dtd
 share/sgml/html/4.01/strict.dtd
 share/sgml/html/catalog
-@dirrm share/sgml/html/4.01
-@dirrm share/sgml/html/4.0
-@dirrm share/sgml/html/3.2
-@dirrm share/sgml/html/2.0
-@dirrm share/sgml/html
-@dirrm share/sgml

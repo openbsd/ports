@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/22 17:25:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:44:08 espie Exp $
+share/wdg/
+share/wdg/sgml-lib/
 share/wdg/sgml-lib/15445.dcl
 share/wdg/sgml-lib/15445.dtd
 share/wdg/sgml-lib/HTML3-icons.ent
@@ -29,9 +31,12 @@ share/wdg/sgml-lib/html.dcl
 share/wdg/sgml-lib/html.dtd
 share/wdg/sgml-lib/i18n.dcl
 share/wdg/sgml-lib/i18n.dtd
+share/wdg/sgml-lib/mathml2/
+share/wdg/sgml-lib/mathml2/html/
 share/wdg/sgml-lib/mathml2/html/lat1.ent
 share/wdg/sgml-lib/mathml2/html/special.ent
 share/wdg/sgml-lib/mathml2/html/symbol.ent
+share/wdg/sgml-lib/mathml2/iso8879/
 share/wdg/sgml-lib/mathml2/iso8879/isoamsa.ent
 share/wdg/sgml-lib/mathml2/iso8879/isoamsb.ent
 share/wdg/sgml-lib/mathml2/iso8879/isoamsc.ent
@@ -51,6 +56,7 @@ share/wdg/sgml-lib/mathml2/iso8879/isolat2.ent
 share/wdg/sgml-lib/mathml2/iso8879/isonum.ent
 share/wdg/sgml-lib/mathml2/iso8879/isopub.ent
 share/wdg/sgml-lib/mathml2/iso8879/isotech.ent
+share/wdg/sgml-lib/mathml2/iso9573-13/
 share/wdg/sgml-lib/mathml2/iso9573-13/isoamsa.ent
 share/wdg/sgml-lib/mathml2/iso9573-13/isoamsb.ent
 share/wdg/sgml-lib/mathml2/iso9573-13/isoamsc.ent
@@ -63,6 +69,7 @@ share/wdg/sgml-lib/mathml2/iso9573-13/isomfrk.ent
 share/wdg/sgml-lib/mathml2/iso9573-13/isomopf.ent
 share/wdg/sgml-lib/mathml2/iso9573-13/isomscr.ent
 share/wdg/sgml-lib/mathml2/iso9573-13/isotech.ent
+share/wdg/sgml-lib/mathml2/mathml/
 share/wdg/sgml-lib/mathml2/mathml/mmlalias.ent
 share/wdg/sgml-lib/mathml2/mathml/mmlextra.ent
 share/wdg/sgml-lib/mathml2/mathml2-qname-1.mod
@@ -72,6 +79,7 @@ share/wdg/sgml-lib/wml.xml
 share/wdg/sgml-lib/wml12.dtd
 share/wdg/sgml-lib/wml13.dtd
 share/wdg/sgml-lib/wml_1.1.xml
+share/wdg/sgml-lib/xhtml-basic10/
 share/wdg/sgml-lib/xhtml-basic10/xhtml-arch-1.mod
 share/wdg/sgml-lib/xhtml-basic10/xhtml-attribs-1.mod
 share/wdg/sgml-lib/xhtml-basic10/xhtml-base-1.mod
@@ -103,6 +111,7 @@ share/wdg/sgml-lib/xhtml-basic10/xhtml-symbol.ent
 share/wdg/sgml-lib/xhtml-basic10/xhtml-text-1.mod
 share/wdg/sgml-lib/xhtml-basic10/xml1.dcl
 share/wdg/sgml-lib/xhtml.soc
+share/wdg/sgml-lib/xhtml1/
 share/wdg/sgml-lib/xhtml1/xhtml-lat1.ent
 share/wdg/sgml-lib/xhtml1/xhtml-special.ent
 share/wdg/sgml-lib/xhtml1/xhtml-symbol.ent
@@ -110,18 +119,9 @@ share/wdg/sgml-lib/xhtml1/xhtml1-frameset.dtd
 share/wdg/sgml-lib/xhtml1/xhtml1-strict.dtd
 share/wdg/sgml-lib/xhtml1/xhtml1-transitional.dtd
 share/wdg/sgml-lib/xhtml1/xhtml1.dcl
+share/wdg/sgml-lib/xhtml11/
 share/wdg/sgml-lib/xhtml11/xhtml11-flat.dtd
 share/wdg/sgml-lib/xhtml11/xhtml11-model-1.mod
 share/wdg/sgml-lib/xhtml11/xhtml11.dtd
 share/wdg/sgml-lib/xhtml11/xml1.dcl
 share/wdg/sgml-lib/xhtml11/xml1n.dcl
-@dirrm share/wdg/sgml-lib/xhtml11
-@dirrm share/wdg/sgml-lib/xhtml1
-@dirrm share/wdg/sgml-lib/xhtml-basic10
-@dirrm share/wdg/sgml-lib/mathml2/mathml
-@dirrm share/wdg/sgml-lib/mathml2/iso9573-13
-@dirrm share/wdg/sgml-lib/mathml2/iso8879
-@dirrm share/wdg/sgml-lib/mathml2/html
-@dirrm share/wdg/sgml-lib/mathml2
-@dirrm share/wdg/sgml-lib
-@dirrm share/wdg

@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:06 espie Exp $
+${P5SITE}/XML/Simple/
 ${P5SITE}/XML/Simple.pm
 ${P5SITE}/XML/Simple/FAQ.pod
-@comment ${P5ARCH}/auto/XML/Simple/.packlist
-man/man3p/XML::Simple.3p
-man/man3p/XML::Simple::FAQ.3p
-@comment @dirrm ${P5ARCH}/auto/XML/Simple
-@dirrm ${P5SITE}/XML/Simple
+@man man/man3p/XML::Simple.3p
+@man man/man3p/XML::Simple::FAQ.3p

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/29 21:14:40 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:06 espie Exp $
 bin/xml_grep
 bin/xml_pp
 bin/xml_spellcheck
+${P5SITE}/XML/
+${P5SITE}/XML/Twig/
 ${P5SITE}/XML/Twig.pm
 ${P5SITE}/XML/Twig/XPath.pm
-man/man1/xml_grep.1
-man/man1/xml_pp.1
-man/man1/xml_spellcheck.1
-man/man3p/XML::Twig.3p
-@dirrm ${P5SITE}/XML/Twig
-@dirrm ${P5SITE}/XML
+@man man/man1/xml_grep.1
+@man man/man1/xml_pp.1
+@man man/man1/xml_spellcheck.1
+@man man/man3p/XML::Twig.3p

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/27 23:33:12 jose Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:00 espie Exp $
+lib/tcl8.4/TclXML/
 lib/tcl8.4/TclXML/pkgIndex.tcl
 lib/tcl8.4/TclXML/sgml.tcl
 lib/tcl8.4/TclXML/xml.tcl
+share/doc/TclXML/
 share/doc/TclXML/reference.html
-@dirrm share/doc/TclXML
-@dirrm lib/tcl8.4/TclXML

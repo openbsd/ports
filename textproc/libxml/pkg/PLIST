@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.34 2004/04/06 06:50:34 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.35 2004/09/15 18:44:02 espie Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
+include/libxml2/
+include/libxml2/libxml/
 include/libxml2/libxml/DOCBparser.h
 include/libxml2/libxml/HTMLparser.h
 include/libxml2/libxml/HTMLtree.h
@@ -49,23 +51,29 @@ include/libxml2/libxml/xpathInternals.h
 include/libxml2/libxml/xpointer.h
 lib/libxml2.a
 lib/libxml2.la
+lib/pkgconfig/
 lib/pkgconfig/libxml-2.0.pc
 lib/xml2Conf.sh
-man/man1/xml2-config.1
-man/man1/xmlcatalog.1
-man/man1/xmllint.1
-man/man3/libxml.3
+@man man/man1/xml2-config.1
+@man man/man1/xmlcatalog.1
+@man man/man1/xmllint.1
+@man man/man3/libxml.3
+share/aclocal/
 share/aclocal/libxml.m4
+share/doc/libxml2/
 share/doc/libxml2/Copyright
+share/doc/libxml2/examples/
 share/doc/libxml2/examples/testHTML.c
 share/doc/libxml2/examples/testSAX.c
 share/doc/libxml2/examples/testXPath.c
 share/doc/libxml2/examples/xmllint.c
+share/doc/libxml2/html/
 share/doc/libxml2/html/DOM.gif
 share/doc/libxml2/html/FAQ.html
 share/doc/libxml2/html/Libxml2-Logo-180x168.gif
 share/doc/libxml2/html/Libxml2-Logo-90x34.gif
 share/doc/libxml2/html/encoding.html
+share/doc/libxml2/html/html/
 share/doc/libxml2/html/html/book1.html
 share/doc/libxml2/html/html/home.png
 share/doc/libxml2/html/html/index.html
@@ -122,6 +130,7 @@ share/doc/libxml2/html/libxml.gif
 share/doc/libxml2/html/redhat.gif
 share/doc/libxml2/html/smallfootonly.gif
 share/doc/libxml2/html/structure.gif
+share/doc/libxml2/html/tutorial/
 share/doc/libxml2/html/tutorial/apa.html
 share/doc/libxml2/html/tutorial/apb.html
 share/doc/libxml2/html/tutorial/apc.html
@@ -139,7 +148,9 @@ share/doc/libxml2/html/tutorial/ar01s06.html
 share/doc/libxml2/html/tutorial/ar01s07.html
 share/doc/libxml2/html/tutorial/ar01s08.html
 share/doc/libxml2/html/tutorial/ar01s09.html
+share/doc/libxml2/html/tutorial/images/
 share/doc/libxml2/html/tutorial/images/blank.png
+share/doc/libxml2/html/tutorial/images/callouts/
 share/doc/libxml2/html/tutorial/images/callouts/1.png
 share/doc/libxml2/html/tutorial/images/callouts/10.png
 share/doc/libxml2/html/tutorial/images/callouts/2.png
@@ -175,17 +186,6 @@ share/doc/libxml2/html/tutorial/xmltutorial.pdf
 share/doc/libxml2/html/w3c.png
 share/doc/libxml2/html/xml.html
 %%SHARED%%
-@dirrm share/doc/libxml2/html/tutorial/images/callouts
-@dirrm share/doc/libxml2/html/tutorial/images
-@dirrm share/doc/libxml2/html/tutorial
-@dirrm share/doc/libxml2/html/html
-@dirrm share/doc/libxml2/html
-@dirrm share/doc/libxml2/examples
-@dirrm share/doc/libxml2
-@dirrm share/aclocal
-@dirrm lib/pkgconfig
-@dirrm include/libxml2/libxml
-@dirrm include/libxml2
 @exec rm -f /var/db/xmlcatalog
-@exec xmlcatalog --create --noout /var/db/xmlcatalog
+@exec %D/bin/xmlcatalog --create --noout /var/db/xmlcatalog
 @unexec rm -fr /var/db/xmlcatalog

@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/31 13:51:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:04 espie Exp $
 ${P5SITE}/Text/Autoformat.pm
-@comment ${P5ARCH}/auto/Text/Autoformat/.packlist
-man/man3p/Text::Autoformat.3p
+@man man/man3p/Text::Autoformat.3p
+share/examples/p5-Text-Autoformat/
 share/examples/p5-Text-Autoformat/dot.emacs
 share/examples/p5-Text-Autoformat/dot.vimrc
-@dirrm share/examples/p5-Text-Autoformat
-@comment @dirrm ${P5ARCH}/auto/Text/Autoformat
-@comment @dirrm ${P5ARCH}/auto/Text
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}

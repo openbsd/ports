@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/18 00:20:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:39:33 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Unix/
 ${P5ARCH}/Unix/Syslog.pm
-@comment ${P5ARCH}/auto/Unix/Syslog/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Unix/
+${P5ARCH}/auto/Unix/Syslog/
 ${P5ARCH}/auto/Unix/Syslog/Syslog.bs
 ${P5ARCH}/auto/Unix/Syslog/Syslog.so
 ${P5ARCH}/auto/Unix/Syslog/autosplit.ix
-man/man3p/Unix::Syslog.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Unix/Syslog
-@dirrm ${P5ARCH}/auto/Unix
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Unix
-@dirrm ${P5ARCH}
+@man man/man3p/Unix::Syslog.3p

@@ -1,19 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/02/17 20:50:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:39:34 espie Exp $
 @pkgcfl symon-*
 libexec/symon
 libexec/symux
-man/cat8/symon.0
-man/cat8/symux.0
+@man man/cat8/symon.0
+@man man/cat8/symux.0
+share/examples/symon/
 share/examples/symon/symon.conf
 share/examples/symon/symux.conf
+share/symon/
 share/symon/c_smrrds.sh
 share/symon/c_config.sh
+share/symon/client/
 share/symon/client/getsymonitem.pl
 share/symon/client/SymuxClient.pm
 share/symon/client/SymuxClient.0
-@dirrm share/examples/symon
-@dirrm share/symon/client
-@dirrm share/symon
-@cwd ${SYSCONFDIR}
-@extra symon.conf
-@extraunexec rm -f ${SYSCONFDIR}/symux.conf
+@extra ${SYSCONFDIR}/symon.conf
+@extra ${SYSCONFDIR}/symux.conf

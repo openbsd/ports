@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/08 16:23:47 espie Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/pinfo.info
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:07 espie Exp $
 bin/pinfo
-info/pinfo.info
-man/man1/pinfo.1
+@info info/pinfo.info
+@man man/man1/pinfo.1
 share/locale/cs/LC_MESSAGES/pinfo.mo
 share/locale/de/LC_MESSAGES/pinfo.mo
 share/locale/ja/LC_MESSAGES/pinfo.mo
 share/locale/pl/LC_MESSAGES/pinfo.mo
 share/locale/ru/LC_MESSAGES/pinfo.mo
 share/locale/sv/LC_MESSAGES/pinfo.mo
-@exec install-info --info-dir=%D/info %D/info/pinfo.info

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/31 18:44:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:06 espie Exp $
 bin/fm2ps
 bin/mif2rtf
 bin/pod2sdf
@@ -10,9 +10,10 @@ bin/sdfbatch
 bin/sdfcli
 bin/sdfget
 bin/sdngen
+${P5SITE}/Pod/
 ${P5SITE}/Pod/Diff.pm
 ${P5SITE}/Pod/Sdf.pm
-@comment ${P5ARCH}/auto/SDF/.packlist
+${P5SITE}/sdf/
 ${P5SITE}/sdf/apiperl.pl
 ${P5SITE}/sdf/app.pl
 ${P5SITE}/sdf/app.sdf
@@ -20,6 +21,8 @@ ${P5SITE}/sdf/calc.pl
 ${P5SITE}/sdf/dict.pl
 ${P5SITE}/sdf/filters.pl
 ${P5SITE}/sdf/find.pl
+${P5SITE}/sdf/home/
+${P5SITE}/sdf/home/images/
 ${P5SITE}/sdf/home/images/arrow.bmp
 ${P5SITE}/sdf/home/images/arrow.gif
 ${P5SITE}/sdf/home/images/back.bmp
@@ -97,6 +100,7 @@ ${P5SITE}/sdf/home/images/square_b.gif
 ${P5SITE}/sdf/home/images/text.gif
 ${P5SITE}/sdf/home/images/triangle.gif
 ${P5SITE}/sdf/home/images/txt.gif
+${P5SITE}/sdf/home/locale/
 ${P5SITE}/sdf/home/locale/cz_cz.sdl
 ${P5SITE}/sdf/home/locale/de_de.sdl
 ${P5SITE}/sdf/home/locale/en_au.sdl
@@ -104,15 +108,20 @@ ${P5SITE}/sdf/home/locale/en_ca.sdl
 ${P5SITE}/sdf/home/locale/en_uk.sdl
 ${P5SITE}/sdf/home/locale/en_us.sdl
 ${P5SITE}/sdf/home/locale/ru_ru.sdl
+${P5SITE}/sdf/home/look/
+${P5SITE}/sdf/home/look/fancy/
 ${P5SITE}/sdf/home/look/fancy/fancy.sdm
 ${P5SITE}/sdf/home/look/fancy/manual.sds
 ${P5SITE}/sdf/home/look/fancy/mif.sdn
 ${P5SITE}/sdf/home/look/fancy/pages.sdm
+${P5SITE}/sdf/home/look/infomap/
 ${P5SITE}/sdf/home/look/infomap/infomap.sdm
 ${P5SITE}/sdf/home/look/infomap/mif.sdn
 ${P5SITE}/sdf/home/look/infomap/pages.sdm
+${P5SITE}/sdf/home/look/overhead/
 ${P5SITE}/sdf/home/look/overhead/mif.sdn
 ${P5SITE}/sdf/home/look/overhead/overhead.sdm
+${P5SITE}/sdf/home/look/simple/
 ${P5SITE}/sdf/home/look/simple/admin.sds
 ${P5SITE}/sdf/home/look/simple/covers.sdm
 ${P5SITE}/sdf/home/look/simple/document.sds
@@ -128,13 +137,16 @@ ${P5SITE}/sdf/home/look/simple/pages.sdm
 ${P5SITE}/sdf/home/look/simple/paper.sds
 ${P5SITE}/sdf/home/look/simple/rtf.sdn
 ${P5SITE}/sdf/home/look/simple/simple.sdm
+${P5SITE}/sdf/home/perl/
 ${P5SITE}/sdf/home/perl/catalog.sdf
 ${P5SITE}/sdf/home/perl/oracamel.gif
 ${P5SITE}/sdf/home/perl/perl.sdm
+${P5SITE}/sdf/home/sdf/
 ${P5SITE}/sdf/home/sdf.ini
 ${P5SITE}/sdf/home/sdf/document.reg
 ${P5SITE}/sdf/home/sdf/sdf.sdm
 ${P5SITE}/sdf/home/sdfbatch.ini
+${P5SITE}/sdf/home/stdlib/
 ${P5SITE}/sdf/home/stdlib/A4.fm4
 ${P5SITE}/sdf/home/stdlib/A4.fm5
 ${P5SITE}/sdf/home/stdlib/all.sdg
@@ -185,20 +197,4 @@ ${P5SITE}/sdf/toraw.pl
 ${P5SITE}/sdf/tosgml.pl
 ${P5SITE}/sdf/totxt.pl
 ${P5SITE}/sdf/values.pl
-man/man1/pod2sdf.1
-@dirrm ${P5SITE}/sdf/home/stdlib
-@dirrm ${P5SITE}/sdf/home/sdf
-@dirrm ${P5SITE}/sdf/home/perl
-@dirrm ${P5SITE}/sdf/home/look/simple
-@dirrm ${P5SITE}/sdf/home/look/overhead
-@dirrm ${P5SITE}/sdf/home/look/infomap
-@dirrm ${P5SITE}/sdf/home/look/fancy
-@dirrm ${P5SITE}/sdf/home/look
-@dirrm ${P5SITE}/sdf/home/locale
-@dirrm ${P5SITE}/sdf/home/images
-@dirrm ${P5SITE}/sdf/home
-@dirrm ${P5SITE}/sdf
-@comment @dirrm ${P5ARCH}/auto/SDF
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Pod
+@man man/man1/pod2sdf.1

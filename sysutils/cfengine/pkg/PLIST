@@ -1,17 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/08 14:02:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:39:32 espie Exp $
 @comment doc/
 @comment doc/cfengine-2.1.7p1/
 @info info/cfengine-Anomalies.info
 @info info/cfengine-Reference.info
 @info info/cfengine-Tutorial.info
-man/man8/cfagent.8
-man/man8/cfengine.8
-man/man8/cfenvd.8
-man/man8/cfenvgraph.8
-man/man8/cfexecd.8
-man/man8/cfkey.8
-man/man8/cfrun.8
-man/man8/cfservd.8
+@man man/man8/cfagent.8
+@man man/man8/cfengine.8
+@man man/man8/cfenvd.8
+@man man/man8/cfenvgraph.8
+@man man/man8/cfexecd.8
+@man man/man8/cfkey.8
+@man man/man8/cfrun.8
+@man man/man8/cfservd.8
 sbin/cfagent
 sbin/cfdoc
 sbin/cfenvd

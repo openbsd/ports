@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/02/13 17:25:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:39:32 espie Exp $
 @pkgcfl cdrecord-*
 bin/cdda2wav
 bin/cdrecord
@@ -22,16 +22,16 @@ bin/readcd
 @comment lib/libscg.a
 @comment lib/libschily.a
 @comment lib/libunls.a
-@comment man/man1/cdda2ogg.1
-man/man1/cdda2wav.1
-man/man1/cdrecord.1
-man/man1/devdump.1
-man/man1/isoinfo.1
-man/man1/isovfy.1
-@comment man/man1/mkhybrid.1
-man/man1/mkisofs.1
-man/man1/readcd.1
-@comment man/man1/scgcheck.1
+@comment @man man/man1/cdda2ogg.1
+@man man/man1/cdda2wav.1
+@man man/man1/cdrecord.1
+@man man/man1/devdump.1
+@man man/man1/isoinfo.1
+@man man/man1/isovfy.1
+@comment @man man/man1/mkhybrid.1
+@man man/man1/mkisofs.1
+@man man/man1/readcd.1
+@comment @man man/man1/scgcheck.1
 @comment sbin/rscsi
+share/doc/cdrtools/
 share/doc/cdrtools/README.OpenBSD
-@dirrm share/doc/cdrtools

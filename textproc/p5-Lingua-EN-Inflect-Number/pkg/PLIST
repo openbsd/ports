@@ -1,11 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/17 19:36:22 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:04 espie Exp $
+${P5SITE}/Lingua/EN/Inflect/
 ${P5SITE}/Lingua/EN/Inflect/Number.pm
-@comment ${P5ARCH}/auto/Lingua/EN/Inflect/Number/.packlist
-man/man3p/Lingua::EN::Inflect::Number.3p
-@comment @dirrm ${P5ARCH}/auto/Lingua/EN/Inflect/Number
-@comment @dirrm ${P5ARCH}/auto/Lingua/EN/Inflect
-@comment @dirrm ${P5ARCH}/auto/Lingua/EN
-@comment @dirrm ${P5ARCH}/auto/Lingua
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Lingua/EN/Inflect
+@man man/man3p/Lingua::EN::Inflect::Number.3p

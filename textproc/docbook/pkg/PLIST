@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/20 01:35:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:01 espie Exp $
 share/sgml/catalog
+share/sgml/docbook/2.4.1/
 share/sgml/docbook/2.4.1/241chg.txt
 share/sgml/docbook/2.4.1/announce.txt
 share/sgml/docbook/2.4.1/calstbl.mod
@@ -29,6 +30,7 @@ share/sgml/docbook/2.4.1/iso-lat2.gml
 share/sgml/docbook/2.4.1/iso-num.gml
 share/sgml/docbook/2.4.1/iso-pub.gml
 share/sgml/docbook/2.4.1/iso-tech.gml
+share/sgml/docbook/3.0/
 share/sgml/docbook/3.0/30chg.txt
 share/sgml/docbook/3.0/40issues.txt
 share/sgml/docbook/3.0/announce.txt
@@ -40,6 +42,7 @@ share/sgml/docbook/3.0/dbpool.mod
 share/sgml/docbook/3.0/docbook.cat
 share/sgml/docbook/3.0/docbook.dcl
 share/sgml/docbook/3.0/docbook.dtd
+share/sgml/docbook/3.1/
 share/sgml/docbook/3.1/31chg.txt
 share/sgml/docbook/3.1/40issues.txt
 share/sgml/docbook/3.1/50issues.txt
@@ -55,6 +58,7 @@ share/sgml/docbook/3.1/docbook.cat
 share/sgml/docbook/3.1/docbook.dcl
 share/sgml/docbook/3.1/docbook.dtd
 share/sgml/docbook/3.1/readme.txt
+share/sgml/docbook/4.0/
 share/sgml/docbook/4.0/40chg.txt
 share/sgml/docbook/4.0/50issues.txt
 share/sgml/docbook/4.0/cals-tbl.dtd
@@ -68,6 +72,7 @@ share/sgml/docbook/4.0/docbook.cat
 share/sgml/docbook/4.0/docbook.dcl
 share/sgml/docbook/4.0/docbook.dtd
 share/sgml/docbook/4.0/readme.txt
+share/sgml/docbook/4.1/
 share/sgml/docbook/4.1/40chg.txt
 share/sgml/docbook/4.1/41chg.txt
 share/sgml/docbook/4.1/50issues.txt
@@ -84,7 +89,11 @@ share/sgml/docbook/4.1/docbook.dcl
 share/sgml/docbook/4.1/docbook.dtd
 share/sgml/docbook/4.1/readme.txt
 share/sgml/docbook/catalog
+share/xml/
 share/xml/catalog
+share/xml/docbook/
+share/xml/docbook/4.1/
+share/xml/docbook/4.1.2/
 share/xml/docbook/4.1.2/40chg.txt
 share/xml/docbook/4.1.2/41chg.txt
 share/xml/docbook/4.1.2/calstblx.dtd
@@ -96,6 +105,7 @@ share/xml/docbook/4.1.2/dbnotnx.mod
 share/xml/docbook/4.1.2/dbpoolx.mod
 share/xml/docbook/4.1.2/docbook.cat
 share/xml/docbook/4.1.2/docbookx.dtd
+share/xml/docbook/4.1.2/ent/
 share/xml/docbook/4.1.2/ent/iso-amsa.ent
 share/xml/docbook/4.1.2/ent/iso-amsb.ent
 share/xml/docbook/4.1.2/ent/iso-amsc.ent
@@ -128,6 +138,7 @@ share/xml/docbook/4.1/dbnotnx.mod
 share/xml/docbook/4.1/dbpoolx.mod
 share/xml/docbook/4.1/docbook.cat
 share/xml/docbook/4.1/docbookx.dtd
+share/xml/docbook/4.1/ent/
 share/xml/docbook/4.1/ent/iso-amsa.ent
 share/xml/docbook/4.1/ent/iso-amsb.ent
 share/xml/docbook/4.1/ent/iso-amsc.ent
@@ -149,6 +160,7 @@ share/xml/docbook/4.1/ent/iso-pub.ent
 share/xml/docbook/4.1/ent/iso-tech.ent
 share/xml/docbook/4.1/readme.txt
 share/xml/docbook/4.1/soextblx.dtd
+share/xml/docbook/4.2/
 share/xml/docbook/4.2/calstblx.dtd
 share/xml/docbook/4.2/catalog
 share/xml/docbook/4.2/catalog.xml
@@ -159,6 +171,7 @@ share/xml/docbook/4.2/dbnotnx.mod
 share/xml/docbook/4.2/dbpoolx.mod
 share/xml/docbook/4.2/docbook.cat
 share/xml/docbook/4.2/docbookx.dtd
+share/xml/docbook/4.2/ent/
 share/xml/docbook/4.2/ent/iso-amsa.ent
 share/xml/docbook/4.2/ent/iso-amsb.ent
 share/xml/docbook/4.2/ent/iso-amsc.ent
@@ -181,21 +194,6 @@ share/xml/docbook/4.2/ent/iso-tech.ent
 share/xml/docbook/4.2/soextblx.dtd
 share/xml/docbook/catalog
 share/xml/docbook/catalog.xml
-@dirrm share/xml/docbook/4.2/ent
-@dirrm share/xml/docbook/4.2
-@dirrm share/xml/docbook/4.1/ent
-@dirrm share/xml/docbook/4.1.2/ent
-@dirrm share/xml/docbook/4.1.2
-@dirrm share/xml/docbook/4.1
-@dirrm share/xml/docbook
-@dirrm share/xml
-@dirrm share/sgml/docbook/4.1
-@dirrm share/sgml/docbook/4.0
-@dirrm share/sgml/docbook/3.1
-@dirrm share/sgml/docbook/3.0
-@dirrm share/sgml/docbook/2.4.1
-@dirrm share/sgml/docbook
-@dirrm share/sgml
 @exec %D/bin/xmlcatalog --noout --add "delegatePublic" "-//OASIS//ENTITIES DocBook XML" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
 @exec %D/bin/xmlcatalog --noout --add "delegatePublic" "-//OASIS//DTD DocBook XML" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog
 @exec %D/bin/xmlcatalog --noout --add "delegateSystem" "http://www.oasis-open.org/docbook/" "file://%D/share/xml/docbook/catalog.xml" /var/db/xmlcatalog

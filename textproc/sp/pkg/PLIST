@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/28 21:20:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:08 espie Exp $
 bin/nsgmls
 bin/sgmlnorm
 bin/spam
 bin/spent
 bin/sx
+include/sp/
 include/sp/Allocator.h
 include/sp/ArcEngine.h
 include/sp/Attribute.h
+include/sp/Attribute.h.orig
 include/sp/Attributed.h
 include/sp/Big5CodingSystem.h
 include/sp/Boolean.h
@@ -137,6 +139,7 @@ include/sp/XMLCodingSystem.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
+include/sp/config.h.orig
 include/sp/constant.h
 include/sp/macros.h
 include/sp/rtti.h
@@ -144,6 +147,7 @@ include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
 lib/libsp.a
+share/doc/sp/
 share/doc/sp/archform.htm
 share/doc/sp/build.htm
 share/doc/sp/catalog.htm
@@ -163,5 +167,3 @@ share/doc/sp/sx.htm
 share/doc/sp/sysdecl.htm
 share/doc/sp/sysid.htm
 share/doc/sp/xml.htm
-@dirrm share/doc/sp
-@dirrm include/sp

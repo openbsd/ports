@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:03 espie Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Grove/
 ${P5SITE}/Data/Grove.pm
 ${P5SITE}/Data/Grove/Parent.pm
 ${P5SITE}/Data/Grove/Visitor.pm
+${P5SITE}/XML/
 ${P5SITE}/XML/ESISParser.pm
+${P5SITE}/XML/Handler/
 ${P5SITE}/XML/Handler/CanonXMLWriter.pm
 ${P5SITE}/XML/Handler/Sample.pm
 ${P5SITE}/XML/Handler/Subs.pm
 ${P5SITE}/XML/Handler/XMLWriter.pm
+${P5SITE}/XML/Parser/
 ${P5SITE}/XML/Parser/PerlSAX.pm
+${P5SITE}/XML/PatAct/
 ${P5SITE}/XML/PatAct/ActionTempl.pm
 ${P5SITE}/XML/PatAct/Amsterdam.pm
 ${P5SITE}/XML/PatAct/MatchName.pm
@@ -15,27 +21,19 @@ ${P5SITE}/XML/PatAct/PatternTempl.pm
 ${P5SITE}/XML/PatAct/ToObjects.pm
 ${P5SITE}/XML/Perl2SAX.pm
 ${P5SITE}/XML/SAX2Perl.pm
-@comment ${P5ARCH}/auto/libxml-perl/.packlist
-man/man3p/Data::Grove.3p
-man/man3p/Data::Grove::Parent.3p
-man/man3p/Data::Grove::Visitor.3p
-man/man3p/XML::ESISParser.3p
-man/man3p/XML::Handler::CanonXMLWriter.3p
-man/man3p/XML::Handler::Sample.3p
-man/man3p/XML::Handler::Subs.3p
-man/man3p/XML::Handler::XMLWriter.3p
-man/man3p/XML::Parser::PerlSAX.3p
-man/man3p/XML::PatAct::ActionTempl.3p
-man/man3p/XML::PatAct::Amsterdam.3p
-man/man3p/XML::PatAct::MatchName.3p
-man/man3p/XML::PatAct::PatternTempl.3p
-man/man3p/XML::PatAct::ToObjects.3p
-man/man3p/XML::Perl2SAX.3p
-man/man3p/XML::SAX2Perl.3p
-@comment @dirrm ${P5ARCH}/auto/libxml-perl
-@dirrm ${P5SITE}/XML/PatAct
-@dirrm ${P5SITE}/XML/Parser
-@dirrm ${P5SITE}/XML/Handler
-@dirrm ${P5SITE}/XML
-@dirrm ${P5SITE}/Data/Grove
-@dirrm ${P5SITE}/Data
+@man man/man3p/Data::Grove.3p
+@man man/man3p/Data::Grove::Parent.3p
+@man man/man3p/Data::Grove::Visitor.3p
+@man man/man3p/XML::ESISParser.3p
+@man man/man3p/XML::Handler::CanonXMLWriter.3p
+@man man/man3p/XML::Handler::Sample.3p
+@man man/man3p/XML::Handler::Subs.3p
+@man man/man3p/XML::Handler::XMLWriter.3p
+@man man/man3p/XML::Parser::PerlSAX.3p
+@man man/man3p/XML::PatAct::ActionTempl.3p
+@man man/man3p/XML::PatAct::Amsterdam.3p
+@man man/man3p/XML::PatAct::MatchName.3p
+@man man/man3p/XML::PatAct::PatternTempl.3p
+@man man/man3p/XML::PatAct::ToObjects.3p
+@man man/man3p/XML::Perl2SAX.3p
+@man man/man3p/XML::SAX2Perl.3p

@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/10/06 13:01:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:08 espie Exp $
 bin/texi2html
-@unexec install-info --delete --info-dir=%D/info %D/info/texi2html.info
-info/texi2html.info
-@exec install-info --info-dir=%D/info %D/info/texi2html.info
-man/man1/texi2html.1
+@info info/texi2html.info
+@man man/man1/texi2html.1
+share/doc/texi2html/
 share/doc/texi2html/texi2html.html
-@dirrm share/doc/texi2html

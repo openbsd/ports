@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/06/19 22:16:23 jakob Exp $
-man/man5/syslog-ng.conf.5
-man/man8/syslog-ng.8
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:39:34 espie Exp $
+@man man/man5/syslog-ng.conf.5
+@man man/man8/syslog-ng.8
 sbin/syslog-ng
+share/doc/syslog-ng/
+share/doc/syslog-ng/syslog-ng.html/
 share/doc/syslog-ng/syslog-ng.html/book1.html
 share/doc/syslog-ng/syslog-ng.html/destinations.html
 share/doc/syslog-ng/syslog-ng.html/index.html
@@ -20,7 +22,5 @@ share/doc/syslog-ng/syslog-ng.html/x97.html
 share/doc/syslog-ng/syslog-ng.ps
 share/doc/syslog-ng/syslog-ng.sgml
 share/doc/syslog-ng/syslog-ng.txt
+share/examples/syslog-ng/
 share/examples/syslog-ng/syslog-ng.conf.sample
-@dirrm share/examples/syslog-ng
-@dirrm share/doc/syslog-ng/syslog-ng.html
-@dirrm share/doc/syslog-ng

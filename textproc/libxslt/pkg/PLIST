@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/04/08 06:32:43 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/09/15 18:44:03 espie Exp $
 bin/xslt-config
 bin/xsltproc
+include/libexslt/
 include/libexslt/exslt.h
 include/libexslt/exsltconfig.h
 include/libexslt/exsltexports.h
+include/libxslt/
 include/libxslt/attributes.h
 include/libxslt/documents.h
 include/libxslt/extensions.h
@@ -28,13 +30,17 @@ lib/libexslt.a
 lib/libexslt.la
 lib/libxslt.a
 lib/libxslt.la
+lib/pkgconfig/
 lib/pkgconfig/libexslt.pc
 lib/pkgconfig/libxslt.pc
 lib/xsltConf.sh
-man/man1/xsltproc.1
-man/man3/libexslt.3
-man/man3/libxslt.3
+@man man/man1/xsltproc.1
+@man man/man3/libexslt.3
+@man man/man3/libxslt.3
+share/aclocal/
 share/aclocal/libxslt.m4
+share/doc/libxslt/
+share/doc/libxslt/html/
 share/doc/libxslt/html/API.html
 share/doc/libxslt/html/APIchunk0.html
 share/doc/libxslt/html/APIchunk1.html
@@ -50,7 +56,14 @@ share/doc/libxslt/html/APIconstructors.html
 share/doc/libxslt/html/APIfiles.html
 share/doc/libxslt/html/APIfunctions.html
 share/doc/libxslt/html/APIsymbols.html
-share/doc/libxslt/html/EXSLT/exslt.html
+@comment share/doc/libxslt/html/EXSLT/
+@comment share/doc/libxslt/html/EXSLT/bugs.html
+@comment share/doc/libxslt/html/EXSLT/docs.html
+@comment share/doc/libxslt/html/EXSLT/downloads.html
+@comment share/doc/libxslt/html/EXSLT/exslt.html
+@comment share/doc/libxslt/html/EXSLT/help.html
+@comment share/doc/libxslt/html/EXSLT/index.html
+@comment share/doc/libxslt/html/EXSLT/intro.html
 share/doc/libxslt/html/FAQ.html
 share/doc/libxslt/html/Libxslt-Logo-180x168.gif
 share/doc/libxslt/html/Libxslt-Logo-90x34.gif
@@ -62,6 +75,7 @@ share/doc/libxslt/html/docs.html
 share/doc/libxslt/html/downloads.html
 share/doc/libxslt/html/extensions.html
 share/doc/libxslt/html/help.html
+share/doc/libxslt/html/html/
 share/doc/libxslt/html/html/book1.html
 share/doc/libxslt/html/html/home.png
 share/doc/libxslt/html/html/index.html
@@ -100,6 +114,7 @@ share/doc/libxslt/html/redhat.gif
 share/doc/libxslt/html/smallfootonly.gif
 share/doc/libxslt/html/stylesheet.gif
 share/doc/libxslt/html/templates.gif
+share/doc/libxslt/html/tutorial/
 share/doc/libxslt/html/tutorial/libxslt_tutorial.c
 share/doc/libxslt/html/tutorial/libxslttutorial.html
 share/doc/libxslt/html/tutorial/libxslttutorial.xml
@@ -107,10 +122,3 @@ share/doc/libxslt/html/xslt.html
 share/doc/libxslt/html/xsltproc.html
 share/doc/libxslt/html/xsltproc2.html
 %%SHARED%%
-@dirrm share/doc/libxslt/html/tutorial
-@dirrm share/doc/libxslt/html/html
-@dirrm share/doc/libxslt/html/EXSLT
-@dirrm share/doc/libxslt/html
-@dirrm share/doc/libxslt
-@dirrm include/libxslt
-@dirrm include/libexslt

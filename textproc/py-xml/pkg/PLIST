@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/07/31 19:12:00 sturm Exp $
-%%pyexpat%%
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:44:07 espie Exp $
 bin/xmlproc_parse
 bin/xmlproc_val
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/FtCore.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/FtCore.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/Attr.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/Attr.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/CDATASection.py
@@ -54,10 +55,15 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/TreeWalker.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/TreeWalker.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/de/
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/de/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/de/LC_MESSAGES/4Suite.mo
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/domreg.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/domreg.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/en_US/
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/en_US/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/en_US/LC_MESSAGES/4Suite.mo
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/Dom2Sax.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/Dom2Sax.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/Printer.py
@@ -72,6 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/c14n.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/c14n.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/HtmlLib.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/HtmlLib.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/HtmlSax.py
@@ -88,7 +95,10 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/Sgmlop.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/Sgmlop.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/fr_FR/
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/fr_FR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/fr_FR/LC_MESSAGES/4Suite.mo
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/html/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/html/GenerateHtml.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/html/GenerateHtml.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/html/HTMLAnchorElement.py
@@ -213,6 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/minitraversal.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/minitraversal.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/pulldom.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/pulldom.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal/generic.py
@@ -221,6 +232,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal/wddx.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal/wddx.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/ns.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/ns.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/expat.py
@@ -228,6 +240,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/expat.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/sgmllib.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/sgmllib.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/sgmlop.so
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/_outputters.py
@@ -256,10 +269,12 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlutils.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlutils.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlval.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc/xmlval.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/_exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/drv_htmllib.py
@@ -286,6 +301,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/drv_xmltoolkit.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/drv_xmltoolkit.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/pylibs.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers/pylibs.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2/drv_htmllib.py
@@ -318,16 +334,19 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/writer.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/writer.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/xmlreader.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/xmlreader.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/trex.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema/trex.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/iso8859.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/iso8859.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/utf8_iso.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode/utf8_iso.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/boolean.so
@@ -337,6 +356,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/iso8601.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/iso8601.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/qp_xml.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils/qp_xml.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/BuiltInExtFunctions.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/BuiltInExtFunctions.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/Context.py
@@ -385,6 +405,7 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/pyxpath.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/pyxpath.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/yappsrt.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath/yappsrt.pyc
+lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/ApplyTemplatesElement.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/ApplyTemplatesElement.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/AttributeElement.py
@@ -491,6 +512,8 @@ lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/minisupport.py
 lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt/minisupport.pyc
+share/doc/PyXML/
+share/doc/PyXML/4DOM/
 share/doc/PyXML/4DOM/4DOM.web
 share/doc/PyXML/4DOM/Extensions.api
 share/doc/PyXML/4DOM/Extensions.html
@@ -501,6 +524,7 @@ share/doc/PyXML/xml-howto.tex
 share/doc/PyXML/xml-howto.txt
 share/doc/PyXML/xml-ref.tex
 share/doc/PyXML/xml-ref.txt
+share/doc/PyXML/xmlproc/
 share/doc/PyXML/xmlproc/artikler.css
 share/doc/PyXML/xmlproc/basicapi.gif
 share/doc/PyXML/xmlproc/cmdline.gif
@@ -515,28 +539,4 @@ share/doc/PyXML/xmlproc/xmlproc_cmdline.html
 share/doc/PyXML/xmlproc/xmlproc_dtdparser.html
 share/doc/PyXML/xmlproc/xmlproc_ns.html
 share/doc/PyXML/xmlproc/xmlproc_tut.html
-@dirrm share/doc/PyXML/xmlproc
-@dirrm share/doc/PyXML/4DOM
-@dirrm share/doc/PyXML
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/xslt
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/xpath
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/utils
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/unicode
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/schema
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers2
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax/drivers
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/sax
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers/xmlproc
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/parsers
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/marshal
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/html
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/fr_FR/LC_MESSAGES
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/fr_FR
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext/reader
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/ext
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/en_US/LC_MESSAGES
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/en_US
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/de/LC_MESSAGES
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom/de
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus/dom
-@dirrm lib/python${MODPY_VERSION}/site-packages/_xmlplus
+%%pyexpat%%

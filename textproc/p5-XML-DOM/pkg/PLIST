@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:44:05 espie Exp $
+${P5SITE}/XML/DOM/
 ${P5SITE}/XML/DOM.pm
 ${P5SITE}/XML/DOM/AttDef.pod
 ${P5SITE}/XML/DOM/AttlistDecl.pod
@@ -27,31 +28,28 @@ ${P5SITE}/XML/DOM/ProcessingInstruction.pod
 ${P5SITE}/XML/DOM/Text.pod
 ${P5SITE}/XML/DOM/XMLDecl.pod
 ${P5SITE}/XML/Handler/BuildDOM.pm
-@comment ${P5ARCH}/auto/XML-DOM/.packlist
-man/man3p/XML::DOM.3p
-man/man3p/XML::DOM::AttDef.3p
-man/man3p/XML::DOM::AttlistDecl.3p
-man/man3p/XML::DOM::Attr.3p
-man/man3p/XML::DOM::CDATASection.3p
-man/man3p/XML::DOM::CharacterData.3p
-man/man3p/XML::DOM::Comment.3p
-man/man3p/XML::DOM::DOMImplementation.3p
-man/man3p/XML::DOM::Document.3p
-man/man3p/XML::DOM::DocumentFragment.3p
-man/man3p/XML::DOM::DocumentType.3p
-man/man3p/XML::DOM::Element.3p
-man/man3p/XML::DOM::ElementDecl.3p
-man/man3p/XML::DOM::Entity.3p
-man/man3p/XML::DOM::EntityReference.3p
-man/man3p/XML::DOM::NamedNodeMap.3p
-man/man3p/XML::DOM::Node.3p
-man/man3p/XML::DOM::NodeList.3p
-man/man3p/XML::DOM::Notation.3p
-man/man3p/XML::DOM::Parser.3p
-man/man3p/XML::DOM::PerlSAX.3p
-man/man3p/XML::DOM::ProcessingInstruction.3p
-man/man3p/XML::DOM::Text.3p
-man/man3p/XML::DOM::XMLDecl.3p
-man/man3p/XML::Handler::BuildDOM.3p
-@comment @dirrm ${P5ARCH}/auto/XML-DOM
-@dirrm ${P5SITE}/XML/DOM
+@man man/man3p/XML::DOM.3p
+@man man/man3p/XML::DOM::AttDef.3p
+@man man/man3p/XML::DOM::AttlistDecl.3p
+@man man/man3p/XML::DOM::Attr.3p
+@man man/man3p/XML::DOM::CDATASection.3p
+@man man/man3p/XML::DOM::CharacterData.3p
+@man man/man3p/XML::DOM::Comment.3p
+@man man/man3p/XML::DOM::DOMImplementation.3p
+@man man/man3p/XML::DOM::Document.3p
+@man man/man3p/XML::DOM::DocumentFragment.3p
+@man man/man3p/XML::DOM::DocumentType.3p
+@man man/man3p/XML::DOM::Element.3p
+@man man/man3p/XML::DOM::ElementDecl.3p
+@man man/man3p/XML::DOM::Entity.3p
+@man man/man3p/XML::DOM::EntityReference.3p
+@man man/man3p/XML::DOM::NamedNodeMap.3p
+@man man/man3p/XML::DOM::Node.3p
+@man man/man3p/XML::DOM::NodeList.3p
+@man man/man3p/XML::DOM::Notation.3p
+@man man/man3p/XML::DOM::Parser.3p
+@man man/man3p/XML::DOM::PerlSAX.3p
+@man man/man3p/XML::DOM::ProcessingInstruction.3p
+@man man/man3p/XML::DOM::Text.3p
+@man man/man3p/XML::DOM::XMLDecl.3p
+@man man/man3p/XML::Handler::BuildDOM.3p

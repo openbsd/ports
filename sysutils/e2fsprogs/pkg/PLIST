@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/06/16 05:19:13 brad Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/libext2fs.info
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:39:32 espie Exp $
 bin/chattr
 bin/lsattr
 bin/uuidgen
+include/ext2fs/
 include/ext2fs/bitops.h
 include/ext2fs/brel.h
 include/ext2fs/dosio.h
@@ -18,32 +18,33 @@ include/ext2fs/jfs_dat.h
 include/ext2fs/jfs_user.h
 include/ext2fs/kernel-jbd.h
 include/ext2fs/kernel-list.h
+include/uuid/
 include/uuid/uuid.h
 include/uuid/uuidP.h
-info/libext2fs.info
+@info info/libext2fs.info
 lib/libe2p.a
 lib/libext2fs.a
 lib/libext2fs_com_err.a
 lib/libss.a
 lib/libuuid.a
-man/man1/chattr.1
-man/man1/lsattr.1
-man/man1/uuidgen.1
-man/man8/badblocks.8
-man/man8/debugfs.8
-man/man8/dumpe2fs.8
-man/man8/e2fsck.8
-man/man8/e2image.8
-man/man8/e2label.8
-man/man8/fsck.ext2.8
-man/man8/fsck.ext3.8
-man/man8/mke2fs.8
-man/man8/mkfs.ext2.8
-man/man8/mkfs.ext3.8
-man/man8/mklost+found.8
-man/man8/pfsck.8
-man/man8/resize2fs.8
-man/man8/tune2fs.8
+@man man/man1/chattr.1
+@man man/man1/lsattr.1
+@man man/man1/uuidgen.1
+@man man/man8/badblocks.8
+@man man/man8/debugfs.8
+@man man/man8/dumpe2fs.8
+@man man/man8/e2fsck.8
+@man man/man8/e2image.8
+@man man/man8/e2label.8
+@man man/man8/fsck.ext2.8
+@man man/man8/fsck.ext3.8
+@man man/man8/mke2fs.8
+@man man/man8/mkfs.ext2.8
+@man man/man8/mkfs.ext3.8
+@man man/man8/mklost+found.8
+@man man/man8/pfsck.8
+@man man/man8/resize2fs.8
+@man man/man8/tune2fs.8
 sbin/badblocks
 sbin/debugfs
 sbin/dumpe2fs
@@ -60,6 +61,3 @@ sbin/pfsck
 sbin/resize2fs
 sbin/tune2fs
 %%SHARED%%
-@dirrm include/uuid
-@dirrm include/ext2fs
-@exec install-info --info-dir=%D/info %D/info/libext2fs.info

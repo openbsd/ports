@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/02/01 09:31:46 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:07 espie Exp $
+lib/python${MODPY_VERSION}/site-packages/pychart/
 lib/python${MODPY_VERSION}/site-packages/pychart/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pychart/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pychart/afm/
 lib/python${MODPY_VERSION}/site-packages/pychart/afm/AvantGarde_Book.py
 lib/python${MODPY_VERSION}/site-packages/pychart/afm/AvantGarde_Book.pyc
 lib/python${MODPY_VERSION}/site-packages/pychart/afm/AvantGarde_BookOblique.py
@@ -207,6 +209,7 @@ lib/python${MODPY_VERSION}/site-packages/pychart/x11canvas.py
 lib/python${MODPY_VERSION}/site-packages/pychart/x11canvas.pyc
 lib/python${MODPY_VERSION}/site-packages/pychart/zap.py
 lib/python${MODPY_VERSION}/site-packages/pychart/zap.pyc
+share/doc/py-Chart/
 share/doc/py-Chart/PYCHART-OPTIONS.html
 share/doc/py-Chart/about.html
 share/doc/py-Chart/anatomy.html
@@ -272,6 +275,7 @@ share/doc/py-Chart/scattertest.png
 share/doc/py-Chart/tickmarks.png
 share/doc/py-Chart/unit.html
 share/doc/py-Chart/zaptest.png
+share/examples/py-Chart/
 share/examples/py-Chart/annotations.py
 share/examples/py-Chart/arrows.py
 share/examples/py-Chart/barline.py
@@ -315,7 +319,3 @@ share/examples/py-Chart/twographs.py
 share/examples/py-Chart/unevenbars.py
 share/examples/py-Chart/zaptest.py
 share/examples/py-Chart/zaptest2.py
-@dirrm share/examples/py-Chart
-@dirrm share/doc/py-Chart
-@dirrm lib/python${MODPY_VERSION}/site-packages/pychart/afm
-@dirrm lib/python${MODPY_VERSION}/site-packages/pychart

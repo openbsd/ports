@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/01 13:51:04 msf Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:04 espie Exp $
+${P5SITE}/Pod/Simple/
 ${P5SITE}/Pod/Simple.pm
 ${P5SITE}/Pod/Simple.pod
 ${P5SITE}/Pod/Simple/BlackBox.pm
@@ -28,34 +29,28 @@ ${P5SITE}/Pod/Simple/Transcode.pm
 ${P5SITE}/Pod/Simple/TranscodeDumb.pm
 ${P5SITE}/Pod/Simple/TranscodeSmart.pm
 ${P5SITE}/Pod/Simple/XMLOutStream.pm
-@comment ${P5ARCH}/auto/Pod/Simple/.packlist
 @comment ${P5SITE}/perlpod.pod
 @comment ${P5SITE}/perlpodspec.pod
-man/man3p/Pod::Simple.3p
-man/man3p/Pod::Simple::Checker.3p
-man/man3p/Pod::Simple::Debug.3p
-man/man3p/Pod::Simple::DumpAsText.3p
-man/man3p/Pod::Simple::DumpAsXML.3p
-man/man3p/Pod::Simple::HTML.3p
-man/man3p/Pod::Simple::HTMLBatch.3p
-man/man3p/Pod::Simple::LinkSection.3p
-man/man3p/Pod::Simple::Methody.3p
-man/man3p/Pod::Simple::PullParser.3p
-man/man3p/Pod::Simple::PullParserEndToken.3p
-man/man3p/Pod::Simple::PullParserStartToken.3p
-man/man3p/Pod::Simple::PullParserTextToken.3p
-man/man3p/Pod::Simple::PullParserToken.3p
-man/man3p/Pod::Simple::RTF.3p
-man/man3p/Pod::Simple::Search.3p
-man/man3p/Pod::Simple::SimpleTree.3p
-man/man3p/Pod::Simple::Subclassing.3p
-man/man3p/Pod::Simple::Text.3p
-man/man3p/Pod::Simple::TextContent.3p
-man/man3p/Pod::Simple::XMLOutStream.3p
-@comment man/man3p/perlpod.3p
-@comment man/man3p/perlpodspec.3p
-@comment @dirrm ${P5ARCH}/auto/Pod/Simple
-@comment @dirrm ${P5ARCH}/auto/Pod
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Pod/Simple
+@man man/man3p/Pod::Simple.3p
+@man man/man3p/Pod::Simple::Checker.3p
+@man man/man3p/Pod::Simple::Debug.3p
+@man man/man3p/Pod::Simple::DumpAsText.3p
+@man man/man3p/Pod::Simple::DumpAsXML.3p
+@man man/man3p/Pod::Simple::HTML.3p
+@man man/man3p/Pod::Simple::HTMLBatch.3p
+@man man/man3p/Pod::Simple::LinkSection.3p
+@man man/man3p/Pod::Simple::Methody.3p
+@man man/man3p/Pod::Simple::PullParser.3p
+@man man/man3p/Pod::Simple::PullParserEndToken.3p
+@man man/man3p/Pod::Simple::PullParserStartToken.3p
+@man man/man3p/Pod::Simple::PullParserTextToken.3p
+@man man/man3p/Pod::Simple::PullParserToken.3p
+@man man/man3p/Pod::Simple::RTF.3p
+@man man/man3p/Pod::Simple::Search.3p
+@man man/man3p/Pod::Simple::SimpleTree.3p
+@man man/man3p/Pod::Simple::Subclassing.3p
+@man man/man3p/Pod::Simple::Text.3p
+@man man/man3p/Pod::Simple::TextContent.3p
+@man man/man3p/Pod::Simple::XMLOutStream.3p
+@man man/man3p/perlpod.3p
+@man man/man3p/perlpodspec.3p

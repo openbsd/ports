@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/04/14 19:07:38 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:39:34 espie Exp $
 @pkgcfl nut-[0-9]*
 sbin/upsd
+share/examples/upsd/
 share/examples/upsd/upsd.conf-sample
-@dirrm share/examples/upsd
 @cwd ${SYSCONFDIR}
 @extra upsd.conf

@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/04/11 19:12:25 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:44:02 espie Exp $
 bin/lgrind
-man/man1/lgrind.1
-man/man5/lgrindef.5
+@man man/man1/lgrind.1
+@man man/man5/lgrindef.5
+share/texmf-local/
+share/texmf-local/doc/
+share/texmf-local/doc/latex/
+share/texmf-local/doc/latex/lgrind/
 share/texmf-local/doc/latex/lgrind/lgrind.dvi
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/lgrind/
 share/texmf-local/tex/latex/lgrind/lgrind.sty
 share/texmf-local/tex/latex/lgrind/lgrindef
-@dirrm share/texmf-local/tex/latex/lgrind
-@dirrm share/texmf-local/tex/latex
-@dirrm share/texmf-local/tex
-@dirrm share/texmf-local/doc/latex/lgrind
-@dirrm share/texmf-local/doc/latex
-@dirrm share/texmf-local/doc
-@dirrm share/texmf-local
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
 @unexec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/09 03:17:55 jolan Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/stress.info
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:34 espie Exp $
 bin/stress
-info/stress.info
-man/man1/stress.1
-@exec install-info --info-dir=%D/info %D/info/stress.info
+@info info/stress.info
+@man man/man1/stress.1

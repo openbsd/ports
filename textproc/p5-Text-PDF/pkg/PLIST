@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/12/31 13:51:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:05 espie Exp $
 bin/pdfbklt.plx
 bin/pdfrevert.plx
 bin/pdfstamp.plx
+${P5SITE}/Text/
+${P5SITE}/Text/PDF/
 ${P5SITE}/Text/PDF/Array.pm
 ${P5SITE}/Text/PDF/Bool.pm
 ${P5SITE}/Text/PDF/Dict.pm
@@ -19,23 +21,23 @@ ${P5SITE}/Text/PDF/TTFont.pm
 ${P5SITE}/Text/PDF/TTFont0.pm
 ${P5SITE}/Text/PDF/Utils.pm
 ${P5SITE}/Text/PDF/changes
-@comment ${P5ARCH}/auto/Text/PDF/.packlist
-man/man3p/Text::PDF::Array.3p
-man/man3p/Text::PDF::Bool.3p
-man/man3p/Text::PDF::Dict.3p
-man/man3p/Text::PDF::File.3p
-man/man3p/Text::PDF::Filter.3p
-man/man3p/Text::PDF::Name.3p
-man/man3p/Text::PDF::Null.3p
-man/man3p/Text::PDF::Number.3p
-man/man3p/Text::PDF::Objind.3p
-man/man3p/Text::PDF::Page.3p
-man/man3p/Text::PDF::Pages.3p
-man/man3p/Text::PDF::SFont.3p
-man/man3p/Text::PDF::String.3p
-man/man3p/Text::PDF::TTFont.3p
-man/man3p/Text::PDF::TTFont0.3p
-man/man3p/Text::PDF::Utils.3p
+@man man/man3p/Text::PDF::Array.3p
+@man man/man3p/Text::PDF::Bool.3p
+@man man/man3p/Text::PDF::Dict.3p
+@man man/man3p/Text::PDF::File.3p
+@man man/man3p/Text::PDF::Filter.3p
+@man man/man3p/Text::PDF::Name.3p
+@man man/man3p/Text::PDF::Null.3p
+@man man/man3p/Text::PDF::Number.3p
+@man man/man3p/Text::PDF::Objind.3p
+@man man/man3p/Text::PDF::Page.3p
+@man man/man3p/Text::PDF::Pages.3p
+@man man/man3p/Text::PDF::SFont.3p
+@man man/man3p/Text::PDF::String.3p
+@man man/man3p/Text::PDF::TTFont.3p
+@man man/man3p/Text::PDF::TTFont0.3p
+@man man/man3p/Text::PDF::Utils.3p
+share/examples/p5-Text-PDF/
 share/examples/p5-Text-PDF/CD.CFG
 share/examples/p5-Text-PDF/graph.pl
 share/examples/p5-Text-PDF/hello.pl
@@ -46,11 +48,3 @@ share/examples/p5-Text-PDF/pdfgetobj.pl
 share/examples/p5-Text-PDF/pdflines.pl
 share/examples/p5-Text-PDF/squares.pdf
 share/examples/p5-Text-PDF/test.pdf
-@dirrm share/examples/p5-Text-PDF
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Text/PDF
-@comment @dirrm ${P5ARCH}/auto/Text
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Text/PDF
-@dirrm ${P5SITE}/Text

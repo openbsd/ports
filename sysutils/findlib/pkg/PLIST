@@ -1,6 +1,8 @@
-%%native%%
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/12 21:45:34 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:32 espie Exp $
 bin/ocamlfind
+lib/ocaml/
+lib/ocaml/site-lib/
+lib/ocaml/site-lib/findlib/
 lib/ocaml/site-lib/findlib/Makefile.config
 lib/ocaml/site-lib/findlib/findlib.cma
 lib/ocaml/site-lib/findlib/findlib.cmi
@@ -14,17 +16,15 @@ lib/ocaml/site-lib/findlib/make_wizard
 lib/ocaml/site-lib/findlib/make_wizard.pattern
 lib/ocaml/site-lib/findlib/topfind.cmi
 lib/ocaml/site-lib/findlib/topfind.mli
+lib/ocaml/site-lib/num-top/
 lib/ocaml/site-lib/num-top/num_top.cma
 lib/ocaml/site-lib/num-top/num_top.cmi
 lib/ocaml/site-lib/num-top/num_top_printers.cmi
 lib/ocaml/topfind
-man/man1/ocamlfind.1
-man/man5/META.5
-man/man5/findlib.conf.5
-man/man5/site-lib.5
+@man man/man1/ocamlfind.1
+@man man/man5/META.5
+@man man/man5/findlib.conf.5
+@man man/man5/site-lib.5
+share/examples/findlib/
 share/examples/findlib/ocamlfind.conf
-@dirrm share/examples/findlib
-@dirrm lib/ocaml/site-lib/num-top
-@dirrm lib/ocaml/site-lib/findlib
-@dirrm lib/ocaml/site-lib
-@dirrm lib/ocaml
+%%native%%

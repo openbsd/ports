@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/04/01 12:35:38 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:39:32 espie Exp $
 bin/cancel
 bin/lp
 bin/lpq
@@ -7,38 +7,39 @@ bin/lprm
 bin/lpstat
 lib/liblpr.a
 lib/liblpr.la
+libexec/filters/
 libexec/filters/lpbanner
 libexec/filters/lpf
 libexec/filters/pclbanner
 libexec/filters/psbanner
-man/man1/cancel.1
-man/man1/lp.1
-man/man1/lpbanner.1
-man/man1/lpf.1
-man/man1/lpq.1
-man/man1/lpr.1
-man/man1/lprm.1
-man/man1/lprng_certs.1
-man/man1/lprng_index_certs.1
-man/man1/lpstat.1
-man/man1/monitor.1
-man/man1/pclbanner.1
-man/man1/psbanner.1
-man/man5/lpd.conf.5
-man/man5/lpd.perms.5
-man/man5/printcap.5
-man/man8/checkpc.8
-man/man8/lpc.8
-man/man8/lpd.8
+@man man/man1/cancel.1
+@man man/man1/lp.1
+@man man/man1/lpbanner.1
+@man man/man1/lpf.1
+@man man/man1/lpq.1
+@man man/man1/lpr.1
+@man man/man1/lprm.1
+@man man/man1/lprng_certs.1
+@man man/man1/lprng_index_certs.1
+@man man/man1/lpstat.1
+@man man/man1/monitor.1
+@man man/man1/pclbanner.1
+@man man/man1/psbanner.1
+@man man/man5/lpd.conf.5
+@man man/man5/lpd.perms.5
+@man man/man5/printcap.5
+@man man/man8/checkpc.8
+@man man/man8/lpc.8
+@man man/man8/lpd.8
 sbin/checkpc
 sbin/lpc
 sbin/lpd
 sbin/lprng_certs
 sbin/lprng_index_certs
+share/doc/LPRng/
 share/doc/LPRng/LPRng-HOWTO.html
+share/examples/LPRng/
 share/examples/LPRng/lpd.conf
 share/examples/LPRng/lpd.perms
 share/examples/LPRng/printcap
 %%SHARED%%
-@dirrm share/examples/LPRng
-@dirrm share/doc/LPRng

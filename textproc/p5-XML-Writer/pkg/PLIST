@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/20 19:51:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:06 espie Exp $
+${P5SITE}/XML/
 ${P5SITE}/XML/Writer.pm
-@comment ${P5ARCH}/auto/XML/Writer/.packlist
-man/man3p/XML::Writer.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/XML/Writer
-@comment @dirrm ${P5ARCH}/auto/XML
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/XML
+@man man/man3p/XML::Writer.3p

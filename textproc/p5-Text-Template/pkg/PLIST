@@ -1,13 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/31 13:51:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:44:05 espie Exp $
+${P5SITE}/Text/
+${P5SITE}/Text/Template/
 ${P5SITE}/Text/Template.pm
 ${P5SITE}/Text/Template/Preprocess.pm
-@comment ${P5ARCH}/auto/Text/Template/.packlist
-man/man3p/Text::Template.3p
-man/man3p/Text::Template::Preprocess.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Text/Template
-@comment @dirrm ${P5ARCH}/auto/Text
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Text/Template
-@dirrm ${P5SITE}/Text
+@man man/man3p/Text::Template.3p
+@man man/man3p/Text::Template::Preprocess.3p

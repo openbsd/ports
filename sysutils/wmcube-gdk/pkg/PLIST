@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/28 14:32:49 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:34 espie Exp $
 @pkgcfl wmcube-*
 bin/wmcube
+share/wmcube/
 share/wmcube/2planes-solid.wmc
 share/wmcube/4d.wmc
 share/wmcube/8star-small.wmc
@@ -37,4 +38,3 @@ share/wmcube/spiral.wmc
 share/wmcube/star.wmc
 share/wmcube/starcube.wmc
 share/wmcube/wmlogo.wmc
-@dirrm share/wmcube

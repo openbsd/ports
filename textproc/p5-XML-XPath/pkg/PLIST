@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/20 19:51:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:06 espie Exp $
 bin/xpath
+${P5SITE}/XML/
+${P5SITE}/XML/XPath/
 ${P5SITE}/XML/XPath.pm
 ${P5SITE}/XML/XPath/Boolean.pm
 ${P5SITE}/XML/XPath/Builder.pm
@@ -7,6 +9,7 @@ ${P5SITE}/XML/XPath/Expr.pm
 ${P5SITE}/XML/XPath/Function.pm
 ${P5SITE}/XML/XPath/Literal.pm
 ${P5SITE}/XML/XPath/LocationPath.pm
+${P5SITE}/XML/XPath/Node/
 ${P5SITE}/XML/XPath/Node.pm
 ${P5SITE}/XML/XPath/Node/Attribute.pm
 ${P5SITE}/XML/XPath/Node/Comment.pm
@@ -22,26 +25,21 @@ ${P5SITE}/XML/XPath/Root.pm
 ${P5SITE}/XML/XPath/Step.pm
 ${P5SITE}/XML/XPath/Variable.pm
 ${P5SITE}/XML/XPath/XMLParser.pm
-@comment ${P5ARCH}/auto/XML/XPath/.packlist
-man/man3p/XML::XPath.3p
-man/man3p/XML::XPath::Boolean.3p
-man/man3p/XML::XPath::Builder.3p
-man/man3p/XML::XPath::Literal.3p
-man/man3p/XML::XPath::Node.3p
-man/man3p/XML::XPath::Node::Attribute.3p
-man/man3p/XML::XPath::Node::Comment.3p
-man/man3p/XML::XPath::Node::Element.3p
-man/man3p/XML::XPath::Node::Namespace.3p
-man/man3p/XML::XPath::Node::PI.3p
-man/man3p/XML::XPath::Node::Text.3p
-man/man3p/XML::XPath::NodeSet.3p
-man/man3p/XML::XPath::Number.3p
-man/man3p/XML::XPath::PerlSAX.3p
-man/man3p/XML::XPath::XMLParser.3p
+@man man/man3p/XML::XPath.3p
+@man man/man3p/XML::XPath::Boolean.3p
+@man man/man3p/XML::XPath::Builder.3p
+@man man/man3p/XML::XPath::Literal.3p
+@man man/man3p/XML::XPath::Node.3p
+@man man/man3p/XML::XPath::Node::Attribute.3p
+@man man/man3p/XML::XPath::Node::Comment.3p
+@man man/man3p/XML::XPath::Node::Element.3p
+@man man/man3p/XML::XPath::Node::Namespace.3p
+@man man/man3p/XML::XPath::Node::PI.3p
+@man man/man3p/XML::XPath::Node::Text.3p
+@man man/man3p/XML::XPath::NodeSet.3p
+@man man/man3p/XML::XPath::Number.3p
+@man man/man3p/XML::XPath::PerlSAX.3p
+@man man/man3p/XML::XPath::XMLParser.3p
+share/examples/p5-XML-XPath/
 share/examples/p5-XML-XPath/test.xml
 share/examples/p5-XML-XPath/xpath
-@dirrm share/examples/p5-XML-XPath
-@comment @dirrm ${P5ARCH}/auto/XML/XPath
-@dirrm ${P5SITE}/XML/XPath/Node
-@dirrm ${P5SITE}/XML/XPath
-@dirrm ${P5SITE}/XML

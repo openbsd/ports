@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/08/12 06:29:36 jolan Exp $
-lib/libgtkspell.so.0.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 18:44:01 espie Exp $
+@lib lib/libgtkspell.so.0.0

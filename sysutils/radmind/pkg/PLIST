@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/26 19:00:48 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:33 espie Exp $
 bin/fsdiff
 bin/ktcheck
 bin/lapply
@@ -7,16 +7,15 @@ bin/lcreate
 bin/lfdiff
 bin/lmerge
 bin/twhich
-man/man1/fsdiff.1
-man/man1/ktcheck.1
-man/man1/lapply.1
-man/man1/lcksum.1
-man/man1/lcreate.1
-man/man1/lfdiff.1
-man/man1/lmerge.1
-man/man1/twhich.1
-man/man5/applefile.5
-man/man8/radmind.8
+@man man/man1/fsdiff.1
+@man man/man1/ktcheck.1
+@man man/man1/lapply.1
+@man man/man1/lcksum.1
+@man man/man1/lcreate.1
+@man man/man1/lfdiff.1
+@man man/man1/lmerge.1
+@man man/man1/twhich.1
+@man man/man5/applefile.5
+@man man/man8/radmind.8
 sbin/radmind
-@exec mkdir -p /var/radmind/cert
 @extraunexec rm -fr /var/radmind

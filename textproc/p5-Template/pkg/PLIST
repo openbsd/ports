@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1 2004/02/16 21:09:22 djm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:04 espie Exp $
 bin/tpage
 bin/ttree
+${P5ARCH}/
+${P5ARCH}/Template/
 ${P5ARCH}/Template.pm
 ${P5ARCH}/Template/Base.pm
 ${P5ARCH}/Template/Config.pm
@@ -13,9 +15,11 @@ ${P5ARCH}/Template/FAQ.pod
 ${P5ARCH}/Template/Filters.pm
 ${P5ARCH}/Template/Grammar.pm
 ${P5ARCH}/Template/Iterator.pm
+${P5ARCH}/Template/Library/
 ${P5ARCH}/Template/Library/HTML.pod
 ${P5ARCH}/Template/Library/PostScript.pod
 ${P5ARCH}/Template/Library/Splash.pod
+${P5ARCH}/Template/Manual/
 ${P5ARCH}/Template/Manual.pod
 ${P5ARCH}/Template/Manual/Config.pod
 ${P5ARCH}/Template/Manual/Credits.pod
@@ -30,8 +34,10 @@ ${P5ARCH}/Template/Manual/VMethods.pod
 ${P5ARCH}/Template/Manual/Variables.pod
 ${P5ARCH}/Template/Manual/Views.pod
 ${P5ARCH}/Template/Modules.pod
+${P5ARCH}/Template/Namespace/
 ${P5ARCH}/Template/Namespace/Constants.pm
 ${P5ARCH}/Template/Parser.pm
+${P5ARCH}/Template/Plugin/
 ${P5ARCH}/Template/Plugin.pm
 ${P5ARCH}/Template/Plugin/Autoformat.pm
 ${P5ARCH}/Template/Plugin/CGI.pm
@@ -43,7 +49,9 @@ ${P5ARCH}/Template/Plugin/Dumper.pm
 ${P5ARCH}/Template/Plugin/File.pm
 ${P5ARCH}/Template/Plugin/Filter.pm
 ${P5ARCH}/Template/Plugin/Format.pm
+${P5ARCH}/Template/Plugin/GD/
 ${P5ARCH}/Template/Plugin/GD/Constants.pm
+${P5ARCH}/Template/Plugin/GD/Graph/
 ${P5ARCH}/Template/Plugin/GD/Graph/area.pm
 ${P5ARCH}/Template/Plugin/GD/Graph/bars.pm
 ${P5ARCH}/Template/Plugin/GD/Graph/bars3d.pm
@@ -56,6 +64,7 @@ ${P5ARCH}/Template/Plugin/GD/Graph/pie3d.pm
 ${P5ARCH}/Template/Plugin/GD/Graph/points.pm
 ${P5ARCH}/Template/Plugin/GD/Image.pm
 ${P5ARCH}/Template/Plugin/GD/Polygon.pm
+${P5ARCH}/Template/Plugin/GD/Text/
 ${P5ARCH}/Template/Plugin/GD/Text.pm
 ${P5ARCH}/Template/Plugin/GD/Text/Align.pm
 ${P5ARCH}/Template/Plugin/GD/Text/Wrap.pm
@@ -69,6 +78,7 @@ ${P5ARCH}/Template/Plugin/Table.pm
 ${P5ARCH}/Template/Plugin/URL.pm
 ${P5ARCH}/Template/Plugin/View.pm
 ${P5ARCH}/Template/Plugin/Wrap.pm
+${P5ARCH}/Template/Plugin/XML/
 ${P5ARCH}/Template/Plugin/XML/DOM.pm
 ${P5ARCH}/Template/Plugin/XML/RSS.pm
 ${P5ARCH}/Template/Plugin/XML/Simple.pm
@@ -77,119 +87,108 @@ ${P5ARCH}/Template/Plugin/XML/XPath.pm
 ${P5ARCH}/Template/Plugins.pm
 ${P5ARCH}/Template/Provider.pm
 ${P5ARCH}/Template/Service.pm
+${P5ARCH}/Template/Stash/
 ${P5ARCH}/Template/Stash.pm
 ${P5ARCH}/Template/Stash/Context.pm
 ${P5ARCH}/Template/Stash/XS.pm
 ${P5ARCH}/Template/Test.pm
+${P5ARCH}/Template/Tools/
 ${P5ARCH}/Template/Tools/tpage.pod
 ${P5ARCH}/Template/Tools/ttree.pod
+${P5ARCH}/Template/Tutorial/
 ${P5ARCH}/Template/Tutorial.pod
 ${P5ARCH}/Template/Tutorial/Datafile.pod
 ${P5ARCH}/Template/Tutorial/Web.pod
 ${P5ARCH}/Template/View.pm
-@comment ${P5ARCH}/auto/Template/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Template/
+${P5ARCH}/auto/Template/Stash/
+${P5ARCH}/auto/Template/Stash/XS/
 ${P5ARCH}/auto/Template/Stash/XS/XS.bs
 ${P5ARCH}/auto/Template/Stash/XS/XS.so
-man/man1/tpage.1
-man/man1/ttree.1
-man/man3p/Template.3p
-man/man3p/Template::Base.3p
-man/man3p/Template::Config.3p
-man/man3p/Template::Constants.3p
-man/man3p/Template::Context.3p
-man/man3p/Template::Document.3p
-man/man3p/Template::Exception.3p
-man/man3p/Template::FAQ.3p
-man/man3p/Template::Filters.3p
-man/man3p/Template::Iterator.3p
-man/man3p/Template::Library::HTML.3p
-man/man3p/Template::Library::PostScript.3p
-man/man3p/Template::Library::Splash.3p
-man/man3p/Template::Manual.3p
-man/man3p/Template::Manual::Config.3p
-man/man3p/Template::Manual::Credits.3p
-man/man3p/Template::Manual::Directives.3p
-man/man3p/Template::Manual::Filters.3p
-man/man3p/Template::Manual::Internals.3p
-man/man3p/Template::Manual::Intro.3p
-man/man3p/Template::Manual::Plugins.3p
-man/man3p/Template::Manual::Refs.3p
-man/man3p/Template::Manual::Syntax.3p
-man/man3p/Template::Manual::VMethods.3p
-man/man3p/Template::Manual::Variables.3p
-man/man3p/Template::Manual::Views.3p
-man/man3p/Template::Modules.3p
-man/man3p/Template::Namespace::Constants.3p
-man/man3p/Template::Parser.3p
-man/man3p/Template::Plugin.3p
-man/man3p/Template::Plugin::Autoformat.3p
-man/man3p/Template::Plugin::CGI.3p
-man/man3p/Template::Plugin::DBI.3p
-man/man3p/Template::Plugin::Datafile.3p
-man/man3p/Template::Plugin::Date.3p
-man/man3p/Template::Plugin::Directory.3p
-man/man3p/Template::Plugin::Dumper.3p
-man/man3p/Template::Plugin::File.3p
-man/man3p/Template::Plugin::Filter.3p
-man/man3p/Template::Plugin::Format.3p
-man/man3p/Template::Plugin::GD::Constants.3p
-man/man3p/Template::Plugin::GD::Graph::area.3p
-man/man3p/Template::Plugin::GD::Graph::bars.3p
-man/man3p/Template::Plugin::GD::Graph::bars3d.3p
-man/man3p/Template::Plugin::GD::Graph::lines.3p
-man/man3p/Template::Plugin::GD::Graph::lines3d.3p
-man/man3p/Template::Plugin::GD::Graph::linespoints.3p
-man/man3p/Template::Plugin::GD::Graph::mixed.3p
-man/man3p/Template::Plugin::GD::Graph::pie.3p
-man/man3p/Template::Plugin::GD::Graph::pie3d.3p
-man/man3p/Template::Plugin::GD::Graph::points.3p
-man/man3p/Template::Plugin::GD::Image.3p
-man/man3p/Template::Plugin::GD::Polygon.3p
-man/man3p/Template::Plugin::GD::Text.3p
-man/man3p/Template::Plugin::GD::Text::Align.3p
-man/man3p/Template::Plugin::GD::Text::Wrap.3p
-man/man3p/Template::Plugin::HTML.3p
-man/man3p/Template::Plugin::Image.3p
-man/man3p/Template::Plugin::Iterator.3p
-man/man3p/Template::Plugin::Pod.3p
-man/man3p/Template::Plugin::Procedural.3p
-man/man3p/Template::Plugin::String.3p
-man/man3p/Template::Plugin::Table.3p
-man/man3p/Template::Plugin::URL.3p
-man/man3p/Template::Plugin::View.3p
-man/man3p/Template::Plugin::Wrap.3p
-man/man3p/Template::Plugin::XML::DOM.3p
-man/man3p/Template::Plugin::XML::RSS.3p
-man/man3p/Template::Plugin::XML::Simple.3p
-man/man3p/Template::Plugin::XML::Style.3p
-man/man3p/Template::Plugin::XML::XPath.3p
-man/man3p/Template::Plugins.3p
-man/man3p/Template::Provider.3p
-man/man3p/Template::Service.3p
-man/man3p/Template::Stash.3p
-man/man3p/Template::Stash::Context.3p
-man/man3p/Template::Stash::XS.3p
-man/man3p/Template::Test.3p
-man/man3p/Template::Tools::tpage.3p
-man/man3p/Template::Tools::ttree.3p
-man/man3p/Template::Tutorial.3p
-man/man3p/Template::Tutorial::Datafile.3p
-man/man3p/Template::Tutorial::Web.3p
-man/man3p/Template::View.3p
-@dirrm ${P5ARCH}/auto/Template/Stash/XS
-@dirrm ${P5ARCH}/auto/Template/Stash
-@dirrm ${P5ARCH}/auto/Template
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Template/Tutorial
-@dirrm ${P5ARCH}/Template/Tools
-@dirrm ${P5ARCH}/Template/Stash
-@dirrm ${P5ARCH}/Template/Plugin/XML
-@dirrm ${P5ARCH}/Template/Plugin/GD/Text
-@dirrm ${P5ARCH}/Template/Plugin/GD/Graph
-@dirrm ${P5ARCH}/Template/Plugin/GD
-@dirrm ${P5ARCH}/Template/Plugin
-@dirrm ${P5ARCH}/Template/Namespace
-@dirrm ${P5ARCH}/Template/Manual
-@dirrm ${P5ARCH}/Template/Library
-@dirrm ${P5ARCH}/Template
-@dirrm ${P5ARCH}
+@man man/man1/tpage.1
+@man man/man1/ttree.1
+@man man/man3p/Template.3p
+@man man/man3p/Template::Base.3p
+@man man/man3p/Template::Config.3p
+@man man/man3p/Template::Constants.3p
+@man man/man3p/Template::Context.3p
+@man man/man3p/Template::Document.3p
+@man man/man3p/Template::Exception.3p
+@man man/man3p/Template::FAQ.3p
+@man man/man3p/Template::Filters.3p
+@man man/man3p/Template::Iterator.3p
+@man man/man3p/Template::Library::HTML.3p
+@man man/man3p/Template::Library::PostScript.3p
+@man man/man3p/Template::Library::Splash.3p
+@man man/man3p/Template::Manual.3p
+@man man/man3p/Template::Manual::Config.3p
+@man man/man3p/Template::Manual::Credits.3p
+@man man/man3p/Template::Manual::Directives.3p
+@man man/man3p/Template::Manual::Filters.3p
+@man man/man3p/Template::Manual::Internals.3p
+@man man/man3p/Template::Manual::Intro.3p
+@man man/man3p/Template::Manual::Plugins.3p
+@man man/man3p/Template::Manual::Refs.3p
+@man man/man3p/Template::Manual::Syntax.3p
+@man man/man3p/Template::Manual::VMethods.3p
+@man man/man3p/Template::Manual::Variables.3p
+@man man/man3p/Template::Manual::Views.3p
+@man man/man3p/Template::Modules.3p
+@man man/man3p/Template::Namespace::Constants.3p
+@man man/man3p/Template::Parser.3p
+@man man/man3p/Template::Plugin.3p
+@man man/man3p/Template::Plugin::Autoformat.3p
+@man man/man3p/Template::Plugin::CGI.3p
+@man man/man3p/Template::Plugin::DBI.3p
+@man man/man3p/Template::Plugin::Datafile.3p
+@man man/man3p/Template::Plugin::Date.3p
+@man man/man3p/Template::Plugin::Directory.3p
+@man man/man3p/Template::Plugin::Dumper.3p
+@man man/man3p/Template::Plugin::File.3p
+@man man/man3p/Template::Plugin::Filter.3p
+@man man/man3p/Template::Plugin::Format.3p
+@man man/man3p/Template::Plugin::GD::Constants.3p
+@man man/man3p/Template::Plugin::GD::Graph::area.3p
+@man man/man3p/Template::Plugin::GD::Graph::bars.3p
+@man man/man3p/Template::Plugin::GD::Graph::bars3d.3p
+@man man/man3p/Template::Plugin::GD::Graph::lines.3p
+@man man/man3p/Template::Plugin::GD::Graph::lines3d.3p
+@man man/man3p/Template::Plugin::GD::Graph::linespoints.3p
+@man man/man3p/Template::Plugin::GD::Graph::mixed.3p
+@man man/man3p/Template::Plugin::GD::Graph::pie.3p
+@man man/man3p/Template::Plugin::GD::Graph::pie3d.3p
+@man man/man3p/Template::Plugin::GD::Graph::points.3p
+@man man/man3p/Template::Plugin::GD::Image.3p
+@man man/man3p/Template::Plugin::GD::Polygon.3p
+@man man/man3p/Template::Plugin::GD::Text.3p
+@man man/man3p/Template::Plugin::GD::Text::Align.3p
+@man man/man3p/Template::Plugin::GD::Text::Wrap.3p
+@man man/man3p/Template::Plugin::HTML.3p
+@man man/man3p/Template::Plugin::Image.3p
+@man man/man3p/Template::Plugin::Iterator.3p
+@man man/man3p/Template::Plugin::Pod.3p
+@man man/man3p/Template::Plugin::Procedural.3p
+@man man/man3p/Template::Plugin::String.3p
+@man man/man3p/Template::Plugin::Table.3p
+@man man/man3p/Template::Plugin::URL.3p
+@man man/man3p/Template::Plugin::View.3p
+@man man/man3p/Template::Plugin::Wrap.3p
+@man man/man3p/Template::Plugin::XML::DOM.3p
+@man man/man3p/Template::Plugin::XML::RSS.3p
+@man man/man3p/Template::Plugin::XML::Simple.3p
+@man man/man3p/Template::Plugin::XML::Style.3p
+@man man/man3p/Template::Plugin::XML::XPath.3p
+@man man/man3p/Template::Plugins.3p
+@man man/man3p/Template::Provider.3p
+@man man/man3p/Template::Service.3p
+@man man/man3p/Template::Stash.3p
+@man man/man3p/Template::Stash::Context.3p
+@man man/man3p/Template::Stash::XS.3p
+@man man/man3p/Template::Test.3p
+@man man/man3p/Template::Tools::tpage.3p
+@man man/man3p/Template::Tools::ttree.3p
+@man man/man3p/Template::Tutorial.3p
+@man man/man3p/Template::Tutorial::Datafile.3p
+@man man/man3p/Template::Tutorial::Web.3p
+@man man/man3p/Template::View.3p

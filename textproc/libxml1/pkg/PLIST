@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/29 15:53:31 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:03 espie Exp $
 bin/xml-config
+include/gnome-xml/
 include/gnome-xml/HTMLparser.h
 include/gnome-xml/HTMLtree.h
 include/gnome-xml/SAX.h
@@ -21,8 +22,12 @@ include/gnome-xml/xmlmemory.h
 include/gnome-xml/xpath.h
 lib/libxml.a
 lib/libxml.la
-%%SHARED%%
+lib/pkgconfig/
+lib/pkgconfig/libxml.pc
 lib/xmlConf.sh
+share/gnome-xml/
+share/gnome-xml/html/
+share/gnome-xml/html/gnome-xml/
 share/gnome-xml/html/gnome-xml/DOM.gif
 share/gnome-xml/html/gnome-xml/book1.html
 share/gnome-xml/html/gnome-xml/gnome-xml-debugxml.html
@@ -47,7 +52,4 @@ share/gnome-xml/html/gnome-xml/libxml-lib.html
 share/gnome-xml/html/gnome-xml/libxml-notes.html
 share/gnome-xml/html/gnome-xml/structure.gif
 share/gnome-xml/html/gnome-xml/xml.html
-@dirrm share/gnome-xml/html/gnome-xml
-@dirrm share/gnome-xml/html
-@dirrm share/gnome-xml
-@dirrm include/gnome-xml
+%%SHARED%%

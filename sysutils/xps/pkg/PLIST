@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 05:38:33 angelos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:34 espie Exp $
 bin/xps
-man/man1/xps.1
 lib/X11/app-defaults/Xps
+@man man/man1/xps.1

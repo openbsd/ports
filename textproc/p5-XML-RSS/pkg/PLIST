@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/20 19:51:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:44:06 espie Exp $
+${P5SITE}/XML/
 ${P5SITE}/XML/RSS.pm
-@comment ${P5ARCH}/auto/XML/RSS/.packlist
 man/man3p/XML::RSS.3
+share/examples/p5-XML-RSS/
+share/examples/p5-XML-RSS/0.9/
 share/examples/p5-XML-RSS/0.9/create_rss.pl
 share/examples/p5-XML-RSS/0.9/linuxtoday.rdf
 share/examples/p5-XML-RSS/0.9/rss-0.9.dtd
 share/examples/p5-XML-RSS/0.9/slashdot.rdf
+share/examples/p5-XML-RSS/0.91/
 share/examples/p5-XML-RSS/0.91/create_rss_0.91.pl
 share/examples/p5-XML-RSS/0.91/create_rss_0.91_full.pl
 share/examples/p5-XML-RSS/0.91/fm.rdf
@@ -13,6 +16,7 @@ share/examples/p5-XML-RSS/0.91/fm0.91.rdf
 share/examples/p5-XML-RSS/0.91/fm0.91_full.rdf
 share/examples/p5-XML-RSS/0.91/rss-0.91.dtd
 share/examples/p5-XML-RSS/0.91/xmlnews.rdf
+share/examples/p5-XML-RSS/1.0/
 share/examples/p5-XML-RSS/1.0/create_rss_1.0.pl
 share/examples/p5-XML-RSS/1.0/rss1.0.rdf
 share/examples/p5-XML-RSS/1.0/slash.rdf
@@ -23,9 +27,3 @@ share/examples/p5-XML-RSS/create_rss_multiple.pl
 share/examples/p5-XML-RSS/rss2html.pl
 share/examples/p5-XML-RSS/rss_info.pl
 share/examples/p5-XML-RSS/update_rss.pl
-@dirrm share/examples/p5-XML-RSS/1.0
-@dirrm share/examples/p5-XML-RSS/0.91
-@dirrm share/examples/p5-XML-RSS/0.9
-@dirrm share/examples/p5-XML-RSS
-@comment @dirrm ${P5ARCH}/auto/XML/RSS
-@dirrm ${P5SITE}/XML

@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/07/18 05:22:26 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 18:44:08 espie Exp $
+share/java/
+share/java/classes/
+share/java/classes/xerces-2_4_0/
 share/java/classes/xerces-2_4_0/xercesImpl.jar
 share/java/classes/xerces-2_4_0/xercesSamples.jar
 share/java/classes/xerces-2_4_0/xml-apis.jar
 share/java/classes/xerces-2_4_0/xmlParserAPIs.jar
+share/java/xerces-2_4_0/
+share/java/xerces-2_4_0/data/
 share/java/xerces-2_4_0/data/personal-schema.xml
 share/java/xerces-2_4_0/data/personal.dtd
 share/java/xerces-2_4_0/data/personal.xml
 share/java/xerces-2_4_0/data/personal.xsd
+share/java/xerces-2_4_0/docs/
 share/java/xerces-2_4_0/docs/api.html
 share/java/xerces-2_4_0/docs/bugzilla.html
 share/java/xerces-2_4_0/docs/dom.html
@@ -24,6 +30,7 @@ share/java/xerces-2_4_0/docs/faq-xni.html
 share/java/xerces-2_4_0/docs/faq-xs.html
 share/java/xerces-2_4_0/docs/faqs.html
 share/java/xerces-2_4_0/docs/features.html
+share/java/xerces-2_4_0/docs/graphics/
 share/java/xerces-2_4_0/docs/graphics/api-header.jpg
 share/java/xerces-2_4_0/docs/graphics/api-label-1.jpg
 share/java/xerces-2_4_0/docs/graphics/api-label-2.jpg
@@ -106,6 +113,7 @@ share/java/xerces-2_4_0/docs/graphics/xni-label-1.jpg
 share/java/xerces-2_4_0/docs/graphics/xni-label-2.jpg
 share/java/xerces-2_4_0/docs/graphics/xni-label-3.jpg
 share/java/xerces-2_4_0/docs/graphics/xni-xerces2-header.jpg
+share/java/xerces-2_4_0/docs/images/
 share/java/xerces-2_4_0/docs/images/xni-components-dependence.gif
 share/java/xerces-2_4_0/docs/images/xni-components-overview.gif
 share/java/xerces-2_4_0/docs/images/xni-parser-configuration.gif
@@ -113,11 +121,16 @@ share/java/xerces-2_4_0/docs/images/xni-pipeline-basic.gif
 share/java/xerces-2_4_0/docs/images/xni-pipeline-detailed.gif
 share/java/xerces-2_4_0/docs/index.html
 share/java/xerces-2_4_0/docs/install.html
+share/java/xerces-2_4_0/docs/javadocs/
+share/java/xerces-2_4_0/docs/javadocs/api/
 share/java/xerces-2_4_0/docs/javadocs/api/allclasses-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/deprecated-list.html
 share/java/xerces-2_4_0/docs/javadocs/api/help-doc.html
 share/java/xerces-2_4_0/docs/javadocs/api/index-all.html
 share/java/xerces-2_4_0/docs/javadocs/api/index.html
+share/java/xerces-2_4_0/docs/javadocs/api/javax/
+share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/
+share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/
 share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/DocumentBuilder.html
 share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/DocumentBuilderFactory.html
 share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/FactoryConfigurationError.html
@@ -127,6 +140,9 @@ share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/SAXParserFactory.htm
 share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/Attr.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/CDATASection.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/CharacterData.html
@@ -145,6 +161,7 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/NodeList.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/Notation.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ProcessingInstruction.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/Text.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/CSS2Properties.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/CSSCharsetRule.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/CSSFontFaceRule.html
@@ -170,6 +187,7 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/ViewCSS.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/DocumentEvent.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/Event.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/EventException.html
@@ -181,6 +199,7 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/UIEvent.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/HTMLAnchorElement.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/HTMLAppletElement.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/HTMLAreaElement.html
@@ -240,6 +259,7 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/HTMLUListElement.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ls/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ls/DOMBuilder.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ls/DOMBuilderFilter.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ls/DOMEntityResolver.html
@@ -257,12 +277,14 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ls/package-tree.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/DocumentRange.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/Range.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/RangeException.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/DocumentStyle.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/LinkStyle.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/MediaList.html
@@ -271,6 +293,7 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/StyleSheetList
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/DocumentTraversal.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/NodeFilter.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/NodeIterator.html
@@ -278,11 +301,14 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/TreeWalker.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views/
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views/AbstractView.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views/DocumentView.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/xml/
+share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/AttributeList.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/Attributes.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ContentHandler.html
@@ -300,11 +326,13 @@ share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/SAXNotSupportedException.h
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/SAXParseException.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/XMLFilter.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/XMLReader.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext/
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext/DeclHandler.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext/LexicalHandler.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/helpers/
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/helpers/AttributeListImpl.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/helpers/AttributesImpl.html
 share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/helpers/DefaultHandler.html
@@ -328,11 +356,16 @@ share/java/xerces-2_4_0/docs/javadocs/api/package-list
 share/java/xerces-2_4_0/docs/javadocs/api/packages.html
 share/java/xerces-2_4_0/docs/javadocs/api/serialized-form.html
 share/java/xerces-2_4_0/docs/javadocs/api/stylesheet.css
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/allclasses-frame.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/deprecated-list.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/help-doc.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/index-all.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/index.html
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/DOMConfiguration.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/DOMError.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/DOMErrorHandler.html
@@ -342,6 +375,7 @@ share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/DOMImpleme
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/DOMLocator.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/TypeInfo.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/UserDataHandler.html
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/ASAttributeDeclaration.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/ASContentModel.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/ASDataType.html
@@ -364,6 +398,7 @@ share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/NodeEdi
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/bootstrap/
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/bootstrap/DOMImplementationListImpl.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/bootstrap/DOMImplementationRegistry.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/bootstrap/package-frame.html
@@ -379,11 +414,16 @@ share/java/xerces-2_4_0/docs/javadocs/dom3-api/package-list
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/packages.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/serialized-form.html
 share/java/xerces-2_4_0/docs/javadocs/dom3-api/stylesheet.css
+share/java/xerces-2_4_0/docs/javadocs/other/
 share/java/xerces-2_4_0/docs/javadocs/other/allclasses-frame.html
 share/java/xerces-2_4_0/docs/javadocs/other/deprecated-list.html
 share/java/xerces-2_4_0/docs/javadocs/other/help-doc.html
 share/java/xerces-2_4_0/docs/javadocs/other/index-all.html
 share/java/xerces-2_4_0/docs/javadocs/other/index.html
+share/java/xerces-2_4_0/docs/javadocs/other/org/
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/HTMLAnchorElementImpl.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/HTMLAppletElementImpl.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/HTMLAreaElementImpl.html
@@ -445,6 +485,7 @@ share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/NameNodeListImpl
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLAElement.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLAccessElement.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLAnchorElement.html
@@ -483,6 +524,7 @@ share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLTimerElement.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLTrElement.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLUElement.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/WMLWmlElement.html
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/dom/
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/dom/WMLAElementImpl.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/dom/WMLAccessElementImpl.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/dom/WMLAnchorElementImpl.html
@@ -527,6 +569,8 @@ share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/dom/package-tree.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml/
+share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml/serialize/
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml/serialize/BaseMarkupSerializer.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml/serialize/DOMSerializer.html
 share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml/serialize/DOMWriterImpl.html
@@ -558,11 +602,16 @@ share/java/xerces-2_4_0/docs/javadocs/other/package-list
 share/java/xerces-2_4_0/docs/javadocs/other/packages.html
 share/java/xerces-2_4_0/docs/javadocs/other/serialized-form.html
 share/java/xerces-2_4_0/docs/javadocs/other/stylesheet.css
+share/java/xerces-2_4_0/docs/javadocs/xerces2/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/allclasses-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/deprecated-list.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/help-doc.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/index-all.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/index.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/ASDOMImplementationImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/ASModelImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/AttrImpl.html
@@ -622,6 +671,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/RangeExcepti
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/RangeImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/TextImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/TreeWalkerImpl.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/events/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/events/EventImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/events/MutationEventImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/events/package-frame.html
@@ -630,6 +680,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/events/packa
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/Constants.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/RevalidationHandler.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/Version.html
@@ -662,6 +713,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/XMLNSDocume
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/XMLNamespaceBinder.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/XMLScanner.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/XMLVersionDetector.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/DTDGrammar.QNameHashtable.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/DTDGrammar.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/DTDGrammarBucket.html
@@ -680,6 +732,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/XMLEnti
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/XMLNSDTDValidator.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/XMLNotationDecl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/XMLSimpleType.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/models/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/models/CMAny.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/models/CMBinOp.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/models/CMLeaf.html
@@ -696,6 +749,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/models/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/DTDDVFactory.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/DVFactoryException.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/DatatypeException.html
@@ -707,6 +761,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/Validate
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/ValidationContext.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/XSFacets.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/XSSimpleType.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/dtd/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/dtd/DTDDVFactoryImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/dtd/ENTITYDatatypeValidator.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/dtd/IDDatatypeValidator.html
@@ -725,11 +780,13 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/dtd/pack
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util/Base64.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util/HexBin.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/AbstractDateTimeDV.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/AnySimpleDV.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/AnyURIDV.html
@@ -765,12 +822,14 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/YearM
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/ASCIIReader.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/UCSReader.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/UTF8Reader.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/msg/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/msg/XMLMessageFormatter.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/msg/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/msg/package-summary.html
@@ -778,12 +837,14 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/msg/package
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/EntityState.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/ValidationManager.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/ValidationState.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/XPath.Axis.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/XPath.LocationPath.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/XPath.NodeTest.html
@@ -793,6 +854,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/XPath
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/BMPattern.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/Match.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/ParseException.html
@@ -801,6 +863,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/AttributePSVImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/ElementPSVImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/SchemaGrammar.BuiltinSchemaGrammar.html
@@ -836,6 +899,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/XSModelI
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/XSNotationDecl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/XSParticleDecl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/XSWildcardDecl.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/DOMNodePool.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/DOMParser.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/DocumentImpl.html
@@ -843,6 +907,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/Elem
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/Field.Matcher.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/Field.XPath.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/Field.html
@@ -859,6 +924,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/CMBuilder.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/CMNodeFactory.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/XSAllCM.html
@@ -871,6 +937,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/X
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/opti/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/opti/AttrImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/opti/DefaultDocument.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/opti/DefaultElement.html
@@ -888,6 +955,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/opti/pac
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/PSVIProvider.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/StringList.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSAnnotation.html
@@ -915,12 +983,14 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/XSW
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/XSAttributeChecker.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/XSDAbstractParticleTraverser.ParticleArray.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/XSDHandler.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/NSItemListImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/SimpleLocator.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/StringListImpl.html
@@ -932,6 +1002,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/XSO
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/DocumentBuilderFactoryImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/DocumentBuilderImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/JAXPConstants.html
@@ -940,6 +1011,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/SAXParserIm
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/AbstractDOMParser.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/AbstractSAXParser.AttributesProxy.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/AbstractSAXParser.LocatorProxy.html
@@ -968,6 +1040,7 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/XMLParse
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/util/
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/util/AugmentationsImpl.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/util/DOMEntityResolverWrapper.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/util/DOMErrorHandlerWrapper.html
@@ -1009,11 +1082,16 @@ share/java/xerces-2_4_0/docs/javadocs/xerces2/package-list
 share/java/xerces-2_4_0/docs/javadocs/xerces2/packages.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/serialized-form.html
 share/java/xerces-2_4_0/docs/javadocs/xerces2/stylesheet.css
+share/java/xerces-2_4_0/docs/javadocs/xni/
 share/java/xerces-2_4_0/docs/javadocs/xni/allclasses-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xni/deprecated-list.html
 share/java/xerces-2_4_0/docs/javadocs/xni/help-doc.html
 share/java/xerces-2_4_0/docs/javadocs/xni/index-all.html
 share/java/xerces-2_4_0/docs/javadocs/xni/index.html
+share/java/xerces-2_4_0/docs/javadocs/xni/org/
+share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/
+share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/
+share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/Augmentations.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/NamespaceContext.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/QName.html
@@ -1026,6 +1104,7 @@ share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/XMLLocator.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/XMLResourceIdentifier.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/XMLString.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/XNIException.html
+share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/grammars/
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/grammars/Grammar.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/grammars/XMLDTDDescription.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/grammars/XMLGrammarDescription.html
@@ -1039,6 +1118,7 @@ share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/grammars/package
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/XMLComponent.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/XMLComponentManager.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/XMLConfigurationException.html
@@ -1059,6 +1139,7 @@ share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/XMLPullPa
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/package-frame.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/package-summary.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser/package-tree.html
+share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/psvi/
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/psvi/AttributePSVI.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/psvi/ElementPSVI.html
 share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/psvi/ItemPSVI.html
@@ -1075,6 +1156,7 @@ share/java/xerces-2_4_0/docs/javadocs/xni/stylesheet.css
 share/java/xerces-2_4_0/docs/limitations.html
 share/java/xerces-2_4_0/docs/properties.html
 share/java/xerces-2_4_0/docs/releases.html
+share/java/xerces-2_4_0/docs/resources/
 share/java/xerces-2_4_0/docs/resources/bottom.gif
 share/java/xerces-2_4_0/docs/resources/button-asf-hi.gif
 share/java/xerces-2_4_0/docs/resources/button-asf-lo.gif
@@ -1108,6 +1190,8 @@ share/java/xerces-2_4_0/docs/xni-core.html
 share/java/xerces-2_4_0/docs/xni-design.html
 share/java/xerces-2_4_0/docs/xni-xerces2.html
 share/java/xerces-2_4_0/docs/xni.html
+share/java/xerces-2_4_0/samples/
+share/java/xerces-2_4_0/samples/dom/
 share/java/xerces-2_4_0/samples/dom/ASBuilder.java
 share/java/xerces-2_4_0/samples/dom/Counter.java
 share/java/xerces-2_4_0/samples/dom/DOM3.java
@@ -1116,25 +1200,34 @@ share/java/xerces-2_4_0/samples/dom/DOMGenerate.java
 share/java/xerces-2_4_0/samples/dom/GetElementsByTagName.java
 share/java/xerces-2_4_0/samples/dom/ParserWrapper.java
 share/java/xerces-2_4_0/samples/dom/Writer.java
+share/java/xerces-2_4_0/samples/dom/traversal/
 share/java/xerces-2_4_0/samples/dom/traversal/IteratorView.java
 share/java/xerces-2_4_0/samples/dom/traversal/NameNodeFilter.java
 share/java/xerces-2_4_0/samples/dom/traversal/TreeWalkerView.java
+share/java/xerces-2_4_0/samples/dom/wrappers/
 share/java/xerces-2_4_0/samples/dom/wrappers/Xerces.java
+share/java/xerces-2_4_0/samples/sax/
 share/java/xerces-2_4_0/samples/sax/Counter.java
 share/java/xerces-2_4_0/samples/sax/DocumentTracer.java
 share/java/xerces-2_4_0/samples/sax/Writer.java
+share/java/xerces-2_4_0/samples/sax/helpers/
 share/java/xerces-2_4_0/samples/sax/helpers/AttributesImpl.java
+share/java/xerces-2_4_0/samples/simpletype/
 share/java/xerces-2_4_0/samples/simpletype/SimpleTypeUsage.java
+share/java/xerces-2_4_0/samples/socket/
 share/java/xerces-2_4_0/samples/socket/DelayedInput.java
 share/java/xerces-2_4_0/samples/socket/KeepSocketOpen.java
+share/java/xerces-2_4_0/samples/socket/io/
 share/java/xerces-2_4_0/samples/socket/io/WrappedInputStream.java
 share/java/xerces-2_4_0/samples/socket/io/WrappedOutputStream.java
+share/java/xerces-2_4_0/samples/ui/
 share/java/xerces-2_4_0/samples/ui/DOMParserSaveEncoding.java
 share/java/xerces-2_4_0/samples/ui/DOMTree.java
 share/java/xerces-2_4_0/samples/ui/DOMTreeFull.java
 share/java/xerces-2_4_0/samples/ui/DefaultImages.java
 share/java/xerces-2_4_0/samples/ui/TreeView.java
 share/java/xerces-2_4_0/samples/ui/TreeViewer.java
+share/java/xerces-2_4_0/samples/xni/
 share/java/xerces-2_4_0/samples/xni/Counter.java
 share/java/xerces-2_4_0/samples/xni/DocumentTracer.java
 share/java/xerces-2_4_0/samples/xni/PSVIWriter.java
@@ -1142,6 +1235,7 @@ share/java/xerces-2_4_0/samples/xni/PassThroughFilter.java
 share/java/xerces-2_4_0/samples/xni/UpperCaseFilter.java
 share/java/xerces-2_4_0/samples/xni/Writer.java
 share/java/xerces-2_4_0/samples/xni/XMLGrammarBuilder.java
+share/java/xerces-2_4_0/samples/xni/parser/
 share/java/xerces-2_4_0/samples/xni/parser/AbstractConfiguration.java
 share/java/xerces-2_4_0/samples/xni/parser/CSVConfiguration.java
 share/java/xerces-2_4_0/samples/xni/parser/CSVParser.java
@@ -1149,95 +1243,3 @@ share/java/xerces-2_4_0/samples/xni/parser/NonValidatingParserConfiguration.java
 share/java/xerces-2_4_0/samples/xni/parser/PSVIConfiguration.java
 share/java/xerces-2_4_0/samples/xni/parser/PSVIParser.java
 share/java/xerces-2_4_0/samples/xni/xerces.properties
-@dirrm share/java/xerces-2_4_0/samples/xni/parser
-@dirrm share/java/xerces-2_4_0/samples/xni
-@dirrm share/java/xerces-2_4_0/samples/ui
-@dirrm share/java/xerces-2_4_0/samples/socket/io
-@dirrm share/java/xerces-2_4_0/samples/socket
-@dirrm share/java/xerces-2_4_0/samples/simpletype
-@dirrm share/java/xerces-2_4_0/samples/sax/helpers
-@dirrm share/java/xerces-2_4_0/samples/sax
-@dirrm share/java/xerces-2_4_0/samples/dom/wrappers
-@dirrm share/java/xerces-2_4_0/samples/dom/traversal
-@dirrm share/java/xerces-2_4_0/samples/dom
-@dirrm share/java/xerces-2_4_0/samples
-@dirrm share/java/xerces-2_4_0/docs/resources
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/psvi
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/parser
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni/grammars
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces/xni
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org/apache/xerces
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org/apache
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni/org
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xni
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/util
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/parsers
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/jaxp
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/util
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/traversers
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/psvi
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/opti
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/models
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/identity
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs/dom
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xs
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath/regex
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/xpath
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/validation
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/msg
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/io
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/xs
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/util
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv/dtd
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dv
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd/models
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl/dtd
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/impl
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom/events
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces/dom
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache/xerces
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org/apache
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2/org
-@dirrm share/java/xerces-2_4_0/docs/javadocs/xerces2
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml/serialize
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache/xml
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml/dom
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache/wml
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html/dom
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache/html
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org/apache
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other/org
-@dirrm share/java/xerces-2_4_0/docs/javadocs/other
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/bootstrap
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3/as
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces/dom3
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache/xerces
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api/org/apache
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api/org
-@dirrm share/java/xerces-2_4_0/docs/javadocs/dom3-api
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/helpers
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax/ext
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/xml/sax
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/xml
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/views
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/traversal
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/stylesheets
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ranges
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/ls
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/html
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/events
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom/css
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c/dom
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org/w3c
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/org
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/javax/xml/parsers
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/javax/xml
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api/javax
-@dirrm share/java/xerces-2_4_0/docs/javadocs/api
-@dirrm share/java/xerces-2_4_0/docs/javadocs
-@dirrm share/java/xerces-2_4_0/docs/images
-@dirrm share/java/xerces-2_4_0/docs/graphics
-@dirrm share/java/xerces-2_4_0/docs
-@dirrm share/java/xerces-2_4_0/data
-@dirrm share/java/xerces-2_4_0
-@dirrm share/java/classes/xerces-2_4_0

@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/04/22 00:33:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:44:02 espie Exp $
 bin/latex2html
+lib/latex2html/
 @comment no checksum
 lib/latex2html/configure-pstoimg
+lib/latex2html/docs/
 lib/latex2html/docs/Makefile
 lib/latex2html/docs/appendix.tex
+lib/latex2html/docs/changebar/
 lib/latex2html/docs/changebar.sty
 lib/latex2html/docs/changebar/00Contents
 lib/latex2html/docs/changebar/00readme.txt
@@ -19,6 +22,7 @@ lib/latex2html/docs/credits.tex
 lib/latex2html/docs/eform.ps
 lib/latex2html/docs/features.tex
 lib/latex2html/docs/figure.ps
+lib/latex2html/docs/hthtml/
 lib/latex2html/docs/hthtml/Makefile
 lib/latex2html/docs/hthtml/hthtml.sty
 lib/latex2html/docs/hthtml/hthtml.tex
@@ -42,6 +46,7 @@ lib/latex2html/docs/manual.index
 lib/latex2html/docs/manual.tex
 lib/latex2html/docs/overview.tex
 lib/latex2html/docs/problems.tex
+lib/latex2html/docs/psfiles/
 lib/latex2html/docs/psfiles/HTMLtab.ps
 lib/latex2html/docs/psfiles/dn.gif
 lib/latex2html/docs/psfiles/eform.ps
@@ -61,10 +66,12 @@ lib/latex2html/docs/psfiles/up.gif
 lib/latex2html/docs/support.tex
 lib/latex2html/docs/url.sty
 lib/latex2html/docs/userman.tex
+lib/latex2html/example/
 lib/latex2html/example/Makefile
 lib/latex2html/example/report.tex
 lib/latex2html/example/sec1.tex
 lib/latex2html/example/sec2.tex
+lib/latex2html/icons.gif/
 lib/latex2html/icons.gif/blueball.gif
 lib/latex2html/icons.gif/change_begin.gif
 lib/latex2html/icons.gif/change_begin_right.gif
@@ -97,6 +104,7 @@ lib/latex2html/icons.gif/up_motif.gif
 lib/latex2html/icons.gif/up_motif_gr.gif
 lib/latex2html/icons.gif/whiteball.gif
 lib/latex2html/icons.gif/yellowball.gif
+lib/latex2html/icons.png/
 lib/latex2html/icons.png/blueball.png
 lib/latex2html/icons.png/change_begin.png
 lib/latex2html/icons.png/change_delete.png
@@ -128,11 +136,13 @@ lib/latex2html/latex2html
 @comment no checksum
 lib/latex2html/latex2html.config
 lib/latex2html/makemap
+lib/latex2html/makeseg/
 lib/latex2html/makeseg/makeseg
 lib/latex2html/makeseg/makeseg.tex
 @comment no checksum
 lib/latex2html/pstoimg
 lib/latex2html/pstoimg_nopipes
+lib/latex2html/styles/
 lib/latex2html/styles/CJK.perl
 lib/latex2html/styles/alltt.perl
 lib/latex2html/styles/amsfonts.perl
@@ -177,6 +187,7 @@ lib/latex2html/styles/verbatimfiles.perl
 lib/latex2html/styles/wrapfig.perl
 lib/latex2html/styles/xspace.perl
 lib/latex2html/styles/xy.perl
+lib/latex2html/tests/
 lib/latex2html/tests/jcl-env.tex
 lib/latex2html/tests/jcl-pag.tex
 lib/latex2html/tests/jcl-verb.tex
@@ -184,6 +195,7 @@ lib/latex2html/tests/pages.tex
 lib/latex2html/tests/pages1.eps
 lib/latex2html/tests/rrm-col.tex
 lib/latex2html/texexpand
+lib/latex2html/texinputs/
 lib/latex2html/texinputs/floatflt.ins
 lib/latex2html/texinputs/frames.sty
 lib/latex2html/texinputs/heqn.sty
@@ -193,6 +205,7 @@ lib/latex2html/texinputs/htmllist.sty
 lib/latex2html/texinputs/justify.sty
 lib/latex2html/texinputs/url.sty
 lib/latex2html/texinputs/verbatimfiles.sty
+lib/latex2html/versions/
 lib/latex2html/versions/html2.1.pl
 lib/latex2html/versions/html2.2.pl
 lib/latex2html/versions/html3.0.pl
@@ -205,16 +218,3 @@ lib/latex2html/install-test
 @exec cd %B && PREFIX=%D ./%f
 @exec rm %B/{configure-pstoimg,latex2html,latex2html.config,pstoimg}.bak || true
 @unexec rm %B/DBM.tst.db %B/local.pm || true
-@dirrm lib/latex2html/versions
-@dirrm lib/latex2html/texinputs
-@dirrm lib/latex2html/tests
-@dirrm lib/latex2html/styles
-@dirrm lib/latex2html/makeseg
-@dirrm lib/latex2html/icons.png
-@dirrm lib/latex2html/icons.gif
-@dirrm lib/latex2html/example
-@dirrm lib/latex2html/docs/psfiles
-@dirrm lib/latex2html/docs/hthtml
-@dirrm lib/latex2html/docs/changebar
-@dirrm lib/latex2html/docs
-@dirrm lib/latex2html

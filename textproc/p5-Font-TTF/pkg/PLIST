@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/12/31 18:44:46 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:44:03 espie Exp $
 bin/check_attach.plx
 bin/eurofix.plx
 bin/hackos2.plx
@@ -6,6 +6,8 @@ bin/psfix.plx
 bin/ttfbuilder.plx
 bin/ttfname.plx
 bin/ttfremap.plx
+${P5SITE}/Font/
+${P5SITE}/Font/TTF/
 ${P5SITE}/Font/TTF/AATKern.pm
 ${P5SITE}/Font/TTF/AATutils.pm
 @comment ${P5SITE}/Font/TTF/AATutils.pm.orig
@@ -30,6 +32,7 @@ ${P5SITE}/Font/TTF/Hdmx.pm
 ${P5SITE}/Font/TTF/Head.pm
 ${P5SITE}/Font/TTF/Hhea.pm
 ${P5SITE}/Font/TTF/Hmtx.pm
+${P5SITE}/Font/TTF/Kern/
 ${P5SITE}/Font/TTF/Kern.pm
 ${P5SITE}/Font/TTF/Kern/ClassArray.pm
 ${P5SITE}/Font/TTF/Kern/CompactClassArray.pm
@@ -40,6 +43,7 @@ ${P5SITE}/Font/TTF/LTSH.pm
 ${P5SITE}/Font/TTF/Loca.pm
 ${P5SITE}/Font/TTF/Manual.pod
 ${P5SITE}/Font/TTF/Maxp.pm
+${P5SITE}/Font/TTF/Mort/
 ${P5SITE}/Font/TTF/Mort.pm
 ${P5SITE}/Font/TTF/Mort/Chain.pm
 ${P5SITE}/Font/TTF/Mort/Contextual.pm
@@ -67,65 +71,65 @@ ${P5SITE}/Font/TTF/Vhea.pm
 ${P5SITE}/Font/TTF/Vmtx.pm
 ${P5SITE}/Font/TTF/Win32.pm
 ${P5SITE}/Font/TTF/XMLparse.pm
-@comment ${P5ARCH}/auto/Font/TTF/.packlist
 ${P5SITE}/ttfmod.pl
-man/man1/ttfbuilder.plx.1
-man/man3p/Font::TTF::AATKern.3p
-man/man3p/Font::TTF::AATutils.3p
-man/man3p/Font::TTF::Anchor.3p
-man/man3p/Font::TTF::Bsln.3p
-man/man3p/Font::TTF::Cmap.3p
-man/man3p/Font::TTF::Coverage.3p
-man/man3p/Font::TTF::Cvt_.3p
-man/man3p/Font::TTF::Delta.3p
-man/man3p/Font::TTF::Fdsc.3p
-man/man3p/Font::TTF::Feat.3p
-man/man3p/Font::TTF::Fmtx.3p
-man/man3p/Font::TTF::Font.3p
-man/man3p/Font::TTF::Fpgm.3p
-man/man3p/Font::TTF::GDEF.3p
-man/man3p/Font::TTF::GPOS.3p
-man/man3p/Font::TTF::GSUB.3p
-man/man3p/Font::TTF::Glyf.3p
-man/man3p/Font::TTF::Glyph.3p
-man/man3p/Font::TTF::Hdmx.3p
-man/man3p/Font::TTF::Head.3p
-man/man3p/Font::TTF::Hhea.3p
-man/man3p/Font::TTF::Hmtx.3p
-man/man3p/Font::TTF::Kern.3p
-man/man3p/Font::TTF::Kern::ClassArray.3p
-man/man3p/Font::TTF::Kern::CompactClassArray.3p
-man/man3p/Font::TTF::Kern::OrderedList.3p
-man/man3p/Font::TTF::Kern::StateTable.3p
-man/man3p/Font::TTF::Kern::Subtable.3p
-man/man3p/Font::TTF::LTSH.3p
-man/man3p/Font::TTF::Loca.3p
-man/man3p/Font::TTF::Manual.3p
-man/man3p/Font::TTF::Maxp.3p
-man/man3p/Font::TTF::Mort.3p
-man/man3p/Font::TTF::Mort::Chain.3p
-man/man3p/Font::TTF::Mort::Contextual.3p
-man/man3p/Font::TTF::Mort::Insertion.3p
-man/man3p/Font::TTF::Mort::Ligature.3p
-man/man3p/Font::TTF::Mort::Noncontextual.3p
-man/man3p/Font::TTF::Mort::Rearrangement.3p
-man/man3p/Font::TTF::Mort::Subtable.3p
-man/man3p/Font::TTF::Name.3p
-man/man3p/Font::TTF::OS_2.3p
-man/man3p/Font::TTF::OldCmap.3p
-man/man3p/Font::TTF::OldMort.3p
-man/man3p/Font::TTF::PCLT.3p
-man/man3p/Font::TTF::Post.3p
-man/man3p/Font::TTF::Prep.3p
-man/man3p/Font::TTF::Prop.3p
-man/man3p/Font::TTF::Segarr.3p
-man/man3p/Font::TTF::Table.3p
-man/man3p/Font::TTF::Ttc.3p
-man/man3p/Font::TTF::Ttopen.3p
-man/man3p/Font::TTF::Utils.3p
-man/man3p/Font::TTF::Vhea.3p
-man/man3p/Font::TTF::Vmtx.3p
-man/man3p/Font::TTF::XMLparse.3p
+@man man/man1/ttfbuilder.plx.1
+@man man/man3p/Font::TTF::AATKern.3p
+@man man/man3p/Font::TTF::AATutils.3p
+@man man/man3p/Font::TTF::Anchor.3p
+@man man/man3p/Font::TTF::Bsln.3p
+@man man/man3p/Font::TTF::Cmap.3p
+@man man/man3p/Font::TTF::Coverage.3p
+@man man/man3p/Font::TTF::Cvt_.3p
+@man man/man3p/Font::TTF::Delta.3p
+@man man/man3p/Font::TTF::Fdsc.3p
+@man man/man3p/Font::TTF::Feat.3p
+@man man/man3p/Font::TTF::Fmtx.3p
+@man man/man3p/Font::TTF::Font.3p
+@man man/man3p/Font::TTF::Fpgm.3p
+@man man/man3p/Font::TTF::GDEF.3p
+@man man/man3p/Font::TTF::GPOS.3p
+@man man/man3p/Font::TTF::GSUB.3p
+@man man/man3p/Font::TTF::Glyf.3p
+@man man/man3p/Font::TTF::Glyph.3p
+@man man/man3p/Font::TTF::Hdmx.3p
+@man man/man3p/Font::TTF::Head.3p
+@man man/man3p/Font::TTF::Hhea.3p
+@man man/man3p/Font::TTF::Hmtx.3p
+@man man/man3p/Font::TTF::Kern.3p
+@man man/man3p/Font::TTF::Kern::ClassArray.3p
+@man man/man3p/Font::TTF::Kern::CompactClassArray.3p
+@man man/man3p/Font::TTF::Kern::OrderedList.3p
+@man man/man3p/Font::TTF::Kern::StateTable.3p
+@man man/man3p/Font::TTF::Kern::Subtable.3p
+@man man/man3p/Font::TTF::LTSH.3p
+@man man/man3p/Font::TTF::Loca.3p
+@man man/man3p/Font::TTF::Manual.3p
+@man man/man3p/Font::TTF::Maxp.3p
+@man man/man3p/Font::TTF::Mort.3p
+@man man/man3p/Font::TTF::Mort::Chain.3p
+@man man/man3p/Font::TTF::Mort::Contextual.3p
+@man man/man3p/Font::TTF::Mort::Insertion.3p
+@man man/man3p/Font::TTF::Mort::Ligature.3p
+@man man/man3p/Font::TTF::Mort::Noncontextual.3p
+@man man/man3p/Font::TTF::Mort::Rearrangement.3p
+@man man/man3p/Font::TTF::Mort::Subtable.3p
+@man man/man3p/Font::TTF::Name.3p
+@man man/man3p/Font::TTF::OS_2.3p
+@man man/man3p/Font::TTF::OldCmap.3p
+@man man/man3p/Font::TTF::OldMort.3p
+@man man/man3p/Font::TTF::PCLT.3p
+@man man/man3p/Font::TTF::Post.3p
+@man man/man3p/Font::TTF::Prep.3p
+@man man/man3p/Font::TTF::Prop.3p
+@man man/man3p/Font::TTF::Segarr.3p
+@man man/man3p/Font::TTF::Table.3p
+@man man/man3p/Font::TTF::Ttc.3p
+@man man/man3p/Font::TTF::Ttopen.3p
+@man man/man3p/Font::TTF::Utils.3p
+@man man/man3p/Font::TTF::Vhea.3p
+@man man/man3p/Font::TTF::Vmtx.3p
+@man man/man3p/Font::TTF::XMLparse.3p
+share/examples/p5-Font-TTF/
 share/examples/p5-Font-TTF/StripCmap.plx
 share/examples/p5-Font-TTF/addpclt.plx
 share/examples/p5-Font-TTF/makemono.plx
@@ -137,13 +141,3 @@ share/examples/p5-Font-TTF/ttfwidth.plx
 share/examples/p5-Font-TTF/ttunadopter.plx
 share/examples/p5-Font-TTF/xmldump.plx
 share/examples/p5-Font-TTF/zerohyph.plx
-@dirrm share/examples/p5-Font-TTF
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Font/TTF
-@comment @dirrm ${P5ARCH}/auto/Font
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Font/TTF/Mort
-@dirrm ${P5SITE}/Font/TTF/Kern
-@dirrm ${P5SITE}/Font/TTF
-@dirrm ${P5SITE}/Font

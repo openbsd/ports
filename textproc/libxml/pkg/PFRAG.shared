@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.51 2004/07/12 02:08:17 kevlo Exp $
-lib/libxml2.so.8.11
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.52 2004/09/15 18:44:02 espie Exp $
+@lib lib/libxml2.so.8.11

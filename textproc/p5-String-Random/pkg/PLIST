@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/31 18:53:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:04 espie Exp $
+${P5SITE}/String/
 ${P5SITE}/String/Random.pm
-@comment ${P5ARCH}/auto/String/Random/.packlist
-man/man3p/String::Random.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/String/Random
-@comment @dirrm ${P5ARCH}/auto/String
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/String
+@man man/man3p/String::Random.3p

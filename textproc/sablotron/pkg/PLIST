@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/06/29 23:14:36 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:07 espie Exp $
 bin/sabcmd
 bin/sablot-config
 include/sabcfg.h
@@ -9,7 +9,10 @@ include/shandler.h
 include/sxpath.h
 lib/libsablot.a
 lib/libsablot.la
-man/man1/sabcmd.1
+@man man/man1/sabcmd.1
+share/doc/sablotron/
+share/doc/sablotron/jsdom-ref/
+share/doc/sablotron/jsdom-ref/apidocs/
 share/doc/sablotron/jsdom-ref/apidocs/api-.Conversions.html
 share/doc/sablotron/jsdom-ref/apidocs/api-.Debugging.html
 share/doc/sablotron/jsdom-ref/apidocs/api-.Example.html
@@ -79,6 +82,8 @@ share/doc/sablotron/jsdom-ref/apidocs/sparse-toc-grp.html
 share/doc/sablotron/jsdom-ref/apidocs/sparse-toc.html
 share/doc/sablotron/jsdom-ref/complete-frameset.html
 share/doc/sablotron/jsdom-ref/sparse-frameset.html
+share/doc/sablotron/sablot/
+share/doc/sablotron/sablot/apidocs/
 share/doc/sablotron/sablot/apidocs/api-.Debugging XSLT.html
 share/doc/sablotron/sablot/apidocs/api-.Dependencies.html
 share/doc/sablotron/sablot/apidocs/api-.Encodings.html
@@ -153,6 +158,8 @@ share/doc/sablotron/sablot/apidocs/sparse-toc-grp.html
 share/doc/sablotron/sablot/apidocs/sparse-toc.html
 share/doc/sablotron/sablot/complete-frameset.html
 share/doc/sablotron/sablot/sparse-frameset.html
+share/doc/sablotron/sxp/
+share/doc/sablotron/sxp/apidocs/
 share/doc/sablotron/sxp/apidocs/api-.Building.html
 share/doc/sablotron/sxp/apidocs/api-.Errors.html
 share/doc/sablotron/sxp/apidocs/api-.Introduction.html
@@ -217,10 +224,3 @@ share/doc/sablotron/sxp/apidocs/sparse-toc.html
 share/doc/sablotron/sxp/complete-frameset.html
 share/doc/sablotron/sxp/sparse-frameset.html
 %%SHARED%%
-@dirrm share/doc/sablotron/sxp/apidocs
-@dirrm share/doc/sablotron/sxp
-@dirrm share/doc/sablotron/sablot/apidocs
-@dirrm share/doc/sablotron/sablot
-@dirrm share/doc/sablotron/jsdom-ref/apidocs
-@dirrm share/doc/sablotron/jsdom-ref
-@dirrm share/doc/sablotron

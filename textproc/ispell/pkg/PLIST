@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/01/24 11:20:17 jakob Exp $
-bin/ispell
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:44:02 espie Exp $
 bin/buildhash
-bin/tryaffix
-bin/ijoin
 bin/findaffix
-bin/munchlist
 bin/icombine
+bin/ijoin
+bin/ispell
 bin/ispell-config
+bin/munchlist
+bin/tryaffix
+lib/ispell/
+lib/ispell/american.aff
+lib/ispell/american.hash
+lib/ispell/americanmed+.hash
+lib/ispell/british.aff
+lib/ispell/british.hash
+lib/ispell/britishxlg.hash
 lib/ispell/default.aff
 lib/ispell/default.hash
-lib/ispell/americanmed+.hash
-lib/ispell/american.hash
-lib/ispell/american.aff
-lib/ispell/britishxlg.hash
-lib/ispell/british.hash
-lib/ispell/british.aff
-man/man1/ispell.1
-man/man1/buildhash.1
-man/man1/munchlist.1
-man/man1/findaffix.1
-man/man1/tryaffix.1
-man/man4/ispell.4
-man/man4/english.4
-@dirrm lib/ispell
+@man man/man1/buildhash.1
+@man man/man1/findaffix.1
+@man man/man1/ispell.1
+@man man/man1/munchlist.1
+@man man/man1/tryaffix.1
+@man man/man4/english.4
+@man man/man4/ispell.4
