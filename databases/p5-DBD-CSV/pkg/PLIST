@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/12/30 01:01:37 espie Exp $
-@conflict p5-DBI-*
+@comment $OpenBSD: PLIST,v 1.5 2004/12/30 11:37:59 espie Exp $
 ${P5SITE}/Bundle/DBD/
 ${P5SITE}/Bundle/DBD/CSV.pm
 ${P5SITE}/DBD/

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2004/12/30 01:01:37 espie Exp $
-@conflict p5-DBD-CSV-*
+@comment $OpenBSD: PLIST,v 1.25 2004/12/30 11:37:59 espie Exp $
 bin/dbiprof
 bin/dbiproxy
 ${P5ARCH}/
