@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2000/06/10 18:51:44 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/06/25 03:56:58 brad Exp $
 
-DISTNAME=	bzip2-1.0.0
+DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
 NEED_VERSION=	1.301
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/sourceware.cygnus.com/pub/bzip2/v100/
+
+HOMEPAGE=	http://sourceware.cygnus.com/bzip2/
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -13,17 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CC="${CC}" \
+USE_LIBTOOL=	Yes
+MAKE_FLAGS=	PREFIX="${PREFIX}" CC="${CC}" \
 		CFLAGS="${CFLAGS} -Wall -Winline -fomit-frame-pointer \
 		-fno-strength-reduce"
-
-FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
+FAKE_FLAGS=	PREFIX="${PREFIX}" DESTDIR="${WRKINST}"
 
 test:   build
-	@cd ${WRKSRC} && env LD_LIBRARY_PATH="${WRKSRC}" make test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
 
 .include <bsd.port.mk>
-
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
-MAKE_ENV=	NO_SHARED_LIBS=	Yes
-.endif
