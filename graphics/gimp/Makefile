@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/02/07 10:06:16 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2000/02/08 02:47:18 brad Exp $
 
 DISTNAME=	gimp-1.1.16
 CATEGORIES=	graphics
@@ -15,6 +15,7 @@ LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.35:${PORTSDIR}/graphics/tiff
 
+USE_BZIP2=	yes
 USE_X11=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
