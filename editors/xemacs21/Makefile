@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/22 07:18:44 jasoni Exp $
+# $OpenBSD: Makefile,v 1.15 2002/07/19 22:25:59 pvalchev Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -54,7 +54,7 @@ USE_GMAKE=		Yes
 # that knows about curses really being ncurses
 
 CONFIGURE_STYLE=	autoconf old dest
-
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=	--with-gnu-make \
 			--gung-ho \
 			--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \

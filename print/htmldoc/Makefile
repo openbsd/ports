@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/07/10 20:48:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2002/07/19 22:25:59 pvalchev Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=		png.2::graphics/png \
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
-			CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
