@@ -1,0 +1,155 @@
+#!/usr/bin/perl -w
+
+# $OpenBSD: make-plist,v 1.1 1999/07/29 13:51:51 espie Exp $
+
+#  Copyright (c) 1999 Marc Espie
+# 
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
+#  3. All advertising materials mentioning features or use of this software
+#     must display the following acknowledgement:
+# 	This product includes software developed by the OpenBSD project
+#
+#  4. Neither the name of the OpenBSD project nor the names of its contributors
+#     may be used to endorse or promote products derived from this software
+#     without specific prior written permission.
+# 
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND
+#  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE
+#  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+#  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+#  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+#  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+#  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+#  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#  SUCH DAMAGE.
+# 
+
+
+use strict;
+
+
+use File::Find;
+
+my (%newdir, %occupied, %ldconfig, %infodir, @files);
+
+# compare all files against this date
+my $date = (stat $ENV{INSTALL_PRE_COOKIE})[10];
+
+# prefix to remove from everything
+my $base = $ENV{PREFIX};
+
+
+# read an mtree file, and produce the corresponding directory hierarchy
+sub parse_mtree {
+		# start under current PREFIX, usually
+	my $current = shift;
+	local(*FILE);
+	my %mtree;
+	open FILE, $ENV{MTREE_FILE};
+	while(<FILE>) {
+		chomp;
+		s/^\s*//;
+		next if /^\#/ || /^\//;
+		s/\s.*$//;
+		next if /^$/;
+		if ($_ eq '..') {
+			$current =~ s|/[^/]*$||;
+			next;
+		} else {
+			$current.="/$_";
+		}
+		$_ = $current;
+		while (s|/\./|/|)	{}
+		$mtree{$_} = 1;
+	}
+	close FILE;
+	return \%mtree;
+}
+
+sub strip {
+	local($_) = shift;
+	s|^\Q$base\E/||;
+	return $_;
+}
+
+sub add_info {
+	my ($header, $infodir) = @_;
+	for my $d (sort (keys %$infodir) ) {
+		for my $f (sort @{$infodir->{$d}}) {
+			my $d2 = strip($d);
+			print "$header --info-dir=\%D/$d2 \%D/$d2/$f\n";
+		}
+	}
+}
+
+
+# recursive traversal: mark specific `info' dirs, `ldconfig' dirs,
+# and potentially modified dirs
+
+find(
+	sub {
+		my $cdate = (lstat $_)[10];
+		if ($cdate >= $date) {
+			if (-d _) {
+				$newdir{$File::Find::name} = 1;
+			} else {
+				push(@files, $File::Find::name);
+				if (/\.so\.\d+\.\d+$/) {
+					$ldconfig{$File::Find::dir} = 1;
+				}
+				if (/\.info$/) {
+					my $d = $File::Find::dir;
+					$infodir{$d} = [] unless defined $infodir{$d};
+					push(@{$infodir{$d}}, $_);
+				}
+			}
+		} else {
+			$occupied{$File::Find::dir} = 1;
+		}
+	}, $base);
+
+
+# occupied marks a dir that was already there... 
+# so all parents had to be around too
+for my $d (keys %occupied) {
+	while ($d ne '') {
+		undef $newdir{$d} if defined $newdir{$d};
+		$d =~ s|/.*?/?$||;
+	}
+}
+
+# make sure mtree is removed 
+my $mtree = parse_mtree($base);
+for my $d (keys %$mtree) {
+	undef $newdir{$d}
+}
+
+add_info('@unexec install-info', \%infodir);
+
+for my $f (sort @files) {
+	print strip($f), "\n" unless ($f =~ m|/dir$|) && (defined $infodir{$`});
+}
+
+for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
+	print "\@dirrm ",strip($d), "\n";
+}
+	
+my $ldconfig = $ENV{LDCONFIG};
+
+for my $d (sort (keys %ldconfig)) {
+	print "\@exec $ldconfig -m %D/", strip($d), "\n";
+	print "\@unexec $ldconfig -m %D/", strip($d) ,"\n";
+}
+	
+add_info('@exec install-info', \%infodir);
+
+	
