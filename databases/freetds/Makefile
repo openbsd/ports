@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2003/08/17 22:37:12 jcs Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/12 02:46:12 jcs Exp $
 
-DISTNAME=	freetds-0.61.2
+DISTNAME=	freetds-0.62
 CATEGORIES=	databases
 
 # GPL
@@ -18,7 +18,8 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
-		--with-libiconv-prefix="${LOCALBASE}"
+		--with-libiconv-prefix="${LOCALBASE}" \
+		--disable-threadsafe
 MAKE_ENV=	RM=rm
 MODULES=	gettext
 
@@ -28,5 +29,7 @@ post-install:
 	@mkdir ${PREFIX}/share/examples/freetds
 	${INSTALL_DATA} ${WRKSRC}/freetds.conf.new \
 		${PREFIX}/share/examples/freetds/freetds.conf-sample
+	${INSTALL_DATA} ${WRKSRC}/src/pool/pool.conf \
+		${PREFIX}/share/examples/freetds/pool.conf-sample
 
 .include <bsd.port.mk>

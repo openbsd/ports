@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2003/05/18 16:57:18 jcs Exp $
-lib/libct.so.1.0
-lib/libsybdb.so.3.0
-lib/libtds.so.2.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/01/12 02:46:12 jcs Exp $
+lib/libct.so.2.0
+lib/libsybdb.so.4.0
+lib/libtds.so.3.0
 lib/libtdssrv.so.1.0
 DYNLIBDIR(%D/lib)

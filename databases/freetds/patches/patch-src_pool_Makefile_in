@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_pool_Makefile_in,v 1.1 2004/01/12 02:46:12 jcs Exp $
+--- src/pool/Makefile.in.orig	Sun Jan 11 20:18:21 2004
++++ src/pool/Makefile.in	Sun Jan 11 20:18:48 2004
+@@ -466,10 +466,7 @@
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(ETC)
+-	if test ! -f $(ETC)/pool.conf; then \
+-		$(INSTALL_DATA) $(srcdir)/pool.conf $(ETC)/pool.conf; \
+-	fi
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
