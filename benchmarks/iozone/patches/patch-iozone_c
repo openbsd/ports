@@ -1,17 +1,12 @@
-$OpenBSD: patch-iozone_c,v 1.1 2000/05/29 04:18:32 marc Exp $
-
-Without this patch the net result of includes and defines are:
-#define O_FSYNC O_SYNC
-#define O_SYNC O_FSYNC
-
---- iozone.c.orig	Tue Sep 14 14:38:16 1999
-+++ iozone.c	Sun May 28 21:03:54 2000
-@@ -195,7 +195,7 @@ THISVERSION,
- #include <malloc.h>
+--- iozone.c.orig	Tue Sep 14 17:38:16 1999
++++ iozone.c	Mon May 29 00:42:45 2000
+@@ -196,7 +196,9 @@
  #endif
  
--#if defined (__FreeBSD__) || defined(__OpenBSD__)
-+#if defined (__FreeBSD__)
+ #if defined (__FreeBSD__) || defined(__OpenBSD__)
++#ifndef O_SYNC
  #define O_SYNC O_FSYNC
++#endif
  #endif
  
+ #ifndef MAP_FAILED
