@@ -1,18 +1,18 @@
-$OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
---- Doc/zsh.texi.orig	Tue May  6 11:50:40 2003
-+++ Doc/zsh.texi	Thu May 22 10:01:06 2003
+$OpenBSD: patch-Doc_zsh_texi,v 1.2 2004/09/30 21:46:58 robert Exp $
+--- Doc/zsh.texi.orig	Fri Aug 13 12:32:33 2004
++++ Doc/zsh.texi	Wed Sep 15 13:12:33 2004
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
  @settitle zsh
 +@dircategory Shells
 +@direntry
-+* Zsh: (zsh).			The Z shell.
++* Zsh: (zsh).                  The Z shell.
 +@end direntry
  @c %**end of header
  
  @ifinfo
-@@ -2959,7 +2963,7 @@ you may see in your prompt (see
+@@ -3065,7 +3069,7 @@
  A history expansion begins with the first character of the @t{histchars}
  parameter, which is `@t{!}' by default, and may occur anywhere on the
  command line; history expansions do not nest.  The `@t{!}' can be escaped
@@ -21,44 +21,16 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
  to suppress its special meaning.  Double quotes will @emph{not} work for
  this.  Following this history character is an optional event designator
  (@ref{Event Designators}) and then an optional word
-@@ -7076,7 +7080,7 @@ For example,
+@@ -7454,7 +7458,7 @@
  @example
  unsetopt localtraps
  trap - INT
 -fn() @{ setopt localtraps; trap @value{dsq} INT; sleep 3; @}
-+fn() @{ setopt localtraps; trap @t{'}@t{'} INT; sleep 3; @}
- @end example
- 
- @noindent
-@@ -7316,7 +7320,8 @@ Array expansions of the form
- @cindex rc, quoting style
- @cindex quoting style, rc
- @item @t{RC_QUOTES}
--Allow the character sequence `@t{@value{dsq}}' to signify a single quote
-+Allow the character sequence `@t{'}@t{'}' to signify a single
-+quote
- within singly quoted strings.  Note this does not apply in quoted strings
- using the format @t{$'}@var{...}@t{'}, where a backslashed single quote can
- be used.
-@@ -11219,7 +11224,7 @@ An interrupt character will not be inser
- @item @t{quote-line} (ESC-') (unbound) (unbound)
- Quote the current line; that is, put a `@t{'}' character at the
- beginning and the end, and convert all `@t{'}' characters
--to `@t{'\@value{dsq}}'.
-+to `@t{'\}@t{'}@t{'}'.
- 
- @tindex quote-region
- @item @t{quote-region} (ESC-") (unbound) (unbound)
-@@ -14515,7 +14520,7 @@ different types of matches displayed sep
- 
- @noindent
- @example
--zstyle ':completion:*' group-name @value{dsq}
 +zstyle ':completion:*' group-name @t{'}@t{'}
  @end example
  
  @noindent
-@@ -14783,7 +14788,7 @@ zstyle ':completion:*:default' list-colo
+@@ -15225,7 +15229,7 @@
  
  @noindent
  The default colors are the same as for the GNU @t{ls} command and can be
@@ -67,7 +39,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
  
  @kindex list-grouped, completion style
  @item @t{list-grouped}
-@@ -14903,7 +14908,7 @@ generates no matches, case-insensitive c
+@@ -15345,7 +15349,7 @@
  
  @noindent
  @example
@@ -76,7 +48,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
  @end example
  
  @noindent
-@@ -14927,7 +14932,7 @@ case-insensitive completion with @t{_com
+@@ -15369,7 +15373,7 @@
  @example
  zstyle ':completion:*' completer _complete _prefix
  zstyle ':completion:*:complete:*' matcher-list \ 
@@ -85,16 +57,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
  @end example
  
  @noindent
-@@ -14942,7 +14947,7 @@ partial-word completion:
- @example
- zstyle ':completion:*' completer _complete _correct _complete:foo
- zstyle ':completion:*:complete:*' matcher-list \ 
--    @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
-+    @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
- zstyle ':completion:*:foo:*' matcher-list \ 
-     'm:@{a-zA-Z@}=@{A-Za-z@} r:|[-_./]=* r:|=*'
- @end example
-@@ -18055,7 +18060,7 @@ generates at least one match. E.g.:
+@@ -18512,7 +18516,7 @@
  
  @noindent
  @example
@@ -103,7 +66,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
  @end example
  
  @noindent
-@@ -18267,7 +18272,7 @@ use is
+@@ -18724,7 +18728,7 @@
  
  @noindent
  @example
@@ -112,7 +75,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.1 2004/07/12 19:46:52 lebel Exp $
  @end example
  
  @noindent
-@@ -18355,7 +18360,7 @@ performed on the first word in the range
+@@ -18812,7 +18816,7 @@
  
  @noindent
  @example

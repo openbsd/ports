@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.32 2004/09/15 00:40:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.33 2004/09/30 21:46:58 robert Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
 
-VERSION=	4.2.0
-PKGNAME=	zsh-${VERSION:C/-//g}
+VERSION=	4.2.1
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
-		http://www.zsh.org/pub/ \
+		${HOMEPAGE}pub/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
@@ -27,15 +26,16 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	static
 
 .if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mvax}
-# for the time being, force static on alpha
+# for the time being, force static on alpha and vax
 FLAVOR?=        static
 .else
 FLAVOR?=
 .endif
 
-AUTOCONF_VERSION=2.57
+AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-maildir-support
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
+		--enable-maildir-support --with-tcsetpgrp
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"

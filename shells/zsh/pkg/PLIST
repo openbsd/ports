@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 08:57:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/09/30 21:46:59 robert Exp $
 @shell bin/zsh
 bin/zsh-${VERSION}
 @info info/zsh.info
@@ -37,6 +37,7 @@ share/zsh/${VERSION}/functions/_apachectl
 share/zsh/${VERSION}/functions/_apm
 share/zsh/${VERSION}/functions/_approximate
 share/zsh/${VERSION}/functions/_apt
+share/zsh/${VERSION}/functions/_apt-move
 share/zsh/${VERSION}/functions/_apt-show-versions
 share/zsh/${VERSION}/functions/_aptitude
 share/zsh/${VERSION}/functions/_arg_compile
@@ -48,10 +49,10 @@ share/zsh/${VERSION}/functions/_assign
 share/zsh/${VERSION}/functions/_attr
 share/zsh/${VERSION}/functions/_auto-apt
 share/zsh/${VERSION}/functions/_autocd
-share/zsh/${VERSION}/functions/_autoload
 share/zsh/${VERSION}/functions/_bash_completions
 share/zsh/${VERSION}/functions/_bindkey
 share/zsh/${VERSION}/functions/_bison
+share/zsh/${VERSION}/functions/_bogofilter
 share/zsh/${VERSION}/functions/_brace_parameter
 share/zsh/${VERSION}/functions/_bsd_pkg
 @comment share/zsh/${VERSION}/functions/_bsd_pkg.orig
@@ -186,6 +187,7 @@ share/zsh/${VERSION}/functions/_jobs_bg
 share/zsh/${VERSION}/functions/_jobs_builtin
 share/zsh/${VERSION}/functions/_jobs_fg
 share/zsh/${VERSION}/functions/_joe
+share/zsh/${VERSION}/functions/_kfmclient
 share/zsh/${VERSION}/functions/_kill
 share/zsh/${VERSION}/functions/_killall
 share/zsh/${VERSION}/functions/_kld
@@ -223,6 +225,7 @@ share/zsh/${VERSION}/functions/_menu
 share/zsh/${VERSION}/functions/_mere
 share/zsh/${VERSION}/functions/_message
 share/zsh/${VERSION}/functions/_mh
+share/zsh/${VERSION}/functions/_mime_types
 share/zsh/${VERSION}/functions/_mkshortcut
 share/zsh/${VERSION}/functions/_mkzsh
 share/zsh/${VERSION}/functions/_modutils
@@ -270,6 +273,7 @@ share/zsh/${VERSION}/functions/_perl
 share/zsh/${VERSION}/functions/_perl_basepods
 share/zsh/${VERSION}/functions/_perl_modules
 share/zsh/${VERSION}/functions/_perldoc
+share/zsh/${VERSION}/functions/_php
 share/zsh/${VERSION}/functions/_physical_volumes
 share/zsh/${VERSION}/functions/_pick_variant
 share/zsh/${VERSION}/functions/_pids
@@ -448,6 +452,7 @@ share/zsh/${VERSION}/functions/edit-command-line
 share/zsh/${VERSION}/functions/forward-word-match
 share/zsh/${VERSION}/functions/getjobs
 share/zsh/${VERSION}/functions/harden
+share/zsh/${VERSION}/functions/history-pattern-search
 share/zsh/${VERSION}/functions/history-search-end
 share/zsh/${VERSION}/functions/incarg
 share/zsh/${VERSION}/functions/incremental-complete-word
@@ -493,6 +498,7 @@ share/zsh/${VERSION}/functions/url-quote-magic
 share/zsh/${VERSION}/functions/zargs
 share/zsh/${VERSION}/functions/zcalc
 share/zsh/${VERSION}/functions/zed
+share/zsh/${VERSION}/functions/zed-set-file-name
 share/zsh/${VERSION}/functions/zkbd
 share/zsh/${VERSION}/functions/zmv
 share/zsh/${VERSION}/functions/zrecompile
