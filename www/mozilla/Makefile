@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.20 2001/08/19 02:30:45 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/30 13:43:20 brad Exp $
+# Uses pthreads
 
 COMMENT=	"free version of the Netscape browser"
 
