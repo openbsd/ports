@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/19 14:36:49 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -79,7 +79,7 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g' \
+	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/mail/app/mozilla.in
 
 do-install:

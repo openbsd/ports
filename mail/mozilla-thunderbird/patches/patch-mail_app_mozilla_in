@@ -1,6 +1,6 @@
-$OpenBSD: patch-mail_app_mozilla_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
+$OpenBSD: patch-mail_app_mozilla_in,v 1.2 2004/01/19 14:36:49 wilfried Exp $
 --- mail/app/mozilla.in.orig	2003-04-05 22:52:38.000000000 +0200
-+++ mail/app/mozilla.in	2003-12-12 13:02:18.000000000 +0100
++++ mail/app/mozilla.in	2004-01-19 15:33:25.000000000 +0100
 @@ -33,6 +33,7 @@
  #set -x
  
@@ -9,11 +9,15 @@ $OpenBSD: patch-mail_app_mozilla_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
  MRE_HOME=%MREDIR%
  
  # honor MOZILLA_FIVE_HOME if it's there
-@@ -111,7 +112,7 @@ do
+@@ -111,7 +112,11 @@ do
    esac
  done
  
 -export MRE_HOME
++if [ `_X11BASE_/bin/fc-list | wc -l` -eq 0 ]
++then export GDK_USE_XFT=0
++fi
++
 +export MOZ_PLUGIN_PATH MRE_HOME
  eval "set -- $moreargs"
  if [ $debugging = 1 ]
