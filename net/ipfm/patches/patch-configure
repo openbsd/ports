@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2000/06/23 18:44:42 form Exp $
+--- configure.orig	Fri Jun 23 23:44:39 2000
++++ configure	Fri Jun 23 23:44:54 2000
+@@ -1179,7 +1179,7 @@ else
+ NO_PCAP_H=1
+ fi
+ 
+-  if test $NO_PCAP_H = 1; then
++  if test ${NO_PCAP_H}x = 1x; then
+     echo $ac_n "checking for exotic pcap.h places""... $ac_c" 1>&6
+ echo "configure:1185: checking for exotic pcap.h places" >&5
+     if test -r /usr/include/pcap/pcap.h; then

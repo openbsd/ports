@@ -1,0 +1,26 @@
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/06/23 18:44:42 form Exp $
+#
+# ipfm de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=/etc/ipfm.conf
+LOG_DIR=/var/log/ipfm
+
+if [ -f ${CONFIG_FILE} -o -d ${LOG_DIR} ]; then
+	echo
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to perform"
+	echo "| these steps as root:"
+	echo "|"
+	echo "|           rm -f ${CONFIG_FILE}"
+	echo "|           rm -rf ${LOG_DIR}"
+	echo "|"
+	echo "| Do not do this if you plan on re-installing $1"
+	echo "| at some future time."
+	echo "+---------------"
+	echo
+fi
+
+exit 0
