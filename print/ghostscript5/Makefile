@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/03 04:54:42 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/16 00:41:10 rees Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -32,7 +32,7 @@ GS_SOURCES+=	ghostscript-5.03gnu.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
+GS_FONTS_STD=	ghostscript-fonts-std-5.03.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.03.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
