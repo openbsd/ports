@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/23 19:24:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/27 07:25:35 sturm Exp $
 
 COMMENT=	"periodic command scheduler"
 
@@ -28,8 +28,5 @@ post-extract:
 pre-install:
 	perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/anacron.8 \
 		${WRKSRC}/anacrontab.5
-
-post-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${SYSCONFDIR} ${WRKINST}/var/spool
 
 .include <bsd.port.mk>
