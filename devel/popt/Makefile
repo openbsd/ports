@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/01 01:27:55 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2002/02/24 21:47:55 brad Exp $
 
 COMMENT=	"getopt(3)-like library with a number of enhancements"
 
 DISTNAME=	popt-1.5.1
 CATEGORIES=	devel
-NEED_VERSION=	1.475
-MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
+NEED_VERSION=	1.500
+MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MODULES=	gettext
 
