@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/24 17:20:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/21 23:09:31 pvalchev Exp $
 
 COMMENT=		"bonobo configuration system"
 
@@ -28,6 +28,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--disable-oaftest
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
