@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/09 17:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/26 09:40:57 peter Exp $
 #
 
-DISTNAME=	exim-3.13
+DISTNAME=	exim-3.14
 CATEGORIES=	mail
 FAKE=No
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
-DISTFILES=	exim-3.13.tar.gz exim-texinfo-3.10.tar.gz
+DISTFILES=	exim-3.14.tar.gz exim-texinfo-3.10.tar.gz
 
 do-configure:
 	@mkdir -p ${WRKSRC}/Local
@@ -26,7 +26,6 @@ do-configure:
 
 pre-install:
 	${INSTALL} -d /etc/exim
-#	${INSTALL} -d /var/log/exim
 
 post-install:
 	@cp ${WRKSRC}/src/configure.default /etc/exim/configure.sample
