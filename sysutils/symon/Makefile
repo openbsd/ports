@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2002/10/08 07:56:42 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/26 01:09:14 dhartmei Exp $
 
 COMMENT=		"active monitoring tool"
-V=			2.51
+V=			2.53
 DISTNAME=		symon-${V}
 CATEGORIES=		net sysutils
 NEED_VERSION=		1.502
@@ -21,20 +21,18 @@ SUBPACKAGE?=
 # client only package
 MULTI_PACKAGES+=	-mon
 COMMENT-mon=		"active host monitor"
-MON_DEPENDS=		
+MON_LIBDEPENDS=
+MON_RUNDEPENDS=		
 # gatherer only package
 MULTI_PACKAGES+=	-mux
 COMMENT-mux=		"symon data gatherer"
-MUX_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
-
-# Web frontend only package also depends on php4,
-# but php4.2.2 needs an :php4->=4:www/php4
-# and php<     needs an :php4-core->=4:www/php4
-# => net result = it won't work without php, but the package does not force you
-# to have it.
+MUX_LIBDEPENDS=		rrd:rrdtool-*:net/rrdtool 
+MUX_RUNDEPENDS=		rrd:rrdtool-*:net/rrdtool 
+# web frontend only package
 MULTI_PACKAGES+=	-web
 COMMENT-web=		"symon web frontend"
-WEB_DEPENDS=		rrd:rrdtool-*:net/rrdtool
+WEB_LIBDEPENDS=
+WEB_RUNDEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4->=4.2.3:www/php4/core
 
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME${i}=        symon${i}-${V}
@@ -42,9 +40,12 @@ FULLPKGNAME${i}=        symon${i}-${V}
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 MODULE_NAME=            ${SUBPACKAGE:S/-//g}
-LIB_DEPENDS=            ${${MODULE_NAME:U}_DEPENDS}
+LIB_DEPENDS=            ${${MODULE_NAME:U}_LIBDEPENDS}
+RUN_DEPENDS=		${${MODULE_NAME:U}_RUNDEPENDS}
 MESSAGE=                ${PKGDIR}/MESSAGE${SUBPACKAGE}
 .else
+BUILD_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
+RUN_DEPENDS=		rrd:rrdtool-*:net/rrdtool php:php4->=4.2.3:www/php4/core
 LIB_DEPENDS=		rrd:rrdtool-*:net/rrdtool 
 .endif
 
@@ -52,4 +53,3 @@ WRKDIST=		${WRKDIR}/symon
 SUBST_VARS=		V
 
 .include <bsd.port.mk>
-
