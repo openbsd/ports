@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 1999/09/06 17:35:05 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/09/23 21:52:29 brad Exp $
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
 CATEGORIES=	archivers
-NO_CDROM=	"NOFEE: Can not charge for distribution"
-NO_PACKAGE=     Only unmodified original package can be distributed
 EXTRACT_SUFX=
+
+NEED_VERSION=	1.114
+
 ONLY_FOR_ARCHS=	i386
 
-NEED_VERSION=	1.111
+NO_CDROM=	"NOFEE: Can not charge for distribution"
+NO_PACKAGE=     Only unmodified original package can be distributed
 
 MAINTAINER=     ports@openbsd.org
 
