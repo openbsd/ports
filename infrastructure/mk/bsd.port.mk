@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.489 2001/11/01 12:26:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.490 2001/11/11 12:59:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -507,7 +507,7 @@ AUTOCONF?=		autoconf
 
 # Compatibility game
 MD5_FILE?=		${FILESDIR}/md5
-CHECKSUM_FILE?=	${MD5_FILE}
+CHECKSUM_FILE?=	${.CURDIR}/distinfo
 
 # Don't touch !!! Used for generating checksums.
 _CIPHERS=		sha1 rmd160 md5 
@@ -1152,7 +1152,7 @@ DEPENDS_TARGET=	install
 
 makesum: fetch-all
 .if !defined(NO_CHECKSUM) 
-	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
+	@rm -f ${CHECKSUM_FILE} ${MD5_FILE}
 	@cd ${DISTDIR} && \
 		for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
@@ -1166,7 +1166,7 @@ makesum: fetch-all
 
 addsum: fetch-all
 .if !defined(NO_CHECKSUM)
-	@mkdir -p ${FILESDIR} && touch ${CHECKSUM_FILE}
+	@mv ${MD5_FILE} ${CHECKSUM_FILE} || touch ${CHECKSUM_FILE}
 	@cd ${DISTDIR} && \
 	 	for cipher in ${_CIPHERS}; do \
 			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
@@ -1425,13 +1425,15 @@ REFETCH?=false
 
 checksum: fetch
 .  if ! defined(NO_CHECKSUM)
-	@if [ ! -f ${CHECKSUM_FILE} ]; then \
+	@checksum_file=${CHECKSUM_FILE}; \
+	test -f $$checksum_file || checksum_file=${MD5_FILE}; \
+	if [ ! -f $$checksum_file ]; then \
 	  ${ECHO_MSG} ">> No checksum file."; \
 	else \
 	  cd ${DISTDIR}; OK=true; list=''; \
 		for file in ${_CKSUMFILES}; do \
 		  for cipher in ${PREFERRED_CIPHERS}; do \
-			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
+			set -- `grep -i "^$$cipher ($$file)" $$checksum_file` && break || \
 			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
 		  done; \
 		  case "$$4" in \
@@ -1456,7 +1458,7 @@ checksum: fetch
 		done; \
 		set --; \
 		for file in ${_IGNOREFILES}; do \
-		  set -- `grep "($$file)" ${CHECKSUM_FILE}` || \
+		  set -- `grep "($$file)" $$checksum_file` || \
 			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
 			  OK=false; } ; \
 		  case "$$4" in \
@@ -1471,7 +1473,7 @@ checksum: fetch
 		  if ${REFETCH}; then \
 		  	cd ${.CURDIR} && ${MAKE} refetch PROBLEMS="$$list"; \
 		  else \
-			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+			echo "Make sure the Makefile and checksum file ($$checksum_file)"; \
 			echo "are up to date.  If you want to override this check, type"; \
 			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
 			exit 1; \
@@ -2185,19 +2187,21 @@ _fetch-makefile-helper:
 	${_SITE_SELECTOR}; \
 	echo "\t SITES=\"$$sites\" \\"
 .    if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
-	@if [ ! -f ${CHECKSUM_FILE} ]; then \
-	  echo >&2 'Missing checksum file: ${CHECKSUM_FILE}'; \
+	@checksum_file=${CHECKSUM_FILE}; \
+	test -f $$checksum_file || checksum_file=${MD5_FILE}; \
+	@if [ ! -f $$checksum_file ]; then \
+	  echo >&2 'Missing checksum file: $$checksum_file'; \
 	  echo '\t ERROR="no checksum file" \\'; \
 	else \
 	  for c in ${PREFERRED_CIPHERS}; do \
-		if set -- `grep -i "^$$c (${_F})" ${CHECKSUM_FILE}`; then break; fi; \
+		if set -- `grep -i "^$$c (${_F})" $$checksum_file`; then break; fi; \
 	  done; \
 	  case "$$4" in \
 		"") \
 		  echo >&2 "No checksum recorded for ${_F}."; \
 		  echo '\t ERROR="no checksum" \\';; \
 		"IGNORE") \
-		  echo >&2 "Checksum for ${_F} is IGNORE in ${CHECKSUM_FILE}"; \
+		  echo >&2 "Checksum for ${_F} is IGNORE in $$checksum_file"; \
 		  echo >&2 'but file is not in $${IGNORE_FILES}'; \
 		  echo '\t ERROR="IGNORE inconsistent" \\';; \
 		*) \
