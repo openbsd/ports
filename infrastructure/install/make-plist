@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.40 2004/08/03 10:16:58 espie Exp $
+# $OpenBSD: make-plist,v 1.41 2004/08/03 10:51:47 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -33,11 +33,13 @@ use strict;
 use IO::File;
 use File::Find;
 use File::Spec;
+use File::Compare;
 use File::Temp qw/ tempdir /;
 
 my $manual = 0;
 my %out;
 my @has_shared;
+my @tocheck=();
 my ($plist, $pshared);
 
 
@@ -337,6 +339,7 @@ sub may_annotate_and_move
 	    }
 	    my $fh = new IO::File "<$p";
 	    rename($p, "$p.orig") or die "Can't rename $p to $p.orig";
+	    push(@tocheck, $p);
 	    my $newfh = new IO::File ">$p";
 	    annotate($fh, $p, $newfh, $is_shared);
 	    close $fh;
@@ -512,4 +515,15 @@ if (@libfiles > 0) {
 if ($manual) {
 	print STDERR "make plist: subst/frag/exec/unexec spotted in original file\n";
 	print STDERR "\tMay require manual intervention\n";
+}
+
+while (my ($k, $v) = each %out) {
+	close $v;
+}
+
+for my $f (@tocheck) {
+	if (compare($f, "$f.orig") == 0) {
+		print STDERR "$f unchanged, removing $f.orig\n";
+		unlink("$f.orig");
+	}
 }
