@@ -1,0 +1,11 @@
+--- nfs/syscalls.c.orig	Tue Jun 30 14:24:56 1998
++++ nfs/syscalls.c	Mon Mar  1 15:54:54 1999
+@@ -72,7 +72,7 @@
+ #endif
+ 
+ 	bzero(&nfs_args, sizeof(nfs_args));
+-#if defined(BSD4_4_LITE2) || defined(NETBSD)
++#if defined(BSD4_4_LITE2) || defined(NETBSD) || defined(__OpenBSD__)
+ 	nfs_args.version	= NFS_ARGSVERSION;
+ #endif
+ 	nfs_args.wsize		= 8192;
