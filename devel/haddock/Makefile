@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/25 00:26:13 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/31 01:11:14 avsm Exp $
 
-COMMENT=	"documentation tool for Haskell"
+COMMENT=	"documentation tool for the functional language Haskell"
 
-V=		0.4
+V=		0.5
 DISTNAME=	haddock-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/haddock/
 MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
 
-MODULES=	gettext iconv ghc
+MODULES=	ghc
 
 MASTER_SITES=	http://www.haskell.org/haddock/
-DISTFILES=	${DISTNAME}-src.tar.gz
+MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/haddock/
+
+DISTFILES=	${DISTNAME}-src.tar.gz \
+		haddock-regress-${V}.tgz:0
 
 BUILD_DEPENDS+=	::textproc/docbook	::textproc/docbook-dsssl \
 		::textproc/sgmlformat	::textproc/openjade      \
 		::textproc/iso8879	::textproc/linuxdoc      \
 		::textproc/html		::print/jadetex          \
 		::textproc/expat 
-
-NO_REGRESS=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest

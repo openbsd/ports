@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/25 00:26:13 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/31 01:11:15 avsm Exp $
 bin/haddock
-bin/haddock-0.4
-lib/haddock-0.4/haddock.bin
-lib/haddock-0.4/haddock.css
-lib/haddock-0.4/haskell_icon.gif
+bin/haddock-0.5
+lib/haddock-0.5/haddock.bin
+lib/haddock-0.5/haddock.css
+lib/haddock-0.5/haskell_icon.gif
 share/doc/haddock/docbook.css
 share/doc/haddock/haddock.html
 share/doc/haddock/introduction.html
@@ -32,4 +32,4 @@ share/doc/haddock/x486.html
 share/doc/haddock/x57.html
 @dirrm share/doc/haddock/stylesheet-images
 @dirrm share/doc/haddock
-@dirrm lib/haddock-0.4
+@dirrm lib/haddock-0.5
