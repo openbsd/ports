@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1998/11/21 23:07:53 marc Exp $
+# $OpenBSD: Makefile,v 1.19 1998/12/16 18:32:04 dugsong Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += popclient
      SUBDIR += poppassd
 #    SUBDIR += popper
+#    SUBDIR += postfix
 #    SUBDIR += premail
      SUBDIR += procmail
 #    SUBDIR += qpopper
