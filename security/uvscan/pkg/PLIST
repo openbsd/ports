@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/26 19:32:16 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/22 23:00:45 jakob Exp $
 bin/uvscan
-libexec/uvscan/uvscan
+libexec/uvscan/liblnxfv.so
 libexec/uvscan/license.dat
 libexec/uvscan/messages.dat
-share/doc/uvscan/unx47uag.pdf
+libexec/uvscan/uvscan
+man/man1/uvscan.1
 share/doc/uvscan/license.txt
+share/doc/uvscan/readme.txt
+share/doc/uvscan/reseller.txt
+share/doc/uvscan/unxadmin.pdf
