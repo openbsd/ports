@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/11/23 07:25:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/27 07:41:44 alek Exp $
 
 COMMENT=	"spreadsheet program under X11"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 c curses m termlib
 
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 
