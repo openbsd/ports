@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/10/08 22:16:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/10/11 14:48:02 naddy Exp $
 
 COMMENT=		"IRC proxy to connect to ICQ, AOL, MSN and Jabber"
 
@@ -25,7 +25,11 @@ PATCH_DIST_STRIP=	-p1
 DB_DIR?=		/var/bitlbee
 DOCS=			${FILESDIR}/user-guide.html
 DOCDIR=			${PREFIX}/share/doc/bitlbee/
-SUBST_VARS=		DB_DIR DOCDIR
+BITLBEEUSER=		_bitlbee
+BITLBEEGROUP=		_bitlbee
+ID=			509
+SUBST_VARS=		DB_DIR DOCDIR BITLBEEUSER BITLBEEGROUP ID
+
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	simple

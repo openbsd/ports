@@ -1,14 +1,14 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2003/06/27 17:18:01 sturm Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/10/11 14:48:02 naddy Exp $
 #
 # Pre/post-installation setup of Bitlbee
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-BITLBEEUSER=_bitlbee
-BITLBEEGROUP=_bitlbee
-ID=509
+BITLBEEUSER=${BITLBEEUSER}
+BITLBEEGROUP=${BITLBEEGROUP}
+ID=${ID}
 
 do_notice_existingdir() {
     echo << EOF
@@ -19,7 +19,7 @@ do_notice_existingdir() {
 | This directory has been preserved. If you want to start from
 | from the default, you have to perform this step as root:
 |
-| # rm -rf $DB_DIR/*
+|      # rm -rf ${DB_DIR}/*
 |
 +---------------
 
@@ -56,15 +56,16 @@ do_database_install() {
 
 do_manual_notice() {
     cat << EOF
-
-To enable bitlbee you have to add a line like:
-
-    127.0.0.1:6667    stream  tcp     nowait ${BITLBEEUSER} /usr/local/libexec/bitlbee bitlbee
-
-to your /etc/inetd.conf and restart inetd with
-
-    # kill -HUP \`cat /var/run/inetd.pid\`
-
++---------------
+| To enable bitlbee you have to add a line like:
+|
+|    127.0.0.1:6667    stream  tcp     nowait ${BITLBEEUSER} /usr/local/libexec/bitlbee bitlbee
+|
+| to your /etc/inetd.conf and restart inetd with
+|
+|    # kill -HUP \`cat /var/run/inetd.pid\`
+|
++---------------
 
 EOF
 }
@@ -83,6 +84,7 @@ do_warning() {
 |
 | And don't forget to remove the old user/group.
 +---------------
+
 EOF
 }
 # Verify/process the command

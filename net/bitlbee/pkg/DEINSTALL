@@ -1,26 +1,44 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2003/06/22 10:09:57 sturm Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/10/11 14:48:02 naddy Exp $
 #
-# Bitlbee de-installation
+# Bitlbee de-installation script.
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${DB_DIR}
-BITLBEEUSER=_bitlbee
-BITLBEEGROUP=_bitlbee
+BITLBEEUSER=${BITLBEEUSER}
+BITLBEEGROUP=${BITLBEEGROUP}
 
-cat <<EOF
+# the -c target now removes
+if [ "${PKG_DELETE_EXTRA}" = Yes ]; then
+    cat << EOF
 +---------------
-| To completely deinstall the bitlbee package you need
-| to perform these steps as root:
+| To completely deinstall the bitlbee package you have to remove the
+| bitlbee line from /etc/inetd.conf and restart inetd with:
 |
-|         # userdel $BITLBEEUSER
-|         # groupdel $BITLBEEGROUP
-|         # rm -rf $DB_DIR
+|    # kill -HUP \`cat /var/run/inetd.pid\`
 |
-| Do not do this if you plan on re-installing bitlbee
-| at some future time.
 +---------------
 
 EOF
-exit 0
+else
+    cat << EOF
++---------------
+| To completely deinstall the bitlbee package you need to perform these
+| steps as root:
+|
+|    # userdel $BITLBEEUSER
+|    # groupdel $BITLBEEGROUP
+|    # rm -rf $DB_DIR
+|
+| You also have to remove the bitlbee line from /etc/inetd.conf and
+| restart inetd with
+|
+|    # kill -HUP \`cat /var/run/inetd.pid\`
+|
+| Do not do this if you plan on re-installing bitlbee at some future
+| time.
++---------------
+
+EOF
+fi

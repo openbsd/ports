@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/06/28 07:38:29 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/10/11 14:48:02 naddy Exp $
 libexec/bitlbee
 man/man8/bitlbee.8
 share/bitlbee/help.txt
@@ -6,3 +6,6 @@ share/bitlbee/motd.txt
 share/doc/bitlbee/user-guide.html
 @dirrm share/doc/bitlbee
 @dirrm share/bitlbee
+@extraunexec rm -rf ${DB_DIR}
+@extraunexec userdel ${BITLBEEUSER}
+@extraunexec groupdel ${BITLBEEGROUP}
