@@ -1,0 +1,36 @@
+--- Makefile.am.orig	Fri Jan  7 14:46:53 2005
++++ Makefile.am	Fri Feb 11 20:32:41 2005
+@@ -22,14 +22,12 @@ OBJ = hydra-vnc.o hydra-pcnfs.o hydra-re
+       hydra-teamspeak.o \
+       crc32.o d3des.o md4.o hydra-mod.o hydra.o
+ BIN = hydra
+-BINS = $(BIN) xhydra pw-inspector hydra.exe pw-inspector.exe
++BINS = $(BIN) hydra-gtk/src/xhydra pw-inspector
+ 
+ EXTRA_DIST = README README.arm README.palm CHANGES TODO INSTALL LICENSE.GNU LICENCE.HYDRA \
+              hydra-mod.h hydra.h crc32.h d3des.h md4.h
+ 
+ all:	pw-inspector hydra xhydra
+-	@echo
+-	@echo Now type "make install"
+ 
+ hydra:	$(OBJ)
+ 	$(CC) $(OPTS) $(LIBS) -o $(BIN) $(OBJ) $(LIB) $(XLIBS) $(XLIBPATHS)
+@@ -38,7 +36,7 @@ hydra:	$(OBJ)
+ 	@echo
+ 
+ xhydra:	
+-	-cd hydra-gtk && ./make_xhydra.sh
++	-cd hydra-gtk && ./configure && $(MAKE)
+ 
+ pw-inspector: pw-inspector.c
+ 	-$(CC) $(OPTS) -o pw-inspector pw-inspector.c
+@@ -51,7 +49,7 @@ strip:	hydra
+ 
+ install:	strip
+ 	-cp $(BINS) $(PREFIX)$(DIR) 2> /dev/null
+-	-chmod 755 $(PREFIX)$(DIR)/$(BIN) $(PREFIX)$(DIR)/pw-inspector $(PREFIX)$(DIR)/xhydra 2> /dev/null
++	-chmod 755 $(PREFIX)$(DIR)/$(BIN) $(PREFIX)$(DIR)/pw-inspector $(PREFIX)$(DIR)/hydra-gtk/src/xhydra 2> /dev/null
+ 
+ clean:
+ 	rm -rf hydra pw-inspector xhydra pw-inspector.exe hydra.exe *.o core *~ Makefile.in Makefile dev_rfc hydra.restore arm/*.ipk arm/ipkg/usr/bin/* hydra-gtk/src/*.o hydra-gtk/src/xhydra hydra-gtk/stamp-h hydra-gtk/config.status hydra-gtk/errors hydra-gtk/config.log hydra-gtk/src/.deps hydra-gtk/src/Makefile hydra-gtk/Makefile

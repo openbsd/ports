@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2003/12/14 16:35:49 margarida Exp $
---- configure.orig	2003-11-20 07:45:06.000000000 -0800
-+++ configure	2003-12-13 19:47:10.000000000 -0800
-@@ -142,7 +142,7 @@ fi
+--- configure.orig	Tue Feb  1 15:50:26 2005
++++ configure	Fri Feb 11 20:32:41 2005
+@@ -206,16 +206,9 @@ fi
  
  echo
  XDEFINES=""
@@ -9,4 +8,13 @@ $OpenBSD: patch-configure,v 1.2 2003/12/14 16:35:49 margarida Exp $
 +XLIBS="-lm"
  XLIBPATHS=""
  XIPATHS=""
+-
+-SYS=`uname -o`
+-if [ "$SYS" = "Cygwin" ]; then
+-    echo "Cygwin detected, enabling compability options ..."
+-    XDEFINES="-DCYGWIN"
+-    echo
+-fi
  
+ if [ -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" ]; then
+     XLIBPATHS="-L/usr/lib -L/usr/local/lib -L/lib"

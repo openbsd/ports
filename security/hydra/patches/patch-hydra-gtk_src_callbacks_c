@@ -1,0 +1,12 @@
+$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.1 2005/02/11 19:46:22 sturm Exp $
+--- hydra-gtk/src/callbacks.c.orig	Fri Feb 11 20:35:37 2005
++++ hydra-gtk/src/callbacks.c	Fri Feb 11 20:37:22 2005
+@@ -34,7 +34,7 @@ char tasks[10];
+ char timeout[10];
+ char smbntparm[4];
+ char snmpparm[4];
+-char sapr3id[4];
++char sapr3id[10];
+ char passLoginNull[4];
+  
+ 

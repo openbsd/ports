@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/10/02 04:08:42 tedu Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/02/11 19:46:22 sturm Exp $
 bin/hydra
+bin/pw-inspector
+share/doc/hydra/
 share/doc/hydra/README
-@dirrm share/doc/hydra
+!%%no_x11%%
