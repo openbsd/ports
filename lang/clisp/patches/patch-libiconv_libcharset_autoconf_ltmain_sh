@@ -1,15 +1,16 @@
-$OpenBSD: patch-libiconv_libcharset_autoconf_ltmain_sh,v 1.1 2001/03/31 19:20:09 naddy Exp $
---- libiconv/libcharset/autoconf/ltmain.sh.orig	Wed Feb 21 15:09:19 2001
-+++ libiconv/libcharset/autoconf/ltmain.sh	Sat Mar 31 20:02:13 2001
-@@ -1079,7 +1079,18 @@ compiler."
+$OpenBSD: patch-libiconv_libcharset_autoconf_ltmain_sh,v 1.2 2001/05/25 19:40:06 shell Exp $
+--- libiconv/libcharset/autoconf/ltmain.sh.orig	Wed Feb 21 22:13:49 2001
++++ libiconv/libcharset/autoconf/ltmain.sh	Sat May 26 02:17:25 2001
+@@ -1079,7 +1079,18 @@
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
+-	  esac
 +          *-*-openbsd*)
 +            # Do not include libc due to us having libc/libc_r.
 +            continue
 +            ;;
- 	  esac
++          esac 
 +        elif test "$arg" = "-lc_r"; then
 +          case "$host" in
 +          *-*-openbsd*)
@@ -20,7 +21,7 @@ $OpenBSD: patch-libiconv_libcharset_autoconf_ltmain_sh,v 1.1 2001/03/31 19:20:09
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
  	  *-*-cygwin* | *-*-beos*)
-@@ -1091,6 +1102,10 @@ compiler."
+@@ -1091,6 +1102,10 @@
  	deplibs="$deplibs $arg"
  	;;
  
@@ -31,17 +32,17 @@ $OpenBSD: patch-libiconv_libcharset_autoconf_ltmain_sh,v 1.1 2001/03/31 19:20:09
        -module)
  	module=yes
  	continue
-@@ -1799,6 +1814,9 @@ compiler."
+@@ -1799,6 +1814,9 @@
  	  # rhapsody is a little odd...
  	  deplibs="$deplibs -framework System"
  	  ;;
-+	*-*-openbsd*)
-+	  # do not include libc due to us having libc/libc_r.
-+	  ;;
++       *-*-openbsd*)
++          # do not include libc due to us having libc/libc_r.
++          ;;
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3567,40 +3585,6 @@ libdir='$install_libdir'\
+@@ -3567,40 +3585,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
