@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/14 18:27:25 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/17 14:25:28 sturm Exp $
 
 COMMENT=		"flexible and small GTK+ editor"
 
@@ -21,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scintilla/}
 EXTRACT_SUFX=		.tgz
 
 LIB_DEPENDS=		gthread.1.2::devel/glib \
-			scintilla.1,scintilla_lexers.1::x11/scintilla
+			scintilla.1,scintilla_lexers.1::editors/scintilla
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
