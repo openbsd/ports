@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.2 2001/10/03 08:53:18 espie Exp $
+# $OpenBSD: perl.port.mk,v 1.3 2002/04/16 17:35:21 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -22,3 +22,7 @@ MODPERL_configure= \
 
 MODPERL_pre_fake= \
 	${SUDO} mkdir -p ${WRKINST}`/usr/bin/perl -e 'use Config; print $$Config{installarchlib}, "\n";'`
+
+P5SITE=libdata/perl5/site_perl
+P5ARCH=${P5SITE}/${MACHINE_ARCH}-openbsd
+SUBST_VARS+=P5ARCH P5SITE
