@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2002/04/27 16:38:26 brad Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -33,7 +33,7 @@ USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-extract:
