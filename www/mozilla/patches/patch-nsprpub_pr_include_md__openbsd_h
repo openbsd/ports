@@ -1,9 +1,18 @@
-$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.2 2004/03/01 23:51:58 drahn Exp $
---- nsprpub/pr/include/md/_openbsd.h.orig	2004-03-01 17:54:03.000000000 -0500
-+++ nsprpub/pr/include/md/_openbsd.h	2004-03-01 17:50:51.000000000 -0500
-@@ -71,6 +71,12 @@
- #define _PR_HAVE_SYSV_SEMAPHORES
- #define PR_HAVE_SYSV_NAMED_SHARED_MEMORY
+$OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.3 2004/03/02 08:34:57 pvalchev Exp $
+--- nsprpub/pr/include/md/_openbsd.h.orig	2004-03-01 17:36:44.000000000 -0700
++++ nsprpub/pr/include/md/_openbsd.h	2004-03-01 17:42:08.000000000 -0700
+@@ -43,6 +43,8 @@
+ #define _PR_SI_ARCHITECTURE "x86"
+ #elif defined(__alpha__)
+ #define _PR_SI_ARCHITECTURE "alpha"
++#elif defined(__amd64__)
++#define _PR_SI_ARCHITECTURE "amd64"
+ #elif defined(__m68k__)
+ #define _PR_SI_ARCHITECTURE "m68k"
+ #elif defined(__powerpc__)
+@@ -77,6 +79,12 @@
+ #define _PR_HAVE_GETADDRINFO
+ #define _PR_INET6_PROBE
  
 +#define _PR_INET6
 +#define _PR_HAVE_INET_NTOP
@@ -14,15 +23,12 @@ $OpenBSD: patch-nsprpub_pr_include_md__openbsd_h,v 1.2 2004/03/01 23:51:58 drahn
  #define USE_SETJMP
  
  #ifndef _PR_PTHREADS
-@@ -80,8 +86,10 @@
- 
- #define CONTEXT(_th) ((_th)->md.context)
- 
--#if defined(__i386__) || defined(__sparc__) || defined(__m68k__) || defined(__powerpc__)
-+#if defined(__i386__) || defined(__sparc__) || defined(__m68k__)
- #define JB_SP_INDEX 2
-+#elif defined(__powerpc__)
-+#define JB_SP_INDEX 1
+@@ -92,6 +100,8 @@
+ #define JB_SP_INDEX 1
  #elif defined(__alpha__)
  #define JB_SP_INDEX 34
++#elif defined(__amd64__)
++#define JB_SP_INDEX 6
  #elif defined(__arm32__)
+ /*
+  * On the arm32, the jmpbuf regs underwent a name change after OpenBSD 1.3.

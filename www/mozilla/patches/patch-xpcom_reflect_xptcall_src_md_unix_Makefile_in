@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.5 2004/01/18 10:49:33 wilfried Exp $
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2003-08-15 06:00:23.000000000 +0200
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2003-12-12 15:43:29.000000000 +0100
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.6 2004/03/02 08:34:57 pvalchev Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2003-08-14 22:00:23.000000000 -0600
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2004-03-01 17:46:24.000000000 -0700
 @@ -106,6 +106,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
@@ -29,7 +29,7 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.5 2004/01/18 1
  # Darwin/PPC
  #
  ifeq ($(OS_ARCH),Darwin)
-@@ -322,6 +336,20 @@ endif
+@@ -322,6 +336,26 @@ endif
  
  endif
  endif
@@ -46,6 +46,12 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.5 2004/01/18 1
 +ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDsparc64)
 +CPPSRCS		:= xptcinvoke_sparc64_openbsd.cpp xptcstubs_sparc64_openbsd.cpp
 +ASFILES		:= xptcinvoke_asm_sparc64_openbsd.s xptcstubs_asm_sparcv9_solaris.s
++endif
++#
++# OpenBSD/amd64
++#
++ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDamd64)
++CPPSRCS		:= xptcinvoke_openbsd_amd64.cpp xptcstubs_openbsd_amd64.cpp
 +endif
  
  ######################################################################
