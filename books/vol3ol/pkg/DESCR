@@ -1,0 +1,9 @@
+X Window System Guide, Volume 3: OPEN LOOK Edition
+Ian Darwin, Valerie Quercia, and Tim O'Reilly
+Unpublished, 1993
+
+This book is a version of the well-known O'Reilly X Window System
+User's Guide that was customized for the OPEN LOOK user interface.
+Due to Sun's de-adoption of OPEN LOOK the book was not published by
+O'Reilly, but it nonetheless contains useful information about X11
+and OPEN LOOK.
