@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2005/01/11 04:26:45 kurt Exp $
+# $OpenBSD: Makefile,v 1.80 2005/01/11 22:52:55 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -30,7 +30,7 @@ MULTI_PACKAGES=	-devel
 VMEM_WARNING=yes
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	mozilla${i}-${VER}
+PKGNAME$i=	mozilla${i}-${VER}p0
 .endfor
 
 SUBPACKAGE?=
@@ -39,7 +39,11 @@ FLAVORS=	gtk2
 FLAVOR?=
 
 .if ${SUBPACKAGE} == "-devel"
+.  if ${FLAVOR:L:Mgtk2}
+RUN_DEPENDS=	::www/mozilla,gtk2
+.  else
 RUN_DEPENDS=	::www/mozilla
+.  endif
 .else
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha
