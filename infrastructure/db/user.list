@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.5 2003/09/29 20:23:41 sturm Exp $
+$OpenBSD: user.list,v 1.6 2003/11/03 06:14:07 kevlo Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -32,3 +32,4 @@ id  user		group		port options
 521 _exim		_exim		mail/exim noauto
 522 _xcept				comms/xcept noauto
 523 _ffproxy		_ffproxy	www/ffproxy
+524			_mail		mail/openwebmail
