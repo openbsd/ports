@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/19 20:49:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/14 02:50:52 brad Exp $
 
-.if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"pthreads are currently not working on the SPARC architecture"
+.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
+BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
 .endif
+
+COMMENT=	"Internet based broadcasting system"
 
 DISTNAME=	icecast-1.3.10
 CATEGORIES=	net audio www
-NEED_VERSION=	1.358
+NEED_VERSION=	1.384
 MASTER_SITES=	http://www.icecast.org/releases/
 
 HOMEPAGE=	http://www.icecast.org/
