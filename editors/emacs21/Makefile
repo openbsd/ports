@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/29 19:13:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/24 00:21:43 mark Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
 
-VERSION=	21.1
+VERSION=	21.2
 DISTNAME=	emacs-${VERSION}
 CATEGORIES=	editors
 NEED_VERSION=	1.514

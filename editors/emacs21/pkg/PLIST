@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/03/22 07:23:51 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/04/24 00:21:43 mark Exp $
 @pkgcfl xemacs-20*
 bin/b2m
 bin/ctags
@@ -1861,9 +1861,9 @@ share/emacs/${VERSION}/lisp/toolbar/undo.pbm
 share/emacs/${VERSION}/lisp/toolbar/undo.xpm
 share/emacs/${VERSION}/lisp/toolbar/up_arrow.pbm
 share/emacs/${VERSION}/lisp/toolbar/up_arrow.xpm
+@dirrm share/emacs/${VERSION}/lisp/toolbar
 share/emacs/${VERSION}/lisp/tooltip.el
 share/emacs/${VERSION}/lisp/tooltip.elc
-@dirrm share/emacs/${VERSION}/lisp/toolbar
 share/emacs/${VERSION}/lisp/type-break.el
 share/emacs/${VERSION}/lisp/type-break.elc
 share/emacs/${VERSION}/lisp/uniquify.el
