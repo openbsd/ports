@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/03/31 12:52:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2003/12/30 01:34:41 espie Exp $
 
 COMMENT=	"decoder for the CEPT (Btx) protocol"
 
@@ -16,6 +16,7 @@ MAKE_FLAGS=	SYSCONFDIR="${SYSCONFDIR}"
 
 USE_X11=	Yes
 
+CFLAGS+=-Dlog=logit
 WRKDIST=	${WRKDIR}/XCept-2.1.2
 
 NO_REGRESS=	Yes
