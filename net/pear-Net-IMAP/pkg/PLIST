@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/15 09:45:37 mbalmer Exp $
+lib/
+lib/php/
+pear/lib/.registry/net_imap.reg
+pear/lib/Net/
+pear/lib/Net/IMAP.php
+pear/lib/Net/IMAPProtocol.php
+pear/tests/
+pear/tests/Net_IMAP/
+pear/tests/Net_IMAP/docs/
+pear/tests/Net_IMAP/docs/test_IMAP.php
+pear/tests/Net_IMAP/docs/test_IMAPProtocol.php
