@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/04 17:06:41 danh Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/19 03:53:25 danh Exp $
 
 VERSION=	1.0.33
 DISTNAME=	rrdtool-${VERSION}
@@ -29,12 +29,10 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
 
 .if ${FLAVOR:L:Mtcl}
 CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.3"
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/tcl8.3"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/tcl8.3"
 .else
 CONFIGURE_ARGS+= --without-tcllib
 .endif
