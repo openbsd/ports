@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/01 17:52:53 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/01 00:40:15 ian Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 #
 
@@ -41,6 +41,7 @@ NO_REGRESS=		yes
 # Requires existing JDK 1.2 to build; use Linux emul for bootstrapping
 ONLY_FOR_ARCHS= 	i386
 
+VMEM_WARNING=		Yes
 BUILD_DEPENDS=		:zip-2.*:archivers/zip \
 			:jdk-blackdown-1.2pre2:devel/jdk/1.2-blackdown
 RUN_DEPENDS=		:zip-2.*:archivers/zip
