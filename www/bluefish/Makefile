@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/01 03:24:57 jasoni Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/01 19:43:32 jasoni Exp $
 
 DISTNAME=	bluefish-0.3.5
 CATEGORIES=	www 
@@ -14,7 +14,6 @@ LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk-config
 
-USE_X11=	yes
 USE_GMAKE=	yes 	
 GNU_CONFIGURE= 	yes
 CONFIGURE_ENV= 	GTK_CONFIG="${GTK_CONFIG}"
