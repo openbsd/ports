@@ -1,0 +1,55 @@
+$OpenBSD: patch-admin_ltmain_sh,v 1.1 2003/01/06 07:28:57 espie Exp $
+--- admin/ltmain.sh.orig	Mon Jan  6 08:18:27 2003
++++ admin/ltmain.sh	Mon Jan  6 08:21:50 2003
+@@ -1224,11 +1224,29 @@ EOF
+ 	    continue
+ 	    ;;
+ 	  esac
++	elif test "X$arg" = "X-lc_r"; then
++	 case $host in
++	 *-*-openbsd* | *-*-freebsd*)
++	   # Do not include libc_r directly, use -pthread flag.
++	   continue
++	   ;;
++	 esac
+ 	fi
+ 	deplibs="$deplibs $arg"
+ 	continue
+ 	;;
+ 
++      -pthread)
++        case $host in
++        *-*-openbsd*)
++          deplibs="$deplibs $arg"
++          ;;
++        *)
++          continue
++          ;;
++        esac
++        ;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -1804,6 +1822,21 @@ EOF
+ 	  fi
+ 	  continue
+ 	  ;;
++
++        -pthread)
++          case $linkmode in
++          lib)
++            deplibs="$deplib $deplibs"
++            newdependency_libs="$deplib $newdependency_libs"
++            ;;
++          prog)
++            compile_deplibs="$deplib $compile_deplibs"
++            finalize_deplibs="$deplib $finalize_deplibs"
++            ;;
++          esac
++          continue
++          ;;
++
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
