@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/03/16 10:24:06 wilfried Exp $
+--- Makefile.in.orig	Mon Jul 26 17:08:50 1999
++++ Makefile.in	Thu Mar 15 22:31:08 2001
+@@ -22,10 +22,10 @@ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
+ 
+-PCAPDIR		= $(srcdir)/libpcap-0.4
+-PCAPINCS	= -I$(PCAPDIR)
+-PCAPLIBS	= -L$(PCAPDIR) -lpcap
+-PCAPDEP		= $(PCAPDIR)/pcap.h $(PCAPDIR)/libpcap.a
++PCAPDIR		= 
++PCAPINCS	= 
++PCAPLIBS	= -lpcap
++PCAPDEP		= 
+ 
+ LNETDIR		= $(srcdir)/Libnet-0.99b
+ LNETINCS	= -I$(LNETDIR)/include

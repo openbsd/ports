@@ -1,0 +1,18 @@
+$OpenBSD: patch-Libnet-0_99b_configure_in,v 1.1 2001/03/16 10:24:05 wilfried Exp $
+--- Libnet-0.99b/configure.in.orig	Mon Jul 26 17:08:51 1999
++++ Libnet-0.99b/configure.in	Thu Mar 15 22:32:21 2001
+@@ -32,14 +32,6 @@ AC_C_CONST
+ 
+ 
+ dnl
+-dnl Use these compiler flags if we have gcc.
+-dnl
+-if test $ac_cv_prog_gcc = yes; then
+-    CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -pipe -Wall'
+-    CFLAGS="$CCOPTS"
+-fi
+-
+-dnl
+ dnl Check for package inclusion/exclusion
+ dnl
+ AC_ARG_WITH(pf_packet, [ --with-pf_packet=[yes,no] override defaults], \

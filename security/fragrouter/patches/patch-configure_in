@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/03/16 10:24:06 wilfried Exp $
+--- configure.in.orig	Mon Jul 26 17:08:51 1999
++++ configure.in	Thu Mar 15 22:34:37 2001
+@@ -10,16 +10,6 @@ AC_CONFIG_HEADER(config.h)
+ 
+ dnl Check for programs.
+ AC_PROG_CC
+-dnl Check for some compiler options.
+-if test -n "$GCC"; then
+-   AC_MSG_CHECKING([if the compiler understands -pipe -Wall])
+-   OLDCC="$CC"
+-   CC="$CC -pipe -Wall"
+-   AC_TRY_COMPILE(,,
+-      AC_MSG_RESULT(yes),
+-      CC="$OLDCC"
+-      AC_MSG_RESULT(no))
+-fi
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+ 
+@@ -41,6 +31,6 @@ dnl Linux sux
+ AC_CHECK_HEADERS(net/ethernet.h)
+ dnl AC_DEFINE(_BSD_SOURCE)
+ 
+-AC_CONFIG_SUBDIRS(libpcap-0.4 Libnet-0.99b)
++AC_CONFIG_SUBDIRS(Libnet-0.99b)
+ 
+ AC_OUTPUT(Makefile)
