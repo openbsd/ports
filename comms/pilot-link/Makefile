@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/12 20:45:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/28 07:55:56 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
