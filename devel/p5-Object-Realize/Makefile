@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/11 09:25:59 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/30 05:01:43 pvalchev Exp $
 
 COMMENT=	"perl module to implementing delay loading of object-data"
 
@@ -13,9 +13,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Object/}
-
-RUN_DEPENDS+=	:p5-Scalar-Utils-*:devel/p5-Scalar-Utils
-BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
 

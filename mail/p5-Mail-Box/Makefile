@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/11 09:36:46 shell Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/30 05:01:43 pvalchev Exp $
 
 COMMENT=		"perl module to manage mail folders"
 
@@ -17,7 +17,6 @@ BUILD_DEPENDS=		:p5-Time-TimeDate-*:devel/p5-Time-TimeDate	\
 			:p5-MIME-tools-*:mail/p5-MIME-tools		\
 			:p5-MIME-Types-*:mail/p5-MIME-Types		\
 			:p5-Object-Realize-*:devel/p5-Object-Realize	\
-			:p5-Scalar-Utils-*:devel/p5-Scalar-Utils	\
 			:p5-HTML-Format-*:www/p5-HTML-Format		\
 			:p5-Text-Autoformat-*:textproc/p5-Text-Autoformat	\
 			:p5-Font-AFM-*:textproc/p5-Font-AFM
