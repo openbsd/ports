@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2002/05/21 18:48:45 nino Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/04/30 14:57:15 avsm Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -17,7 +17,7 @@ do_post() {
     
     # install or take note of existing config files
     for f in \
-	CORBA/servers/bubblemon_applet.gnorba
+	CORBA/servers/bubblemon-gnome1.gnorba
     do
 	if [ -f "${DEST_PFX}/$f" ]; then
 	    OLD_CONFS="${OLD_CONFS} $f"
