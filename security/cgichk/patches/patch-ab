@@ -1,0 +1,64 @@
+--- cgichk3.c.orig	Wed Sep 22 19:59:01 1999
++++ cgichk3.c	Thu Oct 28 18:35:37 1999
+@@ -116,20 +116,11 @@
+ FILE *cgidata;
+ FILE *fp_log;
+ 
+-sserver = argv[1];  /* Server to scan */
+-config = argv[2];   /* Cgicheker config file */
++config = CGICHK_CONF;   /* Cgicheker config file */
+ 
+ if(argc==1) { usage(&argv[0]); }
+ 
+-if(argc<3) 
+- {
+- if(strstr(argv[1],"-V")) { banner(); }
+- else { usage(&argv[0]); }
+- }
+-
+-if(argc>3) 
+- {
+-  while ((i = getopt(argc, argv, "p:l:o:c:g")) != -1)
++ while ((i = getopt(argc, argv, "p:l:o:c:gf:V")) != -1)
+    {
+     switch(i)
+      {
+@@ -143,11 +134,18 @@
+        { gettxtmode = 1; break; }
+       case 'c':
+        { httpdport = atoi(optarg); break; }
+-      default :
++     case 'f':
++       { config = optarg; break; }
++     case 'V':
++       { banner(); }
++     default :
+        { usage(&argv[0]); break; }
+      }
+    }
+- }
++
++if (argc - optind != 1) usage(&argv[0]);
++
++sserver = argv[optind];  /* Server to scan */
+ 
+ if(proxymode==1)
+   {
+@@ -395,14 +393,15 @@
+ int usage(char *argv[])
+ {
+  printf("-= CGI Checker Version 3.0 =-");
+- printf("\n\nusage : %s target config-file",argv[0]);
++ printf("\n\nusage : %s <options> target",argv[0]);
+  printf("\n-p <proxy>   : for stealth scanning behind proxy");
+  printf("\n-o <port>    : to change proxy port (default = 8080)");
+  printf("\n-c <port>    : to change httpd port (default = 80)");
+  printf("\n-l <logfile> : for logging mode");
+  printf("\n-g           : to get info on found cgi's");
+  printf("\n-V           : print version,info and etc");
+- printf("\n\nEg : %s target config-file -p some.proxy.com -g -o 3124 -l logfile\n\n",argv[0]);
++ printf("\n-f <config>  : for alternate config file");
++ printf("\n\nEg : %s -p some.proxy.com -g -o 3124 -l logfile target\n\n",argv[0]);
+  exit(0);
+ }
+ 
