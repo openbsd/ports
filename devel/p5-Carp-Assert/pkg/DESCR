@@ -1,0 +1,6 @@
+Assertions are the explict expressions of your assumptions about the
+reality your program is expected to deal with, and a declaration of
+those which it is not. They are used to prevent your program from
+blissfully processing garbage inputs (garbage in, garbage out becomes
+garbage in, error out) and to tell you when you've produced garbage
+output.
