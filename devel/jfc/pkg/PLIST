@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/09/05 09:39:10 kevlo Exp $
 share/java/classes/swing1_1_1/multi.jar
 share/java/classes/swing1_1_1/swingall.jar
 share/java/classes/swing1_1_1/swing.jar

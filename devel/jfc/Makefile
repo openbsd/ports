@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/29 02:44:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/05 09:39:07 kevlo Exp $
 
 DISTNAME=	swing1_1_1
 PKGNAME=	jfc-1.1.1
@@ -6,9 +6,10 @@ CATEGORIES=	devel
 NEED_VERSION=   1.230
 MASTER_SITES=	http://java.sun.com/products/jfc/
 
+HOMEPAGE=	http://java.sun.com/products/jfc/
+
 MAINTAINER=	kevlo@openbsd.org
 
-LICENSE_TYPE=           NOFEE
 PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     No
 PERMIT_DISTFILES_CDROM= No
@@ -24,9 +25,8 @@ RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java::devel/jdk
 
 USE_ZIP=	Yes
 NO_BUILD=	Yes
-FAKE=		Yes
 
-WRKSRC=		${WRKDIR}/swing-1.1.1fcs
+WRKDIST=	${WRKDIR}/swing-1.1.1fcs
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
