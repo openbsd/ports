@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/09/07 22:15:50 peter Exp $
+# $OpenBSD: Makefile,v 1.27 2001/09/07 22:23:46 peter Exp $
 
 COMMENT=	"MTA for systems connected to the Internet"
 
@@ -14,7 +14,7 @@ DISTFILES=	exim-${VERSION}.tar.gz exim-texinfo-${VERSION_DOC}.tar.gz
 
 HOMEPAGE=	http://www.exim.org/
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

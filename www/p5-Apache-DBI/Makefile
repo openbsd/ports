@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/07 22:13:51 peter Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/07 22:24:39 peter Exp $
 
 COMMENT=	"DBI persistent connection, authentication and authorization"
 
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= Apache
 RUN_DEPENDS=	${LOCALBASE}/lib/mod_perl.so::www/mod_perl \
 		${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 		
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
