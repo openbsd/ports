@@ -1,0 +1,11 @@
+--- sony/dscf55/Makefile.in.orig	Fri Apr  6 18:14:15 2001
++++ sony/dscf55/Makefile.in	Fri Apr  6 18:14:47 2001
+@@ -93,7 +93,7 @@
+ rsony_SOURCES = 
+ rsony_LDADD = srsony.o config.o serio.o
+ 
+-CFLAGS = @CFLAGS@ @GTK_CFLAGS@
++CFLAGS = @CFLAGS@ @GDK_IMLIB_CFLAGS@
+ 
+ libgphoto_sony_dscf55_la_SOURCES = $(rs)
+ 
