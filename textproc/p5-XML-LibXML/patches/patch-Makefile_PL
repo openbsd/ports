@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Sat Jun 14 17:58:41 2003
-+++ Makefile.PL	Sat Jun 14 17:58:47 2003
-@@ -281,8 +281,8 @@
+--- Makefile.PL.orig	2003-05-29 22:54:18.000000000 +0200
++++ Makefile.PL	2004-01-01 20:10:14.000000000 +0100
+@@ -281,8 +281,8 @@ sub MY::install {
      $script .= <<"INSTALL";
  
  install_sax_driver :
