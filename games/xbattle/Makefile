@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:56 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 01:59:02 angelos Exp $
 #
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
 
-#BROKEN?:	there is a 6.0.c version, but I don't know if it is an upgrade
-#		or a different game
 MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
