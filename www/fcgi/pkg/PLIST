@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/11 20:13:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/02/14 22:57:42 sturm Exp $
 bin/cgi-fcgi
 include/fastcgi.h
 include/fcgi_config.h
@@ -9,11 +9,11 @@ include/fcgio.h
 include/fcgios.h
 lib/libfcgi.a
 lib/libfcgi.la
-man/man1/cgi-fcgi.1
-man/man3/FCGI_Accept.3
-man/man3/FCGI_Finish.3
-man/man3/FCGI_SetExitStatus.3
-man/man3/FCGI_StartFilterData.3
+man/cat1/cgi-fcgi.0
+man/cat3/FCGI_Accept.0
+man/cat3/FCGI_Finish.0
+man/cat3/FCGI_SetExitStatus.0
+man/cat3/FCGI_StartFilterData.0
 share/doc/fcgi/fcgi-devel-kit.htm
 share/doc/fcgi/fcgi-java.htm
 share/doc/fcgi/fcgi-perf.htm
