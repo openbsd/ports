@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/20 22:35:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/30 15:38:03 jakob Exp $
 
-DISTNAME=	usbutil-0.3
+DISTNAME=	usbutil-0.4
 CATEGORIES=	sysutils
 
 MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/
