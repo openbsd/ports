@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
---- php.ini-dist.orig	2004-05-17 17:31:13.000000000 +0100
-+++ php.ini-dist	2004-06-06 19:18:37.000000000 +0100
-@@ -408,10 +408,7 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-dist,v 1.14 2004/07/05 00:00:34 robert Exp $
+--- php.ini-dist.orig	Mon May 17 18:31:13 2004
++++ php.ini-dist	Mon Jul  5 01:56:38 2004
+@@ -408,10 +408,7 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"  
@@ -13,7 +13,7 @@ $OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
  
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
-@@ -425,7 +422,7 @@ doc_root =
+@@ -425,7 +422,7 @@
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -491,7 +488,7 @@ upload_max_filesize = 2M
+@@ -491,7 +488,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -510,77 +507,6 @@ default_socket_timeout = 60
+@@ -510,77 +507,6 @@
  ; auto_detect_line_endings = Off
  
  
@@ -109,7 +109,7 @@ $OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -592,13 +518,6 @@ default_socket_timeout = 60
+@@ -592,13 +518,6 @@
  define_syslog_variables  = Off
  
  [mail function]
@@ -123,7 +123,7 @@ $OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
  
-@@ -1116,3 +1035,57 @@ sockets.use_system_read = On
+@@ -1116,3 +1035,56 @@
  ; Local Variables:
  ; tab-width: 4
  ; End:
@@ -173,7 +173,6 @@ $OpenBSD: patch-php_ini-dist,v 1.13 2004/06/06 18:09:22 avsm Exp $
 +;extension=pdf.so
 +;extension=pgsql.so
 +;extension=printer.so
-+;extension=pspell.so
 +;extension=shmop.so
 +;extension=snmp.so
 +;extension=sockets.so

@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-recommended,v 1.11 2004/06/06 18:09:22 avsm Exp $
---- php.ini-recommended.orig	2004-05-17 17:31:14.000000000 +0100
-+++ php.ini-recommended	2004-06-06 19:19:00.000000000 +0100
-@@ -423,11 +423,8 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-recommended,v 1.12 2004/07/05 00:00:34 robert Exp $
+--- php.ini-recommended.orig	Mon May 17 18:31:14 2004
++++ php.ini-recommended	Mon Jul  5 01:56:46 2004
+@@ -423,11 +423,8 @@
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"  
@@ -14,7 +14,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.11 2004/06/06 18:09:22 avsm Exp $
  ; The root of the PHP pages, used only if nonempty.
  ; if PHP was not compiled with FORCE_REDIRECT, you SHOULD set doc_root
  ; if you are running php as a CGI under any web server (other than IIS)
-@@ -440,7 +437,7 @@ doc_root =
+@@ -440,7 +437,7 @@
  user_dir =
  
  ; Directory in which the loadable extensions (modules) reside.
@@ -23,7 +23,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.11 2004/06/06 18:09:22 avsm Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -506,7 +503,7 @@ upload_max_filesize = 2M
+@@ -506,7 +503,7 @@
  ;;;;;;;;;;;;;;;;;;
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
@@ -32,7 +32,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.11 2004/06/06 18:09:22 avsm Exp $
  
  ; Define the anonymous ftp password (your email address)
  ;from="john@doe.com"
-@@ -525,77 +522,6 @@ default_socket_timeout = 60
+@@ -525,77 +522,6 @@
  ; auto_detect_line_endings = Off
  
  
@@ -110,20 +110,21 @@ $OpenBSD: patch-php_ini-recommended,v 1.11 2004/06/06 18:09:22 avsm Exp $
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
  ;;;;;;;;;;;;;;;;;;;
-@@ -607,12 +533,6 @@ default_socket_timeout = 60
+@@ -607,13 +533,7 @@
  define_syslog_variables  = Off
  
  [mail function]
 -; For Win32 only.
 -SMTP = localhost
 -smtp_port = 25
--
+ 
 -; For Win32 only.
 -;sendmail_from = me@example.com
- 
+-
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
-@@ -1111,6 +1031,56 @@ sockets.use_system_read = On
+ 
+@@ -1111,6 +1031,55 @@
  ;exif.decode_jis_motorola = JIS
  ;exif.decode_jis_intel    = JIS
  
@@ -175,7 +176,6 @@ $OpenBSD: patch-php_ini-recommended,v 1.11 2004/06/06 18:09:22 avsm Exp $
 +;extension=pdf.so
 +;extension=pgsql.so
 +;extension=printer.so
-+;extension=pspell.so
 +;extension=shmop.so
 +;extension=snmp.so
 +;extension=sockets.so
