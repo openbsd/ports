@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 19:29:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/13 00:12:37 naddy Exp $
 
 COMMENT=	"audio file volume normalizer"
 
@@ -31,5 +31,3 @@ LIB_DEPENDS+=	mad::audio/mad \
 		audiofile::devel/libaudiofile
 
 .include <bsd.port.mk>
-
-

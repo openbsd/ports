@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure,v 1.1 2003/05/13 00:12:38 naddy Exp $
+--- configure.orig	Mon May 12 17:29:18 2003
++++ configure	Mon May 12 17:30:28 2003
+@@ -13288,7 +13288,6 @@ else
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -13304,7 +13303,7 @@ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+   ;
+   return 0;
+ }
+@@ -13335,7 +13334,6 @@ rm -f conftest.$ac_objext conftest$ac_ex
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -13351,7 +13349,7 @@ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
+   ;
+   return 0;
+ }
