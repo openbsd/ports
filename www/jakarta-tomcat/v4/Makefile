@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 14:21:30 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/29 11:10:54 reinhard Exp $
 
 COMMENT=	"Java servlet 2.3 and Java server pages 1.2 server"
 
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	i386
 V=		4.0.2
 DISTNAME=	jakarta-tomcat-${V}
 CATEGORIES=	www
-NEED_VERSION=	1.504
+NEED_VERSION=	1.516
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${V}/bin/
 EXTRACT_SUFX=	.zip
 
@@ -16,9 +16,9 @@ HOMEPAGE=	http://jakarta.apache.org/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
-JDK_VERSION=	1.2-blackdown
+JDK_VERSION=	1.3-linux
 JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
-RUN_DEPENDS=	:jdk-blackdown-*:devel/jdk/${JDK_VERSION}
+RUN_DEPENDS=	:jdk-linux->1.3:devel/jdk/${JDK_VERSION}
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes

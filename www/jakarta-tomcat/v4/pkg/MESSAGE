@@ -1,8 +1,8 @@
 For detailed instructions on how to run Tomcat see:
-	${PREFIX}/${DISTNAME}/doc/uguide/tomcat_ug.html
+	${PREFIX}/${DISTNAME}/webapps/tomcat-docs/uguide/tomcat_ug.html
 
 For more information on application development with Tomcat, see
-	${PREFIX}/${DISTNAME}/doc/appdev/index.html
+	${PREFIX}/${DISTNAME}/webapps/tomcat-docs/appdev/index.html
 
 Note that Tomcat may be started with the following command:
 	${PREFIX}/${DISTNAME}/bin/startup.sh
