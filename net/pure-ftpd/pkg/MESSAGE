@@ -6,6 +6,3 @@ if [ -x ${PREFIX}/sbin/pure-ftpd ]; then
   ${PREFIX}/sbin/pure-ftpd -4 -A -B -H -u1000
 fi
 
-By default, Pure-FTPd will only listen to IPv6 addresses unless you
-explicitely add the -4 switch to the command-line.
-
