@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/10/09 00:04:58 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/04/15 12:11:09 avsm Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
@@ -140,6 +140,7 @@ share/doc/mhonarc/resources/idxpgend.html
 share/doc/mhonarc/resources/idxprefix.html
 share/doc/mhonarc/resources/idxsize.html
 share/doc/mhonarc/resources/include.html
+share/doc/mhonarc/resources/keeponrmm.html
 share/doc/mhonarc/resources/labelbeg.html
 share/doc/mhonarc/resources/labelend.html
 share/doc/mhonarc/resources/labelstyles.html
