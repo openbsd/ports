@@ -1,0 +1,13 @@
+$OpenBSD: gcc-patch-lib_silcsim_Makefile_in,v 1.1 2002/10/05 19:41:17 fgsch Exp $
+--- lib/silcsim/Makefile.in.orig	Sat Sep  7 14:04:47 2002
++++ lib/silcsim/Makefile.in	Sat Oct  5 07:59:27 2002
+@@ -440,6 +440,9 @@ uninstall-am: uninstall-includeHEADERS u
+ 
+ @SILC_SIM_TRUE@all: $(SIM_CIPHER_OBJS) $(SIM_HASH_OBJS)
+ 
++sha1.o:
++	$(LTCOMPILE) -O0 -c $(srcdir)/../silccrypt/$*.c
++
+ $(SIM_CIPHER_OBJS): ../silccrypt/libsilccrypt.a
+ 	$(LTCOMPILE) -c $(srcdir)/../silccrypt/$*.c
+ 	$(LIBTOOL) --mode=link $(LINK) -rpath $(silc_modulesdir) -o lib$*.la $*.lo
