@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ui_mime_conf_cpp,v 1.1 2003/04/15 22:13:07 avsm Exp $
+--- src/ui/mime_conf.cpp.orig	Tue Apr 15 23:06:39 2003
++++ src/ui/mime_conf.cpp	Tue Apr 15 23:07:02 2003
+@@ -514,7 +514,7 @@ void display_mailcap() {
+ 	fl_clear_browser(mime_obj->MIME_Disp);
+ 	while(mailcap[i].type_code != CTYPE_UNSUPPORTED) {
+ 
+-		snprintf(mtype, sizeof(buf), "%s/%s", mailcap[i].type_text,
++		snprintf(mtype, sizeof(mtype), "%s/%s", mailcap[i].type_text,
+ 				 mailcap[i].subtype_text);
+ 		strcpy(mview, "[none]");
+ 		if(mailcap[i].process)
