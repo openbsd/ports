@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.156 1999/12/03 17:37:33 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.157 1999/12/08 17:00:15 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -186,13 +186,14 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #      configure from configure.in
 # USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
 # AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
-# USE_PERL5		- Port uses perl5 for building and running.
 # USE_IMAKE		- Port uses imake.
 # USE_X11		- Port uses X11 and installs in ${X11BASE}
 # NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
 #						target.
 # HAS_CONFIGURE	- Says that the port has its own configure script.
 # GNU_CONFIGURE	- Set if you are using GNU configure (optional).
+# YACC          - yacc program to pass to configure script (default: yacc)
+#                 override with bison is port requires bison.
 # CONFIGURE_SCRIPT - Name of configure script, defaults to 'configure'.
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set.
 # CONFIGURE_SHARED - An argument to GNU configure that expands to
@@ -727,6 +728,8 @@ LDCONFIG?=	[ ! -x /sbin/ldconfig ] || /sbin/ldconfig
 M4?=		/usr/bin/m4
 STRIP?=		/usr/bin/strip
 
+# Autoconf scripts MAY tend to use bison by default otherwise
+YACC?=yacc
 # XXX ${SETENV} is needed in front of var=value lists whenever the next
 # command is expanded from a variable, as this could be a shell construct
 SETENV?=	/usr/bin/env
@@ -1435,6 +1438,7 @@ do-configure: ${WRKBUILD}
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
+		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .endif
 .if defined(USE_IMAKE)
