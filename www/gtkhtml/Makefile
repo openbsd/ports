@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/03 21:44:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/10 15:55:48 marcm Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
-DISTNAME=		gtkhtml-1.1.7
+DISTNAME=		gtkhtml-1.1.10
 CATEGORIES=    		www
 HOMEPAGE=		http://www.gnome.org/
 
