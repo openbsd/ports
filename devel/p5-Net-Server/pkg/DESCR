@@ -1,0 +1,26 @@
+`Net::Server' is an extensible, generic Perl server engine.
+`Net::Server' combines the good properties from `Net::Daemon' (0.34),
+`NetServer::Generic' (1.03), and `Net::FTPServer' (1.0), and also from
+various concepts in the Apache Webserver.
+
+Features include:
+
+* Single Server Mode
+* Inetd Server Mode
+* Preforking Simple Mode (PreForkSimple)
+* Preforking Managed Mode (PreFork)
+* Forking Mode
+* Multi port accepts on Single, Preforking, and Forking modes
+* Simultaneous accept/recv on tcp, udp, and unix sockets
+* User customizable hooks
+* Chroot ability after bind
+* Change of user and group after bind
+* Basic allow/deny access control
+* Customized logging (choose Syslog, log_file, or STDERR)
+* HUP able server (clean restarts via sig HUP)
+* Dequeue ability in all Fork and PreFork modes.
+* Taint clean
+* Written in Perl
+* Protection against buffer overflow
+* Clean process flow
+* Extensibility
