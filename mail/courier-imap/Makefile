@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/05/23 21:57:51 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.36 2004/01/02 05:11:08 brad Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -61,7 +61,7 @@ MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-authmysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
-MYSQL_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+MYSQL_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
 .endif
 
 # openldap

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/12/26 13:43:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/02 05:11:08 brad Exp $
 
 COMMENT=		"GUI client for MySQL"
 
@@ -24,7 +24,7 @@ MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/
 
 MODQT_MT=		Yes
 MODULES=		qt3
-LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 
 MAKE_ENV=		LOCALBASE=${LOCALBASE} HACK_CFLAGS="${CFLAGS}"
 MAKE_FLAGS=   		CC=${CC} CXX=${CXX} LINK=${CXX}

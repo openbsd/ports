@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/11/02 17:52:19 margarida Exp $
+# $OpenBSD: Makefile,v 1.21 2004/01/02 05:11:08 brad Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	forms.0::x11/xforms \
-		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql \
+		lib/mysql/mysqlclient.10::databases/mysql \
 		jpeg.62::graphics/jpeg
 
 USE_X11=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/07/31 19:12:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/01/02 05:11:08 brad Exp $
 
 COMMENT=	"python interface to MySQL"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	python
 
-LIB_DEPENDS=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS=	lib/mysql/mysqlclient.10::databases/mysql
 
 NO_REGRESS=	Yes
 

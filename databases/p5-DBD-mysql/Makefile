@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/30 20:41:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/02 05:11:08 brad Exp $
 
 COMMENT=		'MySQL drivers for the Perl DBI'
 
@@ -18,7 +18,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=DBD/}
 
 BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
-LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-4.*:databases/mysql
+LIB_DEPENDS=		lib/mysql/mysqlclient.10::databases/mysql
 REGRESS_DEPENDS=	:mysql-server-4.*:databases/mysql,-server
 
 CONFIGURE_STYLE=	perl
