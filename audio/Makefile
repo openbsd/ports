@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/08/30 20:43:56 dugsong Exp $
+# $OpenBSD: Makefile,v 1.22 1999/09/19 02:28:48 rohee Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += esound
 #    SUBDIR += gmod
      SUBDIR += gom
+     SUBDIR += gqmpeg
      SUBDIR += gsm
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
