@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/08 16:56:10 wilfried Exp $
-sbin/no-ip
-sbin/noip
+@comment $OpenBSD: PLIST,v 1.2 2003/05/07 08:33:19 wilfried Exp $
+sbin/noip2
 share/doc/no-ip/README.FIRST
-share/examples/no-ip/no-ip.conf.sample
-@dirrm share/examples/no-ip
 @dirrm share/doc/no-ip

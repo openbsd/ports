@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/17 15:22:26 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/07 08:33:19 wilfried Exp $
 
 COMMENT=		"No-IP.com Dynamic DNS client"
 
-DISTNAME=		noip_updater_v1.6
-PKGNAME=		no-ip-1.6
+V=			2.0.9
+DISTNAME=		noip-${V}
+PKGNAME=		no-ip-${V}
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.no-ip.com/
@@ -22,13 +23,10 @@ MAKE_ENV=		SYSCONFDIR="${SYSCONFDIR}"
 
 NO_REGRESS=		Yes
 
-ALL_TARGET=		noip
+ALL_TARGET=		noip2
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/noip ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/no-ip.sh ${PREFIX}/sbin/no-ip
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/no-ip/
-	${INSTALL_DATA} ${WRKSRC}/no-ip.conf.sample ${PREFIX}/share/examples/no-ip/
+	${INSTALL_PROGRAM} ${WRKBUILD}/noip2 ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/no-ip/
 	${INSTALL_DATA} ${WRKSRC}/README.FIRST ${PREFIX}/share/doc/no-ip/
 
