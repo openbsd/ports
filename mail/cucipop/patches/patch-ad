@@ -1,152 +1,89 @@
-*** cucipop.8.orig	Mon May 11 23:35:19 1998
---- cucipop.8	Tue Jun 30 12:42:36 1998
-***************
-*** 48,59 ****
-  .SH NAME
-  cucipop \- Cubic Circle POP3 daemon
-  .SH SYNOPSIS
-! .B /usr/sbin/cucipop
-  .RB [ \-qaYdPUSDAT ]
-  .RB [ "\-E \fIage\fP" ]
-  .RB [ "\-p \fIport\fP" ]
-  .br
-! .B /usr/sbin/cucipop
-  .B \-v
-  .ad
-  .SH DESCRIPTION
---- 48,59 ----
-  .SH NAME
-  cucipop \- Cubic Circle POP3 daemon
-  .SH SYNOPSIS
-! .B /usr/local/libexec/cucipop
-  .RB [ \-qaYdPUSDAT ]
-  .RB [ "\-E \fIage\fP" ]
-  .RB [ "\-p \fIport\fP" ]
-  .br
-! .B /usr/local/libexec/cucipop
-  .B \-v
-  .ad
-  .SH DESCRIPTION
-***************
-*** 132,143 ****
-  .IR port .
-  .SH EXAMPLES
-  Typically
-! .I pop-3
-  service is defined in
-  .BR services (5)
-  as follows:
-  .Sx 1
-! pop-3           110/tcp
-  .Ex
-  In order to start cucipop from within
-  .BR inetd (8),
---- 132,143 ----
-  .IR port .
-  .SH EXAMPLES
-  Typically
-! .I pop3
-  service is defined in
-  .BR services (5)
-  as follows:
-  .Sx 1
-! pop3           110/tcp
-  .Ex
-  In order to start cucipop from within
-  .BR inetd (8),
-***************
-*** 145,164 ****
-  .BR inetd.conf (5)
-  would be suitable:
-  .Sx 1
-! pop-3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
-  .Ex
-  If your site gets many hits from popclients, it would be preferable
-  to start cucipop standalone as in:
-  .Sx 1
-! /usr/sbin/cucipop -Y
-  .Ex
-  Your typical BOFH setting would be:
-  .Sx 1
-! /usr/sbin/cucipop -YaSE 6w
-  .Ex
-  .SH FILES
-  .TP 2.3i
-! .B /etc/passwd
-  the default authentication
-  .TP
-  .B /etc/mail/vpop.db
---- 145,164 ----
-  .BR inetd.conf (5)
-  would be suitable:
-  .Sx 1
-! pop3   stream  tcp     nowait  root    /usr/local/libexec/cucipop cucipop -Y
-  .Ex
-  If your site gets many hits from popclients, it would be preferable
-  to start cucipop standalone as in:
-  .Sx 1
-! /usr/local/libexec/cucipop -Y
-  .Ex
-  Your typical BOFH setting would be:
-  .Sx 1
-! /usr/local/libexec/cucipop -YaSE 6w
-  .Ex
-  .SH FILES
-  .TP 2.3i
-! .B /etc/master.passwd
-  the default authentication
-  .TP
-  .B /etc/mail/vpop.db
-***************
-*** 166,190 ****
-  .BR makevpopdb (8)
-  man page on how this file is created
-  .TP
-! .B /var/lib/cucipop/state.db
-  AI state information and bulletin history
-  .TP
-! .B "/var/lib/cucipop/bulletins/\fInn\fP"
-  .B 00
-  through
-  .B 63
-  optional bulletin files in regular mailbox format
-  .TP
-! .B /var/spool/mail/$LOGNAME
-  system mailbox
-  .TP
-! .B /var/spool/mail/virtual.dom.ain/$LOGNAME
-  virtual host system mailbox
-  .TP
-! .B /var/spool/mail/$LOGNAME.lock
-  lockfile for the system mailbox
-  .TP
-! .B /var/spool/mail/virtual.dom.ain/$LOGNAME.lock
-  lockfile for the virtual host system mailbox
-  .TP
-  .B _????`hostname`
---- 166,190 ----
-  .BR makevpopdb (8)
-  man page on how this file is created
-  .TP
-! .B /var/cucipop/state.db
-  AI state information and bulletin history
-  .TP
-! .B "/var/cucipop/bulletins/\fInn\fP"
-  .B 00
-  through
-  .B 63
-  optional bulletin files in regular mailbox format
-  .TP
-! .B /var/mail/$LOGNAME
-  system mailbox
-  .TP
-! .B /var/mail/virtual.dom.ain/$LOGNAME
-  virtual host system mailbox
-  .TP
-! .B /var/mail/$LOGNAME.lock
-  lockfile for the system mailbox
-  .TP
-! .B /var/mail/virtual.dom.ain/$LOGNAME.lock
-  lockfile for the virtual host system mailbox
-  .TP
-  .B _????`hostname`
+--- cucipop.8.orig	Mon May 11 12:35:19 1998
++++ cucipop.8	Mon Mar 27 15:12:54 2000
+@@ -48,12 +48,12 @@
+ .SH NAME
+ cucipop \- Cubic Circle POP3 daemon
+ .SH SYNOPSIS
+-.B /usr/sbin/cucipop
++.B /usr/local/libexec/cucipop
+ .RB [ \-qaYdPUSDAT ]
+ .RB [ "\-E \fIage\fP" ]
+ .RB [ "\-p \fIport\fP" ]
+ .br
+-.B /usr/sbin/cucipop
++.B /usr/local/libexec/cucipop
+ .B \-v
+ .ad
+ .SH DESCRIPTION
+@@ -132,12 +132,12 @@
+ .IR port .
+ .SH EXAMPLES
+ Typically
+-.I pop-3
++.I pop3
+ service is defined in
+ .BR services (5)
+ as follows:
+ .Sx 1
+-pop-3           110/tcp
++pop3           110/tcp
+ .Ex
+ In order to start cucipop from within
+ .BR inetd (8),
+@@ -145,20 +145,20 @@
+ .BR inetd.conf (5)
+ would be suitable:
+ .Sx 1
+-pop-3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
++pop3   stream  tcp     nowait  root    /usr/local/libexec/cucipop cucipop -Y
+ .Ex
+ If your site gets many hits from popclients, it would be preferable
+ to start cucipop standalone as in:
+ .Sx 1
+-/usr/sbin/cucipop -Y
++/usr/local/libexec/cucipop -Y
+ .Ex
+ Your typical BOFH setting would be:
+ .Sx 1
+-/usr/sbin/cucipop -YaSE 6w
++/usr/local/libexec/cucipop -YaSE 6w
+ .Ex
+ .SH FILES
+ .TP 2.3i
+-.B /etc/passwd
++.B /etc/master.passwd
+ the default authentication
+ .TP
+ .B /etc/mail/vpop.db
+@@ -166,25 +166,25 @@
+ .BR makevpopdb (8)
+ man page on how this file is created
+ .TP
+-.B /var/lib/cucipop/state.db
++.B /var/cucipop/state.db
+ AI state information and bulletin history
+ .TP
+-.B "/var/lib/cucipop/bulletins/\fInn\fP"
++.B "/var/cucipop/bulletins/\fInn\fP"
+ .B 00
+ through
+ .B 63
+ optional bulletin files in regular mailbox format
+ .TP
+-.B /var/spool/mail/$LOGNAME
++.B /var/mail/$LOGNAME
+ system mailbox
+ .TP
+-.B /var/spool/mail/virtual.dom.ain/$LOGNAME
++.B /var/mail/virtual.dom.ain/$LOGNAME
+ virtual host system mailbox
+ .TP
+-.B /var/spool/mail/$LOGNAME.lock
++.B /var/mail/$LOGNAME.lock
+ lockfile for the system mailbox
+ .TP
+-.B /var/spool/mail/virtual.dom.ain/$LOGNAME.lock
++.B /var/mail/virtual.dom.ain/$LOGNAME.lock
+ lockfile for the virtual host system mailbox
+ .TP
+ .B _????`hostname`
