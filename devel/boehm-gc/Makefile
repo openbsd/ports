@@ -3,14 +3,13 @@
 DISTNAME=	gc4.12
 PKGNAME=	boehm-gc-4.12
 CATEGORIES=	devel
-NEED_VERSION=	1.191
+NEED_VERSION=	1.330
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/ \
 		http://reality.sgi.com/boehm_mti/gc_source/
 
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-
-EXTRACT_AFTER_ARGS=	| tar -xf - || true
+EXTRACT_CASES= gc4.12.tar.gz) tar zxf ${FULLDISTDIR}/$$archive || true;;
 
 MAINTAINER=	niklas@openbsd.org
 
