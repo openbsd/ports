@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpi_config_links,v 1.4 2003/04/17 08:24:03 pvalchev Exp $
---- mpi/config.links.orig	Thu Oct 17 08:08:49 2002
-+++ mpi/config.links	Thu Apr 17 02:05:56 2003
-@@ -59,10 +59,8 @@ case "${target}" in
+$OpenBSD: patch-mpi_config_links,v 1.5 2003/05/27 14:54:43 brad Exp $
+--- mpi/config.links.orig	Thu Apr 24 05:15:58 2003
++++ mpi/config.links	Mon May 12 01:42:00 2003
+@@ -58,10 +58,8 @@ case "${target}" in
         cat  $srcdir/mpi/i386/syntax.h	 >>./mpi/asm-syntax.h
         path="i386"
         ;;
@@ -13,7 +13,7 @@ $OpenBSD: patch-mpi_config_links,v 1.4 2003/04/17 08:24:03 pvalchev Exp $
  	cat  $srcdir/mpi/i386-openbsd/syntax.h	    >>./mpi/asm-syntax.h
  	path="i386-openbsd"
  	;;
-@@ -137,10 +135,10 @@ case "${target}" in
+@@ -136,10 +134,10 @@ case "${target}" in
  	path="sparc32v8 sparc32"
  	mpi_extra_modules="udiv"
          ;;

@@ -1,14 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.2 2002/11/16 05:02:21 mark Exp $
---- configure.ac~	Tue Oct 29 02:52:57 2002
-+++ configure.ac	Tue Oct 29 02:55:57 2002
-@@ -469,8 +469,9 @@ NAME_OF_DEV_RANDOM="/dev/random"
+$OpenBSD: patch-configure_ac,v 1.3 2003/05/27 14:54:43 brad Exp $
+--- configure.ac.orig	Thu May  1 08:27:05 2003
++++ configure.ac	Mon May 12 01:45:38 2003
+@@ -500,7 +500,7 @@ NAME_OF_DEV_RANDOM="/dev/random"
  NAME_OF_DEV_URANDOM="/dev/urandom"
  case "${target}" in
      *-openbsd*)
 -        NAME_OF_DEV_RANDOM="/dev/srandom"
 +        NAME_OF_DEV_RANDOM="/dev/arandom"
          NAME_OF_DEV_URANDOM="/dev/urandom"
-+	DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
          ;;
  esac
- AC_DEFINE_UNQUOTED(NAME_OF_DEV_RANDOM, "$NAME_OF_DEV_RANDOM",

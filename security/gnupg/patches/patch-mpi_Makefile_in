@@ -1,16 +1,15 @@
-$OpenBSD: patch-mpi_Makefile_in,v 1.1 2002/07/05 07:13:01 reinhard Exp $
---- mpi/Makefile.in.orig	Wed Jun  5 14:11:29 2002
-+++ mpi/Makefile.in	Wed Jun  5 14:12:25 2002
-@@ -76,7 +76,7 @@ POST_UNINSTALL = :
- host_alias = @host_alias@
- host_triplet = @host@
- AMTAR = @AMTAR@
--AS = @AS@
-+AS ?= @AS@
+$OpenBSD: patch-mpi_Makefile_in,v 1.2 2003/05/27 14:54:43 brad Exp $
+--- mpi/Makefile.in.orig	Mon May 12 19:17:27 2003
++++ mpi/Makefile.in	Mon May 12 19:18:25 2003
+@@ -63,6 +63,7 @@ AR = @AR@
+ AUTOCONF = @AUTOCONF@
+ AUTOHEADER = @AUTOHEADER@
+ AUTOMAKE = @AUTOMAKE@
++AS ?= as
  AWK = @AWK@
  BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
- CATALOGS = @CATALOGS@
-@@ -417,7 +417,7 @@ uninstall-am: uninstall-info-am
+ CAPLIBS = @CAPLIBS@
+@@ -527,7 +528,7 @@ uninstall-am: uninstall-info-am
  # work and add one to cpp .S files
  .S.o:
  	 $(CPP) $(INCLUDES) $(DEFS) $< | grep -v '^#' > _$*.s
