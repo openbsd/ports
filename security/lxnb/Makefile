@@ -3,7 +3,9 @@
 # Date created:		10 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/06/16 23:06:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/09 23:41:53 turan Exp $
+
+BROKEN=		patches do not apply
 
 PKGNAME=	lxnb-0.4
 

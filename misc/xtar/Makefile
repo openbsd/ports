@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/06 22:31:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/09 23:41:52 turan Exp $
+
+BROKEN=		linker is unable to find several symbols
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc
