@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/15 16:47:07 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/03 20:46:04 naddy Exp $
 lib/libst.a
 %%SHARED%%
 include/st.h
@@ -6,4 +6,12 @@ share/doc/libst/fig.gif
 share/doc/libst/notes.html
 share/doc/libst/reference.html
 share/doc/libst/st.html
+share/examples/libst/Makefile
+share/examples/libst/README
+share/examples/libst/error.c
+share/examples/libst/lookupdns.c
+share/examples/libst/proxy.c
+share/examples/libst/res.c
+share/examples/libst/server.c
 @dirrm share/doc/libst
+@dirrm share/examples/libst
