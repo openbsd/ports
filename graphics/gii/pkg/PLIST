@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/12/20 14:51:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/01/20 13:49:34 todd Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/errors.h
@@ -65,6 +65,7 @@ man/man3/giiSetEventMask.3
 man/man3/giiSplitInputs.3
 man/man3/gii_any_event.3
 man/man3/gii_cmd_event.3
+man/man3/gii_cmd_nodata_event.3
 man/man3/gii_cmddata_getdevinfo.3
 man/man3/gii_cmddata_getvalinfo.3
 man/man3/gii_event.3
@@ -83,6 +84,7 @@ man/man7/filter-mouse.7
 man/man7/filter-save.7
 man/man7/filter-tcp.7
 man/man7/input-directx.7
+man/man7/input-file.7
 man/man7/input-linux-evdev.7
 man/man7/input-linux-kbd.7
 man/man7/input-linux-mouse.7
@@ -91,6 +93,8 @@ man/man7/input-mouse.7
 man/man7/input-tcp.7
 man/man7/libgii.7
 share/doc/gii/README
+share/examples/gii/filter_keytrans.example
+share/examples/gii/filter_mouse.example
 share/examples/gii/libgii.conf.example
 %%SHARED%%
 @dirrm share/examples/gii

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2003/10/30 16:51:58 todd Exp $
+# $OpenBSD: Makefile,v 1.24 2004/01/20 13:49:34 todd Exp $
 # Uses pthreads
 
 COMMENT=	"General Input Library (used by libggi)"
-DISTNAME=	libgii-0.8.2
+DISTNAME=	libgii-0.8.4
 CATEGORIES=	graphics
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
@@ -12,10 +12,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/
 EXTRACT_SUFX=	.src.tar.bz2
 
 USE_X11=	Yes
+USE_GMAKE=	Yes
 
 CFLAGS+=	-pthread
 SEPARATE_BUILD= concurrent
@@ -34,5 +35,9 @@ post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gii
 	${INSTALL_DATA} ${WRKBUILD}/libgii.conf \
 		${PREFIX}/share/examples/gii/libgii.conf.example
+	${INSTALL_DATA} ${WRKDIST}/filter/mouse/mouse \
+		${PREFIX}/share/examples/gii/filter_mouse.example
+	${INSTALL_DATA} ${WRKDIST}/filter/keytrans/keytrans \
+		${PREFIX}/share/examples/gii/filter_keytrans.example
 
 .include <bsd.port.mk>
