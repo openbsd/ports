@@ -1,0 +1,10 @@
+bin/curl
+man/man1/curl.1
+share/doc/curl/CHANGES
+share/doc/curl/INSTALL
+share/doc/curl/LEGAL
+share/doc/curl/MPL-1.0.txt
+share/doc/curl/README
+share/doc/curl/RESOURCES
+share/doc/curl/TODO
+@dirrm share/doc/curl
