@@ -1,0 +1,29 @@
+--- uac_dcpr.c.orig	Thu Oct 21 18:31:14 1999
++++ uac_dcpr.c	Thu Oct 21 18:38:15 1999
+@@ -102,7 +102,7 @@
+    buf_rd[0] = buf_rd[size_rdb - 2];
+    buf_rd[1] = buf_rd[size_rdb - 1];
+    read_adds_blk((CHAR *) & buf_rd[2], i);
+-#ifdef HI_LO_BYTE_ORDER
++#if BYTE_ORDER == BIG_ENDIAN
+    {
+       ULONG *p;
+       i>>=2;    // count LONGs not BYTEs
+@@ -137,7 +137,7 @@
+    i = comm_cpr_size > size_rdb * sizeof(LONG) ? size_rdb * sizeof(LONG) : comm_cpr_size;
+    if (!f_err)
+       memcpy(buf_rd, comm, i);
+-#ifdef HI_LO_BYTE_ORDER
++#if BYTE_ORDER == BIG_ENDIAN
+    {
+       ULONG *p;
+       i>>=2;    // count LONGs not BYTEs
+@@ -510,7 +510,7 @@
+ 
+       i = size_rdb * sizeof(LONG);
+       read_adds_blk((CHAR *) buf_rd, i);
+-#ifdef HI_LO_BYTE_ORDER
++#if BYTE_ORDER == BIG_ENDIAN
+       {
+          ULONG *p;
+          i>>=2;    // count LONGs not BYTEs

@@ -1,0 +1,11 @@
+--- unace.c.orig	Thu Oct 21 18:39:24 1999
++++ unace.c	Thu Oct 21 18:39:46 1999
+@@ -120,7 +120,7 @@
+    if (read(archan, &head, 4)<4)
+       return 0;                         // read CRC and header size
+ 
+-#ifdef HI_LO_BYTE_ORDER
++#if BYTE_ORDER == BIG_ENDIAN
+    WORDswap(&head.HEAD_CRC);
+    WORDswap(&head.HEAD_SIZE);
+ #endif
