@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/19 18:13:57 danh Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/21 19:56:23 avsm Exp $
 
-DISTNAME=		Sablot-0.44
-PKGNAME=		sablotron-0.44
+DISTNAME=		Sablot-0.51
+PKGNAME=		sablotron-0.51
 CATEGORIES=     	textproc
-NEED_VERSION=		1.330
+NEED_VERSION=		1.354
 
 HOMEPAGE=		http://www.gingerall.com/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
@@ -14,15 +14,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.gingerall.cz/sablot/
-DISTFILES=		Sablot-0.44${EXTRACT_SUFX} Sablot-Expat-1.1.2${EXTRACT_SUFX}
+MASTER_SITES=		http://www.gingerall.cz/download/
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-# Shared libraries are currently broken for this port
-CONFIGURE_ARGS=		--disable-shared
-
-post-extract:
-	@(cd ${WRKDIR}; mv Expat ${DISTNAME})
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-static
+CONFIGURE_ENV+=         CPPFLAGS="-I${LOCALBASE}/include" \
+                        LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
