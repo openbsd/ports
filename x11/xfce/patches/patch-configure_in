@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/03/24 01:20:39 brad Exp $
---- configure.in.orig	Sun Jan 20 09:35:07 2002
-+++ configure.in	Sat Mar 23 20:11:55 2002
-@@ -63,7 +63,7 @@ AC_LINK_FILES($nls_cv_header_libgt, $nls
+$OpenBSD: patch-configure_in,v 1.2 2002/08/26 02:30:24 pvalchev Exp $
+--- configure.in.orig	Tue Apr 16 03:48:18 2002
++++ configure.in	Thu Aug 22 02:16:05 2002
+@@ -71,7 +71,7 @@ AC_LINK_FILES($nls_cv_header_libgt, $nls
  AC_CHECK_HEADERS(ctype.h)
  AC_CHECK_HEADERS(unistd.h string.h getopt.h)
  AC_CHECK_HEADERS(fcntl.h)
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1 2002/03/24 01:20:39 brad Exp $
  AC_HEADER_STAT
  AC_HEADER_DIRENT
  AC_C_CONST
-@@ -109,6 +109,12 @@ AC_ARG_WITH(xpm,
+@@ -126,6 +126,12 @@ AC_ARG_WITH(xpm,
  
  AC_CHECK_LIB(Xpm, XpmReadFileToXpmImage, , 
               AC_MSG_ERROR(libXpm not found), $X_PRE_LIBS -lX11 $X_LIBS $X_EXTRA_LIBS)

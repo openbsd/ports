@@ -1,6 +1,6 @@
-$OpenBSD: patch-xfsound_xfdsp_h,v 1.1 2002/03/24 01:20:39 brad Exp $
---- xfsound/xfdsp.h.orig	Wed Sep 12 09:07:41 2001
-+++ xfsound/xfdsp.h	Sat Mar 23 20:11:56 2002
+$OpenBSD: patch-xfsound_xfdsp_h,v 1.2 2002/08/26 02:30:24 pvalchev Exp $
+--- xfsound/xfdsp.h.orig	Mon Mar 25 15:59:16 2002
++++ xfsound/xfdsp.h	Thu Aug 22 02:20:53 2002
 @@ -22,7 +22,13 @@
  
  #define XF_IND		1
@@ -12,6 +12,6 @@ $OpenBSD: patch-xfsound_xfdsp_h,v 1.1 2002/03/24 01:20:39 brad Exp $
  #define DSP_NAME	"/dev/dsp"
 +#endif
 +
- #define ARTSD_CMD       "exec artsd"
+ #define ARTSD_CMD       "exec artswrapper"
  
  typedef int ST_CONFIG[3];
