@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2000/05/31 21:49:44 marc Exp $
+# $OpenBSD: Makefile,v 1.42 2000/05/31 22:02:29 marc Exp $
 
 DISTNAME=	gimp-1.1.22
 CATEGORIES=	graphics
@@ -36,14 +36,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # MUST be removed as the version was incorrect (it came from 1.1.x
 # sources). Check that out here (and bitch if necessary).
 pre-extract:
-	@if [ -f ${X11BASE}/lib/libgimp.so.1.3 -o -f ${X11BASE}/lib/libgimp.so.1.4 ]; then \
+	@if [ -f ${X11BASE}/lib/libgimp.so.1.3 -o \
+	      -f ${X11BASE}/lib/libgimp.so.1.4 -o \
+	      -f ${LOCALBASE}/lib/libgimp.so.1.3 -o \
+	      -f ${LOCALBASE}/lib/libgimp.so.1.4 ]; then \
 	   echo "+-------------------"; \
 	   echo "| ERROR: you MUST remove the existing gimp installation"; \
 	   echo "| before installing this version. To fully remove run"; \
 	   echo "| these commands as user root"; \
 	   echo "|"; \
 	   echo "|      pkg_delete -f `pkg_info -e 'gimp-*'`"; \
-	   echo "|      ldconfig ${X11BASE}/lib"; \
+	   echo "|      ldconfig -R"; \
 	   echo "|"; \
 	   echo "+-------------------"; \
 	   exit 1; \
