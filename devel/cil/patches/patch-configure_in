@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2004/06/20 16:08:28 avsm Exp $
+--- configure.in.orig	2004-04-06 16:51:21.000000000 +0100
++++ configure.in	2004-06-20 16:57:30.000000000 +0100
+@@ -219,6 +219,8 @@ AC_MSG_CHECKING([for Perl])
+         ;;
+     freebsd)
+         ;;
++    openbsd)
++	;;
+     darwin) # Mac OS X
+         ;;
+     *)
+@@ -378,6 +380,13 @@ case "$target" in
+     ARCHOS=x86_LINUX
+     ;;
+ 
++   # openbsd
++  *86*openbsd*)
++    AC_MSG_RESULT(configuring for OpenBSD/x86)
++
++    ARCHOS=x86_LINUX
++    ;;
++
+   # Mac OS X
+   *powerpc*darwin*)
+     AC_MSG_RESULT(configuring for powerpc/darwin, which we treat like linux/x86)
+@@ -406,7 +415,7 @@ case "$target" in
+     ])
+     ;;
+ esac
+-CILHOME=$CCUREDHOME
++CILHOME=${LOCALBASE}
+ 
+ # We will use substitution variables whose definition contains newlines. The
+ # problem is that when config.status runs, it wants to break the series of

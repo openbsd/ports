@@ -1,0 +1,18 @@
+CIL (C Intermediate Language) is a high-level representation along
+with a set of tools that permit easy analysis and source-to-source
+transformation of C programs.
+
+CIL is both lower-level than abstract-syntax trees, by clarifying
+ambiguous constructs and removing redundant ones, and also higher-level
+than typical intermediate languages designed for compilation, by
+maintaining types and a close relationship with the source program.
+The main advantage of CIL is that it compiles all valid C programs
+into a few core constructs with a very clean semantics. Also CIL
+has a syntax-directed type system that makes it easy to analyze and
+manipulate C programs. Furthermore, the CIL front-end is able to
+process not only ANSI-C programs but also those using Microsoft C
+or GNU C extensions. If you do not use CIL and want instead to use
+just a C parser and analyze programs expressed as abstract-syntax
+trees then your analysis will have to handle a lot of ugly corners
+of the language (let alone the fact that parsing C itself is not a
+trivial task).

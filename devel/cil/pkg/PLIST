@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/20 16:08:28 avsm Exp $
+bin/cilly
+bin/patcher
+lib/cil/cabs2cil.cmi
+lib/cil/cabsvisit.cmi
+lib/cil/callgraph.cmi
+lib/cil/canonicalize.cmi
+lib/cil/check.cmi
+lib/cil/cil.a
+lib/cil/cil.cma
+lib/cil/cil.cmi
+lib/cil/cil.cmxa
+lib/cil/clexer.cmi
+lib/cil/clist.cmi
+lib/cil/errormsg.cmi
+lib/cil/escape.cmi
+lib/cil/formatcil.cmi
+lib/cil/frontc.cmi
+lib/cil/libperfcount.a
+lib/cil/logcalls.cmi
+lib/cil/mergecil.cmi
+lib/cil/olf.cmi
+lib/cil/oneret.cmi
+lib/cil/patch.cmi
+lib/cil/pretty.cmi
+lib/cil/ptranal.cmi
+lib/cil/rmtmps.cmi
+lib/cil/setp.cmi
+lib/cil/stats.cmi
+lib/cil/steensgaard.cmi
+lib/cil/trace.cmi
+lib/cil/uref.cmi
+lib/cil/util.cmi
+${P5SITE}/CIL/Cilly.pm
+${P5SITE}/CIL/KeptFile.pm
+${P5SITE}/CIL/OutputFile.pm
+${P5SITE}/CIL/TempFile.pm
+${P5SITE}/CilConfig.pm
+libexec/cil/cilly.asm.exe
+libexec/cil/cilly.byte.exe
+libexec/cil/machdep.exe
+@comment share/cil/Cilly.pm
+@comment share/cil/KeptFile.pm
+@comment share/cil/OutputFile.pm
+@comment share/cil/TempFile.pm
+@comment @dirrm share/cil
+@dirrm libexec/cil
+@dirrm ${P5SITE}/CIL
+@dirrm lib/cil

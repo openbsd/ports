@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_cilly,v 1.1.1.1 2004/06/20 16:08:28 avsm Exp $
+--- bin/cilly.orig	2004-06-20 16:57:52.000000000 +0100
++++ bin/cilly	2004-06-20 16:58:08.000000000 +0100
+@@ -60,7 +60,7 @@ use File::Basename;
+ use strict;
+ BEGIN {
+     @CilCompiler::ISA = qw(Cilly);
+-    $CilCompiler::base = "$::cilhome/obj/$::archos/cilly";
++    $CilCompiler::base = "$::cilhome/$::archos/cilly";
+     # Use the most recent version of cilly
+     $CilCompiler::mtime_asm = int((stat("$CilCompiler::base.asm.exe"))[9]);
+     $CilCompiler::mtime_byte = int((stat("$CilCompiler::base.byte.exe"))[9]);
