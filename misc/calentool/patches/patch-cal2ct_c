@@ -1,0 +1,20 @@
+$OpenBSD: patch-cal2ct_c,v 1.1 2003/06/18 02:48:00 avsm Exp $
+--- cal2ct.c.orig	Wed Sep 30 03:38:28 1998
++++ cal2ct.c	Wed Jun 18 03:41:50 2003
+@@ -71,7 +71,7 @@ int dysize();
+ #endif
+ #endif
+ 
+-void
++int
+ main(argc, argv)
+ int argc;
+ char *argv[];
+@@ -136,6 +136,7 @@ char *argv[];
+ 		exit(1);
+ 	}
+ 	write_ct_file();
++	return 0;
+ }
+ 
+ /*

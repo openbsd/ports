@@ -1,6 +1,7 @@
---- ctexterns.h.orig	Tue Sep 29 22:38:23 1998
-+++ ctexterns.h	Wed Sep 30 11:36:46 1998
-@@ -87,7 +87,7 @@
+$OpenBSD: patch-ctexterns_h,v 1.1 2003/06/18 02:48:00 avsm Exp $
+--- ctexterns.h.orig	Wed Sep 30 03:38:23 1998
++++ ctexterns.h	Wed Jun 18 03:41:50 2003
+@@ -87,7 +87,7 @@ extern void lastyear (void);
  extern int length_of_year (int year);
  extern void lock_cursors (void);
  extern int monthlength (int month);

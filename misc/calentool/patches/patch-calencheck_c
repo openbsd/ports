@@ -1,6 +1,7 @@
---- calencheck.c.orig	Wed Sep 30 11:45:30 1998
-+++ calencheck.c	Wed Sep 30 11:46:30 1998
-@@ -53,7 +53,7 @@
+$OpenBSD: patch-calencheck_c,v 1.1 2003/06/18 02:48:00 avsm Exp $
+--- calencheck.c.orig	Wed Sep 30 03:38:28 1998
++++ calencheck.c	Wed Jun 18 03:41:50 2003
+@@ -53,7 +53,7 @@ struct dayslot *slots;
  int show_future = 1;
  int one_based = 0, version2 = 0;
  
@@ -9,7 +10,7 @@
  main(argc,argv)
  int argc;
  char *argv[];
-@@ -129,6 +129,7 @@
+@@ -129,6 +129,7 @@ char *argv[];
  		sleep(TIME_OUT*60);
  		check_calendar();
  	}

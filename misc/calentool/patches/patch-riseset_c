@@ -1,5 +1,6 @@
+$OpenBSD: patch-riseset_c,v 1.1 2003/06/18 02:48:00 avsm Exp $
 --- riseset.c.orig	Wed Sep 30 03:38:24 1998
-+++ riseset.c	Wed Jun 18 03:38:06 2003
++++ riseset.c	Wed Jun 18 03:41:50 2003
 @@ -48,7 +48,7 @@
  extern char *daynames[], *monthnames[];
  extern int day_first;
