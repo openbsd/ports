@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/06/20 18:57:28 lebel Exp $
+--- Makefile.in.orig	Wed Jun 13 15:13:01 2001
++++ Makefile.in	Wed Jun 20 14:15:13 2001
+@@ -70,7 +70,7 @@ PACKAGE = @PACKAGE@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = src examples man public_html swig
++SUBDIRS = src man public_html swig
+ 
+ EXTRA_DIST =    .cvsignore
+ 

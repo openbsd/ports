@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/20 18:57:28 lebel Exp $
+include/GL/gle.h
+lib/libgle.a
+lib/libgle.la
+%%SHARED%%
+man/man3/gle.3
+man/man3/gleExtrusion.3
+man/man3/gleHelicoid.3
+man/man3/gleLathe.3
+man/man3/glePolyCone.3
+man/man3/glePolyCylinder.3
+man/man3/gleScrew.3
+man/man3/gleSetJoinStyle.3
+man/man3/gleSetNumSides.3
+man/man3/gleSpiral.3
+man/man3/gleSuperExtrusion.3
+man/man3/gleTextureMode.3
+man/man3/gleToroid.3
+man/man3/gleTwistExtrusion.3
+@dirrm include/GL
