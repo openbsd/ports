@@ -1,6 +1,6 @@
---- gdk/Makefile.in.orig	Mon Aug 23 18:08:02 1999
-+++ gdk/Makefile.in	Sat Aug 28 02:05:29 1999
-@@ -136,7 +136,7 @@
+--- gdk/Makefile.in.orig	Wed Feb 16 06:29:12 2000
++++ gdk/Makefile.in	Thu Mar  9 10:15:36 2000
+@@ -134,7 +134,7 @@
  
  # libtool stuff: set version and export symbols for resolving
  libgdkincludedir = $(includedir)/gdk

@@ -1,6 +1,6 @@
---- gtk/Makefile.in.orig	Fri Oct  8 11:57:08 1999
-+++ gtk/Makefile.in	Fri Oct 15 18:48:49 1999
-@@ -126,7 +126,7 @@
+--- gtk/Makefile.in.orig	Wed Feb 16 06:29:16 2000
++++ gtk/Makefile.in	Thu Mar  9 10:13:16 2000
+@@ -124,7 +124,7 @@
  x_libs = @x_libs@
  xinput_progs = @xinput_progs@
  
@@ -9,7 +9,7 @@
  
  
  #
-@@ -136,7 +136,7 @@
+@@ -134,7 +134,7 @@
  
  # libtool stuff: set version and export symbols for resolving
  libgtkincludedir = $(includedir)/gtk
@@ -18,7 +18,7 @@
  
  #	$(top_builddir)/gdk/libgdk.la
  
-@@ -191,7 +191,7 @@
+@@ -189,7 +189,7 @@
  gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
  CLEANFILES =  $(gen_sources)
  
@@ -27,7 +27,7 @@
  gtkconf_DATA = gtkrc.bg gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii
  
  
-@@ -504,7 +504,7 @@
+@@ -502,7 +502,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
  		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am
