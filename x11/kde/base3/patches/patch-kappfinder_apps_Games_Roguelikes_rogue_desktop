@@ -1,0 +1,11 @@
+$OpenBSD: patch-kappfinder_apps_Games_Roguelikes_rogue_desktop,v 1.1 2002/04/15 06:42:40 espie Exp $
+--- kappfinder/apps/Games/Roguelikes/rogue.desktop.orig	Thu Apr 11 23:48:44 2002
++++ kappfinder/apps/Games/Roguelikes/rogue.desktop	Thu Apr 11 23:49:19 2002
+@@ -49,6 +49,6 @@ GenericName[vi]=Gốc
+ GenericName[xx]=xx
+ GenericName[zh_CN]=原创
+ GenericName[zu]=Okwaseqaleni
+-Exec=/usr/games/rogue
++Exec=rogue
+ Terminal=true
+ Type=Application

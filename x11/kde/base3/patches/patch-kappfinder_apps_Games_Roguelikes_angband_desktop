@@ -1,0 +1,11 @@
+$OpenBSD: patch-kappfinder_apps_Games_Roguelikes_angband_desktop,v 1.1 2002/04/15 06:42:40 espie Exp $
+--- kappfinder/apps/Games/Roguelikes/angband.desktop.orig	Thu Apr 11 23:48:44 2002
++++ kappfinder/apps/Games/Roguelikes/angband.desktop	Thu Apr 11 23:49:28 2002
+@@ -41,6 +41,6 @@ Comment[vi]=Lặn xuống Angband và đ
+ Comment[xx]=xx
+ Comment[zh_CN]=潜入 Angband 并击败 Morgoth
+ Comment[zu]=Dayivela e Angband  bese uhlula i Morgoth
+-Exec=/usr/games/angband
++Exec=angband
+ Terminal=true
+ Type=Application

@@ -1,0 +1,11 @@
+$OpenBSD: patch-kappfinder_apps_Games_Roguelikes_zangband_desktop,v 1.1 2002/04/15 06:42:40 espie Exp $
+--- kappfinder/apps/Games/Roguelikes/zangband.desktop.orig	Thu Apr 11 23:48:44 2002
++++ kappfinder/apps/Games/Roguelikes/zangband.desktop	Thu Apr 11 23:49:24 2002
+@@ -43,6 +43,6 @@ GenericName[vi]=Đánh bại Serpent of 
+ GenericName[xx]=xx
+ GenericName[zh_CN]=击败 Chaos 恶棍
+ GenericName[zu]=Hlula Inyoka ye Nyakanyaka
+-Exec=/usr/games/zangband
++Exec=zangband
+ Terminal=true
+ Type=Application

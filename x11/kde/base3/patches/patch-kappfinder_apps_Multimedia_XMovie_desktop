@@ -1,0 +1,12 @@
+$OpenBSD: patch-kappfinder_apps_Multimedia_XMovie_desktop,v 1.1 2002/04/15 06:42:40 espie Exp $
+--- kappfinder/apps/Multimedia/XMovie.desktop.orig	Thu Apr 11 23:48:06 2002
++++ kappfinder/apps/Multimedia/XMovie.desktop	Thu Apr 11 23:48:26 2002
+@@ -63,7 +63,7 @@ GenericName[xx]=xx
+ GenericName[zh_CN]=视频播放器
+ GenericName[zh_TW]=Video 播放器
+ GenericName[zu]=Umdlali we Vidiyo
+-Exec=/usr/X11R6/bin/xmovie
++Exec=xmovie
+ Terminal=false
+ Icon=xmovie.xpm
+ MimeType=video/x-msvideo;video/quicktime;video/x-flic;video/mpeg;video/x-mpeg;

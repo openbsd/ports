@@ -1,0 +1,12 @@
+$OpenBSD: patch-kappfinder_apps_Games_Arcade_cxhextris_desktop,v 1.1 2002/04/15 06:42:40 espie Exp $
+--- kappfinder/apps/Games/Arcade/cxhextris.desktop.orig	Thu Apr 11 23:48:06 2002
++++ kappfinder/apps/Games/Arcade/cxhextris.desktop	Thu Apr 11 23:48:20 2002
+@@ -47,7 +47,7 @@ GenericName[xh]=Umdlalo we Arcade
+ GenericName[xx]=xx
+ GenericName[zh_CN]=街机游戏
+ GenericName[zu]=Arcade Umdlalo
+-Exec=/usr/X11R6/bin/xhextris
++Exec=xhextris
+ Terminal=false
+ Icon=/usr/share/icons/cxhextris.xpm
+ Type=Application
