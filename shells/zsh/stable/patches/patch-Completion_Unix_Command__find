@@ -1,7 +1,7 @@
-$OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2001/07/02 17:09:55 lebel Exp $
---- Completion/Unix/Command/_find.orig	Mon Apr  2 07:49:24 2001
-+++ Completion/Unix/Command/_find	Mon Jul  2 13:02:01 2001
-@@ -1,59 +1,38 @@
+$OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2001/07/05 17:22:13 lebel Exp $
+--- Completion/Unix/Command/_find.orig	Thu Jul  5 13:17:08 2001
++++ Completion/Unix/Command/_find	Thu Jul  5 13:17:18 2001
+@@ -1,59 +1,39 @@
 -#compdef find
 +#compdef find (OpenBSD)
 +# Sebastian Stark <seb@todesplanet.de>
@@ -81,7 +81,7 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2001/07/02 17:09:55 lebel Ex
 -  '*-printf:output format:' \
    '*-prune' \
 -  '*-ls' \
--  '*:directory:_files -/'
 +  '*-size:file size:' \
 +  '*-type:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
-+  '*-user:user:_users'
++  '*-user:user:_users' \
+   '*:directory:_files -/'
