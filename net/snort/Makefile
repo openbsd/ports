@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/19 14:34:33 bmc Exp $
+# $OpenBSD: Makefile,v 1.21 2001/12/06 18:31:39 bmc Exp $
 
 COMMENT=	"highly flexible sniffer/basic NIDS"
 
-DISTNAME=	snort-1.8.2
+DISTNAME=	snort-1.8.3
 CATEGORIES=	net security
 NEED_VERSION=	1.499
 MASTER_SITES=	${HOMEPAGE}/releases/
