@@ -1,0 +1,35 @@
+$OpenBSD: patch-config_Makefile_in,v 1.1.1.1 2004/03/07 19:11:33 espie Exp $
+--- config/Makefile.in.orig	2004-02-11 00:26:18.000000000 +0100
++++ config/Makefile.in	2004-02-12 18:20:55.000000000 +0100
+@@ -572,6 +572,8 @@ uninstall::
+ 	rm -f $(BINDIR)/mlnet
+ 	rm -f $(BINDIR)/mlgui
+ 
++ifeq ("$(MODOCAML_NATIVE)", "Yes")
++
+ install:: opt 
+ 	mkdir -p $(prefix)/bin
+ 	if test -e mlnet; then \
+@@ -594,6 +596,22 @@ install:: opt 
+              rm -f $(prefix)/bin/mlim; cp -f mlim $(prefix)/bin/mlim; \
+          fi
+ 
++else
++
++install::
++	cp -f mlnet.byte $(prefix)/bin/mlnet
++	for link in mlslsk mldonkey mlgnut mldc mlbt; do \
++	  ln -s mlnet $(prefix)/bin/$$link; \
++	done
++	cp -f mlgui.byte $(prefix)/bin/mlgui
++	cp -f mlgui.byte $(prefix)/bin/mldonkey_gui
++	cp -f mlnet.byte $(prefix)/bin/mlnet+gui
++	for link in mlslsk+gui mldonkey+gui mlgnut+gui mldc+gui mlbt+gui; do \
++	  ln -s mlnet+gui $(prefix)/bin/$$link; \
++	done
++	cp -f mlim.byte $(prefix)/bin/mlim;
++
++endif
+ 
+ ifeq ("$(COMPILE_GUI)" , "yes")
+ 
