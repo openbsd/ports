@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/04 06:37:07 kevlo Exp $
+bin/pscal
+share/doc/pscal/README
+@dirrm share/doc/pscal
