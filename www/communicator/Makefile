@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/10/29 09:40:17 turan Exp $
+# $OpenBSD: Makefile,v 1.16 1999/12/18 03:18:40 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -41,8 +41,6 @@ PKGNAME=	communicator-${COMMUNICATOR_V}
 CATEGORIES=     www
 DIST_SUBDIR=	netscape
 
-NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
-
 MASTER_SITES= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBSUP}/ \
 	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
@@ -54,7 +52,6 @@ MASTER_SITES= \
 	ftp://ftp.heanet.ie/pub/netscape/${SUBSUP}/ \
 	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
 	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBSUP}/
-
 MASTER_SITES0= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBMAIN}/ \
 	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
@@ -66,72 +63,70 @@ MASTER_SITES0= \
 	ftp://ftp.heanet.ie/pub/netscape/${SUBMAIN}/ \
 	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
 	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBMAIN}/
-
 MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Fortify/ \
 		ftp://ftp.it.net.au/mirrors/Fortify/
-
 DISTFILES=	${DISTNAME}.tar.gz:0 \
 		${FORTIFY}.tar.gz:1
 
 OBJMACHINE=	"yes"
-NO_WRKSUBDIR=	"No work subdirectory"
+NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 NO_CONFIGURE=	"No configure scripts"
-IS_INTERACTIVE= "Netscape installer"
-NO_PACKAGE=	interactive port
+NO_WRKSUBDIR=	"No work subdirectory"
 
 MAINTAINER=	brad@openbsd.org
 
 pre-fetch:
 .if !defined(NO_WARNINGS)
 .if ${MACHINE_ARCH} == "i386"
-	@${ECHO} ""
-	@${ECHO} "  WARNING: This application requires a kernel compiled with"
-	@${ECHO} "           'option COMPAT_BSDOS' for proper operation.  The"
-	@${ECHO} "           GENERIC kernel contains these options."
-	@${ECHO} ""
+	@echo ""
+	@echo "  WARNING: This application requires a kernel compiled with"
+	@echo "           'option COMPAT_BSDOS' for proper operation.  The"
+	@echo "           GENERIC kernel contains this option."
+	@echo ""
 .endif
 .if ${MACHINE_ARCH} == "sparc"
-	@${ECHO} ""
-	@${ECHO} "  WARNING: This application requires a kernel compiled with"
-	@${ECHO} "           'option COMPAT_SUNOS' and SunOS shared librarys"
-	@${ECHO} "           for proper operation, see compat_sunos(8) for"
-	@${ECHO} "           further details. The GENERIC kernel contains"
-	@${ECHO} "           this option."
-	@${ECHO} ""
+	@echo ""
+	@echo "  WARNING: This application requires a kernel compiled with"
+	@echo "           'option COMPAT_SUNOS' and SunOS shared librarys"
+	@echo "           for proper operation, see compat_sunos(8) for"
+	@echo "           further details. The GENERIC kernel contains"
+	@echo "           this option."
+	@echo ""
 .endif
 .endif
 
 do-build:
 	@cd ${WRKDIR}/${FORTIFY}/src/common && \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} all && \
+	env ${MAKE_ENV} make ${MAKE_FLAGS} ${MAKEFILE} all && \
 	cd ${WRKDIR}/${FORTIFY}/src/cmdline && \
-	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} fortify
+	env ${MAKE_ENV} make ${MAKE_FLAGS} ${MAKEFILE} fortify
 
 do-install:
 	@cd ${WRKDIR}/${COMMUNICATORNAME} && ${MAKE_ENV} ./ns-install
 
 post-install:
 .if ${MACHINE_ARCH} == "sparc"
-	@${CP} ${PREFIX}/netscape/netscape ${PREFIX}/netscape/netscape_nis
-	@${CP} ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
-	@${RM} ${PREFIX}/netscape/netscape_dns
+	@cp ${PREFIX}/netscape/netscape ${PREFIX}/netscape/netscape_nis
+	@cp ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
+	@rm -f ${PREFIX}/netscape/netscape_dns
 .endif
 	@cd ${WRKDIR}/${FORTIFY} && \
-	${LN} -sf languages/English Messages && \
-	(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
+	ln -sf languages/English Messages && \
+	(echo yes ; echo no ; echo no) \
 	| src/cmdline/fortify ${PREFIX}/netscape/netscape
 .if ${MACHINE_ARCH} == "sparc"
 	@cd ${WRKDIR}/${FORTIFY} && \
-	(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
+	(echo yes ; echo no ; echo no) \
 	| src/cmdline/fortify ${PREFIX}/netscape/netscape_nis
 .endif
-	@${SED} 's#@netscape_home@#${PREFIX}/netscape#' \
+	@sed -e 's#@netscape_home@#${PREFIX}/netscape#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
-	@if test -f ${PREFIX}/bin/netscape ; then \
-		${MV} ${PREFIX}/bin/netscape ${PREFIX}/bin/netscape.old ; fi
-	@${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
+	@if [ -f ${PREFIX}/bin/netscape]; then \
+	 mv ${PREFIX}/bin/netscape ${PREFIX}/bin/netscape.old; \
+	fi
+	${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
 
 .include <bsd.port.mk>
