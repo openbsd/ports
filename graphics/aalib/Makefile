@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/13 22:09:41 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/15 23:04:37 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 
 COMMENT=	"ascii art library"
@@ -25,6 +25,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+= --without-x
+.else
+USE_X11=	Yes
 .endif
 
 post-extract:
