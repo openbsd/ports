@@ -1,0 +1,2 @@
+Jgroff is based on GNU groff, with a patch to handle japanese EUC encoded 
+documents. 

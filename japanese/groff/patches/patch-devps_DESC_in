@@ -1,0 +1,9 @@
+$OpenBSD: patch-devps_DESC_in,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- devps/DESC.in.orig	Wed Apr 12 14:52:13 2000
++++ devps/DESC.in	Wed Apr 12 14:52:24 2000
+@@ -11,4 +11,4 @@ family T
+ fonts 11 0 0 0 0 0 SS S ZD ZDR M G
+ ondemand M G
+ tcommand
+-postpro grops
++postpro jgrops

@@ -1,0 +1,12 @@
+$OpenBSD: patch-grog_grog_pl,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- grog/grog.pl.orig	Wed Apr 12 15:47:16 2000
++++ grog/grog.pl	Wed Apr 12 15:47:28 2000
+@@ -6,7 +6,7 @@
+ $prog = $0;
+ $prog =~ s@.*/@@;
+ 
+-push(@command, "groff");
++push(@command, "jgroff");
+ 
+ while ($ARGV[0] =~ /^-./) {
+     $arg = shift(@ARGV);

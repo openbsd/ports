@@ -1,0 +1,9 @@
+$OpenBSD: patch-devnippon_DESC_proto,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- devnippon/DESC.proto.orig	Wed Apr 12 20:59:54 2000
++++ devnippon/DESC.proto	Wed Apr 12 20:59:58 2000
+@@ -6,4 +6,4 @@ sizes 10 0
+ fonts 6 R I B BI M G
+ ondemand M G
+ tcommand
+-postpro grotty
++postpro jgrotty

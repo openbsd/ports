@@ -1,0 +1,9 @@
+$OpenBSD: patch-devlj4_DESC_in,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- devlj4/DESC.in.orig	Wed Apr 12 14:52:13 2000
++++ devlj4/DESC.in	Wed Apr 12 14:52:20 2000
+@@ -6,4 +6,4 @@ styles R I B BI
+ fonts 6 0 0 0 0 0 S
+ family T
+ tcommand
+-postpro grolj4
++postpro jgrolj4

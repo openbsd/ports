@@ -1,0 +1,12 @@
+$OpenBSD: patch-grog_Makefile_sub,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- grog/Makefile.sub.orig	Wed Apr 12 13:53:31 2000
++++ grog/Makefile.sub	Wed Apr 12 13:53:42 2000
+@@ -16,7 +16,7 @@ grog: grog.pl grog.sh
+ install_data: grog
+ 	-test -d $(bindir) || mkdir $(bindir)
+ 	-rm -f $(bindir)/grog
+-	$(INSTALL_PROGRAM) grog $(bindir)/grog
++	$(INSTALL_PROGRAM) grog $(bindir)/$(NAMEPREFIX)grog
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/grog

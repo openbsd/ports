@@ -1,0 +1,31 @@
+Install everything with a `j' prefix, including all manpages.
+$OpenBSD: patch-Makefile_comm,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- Makefile.comm.orig	Tue Jun 27 13:08:27 1995
++++ Makefile.comm	Wed Apr 12 13:56:12 2000
+@@ -44,7 +44,7 @@ MOSTLYCLEANFILES=$(MANCLEAN) $(PROG) $(O
+ CLEANFILES=$(LIBCLEAN)
+ DISTCLEANFILES=TAGS Makefile
+ REALCLEANFILES=$(YTABC) $(YTABH)
+-NAMEPREFIX=
++NAMEPREFIX=j
+ HDRS=
+ MANPAGES=$(MAN1) $(MAN5) $(MAN7)
+ MANCLEAN=$(MANPAGES)
+@@ -144,7 +144,7 @@ install_man:
+ 	-test -d $(man5dir) || mkdir $(man5dir)
+ 	@-pages="$(MAN5)"; \
+ 	for p in $$pages; do \
+-	 target=$(man5dir)/`basename $$p .n`.$(man5ext); \
++	 target=$(man5dir)/$(NAMEPREFIX)`basename $$p .n`.$(man5ext); \
+ 	 rm -f $$target; \
+ 	 echo $(INSTALL_DATA) $$p $$target; \
+ 	 $(INSTALL_DATA) $$p $$target; \
+@@ -152,7 +152,7 @@ install_man:
+ 	-test -d $(man7dir) || mkdir $(man7dir)
+ 	@-pages="$(MAN7)"; \
+ 	for p in $$pages; do \
+-	 target=$(man7dir)/`basename $$p .n`.$(man7ext); \
++	 target=$(man7dir)/$(NAMEPREFIX)`basename $$p .n`.$(man7ext); \
+ 	 rm -f $$target; \
+ 	 echo $(INSTALL_DATA) $$p $$target; \
+ 	 $(INSTALL_DATA) $$p $$target; \

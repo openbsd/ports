@@ -1,0 +1,9 @@
+$OpenBSD: patch-devdvi_DESC_in,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- devdvi/DESC.in.orig	Wed Apr 12 14:52:12 2000
++++ devdvi/DESC.in	Wed Apr 12 14:52:17 2000
+@@ -8,4 +8,4 @@ sizes 500 600 700 800 900 1000 1100 1200
+ fonts 15 R I B BI 0 0 0 0 0 MI S EX CW M G
+ ondemand M G
+ tcommand
+-postpro grodvi
++postpro jgrodvi

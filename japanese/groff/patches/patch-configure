@@ -1,0 +1,24 @@
+Use j prefix elsewhere as well.
+$OpenBSD: patch-configure,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- configure.orig	Wed Apr 12 14:35:51 2000
++++ configure	Wed Apr 12 14:36:03 2000
+@@ -1901,18 +1901,7 @@ fi
+ test -n "$PAGE" || PAGE=letter
+ echo "$ac_t""$PAGE" 1>&6
+ 
+-echo $ac_n "checking for existing troff installation""... $ac_c" 1>&6
+-if test "x`(echo .tm '|n(.g' | tr '|' '\\\\' | troff -z -i 2>&1) 2>/dev/null`" \
+-  = x0
+-then
+-	echo "$ac_t""yes" 1>&6
+-	g=g
+-else
+-	echo "$ac_t""no" 1>&6
+-	g=
+-fi
+-
+-
++g=j
+ 
+ echo $ac_n "checking for prefix of system macro packages""... $ac_c" 1>&6
+ sys_tmac_prefix=

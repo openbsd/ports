@@ -1,0 +1,15 @@
+Put data into jgroff. 
+Issue: don't install everything, but link redundant stuff from 
+/usr/share/groff ?
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- Makefile.in.orig	Tue Apr 11 23:43:40 2000
++++ Makefile.in	Tue Apr 11 23:44:42 2000
+@@ -75,7 +75,7 @@ bindir=$(exec_prefix)/bin
+ 
+ # datasubdir says where to install data files
+ datadir=$(prefix)/share
+-datasubdir=$(datadir)/groff
++datasubdir=$(datadir)/jgroff
+ 
+ # fontdir says where to install dev*/*.
+ fontdir=$(datasubdir)/font

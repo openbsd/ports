@@ -1,0 +1,13 @@
+Avoid surprises, install jafmtodit.
+$OpenBSD: patch-afmtodit_Makefile_sub,v 1.1.1.1 2000/04/12 20:34:11 espie Exp $
+--- afmtodit/Makefile.sub.orig	Wed Apr 12 13:53:52 2000
++++ afmtodit/Makefile.sub	Wed Apr 12 13:54:10 2000
+@@ -15,7 +15,7 @@ afmtodit: afmtodit.pl
+ install_data: afmtodit
+ 	-test -d $(bindir) || mkdir $(bindir)
+ 	-rm -f $(bindir)/afmtodit
+-	$(INSTALL_PROGRAM) afmtodit $(bindir)/afmtodit
++	$(INSTALL_PROGRAM) afmtodit $(bindir)/$(NAMEPREFIX)afmtodit
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/afmtodit
