@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/07 15:22:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/16 14:44:23 lebel Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-danish=		"aspell dictionary for Danish"
@@ -26,8 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aspell
 
-LIB_DEPENDS=		pspell-modules.1::textproc/pspell \
-  			ltdl.1::devel/libtool
+LIB_DEPENDS=		pspell-modules.1::textproc/pspell
 
 # francais dictionary
 FRENCH_DIST=		aspell-dict-francais-0.05
