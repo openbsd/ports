@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/24 19:55:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/16 15:20:21 jakob Exp $
 
 COMMENT=	a Kerberos 5 implementation
 
@@ -20,13 +20,23 @@ MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/
 PREFIX=			${LOCALBASE}/heimdal
 
 SEPARATE_BUILD=		concurrent
-USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var/heimdal \
-		        --x-includes=/usr/X11R6/include \
-			--x-libraries=/usr/X11R6/lib \
 		        --with-krb4-lib=/usr/lib \
 			--with-krb4-include=/usr/include/kerberosIV \
 			${CONFIGURE_SHARED}
+
+FLAVORS=	no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L:Mno_x11}
+USE_X11=		No
+CONFIGURE_ARGS+=	--without-x
+.else
+USE_X11=		Yes
+CONFIGURE_ARGS+=	--with-x \
+			--x-includes=/usr/X11R6/include \
+			--x-libraries=/usr/X11R6/lib
+.endif
 
 .include <bsd.port.mk>
