@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 16:52:03 avsm Exp $
+${P5ARCH}/Text/CSV_XS.pm
+${P5ARCH}/auto/Text/CSV_XS/CSV_XS.bs
+${P5ARCH}/auto/Text/CSV_XS/CSV_XS.so
+man/man3p/Text::CSV_XS.3p
+@dirrm ${P5ARCH}/auto/Text/CSV_XS
