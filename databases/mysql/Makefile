@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2003/01/29 16:35:55 brad Exp $
+# $OpenBSD: Makefile,v 1.85 2003/08/26 15:37:18 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -6,15 +6,15 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	3.23.55
+VERSION=	3.23.57
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-3.23
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/$V/ \
-		ftp://ftp.shellhung.org/pub/Mirror/mysql/Downloads/$V/
+MASTER_SITES=	http://mysql.secsup.org/Downloads/$V/ \
+		http://mysql.mirrors.pair.com/Downloads/$V/
 
 HOMEPAGE=	http://www.mysql.com/
 

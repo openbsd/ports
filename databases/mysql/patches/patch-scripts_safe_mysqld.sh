@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.9 2003/01/29 16:35:55 brad Exp $
---- scripts/safe_mysqld.sh.orig	Tue Jan 21 15:41:56 2003
-+++ scripts/safe_mysqld.sh	Tue Jan 28 10:09:43 2003
-@@ -70,34 +70,16 @@ parse_arguments() {
+$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.10 2003/08/26 15:37:18 brad Exp $
+--- scripts/safe_mysqld.sh.orig	2003-06-06 10:39:17.000000000 -0400
++++ scripts/safe_mysqld.sh	2003-08-24 17:08:11.000000000 -0400
+@@ -74,34 +74,16 @@ parse_arguments() {
    done
  }
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.9 2003/01/29 16:35:55 brad Exp $
  
  # Use the mysqld-max binary by default if the user doesn't specify a binary
  if test -x $ledir/mysqld-max
-@@ -228,10 +210,17 @@ fi
+@@ -232,10 +214,17 @@ fi
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
  # Does this work on all systems?
@@ -65,12 +65,10 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.9 2003/01/29 16:35:55 brad Exp $
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -246,34 +235,6 @@ do
-   if test ! -f $pid_file		# This is removed if normal shutdown
-   then
+@@ -252,34 +241,6 @@ do
      break
--  fi
--
+   fi
+ 
 -  if @IS_LINUX@
 -  then
 -    # Test if one process was hanging.
@@ -97,6 +95,8 @@ $OpenBSD: patch-scripts_safe_mysqld.sh,v 1.9 2003/01/29 16:35:55 brad Exp $
 -	fi
 -	I=`expr $I + 1`
 -    done
-   fi
- 
+-  fi
+-
    echo "`date +'%y%m%d %H:%M:%S'`  mysqld restarted" | tee -a $err_log
+ done
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2002/12/14 23:57:37 brad Exp $
---- aclocal.m4.orig	Fri Dec 13 22:46:25 2002
-+++ aclocal.m4	Fri Dec 13 22:48:38 2002
-@@ -3311,7 +3311,7 @@ else
+$OpenBSD: patch-aclocal_m4,v 1.2 2003/08/26 15:37:18 brad Exp $
+--- aclocal.m4.orig	Fri Jun  6 10:39:30 2003
++++ aclocal.m4	Fri Jun 20 09:23:46 2003
+@@ -3321,7 +3321,7 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2002/12/14 23:57:37 brad Exp $
        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
        export_dynamic_flag_spec='${wl}-E'
      else
-@@ -3321,7 +3321,7 @@ else
+@@ -3331,7 +3331,7 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)

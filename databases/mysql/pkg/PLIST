@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2002/12/14 23:56:43 brad Exp $
+@comment $OpenBSD: PLIST,v 1.22 2003/08/26 15:37:18 brad Exp $
 bin/mysql
 bin/mysqladmin
 bin/mysqlbinlog
@@ -35,5 +35,5 @@ man/man1/mysql.1
 man/man1/mysqladmin.1
 man/man1/mysqldump.1
 man/man1/mysqlshow.1
-@dirrm include/mysql
 @dirrm lib/mysql
+@dirrm include/mysql

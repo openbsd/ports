@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2003/01/29 16:35:56 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2003/08/26 15:37:18 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -168,29 +168,29 @@ share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
+@dirrm share/mysql/ukrainian
+@dirrm share/mysql/swedish
+@dirrm share/mysql/spanish
+@dirrm share/mysql/slovak
+@dirrm share/mysql/russian
+@dirrm share/mysql/romanian
+@dirrm share/mysql/portuguese
+@dirrm share/mysql/polish
+@dirrm share/mysql/norwegian-ny
+@dirrm share/mysql/norwegian
+@dirrm share/mysql/korean
+@dirrm share/mysql/japanese
+@dirrm share/mysql/italian
+@dirrm share/mysql/hungarian
+@dirrm share/mysql/greek
+@dirrm share/mysql/german
+@dirrm share/mysql/french
+@dirrm share/mysql/estonian
+@dirrm share/mysql/english
+@dirrm share/mysql/dutch
+@dirrm share/mysql/danish
+@dirrm share/mysql/czech
+@dirrm share/mysql/charsets
+@dirrm share/mysql
 @dirrm share/doc/mysql/Flags
 @dirrm share/doc/mysql
-@dirrm share/mysql/charsets
-@dirrm share/mysql/czech
-@dirrm share/mysql/danish
-@dirrm share/mysql/dutch
-@dirrm share/mysql/english
-@dirrm share/mysql/estonian
-@dirrm share/mysql/french
-@dirrm share/mysql/german
-@dirrm share/mysql/greek
-@dirrm share/mysql/hungarian
-@dirrm share/mysql/italian
-@dirrm share/mysql/japanese
-@dirrm share/mysql/korean
-@dirrm share/mysql/norwegian
-@dirrm share/mysql/norwegian-ny
-@dirrm share/mysql/polish
-@dirrm share/mysql/portuguese
-@dirrm share/mysql/romanian
-@dirrm share/mysql/russian
-@dirrm share/mysql/slovak
-@dirrm share/mysql/spanish
-@dirrm share/mysql/swedish
-@dirrm share/mysql/ukrainian
-@dirrm share/mysql

@@ -1,7 +1,7 @@
-$OpenBSD: patch-innobase_include_univ_i,v 1.2 2002/12/14 23:56:43 brad Exp $
---- innobase/include/univ.i.orig	Thu Oct 10 06:17:25 2002
-+++ innobase/include/univ.i	Tue Nov 26 21:18:01 2002
-@@ -118,12 +118,8 @@ memory is read outside the allocated blo
+$OpenBSD: patch-innobase_include_univ_i,v 1.3 2003/08/26 15:37:18 brad Exp $
+--- innobase/include/univ.i.orig	2003-06-06 10:39:16.000000000 -0400
++++ innobase/include/univ.i	2003-08-24 17:08:11.000000000 -0400
+@@ -118,13 +118,9 @@ memory is read outside the allocated blo
  #define UNIV_INLINE  	__inline
  #else
  /* config.h contains the right def for 'inline' for the current compiler */
@@ -11,7 +11,8 @@ $OpenBSD: patch-innobase_include_univ_i,v 1.2 2002/12/14 23:56:43 brad Exp $
 -/* extern inline doesn't work with gcc 3.0.2 */
 +/* mysql people don't understand extern inline */
  #define UNIV_INLINE static inline
--#endif
  #endif
+-#endif
  
  #else
+ /* If we want to compile a noninlined version we use the following macro
