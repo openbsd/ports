@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2004/12/30 00:43:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2005/03/12 03:38:42 pvalchev Exp $
 
-ONLY_FOR_ARCHS=	i386 macppc
+ONLY_FOR_ARCHS=	i386 macppc amd64
 
 COMMENT=	"TV viewing application for bktr(4) cards"
 
