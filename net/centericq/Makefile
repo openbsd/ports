@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2002/04/04 18:48:05 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2002/07/10 08:21:31 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
-DISTNAME=	centericq-4.6.0
+DISTNAME=	centericq-4.7.7
 CATEGORIES=	net	
-NEED_VERSION=	1.504
 MASTER_SITES=	http://konst.org.ua/download/ \
 		http://konst.home.welcomehome.org/ \
 		http://centericq.de/archive/source/releases/
@@ -27,7 +26,8 @@ CONFIGURE_STYLE= autoconf
 BUILD_DEPENDS=	:automake-*:devel/automake
 CONFIGURE_ENV=	PREFIX="${PREFIX}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="-liconv"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/centericq

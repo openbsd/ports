@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/12/19 00:25:26 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/07/10 08:21:31 pvalchev Exp $
 bin/centericq
 bin/cicqconv
 bin/cicqsync
 man/man1/centericq.1
+share/centericq/contrib/spanish/COPYING
+share/centericq/contrib/spanish/ChangeLog
+share/centericq/contrib/spanish/FAQ
+share/centericq/contrib/spanish/INSTALL
+share/centericq/contrib/spanish/README
 share/centericq/email.wav
 share/centericq/msg.wav
 share/centericq/online.wav
@@ -13,12 +18,19 @@ share/doc/centericq/README
 share/locale/cs/LC_MESSAGES/centericq.mo
 share/locale/de/LC_MESSAGES/centericq.mo
 share/locale/es/LC_MESSAGES/centericq.mo
+share/locale/fr/LC_MESSAGES/centericq.mo
 share/locale/hu/LC_MESSAGES/centericq.mo
 share/locale/it/LC_MESSAGES/centericq.mo
+share/locale/ms/LC_MESSAGES/centericq.mo
+share/locale/nl/LC_MESSAGES/centericq.mo
 share/locale/pl/LC_MESSAGES/centericq.mo
 share/locale/pt_BR/LC_MESSAGES/centericq.mo
 share/locale/ro/LC_MESSAGES/centericq.mo
 share/locale/ru/LC_MESSAGES/centericq.mo
+share/locale/sv/LC_MESSAGES/centericq.mo
+share/locale/uk/LC_MESSAGES/centericq.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
 @dirrm share/doc/centericq
+@dirrm share/centericq/contrib/spanish
+@dirrm share/centericq/contrib
 @dirrm share/centericq
