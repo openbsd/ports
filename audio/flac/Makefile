@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/18 19:14:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/19 19:12:36 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 NOT_FOR_ARCHS=	alpha
@@ -19,22 +19,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flac
 
-BUILD_DEPENDS=	automake::devel/automake
-
-CONFIGURE_STYLE= autoconf
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ENV=	XMMS_CONFIG=no
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-src//}
+
 DOCDIR=		${PREFIX}/share/doc/flac
 
 post-extract:
 	@rm -rf ${WRKSRC}/obj
-
-# incomplete aclocal.m4
-post-patch:
-	@cd ${WRKSRC} && \
-		touch aclocal.m4 configure.in && \
-		automake -i
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
