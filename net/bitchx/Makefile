@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/07/04 02:23:35 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2000/07/04 19:33:07 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	BitchX-1.0c16
@@ -45,8 +45,7 @@ FAKE_FLAGS=	INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 WRKDIST=	${WRKDIR}/BitchX
 
 post-install:
-	@rm -f ${PREFIX}/bin/BitchX
-	@cd ${PREFIX}/bin; ln -sf BitchX-1.0c16 BitchX
+	@cd ${PREFIX}/bin && ln -sf BitchX-1.0c16 BitchX
 	@find ${PREFIX}/share/bitchx/help -name 'CVS' -print | xargs rm -rf
 	@chown -R root.wheel ${PREFIX}/share/bitchx
 
