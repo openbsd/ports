@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2003/03/31 14:36:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2003/07/01 20:21:11 sturm Exp $
 
 COMMENT=	"simple menu patterned after plan9"
 
-DISTNAME=	9menu-1.5
+DISTNAME=	9menu-1.7
 CATEGORIES=	plan9
 
-MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
+MASTER_SITES=	ftp://ftp.freefriends.org/arnold/Source/
 
 EXTRACT_SUFX=	.shar.gz
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib -lX11"
+MAKE_FILE=	Makefile.noimake
 
 USE_X11=	Yes
 
