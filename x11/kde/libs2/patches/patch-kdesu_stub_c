@@ -1,6 +1,6 @@
---- kdesu/kdesu_stub.c.orig	Tue Jul 25 17:21:49 2000
-+++ kdesu/kdesu_stub.c	Sat Sep 30 13:24:11 2000
-@@ -278,9 +278,17 @@ int main()
+--- kdesu/kdesu_stub.c.orig	Tue Sep 12 11:14:17 2000
++++ kdesu/kdesu_stub.c	Sun Nov 26 16:53:02 2000
+@@ -276,9 +276,17 @@ int main()
  	xsetenv("DISPLAY", params[P_DISPLAY].value);
  	if (params[P_DISPLAY_AUTH].value[0]) 
  	{
@@ -18,7 +18,7 @@
  	    {
  		perror("kdesu_stub: fopen()");
  		exit(1);
-@@ -288,7 +296,23 @@ int main()
+@@ -286,7 +294,23 @@ int main()
  	    fprintf(fout, "add %s %s\n", params[P_DISPLAY].value,
  		    params[P_DISPLAY_AUTH].value);
  	    fclose(fout);
@@ -42,7 +42,7 @@
  	    xsetenv("XAUTHORITY", xauthority);
  	    sprintf(command, "xauth source %s >/dev/null 2>&1", fname);
  	    if (system(command))
-@@ -307,9 +331,17 @@ int main()
+@@ -305,9 +329,17 @@ int main()
  	auth = xstrsep(params[P_ICE_AUTH].value);
  	if (host[0]) 
  	{
@@ -60,7 +60,7 @@
  	    {
  		perror("kdesu_stub: fopen()");
  		exit(1);
-@@ -320,7 +352,23 @@ int main()
+@@ -318,7 +350,23 @@ int main()
  	    for (i=0; host[i]; i++)
  		fprintf(fout, "add DCOP \"\" %s %s\n", host[i], auth[i]);
  	    fclose(fout);

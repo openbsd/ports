@@ -1,0 +1,12 @@
+$OpenBSD: patch-arts_flow_Makefile_in,v 1.1 2000/11/27 20:41:58 espie Exp $
+--- arts/flow/Makefile.in.orig	Sun Nov 26 17:03:48 2000
++++ arts/flow/Makefile.in	Sun Nov 26 17:04:05 2000
+@@ -230,7 +230,7 @@ lib_LTLIBRARIES = libartsflow_idl.la lib
+ libartsflow_idl_la_SOURCES = artsflow.cc
+ libartsflow_idl_la_LDFLAGS = -no-undefined
+ 
+-libartsflow_la_LIBADD = libartsflow_idl.la $(LIBAUDIOFILE) -lm
++libartsflow_la_LIBADD = libartsflow_idl.la $(LIBAUDIOFILE) @LIBOSSAUDIO@ -lm
+ libartsflow_la_LDFLAGS = -no-undefined
+ libartsflow_la_SOURCES = synth_play_impl.cc   synthschedule.cc audiosubsys.cc   pipebuffer.cc convert.cc synth_wave_sin_impl.cc synth_frequency_impl.cc   synth_multi_add_impl.cc synth_add_impl.cc synth_mul_impl.cc   synth_play_wav_impl.cc stdsynthmodule.cc cache.cc asyncschedule.cc   bytestreamtoaudio_impl.cc stereovolumecontrol_impl.cc   stereoeffectstack_impl.cc fft.c stereofftscope_impl.cc virtualports.cc   bus.cc audiomanager_impl.cc synth_record_impl.cc resample.cc
+ 

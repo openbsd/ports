@@ -1,5 +1,5 @@
---- admin/ltconfig.orig	Thu Aug 10 23:58:04 2000
-+++ admin/ltconfig	Fri Sep 29 15:26:38 2000
+--- admin/ltconfig.orig	Fri Sep 22 13:10:22 2000
++++ admin/ltconfig	Sun Nov 26 16:53:02 2000
 @@ -620,6 +620,12 @@ old_archive_cmds='$AR $AR_FLAGS $oldlib$
  old_postinstall_cmds='chmod 644 $oldlib'
  old_postuninstall_cmds=
@@ -13,7 +13,7 @@
  # Source the script associated with the $tagname tag configuration.
  if test -n "$tagname"; then
    . $ltmain
-@@ -1133,6 +1139,15 @@ openbsd*)
+@@ -1135,6 +1141,15 @@ openbsd*)
      need_lib_prefix=no
      need_version=no
    fi

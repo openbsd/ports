@@ -1,6 +1,6 @@
---- kparts/part.cpp.orig	Fri Sep 29 14:20:12 2000
-+++ kparts/part.cpp	Fri Sep 29 14:28:28 2000
-@@ -447,7 +447,15 @@ bool ReadWritePart::saveAs( const KURL &
+--- kparts/part.cpp.orig	Wed Sep 27 19:46:32 2000
++++ kparts/part.cpp	Sun Nov 26 16:53:02 2000
+@@ -448,7 +448,15 @@ bool ReadWritePart::saveAs( const KURL &
      // We haven't saved yet, or we did but locally - provide a temp file
      if ( m_file.isEmpty() || !m_bTemp )
      {
