@@ -1,8 +1,8 @@
---- globs.c.orig	Fri Jul 16 16:06:13 1999
-+++ globs.c	Fri Jul 16 16:07:08 1999
-@@ -17,7 +17,9 @@
- #include "sys.h"
+--- globs.c.orig	Sun Aug  1 01:33:05 1999
++++ globs.c	Sun Aug  1 01:34:23 1999
+@@ -18,7 +18,9 @@
  #include "indent.h"
+ #include "globs.h"
  
 +#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
  #include <malloc.h>
