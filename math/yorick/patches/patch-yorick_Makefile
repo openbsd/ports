@@ -1,0 +1,12 @@
+$OpenBSD: patch-yorick_Makefile,v 1.1 2001/07/13 06:04:17 pvalchev Exp $
+--- yorick/Makefile.orig	Fri May 11 13:29:29 2001
++++ yorick/Makefile	Thu Jul 12 23:00:41 2001
+@@ -28,7 +28,7 @@ OBJS = task.o yorick.o yinput.o parse.o 
+ 
+ CLEAN_CRUFT=main.c ycode.c codger yorick pkg-*
+ PKG_MAKE=CODGER=../yorick/codger YORINCL=-I../yorick PLAYINCL=-I../play \
+-  C_OPTIMIZE=$(COPTIONS) libyor
++  C_OPTIMIZE="$(COPTIONS)" libyor
+ PKG_NUKE=MAKE_TEMPLATE=../Make.cfg yorclean
+ PKG_CLEAN=ZAP_DOTI= $(PKG_NUKE)
+ 
