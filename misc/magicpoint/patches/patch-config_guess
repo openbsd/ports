@@ -1,4 +1,4 @@
-$OpenBSD: patch-aa,v 1.2 2000/05/17 01:25:54 espie Exp $
+$OpenBSD: patch-config_guess,v 1.1 2001/06/22 02:04:29 kevlo Exp $
 --- config.guess.orig	Tue Jan  5 04:30:48 1999
 +++ config.guess	Mon May  8 14:19:13 2000
 @@ -309,6 +309,9 @@ EOF

@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/03/07 22:19:23 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/06/22 02:04:32 kevlo Exp $
 bin/mgp
 bin/mgp2ps
 bin/mgpembed
 bin/mgpnet
 bin/xmindpath
 bin/xwintoppm
+bin/eqn2eps
+bin/mgp2html
+bin/mgp2latex
+bin/tex2eps
 lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.jpg
 lib/X11/mgp/mgp2.jpg
@@ -14,6 +18,7 @@ share/doc/mgp/COPYRIGHT.jp
 share/doc/mgp/README
 share/doc/mgp/README.fonts
 share/doc/mgp/README.fonts.jp
+share/doc/mgp/README.lang
 share/doc/mgp/SYNTAX
 share/doc/mgp/TODO.jp
 share/doc/mgp/USAGE
@@ -24,7 +29,6 @@ share/doc/mgp/sample/cloud.jpg
 share/doc/mgp/sample/dad.eps
 share/doc/mgp/sample/dad.jpg
 share/doc/mgp/sample/default.mgp
-share/doc/mgp/sample/dns-jp.mgp
 share/doc/mgp/sample/embed-jp.mgp
 share/doc/mgp/sample/embed.mgp
 share/doc/mgp/sample/gradation-jp.mgp
@@ -32,6 +36,7 @@ share/doc/mgp/sample/gradation.mgp
 share/doc/mgp/sample/mgp-old1.jpg
 share/doc/mgp/sample/mgp-old2.jpg
 share/doc/mgp/sample/mgp-old3.jpg
+share/doc/mgp/sample/mgp.mng
 share/doc/mgp/sample/mgp1.jpg
 share/doc/mgp/sample/mgp2.jpg
 share/doc/mgp/sample/mgp3.jpg
@@ -49,6 +54,11 @@ share/doc/mgp/sample/v6-jp.mgp
 share/doc/mgp/sample/v6.mgp
 share/doc/mgp/sample/v6header.eps
 share/doc/mgp/sample/v6header.jpg
+share/mgp/emacs/README
+share/mgp/emacs/mgp.el
+share/mgp/emacs/mgp.sty
+share/mgp/emacs/sample.tex
+share/mgp/emacs/mgp-mode.el
 man/cat1/mgp.0
 man/cat1/mgp2ps.0
 man/cat1/mgpembed.0
@@ -58,3 +68,5 @@ man/man1/xmindpath.1
 @dirrm lib/X11/mgp
 @dirrm share/doc/mgp/sample
 @dirrm share/doc/mgp
+@dirrm share/mgp/emacs
+@dirrm share/mgp

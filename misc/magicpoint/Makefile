@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/24 02:28:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2001/06/22 02:04:22 kevlo Exp $
 
 COMMENT=	"X11-based presentation tool"
 
-DISTNAME=	magicpoint-1.07a
+DISTNAME=	magicpoint-1.08a
 CATEGORIES=	misc productivity
 NEED_VERSION=	1.378
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
@@ -29,32 +29,44 @@ post-configure:
 
 post-build:
 	@cd ${WRKSRC}/contrib/xmindpath && ${MAKE_PROGRAM}
+	@cd ${WRKSRC}/contrib/xwintoppm && ${XMKMF}
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
 DOCS=	COPYRIGHT COPYRIGHT.jp README README.fonts README.fonts.jp \
-	SYNTAX TODO.jp USAGE USAGE.jp
-SAMPLES=	README README.jp ascii.mgp cloud.jpg dad.eps dad.jpg dns.mgp \
-		default.mgp gradation.mgp mgp-old1.jpg mgp-old2.jpg \
-		mgp-old3.jpg mgp1.jpg mgp2.jpg mgp3.jpg sample.mgp \
-		tutorial.mgp v6.mgp v6header.eps v6header.jpg
+	README.lang SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
-		dns-jp.mgp embed-jp.mgp embed.mgp gradation-jp.mgp \
+		embed-jp.mgp embed.mgp gradation-jp.mgp \
 		gradation.mgp mgp-old1.jpg mgp-old2.jpg mgp-old3.jpg \
-		mgp1.jpg mgp2.jpg mgp3.jpg mgp3.xbm mgprc-sample \
+		mgp.mng mgp1.jpg mgp2.jpg mgp3.jpg mgp3.xbm mgprc-sample \
 		multilingual.mgp sample-fr.mgp sample-jp.mgp sample.mgp \
 		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp tutorial.mgp \
 		v6-jp.mgp v6.mgp v6header.eps v6header.jpg
+EMACS=	README mgp.el mgp.sty sample.tex ../mgp-mode.el
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
 	@cd ${WRKSRC}/contrib/xmindpath && ${MAKE_PROGRAM} install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mgp/sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mgp/emacs
 	@for i in $(DOCS); do \
 	   ${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/mgp; \
 	done
 	@for i in $(SAMPLES); do \
 	   ${INSTALL_DATA} ${WRKSRC}/sample/$$i ${PREFIX}/share/doc/mgp/sample; \
 	done
+	@for i in $(EMACS); do \
+		 ${INSTALL_DATA} ${WRKSRC}/contrib/mgp-el/$$i \
+			 ${PREFIX}/share/mgp/emacs; \
+	done
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/eqn2eps.sh \
+		 ${PREFIX}/bin/eqn2eps
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/mgp2html.pl \
+		${PREFIX}/bin/mgp2html
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/mgp2latex.pl \
+		${PREFIX}/bin/mgp2latex
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/tex2eps.sh \
+		${PREFIX}/bin/tex2eps
+	
 
 .include <bsd.port.mk>
