@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/25 16:23:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2002/12/01 04:30:31 margarida Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
@@ -10,10 +10,6 @@ MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 FLAVORS=	www
 FLAVOR?=
-
-.if ${FLAVOR:L:Mwww}
-RUN_DEPENDS+=	${PREFIX}/libdata/perl5/site_perl/${ARCH}-openbsd/MIME/Base64.pm::converters/p5-MIME-Base64
-.endif
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
