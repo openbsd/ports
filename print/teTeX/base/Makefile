@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:41 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/05 21:42:41 espie Exp $
 
 PKGNAME=	teTeX_base-1.0.7
 CATEGORIES=	print/teTeX
@@ -24,7 +24,7 @@ FLAVOR?=
 
 TETEX_SRC=teTeX-src-1.0.7.tar.gz
 
-RUN_DEPENDS=${PREFIX}/share/texmf/ls-R::print/teTeX/texmf
+RUN_DEPENDS=${PREFIX}/share/texmf/ls-R:teTeX_texmf-1.0.*:print/teTeX/texmf
 BUILD_DEPENDS=${PREFIX}/share/texmf/ls-R::print/teTeX/texmf
 LIB_DEPENDS= png.1::graphics/png 
 
