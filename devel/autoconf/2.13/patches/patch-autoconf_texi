@@ -1,6 +1,6 @@
-$OpenBSD: patch-autoconf_texi,v 1.1 2003/02/15 23:58:57 brad Exp $
---- autoconf.texi.orig	Tue Jan  5 05:28:37 1999
-+++ autoconf.texi	Wed Jan  6 13:06:27 1999
+$OpenBSD: patch-autoconf_texi,v 1.2 2003/05/26 02:07:22 fgsch Exp $
+--- autoconf.texi.orig	Tue Jan  5 10:28:37 1999
++++ autoconf.texi	Sun May 25 22:54:53 2003
 @@ -4,6 +4,7 @@
  @settitle Autoconf
  @c For double-sided printing, uncomment:
@@ -9,3 +9,12 @@ $OpenBSD: patch-autoconf_texi,v 1.1 2003/02/15 23:58:57 brad Exp $
  @c %**end of header
  
  @set EDITION 2.13
+@@ -17,7 +18,7 @@
+ @ifinfo
+ @format
+ START-INFO-DIR-ENTRY
+-* Autoconf: (autoconf).         Create source code configuration scripts.
++* Autoconf: (autoconf-2.13).    Create source code configuration scripts.
+ END-INFO-DIR-ENTRY
+ @end format
+ 

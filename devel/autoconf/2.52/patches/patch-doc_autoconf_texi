@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
---- doc/autoconf.texi.orig	Tue Jul 17 18:34:55 2001
-+++ doc/autoconf.texi	Wed Mar 13 20:42:48 2002
+$OpenBSD: patch-doc_autoconf_texi,v 1.2 2003/05/26 02:07:22 fgsch Exp $
+--- doc/autoconf.texi.orig	Tue Jul 17 13:34:55 2001
++++ doc/autoconf.texi	Sun May 25 22:57:51 2003
 @@ -2,6 +2,7 @@
  @c %**start of header
  @setfilename autoconf.info
@@ -14,28 +14,28 @@ $OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
  @dircategory GNU admin
  @direntry
 -* Autoconf: (autoconf).         Create source code configuration scripts
-+* Autoconf-new: (autoconf-new).         Create source code configuration scripts
++* Autoconf-new: (autoconf-2.52).        Create source code configuration scripts
  @end direntry
  
  @dircategory Individual utilities
  @direntry
 -* autoscan: (autoconf)autoscan Invocation.
-+* autoscan: (autoconf-new)autoscan Invocation.
++* autoscan: (autoconf-2.52)autoscan Invocation.
                                  Semi-automatic @file{configure.ac} writing
 -* ifnames: (autoconf)ifnames Invocation.
-+* ifnames: (autoconf-new)ifnames Invocation.
++* ifnames: (autoconf-2.52)ifnames Invocation.
                                  Listing the conditionals in source code
 -* autoconf: (autoconf)autoconf Invocation.
-+* autoconf: (autoconf-new)autoconf Invocation.
++* autoconf: (autoconf-2.52)autoconf Invocation.
                                  How to create configuration scripts
 -* autoreconf: (autoconf)autoreconf Invocation.
-+* autoreconf: (autoconf-new)autoreconf Invocation.
++* autoreconf: (autoconf-2.52)autoreconf Invocation.
                                  Remaking multiple @code{configure} scripts
 -* configure: (autoconf)configure Invocation.
-+* configure: (autoconf-new)configure Invocation.
++* configure: (autoconf-2.52)configure Invocation.
                                  Configuring a package
 -* config.status: (autoconf)config.status Invocation.
-+* config.status: (autoconf-new)config.status Invocation.
++* config.status: (autoconf-2.52)config.status Invocation.
                                  Recreating a configuration
  @end direntry
  
