@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/08 22:19:47 markus Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/27 06:00:09 pvalchev Exp $
 
 COMMENT=	"S10sh - a Canon PowerShot digital camera driver"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/s10sh
 
-do-configure:
-	@cd ${WRKSRC}; ${SH} configure
+CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/libusb-0.1.3b
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/s10sh ${PREFIX}/bin
