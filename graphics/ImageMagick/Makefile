@@ -3,7 +3,7 @@
 # Date created:		1998-Apr-21
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/07 19:25:41 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/10 02:56:12 marc Exp $
 #
 
 DISTNAME=		ImageMagick-4.0.6
@@ -23,7 +23,7 @@ RUN_DEPENDS=		fig2dev:${PORTSDIR}/print/transfig \
 LIB_DEPENDS=    	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 			mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
 			png\\.1\\.:${PORTSDIR}/graphics/png \
-			tiff34\\.1:${PORTSDIR}/graphics/tiff34
+			tiff\\.1:${PORTSDIR}/graphics/tiff34
 
 USE_X11=		yes
 GNU_CONFIGURE=		yes

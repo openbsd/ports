@@ -1,6 +1,11 @@
-lib/libtiff34.a
-lib/libtiff34.so.1.0
-lib/libtiff34.so
+lib/libtiff.a
+@exec ln -sf %f %B/libtiff34.a
+@unexec rm -f %B/libtiff34.a
+lib/libtiff.so.1.0
+@exec ln -sf %f %B/libtiff.so
+@exec ln -sf %f %B/libtiff34.so.1.0
+@unexec rm -f %B/libtiff.so
+@unexec rm -f %B/libtiff34.so.1.0
 @exec /sbin/ldconfig -m %D/lib
 bin/fax2tiff
 bin/fax2ps
@@ -19,8 +24,12 @@ bin/tiffdump
 bin/tiffinfo
 bin/tiffmedian
 bin/tiffsplit
-include/tiff34.h
-include/tiffio34.h
+include/tiff.h
+@exec ln -sf %f %B/tiff34.h
+@unexec rm -f %B/tiff34.h
+include/tiffio.h
+@exec ln -sf %f %B/tiffio34.h
+@unexec rm -f %B/tiffio34.h
 man/man1/fax2ps.1
 man/man1/fax2tiff.1
 man/man1/gif2tiff.1
