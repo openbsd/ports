@@ -1,0 +1,11 @@
+This dock-app kills (and restarts) netscape when you click
+on the icon! You can now specify which program to kill and
+if you want to restart it or not.
+
+See wmNetscapeKiller --help for command line options.
+
+It must be launched under the same username of the user of
+WindowMaker.  If you dock it as root and you use Netscape as
+user your preferences will not be reloaded.
+
+WWW: ${HOMEPAGE}
