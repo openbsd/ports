@@ -14,10 +14,4 @@ looked quite odd. Not that odd is bad. Just odd.
 So what does it do? Xtacy displays bouncing shapes, rotating palettes, 
 a couple fractals, a kaleidascope, and lots of more stuff.
 
-Xtacy is distributed under the GNU License.
-
-Xtacy 1.13 New Features
-
--	New Modes! Bezier curves, Spinning Cube, Dog Plasma, Swarm, and More ! 
--	New Color Palettes! ummm... well, try 'em ,they're NEW 
--	Bug fixes Xtacy 1.12 had a memory leak or two.. I plugged 'em 
+WWW: ${HOMEPAGE}
