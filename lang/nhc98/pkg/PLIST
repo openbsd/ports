@@ -1,0 +1,232 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/10 04:39:03 dons Exp $
+@pkgcfl hmake-*
+bin/greencard-nhc98
+bin/harch
+bin/hi
+bin/hmake
+bin/hmake-config
+bin/hood
+bin/hp2graph
+bin/nhc98
+bin/tprofprel
+include/nhc98/Array.hi
+include/nhc98/CPUTime.hi
+include/nhc98/Char.hi
+include/nhc98/Complex.hi
+include/nhc98/DPrelude.hi
+include/nhc98/DbgIface.hi
+include/nhc98/DbgStub.hi
+include/nhc98/Directory.hi
+include/nhc98/Haskell.hi
+include/nhc98/HatBuiltin.hi
+include/nhc98/HsFFI.h
+include/nhc98/IO.hi
+include/nhc98/Ix.hi
+include/nhc98/List.hi
+include/nhc98/Locale.hi
+include/nhc98/Maybe.hi
+include/nhc98/Monad.hi
+include/nhc98/NHC/BinArray.hi
+include/nhc98/NHC/Binary.hi
+include/nhc98/NHC/Bit.hi
+include/nhc98/NHC/FFI.hi
+include/nhc98/NHC/GreenCard.gc
+include/nhc98/NHC/GreenCard.hi
+include/nhc98/NHC/IOExtras.hi
+include/nhc98/NHC/Internal.hi
+include/nhc98/NHC/Observe.hi
+include/nhc98/NHC/PackedString.hi
+include/nhc98/NHC/Prelude.hi
+include/nhc98/NonStdEval.hi
+include/nhc98/NonStdGetPID.hi
+include/nhc98/NonStdProfile.hi
+include/nhc98/NonStdTrace.hi
+include/nhc98/NonStdUnsafeCoerce.hi
+include/nhc98/Numeric.hi
+include/nhc98/PackedString.hi
+include/nhc98/Prelude.hi
+include/nhc98/PreludeBuiltin.hi
+include/nhc98/Random.hi
+include/nhc98/Ratio.hi
+include/nhc98/System.hi
+include/nhc98/Time.hi
+include/nhc98/Warning.hi
+include/nhc98/base/Control/Arrow.hi
+include/nhc98/base/Control/Monad.hi
+include/nhc98/base/Control/Monad/Fix.hi
+include/nhc98/base/Control/Monad/Trans.hi
+include/nhc98/base/Data/Array.hi
+include/nhc98/base/Data/Bits.hi
+include/nhc98/base/Data/Bool.hi
+include/nhc98/base/Data/Char.hi
+include/nhc98/base/Data/Complex.hi
+include/nhc98/base/Data/Dynamic.hi
+include/nhc98/base/Data/Either.hi
+include/nhc98/base/Data/FiniteMap.hi
+include/nhc98/base/Data/IORef.hi
+include/nhc98/base/Data/Int.hi
+include/nhc98/base/Data/Ix.hi
+include/nhc98/base/Data/List.hi
+include/nhc98/base/Data/Maybe.hi
+include/nhc98/base/Data/PackedString.hi
+include/nhc98/base/Data/Ratio.hi
+include/nhc98/base/Data/Set.hi
+include/nhc98/base/Data/Tuple.hi
+include/nhc98/base/Data/Word.hi
+include/nhc98/base/Debug/Trace.hi
+include/nhc98/base/Foreign.hi
+include/nhc98/base/Foreign/C.hi
+include/nhc98/base/Foreign/C/Error.hi
+include/nhc98/base/Foreign/C/String.hi
+include/nhc98/base/Foreign/C/Types.hi
+include/nhc98/base/Foreign/C/TypesISO.hi
+include/nhc98/base/Foreign/ForeignPtr.hi
+include/nhc98/base/Foreign/Marshal.hi
+include/nhc98/base/Foreign/Marshal/Alloc.hi
+include/nhc98/base/Foreign/Marshal/Array.hi
+include/nhc98/base/Foreign/Marshal/Error.hi
+include/nhc98/base/Foreign/Marshal/Pool.hi
+include/nhc98/base/Foreign/Marshal/Utils.hi
+include/nhc98/base/Foreign/Ptr.hi
+include/nhc98/base/Foreign/StablePtr.hi
+include/nhc98/base/Foreign/Storable.hi
+include/nhc98/base/System/Cmd.hi
+include/nhc98/base/System/Console/GetOpt.hi
+include/nhc98/base/System/Directory.hi
+include/nhc98/base/System/Environment.hi
+include/nhc98/base/System/Exit.hi
+include/nhc98/base/System/IO.hi
+include/nhc98/base/System/IO/Error.hi
+include/nhc98/base/System/IO/Unsafe.hi
+include/nhc98/base/System/Info.hi
+include/nhc98/base/System/Locale.hi
+include/nhc98/base/System/Mem.hi
+include/nhc98/base/System/Random.hi
+include/nhc98/base/Text/Html.hi
+include/nhc98/base/Text/Html/BlockTable.hi
+include/nhc98/base/Text/ParserCombinators/Parsec.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Char.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Combinator.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Error.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Expr.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Perm.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Pos.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Prim.hi
+include/nhc98/base/Text/PrettyPrint.hi
+include/nhc98/base/Text/PrettyPrint/HughesPJ.hi
+include/nhc98/base/Text/Read.hi
+include/nhc98/base/Text/Show.hi
+include/nhc98/base/Text/Show/Functions.hi
+include/nhc98/bytecode.h
+include/nhc98/bytecode_o.h
+include/nhc98/cinterface.h
+include/nhc98/codemacros.h
+include/nhc98/flt.h
+include/nhc98/greencard.h
+include/nhc98/haskell2c.h
+include/nhc98/localmalloc.h
+include/nhc98/macros_o.h
+include/nhc98/mk.h
+include/nhc98/mkByHand.h
+include/nhc98/mkByProg.h
+include/nhc98/mutlib.h
+include/nhc98/newbytecode.h
+include/nhc98/newmacros.h
+include/nhc98/node.h
+include/nhc98/runtime.h
+include/nhc98/stableptr.h
+include/nhc98/twopass.h
+lib/hmake/${MACHINE_ARCH}-OpenBSD/HInteractive
+lib/hmake/${MACHINE_ARCH}-OpenBSD/MkConfig
+lib/hmake/${MACHINE_ARCH}-OpenBSD/MkProg
+lib/hmake/${MACHINE_ARCH}-OpenBSD/Older
+lib/hmake/${MACHINE_ARCH}-OpenBSD/hmakerc
+lib/nhc98/hood.jar
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Array.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/BinArray.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Binary.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Bit.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/CPUTime.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/CString.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Char.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Complex.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/DErrNo.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/DbgIface.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Directory.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Driver.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/FFI.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/GreenCard.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Haskell.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/IO.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/IOExtras.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Ix.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/List.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Locale.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Maybe.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Monad.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/NonStdEval.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/NonStdGetPID.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/NonStdProfile.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/NonStdTrace.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/NonStdUnsafeCoerce.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Numeric.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Observe.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/PackedString.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Prelude.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Prelude.p.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/PreludeAll.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Random.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Ratio.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Runtime.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Runtime.p.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Runtime.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/System.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Time.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/UnboxedArray.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/Warning.z.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/config
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/greencard-nhc98
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/hmake-PRAGMA
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/hp2graph
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/libHSbase.a
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/main.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/main.p.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/main.z.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/mutator.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/mutator.p.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/mutator.z.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/mutlib.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/mutlib.p.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/mutlib.z.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/nhc98comp
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/nhc98heap
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/tprofprel1.z.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/tprofprel2.z.o
+lib/nhc98/${MACHINE_ARCH}-OpenBSD/tprofprel3.z.o
+man/man1/harch.1
+man/man1/hmake.1
+man/man1/hp2graph.1
+man/man1/nhc98.1
+@dirrm lib/nhc98/${MACHINE_ARCH}-OpenBSD
+@dirrm lib/nhc98
+@dirrm lib/hmake/${MACHINE_ARCH}-OpenBSD
+@dirrm lib/hmake
+@dirrm include/nhc98/base/Text/Show
+@dirrm include/nhc98/base/Text/PrettyPrint
+@dirrm include/nhc98/base/Text/ParserCombinators/Parsec
+@dirrm include/nhc98/base/Text/ParserCombinators
+@dirrm include/nhc98/base/Text/Html
+@dirrm include/nhc98/base/Text
+@dirrm include/nhc98/base/System/IO
+@dirrm include/nhc98/base/System/Console
+@dirrm include/nhc98/base/System
+@dirrm include/nhc98/base/Foreign/Marshal
+@dirrm include/nhc98/base/Foreign/C
+@dirrm include/nhc98/base/Foreign
+@dirrm include/nhc98/base/Debug
+@dirrm include/nhc98/base/Data
+@dirrm include/nhc98/base/Control/Monad
+@dirrm include/nhc98/base/Control
+@dirrm include/nhc98/base
+@dirrm include/nhc98/NHC
+@dirrm include/nhc98
