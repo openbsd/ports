@@ -11,15 +11,6 @@
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -73,7 +75,7 @@
- 
- # To change the compiler switches, for example to change from -O
- # to -g, change the following line:
--CFLAGS = -O
-+CFLAGS = -O2
- 
- # To disable ANSI-C procedure prototypes reverse the comment characters
- # on the following lines:
 @@ -133,7 +135,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.

@@ -3,18 +3,18 @@
 # Date created:		2 December 1997
 # Whom:			niklas
 #
-# $NetBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
+# $OpenBSD: Makefile,v 1.6 1998/11/03 15:43:16 niklas Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 #
 
-DISTNAME=	tcl8.0p2
-PKGNAME=	tcl-8.0.2
+DISTNAME=	tcl8.0.3
+PKGNAME=	tcl-8.0.3
 CATEGORIES=	lang tcl80
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 MAINTAINER=	niklas@openbsd.org
 
-WRKSRC=		${WRKDIR}/tcl8.0/unix
+WRKSRC=		${WRKDIR}/tcl8.0.3/unix
 GNU_CONFIGURE=	yes
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS=	--enable-shared
