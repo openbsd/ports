@@ -1,6 +1,7 @@
---- bin/package.orig	Thu Aug 23 08:43:30 2001
-+++ bin/package	Tue Oct 23 14:10:24 2001
-@@ -12,7 +12,7 @@ version=2001-08-11
+$OpenBSD: patch-bin_package,v 1.4 2001/11/21 01:17:43 naddy Exp $
+--- bin/package.orig	Fri Nov 16 15:48:52 2001
++++ bin/package	Fri Nov 16 15:49:31 2001
+@@ -12,7 +12,7 @@ version=2001-10-31
  
  src="cmd contrib etc lib"
  use="/home /usr/common /exp /usr/local /usr/add-on /usr/addon /usr/tools /usr /opt"
@@ -9,16 +10,16 @@
  ccs="/usr/kvm /usr/ccs/bin"
  org="gnu GNU"
  makefiles="Mamfile Nmakefile nmakefile Makefile makefile"
-@@ -2187,9 +2187,9 @@ $PACKAGE_USE)
+@@ -2262,9 +2262,9 @@ $PACKAGE_USE)
  			for i in ksh sh bash
- 			do	if	executable $i
- 				then	case `$_executable_ -c 'echo $KSH_VERSION'` in
+ 			do	if	onpath $i
+ 				then	case `$_onpath_ -c 'echo $KSH_VERSION'` in
 -					*[Pp][Dd]*)
 -						: pd ksh is unreliable
 -						;;
 +#					*[Pp][Dd]*)
 +#						: pd ksh is unreliable
 +#						;;
- 					*)	SHELL=$_executable_
+ 					*)	SHELL=$_onpath_
  						break
  						;;
