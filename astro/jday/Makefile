@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 15:11:06 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/30 16:26:17 naddy Exp $
 
-COMMENT=	"convert calendar dates to/from astronomical julian dates"
+COMMENT=	"astronomical julian date calculator"
 
-DISTNAME=	jday-1.2
+DISTNAME=	jday-1.3
 CATEGORIES=	astro
 HOMEPAGE=	http://jday.sourceforge.net/
 
@@ -14,14 +14,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=jday/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jday/}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=gnu
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jday
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jday
-
-NO_REGRESS=	Yes
+do-regress:
+	@cd ${WRKSRC}; ./RunTest
 
 .include <bsd.port.mk>

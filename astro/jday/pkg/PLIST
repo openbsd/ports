@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/04 02:29:48 naddy Exp $
-bin/jday
+@comment $OpenBSD: PLIST,v 1.2 2002/12/30 16:26:17 naddy Exp $
+bin/dbd
 bin/j2d
-share/doc/jday/README
-@dirrm share/doc/jday
+bin/jday
+include/jday.h
+lib/libjday.a
+man/man1/jday.1
