@@ -1,0 +1,9 @@
+$OpenBSD: patch-examples_gzcat,v 1.1 2001/01/16 23:19:49 avsm Exp $
+--- examples/gzcat.orig	Mon Apr 22 15:12:04 1996
++++ examples/gzcat	Tue Jan 16 23:01:36 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use Compress::Zlib ;
+ 

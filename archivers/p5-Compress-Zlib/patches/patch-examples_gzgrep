@@ -1,0 +1,9 @@
+$OpenBSD: patch-examples_gzgrep,v 1.1 2001/01/16 23:19:49 avsm Exp $
+--- examples/gzgrep.orig	Fri Feb 23 17:05:48 1996
++++ examples/gzgrep	Tue Jan 16 23:01:36 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use Compress::Zlib ;
+ 

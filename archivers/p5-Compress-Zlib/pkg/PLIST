@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/06/28 11:42:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/01/16 23:19:49 avsm Exp $
 libdata/perl5/site_perl/${ARCH}-openbsd/Compress/Zlib.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Compress/Zlib/.packlist
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/Compress/Zlib/Zlib.bs
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/Compress/Zlib/Zlib.so
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/Compress/Zlib/autosplit.ix
 man/man3/Compress::Zlib.3p
+share/examples/p5-Compress-Zlib/filtdef
+share/examples/p5-Compress-Zlib/filtinf
+share/examples/p5-Compress-Zlib/gzcat
+share/examples/p5-Compress-Zlib/gzgrep
+share/examples/p5-Compress-Zlib/gzstream
+@dirrm share/examples/p5-Compress-Zlib
 @dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Compress/Zlib

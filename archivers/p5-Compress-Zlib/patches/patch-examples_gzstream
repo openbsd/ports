@@ -1,0 +1,9 @@
+$OpenBSD: patch-examples_gzstream,v 1.1 2001/01/16 23:19:49 avsm Exp $
+--- examples/gzstream.orig	Sun Nov 23 20:16:32 1997
++++ examples/gzstream	Tue Jan 16 23:01:36 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ use Compress::Zlib ;
+ 
