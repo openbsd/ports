@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/07/13 17:53:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.58 2001/07/15 22:54:03 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += mindterm
 #    SUBDIR += mmm
      SUBDIR += mod_frontpage
+     SUBDIR += mod_gzip
      SUBDIR += mod_perl
 #    SUBDIR += momspider
      SUBDIR += mozilla
