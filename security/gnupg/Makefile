@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2000/08/12 18:21:45 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/09/19 13:18:50 brad Exp $
 
-DISTNAME=	gnupg-1.0.2
+DISTNAME=	gnupg-1.0.3
 CATEGORIES=	security
-NEED_VERSION=	1.310
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/ \
@@ -32,8 +32,6 @@ GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 
 post-install:
 	${INSTALL_DATA_DIR} ${GNUPGDOCDIR}
-	@set -e; for f in ${GNUPGDOCFILES}; do \
-	 ${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}; \
-	done
+	cd ${WRKSRC}; ${INSTALL_DATA} ${GNUPGDOCFILES} ${GNUPGDOCDIR}
 
 .include <bsd.port.mk>
