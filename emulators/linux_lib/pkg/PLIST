@@ -1,0 +1,275 @@
+bin/bash
+etc/host.conf
+etc/ld.so.conf
+etc/ld.so.cache
+etc/revision-history
+etc/nsswitch.conf
+lib/ld-linux.so.1.7.14
+lib/ld-linux.so.1
+lib/ld.so.1.7.14
+lib/ld.so
+lib/libdl.so.1.7.14
+lib/libc.so.5.3.12
+lib/libm.so.5.0.6
+lib/libfbm.so.1.0.0
+lib/libtermcap.so.2.0.8
+lib/libm.so.5.0.8
+sbin/ldconfig
+usr/X11R6/lib/libICE.so.6.0
+usr/X11R6/lib/libPEX5.so.6.0
+usr/X11R6/lib/libSM.so.6.0
+usr/X11R6/lib/libX11.so.6.0
+usr/X11R6/lib/libXIE.so.6.0
+usr/X11R6/lib/libXaw.so.6.0
+usr/X11R6/lib/libXext.so.6.0
+usr/X11R6/lib/libXi.so.6.0
+usr/X11R6/lib/libXmu.so.6.0
+usr/X11R6/lib/libXt.so.6.0
+usr/X11R6/lib/libXtst.so.6.0
+usr/X11R6/lib/libXpm.so.4.8
+usr/X11R6/lib/libXaw3d.so.6.0
+usr/X11R6/lib/libforms.so.0.81
+usr/bin/ldd
+usr/lib/libf2c.so.0.20
+usr/lib/libg++.so.27.1.4
+usr/lib/libstdc++.so.27.1.4
+usr/lib/libpng.so.1.0.89
+usr/lib/libvga.so.1.2.10
+usr/lib/libvgagl.so.1.2.10
+usr/lib/libz.so.1.0.4
+usr/lib/libjpeg.so.6.0.1
+usr/lib/libpbm.so.1.0.0
+usr/lib/libpgm.so.1.0.0
+usr/lib/libpnm.so.1.0.0
+usr/lib/libppm.so.1.0.0
+usr/lib/librle.so.1.0.0
+usr/lib/libtiff.so.3.4.28
+usr/lib/libform.so.1.9.9e
+usr/lib/libmenu.so.1.9.9e
+usr/lib/libncurses.so.1.9.9e
+usr/lib/libpanel.so.1.9.9e
+usr/lib/libtcl7.5.so
+usr/lib/libtclx.so.75.2
+usr/lib/libtclx.so
+usr/lib/libtkx.so.41.2
+usr/lib/libtkx.so
+usr/lib/libtk4.1.so
+usr/lib/libgdbm.so.2.0.0
+usr/lib/zoneinfo/localtime
+usr/i486-linuxaout/lib/libX11.so.3.1.0
+usr/i486-linuxaout/lib/libX11.so.6.0
+usr/i486-linuxaout/lib/libXIE.so.6.0
+usr/i486-linuxaout/lib/libXaw.so.3.1.0
+usr/i486-linuxaout/lib/libXaw.so.6.0
+usr/i486-linuxaout/lib/libXpm.so.4.2
+usr/i486-linuxaout/lib/libXt.so.3.1.0
+usr/i486-linuxaout/lib/libXt.so.6.0
+usr/i486-linuxaout/lib/libc.so.4.7.2
+usr/i486-linuxaout/lib/libcurses.so.0.1.2
+usr/i486-linuxaout/lib/libdb.so.1.85.1
+usr/i486-linuxaout/lib/libm.so.4.6.27
+usr/i486-linuxaout/lib/libtcl.so.3.1
+usr/i486-linuxaout/lib/libtk.so.3.1.1
+usr/i486-linuxaout/lib/libvga.so.1.2.7
+usr/openwin/lib/libolgx.so.3.2.2
+usr/openwin/lib/libxview.so.3.2.2
+var/X11R6/lib/XErrorDB
+var/X11R6/lib/XKeysymDB
+var/X11R6/lib/Xcms.txt
+var/X11R6/lib/app-defaults/Bitmap
+var/X11R6/lib/app-defaults/Bitmap-color
+var/X11R6/lib/app-defaults/Editres
+var/X11R6/lib/app-defaults/Editres-color
+var/X11R6/lib/app-defaults/Clock-color
+var/X11R6/lib/app-defaults/XClipboard
+var/X11R6/lib/app-defaults/XClock
+var/X11R6/lib/app-defaults/XConsole
+var/X11R6/lib/app-defaults/Chooser
+var/X11R6/lib/app-defaults/Xfd
+var/X11R6/lib/app-defaults/XLogo
+var/X11R6/lib/app-defaults/XLogo-color
+var/X11R6/lib/app-defaults/Xmag
+var/X11R6/lib/app-defaults/Xmh
+var/X11R6/lib/app-defaults/XTerm
+var/X11R6/lib/app-defaults/Beforelight
+var/X11R6/lib/app-defaults/XSm
+var/X11R6/lib/app-defaults/Xvidtune
+var/X11R6/lib/locale/locale.alias
+var/X11R6/lib/locale/locale.dir
+var/X11R6/lib/locale/compose.dir
+var/X11R6/lib/locale/C/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-1/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-1/Compose
+var/X11R6/lib/locale/iso8859-2/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-3/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-4/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-5/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-6/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-7/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-8/XLC_LOCALE
+var/X11R6/lib/locale/iso8859-9/XLC_LOCALE
+var/X11R6/lib/locale/ja/XLC_LOCALE
+var/X11R6/lib/locale/ja.JIS/XLC_LOCALE
+var/X11R6/lib/locale/ja.SJIS/XLC_LOCALE
+var/X11R6/lib/locale/ko/XLC_LOCALE
+var/X11R6/lib/locale/zh/XLC_LOCALE
+var/X11R6/lib/locale/zh_TW/XLC_LOCALE
+var/X11R6/lib/locale/th_TH.TACTIS/XLC_LOCALE
+var/X11R6/lib/locale/en_US.utf/XLC_LOCALE
+var/X11R6/lib/locale/tbl_data/tab8859_1
+var/X11R6/lib/locale/tbl_data/tab8859_2
+var/X11R6/lib/locale/tbl_data/tab8859_3
+var/X11R6/lib/locale/tbl_data/tab8859_4
+var/X11R6/lib/locale/tbl_data/tab8859_5
+var/X11R6/lib/locale/tbl_data/tab8859_6
+var/X11R6/lib/locale/tbl_data/tab8859_7
+var/X11R6/lib/locale/tbl_data/tab8859_8
+var/X11R6/lib/locale/tbl_data/tab8859_9
+var/X11R6/lib/locale/tbl_data/jis0208
+var/X11R6/lib/locale/tbl_data/ksc5601
+var/X11R6/lib/locale/tbl_data/gb2312
+var/X11R6/lib/rgb.txt
+var/X11R6/lib/nls/C
+var/X11R6/lib/nls/ja_JP.jis7
+var/X11R6/lib/nls/ja_JP.jis8
+var/X11R6/lib/nls/ja_JP.mscode
+var/X11R6/lib/nls/ja_JP.pjis
+var/X11R6/lib/nls/ja_JP.ujis
+var/X11R6/lib/nls/ko_KR.euc
+var/X11R6/lib/nls/local_im_tbl/lt_LN.bit7
+var/X11R6/lib/nls/local_im_tbl/lt_LN.bit8
+var/X11R6/lib/nls/lt_LN.bit7
+var/X11R6/lib/nls/lt_LN.bit8
+var/X11R6/lib/nls/nls.alias
+var/X11R6/lib/nls/nls.dir
+var/X11R6/lib/nls/wr_WR.ct
+var/X11R6/lib/nls/zh_CN.ugb
+var/X11R6/lib/nls/zh_TW.big5
+.linux_lib-version
+bin/sh
+lib/libdl.so
+lib/libtermcap.so.2
+lib/libfbm.so.1
+lib/libm.so.5
+lib/libc.so.5
+lib/libdl.so.1
+lib/libfbm.so
+usr/X11R6/lib/libXaw3d.so.6
+usr/X11R6/lib/libXpm.so.4
+usr/X11R6/lib/libXtst.so.6
+usr/X11R6/lib/libXt.so.6
+usr/X11R6/lib/libXmu.so.6
+usr/X11R6/lib/libXi.so.6
+usr/X11R6/lib/libXext.so.6
+usr/X11R6/lib/libXaw.so.6
+usr/X11R6/lib/libXIE.so.6
+usr/X11R6/lib/libX11.so.6
+usr/X11R6/lib/libSM.so.6
+usr/X11R6/lib/libPEX5.so.6
+usr/X11R6/lib/libICE.so.6
+@unexec rm -f %D/usr/X11R6/lib/X11
+@unexec rm -f %D/usr/lib/X11
+@unexec rm -f %D/usr/X11 %D/usr/X386
+usr/lib/libf2c.so
+usr/lib/libc.so
+usr/lib/libm.so
+usr/lib/libg++.so
+usr/lib/libstdc++.so
+usr/lib/libpng.so
+usr/lib/libvga.so
+usr/lib/libvgagl.so
+usr/lib/libz.so
+usr/lib/libjpeg.so
+usr/lib/libpbm.so
+usr/lib/libpgm.so
+usr/lib/libpnm.so
+usr/lib/libppm.so
+usr/lib/librle.so
+usr/lib/libtiff.so
+usr/lib/libtiff.so.3
+usr/lib/librle.so.1
+usr/lib/libppm.so.1
+usr/lib/libpnm.so.1
+usr/lib/libpgm.so.1
+usr/lib/libpbm.so.1
+usr/lib/libjpeg.so.6
+usr/lib/libz.so.1
+usr/lib/libvgagl.so.1
+usr/lib/libvga.so.1
+usr/lib/libpng.so.1
+usr/lib/libstdc++.so.27
+usr/lib/libg++.so.27
+usr/lib/libf2c.so.0
+usr/lib/libform.so.3.0
+usr/lib/libmenu.so.3.0
+usr/lib/libncurses.so.3.0
+usr/lib/libpanel.so.3.0
+usr/lib/libtcl.so
+usr/lib/libtk.so
+usr/lib/libgdbm.so.2
+usr/lib/libstdc++.so.26
+usr/lib/libg++.so.26
+usr/i486-linuxaout/lib/libX11.so.3
+usr/i486-linuxaout/lib/libX11.so.6
+usr/i486-linuxaout/lib/libXIE.so.6
+usr/i486-linuxaout/lib/libXaw.so.3
+usr/i486-linuxaout/lib/libXaw.so.6
+usr/i486-linuxaout/lib/libXpm.so.4
+usr/i486-linuxaout/lib/libXt.so.3
+usr/i486-linuxaout/lib/libXt.so.6
+usr/i486-linuxaout/lib/libc.so.4
+usr/i486-linuxaout/lib/libcurses.so.0
+usr/i486-linuxaout/lib/libdb.so.1
+usr/i486-linuxaout/lib/libm.so.4
+usr/i486-linuxaout/lib/libtcl.so.3
+usr/i486-linuxaout/lib/libtk.so.3
+usr/i486-linuxaout/lib/libvga.so.1
+usr/openwin/lib/libxview.so.3
+usr/openwin/lib/libolgx.so.3
+@dirrm bin
+@dirrm etc
+@dirrm lib
+@dirrm sbin
+@dirrm usr/X11R6/lib
+@dirrm usr/X11R6
+@dirrm usr/bin
+@dirrm usr/lib/zoneinfo
+@dirrm usr/lib
+@dirrm usr/i486-linuxaout/lib
+@dirrm usr/i486-linuxaout
+@dirrm usr/local/lib
+@dirrm usr/local
+@dirrm usr/openwin/lib
+@dirrm usr/openwin
+@dirrm usr
+@dirrm var/X11R6/lib/app-defaults
+@dirrm var/X11R6/lib/locale/C
+@dirrm var/X11R6/lib/locale/iso8859-1
+@dirrm var/X11R6/lib/locale/iso8859-2
+@dirrm var/X11R6/lib/locale/iso8859-3
+@dirrm var/X11R6/lib/locale/iso8859-4
+@dirrm var/X11R6/lib/locale/iso8859-5
+@dirrm var/X11R6/lib/locale/iso8859-6
+@dirrm var/X11R6/lib/locale/iso8859-7
+@dirrm var/X11R6/lib/locale/iso8859-8
+@dirrm var/X11R6/lib/locale/iso8859-9
+@dirrm var/X11R6/lib/locale/ja
+@dirrm var/X11R6/lib/locale/ja.JIS
+@dirrm var/X11R6/lib/locale/ja.SJIS
+@dirrm var/X11R6/lib/locale/ko
+@dirrm var/X11R6/lib/locale/zh
+@dirrm var/X11R6/lib/locale/zh_TW
+@dirrm var/X11R6/lib/locale/th_TH.TACTIS
+@dirrm var/X11R6/lib/locale/en_US.utf
+@dirrm var/X11R6/lib/locale/tbl_data
+@dirrm var/X11R6/lib/locale
+@dirrm var/X11R6/lib/nls/local_im_tbl
+@dirrm var/X11R6/lib/nls
+@dirrm var/X11R6/lib
+@dirrm var/X11R6
+@dirrm var
+dev/dsp
+@dirrm dev
+@exec mkdir -p %D/usr/local
+@exec mkdir -p %D/usr/local/lib
+@exec %D/sbin/ldconfig
