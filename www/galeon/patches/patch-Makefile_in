@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/07/04 06:41:12 marcm Exp $
+--- Makefile.in.orig	Thu Jul  3 22:40:28 2003
++++ Makefile.in	Thu Jul  3 22:40:32 2003
+@@ -852,7 +852,6 @@ uninstall-info: uninstall-info-recursive
+ @INTLTOOL_OAF_RULE@
+ 
+ install-schemas: galeon.schemas
+-	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) gconftool-1 --makefile-install-rule $(SCHEMAS_FILE)
+ 
+ @INSTALL_SCHEMAS_TRUE@install-data-local: install-schemas
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
