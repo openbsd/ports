@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/04/18 23:19:52 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/06/09 19:43:22 brad Exp $
 # NOTE:
 # At one time this port was installed as libtiff34.a to get rid of a
 # rumored incompatibility between libtiff3.3 and 3.4.  This is no longer
@@ -8,20 +8,19 @@
 #	libtiff34.so.1.0 -> libtiff.so.3.4
 #	tiff34.h -> tiff.h
 #	tiffio34.h -> tiffio.h
-#
 
-DISTNAME=	tiff-v3.4
-PKGNAME=	tiff-3.4
+DISTNAME=	tiff-v3.4beta037
+PKGNAME=	tiff-3.4b37
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/ \
-		ftp://ftp.isri.unlv.edu/pub/mirror/tiff/
-EXTRACT_SUFX=	-tar.gz
+MASTER_SITES=	ftp://ftp.sgi.com/graphics/tiff/ \
+		ftp://ftp.wizards.dupont.com/pub/ImageMagick/delegates/ \
+		ftp://ftp.fifi.org/pub/ImageMagick/delegates/
 
 NEED_VERSION=	1.64
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
-LIB_DEPENDS=    jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg.62:${PORTSDIR}/graphics/jpeg
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
@@ -31,23 +30,22 @@ CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 		--with-DIR_GZLIB=/usr/lib \
 		--with-DIR_JPEGLIB=${PREFIX}/lib \
 		--with-LIBGL=no --with-LIBIMAGE=no \
-		--with-INSTALL="/bin/sh ${WRKSRC}/port/install.sh" \
+		--with-INSTALL="${SH} ${WRKSRC}/port/install.sh" \
 		--noninteractive
 
 DOCDIR=	${PREFIX}/share/doc/tiff34
 
 # Create symbolic links for backwards compatibility
-#
 post-install:
 	${LN} -sf libtiff.a ${PREFIX}/lib/libtiff34.a
-	[ ! -f libtiff.so.3.4 ] || ${LN} -sf libtiff.so.3.4 ${PREFIX}/lib/libtiff34.so.1.0
+	@if [ ! -f libtiff.so.3.4 ]; then \
+	 ${LN} -sf libtiff.so.3.4 ${PREFIX}/lib/libtiff34.so.1.0; \
+	fi
 	${LN} -sf tiff.h ${PREFIX}/include/tiff34.h
 	${LN} -sf tiffio.h ${PREFIX}/include/tiffio34.h
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
-.endif
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

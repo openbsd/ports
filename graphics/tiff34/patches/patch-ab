@@ -1,23 +1,12 @@
-*** tools/fax2ps.c.orig	Sat Dec 20 04:54:39 1997
---- tools/fax2ps.c	Sat Dec 20 04:55:22 1997
-***************
-*** 378,385 ****
-  	char temp[1024], buf[16*1024];
-  
-  	strcpy(temp, "/tmp/fax2psXXXXXX");
-! 	(void) mktemp(temp);
-! 	fd = fopen(temp, "w");
-  	if (fd == NULL) {
-  	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
-  	    exit(-2);
---- 378,386 ----
-  	char temp[1024], buf[16*1024];
-  
-  	strcpy(temp, "/tmp/fax2psXXXXXX");
-! 	/* (void) mktemp(temp);*/
-! 	/*fd = fopen(temp, "w");*/
-! 	fd = fdopen(mkstemp(temp), "w+");
-	
-  	if (fd == NULL) {
-  	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
-  	    exit(-2);
+--- tools/fax2ps.c.orig	Wed Jun  9 14:54:37 1999
++++ tools/fax2ps.c	Wed Jun  9 14:55:27 1999
+@@ -378,8 +378,7 @@
+ 	char temp[1024], buf[16*1024];
+ 
+ 	strcpy(temp, "/tmp/fax2psXXXXXX");
+-	(void) mktemp(temp);
+-	fd = fopen(temp, "w");
++	fd = fdopen(mkstemp(temp), "w+");
+ 	if (fd == NULL) {
+ 	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
+ 	    exit(-2);
