@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2000/08/12 13:29:56 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2000/09/21 06:10:28 brad Exp $
 #
 # Pre/post-installation setup of mutt
 
@@ -54,7 +54,7 @@ case $2 in
 	if [ ! -d $CONFIG_DIR ]; then
 	    do_install $1
 	elif [ ! -f $CONFIG_DIR/Muttrc ]; then
-	    do_install $!
+	    do_install $1
 	else
 	    do_notice $1
 	fi
