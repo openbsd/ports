@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/29 08:37:08 grange Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/07 11:13:12 grange Exp $
 
 COMMENT=		"IPv4/IPv6 traffic collector"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/files/
 
 MAKE_ENV=		BINDIR=${TRUEPREFIX}/sbin MANDIR=${TRUEPREFIX}/man/cat
-CFLAGS+=		-DCNUPM_USER=\"_cnupm\"
+CFLAGS+=		-DCNUPM_USER=\"_cnupm\" -finline-limit-1000
 
 FLAVORS=		static
 FLAVOR?=
