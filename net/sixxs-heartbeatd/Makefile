@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/23 19:32:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/23 20:28:16 naddy Exp $
 
 COMMENT=	"SixXS IPv6 tunnel broker heartbeat client"
 
@@ -33,8 +33,7 @@ EXAMPLEDIR=	${PREFIX}/share/examples/sixxs-heartbeatd
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/client/heartbeat.conf ${EXAMPLEDIR}
-	${INSTALL_PROGRAM} ${WRKBUILD}/heartbeat-client \
-	    ${PREFIX}/sbin/sixxs-heartbeatd
+	${INSTALL_PROGRAM} ${WRKBUILD}/sixxs-heartbeatd ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/doc/draft-massar-v6ops-heartbeat-00.txt \
 	    ${DOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCDIR}
