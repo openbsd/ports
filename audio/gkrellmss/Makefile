@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 19:29:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2003/03/01 00:14:53 sturm Exp $
 
 COMMENT=	"GKrellM Sound Scope"
 
-DISTNAME=	gkrellmss-0.4
+DISTNAME=	gkrellmss-0.5
 CATEGORIES=	audio
 
 PERMIT_PACKAGE_CDROM=	Yes
