@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/27 13:18:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/03/02 04:59:51 brad Exp $
 
 COMMENT=	"CDDA reading utility with extra data verification features"
 
@@ -8,6 +8,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://www.xiph.org/paranoia/
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,7 +18,7 @@ MASTER_SITES=	${HOMEPAGE}download/
 EXTRACT_SUFX=	.src.tgz
 
 CONFIGURE_STYLE=	autoconf autoheader
-AUTOCONF_NEW=		Yes
+AUTOCONF_VERSION=	2.52
 CONFIGURE_ENV=		GCC=${CC}
 
 NO_REGRESS=		Yes
