@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/19 21:06:55 fgsch Exp $
+bin/pavuk
+man/man1/pavuk.1
+share/doc/pavuk/COPYING
+share/doc/pavuk/FAQ
+share/doc/pavuk/README
+share/doc/pavuk/jsbind.txt
+share/doc/pavuk/wget-pavuk.HOWTO
+share/examples/pavuk/pavukrc.sample
+@dirrm share/examples/pavuk
+@dirrm share/doc/pavuk
