@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/09 01:27:43 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/12 04:54:01 jolan Exp $
 
 COMMENT=	"tips/fortune dialog, xeyes for the xfce4 panel"
 DISTNAME=	xfce4-toys-${V}
@@ -12,5 +12,7 @@ MODULES=	gettext
 LIB_DEPENDS=	${GTK2} \
 		${XML2} \
 		${GUI}
+
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>

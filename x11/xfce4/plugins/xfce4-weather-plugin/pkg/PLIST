@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/08 01:56:44 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/12 04:54:01 jolan Exp $
 lib/xfce4/panel-plugins/libweather.a
 @comment lib/xfce4/panel-plugins/libweather.la
-lib/xfce4/panel-plugins/libweather.so
 share/xfce4/weather/icons/liquid/1.png
 share/xfce4/weather/icons/liquid/10.png
 share/xfce4/weather/icons/liquid/11.png
@@ -46,6 +45,7 @@ share/xfce4/weather/icons/liquid/6.png
 share/xfce4/weather/icons/liquid/7.png
 share/xfce4/weather/icons/liquid/8.png
 share/xfce4/weather/icons/liquid/9.png
+%%SHARED%%
 @dirrm share/xfce4/weather/icons/liquid
 @dirrm share/xfce4/weather/icons
 @dirrm share/xfce4/weather
