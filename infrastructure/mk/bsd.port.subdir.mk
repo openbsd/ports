@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.52 2003/08/02 09:53:27 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.53 2003/08/02 09:58:11 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -40,7 +40,6 @@
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
 .endif
-PORTSDIR ?= /usr/ports
 
 .if defined(show)
 .MAIN: show
@@ -66,23 +65,23 @@ REPORT_PROBLEM?=exit 1
 
 # create a full list of SUBDIRS...
 .if empty(PKGPATH)
-FULLSUBDIR:=${SUBDIR}
+_FULLSUBDIR:=${SUBDIR}
 .else
-FULLSUBDIR:=${SUBDIR:S@^@${PKGPATH}/@g}
+_FULLSUBDIR:=${SUBDIR:S@^@${PKGPATH}/@g}
 .endif
 
-SKIPPED=
+_SKIPPED=
 .for i in ${SKIPDIR}
-SKIPPED+=${FULLSUBDIR:M$i}
-SUBDIR:=${FULLSUBDIR:N$i}
+_SKIPPED+=${_FULLSUBDIR:M$i}
+_FULLSUBDIR:=${_FULLSUBDIR:N$i}
 .endfor
 
 
 _SUBDIRUSE: .USE
-.  for i in ${SKIPPED}
+.  for i in ${_SKIPPED}
 	@echo "===> $i skipped"
 .  endfor
-.  for d in ${FULLSUBDIR}
+.  for d in ${_FULLSUBDIR}
 	@dir=$d; ${_flavor_fragment}; \
 	${ECHO_MSG} "===> $d"; \
 	set +e; \
@@ -106,7 +105,7 @@ readmes: readme _SUBDIRUSE
 
 readme:
 	@rm -f README.html
-	@${MAKE} README.html
+	@cd ${.CURDIR} && exec ${MAKE} README.html
 
 TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 .if defined(PORTSTOP)
@@ -117,15 +116,15 @@ README=	${TEMPLATES}/README.category
 
 README.html:
 	@>$@.tmp
-.for entry in ${FULLSUBDIR}
-	@dir=${entry}; ${_flavor_fragment}; \
+.for d in ${_FULLSUBDIR}
+	@dir=$d; ${_flavor_fragment}; \
 	name=`eval $$toset ${MAKE} _print-packagename`; \
 	case $$name in \
 		README) comment='';; \
 		*) comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`;; \
 	esac; \
 	cd ${.CURDIR}; \
-	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">${entry}</a><dd>$$comment" >>$@.tmp
+	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">$d</a><dd>$$comment" >>$@.tmp
 .endfor
 	@cat ${README} | \
 		sed -e 's%%CATEGORY%%'`echo ${.CURDIR} | sed -e 's.*/\([^/]*\)$$\1'`'g' \
