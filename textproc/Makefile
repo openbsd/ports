@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1998/05/17 04:47:40 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 1998/05/17 04:53:27 angelos Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -9,7 +9,7 @@
      SUBDIR += html
 #    SUBDIR += info2html
      SUBDIR += isearch
-#    SUBDIR += iso12083
+     SUBDIR += iso12083
      SUBDIR += iso8879
      SUBDIR += ispell
      SUBDIR += jade
