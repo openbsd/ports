@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/21 12:50:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/09 03:46:29 pvalchev Exp $
 
 COMMENT=	"BSD process resource limit and priority functions"
 
-DISTNAME=	BSD-Resource-1.11
+DISTNAME=	BSD-Resource-1.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.499
+NEED_VERSION=	1.527
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
+# GPL or Artistic (same terms as Perl)
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
