@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/20 10:29:16 jsyn Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/04/08 00:59:33 jsyn Exp $
 bin/dnet-config
 include/dnet.h
 include/dnet/addr.h
@@ -9,6 +9,7 @@ include/dnet/fw.h
 include/dnet/icmp.h
 include/dnet/intf.h
 include/dnet/ip.h
+include/dnet/ip6.h
 include/dnet/os.h
 include/dnet/rand.h
 include/dnet/route.h

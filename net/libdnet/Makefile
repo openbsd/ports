@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/27 17:07:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/08 00:59:33 jsyn Exp $
 
 COMMENT=	"portable low-level networking library"
 
-DISTNAME=	libdnet-1.5
+DISTNAME=	libdnet-1.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
 
 HOMEPAGE=	http://libdnet.sourceforge.net/
 
-MAINTAINER=	Dug Song <dugsong@monkey.org>
+MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
