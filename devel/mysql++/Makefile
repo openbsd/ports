@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/08/10 20:07:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2003/06/04 14:14:06 sturm Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -37,7 +37,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 post-extract:
-	@rm -rf ${WKRSRC}/sqlplusint/.deps
+	@rm -rf ${WRKSRC}/sqlplusint/.deps
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql++/html
