@@ -1,14 +1,45 @@
-$OpenBSD: patch-configure,v 1.5 2002/02/15 19:17:54 nino Exp $
---- configure.orig	Sun Feb  3 00:04:00 2002
-+++ configure	Wed Feb  6 00:05:54 2002
-@@ -7945,6 +7945,10 @@ else
+$OpenBSD: patch-configure,v 1.6 2002/03/25 17:13:06 nino Exp $
+--- configure.orig	Sun Feb 10 16:36:55 2002
++++ configure	Sat Feb 16 15:39:19 2002
+@@ -4082,8 +4082,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -4092,8 +4092,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -4605,6 +4605,8 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
+@@ -7944,6 +7946,10 @@ else
+   echo "$ac_t""no" 1>&6
  fi
  
++	   fi
++
++	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	     LIBS="$LIBS -lintl";
  	   fi
-+	
-+       if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+           LIBS="$LIBS -lintl";
-+       fi
  
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
- 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then
