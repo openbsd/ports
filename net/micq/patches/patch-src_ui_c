@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_ui_c,v 1.1 2001/05/31 03:45:43 form Exp $
+--- src/ui.c.orig	Thu May 31 10:31:13 2001
++++ src/ui.c	Thu May 31 10:31:40 2001
+@@ -560,7 +560,6 @@ BOOL Do_Multiline_All (SOK_T sok, char *
+ {
+     static int offset = 0;
+     static char msg[1024];
+-    char *temp;
+     int i;
+ 
+     msg[offset] = 0;
+@@ -568,9 +567,7 @@ BOOL Do_Multiline_All (SOK_T sok, char *
+     {
+         for (i = 0; i < Num_Contacts; i++)
+         {
+-            temp = strdup (msg);
+-            icq_sendmsg (sok, Contacts[i].uin, temp, MRNORM_MESS);
+-            free (temp);
++            icq_sendmsg (sok, Contacts[i].uin, msg, MRNORM_MESS);
+         }
+         M_print ("Message sent!\n");
+         offset = 0;
+@@ -596,9 +593,7 @@ BOOL Do_Multiline_All (SOK_T sok, char *
+             M_print (i18n (37, "Message sent before last line buffer is full\n"));
+             for (i = 0; i < Num_Contacts; i++)
+             {
+-                temp = strdup (msg);
+-                icq_sendmsg (sok, Contacts[i].uin, temp, MRNORM_MESS);
+-                free (temp);
++                icq_sendmsg (sok, Contacts[i].uin, msg, MRNORM_MESS);
+             }
+             offset = 0;
+             return FALSE;

@@ -1,7 +1,24 @@
-$OpenBSD: patch-src_sendmsg_c,v 1.1 2001/05/26 05:13:48 form Exp $
---- src/sendmsg.c.orig	Sat May 26 10:59:59 2001
-+++ src/sendmsg.c	Sat May 26 11:01:00 2001
-@@ -998,7 +998,11 @@ void icq_sendurl (SOK_T sok, UDWORD uin,
+$OpenBSD: patch-src_sendmsg_c,v 1.2 2001/05/31 03:45:43 form Exp $
+--- src/sendmsg.c.orig	Thu Apr 19 05:38:54 2001
++++ src/sendmsg.c	Thu May 31 10:15:03 2001
+@@ -488,8 +488,6 @@ void icq_sendmsg (SOK_T sok, UDWORD uin,
+     else
+         log_event (uin, LOG_MESS, "You sent instant message to %d\n%s\n", uin, text);
+ 
+-    char_conv ("cw", text);
+-
+     len = strlen (text);
+     Word_2_Chars (pak.head.ver, ICQ_VER);
+     Word_2_Chars (pak.head.cmd, CMD_SENDM);
+@@ -502,6 +500,7 @@ void icq_sendmsg (SOK_T sok, UDWORD uin,
+ 
+     memcpy (&pak.data, &msg, sizeof (msg));
+     memcpy (&pak.data[8], text, len + 1);
++    char_conv ("cw", (char *)&pak.data[8]);
+ 
+     size = sizeof (msg) + len + 1;
+ 
+@@ -998,7 +997,11 @@ void icq_sendurl (SOK_T sok, UDWORD uin,
  {
      char buf[450];
  
