@@ -3,13 +3,19 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:41:12 turan Exp $
 
 DISTNAME=	john-1.6
 
 CATEGORIES=     security
 
 MAINTAINER=	dugsong@monkey.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/04/23 04:13:59 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 08:41:13 turan Exp $
 
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
@@ -7,6 +7,12 @@ MASTER_SITES=	http://www.nectar.com/distfiles/
 #		http://www.bitchx.com/~humble/files/
 
 MAINTAINER=	todd@OpenBSD.ORG
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 GNU_CONFIGURE=	YES
 

@@ -4,7 +4,7 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
-# $OpenBSD: Makefile,v 1.2 2000/02/10 23:14:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:41:13 turan Exp $
 #
 
 DISTNAME=	linuxdoc-1.1
@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 NEED_VERSION=	1.191
 
 MAINTAINER=	matthieu@laas.fr
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 RUN_DEPENDS=    ${ISOCAT}:${PORTSDIR}/textproc/iso8879
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 01:10:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/12 08:41:14 turan Exp $
 
 DISTNAME=	bricons
 PKGNAME=	bricons-3.0
@@ -8,6 +8,12 @@ MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
 EXTRACT_SUFX=	-athena-3.0.tar.gz
 
 MAINTAINER=     angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=	yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/07/20 19:46:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/12 08:41:14 turan Exp $
 #
 
 DISTNAME=	xml2rfc
@@ -6,6 +6,12 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://memory.palace.org/authoring/
 
 MAINTAINER=	jakob@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80 \
 		${PREFIX}/lib/tcl8.0/TclXML:${PORTSDIR}/textproc/TclXML \

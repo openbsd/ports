@@ -3,7 +3,7 @@
 # Date created:			  29 April 1998
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/12 08:41:10 turan Exp $
 #
 
 DISTNAME=	jive-1.1
@@ -14,6 +14,12 @@ NEED_VERSION=	1.191
 MASTER_SITE_SUBDIR= games/amusements
 
 MAINTAINER=     angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=		${WRKDIR}/jive
 MAN1=		jive.1

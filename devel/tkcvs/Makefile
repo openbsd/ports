@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:08 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:41:08 turan Exp $
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
 
 MAINTAINER=	todd@OpenBSD.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/packages-7.6/apps/tkcvs-6.0/
 

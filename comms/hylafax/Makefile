@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/12 06:29:50 turan Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/12 08:41:08 turan Exp $
 
 BROKEN=		bad packing lists
 
@@ -22,7 +22,7 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	d@openbsd.org
 
-LICENSE_TYPE=		BSD
+LICENSE_TYPE=		BSD/NONE
 PERMIT_PKG_CDROM=	YES
 PERMIT_PKG_FTP=		YES
 PERMIT_DISTF_CDROM=	YES

@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:35 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:41:12 turan Exp $
 
 PKGNAME=	ADMsnmp-0.1
 DISTNAME=	ADMsnmp.0.1
@@ -16,6 +16,12 @@ MASTER_SITES=	http://el8.org/~antilove/ \
 NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 WRKDIST=	${WRKDIR}/ADMsnmp
 

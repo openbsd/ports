@@ -3,7 +3,7 @@
 # Date created:		28 April 1998
 # Whom:			Ejovi Nuwere <ejovi@ejovi.net>
 #
-# $OpenBSD: Makefile,v 1.5 1999/04/06 19:18:45 rohee Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:41:11 turan Exp $
 #
 
 DISTNAME=	newsfetch-1.21
@@ -12,6 +12,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/news/readers
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MAN1=		newsfetch.1
 MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}"

@@ -1,10 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/09 20:41:52 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/12 08:41:07 turan Exp $
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 

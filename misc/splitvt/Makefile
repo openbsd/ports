@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/06 19:56:15 rohee Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/12 08:41:10 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	splitvt-1.6.3
@@ -7,6 +7,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
 
 MAINTAINER=     ports@OpenBSD.ORG
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:03 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:41:09 turan Exp $
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
@@ -10,6 +10,12 @@ NEED_VERSION=	1.191
 NEED_VERSION=	1.114
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 USE_IMAKE=	yes
 WRKDIST=	${WRKDIR}/xdeblo_v1.0

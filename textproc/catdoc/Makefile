@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1999/11/14 21:53:45 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/12 08:41:13 turan Exp $
 
 DISTNAME=	catdoc-0.90b4
 CATEGORIES=	textproc
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
 

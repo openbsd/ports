@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:11 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:41:11 turan Exp $
 #
 
 NEED_VERSION=	1.116
@@ -15,6 +15,12 @@ DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts

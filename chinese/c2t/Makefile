@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/10 23:14:29 espie Exp $	
+# $OpenBSD: Makefile,v 1.7 2000/02/12 08:41:08 turan Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
 
 MAINTAINER=     kevlo@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \

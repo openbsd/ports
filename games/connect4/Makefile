@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 23:14:31 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/12 08:41:09 turan Exp $
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
@@ -13,6 +13,12 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 MAINTAINER=	angelos@openbsd.org
+
+LICENSE_TYPE=		NONE
+PERMIT_PKG_CDROM=	YES
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	YES
+PERMIT_DISTF_FTP=	YES
 
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
