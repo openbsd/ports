@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/12/22 20:23:55 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/09 15:58:46 espie Exp $
 bin/mksong.sh
 bin/tempest_for_eliza
 bin/tempest_for_mp3
+share/doc/tempest/
 share/doc/tempest/README
+share/examples/tempest/
 share/examples/tempest/forelise
 share/examples/tempest/fruehling
 share/examples/tempest/jonny
@@ -10,5 +12,3 @@ share/examples/tempest/oldmacdonald
 share/examples/tempest/saints
 share/examples/tempest/tempest
 share/examples/tempest/ungarian
-@dirrm share/examples/tempest
-@dirrm share/doc/tempest
