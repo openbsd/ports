@@ -19,13 +19,13 @@ support         stream  tcp     nowait  _gnats	y0y0y0/libexec/gnats/gnatsd	gnats
 
 4. As root, do
 
-	su -m _gnats -c 'crontab -e'
+	crontab -e -u _gnats
 
    and add the following entry:
 
 0,10,20,30,40,50 * * * * y0y0y0/libexec/gnats/queue-pr --run
 
-5. Add the following lines to /etc/aliases and run 'newaliases':
+5. Add the following lines to /etc/mail/aliases and run 'newaliases':
 
 # GNATS support
 gnats-admin: root
@@ -33,7 +33,7 @@ bugs:   "|y0y0y0/libexec/gnats/queue-pr -q"
 monkey-gnats: bugs
 
    where 'monkey' is replaced with the configured value of GNATS_SITE in
-   y0y0y0/share/gnats/gnats-db/config.
+   y0y0y0/share/gnats/gnats-db/gnats-adm/config.
 
 6. If you built with FLAVOR=www, and want to run gnatsweb, add
 
