@@ -1,6 +1,6 @@
---- growisofs.c.orig	Fri Dec 26 11:54:58 2003
-+++ growisofs.c	Wed Jan 26 13:22:21 2005
-@@ -1098,7 +1098,7 @@ int builtin_dd (int infd,int outfd,off64
+--- growisofs.c.orig	Tue Aug 24 16:02:29 2004
++++ growisofs.c	Wed Jan 26 19:16:28 2005
+@@ -1334,7 +1334,7 @@ int builtin_dd (int infd,int outfd,off64
      close (fd);
      if (progress == MAP_FAILED)
  	fprintf (stderr,":-( unable to anonymously mmap %lu?\n",
@@ -9,7 +9,7 @@
  	perror (NULL), exit(FATAL_START(errno));
  
      if (fstat64 (infd,&sb))
-@@ -1425,7 +1425,7 @@ int main (int argc, char *argv[])
+@@ -1684,7 +1684,7 @@ int main (int argc, char *argv[])
      mkisofs_argv = malloc ((argc+3)*sizeof(char *));
      if (mkisofs_argv == NULL)
          fprintf (stderr,":-( unable to allocate %lu bytes: ",
@@ -18,16 +18,16 @@
  	perror (NULL), exit (FATAL_START(errno));
  
      env = getenv ("MKISOFS");
-@@ -1552,7 +1552,7 @@ int main (int argc, char *argv[])
- 	    {	PRINT_VERSION (argv[0]);
+@@ -1837,7 +1837,7 @@ int main (int argc, char *argv[])
  		printf ("  front-ending to %s: ",mkisofs_argv[0]);
  		fflush (stdout);
+ 		setuid(getuid());
 -		execlp (mkisofs_argv[0],mkisofs_argv[0],"-version",NULL);
 +		execlp (mkisofs_argv[0],mkisofs_argv[0],"-version",(char *)0);
  		fprintf (stderr,"\n- %s: unable to execute %s: ",
  				argv[0],mkisofs_argv[0]),
  		perror (NULL), exit (FATAL_START(errno));
-@@ -1774,7 +1774,7 @@ int main (int argc, char *argv[])
+@@ -2061,7 +2061,7 @@ int main (int argc, char *argv[])
  	    fcntl (in_fd,F_SETFD,rval&~FD_CLOEXEC);
  
  	    sprintf (str,"%d",in_fd);

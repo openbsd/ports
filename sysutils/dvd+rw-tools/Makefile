@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/26 12:25:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/27 10:57:20 espie Exp $
 
 COMMENT=		"mastering tools for DVD+RW/+R/-R/-RW"
 
-DISTNAME=		dvd+rw-tools-5.16.4.8.5
+DISTNAME=		dvd+rw-tools-5.21.4.10.8
 CATEGORIES=		sysutils
 HOMEPAGE=		http://fy.chalmers.se/~appro/linux/DVD+RW/
 
@@ -18,6 +18,9 @@ MASTER_SITES=		${HOMEPAGE}tools/
 
 RUN_DEPENDS=		:cdrtools->=1.10:sysutils/cdrtools
 WANTLIB=		c m stdc++
+
+# allow growisofs to work under sudo(8)
+CFLAGS+=		-DI_KNOW_ALL_ABOUT_SUDO
 
 MAKE_FLAGS+=		CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -fno-exceptions"
