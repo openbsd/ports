@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/11/18 13:37:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/01/15 10:01:05 naddy Exp $
 
 DISTNAME=	bvi-1.3.0
 CATEGORIES=	editors
 NEED_VERSION=	1.340
-HOMEPAGE=	http://bvi.linuxave.net
+HOMEPAGE=	http://bvi.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bvi
 EXTRACT_SUFX=	.src.tar.gz
 
 CONFIGURE_STYLE= gnu
