@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/07/04 14:00:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/05/08 15:33:01 espie Exp $
 @group games
 bin/strecover
 bin/slashem
@@ -190,7 +190,7 @@ lib/slashemdir/slashem
 @exec install -g games -m 0664 /dev/null %B/logfile
 @exec install -g games -m 0664 /dev/null %B/perm
 @exec install -g games -m 0664 /dev/null %B/record
-@unexec rm %B/logfile %B/perm %B/record
+@unexec rm -f %B/logfile %B/perm %B/record
 @exec install -d -g games -m 0575 %B/save
 @unexec rm -rf %B/save
 @dirrm lib/slashemdir
