@@ -1,0 +1,11 @@
+$OpenBSD: patch-url_c,v 1.1 2002/12/17 08:11:31 fgsch Exp $
+--- url.c.orig	Tue Dec 17 03:46:42 2002
++++ url.c	Tue Dec 17 03:46:55 2002
+@@ -26,6 +26,7 @@ struct {
+ #ifdef JS
+ 		{"javascript", 0, NULL, javascript_func, 1, 0, 0},
+ #endif
++		{"ed2k", 0, NULL, NULL, 0, 1, 0},
+ 		{NULL, 0, NULL}
+ };
+ 
