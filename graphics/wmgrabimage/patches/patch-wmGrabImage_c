@@ -1,6 +1,6 @@
---- wmGrabImage/wmGrabImage.c.orig	Sun Mar 28 17:26:53 1999
-+++ wmGrabImage/wmGrabImage.c	Wed Jan  3 13:27:02 2001
-@@ -150,7 +150,7 @@ int		n, s, m, dt1, dt2, dt3, len;
+--- wmGrabImage/wmGrabImage.c.orig	Sun May 27 21:45:28 2001
++++ wmGrabImage/wmGrabImage.c	Fri Jun 15 10:55:38 2001
+@@ -158,7 +158,7 @@ int		n, s, m, dt1, dt2, dt3, len;
  int 		Year, Month, Day;
  int		Hours, Mins, Secs;
  int		i, j, Width, Height, yoff, fd, Flag;
@@ -8,8 +8,8 @@
 +time_t		CurrentLocalTime;
  double		UT, hour24(), jd(), CurrentJD, OldFileUT, FileUT;
  char		command[1040], ImageName[256];
- 
-@@ -175,9 +175,9 @@ char		command[1040], ImageName[256];
+ int           havePixmap= 0;
+@@ -183,9 +183,9 @@ int           havePixmap= 0;
       */
      len = strlen(ImageURL);
      for (j = 0, i=0; i<len; ++i){ if (ImageURL[i] == '/') j = i; }
@@ -22,16 +22,19 @@
  
  	   
      openXwindow(argc, argv, wmGrabImage_master, wmGrabImage_mask_bits, wmGrabImage_mask_width, wmGrabImage_mask_height);
-@@ -410,7 +410,7 @@ char		command[1040], ImageName[256];
- 	    /*
+@@ -426,9 +426,9 @@ int           havePixmap= 0;
  	     *  Execute Perl script to grab the Latest METAR Report
  	     */
--	    sprintf(command, "GrabImage %s &", ImageURL);
-+	    snprintf(command, sizeof(command), "GrabImage %s &", ImageURL);
+ 	    if (ConvertGeometry != NULL)
+-	      sprintf(command, "GrabImage %s %s &", ImageURL, ConvertGeometry);
++	      snprintf(command, sizeof(command), "GrabImage %s %s &", ImageURL, ConvertGeometry);
+ 	    else
+-	      sprintf(command, "GrabImage %s &", ImageURL);
++	      snprintf(command, sizeof(command), "GrabImage %s &", ImageURL);
  	    system(command);
  
  	    ForceUpdate = 1;
-@@ -452,7 +452,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -470,7 +470,7 @@ void ParseCMDLine(int argc, char *argv[]
  
          } else if ((!strcmp(argv[i], "-url"))||(!strcmp(argv[i], "-u"))){
  
@@ -40,16 +43,16 @@
  
          } else if (!strcmp(argv[i], "-delay")){
  
-@@ -464,7 +464,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -482,7 +482,7 @@ void ParseCMDLine(int argc, char *argv[]
  
          } else if (!strcmp(argv[i], "-http")){
  
 -            strcpy(HttpURL, argv[++i]);
 +            strlcpy(HttpURL, argv[++i], sizeof(HttpURL));
  
-         } else if (!strcmp(argv[i], "-c")){
+         } else if (!strcmp(argv[i], "-geom")){
  
-@@ -580,7 +580,7 @@ void pressEvent(XButtonEvent *xev){
+@@ -604,7 +604,7 @@ void pressEvent(XButtonEvent *xev){
      if (GotDoubleClick1) {
  	GotFirstClick1 = 0;
  	GotDoubleClick1 = 0;
@@ -58,7 +61,7 @@
  	system(Command);
      }
  
-@@ -591,7 +591,7 @@ void pressEvent(XButtonEvent *xev){
+@@ -615,7 +615,7 @@ void pressEvent(XButtonEvent *xev){
      if (GotDoubleClick2) {
  	GotFirstClick2 = 0;
  	GotDoubleClick2 = 0;
