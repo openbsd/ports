@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/11/14 20:14:41 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/12/15 19:29:55 naddy Exp $
 ${P5ARCH}/XML/LibXML.pm
 ${P5ARCH}/XML/LibXML/Attr.pod
 ${P5ARCH}/XML/LibXML/Boolean.pm
@@ -20,6 +20,7 @@ ${P5ARCH}/XML/LibXML/SAX/Builder.pm
 ${P5ARCH}/XML/LibXML/SAX/Generator.pm
 ${P5ARCH}/XML/LibXML/SAX/Parser.pm
 ${P5ARCH}/XML/LibXML/Text.pod
+@comment ${P5ARCH}/auto/XML/LibXML/.packlist
 ${P5ARCH}/auto/XML/LibXML/LibXML.bs
 ${P5ARCH}/auto/XML/LibXML/LibXML.so
 man/man3p/XML::LibXML.3p
@@ -42,5 +43,10 @@ man/man3p/XML::LibXML::SAX::Builder.3p
 man/man3p/XML::LibXML::SAX::Generator.3p
 man/man3p/XML::LibXML::SAX::Parser.3p
 man/man3p/XML::LibXML::Text.3p
+@dirrm man/man3p
+@dirrm ${P5ARCH}/auto/XML/LibXML
+@dirrm ${P5ARCH}/auto/XML
+@dirrm ${P5ARCH}/auto
 @dirrm ${P5ARCH}/XML/LibXML/SAX
-@comment @dirrm ${P5ARCH}/XML/LibXML
+@dirrm ${P5ARCH}/XML
+@dirrm ${P5ARCH}

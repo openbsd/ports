@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/09/29 05:59:33 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/15 19:29:55 naddy Exp $
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
 bin/scrollkeeper-gen-seriesid
@@ -88,7 +88,7 @@ share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
 %%SHARED%%
 @dirrm share/xml/scrollkeeper/dtds
 @dirrm share/xml/scrollkeeper
-@comment @dirrm share/xml
+@dirrm share/xml
 @dirrm share/scrollkeeper/stylesheets
 @dirrm share/scrollkeeper/doc/writing_scrollkeeper_omf_files/C
 @dirrm share/scrollkeeper/doc/writing_scrollkeeper_omf_files
@@ -123,61 +123,61 @@ share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
 @dirrm share/scrollkeeper
 @dirrm share/omf/scrollkeeper
 @dirrm share/omf
-@comment @dirrm share/locale/zh_TW/LC_MESSAGES
-@comment @dirrm share/locale/zh_TW
-@comment @dirrm share/locale/zh_CN/LC_MESSAGES
-@comment @dirrm share/locale/zh_CN
-@comment @dirrm share/locale/vi/LC_MESSAGES
-@comment @dirrm share/locale/vi
-@comment @dirrm share/locale/uk/LC_MESSAGES
-@comment @dirrm share/locale/uk
-@comment @dirrm share/locale/tr/LC_MESSAGES
-@comment @dirrm share/locale/tr
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/sl/LC_MESSAGES
-@comment @dirrm share/locale/sl
-@comment @dirrm share/locale/sk/LC_MESSAGES
-@comment @dirrm share/locale/sk
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/ro
-@comment @dirrm share/locale/pt_BR/LC_MESSAGES
-@comment @dirrm share/locale/pt_BR
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/nl
-@comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/ko
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hu
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/el/LC_MESSAGES
-@comment @dirrm share/locale/el
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/da
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/cs
-@comment @dirrm share/locale/ca/LC_MESSAGES
-@comment @dirrm share/locale/ca
-@comment @dirrm share/locale/be/LC_MESSAGES
-@comment @dirrm share/locale/be
-@comment @dirrm share/locale/az/LC_MESSAGES
-@comment @dirrm share/locale/az
-@comment @dirrm share/locale
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/vi/LC_MESSAGES
+@dirrm share/locale/vi
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/be/LC_MESSAGES
+@dirrm share/locale/be
+@dirrm share/locale/az/LC_MESSAGES
+@dirrm share/locale/az
+@dirrm share/locale
 @dirrm share/examples/scrollkeeper
 @comment @dirrm share/doc/scrollkeeper-0.3.12
 @exec %D/bin/xmlcatalog --noout --add "public" "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "file://%D/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" /var/db/xmlcatalog

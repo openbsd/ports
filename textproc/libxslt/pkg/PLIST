@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2003/12/15 06:48:37 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2003/12/15 19:29:55 naddy Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/exslt.h
@@ -99,7 +99,7 @@ share/doc/libxslt/html/xsltproc2.html
 @dirrm share/doc/libxslt/html/tutorial
 @dirrm share/doc/libxslt/html
 @dirrm share/doc/libxslt
-@comment @dirrm share/aclocal
-@comment @dirrm lib/pkgconfig
+@dirrm share/aclocal
+@dirrm lib/pkgconfig
 @dirrm include/libxslt
 @dirrm include/libexslt
