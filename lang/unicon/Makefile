@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2003/03/31 14:11:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/07/14 17:45:30 pvalchev Exp $
 
-# XXX crashes & hangs on macppc, to be dealt with
-NOT_FOR_ARCHS=	powerpc
+# XXX crashes & hangs, to be dealt with
+NOT_FOR_ARCHS=	powerpc m68k
 
 COMMENT=	"programming language with generators, X11 graphics and more"
 
