@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/04 21:11:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/12/07 18:31:21 brad Exp $
 
-DISTNAME=		mhash-0.8.2
-CATEGORIES=     	security
-NEED_VERSION=		1.338
+DISTNAME=	mhash-0.8.3
+CATEGORIES=	security
+NEED_VERSION=	1.338
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= mhash
 
-HOMEPAGE=		http://mhash.sourceforge.net/
+HOMEPAGE=	http://mhash.sourceforge.net/
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mhash
-
-CONFIGURE_STYLE=	gnu
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 
 .include <bsd.port.mk>
