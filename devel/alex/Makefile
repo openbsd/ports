@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/18 18:29:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/04/23 02:17:49 dons Exp $
 
 COMMENT=	"lexical analyser generator for Haskell"
 
@@ -7,7 +7,7 @@ DISTNAME=	alex-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/alex/
-MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
+MAINTAINER=	Don Stewart <dons@openbsd.org>
 
 MODULES=	ghc
 
