@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/17 00:00:38 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/26 03:55:40 jasoni Exp $
 
 PKGNAME=	redhat_base-6.2
 CATEGORIES=	emulators
 NEED_VERSION=	1.301
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/linux/redhat/redhat-6.2/i386/RedHat/RPMS/
+MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/%SUBDIR%/ \
+		ftp://ftp.freesoftware.com/pub/linux/redhat/%SUBDIR%/
+MASTER_SITE_SUBDIR= redhat-6.2/i386/RedHat/RPMS
 DISTFILES=	${RPM_SET1} ${RPM_SET2}
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=	
