@@ -1,46 +1,26 @@
-$OpenBSD: patch-configure,v 1.7 2003/05/13 00:12:37 naddy Exp $
---- configure.orig	Mon Mar  3 18:07:43 2003
-+++ configure	Mon May 12 17:50:30 2003
-@@ -2927,7 +2927,7 @@ fi
+$OpenBSD: patch-configure,v 1.8 2004/02/07 22:00:48 brad Exp $
+--- configure.orig	2004-02-03 12:45:27.000000000 -0500
++++ configure	2004-02-06 14:35:04.000000000 -0500
+@@ -5856,7 +5856,7 @@ fi
+ fi
  
- 
- cat >> confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
 -#define GQVIEW_HELPDIR "$prefix/share/gqview"
 +#define GQVIEW_HELPDIR "$prefix/share/doc/gqview"
- EOF
+ _ACEOF
  
  
-@@ -5242,7 +5242,6 @@ else
- #include "confdefs.h"
+@@ -9016,12 +9016,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
 -extern int *_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -5250,7 +5249,7 @@ extern
- const char *_nl_expand_alias ();
- int main() {
+ int
+ main ()
+ {
  bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:5257: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -5270,7 +5269,6 @@ rm -f conftest*
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -5278,7 +5276,7 @@ extern
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:5285: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings
++return (int) gettext ("") + _nl_msg_cat_cntr
+   ;
+   return 0;
+ }

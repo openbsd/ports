@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2003/04/29 00:32:14 margarida Exp $
+# $OpenBSD: Makefile,v 1.28 2004/02/07 22:00:47 brad Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
-DISTNAME=	gqview-1.2.2
+DISTNAME=	gqview-1.3.9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqview/}
 
-HOMEPAGE=	http://gqview.sourceforge.net
+HOMEPAGE=	http://gqview.sourceforge.net/
 
 MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
@@ -16,11 +16,24 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		gdk_pixbuf.2::graphics/gdk-pixbuf
+MODULES=	gettext
+
+LIB_DEPENDS+=	png.2::graphics/png \
+		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+
+# gqview only installs these files conditionally if it finds gnome-config.
+# here we will install the files manually, this eases integration with GNOME.
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gnome/apps/Graphics
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gqview.desktop \
+		${PREFIX}/share/gnome/apps/Graphics
+	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
