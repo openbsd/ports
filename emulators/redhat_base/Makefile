@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/26 03:55:40 jasoni Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/01 04:17:13 brad Exp $
+
+ONLY_FOR_ARCHS=	i386
+
+COMMENT=	"linux compatibility package based on Redhat"
 
 PKGNAME=	redhat_base-6.2
 CATEGORIES=	emulators
-NEED_VERSION=	1.301
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/%SUBDIR%/ \
 		ftp://ftp.freesoftware.com/pub/linux/redhat/%SUBDIR%/
 MASTER_SITE_SUBDIR= redhat-6.2/i386/RedHat/RPMS
@@ -10,7 +14,7 @@ DISTFILES=	${RPM_SET1} ${RPM_SET2}
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=	
 
-ONLY_FOR_ARCHS=	i386
+BUILD_DEPENDS=	rpm::misc/rpm
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
@@ -19,11 +23,9 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=	rpm::misc/rpm
-
 NO_BUILD=	Yes
 
-PREFIX=		/usr/local/emul/redhat
+PREFIX=		${LOCALBASE}/emul/redhat
 
 RPMFLAGS=	--ignoreos --ignorearch --root ${PREFIX} --nodeps --noscripts \
 		--excludedocs --replacepkgs --dbpath /var/lib/rpm
@@ -60,8 +62,8 @@ REMOVE_FILES=	/bin/df /bin/su /etc/exports /etc/group /etc/passwd \
 		/etc/protocols /etc/securetty
 
 pre-install:
-	@mkdir -p ${PREFIX}
-	@mkdir -p ${PREFIX}/var/lib/rpm
+	${INSTALL_DATA_DIR} ${PREFIX}
+	${INSTALL_DATA_DIR} ${PREFIX}/var/lib/rpm
 
 do-install:
 # Initialize the RPM database.
@@ -86,14 +88,14 @@ do-install:
 	done
 
 # copy in ld.so.conf
-	@${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${PREFIX}/etc/ld.so.conf
+	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${PREFIX}/etc
 
 # run elf2olf on a few binaries known not to run as elf
 	@elf2olf -o linux ${PREFIX}/sbin/ldconfig
 	@elf2olf -o linux ${PREFIX}/bin/rpm
 
 # run ldconfig
-	@chroot ${PREFIX} sbin/ldconfig
+	-chroot ${WRKINST} ${TRUEPREFIX}/sbin/ldconfig
 
 post-install:
 	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
