@@ -1,6 +1,7 @@
---- man/Makefile.in.~1~	Mon Mar  3 10:21:07 1997
-+++ man/Makefile.in	Fri Aug 28 11:30:14 1998
-@@ -32,12 +32,12 @@
+$OpenBSD: patch-man_Makefile_in,v 1.1 2002/09/19 22:29:36 todd Exp $
+--- man/Makefile.in.orig	Mon Mar  3 12:21:07 1997
++++ man/Makefile.in	Thu Sep 19 17:24:16 2002
+@@ -32,12 +32,12 @@ TROFFOPTS = -man
  prefix = @prefix@
  mandir = @mandir@
  
@@ -17,7 +18,7 @@
  $(PRODUCT).ps: $(PRODUCT).1 version.n
  	cd $(srcdir) && $(TROFF) $(TROFFOPTS) -Tps $(PRODUCT).1 >$(PRODUCT).ps
  
-@@ -51,17 +51,17 @@
+@@ -51,17 +51,17 @@ stamp-vnr: $(PRODUCT).1
  	date > $<
  
  install: all
@@ -41,7 +42,7 @@
  
  mostlyclean:
  	rm -f *.tmp
-@@ -72,7 +72,7 @@
+@@ -72,7 +72,7 @@ distclean: clean
  	rm -f Makefile
  
  realclean: distclean
