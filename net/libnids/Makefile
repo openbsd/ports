@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:34 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/12/14 19:40:55 dugsong Exp $
 
-DISTNAME=	libnids-1.14
+DISTNAME=	libnids-1.16
 CATEGORIES=	net
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.packetfactory.net/Projects/Libnids/dist/
