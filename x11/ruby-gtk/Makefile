@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/09 22:41:58 couderc Exp $
+# $OpenBSD: Makefile,v 1.12 2003/01/20 16:48:21 couderc Exp $
 
 COMMENT=		"Ruby extension library for GTK Toolkit"
 
-VERSION=		0.30
+VERSION=		0.31
 DISTNAME=		ruby-gtk-${VERSION}
 CATEGORIES=		x11 devel
 
