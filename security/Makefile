@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2001/08/22 05:21:16 shell Exp $
+# $OpenBSD: Makefile,v 1.85 2001/09/10 06:08:55 shell Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += portsentry
      SUBDIR += ppgen
      SUBDIR += py-gnupg
+     SUBDIR += py-sslwrapper
      SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += scanlogd
