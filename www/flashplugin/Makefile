@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/08/09 23:45:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/02/11 15:50:51 naddy Exp $
 # $FreeBSD: ports/www/linux-flashplugin/Makefile,v 1.9 2001/07/21 14:27:22 okazaki Exp $
 
 ONLY_FOR_ARCHS=	i386
+BROKEN=		"buffer overflow"
 
 COMMENT=	"Macromedia Flash Player, Netscape plugin"
 
