@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/07/27 14:39:31 danh Exp $
+# $OpenBSD: Makefile,v 1.28 2004/08/02 16:56:12 danh Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -37,6 +37,7 @@ CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DHAVE_IPV6"
 CONFIGURE_ARGS+= --bindir='${PREFIX}/sbin' \
 	 	--enable-accurate-adjtime --disable-IRIG \
+		--enable-parse-clocks \
 		--with-openssl-libdir=/usr/lib \
 		--with-openssl-incdir=/usr/include \
 		--with-crypto=openssl
