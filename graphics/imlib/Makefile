@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.21 2000/07/04 02:09:23 krw Exp $
+# $OpenBSD: Makefile,v 1.22 2000/08/12 08:17:55 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
-DISTNAME=	imlib-1.9.8
+DISTNAME=	imlib-1.9.8.1
 CATEGORIES=	graphics
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/imlib/ \
-		ftp://ftp.squish.org/pub/enlightenment/imlib/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR= stable/sources/imlib
 
-LIB_DEPENDS=	intl::devel/gettext \
-		gtk.1.2::x11/gtk+ \
+LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gif.4.1::graphics/giflib \
 		jpeg.62::graphics/jpeg \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff
-BUILD_DEPENDS=	convert::graphics/ImageMagick \
-		giftopnm::graphics/netpbm
-RUN_DEPENDS=	convert::graphics/ImageMagick \
-		giftopnm::graphics/netpbm
+BUILD_DEPENDS=	convert::graphics/ImageMagick
+RUN_DEPENDS=	convert::graphics/ImageMagick
 
 MAINTAINER=	brad@openbsd.org
 
@@ -44,7 +40,8 @@ pre-build:
 	@echo ""
 
 post-install:
-	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${LOCALBASE}/share/aclocal
+	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${PREFIX}/share/aclocal
+	cd ${PREFIX}/share/examples/imlib && mv imrc imrc-sample
 
 .include <bsd.port.mk>

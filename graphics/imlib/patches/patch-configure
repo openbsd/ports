@@ -1,20 +1,20 @@
---- configure.orig	Mon Sep  6 19:53:10 1999
-+++ configure	Fri Oct 15 23:32:05 1999
-@@ -4217,7 +4217,7 @@
+--- configure.orig	Sat May 20 02:50:50 2000
++++ configure	Sat Aug 12 02:03:07 2000
+@@ -3886,7 +3886,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lXext $X_LIBS $LIBS"
 +LIBS="-lXext -lX11 $X_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 4223 "configure"
+ #line 3892 "configure"
  #include "confdefs.h"
-@@ -4552,7 +4552,7 @@
+@@ -4221,7 +4221,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff $GX_LIBS $LIBS"
 +LIBS="-ltiff -ljpeg -lz $GX_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 4558 "configure"
+ #line 4227 "configure"
  #include "confdefs.h"

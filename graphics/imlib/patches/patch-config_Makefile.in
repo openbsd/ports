@@ -1,0 +1,39 @@
+--- config/Makefile.in.orig	Sat May 20 02:51:32 2000
++++ config/Makefile.in	Sat Aug 12 01:52:17 2000
+@@ -124,21 +124,21 @@
+ 
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/imlib
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/imlib/$$p"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/imlib/$$p; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/imlib/$$p"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/imlib/$$p; \
+ 	  fi; fi; \
+ 	done
+ 
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	list='$(sysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
++	  rm -f $(DESTDIR)$(datadir)/examples/imlib/$$p; \
+ 	done
+ tags: TAGS
+ TAGS:
+@@ -183,7 +183,7 @@
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs)  $(DESTDIR)$(datadir)/examples/imlib
+ 
+ 
+ mostlyclean-generic:

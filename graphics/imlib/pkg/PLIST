@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/15 19:08:11 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/08/12 08:17:57 brad Exp $
 bin/imlib-config
 bin/imlib_config
 include/Imlib.h
@@ -7,10 +7,6 @@ include/Imlib_types.h
 include/gdk_imlib.h
 include/gdk_imlib_private.h
 include/gdk_imlib_types.h
-lib/imlib/im_palette-small.pal
-lib/imlib/im_palette-tiny.pal
-lib/imlib/im_palette.pal
-lib/imlib/imrc
 lib/libImlib.a
 lib/libImlib.la
 lib/libgdk_imlib.a
@@ -33,4 +29,8 @@ lib/libimlib-xpm.a
 lib/libimlib-xpm.la
 %%SHARED%%
 share/aclocal/imlib.m4
-@dirrm lib/imlib
+share/examples/imlib/im_palette-small.pal
+share/examples/imlib/im_palette-tiny.pal
+share/examples/imlib/im_palette.pal
+share/examples/imlib/imrc-sample
+@dirrm share/examples/imlib
