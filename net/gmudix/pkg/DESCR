@@ -1,0 +1,5 @@
+gMUDix is an improved version of MUDix, a MUD client for the Linux
+console.  It is designed to run as an X application, and was developed
+with GTK+ 2.0.  gMUDix has all the features of MUDix and more, including
+ANSI color mapping, aliasing, macros, paths, tab completions, timers,
+triggers, variables, and an easy-to-use script language.

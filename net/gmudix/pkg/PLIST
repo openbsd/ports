@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/22 22:02:32 jolan Exp $
+bin/gmudix
+share/doc/gmudix/gmudix.txt
+@dirrm share/doc/gmudix

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/07/22 22:02:32 jolan Exp $
+--- src/Makefile.in.orig	Mon Dec  9 11:32:56 2002
++++ src/Makefile.in	Sat Jul 19 11:45:59 2003
+@@ -87,8 +87,8 @@ bin_PROGRAMS = gmudix
+ gmudix_SOURCES = alias.c commands.c file.c gui_alias.c gui_capture.c gui_character.c gui_color.c gui_font.c gui_general.c gui_macro.c gui_main.c gui_path.c gui_preferences.c gui_tab.c gui_timer.c gui_trigger.c gui_user.c gui_variable.c history.c log.c macro.c mccp.c mudix.c net.c path.c process.c string.c tabs.c telnet.c timer.c trigger.c user.c variable.c
+ INCLUDES = -Wall -I.. -I../include `pkg-config --cflags gtk+-2.0`
+ gmudix_LDFLAGS = -lz `pkg-config --libs gtk+-2.0` `pkg-config --libs gthread-2.0`
+-@DEBUG_SYMBOLS_TRUE@CFLAGS := $(CFLAGS) -O2 -g
+-@DEBUG_SYMBOLS_FALSE@CFLAGS := $(CFLAGS) -O2 
++@DEBUG_SYMBOLS_TRUE@CFLAGS := $(CFLAGS)
++@DEBUG_SYMBOLS_FALSE@CFLAGS := $(CFLAGS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../conf.h
+ CONFIG_CLEAN_FILES = 
