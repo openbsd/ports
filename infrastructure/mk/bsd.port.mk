@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.364 2001/03/25 20:35:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.365 2001/03/28 10:25:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -963,6 +963,12 @@ IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
 IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH} \(${ARCH}\)"
 .      endif
 .    endif
+.  elif defined(NOT_FOR_ARCHS)
+.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.      if !empty(NOT_FOR_ARCHS:M${__ARCH})
+IGNORE= "is not for ${NOT_FOR_ARCHS}"
+.      endif
+.    endfor
 .  endif
 .  if !defined(IGNORE) && defined(COMES_WITH)
 .    if ( ${OPSYS_VER} >= ${COMES_WITH} )
@@ -2028,11 +2034,13 @@ describe:
 	@cd ${.CURDIR} && echo -n `${MAKE} package-depends|${_SORT_DEPENDS}`
 .endif
 	@echo -n "|"
-	@if [ "${ONLY_FOR_ARCHS}" = "" ]; then \
-		echo -n "any|"; \
-	else \
-		echo -n "${ONLY_FOR_ARCHS}|"; \
-	fi
+	@case "${ONLY_FOR_ARCHS}" in \
+	 "") case "${NOT_FOR_ARCHS}" in \
+		 "") echo -n "any|";; \
+		 *) echo -n "!${NOT_FOR_ARCHS}|";; \
+		 esac;; \
+	 *) echo -n "${ONLY_FOR_ARCHS}|";; \
+	 esac
 
 .	if defined(PERMIT_PACKAGE_CDROM)
 .     if ${PERMIT_PACKAGE_CDROM:L} == "yes"
