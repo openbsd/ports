@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/08 18:36:18 msf Exp $
+bin/xgettext.pl
+${P5SITE}/Locale/
+${P5SITE}/Locale/Maketext/
+${P5SITE}/Locale/Maketext/Extract/
+${P5SITE}/Locale/Maketext/Extract.pm
+${P5SITE}/Locale/Maketext/Extract/Run.pm
+${P5SITE}/Locale/Maketext/Lexicon/
+${P5SITE}/Locale/Maketext/Lexicon.pm
+${P5SITE}/Locale/Maketext/Lexicon/Auto.pm
+${P5SITE}/Locale/Maketext/Lexicon/Gettext.pm
+${P5SITE}/Locale/Maketext/Lexicon/Msgcat.pm
+${P5SITE}/Locale/Maketext/Lexicon/Tie.pm
+@man man/man1/xgettext.pl.1
+@man man/man3p/Locale::Maketext::Extract.3p
+@man man/man3p/Locale::Maketext::Lexicon.3p
+@man man/man3p/Locale::Maketext::Lexicon::Auto.3p
+@man man/man3p/Locale::Maketext::Lexicon::Gettext.3p
+@man man/man3p/Locale::Maketext::Lexicon::Msgcat.3p
+@man man/man3p/Locale::Maketext::Lexicon::Tie.3p
