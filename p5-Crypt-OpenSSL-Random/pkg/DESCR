@@ -1,2 +1,0 @@
-This module provides the ability to seed and query the OpenSSL
-library's pseudo-random number generator.
