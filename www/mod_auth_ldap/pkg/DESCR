@@ -1,0 +1,5 @@
+This is the Apache LDAP authentication module. It allows
+any Apache web-server to become a LDAP client for
+authentication requests.
+
+WWW: ${HOMEPAGE}
