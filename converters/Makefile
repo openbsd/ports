@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/12/30 09:23:44 kevlo Exp $
+# $OpenBSD: Makefile,v 1.23 2004/01/16 23:31:27 naddy Exp $
 #
 
     SUBDIR += base64
@@ -14,6 +14,7 @@
     SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-Convert-UUlib
+    SUBDIR += p5-Date-Tolkien-Shire
     SUBDIR += p5-DateManip
     SUBDIR += p5-Jcode
     SUBDIR += p5-Text-Iconv
