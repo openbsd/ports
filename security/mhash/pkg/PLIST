@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/10/04 21:11:10 jakob Exp $
+include/mhash.h
+lib/libmhash.a
+lib/libmhash.la
+man/man3/mhash.3
+%%SHARED%%

@@ -1,0 +1,14 @@
+The mhash library provides an easy way to access strong hashes such as
+MD5, SHA1 and other algorithms.
+
+The mhash library provides the following features:
+
+ o  Open-Source software (GNU Lesser General Public License)
+ o  Useable for both commercial and non-commercial use
+ o  Reentrancy support through POSIX threads 
+ o  Support for known strong algorithms
+ o  Support for less-known algorithms such as GOST
+ o  Should work on every ANSI C conforming platform
+
+
+WWW: ${HOMEPAGE}
