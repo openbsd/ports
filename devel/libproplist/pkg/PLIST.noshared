@@ -1,0 +1,3 @@
+lib/libPropList.la
+lib/libPropList.a
+include/proplist.h
