@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/18 02:54:59 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/18 14:58:49 espie Exp $
 
 CATEGORIES=		x11 x11/kde productivity
 NEED_VERSION=		1.305
@@ -26,6 +26,9 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
 	RUN_KAPPFINDER=no KDEDIR=/usr/local
+
+# Ensure qt2 will always be at the front
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
