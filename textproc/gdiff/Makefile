@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/25 13:59:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/03 09:55:37 espie Exp $
 
 COMMENT=	"GNU versions of the diff utilities"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
 
-MODULES=	gettext
+MODULES=	devel/gettext
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
