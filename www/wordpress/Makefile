@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/03/02 05:48:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2005/03/03 07:16:11 kevlo Exp $
 
 COMMENT=	"standard compliant weblog"
 
 V=		1.5
-DISTNAME=	latest
-PKGNAME=	wordpress-${V}
+DISTNAME=	wordpress-${V}
 CATEGORIES=	www
 
 HOMEPAGE=	http://wordpress.org/
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
 
 RUN_DEPENDS=	:php5-mysql-*:www/php5/extensions,-mysql
 
