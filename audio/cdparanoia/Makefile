@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/10/24 22:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2003/06/22 19:13:40 pvalchev Exp $
 
 COMMENT=	"CDDA reading utility with extra data verification features"
 
@@ -29,5 +29,6 @@ post-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS)
-ALL_TARGET=static
+ALL_TARGET=	static
+INSTALL_TARGET=	sinstall
 .endif

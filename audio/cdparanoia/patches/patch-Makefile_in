@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2002/12/21 21:53:02 naddy Exp $
---- Makefile.in.orig	Wed Mar 28 00:46:58 2001
-+++ Makefile.in	Mon Sep 16 14:44:37 2002
+$OpenBSD: patch-Makefile_in,v 1.6 2003/06/22 19:13:40 pvalchev Exp $
+--- Makefile.in.orig	Tue Mar 27 15:46:58 2001
++++ Makefile.in	Fri Jun 13 01:17:13 2003
 @@ -23,33 +23,33 @@ BINDIR=@bindir@
  MANDIR=@mandir@
  INCLUDEDIR=@includedir@
@@ -51,7 +51,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2002/12/21 21:53:02 naddy Exp $
  
  test:	
  	cd interface && $(MAKE) all
-@@ -64,28 +64,20 @@ slib:
+@@ -64,28 +64,34 @@ slib:
  	cd paranoia && $(MAKE) slib
  
  install:
@@ -89,6 +89,20 @@ $OpenBSD: patch-Makefile_in,v 1.5 2002/12/21 21:53:02 naddy Exp $
 +	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.a $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.$(MAJOR).$(MINOR) $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/utils.h $(DESTDIR)$(INCLUDEDIR)
++
++sinstall:
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 0755 $(srcdir)/cdparanoia $(DESTDIR)$(BINDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(MANDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL) -m 0644 $(srcdir)/cdparanoia.1 $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) -m 0644 $(srcdir)/paranoia/cdda_paranoia.h $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.a $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(DESTDIR)$(INCLUDEDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(DESTDIR)$(LIBDIR)
 +	$(INSTALL) -m 0644 $(srcdir)/utils.h $(DESTDIR)$(INCLUDEDIR)
  
