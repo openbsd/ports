@@ -1,12 +1,12 @@
-bin/xv
 bin/bggen
 bin/vdcomp
 bin/xcmap
+bin/xv
 bin/xvpictoppm
-man/cat1/xv.0
 man/cat1/bggen.0
 man/cat1/vdcomp.0
 man/cat1/xcmap.0
+man/cat1/xv.0
 man/cat1/xvpictoppm.0
 share/doc/xv/README
 share/doc/xv/xvdocs.ps

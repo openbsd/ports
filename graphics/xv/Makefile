@@ -1,10 +1,5 @@
-# OpenBSD makefile for:	xv
-# Version required:	3.10a
-# Date created:		1998-Mar-20
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.6 1999/09/26 21:43:44 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/11/09 21:49:00 rohee Exp $
+# Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 DISTNAME=	xv-3.10a
 DIST_SUBDIR=	${DISTNAME}
@@ -35,11 +30,11 @@ PATCHFILES+=	deepcolor.patch:0 gifpatch:0 grabpatch:0 \
 
 MAINTAINER=	rohee@OpenBSD.ORG
 
-HOMEPAGE=http://www.trilon.com/xv/index.html
+HOMEPAGE=	http://www.trilon.com/xv/index.html
 
-LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-		tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
-		png\\.1\\.:${PORTSDIR}/graphics/png
+LIB_DEPENDS=    jpeg.62.:${PORTSDIR}/graphics/jpeg \
+		tiff.3.5:${PORTSDIR}/graphics/tiff \
+		png.1.:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
 
