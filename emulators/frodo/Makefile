@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:30 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/08 09:39:51 espie Exp $
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1a
@@ -31,9 +31,6 @@ MAKE_ENV=WISH=${WISH} FRODOLIBDIR=${FRODOLIBDIR}
 
 MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/ \
  ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
-
-MASTER_SITES0=	http://www.tu-harburg.de/~semk2104/dl/
-PATCHFILES=	FrodoV4.1a-16bpp-patch.gz:0
 
 WRKDIST=${WRKDIR}/Frodo
 WRKSRC=${WRKDIST}/Src
