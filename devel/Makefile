@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2001/10/14 15:42:23 espie Exp $
+# $OpenBSD: Makefile,v 1.111 2001/10/24 17:09:29 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -104,6 +104,7 @@
      SUBDIR += pccts
      SUBDIR += pcre
      SUBDIR += perltidy
+     SUBDIR += pkgconfig
      SUBDIR += popt
      SUBDIR += prc-tools
      SUBDIR += pth
