@@ -1,38 +1,22 @@
-*** Imakefile.orig	Sat Jan 25 23:26:41 1997
---- Imakefile	Sat Jan 25 23:31:45 1997
-***************
-*** 10,16 ****
-  XCOMM    Set xdeblock working directory.
-  XCOMM =====================================================================
+--- Imakefile.orig	Sat Nov 16 12:06:36 1996
++++ Imakefile	Wed Apr  5 02:29:48 2000
+@@ -10,7 +10,7 @@
+ XCOMM    Set xdeblock working directory.
+ XCOMM =====================================================================
+ 
+-    XDEBLO_DIR = .
++    XDEBLO_DIR = /usr/local/lib/X11/xdeblock
+ 
+ XCOMM =====================================================================
+ XCOMM    Set xpm.
+@@ -20,8 +20,8 @@
+ XCOMM         abc% find /usr -name xpm.h -print
+ XCOMM =====================================================================
   
-!     XDEBLO_DIR = .
-  
-  XCOMM =====================================================================
-  XCOMM    Set xpm.
---- 10,16 ----
-  XCOMM    Set xdeblock working directory.
-  XCOMM =====================================================================
-  
-!     XDEBLO_DIR = /usr/X11R6/lib/X11/xdeblock
-  
-  XCOMM =====================================================================
-  XCOMM    Set xpm.
-***************
-*** 20,27 ****
-  XCOMM         abc% find /usr -name xpm.h -print
-  XCOMM =====================================================================
-   
-!     XPM_INC 			= -I/usr/include/X11
-!     XPMLIB_DIR 			= -L/usr/lib
-  
-  XCOMM =====================================================================
-  
---- 20,27 ----
-  XCOMM         abc% find /usr -name xpm.h -print
-  XCOMM =====================================================================
-   
-!     XPM_INC 			= -I/usr/X11R6/include/X11
-!     XPMLIB_DIR 			= -L/usr/X11R6/lib
-  
-  XCOMM =====================================================================
-  
+-    XPM_INC 			= -I/usr/include/X11
+-    XPMLIB_DIR 			= -L/usr/lib
++    XPM_INC 			= -I/usr/X11R6/include/X11
++    XPMLIB_DIR 			= -L/usr/X11R6/lib
+ 
+ XCOMM =====================================================================
+ 

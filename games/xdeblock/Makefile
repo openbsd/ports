@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/04 10:47:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/04 10:49:20 kevlo Exp $
 
 DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
@@ -22,7 +22,7 @@ NO_INSTALL_MANPAGES=	Yes
 FAKE=			Yes
 
 do-install:
-	@mkdir -p ${PREFIX}/lib/X11/xdeblock/mapf
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/xdeblock/mapf
 	${INSTALL_PROGRAM} ${WRKSRC}/xdeblo ${PREFIX}/bin
 	@${CHMOD} 777 ${PREFIX}/lib/X11/xdeblock/mapf
 	${INSTALL_DATA} ${WRKSRC}/mapf/*.txt ${PREFIX}/lib/X11/xdeblock/mapf
