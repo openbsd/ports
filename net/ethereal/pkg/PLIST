@@ -7,6 +7,6 @@ man/man1/ethereal.1
 man/man1/tethereal.1
 share/ethereal/manuf
 @dirrm share/ethereal
-@dirrm lib/ethereal/plugins/0.8.14
+@dirrm lib/ethereal/plugins/0.8.15
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2000/12/19 16:20:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.42 2001/01/12 20:52:39 jakob Exp $
 
-DISTNAME=	ethereal-0.8.14
+DISTNAME=	ethereal-0.8.15
 CATEGORIES=	net x11
 NEED_VERSION=	1.305
 
@@ -38,5 +38,10 @@ BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
+
+post-install:
+	${INSTALL_MAN} ${WRKBUILD}/editcap.1   ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKBUILD}/ethereal.1  ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKBUILD}/tethereal.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
