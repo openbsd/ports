@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2002/03/01 04:36:29 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2002/03/16 18:18:30 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
@@ -24,12 +24,16 @@ SUBST_VARS=	SQUIDDIR
 FLAVORS=	transparent
 FLAVOR?=
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/cfgaux
-CONFIGURE_ARGS= --datadir="${PREFIX}/share/squid" \
-		--localstatedir="${SQUIDDIR}" \
-		--enable-removal-policies="lru heap" \
-		--enable-storeio="ufs diskd"
+CONFIGURE_ARGS=	--enable-removal-policies="lru heap" \
+		--enable-storeio="ufs diskd" \
+		--datadir="${PREFIX}/share/squid" \
+		--localstatedir="${SQUIDDIR}"
+
+#		--enable-truncate \
+#		--disable-unlinkd \
 
 .if ${FLAVOR:L:Mtransparent}
 CONFIGURE_ARGS+= --enable-pf-transparent
