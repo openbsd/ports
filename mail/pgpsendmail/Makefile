@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2000/09/02 01:21:24 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 01:46:38 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	"PGP sign/encrypt/decrypt messages automatically"
 
 #BROKEN=		rethink mailwrapper mechanism
 BROKEN=		bombs in the fake process.  
@@ -7,7 +9,7 @@ BROKEN=		bombs in the fake process.
 DISTNAME=       PGPsendmail-v1.4.5
 PKGNAME=	pgpsendmail-1.4.5
 CATEGORIES=	mail
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.402
 MASTER_SITES=   ftp://ftp.atnf.csiro.au/pub/people/rgooch/ \
 		ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 

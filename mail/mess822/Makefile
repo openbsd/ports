@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/22 12:04:45 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:46:22 lebel Exp $
+
+COMMENT=	"library for parsing Internet mail messages"
 
 DISTNAME=	mess822-0.58
 HOMEPAGE=	http://cr.yp.to/mess822.html
 CATEGORIES=	mail
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \

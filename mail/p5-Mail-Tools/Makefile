@@ -1,9 +1,11 @@
-#   $OpenBSD: Makefile,v 1.7 2001/01/07 21:55:13 avsm Exp $
+#   $OpenBSD: Makefile,v 1.8 2001/05/06 01:46:36 lebel Exp $
+
+COMMENT=	"modules for handling mail with perl"
 
 DISTNAME=	MailTools-1.15
 PKGNAME=	p5-Mail-Tools-1.15
 CATEGORIES=	mail devel perl5
-NEED_VERSION=	1.348
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Mail
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/14 13:22:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 01:45:53 lebel Exp $
+
+COMMENT=	"complain about SPAM"
 
 DISTNAME=	adcomplain-3.52
 CATEGORIES=	mail news
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.rdrop.com/users/billmc/
 DISTFILES=	adcomplain.pl.uu
 

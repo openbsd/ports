@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 18:05:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:46:50 lebel Exp $
+
+COMMENT=	"mail user agent for X in C with a Tcl/Tk frontend"
 
 DISTNAME=	tkrat-2.0b9
 CATEGORIES=	mail x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.dtek.chalmers.se/~maf/ratatosk/ \
 		ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/

@@ -3,13 +3,15 @@
 # Date created:		April 8, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 01:46:25 lebel Exp $
 #
+
+COMMENT=	"Rand MH mail handling system"
 
 DISTNAME=	mh-6.8.3
 PKGNAME=	mh-6.8.4
 CATEGORIES=	mail
-NEED_VERSION=	1.175
+NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
 EXTRACT_SUFX=	.tar.Z

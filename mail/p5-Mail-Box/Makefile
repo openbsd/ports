@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/25 13:00:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/06 01:46:32 lebel Exp $
+
+COMMENT=		"perl module to manage mail folders"
 
 DISTNAME=		Mail-Box-1.110
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
-NEED_VERSION=		1.356
+NEED_VERSION=		1.402
 
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/22 12:04:44 camield Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 01:46:07 lebel Exp $
+
+COMMENT=	"sendmail-style .forward support for qmail"
 
 DISTNAME=	dot-forward-0.71
 HOMEPAGE=	http://cr.yp.to/dot-forward.html
 CATEGORIES=	mail
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/22 12:04:45 camield Exp $
+# $OpenBSD: Makefile,v 1.14 2001/05/06 01:46:18 lebel Exp $
+
+COMMENT=	"qmail forwarding, including sendmail-style /etc/aliases"
 
 DISTNAME=	fastforward-0.51
 HOMEPAGE=	http://cr.yp.to/fastforward.html
 CATEGORIES=	mail
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \

@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 14:03:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 01:46:27 lebel Exp $
+
+COMMENT=	"move your mail box to another location"
 
 DISTNAME=	movemail-1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

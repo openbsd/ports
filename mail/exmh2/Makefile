@@ -3,12 +3,14 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 01:46:11 lebel Exp $
 #
+
+COMMENT=	"X11/Tk-based mail reader front end to MH"
 
 DISTNAME=	exmh-2.0.2
 CATEGORIES=	mail tk80
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z

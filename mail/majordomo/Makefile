@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/01/21 23:34:58 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 01:46:20 lebel Exp $
+
+COMMENT=	"mailing list manager"
 
 DISTNAME=	majordomo-1.94.5
 CATEGORIES=     mail
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
 
 HOMEPAGE=	http://www.greatcircle.com/majordomo/

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/22 12:04:44 camield Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:46:14 lebel Exp $
+
+COMMENT=	"easy-to-use, high-speed mailing list manager for qmail"
 
 DISTNAME=	ezmlm-0.53
 HOMEPAGE=	http://cr.yp.to/ezmlm.html
 CATEGORIES=	mail
-NEED_VERSION=	1.319
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \

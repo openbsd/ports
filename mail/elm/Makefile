@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 01:46:09 lebel Exp $
+
+COMMENT=	"a once-popular mail user agent"
 
 DISTNAME=	elm-2.4ME+66
 CATEGORIES=	mail
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>

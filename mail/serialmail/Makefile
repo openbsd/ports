@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/22 12:04:46 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 01:46:47 lebel Exp $
+
+COMMENT=	"tools for passing mail across serial links"
 
 DISTNAME=	serialmail-0.75
 HOMEPAGE=	http://cr.yp.to/serialmail.html
 CATEGORIES=	mail
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \

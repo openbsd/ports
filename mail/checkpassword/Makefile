@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/22 12:04:43 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 01:46:00 lebel Exp $
+
+COMMENT=	"simple, uniform password-checking interface"
 
 DISTNAME=	checkpassword-0.90
 HOMEPAGE=	http://cr.yp.to/checkpwd.html
 CATEGORIES=	mail
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://cr.yp.to/checkpwd/
 

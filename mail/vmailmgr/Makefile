@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/14 15:47:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 01:46:52 lebel Exp $
+
+COMMENT=	"virtual mail manager to qmail for multiple domains"
 
 DISTNAME=		vmailmgr-0.96.9
 CATEGORIES=     	mail
-NEED_VERSION=		1.340
+NEED_VERSION=	1.402
 
 HOMEPAGE=		http://www.vmailmgr.org/
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>

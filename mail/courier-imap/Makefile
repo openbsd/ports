@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/22 03:10:48 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.14 2001/05/06 01:46:03 lebel Exp $ 
+
+COMMENT=	"imap server for maildir format mailboxes"
 
 DISTNAME=	courier-imap-1.3.5
 CATEGORIES=	mail
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 

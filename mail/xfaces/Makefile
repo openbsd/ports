@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/22 15:42:35 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/06 01:46:55 lebel Exp $
+
+COMMENT=	"mail image display for X11"
 
 DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 # xfaces-sounds.tar.gz only in LOCAL_PORTS
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
