@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/15 06:14:06 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/02/18 19:35:48 pvalchev Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
-DISTNAME=	gtkballs-1.04	
+DISTNAME=	gtkballs-2.1.1
 CATEGORIES=	games x11
-NEED_VERSION=	1.474
+NEED_VERSION=	1.502
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= games/strategy
@@ -18,17 +18,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MAKE_ENV=	CC="${CC}"
-
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
 NO_REGRESS=	Yes
+USE_GMAKE=	Yes
 USE_X11=	Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkballs
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gtkballs
-	${INSTALL_DATA} ${WRKSRC}/README.russian ${PREFIX}/share/doc/gtkballs
-	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/gtkballs
+CONFIGURE_STYLE=gnu dest
+CONFIGURE_ARGS=	--localstatedir=/var/games
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

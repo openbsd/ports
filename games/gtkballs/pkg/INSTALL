@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/08/11 16:47:19 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/02/18 19:35:49 pvalchev Exp $
 #
 # installation score file setup for gtkballs
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-SCORE_FILE=/var/games/gtkballs.score
+SCORE_FILE=/var/games/gtkballs-scores
 
 # Function: tell the user what they need to do to use the port just installed
 #

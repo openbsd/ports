@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2001/08/11 16:47:19 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/02/18 19:35:49 pvalchev Exp $
 #
 # gtkballs de-installation script
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-SCORE_FILE=/var/games/gtkballs.score
+SCORE_FILE=/var/games/gtkballs-scores
 
 do_notice()
 {
