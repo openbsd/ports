@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2001/07/06 19:34:04 jsyn Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/29 16:19:55 naddy Exp $
 
 COMMENT=	"scan C/C++ source code for security problems"
 
 DISTNAME=	its4-1.1.1
 CATEGORIES=	security
-NEED_VERSION=	1.402
 MASTER_SITES=	#see-do-fetch-target
 EXTRACT_SUFX=	.tgz
 
@@ -17,7 +16,8 @@ PERMIT_DISTFILES_FTP=	"commercial. licensing restrictions."
 
 CONFIGURE_STYLE= gnu dest old
 
-CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4'
+CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4' \
+		--with-cpp="${CXX}"
 
 WRKDIST=	${WRKDIR}/its4
 
