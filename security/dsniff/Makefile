@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2002/09/06 04:27:43 jsyn Exp $
+# $OpenBSD: Makefile,v 1.26 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"sniffing tools for penetration testing"
 
 DISTNAME=	dsniff-2.3
 CATEGORIES=	security
-NEED_VERSION=	1.474
+
 MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
 
 HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
@@ -12,7 +12,6 @@ HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 BUILD_DEPENDS=	::net/libnids
 LIB_DEPENDS=	db.3::databases/db \
 		net::net/libnet
-
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -31,6 +30,8 @@ CONFIGURE_ARGS=	--without-x
 .else
 USE_X11=	Yes
 .endif
+
+NO_REGRESS=	Yes
 
 FAKE_FLAGS=	install_prefix="${WRKINST}"
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/05 13:22:23 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 17:35:02 naddy Exp $
 
-COMMENT=	processes logfiles and perform certain actions
+COMMENT=	"processes logfiles and perform certain actions"
 
 DISTNAME=	logsurfer-1.5b
 CATEGORIES=	security
@@ -17,5 +17,7 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/logsurfer/ \
 		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

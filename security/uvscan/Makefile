@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/09 05:37:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 17:35:02 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 COMMENT=	evaluation version of a DOS/Windows file virus scanner
@@ -7,7 +7,6 @@ VERSION=	4.16.0
 DISTNAME=	vlnx416e
 PKGNAME=	uvscan-${VERSION}
 CATEGORIES=	security
-NEED_VERSION=	1.496
 
 HOMEPAGE=	http://www.nai.com/naicommon/buy-try/try/products-evals.asp
 
@@ -27,6 +26,7 @@ RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base \
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
 do-configure:

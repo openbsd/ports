@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/26 07:51:08 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=		"MS SQL audit tools"
 
@@ -26,6 +26,7 @@ CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKDIST=		${WRKDIR}/sqlat
+NO_REGRESS=		Yes
 
 pre-build:
 	@rm -f ${WRKBUILD}/include/tds*.h

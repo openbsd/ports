@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2002/10/12 13:04:22 reinhard Exp $
+# $OpenBSD: Makefile,v 1.32 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"network security scanner"
 
@@ -72,8 +72,10 @@ post-extract:
 	@sed 's%@@WRKSRC@@%${WRKSRC}%g' \
 		${FILESDIR}/nasl-config > ${WRKSRC}nasl-config
 	@${CHMOD} 755 ${WRKSRC}*
-	@(cd ${WRKSRC}nessus-libraries/include ; ln -s . nessus)
-	@(cd ${WRKSRC}libnasl/include ; ln -s . nessus)
+	@cd ${WRKSRC}nessus-libraries/include ; ln -s . nessus
+	@cd ${WRKSRC}libnasl/include ; ln -s . nessus
+
+NO_REGRESS=	Yes
 
 post-install:
 	@${STRIP} ${PREFIX}/bin/{nasl,nessus,nessus-mkrand} ${PREFIX}/sbin/nessusd

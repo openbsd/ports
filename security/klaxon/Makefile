@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"small service wedge to do ident lookup on connecting party"
 
 DISTNAME=		klaxon
 PKGNAME=		klaxon-1.5
 CATEGORIES=     	security
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.eng.auburn.edu/users/doug/second.html
 
@@ -19,6 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.eng.auburn.edu/pub/doug/
 
 ALL_TARGET=		target
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL} ${WRKBUILD}/klaxon.5x.ident ${PREFIX}/sbin/klaxon

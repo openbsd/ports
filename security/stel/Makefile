@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"Secure Telnet, encrypted version of the telnet daemon"
 
 DISTNAME=	stel
 PKGNAME=	${DISTNAME}-19960505
 CATEGORIES=	security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \
 		ftp://ftp.mupad.de/pub/crypto/misc/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/stel/ \
@@ -24,6 +24,8 @@ ALL_TARGET=	bsdi
 
 post-extract:
 	@rm ${WRKSRC}/stel/login.c.orig
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stel/stel ${PREFIX}/bin

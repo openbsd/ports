@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.1 2002/10/28 17:35:02 naddy Exp $
+--- Makefile.orig	Sat Aug 22 18:03:00 1998
++++ Makefile	Mon Oct 28 18:04:42 2002
+@@ -1,12 +1,12 @@
+ # Makefile for the Linux Netbus Client by noupe@efnet #hack.se
+ 
+-CC = gcc -Wall -O3
++#CC = gcc -Wall -O3
+ OBJEKTFILER = lxnetbus.o lxnbfunc.o lxnbmenu.o
+ 
+-
+ all:   ${OBJEKTFILER} lxnetbus
+ 
+ lxnetbus: ${OBJEKTFILER}  
++	${CC} -o $@ ${OBJEKTFILER}
+ 
+ clean:
+ 	rm -f *.o *~ diskdump.txt screendump.jpg

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/06 19:34:04 jsyn Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"IP stack integrity checker"
 
 DISTNAME=	isic-0.05
 CATEGORIES=	security
-NEED_VERSION=	1.402
+
 MASTER_SITES=	http://www.packetfactory.net/Projects/ISIC/
 EXTRACT_SUFX=	.tgz
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=	Yes
 
 post-install:
 	@strip ${PREFIX}/bin/{esic,icmpsic,isic,tcpsic,udpsic}

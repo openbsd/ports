@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/07/09 20:32:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/28 17:35:02 naddy Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 COMMENT=	AntiVirus DAT file for uvscan
@@ -7,7 +7,6 @@ VERSION=	4210
 DISTNAME=	dat-${VERSION}
 PKGNAME=	uvscan_${DISTNAME}
 CATEGORIES=	security
-NEED_VERSION=	1.499
 
 HOMEPAGE=	http://www.nai.com/asp_set/download/dats/mcafee_4x.asp
 
@@ -24,6 +23,7 @@ PERMIT_DISTFILES_FTP=	"Commercial software"
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}
 
 do-configure:

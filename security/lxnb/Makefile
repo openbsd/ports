@@ -1,17 +1,10 @@
-# Makefile for:		lxnb
-# Version required:	0.4
-# Date created:		10 Feb 2000
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"NetBus client"
 
 DISTNAME=       linux-netbus-client-v0.4
 PKGNAME=	lxnb-0.4
-
 CATEGORIES=	security
-NEED_VERSION=	1.515
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -27,6 +20,8 @@ WRKDIST=	${WRKDIR}/${PKGNAME}
 
 pre-build:
 	rm -f ${WRKSRC}/lxnetbus
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lxnetbus ${PREFIX}/bin/lxnb

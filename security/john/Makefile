@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2002/04/15 16:16:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"extremely fast password cracker"
 
 DISTNAME=	john-1.6
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=     security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
@@ -45,6 +45,8 @@ do-configure:
 	@cd ${WRKDIST} && \
 	sed -e 's,@JOHN_HOME@,${PREFIX}/share/john,' < params.h > \
 		params.h.new && mv -f params.h.new params.h
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john

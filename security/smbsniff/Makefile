@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 21:25:52 espie Exp $
-# Original from: Frederic Lavecot <Frederic.Lavecot@hsc.fr>
+# $OpenBSD: Makefile,v 1.4 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	'sniffer for LanManager environment (m$/samba workstations)'
 DISTNAME=	smbsniff-0.0.1b
 CATEGORIES=	security net
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${HOMEPAGE}/download/
 
 HOMEPAGE=	http://www.hsc.fr/ressources/outils/smbsniff
@@ -17,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 WRKDIST=	${WRKDIR}
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/smbsniff ${PREFIX}/sbin

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/07 12:53:39 espie Exp $
-# Original from: Ejovi Nuwere <ejovi@ejovi.net>
+# $OpenBSD: Makefile,v 1.16 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"system secureness checker"
 
 DISTNAME=	cops.1.04
 PKGNAME=	cops-1.04
 CATEGORIES=	security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/scanners/cops/
 
 PERMIT_PACKAGE_CDROM=	No
@@ -28,8 +27,11 @@ pre-build:
 	sed -e 's,^SECURE=.*,SECURE=${PREFIX}/cops,g' -e '/^$$SECURE\/passwd\.chk.*/d' -e 's,^SECURE_USERS=.*,SECURE_USERS="root@localhost",g' -e 's/passwd\.chk pass.chk //g' cops > cops.out && \
 	mv cops.out cops && chmod u+x cops
 
-MAKE_FILE=makefile
-MAKE_FLAGS=EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}" CFLAGS="${CFLAGS}"
+MAKE_FILE=	makefile
+MAKE_FLAGS=	EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}" \
+		CC="${CC}" CFLAGS="${CFLAGS}"
+
+NO_REGRESS=	Yes
 
 do-install:
 	rm -rf ${PREFIX}/cops 

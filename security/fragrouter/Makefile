@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/06 04:27:43 jsyn Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"tool for testing network IDS implementations"
 
 DISTNAME=	fragrouter-1.6
-
 CATEGORIES=	security
-NEED_VERSION=	1.402
 
 MASTER_SITES=	http://monkey.org/~dugsong/
 
@@ -19,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libpcap-0.4 ${WRKSRC}/Libnet-0.99b
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fragrouter ${PREFIX}/sbin

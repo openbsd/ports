@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 13:28:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=		"encrypt/decrypt using Rijndael encryption algorithm"
 
 V=			0.7
 DISTNAME=		aescrypt-${V}
 CATEGORIES=		security
-NEED_VERSION=		1.528
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
@@ -20,6 +19,8 @@ MASTER_SITES=		http://aescrypt.sourceforge.net/ \
 			${MASTER_SITE_SOURCEFORGE:=aescrypt/}
 
 CONFIGURE_STYLE=	autoconf
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aescrypt ${PREFIX}/bin

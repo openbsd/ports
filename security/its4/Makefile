@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/09/29 16:19:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"scan C/C++ source code for security problems"
 
@@ -20,6 +20,8 @@ CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4' \
 		--with-cpp="${CXX}"
 
 WRKDIST=	${WRKDIR}/its4
+
+NO_REGRESS=	Yes
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \

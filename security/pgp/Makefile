@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"Pretty Good Privacy 2.6.3ia"
 
 DISTNAME=	pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
@@ -49,6 +49,8 @@ do-build:
 	  CFLAGS="${CFLAGS} -DUNIX -DPORTABLE -DMERIT -DIDEA32 \
 		-DMAX_NAMELEN=255 -DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\" \
 		`cat ${WRKDIR}/.endian`"
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp

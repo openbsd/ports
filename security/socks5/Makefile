@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
 DISTNAME=	socks5-v1.0r11
 PKGNAME=	socks5-1.0.11
 CATEGORIES=	security net
-NEED_VERSION=	1.435
 
 HOMEPAGE=	http://www.socks.nec.com/reference/socks5.html
 
@@ -32,6 +31,8 @@ CONFIGURE_ARGS=	--with-libconffile="${SYSCONFDIR}/libsocks5.conf" \
 MAKE_ENV=	INSTALL_RUNSOCKS="${INSTALL_RUNSOCKS}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}
+
+NO_REGRESS=	Yes
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"watch a tcpdump trace in real-time"
 
 DISTNAME=	parse
 PKGNAME=	parse-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.515
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -17,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.sdsc.edu/pub/security/PICS/parse/
 EXTRACT_SUFX=	.t.gz
 EXTRACT_CASES=	*.t.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

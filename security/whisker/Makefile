@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"stealthy webserver vulnerability scanner"
 
 DISTNAME=	whisker
 PKGNAME=	whisker-1.4
 CATEGORIES=	security
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
@@ -19,6 +19,8 @@ WRKDIST=	${WRKDIR}/v1.4
 
 do-build:
 	@cd ${WRKSRC}; sed -e  s#!!PREFIX!!#${PREFIX}#g whisker.pl > whisker
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/whisker

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/28 17:35:01 naddy Exp $
 
 COMMENT=	"classical (pen-and-paper) cipher cryptanalysis toolkit"
 
 DISTNAME=		crank-0.1.4
 CATEGORIES=		security
-NEED_VERSION=		1.474
+
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=crank/}
 
 HOMEPAGE=		http://crank.sourceforge.net/
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
+NO_REGRESS=		Yes
 
 DOC=	BUGS HISTORY LICENSE README ciphertext.txt ciphertext2.txt
 

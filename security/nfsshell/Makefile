@@ -1,18 +1,10 @@
-# Makefile for:		nfsshell
-# Version required:	1.0
-# Date created:		10 Jun 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.10 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"NFS auditing tool"
 
 PKGNAME=	nfsshell-1.0
-
 DISTNAME=	nfsshell
-
 CATEGORIES=	security
-NEED_VERSION=	1.515
 
 WRKDIST=	${WRKDIR}/nfs
 
@@ -26,6 +18,8 @@ PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	nfs
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nfs ${PREFIX}/bin/nfsshell

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/26 16:06:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/28 17:35:02 naddy Exp $
 
 COMMENT=	"port scan detection and active defense"
 
 DISTNAME=	portsentry-1.1
 CATEGORIES=	security
-NEED_VERSION=	1.500
 
 HOMEPAGE=	http://www.psionic.com/abacus/portsentry
 
@@ -18,6 +17,7 @@ PERMIT_DISTFILES_FTP= 	Yes
 MASTER_SITES=	http://www.psionic.com/tools/
 
 ALL_TARGET=	openbsd
+NO_REGRESS=	Yes
 
 DOCS=	README.install README.methods README.stealth
 
