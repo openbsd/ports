@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/27 12:36:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/30 01:02:49 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -73,7 +73,15 @@ QTMODULES=	styles tools kernel widgets dialogs \
 LIB_DEPENDS=
 BUILD_DEPENDS=::graphics/jpeg
 
-.if !empty(FLAVOR:Mno_mysql)
+e=
+.if ${FLAVOR:L:Mno_mysql}
+e:=$e,no_mysql
+.endif
+.if ${FLAVOR:L:Mno_postgresql}
+e:=$e,no_postgresql
+.endif
+
+.if !empty(FLAVOR:L:Mno_mysql)
 CONFIGURE_ARGS+=-no-sql-mysql
 .else
 MULTI_PACKAGES+=	-mysql
@@ -87,7 +95,7 @@ CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 # This one doesn't work
 #LIB_DEPENDS+=iodbc::databases/iodbc
 
-.if !empty(FLAVOR:Mno_postgresql)
+.if !empty(FLAVOR:L:Mno_postgresql)
 CONFIGURE_ARGS+=-no-sql-psql
 .else
 MULTI_PACKAGES+=	-postgresql
@@ -106,7 +114,7 @@ LIB_DEPENDS+=	png.2::graphics/png \
 		mng.1::graphics/libmng
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} != "-html" && ${SUBPACKAGE} != ""
-LIB_DEPENDS+=	qt.3::x11/qt3
+LIB_DEPENDS+=	qt.3::x11/qt3$e
 .endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt3
@@ -214,11 +222,11 @@ do-install:
 	    ${QT_PLUGINSDIR}/imageformats
 	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqmng.so \
 	    ${QT_PLUGINSDIR}/imageformats
-.if empty(FLAVOR:Mno_postgresql)
+.if empty(FLAVOR:L:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
-.if empty(FLAVOR:Mno_mysql)
+.if empty(FLAVOR:L:Mno_mysql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
