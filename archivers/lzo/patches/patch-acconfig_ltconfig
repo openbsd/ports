@@ -1,5 +1,5 @@
---- acconfig/ltconfig.orig	Mon Nov 29 12:37:24 1999
-+++ acconfig/ltconfig	Sat Nov 11 16:32:04 2000
+--- acconfig/ltconfig.orig	Tue Oct 17 21:25:10 2000
++++ acconfig/ltconfig	Sat Nov 11 17:28:20 2000
 @@ -1105,6 +1105,9 @@
      with_gnu_ld=no
    fi
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1391,10 +1394,18 @@
+@@ -1402,10 +1405,18 @@
      ;;
  
    openbsd*)
@@ -31,7 +31,7 @@
      ;;
  
    os2*)
-@@ -1955,13 +1966,10 @@
+@@ -2021,13 +2032,10 @@
  
  openbsd*)
    version_type=sunos

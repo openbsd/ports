@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2000/11/11 22:33:39 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/11/17 21:33:43 brad Exp $
 
-DISTNAME=	lzo-1.06
+DISTNAME=	lzo-1.07
 CATEGORIES=	archivers devel
 NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/util/arc/ \
-		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
+MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/lzo/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/compression
 
