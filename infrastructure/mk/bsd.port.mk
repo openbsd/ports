@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.368 2001/03/28 11:32:29 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.369 2001/03/28 11:43:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -67,30 +67,21 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # COMES_WITH	- The first version that a port was made part of the
 #				  standard OpenBSD distribution.  If the current OpenBSD
 #				  version is >= this version then a notice will be
-#				  displayed instead the port being generated.
+#				  displayed instead of the port being generated.
 #
-# NO_BUILD		- Use a dummy (do-nothing) build target.
 # NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
 # NO_INSTALL	- Use a dummy (do-nothing) install target.
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
-# NO_DEPENDS	- Don't verify build of dependencies.
 # BROKEN		- Port is broken.  Set this string to the reason why.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
 #
 # USE_X11		- Port uses X11.
 #
-# YACC          - yacc program to pass to configure script (default: yacc)
-#                 override with bison if port requires bison.
-# CONFIGURE_ARGS - Pass these args to configure if CONFIGURE_STYLE is
-# 				  simple, gnu or perl.
-# CONFIGURE_ENV - Pass these env (shell-like) to configure if
-#				  CONFIGURE_STYLE is simple, gnu or perl.
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
 # DEPENDS		- A list of other ports this package depends on being
-#				  made first.  Use this for things that don't fall into
-#				  the above two categories.
+#				  made first.  
 #
 # FETCH_BEFORE_ARGS -
 #				  Arguments to ${FETCH_CMD} before filename (default: none).
@@ -230,6 +221,9 @@ CLEANDEPENDS?=No
 .endif
 NOMANCOMPRESS?=	Yes
 DEF_UMASK?=		022
+
+NO_DEPENDS?= No
+NO_BUILD?= No
 
 .if exists(${.CURDIR}/Makefile.${ARCH})
 .include "${.CURDIR}/Makefile.${ARCH}"
@@ -1383,7 +1377,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 # The real build
 
 ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
-.if !defined(NO_BUILD) 
+.if ${NO_BUILD:L} == "no"
 	@${ECHO_MSG} "===>  Building for ${FULLPKGNAME}"
 .  if target(pre-build)
 	@cd ${.CURDIR} && exec ${MAKE} pre-build
@@ -1926,7 +1920,7 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 
 .for _DEP in fetch build run lib misc
 ${_DEP}-depends:
-.  if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
+.  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 	@unset DEPENDS_TARGET || true; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
 		echo $$i|{ \
