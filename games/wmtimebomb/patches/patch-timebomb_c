@@ -1,6 +1,17 @@
-$OpenBSD: patch-timebomb_c,v 1.1.1.1 2001/02/09 13:06:25 wilfried Exp $
+$OpenBSD: patch-timebomb_c,v 1.2 2001/02/15 18:10:51 wilfried Exp $
 --- timebomb.c.orig	Mon Nov 16 15:42:54 1998
-+++ timebomb.c	Wed Feb  7 13:21:09 2001
++++ timebomb.c	Tue Feb 13 16:53:09 2001
+@@ -4,8 +4,8 @@
+ #include <X11/xpm.h>
+ #include <X11/Xproto.h>
+ #include <WMaker.h>
+-#include <WINGs.h>
+-#include "WINGsP.h"
++#include <WINGs/WINGs.h>
++#include <WINGs/WINGsP.h>
+ #include <wraster.h>
+ #include <signal.h>
+ #include "xlibgeneral.h"
 @@ -94,7 +94,7 @@ XpmIcon countbar;
  XpmIcon rbuttonb;
  XpmIcon id;
