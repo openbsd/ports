@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.57 1999/11/03 03:14:58 turan Exp $
+# $OpenBSD: Makefile,v 1.58 1999/11/14 22:00:36 turan Exp $
 
-ROKEN=	/usr/ports/lang/egcs/snapshot/work/egcs-19990907/gcc/configure[3588]: syntax error: newline unexpected
+BROKEN=	/usr/ports/lang/egcs/snapshot/work/egcs-19990907/gcc/configure[3588]: syntax error: newline unexpected
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
