@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/27 06:16:18 wcobb Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 20:41:07 fgsch Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
@@ -6,7 +6,6 @@ DISTNAME=	hugs98-Dec2001
 HOMEPAGE=	http://www.haskell.org/hugs/
 
 CATEGORIES=	lang
-NEED_VERSION=	1.525
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/

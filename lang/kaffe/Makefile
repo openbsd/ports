@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/12/29 20:41:07 fgsch Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -9,7 +9,6 @@ COMMENT=	"Transvirtual's Java JDK1.1 compiler, runtime and libs"
 
 DISTNAME=	kaffe-1.0.6
 CATEGORIES=	lang
-NEED_VERSION=	1.489
 
 MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
