@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/08/12 04:39:27 jolan Exp $
+# $OpenBSD: Makefile,v 1.14 2003/08/12 13:23:54 wilfried Exp $
 
 COMMENT=		"spell checker designed to eventually replace Ispell"
 COMMENT-br=		"aspell dictionary for Breton"
@@ -43,7 +43,7 @@ MODULES=	gcc3
 MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	C++
 
-MASTER_SITES=		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=		${MASTER_SITE_GNU:=aspell/}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} --enable-static
@@ -56,7 +56,7 @@ DICTS=		br-0.50-2 ca-0.50-2 cs-0.50-2 cy-0.50-3 da-0.50-2 de-0.50-2 \
 		ro-0.50-2 ru-0.50-2 sk-0.50-2 sv-0.50-2 uk-0.50-3
 
 .for i in ${DICTS}
-DISTFILES+=		aspell-$i.tar.bz2:1
+DISTFILES+=		aspell-$i.tar.bz2
 .endfor
 
 MULTI_PACKAGES=	-br -ca -cs -cy -da -de -el -eo -es -fo -fr \
