@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2001/08/29 13:26:15 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.44 2001/09/01 20:13:28 brad Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
 DISTNAME=	samba-2.2.1a
 CATEGORIES=	net
-NEED_VERSION=	1.396
+NEED_VERSION=	1.435
 
 HOMEPAGE=	http://www.samba.org/
 
@@ -29,11 +29,10 @@ FAKE_FLAGS+=	prefix="${WRKINST}${PREFIX}" \
 		SBINDIR="${WRKINST}${PREFIX}/libexec"
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
-		--with-acl-support \
 		--with-configdir="${SYSCONFDIR}/samba" \
 		--with-lockdir="/var/spool/lock" \
 		--with-privatedir="${SYSCONFDIR}/samba" \
@@ -89,4 +88,3 @@ post-install:
 	@chmod 111 ${PREFIX}/bin/smbpasswd
 
 .include <bsd.port.mk>
-
