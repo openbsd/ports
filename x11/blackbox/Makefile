@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/15 23:59:53 rohee Exp $
+# $OpenBSD: Makefile,v 1.20 2000/04/05 11:54:45 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 DISTNAME=		blackbox-0.51.3.1
 CATEGORIES=		x11
+NEED_VERSION=		1.251
 MASTER_SITES=		ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
 			ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
@@ -20,7 +21,13 @@ GNU_CONFIGURE=		Yes
 
 FAKE=			Yes
 
+FLAVORS=kde
 .if defined(WITH_KDE) && ${WITH_KDE:U} == Yes
+FLAVOR=kde
+.endif
+FLAVOR?=
+
+.if ${FLAVOR:L} == "kde"
 CONFIGURE_ARGS+= 	--enable-kde
 .endif
 
