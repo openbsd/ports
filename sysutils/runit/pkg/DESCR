@@ -1,0 +1,3 @@
+runit is a daemontools alike replacement for sysvinit and other init
+schemes. runit runs on GNU/Linux, OpenBSD, FreeBSD, MacOSX, Solaris, and
+can easily be adapted to other Unix operating systems.
