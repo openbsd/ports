@@ -1,9 +1,0 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2001/12/19 00:25:26 pvalchev Exp $
---- Makefile.am.orig	Tue Dec 18 17:06:40 2001
-+++ Makefile.am	Tue Dec 18 17:07:03 2001
-@@ -8,4 +8,4 @@ dist-hook:
- # END OF MOTOR DIST TARGETS #
- EXTRA_DIST = acconfig.h centericq.1 ABOUT-NLS AUTHORS ChangeLog COPYING FAQ INSTALL NEWS README TODO centericq.spec kkstrtext-0.1/* kksystr-0.1/* kkconsui-0.1/* libyahoo-0.1/* libmsn-0.1/* libicq2000-0.2/*
- AUTOMAKE_OPTIONS = foreign
--pkgdata_DATA = centericq.1
-+man_MANS = centericq.1
