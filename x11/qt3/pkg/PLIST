@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2005/02/03 20:05:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.23 2005/02/27 16:03:14 espie Exp $
 @conflict qt3-*
 @conflict qt3-base-*
 %%SHARED%%
@@ -1476,6 +1476,7 @@ lib/qt3/plugins/
 lib/qt3/plugins/designer/
 lib/qt3/plugins/sqldrivers/
 lib/qt3/plugins/styles/
+share/doc/qt3/
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
