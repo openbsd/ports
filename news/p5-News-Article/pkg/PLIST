@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/22 19:44:20 avsm Exp $
+libdata/perl5/site_perl/News/Article.pm
+libdata/perl5/site_perl/News/AutoReply.pm
+libdata/perl5/site_perl/News/FormArticle.pm
+libdata/perl5/site_perl/News/FormReply.pm
+man/man3/News::Article.3p
+man/man3/News::AutoReply.3p
+man/man3/News::FormArticle.3p
+man/man3/News::FormReply.3p
