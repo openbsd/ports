@@ -1,0 +1,15 @@
+--- xwin.cc.orig	Sat Jun 26 13:43:54 1999
++++ xwin.cc	Sat Jun 26 13:42:38 1999
+@@ -53,9 +53,9 @@
+   
+   // Set up the default Events
+   events_ = NULL;
+-  addEvent( new Event( this, ConfigureNotify, &configureEvent ) );
+-  addEvent( new Event( this, ClientMessage, &deleteEvent ) );
+-  addEvent( new Event( this, MappingNotify, &mappingNotify ) );
++  addEvent( new Event( this, ConfigureNotify, &XWin::configureEvent ) );
++  addEvent( new Event( this, ClientMessage, &XWin::deleteEvent ) );
++  addEvent( new Event( this, MappingNotify, &XWin::mappingNotify ) );
+ 
+   //openDisplay();  //  Done explicitly in xosview.cc.
+ }
