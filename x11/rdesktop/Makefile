@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2003/10/30 16:58:44 jcs Exp $
+# $OpenBSD: Makefile,v 1.15 2004/01/22 16:57:18 jcs Exp $
 
 COMMENT=	"open source client for Windows Terminal Server"
-DISTNAME=	rdesktop-1.3.0
+DISTNAME=	rdesktop-1.3.1
 CATEGORIES=	x11 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rdesktop/}
 
@@ -20,7 +20,6 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-x=${X11BASE}
-WRKDIST=	${WRKDIR}/rdesktop
 
 ALL_TARGET=	rdesktop
 
