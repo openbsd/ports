@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2005/02/24 15:52:11 todd Exp $
+# $OpenBSD: Makefile,v 1.303 2005/03/02 13:59:37 mbalmer Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -273,6 +273,7 @@
      SUBDIR += pear-Date
      SUBDIR += pear-Log
      SUBDIR += pear-PHPUnit
+     SUBDIR += pear-PHPUnit2
      SUBDIR += perltidy
      SUBDIR += physfs
      SUBDIR += pkgconfig
