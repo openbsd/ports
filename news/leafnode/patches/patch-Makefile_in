@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.14 2004/06/14 05:06:20 sturm Exp $
+$OpenBSD: patch-Makefile_in,v 1.15 2004/10/07 05:15:25 sturm Exp $
 
---- Makefile.in.orig	2004-06-11 00:05:35.000000000 +0200
-+++ Makefile.in	2004-06-13 18:40:54.000000000 +0200
-@@ -1361,14 +1361,7 @@ install-data-hook: amiroot
+--- Makefile.in.orig	Wed Sep 22 17:30:34 2004
++++ Makefile.in	Tue Oct  5 00:33:27 2004
+@@ -1329,14 +1329,7 @@ install-data-hook: amiroot
  	set -e ; for i in . leaf.node failed.postings interesting.groups \
  		out.going message.id temp.files ; do \
          mkdir -p $(DESTDIR)$(SPOOLDIR)/$$i ; \

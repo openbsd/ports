@@ -1,16 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.9 2004/06/24 03:16:55 brad Exp $
-
-P_NAME=leafnode
-
-DIRS='
-leafnode
-'
-
-FILES='
-leafnode/config
-'
+# $OpenBSD: INSTALL,v 1.10 2004/10/07 05:15:25 sturm Exp $
 
 SPOOLDIR=/var/spool/news
 SPOOL_DIRS='
@@ -26,29 +16,17 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 
-do_create_user()
-{
-	if id -u _news >/dev/null 2>/dev/null
-	then
-		echo "User _news already exists... ok"
-	else
-		echo -n "Adding user _news..."
-		if [ -d /var/spool/news ]
-		then
-			echo " Giving /var/spool/news to _news"
-		else
-			echo " Creating /var/spool/news"
-			mkdir -p /var/spool/news
-		fi
-		chown 519:news /var/spool/news
-
-		user add -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin -u 519 _news
-		echo "ok"
-	fi
-}
-
 do_create_spool_dirs()
 {
+	if [ -d /var/spool/news ]
+	then
+		echo " Giving /var/spool/news to _news"
+	else
+		echo " Creating /var/spool/news"
+		mkdir -p /var/spool/news
+	fi
+	chown _news:news /var/spool/news
+
 	echo -n "Creating spool directories... "
 	for d in ${SPOOL_DIRS}; do
 		if [ ! -d "${SPOOLDIR}/$d" ]; then
@@ -67,64 +45,6 @@ do_create_spool_dirs()
 	echo "ok"
 }
 
-do_post()
-{
-	DEST_PFX=${SYSCONFDIR}
-	SOURCE_PFX=${PREFIX}/share/examples
-
-	echo 
-	echo "+--------------- ${P_NAME}"
-
-	# install dirs if necessary
-	for d in ${DIRS}; do
-		if [ ! -d "${DEST_PFX}/$d" ]; then
-			install -d ${DEST_PFX}/$d
-		fi
-	done
-
-	# install or take note of existing config files
-	for f in ${FILES}; do
-		if [ -f "${DEST_PFX}/$f" ]; then
-			OLD_CONFS="${OLD_CONFS} $f"
-		else
-			if ! install -m 644 ${SOURCE_PFX}/$f.example ${DEST_PFX}/$f; then
-				echo "| ERROR: The following file could not be installed, exiting: ${DEST_PFX}/$f"
-				exit 1
-			fi
-			NEW_CONFS="${NEW_CONFS} $f"
-		fi
-	done
-
-	# print status report
-	if [ -n "${NEW_CONFS}" ]; then
-		echo "| The following NEW configuration files have been installed:"
-		echo "|"
-		for f in ${NEW_CONFS}; do
-			echo "| ${DEST_PFX}/$f"
-		done 
-	fi
-	
-	if [ -n "${OLD_CONFS}" ]; then
-		if [ -n "${NEW_CONFS}" ]; then
-			echo "|"
-		fi
-		echo "| The following OLD configuration files were found and have NOT been"
-		echo "| overwritten:"
-		echo "|"
-		for f in ${OLD_CONFS}; do
-			echo "| ${DEST_PFX}/$f"
-		done
-		echo "|"
-		echo "| You should however manually compare them to their equivalents in"
-		echo "|"
-		echo "| ${SOURCE_PFX}"
-		echo "|"
-		echo "| and update your configuration as needed." 
-	fi
-	echo "+--------------- ${P_NAME}"
-	echo 
-}
-
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -136,11 +56,9 @@ fi
 #
 case $2 in
 	PRE-INSTALL)
-		do_create_user
 		;;
 	POST-INSTALL)
 		do_create_spool_dirs
-		do_post
 		;;
 	*)
 		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

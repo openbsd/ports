@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2004/06/14 05:06:20 sturm Exp $
---- configure.orig	2004-06-11 00:05:36.000000000 +0200
-+++ configure	2004-06-13 19:25:31.000000000 +0200
-@@ -1824,7 +1824,7 @@ echo "$as_me: WARNING: *** use --sysconf
+$OpenBSD: patch-configure,v 1.7 2004/10/07 05:15:25 sturm Exp $
+--- configure.orig	Wed Sep 22 11:43:53 2004
++++ configure	Tue Oct  5 00:33:29 2004
+@@ -1836,7 +1836,7 @@ echo "$as_me: WARNING: *** use --sysconf
  echo "$as_me: WARNING: ***" >&2;}
    sleep 1
  fi

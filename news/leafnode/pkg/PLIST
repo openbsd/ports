@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/15 18:21:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/10/07 05:15:25 sturm Exp $
+@newuser _news:519:news::NNTP server:/var/spool/news:/sbin/nologin
 bin/leafnode-version
 bin/newsq
 @man man/man1/leafnode-version.1
@@ -16,16 +17,18 @@ sbin/texpire
 share/doc/leafnode/
 share/doc/leafnode/FAQ.txt
 share/doc/leafnode/INSTALL
+share/doc/leafnode/NEWS
+share/doc/leafnode/OLDNEWS
 share/doc/leafnode/README
 share/doc/leafnode/README-FQDN
 share/examples/leafnode/
 share/examples/leafnode/Makefile.dist
 share/examples/leafnode/UNINSTALL-daemontools
 share/examples/leafnode/config.example
+@sample ${SYSCONFDIR}/leafnode/
+@sample ${SYSCONFDIR}/leafnode/config
 share/examples/leafnode/filters.example
 share/examples/leafnode/nntp.rules.dist
 share/examples/leafnode/run.tcpd.dist
 share/examples/leafnode/run.tcpserver.dist
-@cwd ${SYSCONFDIR}
-@extra leafnode/config
-@extra leafnode/
+@extraunexec /bin/rm -r /var/spool/news
