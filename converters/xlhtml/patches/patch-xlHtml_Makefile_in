@@ -1,0 +1,14 @@
+$OpenBSD: patch-xlHtml_Makefile_in,v 1.1 2002/04/08 22:26:02 naddy Exp $
+--- xlHtml/Makefile.in.orig	Tue Apr  9 00:20:35 2002
++++ xlHtml/Makefile.in	Tue Apr  9 00:21:21 2002
+@@ -307,8 +307,8 @@ install-strip:
+ installdirs:
+ 	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(bindir)
+ install-man:
+-	@test -d ${mandir}/man1 || $(INSTALL_DIR) ${mandir}/man1
+-	$(INSTALL) -m 0444 xlHtml.1 ${mandir}/man1/xlHtml.1
++	@test -d $(DESTDIR)${mandir}/man1 || $(INSTALL_DIR) $(DESTDIR)${mandir}/man1
++	$(INSTALL) -m 0444 xlHtml.1 $(DESTDIR)${mandir}/man1/xlHtml.1
+ uninstall-man:
+ 	rm -f $(mandir)/man1/xlHtml.1         
+ 
