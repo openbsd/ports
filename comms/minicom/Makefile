@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/06/03 06:20:56 form Exp $
+# $OpenBSD: Makefile,v 1.26 2000/06/09 16:14:40 form Exp $
 
 PKGNAME=	minicom-1.83.1
 DISTNAME=	${PKGNAME}.src
@@ -19,10 +19,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.pp.clinet.fi/~walker/
 MASTER_SITE_SUBDIR=     apps/serialcomm/dialout
 
-BUILD_DEPENDS=	gmake::devel/gmake msgfmt::devel/gettext
+BUILD_DEPENDS=	msgfmt::devel/gettext
 RUN_DEPENDS=	kermit::comms/kermit lrz::comms/lrzsz
-
-MAKE_ENV=	GMAKE="${GMAKE}"
 
 WRKDIST=	${WRKDIR}/${PKGNAME}/src
 

@@ -1,8 +1,8 @@
-# $OpenBSD: patch-makefile,v 1.1 2000/05/18 04:41:32 form Exp $
+# $OpenBSD: patch-makefile,v 1.2 2000/06/09 16:14:40 form Exp $
 
---- Makefile.orig	Mon Oct 25 00:30:09 1999
-+++ Makefile	Thu May 18 11:00:42 2000
-@@ -22,10 +22,13 @@
+--- Makefile.orig	Tue Apr 25 22:42:32 2000
++++ Makefile	Fri Jun  9 23:08:51 2000
+@@ -22,10 +22,12 @@
  # enochw@scn.org Oct 99: flags for UWIN 2.0 (Unix for Windows)
  
  # Where to install things for Linux sites (FSSTND)
@@ -11,7 +11,6 @@
 -DOCDIR	= /usr/doc/minicom
 -MANDIR	= /usr/man/man1
 +R	= $(DESTDIR)
-+GMAKE  ?= gmake
 +PREFIX ?= /usr/local
 +BINDIR	= $(PREFIX)/bin
 +LIBDIR	= /etc/minicom
@@ -20,7 +19,7 @@
  
  # fmg 8/22/97: seems a more logical place for this :-)
  # Select Compile Options you want:
-@@ -40,7 +43,7 @@
+@@ -40,7 +42,7 @@
  # -D_I18N_		- Internationalization and localized text strings
  #			  see file "../doc/Locales"
  #
@@ -29,7 +28,7 @@
  
  # Remove if you don't have gettext and don't want to install it and use
  # the localized strings
-@@ -60,11 +63,11 @@
+@@ -60,11 +62,11 @@
  # MANDIR	= /usr/local/man/man1
  
  # Take these compilation flags for Linux with libncurses.
@@ -46,7 +45,7 @@
  
  # Take these compilation flags for FreeBSD.
  #FLAGS	= -Wall -D_POSIX -D_BSD43 -D_SELECT -D_DCDFLOW
-@@ -73,6 +76,13 @@
+@@ -73,6 +75,13 @@
  #LIBS	= -ltermcap
  #CC	= cc
  
@@ -60,7 +59,7 @@
  # Take these flags for SCO unix.
  #FLAGS	= -D_SYSV -D_SCO -D_POSIX -D_SELECT
  #PROGS	= minicom runscript ascii-xfr
-@@ -185,7 +195,7 @@
+@@ -199,7 +208,7 @@
  SOBJS	= script.o sysdep1.o common.o
  
  # fmg 8/22/97: merge in new OPFLAGS...
@@ -69,30 +68,30 @@
  
  R	= $(ROOTDIR)
  
-@@ -195,7 +205,7 @@
+@@ -209,7 +218,7 @@
  		$(CC) $(LFLAGS) -o minicom $(MOBJS) $(LIBS)
  
  po: dummy
 -		$(MAKE) -C po
-+		$(GMAKE) -C po
++		@cd po; $(MAKE)
  
  keyserv:	$(KOBJS)
  		$(CC) -o keyserv $(LFLAGS) $(KOBJS) $(LIBS)
-@@ -248,7 +258,7 @@
+@@ -262,7 +271,7 @@
  dummy:
  
  install:	$(PROGS)
 -		$(MAKE) -C po install R=$(R)
-+		$(GMAKE) -C po install PREFIX=$(PREFIX)
++		@cd po; $(MAKE)  install PREFIX=$(PREFIX)
  		sh install.sh $(R)$(LIBDIR) $(R)$(BINDIR) $(R)$(MANDIR) $(R)$(DOCDIR)
  
  install2:	$(PROGS)
-@@ -256,7 +266,7 @@
+@@ -270,7 +279,7 @@
  
  clobber:
  		rm -f *.o *~ minicom keyserv runscript ascii-xfr
 -		$(MAKE) -C po clean
-+		$(GMAKE) -C po clean
++		@cd po; $(MAKE) clean
  
  clean:		
  		rm -f *.o
