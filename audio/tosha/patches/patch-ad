@@ -1,0 +1,19 @@
+--- toscsi.c.orig	Sat Jan  2 00:57:46 1999
++++ toscsi.c	Fri Jul 23 12:17:12 1999
+@@ -182,6 +182,16 @@
+ 				(char *) buf, SCCMD_READ,
+ 				"v 0 0 v:i3 0 0 0 v 0 0",
+ 				readcmd, sec, secread);
++		else if (readcmd == 0xbe)
++			/*
++			 * Actually the ATAPI read command, but as OpenBSD
++			 * now can attach ATAPI CDs through the SCSI layer,
++			 * this is good to support.
++			 */
++			scsireq_build (hdl->sreq, SECTORSIZE * secread,
++				(char *) buf, SCCMD_READ,
++				"v 4 0 v:i3 0 0 v 0xf8",
++				readcmd, sec, secread);
+ 		else
+ 			scsireq_build (hdl->sreq, SECTORSIZE * secread,
+ 				(char *) buf, SCCMD_READ,
