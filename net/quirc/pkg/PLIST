@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 03:00:58 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/03/04 07:28:06 kevlo Exp $
 bin/quirc
 share/doc/quirc/AUTHORS
 share/doc/quirc/COPYING
@@ -15,11 +15,13 @@ share/doc/quirc/rfc1459.txt
 share/quirc/VERSION
 share/quirc/common/install.tcl
 share/quirc/dal.tcl
+share/quirc/default.tcl
 share/quirc/doc.tcl
 share/quirc/fontsel
 share/quirc/fun.tcl
 share/quirc/global.tcl
 share/quirc/info.tcl
+share/quirc/install.tcl
 share/quirc/listfile.tcl
 share/quirc/mircservers.tcl
 share/quirc/newserver.tcl

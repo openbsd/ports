@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/06/20 02:53:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2004/03/04 07:28:02 kevlo Exp $
 
 COMMENT=	"irc client that uses Tcl/Tk"
 
-DISTNAME=	quirc-0.9.83
+DISTNAME=	quirc-0.9.84
 CATEGORIES=	net
 
 HOMEPAGE=	http://quirc.org/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
+LIB_DEPENDS=	::x11/tk/8.4
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
