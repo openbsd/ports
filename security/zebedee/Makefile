@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/31 18:04:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/31 18:06:32 lebel Exp $
 #
 
 COMMENT=	"portable, encrypted, compressed tunnel"
@@ -20,6 +20,7 @@ MASTER_SITES=	http://www.winton.org.uk/zebedee/ \
 MAINTAINER=	Jon Leonard <jleonard@iss.net>
 
 LIB_DEPENDS=	bz2::archivers/bzip2
+NO_REGRESS=	Yes
 
 MAKE_FLAGS+=	OS=openbsd
 
