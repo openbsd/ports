@@ -1,0 +1,10 @@
+--- kcontrol/info/info_fbsd.cpp.orig	Sun Jun 20 19:43:01 1999
++++ kcontrol/info/info_fbsd.cpp	Sun Jun 20 19:43:13 1999
+@@ -25,6 +25,7 @@
+  */
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ 
+ #include <fstab.h>
