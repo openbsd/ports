@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/10 05:47:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/12 15:07:07 xsa Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"convert Big5 encoded files to PDF"
 
