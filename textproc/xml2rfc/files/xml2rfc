@@ -1,12 +1,13 @@
 #!/bin/sh
 #
-# $Id: xml2rfc,v 1.2 2001/04/09 18:45:20 jakob Exp $
+# $Id: xml2rfc,v 1.3 2003/02/17 13:29:17 jakob Exp $
 
 wish=y0y0y0/bin/wish8.3
+tclsh=y0y0y0/bin/tclsh8.3
 xml2rfc=y0y0y0/share/xml2rfc/xml2rfc.tcl
 
 if [ $# -gt 0 ]; then
-	exec $wish $xml2rfc xml2rfc $@
+	exec $tclsh $xml2rfc xml2rfc $@
 else
 	exec $wish $xml2rfc
 fi
