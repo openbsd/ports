@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/09/23 18:04:25 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/11/10 06:05:55 kevlo Exp $
 lib/win32/CLRVIDDC.DLL
 lib/win32/CtWbJpg.DLL
 lib/win32/LCodcCMP.dll
@@ -62,10 +62,12 @@ lib/win32/tsccvid.dll
 lib/win32/tssoft32.acm
 lib/win32/ubv263d+.ax
 lib/win32/ubvmp4d.dll
+lib/win32/ultimo.dll
 lib/win32/vgpix32d.dll
 lib/win32/vivog723.acm
 lib/win32/voxmsdec.ax
 lib/win32/vp31vfw.dll
+lib/win32/vp4vfw.dll
 lib/win32/vssh264.dll
 lib/win32/vssh264core.dll
 lib/win32/vssh264dec.dll
