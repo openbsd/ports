@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/12/29 16:44:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.38 2005/01/10 23:18:32 pvalchev Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	"tools to connect your PalmOS® compatible handheld"
@@ -28,10 +28,6 @@ WANTLIB=		c m ncurses readline stdc++ z
 MODULES=		converters/libiconv
 LIB_DEPENDS=		png.4::graphics/png
 
-.if exists(${LOCALBASE}/lib/libpisock.a)
-BROKEN=		"You must remove the existing pilot-link installation before compiling this version"
-.endif
-
 .if ${MACHINE_ARCH} == "powerpc"
 PATCH_LIST=		patch-* gcc-*
 .endif
@@ -51,5 +47,22 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--without-java \
 			--without-python \
 			--without-tcl
+
+pre-configure:
+	@if pkg dependencies check pilot-link-\*; then \
+		if pkg dependencies check ${DISTNAME}; then \
+			:; \
+		else \
+			echo 1>&2 "+-------------------"; \
+			echo 1>&2 "| Error: you must remove the existing pilot-link installation"; \
+			echo 1>&2 "| before compiling this version. To fully remove run"; \
+			echo 1>&2 "| these commands as user root"; \
+			echo 1>&2 "|"; \
+			echo 1>&2 "|      pkg_delete -f `pkg_info -e 'pilot-link-*'`"; \
+			echo 1>&2 "|"; \
+			echo 1>&2 "+-------------------"; \
+			exit 1; \
+		fi; \
+	fi
 
 .include <bsd.port.mk>
