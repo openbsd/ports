@@ -1,0 +1,7 @@
+The 1.2pre-v2 release of the Blackdown JDK is based on Sun's JDK
+1.2.  (As of 29 December 2000, Sun is distributing JDK 1.2.2.)  As
+such, it is subject to several security vulnerabilities that we
+cannot correct.  More information on those as well as other known
+Java vulnerabilities can be found at
+<http://java.sun.com/sfaq/chronology.html>.
+

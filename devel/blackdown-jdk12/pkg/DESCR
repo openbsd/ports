@@ -1,0 +1,4 @@
+Blackdown port of Sun's Java Development Kit 1.2, running under
+Linux emulation.
+
+WWW: ${HOMEPAGE}

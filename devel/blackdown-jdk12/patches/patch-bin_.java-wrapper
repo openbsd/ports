@@ -1,0 +1,23 @@
+$OpenBSD: patch-bin_.java-wrapper,v 1.1.1.1 2001/02/26 23:50:26 matt Exp $
+--- bin/.java_wrapper.orig	Thu Dec 28 01:44:45 2000
++++ bin/.java_wrapper	Thu Dec 28 01:44:56 2000
+@@ -31,8 +31,8 @@
+ # Resolve symlinks. See 4152645.
+ while [ -h "$PRG" ]; do
+     ls=`/bin/ls -ld "$PRG"`
+-    link=`/usr/bin/expr "$ls" : '.*-> \(.*\)$'`
+-    if /usr/bin/expr "$link" : '/' > /dev/null; then
++    link=`/bin/expr "$ls" : '.*-> \(.*\)$'`
++    if /bin/expr "$link" : '/' > /dev/null; then
+ 	PRG="$link"
+     else
+ 	PRG="`/usr/bin/dirname $PRG`/$link"
+@@ -63,7 +63,7 @@
+ # Select vm type (if classic vm, also select thread type).
+ unset vmtype
+ unset ttype
+-DEFAULT_THREADS_FLAG=native
++DEFAULT_THREADS_FLAG=green
+ if [ "x$1" = "x-hotspot" ]; then
+     vmtype=hotspot
+     ttype=native_threads
