@@ -1,13 +1,15 @@
-#   $OpenBSD: Makefile,v 1.1.1.1 2001/01/08 10:23:10 danh Exp $
+#   $OpenBSD: Makefile,v 1.2 2001/04/12 15:59:17 bmc Exp $
+
+COMMENT=	"module for pcap access"
 
 DISTNAME=	Net-Pcap-0.04
 PKGNAME=	p5-Net-Pcap-0.04
 CATEGORIES=	net perl5
-NEED_VERSION=	1.348
+NEED_VERSION=	1.394
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.34 2001/03/15 19:38:49 obecian Exp $
+# $OpenBSD: Makefile,v 1.35 2001/04/12 15:59:16 bmc Exp $
+
+COMMENT=	"port scanning large networks"
 
 DISTNAME=	nmap-2.54BETA22
 PKGNAME=	nmap-2.54b22
 CATEGORIES=	net security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.394
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.insecure.org/nmap/
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/26 04:02:35 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/12 15:59:19 bmc Exp $
+
+COMMENT=	"command-line anti-spoofing detection utility"
 
 DISTNAME=	despoof-0.9
 CATEGORIES=	security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.394
 MASTER_SITES=	http://razor.bindview.com/tools/files/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://razor.bindview.com/tools/desc/despoof_readme.html
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/18 02:21:02 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/12 15:59:15 bmc Exp $
+
+COMMENT=	"TCP/IP traffic logging tool"
 
 DISTNAME=	iplog-2.2.3
 CATEGORIES=	net security
-NEED_VERSION=	1.351
+NEED_VERSION=	1.394
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ojnk
 
 HOMEPAGE=	http://ojnk.sourceforge.net
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

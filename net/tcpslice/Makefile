@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/08 09:04:30 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/12 15:59:18 bmc Exp $
+
+COMMENT=	"tool for extracting and gluing pcap (tcpdump) files"
 
 DISTNAME=	tcpslice-1.1a3
 CATEGORIES=	net
-NEED_VERSION=	1.348
+NEED_VERSION=	1.394
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

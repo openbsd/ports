@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2001/03/12 21:46:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/12 15:59:18 bmc Exp $
+
+COMMENT=	"highly flexible sniffer/basic NIDS"
 
 DISTNAME=	snort-1.7
 CATEGORIES=	net security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.394
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= snort
 
 HOMEPAGE=       http://www.snort.org/
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM= 	Yes
 PERMIT_PACKAGE_FTP=   	Yes

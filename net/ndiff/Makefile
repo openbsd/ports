@@ -1,14 +1,16 @@
-#   $OpenBSD: Makefile,v 1.1.1.1 2001/01/17 02:24:23 naddy Exp $
+#   $OpenBSD: Makefile,v 1.2 2001/04/12 15:59:16 bmc Exp $
+
+COMMENT=	"compare two nmap scans and outputs the differences"
 
 DISTNAME=	NDiff-0.04
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.394
 
 HOMEPAGE=	http://www.vinecorp.com/ndiff/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

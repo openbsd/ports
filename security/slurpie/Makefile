@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/12 15:59:20 bmc Exp $
 # $FreeBSD: ports/security/slurpie/Makefile,v 1.4 2000/11/06 00:09:26 obrien Exp $
+
+COMMENT=	"distributed passwd file cracker"
 
 VERSION=	2.0b
 DISTNAME=	slurpie
 PKGNAME=	${DISTNAME}-${VERSION}
 CATEGORIES=	security
-NEED_VERSION=	1.348
+NEED_VERSION=	1.394
 MASTER_SITES=	http://www.jps.net/coati/archives/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.jps.net/coati/archives/slurpie.html
 
-MAINTAINER=	Brian Caswell <bmc@mitre.org>
+MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
