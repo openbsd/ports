@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2004/04/10 21:23:05 jolan Exp $
+# $OpenBSD: Makefile,v 1.76 2004/05/03 19:14:21 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -15,6 +15,7 @@
      SUBDIR += cdrchive
      SUBDIR += cdrdao
 #    SUBDIR += chord
+     SUBDIR += clex
 #    SUBDIR += colorls
 #    SUBDIR += ctk
      SUBDIR += deco
