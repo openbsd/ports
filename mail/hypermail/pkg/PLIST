@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/05/23 02:58:54 form Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/09/03 23:22:50 brad Exp $
 bin/hypermail
 man/man1/hypermail.1
 man/man5/hmrc.5
+share/doc/hypermail/attachments.txt
 share/doc/hypermail/customizing.html
 share/doc/hypermail/hmrc.html
 share/doc/hypermail/hr.yellow.gif
 share/doc/hypermail/hypermail-faq.html
 share/doc/hypermail/hypermail.gif
+share/doc/hypermail/hypermail.html
 @dirrm share/doc/hypermail

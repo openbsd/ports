@@ -1,32 +1,34 @@
+# $OpenBSD: Makefile,v 1.16 2002/09/03 23:22:50 brad Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.15 2002/09/01 18:49:01 mpech Exp $
 
-COMMENT=	"generate a cross-referenced HTML mail archive"
+COMMENT=		"generate a cross-referenced HTML mail archive"
 
-DISTNAME=	hypermail-2.1.4
-CATEGORIES=	mail www
-NEED_VERSION=	1.515
-MASTER_SITES=	http://www.landfield.com/hypermail/dist/ \
-		ftp://ftp.landfield.com/hypermail/ \
-		ftp://ftp.faqs.org/hypermail/
+DISTNAME=		hypermail-2.1.5
+CATEGORIES=		mail www
 
-HOMEPAGE=	http://www.landfield.com/hypermail/
+MASTER_SITES=		http://www.landfield.com/hypermail/dist/ \
+			ftp://ftp.landfield.com/hypermail/ \
+			ftp://ftp.faqs.org/hypermail/
+
+HOMEPAGE=		http://www.landfield.com/hypermail/
+
+MAINTAINER=		Margarida Sequeira <niness@devilness.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/src/pcre
-CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail
+CONFIGURE_ARGS=		--with-htmldir=${PREFIX}/share/doc/hypermail
 
-COPTS=		-DHAVE_VFSCANF
+COPTS=			-DHAVE_VFSCANF
 
-MAKE_FLAGS=	WARNINGS=''
+MAKE_FLAGS=		WARNINGS=''
 
-FLAVORS=	gdbm
+FLAVORS=		gdbm
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gdbm"
@@ -40,7 +42,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/hypermail ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hypermail
 .for f in hr.yellow.gif hypermail.gif hypermail-faq.html customizing.html \
-	hmrc.html
+	hmrc.html hypermail.html customizing.html attachments.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/hypermail
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/docs/hypermail.1 ${PREFIX}/man/man1

@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.1 2002/03/21 10:36:54 form Exp $
---- configure.orig	Thu Mar 21 16:27:46 2002
-+++ configure	Thu Mar 21 16:28:10 2002
-@@ -1993,11 +1993,8 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+$OpenBSD: patch-configure,v 1.2 2002/09/03 23:22:50 brad Exp $
+--- configure.orig	Sun Sep  1 22:47:59 2002
++++ configure	Sun Sep  1 22:51:49 2002
+@@ -1993,11 +1993,9 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
    GDBM_LIB="-lgdbm"
  else
    echo "$ac_t""no" 1>&6
 -fi
 -
--    
+     
    LDFLAGS="$old_LDFLAGS"
 -
 +fi
