@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/18 14:17:04 brad Exp $
 
 COMMENT=		"Desktop wallpaper manager and X11 screensaver"
 
 DISTNAME=		chbg-1.5
 CATEGORIES=     	x11
-NEED_VERSION=		1.489
 
 HOMEPAGE=		http://chbg.sf.net
 EXTRACT_SUFX=		.tgz
@@ -24,6 +23,7 @@ LIB_DEPENDS=		gdk_imlib.19::graphics/imlib
 CONFIGURE_ARGS=		--with-image-library=gdkimlib \
 			--with-imlib1-config=${LOCALBASE}/bin/imlib-config \
 			--with-gtk-config=${LOCALBASE}/bin/gtk-config
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu

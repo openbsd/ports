@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/08 06:03:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/18 14:13:08 brad Exp $
 COMMENT=	"Rampart arcade game clone for X11" 
 
 VERSION=	0.7.2
 DISTNAME=	castle-combat-${VERSION}
-NEED_VERSION=	1.500
 
 CATEGORIES=	games x11
 
@@ -26,7 +25,7 @@ MASTER_SITES=	${HOMEPAGE}
 USE_X11= Yes
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --with-png
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
