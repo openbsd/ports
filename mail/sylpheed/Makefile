@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2003/08/02 11:45:26 couderc Exp $
+# $OpenBSD: Makefile,v 1.45 2003/11/08 17:15:00 sturm Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-VERSION=	0.9.4
+VERSION=	0.9.7
 DISTNAME=	sylpheed-${VERSION}
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.good-day.net
@@ -11,6 +11,7 @@ MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2003/05/20 11:07:04 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/11/08 17:15:00 sturm Exp $
 bin/sylpheed
 share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/da/LC_MESSAGES/sylpheed.mo
@@ -98,3 +98,54 @@ share/sylpheed/manual/ja/sylpheed.sgml
 @dirrm share/sylpheed/faq/de
 @dirrm share/sylpheed/faq
 @dirrm share/sylpheed
+@comment @dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW.Big5
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sr/LC_MESSAGES
+@comment @dirrm share/locale/sr
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hr/LC_MESSAGES
+@comment @dirrm share/locale/hr
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale
