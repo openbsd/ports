@@ -1,0 +1,12 @@
+$OpenBSD: patch-kvoctrain_kvoctrain_kvt-core_kvoctraindoc_cpp,v 1.1.1.1 2002/03/25 16:00:55 espie Exp $
+--- kvoctrain/kvoctrain/kvt-core/kvoctraindoc.cpp.orig	Sat Mar 23 18:52:21 2002
++++ kvoctrain/kvoctrain/kvt-core/kvoctraindoc.cpp	Sat Mar 23 18:52:39 2002
+@@ -112,7 +112,7 @@ using namespace std;
+ #include <fstream.h>
+ #include <strstream.h>
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <float.h>
+ #else
+ #include <values.h>
