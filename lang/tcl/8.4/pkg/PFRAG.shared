@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/11/19 15:47:15 jose Exp $
-lib/libtcl84.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/07 06:13:57 kevlo Exp $
+@lib lib/libtcl84.so.1.0
