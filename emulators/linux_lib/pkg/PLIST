@@ -778,7 +778,6 @@ var/X11R6/lib/rgb.txt
 @exec ln -sf ../../../var/X11R6/lib %D/usr/X11R6/lib/X11
 @unexec rm -f %D/usr/X11R6/lib/X11
 @dirrm bin
-@dirrm dev
 @dirrm etc
 @dirrm lib
 @dirrm sbin
