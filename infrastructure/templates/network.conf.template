@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.9 2000/07/19 21:34:14 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.10 2000/08/02 03:19:24 brad Exp $
 
 #
 #
@@ -52,7 +52,6 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/gnu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
