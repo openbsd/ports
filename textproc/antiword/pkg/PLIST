@@ -1,38 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/12/08 19:53:32 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/08/15 18:51:28 mark Exp $
 bin/antiword
 bin/antiword-kde-dnd.sh
 man/man1/antiword.1
+share/antiword/8859-1.txt
+share/antiword/8859-10.txt
+share/antiword/8859-13.txt
+share/antiword/8859-14.txt
+share/antiword/8859-15.txt
+share/antiword/8859-16.txt
+share/antiword/8859-2.txt
+share/antiword/8859-3.txt
+share/antiword/8859-4.txt
+share/antiword/8859-5.txt
+share/antiword/8859-6.txt
+share/antiword/8859-7.txt
+share/antiword/8859-8.txt
+share/antiword/8859-9.txt
+share/antiword/Default
+share/antiword/Example
+share/antiword/MacRoman.txt
+share/antiword/UTF-8.txt
+share/antiword/Unicode
+share/antiword/cp1250.txt
+share/antiword/cp1251.txt
+share/antiword/cp1252.txt
+share/antiword/cp437.txt
+share/antiword/cp850.txt
+share/antiword/cp852.txt
+share/antiword/fontnames
+share/antiword/fontnames.russian
 share/antiword/hi32-app-antiword.png
 share/antiword/hi48-app-antiword.png
 share/antiword/kde/Antiword.desktop.eu
 share/antiword/kde/Antiword.desktop.us
+share/antiword/koi8-r.txt
+share/antiword/koi8-u.txt
 share/antiword/lo16-app-antiword.png
 share/antiword/lo32-app-antiword.png
-share/antiword/resources/8859-1.txt
-share/antiword/resources/8859-10.txt
-share/antiword/resources/8859-13.txt
-share/antiword/resources/8859-14.txt
-share/antiword/resources/8859-15.txt
-share/antiword/resources/8859-2.txt
-share/antiword/resources/8859-3.txt
-share/antiword/resources/8859-4.txt
-share/antiword/resources/8859-5.txt
-share/antiword/resources/8859-6.txt
-share/antiword/resources/8859-7.txt
-share/antiword/resources/8859-8.txt
-share/antiword/resources/8859-9.txt
-share/antiword/resources/Default
-share/antiword/resources/Example
-share/antiword/resources/MacRoman.txt
-share/antiword/resources/UTF-8.txt
-share/antiword/resources/Unicode
-share/antiword/resources/cp1250.txt
-share/antiword/resources/cp1251.txt
-share/antiword/resources/cp1252.txt
-share/antiword/resources/fontnames
-share/antiword/resources/fontnames.russian
-share/antiword/resources/koi8-r.txt
-share/antiword/resources/roman.txt
+share/antiword/roman.txt
 share/doc/antiword/ChangeLog
 share/doc/antiword/FAQ
 share/doc/antiword/History
@@ -40,6 +45,5 @@ share/doc/antiword/Netscape
 share/doc/antiword/QandA
 share/doc/antiword/ReadMe
 @dirrm share/doc/antiword
-@dirrm share/antiword/resources
 @dirrm share/antiword/kde
 @dirrm share/antiword

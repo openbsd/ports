@@ -1,12 +1,11 @@
-$OpenBSD: patch-antiword_h,v 1.3 2002/01/10 22:48:12 mark Exp $
---- antiword.h.orig	Tue Sep 25 21:36:47 2001
-+++ antiword.h	Thu Jan 10 14:40:59 2002
-@@ -143,7 +143,7 @@
+--- antiword.h~	Tue Aug 13 12:07:24 2002
++++ antiword.h	Tue Aug 13 12:08:43 2002
+@@ -177,7 +177,7 @@
  #define ANTIWORD_DIR		"antiword"
- #define FONTNAMES_FILE		"fontname.txt"
- #else
--#define GLOBAL_ANTIWORD_DIR	"/opt/antiword/share"
-+#define GLOBAL_ANTIWORD_DIR	"/usr/local/share/antiword/resources"
+ #define FONTNAMES_FILE		"fontnames"
+ #else	/* All others */
+-#define GLOBAL_ANTIWORD_DIR	"/usr/share/antiword"
++#define GLOBAL_ANTIWORD_DIR	"/usr/local/share/antiword"
  #define ANTIWORD_DIR		".antiword"
  #define FONTNAMES_FILE		"fontnames"
  #endif /* __dos */
