@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2001/03/22 03:12:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.53 2001/03/22 23:23:08 avsm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -46,6 +46,7 @@
      SUBDIR += mutt:slang,imap,pop
      SUBDIR += nmh
      SUBDIR += p5-Mail-Alias
+     SUBDIR += p5-Mail-Box
      SUBDIR += p5-Mail-IMAPClient
      SUBDIR += p5-Mail-POP3Client
      SUBDIR += p5-Mail-Tools
