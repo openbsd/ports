@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zftp,v 1.7 2004/04/26 18:34:31 lebel Exp $
+@comment $OpenBSD: PLIST-zftp,v 1.1 2004/07/12 19:46:52 lebel Exp $
 man/man1/zshzftpsys.1
 share/zsh/${VERSION}/functions/_zftp
 share/zsh/${VERSION}/functions/zfanon

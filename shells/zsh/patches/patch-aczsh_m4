@@ -1,4 +1,4 @@
-$OpenBSD: patch-aczsh_m4,v 1.2 2003/07/03 12:56:52 lebel Exp $
+$OpenBSD: patch-aczsh_m4,v 1.1 2004/07/12 19:46:52 lebel Exp $
 --- aczsh.m4.orig	Sun Apr 14 01:20:18 2002
 +++ aczsh.m4	Sun Apr 14 01:20:40 2002
 @@ -218,6 +218,8 @@ main()

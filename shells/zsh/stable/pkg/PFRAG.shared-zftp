@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-zftp,v 1.2 2003/07/03 12:56:52 lebel Exp $
-lib/zsh/${VERSION}/zsh/zftp.so

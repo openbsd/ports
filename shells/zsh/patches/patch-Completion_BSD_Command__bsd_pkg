@@ -1,4 +1,4 @@
-$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.4 2003/07/03 12:56:52 lebel Exp $
+$OpenBSD: patch-Completion_BSD_Command__bsd_pkg,v 1.1 2004/07/12 19:46:52 lebel Exp $
 --- Completion/BSD/Command/_bsd_pkg.orig	Tue Oct 15 13:59:37 2002
 +++ Completion/BSD/Command/_bsd_pkg	Fri May 23 10:13:59 2003
 @@ -6,15 +6,19 @@ _bsd_pkg_pkgfiles() {

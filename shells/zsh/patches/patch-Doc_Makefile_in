@@ -1,4 +1,4 @@
-$OpenBSD: patch-Doc_Makefile_in,v 1.4 2003/07/03 12:56:52 lebel Exp $
+$OpenBSD: patch-Doc_Makefile_in,v 1.1 2004/07/12 19:46:52 lebel Exp $
 --- Doc/Makefile.in.orig	Thu Feb 13 06:06:46 2003
 +++ Doc/Makefile.in	Thu May 22 10:01:03 2003
 @@ -37,7 +37,7 @@ INSTALL         = @INSTALL@
