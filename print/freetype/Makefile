@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:56 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/12 16:42:13 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
 CATEGORIES=	print
-NEED_VERSION=	1.218
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ftp.lerc.nasa.gov/ImageMagick/delegates/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/delegates/ \
 		ftp://ftp.kddlabs.co.jp/.6/graphics/freetype/ \
 		ftp://ring.aist.go.jp/pub/graphics/freetype/ \
 		ftp://ftp.unina.it/pub/Unix/pkgs/font/freetype/
-
 
 MAINTAINER=	jasoni@openbsd.org
 
@@ -19,12 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 

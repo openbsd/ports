@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/06/12 16:42:13 brad Exp $
 bin/ftdump
 bin/ftlint
 bin/ftstring
@@ -35,6 +36,5 @@ include/ftxsbit.h
 include/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
-lib/libttf.so.1.3
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 @dirrm include/freetype
