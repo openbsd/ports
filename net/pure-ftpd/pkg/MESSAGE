@@ -2,10 +2,7 @@ In order to start Pure-FTPd at boot-time, add something like this to
 /etc/rc.local:
 
 if [ -x ${PREFIX}/sbin/pure-ftpd ]; then
-  echo Starting pure-ftpd
-  ${PREFIX}/sbin/pure-ftpd -4 -A -B -H -u1000
+  echo Starting Pure-FTPd
+  ${PREFIX}/sbin/pure-ftpd -A -B -H -u1000
 fi
-
-By default, Pure-FTPd will only listen to IPv6 addresses unless you
-explicitely add the -4 switch to the command-line.
 
