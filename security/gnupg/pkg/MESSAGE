@@ -1,0 +1,16 @@
+
+The manpage of GnuPG mentions the need for memory page locking.
+In fact this is not needed as OpenBSD supports swap file encryption.
+
+You can
+
+- enable memory page locking for non-root users if you set the setuid
+  bit for the gpg binary (most likely 'chmod u+s ${PREFIX}/bin/gpg').
+
+- enable swap encryption by setting vm.swapencrypt.enable=1 with
+  config(8). This is recommended.
+
+In the latter case you may want to get rid of the misleading 'using
+insecure memory' warning. Just put 'no-secmem-warning' to your
+~/.gnupg/options file or use gpg with the --no-secmem-warning switch.
+

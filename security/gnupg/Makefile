@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.33 2001/12/09 12:51:40 reinhard Exp $
 
 COMMENT=	'GNU privacy guard - a free PGP replacement'
 
 DISTNAME=	gnupg-1.0.6
 PKGNAME=	${DISTNAME}
 CATEGORIES=	security
-NEED_VERSION=	1.419
+NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/gnupg/ \
@@ -18,21 +18,17 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/
 
-MASTER_SITES0=	ftp://ftp.sunet.se/pub7/security/tools/crypt/gcrypt/contrib/ \
-	ftp://ftp.netsw.org/crypto/systems/gnupg/rsaidea/ \
-	ftp://ftp.sunsite.auc.dk/afs/mirror/cryptoarchive/mirrors/ftp.gnupg.org/pub/gcrypt/contrib/ \
-	ftp://ftp.uni-passau.de/mount/common.lib.archive.unix/Network/mail/GnuPG/ \
-	ftp://ftp.ruhr-uni-bochum.de/mirrors/ftp.gnupg.org/pub/gcrypt/contrib/ \
-	ftp://ftp.csua.berkeley.edu/pub/.1/ports/distfiles/gnupg-idea/ \
-	ftp://ftp.hacktic.nl/pub/crypto/mirror/ftp.gnupg.org/contrib/ \
+MASTER_SITES0=	ftp://ftp.ruhr-uni-bochum.de/mirrors/ftp.gnupg.org/pub/gcrypt/contrib/ \
 	ftp://ftp.uni-bielefeld.de/pub/crypto/replay/mirror/ftp.pgp.net/gnupgp/contrib/ \
-	ftp://ftp.fh-schmalkalden.de/pub/dfncert/crypt/gcrypt/contrib/ 
+	ftp://ftp.hacktic.nl/pub/crypto/mirror/ftp.gnupg.org/contrib/ \
+	ftp://ftp.fh-schmalkalden.de/pub/dfncert/crypt/gcrypt/contrib/
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://www.gnupg.org/
 
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
+MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -42,6 +38,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/scripts
 CONFIGURE_ARGS=	--with-included-gettext
+
+REGRESS_TARGET=	check
 
 FLAVORS=	idea
 FLAVOR?=
