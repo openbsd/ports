@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2001/08/14 20:31:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.65 2001/08/15 06:48:45 shell Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -52,6 +52,7 @@
 #    SUBDIR += p5-CGI_Lite
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-HTML-Base
+     SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Mason
