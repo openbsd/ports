@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/30 02:10:36 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/16 21:31:13 espie Exp $
 #
 
 DISTNAME=	kterm-6.2.0
@@ -22,16 +22,18 @@ MAINTAINER=	ports@openbsd.org
 
 USE_IMAKE=	Yes
 FAKE=		Yes
+MAKE_FLAGS=	CDEBUGFLAGS=-O2
 
-FLAVORS=xaw3d
+FLAVORS=xaw3d tek
 FLAVOR?=
-.if ${FLAVOR:L} == "xaw3d"
+.if ${FLAVOR:L:Mxaw3d}
 LIB_DEPENDS=	Xaw3d.6.1::x11/Xaw3d
 MAKE_ENV=EXTRA_DEFINES=-DKTERM_XAW3D
-.elif ${FLAVOR:L} != ""
-.BEGIN:
-	@echo >&2 "Unknown flavor: ${FLAVOR}"
-	@exit 1
+.endif
+
+.if ${FLAVOR:L:Mtek}
+pre-configure:
+	perl -pi.bak -e 's/define KTERM_NOTEK/undef KTERM_NOTEK/;' ${WRKSRC}/kterm.h
 .endif
 
 .include <bsd.port.mk>
