@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 21:25:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/04/23 18:55:29 jakob Exp $
 
 COMMENT=	"signal or reprioritize specified processes"
 
-DISTNAME=		skill-4.0
+VERSION=		4.1
+DISTNAME=		skill-${VERSION}
 CATEGORIES=     	sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 NEED_VERSION=		1.515
 
-PERMIT_PACKAGE_CDROM=	no
+PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	no
+PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=		ftp://jaguar.cs.utah.edu/pub/skill/
+MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'
