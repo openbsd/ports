@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/15 04:12:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/10/17 04:41:20 marcm Exp $
 bin/activation-client
 bin/bonobo-activation-run-query
 bin/bonobo-slay
@@ -80,10 +80,10 @@ lib/pkgconfig/libbonobo-2.0.pc
 libexec/bonobo-activation-server
 @man man/man1/bonobo-activation-server.1
 sbin/bonobo-activation-sysconf
-@sample ${SYSCONFDIR}/gnome/
-@sample ${SYSCONFDIR}/gnome/bonobo-activation/
 share/examples/libbonobo/
+@sample ${SYSCONFDIR}/gnome/
 share/examples/libbonobo/bonobo-activation/
+@sample ${SYSCONFDIR}/gnome/bonobo-activation/
 share/examples/libbonobo/bonobo-activation/bonobo-activation-config.xml
 @sample ${SYSCONFDIR}/gnome/bonobo-activation/bonobo-activation-config.xml
 share/gtk-doc/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/16 13:01:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/10/17 04:41:20 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -29,16 +29,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	gnu old
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/control-center2
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
-FAKE_FLAGS=sysconfdir=${TRUEPREFIX}/share/examples/controlcenter2 \
-	DESTDIR=${WRKINST}
 
-# Work around a really dumb icon issue...
-#pre-build:
-#	cp ${WRKSRC}/capplets/desktop-links/Advanced.directory.in.in ${WRKSRC}/capplets/desktop-links/Advanced.directory.in
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/controlcenter2; \
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/controlcenter2/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 04:12:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/10/17 04:41:20 marcm Exp $
 bin/gnome-open
 include/libgnome-2.0/
 include/libgnome-2.0/libgnome/
@@ -27,16 +27,16 @@ lib/libgnome-2.a
 lib/libgnome-2.la
 lib/pkgconfig/
 lib/pkgconfig/libgnome-2.0.pc
-@sample ${CONFDIR}/
 share/examples/libgnome/
+@sample ${SYSCONFDIR}/gnome/
 share/examples/libgnome/sound/
-@sample ${CONFDIR}/sound/
+@sample ${SYSCONFDIR}/gnome/sound/
 share/examples/libgnome/sound/events/
-@sample ${CONFDIR}/sound/events/
+@sample ${SYSCONFDIR}/gnome/sound/events/
 share/examples/libgnome/sound/events/gnome-2.soundlist
-@sample ${CONFDIR}/sound/events/gnome-2.soundlist
+@sample ${SYSCONFDIR}/gnome/sound/events/gnome-2.soundlist
 share/examples/libgnome/sound/events/gtk-events-2.soundlist
-@sample ${CONFDIR}/sound/events/gtk-events-2.soundlis
+@sample ${SYSCONFDIR}/gnome/sound/events/gtk-events-2.soundlis
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libgnome/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/10/09 14:46:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/17 04:41:20 marcm Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
@@ -27,20 +27,17 @@ LIB_DEPENDS=		esd.2.26::audio/esound \
 			audiofile::devel/libaudiofile \
 			xslt.1::textproc/libxslt
 
-CONFDIR=		${SYSCONFDIR}/gnome
-SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
 CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/libgnome
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-SUBST_VARS=		CONFDIR
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libgnome; \
-	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/libgnome/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/libgnome/
 
 .include <bsd.port.mk>

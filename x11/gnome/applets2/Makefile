@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/09/15 04:12:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/17 04:41:19 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
@@ -46,17 +46,15 @@ MULTI_PACKAGES+=	-battstat
 .endif
 SUBPACKAGE?=
 
-CONFDIR=		${SYSCONFDIR}/gnome
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu old
-CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
 CONFIGURE_ARGS+=	--disable-schemas-install
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-applets2
 CONFIGURE_ARGS+=	--disable-gstreamer
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-SUBST_VARS=		CONFDIR
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-battstat"
@@ -70,6 +68,6 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-applets2; \
-	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/gnome-applets2/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/gnome-applets2/
 
 .include <bsd.port.mk>

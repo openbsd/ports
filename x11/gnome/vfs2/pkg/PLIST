@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/09/15 04:12:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/10/17 04:41:20 marcm Exp $
 bin/gnomevfs-cat
 bin/gnomevfs-copy
 bin/gnomevfs-info
 bin/gnomevfs-ls
 bin/gnomevfs-mkdir
+doc/
 include/gnome-vfs-2.0/
 include/gnome-vfs-2.0/libgnomevfs/
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-application-registry.h
@@ -122,34 +123,34 @@ lib/vfs/2.0/extfs/trpm
 lib/vfs/2.0/extfs/zip
 lib/vfs/2.0/extfs/zoo
 libexec/gnome-vfs-daemon
-@sample ${CONFDIR}/
 share/examples/gnome-vfs2/
+@sample ${SYSCONFDIR}/gnome/
 share/examples/gnome-vfs2/gnome-vfs-2.0/
-@sample ${CONFDIR}/gnome-vfs-2.0/
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/
-@sample ${CONFDIR}/gnome-vfs-2.0/modules/
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/cdda-module.conf
-@sample ${CONFDIR}/gnome-vfs-2.0/modules/cdda-module.conf
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/cdda-module.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/default-modules.conf
-@sample ${CONFDIR}/gnome-vfs-2.0/modules/default-modules.conf
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/default-modules.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/ssl-modules.conf
-@sample ${CONFDIR}/gnome-vfs-2.0/modules/ssl-modules.conf
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/ssl-modules.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/applications-all-users.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/favorites.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/favorites.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/favorites.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/network.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/network.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/network.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/preferences-all-users.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/server-settings.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/start-here.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/start-here.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/start-here.vfolder-info
 share/examples/gnome-vfs2/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
-@sample ${CONFDIR}/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/vfolders/system-settings.vfolder-info
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gnome-vfs-2.0/

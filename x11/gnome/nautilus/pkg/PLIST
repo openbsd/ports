@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/09/15 04:12:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/10/17 04:41:20 marcm Exp $
 bin/nautilus
 bin/nautilus-file-management-properties
 include/libnautilus/
@@ -55,30 +55,30 @@ share/applications/network-scheme.desktop
 share/control-center-2.0/
 share/control-center-2.0/capplets/
 share/control-center-2.0/capplets/nautilus-file-management-properties.desktop
-@sample ${CONFDIR}/
-@sample ${CONFDIR}/X11/
-@sample ${CONFDIR}/X11/serverconfig/
-@sample ${CONFDIR}/X11/starthere/
-@sample ${CONFDIR}/X11/sysconfig/
 share/examples/nautilus/
+@sample ${SYSCONFDIR}/gnome/
 share/examples/nautilus/X11/
+@sample ${SYSCONFDIR}/gnome/X11/
 share/examples/nautilus/X11/serverconfig/
+@sample ${SYSCONFDIR}/gnome/X11/serverconfig/
 share/examples/nautilus/X11/serverconfig/.directory
-@sample ${CONFDIR}/X11/serverconfig/.directory
+@sample ${SYSCONFDIR}/gnome/X11/serverconfig/.directory
 share/examples/nautilus/X11/starthere/
+@sample ${SYSCONFDIR}/gnome/X11/starthere/
 share/examples/nautilus/X11/starthere/.directory
-@sample ${CONFDIR}/X11/starthere/.directory
+@sample ${SYSCONFDIR}/gnome/X11/starthere/.directory
 share/examples/nautilus/X11/starthere/applications.desktop
-@sample ${CONFDIR}/X11/starthere/applications.desktop
+@sample ${SYSCONFDIR}/gnome/X11/starthere/applications.desktop
 share/examples/nautilus/X11/starthere/preferences.desktop
-@sample ${CONFDIR}/X11/starthere/preferences.desktop
+@sample ${SYSCONFDIR}/gnome/X11/starthere/preferences.desktop
 share/examples/nautilus/X11/starthere/serverconfig.desktop
-@sample ${CONFDIR}/X11/starthere/serverconfig.desktop
+@sample ${SYSCONFDIR}/gnome/X11/starthere/serverconfig.desktop
 share/examples/nautilus/X11/starthere/sysconfig.desktop
-@sample ${CONFDIR}/X11/starthere/sysconfig.desktop
+@sample ${SYSCONFDIR}/gnome/X11/starthere/sysconfig.desktop
 share/examples/nautilus/X11/sysconfig/
+@sample ${SYSCONFDIR}/gnome/X11/sysconfig/
 share/examples/nautilus/X11/sysconfig/.directory
-@sample ${CONFDIR}/X11/sysconfig/.directory
+@sample ${SYSCONFDIR}/gnome/X11/sysconfig/.directory
 share/gnome-2.0/
 share/gnome-2.0/ui/
 share/gnome-2.0/ui/nautilus-clipboard-ui.xml
@@ -97,98 +97,52 @@ share/idl/nautilus-view-component.idl
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/nautilus.mo
-share/locale/am/
-share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/nautilus.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/nautilus.mo
-share/locale/az/
-share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/nautilus.mo
-share/locale/be/
-share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/nautilus.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
-share/locale/cy/
-share/locale/cy/LC_MESSAGES/
 share/locale/cy/LC_MESSAGES/nautilus.mo
 share/locale/da/LC_MESSAGES/nautilus.mo
 share/locale/de/LC_MESSAGES/nautilus.mo
 share/locale/el/LC_MESSAGES/nautilus.mo
-share/locale/en_CA/
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/nautilus.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/nautilus.mo
 share/locale/es/LC_MESSAGES/nautilus.mo
 share/locale/et/LC_MESSAGES/nautilus.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/nautilus.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
-share/locale/ga/
-share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/nautilus.mo
 share/locale/gl/LC_MESSAGES/nautilus.mo
-share/locale/gu/
-share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/nautilus.mo
 share/locale/he/LC_MESSAGES/nautilus.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/nautilus.mo
 share/locale/hr/LC_MESSAGES/nautilus.mo
 share/locale/hu/LC_MESSAGES/nautilus.mo
 share/locale/id/LC_MESSAGES/nautilus.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/nautilus.mo
 share/locale/it/LC_MESSAGES/nautilus.mo
 share/locale/ja/LC_MESSAGES/nautilus.mo
 share/locale/ko/LC_MESSAGES/nautilus.mo
-share/locale/li/
-share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/nautilus.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
 share/locale/mi/
 share/locale/mi/LC_MESSAGES/
 share/locale/mi/LC_MESSAGES/nautilus.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/nautilus.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/nautilus.mo
-share/locale/mn/
-share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/nautilus.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/nautilus.mo
-share/locale/ne/
-share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
 share/locale/nn/LC_MESSAGES/nautilus.mo
 share/locale/no/LC_MESSAGES/nautilus.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/nautilus.mo
 share/locale/pl/LC_MESSAGES/nautilus.mo
 share/locale/pt/LC_MESSAGES/nautilus.mo
@@ -197,32 +151,18 @@ share/locale/ro/LC_MESSAGES/nautilus.mo
 share/locale/ru/LC_MESSAGES/nautilus.mo
 share/locale/sk/LC_MESSAGES/nautilus.mo
 share/locale/sl/LC_MESSAGES/nautilus.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/nautilus.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/nautilus.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/nautilus.mo
 share/locale/sr@ije/
 share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/nautilus.mo
-share/locale/tk/
-share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
 share/locale/uk/LC_MESSAGES/nautilus.mo
-share/locale/vi/
-share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/nautilus.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/nautilus.mo
 share/locale/yi/
 share/locale/yi/LC_MESSAGES/

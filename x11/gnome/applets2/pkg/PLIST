@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/15 04:12:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/10/17 04:41:19 marcm Exp $
 bin/gkb_xmmap
 bin/gnome-keyboard-layout
 bin/gswitchit-plugins-capplet
@@ -38,11 +38,11 @@ libexec/modemlights_applet2
 libexec/multiload-applet-2
 libexec/stickynotes_applet
 libexec/wireless-applet
-@sample ${CONFDIR}/
-@sample ${CONFDIR}/sound/
-@sample ${CONFDIR}/sound/events/
+@sample ${SYSCONFDIR}/gnome/
+@sample ${SYSCONFDIR}/gnome/sound/
+@sample ${SYSCONFDIR}/gnome/sound/events/
 share/examples/gnome-applets2/sound/events/mailcheck.soundlist
-@sample ${CONFDIR}/sound/events/mailcheck.soundlist
+@sample ${SYSCONFDIR}/gnome/sound/events/mailcheck.soundlist
 share/gen_util/
 share/gen_util/mini-commander.glade
 share/geyes/
@@ -1273,7 +1273,6 @@ share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
-share/omf/gnome-applets/
 share/omf/gnome-applets/accessx-status-C.omf
 share/omf/gnome-applets/accessx-status-eu.omf
 share/omf/gnome-applets/char-palette-C.omf
@@ -1579,7 +1578,6 @@ share/pixmaps/wireless-applet/signal-61-80.png
 share/pixmaps/wireless-applet/signal-81-100.png
 share/pixmaps/wireless-applet/wireless-applet.png
 share/schemas/
-share/schemas/gnome-applets2/
 share/schemas/gnome-applets2/charpick.schemas
 share/schemas/gnome-applets2/drivemount.schemas
 share/schemas/gnome-applets2/geyes.schemas

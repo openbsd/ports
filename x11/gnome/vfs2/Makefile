@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/17 04:41:20 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
@@ -31,21 +31,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFDIR=		${SYSCONFDIR}/gnome
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
 CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ARGS+=	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/gnome-vfs2
 CONFIGURE_ARGS+=	--disable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-SUBST_VARS=		CONFDIR
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs2; \
-	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/gnome-vfs2/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/gnome-vfs2/
 
 .include <bsd.port.mk>

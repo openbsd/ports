@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:23 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/10/17 04:41:20 marcm Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
@@ -125,14 +125,15 @@ share/control-center-2.0/xrdb/Motif.ad
 share/control-center-2.0/xrdb/Tk.ad
 share/control-center-2.0/xrdb/Xaw.ad
 share/examples/controlcenter2/
+@sample ${SYSCONFDIR}/gnome/
 share/examples/controlcenter2/gnome-vfs-2.0/
-@sample ${SYSCONFDIR}/gnome-vfs-2.0/
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/
 share/examples/controlcenter2/gnome-vfs-2.0/modules/
-@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/
 share/examples/controlcenter2/gnome-vfs-2.0/modules/font-method.conf
-@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/font-method.conf
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/font-method.conf
 share/examples/controlcenter2/gnome-vfs-2.0/modules/theme-method.conf
-@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/theme-method.conf
+@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/theme-method.conf
 share/gnome/
 share/gnome-2.0/
 share/gnome-2.0/ui/

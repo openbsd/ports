@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/17 04:41:20 marcm Exp $
 
 COMMENT=		"GNOME component and compound document system" 
 
@@ -25,19 +25,16 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 LIB_DEPENDS=		ORBit-2,ORBitCosNaming-2::devel/ORBit2 \
 			xml2.6::textproc/libxml
 
-CONFDIR=		${SYSCONFDIR}/gnome
-SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--sysconfdir="${CONFDIR}"
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
 CONFIGURE_ARGS+=	--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-SUBST_VARS=		CONFDIR
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libbonobo; \
-	cp -Rp ${WRKINST}/${CONFDIR}/* ${PREFIX}/share/examples/libbonobo/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/libbonobo/
 
 .include <bsd.port.mk>
