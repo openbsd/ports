@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.32 2005/02/07 23:03:48 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.33 2005/02/21 00:40:18 brad Exp $
 @conflict postfix-*
-@newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
 @newgroup _postfix:507
 @newgroup _postdrop:508
+@newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
 @unexec ${PREFIX}/sbin/postfix stop
 @unexec ${PREFIX}/sbin/postfix-disable
 @unexec rm -f /etc/mailer.conf.postfix
@@ -54,6 +54,7 @@ libexec/postfix/virtual
 @man man/man5/body_checks.5
 @man man/man5/canonical.5
 @man man/man5/cidr_table.5
+@man man/man5/generic.5
 @man man/man5/header_checks.5
 @man man/man5/ldap_table.5
 @man man/man5/master.5
@@ -126,6 +127,7 @@ share/doc/postfix/html/DEBUG_README.html
 share/doc/postfix/html/ETRN_README.html
 share/doc/postfix/html/FILTER_README.html
 share/doc/postfix/html/INSTALL.html
+share/doc/postfix/html/IPV6_README.html
 share/doc/postfix/html/LDAP_README.html
 share/doc/postfix/html/LINUX_README.html
 share/doc/postfix/html/LMTP_README.html
@@ -165,6 +167,7 @@ share/doc/postfix/html/defer.8.html
 share/doc/postfix/html/discard.8.html
 share/doc/postfix/html/error.8.html
 share/doc/postfix/html/flush.8.html
+share/doc/postfix/html/generic.5.html
 share/doc/postfix/html/header_checks.5.html
 share/doc/postfix/html/index.html
 share/doc/postfix/html/ldap_table.5.html
@@ -231,6 +234,7 @@ share/doc/postfix/readme/DEBUG_README
 share/doc/postfix/readme/ETRN_README
 share/doc/postfix/readme/FILTER_README
 share/doc/postfix/readme/INSTALL
+share/doc/postfix/readme/IPV6_README
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LMTP_README
@@ -266,9 +270,11 @@ share/examples/postfix/TLS_LICENSE
 share/examples/postfix/access
 share/examples/postfix/aliases
 share/examples/postfix/canonical
+share/examples/postfix/generic
 share/examples/postfix/header_checks
 share/examples/postfix/main.cf
 share/examples/postfix/main.cf.default
+share/examples/postfix/makedefs.out
 share/examples/postfix/master.cf
 share/examples/postfix/post-install
 share/examples/postfix/postfix-files
