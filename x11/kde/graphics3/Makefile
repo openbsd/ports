@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/12/07 20:19:14 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2003/12/08 02:17:43 brad Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -23,7 +23,7 @@ LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
 LIB_DEPENDS+=	glut::graphics/glut
 RUN_DEPENDS+=	::graphics/povray
 .  elif ${SUBPACKAGE} == ""
-RUN_DEPENDS+= :ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS+=	Imlib::graphics/imlib \
 		ungif::graphics/libungif \
 		glut::graphics/glut
@@ -34,9 +34,5 @@ LIB_DEPENDS+=Imlib::graphics/imlib \
 	glut::graphics/glut \
 	gphoto2,gphoto2_port::graphics/libgphoto2
 .endif
-
-
-
-#CONFIGURE_ARGS+=--without-kamera
 
 .include <bsd.port.mk>
