@@ -1,5 +1,6 @@
 bin/unzip
 @exec ln -sf %f %B/zipinfo
+@unexec rm -f %B/zipinfo
 bin/funzip
 bin/unzipsfx
 bin/zipgrep
@@ -11,3 +12,4 @@ man/man1/zipinfo.1
 share/doc/unzip/README
 share/doc/unzip/COPYING
 share/doc/unzip/Where
+@dirrm share/doc/unzip
