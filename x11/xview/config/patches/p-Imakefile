@@ -1,5 +1,14 @@
---- Imakefile.orig	Tue Apr  4 22:05:30 2000
-+++ Imakefile	Tue Apr  4 22:05:53 2000
+--- Imakefile.orig	Sun Jun 26 03:47:22 1994
++++ Imakefile	Fri Sep  8 10:48:05 2000
+@@ -20,7 +20,7 @@ CFLAGS = -O 
+             FONTSDIR = 
+ #endif
+           CLIENTSDIR = clients
+-             SUBDIRS = $(COREDIRS) $(FONTSDIR) 
++             SUBDIRS ?= $(COREDIRS) $(FONTSDIR) 
+ /**/# even if these subdirs are not included in the general rules, be sure to
+ /**/# do a make clean in them.
+        CLEAN_SUBDIRS = clients contrib doc fonts bitmaps images lib misc util
 @@ -43,7 +43,7 @@ install::
  		echo "deleting temporary build directory $(BUILDINCDIR) ..."; \
  		$(RM) -r $(BUILDINCDIR); \
