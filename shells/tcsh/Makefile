@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2002/01/18 17:21:14 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2002/07/24 01:12:31 brad Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
-DISTNAME=	${PKGNAME:R}
-PKGNAME=	tcsh-6.10.00
+DISTNAME=	tcsh-6.12.00
 CATEGORIES=	shells
-NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -25,8 +23,6 @@ CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
 ALL_TARGET=	all catalogs
-
-WRKDIST=	${WRKDIR}/tcsh-6.10.00
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh
