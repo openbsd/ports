@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/06 16:06:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/11/13 01:48:10 alek Exp $
+@newgroup _xcept:522
+@newuser _xcept:522:_xcept:daemon:xcept account:/nonexistent:/bin/sh
 bin/xcept
 lib/xcept/
 lib/xcept/Bundesbahn.xcept
@@ -16,4 +18,6 @@ libexec/ceptd
 @man man/man8/ceptd.8
 share/cept/
 share/cept/cept.init.sample
+@sample ${SYSCONFDIR}/cept.init
 share/cept/cept.users.sample
+@sample ${SYSCONFDIR}/cept.users

@@ -1,14 +1,8 @@
-After installing this package, you must create
-${SYSCONFDIR}/cept.init ${SYSCONFDIR}/cept.users files.
-
-Samples exist in ${PREFIX}/share/cept.
-
-You must also add
+After installing this package, you must add
 
 xcept		20005/tcp #XCEPT
 
-to /etc/services, add an '_xcept' user in your system with uid 522
-and put the user in group 'dialer', then put the line
+to /etc/services, then put the line
 
 xcept	stream	tcp	nowait	_xcept	${PREFIX}/libexec/ceptd ceptd
 
