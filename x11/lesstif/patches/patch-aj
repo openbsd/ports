@@ -1,11 +1,11 @@
---- doc/www.lesstif.org/Makefile.in.orig	Tue Jul 13 12:21:23 1999
-+++ doc/www.lesstif.org/Makefile.in	Wed Jul 14 22:53:26 1999
-@@ -121,7 +121,7 @@
+--- doc/www.lesstif.org/Makefile.in.orig	Sun Sep 12 21:05:32 1999
++++ doc/www.lesstif.org/Makefile.in	Sun Sep 12 21:06:16 1999
+@@ -123,7 +123,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
- # poluting /usr/local for default installs.
+ # polluting /usr/local for default installs.
  #
 -rootdir = $(exec_prefix)/LessTif/doc
 +rootdir = $(pkgdatadir)/doc/html
- root_DATA = COPYING.LIB.html FAQ.html apps.html bug-reporting.html 		bugs.html button.html cdrom.html core.html current.html 		cvs.html download.html index.html links.html lists.html 		mirrors.html platforms.html release-policy.html 		test_policy.html test_summary.html testers.html 		versions.html web_button.html known.html help.html
+ root_DATA = COPYING.LIB.html FAQ.html apps.html bug-reporting.html 		bugs.html button.html cdrom.html core.html current.html 		cvs.html download.html index.html links.html lists.html 		mirrors.html platforms.html release-policy.html 		test_policy.html test_summary.html testers.html 		versions.html web_button.html known.html help.html 		Advocacy.html Xbae.html Xlt.html
  
  
