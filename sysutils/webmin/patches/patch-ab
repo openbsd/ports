@@ -1,0 +1,10 @@
+--- os_list.txt.orig	Thu Oct 26 20:31:50 2000
++++ os_list.txt	Thu Oct 26 20:32:32 2000
+@@ -82,6 +82,7 @@
+ OpenBSD				2.5	openbsd		2.5	$uname =~ /OpenBSD.*\s2\.5/i
+ OpenBSD				2.6	openbsd		2.6	$uname =~ /OpenBSD.*\s2\.6/i
+ OpenBSD				2.7	openbsd		2.7	$uname =~ /OpenBSD.*\s2\.7/i
++OpenBSD				2.8	openbsd		2.8	$uname =~ /OpenBSD.*\s2\.8/i
+ BSDI				3.0	freebsd		2.2
+ BSDI				3.1	freebsd		2.2
+ BSDI				4.0	freebsd		3.0

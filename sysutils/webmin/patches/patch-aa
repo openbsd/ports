@@ -1,5 +1,5 @@
---- setup.sh.orig	Sat Apr 15 17:14:32 2000
-+++ setup.sh	Thu Apr 27 19:33:49 2000
+--- setup.sh.orig	Tue Sep 12 06:36:17 2000
++++ setup.sh	Thu Oct 26 20:32:57 2000
 @@ -34,12 +34,12 @@
  echo "Unless you want to run multiple versions of Webmin at the same time"
  echo "you can just accept the defaults."
@@ -15,7 +15,7 @@
  fi
  abspath=`echo $config_dir | grep "^/"`
  if [ "$abspath" = "" ]; then
-@@ -203,14 +203,11 @@
+@@ -214,14 +214,11 @@
  
  	# Ask for operating system type
  	echo "***********************************************************************"
@@ -28,9 +28,9 @@
 -		rm -f /tmp/$$.os
 -	fi
 +	os_type='openbsd'
-+	os_version='2.7'
++	os_version='2.8'
 +	real_os_type='OpenBSD'
-+	real_os_version='2.7'
++	real_os_version='2.8'
 +
  	echo "Operating system name:    $real_os_type"
  	echo "Operating system version: $real_os_version"
