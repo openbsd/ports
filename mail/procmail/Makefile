@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:25 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/02/23 17:16:21 brad Exp $
 
-DISTNAME=       procmail-3.15
+DISTNAME=	procmail-3.15.1
 CATEGORIES=	mail
-NEED_VERSION=	1.333
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.psg.com/pub/unix/procmail/ \
 		ftp://ftp.ucsb.edu/pub/mirrors/procmail/ \
@@ -18,19 +18,25 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.ring.gr.jp/pub/net/mail/procmail/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/procmail/ 
 
-MAINTAINER=     Bruno Rohee <rohee@openbsd.org>
+HOMEPAGE=	http://www.procmail.org/
+
+MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.procmail.org
+MAKE_FLAGS=	BASENAME="${PREFIX}" CFLAGS0="${CFLAGS}" LOCKINGTEST="110"
 
-SAMPLESDIR=	${PREFIX}/share/examples/procmail
-
-post-install:
-	$(INSTALL_DATA_DIR) ${SAMPLESDIR}
-	$(INSTALL_DATA) ${WRKSRC}/examples/* ${SAMPLESDIR}
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/procmail
+	cd ${WRKBUILD}/new && \
+	${INSTALL_PROGRAM} formail lockfile procmail ${PREFIX}/bin && \
+	${INSTALL_SCRIPT} mailstat ${PREFIX}/bin && \
+	${INSTALL_MAN} formail.1 lockfile.1 procmail.1 ${PREFIX}/man/man1 && \
+	${INSTALL_MAN} procmailex.5 procmailrc.5 procmailsc.5 ${PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/examples/* \
+		${PREFIX}/share/examples/procmail
 
 .include <bsd.port.mk>
