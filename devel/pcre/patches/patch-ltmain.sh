@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Wed Jan  2 10:57:58 2002
-+++ ltmain.sh	Mon Mar 11 11:09:26 2002
-@@ -1021,15 +1021,18 @@ compiler."
+--- ltmain.sh.orig	2003-12-10 17:45:44.000000000 +0100
++++ ltmain.sh	2004-01-14 18:20:00.000000000 +0100
+@@ -1051,15 +1051,18 @@ compiler."
  	;;
  
        -l*)
@@ -24,9 +24,9 @@
 +	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
  	    ;;
- 	  esac
- 	fi
-@@ -1037,6 +1040,17 @@ compiler."
+ 	  *-*-openbsd* | *-*-freebsd*)
+ 	    # Do not include libc due to us having libc/libc_r.
+@@ -1078,6 +1081,17 @@ compiler."
  	continue
  	;;
  
@@ -44,7 +44,7 @@
        -module)
  	module=yes
  	continue
-@@ -2405,6 +2419,9 @@ compiler."
+@@ -2472,6 +2486,9 @@ compiler."
  	    # Rhapsody C library is in the System framework
  	    deplibs="$deplibs -framework System"
  	    ;;
@@ -54,7 +54,7 @@
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
-@@ -4412,40 +4429,6 @@ relink_command=\"$relink_command\""
+@@ -4531,40 +4548,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  

@@ -1,6 +1,6 @@
---- configure.orig	Wed Jan  2 10:57:58 2002
-+++ configure	Mon Mar 11 11:09:26 2002
-@@ -3853,7 +3853,14 @@ old_postuninstall_cmds=
+--- configure.orig	2003-12-10 17:45:44.000000000 +0100
++++ configure	2004-01-14 18:20:00.000000000 +0100
+@@ -4175,7 +4175,14 @@ old_postuninstall_cmds=
  
  if test -n "$RANLIB"; then
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
@@ -16,7 +16,7 @@
  fi
  
  # Allow CC to be a program name with arguments.
-@@ -4439,6 +4446,9 @@ cygwin* | mingw* | pw32* )
+@@ -4785,6 +4792,9 @@ cygwin* | mingw* | pw32* )
      with_gnu_ld=no
    fi
    ;;
@@ -26,7 +26,7 @@
  
  esac
  
-@@ -4843,10 +4853,21 @@ else
+@@ -5199,10 +5209,21 @@ else
      ;;
  
    openbsd*)
@@ -50,7 +50,7 @@
      ;;
  
    os2*)
-@@ -5339,9 +5360,23 @@ newsos6)
+@@ -5695,9 +5716,23 @@ newsos6)
  
  openbsd*)
    version_type=sunos
