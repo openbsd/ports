@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/04/13 21:27:01 xsa Exp $
 #
 # Pre/post-installation setup of junkbuster
 
@@ -19,6 +19,7 @@ do_notice_conf()
     echo "| been changed.  You may want to compare them to the current samples in"
     echo "| $SAMPLE_CONFIG_DIR, and update your configuration"
     echo "| files as needed."
+    echo "+---------------"
     echo
 }
 
@@ -32,6 +33,7 @@ do_install_conf()
     echo "| in $CONFIG_DIR/junkbuster."
     echo "|"
     echo "| Please view these files and change the configuration to meet your needs."
+    echo "+---------------"
     echo
 }
 

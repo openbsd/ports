@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/22 17:42:11 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/13 21:27:01 xsa Exp $
 libexec/jesred
 share/doc/jesred/README
 share/examples/jesred/jesred.conf.sample
@@ -6,3 +6,4 @@ share/examples/jesred/redirect.acl.sample
 share/examples/jesred/redirect.rules.sample
 @dirrm share/examples/jesred
 @dirrm share/doc/jesred
+@extraunexec rm -rf ${SYSCONFDIR}/jesred

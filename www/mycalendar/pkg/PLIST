@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/11/14 03:16:13 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/13 21:27:02 xsa Exp $
 cgi-bin/calendar/LICENSE
 cgi-bin/calendar/README
 cgi-bin/calendar/README.MAKING-PRINTABLE-CALENDARS
@@ -14,3 +14,4 @@ cgi-bin/calendar/protected/update.cgi
 cgi-bin/calendar/sitevariables.pl
 cgi-bin/calendar/template.html
 @dirrm cgi-bin/calendar/protected
+@extraunexec rm -rf /var/www/cgi-bin/calendar

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2003/11/18 00:20:31 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.21 2004/04/13 21:27:01 xsa Exp $
 @pkgcfl chipmunk-*
 bin/analog
 share/analog/anlgform.html
@@ -379,3 +379,5 @@ share/examples/analog/xferlog.cfg
 @dirrm share/analog/lang
 @dirrm share/analog/images
 @dirrm share/analog
+@cwd ${SYSCONFDIR}
+@extra analog.cfg

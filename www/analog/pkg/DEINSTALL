@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2001/02/27 03:48:50 form Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2004/04/13 21:27:01 xsa Exp $
 #
 # analog deinstallation
 
@@ -23,7 +23,7 @@ for img in ${IMAGES}; do rm -f /var/www/htdocs/analog-images/${img}; done
 rmdir /var/www/htdocs/analog-images
 rm -f /var/www/cgi-bin/anlgform.pl
 
-if [ -f ${CONFIG_FILE} ]; then
+if [ ${PKG_DELETE_EXTRA} != Yes -a -f ${CONFIG_FILE} ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
