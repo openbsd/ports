@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2004/06/17 04:47:48 kevlo Exp $
+--- Makefile.in.orig	2004-06-17 11:23:52.000000000 +0000
++++ Makefile.in	2004-06-17 11:24:10.000000000 +0000
+@@ -317,7 +317,7 @@ MKINSTDIRS      = @abs_srcdir@/Tools/con
+ M4_SOURCE_DIR   = @abs_srcdir@/Tools/config
+ M4_INSTALL_DIR  = @datadir@/aclocal
+ 
+-install: install-main install-lib install-m4
++install: install-main install-lib install-runtime install-m4
+ 	@echo "Installation complete"
+ 
+ install-main:
