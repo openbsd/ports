@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:19:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/12/03 20:18:36 sturm Exp $
 
 COMMENT=	"graphical CVS front-end using QT2"
 
@@ -24,7 +24,10 @@ EXTRACT_SUFX=	-0-generic-src.tgz
 USE_GMAKE=	Yes
 USE_X11=	Yes
 
-MODULES=	qt2
+MODULES=	qt2 gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	c++
+
 BUILD_DEPENDS=	::x11/qt2-designer
 
 CONFIGURE_STYLE=gnu
