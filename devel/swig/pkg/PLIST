@@ -1,74 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/13 14:32:14 kevlo Exp $
 bin/swig
-lib/libswigtcl.a
+lib/swig1.3/tcl/constarray.i
+lib/swig1.3/tcl/consthash.i
+lib/swig1.3/tcl/ptrlang.i
+lib/swig1.3/tcl/tclsh.i
+lib/swig1.3/tcl/typemaps.i
+lib/swig1.3/tcl/wish.i
+lib/swig1.3/tcl/object.swg
+lib/swig1.3/tcl/swigtcl8.swg
+lib/swig1.3/perl5/perlmain.i
+lib/swig1.3/perl5/ptrlang.i
+lib/swig1.3/perl5/typemaps.i
+lib/swig1.3/perl5/headers.swg
+lib/swig1.3/perl5/perl5.swg
+lib/swig1.3/perl5/perl5mg.swg
+lib/swig1.3/perl5/Makefile.pl
+lib/swig1.3/python/embed.i
+lib/swig1.3/python/embed13.i
+lib/swig1.3/python/embed14.i
+lib/swig1.3/python/embed15.i
+lib/swig1.3/python/ptrlang.i
+lib/swig1.3/python/typemaps.i
+lib/swig1.3/python/typemaps_old.i
+lib/swig1.3/python/defarg.swg
+lib/swig1.3/python/python.swg
+lib/swig1.3/guile/guilemain.i
+lib/swig1.3/guile/interpreter.i
+lib/swig1.3/guile/typemaps.i
+lib/swig1.3/guile/guile.swg
+lib/swig1.3/java/typemaps.i
+lib/swig1.3/java/java.swg
+lib/swig1.3/array.i
+lib/swig1.3/autodoc.i
+lib/swig1.3/carray.i
+lib/swig1.3/constraints.i
+lib/swig1.3/ctype.i
+lib/swig1.3/exception.i
+lib/swig1.3/malloc.i
+lib/swig1.3/math.i
+lib/swig1.3/memory.i
+lib/swig1.3/objc.i
+lib/swig1.3/pointer.i
+lib/swig1.3/stdlib.i
+lib/swig1.3/timers.i
+lib/swig1.3/swigptr.swg
 lib/libswigpl.a
-lib/libswigtcl.so
-lib/libswigpl.so
-include/swig.h
-man/man1/swig.1
-share/swig_lib/tcl/blt.i
-share/swig_lib/tcl/expect.i
-share/swig_lib/tcl/expectk.i
-share/swig_lib/tcl/ish.i
-share/swig_lib/tcl/itclsh.i
-share/swig_lib/tcl/itkwish.i
-share/swig_lib/tcl/iwish.i
-share/swig_lib/tcl/ptrlang.i
-share/swig_lib/tcl/tclsh.i
-share/swig_lib/tcl/tix.i
-share/swig_lib/tcl/typemaps.i
-share/swig_lib/tcl/wish.i
-share/swig_lib/tcl/class.swg
-share/swig_lib/tcl/configcode.swg
-share/swig_lib/tcl/delcmd.swg
-share/swig_lib/tcl/delcmd8.swg
-share/swig_lib/tcl/methodcmd.swg
-share/swig_lib/tcl/methodcmd8.swg
-share/swig_lib/tcl/objcmd.swg
-share/swig_lib/tcl/objcmd8.swg
-share/swig_lib/tcl/swigtcl.swg
-share/swig_lib/tcl/tcl8ptr.swg
-share/swig_lib/tcl/Makefile
-share/swig_lib/perl4/userinit.i
-share/swig_lib/perl5/perlmain.i
-share/swig_lib/perl5/ptrlang.i
-share/swig_lib/perl5/typemaps.i
-share/swig_lib/perl5/perl5.swg
-share/swig_lib/perl5/perl5mg.swg
-share/swig_lib/perl5/perl5ptr.swg
-share/swig_lib/perl5/Makefile
-share/swig_lib/perl5/Makefile.pl
-share/swig_lib/python/embed.i
-share/swig_lib/python/embed13.i
-share/swig_lib/python/embed14.i
-share/swig_lib/python/ptrlang.i
-share/swig_lib/python/typemaps.i
-share/swig_lib/python/defarg.swg
-share/swig_lib/python/pyexp.swg
-share/swig_lib/python/python.swg
-share/swig_lib/python/Makefile
-share/swig_lib/guile/guilemain.i
-share/swig_lib/guile/interpreter.i
-share/swig_lib/guile/guile.swg
-share/swig_lib/config/swigptr.swg
-share/swig_lib/array.i
-share/swig_lib/autodoc.i
-share/swig_lib/carray.i
-share/swig_lib/constraints.i
-share/swig_lib/ctype.i
-share/swig_lib/exception.i
-share/swig_lib/malloc.i
-share/swig_lib/math.i
-share/swig_lib/memory.i
-share/swig_lib/objc.i
-share/swig_lib/pointer.i
-share/swig_lib/stdlib.i
-share/swig_lib/timers.i
-share/swig_lib/swigptr.swg
-share/swig_lib/Makefile
-@dirrm share/swig_lib/tcl
-@dirrm share/swig_lib/perl4
-@dirrm share/swig_lib/perl5
-@dirrm share/swig_lib/python
-@dirrm share/swig_lib/guile
-@dirrm share/swig_lib/config
-@dirrm share/swig_lib
+lib/libswigpl.so.0.0
+lib/libswigpy.a
+lib/libswigpy.so.0.0
+lib/libswigtcl8.a
+lib/libswigtcl8.so.0.0 
+@exec /sbin/ldconfig -m %B
+@dirrm lib/swig1.3/guile
+@dirrm lib/swig1.3/java
+@dirrm lib/swig1.3/python
+@dirrm lib/swig1.3/perl5
+@dirrm lib/swig1.3/tcl
+@dirrm lib/swig1.3

@@ -1,65 +1,50 @@
---- Makefile.in.orig	Sun Jun 22 15:45:38 1997
-+++ Makefile.in	Mon Aug 11 09:29:38 1997
-@@ -29,7 +29,7 @@
- # The SWIG library contains configuration files and library modules
- # so you should install it someplace where it can be easily accessed.
- 
--SWIG_LIB = $(prefix)/lib/swig_lib
-+SWIG_LIB = $(prefix)/share/swig_lib
- 
- # Change these prefixes to set where you would like the
- # SWIG binary file (swig) and C library (libswig.a) installed.
-@@ -124,7 +124,7 @@
- 
- # Install the SWIG program
+--- Makefile.in.orig	Wed Mar  1 04:31:50 2000
++++ Makefile.in	Wed Jun 14 02:10:03 2000
+@@ -123,7 +123,7 @@
+ # TARGETS: install & friends
+ #####################################################################
  
 -INSTALL        = ./install-sh -c
 +INSTALL        = /usr/bin/install -c
  INSTALL_DATA   = ${INSTALL} -m 644
  INSTALL_PROGRAM= ${INSTALL} -m 755
  
-@@ -178,37 +178,37 @@
- 	@cd swig_lib; for i in *.i *.swg; \
+@@ -171,32 +171,32 @@
+ 	@cd Lib; for i in *.i *.swg; \
  	    do \
- 	    echo "Installing swig_lib/$$i"; \
+ 	    echo "Installing Lib/$$i"; \
 -            ../$(INSTALL_DATA) $$i $(SWIG_LIB)/$$i; \
 +            $(INSTALL_DATA) $$i $(SWIG_LIB)/$$i; \
  	    done;
- 	@cd swig_lib/tcl; for i in *.i *.swg Makefile; \
+ 	@cd Lib/tcl; for i in *.i *.swg; \
  	    do \
- 	    echo "Installing swig_lib/tcl/$$i"; \
+ 	    echo "Installing Lib/tcl/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/tcl/$$i; \
 +            $(INSTALL_DATA) $$i $(SWIG_LIB)/tcl/$$i; \
  	    done;
- 	@cd swig_lib/perl4; for i in *.i; \
+ 	@cd Lib/perl5; for i in *.i *.swg Makefile.pl; \
  	    do \
- 	    echo "Installing swig_lib/perl4/$$i"; \
--            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/perl4/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/perl4/$$i; \
- 	    done;
- 	@cd swig_lib/perl5; for i in *.i *.swg Makefile Makefile.pl; \
- 	    do \
- 	    echo "Installing swig_lib/perl5/$$i"; \
+ 	    echo "Installing Lib/perl5/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/perl5/$$i; \
 +            $(INSTALL_DATA) $$i $(SWIG_LIB)/perl5/$$i; \
  	    done;
- 	@cd swig_lib/python; for i in *.i *.swg Makefile; \
+ 	@cd Lib/python; for i in *.i *.swg; \
  	    do \
- 	    echo "Installing swig_lib/python/$$i"; \
+ 	    echo "Installing Lib/python/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/python/$$i; \
 +            $(INSTALL_DATA) $$i $(SWIG_LIB)/python/$$i; \
  	    done;
- 	@cd swig_lib/guile; for i in *.i *.swg; \
+ 	@cd Lib/guile; for i in *.i *.swg; \
  	    do \
- 	    echo "Installing swig_lib/guile/$$i"; \
+ 	    echo "Installing Lib/guile/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/guile/$$i; \
 +            $(INSTALL_DATA) $$i $(SWIG_LIB)/guile/$$i; \
  	    done;
- 	@cd swig_lib/config; for i in *.swg; \
+ 	@cd Lib/java; for i in *.i *.swg; \
  	    do \
- 	    echo "Installing swig_lib/config/$$i"; \
--            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/config/$$i; \
-+            $(INSTALL_DATA) $$i $(SWIG_LIB)/config/$$i; \
+ 	    echo "Installing Lib/java/$$i"; \
+-            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/java/$$i; \
++            $(INSTALL_DATA) $$i $(SWIG_LIB)/java/$$i; \
  	    done;
- 	@echo "Installing Makefile"
- 	$(INSTALL_DATA) Makefile.template $(SWIG_LIB)/Makefile
+ 
+ install-runtime:
