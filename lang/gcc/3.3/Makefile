@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/05 22:44:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/08 19:18:44 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -14,7 +14,9 @@ MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
-#MAKE_ADA=Yes
+.if ${MACHINE_ARCH} == "i386"
+MAKE_ADA=Yes
+.endif
 
 MAKE_GXX?=No
 MAKE_FORTRAN?=No
@@ -56,8 +58,10 @@ DISTNAME=   gcc-${FULL_VERSION}
 
 
 DISTFILES=  ${DISTNAME}.tar.bz2
+SUPDISTFILES=adastrap-i386-3.3.5-1.tgz:0
 
 MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
@@ -83,11 +87,20 @@ CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .if ${MAKE_ADA:L} == "yes"
 LANGS:=${LANGS},ada
 MULTI_PACKAGES+=-ada
+DISTFILES+=adastrap-${MACHINE_ARCH}-3.3.5-1.tgz:0
+#CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
+#MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
+#BUILD_DEPENDS+=:gnat-*:lang/gcc/3.3,-ada
+CONFIGURE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
+MAKE_ENV=ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 
-CONFIGURE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-MAKE_ENV=ADAC=${LOCALBASE}/bin/egcc GNATBIND=${LOCALBASE}/bin/gnatbind
-BUILD_DEPENDS+=:gnat-*:lang/gcc/3.3,-ada
-#CONFIGURE_ENV=ADAC=${HOME}/bin/adac GNATBIND=${HOME}/x/usr/bin/gnatbind
+post-extract:
+.for f in egcc gnatbind gnatmake gnatlink
+	echo "#! /bin/sh" >${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
+	chmod a+x ${WRKDIR}/bin/$f
+.endfor
+
 post-build:
 	cd ${WRKBUILD}/gcc && ${MAKE_PROGRAM} gnatlib_and_tools
 
