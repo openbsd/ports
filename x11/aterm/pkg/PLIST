@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/07/03 04:43:55 brad Exp $
 bin/aterm
 @exec chmod 4755 %D/bin/aterm
 man/man1/aterm.1
