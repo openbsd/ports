@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/19 20:42:02 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/19 20:43:44 shell Exp $
 
 COMMENT=	"perl module to gateway between news and mail"
 
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+NO_REGRESS=	Yes
 
 # install example files
 post-install:
