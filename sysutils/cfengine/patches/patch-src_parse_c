@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_parse_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/parse.c.orig	Thu Apr 29 18:30:18 2004
-+++ src/parse.c	Thu Jun 17 12:54:40 2004
+$OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/parse.c.orig	Wed Jun  9 03:16:34 2004
++++ src/parse.c	Mon Aug  2 13:30:36 2004
 @@ -245,7 +245,7 @@ SetStrategies(); 
  Debug1("\n\n==============================BEGIN NEW ACTION %s=============\n\n",ACTIONTEXT[action]);
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_parse_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
          }
          
      break;
-@@ -347,7 +347,7 @@ Debug1("HandleBraceObjectID(%s) in actio
+@@ -347,14 +347,14 @@ Debug1("HandleBraceObjectID(%s) in actio
  switch (ACTION)
     {
     case acls:
@@ -46,7 +46,6 @@ $OpenBSD: patch-src_parse_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         InstallACL(id,CLASSBUFF);
         break;
         
-@@ -354,7 +354,7 @@ switch (ACTION)
     case strategies:
         if (strlen(STRATEGYNAME) == 0)
            {

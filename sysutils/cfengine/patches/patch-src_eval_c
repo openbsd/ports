@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_eval_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/eval.c.orig	2004-04-17 10:11:08.000000000 -0400
-+++ src/eval.c	2004-06-10 15:35:56.000000000 -0400
+$OpenBSD: patch-src_eval_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/eval.c.orig	Tue Jun  8 04:40:45 2004
++++ src/eval.c	Mon Aug  2 13:30:34 2004
 @@ -212,7 +212,7 @@ sscanf(str,"%*s %s %s %s %s",buf2,buf3,b
  /* Hours */
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_eval_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  AddClassToHeap(out);
  }
  
-@@ -533,7 +533,7 @@ while(*sp != '\0')
+@@ -548,7 +548,7 @@ while(*sp != '\0')
     if (IsHardClass(cbuff))
        { char err[CF_BUFSIZE];
        yyerror("Illegal exception");
@@ -73,7 +73,7 @@ $OpenBSD: patch-src_eval_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        FatalError(err);
        }
  
-@@ -827,7 +827,7 @@ for (sp = class; *sp != '\0'; sp++)
+@@ -858,7 +858,7 @@ for (sp = class; *sp != '\0'; sp++)
  
  if (bracklevel != 0)
     {

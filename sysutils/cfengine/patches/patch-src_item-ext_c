@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/item-ext.c.orig	Sat Apr 17 16:11:02 2004
-+++ src/item-ext.c	Thu Jun 17 12:54:39 2004
+$OpenBSD: patch-src_item-ext_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/item-ext.c.orig	Wed Jun 23 17:30:52 2004
++++ src/item-ext.c	Mon Aug  2 14:48:07 2004
 @@ -190,6 +190,7 @@ void InsertItemAfter (struct Item **file
  
  { struct Item *ip;
@@ -136,7 +136,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  Debug2("CommentToRegExp(list,%s %s)\n",comm,string);
  
-@@ -1168,7 +1175,8 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
+@@ -1168,16 +1175,17 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
     NUMBEROFEDITS++;
     CURRENTLINEPTR = ip->next;
  
@@ -146,7 +146,6 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        {
        CfLog(cferror,"No memory in CommentToRegExp\n","malloc");
        regfree(&rx);
-@@ -1175,9 +1183,9 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
        return false;
        }
  
@@ -168,7 +167,23 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
           i += strlen(replace)-1;
           
           memcpy(&rx,&rxcache,sizeof(rx)); /* To fix a bug on some implementations where rx gets emptied */
-@@ -1424,6 +1432,7 @@ int CommentSeveralLines(struct Item **fi
+@@ -1449,12 +1457,12 @@ char *search, *replace;
+       start = ip->name + match.rm_so;
+       EditVerbose("Doing SingleReplace of \"%s\" with \"%s\" on line %d\n",start,replace,i);
+       bzero(VBUFF,CF_BUFSIZE);
+-      strcpy(VBUFF,ip->name);
++      (void)strlcpy(VBUFF,ip->name,sizeof(VBUFF));
+       VBUFF[match.rm_so] = '\0';  /* ...head of string */
+-      strcat(VBUFF,replace);      /* ...replacement string */
++      (void)strlcat(VBUFF,replace,sizeof(VBUFF));      /* ...replacement string */
+       sp = ip->name;
+       sp += match.rm_eo;
+-      strcat(VBUFF,sp);           /* ...tail of string */
++      (void)strlcat(VBUFF,sp,sizeof(VBUFF));           /* ...tail of string */
+       Debug("SRDEBUG old line num %d is: \"%s\"\n",i,ip->name);
+       Debug("SRDEBUG new line num %d is: \"%s\"\n",i,VBUFF);
+       CURRENTLINEPTR = ip;
+@@ -1477,6 +1485,7 @@ int CommentSeveralLines(struct Item **fi
  { struct Item *ip;
    int ctr, N = -99, done = false;
    char *sp;
@@ -176,7 +191,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  Debug2("CommentNLines(list,%s)\n",string);
  
-@@ -1479,15 +1488,16 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
+@@ -1532,15 +1541,16 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
     NUMBEROFEDITS++;
     CURRENTLINEPTR = ip->next;
  
@@ -197,7 +212,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
     free (ip->name);
     ip->name = sp;
-@@ -1517,6 +1527,7 @@ int UnCommentSeveralLines (struct Item *
+@@ -1570,6 +1580,7 @@ int UnCommentSeveralLines (struct Item *
  { struct Item *ip;
    int ctr, N = -99, done = false;
    char *sp, *sp1, *sp2, *spc;
@@ -205,7 +220,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  Debug2("UnCommentNLines(list,%s)\n",string);
  
-@@ -1567,7 +1578,8 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
+@@ -1620,7 +1631,8 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
     EditVerbose("Uncomment line %s\n",ip->name);
     CURRENTLINEPTR = ip->next;
  
@@ -215,7 +230,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        {
        CfLog(cferror,"No memory in UnCommentNLines\n","malloc");
        return false;
-@@ -1593,11 +1605,11 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
+@@ -1646,11 +1658,11 @@ for (ip = CURRENTLINEPTR; ip != NULL; ip
        *sp2 = '\0';
        }
  
@@ -229,7 +244,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        }
  
     ctr++;
-@@ -1782,7 +1794,7 @@ for (ip = *filestart; ip != NULL; ip=ip-
+@@ -1835,7 +1847,7 @@ for (ip = *filestart; ip != NULL; ip=ip-
        free(ip->name);
        
        ip->name = (char *) malloc(strlen(replace)+1);
@@ -238,7 +253,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        EditVerbose("Edit:   With (%s)\n",replace);
        }
     }
-@@ -1793,6 +1805,7 @@ for (ip = *filestart; ip != NULL; ip=ip-
+@@ -1846,6 +1858,7 @@ for (ip = *filestart; ip != NULL; ip=ip-
  void AppendToLine(struct Item *current,char *text,char *filename)
  
  { char *new;
@@ -246,7 +261,7 @@ $OpenBSD: patch-src_item-ext_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if (strstr(current->name,text))
     {
-@@ -1801,9 +1814,10 @@ if (strstr(current->name,text))
+@@ -1854,9 +1867,10 @@ if (strstr(current->name,text))
  
  EditVerbose("Appending %s to line %-60s...\n",text,current->name);
  

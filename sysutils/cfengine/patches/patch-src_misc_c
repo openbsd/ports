@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/misc.c.orig	Thu Apr 29 23:35:59 2004
-+++ src/misc.c	Thu Jun 17 12:54:40 2004
-@@ -556,10 +556,10 @@ char *ChecksumPrint(char type,unsigned c
+$OpenBSD: patch-src_misc_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/misc.c.orig	Fri Jun 25 11:16:01 2004
++++ src/misc.c	Mon Aug  2 15:38:54 2004
+@@ -556,17 +556,17 @@ char *ChecksumPrint(char type,unsigned c
  
  switch(type)
     {
@@ -14,7 +14,6 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         len = 16;
         break;
     }
-@@ -566,7 +566,7 @@ switch(type)
    
  for (i = 0; i < len; i++)
     {
@@ -23,7 +22,7 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
  
  return buffer; 
-@@ -911,7 +911,7 @@ char strmajor[CF_MAXVARSIZE];
+@@ -942,17 +942,17 @@ char strmajor[CF_MAXVARSIZE];
      release += strlen(RELEASE_FLAG);
      if (sscanf(release, "%d", &major) == 1)
         {
@@ -32,7 +31,6 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         }
      }
   
-@@ -918,10 +918,10 @@ char strmajor[CF_MAXVARSIZE];
   if (major != -1 && vendor != "")
      {
      classbuf[0] = '\0';
@@ -46,7 +44,7 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      AddClassToHeap(classbuf);
      }
   
-@@ -1040,8 +1040,8 @@ char strminor[CF_MAXVARSIZE];
+@@ -1071,15 +1071,15 @@ Verbose("Looking for redhat linux info i
      release += strlen(RELEASE_FLAG);
      if (sscanf(release, "%d.%d", &major, &minor) == 2)
         {
@@ -57,7 +55,6 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         }
      /* red hat 9 is *not* red hat 9.0. 
       * and same thing with RHEL AS 3
-@@ -1048,7 +1048,7 @@ char strminor[CF_MAXVARSIZE];
       */
      else if (sscanf(release, "%d", &major) == 1)
         {
@@ -66,7 +63,7 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         minor = -2;
         };
      }
-@@ -1056,21 +1056,21 @@ char strminor[CF_MAXVARSIZE];
+@@ -1087,21 +1087,21 @@ Verbose("Looking for redhat linux info i
   if (major != -1 && minor != -1 && vendor != "")
      {
      classbuf[0] = '\0';
@@ -95,7 +92,7 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         AddClassToHeap(classbuf);
         }
      }
-@@ -1121,19 +1121,19 @@ FILE *fp;
+@@ -1152,19 +1152,19 @@ FILE *fp;
      {
      release += strlen(SUSE_RELEASE_FLAG);
      sscanf(release, "%d.%d", &major, &minor);
@@ -122,3 +119,35 @@ $OpenBSD: patch-src_misc_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      AddClassToHeap(classbuf);
      }
   
+@@ -1277,8 +1277,8 @@ char strminor[CF_MAXVARSIZE];
+     release += strlen(RELEASE_FLAG);
+     if (sscanf(release, "%d.%d", &major, &minor) == 2)
+        {
+-       sprintf(strmajor, "%d", major);
+-       sprintf(strminor, "%d", minor);
++       (void)snprintf(strmajor, sizeof(strmajor), "%d", major);
++       (void)snprintf(strminor, sizeof(strminor), "%d", minor);
+        }
+     else
+        {
+@@ -1290,15 +1290,15 @@ char strminor[CF_MAXVARSIZE];
+  if (major != -1 && minor != -1 && vendor != "")
+     {
+     classbuf[0] = '\0';
+-    strcat(classbuf, vendor);
++    (void)strlcat(classbuf, vendor, sizeof(classbuf));
+     AddClassToHeap(classbuf);
+-    strcat(classbuf, "_");
+-    strcat(classbuf, strmajor);
++    (void)strlcat(classbuf, "_", sizeof(classbuf));
++    (void)strlcat(classbuf, strmajor, sizeof(classbuf));
+     AddClassToHeap(classbuf);
+     if (minor != -2)
+        {
+-       strcat(classbuf, "_");
+-       strcat(classbuf, strminor);
++       (void)strlcat(classbuf, "_", sizeof(classbuf));
++       (void)strlcat(classbuf, strminor, sizeof(classbuf));
+        AddClassToHeap(classbuf);
+        }
+     }

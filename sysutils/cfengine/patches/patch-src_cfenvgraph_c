@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
---- src/cfenvgraph.c.orig	Mon Apr 19 12:00:16 2004
-+++ src/cfenvgraph.c	Thu Jun 17 12:54:38 2004
+$OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/cfenvgraph.c.orig	Fri May  7 11:44:59 2004
++++ src/cfenvgraph.c	Mon Aug  2 13:30:33 2004
 @@ -171,7 +171,7 @@ fgets(line,CF_BUFSIZE,pp); 
  fgets(line,CF_BUFSIZE,pp); 
  line[0] = '\0'; 
@@ -101,7 +101,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     if ((FPLOAD = fopen(FLNAME,"w")) == NULL)
        {
        perror("fopen");
-@@ -636,7 +636,7 @@ if (SEPARATE)
+@@ -636,14 +636,14 @@ if (SEPARATE)
  
     for (i = 0; i < ATTR; i++)
        {
@@ -110,7 +110,6 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
        if ((FPIN[i] = fopen(FLNAME,"w")) == NULL)
           {
           perror("fopen");
-@@ -643,7 +643,7 @@ if (SEPARATE)
           exit(1);
           }
  
@@ -119,7 +118,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
        if ((FPOUT[i] = fopen(FLNAME,"w")) == NULL)
           {
           perror("fopen");
-@@ -653,7 +653,7 @@ if (SEPARATE)
+@@ -653,14 +653,14 @@ if (SEPARATE)
  
     for (i = 0; i < CF_NETATTR; i++)
        {
@@ -128,7 +127,6 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
        if ((FPNETIN[i] = fopen(FLNAME,"w")) == NULL)
           {
           perror("fopen");
-@@ -660,7 +660,7 @@ if (SEPARATE)
           exit(1);
           }
  
@@ -201,7 +199,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
      if ((FPLOAD = fopen(FLNAME,"w")) == NULL)
         {
         perror("fopen");
-@@ -1107,7 +1107,7 @@ for (i = 0; i < 7; i++)
+@@ -1107,14 +1107,14 @@ for (i = 0; i < 7; i++)
      
      for (i = 0; i < ATTR; i++)
         {
@@ -210,7 +208,6 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
         if ((FPIN[i] = fopen(FLNAME,"w")) == NULL)
            {
            perror("fopen");
-@@ -1114,7 +1114,7 @@ for (i = 0; i < 7; i++)
            exit(1);
            }
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/install.c.orig	2004-05-01 15:53:44.000000000 +0200
-+++ src/install.c	2004-06-15 10:36:49.000000000 +0200
+$OpenBSD: patch-src_install_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/install.c.orig	Wed Jun 30 13:30:58 2004
++++ src/install.c	Mon Aug  2 13:40:59 2004
 @@ -106,7 +106,7 @@ else
             FatalError("Redefinition of basic system variable");
             }
@@ -43,7 +43,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
             
             AddClassToHeap(CanonifyName(buffer));
             }
-@@ -161,7 +161,7 @@ else
+@@ -162,7 +162,7 @@ else
             break;
             }
          
@@ -52,7 +52,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                    break;
                    
      case cfnetmask:
-@@ -175,7 +175,7 @@ else
+@@ -176,7 +176,7 @@ else
             yyerror("Multiple declaration of variable netmask");
             FatalError("Redefinition of basic system variable");
             }
@@ -61,7 +61,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
          AddNetworkClass(VNETMASK);
          break;
          
-@@ -337,7 +337,7 @@ else
+@@ -338,7 +338,7 @@ else
          break;
          
      case cfnfstype:
@@ -70,7 +70,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
          break;
          
      case cfmethodname:
-@@ -417,7 +417,7 @@ else
+@@ -418,7 +418,7 @@ else
                {
                }
             
@@ -79,7 +79,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
             
             AddClassToHeap(rename);
             break;
-@@ -438,7 +438,7 @@ else
+@@ -439,7 +439,7 @@ else
             yyerror("Silly interface name, (should be something link eth0)");
             }
          
@@ -88,7 +88,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
          VIFDEV[VSYSTEMHARDCLASS] = VIFNAMEOVERRIDE; /* override */
          Debug("Overriding interface with %s\n",VIFDEV[VSYSTEMHARDCLASS]);
          break;
-@@ -538,7 +538,7 @@ switch(GetCommAttribute(item))
+@@ -539,7 +539,7 @@ switch(GetCommAttribute(item))
     case cfowner:
         if (strlen(value) < CF_BUFSIZE)
            {
@@ -97,7 +97,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
            }
         else
            {
-@@ -549,7 +549,7 @@ switch(GetCommAttribute(item))
+@@ -550,7 +550,7 @@ switch(GetCommAttribute(item))
     case cfgroup:
         if (strlen(value) < CF_BUFSIZE)
            {
@@ -106,7 +106,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
            }
         else
            {
-@@ -631,13 +631,13 @@ switch(GetCommAttribute(item))
+@@ -632,13 +632,13 @@ switch(GetCommAttribute(item))
                     break;
     case cfflags:   ParseFlagString(value,&PLUSFLAG,&MINUSFLAG);
                     break;
@@ -124,7 +124,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                     break;
     case cfcompat:  HandleCharSwitch("oldserver",value,&COMPATIBILITY);
                     break;
-@@ -810,7 +810,7 @@ Debug1("HandleOptionalMountItem(%s)\n",v
+@@ -811,7 +811,7 @@ Debug1("HandleOptionalMountItem(%s)\n",v
  switch(GetCommAttribute(item))
     {
     case cfmountoptions: 
@@ -133,7 +133,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        break; 
  
     case cfreadonly: 
-@@ -997,7 +997,7 @@ switch(GetCommAttribute(item))
+@@ -998,7 +998,7 @@ switch(GetCommAttribute(item))
     case cfinclude: 
     case cfpattern:
  
@@ -142,7 +142,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         if (*value == '/')
            {
            yyerror("search pattern begins with / must be a relative name");
-@@ -1073,9 +1073,9 @@ switch(GetCommAttribute(item))
+@@ -1074,9 +1074,9 @@ switch(GetCommAttribute(item))
                     break;
     case cfflags:   ParseFlagString(value,&PLUSFLAG,&MINUSFLAG);
                     break;
@@ -154,7 +154,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                     break;
     case cfdefine:  HandleDefine(value);
                     break;
-@@ -1281,9 +1281,9 @@ switch(GetCommAttribute(item))
+@@ -1282,9 +1282,9 @@ switch(GetCommAttribute(item))
                     break;
     case cffilter:  PrependItem(&VFILTERBUILD,value,CF_ANYCLASS);
                     break;
@@ -166,7 +166,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                     break;
     case cfchdir:   HandleChDir(value);
                     break;
-@@ -1323,7 +1323,7 @@ Debug1("HandleOptionalPackagesAttribute(
+@@ -1324,7 +1324,7 @@ Debug1("HandleOptionalPackagesAttribute(
  
  switch(GetCommAttribute(item))
     {
@@ -175,21 +175,20 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                     break;
     case cfcmp:     CMPSENSE = (enum cmpsense) GetCmpSense(value);
                     break;
-@@ -1378,11 +1378,11 @@ if (value[0] == '\0')
+@@ -1376,10 +1376,10 @@ if (value[0] == '\0')
+         strncpy(METHODFILENAME,value,CF_BUFSIZE-1);
          break;
-         
      case cfretclasses:
 -        strncpy(METHODRETURNCLASSES,value,CF_BUFSIZE-1);
-+        strlcpy(METHODRETURNCLASSES,value,sizeof(METHODRETURNCLASSES));
++        (void)strlcpy(METHODRETURNCLASSES,value,sizeof(METHODRETURNCLASSES));
          break;
-         
      case cfforcereplyto:
 -        strncpy(METHODFORCE,value,CF_BUFSIZE-1);
-+        strlcpy(METHODFORCE,value,sizeof(METHODFORCE));
++        (void)strlcpy(METHODFORCE,value,sizeof(METHODFORCE));
          break;
- 
      case cfsendclasses:
-@@ -1445,9 +1445,9 @@ switch(GetCommAttribute(item))
+         strncpy(METHODREPLYTO,value,CF_MAXVARSIZE-1);
+@@ -1440,9 +1440,9 @@ switch(GetCommAttribute(item))
                       break;
     case cfsetinform: HandleCharSwitch("inform",value,&INFORMP);
                       break;
@@ -201,7 +200,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                       break;
     case cfdefine:    HandleDefine(value);
                       break;
-@@ -1513,7 +1513,7 @@ if (!IsAbsoluteFileName(value))
+@@ -1508,7 +1508,7 @@ if (!IsAbsoluteFileName(value))
     yyerror("chdir is not an absolute directory name");
     }
  
@@ -210,7 +209,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*******************************************************************/
-@@ -1526,7 +1526,7 @@ if (!IsAbsoluteFileName(value))
+@@ -1521,7 +1521,7 @@ if (!IsAbsoluteFileName(value))
     yyerror("chdir is not an absolute directory name");
     }
   
@@ -219,7 +218,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*******************************************************************/
-@@ -1537,7 +1537,7 @@ void HandleFileItem(char *item)
+@@ -1532,7 +1532,7 @@ void HandleFileItem(char *item)
  if (strcmp(item,"home") == 0)
     {
     ACTIONPENDING=true;
@@ -228,7 +227,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
  
-@@ -1567,19 +1567,19 @@ if (VBROADCAST[0] != '\0')
+@@ -1562,19 +1562,19 @@ if (VBROADCAST[0] != '\0')
  
  if (strcmp("ones",item) == 0)
     {
@@ -251,22 +250,22 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
  
-@@ -1622,12 +1622,12 @@ ExpandVarstring(item,ebuff,NULL);
+@@ -1617,12 +1617,12 @@ ExpandVarstring(item,ebuff,NULL);
     else
        {
        memcpy(&inaddr,hp->h_addr, hp->h_length);
--      strcpy(VDEFAULTROUTE,inet_ntoa(inaddr));
+-      strncpy(VDEFAULTROUTE,inet_ntoa(inaddr),CF_MAXVARSIZE);
 +      (void)strlcpy(VDEFAULTROUTE,inet_ntoa(inaddr),sizeof(VDEFAULTROUTE));
        }
     }
  else
     {
--   strcpy(VDEFAULTROUTE,ebuff);
+-   strncpy(VDEFAULTROUTE,ebuff,CF_MAXVARSIZE);
 +   (void)strlcpy(VDEFAULTROUTE,ebuff,sizeof(VDEFAULTROUTE));
     }
  }
  
-@@ -1905,7 +1905,7 @@ if (VMAILSERVER[0] != '\0')
+@@ -1906,7 +1906,7 @@ if (VMAILSERVER[0] != '\0')
     FatalError("Redefinition of mailserver");
     }
  
@@ -275,7 +274,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  Debug1("Installing mailserver (%s) for group (%s)",path,GROUPBUFF);
  }
-@@ -2621,9 +2621,9 @@ switch (action)
+@@ -2622,9 +2622,9 @@ switch (action)
            {
            switch (MOUNTMODE)
               {
@@ -287,7 +286,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                   break;
               default:  printf("Install pending, miscmount, shouldn't happen\n");
                   MOUNTOPTS[0] = '\0'; /* no mount mode set! */
-@@ -2639,8 +2639,8 @@ switch (action)
+@@ -2640,8 +2640,8 @@ switch (action)
                            MOUNTFROM, MOUNTONTO);
                     return;
                     }
@@ -298,16 +297,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                  }
               AppendMiscMount(MOUNTFROM,MOUNTONTO,MOUNTOPTS);
               }
-@@ -2857,7 +2857,7 @@ if (data == NULL)
-    }
- else
-    {
--   Debug1("InstallEditFile(%s,%s,%s) with classes\n",file,edit,data,CLASSBUFF);
-+   Debug1("InstallEditFile(%s,%s,%s) with classes %s\n",file,edit,data,CLASSBUFF);
-    }
- 
- if (!IsInstallable(CLASSBUFF))
-@@ -3479,11 +3479,11 @@ for (sp = Get2DListEnt(tp); sp != NULL; 
+@@ -3500,11 +3500,11 @@ for (sp = Get2DListEnt(tp); sp != NULL; 
     
     if (strlen(type) == 0)
        {
@@ -321,7 +311,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        }
     
     if ((ptr->type = strdup(ebuff)) == NULL)
-@@ -3606,7 +3606,7 @@ if (!strstr(function,"("))
+@@ -3629,7 +3629,7 @@ if (!strstr(function,"("))
     }
  
  /* First look at bare args to cache an arg fingerprint */ 
@@ -330,7 +320,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if (work[strlen(work)-1] != ')')
     {
-@@ -4800,12 +4800,12 @@ Debug1("InstallImageItem (%s) (+%o)(-%o)
+@@ -4824,12 +4824,12 @@ Debug1("InstallImageItem (%s) (+%o)(-%o)
  
  if (strlen(action) == 0)   /* default action */
     {
@@ -345,25 +335,16 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     yyerror(VBUFF);
     return;
     }
-@@ -4821,7 +4821,7 @@ if (strlen(buf1) > 1)
- if (!FORCENETCOPY && ((strcmp(buf3,VFQNAME) == 0) || (strcmp(buf3,VUQNAME) == 0) || (strcmp(buf3,VSYSNAME.nodename) == 0)))
-    {
-    Debug("Swapping %s for localhost\n",server);
--   strcpy(buf3,"localhost");
-+   (void)strlcpy(buf3,"localhost",sizeof(buf3));
-    }
- 
- Build2DListFromVarstring(&tp,path,'/');  /* Must split on space in comm string */
-@@ -4880,7 +4880,7 @@ for (spl = Get2DListEnt(tp); spl != NULL
- 
-    if (strlen(destination) == 0)
-       {
--      strcpy(buf2,spl);
-+      (void)strlcpy(buf2,spl,sizeof(buf2));
-       }
-    else
-       {
-@@ -5211,11 +5211,11 @@ if (strlen(CURRENTITEM) != 0)
+@@ -4937,7 +4937,7 @@ for (spl = Get2DListEnt(tp); spl != NULL
+       
+       if (strlen(destination) == 0)
+          {
+-         strcpy(buf2,spl);
++         (void)strlcpy(buf2,spl,sizeof(buf2));
+          }
+       else
+          {
+@@ -5245,11 +5245,11 @@ if (strlen(CURRENTITEM) != 0)
  
  if (strcmp(value,"link") == 0 || strcmp(value,"links") == 0)
     {
@@ -377,7 +358,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
  else
     {
-@@ -5334,7 +5334,7 @@ void HandleNetmask(char *value)
+@@ -5368,7 +5368,7 @@ void HandleNetmask(char *value)
  {
   if (strlen(DESTINATION) == 0)
      {
@@ -386,7 +367,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      }
   else
      {
-@@ -5349,7 +5349,7 @@ void HandleIPAddress(char *value)
+@@ -5383,7 +5383,7 @@ void HandleIPAddress(char *value)
  {
   if (strlen(LINKTO) == 0)
      {
@@ -395,7 +376,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      }
   else
      {
-@@ -5370,19 +5370,19 @@ if (strlen(CURRENTOBJECT) != 0)
+@@ -5404,19 +5404,19 @@ if (strlen(CURRENTOBJECT) != 0)
   
  if (strcmp("ones",value) == 0)
     {
@@ -418,7 +399,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
  
-@@ -5395,6 +5395,7 @@ void AppendToActionSequence (char *actio
+@@ -5429,6 +5429,7 @@ void AppendToActionSequence (char *actio
  
  { int j = 0;
    char *sp,cbuff[CF_BUFSIZE],actiontxt[CF_BUFSIZE];
@@ -426,7 +407,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  Debug1("Installing item (%s) in the action sequence list\n",action);
  
-@@ -5426,8 +5427,10 @@ while (*sp != '\0')
+@@ -5460,8 +5461,10 @@ while (*sp != '\0')
   
     if (IsHardClass(cbuff))
        {
@@ -439,7 +420,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        yyerror(tmp);
        free(tmp);
        yyerror("You cannot add a reserved class!");
-@@ -5436,7 +5439,7 @@ while (*sp != '\0')
+@@ -5470,7 +5473,7 @@ while (*sp != '\0')
   
     if (j == 1)
        {
@@ -448,7 +429,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        continue;
        }
     else if (!IsSpecialClass(cbuff))
-@@ -5463,7 +5466,7 @@ if (isalpha((int)user[0]))
+@@ -5497,7 +5500,7 @@ if (isalpha((int)user[0]))
        return;
        }
  
@@ -457,7 +438,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     AppendItem(&VACCESSLIST,id,NULL);
     }
  else
-@@ -5561,7 +5564,7 @@ void HandleServer(char *value)
+@@ -5595,7 +5598,7 @@ void HandleServer(char *value)
  
  {
  Debug("Server in copy set to : %s\n",value);
@@ -466,7 +447,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*******************************************************************/
-@@ -5583,7 +5586,7 @@ if (strlen(value) > CF_BUFSIZE)
+@@ -5617,7 +5620,7 @@ if (strlen(value) > CF_BUFSIZE)
     yyerror(OUTPUT);
     }
  */
@@ -475,7 +456,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  for (sp = value; *sp != '\0'; sp++)
     {
-@@ -5613,7 +5616,7 @@ if (strlen(value) > CF_BUFSIZE)
+@@ -5647,7 +5650,7 @@ if (strlen(value) > CF_BUFSIZE)
     yyerror("class list too long - can't handle it!");
     }
  
@@ -484,7 +465,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  for (sp = value; *sp != '\0'; sp++)
     {
-@@ -5643,7 +5646,7 @@ if (strlen(value) > CF_BUFSIZE)
+@@ -5677,7 +5680,7 @@ if (strlen(value) > CF_BUFSIZE)
     yyerror("class list too long - can't handle it!");
     }
  
@@ -493,7 +474,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  for (sp = value; *sp != '\0'; sp++)
     {
-@@ -6256,8 +6259,8 @@ switch(GetCommAttribute(attribute))
+@@ -6290,8 +6293,8 @@ switch(GetCommAttribute(attribute))
                  {
                  if (strlen(copyhost)+strlen(VDOMAIN) < CF_MAXVARSIZE-2)
                     {
@@ -504,7 +485,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                     }
                  else
                     {
-@@ -6290,6 +6293,7 @@ void PrependTidy(struct TidyPattern **li
+@@ -6324,6 +6327,7 @@ void PrependTidy(struct TidyPattern **li
  
  { struct TidyPattern *tp;
    char *spe = NULL,*sp, buffer[CF_EXPANDSIZE];
@@ -512,7 +493,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if ((tp = (struct TidyPattern *)malloc(sizeof(struct TidyPattern))) == NULL)
     {
-@@ -6319,10 +6323,14 @@ if ((tp->elsedef = strdup(buffer)) == NU
+@@ -6353,10 +6357,14 @@ if ((tp->elsedef = strdup(buffer)) == NU
  AddInstallable(tp->defines);
  AddInstallable(tp->elsedef); 
   
@@ -530,7 +511,7 @@ $OpenBSD: patch-src_install_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
  
  if (travlinks == '?')
-@@ -6348,7 +6356,7 @@ tp->rmdirs =tidydirs;
+@@ -6382,7 +6390,7 @@ tp->rmdirs =tidydirs;
  
  if (classes != NULL)
     {

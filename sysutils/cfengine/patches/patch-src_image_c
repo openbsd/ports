@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/image.c.orig	Fri Apr 30 17:20:19 2004
-+++ src/image.c	Thu Jun 17 12:54:39 2004
+$OpenBSD: patch-src_image_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/image.c.orig	Fri Apr 30 11:20:19 2004
++++ src/image.c	Mon Aug  2 13:30:34 2004
 @@ -57,8 +57,8 @@ Banner("Looking for remote method collab
         }
      else
@@ -79,7 +79,7 @@ $OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     AddSlash(destdir);
  
     if ((dirh = cfopendir(sourcedir,ip)) == NULL)
-@@ -535,7 +535,7 @@ if (S_ISDIR(sourcestatbuf.st_mode))
+@@ -535,22 +535,22 @@ if (S_ISDIR(sourcestatbuf.st_mode))
           continue;
           }
  
@@ -88,7 +88,6 @@ $OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        
        if (BufferOverflow(sourcefile,dirp->d_name))
           {
-@@ -542,8 +542,8 @@ if (S_ISDIR(sourcestatbuf.st_mode))
           FatalError("Culprit: CheckImage");
           }
        
@@ -99,7 +98,6 @@ $OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        
        if (BufferOverflow(destfile,dirp->d_name))
           {
-@@ -550,7 +550,7 @@ if (S_ISDIR(sourcestatbuf.st_mode))
           FatalError("Culprit: CheckImage");
           }
        
@@ -153,7 +151,7 @@ $OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if (remote)
     {
-@@ -1614,7 +1614,7 @@ if (IMAGEBACKUP != 'n')
+@@ -1614,22 +1614,22 @@ if (IMAGEBACKUP != 'n')
     time_t STAMPNOW;
     STAMPNOW = time((time_t *)NULL);
     
@@ -162,7 +160,6 @@ $OpenBSD: patch-src_image_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
     if (BufferOverflow(dest,stamp))
        {
-@@ -1621,15 +1621,15 @@ if (IMAGEBACKUP != 'n')
        printf(" culprit: CopyReg\n");
        return false;
        }

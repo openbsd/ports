@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
---- src/cfagent.c.orig	Sat Apr 17 16:10:58 2004
-+++ src/cfagent.c	Thu Jun 17 12:54:38 2004
-@@ -214,7 +214,7 @@ void Initialize(int argc,char *argv[])
+$OpenBSD: patch-src_cfagent_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/cfagent.c.orig	Wed Jun 23 17:58:01 2004
++++ src/cfagent.c	Mon Aug  2 13:30:32 2004
+@@ -217,7 +217,7 @@ void Initialize(int argc,char *argv[])
    unsigned char s[16];
    char ebuff[CF_EXPANDSIZE];
    
@@ -9,17 +9,17 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
 +(void)strlcpy(VDOMAIN,CF_START_DOMAIN,sizeof(VDOMAIN));
  
  PreLockState();
- SetSignals(); 
-@@ -229,7 +229,7 @@ VDEFAULTROUTE[0] = '\0';
+  
+@@ -231,7 +231,7 @@ VDEFAULTROUTE[0] = '\0';
  ALLCLASSBUFFER[0] = '\0';
  VREPOSITORY = strdup("\0");
  
 -strcpy(METHODNAME,"cf-nomethod"); 
 +(void)strlcpy(METHODNAME,"cf-nomethod",sizeof(METHODNAME)); 
  METHODREPLYTO[0] = '\0';
+ METHODFOR[0] = '\0';
  METHODRETURNVARS[0] = '\0';
- METHODRETURNCLASSES[0] = '\0';
-@@ -238,8 +238,8 @@ METHODRETURNCLASSES[0] = '\0';
+@@ -241,8 +241,8 @@ METHODRETURNCLASSES[0] = '\0';
  re_syntax_options |= RE_INTERVALS;
  #endif
   
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
  
  IDClasses();
   
-@@ -280,7 +280,7 @@ for (i = 1; i < argc; i++)
+@@ -283,15 +283,15 @@ for (i = 1; i < argc; i++)
   VIFELAPSED = VDEFAULTIFELAPSED;
   TRAVLINKS = false;
   
@@ -39,7 +39,6 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
   
   if (stat(ebuff,&statbuf) == -1)
      {
-@@ -287,8 +287,8 @@ for (i = 1; i < argc; i++)
      CreateEmptyFile(ebuff);
      }
   
@@ -50,7 +49,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
   
   OpenSSL_add_all_algorithms();
   ERR_load_crypto_strings();
-@@ -317,8 +317,8 @@ if (NOPRECONFIG)
+@@ -320,8 +320,8 @@ if (NOPRECONFIG)
     return;
     }
  
@@ -61,7 +60,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
   
  if ((sp=getenv(CF_INPUTSVAR)) != NULL)
     {
-@@ -605,8 +605,8 @@ if (strlen(ebuff) != 0)
+@@ -608,8 +608,8 @@ if (strlen(ebuff) != 0)
     }
  else
     {
@@ -71,8 +70,8 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
 +   (void)strlcat(VPREFIX,VUQNAME,40);
     }
  
- 
-@@ -744,7 +744,7 @@ if (VACTIONSEQ == NULL)
+ p2 = SortItemListNames(VHEAP);
+@@ -750,7 +750,7 @@ if (VACTIONSEQ == NULL)
     Warning("perhaps cfagent.conf/update.conf have not yet been set up?");
     }
  
@@ -81,7 +80,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
  
  if (VACCESSLIST != NULL && !IsItemIn(VACCESSLIST,id))
     {
-@@ -888,7 +888,7 @@ if (OptionIs(CONTEXTID,"DryRun",true))
+@@ -900,7 +900,7 @@ if (OptionIs(CONTEXTID,"DryRun",true))
  
  if (GetMacroValue(CONTEXTID,"BinaryPaddingChar"))
     {
@@ -90,7 +89,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     
     if (ebuff[0] == '\\')
        {
-@@ -1066,7 +1066,7 @@ if ((tloc = time((time_t *)NULL)) == -1)
+@@ -1078,7 +1078,7 @@ if ((tloc = time((time_t *)NULL)) == -1)
  
  CFSTARTTIME = tloc;
  
@@ -99,7 +98,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
  
  Verbose("Reference time set to %s\n",ctime(&tloc));
  
-@@ -1429,7 +1429,7 @@ while (*sp != '\0')
+@@ -1441,7 +1441,7 @@ while (*sp != '\0')
        {
        VIFELAPSED = VDEFAULTIFELAPSED;
        VEXPIREAFTER = VDEFAULTEXPIREAFTER;
@@ -108,7 +107,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
        continue;
        }
     else
-@@ -1828,8 +1828,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
+@@ -1841,8 +1841,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
           {
           size++; /* Allow for : separator */
           }
@@ -119,7 +118,7 @@ $OpenBSD: patch-src_cfagent_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
        }
     }
   
-@@ -1848,8 +1848,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
+@@ -1861,8 +1861,8 @@ for (ip = VHEAP; ip != NULL; ip=ip->next
           size++; /* Allow for : separator */
           }
        

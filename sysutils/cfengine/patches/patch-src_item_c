@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_item_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/item.c.orig	Sat Apr 17 16:11:01 2004
-+++ src/item.c	Thu Jun 17 12:54:40 2004
+$OpenBSD: patch-src_item_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/item.c.orig	Tue May 18 02:09:20 2004
++++ src/item.c	Mon Aug  2 13:30:35 2004
 @@ -212,6 +212,7 @@ void PrependItem (struct Item **liststar
  
  { struct Item *ip;
@@ -66,7 +66,7 @@ $OpenBSD: patch-src_item_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     {
     CfLog(cferror,"","malloc");
     FatalError("");
-@@ -339,13 +347,17 @@ else
+@@ -339,20 +347,24 @@ else
     lp->next = ip;
     }
  
@@ -88,7 +88,6 @@ $OpenBSD: patch-src_item_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  ip->name = sp;
  ip->next = NULL;
  ip->counter = 0;
-@@ -352,7 +364,7 @@ ip->counter = 0;
   
  if (classes != NULL)
     {

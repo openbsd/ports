@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/nameinfo.c.orig	Sat May  1 09:40:45 2004
-+++ src/nameinfo.c	Thu Jun 17 12:54:40 2004
-@@ -53,6 +53,7 @@ void GetNameInfo()
+$OpenBSD: patch-src_nameinfo_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/nameinfo.c.orig	Wed Jun 23 17:55:31 2004
++++ src/nameinfo.c	Mon Aug  2 13:30:36 2004
+@@ -59,6 +59,7 @@ void GetNameInfo()
    time_t tloc;
    struct hostent *hp;
    struct sockaddr_in cin;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  #ifdef AIX
    char real_version[_SYS_NMLN];
  #endif
-@@ -123,12 +124,13 @@ for (i = 0; CLASSATTRIBUTES[i][0] != '\0
+@@ -129,12 +130,13 @@ for (i = 0; CLASSATTRIBUTES[i][0] != '\0
        }
     }
  
@@ -25,7 +25,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  SetDomainName(sp);
  
  for (sp2=sp; *sp2 != '\0'; sp2++)  /* Truncate fully qualified name */
-@@ -184,7 +186,7 @@ if (VERBOSE || DEBUG || D2 || D3)
+@@ -190,7 +192,7 @@ if (VERBOSE || DEBUG || D2 || D3)
     }
  
  
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  AddClassToHeap(VBUFF);
  Verbose("Additional hard class defined as: %s\n",CanonifyName(VBUFF));
  
-@@ -253,8 +255,8 @@ if (! found)
+@@ -259,8 +261,8 @@ if (! found)
     CfLog(cferror,"Cfengine: I don't understand what architecture this is!","");
     }
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  AddClassToHeap(CanonifyName(VBUFF));
  
-@@ -271,7 +273,7 @@ else
+@@ -277,7 +279,7 @@ else
     memset(&cin,0,sizeof(cin));
     cin.sin_addr.s_addr = ((struct in_addr *)(hp->h_addr))->s_addr;
     Verbose("Address given by nameserver: %s\n",inet_ntoa(cin.sin_addr));
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     
     for (i=0; hp->h_aliases[i]!= NULL; i++)
        {
-@@ -376,7 +378,7 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
+@@ -382,7 +384,7 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
                    }
                 
                 /* Old style compat */
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                 AppendItem(&IPADDRESSES,ip,"");
                 
                 for (sp = ip+strlen(ip)-1; *sp != '.'; sp--)
-@@ -387,8 +389,8 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
+@@ -393,8 +395,8 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
                 
                 
                 /* New style */
@@ -74,7 +74,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
                 AddClassToHeap(CanonifyName(ip));
                 snprintf(name,CF_MAXVARSIZE-1,"ipv4[%s]",CanonifyName(ifp->ifr_name));
                 AddMacroValue(CONTEXTID,name,inet_ntoa(sin->sin_addr));
-@@ -498,9 +500,9 @@ void AddNetworkClass(char *netmask) /* F
+@@ -503,9 +505,9 @@ void AddNetworkClass(char *netmask) /* F
    if ((nm.s_addr = inet_addr(netmask)) != -1 && (ip.s_addr = inet_addr(VIPADDRESS)) != -1)
       {
       ip.s_addr &= nm.s_addr; /* Will not work with IPv6 */
@@ -86,7 +86,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
       
       while( (sp = strrchr(nmbuf,'.')) && strcmp(sp,".0") == 0 )
          {
-@@ -523,8 +525,8 @@ void SetDomainName(char *sp)           /
+@@ -528,22 +530,22 @@ void SetDomainName(char *sp)           /
  
  if (gethostname(fqn, sizeof(fqn)) != -1)
     {
@@ -97,7 +97,6 @@ $OpenBSD: patch-src_nameinfo_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     AddClassToHeap(CanonifyName(buffer));
     AddClassToHeap(CanonifyName(ToLowerStr(buffer)));
  
-@@ -531,14 +533,14 @@ if (gethostname(fqn, sizeof(fqn)) != -1)
     if (strstr(fqn,"."))
        {
        ptr = strchr(fqn, '.');

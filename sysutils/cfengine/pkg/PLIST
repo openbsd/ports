@@ -1,24 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/06/17 11:21:43 sturm Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/cfengine-Anomalies.info
-@unexec install-info --delete --info-dir=%D/info %D/info/cfengine-Reference.info
-@unexec install-info --delete --info-dir=%D/info %D/info/cfengine-Tutorial.info
-info/cfengine-Anomalies.info
-info/cfengine-Reference.info
-info/cfengine-Reference.info-1
-info/cfengine-Reference.info-2
-info/cfengine-Reference.info-3
-info/cfengine-Reference.info-4
-info/cfengine-Reference.info-5
-info/cfengine-Reference.info-6
-info/cfengine-Reference.info-7
-info/cfengine-Reference.info-8
-info/cfengine-Tutorial.info
-info/cfengine-Tutorial.info-1
-info/cfengine-Tutorial.info-2
-info/cfengine-Tutorial.info-3
-info/cfengine-Tutorial.info-4
-info/cfengine-Tutorial.info-5
-info/cfengine-Tutorial.info-6
+@comment $OpenBSD: PLIST,v 1.5 2004/08/08 14:02:11 sturm Exp $
+@comment doc/
+@comment doc/cfengine-2.1.7p1/
+@info info/cfengine-Anomalies.info
+@info info/cfengine-Reference.info
+@info info/cfengine-Tutorial.info
 man/man8/cfagent.8
 man/man8/cfengine.8
 man/man8/cfenvd.8
@@ -36,7 +21,9 @@ sbin/cfkey
 sbin/cfrun
 sbin/cfservd
 sbin/vicf
+share/cfengine/
 share/cfengine/cfengine.el
+share/examples/cfengine/
 share/examples/cfengine/cf.chflags.example
 share/examples/cfengine/cf.freebsd.example
 share/examples/cfengine/cf.ftp.example
@@ -56,9 +43,4 @@ share/examples/cfengine/cfrc.example
 share/examples/cfengine/cfrun.hosts.example
 share/examples/cfengine/cfservd.conf.example
 share/examples/cfengine/update.conf.example
-@dirrm share/examples/cfengine
-@dirrm share/cfengine
-@exec install-info --info-dir=%D/info %D/info/cfengine-Anomalies.info
-@exec install-info --info-dir=%D/info %D/info/cfengine-Reference.info
-@exec install-info --info-dir=%D/info %D/info/cfengine-Tutorial.info
 @extraunexec rm -fr /var/cfengine

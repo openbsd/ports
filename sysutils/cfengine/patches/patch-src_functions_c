@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/functions.c.orig	Sat May  1 15:36:52 2004
-+++ src/functions.c	Thu Jun 17 12:54:39 2004
-@@ -206,13 +206,13 @@ switch (fn = FunctionStringToCode(name))
+$OpenBSD: patch-src_functions_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/functions.c.orig	Sat May 29 03:10:58 2004
++++ src/functions.c	Mon Aug  2 15:44:54 2004
+@@ -215,13 +215,13 @@ case fn_syslog:
      {
      if (strcmp(value,CF_NOCLASS) == 0)
         {
@@ -17,7 +17,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
         return value;
         }
      }
-@@ -307,7 +307,7 @@ if (strchr(args,','))
+@@ -316,46 +316,46 @@ if (strchr(args,','))
  
  if (lstat(args,&statbuf) == -1)
     {
@@ -26,7 +26,6 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
   else
-@@ -314,12 +314,12 @@ if (lstat(args,&statbuf) == -1)
      {
      if (fn == fn_fileexists)
         {
@@ -41,7 +40,6 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
   
   switch(fn)
      {
-@@ -326,7 +326,7 @@ strcpy(value,CF_NOCLASS);
      case fn_isdir:
          if (S_ISDIR(statbuf.st_mode))
             {
@@ -50,7 +48,6 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
             return;
             }
          break;
-@@ -333,7 +333,7 @@ strcpy(value,CF_NOCLASS);
      case fn_islink:
          if (S_ISLNK(statbuf.st_mode))
             {
@@ -59,7 +56,6 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
             return;
             }
          break;
-@@ -340,13 +340,13 @@ strcpy(value,CF_NOCLASS);
      case fn_isplain:
          if (S_ISREG(statbuf.st_mode))
             {
@@ -75,7 +71,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*********************************************************************/
-@@ -361,7 +361,7 @@ if (strchr(args,','))
+@@ -370,7 +370,7 @@ if (strchr(args,','))
     return;
     }
   
@@ -84,7 +80,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if (!FuzzyMatchParse(args))
     {
-@@ -370,7 +370,7 @@ if (!FuzzyMatchParse(args))
+@@ -379,7 +379,7 @@ if (!FuzzyMatchParse(args))
  
  if (FuzzySetMatch(args,VIPADDRESS) == 0)
     {
@@ -93,7 +89,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
  }
  
-@@ -385,7 +385,7 @@ void HandleHostRange(char *args,char *va
+@@ -394,7 +394,7 @@ void HandleHostRange(char *args,char *va
  
   if (!FuzzyHostParse(args))
      {
@@ -102,7 +98,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      return;
      }
   /* VDEFAULTBINSERVER.name is relative domain name */
-@@ -394,12 +394,12 @@ void HandleHostRange(char *args,char *va
+@@ -403,12 +403,12 @@ void HandleHostRange(char *args,char *va
   if (FuzzyHostMatch(args,VDEFAULTBINSERVER.name) == 0)
      {
      Debug("SRDEBUG SUCCESS!\n");
@@ -117,7 +113,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      }
   
   return;
-@@ -414,7 +414,7 @@ void HandleCompareStat(enum builtin fn,c
+@@ -423,7 +423,7 @@ void HandleCompareStat(enum builtin fn,c
    int count = 0;
  
  FunctionArgs(args,argv,2); 
@@ -126,7 +122,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
   
  if (stat(argv[0],&frombuf) == -1)
     {
-@@ -431,7 +431,7 @@ switch(fn)
+@@ -440,7 +440,7 @@ switch(fn)
     case fn_newerthan:
         if (frombuf.st_mtime < tobuf.st_mtime)
            {
@@ -135,7 +131,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
            return;
            }
         break;
-@@ -439,7 +439,7 @@ switch(fn)
+@@ -448,7 +448,7 @@ switch(fn)
     case fn_accessedbefore:
         if (frombuf.st_atime < tobuf.st_atime)
            {
@@ -144,7 +140,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
            return;
            }
         break;
-@@ -447,13 +447,13 @@ switch(fn)
+@@ -456,13 +456,13 @@ switch(fn)
     case fn_changedbefore:
         if (frombuf.st_ctime < tobuf.st_ctime)
            {
@@ -160,7 +156,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  
-@@ -500,7 +500,7 @@ if (*args == '/')
+@@ -509,7 +509,7 @@ if (*args == '/')
     
     if (ShellCommandReturnsZero(command))
        {
@@ -169,7 +165,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        return;
        }
     }
-@@ -509,7 +509,7 @@ if (*args == '/')
+@@ -518,7 +518,7 @@ if (*args == '/')
      yyerror("ExecResult(/command) must specify an absolute path");
      }
   
@@ -178,7 +174,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  
-@@ -527,11 +527,11 @@ Debug("HandleIsDefined(%s)\n",args); 
+@@ -536,11 +536,11 @@ Debug("HandleIsDefined(%s)\n",args); 
   
  if (GetMacroValue(CONTEXTID,args))
     {
@@ -192,7 +188,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*********************************************************************/
-@@ -547,7 +547,7 @@ value[0] = '\0';
+@@ -556,7 +556,7 @@ value[0] = '\0';
  
  if (PARSING)
     {
@@ -201,7 +197,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
   
-@@ -602,11 +602,11 @@ FunctionArgs(args,argv,2); 
+@@ -611,11 +611,11 @@ FunctionArgs(args,argv,2); 
   
  if (strcmp(argv[0],argv[1]) == 0)
     {
@@ -215,7 +211,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     } 
  }
  
-@@ -632,11 +632,11 @@ ret = LocateNextItemMatching(list,argv[0
+@@ -641,11 +641,11 @@ ret = LocateNextItemMatching(list,argv[0
       
  if (ret != NULL)
     {
@@ -229,7 +225,43 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
   
  DeleteItemList(list); 
-@@ -904,7 +904,7 @@ Verbose("This is a method with return va
+@@ -985,7 +985,7 @@ first[0] = '\0';
+  
+ if (psize < 2)
+    {
+-   strcpy(value,"silly");
++   (void)strlcpy(value,"silly",CF_BUFSIZE);
+    CfLog(cferror,"Partitioning of size < 2 is silly","");
+    return;
+    }
+@@ -994,7 +994,7 @@ Verbose("Searching for my peer group in 
+ 
+ if (!((strcmp("random",policy) == 0) || (strcmp("first",policy) == 0)))
+    {
+-   strcpy(value,"silly");
++   (void)strlcpy(value,"silly",CF_BUFSIZE);
+    CfLog(cferror,"Partition leader policy is first/random only","");
+    return;
+    }
+@@ -1149,7 +1149,7 @@ value[0] = '\0'; 
+  
+ if (psize < 2)
+    {
+-   strcpy(value,"silly");
++   (void)strlcpy(value,"silly",CF_BUFSIZE);
+    CfLog(cferror,"Partitioning of size < 2 is silly","");
+    return;
+    }
+@@ -1158,7 +1158,7 @@ Verbose("Searching for my peer group nei
+ 
+ if (!(strcmp("random",policy) == 0 || strcmp("first",policy) == 0))
+    {
+-   strcpy(value,"silly");
++   (void)strlcpy(value,"silly",CF_BUFSIZE);
+    CfLog(cferror,"Partition leader policy is first/random only","");
+    return;
+    }
+@@ -1286,7 +1286,7 @@ Verbose("This is a method with return va
      yyerror("Redefinition of method return values");
      }
  
@@ -238,7 +270,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*********************************************************************/
-@@ -916,7 +916,7 @@ Verbose("This is a method with return cl
+@@ -1298,14 +1298,14 @@ Verbose("This is a method with return cl
  
   if (strlen(METHODRETURNCLASSES) == 0)
      {
@@ -247,7 +279,6 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      }
   else
      {
-@@ -923,7 +923,7 @@ Verbose("This is a method with return cl
      yyerror("Redefinition of method return classes");
      }
  
@@ -256,7 +287,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*********************************************************************/
-@@ -949,7 +949,7 @@ Debug("ShowState(%s)\n",args); 
+@@ -1331,7 +1331,7 @@ Debug("ShowState(%s)\n",args); 
  
  if (PARSING)
     {
@@ -265,7 +296,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
   
-@@ -1132,12 +1132,12 @@ if (stat(buffer,&statbuf) == 0)
+@@ -1516,12 +1516,12 @@ if (stat(buffer,&statbuf) == 0)
     
     printf("%s: -----------------------------------------------------------------------------------\n",VPREFIX);
     snprintf(buffer,CF_BUFSIZE,"State of %s peaked at %s\n",args,ctime(&statbuf.st_mtime));
@@ -279,8 +310,8 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
 +   (void)strlcpy(value,buffer,CF_EXPANDSIZE);
     }
  
- if (dist)
-@@ -1162,7 +1162,7 @@ FunctionArgs(args,argv,1);
+ DeleteItemList(addresses); 
+@@ -1548,7 +1548,7 @@ FunctionArgs(args,argv,1);
  
  if (PARSING)
     {
@@ -289,7 +320,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     return;
     }
  
-@@ -1173,7 +1173,7 @@ if (time >= 0)
+@@ -1559,7 +1559,7 @@ if (time >= 0)
     CheckFriendConnections(time);
     }
   
@@ -298,7 +329,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  }
  
  /*********************************************************************/
-@@ -1243,11 +1243,11 @@ Debug("PrepModule(%s,%s)\n",argv[0],argv
+@@ -1629,11 +1629,11 @@ Debug("PrepModule(%s,%s)\n",argv[0],argv
   
  if (CheckForModule(argv[0],argv[1]))
     {
@@ -312,7 +343,7 @@ $OpenBSD: patch-src_functions_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
  }
  
-@@ -1285,7 +1285,7 @@ if (strchr(args,','))
+@@ -1671,7 +1671,7 @@ if (strchr(args,','))
     return;
     }
  

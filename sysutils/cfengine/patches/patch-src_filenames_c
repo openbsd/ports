@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_filenames_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/filenames.c.orig	2004-06-10 10:50:04.000000000 -0400
-+++ src/filenames.c	2004-06-10 12:15:00.000000000 -0400
+$OpenBSD: patch-src_filenames_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/filenames.c.orig	Mon Jun  7 14:03:15 2004
++++ src/filenames.c	Mon Aug  2 13:30:34 2004
 @@ -121,7 +121,7 @@ if (str == NULL)
   
  if (!IsFileSep(str[strlen(str)-1]))
@@ -60,7 +60,7 @@ $OpenBSD: patch-src_filenames_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
               snprintf(OUTPUT,CF_BUFSIZE,"Moving obstructing file/link %s to %s to make directory",pathbuf,currentpath);
               CfLog(cferror,OUTPUT,"");
               
-@@ -633,7 +633,7 @@ for (sp = src+rootlen; *sp != '\0'; sp++
+@@ -640,7 +640,7 @@ for (sp = src+rootlen; *sp != '\0'; sp++
        return false;
        }
     
@@ -69,7 +69,7 @@ $OpenBSD: patch-src_filenames_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
   
  return true;
-@@ -695,7 +695,7 @@ if (strlen(str) >= CF_BUFSIZE)
+@@ -702,7 +702,7 @@ if (strlen(str) >= CF_BUFSIZE)
     {
     char *tmp;
     tmp = malloc(40+strlen(str));

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_proto_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/proto.c.orig	Sat Apr 17 16:11:10 2004
-+++ src/proto.c	Thu Jun 17 12:54:40 2004
-@@ -131,8 +131,8 @@ if (strcmp(VDOMAIN,CF_START_DOMAIN) == 0
+$OpenBSD: patch-src_proto_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/proto.c.orig	Mon Jun 28 03:38:20 2004
++++ src/proto.c	Mon Aug  2 13:30:36 2004
+@@ -132,8 +132,8 @@ if (!SKIPIDENTIFY && (strcmp(VDOMAIN,CF_
   
   if ((strstr(hp->h_name,".") == 0) && (strlen(VDOMAIN) > 0))
      {
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_proto_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
      } 
  #endif 
   
-@@ -144,7 +144,7 @@ uname = user_ptr ? user_ptr->pw_name : "
+@@ -145,14 +145,14 @@ uname = user_ptr ? user_ptr->pw_name : "
  if ((strlen(VDOMAIN) > 0) && !IsIPV6Address(dnsname) && !strchr(dnsname,'.'))
     {
     Debug("Appending domain %s to %s\n",VDOMAIN,dnsname);
@@ -21,7 +21,6 @@ $OpenBSD: patch-src_proto_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     strncat(dnsname,VDOMAIN,CF_MAXVARSIZE/2);
     }  
  
-@@ -151,7 +151,7 @@ if ((strlen(VDOMAIN) > 0) && !IsIPV6Addr
  if (strncmp(dnsname,localip,strlen(localip)) == 0)
     {
     /* Seems to be a bug in some resolvers that adds garbage, when it just returns the input */

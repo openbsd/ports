@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
---- src/cfenvd.c.orig	Mon Apr 19 11:41:05 2004
-+++ src/cfenvd.c	Thu Jun 17 12:54:38 2004
+$OpenBSD: patch-src_cfenvd_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/cfenvd.c.orig	Fri Jun 18 06:43:37 2004
++++ src/cfenvd.c	Mon Aug  2 13:30:33 2004
 @@ -188,10 +188,10 @@ void CheckOptsAndInit(int argc,char **ar
   int c, i,j,k;
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
   
  IGNORELOCK = false; 
  OUTPUT[0] = '\0';
-@@ -242,9 +242,9 @@ while ((c=getopt_long(argc,argv,"d:vhHFV
+@@ -242,18 +242,18 @@ while ((c=getopt_long(argc,argv,"d:vhHFV
  
  LOGGING = true;                    /* Do output to syslog */
   
@@ -26,7 +26,6 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
  MakeDirectoriesFor(VBUFF,'y');
  strncpy(VLOCKDIR,WORKDIR,CF_BUFSIZE-1);
  strncpy(VLOGDIR,WORKDIR,CF_BUFSIZE-1);
-@@ -251,9 +251,9 @@ strncpy(VLOGDIR,WORKDIR,CF_BUFSIZE-1);
  
  for (i = 0; i < ATTR; i++)
     {
@@ -66,7 +65,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     CfLog(cfinform,OUTPUT,"");
     exit(0);
     }
-@@ -618,7 +618,7 @@ if ((now = time((time_t *)NULL)) == -1)
+@@ -625,7 +625,7 @@ if ((now = time((time_t *)NULL)) == -1)
     exit(1);
     }
  
@@ -75,7 +74,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
  
  return ConvTimeKey(str); 
  }
-@@ -784,14 +784,14 @@ SetVariable("loadavg",LOADAVG,av.expect_
+@@ -791,14 +791,14 @@ SetVariable("loadavg",LOADAVG,av.expect_
  for (i = 0; i < ATTR; i++)
     {
     char name[256];
@@ -94,7 +93,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
  
     sig = SetClasses(name,OUTGOING[i],av.expect_outgoing[i],av.var_outgoing[i],LOCALAV.expect_outgoing[i],LOCALAV.var_outgoing[i],&classlist,timekey);
     SetVariable(name,OUTGOING[i],av.expect_outgoing[i],sig,&classlist);
-@@ -811,13 +811,13 @@ for (i = 0; i < PH_LIMIT; i++)
+@@ -818,13 +818,13 @@ for (i = 0; i < PH_LIMIT; i++)
  for (i = 0; i < CF_NETATTR; i++)
     {
     char name[256];
@@ -112,7 +111,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     sig = SetClasses(name,NETOUT[i],av.expect_netout[i],av.var_netout[i],LOCALAV.expect_netout[i],LOCALAV.var_netout[i],&classlist,timekey);
     SetVariable(name,NETOUT[i],av.expect_netout[i],sig,&classlist);
     }
-@@ -1135,7 +1135,7 @@ if (ALL_OUTGOING != NULL)
+@@ -1142,7 +1142,7 @@ if (ALL_OUTGOING != NULL)
   
  sscanf(VNETSTAT[VSYSTEMHARDCLASS],"%s",comm);
  
@@ -121,7 +120,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
   
  if ((pp = cfpopen(comm,"r")) == NULL)
     {
-@@ -1466,7 +1466,7 @@ struct Averages *GetCurrentAverages(char
+@@ -1473,7 +1473,7 @@ struct Averages *GetCurrentAverages(char
   
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -130,7 +129,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return NULL;
     }
-@@ -1477,7 +1477,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
+@@ -1484,7 +1484,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
  if ((errno = dbp->open(dbp,NULL,AVDB,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -139,7 +138,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return NULL;
     }
-@@ -1527,7 +1527,7 @@ void UpdateAverages(char *timekey,struct
+@@ -1534,7 +1534,7 @@ void UpdateAverages(char *timekey,struct
   
  if ((errno = db_create(&dbp,NULL,0)) != 0)
     {
@@ -148,7 +147,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return;
     }
-@@ -1538,7 +1538,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
+@@ -1545,7 +1545,7 @@ if ((errno = dbp->open(dbp,AVDB,NULL,DB_
  if ((errno = dbp->open(dbp,NULL,AVDB,NULL,DB_BTREE,DB_CREATE,0644)) != 0)    
  #endif
     {
@@ -157,7 +156,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
     CfLog(cferror,OUTPUT,"db_open");
     return;
     }
-@@ -1765,19 +1765,19 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1772,27 +1772,27 @@ if (fabs(delta) < cf_noise_threshold) /*
     Debug(" Sensitivity too high ..\n");
  
     buffer[0] = '\0';
@@ -181,7 +180,6 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
        }
          
      dev = sqrt(delta*delta/(1.0+sigma*sigma)+ldelta*ldelta/(1.0+lsigma*lsigma));
-@@ -1784,8 +1784,8 @@ if (fabs(delta) < cf_noise_threshold) /*
          
      if (dev > 2.0*sqrt(2.0))
         {
@@ -192,7 +190,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
         AppendItem(classlist,buffer2,"2");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1795,19 +1795,19 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1802,33 +1802,33 @@ if (fabs(delta) < cf_noise_threshold) /*
   else
      {
      buffer[0] = '\0';
@@ -216,7 +214,6 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
         }
      
      dev = sqrt(delta*delta/(1.0+sigma*sigma)+ldelta*ldelta/(1.0+lsigma*lsigma));
-@@ -1814,14 +1814,14 @@ if (fabs(delta) < cf_noise_threshold) /*
      
      if (dev <= sqrt(2.0))
         {
@@ -235,7 +232,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
         AppendItem(classlist,buffer2,"0");
         }
      
-@@ -1831,8 +1831,8 @@ if (fabs(delta) < cf_noise_threshold) /*
+@@ -1838,16 +1838,16 @@ if (fabs(delta) < cf_noise_threshold) /*
      
      if (dev > 2.0*sqrt(2.0))
         {
@@ -246,7 +243,6 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
         AppendItem(classlist,buffer2,"2");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1839,8 +1839,8 @@ if (fabs(delta) < cf_noise_threshold) /*
      
      if (dev > 3.0*sqrt(2.0))
         {
@@ -257,7 +253,7 @@ $OpenBSD: patch-src_cfenvd_c,v 1.1 2004/06/17 11:21:42 sturm Exp $
         AppendItem(classlist,buffer2,"3");
         AddPersistentClass(buffer2,40,cfpreserve); 
         }
-@@ -1855,13 +1855,13 @@ void SetVariable(char *name,double value
+@@ -1862,13 +1862,13 @@ void SetVariable(char *name,double value
  
  { char var[CF_BUFSIZE];
  

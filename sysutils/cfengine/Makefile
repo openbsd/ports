@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2004/06/17 11:21:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/08/08 14:02:11 sturm Exp $
 
 COMMENT=	"GNU system administration tool for networks"
 
-DISTNAME=      	cfengine-2.1.6
+DISTNAME=      	cfengine-2.1.7p1
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.cfengine.org/

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/cfexecd.c.orig	Sat Apr 17 16:11:14 2004
-+++ src/cfexecd.c	Thu Jun 17 12:54:38 2004
+$OpenBSD: patch-src_cfexecd_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/cfexecd.c.orig	Tue May 11 03:15:34 2004
++++ src/cfexecd.c	Mon Aug  2 13:32:38 2004
 @@ -143,7 +143,7 @@ Banner("Check options");
  
  NOSPLAY = false; 
@@ -51,7 +51,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  Debug("Got IP (%s)\n",VIPADDRESS); 
  
  if ((ungetc(fgetc(pp), pp)) != '[')
-@@ -909,7 +909,7 @@ if (!Dialogue(sd,NULL))
+@@ -909,21 +909,21 @@ if (!Dialogue(sd,NULL))
     goto mail_err;
     }
   
@@ -60,7 +60,6 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
   if (!Dialogue(sd,VBUFF))
       {
-@@ -916,7 +916,7 @@ sprintf(VBUFF,"HELO %s\r\n",VFQNAME); 
       goto mail_err;
       }
   
@@ -69,7 +68,6 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if (!Dialogue(sd,VBUFF))
     {
-@@ -923,7 +923,7 @@ if (!Dialogue(sd,VBUFF))
     goto mail_err;
     }
   
@@ -78,7 +76,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
   
  if (!Dialogue(sd,VBUFF))
      {
-@@ -937,18 +937,18 @@ if (!Dialogue(sd,"DATA\r\n"))
+@@ -937,11 +937,11 @@ if (!Dialogue(sd,"DATA\r\n"))
  
  if (anomaly)
     {
@@ -92,7 +90,10 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }
   
  sent=send(sd,VBUFF,strlen(VBUFF),0);
- 
+@@ -952,9 +952,9 @@ sent=send(sd,VBUFF,strlen(VBUFF),0);
+ strftime(VBUFF,CF_BUFSIZE,"Date: %a, %d %b %Y %H:%M:%S %z\r\n",localtime(&now));
+ sent=send(sd,VBUFF,strlen(VBUFF),0);
+  
 -sprintf(VBUFF,"From: cfengine@%s\r\n",VFQNAME); 
 +(void)snprintf(VBUFF,sizeof(VBUFF),"From: cfengine@%s\r\n",VFQNAME); 
  sent=send(sd,VBUFF,strlen(VBUFF),0);
@@ -101,7 +102,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  sent=send(sd,VBUFF,strlen(VBUFF),0);
  
  while(!feof(fp))
-@@ -958,13 +958,13 @@ while(!feof(fp))
+@@ -964,13 +964,13 @@ while(!feof(fp))
     if (strlen(VBUFF) > 0)
        {
        VBUFF[strlen(VBUFF)-1] = '\r';
@@ -117,7 +118,7 @@ $OpenBSD: patch-src_cfexecd_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        sent=send(sd,VBUFF,strlen(VBUFF),0);
        break;
        }
-@@ -985,7 +985,7 @@ mail_err: 
+@@ -991,7 +991,7 @@ mail_err: 
  
  fclose(fp);
  close(sd); 

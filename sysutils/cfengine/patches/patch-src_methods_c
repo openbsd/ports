@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_methods_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/methods.c.orig	2004-05-04 07:22:50.000000000 -0400
-+++ src/methods.c	2004-06-10 16:11:06.000000000 -0400
+$OpenBSD: patch-src_methods_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/methods.c.orig	Sat Jun 19 05:25:32 2004
++++ src/methods.c	Mon Aug  2 15:45:48 2004
 @@ -238,24 +238,24 @@ options[0] = '\0';
  
  if (INFORM)
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_methods_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
   
  snprintf(execstr,CF_BUFSIZE-1,"%s/bin/cfagent -f %s %s",WORKDIR,GetMethodFilename(ptr),options);
  
-@@ -693,7 +693,7 @@ while (!feof(fp))
+@@ -706,7 +706,7 @@ while (!feof(fp))
            
        case cfmeth_sendclass:
            Debug("Defining class: %s\n",arg);
@@ -41,12 +41,16 @@ $OpenBSD: patch-src_methods_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
            break;
            
        case cfmeth_attacharg:
-@@ -998,7 +998,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+@@ -1012,10 +1012,10 @@ for (dirp = readdir(dirh); dirp != NULL;
     SplitMethodName(dirp->d_name,client,server,name,digeststring,extra);
  
-    Verbose("This request came from %s - our reply should be sent there!\n",client);
+    Debug("This request came from %s - our reply should be sent there!\n",client);
 -   strcpy(METHODREPLYTO,client);
 +   (void)strlcpy(METHODREPLYTO,client,sizeof(METHODREPLYTO));
-    
+ 
+    Debug("This request referred to us as %s - a plausible identity\n",client);
+-   strcpy(METHODFOR,server);
++   (void)strlcpy(METHODFOR,server,sizeof(METHODFOR));
+ 
     if (strcmp(methodname,name) == 0)
        {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_edittools_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/edittools.c.orig	Thu Apr 22 21:34:19 2004
-+++ src/edittools.c	Thu Jun 17 12:54:38 2004
+$OpenBSD: patch-src_edittools_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
+--- src/edittools.c.orig	Wed Jun 23 17:38:13 2004
++++ src/edittools.c	Mon Aug  2 13:30:34 2004
 @@ -74,7 +74,7 @@ for (dirp = readdir(dirh); dirp != NULL;
        continue;
        }
@@ -65,7 +65,7 @@ $OpenBSD: patch-src_edittools_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        
        if (!FileObjectFilter(realname,&statbuf2,ptr->filters,editfiles))
           {
-@@ -401,8 +401,8 @@ NUMBEROFEDITS = 0;
+@@ -402,8 +402,8 @@ NUMBEROFEDITS = 0;
  EDITVERBOSE = VERBOSE;
  CURRENTLINENUMBER = 1;
  CURRENTLINEPTR = filestart;
@@ -76,7 +76,7 @@ $OpenBSD: patch-src_edittools_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  EDITGROUPLEVEL = 0;
  SEARCHREPLACELEVEL = 0;
  FOREACHLEVEL = 0;
-@@ -1303,6 +1303,7 @@ return true;
+@@ -1330,6 +1330,7 @@ return true;
  int ReplaceEditLineWith (char *string)
  
  { char *sp;
@@ -84,7 +84,7 @@ $OpenBSD: patch-src_edittools_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if (strcmp(string,CURRENTLINEPTR->name) == 0)
     {
-@@ -1310,7 +1311,8 @@ if (strcmp(string,CURRENTLINEPTR->name) 
+@@ -1337,14 +1338,15 @@ if (strcmp(string,CURRENTLINEPTR->name) 
     return true;
     }
  
@@ -94,7 +94,6 @@ $OpenBSD: patch-src_edittools_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     {
     printf("Memory allocation failed in ReplaceEditLineWith, aborting edit.\n");
     return false;
-@@ -1317,7 +1319,7 @@ if ((sp = malloc(strlen(string)+1)) == N
     }
  
  EditVerbose("Replacing line %d with %10s...\n",CURRENTLINENUMBER,string);
@@ -103,7 +102,7 @@ $OpenBSD: patch-src_edittools_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  free (CURRENTLINEPTR->name);
  CURRENTLINEPTR->name = sp;
  NUMBEROFEDITS++;
-@@ -2023,10 +2025,10 @@ int SaveBinaryFile(char *file,off_t size
+@@ -2050,10 +2052,10 @@ int SaveBinaryFile(char *file,off_t size
  Debug("SaveBinaryFile(%s,%d)\n",file,size);
  Verbose("Saving %s\n",file);
   
