@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/12/17 15:41:15 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2005/03/16 01:56:49 pvalchev Exp $
 
 COMMENT=	"IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo"
 
 DISTNAME=		bitlbee-0.91
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		net
 
 HOMEPAGE=		http://bitlbee.org
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c gcrypt gpg-error iconv intl z 
+WANTLIB=		c iconv intl z 
 
 MASTER_SITES=		http://get.bitlbee.org/src/
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--msn=0 \
 			--ssl=bogus
 .else
 LIB_DEPENDS+=		gnutls.8::security/gnutls
+WANTLIB+=		gcrypt gpg-error
 .endif
 
 CONFIGURE_STYLE=	simple
