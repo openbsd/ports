@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/11/11 13:57:32 heko Exp $
+# $OpenBSD: Makefile,v 1.31 2002/02/20 21:00:36 pvalchev Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=gnu dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libiberty ${WRKSRC}/readline/support
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
+CONFIGURE_ARGS=	--with-readline-libraries=/usr/lib
 
 MAKE_FLAGS=	MAINTAINER='${MAINTAINER:Q}'
 
