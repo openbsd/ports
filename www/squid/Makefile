@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/12/08 17:09:52 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2001/01/17 02:38:20 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
@@ -33,11 +33,15 @@ SUBST_VARS=	STATEDIR
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--localstatedir="${STATEDIR}"
 
-FLAVORS=	transparent
+FLAVORS=	transparent heap
 FLAVOR?=
 
 .if ${FLAVOR:L:Mtransparent}
 CONFIGURE_ARGS+= --enable-ipf-transparent
+.endif
+
+.if ${FLAVOR:L:Mheap}
+CONFIGURE_ARGS+= --enable-heap-replacement
 .endif
 
 MAKE_FILE=	makefile
