@@ -1,0 +1,18 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/04/02 17:01:54 espie Exp $
+lib/kde3/libkcm_kcmkxmlrpcd.so.0.0
+lib/kde3/libkcm_ktalkd.so.0.0
+lib/kde3/libkcm_lanbrowser.so.0.0
+lib/kde3/libkcm_newsticker.so.0.0
+lib/kde3/libkcm_xmlrpcd.so.0.0
+lib/kde3/libkdictapplet.so.1.0
+lib/kde3/libknewsticker_applet.so.0.0
+lib/kde3/libkpfapplet.so.0.0
+lib/kde3/libkpfpropertiesdialogplugin.so.0.0
+lib/libkdenetwork.so.2.0
+lib/libkio_lan.so.0.0
+lib/libkntsrcfilepropsdlg.so.0.0
+lib/libksirc.so.0.0
+lib/libkxmlrpcd.so.0.0
+lib/libmimelib.so.1.1
+DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/kde3)

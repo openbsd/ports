@@ -1,0 +1,14 @@
+KDE is a network transparent contemporary desktop environment for UNIX
+workstations. It was written by a world-wide network of software
+engineers committed to free software development. KDE seeks to fill
+the need for an easy to use desktop for Unix workstations, similar to
+the desktop environments found under the MacOS or Window95/NT. 
+
+This package holds some network applications:
+- kmail		mailer
+- knode		news reader
+- ktalkd	talk daemon
+- ksirc		irc client
+- korn		mail notifier
+
+WWW: ${HOMEPAGE}
