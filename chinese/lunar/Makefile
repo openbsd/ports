@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/13 04:23:32 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/30 15:17:33 kevlo Exp $
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
+FAKE=			Yes
 ALL_TARGET=
 
 do-install:
