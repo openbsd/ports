@@ -1,0 +1,19 @@
+--- icb/c_log.c.orig	Sun Jan 16 04:29:40 2000
++++ icb/c_log.c	Sun Jan 16 04:31:01 2000
+@@ -6,6 +6,7 @@
+ #include "icb.h"
+ #include "externs.h"
+ #include <time.h>
++#include <errno.h>
+ 
+ FILE *logfp = NULL;
+ 
+@@ -45,8 +46,6 @@
+ 	time_t time();
+ 	struct tm *t, *localtime();
+ 	time_t clock;
+-	extern int errno, sys_nerr;
+-	extern char *sys_errlist[];
+ 
+ 	/* determine pathname to use */
+ 	if (path == NULL || *path == '\0')
