@@ -1,7 +1,7 @@
-$OpenBSD: patch-konsole_src_TEPty_C,v 1.8 2001/08/20 23:42:08 espie Exp $
---- konsole/src/TEPty.C.orig	Sun Jul 29 06:56:43 2001
-+++ konsole/src/TEPty.C	Fri Aug 17 02:09:16 2001
-@@ -127,6 +127,10 @@ extern "C" {
+$OpenBSD: patch-konsole_src_TEPty_C,v 1.9 2001/12/31 12:30:54 espie Exp $
+--- konsole/src/TEPty.C.orig	Tue Nov  6 03:40:30 2001
++++ konsole/src/TEPty.C	Sun Dec 23 13:07:59 2001
+@@ -121,6 +121,10 @@
          #include <utmp.h>
  #endif
  

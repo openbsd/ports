@@ -1,6 +1,6 @@
-$OpenBSD: patch-ksysguard_configure_in_in,v 1.1 2001/09/19 14:13:28 espie Exp $
+$OpenBSD: patch-ksysguard_configure_in_in,v 1.2 2001/12/31 12:30:54 espie Exp $
 --- ksysguard/configure.in.in.orig	Sun May 13 23:20:29 2001
-+++ ksysguard/configure.in.in	Tue Sep 18 23:11:59 2001
++++ ksysguard/configure.in.in	Sun Dec 30 20:41:58 2001
 @@ -3,6 +3,7 @@ AC_MSG_CHECKING(if ksysguardd can be com
  case "$host" in 
    *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
@@ -9,3 +9,10 @@ $OpenBSD: patch-ksysguard_configure_in_in,v 1.1 2001/09/19 14:13:28 espie Exp $
    *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;
    *) ksysguard_compile=no; UNAME='' ;;
  esac
+@@ -11,4 +12,4 @@ AC_SUBST(UNAME)
+ 
+ AC_CHECK_LIB(sensors, sensors_init, [LIBSENSORS="-lsensors"])
+ AC_SUBST(LIBSENSORS)
+-AC_CHECK_HEADERS(sensors/sensors.h)
+\ No newline at end of file
++AC_CHECK_HEADERS(sensors/sensors.h)

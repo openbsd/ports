@@ -1,7 +1,7 @@
-$OpenBSD: patch-konsole_src_Makefile_in,v 1.6 2001/09/19 14:13:28 espie Exp $
---- konsole/src/Makefile.in.orig	Mon Aug  6 03:32:12 2001
-+++ konsole/src/Makefile.in	Mon Aug 27 09:21:16 2001
-@@ -326,6 +326,7 @@ konsole_LDFLAGS = $(all_libraries) $(KDE
+$OpenBSD: patch-konsole_src_Makefile_in,v 1.7 2001/12/31 12:30:54 espie Exp $
+--- konsole/src/Makefile.in.orig	Sat Nov 10 08:58:33 2001
++++ konsole/src/Makefile.in	Sun Dec 30 22:41:42 2001
+@@ -328,6 +328,7 @@ konsole_LDFLAGS = $(all_libraries) $(KDE
  
  konsole_grantpty_SOURCES = konsole_grantpty.c
  konsole_grantpty_LDFLAGS = $(KDE_RPATH)
@@ -9,7 +9,7 @@ $OpenBSD: patch-konsole_src_Makefile_in,v 1.6 2001/09/19 14:13:28 espie Exp $
  
  # Not AUTO here, because there are some unused files
  #>- METASOURCES = TEWidget.moc TEmuVt102.moc session.moc konsole.moc        TEmulation.moc TEPty.moc kwrited.moc konsole_part.moc 
-@@ -406,7 +407,6 @@ konsole_DEPENDENCIES = 
+@@ -408,7 +409,6 @@ konsole_DEPENDENCIES = 
  #>- konsole_grantpty_OBJECTS =  konsole_grantpty.$(OBJEXT)
  #>+ 1
  konsole_grantpty_OBJECTS = konsole_grantpty.$(OBJEXT)
@@ -17,81 +17,12 @@ $OpenBSD: patch-konsole_src_Makefile_in,v 1.6 2001/09/19 14:13:28 espie Exp $
  konsole_grantpty_DEPENDENCIES = 
  #>- kwrited_OBJECTS =  dummy.$(OBJEXT)
  #>+ 1
-@@ -435,12 +435,12 @@ DIST_COMMON =  Makefile.am Makefile.in
+@@ -437,7 +437,7 @@ DIST_COMMON =  Makefile.am Makefile.in
  
  #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
  #>+ 4
 -KDE_DIST=x-konsole.desktop konsolerc sample.shell konsole_part.rc 
-+KDE_DIST=kwrited_la_meta_unload.C konsole_grantpty sample.shell konsole_part.rc kwrited konsole_la_meta_unload.C x-konsole.desktop libkonsolepart.la.closure libkonsolepart_la_meta_unload.C konsole konsolerc konsole_meta_unload.C 
++KDE_DIST=sample.shell konsole_part.rc x-konsole.desktop konsolerc 
  
  DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
  
- 
--TAR = tar
-+TAR = gtar
- GZIP_ENV = --best
- SOURCES = $(libkonsolepart_la_SOURCES) $(kwrited_la_SOURCES) $(konsole_la_SOURCES) $(konsole_SOURCES) $(konsole_grantpty_SOURCES) $(kwrited_SOURCES)
- OBJECTS = $(libkonsolepart_la_OBJECTS) $(kwrited_la_OBJECTS) $(konsole_la_OBJECTS) $(konsole_OBJECTS) $(konsole_grantpty_OBJECTS) $(kwrited_OBJECTS)
-@@ -676,17 +676,6 @@ distdir = $(top_builddir)/$(PACKAGE)-$(V
- subdir = konsole/src
- 
- distdir: $(DISTFILES)
--#>- 	@for file in $(DISTFILES); do \
--#>- 	  d=$(srcdir); \
--#>- 	  if test -d $$d/$$file; then \
--#>- 	    cp -pr $$/$$file $(distdir)/$$file; \
--#>- 	  else \
--#>- 	    test -f $(distdir)/$$file \
--#>- 	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
--#>- 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
--#>- 	  fi; \
--#>- 	done
--#>+ 10
- 	@for file in $(DISTFILES); do \
- 	  d=$(srcdir); \
- 	  if test -d $$d/$$file; then \
-@@ -925,7 +914,7 @@ clean-moc-classes:
- 	-rm -f  libkonsolepart_la_meta_unload.C kwrited_la_meta_unload.C konsole_la_meta_unload.C konsole_meta_unload.C
- 
- #>+ 11
--libkonsolepart_la.all_C.C: $(srcdir)/Makefile.in $(srcdir)/TEPty.C $(srcdir)/BlockArray.C $(srcdir)/schema.C $(srcdir)/session.C $(srcdir)/TEWidget.C $(srcdir)/TEmuVt102.C $(srcdir)/TEScreen.C $(srcdir)/TEmulation.C $(srcdir)/TEHistory.C $(srcdir)/keytrans.C $(srcdir)/konsole_part.C libkonsolepart_la_meta_unload.C   konsole_part.moc konsole.moc TEWidget.moc TEmulation.moc session.moc TEmuVt102.moc kwrited.moc TEPty.moc 
-+libkonsolepart_la.all_C.C: $(srcdir)/Makefile.in $(srcdir)/TEPty.C $(srcdir)/BlockArray.C $(srcdir)/schema.C $(srcdir)/session.C $(srcdir)/TEWidget.C $(srcdir)/TEmuVt102.C $(srcdir)/TEScreen.C $(srcdir)/TEmulation.C $(srcdir)/TEHistory.C $(srcdir)/keytrans.C $(srcdir)/konsole_part.C $(srcdir)/libkonsolepart_la_meta_unload.C   konsole_part.moc konsole.moc TEWidget.moc TEmulation.moc session.moc TEmuVt102.moc kwrited.moc TEPty.moc 
- 	@echo 'creating libkonsolepart_la.all_C.C ...'; \
- 	rm -f libkonsolepart_la.all_C.files libkonsolepart_la.all_C.final; \
- 	echo "#define KDE_USE_FINAL 1" >> libkonsolepart_la.all_C.final; \
-@@ -937,7 +926,7 @@ libkonsolepart_la.all_C.C: $(srcdir)/Mak
- 	rm -f libkonsolepart_la.all_C.final libkonsolepart_la.all_C.files
- 
- #>+ 11
--kwrited_la.all_C.C: $(srcdir)/Makefile.in $(srcdir)/kwrited.C kwrited_la_meta_unload.C  
-+kwrited_la.all_C.C: $(srcdir)/Makefile.in $(srcdir)/kwrited.C $(srcdir)/kwrited_la_meta_unload.C  
- 	@echo 'creating kwrited_la.all_C.C ...'; \
- 	rm -f kwrited_la.all_C.files kwrited_la.all_C.final; \
- 	echo "#define KDE_USE_FINAL 1" >> kwrited_la.all_C.final; \
-@@ -949,7 +938,7 @@ kwrited_la.all_C.C: $(srcdir)/Makefile.i
- 	rm -f kwrited_la.all_C.final kwrited_la.all_C.files
- 
- #>+ 11
--konsole_la.all_C.C: $(srcdir)/Makefile.in $(srcdir)/main.C $(srcdir)/konsole.C konsole_la_meta_unload.C  
-+konsole_la.all_C.C: $(srcdir)/Makefile.in $(srcdir)/main.C $(srcdir)/konsole.C $(srcdir)/konsole_la_meta_unload.C  
- 	@echo 'creating konsole_la.all_C.C ...'; \
- 	rm -f konsole_la.all_C.files konsole_la.all_C.final; \
- 	echo "#define KDE_USE_FINAL 1" >> konsole_la.all_C.final; \
-@@ -961,7 +950,7 @@ konsole_la.all_C.C: $(srcdir)/Makefile.i
- 	rm -f konsole_la.all_C.final konsole_la.all_C.files
- 
- #>+ 11
--konsole.all_C.C: $(srcdir)/Makefile.in $(srcdir)/TEPty.C $(srcdir)/BlockArray.C $(srcdir)/main.C $(srcdir)/konsole.C $(srcdir)/schema.C $(srcdir)/session.C $(srcdir)/TEWidget.C $(srcdir)/TEmuVt102.C $(srcdir)/TEScreen.C $(srcdir)/TEmulation.C $(srcdir)/TEHistory.C $(srcdir)/keytrans.C konsole_meta_unload.C  
-+konsole.all_C.C: $(srcdir)/Makefile.in $(srcdir)/TEPty.C $(srcdir)/BlockArray.C $(srcdir)/main.C $(srcdir)/konsole.C $(srcdir)/schema.C $(srcdir)/session.C $(srcdir)/TEWidget.C $(srcdir)/TEmuVt102.C $(srcdir)/TEScreen.C $(srcdir)/TEmulation.C $(srcdir)/TEHistory.C $(srcdir)/keytrans.C $(srcdir)/konsole_meta_unload.C  
- 	@echo 'creating konsole.all_C.C ...'; \
- 	rm -f konsole.all_C.files konsole.all_C.final; \
- 	echo "#define KDE_USE_FINAL 1" >> konsole.all_C.final; \
-@@ -973,7 +962,7 @@ konsole.all_C.C: $(srcdir)/Makefile.in $
- 	rm -f konsole.all_C.final konsole.all_C.files
- 
- #>+ 11
--kwrited.all_C.C: $(srcdir)/Makefile.in dummy.C  
-+kwrited.all_C.C: $(srcdir)/Makefile.in $(srcdir)/dummy.C  
- 	@echo 'creating kwrited.all_C.C ...'; \
- 	rm -f kwrited.all_C.files kwrited.all_C.final; \
- 	echo "#define KDE_USE_FINAL 1" >> kwrited.all_C.final; \

@@ -1,12 +1,20 @@
-$OpenBSD: patch-kioslave_audiocd_Makefile_in,v 1.1 2001/08/26 12:04:44 espie Exp $
---- kioslave/audiocd/Makefile.in.orig	Sun Aug 26 13:16:25 2001
-+++ kioslave/audiocd/Makefile.in	Sun Aug 26 13:17:01 2001
-@@ -278,7 +278,7 @@ kde_module_LTLIBRARIES = kio_audiocd.la
+$OpenBSD: patch-kioslave_audiocd_Makefile_in,v 1.2 2001/12/31 12:30:54 espie Exp $
+--- kioslave/audiocd/Makefile.in.orig	Sat Nov 10 08:58:27 2001
++++ kioslave/audiocd/Makefile.in	Sun Dec 30 22:21:48 2001
+@@ -328,7 +328,7 @@ DIST_COMMON =  Makefile.am Makefile.in
  
- kio_audiocd_la_SOURCES = cddb.cpp audiocd.cpp
+ #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 4
+-KDE_DIST=configure.in.in audiocd.protocol 
++KDE_DIST=audiocd.protocol configure.in.in 
  
--kio_audiocd_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(CDPARANOIA_RPATH)  $(LAME_RPATH) $(VORBIS_RPATH) -module $(KDE_PLUGIN)
-+kio_audiocd_la_LDFLAGS = -L${LAMEDIR} $(all_libraries) $(KDE_RPATH) $(CDPARANOIA_RPATH)  $(LAME_RPATH) $(VORBIS_RPATH) -module $(KDE_PLUGIN)
+ DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
  
- 
- kio_audiocd_la_LIBADD = $(LIB_KIO) $(CDPARANOIA_LIBS) $(LAME_LIBS) $(VORBISENC_LIBS) $(VORBIS_LIBS)
+@@ -491,6 +491,7 @@ mostlyclean-recursive clean-recursive di
+ 	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
+ 	rev="$$subdir $$rev"; \
+ 	test "$$subdir" != "." || dot_seen=yes; \
++	true; \
+ 	done; \
+ 	test "$$dot_seen" = "no" && rev=". $$rev"; \
+ 	target=`echo $@ | sed s/-recursive//`; \

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/31 12:30:54 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries documentation"
 CATEGORIES=		x11 x11/kde devel
-NEED_VERSION=		1.483
-VERSION=		2.2.1
+NEED_VERSION=		1.504
+VERSION=		2.2.2
 PKGNAME=		kdelibs-doc-${VERSION}
 
 HOMEPAGE=		http://www.kde.org
 DISTFILES=
+NO_CHECKSUM=		Yes
 
 BUILD_DEPENDS=	::x11/kde/kdoc2 ::x11/kde/libs2:patch ::x11/qt2,-html
 

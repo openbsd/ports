@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2001/11/07 01:44:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.32 2001/12/31 12:30:53 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.483
-VERSION=		2.2.1
+NEED_VERSION=		1.504
+VERSION=		2.2.2
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -22,10 +22,11 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		tiff.35::graphics/tiff \
 		audiofile::devel/libaudiofile \
 		pcreposix,pcre::devel/pcre \
-		xml2:libxml->=2.3.13:textproc/libxml \
+		xml2.6.8::textproc/libxml \
+		xslt.1.6::textproc/libxslt \
 		bz2::archivers/bzip2
 
-BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2,-html
+BUILD_DEPENDS=	:zsh-*:shells/zsh/stable :qt2-html-*:x11/qt2,-html
 
 # glib2.0 
 # qt docs
@@ -34,6 +35,7 @@ BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2,-html
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
@@ -58,6 +60,7 @@ CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
+	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 	@if pkg dependencies check kdelibs-\*; then \
 		if pkg dependencies check ${DISTNAME}; then \
 			:; \
@@ -68,11 +71,13 @@ pre-build:
     	fi
 
 	# Let zsh act as an sh replacement
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
+
+#CONFIGURE_SCRIPT=	${WRKBUILD}/sh ${WRKSRC}/configure
+#CONFIGURE_ENV=CONFIG_SHELL=${WRKBUILD}/sh
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

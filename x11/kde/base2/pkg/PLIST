@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2001/10/25 04:58:54 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.22 2001/12/31 12:30:54 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -640,6 +640,8 @@ share/apps/kcmkeys/standard/app-unix3.kksrc
 share/apps/kcmkeys/standard/app-win3.kksrc
 share/apps/kcmlocale/pics/background.png
 share/apps/kcmusb/usb.ids
+share/apps/kconf_update/klipper-1-2.pl
+share/apps/kconf_update/klipperrc.upd
 share/apps/kconf_update/konsole.upd
 share/apps/kcontrol/kcontrolui.rc
 share/apps/kcontrol/pics/energybig.png
@@ -997,9 +999,6 @@ share/apps/konsole/konsole_part.rc
 share/apps/konsole/linux.desktop
 share/apps/konsole/linux.keytab
 share/apps/konsole/mc.desktop
-share/apps/konsole/pics/brightness.png
-share/apps/konsole/pics/colourness.png
-share/apps/konsole/pics/contrast.png
 share/apps/konsole/shell.desktop
 share/apps/konsole/su.desktop
 share/apps/konsole/sumc.desktop
@@ -2009,6 +2008,8 @@ share/locale/l10n/hr/entry.desktop
 share/locale/l10n/hr/flag.png
 share/locale/l10n/hu/entry.desktop
 share/locale/l10n/hu/flag.png
+share/locale/l10n/id/entry.desktop
+share/locale/l10n/id/flag.png
 share/locale/l10n/ie/entry.desktop
 share/locale/l10n/ie/flag.png
 share/locale/l10n/il/entry.desktop
@@ -2287,6 +2288,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/sounds
 @dirrm share/services/useragentstrings
 @dirrm share/services/searchproviders
+@dirrm share/services/kded
 @dirrm share/locale/l10n/za
 @dirrm share/locale/l10n/ve
 @dirrm share/locale/l10n/vc
@@ -2328,6 +2330,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/l10n/is
 @dirrm share/locale/l10n/il
 @dirrm share/locale/l10n/ie
+@dirrm share/locale/l10n/id
 @dirrm share/locale/l10n/hu
 @dirrm share/locale/l10n/hr
 @dirrm share/locale/l10n/hn
@@ -2362,13 +2365,15 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/C
+@dirrm share/locale
 @dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/16x16/filesystems
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2410,7 +2415,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kscreensaver
 @dirrm share/apps/kpersonalizer/pics
 @dirrm share/apps/kpersonalizer
-@dirrm share/apps/konsole/pics
 @dirrm share/apps/konsole
 @dirrm share/apps/konqueror/tiles
 @dirrm share/apps/konqueror/profiles
@@ -2496,6 +2500,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kdcop
 @dirrm share/apps/kcontrol/pics
 @dirrm share/apps/kcontrol
+@dirrm share/apps/kconf_update
 @dirrm share/apps/kcmusb
 @dirrm share/apps/kcmlocale/pics
 @dirrm share/apps/kcmlocale
@@ -2593,5 +2598,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
+@dirrm lib/kde2
 @dirrm include/kwin
 @dirrm include/kate

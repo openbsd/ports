@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/24 12:52:42 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/12/31 12:30:54 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -29,8 +29,8 @@ COMMENT-kwin4=		4 in a rows game for kde
 COMMENT-lskat=		card game for two players, based on Skat
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.461
-VERSION=		2.2.1
+NEED_VERSION=		1.504
+VERSION=		2.2.2
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -46,6 +46,7 @@ LIB_DEPENDS= kdecore.3,DCOP,artsflow,artsflow_idl,kdeprint,kdesu,kdeui,kfile,kio
 BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2

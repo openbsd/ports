@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/09/19 14:13:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/12/31 12:30:53 espie Exp $
 bin/artsc-config
 bin/artscat
 bin/artsd
@@ -152,6 +152,7 @@ include/kallocator.h
 include/kalphapainter.h
 include/kanimwidget.h
 include/kapp.h
+include/kapplication.h
 include/karrowbutton.h
 include/kasyncio.h
 include/kaudioplayer.h
@@ -403,6 +404,7 @@ include/ksslpkcs12.h
 include/ksslsettings.h
 include/ksslutils.h
 include/ksslx509map.h
+include/kstandarddirs.h
 include/kstartupinfo.h
 include/kstaticdeleter.h
 include/kstatusbar.h
@@ -429,6 +431,7 @@ include/ktoolbarbutton.h
 include/ktoolbarradiogroup.h
 include/ktrader.h
 include/kuniqueapp.h
+include/kuniqueapplication.h
 include/kunload.h
 include/kurifilter.h
 include/kurl.h
@@ -517,6 +520,7 @@ lib/libartskde.la
 lib/libartswavplayobject.la
 lib/libkab.la
 lib/libkdecore.la
+lib/libkded_kssld.la
 lib/libkdefakes.la
 lib/libkdeprint.la
 lib/libkdeprint_management.la
@@ -1178,6 +1182,7 @@ share/apps/ksgmltools2/docbook/xsl/common/subtitles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/sv.xml
 share/apps/ksgmltools2/docbook/xsl/common/titles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/tr.xml
+share/apps/ksgmltools2/docbook/xsl/common/xh.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_cn.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_tw.xml
 share/apps/ksgmltools2/docbook/xsl/html/ChangeLog
@@ -2468,6 +2473,7 @@ share/services/kaclplugin.desktop
 share/services/kbzip2filter.desktop
 share/services/kcookiejar.desktop
 share/services/kded/kdeprintd.desktop
+share/services/kded/kssld.desktop
 share/services/kgzipfilter.desktop
 share/services/khtml.desktop
 share/services/khtmlimage.desktop

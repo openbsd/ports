@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2001/12/31 12:30:54 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.483
-VERSION=		2.2.1
+NEED_VERSION=		1.504
+VERSION=		2.2.2
 DISTNAME=		kdebase-${VERSION}
 PKGNAME-plugins=	kdebase-ns-${VERSION}
 DIST_SUBDIR=		kde
@@ -34,6 +34,7 @@ LIB_DEPENDS=	kdecore.3,kdeui,DCOP,artskde,kab,kdefakes,kdeprint,kdeprint_managem
 BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable ::audio/lame
 
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib

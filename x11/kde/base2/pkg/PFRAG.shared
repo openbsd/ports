@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2001/08/26 12:04:44 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.14 2001/12/31 12:30:54 espie Exp $
 lib/kde2/libgsthumbnail.so.0.0
 lib/kde2/libhtmlthumbnail.so.0.0
 lib/kde2/libimagethumbnail.so.0.0

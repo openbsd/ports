@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/09/19 15:20:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/12/31 12:30:54 espie Exp $
 share/doc/html/kdelibs/dcop/DCOPClient.html
 share/doc/html/kdelibs/dcop/DCOPConnection.html
 share/doc/html/kdelibs/dcop/DCOPMsg.html
@@ -304,6 +304,7 @@ share/doc/html/kdelibs/kdecore/kaboutdata_h.html
 share/doc/html/kdelibs/kdecore/kaccel_h.html
 share/doc/html/kdelibs/kdecore/kallocator_h.html
 share/doc/html/kdelibs/kdecore/kapp_h.html
+share/doc/html/kdelibs/kdecore/kapplication_h.html
 share/doc/html/kdelibs/kdecore/kasyncio_h.html
 share/doc/html/kdelibs/kdecore/kaudioplayer_h.html
 share/doc/html/kdelibs/kdecore/kbufferedio_h.html
@@ -364,6 +365,7 @@ share/doc/html/kdelibs/kdecore/ksimpleconfig_h.html
 share/doc/html/kdelibs/kdecore/ksock_h.html
 share/doc/html/kdelibs/kdecore/ksockaddr_h.html
 share/doc/html/kdelibs/kdecore/ksocks_h.html
+share/doc/html/kdelibs/kdecore/kstandarddirs_h.html
 share/doc/html/kdelibs/kdecore/kstartupinfo_h.html
 share/doc/html/kdelibs/kdecore/kstaticdeleter_h.html
 share/doc/html/kdelibs/kdecore/kstdaccel_h.html
@@ -377,6 +379,7 @@ share/doc/html/kdelibs/kdecore/ksycocafactory_h.html
 share/doc/html/kdelibs/kdecore/ksycocatype_h.html
 share/doc/html/kdelibs/kdecore/ktempfile_h.html
 share/doc/html/kdelibs/kdecore/kuniqueapp_h.html
+share/doc/html/kdelibs/kdecore/kuniqueapplication_h.html
 share/doc/html/kdelibs/kdecore/kunload_h.html
 share/doc/html/kdelibs/kdecore/kurl_h.html
 share/doc/html/kdelibs/kdecore/kurldrag_h.html
@@ -1934,3 +1937,4 @@ share/doc/html/kdelibs/libkmid/voiceman_h.html
 @dirrm share/doc/html/kdelibs/interfaces
 @dirrm share/doc/html/kdelibs/dcop
 @dirrm share/doc/html/kdelibs
+@dirrm share/doc/html
