@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2004/12/05 14:24:11 alek Exp $
+# $OpenBSD: Makefile,v 1.264 2004/12/08 05:47:01 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -181,6 +181,7 @@
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-Log-Agent
+     SUBDIR += p5-Log-Dispatch
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
