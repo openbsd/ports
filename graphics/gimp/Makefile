@@ -3,7 +3,7 @@
 # Date created:         December 12, 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/12 05:47:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/11 18:04:10 marc Exp $
 #
 
 DISTNAME=       gimp
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-#BROKEN=		"obsolete, distfile no longer available"
+BROKEN=		"obsolete, distfile no longer available"
 
 REQUIRES_MOTIF=	yes
 USE_X11=	yes
