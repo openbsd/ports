@@ -1,0 +1,39 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/03 01:02:40 espie Exp $
+${P5SITE}/Graph/
+${P5SITE}/Graph.pm
+${P5SITE}/Graph.pod
+${P5SITE}/Graph/AdjacencyMap/
+${P5SITE}/Graph/AdjacencyMap.pm
+${P5SITE}/Graph/AdjacencyMap/Heavy.pm
+${P5SITE}/Graph/AdjacencyMap/Light.pm
+${P5SITE}/Graph/AdjacencyMap/Vertex.pm
+${P5SITE}/Graph/AdjacencyMatrix.pm
+${P5SITE}/Graph/Attribute.pm
+${P5SITE}/Graph/BitMatrix.pm
+${P5SITE}/Graph/Directed.pm
+${P5SITE}/Graph/MSTHeapElem.pm
+${P5SITE}/Graph/Matrix.pm
+${P5SITE}/Graph/SPTHeapElem.pm
+${P5SITE}/Graph/TransitiveClosure/
+${P5SITE}/Graph/TransitiveClosure.pm
+${P5SITE}/Graph/TransitiveClosure/Matrix.pm
+${P5SITE}/Graph/Traversal/
+${P5SITE}/Graph/Traversal.pm
+${P5SITE}/Graph/Traversal/BFS.pm
+${P5SITE}/Graph/Traversal/DFS.pm
+${P5SITE}/Graph/Undirected.pm
+${P5SITE}/Graph/UnionFind.pm
+@man man/man3p/Graph.3p
+@man man/man3p/Graph::AdjacencyMap.3p
+@man man/man3p/Graph::AdjacencyMap::Vertex.3p
+@man man/man3p/Graph::AdjacencyMatrix.3p
+@man man/man3p/Graph::BitMatrix.3p
+@man man/man3p/Graph::Directed.3p
+@man man/man3p/Graph::Matrix.3p
+@man man/man3p/Graph::TransitiveClosure.3p
+@man man/man3p/Graph::TransitiveClosure::Matrix.3p
+@man man/man3p/Graph::Traversal.3p
+@man man/man3p/Graph::Traversal::BFS.3p
+@man man/man3p/Graph::Traversal::DFS.3p
+@man man/man3p/Graph::Undirected.3p
+@man man/man3p/Graph::UnionFind.3p
