@@ -1,5 +1,6 @@
---- glib.h.orig	Sat Aug 26 23:51:58 2000
-+++ glib.h	Sat Aug 26 23:53:48 2000
+$OpenBSD: patch-glib_h,v 1.1 2001/02/19 20:34:47 danh Exp $
+--- glib.h.orig	Thu Mar 23 21:34:01 2000
++++ glib.h	Mon Feb 19 15:32:17 2001
 @@ -27,6 +27,8 @@
  #ifndef __G_LIB_H__
  #define __G_LIB_H__
@@ -9,7 +10,7 @@
  /* system specific config file glibconfig.h provides definitions for
   * the extrema of many of the standard types. These are:
   *
-@@ -130,11 +132,13 @@
+@@ -130,11 +132,13 @@ extern "C" {
  #define	TRUE	(!FALSE)
  #endif
  

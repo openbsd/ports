@@ -1,6 +1,7 @@
---- gmodule/Makefile.in.orig	Wed Feb 16 06:19:13 2000
-+++ gmodule/Makefile.in	Tue Mar  7 16:27:19 2000
-@@ -107,7 +107,7 @@
+$OpenBSD: patch-gmodule_Makefile_in,v 1.1 2001/02/19 20:34:47 danh Exp $
+--- gmodule/Makefile.in.orig	Wed May 24 21:06:07 2000
++++ gmodule/Makefile.in	Mon Feb 19 15:32:17 2001
+@@ -107,7 +107,7 @@ libglib = $(top_builddir)/libglib.la # -
  lib_LTLIBRARIES = libgmodule.la libgplugin_a.la libgplugin_b.la
  
  libgmodule_la_SOURCES = gmodule.c
@@ -9,7 +10,7 @@
  
  
  libgmodule_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
-@@ -331,7 +331,7 @@
+@@ -331,7 +331,7 @@ install-am: all-am
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES uninstall-includeHEADERS
  uninstall: uninstall-am

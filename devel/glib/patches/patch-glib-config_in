@@ -1,0 +1,12 @@
+$OpenBSD: patch-glib-config_in,v 1.1 2001/02/19 20:34:47 danh Exp $
+--- glib-config.in.orig	Tue Dec 15 20:29:18 1998
++++ glib-config.in	Mon Feb 19 15:32:17 2001
+@@ -91,7 +91,7 @@ if test "$echo_cflags" = "yes"; then
+ 	if test "$lib_gthread" = "yes"; then
+ 		cflags="$cflags @G_THREAD_CFLAGS@"
+ 	fi
+-	echo -I@libdir@/glib/include $includes $cflags
++	echo $includes $cflags
+ fi
+ if test "$echo_libs" = "yes"; then
+ 	libsp=""

@@ -1,6 +1,7 @@
---- gthread/Makefile.in.orig	Wed Feb 16 06:19:14 2000
-+++ gthread/Makefile.in	Tue Mar  7 16:28:10 2000
-@@ -101,7 +101,7 @@
+$OpenBSD: patch-gthread_Makefile_in,v 1.1 2001/02/19 20:34:47 danh Exp $
+--- gthread/Makefile.in.orig	Wed May 24 21:06:08 2000
++++ gthread/Makefile.in	Mon Feb 19 15:32:17 2001
+@@ -101,7 +101,7 @@ libglib = $(top_builddir)/libglib.la # -
  lib_LTLIBRARIES = libgthread.la
  
  libgthread_la_SOURCES = gthread.c
@@ -9,7 +10,7 @@
  
  
  libgthread_la_LIBADD = @G_THREAD_LIBS@
-@@ -295,7 +295,7 @@
+@@ -295,7 +295,7 @@ install-am: all-am
  install: install-am
  uninstall-am: uninstall-libLTLIBRARIES
  uninstall: uninstall-am

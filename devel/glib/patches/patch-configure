@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2001/02/19 20:34:47 danh Exp $
+--- configure.orig	Wed May 24 20:30:06 2000
++++ configure	Mon Feb 19 15:32:17 2001
+@@ -4836,7 +4836,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  G_THREAD_LIBS="-lc_r"
++  G_THREAD_LIBS="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
