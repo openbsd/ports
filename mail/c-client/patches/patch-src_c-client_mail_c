@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_c-client_mail_c,v 1.1 2003/06/20 13:41:02 henning Exp $
---- src/c-client/mail.c.orig	Fri Jan  3 02:28:20 2003
-+++ src/c-client/mail.c	Fri Jun 20 15:31:10 2003
-@@ -2798,7 +2798,11 @@ void mail_dlog (char *string,long flag)
+$OpenBSD: patch-src_c-client_mail_c,v 1.2 2004/04/02 08:18:48 jakob Exp $
+--- src/c-client/mail.c.orig	2003-09-09 19:18:53.000000000 +0200
++++ src/c-client/mail.c	2004-04-02 09:57:05.000000000 +0200
+@@ -2970,7 +2970,11 @@ void mail_dlog (char *string,long flag)
  {
    mm_dlog ((debugsensitive || !flag) ? string : "<suppressed>");
  }

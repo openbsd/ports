@@ -1,10 +1,10 @@
 # $tgId: obsd.ports,v 3.38 2002/11/27 19:37:23 tg Exp $
-# $OpenBSD: Makefile,v 1.28 2003/06/15 21:41:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.29 2004/04/02 08:18:48 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 NO_REGRESS=	Yes
 
-VERSION=	4.53
+VERSION=	4.58
 DISTNAME=	pine${VERSION}
 PKGNAME=	c-client-${VERSION}
 CATEGORIES=	mail devel
