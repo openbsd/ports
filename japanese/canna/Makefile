@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/29 01:16:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/11 01:53:46 espie Exp $
 
 DISTNAME=	Canna35b2
 PKGNAME=	cannalib-3.5b2
+NEED_VERSION=	1.300
 
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna35/
@@ -10,7 +11,6 @@ MASTER_SITES0=	http://www.jaist.ac.jp/~fujieda/canna/
 PATCHFILES=	Canna35b2-unoff1.patch.gz:0 Canna35b2-unoff2.patch.gz:0 \
 		Canna35b2-hack1.patch.gz:0
 PATCH_DIST_STRIP=	-p1
-FAKE=		Yes
 
 # Will turn into a RUN_DEPENDS when we install non-formatted manpages
 BUILD_DEPENDS=	jgroff::japanese/groff
@@ -29,7 +29,8 @@ PREFIX=		/var/dict
 PKGNAME=	cannaserver-3.5b2
 .endif
 
-USE_IMAKE=	Yes
+SUBST_VARS=	DICT_DIR
+CONFIGURE_STYLE=imake
 CANNAOWNER=    daemon
 CANNAGROUP=    daemon
 DICT_DIR=	/var/dict/canna

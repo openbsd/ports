@@ -4,6 +4,7 @@
 DISTNAME=	kinput2-v3
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
+NEED_VERSION=   1.300
 
 LICENSE_TYPE=	NOFEE
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,9 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=	sigh@kuzirabekon.econ.nagasaki-u.ac.jp
 
-NEED_VERSION=   1.270
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 FLAVORS=	canna wnn
 FLAVOR?=	wnn
 

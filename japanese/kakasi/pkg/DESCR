@@ -1,3 +1,5 @@
 Kakasi can convert Kanji to Hiragana, katakana, or even roman characters.
 It may be helpful to read japanese documents, either if you don't know
 japanese well, or if you have access to limited hardware.
+
+WWW: ${HOMEPAGE}

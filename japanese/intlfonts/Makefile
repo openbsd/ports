@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/24 16:10:21 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/11 01:53:47 espie Exp $
 
 CATEGORIES=	japanese x11
+NEED_VERSION=	1.300
 DISTNAME=	intlfonts-1.2
 PKGNAME=	ja-fonts-gnu-1.2
-FAKE=		Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=intlfonts
@@ -19,9 +19,9 @@ FONTDIR=${PREFIX}/lib/X11/fonts/ja
 
 # Don't bother extracting non-japanese fonts
 EXTRACT_AFTER_ARGS=	| tar -xf - `sed <${FILESDIR}/list -e s,^,${DISTNAME}/,`
-GNU_CONFIGURE=	Yes
 
-NO_BUILD=	Yes
+CONFIGURE_STYLE=	gnu dest
+NO_BUILD=		Yes
 
 CONFIGURE_ARGS= --with-fontdir='$${DESTDIR}${FONTDIR}' \
 	--enable-compress='gzip -9' --with-bdf=no

@@ -1,5 +1,5 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.6 2000/03/11 03:28:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/11 01:53:49 espie Exp $
 
 
 DISTNAME=	nkf-1.62
@@ -19,7 +19,6 @@ MAKE_FILE=${FILESDIR}/Makefile
 
 ALL_TARGET=nkf
 
-FAKE=Yes
 # original english man page was rather difficult to follow
 do-install:	
 	${INSTALL_PROGRAM} ${WRKSRC}/nkf ${PREFIX}/bin

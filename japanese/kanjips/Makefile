@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/04/23 15:43:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/11 01:53:48 espie Exp $
 
 CATEGORIES=japanese print
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=		espie@openbsd.org
 
-FAKE=			Yes
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I..'
 ALL_TARGET=	kanjips
 WRKSRC=	${WRKDIST}/kanjips
@@ -27,6 +26,7 @@ WRKSRC=	${WRKDIST}/kanjips
 post-extract:
 	zcat ${FULLDISTDIR}/jis32.Z >${WRKDIST}/jis32
 	zcat ${FULLDISTDIR}/jis48.Z >${WRKDIST}/jis48
+
 do-configure:
 	cd ${WRKDIST} && awk '{print $$1}' < MANIFEST |grep '\.SH' >todo
 	cd ${WRKDIST} && perl -pi.bak ${FILESDIR}/add-quotes `cat todo`

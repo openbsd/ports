@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/12 20:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/11 01:53:47 espie Exp $
 
 CATEGORIES=	japanese textproc print
-NEED_VERSION=	1.255
+NEED_VERSION=	1.300
 
 PKGNAME=	ja-groff-1.10_0.99
 DISTNAME=	groff-1.10
@@ -21,9 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 PATCH_DIST_STRIP=	-p1
 
-FAKE=		Yes
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_STYLE=	gnu old dest
 
 #post-configure:
 #	@cd ${WRKSRC}/xditview && ${SETENV} ${MAKE_ENV} ${XMKMF}

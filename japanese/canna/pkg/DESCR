@@ -16,3 +16,5 @@ From NetBSD:
          (canna) ))
 
 The nvi-m17n-*-canna package supports canna.
+
+WWW: ${HOMEPAGE}

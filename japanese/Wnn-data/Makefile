@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/21 19:32:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/06/11 01:53:46 espie Exp $
 
 CATEGORIES= japanese chinese korean
 DISTNAME= Wnn-data-4.2
@@ -12,7 +12,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
-FAKE=			Yes
 
 pre-extract:
 	@cd ${PORTSDIR} && cd japanese/Wnn && make patch

@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.28 2000/04/28 22:12:23 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/06/11 01:53:45 espie Exp $
 
 DISTNAME=	Wnn4.2
 
@@ -120,7 +120,6 @@ do-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} make ${MAKE_FLAGS} -f Makefile.inst ${ALL_TARGET}
 ALL_TARGET=World
 INSTALL_TARGET=install install.man
-FAKE=Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PORT_JDOCDIR}

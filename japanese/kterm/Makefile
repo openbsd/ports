@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/16 21:31:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/11 01:53:48 espie Exp $
 #
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
-NEED_VERSION=	 1.240
+NEED_VERSION=	1.300
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
@@ -20,8 +20,7 @@ PATCHFILES=	kterm-6.2.0.NFS-xauth.patch:0
 
 MAINTAINER=	ports@openbsd.org
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=imake
 MAKE_FLAGS=	CDEBUGFLAGS=-O2
 
 FLAVORS=xaw3d tek

@@ -5,3 +5,5 @@ Update /etc/services to get the canna service recognized.
 
 cannaserver is started as daemon. This package needs
 the Canna dictionaries (cannadict package) to be functional.
+
+WWW: ${HOMEPAGE}
