@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2000/12/12 23:06:06 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2001/03/24 17:29:16 brad Exp $
 bin/epic
 bin/epic-EPIC4-${VERSION}
 libexec/wserv-epic
@@ -908,6 +908,7 @@ share/epic/script/prefix
 share/epic/script/recursion
 share/epic/script/repeat
 share/epic/script/revdcc
+share/epic/script/scan
 share/epic/script/scandir
 share/epic/script/screen
 share/epic/script/sdiff
@@ -918,6 +919,7 @@ share/epic/script/starutils
 share/epic/script/stat
 share/epic/script/status_lag
 share/epic/script/tabkey
+share/epic/script/tabkey.th
 share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2001/02/08 19:48:14 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2001/03/24 17:29:16 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-VERSION=	0.9.16
+VERSION=	0.10.1
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ftp.magenet.com/pub/epic/EPIC4-BETA/ \
-		ftp://ftp.epicsol.org/pub/ircii/EPIC4-BETA/
+MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-BETA/
 DISTFILES=	epic4-${VERSION}.tar.gz epic4pre2-help.tar.gz
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
