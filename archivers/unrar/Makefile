@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2004/02/23 00:33:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/14 21:33:11 brad Exp $
 
 COMMENT=	"extract, list, and test RAR archives"
 
 DISTNAME=	unrarsrc-3.3.6
-PKGNAME=	unrar-3.30
+PKGNAME=	unrar-3.30p1
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
@@ -15,11 +15,6 @@ PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}rar/
-
-# - exceptions don't work on sparc64
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	patch-* gcc-patch-*
-.endif
 
 WRKDIST=	${WRKDIR}/unrar
 
