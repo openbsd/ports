@@ -1,36 +1,17 @@
-egcs is an experimental spin-off of gcc that started when people got 
-fed up waiting for gcc 2.8. As the C++ standard finally emerged,
-egcs people strove trying to implement as much of it as possible.
+OpenBSD currently ships with a slightly modified gcc 2.95.3, which 
+should be adequate for most people.
 
-Egcs proved to be a succesful project, to the extent that it now is
-the official gnu compiler, relabelled gcc 2.95 for its first release.
+Selected changes:
 
-OpenBSD 2.7 ships with gcc 2.95.2, which should be adequate for most
-people.
-
-The main reason for the egcs/snapshot port is to make it easier for 
-interested parties to track current egcs development and report bugs
-(specific or not to OpenBSD), so that when the next release comes, we
-are ready to integrate it.
-
-From a user point of view, you may need some features that the port
-provides.
-
-There have been a lot of changes since gcc 2.95.2, this is just a quick
-summary of a few:
-
-* the intel scheduler has been revamped. It's more efficient on hundreds
-of little details,
-* other arches have known important internal improvement. m68k pic support
-should be better. HP-PA has most of PA2.0 support in,
-* internal memory handling now uses a garbage collector. Eventually egcs
-should become faster, more robust and less memory-hungry (this is already 
-the case in many circumstances),
-* the back-end specifications have been tightened, so that many bugs have
-been found,
-* the C++ compiler now uses one-function-at-a-time tree representations.
-More optimizations are possible,
-* the design of varargs facilities has been completely changed,
-* loads of new warnings and new optimizations.
-
-See http://egcs.cygnus.com for more details.
+* gcc 3.1 is much slower compiling than gcc 2.95.
+* integrated preprocessor, somewhat better diagnostics.
+* much better C++ support, almost fully ISO compliant.
+* better C++ template diagnostics.
+* better code generation, (scheduling on newer intel platforms), sparc64,
+and others...
+* function at-a-time compile and tree based inliner, that should give
+better results than the old inliner.
+* profiler-directed optimizations.
+* built-in for mmx (needs new gas though) or altivec.
+* integrated ada and java compiler (boehm-gc does not work on OpenBSD yet).
+* more robust, especially where odd compile options are concerned.
