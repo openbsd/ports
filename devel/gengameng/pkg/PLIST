@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/07 05:04:23 pvalchev Exp $
+include/gengameng/Couple.h
+include/gengameng/GameEngine.h
+include/gengameng/Gengameng_LoadCompiledXPM.h
+include/gengameng/PixmapArray.h
+include/gengameng/PixmapLoadError.h
+include/gengameng/Sprite.h
+include/gengameng/goodies.h
+lib/libgengameng.a
+lib/libgengameng.la
+%%SHARED%%
+@dirrm include/gengameng
