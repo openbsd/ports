@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_aide_1,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
---- doc/aide.1.orig	Wed Jan 19 06:11:14 2000
-+++ doc/aide.1	Wed Jun  6 11:04:52 2001
-@@ -45,11 +45,11 @@ output. See aide.conf (5) section URLS f
+$OpenBSD: patch-doc_aide_1,v 1.2 2003/12/04 15:29:31 lebel Exp $
+--- doc/aide.1.orig	Sun Mar 17 15:06:07 2002
++++ doc/aide.1	Mon Aug  5 08:56:10 2002
+@@ -48,11 +48,11 @@ output. See aide.conf (5) section URLS f
  Prints out the standard help message.
  .PP
  .SH FILES

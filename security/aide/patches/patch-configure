@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
---- configure.orig	Tue Apr 25 10:02:59 2000
-+++ configure	Wed Jun  6 11:13:57 2001
-@@ -53,7 +53,7 @@ libexecdir='${exec_prefix}/libexec'
+$OpenBSD: patch-configure,v 1.2 2003/12/04 15:29:31 lebel Exp $
+--- configure.orig	Tue Jun  4 04:31:27 2002
++++ configure	Mon Aug  5 08:56:10 2002
+@@ -96,7 +96,7 @@ libexecdir='${exec_prefix}/libexec'
  datadir='${prefix}/share'
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
@@ -10,20 +10,3 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
  libdir='${exec_prefix}/lib'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
-@@ -2360,13 +2360,13 @@ EOF
- fi
- 
- 
--if test "x$sysconfdir" != xNONE; then
-+if test "x$localstatedir" != xNONE; then
-      cat >> confdefs.h <<EOF
--#define DEFAULT_DB "$sysconfdir/aide.db"
-+#define DEFAULT_DB "$localstatedir/db/aide.db"
- EOF
- 
-      cat >> confdefs.h <<EOF
--#define DEFAULT_DB_OUT "$sysconfdir/aide.db.new"
-+#define DEFAULT_DB_OUT "$localstatedir/db/aide.db.new"
- EOF
- 
- elif test "x$prefix" != xNONE; then

@@ -1,23 +1,16 @@
-$OpenBSD: patch-doc_aide_conf_in,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
---- doc/aide.conf.in.orig	Tue Jun  5 10:50:51 2001
-+++ doc/aide.conf.in	Tue Jun  5 10:51:44 2001
-@@ -2,15 +2,6 @@
- # AIDE @VERSION@ 
+$OpenBSD: patch-doc_aide_conf_in,v 1.2 2003/12/04 15:29:31 lebel Exp $
+--- doc/aide.conf.in.orig	Sun Feb 24 08:42:43 2002
++++ doc/aide.conf.in	Mon Aug  5 09:01:09 2002
+@@ -19,8 +19,6 @@
+ # corresponding line.
  #
- # example configuration file
--#
--# This configuration file checks the integrity of the
--# AIDE package
--#
--# Default values for the parameters are in comments before the 
--# corresponding line.
--#
--
--@@define TOPDIR @top_srcdir@
  
+-@@define TOPDIR @top_srcdir@
+-
  @@ifndef TOPDIR 
  @@define TOPDIR /
-@@ -34,12 +25,11 @@
+ @@endif
+@@ -43,12 +41,11 @@
  
  # The location of the database to be read.
  #database=file:aide.db
@@ -32,7 +25,7 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
  
  # Whether to gzip the output to database
  # gzip_dbout=no
-@@ -55,8 +45,6 @@ verbose=20
+@@ -64,8 +61,6 @@ verbose=20
  #NOT IMPLEMENTED report_url=syslog:LOG_AUTH
  report_url=stdout
  
@@ -41,16 +34,15 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
  #p:     permissions
  #i:	inode
  #n:	number of links
-@@ -91,22 +79,37 @@ All=R+a+sha1+rmd160+tiger
+@@ -100,22 +95,37 @@ All=R+a+sha1+rmd160
  # Attributes that can be used to verify that aide in intact
  # by people that have downloaded it from the web.
  # Let's be paranoid
--Norm=s+n+b+md5+sha1+rmd160+tiger
+-Norm=s+n+b+md5+sha1+rmd160
 -
 -# The commented rules are just examples the rest are used by 
 -# make check
-+#Norm=s+n+b+md5+sha1+rmd160+tiger
- 
+-
 -#Selection regexp rule
 -@@{TOPDIR}/.* Norm
 -#Equals selection only the directory doc is checked and not it's children
@@ -58,12 +50,15 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
 -#Negative selection no rule is necessary but ignored if there
 -!@@{TOPDIR}/.*~
 -!@@{TOPDIR}/src/.*\.o
--!@@{TOPDIR}/src/(aide|core) L
+-!@@{TOPDIR}/src/(aide|core)$ L
 -!@@{TOPDIR}/.*RCS
 -!@@{TOPDIR}/.*CVS
 -!@@{TOPDIR}/.*aide\.db.*
 -!@@{TOPDIR}/.*\.cvsignore.*
 -# @@{TOPDIR}/doc/.* All
+-
++#Norm=s+n+b+md5+sha1+rmd160+tiger
++  
 +=/$			R
 +/bsd$			L+s+sha1
 +/etc$			L+s+sha1
@@ -94,5 +89,5 @@ $OpenBSD: patch-doc_aide_conf_in,v 1.1.1.1 2001/06/07 14:26:22 lebel Exp $
 +/usr/local/share        R
 +/usr/sbin               R
 +/usr/share              R
- 
++  
 +=/tmp$			L
