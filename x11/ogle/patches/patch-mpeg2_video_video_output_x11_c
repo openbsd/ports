@@ -1,6 +1,6 @@
-$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.3 2002/01/08 11:05:53 espie Exp $
+$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.4 2002/05/26 19:03:43 espie Exp $
 --- mpeg2_video/video_output_x11.c.orig	Sun Dec  2 22:38:00 2001
-+++ mpeg2_video/video_output_x11.c	Thu Dec 13 00:30:10 2001
++++ mpeg2_video/video_output_x11.c	Sun May 26 18:54:01 2002
 @@ -1135,6 +1135,12 @@ void check_x_events(yuv_image_t *current
  	if(keysym == XK_I) {
  	  screenshot_spu = 1;
@@ -14,3 +14,21 @@ $OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.3 2002/01/08 11:05:53 espie E
        }
        break;
      case ButtonPress:
+@@ -1699,6 +1705,8 @@ static void draw_win_x11(window_info *dw
+ 	      window.video_area.height);
+     XSync(mydisplay, False);
+   }
++  if (window.win_state == WINDOW_STATE_FULLSCREEN)
++  	XForceScreenSaver(mydisplay, ScreenSaverReset);
+ }
+ 
+ 
+@@ -1772,6 +1780,8 @@ static void draw_win_xv(window_info *dwi
+        It waits for an XShmCompletionEvent */
+     XIfEvent(mydisplay, &ev, predicate, NULL);
+   }
++  if (window.win_state == WINDOW_STATE_FULLSCREEN)
++  	XForceScreenSaver(mydisplay, ScreenSaverReset);
+ #endif /* HAVE_XV */
+ }
+ 
