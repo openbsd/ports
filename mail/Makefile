@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1998/05/17 03:22:02 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 1998/05/17 03:47:33 angelos Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -21,7 +21,7 @@
 #    SUBDIR += mew
      SUBDIR += mh
 #    SUBDIR += mmr
-#    SUBDIR += movemail
+     SUBDIR += movemail
 #    SUBDIR += mutt
 #    SUBDIR += mutt.with_pgp
      SUBDIR += nmh
@@ -40,7 +40,7 @@
 #    SUBDIR += tkrat
      SUBDIR += xfaces
 #    SUBDIR += xfmail
-#    SUBDIR += xlbiff
+     SUBDIR += xlbiff
 #    SUBDIR += xpbiff
 #    SUBDIR += xpbiff-youbin
 #    SUBDIR += youbin
