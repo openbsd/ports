@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/09/15 14:29:37 camield Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/01/11 13:19:37 avsm Exp $
 bin/envdir
 bin/envuidgid
 bin/fghack
@@ -13,3 +13,17 @@ bin/svscan
 bin/svstat
 bin/tai64n
 bin/tai64nlocal
+man/man8/envdir.8
+man/man8/envuidgid.8
+man/man8/fghack.8
+man/man8/multilog.8
+man/man8/setlock.8
+man/man8/setuidgid.8
+man/man8/softlimit.8
+man/man8/supervise.8
+man/man8/svc.8
+man/man8/svok.8
+man/man8/svscan.8
+man/man8/svstat.8
+man/man8/tai64n.8
+man/man8/tai64nlocal.8
