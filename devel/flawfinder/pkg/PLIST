@@ -1,3 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/01 07:55:45 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 16:59:49 shell Exp $
 bin/flawfinder
 man/man1/flawfinder.1
+share/doc/flawfinder-0.15/ChangeLog
+share/doc/flawfinder-0.15/README
+share/doc/flawfinder-0.15/announcement
+share/doc/flawfinder-0.15/flawfinder.pdf
+share/doc/flawfinder-0.15/flawfinder.ps
+share/doc/flawfinder-0.15/index.html
+share/doc/flawfinder-0.15/test.c
+@dirrm share/doc/flawfinder-0.15

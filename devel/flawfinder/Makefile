@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/01 09:09:24 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/07 16:59:49 shell Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
-DISTNAME=		flawfinder-0.12	
+DISTNAME=		flawfinder-0.15
 CATEGORIES=    		devel security
-NEED_VERSION=		1.413	
+NEED_VERSION=		1.414
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 
@@ -17,16 +17,22 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.dwheeler.com/flawfinder/	
 
-RUN_DEPENDS=		python2.0::lang/python
+RUN_DEPENDS=		python::lang/python
 
 NO_BUILD=		Yes
 
-post-patch:
-	@perl -pi.orig -e 's|/usr/bin/env |${LOCALBASE}/bin/|' \
-		${WRKSRC}/flawfinder
+MAKE_FILE=		makefile
+FAKE_FLAGS=		INSTALL_DIR=${WRKINST}${PREFIX}
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/flawfinder ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/flawfinder.1 ${PREFIX}/man/man1/
+DOC_DIR=		${PREFIX}/share/doc/${DISTNAME}
+DOC_FILES=		ChangeLog README flawfinder.pdf \
+			flawfinder.ps index.html test.c \
+			announcement
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+.for i in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOC_DIR}
+.endfor
 
 .include <bsd.port.mk>
