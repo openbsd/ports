@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2002/07/20 12:10:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/08/07 20:40:15 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
 COMMENT-esd=	"ESounD module for portable audio output library"
 
-FULLPKGNAME=		libao-${VERSION}
-FULLPKGNAME-arts=	libao-arts-${VERSION}
-FULLPKGNAME-esd=	libao-esd-${VERSION}
-
 VERSION=	0.8.3
 DISTNAME=	libao-${VERSION}
+PKGNAME-arts=	libao-arts-${VERSION}
+PKGNAME-esd=	libao-esd-${VERSION}
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.vorbis.com/
 
@@ -28,7 +26,7 @@ MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
 		http://www.casterclub.com/vorbis/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
-FLAVORS=	no_arts no_esd
+PSEUDO_FLAVORS=	no_arts no_esd
 FLAVOR?=	no_arts
 
 MULTI_PACKAGES=
