@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/18 22:41:18 naddy Exp $
+bin/xspect
+man/man1/xspect.1
+share/doc/spectemu/README
+share/examples/spectemu/example.cfg
+share/spectemu/specsinc.xpm
+share/spectemu/spectkey.gif
+@dirrm share/spectemu
+@dirrm share/examples/spectemu
+@dirrm share/doc/spectemu
