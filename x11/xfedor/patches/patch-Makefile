@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Nov  6 23:34:35 1998
-+++ Makefile	Mon Jun 11 09:54:10 2001
++++ Makefile	Thu Jul 12 23:20:56 2001
 @@ -1,8 +1,10 @@
 +PREFIX?=/usr/local
 +
@@ -8,9 +8,9 @@
 -SOSDIR=/usr/local/lib/xfedor
 -BINDIR=/usr/local/bin
 -MANDIR=/usr/local/man/man1
-+SOSDIR=${PREFIX}/lib/xfedor
++SOSDIR=${PREFIX}/lib/X11/xfedor
 +BINDIR=${PREFIX}/bin
-+MANDIR=${PREFIX}/man/man1
++MANDIR=${PREFIX}/man/cat1
  
  CFLAGS= -I. -I/usr/X11R6/include -O2 -DSOSDIR=\"$(SOSDIR)\"
  XFEDOR=	couchex.o myrast.o dialogue.o popup.o\
@@ -26,6 +26,6 @@
 -	#cp xfedor_a.man $(MANDIR)/xfedor.1
 -	@echo "install xfedor_a.man yourself... (only preformatted version present)"
 +	cp Sos/* $(SOSDIR)
-+	cp xfedor_a.man $(MANDIR)/xfedor.1
++	cp xfedor_a.man $(MANDIR)/xfedor.0
 +
 +all: xfedor
