@@ -1,0 +1,17 @@
+$OpenBSD: patch-sound_cc,v 1.1.1.1 2001/02/04 18:35:52 reinhard Exp $
+--- sound.cc.orig	Wed Dec 15 23:35:44 1999
++++ sound.cc	Sat Jan 20 16:52:19 2001
+@@ -3,7 +3,13 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#ifdef __OpenBSD__
++#include <soundcard.h>
++#include <sys/audioio.h>
++#include <string.h>
++#else
+ #include <sys/soundcard.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <errno.h>
+ #include "sound.hh"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/02/04 18:35:52 reinhard Exp $
+--- Makefile.orig	Wed Dec 15 23:35:43 1999
++++ Makefile	Sat Jan 20 16:52:19 2001
+@@ -13,7 +13,7 @@ run: gtkpool
+ 	./gtkpool
+ 
+ gtkpool: $(OBJS)
+-	g++ $(OBJS) $(CFLAGS) -o gtkpool `gtk-config --libs`
++	g++ $(OBJS) $(CFLAGS) -o gtkpool `gtk-config --libs` -lossaudio
+ 
+ popt.o:
+ 	gcc -c popt.c -o popt.o 

@@ -1,0 +1,9 @@
+Gtkpool is a simple pool simulation game with neat gtk
+interface. It currently supports 8 and 9-ball pool,
+has cool settings like friction and collision drag.
+
+The game has some minor problems and is going to improve,
+with even more customizable features, adding network
+support, making the engine more realistic.
+
+WWW: ${HOMEPAGE}

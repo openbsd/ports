@@ -1,0 +1,12 @@
+$OpenBSD: patch-sound_hh,v 1.1.1.1 2001/02/04 18:35:52 reinhard Exp $
+--- sound.hh.orig	Wed Dec 15 23:35:44 1999
++++ sound.hh	Sat Jan 20 16:53:34 2001
+@@ -6,7 +6,7 @@
+ 
+ void play_sound(char *sound, int count);
+ int load_sound(char *file, char *buffer, int *count);
+-void open_sound_device(char *name = "/dev/dsp");
++void open_sound_device(char *name = "/dev/audio");
+ void configure_sound_device();
+ 
+ class SoundError
