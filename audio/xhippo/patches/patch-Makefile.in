@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri May  4 21:06:37 2001
++++ Makefile.in	Tue Jun  5 17:13:57 2001
+@@ -98,7 +98,7 @@
+ # Enable this for debugging using gdb or similar
+ CFLAGS = -g -Wall -Wmissing-prototypes -Wstrict-prototypes
+ #CFLAGS = -Wall -Wmissing-prototypes -Wstrict-prototypes
+-CPPFLAGS = -DSYSTEMXHIPPOCONFIG=\"@sysconfdir@/xhippo.config\" -DVERSION=\"@VERSION@\" -DLOCALEDIR=\"@datadir@/locale\" @UIFLAGS@
++CPPFLAGS = -DSYSTEMXHIPPOCONFIG=\"@sysconfdir@/xhippo.config\" -DVERSION=\"@VERSION@\" -DLOCALEDIR=\"@datadir@/locale\" @UIFLAGS@ @CPPFLAGS@
+ 
+ # Kludge: intl needs config.h. We don't use config.h. We distribute an
+ # empty one.
