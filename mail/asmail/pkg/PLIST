@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/06/26 22:03:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/11/12 15:20:09 espie Exp $
 bin/asmail
 include/X11/pixmaps/frame.xpm
 include/X11/pixmaps/m-newmail.xpm
@@ -73,7 +73,7 @@ include/X11/pixmaps/cloud-e/m-e27.xpm
 include/X11/pixmaps/cloud-e/m-e28.xpm
 include/X11/pixmaps/cloud-e/m-e29.xpm
 include/X11/pixmaps/cloud-e/m-e30.xpm
-man/man1/asmail.1
+man/cat1/asmail.0
 share/doc/asmail/README
 share/examples/asmail/sample.asmailrc
 @dirrm include/X11/pixmaps/cloud-e
