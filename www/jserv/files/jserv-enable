@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $OpenBSD: jserv-enable,v 1.1.1.1 2001/06/17 12:22:17 reinhard Exp $
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+HTTPD_CONF=`apxs -q SYSCONFDIR`/httpd.conf
+#HTTPD_CONF=/var/www/conf/httpd.conf
+MODULE=y0y0y0/lib/mod_jserv.so
+XML=y0y0y0/share/examples/jserv/server.xml
+
+if [ ! -f ${MODULE} ]; then
+    echo "can't find jserv module (${MODULE})"
+    exit 1
+else
+    echo "enabling jserv (Apache-Tomcat connector)..."
+    apxs -i -a -n jserv ${MODULE}
+    echo "" >> $HTTPD_CONF
+    echo "# jserv (Apache-Tomcat connector)" >> $HTTPD_CONF
+    echo "include /etc/tomcat/tomcat-apache.conf" >> $HTTPD_CONF
+    echo ""
+    echo "You may want to disable the 'HttpConnectionHandler' on port 8080"
+    echo "in /etc/tomcat/server.xml if jakarta-tomcat should only serve"
+    echo "requests for Apache."
+    echo "See ${XML} for an example."
+fi
