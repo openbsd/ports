@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/05/08 00:54:36 matt Exp $
+# $OpenBSD: Makefile,v 1.24 2001/06/08 23:26:51 matt Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -28,6 +28,7 @@ FLAVORS=	java
 FLAVOR?=
 
 .if ${FLAVOR:L:Mjava}
+BROKEN=			"requires native JDK"
 ONLY_FOR_ARCHS=		i386
 BUILD_DEPENDS=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk/1.1
 CONFIGURE_ARGS+=	--enable-java
