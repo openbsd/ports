@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/06/14 10:10:04 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2003/07/24 03:20:12 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 
 #    SUBDIR += Wnn
@@ -25,10 +25,12 @@
 #    SUBDIR += nvi-euc-cn
 #    SUBDIR += nvi-euc-tw
      SUBDIR += py-zhCodecs
+     SUBDIR += rxvt-big5
 #    SUBDIR += samba
      SUBDIR += taipeifonts
 #    SUBDIR += ted
      SUBDIR += ttfm
      SUBDIR += xcin
+     SUBDIR += xcin25
 
 .include <bsd.port.subdir.mk>
