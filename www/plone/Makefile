@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/03 10:22:10 xsa Exp $
 
 COMMENT=	"content management system built on top of Zope"
 
-VERSION=	1.0.5
-DISTNAME=	CMFPlone${VERSION}
-PKGNAME=	plone-${VERSION}
+DISTNAME=	Plone-2.0.3
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.plone.org/
@@ -21,16 +20,21 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=plone/}
 
 MODULES=	zope
 
-RUN_DEPENDS+=	::www/zope-cmf
+RUN_DEPENDS=	::www/zope-cmf
 
-WRKDIST=	${WRKDIR}/CMFPlone-${VERSION}
+PLONEITEMS=	CMFActionIcons CMFPlone CMFFormController \
+		CMFQuickInstallerTool BTreeFolder2 \
+		Formulator GroupUserFolder PlacelessTranslationService
 
-PLONEITEMS=	CMFPlone DCWorkflow Formulator i18n
+do-build:
+.for i in ${PLONEITEMS}
+	${PYTHON_BIN} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/${i} || true
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${MODZOPE_PRODUCTSDIR}
-	for p in ${PLONEITEMS}; do \
-		cp -Rp ${WRKBUILD}/$$p ${MODZOPE_PRODUCTSDIR}; \
-	done
+.for p in ${PLONEITEMS}
+	cd ${WRKBUILD}; cp -R ${p} ${MODZOPE_PRODUCTSDIR}
+.endfor
 
 .include <bsd.port.mk>
