@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2001/05/06 00:46:51 brad Exp $
+# $OpenBSD: INSTALL,v 1.7 2001/09/04 14:56:28 brad Exp $
 #
 # Pre/post-installation setup of screen
 
@@ -9,28 +9,28 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/screenrc
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/screen
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/screen/screenrc-sample
 
 do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The file $CONFIG_FILE exists on your system.  It has"
-    echo "| NOT been updated.  Please look at the file "
-    echo "| $SAMPLE_CONFIG_DIR/screenrc-sample"
-    echo "| and add any desired (but missing) entries into your"
-    echo "| current $CONFIG_FILE"
+    echo "| The existing $1 configuration file, $CONFIG_FILE,"
+    echo "| has NOT been changed.  You may want to compare it to the"
+    echo "| current sample file, $SAMPLE_CONFIG_FILE,"
+    echo "| and update your configuration as needed."
     echo "+---------------"
     echo
 }
 
 do_install()
 {
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/screenrc-sample $CONFIG_FILE
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo
     echo "+---------------"
-    echo "| The file $CONFIG_FILE has been created on your system."
-    echo "| You may want to verify/edit its contents"
+    echo "| The $1 configuration file, $CONFIG_FILE,"
+    echo "| has been installed.  Please view this file and change"
+    echo "| the configuration to meet your needs"
     echo "+---------------"
     echo
 }
@@ -49,10 +49,10 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ -e $CONFIG_FILE ]; then
-	    do_notice
+	if [ -f $CONFIG_FILE ]; then
+	    do_notice $1
 	else
-	    do_install
+	    do_install $1
 	fi
 	;;
     *)
