@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2000/08/26 18:12:53 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2000/08/30 03:40:23 brad Exp $
 
 DISTNAME=	fetchmail-5.5.1
 CATEGORIES=	mail
@@ -21,10 +21,10 @@ CONFIGURE_ARGS=	--disable-nls --enable-inet6
 FLAVORS=	kerberos ssl
 FLAVOR?=
 
-.if ${FLAVOR:L} == "kerberos"
+.if ${FLAVOR:L:Mkerberos}
 CONFIGURE_ARGS+= --with-kerberos
 .endif
-.if ${FLAVOR:L} == "ssl"
+.if ${FLAVOR:L:Mssl}
 CONFIGURE_ARGS+= --with-ssl
 .endif
 
