@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 1999/05/25 20:18:25 espie Exp $
+# $OpenBSD: Makefile,v 1.48 1999/06/01 20:59:34 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -325,7 +325,7 @@ CONFIGURE_ARGS += --with-gnu-ld
 
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
-SEPARATE_BUILD=yes
+SEPARATE_BUILD=concurrent
 #WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
 
 
