@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile,v 1.1 2003/10/01 19:27:47 sturm Exp $
+--- src/Makefile.orig	2003-10-01 21:22:27.000000000 +0200
++++ src/Makefile	2003-10-01 21:23:35.000000000 +0200
+@@ -38,7 +38,7 @@ CFLAGS = -g $(GTKCFLAGS)
+ MLLINK += -cclib -lcamlrund
+ MLFLAGS = -g
+ else
+-CFLAGS = -O -DGTK_NO_CHECK_CASTS -DGTK_DISABLE_COMPAT_H $(GTKCFLAGS)
++CFLAGS := -DGTK_NO_CHECK_CASTS -DGTK_DISABLE_COMPAT_H $(GTKCFLAGS) $(CFLAGS)
+ endif
+ 
+ THFLAGS = -thread
