@@ -1,54 +1,42 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/20 08:39:45 form Exp $
-# FreeBSD: Makefile,v 1.9 1998/05/18 23:49:17 alex Exp
-#
+# $OpenBSD: Makefile,v 1.5 1998/11/18 11:06:52 form Exp $
+# NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp
 
-VGABIOS=	VGABIOS-elpin-2.00A
-BIOS=		BIOS-bochs-980331a
-DATE= 		980513
+DISTNAME=		bochs-980707a
+CATEGORIES=		emulators
+MASTER_SITES=		ftp://ftp.std.com/pub/bochs/
 
-DISTNAME=	bochs-${DATE}a
-CATEGORIES= 	emulators
+#NOT_FOR_ARCHS=		alpha	#runs, SEGV.
 
-ONLY_FOR_ARCHS=	i386
-#BROKEN=	"BROKEN: newer version available"
-RESTRICTED=	"COMM: Commercial software"
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
+MAINTAINER=		form@OpenBSD.ORG
+HOMEPAGE=		http://world.std.com/~bochs/
 
+LICENSE=		shareware
+WRKSRC=			${WRKDIR}/bochs-980707
+USE_GMAKE=		yes
+CONFIGURE_ARGS+=	--enable-vga #--with-x11
+GNU_CONFIGURE=		yes
+USE_X11=		yes
 
-MAINTAINER=	form@OpenBSD.ORG
-
-MASTER_SITES= 	ftp://ftp.std.com/pub/bochs/
-
-
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--enable-80386 --enable-memory=16 \
-		--enable-v8086-mode --enable-paging --enable-vga \
-		--enable-bochs-bios-hooks --enable-dma-floppy-io \
-		--enable-processor-ips=200000
-
-WRKSRC=		${WRKDIR}/bochs-${DATE}
-
-GZIP!=		which gzip
-MKFONTDIR!=	which mkfontdir
+post-configure:
+	${SED} -e 's@XXXPREFIXXXX@${PREFIX}@' < ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
 
 do-install:
+	${MKDIR} ${PREFIX}/share/bochs/bios
+	${MKDIR} ${PREFIX}/share/bochs/fonts
+	${INSTALL_DATA} ${WRKSRC}/bios/BIOS-bochs-980702a ${PREFIX}/share/bochs/bios
+	${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-elpin-2.20 ${PREFIX}/share/bochs/bios
+	${MKDIR} ${PREFIX}/share/doc/bochs
+	${INSTALL_DATA} ${WRKSRC}/docs-html/* ${PREFIX}/share/doc/bochs
+	${INSTALL_DATA} ${WRKSRC}/font/hercules.bdf ${PREFIX}/share/bochs/fonts
+	${INSTALL_DATA} ${WRKSRC}/font/vga.bdf ${PREFIX}/share/bochs/fonts
+	${INSTALL_DATA} ${WRKSRC}/font/vga.pcf ${PREFIX}/share/bochs/fonts
 	${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/bin
-	-@${MKDIR} ${PREFIX}/lib/bochs
-	${INSTALL_DATA} ${WRKSRC}/.bochsrc ${PREFIX}/lib/bochs/bochsrc.sample
-	-@${MKDIR} ${PREFIX}/lib/bochs/bios
-	${INSTALL_DATA} ${WRKSRC}/bios/${VGABIOS} \
-		${PREFIX}/lib/bochs/bios
-	${INSTALL_DATA} ${WRKSRC}/bios/${BIOS} \
-		${PREFIX}/lib/bochs/bios
-.if !defined(NOPORTDOCS)
-	-@${MKDIR} ${PREFIX}/share/doc/bochs
-	${INSTALL_MAN} ${WRKSRC}/docs-html/LICENSE ${PREFIX}/share/doc/bochs
-	${INSTALL_MAN} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs
-	${MKDIR} ${PREFIX}/lib/bochs/fonts
-	${CP} ${WRKSRC}/font/vga.pcf ${PREFIX}/lib/bochs/fonts
-	if [ "${GZIP}" ]; then ${GZIP} ${PREFIX}/lib/bochs/fonts/vga.pcf; fi
-	if [ "${MKFONTDIR}" ]; then ${MKFONTDIR} ${PREFIX}/lib/bochs/fonts; fi
-.endif
+	${INSTALL_DATA} ${WRKSRC}/bochsrc ${PREFIX}/share/bochs
+	[ -x ${X11BASE}/bin/mkfontdir ] && \
+		${X11BASE}/bin/mkfontdir ${PREFIX}/share/bochs/fonts
+	@${ECHO} "***"
+	@${ECHO} "*** Don't forget to add ${PREFIX}/share/bochs/fonts"
+	@${ECHO} "*** to FontPath in /etc/XF86Config."
+	@${ECHO} "***"
 
 .include <bsd.port.mk>

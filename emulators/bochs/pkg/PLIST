@@ -1,17 +1,12 @@
 bin/bochs
-lib/bochs/bios/VGABIOS-elpin-2.00A
-lib/bochs/bios/BIOS-bochs-980331a
-lib/bochs/bochsrc.sample
-@dirrm lib/bochs/bios
-@unexec rm -f %D/lib/bochs/fonts/fonts.{alias,dir} %D/lib/bochs/fonts/vga.pcf.*
-@dirrm lib/bochs/fonts
-@dirrm lib/bochs
-share/doc/bochs/LICENSE
+share/doc/bochs/00README
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/DOS.html
+share/doc/bochs/LICENSE
 share/doc/bochs/Linux.html
 share/doc/bochs/Minix.html
 share/doc/bochs/OldWindows95.html
+share/doc/bochs/WISHLIST
 share/doc/bochs/Windows31.html
 share/doc/bochs/Windows95.html
 share/doc/bochs/changelog.html
@@ -26,5 +21,22 @@ share/doc/bochs/install.html
 share/doc/bochs/jbochs.html
 share/doc/bochs/licensing.html
 share/doc/bochs/mtools.html
+share/doc/bochs/undercon.gif
 share/doc/bochs/whatisbochs.html
+share/doc/bochs/win32.html
+share/bochs/bios/BIOS-bochs-980702a
+share/bochs/bios/VGABIOS-elpin-2.20
+share/bochs/fonts/hercules.bdf
+share/bochs/fonts/vga.bdf
+share/bochs/bochsrc
+@unexec rm -f %D/share/bochs/fonts/vga.pcf* %D/share/bochs/fonts/hercules.pcf*
+@unexec rm -f %D/share/bochs/fonts/fonts.{alias,dir}
+@exec [ -x /usr/X11R6/bin/mkfontdir ] && /usr/X11R6/bin/mkfontdif %D/share/bochs/fonts
+@dirrm share/bochs/fonts
+@dirrm share/bochs/bios
+@dirrm share/bochs
 @dirrm share/doc/bochs
+@exec echo "***"
+@exec echo "*** Don't forget to add ${PREFIX}/share/bochs/fonts"
+@exec echo "*** to FontPath in /etc/XF86Config."
+@exec echo "***"
