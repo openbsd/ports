@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2002/02/18 14:30:04 jakob Exp $
+# $OpenBSD: Makefile,v 1.28 2002/06/09 21:18:53 jakob Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
 
-VERSION=	2.0.23
+VERSION=	2.0.24
 DISTNAME=	openldap-${VERSION}
 FULLPKGNAME=	openldap-client-${VERSION}
 PKGNAME-server=	openldap-server-${VERSION}
@@ -33,7 +33,9 @@ EXTRACT_SUFX=		.tgz
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+=	--without-kerberos \
+CONFIGURE_ARGS+=	\
+			--enable-ipv6 \
+			--with-kerberos \
 			--enable-slapd \
 			--enable-cleartext \
 			--enable-crypt \
@@ -42,6 +44,7 @@ CONFIGURE_ARGS+=	--without-kerberos \
 			--enable-dnssrv \
 			--enable-ldap \
 			--enable-shell \
+			--enable-passwd \
 			--enable-slurpd
 
 # disable IPv6 until implemented correctly
