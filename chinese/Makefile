@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/01/21 15:12:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2001/01/29 05:44:17 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 #
 
@@ -18,6 +18,7 @@
 #    SUBDIR += gbscript
 #    SUBDIR += hc
 #    SUBDIR += hztty
+     SUBDIR += kcfonts
      SUBDIR += lunar
 #    SUBDIR += mule-wnn4
 #    SUBDIR += nvi-big5
