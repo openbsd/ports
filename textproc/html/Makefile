@@ -3,7 +3,7 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/02 02:46:46 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/17 11:09:36 niklas Exp $
 #
 
 DISTNAME=	html-4.0
@@ -27,6 +27,6 @@ pre-install:
 do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
 	@chmod ${SHAREMODE} `find ${INSTDIR} -type f`
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
