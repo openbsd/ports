@@ -3,11 +3,11 @@
 # Date created:				21 Apr 1998
 # Whom:					form@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.6 1998/11/10 05:01:50 form Exp $
+# $OpenBSD: Makefile,v 1.7 1998/12/01 05:10:23 form Exp $
 #
 
-DISTNAME=	socks5-v1.0r7
-PKGNAME=	socks5-1.0.7
+DISTNAME=	socks5-v1.0r8
+PKGNAME=	socks5-1.0.8
 CATEGORIES=	net security
 #EXTRACT_SUFX=	.tar.gz
 
