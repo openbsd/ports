@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2002/07/28 00:48:38 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/08/17 19:26:19 brad Exp $
 
-COMMENT=	"graphical disk usage utility"
+COMMENT=	"graphical disk usage utility for KDE"
 
 DISTNAME=	kdirstat-2.2.0
 CATEGORIES=	x11
@@ -26,7 +26,7 @@ MODULES=	qt3
 PORTHOME=	${WRKDIR}
 
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
-# Ensure qt2 will always be at the front
+# Ensure Qt3 will always be at the front
 MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 
 USE_X11=	Yes
@@ -36,8 +36,8 @@ CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --disable-debug --enable-final
 CONFIGURE_ARGS+= --disable-threading --disable-mt
 CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
-CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include"
+CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 CONFIGURE_ARGS+= --with-xinerama
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" KDEDIR="${LOCALBASE}"
+CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
 
 .include <bsd.port.mk>
