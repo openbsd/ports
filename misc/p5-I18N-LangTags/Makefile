@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 02:30:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/07 08:56:14 kevlo Exp $
 
 COMMENT=	"deal with RFC-1766-style language tags"
 
-DISTNAME=	I18N-LangTags-0.20
+DISTNAME=	I18N-LangTags-0.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	misc perl5
 NEED_VERSION=	1.402
