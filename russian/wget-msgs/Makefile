@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/09 06:09:53 form Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/29 09:46:21 form Exp $
+
+COMMENT=	"russian messages for GNU wget"
 
 PKGNAME=	wget-msgs-1.5.3-ru
 CATEGORIES=	russian net

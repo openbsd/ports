@@ -1,5 +1,7 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.8 2000/10/09 06:09:53 form Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/29 09:46:17 form Exp $
+
+COMMENT=	"cyrillic proxy for network protocols"
 
 DISTNAME=	cyrproxy-1.4.2
 CATEGORIES=	russian net www

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/27 02:53:07 form Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/29 09:46:22 form Exp $
+
+COMMENT=	"setup X11 fonts for russian language (koi8-r)"
 
 DISTNAME=	xcyrillic-2.0
 CATEGORIES=	russian x11
