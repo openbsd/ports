@@ -1,0 +1,22 @@
+safecat  is  a  program  which  implements D. J. Bernstein's
+maildir algorithm to copy stdin safely to a file in a speci-
+fied directory. With safecat, the user is offered two assur-
+ances. First, if safecat returns a successful  exit  status,
+then  all  data is guaranteed to be saved in the destination
+directory. Second, if  a  file  exists  in  the  destination
+directory, placed there by safecat, then the file is guaran-
+teed to be complete.
+
+When saving data with safecat, the user specifies a destina-
+tion  directory,  but  not  a  file  name.  The file name is
+selected by safecat to ensure that  no  filename  collisions
+occur,  even  if  many  safecat processes and other programs
+implementing the maildir algorithm are writing to the direc-
+tory  simultaneously.   If particular filenames are desired,
+then the user should rename  the  file  after  safecat  com-
+pletes.  In general, when spooling data with safecat, a sin-
+gle, separate process should handle naming, collecting,  and
+deleting  these  files.  Examples of such a process are dae-
+mons, cron jobs, and mail readers.
+
+WWW: ${HOMEPAGE}
