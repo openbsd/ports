@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2004/06/12 17:44:56 pedro Exp $
+# $OpenBSD: Makefile,v 1.42 2004/07/31 21:17:21 naddy Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	\
 			--enable-perl \
 			--enable-shell
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build
 
 REGRESS_TARGET=	test
 

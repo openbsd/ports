@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/07/06 00:58:39 kevlo Exp $
+# $OpenBSD: Makefile,v 1.30 2004/07/31 21:17:22 naddy Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -37,6 +37,7 @@ CONFIGURE_ARGS+= --with-tclincl=${LOCALBASE}/include/tcl8.4 \
 		 ${CONFIGURE_SHARED} \
 		 --without-php4 \
 		 --without-ocaml
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Tools/config
 
 ALL_TARGET=	swig runtime
 

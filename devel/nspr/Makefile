@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:22 naddy Exp $
 # $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
 
 # currently only supporting i386, but alpha sparc sparc64 are possible
@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--disable-debug \
 NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/mozilla/nsprpub/build
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/nspr

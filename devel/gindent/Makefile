@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/08/26 02:58:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2004/07/31 21:17:22 naddy Exp $
 
 COMMENT=	"GNU utility to indent C source files"
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--program-prefix="g" --without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 MAKE_ARGS=	BERKELEY_DEFAULTS=1
 
 .include <bsd.port.mk>

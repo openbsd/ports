@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/10 00:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:22 naddy Exp $
 
 COMMENT=	"automatically configure source code on many Un*x platforms"
 
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=	--program-suffix=${SUFFIX} \
 			--without-lispdir
 CONFIGURE_ENV+=		M4="/usr/bin/m4"
 CONFIGURE_ENV+=		AWK="${AWK}"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 MAKE_FLAGS=		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS=		${MAKE_FLAGS} DESTDIR=${WRKINST} lispdir=
 #USE_GMAKE=		Yes

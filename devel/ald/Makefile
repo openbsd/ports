@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/15 16:48:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:21 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -20,6 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://dunx1.irt.drexel.edu/~psa22/source/
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf \
+				${WRKSRC}/libDASM/autoconf \
+				${WRKSRC}/libDebug/autoconf
 
 NO_REGRESS=             Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/31 21:17:21 naddy Exp $
 
 COMMENT=	"automatically configure source code on many Un*x platforms"
 
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	M4=/usr/bin/m4
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 MAKE_FLAGS=pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 SUBST_VARS=SUFFIX

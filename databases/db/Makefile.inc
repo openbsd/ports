@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2004/07/03 23:17:00 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2004/07/31 21:17:21 naddy Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--enable-compat185 \
 			--includedir=$$\{prefix}/include/db${DEST_SUBDIR} \
 			--libdir=$$\{prefix}/lib/db${DEST_SUBDIR}
 
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/dist
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/dist
 
 WRKBUILD=	${WRKDIST}/build_unix
 

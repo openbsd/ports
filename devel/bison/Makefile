@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/04/06 03:12:19 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2004/07/31 21:17:22 naddy Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -22,5 +22,6 @@ MAKE_ENV=	MAKEINFOFLAGS="--no-split"
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 .include <bsd.port.mk>
