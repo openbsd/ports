@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2003/05/14 08:11:16 david Exp $
+# $OpenBSD: Makefile,v 1.27 2003/10/06 07:11:14 david Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
-DISTNAME=       micq-0.4.10.3
+DISTNAME=       micq-0.4.10.4
 CATEGORIES=	net
 
 MAINTAINER=	David Krause <david@openbsd.org>
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}source/ \
-		http://micq.alpha345.com/source/ \
+		http://http.uk.micq.org/source/ \
 		http://http.bg.micq.org/source/
 
 EXTRACT_SUFX=	.tgz

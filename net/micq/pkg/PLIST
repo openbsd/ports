@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/05/14 08:11:16 david Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/10/06 07:11:14 david Exp $
 bin/micq
 man/de/man1/micq.1
 man/de/man5/micqrc.5
@@ -8,20 +8,21 @@ man/es/man7/micq.7
 man/fr/man1/micq.1
 man/fr/man5/micqrc.5
 man/fr/man7/micq.7
+man/it/man1/micq.1
 man/man1/micq.1
 man/man5/micqrc.5
 man/man7/micq.7
 man/pt_BR/man1/micq.1
 man/pt_BR/man5/micqrc.5
 man/pt_BR/man7/micq.7
-man/ru/man1/micq.1
-man/ru/man5/micqrc.5
-man/ru/man7/micq.7
-man/sr/man1/micq.1
-man/sr/man5/micqrc.5
-man/sr/man7/micq.7
-man/uk/man1/micq.1
-man/uk/man7/micq.7
+man/ru_RU.KOI8-R/man1/micq.1
+man/ru_RU.KOI8-R/man5/micqrc.5
+man/ru_RU.KOI8-R/man7/micq.7
+man/sr_YU@cyrillic/man1/micq.1
+man/sr_YU@cyrillic/man5/micqrc.5
+man/sr_YU@cyrillic/man7/micq.7
+man/uk_UA/man1/micq.1
+man/uk_UA/man7/micq.7
 share/micq/C.i18n
 share/micq/bg.i18n
 share/micq/de.i18n
@@ -49,21 +50,23 @@ share/micq/uk.i18n
 share/micq/yu.i18n
 share/micq/zh_CN.i18n
 @dirrm share/micq
-@dirrm man/uk/man7
-@dirrm man/uk/man1
-@dirrm man/uk
-@dirrm man/sr/man7
-@dirrm man/sr/man5
-@dirrm man/sr/man1
-@dirrm man/sr
-@dirrm man/ru/man7
-@dirrm man/ru/man5
-@dirrm man/ru/man1
-@dirrm man/ru
+@dirrm man/uk_UA/man7
+@dirrm man/uk_UA/man1
+@dirrm man/uk_UA
+@dirrm man/sr_YU@cyrillic/man7
+@dirrm man/sr_YU@cyrillic/man5
+@dirrm man/sr_YU@cyrillic/man1
+@dirrm man/sr_YU@cyrillic
+@dirrm man/ru_RU.KOI8-R/man7
+@dirrm man/ru_RU.KOI8-R/man5
+@dirrm man/ru_RU.KOI8-R/man1
+@dirrm man/ru_RU.KOI8-R
 @dirrm man/pt_BR/man7
 @dirrm man/pt_BR/man5
 @dirrm man/pt_BR/man1
 @dirrm man/pt_BR
+@dirrm man/it/man1
+@dirrm man/it
 @dirrm man/fr/man7
 @dirrm man/fr/man5
 @dirrm man/fr/man1
