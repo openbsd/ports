@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.507 2002/03/02 13:38:25 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.508 2002/03/04 15:33:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -787,29 +787,33 @@ MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
 DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 # And create the actual files from sources
-${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
+${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-	@self=${FULLPKGNAME${SUBPACKAGE}} exec ${MAKE} _solve-package-depends|sort -u >>$@.tmp
+	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
 .if defined(NO_SHARED_LIBS)
 	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
-		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
+		-e '//d' -e '/^%%SHARED%%$$/d' <${PLIST} \
 		${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@
 .else
 	@if [ -x /sbin/ldconfig ]; then \
 		sed -e '/^!%%SHARED%%$$/d' \
 			-e '/^%%!SHARED%%$$/d' \
 			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
-			-e '//d' <$? ${SED_PLIST} \
+			-e '//d' <${PLIST} ${SED_PLIST} \
 			| sed -f ${LDCONFIG_SED_SCRIPT} >>$@.tmp && mv -f $@.tmp $@; \
 	else \
 		sed -e '/^!%%SHARED%%$$/d' \
 			-e '/^%%!SHARED%%$$/d' \
 			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
-			-e '//d' <$? \
+			-e '//d' <${PLIST} \
 			${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@; \
 	fi
 .endif
+
+${WRKPKG}/depends${SUBPACKAGE}:
+	@touch $@
+	@self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ exec ${MAKE} _solve-package-depends
 
 MTREE_FILE?=
 MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
@@ -2643,7 +2647,7 @@ _solve-package-depends:
 		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		: $${pkg:=$$default}; \
-		echo "@newdepend $$self:$$pkg:$$default"; \
+		echo "@newdepend $$self:$$pkg:$$default" >>$${_depends_result}; \
 		toset="$$toset self=\"$$default\""; \
 		if ! eval $$toset ${MAKE} _solve-package-depends; then  \
 			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
@@ -2664,7 +2668,7 @@ _solve-package-depends:
 			if pkg dependencies check $$pkg; then \
 				listlibs='ls $$shdir 2>/dev/null'; \
 			else \
-				eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz 1>&2; \
+				eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
 				listlibs='pkg_info -L ${PKGREPOSITORY}/$$default.tgz|grep $$shdir|sed -e "s,^$$shdir/,,"'; \
 			fi; \
 			IFS=,; for d in $$dep; do \
@@ -2682,7 +2686,7 @@ _solve-package-depends:
 			case "X$$libspecs" in \
 			X) ;;\
 			*) \
-				echo "@libdepend $$self:$$libspecs:$$pkg:$$default"; \
+				echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
 				toset="$$toset self=\"$$default\""; \
 				if ! eval $$toset ${MAKE} _solve-package-depends; then  \
 					echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
