@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/12 13:04:31 reinhard Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/21 14:21:30 brad Exp $
 
 BROKEN=	"HANDLER THREAD PROBLEM: java.net.SocketException: Resource temporarily unavailable"
 
 # Build just the Tomcat connector for our in-tree Apache
 COMMENT=	"Tomcat (Servlet/JSP) - Apache Connector"
 
-# This port currently only works with archs supporting dynamic loading
-# and has Apache that supports DSO's.
-ONLY_FOR_ARCHS=	i386 m68k sparc
+# This port currently only works with archs supporting dynamic loading,
+# that have Apache that supports DSO's and requires Jakarta-Tomcat (which 
+# requires a JVM).
+ONLY_FOR_ARCHS=	i386
 
 V=		3.2.4
 PKGNAME=	jserv-${V}
@@ -21,8 +22,6 @@ HOMEPAGE=	http://jakarta.apache.org/
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
-JDK_VERSION=	1.2-blackdown
-JAVA_HOME=	${LOCALBASE}/jdk${JDK_VERSION}
 RUN_DEPENDS=	::www/jakarta-tomcat/v3
 
 # Apache Software License

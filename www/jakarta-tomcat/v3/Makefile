@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/12 12:57:28 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 14:21:30 brad Exp $
 
-COMMENT=	"java servlet 2.2 and java server pages 1.1 server"
+COMMENT=	"Java servlet 2.2 and Java server pages 1.1 server"
+
+# Requires a JVM
+ONLY_FOR_ARCHS=	i386
 
 V=		3.2.4
 DISTNAME=	jakarta-tomcat-${V}
