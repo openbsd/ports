@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/06/05 14:48:17 avsm Exp $
+# $OpenBSD: Makefile,v 1.26 2004/01/06 02:25:45 espie Exp $
 
 COMMENT=	"enhanced printer spooler"
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 
+CFLAGS+=	-Dlog=mylog
 FAKE_FLAGS=	DESTDIR=${WRKINST} POSTINSTALL=NO prefix=${TRUEPREFIX} \
 		FILTER_DIR=${TRUEPREFIX}/libexec/filters \
 		LPD_PERMS_PATH=${TRUEPREFIX}${CONFDIR}/lpd.perms \
