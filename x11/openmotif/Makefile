@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2000/07/08 18:11:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/07/08 18:19:49 brad Exp $
 
 DISTNAME=	motif
 PKGNAME=	openmotif-2.1.30
 CATEGORIES=	x11
 NEED_VERSION=	1.310
-
 MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/tars/ \
 		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/tars/ \
 		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/tars
-
 DISTFILES=	openmotif2.1.30.tar.gz
+
+HOMEPAGE=	http://www.opengroup.org/openmotif/
 
 MAINTAINER=	smcho@tsp.korea.ac.kr
 
@@ -86,4 +86,3 @@ post-install:
 # You don't want to use the vanilla configuration files in the DISTFILE.
 # The distributed config files do not know what OpenBSD is.
 XCONFIGF!= ls /usr/X11R6/lib/X11/config/* | grep -v '\(Motif\|cde\|\/site.def\)'
-
