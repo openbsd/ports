@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2001/07/30 15:47:16 espie Exp $
 
 COMMENT=	"The Visual Audio Tool - multicast audioconferencing"
 
@@ -19,10 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 GSM_DIR=	audio/gsm
 
-# If configure is changed to look for libgsm.a in ${PREFIX}/lib, then
-# we can use this first BUILD_DEPENDS and save some work.
-#BUILD_DEPENDS= ${GSM_WORK}/inc/private.h::${GSM_DIR}:patch
-BUILD_DEPENDS=  ${GSM_WORK}/lib/libgsm.a::${GSM_DIR}:build
+BUILD_DEPENDS=  /nonexistent::${GSM_DIR}:patch
 LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 		tk80.1.5::x11/tk/8.0 \
 		gsm.1::${GSM_DIR}
@@ -30,6 +27,9 @@ LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --with-gsm=${GSM_WORK}
+CONFIGURE_ENV= V_LIB_GSM='-L${PREFIX}/lib -lgsm'
+
+CONFIGURE_ARGS+=--without-af
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
