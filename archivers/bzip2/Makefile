@@ -3,11 +3,11 @@
 # Date created:         24 Nov 1997
 # Whom:                 angelos@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/25 21:36:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/21 02:58:53 marc Exp $
 #
 
 DISTNAME=	bzip2-0.1pl2
-PKGNAME=	bzip2-0.1p2
+PKGNAME=	bzip2-0.1p12
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.muraroa.demon.co.uk/
 
