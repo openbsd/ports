@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/01 17:26:01 sturm Exp $
---- configure.orig	Wed Apr 30 20:25:06 2003
-+++ configure	Wed Apr 30 20:28:03 2003
-@@ -2716,7 +2716,7 @@ done
+$OpenBSD: patch-configure,v 1.2 2003/10/12 21:33:43 jolan Exp $
+--- configure.orig	2002-10-09 15:31:50.000000000 -0500
++++ configure	2003-10-12 16:29:15.000000000 -0500
+@@ -2701,7 +2701,7 @@ done
  # Because of `break', _AC_PREPROC_IFELSE's cleaning code was skipped.
  rm -f conftest.err conftest.$ac_ext
  if $ac_preproc_ok; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/01 17:26:01 sturm Exp $
  fi
  
      done
-@@ -6860,7 +6860,7 @@ else
+@@ -6776,7 +6776,7 @@ else
      ;;
  
    openbsd*)
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/01 17:26:01 sturm Exp $
      hardcode_libdir_flag_spec='-R$libdir'
      hardcode_direct=yes
      hardcode_shlibpath_var=no
-@@ -7348,6 +7348,8 @@ openbsd*)
+@@ -7264,6 +7264,8 @@ openbsd*)
      need_lib_prefix=no
      need_version=no
    fi
