@@ -1,9 +1,9 @@
 # New ports collection makefile for:	cnews
 # Version required:	940927
 # Date created:		28 September 1994
-# Whom:			adam
+# Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/29 03:54:08 angelos Exp $
+# $Id: Makefile,v 1.2 1998/04/29 03:56:38 angelos Exp $
 #
 
 DISTNAME=	cnews
