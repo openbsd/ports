@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/24 02:27:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/13 13:26:11 espie Exp $
 
 
 COMMENT=	"X11 based RTF editor"
-V=2.9
+V=2.10
 DISTNAME=	ted-$V
 CATEGORIES=	editors textproc print
 NEED_VERSION=	1.400
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}/Ted-$V
-LIB_DEPENDS=	png.2::graphics/png \
+LIB_DEPENDS=	png.2.::graphics/png \
 		jpeg.6::graphics/jpeg \
 		tiff.35::graphics/tiff
 
