@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2004/01/31 18:06:38 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2004/02/14 21:06:54 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-multithreaded \
 		 --without-Sgm-library \
 		 --without-libpaper-library
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
