@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/06 04:09:52 form Exp $
+# $OpenBSD: Makefile,v 1.24 2002/05/06 06:17:02 form Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -38,6 +38,9 @@ do-install:
 .for f in ${SIMS}
 	${INSTALL_PROGRAM} ${WRKBUILD}/BIN/${f} ${PREFIX}/bin/simh-${f}
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/lib/simh
+	${INSTALL_DATA_DIR} ${PREFIX}/share/lib/simh/vax
+	${INSTALL_DATA} ${WRKDIST}/VAX/ka655.bin ${PREFIX}/share/lib/simh/vax
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/simh
 	${INSTALL_DATA} ${WRKBUILD}/*.txt ${WRKBUILD}/*/*.txt \
 		${PREFIX}/share/doc/simh

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/03/26 08:20:19 form Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/05/06 06:17:03 form Exp $
 bin/simh-altair
 bin/simh-altairz80
 bin/simh-eclipse
@@ -36,4 +36,7 @@ share/doc/simh/simh_doc.txt
 share/doc/simh/simh_swre.txt
 share/doc/simh/system3.txt
 share/doc/simh/vax_doc.txt
+share/lib/simh/vax/ka655.bin
+@dirrm share/lib/simh/vax
+@dirrm share/lib/simh
 @dirrm share/doc/simh
