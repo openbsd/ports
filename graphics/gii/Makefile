@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/17 00:53:49 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:39 espie Exp $
 
 DISTNAME=       libgii-0.1
 CATEGORIES=     graphics
 NEED_VERSION=	1.73
+FAKE=No
 
 MAINTAINER=     todd@openbsd.org
 

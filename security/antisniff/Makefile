@@ -3,12 +3,13 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:55 espie Exp $
 
 PKGNAME=	antisniff-1.0
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
+FAKE=No
 
 DISTNAME=	anti_sniff_researchv1
 

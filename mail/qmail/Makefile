@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:00 espie Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
 NEED_VERSION=	 1.230
+FAKE=No
 MAINTAINER=	cd@sentia.nl
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \

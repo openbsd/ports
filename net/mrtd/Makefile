@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:27 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: Christopher Turan <turan@openbsd.org>
 #
@@ -10,6 +10,7 @@ DISTNAME=		mrt-1.6.0a-990430-src
 PKGNAME=		mrt-1.6.0a
 CATEGORIES=     	net
 NEED_VERSION=		1.191
+FAKE=No
 MAINTAINER=		turan@openbsd.org
 
 LICENSE_TYPE=		NONE

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/22 21:36:09 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/09 17:37:12 espie Exp $
 #
 
 DISTNAME=	plan-1.6.1
 CATEGORIES=	misc
+FAKE=No
 
 MAINTAINER=	angelos@openbsd.org
 

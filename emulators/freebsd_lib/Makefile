@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:26 espie Exp $
 
 DISTNAME=	freebsd_lib-2.2.8
 CATEGORIES=	emulators
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/
 EXTRACT_ONLY=
 

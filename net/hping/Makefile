@@ -3,7 +3,7 @@
 # Date created:		Oct 28 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:23 espie Exp $
 
 BROKEN=		sources missing
 
@@ -13,6 +13,7 @@ DISTNAME=	hping2-beta49
 
 CATEGORIES=	net
 NEED_VERSION=	1.191
+FAKE=No
 
 MASTER_SITES=	http://www.kyuzz.org/antirez/hping2-src/
 

@@ -3,11 +3,12 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:34 espie Exp $
 #
 
 DISTNAME=	wdiff-0.5
 CATEGORIES=	textproc
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= wdiff
 

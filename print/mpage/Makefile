@@ -3,11 +3,12 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:07 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:52 espie Exp $
 
 
 DISTNAME=	mpage-2.5
 CATEGORIES=	print
+FAKE=No
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:22 espie Exp $
 
 VERS=		0.7.7
 PKGNAME=	abiword-${VERS}
 CATEGORIES=	editors
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERS}/lf/
 DIST_SUBDIR=	${PKGNAME}
 

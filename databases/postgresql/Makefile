@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2000/03/27 18:17:27 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/04/09 17:36:14 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
 CATEGORIES=	databases
 NEED_VERSION=	1.230
+FAKE=No
 
 MAINTAINER=	form@OpenBSD.ORG
 

@@ -2,13 +2,14 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:56 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:53 espie Exp $
 #
 
 DISTNAME=	pkfonts
 PKGNAME=	pkfonts${RESOLUTION}-1.0
 CATEGORIES=	print
 NEED_VERSION=	1.116
+FAKE=No
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
 		ftp://ftp.wg.omron.co.jp/pub/tex/
 DISTFILES=	pk${RESOLUTION}.tar.gz

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/14 00:24:55 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:36:05 espie Exp $
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
+FAKE=No
 
 MAINTAINER=	ports@openbsd.org
 

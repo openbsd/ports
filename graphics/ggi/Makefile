@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 23:28:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/04/09 17:36:38 espie Exp $
 
 BROKEN=		installs files automatically in /etc
 
 DISTNAME=       libggi-2.0b1
 CATEGORIES=     graphics
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=     todd@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:36:17 espie Exp $
 
 DISTNAME=	gsl-0.3b
 CATEGORIES=	devel
 NEED_VERSION=	1.78
+FAKE=No
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/
 
 

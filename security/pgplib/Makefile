@@ -3,13 +3,14 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/03/23 05:09:33 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:08 espie Exp $
 
 #BROKEN=		inconsistant build failures
 
 DISTNAME=       PGPlib-1.1
 PKGNAME=	PGPlib
 CATEGORIES=	security
+FAKE=No
 MASTER_SITES=	ftp://dslab1.cs.uit.no/pub/
 
 MAINTAINER=	ports@openbsd.org

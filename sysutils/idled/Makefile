@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/23 05:40:41 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:16 espie Exp $
 
 DISTNAME=	idled-1.16
 CATEGORIES=	sysutils
+FAKE=No
 MASTER_SITES=	http://www.darkwing.com/idled/download/ \
 		ftp://ftp.cs.hope.edu/pub/idled/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:46 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:36:48 espie Exp $
 #
 
 DISTNAME=		erlang-47.4.0
 CATEGORIES=     	lang
 NEED_VERSION=		1.210
+FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 

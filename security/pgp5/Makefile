@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:33 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/09 17:38:07 espie Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \

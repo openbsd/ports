@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/17 01:03:41 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:36:38 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1996/11/18 11:27:58 asami Exp $
 
 DISTNAME=	giftrans
 PKGNAME=        giftrans-1.12
 CATEGORIES=	graphics
+FAKE=No
 MASTER_SITES=   ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 
 MAINTAINER=	ports@openbsd.org

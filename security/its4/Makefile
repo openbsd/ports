@@ -3,11 +3,12 @@
 # Date created:		21 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/23 05:09:33 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:01 espie Exp $
 
 DISTNAME=	its4-1.0.1
 
 CATEGORIES=	security
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:44 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME?=	ja-jvim-2.0r
 CATEGORIES=	japanese editors
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 

@@ -3,11 +3,12 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/22 21:36:10 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:16 espie Exp $
 #
 
 DISTNAME=	xless-1.7
 CATEGORIES=	misc	
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.cs.berkeley.edu/ucb/people/dglo/xless/
 MASTER_SITE_SUBDIR=     applications

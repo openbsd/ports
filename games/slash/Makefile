@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/09 17:36:32 espie Exp $
 
 DISTNAME=	slash-e8
 CATEGORIES=	games
 NEED_VERSION=	1.121
+FAKE=No
 MASTER_SITES0=	${MASTER_SITE_GNU}
 MASTER_SITES1=	http://www.rz.tu-ilmenau.de/~wi019/Slash/
 MASTER_SITE_SUBDIR= nethack

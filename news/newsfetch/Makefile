@@ -3,11 +3,12 @@
 # Date created:		28 April 1998
 # Whom:			Ejovi Nuwere <ejovi@ejovi.net>
 #
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:03 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:43 espie Exp $
 #
 
 DISTNAME=	newsfetch-1.21
 CATEGORIES=	news
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/news/readers
 

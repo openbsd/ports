@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:05:21 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:38:25 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
 
 BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
@@ -6,6 +6,7 @@ BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLe
 DISTNAME=	Isearch-1.14
 PKGNAME=	isearch-1.14	
 CATEGORIES=	textproc databases
+FAKE=No
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 
 MAINTAINER=	ports@OpenBSD.ORG

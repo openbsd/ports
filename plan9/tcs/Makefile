@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 22:11:56 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:37:48 espie Exp $
 
 DISTNAME=	tcs
 PKGNAME=	tcs-19950325
 CATEGORIES=	plan9
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES= 	ftp://plan9.bell-labs.com/plan9/unixsrc/ \
 		ftp://ftp.gwdg.de/pub/gnu2/plan9/unixsrc/
 EXTRACT_SUFX=	.shar.Z

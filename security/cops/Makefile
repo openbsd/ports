@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/04 08:39:37 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:58 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	cops_104
 PKGNAME=	cops-1.04
 CATEGORIES=	security
+FAKE=No
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/1.04/

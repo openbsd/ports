@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:04:05 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:06 espie Exp $
 
 DISTNAME=       efax-0.9
 PKGNAME=        efax-0.9
 CATEGORIES=	comms
+FAKE=No
 
 MAINTAINER=	ian@OpenBSD.ORG
 

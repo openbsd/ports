@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:20 espie Exp $
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
 CATEGORIES=     devel pilot
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

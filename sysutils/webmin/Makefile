@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/03/02 01:24:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/09 17:38:21 espie Exp $
 
 DISTNAME=       webmin-0.78
 CATEGORIES=     sysutils
+FAKE=No
 MASTER_SITES=   http://www.webmin.com/webmin/download/
 
 MAINTAINER=     kevlo@openbsd.org

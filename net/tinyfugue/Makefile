@@ -7,7 +7,7 @@
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:35 espie Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 #
 
@@ -15,6 +15,7 @@ DISTNAME=	tf-40s1
 PKGNAME=	tf-4.0s1
 CATEGORIES=	net games
 NEED_VERSION=	1.210
+FAKE=No
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.demon.co.uk/pub/games/mud/
 

@@ -3,12 +3,13 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:38:02 espie Exp $
 
 DISTNAME=	john-1.6
 
 CATEGORIES=     security
 NEED_VERSION=	1.191
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

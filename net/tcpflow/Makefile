@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/23 00:47:41 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/09 17:37:33 espie Exp $
 
 DISTNAME=	tcpflow-0.12
 CATEGORIES=	net
+FAKE=No
 MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 
 MAINTAINER=	jethro@dqc.org

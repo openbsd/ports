@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/24 22:11:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/09 17:36:19 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
 DISTNAME=	mm-1.0.12
 CATEGORIES=	devel
 NEED_VERSION=	1.73
+FAKE=No
 MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 		ftp://ftp.engelschall.com/sw/mm/
 

@@ -6,6 +6,7 @@
 DISTNAME=	hjb3_0-linux.sfx
 PKGNAME=	hotjava-3.0
 CATEGORIES=	www
+FAKE=No
 MASTER_SITES=
 EXTRACT_SUFX=
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/11/24 04:22:21 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:36:46 espie Exp $
 
 VER=		3.1.1
 DISTNAME=       STk-${VER}
 CATEGORIES=	lang
+FAKE=No
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/STk/
 
 NO_CDROM=	"NOFEE:	Can not sell"

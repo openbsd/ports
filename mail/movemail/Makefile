@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/31 19:07:48 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:36:57 espie Exp $
 
 DISTNAME=	movemail-1.0
 CATEGORIES=	mail
+FAKE=No
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 
 MAINTAINER=	angelos@openbsd.org

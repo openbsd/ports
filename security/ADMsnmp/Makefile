@@ -3,13 +3,14 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:55 espie Exp $
 
 PKGNAME=	ADMsnmp-0.1
 DISTNAME=	ADMsnmp.0.1
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
+FAKE=No
 
 MASTER_SITES=	http://el8.org/~antilove/ \
 		ftp://ADM.isp.at/ADM/ \

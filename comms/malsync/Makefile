@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:08 espie Exp $
 
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
 
 CATEGORIES=	comms
 NEED_VERSION=	 1.230
+FAKE=No
 
 DISTFILES=	malsync_1_6.source.tar.gz \
 		mal-0_7_tar.gz:0

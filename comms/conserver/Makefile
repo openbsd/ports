@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 22:11:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:05 espie Exp $
 
 DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21
 CATEGORIES=	comms
 NEED_VERSION=	1.191
+FAKE=No
 
 # If you want to distribute a package you must heed this part of
 # the copyright:

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:12 espie Exp $
 
 DISTNAME=	zmtx-zmrx
 PKGNAME=	zmtx-zmrx-1.02
 CATEGORIES=	comms
 NEED_VERSION=	1.210
+FAKE=No
 
 MAINTAINER=	ports@openbsd.org
 

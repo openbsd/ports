@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:36 espie Exp $
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
 

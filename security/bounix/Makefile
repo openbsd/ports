@@ -3,7 +3,7 @@
 # Date created:		1998-Jan-16
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:56 espie Exp $
 #
 
 PKGNAME=		bounix-1.21
@@ -11,6 +11,7 @@ DISTNAME=		bo121unix
 
 CATEGORIES=     	security
 NEED_VERSION=	1.191
+FAKE=No
 
 MASTER_SITES=		http://www.ennui.net/~crioux/ \
 			http://orifice.rotten.com/cDc/ \

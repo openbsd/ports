@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:41 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/09 17:36:25 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 DISTNAME=	bochs-991023a
 CATEGORIES=	emulators
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://ftp.bochs.com/pub/
 
 HOMEPAGE=	http://www.bochs.com/

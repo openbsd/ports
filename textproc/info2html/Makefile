@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/31 19:07:49 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:25 espie Exp $
 
 DISTNAME=	info2html-1.1
 CATEGORIES=	textproc
+FAKE=No
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 
 MAINTAINER=     angelos@openbsd.org

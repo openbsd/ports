@@ -4,12 +4,13 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:36 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:32 espie Exp $
 #
 
 DISTNAME=	sgmlformat-1.6
 CATEGORIES=	textproc print
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 MAINTAINER=	matthieu@laas.fr

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/23 03:43:41 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/09 17:37:42 espie Exp $
 
 DISTNAME=	leafnode-1.9.2
 CATEGORIES=	news
+FAKE=No
 
 MAINTAINER=	ports@openbsd.org
 

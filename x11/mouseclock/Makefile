@@ -3,11 +3,12 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:31 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:43 espie Exp $
 #
 
 DISTNAME=	mouseclock-1.0
 CATEGORIES=	x11
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
 

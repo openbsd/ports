@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/24 22:11:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:34 espie Exp $
 
 DISTNAME=	tcptrace.5.2.1
 PKGNAME=	tcptrace-5.2.1
 CATEGORIES=	net
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
 
 MAINTAINER=	jethro@dqc.org

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:50 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:13 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	splitvt-1.6.3
 CATEGORIES=	misc
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
 

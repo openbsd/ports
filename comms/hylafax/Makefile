@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/24 23:28:03 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/04/09 17:36:06 espie Exp $
 
 BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
 
@@ -11,6 +11,7 @@ PKGNAME=	hylafax-4.0.2-letter
 
 CATEGORIES=	comms
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/fax/hylafax/source/ \
 		ftp://ftp.sisis.de/pub/hylafax/source/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/01/29 00:48:30 yanick Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/09 17:36:17 espie Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.3.1
 CATEGORIES=     	devel math net
+FAKE=No
 
 MAINTAINER=		yanick@openbsd.org
 

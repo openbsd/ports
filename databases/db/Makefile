@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/24 22:11:38 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/04/09 17:36:13 espie Exp $
 
 DISTNAME=	db-3.0.55
 CATEGORIES=	databases
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://www.sleepycat.com/update/3.0.55/
 
 MAINTAINER=	tacho@openbsd.org

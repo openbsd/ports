@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/23 01:11:30 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:39 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
 
 DISTNAME=	xarchie-2.0.10
 CATEGORIES=	net
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

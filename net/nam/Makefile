@@ -1,12 +1,13 @@
 #
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:28 espie Exp $
 #
 
 DISTNAME=	nam-src-1.0a7
 PKGNAME=	nam-1.0a7
 CATEGORIES=	net
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/vint/
 
 MAINTAINER=	angelos@openbsd.org

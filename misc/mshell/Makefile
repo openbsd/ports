@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:12 espie Exp $
 # Original from: Angelos D. Keromytis
 
 DISTNAME=	mshell
 PKGNAME=	mshell-1.0
 CATEGORIES=	misc
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 DISTFILES=	7432.Z
 WRKDIST=	${WRKDIR}

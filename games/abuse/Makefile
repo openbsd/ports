@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/24 22:11:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/04/09 17:36:28 espie Exp $
 
 DISTNAME=	abuse-2.0
 CATEGORIES=	games x11
 NEED_VERSION=	1.121
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITES0=	ftp://ftp.NetBSD.ORG/pub/NetBSD/packages/distfiles/
 MASTER_SITE_SUBDIR= abuse

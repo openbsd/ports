@@ -3,12 +3,13 @@
 # Date created:		6 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/22 20:27:35 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:46 espie Exp $
 #
 
 DISTNAME=	xantfarm
 PKGNAME=        xantfarm-1.16
 CATEGORIES=	x11
+FAKE=No
 MASTER_SITES=   ftp://ftp.kuis.kyoto-u.ac.jp/Linux/JG/other-sources/
 DISTFILES=	xantfarm23oct91.tar.gz
 

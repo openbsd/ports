@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 23:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:16 espie Exp $
 
 DISTNAME=       dejagnu-1.3
 CATEGORIES=	devel
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=	niklas@openbsd.org
 

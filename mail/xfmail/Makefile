@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:19 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:37:01 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 DISTNAME=       xfmail-1.3
 CATEGORIES=     mail x11
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://burka.netvision.net.il/pub/xfmail/
 
 MAINTAINER=	ports@openbsd.org

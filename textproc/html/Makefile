@@ -3,12 +3,13 @@
 # Date created:		December 1, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:12:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:38:24 espie Exp $
 #
 
 DISTNAME=	html-4.0b
 CATEGORIES=	textproc
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
 MAINTAINER=	angelos@openbsd.org

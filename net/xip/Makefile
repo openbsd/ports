@@ -3,13 +3,14 @@
 # Date created:		21 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/02/16 22:55:08 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:40 espie Exp $
 
 BROKEN=		sources moved
 
 DISTNAME=	xip-1.3.2
 
 CATEGORIES=	net
+FAKE=No
 
 MASTER_SITES=	http://www.capmedia.fr/mgall/xip/
 

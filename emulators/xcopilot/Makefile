@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:19 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:36:27 espie Exp $
 
 DISTNAME=       xcopilot-0.6.6
 CATEGORIES=     emulators pilot
+FAKE=No
 
 MAINTAINER=     angelos@openbsd.org
 

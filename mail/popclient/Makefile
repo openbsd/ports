@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/31 19:07:48 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:59 espie Exp $
 # Whom:           Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	popclient-3.0b6
 CATEGORIES=	mail
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://people.freebsd.org/~wosch/src/
 
 MAINTAINER=	ports@openbsd.org

@@ -3,11 +3,12 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:19 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:23 espie Exp $
 #
 
 DISTNAME=		c2html-0.6.1
 CATEGORIES=		textproc www
+FAKE=No
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/09 17:36:11 espie Exp $
 
 DISTNAME=	tkhylafax-3.0b2
 PKGNAME=	tkhylafax-3.0
 CATEGORIES=	comms
 NEED_VERSION=	 1.230
+FAKE=No
 
 BROKEN=		"required dependencies not available"
 

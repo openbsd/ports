@@ -3,12 +3,13 @@
 # Date created:			  Thu Dec 16, 1999
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/23 00:47:40 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:31 espie Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 #
 
 DISTNAME=	pchar-1.1.1
 CATEGORIES=	net
+FAKE=No
 MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
 
 MAINTAINER=     angelos@openbsd.org

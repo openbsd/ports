@@ -3,12 +3,13 @@
 # Date created:		10 Feb 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/24 22:11:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:03 espie Exp $
 
 PKGNAME=	lxnb-0.4
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:25 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:40 espie Exp $
 
 DISTNAME=	transproxy-0.4
 CATEGORIES=	www net
+FAKE=No
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/linux/www/
 EXTRACT_SUFX=	.tgz
 

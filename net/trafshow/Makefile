@@ -3,11 +3,12 @@
 # Date created:         28 Jan 1998
 # Whom:                 mickey
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:01 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:38 espie Exp $
 #
 
 DISTNAME=	trafshow-3.1
 CATEGORIES=	net
+FAKE=No
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
 EXTRACT_SUFX=	.tgz
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/30 21:59:26 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/09 17:38:40 espie Exp $
 
 DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
 NEED_VERSION=	1.218
+FAKE=No
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.2/
 MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.2/bugs/
 EXTRACT_SUFX=	-src.tar.gz

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/23 22:14:38 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:49 espie Exp $
 
 DISTNAME=		xfm-1.3.2
 CATEGORIES=		x11
+FAKE=No
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

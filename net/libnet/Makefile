@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/27 21:57:52 dugsong Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/09 17:37:25 espie Exp $
 
 DISTNAME=	libnet-1.0
 
 CATEGORIES=	net
+FAKE=No
 
 NEED_VERSION=	1.191
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:36:23 espie Exp $
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
 CATEGORIES=	editors
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
 DISTFILES=	ue400dev.zip
 

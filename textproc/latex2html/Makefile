@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:38:28 espie Exp $
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=	angelos@openbsd.org
 

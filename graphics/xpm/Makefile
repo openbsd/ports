@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/05 16:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:44 espie Exp $
 #
 
 DISTNAME=	xpm
@@ -6,6 +6,7 @@ DISTNAME=	xpm
 # No distfiles, so no fetch
 DISTFILES=
 CATEGORIES=	graphics x11
+FAKE=No
 
 COMES_WITH=	2.3
 IGNORE=		"is now part of the standard distribution"

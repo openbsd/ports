@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:42 espie Exp $
 
 DISTNAME=	tgif-4.1.27
 CATEGORIES=	graphics
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
 

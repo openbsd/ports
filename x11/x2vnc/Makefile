@@ -3,11 +3,12 @@
 # Date created:         12 Jan 2000
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/03/23 21:41:24 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/09 17:38:45 espie Exp $
 
 DISTNAME=	x2vnc-1.0
 
 CATEGORIES=     x11
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

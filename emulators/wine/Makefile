@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/24 22:11:41 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/09 17:36:27 espie Exp $
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
 PKGNAME=	wine-${DATE}
 CATEGORIES=	emulators x11
 NEED_VERSION=	1.191
+FAKE=No
 
 
 ONLY_FOR_ARCHS= i386

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:45 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:04 espie Exp $
 
 DISTNAME=	rtptools-1.9
 CATEGORIES=	mbone
+FAKE=No
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
 
 MAINTAINER=	angelos@openbsd.org

@@ -3,8 +3,8 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.8 2000/03/24 23:28:23 espie Exp $
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:23 espie Exp $
+# $Id: Makefile,v 1.9 2000/04/09 17:37:10 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:10 espie Exp $
 #
 
 DISTNAME=	magicpoint-1.05a
@@ -12,6 +12,7 @@ DISTNAME=	magicpoint-1.05a
 PKGNAME?=	magicpoint-1.05a
 CATEGORIES=	misc
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER=	angelos@openbsd.org

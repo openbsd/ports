@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:31 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:37:52 espie Exp $
 
 DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
 MAINTAINER=	angelos@openbsd.org

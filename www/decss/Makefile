@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/29 10:30:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/09 17:38:37 espie Exp $
 
 DISTNAME=	decss
 PKGNAME=	decss-0.0.5
 CATEGORIES=	www
+FAKE=No
 
 MASTER_SITES=   http://www.totse.com/DeCSS/
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/15 05:04:15 turan Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/09 17:36:21 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
 DISTNAME=	shtool-1.4.7
 CATEGORIES=	devel
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= shtool
 

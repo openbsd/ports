@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:11:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:35 espie Exp $
 
 DISTNAME=	tircproxy-0.4.3
 CATEGORIES=     net
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://www.mmedia.is/~bre/tircproxy/
 
 MAINTAINER=	garath@ntplx.net

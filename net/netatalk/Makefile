@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/15 03:29:29 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:29 espie Exp $
 
 DISTNAME=       netatalk-990130
 CATEGORIES=	net
+FAKE=No
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/
 
 MAINTAINER=	ianm@cit.nepean.uws.edu.au	

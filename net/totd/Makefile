@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/24 22:11:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:37 espie Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 #
 
 DISTNAME=	totd-1.1p2
 CATEGORIES=	net
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
 MAINTAINER=	itojun@itojun.org

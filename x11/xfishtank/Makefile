@@ -3,12 +3,13 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:49 espie Exp $
 #
 
 DISTNAME=      xfishtank-2.2
 CATEGORIES=    x11
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=  ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 MAINTAINER=    angelos@openbsd.org

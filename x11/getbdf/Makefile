@@ -2,13 +2,14 @@
 # Date created:         May 18 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:43 espie Exp $
 #
 
 DISTNAME=       getbdf
 PKGNAME=        getbdf-1.0
 CATEGORIES=	x11
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=   ftp://ftp.ipa.fhg.de/pub/X/
 EXTRACT_SUFX=   .tar.Z
 

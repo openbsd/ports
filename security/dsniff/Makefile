@@ -3,12 +3,13 @@
 # Date created:		17 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:32 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:38:00 espie Exp $
 
 DISTNAME=	dsniff-1.5
 
 CATEGORIES=	security
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

@@ -4,13 +4,14 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/09 17:37:45 espie Exp $
 #
 
 DISTNAME=		tinpre-1.4-19990216
 PKGNAME=		tin-1.4.19990216
 CATEGORIES=		news
 NEED_VERSION=	1.210
+FAKE=No
 
 NO_PACKAGE=		"too much compile time configuration"
 

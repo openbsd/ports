@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/17 20:14:02 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:01 espie Exp $
 
 DISTNAME=	xlbiff-3.0
 CATEGORIES=	mail x11
+FAKE=No
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

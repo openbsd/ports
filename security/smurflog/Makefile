@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:11 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/09 17:38:10 espie Exp $
 
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
+FAKE=No
 MASTER_SITES=	http://www.nectar.com/distfiles/
 #		http://www.sy.net/security/ \
 #		http://www.bitchx.com/~humble/files/

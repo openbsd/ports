@@ -3,11 +3,12 @@
 # Date created:		27 Jan 2000
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/27 20:31:50 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/09 17:38:06 espie Exp $
 
 PKGNAME=	parse-1.0
 
 CATEGORIES=	security
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

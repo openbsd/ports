@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/23 03:49:59 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:49 espie Exp $
 
 DISTNAME=	wily-0.13.41
 CATEGORIES=	plan9 editors
+FAKE=No
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/mhw/wily/src/ \
 		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
 EXTRACT_SUFX=	.tgz

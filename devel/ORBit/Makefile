@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/24 23:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/09 17:36:15 espie Exp $
 
 DISTNAME=	ORBit-0.5.0
 CATEGORIES=	devel
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/ORBit
 

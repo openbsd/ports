@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/08 05:11:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:36:58 espie Exp $
 
 DISTNAME=		nmh-1.0.3
 CATEGORIES=     	mail
+FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 

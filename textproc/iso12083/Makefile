@@ -3,12 +3,13 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:26 espie Exp $
 #
 
 DISTNAME=	iso12083-1993
 CATEGORIES=	textproc
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 

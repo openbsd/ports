@@ -3,12 +3,13 @@
 # Date created:				April 27 1998
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:30 espie Exp $
 #
 
 PKGNAME=	pilot_makedoc-0.7
 CATEGORIES=	textproc
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
 EXTRACT_ONLY=

@@ -3,11 +3,12 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:23 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:32 espie Exp $
 #
 
 DISTNAME=	sp-1.2.1
 CATEGORIES=	textproc
+FAKE=No
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 MAINTAINER=	ports@openbsd.org
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/27 18:17:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:07 espie Exp $
 #
 
 DISTNAME=	cbb-0.73
 CATEGORIES=	misc tk80
 NEED_VERSION=	1.230
+FAKE=No
 
 MAINTAINER=	angelos@openbsd.org
 

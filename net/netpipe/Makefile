@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/01 10:08:07 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:30 espie Exp $
 #
 
 DISTNAME=		netpipes-4.1.1-export
 CATEGORIES=		net
 NEED_VERSION=		1.191
+FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:05:02 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:39 espie Exp $
 
 DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3
 CATEGORIES=     net
+FAKE=No
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 DISTFILES=	${DISTNAME}.tar.gz
 

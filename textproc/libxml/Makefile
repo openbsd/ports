@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:12:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:29 espie Exp $
 
 DISTNAME=	libxml-1.0.0
 CATEGORIES=	textproc
 NEED_VERSION=	1.73
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/libxml
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/03 13:01:50 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:51 espie Exp $
 
 DISTNAME=		enscript-1.6.1
 CATEGORIES=     	print
+FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 

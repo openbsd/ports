@@ -3,12 +3,13 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:33 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/09 17:38:47 espie Exp $
 #
 
 DISTNAME=	xcoloredit
 PKGNAME=	xcoloredit-1.2
 CATEGORIES=	x11
+FAKE=No
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/25 12:40:56 rohee Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:38:36 espie Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 AMAYA_VERSION=		2.4
@@ -7,6 +7,7 @@ DISTNAME=		amaya-src-${AMAYA_VERSION}
 DIST_SUBDIR=		amaya
 PKGNAME=		amaya-${AMAYA_VERSION}
 CATEGORIES=		www
+FAKE=No
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		rohee@OpenBSD.ORG

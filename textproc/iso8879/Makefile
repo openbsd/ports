@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 22:12:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:26 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
 
 DISTNAME=	isoENTS
 PKGNAME=	iso8879-1986
 CATEGORIES=	textproc
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 

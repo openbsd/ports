@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:51 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:17 espie Exp $
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= utilities
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:11:54 espie Exp $ 
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:34 espie Exp $ 
 # Id: Makefile,v 1.7 1996/11/18 11:36:43 asami Exp $
 #
 
@@ -6,6 +6,7 @@ DISTNAME=       tintin++v1.5pl6
 PKGNAME=	tintin-1.5.6
 CATEGORIES=     net games
 NEED_VERSION=	1.191
+FAKE=No
 
 MAINTAINER=	ports@OpenBSD.ORG
 

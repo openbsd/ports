@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/23 05:15:35 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:13 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=      	swatch-2.2
 CATEGORIES=	security sysutils 
+FAKE=No
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \

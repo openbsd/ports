@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/24 22:11:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:32 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
 
 DISTNAME=	Sharity-Light.1.2
 PKGNAME=	sharity-light-1.2
 CATEGORIES=	net
 NEED_VERSION=	1.195
+FAKE=No
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/
 

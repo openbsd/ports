@@ -3,12 +3,13 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/24 22:11:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:54 espie Exp $
 
 PKGNAME=	ADMsmb-0.2
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
+FAKE=No
 
 DISTNAME=	ADMsmb-v0.2
 EXTRACT_SUFX=	.tgz

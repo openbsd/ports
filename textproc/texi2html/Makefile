@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 22:12:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:38:33 espie Exp $
 
 DISTNAME=	texi2html
 PKGNAME=	texi2html-1.52
 CATEGORIES=	textproc
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	http://wwwcn.cern.ch/dci/texi2html/ \
 		ftp://ftp.scc.ru/pub/unix/
 EXTRACT_SUFX=	.shar.Z

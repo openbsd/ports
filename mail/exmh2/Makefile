@@ -3,12 +3,13 @@
 # Date released:		May 16 1998
 # Whom:				Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/03/27 18:17:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:55 espie Exp $
 #
 
 DISTNAME=	exmh-2.0.2
 CATEGORIES=	mail tk80
 NEED_VERSION=	1.230
+FAKE=No
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 

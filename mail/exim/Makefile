@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/17 03:25:58 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:36:54 espie Exp $
 #
 
 DISTNAME=	exim-3.13
 CATEGORIES=	mail
+FAKE=No
 
 MAINTAINER=	peter.galbavy@knowledge.com
 

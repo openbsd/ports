@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:37:29 espie Exp $
 
 DISTNAME=       	ncftp-2.4.3
 CATEGORIES=		net
 NEED_VERSION=		 1.230
+FAKE=No
 MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=		shinobi@monkey.org

@@ -3,12 +3,13 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:46 espie Exp $
 #
 
 DISTNAME=	xaniroc
 PKGNAME=	xaniroc-1.02
 CATEGORIES=	x11
+FAKE=No
 MASTER_SITES=	ftp://ftp.freebird.org/unixware/freebird/x11/utils/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/novell/freebird/x11/utils/
 EXTRACT_SUFX=	.src.tar.Z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/03/24 23:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/04/09 17:36:09 espie Exp $
 
 BROKEN=		installs files automatically in /etc
 
@@ -6,6 +6,7 @@ PKGNAME=	minicom-1.82.1
 DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=     form@openbsd.org
 

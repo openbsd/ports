@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2000/03/02 21:23:21 aaron Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/09 17:38:23 espie Exp $
 
 PKGNAME=		figlet-2.2
 DISTNAME=		figlet22
 CATEGORIES=		textproc graphics
+FAKE=No
 MASTER_SITES=		ftp://ftp.internexus.net/pub/figlet/program/unix/
 
 MAINTAINER=		aaron@openbsd.org

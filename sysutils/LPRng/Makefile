@@ -3,12 +3,13 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.11 2000/03/24 22:12:00 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/09 17:38:15 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
 NEED_VERSION=		1.210
+FAKE=No
 
 MAINTAINER=		ports@openbsd.org
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:04:25 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:34 espie Exp $
 
 DISTNAME=	xbill-2.0
 CATEGORIES=	games
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz

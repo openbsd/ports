@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:50 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
 
 DISTNAME=	mawk1.3.3
 PKGNAME=	mawk-1.3.3
 CATEGORIES=	lang
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://ftp.whidbey.net/pub/brennan/
 
 MAINTAINER=	brad@openbsd.org

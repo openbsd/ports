@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/15 05:04:48 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:37:07 espie Exp $
 
 DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	misc
+FAKE=No
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
 MAINTAINER=	niklas@openbsd.org

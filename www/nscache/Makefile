@@ -3,12 +3,13 @@
 # Date created:		14 Dec 1999
 # Whom:			dugsong@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/24 23:28:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/09 17:38:39 espie Exp $
 
 PKGNAME=	nscache-0.2p1
 
 CATEGORIES=	www
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

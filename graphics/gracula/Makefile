@@ -3,11 +3,12 @@
 # Date created:				28 Oct 1999
 # Whom:					Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.2 2000/03/17 01:09:59 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/09 17:36:40 espie Exp $
 #
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
+FAKE=No
 MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/23 06:51:16 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:30 espie Exp $
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
 CATEGORIES=	textproc
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

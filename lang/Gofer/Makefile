@@ -3,13 +3,14 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/24 22:11:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:46 espie Exp $
 #
 
 DISTNAME=	gofer230a
 PKGNAME=	gofer-2.30a
 CATEGORIES=	lang
 NEED_VERSION=	1.191
+FAKE=No
 MASTER_SITES=	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
 
 MAINTAINER=	ports@OpenBSD.ORG

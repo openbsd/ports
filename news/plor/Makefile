@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:03 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:44 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
+FAKE=No
 
 MAINTAINER=	ports@OpenBSD.ORG
 

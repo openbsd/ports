@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:51 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:19 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	bing-1.0.4
 CATEGORIES=	net
+FAKE=No
 MASTER_SITES=	ftp://ftp.lip6.fr/pub/networking/
 
 MAINTAINER=	ports@OpenBSD.ORG

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/04 21:17:44 beck Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:11 espie Exp $
 
 DISTNAME=	ssl26	
 CATEGORIES=	security
+FAKE=No
 MASTER_SITES=	ftp://sunsite.ualberta.ca/pub/Local/People/beck/
 NO_CDROM=	"CRYPTO: Patent Issues until Sep 21 2000"
 RESTRICTED=	"Crypto; export-controlled"

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/16 23:06:44 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/09 17:36:29 espie Exp $
 #
 
 DISTNAME=		agm-1.3.1
 CATEGORIES=		games
+FAKE=No
 
 MAINTAINER=		angelos@openbsd.org
 

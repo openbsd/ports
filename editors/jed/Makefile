@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/25 15:31:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/09 17:36:23 espie Exp $
 
 DISTNAME=       jed-B0.99-10
 PKGNAME=        jed-0.99.10
 CATEGORIES=	editors
 NEED_VERSION=	 1.230
+FAKE=No
 MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v0.99/
 

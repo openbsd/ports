@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/04/01 08:58:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.16 2000/04/09 17:36:10 espie Exp $
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
 CATEGORIES=	comms
 NEED_VERSION=	1.230
+FAKE=No
 
 MAINTAINER=	angelos@openbsd.org
 

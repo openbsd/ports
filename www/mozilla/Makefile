@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/09 17:38:38 espie Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
@@ -8,6 +8,7 @@ BROKEN=		"extremely old, needs updating"
 DISTNAME=	mozilla-19980728
 CATEGORIES=	www
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=	ports@openbsd.org
 

@@ -1,9 +1,10 @@
 # $FreeBSD: Makefile,v 1.9 1998/03/13 15:05:20 jfieber Exp $
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:21 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:27 espie Exp $
 #
 
 DISTNAME=	jade-1.2.1
 CATEGORIES=	textproc
+FAKE=No
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
 MAINTAINER=	matthieu@laas.fr

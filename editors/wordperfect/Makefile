@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/24 23:28:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:24 espie Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
 NEED_VERSION=	 1.230
+FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 

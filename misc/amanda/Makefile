@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 22:11:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/09 17:37:06 espie Exp $
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
 NEED_VERSION=	1.64
+FAKE=No
 
 
 MAINTAINER=	ports@openbsd.org

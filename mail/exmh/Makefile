@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/01 10:08:07 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:54 espie Exp $
 #
 
 DISTNAME=	exmh-1.6.9
 CATEGORIES=	mail tk80
+FAKE=No
 IGNORE=		"has been superseded by exmh2"
 MIRROR_DISTFILE=no
 

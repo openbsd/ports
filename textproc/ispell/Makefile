@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/03/24 22:12:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/04/09 17:38:27 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 FRENCH_DICT=	francais-IREQ-1.4
@@ -7,6 +7,7 @@ GERMAN_DICT=	hk2-deutsch
 DISTNAME=	ispell-3.1.20
 CATEGORIES=	textproc
 NEED_VERSION=	1.195
+FAKE=No
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
 MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/

@@ -3,11 +3,12 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:06 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/09 17:37:51 espie Exp $
 #
 
 DISTNAME=	ghostview-1.5
 CATEGORIES=	print
+FAKE=No
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ghostview
 
