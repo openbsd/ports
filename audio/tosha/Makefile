@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/24 22:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/08/09 07:31:54 pvalchev Exp $
+
+BROKEN=		"relies on scsi API no longer part of libutil"
 
 COMMENT=	"read CD digital audio data through the SCSI bus"
 DISTNAME=	tosha-0.6
