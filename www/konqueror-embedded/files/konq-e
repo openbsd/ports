@@ -1,5 +1,28 @@
 #!/bin/sh
+# $OpenBSD: konq-e,v 1.2 2002/04/01 13:46:59 espie Exp $
+# Written by Marc Espie, 2002
+# Public domain
+
 PREFIX=%PREFIX%
+
+# Disk cache, disabled by default
+
+# export KIO_HTTP_USECACHE; KIO_HTTP_USECACHE=Yes
+# Default: 14 days (number of seconds)
+# export KIO_HTTP_MAXCACHEAGE; KIO_HTTP_MAXCHEAGE=
+# Default: 5 Mb (kilobytes)
+# export KIO_HTTP_MAXCACHESIZE; KIO_HTTP_MAXCACHESIZE=
+
+# Proxy support
+# export HTTP_PROXY; HTTP_PROXY="http://proxy.foo.com:3128/"
+# Don't use proxy for these
+# export NO_PROXY_FOR; NO_PROXY_FOR=
+
+# More tweaks
+# export KIO_HTTP_PROXY_CONNECT_TIMEOUT; KIO_HTTP_PROXY_CONNECT_TIMEOUT=10
+# export KIO_HTTP_CONNECT_TIMEOUT; KIO_HTTP_CONNECT_TIMEOUT=20
+# export KIO_HTTP_RESPONSE_TIMEOUT; KIO_HTTP_RESPONSE_TIMEOUT=60
+
 : ${KDEDIR:=${PREFIX}/lib/konq-e}
 export KDEDIR
 exec ${PREFIX}/libexec/konq-e "$@"

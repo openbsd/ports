@@ -1,6 +1,12 @@
-Stand-alone konqueror web-browser.
-Does not require kde2.
+Stand-alone konqueror web-browser. Based on kde 2.2 source code.
+Does not require kde2, only qt2.
 
-Experimental. A few things don't work yet, including SSL.
+- good javascript support, 
+- https support, but does not show certificates,
+- ftp support.
+
+Still somewhat experimental, crashes.
+
+See ${PREFIX}/bin/konq-e for cache/proxy support.
 
 WWW: ${HOMEPAGE}
