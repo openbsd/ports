@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/26 13:29:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/30 12:34:50 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -30,7 +30,7 @@ COMMENT-lskat=		card game for two players, based on Skat
 
 CATEGORIES=		x11 x11/kde games
 NEED_VERSION=		1.361
-VERSION=		2.1
+VERSION=		2.1.1
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
 
