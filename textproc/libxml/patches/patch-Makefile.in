@@ -1,6 +1,6 @@
---- Makefile.in.orig	2003-08-14 17:33:22.000000000 -0700
-+++ Makefile.in	2003-08-19 20:44:38.000000000 -0700
-@@ -289,7 +289,7 @@ pkgconfig_DATA = libxml-2.0.pc
+--- Makefile.in.orig	Tue Nov  4 10:27:20 2003
++++ Makefile.in	Thu Nov  6 13:25:17 2003
+@@ -307,7 +307,7 @@
  # Instll the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -9,11 +9,11 @@
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
  subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -1755,6 +1755,7 @@ Relaxtests: xmllint$(EXEEXT)
- 		    2> $(srcdir)/result/relaxng/"$$name"_"$$xno".err; \
- 	      else \
- 		  echo Testing "$$name"_"$$xno" ; \
-+		  echo "     $(CHECKER) $(top_builddir)/xmllint$(EXEEXT) --noout --relaxng $$i $$j" ; \
- 	          $(CHECKER) $(top_builddir)/xmllint$(EXEEXT) --noout --relaxng $$i $$j \
- 		    > res.$$name 2> err.$$name;\
- 	          grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
+@@ -1573,6 +1573,7 @@
+ 	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
+ 	  else \
+ 	      echo Testing $$name ; \
++	      echo "     $(CHECKER) $(top_builddir)/xmllint$(EXEEXT) --noout --relaxng $$i $$j" ; \
+ 	      $(CHECKER) $(top_builddir)/xmllint $$i > result.$$name ; \
+ 	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
+ 	      diff $(srcdir)/result/SVG/$$name result.$$name ; \

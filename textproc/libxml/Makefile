@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.69 2003/11/17 05:25:10 kevlo Exp $
 
 COMMENT=		"XML parsing library"
 
-VERSION=		2.5.10
+VERSION=		2.6.2
 DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
 CATEGORIES=		textproc
@@ -11,7 +11,6 @@ MASTER_SITES=		ftp://xmlsoft.org/ \
 
 HOMEPAGE=		http://xmlsoft.org/ 
 
-# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
