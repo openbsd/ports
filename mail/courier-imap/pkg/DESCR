@@ -9,6 +9,8 @@ authentication modules (e.g. /etc/passwd, LDAP, PAM), virtual mailbox
 support, resource controls, SSL/TLS, shared folders, and IPv6 support.
 
 Flavors:
-       pop3 - build with support for POP3/POP3-SSL
+       pop3  - build with support for POP3/POP3-SSL
+       ldap  - build with LDAP user lookup support
+       mysql - build with MySQL user database support
 
 WWW: ${HOMEPAGE}

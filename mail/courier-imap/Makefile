@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/02/28 04:55:03 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.13 2001/03/22 03:10:48 avsm Exp $ 
 
 DISTNAME=	courier-imap-1.3.5
 CATEGORIES=	mail
@@ -15,12 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	pop3
+FLAVORS=	pop3 mysql ldap
 FLAVOR?=
 
 SEPARATE_BUILD=	concurrent
 COURIERCONF=	${SYSCONFDIR}/courier-imap
-SUBST_VARS=	COURIERCONF
+COURIERSTATE=	/var/run/courier-imap
+SUBST_VARS=	COURIERSTATE COURIERCONF
 EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 
 CONFIGURE_STYLE= gnu old
@@ -29,17 +30,37 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-userdb=${SYSCONFDIR}/userdb --with-authuserdb \
-		--without-authmysql --without-authldap \
-		--sysconfdir=${COURIERCONF} \
+		--sysconfdir=${COURIERCONF} --with-authdaemon \
+		--with-authdaemonvar=${COURIERSTATE} \
 		--enable-workarounds-for-imap-client-bugs
+
+.if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mldap}
+.BEGIN:
+	@echo "Conflicting flavors: You must choose either ldap or mysql."
+	@exit 1
+.endif
+
+.if ${FLAVOR:L:Mmysql}
+CONFIGURE_ARGS+=       --with-authmysql
+LIB_DEPENDS+=          mysqlclient::databases/mysql
+.else
+CONFIGURE_ARGS+=       --without-authmysql
+.endif
+
+.if ${FLAVOR:L:Mldap}
+CONFIGURE_ARGS+=       --with-authldap
+LIB_DEPENDS+=          ldap.2::databases/openldap
+.else
+CONFIGURE_ARGS+=       --without-authldap
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/courier-imap
 .for i in pop3d-ssl imapd-ssl pop3d imapd
-	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/${i}.dist ${EXAMPLE_DIR}/${i}
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/$i.dist ${EXAMPLE_DIR}/$i
 .endfor
-.for i in imapd pop3d
-	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/${i}.cnf ${EXAMPLE_DIR}
+.for i in imapd.cnf pop3d.cnf quotawarnmsg.example authdaemonrc.dist
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/$i ${EXAMPLE_DIR}
 .endfor
 
 .include <bsd.port.mk>

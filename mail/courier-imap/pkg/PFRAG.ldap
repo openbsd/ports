@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.ldap,v 1.1 2001/03/22 03:10:50 avsm Exp $
+libexec/authlib/authdaemond.ldap
+man/man8/authldap.8
