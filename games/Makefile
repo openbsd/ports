@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2003/04/09 13:50:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.85 2003/04/11 09:18:34 wilfried Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -94,6 +94,8 @@
      SUBDIR += toppler
 #    SUBDIR += tksol
 #    SUBDIR += tvp
+     SUBDIR += uqm
+     SUBDIR += uqmcontent
      SUBDIR += vectoroids
      SUBDIR += wmeyes
      SUBDIR += wmminichess
