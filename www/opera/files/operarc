@@ -1,0 +1,4 @@
+; $OpenBSD: operarc,v 1.5 2002/04/23 15:44:43 naddy Exp $
+;
+[Performance]
+Synchronous DNS Lookup=1
