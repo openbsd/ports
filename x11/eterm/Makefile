@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/17 19:57:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/15 07:21:35 kevlo Exp $
 
 PKGNAME=	eterm-0.8.10
 DISTNAME=	Eterm-0.8.10
 CATEGORIES=	x11
-NEED_VERSION=	1.247
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://eterm.sourceforge.net/pub/eterm/ \
-		ftp://ftp.eterm.org/pub/Eterm/ \
-		http://eterm.is.nontoxic.org/download/ \
+		ftp://ftp.eterm.org/pub/eterm/ 
 
 MAINTAINER=	halogen@nol.net
-
-FAKE=		Yes
 
 FLAVORS=kanji
 FLAVOR?=
@@ -21,7 +18,7 @@ CFLAGS+=-DKANJI
 CATEGORIES+=japanese
 .endif
 
-GNU_CONFIGURE= Yes
+CONFIGURE_STYLE=gnu
 USE_GMAKE=     Yes
 USE_LIBTOOL=   Yes
 SEPARATE_BUILD=	Flavored
