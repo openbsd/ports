@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/02/22 17:08:47 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/20 05:00:48 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -11,13 +11,12 @@
 #	 'option COMPAT_SUNOS'
 
 ONLY_FOR_ARCHS=	i386 sparc
-NEED_VERSION=	1.210
 
 COMMUNICATOR_V=	4.61
 COMMUNICATOR_V2=461
 NS_I386=	communicator-v${COMMUNICATOR_V2}-export.x86-bsdi-bsd2.tar.gz
 NS_SPARC=	communicator-v${COMMUNICATOR_V2}-export.sparc-sun-sunos4.1.3_U1.tar.gz
-FORTIFY=	Fortify-1.4.5-unix-src
+FORTIFY=	Fortify-1.4.6-unix-src
 
 .if ${MACHINE_ARCH} == "i386"
 DISTNAME=	communicator-v${COMMUNICATOR_V2}-export.x86-bsdi-bsd2
@@ -40,6 +39,8 @@ SUBSUP=	communicator/english/${COMMUNICATOR_V}/unix/unsupported/${SUPDIR}
 PKGNAME=	communicator-${COMMUNICATOR_V}
 CATEGORIES=     www
 DIST_SUBDIR=	netscape
+
+NEED_VERSION=	1.218
 
 MASTER_SITES= \
 	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBMAIN}/ \
@@ -71,12 +72,22 @@ MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 DISTFILES=	${DISTNAME}.tar.gz \
 		${FORTIFY}.tar.gz:1
 
-OBJMACHINE=	"yes"
-NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
-NO_CONFIGURE=	"No configure scripts"
-WRKDIST=	${WRKDIR}
-
 MAINTAINER=	brad@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	No
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
+
+FAKE=	Yes
+
+NO_CONFIGURE=	Yes
+OBJMACHINE=	Yes
+
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -I../common" \
+		LDFLAGS="" YACC="yacc"
+
+WRKDIST=	${WRKDIR}
 
 pre-fetch:
 .if !defined(NO_WARNINGS)
@@ -114,15 +125,15 @@ post-install:
 	@rm -f ${PREFIX}/netscape/netscape_dns
 .endif
 	@cd ${WRKDIR}/${FORTIFY} && \
-	ln -sf languages/English Messages && \
-	(echo yes ; echo no ; echo no) \
-	| src/cmdline/fortify ${PREFIX}/netscape/netscape
+	ln -fs languages/English Messages && \
+	{ echo yes ; echo no ; echo no } \
+	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape
 .if ${MACHINE_ARCH} == "sparc"
 	@cd ${WRKDIR}/${FORTIFY} && \
-	(echo yes ; echo no ; echo no) \
-	| src/cmdline/fortify ${PREFIX}/netscape/netscape_nis
+	{ echo yes ; echo no ; echo no } \
+	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape_nis
 .endif
-	@sed -e 's#@netscape_home@#${PREFIX}/netscape#' \
+	@sed -e 's#@netscape_home@#${TRUEPREFIX}/netscape#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
 	@if [ -f ${PREFIX}/bin/netscape]; then \
 	 mv ${PREFIX}/bin/netscape ${PREFIX}/bin/netscape.old; \
