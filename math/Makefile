@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/09/23 15:59:53 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/07/14 17:44:55 fgsch Exp $
 #
 
 #    SUBDIR += Scilab
@@ -18,6 +18,7 @@
 #    SUBDIR += lapack
 #    SUBDIR += libranlib
 #    SUBDIR += linpack
+     SUBDIR += maple
 #    SUBDIR += metis
 #    SUBDIR += numpy
 #    SUBDIR += octave
