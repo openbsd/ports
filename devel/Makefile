@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2004/12/21 20:37:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.284 2004/12/22 02:27:14 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -217,7 +217,9 @@
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-SVN-Mirror
+     SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
+     SUBDIR += p5-SVN-Web
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
@@ -240,6 +242,7 @@
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
      SUBDIR += p5-Tree-DAG_Node
+     SUBDIR += p5-Tree-Simple
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-VCP-autrijus
