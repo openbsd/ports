@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/06/06 00:52:18 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/08/19 05:23:16 shell Exp $
 bin/pdfbklt.plx
 bin/pdfrevert.plx
 bin/pdfstamp.plx
@@ -8,6 +8,7 @@ ${P5SITE}/Text/PDF/Dict.pm
 ${P5SITE}/Text/PDF/File.pm
 ${P5SITE}/Text/PDF/Filter.pm
 ${P5SITE}/Text/PDF/Name.pm
+${P5SITE}/Text/PDF/Null.pm
 ${P5SITE}/Text/PDF/Number.pm
 ${P5SITE}/Text/PDF/Objind.pm
 ${P5SITE}/Text/PDF/Page.pm
@@ -24,6 +25,7 @@ man/man3p/Text::PDF::Dict.3p
 man/man3p/Text::PDF::File.3p
 man/man3p/Text::PDF::Filter.3p
 man/man3p/Text::PDF::Name.3p
+man/man3p/Text::PDF::Null.3p
 man/man3p/Text::PDF::Number.3p
 man/man3p/Text::PDF::Objind.3p
 man/man3p/Text::PDF::Page.3p
@@ -41,6 +43,7 @@ share/examples/p5-Text-PDF/pdfaddpg.pl
 share/examples/p5-Text-PDF/pdfcrop.pl
 share/examples/p5-Text-PDF/pdfgetobj.pl
 share/examples/p5-Text-PDF/pdflines.pl
+share/examples/p5-Text-PDF/squares.pdf
 share/examples/p5-Text-PDF/test.pdf
 @dirrm share/examples/p5-Text-PDF
 @dirrm ${P5SITE}/Text/PDF
