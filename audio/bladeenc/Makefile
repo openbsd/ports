@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2001/02/18 21:36:00 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/08 21:00:55 brad Exp $
 
-DISTNAME=	bladeenc-0.93.10-src-unstable-2
-PKGNAME=	bladeenc-0.93.10
+DISTNAME=	bladeenc-0.94.0-src-stable
+PKGNAME=	bladeenc-0.94.0
 CATEGORIES=	audio
 NEED_VERSION=	1.336
 MASTER_SITES=	http://bladeenc.mp3.no/source/ \
