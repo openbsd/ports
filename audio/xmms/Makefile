@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/08/31 15:03:25 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/09/20 20:03:10 wilfried Exp $
 # Uses pthreads
 
 ONLY_FOR_ARCHS=	i386
@@ -52,6 +52,7 @@ LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 
