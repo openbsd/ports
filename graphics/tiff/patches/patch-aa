@@ -1,5 +1,5 @@
 --- libtiff/Makefile.in.orig	Wed Sep  8 05:39:00 1999
-+++ libtiff/Makefile.in	Fri Oct 22 16:51:57 1999
++++ libtiff/Makefile.in	Thu Nov  4 13:58:18 1999
 @@ -62,7 +62,7 @@
  #
  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
@@ -19,16 +19,21 @@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
-@@ -324,10 +327,10 @@
+@@ -323,15 +326,8 @@
+ 		-src $$i -O $$f;					\
  	done
  installDSO: @DSO@dso
- 	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
+-	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
 -	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
-+	    ${INSTALL} -idb tiff.sw.tools.nostrip -m 555 -F @DIR_LIB@	\
- 		-O libtiff.@DSOSUF_VERSION@;				\
- 	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
+-		-O libtiff.@DSOSUF_VERSION@;				\
+-	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
 -		-ln libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
-+		-lns libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
- 	else								\
- 	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
- 		-O libtiff.@DSOSUF@;					\
+-	else								\
+-	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+-		-O libtiff.@DSOSUF@;					\
+-	fi
++	    ${INSTALL} -idb tiff.sw.tools.nostrip -m 555 -F @DIR_LIB@	\
++		-O libtiff.@DSOSUF_VERSION@;
+ install: all installHdrs
+ 	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_LIB@
+ 	${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_LIB@ -O libtiff.a
