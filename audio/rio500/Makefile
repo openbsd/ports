@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/11/21 17:51:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2005/01/03 17:01:52 alek Exp $
 
 COMMENT=	"Diamond Rio 500 utilities"
 DISTNAME=	rio500-0.7
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rio500/}
@@ -12,9 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c glib
+WANTLIB=		c
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+
+LIB_DEPENDS=		glib.1.2::devel/glib
 
 ONLY_FOR_ARCHS=		i386
 
