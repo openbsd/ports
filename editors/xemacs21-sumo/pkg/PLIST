@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/01 21:28:35 naddy Exp $
-@pkgcfl xemacs20*
-@pkgcfl emacs*
-@comment mailcrypt is included in xemacs21-sumo
+@comment $OpenBSD: PLIST,v 1.2 2001/04/15 16:39:12 espie Exp $
+@pkgcfl emacs-*
+@comment mailcrypt is included in xemacs-sumo-21
 @comment the conflict is only on info files
-@pkgcfl mailcrypt*
+@pkgcfl mailcrypt-*
 %%mule%%
 @unexec install-info --delete --info-dir=%D/info %D/info/auctex.info
 @unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* BBDB: (bbdb).	The Big Brother Database.' %D/info/bbdb.info

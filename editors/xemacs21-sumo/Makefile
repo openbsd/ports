@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/01 21:28:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/15 16:39:12 espie Exp $
 
 # 
 # What port/package will be created
 #
 VERSION=		2001-02-04
-PKGNAME=		xemacs21-sumo-${VERSION:S/-//g}
+PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
 DISTFILES=		xemacs-sumo-${VERSION}.tar.gz
 
 CATEGORIES=     	editors
