@@ -1,0 +1,6 @@
+bin/whisker
+lib/whisker/scan.db
+lib/whisker/server.db
+@dirrm lib/whisker
+share/doc/whisker/whisker.txt
+@dirrm share/doc/whisker
