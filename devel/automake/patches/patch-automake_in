@@ -1,7 +1,7 @@
-$OpenBSD: patch-automake_in,v 1.5 2001/06/30 18:55:52 brad Exp $
---- automake.in.orig	Sun Jun 10 06:08:56 2001
-+++ automake.in	Sat Jun 30 13:41:21 2001
-@@ -2013,7 +2013,7 @@ sub handle_texinfo
+$OpenBSD: patch-automake_in,v 1.6 2001/08/17 17:05:48 brad Exp $
+--- automake.in.orig	Sun Jul 15 12:47:28 2001
++++ automake.in	Fri Aug 17 12:47:25 2001
+@@ -2012,7 +2012,7 @@ sub handle_texinfo
  	# dependency list.
  	@texi_deps = ();
  	push (@texi_deps, $info_cursor);
