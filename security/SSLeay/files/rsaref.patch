@@ -1,0 +1,12 @@
+*** rsaref/Makefile.ssl-orig	Thu Jul  9 22:38:59 1998
+--- rsaref/Makefile.ssl	Thu Jul  9 22:39:46 1998
+***************
+*** 41,46 ****
+--- 41,47 ----
+  	$(AR) $(LIB) $(LIBOBJ)
+  	sh $(TOP)/util/ranlib.sh $(LIB)
+  	@touch lib
++ 	@(cd $(TOP); sh do-rsaref-ssl)
+  
+  files:
+  	perl $(TOP)/util/files.pl Makefile.ssl >> $(TOP)/MINFO

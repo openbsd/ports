@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# pre-Configure configuration script for SSLeay
+#
+# dugsong@monkey.org
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+cd $WRKSRC
+
+perl util/perlpath.pl /usr/bin
+perl util/ssldir.pl ${PREFIX}/ssl
+
+if [ "x$USA_RESIDENT" = "xYES" ]; then
+    LIBDIR=`ldconfig -r | grep rsaref | awk '{print $3}' | xargs dirname`
+
+    if [ -f ${LIBDIR}/librsaref.a ]; then
+	cp ${LIBDIR}/librsaref.a .
+    else
+	echo "Couldn't find RSAref library ${LIBDIR}/librsaref.a"
+	exit 1
+    fi
+fi
+
