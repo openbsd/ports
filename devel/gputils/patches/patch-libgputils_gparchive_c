@@ -1,12 +1,12 @@
-$OpenBSD: patch-libgputils_gparchive_c,v 1.3 2004/01/30 01:01:11 naddy Exp $
---- libgputils/gparchive.c.orig	2004-01-09 19:10:37.000000000 +1100
-+++ libgputils/gparchive.c	2004-01-25 20:36:31.000000000 +1100
+$OpenBSD: patch-libgputils_gparchive_c,v 1.4 2004/02/14 15:09:44 avsm Exp $
+--- libgputils/gparchive.c.orig	2004-01-09 08:10:37.000000000 +0000
++++ libgputils/gparchive.c	2004-02-13 20:02:41.000000000 +0000
 @@ -50,7 +50,7 @@ gp_archive_member_name(gp_archive_type *
    char name[256];
    char *end;
  
 -  sscanf(archive->header.ar_name, "%s/", name);
-+  sscanf(archive->header.ar_name, "%256s/", name);
++  sscanf(archive->header.ar_name, "%255s/", name);
    end = strchr(&name[0], '/');
    if (end != NULL) 
      *end = '\0';
@@ -15,7 +15,7 @@ $OpenBSD: patch-libgputils_gparchive_c,v 1.3 2004/01/30 01:01:11 naddy Exp $
  
    while (archive != NULL) {
 -    sscanf(archive->header.ar_name, "%s/", name);
-+    sscanf(archive->header.ar_name, "%256s/", name);
++    sscanf(archive->header.ar_name, "%255s/", name);
      sscanf(archive->header.ar_date, "%il", &date);
      sscanf(archive->header.ar_size, "%il", &size);
      end = strchr(&name[0], '/');
@@ -24,7 +24,7 @@ $OpenBSD: patch-libgputils_gparchive_c,v 1.3 2004/01/30 01:01:11 naddy Exp $
  
    while (archive != NULL) {
 -    sscanf(archive->header.ar_name, "%s/", name);
-+    sscanf(archive->header.ar_name, "%256s/", name);
++    sscanf(archive->header.ar_name, "%255s/", name);
      end = strrchr(&name[0], '/');
      if (end != NULL) 
        *end = '\0';
@@ -69,7 +69,7 @@ $OpenBSD: patch-libgputils_gparchive_c,v 1.3 2004/01/30 01:01:11 naddy Exp $
          
    while (archive != NULL) {
 -    sscanf(archive->header.ar_name, "%s/", name);
-+    sscanf(archive->header.ar_name, "%256s/", name);
++    sscanf(archive->header.ar_name, "%255s/", name);
      end = strchr(&name[0], '/');
      if (end != NULL) 
        *end = '\0';
@@ -120,7 +120,7 @@ $OpenBSD: patch-libgputils_gparchive_c,v 1.3 2004/01/30 01:01:11 naddy Exp $
      assert(member != NULL);
      /* determine the archive member name */
 -    sscanf(member->header.ar_name, "%s/", name);
-+    sscanf(member->header.ar_name, "%256s/", name);
++    sscanf(member->header.ar_name, "%255s/", name);
      end = strchr(&name[0], '/');
      if (end != NULL) 
        *end = '\0';
