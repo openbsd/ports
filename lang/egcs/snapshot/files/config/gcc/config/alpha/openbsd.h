@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.10 1999/02/06 16:31:14 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.11 1999/02/16 17:20:55 espie Exp $ */
 
 /* We settle for little endian for now */
 #define TARGET_ENDIAN_DEFAULT 0
@@ -16,7 +16,7 @@
 #include <openbsd.h>
 
 /* Controlling the compilation driver
- * ---------------------------------- */
+   ---------------------------------- */
 /* alpha needs __start */
 #undef LINK_SPEC
 #define LINK_SPEC \
@@ -27,7 +27,7 @@
 -D__OpenBSD__ -D__alpha__ -D__alpha"
 
 /* Layout of source language data types
- * ------------------------------------ */
+   ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "long unsigned int"
@@ -51,7 +51,7 @@
 #undef HAS_INIT_SECTION
 
 /* collect2 support (assembler format: macros for initialization) 
- * -------------------------------------------------------------- */
+   -------------------------------------------------------------- */
 /* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
    library with the proper functions to handle this -> collect2 will
    default to using nm. */
@@ -59,7 +59,7 @@
 #undef EXTENDED_COFF
 
 /* Assembler format: exception region output 
- * ----------------------------------------- */
+   ----------------------------------------- */
 /* all configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
    configuration files...  */
@@ -69,7 +69,7 @@
 #endif
 
 /* Assembler format: file framework 
- * -------------------------------- */
+   -------------------------------- */
 /* taken from alpha/osf.h. This used to be common to all alpha
    configurations, but elf has departed from it.
    Check alpha/alpha.h, alpha/osf.h for it when egcs is upgraded.  */
@@ -92,7 +92,7 @@
 #endif
 
 /* Assembler format: label output
- * ------------------------------ */
+   ------------------------------ */
 #define ASM_OUTPUT_WEAK_ALIAS(FILE,NAME,VALUE)	\
  do {						\
   fputs ("\t.weakext\t", FILE);			\

@@ -1,6 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.7 1999/02/06 16:31:14 espie Exp $	*/
-/* vi:ts=8: 
- */
+/* $OpenBSD: openbsd.h,v 1.8 1999/02/16 17:20:55 espie Exp $	*/
 
 /* This is tested by i386gas.h.  */
 #define YES_UNDERSCORES
@@ -18,7 +16,7 @@
 #define CPP_PREDEFINES "-D__unix__ -D__i386__ -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(i386) -Amachine(i386)"
 
 /* Layout of source language data types
- * ------------------------------------ */
+   ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
@@ -33,18 +31,18 @@
 #define WCHAR_TYPE_SIZE 32
 
 /* Assembler format: overall framework
- * ----------------------------------- */
+   ----------------------------------- */
 #undef ASM_APP_ON
 #define ASM_APP_ON "#APP\n"
 
 #undef ASM_APP_OFF
 #define ASM_APP_OFF "#NO_APP\n"
 
-/* The following macros were originally stolen from i386v4.h */
-/* These have to be defined to get PIC code correct */
+/* The following macros were originally stolen from i386v4.h.
+   These have to be defined to get PIC code correct. */
 
 /* Assembler format: dispatch tables 
- * --------------------------------- */
+   --------------------------------- */
 /* How to output an element of a case-vector that is relative.
    This is only used for PIC code.  See comments by the `casesi' insn in
    i386.md for an explanation of the expression this outputs. */
@@ -53,19 +51,19 @@
   fprintf (FILE, "\t.long _GLOBAL_OFFSET_TABLE_+[.-%s%d]\n", LPREFIX, VALUE)
 
 /* Assembler format: sections
- * -------------------------- */
+   -------------------------- */
 /* Indicate when jump tables go in the text section.  This is
    necessary when compiling PIC code.  */
 #define JUMP_TABLES_IN_TEXT_SECTION  (flag_pic)
 
 /* Stack & calling: aggregate returns
- * ---------------------------------- */
+   ---------------------------------- */
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
 /* Assembler format: alignment output
- * ---------------------------------- */
+   ---------------------------------- */
 /* Kludgy test: when gas is upgraded, it will have p2align, and no problems
    with nops. */
 #ifndef HAVE_GAS_MAX_SKIP_P2ALIGN
@@ -78,7 +76,7 @@
 #endif
 
 /* Stack & calling: profiling
- * -------------------------- */
+   -------------------------- */
 /* OpenBSD's profiler recovers all information from the stack pointer.
    The icky part is not here, but in machine/profile.h. */
 #undef FUNCTION_PROFILER
@@ -86,14 +84,14 @@
   fputs(flag_pic ? "\tcall mcount@PLT\n": "\tcall mcount\n", FILE);
 
 /* Assembler format: exception region output 
- * ----------------------------------------- */
+   ----------------------------------------- */
 /* all configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
    configuration files...  */
 #define DWARF2_UNWIND_INFO 0
 
 /* Assembler format: alignment output
- * ---------------------------------- */
+   ---------------------------------- */
 /* A C statement to output to the stdio stream FILE an assembler
    command to advance the location counter to a multiple of 1<<LOG
    bytes if it is within MAX_SKIP bytes.

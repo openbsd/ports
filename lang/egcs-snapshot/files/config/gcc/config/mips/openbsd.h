@@ -1,5 +1,5 @@
 /* GCC configuration for  OpenBSD Mips ABI32 */
-/* $OpenBSD: openbsd.h,v 1.4 1999/02/12 03:58:16 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.5 1999/02/16 17:20:56 espie Exp $ */
 
 /* Default mips is little endian, unless otherwise specified */
 
@@ -8,6 +8,9 @@
 
 /* GAS must know this */
 #define SUBTARGET_ASM_SPEC "%{fPIC:-KPIC} %|"
+
+/* CPP specific OpenBSD specs */
+#define SUBTARGET_CPP_SPEC OBSD_CPP_SPEC
 
 /* Needed for ELF (inspired by netbsd-elf) */
 #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
@@ -18,16 +21,18 @@
 /* Get generic openbsd definitions */
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #define OBSD_HAS_DECLARE_OBJECT
+#define OBSD_HAS_CORRECT_SPECS
 #include <openbsd.h>
 
+
 /* run-time target specifications */
-#define CPP_PREDEFINES "-DMIPSEL -D_MIPSEL -DSYSTYPE_BSD \
+#define CPP_PREDEFINES "-D__MIPSEL__ -D_MIPSEL -D__SYSTYPE_BSD__ \
 -D__NO_LEADING_UNDERSCORES__ -D__GP_SUPPORT__ \
 -D__unix__  -D__OpenBSD__ -D__mips__ \
 -Asystem(unix) -Asystem(OpenBSD) -Amachine(mips)"
 
 /* layout of source language data types
- * ------------------------------------ */
+   ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
@@ -42,7 +47,7 @@
 #define WCHAR_TYPE_SIZE 32
 
 /* Controlling the compilation driver 
- * ---------------------------------- */
+   ---------------------------------- */
 
 /* LINK_SPEC appropriate for OpenBSD.  Support for GCC options 
    -static, -assert, and -nostdlib. Dynamic loader control.
@@ -67,11 +72,10 @@
 #undef ASM_FINAL_SPEC
 #undef STARTFILE_SPEC
 
-/*
- A C statement to output something to the assembler file to switch to section
- NAME for object DECL which is either a FUNCTION_DECL, a VAR_DECL or
- NULL_TREE.  Some target formats do not support arbitrary sections.  Do not
- define this macro in such cases. mips.h doesn't define this, do it here.
+/* A C statement to output something to the assembler file to switch to section
+   NAME for object DECL which is either a FUNCTION_DECL, a VAR_DECL or
+   NULL_TREE.  Some target formats do not support arbitrary sections.  Do not
+   define this macro in such cases. mips.h doesn't define this, do it here.
 */
 #define ASM_OUTPUT_SECTION_NAME(F, DECL, NAME, RELOC)                        \
 do {                                                                         \
@@ -85,7 +89,7 @@ do {                                                                         \
 } while (0)
 
 /* collect2 support (Macros for initialization)
- * -------------------------------------------- */
+   -------------------------------------------- */
 
 /* Mips default configuration is COFF-only, and confuses collect2. */
 #undef OBJECT_FORMAT_COFF

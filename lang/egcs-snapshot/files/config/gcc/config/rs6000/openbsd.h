@@ -10,7 +10,7 @@
 #include <openbsd.h>
 /* XXX need to check ASM_WEAKEN_LABEL/ASM_GLOBALIZE_LABEL */
 
-/* ----------------------------- */
+/* run-time target specifications */
 #define CPP_PREDEFINES \
  "-D__PPC -D__unix__ -D__OpenBSD__ -D__powerpc -Asystem(unix) -Asystem(OpenBSD) -Acpu(powerpc) -Amachine(powerpc)"
 
@@ -53,7 +53,7 @@
 #define	MULTILIB_DEFAULTS { "mbig", "mcall-openbsd" }
 
 /* collect2 support (Macros for initialization)
- * -------------------------------------------- */
+   -------------------------------------------- */
 
 /* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
    library with the proper functions to handle this -> collect2 will

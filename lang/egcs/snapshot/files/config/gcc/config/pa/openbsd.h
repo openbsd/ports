@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.5 1999/02/06 21:49:03 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.6 1999/02/16 17:20:56 espie Exp $ */
 
 #include <pa/pa.h>
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
@@ -26,7 +26,7 @@
    %{static:-Bstatic} %{!static:-Bdynamic} %{assert*}"
 
 /* layout of source language data types
- * ------------------------------------ */
+   ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
@@ -42,8 +42,7 @@
 
 /* Output at beginning of assembler file.  */
 /* this is slightly changed from main pa.h to only output dyncall
- * when compiling PIC
- */
+   when compiling PIC. */
 #undef ASM_FILE_START
 #define ASM_FILE_START(FILE) \
 do { fputs ("\t.SPACE $PRIVATE$\n\
@@ -61,6 +60,6 @@ do { fputs ("\t.SPACE $PRIVATE$\n\
        output_file_directive ((FILE), main_input_filename); \
    } while (0)
 
-/* remove hpux specific pa defines */
+/* remove hpux specific pa defines. */
 #undef LDD_SUFFIX
 #undef PARSE_LDD_OUTPUT

@@ -1,6 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.5 1999/02/06 21:49:01 espie Exp $ */
-/* vi:ts=8: 
- */
+/* $OpenBSD: openbsd.h,v 1.6 1999/02/16 17:20:55 espie Exp $ */
 
 /* m68k is an old configuration that does not yet use the TARGET_CPU_DEFAULT
    framework. */
@@ -25,7 +23,7 @@
  */
 
 /* Layout of source language data types
- * ------------------------------------ */
+   ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
@@ -40,12 +38,12 @@
 #define WCHAR_TYPE_SIZE 32
 
 /* Storage layout
- * -------------- */
+   -------------- */
 /* Every structure or union's size must be a multiple of 2 bytes.  */
 #define STRUCTURE_SIZE_BOUNDARY 16
 
 /* Specific options for DBX Output
- * ------------------------------- */
+   ------------------------------- */
 /* This is BSD, so it wants DBX format.  */
 #define DBX_DEBUGGING_INFO
 
@@ -57,13 +55,13 @@
 #define DBX_CONTIN_CHAR '?'
 
 /* Stack & calling: aggregate returns
- * ---------------------------------- */
+   ---------------------------------- */
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
 /* Assembler format: exception region output 
- * ----------------------------------------- */
+   ----------------------------------------- */
 /* all configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
    configuration files...  */
