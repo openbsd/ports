@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_encode_c,v 1.1 2005/02/28 13:30:07 mbalmer Exp $
+--- src/encode.c.orig	Wed Oct  8 23:21:16 2003
++++ src/encode.c	Tue Feb 15 03:51:19 2005
+@@ -53,14 +53,14 @@ const char *decode_string(char *native_s
+ 			  size_t len)
+ {
+ #if defined(HAVE_ICONV)
+-     ICONV_CONST char *in;
++     const char *in;
+      char *out;
+      size_t outlen;
+      iconv_t conv;
+ 
+      conv = iconv_open(gq_codeset, LDAP_CODESET);
+      if (conv != (iconv_t) -1) {
+-	  in = (ICONV_CONST char *) ldap_string;
++	  in = (const char *) ldap_string;
+ 	  out = native_string;
+ 	  /*       len = strlen(in); */
+ 	  outlen = len;
+@@ -94,12 +94,12 @@ const gchar *encode_string(gchar *ldap_s
+ 			   size_t len)
+ {
+ #if defined(HAVE_ICONV)
+-     ICONV_CONST char *in;
++     const char *in;
+      char *out;
+      size_t outlen;
+      iconv_t conv;
+ 
+-     in = (ICONV_CONST char *) native_string;
++     in = (const char *) native_string;
+      out = ldap_string;
+ /*       len = strlen(in); */
+      outlen = len * 2 + 1; /* Worst case */

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:31:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/02/28 13:30:07 mbalmer Exp $
 bin/gq
 share/gnome/
 share/gnome/apps/

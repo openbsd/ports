@@ -1,0 +1,11 @@
+--- src/state.c.orig	Mon Nov  3 22:19:54 2003
++++ src/state.c	Sat Feb  5 06:50:26 2005
+@@ -754,7 +754,7 @@ static void state_valueE(struct parser_c
+ 	}
+     }
+ 
+-    if (n != NULL && v->type != 0) {
++    if (n != NULL && v != NULL && v->type != 0) {
+ 	char *ep;
+ 
+ 	assert(v);

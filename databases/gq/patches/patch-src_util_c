@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_util_c,v 1.1 2005/02/28 13:30:07 mbalmer Exp $
+--- src/util.c.orig	Sat Oct 12 14:50:20 2002
++++ src/util.c	Wed Jan 26 23:27:26 2005
+@@ -1588,27 +1588,51 @@ GList *get_suffixes(struct ldapserver *s
+ char **gq_ldap_explode_dn(const char *dn, int dummy)
+ {
+      int i, rc;
+-     LDAPDN *parts;
+-     char **v = 0; 
++     LDAPDN parts;
++     char **v = NULL; 
+      
+      rc = ldap_str2dn(dn, &parts, LDAP_DN_FORMAT_LDAPV3);
+ 
+-     if (rc != LDAP_SUCCESS || parts == NULL) return NULL;
++     if (rc != LDAP_SUCCESS)
++	    return NULL;
++     if (parts == NULL) {
++	     v = calloc(1, sizeof(char *));
++	     if (v == NULL)
++		     return NULL;
++	     v[0] = NULL;
++	     return v;
++     }
+ 
+      /* count DN elements */
+      for( i = 0 ; parts[i] ; i++ ) ;
+-     v = (char **) calloc((i + 2), sizeof(char*));
+ 
+-     for( i = 0 ; parts[i] ; i++ ) {
+-	  ldap_rdn2str(parts[0][i], &v[i],
++     v = calloc(i + 1, sizeof(char *));
++     if (v == NULL) {
++	     ldap_dnfree(parts);
++	     return NULL;
++     }
++
++     for(i = 0; parts[i]; i++) {
++	  ldap_rdn2str(parts[i], &v[i],
+ 		       LDAP_DN_FORMAT_LDAPV3 | LDAP_DN_PRETTY );
+      } 
++
++     ldap_dnfree(parts);
++     v[i] = NULL;
++
+      return v;
+ }
+      
+ void gq_exploded_free(char **exploded_dn)
+ {
+-     if (exploded_dn) free(exploded_dn);
++     int i;
++
++     if (exploded_dn == NULL) 
++	     return;
++     for (i = 0; exploded_dn[i]; i++)
++	     free(exploded_dn[i]);
++
++     free(exploded_dn);
+ }
+ 
+ #endif
