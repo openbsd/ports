@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/05/14 21:35:52 krw Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/06/15 22:50:38 krw Exp $
 bin/zope-instance
 lib/zope/Extensions/README.txt
 lib/zope/Makefile
@@ -3034,9 +3034,6 @@ share/doc/zope/changenotes/010620-2.4-btreeconflict.stx
 @dirrm lib/zope/lib/python/webdav/www
 @dirrm lib/zope/lib/python/webdav/dtml
 @dirrm lib/zope/lib/python/webdav
-@exec mkdir -p %D/lib/zope/lib/python/build/temp.openbsd-3.3-${MACHINE_ARCH}-2.1
-@dirrm lib/zope/lib/python/build/temp.openbsd-3.3-${MACHINE_ARCH}-2.1
-@dirrm lib/zope/lib/python/build
 @dirrm lib/zope/lib/python/ZopeUndo/tests
 @dirrm lib/zope/lib/python/ZopeUndo
 @dirrm lib/zope/lib/python/Zope/App
