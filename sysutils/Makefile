@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2003/08/23 19:25:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.75 2004/02/20 19:56:11 espie Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -12,6 +12,7 @@
      SUBDIR += cfengine
      SUBDIR += colorls
      SUBDIR += contool
+     SUBDIR += e2fsprogs
      SUBDIR += freedt
      SUBDIR += ggrep
      SUBDIR += gkrellm
