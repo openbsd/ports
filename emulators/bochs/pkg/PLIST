@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/01/22 14:43:01 todd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/07/14 17:12:21 todd Exp $
 bin/bochs
 bin/bximage
 man/man1/bochs-dlx.1
@@ -24,6 +24,6 @@ share/doc/bochs/cosimulation.html
 share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
 share/doc/bochs/iodebug.html
-@dirrm share/doc/bochs
-@dirrm share/bochs/bios
-@dirrm share/bochs
+@dir share/doc/bochs
+@dir share/bochs/bios
+@dir share/bochs

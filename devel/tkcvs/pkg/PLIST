@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:48 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/07/14 17:13:06 todd Exp $
 bin/tkcvs
 bin/tkdiff
 bin/cvscheck
@@ -42,5 +42,5 @@ libdata/tkcvs/bitmaps/tkcvs32.xbm
 libdata/tkcvs/bitmaps/tkcvs32_mask.xbm
 libdata/tkcvs/bitmaps/tree16.xbm
 libdata/tkcvs/bitmaps/update.xbm
-@dirrm libdata/tkcvs/bitmaps
-@dirrm libdata/tkcvs
+@dir libdata/tkcvs/bitmaps
+@dir libdata/tkcvs

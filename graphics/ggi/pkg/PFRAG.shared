@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/01/20 13:50:53 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/07/14 17:10:19 todd Exp $
 lib/libggi.so.2.4
 DYNLIBDIR(%D/lib)
 lib/ggi/default/color.so
@@ -33,5 +33,3 @@ lib/ggi/display/trueemu.so
 lib/ggi/helper/helper_x_dbe.so
 lib/ggi/helper/helper_x_evi.so
 lib/ggi/helper/helper_x_shm.so
-
-

@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/07 01:54:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/07/14 17:11:45 todd Exp $
 bin/guavac
 bin/guavad
 bin/gcok
 man/cat1/guavac.0
 share/guavac/classes.zip
-@dirrm share/guavac
+@dir share/guavac

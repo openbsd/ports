@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/01/20 13:49:34 todd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/07/14 17:11:05 todd Exp $
 bin/mhub
 bin/xsendbut
 include/ggi/errors.h
@@ -97,12 +97,12 @@ share/examples/gii/filter_keytrans.example
 share/examples/gii/filter_mouse.example
 share/examples/gii/libgii.conf.example
 %%SHARED%%
-@dirrm share/examples/gii
-@dirrm share/doc/gii
-@dirrm lib/ggi/input
-@dirrm lib/ggi/filter
-@dirrm lib/ggi
-@dirrm include/ggi/internal
-@dirrm include/ggi/input
-@dirrm include/ggi
+@dir share/examples/gii
+@dir share/doc/gii
+@dir lib/ggi/input
+@dir lib/ggi/filter
+@dir lib/ggi
+@dir include/ggi/internal
+@dir include/ggi/input
+@dir include/ggi
 @extraunexec rm -rf ${CONFDIR}
