@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/25 22:45:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/09 10:52:24 wilfried Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
@@ -6,7 +6,6 @@ V=		2.0.3
 DISTNAME=	abcde_$V.orig
 PKGNAME=	abcde-$V
 CATEGORIES=	audio
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://frantica.lly.org/~rcw/abcde/page/
 
