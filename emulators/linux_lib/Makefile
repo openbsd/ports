@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/02/15 05:04:18 turan Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/10 17:02:04 espie Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -12,21 +12,24 @@ NO_CDROM=	"GPL: must distribute with source"
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-PREFIX=		/emul/linux
-NO_MTREE=	yes
-NO_BUILD=	yes
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
-NO_PACKAGE=	yes
+PREFIX=		/usr/local/emul/linux
+NO_BUILD=	Yes
+NO_PATCH=	Yes
+NO_CONFIGURE=	Yes
 EXTRACT_ONLY=
+FAKE=		Yes
 
 pre-install:
-	@[ -d ${PREFIX} ] || mkdir -p ${PREFIX}
+# XXX pkg_create bug-fix work-around: ${TRUEPREFIX} must exist
+	mkdir -p ${TRUEPREFIX}
+	@mkdir -p ${PREFIX}
+	@mkdir ${WRKINST}/emul
+	@ln -s ${TRUEPREFIX} ${WRKINST}/emul/linux
 
 do-install:
 	@zcat ${DISTDIR}/${DISTNAME}.tar.gz | (cd ${PREFIX}; pax -r)
@@ -35,7 +38,7 @@ post-install:
 # Creating usr/local/lib to prevent linux ldconfig from scanning OpenBSD
 # local libraries...
 	@mkdir -p ${PREFIX}/usr/local/lib
-	${PREFIX}/sbin/ldconfig || /usr/bin/true
+	-chroot ${WRKINST} ${TRUEPREFIX}/sbin/ldconfig
 	-@rmdir ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
 	mkdir -p ${PREFIX}/usr/lib/zoneinfo
 	ln -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
@@ -46,6 +49,6 @@ post-install:
 	ln -sf /dev/ttyC2 ${PREFIX}/dev/tty3
 	ln -sf /dev/ttyC3 ${PREFIX}/dev/tty4
 	ln -sf /dev/sound ${PREFIX}/dev/dsp
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+#	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
