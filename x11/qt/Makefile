@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/03/07 03:40:09 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/03/10 04:00:14 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.42
@@ -10,12 +10,9 @@ MAINTAINER=	brad@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-#
-# MesaGL library support is currently in progress...
-#
-#.if defined(USE_MESAGL)
-#LIB_DEPENDS=	MesaGL\\.2\\.:${PORTSDIR}/graphics/MesaGL
-#.endif
+.if defined(USE_MESAGL)
+LIB_DEPENDS=	MesaGL\\.3\\.:${PORTSDIR}/graphics/MesaGL
+.endif
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"Currently doesn't build on sparc due to g++ bug"
