@@ -1,4 +1,15 @@
-etc/idled.cf.template
+@cwd /usr/local
+@name idled-1.16
+lib/idled.cf.template
 libexec/idled
 man/man5/idled.cf.5
 man/man8/idled.8
+@exec echo ""
+@exec echo "*** Be sure to edit/create the file /etc/idled.cf based on"
+@exec echo "*** the needs for your system. The /usr/local/lib/idled.cf.template"
+@exec echo "*** file can serve as a guide, as well as the man pages."
+@exec echo ""
+@unexec echo ""
+@unexec echo "*** To completely remove this package be sure to delete the"
+@unexec echo "*** /etc/idled.cf from your system."
+@unexec echo ""

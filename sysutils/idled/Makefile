@@ -3,25 +3,19 @@
 # Date created:	06 Nov 1997
 # Whom:	ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/04/12 22:51:16 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/07/25 00:44:47 marc Exp $
 #
 
 DISTNAME=	idled-1.16
 CATEGORIES=	sysutils
+
+MAINTAINER=	marc@openbsd.org
+
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=	ftp://ftp.cs.hope.edu/pub/idled/
 
-MAINTAINER=     joey@openbsd.org
-NO_CDROM=	non-profit use and distribution only
-MANCOMPRESSED=	yes
-MAN5=		idled.cf.5
-MAN8=		idled.8
-
 post-extract:
-	(cd ${WRKSRC}; make clean)
-
-post-install:
-	strip ${PREFIX}/libexec/idled
+	@(cd ${WRKSRC}; make clean)
 
 .include <bsd.port.mk>
