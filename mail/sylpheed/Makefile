@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2003/04/29 13:01:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.40 2003/05/20 11:07:04 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-VERSION=	0.8.11
+VERSION=	0.9.0
 DISTNAME=	sylpheed-${VERSION}
 CATEGORIES=    	mail news x11
 HOMEPAGE=	http://sylpheed.good-day.net
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=		--enable-ssl --enable-ipv6 \
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	compface gpgme
+FLAVORS=	compface gpgme ldap
 FLAVOR?=
 
 .if ${FLAVOR:L:Mcompface}
@@ -40,6 +40,13 @@ LIB_DEPENDS+=		gpgme.4::security/gpgme
 CONFIGURE_ARGS+=	--enable-gpgme
 .else
 CONFIGURE_ARGS+=	--disable-gpgme
+.endif
+
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=		ldap.2,lber.2::databases/openldap
+CONFIGURE_ARGS+=	--enable-ldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 .include <bsd.port.mk>
