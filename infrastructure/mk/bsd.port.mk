@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.113 1999/08/25 02:54:19 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.114 1999/09/02 21:57:32 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -808,7 +808,8 @@ READLINK?=	/usr/bin/readlink
 RM?=		/bin/rm
 RMDIR?=		/bin/rmdir
 SED?=		/usr/bin/sed
-FIND?=      /usr/bin/find
+STRIP?=		/usr/bin/strip
+FIND?=		/usr/bin/find
 
 # XXX ${SETENV} is needed in front of var=value lists whenever the next
 # command is expanded from a variable, as this could be a shell construct
