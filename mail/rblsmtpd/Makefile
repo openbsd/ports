@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/28 07:44:57 camield Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/26 14:25:30 camield Exp $
+
+BROKEN=		"obsoleted by net/ucspi-tcp"
 
 DISTNAME=	rblsmtpd-0.70
 HOMEPAGE=	http://cr.yp.to/rblsmtpd.html
