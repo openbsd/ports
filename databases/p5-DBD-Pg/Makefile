@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/06/02 11:56:23 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/28 12:08:35 espie Exp $
 
 DISTNAME=	DBD-Pg-0.93
 PKGNAME=	p5-DBD-Pg-0.93
 CATEGORIES=	databases perl5
-NEED_VERSION=	 1.290
+NEED_VERSION=	 1.302
 
 MAINTAINER=	kevlo@openbsd.org
 
