@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/04/26 03:35:34 pvalchev Exp $
 #
 # Pre/post-installation setup of nut
 
@@ -51,7 +51,7 @@ do_install()
     echo "|"
     echo "| Also see $PREFIX/share/doc/nut/README.OpenBSD"
     echo "| for startup configuration."
-    echo "| the configuration to meet your needs before running the daemons"
+    echo "| the configuration to meet your needs before running the daemons."
     echo "|"
     echo "| If you have built nut with CGIs, they can be found in:"
     echo "| $PREFIX/libexec/nut"

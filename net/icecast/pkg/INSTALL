@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2002/03/08 16:41:54 fgsch Exp $
+# $OpenBSD: INSTALL,v 1.5 2002/04/26 03:35:34 pvalchev Exp $
 #
 # Pre/post-installation setup of icecast
 
@@ -35,7 +35,7 @@ do_install()
     echo "+---------------"
     echo "| The $1 configuration files in $CONFIG_DIR,"
     echo "| have been installed.  Please view these files and change"
-    echo "| the configuration to meet your needs"
+    echo "| the configuration to meet your needs."
     echo "|"
     echo "| To produce the crypted passwords, use encrypt(1)."
     echo "+---------------"

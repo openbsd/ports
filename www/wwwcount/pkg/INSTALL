@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/01/27 21:14:05 form Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/04/26 03:35:34 pvalchev Exp $
 #
 # Pre/post-installation setup of wwwcount
 
@@ -42,7 +42,7 @@ do_install()
 	echo "+---------------"
 	echo "| The $1 configuration file, ${CONFIG_FILE},"
 	echo "| has been installed.  Please view this file and change"
-	echo "| the configuration to meet your needs"
+	echo "| the configuration to meet your needs."
 	echo "+---------------"
 	echo
 }

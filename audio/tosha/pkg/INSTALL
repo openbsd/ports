@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/03/14 15:04:12 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/04/26 03:35:33 pvalchev Exp $
 #
 # Pre/post-installation setup of tosha
 
@@ -34,7 +34,7 @@ do_install()
     echo "+---------------"
     echo "| The $1 configuration file, ${CONFIG_FILE},"
     echo "| has been installed.  Please view this file and change"
-    echo "| the configuration to meet your needs"
+    echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
 }

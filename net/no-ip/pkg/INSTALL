@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/03/08 16:56:10 wilfried Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/04/26 03:35:34 pvalchev Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -26,7 +26,7 @@ do_install()
     echo "+---------------"
     echo "| The $1 configuration file, $CONFIG_FILE,"
     echo "| has been installed.  Please view this file and change"
-    echo "| the configuration to meet your needs"
+    echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
 

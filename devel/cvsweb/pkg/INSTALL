@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2001/01/03 00:51:41 naddy Exp $
+# $OpenBSD: INSTALL,v 1.3 2002/04/26 03:35:34 pvalchev Exp $
 #
 # Pre/post-installation setup of cvsweb
 
@@ -39,7 +39,7 @@ do_install()
     echo "| The $1 configuration file,"
     echo "| $CONFIG_FILE,"
     echo "| has been installed.  Please view this file and"
-    echo "| change the configuration to meet your needs"
+    echo "| change the configuration to meet your needs."
     echo "+---------------"
     echo
 }
