@@ -1,6 +1,6 @@
-$OpenBSD: patch-Local.config,v 1.5 2002/09/07 07:09:13 pvalchev Exp $
---- Local.config.orig	Fri Sep  6 22:40:35 2002
-+++ Local.config	Fri Sep  6 22:42:06 2002
+$OpenBSD: patch-Local_config,v 1.1 2002/09/07 07:12:12 pvalchev Exp $
+--- Local.config.orig	Tue Jun 12 13:26:45 2001
++++ Local.config	Sat Sep  7 01:02:32 2002
 @@ -135,6 +135,17 @@ XCOMM CDEBUGFLAGS =
  
  XCOMM This should take care of everything needed for BSD.

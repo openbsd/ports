@@ -1,6 +1,6 @@
-$OpenBSD: patch-misc.h,v 1.2 2002/09/07 07:09:13 pvalchev Exp $
---- misc.h.orig	Fri Sep  6 22:22:09 2002
-+++ misc.h	Fri Sep  6 22:22:32 2002
+$OpenBSD: patch-misc_h,v 1.1 2002/09/07 07:12:12 pvalchev Exp $
+--- misc.h.orig	Mon Oct  2 14:56:30 2000
++++ misc.h	Sat Sep  7 01:02:32 2002
 @@ -23,7 +23,7 @@
  long random(void);
  #endif
