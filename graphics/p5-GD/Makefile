@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.15 2002/11/30 05:28:40 brad Exp $
+#	$OpenBSD: Makefile,v 1.16 2002/11/30 17:17:35 couderc Exp $
 
 COMMENT=	"module to interface with the GD graphics library"
 
@@ -20,7 +20,5 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 LIB_DEPENDS=	gd.18::graphics/gd
 
 CONFIGURE_STYLE= perl
-
-REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
