@@ -1,3 +1,0 @@
-SHELL=/bin/sh
-CFLAGS+=-I/usr/X11R6/include
-LIBS=-lm
