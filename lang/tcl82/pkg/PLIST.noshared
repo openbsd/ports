@@ -19,8 +19,6 @@ include/tcl8.2/tclDecls.h
 include/tcl8.2/unix/tclUnixPort.h
 include/tcl8.2/unix/tclUnixThrd.h
 lib/libtcl82.a
-lib/libtcl82.so.1.3
-@exec /sbin/ldconfig -m %B
 lib/libtclstub82.a
 lib/tcl8.2/auto.tcl
 lib/tcl8.2/encoding/ascii.enc

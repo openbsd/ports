@@ -1,34 +1,32 @@
-#
-# $FreeBSD: ports/lang/tcl82/Makefile,v 1.26 2000/01/05 07:11:48 jseger Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/06 00:36:20 angelos Exp $
-#
+# $OpenBSD: Makefile,v 1.2 2000/01/07 18:09:36 brad Exp $
+# $FreeBSD: Makefile,v 1.26 2000/01/05 07:11:48 jseger Exp $
 
 DISTNAME=	tcl8.2.3
 PKGNAME=	tcl-8.2.3
-CATEGORIES=	lang tcl82
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR= tcl8_2
+
+NEED_VERSION=	1.92
 
 MAINTAINER=	angelos@openbsd.org
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
-MAKE_ENV=	SHORT_TCL_VER=82
-PKGINSTALL=     ${PKGDIR}/INSTALL.tclsh
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 
-PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
-
-post-extract:
-	${MV} ${WRKDIR}/${DISTNAME}/doc/InitStubs.3 \
-	      ${WRKDIR}/${DISTNAME}/doc/Tcl_InitStubs.3
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.if (${MACHINE_ARCH} == "mips")
+CONFIGURE_ARGS+= --disable-load
 .endif
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
-test:
-	cd ${WRKSRC} && ${MAKE} test
+WRKSRC=	${WRKDIR}/${DISTNAME}/unix
+
+post-install:
+	@${LDCONFIG} -m ${PREFIX}/lib
+
+test:	build
+	@cd ${WRKSRC} && make test
 
 .include <bsd.port.mk>
