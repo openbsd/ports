@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.65 2004/12/27 00:00:27 espie Exp $
+# $OpenBSD: make-plist,v 1.66 2005/02/05 11:40:31 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -935,6 +935,7 @@ for my $plist (@l) {
 my $default = $l[0];
 if (($default->{wantshared} || (defined $default->{shared}) && $default->{shared}->{nonempty}) && !$default->{hasshared}) {
 	unshift(@{$default->{items}}, OpenBSD::PackingElement::Fragment->new("SHARED"));
+	$default->{nonempty} = 1;
 }
 
 for my $k (sort keys %$foundcomments) {
