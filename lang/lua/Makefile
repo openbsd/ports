@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/19 01:16:51 dbt Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/26 08:49:09 wilfried Exp $
 
 DISTNAME=	lua-4.0
 CATEGORIES=     lang
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}/lua
 
 post-build:
-	cd ${WRKDIST} && gcc -o bin/bin2c etc/bin2c.c
+	cd ${WRKDIST} && ${CC} ${CFLAGS} -o bin/bin2c etc/bin2c.c
 #	and recompile with shared libs
 	${BUILD_SHARED}
 
@@ -49,7 +49,7 @@ do-install:
 BUILD_SHARED=:
 .else
 BUILD_SHARED=cd ${WRKDIST} && \
-	gcc -shared -fpic -o lib/liblua.so.4.0 src/*.o && \
-	gcc -shared -fpic -o lib/liblualib.so.4.0 src/lib/*.o && \
+	${CC} ${LDFLAGS} -shared -fPIC -o lib/liblua.so.4.0 src/*.o && \
+	${CC} ${LDFLAGS} -shared -fPIC -o lib/liblualib.so.4.0 src/lib/*.o && \
 	rm bin/lua && ${MAKE}
 .endif

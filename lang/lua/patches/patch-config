@@ -1,11 +1,20 @@
---- config.orig	Tue Nov 21 18:42:42 2000
-+++ config	Tue Nov 21 18:45:12 2000
-@@ -93,7 +93,7 @@
+--- config.orig	Mon Nov  6 21:28:20 2000
++++ config	Fri Mar 16 18:31:39 2001
+@@ -28,7 +28,7 @@
+ # ------------------------------------------------------------------ C compiler
+ 
+ # You need an ANSI C compiler. gcc is a popular one.
+-CC= gcc
++#CC= gcc
+ WARN= -ansi -pedantic -Wall
+ 
+ # On IRIX, cc is a good ANSI compiler.
+@@ -93,7 +93,7 @@ LIB= $(LUA)/lib
  INCS= -I$(INC) $(EXTRA_INCS)
  DEFS= $(COMPAT) $(NUMBER) $(OLD_ANSI) $(EXTRA_DEFS)
  
 -CFLAGS= -O2 $(WARN) $(INCS) $(DEFS)
-+CFLAGS= -O2 -fpic $(WARN) $(INCS) $(DEFS)
++CFLAGS+= -fPIC $(WARN) $(INCS) $(DEFS)
  
  V=4.0
  
