@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/04/01 20:30:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/03 14:29:36 sturm Exp $
 
 COMMENT=	"GTK-based LDAP client"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqclient/}
 
 HOMEPAGE=	http://biot.com/gq/
 
-MAINTAINER=	Olivier Lemaire <olem@IDEALX.org>
+MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
