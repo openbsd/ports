@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/08/03 14:27:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/19 22:04:30 espie Exp $
 
 
 COMMENT=		"unit testing framework for Python"
@@ -26,8 +26,8 @@ FLAVOR?=
 MODULES=	lang/python
 
 .if !${FLAVOR:L:Mno_x11}
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
+BUILD_DEPENDS=	${MODPY_TKINTER_DEPENDS}
+RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS}
 .endif
 
 NO_REGRESS=	Yes
