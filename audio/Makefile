@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2001/12/21 12:41:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2002/01/16 16:43:34 mickey Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -48,6 +48,7 @@
 #    SUBDIR += mxv
      SUBDIR += nap
 #    SUBDIR += nas
+     SUBDIR += nomadio
      SUBDIR += nspmod
      SUBDIR += opennap
      SUBDIR += p5-Audio-CD
