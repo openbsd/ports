@@ -1,0 +1,64 @@
+$OpenBSD: patch-configs_openbsd-g++-shared-debug,v 1.1.1.1 2000/06/22 23:53:43 espie Exp $
+--- configs/openbsd-g++-shared-debug.orig	Thu May 25 14:10:32 2000
++++ configs/openbsd-g++-shared-debug	Wed Jun 21 18:36:22 2000
+@@ -1,25 +1,25 @@
+ # Compiling
+-SYSCONF_CXX		= g++
++SYSCONF_CXX		= $(SYS_CXX)
+ SYSCONF_CC		= gcc
+ 
+ # Compiling with support libraries
+-SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
++SYSCONF_CXXFLAGS_X11	= -I$(X11BASE)/include -I$(LOCALBASE)/include
+ SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
+-SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
++SYSCONF_CXXFLAGS_OPENGL	= -I$(LOCALBASE)/include
+ 
+ # Compiline YACC output
+ SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
+ 
+ # Linking with support libraries
+ # X11
+-SYSCONF_LFLAGS_X11	= -L/usr/X11R6/lib
++SYSCONF_LFLAGS_X11	= -L$(X11BASE)/lib -L$(LOCALBASE)/lib
+ SYSCONF_LIBS_X11	= -lXext -lX11 -lm
+ # Qt, Qt+OpenGL
+ SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
+ SYSCONF_LIBS_QT		= -lqt
+ SYSCONF_LIBS_QT_OPENGL	= -lqgl
+ # OpenGL
+-SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
++SYSCONF_LFLAGS_OPENGL	= -L$(LOCALBASE)/lib
+ SYSCONF_LIBS_OPENGL	= -lGLU -lGL -lXmu
+ # Yacc
+ SYSCONF_LIBS_YACC	= 
+@@ -30,7 +30,7 @@ SYSCONF_LFLAGS		= 
+ SYSCONF_LIBS		= 
+ 
+ # Link flags shared objects
+-SYSCONF_LFLAGS_SHOBJ	= -Bshareable
++SYSCONF_LFLAGS_SHOBJ	= -Bshareable -Bforcearchive
+ 
+ # Meta-object compiler
+ SYSCONF_MOC		= $(QTDIR)/bin/moc
+@@ -40,9 +40,9 @@ SYSCONF_MOC		= $(QTDIR)/bin/moc
+ #   - Place target in $(DESTDIR) - which has a trailing /
+ #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
+ #
+-SYSCONF_LINK_SHLIB	= ld
++SYSCONF_LINK_SHLIB	= g++ -shared
+ SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
+-SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) `lorder /usr/lib/c++rt0.o $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
++SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) $(OBJECTS) $(OBJMOC) $(LIBS)
+ 
+ # Linking static libraries
+ #   - Build the $(TARGET) library, eg. lib$(TARGET).a
+@@ -54,7 +54,7 @@ SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDI
+ 				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) ; \
+ 				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
+ # Compiling application source
+-SYSCONF_CXXFLAGS	= -g
++SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS) -g -fno-strength-reduce
+ SYSCONF_CFLAGS		= -g
+ # Compiling library source
+ SYSCONF_CXXFLAGS_LIB	= -fPIC
