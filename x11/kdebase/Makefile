@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 1999/06/24 17:09:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/31 08:41:16 turan Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
+
+BROKEN=		bad packing lists, share/apps/kdisknav/CD-ROM.kdelnk
 
 DISTNAME=	kdebase-1.1.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
+
+MAINTAINER=	yanick@openbsd.org
 
 NEED_VERSION=	1.92
 
