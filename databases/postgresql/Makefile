@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/05/23 16:31:41 form Exp $
+# $OpenBSD: Makefile,v 1.31 2000/05/24 04:23:21 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-${VERS}
@@ -63,7 +63,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://postgresql.nextpath.com/pub/postgresql/%SUBDIR%/ \
 		ftp://www.ndesign.com.ua/pub/psql/%SUBDIR%/ \
 		ftp://postgresql.netafric.ci/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${VERS}
+MASTER_SITE_SUBDIR=	v${VERS}
 
 DISTFILES=	postgresql-${VERS}.base${EXTRACT_SUFX} \
 		postgresql-${VERS}.support${EXTRACT_SUFX} \
