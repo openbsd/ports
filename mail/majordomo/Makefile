@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 15:42:32 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 17:05:04 espie Exp $
 
 DISTNAME=		majordomo-1.94.5
 CATEGORIES=     	mail
@@ -6,7 +6,7 @@ NEED_VERSION=		1.282
 
 HOMEPAGE=		http://www.greatcircle.com/majordomo/
 
-MAINTAINER=		daniel@reichardt.ch
+MAINTAINER=		Daniel Hartmeier <daniel@reichardt.ch>
 
 # I sent a mail to greatcircle.com asking for these permissions.
 # Until I get an answer, I assume nothing. 
