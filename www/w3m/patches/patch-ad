@@ -1,0 +1,15 @@
+--- main.c.orig	Fri May 26 23:02:30 2000
++++ main.c	Fri May 26 23:01:07 2000
+@@ -1758,8 +1758,10 @@ followA(void)
+   parseURL2(a->url,&u,baseURL(Currentbuf));
+   if (u.scheme == Currentbuf->currentURL.scheme &&
+       u.port == Currentbuf->currentURL.port &&
+-      strcasecmp(u.host,Currentbuf->currentURL.host) == 0 &&
+-      strcmp(u.file,Currentbuf->currentURL.file) == 0) {
++	((u.host == NULL && Currentbuf->currentURL.host == NULL) ||
++	 strcasecmp(u.host, Currentbuf->currentURL.host) == 0) &&
++	((u.file == NULL && Currentbuf->currentURL.file == NULL) ||
++	 strcmp(u.file, Currentbuf->currentURL.file) == 0)) {
+     /* index within this buffer */
+     local_label = u.label;
+   }
