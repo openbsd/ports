@@ -1,18 +1,19 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2001/04/06 15:04:13 danh Exp $
---- src/Makefile.am.orig	Fri Apr  6 10:27:26 2001
-+++ src/Makefile.am	Fri Apr  6 10:28:01 2001
-@@ -8,9 +8,8 @@
- CGI_LIB_DIR	   = $(top_srcdir)/@CGI_LIB_DIR@
- GD_LIB_DIR	   = $(top_srcdir)/@GD_LIB_DIR@
- PNG_LIB_DIR	   = $(top_srcdir)/@PNG_LIB_DIR@
--ZLIB_LIB_DIR	   = $(top_srcdir)/@ZLIB_LIB_DIR@
+$OpenBSD: patch-src_Makefile_am,v 1.2 2002/05/17 15:41:30 danh Exp $
+--- src/Makefile.am.orig	Fri May 17 11:22:34 2002
++++ src/Makefile.am	Fri May 17 11:23:12 2002
+@@ -13,10 +13,9 @@ ZLIB_INC_DIR      = $(top_srcdir)/@ZLIB_
+ CGI_LIB_DIR       = $(top_builddir)/@CGI_LIB_DIR@
+ GD_LIB_DIR        = $(top_builddir)/@GD_LIB_DIR@
+ PNG_LIB_DIR       = $(top_builddir)/@PNG_LIB_DIR@
+-ZLIB_LIB_DIR      = $(top_builddir)/@ZLIB_LIB_DIR@
  
--INCLUDES 	   = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR) -I$(PNG_LIB_DIR) -I$(ZLIB_LIB_DIR)
-+INCLUDES 	   = -I$(CGI_LIB_DIR) -I$(GD_LIB_DIR) -I$(PNG_LIB_DIR) 
+ 
+-INCLUDES          = -I$(CGI_INC_DIR) -I$(GD_INC_DIR) -I$(PNG_INC_DIR) -I$(ZLIB_INC_DIR)
++INCLUDES          = -I$(CGI_INC_DIR) -I$(GD_INC_DIR) -I$(PNG_INC_DIR)
  
  #COMPILE   = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
  #LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CFLAGS_EXTRA)
-@@ -50,7 +49,7 @@ RRD_LIBS =				\
+@@ -56,7 +55,7 @@ RRD_LIBS =				\
  	$(CGI_LIB_DIR)/librrd_cgi.la	\
  	$(GD_LIB_DIR)/librrd_gd.la	\
  	$(PNG_LIB_DIR)/librrd_png.la	\

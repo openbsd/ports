@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2001/11/21 13:57:38 danh Exp $
+# $OpenBSD: Makefile,v 1.19 2002/05/17 15:41:30 danh Exp $
 
 COMMENT=	"system to store and display time-series data"
 
-VERSION=	1.0.33
+VERSION=	1.0.37
 DISTNAME=	rrdtool-${VERSION}
 CATEGORIES=     net
 NEED_VERSION=	1.468

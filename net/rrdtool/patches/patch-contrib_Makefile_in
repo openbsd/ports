@@ -1,7 +1,7 @@
-$OpenBSD: patch-contrib_Makefile_in,v 1.4 2001/03/04 17:06:41 danh Exp $
---- contrib/Makefile.in.orig	Thu Feb 22 06:07:39 2001
-+++ contrib/Makefile.in	Thu Feb 22 16:07:21 2001
-@@ -87,7 +87,7 @@ VERSION = @VERSION@
+$OpenBSD: patch-contrib_Makefile_in,v 1.5 2002/05/17 15:41:30 danh Exp $
+--- contrib/Makefile.in.orig	Fri May 17 11:05:59 2002
++++ contrib/Makefile.in	Fri May 17 11:06:22 2002
+@@ -88,7 +88,7 @@ ZLIB_CFLAGS = @ZLIB_CFLAGS@
  ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
  
  SUBDIRS = trytime

@@ -1,14 +1,15 @@
-$OpenBSD: patch-libpng-1_0_9_Makefile_in,v 1.1 2001/04/06 15:04:13 danh Exp $
---- libpng-1.0.9/Makefile.in.orig	Fri Apr  6 10:29:37 2001
-+++ libpng-1.0.9/Makefile.in	Fri Apr  6 10:29:54 2001
-@@ -85,10 +85,6 @@ TCL_SHLIB_SUFFIX = @TCL_SHLIB_SUFFIX@
+$OpenBSD: patch-libpng-1_0_9_Makefile_in,v 1.2 2002/05/17 15:41:30 danh Exp $
+--- libpng-1.0.9/Makefile.in.orig	Fri May 17 11:10:52 2002
++++ libpng-1.0.9/Makefile.in	Fri May 17 11:11:18 2002
+@@ -84,11 +84,6 @@ TCL_SHLIB_LD = @TCL_SHLIB_LD@
+ TCL_SHLIB_SUFFIX = @TCL_SHLIB_SUFFIX@
  TROFF = @TROFF@
  VERSION = @VERSION@
- 
+-ZLIB_CFLAGS = @ZLIB_CFLAGS@
+-
 -ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
 -
 -INCLUDES = -I$(top_srcdir)/$(ZLIB_LIB_DIR)
--
- EXTRA_DIST = ANNOUNCE CHANGES INSTALL KNOWNBUG README README.rrdtool             TODO Y2KINFO example.c libpng.3     	    libpng.txt libpngpf.3 png.5 png.dsp png.dsw 
  
+ EXTRA_DIST = ANNOUNCE CHANGES INSTALL KNOWNBUG README README.rrdtool             TODO Y2KINFO example.c libpng.3     	    libpng.txt libpngpf.3 png.5 png.dsp png.dsw 
  
