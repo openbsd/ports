@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/25 10:34:14 alek Exp $
+bin/hot-babe
+@man man/man1/hot-babe.1
+share/doc/hot-babe/
+share/doc/hot-babe/LICENSE
+share/doc/hot-babe/copyright
+share/examples/hot-babe/
+share/examples/hot-babe/config.example
+share/hot-babe/
+share/hot-babe/hb01/
+share/hot-babe/hb01/descr
+share/hot-babe/hb01/hb01_0.png
+share/hot-babe/hb01/hb01_1.png
+share/hot-babe/hb01/hb01_2.png
+share/hot-babe/hb01/hb01_3.png
+share/hot-babe/hb01/hb01_4.png
+share/pixmaps/
+share/pixmaps/hot-babe.xpm
