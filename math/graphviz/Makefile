@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/25 00:13:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/18 15:15:05 brad Exp $
 
 CATEGORIES=	math devel graphics
-NEED_VERSION=	1.489
 
 COMMENT='graph drawing software'
 PKGNAME=graphviz-1.7.6
@@ -26,7 +25,8 @@ CONFIGURE_ENV=TCLCONFIG=${LOCALBASE}/lib/tcl8.3/tclConfig.sh \
 	LDFLAGS=-L${LOCALBASE}/lib \
 	CPPFLAGS='-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3'
 
-CONFIGURE_ARGS=--with-freetypeincludedir=${X11BASE}/include/freetype2
+CONFIGURE_ARGS=	--with-freetypeincludedir=${X11BASE}/include/freetype2 \
+		--with-pngincludedir=${LOCALBASE}/include/libpng
 CONFIGURE_SCRIPT=autogen.sh
 USE_GMAKE=	Yes
 

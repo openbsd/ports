@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/08 04:10:09 mark Exp $
+# $OpenBSD: Makefile,v 1.5 2002/07/18 15:15:05 brad Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--disable-gnome
 USE_X11=		Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/utils
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/08 06:03:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/18 15:15:05 brad Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
 VERSION=	2.2.2
 DISTNAME=	lbreakout2-${VERSION}
 CATEGORIES=	games x11
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
 
@@ -23,7 +22,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		png.2.0::graphics/png
 		
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV= LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
