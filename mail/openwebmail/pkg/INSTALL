@@ -1,0 +1,95 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/02/05 04:53:17 kevlo Exp $
+#
+# Pre/post-installation setup of openwebmail
+
+# exit on errors, use a sane path and install prefix
+#
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/var/www}
+CONFIG_DIR=${SYSCONFDIR}/openwebmail
+CONFIG_FILE=$CONFIG_DIR/openwebmail.conf
+CGI_DIR=${PREFIX}/cgi-bin/openwebmail
+SAMPLE_CONFIG_FILE=$CONFIG_FILE.dist
+SCRIPTFILES="checkmail.pl openwebmail-main.pl openwebmail-prefs.pl \
+	    openwebmail-read.pl openwebmail-send.pl openwebmail-viewatt.pl \
+	    openwebmail.pl spellcheck.pl"
+
+# Function: set up mail group 
+#
+do_accts()
+{
+    groupinfo -e mail
+    if [ $? -eq 0 ]; then
+	echo "===>  Using group 'mail' for openwebmail"
+    else
+	echo "===>  Creating mail group"
+    groupadd -g 6 mail
+    fi
+}
+
+# Function: tell the user what they need to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file,"
+    echo "| $CONFIG_FILE,"
+    echo "| has NOT been changed.  You may want to"
+    echo "| compare it to the current sample file"
+    echo "| $SAMPLE_CONFIG_FILE"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install configuration files
+#
+do_install()
+{
+    for file in $SCRIPTFILES
+    do
+	chown root:mail $CGI_DIR/$file
+	chmod 4555 $CGI_DIR/$file
+    done
+    chmod 770 $CONFIG_DIR/sessions
+    chmod 770 $CONFIG_DIR/users
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration file,"
+    echo "| $CONFIG_FILE,"
+    echo "| has been installed.  Please view this file and"
+    echo "| change the configuration to meet your needs"
+    echo "+---------------"
+    echo
+}
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_accts
+	;;
+    POST-INSTALL)
+	if [ -f ${CONFIG_FILE} ]; then
+	    do_notice "$1"
+	else
+	    do_install "$1"
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
