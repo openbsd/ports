@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:50:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/12/24 15:36:30 kevlo Exp $
 ${P5SITE}/Image/
 ${P5SITE}/Image/Info/
 ${P5SITE}/Image/Info.pm
@@ -8,6 +8,7 @@ ${P5SITE}/Image/Info/JPEG.pm
 ${P5SITE}/Image/Info/PNG.pm
 ${P5SITE}/Image/Info/PPM.pm
 ${P5SITE}/Image/Info/SVG.pm
+${P5SITE}/Image/Info/TIFF.pm
 ${P5SITE}/Image/Info/XBM.pm
 ${P5SITE}/Image/Info/XPM.pm
 ${P5SITE}/Image/TIFF.pm
