@@ -1,0 +1,116 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/18 18:58:08 sturm Exp $
+bin/dr_exec
+bin/dr_progress
+bin/dr_splitpipe
+bin/dvdrip
+bin/dvdrip-master
+${P5SITE}/Video/DVDRip.pm
+${P5SITE}/Video/DVDRip/Audio.pm
+${P5SITE}/Video/DVDRip/Base.pm
+${P5SITE}/Video/DVDRip/BitrateCalc.pm
+${P5SITE}/Video/DVDRip/CPAN/Scanf.pm
+${P5SITE}/Video/DVDRip/Cluster/Job.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/AddAudioMerge.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/BitrateCalc.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/MergePSUs.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/MergeVideoAudio.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/RemoveVOBs.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/Split.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/TranscodeAudio.pm
+${P5SITE}/Video/DVDRip/Cluster/Job/TranscodeVideo.pm
+${P5SITE}/Video/DVDRip/Cluster/Master.pm
+${P5SITE}/Video/DVDRip/Cluster/Node.pm
+${P5SITE}/Video/DVDRip/Cluster/PSU.pm
+${P5SITE}/Video/DVDRip/Cluster/Pipe.pm
+${P5SITE}/Video/DVDRip/Cluster/Project.pm
+${P5SITE}/Video/DVDRip/Cluster/Title.pm
+${P5SITE}/Video/DVDRip/Cluster/Webserver.pm
+${P5SITE}/Video/DVDRip/Config.pm
+${P5SITE}/Video/DVDRip/Content.pm
+${P5SITE}/Video/DVDRip/Convert.pm
+${P5SITE}/Video/DVDRip/Depend.pm
+${P5SITE}/Video/DVDRip/FilterList.pm
+${P5SITE}/Video/DVDRip/FilterSettings.pm
+${P5SITE}/Video/DVDRip/GUI/Base.pm
+${P5SITE}/Video/DVDRip/GUI/BitrateCalc.pm
+${P5SITE}/Video/DVDRip/GUI/CheckedEntry.pm
+${P5SITE}/Video/DVDRip/GUI/Cluster/Control.pm
+${P5SITE}/Video/DVDRip/GUI/Cluster/Node.pm
+${P5SITE}/Video/DVDRip/GUI/Cluster/Title.pm
+${P5SITE}/Video/DVDRip/GUI/Component.pm
+${P5SITE}/Video/DVDRip/GUI/Config.pm
+${P5SITE}/Video/DVDRip/GUI/Depend.pm
+${P5SITE}/Video/DVDRip/GUI/ExecuteJobs.pm
+${P5SITE}/Video/DVDRip/GUI/Filters.pm
+${P5SITE}/Video/DVDRip/GUI/ImageClip.pm
+${P5SITE}/Video/DVDRip/GUI/Logger.pm
+${P5SITE}/Video/DVDRip/GUI/Main.pm
+${P5SITE}/Video/DVDRip/GUI/MinSizeGroup.pm
+${P5SITE}/Video/DVDRip/GUI/Pipe.pm
+${P5SITE}/Video/DVDRip/GUI/Preview.pm
+${P5SITE}/Video/DVDRip/GUI/Progress.pm
+${P5SITE}/Video/DVDRip/GUI/Project.pm
+${P5SITE}/Video/DVDRip/GUI/Project/BurnTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/ClipZoomTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/LoggingTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/StorageTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/SubtitleTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/TitleTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/TranscodeTab.pm
+${P5SITE}/Video/DVDRip/GUI/Project/TranscodeTabAudio.pm
+${P5SITE}/Video/DVDRip/GUI/Setting.pm
+${P5SITE}/Video/DVDRip/GUI/Setting/Checkbox.pm
+${P5SITE}/Video/DVDRip/GUI/Setting/Text.pm
+${P5SITE}/Video/DVDRip/GUI/VisualFrameRange.pm
+${P5SITE}/Video/DVDRip/GUI/Window.pm
+${P5SITE}/Video/DVDRip/GUI/ZoomCalculator.pm
+${P5SITE}/Video/DVDRip/InfoFile.pm
+${P5SITE}/Video/DVDRip/Job.pm
+${P5SITE}/Video/DVDRip/Job/BurnCD.pm
+${P5SITE}/Video/DVDRip/Job/CountFramesInFile.pm
+${P5SITE}/Video/DVDRip/Job/CreateCDImage.pm
+${P5SITE}/Video/DVDRip/Job/CreateVobsub.pm
+${P5SITE}/Video/DVDRip/Job/CreateWav.pm
+${P5SITE}/Video/DVDRip/Job/ExtractPS1.pm
+${P5SITE}/Video/DVDRip/Job/GrabPreviewFrame.pm
+${P5SITE}/Video/DVDRip/Job/GrabSubtitleImages.pm
+${P5SITE}/Video/DVDRip/Job/MergeAudio.pm
+${P5SITE}/Video/DVDRip/Job/Mplex.pm
+${P5SITE}/Video/DVDRip/Job/Probe.pm
+${P5SITE}/Video/DVDRip/Job/ProbeTitleCount.pm
+${P5SITE}/Video/DVDRip/Job/Rip.pm
+${P5SITE}/Video/DVDRip/Job/ScanVolume.pm
+${P5SITE}/Video/DVDRip/Job/Split.pm
+${P5SITE}/Video/DVDRip/Job/TranscodeAudio.pm
+${P5SITE}/Video/DVDRip/Job/TranscodeVideo.pm
+${P5SITE}/Video/DVDRip/PSU.pm
+${P5SITE}/Video/DVDRip/Preset.pm
+${P5SITE}/Video/DVDRip/Probe.pm
+${P5SITE}/Video/DVDRip/Project.pm
+${P5SITE}/Video/DVDRip/RPC/Client.pm
+${P5SITE}/Video/DVDRip/RPC/Message.pm
+${P5SITE}/Video/DVDRip/RPC/Server.pm
+${P5SITE}/Video/DVDRip/Subtitle.pm
+${P5SITE}/Video/DVDRip/Title.pm
+${P5SITE}/Video/DVDRip/TranscodeRC.pm
+${P5SITE}/Video/DVDRip/icon.xpm
+${P5SITE}/Video/DVDRip/splash.png
+@comment ${P5ARCH}/auto/Video/DVDRip/.packlist
+man/man1/dr_progress.1
+man/man1/dr_splitpipe.1
+man/man1/dvdrip.1
+man/man3p/Video::DVDRip.3p
+man/man3p/Video::DVDRip::CPAN::Scanf.3p
+@comment @dirrm ${P5ARCH}/auto/Video/DVDRip
+@comment @dirrm ${P5ARCH}/auto/Video
+@dirrm ${P5SITE}/Video/DVDRip/RPC
+@dirrm ${P5SITE}/Video/DVDRip/Job
+@dirrm ${P5SITE}/Video/DVDRip/GUI/Setting
+@dirrm ${P5SITE}/Video/DVDRip/GUI/Project
+@dirrm ${P5SITE}/Video/DVDRip/GUI/Cluster
+@dirrm ${P5SITE}/Video/DVDRip/GUI
+@dirrm ${P5SITE}/Video/DVDRip/Cluster/Job
+@dirrm ${P5SITE}/Video/DVDRip/Cluster
+@dirrm ${P5SITE}/Video/DVDRip/CPAN
+@dirrm ${P5SITE}/Video/DVDRip
+@dirrm ${P5SITE}/Video

@@ -1,0 +1,6 @@
+dvd::rip is a full featured DVD copy program written in 
+Perl. It provides an easy to use but feature-rich Gtk+ 
+GUI to control almost all aspects of the ripping and 
+transcoding process. It uses the widely known video 
+processing swissknife transcode and many other 
+Open Source tools.
