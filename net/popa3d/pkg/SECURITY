@@ -12,6 +12,10 @@ derived from an input-buffer of which popa3d takes care not to overrun.
 sprintf is used once. Its parameters are 'MAIL_SPOOL_PATH', which is a
 compile-time constant and 'mailbox', which is the username, derived from
 the password-file. 
+Feedback from author: "buffer is malloc()'ed one line earlier to the correct
+size, regardless of where the input comes from. The only required property of
+those two strings, is that they're of a sane length not to cause an integer
+overflow in the addition".
 
 One more time: POP3 is inherently insecure. Passwords are sent in cleartext, 
-everytime a user checks his mailbox. popa3d does not have APOP support. 
+everytime a user checks his mailbox.
