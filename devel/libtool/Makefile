@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2000/09/24 01:23:44 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/01/19 17:58:48 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 DISTNAME=	libtool-1.3.5
 CATEGORIES=	devel
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= libtool
 
