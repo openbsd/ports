@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/12/26 23:46:05 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/12 16:15:57 reinhard Exp $
 
 DISTNAME=	irssi-0.7.97.2
 CATEGORIES=	net
-NEED_VERSION=	1.346
+NEED_VERSION=	1.349
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+BUILD_DEPENDS=		msgfmt::devel/gettext
 LIB_DEPENDS=		glib.1.2::devel/glib 
 
 SEPARATE_BUILD=		Concurrent
