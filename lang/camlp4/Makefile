@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/05/21 19:58:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/04 21:29:05 espie Exp $
 
 DISTNAME=	camlp4-3.00
 PKGNAME=	camlp4-3.00
 CATEGORIES=	lang
 NEED_VERSION=	 1.230
-FAKE=No
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/Daniel.de_Rauglaudre/Camlp4/
 
 MAINTAINER=	angelos@openbsd.org
@@ -17,9 +16,10 @@ PERMIT_PACKAGE_FTP=     No
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-IS_INTERACTIVE=	Yes
-NO_PACKAGE=	interactive port
-HAS_CONFIGURE=	Yes
+do-configure:
+	@sed -e s,@PREFIX@,${PREFIX}, <${FILESDIR}/Makefile.cnf.template >${WRKSRC}/config/Makefile.cnf
+	@cd ${WRKSRC}/config && echo ""| cat Makefile.tpl - Makefile.cnf >>Makefile
+
 USE_GMAKE=	Yes
 ALL_TARGET=	world bootstrap opt
 
