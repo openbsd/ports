@@ -1,16 +1,8 @@
-$OpenBSD: patch-src_widgets_qpopupmenu_cpp,v 1.1 2004/07/22 23:03:09 brad Exp $
---- src/widgets/qpopupmenu.cpp.orig	2004-04-19 03:36:18.000000000 -0600
-+++ src/widgets/qpopupmenu.cpp	2004-06-24 00:04:24.000000000 -0600
-@@ -1200,6 +1200,7 @@ QSize QPopupMenu::updateSize(bool force_
- 
-     if( do_resize && size() != d->calcSize ) {
- 	setMaximumSize( d->calcSize );
-+	d->calcSize = maximumSize();
- 	resize( d->calcSize );
-     }
-     return d->calcSize;
-@@ -2531,7 +2532,7 @@ QSize QPopupMenu::sizeHint() const
- 
+$OpenBSD: patch-src_widgets_qpopupmenu_cpp,v 1.2 2004/09/15 19:25:12 espie Exp $
+--- src/widgets/qpopupmenu.cpp.orig	Thu Aug  5 16:42:21 2004
++++ src/widgets/qpopupmenu.cpp	Sun Sep  5 13:22:26 2004
+@@ -2529,7 +2529,7 @@ QSize QPopupMenu::sizeHint() const
+     constPolish();
      QPopupMenu* that = (QPopupMenu*) this;
      //We do not need a resize here, just the sizeHint..
 -    return that->updateSize(FALSE, FALSE).expandedTo( QApplication::globalStrut() );

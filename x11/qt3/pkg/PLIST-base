@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-base,v 1.8 2004/08/10 13:33:13 espie Exp $
+@comment $OpenBSD: PLIST-base,v 1.9 2004/09/15 19:25:12 espie Exp $
 @pkgcfl qt3-0.*
 @pkgcfl qt3-1.0
 @pkgcfl qt3-1.1
@@ -1422,9 +1422,8 @@ lib/qt3/mkspecs/win32-msvc/win32dll.dsp
 lib/qt3/mkspecs/win32-msvc/win32lib.dsp
 lib/qt3/mkspecs/win32-watcom/
 lib/qt3/mkspecs/win32-watcom/qmake.conf
-share/doc/qt3/
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
 share/doc/qt3/README
 share/doc/qt3/README-QT.TXT
-share/doc/qt3/changes-3.${VERSION}
+share/doc/qt3/changes-3.3.3

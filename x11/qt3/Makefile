@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2004/07/28 03:15:37 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2004/09/15 19:25:12 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -15,7 +15,7 @@ PKGNAME-examples=	qt3-examples-${VERSION}
 FULLPKGNAME-base=	qt3-base-${VERSION}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
-VERSION=	3.2
+VERSION=	3.3
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -27,7 +27,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 FLAVORS=mt debug
 
 PSEUDO_FLAVORS=	no_mysql no_postgresql
-FLAVOR?=
+FLAVOR?=mt
 
 # GPL/QPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -165,7 +165,7 @@ NO_REGRESS=	Yes
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
-LIBRARIES=qt${MT_SUFX}.so.3.32 qui${MT_SUFX}.so.1.0
+LIBRARIES=qt${MT_SUFX}.so.3.33 qui${MT_SUFX}.so.1.0
 
 .if ${FLAVOR:L:Mmt}
 MT_SUFX=-mt

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2004/07/22 23:03:09 brad Exp $
---- configure.orig	2004-03-31 09:40:12.000000000 -0700
-+++ configure	2004-06-19 19:37:34.000000000 -0600
-@@ -950,7 +950,7 @@ while [ "$#" -gt 0 ]; do
+$OpenBSD: patch-configure,v 1.10 2004/09/15 19:25:12 espie Exp $
+--- configure.orig	Mon Jun 14 11:18:55 2004
++++ configure	Sun Sep  5 13:22:25 2004
+@@ -972,7 +972,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
  	if [ "$VAL" = "yes" ]; then
  	    if [ "$OPT_VERBOSE" = "$VAL" ]; then 	    # takes two verboses to turn on qmake debugs
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.9 2004/07/22 23:03:09 brad Exp $
              else
  		OPT_VERBOSE=yes
  	    fi
-@@ -1589,7 +1589,7 @@ if echo $MODULES | grep sql >/dev/null; 
+@@ -1617,7 +1617,7 @@ if echo $MODULES | grep sql >/dev/null; 
      MYSQL_REQ="-lmysqlclient mysql.h"
      OCI_REQ="-lclntsh -lwtc8 oci.h"
      PSQL_REQ="-lpq postgres.h libpq/libpq-fs.h catalog/pg_type.h libpq-fe.h"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.9 2004/07/22 23:03:09 brad Exp $
      TDS_REQ="-lsybdb sybfront.h sybdb.h"
      DB2_REQ="-ldb2 sqlcli.h sqlcli1.h"
      IBASE_REQ="-lgds ibase.h"
-@@ -2305,7 +2305,7 @@ if [ "$Edition" = "free" ]; then
+@@ -2350,7 +2350,7 @@ if [ "$Edition" = "free" ]; then
  	else
  	    echo "Do you accept the terms of $affix license? \c"
  	fi
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.9 2004/07/22 23:03:09 brad Exp $
  	echo
  	if [ "$acceptance" = "yes" ]; then
  	    break
-@@ -2784,8 +2784,8 @@ fi
+@@ -2832,8 +2832,8 @@ fi
  if [ "$CFG_LIBMNG" = "system" ]; then
      QMAKE_CONFIG="$QMAKE_CONFIG system-mng"
      if [ "$CFG_MNG" = "yes" ]; then
@@ -39,7 +39,7 @@ $OpenBSD: patch-configure,v 1.9 2004/07/22 23:03:09 brad Exp $
      fi
  fi
  if [ "$CFG_MNG" = "no" ]; then
-@@ -2811,8 +2811,8 @@ fi
+@@ -2859,8 +2859,8 @@ fi
  if [ "$CFG_LIBPNG" = "system" ]; then
      QMAKE_CONFIG="$QMAKE_CONFIG system-png"
      if [ "$CFG_PNG" = "yes" ]; then
