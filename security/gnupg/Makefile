@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2001/03/05 18:54:06 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/03/23 13:10:20 reinhard Exp $
 
 DISTNAME=	gnupg-1.0.4
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	security
-NEED_VERSION=	1.358
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
 		ftp://openbsd.rug.ac.be/pub/gcrypt/gnupg/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
 		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/
-MASTER_SITES0=	ftp://ftp.gnupg.org/pub/gcrypt/contrib/
+MASTER_SITES0=	ftp://ftp.gnupg.org/pub/gcrypt/contrib/ 
 DISTFILES=	gnupg-1.0.4.tar.gz 
 EXTRACT_ONLY=	gnupg-1.0.4.tar.gz 
 

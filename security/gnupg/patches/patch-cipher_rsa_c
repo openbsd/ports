@@ -1,0 +1,97 @@
+$OpenBSD: patch-cipher_rsa_c,v 1.1 2001/03/23 13:10:21 reinhard Exp $
+# Florian Weimer <Florian.Weimer@RUS.UNI-STUTTGART.DE>
+# http://cert.uni-stuttgart.de/files/fw/gnupg-klima-rosa.diff
+# http://cert.uni-stuttgart.de/files/fw/gnupg-klima-rosa.diff.asc
+
+It introduces additional consistency checks, as suggested by the
+authors of the paper.  The checks are slightly different, but they
+make the two additional attacks infeasible, I think.  In the future,
+it might be a good idea to add a check the generated signature for
+validity, this will detect bugs in the MPI implementation which could
+result in a revealed secret key, too.
+
+
+--- cipher/rsa.c.orig	Wed Sep 13 15:49:23 2000
++++ cipher/rsa.c	Fri Mar 23 13:16:46 2001
+@@ -165,18 +165,53 @@ generate( RSA_secret_key *sk, unsigned n
+ 
+ /****************
+  * Test wether the secret key is valid.
+- * Returns: true if this is a valid key.
++ * Returns: nonzero if this is a valid key.
+  */
+ static int
+ check_secret_key( RSA_secret_key *sk )
+ {
+-    int rc;
+-    MPI temp = mpi_alloc( mpi_get_nlimbs(sk->p)*2 );
++    int rc = 0;
++    MPI temp    = mpi_alloc_secure ( mpi_get_nlimbs(sk->p) + mpi_get_nlimbs(sk->q) );
++    MPI p_1     = mpi_copy (sk->p); /* (p-1) */
++    MPI q_1     = mpi_copy (sk->p); /* (q-1) */
++    MPI p_1_q_1 = mpi_alloc_secure ( mpi_get_nlimbs(sk->p) + mpi_get_nlimbs(sk->q) ); /* (p-1)(q-1) */
++
++    /* Calculate (p-1)(q-1). */
++    mpi_sub_ui(p_1, p_1, 1);
++    mpi_sub_ui(q_1, q_1, 1);
++    mpi_mul(p_1_q_1, p_1, q_1);
+ 
++    /* Check pq = n. */
+     mpi_mul(temp, sk->p, sk->q );
+-    rc = mpi_cmp( temp, sk->n );
++    if( 0 != mpi_cmp(temp, sk->n ) )
++	goto end;
++	
++    /* Check gcd(e, (p-1)(q-1)) = 1. */
++    if( ! mpi_gcd(temp, sk->e, p_1_q_1) )
++	goto end;
++
++    /* Check de == 1 (mod (p-1)) and (mod (q-1)), i.e. d = e^-1. */
++    mpi_mulm(temp, sk->d, sk->e, p_1);
++    if( 0 != mpi_cmp_ui(temp, 1))
++	goto end;
++    mpi_mulm(temp, sk->d, sk->e, q_1);
++    if( 0 != mpi_cmp_ui(temp, 1))
++	goto end;
++
++    /* Check up == 1 (mod q). */
++    mpi_mulm(temp, sk->u, sk->p, sk->q);
++    if( 0 != mpi_cmp_ui(temp, 1))
++	goto end;
++
++    /* Success.  Fall through to deallocation code. */
++    rc = 1;
++
++ end:
+     mpi_free(temp);
+-    return !rc;
++    mpi_free(p_1);
++    mpi_free(q_1);
++    mpi_free(p_1_q_1);
++    return rc;
+ }
+ 
+ 
+@@ -389,6 +424,8 @@ int
+ rsa_sign( int algo, MPI *resarr, MPI data, MPI *skey )
+ {
+     RSA_secret_key sk;
++    RSA_public_key pk;
++    MPI orig = mpi_alloc( mpi_get_nlimbs( data ) );
+ 
+     if( algo != 1 && algo != 3 )
+ 	return G10ERR_PUBKEY_ALGO;
+@@ -401,6 +438,13 @@ rsa_sign( int algo, MPI *resarr, MPI dat
+     sk.u = skey[5];
+     resarr[0] = mpi_alloc( mpi_get_nlimbs( sk.n ) );
+     secret( resarr[0], data, &sk );
++
++    /* Check against wrong computation. */
++    pk.n = sk.n;
++    pk.e = sk.e;
++    public( orig, resarr[0], &pk);
++    if ( 0 != mpi_cmp( orig, data ) )
++	return G10ERR_BAD_SECKEY;
+ 
+     return 0;
+ }
