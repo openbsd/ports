@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/02/04 01:09:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/02/07 01:46:23 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -7588,38 +7588,52 @@ share/wallpapers/winter_theme_1.jpg
 @dirrm share/icons/kdeclassic/16x16/devices
 @dirrm share/icons/kdeclassic/16x16/apps
 @dirrm share/icons/kdeclassic/16x16/actions
+@dirrm share/icons/kdeclassic/16x16
+@dirrm share/icons/kdeclassic
 @dirrm share/icons/ikons/64x64/filesystems
 @dirrm share/icons/ikons/64x64/apps
+@dirrm share/icons/ikons/64x64
 @dirrm share/icons/ikons/48x48/mimetypes
 @dirrm share/icons/ikons/48x48/filesystems
 @dirrm share/icons/ikons/48x48/devices
 @dirrm share/icons/ikons/48x48/apps
+@dirrm share/icons/ikons/48x48
 @dirrm share/icons/ikons/32x32/mimetypes
 @dirrm share/icons/ikons/32x32/filesystems
 @dirrm share/icons/ikons/32x32/devices
 @dirrm share/icons/ikons/32x32/apps
+@dirrm share/icons/ikons/32x32
 @dirrm share/icons/ikons/22x22/apps
 @dirrm share/icons/ikons/22x22/actions
+@dirrm share/icons/ikons/22x22
 @dirrm share/icons/ikons/16x16/mimetypes
 @dirrm share/icons/ikons/16x16/filesystems
 @dirrm share/icons/ikons/16x16/devices
 @dirrm share/icons/ikons/16x16/apps
 @dirrm share/icons/ikons/16x16/actions
+@dirrm share/icons/ikons/16x16
+@dirrm share/icons/ikons
 @dirrm share/icons/Technical/48x48/mimetypes
 @dirrm share/icons/Technical/48x48/filesystems
+@dirrm share/icons/Technical/48x48
 @dirrm share/icons/Technical/32x32/mimetypes
 @dirrm share/icons/Technical/32x32/filesystems
 @dirrm share/icons/Technical/32x32/actions
+@dirrm share/icons/Technical/32x32
+@dirrm share/icons/Technical
 @dirrm share/icons/Locolor/32x32/mimetypes
 @dirrm share/icons/Locolor/32x32/filesystems
 @dirrm share/icons/Locolor/32x32/devices
 @dirrm share/icons/Locolor/32x32/apps
 @dirrm share/icons/Locolor/32x32/actions
+@dirrm share/icons/Locolor/32x32
 @dirrm share/icons/Locolor/16x16/mimetypes
 @dirrm share/icons/Locolor/16x16/filesystems
 @dirrm share/icons/Locolor/16x16/devices
 @dirrm share/icons/Locolor/16x16/apps
 @dirrm share/icons/Locolor/16x16/actions
+@dirrm share/icons/Locolor/16x16
+@dirrm share/icons/Locolor
 @dirrm share/apps/kworldclock/maps/rainfall
 @dirrm share/apps/kworldclock/maps/mggd
 @dirrm share/apps/kworldclock/maps/depths

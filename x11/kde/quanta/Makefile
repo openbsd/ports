@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/02 00:26:52 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/07 01:46:24 espie Exp $
 
 COMMENT= 		"web development tool"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		quanta-${VERSION}
 MODKDE_VERSION=		3.2
 LIB_DEPENDS= kdecore.6,DCOP,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts,kresources,kspell,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/02/01 16:18:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/02/07 01:46:24 espie Exp $
 bin/ghns
 bin/ical2vcal
 bin/kabc2mutt
@@ -924,19 +924,8 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/services/korganizer
 @dirrm share/services/kontact
 @dirrm share/services/kaddressbook
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
-@dirrm share/icons/crystalsvg/64x64/apps
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/128x128/apps
 @dirrm share/doc/HTML/en/kpilot
 @dirrm share/doc/HTML/en/korn
 @dirrm share/doc/HTML/en/korganizer
@@ -1003,7 +992,6 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/kdepim-apidocs/kabc
 @dirrm share/doc/HTML/en/kdepim-apidocs
 @dirrm share/doc/HTML/en/kcontrol/kalarmd
-@dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kandy
 @dirrm share/doc/HTML/en/kalarm
@@ -1114,10 +1102,7 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kaddressbook/icons
 @dirrm share/apps/kaddressbook/csv-templates
 @dirrm share/apps/kaddressbook
-@dirrm share/applnk/Utilities
 @dirrm share/applnk/Applications
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm include/mimelib
 @dirrm include/libkcal
 @dirrm include/ktnef

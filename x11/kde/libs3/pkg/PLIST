@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/02/03 21:31:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2004/02/07 01:46:23 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -866,7 +866,7 @@ share/apps/kconf_update/kioslave.upd
 share/apps/kconf_update/move_kio_help_cache.sh
 share/apps/kconf_update/proxytype.pl
 share/apps/kconf_update/useragent.pl
-share/apps/kde-conf-sample/xdg/menus/applications.menu
+share/apps/kde-conf-sample/${EXTRA_CONFIG}
 share/apps/kdeprint/apsdriver1
 share/apps/kdeprint/apsdriver2
 share/apps/kdeprint/filters/enscript.desktop
@@ -2338,7 +2338,7 @@ share/doc/HTML/en/common/web-docbottom.png
 share/doc/HTML/en/common/web-doctop.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
-share/doc/HTML/en/kdelibs-3.1.95-apidocs/common
+share/doc/HTML/en/kdelibs-apidocs/common
 share/doc/HTML/en/kspell/common
 share/doc/HTML/en/kspell/index.cache.bz2
 share/doc/HTML/en/kspell/index.docbook
@@ -4186,7 +4186,6 @@ share/services/kresources/kabc/net.desktop
 share/services/ktexteditor_insertfile.desktop
 share/services/ktexteditor_isearch.desktop
 share/services/ktexteditor_kdatatool.desktop
-share/services/mailto.protocol
 share/services/metainfo.protocol
 share/services/mms.protocol
 share/services/pbm.kimgio
@@ -4246,7 +4245,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
-@dirrm share/locale
 @dirrm share/icons/hicolor
 @dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/icons/crystalsvg/scalable/filesystems
@@ -4288,61 +4286,61 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/icons/crystalsvg
 @dirrm share/icons
 @dirrm share/doc/HTML/en/kspell
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/libkmid/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/libkmid/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/libkmid
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kwallet/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kwallet/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kwallet
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kutils/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kutils/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kutils
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kresources/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kresources/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kresources
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kparts/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kparts/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kparts
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kmdi/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kmdi/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kmdi
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kjs/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kjs/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kjs
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kio/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kio/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kio
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/khtml/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/khtml/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/khtml
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdeui/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdeui/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdeui
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdeprint/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdeprint/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdeprint
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdefx/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdefx/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdefx
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdecore/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdecore/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kdecore
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kate/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kate/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kate
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/kabc/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kabc/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/kabc
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/interfaces/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/interfaces/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/interfaces
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/dcop/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/dcop/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/dcop
-@exec mkdir -p %D/share/doc/HTML/en/kdelibs-3.1.95-apidocs/arts/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/arts/html
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs/arts
-@dirrm share/doc/HTML/en/kdelibs-3.1.95-apidocs
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/libkmid/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kwallet/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kwallet
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kutils/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kutils
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kresources/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kresources
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kparts/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kparts
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kmdi
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kjs/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kjs/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kjs
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kio/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kio
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/khtml/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/khtml/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/khtml
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeui/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdeui/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdeui
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeprint/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdeprint/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdeprint
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdefx/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdefx/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdefx
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdecore/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdecore/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kdecore
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kate/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kate
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kabc/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/kabc
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/interfaces/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/interfaces
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/dcop/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/dcop
+@exec mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/arts/html
+@dirrm share/doc/HTML/en/kdelibs-apidocs/arts
+@dirrm share/doc/HTML/en/kdelibs-apidocs
 @dirrm share/doc/HTML/en/common
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/02 13:04:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2004/02/07 01:46:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, extra language support"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdebindings-${VERSION}
 MODKDE_VERSION=		3.2
 

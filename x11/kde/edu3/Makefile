@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2004/02/03 23:36:05 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2004/02/07 01:46:23 espie Exp $
 
 COMMENT=		"X11 toolkit, edutainment"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdeedu-${VERSION}
 MODKDE_VERSION?=	3.2
 FLAVORS=debug

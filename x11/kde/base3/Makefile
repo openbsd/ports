@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2004/02/01 22:49:23 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/07 01:46:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"nsplugins, essentially native jdk"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdebase-${VERSION}
 MODKDE_VERSION?=	3.2
 
@@ -29,6 +29,7 @@ LIB_DEPENDS+= Xm::x11/openmotif \
 	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
 .endif
 
+
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 
 SUBST_VARS=EXTRA_CONFIG SAMPLECONFDIR
@@ -38,6 +39,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
+
 CONFIGURE_ARGS+=--without-motif
 
 .include <bsd.port.mk>

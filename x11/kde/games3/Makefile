@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2004/02/01 23:27:02 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2004/02/07 01:46:23 espie Exp $
 
 COMMENT=		"games for KDE"
 
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdegames-${VERSION}
 MODKDE_VERSION=		3.2
 

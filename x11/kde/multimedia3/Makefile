@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/02/02 23:07:35 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/07 01:46:24 espie Exp $
 
 COMMENT= 		"X11 toolkit, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdemultimedia-${VERSION}
 MODKDE_VERSION=		3.2
 

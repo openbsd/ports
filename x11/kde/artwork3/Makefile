@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2004/02/04 01:09:45 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/02/07 01:46:23 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdeartwork-${VERSION}
 MODKDE_VERSION=		3.2
 

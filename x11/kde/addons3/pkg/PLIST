@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/02/01 19:58:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/02/07 01:46:23 espie Exp $
 bin/atlantikdesigner
 bin/exif.py
 bin/fsview
@@ -290,8 +290,6 @@ share/services/renimagedlg.desktop
 share/services/vimpart.desktop
 share/services/webarchivethumbnail.desktop
 %%SHARED%%
-@dirrm share/services/kontact
-@dirrm share/services/kaddressbook
 @dirrm share/icons/hicolor/22x22/apps
 @dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/konq-plugins/webarchiver
@@ -311,7 +309,6 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
 @dirrm share/apps/vimpart
-@dirrm share/apps/noatun
 @dirrm share/apps/mediacontrol/default
 @dirrm share/apps/mediacontrol/blueish
 @dirrm share/apps/mediacontrol
@@ -330,6 +327,5 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins/katefll
 @dirrm share/apps/kate/plugins/katecppsymbolviewer
-@dirrm share/apps/kaddressbook
 @dirrm share/apps/fsview
 @dirrm share/apps/atlantikdesigner

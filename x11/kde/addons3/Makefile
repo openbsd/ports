@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.23 2004/02/02 00:47:32 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/02/07 01:46:23 espie Exp $
 
 COMMENT=		"X11 toolkit, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.95
+VERSION=		3.2.0
 DISTNAME=		kdeaddons-${VERSION}
 MODKDE_VERSION=		3.2
 
 LIB_DEPENDS= kdecore.6,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmdi,kmediaplayer,kparts,kresources,kscript,ktexteditor,kutils,kwalletclient,vcard::x11/kde/libs3 \
 	SDL.1:sdl-*-!no_x11:devel/sdl \
-	artsbuilder,artsgui,artsgui_idl,artsgui_kde,artsmidi_idl,artsmodules,artsmodulescommon,artsmoduleseffects,artsmodulesmixers,artsmodulessynth,noatun,noatunarts,noatuncontrols,noatuntags::x11/kde/multimedia3 \
+	artsbuilder,artsgui,artsgui_idl,artsgui_kde,artsmidi_idl,artsmodules,artsmodulescommon,artsmoduleseffects,artsmodulesmixers,artsmodulessynth,noatun,noatuncontrols,noatuntags::x11/kde/multimedia3 \
 	atlantic,atlantikui,kdegames::x11/kde/games3 \
 	kateinterfaces,kateutils,konq,konqsidebarplugin::x11/kde/base3 \
 	kabinterfaces,kdepim,kpinterfaces::x11/kde/pim3 \
 	gdk,gtk::x11/gtk+ \
 	xmms::audio/xmms
+
+# XXX no version number on noatunarts
 
 SEPARATE_BUILD=flavored
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/02/01 14:59:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/02/07 01:46:24 espie Exp $
 @pkgcfl sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -730,9 +730,11 @@ share/apps/kppp/Rules/Brasil/Brasil_Ligbr.rst
 share/apps/kppp/Rules/Brasil/Rio_de_Janeiro.rst
 share/apps/kppp/Rules/Brasil/SaoPaulo.rst
 share/apps/kppp/Rules/Croatia/CARNet.rst
-share/apps/kppp/Rules/Czechia/Tarif_INTERNET_2002_INTERNET_MAXI_PLUS.rst
-share/apps/kppp/Rules/Czechia/Tarif_INTERNET_2002_MINI.rst
-share/apps/kppp/Rules/Czechia/Tarif_INTERNET_2002_STANDARD_MAXI.rst
+share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_Business_Internet.rst
+share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_Home_Internet.rst
+share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_a_Internet_180_+_660.rst
+share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_a_Internet_90_+_300.rst
+share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet_2004_telefon_universal.rst
 share/apps/kppp/Rules/Denmark/12Move_Analog.rst
 share/apps/kppp/Rules/Denmark/12Move_ISDN.rst
 share/apps/kppp/Rules/Denmark/Cybercity_Friabonnement.rst
@@ -1347,7 +1349,19 @@ share/sounds/Kopete_Sent.ogg
 share/sounds/Kopete_User_is_Online.ogg
 share/sounds/ktalkd.wav
 %%SHARED%%
+@dirrm share/sounds
 @dirrm share/services/kconfiguredialog
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/crystalsvg/64x64/apps
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/128x128/apps
 @dirrm share/doc/HTML/en/lisa
 @dirrm share/doc/HTML/en/kwifimanager
 @dirrm share/doc/HTML/en/ktalkd
@@ -1362,6 +1376,7 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kdict
 @dirrm share/doc/HTML/en/kcontrol/lanbrowser
 @dirrm share/doc/HTML/en/kcontrol/kcmtalkd
+@dirrm share/doc/HTML/en/kcontrol
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
@@ -1500,8 +1515,11 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kopete
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree
+@dirrm share/apps/konqueror
 @dirrm share/apps/knewsticker
 @dirrm share/apps/kinetd
+@dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/khtml/kpartplugins
 @dirrm share/apps/kget/sounds
 @dirrm share/apps/kget/pics
@@ -1519,4 +1537,8 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/crystalsvg
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
+@dirrm share/applnk/Internet
+@dirrm share/applnk/.hidden
+@dirrm share/applnk
+@dirrm lib/kconf_update_bin
 @dirrm include/rss
