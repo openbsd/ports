@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/16 12:55:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/28 15:03:03 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"fast and customizable WWW browser"
 
-PKGNAME=	opera-6.0
-DISTNAME=	opera-6.0-20020510.1-static-qt.i386
+PKGNAME=	opera-6.01
+DISTNAME=	opera-6.01-20020523.1-static-qt.i386
 CATEGORIES=	www
 NEED_VERSION=	1.522
 HOMEPAGE=	http://www.opera.com/
@@ -17,12 +17,24 @@ PERMIT_PACKAGE_FTP=	"Commercial software"
 PERMIT_DISTFILES_CDROM=	"Commercial software"
 PERMIT_DISTFILES_FTP=	"Commercial software"
 
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/ \
-		http://opera.online.no/linux/600/final/en/qt_static/
+MASTER_SITES_OPERA=	ftp://ftp.opera.com/pub/opera/ \
+			ftp://gd.tuwien.ac.at/infosys/browsers/opera/ \
+			ftp://ftp.hu-berlin.de/pub/www/opera/ \
+			ftp://sunsite.cnlab-switch.ch/mirror/opera/ \
+			ftp://opera.docuweb.ca/pub/opera/ \
+			ftp://ftp.planetmirror.com/pub/opera/ \
+			ftp://ftp.sunet.se/pub/www/clients/Opera/ \
+			ftp://ftp.task.gda.pl/pub/opera/ \
+			ftp://opera.mirror.stop.hu/opera/ \
+			http://www.panix.com/opera/files/ \
+			ftp://ftp.rge.com/pub/infosystems/opera/ \
+			http://www.rge.com/pub/infosystems/opera/
+
+MASTER_SITES=	${MASTER_SITES_OPERA:=linux/601/final/en/qt_static/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	:redhat_base->=6.2p1:emulators/redhat/base \
-		::emulators/redhat/motif
+		:redhat_motif->=2.1.30:emulators/redhat/motif
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
