@@ -1,0 +1,8 @@
+bin/compface
+bin/uncompface
+include/compface.h
+lib/libcompface.a
+man/man1/compface.1
+man/man1/uncompface.1
+man/man3/compface.3
+man/man3/uncompface.3
