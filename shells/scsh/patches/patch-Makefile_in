@@ -1,50 +1,88 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/09/04 23:26:31 lebel Exp $
---- Makefile.in.orig	Mon Jun  4 01:18:29 2001
-+++ Makefile.in	Mon Sep  3 22:28:07 2001
-@@ -148,7 +148,7 @@ CONFIG_FILES = interfaces.scm low-packag
+$OpenBSD: patch-Makefile_in,v 1.2 2002/03/04 00:24:59 naddy Exp $
+--- Makefile.in.orig	Sun Mar  3 09:39:21 2002
++++ Makefile.in	Sun Mar  3 09:39:25 2002
+@@ -31,7 +31,9 @@ manext = 1
+ mandir = @mandir@/man$(manext)
+ ### End of `configure' section###
  
- # The following is the first rule and therefore the "make" command's
- # default target.
--enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE) .notify
-+enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE)
+-htmldir = $(libdir)/scsh/doc/scsh-manual/html
++sharedir = @datadir@/scsh
++docdir = @datadir@/doc/scsh
++htmldir = $(docdir)/scsh-manual/html
  
- # The developers are curious to know.  Don't be concerned if this fails.
- # You may comment these lines out if you wish to be discourteous.
-@@ -286,6 +286,7 @@ install-dirs:
- 	$(RM) -r $(LIB).old
- 	if [ -d $(LIB) ] ; then mv $(LIB) $(LIB).old ; fi
- 	mkdir $(LIB)
-+	mkdir $(LIB)/emacs
- 	mkdir $(LIB)/big
- 	mkdir $(LIB)/cig
- 	mkdir $(LIB)/doc
-@@ -313,8 +314,8 @@ install-inc: scheme48.h
- 	$(INSTALL_DATA) $(srcdir)/scheme48.h $(incdir)/
+ # HP 9000 series, if you don't have gcc
+ #   CC = cc
+@@ -344,29 +346,29 @@ install-cig: cig
+ inst-misc:
+ 	for stub in env big opt misc link; do				\
+ 		for f in scheme/$$stub/*.scm; do			\
+-			$(INSTALL_DATA) $$f $(LIB)/$$stub || exit 1;	\
++			$(INSTALL_DATA) $$f $(sharedir)/$$stub || exit 1;	\
+ 		done;							\
+ 	done &&								\
+ 	for f in scheme/rts/*num.scm scheme/rts/jar-defrecord.scm; do	\
+-		$(INSTALL_DATA) $$f $(LIB)/rts || exit 1;		\
++		$(INSTALL_DATA) $$f $(sharedir)/rts || exit 1;		\
+ 	done 
  
- install-cig: cig
--	$(INSTALL_PROGRAM) $(srcdir)/$(CIG) $(LIB)/cig
--	$(INSTALL_PROGRAM) $(srcdir)/$(CIG).image $(LIB)/cig
-+	$(INSTALL_DATA) $(srcdir)/$(CIG) $(LIB)/cig
-+	$(INSTALL_DATA) $(srcdir)/$(CIG).image $(LIB)/cig
- 	$(INSTALL_DATA) $(srcdir)/$(LIBCIG) $(LIB)/cig
- 	$(INSTALL_DATA) $(srcdir)/cig/libcig.h $(LIB)/cig
+ inst-doc:
+ 	for f in $(srcdir)/doc/*.txt $(srcdir)/doc/*.ps; do \
+-		$(INSTALL_DATA) $$f $(LIB)/doc/; 				\
++		$(INSTALL_DATA) $$f $(docdir)/; 				\
+ 	done &&									\
+ 	for f in $(srcdir)/doc/src/*.tex 					\
+ 		$(srcdir)/doc/src/*.dvi						\
+ 		$(srcdir)/doc/src/*.ps;						\
+-		do $(INSTALL_DATA) $$f $(LIB)/doc/s48-manual/;			\
++		do $(INSTALL_DATA) $$f $(docdir)/s48-manual/;			\
+ 	done &&									\
+ 	for f in $(srcdir)/doc/src/manual/*.html;				\
+-		do $(INSTALL_DATA) $$f $(LIB)/doc/s48-manual/html/;		\
++		do $(INSTALL_DATA) $$f $(docdir)/s48-manual/html/;		\
+ 	done &&									\
+ 	for f in $(srcdir)/doc/scsh-manual/*.tex 				\
+ 		$(srcdir)/doc/scsh-manual/*.dvi					\
+ 		$(srcdir)/doc/scsh-manual/*.ps;					\
+-		do $(INSTALL_DATA) $$f $(LIB)/doc/scsh-manual/;			\
++		do $(INSTALL_DATA) $$f $(docdir)/scsh-manual/;			\
+ 	done &&									\
+ 	for f in $(srcdir)/doc/scsh-manual/html/*.html 				\
+ 		$(srcdir)/doc/scsh-manual/html/*.gif 				\
+@@ -393,17 +395,22 @@ go:
+ 	chmod +x $@
  
-@@ -322,6 +323,7 @@ install-misc: $(LIB)/rts $(LIB)/env $(LI
- 	      $(LIB)/misc $(LIB)/link $(LIB)/vm $(LIB)/doc
- 	for f in $(srcdir)/rts/*num.scm; \
- 	    do $(INSTALL_DATA) $$f $(LIB)/rts/; done
-+	for f in $(srcdir)/emacs/*; do $(INSTALL_DATA) $$f $(LIB)/emacs/; done
- 	for f in $(srcdir)/env/*.scm; do $(INSTALL_DATA) $$f $(LIB)/env/; done
- 	for f in $(srcdir)/big/*.scm; do $(INSTALL_DATA) $$f $(LIB)/big/; done
- 	for f in $(srcdir)/opt/*.scm; do $(INSTALL_DATA) $$f $(LIB)/opt/; done
-@@ -729,8 +731,8 @@ install-scsh: scsh
- 	$(RM) $(bindir)/$(RUNNABLE)$(EXEEXT)
- 	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh$(EXEEXT) \
- 	    $(bindir)/$(RUNNABLE)$(EXEEXT)
--	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh.image $(LIB)/scsh.image
--	$(INSTALL_PROGRAM) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
-+	$(INSTALL_DATA) $(srcdir)/scsh/scsh.image $(LIB)/scsh.image
-+	$(INSTALL_DATA) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
+ dirs:
+-	for dir in $(libdir) $(bindir) $(incdir) $(LIB) $(mandir) $(htmldir); do\
++	for dir in $(libdir) $(bindir) $(incdir) $(LIB) $(mandir) 	\
++			$(sharedir) $(docdir) $(htmldir) $(LIB)/cig; do	\
+ 		{ mkdir -p $$dir && [ -w $$dir ]; } || {		\
+ 			echo "$$dir not a writable directory" >&2;	\
+ 			exit 1;						\
+ 	}								\
+ 	done &&								\
+-	for dir in								\
+-		rts env big opt misc link scsh doc/scsh-manual 			\
+-		doc/s48-manual/html cig; do					\
+-		{ mkdir -p $(LIB)/$$dir && [ -w $(LIB)/$$dir ]; } || {		\
+-			echo "$(LIB)/$$dir not a writable directory" >&2; 	\
++	for dir in scsh-manual s48-manual/html; do			\
++		{ mkdir -p $(docdir)/$$dir && [ -w $(docdir)/$$dir ]; } || {	\
++			echo "$(docdir)/$$dir  not a writable directory" >&2;	\
++			exit 1;							\
++		}								\
++	done &&									\
++	for dir in rts env big opt misc link scsh; do				\
++		{ mkdir -p $(sharedir)/$$dir && [ -w $(sharedir)/$$dir ]; } || {\
++			echo "$(sharedir)/$$dir not a writable directory" >&2; 	\
+ 		exit 1;						  		\
+ 		};							  	\
+ 	done
+@@ -878,7 +885,7 @@ install-scsh: scsh install-scsh-image
+ 	$(INSTALL_PROGRAM) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
  	$(RANLIB) $(libdir)/$(LIBSCSH)
- 	for f in $(srcdir)/scsh/*.scm; \
- 	    do $(INSTALL_DATA) $$f $(LIB)/scsh/; done
+ 	for f in $(srcdir)/scsh/*.scm $(srcdir)/scsh/*/*.scm; \
+-	    do $(INSTALL_DATA) $$f $(LIB)/scsh/; done
++	    do $(INSTALL_DATA) $$f $(sharedir)/scsh/; done
+ 
+ install-scsh-image: $(VM) scsh/scsh.image
+ 	(	echo ',translate =scheme48 $(LIB)';			\
