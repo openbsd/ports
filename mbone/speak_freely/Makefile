@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/01/16 04:25:07 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/16 04:30:40 angelos Exp $
 #
 
 DISTNAME=       speak_freely-6.1e
@@ -9,7 +9,7 @@ MAINTAINER=     angelos@openbsd.org
 
 UTILS=   sfspeaker sfmike sflwl
 DEMNS=   sfecho sflwld
-DDEMNS=  sfvod
+DDEMNS=  sfvod sfreflect
 SFLIB=   ${PREFIX}/lib/speak_freely
 MAN1=	 ${UTILS:S/$/.1/} ${DEMNS:S/$/.1/} ${DDEMNS:S/$/.1/}
 
