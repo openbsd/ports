@@ -1,23 +1,14 @@
 --- libjbig/Makefile.orig	Fri Apr 10 21:33:27 1998
-+++ libjbig/Makefile	Thu Dec  9 15:43:07 1999
-@@ -2,26 +2,47 @@
- # $Id: patch-ab,v 1.3 1999/12/27 06:12:09 brad Exp $
- 
- # Select an ANSI/ISO C compiler here, GNU gcc is recommended
--CC = gcc
-+#CC = gcc
- 
++++ libjbig/Makefile	Wed Mar 22 20:31:42 2000
+@@ -7,21 +7,40 @@
  # Options for the compiler: A high optimization level is suggested
--CFLAGS = -O -Wall -ansi -pedantic
-+#CFLAGS += -Wall -ansi -pedantic
+ CFLAGS = -O -Wall -ansi -pedantic
  
 -all: libjbig.a tstcodec
-+SOJBIGLIB=libjbig.so.$(VERSION)
-+
 +.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 +all: libjbig.a
 +.else
-+all: libjbig.a $(SOJBIGLIB)
++all: libjbig.a libjbig.so.$(VERSION)
 +.endif
  
  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
@@ -32,7 +23,7 @@
 +	ar rc ${.TARGET} ${.ALLSRC}
 +	ranlib ${.TARGET}
 +
-+$(SOJBIGLIB): jbig.so jbig_tab.so
++libjbig.so.$(VERSION): jbig.so jbig_tab.so
 +	rm -f ${.TARGET}
 +	ld -Bshareable -Bforcearchive -o ${.TARGET} ${.ALLSRC}
 +	

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/06 22:09:41 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/23 06:51:58 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 DISTNAME=	jbigkit-1.1
@@ -19,6 +19,8 @@ FAKE=	Yes
 
 NO_CONFIGURE=	Yes
 
+MAKE_FLAGS=	CC="${CC}" CCFLAGS="${CFLAGS} -Wall"
+
 WRKDIST=	${WRKDIR}/jbigkit
 
 post-install:
@@ -26,7 +28,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig.doc ${PREFIX}/share/doc/jbig
 
 test:	build
-	@cd ${WRKSRC} && env LD_LIBRARY_PATH="${WRKSRC}/libjbig" make test
+	@cd ${WRKSRC} && env LD_LIBRARY_PATH="${WRKSRC}/libjbig" make ${MAKE_FLAGS} -f ${MAKE_FILE} test
 
 .include <bsd.port.mk>
 
