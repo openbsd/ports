@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/26 00:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/03/30 22:14:24 mickey Exp $
 
 COMMENT=	"Creative Labs NOMAD II MG IO"
-DISTNAME=	nomadio-0.5
+DISTNAME=	nomadio-0.6
 CATEGORIES=	audio
 NEED_VERSION=	1.515
 
