@@ -1,26 +1,51 @@
-$OpenBSD: patch-dist_configure,v 1.2 2004/01/14 19:50:15 sturm Exp $
---- dist/configure.orig	2003-12-03 22:10:02.000000000 +0100
-+++ dist/configure	2004-01-10 11:41:39.000000000 +0100
-@@ -5896,6 +5896,7 @@ openbsd*)
-   else
-     lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
-   fi
-+  lt_cv_deplibs_check_method=pass_all
+$OpenBSD: patch-dist_configure,v 1.3 2004/07/03 23:19:07 brad Exp $
+--- dist/configure.orig	Wed Dec  3 16:10:02 2003
++++ dist/configure	Sat Jul  3 17:30:18 2004
+@@ -5889,12 +5889,10 @@ nto-qnx | nto-qnx6*)
    ;;
  
- osf3* | osf4* | osf5*)
-@@ -9516,8 +9517,8 @@ nto-qnx | nto-qnx6*)
- 
  openbsd*)
-   version_type=sunos
--  need_lib_prefix=no
--  need_version=no
-+  need_lib_prefix=yes
-+  need_version=yes
-   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-@@ -20138,10 +20139,10 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
+-  lt_cv_file_magic_cmd=/usr/bin/file
+-  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|\.so|_pic\.a)$'
+   else
+-    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++    lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|_pic\.a)$'
+   fi
+   ;;
+ 
+@@ -8805,6 +8803,7 @@ if test -z "$aix_libpath"; then aix_libp
+       hardcode_shlibpath_var=no
+       if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+ 	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++	archive_expsym_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags ${wl}-retain-symbols-file,$export_symbols'
+ 	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+ 	export_dynamic_flag_spec='${wl}-E'
+       else
+@@ -11730,6 +11729,20 @@ if test -z "$aix_libpath"; then aix_libp
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd2*)
++      # C++ shared libraries are fairly broken
++      ld_shlibs_CXX=no
++      ;;
++  openbsd*)
++      archive_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags -o $lib'
++      hardcode_libdir_flag_spec_CXX='${wl}-rpath,$libdir'
++      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++	archive_expsym_cmds_CXX='$CC -shared $pic_flag $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags ${wl}-retain-symbols-file,$export_symbols -o $lib'
++	export_dynamic_flag_spec_CXX='${wl}-E'
++	whole_archive_flag_spec_CXX="$wlarc"'--whole-archive$convenience '"$wlarc"'--no-whole-archive'
++      fi
++      output_verbose_link_cmd='echo'
++      ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -20138,10 +20151,10 @@ echo "${ECHO_T}$JMODSUFFIX" >&6
  INSTALLER="\$(LIBTOOL) --mode=install cp -p"
  
  MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
@@ -33,7 +58,7 @@ $OpenBSD: patch-dist_configure,v 1.2 2004/01/14 19:50:15 sturm Exp $
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
  LIBTOOL="\$(SHELL) ./libtool"
-@@ -21441,7 +21442,7 @@ fi
+@@ -21441,7 +21454,7 @@ fi
  
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
