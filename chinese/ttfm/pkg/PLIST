@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 02:55:18 kevlo Exp $
+bin/ttfinfo
+bin/ttfm.sh
+share/doc/ttfm/README
+share/doc/ttfm/USAGE
+share/ttfm/chitex.ttfm
+share/ttfm/ghostscript6.ttfm
+share/ttfm/ttf2pk.ttfm
+share/ttfm/xfreetype.ttfm
+share/ttfm/xttfm-tcl.ttfm
+share/ttfm/xttfm.ttfm
+@dirrm share/ttfm
+@dirrm share/doc/ttfm
