@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/11 06:57:41 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/27 12:34:43 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -32,5 +32,6 @@ WRKBUILD=		${WRKDIR}
 do-install:
 	cd ${WRKBUILD} && STRIP=${STRIPCMD} ${INSTALL_PROGRAM} ${DISTNAME} ${PREFIX}/bin/edonkey
 	elf2olf -o linux ${PREFIX}/bin/edonkey
+	ln -s edonkey ${PREFIX}/bin/donkey
 
 .include <bsd.port.mk>
