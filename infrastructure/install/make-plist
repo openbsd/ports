@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.30 2003/07/02 09:04:08 espie Exp $
+# $OpenBSD: make-plist,v 1.31 2003/07/16 22:07:40 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -109,7 +109,7 @@ sub annotate
 		} elsif (m/^\!?\%\%(.*)\%\%/) {
 			my $frag = $1;
 			if ($frag ne "SHARED") {
-				printf $newfh "$_\n";
+				print $newfh "$_\n";
 				$manual = 1;
 			}
 		} elsif (m/\$\{.*\}/) {
