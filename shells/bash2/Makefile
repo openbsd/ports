@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/01/13 20:09:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2004/07/08 18:27:03 robert Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -39,5 +39,7 @@ post-install:
 	    ${INSTALL_DATA} article.ps article.txt bash.html bash.ps \
 		bashbug.ps bashref.html bashref.ps builtins.ps  \
 		${PREFIX}/share/doc/bash
+	@perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash,g" \
+	    ${PREFIX}/man/man1/bash.1
 
 .include <bsd.port.mk>
