@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.61 2001/12/22 03:54:44 brad Exp $
+# $OpenBSD: Makefile,v 1.62 2001/12/29 17:56:56 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
 # More architectures need testing of MySQL+native threads
 .if ${MACHINE_ARCH} != "i386"
-BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken"
+BROKEN=		"Support for ${MACHINE_ARCH} threads is currently broken and/or untested with MySQL"
 .endif
 
 COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (test suite)"
 
-VERSION=	3.23.46
+VERSION=	3.23.47
 DISTNAME=	mysql-${VERSION}
 FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
@@ -88,6 +88,6 @@ post-install:
 	fi
 
 do-regress:
-	@cd ${WRKSRC}/mysql-test && ./mysql-test-run
+	@cd ${WRKSRC}/mysql-test && exec mysql-test-run
 
 .include <bsd.port.mk>
