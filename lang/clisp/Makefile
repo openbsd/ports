@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/12 13:54:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/29 13:43:58 naddy Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
+
+BROKEN=		"Does not build"
 
 DISTNAME=	clisp-2000-03-06
 PKGNAME=	clisp-20000306
