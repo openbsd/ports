@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_write_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
+--- lib/write.c.orig	Thu Mar  4 07:29:12 2004
++++ lib/write.c	Sat Jul 31 13:01:28 2004
+@@ -23,6 +23,7 @@
+ 
+ #include <config.h>
+ 
++#include <errno.h>
+ #include <glibtop/write.h>
+ #include "libgtop-i18n.h"
+ 
+@@ -41,12 +42,16 @@ glibtop_write_l (glibtop *server, size_t
+ 	fprintf (stderr, "LIBRARY: really writing %d bytes.\n", size);
+ #endif
+ 
++retry:
+ 	if (server->socket) {
+ 		ret = send (server->socket, buf, size, 0);
+ 	} else {
+ 		ret = write (server->output [1], buf, size);
+ 	}
+ 
+-	if (ret < 0)
++	if (ret < 0) {
++		if (errno == EINTR)
++			goto retry;
+ 		glibtop_error_io_r (server, ngettext ("write %d byte", "write %d bytes", size), size);
++	}
+ }

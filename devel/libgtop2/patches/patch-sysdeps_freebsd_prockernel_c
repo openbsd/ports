@@ -1,0 +1,75 @@
+$OpenBSD: patch-sysdeps_freebsd_prockernel_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
+--- sysdeps/freebsd/prockernel.c.orig	Wed Apr  7 03:05:51 2004
++++ sysdeps/freebsd/prockernel.c	Sat Jul 31 13:05:40 2004
+@@ -35,7 +35,7 @@
+ #include <sys/user.h>
+ #endif
+ #if !defined(__bsdi__) && !(defined(__FreeBSD__) && defined(__alpha__)) && \
+-    !defined(__NetBSD__)
++    !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <machine/pcb.h>
+ #endif
+ 
+@@ -46,7 +46,7 @@
+ #include <osreldate.h>
+ #endif
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <machine/vmparam.h>
+ #include <machine/pmap.h>
+ #ifdef __arm32__
+@@ -54,15 +54,7 @@
+ #endif
+ #endif
+ 
+-#ifdef __NetBSD__
+-#include <machine/vmparam.h>
+-#include <machine/pmap.h>
+-#ifdef __arm32__
+-#define	KERNBASE	KERNEL_BASE
+-#endif
+-#endif
+ 
+-
+ static const unsigned long _glibtop_sysdeps_proc_kernel_pstats =
+ (1L << GLIBTOP_PROC_KERNEL_MIN_FLT) +
+ (1L << GLIBTOP_PROC_KERNEL_MAJ_FLT) +
+@@ -132,7 +124,7 @@ glibtop_get_proc_kernel_p (glibtop *serv
+ 
+ #endif
+ 
+-#if !defined(__NetBSD__) || !defined(SACTIVE)
++#if !defined(__NetBSD__) && !defined(__OpenBSD__) || !defined(SACTIVE)
+ 	buf->nwchan = (unsigned long) pinfo [0].PROC_WCHAN &~ KERNBASE;
+ 
+ 	buf->flags |= (1L << GLIBTOP_PROC_KERNEL_NWCHAN);
+@@ -165,8 +157,8 @@ glibtop_get_proc_kernel_p (glibtop *serv
+ 
+ 	glibtop_suid_enter (server);
+ 
+-#if !defined(__NetBSD__) || !defined(SACTIVE)
+-#ifdef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__OpenBSD__) || !defined(SACTIVE)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 	/* On NetBSD, there is no kvm_uread(), and kvm_read() always reads
+ 	 * from kernel memory.  */
+ 
+@@ -194,7 +186,7 @@ glibtop_get_proc_kernel_p (glibtop *serv
+ 			buf->flags |= _glibtop_sysdeps_proc_kernel_pstats;
+ 		}
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 	if (kvm_read (server->machine.kd,
+ #else
+ 	if ((pinfo [0].kp_proc.p_flag & P_INMEM) &&
+@@ -224,7 +216,7 @@ glibtop_get_proc_kernel_p (glibtop *serv
+ 			buf->kstk_eip = (guint64) pcb.pcb_tss.__tss_eip;
+ #endif
+ #else
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #if defined(__m68k__)
+ 			buf->kstk_esp = (u_int64_t) pcb.pcb_usp;
+ 			buf->kstk_eip = (u_int64_t) 0;

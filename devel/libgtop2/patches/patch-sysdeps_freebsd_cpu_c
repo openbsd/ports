@@ -1,0 +1,48 @@
+$OpenBSD: patch-sysdeps_freebsd_cpu_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
+--- sysdeps/freebsd/cpu.c.orig	Thu Jul 29 20:54:47 2004
++++ sysdeps/freebsd/cpu.c	Thu Jul 29 21:10:23 2004
+@@ -27,7 +27,7 @@
+ 
+ #include <glibtop_suid.h>
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <sys/sched.h>
+ #endif
+ 
+@@ -36,7 +36,7 @@ static const unsigned long _glibtop_sysd
+ (1L << GLIBTOP_CPU_NICE) + (1L << GLIBTOP_CPU_SYS) +
+ (1L << GLIBTOP_CPU_IDLE) + (1L << GLIBTOP_CPU_FREQUENCY);
+ 
+-#ifndef KERN_CP_TIME
++#if !defined(KERN_CP_TIME) && !defined(KERN_CPTIME)
+ /* nlist structure for kernel access */
+ static struct nlist nlst [] = {
+ #ifdef __bsdi__
+@@ -54,13 +54,16 @@ static int mib [] = { CTL_KERN, KERN_CLO
+ #ifdef KERN_CP_TIME
+ static int mib2 [] = { CTL_KERN, KERN_CP_TIME };
+ #endif
++#ifdef KERN_CPTIME
++static int mib2 [] = { CTL_KERN, KERN_CPTIME };
++#endif
+ 
+ /* Init function. */
+ 
+ void
+ glibtop_init_cpu_p (glibtop *server)
+ {
+-#ifndef KERN_CP_TIME
++#if !defined(KERN_CP_TIME) && !defined(KERN_CPTIME)
+ 	if (kvm_nlist (server->machine.kd, nlst) < 0) {
+ 		glibtop_warn_io_r (server, "kvm_nlist (cpu)");
+ 		return;
+@@ -93,7 +96,7 @@ glibtop_get_cpu_p (glibtop *server, glib
+ 	if (server->sysdeps.cpu == 0)
+ 		return;
+ 
+-#ifdef KERN_CP_TIME
++#if defined(KERN_CP_TIME) || defined(KERN_CPTIME)
+ 	length = sizeof (cpts);
+ 	if (sysctl (mib2, mib_length, cpts, &length, NULL, 0)) {
+ 		glibtop_warn_io_r (server, "sysctl");

@@ -1,0 +1,65 @@
+$OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
+--- sysdeps/freebsd/procmap.c.orig	Wed Mar 10 03:18:59 2004
++++ sysdeps/freebsd/procmap.c	Sat Jul 31 13:07:27 2004
+@@ -35,7 +35,7 @@
+ #include <vm/vm_object.h>
+ #include <vm/vm_prot.h>
+ #include <vm/vm_map.h>
+-#elif defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000)
++#elif defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
+ #include <uvm/uvm_extern.h>
+ #else
+ #include <vm/vm_object.h>
+@@ -57,11 +57,14 @@
+ #include <sys/user.h>
+ #endif
+ #include <sys/sysctl.h>
+-#if !defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
++#include <uvm/uvm.h>
++#else
+ #include <vm/vm.h>
+ #endif
+ 
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
++#if defined(__NetBSD__) && \
++	(__NetBSD_Version__ >= 104000000) && (__NetBSD_Version__ < 105020000)
+ /* Fixme ... */
+ #undef _KERNEL
+ #define _UVM_UVM_AMAP_I_H_ 1
+@@ -95,7 +98,7 @@ glibtop_get_proc_map_p (glibtop *server,
+ 	struct kinfo_proc *pinfo;
+ 	struct vm_map_entry entry, *first;
+ 	struct vmspace vmspace;
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
+ 	struct vnode vnode;
+ 	struct inode inode;
+ #else
+@@ -181,7 +184,7 @@ glibtop_get_proc_map_p (glibtop *server,
+  			continue;
+ #endif
+ #else
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
+  		if (UVM_ET_ISSUBMAP (&entry))
+ 			continue;
+ #else
+@@ -207,7 +210,7 @@ glibtop_get_proc_map_p (glibtop *server,
+ 
+ 		i++;
+ 
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
+ 		if (!entry.object.uvm_obj)
+ 			continue;
+ 
+@@ -231,7 +234,7 @@ glibtop_get_proc_map_p (glibtop *server,
+ 			glibtop_error_io_r (server, "kvm_read (object)");
+ #endif
+ 
+-#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
++#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
+ #if defined(UVM_VNODE_VALID)
+ 		if (!vnode.v_uvm.u_flags & UVM_VNODE_VALID)
+ 			continue;

@@ -1,0 +1,29 @@
+$OpenBSD: patch-lib_read_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
+--- lib/read.c.orig	Thu Mar  4 07:29:12 2004
++++ lib/read.c	Sat Jul 31 13:01:08 2004
+@@ -22,6 +22,7 @@
+ */
+ 
+ #include <config.h>
++#include <errno.h>
+ #include <glibtop/read.h>
+ #include "libgtop-i18n.h"
+ 
+@@ -68,12 +69,16 @@ glibtop_read_l (glibtop *server, size_t 
+ 	fprintf (stderr, "LIBRARY: really reading %d bytes.\n", size);
+ #endif
+ 
++retry:
+ 	if (server->socket) {
+ 		do_read (server->socket, buf, size);
+ 	} else {
+ 		ret = read (server->input [0], buf, size);
+ 	}
+ 
+-	if (ret < 0)
++	if (ret < 0) {
++		if (errno == EINTR)
++			goto retry;
+ 		glibtop_error_io_r (server, ngettext ("read %d byte", "read %d bytes", size), size);
++	}
+ }

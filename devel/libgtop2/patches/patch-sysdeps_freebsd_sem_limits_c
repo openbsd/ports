@@ -1,0 +1,11 @@
+$OpenBSD: patch-sysdeps_freebsd_sem_limits_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
+--- sysdeps/freebsd/sem_limits.c.orig	Tue Jul 27 20:26:05 2004
++++ sysdeps/freebsd/sem_limits.c	Tue Jul 27 20:26:22 2004
+@@ -104,7 +104,6 @@ glibtop_get_sem_limits_p (glibtop *serve
+ 	if (server->sysdeps.sem_limits == 0)
+ 		return;
+ 
+-	buf->semmap = _seminfo.semmap;
+ 	buf->semmni = _seminfo.semmni;
+ 	buf->semmns = _seminfo.semmns;
+ 	buf->semmnu = _seminfo.semmnu;

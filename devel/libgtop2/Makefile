@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2004/04/20 21:57:53 marcm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/01 06:06:35 marcm Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
-V=			2.0.7
+V=			2.6.0
 DISTNAME=		libgtop-${V}
 PKGNAME=		libgtop2-${V}
 CATEGORIES=		devel
@@ -10,12 +10,8 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-SYSDEPS=		openbsd-libgtop-020830
-DISTFILES=		${DISTNAME}.tar.bz2 \
-			${SYSDEPS}.tar.gz:0
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtop/2.0/}
-MASTER_SITES0=		http://nforced.com/openbsd/distfiles/
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtop/2.6/}
+EXTRACT_SUFX=		.tar.bz2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,15 +23,14 @@ MODULES=	gettext
 LIB_DEPENDS=	glib-2.0.0.0::devel/glib2 \
 		popt::devel/popt
 
-SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
-CONFIGURE_STYLE= 	autoconf
-AUTOCONF_VERSION=	2.57
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-extract:
-	@mv ${WRKDIR}/${SYSDEPS} ${WRKSRC}/sysdeps/openbsd
+post-install:
+	@chgrp kmem ${PREFIX}/bin/libgtop_server2
+	@chmod 2555 ${PREFIX}/bin/libgtop_server2
 
 .include <bsd.port.mk>
