@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/05 18:25:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/05 18:32:13 sturm Exp $
 
 COMMENT=		"minimalist window manager for the X Window System"
 
-DISTNAME=		${PKGNAME}.orig
-PKGNAME=		evilwm-0.99.14
+V=			0.99.14
+DISTNAME=		evilwm-${V}.orig
+PKGNAME=		evilwm-${V}
 CATEGORIES=		x11
 HOMEPAGE=		http://evilwm.sourceforge.net/
 
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=evilwm/}
-DISTFILES=		${DISTNAME:S,-,_,}.tar.gz
+DISTFILES=		evilwm_${V}.orig.tar.gz
 
 USE_X11=		Yes
 ALL_TARGET=		allinone
