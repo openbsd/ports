@@ -1,6 +1,7 @@
---- configure.orig	Wed May 30 20:31:31 2001
-+++ configure	Wed Mar 27 14:11:51 2002
-@@ -2865,16 +2865,16 @@ case $system in
+$OpenBSD: patch-configure,v 1.3 2003/10/29 22:12:43 sturm Exp $
+--- configure.orig	2003-08-20 00:43:44.000000000 -0400
++++ configure	2003-08-20 00:47:19.000000000 -0400
+@@ -4213,16 +4213,16 @@ case $system in
          DL_LIBS="-ldl"
          SHLD_FLAGS="-Wl,-Bexport"
          ;;

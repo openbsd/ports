@@ -18,5 +18,3 @@ standalone release of a system that has been in use, embedded in the
 VuSystem, for two years. We made the release public (with free use,
 distribution and modification under the MIT license) to meet the
 demand for object-oriented programming in Tcl.
-
-WWW: ${HOMEPAGE}
