@@ -1,0 +1,14 @@
+--- src/Makefile.orig	Sat Apr  1 04:06:22 2000
++++ src/Makefile	Sat Apr  1 04:06:57 2000
+@@ -202,9 +202,9 @@
+ 	@-cp -r ../FL $(includedir)
+ 	@-chmod 755 $(includedir)/FL
+ 	@-chmod 644 $(includedir)/FL/*
+-	@for file in $(includedir)/FL/*.H; do\
++	@cd $(includedir)/FL && for file in *.H; do\
+ 		newfile="`basename $$file H`h";\
+-		ln -s $$file $(includedir)/FL/$$newfile;\
++		ln -s $$file $$newfile;\
+ 	done
+ 	@-ln -s FL $(includedir)/Fl
+ 
