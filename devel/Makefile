@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2003/11/17 09:24:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.198 2003/12/16 13:12:32 sturm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -182,6 +182,7 @@
      SUBDIR += py-Checker
      SUBDIR += py-mxDateTime
      SUBDIR += py-optik
+     SUBDIR += py-tpg
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += pygame
