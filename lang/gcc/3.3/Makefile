@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2005/02/21 15:44:48 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2005/02/27 15:41:59 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
-V=3.3.5
-FULL_VERSION=$V
+V=3.3.6
+FULL_VERSION=3.3-20050223
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -61,7 +61,7 @@ DISTNAME=   gcc-${FULL_VERSION}
 DISTFILES=  ${DISTNAME}.tar.bz2
 SUPDISTFILES=adastrap-i386-3.3.5-1.tgz:0
 
-MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+MASTER_SITES=	${MASTER_SITE_GCC:=snapshots/$(FULL_VERSION)/}
 MASTER_SITES0=	ftp://quatramaran.ens.fr/pub/espie/
 
 CONFIGURE_STYLE=	gnu
