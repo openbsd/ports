@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.47 2001/12/26 19:15:09 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2001/12/26 19:18:20 brad Exp $
 
-#     SUBDIR+= devel
+#     SUBDIR+= snapshot
      SUBDIR+= stable
 
 .include <bsd.subdir.mk>
