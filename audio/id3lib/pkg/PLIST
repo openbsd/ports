@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/02 19:49:54 lebel Exp $
+bin/id3convert
+bin/id3cp
+bin/id3info
+bin/id3tag
+include/id3.h
+include/id3/field.h
+include/id3/frame.h
+include/id3/globals.h
+include/id3/misc_support.h
+include/id3/reader.h
+include/id3/readers.h
+include/id3/sized_types.h
+include/id3/tag.h
+include/id3/utils.h
+include/id3/writer.h
+include/id3/writers.h
+lib/libid3.a
+lib/libid3.la
+%%SHARED%%
+@dirrm include/id3
