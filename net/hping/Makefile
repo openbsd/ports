@@ -3,7 +3,9 @@
 # Date created:		Oct 28 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:53 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/16 17:56:33 turan Exp $
+
+BROKEN=		sources missing
 
 PKGNAME=	hping-2.0b49
 
