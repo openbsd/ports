@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Apr 10 20:41:31 2000
++++ Makefile.in	Mon Apr 10 20:42:03 2000
+@@ -518,7 +518,7 @@ configure-subdirs distdir: $(DIST_MAKEFI
+ 
+ # Create and install libltdl
+ install-data-hook:
+-	cd libltdl && $(MAKE) local-install-files
++	cd libltdl && $(MAKE) $(AM_MAKEFLAGS) local-install-files
+ 
+ # Uninstall libltdl
+ uninstall-local:
