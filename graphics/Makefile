@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2001/05/18 11:27:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.63 2001/05/25 19:51:22 shell Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += png
      SUBDIR += pngcrush
 #    SUBDIR += povray
+     SUBDIR += py-Imaging
      SUBDIR += qiv
 #    SUBDIR += qvplay
      SUBDIR += s10sh
