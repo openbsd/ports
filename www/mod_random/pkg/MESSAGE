@@ -1,5 +1,5 @@
 +---------------
-| To finish the install of mod_log_sql, you need
+| To finish the install of mod_random, you need
 | to enable the module using the following command
 |
 |   ${PREFIX}/sbin/mod_random-enable
