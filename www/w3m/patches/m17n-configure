@@ -1,0 +1,12 @@
+$OpenBSD: m17n-configure,v 1.1 2001/03/30 17:19:09 naddy Exp $
+--- configure.orig	Mon Mar 26 21:09:20 2001
++++ configure	Mon Mar 26 21:09:26 2001
+@@ -283,7 +283,7 @@ esac
+ 
+ echo "Which suffix do you want to use?"
+ Echo "(default: $suffix) "
+-readanswer suffix "$suffix"
++readanswer suffix "$suffix" ok
+ 
+ if [ -z "$def_bindir" ]; then
+   def_bindir="$topdir/bin"
