@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/08/16 16:32:58 couderc Exp $
+# $OpenBSD: Makefile,v 1.31 2003/12/16 18:32:32 sturm Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -10,16 +10,15 @@ HOMEPAGE=	http://www.abisource.com/
 
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
-AUTOCONF_VERSION=	2.52
-
 BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
-		::devel/metaauto \
-		::devel/automake
+		::devel/metaauto
+
 LIB_DEPENDS=	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		gtk.1.2,gdk.1.2::x11/gtk+
 RUN_DEPENDS=	ispell::textproc/ispell
 
+# GPL and compatible
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,7 +28,8 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=abiword/}
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	automake
+AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS=		--with-libpng=${LOCALBASE}/lib \
 			--without-pspell \
 			--disable-debug
@@ -58,7 +58,8 @@ LIB_DEPENDS+=		xml2::textproc/libxml
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh autogen.sh
+	@cd ${WRKSRC} && PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		 sh autogen.sh
 
 .if ${FLAVOR:L:Mgnome}
 post-install:
