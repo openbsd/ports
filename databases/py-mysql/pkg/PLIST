@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/18 17:47:05 shell Exp $
-lib/python2.0/site-packages/CompatMysqldb.py
-lib/python2.0/site-packages/CompatMysqldb.pyc
-lib/python2.0/site-packages/MySQLdb.py
-lib/python2.0/site-packages/MySQLdb.pyc
-lib/python2.0/site-packages/_mysql.so
-lib/python2.0/site-packages/_mysql_const/CLIENT.py
-lib/python2.0/site-packages/_mysql_const/CLIENT.pyc
-lib/python2.0/site-packages/_mysql_const/CR.py
-lib/python2.0/site-packages/_mysql_const/CR.pyc
-lib/python2.0/site-packages/_mysql_const/ER.py
-lib/python2.0/site-packages/_mysql_const/ER.pyc
-lib/python2.0/site-packages/_mysql_const/FIELD_TYPE.py
-lib/python2.0/site-packages/_mysql_const/FIELD_TYPE.pyc
-lib/python2.0/site-packages/_mysql_const/FLAG.py
-lib/python2.0/site-packages/_mysql_const/FLAG.pyc
-lib/python2.0/site-packages/_mysql_const/REFRESH.py
-lib/python2.0/site-packages/_mysql_const/REFRESH.pyc
-lib/python2.0/site-packages/_mysql_const/__init__.py
-lib/python2.0/site-packages/_mysql_const/__init__.pyc
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 17:06:49 shell Exp $
+lib/python2.1/site-packages/CompatMysqldb.py
+lib/python2.1/site-packages/CompatMysqldb.pyc
+lib/python2.1/site-packages/MySQLdb.py
+lib/python2.1/site-packages/MySQLdb.pyc
+lib/python2.1/site-packages/_mysql.so
+lib/python2.1/site-packages/_mysql_const/CLIENT.py
+lib/python2.1/site-packages/_mysql_const/CLIENT.pyc
+lib/python2.1/site-packages/_mysql_const/CR.py
+lib/python2.1/site-packages/_mysql_const/CR.pyc
+lib/python2.1/site-packages/_mysql_const/ER.py
+lib/python2.1/site-packages/_mysql_const/ER.pyc
+lib/python2.1/site-packages/_mysql_const/FIELD_TYPE.py
+lib/python2.1/site-packages/_mysql_const/FIELD_TYPE.pyc
+lib/python2.1/site-packages/_mysql_const/FLAG.py
+lib/python2.1/site-packages/_mysql_const/FLAG.pyc
+lib/python2.1/site-packages/_mysql_const/REFRESH.py
+lib/python2.1/site-packages/_mysql_const/REFRESH.pyc
+lib/python2.1/site-packages/_mysql_const/__init__.py
+lib/python2.1/site-packages/_mysql_const/__init__.pyc
 share/examples/MySQL-python/README
 share/examples/MySQL-python/dbtrainer0
 share/examples/MySQL-python/dbtrainer1
@@ -26,3 +26,4 @@ share/examples/MySQL-python/dbtrainer3
 share/examples/MySQL-python/dbtrainer4
 share/examples/MySQL-python/test.sql
 @dirrm share/examples/MySQL-python
+@dirrm lib/python2.1/site-packages/_mysql_const

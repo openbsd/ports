@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/05 23:20:18 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/07 17:08:56 shell Exp $
 
 COMMENT=		'python module for writing basic XML applications'
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-BUILD_DEPENDS=		python2.0::lang/python
+BUILD_DEPENDS=		python::lang/python
 NO_CONFIGURE=		Yes
 
 DOC_DIR=		${PREFIX}/share/doc/PyXML

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/03 05:19:01 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/07 17:06:49 shell Exp $
 
 COMMENT=		"python interface to MySQL"
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-BUILD_DEPENDS=		python2.0::lang/python
+BUILD_DEPENDS=		python::lang/python
 LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 
 DOC_DIR=		${PREFIX}/share/examples/MySQL-python
