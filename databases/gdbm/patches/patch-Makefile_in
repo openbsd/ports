@@ -1,13 +1,7 @@
---- Makefile.in.orig	Mon Nov  4 12:33:43 2002
-+++ Makefile.in	Mon Nov  4 12:35:36 2002
-@@ -18,13 +18,13 @@ INSTALL_DATA = @INSTALL_DATA@
- BINOWN = bin
- BINGRP = bin
- 
--MAKEINFO = makeinfo
-+MAKEINFO = makeinfo --no-split
- TEXI2DVI = texi2dvi
- 
+$OpenBSD: patch-Makefile_in,v 1.3 2005/01/27 02:09:52 naddy Exp $
+--- Makefile.in.orig	Tue Oct  8 18:09:12 2002
++++ Makefile.in	Thu Jan 27 02:32:30 2005
+@@ -24,7 +24,7 @@ TEXI2DVI = texi2dvi
  DEFS =
  
  # Where the system [n]dbm routines are...
@@ -25,11 +19,3 @@
  
  progs: $(PROGS)
  
-@@ -206,6 +206,7 @@ TAGS: $(SRCS)
- info: gdbm.info
- 
- gdbm.info: gdbm.texinfo
-+	@rm -f gdbm.info*
- 	$(MAKEINFO) $(srcdir)/gdbm.texinfo
- 
- dvi: gdbm.dvi

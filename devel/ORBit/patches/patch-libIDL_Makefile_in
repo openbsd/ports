@@ -1,15 +1,6 @@
-$OpenBSD: patch-libIDL_Makefile_in,v 1.2 2002/02/24 22:43:59 brad Exp $
+$OpenBSD: patch-libIDL_Makefile_in,v 1.3 2005/01/27 02:09:52 naddy Exp $
 --- libIDL/Makefile.in.orig	Mon Jan  7 04:23:50 2002
 +++ libIDL/Makefile.in	Sun Feb 24 16:56:17 2002
-@@ -90,7 +90,7 @@ LT_CURRENT = @LT_CURRENT@
- LT_RELEASE = @LT_RELEASE@
- LT_REVISION = @LT_REVISION@
- MAINT = @MAINT@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- OBJDUMP = @OBJDUMP@
- PACKAGE = @PACKAGE@
- RANLIB = @RANLIB@
 @@ -121,7 +121,7 @@ BUILT_SOURCES = lexer.c parser.c parser.
  
  libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h

@@ -1,3 +1,4 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2005/01/27 02:09:52 naddy Exp $
 --- doc/Makefile.in.orig	Tue Jul 24 10:27:41 2001
 +++ doc/Makefile.in	Mon Aug 27 11:23:33 2001
 @@ -99,7 +99,7 @@ YACC = @YACC@
@@ -9,12 +10,3 @@
  dvidir = $(docdir)
  psdir = $(docdir)
  pdfdir = $(docdir)
-@@ -110,7 +110,7 @@ AUTOMAKE_OPTIONS = 1.2 gnits
- SED = sed
- RM = rm -f
- 
--MAKEINFO = env LANG= LANGUAGE= @MAKEINFO@
-+MAKEINFO = env LANG= LANGUAGE= @MAKEINFO@ --no-split
- 
- info_TEXINFOS = gettext.texi
- gettext_TEXINFOS = iso-639.texi iso-3166.texi

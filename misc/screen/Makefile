@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2004/12/22 11:50:29 alek Exp $
+# $OpenBSD: Makefile,v 1.55 2005/01/27 02:09:52 naddy Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -37,9 +37,6 @@ PATCH_LIST=	patch-* shmpatch-*
 .endif
 
 ALL_TARGET=	screen screen.info
-
-post-extract:
-	@rm -f ${WRKSRC}/doc/screen.info*
 
 pre-build:
 	@perl -pi -e s#!!sysconfdir!!#${SYSCONFDIR}#g ${WRKSRC}/doc/screen.1
