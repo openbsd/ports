@@ -1,3 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/25 00:11:52 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/05 23:04:58 shell Exp $
 libdata/perl5/site_perl/XML/DOM.pm
+libdata/perl5/site_perl/XML/DOM/AttDef.pod
+libdata/perl5/site_perl/XML/DOM/AttlistDecl.pod
+libdata/perl5/site_perl/XML/DOM/Attr.pod
+libdata/perl5/site_perl/XML/DOM/CDATASection.pod
+libdata/perl5/site_perl/XML/DOM/CharacterData.pod
+libdata/perl5/site_perl/XML/DOM/Comment.pod
+libdata/perl5/site_perl/XML/DOM/DOMException.pm
+libdata/perl5/site_perl/XML/DOM/DOMImplementation.pod
+libdata/perl5/site_perl/XML/DOM/Document.pod
+libdata/perl5/site_perl/XML/DOM/DocumentFragment.pod
+libdata/perl5/site_perl/XML/DOM/DocumentType.pod
+libdata/perl5/site_perl/XML/DOM/Element.pod
+libdata/perl5/site_perl/XML/DOM/ElementDecl.pod
+libdata/perl5/site_perl/XML/DOM/Entity.pod
+libdata/perl5/site_perl/XML/DOM/EntityReference.pod
+libdata/perl5/site_perl/XML/DOM/NamedNodeMap.pm
+libdata/perl5/site_perl/XML/DOM/NamedNodeMap.pod
+libdata/perl5/site_perl/XML/DOM/Node.pod
+libdata/perl5/site_perl/XML/DOM/NodeList.pm
+libdata/perl5/site_perl/XML/DOM/NodeList.pod
+libdata/perl5/site_perl/XML/DOM/Notation.pod
+libdata/perl5/site_perl/XML/DOM/Parser.pod
+libdata/perl5/site_perl/XML/DOM/PerlSAX.pm
+libdata/perl5/site_perl/XML/DOM/ProcessingInstruction.pod
+libdata/perl5/site_perl/XML/DOM/Text.pod
+libdata/perl5/site_perl/XML/DOM/XMLDecl.pod
+libdata/perl5/site_perl/XML/Handler/BuildDOM.pm
 man/man3/XML::DOM.3p
+man/man3/XML::DOM::AttDef.3p
+man/man3/XML::DOM::AttlistDecl.3p
+man/man3/XML::DOM::Attr.3p
+man/man3/XML::DOM::CDATASection.3p
+man/man3/XML::DOM::CharacterData.3p
+man/man3/XML::DOM::Comment.3p
+man/man3/XML::DOM::DOMImplementation.3p
+man/man3/XML::DOM::Document.3p
+man/man3/XML::DOM::DocumentFragment.3p
+man/man3/XML::DOM::DocumentType.3p
+man/man3/XML::DOM::Element.3p
+man/man3/XML::DOM::ElementDecl.3p
+man/man3/XML::DOM::Entity.3p
+man/man3/XML::DOM::EntityReference.3p
+man/man3/XML::DOM::NamedNodeMap.3p
+man/man3/XML::DOM::Node.3p
+man/man3/XML::DOM::NodeList.3p
+man/man3/XML::DOM::Notation.3p
+man/man3/XML::DOM::Parser.3p
+man/man3/XML::DOM::PerlSAX.3p
+man/man3/XML::DOM::ProcessingInstruction.3p
+man/man3/XML::DOM::Text.3p
+man/man3/XML::DOM::XMLDecl.3p
+man/man3/XML::Handler::BuildDOM.3p
+@dirrm libdata/perl5/site_perl/XML/Handler
+@dirrm libdata/perl5/site_perl/XML/DOM
