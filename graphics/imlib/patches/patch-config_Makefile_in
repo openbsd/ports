@@ -1,11 +1,39 @@
---- config/Makefile.in.orig	Mon Mar 25 11:50:27 2002
-+++ config/Makefile.in	Thu May 16 22:12:55 2002
-@@ -23,7 +23,7 @@ bindir = @bindir@
- sbindir = @sbindir@
- libexecdir = @libexecdir@
- datadir = @datadir@
--sysconfdir = @sysconfdir@
-+sysconfdir = $(datadir)/examples/imlib
- sharedstatedir = @sharedstatedir@
- localstatedir = @localstatedir@
- libdir = @libdir@
+--- config/Makefile.in.orig	2002-03-25 11:50:27.000000000 -0500
++++ config/Makefile.in	2003-11-13 16:15:46.000000000 -0500
+@@ -120,21 +120,21 @@ Makefile: $(srcdir)/Makefile.in  $(top_b
+ 
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/imlib
+ 	@list='$(sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/imlib/$$p"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/imlib/$$p; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/imlib/$$p"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/imlib/$$p; \
+ 	  fi; fi; \
+ 	done
+ 
+ uninstall-sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	list='$(sysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
++	  rm -f $(DESTDIR)$(datadir)/examples/imlib/$$p; \
+ 	done
+ tags: TAGS
+ TAGS:
+@@ -179,7 +179,7 @@ all-redirect: all-am
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs:
+-	$(mkinstalldirs)  $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs)  $(DESTDIR)$(datadir)/examples/imlib
+ 
+ 
+ mostlyclean-generic:

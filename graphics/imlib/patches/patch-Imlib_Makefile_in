@@ -1,7 +1,7 @@
-$OpenBSD: patch-Imlib_Makefile_in,v 1.2 2002/05/17 02:42:15 brad Exp $
---- Imlib/Makefile.in.orig	Mon Mar 25 11:50:26 2002
-+++ Imlib/Makefile.in	Thu May 16 21:56:33 2002
-@@ -120,7 +120,7 @@ include_HEADERS = Imlib.h Imlib_private.
+$OpenBSD: patch-Imlib_Makefile_in,v 1.3 2003/11/14 23:52:42 brad Exp $
+--- Imlib/Makefile.in.orig	2002-03-25 11:50:26.000000000 -0500
++++ Imlib/Makefile.in	2003-11-13 14:57:33.000000000 -0500
+@@ -120,12 +120,12 @@ include_HEADERS = Imlib.h Imlib_private.
  libImlib_la_SOURCES =  	cache.c			colors.c		load.c			misc.c			rend.c			utils.c			save.c			snprintf.c
  
  
@@ -10,3 +10,9 @@ $OpenBSD: patch-Imlib_Makefile_in,v 1.2 2002/05/17 02:42:15 brad Exp $
  #libImlib_la_LDDADD     = $(SUPPORT_LIBS)
  libImlib_la_LIBADD = $(SUPPORT_LIBS) $(X_PRE_LIBS) 			 $(X_LIBS) $(X_EXTRA_LIBS)
  
+ 
+-DEFS = -DSYSTEM_IMRC=\"$(sysconfdir)/imrc\" 	-DSYSCONFDIR=\"$(sysconfdir)\"
++DEFS = -DSYSTEM_IMRC=\"$(sysconfdir)/imlib/imrc\" 	-DSYSCONFDIR=\"$(sysconfdir)\"
+ 
+ 
+ INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. $(X_CFLAGS)
