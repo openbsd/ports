@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.33 2001/03/28 11:19:33 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.34 2001/03/28 16:37:27 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -120,11 +120,13 @@ _SUBDIRUSE: .USE
 		continue; \
 	    fi; \
 	    ${ECHO_MSG} "===> ${PKGPATH}${_SEP}$${edir}$$display"; \
+	    set +e; \
 	    if eval  $$toset \
 		PKGPATH=${PKGPATH}${_SEP}$$edir \
 		RECURSIVE_FETCH_LIST=${RECURSIVE_FETCH_LIST} \
 		${MAKE} ${.TARGET:realinstall=install}; \
 	    then :; else ${REPORT_PROBLEM}; fi; \
+	    set -e; \
 	done
 
 ${SUBDIR}::
