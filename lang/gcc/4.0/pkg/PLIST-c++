@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1 2005/01/06 19:36:29 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2005/01/17 19:20:10 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -162,8 +162,8 @@ include/c++/${V}/ext/
 include/c++/${V}/ext/algorithm
 include/c++/${V}/ext/array_allocator.h
 include/c++/${V}/ext/bitmap_allocator.h
+include/c++/${V}/ext/codecvt_specializations.h
 include/c++/${V}/ext/debug_allocator.h
-include/c++/${V}/ext/enc_filebuf.h
 include/c++/${V}/ext/functional
 include/c++/${V}/ext/hash_fun.h
 include/c++/${V}/ext/hash_map
@@ -193,7 +193,6 @@ include/c++/${V}/${CONFIG}/bits/c++allocator.h
 include/c++/${V}/${CONFIG}/bits/c++config.h
 include/c++/${V}/${CONFIG}/bits/c++io.h
 include/c++/${V}/${CONFIG}/bits/c++locale.h
-include/c++/${V}/${CONFIG}/bits/codecvt_specializations.h
 include/c++/${V}/${CONFIG}/bits/ctype_base.h
 include/c++/${V}/${CONFIG}/bits/ctype_inline.h
 include/c++/${V}/${CONFIG}/bits/ctype_noninline.h

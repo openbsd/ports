@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ada,v 1.1 2005/01/06 19:36:29 espie Exp $
+@comment $OpenBSD: PLIST-ada,v 1.2 2005/01/17 19:20:10 espie Exp $
 bin/gnat
 bin/gnatbind
 bin/gnatbl
@@ -12,8 +12,6 @@ bin/gnatmake
 bin/gnatname
 bin/gnatprep
 bin/gnatxref
-bin/gpr2make
-bin/gprcmd
 bin/gprmake
 @info info/gnat-style.info
 @info info/gnat_rm.info
