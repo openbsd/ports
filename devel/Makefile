@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2004/12/16 21:23:49 pedro Exp $
+# $OpenBSD: Makefile,v 1.280 2004/12/21 03:19:55 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -239,6 +239,7 @@
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-VCP-autrijus
+     SUBDIR += p5-Want
      SUBDIR += p5-YAML
      SUBDIR += pango
      SUBDIR += pccts
