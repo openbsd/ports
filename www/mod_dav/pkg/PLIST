@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/13 16:39:25 jakob Exp $
+lib/libdav.so
+sbin/mod_dav-enable
+share/doc/mod_dav/INSTALL
+share/doc/mod_dav/LICENSE.html
+share/doc/mod_dav/README
+@dirrm share/doc/mod_dav
