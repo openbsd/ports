@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2005/01/23 06:06:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2005/01/23 19:21:43 pvalchev Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.jpilot.org/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Antoine Jacoutot <ajacoutot@lphp.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
