@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/05/16 05:21:24 kevlo Exp $
 bin/imgsize
 libdata/perl5/site_perl/Image/Size.pm
 libdata/perl5/site_perl/auto/Image/Size/autosplit.ix
 libdata/perl5/site_perl/auto/Image/Size/bmpsize.al
 libdata/perl5/site_perl/auto/Image/Size/gifsize.al
 libdata/perl5/site_perl/auto/Image/Size/jpegsize.al
+libdata/perl5/site_perl/auto/Image/Size/mngsize.al
 libdata/perl5/site_perl/auto/Image/Size/pcdsize.al
 libdata/perl5/site_perl/auto/Image/Size/pngsize.al
 libdata/perl5/site_perl/auto/Image/Size/ppmsize.al
