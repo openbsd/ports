@@ -3,17 +3,18 @@
 # Date created:		December 10, 1996
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.9 1998/06/23 23:11:10 marc Exp $
+# $OpenBSD: Makefile,v 1.10 1998/07/23 09:17:40 form Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
-DISTNAME=	lesstif-0.85
+DISTNAME=	lesstif-0.85.3
 CATEGORIES=	x11
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
-		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/
+		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
+		ftp://ftp.mathematik.th-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
 
 USE_X11=	yes
 
