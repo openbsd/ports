@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2005/01/29 22:56:34 robert Exp $
+# $OpenBSD: Makefile,v 1.38 2005/02/11 18:52:04 sturm Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
 VERSION=	1.2.7
 DISTNAME=	SDL-${VERSION}
-PKGNAME=	${DISTNAME:L}p0
+PKGNAME=	${DISTNAME:L}p1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		X11 Xext m usbhid
+WANTLIB=		m usbhid
 
 MASTER_SITES=	${HOMEPAGE}release/ \
 		http://www.devolution.com/~slouken/SDL/release/
@@ -96,6 +96,7 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 USE_X11=	Yes
+WANTLIB+=	X11 Xext
 .endif
 
 NO_REGRESS=	Yes
