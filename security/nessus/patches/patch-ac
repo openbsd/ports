@@ -1,77 +1,11 @@
---- libnasl/nasl/init.c.orig	Wed Sep 15 04:35:13 1999
-+++ libnasl/nasl/init.c	Tue Oct 19 10:25:51 1999
+--- libnasl/nasl/init.c.orig	Sat Jun 10 12:52:36 2000
++++ libnasl/nasl/init.c	Sat Jun 10 12:52:49 2000
 @@ -19,7 +19,7 @@
   */
  #include <includes.h>
  #include <nasl_raw.h>
 -#include <nessus/pcap.h>
 +#include <pcap.h>
+ #include <nessus/harglists.h>
  #include "ip.h"
  #include "udp.h"
- #include "tcp.h"
---- libnasl/nasl/nasl.c.orig	Fri Jul 16 11:48:42 1999
-+++ libnasl/nasl/nasl.c	Tue Oct 19 10:25:51 1999
-@@ -18,7 +18,7 @@
-  *
-  */
- #include <includes.h>
--#include <nessus/pcap.h>
-+#include <pcap.h>
- #include "init.h"
- #include "pkt_utils.h"
- #include "parser.h"
---- libnasl/nasl/nessus_extensions.c.orig	Sun Sep 19 12:47:41 1999
-+++ libnasl/nasl/nessus_extensions.c	Tue Oct 19 10:25:51 1999
-@@ -19,7 +19,7 @@
-  */
- #include <includes.h>
- #include <nasl_raw.h>
--#include <nessus/pcap.h>
-+#include <pcap.h>
- #include "strutils.h"
- #include "nasl_inet.h"
- #include "defines.h"
---- libnasl/nasl/pcap.c.orig	Tue Sep 14 17:25:37 1999
-+++ libnasl/nasl/pcap.c	Tue Oct 19 10:25:51 1999
-@@ -20,7 +20,7 @@
- #include <includes.h>
- #include <nasl_raw.h>
- #include <nessus/libnessus.h>
--#include <nessus/pcap.h>
-+#include <pcap.h>
- 
- extern int islocalhost(struct in_addr *);
- pcap_t * init_ip_pcap(struct arglist *, struct in_addr src, struct in_addr dst,
---- libnasl/nasl/pcap_next.c.orig	Tue Sep 14 08:17:09 1999
-+++ libnasl/nasl/pcap_next.c	Tue Oct 19 10:25:51 1999
-@@ -18,7 +18,7 @@
-  *
-  */
- #include <includes.h>
--#include <nessus/pcap.h>
-+#include <pcap.h>
- #include <nasl_raw.h>
- #include "sanitize.h"
- #include "defines.h"
---- libnasl/nasl/pkt_utils.c.orig	Mon Sep 20 10:13:12 1999
-+++ libnasl/nasl/pkt_utils.c	Tue Oct 19 10:25:51 1999
-@@ -18,7 +18,7 @@
-  *
-  */
- #include <includes.h>
--#include <nessus/pcap.h>
-+#include <pcap.h>
- #include <nasl_raw.h>
- #include "strutils.h"
- #include "nasl_inet.h"
---- libnasl/nasl/send_packet.c.orig	Sun Sep 12 16:51:04 1999
-+++ libnasl/nasl/send_packet.c	Tue Oct 19 10:25:51 1999
-@@ -19,7 +19,7 @@
-  */
- #include <includes.h>
- #include <nasl_raw.h>
--#include <nessus/pcap.h>
-+#include <pcap.h>
- #include "pkt_pcap.h"
- #include "sanitize.h"
- #include "defines.h"

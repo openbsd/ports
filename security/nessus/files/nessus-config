@@ -6,16 +6,12 @@
 #
 # fake the funk. dugsong@monkey.org
 
-VERSION=0.98.3
-
+VERSION=@@VERS@@
 LIBDIR=w00w00nessus-libraries
 COREDIR=w00w00nessus-core
-
-CFLAGS="-DENABLE_CRYPTO_LAYER -DUSE_ZLIB_COMPRESSION "
-
-INCS="-I$COREDIR/include -I$LIBDIR/include -I$LIBDIR/cipher"
-
-LIBS="-L$LIBDIR/libnessus/.libs -lnessus -L$LIBDIR/libhosts_gatherer/.libs -lhosts_gatherer -L$LIBDIR/cipher/.libs -lpeks -lpcap -lz -lgmp -lresolv"
+CIPHER="-L$LIBDIR/libpeks -lpeks -lgmp"
+CIPHER_CFLAGS="-DENABLE_CRYPTO_LAYER -I$COREDIR/include -I$LIBDIR/include -I$LIBDIR/libpeks"
+EXTRA="-lresolv  "
 
 usage()
 {
@@ -25,6 +21,7 @@ usage()
 
 
 test $# -gt 0 || usage 1
+
 
 # check whether we have echo -n, depending
 # on the current shell, used
@@ -41,10 +38,10 @@ while test $# -gt 0; do
 		;;
 	--libs)
 	
-		echo $Xn "$LIBS $Xc"
+		echo $Xn "-L$LIBDIR/libnessus/.libs -lnessus -L$LIBDIR/libhosts_gatherer/.libs -lhosts_gatherer -lpcap $CIPHER $EXTRA $Xc"
 		;;
 	--cflags)
-		echo $Xn "$CFLAGS $INCS $Xc"
+		echo $Xn "-I$INCLUDEDIR -I$INCLUDEDIR/nessus $CIPHER_CFLAGS $Xc"
 		;;
 	--help | -h)
 		usage 0
@@ -57,4 +54,3 @@ while test $# -gt 0; do
 done
 
 echo 	
-	

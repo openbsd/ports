@@ -1,0 +1,11 @@
+--- libnasl/Makefile.orig	Sat Jun 10 16:30:05 2000
++++ libnasl/Makefile	Sat Jun 10 16:29:20 2000
+@@ -8,7 +8,7 @@
+ 	touch $@
+ 
+ install :
+-	cd nasl && ${MAKE} install
++	cd nasl && ${MAKE} prefix=${prefix} install
+ 	test -d ${includedir}/nessus || $(INSTALL_DIR) -m 755 ${includedir}/nessus
+ 	$(INSTALL) -c -m 0444 include/nasl.h ${includedir}/nessus
+ 	test -d ${bindir} || $(INSTALL_DIR) -m 755 ${bindir}

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+if [ x$2 = xPOST-INSTALL ]
+then
+	echo
+	echo "+---------------"
+	echo "| nessus configuration files have been copied to"
+	echo "|	${PREFIX}/share/examples/nessus"
+	echo "| Before nessusd can be run, you need to copy these to"
+	echo "| /etc/nessus."
+	echo "+---------------"
+	echo
+fi
+
+exit 0
+

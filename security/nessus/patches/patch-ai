@@ -1,0 +1,11 @@
+--- libnasl/nasl/pcap.c.orig	Sat Jun 10 12:55:31 2000
++++ libnasl/nasl/pcap.c	Sat Jun 10 12:55:36 2000
+@@ -21,7 +21,7 @@
+ #include <includes.h>
+ #include <nasl_raw.h>
+ #include <nessus/libnessus.h>
+-#include <nessus/pcap.h>
++#include <pcap.h>
+ #include "nasl_memory.h"
+ 
+ #ifdef PCAP_RESTART
