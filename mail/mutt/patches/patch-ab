@@ -1,22 +1,20 @@
---- Makefile.in.orig	Sat Jan  2 20:05:12 1999
-+++ Makefile.in	Sat Jan  2 20:08:59 1999
-@@ -651,17 +651,8 @@
- 
- install-data-local:
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(sharedir)
--	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
--	-if [ -f $(DESTDIR)$(sharedir)/Muttrc ] ; then \
--		mv $(DESTDIR)$(sharedir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
--	elif [ -f $(DESTDIR)$(sharedir)/../Muttrc ] ; then \
--	 	mv $(DESTDIR)$(sharedir)/../Muttrc $(DESTDIR)$(sysconfdir) ; \
--	elif [ ! -f $(DESTDIR)$(sysconfdir)/Muttrc ] ; then \
--		$(INSTALL) -m 644 $(srcdir)/Muttrc $(DESTDIR)$(sysconfdir) ; \
--	fi
--	-if [ ! -f $(DESTDIR)$(sysconfdir)/mime.types ]; then \
--		$(INSTALL) -m 644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir); \
--	fi
-+	$(INSTALL_DATA) $(srcdir)/Muttrc $(DESTDIR)$(sharedir)/Muttrc.sample
-+	$(INSTALL_DATA) $(srcdir)/mime.types $(DESTDIR)$(sharedir)/mime.types.sample
- 
- # Don't make this one ChangeLog - it's intended to be
- # used manually.
+--- rfc1524.c.orig	Sat Dec 12 03:07:15 1998
++++ rfc1524.c	Mon Jan 11 22:08:58 1999
+@@ -436,7 +436,7 @@
+   if (s[0] == '\0')
+   {
+     snprintf (s, l, "%s/muttXXXXXX", buf);
+-    mktemp (s);
++    if (mkstemp (s) == -1) mutt_error("Can not open temporary file\n");
+   }
+   else
+   {
+@@ -447,7 +447,7 @@
+     if ((period = strrchr (tmp, '.')) != NULL)
+       *period = 0;
+     snprintf (s, l, "%s/%s.XXXXXX", buf, tmp);
+-    mktemp (s);
++    if (mkstemp (s) == -1) mutt_error("Can not open temporary file\n");
+     if (period != NULL)
+     {
+       *period = '.';

@@ -1,9 +1,11 @@
 @cwd /usr/local
-@name mutt-0.95
+@name mutt-0.95.1i
 @pkgdep libslang-1.2.2
 bin/mutt
 man/man1/mutt.1
 man/man1/mutt_dotlock.1
+etc/Muttrc
+etc/mime.types
 share/doc/mutt/manual.txt
 share/doc/mutt/PGP-Notes.txt
 share/doc/mutt/applying-patches.txt
@@ -21,8 +23,7 @@ share/locale/it/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
-share/mutt/Muttrc.sample
-share/mutt/mime.types.sample
+share/locale/pl/LC_MESSAGES/mutt.mo
 share/mutt/charsets/ansi-x3-110-1983
 share/mutt/charsets/ansi-x3-4-1968
 share/mutt/charsets/asmo-449
@@ -185,6 +186,7 @@ share/mutt/charsets/charsets.alias.dist
 share/mutt/charsets/charsets.alias
 @dirrm share/mutt/charsets
 @dirrm share/mutt
+@dirrm share/locale/pl/LC_MESSAGES
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/uk/LC_MESSAGES
 @dirrm share/locale/uk
@@ -192,4 +194,6 @@ share/mutt/charsets/charsets.alias
 @dirrm share/locale/it/LC_MESSAGES
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale
 @dirrm share/doc/mutt
+@dirrm etc
