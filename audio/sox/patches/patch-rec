@@ -1,0 +1,27 @@
+--- rec.orig	Sun Sep 10 10:36:20 2000
++++ rec	Sun Sep 10 10:39:55 2000
+@@ -121,8 +121,7 @@
+ 
+   esac
+ 
+-else
+-  if [ "$arch" = "Linux" ]; then
++elif [ "$arch" = "Linux" ]; then
+ 
+     if [ "$device" = "" ]; then
+       device="/dev/dsp"
+@@ -132,6 +131,14 @@
+ #    if [ "$volume" != "" ] ; then
+ #      mixer $volume
+ #    fi
++
++    sox $volume -t ossdsp $device $fopts "$filename" $effects
++
++elif [ "$arch" = "OpenBSD" ]; then
++
++    if [ "$device" = "" ]; then
++      device="/dev/sound"
++    fi
+ 
+     sox $volume -t ossdsp $device $fopts "$filename" $effects
+   fi

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/10 17:39:22 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/10 16:05:01 brad Exp $
 
-DISTNAME=	sox-12.15
+DISTNAME=	sox-12.17
 CATEGORIES=	audio
-NEED_VERSION=	1.210
+NEED_VERSION=	1.320
 MASTER_SITES=	http://home.sprynet.com/~cbagwell/
+
+HOMEPAGE=	http://home.sprynet.com/~cbagwell/sox.html
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -12,11 +14,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FILE=	Makefile.unx
-MAKE_ENV=	MISC_DEFINES='-Dunix ${CFLAGS}'
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= autoconf
+CONFIGURE_ARGS=	--enable-fast-alaw --enable-fast-ulaw \
+		--with-oss-dsp --without-sun_audio
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sox ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sox.1 ${PREFIX}/man/man1/sox.1
+FLAVORS=	gsm
+FLAVOR?=
+
+.if ${FLAVOR:L} == "gsm"
+LIB_DEPENDS=	gsm.1::audio/gsm
+CONFIGURE_ARGS+= --with-gsminc="${LOCALBASE}/include" \
+		 --with-gsmlib="${LOCALBASE}/lib"
+.endif
 
 .include <bsd.port.mk>

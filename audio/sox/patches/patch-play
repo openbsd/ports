@@ -1,0 +1,15 @@
+--- play.orig	Thu Aug  3 20:58:37 2000
++++ play	Sun Sep 10 10:57:01 2000
+@@ -180,6 +180,12 @@
+ 	device="/dev/dsp"
+     fi
+     ;;
++  OpenBSD)
++    arch_defines="-t ossdsp"
++    if [ -z "$device" ]; then
++	device="/dev/sound"
++    fi
++    ;;
+ esac
+ 
+ # If name is "rec" then record else assume user is wanting to play
