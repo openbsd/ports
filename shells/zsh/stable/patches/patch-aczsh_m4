@@ -1,0 +1,12 @@
+$OpenBSD: patch-aczsh_m4,v 1.1 2002/04/15 15:48:27 lebel Exp $
+--- aczsh.m4.orig	Sun Apr 14 01:20:18 2002
++++ aczsh.m4	Sun Apr 14 01:20:40 2002
+@@ -218,6 +218,8 @@ main()
+     sym1 = zsh_getaddr1();
+     if(!sym1) exit(1);
+     if(sym1 != sym2) exit(1);
++    dlclose(handle1);
++    dlclose(handle2);
+     exit(0);
+ }
+ ], [zsh_cv_shared_$1=yes],
