@@ -1,7 +1,7 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/06/23 03:06:34 jasoni Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/06/26 15:30:34 jasoni Exp $
 #
-# Pre/post-installation setup of bash
+# Pre/post-installation setup of ispell
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
