@@ -1,0 +1,12 @@
+$OpenBSD: patch-vfprint_c,v 1.1 2004/02/29 19:07:34 pvalchev Exp $
+--- vfprint.c.orig	2003-02-13 08:04:39.000000000 -0700
++++ vfprint.c	2004-02-28 13:13:24.000000000 -0700
+@@ -23,7 +23,7 @@ vfprint(int fd, char *fmt, va_list args)
+ 	int n;
+ 
+ 	fmtfdinit(&f, fd, buf, sizeof(buf));
+-	f.args = args;
++	va_copy(f.args, args);
+ 	n = dofmt(&f, fmt);
+ 	if(n > 0 && __fmtFdFlush(&f) == 0)
+ 		return -1;

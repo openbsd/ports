@@ -1,0 +1,12 @@
+$OpenBSD: patch-vsnprint_c,v 1.1 2004/02/29 19:07:34 pvalchev Exp $
+--- vsnprint.c.orig	2003-02-13 08:04:39.000000000 -0700
++++ vsnprint.c	2004-02-28 13:15:38.000000000 -0700
+@@ -30,7 +30,7 @@ vsnprint(char *buf, int len, char *fmt, 
+ 	f.flush = 0;
+ 	f.farg = nil;
+ 	f.nfmt = 0;
+-	f.args = args;
++	va_copy(f.args, args);
+ 	dofmt(&f, fmt);
+ 	*(char*)f.to = '\0';
+ 	return (char*)f.to - buf;

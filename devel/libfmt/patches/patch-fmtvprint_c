@@ -1,0 +1,20 @@
+$OpenBSD: patch-fmtvprint_c,v 1.1 2004/02/29 19:07:34 pvalchev Exp $
+--- fmtvprint.c.orig	2003-02-13 08:04:39.000000000 -0700
++++ fmtvprint.c	2004-02-28 13:11:56.000000000 -0700
+@@ -32,13 +32,13 @@ fmtvprint(Fmt *f, char *fmt, va_list arg
+ 	f->flags = 0;
+ 	f->width = 0;
+ 	f->prec = 0;
+-	va = f->args;
+-	f->args = args;
++	va_copy(va, f->args);
++	va_copy(f->args, args);
+ 	n = dofmt(f, fmt);
+ 	f->flags = 0;
+ 	f->width = 0;
+ 	f->prec = 0;
+-	f->args = va;
++	va_copy(f->args, va);
+ 	if(n >= 0)
+ 		return 0;
+ 	return n;
