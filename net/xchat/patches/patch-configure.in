@@ -1,5 +1,5 @@
 --- configure.in.orig	Fri Aug 25 01:46:09 2000
-+++ configure.in	Sun Aug 27 14:18:47 2000
++++ configure.in	Sun Aug 27 18:24:37 2000
 @@ -133,10 +133,7 @@
    echo
  fi
@@ -8,7 +8,7 @@
 -  gtkfe=yes
 -  imlib=yes
 -else
-+if test "$gtkfe" != yes; then
++if test "$gtkfe" = no; then
    gnome=no
    imlib=no
    panel=no
