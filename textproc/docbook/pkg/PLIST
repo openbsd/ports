@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/03/31 10:20:47 avsm Exp $
-@option no-default-conflict
-@pkgcfl docbook-[0-9\.]*
+@comment $OpenBSD: PLIST,v 1.5 2001/04/16 02:31:21 avsm Exp $
 share/sgml/catalog
 share/sgml/docbook/2.4.1/241chg.txt
 share/sgml/docbook/2.4.1/announce.txt
