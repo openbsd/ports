@@ -1,0 +1,12 @@
+$OpenBSD: patch-logview_Makefile_in,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
+--- logview/Makefile.in.orig	Sun Jul 13 23:04:56 2003
++++ logview/Makefile.in	Sun Jul 13 23:05:04 2003
+@@ -149,7 +149,7 @@ man_MANS = gnome-system-log.1
+ Utilities_in_files = gnome-system-log.desktop.in
+ Utilities_DATA = $(Utilities_in_files:.desktop.in=.desktop)
+ 
+-schemadir = $(sysconfdir)/gconf/schemas
++schemadir = $(GCONF_SCHEMA_FILE_DIR)
+ schemas_in_file = logview.schemas.in
+ schema_DATA = $(schemas_in_file:.schemas.in=.schemas)
+ schema_source_data = $(foreach file, $(schema_DATA), $(srcdir)/$(file))

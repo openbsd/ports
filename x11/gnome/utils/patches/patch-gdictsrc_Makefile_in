@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdictsrc_Makefile_in,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
+--- gdictsrc/Makefile.in.orig	Sun Jul 13 23:05:18 2003
++++ gdictsrc/Makefile.in	Sun Jul 13 23:05:42 2003
+@@ -161,7 +161,7 @@ serverdir = $(libdir)/bonobo/servers
+ server_in_files = GNOME_GDictApplet.server.in
+ server_DATA = $(server_in_files:.server.in=.server)
+ 
+-schemadir = $(sysconfdir)/gconf/schemas
++schemadir = $(GCONF_SCHEMA_FILE_DIR)
+ schemas_in_file = gdict.schemas.in
+ schema_DATA = $(schemas_in_file:.schemas.in=.schemas)
+ schema_source_data = $(foreach file, $(schema_DATA), $(srcdir)/$(file))

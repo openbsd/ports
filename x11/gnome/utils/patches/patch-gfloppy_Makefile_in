@@ -1,0 +1,12 @@
+$OpenBSD: patch-gfloppy_Makefile_in,v 1.1.1.1 2003/08/07 02:15:50 marcm Exp $
+--- gfloppy/Makefile.in.orig	Sun Jul 13 23:05:52 2003
++++ gfloppy/Makefile.in	Sun Jul 13 23:06:14 2003
+@@ -134,7 +134,7 @@ gfloppyapp_DATA = $(gfloppyapp_in_files:
+ 
+ Mimedir = $(datadir)/mime-info
+ 
+-schemadir = $(sysconfdir)/gconf/schemas
++schemadir = $(GCONF_SCHEMA_FILE_DIR)
+ schemas_in_file = gfloppy.schemas.in
+ schema_DATA = $(schemas_in_file:.schemas.in=.schemas)
+ schema_source_data = $(foreach file, $(schema_DATA), $(srcdir)/$(file))
