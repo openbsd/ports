@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ec_simple_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
---- src/ec_simple.c.orig	Sat Dec 28 14:47:25 2002
-+++ src/ec_simple.c	Sat Dec 28 14:48:00 2002
-@@ -138,7 +138,7 @@ void Simple_CreateCertFile(void)
+$OpenBSD: patch-src_interface_console_ec_simple_c,v 1.1 2003/01/29 02:02:51 margarida Exp $
+--- src/interface/console/ec_simple.c.orig	Tue Jan 28 19:11:31 2003
++++ src/interface/console/ec_simple.c	Tue Jan 28 19:13:32 2003
+@@ -139,7 +139,7 @@ void Simple_CreateCertFile(void)
  
     if ( !fork() )
     {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_ec_simple_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
           Error_msg("Could not launch openssl --> " OPENSSL_PATH);
     }
     else
-@@ -146,7 +146,7 @@ void Simple_CreateCertFile(void)
+@@ -147,7 +147,7 @@ void Simple_CreateCertFile(void)
  
     if ( !fork() )
     {
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_ec_simple_c,v 1.1 2002/12/28 23:29:13 pvalchev Exp $
           Error_msg("Could not launch openssl --> " OPENSSL_PATH);
     }
     else
-@@ -154,7 +154,7 @@ void Simple_CreateCertFile(void)
+@@ -155,7 +155,7 @@ void Simple_CreateCertFile(void)
  
     if ( !fork() )
     {

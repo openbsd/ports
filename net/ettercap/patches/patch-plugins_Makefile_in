@@ -1,0 +1,25 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.1 2003/01/29 02:02:51 margarida Exp $
+--- plugins/Makefile.in.orig	Tue Jan 28 19:47:55 2003
++++ plugins/Makefile.in	Tue Jan 28 19:51:07 2003
+@@ -10,7 +10,7 @@ all: plugins
+ 
+ plugins:
+ 	for plug in $(PLUGINS); do \
+-	make -C $$plug; \
++	cd $$plug && make ; cd .. ; \
+ 	done
+ 
+ install: plugins
+@@ -22,10 +22,10 @@ install: plugins
+ clean:
+ 	rm -f *.bak
+ 	for plug in $(PLUGINS); do \
+-	make clean -C $$plug; \
++	cd $$plug && make clean ; cd .. ; \
+ 	done
+ 
+ distclean:
+ 	for plug in $(PLUGINS); do \
+-	make distclean -C $$plug; \
++	cd $$plug && make distclean ; cd .. ; \
+ 	done

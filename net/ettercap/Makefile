@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/22 01:24:49 margarida Exp $
+# $OpenBSD: Makefile,v 1.21 2003/01/29 02:02:51 margarida Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
-VER=		0.6.7
+VER=		0.6.9
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
 
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-https --enable-plugins
 

@@ -1,24 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2002/12/29 22:49:02 pvalchev Exp $
---- configure.orig	Fri Jun 14 10:53:14 2002
-+++ configure	Sun Dec 29 01:06:51 2002
-@@ -8554,14 +8554,14 @@ echo "${ECHO_T}yes" >&6
-       ;;
-    no)  echo "$as_me:$LINENO: result: no." >&5
- echo "${ECHO_T}no." >&6
--      E_CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
-+      E_CFLAGS="-funroll-loops -fomit-frame-pointer -fsigned-char -Wall"
-       ac_cv_ec_debug=no
-       ;;
- esac
- else
-   echo "$as_me:$LINENO: result: no. disabled by default." >&5
- echo "${ECHO_T}no. disabled by default." >&6
--   E_CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
-+   E_CFLAGS="-funroll-loops -fomit-frame-pointer -fsigned-char -Wall"
-    ac_cv_ec_debug=no
- 
- fi;
-@@ -8917,7 +8917,7 @@ if test $check_ssh -ne 0; then
+$OpenBSD: patch-configure,v 1.11 2003/01/29 02:02:51 margarida Exp $
+--- configure.orig	Tue Jan 28 19:01:15 2003
++++ configure	Tue Jan 28 19:00:13 2003
+@@ -10057,7 +10057,7 @@ if test $check_ssh -ne 0; then
  
     if test -f $ssl_path/include/openssl/ssl.h; then
        COPTS="$COPTS -I$ssl_path/include"
@@ -27,7 +10,7 @@ $OpenBSD: patch-configure,v 1.10 2002/12/29 22:49:02 pvalchev Exp $
        cat >>confdefs.h <<\_ACEOF
  #define HAVE_OPENSSL 1
  _ACEOF
-@@ -8927,7 +8927,7 @@ _ACEOF
+@@ -10067,7 +10067,7 @@ _ACEOF
  echo "${ECHO_T}yes" >&6
     elif test -f $ssl_path/ssl/include/openssl/ssl.h; then
        COPTS="$COPTS -I$ssl_path/ssl/include"
@@ -36,7 +19,7 @@ $OpenBSD: patch-configure,v 1.10 2002/12/29 22:49:02 pvalchev Exp $
        cat >>confdefs.h <<\_ACEOF
  #define HAVE_OPENSSL 1
  _ACEOF
-@@ -8936,7 +8936,7 @@ _ACEOF
+@@ -10076,7 +10076,7 @@ _ACEOF
        echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
     elif test -f /usr/include/openssl/ssl.h; then
