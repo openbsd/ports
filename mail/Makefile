@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/03/22 23:23:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.54 2001/03/28 03:27:25 kevlo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += bulk_mailer
      SUBDIR += c-client
      SUBDIR += checkpassword
+     SUBDIR += cmail
      SUBDIR += courier-imap
      SUBDIR += courier-imap:ldap
      SUBDIR += courier-imap:ldap,pop3
