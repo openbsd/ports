@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/14 15:28:29 espie Exp $
+@comment X11R6/README.ati.2
+lib/X11/modules/drivers/ati_drv.o
+lib/X11/modules/drivers/atimisc_drv.o
+lib/X11/modules/drivers/r128_drv.o
+lib/X11/modules/drivers/radeon_drv.o
+lib/X11/modules/multimedia/bt829_drv.o
+lib/X11/modules/multimedia/fi1236_drv.o
+lib/X11/modules/multimedia/msp3430_drv.o
+lib/X11/modules/multimedia/tda8425_drv.o
+lib/X11/modules/multimedia/tda9850_drv.o
+lib/X11/modules/multimedia/theatre_drv.o
+@dirrm lib/X11/modules/multimedia
+@dirrm lib/X11/modules/drivers
+@dirrm lib/X11/modules
