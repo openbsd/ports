@@ -1,12 +1,6 @@
---- conf/main.cf.orig	Mon Sep  6 22:20:55 1999
-+++ conf/main.cf	Sat Sep 11 16:36:04 1999
-@@ -18,19 +18,19 @@
- # Postfix support programs and daemons. This setting can be overruled
- # with the command_directory and daemon_directory parameters.
- #
--program_directory = /some/where/postfix/bin
-+#program_directory = /some/where/postfix/bin
- 
+--- conf/main.cf.orig	Mon Dec 27 22:03:38 1999
++++ conf/main.cf	Sat Jan  1 20:51:22 2000
+@@ -17,14 +17,14 @@
  # The command_directory parameter specifies the location of all
  # postXXX commands.  The default value is $program_directory.
  #
@@ -23,7 +17,7 @@
  
  # QUEUE AND PROCESS OWNERSHIP
  #
-@@ -47,7 +47,7 @@
+@@ -41,7 +41,7 @@
  # These rights are used in the absence of a recipient user context.
  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
  #
@@ -32,7 +26,7 @@
  
  # INTERNET HOST AND DOMAIN NAMES
  # 
-@@ -179,7 +179,7 @@
+@@ -165,7 +165,7 @@
  # "postfix reload" to eliminate the delay.
  #
  #alias_maps = dbm:/etc/aliases
@@ -41,7 +35,7 @@
  #alias_maps = hash:/etc/aliases, nis:mail.aliases
  #alias_maps = netinfo:/aliases
  
-@@ -190,7 +190,7 @@
+@@ -176,7 +176,7 @@
  #
  #alias_database = dbm:/etc/aliases
  #alias_database = dbm:/etc/mail/aliases
@@ -49,4 +43,4 @@
 +alias_database = hash:/etc/aliases
  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
  
- # DELIVERED-TO
+ # ADDRESS EXTENSIONS (e.g., user+foo)
