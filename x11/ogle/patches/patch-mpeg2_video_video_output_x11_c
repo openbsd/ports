@@ -1,20 +1,20 @@
-$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.6 2002/07/16 13:38:04 espie Exp $
---- mpeg2_video/video_output_x11.c.orig	Sun Jun 30 00:04:31 2002
-+++ mpeg2_video/video_output_x11.c	Tue Jul 16 15:17:38 2002
-@@ -1225,6 +1225,12 @@ void check_x_events(yuv_image_t *current
+$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.7 2003/02/24 22:56:35 espie Exp $
+--- mpeg2_video/video_output_x11.c.orig	Thu Feb 13 23:37:51 2003
++++ mpeg2_video/video_output_x11.c	Wed Feb 19 17:58:11 2003
+@@ -1335,6 +1335,12 @@ void check_x_events(yuv_image_t *current
  	if(keysym == XK_I) {
  	  screenshot_spu = 1;
  	}
-+	if (keysym == XK_1) {
++	if (keysym == XK_Z) {
 +	  subtitle_pos[subtitle_index]++;
 +	}
-+	if (keysym == XK_2) {
++	if (keysym == XK_X) {
 +		subtitle_pos[subtitle_index]--;
 +	}
        }
        break;
-     case ButtonPress:
-@@ -1771,6 +1777,8 @@ static void draw_win_x11(window_info *dw
+     case KeyRelease:
+@@ -2028,6 +2034,8 @@ static void draw_win_x11(window_info *dw
  	      window.video_area.height);
      XSync(mydisplay, False);
    }
@@ -23,7 +23,7 @@ $OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.6 2002/07/16 13:38:04 espie E
  }
  
  
-@@ -1854,6 +1862,8 @@ static void draw_win_xv(window_info *dwi
+@@ -2111,6 +2119,8 @@ static void draw_win_xv(window_info *dwi
         It waits for an XShmCompletionEvent */
      XIfEvent(mydisplay, &ev, predicate, NULL);
    }
