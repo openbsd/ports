@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/05/27 16:09:56 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/05/30 20:00:51 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
@@ -10,7 +10,6 @@ MAINTAINER=espie@cvs.openbsd.org
 
 FAKE=			Yes
 
-FLAVOR?=no_map gfx
 # GPL, included map is free
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
