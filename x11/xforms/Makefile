@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/13 04:04:02 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/02/13 02:06:10 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k hp300
 
@@ -12,7 +12,7 @@ DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
 CATEGORIES=	x11
 NEED_VERSION=	1.320
-MASTER_SITES=	ftp://ftp.via.ecp.fr/pub1/xforms/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/xforms/%SUBDIR%/
 MASTER_SITE_SUBDIR= openBSD-${XFORMS_ARCH}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	xforms/${MASTER_SITE_SUBDIR}
