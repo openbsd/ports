@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/22 22:17:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"command line JavaScript interpreter"
 
@@ -6,8 +6,6 @@ DISTNAME=		js-0.2.5
 CATEGORIES=		lang
 
 HOMEPAGE=		http://people.ssh.fi/mtr/js/
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

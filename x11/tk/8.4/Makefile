@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/04/09 21:47:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/05/07 15:28:32 naddy Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
@@ -10,8 +10,6 @@ CATEGORIES=	x11 x11/tk
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 
 HOMEPAGE=	http://www.tcl.tk/
-
-MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 # BSD 
 PERMIT_PACKAGE_CDROM=	Yes

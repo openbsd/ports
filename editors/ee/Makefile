@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/15 20:26:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"easy to use text editor"
 
@@ -7,8 +7,6 @@ DISTNAME=		ee-${VERSION}
 CATEGORIES=     	editors
 
 HOMEPAGE=		http://mahon.cwx.net/
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes 

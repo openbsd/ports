@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/19 20:01:03 jose Exp $
+# $OpenBSD: Makefile,v 1.9 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"automated password generator"
 
@@ -6,8 +6,6 @@ DISTNAME=		apg-2.2.0
 CATEGORIES=     	security
 
 HOMEPAGE=		http://www.adel.nursat.kz/apg/
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes 

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2003/01/24 18:52:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"converts .dvi files to plain text"
 
 DISTNAME=		dvi2tty-5.3.1
 CATEGORIES=     	print
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

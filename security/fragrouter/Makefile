@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/01 16:23:36 jose Exp $
+# $OpenBSD: Makefile,v 1.21 2004/05/07 15:28:32 naddy Exp $
 
 COMMENT=	"tool for testing network IDS implementations"
 
@@ -7,9 +7,7 @@ CATEGORIES=	security
 
 MASTER_SITES=	http://monkey.org/~dugsong/
 
-MAINTAINER=	Jose Nazario <jose@crimelabs.net>
-
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

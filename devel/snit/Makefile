@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/03 07:20:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"simple object oriented framework for Tcl"
 
@@ -8,8 +8,6 @@ DISTNAME=		snit${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.wjduquette.com/snit/
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes 

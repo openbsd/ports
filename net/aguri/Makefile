@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/05 02:41:50 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/07 15:28:31 naddy Exp $
 COMMENT=		"aggregation-based network traffic profiler"
 
 DISTNAME=		aguri-0.7
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.csl.sony.co.jp/person/kjc/software.html
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes 

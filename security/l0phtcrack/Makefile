@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/01 16:23:36 jose Exp $
+# $OpenBSD: Makefile,v 1.17 2004/05/07 15:28:32 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,8 +6,6 @@ COMMENT=	"Microsoft LANMAN & NT password sniffer/cracker"
 
 PKGNAME=	l0phtcrack-2.52
 CATEGORIES=	security
-
-MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 DISTFILES=	lcsrc.zip readsmb.c

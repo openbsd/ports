@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2004/04/09 21:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"Z-code interpreter for X11"
 
 DISTNAME=		zoom-1.0.1
 CATEGORIES=     	games
 HOMEPAGE=		http://www.logicalshift.demon.co.uk/unix/zoom/
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

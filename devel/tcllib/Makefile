@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/12/27 23:23:51 jose Exp $
+# $OpenBSD: Makefile,v 1.5 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"useful routines for Tcl"
 
@@ -7,8 +7,6 @@ CATEGORIES=		devel lang/tcl
 TCLLIB=			tcllib1.4
 
 HOMEPAGE=		http://www.tcl.tk/software/tcllib/
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # BSD style
 PERMIT_PACKAGE_CDROM=	Yes

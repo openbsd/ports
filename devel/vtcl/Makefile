@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/29 03:27:57 jose Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=		"Visual Tcl development environment"
 
@@ -6,8 +6,6 @@ DISTNAME=		vtcl-1.6.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://vtcl.sourceforge.net/
-
-MAINTAINER=             Jose Nazario <jose@crimelabs.net>
 
 # GPL2
 PERMIT_PACKAGE_CDROM=	Yes

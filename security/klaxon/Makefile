@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/09 02:43:49 jose Exp $
+# $OpenBSD: Makefile,v 1.7 2004/05/07 15:28:32 naddy Exp $
 
 COMMENT=	"small service wedge to do ident lookup on connecting party"
 
@@ -7,8 +7,6 @@ PKGNAME=		klaxon-1.5
 CATEGORIES=     	security
 
 HOMEPAGE=		http://www.eng.auburn.edu/users/doug/second.html
-
-MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes 

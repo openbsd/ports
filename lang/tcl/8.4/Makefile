@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/04/09 21:47:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/05/07 15:28:31 naddy Exp $
 # Uses pthreads (can but does not at the moment)
 
 COMMENT=	"Tool Command Language"
@@ -11,8 +11,6 @@ CATEGORIES=	lang lang/tcl
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcl/}
 
 HOMEPAGE=	http://www.tcl.tk/
-
-MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

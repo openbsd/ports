@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/02/01 16:23:36 jose Exp $
+# $OpenBSD: Makefile,v 1.23 2004/05/07 15:28:31 naddy Exp $
 
 COMMENT=	"network monitoring library with TCP/IP reassembly"
 
@@ -8,8 +8,6 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
 
 HOMEPAGE=	http://www.packetfactory.net/projects/libnids/
-
-MAINTAINER=	Jose Nazario <jose@crimelabs.net>
 
 LIB_DEPENDS=	net::net/libnet
 
