@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/16 14:58:49 markus Exp $
+include/bio.h
+lib/libbio.a
+man/man3/bio.3
