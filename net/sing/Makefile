@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/27 18:07:00 danh Exp $
+# $OpenBSD: Makefile,v 1.9 2003/04/01 16:58:37 danh Exp $
 
 COMMENT=	"send ICMP nasty garbage"
 
@@ -8,7 +8,7 @@ CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://sourceforge.net/projects/sing
+HOMEPAGE=	http://sourceforge.net/projects/sing/
 
 LIB_DEPENDS=	net::net/libnet
 
