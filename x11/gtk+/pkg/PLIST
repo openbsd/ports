@@ -102,13 +102,13 @@ include/gtk/gtkwindow.h
 include/gtk/gtktypebuiltins.h
 lib/libglib.a
 lib/libglib.la
-lib/libglib.so.1.5
+lib/libglib.so.1.6
 lib/libgdk.a
 lib/libgdk.la
-lib/libgdk.so.1.5
+lib/libgdk.so.1.6
 lib/libgtk.a
 lib/libgtk.la
-lib/libgtk.so.1.5
+lib/libgtk.so.1.6
 @exec /sbin/ldconfig -m %B
 lib/glib/include/glibconfig.h
 bin/gtk-config
