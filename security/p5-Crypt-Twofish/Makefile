@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 03:46:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 19:20:50 naddy Exp $
 
 COMMENT=	"module to implement the Twofish cipher"
 
 DISTNAME=	Twofish-1.0
 PKGNAME=	p5-Crypt-${DISTNAME}
 CATEGORIES=	security perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.407
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/05 15:11:21 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/10 19:20:51 naddy Exp $
 bin/gpgmailtunl
 libdata/perl5/site_perl/GnuPG.pm
 libdata/perl5/site_perl/GnuPG/Tie.pm
@@ -7,6 +7,6 @@ libdata/perl5/site_perl/GnuPG/Tie/Encrypt.pm
 man/man1/gpgmailtunl.1
 man/man3/GnuPG.3p
 man/man3/GnuPG::Tie.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/GnuPG
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/GnuPG
 @dirrm libdata/perl5/site_perl/GnuPG/Tie
 @dirrm libdata/perl5/site_perl/GnuPG

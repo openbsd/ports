@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 04:22:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/10 19:20:53 naddy Exp $
 
 COMMENT=	"embperl allows you to embed perl in your HTML documents"
 
 DISTNAME=	HTML-Embperl-1.3.1
 PKGNAME=	p5-HTML-Embperl-1.3.1
 CATEGORIES=	www perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.407
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 

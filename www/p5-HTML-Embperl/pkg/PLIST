@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/03/19 20:11:13 avsm Exp $
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Changes.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Embperl.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Embperl.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Embperl/Mail.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Embperl/Module.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Embperl/Session.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/EmbperlD.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/EmbperlObject.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Faq.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Features.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/FeaturesD.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/INSTALL.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Intro.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/IntroD.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/IntroEmbperlObject.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/NEWS.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/HTML/TipsAndTricks.pod
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Embperl/Embperl.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Embperl/Embperl.so
+@comment $OpenBSD: PLIST,v 1.3 2001/05/10 19:20:54 naddy Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Changes.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Mail.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Module.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl/Session.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/EmbperlD.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/EmbperlObject.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Faq.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Features.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/FeaturesD.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/INSTALL.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Intro.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/IntroD.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/IntroEmbperlObject.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/NEWS.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/TipsAndTricks.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl/Embperl.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl/Embperl.so
 man/man3/HTML::Embperl.3
 man/man3/HTML::EmbperlD.3
 man/man3/HTML::EmbperlObject.3
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/HTML/Embperl
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/HTML/Embperl
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/HTML/Embperl
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML/Embperl

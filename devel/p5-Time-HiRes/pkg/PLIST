@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/01/08 20:54:56 avsm Exp $
-libdata/perl5/site_perl/${ARCH}-openbsd/Time/HiRes.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Time/HiRes/HiRes.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Time/HiRes/HiRes.so
+@comment $OpenBSD: PLIST,v 1.3 2001/05/10 19:20:47 naddy Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Time/HiRes.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Time/HiRes/HiRes.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Time/HiRes/HiRes.so
 man/man3/Time::HiRes.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Time/HiRes
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Time/HiRes

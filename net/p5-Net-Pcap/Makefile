@@ -1,11 +1,11 @@
-#   $OpenBSD: Makefile,v 1.2 2001/04/12 15:59:17 bmc Exp $
+#   $OpenBSD: Makefile,v 1.3 2001/05/10 19:20:49 naddy Exp $
 
 COMMENT=	"module for pcap access"
 
 DISTNAME=	Net-Pcap-0.04
 PKGNAME=	p5-Net-Pcap-0.04
 CATEGORIES=	net perl5
-NEED_VERSION=	1.394
+NEED_VERSION=	1.407
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
 

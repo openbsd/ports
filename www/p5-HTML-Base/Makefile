@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 04:22:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 19:20:53 naddy Exp $
 
 COMMENT=	"base HTML library"
 
 DISTNAME=	HTML-0.6
 PKGNAME=	p5-HTML-Base-0.6
 CATEGORIES=	www perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.407
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 
@@ -22,9 +22,9 @@ do-build:
 	cd ${WRKSRC} && pod2man html_base.pod HTML::Base.3p
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/${ARCH}-openbsd/HTML
+	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML
 	${INSTALL_DATA} ${WRKSRC}/HTML/Base.pm \
-		${PREFIX}/libdata/perl5/site_perl/${ARCH}-openbsd/HTML
+		${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/HTML
 	${INSTALL_MAN} ${WRKSRC}/HTML::Base.3p ${PREFIX}/man/man3
 
 .include <bsd.port.mk>

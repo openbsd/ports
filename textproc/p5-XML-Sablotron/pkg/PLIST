@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/27 01:43:28 avsm Exp $
-libdata/perl5/site_perl/${ARCH}-openbsd/XML/Sablotron.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Sablotron/Sablotron.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Sablotron/Sablotron.so
+@comment $OpenBSD: PLIST,v 1.2 2001/05/10 19:20:52 naddy Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/Sablotron.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/Sablotron.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron/Sablotron.so
 man/man3/XML::Sablotron.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/Sablotron
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/Sablotron

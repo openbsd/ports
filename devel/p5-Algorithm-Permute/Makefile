@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/10 19:20:45 naddy Exp $
 
 COMMENT=	"interface to handy and fast permutation"
 
 DISTNAME=	Algorithm-Permute-0.02
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.402
+NEED_VERSION=	1.407
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

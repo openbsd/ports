@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/01/08 23:41:11 avsm Exp $
-libdata/perl5/site_perl/${ARCH}-openbsd/MIME/Base64.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/MIME/QuotedPrint.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/MIME/Base64/Base64.bs
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/MIME/Base64/Base64.so
+@comment $OpenBSD: PLIST,v 1.10 2001/05/10 19:20:42 naddy Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MIME/Base64.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MIME/QuotedPrint.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MIME/Base64/Base64.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MIME/Base64/Base64.so
 man/man3/MIME::Base64.3p
 man/man3/MIME::QuotedPrint.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/MIME/Base64
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MIME/Base64

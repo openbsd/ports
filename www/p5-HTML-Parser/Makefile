@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 19:32:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/10 19:20:54 naddy Exp $
 
 COMMENT=	"modules to parse and extract information from HTML"
  
 DISTNAME=	HTML-Parser-3.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
-NEED_VERSION=	1.391
+NEED_VERSION=	1.407
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 
