@@ -1,6 +1,6 @@
---- setup.c.orig	Mon Oct 30 16:09:01 2000
-+++ setup.c	Fri Feb 23 00:22:09 2001
-@@ -241,7 +241,7 @@
+--- setup.c.orig	Thu Mar 28 04:32:12 2002
++++ setup.c	Mon May  5 17:32:12 2003
+@@ -228,7 +228,7 @@ char	drawPath[MAXPATHLENGTH]; /* last ch
  char	bootDir[MAXPATHLENGTH+2];
  char	homeDir[MAXPATHLENGTH];
  char	tgifDir[MAXPATHLENGTH];
@@ -9,4 +9,3 @@
  
  int	symPathNumEntries = INVALID;
  char	* * symPath=NULL;
-
