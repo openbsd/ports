@@ -1,12 +1,12 @@
-@unexec install-info --delete --info-dir=%D/info %D/info/bison.info
+@comment $OpenBSD: PLIST,v 1.4 2001/07/13 01:56:00 brad Exp $
 bin/bison
+@unexec install-info --delete --info-dir=%D/info %D/info/bison.info
 info/bison.info
-info/bison.info-1
-info/bison.info-2
-info/bison.info-3
-info/bison.info-4
-info/bison.info-5
+@exec install-info --info-dir=%D/info %D/info/bison.info
 man/man1/bison.1
 share/bison.hairy
 share/bison.simple
-@exec install-info --info-dir=%D/info %D/info/bison.info
+share/locale/de/LC_MESSAGES/bison.mo
+share/locale/es/LC_MESSAGES/bison.mo
+share/locale/fr/LC_MESSAGES/bison.mo
+share/locale/nl/LC_MESSAGES/bison.mo

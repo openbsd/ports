@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_getopt_c,v 1.1 2001/07/13 01:56:00 brad Exp $
+--- src/getopt.c.orig	Thu Jul 12 21:16:44 2001
++++ src/getopt.c	Thu Jul 12 21:17:20 2001
+@@ -79,6 +79,8 @@
+ # endif
+ #endif
+ 
++#include "system.h"
++
+ #ifndef _
+ /* This is for other GNU distributions with internationalized messages.
+    When compiling libc, the _ macro is predefined.  */

@@ -1,0 +1,72 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2001/07/13 01:55:59 brad Exp $
+--- doc/Makefile.in.orig	Tue Jul  6 09:20:09 1999
++++ doc/Makefile.in	Thu Jul 12 21:46:35 2001
+@@ -72,7 +72,7 @@ INSTOBJEXT = @INSTOBJEXT@
+ INTLDEPS = @INTLDEPS@
+ INTLLIBS = @INTLLIBS@
+ INTLOBJS = @INTLOBJS@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MSGFMT = @MSGFMT@
+ PACKAGE = @PACKAGE@
+@@ -151,46 +151,41 @@ bison.dvi: bison.texinfo version.texi
+ DVIPS = dvips
+ 
+ .texi.info:
+-	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+-	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
++	$(MAKEINFO) -I $(srcdir) `echo $< | sed 's,.*/,,'`
+ 
+ .texi.dvi:
+ 	TEXINPUTS=.:$$TEXINPUTS \
+ 	  MAKEINFO='$(MAKEINFO) -I $(srcdir)' $(TEXI2DVI) $<
+ 
+ .texi:
+-	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+-	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
++	$(MAKEINFO) -I $(srcdir) `echo $< | sed 's,.*/,,'`
+ 
+ .texinfo.info:
+-	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+-	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
++	$(MAKEINFO) -I $(srcdir) `echo $< | sed 's,.*/,,'`
+ 
+ .texinfo:
+-	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+-	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
++	$(MAKEINFO) -I $(srcdir) `echo $< | sed 's,.*/,,'`
+ 
+ .texinfo.dvi:
+ 	TEXINPUTS=.:$$TEXINPUTS \
+ 	  MAKEINFO='$(MAKEINFO) -I $(srcdir)' $(TEXI2DVI) $<
+ 
+ .txi.info:
+-	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+-	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
++	$(MAKEINFO) -I $(srcdir) `echo $< | sed 's,.*/,,'`
+ 
+ .txi.dvi:
+ 	TEXINPUTS=.:$$TEXINPUTS \
+ 	  MAKEINFO='$(MAKEINFO) -I $(srcdir)' $(TEXI2DVI) $<
+ 
+ .txi:
+-	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+-	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	@rm -f $@ $@-[0-9] $@-[0-9][0-9]
++	$(MAKEINFO) -I $(srcdir) `echo $< | sed 's,.*/,,'`
++
+ .dvi.ps:
+ 	$(DVIPS) $< -o $@
+ 
