@@ -1,7 +1,32 @@
-$OpenBSD: patch-Configure,v 1.6 2002/01/29 19:40:51 pvalchev Exp $
---- Configure.orig	Tue Jan 29 12:14:08 2002
-+++ Configure	Tue Jan 29 12:14:59 2002
-@@ -2301,7 +2301,7 @@ kernel generation process.
+$OpenBSD: patch-Configure,v 1.7 2002/03/24 20:26:36 pvalchev Exp $
+--- Configure.orig	Tue Jan 22 05:41:44 2002
++++ Configure	Sun Mar 24 13:09:27 2002
+@@ -2277,10 +2277,13 @@ kernel generation process.
+       3.0*)
+ 	LSOF_VERS=3000
+ 	;;
++      3.1*)
++        LSOF_VERS=3010
++	;;
+       3*)
+-	LSOF_VERS=3000
++	LSOF_VERS=3010
+ 	echo "!!!WARNING!!!  Unsupported OpenBSD version: $LSOF_VSTR"
+-	echo "!!!WARNING!!!  Configuring for OpenBSD 3.0"
++	echo "!!!WARNING!!!  Configuring for OpenBSD 3.1"
+ 	;;
+       *)
+ 	echo "Unknown OpenBSD release: $LSOF_VSTR"
+@@ -2293,7 +2296,7 @@ kernel generation process.
+     # Test for legal OpenBSD version.
+ 
+     case $LSOF_VERS in	# {
+-    1020|2000|2010|2020|2030|2040|2050|2060|2070|2080|2090|3000)
++    1020|2000|2010|2020|2030|2040|2050|2060|2070|2080|2090|3000|3010)
+       ;;
+     *)
+       echo "Unknown OpenBSD version: $LSOF_VERS"
+@@ -2301,7 +2304,7 @@ kernel generation process.
        exit 1
        ;;
      esac	# }
