@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/23 03:57:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/31 16:30:25 espie Exp $
 
 DISTNAME=	bash-2.04
 CATEGORIES=	shells
-NEED_VERSION=	1.218
+NEED_VERSION=	1.240
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bash
 DOCNAME=	${DISTNAME:S/-/-doc-/}
@@ -19,24 +19,24 @@ FAKE=		Yes
 HAS_CONFIGURE=	Yes
 CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 
-# invoke make with STATIC=yes to build a static binary
+# Work-around for curses bug, which makes trace visible...
+CFLAGS+=-Dtrace=bash_trace
+
+FLAVORS=static
 .if defined(STATIC) && ${STATIC:U} == YES
+FLAVOR=static
+.endif
+FLAVOR?=
+
+.if ${FLAVOR:L} == "static"
 CONFIGURE_ENV+= LDFLAGS=-static
-PKGNAME=	${DISTNAME}-static
 .endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bash
-	${INSTALL_MAN}  \
-		${WRKDIR}/doc/article.ps  \
-		${WRKDIR}/doc/article.txt  \
-		${WRKDIR}/doc/bash.html  \
-		${WRKDIR}/doc/bash.ps  \
-		${WRKDIR}/doc/bashbug.ps  \
-		${WRKDIR}/doc/bashref.html  \
-		${WRKDIR}/doc/bashref.ps  \
-		${WRKDIR}/doc/builtins.ps  \
-		${WRKDIR}/doc/readline.ps  \
-			${PREFIX}/share/doc/bash
+	cd ${WRKDIR}/doc && \
+	${INSTALL_MAN} article.ps article.txt bash.html bash.ps \
+		bashbug.ps bashref.html bashref.ps builtins.ps  \
+		readline.ps  ${PREFIX}/share/doc/bash
 
 .include <bsd.port.mk>
