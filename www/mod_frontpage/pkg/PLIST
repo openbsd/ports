@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/10/13 12:53:06 danh Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/10/13 12:56:25 danh Exp $
 lib/mod_frontpage.so
 @mode 0444
 @sample /usr/lib/apache/modules/mod_frontpage.so
-@mode
 @mode 4555
 sbin/fpexec
 @mode
