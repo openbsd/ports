@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2001/06/22 01:37:36 kevlo Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2001/07/05 13:08:27 brad Exp $
 #
 # Subdirectory MUST define DIRNAME, LOCATION and PROGRAM_V.
 
@@ -25,7 +25,8 @@ MASTER_SITES= \
 MASTER_SITE_SUBDIR= communicator/english/${PROGRAM_V}/unix/supported/${LOCATION}
 DIST_SUBDIR=	linux-netscape
 
-RUN_DEPENDS=	/emul/linux/lib/ld.so::emulators/redhat_base 
+BUILD_DEPENDS=	/emul/linux/lib/ld.so::emulators/redhat_base 
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKDIST=	${WRKDIR}
 
