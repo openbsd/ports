@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/26 11:40:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/26 13:34:40 sturm Exp $
 
 COMMENT=	"icecast source for streaming MP3"
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--with-docdir=${LOCALBASE}/share/doc/ices \
 		--with-lame=${LOCALBASE} --with-vorbis=${LOCALBASE}
 
 LIB_DEPENDS=	mp3lame.0:lame-*:audio/lame,no_x11 \
-		shout.3::audio/libshout \
+		shout.3::net/libshout \
 		xml2.7::textproc/libxml
 
 FLAVORS=	python
