@@ -1,8 +1,0 @@
---- etc/afpd/auth.h.orig	Mon Sep 27 17:34:04 1999
-+++ etc/afpd/auth.h	Mon Sep 27 17:35:42 1999
-@@ -37,3 +37,5 @@
- extern gid_t	groups[ NGROUPS ];
- #endif sun __svr4__ ultrix
- extern int	ngroups;
-+
-+extern void	uam_off();
