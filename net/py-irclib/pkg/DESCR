@@ -1,0 +1,25 @@
+The Python IRC library is intended to encapsulate the IRC protocol at a
+quite low level.  It provides an event-driven IRC client framework.  It
+has a fairly thorough support for the basic IRC protocol, CTCP and DCC
+connections.
+
+The main features of the IRC client framework are:
+
+  * Abstraction of the IRC protocol.
+  * Handles multiple simultaneous IRC server connections.
+  * Handles server PONGing transparently.
+  * Messages to the IRC server are done by calling methods on an IRC
+    connection object.
+  * Messages from an IRC server triggers events, which can be caught
+    by event handlers.
+  * Reading from and writing to IRC server sockets are normally done
+    by an internal select() loop, but the select()ing may be done by an
+    external main loop.
+  * Functions can be registered to execute at specified times by the
+    event-loop.
+  * Decodes CTCP tagging correctly (hopefully); I haven't seen any
+    other IRC client implementation that handles the CTCP specification
+    subtilties.
+  * A kind of simple, single-server, object-oriented IRC client class
+    that dispatches events to instance methods is included.
+  * DCC connection support.
