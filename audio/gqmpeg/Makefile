@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/09/18 19:44:18 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/19 02:17:07 rohee Exp $
 # Original from: Bruno Rohée
 
 PKGNAME=	gqmpeg-0.6.3
 DISTNAME=	${PKGNAME}.src
-EXTRACT_SUFX=	.tgz
+#EXTRACT_SUFX=	.tgz
 
 CATEGORIES=     audio
 
