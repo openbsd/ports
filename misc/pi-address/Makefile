@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/09 19:55:10 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/24 22:20:44 naddy Exp $
 
 COMMENT=	"PalmPilot address database editor"
 
 DISTNAME=	pi-address-0.4.0
 CATEGORIES=	misc x11 palm
-NEED_VERSION=	1.402
+NEED_VERSION=	1.516
+
+HOMEPAGE=	http://me.in-berlin.de/~miwie/pia/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -13,19 +15,16 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-MASTER_SITES=	http://me.in-berlin.de/~miwie/pia/ \
+MASTER_SITES=	${HOMEPAGE} \
 		ftp://ftp.belug.org/pub/user/mw/pilot/
 
-HOMEPAGE=	http://me.in-berlin.de/~miwie/pia/
-
-LIB_DEPENDS=	qt.1.45::x11/qt \
-		pisock::comms/pilot-link
+MODULES=	qt
+LIB_DEPENDS=	pisock::comms/pilot-link
 
 USE_X11=		yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-pisock-dir=${LOCALBASE}
-CONFIGURE_ENV+=		QTINC=${LOCALBASE}/include/X11/qt \
-			QTLIB=${LOCALBASE}/lib/qt
+CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS} \
+			--with-pisock-dir=${LOCALBASE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pi-address
