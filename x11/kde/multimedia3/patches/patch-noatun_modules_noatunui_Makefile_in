@@ -1,0 +1,21 @@
+$OpenBSD: patch-noatun_modules_noatunui_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/noatunui/Makefile.in.orig	Sat Apr 20 03:20:13 2002
++++ noatun/modules/noatunui/Makefile.in	Sat Apr 20 03:23:35 2002
+@@ -295,7 +295,7 @@ kde_module_LTLIBRARIES = noatun_ui.la
+ noatun_ui_la_SOURCES = noatunui.cpp userinterface.cpp
+ 
+ noatun_ui_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_ui_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
++noatun_ui_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libknoatun.la \
+ 	$(top_builddir)/noatun/library/libnoatuncontrols.la \
+ 	-lqtmcop -lkmedia2_idl -lsoundserver_idl
+ 
+@@ -311,7 +311,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ 
+-noatun_ui_la_DEPENDENCIES = $(top_builddir)/noatun/library/libnoatun.la \
++noatun_ui_la_DEPENDENCIES = $(top_builddir)/noatun/library/libknoatun.la \
+ 	$(top_builddir)/noatun/library/libnoatuncontrols.la
+ am_noatun_ui_la_OBJECTS = noatunui.lo userinterface.lo
+ #>- noatun_ui_la_OBJECTS = $(am_noatun_ui_la_OBJECTS)

@@ -1,0 +1,77 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- configure.in.orig	Mon Mar 25 00:12:29 2002
++++ configure.in	Sat Apr 20 14:57:26 2002
+@@ -36,7 +36,7 @@ dnl Perform program name transformation
+ AC_ARG_PROGRAM
+ 
+ dnl Automake doc recommends to do this only here. (Janos)
+-AM_INIT_AUTOMAKE(kdemultimedia, "3.0") dnl searches for some needed programs
++AM_INIT_AUTOMAKE(kdemultimedia-3.0, "3.0") dnl searches for some needed programs
+ 
+ KDE_SET_PREFIX
+ 
+@@ -1070,7 +1070,7 @@ dnl    else
+ dnl      lib_xaw_opt=-lXaw
+ dnl    fi
+     EXTRATDEFS="$EXTRATDEFS -DIA_XAW"
+-    EXTRATLIBS="$EXTRATLIBS $all_libraries -lXaw -lXt -lX11"
++    EXTRATLIBS="$EXTRATLIBS $all_libraries -lXaw -lXmu -lXt -lX11"
+ dnl    if test "x$have_xext" = xyes; then
+ dnl      a_so_libs="-lXext -lX11"
+ dnl    else
+@@ -1193,6 +1193,7 @@ case "$host" in
+   *-*-linux*) kscd_compile=yes;;
+   *-*-*bsdi*) kscd_compile=yes;; 
+   *-*-*freebsd*) kscd_compile=yes;;
++  *-*-*openbsd*) kscd_compile=yes;;
+   *-*-*bsd*) kscd_compile=no;;
+   *) kscd_compile=yes;;
+ esac
+@@ -1222,7 +1223,7 @@ dnl this does not work, but to have no e
+ 
+ dnl Checks for header files.
+ AC_CHECK_HEADERS(pthread.h pthread/mit/pthread.h)
+-AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h linux/soundcard.h)
++AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h linux/soundcard.h soundcard.h)
+ 
+ 
+ AC_C_BIGENDIAN
+@@ -1400,8 +1401,13 @@ AC_MSG_RESULT($OS_TYPE)
+ 
+ case "$ARCH_TYPE" in
+   i?86)
+-    AC_MSG_RESULT([Found Intel enable MMX support])
+-    AC_DEFINE(INTEL,1,[Define if you have an INTEL and may have MMX])
++    case "$OS_TYPE" in
++    OpenBSD) ;;
++    *)
++	AC_MSG_RESULT([Found Intel enable MMX support])
++	AC_DEFINE(INTEL,1,[Define if you have an INTEL and may have MMX])
++	;;
++    esac
+     ;; 
+ 
+   *)
+@@ -1416,6 +1422,9 @@ case "$OS_TYPE" in
+   FreeBSD)
+     kde_mpeglib_compiles=yes
+     ;;
++  OpenBSD)
++    kde_mpeglib_compiles=yes
++    ;;
+   Linux)
+     kde_mpeglib_compiles=yes
+     ;;
+@@ -1443,6 +1452,12 @@ case "$OS_TYPE" in
+   Linux)
+     AC_CHECK_LIB(pthread, pthread_create, [LIBPTHREAD="-lpthread"])
+     AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
++    ;;
++
++  OpenBSD)
++    OS_TYPE="BSD"
++    AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-pthread"])
++    AC_DEFINE(OS_BSD,1,[Define if you have BSD pthread])
+     ;;
+ 
+   FreeBSD)

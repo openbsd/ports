@@ -1,0 +1,29 @@
+$OpenBSD: patch-noatun_library_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/library/Makefile.am.orig	Sat Apr 20 03:14:34 2002
++++ noatun/library/Makefile.am	Sat Apr 20 03:15:03 2002
+@@ -9,9 +9,9 @@ INCLUDES = -I$(top_srcdir)/noatun/librar
+ 
+ SUBDIRS=noatunarts noatun . noatuntags
+ 
+-lib_LTLIBRARIES = libnoatun.la libnoatuncontrols.la
++lib_LTLIBRARIES = libknoatun.la libnoatuncontrols.la
+ 
+-libnoatun_la_SOURCES = pluginmodule.cpp cmodule.cpp downloader.cpp engine.cpp \
++libknoatun_la_SOURCES = pluginmodule.cpp cmodule.cpp downloader.cpp engine.cpp \
+ 	playlist.cpp pref.cpp \
+ 	player.cpp playlistsaver.cpp app.cpp \
+ 	pluginloader.cpp plugin.cpp \
+@@ -22,11 +22,11 @@ libnoatun_la_SOURCES = pluginmodule.cpp 
+ 
+ include_HEADERS  = cmodule.h plugin_deps.h equalizerview.h effectview.h mimetypetree.h ksaver.h
+ 
+-libnoatun_la_LDFLAGS     = -L$(top_builddir)/noatun/library/noatunarts \
++libknoatun_la_LDFLAGS     = -L$(top_builddir)/noatun/library/noatunarts \
+ $(KDE_RPATH) $(all_libraries) -L$(top_builddir)/arts/gui/common \
+ -L$(top_builddir)/arts/gui/kde
+ 	
+-libnoatun_la_LIBADD      = $(top_builddir)/arts/gui/common/libartsgui.la	\
++libknoatun_la_LIBADD      = $(top_builddir)/arts/gui/common/libartsgui.la	\
+ 	$(top_builddir)/arts/gui/kde/libartsgui_kde.la			\
+ 	$(top_builddir)/arts/modules/libartsmodules.la			\
+ 	-lkio -lqtmcop -lkmedia2_idl -lnoatunarts			\

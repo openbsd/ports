@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun_modules_kaiman_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/kaiman/Makefile.am.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/kaiman/Makefile.am	Sat Apr 20 03:22:14 2002
+@@ -9,7 +9,7 @@ noatun_kaiman_la_SOURCES = \
+ 	pref.cpp
+ 
+ noatun_kaiman_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_kaiman_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
++noatun_kaiman_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libknoatun.la \
+                         -lqtmcop -lkmedia2_idl -lsoundserver_idl
+ 
+ noatun_kaiman_la_METASOURCES = AUTO

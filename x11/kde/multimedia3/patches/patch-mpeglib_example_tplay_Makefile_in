@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/tplay/Makefile.in.orig	Mon Mar 25 00:15:51 2002
++++ mpeglib/example/tplay/Makefile.in	Sat Apr 20 07:02:54 2002
+@@ -303,7 +303,7 @@ noinst_HEADERS = 
+ 
+ tplay_LDFLAGS = $(all_libraries) 
+ 
+-tplay_LDADD = ../../lib/libmpeg.la \
++tplay_LDADD = ../../lib/libkmpeg.la \
+ 	$(THIS_LIB_LIBS)
+ 
+ subdir = mpeglib/example/tplay
+@@ -317,7 +317,7 @@ am_tplay_OBJECTS = tplay.$(OBJEXT)
+ #>- tplay_OBJECTS = $(am_tplay_OBJECTS)
+ #>+ 1
+ tplay_OBJECTS = tplay.$(OBJEXT)
+-tplay_DEPENDENCIES = ../../lib/libmpeg.la
++tplay_DEPENDENCIES = ../../lib/libkmpeg.la
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/yaf/yafcdda/Makefile.am.orig	Sat Apr 20 06:58:25 2002
++++ mpeglib/example/yaf/yafcdda/Makefile.am	Sat Apr 20 06:58:27 2002
+@@ -15,7 +15,7 @@ yaf_cdda_LDFLAGS	=	$(all_libraries)
+ 
+ yaf_cdda_LDADD		=	../yafxplayer/libyafxplayer.la \
+ 				../yafcore/libyafcore.la \
+-				../../../lib/libmpeg.la \
++				../../../lib/libkmpeg.la \
+ 				$(THIS_LIB_LIBS)
+ 
+ 

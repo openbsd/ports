@@ -1,0 +1,21 @@
+$OpenBSD: patch-noatun_modules_kaiman_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/kaiman/Makefile.in.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/kaiman/Makefile.in	Sat Apr 20 03:22:18 2002
+@@ -301,7 +301,7 @@ noatun_kaiman_la_SOURCES = \
+ 
+ 
+ noatun_kaiman_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_kaiman_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
++noatun_kaiman_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libknoatun.la \
+ 	-lqtmcop -lkmedia2_idl -lsoundserver_idl
+ 
+ 
+@@ -321,7 +321,7 @@ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ 
+ noatun_kaiman_la_DEPENDENCIES = \
+-	$(top_builddir)/noatun/library/libnoatun.la
++	$(top_builddir)/noatun/library/libknoatun.la
+ am_noatun_kaiman_la_OBJECTS = noatunui.lo style.lo userinterface.lo \
+ 	pref.lo
+ #>- noatun_kaiman_la_OBJECTS = $(am_noatun_kaiman_la_OBJECTS)

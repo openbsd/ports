@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafvorbis_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/yaf/yafvorbis/Makefile.in.orig	Mon Mar 25 00:15:52 2002
++++ mpeglib/example/yaf/yafvorbis/Makefile.in	Sat Apr 20 07:02:23 2002
+@@ -306,7 +306,7 @@ yaf_vorbis_LDFLAGS = $(all_libraries) 
+ yaf_vorbis_LDADD = \
+ 	../yafcore/libyafcore.la \
+ 	../yafxplayer/libyafxplayer.la \
+-	../../../lib/libmpeg.la \
++	../../../lib/libkmpeg.la \
+ 	$(THIS_LIB_LIBS)
+ 
+ subdir = mpeglib/example/yaf/yafvorbis
+@@ -321,7 +321,7 @@ am_yaf_vorbis_OBJECTS = vorbis_control.$
+ #>+ 1
+ yaf_vorbis_OBJECTS = vorbis_control.$(OBJEXT)
+ yaf_vorbis_DEPENDENCIES = ../yafcore/libyafcore.la \
+-	../yafxplayer/libyafxplayer.la ../../../lib/libmpeg.la
++	../yafxplayer/libyafxplayer.la ../../../lib/libkmpeg.la
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

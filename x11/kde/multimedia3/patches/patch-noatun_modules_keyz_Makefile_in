@@ -1,0 +1,21 @@
+$OpenBSD: patch-noatun_modules_keyz_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/keyz/Makefile.in.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/keyz/Makefile.in	Sat Apr 20 03:20:59 2002
+@@ -295,7 +295,7 @@ kde_module_LTLIBRARIES = noatun_keyz.la
+ noatun_keyz_la_SOURCES = keyz.cpp
+ 
+ noatun_keyz_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_keyz_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la
++noatun_keyz_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libknoatun.la
+ 
+ #>- noatun_keyz_la_METASOURCES = AUTO
+ 
+@@ -309,7 +309,7 @@ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ 
+ noatun_keyz_la_DEPENDENCIES = \
+-	$(top_builddir)/noatun/library/libnoatun.la
++	$(top_builddir)/noatun/library/libknoatun.la
+ am_noatun_keyz_la_OBJECTS = keyz.lo
+ #>- noatun_keyz_la_OBJECTS = $(am_noatun_keyz_la_OBJECTS)
+ #>+ 5

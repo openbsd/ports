@@ -1,0 +1,21 @@
+$OpenBSD: patch-noatun_modules_liszt_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/liszt/Makefile.in.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/liszt/Makefile.in	Sat Apr 20 03:21:21 2002
+@@ -309,7 +309,7 @@ noatun_liszt_la_SOURCES = \
+ 
+ noatun_liszt_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ noatun_liszt_la_LIBADD = \
+-	$(top_builddir)/noatun/library/libnoatun.la \
++	$(top_builddir)/noatun/library/libknoatun.la \
+ 	$(LIB_KFILE) -lqtmcop -lkmedia2_idl -lsoundserver_idl
+ 
+ 
+@@ -339,7 +339,7 @@ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ 
+ noatun_liszt_la_DEPENDENCIES = \
+-	$(top_builddir)/noatun/library/libnoatun.la
++	$(top_builddir)/noatun/library/libknoatun.la
+ am_noatun_liszt_la_OBJECTS = Static.lo Track.lo CharlatanItem.lo \
+ 	ArtistItem.lo AlbumItem.lo TrackItem.lo PlayLiszt.lo \
+ 	EditWidget.lo PreviewItem.lo PreviewWidget.lo ScoreWidget.lo \

@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib_artsplug/Makefile.in.orig	Sat Apr 20 14:07:09 2002
++++ mpeglib_artsplug/Makefile.in	Sat Apr 20 14:07:27 2002
+@@ -358,7 +358,7 @@ libarts_mpeglib_la_SOURCES = $(BUILT_SOU
+ 
+ 
+ libarts_mpeglib_la_LDFLAGS = $(all_libraries) \
+-	$(top_builddir)/mpeglib/lib/libmpeg.la \
++	$(top_builddir)/mpeglib/lib/libkmpeg.la \
+ 	-module \
+ 	-release $(MPEGLIB_ARTS_VERSION) \
+ 	-version-info $(MPEGLIB_ARTS_MAJOR_VERSION):$(MPEGLIB_ARTS_MINOR_VERSION):$(MPEGLIB_ARTS_MICRO_VERSION)
+@@ -369,7 +369,7 @@ libarts_splay_la_SOURCES = splayPlayObje
+ 
+ 
+ libarts_splay_la_LDFLAGS = $(all_libraries) \
+-	$(top_builddir)/mpeglib/lib/libmpeg.la \
++	$(top_builddir)/mpeglib/lib/libkmpeg.la \
+ 	-module
+ 
+ 

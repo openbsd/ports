@@ -1,0 +1,12 @@
+$OpenBSD: patch-oggvorbis_artsplugin_oggPlayObject_impl_h,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- oggvorbis_artsplugin/oggPlayObject_impl.h.orig	Fri Apr 19 03:21:27 2002
++++ oggvorbis_artsplugin/oggPlayObject_impl.h	Fri Apr 19 03:21:41 2002
+@@ -3,7 +3,7 @@
+ 
+ #if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
+ /* union semun is defined by including <sys/sem.h> */
+-#else
++#elif !defined(__OpenBSD__)
+ /* according to X/OPEN we have to define it ourselves */
+ union semun {
+ 	int val;                    /* value for SETVAL */

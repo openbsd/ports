@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_lib_util_render_x11_imageDeskX11_cpp,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/lib/util/render/x11/imageDeskX11.cpp.orig	Sat Apr 20 06:31:38 2002
++++ mpeglib/lib/util/render/x11/imageDeskX11.cpp	Sat Apr 20 06:32:49 2002
+@@ -397,7 +397,7 @@ bool ImageDeskX11::switchMode(int width,
+ 	}
+ 
+ 	int bestMode = -1;
+-	int border, minBorder = MAXINT;
++	int border, minBorder = INT_MAX;
+ 
+ 	for (i = 0; i < vm_count; i++) {
+ 		printf("mode %d: %dx%d\n",i, vm_modelines[i]->hdisplay,vm_modelines[i]->vdisplay);

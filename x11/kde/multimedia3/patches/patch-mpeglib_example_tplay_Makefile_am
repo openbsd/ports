@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_tplay_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/tplay/Makefile.am.orig	Sat Apr 20 06:50:03 2002
++++ mpeglib/example/tplay/Makefile.am	Sat Apr 20 06:50:09 2002
+@@ -13,7 +13,7 @@ noinst_HEADERS		=	
+ tplay_LDFLAGS		=	$(all_libraries) 
+ 
+ 
+-tplay_LDADD		=	../../lib/libmpeg.la \
++tplay_LDADD		=	../../lib/libkmpeg.la \
+ 				$(THIS_LIB_LIBS)
+ 
+ 

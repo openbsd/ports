@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeglib_example_mpgplay_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/mpgplay/Makefile.in.orig	Mon Mar 25 00:15:51 2002
++++ mpeglib/example/mpgplay/Makefile.in	Sat Apr 20 07:02:58 2002
+@@ -303,7 +303,7 @@ noinst_HEADERS = 
+ 
+ mpgplay_LDFLAGS = $(all_libraries) 
+ 
+-mpgplay_LDADD = ../../lib/libmpeg.la \
++mpgplay_LDADD = ../../lib/libkmpeg.la \
+ 	$(THIS_LIB_LIBS)
+ 
+ subdir = mpeglib/example/mpgplay
+@@ -317,7 +317,7 @@ am_mpgplay_OBJECTS = mpgplay.$(OBJEXT)
+ #>- mpgplay_OBJECTS = $(am_mpgplay_OBJECTS)
+ #>+ 1
+ mpgplay_OBJECTS = mpgplay.$(OBJEXT)
+-mpgplay_DEPENDENCIES = ../../lib/libmpeg.la
++mpgplay_DEPENDENCIES = ../../lib/libkmpeg.la
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

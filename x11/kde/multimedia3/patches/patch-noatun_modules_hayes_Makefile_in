@@ -1,0 +1,21 @@
+$OpenBSD: patch-noatun_modules_hayes_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/hayes/Makefile.in.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/hayes/Makefile.in	Sat Apr 20 03:21:13 2002
+@@ -300,7 +300,7 @@ noatun_hayes_la_SOURCES = branch.cpp \
+ 
+ 
+ noatun_hayes_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module -avoid-version -no-undefined
+-noatun_hayes_la_LIBADD = $(LIB_KIO) $(top_builddir)/noatun/library/libnoatun.la
++noatun_hayes_la_LIBADD = $(LIB_KIO) $(top_builddir)/noatun/library/libknoatun.la
+ 
+ #>- noatun_hayes_la_METASOURCES = AUTO
+ 
+@@ -321,7 +321,7 @@ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ 
+ noatun_hayes_la_DEPENDENCIES = \
+-	$(top_builddir)/noatun/library/libnoatun.la
++	$(top_builddir)/noatun/library/libknoatun.la
+ am_noatun_hayes_la_OBJECTS = branch.lo cmodule.lo playlist.lo window.lo
+ #>- noatun_hayes_la_OBJECTS = $(am_noatun_hayes_la_OBJECTS)
+ #>+ 5

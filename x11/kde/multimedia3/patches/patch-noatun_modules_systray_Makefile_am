@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun_modules_systray_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/systray/Makefile.am.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/systray/Makefile.am	Sat Apr 20 03:21:56 2002
+@@ -4,7 +4,7 @@ kde_module_LTLIBRARIES = noatun_systray.
+ noatun_systray_la_SOURCES = systray.cpp noatunui.cpp kitsystemtray.cpp cmodule.cpp
+ 
+ noatun_systray_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_systray_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
++noatun_systray_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libknoatun.la \
+                         -lqtmcop -lkmedia2_idl -lsoundserver_idl
+ 
+ noatun_systray_la_METASOURCES = AUTO

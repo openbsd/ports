@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/cddaplay/Makefile.am.orig	Sat Apr 20 06:50:48 2002
++++ mpeglib/example/cddaplay/Makefile.am	Sat Apr 20 06:50:51 2002
+@@ -13,7 +13,7 @@ noinst_HEADERS		=	
+ cddaplay_LDFLAGS	=	$(all_libraries) 
+ 
+ 
+-cddaplay_LDADD		=	../../lib/libmpeg.la \
++cddaplay_LDADD		=	../../lib/libkmpeg.la \
+ 				$(THIS_LIB_LIBS)
+ 
+ 

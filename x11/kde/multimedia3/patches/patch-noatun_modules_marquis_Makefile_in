@@ -1,0 +1,21 @@
+$OpenBSD: patch-noatun_modules_marquis_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/modules/marquis/Makefile.in.orig	Sat Apr 20 03:20:12 2002
++++ noatun/modules/marquis/Makefile.in	Sat Apr 20 03:21:36 2002
+@@ -295,7 +295,7 @@ kde_module_LTLIBRARIES = noatun_marquis.
+ noatun_marquis_la_SOURCES = marquis.cpp plugin.cpp
+ 
+ noatun_marquis_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_marquis_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
++noatun_marquis_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libknoatun.la \
+ 	-lqtmcop -lkmedia2_idl -lsoundserver_idl
+ 
+ 
+@@ -311,7 +311,7 @@ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(kde_module_LTLIBRARIES)
+ 
+ noatun_marquis_la_DEPENDENCIES = \
+-	$(top_builddir)/noatun/library/libnoatun.la
++	$(top_builddir)/noatun/library/libknoatun.la
+ am_noatun_marquis_la_OBJECTS = marquis.lo plugin.lo
+ #>- noatun_marquis_la_OBJECTS = $(am_noatun_marquis_la_OBJECTS)
+ #>+ 5

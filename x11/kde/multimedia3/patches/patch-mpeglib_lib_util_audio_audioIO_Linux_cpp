@@ -1,0 +1,33 @@
+$OpenBSD: patch-mpeglib_lib_util_audio_audioIO_Linux_cpp,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/lib/util/audio/audioIO_Linux.cpp.orig	Sat Apr 20 16:42:26 2002
++++ mpeglib/lib/util/audio/audioIO_Linux.cpp	Sat Apr 20 16:46:08 2002
+@@ -39,11 +39,20 @@
+ #undef AUSIZ
+ #include <sys/soundcard.h>
+ #else
++#if defined(HAVE_SOUNDCARD_H)
++#include <soundcard.h>
++#else
+ // fallback:
+ #include <linux/soundcard.h>
+ 
+ #endif
+ #endif
++#endif
++#ifdef __OpenBSD__
++#define AUDIO_DEVICE_NAME "/dev/audio"
++#else
++#define AUDIO_DEVICE_NAME "/dev/dsp"
++#endif
+ 
+ 
+ /* optimal fragment size */
+@@ -75,7 +84,7 @@ void audioDestruct() {
+    should open the audio device, perform any special initialization	
+ */
+ int  audioOpen() {
+-  audio_fd = open ("/dev/dsp", O_WRONLY, 0);
++  audio_fd = open (AUDIO_DEVICE_NAME, O_WRONLY, 0);
+   if (audio_fd < 0)  {
+     perror("Unable to open the audio");
+   }

@@ -1,0 +1,102 @@
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Sat Apr 20 05:02:39 2002
++++ kscd/libwm/Makefile.in	Sat Apr 20 05:03:38 2002
+@@ -298,9 +298,9 @@ subdirs = include
+ 
+ INCLUDES = $(all_includes) 
+ 
+-lib_LTLIBRARIES = libworkman.la
++lib_LTLIBRARIES = libkworkman.la
+ 
+-libworkman_la_LDFLAGS = -version-info 5:3:4 $(all_libraries)
++libkworkman_la_LDFLAGS = -version-info 5:3:4 $(all_libraries)
+ 
+ #
+ # Headers come later...
+@@ -310,7 +310,7 @@ include_HEADERS = 
+ 
+ # Which headers shouldn't be installed when a   make install  is done?
+ #noinst_HEADERS =
+-libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
++libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
+ 	database.c index.c scsi.c \
+ 	plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
+ 	plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
+@@ -323,24 +323,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libworkman_la_LIBADD =
+-am_libworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
++libkworkman_la_LIBADD =
++am_libkworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
+ 	cdtext.lo database.lo index.lo scsi.lo plat_aix.lo \
+ 	plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo \
+ 	plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo \
+ 	plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo \
+ 	drv_sony.lo drv_toshiba.lo
+-#>- libworkman_la_OBJECTS = $(am_libworkman_la_OBJECTS)
++#>- libkworkman_la_OBJECTS = $(am_libkworkman_la_OBJECTS)
+ #>+ 9
+-libworkman_la_final_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo cdtext.lo database.lo index.lo scsi.lo plat_aix.lo plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo drv_sony.lo drv_toshiba.lo 
+-libworkman_la_nofinal_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
++libkworkman_la_final_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo cdtext.lo database.lo index.lo scsi.lo plat_aix.lo plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo drv_sony.lo drv_toshiba.lo 
++libkworkman_la_nofinal_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
+ 	cdtext.lo database.lo index.lo scsi.lo plat_aix.lo \
+ 	plat_bsd386.lo plat_freebsd.lo plat_hpux.lo plat_irix.lo \
+ 	plat_linux.lo plat_svr4.lo plat_ultrix.lo plat_news.lo \
+ 	plat_openbsd.lo plat_osf1.lo plat_sun.lo plat_scor5.lo \
+ 	drv_sony.lo drv_toshiba.lo
+-@KDE_USE_FINAL_FALSE@libworkman_la_OBJECTS = $(libworkman_la_nofinal_OBJECTS)
+-@KDE_USE_FINAL_TRUE@libworkman_la_OBJECTS = $(libworkman_la_final_OBJECTS)
++@KDE_USE_FINAL_FALSE@libkworkman_la_OBJECTS = $(libkworkman_la_nofinal_OBJECTS)
++@KDE_USE_FINAL_TRUE@libkworkman_la_OBJECTS = $(libkworkman_la_final_OBJECTS)
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+@@ -368,11 +368,11 @@ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CFLAGS = @CFLAGS@
+-DIST_SOURCES = $(libworkman_la_SOURCES)
++DIST_SOURCES = $(libkworkman_la_SOURCES)
+ HEADERS = $(include_HEADERS)
+ 
+ DIST_COMMON = README $(include_HEADERS) Makefile.am Makefile.in
+-SOURCES = $(libworkman_la_SOURCES)
++SOURCES = $(libkworkman_la_SOURCES)
+ 
+ #>- all: all-am
+ #>+ 1
+@@ -419,8 +419,8 @@ uninstall-libLTLIBRARIES:
+ 
+ clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+-libworkman.la: $(libworkman_la_OBJECTS) $(libworkman_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libworkman_la_LDFLAGS) $(libworkman_la_OBJECTS) $(libworkman_la_LIBADD) $(LIBS)
++libkworkman.la: $(libkworkman_la_OBJECTS) $(libkworkman_la_DEPENDENCIES) 
++	$(LINK) -rpath $(libdir) $(libkworkman_la_LDFLAGS) $(libkworkman_la_OBJECTS) $(libkworkman_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
+@@ -651,16 +651,16 @@ force-reedit:
+ 
+ #>+ 2
+ final:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_final_OBJECTS)" all-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_final_OBJECTS)" all-am
+ #>+ 2
+ final-install:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_final_OBJECTS)" install-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_final_OBJECTS)" install-am
+ #>+ 2
+ no-final:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_nofinal_OBJECTS)" all-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_nofinal_OBJECTS)" all-am
+ #>+ 2
+ no-final-install:
+-	$(MAKE) libworkman_la_OBJECTS="$(libworkman_la_nofinal_OBJECTS)" install-am
++	$(MAKE) libkworkman_la_OBJECTS="$(libkworkman_la_nofinal_OBJECTS)" install-am
+ #>+ 3
+ cvs-clean:
+ 	$(MAKE) -f $(top_srcdir)/admin/Makefile.common cvs-clean

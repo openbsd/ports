@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/Makefile.am.orig	Sat Apr 20 03:19:09 2002
++++ noatun/Makefile.am	Sat Apr 20 03:19:22 2002
+@@ -7,7 +7,7 @@ KDE_ICON = AUTO
+ kde_module_LTLIBRARIES = noatun.la
+ noatun_la_SOURCES = main.cpp joinhandler.cpp joinhandler.skel
+ noatun_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module -avoid-version
+-noatun_la_LIBADD = -lqtmcop -lkmedia2_idl -lsoundserver_idl $(top_builddir)/noatun/library/libnoatun.la
++noatun_la_LIBADD = -lqtmcop -lkmedia2_idl -lsoundserver_idl $(top_builddir)/noatun/library/libknoatun.la
+ 
+ bin_PROGRAMS = noatun
+ noatun_SOURCES = dummy.cpp

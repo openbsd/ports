@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeglib_example_yaf_yaftplay_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/yaf/yaftplay/Makefile.in.orig	Mon Mar 25 00:15:52 2002
++++ mpeglib/example/yaf/yaftplay/Makefile.in	Sat Apr 20 07:02:33 2002
+@@ -303,7 +303,7 @@ yaf_tplay_LDFLAGS = $(all_libraries)
+ 
+ yaf_tplay_LDADD = ../yafcore/libyafcore.la \
+ 	../yafxplayer/libyafxplayer.la \
+-	../../../lib/libmpeg.la \
++	../../../lib/libkmpeg.la \
+ 	$(THIS_LIB_LIBS)
+ 
+ subdir = mpeglib/example/yaf/yaftplay
+@@ -318,7 +318,7 @@ am_yaf_tplay_OBJECTS = tplay_control.$(O
+ #>+ 1
+ yaf_tplay_OBJECTS = tplay_control.$(OBJEXT)
+ yaf_tplay_DEPENDENCIES = ../yafcore/libyafcore.la \
+-	../yafxplayer/libyafxplayer.la ../../../lib/libmpeg.la
++	../yafxplayer/libyafxplayer.la ../../../lib/libkmpeg.la
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

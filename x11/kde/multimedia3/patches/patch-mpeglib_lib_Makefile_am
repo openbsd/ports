@@ -1,0 +1,23 @@
+$OpenBSD: patch-mpeglib_lib_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/lib/Makefile.am.orig	Sat Apr 20 06:35:26 2002
++++ mpeglib/lib/Makefile.am	Sat Apr 20 06:35:44 2002
+@@ -23,15 +23,15 @@ THIS_EXTRALIBS	=	mpgplayer/libmpgplayer.
+ 
+ 
+ 
+-lib_LTLIBRARIES		=	libmpeg.la
++lib_LTLIBRARIES		=	libkmpeg.la
+ 
+-libmpeg_la_SOURCES	=	dummy.cpp
++libkmpeg_la_SOURCES	=	dummy.cpp
+ 
+ 
+-libmpeg_la_LDFLAGS	=	$(all_libraries) \
++libkmpeg_la_LDFLAGS	=	$(all_libraries) \
+ 				-module \
+ 				-release $(THIS_LIB_VERSION)
+ 
+ 
+-libmpeg_la_LIBADD	=	$(THIS_EXTRALIBS) $(MMXFILES) \
++libkmpeg_la_LIBADD	=	$(THIS_EXTRALIBS) $(MMXFILES) \
+ 				$(THIS_LIB_LIBS)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-noatun_library_noatuntags_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- noatun/library/noatuntags/Makefile.am.orig	Sat Apr 20 03:48:25 2002
++++ noatun/library/noatuntags/Makefile.am	Sat Apr 20 03:48:39 2002
+@@ -4,7 +4,7 @@ lib_LTLIBRARIES = libnoatuntags.la
+ 
+ libnoatuntags_la_SOURCES = tags.cpp
+ libnoatuntags_la_LDFLAGS = -L$(top_builddir)/noatun/library
+-libnoatuntags_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la
++libnoatuntags_la_LIBADD = $(top_builddir)/noatun/library/libknoatun.la
+ 
+ libnoatuntags_la_METASOURCES = AUTO
+ 

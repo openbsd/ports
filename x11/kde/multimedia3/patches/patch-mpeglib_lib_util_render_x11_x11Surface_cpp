@@ -1,0 +1,14 @@
+$OpenBSD: patch-mpeglib_lib_util_render_x11_x11Surface_cpp,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/lib/util/render/x11/x11Surface.cpp.orig	Sat Apr 20 06:33:08 2002
++++ mpeglib/lib/util/render/x11/x11Surface.cpp	Sat Apr 20 06:33:15 2002
+@@ -267,8 +267,8 @@ int X11Surface::openImage(int mode, YUVP
+       XSizeHints hints;
+       hints.flags = PMaxSize;
+       if (HAS_RESIZE(newImage)) {
+-	hints.max_width = MAXINT;
+-	hints.max_height = MAXINT;
++	hints.max_width = INT_MAX;
++	hints.max_height = INT_MAX;
+       } else {
+ 	hints.max_width = xWindow->width;
+ 	hints.max_height = xWindow->height;

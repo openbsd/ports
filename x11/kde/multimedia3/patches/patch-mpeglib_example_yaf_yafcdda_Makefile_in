@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeglib_example_yaf_yafcdda_Makefile_in,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
+--- mpeglib/example/yaf/yafcdda/Makefile.in.orig	Mon Mar 25 00:15:51 2002
++++ mpeglib/example/yaf/yafcdda/Makefile.in	Sat Apr 20 07:02:09 2002
+@@ -303,7 +303,7 @@ yaf_cdda_LDFLAGS = $(all_libraries)
+ 
+ yaf_cdda_LDADD = ../yafxplayer/libyafxplayer.la \
+ 	../yafcore/libyafcore.la \
+-	../../../lib/libmpeg.la \
++	../../../lib/libkmpeg.la \
+ 	$(THIS_LIB_LIBS)
+ 
+ subdir = mpeglib/example/yaf/yafcdda
+@@ -318,7 +318,7 @@ am_yaf_cdda_OBJECTS = cdda_control.$(OBJ
+ #>+ 1
+ yaf_cdda_OBJECTS = cdda_control.$(OBJEXT)
+ yaf_cdda_DEPENDENCIES = ../yafxplayer/libyafxplayer.la \
+-	../yafcore/libyafcore.la ../../../lib/libmpeg.la
++	../yafcore/libyafcore.la ../../../lib/libkmpeg.la
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
