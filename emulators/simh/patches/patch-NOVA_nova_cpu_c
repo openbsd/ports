@@ -1,0 +1,43 @@
+$OpenBSD: patch-NOVA_nova_cpu_c,v 1.1 2002/02/04 05:10:29 form Exp $
+--- NOVA/nova_cpu.c.orig	Thu Jan 31 22:29:11 2002
++++ NOVA/nova_cpu.c	Thu Jan 31 22:28:48 2002
+@@ -432,21 +432,21 @@ if (IR & I_OPR) {					/* operate? */
+ 		src = src ^ DMASK;
+ 		break;
+ 	case 1:						/* NEG */
+-		src = ((src ^ DMASK) + 1) & CMASK;
++		src = ((src ^ DMASK) + 1) & NOVA_CMASK;
+ 		break;
+ 	case 2:						/* MOV */
+ 		break;
+ 	case 3:						/* INC */
+-		src = (src + 1) & CMASK;
++		src = (src + 1) & NOVA_CMASK;
+ 		break;
+ 	case 4:						/* ADC */
+-		src = ((src ^ DMASK) + AC[dstAC]) & CMASK;
++		src = ((src ^ DMASK) + AC[dstAC]) & NOVA_CMASK;
+ 		break;
+ 	case 5:						/* SUB */
+-		src = ((src ^ DMASK) + AC[dstAC] + 1) & CMASK;
++		src = ((src ^ DMASK) + AC[dstAC] + 1) & NOVA_CMASK;
+ 		break;
+ 	case 6:						/* ADD */
+-		src = (src + AC[dstAC]) & CMASK;
++		src = (src + AC[dstAC]) & NOVA_CMASK;
+ 		break;
+ 	case 7:						/* AND */
+ 		src = src & (AC[dstAC] | CBIT);
+@@ -458,10 +458,10 @@ if (IR & I_OPR) {					/* operate? */
+ 	case 0:						/* nop */
+ 		break;
+ 	case 1:						/* L */
+-		src = ((src << 1) | (src >> 16)) & CMASK;
++		src = ((src << 1) | (src >> 16)) & NOVA_CMASK;
+ 		break;
+ 	case 2:						/* R */
+-		src = ((src >> 1) | (src << 16)) & CMASK;
++		src = ((src >> 1) | (src << 16)) & NOVA_CMASK;
+ 		break;
+ 	case 3:						/* S */
+ 		src = ((src & 0377) << 8) | ((src >> 8) & 0377) |

@@ -1,12 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/15 05:23:49 form Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/02/04 05:10:29 form Exp $
+bin/simh-altair
+bin/simh-eclipse
+bin/simh-h316
+bin/simh-hp2100
 bin/simh-i1401
 bin/simh-nova
 bin/simh-pdp1
+bin/simh-pdp10
 bin/simh-pdp11
 bin/simh-pdp15
 bin/simh-pdp4
 bin/simh-pdp7
 bin/simh-pdp8
 bin/simh-pdp9
+bin/simh-s3
+share/doc/simh/0readme28.txt
+share/doc/simh/altair.txt
+share/doc/simh/altairZ80.txt
+share/doc/simh/eclipse.txt
+share/doc/simh/h316_doc.txt
+share/doc/simh/haltguide.txt
+share/doc/simh/hp2100_doc.txt
+share/doc/simh/i1401_doc.txt
+share/doc/simh/nova_doc.txt
+share/doc/simh/pdp10_doc.txt
+share/doc/simh/pdp11_doc.txt
+share/doc/simh/pdp18b_doc.txt
+share/doc/simh/pdp1_doc.txt
+share/doc/simh/pdp8_doc.txt
+share/doc/simh/readme_s3.txt
 share/doc/simh/simh_doc.txt
+share/doc/simh/simh_swre.txt
+share/doc/simh/system3.txt
 @dirrm share/doc/simh
