@@ -1,0 +1,18 @@
+--- Makefile.orig	Mon Mar 20 20:49:43 2000
++++ Makefile	Mon Mar 20 20:50:48 2000
+@@ -15,9 +15,13 @@ LIBSDIR = -L/usr/local/lib
+ #AUTOCONF = -DSUNOS -DNOT_HAVE_SNPRINTF
+ #LIBS = -lpcap -lresolv -lsocket -lns
+ 
++# for OpenBSD
++AUTOCONF = -DOPENBSD
++LIBS = -lpcap -lresolv
++
+ # for Linux
+-AUTOCONF = -DLINUX   
+-LIBS = -lpcap
++#AUTOCONF = -DLINUX   
++#LIBS = -lpcap
+ 
+ 
+ SOURCE = radiusniff.c md5.c
