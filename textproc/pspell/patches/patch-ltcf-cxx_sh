@@ -1,0 +1,34 @@
+$OpenBSD: patch-ltcf-cxx_sh,v 1.1 2003/02/24 04:06:30 brad Exp $
+--- ltcf-cxx.sh.orig	Tue May  1 19:58:17 2001
++++ ltcf-cxx.sh	Sun Feb 23 22:09:48 2003
+@@ -385,6 +385,21 @@ case $host_os in
+   netbsd*)
+     # NetBSD uses g++ - do we need to do anything?
+     ;;
++  openbsd*)
++    case $host_os in
++      openbsd[01].* | openbsd2.[0-8] | openbsd2.[0-8].*)
++	ld_shlibs=no
++	;;
++      *)
++	archive_cmds='$CC -shared -nostdlib $pic_flag -o $lib $predep_objects $libobjs $deplibs $postdep_objects $compiler_flags'
++	archive_expsym_cmds=
++	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
++	  export_dynamic_flag_spec='${wl}-E'
++	fi
++	;;
++    esac
++    ;;
+   osf3*)
+     if test "$with_gcc" = yes && test "$with_gnu_ld" = no; then
+       allow_undefined_flag=' ${wl}-expect_unresolved ${wl}\*'
+@@ -799,6 +814,8 @@ else
+       esac
+       ;;
+     netbsd*)
++      ;;
++    openbsd*)
+       ;;
+     osf3* | osf4* | osf5*)
+       case $cc_basename in

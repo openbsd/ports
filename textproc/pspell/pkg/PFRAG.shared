@@ -1,3 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2001/06/07 15:16:25 lebel Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2003/02/24 04:06:31 brad Exp $
+lib/libpspell-impl.so.6.0
 lib/libpspell-modules.so.1.1
+lib/libpspell.so.4.3
 DYNLIBDIR(%D/lib)

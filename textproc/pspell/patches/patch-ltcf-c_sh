@@ -1,7 +1,18 @@
-$OpenBSD: patch-ltcf-c_sh,v 1.2 2001/08/07 13:53:12 lebel Exp $
---- ltcf-c.sh.orig	Tue Aug  7 09:46:42 2001
-+++ ltcf-c.sh	Tue Aug  7 09:50:02 2001
-@@ -454,10 +454,22 @@ else
+$OpenBSD: patch-ltcf-c_sh,v 1.3 2003/02/24 04:06:30 brad Exp $
+--- ltcf-c.sh.orig	Tue May  1 19:58:17 2001
++++ ltcf-c.sh	Sun Feb 23 21:18:00 2003
+@@ -47,7 +47,9 @@ cygwin* | mingw*)
+     with_gnu_ld=no
+   fi
+   ;;
+-
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -454,10 +456,22 @@ else
      ;;
  
    openbsd*)
@@ -11,13 +22,13 @@ $OpenBSD: patch-ltcf-c_sh,v 1.2 2001/08/07 13:53:12 lebel Exp $
      hardcode_shlibpath_var=no
 +    case "$host_os" in
 +      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
 +	hardcode_libdir_flag_spec='-R$libdir'
 +      ;;
 +      *)
-+	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
 +	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++	if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +	  export_dynamic_flag_spec='${wl}-E'
 +	fi
 +     ;;
