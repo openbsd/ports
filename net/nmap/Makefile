@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/01/09 16:10:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2001/01/09 18:52:34 naddy Exp $
 
 DISTNAME=	nmap-2.54BETA7
 PKGNAME=	nmap-2.54b7
@@ -16,10 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
 
-FLAVORS=	x11
+FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mx11}
+.if !${FLAVOR:L:Mno_x11}
 LIB_DEPENDS+=	gtk.1.2::x11/gtk+
 .endif
 

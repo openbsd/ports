@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2001/01/09 18:52:34 naddy Exp $
+bin/nmapfe
+bin/xnmap
+man/man1/nmapfe.1
+man/man1/xnmap.1
