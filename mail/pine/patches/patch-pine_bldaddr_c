@@ -1,0 +1,14 @@
+$OpenBSD: patch-pine_bldaddr_c,v 1.1 2002/11/25 17:08:37 brad Exp $
+--- pine/bldaddr.c.orig	Thu Jun 21 13:53:24 2001
++++ pine/bldaddr.c	Mon Nov 25 11:55:38 2002
+@@ -7263,8 +7263,8 @@ est_size(a)
+     for(; a; a = a->next){
+ 
+ 	/* two times personal for possible quoting */
+-	cnt   += 2 * (a->personal  ? strlen(a->personal)  : 0);
+-	cnt   += (a->mailbox  ? strlen(a->mailbox)  : 0);
++	cnt   += 2 * (a->personal  ? (strlen(a->personal)+1)  : 0);
++	cnt   += 2 * (a->mailbox  ? (strlen(a->mailbox)+1)    : 0);
+ 	cnt   += (a->adl      ? strlen(a->adl)      : 0);
+ 	cnt   += (a->host     ? strlen(a->host)     : 0);
+ 
