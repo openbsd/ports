@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/03 07:57:18 shell Exp $
+# $OpenBSD: Makefile,v 1.7 2001/09/04 18:49:04 naddy Exp $
 
 COMMENT=		"python imaging library"
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg
 
 SUBST_VARS=		PYTHON_VER
 
+CONFIGURE_STYLE=	gnu
 ALL_TARGET=
 
 LIB_IMAGING=		${WRKSRC}/libImaging
@@ -36,13 +37,15 @@ SITE_PACKAGES=		${PREFIX}/lib/${PYTHON_VER}/site-packages
 PYTHON_INCLUDE_DIR=	${PREFIX}/include/${PYTHON_VER}
 PIL_INCLUDES=		ImConfig.h ImPlatform.h Imaging.h
 
-post-extract:
-	cp ${FILESDIR}/Setup ${WRKSRC}
-
 do-configure:
-	cd ${LIB_IMAGING} && ./configure && make
-	cd ${WRKSRC} && ${MAKE} -f Makefile.pre.in boot
-	cd ${WRKSRC} && perl -pi -e 's/(^LDSHARED=.*)/$$1 -Bstatic/' Makefile
+	@sed -e "s|@LOCALBASE@|${LOCALBASE}|g" -e "s|@X11BASE@|${X11BASE}|g" \
+		${FILESDIR}/Setup >${WRKSRC}/Setup
+	@cd ${LIB_IMAGING}; \
+		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
+	@cd ${WRKSRC}; ${MAKE_PROGRAM} -f Makefile.pre.in boot
+
+pre-build:
+	@cd ${LIB_IMAGING}; ${MAKE_PROGRAM} CC="${CC}" OPT="${CFLAGS}"
 
 do-install:
 # put all files in a subdir and just put a .pth file in ${SITE_PACKAGES}
