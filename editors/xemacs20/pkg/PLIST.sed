@@ -1,3 +1,4 @@
+@pkgcfl emacs-*
 bin/b2m
 bin/ctags
 bin/etags
@@ -1043,36 +1044,36 @@ lib/xemacs-20.4/etc/xemacs.1
 lib/xemacs-20.4/etc/xemacs.xbm
 lib/xemacs-20.4/etc/xemacs.xpm
 lib/xemacs-20.4/etc/yow.lines
-lib/xemacs-20.4/||GCCARCH||/DOC
-lib/xemacs-20.4/||GCCARCH||/add-big-package.sh
-lib/xemacs-20.4/||GCCARCH||/add-little-package.sh
-lib/xemacs-20.4/||GCCARCH||/config.values
-lib/xemacs-20.4/||GCCARCH||/cvtmail
-lib/xemacs-20.4/||GCCARCH||/digest-doc
-lib/xemacs-20.4/||GCCARCH||/fakemail
-lib/xemacs-20.4/||GCCARCH||/gnuserv
-lib/xemacs-20.4/||GCCARCH||/gzip-el.sh
-lib/xemacs-20.4/||GCCARCH||/hexl
-lib/xemacs-20.4/||GCCARCH||/install-sid
-lib/xemacs-20.4/||GCCARCH||/make-docfile
-lib/xemacs-20.4/||GCCARCH||/make-path
-lib/xemacs-20.4/||GCCARCH||/mmencode
-lib/xemacs-20.4/||GCCARCH||/movemail
-lib/xemacs-20.4/||GCCARCH||/profile
-lib/xemacs-20.4/||GCCARCH||/rcs2log
-lib/xemacs-20.4/||GCCARCH||/send-pr
-lib/xemacs-20.4/||GCCARCH||/sorted-doc
-lib/xemacs-20.4/||GCCARCH||/tm-au
-lib/xemacs-20.4/||GCCARCH||/tm-file
-lib/xemacs-20.4/||GCCARCH||/tm-html
-lib/xemacs-20.4/||GCCARCH||/tm-image
-lib/xemacs-20.4/||GCCARCH||/tm-mpeg
-lib/xemacs-20.4/||GCCARCH||/tm-plain
-lib/xemacs-20.4/||GCCARCH||/tm-ps
-lib/xemacs-20.4/||GCCARCH||/tmdecode
-lib/xemacs-20.4/||GCCARCH||/vcdiff
-lib/xemacs-20.4/||GCCARCH||/wakeup
-lib/xemacs-20.4/||GCCARCH||/yow
+lib/xemacs-20.4/@GCCARCH@/DOC
+lib/xemacs-20.4/@GCCARCH@/add-big-package.sh
+lib/xemacs-20.4/@GCCARCH@/add-little-package.sh
+lib/xemacs-20.4/@GCCARCH@/config.values
+lib/xemacs-20.4/@GCCARCH@/cvtmail
+lib/xemacs-20.4/@GCCARCH@/digest-doc
+lib/xemacs-20.4/@GCCARCH@/fakemail
+lib/xemacs-20.4/@GCCARCH@/gnuserv
+lib/xemacs-20.4/@GCCARCH@/gzip-el.sh
+lib/xemacs-20.4/@GCCARCH@/hexl
+lib/xemacs-20.4/@GCCARCH@/install-sid
+lib/xemacs-20.4/@GCCARCH@/make-docfile
+lib/xemacs-20.4/@GCCARCH@/make-path
+lib/xemacs-20.4/@GCCARCH@/mmencode
+lib/xemacs-20.4/@GCCARCH@/movemail
+lib/xemacs-20.4/@GCCARCH@/profile
+lib/xemacs-20.4/@GCCARCH@/rcs2log
+lib/xemacs-20.4/@GCCARCH@/send-pr
+lib/xemacs-20.4/@GCCARCH@/sorted-doc
+lib/xemacs-20.4/@GCCARCH@/tm-au
+lib/xemacs-20.4/@GCCARCH@/tm-file
+lib/xemacs-20.4/@GCCARCH@/tm-html
+lib/xemacs-20.4/@GCCARCH@/tm-image
+lib/xemacs-20.4/@GCCARCH@/tm-mpeg
+lib/xemacs-20.4/@GCCARCH@/tm-plain
+lib/xemacs-20.4/@GCCARCH@/tm-ps
+lib/xemacs-20.4/@GCCARCH@/tmdecode
+lib/xemacs-20.4/@GCCARCH@/vcdiff
+lib/xemacs-20.4/@GCCARCH@/wakeup
+lib/xemacs-20.4/@GCCARCH@/yow
 lib/xemacs-20.4/info/auctex.info
 lib/xemacs-20.4/info/auctex.info-1
 lib/xemacs-20.4/info/auctex.info-2
@@ -3278,6 +3279,7 @@ man/man1/gnuclient.1
 man/man1/gnudoit.1
 man/man1/gnuserv.1
 man/man1/xemacs.1
+%%mule%%
 @dirrm lib/xemacs-20.4/lisp/x11
 @dirrm lib/xemacs-20.4/lisp/w3
 @dirrm lib/xemacs-20.4/lisp/vm
@@ -3322,7 +3324,7 @@ man/man1/xemacs.1
 @dirrm lib/xemacs-20.4/lisp/apel
 @dirrm lib/xemacs-20.4/lisp
 @dirrm lib/xemacs-20.4/info
-@dirrm lib/xemacs-20.4/||GCCARCH||
+@dirrm lib/xemacs-20.4/@GCCARCH@
 @dirrm lib/xemacs-20.4/etc/w3
 @dirrm lib/xemacs-20.4/etc/vm
 @dirrm lib/xemacs-20.4/etc/toolbar

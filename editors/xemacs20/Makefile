@@ -1,33 +1,47 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/24 23:28:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/09 13:18:17 espie Exp $
 
-# If MULE extensions are desired use
-# make USE_MULE=YES
+# use flavors for mule and compface support
+# e.g., make FLAVOR=mule
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.255
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \
                 ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
 		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} 
 
 MAINTAINER=	hgweigand@wiesbaden.netsurf.de
 
-PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+FLAVORS=mule compface
+FLAVOR?=
+
+.if ${FLAVOR:L:Mcompface}
+PERMIT_PACKAGE_CDROM=	No
 BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a::graphics/compface
+CONFIGURE_ARGS+=--with-xface
+.else
+PERMIT_PACKAGE_CDROM=	Yes
+CONFIGURE_ARGS+=--with-xface=no
+.endif
+
+.if ${FLAVOR:L:Mmule}
+DISTFILES+=${DISTNAME}-mule${EXTRACT_SUFX}
+CONFIGURE_ARGS+=--with-mule
+.endif
+SUPDISTFILES=${DISTNAME}-mulet${EXTRACT_SUFX}
+
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.1.3::graphics/png
 
 USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes
-
-# Put generated PLIST into WRKDIR to avoid collisions in a shared ports tree.
-PLIST=		${WRKDIR}/PLIST
 
 # Figure out our '${arch}-unknown-openbsd${vers}' string as xemacs
 # expects it to be.  Call it GCCARCH.
@@ -39,36 +53,21 @@ M_ARCH=		mips
 .else
 M_ARCH=		${MACHINE_ARCH}
 .endif
-SYS_REL!=	uname -r
-
-GCCARCH=	${M_ARCH}-unknown-openbsd${SYS_REL}
+GCCARCH=	${M_ARCH}-unknown-${OPSYS}${OSREV}
+SED_PLIST=	|sed -e 's,@GCCARCH@,${GCCARCH},'
 
 # Note: x11 includes and libs need NOT be added to --site-{includes,libraries}
-CONFIGURE_ARGS= ${GCCARCH} \
-		${CONFIG_MULE} \
-		--prefix="${PREFIX}" \
+CONFIGURE_ARGS+= ${GCCARCH} \
+		--prefix='${PREFIX}' \
 		--with-gnu-make \
 		--with-ncurses \
 		--with-dialogs="athena" \
 		--with-database="berkdb" \
 		--statedir="/var/run" \
-		--site-includes="/usr/include:${PREFIX}/include" \
-		--site-libraries="/usr/lib:${PREFIX}/lib" \
-		--infopath="${PREFIX}/info:/usr/share/info:${PREFIX}/lib/${DISTNAME}/info" \
+		--site-includes="/usr/include:${LOCALBASE}/include" \
+		--site-libraries="/usr/lib:${LOCALBASE}/lib" \
+		--infopath="${LOCALBASE}/info:/usr/share/info:${PREFIX}/lib/${DISTNAME}/info" \
 		--rel-alloc
-
-#
-# handle MULE extensions here
-#
-.if defined(USE_MULE)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
-CONFIG_MULE=	--with-mule
-PLIST_TEMPLATE=	${FILESDIR}/PLIST.template.mule
-PKGNAME=	${DISTNAME}-mule
-.else
-PLIST_TEMPLATE=	${FILESDIR}/PLIST.template
-SUPDISTFILES=	${DISTNAME}-mule${EXTRACT_SUFX}
-.endif
 
 # Do NOT strip on install.  We will strip those things that can be
 # stripped after install. (XEmacs crashes if stripped on an alpha)
@@ -80,20 +79,6 @@ STRIP_PROGS+=	${DISTNAME}
 .endif
 STRIP_EXECS=	cvtmail digest-doc fakemail gnuserv hexl make-docfile \
 		make-path mmencode movemail profile sorted-doc wakeup yow
-
-pre-fetch:
-.if !defined(NO_WARNINGS)
-	@echo ""
-	@echo "*** If MULE extensions are desired use the command line"
-	@echo "***	make USE_MULE=YES"
-	@echo ""
-.endif
-
-# Generate platform specific PLIST from template
-pre-install pre-package:
-	@rm -f ${WRKDIR}/PLIST
-	@sed -e 's/||GCCARCH||/${GCCARCH}/' \
-		${PLIST_TEMPLATE} >${WRKDIR}/PLIST
 
 post-install:
 .for file in ${STRIP_PROGS}
