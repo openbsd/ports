@@ -3,11 +3,13 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1997/12/02 00:29:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/12 23:23:00 marc Exp $
 #
 
 DISTNAME=	agrep-2.04
 CATEGORIES=	textproc
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 #DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} agrep.ps.1.Z  agrep.ps.2.Z

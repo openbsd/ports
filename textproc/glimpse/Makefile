@@ -3,12 +3,14 @@
 # Date created:		25 Jan 1998
 # Whom:			weingart@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.2 1998/03/01 06:04:57 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/12 23:23:02 marc Exp $
 #
 
 PKGNAME=	glimpse-4.1
 DISTNAME=	glimpse-4.1
-DISTFILES=		glimpse-4.1.src.tar.gz
+DISTFILES=	glimpse-4.1.src.tar.gz
+NO_CDROM=	"NOFEE:	Can not sell"
+
 CATEGORIES=	textproc databases
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 
