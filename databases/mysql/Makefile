@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2001/10/06 03:55:34 brad Exp $
+# $OpenBSD: Makefile,v 1.59 2001/10/28 13:09:45 espie Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -12,7 +12,7 @@ FULLPKGNAME=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.460
+NEED_VERSION=	1.486
 MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
 		http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 		http://www.mysql.net/Downloads/%SUBDIR%/ \
@@ -67,9 +67,9 @@ CONFIGURE_ARGS+= --without-berkeley-db --without-innodb
 .endif
 
 .if !defined(PACKAGING)
-LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
+LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
 .elif ${SUBPACKAGE} == "-server"
-LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
+LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
 RUN_DEPENDS=	:mysql-client-3.23.*:databases/mysql
 .endif
 

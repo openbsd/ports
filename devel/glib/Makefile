@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/10/06 03:37:41 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2001/10/28 13:09:45 espie Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= stable/sources/glib
 
 HOMEPAGE=	http://www.gtk.org/
 
-LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
+LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

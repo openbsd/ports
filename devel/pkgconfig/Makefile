@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/28 13:09:45 espie Exp $
 
 COMMENT=	"tool for managing library compile/link flags"
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	pthread.14:pth-1.4.*:devel/pth
+LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
