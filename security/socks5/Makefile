@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2000/08/03 00:06:30 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2000/12/11 18:19:52 espie Exp $
 
-DISTNAME=	socks5-v1.0r10
-PKGNAME=	socks5-1.0.10
+DISTNAME=	socks5-v1.0r11
+PKGNAME=	socks5-1.0.11
 CATEGORIES=	security net
 NEED_VERSION=	1.310
 
