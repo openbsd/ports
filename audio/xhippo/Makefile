@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/08/11 16:08:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/24 01:58:49 kevlo Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
 DISTNAME=	xhippo-3.2
 CATEGORIES=	audio
-NEED_VERSION=	1.414
+NEED_VERSION=	1.460
 
 HOMEPAGE=	http://www.gnu.org/software/xhippo/
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xhippo
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		intl.1::devel/gettext
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 
@@ -27,6 +26,8 @@ USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MODULES=	gettext
 
 DOCS=	ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
 	xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz
