@@ -1,44 +1,44 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/29 23:01:07 krw Exp $
+# $OpenBSD: Makefile,v 1.17 2002/02/21 00:48:11 krw Exp $
 
 COMMENT=	object oriented script language with threads
-VERSION=1.6.5
-DISTNAME=ruby-${VERSION}
-CATEGORIES = lang
+VERSION=	1.6.6
+DISTNAME=	ruby-${VERSION}
+CATEGORIES=	lang
 NEED_VERSION=	1.362
-MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
-    ftp://ftp.iij.ad.jp/pub/lang/ruby/ \
-    ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/ \
-    ftp://ftp.krnet.ne.jp/pub/ruby/ 
+MASTER_SITES=	ftp://www.ruby-lang.org/pub/ruby/ \
+		ftp://mirror.nucba.ac.jp/pub/ruby/ \
+		ftp://ftp.kr.freebsd.org/pub/ruby/
 
-MASTER_SITES0=${MASTER_SITES:C,$,doc/,}
+MASTER_SITES0=	${MASTER_SITES:C,$,doc/,}
 
-BINARCH=${DISTNAME}.tar.gz
-MANARCH=ruby-man-1.4.6.tar.gz
-DISTFILES=${BINARCH} ${MANARCH}:0
-EXTRACT_ONLY=${BINARCH}
+BINARCH=	${DISTNAME}.tar.gz
+MANARCH=	ruby-man-1.4.6.tar.gz
+DISTFILES=	${BINARCH} ${MANARCH}:0
+EXTRACT_ONLY=	${BINARCH}
 
-HOMEPAGE=http://www.ruby-lang.org/
+HOMEPAGE=	http://www.ruby-lang.org/
 MAINTAINER=	Ken Westerback <krw@openbsd.org>
+
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS=tcl83.::lang/tcl/8.3 \
-            tk83.::x11/tk/8.3
+LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
+		tk83.::x11/tk/8.3
 
 CONFIGURE_STYLE=	autoconf
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=		concurrent
 
-CONFIGURE_ENV=YACC=yacc
-CONFIGURE_ARGS=${CONFIGURE_SHARED} \
-    --with-tcl-include=${PREFIX}/include/tcl8.3 \
-    --with-tk-include=${PREFIX}/include/tk8.3 \
-    --with-X11-dir=${X11BASE} 
+CONFIGURE_ENV=	YACC=yacc
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--with-tcl-include=${PREFIX}/include/tcl8.3 \
+		--with-tk-include=${PREFIX}/include/tk8.3 \
+		--with-X11-dir=${X11BASE} 
 
 # Force rebuild of parse.c with yacc
 post-extract: 
-	cd ${WRKSRC} && rm parse.c 
+	cd ${WRKSRC} && rm parse.c
 
 # buglet fix: lex.c should be in object dir
 post-configure:
