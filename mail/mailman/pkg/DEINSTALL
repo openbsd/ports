@@ -1,0 +1,33 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/08/29 02:13:06 shell Exp $
+#
+# mailman de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+MMHOME=$PREFIX/lib/mailman
+MMSPOOL=/var/spool/mailman
+
+if [ -d $MMHOME ]; then
+    echo ""
+    echo "+---------------"
+    echo "| Your configuration file $MMHOME/Mailman/mm_cfg.py has"
+    echo "| not been deleted. To completely deinstall the $1"
+    echo "| package you need to perform these steps as root:"
+    echo "|"
+    echo "|   rmuser mailman" 
+    echo "|   rm -fr $MMSPOOL"
+    echo "|"
+    echo "| If you don't delete user mailman, make sure to remove his crontab"
+    echo "| entries with:"
+    echo "|"
+    echo "|   crontab -u mailman -r"
+    echo "|"
+    echo "| Finally reverse the configuration changes to your webserver"
+    echo "| and mailserver."
+    echo "+---------------"
+    echo ""
+fi
+
+exit 0

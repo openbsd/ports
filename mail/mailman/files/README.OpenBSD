@@ -1,0 +1,178 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
+
+Throughout this document $mailmandir is the directory mailman is installed
+in. This defaults to /usr/local/lib/mailman. If you install your ports
+elsewhere, exchange that path with /usr/local. Most of this text is 
+taken from the file INSTALL of the mailman distribution, with some
+OpenBSD specific comments added. It's a good time to become root, now.
+
+1) Final Steps for Installation
+
+- Configure your web server to give $mailmandir/cgi-bin permission to
+  run CGI scripts by adding
+
+  ScriptAlias /mailman/ "$mailmandir/cgi-bin/"
+
+  to /var/www/conf/httpd.conf. There is also a <Directory> directive
+  you should have a look at.
+
+- Copy the Mailman, Python, GNU and OpenBSD logos to a location 
+  accessible to your web server.  E.g. with Apache, you've usually 
+  got an `icons' directory that you can drop the images into. You want
+  to copy $mailmandir/icons/mailman.jpg, $mailmandir/icons/PythonPowered.png,
+  $mailmandir/icons/gnu-head-tiny.jpg and /var/www/htdocs/openbsd_pb.gif
+  to this directory.
+
+  You then want to add a line to your $mailmandir/Mailman/mm_cfg.py
+  file which sets the base URL for the logos.  For example:
+
+  IMAGE_LOGOS = '/images/'
+
+  The default value for IMAGE_LOGOS is '/icons/'.  Read the
+  comment in Defaults.py.in for details.
+
+- Configure your web server to point to the Pipermail public
+  mailing list archives:
+
+  For example, in Apache:
+
+  Alias /pipermail/ "/var/spool/mailman/archives/public/"
+
+  Now restart your web server.
+
+- IMPERATIVE!  IMPORTANT!  DO THIS!  YOU'LL BE SORRY IF YOU DON'T!
+
+  Set up the crontab entries.  Mailman runs a number of cron jobs
+  for its basic functionality. Add $mailmandir/cron/crontab.in as a 
+  crontab entry by executing these commands:
+
+  % cd $mailmandir/cron
+  % crontab -u mailman crontab.in
+
+- Look to see if there is special instructions about hooking your
+  MTA up to Mailman.  If so, there will be a README.<yourMTA> file
+  in $mailmandir/../../share/doc/mailman.
+
+- Add aliases for `mailman' and `mailman-owner' to the system's
+  mail alias database.  These aliases should point to whoever is
+  ultimately responsible for the Mailman installation.  Here are
+  instructions for those running sendmail:
+
+  1. Assuming your email is fred@flintstone.com, add the following
+     lines to the file /etc/mail/aliases:
+ 
+     mailman: fred@flintstone.com
+     mailman-owner: mailman
+
+  2. Run the program 'newaliases'.
+
+  If you don't run sendmail, consult the documentation of your
+  mail transport program for information on adding these aliases.
+
+2) Customize Mailman
+
+- The file $mailmandir/Mailman/Defaults.py contains a number of
+  defaults for your installation.  If any of these are incorrect,
+  override them in $mailmandir/Mailman/mm_cfg.py, NOT IN Defaults.py!
+  See the comments in Defaults.py for details.  Once a list is
+  created, editing many of these variables will have no effect
+  (you need to configure your lists through the web admin
+  interface or through the command line script bin/config_list).
+
+  Specifically check to make sure the variables DEFAULT_HOST_NAME
+  and DEFAULT_URL are correct.  The latter MUST end in a slash.
+
+  The install process will copy an existing mm_cfg.py file to
+  mm_cfg.py.old so you can freely make changes to this file.
+
+- Create the site password using:
+
+  % $mailmandir/bin/mmsitepass <your-site-password>
+
+  This password can be used anywhere that individual user or
+  mailing list administrator passwords are required, giving the
+  mailman site administrator the ability to adjust these things
+  when necessary.
+
+3) Getting started
+
+- Create a list named `test'.  To do so, run the program
+  $mailmandir/bin/newlist.  You will be prompted for the name of the
+  list, as well as the email address of the person running the
+  list.  Put your own email address as the list administrator's
+  address.
+       
+- Running newlist will generate a list of aliases that must be
+  added to the system.  If you are running Sendmail, you may add
+  the lines output directly to the file /etc/mail/aliases.  You have
+  then to run the command 'newaliases' (all as root).  Now the
+  mailing address for your list as well as its administrative
+  addresses will be set up.  If you are not running Sendmail,
+  consult your MTA's documentation for information on adding
+  aliases.
+
+- You will receive email instructions on how to visit the list you
+  just created.  Using these instructions, subscribe to the
+  mailing list.  Once you have subscribed (which requires a
+  confirmation step!), send a message to the list, and see if you
+  get it.  If so, then you have successfully installed Mailman,
+  and set up your first list!
+
+
+4) Troubleshooting
+  
+If you encounter problems with running Mailman, first check the
+"Common Problems" section, below.  If your problem is not covered
+there, check the file FAQ. Then check for a log entry from Mailman 
+in your syslog.
+    
+If you encounter an error, send an error report to
+mailman-users@python.org or if it is a port specific problem, mail the 
+${MAINTAINER} directly or ask on ports@openbsd.org. Include a 
+description of what you're doing to cause the problem, and the relevant 
+lines from your syslog.  Also include information on your operating 
+system and version of Python.
+
+5) Common Problems
+
+   Problem:  All Mailman web pages give a 404 File not found error.
+
+   Solution: Your web server has not been set up properly for handling
+             Mailman's cgi commands.  Make sure you've:
+
+             1) Configured the web server to give permissions to
+                $mailmandir/cgi-bin/
+             2) Restarted the web server properly.
+
+             Consult your web server's documentation for instructions
+             on how to do these things.
+
+
+   Problem:  I send mail to the list, and get back mail saying the
+             list is not found!
+
+   Solution: You probably didn't add the necessary aliases to the system
+             alias database, given to you when you ran the newlist
+             command.  If you did add them, you likely did not update
+             the alias database, or your system requires you to run
+             newaliases explicitly.  Refer to section 3 above for
+             more information.
+
+
+   Problem:  I use Postfix for my MTA and the mail wrapper programs
+             are logging complaints about the wrong GID.
+
+   Solution: Install mailman with the following command:
+
+             % FLAVOR=postfix make install
+
+
+   Problem:  I send mail to the list, and get back mail saying,
+             "sh: wrapper not available for sendmail programs"
+
+   Solution: Your system uses sendmail restricted shell (smrsh).  You
+             need to configure smrsh by creating a symbolic link from
+             the mail wrapper ($mailmandir/mail/wrapper) to the directory
+             identifying executables allowed to run under smrsh. Have
+             a look at the manpage of smrsh(8).
+

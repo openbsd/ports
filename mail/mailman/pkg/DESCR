@@ -1,0 +1,37 @@
+This is GNU Mailman, a mailing list management system distributed
+under the GNU Public License (GPL).
+
+Mailman has most of the standard features you'd expect in a
+mailing list manager, and more:
+
+- Web based list administration for nearly all tasks.  Web based
+  subscriptions and user configuration management.  A customizable
+  "home page" for each mailing list.
+
+- Privacy features such as moderation, open and closed list
+  subscription policies, and private membership rosters.
+
+- Automatic web based archiving built-in with support for private
+  and public archives, and hooks for external archivers.
+
+- Per-user configuration optional digest delivery for either
+  MIME-compliant or RFC 934 style "plain text" digests.
+
+- Integrated mail/Usenet gateways.
+
+- Integrated auto-replies.
+
+- Majordomo-style email based commands.
+
+- Integrated bounce detection within an extensible framework.
+
+- Integrated spam detection.
+
+- An extensible mail delivery pipeline.
+
+- Support for virtual domains.
+
+Flavors:
+    postfix - makes the mailwrapper work with postfix
+ 
+WWW: ${HOMEPAGE}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/29 02:13:04 shell Exp $
+--- Makefile.in.orig	Fri Sep 22 10:06:19 2000
++++ Makefile.in	Mon Aug 20 16:59:51 2001
+@@ -76,7 +76,7 @@ subdirs: $(SUBDIRS)
+ 	    (cd $$d; $(MAKE)); \
+ 	done
+ 
+-install: doinstall update
++install: doinstall
+ 
+ doinstall: $(SUBDIRS)
+ 	@echo "Creating architecture independent directories..."
