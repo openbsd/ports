@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/06/15 10:35:48 fgsch Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/07/04 02:17:54 krw Exp $
 lib/libgdkmm-1.2.so.1.0
 lib/libgdkmm.so.1.0
 lib/libgtkmm-1.2.so.0.1
 lib/libgtkmm.so.0.1
-@exec /sbin/ldconfig -m %D/lib
+DYNLIBDIR(%D/lib)

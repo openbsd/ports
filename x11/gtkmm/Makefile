@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/15 10:35:47 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/04 02:17:54 krw Exp $
 
 DISTNAME=	gtkmm-1.2.1
 CATEGORIES=	devel graphics x11
-NEED_VERSION=	1.303
+NEED_VERSION=	1.310
 MASTER_SITES=	http://download.sourceforge.net/gtkmm/
 
 BUILD_DEPENDS=	gm4::devel/m4
