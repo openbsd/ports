@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2002/05/23 01:01:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.94 2002/07/01 02:07:56 kevlo Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -48,7 +48,6 @@
      SUBDIR += iview
      SUBDIR += jbigkit
      SUBDIR += jpeg
-     SUBDIR += kuickshow
      SUBDIR += lcms
      SUBDIR += libart
      SUBDIR += libdivxdecore
