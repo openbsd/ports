@@ -1,5 +1,5 @@
 --- scripts/makefile.std.orig	Wed Dec  8 18:44:40 1999
-+++ scripts/makefile.std	Mon Oct 16 15:05:46 2000
++++ scripts/makefile.std	Sat Jan 13 20:53:25 2001
 @@ -8,8 +8,6 @@
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
@@ -29,7 +29,7 @@
  	$(RANLIB) $@
  
 +$(SHLIB): $(SHOBJS)
-+	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHOBJS)
++	$(CC) -shared $(PICFLAG) -Wl,-x -o $(SHLIB) $(SHOBJS) -lz -lm
 +
  pngtest: pngtest.o libpng.a
  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
