@@ -1,5 +1,5 @@
-*** libtiff/Makefile.gcc.orig	Fri Sep 30 03:01:24 1994
---- libtiff/Makefile.gcc	Wed Oct  4 04:28:20 1995
+*** libtiff/Makefile.gcc.orig	Thu Sep 29 17:01:24 1994
+--- libtiff/Makefile.gcc	Fri Feb 13 14:18:48 1998
 ***************
 *** 26,43 ****
   #
@@ -39,11 +39,10 @@
   INCS=	tiff.h tiffio.h
   SRCS=	tif_fax3.c \
 ***************
-*** 100,113 ****
-  	tif_warning.o \
+*** 101,113 ****
   	tif_write.o \
   	${NULL}
-! ALL=	libtiff.a
+  ALL=	libtiff.a
   
   all:	 ${ALL}
   
@@ -54,11 +53,13 @@
   ${OBJS}: tiffio.h tiff.h tiffcomp.h tiffiop.h tiffconf.h
   tif_fax3.o: tif_fax3.c g3states.h t4.h tif_fax3.h
   
---- 99,120 ----
-  	tif_warning.o \
+--- 100,123 ----
   	tif_write.o \
   	${NULL}
-! ALL=	libtiff.a libtiff.so.3.3
+  ALL=	libtiff.a
++ .if ${MACHINE_ARCH} != "alpha"
++ ALL+=	libtiff.so.3.3
++ .endif
   
   all:	 ${ALL}
   
@@ -87,12 +88,12 @@
   
   installh: ${INCS}
   	-for i in ${INCS}; do \
---- 125,132 ----
+--- 128,135 ----
   install: all installh
   	-for i in ${ALL}; do \
   		${INSTALL} -c -m 644 $$i ${DESTDIR}/lib/$$i; \
   	done
-+ 	ranlib ${DESTDIR}/lib/libtiff.a
++ 	${RANLIB} ${DESTDIR}/lib/libtiff.a
   
   installh: ${INCS}
   	-for i in ${INCS}; do \
