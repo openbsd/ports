@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_makemake_in,v 1.3 2001/03/31 19:20:09 naddy Exp $
---- src/makemake.in.orig	Thu Mar 15 17:28:34 2001
-+++ src/makemake.in	Sat Mar 31 19:56:11 2001
-@@ -1627,6 +1627,12 @@ case "$fsstnd" in
+$OpenBSD: patch-src_makemake_in,v 1.4 2002/06/18 16:11:30 naddy Exp $
+--- src/makemake.in.orig	Mon Jun 25 16:54:46 2001
++++ src/makemake.in	Tue Jun 18 18:07:44 2002
+@@ -1655,6 +1655,12 @@ case "$fsstnd" in
      echol "docdir = \$(exec_prefix)${NEXT_}share${NEXT_}doc"
      echol "lispdocdir = \$(docdir)${NEXT_}clisp"
      ;;
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_makemake_in,v 1.3 2001/03/31 19:20:09 naddy Exp $
  esac
  echol "libdir = \$(exec_prefix)${NEXT_}lib"
  echol "lisplibdir = \$(libdir)${NEXT_}clisp"
-@@ -3129,14 +3135,14 @@ if [ $CROSS = false ] ; then
+@@ -3188,14 +3194,14 @@ if [ $CROSS = false ] ; then
          echotab "if [ ! -d \$(DESTDIR)\$(htmldir) ] ; then mkdir \$(DESTDIR)\$(htmldir) ; fi"
          echotab "if [ ! -d \$(DESTDIR)\$(dvidir) ] ; then mkdir \$(DESTDIR)\$(dvidir) ; fi"
          ;;
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_makemake_in,v 1.3 2001/03/31 19:20:09 naddy Exp $
          ;;
        *)
          echotab "if [ ! -d \$(DESTDIR)\$(lispdocdir)/doc ] ; then mkdir \$(DESTDIR)\$(lispdocdir)/doc ; fi"
-@@ -3202,7 +3208,7 @@ if [ $CROSS = false ] ; then
+@@ -3261,7 +3267,7 @@ if [ $CROSS = false ] ; then
            echotab "\$(INSTALL_DATA) clreadline.dvi \$(DESTDIR)\$(dvidir)/clreadline.dvi"
          fi
          ;;
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_makemake_in,v 1.3 2001/03/31 19:20:09 naddy Exp $
          echotab "if [ ! -d \$(DESTDIR)\$(lispdocdir) ] ; then mkdir \$(DESTDIR)\$(lispdocdir) ; fi"
          echotab "\$(INSTALL_DATA) clisp.html \$(DESTDIR)\$(lispdocdir)/clisp.html"
          if [ $TERMINAL = readline ] ; then
-@@ -3221,6 +3227,10 @@ if [ $CROSS = false ] ; then
+@@ -3280,6 +3286,10 @@ if [ $CROSS = false ] ; then
        netbsd)
          echotab "\$(INSTALL_DATA) \$(MANUALS)${manual_dvi} \$(DESTDIR)\$(lispdocdir)/"
          ;;
@@ -51,7 +51,7 @@ $OpenBSD: patch-src_makemake_in,v 1.3 2001/03/31 19:20:09 naddy Exp $
        *)
          echotab "if [ ! -d \$(DESTDIR)\$(lispdocdir)/doc ] ; then mkdir \$(DESTDIR)\$(lispdocdir)/doc ; fi"
          echotab "\$(INSTALL_DATA) \$(MANUALS)${manual_dvi} \$(DESTDIR)\$(lispdocdir)/doc/"
-@@ -3261,7 +3271,7 @@ if [ $CROSS = false ] ; then
+@@ -3320,7 +3330,7 @@ if [ $CROSS = false ] ; then
            echotab "\$(RM) \$(DESTDIR)\$(dvidir)/clreadline.dvi"
          fi
          ;;
@@ -60,7 +60,7 @@ $OpenBSD: patch-src_makemake_in,v 1.3 2001/03/31 19:20:09 naddy Exp $
          echotab "\$(RM) \$(DESTDIR)\$(lispdocdir)/clisp.html"
          if [ $TERMINAL = readline ] ; then
            echotab "\$(RM) \$(DESTDIR)\$(lispdocdir)/clreadline.html"
-@@ -3270,7 +3280,7 @@ if [ $CROSS = false ] ; then
+@@ -3329,7 +3339,7 @@ if [ $CROSS = false ] ; then
      esac
      echotab "for f in \$(READMES); do \$(RM) \$(DESTDIR)\$(lispdocdir)/\$\$f; done"
      case "$fsstnd" in

@@ -1,6 +1,7 @@
---- libiconv/libcharset/lib/Makefile.in.orig	Wed Jul 18 20:22:02 2001
-+++ libiconv/libcharset/lib/Makefile.in	Wed Jul 18 20:22:43 2001
-@@ -25,8 +25,11 @@
+$OpenBSD: patch-libiconv-libcharset-lib-Makefile_in,v 1.2 2002/06/18 16:11:30 naddy Exp $
+--- libiconv/libcharset/lib/Makefile.in.orig	Thu Jun 28 09:35:51 2001
++++ libiconv/libcharset/lib/Makefile.in	Tue Jun 18 18:07:43 2002
+@@ -25,8 +25,11 @@ LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=un
  RM = rm -f
  
  # Programs used by "make install":

@@ -1,6 +1,7 @@
---- libiconv/libcharset/Makefile.in.orig	Wed Jul 18 20:14:51 2001
-+++ libiconv/libcharset/Makefile.in	Wed Jul 18 20:15:12 2001
-@@ -20,8 +20,11 @@
+$OpenBSD: patch-libiconv-libcharset-Makefile_in,v 1.2 2002/06/18 16:11:30 naddy Exp $
+--- libiconv/libcharset/Makefile.in.orig	Mon May 21 18:16:31 2001
++++ libiconv/libcharset/Makefile.in	Tue Jun 18 18:07:43 2002
+@@ -20,8 +20,11 @@ RM = rm -f
  @SET_MAKE@
  
  # Programs used by "make install":

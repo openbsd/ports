@@ -1,6 +1,7 @@
---- libiconv/lib/Makefile.in.orig	Wed Jul 18 20:18:49 2001
-+++ libiconv/lib/Makefile.in	Wed Jul 18 20:19:17 2001
-@@ -29,9 +29,12 @@
+$OpenBSD: patch-libiconv-lib-Makefile_in,v 1.2 2002/06/18 16:11:30 naddy Exp $
+--- libiconv/lib/Makefile.in.orig	Thu Jun 28 09:35:51 2001
++++ libiconv/lib/Makefile.in	Tue Jun 18 18:07:43 2002
+@@ -29,9 +29,12 @@ LN_S = @LN_S@
  RM = rm -f
  
  # Programs used by "make install":
