@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/06/09 05:24:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/24 01:58:04 kevlo Exp $
 
 COMMENT=	"module to implement efficient mapping tables"
 
 DISTNAME=	Unicode-Map8-0.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -17,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Unicode/}
 
 BUILD_DEPENDS=	::converters/p5-Unicode-String
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
