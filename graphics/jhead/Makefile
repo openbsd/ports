@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/03/19 07:22:18 sturm Exp $
 
 COMMENT=	"Exif Jpeg camera setting parser and thumbnail remover"
 
@@ -18,6 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
+
+.if ${MACHINE_ARCH} == "sparc64"
+CFLAGS+=	-O0
+.endif
 
 do-build:
 	cd ${WRKSRC} && \
