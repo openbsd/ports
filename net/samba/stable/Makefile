@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2002/11/22 00:53:26 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/12/14 09:31:50 brad Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
-DISTNAME=	samba-2.2.7
+DISTNAME=	samba-2.2.7a
 CATEGORIES=	net
 MASTER_SITES=	http://us1.samba.org/samba/ftp/ \
 		http://us2.samba.org/samba/ftp/ \
@@ -17,6 +17,7 @@ HOMEPAGE=	http://www.samba.org/
 
 MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
