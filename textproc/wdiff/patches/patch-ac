@@ -33,7 +33,7 @@
     side->character = getc (side->file);
     side->position = 0;
   
-!   sprintf(side->temp_name, "/tmp/wd.XXXXXXXX", L_tmpnam);
+!   sprintf(side->temp_name, "/tmp/wd.XXXXXXXX");
 !   side->temp_file = fdopen (mkstemp(side->temp_name), "w");
     if (side->temp_file == NULL)
       error (EXIT_OTHER_REASON, errno, side->temp_name);
