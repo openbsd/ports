@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2002/03/23 18:58:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.37 2002/09/11 17:42:01 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -31,11 +31,11 @@ MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
 		-system-zlib -no-thread -sm -no-g++-exceptions \
-		-kde -v
+		-v
 #CONFIGURE_ARGS+=-static -debug
 #CONFIGURE_ARGS+=-debug
 
-CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${QTMODULES}" KDEDIR="${LOCALBASE}"
+CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${QTMODULES}"
 
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
