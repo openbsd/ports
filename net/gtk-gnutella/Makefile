@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/06/25 02:58:09 pvalchev Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
-VERSION=		0.80
+VERSION=		0.85
 DISTNAME=		gtk-gnutella-${VERSION}
 CATEGORIES=     	net 
 NEED_VERSION=		1.504
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
 
-MAINTAINER=		Flinn Mueller <flinn@activeintra.net>
+MAINTAINER=		Nikolay Sturm <sturm@sec.informatik.tu-darmstadt.de>
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 

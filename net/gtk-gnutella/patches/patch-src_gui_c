@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gui_c,v 1.1 2002/02/28 21:01:31 naddy Exp $
---- src/gui.c.orig	Thu Feb 28 21:39:22 2002
-+++ src/gui.c	Thu Feb 28 21:42:09 2002
-@@ -583,7 +583,7 @@ void gui_update_download(struct download
+$OpenBSD: patch-src_gui_c,v 1.2 2002/06/25 02:58:09 pvalchev Exp $
+--- src/gui.c.orig	Fri May 10 09:44:08 2002
++++ src/gui.c	Fri May 10 09:44:15 2002
+@@ -570,7 +570,7 @@ void gui_update_download(struct download
  		break;
  
  	case GTA_DL_TIMEOUT_WAIT:
