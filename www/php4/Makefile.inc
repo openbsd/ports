@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2002/09/11 23:16:48 avsm Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2002/10/29 01:42:41 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -48,3 +48,6 @@ CONFIGURE_ARGS+=	--enable-shared \
 # default included extensions
 CONFIGURE_ARGS+= 	--with-openssl \
 			--with-zlib 
+
+# XXX  How to run the test suite?
+NO_REGRESS=		Yes
