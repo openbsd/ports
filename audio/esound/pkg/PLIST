@@ -11,6 +11,6 @@ bin/esdsample
 include/esd.h
 lib/libesd.a
 lib/libesd.la
-lib/libesd.so.2.8
+lib/libesd.so.2.15
 @exec /sbin/ldconfig -m %B
 share/aclocal/esd.m4

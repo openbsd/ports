@@ -1,10 +1,16 @@
---- configure.orig	Sun Mar 21 21:58:40 1999
-+++ configure	Sun Mar 21 21:59:13 1999
-@@ -3493,6 +3493,7 @@
-    cat > conftest.$ac_ext <<EOF
- #line 3495 "configure"
- #include "confdefs.h"
-+#include <stdio.h>
- #include <tcpd.h>
- #include <syslog.h>
- int allow_severity = LOG_INFO;
+--- test-script.orig	Thu Oct  7 23:55:09 1999
++++ test-script	Thu Oct  7 23:55:44 1999
+@@ -1,4 +1,4 @@
+-#!/bin/tcsh
++#!/usr/local/bin/tcsh
+ echo welcome to the test.
+ 
+ echo ""
+@@ -40,7 +40,6 @@
+ esdmon > sample.raw &
+ esdcat -b -m -r 11025 test.wav
+ sleep 3
+-killall esdmon
+ 
+ echo press enter to continue...
+ echo $< >& /dev/null
