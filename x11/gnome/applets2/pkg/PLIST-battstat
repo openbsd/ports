@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-battstat,v 1.2 2003/06/12 20:12:55 marcm Exp $
+@comment $OpenBSD: PLIST-battstat,v 1.3 2003/07/06 15:35:19 sturm Exp $
 libexec/battstat-applet-2
 share/battstat_applet/battstat_applet.glade
 share/examples/gnome-applets2/sound/events/battstat_applet.soundlist
@@ -22,7 +22,6 @@ share/schemas/gnome-applets2/battstat.schemas
 @dirrm share/gnome/help/battstat/C/figures
 @dirrm share/gnome/help/battstat/C
 @dirrm share/gnome/help/battstat
-@dirrm share/battstat_applet
 @dirrm share/examples/gnome-applets2/sound/events
 @dirrm share/examples/gnome-applets2/sound
 @dirrm share/examples/gnome-applets2
