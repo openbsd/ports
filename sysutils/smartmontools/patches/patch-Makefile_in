@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/03/08 01:47:26 kurt Exp $
+--- Makefile.in.orig	Fri Sep 10 00:11:44 2004
++++ Makefile.in	Fri Feb 18 14:27:05 2005
+@@ -424,7 +424,7 @@ DIST_SOURCES = $(smartctl_SOURCES) $(am_
+ 
+ NROFF = nroff
+ MANS = $(man_MANS)
+-DATA = $(docs_DATA) $(initd_DATA) $(sysconf_DATA)
++DATA = $(docs_DATA) $(sysconf_DATA)
+ 
+ 
+ RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
+@@ -1145,9 +1145,9 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-docsDATA install-initdDATA install-man
++install-data-am: install-docsDATA install-man
+ 
+-install-exec-am: install-sbinPROGRAMS install-sysconfDATA
++install-exec-am: install-sbinPROGRAMS
+ 
+ install-info: install-info-recursive
+ 
