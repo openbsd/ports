@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/12 00:25:22 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/12 01:52:45 espie Exp $
 
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
@@ -12,7 +12,10 @@ DISTFILES=	${EXTRACT_ONLY} ${GUIDE}
 
 MAINTAINER=	espie@cvs.openbsd.org
 
-LICENSE_TYPE=		GPL
+# guide.tar.gz can be redistributed freely provided its contents are not
+# altered.
+
+LICENSE_TYPE=		GPL NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
