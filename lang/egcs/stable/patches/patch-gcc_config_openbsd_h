@@ -1,6 +1,32 @@
---- gcc/config/openbsd.h.orig	2002-11-26 05:54:46.000000000 +0100
-+++ gcc/config/openbsd.h	2003-11-11 15:35:32.000000000 +0100
-@@ -73,8 +73,35 @@ Boston, MA 02111-1307, USA.  */
+--- gcc/config/openbsd.h.orig	2002-11-25 21:54:46.000000000 -0700
++++ gcc/config/openbsd.h	2004-02-08 04:24:34.000000000 -0700
+@@ -52,20 +52,20 @@ Boston, MA 02111-1307, USA.  */
+ 
+ #ifdef OPENBSD_NATIVE
+ 
+-#undef GCC_INCLUDE_DIR
+-#define GCC_INCLUDE_DIR "/usr/include"
+-
+ /* The compiler is configured with ONLY the gcc/g++ standard headers.  */
+ #undef INCLUDE_DEFAULTS
+ #define INCLUDE_DEFAULTS			\
+   {						\
+     { GPLUSPLUS_INCLUDE_DIR, "G++", 1, 1 },	\
+-    { GCC_INCLUDE_DIR, "GCC", 0, 0 },		\
++    { GPLUSPLUS_TOOL_INCLUDE_DIR, "G++", 1, 1 },\
++    { GPLUSPLUS_BACKWARD_INCLUDE_DIR, "G++", 1, 1 }, \
++    { STANDARD_INCLUDE_DIR, STANDARD_INCLUDE_COMPONENT, 0, 0 },	\
+     { 0, 0, 0, 0 }				\
+   }
+ 
+ /* Under OpenBSD, the normal location of the various *crt*.o files is the
+    /usr/lib directory.  */
++#undef STANDARD_STARTFILE_PREFIX
+-#define STANDARD_STARTFILE_PREFIX	"/usr/lib/"
++#define STANDARD_STARTFILE_PREFIX	"/usr/local/lib/"
+ 
+ #endif
+@@ -73,8 +73,39 @@ Boston, MA 02111-1307, USA.  */
  
  /* Controlling the compilation driver.  */
  
@@ -9,7 +35,10 @@
 +  do						\
 +    {						\
 +      builtin_define ("__OpenBSD__");		\
++      builtin_define ("__unix__");		\
++      builtin_define ("__ANSI_COMPAT");		\
 +      builtin_assert ("system=unix");		\
++      builtin_assert ("system=bsd");		\
 +      builtin_assert ("system=OpenBSD");	\
 +    }						\
 +  while (0)
@@ -28,6 +57,7 @@
 +  do						\
 +    {						\
 +      builtin_define ("_LP64");			\
++      builtin_define ("__LP64__");		\
 +    }						\
 +  while (0)
 +
@@ -37,7 +67,7 @@
     since all code must be compiled with -pthread to work. 
     This two-stage defines makes it easy to pick that for targets that
     have subspecs.  */
-@@ -84,10 +111,9 @@ Boston, MA 02111-1307, USA.  */
+@@ -84,10 +115,9 @@ Boston, MA 02111-1307, USA.  */
  #define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
  #endif
  
@@ -51,8 +81,3 @@
  
  #ifndef OBSD_HAS_CORRECT_SPECS
  
-@@ -289,3 +315,4 @@ do {									 \
-    as this depends on a few other details as well...  */
- #define HANDLE_SYSV_PRAGMA 1
- 
-+#define LIBSTDCXX "-lestdc++"

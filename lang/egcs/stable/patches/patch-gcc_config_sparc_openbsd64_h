@@ -1,7 +1,18 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.11 2004/01/31 15:23:58 espie Exp $
---- gcc/config/sparc/openbsd64.h.orig	2002-05-30 22:35:58.000000000 +0200
-+++ gcc/config/sparc/openbsd64.h	2003-11-12 22:11:26.000000000 +0100
-@@ -31,8 +31,239 @@ Boston, MA 02111-1307, USA.  */
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.12 2004/02/10 20:14:25 sturm Exp $
+--- gcc/config/sparc/openbsd64.h.orig	2002-05-30 14:35:58.000000000 -0600
++++ gcc/config/sparc/openbsd64.h	2004-02-08 02:14:44.000000000 -0700
+@@ -21,18 +21,28 @@ Boston, MA 02111-1307, USA.  */
+ #undef TARGET_VERSION
+ #define TARGET_VERSION fprintf (stderr, " (sparc64 OpenBSD ELF)")
+ 
+-/* XXX - do we really want HARD_QUAD? */
+ #undef TARGET_DEFAULT
+ #define TARGET_DEFAULT \
+-(MASK_V9 + MASK_PTR64 + MASK_64BIT + MASK_HARD_QUAD \
++(MASK_V9 + MASK_PTR64 + MASK_64BIT \
+  + MASK_APP_REGS + MASK_FPU + MASK_STACK_BIAS + MASK_LONG_DOUBLE_128)
+ 
+ #undef SPARC_DEFAULT_CMODEL
  #define SPARC_DEFAULT_CMODEL CM_MEDMID
  
  /* Run-time target specifications.  */
@@ -14,34 +25,19 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.11 2004/01/31 15:23:58 espie Ex
 +      OPENBSD_OS_CPP_BUILTINS_LP64();			\
 +      builtin_define ("__sparc64__");			\
 +      builtin_define ("__sparc_v9__");			\
++      builtin_define ("__sparcv9__");			\
 +      builtin_define ("__arch64__");			\
++      builtin_define ("__sparc");			\
 +      builtin_define ("__sparc__");			\
 +    }							\
 +  while (0)
-+
-+#undef CPP_SUBTARGET_SPEC
-+#define CPP_SUBTARGET_SPEC ""
-+
-+#undef MD_EXEC_PREFIX
-+#undef MD_STARTFILE_PREFIX
-+
-+#undef ASM_SPEC
-+#define ASM_SPEC "\
-+%{v:-V} -s %{fpic:-K PIC} %{fPIC:-K PIC} \
-+%{mlittle-endian:-EL} \
-+%(asm_cpu) %(asm_arch) \
-+"
-+
-+/* Layout of source language data types.  */
-+#undef WCHAR_TYPE
-+#define WCHAR_TYPE "int"
-+
-+#undef WCHAR_TYPE_SIZE
-+#define WCHAR_TYPE_SIZE 32
-+
-+#undef LONG_DOUBLE_TYPE_SIZE
-+#define LONG_DOUBLE_TYPE_SIZE 128
-+
+ 
+ #undef CPP_SUBTARGET_SPEC
+ #define CPP_SUBTARGET_SPEC ""
+@@ -57,6 +67,14 @@ Boston, MA 02111-1307, USA.  */
+ #undef LONG_DOUBLE_TYPE_SIZE
+ #define LONG_DOUBLE_TYPE_SIZE 128
+ 
 +#undef	WINT_TYPE
 +#define	WINT_TYPE "long int"
 +
@@ -50,22 +46,13 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.11 2004/01/31 15:23:58 espie Ex
 +
 +#define HANDLE_PRAGMA_REDEFINE_EXTNAME 1
 +
-+#undef LINK_SPEC
-+#define LINK_SPEC \
-+  "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e __start}}}} \
-+   %{shared:-shared} %{R*} \
-+   %{static:-Bstatic} \
-+   %{!static:-Bdynamic} \
-+   %{assert*} \
-+   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
-+
-+/* As an elf system, we need crtbegin/crtend stuff.  */
-+#undef STARTFILE_SPEC
-+#define STARTFILE_SPEC "\
-+        %{!shared: %{pg:gcrt0%O%s} %{!pg:%{p:gcrt0%O%s} %{!p:crt0%O%s}} \
-+        crtbegin%O%s} %{shared:crtbeginS%O%s}"
-+#undef ENDFILE_SPEC
-+#define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
+ #undef LINK_SPEC
+ #define LINK_SPEC \
+   "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e __start}}}} \
+@@ -73,3 +91,146 @@ Boston, MA 02111-1307, USA.  */
+         crtbegin%O%s} %{shared:crtbeginS%O%s}"
+ #undef ENDFILE_SPEC
+ #define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"
 +
 +#undef ASM_CPU_DEFAULT_SPEC
 +#define ASM_CPU_DEFAULT_SPEC "-xarch=v8plusa"
@@ -209,37 +196,3 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.11 2004/01/31 15:23:58 espie Ex
 +      perror ("mprotect of trampoline code");				\
 +  }									\
 +}
-+/* Configuration file for sparc64 OpenBSD target.
-+   Copyright (C) 1999 Free Software Foundation, Inc.
-+
-+This file is part of GCC.
-+
-+GCC is free software; you can redistribute it and/or modify
-+it under the terms of the GNU General Public License as published by
-+the Free Software Foundation; either version 2, or (at your option)
-+any later version.
-+
-+GCC is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-+GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with GCC; see the file COPYING.  If not, write to
-+the Free Software Foundation, 59 Temple Place - Suite 330,
-+Boston, MA 02111-1307, USA.  */
-+
-+#undef TARGET_VERSION
-+#define TARGET_VERSION fprintf (stderr, " (sparc64 OpenBSD ELF)")
-+
-+/* XXX - do we really want HARD_QUAD? */
-+#undef TARGET_DEFAULT
-+#define TARGET_DEFAULT \
-+(MASK_V9 + MASK_PTR64 + MASK_64BIT + MASK_HARD_QUAD \
-+ + MASK_APP_REGS + MASK_FPU + MASK_STACK_BIAS + MASK_LONG_DOUBLE_128)
-+
-+#undef SPARC_DEFAULT_CMODEL
-+#define SPARC_DEFAULT_CMODEL CM_MEDMID
- 
- #undef CPP_SUBTARGET_SPEC
- #define CPP_SUBTARGET_SPEC ""
