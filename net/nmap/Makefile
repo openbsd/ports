@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2000/04/02 05:55:56 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/04/08 00:13:51 brad Exp $
 
-DISTNAME=	nmap-2.30BETA17
-PKGNAME=	nmap-2.3b17
+DISTNAME=	nmap-2.30BETA18
+PKGNAME=	nmap-2.3b18
 CATEGORIES=	net security
 NEED_VERSION=	1.234
 MASTER_SITES=	http://www.insecure.org/nmap/dist/
@@ -21,8 +21,5 @@ CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}'
 
 post-extract:
 	@rm -rf ${WRKSRC}/libpcap*
-
-post-install:
-	@strip ${PREFIX}/bin/nmap
 
 .include <bsd.port.mk>
