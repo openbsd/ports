@@ -3,22 +3,18 @@
 # Date created:        1 Nov 1997
 # Whom:                ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/02 00:18:41 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/15 03:44:32 marc Exp $
 #
-        
-DISTNAME=      indent-1.9.1
-CATEGORIES=    devel
-MASTER_SITES=  ${MASTER_SITE_GNU}
 
-MAINTAINER=    joey@OpenBSD.ORG
-        
-MAN1=          indent.1
+DISTNAME=	indent-1.9.1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_GNU}
 
-post-install:
-	@mv ${PREFIX}/bin/indent ${PREFIX}/bin/indent
-	@strip ${PREFIX}/bin/indent
-	@test -d ${PREFIX}/info || ${MKDIR} ${PREFIX}/info  \
-		&& chmod a+rx ${PREFIX}/info
+MAINTAINER=	ports@OpenBSD.ORG
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/indent ${PREFIX}/bin/gindent
+	@${INSTALL_MAN} ${WRKSRC}/indent.1 ${PREFIX}/man/man1/gindent.1
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  if [ -f /usr/share/info/dir ]; then \
 	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
@@ -26,6 +22,7 @@ post-install:
 	    touch ${PREFIX}/info/dir ; \
 	  fi ; \
 	fi
+	@${INSTALL_DATA} ${WRKSRC}/indent.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/indent.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
