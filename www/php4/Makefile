@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/17 20:33:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2000/11/28 15:44:31 jakob Exp $
 
 DISTNAME=	php-4.0.3pl1
 PKGNAME=	php4-4.0.3pl1
@@ -111,6 +111,7 @@ CONFIGURE_ARGS+=	--without-snmp --without-openssl
 .endif
 
 .if ${FLAVOR:L:Mgd}
+MAKE_FLAGS+=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include'
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-gd \
 			--with-jpeg-dir=${PREFIX} 
