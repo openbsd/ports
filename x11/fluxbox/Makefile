@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/14 20:39:18 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2002/09/03 23:06:24 brad Exp $
 
 COMMENT=	"blackbox-derived window manager with Gnome and KDE support"
 
-VERSION=		0.1.10
+VERSION=		0.1.11
 DISTNAME=		fluxbox-${VERSION}
 CATEGORIES=		x11
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fluxbox/}
