@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.439 2001/08/17 03:23:04 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.440 2001/08/18 23:16:57 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -885,14 +885,6 @@ _CDROM_OVERRIDE=if cp -f ${CDROM_SITE}/$$f .; then exit 0; fi
 _CDROM_OVERRIDE=:
 .endif
 
-# Compatibility game: if USE_ZIP or USE_BZIP2 is already defined, set
-# EXTRACT_SUFX
-.if defined(USE_ZIP)
-EXTRACT_SUFX?=.zip
-.elif defined(USE_BZIP2)
-EXTRACT_SUFX?=.tar.bz2
-.endif
-
 EXTRACT_SUFX?=		.tar.gz
 
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
@@ -944,24 +936,24 @@ EXTRACT_ONLY?=	${_DISTFILES}
 
 # okay, time for some guess work
 .if !empty(EXTRACT_ONLY:M*.zip)
-USE_ZIP?=	Yes
+_USE_ZIP?=	Yes
 .endif
 .if !empty(EXTRACT_ONLY:M*.tar.bz2) || (defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
-USE_BZIP2?=	Yes
+_USE_BZIP2?=	Yes
 .endif 
-USE_ZIP?= No
-USE_BZIP2?= No
+_USE_ZIP?=	No
+_USE_BZIP2?=	No
 
 EXTRACT_CASES?= 
 
 _SED_FIX_SHAR?=	sed -n -e '/^\#\![[:blank:]]*\/bin\/sh[[:space:]]*$$/,$$p'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
-.if ${USE_ZIP:L} != "no"
+.if ${_USE_ZIP:L} != "no"
 BUILD_DEPENDS+=		${UNZIP}::archivers/unzip
 EXTRACT_CASES+= *.zip) ${UNZIP} -q ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
 .endif
-.if ${USE_BZIP2:L} != "no"
+.if ${_USE_BZIP2:L} != "no"
 BUILD_DEPENDS+=		${BZIP2}::archivers/bzip2
 EXTRACT_CASES+= *.tar.bz2) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 .endif
@@ -973,7 +965,7 @@ EXTRACT_CASES+= *.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive >`basename $$arch
 EXTRACT_CASES+= *) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 PATCH_CASES?=
-.if ${USE_BZIP2:L} != "no"
+.if ${_USE_BZIP2:L} != "no"
 PATCH_CASES+= *.bz2) ${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 PATCH_CASES+= *.Z|*.gz) ${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
