@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/09/13 21:38:02 todd Exp $
+--- configure.orig	Thu Aug 30 16:36:43 2001
++++ configure	Thu Aug 30 16:37:11 2001
+@@ -3323,7 +3323,7 @@ else
+   FALSE_FALSE=
+ fi
+ 
+-ALL_LINGUAS="az bg ca cs da de el en_GB es et eu fi fr ga gl hr hu it ja ko lt nl no pl pt pt_BR ro ru sk sl sv tr uk wa zh_CN.GB2312 zh_TW.Big5"
++ALL_LINGUAS="az bg ca cs da de el en_GB es et eu fi fr ga gl hr hu it ko lt nl no pl pt pt_BR ro ru sk sl sv tr uk wa zh_CN.GB2312 zh_TW.Big5"
+ echo $ac_n "checking for working const""... $ac_c" 1>&6
+ echo "configure:3329: checking for working const" >&5
+ if eval "test \"`echo '$''{'ac_cv_c_const'+set}'`\" = set"; then
