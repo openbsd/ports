@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2003/02/05 03:54:17 jcs Exp $
+# $OpenBSD: Makefile,v 1.17 2003/05/04 17:53:36 jcs Exp $
 
-DISTNAME=	arping-1.06
+DISTNAME=	arping-1.07
 CATEGORIES=	net
 
 PERMIT_PACKAGE_CDROM=	Yes
