@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2004/05/21 12:16:21 brad Exp $
+# $OpenBSD: Makefile,v 1.100 2004/06/24 06:35:51 brad Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -64,6 +64,8 @@ USE_GCC3?= No
 .if ${USE_GCC3:L} == "yes"
 CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
+.else
+PATCH_LIST=	gcc-* patch-*
 .endif
 
 . if ${MACHINE_ARCH} == "i386"
