@@ -1,5 +1,6 @@
---- Imakefile.orig	Fri Nov 22 02:28:46 1996
-+++ Imakefile	Thu Mar  8 02:21:42 2001
+$OpenBSD: patch-Imakefile,v 1.3 2004/03/05 22:56:42 naddy Exp $
+--- Imakefile.orig	1996-11-22 02:28:46.000000000 +0100
++++ Imakefile	2004-03-05 23:30:39.000000000 +0100
 @@ -24,23 +24,22 @@ XCOMM ==================================
  XCOMM This is the directory where the highscore, level & sound data will be 
  XCOMM placed. Default will be the current directory.

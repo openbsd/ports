@@ -1,0 +1,20 @@
+$OpenBSD: patch-editor_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
+--- editor.c.orig	1996-11-22 02:28:46.000000000 +0100
++++ editor.c	2004-03-05 23:30:39.000000000 +0100
+@@ -652,9 +652,15 @@ static void SetupPlayTest(display)
+     Display *display;
+ #endif
+ {
++	int fd;
++
+ 	EditState = EDIT_TEST;
+ 
+-	strcpy(tempName, tempnam("/tmp", "xboing-"));
++	sprintf(tempName, "/tmp/xboing-XXXXXXXXXX");
++	if ((fd = mkstemp(tempName)) < 0)
++	  ShutDown(display, 1, "Sorry, cannot save test play level.");
++
++	close(fd);
+   	if (SaveLevelDataFile(display, tempName) == False)
+    		ShutDown(display, 1, "Sorry, cannot save test play level.");
+ 

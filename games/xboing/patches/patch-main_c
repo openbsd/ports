@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1 2004/03/05 22:56:42 naddy Exp $
+--- main.c.orig	1996-11-22 02:28:46.000000000 +0100
++++ main.c	2004-03-05 23:30:39.000000000 +0100
+@@ -156,7 +156,7 @@ void SetUserSpeed(delay)
+ 
+ 	/* Set an entire game speedup or slowdown speed */
+ 	temp = (speed / (long) userDelay);
+-	userDelay = delay;
++	userDelay = delay/2 + 3;
+ 	speed = (long) (temp * userDelay);
+ 	speedLevel = 10 - delay;
+ }
