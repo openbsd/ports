@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.29 1999/09/27 17:23:25 ho Exp $
+$OpenBSD: LICENSE,v 1.30 1999/09/29 16:00:54 jakob Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -413,6 +413,7 @@ Y	net/clog			clog-1.6.tar.gz			NONE
 Y	net/ethereal			ethereal-0.7.5.tar.gz		GPL
 -	net/firewalk			firewalk-final-0.7c.tar.gz
 N	net/gated			gated-3-5-7.tar.gz		LIC
+Y	net/httptunnel			httptunnel-2.0.tar.gz		GPL
 Y	net/icb				icb-5.0.9.tar.Z			COPY/GPL
 Y	net/icmpinfo			icmpinfo-1.11.tar.gz		PERL
 Y	net/irc				irc2.10.1.tgz			GPL
