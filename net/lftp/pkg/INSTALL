@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/10/07 19:01:56 heko Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/10/26 09:03:13 kevlo Exp $
 #
 # Pre/post-installation setup of lftp
 
@@ -8,16 +8,16 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/lftp
+CONFIG_FILE=${SYSCONFDIR}/lftp.conf
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/lftp/lftp.conf-sample
 
 do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing configuration file in $CONFIG_DIR/lftp.conf"
+    echo "| The existing $1 configuration file, $CONFIG_FILE,"
     echo "| has NOT been changed. You may want to compare it to the"
-    echo "| current sample file in $SAMPLE_CONFIG_DIR/lftp.conf,"
+    echo "| current sample file, $SAMPLE_CONFIG_FILE,"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
@@ -25,13 +25,12 @@ do_notice()
 
 do_install()
 {
-    install -d -o root -g wheel -m 755 $CONFIG_DIR
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/lftp.conf $CONFIG_DIR/lftp.conf
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo
     echo "+---------------"
-    echo "| The $1 configuration file has been installed into"
-    echo "| $CONFIG_DIR/lftp.conf. Please view this file and change the configuration"
-    echo "| to meet your needs."
+    echo "| The $1 configuration file, $CONFIG_FILE," 
+    echo "| has been installed.  Please view this file and change"
+    echo "| the configuration to meet your needs."
     echo "+---------------"
     echo
 }
@@ -50,13 +49,11 @@ case $2 in
         : nothing to pre-install for this port
         ;;
     POST-INSTALL)
-        if [ ! -d $CONFIG_DIR ]; then
-            do_install $1
-        elif [ ! -f $CONFIG_DIR/lftp.conf ]; then
-            do_install $1
-        else
-            do_notice $1
-        fi
+	if [ -f $CONFIG_FILE ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
         ;;
     *)
         echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
