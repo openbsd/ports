@@ -1,0 +1,19 @@
+--- src/lid.c.~1~	Tue Aug  6 19:43:28 1996
++++ src/lid.c	Sat Mar 14 19:59:04 1998
+@@ -758,11 +758,14 @@
+ search_flinkv (struct file_link **flinkv)
+ {
+   char pattern[BUFSIZ];
++  char *p;
+   unsigned int count;
+ 
+-  if (gets (pattern) == 0)
++  if (fgets (pattern, BUFSIZ, stdin) == 0)
+     return -1;
+-
++  p = strchr(pattern, '\n');
++  if (p)
++    *p = 0;
+   for (count = 0; *flinkv; count++, flinkv++)
+     {
+       char *file_name = ALLOCA (char, PATH_MAX);
