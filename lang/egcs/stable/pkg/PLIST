@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2002/09/14 10:14:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2002/11/24 11:52:32 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -14,6 +14,7 @@ info/cpp.info-1
 info/cpp.info-2
 info/cpp.info-3
 info/cpp.info-4
+info/cpp.info-5
 info/cppinternals.info
 info/gcc.info
 info/gcc.info-1

@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.69 2002/10/05 09:40:58 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2002/11/24 11:52:32 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
-MAKE_ADA=Yes
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
 
+
+.if ${MACHINE_ARCH} == "i386"
+MAKE_ADA=Yes
 # Java is still mostly broken (boehm-gc)
 MAKE_JAVA=Yes
-
-.if ${MACHINE_ARCH} != "i386"
+.else
 MAKE_JAVA=No
 MAKE_ADA=No
 .endif
@@ -72,7 +73,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.2
+V=3.2.1
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -81,7 +82,7 @@ MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-3.2.tar.bz2
+DISTFILES=  gcc-3.2.1.tar.bz2
 
 SITES=	
 

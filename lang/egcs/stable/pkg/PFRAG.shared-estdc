@@ -1,1 +1,2 @@
-lib/libestdc++.so.5.0
+@comment $OpenBSD: PFRAG.shared-estdc,v 1.2 2002/11/24 11:52:32 espie Exp $
+lib/libestdc++.so.5.1

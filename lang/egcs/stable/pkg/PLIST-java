@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2002/09/14 10:14:51 espie Exp $
+@comment $OpenBSD: PLIST-java,v 1.5 2002/11/24 11:52:32 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/gcj.info
 bin/eaddr2name.awk
