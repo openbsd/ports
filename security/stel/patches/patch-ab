@@ -1,8 +1,11 @@
---- stel/Makefile.orig	Sat May  4 12:05:16 1996
-+++ stel/Makefile	Mon Nov 16 23:31:22 1998
-@@ -48,14 +48,11 @@
+--- stel/Makefile.orig	Sat May  4 18:05:16 1996
++++ stel/Makefile	Tue Feb 27 20:11:09 2001
+@@ -46,16 +46,13 @@
+ # OFFSET_T=long for most architectures
+ # OFFSET_T=off_t for POSIX systems
  
- CC	= gcc
+-CC	= gcc
++#CC	= gcc
  DEFS	= -DGENERICLOGIN -DCOMBOFLAG $(SYSDEFS) ### -DSECURID
 -INCDIRS	= -I$(DESDIR) -I$(DESCOREDIR) -I$(SKEYDIR) -I$(GMPDIR) $(OTHERINCDIR) ### -I$(SDIDIR) 
 +INCDIRS	= -I$(DESCOREDIR) $(OTHERINCDIR) ### -I$(SDIDIR) 
@@ -16,20 +19,31 @@
  GNUREGEX = ../regex-0.12
  
  # SOCKS support
-@@ -70,9 +67,9 @@
+@@ -68,11 +65,11 @@
+ ###SDILIB	= $(SDIDIR)/sdiclient.a
+ ###SDILIB	= $(SDIDIR)/sdiclient.a
  
- CFLAGS	= -g $(OPTIMIZE) -fwritable-strings $(DEFS) $(INCDIRS)
+-CFLAGS	= -g $(OPTIMIZE) -fwritable-strings $(DEFS) $(INCDIRS)
++CFLAGS += $(OPTIMIZE) -fwritable-strings $(DEFS) $(INCDIRS)
  
 -LDFLAGS	= -g $(OPTIMIZE) -L$(DESDIR) -L$(DESCOREDIR) \
 -	-L$(GMPDIR) -L$(SKEYDIR) $(SOCKSLIB) $(OTHERLIBDIR) -lskey -ldes \
 -	-lgmp $(SYSLIBS) -lm -lsocks
-+LDFLAGS	= -g $(OPTIMIZE) -L$(DESCOREDIR) \
++LDFLAGS	= $(OPTIMIZE) -L$(DESCOREDIR) \
 +	$(SOCKSLIB) $(OTHERLIBDIR) -lskey -ldes \
 +	-lgmp $(SYSLIBS) -lm ## -lsocks
  
  
  S5R3OBJ = utmp_init.o utmp_login.o utmp_logout.o updwtmp.o
-@@ -203,7 +200,7 @@
+@@ -163,7 +160,6 @@
+ bsdi:
+ 	make all ALLMASTER="$(BSD4OBJ) $(MASTER)" \
+ 	ALLSLAVE="$(SLAVE)" \
+-	OPTIMIZE="-O2" \
+ 	SYSDEFS="-DBSDI -DIDEA32 -DLOGPRI=LOG_INFO -DOFFSET_T=off_t \
+ 	-DHAS_SYS_PARAM_H" \
+ 	SYSLIBS="$(DESCORELIB)"
+@@ -203,7 +199,7 @@
  lint	:
  	lint \
  	-DIDEA32 -DHIGHFIRST -DLOGPRI=LOG_INFO -DOFFSET_T=long \

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/02/28 21:40:56 naddy Exp $
 
 DISTNAME=	stel
 CATEGORIES=	security
 NEED_VERSION=	1.210
-MASTER_SITES=	ftp://idea.sec.dsi.unimi.it/pub/security/cert-it/
-
+MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \
+		ftp://ftp.mupad.de/pub/crypto/misc/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/stel/
 
 MAINTAINER=	Christopher Turan <turan@openbsd.org>
 
-LICENSE_TYPE=		"GPL CRYPTO"
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
@@ -16,15 +16,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 
-do-build:
-	@cd ${WRKSRC}/stel; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} bsdi
-	nroff -mandoc ${WRKSRC}/man/stel.1 > ${WRKSRC}/man/stel.cat1
-	nroff -mandoc ${WRKSRC}/man/steld.8 > ${WRKSRC}/man/steld.cat8
+ALL_TARGET=	bsdi
 
 do-install:
-	install -g wheel -m 0555 -o root ${WRKSRC}/stel/stel ${PREFIX}/bin
-	install -g wheel -m 0555 -o root ${WRKSRC}/stel/steld ${PREFIX}/sbin
-	install -g wheel -m 0444 -o root ${WRKSRC}/man/stel.cat1 ${PREFIX}/man/cat1/stel.0
-	install -g wheel -m 0444 -o root ${WRKSRC}/man/steld.cat8 ${PREFIX}/man/cat8/steld.0
+	${INSTALL_PROGRAM} ${WRKSRC}/stel/stel ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/stel/steld ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/man/stel.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/steld.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
