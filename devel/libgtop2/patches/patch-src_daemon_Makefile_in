@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_daemon_Makefile_in,v 1.1.1.1 2003/01/31 18:35:57 todd Exp $
---- src/daemon/Makefile.in.orig	Mon Jun 10 23:49:23 2002
-+++ src/daemon/Makefile.in	Mon Jul 29 21:54:46 2002
-@@ -161,7 +161,7 @@ EXTRA_PROGRAMS = libgtop_server2
+$OpenBSD: patch-src_daemon_Makefile_in,v 1.2 2003/06/12 19:39:57 marcm Exp $
+--- src/daemon/Makefile.in.orig	Sun Jan 12 18:48:09 2003
++++ src/daemon/Makefile.in	Mon May 19 12:27:49 2003
+@@ -171,7 +171,8 @@ libgtop_daemon2_LDADD = $(top_builddir)/
+ 				  @sysdeps_suid_lib@ \
+ 				  $(suid_sysdeps) $(suid_common)\
+ 				  $(LIBGTOP_LIBS)\
+-				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@
++				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@ \
++				  -L$(top_builddir)/lib/.libs -L$(top_builddir)/sysdeps/@sysdeps_dir@/.libs -L$(top_builddir)/sysdeps/common/.libs
  
- libgtop_daemon2_SOURCES = gnuserv.c slave.c main.c io.c version.c 				  daemon.h server_config.h
  
--libgtop_daemon2_LDADD = $(top_builddir)/lib/libgtop-2.0.la 				  $(top_builddir)/sysdeps/common/libgtop_common-2.0.la 				  $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps-2.0.la 				  @sysdeps_suid_lib@ 				  $(suid_sysdeps) $(suid_common) 				  $(LIBGTOP_LIBS) 				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@
-+libgtop_daemon2_LDADD = $(top_builddir)/lib/libgtop-2.0.la 				  $(top_builddir)/sysdeps/common/libgtop_common-2.0.la 				  $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps-2.0.la 				  @sysdeps_suid_lib@ 				  $(suid_sysdeps) $(suid_common) 				  $(LIBGTOP_LIBS) 				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@ -L$(top_builddir)/lib/.libs -L$(top_builddir)/sysdeps/@sysdeps_dir@/.libs -L$(top_builddir)/sysdeps/common/.libs
- 
- 
- @ENABLE_STATIC_TRUE@libgtop_daemon2_LDFLAGS = -static
+ libgtop_server2_SOURCES = server.c slave.c io.c version.c daemon.h
