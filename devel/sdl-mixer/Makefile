@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2003/05/12 22:36:32 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2003/05/13 11:37:25 jolan Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 
 DISTNAME=	SDL_mixer-1.2.5
-PKGNAME=	${DISTNAME:L:S/_/-/}p0
+PKGNAME=	${DISTNAME:L:S/_/-/}p1
 CATEGORIES=	devel audio
 
 MASTER_SITES=	${HOMEPAGE}release/
@@ -27,7 +27,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
