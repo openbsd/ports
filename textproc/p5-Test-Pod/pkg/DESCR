@@ -1,2 +1,0 @@
-Test::Pod is a perl module that lets you check the validity of a
-POD file, and reports its results in standard Test::Simple fashion.
