@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/03/31 13:57:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/01/25 21:35:08 pvalchev Exp $
 
 COMMENT=	"extra Korean fonts"
 
@@ -8,8 +8,6 @@ CATEGORIES=	korean x11
 
 MASTER_SITES=	http://hanterm.org/download/font/
 HOMEPAGE=	http://hanterm.org/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
