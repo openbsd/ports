@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2002/09/01 20:34:31 brad Exp $
+# $OpenBSD: Makefile,v 1.230 2002/09/03 18:48:19 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -170,6 +170,7 @@
      SUBDIR += tacacs+
      SUBDIR += tcpcat
      SUBDIR += tcpflow
+     SUBDIR += tcpreen
      SUBDIR += tcpreplay
      SUBDIR += tcpshow
      SUBDIR += tcpslice
