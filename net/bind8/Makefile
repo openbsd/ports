@@ -1,22 +1,26 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/11 00:37:32 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/17 14:28:48 ho Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P6-19991217
 PKGNAME=	bind-8.2.2-P6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
-NEED_VERSION=	1.191
+NEED_VERSION=	1.197
 
 MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
 
-WRKDIST=		${WRKDIR}/named
+WRKDIST=	${WRKDIR}/named
 PREFIX=		/
 NO_MTREE=	yes
 NO_CONFIGURE=	yes
-NO_CDROM=	"CRYPTO: Unclear status of crypto components."
-RESTRICTED=	"Unclear status of crypto components."
-
 SAMPLEDIR=	${DESTDIR}/usr/local/share/examples/bind8
+
+LICENSE_TYPE=		CRYPTO
+RESTRICTED=		"Unclear status of crypto components."
+PERMIT_PACKAGE_CDROM=   "Unclear status of crypto components."
+PERMIT_PACKAGE_FTP=     "Unclear status of crypto components."
+PERMIT_DISTFILES_CDROM= "Unclear status of crypto components."
+PERMIT_DISTFILES_FTP=   "Unclear status of crypto components."
 
 pre-install pre-package:
 	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
