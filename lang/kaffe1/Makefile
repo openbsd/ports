@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/05/03 13:12:55 ian Exp $
+# $OpenBSD: Makefile,v 1.12 1999/05/08 09:00:49 niklas Exp $
 #
 # Relevant URLs:	http://www.transvirtual.com/kaffe/
 
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	jpeg.62.:${PORTSDIR}/graphics/jpeg \
-			gif.3.:${PORTSDIR}/graphics/giflib \
+			gif.4.:${PORTSDIR}/graphics/giflib \
 			png.1.:${PORTSDIR}/graphics/png
 
 .if defined(NO_SHARED_LIBS)
