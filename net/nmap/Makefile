@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2005/01/25 22:24:01 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.56 2005/01/29 20:15:32 sturm Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
 DISTNAME=	nmap-3.75
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	net security
 MASTER_SITES=	${HOMEPAGE}dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.insecure.org/nmap/
+
+MAINTAINER=	Okan Demirmen <okan@demirmen.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,9 +23,9 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-libpcap=/usr \
 			--with-libpcre=${LOCALBASE} \
 			--with-openssl=/usr
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/libpcre \
-				${WRKSRC}/nsock/src \
-				${WRKSRC}/libpcap-possiblymodified
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} \
+				${WRKSRC}/nbase \
+				${WRKSRC}/nsock/src
 
 FLAVORS=	no_x11
 FLAVOR?=	
