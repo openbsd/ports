@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/05 06:39:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/07 14:01:59 kevlo Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
@@ -21,9 +21,15 @@ ONLY_FOR_ARCHS=	i386 m68k sparc mips
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=		--with-apxs=/usr/sbin/apxs
-CONFIGURE_ARGS+=	--without-pcre-regex \
+CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
+			--without-pcre-regex \
 			--with-config-file-path=/var/www/conf
+
+.if defined(USE_MYSQL)
+CONFIGURE_ARGS+=        --with-mysql 
+LIB_DEPENDS=		mysqlclient.6::databases/mysql
+PKGNAME=		php3-3.0.16-mysql
+.endif
 
 post-install:
 	${CHMOD} ${LIBMODE} `apxs -q LIBEXECDIR`/libphp3.so
