@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/03/26 01:53:44 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/03/26 01:55:53 marc Exp $
 
 DISTNAME=	glib-1.2.0
 CATEGORIES=	devel
@@ -30,8 +30,8 @@ pre-extract:
 	   echo "| these commands as user root"; \
 	   echo "|"; \
 	   echo "|	pkg_delete -f `pkg_info -e 'gtk+-*'`"; \
-	   echo "|	ldconfig ${X11BASE}"; \
-	   echo "|	ldconfig -m ${LOCALBASE}"; \
+	   echo "|	ldconfig ${X11BASE}/lib"; \
+	   echo "|	ldconfig -m ${LOCALBASE}/lib"; \
 	   echo "|"; \
 	   echo "+-------------------"; \
 	   exit 1; \
