@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.1 2001/09/28 17:56:09 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.2 2001/12/19 01:15:55 brad Exp $
 libexec/fax500
 libexec/go500
 libexec/go500gw
@@ -42,4 +42,3 @@ share/examples/openldap/schema/nadf.schema
 share/examples/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 @dirrm share/examples/openldap/schema
-@dirrm share/openldap
