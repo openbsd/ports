@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/01 14:34:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/28 15:30:20 kevlo Exp $
 
 COMMENT=	"interactive learning the French alphabet"
 
-DISTNAME=	klettres-1.0
+DISTNAME=	klettres-1.02
 CATEGORIES=	education
 NEED_VERSION=	1.500
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://vaakut.athame.co.uk/edu/
 
 BUILD_DEPENDS=	::x11/qt2-designer
 

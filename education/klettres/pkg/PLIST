@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/01 14:34:43 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/28 15:30:22 kevlo Exp $
 bin/klettres
 share/applnk/Applications/klettres.desktop
 share/apps/klettres/level1.txt
 share/apps/klettres/level3.txt
-share/apps/klettres/pics/klettres.png
-share/apps/klettres/pics/quit.jpeg
+share/apps/klettres/pics/klettres_back.jpeg
+share/apps/klettres/pics/klettres_splash.png
 share/apps/klettres/sons/a-0.wav
 share/apps/klettres/sons/a-10.wav
 share/apps/klettres/sons/a-11.wav
@@ -60,9 +60,10 @@ share/apps/klettres/sons/ad-7.wav
 share/apps/klettres/sons/ad-8.wav
 share/apps/klettres/sons/ad-9.wav
 share/apps/klettres/sons/splash2.mp3
-share/doc/HTML/en/klettres/common
 share/doc/HTML/en/klettres/index.cache.bz2
 share/doc/HTML/en/klettres/index.docbook
+share/doc/HTML/en/klettres/klettres1.png
+share/doc/HTML/en/klettres/klettres3.png
 share/icons/locolor/16x16/apps/klettres.png
 share/icons/locolor/32x32/apps/klettres.png
 @dirrm share/doc/HTML/en/klettres
