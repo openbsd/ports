@@ -1,23 +1,6 @@
---- configure.orig	Wed Aug 15 10:26:51 2001
-+++ configure	Wed Aug 15 10:27:28 2001
-@@ -3603,6 +3603,8 @@ fi
- 
- 
- if test "${enable_snmp}" = "yes";then
-+  old_libs="${LIBS}"
-+  LIBS="-L/usr/local/lib"
-   unset ac_cv_lib_snmp_asn_parse_int
-   echo $ac_n "checking for asn_parse_int in -lsnmp""... $ac_c" 1>&6
- echo "configure:3609: checking for asn_parse_int in -lsnmp" >&5
-@@ -3766,6 +3768,7 @@ fi
- 
- 	fi
-   fi
-+  LIBS="${old_libs}"
- 
-   if test "${HAVE_SNMP}" = ""; then
- 	old_libs="${LIBS}"
-@@ -4242,7 +4242,7 @@
+--- configure.orig	Sun Aug 19 09:24:16 2001
++++ configure	Mon Aug 20 10:20:38 2001
+@@ -4397,7 +4397,7 @@ EOF
  
  cat >> $CONFIG_STATUS <<EOF
  
