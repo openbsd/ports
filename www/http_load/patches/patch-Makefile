@@ -1,19 +1,17 @@
---- Makefile.orig	Fri Sep 10 04:13:21 1999
-+++ Makefile	Tue Sep 12 18:18:12 2000
-@@ -8,11 +8,11 @@
- # definitions.  You will need to have already built OpenSSL, available at
- # http://www.openssl.org/  Make sure the SSL_INCDIR and SSL_LIBDIR
- # definitions point to your OpenSSL installation.
--#SSL_INCDIR =	/usr/local/include
--#SSL_LIBDIR =	/usr/local/lib
+--- Makefile.orig	Wed Sep 13 19:57:07 2000
++++ Makefile	Thu Sep 28 23:18:02 2000
+@@ -9,10 +9,10 @@
+ # http://www.openssl.org/  Make sure the SSL_TREE definition points to the
+ # tree with your OpenSSL installation - depending on how you installed it,
+ # it may be in /usr/local instead of /usr/local/ssl.
+-#SSL_TREE =	/usr/local/ssl
 -#SSL_DEFS =	-DUSE_SSL
--#SSL_INC =	-I$(SSL_INCDIR)
--#SSL_LIBS =	-L$(SSL_LIBDIR) -lssl -lcrypto -lRSAglue -lrsaref
-+SSL_INCDIR =	/usr/include/ssl
-+SSL_LIBDIR =	/usr/lib
+-#SSL_INC =	-I$(SSL_TREE)/include
+-#SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
++SSL_TREE =	/usr
 +SSL_DEFS =	-DUSE_SSL
-+SSL_INC =	-I$(SSL_INCDIR)
-+SSL_LIBS =	-L$(SSL_LIBDIR) -lssl -lcrypto
++SSL_INC =	-I$(SSL_TREE)/include/ssl
++SSL_LIBS =	-L$(SSL_TREE)/lib -lssl -lcrypto
  
  BINDIR =	/usr/local/bin
  MANDIR =	/usr/local/man/man1
