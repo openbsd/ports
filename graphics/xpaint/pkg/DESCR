@@ -1,5 +1,6 @@
-XPaint is a color image editing tool which features most standard paint
-program options.  It allows for the editing of mul- tiple images simultaneously
-and supports various formats, including PPM, XBM, TIFF, etc.
+Xpaint is a color image editing tool which features most standard
+paint program options. It allows the editing of multiple images
+simultaneously and supports various formats, including PPM, XBP,
+TIFF, PNG, etc.
 
 WWW: ${HOMEPAGE}

@@ -1,5 +1,6 @@
---- readRC.c.orig	Sat Sep  2 16:07:09 2000
-+++ readRC.c	Wed Feb 20 15:49:55 2002
+$OpenBSD: patch-readRC.c,v 1.3 2002/09/07 07:09:13 pvalchev Exp $
+--- readRC.c.orig	Tue Jun 12 20:04:32 2001
++++ readRC.c	Fri Sep  6 23:15:18 2002
 @@ -30,12 +30,6 @@
  #include <unistd.h>
  #endif
@@ -25,7 +26,7 @@
 -    strcpy(xx, n);
 -    strcat(xx, "/XPaintXXXXXXX");
 -    n = mktemp(xx);
-+    snprintf(xx, 256, "%s/%s", n, "/XPaintXXXXXXX"); 
++    snprintf(xx, 256, "%s/%s", n, "/XPaintXXXXXXX");
 +    fd = mkstemp(xx);
 +    n = xx;
      tempName[++tempIndex] = XtNewString(n);
