@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/04 18:57:29 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/05 02:41:50 margarida Exp $
+COMMENT=		"aggregation-based network traffic profiler"
 
-COMMENT=		"aggregation-based Network Traffic Profiler"
-
-DISTNAME=		aguri-0.5
+DISTNAME=		aguri-0.7
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.csl.sony.co.jp/person/kjc/software.html
@@ -17,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.csl.sony.co.jp/pub/kjc/
 
-USE_X11=		Yes
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 post-install:
