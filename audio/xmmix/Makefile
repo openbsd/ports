@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/01/14 13:47:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/01/17 15:18:07 naddy Exp $
 
 COMMENT=	"Motif-based audio mixer"
 DISTNAME=	xmmix-1.2.2
@@ -19,5 +19,9 @@ CONFIGURE_STYLE=	imake
 USE_MOTIF=		any
 
 WRKDIST=	${WRKDIR}/xmmix-1.2
+
+post-install:
+	@ perl -pi -e 's,\@PREFIX@,${TRUEPREFIX},;' \
+	    ${PREFIX}/lib/X11/app-defaults/XMmix
 
 .include <bsd.port.mk>
