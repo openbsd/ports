@@ -13,5 +13,3 @@ To get this to work, add/modify the following line in the xdm-config
 file:
 
 DisplayManager*chooser:         ${PREFIX}/bin/xdmchooser
-
-WWW: ${HOMEPAGE}
