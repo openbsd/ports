@@ -4,9 +4,58 @@ engineers committed to free software development. KDE seeks to fill
 the need for an easy to use desktop for Unix workstations, similar to
 the desktop environments found under the MacOS or Window95/NT. 
 
-This package holds the basic kde applications: the desktop, kate, konsole,
-konqueror, the theme manager, the file manager, the print manager,
-kdm, screensavers, kaddressbook, etc.
+This package holds the basic kde applications. It contains:
+
+* applnk: files to create the icons for the K menu button
+* doc: XML formatted documentation files for the apps
+* drkonqi: if ever an app crashes (heaven forbid!) then Dr.Konqi will be so
+           kind and make a stack trace. This is a great help for the
+           developers to fix the bug.
+* kaddressbook: an addressbook (for postal addresses, phone numbers and
+                of course for e-mail addresses)
+* kappfinder: searches your hard disk for non-KDE applications, e.g. Acrobat
+              Reader (tm) and installs those apps under the K start button
+* kate: a fast and advanced text editor with nice plugins
+* kcheckpass: small program to enter and check passwords, only to be used by
+              other programs
+* kcontrol: the KDE Control Center allows you to tweak the KDE settings
+* kdcop: GUI app to browse for DCOP interfaces, can also execute them
+* kdebugdialog: allows you to specify which debug messages you want to see
+* kdeprint: the KDE printing system
+* kdesktop: you guessed it: the desktop above the panel
+* kdesu: a graphical front end to "su"
+* kdm: replacement for XDM, for those people that like graphical logins
+* kfind: find files
+* khelpcenter: the app to read all great documentation about KDE
+* khotkeys: intercepts keys and can call applications
+* kicker: the panel at the bottom with the K start button and the taskbar etc
+* kioslave: infrastructure that helps make every application internet enabled
+            e.g. to directly save a file to ftp://place.org/dir/file.txt
+* klipper: enhances and extends the X clipboard
+* kmenuedit: edit for the menu below the K start button
+* konqueror: the file manager and web browser you get easily used to
+* konsole: a shell program similar to xterm
+* kpager: applet to show the contents of the virtual desktops
+* kpersonalizer: the customization wizard you get when you first start KDE
+* kreadconfig: a tool for shell scripts to get info from KDE's config files
+* kscreensaver: the KDE screensaver environment and lot's of savers
+* ksmserver: the KDE session manager (saves program status on login, restarts
+             those program at the next login)
+* ksplash: the screen displayed while KDE starts
+* kstart: to launch applications with special window properties
+          such as iconified etc
+* ksysguard: task manager and system monitor, even for remote systems
+* ksystraycmd: allows to run any application in the system tray
+* ktip: gives you tips about how to use KDE
+* kwin: the KDE window manager
+* kxkb: a keyboard map tool
+* l10n: mostly country flags
+* legacyimport: odd name for a cute program to load GTK themes
+* libkonq: some libraries needed by Konqueror
+* pics: various icons and wallpapers
+
+nsplugins are not compiled on OpenBSD, since we don't have any native
+netscape plugins.
 
 
 Setup tips:
@@ -23,5 +72,9 @@ have up-to-date menus.
 
 - when upgrading from an old version of kde, it's usually best to start
 over on your .kde files.  Managing legacy config files is quite buggy yet.
+
+- konqueror does not execute javascript nor java by default. You will need
+a recent jvm installed, and referenced from konqueror's menu, for java to
+work.
 
 WWW: ${HOMEPAGE}
