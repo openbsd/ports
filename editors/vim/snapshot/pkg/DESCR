@@ -11,5 +11,11 @@ defined by the user, and the mouse can be used.
 Vim currently runs under Amiga DOS, MS-DOS, MS-Windows 95/98/NT, Atari MiNT,
 Macintosh, BeOS, VMS, RISC OS, OS/2 and almost all flavours of UNIX.
 Porting to other systems should not be very difficult.
+
+Flavors:
+        gtk        - build using the Gtk+ toolkit (default);
+	motif	   - build using the Motif toolkit;
+	athena	   - build using the Athena toolkit;
+	no_x11	   - build without X11 support.
  
 WWW: ${HOMEPAGE}
