@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/21 21:53:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/22 17:59:02 pvalchev Exp $
 
 COMMENT=	"PalmOS include files"
 
@@ -21,7 +21,7 @@ SUBST_VARS=	PKGNAME
 
 MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/dist/
 
-BUILD_DEPENDS=	wget:wget-*:net/wget
+FETCH_DEPENDS=	curl::net/curl
 
 DISTSPECIAL=	${DISTNAME}${EXTRACT_SUFX} \
 		sdk35-update1${EXTRACT_SUFX}
@@ -38,7 +38,7 @@ pre-fetch:
 	@for A in ${DISTSPECIAL}; \
 	do \
 		if [ ! -f ${DISTDIR}/$$A ]; then \
-		    cd ${DISTDIR} && wget --non-verbose  --header 'Referer: ${DOWNLOAD_URL}' \
+		    cd ${DISTDIR} && curl -O -e ${DOWNLOAD_URL} \
 		    ${DOWNLOAD_URL}/$$A; \
 		fi; \
 	done
