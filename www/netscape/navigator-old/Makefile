@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 04:22:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/24 15:04:02 espie Exp $
 
-COMMENT=	"Netscape Navigator WWW browser with 128-bit encryption"
+COMMENT=	"Netscape Navigator"
 
-ONLY_FOR_ARCHS=	sparc
 NEED_VERSION=	1.402
 
 PROGRAM_V=	4.61
 V2:=		${PROGRAM_V:S/.//}
+EMUL_TYPE=	sunos
 
 DISTNAME=	navigator-v${V2}-export.sparc-sun-sunos4.1.3_U1
 PKGNAME=	navigator-${PROGRAM_V}p1

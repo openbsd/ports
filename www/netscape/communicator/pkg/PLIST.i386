@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST.i386,v 1.4 2001/06/22 02:57:31 brad Exp $
+@comment $OpenBSD: PLIST.i386,v 1.5 2001/08/24 15:04:02 espie Exp $
 @pkgcfl navigator-*
 @pkgcfl linux-communicator-*
-@pkgcfl linux-navigator-*
 bin/netscape
 netscape/LICENSE
 netscape/Netscape.ad

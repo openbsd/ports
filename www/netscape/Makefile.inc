@@ -1,13 +1,35 @@
-# $OpenBSD: Makefile.inc,v 1.11 2001/08/10 14:37:58 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2001/08/24 15:04:02 espie Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
 
 # Subdirectory MUST define DIRNAME, LOCATION and PROGRAM_V.
+# EMUL_TYPE
 
-.if ${MACHINE_ARCH} == "sparc" && !exists(/emul/sunos/usr/lib/ld.so)
-IGNORE=		"requires SunOS shared libraries"
+
+.if ${EMUL_TYPE} == "linux"
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+BUILD_DEPENDS=	/emul/linux/lib/ld.so::emulators/redhat_base 
+RUN_DEPENDS=	${BUILD_DEPENDS}
+SUPPORTED=	supported
+ONLY_FOR_ARCHS=	i386
 .endif
+
+.if ${EMUL_TYPE} == "sunos"
+ONLY_FOR_ARCHS=	sparc
+.  if ${MACHINE_ARCH} == "sparc" && !exists(/emul/sunos/usr/lib/ld.so)
+IGNORE=		"requires SunOS shared libraries"
+.  endif
+NEEDS_FORTIFY=	Yes
+.endif
+
+.if ${EMUL_TYPE} == "bsdi"
+ONLY_FOR_ARCHS= i386
+.endif
+
+MAINTAINER?=	Brad Smith <brad@openbsd.org>
+SUPPORTED?=	unsupported
+
 
 CATEGORIES=     www
 NEED_VERSION=	1.413
@@ -25,12 +47,10 @@ MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/fortify/ \
 		ftp://ftp.it.net.au/mirrors/Fortify/
-MASTER_SITE_SUBDIR= communicator/english/${PROGRAM_V}/unix/unsupported/${LOCATION}
+MASTER_SITE_SUBDIR= communicator/english/${PROGRAM_V}/unix/${SUPPORTED}/${LOCATION}
 DIST_SUBDIR=	netscape
 
 HOMEPAGE=	http://www.netscape.com/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
@@ -39,16 +59,24 @@ PERMIT_DISTFILES_FTP=	No
 
 WRKDIST=	${WRKDIR}
 
+
 .if !defined(NO_WARNINGS)
 pre-fetch:
-.if ${MACHINE_ARCH} == "i386"
+.if ${EMUL_TYPE} == "bsdi"
 	@echo ""
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option COMPAT_BSDOS' for proper operation.  The"
 	@echo "           GENERIC kernel contains this option."
 	@echo ""
 .endif
-.if ${MACHINE_ARCH} == "sparc"
+.if ${EMUL_TYPE} == "linux"
+	@echo ""
+	@echo "  WARNING: This application requires a kernel compiled with"
+	@echo "           'option COMPAT_LINUX' for proper operation.  The"
+	@echo "           GENERIC kernel contains this option."
+	@echo ""
+.endif
+.if ${EMUL_TYPE} == "sunos"
 	@echo ""
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option COMPAT_SUNOS' and SunOS shared libraries"
@@ -59,7 +87,7 @@ pre-fetch:
 .endif
 .endif
 
-.if ${MACHINE_ARCH} == "sparc"
+.if defined(NEEDS_FORTIFY)
 do-build:
 	@cd ${WRKDIR}/${FORTIFY}/src/common && \
 	env ${MAKE_ENV} make ${MAKE_FLAGS} ${MAKEFILE} all && \
@@ -71,7 +99,7 @@ do-install:
 	@cd ${WRKDIR}/${DIRNAME} && ${MAKE_ENV} ./ns-install
 
 post-install:
-.if ${MACHINE_ARCH} == "sparc"
+.if defined(NEEDS_FORTIFY)
 	@cp ${PREFIX}/netscape/netscape ${PREFIX}/netscape/netscape_nis
 	@cp ${PREFIX}/netscape/netscape_dns ${PREFIX}/netscape/netscape
 	@rm -f ${PREFIX}/netscape/netscape_dns
