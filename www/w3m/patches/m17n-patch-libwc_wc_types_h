@@ -1,0 +1,12 @@
+$OpenBSD: m17n-patch-libwc_wc_types_h,v 1.1 2002/11/27 22:25:02 naddy Exp $
+--- libwc/wc_types.h.orig	Wed Nov 27 21:09:03 2002
++++ libwc/wc_types.h	Wed Nov 27 21:09:14 2002
+@@ -7,7 +7,7 @@
+ typedef unsigned char  wc_uchar;
+ typedef unsigned char  wc_uint8;
+ typedef unsigned short wc_uint16;
+-typedef unsigned long  wc_uint32;
++typedef unsigned int   wc_uint32;
+ 
+ typedef wc_uint32 wc_ccs;
+ typedef wc_uint32 wc_ces;

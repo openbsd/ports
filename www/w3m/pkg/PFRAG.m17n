@@ -1,2 +1,10 @@
-@comment $OpenBSD: PFRAG.m17n,v 1.3 2002/02/04 15:05:32 naddy Exp $
+@comment $OpenBSD: PFRAG.m17n,v 1.4 2002/11/27 22:25:02 naddy Exp $
 share/doc/w3m/README.m17n
+libexec/w3m/cgi-bin/dirlist.cgi
+libexec/w3m/cgi-bin/multipart.cgi
+libexec/w3m/cgi-bin/w3mbookmark
+libexec/w3m/cgi-bin/w3mhelp.cgi
+libexec/w3m/cgi-bin/w3mhelperpanel
+libexec/w3m/cgi-bin/w3mmail.cgi
+libexec/w3m/cgi-bin/w3mman2html.cgi
+@dirrm libexec/w3m/cgi-bin
