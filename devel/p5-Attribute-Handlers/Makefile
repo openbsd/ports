@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/10 20:48:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/07/11 09:41:02 shell Exp $
 
 COMMENT=	"perl module to simplify package attribute handling"
 
-DISTNAME=	Attribute-Handlers-0.76
+DISTNAME=	Attribute-Handlers-0.77
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.499
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Attribute/}
 
 PERMIT_PACKAGE_CDROM=   Yes
