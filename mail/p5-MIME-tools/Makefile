@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/10 15:00:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/26 10:18:33 shell Exp $
 
 COMMENT=		"modules for parsing (and creating!) MIME entities"
 
-DISTNAME=		MIME-tools-5.411
+DISTNAME=		MIME-tools-5.411a
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
-NEED_VERSION=		1.489
+NEED_VERSION=		1.503
 
 HOMEPAGE=		http://www.zeegee.com/code/perl/MIME-tools/
 
@@ -19,12 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= 	MIME
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	::mail/p5-Mail-Tools  \
 		::converters/p5-MIME-Base64 \
 		::devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= 	perl
+WRKSRC=		${WRKDIR}/${DISTNAME:S/a//}
 
 .include <bsd.port.mk>
