@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/04/11 17:07:38 lebel Exp $
 
 COMMENT=		"essentially an Asteroids clone"
 
@@ -8,8 +8,6 @@ CATEGORIES=		games
 HOMEPAGE=		http://david.hedbor.org/projects/sdlroids/
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdlroids/}
-
-MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
