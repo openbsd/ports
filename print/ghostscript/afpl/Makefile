@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/06/20 01:43:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/07/27 17:46:48 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -138,8 +138,8 @@ end_install=
 FAKE_FLAGS=${BASE_FLAGS} prefix=${WRKINST}${PREFIX}
 
 post-extract:
-	ln -s `cd ${PORTSDIR} && cd ${JPEGDIR} && make show VARNAME=WRKDIST` ${WRKDIST}/jpeg
-	ln -s `cd ${PORTSDIR} && cd ${PNGDIR} && make show VARNAME=WRKDIST` ${WRKDIST}/libpng
+	ln -s `cd ${PORTSDIR} && cd ${JPEGDIR} && FLAVOR='' make show=WRKDIST` ${WRKDIST}/jpeg
+	ln -s `cd ${PORTSDIR} && cd ${PNGDIR} && FLAVOR='' make show=WRKDIST` ${WRKDIST}/libpng
 
 do-configure:
 	cd ${WRKBUILD} && ln -s ${WRKSRC}/unix-gcc.mak Makefile
