@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2000/05/31 10:18:06 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/06/11 01:50:22 fgsch Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.es.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.se.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.ch.pgpi.com/pub/pgp/5.0/unix/
-FAKE=Yes
 
 MAINTAINER=	fgsch@openbsd.org
 
@@ -57,7 +56,7 @@ pre-fetch pre-extract:
 	@false
 .endif
 
-USE_AUTOCONF=	Yes
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
 .if ${FLAVOR:L} == "usa"
