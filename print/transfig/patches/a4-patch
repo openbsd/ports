@@ -1,19 +1,11 @@
-*** fig2dev/Imakefile.orig2	Tue Aug  1 23:26:00 2000
---- fig2dev/Imakefile	Tue Aug  1 23:26:12 2000
-***************
-*** 101,107 ****
-  
-  XCOMM ****************
-  XCOMM Uncomment the following to set paper size to A4
-! XCOMM DDA4 = -DA4
-  
-  XCOMM ****************
-  XCOMM Uncomment the following to set IBM Graphics Enhancement Cartridge
---- 101,107 ----
-  
-  XCOMM ****************
-  XCOMM Uncomment the following to set paper size to A4
-! DDA4 = -DA4
-  
-  XCOMM ****************
-  XCOMM Uncomment the following to set IBM Graphics Enhancement Cartridge
+--- fig2dev/Imakefile.orig	Sun Aug  6 15:29:14 2000
++++ fig2dev/Imakefile	Sun Aug  6 15:29:54 2000
+@@ -101,7 +101,7 @@
+ 
+ XCOMM ****************
+ XCOMM Uncomment the following to set paper size to A4
+-XCOMM DDA4 = -DA4
++DDA4 = -DA4
+ 
+ XCOMM ****************
+ XCOMM Uncomment the following to set IBM Graphics Enhancement Cartridge
