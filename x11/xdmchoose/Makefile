@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/12 20:11:28 naddy Exp $
 
 COMMENT=	"alternative xdm-invoked chooser"
 
-DISTNAME=	xdmchoose-1.1.2
+DISTNAME=	xdmchoose-1.2.1
 CATEGORIES=	x11
 HOMEPAGE=	http://frmb.home.cern.ch/frmb/xdmchoose.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,9 +18,10 @@ MASTER_SITES=	http://frmb.home.cern.ch/frmb/download/
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
 post-install:
-	@perl -i -pe 's!%%PREFIX%%!${PREFIX}!g' ${WRKSRC}/xdmchoose.conf
+	@perl -i -pe 's!%%PREFIX%%!${TRUEPREFIX}!g' ${WRKSRC}/xdmchoose.conf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdmchoose
 	${INSTALL_DATA} ${WRKSRC}/xdmchoose.conf \
 		${PREFIX}/share/examples/xdmchoose/
