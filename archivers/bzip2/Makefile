@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/05 08:28:32 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/03/06 22:05:13 brad Exp $
 
 DISTNAME=	bzip2-0.9.5d
 CATEGORIES=	archivers
@@ -23,7 +23,7 @@ MAKE_FLAGS=	CC="${CC}" \
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 
 test:   build
-	@cd ${WRKSRC} && env LD_LIBRARY_PATH=${WRKSRC} make test
+	@cd ${WRKSRC} && env LD_LIBRARY_PATH="${WRKSRC}" make test
 
 .include <bsd.port.mk>
 
