@@ -1,0 +1,6 @@
+bin/xjewel
+bin/xjewel_
+lib/xjewel.scores
+lib/xjewel.font/fonts.dir
+lib/xjewel.font/seven_seg.pcf.gz
+man/man6/xjewel.6

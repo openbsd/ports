@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+mv Imakefile Imakefile.orig
+sed -e s/snf/pcf.gz/  <Imakefile.orig>Imakefile
+
+cat >> Imakefile <<END
+
+HSCORE_FILE = $PREFIX/lib/xjewel.scores
+USERDEFS = -DICON_WINDOW -DUSE_SELECT -DGETPWENT
+BINDIR = $PREFIX/bin
+MANDIR = $PREFIX/man/man6
+MANSUFFIX = 6
+END
+
+exit 0;
