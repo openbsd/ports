@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 1999/12/03 01:13:16 brad Exp $
+# $OpenBSD: Makefile,v 1.44 1999/12/09 17:55:55 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--with-etcdir=${ETCDIR} \
 
 IS_INTERACTIVE=	yes
 
-.if defined(X11) && ${X11} == NO
+.if defined(X11) && ${X11:U} == NO
 CONFIGURE_ARGS= --without-x
 .endif
 
