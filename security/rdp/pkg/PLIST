@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2002/03/25 07:57:16 jsyn Exp $
 sbin/rdp
 share/doc/rdp/rdp.advisory
 @dirrm share/doc/rdp

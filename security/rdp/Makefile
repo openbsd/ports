@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/03/25 07:57:17 jsyn Exp $
 
 COMMENT=	"ICMP router discovery protocol spoofer"
 
@@ -6,7 +6,7 @@ DISTNAME=	rdp
 PKGNAME=	rdp-1.0
 CATEGORIES=	security
 NEED_VERSION=	1.515
-MASTER_SITES=	http://www.l0pht.com/advisories/
+MASTER_SITES=	http://www.atstake.com/research/tools/
 
 LIB_DEPENDS=	net::net/libnet
 
@@ -22,6 +22,8 @@ WRKDIST=	${WRKDIR}
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${PREFIX}/include -o rdp \
 		icmp_rdp.c -L${PREFIX}/lib -lnet -lpcap
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdp ${PREFIX}/sbin
