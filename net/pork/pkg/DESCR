@@ -3,5 +3,3 @@ feels like ircII.  To begin using pork quickly, consult the installed
 quick start guide which may be found at:
 
 ${PREFIX}/share/doc/pork/QUICK_START
-
-WWW: ${HOMEPAGE}
