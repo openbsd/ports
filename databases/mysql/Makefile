@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2002/03/03 06:02:11 brad Exp $
+# $OpenBSD: Makefile,v 1.74 2002/03/12 03:10:06 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 # Uses pthreads
 
@@ -25,8 +25,7 @@ PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests=	mysql-tests-${VERSION}
 CATEGORIES=	databases
 NEED_VERSION=	1.500
-MASTER_SITES=	ftp://ftp.mysql.com/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/ \
 		ftp://ftp.shellhung.org/pub/Mirror/mysql/Downloads/%SUBDIR%/
 MASTER_SITE_SUBDIR= MySQL-3.23
 
