@@ -1,18 +1,30 @@
-$OpenBSD: patch-khexedit_exportdialog_cc,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
---- khexedit/exportdialog.cc.orig	Thu Apr  4 15:31:17 2002
-+++ khexedit/exportdialog.cc	Thu Apr  4 15:39:22 2002
-@@ -18,7 +18,14 @@
+$OpenBSD: patch-khexedit_exportdialog_cc,v 1.2 2002/04/15 06:49:55 espie Exp $
+--- khexedit/exportdialog.cc.orig	Wed Apr 10 16:29:15 2002
++++ khexedit/exportdialog.cc	Wed Apr 10 16:29:31 2002
+@@ -18,7 +18,7 @@
   *
   */
  
-+#ifdef __OpenBSD__
-+#include <float.h>
+-#include <values.h>
 +#include <limits.h>
-+#include <math.h>
-+#define MAXINT INT_MAX
-+#else
- #include <values.h>
-+#endif
  
  #include <qbuttongroup.h>
  #include <qlineedit.h> 
+@@ -312,7 +312,7 @@ void CExportDialog::makeHtmlOption( void
+ 
+   mHtml.lineSpin = new QSpinBox( frame );
+   mHtml.lineSpin->setMinimumWidth( fontMetrics().maxWidth()*10 );
+-  mHtml.lineSpin->setRange( 5, MAXINT );
++  mHtml.lineSpin->setRange( 5, INT_MAX );
+   gbox->addWidget( mHtml.lineSpin, 0, 1 );
+   
+   text = i18n("&Lines per table");
+@@ -423,7 +423,7 @@ void CExportDialog::makeCArrayOption( vo
+   
+   mArray.lineSizeSpin = new QSpinBox( page );
+   mArray.lineSizeSpin->setMinimumWidth( fontMetrics().maxWidth()*10 );
+-  mArray.lineSizeSpin->setRange( 1, MAXINT );
++  mArray.lineSizeSpin->setRange( 1, INT_MAX );
+   gbox->addWidget( mArray.lineSizeSpin, 2, 1 );
+   text = i18n("Elements per line:"); 
+   label = new QLabel( mArray.lineSizeSpin, text, page );

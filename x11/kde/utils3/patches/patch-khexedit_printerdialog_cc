@@ -1,18 +1,30 @@
-$OpenBSD: patch-khexedit_printerdialog_cc,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
---- khexedit/printerdialog.cc.orig	Thu Apr  4 15:31:17 2002
-+++ khexedit/printerdialog.cc	Thu Apr  4 15:39:17 2002
-@@ -18,7 +18,14 @@
+$OpenBSD: patch-khexedit_printerdialog_cc,v 1.2 2002/04/15 06:49:55 espie Exp $
+--- khexedit/printerdialog.cc.orig	Wed Apr 10 16:27:30 2002
++++ khexedit/printerdialog.cc	Wed Apr 10 16:28:00 2002
+@@ -18,8 +18,6 @@
   *
   */
  
-+#ifdef __OpenBSD__
-+#include <float.h>
-+#include <limits.h>
-+#include <math.h>
-+#define MAXINT INT_MAX
-+#else
- #include <values.h>
-+#endif
- 
+-#include <values.h>
+-
  #include <qbuttongroup.h>
  #include <qfileinfo.h> 
+ #include <qlayout.h> 
+@@ -580,7 +578,7 @@ void CPrinterDialog::setupOptionPage( vo
+   mOption.pageSpin->setFixedHeight( mOption.pageSpin->sizeHint().height() );
+   mOption.pageSpin->setMinimumWidth( 
+     mOption.pageSpin->fontMetrics().width("M")*10 );
+-  mOption.pageSpin->setRange( 1, MAXINT );
++  mOption.pageSpin->setRange( 1, INT_MAX );
+ 
+   text = i18n("&Number of copies");
+   QLabel *pageLabel = new QLabel( mOption.pageSpin, text, page );
+@@ -697,7 +695,7 @@ void CPrinterDialog::setupLayoutPage( vo
+       mLayout.marginSpin[i]->sizeHint().height() );
+     mLayout.marginSpin[i]->setMinimumWidth( 
+       mLayout.marginSpin[i]->fontMetrics().width("M")*10 );
+-    mLayout.marginSpin[i]->setRange( 0, MAXINT );
++    mLayout.marginSpin[i]->setRange( 0, INT_MAX );
+ 
+     QLabel *label = new QLabel( mLayout.marginSpin[i], name[i], group );
+     label->setFixedHeight( mLayout.marginSpin[i]->sizeHint().height() );

@@ -1,18 +1,21 @@
-$OpenBSD: patch-khexedit_optiondialog_cc,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
---- khexedit/optiondialog.cc.orig	Thu Apr  4 15:31:17 2002
-+++ khexedit/optiondialog.cc	Thu Apr  4 15:39:13 2002
-@@ -23,7 +23,14 @@
+$OpenBSD: patch-khexedit_optiondialog_cc,v 1.2 2002/04/15 06:49:55 espie Exp $
+--- khexedit/optiondialog.cc.orig	Wed Apr 10 16:26:46 2002
++++ khexedit/optiondialog.cc	Wed Apr 10 16:27:14 2002
+@@ -23,8 +23,6 @@
  #include <qvbuttongroup.h>
  #include <qpainter.h>
  
-+#ifdef __OpenBSD__
-+#include <float.h>
-+#include <limits.h>
-+#include <math.h>
-+#define MAXINT INT_MAX
-+#else
- #include <values.h>
-+#endif
- 
+-#include <values.h>
+-
  #include <qcheckbox.h>
  #include <qlayout.h>
+ #include <qlabel.h>
+@@ -486,7 +484,7 @@ void COptionDialog::setupMiscPage( void 
+ 
+   mMisc.thresholdSpin = new QSpinBox( page );
+   mMisc.thresholdSpin->setMinimumWidth( fontMetrics().width("M") * 10 );
+-  mMisc.thresholdSpin->setRange( 5, MAXINT );
++  mMisc.thresholdSpin->setRange( 5, INT_MAX );
+   mMisc.thresholdSpin->setSteps( 5, 5 );
+   mMisc.thresholdSpin->setValue( 5 );
+ 

@@ -1,18 +1,21 @@
-$OpenBSD: patch-khexedit_chartabledialog_cc,v 1.1.1.1 2002/04/04 14:23:48 espie Exp $
---- khexedit/chartabledialog.cc.orig	Thu Apr  4 15:31:17 2002
-+++ khexedit/chartabledialog.cc	Thu Apr  4 15:39:19 2002
-@@ -18,7 +18,14 @@
+$OpenBSD: patch-khexedit_chartabledialog_cc,v 1.2 2002/04/15 06:49:55 espie Exp $
+--- khexedit/chartabledialog.cc.orig	Wed Apr 10 16:28:45 2002
++++ khexedit/chartabledialog.cc	Wed Apr 10 16:29:00 2002
+@@ -18,7 +18,7 @@
   *
   */
  
-+#ifdef __OpenBSD__
-+#include <float.h>
+-#include <values.h>
 +#include <limits.h>
-+#include <math.h>
-+#define MAXINT INT_MAX
-+#else
- #include <values.h>
-+#endif
  
  #include <qlabel.h>
  #include <qheader.h>
+@@ -73,7 +73,7 @@ CCharTableDialog::CCharTableDialog( QWid
+ 
+   mInputCountSpin = new QSpinBox( plainPage(), "spin" );
+   mInputCountSpin->setMinimumWidth( fontMetrics().maxWidth()*7 );
+-  mInputCountSpin->setRange( 1, MAXINT );
++  mInputCountSpin->setRange( 1, INT_MAX );
+   mInputCountSpin->setValue( 1 );
+   hbox->addWidget( mInputCountSpin );
+ 
