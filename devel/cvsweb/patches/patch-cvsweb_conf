@@ -1,16 +1,16 @@
-$OpenBSD: patch-cvsweb_conf,v 1.7 2001/07/09 16:55:04 naddy Exp $
---- cvsweb.conf.orig	Fri Jul  6 11:44:28 2001
-+++ cvsweb.conf	Mon Jul  9 18:26:56 2001
-@@ -209,7 +209,7 @@ EOT
+$OpenBSD: patch-cvsweb_conf,v 1.8 2001/08/01 19:59:25 naddy Exp $
+--- cvsweb.conf.orig	Wed Aug  1 21:36:14 2001
++++ cvsweb.conf	Wed Aug  1 21:37:16 2001
+@@ -212,7 +212,7 @@ EOT
  # These default icons are coming with apache.
  # If these icons are too large, check out the miniicons in the
  # icons/ directory; they have a width/height of 16/16
 -my $iconsdir = "/icons";
 +my $iconsdir = "/icons/cvsweb";
+ 
  # format:             TEXT      ICON-URL              width height
- %ICONS  = (
- 	   back => [ ("[BACK]", "$iconsdir/back.gif", 20,   22) ],
-@@ -329,7 +329,7 @@ $inputTextSize = 12;
+ %ICONS = (
+@@ -346,7 +346,7 @@ $inputTextSize = 12;
  # cvsweb to guess the correct mime-type on
  # checkout; you can use the mime.types from
  # apache here:

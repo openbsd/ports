@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/09 16:55:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/01 19:59:25 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
 COMMENT=	"WWW CGI script to browse CVS repository trees"
 
-DISTNAME=	cvsweb-1.110.1.78
+DISTNAME=	cvsweb-1.112.1.82
 CATEGORIES=	devel www
 NEED_VERSION=	1.402
-HOMEPAGE=	http://stud.fh-heilbronn.de/~zeller/cgi/cvsweb.cgi/
+HOMEPAGE=	http://www.idaemons.org/~knu/cvsweb/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -15,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
+MASTER_SITES=	http://www.iDaemons.org/distfiles/ \
+		ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		ftp://ftp7.de.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-		http://www.iDaemons.org/distfiles/
+		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
 MASTER_SITE_SUBDIR=	ports/local-distfiles/knu
 
 NO_BUILD=	Yes
@@ -27,8 +27,8 @@ WRKDIST=	${WRKDIR}/cvsweb
 PREFIX=		/var/www
 SYSCONFDIR=	${PREFIX}/conf
 
-CONFFILES=	cvsweb.conf cvsweb.conf-ruby \
-		cvsweb.conf-freebsd cvsweb.conf-openbsd cvsweb.conf-netbsd
+CONFFILES=	cvsweb.conf cvsweb.conf-freebsd cvsweb.conf-netbsd \
+		cvsweb.conf-openbsd cvsweb.conf-ruby
 ICONS=		back.gif dir.gif text.gif \
 		miniback.gif minidir.gif minitext.gif
 
