@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2001/02/17 22:22:45 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2001/02/21 14:44:57 brad Exp $
 
-DISTNAME=	mrtg-2.9.8
+DISTNAME=	mrtg-2.9.10
 CATEGORIES=	net
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \

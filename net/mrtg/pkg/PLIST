@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/02/17 22:22:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2001/02/21 14:44:58 brad Exp $
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
@@ -66,7 +66,7 @@ share/mrtg/mrtg-l.png
 share/mrtg/mrtg-m.png
 share/mrtg/mrtg-r.png
 share/mrtg/mrtg-ti.png
-@dirrm lib/mrtg
 @dirrm libdata/perl5/site_perl/Pod
 @dirrm share/doc/mrtg
+@dirrm share/examples/mrtg
 @dirrm share/mrtg
