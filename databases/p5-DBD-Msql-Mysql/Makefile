@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/07 11:51:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/21 14:38:35 wilfried Exp $
 
 COMMENT=		'mysql drivers for the perl DBI'
 
-DISTNAME=		Msql-Mysql-modules-1.2215
-PKGNAME=		p5-DBD-Msql-Mysql-1.22.15
+DISTNAME=		Msql-Mysql-modules-1.2216
+PKGNAME=		p5-DBD-Msql-Mysql-1.22.16
 CATEGORIES=		databases perl5
 NEED_VERSION=		1.407
 
