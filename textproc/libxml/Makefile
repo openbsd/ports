@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2004/02/06 04:44:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.75 2004/04/06 06:50:30 kevlo Exp $
 
 COMMENT=		"XML parsing library"
 
-VERSION=		2.6.5
+VERSION=		2.6.8
 DISTNAME=		libxml2-${VERSION}
 PKGNAME=		libxml-${VERSION}
 CATEGORIES=		textproc
@@ -24,7 +24,8 @@ MODULES=		iconv
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
-CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share"
+CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
+CONFIGURE_ARGS+=	--with-html-subdir="libxml2/html"
 CONFIGURE_ARGS+=	--with-iconv="${LOCALBASE}"
 CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--without-threads

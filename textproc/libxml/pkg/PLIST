@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2004/02/06 04:44:14 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.34 2004/04/06 06:50:34 kevlo Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -37,6 +37,7 @@ include/libxml2/libxml/xmlexports.h
 include/libxml2/libxml/xmlmemory.h
 include/libxml2/libxml/xmlreader.h
 include/libxml2/libxml/xmlregexp.h
+include/libxml2/libxml/xmlsave.h
 include/libxml2/libxml/xmlschemas.h
 include/libxml2/libxml/xmlschemastypes.h
 include/libxml2/libxml/xmlstring.h
@@ -105,6 +106,7 @@ share/doc/libxml2/html/html/libxml-xmlexports.html
 share/doc/libxml2/html/html/libxml-xmlmemory.html
 share/doc/libxml2/html/html/libxml-xmlreader.html
 share/doc/libxml2/html/html/libxml-xmlregexp.html
+share/doc/libxml2/html/html/libxml-xmlsave.html
 share/doc/libxml2/html/html/libxml-xmlschemas.html
 share/doc/libxml2/html/html/libxml-xmlschemastypes.html
 share/doc/libxml2/html/html/libxml-xmlstring.html
