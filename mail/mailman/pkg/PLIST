@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2005/02/04 09:19:35 jakob Exp $
+@newgroup _mailman:504
+@newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
+@owner _mailman
+@group _mailman
+@mode 775
 lib/mailman/
 lib/mailman/Mailman/
 lib/mailman/Mailman/Archiver/
+@mode
 lib/mailman/Mailman/Archiver/Archiver.py
 lib/mailman/Mailman/Archiver/Archiver.pyc
 lib/mailman/Mailman/Archiver/HyperArch.py
@@ -16,7 +22,9 @@ lib/mailman/Mailman/Autoresponder.py
 lib/mailman/Mailman/Autoresponder.pyc
 lib/mailman/Mailman/Bouncer.py
 lib/mailman/Mailman/Bouncer.pyc
+@mode 775
 lib/mailman/Mailman/Bouncers/
+@mode
 lib/mailman/Mailman/Bouncers/BouncerAPI.py
 lib/mailman/Mailman/Bouncers/BouncerAPI.pyc
 lib/mailman/Mailman/Bouncers/Caiwireless.py
@@ -55,7 +63,9 @@ lib/mailman/Mailman/Bouncers/Yale.py
 lib/mailman/Mailman/Bouncers/Yale.pyc
 lib/mailman/Mailman/Bouncers/__init__.py
 lib/mailman/Mailman/Bouncers/__init__.pyc
+@mode 775
 lib/mailman/Mailman/Cgi/
+@mode
 lib/mailman/Mailman/Cgi/Auth.py
 lib/mailman/Mailman/Cgi/Auth.pyc
 lib/mailman/Mailman/Cgi/__init__.py
@@ -82,7 +92,9 @@ lib/mailman/Mailman/Cgi/roster.py
 lib/mailman/Mailman/Cgi/roster.pyc
 lib/mailman/Mailman/Cgi/subscribe.py
 lib/mailman/Mailman/Cgi/subscribe.pyc
+@mode 775
 lib/mailman/Mailman/Commands/
+@mode
 lib/mailman/Mailman/Commands/__init__.py
 lib/mailman/Mailman/Commands/__init__.pyc
 lib/mailman/Mailman/Commands/cmd_confirm.py
@@ -125,7 +137,9 @@ lib/mailman/Mailman/Errors.py
 lib/mailman/Mailman/Errors.pyc
 lib/mailman/Mailman/GatewayManager.py
 lib/mailman/Mailman/GatewayManager.pyc
+@mode 775
 lib/mailman/Mailman/Gui/
+@mode
 lib/mailman/Mailman/Gui/Archive.py
 lib/mailman/Mailman/Gui/Archive.pyc
 lib/mailman/Mailman/Gui/Autoresponse.py
@@ -158,7 +172,9 @@ lib/mailman/Mailman/Gui/__init__.py
 lib/mailman/Mailman/Gui/__init__.pyc
 lib/mailman/Mailman/HTMLFormatter.py
 lib/mailman/Mailman/HTMLFormatter.pyc
+@mode 775
 lib/mailman/Mailman/Handlers/
+@mode
 lib/mailman/Mailman/Handlers/Acknowledge.py
 lib/mailman/Mailman/Handlers/Acknowledge.pyc
 lib/mailman/Mailman/Handlers/AfterDelivery.py
@@ -213,7 +229,9 @@ lib/mailman/Mailman/ListAdmin.py
 lib/mailman/Mailman/ListAdmin.pyc
 lib/mailman/Mailman/LockFile.py
 lib/mailman/Mailman/LockFile.pyc
+@mode 775
 lib/mailman/Mailman/Logging/
+@mode
 lib/mailman/Mailman/Logging/Logger.py
 lib/mailman/Mailman/Logging/Logger.pyc
 lib/mailman/Mailman/Logging/MultiLogger.py
@@ -226,7 +244,9 @@ lib/mailman/Mailman/Logging/Utils.py
 lib/mailman/Mailman/Logging/Utils.pyc
 lib/mailman/Mailman/Logging/__init__.py
 lib/mailman/Mailman/Logging/__init__.pyc
+@mode 775
 lib/mailman/Mailman/MTA/
+@mode
 lib/mailman/Mailman/MTA/Manual.py
 lib/mailman/Mailman/MTA/Manual.pyc
 lib/mailman/Mailman/MTA/Postfix.py
@@ -249,7 +269,9 @@ lib/mailman/Mailman/Pending.py
 lib/mailman/Mailman/Pending.pyc
 lib/mailman/Mailman/Post.py
 lib/mailman/Mailman/Post.pyc
+@mode 775
 lib/mailman/Mailman/Queue/
+@mode
 lib/mailman/Mailman/Queue/ArchRunner.py
 lib/mailman/Mailman/Queue/ArchRunner.pyc
 lib/mailman/Mailman/Queue/BounceRunner.py
@@ -298,10 +320,15 @@ lib/mailman/Mailman/i18n.py
 lib/mailman/Mailman/i18n.pyc
 @comment lib/mailman/Mailman/mm_cfg.py
 lib/mailman/Mailman/mm_cfg.py.dist
+@mode 664
+@sample ${PREFIX}/lib/mailman/Mailman/mm_cfg.py
+@mode
 @comment lib/mailman/Mailman/mm_cfg.pyc
 lib/mailman/Mailman/versions.py
 lib/mailman/Mailman/versions.pyc
+@mode 775
 lib/mailman/bin/
+@mode
 lib/mailman/bin/add_members
 lib/mailman/bin/arch
 lib/mailman/bin/b4b5-archfix
@@ -338,7 +365,9 @@ lib/mailman/bin/unshunt
 lib/mailman/bin/update
 lib/mailman/bin/version
 lib/mailman/bin/withlist
+@mode 775
 lib/mailman/cgi-bin/
+@mode 2755
 lib/mailman/cgi-bin/admin
 lib/mailman/cgi-bin/admindb
 lib/mailman/cgi-bin/confirm
@@ -350,7 +379,9 @@ lib/mailman/cgi-bin/private
 lib/mailman/cgi-bin/rmlist
 lib/mailman/cgi-bin/roster
 lib/mailman/cgi-bin/subscribe
+@mode 775
 lib/mailman/cron/
+@mode
 lib/mailman/cron/bumpdigests
 lib/mailman/cron/checkdbs
 lib/mailman/cron/crontab.in
@@ -360,137 +391,197 @@ lib/mailman/cron/mailpasswds
 lib/mailman/cron/nightly_gzip
 lib/mailman/cron/paths.py
 lib/mailman/cron/senddigests
+@mode 775
 lib/mailman/icons/
+@mode
 lib/mailman/icons/PythonPowered.png
 lib/mailman/icons/gnu-head-tiny.jpg
 lib/mailman/icons/mailman-large.jpg
 lib/mailman/icons/mailman.jpg
 lib/mailman/icons/mm-icon.png
+@mode 775
 lib/mailman/mail/
+@mode 2755
 lib/mailman/mail/mailman
+@mode 775
 lib/mailman/messages/
 lib/mailman/messages/ca/
 lib/mailman/messages/ca/LC_MESSAGES/
+@mode
 lib/mailman/messages/ca/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ca/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/cs/
 lib/mailman/messages/cs/LC_MESSAGES/
+@mode
 lib/mailman/messages/cs/LC_MESSAGES/mailman.mo
 lib/mailman/messages/cs/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/da/
 lib/mailman/messages/da/LC_MESSAGES/
+@mode
 lib/mailman/messages/da/LC_MESSAGES/mailman.mo
 lib/mailman/messages/da/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/de/
 lib/mailman/messages/de/LC_MESSAGES/
+@mode
 lib/mailman/messages/de/LC_MESSAGES/mailman.mo
 lib/mailman/messages/de/LC_MESSAGES/mailman.po
 lib/mailman/messages/de/README.de
+@mode 775
 lib/mailman/messages/es/
 lib/mailman/messages/es/LC_MESSAGES/
+@mode
 lib/mailman/messages/es/LC_MESSAGES/mailman.mo
 lib/mailman/messages/es/LC_MESSAGES/mailman.po
 lib/mailman/messages/es/README.es
+@mode 775
 lib/mailman/messages/et/
 lib/mailman/messages/et/LC_MESSAGES/
+@mode
 lib/mailman/messages/et/LC_MESSAGES/mailman.mo
 lib/mailman/messages/et/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/eu/
 lib/mailman/messages/eu/LC_MESSAGES/
+@mode
 lib/mailman/messages/eu/LC_MESSAGES/mailman.mo
 lib/mailman/messages/eu/LC_MESSAGES/mailman.po
 lib/mailman/messages/eu/README.eu
+@mode 775
 lib/mailman/messages/fi/
 lib/mailman/messages/fi/LC_MESSAGES/
+@mode
 lib/mailman/messages/fi/LC_MESSAGES/mailman.mo
 lib/mailman/messages/fi/LC_MESSAGES/mailman.po
 lib/mailman/messages/fi/README.fi
+@mode 775
 lib/mailman/messages/fr/
 lib/mailman/messages/fr/LC_MESSAGES/
+@mode
 lib/mailman/messages/fr/LC_MESSAGES/mailman.mo
 lib/mailman/messages/fr/LC_MESSAGES/mailman.po
 lib/mailman/messages/fr/README.fr
+@mode 775
 lib/mailman/messages/hr/
 lib/mailman/messages/hr/LC_MESSAGES/
+@mode
 lib/mailman/messages/hr/LC_MESSAGES/mailman.mo
 lib/mailman/messages/hr/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/hu/
 lib/mailman/messages/hu/LC_MESSAGES/
+@mode
 lib/mailman/messages/hu/LC_MESSAGES/mailman.mo
 lib/mailman/messages/hu/LC_MESSAGES/mailman.po
 lib/mailman/messages/hu/README.hu
+@mode 775
 lib/mailman/messages/it/
 lib/mailman/messages/it/LC_MESSAGES/
+@mode
 lib/mailman/messages/it/LC_MESSAGES/mailman.mo
 lib/mailman/messages/it/LC_MESSAGES/mailman.po
 lib/mailman/messages/it/README.it
+@mode 775
 lib/mailman/messages/ja/
 lib/mailman/messages/ja/LC_MESSAGES/
+@mode
 lib/mailman/messages/ja/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ja/LC_MESSAGES/mailman.po
 lib/mailman/messages/ja/README.ja
+@mode 775
 lib/mailman/messages/ko/
 lib/mailman/messages/ko/LC_MESSAGES/
+@mode
 lib/mailman/messages/ko/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ko/LC_MESSAGES/mailman.po
 lib/mailman/messages/ko/README.ko
+@mode 775
 lib/mailman/messages/lt/
 lib/mailman/messages/lt/LC_MESSAGES/
+@mode
 lib/mailman/messages/lt/LC_MESSAGES/mailman.mo
 lib/mailman/messages/lt/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/nl/
 lib/mailman/messages/nl/LC_MESSAGES/
+@mode
 lib/mailman/messages/nl/LC_MESSAGES/mailman.mo
 lib/mailman/messages/nl/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/no/
 lib/mailman/messages/no/LC_MESSAGES/
+@mode
 lib/mailman/messages/no/LC_MESSAGES/mailman.mo
 lib/mailman/messages/no/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/pl/
 lib/mailman/messages/pl/LC_MESSAGES/
+@mode
 lib/mailman/messages/pl/LC_MESSAGES/mailman.mo
 lib/mailman/messages/pl/LC_MESSAGES/mailman.po
 lib/mailman/messages/pl/README.pl
+@mode 775
 lib/mailman/messages/pt/
 lib/mailman/messages/pt/LC_MESSAGES/
+@mode
 lib/mailman/messages/pt/LC_MESSAGES/mailman.mo
 lib/mailman/messages/pt/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/pt_BR/
 lib/mailman/messages/pt_BR/LC_MESSAGES/
+@mode
 lib/mailman/messages/pt_BR/LC_MESSAGES/mailman.mo
 lib/mailman/messages/pt_BR/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/ro/
 lib/mailman/messages/ro/LC_MESSAGES/
+@mode
 lib/mailman/messages/ro/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ro/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/ru/
 lib/mailman/messages/ru/LC_MESSAGES/
+@mode
 lib/mailman/messages/ru/LC_MESSAGES/mailman.mo
 lib/mailman/messages/ru/LC_MESSAGES/mailman.po
 lib/mailman/messages/ru/README.ru
+@mode 775
 lib/mailman/messages/sl/
 lib/mailman/messages/sl/LC_MESSAGES/
+@mode
 lib/mailman/messages/sl/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sl/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/sr/
 lib/mailman/messages/sr/LC_MESSAGES/
+@mode
 lib/mailman/messages/sr/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sr/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/sv/
 lib/mailman/messages/sv/LC_MESSAGES/
+@mode
 lib/mailman/messages/sv/LC_MESSAGES/mailman.mo
 lib/mailman/messages/sv/LC_MESSAGES/mailman.po
 lib/mailman/messages/sv/README.sv
+@mode 775
 lib/mailman/messages/tr/
 lib/mailman/messages/tr/LC_MESSAGES/
+@mode
 lib/mailman/messages/tr/LC_MESSAGES/mailman.mo
 lib/mailman/messages/tr/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/messages/uk/
 lib/mailman/messages/uk/LC_MESSAGES/
+@mode
 lib/mailman/messages/uk/LC_MESSAGES/mailman.mo
 lib/mailman/messages/uk/LC_MESSAGES/mailman.po
+@mode 775
 lib/mailman/pythonlib/
 lib/mailman/pythonlib/email/
+@mode
 lib/mailman/pythonlib/email/Charset.py
 lib/mailman/pythonlib/email/Charset.pyc
 lib/mailman/pythonlib/email/Encoders.py
@@ -535,13 +626,19 @@ lib/mailman/pythonlib/email/base64MIME.py
 lib/mailman/pythonlib/email/base64MIME.pyc
 lib/mailman/pythonlib/email/quopriMIME.py
 lib/mailman/pythonlib/email/quopriMIME.pyc
+@mode 775
 lib/mailman/pythonlib/japanese/
+@mode
 lib/mailman/pythonlib/japanese/__init__.py
 lib/mailman/pythonlib/japanese/__init__.pyc
+@mode 775
 lib/mailman/pythonlib/japanese/aliases/
+@mode
 lib/mailman/pythonlib/japanese/aliases/__init__.py
 lib/mailman/pythonlib/japanese/aliases/__init__.pyc
+@mode 775
 lib/mailman/pythonlib/japanese/c/
+@mode
 lib/mailman/pythonlib/japanese/c/__init__.py
 lib/mailman/pythonlib/japanese/c/__init__.pyc
 lib/mailman/pythonlib/japanese/c/_japanese_codecs.so
@@ -571,7 +668,9 @@ lib/mailman/pythonlib/japanese/jis_x_0201_katakana.py
 lib/mailman/pythonlib/japanese/jis_x_0201_katakana.pyc
 lib/mailman/pythonlib/japanese/jis_x_0201_roman.py
 lib/mailman/pythonlib/japanese/jis_x_0201_roman.pyc
+@mode 775
 lib/mailman/pythonlib/japanese/mappings/
+@mode
 lib/mailman/pythonlib/japanese/mappings/__init__.py
 lib/mailman/pythonlib/japanese/mappings/__init__.pyc
 lib/mailman/pythonlib/japanese/mappings/euc_jp.py
@@ -584,7 +683,9 @@ lib/mailman/pythonlib/japanese/mappings/shift_jis.py
 lib/mailman/pythonlib/japanese/mappings/shift_jis.pyc
 lib/mailman/pythonlib/japanese/ms932.py
 lib/mailman/pythonlib/japanese/ms932.pyc
+@mode 775
 lib/mailman/pythonlib/japanese/python/
+@mode
 lib/mailman/pythonlib/japanese/python/__init__.py
 lib/mailman/pythonlib/japanese/python/__init__.pyc
 lib/mailman/pythonlib/japanese/python/euc_jp.py
@@ -605,13 +706,17 @@ lib/mailman/pythonlib/japanese/ujis.py
 lib/mailman/pythonlib/japanese/ujis.pyc
 lib/mailman/pythonlib/japanese/windows_31j.py
 lib/mailman/pythonlib/japanese/windows_31j.pyc
+@mode 775
 lib/mailman/pythonlib/korean/
+@mode
 lib/mailman/pythonlib/korean.pth
 lib/mailman/pythonlib/korean/__init__.py
 lib/mailman/pythonlib/korean/__init__.pyc
 lib/mailman/pythonlib/korean/aliases.py
 lib/mailman/pythonlib/korean/aliases.pyc
+@mode 775
 lib/mailman/pythonlib/korean/c/
+@mode
 lib/mailman/pythonlib/korean/c/__init__.py
 lib/mailman/pythonlib/korean/c/__init__.pyc
 lib/mailman/pythonlib/korean/c/_koco.so
@@ -630,7 +735,9 @@ lib/mailman/pythonlib/korean/iso_2022_kr.py
 lib/mailman/pythonlib/korean/iso_2022_kr.pyc
 lib/mailman/pythonlib/korean/johab.py
 lib/mailman/pythonlib/korean/johab.pyc
+@mode 775
 lib/mailman/pythonlib/korean/mappings/
+@mode
 lib/mailman/pythonlib/korean/mappings/__init__.py
 lib/mailman/pythonlib/korean/mappings/__init__.pyc
 lib/mailman/pythonlib/korean/mappings/johab_ideograph.py
@@ -643,7 +750,9 @@ lib/mailman/pythonlib/korean/mappings/ksc5601_misc.py
 lib/mailman/pythonlib/korean/mappings/ksc5601_misc.pyc
 lib/mailman/pythonlib/korean/mappings/uhc.py
 lib/mailman/pythonlib/korean/mappings/uhc.pyc
+@mode 775
 lib/mailman/pythonlib/korean/python/
+@mode
 lib/mailman/pythonlib/korean/python/__init__.py
 lib/mailman/pythonlib/korean/python/__init__.pyc
 lib/mailman/pythonlib/korean/python/cp949.py
@@ -664,11 +773,15 @@ lib/mailman/pythonlib/korean/qwerty2bul.py
 lib/mailman/pythonlib/korean/qwerty2bul.pyc
 lib/mailman/pythonlib/korean/unijohab.py
 lib/mailman/pythonlib/korean/unijohab.pyc
+@mode 775
 lib/mailman/pythonlib/lib/
 lib/mailman/pythonlib/lib/python${PYTHON_VER}/
 lib/mailman/pythonlib/lib/python${PYTHON_VER}/site-packages/
+@mode
 lib/mailman/pythonlib/lib/python${PYTHON_VER}/site-packages/japanese.pth
+@mode 775
 lib/mailman/scripts/
+@mode
 lib/mailman/scripts/admin
 lib/mailman/scripts/bounces
 lib/mailman/scripts/confirm
@@ -682,8 +795,10 @@ lib/mailman/scripts/post
 lib/mailman/scripts/request
 lib/mailman/scripts/subscribe
 lib/mailman/scripts/unsubscribe
+@mode 775
 lib/mailman/templates/
 lib/mailman/templates/big5/
+@mode
 lib/mailman/templates/big5/admindbpreamble.html
 lib/mailman/templates/big5/adminsubscribeack.txt
 lib/mailman/templates/big5/adminunsubscribeack.txt
@@ -710,7 +825,9 @@ lib/mailman/templates/big5/subscribe.html
 lib/mailman/templates/big5/subscribeack.txt
 lib/mailman/templates/big5/userpass.txt
 lib/mailman/templates/big5/verify.txt
+@mode 775
 lib/mailman/templates/ca/
+@mode
 lib/mailman/templates/ca/admindbdetails.html
 lib/mailman/templates/ca/admindbpreamble.html
 lib/mailman/templates/ca/admindbsummary.html
@@ -753,7 +870,9 @@ lib/mailman/templates/ca/unsub.txt
 lib/mailman/templates/ca/unsubauth.txt
 lib/mailman/templates/ca/userpass.txt
 lib/mailman/templates/ca/verify.txt
+@mode 775
 lib/mailman/templates/cs/
+@mode
 lib/mailman/templates/cs/admindbdetails.html
 lib/mailman/templates/cs/admindbpreamble.html
 lib/mailman/templates/cs/admindbsummary.html
@@ -787,7 +906,9 @@ lib/mailman/templates/cs/unsub.txt
 lib/mailman/templates/cs/unsubauth.txt
 lib/mailman/templates/cs/userpass.txt
 lib/mailman/templates/cs/verify.txt
+@mode 775
 lib/mailman/templates/de/
+@mode
 lib/mailman/templates/de/admindbdetails.html
 lib/mailman/templates/de/admindbpreamble.html
 lib/mailman/templates/de/admindbsummary.html
@@ -820,7 +941,9 @@ lib/mailman/templates/de/subscribeack.txt
 lib/mailman/templates/de/unsub.txt
 lib/mailman/templates/de/userpass.txt
 lib/mailman/templates/de/verify.txt
+@mode 775
 lib/mailman/templates/en/
+@mode
 lib/mailman/templates/en/admindbdetails.html
 lib/mailman/templates/en/admindbpreamble.html
 lib/mailman/templates/en/admindbsummary.html
@@ -865,7 +988,9 @@ lib/mailman/templates/en/unsub.txt
 lib/mailman/templates/en/unsubauth.txt
 lib/mailman/templates/en/userpass.txt
 lib/mailman/templates/en/verify.txt
+@mode 775
 lib/mailman/templates/es/
+@mode
 lib/mailman/templates/es/admindbdetails.html
 lib/mailman/templates/es/admindbpreamble.html
 lib/mailman/templates/es/admindbsummary.html
@@ -902,7 +1027,9 @@ lib/mailman/templates/es/unsub.txt
 lib/mailman/templates/es/unsubauth.txt
 lib/mailman/templates/es/userpass.txt
 lib/mailman/templates/es/verify.txt
+@mode 775
 lib/mailman/templates/et/
+@mode
 lib/mailman/templates/et/admindbdetails.html
 lib/mailman/templates/et/admindbpreamble.html
 lib/mailman/templates/et/admindbsummary.html
@@ -937,7 +1064,9 @@ lib/mailman/templates/et/unsub.txt
 lib/mailman/templates/et/unsubauth.txt
 lib/mailman/templates/et/userpass.txt
 lib/mailman/templates/et/verify.txt
+@mode 775
 lib/mailman/templates/eu/
+@mode
 lib/mailman/templates/eu/admindbdetails.html
 lib/mailman/templates/eu/admindbpreamble.html
 lib/mailman/templates/eu/admindbsummary.html
@@ -980,7 +1109,9 @@ lib/mailman/templates/eu/unsub.txt
 lib/mailman/templates/eu/unsubauth.txt
 lib/mailman/templates/eu/userpass.txt
 lib/mailman/templates/eu/verify.txt
+@mode 775
 lib/mailman/templates/fi/
+@mode
 lib/mailman/templates/fi/admindbdetails.html
 lib/mailman/templates/fi/admindbpreamble.html
 lib/mailman/templates/fi/admindbsummary.html
@@ -1014,7 +1145,9 @@ lib/mailman/templates/fi/unsub.txt
 lib/mailman/templates/fi/unsubauth.txt
 lib/mailman/templates/fi/userpass.txt
 lib/mailman/templates/fi/verify.txt
+@mode 775
 lib/mailman/templates/fr/
+@mode
 lib/mailman/templates/fr/admindbdetails.html
 lib/mailman/templates/fr/admindbpreamble.html
 lib/mailman/templates/fr/admindbsummary.html
@@ -1058,7 +1191,9 @@ lib/mailman/templates/fr/unsub.txt
 lib/mailman/templates/fr/unsubauth.txt
 lib/mailman/templates/fr/userpass.txt
 lib/mailman/templates/fr/verify.txt
+@mode 775
 lib/mailman/templates/gb/
+@mode
 lib/mailman/templates/gb/admindbpreamble.html
 lib/mailman/templates/gb/adminsubscribeack.txt
 lib/mailman/templates/gb/adminunsubscribeack.txt
@@ -1085,7 +1220,9 @@ lib/mailman/templates/gb/subscribe.html
 lib/mailman/templates/gb/subscribeack.txt
 lib/mailman/templates/gb/userpass.txt
 lib/mailman/templates/gb/verify.txt
+@mode 775
 lib/mailman/templates/hr/
+@mode
 lib/mailman/templates/hr/admindbdetails.html
 lib/mailman/templates/hr/admindbpreamble.html
 lib/mailman/templates/hr/admindbsummary.html
@@ -1128,7 +1265,9 @@ lib/mailman/templates/hr/unsub.txt
 lib/mailman/templates/hr/unsubauth.txt
 lib/mailman/templates/hr/userpass.txt
 lib/mailman/templates/hr/verify.txt
+@mode 775
 lib/mailman/templates/hu/
+@mode
 lib/mailman/templates/hu/admindbdetails.html
 lib/mailman/templates/hu/admindbpreamble.html
 lib/mailman/templates/hu/admindbsummary.html
@@ -1173,7 +1312,9 @@ lib/mailman/templates/hu/unsub.txt
 lib/mailman/templates/hu/unsubauth.txt
 lib/mailman/templates/hu/userpass.txt
 lib/mailman/templates/hu/verify.txt
+@mode 775
 lib/mailman/templates/it/
+@mode
 lib/mailman/templates/it/admindbdetails.html
 lib/mailman/templates/it/admindbpreamble.html
 lib/mailman/templates/it/admindbsummary.html
@@ -1217,7 +1358,9 @@ lib/mailman/templates/it/unsub.txt
 lib/mailman/templates/it/unsubauth.txt
 lib/mailman/templates/it/userpass.txt
 lib/mailman/templates/it/verify.txt
+@mode 775
 lib/mailman/templates/ja/
+@mode
 lib/mailman/templates/ja/admindbdetails.html
 lib/mailman/templates/ja/admindbpreamble.html
 lib/mailman/templates/ja/admindbsummary.html
@@ -1261,7 +1404,9 @@ lib/mailman/templates/ja/unsub.txt
 lib/mailman/templates/ja/unsubauth.txt
 lib/mailman/templates/ja/userpass.txt
 lib/mailman/templates/ja/verify.txt
+@mode 775
 lib/mailman/templates/ko/
+@mode
 lib/mailman/templates/ko/admindbdetails.html
 lib/mailman/templates/ko/admindbpreamble.html
 lib/mailman/templates/ko/admindbsummary.html
@@ -1296,7 +1441,9 @@ lib/mailman/templates/ko/unsub.txt
 lib/mailman/templates/ko/unsubauth.txt
 lib/mailman/templates/ko/userpass.txt
 lib/mailman/templates/ko/verify.txt
+@mode 775
 lib/mailman/templates/lt/
+@mode
 lib/mailman/templates/lt/admindbdetails.html
 lib/mailman/templates/lt/admindbpreamble.html
 lib/mailman/templates/lt/admindbsummary.html
@@ -1339,7 +1486,9 @@ lib/mailman/templates/lt/unsub.txt
 lib/mailman/templates/lt/unsubauth.txt
 lib/mailman/templates/lt/userpass.txt
 lib/mailman/templates/lt/verify.txt
+@mode 775
 lib/mailman/templates/nl/
+@mode
 lib/mailman/templates/nl/admindbdetails.html
 lib/mailman/templates/nl/admindbpreamble.html
 lib/mailman/templates/nl/admindbsummary.html
@@ -1374,7 +1523,9 @@ lib/mailman/templates/nl/unsub.txt
 lib/mailman/templates/nl/unsubauth.txt
 lib/mailman/templates/nl/userpass.txt
 lib/mailman/templates/nl/verify.txt
+@mode 775
 lib/mailman/templates/no/
+@mode
 lib/mailman/templates/no/admindbdetails.html
 lib/mailman/templates/no/admindbpreamble.html
 lib/mailman/templates/no/admindbsummary.html
@@ -1416,7 +1567,9 @@ lib/mailman/templates/no/unsub.txt
 lib/mailman/templates/no/unsubauth.txt
 lib/mailman/templates/no/userpass.txt
 lib/mailman/templates/no/verify.txt
+@mode 775
 lib/mailman/templates/pl/
+@mode
 lib/mailman/templates/pl/admindbdetails.html
 lib/mailman/templates/pl/admindbpreamble.html
 lib/mailman/templates/pl/admindbsummary.html
@@ -1459,7 +1612,9 @@ lib/mailman/templates/pl/unsub.txt
 lib/mailman/templates/pl/unsubauth.txt
 lib/mailman/templates/pl/userpass.txt
 lib/mailman/templates/pl/verify.txt
+@mode 775
 lib/mailman/templates/pt/
+@mode
 lib/mailman/templates/pt/admindbdetails.html
 lib/mailman/templates/pt/admindbpreamble.html
 lib/mailman/templates/pt/admindbsummary.html
@@ -1502,7 +1657,9 @@ lib/mailman/templates/pt/unsub.txt
 lib/mailman/templates/pt/unsubauth.txt
 lib/mailman/templates/pt/userpass.txt
 lib/mailman/templates/pt/verify.txt
+@mode 775
 lib/mailman/templates/pt_BR/
+@mode
 lib/mailman/templates/pt_BR/admindbdetails.html
 lib/mailman/templates/pt_BR/admindbpreamble.html
 lib/mailman/templates/pt_BR/admindbsummary.html
@@ -1537,7 +1694,9 @@ lib/mailman/templates/pt_BR/unsub.txt
 lib/mailman/templates/pt_BR/unsubauth.txt
 lib/mailman/templates/pt_BR/userpass.txt
 lib/mailman/templates/pt_BR/verify.txt
+@mode 775
 lib/mailman/templates/ro/
+@mode
 lib/mailman/templates/ro/admindbdetails.html
 lib/mailman/templates/ro/admindbpreamble.html
 lib/mailman/templates/ro/admindbsummary.html
@@ -1580,7 +1739,9 @@ lib/mailman/templates/ro/unsub.txt
 lib/mailman/templates/ro/unsubauth.txt
 lib/mailman/templates/ro/userpass.txt
 lib/mailman/templates/ro/verify.txt
+@mode 775
 lib/mailman/templates/ru/
+@mode
 lib/mailman/templates/ru/admindbdetails.html
 lib/mailman/templates/ru/admindbpreamble.html
 lib/mailman/templates/ru/admindbsummary.html
@@ -1623,7 +1784,9 @@ lib/mailman/templates/ru/unsub.txt
 lib/mailman/templates/ru/unsubauth.txt
 lib/mailman/templates/ru/userpass.txt
 lib/mailman/templates/ru/verify.txt
+@mode 775
 lib/mailman/templates/sl/
+@mode
 lib/mailman/templates/sl/admindbdetails.html
 lib/mailman/templates/sl/admindbpreamble.html
 lib/mailman/templates/sl/admindbsummary.html
@@ -1666,7 +1829,9 @@ lib/mailman/templates/sl/unsub.txt
 lib/mailman/templates/sl/unsubauth.txt
 lib/mailman/templates/sl/userpass.txt
 lib/mailman/templates/sl/verify.txt
+@mode 775
 lib/mailman/templates/sr/
+@mode
 lib/mailman/templates/sr/admindbdetails.html
 lib/mailman/templates/sr/admindbpreamble.html
 lib/mailman/templates/sr/admindbsummary.html
@@ -1710,7 +1875,9 @@ lib/mailman/templates/sr/unsub.txt
 lib/mailman/templates/sr/unsubauth.txt
 lib/mailman/templates/sr/userpass.txt
 lib/mailman/templates/sr/verify.txt
+@mode 775
 lib/mailman/templates/sv/
+@mode
 lib/mailman/templates/sv/admindbdetails.html
 lib/mailman/templates/sv/admindbpreamble.html
 lib/mailman/templates/sv/admindbsummary.html
@@ -1748,7 +1915,9 @@ lib/mailman/templates/sv/unsub.txt
 lib/mailman/templates/sv/unsubauth.txt
 lib/mailman/templates/sv/userpass.txt
 lib/mailman/templates/sv/verify.txt
+@mode 775
 lib/mailman/templates/tr/
+@mode
 lib/mailman/templates/tr/admindbdetails.html
 lib/mailman/templates/tr/admindbpreamble.html
 lib/mailman/templates/tr/admindbsummary.html
@@ -1792,7 +1961,9 @@ lib/mailman/templates/tr/unsub.txt
 lib/mailman/templates/tr/unsubauth.txt
 lib/mailman/templates/tr/userpass.txt
 lib/mailman/templates/tr/verify.txt
+@mode 775
 lib/mailman/templates/uk/
+@mode
 lib/mailman/templates/uk/admindbdetails.html
 lib/mailman/templates/uk/admindbpreamble.html
 lib/mailman/templates/uk/admindbsummary.html
@@ -1835,10 +2006,14 @@ lib/mailman/templates/uk/unsub.txt
 lib/mailman/templates/uk/unsubauth.txt
 lib/mailman/templates/uk/userpass.txt
 lib/mailman/templates/uk/verify.txt
+@mode 775
 lib/mailman/tests/
+@mode
 lib/mailman/tests/EmailBase.py
 lib/mailman/tests/TestBase.py
+@mode 775
 lib/mailman/tests/bounces/
+@mode
 lib/mailman/tests/bounces/bounce_01.txt
 lib/mailman/tests/bounces/bounce_02.txt
 lib/mailman/tests/bounces/bounce_03.txt
@@ -1889,7 +2064,9 @@ lib/mailman/tests/bounces/yahoo_08.txt
 lib/mailman/tests/bounces/yahoo_09.txt
 lib/mailman/tests/bounces/yale_01.txt
 lib/mailman/tests/fblast.py
+@mode 775
 lib/mailman/tests/msgs/
+@mode
 lib/mailman/tests/msgs/bad_01.txt
 lib/mailman/tests/msgs/nimda.txt
 lib/mailman/tests/onebounce.py
@@ -1904,6 +2081,8 @@ lib/mailman/tests/test_safedict.py
 lib/mailman/tests/test_security_mgr.py
 lib/mailman/tests/test_smtp.py
 lib/mailman/tests/testall.py
+@group
+@owner
 share/doc/mailman/
 share/doc/mailman/FAQ
 share/doc/mailman/NEWS
@@ -1921,6 +2100,21 @@ share/doc/mailman/README.QMAIL
 share/doc/mailman/README.SENDMAIL
 share/doc/mailman/README.USERAGENT
 share/doc/mailman/UPGRADING
+@owner _mailman
+@group _mailman
+@mode 0775
+@sample /var/spool/mailman/
+@sample /var/spool/mailman/archives/
+@mode 0771
+@sample /var/spool/mailman/archives/private/
+@mode 0775
+@sample /var/spool/mailman/archives/public/
+@sample /var/spool/mailman/data/
+@sample /var/spool/mailman/lists/
+@sample /var/spool/mailman/locks/
+@sample /var/spool/mailman/logs/
+@sample /var/spool/mailman/qfiles/
+@sample /var/spool/mailman/spam/
 @unexec find %D/lib/mailman -name paths.pyc -exec rm -f {} \;
 @extra /var/cron/tabs/_mailman
 @extraunexec rm -fr /var/spool/mailman
