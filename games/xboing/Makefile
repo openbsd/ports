@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/03/06 02:41:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2004/10/01 08:13:43 xsa Exp $
 
 COMMENT=	"blockout style game for X11"
 
@@ -18,5 +18,9 @@ WRKDIST=	${WRKDIR}/xboing
 
 USE_X11=	Yes
 NO_REGRESS=	Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xboing
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xboing/xboing.score
 
 .include <bsd.port.mk>

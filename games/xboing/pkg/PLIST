@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/10/01 08:13:43 xsa Exp $
 @mode g+s
 @group games
 bin/xboing
 @mode
 @group
 @man man/cat1/xboing.0
+share/examples/xboing/
+share/examples/xboing/xboing.score
+@mode g+w
+@group games
+@sample /var/games/xboing.score
+@mode
+@group
 share/xboing/
 share/xboing/levels/
 share/xboing/levels/demo.data
@@ -138,5 +145,3 @@ share/xboing/sounds/whoosh.au
 share/xboing/sounds/wzzz.au
 share/xboing/sounds/wzzz2.au
 share/xboing/sounds/youagod.au
-@cwd /var/games
-@extra xboing.score
