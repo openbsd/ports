@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1 2003/08/08 07:20:21 dhartmei Exp $
+bin/icbirc
+man/man8/icbirc.8

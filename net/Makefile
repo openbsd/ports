@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2003/08/02 15:38:51 couderc Exp $
+# $OpenBSD: Makefile,v 1.291 2003/08/08 07:20:21 dhartmei Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -67,6 +67,7 @@
      SUBDIR += hping
      SUBDIR += httptunnel
      SUBDIR += icb
+     SUBDIR += icbirc
      SUBDIR += icecast
      SUBDIR += ices
      SUBDIR += ickle
