@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/12/09 22:41:58 couderc Exp $
-lib/ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/gtk.so
+@comment $OpenBSD: PLIST,v 1.6 2004/02/20 23:12:31 couderc Exp $
+lib/ruby/site_ruby/${REV}/${SUB}/gtk.so
 share/doc/ruby/ruby-gtk/gtkbrows.rb
 share/doc/ruby/ruby-gtk/rbbr.rb
 share/doc/ruby/ruby-gtk/rbbr_gtk.rb
@@ -103,4 +103,6 @@ share/examples/ruby/ruby-gtk/xbm_cursor.rb
 @dirrm share/examples/ruby/ruby-gtk/testgtk
 @dirrm share/examples/ruby/ruby-gtk/test
 @dirrm share/examples/ruby/ruby-gtk
+@dirrm share/examples/ruby
 @dirrm share/doc/ruby/ruby-gtk
+@dirrm share/doc/ruby
