@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.5 2000/04/23 14:42:15 maja Exp $
+
 #
 # From:
 # $FreeBSD: ports/www/hotjava/Makefile,v 1.4 2000/02/16 00:19:45 mharo Exp $
@@ -19,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+MIRROR_DISTFILE=	No
 
 EXTRACT_ONLY=
 
