@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/10/09 22:08:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.29 2000/10/22 16:08:00 espie Exp $
 
 DISTNAME=	nmap-2.54BETA6
 PKGNAME=	nmap-2.54b6
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.insecure.org/nmap/
-MAINTAINER=	Angelos Keromytis <angelos@openbsd.org>
+MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
