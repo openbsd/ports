@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2004-11-12T16:47:27.063278Z"
+   url="file:///home/msf/svn/ports/trunk/devel/p5-Log-Dispatch/pkg"
+   last-author="msf"
+   kind="dir"
+   uuid="524e126a-b2e8-0310-8b5e-3b9fd9181272"
+   revision="43"/>
+<entry
+   committed-rev="2"
+   name="DESCR"
+   text-time="2004-12-06T19:52:35.000000Z"
+   committed-date="2004-11-12T16:47:27.063278Z"
+   checksum="b8aca25b5c3fa65651b1d24a19533381"
+   last-author="msf"
+   kind="file"
+   prop-time="2004-12-06T19:52:35.000000Z"/>
+<entry
+   committed-rev="2"
+   name="PLIST"
+   text-time="2004-12-06T19:52:35.000000Z"
+   committed-date="2004-11-12T16:47:27.063278Z"
+   checksum="caf1872b884b83c731f293cf3de95c47"
+   last-author="msf"
+   kind="file"
+   prop-time="2004-12-06T19:52:35.000000Z"/>
+</wc-entries>
