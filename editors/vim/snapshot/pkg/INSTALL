@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/04/02 16:02:02 espie Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/08/06 02:46:39 lebel Exp $
 #
 # Pre/post-installation setup of vim6
 
@@ -13,18 +13,15 @@ do_notice()
 {
 	echo
 	echo "+---------------"
-	echo "| Message from the author of Vim:  http://www.vim.org/announce/"
-	echo "|"
-	echo "| WARNING: This is really an unstable version.  Many things have been added"
-	echo "| without proper testing.  It does crash.  It may destroy your work.  New"
-	echo "| features may change incompatibly in the next version."
-	echo "|"
-	echo "| This version is for developers, thus it comes as source code only."
-	echo "| If you run into something that doesn't work, please try to figure out why,"
-	echo "| try to solve it and send me a patch.  If you can't do that, at least send me"
-	echo "| precise information to save me time."
-	echo "|"
-	echo "| More info about the new 6.0 features with \":help version6\"."
+	echo "| This is a BETA test version of Vim.  It is a huge step from Vim 5.x."
+	echo "| Many, many new features and improvements have been included.  For an"
+	echo "| overview, with a few screendumps, look here:"
+	echo "| "
+	echo "| http://vim.sf.net/whyvim.php"
+	echo "| "
+	echo "| Vim 6.0 has been in alpha testing for quite a while.  Although it"
+	echo "| appears to work well, it needs to be tested before we can say it is"
+	echo "| really stable.  Expect to run into a few problems."
 	echo "+---------------"
 	echo
 }
