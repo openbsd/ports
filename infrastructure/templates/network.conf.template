@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.70 2004/07/05 16:13:47 xsa Exp $
+# $OpenBSD: network.conf.template,v 1.71 2004/10/24 18:21:09 jolan Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -116,19 +116,14 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
 
 MASTER_SITE_SOURCEFORGE+=	\
-	http://umn.dl.sourceforge.net/sourceforge/ \
-	http://flow.dl.sourceforge.net/sourceforge/ \
+	http://voxel.dl.sourceforge.net/sourceforge/ \
+	http://mesh.dl.sourceforge.net/sourceforge/ \
+	http://ovh.dl.sourceforge.net/sourceforge/ \
 	http://belnet.dl.sourceforge.net/sourceforge/ \
-	http://aleron.dl.sourceforge.net/sourceforge/ \
-	http://easynews.dl.sourceforge.net/sourceforge/ \
-	http://twtelecom.dl.sourceforge.net/sourceforge/ \
+	http://puzzle.dl.sourceforge.net/sourceforge/ \
+	http://optusnet.dl.sourceforge.net/sourceforge/ \
 	http://unc.dl.sourceforge.net/sourceforge/ \
-	http://cesnet.dl.sourceforge.net/sourceforge/ \
-	http://us.dl.sourceforge.net/ \
-	http://eu.dl.sourceforge.net/ \
-	ftp://us.dl.sourceforge.net/pub/sourceforge/ \
-	ftp://ftp.kddlabs.co.jp/sourceforge/ \
-	ftp://ftp.chg.ru/pub/sourceforge/
+	http://heanet.dl.sourceforge.net/sourceforge/
 
 MASTER_SITE_GNOME+=	\
 	ftp://archive.progeny.com/GNOME/ \
