@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/31 01:19:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/17 18:36:48 avsm Exp $
 
 COMMENT=	"parser generator for the functional language Haskell"
 
-V=		1.13
+V=		1.14
 DISTNAME=	happy-${V}
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.haskell.org/happy/dist/${V}/
 MASTER_SITES0=	ftp://ftp.cse.unsw.edu.au/pub/users/dons/happy/
 
 DISTFILES=	happy-${V}-src.tar.gz     \
-		happy-regress-${V}.tar.gz:0
+		happy-regress-${V}.tar.bz2:0
 
 BUILD_DEPENDS+=	::textproc/docbook      ::textproc/docbook-dsssl\
 		::textproc/sgmlformat   ::textproc/openjade     \

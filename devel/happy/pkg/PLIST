@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/23 19:09:34 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/17 18:36:48 avsm Exp $
 bin/happy
-bin/happy-1.13
-lib/happy-1.13/happy.bin
-lib/happy-1.13/happy/HappyTemplate
-lib/happy-1.13/happy/HappyTemplate-arrays
-lib/happy-1.13/happy/HappyTemplate-arrays-coerce
-lib/happy-1.13/happy/HappyTemplate-arrays-coerce-debug
-lib/happy-1.13/happy/HappyTemplate-arrays-debug
-lib/happy-1.13/happy/HappyTemplate-arrays-ghc
-lib/happy-1.13/happy/HappyTemplate-arrays-ghc-debug
-lib/happy-1.13/happy/HappyTemplate-coerce
-lib/happy-1.13/happy/HappyTemplate-ghc
+bin/happy-1.14
+lib/happy-1.14/HappyTemplate
+lib/happy-1.14/HappyTemplate-arrays
+lib/happy-1.14/HappyTemplate-arrays-coerce
+lib/happy-1.14/HappyTemplate-arrays-coerce-debug
+lib/happy-1.14/HappyTemplate-arrays-debug
+lib/happy-1.14/HappyTemplate-arrays-ghc
+lib/happy-1.14/HappyTemplate-arrays-ghc-debug
+lib/happy-1.14/HappyTemplate-coerce
+lib/happy-1.14/HappyTemplate-ghc
+lib/happy-1.14/happy.bin
 share/doc/happy/docbook.css
 share/doc/happy/happy-introduction.html
 share/doc/happy/happy.html
@@ -50,5 +50,4 @@ share/doc/happy/stylesheet-images/up.gif
 share/doc/happy/stylesheet-images/warning.gif
 @dirrm share/doc/happy/stylesheet-images
 @dirrm share/doc/happy
-@dirrm lib/happy-1.13/happy
-@dirrm lib/happy-1.13
+@dirrm lib/happy-1.14
