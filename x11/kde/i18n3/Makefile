@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/07 12:29:12 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2004/02/10 00:13:50 naddy Exp $
 
 FLAVORS=az bg bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
 	hu it mn ms nb nl nn pl pt pt_BR ro ru se sk sl sr sv ta tr \
@@ -13,7 +13,7 @@ CATEGORIES=		x11 x11/kde
 VERSION=		3.2.0
 DISTNAME=		kde-i18n-${FLAVOR}-${VERSION}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES= ${MASTER_SITE_KDE:S@$@unstable/${VERSION}/src/kde-i18n/@}
+MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/3.2/src/kde-i18n/@}
 
 SUPDISTFILES=
 .for i in ${FLAVORS}
