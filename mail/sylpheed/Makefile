@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/01/17 12:04:28 couderc Exp $
+# $OpenBSD: Makefile,v 1.34 2003/01/18 22:41:44 brad Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+= --disable-gpgme
 LIB_DEPENDS+=	gdk_imlib.19::graphics/imlib
 CONFIGURE_ARGS+= --disable-gdk-pixbuf
 .else
-LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf,no_gnome
+LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf
 CONFIGURE_ARGS+= --disable-imlib
 .endif
 
