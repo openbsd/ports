@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2004/06/22 03:14:12 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2004/07/05 23:11:31 brad Exp $
 
 COMMENT=	"collection of C routines to decode MPEG movies"
 
 DISTNAME=	mpeg_lib-1.3.1
+PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	graphics
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
