@@ -1,0 +1,4 @@
+This module acts as a mix-in, adding the relationship method to 
+Class::DBI::Loader. Since Class::DBI::Loader knows how to map
+between table names and class names, there ought to be no need to 
+replicate the names.

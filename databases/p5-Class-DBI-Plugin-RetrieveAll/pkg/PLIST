@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+${P5SITE}/Class/DBI/Plugin/RetrieveAll.pm
+@comment ${P5ARCH}/auto/Class/DBI/Plugin/RetrieveAll/.packlist
+man/man3p/Class::DBI::Plugin::RetrieveAll.3p
+@comment @dirrm ${P5ARCH}/auto/Class/DBI/Plugin/RetrieveAll
+@comment @dirrm ${P5ARCH}/auto/Class/DBI/Plugin
+@comment @dirrm ${P5ARCH}/auto/Class/DBI
+@comment @dirrm ${P5ARCH}/auto/Class
+@dirrm ${P5SITE}/Class/DBI/Plugin

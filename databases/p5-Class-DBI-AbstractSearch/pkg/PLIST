@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+${P5SITE}/Class/DBI/AbstractSearch.pm
+@comment ${P5ARCH}/auto/Class/DBI/AbstractSearch/.packlist
+man/man3p/Class::DBI::AbstractSearch.3p
+@comment @dirrm ${P5ARCH}/auto/Class/DBI/AbstractSearch
+@comment @dirrm ${P5ARCH}/auto/Class/DBI
+@comment @dirrm ${P5ARCH}/auto/Class
