@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 17:53:59 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/06/12 19:34:48 marcm Exp $
 
 COMMENT=		"library for writing network programs"
 
-DISTNAME=		linc-0.5.5
+DISTNAME=		linc-1.0.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/linc/0.5/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/linc/1.0/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
