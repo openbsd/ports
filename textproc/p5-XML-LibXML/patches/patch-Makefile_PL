@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2002/01/01 12:44:38 shell Exp $
---- Makefile.PL.orig	Tue Jan  1 20:30:04 2002
-+++ Makefile.PL	Tue Jan  1 20:30:09 2002
-@@ -116,7 +116,7 @@
+--- Makefile.PL.orig	Sat Jun 14 17:58:41 2003
++++ Makefile.PL	Sat Jun 14 17:58:47 2003
+@@ -281,8 +281,8 @@
      $script .= <<"INSTALL";
  
  install_sax_driver :
 -\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
+-\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
 +#\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX::Parser))->save_parsers()"
++#\t\@\$(PERL) -MXML::SAX -e "XML::SAX->add_parser(q(XML::LibXML::SAX))->save_parsers()"
   
  INSTALL
   
