@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/21 23:20:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/22 08:32:22 fgsch Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -18,7 +18,7 @@ MAINTAINER=		Federico G. Schwindt <fgsch@openbsd.org>
 HOMEPAGE=		http://sources.redhat.com/
 
 BUILD_DEPENDS=		automake::devel/automake \
-			autoconf::devel/autoconf-new
+			autoconf::devel/autoconf
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
@@ -42,8 +42,8 @@ TARGET_DIR=		$${PREFIX}/${TARGET_ARCH}-unknown-openbsd${OSREV}
 FILES=			ar nm-new objdump ranlib size strings strip-new 
 
 post-patch:
-	@cd ${WRKSRC}/bfd && autoconf-new
-	@-cd ${WRKSRC}/gas && { automake; autoconf-new; }
+	@cd ${WRKSRC}/bfd && autoconf
+	@-cd ${WRKSRC}/gas && { automake; autoconf; }
 	@cd ${WRKSRC}/ld && automake
 
 do-install:
