@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/12/18 13:16:42 dugsong Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/03/09 18:10:42 dugsong Exp $
 sbin/arpspoof
 sbin/dnsspoof
 sbin/dsniff
 sbin/filesnarf
 sbin/macof
 sbin/mailsnarf
+sbin/msgsnarf
 sbin/tcpkill
 sbin/tcpnice
 sbin/sshmitm
@@ -19,6 +20,7 @@ man/man8/dsniff.8
 man/man8/filesnarf.8
 man/man8/macof.8
 man/man8/mailsnarf.8
+man/man8/msgsnarf.8
 man/man8/sshmitm.8
 man/man8/tcpkill.8
 man/man8/tcpnice.8
