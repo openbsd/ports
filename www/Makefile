@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2005/01/20 20:23:34 sturm Exp $
+# $OpenBSD: Makefile,v 1.174 2005/01/27 14:01:31 sturm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -110,6 +110,7 @@
      SUBDIR += p5-HTML-Template
      SUBDIR += p5-HTML-Template-Expr
      SUBDIR += p5-HTML-Tree
+     SUBDIR += p5-HTTP-BrowserDetect
      SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTPD-Log-Filter
 #    SUBDIR += p5-HTTPD-Tools
