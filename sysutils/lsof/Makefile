@@ -3,7 +3,7 @@
 # Date created:         25 November 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 1998/08/25 05:15:14 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/02/18 01:15:34 marc Exp $
 #
 
 DISTNAME=	lsof_4.34_W
@@ -62,7 +62,7 @@ post-extract:
 
 
 do-install:
-	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m 0755 ${WRKSRC}/lsof ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/man1/lsof.1
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
