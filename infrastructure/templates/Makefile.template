@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.21 2000/03/05 17:02:14 espie Exp $
+# $OpenBSD: Makefile.template,v 1.22 2000/06/09 17:19:46 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -101,15 +101,13 @@ MASTER_SITES=		???
 #
 #NO_DEPENDS=		Yes
 # NO_WRKDIR is *BAD*, it breaks all dependencies
-# NO_WRKSUBDIR is obsolete
+# NO_WRKSUBDIR and NO_MTREE are obsolete
 # Use WRKDIST=${WRKDIR}
+# NO_EXTRACT, NO_PATCH, NO_CONFIGURE are deprecated
 #NO_CHECKSUM=		Yes
-#NO_PATCH=		Yes
 #EXTRACT_ONLY=		instead of NO_EXTRACT, creates WRKDIR correctly
-#NO_CONFIGURE=		Yes
 #NO_BUILD=		Yes
 #NO_INSTALL=		Yes
-#NO_MTREE=		Yes
 #NO_PACKAGE=		Yes
 #NO_PKG_REGISTER=	Yes
 
@@ -134,6 +132,7 @@ MASTER_SITES=		???
 #WRKDIR=		??? if other than work
 #WRKDIST=		??? if other than ${WRKDIR}/$DISTNAME
 #WRKSRC=		??? if other than ${WRKDIST}
+#WRKBUILD=		??? if other than ${WRKSRC}
 
 #ALL_TARGET=		???
 #INSTALL_TARGET=	???
