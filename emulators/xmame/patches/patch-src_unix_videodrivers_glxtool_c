@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unix_videodrivers_glxtool_c,v 1.1 2001/08/12 23:03:10 naddy Exp $
---- src/unix/video-drivers/glxtool.c.orig	Sat Aug 11 22:03:52 2001
-+++ src/unix/video-drivers/glxtool.c	Sat Aug 11 22:05:53 2001
-@@ -29,7 +29,7 @@
+$OpenBSD: patch-src_unix_videodrivers_glxtool_c,v 1.2 2001/09/30 17:21:52 naddy Exp $
+--- src/unix/video-drivers/glxtool.c.orig	Sun Apr  8 22:13:26 2001
++++ src/unix/video-drivers/glxtool.c	Sun Sep 30 17:51:42 2001
+@@ -29,7 +29,7 @@ void LIBAPIENTRY fetch_GLX_FUNCS (const 
    if(!_firstRun)
    	return;
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy Exp $
---- src/unix/video-drivers/gltool.c.orig	Sat Aug 11 21:54:56 2001
-+++ src/unix/video-drivers/gltool.c	Sat Aug 11 22:30:50 2001
-@@ -355,7 +355,8 @@
+$OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.2 2001/09/30 17:21:52 naddy Exp $
+--- src/unix/video-drivers/gltool.c.orig	Sun Apr  8 22:13:26 2001
++++ src/unix/video-drivers/gltool.c	Sun Sep 30 17:51:42 2001
+@@ -355,7 +355,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
    if (disp__glXGetProcAddress == NULL && __firstAccess)
    {
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy E
  
        if (disp__glXGetProcAddress != NULL && verbose)
        {
-@@ -365,7 +366,8 @@
+@@ -365,7 +366,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
        if (disp__glXGetProcAddress == NULL)
        {
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy E
  
  	if (disp__glXGetProcAddress != NULL && verbose)
  	{
-@@ -376,7 +378,8 @@
+@@ -376,7 +378,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
        if (disp__glXGetProcAddress == NULL)
        {
@@ -31,7 +31,7 @@ $OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy E
  
  	if (disp__glXGetProcAddress != NULL && verbose)
  	{
-@@ -392,7 +395,8 @@
+@@ -392,7 +395,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  	fflush (NULL);
  	if (libHandleGLX != NULL)
  	{
@@ -41,7 +41,7 @@ $OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy E
  
  	  if (disp__glXGetProcAddress != NULL && verbose)
  	  {
-@@ -402,7 +406,8 @@
+@@ -402,7 +406,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
  	  if (disp__glXGetProcAddress == NULL)
  	  {
@@ -51,7 +51,7 @@ $OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy E
  
  	    if (disp__glXGetProcAddress != NULL && verbose)
  	    {
-@@ -413,7 +418,8 @@
+@@ -413,7 +418,8 @@ void * LIBAPIENTRY getGLProcAddressHelpe
  
  	  if (disp__glXGetProcAddress == NULL)
  	  {
@@ -61,7 +61,7 @@ $OpenBSD: patch-src_unix_videodrivers_gltool_c,v 1.1 2001/08/12 23:03:10 naddy E
  
  	    if (disp__glXGetProcAddress != NULL && verbose)
  	    {
-@@ -539,7 +545,7 @@
+@@ -539,7 +545,7 @@ void LIBAPIENTRY fetch_GL_FUNCS (const c
    if(!loadGLLibrary (libGLName, libGLUName))
    	return;
  

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_unix_joystick-drivers_joy_usb_c,v 1.1 2001/09/30 17:21:52 naddy Exp $
+--- src/unix/joystick-drivers/joy_usb.c.orig	Sun Sep 30 17:43:03 2001
++++ src/unix/joystick-drivers/joy_usb.c	Sun Sep 30 17:45:54 2001
+@@ -15,12 +15,12 @@ struct rc_option joy_usb_opts[] = {
+ 
+ #ifdef USB_JOYSTICK
+ 
+-#if !defined(__ARCH_netbsd) && !defined(__ARCH_freebsd)
+-#error "USB joysticks are only supported under NetBSD and FreeBSD. "
++#if !defined(__ARCH_netbsd) && !defined(__ARCH_freebsd) && !defined(__ARCH_openbsd)
++#error "USB joysticks are only supported under NetBSD, FreeBSD, and OpenBSD. "
+    "Patches to support other archs are welcome ;)"
+ #endif
+ 
+-#if defined(__ARCH_netbsd)
++#if defined(__ARCH_netbsd) || defined(__ARCH_openbsd)
+ #include <usb.h>
+ #elif defined(__ARCH_freebsd)
+ #include <libusb.h>

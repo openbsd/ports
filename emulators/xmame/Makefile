@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/12 23:03:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/30 17:21:52 naddy Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -21,7 +21,7 @@ MAINTAINER=	Claudio Castiglia <ccastig@softhome.net>
 
 HISCORE_FILE=	hsdat7.zip
 HISTORY_FILE=	history.zip
-CHEAT_FILE=	cheat.zip
+CHEAT_FILE=	cheat37b2.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 ${HISTORY_FILE}:1 \
 		${CHEAT_FILE}:2
 
@@ -83,7 +83,8 @@ MAKE_FLAGS=	ARCH=openbsd \
 		INSTALL_PROGRAM_SUID="${INSTALL_PROGRAM}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
-		SYSCONFDIR="${SYSCONFDIR}"
+		SYSCONFDIR="${SYSCONFDIR}" \
+		JOY_USB=1
 
 .if   ${MACHINE_ARCH} == "i386"
 MAKE_FLAGS+=	MY_CPU=i386

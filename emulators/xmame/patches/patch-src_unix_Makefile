@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unix_Makefile,v 1.1 2001/08/12 23:03:10 naddy Exp $
---- src/unix/Makefile.orig	Thu Jul  5 09:47:25 2001
-+++ src/unix/Makefile	Thu Jul  5 09:47:43 2001
-@@ -100,7 +100,7 @@
+$OpenBSD: patch-src_unix_Makefile,v 1.2 2001/09/30 17:21:52 naddy Exp $
+--- src/unix/Makefile.orig	Mon Apr  9 03:03:04 2001
++++ src/unix/Makefile	Sun Sep 30 17:51:42 2001
+@@ -100,7 +100,7 @@ CFLAGS.generic    =
  #CFLAGS.aix        = -DSYSDEP_DSP_AIX -I/usr/include/UMS -I/usr/lpp/som/include
  
  #all cflags
