@@ -1,10 +1,8 @@
 bin/gpg
-bin/gpgm
 lib/gnupg/rndunix
 lib/gnupg/rndegd
 lib/gnupg/tiger
 man/man1/gpg.1
-man/man1/gpgm.1
 share/doc/gnupg/README
 share/doc/gnupg/AUTHORS
 share/doc/gnupg/COPYING
