@@ -1,0 +1,17 @@
+bin/esd
+bin/esd-config
+bin/esdcat
+bin/esdctl
+bin/esddsp
+bin/esdfilt
+bin/esdloop
+bin/esdmon
+bin/esdplay
+bin/esdrec
+bin/esdsample
+include/esd.h
+lib/libesd.a
+lib/libesd.la
+lib/libesd.so.2.8
+share/aclocal/esd.m4
+@exec /sbin/ldconfig -m %B
