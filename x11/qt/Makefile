@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/04/18 14:59:28 brad Exp $
+# $OpenBSD: Makefile,v 1.56 2001/06/09 19:53:22 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=	"C++ X11 GUI toolkit"
@@ -87,11 +87,13 @@ do-install:
 	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
 	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib; \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib; \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib/qt; \
+	 ln -sf qt/libqt.so.${VER_MAJ}.${VER_MIN} ${PREFIX}/lib; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqimgio.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqimgio.a ${PREFIX}/lib; \
