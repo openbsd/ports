@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2000/12/19 15:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2001/01/03 22:35:35 danh Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -46,6 +46,7 @@
      SUBDIR += sftp
      SUBDIR += shash
      SUBDIR += shash:static
+     SUBDIR += slurpie
      SUBDIR += smurflog
      SUBDIR += socks5
      SUBDIR += stel
