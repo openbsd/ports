@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2000/10/09 22:27:04 espie Exp $
 bin/vib
 bin/xtiles
 man/man6/xtiles.6
@@ -7,6 +6,7 @@ share/ipl/bin/binpack
 share/ipl/bin/bitdemo
 share/ipl/bin/bme
 share/ipl/bin/bpack
+share/ipl/bin/breakout
 share/ipl/bin/browser
 share/ipl/bin/ca21
 share/ipl/bin/calib
@@ -14,6 +14,7 @@ share/ipl/bin/cameleon
 share/ipl/bin/chernoff
 share/ipl/bin/clrs2pdb
 share/ipl/bin/coloralc
+share/ipl/bin/colormap
 share/ipl/bin/colorup
 share/ipl/bin/colorwif
 share/ipl/bin/colrbook
@@ -21,14 +22,14 @@ share/ipl/bin/colrname
 share/ipl/bin/colrpick
 share/ipl/bin/concen
 share/ipl/bin/cquilts
+share/ipl/bin/cw
 share/ipl/bin/design1
 share/ipl/bin/design2
 share/ipl/bin/design3
 share/ipl/bin/dlgvu
-share/ipl/bin/drawcolr
 share/ipl/bin/drawup
 share/ipl/bin/drip
-share/ipl/bin/etch
+share/ipl/bin${SYSCONFDIR}h
 share/ipl/bin/facebend
 share/ipl/bin/fetti
 share/ipl/bin/fev
@@ -41,6 +42,7 @@ share/ipl/bin/flohisto
 share/ipl/bin/fmap2pdb
 share/ipl/bin/fontpick
 share/ipl/bin/fractclr
+share/ipl/bin/fractlin
 share/ipl/bin/fstarlab
 share/ipl/bin/gallery
 share/ipl/bin/gamma
@@ -56,7 +58,6 @@ share/ipl/bin/hb
 share/ipl/bin/histo
 share/ipl/bin/hsvpick
 share/ipl/bin/hvc
-share/ipl/bin/imaghtml
 share/ipl/bin/img
 share/ipl/bin/img2grid
 share/ipl/bin/imgcolrs
@@ -67,10 +68,9 @@ share/ipl/bin/imltogif
 share/ipl/bin/ims2pat
 share/ipl/bin/imstogif
 share/ipl/bin/ipicker
-share/ipl/bin/isd2disd
 share/ipl/bin/isd2gif
+share/ipl/bin/isd2grid
 share/ipl/bin/isd2ill
-share/ipl/bin/isd2wif
 share/ipl/bin/iview
 share/ipl/bin/julia1
 share/ipl/bin/kaleid
@@ -118,6 +118,7 @@ share/ipl/bin/rstarlab
 share/ipl/bin/scroll
 share/ipl/bin/scroller
 share/ipl/bin/seamcut
+share/ipl/bin/selectle
 share/ipl/bin/sensdemo
 share/ipl/bin/showcolr
 share/ipl/bin/showtile
@@ -143,7 +144,6 @@ share/ipl/bin/travels
 share/ipl/bin/trycolor
 share/ipl/bin/tryfont
 share/ipl/bin/uix
-share/ipl/bin/unravel
 share/ipl/bin/viewpane
 share/ipl/bin/vqueens
 share/ipl/bin/webimage
@@ -193,6 +193,8 @@ share/ipl/ucode/colrlist.u1
 share/ipl/ucode/colrlist.u2
 share/ipl/ucode/colrmodl.u1
 share/ipl/ucode/colrmodl.u2
+share/ipl/ucode/colrspec.u1
+share/ipl/ucode/colrspec.u2
 share/ipl/ucode/cwutils.u1
 share/ipl/ucode/cwutils.u2
 share/ipl/ucode/decay.u1
@@ -207,6 +209,8 @@ share/ipl/ucode/drag.u1
 share/ipl/ucode/drag.u2
 share/ipl/ucode/drawcard.u1
 share/ipl/ucode/drawcard.u2
+share/ipl/ucode/drawcolr.u1
+share/ipl/ucode/drawcolr.u2
 share/ipl/ucode/drawlab.u1
 share/ipl/ucode/drawlab.u2
 share/ipl/ucode/dsetup.u1
@@ -237,8 +241,6 @@ share/ipl/ucode/glabels.u1
 share/ipl/ucode/glabels.u2
 share/ipl/ucode/glib.u1
 share/ipl/ucode/glib.u2
-share/ipl/ucode/gobject.u1
-share/ipl/ucode/gobject.u2
 share/ipl/ucode/gpxlib.u1
 share/ipl/ucode/gpxlib.u2
 share/ipl/ucode/gpxop.u1
@@ -347,6 +349,8 @@ share/ipl/ucode/symrand.u1
 share/ipl/ucode/symrand.u2
 share/ipl/ucode/tieedit.u1
 share/ipl/ucode/tieedit.u2
+share/ipl/ucode/tieutils.u1
+share/ipl/ucode/tieutils.u2
 share/ipl/ucode/tile.u1
 share/ipl/ucode/tile.u2
 share/ipl/ucode/tiler.u1
@@ -369,8 +373,6 @@ share/ipl/ucode/vgrid.u1
 share/ipl/ucode/vgrid.u2
 share/ipl/ucode/vidgets.u1
 share/ipl/ucode/vidgets.u2
-share/ipl/ucode/viewpack.u1
-share/ipl/ucode/viewpack.u2
 share/ipl/ucode/viface.u1
 share/ipl/ucode/viface.u2
 share/ipl/ucode/vlist.u1
@@ -399,6 +401,8 @@ share/ipl/ucode/wattrib.u1
 share/ipl/ucode/wattrib.u2
 share/ipl/ucode/weavegif.u1
 share/ipl/ucode/weavegif.u2
+share/ipl/ucode/wifisd.u1
+share/ipl/ucode/wifisd.u2
 share/ipl/ucode/win.u1
 share/ipl/ucode/win.u2
 share/ipl/ucode/window.u1

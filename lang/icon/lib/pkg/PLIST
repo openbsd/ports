@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/10/09 22:27:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/07/03 13:22:13 espie Exp $
 @pkgcfl unicon-*
 share/ipl/bin/adlcheck
 share/ipl/bin/adlcount
@@ -42,7 +42,6 @@ share/ipl/bin/delam
 share/ipl/bin/delamc
 share/ipl/bin/dellines
 share/ipl/bin/delta
-share/ipl/bin/detex
 share/ipl/bin/diffn
 share/ipl/bin/diffsort
 share/ipl/bin/diffsum
@@ -95,6 +94,7 @@ share/ipl/bin/hebcalen
 share/ipl/bin/hebeng
 share/ipl/bin/hotedit
 share/ipl/bin/hr
+share/ipl/bin/htget
 share/ipl/bin/htprep
 share/ipl/bin/huffstuf
 share/ipl/bin/hufftab
@@ -136,6 +136,8 @@ share/ipl/bin/ipsplit
 share/ipl/bin/ipxref
 share/ipl/bin/irsort
 share/ipl/bin/irunerr
+share/ipl/bin/isd2disd
+share/ipl/bin/isd2wif
 share/ipl/bin/iseq
 share/ipl/bin/isize
 share/ipl/bin/isrcline
@@ -188,7 +190,6 @@ share/ipl/bin/morse
 share/ipl/bin/mr
 share/ipl/bin/mszip
 share/ipl/bin/mtf3
-share/ipl/bin/mtutils
 share/ipl/bin/newicon
 share/ipl/bin/newsrc
 share/ipl/bin/nim
@@ -256,6 +257,7 @@ share/ipl/bin/toktab
 share/ipl/bin/trim
 share/ipl/bin/ttt
 share/ipl/bin/turing
+share/ipl/bin/unclog
 share/ipl/bin/unique
 share/ipl/bin/unpack
 share/ipl/bin/upper
@@ -265,6 +267,7 @@ share/ipl/bin/verse
 share/ipl/bin/versum
 share/ipl/bin/vnq
 share/ipl/bin/vrepl
+share/ipl/bin/weblinks
 share/ipl/bin/what
 share/ipl/bin/when
 share/ipl/bin/wshfdemo
@@ -333,8 +336,6 @@ share/ipl/ucode/codeobj.u1
 share/ipl/ucode/codeobj.u2
 share/ipl/ucode/colmize.u1
 share/ipl/ucode/colmize.u2
-share/ipl/ucode/colrspec.u1
-share/ipl/ucode/colrspec.u2
 share/ipl/ucode/complete.u1
 share/ipl/ucode/complete.u2
 share/ipl/ucode/complex.u1
@@ -345,6 +346,8 @@ share/ipl/ucode/converge.u1
 share/ipl/ucode/converge.u2
 share/ipl/ucode/convert.u1
 share/ipl/ucode/convert.u2
+share/ipl/ucode/core.u1
+share/ipl/ucode/core.u2
 share/ipl/ucode/created.u1
 share/ipl/ucode/created.u2
 share/ipl/ucode/currency.u1
@@ -431,6 +434,8 @@ share/ipl/ucode/getpaths.u1
 share/ipl/ucode/getpaths.u2
 share/ipl/ucode/gettext.u1
 share/ipl/ucode/gettext.u2
+share/ipl/ucode/gobject.u1
+share/ipl/ucode/gobject.u2
 share/ipl/ucode/graphpak.u1
 share/ipl/ucode/graphpak.u2
 share/ipl/ucode/hetero.u1
@@ -503,12 +508,12 @@ share/ipl/ucode/list2tab.u1
 share/ipl/ucode/list2tab.u2
 share/ipl/ucode/lists.u1
 share/ipl/ucode/lists.u2
-share/ipl/ucode/loadfile.u1
-share/ipl/ucode/loadfile.u2
 share/ipl/ucode/longstr.u1
 share/ipl/ucode/longstr.u2
 share/ipl/ucode/lrgapprx.u1
 share/ipl/ucode/lrgapprx.u2
+share/ipl/ucode/lstfncs.u1
+share/ipl/ucode/lstfncs.u2
 share/ipl/ucode/lu.u1
 share/ipl/ucode/lu.u2
 share/ipl/ucode/makelsys.u1
@@ -573,14 +578,22 @@ share/ipl/ucode/pbkform.u1
 share/ipl/ucode/pbkform.u2
 share/ipl/ucode/pdco.u1
 share/ipl/ucode/pdco.u2
+share/ipl/ucode/periodic.u1
+share/ipl/ucode/periodic.u2
+share/ipl/ucode/permutat.u1
+share/ipl/ucode/permutat.u2
 share/ipl/ucode/phoname.u1
 share/ipl/ucode/phoname.u2
 share/ipl/ucode/plural.u1
 share/ipl/ucode/plural.u2
+share/ipl/ucode/polynom.u1
+share/ipl/ucode/polynom.u2
 share/ipl/ucode/polystuf.u1
 share/ipl/ucode/polystuf.u2
 share/ipl/ucode/popen.u1
 share/ipl/ucode/popen.u2
+share/ipl/ucode/pqueue.u1
+share/ipl/ucode/pqueue.u2
 share/ipl/ucode/printcol.u1
 share/ipl/ucode/printcol.u2
 share/ipl/ucode/printf.u1
@@ -661,8 +674,6 @@ share/ipl/ucode/shquote.u1
 share/ipl/ucode/shquote.u2
 share/ipl/ucode/signed.u1
 share/ipl/ucode/signed.u2
-share/ipl/ucode/skelproc.u1
-share/ipl/ucode/skelproc.u2
 share/ipl/ucode/sort.u1
 share/ipl/ucode/sort.u2
 share/ipl/ucode/sortt.u1
@@ -697,14 +708,10 @@ share/ipl/ucode/tables.u1
 share/ipl/ucode/tables.u2
 share/ipl/ucode/tclass.u1
 share/ipl/ucode/tclass.u2
-share/ipl/ucode/tieutils.u1
-share/ipl/ucode/tieutils.u2
 share/ipl/ucode/title.u1
 share/ipl/ucode/title.u2
 share/ipl/ucode/titleset.u1
 share/ipl/ucode/titleset.u2
-share/ipl/ucode/tmpname.u1
-share/ipl/ucode/tmpname.u2
 share/ipl/ucode/tokgen.u1
 share/ipl/ucode/tokgen.u2
 share/ipl/ucode/trees.u1
@@ -741,8 +748,6 @@ share/ipl/ucode/weavutil.u1
 share/ipl/ucode/weavutil.u2
 share/ipl/ucode/weighted.u1
 share/ipl/ucode/weighted.u2
-share/ipl/ucode/wifisd.u1
-share/ipl/ucode/wifisd.u2
 share/ipl/ucode/wildcard.u1
 share/ipl/ucode/wildcard.u2
 share/ipl/ucode/word.u1
