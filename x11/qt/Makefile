@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/05/27 21:02:16 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/05/28 18:10:19 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -15,7 +15,6 @@ LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/MesaGL \
 # Internal Compiler errors
 .if ${MACHINE_ARCH} == "sparc"
 PATCH_LIST=	patch-* sup-sparc
-BROKEN=		"Currently does not build on sparc due to ld bug"
 .endif
 
 USE_GMAKE=	yes

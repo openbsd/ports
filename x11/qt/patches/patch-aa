@@ -1,5 +1,5 @@
---- configs/openbsd-g++-shared.orig	Thu May 27 13:06:43 1999
-+++ configs/openbsd-g++-shared	Thu May 27 13:17:04 1999
+--- configs/openbsd-g++-shared.orig	Fri Feb 26 12:02:08 1999
++++ configs/openbsd-g++-shared	Fri May 28 12:25:19 1999
 @@ -1,30 +1,30 @@
  # Compiling
 -SYSCONF_CXX		= g++
@@ -37,6 +37,15 @@
  SYSCONF_LFLAGS		= 
  SYSCONF_LIBS		= 
  
+@@ -41,7 +41,7 @@
+ #
+ SYSCONF_LINK_SHLIB	= ld
+ SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
+-SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) `lorder /usr/lib/c++rt0.o $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
++SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) $(OBJECTS) $(OBJMOC) $(LIBS)
+ 
+ # Linking static libraries
+ #   - Build the $(TARGET) library, eg. lib$(TARGET).a
 @@ -53,11 +53,11 @@
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) ; \
  				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
