@@ -1,6 +1,6 @@
-$OpenBSD: patch-1_0_makeinclude_in,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+$OpenBSD: patch-1_0_makeinclude_in,v 1.2 2002/08/10 19:58:52 wilfried Exp $
 --- 1.0/makeinclude.in.orig	Sat Jan 22 14:18:28 2000
-+++ 1.0/makeinclude.in	Wed Mar 21 17:21:25 2001
++++ 1.0/makeinclude.in	Sat Aug 10 18:24:25 2002
 @@ -30,27 +30,27 @@ CXX	=	@CXX@
  RANLIB	=	@RANLIB@
  RM	=	@RM@ -f
@@ -35,7 +35,7 @@ $OpenBSD: patch-1_0_makeinclude_in,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
 +ARFLAGS	=	r
 +CFLAGS	=	@CFLAGS@ $(DEFVER)
 +CXXFLAGS =	@CXXFLAGS@ $(DEFVER) 
-+LIBS	=	-lflvw @LIBS@ -lX11 -lXext -lm
++LIBS	=	-L ../lib -lflvw @LIBS@ -lX11 -lXext -lm
 +LDFLAGS	=	@LDFLAGS@
  
  #

@@ -1,6 +1,6 @@
-$OpenBSD: patch-1_0_configure,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+$OpenBSD: patch-1_0_configure,v 1.2 2002/08/10 19:58:52 wilfried Exp $
 --- 1.0/configure.orig	Sun Feb 20 15:14:52 2000
-+++ 1.0/configure	Mon Apr  2 15:35:23 2001
++++ 1.0/configure	Sat Aug 10 18:16:17 2002
 @@ -990,7 +990,7 @@ else
  fi
  
@@ -10,3 +10,29 @@ $OpenBSD: patch-1_0_configure,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
  
  
  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+@@ -1325,9 +1325,9 @@ if test ! "$x_includes" = "NONE" -a ! "$
+ 	CFLAGS="$CFLAGS -I$x_includes"
+ 	CXXFLAGS="$CXXFLAGS -I$x_includes"
+ fi
+-echo $ac_n "checking for numericsort in -lfltk""... $ac_c" 1>&6
+-echo "configure:1330: checking for numericsort in -lfltk" >&5
+-ac_lib_var=`echo fltk'_'numericsort | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for fl_numericsort in -lfltk""... $ac_c" 1>&6
++echo "configure:1330: checking for fl_numericsort in -lfltk" >&5
++ac_lib_var=`echo fltk'_'fl_numericsort | sed 'y%./+-%__p_%'`
+ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -1339,10 +1339,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char numericsort();
++char fl_numericsort();
+ 
+ int main() {
+-numericsort()
++fl_numericsort()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1349: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then

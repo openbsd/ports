@@ -1,7 +1,7 @@
-$OpenBSD: patch-1_0_test_Makefile,v 1.1 2001/10/25 22:34:50 wilfried Exp $
+$OpenBSD: patch-1_0_test_Makefile,v 1.2 2002/08/10 19:58:52 wilfried Exp $
 --- 1.0/test/Makefile.orig	Sat Jan 22 14:34:26 2000
-+++ 1.0/test/Makefile	Fri Oct 26 00:15:00 2001
-@@ -15,6 +15,14 @@ include ../makeinclude
++++ 1.0/test/Makefile	Sat Aug 10 18:13:00 2002
+@@ -15,13 +15,20 @@ include ../makeinclude
  
  all:	testlist testtable testtable2 basiclist exercise testedit
  
@@ -16,3 +16,46 @@ $OpenBSD: patch-1_0_test_Makefile,v 1.1 2001/10/25 22:34:50 wilfried Exp $
  #
  # Remove object and target files...
  #
+ 
+ clean:
+-	@echo Cleaning test programs
+-	@$(RM) -f core *~ *.o testlist testtable testtable2 basiclist exercise testedit
++	$(RM) -f core *~ *.o testlist testtable testtable2 basiclist exercise testedit
+ 
+ distclean: clean
+ 	@$(RM) -f makedepend
+@@ -33,28 +40,22 @@ install: all
+ #
+ 
+ testlist:	../lib/libflvw.a testlist.o
+-	@echo Linking $@...
+-	@$(CXX) $(LDFLAGS) -o testlist testlist.o $(LIBS)
++	$(CXX) $(LDFLAGS) -o testlist testlist.o $(LIBS)
+ 
+ testtable:	../lib/libflvw.a testtable.o
+-	@echo Linking $@...
+-	@$(CXX) $(LDFLAGS) -o testtable testtable.o $(LIBS)
++	$(CXX) $(LDFLAGS) -o testtable testtable.o $(LIBS)
+ 
+ testtable2:	../lib/libflvw.a testtable2.o
+-	@echo Linking $@...
+-	@$(CXX) $(LDFLAGS) -o testtable2 testtable2.o $(LIBS)
++	$(CXX) $(LDFLAGS) -o testtable2 testtable2.o $(LIBS)
+ 
+ basiclist:	../lib/libflvw.a basiclist.o
+-	@echo Linking $@...
+-	@$(CXX) $(LDFLAGS) -o basiclist basiclist.o $(LIBS)
++	$(CXX) $(LDFLAGS) -o basiclist basiclist.o $(LIBS)
+ 
+ exercise:	../lib/libflvw.a exercise.o
+-	@echo Linking $@
+-	@$(CXX) $(LDFLAGS) -o exercise exercise.o $(LIBS)
++	$(CXX) $(LDFLAGS) -o exercise exercise.o $(LIBS)
+ 	
+ testedit:	../lib/libflvw.a testedit.o
+-	@echo Linking $@...
+-	@$(CXX) $(LDFLAGS) -o testedit testedit.o $(LIBS)
++	$(CXX) $(LDFLAGS) -o testedit testedit.o $(LIBS)
+ 
+ testlist.o: ../FL/Flv_Style.H ../FL/Flv_List.H
+ testtable.o: ../FL/Flv_Style.H ../FL/Flv_List.H ../FL/Flv_Table.H

@@ -1,6 +1,6 @@
-$OpenBSD: patch-1_0_configure_in,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+$OpenBSD: patch-1_0_configure_in,v 1.2 2002/08/10 19:58:52 wilfried Exp $
 --- 1.0/configure.in.orig	Sat Jan 22 14:18:28 2000
-+++ 1.0/configure.in	Wed Mar 21 17:18:12 2001
++++ 1.0/configure.in	Sat Aug 10 18:16:09 2002
 @@ -18,7 +18,7 @@ AC_PATH_PROG(AR,ar)
  AC_PATH_PROG(RM,rm)
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-1_0_configure_in,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
  AC_SUBST(LDFLAGS)
  
  AC_PATH_X
+@@ -40,7 +40,7 @@ if test ! "$x_includes" = "NONE" -a ! "$
+ 	CFLAGS="$CFLAGS -I$x_includes"
+ 	CXXFLAGS="$CXXFLAGS -I$x_includes"
+ fi
+-AC_CHECK_LIB(fltk,numericsort)
++AC_CHECK_LIB(fltk,fl_numericsort)
+ 
+ dnl Output the makefile...
+ AC_OUTPUT(makeinclude)

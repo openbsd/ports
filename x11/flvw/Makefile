@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 09:30:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/08/10 19:58:52 wilfried Exp $
 
 COMMENT=		'FLTK Virtual Styles, List, Table, and Complex Table Widgets'
 
 DISTNAME=		flvw-20000224
 PKGNAME=		flvw-1.0
 CATEGORIES=		devel
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://flvw.sourceforge.net/
 
@@ -21,11 +20,11 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
 
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		fltk.::x11/fltk
+LIB_DEPENDS=		fltk.1::x11/fltk
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 # This regression test wants an X11 display
@@ -36,8 +35,15 @@ REGRESS_IS_INTERACTIVE= Yes
 WRKDIST=		${WRKDIR}/flvw
 WRKSRC=			${WRKDIST}/1.0
 
+pre-regress:
+.for t in DISPLAY XAUTHORITY
+.if !defined($t)
+	@echo "$t needs to be set to run regress"; exit 1
+.endif
+.endfor
+
 do-regress:
-	    @cd ${WRKBUILD}/test && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
+	@cd ${WRKBUILD}/test && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/lib/libflvw.a ${PREFIX}/lib
