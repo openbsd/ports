@@ -1,15 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.8 2001/09/06 04:02:24 brad Exp $
+# $OpenBSD: INSTALL,v 1.9 2004/06/24 04:07:54 brad Exp $
 #
 # Pre/post-installation setup of screen
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/screenrc
-SAMPLE_CONFIG_FILE=$PREFIX/share/examples/screen/screenrc-sample
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/screen/screenrc
 
 do_notice()
 {
@@ -35,15 +32,11 @@ do_install()
     echo
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
 	: nothing to pre-install for this port

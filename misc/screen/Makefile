@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2004/01/17 05:34:28 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2004/06/24 04:07:53 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
@@ -47,6 +47,6 @@ post-install:
 	@chmod 755 ${PREFIX}/bin/screen
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/screen
 	${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc \
-		${PREFIX}/share/examples/screen/screenrc-sample
+		${PREFIX}/share/examples/screen/screenrc
 
 .include <bsd.port.mk>
