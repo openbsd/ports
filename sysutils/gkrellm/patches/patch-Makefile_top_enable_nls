@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_top_enable_nls,v 1.2 2002/01/20 23:51:31 jcs Exp $
---- Makefile.top_enable_nls.orig	Wed Dec  5 01:41:15 2001
-+++ Makefile.top_enable_nls	Sun Jan 20 17:36:54 2002
-@@ -79,15 +79,15 @@
+$OpenBSD: patch-Makefile_top_enable_nls,v 1.3 2003/01/01 21:21:00 naddy Exp $
+--- Makefile.top_enable_nls.orig	Mon Jul  1 04:13:13 2002
++++ Makefile.top_enable_nls	Wed Jan  1 22:16:09 2003
+@@ -81,15 +81,15 @@ GTOP_INCLUDE = -I$(GTOP_PREFIX)/include
  GTOP_LIBS = -L$(GTOP_PREFIX)/lib -lgtop -lgtop_common -lgtop_sysdeps -lXau
  
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_top_enable_nls,v 1.2 2002/01/20 23:51:31 jcs Exp $
  
  export GTK_CONFIG GTOP_INCLUDE GTOP_LIBS SYS_LIBS EXTRAOBJS BINMODE
  export INSTALLDIR INCLUDEDIR INCLUDEMODE INCLUDEDIRMODE LOCALEDIR
-@@ -139,8 +139,7 @@
+@@ -152,8 +152,7 @@ netbsd:
  openbsd:
  	(cd po && ${MAKE} all)
  	(cd src && ${MAKE} GTK_CONFIG=gtk-config GTOP_LIBS= GTOP_INCLUDE= \

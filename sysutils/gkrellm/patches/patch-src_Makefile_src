@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_src,v 1.6 2002/07/29 03:46:28 jcs Exp $
---- src/Makefile.src.orig	Sun Jun 30 21:13:04 2002
-+++ src/Makefile.src	Sun Jul 28 22:35:14 2002
-@@ -9,8 +9,7 @@
+$OpenBSD: patch-src_Makefile_src,v 1.7 2003/01/01 21:21:01 naddy Exp $
+--- src/Makefile.src.orig	Mon Jul  1 04:13:04 2002
++++ src/Makefile.src	Wed Jan  1 22:16:09 2003
+@@ -9,8 +9,7 @@ MANDIR ?= /usr/local/share/man/man1
  MANMODE ?= 644
  MANDIRMODE ?= 755
  INSTALL ?= install
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_Makefile_src,v 1.6 2002/07/29 03:46:28 jcs Exp $
  STRIP ?= -s
  
  GKRELLM_INCLUDES = gkrellm.h gkrellm_public_proto.h
-@@ -21,7 +20,7 @@
+@@ -21,7 +20,7 @@ IMLIB_INCLUDE = `imlib-config --cflags-g
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_Makefile_src,v 1.6 2002/07/29 03:46:28 jcs Exp $
  FLAGS+= $(PTHREAD_INC)
  
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
-@@ -38,7 +37,7 @@
+@@ -38,7 +37,7 @@ ifeq ($(HAVE_GETADDRINFO),1)
      FLAGS += -DHAVE_GETADDRINFO
  endif
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_Makefile_src,v 1.6 2002/07/29 03:46:28 jcs Exp $
  
  OBJS =	main.o alerts.o apm.o base64.o clock.o cpu.o disk.o fs.o hostname.o \
  	inet.o mail.o meminfo.o net.o proc.o sensors.o uptime.o \
-@@ -70,6 +69,9 @@
+@@ -70,6 +69,9 @@ darwin: 
  netbsd:
  	$(MAKE) PTHREAD_INC=-I/usr/local/include \
  	GTK_CONFIG=gtk-config GTOP_LIBS= EXTRAOBJS= SYS_LIBS="-lkvm" gkrellm

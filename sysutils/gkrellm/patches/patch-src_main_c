@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_c,v 1.1 2002/11/20 01:51:42 jcs Exp $
---- src/main.c.orig	Tue Nov 19 19:47:46 2002
-+++ src/main.c	Tue Nov 19 19:48:35 2002
-@@ -1904,12 +1904,12 @@
+$OpenBSD: patch-src_main_c,v 1.2 2003/01/01 21:21:01 naddy Exp $
+--- src/main.c.orig	Mon Jul  1 04:17:27 2002
++++ src/main.c	Wed Jan  1 22:16:09 2003
+@@ -1904,12 +1904,12 @@ main (int argc, char *argv[])
           * the folowing function should be performed here just for that reason.
           */ 
          solaris_list_harddisks();
