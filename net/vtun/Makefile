@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/06 05:00:41 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/23 21:23:25 brad Exp $
 
 COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
@@ -12,6 +12,8 @@ MASTER_SITE_SUBDIR= vtun
 HOMEPAGE=	http://vtun.sourceforge.net/
 
 LIB_DEPENDS=	lzo.1.0::archivers/lzo
+
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
