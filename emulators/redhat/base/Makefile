@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/19 19:05:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/04 21:56:05 jasoni Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -44,7 +44,7 @@ pre-install:
 
 do-install:
 .for rpm in ${RPMS:S/:0//}
-	@cd ${PREFIX}; rpm2cpio ${RPMDIR}/${rpm} | cpio -id
+	@cd ${PREFIX}; ${LOCALBASE}/bin/rpm2cpio ${RPMDIR}/${rpm} | cpio -id
 .endfor
 
 # Get rid of some unnecessary files and directories.
