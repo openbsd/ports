@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.134 1999/11/15 18:37:58 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.135 1999/11/20 17:54:09 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1611,12 +1611,6 @@ delete-package:
 ################################################################
 
 _PORT_USE: .USE
-.if make(real-fetch)
-	@cd ${.CURDIR} && ${MAKE} fetch-depends
-.endif
-.if make(real-extract)
-	@cd ${.CURDIR} && ${MAKE} build-depends lib-depends misc-depends
-.endif
 .if make(real-install)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
@@ -1634,7 +1628,6 @@ _PORT_USE: .USE
 		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
 		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} run-depends lib-depends
 .endif
 .if make(real-install)
 .if !defined(NO_MTREE)
@@ -1773,8 +1766,8 @@ ${PACKAGE_COOKIE}:
 
 # And call the macros
 
-real-fetch: _PORT_USE
-real-extract: _PORT_USE
+real-fetch: fetch-depends _PORT_USE
+real-extract: build-depends lib-depends misc-depends _PORT_USE
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 real-patch: _PORT_USE
 	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
@@ -1782,7 +1775,7 @@ real-configure: _PORT_USE
 	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
 real-build: _PORT_USE
 	@${ECHO_MSG} "===>  Building for ${PKGNAME}"
-real-install: _PORT_USE
+real-install: run-depends lib-depends _PORT_USE
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
 real-package: _PORT_USE
 
@@ -2129,28 +2122,14 @@ package-noinstall:
 ################################################################
 
 .if !target(depends)
-depends: lib-depends misc-depends
-	@cd ${.CURDIR} && ${MAKE} fetch-depends
-	@cd ${.CURDIR} && ${MAKE} build-depends
-	@cd ${.CURDIR} && ${MAKE} run-depends
+depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
-.if make(fetch-depends)
-DEPENDS_TMP+=	${FETCH_DEPENDS}
-.endif
-
-.if make(build-depends)
-DEPENDS_TMP+=	${BUILD_DEPENDS}
-.endif
-
-.if make(run-depends)
-DEPENDS_TMP+=	${RUN_DEPENDS}
-.endif
-
-_DEPENDS_USE:	.USE
-.if defined(DEPENDS_TMP)
+.for _DEP in fetch build run
+${_DEP}-depends:
+.if defined(${_DEP:U}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
-	for i in ${DEPENDS_TMP}; do \
+	for i in ${${_DEP:U}_DEPENDS}; do \
 		prog=`${ECHO} $$i | ${SED} -e 's/:.*//'`; \
 		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
@@ -2190,10 +2169,7 @@ _DEPENDS_USE:	.USE
 .else
 	@${DO_NADA}
 .endif
-
-fetch-depends:	_DEPENDS_USE
-build-depends:	_DEPENDS_USE
-run-depends:	_DEPENDS_USE
+.endfor
 
 lib-depends:
 .if defined(LIB_DEPENDS)
