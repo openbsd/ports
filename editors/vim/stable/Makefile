@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/27 19:39:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/30 18:59:40 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
-V=		
-DISTNAME=	vim-6.0${V}
-PKGNAME=	${DISTNAME}
+DISTNAME=	vim-6.0
+PKGNAME=	${DISTNAME}.11
 CATEGORIES=	editors
 NEED_VERSION=	1.460
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -13,11 +12,17 @@ MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		ftp://ftp.berlin.de.vim.org/misc/editors/vim/unix/ \
 		ftp://ftp.is.co.za/applications/editors/vim/unix/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
+MASTER_SITES0=  ${MASTER_SITES:S/unix/patches/}
 DISTFILES=	${DISTNAME}.tar.bz2
+DIST_SUBDIR=	vim6
 
 HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
+
+.for p in 01 02 03 04 05 06 07 08 09 10 11
+PATCHFILES+=   6.0.0${p}:0
+.endfor
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -30,8 +35,6 @@ FLAVOR?=	gtk
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
-
-SUBST_VARS=	V
 
 .if ${FLAVOR:L:Mhuge}
 CONFIGURE_ARGS+=--with-features=huge
