@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/03 13:39:01 rohee Exp $
+# $OpenBSD: Makefile,v 1.3 1999/07/30 21:03:37 rohee Exp $
 #
 # Amaya, the W3C http://www.w3.org browser
 #
 
-DISTNAME	= amaya-src-1.4a
+DISTNAME	= amaya-src-2.1
 DIST_SUBDIR	= amaya # I have a good reasons to do so, dictionaries will go
                         # in the same dir
-PKGNAME		= amaya-1.4a
+PKGNAME		= ayama-2.1
 CATEGORIES	= www
 
 MAINTAINER	= rohee@OpenBSD.ORG
@@ -20,7 +20,7 @@ USE_MOTIF	= yes
 
 #SEPARATE_BUILD=	concurrent
 
-WRKSRC		= ${WRKDIR}/Thot
+WRKSRC		= ${WRKDIR}/Amaya
 WRKBUILD	= ${WRKSRC}/obj
 
 #USE_X11		= yes # not used :-(, all goes in /usr/local
@@ -30,6 +30,7 @@ CONFIGURE_ARGS	= -with-amaya
 
 do-configure:
 	${MKDIR} ${WRKBUILD} && cd ${WRKBUILD} && ../configure ${CONFIGURE_ARGS}
-	${SED} 's/^CFLAGS.*$\/CFLAGS = -O2/' ${WRKBUILD}/Options.orig >${WRKBUILD}/Options
 
 .include <bsd.port.mk>
+
+
