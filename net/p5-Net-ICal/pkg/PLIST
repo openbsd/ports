@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 12:11:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/18 10:44:05 sturm Exp $
 ${P5SITE}/Net/ICal.pm
 ${P5SITE}/Net/ICal/Alarm.pm
 ${P5SITE}/Net/ICal/Attendee.pm
@@ -32,11 +32,11 @@ man/man3p/Net::ICal::ETJ.3p
 man/man3p/Net::ICal::Event.3p
 man/man3p/Net::ICal::Freebusy.3p
 man/man3p/Net::ICal::FreebusyItem.3p
-man/man3p/Net::ICal::Journal.3p
+@comment man/man3p/Net::ICal::Journal.3p
 man/man3p/Net::ICal::Period.3p
 man/man3p/Net::ICal::Property.3p
-man/man3p/Net::ICal::Recurrence.3p
-man/man3p/Net::ICal::Standard.3p
+@comment man/man3p/Net::ICal::Recurrence.3p
+@comment man/man3p/Net::ICal::Standard.3p
 man/man3p/Net::ICal::Time.3p
 man/man3p/Net::ICal::Timezone.3p
 man/man3p/Net::ICal::Todo.3p
