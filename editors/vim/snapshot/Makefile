@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/09/09 00:26:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.31 2001/09/09 00:38:46 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -34,10 +34,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
 
 SUBST_VARS=	V
-
-.if ${FLAVOR:L} == "light"
-FLAVOR=no_x11
-.endif
 
 .if ${FLAVOR:L:Mhuge}
 CONFIGURE_ARGS+=--with-features=huge
