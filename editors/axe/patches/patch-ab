@@ -1,0 +1,14 @@
+--- Axe.rules.orig	Sun Mar 19 18:14:36 2000
++++ Axe.rules	Sun Mar 19 18:15:25 2000
+@@ -72,7 +72,7 @@
+ #define InstallCoaxe(bindest)						@@\
+ InstallProgram(coaxe,bindest)						@@\
+ install::								@@\
+-	if [ -f bindest/faxe ]; then set +x; \				@@\
+-	else (cd bindest; set -x; $(LN) coaxe faxe); fi			@@\
+-	if [ -f bindest/poleaxe ]; then set +x; \			@@\
+-	else (cd bindest; set -x; $(LN) coaxe poleaxe); fi
++	if [ -f $(DESTDIR)bindest/faxe ]; then set +x; \		@@\
++	else (cd $(DESTDIR)bindest; set -x; $(LN) coaxe faxe); fi	@@\
++	if [ -f $(DESTDIR)bindest/poleaxe ]; then set +x; \		@@\
++	else (cd $(DESTDIR)bindest; set -x; $(LN) coaxe poleaxe); fi

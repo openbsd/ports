@@ -1,4 +1,3 @@
-@unexec install-info --delete --info-dir=%D/lib/X11 %D/lib/X11/axe.info
 bin/axe
 bin/axinfo
 bin/coaxe
@@ -12,4 +11,3 @@ lib/X11/axe.info-2
 lib/X11/axe.tcl
 man/cat1/axe.0
 man/cat1/axinfo.0
-@exec install-info --info-dir=%D/lib/X11 %D/lib/X11/axe.info
