@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2004/04/08 06:21:19 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2004/04/14 18:26:38 brad Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
-DISTNAME=	t1lib-5.0.2
+DISTNAME=	t1lib-5.0.0
 CATEGORIES=	devel textproc
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=libs/graphics/}
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

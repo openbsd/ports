@@ -1,5 +1,5 @@
---- lib/Makefile.in.orig	2002-06-24 22:15:30.000000000 -0400
-+++ lib/Makefile.in	2004-04-05 20:23:00.000000000 -0400
+--- lib/Makefile.in.orig	Mon Jan 15 17:34:40 2001
++++ lib/Makefile.in	Mon Aug 27 16:43:46 2001
 @@ -36,6 +36,8 @@ LEX       = @LEX@
  LEXLIB    = @LEXLIB@
  ALLCFLAGS = $(CFLAGS)
@@ -9,7 +9,7 @@
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA    = @INSTALL_DATA@
-@@ -160,27 +162,27 @@ clean: dummy
+@@ -159,27 +161,27 @@ clean: dummy
  
  
  install: dummy
