@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2004/05/09 19:25:39 david Exp $
+# $OpenBSD: Makefile,v 1.110 2004/05/28 18:37:55 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -15,8 +15,8 @@
 #    SUBDIR += block
 #    SUBDIR += blue
      SUBDIR += bombermaze
-     SUBDIR += burgerspace
 #    SUBDIR += bs
+     SUBDIR += burgerspace
      SUBDIR += bzflag
      SUBDIR += castle-combat
      SUBDIR += cgoban
@@ -100,9 +100,9 @@
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
      SUBDIR += slash
+     SUBDIR += slash,no_x11
      SUBDIR += slash-em
      SUBDIR += slash-em,no_x11
-     SUBDIR += slash,no_x11
 #    SUBDIR += sokoban
      SUBDIR += speyes
      SUBDIR += spider
