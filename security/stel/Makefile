@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/12 00:44:01 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/13 08:47:40 turan Exp $
 
 DISTNAME=	stel
 CATEGORIES=	security
@@ -7,6 +7,12 @@ MASTER_SITES=	ftp://idea.sec.dsi.unimi.it/pub/security/cert-it/
 NEED_VERSION=	1.195
 
 MAINTAINER=	turan@openbsd.org
+
+LICENSE_TYPE=		"GPL CRYPTO"
+PERMIT_PKG_CDROM=	NO
+PERMIT_PKG_FTP=		YES
+PERMIT_DISTF_CDROM=	NO
+PERMIT_DISTF_FTP=	YES
 
 NO_CONFIGURE=	yes
 WRKDIST=	${WRKDIR}
