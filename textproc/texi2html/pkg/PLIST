@@ -1,4 +1,4 @@
-@comment teTeX includes a more recent version
+@comment $OpenBSD: PLIST,v 1.4 2001/10/04 13:55:37 espie Exp $
 @pkgcfl teTeX_base-*
 bin/texi2html
 @unexec install-info --delete --info-dir=%D/info %D/info/texi2html.info
