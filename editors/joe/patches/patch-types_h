@@ -1,0 +1,11 @@
+$OpenBSD: patch-types_h,v 1.1 2002/04/24 11:05:06 form Exp $
+--- types.h.orig	Mon Dec  3 19:18:54 2001
++++ types.h	Tue Apr  9 19:00:56 2002
+@@ -163,6 +163,7 @@ struct buffer {
+ 	int	rdonly;		/* Set for read-only */
+ 	int	internal;	/* Set for internal buffers */
+ 	int	er;		/* Error code when file was loaded */
++	int	filehandle;	/* File handle for locking */
+ };
+ 
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-joe_1_in,v 1.1 2002/04/24 11:05:06 form Exp $
+--- joe.1.in.orig	Wed Apr 10 17:45:20 2002
++++ joe.1.in	Wed Apr 10 17:45:52 2002
+@@ -79,7 +79,7 @@ ESC .).  Use \fB^K H\fR to dismiss the h
+ 
+ You can customize the keyboard layout, the help screens and a number of
+ behavior defaults by copying JOE's initialization file (usually
+-\fB@sysconfdir@/joerc\fR) to \fB.joerc\fR in your home directory and then
++\fB@sysconfdir@/joe/joerc\fR) to \fB.joerc\fR in your home directory and then
+ by modifying it.  See the section \fBjoerc\fR below.
+ 
+ To have JOE used as your default editor for e-mail and News, you need to set
+@@ -781,7 +781,7 @@ quota.
+ .SH The\ joerc file
+ \fB^T\fR options, the help screens and the key-sequence to editor command
+ bindings are all defined in JOE's initialization file.  If you make a copy
+-of this file (which normally resides in \fB@sysconfdir@/joerc\fR) to
++of this file (which normally resides in \fB@sysconfdir@/joe/joerc\fR) to
+ \fB$HOME/.joerc\fR, you can customize these setting to your liking.  The
+ syntax of the initialization file should be fairly obvious and there are
+ further instruction in it.

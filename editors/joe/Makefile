@@ -1,37 +1,42 @@
-# $OpenBSD: Makefile,v 1.26 2002/03/21 20:46:26 espie Exp $
+# $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
+# $OpenBSD: Makefile,v 1.27 2002/04/24 11:05:06 form Exp $
 
-COMMENT=	"joe's own editor"
+COMMENT=		"joe's own editor"
 
-DISTNAME=	joe2.8
-PKGNAME=	joe-2.8p1
-CATEGORIES=	editors
-NEED_VERSION=	1.515
-MASTER_SITES=	ftp://ftp.std.com/src/editors/
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=		joe-2.9.8-pre1
+PKGNAME=		joe-2.9.8p1
+EXTRACT_SUFX=		.tgz
+CATEGORIES=		editors
+NEED_VERSION=		1.515
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	joe-editor
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CFLAGS="${CFLAGS}" EXTRALIBS="-lcurses" TERMINFO="1" \
-		WHERERC="${SYSCONFDIR}/joe"
+MAINTAINER=		Oleg Safiullin <form@openbsd.org>, \
+			Mike Pechkin <mpech@openbsd.org>
 
-ALL_TARGET=	joe
-
-WRKDIST=	${WRKDIR}/joe
+CONFIGURE_STYLE=	gnu
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/joe
-	${INSTALL_PROGRAM} ${WRKSRC}/joe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/joe ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/termidx ${PREFIX}/bin
 	@cd ${PREFIX}/bin; \
 		ln -sf joe jmacs; \
 		ln -sf joe jpico; \
 		ln -sf joe jstar; \
 		ln -sf joe rjoe
 	${INSTALL_MAN} ${WRKSRC}/joe.1 ${PREFIX}/man/man1
-	cd ${WRKSRC}; ${INSTALL_DATA} \
-		jmacsrc joerc jpicorc jstarrc rjoerc \
-			${PREFIX}/share/examples/joe
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/joe
+	${INSTALL_DATA} ${WRKDIST}/INFO ${PREFIX}/share/doc/joe
+	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/joe
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/joe
+.for f in jmacsrc joerc jpicorc jstarrc rjoerc
+	${INSTALL_DATA} ${WRKDIST}/${f} \
+		${PREFIX}/share/examples/joe
+.endfor
 
 .include <bsd.port.mk>

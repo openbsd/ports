@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2002/04/24 11:05:06 form Exp $
+--- Makefile.in.orig	Tue Apr  9 18:15:48 2002
++++ Makefile.in	Tue Apr  9 18:15:58 2002
+@@ -91,7 +91,7 @@ noinst_HEADERS = b.h blocks.h bw.h cmd.h
+ 
+ 
+ bin_PROGRAMS = joe termidx
+-INCLUDES = -DJOERC="\"@sysconfdir@/\""
++INCLUDES = -DJOERC="\"@sysconfdir@/joe/\""
+ 
+ joe_SOURCES = b.c blocks.c bw.c cmd.c hash.c help.c kbd.c macro.c main.c menu.c \
+ 	path.c poshist.c pw.c queue.c qw.c rc.c regex.c scrn.c tab.c termcap.c \

@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/01/17 18:34:02 brad Exp $
+@comment $RuOBSD: PLIST,v 1.2 2002/04/10 05:14:52 form Exp $
 bin/jmacs
 bin/joe
+bin/jpico
 bin/jstar
 bin/rjoe
-bin/jpico
+bin/termidx
 man/man1/joe.1
+share/doc/joe/INFO
+share/doc/joe/README
 share/examples/joe/jmacsrc
 share/examples/joe/joerc
+share/examples/joe/jpicorc
 share/examples/joe/jstarrc
 share/examples/joe/rjoerc
-share/examples/joe/jpicorc
 @dirrm share/examples/joe
+@dirrm share/doc/joe

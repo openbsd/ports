@@ -1,0 +1,53 @@
+$OpenBSD: patch-b_c,v 1.1 2002/04/24 11:05:06 form Exp $
+--- b.c.orig	Mon Dec 10 22:48:53 2001
++++ b.c	Tue Apr  9 19:18:31 2002
+@@ -185,6 +185,7 @@ static B *bmkchn(H *chn, B *prop, long a
+ 	else
+ 		b->o = pdefault;
+ 	mset(b->marks, 0, sizeof(b->marks));
++	b->filehandle = -1; /* initialize filehande &&& ob */
+ 	b->rdonly = 0;
+ 	b->orphan = 0;
+ 	b->oldcur = 0;
+@@ -237,6 +238,10 @@ extern B *errbuf;
+ void brm(B *b)
+ {
+ 	if (b && !--b->count) {
++		if (b->filehandle != -1) {
++			/* close filehandle, free lock &&& ob */
++			close (b->filehandle);
++		}
+ 		if (b->changed)
+ 			abrerr(b->name);
+ 		if (b == errbuf)
+@@ -1791,7 +1796,7 @@ B *bload(char *s)
+ 	B *b;
+ 	long skip, amnt;
+ 	char *n;
+-	int nowrite = 0;
++	int nowrite = 0, fh = -1;
+ 
+ 	if (!s || !s[0]) {
+ 		error = -1;
+@@ -1838,6 +1843,12 @@ B *bload(char *s)
+ 		goto opnerr;
+ 	}
+ 
++	/* Lock the file &&& ob,petef */
++	if (fi && !nowrite) {
++		fh = dup( fileno(fi) );
++		nowrite = (flock (fh, LOCK_EX | LOCK_NB));
++	}
++
+ 	/* Skip data if we need to */
+ 	if (skip && lseek(fileno(fi), skip, 0) < 0) {
+ 		int r;
+@@ -1893,6 +1904,8 @@ B *bload(char *s)
+ 	vsrm(n);
+ 
+ 	b->er = error;
++	if (fh != -1)
++		b->filehandle = fh;
+ 	return b;
+ }
+ 

@@ -1,0 +1,48 @@
+$OpenBSD: patch-joerc_in,v 1.1 2002/04/24 11:05:06 form Exp $
+--- joerc.in.orig	Tue Apr  9 18:31:07 2002
++++ joerc.in	Tue Apr  9 18:35:01 2002
+@@ -153,7 +153,7 @@
+ 	binding section below- but without the key name strings.
+ 
+ *
+--wordwrap
++-asis
+ 
+ *.c
+ -autoindent
+@@ -455,6 +455,8 @@ bof		^K ^U
+ bof		^K u
+ bol		.kh		Goto beginning of line
+ bol		^A
++bol		^[ [ H
++bol		^[ [ 7 ~
+ center		^K A		Center line
+ center		^K ^A
+ center		^K a
+@@ -478,6 +480,8 @@ eof		^K v
+ eol		.kH		Go to end of line
+ eol		.@7
+ eol		^E
++eol		^[ [ F
++eol		^[ [ 8 ~
+ exsave		^K X		Save and exit
+ exsave		^K ^X
+ exsave		^K x
+@@ -562,6 +566,8 @@ bofmenu		^K ^U
+ bofmenu		^K u
+ bolmenu		.kh
+ bolmenu		^A
++bolmenu		^[ [ H
++bolmenu		^[ [ 7 ~
+ dnarwmenu	.kd
+ dnarwmenu	^N
+ dnarwmenu	^[ [ B
+@@ -571,6 +577,8 @@ eofmenu		^K ^V
+ eofmenu		^K v
+ eolmenu		.kH
+ eolmenu		^E
++eolmenu		^[ [ F
++eolmenu		^[ [ 8 ~
+ ltarwmenu	.kl
+ ltarwmenu	^B
+ ltarwmenu	^[ [ D
