@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/26 16:03:53 todd Exp $
+# $OpenBSD: Makefile,v 1.19 2001/04/15 03:01:26 todd Exp $
 
 COMMENT=	"Generic Graphics Library"
 DISTNAME=	libggi-2.0b3
 CATEGORIES=	graphics
 NEED_VERSION=	1.364
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
+MASTER_SITES=	ftp://metalab.unc.edu/pub/ggi/ggi/2_0_beta_3/
 
 LIB_DEPENDS=	gii.0.7::graphics/gii
 

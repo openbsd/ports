@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/26 16:03:57 todd Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/15 03:01:26 todd Exp $
 
 COMMENT=	"General Input Library (used by libggi)"
 DISTNAME=	libgii-0.7
 CATEGORIES=	graphics
 NEED_VERSION=	1.364
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
+MASTER_SITES=	ftp://metalab.unc.edu/pub/ggi/ggi/2_0_beta_3/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
