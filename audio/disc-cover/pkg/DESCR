@@ -1,0 +1,16 @@
+Disc-Cover creates front and back covers for audio CDs.  The CD has
+to be present in the CD-ROM drive, or alternatively a valid CDDB
+file can be used.  Disc-Cover searches the CDDB database for an
+entry corresponding to the CD's CDDB ID. It starts by looking for
+a local CDDB entry in ~/.cddb (or another directory pointed to by
+your cddb installation). If no local CDDB entry matches the CD,
+disc-cover continues to search the online CDDB databases or CDINDEX
+databases as configured in the AudioCD library.  It then formats
+the entry to produce a Latex, Dvi, Postscript or PDF file, which
+contains the front and back covers on a single page. Other formats
+supported include a simple text output, a CDDB compatible format,
+HTML and an output format that can be used with cdlabelgen
+(http://www.red-bean.com/~bwf/software/cdlabelgen/), another cover
+builder.
+
+WWW: ${HOMEPAGE}
