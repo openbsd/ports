@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/11 16:47:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/25 08:07:45 pvalchev Exp $
 
 COMMENT=	"NetHack derivative"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= falconseye
 
-LIB_DEPENDS=	SDL.0.2:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
 RUN_DEPENDS=	${LOCALBASE}/share/doc/nethack/Guidebook.txt:hackdata-*:games/hackdata
 RUN_DEPENDS+=	timidity:timidity-*:audio/timidity
 

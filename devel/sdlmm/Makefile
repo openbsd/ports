@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/16 16:35:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/25 08:07:45 pvalchev Exp $
 
 COMMENT=	"C++ wrapper for the Simple DirectMedia Layer"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= sdlmm
 
-LIB_DEPENDS=	SDL.0.2:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl
 
 USE_X11=	Yes
 
