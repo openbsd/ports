@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/03/28 21:32:24 avsm Exp $
+# $OpenBSD: Makefile,v 1.36 2001/04/22 16:07:12 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -167,7 +167,7 @@ CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/lib/pgsql
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/lib
 LIB_DEPENDS+=		pq.2::databases/postgresql
 .else
 CONFIGURE_ARGS+=	--without-pgsql
