@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2000/07/20 05:57:55 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2000/07/20 21:27:19 chris Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -32,7 +32,7 @@ do_notice_errors_and_icons()
     echo "+---------------"
     echo "| The existing $1 errors and icons in ${PREFIX}/share/squid have NOT"
     echo "| been changed.  You may want to compare them to the current samples in"
-    echo "| ${PREFIX}/lib/squid/errors and ${PREFIX}/lib/squid/icons, and
+    echo "| ${PREFIX}/lib/squid/errors and ${PREFIX}/lib/squid/icons, and"
     echo "| update them as needed."
     echo "+---------------"
     echo
