@@ -3,7 +3,7 @@
 # Date created:		05 November 97
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/06 08:40:15 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/02/06 08:45:06 niklas Exp $
 #
 
 DISTNAME=	joe2.8
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joey@openbsd.org
+BROKEN=		yes
 
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe
