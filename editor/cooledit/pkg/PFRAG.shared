@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/01/08 22:37:01 espie Exp $
-lib/libCw.so.1.0
-DYNLIBDIR(%D/lib)
