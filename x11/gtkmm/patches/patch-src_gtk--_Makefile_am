@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gtk--_Makefile_am,v 1.1 2001/07/21 00:27:10 pvalchev Exp $
+--- src/gtk--/Makefile.am.orig	Sun May 14 14:10:08 2000
++++ src/gtk--/Makefile.am	Fri Jul 20 16:30:30 2001
+@@ -47,7 +47,7 @@ include_HEADERS = $(gtkmmh) marshal.h pr
+ 
+ # This builds the library
+ libgtkmm_la_SOURCES = $(gtkmmc) gtk--.cc proxy.cc base.cc marshal.cc
+-libgtkmm_la_LDFLAGS = -version-info $(LIBGTKMM_SO_VERSION) -release $(GTKMM_RELEASE) -no-undefined
++libgtkmm_la_LDFLAGS = -version-info $(LIBGTKMM_SO_VERSION) -no-undefined
+ libgtkmm_la_INCLUDES = $(GTK_CFLAGS)
+ libgtkmm_la_LIBADD = $(GTK_LIBS) $(gtkmmla)
+ #libgtkmm_la_DEPENDENCIES = $(gtkmmla) 
