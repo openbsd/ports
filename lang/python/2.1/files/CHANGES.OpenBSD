@@ -24,4 +24,4 @@ of changes made to this version of Python for the OpenBSD package.
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python.
 
-$Id: CHANGES.OpenBSD,v 1.3 2003/12/30 17:05:30 sturm Exp $
+$OpenBSD: CHANGES.OpenBSD,v 1.4 2004/12/30 23:45:07 alek Exp $
