@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/21 15:06:09 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/29 20:31:28 brad Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 
 DISTNAME=	unacepub
@@ -10,19 +10,12 @@ NEED_VERSION=	1.91
 
 MAINTAINER=	brad@openbsd.org
 
-USE_GMAKE=	yes
 USE_ZIP=	yes
+USE_GMAKE=	yes
 
-NO_WRKSUBDIR=	yes
 ALL_TARGET=	unace
 MAKEFILE=	unix/makefile
-
-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arc" || \
- ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "pmax")
-CFLAGS= -DLO_HI_BYTE_ORDER
-.else
-CFLAGS= -DHI_LO_BYTE_ORDER
-.endif
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin
