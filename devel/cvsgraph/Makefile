@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/07/17 00:03:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/19 18:18:49 pvalchev Exp $
 
 COMMENT=		graphic representation of cvs repository
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=		gd.18::graphics/gd \
 ALL_TARGET=		
 
 CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lttf -lm"
 CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
 			--with-gd-lib=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-inc=${LOCALBASE}/include \
