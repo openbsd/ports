@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/13 14:04:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/15 01:22:02 pvalchev Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.7
@@ -32,8 +32,8 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mguile}
-BUILD_DEPENDS+= 	guile::lang/guile
-RUN_DEPENDS+= 		guile::lang/guile
+BUILD_DEPENDS+= 	:guile-*:lang/guile
+RUN_DEPENDS+= 		:guile-*:lang/guile
 .else
 CONFIGURE_ENV+= 	GUILE_CONFIG=/usr/bin/false
 .endif

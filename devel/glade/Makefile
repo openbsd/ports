@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/14 06:45:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/15 01:22:02 pvalchev Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 V=			0.6.2
@@ -16,10 +16,10 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfi
                         patch-*
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
-BUILD_DEPENDS=		::textproc/scrollkeeper
-RUN_DEPENDS=		::devel/automake \
-			::devel/autoconf \
-			::textproc/scrollkeeper
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:automake->=1.4:devel/automake \
+			:autoconf->=2.13:devel/autoconf \
+			:scrollkeeper-*:textproc/scrollkeeper
 
 FLAVORS=		gnome
 FLAVOR?=
