@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/23 19:41:29 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/14 17:43:51 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
-VERSION=	1.2.5.1
-DISTNAME=	mutt-${VERSION}
+VERSION=	1.4
+DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
@@ -26,6 +26,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	slang mixmaster compressed
 FLAVOR?=
+
+# XXX workaround sparc64 gcc optimization bug
+.if ${MACHINE_ARCH:Msparc64}
+PATCH_LIST=     gcc-* patch-*
+.endif
 
 SYSCONFDIR=	/etc/mutt
 CONFIGURE_STYLE= gnu
@@ -51,7 +56,7 @@ CONFIGURE_ARGS+= --with-curses
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
-.else
+#.else
 SUPDISTFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 .endif
 
@@ -77,5 +82,6 @@ post-install:
 	  ${PREFIX}/share/examples/mutt/Muttrc.sample
 	${INSTALL_DATA} ${WRKSRC}/mime.types \
 	  ${PREFIX}/share/examples/mutt/mime.types.sample
+	mv ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 
 .include <bsd.port.mk>

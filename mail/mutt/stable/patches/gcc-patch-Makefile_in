@@ -1,0 +1,13 @@
+$OpenBSD: gcc-patch-Makefile_in,v 1.1 2002/06/14 17:43:51 fgsch Exp $
+--- Makefile.in.orig	Mon Jun 10 15:48:23 2002
++++ Makefile.in	Mon Jun 10 15:49:05 2002
+@@ -294,6 +294,9 @@ uninstall-binPROGRAMS:
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
+ 
++sha1.o:
++	$(COMPILE) -O0 -c $<
++
+ .c.o:
+ 	$(COMPILE) -c $<
+ 

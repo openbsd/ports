@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/08/20 19:47:33 lebel Exp $
---- configure.orig	Thu Jul  6 19:07:35 2000
-+++ configure	Sat Jul 22 13:22:30 2000
-@@ -3819,7 +3819,7 @@
+$OpenBSD: patch-configure,v 1.2 2002/06/14 17:43:51 fgsch Exp $
+--- configure.orig	Wed May 29 06:31:03 2002
++++ configure	Mon Jun 10 15:47:15 2002
+@@ -4677,7 +4677,7 @@ docdir=$mutt_cv_docdir
  
  
  if test x$mutt_cv_setgid = xyes; then
--	DOTLOCK_GROUP='mail'
-+	DOTLOCK_GROUP='wheel'
- 	DOTLOCK_PERMISSION=2755
+-        DOTLOCK_GROUP='mail'
++        DOTLOCK_GROUP='wheel'
+         DOTLOCK_PERMISSION=2755
  else
- 	DOTLOCK_GROUP=''
+         DOTLOCK_GROUP=''

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2002/06/14 17:43:51 fgsch Exp $
+--- doc/Makefile.in.orig	Tue Nov  6 16:12:31 2001
++++ doc/Makefile.in	Mon Jun 10 15:47:15 2002
+@@ -60,7 +60,7 @@ srcdir_DOCFILES = PGP-Notes.txt applying
+ topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
+ 	README NEWS TODO README.SECURITY README.SSL 
+ 
+-all: muttrc.man try-html try-txt
++all: muttrc.man
+ 
+ try-html: ../makedoc
+ 	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
