@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/26 01:01:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/27 19:49:01 avsm Exp $
 
-DISTNAME=	XML-XPath-1.04
+DISTNAME=	XML-XPath-1.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.351
