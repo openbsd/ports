@@ -1,6 +1,6 @@
-$OpenBSD: patch-cpu_exception_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
+$OpenBSD: patch-cpu_exception_cc,v 1.2 2001/03/01 22:44:18 todd Exp $
 --- cpu/exception.cc.orig	Sat Mar 25 21:39:08 2000
-+++ cpu/exception.cc	Tue Oct 31 12:32:01 2000
++++ cpu/exception.cc	Tue Feb 27 10:29:42 2001
 @@ -52,7 +52,7 @@ BX_CPU_C::interrupt(Bit8u vector, Boolea
    BX_CPU_THIS_PTR show_flag |= Flag_intsig;
  #endif
@@ -67,7 +67,7 @@ $OpenBSD: patch-cpu_exception_cc,v 1.1 2001/02/02 16:59:08 todd Exp $
      if (is_INT  &&  (gate_descriptor.dpl < CPL)) {
  /* ??? */
 -      bx_printf("interrupt(): is_INT && (dpl < CPL)\n");
-+      bio->printf("[CPU%u] interrupt(): is_INT && (dpl < CPL)\n", BX_SIM_ID);
++      // bio->printf("[CPU%u] interrupt(): is_INT && (dpl < CPL)\n", BX_SIM_ID);
        exception(BX_GP_EXCEPTION, vector*8 + 2, 0);
        return;
        }
