@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/06/17 04:47:50 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/06/25 03:26:24 kevlo Exp $
 bin/swig
 lib/libswigguile.la
 lib/libswigpl.la
@@ -176,6 +176,7 @@ lib/swig1.3/tcl/tcl8kw.swg
 lib/swig1.3/tcl/tclsh.i
 lib/swig1.3/tcl/typemaps.i
 lib/swig1.3/tcl/wish.i
+share/aclocal/swig.m4
 share/doc/swig/Devel/engineering.html
 share/doc/swig/Devel/index.html
 share/doc/swig/Devel/internals.html
