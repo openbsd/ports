@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2002/07/20 12:03:18 naddy Exp $
-
-ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc
+# $OpenBSD: Makefile,v 1.47 2002/08/28 12:38:15 naddy Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -18,11 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=w3m/}
-MASTER_SITES0=		http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
+MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
 SUPDISTFILES=	w3m-${VERSION}${EXTRACT_SUFX} \
 		w3m-${VERSION}-m17n-${M17N_VERSION}${EXTRACT_SUFX}:0
+
+LIB_DEPENDS=	gc.1::devel/boehm-gc
 
 FLAVORS=	image japanese m17n
 FLAVOR?=
@@ -30,11 +30,14 @@ FLAVOR?=
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	--nonstop \
 		--prefix="${PREFIX}" \
+		--gc-includedir="${LOCALBASE}/include" \
+		--gc-libdir="${LOCALBASE}/lib" \
 		--sysconfdir="${SYSCONFDIR}/w3m" \
 		--model=monster \
 		--mimetypes=/var/www/mime.types
 CONFIGURE_ENV=	use_ssl_verify=y \
-		dmail=mail ded=vi dbrowser=lynx
+		dmail=mail ded=vi dbrowser=lynx \
+		use_bundled_gclib=n
 
 NO_REGRESS=	Yes
 
