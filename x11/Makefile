@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 1999/12/30 02:45:32 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2000/01/06 00:54:01 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -67,6 +67,7 @@
 #    SUBDIR += tk41
 #    SUBDIR += tk42
      SUBDIR += tk80
+#    SUBDIR += tk82
 #    SUBDIR += tkdesk
 #    SUBDIR += tkgoodstuff
 #    SUBDIR += tkstep80
