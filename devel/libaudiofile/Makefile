@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2001/07/20 14:33:02 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/05 02:09:19 brad Exp $
 
 COMMENT=	"SGI audiofile library GPLed clone"
 
 DISTNAME=	audiofile-0.2.2
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel
-NEED_VERSION=	1.413
+NEED_VERSION=	1.460
 MASTER_SITES=	ftp://oss.sgi.com/projects/audiofile/download/
 
 HOMEPAGE=	http://oss.sgi.com/projects/audiofile/
@@ -21,5 +21,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>
