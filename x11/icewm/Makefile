@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/03/24 22:12:04 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/04/05 09:47:05 espie Exp $
 
 DISTNAME=		icewm-1.0.2	
 CATEGORIES=     	x11	
@@ -19,7 +19,9 @@ EXTRACT_SUFX=		.src.tar.gz
 
 USE_GMAKE=		Yes
 USE_X11=		Yes
-GNU_CONFIGURE=		Yes
+HAS_CONFIGURE=		Yes
+FAKE=			Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 
 post-install:
 	@echo "Installing docs to ${PREFIX}/share/docs/icewm"
