@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/27 16:52:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/11/25 14:30:23 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-VERSION=	2.1
+VERSION=	2.2
 DISTNAME=	qt-2.${VERSION}
 PKGNAME=	qt2-${VERSION}
 CATEGORIES=	x11
@@ -30,6 +30,7 @@ CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
+SUBST_VARS=	VERSION
 FLAVORS=	gl
 FLAVOR?=
 
@@ -60,7 +61,7 @@ QT_DOC=		${PREFIX}/share/doc/qt2
 SUBST_VARS=	QT_LIBDIR QT_DOC
 
 DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT \
-	changes-2.2.0 changes-2.2.1
+	changes-2*
 
 post-patch:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
@@ -93,9 +94,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.1 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.1 \
-		${PREFIX}/lib/qt2/libqt.so.2.21; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.2 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.2 \
+		${PREFIX}/lib/qt2/libqt.so.2.22; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \
