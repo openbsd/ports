@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/02/01 14:54:28 shell Exp $
 
 COMMENT=	"PostgreSQL database adapter for Python"
 
-VERSION=	0.99.6
+VERSION=	1.0.1
 DISTNAME=	psycopg-${VERSION}
 PKGNAME=	py-psycopg-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.457
+NEED_VERSION=	1.504
 
-MASTER_SITES=	http://initd.org/software/psycopg/
-HOMEPAGE=	http://initd.org/Software/psycopg/
+MASTER_SITES=	http://initd.org/pub/software/psycopg/
+HOMEPAGE=	http://initd.org/software/psycopg
 
 MAINTAINER=	Maurice Nonnekes <maurice@amaze.nl>
 
