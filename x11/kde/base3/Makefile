@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2005/03/30 19:25:23 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2005/04/03 20:20:52 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -27,7 +27,8 @@ LIB_DEPENDS+= \
 	glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2
 
 
-CONFIGURE_ENV+=ac_cv_header_libsmbclient=no
+CONFIGURE_ENV+=ac_cv_header_libsmbclient=no \
+	PKG_CONFIG_PATH=${X11BASE}/lib/pkgconfig
 
 SAMPLECONFDIR=${PREFIX}/share/apps/kde-conf-sample
 
