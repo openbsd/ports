@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/09/24 16:03:39 danh Exp $
+# $OpenBSD: Makefile,v 1.30 2001/10/08 16:07:12 danh Exp $
 
 COMMENT=	"extendable SNMP implementation"
 
@@ -26,7 +26,9 @@ CONFIGURE_ARGS+= --with-defaults --with-logfile='/var/log/snmpd' \
 		 --with-sys-location='Default Location'
 CONFIGURE_ENV=	VERSION_INFO='42:0:0'
 
-MODULES=	gnu
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+		patch-*
 
 SNMP_BIN=	encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
 		snmpdf snmpget snmpgetnext snmpnetstat snmpset snmpstatus \
