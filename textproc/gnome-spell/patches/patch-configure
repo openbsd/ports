@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2004/12/11 06:19:52 marcm Exp $
---- configure.orig	2004-02-15 20:09:19.000000000 -0800
-+++ configure	2004-02-15 20:10:04.000000000 -0800
+$OpenBSD: patch-configure,v 1.2 2004/12/29 05:49:13 marcm Exp $
+--- configure.orig	Wed Jul 30 08:43:08 2003
++++ configure	Fri Dec 24 11:56:57 2004
 @@ -1428,7 +1428,7 @@ fi
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
@@ -89,3 +89,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2004/12/11 06:19:52 marcm Exp $
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  fi
+@@ -9524,7 +9524,7 @@ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-ac_cv_lib_intl_dcgettext=no
++ac_cv_lib_intl_dcgettext=yes
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
