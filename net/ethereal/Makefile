@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/08/13 06:24:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.31 2000/08/13 06:35:44 jakob Exp $
 
 DISTNAME=	ethereal-0.8.11
 CATEGORIES=	net x11
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
+USE_GMAKE=		Yes
 SYSCONFDIR=		${PREFIX}/share/ethereal
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
