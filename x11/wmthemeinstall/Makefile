@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:24 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:55 wilfried Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
+
+COMMENT=		'neat theme manager for Window Maker'
 
 DISTNAME=		wmthemeinstall-0.62
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://hellblazer.dhis.org/projects/wmthemeinstall/
 

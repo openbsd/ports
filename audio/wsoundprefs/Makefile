@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/14 12:23:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/28 10:01:21 wilfried Exp $
+
+COMMENT=		'preferences program for wsoundserver'
 
 DISTNAME=		WSoundPrefs-1.1.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://shadowmere.student.utwente.nl/
 
@@ -22,10 +24,6 @@ RUN_DEPENDS=		wsoundserver::audio/wsoundserver
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			wsound::audio/wsoundserver \
 			audiofile::devel/libaudiofile \
-			tiff.35::graphics/tiff \
-			png.1::graphics/png \
-			jpeg.62::graphics/jpeg \
-			gif.4::graphics/giflib \
 			wraster.2::x11/windowmaker
 
 USE_X11=		Yes

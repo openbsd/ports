@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:52 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/28 10:08:45 wilfried Exp $
+
+COMMENT=		'themes and icons for Window Maker'
 
 DISTNAME=		WindowMaker-extra-0.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.windowmaker.org/
 

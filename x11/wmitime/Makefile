@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:23 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:53 wilfried Exp $
+
+COMMENT=		'wm-dockapp; shows the date, time, and Internet time'
 
 DISTNAME=		wmitime-0.3
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.359
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.neotokyo.org/illusion/
 

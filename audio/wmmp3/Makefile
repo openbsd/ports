@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:01:18 wilfried Exp $
+
+COMMENT=		'wm-dockapp; front end for mpg123'
 
 DISTNAME=		wmmp3-0.12
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.dotfiles.com/software/wmmp3/
 

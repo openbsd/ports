@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/14 12:23:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/28 09:59:40 wilfried Exp $
+
+COMMENT=		'wm-dockapp; space weather monitor'
 
 DISTNAME=		wmSpaceWeather-1.04
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		astro x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 
@@ -25,6 +27,6 @@ USE_X11=		Yes
 WRKSRC=			${WRKDIST}/wmSpaceWeather
 
 post-extract:
-	@cd ${WRKSRC}; make clean
+	@cd ${WRKSRC} && make clean
 
 .include <bsd.port.mk>

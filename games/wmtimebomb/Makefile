@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:04:27 wilfried Exp $
+
+COMMENT=		'wm-app; minesweeper'
 
 DISTNAME=		wmtimebomb.20
 PKGNAME=		wmtimebomb-0.2.0
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.maliwan.org/wmtimebomb.shtml
 
@@ -19,11 +21,7 @@ MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 LIB_DEPENDS=		wraster.2::x11/windowmaker \
-			PropList.2::devel/libproplist \
-			jpeg.62::graphics/jpeg \
-			tiff.35::graphics/tiff \
-			png.1::graphics/png \
-			gif.4::graphics/giflib
+			PropList.2::devel/libproplist
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
@@ -46,7 +44,7 @@ pre-configure:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmtimebomb ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/wmtimebomb ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${SAMPLE_DIR}
 	${INSTALL_DATA} ${WRKSRC}/example.modefile ${SAMPLE_DIR}
 

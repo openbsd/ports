@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:04:24 wilfried Exp $
+
+COMMENT=		'wm-dockapp; chess game'
 
 DISTNAME=		miniCHESS-0.8
 PKGNAME=		wm${DISTNAME:L}
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.electricrain.com/edavis/miniCHESS/
 
@@ -25,7 +27,7 @@ USE_X11=		Yes
 ALL_TARGET=		minichess
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/minichess ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/minichess ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wmminichess
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmminichess/
 

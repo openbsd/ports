@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:41 wilfried Exp $
+
+COMMENT=		'wm-dockapp; Time/Date applet'
 
 DISTNAME=		astime-2.8
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.359
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.tigr.net/afterstep/as-apps/
 
@@ -23,9 +25,9 @@ CONFIGURE_ARGS=		--disable-jpeg
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/astime ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/astime.man ${PREFIX}/man/man1/astime.1
+	${INSTALL_MAN} ${WRKSRC}/astime.man ${PREFIX}/man/man1/astime.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asclock
-	cd ${WRKBUILD} && ${INSTALL_DATA} default.astimerc modern.astimerc \
+	cd ${WRKSRC} && ${INSTALL_DATA} default.astimerc modern.astimerc \
 		sample.astimerc thick.astimerc ${PREFIX}/share/examples/asclock
 
 .include <bsd.port.mk>

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/14 12:23:15 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:04:17 wilfried Exp $
+
+COMMENT=		'wm-dockapp; xeyes clone using South Park characters'
 
 DISTNAME=		speyes-1.2.0
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.halcyon.com/amalmin/speyes/speyes.html
 

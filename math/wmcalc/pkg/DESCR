@@ -1,12 +1,10 @@
 wmcalc is a program designed to act as a simple four-function
-calculator.  It is different from other calculator programs,
-however in that it is designed to take up very little desktop
-space.  As such, it can be left running on the desktop at all
-times.
+calculator.  It is different from other calculator programs, however
+in that it is designed to take up very little desktop space.  As
+such, it can be left running on the desktop at all times.
 
-It is intended to placed in the WindowMaker dock, or in Wharf
-under Afterstep, though it should run as well under any
-window manager.  
+It is intended to placed in the Window Maker dock, or in Wharf under
+Afterstep, though it should run as well under any window manager.
 
 You need a ~/.wmcalc file, copy a sample from ${SAMPLE_DIR}.
 

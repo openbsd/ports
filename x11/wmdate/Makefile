@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/03/14 12:23:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/28 10:08:49 wilfried Exp $
+
+COMMENT=		'wm-dockapp; shows the current date'
 
 DISTNAME=		wmdate-0.7
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://wit401310.student.utwente.nl/~dalroi/apps/wmdate.php
 

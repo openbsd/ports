@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/09 16:04:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:57 wilfried Exp $
+
+COMMENT=		'wm-dockapp; displays the time in different time zones'
 
 DISTNAME=		wmtz-0.6
 CATEGORIES=     	x11 x11/windowmaker
-NEED_VERSION=		1.359
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://www.geocities.com/jl1n/wmtz/
 
@@ -21,8 +23,8 @@ WRKSRC=			${WRKDIST}/wmtz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmtz ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/wmtz.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/wmtz.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wmtz
-	${INSTALL_DATA} ${WRKBUILD}/wmtzrc ${PREFIX}/share/examples/wmtz/sample.wmtzrc
+	${INSTALL_DATA} ${WRKSRC}/wmtzrc ${PREFIX}/share/examples/wmtz/sample.wmtzrc
 
 .include <bsd.port.mk>

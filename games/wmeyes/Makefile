@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/09 14:28:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/28 10:04:20 wilfried Exp $
+
+COMMENT=		'wm-dockapp; xeyes variant'
 
 DISTNAME=		wmeyes
 PKGNAME=		${DISTNAME}-0.0
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://home.istar.ca/~jenora/wmeyes.html
 

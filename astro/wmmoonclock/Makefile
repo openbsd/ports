@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/14 12:23:10 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/28 09:59:39 wilfried Exp $
+
+COMMENT=		'wm-dockapp; shows the moon phase'
 
 DISTNAME=		wmMoonClock-1.27
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		astro x11 x11/windowmaker
-NEED_VERSION=		1.340
+NEED_VERSION=		1.364
 
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 
