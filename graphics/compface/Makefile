@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/21 23:32:55 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/12/10 16:23:10 brad Exp $
 
-DISTNAME=		compface
-PKGNAME=		compface-1.0
-CATEGORIES=     	graphics
-MASTER_SITES=		ftp://ftp.xemacs.org/pub/xemacs/aux/
+DISTNAME=	compface
+PKGNAME=	compface-1.0
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/aux/
 
-MAINTAINER=		hgweigand@wiesbaden.netsurf.de
-
-# Overrides for default values
-MAKE_FLAGS=		BINDIR="${PREFIX}/bin" LIBDIR="${PREFIX}/lib" \
-			INCDIR="${PREFIX}/include" MANDIR="${PREFIX}/man" \
-			CC="${CC}" CFLAGS="${CFLAGS}"
+MAINTAINER=	hgweigand@wiesbaden.netsurf.de
 
 .include <bsd.port.mk>
