@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/17 18:38:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/09 17:35:57 margarida Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
 PKGNAME=		${DISTNAME:S/-src//}
-DISTNAME=		qcad-1.4.7-src
+DISTNAME=		qcad-1.5.4-src
 CATEGORIES=     	cad x11
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.qcad.org/
 
@@ -17,23 +16,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=		${HOMEPAGE}archives/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qcad/}
 
 MODULES=	qt3
 
 MAKE_FLAGS= \
-	CC='${CXX}' \
-	CFLAGS='-Wall ${CXXFLAGS} -DPREFIX=\"${PREFIX}\"' \
+	CXX='${CXX}' \
+	CXXFLAGS='${CXXFLAGS} -Wall -DQT_NO_DEBUG -DDATADIR=\"${PREFIX}/share\"' \
 	INCPATH='-I${MODQT_INCDIR}' \
 	LINK='${CXX}' \
 	LFLAGS='' \
-	LIBS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt -L${X11BASE}/lib -lX11' 
+	LIBS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt -L${X11BASE}/lib -lX11' \
+	AR='ar cq'
 
+ALL_TARGET=		qcad
 NO_REGRESS=		Yes
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 do-install:
+	chmod ${DIRMODE} ${WRKSRC}/libraries/mechanical/screws/chc
 	${INSTALL_PROGRAM} ${WRKBUILD}/qcad ${PREFIX}/bin
-.for dir in cur fonts hatches messages examples xpm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qcad
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/qcad
+.for dir in cur fonts hatches messages xpm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/qcad/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${PREFIX}/share/qcad/${dir}
 .endfor
