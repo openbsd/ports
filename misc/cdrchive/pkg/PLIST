@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/13 11:23:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 08:07:15 xsa Exp $
 bin/cdrchive
 share/doc/cdrchive/README
 share/doc/cdrchive/acknowlg.html
@@ -32,3 +32,5 @@ share/doc/cdrchive/writewav.html
 share/examples/cdrchive/cdr.conf.sample
 @dirrm share/examples/cdrchive
 @dirrm share/doc/cdrchive
+@cwd ${SYSCONFDIR}
+@extra cdr.conf

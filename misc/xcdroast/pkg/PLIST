@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/01/12 05:37:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/04/14 08:07:15 xsa Exp $
 bin/xcdroast
 lib/xcdroast-0.98/bin/cddbtool
 lib/xcdroast-0.98/bin/rmtool
@@ -61,3 +61,5 @@ share/pixmaps/xcdricon.xpm
 @dirrm lib/xcdroast-0.98/icons
 @dirrm lib/xcdroast-0.98/bin
 @dirrm lib/xcdroast-0.98
+@cwd ${SYSCONFDIR}
+@extra xcdroast.conf

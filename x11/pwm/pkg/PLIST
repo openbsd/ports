@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/05 23:01:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/14 08:07:15 xsa Exp $
 bin/pwm
 man/man1/pwm.1
 share/doc/pwm/LICENSE
@@ -11,3 +11,4 @@ share/examples/pwm/menus-default.conf
 share/examples/pwm/pwm.conf
 @dirrm share/examples/pwm
 @dirrm share/doc/pwm
+@extraunexec rm -rf ${SYSCONFDIR}/pwm
