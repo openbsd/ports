@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/03/02 23:47:29 margarida Exp $
+# $OpenBSD: Makefile,v 1.22 2003/03/06 05:21:12 brad Exp $
 
 COMMENT=		"generate a cross-referenced HTML mail archive"
 
@@ -12,6 +12,8 @@ MASTER_SITES=		${HOMEPAGE}dist/
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
+LIB_DEPENDS+=		pcre::devel/pcre
+
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,29 +23,32 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/src/pcre
 CONFIGURE_ARGS=		--with-htmldir=${PREFIX}/share/doc/hypermail
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -DHAVE_VFSCANF" \
+			INCLUDES="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 ALL_TARGET=		hypermail
-COPTS=			-DHAVE_VFSCANF
 MAKE_FLAGS=		WARNINGS=''
-LDFLAGS=		-Lpcre
 
 FLAVORS=		gdbm
 FLAVOR?=
 
 .if ${FLAVOR:L} == "gdbm"
-CONFIGURE_ARGS+=--with-gdbm
-LIB_DEPENDS=	gdbm.::databases/gdbm
+CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
+LIB_DEPENDS+=	gdbm.::databases/gdbm
 .else
 CONFIGURE_ARGS+=--without-gdbm
 .endif
 
 NO_REGRESS=		Yes
 
+DOCS=	hr.yellow.gif hypermail.gif hypermail-faq.html customizing.html \
+	hmrc.html hypermail.html customizing.html attachments.txt
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/hypermail ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hypermail
-.for f in hr.yellow.gif hypermail.gif hypermail-faq.html customizing.html \
-	hmrc.html hypermail.html customizing.html attachments.txt
+.for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/hypermail
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/docs/hypermail.1 ${PREFIX}/man/man1
