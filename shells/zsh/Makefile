@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2001/01/03 19:36:10 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/02/11 04:20:09 brad Exp $
 
-DISTNAME=	zsh-3.0.8
+VERSION=	3.0.8
+DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
@@ -20,6 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+SUBST_VARS=	VERSION
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free
