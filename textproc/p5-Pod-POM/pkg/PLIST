@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/09 10:53:55 wilfried Exp $
+bin/podlint
+bin/pom2
+${P5SITE}/Pod/POM.pm
+${P5SITE}/Pod/POM/Constants.pm
+${P5SITE}/Pod/POM/Node.pm
+${P5SITE}/Pod/POM/Nodes.pm
+${P5SITE}/Pod/POM/Test.pm
+${P5SITE}/Pod/POM/View.pm
+${P5SITE}/Pod/POM/View/HTML.pm
+${P5SITE}/Pod/POM/View/Pod.pm
+${P5SITE}/Pod/POM/View/Text.pm
+@comment ${P5ARCH}/auto/Pod/POM/.packlist
+@comment ${P5ARCH}/perllocal.pod
+man/man1/podlint.1
+man/man1/pom2.1
+man/man3p/Pod::POM.3p
+man/man3p/Pod::POM::Node.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Pod/POM
+@comment @dirrm ${P5ARCH}/auto/Pod
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Pod/POM/View
+@dirrm ${P5SITE}/Pod/POM
+@comment @dirrm ${P5SITE}/Pod
