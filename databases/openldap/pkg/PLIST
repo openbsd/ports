@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/07/08 11:01:11 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/09/08 22:27:54 jakob Exp $
 @pkgcfl openldap-client-*
 bin/ldapadd
 bin/ldapdelete
@@ -170,7 +170,6 @@ man/man3/ldap_search_s.3
 man/man3/ldap_search_st.3
 man/man3/ldap_searchprefs.3
 man/man3/ldap_set_cache_options.3
-man/man3/ldap_set_rebind_proc.3
 man/man3/ldap_setfilteraffixes.3
 man/man3/ldap_simple_bind.3
 man/man3/ldap_simple_bind_s.3
