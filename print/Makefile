@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.5 1998/01/31 21:56:14 weingart Exp $
+#	$OpenBSD: Makefile,v 1.6 1998/02/08 05:26:52 niklas Exp $
 #
 
     SUBDIR += a2ps
 #   SUBDIR += a2ps43
 #   SUBDIR += acroread
-#   SUBDIR += afm
+    SUBDIR += afm
 #   SUBDIR += apsfilter
 #   SUBDIR += asprint
 #   SUBDIR += bibcard
