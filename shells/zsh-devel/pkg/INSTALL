@@ -1,7 +1,13 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/10/07 19:52:35 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/07/05 03:51:25 brad Exp $
 #
 # Pre/post-installation setup of zsh
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -16,12 +22,6 @@ do_notice()
     echo "+---------------"
     echo
 }
-
-# exit on errors, use a sane path and install prefix
-#
-set -e
-PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/local}
 
 # verify proper execution
 #

@@ -1,5 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/07/05 03:51:25 brad Exp $
 bin/zsh
-bin/zsh-3.1.6
+bin/zsh-3.1.9
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
 @exec install-info %D/info/zsh.info %D/info/dir

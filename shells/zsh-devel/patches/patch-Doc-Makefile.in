@@ -1,0 +1,42 @@
+--- Doc/Makefile.in.orig	Mon Jun  5 04:57:54 2000
++++ Doc/Makefile.in	Tue Jul  4 23:23:46 2000
+@@ -37,7 +37,7 @@
+ 
+ @DEFS_MK@
+ 
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ DVIPS = dvips
+ TEXI2HTML = texi2html -expandinfo -split_chapter
+@@ -96,6 +96,7 @@
+ .PHONY: info
+ 
+ zsh.info: $(sdir)/zsh.texi
++	@rm -f zsh.info*
+ 	$(MAKEINFO) $(sdir)/zsh.texi
+ 
+ .yo.1:
+@@ -238,11 +239,11 @@
+ # ========== DEPENDENCIES FOR INSTALLING ==========
+ 
+ # install just installs the manual pages
+-install: install.man
++install: install.man install.info
+ .PHONY: install
+ 
+ # uninstall just unistalls the manual pages
+-uninstall: uninstall.man
++uninstall: uninstall.man uninstall.info
+ .PHONY: uninstall
+ 
+ # install man pages, creating install directory if necessary
+@@ -262,7 +263,7 @@
+ 	    sed '/^@setfilename/s|zsh|$(tzsh)|' \
+ 		< $(sdir)/zsh.texi > infodir/tzsh.texi && \
+ 	    (cd infodir && $(MAKEINFO) tzsh.texi) && \
+-	    for file in infodir/$(tzsh).info*; do \
++	    for file in infodir/$(tzsh).info; do \
+ 		$(INSTALL_DATA) $$file $(DESTDIR)$(infodir) || exit 1; \
+ 	    done \
+ 	); then \

@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sun May 21 14:31:27 2000
++++ Makefile.in	Tue Jul  4 23:25:52 2000
+@@ -60,8 +60,8 @@
+ 	$(MAKE) install STRIPFLAGS="-s"
+ 
+ # install/uninstall most things
+-install: install.bin install.modules install.fns install.man
+-uninstall: uninstall.bin uninstall.modules uninstall.fns uninstall.man
++install: install.bin install.modules install.fns install.man install.info
++uninstall: uninstall.bin uninstall.modules uninstall.fns uninstall.man uninstall.info
+ 
+ # install/uninstall just the binary
+ install.bin uninstall.bin:
