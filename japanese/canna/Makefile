@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/17 16:09:07 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/20 15:12:05 espie Exp $
 
 COMMENT= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
@@ -11,7 +11,7 @@ PKGNAME-dict=	cannadict-3.5b2
 PKGNAME-server=	cannaserver-3.5b2
 
 CATEGORIES=	japanese
-NEED_VERSION=	1.361
+NEED_VERSION=	1.404
 
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna35/
 
@@ -31,9 +31,8 @@ PERMIT_PACKAGE_CDROM=	No Fee
 PERMIT_DISTFILES_CDROM=	No Fee
 
 MULTI_PACKAGES=-dict -server
-SUBPACKAGE?=
-.if ${SUBPACKAGE}=="-dict"
-PKGNAME=	cannadict-3.5b2
+
+.if defined(PACKAGING) && ${SUBPACKAGE}=="-dict"
 PREFIX=		/var/dict
 .endif
 

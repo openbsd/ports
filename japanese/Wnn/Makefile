@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.35 2001/04/02 10:33:45 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2001/04/20 15:12:03 espie Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -18,8 +18,7 @@ DISTNAME=	Wnn4.2
 # on the command line, and thus avoid building all three languages
 
 MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo -data
-NEED_VERSION=	1.377
-NEED_VERSION=	1.361
+NEED_VERSION=	1.404
 PKGNAME=	ja-Wnn-4.2
 PKGNAME-dict=	ja-Wnndict-4.2
 PKGNAME-zh=	zh-Wnn-4.2
@@ -29,28 +28,33 @@ PKGNAME-kodict=	ko-Wnndict-4.2
 PKGNAME-xwnmo=	Wnn-xwnmo-4.2
 PKGNAME-data=	Wnn-data-4.2
 
-SUBPACKAGE?=
-
 WNNDICDIR=/var/dict/Wnn
 WNNBASE=${PREFIX}
 
-.if ${SUBPACKAGE} == "-dict"
+.if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-dict"
 CATEGORIES=	japanese
 PREFIX=${WNNDICDIR}
-.elif ${SUBPACKAGE} == "-zh"
+.  elif ${SUBPACKAGE} == "-zh"
 CATEGORIES=	chinese
-.elif ${SUBPACKAGE} == "-zhdict"
+.  elif ${SUBPACKAGE} == "-zhdict"
 CATEGORIES=	chinese
 PREFIX=${WNNDICDIR}
-.elif ${SUBPACKAGE} == "-ko"
+.  elif ${SUBPACKAGE} == "-ko"
 CATEGORIES=	korean
-.elif ${SUBPACKAGE} == "-kodict"
+.  elif ${SUBPACKAGE} == "-kodict"
 CATEGORIES=	korean
 PREFIX=${WNNDICDIR}
-.elif ${SUBPACKAGE} == "-xwnmo"
+.  elif ${SUBPACKAGE} == "-xwnmo"
 CATEGORIES=	japanese chinese korean
-.elif ${SUBPACKAGE} == "-data"
+.  elif ${SUBPACKAGE} == "-data"
 CATEGORIES=	japanese chinese korean
+.  else
+CATEGORIES=	japanese
+.  endif
+.  if ${SUBPACKAGE} != "-data"
+RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese/Wnn,-data
+.  endif
 .else
 CATEGORIES=	japanese
 .endif
@@ -82,10 +86,6 @@ CDOC_FROM=	${WRKSRC}/cWnn
 BUILD_DEPENDS=	jgroff::japanese/groff
 # Run depends ensure this does not turn into infinite recursion, since
 # this is not needed before package build time.
-
-.if ${SUBPACKAGE} != "-data"
-RUN_DEPENDS=	${LOCALBASE}/lib/wnn/install-script::japanese/Wnn,-data
-.endif
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
