@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/24 07:51:05 mark Exp $
+# $OpenBSD: Makefile,v 1.7 2001/12/28 22:21:29 pvalchev Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 VER=		1.2.1
@@ -27,7 +27,7 @@ LIB_DEPENDS+=	vorbis.0,vorbisfile.1::audio/libvorbis
 CONFIGURE_ARGS+=--disable-music-ogg
 .endif
 
-LIB_DEPENDS+=	SDL.:sdl-*-!no_x11:devel/sdl \
+LIB_DEPENDS+=	SDL.::devel/sdl \
 		smpeg.1::devel/smpeg
 
 USE_X11=	Yes

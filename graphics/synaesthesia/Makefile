@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/24 07:51:05 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/28 22:21:29 pvalchev Exp $
 
 COMMENT=		"visual sound representation"
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://yoyo.cc.monash.edu.au/~pfh/
 FLAVORS=	esd
 FLAVOR?=	esd
 
-LIB_DEPENDS=		SDL.:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=		SDL.::devel/sdl
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

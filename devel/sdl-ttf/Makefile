@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/12/24 07:51:05 mark Exp $
+# $OpenBSD: Makefile,v 1.9 2001/12/28 22:21:29 pvalchev Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl
+LIB_DEPENDS=	SDL.::devel/sdl
 
 USE_X11=	Yes
 
