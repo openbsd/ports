@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/10 02:46:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/06 02:14:28 naddy Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += gcpio
      SUBDIR += gshar+gunshar
      SUBDIR += gtar
+     SUBDIR += gtar,static
      SUBDIR += ha
 #    SUBDIR += hpack.non-usa.only
      SUBDIR += lha
