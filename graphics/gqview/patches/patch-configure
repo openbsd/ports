@@ -1,0 +1,20 @@
+--- configure.orig	Sat Aug 12 07:14:21 2000
++++ configure	Sat Aug 12 07:15:13 2000
+@@ -3324,7 +3324,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -3586,7 +3586,7 @@
+ 		 USE_INCLUDED_LIBINTL=yes
+ 		 CATOBJEXT=.cat
+ 		 INSTOBJEXT=.cat
+-		 DATADIRNAME=lib
++		 DATADIRNAME=share
+ 		 INTLDEPS='$(top_builddir)/intl/libintl.a'
+ 		 INTLLIBS=$INTLDEPS
+ 		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`

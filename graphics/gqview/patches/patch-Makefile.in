@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Aug 12 07:45:10 2000
++++ Makefile.in	Sat Aug 12 07:49:55 2000
+@@ -376,7 +376,7 @@
+ install-data: install-data-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ install: install-recursive
+ uninstall-am: uninstall-desktopDATA uninstall-iconDATA
+ uninstall: uninstall-recursive
