@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 1999/03/30 03:16:44 brad Exp $
+# $OpenBSD: Makefile,v 1.18 1999/03/30 17:06:57 niklas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
-#    SUBDIR += ElectricFence
+     SUBDIR += ElectricFence
      SUBDIR += ORBit
 #    SUBDIR += SWIG
 #    SUBDIR += SpecTcl
