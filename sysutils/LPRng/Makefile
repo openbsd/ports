@@ -1,26 +1,19 @@
-# OpenBSD makefile for:	LPRng
-# Version required:	3.5.1
-# Date created:		2 Apr 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.15 2000/10/22 15:58:59 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.16 2001/01/05 16:02:21 brad Exp $
+
+BROKEN=		"installs files directly into /etc"
 
 DISTNAME=		LPRng-3.6.12
 CATEGORIES=		sysutils print
-NEED_VERSION=		1.305
-
-MAINTAINER=		ports@openbsd.org
-
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-
+NEED_VERSION=		1.336
 MASTER_SITES=		ftp://ftp.astart.com/pub/LPRng/LPRng/
 EXTRACT_SUFX=		.tgz
 
-NO_CDROM=		"To many copyrights/licences to verify destribution OK"
+MAINTAINER=		ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=	--with-sbindir='$${DESTDIR}${PREFIX}/sbin' \
