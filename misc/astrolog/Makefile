@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/20 13:08:59 kevlo Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       ast53unx
 PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
 NEED_VERSION=	1.191
-FAKE=No
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
@@ -28,6 +27,7 @@ EXTRACT_AFTER_ARGS=
 DIST_SUBDIR=    astrolog
 ALL_TARGET=     astrolog
 WRKDIST=	${WRKDIR}
+FAKE=		Yes
 
 do-install:
 	-@${INSTALL_DATA_DIR} ${PREFIX}/lib/astrolog
