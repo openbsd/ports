@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/30 02:29:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/17 06:37:36 shell Exp $
 
 COMMENT=	'perl modules for creating and manipulating PDF'
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.378
 
-MAINTAINER=	Shell Hung <i@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/29 17:25:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/17 06:37:35 shell Exp $
 
 COMMENT=	"perl module to gateway between news and mail"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= News
 
-MAINTAINER=	Shell Hung <i@shellhung.org>
+MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
 BUILD_DEPENDS=	${PERL_MODULES}/PGP/Sign.pm::security/p5-PGP-Sign \

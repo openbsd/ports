@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/29 17:37:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/17 06:37:33 shell Exp $
 
 COMMENT=		"modules for parsing (and creating!) MIME entities"
 
@@ -7,7 +7,7 @@ PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		converters perl5
 NEED_VERSION=		1.364
 
-MAINTAINER=		Shell Hung <i@shellhung.org>
+MAINTAINER=		Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

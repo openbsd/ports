@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/04/13 20:43:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/04/17 06:37:34 shell Exp $
 
 COMMENT=	'full-screen easy to use Usenet reader'
 
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 
 HOMEPAGE=	http://www.tin.org/
 
-MAINTAINER=     Shell Hung <i@shellhung.org>
+MAINTAINER=     Shell Hung <shell@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
