@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.99 1999/06/24 18:39:48 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.100 1999/07/27 22:12:26 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1468,7 +1468,7 @@ do-patch:
 	  done)
 .endif
 	@if [ -d ${PATCHDIR} ]; then \
-		(cd ${PATCHDIR}; \
+		(cd ${PATCHDIR}; error=0; \
 		for i in ${PATCH_LIST}; do \
 			case $$i in \
 				*.orig|*.rej|*~) \
@@ -1479,7 +1479,9 @@ do-patch:
 						if [ ${PATCH_DEBUG_TMP} = yes ]; then \
 							${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ; \
 						fi; \
-						${PATCH} ${PATCH_ARGS} < $$i; \
+						${PATCH} ${PATCH_ARGS} < $$i || \
+							{ echo "***>   $$i did not apply cleanly"; \
+							error=1; }\
 					else \
 						${ECHO_MSG} "===>   Can't find patch matching $$i"; \
 						if [ -d ${PATCHDIR}/CVS -a "$$i" = \
@@ -1489,7 +1491,8 @@ do-patch:
 					fi; \
 					;; \
 			esac; \
-		done) \
+		done;\
+		if [ $$error == 1 ]; then exit 1; fi) \
 	fi
 .endif
 
