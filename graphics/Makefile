@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2001/06/27 02:38:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.71 2001/07/07 03:08:56 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -14,6 +14,7 @@
 #    SUBDIR += dc3play
      SUBDIR += dia
 #    SUBDIR += dore
+     SUBDIR += enjoympeg
      SUBDIR += flash
      SUBDIR += fnlib
      SUBDIR += fxtv
