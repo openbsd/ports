@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/02 10:24:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/08 20:12:52 jolan Exp $
 
 COMMENT=	"play games built around LucasArts' SCUMM"
-
-DISTNAME=	scummvm-0.5.0
+DISTNAME=	scummvm-0.5.1
+EXTRACT_SUFX=	.tgz
 CATEGORIES=	games x11 emulators
-
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
 HOMEPAGE=	http://scummvm.sourceforge.net/
