@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/27 22:10:56 margarida Exp $
+# $OpenBSD: Makefile,v 1.6 2003/02/16 18:19:33 margarida Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
 
@@ -18,8 +18,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	simple
+MODULES=		gcc3
+MODGCC3_ARCHES=		sparc64
 
+CONFIGURE_STYLE=	simple
 MAKE_FLAGS=		CFLAGS="${CFLAGS}"
 
 DOCS=			HTTP_ERROR_CODES RFC_INFO filter-howto.txt
