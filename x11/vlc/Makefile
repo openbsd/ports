@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/11/04 07:48:26 jolan Exp $
+# $OpenBSD: Makefile,v 1.9 2003/12/10 21:28:59 naddy Exp $
 
 COMMENT=	"videolan client; multimedia player"
 
@@ -27,7 +27,8 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		gtk.1.2,gdk.1.2::x11/gtk+ \
 		glib,gthread::devel/glib \
 		png::graphics/png \
-		mad.1,id3tag.1::audio/mad \
+		id3tag.2::audio/libid3tag \
+		mad.2::audio/libmad \
 		ogg::audio/libogg \
 		vorbis,vorbisenc::audio/libvorbis \
 		dvbpsi.1.1::graphics/libdvbpsi \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/11/17 19:56:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2003/12/10 21:28:58 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	a52::audio/liba52 \
 		dvdread.3.0::devel/libdvdread \
 		xml2.6.19:libxml->=2.4.19:textproc/libxml \
 		jpeg.62::graphics/jpeg \
-		mad::audio/mad
+		mad.2::audio/libmad
 
 USE_X11=	Yes
 

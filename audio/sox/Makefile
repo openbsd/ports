@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/09/22 22:53:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2003/12/10 21:28:58 naddy Exp $
 
 COMMENT=	"SOund eXchange - universal sound sample translator"
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+= --disable-ogg-vorbis
 .endif
 
 .if ${FLAVOR:L:Mmp3}
-LIB_DEPENDS+=	mad.1::audio/mad mp3lame.0::audio/lame
+LIB_DEPENDS+=	mad.2::audio/libmad mp3lame.0::audio/lame
 .else
 CONFIGURE_ARGS+= --disable-mad --disable-lame
 .endif

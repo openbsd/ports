@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/08/04 13:31:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2003/12/10 21:28:58 naddy Exp $
 
 COMMENT=		'wm-dockapp; front end for an mp3 player'
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		:mad-*:audio/mad
+RUN_DEPENDS=		:madplay-*:audio/madplay
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

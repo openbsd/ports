@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/05/13 00:12:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/12/10 21:28:58 naddy Exp $
 
 COMMENT=	"audio file volume normalizer"
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--disable-xmms \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS+=	mad::audio/mad \
+LIB_DEPENDS=	mad.2::audio/libmad \
 		audiofile::devel/libaudiofile
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/08/08 20:12:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2003/12/10 21:28:58 naddy Exp $
 
 COMMENT=	"play games built around LucasArts' SCUMM"
 DISTNAME=	scummvm-0.5.1
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	SDL::devel/sdl \
-		mad::audio/mad \
+		mad.2::audio/libmad \
 		vorbis.0,vorbisfile.1::audio/libvorbis
 
 NO_REGRESS=	Yes
