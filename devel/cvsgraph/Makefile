@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2004/05/04 11:31:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/31 10:38:57 alek Exp $
 
 COMMENT=		"graphical representation of CVS repository"
 
-DISTNAME=		cvsgraph-1.2.0
+DISTNAME=		cvsgraph-1.5.1
 CATEGORIES=		devel
 HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # GPL 2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,23 +16,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/release/
 
-LIB_DEPENDS=		gd.18::graphics/gd \
-			jpeg::graphics/jpeg \
-			png::graphics/png
+LIB_DEPENDS=		gd.18::graphics/gd
 
 ALL_TARGET=		
 
 CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lttf -lm"
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-lpng -lttf -ljpeg -lz"
 CONFIGURE_ARGS=		--with-gd-inc=${LOCALBASE}/include \
 			--with-gd-lib=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-jpeg-inc=${LOCALBASE}/include \
-			--with-jpeg-lib=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-png-inc=${LOCALBASE}/include \
-			--with-png-lib=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-z-inc=/usr/include --with-z-lib=/usr/lib
 
 NO_REGRESS=		Yes
+
+pre-build:
+	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' ${WRKSRC}/cvsgraph.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsgraph ${PREFIX}/bin	
