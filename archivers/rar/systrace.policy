@@ -1,0 +1,14 @@
+Policy: ${PORTSDIR}/distfiles/rarbsd.sfx, Emulation: bsdos
+	bsdos-access: permit
+	bsdos-break: permit
+	bsdos-chmod: permit
+	bsdos-close: permit
+	bsdos-exit: permit
+	bsdos-fstat: permit
+	bsdos-ogetpagesize: permit
+	bsdos-olseek: permit
+	bsdos-open: permit
+	bsdos-read: permit
+	bsdos-sigaction: permit
+	bsdos-utimes: permit
+	bsdos-write: permit
