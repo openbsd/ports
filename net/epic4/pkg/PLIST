@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4pre2.508
+bin/epic-EPIC4pre2.511
 libexec/wserv-epic
 man/man1/epic.1
 share/epic/help/1_General/1_General
@@ -875,6 +875,7 @@ share/epic/script/files
 share/epic/script/functions
 share/epic/script/genalias
 share/epic/script/global
+share/epic/script/grep
 share/epic/script/guh
 share/epic/script/imap
 share/epic/script/ircprimer
@@ -918,6 +919,7 @@ share/epic/script/tc
 share/epic/script/time
 share/epic/script/tls
 share/epic/script/utime
+share/epic/script/vi-binds
 share/epic/script/webster
 share/epic/script/window
 @dirrm share/epic/help/1_General/ctcp

@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Mon Nov 22 13:05:03 1999
-+++ Makefile.in	Sun Mar 26 05:44:59 2000
++++ Makefile.in	Sun Jul  2 15:11:51 2000
 @@ -73,7 +73,7 @@
  
  epic        = @epic@
@@ -9,12 +9,3 @@
  epicdir     = $(sharedir)/$(epic)
  
  ############ You ought not change anything below this line ###################
-@@ -125,7 +125,7 @@
- 			$(MV) $(IP)$(EPIC_LINK) $(IP)$(EPIC_OLD); \
- 		fi; \
- 		$(RM) $(IP)$(EPIC_LINK); \
--		ln -s $(IP)$(EPIC) $(IP)$(EPIC_LINK); \
-+		cd $(IP)$(bindir); ln -s $(epic)-$(VERSION) $(epic); \
- 	fi
- 
- #
