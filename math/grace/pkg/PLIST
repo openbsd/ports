@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/01/22 15:54:46 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/03/31 16:58:55 sturm Exp $
 %%no_x11%%
 !%%no_x11%%
 grace/auxiliary/README
@@ -90,6 +90,7 @@ grace/fonts/FontDataBase
 grace/fonts/enc/CP1251.enc
 grace/fonts/enc/IsoLatin1.enc
 grace/fonts/enc/IsoLatin2.enc
+grace/fonts/enc/IsoLatin7.enc
 grace/fonts/enc/IsoLatin9.enc
 grace/fonts/enc/KOI8-R.enc
 grace/fonts/enc/KOI8-U.enc
