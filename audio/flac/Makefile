@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/31 21:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2002/11/02 23:23:48 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 
@@ -30,7 +30,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-sse --enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
-CONFIGURE_ENV=	XMMS_CONFIG=/usr/bin/false
+CONFIGURE_ENV=	XMMS_CONFIG=/usr/bin/false \
+		CPPFLAGS="-I${WRKSRC}/include"
 
 # missing auxiliary script
 post-extract:
