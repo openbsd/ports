@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.322 2000/08/28 22:42:00 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.323 2000/09/03 16:00:49 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -979,14 +979,7 @@ _SITE_SELECTOR+=*) sites="${MASTER_SITES}";; esac
 # CDROM is mounted on /cdrom).
 #
 .if exists(/cdrom/distfiles)
-CDROM_SITE:=	/cdrom/distfiles/${DIST_SUBDIR}
-.  if defined(FETCH_SYMLINK_DISTFILES)
-CDROM_COPY:=	ln
-CDROM_OPT=		-s
-.  else
-CDROM_COPY:=	cp
-CDROM_OPT=		-f
-.  endif
+CDROM_SITE=	/cdrom/distfiles/${DIST_SUBDIR}
 .endif
 
 .if defined(CDROM_SITE)
@@ -1002,7 +995,7 @@ _CDROM_OVERRIDE=:
 # Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME?=		${DISTNAME}${SUBPACKAGE}
-PKGNAME:=${PKGNAME}${_FEXT}
+PKGNAME:=		${PKGNAME}${_FEXT}
 
 _EVERYTHING=${DISTFILES}
 _DISTFILES=	${DISTFILES:C/:[0-9]$//}
