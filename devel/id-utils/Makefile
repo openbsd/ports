@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/10/07 16:02:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 1999/10/14 22:08:27 espie Exp $
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	emacs:${PORTSDIR}/editors/emacs
 .if defined(WITHOUT_XEMACS)
 PKGNAME:=${PKGNAME}-noxemacs
 .else
-BUILD_DEPENDS+=	xemacs:${PORTSDIR}/editors/xemacs
+BUILD_DEPENDS+=	xemacs:${PORTSDIR}/editors/xemacs20
 .endif
 PLIST=${WRKBUILD}/PLIST
 
