@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 21:52:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/26 12:03:13 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= utils/compress
+		ftp://ftp.ntua.gr/pub/utils/focus/star/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/utils/backup/star/
 
 FLAVORS=	static
 FLAVOR?=
