@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/08/21 13:55:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/21 17:04:55 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -51,6 +51,15 @@ CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
+	@if pkg dependencies check kdelibs-\*; then \
+		if pkg dependencies check ${DISTNAME}; then \
+			:; \
+		else \
+			echo 1>&2 "Error: you must remove your old kdelibs first"; \
+			exit 1; \
+		fi; \
+    	fi
+
 	# Let zsh act as an sh replacement
 	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 
