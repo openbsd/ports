@@ -1,3 +1,0 @@
-$OpenBSD: SECURITY,v 1.2 2000/09/05 13:56:25 espie Exp $
-
-Use of mktemp is now safe, since it goes thru open(..., O_EXCL) later.

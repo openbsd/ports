@@ -1,18 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.13 2002/12/26 15:48:22 couderc Exp $
-lib/libruby.so.${REV}8
-DYNLIBDIR(%B)
-lib/ruby/${REV}/${SUB}/curses.so
-lib/ruby/${REV}/${SUB}/dbm.so
-lib/ruby/${REV}/${SUB}/digest.so
-lib/ruby/${REV}/${SUB}/digest/md5.so
-lib/ruby/${REV}/${SUB}/digest/rmd160.so
-lib/ruby/${REV}/${SUB}/digest/sha1.so
-lib/ruby/${REV}/${SUB}/digest/sha2.so
-lib/ruby/${REV}/${SUB}/etc.so
-lib/ruby/${REV}/${SUB}/fcntl.so
-lib/ruby/${REV}/${SUB}/nkf.so
-lib/ruby/${REV}/${SUB}/pty.so
-lib/ruby/${REV}/${SUB}/readline.so
-lib/ruby/${REV}/${SUB}/sdbm.so
-lib/ruby/${REV}/${SUB}/socket.so
-lib/ruby/${REV}/${SUB}/syslog.so
+@comment $OpenBSD: PFRAG.shared,v 1.14 2004/02/20 22:52:58 couderc Exp $
+lib/libruby.so.${REV}1
+DYNLIBDIR(%D/lib)
