@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/21 17:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/22 07:00:14 espie Exp $
 
 COMMENT=	"text to speech utility"
 
@@ -8,8 +8,7 @@ BROKEN=		"gcc hang compiling cmu_us_kal_diphone.c"
 
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
-PKGNAME=	flite-${VERSION}
-DISTNAME=	${PKGNAME}-release
+PKGNAME=	flite-${VERSION}p0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.cmuflite.org/

@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_common_make_rules,v 1.1 2004/12/22 07:00:14 espie Exp $
+--- config/common_make_rules.orig	Wed Dec 22 07:41:36 2004
++++ config/common_make_rules	Wed Dec 22 07:45:01 2004
+@@ -88,9 +88,8 @@ nothing:
+ 	@ rm -rf shared_os && mkdir shared_os
+ 	@ rm -f $@ $(LIBDIR)/$@.${PROJECT_VERSION} $(LIBDIR)/$@.${PROJECT_SHLIB_VERSION} 
+ 	@ (cd shared_os && ar x ../$<)
+-	@ (cd shared_os && $(CC) -shared -Wl,-soname,$@.${PROJECT_SHLIB_VERSION} -o ../$@.${PROJECT_VERSION} *.os)
+-	@ ln -s $(LIBDIR)/$@.${PROJECT_VERSION} $(LIBDIR)/$@.${PROJECT_SHLIB_VERSION}
+-	@ ln -s $(LIBDIR)/$@.${PROJECT_SHLIB_VERSION} $(LIBDIR)/$@
++	@ (cd shared_os && $(CC) -shared -o ../$@.${PROJECT_VERSION} *.os)
++	@ ln -s $(LIBDIR)/$@.${PROJECT_VERSION} $(LIBDIR)/$@
+ 	@ rm -rf shared_os
+ 
+ .make_build_dirs:
