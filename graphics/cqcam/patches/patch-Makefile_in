@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Wed May 16 20:28:03 2001
++++ Makefile.in	Wed May 16 20:28:35 2001
+@@ -21,10 +21,6 @@
+ 	done
+ 
+ install: bininstall maninstall
+-	@echo;\
+-	echo "You will probably want to copy \".cqcrc\" to your home directory";\
+-	echo "and edit it for your system.  Please read INSTALL if you are";\
+-	echo "interested in installing webcam support."
+ 
+ bininstall: all
+ 	set -e;\
+@@ -35,7 +31,6 @@
+ 	done
+ 
+ maninstall: docs/cqcam.1
+-	@echo -n Installing man pages...
+ 	@$(MANINSTALL) -o root -g @bingroup@ -m 644 docs/cqcam.1 $(mandir)/man1
+ 	@mkdir -p $(mandir)/man1
+ 	@echo ".so man1/cqcam.1" > $(mandir)/man1/xcqcam.1

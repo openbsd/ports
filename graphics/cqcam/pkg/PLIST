@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/18 11:25:26 naddy Exp $
+bin/cqcam
+bin/webcam
+man/man1/cqcam.1
+man/man1/webcam.1
+share/doc/cqcam/README.webcam
+share/examples/cqcam/dot.cqcrc
+share/examples/cqcam/nph-webcam
+!%%no_x11%%
+@dirrm share/doc/cqcam
+@dirrm share/examples/cqcam

@@ -1,0 +1,60 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/05/18 11:25:26 naddy Exp $
+# vim:ts=8
+
+DISTNAME=	cqcam-0.90pre11
+CATEGORIES=	graphics
+NEED_VERSION=	1.405
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+COMMENT=	"a color QuickCam control program"
+HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
+MASTER_SITES=	${HOMEPAGE} \
+		ftp://rt.fm/pub/cqcam/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	Joshua Stein <jcs@rt.fm>
+
+ONLY_FOR_ARCHS=	i386
+
+USE_X11=	Yes
+LIB_DEPENDS=	jpeg.62::graphics/jpeg
+
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	--enable-jpeg --enable-asm
+
+FLAVORS=	no_x11
+FLAVOR?=	
+
+.if ${FLAVOR:L:Mno_x11}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FLAGS=	${FAKE_FLAGS}
+FAKE_FLAGS=	CLIENTS="cli webcam"
+.else
+USE_X11=	Yes
+LIB_DEPENDS+=	gtk.1::x11/gtk+
+BUILD_DEPENDS=	wish8.3::x11/tk/8.3
+CONFIGURE_ARGS+= --with-gtk-prefix=${LOCALBASE} 
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/tcl8.3"
+MAKE_FLAGS=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.3 \
+		-I${LOCALBASE}/include/tk8.3" \
+		${FAKE_FLAGS}
+FAKE_FLAGS=	CLIENTS="cli gtkfe webcam xfe"
+.endif
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cqcam
+	${INSTALL_DATA} ${WRKSRC}/docs/README.webcam \
+		${PREFIX}/share/doc/cqcam/README.webcam
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cqcam
+	${INSTALL_DATA} ${WRKSRC}/.cqcrc \
+		${PREFIX}/share/examples/cqcam/dot.cqcrc
+	${INSTALL_DATA} ${WRKSRC}/webcam/nph-webcam \
+		${PREFIX}/share/examples/cqcam/nph-webcam
+
+.include <bsd.port.mk>
