@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/23 03:26:17 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/07/28 05:19:12 marcm Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
@@ -20,7 +20,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
 			glade-2.0.0.0::devel/libglade2 \
 			startup-notification-1::devel/startup-notification

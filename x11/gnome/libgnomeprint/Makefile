@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/25 00:24:30 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/28 05:19:12 marcm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -21,7 +21,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext
 
-BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 			pango-1.0.0.0::devel/pango \
