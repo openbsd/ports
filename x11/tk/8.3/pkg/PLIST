@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/07/19 06:09:44 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/08/11 02:39:38 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tk-8.3.*
 bin/wish8.3
@@ -31,10 +31,10 @@ include/tk8.3/unix/tkUnixDefault.h
 include/tk8.3/unix/tkUnixInt.h
 include/tk8.3/unix/tkUnixPort.h
 lib/libtk83.a
-%%SHARED%%
 lib/libtkstub83.a
 lib/tk8.3/bgerror.tcl
 lib/tk8.3/button.tcl
+lib/tk8.3/choosedir.tcl
 lib/tk8.3/clrpick.tcl
 lib/tk8.3/comdlg.tcl
 lib/tk8.3/console.tcl
@@ -114,25 +114,9 @@ lib/tk8.3/images/pwrdLogo200.gif
 lib/tk8.3/images/pwrdLogo75.gif
 lib/tk8.3/images/tai-ku.gif
 lib/tk8.3/listbox.tcl
-lib/tk8.3/menu.tcl
-lib/tk8.3/msgbox.tcl
-lib/tk8.3/obsolete.tcl
-lib/tk8.3/optMenu.tcl
-lib/tk8.3/palette.tcl
-lib/tk8.3/prolog.ps
-lib/tk8.3/safetk.tcl
-lib/tk8.3/scale.tcl
-lib/tk8.3/scrlbar.tcl
-lib/tk8.3/tclIndex
-lib/tk8.3/tearoff.tcl
-lib/tk8.3/text.tcl
-lib/tk8.3/tk.tcl
-lib/tk8.3/tkAppInit.c
-lib/tk8.3/tkConfig.sh
-lib/tk8.3/tkfbox.tcl
-lib/tk8.3/xmfbox.tcl
 lib/tk8.3/man/man1/wish.1
 lib/tk8.3/man/man3/3DBorder.3
+lib/tk8.3/man/man3/AddOption.3
 lib/tk8.3/man/man3/BindTable.3
 lib/tk8.3/man/man3/CanvPsY.3
 lib/tk8.3/man/man3/CanvTkwin.3
@@ -162,8 +146,11 @@ lib/tk8.3/man/man3/GetCapStyl.3
 lib/tk8.3/man/man3/GetClrmap.3
 lib/tk8.3/man/man3/GetColor.3
 lib/tk8.3/man/man3/GetCursor.3
+lib/tk8.3/man/man3/GetDash.3
 lib/tk8.3/man/man3/GetFont.3
 lib/tk8.3/man/man3/GetGC.3
+lib/tk8.3/man/man3/GetHINSTANCE.3
+lib/tk8.3/man/man3/GetHWND.3
 lib/tk8.3/man/man3/GetImage.3
 lib/tk8.3/man/man3/GetJoinStl.3
 lib/tk8.3/man/man3/GetJustify.3
@@ -177,6 +164,8 @@ lib/tk8.3/man/man3/GetSelect.3
 lib/tk8.3/man/man3/GetUid.3
 lib/tk8.3/man/man3/GetVRoot.3
 lib/tk8.3/man/man3/GetVisual.3
+lib/tk8.3/man/man3/Grab.3
+lib/tk8.3/man/man3/HWNDToWindow.3
 lib/tk8.3/man/man3/HandleEvent.3
 lib/tk8.3/man/man3/IdToWindow.3
 lib/tk8.3/man/man3/ImgChanged.3
@@ -207,6 +196,7 @@ lib/tk8.3/man/man3/Tk_3DBorderColor.3
 lib/tk8.3/man/man3/Tk_3DBorderGC.3
 lib/tk8.3/man/man3/Tk_3DHorizontalBevel.3
 lib/tk8.3/man/man3/Tk_3DVerticalBevel.3
+lib/tk8.3/man/man3/Tk_AddOption.3
 lib/tk8.3/man/man3/Tk_Alloc3DBorderFromObj.3
 lib/tk8.3/man/man3/Tk_AllocBitmapFromObj.3
 lib/tk8.3/man/man3/Tk_AllocColorFromObj.3
@@ -318,9 +308,12 @@ lib/tk8.3/man/man3/Tk_GetColormap.3
 lib/tk8.3/man/man3/Tk_GetCursor.3
 lib/tk8.3/man/man3/Tk_GetCursorFromData.3
 lib/tk8.3/man/man3/Tk_GetCursorFromObj.3
+lib/tk8.3/man/man3/Tk_GetDash.3
 lib/tk8.3/man/man3/Tk_GetFont.3
 lib/tk8.3/man/man3/Tk_GetFontFromObj.3
 lib/tk8.3/man/man3/Tk_GetGC.3
+lib/tk8.3/man/man3/Tk_GetHINSTANCE.3
+lib/tk8.3/man/man3/Tk_GetHWND.3
 lib/tk8.3/man/man3/Tk_GetImage.3
 lib/tk8.3/man/man3/Tk_GetImageMasterData.3
 lib/tk8.3/man/man3/Tk_GetItemTypes.3
@@ -328,6 +321,7 @@ lib/tk8.3/man/man3/Tk_GetJoinStyle.3
 lib/tk8.3/man/man3/Tk_GetJustify.3
 lib/tk8.3/man/man3/Tk_GetJustifyFromObj.3
 lib/tk8.3/man/man3/Tk_GetMMFromObj.3
+lib/tk8.3/man/man3/Tk_GetNumMainWindows.3
 lib/tk8.3/man/man3/Tk_GetOption.3
 lib/tk8.3/man/man3/Tk_GetOptionInfo.3
 lib/tk8.3/man/man3/Tk_GetOptionValue.3
@@ -339,20 +333,26 @@ lib/tk8.3/man/man3/Tk_GetReliefFromObj.3
 lib/tk8.3/man/man3/Tk_GetRootCoords.3
 lib/tk8.3/man/man3/Tk_GetScreenMM.3
 lib/tk8.3/man/man3/Tk_GetScrollInfo.3
+lib/tk8.3/man/man3/Tk_GetScrollInfoObj.3
 lib/tk8.3/man/man3/Tk_GetSelection.3
 lib/tk8.3/man/man3/Tk_GetUid.3
 lib/tk8.3/man/man3/Tk_GetVRootGeometry.3
 lib/tk8.3/man/man3/Tk_GetVisual.3
+lib/tk8.3/man/man3/Tk_Grab.3
+lib/tk8.3/man/man3/Tk_HWNDToWindow.3
 lib/tk8.3/man/man3/Tk_HandleEvent.3
 lib/tk8.3/man/man3/Tk_Height.3
 lib/tk8.3/man/man3/Tk_IdToWindow.3
 lib/tk8.3/man/man3/Tk_ImageChanged.3
 lib/tk8.3/man/man3/Tk_Init.3
+lib/tk8.3/man/man3/Tk_InitImageArgs.3
 lib/tk8.3/man/man3/Tk_InitOptions.3
 lib/tk8.3/man/man3/Tk_InitStubs.3
 lib/tk8.3/man/man3/Tk_InternAtom.3
 lib/tk8.3/man/man3/Tk_InternalBorderWidth.3
 lib/tk8.3/man/man3/Tk_IntersectTextLayout.3
+lib/tk8.3/man/man3/Tk_IsContainer.3
+lib/tk8.3/man/man3/Tk_IsEmbedded.3
 lib/tk8.3/man/man3/Tk_IsMapped.3
 lib/tk8.3/man/man3/Tk_IsTopLevel.3
 lib/tk8.3/man/man3/Tk_Main.3
@@ -425,6 +425,7 @@ lib/tk8.3/man/man3/Tk_Uid.3
 lib/tk8.3/man/man3/Tk_UndefineCursor.3
 lib/tk8.3/man/man3/Tk_UnderlineChars.3
 lib/tk8.3/man/man3/Tk_UnderlineTextLayout.3
+lib/tk8.3/man/man3/Tk_Ungrab.3
 lib/tk8.3/man/man3/Tk_UnmaintainGeometry.3
 lib/tk8.3/man/man3/Tk_UnmapWindow.3
 lib/tk8.3/man/man3/Tk_UnsetGrid.3
@@ -442,7 +443,10 @@ lib/tk8.3/man/mann/button.n
 lib/tk8.3/man/mann/canvas.n
 lib/tk8.3/man/mann/checkbutton.n
 lib/tk8.3/man/mann/chooseColor.n
+lib/tk8.3/man/mann/chooseDirectory.n
 lib/tk8.3/man/mann/clipboard.n
+lib/tk8.3/man/mann/colors.n
+lib/tk8.3/man/mann/cursors.n
 lib/tk8.3/man/mann/destroy.n
 lib/tk8.3/man/mann/dialog.n
 lib/tk8.3/man/mann/entry.n
@@ -455,6 +459,7 @@ lib/tk8.3/man/mann/getOpenFile.n
 lib/tk8.3/man/mann/grab.n
 lib/tk8.3/man/mann/grid.n
 lib/tk8.3/man/mann/image.n
+lib/tk8.3/man/mann/keysyms.n
 lib/tk8.3/man/mann/label.n
 lib/tk8.3/man/mann/listbox.n
 lib/tk8.3/man/mann/loadTk.n
@@ -484,6 +489,7 @@ lib/tk8.3/man/mann/tk.n
 lib/tk8.3/man/mann/tk_bindForTraversal.n
 lib/tk8.3/man/mann/tk_bisque.n
 lib/tk8.3/man/mann/tk_chooseColor.n
+lib/tk8.3/man/mann/tk_chooseDirectory.n
 lib/tk8.3/man/mann/tk_dialog.n
 lib/tk8.3/man/mann/tk_focusFollowsMouse.n
 lib/tk8.3/man/mann/tk_focusNext.n
@@ -501,17 +507,34 @@ lib/tk8.3/man/mann/tkwait.n
 lib/tk8.3/man/mann/toplevel.n
 lib/tk8.3/man/mann/winfo.n
 lib/tk8.3/man/mann/wm.n
-@dirrm lib/tk8.3/man/man1
-@dirrm lib/tk8.3/man/man3
+lib/tk8.3/menu.tcl
+lib/tk8.3/msgbox.tcl
+lib/tk8.3/obsolete.tcl
+lib/tk8.3/optMenu.tcl
+lib/tk8.3/palette.tcl
+lib/tk8.3/prolog.ps
+lib/tk8.3/safetk.tcl
+lib/tk8.3/scale.tcl
+lib/tk8.3/scrlbar.tcl
+lib/tk8.3/tclIndex
+lib/tk8.3/tearoff.tcl
+lib/tk8.3/text.tcl
+lib/tk8.3/tk.tcl
+lib/tk8.3/tkAppInit.c
+lib/tk8.3/tkConfig.sh
+lib/tk8.3/tkfbox.tcl
+lib/tk8.3/xmfbox.tcl
+%%SHARED%%
 @dirrm lib/tk8.3/man/mann
+@dirrm lib/tk8.3/man/man3
+@dirrm lib/tk8.3/man/man1
 @dirrm lib/tk8.3/man
 @exec echo "tk8.3 manpages are in %D/lib/tk8.3/man; you may wish to add this directory to /etc/man.conf"
 @unexec echo "Please remove %D/lib/tk8.3/man from /etc/man.conf manually if needed"
-@dirrm include/tk8.3/generic
-@dirrm include/tk8.3/unix
-@dirrm include/tk8.3
+@dirrm lib/tk8.3/images
 @dirrm lib/tk8.3/demos/images
 @dirrm lib/tk8.3/demos
-@dirrm lib/tk8.3/images
 @dirrm lib/tk8.3
-
+@dirrm include/tk8.3/unix
+@dirrm include/tk8.3/generic
+@dirrm include/tk8.3

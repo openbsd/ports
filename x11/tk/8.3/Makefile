@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2000/07/19 06:09:43 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/08/11 02:39:20 kevlo Exp $
 
-DISTNAME=	tk8.3.1
-PKGNAME=	tk-8.3.1
+DISTNAME=	tk8.3.2
+PKGNAME=	tk-8.3.2
 CATEGORIES=	x11 tk83
 NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_TCLTK}

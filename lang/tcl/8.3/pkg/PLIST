@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/07/18 09:09:37 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/08/11 02:34:37 kevlo Exp $
 @option no-default-conflict
-@pkgcfl	tcl-8.3.*
+@pkgcfl        tcl-8.3.*
 bin/tclsh8.3
 include/tcl8.3/generic/regcustom.h
 include/tcl8.3/generic/regerrs.h
@@ -9,6 +9,7 @@ include/tcl8.3/generic/regguts.h
 include/tcl8.3/generic/tcl.h
 include/tcl8.3/generic/tclCompile.h
 include/tcl8.3/generic/tclDecls.h
+include/tcl8.3/generic/tclIO.h
 include/tcl8.3/generic/tclInitScript.h
 include/tcl8.3/generic/tclInt.h
 include/tcl8.3/generic/tclIntDecls.h
@@ -22,7 +23,6 @@ include/tcl8.3/tclDecls.h
 include/tcl8.3/unix/tclUnixPort.h
 include/tcl8.3/unix/tclUnixThrd.h
 lib/libtcl83.a
-%%SHARED%%
 lib/libtclstub83.a
 lib/tcl8.3/auto.tcl
 lib/tcl8.3/encoding/ascii.enc
@@ -102,19 +102,6 @@ lib/tcl8.3/http2.3/pkgIndex.tcl
 lib/tcl8.3/init.tcl
 lib/tcl8.3/ldAix
 lib/tcl8.3/ldAout.tcl
-lib/tcl8.3/msgcat1.0/msgcat.tcl
-lib/tcl8.3/msgcat1.0/pkgIndex.tcl
-lib/tcl8.3/opt0.4/optparse.tcl
-lib/tcl8.3/opt0.4/pkgIndex.tcl
-lib/tcl8.3/package.tcl
-lib/tcl8.3/parray.tcl
-lib/tcl8.3/safe.tcl
-lib/tcl8.3/tclAppInit.c
-lib/tcl8.3/tclConfig.sh
-lib/tcl8.3/tclIndex
-lib/tcl8.3/tcltest1.0/pkgIndex.tcl
-lib/tcl8.3/tcltest1.0/tcltest.tcl
-lib/tcl8.3/word.tcl
 lib/tcl8.3/man/man1/tclsh.1
 lib/tcl8.3/man/man3/Access.3
 lib/tcl8.3/man/man3/AddErrInfo.3
@@ -147,6 +134,7 @@ lib/tcl8.3/man/man3/DetachPids.3
 lib/tcl8.3/man/man3/DoOneEvent.3
 lib/tcl8.3/man/man3/DoWhenIdle.3
 lib/tcl8.3/man/man3/DoubleObj.3
+lib/tcl8.3/man/man3/DumpActiveMemory.3
 lib/tcl8.3/man/man3/Encoding.3
 lib/tcl8.3/man/man3/Eval.3
 lib/tcl8.3/man/man3/Exit.3
@@ -154,12 +142,14 @@ lib/tcl8.3/man/man3/ExprLong.3
 lib/tcl8.3/man/man3/ExprLongObj.3
 lib/tcl8.3/man/man3/FindExec.3
 lib/tcl8.3/man/man3/GetCwd.3
+lib/tcl8.3/man/man3/GetHostName.3
 lib/tcl8.3/man/man3/GetIndex.3
 lib/tcl8.3/man/man3/GetInt.3
 lib/tcl8.3/man/man3/GetOpnFl.3
 lib/tcl8.3/man/man3/GetStdChan.3
 lib/tcl8.3/man/man3/GetVersion.3
 lib/tcl8.3/man/man3/Hash.3
+lib/tcl8.3/man/man3/Init.3
 lib/tcl8.3/man/man3/InitStubs.3
 lib/tcl8.3/man/man3/IntObj.3
 lib/tcl8.3/man/man3/Interp.3
@@ -183,11 +173,13 @@ lib/tcl8.3/man/man3/SetRecLmt.3
 lib/tcl8.3/man/man3/SetResult.3
 lib/tcl8.3/man/man3/SetVar.3
 lib/tcl8.3/man/man3/Sleep.3
+lib/tcl8.3/man/man3/SourceRCFile.3
 lib/tcl8.3/man/man3/SplitList.3
 lib/tcl8.3/man/man3/SplitPath.3
 lib/tcl8.3/man/man3/StaticPkg.3
 lib/tcl8.3/man/man3/StrMatch.3
 lib/tcl8.3/man/man3/StringObj.3
+lib/tcl8.3/man/man3/TCL_MEM_DEBUG.3
 lib/tcl8.3/man/man3/Tcl_Access.3
 lib/tcl8.3/man/man3/Tcl_AddErrorInfo.3
 lib/tcl8.3/man/man3/Tcl_AddObjErrorInfo.3
@@ -214,13 +206,29 @@ lib/tcl8.3/man/man3/Tcl_Backslash.3
 lib/tcl8.3/man/man3/Tcl_BadChannelOption.3
 lib/tcl8.3/man/man3/Tcl_CallWhenDeleted.3
 lib/tcl8.3/man/man3/Tcl_CancelIdleCall.3
+lib/tcl8.3/man/man3/Tcl_ChannelBlockModeProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelClose2Proc.3
+lib/tcl8.3/man/man3/Tcl_ChannelCloseProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelFlushProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelGetHandleProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelGetOptionProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelHandlerProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelInputProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelName.3
+lib/tcl8.3/man/man3/Tcl_ChannelOutputProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelSeekProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelSetOptionProc.3
+lib/tcl8.3/man/man3/Tcl_ChannelVersion.3
+lib/tcl8.3/man/man3/Tcl_ChannelWatchProc.3
 lib/tcl8.3/man/man3/Tcl_Chdir.3
 lib/tcl8.3/man/man3/Tcl_Close.3
 lib/tcl8.3/man/man3/Tcl_CommandComplete.3
 lib/tcl8.3/man/man3/Tcl_Concat.3
 lib/tcl8.3/man/man3/Tcl_ConcatObj.3
+lib/tcl8.3/man/man3/Tcl_ConditionFinalize.3
 lib/tcl8.3/man/man3/Tcl_ConditionNotify.3
 lib/tcl8.3/man/man3/Tcl_ConditionWait.3
+lib/tcl8.3/man/man3/Tcl_ConvertCountedElement.3
 lib/tcl8.3/man/man3/Tcl_ConvertElement.3
 lib/tcl8.3/man/man3/Tcl_ConvertToType.3
 lib/tcl8.3/man/man3/Tcl_CreateAlias.3
@@ -238,6 +246,7 @@ lib/tcl8.3/man/man3/Tcl_CreateInterp.3
 lib/tcl8.3/man/man3/Tcl_CreateMathFunc.3
 lib/tcl8.3/man/man3/Tcl_CreateObjCommand.3
 lib/tcl8.3/man/man3/Tcl_CreateSlave.3
+lib/tcl8.3/man/man3/Tcl_CreateThread.3
 lib/tcl8.3/man/man3/Tcl_CreateThreadExitHandler.3
 lib/tcl8.3/man/man3/Tcl_CreateTimerHandler.3
 lib/tcl8.3/man/man3/Tcl_CreateTrace.3
@@ -273,8 +282,11 @@ lib/tcl8.3/man/man3/Tcl_DiscardResult.3
 lib/tcl8.3/man/man3/Tcl_DoOneEvent.3
 lib/tcl8.3/man/man3/Tcl_DoWhenIdle.3
 lib/tcl8.3/man/man3/Tcl_DontCallWhenDeleted.3
+lib/tcl8.3/man/man3/Tcl_DumpActiveMemory.3
 lib/tcl8.3/man/man3/Tcl_DuplicateObj.3
 lib/tcl8.3/man/man3/Tcl_Eof.3
+lib/tcl8.3/man/man3/Tcl_ErrnoId.3
+lib/tcl8.3/man/man3/Tcl_ErrnoMsg.3
 lib/tcl8.3/man/man3/Tcl_Eval.3
 lib/tcl8.3/man/man3/Tcl_EvalEx.3
 lib/tcl8.3/man/man3/Tcl_EvalFile.3
@@ -283,6 +295,7 @@ lib/tcl8.3/man/man3/Tcl_EvalObjv.3
 lib/tcl8.3/man/man3/Tcl_EvalTokens.3
 lib/tcl8.3/man/man3/Tcl_EventuallyFree.3
 lib/tcl8.3/man/man3/Tcl_Exit.3
+lib/tcl8.3/man/man3/Tcl_ExitThread.3
 lib/tcl8.3/man/man3/Tcl_ExposeCommand.3
 lib/tcl8.3/man/man3/Tcl_ExprBoolean.3
 lib/tcl8.3/man/man3/Tcl_ExprBooleanObj.3
@@ -304,6 +317,7 @@ lib/tcl8.3/man/man3/Tcl_Flush.3
 lib/tcl8.3/man/man3/Tcl_Free.3
 lib/tcl8.3/man/man3/Tcl_FreeEncoding.3
 lib/tcl8.3/man/man3/Tcl_FreeParse.3
+lib/tcl8.3/man/man3/Tcl_FreeResult.3
 lib/tcl8.3/man/man3/Tcl_GetAlias.3
 lib/tcl8.3/man/man3/Tcl_GetAliasObj.3
 lib/tcl8.3/man/man3/Tcl_GetAssocData.3
@@ -316,6 +330,8 @@ lib/tcl8.3/man/man3/Tcl_GetChannelHandle.3
 lib/tcl8.3/man/man3/Tcl_GetChannelInstanceData.3
 lib/tcl8.3/man/man3/Tcl_GetChannelMode.3
 lib/tcl8.3/man/man3/Tcl_GetChannelName.3
+lib/tcl8.3/man/man3/Tcl_GetChannelNames.3
+lib/tcl8.3/man/man3/Tcl_GetChannelNamesEx.3
 lib/tcl8.3/man/man3/Tcl_GetChannelOption.3
 lib/tcl8.3/man/man3/Tcl_GetChannelType.3
 lib/tcl8.3/man/man3/Tcl_GetCharLength.3
@@ -332,7 +348,9 @@ lib/tcl8.3/man/man3/Tcl_GetEncodingNames.3
 lib/tcl8.3/man/man3/Tcl_GetErrno.3
 lib/tcl8.3/man/man3/Tcl_GetHashKey.3
 lib/tcl8.3/man/man3/Tcl_GetHashValue.3
+lib/tcl8.3/man/man3/Tcl_GetHostName.3
 lib/tcl8.3/man/man3/Tcl_GetIndexFromObj.3
+lib/tcl8.3/man/man3/Tcl_GetIndexFromObjStruct.3
 lib/tcl8.3/man/man3/Tcl_GetInt.3
 lib/tcl8.3/man/man3/Tcl_GetIntFromObj.3
 lib/tcl8.3/man/man3/Tcl_GetInterpPath.3
@@ -345,9 +363,9 @@ lib/tcl8.3/man/man3/Tcl_GetOpenFile.3
 lib/tcl8.3/man/man3/Tcl_GetPathType.3
 lib/tcl8.3/man/man3/Tcl_GetRange.3
 lib/tcl8.3/man/man3/Tcl_GetRegExpFromObj.3
-lib/tcl8.3/man/man3/Tcl_GetRegExpInfo.3
 lib/tcl8.3/man/man3/Tcl_GetServiceMode.3
 lib/tcl8.3/man/man3/Tcl_GetSlave.3
+lib/tcl8.3/man/man3/Tcl_GetStackedChannel.3
 lib/tcl8.3/man/man3/Tcl_GetStdChannel.3
 lib/tcl8.3/man/man3/Tcl_GetString.3
 lib/tcl8.3/man/man3/Tcl_GetStringFromObj.3
@@ -366,13 +384,16 @@ lib/tcl8.3/man/man3/Tcl_GlobalEvalObj.3
 lib/tcl8.3/man/man3/Tcl_HashStats.3
 lib/tcl8.3/man/man3/Tcl_HideCommand.3
 lib/tcl8.3/man/man3/Tcl_IncrRefCount.3
+lib/tcl8.3/man/man3/Tcl_Init.3
 lib/tcl8.3/man/man3/Tcl_InitHashTable.3
+lib/tcl8.3/man/man3/Tcl_InitMemory.3
 lib/tcl8.3/man/man3/Tcl_InitNotifier.3
 lib/tcl8.3/man/man3/Tcl_InitStubs.3
 lib/tcl8.3/man/man3/Tcl_InputBlocked.3
 lib/tcl8.3/man/man3/Tcl_InputBuffered.3
 lib/tcl8.3/man/man3/Tcl_Interp.3
 lib/tcl8.3/man/man3/Tcl_InterpDeleted.3
+lib/tcl8.3/man/man3/Tcl_InvalidateStringRep.3
 lib/tcl8.3/man/man3/Tcl_IsSafe.3
 lib/tcl8.3/man/man3/Tcl_IsShared.3
 lib/tcl8.3/man/man3/Tcl_JoinPath.3
@@ -383,11 +404,13 @@ lib/tcl8.3/man/man3/Tcl_ListObjGetElements.3
 lib/tcl8.3/man/man3/Tcl_ListObjIndex.3
 lib/tcl8.3/man/man3/Tcl_ListObjLength.3
 lib/tcl8.3/man/man3/Tcl_ListObjReplace.3
+lib/tcl8.3/man/man3/Tcl_LogCommandInfo.3
 lib/tcl8.3/man/man3/Tcl_Main.3
 lib/tcl8.3/man/man3/Tcl_MakeFileChannel.3
 lib/tcl8.3/man/man3/Tcl_MakeSafe.3
 lib/tcl8.3/man/man3/Tcl_MakeTcpClientChannel.3
 lib/tcl8.3/man/man3/Tcl_Merge.3
+lib/tcl8.3/man/man3/Tcl_MutexFinalize.3
 lib/tcl8.3/man/man3/Tcl_MutexLock.3
 lib/tcl8.3/man/man3/Tcl_MutexUnlock.3
 lib/tcl8.3/man/man3/Tcl_NewBooleanObj.3
@@ -412,6 +435,7 @@ lib/tcl8.3/man/man3/Tcl_ParseBraces.3
 lib/tcl8.3/man/man3/Tcl_ParseCommand.3
 lib/tcl8.3/man/man3/Tcl_ParseExpr.3
 lib/tcl8.3/man/man3/Tcl_ParseQuotedString.3
+lib/tcl8.3/man/man3/Tcl_ParseVar.3
 lib/tcl8.3/man/man3/Tcl_ParseVarName.3
 lib/tcl8.3/man/man3/Tcl_PkgPresent.3
 lib/tcl8.3/man/man3/Tcl_PkgPresentEx.3
@@ -431,6 +455,8 @@ lib/tcl8.3/man/man3/Tcl_RecordAndEval.3
 lib/tcl8.3/man/man3/Tcl_RecordAndEvalObj.3
 lib/tcl8.3/man/man3/Tcl_RegExpCompile.3
 lib/tcl8.3/man/man3/Tcl_RegExpExec.3
+lib/tcl8.3/man/man3/Tcl_RegExpExecObj.3
+lib/tcl8.3/man/man3/Tcl_RegExpGetInfo.3
 lib/tcl8.3/man/man3/Tcl_RegExpMatch.3
 lib/tcl8.3/man/man3/Tcl_RegExpMatchObj.3
 lib/tcl8.3/man/man3/Tcl_RegExpRange.3
@@ -440,6 +466,7 @@ lib/tcl8.3/man/man3/Tcl_Release.3
 lib/tcl8.3/man/man3/Tcl_ResetResult.3
 lib/tcl8.3/man/man3/Tcl_RestoreResult.3
 lib/tcl8.3/man/man3/Tcl_SaveResult.3
+lib/tcl8.3/man/man3/Tcl_ScanCountedElement.3
 lib/tcl8.3/man/man3/Tcl_ScanElement.3
 lib/tcl8.3/man/man3/Tcl_Seek.3
 lib/tcl8.3/man/man3/Tcl_ServiceAll.3
@@ -461,6 +488,7 @@ lib/tcl8.3/man/man3/Tcl_SetIntObj.3
 lib/tcl8.3/man/man3/Tcl_SetListObj.3
 lib/tcl8.3/man/man3/Tcl_SetLongObj.3
 lib/tcl8.3/man/man3/Tcl_SetMaxBlockTime.3
+lib/tcl8.3/man/man3/Tcl_SetObjErrorCode.3
 lib/tcl8.3/man/man3/Tcl_SetObjLength.3
 lib/tcl8.3/man/man3/Tcl_SetObjResult.3
 lib/tcl8.3/man/man3/Tcl_SetRecursionLimit.3
@@ -475,6 +503,7 @@ lib/tcl8.3/man/man3/Tcl_SetVar.3
 lib/tcl8.3/man/man3/Tcl_SetVar2.3
 lib/tcl8.3/man/man3/Tcl_SetVar2Ex.3
 lib/tcl8.3/man/man3/Tcl_Sleep.3
+lib/tcl8.3/man/man3/Tcl_SourceRCFile.3
 lib/tcl8.3/man/man3/Tcl_SplitList.3
 lib/tcl8.3/man/man3/Tcl_SplitPath.3
 lib/tcl8.3/man/man3/Tcl_StackChannel.3
@@ -488,6 +517,7 @@ lib/tcl8.3/man/man3/Tcl_ThreadQueueEvent.3
 lib/tcl8.3/man/man3/Tcl_TraceVar.3
 lib/tcl8.3/man/man3/Tcl_TraceVar2.3
 lib/tcl8.3/man/man3/Tcl_TranslateFileName.3
+lib/tcl8.3/man/man3/Tcl_Ungets.3
 lib/tcl8.3/man/man3/Tcl_UniChar.3
 lib/tcl8.3/man/man3/Tcl_UniCharAtIndex.3
 lib/tcl8.3/man/man3/Tcl_UniCharLen.3
@@ -521,6 +551,7 @@ lib/tcl8.3/man/man3/Tcl_UtfToTitle.3
 lib/tcl8.3/man/man3/Tcl_UtfToUniChar.3
 lib/tcl8.3/man/man3/Tcl_UtfToUniCharDString.3
 lib/tcl8.3/man/man3/Tcl_UtfToUpper.3
+lib/tcl8.3/man/man3/Tcl_ValidateAllMemory.3
 lib/tcl8.3/man/man3/Tcl_VarEval.3
 lib/tcl8.3/man/man3/Tcl_VarEvalVA.3
 lib/tcl8.3/man/man3/Tcl_VarTraceInfo.3
@@ -546,6 +577,13 @@ lib/tcl8.3/man/mann/Tcltest.n
 lib/tcl8.3/man/mann/after.n
 lib/tcl8.3/man/mann/append.n
 lib/tcl8.3/man/mann/array.n
+lib/tcl8.3/man/mann/auto_execok.n
+lib/tcl8.3/man/mann/auto_import.n
+lib/tcl8.3/man/mann/auto_load.n
+lib/tcl8.3/man/mann/auto_mkindex.n
+lib/tcl8.3/man/mann/auto_mkindex_old.n
+lib/tcl8.3/man/mann/auto_qualify.n
+lib/tcl8.3/man/mann/auto_reset.n
 lib/tcl8.3/man/mann/bgerror.n
 lib/tcl8.3/man/mann/binary.n
 lib/tcl8.3/man/mann/break.n
@@ -595,11 +633,15 @@ lib/tcl8.3/man/mann/lrange.n
 lib/tcl8.3/man/mann/lreplace.n
 lib/tcl8.3/man/mann/lsearch.n
 lib/tcl8.3/man/mann/lsort.n
+lib/tcl8.3/man/mann/memory.n
 lib/tcl8.3/man/mann/msgcat.n
 lib/tcl8.3/man/mann/namespace.n
 lib/tcl8.3/man/mann/open.n
 lib/tcl8.3/man/mann/package.n
+lib/tcl8.3/man/mann/packagens.n
+lib/tcl8.3/man/mann/parray.n
 lib/tcl8.3/man/mann/pid.n
+lib/tcl8.3/man/mann/pkg::create.n
 lib/tcl8.3/man/mann/pkgMkIndex.n
 lib/tcl8.3/man/mann/pkg_mkIndex.n
 lib/tcl8.3/man/mann/proc.n
@@ -623,6 +665,12 @@ lib/tcl8.3/man/mann/split.n
 lib/tcl8.3/man/mann/string.n
 lib/tcl8.3/man/mann/subst.n
 lib/tcl8.3/man/mann/switch.n
+lib/tcl8.3/man/mann/tcl_endOfWord.n
+lib/tcl8.3/man/mann/tcl_findLibrary.n
+lib/tcl8.3/man/mann/tcl_startOfNextWord.n
+lib/tcl8.3/man/mann/tcl_startOfPreviousWord.n
+lib/tcl8.3/man/mann/tcl_wordBreakAfter.n
+lib/tcl8.3/man/mann/tcl_wordBreakBefore.n
 lib/tcl8.3/man/mann/tcltest.n
 lib/tcl8.3/man/mann/tclvars.n
 lib/tcl8.3/man/mann/tell.n
@@ -636,19 +684,33 @@ lib/tcl8.3/man/mann/upvar.n
 lib/tcl8.3/man/mann/variable.n
 lib/tcl8.3/man/mann/vwait.n
 lib/tcl8.3/man/mann/while.n
-@dirrm lib/tcl8.3/man/man1
-@dirrm lib/tcl8.3/man/man3
+lib/tcl8.3/msgcat1.0/msgcat.tcl
+lib/tcl8.3/msgcat1.0/pkgIndex.tcl  
+lib/tcl8.3/opt0.4/optparse.tcl
+lib/tcl8.3/opt0.4/pkgIndex.tcl  
+lib/tcl8.3/package.tcl
+lib/tcl8.3/parray.tcl
+lib/tcl8.3/safe.tcl
+lib/tcl8.3/tclAppInit.c
+lib/tcl8.3/tclConfig.sh
+lib/tcl8.3/tclIndex
+lib/tcl8.3/tcltest1.0/pkgIndex.tcl
+lib/tcl8.3/tcltest1.0/tcltest.tcl
+lib/tcl8.3/word.tcl
+%%SHARED%%
+@dirrm lib/tcl8.3/tcltest1.0
+@dirrm lib/tcl8.3/opt0.4
+@dirrm lib/tcl8.3/msgcat1.0
 @dirrm lib/tcl8.3/man/mann
+@dirrm lib/tcl8.3/man/man3
+@dirrm lib/tcl8.3/man/man1
 @dirrm lib/tcl8.3/man
 @exec echo "tcl8.3 manpages are in %D/lib/tcl8.3/man; you may wish to add this directory to /etc/man.conf"
 @unexec echo "Please remove %D/lib/tcl8.3/man from /etc/man.conf manually if needed"
-@dirrm include/tcl8.3/generic
-@dirrm include/tcl8.3/unix
-@dirrm include/tcl8.3
-@dirrm lib/tcl8.3/encoding
-@dirrm lib/tcl8.3/http1.0
 @dirrm lib/tcl8.3/http2.3
-@dirrm lib/tcl8.3/msgcat1.0
-@dirrm lib/tcl8.3/opt0.4
-@dirrm lib/tcl8.3/tcltest1.0
+@dirrm lib/tcl8.3/http1.0
+@dirrm lib/tcl8.3/encoding
 @dirrm lib/tcl8.3
+@dirrm include/tcl8.3/unix
+@dirrm include/tcl8.3/generic
+@dirrm include/tcl8.3
