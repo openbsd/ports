@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/02 21:52:04 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/02 22:16:29 brad Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
@@ -27,7 +27,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/openbsd/lscomp ${PREFIX}/bin
 # and no man pages at all yet.
 # But include the very limited documentation
-	${MKDIR} ${PREFIX}/share/doc/imm
+	@${MKDIR} ${PREFIX}/share/doc/imm
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imm
 	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${PREFIX}/share/doc/imm
