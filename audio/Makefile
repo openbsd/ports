@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2002/01/16 16:43:34 mickey Exp $
+# $OpenBSD: Makefile,v 1.72 2002/01/24 13:48:02 wilfried Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -73,6 +73,7 @@
      SUBDIR += tracker
      SUBDIR += vorbis-tools
      SUBDIR += waveplay
+     SUBDIR += wmix
      SUBDIR += wmmixer
      SUBDIR += wmmp3
      SUBDIR += wmtune
