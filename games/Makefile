@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/08/03 13:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2001/08/07 05:15:16 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -13,6 +13,7 @@
 #    SUBDIR += block
 #    SUBDIR += blue
      SUBDIR += bnetd
+     SUBDIR += burgerspace
 #    SUBDIR += bs
      SUBDIR += cgoban
      SUBDIR += connect4
