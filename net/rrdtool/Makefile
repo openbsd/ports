@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/02/09 17:30:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2004/02/15 20:59:58 sturm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -38,12 +38,12 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/config ${WRKSRC}/contrib/php4
 LIB_DEPENDS+=	tcl84::lang/tcl/8.4
 USE_GMAKE=	Yes
 CONFIGURE_ARGS+= --with-tcllib="${LOCALBASE}/lib/tcl8.4"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/tcl8.4"
+CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 .else
 CONFIGURE_ARGS+= --without-tcllib
 .endif
 
-MAKE_FLAGS=	CFLAGS="-I${LOCALBASE}/include/libpng"
+CFLAGS+=	-I${LOCALBASE}/include/libpng
 
 .if ${FLAVOR:L:Mtcl}
 post-install:
