@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 1999/07/09 23:14:38 brad Exp $
+# $OpenBSD: Makefile,v 1.20 1999/09/01 18:51:24 brad Exp $
 
-DISTNAME=	ImageMagick-4.2.7
+DISTNAME=	ImageMagick-4.2.8
 CATEGORIES=     graphics
 MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		gs:${PORTSDIR}/print/ghostscript5 \
 		picttoppm:${PORTSDIR}/graphics/netpbm
 
-LIB_DEPENDS=	bz2.0.9:${PORTSDIR}/archivers/bzip2 \
+LIB_DEPENDS=	bz2.9.5:${PORTSDIR}/archivers/bzip2 \
 		jbig.1.0:${PORTSDIR}/graphics/jbigkit \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		mpeg.1.2:${PORTSDIR}/graphics/mpeg-lib \
