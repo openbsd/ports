@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/16 13:30:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/05 22:23:51 fgsch Exp $
+
+COMMENT=	Purdue Compiler Construction Tool Set 
 
 DISTNAME=	pccts133mr22
 PKGNAME=	pccts-1.33r22
 CATEGORIES=	devel lang
-NEED_VERSION=	1.328
+NEED_VERSION=	1.406
 MASTER_SITES=	http://www.polhode.com/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+
+HOMEPAGE=	${MASTER_SITES}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
