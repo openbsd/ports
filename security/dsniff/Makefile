@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 15:43:22 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/12/18 13:16:41 dugsong Exp $
 
-DISTNAME=	dsniff-2.2
+DISTNAME=	dsniff-2.3
 
 CATEGORIES=	security
 NEED_VERSION=	1.310
