@@ -1,17 +1,12 @@
-$OpenBSD: patch-configure,v 1.4 2002/02/01 15:18:02 naddy Exp $
---- configure.orig	Tue Dec  4 08:10:10 2001
-+++ configure	Thu Jan 17 21:24:11 2002
-@@ -8240,11 +8240,11 @@ echo "$as_me: error: No unsigned 64 bit 
- fi
- 
- SAVE_CFLAGS="$CFLAGS"
--CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include -Wall -W'
-+CFLAGS='-I$(top_builddir) -I$(srcdir)/include -I $(top_srcdir)/include'
+$OpenBSD: patch-configure,v 1.5 2002/07/07 19:09:29 naddy Exp $
+--- configure.orig	Sat Jul  6 02:35:16 2002
++++ configure	Sat Jul  6 02:35:57 2002
+@@ -9995,7 +9995,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
  if test x$debug = xtrue; then
- 	CFLAGS="$CFLAGS -g -O0 -DDEBUG"
+ 	OUR_CFLAGS_TAIL="-g -O0 -DDEBUG"
  else
--	CFLAGS="$CFLAGS -O3 -DNDEBUG"
-+	CFLAGS="$CFLAGS -DNDEBUG"
+-	OUR_CFLAGS_TAIL="-O3 -DNDEBUG"
++	OUR_CFLAGS_TAIL="-DNDEBUG"
  	if test x$GCC = xyes; then
- 		CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-loops -finline-functions -Winline -DFLaC__INLINE=__inline__"
+ 		OUR_CFLAGS_TAIL="$OUR_CFLAGS_TAIL -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
  	fi

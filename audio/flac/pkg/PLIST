@@ -1,19 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/02/01 15:18:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/07 19:09:29 naddy Exp $
 bin/flac
 bin/metaflac
+include/FLAC++/all.h
+include/FLAC++/decoder.h
+include/FLAC++/encoder.h
+include/FLAC++/metadata.h
 include/FLAC/all.h
 include/FLAC/assert.h
 include/FLAC/file_decoder.h
 include/FLAC/format.h
+include/FLAC/metadata.h
 include/FLAC/ordinals.h
-include/FLAC/seek_table.h
 include/FLAC/seekable_stream_decoder.h
 include/FLAC/stream_decoder.h
 include/FLAC/stream_encoder.h
-include/FLAC/utility.h
+lib/libFLAC++.a
+lib/libFLAC++.la
 lib/libFLAC.a
 lib/libFLAC.la
 man/man1/flac.1
+share/aclocal/libFLAC++.m4
+share/aclocal/libFLAC.m4
 share/doc/flac/comparison.html
 share/doc/flac/developers.html
 share/doc/flac/documentation.html
@@ -27,7 +34,20 @@ share/doc/flac/images/cafebug.gif
 share/doc/flac/images/logo.jpg
 share/doc/flac/index.html
 share/doc/flac/news.html
+@comment share/doc/flac/ru/authors.html
+@comment share/doc/flac/ru/comparison.html
+@comment share/doc/flac/ru/developers.html
+@comment share/doc/flac/ru/documentation.html
+@comment share/doc/flac/ru/download.html
+@comment share/doc/flac/ru/features.html
+@comment share/doc/flac/ru/format.html
+@comment share/doc/flac/ru/goals.html
+@comment share/doc/flac/ru/id.html
+@comment share/doc/flac/ru/index.html
+@comment share/doc/flac/ru/links.html
+@comment share/doc/flac/ru/news.html
 %%SHARED%%
 @dirrm share/doc/flac/images
 @dirrm share/doc/flac
+@dirrm include/FLAC++
 @dirrm include/FLAC

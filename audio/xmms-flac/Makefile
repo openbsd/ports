@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/07/07 19:09:29 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"XMMS input plugin for playing FLAC files"
 
-VERSION=	1.0.2
+VERSION=	1.0.3
 PKGNAME=	xmms-flac-${VERSION}
-DISTNAME=	flac-${VERSION}-src
+DISTNAME=	flac-${VERSION}
 CATEGORIES=	audio
-NEED_VERSION=	1.504
 HOMEPAGE=	http://flac.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -18,12 +17,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flac/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=flac/}
 
-LIB_DEPENDS=	xmms.2::audio/xmms \
-		FLAC.2::audio/flac
+LIB_DEPENDS=	xmms.3::audio/xmms \
+		FLAC.3::audio/flac
 
-WRKDIST=	${WRKDIR}/flac-${VERSION}
 WRKSRC=		${WRKDIST}/src/plugin_xmms
 
 CONFIGURE_STYLE=		gnu automake
