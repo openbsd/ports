@@ -1,0 +1,28 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
+--- config.h.in.orig	Sun Jan 13 17:19:20 2002
++++ config.h.in	Sun Jan 13 17:19:22 2002
+@@ -27,6 +27,9 @@
+ /* Define if you have the getcwd function.  */
+ #undef HAVE_GETCWD
+ 
++/* Define if you have the getopt_long function.  */
++#undef HAVE_GETOPT_LONG
++
+ /* Define if you have the getpagesize function.  */
+ #undef HAVE_GETPAGESIZE
+ 
+@@ -63,8 +66,14 @@
+ /* Define if you have the <fcntl.h> header file.  */
+ #undef HAVE_FCNTL_H
+ 
++/* Define if you have the <getopt.h> header file.  */
++#undef HAVE_GETOPT_H
++
+ /* Define if you have the <limits.h> header file.  */
+ #undef HAVE_LIMITS_H
++
++/* Define if you have the <linux/sem.h> header file.  */
++#undef HAVE_LINUX_SEM_H
+ 
+ /* Define if you have the <ndir.h> header file.  */
+ #undef HAVE_NDIR_H

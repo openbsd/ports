@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_display_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
+--- src/display.c.orig	Sat Jan  5 09:46:07 2002
++++ src/display.c	Sun Jan 13 17:07:12 2002
+@@ -36,7 +36,7 @@
+ #include "var.h"
+ 
+ /* this mutex provides a lock for stdout to avoid display conflict between thread */
+-G_LOCK_DEFINE_STATIC(stdout);
++G_LOCK_DEFINE_STATIC(stdout_lock);
+ 
+ static FILE *log_fd=NULL;
+ static FILE *errlog_fd=NULL;
+@@ -121,7 +121,7 @@ void disp_msg(DISP_MSG_TYPE msg_type,con
+ 		return;
+ 
+ 	o_str=g_string_new("");
+-	G_LOCK(stdout);
++	G_LOCK(stdout_lock);
+ 
+ 	va_start(ap,fnc_name);
+ 
+@@ -248,7 +248,7 @@ void disp_msg(DISP_MSG_TYPE msg_type,con
+ 	va_end(ap);
+ 
+ 	fflush(stdout);			/* flush stdout before unlocking */
+-	G_UNLOCK(stdout);
++	G_UNLOCK(stdout_lock);
+ }
+ 
+ /***********************************/
+@@ -259,7 +259,7 @@ void disp_msg(DISP_MSG_TYPE msg_type,con
+ void change_logfile(char *filename)
+ {
+ 	/* to avoid potential access conflict, we lock the display */
+-	G_LOCK(stdout);
++	G_LOCK(stdout_lock);
+ 
+ 	/* close the previously existing FILE */
+ 	if(log_fd!=NULL)
+@@ -277,7 +277,7 @@ void change_logfile(char *filename)
+ 			disp_msg(ERR_MSG,"change_logfile",strerror(errno),NULL);
+ 		}
+ 	}
+-	G_UNLOCK(stdout);
++	G_UNLOCK(stdout_lock);
+ }
+ 
+ /***************************************/
+@@ -288,7 +288,7 @@ void change_logfile(char *filename)
+ void change_errlogfile(char *filename)
+ {
+ 	/* to avoid potential access conflict, we lock the display */
+-	G_LOCK(stdout);
++	G_LOCK(stdout_lock);
+ 
+ 	/* close the previously existing FILE */
+ 	if(errlog_fd!=NULL)
+@@ -306,6 +306,6 @@ void change_errlogfile(char *filename)
+ 			disp_msg(ERR_MSG,"change_errlogfile",strerror(errno),NULL);
+ 		}
+ 	}
+-	G_UNLOCK(stdout);
++	G_UNLOCK(stdout_lock);
+ }
+ 

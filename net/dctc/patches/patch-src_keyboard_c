@@ -1,0 +1,160 @@
+$OpenBSD: patch-src_keyboard_c,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
+--- src/keyboard.c.orig	Wed Jan 23 15:06:08 2002
++++ src/keyboard.c	Mon Jan 28 16:57:20 2002
+@@ -32,6 +32,7 @@
+ #include <sys/socket.h>
+ #include <sys/param.h>
+ #include <sys/sem.h>
++#include <netinet/in.h>
+ #include <netdb.h>
+ #include <glib.h>
+ 
+@@ -222,7 +223,7 @@ static void keyb_do_download(const char 
+ 			{	/* we have a full access, the remote side will be able to contact us */
+ 				char tmp[512];
+ 	
+-				sprintf(tmp,"%s:%hu",host_ip,com_port);
++				snprintf(tmp, sizeof(tmp), "%s:%hu",host_ip,com_port);
+ 				send_dc_line(sck,"$ConnectToMe",nick,tmp,NULL);
+ 				disp_msg(DEBUG_MSG,"","/DL in $ConnectToMe",NULL);
+ 			}
+@@ -310,7 +311,7 @@ static void keyb_do_xdownload(const char
+ 		{	/* we have a full access, the remote side will be able to contact us */
+ 			char tmp[512];
+ 
+-			sprintf(tmp,"%s:%hu",host_ip,com_port);
++			snprintf(tmp, sizeof(tmp), "%s:%hu",host_ip,com_port);
+ 			send_dc_line(sck,"$ConnectToMe",fields[2],tmp,NULL);
+ 			disp_msg(DEBUG_MSG,"","/XDL in $ConnectToMe",NULL);
+ 		}
+@@ -903,7 +904,7 @@ static void keyb_do_xfer(const char *cmd
+ 			if(nw==NULL)
+ 				continue;
+ 
+-			sprintf(tmp,"%lu",(unsigned long)(nw->thread_id));
++			snprintf(tmp,sizeof(tmp),"%lu",(unsigned long)(nw->thread_id));
+ 			if(nw->remote_nick==NULL)
+ 			{
+ 				disp_msg(XFER_LST_R,NULL,tmp,"",NULL);
+@@ -941,7 +942,7 @@ static void keyb_do_xfer(const char *cmd
+ 
+ 		nw=&(g_array_index(sim_input,SIM_INPUT,i));
+ 
+-		sprintf(tmp,"%lu|%lu",nw->id,nw->min_start_time);
++		snprintf(tmp,sizeof(tmp),"%lu|%lu",nw->id,nw->min_start_time);
+ 		disp_msg(CMD_KB,NULL,tmp,nw->keyb_string->str,NULL);
+ 	}
+ 
+@@ -1246,7 +1247,7 @@ static void keyb_do_kill(const char *cmd
+ 	}
+ 
+ 	/* modify our nick name locally */
+-	id=strtoul(t,NULL,10);
++	id=(pthread_t)strtoul(t,NULL,10);
+ 
+ 	/* to shutdown a thread, it is very easy, we just close the socket it uses */
+ 	/* thus, it will abort himself, freeing all ressources it allocates */
+@@ -1628,7 +1629,7 @@ static void keyb_do_ls(const char *cmd, 
+ 		{	/* we have a full access, the remote side will be able to contact us */
+ 			char tmp[512];
+ 
+-			sprintf(tmp,"%s:%hu",host_ip,com_port);
++			snprintf(tmp, sizeof(tmp), "%s:%hu",host_ip,com_port);
+ 			send_dc_line(sck,"$ConnectToMe",nick,tmp,NULL);
+ 			disp_msg(INFO_MSG,"","/LS in $ConnectToMe",NULL);
+ 		}
+@@ -2065,25 +2066,25 @@ static void keyb_do_vars(const char *cmd
+ 	disp_msg(VAR_MSG,NULL,"cnx_type",cnx_type,NULL);
+ 	disp_msg(VAR_MSG,NULL,"email",email,NULL);
+ 
+-	sprintf(buf,"%lf",offset_sizeof_data);
++	snprintf(buf,sizeof(buf),"%lf",offset_sizeof_data);
+ 	disp_msg(VAR_MSG,NULL,"offset",buf,NULL);
+ 
+-	sprintf(buf,"%u",recon_delay);
++	snprintf(buf,sizeof(buf),"%u",recon_delay);
+ 	disp_msg(VAR_MSG,NULL,"recon_delay",buf,NULL);
+ 
+-	sprintf(buf,"%d",ttl_dl_slot);
++	snprintf(buf,sizeof(buf),"%d",ttl_dl_slot);
+ 	disp_msg(VAR_MSG,NULL,"dl_slot",buf,NULL);
+ 
+-	sprintf(buf,"%d",dl_on);
++	snprintf(buf,sizeof(buf),"%d",dl_on);
+ 	disp_msg(VAR_MSG,NULL,"dl_on",buf,NULL);
+ 
+-	sprintf(buf,"%u",auto_rebuild_delay);
++	snprintf(buf,sizeof(buf),"%u",auto_rebuild_delay);
+ 	disp_msg(VAR_MSG,NULL,"auto_rebuild_delay",buf,NULL);
+ 
+-	sprintf(buf,"%d",behind_fw);
++	snprintf(buf,sizeof(buf),"%d",behind_fw);
+ 	disp_msg(VAR_MSG,NULL,"behind_fw",buf,NULL);
+ 
+-	sprintf(buf,"%u",com_port);
++	snprintf(buf,sizeof(buf),"%u",com_port);
+ 	disp_msg(VAR_MSG,NULL,"com_port",buf,NULL);
+ 
+ 	disp_msg(VAR_MSG,NULL,"hostip",host_ip,NULL);
+@@ -2099,7 +2100,7 @@ static void keyb_do_vars(const char *cmd
+ 	/* else, we are connected */
+ 	if(main_sck>-1)
+ 	{
+-		sprintf(buf,"%d",main_sck);
++		snprintf(buf,sizeof(buf),"%d",main_sck);
+ 		disp_msg(VAR_MSG,NULL,"main_sck",buf,NULL);
+ 	}
+ 	else
+@@ -2108,12 +2109,12 @@ static void keyb_do_vars(const char *cmd
+ 
+ 		if(find_sim_input_delay("/RECON",&s_time))
+ 		{
+-			sprintf(buf,"=>%ld",s_time);
++			snprintf(buf,sizeof(buf),"=>%ld",s_time);
+ 			disp_msg(VAR_MSG,NULL,"main_sck",buf,NULL);
+ 		}
+ 		else
+ 		{
+-			sprintf(buf,"%d",main_sck);
++			snprintf(buf,sizeof(buf),"%d",main_sck);
+ 			disp_msg(VAR_MSG,NULL,"main_sck",buf,NULL);
+ 		}
+ 	}
+@@ -2126,29 +2127,29 @@ static void keyb_do_vars(const char *cmd
+ 		g_string_free(shared_dir,TRUE);
+ 	}
+ 
+-	sprintf(buf,"%d",when_done);
++	snprintf(buf,sizeof(buf),"%d",when_done);
+ 	disp_msg(VAR_MSG,NULL,"when_done",buf,NULL);
+ 
+-	sprintf(buf,"%d",((int)cnx_opt)&255);
++	snprintf(buf,sizeof(buf),"%d",((int)cnx_opt)&255);
+ 	disp_msg(VAR_MSG,NULL,"cnx_opt",buf,NULL);
+ 	UNLOCK_READ(user_info);
+ 
+-	sprintf(buf,"%d",semctl(bl_semid,2,GETVAL));
++	snprintf(buf,sizeof(buf),"%d",semctl(bl_semid,2,GETVAL));
+ 	disp_msg(VAR_MSG,NULL,"ubl",buf,NULL);
+ 
+-	sprintf(buf,"%u",wanna_emode);
++	snprintf(buf,sizeof(buf),"%u",wanna_emode);
+ 	disp_msg(VAR_MSG,NULL,"wanted_emode",buf,NULL);
+ 
+-	sprintf(buf,"%u",having_emode);
++	snprintf(buf,sizeof(buf),"%u",having_emode);
+ 	disp_msg(VAR_MSG,NULL,"current_emode",buf,NULL);
+ 
+-	sprintf(buf,"%d",follow_force_move);
++	snprintf(buf,sizeof(buf),"%d",follow_force_move);
+ 	disp_msg(VAR_MSG,NULL,"follow_force_move",buf,NULL);
+ 
+-	sprintf(buf,"%d",with_md5sum);
++	snprintf(buf,sizeof(buf),"%d",with_md5sum);
+ 	disp_msg(VAR_MSG,NULL,"with_md5sum",buf,NULL);
+ 
+-	sprintf(buf,"%d",with_ddl);
++	snprintf(buf,sizeof(buf),"%d",with_ddl);
+ 	disp_msg(VAR_MSG,NULL,"with_ddl",buf,NULL);
+ 
+ 	display_cnx_status();

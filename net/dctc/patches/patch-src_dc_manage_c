@@ -1,0 +1,151 @@
+$OpenBSD: patch-src_dc_manage_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
+--- src/dc_manage.c.orig	Fri Jan 25 17:39:48 2002
++++ src/dc_manage.c	Mon Jan 28 18:26:10 2002
+@@ -69,6 +69,16 @@ typedef enum
+ 	MY_DIR_UPLOAD=1,				/* what we should do on the connection: Upload */
+ } MY_DIR;
+ 
++
++/* compability macros for reading/writing to sockets */
++#ifdef __OpenBSD__
++# define sock_read(sck, buf, size, flags) read(sck, buf, size)
++# define sock_write(sck, buf, size, flags) write(sck, buf, size)
++#else
++# define sock_read(sck, buf, size, flags) recv(sck, buf, size, flags)
++# define sock_write(sck, buf, size, flags) send(sck, buf, size, flags)
++#endif
++
+ int hub_logged=0;	/* set to 1 when dctc is logged on the hub */
+ 
+ /********************************************************/
+@@ -294,13 +304,13 @@ static int send_file_data(int sck,char *
+ 		act->last_touch=time(NULL);
+ 
+ 		get_slices(bl_semid,sizeof(buf)/512);							/* obtain upload authorization */
+-		res=send(sck,buf,sizeof(buf),MSG_NOSIGNAL /* |MSG_WAITALL */ );
++                res=sock_write(sck,buf,sizeof(buf),MSG_NOSIGNAL /* |MSG_WAITALL */ );
+ 
+ 		act->last_touch=time(NULL);
+ 		if(res!=sizeof(buf))
+ 			goto abrt;
+ 
+-		sprintf(ul_stat,"%lu:%d/%lu/%lu/%lu",act->thread_id,start_pos,file_len,(i+1)*sizeof(buf),a);
++		snprintf(ul_stat, sizeof(ul_stat), "%lu:%d/%lu/%lu/%lu",act->thread_id,start_pos,file_len,(i+1)*sizeof(buf),a);
+ 		disp_msg(XFER_UL_STAT,NULL,ul_stat,NULL);
+ 	}
+ 
+@@ -317,7 +327,7 @@ static int send_file_data(int sck,char *
+ 		act->last_touch=time(NULL);
+ 
+ 		get_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
+-		res=send(sck,buf,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
++		res=sock_write(sck,buf,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
+ 
+ 		act->last_touch=time(NULL);
+ 		if(res!=remain)
+@@ -351,7 +361,7 @@ static int send_array_data(int sck,GByte
+ 		act->last_touch=time(NULL);
+ 
+ 		get_slices(bl_semid,BLOCK_SIZE/512);							/* obtain upload authorization */
+-		res=send(sck,ba->data+cur_pos,BLOCK_SIZE,MSG_NOSIGNAL /* |MSG_WAITALL */ );
++		res=sock_write(sck,ba->data+cur_pos,BLOCK_SIZE,MSG_NOSIGNAL /* |MSG_WAITALL */ );
+ 
+ 		act->last_touch=time(NULL);
+ 		if(res!=BLOCK_SIZE)
+@@ -369,7 +379,7 @@ static int send_array_data(int sck,GByte
+ 		act->last_touch=time(NULL);
+ 
+ 		get_slices(bl_semid,(remain+511)/512);							/* obtain upload authorization */
+-		res=send(sck,ba->data+cur_pos,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
++		res=sock_write(sck,ba->data+cur_pos,remain,MSG_NOSIGNAL /* |MSG_WAITALL */ );
+ 
+ 		act->last_touch=time(NULL);
+ 		if(res!=remain)
+@@ -454,17 +464,18 @@ static int com_up_get_list_len_process(c
+ 
+ 	disp_msg(DEBUG_MSG,"reply",out->str,NULL);
+ 
+-	res=send(sck,out->str,out->len,MSG_NOSIGNAL);
++	res=sock_write(sck,out->str,out->len,MSG_NOSIGNAL);
+ 	res=(res!=out->len);
+ 	g_string_free(out,TRUE);
+-	if(res)
++
++	if(res || !strcmp(cmd,"$GetListLen"))
+ 	{
+ 		if(cpy_data!=NULL)
+ 			g_byte_array_free(cpy_data,TRUE);
+ 		LOCK_WRITE(user_info);
+ 		free_dl_slot++;
+ 		UNLOCK_WRITE(user_info);
+-		return 1;
++		return strcmp(cmd,"$GetListLen");
+ 	}
+ 
+ 	/* get command */
+@@ -480,7 +491,9 @@ static int com_up_get_list_len_process(c
+ 				g_string_sprintfa(out,"%lu|",(unsigned long)100000+rand()%500000);
+ 			else
+ 				g_string_sprintfa(out,"%lu|",(unsigned long)cpy_data->len);
+-			res=send(sck,out->str,out->len,MSG_NOSIGNAL);
++
++			res=sock_write(sck,out->str,out->len,MSG_NOSIGNAL);
++
+ 			res=(res!=out->len);
+ 			g_string_free(out,TRUE);
+ 			if(res)
+@@ -685,7 +698,7 @@ static int com_up_get_process(const char
+ 	disp_msg(XFER_UL_START,"",act->remote_nick->str,fullpathname,NULL);
+ 	{
+ 		char tmp[510];
+-		sprintf(tmp,"%lu",(unsigned long)(act->thread_id));
++		snprintf(tmp, sizeof(tmp), "%lu",(unsigned long)(act->thread_id));
+ 		disp_msg(XFER_UL_RUN,NULL,tmp,act->remote_nick->str,act->disp_info->str,NULL);
+ 	}
+ 	
+@@ -885,8 +898,9 @@ static int copie_fd_to_file(int remote, 
+ 
+ 		/* touch the action slot to avoid timeout */
+ 		act->last_touch=time(NULL);
+-		ret=recv(remote,buf,nb,MSG_WAITALL|MSG_NOSIGNAL);
+-		
++
++		ret=sock_read(remote,buf,nb,MSG_WAITALL|MSG_NOSIGNAL);
++
+ 		if((ret==-1)||(ret==0))
+ 		{	/* error or nothing received */
+ 			disp_msg(ERR_MSG,"copie_fd_to_file","connection closed (1)",NULL);
+@@ -1298,7 +1312,8 @@ static int start_a_xdownload(WAIT_ACT *a
+ 				break;
+ 
+ 			act->last_touch=time(NULL);
+-			ret=recv(act->sock_fd,buf,amount,MSG_WAITALL|MSG_NOSIGNAL);
++			ret=sock_read(act->sock_fd,buf,amount,MSG_WAITALL|MSG_NOSIGNAL);
++
+ 			if((ret==-1)||(ret==0))
+ 			{	/* error or nothing received */
+ 				goto end_on_error;
+@@ -1388,12 +1403,9 @@ static int copie_fd_to_bytearray(int rem
+ 
+ 		/* touch the action slot to avoid timeout */
+ 		act->last_touch=time(NULL);
+-#if 0
+-		ret=recv(remote,(*ba)->data+pos,nb,MSG_WAITALL|MSG_NOSIGNAL);
+-#else
+-		ret=recv(remote,(*ba)->data+pos,nb,MSG_NOSIGNAL);
++		ret=sock_read(remote,(*ba)->data+pos,nb,MSG_NOSIGNAL /*MSG_NOSIGNAL*/);
++
+ 		printf("%d (nb:%lu, amount: %lu)\n",ret,nb,amount);
+-#endif
+ 		
+ 		if((ret==-1)||(ret==0))
+ 		{	/* error or nothing received */
+@@ -3109,7 +3121,7 @@ void get_dc_line_and_process(int sck)
+ 	static int call_counter=0;
+ 	char tmp[512];
+ 
+-	sprintf(tmp,"call counter: %d",call_counter++);
++	snprintf(tmp, sizeof(tmp), "call counter: %d",call_counter++);
+ 
+ 	disp_msg(DEBUG_MSG,"get_dc_lines_until_no_more",tmp,NULL);
+ 

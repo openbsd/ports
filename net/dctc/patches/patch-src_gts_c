@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gts_c,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
+--- src/gts.c.orig	Mon Jan 28 16:52:25 2002
++++ src/gts.c	Mon Jan 28 16:52:42 2002
+@@ -431,7 +431,7 @@ void list_gts_content(void)
+ 		if(mapped_gts[i].slot_status==0)		/* empty slot */
+ 			continue;
+ 
+-		sprintf(tmp,"%lu|%lu",mapped_gts[i].id,mapped_gts[i].next_try);
++		snprintf(tmp, sizeof(tmp), "%lu|%lu",mapped_gts[i].id,mapped_gts[i].next_try);
+ 		disp_msg(CMD_KB,NULL,tmp,mapped_gts[i].cmd,NULL);
+ 	}
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_md_c,v 1.1.1.1 2002/01/31 12:21:54 naddy Exp $
+--- src/md.c.orig	Mon Jan 28 17:00:06 2002
++++ src/md.c	Mon Jan 28 17:00:51 2002
+@@ -222,7 +222,7 @@ void md5tostr(const unsigned char md5sum
+ 	for(i=0;i<MD5SUMLEN;i++)
+ 	{
+ 		unsigned int v=md5sum[i];
+-		sprintf(str+3*i,"%1u%1u%1u",v/100,(v%100)/10,v%10);
++		snprintf(str+3*i,sizeof(str),"%1u%1u%1u",v/100,(v%100)/10,v%10);
+ 	}
+ }
+ 

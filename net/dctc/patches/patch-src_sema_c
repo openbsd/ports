@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sema_c,v 1.1.1.1 2002/01/31 12:21:53 naddy Exp $
+--- src/sema.c.orig	Sat Jan 12 18:05:46 2002
++++ src/sema.c	Sun Jan 13 16:45:12 2002
+@@ -36,7 +36,7 @@
+ 
+ #include "sema.h"
+ 
+-#if !(defined(BSD) && (BSD >= 199103))
++#if !(defined(BSD) && (BSD >= 199103)) && !defined(__OpenBSD__)
+        #if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
+        /* union semun is defined by including <sys/sem.h> */
+        #else
