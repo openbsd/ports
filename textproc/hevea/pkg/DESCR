@@ -1,0 +1,23 @@
+Hevea is yet another latex to html translator, written in Ocaml.
+It is more sturdy and yields generally better results than latex2html.
+
+Optionally, Hevea may be instructed not to process part of the input,
+but to use the imagen script to create a .gif image and link to that file.
+
+The imagen script needs LaTeX, dvips, ghostscript and tools from netpbm.
+
+Thus, Hevea does not require tetex, ghostscript, nor netpbm, but its
+full functionality can only be achieved if you install those packages.
+
+By default, hevea creates documents using the <FONT FACE=symbol> facility
+of html, which may require special configuration of your browser.
+For Netscape, add 
+
+! Repair symbol font for hevea
+Netscape*documentFonts.charset*adobe-fontspecific: iso-8859-1
+
+to your .Xresource
+
+Alternately, you may use hevea -nosymb to turn that off.
+
+See section C.2 of the documentation for more details.
