@@ -1,6 +1,6 @@
-$OpenBSD: patch-xfstt_cpp,v 1.3 2002/09/30 14:47:24 naddy Exp $
---- xfstt.cpp.orig	Sat Dec 11 19:23:45 1999
-+++ xfstt.cpp	Mon Sep 30 16:44:57 2002
+$OpenBSD: patch-xfstt_cpp,v 1.4 2003/03/03 06:54:11 ish Exp $
+--- xfstt.cpp.orig	Sat Dec 11 12:23:45 1999
++++ xfstt.cpp	Mon Nov 25 16:32:38 2002
 @@ -11,8 +11,8 @@
  #define UNSTRAPLIMIT	10500U
  
@@ -27,3 +27,21 @@ $OpenBSD: patch-xfstt_cpp,v 1.3 2002/09/30 14:47:24 naddy Exp $
  		xfs->fid = 0;	//###
  		xfs = 0;
  	}
+@@ -642,7 +644,7 @@ static int prepare2connect( int portno)
+ 		s_unix.sa_family = PF_UNIX;
+ 		sprintf( s_unix.sa_data, "fs%d", portno);
+ 		sockname =  s_unix.sa_data;
+-		mkdir( "/tmp/.font-unix", 0766);
++		mkdir( "/tmp/.font-unix", 0755);
+ 		chdir( "/tmp/.font-unix");
+ 		unlink( s_unix.sa_data);
+ 		if( bind( sd_unix, (struct sockaddr*)&s_unix, sizeof(s_unix))) {
+@@ -650,6 +652,8 @@ static int prepare2connect( int portno)
+ 			fputs( "Please check permissions.\n", stderr);
+ 		}
+ 		listen( sd_unix, 1);	// only one connection
++		if (chmod(s_unix.sa_data, 0777) == -1)
++			fprintf( stderr, "Couldn't set mode on /tmp/.font-unix/%s\n", s_unix.sa_data);
+ 	}
+ 
+ 	if( !sd_inet) {

@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: INSTALL,v 1.6 2002/07/22 17:09:16 ish Exp $
+# $OpenBSD: INSTALL,v 1.7 2003/03/03 06:54:11 ish Exp $
 #
 # Pre/port-installation setup of xfstt
 
@@ -19,7 +19,7 @@ To start the TrueType font server for X11 at boot time, put
 the following in /etc/rc.local:
 
 if [ -x /usr/local/bin/xfstt ]; then
-        echo -n ' xfstt';       /usr/local/bin/xfstt &
+        echo -n ' xfstt';       /usr/local/bin/xfstt --user nobody --daemon
 fi
 
 You should also add the following to your FontPath in /etc/X11/XF86Config:
