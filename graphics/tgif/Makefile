@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 05:05:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/24 16:27:16 jakob Exp $
 
 COMMENT=	"two-dimensional drawing tool and hyper-object browser"
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE=	imake
 TGIFDOC=	${PREFIX}/share/doc/tgif
 DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
 		fonts.obj launch-demo.obj keys.obj slide-demo.obj example.tex
-READMES=	Copyright HISTORY README
+READMES=	Copyright License HISTORY README
 
 post-extract:
 	@rm -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
