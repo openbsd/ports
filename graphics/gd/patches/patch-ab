@@ -1,0 +1,12 @@
+--- gdcache.h.orig	Fri Nov 26 11:10:54 1999
++++ gdcache.h	Fri Nov 26 11:11:36 1999
+@@ -40,7 +40,9 @@
+ /* header                                                */
+ /*********************************************************/
+ 
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <malloc.h>
++#endif
+ #ifndef NULL
+ #define NULL (void *)0
+ #endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/26 15:47:53 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/11/26 16:50:03 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.7.3
@@ -23,3 +23,7 @@ post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if defined(NO_SHARED_LIBS)
+MAKE_ENV= NO_SHARED_LIBS=yes
+.endif
