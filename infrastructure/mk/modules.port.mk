@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.2 2004/08/02 21:59:53 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.3 2004/10/18 15:17:17 robert Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -45,7 +45,7 @@ _MODULES_DONE_ON_THIS_ROUND=Yep
 _MODULES_DONE+=${_m}
 _MODULES_DONE_ON_THIS_ROUND=Yep
 .    else
-ERRORS+="Missing support for module ${_m}."
+ERRORS+="Fatal: Missing support for module ${_m}."
 .    endif
 .  endif
 .endfor
