@@ -11,10 +11,14 @@
 			bin
 			..
 			include
+				X11
+				..
 			..
 			info
 			..
 			lib
+				X11
+				..
 			..
 			libdata
 			..
