@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/26 00:36:21 naddy Exp $
+bin/pdbdump
+${P5SITE}/Palm/Address.pm
+${P5SITE}/Palm/Datebook.pm
+${P5SITE}/Palm/Mail.pm
+${P5SITE}/Palm/Memo.pm
+${P5SITE}/Palm/PDB.pm
+${P5SITE}/Palm/Raw.pm
+${P5SITE}/Palm/StdAppInfo.pm
+${P5SITE}/Palm/ToDo.pm
+man/man1/pdbdump.1
+man/man3p/Palm::Address.3p
+man/man3p/Palm::Datebook.3p
+man/man3p/Palm::Mail.3p
+man/man3p/Palm::Memo.3p
+man/man3p/Palm::PDB.3p
+man/man3p/Palm::Raw.3p
+man/man3p/Palm::StdAppInfo.3p
+man/man3p/Palm::ToDo.3p
+@dirrm ${P5ARCH}/auto/Palm
+@dirrm ${P5SITE}/Palm
