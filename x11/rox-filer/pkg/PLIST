@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/28 02:41:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/07/17 11:31:13 couderc Exp $
 bin/rox
 man/man1/ROX-Filer.1
 man/man1/rox.1
+rox/ROX-Filer/.DirIcon
 rox/ROX-Filer/Action.png
-rox/ROX-Filer/AppIcon.xpm
 rox/ROX-Filer/AppInfo.xml
 rox/ROX-Filer/AppRun
 rox/ROX-Filer/AppRun.orig
@@ -15,6 +15,7 @@ rox/ROX-Filer/Help/README
 rox/ROX-Filer/Help/README-es
 rox/ROX-Filer/Help/TODO
 rox/ROX-Filer/Messages/README
+rox/ROX-Filer/Messages/da.gmo
 rox/ROX-Filer/Messages/de.gmo
 rox/ROX-Filer/Messages/fr.gmo
 rox/ROX-Filer/Messages/hu.gmo
@@ -23,6 +24,8 @@ rox/ROX-Filer/Messages/nl.gmo
 rox/ROX-Filer/Messages/pl.gmo
 rox/ROX-Filer/Messages/ru.gmo
 rox/ROX-Filer/Messages/sp.gmo
+rox/ROX-Filer/Messages/zh_CN.gmo
+rox/ROX-Filer/Messages/zh_TW.gmo
 rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/ROX-Filer
 rox/ROX-Filer/Options.xml
 rox/ROX-Filer/Styles
@@ -116,6 +119,7 @@ rox/ROX-Filer/src/pinboard.c
 rox/ROX-Filer/src/pinboard.h
 rox/ROX-Filer/src/pixmaps.c
 rox/ROX-Filer/src/pixmaps.h
+rox/ROX-Filer/src/po/da.po
 rox/ROX-Filer/src/po/de.po
 rox/ROX-Filer/src/po/dist
 rox/ROX-Filer/src/po/fr.po
@@ -128,6 +132,8 @@ rox/ROX-Filer/src/po/ru.po
 rox/ROX-Filer/src/po/sp.po
 rox/ROX-Filer/src/po/tips.py
 rox/ROX-Filer/src/po/update-po
+rox/ROX-Filer/src/po/zh_CN.po
+rox/ROX-Filer/src/po/zh_TW.po
 rox/ROX-Filer/src/remote.c
 rox/ROX-Filer/src/remote.h
 rox/ROX-Filer/src/rox_gettext.c
