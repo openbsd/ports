@@ -1,0 +1,42 @@
+*** src/delegate.c.orig	Mon Apr 27 21:58:51 1998
+--- src/delegate.c	Mon Apr 27 22:07:41 1998
+***************
+*** 204,210 ****
+  subcontract (struct file_job * file, 
+  	     struct delegation * contractor)
+  {
+!   char * command, stdin_content_filename = NULL;
+    FILE * in_stream, * out_stream;
+    int lines_read = 0;
+    char buf[512];
+--- 204,210 ----
+  subcontract (struct file_job * file, 
+  	     struct delegation * contractor)
+  {
+!   char * command, * stdin_content_filename[40];
+    FILE * in_stream, * out_stream;
+    int lines_read = 0;
+    char buf[512];
+***************
+*** 219,227 ****
+    if (file->name == job->stdin_filename) /* not strcmp */
+      {
+        FILE * stdin_content;
+  
+!       stdin_content_filename = tmpnam (NULL);
+!       stdin_content = xwfopen (stdin_content_filename);
+        streams_copy (stdin, stdin_content);
+        fclose (stdin_content);
+  
+--- 219,229 ----
+    if (file->name == job->stdin_filename) /* not strcmp */
+      {
+        FILE * stdin_content;
++       int stdfd;
+  
+!       sprintf(stdin_content_filename, "%s/a2p.XXXXXXXXXX", P_tmpdir);
+!       stdfd = mkstemp(stdin_content_filename);
+!       stdin_content = (FILE *) xwfdopen (stdfd);
+        streams_copy (stdin, stdin_content);
+        fclose (stdin_content);
+  

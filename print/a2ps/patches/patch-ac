@@ -1,0 +1,27 @@
+*** src/main.c.orig	Mon Apr 27 22:08:06 1998
+--- src/main.c	Mon Apr 27 22:09:09 1998
+***************
+*** 426,436 ****
+  {
+  #define PREFIX "% "
+    FILE * tmp_file;
+!   char * tmp_filename;
+    char buf [BUFSIZ];
+  
+!   tmp_filename = tmpnam (NULL);
+!   tmp_file = fopen (tmp_filename, "w");
+    if (!tmp_file)
+      error (1, errno, _("cannot open file `%s'"), tmp_filename);
+  
+--- 426,436 ----
+  {
+  #define PREFIX "% "
+    FILE * tmp_file;
+!   char tmp_filename[40];
+    char buf [BUFSIZ];
+  
+!   sprintf(tmp_filename, "%s/ap2.XXXXXXXXXX", P_tmpdir);
+!   tmp_file = fdopen (mkstemp(tmp_filename), "w");
+    if (!tmp_file)
+      error (1, errno, _("cannot open file `%s'"), tmp_filename);
+  

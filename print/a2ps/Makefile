@@ -3,7 +3,7 @@
 # Date created:         31 January 1998
 # Whom:                 Tobias Weingartner (weingart@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/31 21:54:44 weingart Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/28 02:17:11 angelos Exp $
 #
 
 PKGNAME=	a2ps-4.9.9
@@ -54,7 +54,9 @@ pre-configure:
 	@echo "using setenv, or via Makefile targets of the same name.  Note"
 	@echo "that each PAPERSIZE has a leading capital letter, and Letterdj"
 	@echo "allows a slightly larger margins for DeskJets."
-	@false
+	@echo
+	@echo "Defaulting to PAPERSIZE=Letter."
+	@echo Letter > $(WRKDIR)/.media
 .elif $(PAPERSIZE)!=A4 && $(PAPERSIZE)!=Letter && $(PAPERSIZE)!=Letterdj
 	@echo
 	@echo "PAPERSIZE incorrect value: $(PAPERSIZE)."

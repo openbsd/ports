@@ -1,0 +1,38 @@
+*** lib/routines.c.orig	Mon Apr 27 22:02:26 1998
+--- lib/routines.c	Mon Apr 27 22:04:49 1998
+***************
+*** 177,182 ****
+--- 177,194 ----
+  }
+  
+  inline FILE *
++ xfdopen (const int fd, const char * rights, const char * format)
++ {
++   FILE * res;
++ 
++   message (msg_file3, "Opening fd `%d' for `%s'\n", fd, rights);
++   res = fdopen (fd, rights);
++   if (!res)
++     error (1, errno, format, fd);
++   return res;
++ }
++ 
++ inline FILE *
+  xrfopen (const char * filename)
+  {
+    return xfopen (filename, "r", _("cannot open file `%s'"));
+***************
+*** 186,191 ****
+--- 198,209 ----
+  xwfopen (const char * filename)
+  {
+    return xfopen (filename, "w", _("cannot create file `%s'"));
++ }
++ 
++ inline FILE *
++ xwfdopen (const int fd)
++ {
++   return xfdopen (fd, "w", _("cannot open filedescription %d"));
+  }
+  
+  /*
