@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/02 20:44:50 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/24 02:55:16 jolan Exp $
 
 COMMENT=	"IO:: style interface to Compress::Zlib"
 
@@ -9,6 +9,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=IO/}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

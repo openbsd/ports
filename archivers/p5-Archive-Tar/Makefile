@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/11 21:00:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/24 02:55:16 jolan Exp $
 
 COMMENT=	"perl interface to tar archives"
 VERSION=	0.22
@@ -10,6 +10,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Archive/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
