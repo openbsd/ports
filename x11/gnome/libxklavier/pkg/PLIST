@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/22 03:27:12 marcm Exp $
+include/libxklavier/xklavier.h
+include/libxklavier/xklavier_config.h
+lib/libxklavier.a
+lib/libxklavier.la
+lib/pkgconfig/libxklavier.pc
+share/libxklavier/xfree86.xml
+%%SHARED%%
+@dirrm share/libxklavier
+@dirrm include/libxklavier
