@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2004/05/04 20:05:56 david Exp $
+# $OpenBSD: Makefile,v 1.137 2004/05/07 20:28:01 sturm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -46,6 +46,7 @@
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
      SUBDIR += libgcrypt
+     SUBDIR += libgpg-error
      SUBDIR += libident
      SUBDIR += libmcrypt
      SUBDIR += libtasn1
