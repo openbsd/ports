@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/07/17 22:46:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2001/08/01 20:46:14 naddy Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -31,6 +31,7 @@ SUBDIR += converters
 SUBDIR += databases
 SUBDIR += devel
 SUBDIR += editors
+SUBDIR += education
 SUBDIR += emulators
 SUBDIR += games
 #SUBDIR += german
