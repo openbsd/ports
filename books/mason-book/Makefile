@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/03 15:40:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/01 20:07:41 sturm Exp $
 
 COMMENT=	"book on embedding Perl in HTML with Mason"
 CATEGORIES=	books 
@@ -28,6 +28,7 @@ PERMIT_PACKAGE_FTP=	Yes
 WRKDIST=	${WRKDIR}
 INSTALL_LOC=	${PREFIX}/share/doc/mason-book
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 # pod files order important for TOC generation
 BOOK_POD=	foreword preface ch1 ch2 ch3 ch4 ch5 ch6 ch7 \

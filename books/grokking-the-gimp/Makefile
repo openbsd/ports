@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/17 18:00:51 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/01 20:07:41 sturm Exp $
 
 COMMENT='book about gimp'
 CATEGORIES=books graphics
@@ -19,6 +19,7 @@ DOC=share/doc/grokking-the-gimp/
 SUBST_VARS=DOC
 
 NO_BUILD=Yes
+PKG_ARCH=*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DOC}

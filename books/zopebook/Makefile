@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/30 08:39:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/01 20:07:41 sturm Exp $
 
 COMMENT=        "Zope documentation"
 
@@ -22,6 +22,7 @@ EXTRACT_ONLY=
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/zopebook
 

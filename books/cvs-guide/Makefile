@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/03 15:40:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/01 20:07:41 sturm Exp $
 
 COMMENT=	"the definitive guide to CVS"
 
@@ -21,6 +21,7 @@ WRKDIST=	${WRKDIR}/cvsbook-${V}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/cvs-guide
 HTML_DOCS=	amazon-boycott.html cvsbook.html anoncvs.html \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/03 15:41:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/01 20:07:41 sturm Exp $
 
 COMMENT=	"the definite guide to DocBook"
 
@@ -22,6 +22,7 @@ WRKDIST=	${WRKDIR}/tdg/en
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 INSTALL_LOC=	${PREFIX}/share/doc/docbook-guide
 
