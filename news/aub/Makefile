@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/09 17:37:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/24 06:19:08 kevlo Exp $
 
 DISTNAME=	aub
 PKGNAME=	aub-2.0.5
 CATEGORIES=	news
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.digital.com/pub/plan/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.perl.org/pub/CPAN/scripts/news/nntpstuff/aub/
@@ -20,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 
-MAN1=		aub.1
-
+FAKE=		Yes
 WRKDIST=	${WRKDIR}
 
 do-extract:

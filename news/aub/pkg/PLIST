@@ -1,3 +1,4 @@
 bin/aub
 man/man1/aub.1
 share/doc/aub/BUG_FIXES
+@dirrm share/doc/aub
