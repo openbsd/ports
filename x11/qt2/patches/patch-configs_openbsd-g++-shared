@@ -12,7 +12,7 @@
 +SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include -I/usr/local/include
  SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
 -SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
-+SYSCONF_CXXFLAGS_OPENGL	= -I/usr/local/include
++SYSCONF_CXXFLAGS_OPENGL	= -I/usr/local/include -I/usr/X11R6/include
  
  # Compiling YACC output
  SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
