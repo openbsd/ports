@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: tetex_setup.sh,v 1.1 2003/04/04 21:22:15 sturm Exp $
+# $OpenBSD: tetex_setup.sh,v 1.2 2004/05/17 05:32:39 sturm Exp $
 #
 # This file is NOT part of teTeX itself, but only of the OpenBSD port of
 # teTeX. For questions please contact the port's MAINTAINER.
@@ -15,11 +15,17 @@ if [ "X${MODE}" != "X" ]; then
 	$TEXCONFIG dvips mode $MODE
 fi
 
-if [ "X${PAPERSIZE}" != "X" ]; then
-	$TEXCONFIG xdvi $PAPERSIZE
-	$TEXCONFIG dvips paper $PAPERSIZE
-	$TEXCONFIG dvipdfm paper $PAPERSIZE
-	$TEXCONFIG pdftex paper $PAPERSIZE
+if [ "X${PS_DVIPDFM}" != "X" ]; then
+	$TEXCONFIG dvipdfm paper $PS_DVIPDFM
+fi
+if [ "X${PS_DVIPS}" != "X" ]; then
+	$TEXCONFIG dvips paper $PS_DVIPS
+fi
+if [ "X${PS_PDFTEX}" != "X" ]; then
+	$TEXCONFIG pdftex paper $PS_PDFTEX
+fi
+if [ "X${PS_XDVI}" != "X" ]; then
+	$TEXCONFIG xdvi $PS_XDVI
 fi
 
 if [ "X${DVIPS_PRINTCMD}" != "X" ]; then
