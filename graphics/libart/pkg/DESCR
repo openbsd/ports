@@ -1,0 +1,12 @@
+Libart is a library for high-performance 2D graphics.
+
+Libart supports a very powerful imaging model, basically the same as SVG
+and the Java 2D API. It includes all PostScript imaging operations, and
+adds antialiasing and alpha-transparency.
+
+Libart is also highly tuned for incremental rendering. It contains data
+structures and algorithms suited to rapid, precise computation of Region
+of Interest, as well as a two-phase rendering pipeline optimized for
+interactive display.
+
+WWW: ${HOMEPAGE}
