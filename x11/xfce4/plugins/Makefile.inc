@@ -41,3 +41,7 @@ RUN_DEPENDS?=	${PANEL}
 CONFIGURE_STYLE?=gnu
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
+
+WANTLIB+=	X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
+		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 m \
+		pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 xfce4util z

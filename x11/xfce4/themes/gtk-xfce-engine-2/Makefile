@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/11 23:33:39 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/16 22:05:10 alek Exp $
 
 COMMENT=	"theme engine for gtk+2"
 DISTNAME=	gtk-xfce-engine-2.1.10
@@ -8,5 +8,9 @@ RUN_DEPENDS=	${XFDESK}
 LIB_DEPENDS=	${GTK2}
 
 USE_LIBTOOL=	yes
+
+WANTLIB=	X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 fontconfig \
+		freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 iconv \
+		intl m pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/05 07:33:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/16 22:05:09 alek Exp $
 
 COMMENT=	"xfce4 window manager"
 DISTNAME=	xfwm4-${V}
@@ -13,5 +13,7 @@ BUILD_DEPENDS=	${PKG} \
 		${RUN_DEPENDS}
 
 USE_LIBTOOL=	yes
+
+WANTLIB=	Xpm Xrandr c
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/11 23:33:38 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/16 22:05:09 alek Exp $
 
 COMMENT=	"essential utilities and scripts for xfce4"
 DISTNAME=	xfce-utils-${V}
@@ -14,5 +14,7 @@ BUILD_DEPENDS=	${PKG} \
 USE_LIBTOOL=	yes
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx"
+
+WANTLIB=	c
 
 .include <bsd.port.mk>

@@ -28,3 +28,9 @@ RUN_DEPENDS?=	:xfce-mcs-manager-*:x11/xfce4/desktop/xfce-mcs-manager
 
 CONFIGURE_STYLE?=gnu
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+WANTLIB+=	ICE SM X11 Xcursor Xext Xft Xinerama Xrender atk-1.0.0.0 c \
+		fontconfig freetype gdk-x11-2.0.0.0 gdk_pixbuf-2.0.0.0 \
+		glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 gtk-x11-2.0.0.0 \
+		iconv intl m pango-1.0.0.0 pangoft2-1.0.0.0 pangox-1.0.0.0 \
+		pangoxft-1.0.0.0 xfce4util xfcegui4
