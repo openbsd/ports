@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:16:08 espie Exp $
-@pkgcfl hmake-*
+@comment $OpenBSD: PLIST,v 1.3 2004/09/18 12:52:54 espie Exp $
+@conflict hmake-*
 bin/greencard-nhc98
 bin/harch
 bin/hi

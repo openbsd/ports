@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-java,v 1.8 2004/09/15 19:06:57 espie Exp $
-@pkgcfl egcs-*-core
+@comment $OpenBSD: PLIST-java,v 1.9 2004/09/18 12:52:54 espie Exp $
+@conflict egcs-*-core
 bin/${CONFIG}-egcj
 bin/eaddr2name.awk
 bin/egcj

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:16:08 espie Exp $
-@pkgcfl unicon-*
+@comment $OpenBSD: PLIST,v 1.7 2004/09/18 12:52:54 espie Exp $
+@conflict unicon-*
 share/ipl/bin/
 share/ipl/bin/adlcheck
 share/ipl/bin/adlcount

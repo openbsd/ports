@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-c++,v 1.16 2004/09/15 19:06:57 espie Exp $
-@pkgcfl egcs-*-core
+@comment $OpenBSD: PLIST-c++,v 1.17 2004/09/18 12:52:54 espie Exp $
+@conflict egcs-*-core
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++

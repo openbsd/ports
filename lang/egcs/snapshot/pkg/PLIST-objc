@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-objc,v 1.5 2003/11/13 19:04:10 espie Exp $
-@pkgcfl egcs-*-core
+@comment $OpenBSD: PLIST-objc,v 1.6 2004/09/18 12:52:54 espie Exp $
+@conflict egcs-*-core
 IFPIC:lib/fpic/libobjc.a
 IFPIC:lib/fpic/libobjc.la
 lib/gcc-lib/${CONFIG}/${V}/cc1obj

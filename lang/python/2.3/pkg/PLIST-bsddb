@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-bsddb,v 1.2 2004/09/18 10:11:57 espie Exp $
+@comment $OpenBSD: PLIST-bsddb,v 1.3 2004/09/18 12:52:55 espie Exp $
 @option no-default-conflict
-@pkgcfl python-bsddb->=2.3,<2.4
+@conflict python-bsddb->=2.3,<2.4
 lib/python2.3/lib-dynload/_bsddb.so

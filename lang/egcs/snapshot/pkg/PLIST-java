@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2003/11/13 19:04:10 espie Exp $
-@pkgcfl egcs-*-core
+@comment $OpenBSD: PLIST-java,v 1.5 2004/09/18 12:52:54 espie Exp $
+@conflict egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/gcj.info
 @unexec install-info --delete --info-dir=%D/info %D/info/fastjar.info
 bin/${CONFIG}-egcj

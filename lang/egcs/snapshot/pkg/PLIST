@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/11/13 19:04:10 espie Exp $
-@pkgcfl egcs-*-core
+@comment $OpenBSD: PLIST,v 1.10 2004/09/18 12:52:54 espie Exp $
+@conflict egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gcc.info
