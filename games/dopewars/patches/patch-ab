@@ -1,29 +1,16 @@
---- dopewars.c.orig	Mon Oct 25 16:46:16 1999
-+++ dopewars.c	Mon Oct 25 16:46:44 1999
-@@ -19,7 +19,7 @@
- /*                   MA  02111-1307, USA.                               */
+--- dopeunix.h.orig	Tue Dec  7 22:44:51 1999
++++ dopeunix.h	Tue Dec  7 22:45:14 1999
+@@ -22,11 +22,12 @@
  
- #include <stdio.h>
+ #ifndef __DOPEOS_H__
+ #define __DOPEOS_H__
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
 -#include <ncurses.h>
 +#include <curses.h>
- #include <stdlib.h>
- #include <ctype.h>
- #include <unistd.h>
-@@ -2179,7 +2179,7 @@
-    char ConfigFile[800],*pt;
+ #include <sys/wait.h>
  
- /* First, set hard-coded default values */
--   strcpy(HiScoreFile,"/var/lib/games/dopewars.sco");
-+   strcpy(HiScoreFile,"/var/games/dopewars.sco");
-    strcpy(ServerName,"localhost");
-    strcpy(Pager,"more");
-    Location=ResizeStruct(Location,&NumLocation,NUMLOCATION,
-@@ -2263,7 +2263,7 @@
- original version as");
-       puts("              possible (this also disables any networking)");
-       puts("  -f file  specify a file to use as the high score table");
--      puts("              (by default /var/lib/games/dopewars.sco is used)");
-+      puts("              (by default /var/games/dopewars.sco is used)");
-       puts("  -o addr  specify a hostname where the server for \
- multiplayer dopewars ");
-       puts("              can be found (in human-readable - e.g. \
+ extern int Width,Depth;
