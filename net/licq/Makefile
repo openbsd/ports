@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/29 02:00:00 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/03/29 02:11:21 brad Exp $
+
 DISTNAME=	licq-0.61
 CATEGORIES=	net
 MASTER_SITES=	http://licq.wibble.net/
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
-LIB_DEPENDS=	qt:${PORTSDIR}/x11/qt
-
-CONFIGURE_ENV+=	QT_MOC=/usr/X11R6/bin/moc
+#LIB_DEPENDS=	qt:${PORTSDIR}/x11/qt
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-do-configure:
-	@cd ${WRKSRC}; env INSTALL="/usr/bin/install" \
-		sh ./configure --prefix=${PREFIX}
+CONFIGURE_ENV+=	INSTALL="/usr/bin/install" \
+		QT_MOC=/usr/X11R6/bin/moc
 
 .include <bsd.port.mk>
