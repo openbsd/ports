@@ -1,29 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Attr.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Boolean.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/CDATASection.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Comment.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Document.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/DocumentFragment.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Dtd.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Element.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Literal.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Namespace.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Node.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/NodeList.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Number.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Builder.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Generator.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX/Parser.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/Text.pod
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML/LibXML.so
+@comment $OpenBSD: PLIST,v 1.9 2002/05/14 07:50:56 shell Exp $
+${P5ARCH}/XML/LibXML.pm
+${P5ARCH}/XML/LibXML/Attr.pod
+${P5ARCH}/XML/LibXML/Boolean.pm
+${P5ARCH}/XML/LibXML/CDATASection.pod
+${P5ARCH}/XML/LibXML/Comment.pod
+${P5ARCH}/XML/LibXML/DOM.pod
+${P5ARCH}/XML/LibXML/Document.pod
+${P5ARCH}/XML/LibXML/DocumentFragment.pod
+${P5ARCH}/XML/LibXML/Dtd.pod
+${P5ARCH}/XML/LibXML/Element.pod
+${P5ARCH}/XML/LibXML/Literal.pm
+${P5ARCH}/XML/LibXML/Namespace.pod
+${P5ARCH}/XML/LibXML/Node.pod
+${P5ARCH}/XML/LibXML/NodeList.pm
+${P5ARCH}/XML/LibXML/Number.pm
+${P5ARCH}/XML/LibXML/SAX/Builder.pm
+${P5ARCH}/XML/LibXML/SAX/Generator.pm
+${P5ARCH}/XML/LibXML/SAX/Parser.pm
+${P5ARCH}/XML/LibXML/Text.pod
+${P5ARCH}/auto/XML/LibXML/LibXML.bs
+${P5ARCH}/auto/XML/LibXML/LibXML.so
 man/man3p/XML::LibXML.3p
 man/man3p/XML::LibXML::Attr.3p
 man/man3p/XML::LibXML::Boolean.3p
 man/man3p/XML::LibXML::CDATASection.3p
 man/man3p/XML::LibXML::Comment.3p
+man/man3p/XML::LibXML::DOM.3p
 man/man3p/XML::LibXML::Document.3p
 man/man3p/XML::LibXML::DocumentFragment.3p
 man/man3p/XML::LibXML::Dtd.3p
@@ -37,6 +39,6 @@ man/man3p/XML::LibXML::SAX::Builder.3p
 man/man3p/XML::LibXML::SAX::Generator.3p
 man/man3p/XML::LibXML::SAX::Parser.3p
 man/man3p/XML::LibXML::Text.3p
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/XML/LibXML
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML/SAX
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/XML/LibXML
+@dirrm ${P5ARCH}/auto/XML/LibXML
+@dirrm ${P5ARCH}/XML/LibXML/SAX
+@dirrm ${P5ARCH}/XML/LibXML

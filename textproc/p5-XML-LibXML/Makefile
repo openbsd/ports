@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/15 06:59:17 shell Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/14 07:50:55 shell Exp $
 
 COMMENT=	"perl interface to the libxml2 library"
 
-VERSION=	1.40
+VERSION=	1.49
 DISTNAME=	XML-LibXML-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.504
+NEED_VERSION=	1.528
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
