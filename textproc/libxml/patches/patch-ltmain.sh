@@ -1,15 +1,16 @@
---- ltmain.sh.orig	Wed Jul 26 18:45:21 2000
-+++ ltmain.sh	Wed Jul 26 18:45:34 2000
-@@ -2619,7 +2619,7 @@
- 	  # linked before any other PIC object.  But we must not use
- 	  # pic_flag when linking with -static.  The problem exists in
- 	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
--	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
-+	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
- 	    case "$compile_command " in
- 	    *" -static "*) ;;
- 	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
-@@ -3555,40 +3555,6 @@
+--- ltmain.sh.orig	Fri Jan  5 02:13:13 2001
++++ ltmain.sh	Sun Feb  4 19:25:57 2001
+@@ -1795,6 +1795,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++	*-*-openbsd*)
++	  # do not include libc due to us having libc/libc_r.
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3555,40 +3558,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
