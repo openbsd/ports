@@ -1,0 +1,44 @@
+--- data/Makefile.in.orig	Wed Aug  2 10:24:59 2000
++++ data/Makefile.in	Wed Jan 17 16:50:46 2001
+@@ -68,7 +68,7 @@
+ VERSION = @VERSION@
+ WISH = @WISH@
+ 
+-pkgdata_DATA_noGENERATED = dal.tcl doc.tcl info.tcl fun.tcl global.tcl listfile.tcl mircservers.tcl newserver.tcl notify.tcl popups.tcl qwidgets.tcl server.tcl variables.tcl winpopup.tcl servers themes/default.tcl common/install.tcl
++pkgdata_DATA_noGENERATED = dal.tcl doc.tcl info.tcl fun.tcl global.tcl listfile.tcl mircservers.tcl newserver.tcl notify.tcl popups.tcl qwidgets.tcl server.tcl variables.tcl winpopup.tcl servers
+ 
+ pkgdata_DATA = $(pkgdata_DATA_noGENERATED) VERSION quedit fontsel
+ 
+@@ -124,23 +124,6 @@
+ tags: TAGS
+ TAGS:
+ 
+-
+-distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+-
+-subdir = data
+-
+-distdir: $(DISTFILES)
+-	$(mkinstalldirs) $(distdir)/common $(distdir)/themes
+-	@for file in $(DISTFILES); do \
+-	  d=$(srcdir); \
+-	  if test -d $$d/$$file; then \
+-	    cp -pr $$d/$$file $(distdir)/$$file; \
+-	  else \
+-	    test -f $(distdir)/$$file \
+-	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+-	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+-	  fi; \
+-	done
+ info-am:
+ info: info-am
+ dvi-am:
+@@ -196,7 +179,7 @@
+ 
+ maintainer-clean: maintainer-clean-am
+ 
+-.PHONY: uninstall-pkgdataDATA install-pkgdataDATA tags distdir info-am \
++.PHONY: uninstall-pkgdataDATA install-pkgdataDATA tags info-am \
+ info dvi-am dvi check check-am installcheck-am installcheck \
+ install-exec-local install-exec-am install-exec install-data-am \
+ install-data install-am install uninstall-am uninstall all-redirect \

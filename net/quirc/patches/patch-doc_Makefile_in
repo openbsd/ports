@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Wed Jan 17 17:18:12 2001
++++ doc/Makefile.in	Wed Jan 17 17:18:30 2001
+@@ -68,7 +68,7 @@
+ VERSION = @VERSION@
+ WISH = @WISH@
+ 
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ 
+ doc_DATA = rfc1459.txt color.txt nickcomp.txt quedit.txt
+ 

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Aug  2 10:24:59 2000
++++ Makefile.in	Wed Jan 17 17:17:46 2001
+@@ -93,7 +93,7 @@
+ 
+ # Documentation
+ 
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ doc_DATA = FAQ AUTHORS COPYING ChangeLog INSTALL NEWS README ChangeLog.themes
+ 
+ # RPM and spec file generation

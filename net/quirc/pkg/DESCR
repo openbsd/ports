@@ -1,0 +1,4 @@
+Quirc is an irc client for the X window system that uses Tcl/Tk.
+It boasts many advanced scripting facilities and a clean interface.
+
+WWW: ${HOMEPAGE}
