@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/09 17:38:41 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/14 15:27:13 turan Exp $
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
@@ -8,7 +8,7 @@ DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
 CATEGORIES=	www
 FAKE=No
-MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.5/
+MASTER_SITES=	http://muquit.com/muquit/software/Count/src/wwwcount2.5/
 
 MAINTAINER=	form@openbsd.org
 
