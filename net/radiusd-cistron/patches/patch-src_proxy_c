@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_proxy_c,v 1.1 2001/11/20 18:54:55 danh Exp $
+--- src/proxy.c.orig	Tue Nov 20 12:59:28 2001
++++ src/proxy.c	Tue Nov 20 13:00:39 2001
+@@ -53,9 +53,8 @@ void random_vector(char *vector)
+ 	int	randno;
+ 	int	i;
+ 
+-	srand(time(0) + getpid());
+ 	for(i = 0;i < AUTH_VECTOR_LEN;) {
+-		randno = rand();
++		randno = arc4random();
+ 		memcpy(vector, &randno, sizeof(int));
+ 		vector += sizeof(int);
+ 		i += sizeof(int);
