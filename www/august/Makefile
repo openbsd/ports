@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/29 04:11:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/30 01:40:27 kevlo Exp $
 
 DISTNAME=	august0.60b.src
 PKGNAME=	august-0.60b
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=    weblint::www/weblint \
-		identify::graphics/ImageMagick
+		identify::graphics/ImageMagick \
+		wish8.3::x11/tk/8.3
 
 NO_BUILD=	Yes
 
