@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2004/08/17 19:33:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/27 12:10:43 sturm Exp $
 
+
+COMMENT=	"graph drawing software"
+
+DISTNAME=	graphviz-1.16
 CATEGORIES=	math devel graphics
 
-COMMENT='graph drawing software'
-PKGNAME=graphviz-1.7.6
-DISTFILES=gviz176.tgz
-DISTNAME=gv1.7.6
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+HOMEPAGE=	http://www.graphviz.org/
 
-HOMEPAGE=http://www.research.att.com/sw/tools/graphviz/
-MASTER_SITES=${HOMEPAGE}dist/
+MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 PERMIT_DISTFILES_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
@@ -17,19 +16,34 @@ PERMIT_DISTFILES_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE=gnu
-USE_LIBTOOL=yes
-CONFIGURE_ENV=TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
-	TKCONFIG=${LOCALBASE}/lib/tk8.4/tkConfig.sh \
-	LIBS=-lz \
-	LDFLAGS=-L${LOCALBASE}/lib \
-	CPPFLAGS='-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${X11BASE}/include'
+MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
 
-CONFIGURE_ARGS=	--with-freetypeincludedir=${X11BASE}/include/freetype2 \
-		--with-pngincludedir=${LOCALBASE}/include/libpng
-CONFIGURE_SCRIPT=autogen.sh
-CONFIGURE_ENV+=AUTOCONF_VERSION=${AUTOCONF_VERSION}
-USE_GMAKE=	Yes
+MODULES=	gettext
+LIB_DEPENDS=	expat.4::textproc/expat \
+		jpeg.62::graphics/jpeg \
+                png.2::graphics/png \
+		tk84.1::x11/tk/8.4
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-static \
+		--with-mylibgd
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
+
+DOCBASE=	${PREFIX}/share/doc/graphviz
+EXBASE=		${PREFIX}/share/examples/graphviz
+
+FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
+		pdfdir="${DOCBASE}/pdf" \
+		txtdir="${DOCBASE}" \
+		demodir="${EXBASE}/demo" \
+		directeddir="${EXBASE}/graphs/directed" \
+		leftydir="${EXBASE}/lefty" \
+		pathplanexampledir="${EXBASE}/demo/pathplan_data" \
+		undirecteddir="${EXBASE}/graphs/undirected"
+
+SUBST_VARS=	PKGNAME
 
 .include <bsd.own.mk>
 
@@ -40,24 +54,9 @@ post-extract:
 	@echo "To accept the license, restart the build with"
 	@echo "ACCEPT_GRAPHVIZ_LICENSE=Yes"
 	@exit 1
-.else
-	@cat ${LOCALBASE}/share/aclocal/libtool.m4 >>${WRKSRC}/aclocal.m4
 .endif
 
-LIB_DEPENDS=	tcl84.::lang/tcl/8.4 \
-		tk84.::x11/tk/8.4 \
-		jpeg.62::graphics/jpeg \
-		png.2::graphics/png
-
-AUTOCONF_VERSION=	2.59
-BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
-		::devel/metaauto \
-		::devel/automake
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/graphviz
-	${INSTALL_DATA} ${WRKDIST}/{COPYING,MINTERMS.txt,FAQ.txt} ${PREFIX}/share/doc/graphviz
-
-SUBST_VARS=PKGNAME
+	@cd ${PREFIX}/lib && ln -s graphviz/lib*.so.0.0 .
 
 .include <bsd.port.mk>

@@ -26,4 +26,4 @@ The package includes
      libgraph - the base library for graph tools 
 
 More information on ${HOMEPAGE}
-Refer to ${HOMEPAGE}/refs.html for documentation.
+Refer to ${HOMEPAGE}/Documentation.php for documentation.
