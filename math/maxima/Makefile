@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/26 07:35:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/30 12:06:22 espie Exp $
 
 COMMENT=		"GPL computer algebra system based on DOE Macsyma"
 
 VERSION=		5.9.0
 DISTNAME=		maxima-${VERSION}
+PKGNAME=		maxima-${VERSION}p0
 CATEGORIES=		math
 
 HOMEPAGE=		http://maxima.sourceforge.net/
@@ -29,8 +30,8 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-clisp 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
-LIB_DEPENDS+= 		tcl84::lang/tcl/8.4 \
-			tk84::x11/tk/8.4 
+LIB_DEPENDS+= 		tcl84:tcl-8.4.*:lang/tcl/8.4 \
+			tk84:tk-8.4.*:x11/tk/8.4 
 CONFIGURE_ARGS+=	--with-wish=${LOCALBASE}/bin/wish8.4
 .endif
 

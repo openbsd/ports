@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/20 10:35:35 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/30 12:06:22 espie Exp $
 
 COMMENT=	"Objective Caml package manager"
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.0.4
+PKGNAME=	${DISTNAME}p0
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 WANTLIB=		X11 c curses m pthread tcl84
 
 MODULES=	lang/ocaml
-LIB_DEPENDS=	tk84.1::x11/tk/8.4
+LIB_DEPENDS=	tk84.1:tk-8.4.*:x11/tk/8.4
 NO_REGRESS=	Yes
 
 SAMPLE_LOC=	${PREFIX}/share/examples/findlib
