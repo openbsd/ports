@@ -1,0 +1,7 @@
+normalize is a tool for adjusting the volume of audio files to a
+standard level. This is useful for things like creating mixed
+CD's and mp3 collections, where different recording levels on
+different albums can cause the volume to vary greatly from song
+to song.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2002/04/28 09:11:37 jasoni Exp $
+--- src/Makefile.in.orig	Tue Mar 12 00:41:33 2002
++++ src/Makefile.in	Wed Apr 24 11:26:44 2002
+@@ -673,31 +673,31 @@ install-exec-hook:
+ # test program targets follow
+ 
+ mktestwav: mktestwav.o riff.o version.o getopt.o getopt1.o
+-	$(LINK) $^ -lm
++	$(LINK) mktestwav.o riff.o version.o getopt.o getopt1.o -lm
+ 
+ mktestwav.o: mktestwav.c riff.h
+ 
+ riffwalk: riffwalk.o
+ 
+ riffwalk.o: riff.c
+-	$(COMPILE) -DBUILD_RIFFWALK -c -o $@ $^
++	$(COMPILE) -DBUILD_RIFFWALK -c -o $@ riff.c
+ 
+ wavread: wavread.o
+ 
+ wavread.o: riff.c
+-	$(COMPILE) -DBUILD_WAVREAD -c -o $@ $^
++	$(COMPILE) -DBUILD_WAVREAD -c -o $@ riff.c
+ 
+ test-wiener-af: test-wiener-af.o wav.o riff.o version.o
+-	$(LINK) $^ -lm
++	$(LINK) test-wiener-af.o wav.o riff.o version.o -lm
+ 
+ test-wiener-af.o: testaf.c
+-	$(COMPILE) -DFORCE_NOAUDIOFILE -c -o $@ $^
++	$(COMPILE) -DFORCE_NOAUDIOFILE -c -o $@ testaf.c
+ 
+ test-real-af: test-real-af.o
+-	$(LINK) $^ -L/usr/local/lib -lm -laudiofile
++	$(LINK) test-real-af.o -L/usr/local/lib -lm -laudiofile
+ 
+ test-real-af.o: testaf.c
+-	$(COMPILE) -DFORCE_AUDIOFILE -c -o $@ $^
++	$(COMPILE) -DFORCE_AUDIOFILE -c -o $@ testaf.c
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
