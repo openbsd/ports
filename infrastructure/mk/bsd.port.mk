@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.580 2003/08/11 20:07:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.581 2003/08/11 20:10:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1213,7 +1213,7 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 fetch checksum extract patch configure all build install regress \
-uninstall deinstall fake package lib-depends-check manpages-check:
+uninstall deinstall fake package lib-depends-check manpages-check license-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
 .  endif
@@ -2155,6 +2155,25 @@ full-${_i}-depends:
 	done
 .endfor
 
+license-check:
+.if ${PERMIT_PACKAGE_CDROM:L} == "yes" || ${PERMIT_PACKAGE_FTP:L} == "yes"
+	@${MAKE} all-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
+		unset FLAVOR SUBPACKAGE || true; \
+		${_flavor_fragment}; \
+		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM:Q}; \
+		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP:Q}; \
+		export _MASTER_PERMIT_CDROM _MASTER_PERMIT_FTP; \
+		eval $$toset ${MAKE} _license-check; \
+	done
+.endif
+
+_license-check:
+.for _i in FTP CDROM
+.  if defined(_MASTER_PERMIT_${_i}) && ${_MASTER_PERMIT_${_i}:L} == "yes" && ${PERMIT_PACKAGE_${_i}:L} != "yes"
+	@echo >&2 "Warning: dependency ${PKGPATH} is not allowed for ${_i}"
+.  endif
+.endfor
+
 .for _i in RUN BUILD LIB
 ${_i:L}-depends-list:
 .  if !empty(_${_i}_DEP2)
@@ -2457,4 +2476,5 @@ uninstall deinstall:
 	reinstall repackage run-depends \
 	run-depends-list run-dir-depends show \
 	uninstall unlink-categories update-patches \
-	update-plist
+	update-plist \
+	license-check _license-check
