@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.159 1999/12/11 16:14:20 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.160 1999/12/19 23:48:36 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1086,6 +1086,10 @@ IGNORECMD=	${DO_NADA}
 .else
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
 .endif
+.endif
+.endif		# NO_IGNORE
+
+.if defined(IGNORECMD)
 fetch:
 	@${IGNORECMD}
 checksum:
@@ -1106,8 +1110,71 @@ uninstall deinstall:
 	@${IGNORECMD}
 package:
 	@${IGNORECMD}
-.endif # IGNORE
-.endif # !NO_IGNORE
+.else # IGNORECMD
+
+fetch:
+	@cd ${.CURDIR} && make real-fetch
+
+checksum: fetch
+.if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
+	${DO_NADA}
+.else
+	@if [ ! -f ${CHECKSUM_FILE} ]; then \
+	  ${ECHO_MSG} ">> No checksum file."; \
+	else \
+	  cd ${DISTDIR}; OK=true; \
+		for file in ${_CKSUMFILES}; do \
+		  for cipher in ${PREFERRED_CIPHERS}; do \
+			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
+			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
+		  done; \
+		  case "$$4" in \
+			"") \
+			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
+			  OK=false;; \
+			"IGNORE") \
+			  echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
+			  echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
+			  OK=false;; \
+			*) \
+			  CKSUM=`$$cipher < $$file`; \
+			  case "$$CKSUM" in \
+			  	"$$4") \
+				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
+				*) \
+				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
+				  OK=false;; \
+			  esac;; \
+		  esac; \
+		done; \
+		set --; \
+		for file in ${_IGNOREFILES}; do \
+		  set -- `grep "($$file)" ${CHECKSUM_FILE}` || \
+			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
+			  OK=false; } ; \
+		  case "$$4" in \
+		  	"IGNORE") : ;; \
+			*) \
+			  echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
+			  echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
+			  OK=false;; \
+		  esac; \
+		done; \
+		if ! $$OK; then \
+		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+		  echo "are up to date.  If you want to override this check, type"; \
+		  echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
+		  exit 1; \
+		fi ; \
+  fi
+.endif
+
+extract: ${_EXTRACT_COOKIE}
+patch: ${_PATCH_COOKIE}
+configure: ${_CONFIGURE_COOKIE}
+build: ${_BUILD_COOKIE}
+install: ${_INSTALL_COOKIE}
+package: ${_PACKAGE_COOKIE}
 
 .if defined(ALL_HOOK)
 all:
@@ -1118,11 +1185,16 @@ all:
 	  DEPENDS="${DEPENDS}" BUILD_DEPENDS="${BUILD_DEPENDS}" \
 	  RUN_DEPENDS="${RUN_DEPENDS}" X11BASE=${X11BASE} \
 	${ALL_HOOK}
+.else
+all: ${_BUILD_COOKIE}
 .endif
 
-.if !target(all)
-all: build
-.endif
+uninstall deinstall:
+	@${ECHO_MSG} "===> Deinstalling for ${PKGNAME}"
+	@${PKG_DELETE} -f ${PKGNAME}
+	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE}
+
+.endif # IGNORECMD
 
 .if !defined(DEPENDS_TARGET)
 .if make(reinstall)
@@ -1133,77 +1205,89 @@ DEPENDS_TARGET=	install
 .endif
 
 ################################################################
-# The following are used to create easy dummy targets for
+# The following hooks are used to create easy dummy targets for
 # disabling some bit of default target behavior you don't want.
-# They still check to see if the target exists, and if so don't
-# do anything, since you might want to set this globally for a
-# group of ports in a Makefile.inc, but still be able to
-# override from an individual Makefile.
 ################################################################
 
 # Disable checksum
-.if defined(NO_CHECKSUM) 
-.for _TARGET in makesum addsum
-.if !target(${_TARGET})
-${_TARGET}: fetch-all
-	@${DO_NADA}
-.endif
-.endfor
-.if !target(checksum)
-checksum: fetch
-	@${DO_NADA}
-.endif
-.endif
-
-# Disable extract
-.if defined(NO_EXTRACT) && !target(extract)
-extract: 
-	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
-checksum: fetch 
-	@${DO_NADA}
-makesum addsum: fetch-all
-	@${DO_NADA}
-.endif
-
-# Disable patch
-.if defined(NO_PATCH) && !target(patch)
-patch: extract
-	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
-.endif
-
-# Disable configure
-.if defined(NO_CONFIGURE) && !target(configure)
-configure: patch
-	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
-.endif
-
-# Disable build
-.if defined(NO_BUILD) && !target(build)
-build: configure
-	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
-.endif
-
-# Disable install
-.if defined(NO_INSTALL) && !target(install)
-install: build
-	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
-.endif
-
-# Disable package
-.if defined(NO_PACKAGE) && !target(package)
-package:
-.if defined(IGNORE_SILENT)
+makesum: fetch-all
+.if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
 	@${DO_NADA}
 .else
+	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && \
+		for cipher in ${_CIPHERS}; do \
+			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+	 done
+	@for file in ${_IGNOREFILES}; do \
+		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
+	done
+	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
+.endif
+
+addsum: fetch-all
+.if defined(NO_CHECKSUM) || defined(NO_EXTRACT)
+	@${DO_NADA}
+.else
+	@mkdir -p ${FILESDIR} && touch ${CHECKSUM_FILE}
+	@cd ${DISTDIR} && \
+	 	for cipher in ${_CIPHERS}; do \
+			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
+	 done
+	@for file in ${_IGNOREFILES}; do \
+		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
+	done
+	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
+	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
+		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
+		exit 1; \
+	else \
+		${ECHO_MSG} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
+	fi
+.endif
+
+${_EXTRACT_COOKIE}:
+.if !defined(NO_EXTRACT)
+	@cd ${.CURDIR} && make checksum real-extract
+.endif
+	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
+
+${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
+.if !defined(NO_PATCH)
+	@cd ${.CURDIR} && make real-patch
+.endif
+	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
+
+${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
+.if !defined(NO_CONFIGURE)
+	@cd ${.CURDIR} && make real-configure
+.endif
+	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
+
+${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
+.if !defined(NO_BUILD) 
+	@cd ${.CURDIR} && make real-build
+.endif
+	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
+
+${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
+.if !defined(NO_INSTALL)
+	@cd ${.CURDIR} && make real-install
+.endif
+	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
+
+${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
+.if !defined(NO_PACKAGE)
+	@cd ${.CURDIR} && make real-package
+.else
+.if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${PKGNAME} may not be packaged: ${NO_PACKAGE}."
 .endif
 .endif
-
-# Disable describe
-.if defined(NO_DESCRIBE) && !target(describe)
-describe:
-	@${DO_NADA}
+.if !defined(PACKAGE_NOINSTALL)
+	@${_MAKE_COOKIE} ${_PACKAGE_COOKIE}
 .endif
+
 
 ################################################################
 # More standard targets start here.
@@ -1541,8 +1625,6 @@ _PORT_USE: .USE
 		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
 		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
 	fi
-.endif
-.if make(real-install)
 .if !defined(NO_MTREE)
 	@if [ `id -u` = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
@@ -1573,7 +1655,8 @@ _PORT_USE: .USE
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
 	fi
-.if make(real-install) && (defined(_MANPAGES) || defined(_CATPAGES))
+.if make(real-install) 
+.if defined(_MANPAGES) || defined(_CATPAGES)
 .if defined(MANCOMPRESSED) && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
 .for manpage in ${_MANPAGES} ${_CATPAGES}
@@ -1593,32 +1676,15 @@ _PORT_USE: .USE
 .endfor
 .endif
 .endif
-.if make(real-install) && exists(${PKGDIR}/MESSAGE)
+.if exists(${PKGDIR}/MESSAGE)
 	@cat	${PKGDIR}/MESSAGE
 .endif
-.if make(real-install) && !defined(NO_PKG_REGISTER)
+.if !defined(NO_PKG_REGISTER)
 	@cd ${.CURDIR} && make fake-pkg
 .endif
-.if make(real-extract)
-	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
 .endif
-.if make(real-patch) && !defined(PATCH_CHECK_ONLY)
-.if defined(USE_AUTOCONF)
+.if make(real-patch) && !defined(PATCH_CHECK_ONLY) && defined(USE_AUTOCONF)
 	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-.endif
-	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
-.endif
-.if make(real-configure)
-	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
-.endif
-.if make(real-install)
-	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
-.endif
-.if make(real-build)
-	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
-.endif
-.if make(real-package) && !defined(PACKAGE_NOINSTALL)
-	@${_MAKE_COOKIE} ${_PACKAGE_COOKIE}
 .endif
 
 ################################################################
@@ -1630,52 +1696,10 @@ _PORT_USE: .USE
 # call the necessary targets/scripts.
 ################################################################
 
-.if !target(fetch)
-fetch:
-	@cd ${.CURDIR} && make real-fetch
-.endif
 .if !target(fetch-all)
 fetch-all:
 	@cd ${.CURDIR} && make __FETCH_ALL=Yes real-fetch
 .endif
-
-
-.if !target(extract)
-extract: ${_EXTRACT_COOKIE}
-.endif
-
-.if !target(patch)
-patch: extract ${_PATCH_COOKIE}
-.endif
-
-.if !target(configure)
-configure: patch ${_CONFIGURE_COOKIE}
-.endif
-
-.if !target(build)
-build: configure ${_BUILD_COOKIE}
-.endif
-
-.if !target(install)
-install: build ${_INSTALL_COOKIE}
-.endif
-
-.if !target(package)
-package: install ${_PACKAGE_COOKIE}
-.endif
-
-${_EXTRACT_COOKIE}: 
-	@cd ${.CURDIR} && make checksum real-extract
-${_PATCH_COOKIE}:
-	@cd ${.CURDIR} && make real-patch
-${_CONFIGURE_COOKIE}:
-	@cd ${.CURDIR} && make real-configure
-${_BUILD_COOKIE}:
-	@cd ${.CURDIR} && make real-build
-${_INSTALL_COOKIE}:
-	@cd ${.CURDIR} && make real-install
-${_PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && make real-package
 
 # And call the macros
 
@@ -1872,104 +1896,16 @@ fetch-list-one-pkg:
 .endif # defined(PATCHFILES)
 .endif # !target(fetch-list-one-pkg)
 
-# Checksumming utilities
-
-.if !target(makesum)
-makesum: fetch-all
-	@mkdir -p ${FILESDIR} && rm -f ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-		for cipher in ${_CIPHERS}; do \
-			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
-	 done
-	@for file in ${_IGNOREFILES}; do \
-		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
-	done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
-.endif
-
-.if !target(addsum)
-addsum: fetch-all
-	@mkdir -p ${FILESDIR} && touch ${CHECKSUM_FILE}
-	@cd ${DISTDIR} && \
-	 	for cipher in ${_CIPHERS}; do \
-			$$cipher ${_CKSUMFILES} >> ${CHECKSUM_FILE}; \
-	 done
-	@for file in ${_IGNOREFILES}; do \
-		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
-	done
-	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
-	@if [ `sed -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
-		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
-		exit 1; \
-	else \
-		${ECHO_MSG} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
-	fi
-.endif
-
-.if !target(checksum)
-checksum: fetch
-	@if [ ! -f ${CHECKSUM_FILE} ]; then \
-	  ${ECHO_MSG} ">> No checksum file."; \
-	else \
-	  cd ${DISTDIR}; OK=true; \
-		for file in ${_CKSUMFILES}; do \
-		  for cipher in ${PREFERRED_CIPHERS}; do \
-			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
-			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
-		  done; \
-		  case "$$4" in \
-			"") \
-			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
-			  OK=false;; \
-			"IGNORE") \
-			  echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
-			  echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-			  OK=false;; \
-			*) \
-			  CKSUM=`$$cipher < $$file`; \
-			  case "$$CKSUM" in \
-			  	"$$4") \
-				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
-				*) \
-				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-				  OK=false;; \
-			  esac;; \
-		  esac; \
-		done; \
-		set --; \
-		for file in ${_IGNOREFILES}; do \
-		  set -- `grep "($$file)" ${CHECKSUM_FILE}` || \
-			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
-			  OK=false; } ; \
-		  case "$$4" in \
-		  	"IGNORE") : ;; \
-			*) \
-			  echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
-			  echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
-			  OK=false;; \
-		  esac; \
-		done; \
-		if ! $$OK; then \
-		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-		  echo "are up to date.  If you want to override this check, type"; \
-		  echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
-		  exit 1; \
-		fi ; \
-  fi
-.endif
-
 # packing list utilities.  This generates a packing list from a recently
 # installed port.  Not perfect, but pretty close.  The generated file
 # will have to have some tweaks done by hand.
 # Note: add @comment PACKAGE(arch=${ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
-.if !target(plist)
 plist: install
 	@PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
 	perl ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
-.endif
 
 ################################################################
 # The special package-building targets
@@ -2206,8 +2142,10 @@ clean-depends:
 # distribution-name|port-path|installation-prefix|comment| \
 #  description-file|maintainer|categories|build deps|run deps|for arch
 #
-.if !target(describe)
 describe:
+.if defined(NO_DESCRIBE) 
+	@${DO_NADA}
+.else
 	@echo -n "${PKGNAME}|${.CURDIR}|"; \
 	echo -n "${PREFIX}|"; \
 	if [ -f ${COMMENT} ]; then \
