@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/06/27 22:36:20 fgsch Exp $
 bin/icb
 lib/icb/bartender
 lib/icb/confuse
