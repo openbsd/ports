@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 18:45:49 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/18 19:11:39 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig
 RUN_DEPENDS=		:gtk-engines2->=1.9.0:x11/gtk-engines2 \
-			:xscreensaver-*:x11/xscreensaver
+			:xscreensaver-*:x11/xscreensaver,gtk2
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
