@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/08 18:23:33 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1999/03/01 23:46:37 espie Exp $
 #
 
 DISTNAME=       bison-1.25
@@ -8,6 +8,7 @@ MAINTAINER=	d@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_GNU}
 
+SEPARATE_BUILD=yes
 HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 
