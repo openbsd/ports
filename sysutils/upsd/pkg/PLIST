@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/18 13:11:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/24 09:42:39 espie Exp $
 @conflict nut-*
 sbin/upsd
 share/examples/upsd/
 share/examples/upsd/upsd.conf-sample
-@cwd ${SYSCONFDIR}
-@extra upsd.conf
+@sample ${SYSCONFDIR}/upsd.conf
