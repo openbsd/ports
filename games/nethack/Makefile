@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:23 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/19 19:36:53 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.2.3
 CATEGORIES=	games
+NEED_VERSION=	1.191
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
-NEED_VERSION=	1.191
 
 DISTFILES=	nethack-3.2.2.tar.gz
 WRKDIST=${WRKDIR}/nethack-3.2.2
@@ -20,15 +20,17 @@ MASTER_SITE_SUBDIR= nethack
 MAINTAINER=	espie@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
+FAKE=		Yes
+FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-NHDIR=	${PREFIX}/lib/nethackdir
+NHDIR=	${DESTDIR}${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR}
 
 pre-configure:
@@ -40,14 +42,14 @@ post-install:
 	@cd ${WRKSRC}/doc; chmod 644 *.6
 	@cd ${WRKSRC}/doc; PREFIX='${PREFIX}' INSTALL_MAN='${INSTALL_MAN}' make manpages
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
+	@mkdir -p ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
 	cp NetHack.ad NetHack && \
 	${INSTALL_DATA} NetHack ${PREFIX}/lib/X11/app-defaults && \
-	${X11BASE}/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
-	${X11BASE}/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz && \
+	/usr/X11R6/bin/bdftopcf ibm.bdf | /usr/bin/gzip > ibm.pcf.gz && \
+	/usr/X11R6/bin/bdftopcf nh10.bdf | /usr/bin/gzip > nh10.pcf.gz && \
 	${INSTALL_DATA} ibm.pcf.gz ${PREFIX}/lib/X11/fonts/hack && \
 	${INSTALL_DATA} nh10.pcf.gz ${PREFIX}/lib/X11/fonts/hack
-	${X11BASE}/bin/mkfontdir ${X11BASE}/lib/X11/fonts/hack
-	@cat ${PKGDIR}/DESCR
+	/usr/X11R6/bin/mkfontdir ${PREFIX}/lib/X11/fonts/hack
 
 .include <bsd.port.mk>

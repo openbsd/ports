@@ -1,10 +1,12 @@
 --- sys/unix/Makefile.top.orig	Tue Dec 10 21:20:10 1996
-+++ sys/unix/Makefile.top	Fri Jul 24 15:21:39 1998
-@@ -16,14 +16,14 @@
++++ sys/unix/Makefile.top	Sun Mar 19 20:10:34 2000
+@@ -15,15 +15,15 @@
+ 
  # make NetHack
  GAME     = nethack
- GAMEUID  = games
+-GAMEUID  = games
 -GAMEGRP  = bin
++GAMEUID  = bin
 +GAMEGRP  = games
  
  # Permissions - some places use setgid instead of setuid, for instance
@@ -19,14 +21,15 @@
  
  # GAMEDIR also appears in config.h as "HACKDIR".
  #
-@@ -32,13 +32,13 @@
+@@ -32,13 +32,14 @@
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
 -GAMEDIR  = /usr/games/lib/$(GAME)dir
 -SHELLDIR = /usr/games
-+GAMEDIR  = ${PREFIX}/lib/$(GAME)dir
-+SHELLDIR = ${PREFIX}/bin
++GAMEDIR  = ${DESTDIR}${PREFIX}/lib/$(GAME)dir
++REALGAMEDIR  = ${PREFIX}/lib/$(GAME)dir
++SHELLDIR = ${DESTDIR}${PREFIX}/bin
  
  # per discussion in Install.X11
 -VARDATND = 
@@ -37,3 +40,12 @@
  
  VARDATD = data oracles options quest.dat rumors
  VARDAT = $(VARDATD) $(VARDATND)
+@@ -137,7 +138,7 @@
+ 	$(MAKE) dofiles-$${target-nodlb}
+ 	cp src/$(GAME) $(GAMEDIR)
+ 	-rm -f $(SHELLDIR)/$(GAME)
+-	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
++	sed -e 's;/usr/games/lib/nethackdir;$(REALGAMEDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+ 		> $(SHELLDIR)/$(GAME)

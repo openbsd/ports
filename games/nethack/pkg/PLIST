@@ -1,4 +1,3 @@
-@owner games
 @group games
 bin/nethack
 man/man6/dgn_comp.6
@@ -129,7 +128,7 @@ lib/nethackdir/perm
 @mode 2555
 lib/nethackdir/nethack
 @exec mkdir %D/lib/nethackdir/save
-@exec chown games:games %D/lib/nethackdir/save
+@exec chgrp games %D/lib/nethackdir/save
 @exec chmod -R 575 %D/lib/nethackdir/save
 @unexec rm -rf %D/lib/nethackdir/save
 @dirrm lib/nethackdir
