@@ -1,0 +1,39 @@
+--- filter/Makefile.orig	Tue Jun 29 05:44:52 2004
++++ filter/Makefile	Sun Nov  7 15:19:29 2004
+@@ -55,7 +55,7 @@ all:	$(TARGETS) $(LIBCUPSIMAGE) libcupsi
+ 
+ clean:
+ 	$(RM) $(OBJS) $(TARGETS) $(LIBCUPSIMAGE) libcupsimage.a
+-	$(RM) `basename $(LIBCUPSIMAGE) .2` libcupsimage.dylib
++	$(RM) `basename $(LIBCUPSIMAGE) .2.2` libcupsimage.dylib
+ 
+ 
+ #
+@@ -77,9 +77,9 @@ install:	all installhdrs
+ 	done
+ 	$(INSTALL_DIR) $(LIBDIR)
+ 	$(INSTALL_LIB) $(LIBCUPSIMAGE) $(LIBDIR)
+-	-if test $(LIBCUPSIMAGE) = "libcupsimage.so.2" -o $(LIBCUPSIMAGE) = "libcupsimage.sl.2"; then \
+-		$(RM) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2`; \
+-		$(LN) $(LIBCUPSIMAGE) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2`; \
++	-if test $(LIBCUPSIMAGE) = "libcupsimage.so.2.2" -o $(LIBCUPSIMAGE) = "libcupsimage.sl.2"; then \
++		$(RM) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2.2`; \
++		$(LN) $(LIBCUPSIMAGE) $(LIBDIR)/`basename $(LIBCUPSIMAGE) .2.2`; \
+ 	fi
+ 	-if test $(LIBCUPSIMAGE) = "libcupsimage.2.dylib"; then \
+ 		$(STRIP) -x $(LIBDIR)/$(LIBCUPSIMAGE); \
+@@ -128,11 +128,11 @@ hpgltops:	$(HPGLOBJS) common.o ../Makede
+ # libcupsimage.so.2, libcupsimage.sl.2
+ #
+ 
+-libcupsimage.so.2 libcupsimage.sl.2:	$(IMAGEOBJS) ../Makedefs
++libcupsimage.so.2.2 libcupsimage.sl.2:	$(IMAGEOBJS) ../Makedefs
+ 	echo Linking $@...
+ 	$(DSO) $(DSOFLAGS) -o $@ $(IMAGEOBJS) $(DSOLIBS) -lm
+-	$(RM) `basename $@ .2`
+-	$(LN) $@ `basename $@ .2`
++	$(RM) `basename $@ .2.2`
++	$(LN) $@ `basename $@ .2.2`
+ 
+ 
+ #

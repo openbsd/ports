@@ -1,0 +1,13 @@
+--- doc/sam.html.orig	Fri Oct 29 16:39:17 2004
++++ doc/sam.html	Sun Nov  7 15:19:29 2004
+@@ -6159,8 +6159,8 @@ ftp&gt; <B>quit ENTER</B>
+ <TR VALIGN="TOP"><TD>/usr/lib32/libcups.so.2
+ <BR> /usr/lib32/libcupsimage.so.2</TD><TD>Shared libraries (IRIX 6.5)</TD>
+ </TR>
+-<TR VALIGN="TOP"><TD>/usr/lib/libcups.so.2
+-<BR> /usr/lib/libcupsimage.so.2</TD><TD>Shared libraries (all others)</TD>
++<TR VALIGN="TOP"><TD>/usr/lib/libcups.so.2.2
++<BR> /usr/lib/libcupsimage.so.2.2</TD><TD>Shared libraries (all others)</TD>
+ </TR>
+ <TR VALIGN="TOP"><TD>/usr/libexec/cups/backend/</TD><TD>Backends for
+  various types of printer connections (*BSD and OSX)</TD></TR>

@@ -1,0 +1,15 @@
+--- scheduler/Makefile.orig	Tue Jun 29 05:44:53 2004
++++ scheduler/Makefile	Sun Nov  7 15:19:29 2004
+@@ -69,9 +69,9 @@ install:	all
+ 	$(INSTALL_DIR) -m 711 $(SERVERROOT)/certs
+ 	$(INSTALL_DIR) $(SERVERROOT)/interfaces
+ 	$(INSTALL_DIR) $(SERVERROOT)/ppd
+-	$(INSTALL_DIR) $(LOGDIR)
+-	$(INSTALL_DIR) -m 710 $(REQUESTS)
+-	$(INSTALL_DIR) -m 1770 $(REQUESTS)/tmp
++#	$(INSTALL_DIR) $(LOGDIR)
++#	$(INSTALL_DIR) -m 710 $(REQUESTS)
++#	$(INSTALL_DIR) -m 1770 $(REQUESTS)/tmp
+ 
+ 
+ #

@@ -1,0 +1,43 @@
+--- cups/Makefile.orig	Tue Jun 29 05:44:52 2004
++++ cups/Makefile	Sun Nov  7 15:19:29 2004
+@@ -64,7 +64,7 @@ all:	$(TARGETS)
+ #
+ 
+ clean:
+-	$(RM) $(OBJS) $(TARGETS) `basename $(LIBCUPS) .2` libcups.dylib
++	$(RM) $(OBJS) $(TARGETS) `basename $(LIBCUPS) .2.2` libcups.dylib
+ 
+ 
+ #
+@@ -82,9 +82,9 @@ depend:
+ install:	all	installhdrs
+ 	$(INSTALL_DIR) $(LIBDIR)
+ 	$(INSTALL_LIB) $(LIBCUPS) $(LIBDIR)
+-	if test $(LIBCUPS) = "libcups.so.2" -o $(LIBCUPS) = "libcups.sl.2"; then \
+-		$(RM) $(LIBDIR)/`basename $(LIBCUPS) .2`; \
+-		$(LN) $(LIBCUPS) $(LIBDIR)/`basename $(LIBCUPS) .2`; \
++	if test $(LIBCUPS) = "libcups.so.2.2" -o $(LIBCUPS) = "libcups.sl.2.2"; then \
++		$(RM) $(LIBDIR)/`basename $(LIBCUPS) .2.2`; \
++		$(LN) $(LIBCUPS) $(LIBDIR)/`basename $(LIBCUPS) .2.2`; \
+ 	fi
+ 	if test $(LIBCUPS) = "libcups.2.dylib"; then \
+ 		$(STRIP) -x $(LIBDIR)/$(LIBCUPS); \
+@@ -104,14 +104,14 @@ installhdrs:
+ 
+ 
+ #
+-# libcups.so.2, libcups.sl.2
++# libcups.so.2.2, libcups.sl.2
+ #
+ 
+-libcups.so.2 libcups.sl.2:	$(LIBOBJS) ../Makedefs
++libcups.so.2.2 libcups.sl.2:	$(LIBOBJS) ../Makedefs
+ 	echo Linking $@...
+ 	$(DSO) $(DSOFLAGS) -o $@ $(LIBOBJS) $(SSLLIBS) $(COMMONLIBS)
+-	$(RM) `basename $@ .2`
+-	$(LN) $@ `basename $@ .2`
++	$(RM) `basename $@ .2.2`
++	$(LN) $@ `basename $@ .2.2`
+ 
+ 
+ #

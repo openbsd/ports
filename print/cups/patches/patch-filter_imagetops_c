@@ -1,0 +1,14 @@
+$OpenBSD: patch-filter_imagetops_c,v 1.1.1.1 2005/01/16 12:36:50 mbalmer Exp $
+--- filter/imagetops.c.orig	Sat Dec 25 09:58:03 2004
++++ filter/imagetops.c	Sat Dec 25 10:44:30 2004
+@@ -165,7 +165,9 @@ main(int  argc,		/* I - Number of comman
+   sat  = 100;
+   g    = 1.0;
+   b    = 1.0;
+-
++  left = 0.0;
++  top  = 0.0;
++  
+   Copies = atoi(argv[4]);
+ 
+   options     = NULL;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/01/16 12:36:50 mbalmer Exp $
+--- configure.orig	Sun Nov  7 15:35:16 2004
++++ configure	Sun Nov  7 15:35:34 2004
+@@ -7082,8 +7082,8 @@ if test x$enable_shared != xno; then
+ 			DSOFLAGS="$DSOFLAGS -Wl,-rpath,\$(libdir),-set_version,sgi2.5,-soname,\$@ -shared \$(OPTIM)"
+ 			;;
+ 		OSF1* | Linux | GNU | *BSD*)
+-			LIBCUPS="libcups.so.2"
+-			LIBCUPSIMAGE="libcupsimage.so.2"
++			LIBCUPS="libcups.so.2.2"
++			LIBCUPSIMAGE="libcupsimage.so.2.2"
+ 			DSO="\$(CC)"
+ 			DSOFLAGS="$DSOFLAGS -Wl,-soname,\$@ -shared \$(OPTIM)"
+ 			;;

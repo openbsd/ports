@@ -1,0 +1,86 @@
+#!/bin/sh
+#
+#	$OpenBSD: cups-enable,v 1.1.1.1 2005/01/16 12:36:42 mbalmer Exp $
+#
+#	this script replaces OpenBSD lpd files with the corresponding
+#	files from CUPS.
+
+PREFIX=y0y0y0
+BINDIR=/usr/bin
+SBINDIR=/usr/sbin
+
+if [ `id -u` -ne 0 ]; then
+    echo "You must be root to run this script."
+    exit
+fi
+
+echo "This script will replace OpenBSD lpd with CUPS"
+echo ""
+echo -n "Are you sure you want to do this (y/[n])? "
+
+read answer
+echo ""
+
+if [ X$answer != Xy ]; then
+    echo "exit"
+    exit
+fi
+
+######################################################################
+if [ -e /usr/sbin/lpd.pre-cups ]; then
+    echo "lpd already preserved, not saving old files."
+    echo ""
+elif [ ! -e /usr/sbin/lpd ]; then
+    echo "Couldn't find lpd files, not saving old files."
+    echo ""
+else 
+    echo "Trying to save lpd files:"
+
+    for file in \
+	/usr/bin/lpq \
+	/usr/bin/lpr \
+	/usr/bin/lprm \
+	/usr/sbin/lpc \
+	/usr/sbin/lpd \
+	/usr/share/man/cat1/lpq.0 \
+	/usr/share/man/cat1/lpr.0 \
+	/usr/share/man/cat1/lprm.0 \
+	/usr/share/man/cat8/lpc.0 \
+	/usr/share/man/cat8/lpd.0 
+    do
+	if [ -f $file ]; then
+	    echo " $file"
+	    mv -f $file $file.pre-cups
+	fi
+    done
+
+    if [ -f /etc/printcap ]; then
+        echo " /etc/printcap"
+        cp -f /etc/printcap /etc/printcap.pre-cups
+    fi
+
+    echo done.
+    echo ""
+fi
+
+######################################################################
+echo "Creating soft links for binaries:"
+
+for file in \
+    lpq lpr lprm
+do
+    echo " $BINDIR/$file -> $PREFIX/bin/$file"
+    rm -f $BINDIR/$file
+    ln -s $PREFIX/bin/$file $BINDIR/$file
+done
+
+for file in \
+    lpc
+do
+    echo " $SBINDIR/$file -> $PREFIX/sbin/$file"
+    rm -f $SBINDIR/$file
+    ln -s $PREFIX/sbin/$file $SBINDIR/$file
+done
+
+echo done.
+echo ""

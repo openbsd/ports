@@ -1,0 +1,29 @@
+$OpenBSD: patch-systemv_lpadmin_c,v 1.1.1.1 2005/01/16 12:36:51 mbalmer Exp $
+--- systemv/lpadmin.c.orig	Wed Feb 25 21:14:54 2004
++++ systemv/lpadmin.c	Sat Dec 25 14:57:33 2004
+@@ -2027,14 +2027,14 @@ set_printer_options(http_t        *http,
+ static int			/* O - 0 if name is no good, 1 if name is good */
+ validate_name(const char *name)	/* I - Name to check */
+ {
+-  const char	*ptr;		/* Pointer into name */
++  const signed char	*ptr;		/* Pointer into name */
+ 
+ 
+  /*
+   * Scan the whole name...
+   */
+ 
+-  for (ptr = name; *ptr; ptr ++)
++  for (ptr = (const signed char *) name; *ptr; ptr ++)
+     if (*ptr == '@')
+       break;
+     else if ((*ptr >= 0 && *ptr <= ' ') || *ptr == 127 || *ptr == '/')
+@@ -2044,7 +2044,7 @@ validate_name(const char *name)	/* I - N
+   * All the characters are good; validate the length, too...
+   */
+ 
+-  return ((ptr - name) < 128);
++  return ((ptr - (const signed char *) name) < 128);
+ }
+ 
+ 

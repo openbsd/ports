@@ -1,0 +1,23 @@
+--- test/run-stp-tests.sh.orig	Tue Jun 29 01:31:34 2004
++++ test/run-stp-tests.sh	Sun Nov  7 15:19:29 2004
+@@ -28,7 +28,7 @@
+ # Make the IPP test program...
+ #
+ 
+-make
++${MAKE_PROGRAM}
+ 
+ #
+ # Greet the tester...
+@@ -442,9 +442,9 @@ cat str-trailer.html >>$strfile
+ htmlfile=`basename $strfile .shtml`.html
+ pdffile=`basename $strfile .shtml`.pdf
+ 
+-htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
++htmldoc --datadir ${LOCALBASE}/share/htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
+ 	-f $htmlfile $strfile
+-htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
++htmldoc --datadir ${LOCALBASE}/share/htmldoc --numbered --verbose --titleimage ../doc/images/cups-large.gif \
+ 	-f $pdffile $strfile
+ 
+ echo ""

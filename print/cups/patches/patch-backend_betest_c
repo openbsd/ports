@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_betest_c,v 1.1.1.1 2005/01/16 12:36:50 mbalmer Exp $
+--- backend/betest.c.orig	Fri Dec 24 16:07:39 2004
++++ backend/betest.c	Fri Dec 24 16:24:36 2004
+@@ -76,7 +76,7 @@ main(int  argc,		/* I - Number of comman
+   */
+ 
+   execl(backend, argv[1], argv[2], argv[3], argv[4], argv[5], argv[6], argv[7],
+-        NULL);
++        (char *) 0);
+ 
+   return (1);
+ }
