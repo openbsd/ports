@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/10/08 04:13:39 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/28 20:14:30 brad Exp $
 
 DISTNAME=	enlightenment-0.15.5
 CATEGORIES=     x11
@@ -9,8 +9,8 @@ MAINTAINER=	op21@squish.org
 LIB_DEPENDS=	esd.2.15:${PORTSDIR}/audio/esound \
 		Fnlib.0.4:${PORTSDIR}/graphics/fnlib \
 		gif.4.1:${PORTSDIR}/graphics/giflib \
-		Imlib.1.9:${PORTSDIR}/graphics/imlib \
-		tiff.3.4:${PORTSDIR}/graphics/tiff34 \
+		Imlib.19:${PORTSDIR}/graphics/imlib \
+		tiff.35:${PORTSDIR}/graphics/tiff \
 		ttf.1.2:${PORTSDIR}/print/freetype \
 		ghttp:${PORTSDIR}/www/libghttp
 
