@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.3 2004/09/17 02:07:35 brad Exp $
---- config.h.in.orig	Fri Jul 16 07:34:01 2004
-+++ config.h.in	Wed Jul 21 11:01:16 2004
-@@ -136,6 +136,9 @@
+$OpenBSD: patch-config_h_in,v 1.4 2004/12/10 20:57:08 fgsch Exp $
+--- config.h.in.orig	Fri Dec  3 01:24:22 2004
++++ config.h.in	Fri Dec 10 02:11:39 2004
+@@ -139,6 +139,9 @@
  /* Define to 1 if you have the <gnutls/gnutls.h> header file. */
  #undef HAVE_GNUTLS_GNUTLS_H
  
