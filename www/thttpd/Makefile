@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/18 09:20:11 jakob Exp $
 
-DISTNAME=		thttpd-2.20
+DISTNAME=		thttpd-2.20b
 CATEGORIES=     	www
 NEED_VERSION=		1.305
 
