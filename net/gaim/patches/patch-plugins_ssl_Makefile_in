@@ -1,0 +1,93 @@
+$OpenBSD: patch-plugins_ssl_Makefile_in,v 1.1 2004/01/18 00:11:21 brad Exp $
+--- plugins/ssl/Makefile.in.orig	2004-01-10 01:10:25.000000000 -0500
++++ plugins/ssl/Makefile.in	2004-01-17 14:45:46.000000000 -0500
+@@ -123,6 +123,8 @@ MKINSTALLDIRS = @MKINSTALLDIRS@
+ NSS_CFLAGS = @NSS_CFLAGS@
+ NSS_LIBS = @NSS_LIBS@
+ OBJDUMP = @OBJDUMP@
++OPENSSL_CFLAGS = @OPENSSL_CFLAGS@
++OPENSSL_LIBS = @OPENSSL_LIBS@
+ PACKAGE = @PACKAGE@
+ PERL = @PERL@
+ PERL_CFLAGS = @PERL_CFLAGS@
+@@ -162,19 +164,23 @@ EXTRA_DIST = \
+ plugindir = $(libdir)/gaim
+ 
+ ssl_la_LDFLAGS = -module -avoid-version
++ssl_openssl_la_LDFLAGS = -module -avoid-version
+ ssl_gnutls_la_LDFLAGS = -module -avoid-version
+ ssl_nss_la_LDFLAGS = -module -avoid-version
+ 
+ @PLUGINS_TRUE@plugin_LTLIBRARIES = \
+ @PLUGINS_TRUE@	ssl.la           \
++@PLUGINS_TRUE@	ssl-openssl.la   \
+ @PLUGINS_TRUE@	ssl-gnutls.la    \
+ @PLUGINS_TRUE@	ssl-nss.la
+ 
+ 
+ @PLUGINS_TRUE@ssl_la_SOURCES = ssl.c
++@PLUGINS_TRUE@ssl_openssl_la_SOURCES = ssl-openssl.c
+ @PLUGINS_TRUE@ssl_gnutls_la_SOURCES = ssl-gnutls.c
+ @PLUGINS_TRUE@ssl_nss_la_SOURCES = ssl-nss.c
+ 
++@PLUGINS_TRUE@ssl_openssl_la_LIBADD = $(OPENSSL_LIBS)
+ @PLUGINS_TRUE@ssl_gnutls_la_LIBADD = $(GNUTLS_LIBS)
+ @PLUGINS_TRUE@ssl_nss_la_LIBADD = $(NSS_LIBS)
+ 
+@@ -185,6 +191,7 @@ AM_CPPFLAGS = \
+ 	$(DEBUG_CFLAGS) \
+ 	$(GTK_CFLAGS) \
+ 	$(PLUGIN_CFLAGS) \
++	$(OPENSSL_CFLAGS) \
+ 	$(NSS_CFLAGS) \
+ 	$(GNUTLS_CFLAGS)
+ 
+@@ -194,6 +201,10 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ 
++@PLUGINS_TRUE@ssl_openssl_la_DEPENDENCIES =
++@PLUGINS_FALSE@ssl_openssl_la_DEPENDENCIES =
++@PLUGINS_TRUE@am_ssl_openssl_la_OBJECTS = ssl-openssl.lo
++ssl_openssl_la_OBJECTS = $(am_ssl_openssl_la_OBJECTS)
+ @PLUGINS_TRUE@ssl_gnutls_la_DEPENDENCIES =
+ @PLUGINS_FALSE@ssl_gnutls_la_DEPENDENCIES =
+ @PLUGINS_TRUE@am_ssl_gnutls_la_OBJECTS = ssl-gnutls.lo
+@@ -213,7 +224,7 @@ LDFLAGS = @LDFLAGS@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/ssl-gnutls.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/ssl-nss.Plo ./$(DEPDIR)/ssl.Plo
++@AMDEP_TRUE@	./$(DEPDIR)/ssl-nss.Plo ./$(DEPDIR)/ssl.Plo ./$(DEPDIR)/ssl-openssl.Plo
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+@@ -222,9 +233,9 @@ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(ssl_gnutls_la_SOURCES) $(ssl_nss_la_SOURCES) \
+-	$(ssl_la_SOURCES)
++	$(ssl_la_SOURCES) $(ssl_openssl_la_SOURCES)
+ DIST_COMMON = Makefile.am Makefile.in
+-SOURCES = $(ssl_gnutls_la_SOURCES) $(ssl_nss_la_SOURCES) $(ssl_la_SOURCES)
++SOURCES = $(ssl_gnutls_la_SOURCES) $(ssl_nss_la_SOURCES) $(ssl_la_SOURCES) $(ssl_openssl_la_SOURCES)
+ 
+ all: all-am
+ 
+@@ -263,6 +274,8 @@ clean-pluginLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
++ssl-openssl.la: $(ssl_openssl_la_OBJECTS) $(ssl_openssl_la_DEPENDENCIES)
++	$(LINK) -rpath $(plugindir) $(ssl_openssl_la_LDFLAGS) $(ssl_openssl_la_OBJECTS) $(ssl_openssl_la_LIBADD) $(LIBS)
+ ssl-gnutls.la: $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_DEPENDENCIES) 
+ 	$(LINK) -rpath $(plugindir) $(ssl_gnutls_la_LDFLAGS) $(ssl_gnutls_la_OBJECTS) $(ssl_gnutls_la_LIBADD) $(LIBS)
+ ssl-nss.la: $(ssl_nss_la_OBJECTS) $(ssl_nss_la_DEPENDENCIES) 
+@@ -276,6 +289,7 @@ mostlyclean-compile:
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl-openssl.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl-gnutls.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl-nss.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ssl.Plo@am__quote@
