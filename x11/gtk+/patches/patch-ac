@@ -1,5 +1,5 @@
---- docs/Makefile.in.orig	Wed Feb 16 06:30:33 2000
-+++ docs/Makefile.in	Sun Mar 12 08:51:49 2000
+--- docs/Makefile.in.orig	Wed May 24 21:12:15 2000
++++ docs/Makefile.in	Wed Jun 21 06:04:39 2000
 @@ -98,7 +98,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
@@ -9,7 +9,7 @@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  OBJDUMP = @OBJDUMP@
  PACKAGE = @PACKAGE@
-@@ -184,46 +184,40 @@
+@@ -185,46 +185,40 @@
  DVIPS = dvips
  
  .texi.info:
@@ -68,7 +68,7 @@
  .dvi.ps:
  	$(DVIPS) $< -o $@
  
-@@ -232,11 +226,10 @@
+@@ -233,11 +227,10 @@
  	$(mkinstalldirs) $(DESTDIR)$(infodir)
  	@list='$(INFO_DEPS)'; \
  	for file in $$list; do \

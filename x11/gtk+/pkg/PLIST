@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2000/06/11 17:56:03 brad Exp $
+@comment $OpenBSD: PLIST,v 1.21 2000/06/21 17:14:04 brad Exp $
 bin/gtk-config
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
@@ -152,6 +152,7 @@ share/locale/ja/LC_MESSAGES/gtk+.mo
 share/locale/ko/LC_MESSAGES/gtk+.mo
 share/locale/lt/LC_MESSAGES/gtk+.mo
 share/locale/nl/LC_MESSAGES/gtk+.mo
+share/locale/nn/LC_MESSAGES/gtk+.mo
 share/locale/no/LC_MESSAGES/gtk+.mo
 share/locale/pl/LC_MESSAGES/gtk+.mo
 share/locale/pt/LC_MESSAGES/gtk+.mo
@@ -167,6 +168,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 share/themes/Default/gtk/gtkrc.bg
 share/themes/Default/gtk/gtkrc.bg_BG.iso88595
+share/themes/Default/gtk/gtkrc.cp1255
 share/themes/Default/gtk/gtkrc.cs
 share/themes/Default/gtk/gtkrc.cy
 share/themes/Default/gtk/gtkrc.el

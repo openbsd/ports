@@ -1,6 +1,6 @@
---- gtk/Makefile.in.orig	Wed Feb 16 06:29:16 2000
-+++ gtk/Makefile.in	Thu Mar  9 10:13:16 2000
-@@ -124,7 +124,7 @@
+--- gtk/Makefile.in.orig	Wed May 24 21:11:04 2000
++++ gtk/Makefile.in	Wed Jun 21 06:03:05 2000
+@@ -125,7 +125,7 @@
  x_libs = @x_libs@
  xinput_progs = @xinput_progs@
  
@@ -9,25 +9,25 @@
  
  
  #
-@@ -134,7 +134,7 @@
+@@ -135,7 +135,7 @@
  
  # libtool stuff: set version and export symbols for resolving
  libgtkincludedir = $(includedir)/gtk
 -libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)		-release $(LT_RELEASE) 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
-+libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 1:2:0 						-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
++libgtk_la_LDFLAGS = @STRIP_BEGIN@ 	-version-info 1:2:0					-export-dynamic							@GLIB_DEPLIBS@ 							@x_ldflags@							@x_libs@ 							-lm							@STRIP_END@
  
  #	$(top_builddir)/gdk/libgdk.la
  
-@@ -189,7 +189,7 @@
+@@ -190,7 +190,7 @@
  gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
  CLEANFILES =  $(gen_sources)
  
 -gtkconfdir = $(sysconfdir)/gtk
 +gtkconfdir = $(datadir)/themes/Default/gtk
- gtkconf_DATA = gtkrc.bg gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii
+ gtkconf_DATA = gtkrc.bg gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii gtkrc.cp1255
  
  
-@@ -502,7 +502,7 @@
+@@ -503,7 +503,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
  		uninstall-libgtkincludeHEADERS uninstall-local
  uninstall: uninstall-am
