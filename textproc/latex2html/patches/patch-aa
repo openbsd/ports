@@ -1,0 +1,11 @@
+--- latex2html.orig	Sun May 21 15:54:51 2000
++++ latex2html	Sun May 21 15:55:00 2000
+@@ -3803,7 +3803,7 @@
+ 	local($name)= $tag."_attribs";
+ 	$taglist = $$name;
+ 	$values = $saved;
+-        $values =~ s/\s*\"?([^,\s\"]+)\"?\s*,?/$i++;$attributes{$i}=$1};''/eg;
++        $values =~ s/\s*\"?([^,\s\"]+)\"?\s*,?/$i++;$attributes{$i}=$1;''/eg;
+         local($j) = 0;
+ 	while ($j < $i) {
+ 	    $j++;
