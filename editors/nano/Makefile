@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/23 12:38:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/05 08:06:14 naddy Exp $
 
-DISTNAME=	nano-0.9.18
+DISTNAME=	nano-0.9.19
 CATEGORIES=	editors
-NEED_VERSION=	1.333
-HOMEPAGE=	http://www.asty.org/nano/
+NEED_VERSION=	1.338
+HOMEPAGE=	http://www.nano-editor.org
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.asty.org/pub/nano/
+		${HOMEPAGE}/dist/
 MASTER_SITE_SUBDIR=	nano
 
 PERMIT_PACKAGE_CDROM=	Yes 
