@@ -1,6 +1,42 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/12/11 19:00:59 david Exp $
---- configure.orig	2003-11-01 23:14:09.000000000 -0600
-+++ configure	2003-11-11 16:41:23.000000000 -0600
+$OpenBSD: patch-configure,v 1.2 2004/10/13 03:13:15 danh Exp $
+--- configure.orig	Sun Nov  2 00:14:09 2003
++++ configure	Tue Oct 12 22:58:38 2004
+@@ -7512,7 +7512,7 @@ if test "${ac_cv_lib_netsnmp_asn_parse_i
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lnetsnmp  $LIBS"
++LIBS="-lnetsnmp -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -7571,7 +7571,7 @@ if test "${ac_cv_lib_netsnmp_asn_parse_i
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lnetsnmp "-lcrypto" $LIBS"
++LIBS="-lnetsnmp -lcrypto -lm $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -7987,7 +7987,7 @@ fi
+   fi
+ 
+   if test "${HAVE_SNMP}" = "yes"; then
+-    for ac_snmp in /usr/include/net-snmp/library/asn1.h /usr/include/ucd-snmp/asn1.h /usr/local/include/ucd-snmp/asn1.h /dev/null
++    for ac_snmp in /usr/include/net-snmp/library/asn1.h /usr/local/include/net-snmp/library/asn1.h /usr/include/ucd-snmp/asn1.h /usr/local/include/ucd-snmp/asn1.h /dev/null
+     do
+       test -f "${ac_snmp}" && break
+     done
+@@ -8051,7 +8051,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+       		CFLAGS="${CFLAGS} -I/usr/local/include/net-snmp"
+-      		LIBS="${LIBS} -L/usr/local/lib -lnetsnmp"
++      		LIBS="${LIBS} -L/usr/local/lib -lnetsnmp -lm"
+       		;;
+     esac
+     if test "${NEED_CRYPTO}" = "yes"; then
 @@ -9190,7 +9190,7 @@ fi
  echo "$as_me:$LINENO: result: $ac_cv_htonl_works" >&5
  echo "${ECHO_T}$ac_cv_htonl_works" >&6
