@@ -1,0 +1,31 @@
+# $OpenBSD: automake.dep,v 1.1 2004/06/06 11:49:08 espie Exp $
+configure configure.ac
+configure configure.in
+/Makefile.in /Makefile.am
+/Makefile.in configure.in
+/Makefile.in configure.ac
+/Makefile.in aclocal.m4
+aclocal.m4 configure.in
+aclocal.m4 configure.ac
+aclocal.m4 acinclude.m4
+config.h.in configure.in
+config.h.in configure.ac
+config.h.in aclocal.m4
+configure configure.in
+configure configure.ac
+configure aclocal.m4
+stamp-h.in configure.in
+stamp-h.in configure.ac
+stamp-h.in aclocal.m4
+stamp-h.in acconfig.h
+# kde files
+acinclude.m4 admin/cvs.sh
+configure.in admin/cvs.sh
+/Makefile.am admin/cvs.sh
+subdirs admin/cvs.sh
+/Makefile.am subdirs
+configure.files subdirs
+configure.in configure.files
+acinclude.m4 admin/libtool.m4.in
+acinclude.m4 admin/acinclude.m4.in
+acinclude.m4 libltdl/ltdl.m4

@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.18 2004/05/05 11:17:22 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.19 2004/06/06 11:49:08 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -59,11 +59,6 @@ CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
 
 REGRESS_TARGET?=	check
 
-# Files to touch in order...
-MODGNU_AUTOCONF_FILES?= /Makefile.am configure.files configure.in configure.ac \
-	acinclude.m4 aclocal.m4 acconfig.h stamp-h.in \
-	config.h.in /Makefile.in configure
-
 # internal stuff to run on each directory.
 MODGNU_post-patch= for d in ${AUTOCONF_DIR}; do cd $$d; ${_MODGNU_loop} done;
 _MODGNU_loop=
@@ -82,18 +77,7 @@ _MODGNU_loop+= echo "Running autoheader-${AUTOCONF_VERSION} in $$d";
 _MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER};
 .    endif
 .    if !${CONFIGURE_STYLE:L:Mautomake}
-_MODGNU_loop+= for f in ${MODGNU_AUTOCONF_FILES}; do \
-		case $$f in \
-		/*) \
-			find . -name $${f\#/} -print| while read i; \
-				do echo "Touching $$i"; touch $$i; done \
-			;; \
-		*) \
-			if test -e $$f ; then \
-				echo "Touching $$f"; touch $$f; \
-			fi \
-			;; \
-		esac; done; 
+REORDER_DEPENDENCIES+=${PORTSDIR}/infrastructure/mk/automake.dep
 .    endif
 .  endif
 .  endif

@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.616 2004/06/01 21:06:29 jolan Exp $
+#	$OpenBSD: bsd.port.mk,v 1.617 2004/06/06 11:49:08 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1105,6 +1105,7 @@ _LIB_DEP2= ${LIB_DEPENDS}
 
 README_NAME?=	${TEMPLATES}/README.port
 
+REORDER_DEPENDENCIES?=
 ###
 ### end of variable setup. Only targets now
 ###
@@ -1638,6 +1639,22 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@${MOD${_m:U}_post-patch}
 .  endif
 .endfor
+.if !empty(REORDER_DEPENDENCIES)
+	sed -e '/^#/d' ${REORDER_DEPENDENCIES} | \
+	  tsort -r|while read f; do \
+	    cd ${WRKSRC}; \
+		case $$f in \
+		/*) \
+			find . -name $${f#/} -print| while read i; \
+				do echo "Touching $$i"; touch $$i; done \
+			;; \
+		*) \
+			if test -e $$f ; then \
+				echo "Touching $$f"; touch $$f; \
+			fi \
+			;; \
+		esac; done
+.endif
 .if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} $@
 .endif
