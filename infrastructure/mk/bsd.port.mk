@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.608 2004/02/07 22:14:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.609 2004/02/07 22:18:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -67,6 +67,9 @@ CLEANDEPENDS?=No
 USE_SYSTRACE?=	No
 BULK?=No
 RECURSIVE_FETCH_LIST?=	Yes
+WRKOBJDIR?=
+FAKEOBJDIR?=
+BULK_TARGETS?=
 
 # special purpose user settings
 PATCH_CHECK_ONLY?=No
@@ -466,13 +469,13 @@ BZIP2?=	bzip2
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 
-.if defined(FAKEOBJDIR)
+.if !empty(FAKEOBJDIR)
 WRKINST?=	${FAKEOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}
 .else
 WRKINST?=	${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 .endif
 
-.if defined(WRKOBJDIR)
+.if !empty(WRKOBJDIR)
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
 WRKDIR?=		${WRKOBJDIR}/${PKGNAME}
 .  else
@@ -1022,8 +1025,6 @@ _INSTALL_DEPS+=${_PACKAGE_COOKIES}
 _INSTALL_DEPS+=${_BULK_COOKIE}
 _PACKAGE_DEPS+=${_BULK_COOKIE}
 .endif
-
-BULK_TARGETS?=
 
 MODSIMPLE_configure= \
 	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
