@@ -1,19 +1,11 @@
-*** resource.h.orig	Thu Jul 30 10:17:26 1998
---- resource.h	Thu Jul 30 10:17:26 1998
-***************
-*** 63,69 ****
-  		XmcdNhelpPath, XmcdCHelpPath,
-  		XmRString, sizeof(String),
-  		XtOffsetOf(appdata_t, helppath), XmRImmediate,
-! 		(XtPointer) "/usr/lib/X11/xmmix.hlp",
-  	},
-  	{
-  		XmcdNautoLoadOnStartUp, XmcdCAutoLoadOnStartUp,
---- 63,69 ----
-  		XmcdNhelpPath, XmcdCHelpPath,
-  		XmRString, sizeof(String),
-  		XtOffsetOf(appdata_t, helppath), XmRImmediate,
-! 		(XtPointer) "/usr/X11R6/lib/X11/xmmix.hlp",
-  	},
-  	{
-  		XmcdNautoLoadOnStartUp, XmcdCAutoLoadOnStartUp,
+--- resource.h.orig	Sun Jul 14 19:49:07 1996
++++ resource.h	Sun Apr  9 18:35:52 2000
+@@ -63,7 +63,7 @@ STATIC XtResource	resources[] = {
+ 		XmcdNhelpPath, XmcdCHelpPath,
+ 		XmRString, sizeof(String),
+ 		XtOffsetOf(appdata_t, helppath), XmRImmediate,
+-		(XtPointer) "/usr/lib/X11/xmmix.hlp",
++		(XtPointer) "/usr/local/lib/X11/xmmix.hlp",
+ 	},
+ 	{
+ 		XmcdNautoLoadOnStartUp, XmcdCAutoLoadOnStartUp,
