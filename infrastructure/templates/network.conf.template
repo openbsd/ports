@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.14 2001/03/22 00:23:53 avsm Exp $
+# $OpenBSD: network.conf.template,v 1.15 2001/03/25 17:29:01 brad Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -55,6 +55,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
+	http://www.shellhung.org/download/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/gnu/%SUBDIR%/ \
 
