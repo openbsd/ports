@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/09/15 11:46:09 shell Exp $
+# $OpenBSD: Makefile,v 1.15 2003/05/17 03:15:31 naddy Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
 NOT_FOR_ARCHS=	powerpc sparc sparc64
-# XXX This will panic any vax
-NOT_FOR_ARCHS+=	vax
+# XXX This will panic any m68k
+NOT_FOR_ARCHS+=	m68k
 
 COMMENT=	"ANSI Common Lisp compiler"
 
