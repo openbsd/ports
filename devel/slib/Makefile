@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/03 07:20:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/14 23:34:18 espie Exp $
 
 COMMENT=	"scheme r5 library"
 
 CATEGORIES=	devel
 
-V=2c9
+V=3a1
 DISTNAME=	slib$V
 PKGNAME=	slib-$V
 EXTRACT_SUFX=	.zip
@@ -31,6 +31,10 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKDIR}/slib/{ANNOUNCE,README,FAQ} ${PREFIX}/share/slib
+	# install init files for Unix implementations as well
+	${INSTALL_DATA} ${WRKDIR}/slib/*.init ${PREFIX}/share/slib
+	# Those are not Unix-like
+	rm ${PREFIX}/share/slib/{macscheme.init,pscheme.init}
 	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
 
 .include <bsd.port.mk>
