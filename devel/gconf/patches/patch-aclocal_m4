@@ -1,32 +1,23 @@
-$OpenBSD: patch-aclocal_m4,v 1.3 2001/11/13 14:04:41 wilfried Exp $
---- aclocal.m4.orig	Mon Oct 29 19:55:11 2001
-+++ aclocal.m4	Sun Nov 11 22:53:02 2001
-@@ -1003,6 +1003,7 @@ if test "X${PATH_SEPARATOR+set}" != Xset
-     *-DOS) lt_cv_sys_path_separator=';' ;;
-     *)     lt_cv_sys_path_separator=':' ;;
-   esac
-+  PATH_SEPARATOR=$lt_cv_sys_path_separator
- fi
- ])# _LT_AC_LIBTOOL_SYS_PATH_SEPARATOR
- 
-@@ -1420,8 +1421,15 @@ old_postinstall_cmds='chmod 644 $oldlib'
- old_postuninstall_cmds=
+$OpenBSD: patch-aclocal_m4,v 1.4 2002/03/25 17:18:38 nino Exp $
+--- aclocal.m4.orig	Mon Oct 29 13:55:11 2001
++++ aclocal.m4	Sat Feb 16 11:31:54 2002
+@@ -1421,7 +1421,14 @@ old_postuninstall_cmds=
  
  if test -n "$RANLIB"; then
-+ case $host_os in
-+  openbsd*)
-+    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
-+    ;;
-+  *)
-+    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
-+    ;;
-+  esac
    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
 -  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  case "$host_os" in
++  openbsd*)
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++  ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++  ;;
++  esac
  fi
  
  # Allow CC to be a program name with arguments.
-@@ -1824,7 +1832,9 @@ cygwin* | mingw* | pw32* )
+@@ -1824,7 +1831,9 @@ cygwin* | mingw* | pw32* )
      with_gnu_ld=no
    fi
    ;;
@@ -37,7 +28,7 @@ $OpenBSD: patch-aclocal_m4,v 1.3 2001/11/13 14:04:41 wilfried Exp $
  esac
  
  ld_shlibs=yes
-@@ -2228,10 +2238,24 @@ else
+@@ -2228,10 +2237,24 @@ else
      ;;
  
    openbsd*)
@@ -46,25 +37,25 @@ $OpenBSD: patch-aclocal_m4,v 1.3 2001/11/13 14:04:41 wilfried Exp $
      hardcode_direct=yes
      hardcode_shlibpath_var=no
 +    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
 +      export_dynamic_flag_spec='${wl}-E'
 +    else
 +      case "$host_os" in
-+      openbsd[[01]].* | openbsd2.[[0-7]] | openbsd2.[[0-7]].*)
-+      archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
-+      hardcode_libdir_flag_spec='-R$libdir'
-+        ;;
++      openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
++       hardcode_libdir_flag_spec='-R$libdir'
++       ;;
 +      *)
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+        ;;
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++       hardcode_libdir_flag_spec='${wl}-R$libdir'
++       ;;
 +      esac
 +    fi
      ;;
  
    os2*)
-@@ -2705,9 +2729,19 @@ newsos6)
+@@ -2705,9 +2728,25 @@ newsos6)
  
  openbsd*)
    version_type=sunos
@@ -73,34 +64,23 @@ $OpenBSD: patch-aclocal_m4,v 1.3 2001/11/13 14:04:41 wilfried Exp $
 -    need_version=no
 +  need_lib_prefix=no
 +  need_version=no
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  file_magic_cmd=/usr/bin/file
++  file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
 +    case "$host_os" in
-+    openbsd2.[[89]] | openbsd2.[[89]].*)
++    openbsd2.[89] | openbsd2.[89].*)
 +      shlibpath_overrides_runpath=no
-+      ;;
++    ;;
 +    *)
 +      shlibpath_overrides_runpath=yes
-+      ;;
++    ;;
 +    esac
 +  else
++    deplibs_check_method='file_magic OpenBSD.* shared library'
 +    shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-@@ -3838,6 +3872,16 @@ newos6*)
-   [lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [ML]SB (executable|dynamic lib)']
-   lt_cv_file_magic_cmd=/usr/bin/file
-   lt_cv_file_magic_test_file=/usr/lib/libnls.so
-+  ;;
-+
-+openbsd*)
-+  lt_cv_file_magic_cmd=/usr/bin/file
-+  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-+    lt_cv_deplibs_check_method='file_magic ELF [[0-9]][[0-9]]*-bit [[LM]]SB shared object'
-+  else
-+    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
-+  fi
-   ;;
- 
- osf3* | osf4* | osf5*)

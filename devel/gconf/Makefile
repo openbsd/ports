@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/19 02:50:34 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/25 17:18:37 nino Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.7
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR= 	stable/sources/GConf
 EXTRACT_SUFX=           .tar.bz2
 
 LIB_DEPENDS=		oaf.::x11/gnome/oaf \
+			xml.9::textproc/libxml1 \
 			gnome.36::x11/gnome/libs
 
 FLAVORS= 		guile db3
@@ -30,7 +31,8 @@ USE_X11=		Yes
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${WRKBUILD}/gconf/.libs -L${LOCALBASE}/lib" \
+			XML_CONFIG="${LOCALBASE}/bin/xml-config"
 
 .if ${FLAVOR:L:Mguile}
 BUILD_DEPENDS+= 	:guile-*:lang/guile
@@ -45,16 +47,6 @@ CONFIGURE_ARGS+=	--enable-db3
 .else
 CONFIGURE_ARGS+=	--disable-db3
 .endif
-
-pre-build:
-	@if pkg dependencies check gconf-\*; then \
-                if pkg dependencies check ${DISTNAME}; then \
-                        :; \
-                else \
-                        echo 1>&2 "Error: you must remove your old GConf first"; \
-                        exit 1; \
-                fi; \
-        fi;
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gconf; \
