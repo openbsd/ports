@@ -8,7 +8,4 @@ In addition to simple reading, cdparanoia adds extra-robust
 data verification, synchronization, error handling and scratch
 reconstruction capability.
 
-The OpenBSD port does not implement automatic recognition of cdrom devices,
-it defaults to using /dev/cd0c if no -g option is used.
-
 WWW: ${HOMEPAGE}
