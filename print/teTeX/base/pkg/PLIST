@@ -76,8 +76,6 @@ bin/otp2ocp
 bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
-bin/oxdvi
-bin/oxdvi.bin
 bin/patgen
 bin/pdfeinitex
 bin/pdfelatex
@@ -122,8 +120,6 @@ bin/viromega
 bin/virtex
 bin/vptovf
 bin/weave
-bin/xdvi
-bin/xdvi.bin
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
 include/kpathsea/c-ctype.h
@@ -269,7 +265,7 @@ man/man1/viromega.1
 man/man1/virtex.1
 man/man1/vptovf.1
 man/man1/weave.1
-man/man1/xdvi.1
+!%%no_x11%%
 @comment share/texmf/dvips/base/color.pro
 @comment share/texmf/dvips/base/crop.pro
 @comment share/texmf/dvips/base/finclude.pro

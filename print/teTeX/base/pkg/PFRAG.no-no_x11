@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2000/09/13 14:22:09 avsm Exp $
+bin/oxdvi
+bin/oxdvi.bin
+bin/xdvi
+bin/xdvi.bin
+man/man1/xdvi.1

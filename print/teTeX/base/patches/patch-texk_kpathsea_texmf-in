@@ -1,0 +1,60 @@
+--- texk/kpathsea/texmf.in.orig	Sun Sep 10 23:09:28 2000
++++ texk/kpathsea/texmf.in	Sun Sep 10 23:12:54 2000
+@@ -375,8 +375,8 @@ MPXCOMMAND = makempx
+ % 
+ main_memory.context = 1100000
+ main_memory = 263000 % words of inimemory available; also applies to inimf&mp
+-extra_mem_top = 0    % extra high memory for chars, tokens, etc.
+-extra_mem_bot = 0    % extra low memory for boxes, glue, breakpoints, etc.
++extra_mem_top = 400000 % extra high memory for chars, tokens, etc.
++extra_mem_bot = 400000 % extra low memory for boxes, glue, breakpoints, etc.
+ 
+ % Words of font info for TeX (total size of all TFM files, approximately). 
+ font_mem_size = 400000
+@@ -387,22 +387,22 @@ font_max = 1000
+ % Extra space for the hash table of control sequences (which allows 10K
+ % names as distributed).
+ hash_extra.context = 25000
+-hash_extra = 0
++hash_extra = 20000
+ 
+ % Max number of characters in all strings, including all error messages,
+ % help texts, font names, control sequences.  These values apply to TeX and MP.
+ pool_size.context = 750000
+-pool_size = 125000		
++pool_size = 5000000		
+ % Minimum pool space after TeX/MP's own strings; must be at least
+ % 25000 less than pool_size, but doesn't need to be nearly that large.
+ string_vacancies.context = 45000
+-string_vacancies = 25000
++string_vacancies = 45000
+ % Maximum number of strings.
+ max_strings.context = 55000
+-max_strings = 15000
++max_strings = 55000
+ % min pool space left after loading .fmt
+ pool_free.context = 47500
+-pool_free = 5000
++pool_free = 47500
+ 
+ % Hyphenation trie. As distributed, the maximum is 65535; this should
+ % work unless `unsigned short' is not supported or is smaller than 16
+@@ -426,14 +426,14 @@ buf_size = 50000
+ 
+ hyph_size = 1000        % number of hyphenation exceptions, >610 and <32767.
+ nest_size.context = 500
+-nest_size = 100		% simultaneous semantic levels (e.g., groups)
++nest_size = 500		% simultaneous semantic levels (e.g., groups)
+ max_in_open = 15	% simultaneous input files and error insertions
+ param_size.context = 1500
+-param_size = 500	% simultaneous macro parameters
++param_size = 1500	% simultaneous macro parameters
+ save_size.context = 5000
+-save_size = 4000	% for saving values outside current group
++save_size = 5000	% for saving values outside current group
+ stack_size.context = 1500
+-stack_size = 300	% simultaneous input sources
++stack_size = 15000	% simultaneous input sources
+ 
+ % These are Omega-specific.
+ ocp_buf_size = 20000	% character buffers for ocp filters.
