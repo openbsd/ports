@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/15 00:26:36 turan Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
+
+BROKEN=		sources missing
 
 DISTNAME=	adom-g14
 CATEGORIES=	games
