@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2002/07/09 13:24:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2002/07/30 17:26:33 wcobb Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -116,6 +116,7 @@
 #    SUBDIR += xmandel
      SUBDIR += xmedcon
 #    SUBDIR += xmfract
+     SUBDIR += xmms-kj
 #    SUBDIR += xmorph
 #    SUBDIR += xmountains
      SUBDIR += xpaint
