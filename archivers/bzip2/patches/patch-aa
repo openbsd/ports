@@ -1,10 +1,10 @@
 --- Makefile.orig	Mon Sep  7 18:31:14 1998
 +++ Makefile	Mon Sep  7 18:36:22 1998
-@@ -5,19 +5,18 @@
+@@ -5,19 +5,19 @@
  OBJS= blocksort.o  \
        huffman.o    \
        crctable.o   \
--      randtable.o  \
+       randtable.o  \
        compress.o   \
        decompress.o \
        bzlib.o
