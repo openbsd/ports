@@ -11,7 +11,7 @@ lzo-1.07|archivers/lzo||portable speedy lossless data compression library|archiv
 lzop-1.00|archivers/lzop||fast file compressor similar to gzip|archivers/lzop/pkg/DESCR|Dan Harnett <danh@openbsd.org>|archivers|lzo-1.07|lzo-1.07|any|y|y|y|y
 nulib-3.25|archivers/nulib||NuFX archiver|archivers/nulib/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|archivers|||any|n|y|n|y
 p5-Compress-LZO-1.00|archivers/p5-Compress-LZO||Perl5 interface to lzo compression library|archivers/p5-Compress-LZO/pkg/DESCR|Dan Harnett <danh@openbsd.org>|archivers perl5|lzo-1.07|lzo-1.07|any|y|y|y|y
-p5-Compress-Zlib-1.08|archivers/p5-Compress-Zlib||Perl5 interface to zlib compression library|archivers/p5-Compress-Zlib/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|archivers perl5|||any|y|y|y|y
+p5-Compress-Zlib-1.09|archivers/p5-Compress-Zlib||perl interface to the zlib compression library|archivers/p5-Compress-Zlib/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|archivers perl5|||any|y|y|y|y
 rar-2.02|archivers/rar||archiver (binary port)|archivers/rar/pkg/DESCR|ports@openbsd.org|archivers|||i386 sparc|n|n|n|y
 star-1.2|archivers/star||unique standard tape archiver with many enhancements|archivers/star/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|archivers sysutils|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 unace-1.2b|archivers/unace||extract, view & test ACE archives|archivers/unace/pkg/DESCR|Brad Smith <brad@openbsd.org>|archivers|unzip-5.41||any|y|y|y|y
@@ -23,9 +23,10 @@ zoo-2.10.1|archivers/zoo||handle the old .zoo archive format|archivers/zoo/pkg/D
 dgpsip-1.32|astro/dgpsip||Differential GPS over IP communication device|astro/dgpsip/pkg/DESCR|Wolfgang Rupprecht <wsr+dgpsip@wsrcc.com>|astro|||any|y|y|y|y
 jday-1.2|astro/jday||convert calendar dates to/from astronomical julian dates|astro/jday/pkg/DESCR|Christian Weisgerber <naddy@mips.inka.de>|astro|||any|y|y|y|y
 sattrack-3.1.6|astro/sattrack||real-time satellite tracking and orbit propagation program|astro/sattrack/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|astro|||any|n|y|n|y
-wmmoonclock-1.27|astro/wmmoonclock||dockable moon phase clock|astro/wmmoonclock/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11|||any|y|y|y|y
-wmspaceweather-1.04|astro/wmspaceweather||dockable space weather monitor|astro/wmspaceweather/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11||gettext-0.10.35 wget-1.6|any|y|y|y|y
-wmsun-1.03|astro/wmsun||dockable WindowMaker sunrise/sunset app|astro/wmsun/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11|||any|y|y|y|y
+wmglobe-1.1a|astro/wmglobe||dock app that displays the earth on an icon|astro/wmglobe/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11 x11/windowmaker|gettext-0.10.35 gmake-3.79.1 libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 windowmaker-0.62.1|libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 windowmaker-0.62.1|any|y|y|y|y
+wmmoonclock-1.27|astro/wmmoonclock||dockable moon phase clock|astro/wmmoonclock/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11 x11/windowmaker|||any|y|y|y|y
+wmspaceweather-1.04|astro/wmspaceweather||dockable space weather monitor|astro/wmspaceweather/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11 x11/windowmaker||gettext-0.10.35 wget-1.6|any|y|y|y|y
+wmsun-1.03|astro/wmsun||dockable WindowMaker sunrise/sunset app|astro/wmsun/pkg/DESCR|Peter Stromberg <home@wilfried.net>|astro x11 x11/windowmaker|||any|y|y|y|y
 xearth-1.1|astro/xearth||set the root window to the image of earth|astro/xearth/pkg/DESCR|Paul Janzen <pjanzen@openbsd.org>|astro x11|||any|n|y|n|y
 xephem-3.2.3|astro/xephem||interactive astronomical ephemeris|astro/xephem/pkg/DESCR|ports@openbsd.org|astro|lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
 xphoon-91.9.18|astro/xphoon||set the root window to the moon in its current phase|astro/xphoon/pkg/DESCR|ports@openbsd.org|astro x11|||any|n|y|n|y
@@ -65,7 +66,7 @@ wsoundserver-0.4.0|audio/wsoundserver||sound server for Window Maker|audio/wsoun
 wsoundserver-0.4.0-esd|audio/wsoundserver,esd||sound server for Window Maker|audio/wsoundserver/pkg/DESCR|Peter Stromberg <home@wilfried.net>|audio|gettext-0.10.35 libaudiofile-0.2.0 gmake-3.79.1 esound-0.2.22 libdockapp-0.4.0 libproplist-0.10.1|libaudiofile-0.2.0 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 esound-0.2.22 libdockapp-0.4.0 libproplist-0.10.1 windowmaker-0.62.1|any|y|y|y|y
 xcd-1.6|audio/xcd||Tcl/Tk CD player|audio/xcd/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|audio||tcl-8.3.2 tk-8.3.2|any|y|y|y|y
 xcdplayer-2.2|audio/xcdplayer||CD player for X11|audio/xcdplayer/pkg/DESCR|ports@openbsd.org|audio|||any|y|y|y|y
-xmcd-2.3|audio/xmcd||Motif CD player|audio/xmcd/pkg/DESCR|ports@openbsd.org|audio|lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
+xmcd-2.6|audio/xmcd||Motif CD player|audio/xmcd/pkg/DESCR|ports@openbsd.org|audio|lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
 xmix-2.1|audio/xmix||X11-based audio mixer|audio/xmix/pkg/DESCR|ports@openbsd.org|audio|||any|y|y|y|y
 xmmix-1.2|audio/xmmix||Motif-based audio mixer|audio/xmmix/pkg/DESCR|ports@openbsd.org|audio|lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
 xmp-1.1.5|audio/xmp||Extended Module Player; many formats plus an X11 display|audio/xmp/pkg/DESCR|ports@openbsd.org|audio|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
@@ -196,8 +197,8 @@ abiword-0.7.10|editors/abiword||open-source, cross-platform WYSIWYG word process
 axe-6.1.2|editors/axe||simple to use text editor for X11|editors/axe/pkg/DESCR|ports@openbsd.org|editors|||any|n|y|n|y
 beav-1.40-13|editors/beav||binary editor and viewer|editors/beav/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|editors|||any|y|y|y|y
 bvi-1.3.0|editors/bvi||binary visual display editor, based on vi|editors/bvi/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|||any|y|y|y|y
-cooledit-3.17.2|editors/cooledit||easy to use, graphical editor|editors/cooledit/pkg/DESCR|Marc Espie <espie@openbsd.org>|editor|||any|y|y|y|y
-cooledit-3.17.2-python|editors/cooledit,python||easy to use, graphical editor|editors/cooledit/pkg/DESCR|Marc Espie <espie@openbsd.org>|editor|python-1.5.2|python-1.5.2|any|y|y|y|y
+cooledit-3.17.2|editors/cooledit||easy to use, graphical editor|editors/cooledit/pkg/DESCR|Marc Espie <espie@openbsd.org>|editors|||any|y|y|y|y
+cooledit-3.17.2-python|editors/cooledit,python||easy to use, graphical editor|editors/cooledit/pkg/DESCR|Marc Espie <espie@openbsd.org>|editors|python-1.5.2|python-1.5.2|any|y|y|y|y
 emacs-20.7|editors/emacs||GNU editor|editors/emacs/pkg/DESCR|Matthew Economou <xenophon@irtnog.org>|editors|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 emacs-20.7-no_x11|editors/emacs,no_x11||GNU editor|editors/emacs/pkg/DESCR|Matthew Economou <xenophon@irtnog.org>|editors|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 elvis-2.1.4|editors/elvis||clone of the ex/vi text editor|editors/elvis/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|||any|y|y|y|y
@@ -205,7 +206,7 @@ elvis-2.1.4-no_x11|editors/elvis,no_x11||clone of the ex/vi text editor|editors/
 hexedit-1.1.0|editors/hexedit||view and edit files in hexadecimal or ASCII|editors/hexedit/pkg/DESCR|Brad Smith <brad@openbsd.org>|editors|||any|y|y|y|y
 jed-0.99.11|editors/jed||text editor|editors/jed/pkg/DESCR|ports@openbsd.org|editors|libslang-1.4.2|libslang-1.4.2|any|y|y|y|y
 jed-0.99.11-no_x11|editors/jed,no_x11||text editor|editors/jed/pkg/DESCR|ports@openbsd.org|editors|libslang-1.4.2|libslang-1.4.2|any|y|y|y|y
-joe-2.8|editors/joe||Joe's own editor|editors/joe/pkg/DESCR|ports@openbsd.org|editors|||any|y|y|y|y
+joe-2.8p1|editors/joe||joe's own editor|editors/joe/pkg/DESCR|ports@openbsd.org|editors|||any|y|y|y|y
 jove-4.16|editors/jove||Jonathan's Own Version of Emacs|editors/jove/pkg/DESCR|ports@openbsd.org|editors|||any|n|y|n|y
 nano-0.9.25|editors/nano||small, easy to use editor|editors/nano/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|autoconf-2.13 gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
 nano-0.9.25-slang|editors/nano,slang||small, easy to use editor|editors/nano/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|autoconf-2.13 gettext-0.10.35 libslang-1.4.2|gettext-0.10.35 libslang-1.4.2|any|y|y|y|y
@@ -254,7 +255,7 @@ slash-3.2.2-e8-no_x11|games/slash,no_x11||dungeon explorin', hackin' game, but h
 netris-0.5|games/netris||network head-to-head version of T*tris|games/netris/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|games|||any|y|y|y|y
 spider-1.1|games/spider||challenging double decked solitaire game|games/spider/pkg/DESCR|ports@openbsd.org|games|||any|y|y|y|y
 starlanes-1.2.2|games/starlanes||the classic space-age stock trading game|games/starlanes/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|games|||any|y|y|y|y
-wmeyes-0.0|games/wmeyes||dockable version of xeyes|games/wmeyes/pkg/DESCR|Peter Stromberg <home@wilfried.net>|games x11|||any|n|n|n|n
+wmeyes-0.0|games/wmeyes||dockable version of xeyes|games/wmeyes/pkg/DESCR|Peter Stromberg <home@wilfried.net>|games x11 x11/windowmaker|||any|n|n|n|n
 xasteroids-5.0|games/xasteroids||X11-based asteroids-style arcade|games/xasteroids/pkg/DESCR|ports@openbsd.org|games|||any|y|y|y|y
 xbat-1.11|games/xbat||XEVIOUS-like shooting game|games/xbat/pkg/DESCR|ports@openbsd.org|games|||any|n|n|n|y
 xbattle-5.4.1|games/xbattle||concurrent multi-player battle strategy game|games/xbattle/pkg/DESCR|ports@openbsd.org|games|||any|n|y|n|y
@@ -306,7 +307,7 @@ gd-1.8.3|graphics/gd||graphics library for fast PNG creation|graphics/gd/pkg/DES
 gd-1.8.3-no_x11|graphics/gd,no_x11||graphics library for fast PNG creation|graphics/gd/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|gettext-0.10.35 gmake-3.79.1 jpeg-6b png-1.0.8 freetype-1.3|jpeg-6b png-1.0.8 freetype-1.3|any|y|y|y|y
 gdk-pixbuf-0.9.0|graphics/gdk-pixbuf||replacement library for imlib |graphics/gdk-pixbuf/pkg/DESCR|Tom Knienieder <tom@knienieder.com>|graphics|gettext-0.10.35 glib-1.2.8 jpeg-6b png-1.0.8 tiff-3.5.5 gtk+-1.2.8|gettext-0.10.35 glib-1.2.8 jpeg-6b png-1.0.8 tiff-3.5.5 gtk+-1.2.8|any|y|y|y|y
 libggi-2.0b2.1|graphics/ggi||Generic Graphics Library|graphics/ggi/pkg/DESCR|Todd T. Fries <todd@openbsd.org>|graphics|gettext-0.10.35 gmake-3.79.1 libgii-0.6|libgii-0.6|any|y|y|y|y
-gif2png-2.3.3|graphics/gif2png||converts GIF images to the PNG format|graphics/gif2png/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|png-1.0.8|png-1.0.8|any|y|y|y|y
+gif2png-2.4.0|graphics/gif2png||converts GIF images to the PNG format|graphics/gif2png/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|png-1.0.8|png-1.0.8|any|y|y|y|y
 giflib-4.1.0|graphics/giflib||Gif Library and utilities|graphics/giflib/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 giftrans-1.12|graphics/giftrans||handle GIF89a transparent option and interlace mode|graphics/giftrans/pkg/DESCR|ports@openbsd.org|graphics|||any|n|y|n|y
 gifsicle-1.23|graphics/gifsicle||creating & editing GIF images and animations|graphics/gifsicle/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|graphics|||any|y|y|y|y
@@ -334,7 +335,8 @@ pngcrush-1.5.3|graphics/pngcrush||optimizer for PNG files|graphics/pngcrush/pkg/
 tgif-4.1.40|graphics/tgif||two-dimensional drawing tool and hyper-object browser|graphics/tgif/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|graphics||jpeg-6b png-1.0.8 tiff-3.5.5 netpbm-19940301|any|n|y|n|y
 tiff-3.5.5|graphics/tiff||Tools and library routines for working with TIFF images|graphics/tiff/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|jpeg-6b|jpeg-6b|any|y|y|y|y
 tiff2png-0.81|graphics/tiff2png||converts TIFF images to PNG format|graphics/tiff2png/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|jpeg-6b png-1.0.8 tiff-3.5.5|jpeg-6b png-1.0.8 tiff-3.5.5|any|y|y|y|y
-wmgrabimage-0.70|graphics/wmgrabimage||dockable WWW image monitor|graphics/wmgrabimage/pkg/DESCR|Peter Stromberg <home@wilfried.net>|graphics x11||jpeg-6b png-1.0.8 tiff-3.5.5 ghostscript-5.50 bzip2-1.0.1 jbigkit-1.2 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 transfig-3.2.3c libxml-2.2.11 gettext-0.10.35 ImageMagick-5.2.5 xv-3.10a wget-1.6|any|y|y|y|y
+wmgrabimage-0.70|graphics/wmgrabimage||dockable WWW image monitor|graphics/wmgrabimage/pkg/DESCR|Peter Stromberg <home@wilfried.net>|graphics x11 x11/windowmaker||jpeg-6b png-1.0.8 tiff-3.5.5 ghostscript-5.50 bzip2-1.0.1 jbigkit-1.2 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 transfig-3.2.3c libxml-2.2.11 gettext-0.10.35 ImageMagick-5.2.5 xv-3.10a wget-1.6|any|y|y|y|y
+wmphoto-0.3a|graphics/wmphoto||shows photos and execute commands related to that photo|graphics/wmphoto/pkg/DESCR|Peter Stromberg <home@wilfried.net>|graphics x11 x11/windowmaker||jpeg-6b png-1.0.8 tiff-3.5.5 ghostscript-5.50 bzip2-1.0.1 jbigkit-1.2 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 transfig-3.2.3c libxml-2.2.11 ImageMagick-5.2.5|any|y|y|y|y
 xanim-2.80.1|graphics/xanim||X11 animation player with support for lots of formats|graphics/xanim/pkg/DESCR|Marc Espie <espie@openbsd.org>|graphics x11|||any|n|y|n|y
 xbmbrowser-5.1|graphics/xbmbrowser||view complete directories of X bitmaps and X pixmaps|graphics/xbmbrowser/pkg/DESCR|ports@openbsd.org|graphics|||any|y|y|y|y
 xfig-3.2.3a|graphics/xfig||CAD drawing program for X11|graphics/xfig/pkg/DESCR|ports@openbsd.org|graphics x11|jpeg-6b Xaw3d-1.5|png-1.0.8 ghostscript-5.50 Xaw3d-1.5 jpeg-6b gv-3.5.8 transfig-3.2.3c|any|y|y|y|y
@@ -471,7 +473,7 @@ solid-pop3d-0.15p1-apop|mail/solid-pop3d,apop||flexible POP3 server|mail/solid-p
 tkrat-2.0b9|mail/tkrat||mail user agent for X in C with a Tcl/Tk frontend|mail/tkrat/pkg/DESCR|Rik Schneider <rik@deranged.schneider.org>|mail x11|tcl-8.3.2 tk-8.3.2|tcl-8.3.2 tk-8.3.2|any|y|y|y|y
 vmailmgr-0.96.9|mail/vmailmgr||virtual mail manager to qmail for multiple domains|mail/vmailmgr/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|mail||ucspi-unix-0.34 daemontools-0.70|any|y|y|y|y
 vrfy-99.05.22|mail/vrfy||verify email addresses and mailing lists|mail/vrfy/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|mail|||any|y|y|y|y
-wmbiff-0.2|mail/wmbiff||xbiff-like Window Maker dock app|mail/wmbiff/pkg/DESCR|Cameron Lerch <opcode@skylab.2y.net>|mail|||any|y|y|y|y
+wmbiff-0.2|mail/wmbiff||xbiff-like Window Maker dock app|mail/wmbiff/pkg/DESCR|Cameron Lerch <opcode@skylab.2y.net>|mail x11 x11/windowmaker|||any|y|y|y|y
 xfaces-3.3|mail/xfaces||mail image display for X11|mail/xfaces/pkg/DESCR|ports@openbsd.org|mail|faces-1.6.1|faces-1.6.1|any|n|n|n|n
 xfmail-1.4.6|mail/xfmail||xforms-based mail application for Unix|mail/xfmail/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail x11|bzip2-1.0.1 glib-1.2.8 xforms-0.88|glib-1.2.8 xforms-0.88|i386 sparc m68k hp300|n|y|n|y
 xlbiff-3.0|mail/xlbiff||display from/subject from incoming mails using X11|mail/xlbiff/pkg/DESCR|ports@openbsd.org|mail x11|||any|y|y|y|y
@@ -488,6 +490,7 @@ mapleshare-5.5|math/maple-share||libraries for maple V 5; commercial|math/maple-
 netcdf-3.5b3|math/netcdf||library for machine-independent, array-oriented data access|math/netcdf/pkg/DESCR|Tom Knienieder <tom@knienieder.com>|math|||any|y|y|y|y
 ntl-5.0c|math/ntl||Victor Shoup's Number Theory Library|math/ntl/pkg/DESCR|Tom Knienieder <tom@knienieder.com>|math|||any|y|y|y|y
 Wingz-142|math/wingz||commercial spreadsheet|math/wingz/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|math||linux_lib-2.6.1|i386|n|n|n|y
+wmcalc-0.21|math/wmcalc||dockable simple four-function calculator|math/wmcalc/pkg/DESCR|Peter Stromberg <home@wilfried.net>|math x11 x11/windowmaker|||any|y|y|y|y
 xspread-3.1.1c|math/xspread||spreadsheet program under X11|math/xspread/pkg/DESCR|ports@openbsd.org|math|||any|y|y|y|y
 common-1.0.6|mbone/common||common library functions used by the UCL multicast utils|mbone/common/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mbone|gettext-0.10.35 gmake-3.79.1 tcl-8.0.5 tk-8.0.5|tcl-8.0.5 tk-8.0.5|any|y|y|y|y
 imm-3.5a1|mbone/imm||Internet Image (or other data) Multicaster (and receiver)|mbone/imm/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|mbone|tcl-8.0.5 tk-8.0.5|tcl-8.0.5 tk-8.0.5|any|n|y|n|y
@@ -535,8 +538,8 @@ tkinfo-2.5|misc/tkinfo||Tk script to read GNU info files and display them|misc/t
 tkman-2.1|misc/tkman||Tcl/Tk-based manual browser|misc/tkman/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|misc|tcl-8.3.2 tk-8.3.2|tcl-8.3.2 glimpse-4.1 rman-3.0.9 tk-8.3.2|any|n|y|n|y
 ttyrec-1.0.2|misc/ttyrec||tty recorder|misc/ttyrec/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|misc|||any|y|y|y|y
 viz-1.1.1|misc/viz||Convert invisible (binary) characters to a visible form|misc/viz/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|misc|||any|y|y|y|y
-wmnetscapekiller-0.3|misc/wmnetscapekiller||dockapp for killing Netscape when it freezes|misc/wmnetscapekiller/pkg/DESCR|Peter Stromberg <home@wilfried.net>|misc x11||skill-4.0|any|y|y|y|y
-wmtimer-2.2|misc/wmtimer||dockable alarm clock for WindowMaker|misc/wmtimer/pkg/DESCR|Peter Stromberg <home@wilfried.net>|misc x11|gettext-0.10.35 glib-1.2.8 gtk+-1.2.8|gettext-0.10.35 glib-1.2.8 gtk+-1.2.8|any|y|y|y|y
+wmnetscapekiller-0.3|misc/wmnetscapekiller||dockapp for killing Netscape when it freezes|misc/wmnetscapekiller/pkg/DESCR|Peter Stromberg <home@wilfried.net>|misc x11 x11/windowmaker||skill-4.0|any|y|y|y|y
+wmtimer-2.2|misc/wmtimer||dockable alarm clock for WindowMaker|misc/wmtimer/pkg/DESCR|Peter Stromberg <home@wilfried.net>|misc x11 x11/windowmaker|gettext-0.10.35 glib-1.2.8 gtk+-1.2.8|gettext-0.10.35 glib-1.2.8 gtk+-1.2.8|any|y|y|y|y
 xd-8087|misc/xd||yet another dump utility|misc/xd/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|misc|||any|y|y|y|y
 xdelta-1.1.1|misc/xdelta||binary delta generator and prototype RCS replacement|misc/xdelta/pkg/DESCR|ports@openbsd.org|misc|gdbm-1.8.0 glib-1.2.8|gdbm-1.8.0 glib-1.2.8|any|y|y|y|y
 xgas-1.0|misc/xgas||animated simulation of an ideal gas|misc/xgas/pkg/DESCR|ports@openbsd.org|misc|||any|y|y|y|y
@@ -552,7 +555,7 @@ arping-0.94|net/arping||ARP level ping utility|net/arping/pkg/DESCR|Joshua Stein
 arpwatch-2.1a10|net/arpwatch||monitor arp & rarp requests|net/arpwatch/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 axyftp-0.5.1|net/axyftp||ftp client for X window system|net/axyftp/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|net|lesstif-0.91.8|lesstif-0.91.8|any|n|y|n|y
 bind-8.2.2-P7|net/bind8|/|Berkeley Internet Name Daemon|net/bind8/pkg/DESCR|Hakan Olsson <ho@openbsd.org>, Jakob Schlyter <jakob@openbsd.org>|net|||any|n|n|n|n
-bind-9.0.1|net/bind9||Berkeley Internet Name Daemon|net/bind9/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net|||any|y|y|y|y
+bind-9.1.0|net/bind9||Berkeley Internet Name Daemon|net/bind9/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net|||any|y|y|y|y
 bing-1.0.4|net/bing||point-to-point bandwith measurement tool|net/bing/pkg/DESCR|ports@OpenBSD.ORG|net|||any|y|y|y|y
 bitchx-1.0c17p1|net/bitchx||alternative ircII color client|net/bitchx/pkg/DESCR|Brad Smith <brad@openbsd.org>|net|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 cidr-2.3|net/cidr||RFC 1878 subnet calculator / helper|net/cidr/pkg/DESCR|je@sekure.net|net|||any|y|y|y|y
@@ -579,7 +582,7 @@ icb-5.0.9|net/icb||Internet CB - mostly-defunct chat client|net/icb/pkg/DESCR|po
 icecast-1.3.7|net/icecast||Internet based broadcasting system|net/icecast/pkg/DESCR|Federico Schwindt <fgsch@openbsd.org>|net audio www|||any|y|y|y|y
 icmpinfo-1.11|net/icmpinfo||look at the icmp messages received by the host|net/icmpinfo/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|net sysutils|||any|y|y|y|y
 ipfm-0.10.4|net/ipfm||IP bandwidth analysis tool|net/ipfm/pkg/DESCR|Oleg Safiullin <form@openbsd.org>|net|||any|y|y|y|y
-iplog-2.2.2|net/iplog||TCP/IP traffic logging tool|net/iplog/pkg/DESCR|Brian Caswell <bmc@mitre.org>|net security|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
+iplog-2.2.3|net/iplog||TCP/IP traffic logging tool|net/iplog/pkg/DESCR|Brian Caswell <bmc@mitre.org>|net security|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 irc-2.10.1|net/irc||'Internet Relay Chat' server|net/irc/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 ircii-4.4Z|net/ircII||'Internet Relay Chat' client|net/ircII/pkg/DESCR|Brad Smith <brad@openbsd.org>|net|||any|y|y|y|y
 irssi-0.7.97.2|net/irssi||modular IRC client with many features (ipv6,socks,proxy)|net/irssi/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|net|gettext-0.10.35 glib-1.2.8|glib-1.2.8|any|y|y|y|y
@@ -596,6 +599,7 @@ mtr-0.42|net/mtr||Matt's traceroute - network diagnostic tool|net/mtr/pkg/DESCR|
 nam-1.0a8|net/nam||The UCB/LBNL Network Animator|net/nam/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|net|tcl-8.3.2 tk-8.3.2 otcl-1.0a5 tclcl-1.0b9||any|y|y|y|y
 nbtscan-1.0.2|net/nbtscan||NetBIOS name network scanner|net/nbtscan/pkg/DESCR|Dug Song <dugsong@monkey.org>|net|||any|y|y|y|y
 ncftp-3.0.1|net/ncftp||curses-based ftp program|net/ncftp/pkg/DESCR|Eric Jackson <shinobi@monkey.org>|net|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
+ndiff-0.04|net/ndiff||compare two nmap scans and outputs the differences|net/ndiff/pkg/DESCR|Brian Caswell <bmc@mitre.org>|net perl5||gettext-0.10.35 glib-1.2.8 gtk+-1.2.8 nmap-2.54b7|any|y|y|y|y
 nemesis-1.2|net/nemesis||Command line arbitrary packet builder|net/nemesis/pkg/DESCR|Mark Grimes <obecian@openbsd.org>|net security|libnet-1.0.1b||any|y|y|y|y
 netatalk-990130|net/netatalk||File and Print Services for AppleTalk Networks|net/netatalk/pkg/DESCR|Ian McWilliam <i.mcwilliam@uws.edu.au>|net|||any|y|y|y|y
 netpipes-4.1.1-export|net/netpipe||shell utilities to connect programs to sockets|net/netpipe/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
@@ -648,7 +652,7 @@ vnc-3.3.2r3|net/vnc||display X & Win32 desktops on remote X/Win32/Java displays|
 vtun-2.3|net/vtun||virtual tunnels over TCP/IP networks with traffic shaping|net/vtun/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|net|lzo-1.07|lzo-1.07|any|y|y|y|y
 wget-1.6|net/wget||retrieve files from the 'net via HTTP and FTP|net/wget/pkg/DESCR|Brad Smith <brad@openbsd.org>|net|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
 wide-dhcp-1.4.0.3|net/wide-dhcp||client and servers for the WIDE DHCP protocol|net/wide-dhcp/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
-wmnet-1.06|net/wmnet||little X dock.app network monitor|net/wmnet/pkg/DESCR|Vladimir Popov <pva48@mail.ru>|net x11|||any|y|y|y|y
+wmnet-1.06|net/wmnet||little X dock.app network monitor|net/wmnet/pkg/DESCR|Vladimir Popov <pva48@mail.ru>|net x11 x11/windowmaker|||any|y|y|y|y
 xarchie-2.0.10|net/xarchie||X11 front-end program for the archie network search service|net/xarchie/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 xchat-1.4.3|net/xchat||X-Chat is an X11 irc client|net/xchat/pkg/DESCR|chris@dqc.org|x11|glib-1.2.8 gettext-0.10.35 gmake-3.79.1 gtk+-1.2.8|glib-1.2.8 gettext-0.10.35 gtk+-1.2.8|any|y|y|y|y
 yafc-0.6.5|net/yafc||powerful console ftp client with many features|net/yafc/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|net|||any|y|y|y|y
@@ -768,8 +772,8 @@ tempwatch-1.0|security/tempwatch||temporary file auditing tool|security/tempwatc
 uvscan-4.07e|security/uvscan||evaluation version of a DOS/Windows file virus scanner|security/uvscan/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security||linux_lib-2.6.1 uvscan_dat-4094|any|n|n|n|n
 uvscan_dat-4094|security/uvscan_dat||AntiVirus DAT file for uvscan|security/uvscan_dat/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security|||any|n|n|n|n
 whisker-1.4|security/whisker||stealthy webserver vulnerability scanner|security/whisker/pkg/DESCR|Dug Song <dugsong@monkey.org>|security|||any|y|y|y|y
-bash-1.14.7|shells/bash||GNU Bourne Again Shell|shells/bash/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
-bash-1.14.7-static|shells/bash,static||GNU Bourne Again Shell|shells/bash/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
+bash-1.14.7p1|shells/bash||GNU Bourne Again Shell|shells/bash/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
+bash-1.14.7p1-static|shells/bash,static||GNU Bourne Again Shell|shells/bash/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 bash-2.04|shells/bash2||GNU Bourne Again Shell|shells/bash2/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 bash-2.04-static|shells/bash2,static||GNU Bourne Again Shell|shells/bash2/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
 es-0.9b1|shells/es||extensible shell, derived from plan9's rc|shells/es/pkg/DESCR|ports@openbsd.org|shells|||any|y|y|y|y
@@ -800,12 +804,12 @@ stat-1.3|sysutils/stat||print inode contents|sysutils/stat/pkg/DESCR|ports@openb
 tcplist-2.2|sysutils/tcplist||list tcp connections to/from the local machine|sysutils/tcplist/pkg/DESCR|ports@OpenBSD.ORG|sysutils net||lsof-4.53|any|y|y|y|y
 upsd-2.0|sysutils/upsd||APC Smart UPS Monitoring Daemon|sysutils/upsd/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|sysutils|||any|n|n|n|y
 usbutil-0.4|sysutils/usbutil||USB developer utilities|sysutils/usbutil/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|sysutils|||any|y|y|y|y
-wmmon-1.0b2|sysutils/wmmon||WindowMaker dock app similar to xload|sysutils/wmmon/pkg/DESCR|Vladimir Popov <pva48@mail.ru>|sysutils|||any|y|y|y|y
+wmmon-1.0b2|sysutils/wmmon||WindowMaker dock app similar to xload|sysutils/wmmon/pkg/DESCR|Vladimir Popov <pva48@mail.ru>|sysutils x11 x11/windowmaker|||any|y|y|y|y
 xbatt-1.2.1|sysutils/xbatt||laptop battery status display for X11|sysutils/xbatt/pkg/DESCR|Niklas Hallqvist <niklas@openbsd.org>|sysutils x11|||i386|y|y|y|y
 webmin-0.81|sysutils/webmin||Web-based interface for system administration for Unix|sysutils/webmin/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|sysutils|||any|y|y|y|y
 whowatch-1.4|sysutils/whowatch||interactive utility that displays info about online users|sysutils/whowatch/pkg/DESCR|Mark Grimes <obecian@openbsd.org>|sysutils|||any|y|y|y|y
-wmapm-3.1|sysutils/wmapm||dockable APM/battery monitor|sysutils/wmapm/pkg/DESCR|Peter Stromberg <home@wilfried.net>|sysutils x11|||i386|y|y|y|y
-wmcube-0.98|sysutils/wmcube||displays a realtime rotating 3d-object and the CPU load|sysutils/wmcube/pkg/DESCR|Peter Stromberg <home@wilfried.net>|sysutils x11|||any|y|y|y|y
+wmapm-3.1|sysutils/wmapm||dockable APM/battery monitor|sysutils/wmapm/pkg/DESCR|Peter Stromberg <home@wilfried.net>|sysutils x11 x11/windowmaker|||i386|y|y|y|y
+wmcube-0.98|sysutils/wmcube||displays a realtime rotating 3d-object and the CPU load|sysutils/wmcube/pkg/DESCR|Peter Stromberg <home@wilfried.net>|sysutils x11 x11/windowmaker|||any|y|y|y|y
 xntp3-5.93e|sysutils/xntpd||Network Time Protocol implementation|sysutils/xntpd/pkg/DESCR|Jason Wright <jason@openbsd.org>|sysutils|||any|y|y|y|y
 xosview-1.7.4|sysutils/xosview||graphical performance meter|sysutils/xosview/pkg/DESCR|Oleg Safiullin <form@openbsd.org>|sysutils|||any|y|y|y|y
 zap-1.1|sysutils/zap||interactive process killer|sysutils/zap/pkg/DESCR|Ian Darwin <ian@openbsd.org>|sysutils|||any|y|y|y|y
@@ -1006,9 +1010,12 @@ Tktable-2.6|x11/tktable||tk extension|x11/tktable/pkg/DESCR|Kevin Lo <kevlo@open
 tvtwm-pl11|x11/tvtwm||twm with a virtual desktop|x11/tvtwm/pkg/DESCR|Dug Song <dugsong@monkey.org>|x11|||any|y|y|y|y
 viewfax-2.3|x11/viewfax||display files containing g3 and/or g4 coded fax pages|x11/viewfax/pkg/DESCR|ports@openbsd.org|x11|||any|y|y|y|y
 windowmaker-0.62.1|x11/windowmaker||windowmanager that emulates NEXTSTEP(tm)|x11/windowmaker/pkg/DESCR|Jason Ish <jasoni@openbsd.org>|x11|gettext-0.10.35 gmake-3.79.1 libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5|libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5|any|y|y|y|y
-wmcalclock-1.25|x11/wmcalclock||window maker calendar/clock dockapp|x11/wmcalclock/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11|||any|y|y|y|y
-wmtime-1.0b2|x11/wmtime||time/date applet for WindowMaker|x11/wmtime/pkg/DESCR|Arthur H. Johnson II <arthur@linuxbox.nu>|x11|||any|y|y|y|y
-wmweather-1.31|x11/wmweather||dockable weather monitor|x11/wmweather/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11||gettext-0.10.35 wget-1.6|any|y|y|y|y
+wmbutton-0.4|x11/wmbutton||dockable application launching program|x11/wmbutton/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11 x11/windowmaker|||any|y|y|y|y
+wmcalclock-1.25|x11/wmcalclock||window maker calendar/clock dockapp|x11/wmcalclock/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11 x11/windowmaker|||any|y|y|y|y
+wmdate-0.7|x11/wmdate||dockapp that shows the current date|x11/wmdate/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11 x11/windowmaker|libdockapp-0.4.0|libdockapp-0.4.0|any|y|y|y|y
+wmpinboard-1.0|x11/wmpinboard||dock app resembling a miniature pinboard|x11/wmpinboard/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11 x11/windowmaker|||any|y|y|y|y
+wmtime-1.0b2|x11/wmtime||time/date applet for WindowMaker|x11/wmtime/pkg/DESCR|Arthur H. Johnson II <arthur@linuxbox.nu>|x11 x11/windowmaker|||any|y|y|y|y
+wmweather-1.31|x11/wmweather||dockable weather monitor|x11/wmweather/pkg/DESCR|Peter Stromberg <home@wilfried.net>|x11 x11/windowmaker||gettext-0.10.35 wget-1.6|any|y|y|y|y
 wmx-6pre6|x11/wmx||window manager|x11/wmx/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|x11|||any|y|y|y|y
 wterm-6.2.6|x11/wterm||color vt102 terminal emulator with transparency support|x11/wterm/pkg/DESCR|Brad Smith <brad@openbsd.org>|x11|gettext-0.10.35 gmake-3.79.1 libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 windowmaker-0.62.1|libproplist-0.10.1 giflib-4.1.0 jpeg-6b png-1.0.8 tiff-3.5.5 windowmaker-0.62.1|any|y|y|y|y
 x2vnc-1.0|x11/x2vnc||one keyboard and/or mouse, multiple X and VNC displays|x11/x2vnc/pkg/DESCR|Dug Song <dugsong@monkey.org>|x11|||any|y|y|y|y
