@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/09 08:41:53 wilfried Exp $
---- Makefile.orig	Mon Mar 29 05:51:39 1999
-+++ Makefile	Thu Mar  8 13:17:14 2001
+$OpenBSD: patch-Makefile,v 1.2 2001/03/09 14:29:58 wilfried Exp $
+--- wmitime/Makefile.orig	Mon Mar 29 05:51:39 1999
++++ wmitime/Makefile	Thu Mar  8 13:17:14 2001
 @@ -1,7 +1,6 @@
  #LANG = fr
 -LIBDIR = -L/usr/X11R6/lib

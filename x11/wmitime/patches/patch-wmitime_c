@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmitime_c,v 1.1.1.1 2001/03/09 08:41:53 wilfried Exp $
---- wmitime.c.orig	Mon Mar 29 05:56:05 1999
-+++ wmitime.c	Thu Mar  8 13:14:35 2001
+$OpenBSD: patch-wmitime_c,v 1.2 2001/03/09 14:29:58 wilfried Exp $
+--- wmitime/wmitime.c.orig	Mon Mar 29 05:56:05 1999
++++ wmitime/wmitime.c	Thu Mar  8 13:14:35 2001
 @@ -281,7 +281,7 @@ void DrawInetTime(void)
  
      // Compute Inet Time
