@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/05/06 23:22:54 pvalchev Exp $
 
 COMMENT=	"full screen visualization of network traffic"
 
@@ -9,8 +9,9 @@ MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz
 
-PATCHFILES=	trafshow-31-v6-20010322a.diff.gz:0
-PATCH_DIST_STRIP= -p1
+# See RP#3565 before enabling
+#PATCHFILES=	trafshow-31-v6-20010322a.diff.gz:0
+#PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://soft.risp.ru/trafshow/index_en.shtml
 
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-DINET6"
+#CONFIGURE_ENV=	CPPFLAGS="-DINET6"
 
 ALL_TARGET=	trafshow
 
