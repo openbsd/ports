@@ -1,5 +1,5 @@
 --- src/Makefile.in.orig	Tue Oct 19 17:28:35 1999
-+++ src/Makefile.in	Tue Jun 27 23:46:35 2000
++++ src/Makefile.in	Fri Aug  4 20:49:27 2000
 @@ -27,6 +27,8 @@
  PINGER_EXE	= pinger$(exec_suffix)
  CACHEMGR_EXE	= cachemgr$(cgi_suffix)
@@ -20,14 +20,17 @@
  DEFAULT_MIB_PATH	= $(sysconfdir)/mib.txt
  
  CC		= @CC@
-@@ -262,102 +264,86 @@
+@@ -262,102 +264,90 @@
  	< $(srcdir)/cf.data.pre >$@
  
  install-mkdirs:
 -	-@if test ! -d $(prefix); then \
 -		echo "mkdir $(prefix)"; \
 -		mkdir $(prefix); \
--	fi
++	-@if test ! -d $(DESTDIR)$(prefix); then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix); \
+ 	fi
 -	-@if test ! -d $(exec_prefix); then \
 -		echo "mkdir $(exec_prefix)"; \
 -		mkdir $(exec_prefix); \
@@ -150,10 +153,10 @@
 -		echo "$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir)"; \
 -		$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir); \
 -	fi
-+	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib/squid/conf
-+	$(INSTALL_FILE) $(srcdir)/mib.txt $(DESTDIR)$(prefix)/lib/squid/conf/mib.txt.sample
-+	$(INSTALL_FILE) squid.conf $(DESTDIR)$(prefix)/lib/squid/conf/squid.conf.sample
-+	$(INSTALL_FILE) $(srcdir)/mime.conf $(DESTDIR)$(prefix)/lib/squid/conf/mime.conf.sample
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/share/examples/squid/conf
++	$(INSTALL_FILE) $(srcdir)/mib.txt $(DESTDIR)$(prefix)/share/examples/squid/conf/mib.txt.sample
++	$(INSTALL_FILE) squid.conf $(DESTDIR)$(prefix)/share/examples/squid/conf/squid.conf.sample
++	$(INSTALL_FILE) $(srcdir)/mime.conf $(DESTDIR)$(prefix)/share/examples/squid/conf/mime.conf.sample
  
  install-pinger:
  	@f=pinger; \

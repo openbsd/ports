@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2000/07/29 00:04:58 brad Exp $
+# $OpenBSD: INSTALL,v 1.7 2000/08/05 02:23:15 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -9,7 +9,7 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}
-SAMPLE_CONFIG_DIR=$PREFIX/lib/squid
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/squid
 STATEDIR=${STATEDIR}
 
 install -d -o www -g www $STATEDIR
