@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2003/04/09 23:58:27 espie Exp $
+# $OpenBSD: Makefile,v 1.105 2003/04/28 09:25:49 wilfried Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -95,6 +95,7 @@
      SUBDIR += s10sh
 #    SUBDIR += sced
      SUBDIR += smpeg-xmms
+     SUBDIR += sng
 #    SUBDIR += spigot
 #    SUBDIR += splitmpg
      SUBDIR += synaesthesia
