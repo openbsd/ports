@@ -1,0 +1,19 @@
+$OpenBSD: patch-pear_Makefile_frag,v 1.1 2003/04/03 10:29:03 avsm Exp $
+--- pear/Makefile.frag.orig	Tue Nov 19 14:43:42 2002
++++ pear/Makefile.frag	Sat Feb 15 17:09:24 2003
+@@ -11,11 +11,11 @@ peardir=$(PEAR_INSTALLDIR)
+ # Skip all php.ini files altogether
+ PEAR_INSTALL_FLAGS = -n -dsafe_mode=0
+ 
+-install-pear-installer: $(top_builddir)/sapi/cli/php
+-	@$(top_builddir)/sapi/cli/php $(PEAR_INSTALL_FLAGS) $(srcdir)/install-pear.php $(srcdir)/package-*.xml
++install-pear-installer: 
++	$(LOCALBASE)/bin/php $(PEAR_INSTALL_FLAGS) $(srcdir)/install-pear.php $(srcdir)/package-*.xml
+ 
+-install-pear-packages: $(top_builddir)/sapi/cli/php
+-	@$(top_builddir)/sapi/cli/php $(PEAR_INSTALL_FLAGS) $(srcdir)/install-pear.php $(srcdir)/packages/*.tar
++install-pear-packages: 
++	$(LOCALBASE)/bin/php $(PEAR_INSTALL_FLAGS) $(srcdir)/install-pear.php $(srcdir)/packages/*.tar
+ 
+ install-pear:
+ 	@echo "Installing PEAR environment:      $(INSTALL_ROOT)$(peardir)/"

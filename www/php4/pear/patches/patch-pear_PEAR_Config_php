@@ -1,0 +1,50 @@
+$OpenBSD: patch-pear_PEAR_Config_php,v 1.1 2003/04/03 10:29:03 avsm Exp $
+--- pear/PEAR/Config.php.orig	Sat Feb 15 21:08:35 2003
++++ pear/PEAR/Config.php	Sun Feb 16 01:20:55 2003
+@@ -81,7 +81,7 @@ if (isset($_ENV['PHP_PEAR_DOC_DIR'])) {
+     define('PEAR_CONFIG_DEFAULT_DOC_DIR', $_ENV['PHP_PEAR_DOC_DIR']);
+ } else {
+     define('PEAR_CONFIG_DEFAULT_DOC_DIR',
+-           PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'docs');
++           PHP_PREFIX.'/share/doc/pear');
+ }
+ 
+ // Default for bin_dir
+@@ -96,7 +96,7 @@ if (isset($_ENV['PHP_PEAR_DATA_DIR'])) {
+     define('PEAR_CONFIG_DEFAULT_DATA_DIR', $_ENV['PHP_PEAR_DATA_DIR']);
+ } else {
+     define('PEAR_CONFIG_DEFAULT_DATA_DIR',
+-           PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'data');
++           PHP_PREFIX.'/share/pear');
+ }
+ 
+ // Default for test_dir
+@@ -104,7 +104,7 @@ if (isset($_ENV['PHP_PEAR_TEST_DIR'])) {
+     define('PEAR_CONFIG_DEFAULT_TEST_DIR', $_ENV['PHP_PEAR_TEST_DIR']);
+ } else {
+     define('PEAR_CONFIG_DEFAULT_TEST_DIR',
+-           PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'tests');
++           PHP_PREFIX.'/share/pear/tests');
+ }
+ 
+ // Default for cache_dir
+@@ -112,8 +112,7 @@ if (isset($_ENV['PHP_PEAR_CACHE_DIR'])) 
+     define('PEAR_CONFIG_DEFAULT_CACHE_DIR', $_ENV['PHP_PEAR_CACHE_DIR']);
+ } else {
+     define('PEAR_CONFIG_DEFAULT_CACHE_DIR',
+-           System::tmpdir() . DIRECTORY_SEPARATOR . 'pear' .
+-           DIRECTORY_SEPARATOR . 'cache');
++           '/var/www/pear/cache');
+ }
+ 
+ // Default for php_bin
+@@ -164,8 +163,7 @@ if (isset($_ENV['PHP_PEAR_SIG_BIN'])) {
+     define('PEAR_CONFIG_DEFAULT_SIG_BIN', $_ENV['PHP_PEAR_SIG_BIN']);
+ } else {
+     define('PEAR_CONFIG_DEFAULT_SIG_BIN',
+-           System::which(
+-               'gpg', OS_WINDOWS ? 'c:\gnupg\gpg.exe' : '/usr/local/bin/gpg'));
++            PHP_PREFIX . '/bin/gpg');
+ }
+ 
+ // Default for sig_keydir
