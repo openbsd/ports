@@ -1,6 +1,6 @@
---- Doc/zsh.texi.orig	Tue Aug  3 22:58:00 1999
-+++ Doc/zsh.texi	Tue Aug  3 23:00:08 1999
-@@ -2,6 +2,10 @@
+--- Doc/zsh.texi.orig	Mon Mar  6 18:38:07 2000
++++ Doc/zsh.texi	Mon Mar  6 18:39:52 2000
+@@ -2,11 +2,15 @@
  @c %**start of header
  @setfilename zsh.info
  @settitle    zsh
@@ -11,3 +11,27 @@
  @c %**end of header
  
  @ifinfo
+ @c Note to RedHat: Do NOT change this to @{@}.  It really should be @'@'.
+-@set dsq @'@'
++@set dsq @'{}@'{}
+ @end ifinfo
+ @iftex
+ @c The sequence {} disappears completely in TeX, leaving only the quotes.
+@@ -1062,7 +1066,7 @@
+ the smallest matching pattern is preferred; in the second form, the
+ largest matching pattern is preferred.  If name is an
+ array and the substitution is not quoted or the @code{@@} flag or the 
+-@code{@var{name[@@]}} syntax is used, matching is performed on each array 
++@code{@var{name}[@@]} syntax is used, matching is performed on each array 
+ elements separately.
+ 
+ @item $@{@var{name}:#@var{pattern}@}
+@@ -1566,7 +1570,7 @@
+ @noindent
+ If a @code{:} appears in a qualifier list, the remainder of the
+ expression in parentheses is interpreted as a modifier
+-(@xref{Modifiers}).  Note that each modifier must be introduced by a
++(@pxref{Modifiers})  Note that each modifier must be introduced by a
+ separate @code{:}.  Note also that the result after modification does
+ not have to be an existing file.  The name of any existing file can be
+ followed by a modifier of the form @code{(:@dots{})} even if no filename

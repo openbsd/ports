@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/04 18:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/06 17:57:23 espie Exp $
 
 DISTNAME=	zsh-3.0.7
 CATEGORIES=	shells
@@ -11,17 +11,18 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
-BROKEN=		"Documentation does not agree with texinfo-4.0"
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free
+FAKE=			Yes
+HAS_CONFIGURE=		Yes
+CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 
 # invoke make with STATIC=yes to build a static binary
 .if defined(STATIC) && ${STATIC:U} == YES
@@ -31,6 +32,6 @@ PKGNAME=	${DISTNAME}-static
 
 post-install:
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
-	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+#	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
