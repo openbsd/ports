@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2002/06/05 04:58:01 shell Exp $
+# $OpenBSD: Makefile,v 1.25 2002/06/08 02:41:47 shell Exp $
 
 COMMENT=	"unified perl interface for database access"
 
-DISTNAME=	DBI-1.24
+DISTNAME=	DBI-1.25
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
-NEED_VERSION=	1.524
+NEED_VERSION=	1.531
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBI/}
 
