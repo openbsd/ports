@@ -3,14 +3,16 @@
 # Date created:        25 January 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:44:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/25 12:59:07 kevlo Exp $
 #
 
-DISTNAME=	xmascot2.5p2
-PKGNAME=        xmascot-2.5p2
+DISTNAME=	xmascot2.6a
+PKGNAME=        xmascot-2.6a
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.348
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/
+
+HOMEPAGE=	http://cclub-flying.dsl.gr.jp/products/xmascot/
 
 MAINTAINER=	ports@openbsd.org
 
