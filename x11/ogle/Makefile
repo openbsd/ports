@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2003/08/16 22:29:59 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2003/11/13 18:46:46 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
 CATEGORIES=	x11
 
 COMMENT=	"DVD player"
-DISTNAME=	ogle-0.9.1
+DISTNAME=	ogle-0.9.2
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/

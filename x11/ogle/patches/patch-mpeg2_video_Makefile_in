@@ -1,0 +1,31 @@
+$OpenBSD: patch-mpeg2_video_Makefile_in,v 1.7 2003/11/13 18:46:47 espie Exp $
+--- mpeg2_video/Makefile.in.orig	2003-11-10 15:13:00.000000000 +0100
++++ mpeg2_video/Makefile.in	2003-11-10 15:13:28.000000000 +0100
+@@ -167,9 +167,9 @@ ogle_mpeg_vs_SOURCES = \
+ 	$(MLIBSOURCES) $(ALTIVECSOURCES) $(MMXSOURCES) $(CSOURCES)
+ 
+ ogle_mpeg_vs_LDADD = \
+-	@MLIB_LIBS@ \
+ 	$(top_builddir)/common/libcommon.a \
+-	$(top_builddir)/ogle/libmsgevents.la
++	$(top_builddir)/ogle/libmsgevents.la \
++	@MLIB_LIBS@
+ 
+ 
+ ogle_vout_SOURCES = \
+@@ -185,12 +185,12 @@ ogle_vout_SOURCES = \
+ 	$(MLIBSOURCES) $(ALTIVECSOURCES) $(SPARCASM) $(MMXSOURCES) $(CSOURCES)
+ 
+ ogle_vout_LDADD = \
++	$(top_builddir)/common/libcommon.a \
++	$(top_builddir)/ogle/libmsgevents.la \
+ 	@MLIB_LIBS@ @JPEG_LIBS@ \
+ 	@X_PRE_LIBS@ @X_LIBS@ -lX11 @X_EXTRA_LIBS@ @XEXT_LIB@ \
+ 	@XF86VIDMODE_LIBS@ @XML_LIBS@ \
+-	@XINERAMA_LIBS@ \
+-	$(top_builddir)/common/libcommon.a \
+-	$(top_builddir)/ogle/libmsgevents.la
++	@XINERAMA_LIBS@
+ 
+ subdir = mpeg2_video
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
