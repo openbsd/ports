@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mime_c,v 1.1 2003/06/17 15:13:54 avsm Exp $
+--- src/mime.c.orig	Tue Jun 17 16:01:43 2003
++++ src/mime.c	Tue Jun 17 16:03:15 2003
+@@ -202,7 +202,7 @@ void mime_db_save (void)
+ 
+ 		/* fill out fields */
+ 		xmlSetProp (mime_node, "name", aMimeItem->name);
+-		snprintf (buffer, 5, "%d", aMimeItem->action);
++		snprintf (buffer, 3, "%d", aMimeItem->action);
+ 		xmlSetProp (mime_node, "action", buffer);
+ 		xmlSetProp (mime_node, "helper", aMimeItem->helperApp);
+ 		snprintf (buffer, 3, "%d", aMimeItem->terminalHelper);
