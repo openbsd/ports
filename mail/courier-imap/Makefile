@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2000/08/10 21:12:48 danh Exp $ 
+# $OpenBSD: Makefile,v 1.3 2000/09/10 20:38:10 avsm Exp $ 
 
-DISTNAME=	courier-imap-0.99
+DISTNAME=	courier-imap-1.0
 CATEGORIES=	mail
-NEED_VERSION=	1.319
+NEED_VERSION=	1.326
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 
-MAINTAINER=	anil@recoil.org
+MAINTAINER=	avsm@openbsd.org
 HOMEPAGE=	http://www.inter7.com/courierimap/
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
