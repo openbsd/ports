@@ -1,0 +1,11 @@
+$OpenBSD: patch-test_tclsqlite_test,v 1.1 2005/01/15 00:22:11 jolan Exp $
+--- test/tclsqlite.test.orig	Mon Jul 19 14:30:50 2004
++++ test/tclsqlite.test	Fri Jan 14 17:14:20 2005
+@@ -85,6 +85,7 @@ if {[sqlite -encoding]=="UTF-8" && [sqli
+ }
+ 
+ if {[sqlite -encoding]=="iso8859" && [sqlite -tcl-uses-utf]} {
++  catch {unset ::result}
+   do_test tcl-2.1 {
+     execsql "CREATE TABLE t\251x(a int, b\306 float)"
+     execsql "PRAGMA table_info(t\251x)"
