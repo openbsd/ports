@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_xslt_config_m4,v 1.3 2004/01/06 02:00:08 espie Exp $
+--- ext/xslt/config.m4.orig	2003-10-03 07:25:43.000000000 +0200
++++ ext/xslt/config.m4	2004-01-06 02:45:17.000000000 +0100
+@@ -67,7 +67,7 @@ if test "$PHP_XSLT" != "no"; then
+        SABINF_CFLAGS=`$XSLT_DIR/bin/sablot-config --cflags`
+        SABINF_LIBS=`$XSLT_DIR/bin/sablot-config --libs`
+        SABINF_PREFIX=`$XSLT_DIR/bin/sablot-config --prefix`
+-       SABINF_ALL="\"Cflags: $SABINF_CFLAGS\nLibs: $SABINF_LIBS\nPrefix: $SABINF_PREFIX\""
++       SABINF_ALL="\"Cflags: $SABINF_CFLAGS\\\nLibs: $SABINF_LIBS\\\nPrefix: $SABINF_PREFIX\""
+        PHP_DEFINE(SAB_INFO, "$SABINF_ALL")
+     else
+        AC_MSG_RESULT(not found)
