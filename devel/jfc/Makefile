@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/04 20:46:23 espie Exp $
 
 ONLY_FOR_ARCHS= i386
 
@@ -29,7 +29,7 @@ do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 	   echo "" ; \
 	   echo " You must manually fetch the standard zip format distribution" ; \
-           echo " from http:///www.javasoft.com/products/jfc/download.html" ; \
+           echo " from http://www.javasoft.com/products/jfc/download.html" ; \
            echo " and place it in ${DISTDIR} then run make again." ; \
 	   echo "" ; \
            exit 1 ; \
