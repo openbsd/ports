@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/13 20:14:39 danh Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/13 20:27:55 danh Exp $
 
 COMMENT=	"Cistron RADIUS server"
 
 DISTNAME=	radiusd-cistron-1.6.4
 CATEGORIES=	net
-NEED_VERSION=	1.364
+NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.mma.com.br/pub/cistron-radius/
 
-HOMEPAGE=	http://miquels.www.cistron.nl/radius/
+HOMEPAGE=	http://www.radius.cistron.nl/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
