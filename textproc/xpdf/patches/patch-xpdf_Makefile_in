@@ -1,12 +1,12 @@
-$OpenBSD: patch-xpdf_Makefile_in,v 1.1 2002/04/27 04:21:02 brad Exp $
---- xpdf/Makefile.in.orig	Sat Apr 27 00:01:43 2002
-+++ xpdf/Makefile.in	Sat Apr 27 00:02:45 2002
+$OpenBSD: patch-xpdf_Makefile_in,v 1.2 2002/05/23 23:44:21 brad Exp $
+--- xpdf/Makefile.in.orig	Tue May 21 02:40:09 2002
++++ xpdf/Makefile.in	Thu May 23 19:28:16 2002
 @@ -17,7 +17,7 @@ GOOLIBDIR = ../goo
  LTKSRCDIR = $(srcdir)/../ltk
  LTKLIBDIR = ../ltk
  
--CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(LTKSRCDIR) -I$(srcdir) @X_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @freetype_CFLAGS@ @freetype2_CFLAGS@ @libpaper_CFLAGS@
-+CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(LTKSRCDIR) -I$(srcdir) @X_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @freetype_CFLAGS@ @freetype2_CFLAGS@ @libpaper_CFLAGS@
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(LTKSRCDIR) -I$(srcdir) @X_CFLAGS@ @freetype_CFLAGS@ @freetype2_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @libpaper_CFLAGS@
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(LTKSRCDIR) -I$(srcdir) @X_CFLAGS@ @freetype_CFLAGS@ @freetype2_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @libpaper_CFLAGS@
  
  LDFLAGS = @LDFLAGS@
  

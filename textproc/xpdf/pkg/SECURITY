@@ -1,6 +1,0 @@
-
-${WRKDIR}/xpdf/Stream.cc
-	fixed tmpnam warnings. 
-
-This package seems to be BAD about security. It probably needs alot more
-looking into. Although it is only a user program, no suid, etc.  
