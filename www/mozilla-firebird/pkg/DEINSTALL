@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/05/21 22:14:49 jolan Exp $
 #
 # De-installation setup of mozilla
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-MOZ=${PREFIX}/mozilla
+MOZ=${PREFIX}/mozilla-firebird
 
 # Verify proper execution
 #
