@@ -1,6 +1,6 @@
-$OpenBSD: patch-imap_auth_gss_c,v 1.1 2004/01/16 14:24:41 fgsch Exp $
---- imap/auth_gss.c.orig	2004-01-15 23:28:19.000000000 -0300
-+++ imap/auth_gss.c	2004-01-15 23:28:26.000000000 -0300
+$OpenBSD: patch-imap_auth_gss_c,v 1.2 2005/02/07 17:16:16 naddy Exp $
+--- imap/auth_gss.c.orig	Thu Feb  3 00:05:49 2005
++++ imap/auth_gss.c	Thu Feb  3 00:06:07 2005
 @@ -28,7 +28,7 @@
  #include <netinet/in.h>
  

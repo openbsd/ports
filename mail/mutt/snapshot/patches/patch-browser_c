@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_c,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
---- browser.c.orig	Thu May 24 05:56:48 2001
-+++ browser.c	Sun Aug 19 20:30:22 2001
+$OpenBSD: patch-browser_c,v 1.2 2005/02/07 17:16:16 naddy Exp $
+--- browser.c.orig	Thu Feb  3 09:23:58 2005
++++ browser.c	Thu Feb  3 09:25:52 2005
 @@ -22,6 +22,7 @@
  #include "buffy.h"
  #include "mapping.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-browser_c,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
  #include "mailbox.h"
  #include "browser.h"
  #ifdef USE_IMAP
-@@ -344,6 +345,21 @@ static void init_state (struct browser_s
+@@ -346,6 +347,21 @@ static void init_state (struct browser_s
      menu->data = state->entry;
  }
  
@@ -17,33 +17,33 @@ $OpenBSD: patch-browser_c,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
 +{
 +  char buffer[_POSIX_PATH_MAX + SHORT_STRING];
 +  struct stat s;
-+  
++
 +  if(!buf || buf->magic != M_MAILDIR)
 +    return;
 +
 +  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);
 +  if (lstat (buffer, &s) != 0)
 +    return;
-+  
++
 +  st->st_mtime = s.st_mtime;
 +}
 +
  static int examine_directory (MUTTMENU *menu, struct browser_state *state,
  			      char *d, const char *prefix)
  {
-@@ -407,6 +423,7 @@ static int examine_directory (MUTTMENU *
+@@ -409,6 +425,7 @@ static int examine_directory (MUTTMENU *
      tmp = Incoming;
      while (tmp && mutt_strcmp (buffer, tmp->path))
        tmp = tmp->next;
-+    check_maildir_times (tmp, &s);      
++    check_maildir_times (tmp, &s);
      add_folder (menu, state, de->d_name, &s, (tmp) ? tmp->new : 0);
    }
    closedir (dp);  
-@@ -452,6 +469,7 @@ static int examine_mailboxes (MUTTMENU *
+@@ -454,6 +471,7 @@ static int examine_mailboxes (MUTTMENU *
      strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
      mutt_pretty_mailbox (buffer);
  
-+    check_maildir_times (tmp, &s);      
++    check_maildir_times (tmp, &s);
      add_folder (menu, state, buffer, &s, tmp->new);
    }
    while ((tmp = tmp->next));

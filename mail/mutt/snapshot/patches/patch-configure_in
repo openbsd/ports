@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2004/02/15 04:07:35 brad Exp $
---- configure.in.orig	2004-02-14 23:00:32.000000000 -0500
-+++ configure.in	2004-02-14 23:00:56.000000000 -0500
-@@ -471,7 +471,7 @@ docdir=$mutt_cv_docdir
+$OpenBSD: patch-configure_in,v 1.2 2005/02/07 17:16:16 naddy Exp $
+--- configure.in.orig	Thu Feb  3 09:26:11 2005
++++ configure.in	Thu Feb  3 09:26:25 2005
+@@ -473,7 +473,7 @@ docdir=$mutt_cv_docdir
  AC_SUBST(docdir)
  
  if test x$mutt_cv_setgid = xyes; then

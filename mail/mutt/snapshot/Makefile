@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2005/02/07 17:16:16 naddy Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.5.6
+VERSION=	1.5.7
 MASTER_SITES=	${MASTER_SITES_MUTT:=devel/}
+
+AUTOCONF_VERSION= 2.59
 
 FLAVORS=	hcache
 

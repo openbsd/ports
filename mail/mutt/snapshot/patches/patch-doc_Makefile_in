@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2001/08/20 19:51:53 lebel Exp $
---- doc/Makefile.in.orig	Mon Jun  4 13:14:10 2001
-+++ doc/Makefile.in	Sun Aug 19 19:35:23 2001
-@@ -59,7 +59,7 @@ srcdir_DOCFILES = PGP-Notes.txt applying
- topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
- 	README NEWS TODO README.SECURITY README.SSL README.UPGRADE
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2005/02/07 17:16:16 naddy Exp $
+--- doc/Makefile.in.orig	Thu Feb  3 09:26:40 2005
++++ doc/Makefile.in	Thu Feb  3 09:26:54 2005
+@@ -63,7 +63,7 @@ topsrcdir_DOCFILES = COPYRIGHT GPL INSTA
+ 	ChangeLog.old					\
+ 	README NEWS TODO README.SECURITY README.SSL 
  
 -all: muttrc.man try-html try-txt
 +all: muttrc.man # try-html try-txt

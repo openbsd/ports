@@ -1,6 +1,6 @@
-$OpenBSD: patch-smime_keys_pl,v 1.1 2004/04/06 15:40:02 lebel Exp $
---- smime_keys.pl.orig	2004-03-26 07:40:33.000000000 +0100
-+++ smime_keys.pl	2004-03-26 07:40:47.000000000 +0100
+$OpenBSD: patch-smime_keys_pl,v 1.2 2005/02/07 17:16:16 naddy Exp $
+--- smime_keys.pl.orig	Thu Feb  3 09:22:41 2005
++++ smime_keys.pl	Thu Feb  3 09:23:05 2005
 @@ -52,7 +52,7 @@ sub do_verify($$$ );
  # Get the directories mutt uses for certificate/key storage.
  

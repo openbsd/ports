@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile.inc,v 1.10 2005/01/02 12:56:05 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2005/02/07 17:16:15 naddy Exp $
 
 DISTNAME=	mutt-${VERSION}i
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}
 CATEGORIES=	mail
+
+HOMEPAGE=	http://www.mutt.org/
+
 MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.mutt.org/mutt/ \
 		   ftp://ftp.gbnet.net/pub/mutt-international/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
+
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
 MASTER_SITES1=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/
-
-HOMEPAGE=	http://www.mutt.org/
 
 MODULES=	devel/gettext
 
@@ -19,7 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto des gssapi krb5 ssl
+
+WANTLIB=	c crypto des gssapi krb5 ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
@@ -27,10 +30,15 @@ FLAVOR?=
 CONFIGURE_STYLE= autoconf old
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
-		--enable-flock --disable-fcntl \
+		--enable-flock \
+		--disable-fcntl \
 		--enable-external_dotlock \
-		--enable-imap --enable-pop --with-ssl \
-		--with-gss --sysconfdir=${CONFDIR}
+		--enable-imap \
+		--enable-pop \
+		--with-ssl \
+		--with-gss \
+		--sysconfdir=${CONFDIR}
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
@@ -61,17 +69,17 @@ RUN_DEPENDS+=		::mail/mixmaster
 .endif
 
 .if ${FLAVOR:L:Mhcache}
-PATCHFILES+=		patch-1.5.6.tg.hcache.11:1
+PATCHFILES+=		patch-1.5.7.tg.hcache.1:1
 PATCH_DIST_STRIP=	-p1
-AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	--enable-hcache
 LIB_DEPENDS+=		gdbm.2::databases/gdbm
 .else
-SUPDISTFILES+=		patch-1.5.6.tg.hcache.11:1
+SUPDISTFILES+=		patch-1.5.7.tg.hcache.1:1
+CONFIGURE_ARGS+=	--without-gdbm
 .endif
 
 .if defined(HOMESPOOL)
-CONFIGURE_ARGS+= --with-homespool="${HOMESPOOL}"
+CONFIGURE_ARGS+=	--with-homespool="${HOMESPOOL}"
 .endif
 
 .if defined(DOMAIN)
