@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/30 02:14:12 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2001/08/27 19:16:00 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
 
-DISTNAME=	gettext-0.10.38
+DISTNAME=	gettext-0.10.39
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 
@@ -26,9 +26,6 @@ CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@rm -f ${WRKSRC}/doc/gettext.info*
-
 pre-extract:
 	@if [ -f ${LOCALBASE}/lib/libintl.so.?.? ]; then \
 	   echo "+-------------------"; \
@@ -42,6 +39,9 @@ pre-extract:
 	   echo "+-------------------"; \
 	   exit 1; \
 	fi
+
+post-extract:
+	@rm -f ${WRKSRC}/doc/gettext.info*
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
