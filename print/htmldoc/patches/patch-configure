@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2002/08/10 20:12:36 wilfried Exp $
+--- configure.orig	Sun Mar 24 18:27:40 2002
++++ configure	Fri Aug  9 14:53:07 2002
+@@ -4414,7 +4414,7 @@ _ACEOF
+ POST=:
+ if test "x$with_gui" != xno; then
+     if test "x$FLTKCONFIG" != x; then
+-	LIBS="$LIBS `$FLTKCONFIG --ldflags`"
++	LIBS="$LIBS `$FLTKCONFIG --ldflags --use-images`"
+ 	OPTIM="`$FLTKCONFIG --cflags` $OPTIM"
+ 	cat >>confdefs.h <<\_ACEOF
+ #define HAVE_LIBFLTK 1

@@ -1,17 +1,30 @@
-$OpenBSD: patch-htmldoc_file_c,v 1.1.1.1 2001/02/21 23:31:31 avsm Exp $
---- htmldoc/file.c.orig	Tue Feb 13 10:31:16 2001
-+++ htmldoc/file.c	Wed Feb 21 21:53:19 2001
-@@ -410,11 +410,11 @@ file_find(const char *path,		/* I - Path
-              GetCurrentProcessId(), web_files);
+$OpenBSD: patch-htmldoc_file_c,v 1.2 2002/08/10 20:12:36 wilfried Exp $
+--- htmldoc/file.c.orig	Tue May  7 22:40:53 2002
++++ htmldoc/file.c	Fri Aug  9 14:37:13 2002
+@@ -73,7 +73,7 @@
+ #  define OPENPERM	(_S_IREAD | _S_IWRITE)
  #else
-     if ((tmpdir = getenv("TMPDIR")) == NULL)
--      tmpdir = "/var/tmp";
-+      tmpdir = "/tmp";
+ #  define TEMPLATE	"%s/%06d.%06d.tmp"
+-#  define OPENMODE	(O_CREAT | O_RDWR | O_EXCL | O_TRUNC)
++#  define OPENMODE	(O_CREAT | O_RDWR | O_EXCL)
+ #  define OPENPERM	0600
+ #endif /* WIN32 */
  
-     snprintf(filename, sizeof(filename), "%s/%06d.%06d", tmpdir, web_files,
-              getpid());
--    if ((fd = open(filename, O_CREAT | O_EXCL | O_TRUNC, 0600)) >= 0)
-+    if ((fd = open(filename, O_CREAT | O_EXCL , 0600)) != -1)
-       close(fd);
-     else
-     {
+@@ -166,7 +166,7 @@ file_cleanup(void)
+   GetTempPath(sizeof(tmpdir), tmpdir);
+ #else
+   if ((tmpdir = getenv("TMPDIR")) == NULL)
+-    tmpdir = "/var/tmp";
++    tmpdir = "/tmp";
+ #endif /* WIN32 */
+ 
+   while (web_files > 0)
+@@ -983,7 +983,7 @@ file_temp(char *name,			/* O - Filename 
+   GetTempPath(sizeof(tmpdir), tmpdir);
+ #else
+   if ((tmpdir = getenv("TMPDIR")) == NULL)
+-    tmpdir = "/var/tmp";
++    tmpdir = "/tmp";
+ #endif /* WIN32 */
+ 
+   snprintf(name, len, TEMPLATE, tmpdir, getpid(), web_files);
