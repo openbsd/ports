@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/09 22:45:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/10 11:16:55 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 COMMENT=	"network file distribution system"
@@ -20,11 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-#MASTER_SITES= \
-#	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
-#	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
-#	ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
-MASTER_SITES=	http://people.freebsd.org/~jdp/s1g/
+MASTER_SITES= \
+	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
+	ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
 
 MULTI_PACKAGES=	-server
 
