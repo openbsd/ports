@@ -1,0 +1,15 @@
+--- ndc/Makefile.orig	Mon Jan 29 15:35:27 2001
++++ ndc/Makefile	Mon Jan 29 15:35:37 2001
+@@ -17,12 +17,6 @@
+ 
+ beforedepend: pathnames.h
+ 
+-beforeinstall:
+-	if [ -f ${DESTDIR}/${BINDIR} ]; then \
+-		rm -f ${DESTDIR}/${BINDIR}; \
+-	fi
+-	mkdir -p -m 755 ${DESTDIR}/${BINDIR}
+-
+ ndc.o: pathnames.h
+ 
+ pathnames.h: Makefile ${TOP}/named/pathtemplate.h

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2000/11/11 13:22:23 ho Exp $
+# $OpenBSD: Makefile,v 1.21 2001/01/29 14:48:05 ho Exp $
 
-DISTNAME=	bind-openbsd-8.2.2-P6-19991217
-PKGNAME=	bind-8.2.2-P7
+DISTNAME=	bind-openbsd-8.2.3-20010129
+PKGNAME=	bind-8.2.3
 CATEGORIES=	net
 NEED_VERSION=	1.317
 MASTER_SITES=	ftp://ftp.gsnig.org/pub/openbsd-bind/ \
