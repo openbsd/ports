@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/17 05:55:42 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/05/21 15:52:31 marcm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
@@ -46,6 +46,11 @@ MAKE_ENV=		LIBGLIB_VERSION="${LIBGLIB_VERSION}" \
 			LIBGOBJECT_VERSION="${LIBGOBJECT_VERSION}" \
 			LIBGTHREAD_VERSION="${LIBGTHREAD_VERSION}" \
 			LIBGMODULE_VERSION="${LIBGMODULE_VERSION}"
+
+# VAX thread support as yet incomplete
+.if (${MACHINE_ARCH} == "vax")
+CONFIGURE_ARGS+= --disable-threads
+.endif
 
 NO_REGRESS=		Yes
 
