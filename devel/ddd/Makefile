@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 1999/08/21 16:27:59 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/09/18 10:44:12 turan Exp $
+
+BROKEN=		"patches do not apply"
 
 DISTNAME=	ddd-3.1.6
 CATEGORIES=	devel
