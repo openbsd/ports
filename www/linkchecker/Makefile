@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/04/05 12:31:35 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2004/04/05 12:42:32 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -28,6 +28,6 @@ BUILD_DEPENDS+=	:py-dns-*:net/py-dns
 NO_REGRESS=	Yes
 
 post-install:
-	@chmod 444 ${PREFIX}/man/man1/linkchecker.1
+	@chmod ${MANMODE} ${PREFIX}/man/man1/linkchecker.1
 
 .include <bsd.port.mk>
