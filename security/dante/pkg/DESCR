@@ -1,5 +1,5 @@
 Dante is a Socks client and server firewall implementation. It can be 
-installed on a machine with access to a external TCP/IP network and will
+installed on a machine with access to an external TCP/IP network and will
 allow all other machines, without direct access to that network, to be
 relayed through the machine the Dante server is running on.  The external
 network will never see any other machines than the one Dante is running on.

@@ -34,7 +34,7 @@
 
 
 ; You can specify IP address of the hosts you want to ignore from counting.
-; netmasks can be used to ignore a entire network or a specificrange of
+; netmasks can be used to ignore an entire network or a specific range of
 ; hosts in the network. Read the counter documentation to know about
 ; netmasks. Wild card can be used as well. one item per line.
 ;
