@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_common_c,v 1.1 2004/10/11 13:19:46 robert Exp $
+--- lib/common.c.orig	Mon Oct 11 14:05:00 2004
++++ lib/common.c	Mon Oct 11 14:06:48 2004
+@@ -1838,7 +1838,10 @@
+   if (! path)
+     return SASL_BADPARAM;
+ 
++  /* Honor external variable only in a safe environment */
++  if (getuid() == getuid() && getgid() == getgid())
+   *path = getenv(SASL_PATH_ENV_VAR);
++  
+   if (! *path)
+     *path = PLUGINDIR;
+ 
