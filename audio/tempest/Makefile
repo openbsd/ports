@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/14 23:02:58 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/14 23:11:41 pvalchev Exp $
 
-COMMENT=	"sends AM radio signals using a PC monitor"
+COMMENT=	"sends AM radio signals using a monitor"
 
 VERSION=	1.0.4
 DISTNAME=	tempest_for_eliza-${VERSION}
