@@ -13,15 +13,12 @@ include/gck/gcktypes.h
 include/gck/gckui.h
 include/gck/gckvector.h
 @dirrm include/gck
-lib/libgimp.so.1.0
 lib/libgimp.la
 lib/libgimp.a
 @exec ranlib %D/%F
-lib/libgimpui.so.1.0
 lib/libgimpui.la
 lib/libgimpui.a
 @exec ranlib %D/%F
-lib/libgck.so.1.0
 lib/libgck.la
 lib/libgck.a
 @exec ranlib %D/%F
@@ -643,4 +640,3 @@ share/gimp/gimp_tips.txt
 share/gimp/ps-menurc
 share/gimp/gtkrc.forest2
 @dirrm share/gimp
-@exec /sbin/ldconfig -m %B

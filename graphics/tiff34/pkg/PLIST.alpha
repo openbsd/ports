@@ -2,12 +2,6 @@ lib/libtiff.a
 @exec ranlib %D/%F
 @exec ln -sf %f %B/libtiff34.a
 @unexec rm -f %B/libtiff34.a
-lib/libtiff.so.3.4
-@exec ln -sf %f %B/libtiff.so
-@exec ln -sf %f %B/libtiff34.so.1.0
-@unexec rm -f %B/libtiff.so
-@unexec rm -f %B/libtiff34.so.1.0
-@exec /sbin/ldconfig -m %D/lib
 bin/fax2tiff
 bin/fax2ps
 bin/gif2tiff
