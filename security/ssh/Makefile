@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.24 1998/06/24 22:07:06 marc Exp $
+# $OpenBSD: Makefile,v 1.25 1998/07/07 03:59:57 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -29,6 +29,9 @@ MASTER_SITES=	\
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://idea.dsi.unimi.it/pub/security/crypt/math/
 .endif
+PATCH_SITES=		http://www.core-sdi.com/ssh/
+PATCHFILES=		ssh-1.2.25.patch
+PATCH_DIST_STRIP=	-p1
 
 RESTRICTED=	"Crypto; export-controlled"
 IS_INTERACTIVE=	YES
