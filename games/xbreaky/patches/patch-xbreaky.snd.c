@@ -1,5 +1,5 @@
---- xbreaky.snd.c.orig	Mon Jul 10 17:16:06 2000
-+++ xbreaky.snd.c	Mon Jul 10 17:16:57 2000
+--- xbreaky.snd.c.orig	Thu May 11 08:13:45 2000
++++ xbreaky.snd.c	Wed Apr 18 11:57:02 2001
 @@ -20,20 +20,18 @@
   */
  
@@ -20,7 +20,7 @@
 -#define AUDIO "/dev/dsp"
 -#define RAWFILESDIR PREFIX"/share/games/xbreaky"
 +#define AUDIO "/dev/sound"
-+#define RAWFILESDIR "/usr/local/share/xbreaky"
++#define RAWFILESDIR PREFIX"/share/xbreaky"
  
  int timelimit = 0, dsp_speed = DEFAULT_DSP_SPEED, dsp_stereo = 0;
  int samplesize = 8;

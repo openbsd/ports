@@ -1,13 +1,13 @@
---- Makefile.orig	Thu May 11 15:53:15 2000
-+++ Makefile	Mon Jul 10 17:41:09 2000
+--- Makefile.orig	Thu May 11 07:53:15 2000
++++ Makefile	Wed Apr 18 11:42:55 2001
 @@ -4,8 +4,8 @@
  CC=g++
  GC=gcc
  
 -CFLAGS = -O2 -DPREFIX=\"${prefix}\"
 -LDFLAGS = -L/usr/X11R6/lib -I/usr/X11/include/X11 -lX11 -lXpm -lm
-+CFLAGS = -O2 -I/usr/X11R6/include -DPREFIX=\"${prefix}\"
-+LDFLAGS = -L/usr/X11R6/lib -lX11 -lXpm -lm
++CFLAGS = -O2 -I${X11BASE}/include -DPREFIX=\"${prefix}\"
++LDFLAGS = -L${X11BASE}/lib -lX11 -lXpm -lm
  prefix = /usr/local
  
  all: xbreaky xbreaky.snd

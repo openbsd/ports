@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/24 12:56:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/18 04:13:12 kevlo Exp $
+
+COMMENT=	"breakout game for X Window"
 
 DISTNAME=	xbreaky-0.0.4
 CATEGORIES=	games
-NEED_VERSION=	1.340
+NEED_VERSION=	1.399
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://xbreaky.sourceforge.net/
