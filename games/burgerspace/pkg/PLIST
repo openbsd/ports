@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/07 05:13:34 pvalchev Exp $
+bin/burgerspace
+man/man6/burgerspace.6
+share/pixmaps/burgerspace.png

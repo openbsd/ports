@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_sdlmain_cc,v 1.1.1.1 2001/08/07 05:13:34 pvalchev Exp $
+--- src/sdlmain.cc.orig	Fri Apr 27 14:51:46 2001
++++ src/sdlmain.cc	Mon Aug  6 22:08:25 2001
+@@ -26,8 +26,22 @@
+ #include <errno.h>
+ #include <time.h>
+ 
+-#ifdef __GNUG__
++#if defined(__GNUG__) && !defined(__OpenBSD__)
+ #include <getopt.h>
++#elif defined(__OpenBSD__)
++#undef __GNUG__
++extern int getopt_long __P((int __argc, char *const *__argv, const char *__shortopts,
++			const struct option *__longopts, int *__longind));
++struct option
++{
++  char *name;
++  int has_arg;
++  int *flag;
++  int val;
++};
++# define no_argument 0
++# define required_argument 1
++# define optional_argument 2
+ #endif
+ 
+ 
