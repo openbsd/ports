@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/08/16 08:56:40 camield Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/25 07:40:11 camield Exp $
 
 DISTNAME=	qmail-1.03
+HOMEPAGE=	http://cr.yp.to/qmail.html
 CATEGORIES=	mail
 NEED_VERSION=	1.230
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \

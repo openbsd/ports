@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/09/25 07:40:11 camield Exp $
 
 DISTNAME=	fastforward-0.51
 HOMEPAGE=	http://cr.yp.to/fastforward.html
 CATEGORIES=	mail
 NEED_VERSION=	1.230
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/16 23:06:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/09/25 07:40:11 camield Exp $
 
 DISTNAME=	mess822-0.58
 HOMEPAGE=	http://cr.yp.to/mess822.html
 CATEGORIES=	mail
 NEED_VERSION=	1.230
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \

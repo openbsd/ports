@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/15 14:42:38 camield Exp $
+# $OpenBSD: Makefile,v 1.16 2000/09/25 07:40:14 camield Exp $
 
 DISTNAME=	popa3d-0.4
 HOMEPAGE=	http://www.openwall.com/popa3d
 CATEGORIES=	net mail
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=   http://www.openwall.com/popa3d/ \
                 ftp://ftp.openwall.com/popa3d/ \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/09/21 08:14:55 camield Exp $
+# $OpenBSD: Makefile,v 1.9 2000/09/25 07:40:15 camield Exp $
 
 DISTNAME=	publicfile-0.52
 HOMEPAGE=	http://cr.yp.to/publicfile.html
 CATEGORIES=	net
 NEED_VERSION=	1.230
-MAINTAINER=	cd@sentia.nl
+MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/publicfile/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/ \
