@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/07/17 20:59:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2005/02/13 19:49:53 alek Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m
 
 MASTER_SITES= 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ \
 		ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ \
