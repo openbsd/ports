@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/07 18:44:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/05 21:41:11 naddy Exp $
 
 COMMENT=	"fast compression for waveform files"
 
-DISTNAME=	shorten-3.5.1
+DISTNAME=	shorten-3.5.2
 CATEGORIES=	audio archivers
 HOMEPAGE=	http://www.etree.org/shnutils/shorten/
 
