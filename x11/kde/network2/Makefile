@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/31 15:05:09 espie Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.483
-VERSION=		2.2.1
+NEED_VERSION=		1.504
+VERSION=		2.2.2
 DISTNAME=		kdenetwork-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -26,6 +26,7 @@ BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
 RUN_DEPENDS+=	::x11/kde/base2
 
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/27 10:58:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/12/31 15:05:09 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kit
@@ -357,6 +357,7 @@ share/apps/kppp/Rules/Germany/Addcom.rst
 share/apps/kppp/Rules/Germany/CallOkaynet.rst
 share/apps/kppp/Rules/Germany/Callino_Surf_Basic.rst
 share/apps/kppp/Rules/Germany/Callino_Surf_Plus.rst
+share/apps/kppp/Rules/Germany/Callisa_City.rst
 share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
 share/apps/kppp/Rules/Germany/Cityweb.rst
 share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
@@ -450,11 +451,17 @@ share/apps/kppp/Rules/Netherlands/NedpointBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/NedpointBelBespaar_Lokaal.rst
 share/apps/kppp/Rules/Norway/Local_Area.rst
 share/apps/kppp/Rules/Norway/Long_Distance.rst
+share/apps/kppp/Rules/Poland/Dialog_Atut.rst
+share/apps/kppp/Rules/Poland/Dialog_Atut_020.rst
+share/apps/kppp/Rules/Poland/Dialog_Efekt.rst
+share/apps/kppp/Rules/Poland/Dialog_Profit.rst
 share/apps/kppp/Rules/Poland/Internetia.rst
 share/apps/kppp/Rules/Poland/Netia_100km_Niebieska.rst
 share/apps/kppp/Rules/Poland/Netia_100km_Zielona.rst
 share/apps/kppp/Rules/Poland/Netia_Lokalne_Niebieska.rst
 share/apps/kppp/Rules/Poland/Netia_Lokalne_Zielona.rst
+share/apps/kppp/Rules/Poland/Netia_Niebieska.rst
+share/apps/kppp/Rules/Poland/Netia_Zielona.rst
 share/apps/kppp/Rules/Poland/TPSA.rst
 share/apps/kppp/Rules/Poland/TP_100km.rst
 share/apps/kppp/Rules/Poland/TP_Lokalne.rst
@@ -467,6 +474,9 @@ share/apps/kppp/Rules/Portugal/PT_YesNET_Ilhas.rst
 share/apps/kppp/Rules/Romania/Telecom_GSM.rst
 share/apps/kppp/Rules/Romania/Telecom_Interurban.rst
 share/apps/kppp/Rules/Romania/Telecom_Local.rst
+share/apps/kppp/Rules/Russia/TEMPLATE.ru
+share/apps/kppp/Rules/Russia/Yamalelectroliaison.rst
+share/apps/kppp/Rules/Russia/mtu-intel_standart.rst
 share/apps/kppp/Rules/Singapore/SingTel_Local.rst
 share/apps/kppp/Rules/Slovakia/Internetovy_tarif_019XY.rst
 share/apps/kppp/Rules/Slovakia/ST_medzimesto.rst
@@ -767,6 +777,7 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Rules/South_Afrika
 @dirrm share/apps/kppp/Rules/Slovakia
 @dirrm share/apps/kppp/Rules/Singapore
+@dirrm share/apps/kppp/Rules/Russia
 @dirrm share/apps/kppp/Rules/Romania
 @dirrm share/apps/kppp/Rules/Portugal
 @dirrm share/apps/kppp/Rules/Poland
