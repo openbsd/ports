@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/04/30 18:30:45 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/05/26 17:14:32 brad Exp $
 bin/gqview
 man/man1/gqview.1
 share/doc/gqview/COPYING
 share/doc/gqview/ChangeLog
 share/doc/gqview/README
 share/doc/gqview/TODO
+share/gnome/apps/Graphics/gqview.desktop
 share/locale/cs/LC_MESSAGES/gqview.mo
 share/locale/da/LC_MESSAGES/gqview.mo
 share/locale/de/LC_MESSAGES/gqview.mo
@@ -27,4 +28,5 @@ share/locale/tr/LC_MESSAGES/gqview.mo
 share/locale/uk/LC_MESSAGES/gqview.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
+share/pixmaps/gqview.png
 @dirrm share/doc/gqview
