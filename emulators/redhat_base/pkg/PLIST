@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/05/08 22:13:30 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/06/05 20:51:30 jasoni Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -6,6 +6,7 @@
 @exec ln -sf /dev/ttyC1 %D/dev/tty2
 @exec ln -sf /dev/ttyC2 %D/dev/tty3
 @exec ln -sf /dev/ttyC3 %D/dev/tty4
+@exec ln -sf /dev/ttyC4 %D/dev/tty5
 @exec ln -sf /dev/sound %D/dev/dsp
 @unexec rm -rf %D/dev
 bin/basename
@@ -98,6 +99,7 @@ etc/profile.d/colorls.csh
 etc/profile.d/colorls.sh
 etc/redhat-release
 etc/rpc
+etc/rpm/macros.db1
 etc/termcap
 lib/ld-2.1.3.so
 lib/ld-linux.so.1
@@ -249,6 +251,13 @@ usr/bin/reset
 usr/bin/resetall
 usr/bin/rpcgen
 usr/bin/rpm2cpio
+usr/bin/rpmdb
+usr/bin/rpme
+usr/bin/rpmi
+usr/bin/rpmquery
+usr/bin/rpmsign
+usr/bin/rpmu
+usr/bin/rpmverify
 usr/bin/seq
 usr/bin/shred
 usr/bin/size
@@ -452,17 +461,17 @@ usr/lib/gconv/libCNS.so
 usr/lib/gconv/libGB.so
 usr/lib/gconv/libJIS.so
 usr/lib/gconv/libKSC.so
-usr/lib/ldscripts/elf_i386.x
-usr/lib/ldscripts/elf_i386.xbn
-usr/lib/ldscripts/elf_i386.xn
-usr/lib/ldscripts/elf_i386.xr
-usr/lib/ldscripts/elf_i386.xs
-usr/lib/ldscripts/elf_i386.xu
-usr/lib/ldscripts/i386linux.x
-usr/lib/ldscripts/i386linux.xbn
-usr/lib/ldscripts/i386linux.xn
-usr/lib/ldscripts/i386linux.xr
-usr/lib/ldscripts/i386linux.xu
+usr/lib/ldscripts/elf_${MACHINE_ARCH}.x
+usr/lib/ldscripts/elf_${MACHINE_ARCH}.xbn
+usr/lib/ldscripts/elf_${MACHINE_ARCH}.xn
+usr/lib/ldscripts/elf_${MACHINE_ARCH}.xr
+usr/lib/ldscripts/elf_${MACHINE_ARCH}.xs
+usr/lib/ldscripts/elf_${MACHINE_ARCH}.xu
+usr/lib/ldscripts/${MACHINE_ARCH}linux.x
+usr/lib/ldscripts/${MACHINE_ARCH}linux.xbn
+usr/lib/ldscripts/${MACHINE_ARCH}linux.xn
+usr/lib/ldscripts/${MACHINE_ARCH}linux.xr
+usr/lib/ldscripts/${MACHINE_ARCH}linux.xu
 usr/lib/libbfd-2.9.5.0.22.so
 usr/lib/libbfd.a
 usr/lib/libbfd.la
@@ -498,6 +507,8 @@ usr/lib/librpm.so.0
 usr/lib/librpm.so.0.0.0
 usr/lib/librpmbuild.so.0
 usr/lib/librpmbuild.so.0.0.0
+usr/lib/librpmio.so.0
+usr/lib/librpmio.so.0.0.0
 usr/lib/libstdc++-2-libc6.1-1-2.9.0.so
 usr/lib/libstdc++-libc6.1-1.so.2
 usr/lib/libstdc++.so.2.7.2
@@ -506,24 +517,28 @@ usr/lib/libstdc++.so.2.8.0
 usr/lib/libstdc++.so.2.9.dummy
 usr/lib/libz.so.1
 usr/lib/libz.so.1.1.3
-usr/lib/rpm/brp-compress
-usr/lib/rpm/brp-redhat
-usr/lib/rpm/brp-strip
-usr/lib/rpm/brp-strip-comment-note
 usr/lib/rpm/config.guess
 usr/lib/rpm/config.sub
 usr/lib/rpm/convertrpmrc.sh
-usr/lib/rpm/find-prov.pl
-usr/lib/rpm/find-provides
-usr/lib/rpm/find-req.pl
-usr/lib/rpm/find-requires
-usr/lib/rpm/freshen.sh
+usr/lib/rpm/${MACHINE_ARCH}-linux
+usr/lib/rpm/${MACHINE_ARCH}-redhat-linux/macros
+usr/lib/rpm/i486-linux
+usr/lib/rpm/i486-redhat-linux/macros
+usr/lib/rpm/i586-linux
+usr/lib/rpm/i586-redhat-linux/macros
+usr/lib/rpm/i686-linux
+usr/lib/rpm/i686-redhat-linux/macros
 usr/lib/rpm/macros
 usr/lib/rpm/mkinstalldirs
-usr/lib/rpm/rpmpopt
+usr/lib/rpm/rpmdb
+usr/lib/rpm/rpme
+usr/lib/rpm/rpmi
+usr/lib/rpm/rpmk
+usr/lib/rpm/rpmpopt-4.0.2
+usr/lib/rpm/rpmq
 usr/lib/rpm/rpmrc
-usr/lib/rpm/vpkg-provides.sh
-usr/lib/rpm/vpkg-provides2.sh
+usr/lib/rpm/rpmu
+usr/lib/rpm/rpmv
 usr/libexec/pt_chown
 usr/sbin/chroot
 usr/sbin/rpcinfo
@@ -823,6 +838,7 @@ usr/share/locale/cs_CZ/LC_MONETARY
 usr/share/locale/cs_CZ/LC_NUMERIC
 usr/share/locale/cs_CZ/LC_TIME
 usr/share/locale/da/LC_MESSAGES/gtk+.mo
+usr/share/locale/da/LC_MESSAGES/rpm.mo
 usr/share/locale/da_DK/LC_COLLATE
 usr/share/locale/da_DK/LC_CTYPE
 usr/share/locale/da_DK/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1027,6 +1043,7 @@ usr/share/locale/in_ID/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/in_ID/LC_MONETARY
 usr/share/locale/in_ID/LC_NUMERIC
 usr/share/locale/in_ID/LC_TIME
+usr/share/locale/is/LC_MESSAGES/rpm.mo
 usr/share/locale/is_IS/LC_COLLATE
 usr/share/locale/is_IS/LC_CTYPE
 usr/share/locale/is_IS/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1104,6 +1121,7 @@ usr/share/locale/nl_NL/LC_TIME
 usr/share/locale/no/LC_MESSAGES/fileutils.mo
 usr/share/locale/no/LC_MESSAGES/gtk+.mo
 usr/share/locale/no/LC_MESSAGES/libc.mo
+usr/share/locale/no/LC_MESSAGES/rpm.mo
 usr/share/locale/no_NO/LC_COLLATE
 usr/share/locale/no_NO/LC_CTYPE
 usr/share/locale/no_NO/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1122,6 +1140,7 @@ usr/share/locale/pl_PL/LC_NUMERIC
 usr/share/locale/pl_PL/LC_TIME
 usr/share/locale/pt/LC_MESSAGES/fileutils.mo
 usr/share/locale/pt/LC_MESSAGES/gtk+.mo
+usr/share/locale/pt/LC_MESSAGES/rpm.mo
 usr/share/locale/pt_BR/LC_COLLATE
 usr/share/locale/pt_BR/LC_CTYPE
 usr/share/locale/pt_BR/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1139,6 +1158,7 @@ usr/share/locale/pt_PT/LC_MONETARY
 usr/share/locale/pt_PT/LC_NUMERIC
 usr/share/locale/pt_PT/LC_TIME
 usr/share/locale/ro/LC_MESSAGES/gtk+.mo
+usr/share/locale/ro/LC_MESSAGES/rpm.mo
 usr/share/locale/ro_RO/LC_COLLATE
 usr/share/locale/ro_RO/LC_CTYPE
 usr/share/locale/ro_RO/LC_MESSAGES/SYS_LC_MESSAGES
@@ -4961,22 +4981,7 @@ usr/lib/libstdc++.so.2.9
 @exec mkdir -p %D/var/cache
 @dirrm var/cache
 @dirrm var
-@exec mkdir -p %D/usr/src/redhat/SRPMS
-@dirrm usr/src/redhat/SRPMS
-@exec mkdir -p %D/usr/src/redhat/SPECS
-@dirrm usr/src/redhat/SPECS
-@exec mkdir -p %D/usr/src/redhat/SOURCES
-@dirrm usr/src/redhat/SOURCES
-@exec mkdir -p %D/usr/src/redhat/RPMS/noarch
-@dirrm usr/src/redhat/RPMS/noarch
-@exec mkdir -p %D/usr/src/redhat/RPMS/i686
-@dirrm usr/src/redhat/RPMS/i686
-@exec mkdir -p %D/usr/src/redhat/RPMS/i386
-@dirrm usr/src/redhat/RPMS/i386
-@dirrm usr/src/redhat/RPMS
-@exec mkdir -p %D/usr/src/redhat/BUILD
-@dirrm usr/src/redhat/BUILD
-@dirrm usr/src/redhat
+@exec mkdir -p %D/usr/src
 @dirrm usr/src
 @dirrm usr/share/zoneinfo/right/US
 @dirrm usr/share/zoneinfo/right/SystemV
@@ -5173,6 +5178,8 @@ usr/lib/libstdc++.so.2.9
 @dirrm usr/share/locale/it
 @dirrm usr/share/locale/is_IS/LC_MESSAGES
 @dirrm usr/share/locale/is_IS
+@dirrm usr/share/locale/is/LC_MESSAGES
+@dirrm usr/share/locale/is
 @dirrm usr/share/locale/in_ID/LC_MESSAGES
 @dirrm usr/share/locale/in_ID
 @dirrm usr/share/locale/hu_HU/LC_MESSAGES
@@ -5328,14 +5335,18 @@ usr/lib/libstdc++.so.2.9
 @dirrm usr/local/info
 @exec mkdir -p %D/usr/local/games
 @dirrm usr/local/games
-@exec mkdir -p %D/usr/local/etc
-@dirrm usr/local/etc
+@exec mkdir -p %D/usr/local${SYSCONFDIR}
+@dirrm usr/local${SYSCONFDIR}
 @exec mkdir -p %D/usr/local/doc
 @dirrm usr/local/doc
 @exec mkdir -p %D/usr/local/bin
 @dirrm usr/local/bin
 @dirrm usr/local
 @dirrm usr/libexec
+@dirrm usr/lib/rpm/i686-redhat-linux
+@dirrm usr/lib/rpm/i586-redhat-linux
+@dirrm usr/lib/rpm/i486-redhat-linux
+@dirrm usr/lib/rpm/${MACHINE_ARCH}-redhat-linux
 @dirrm usr/lib/rpm
 @dirrm usr/lib/ldscripts
 @dirrm usr/lib/gconv
@@ -5351,12 +5362,12 @@ usr/lib/libstdc++.so.2.9
 @dirrm usr/i486-linux-libc5
 @exec mkdir -p %D/usr/games
 @dirrm usr/games
-@exec mkdir -p %D/usr/etc
-@dirrm usr/etc
+@exec mkdir -p %D/usr${SYSCONFDIR}
+@dirrm usr${SYSCONFDIR}
 @exec mkdir -p %D/usr/doc/sh-utils-2.0
 @dirrm usr/doc/sh-utils-2.0
-@exec mkdir -p %D/usr/doc/rpm-3.0.4
-@dirrm usr/doc/rpm-3.0.4
+@exec mkdir -p %D/usr/doc/rpm-4.0.2
+@dirrm usr/doc/rpm-4.0.2
 @exec mkdir -p %D/usr/doc/ncurses-5.0
 @dirrm usr/doc/ncurses-5.0
 @exec mkdir -p %D/usr/doc/libpng-1.0.5
@@ -5397,7 +5408,6 @@ usr/lib/libstdc++.so.2.9
 @exec mkdir -p %D/lib/modules
 @dirrm lib/modules
 @dirrm lib
-@exec mkdir -p %D/etc/rpm
 @dirrm etc/rpm
 @dirrm etc/profile.d
 @dirrm etc/pam.d

@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/15 20:18:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/05 20:51:30 jasoni Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"linux compatibility package based on Redhat 6.2"
 
-PKGNAME=	redhat_base-6.2p1
+PKGNAME=	redhat_base-6.2p2
 CATEGORIES=	emulators
 NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 		ftp://sunsite.ualberta.ca/pub/unix/Linux/redhat/%SUBDIR%/ \
 		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/%SUBDIR%/
 MASTER_SITE_SUBDIR= 6.2/en/os/i386/RedHat/RPMS
+MASTER_SITES0=	ftp://updates.redhat.com/6.2/en/os/i386/ \
+		ftp://sunsite.ualberta.ca/pub/unix/Linux/redhat/updates/6.2/en/os/i386/ \
+		ftp://ftp.sourceforge.net/pub/mirrors/redhat/redhat/linux/updates/6.2/en/os/i386/
 DISTFILES=	${RPM_SET1} ${RPM_SET2}
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=	
@@ -38,11 +41,11 @@ RPM_SET1=	setup-2.1.8-1.noarch.rpm \
 		basesystem-6.0-4.noarch.rpm
 
 RPM_SET2=	ldconfig-1.9.5-16.i386.rpm \
-		glibc-2.1.3-15.i386.rpm \
+		glibc-2.1.3-22.i386.rpm:0 \
 		termcap-10.2.7-9.noarch.rpm \
 		libtermcap-2.0.8-20.i386.rpm \
-		bash-1.14.7-22.i386.rpm \
-		ncurses-5.0-11.i386.rpm \
+		bash-1.14.7-23.6x.i386.rpm:0 \
+		ncurses-5.0-12.i386.rpm:0 \
 		zlib-1.1.3-6.i386.rpm \
 		fileutils-4.0-21.i386.rpm \
 		binutils-2.9.5.0.22-6.i386.rpm \
@@ -50,7 +53,7 @@ RPM_SET2=	ldconfig-1.9.5-16.i386.rpm \
 		sh-utils-2.0-5.i386.rpm \
 		readline-2.2.1-6.i386.rpm \
 		redhat-release-6.2-1.noarch.rpm \
-		rpm-3.0.4-0.48.i386.rpm \
+		rpm-4.0.2-6x.i386.rpm:0 \
 		XFree86-libs-3.3.6-20.i386.rpm \
 		xpm-3.4k-2.i386.rpm \
 		glib-1.2.6-3.i386.rpm \
@@ -74,22 +77,24 @@ do-install:
 	@${RPM} --initdb --root ${PREFIX} --dbpath /var/lib/rpm
 
 # Install RPM's.  
-# Redirect stderr for now b/c rpm tries to open /etc/mnttab which is not pretty.
-	@for rpm in ${RPM_SET1}; do \
-		${RPM} -Uvh ${RPMFLAGS} ${RPMDIR}/$$rpm 2> /dev/null; \
-	done
+# Redirect stderr for now because rpm tries to open /etc/mnttab which 
+# is not pretty.
 
-	@for rpm in ${RPM_SET2}; do \
-		${RPM} -Uvh ${RPMFLAGS} ${RPMDIR}/$$rpm 2> /dev/null; \
-	done
+.for rpm in ${RPM_SET1}
+	@${RPM} -Uvh ${RPMFLAGS} ${RPMDIR}/${rpm} 2> /dev/null
+.endfor
+
+.for rpm in ${RPM_SET2:S/:0//}
+	@${RPM} -Uvh ${RPMFLAGS} ${RPMDIR}/${rpm} 2> /dev/null
+.endfor
 
 # Get rid of some unnecessary files and directories.
-	@for D in ${REMOVE_DIRS}; do \
-		rm -rf ${PREFIX}/$$D; \
-	done
-	@for F in ${REMOVE_FILES}; do \
-		rm ${PREFIX}/$$F; \
-	done
+.for D in ${REMOVE_DIRS}
+	@rm -rf ${PREFIX}/${D}
+.endfor
+.for F in ${REMOVE_FILES}
+	@rm ${PREFIX}/${F}
+.endfor
 
 # copy in ld.so.conf
 	${INSTALL_DATA} ${FILESDIR}/ld.so.conf ${PREFIX}/etc
@@ -102,6 +107,7 @@ do-install:
 	-chroot ${PREFIX} /sbin/ldconfig
 
 post-install:
+# remote setuid root bits
 	@find ${PREFIX} -perm -4000 -exec chmod u-s {} \;
 
 .include <bsd.port.mk>
