@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/10 17:02:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/04/10 17:32:33 espie Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -25,8 +25,6 @@ EXTRACT_ONLY=
 FAKE=		Yes
 
 pre-install:
-# XXX pkg_create bug-fix work-around: ${TRUEPREFIX} must exist
-	mkdir -p ${TRUEPREFIX}
 	@mkdir -p ${PREFIX}
 	@mkdir ${WRKINST}/emul
 	@ln -s ${TRUEPREFIX} ${WRKINST}/emul/linux
@@ -49,6 +47,5 @@ post-install:
 	ln -sf /dev/ttyC2 ${PREFIX}/dev/tty3
 	ln -sf /dev/ttyC3 ${PREFIX}/dev/tty4
 	ln -sf /dev/sound ${PREFIX}/dev/dsp
-#	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
