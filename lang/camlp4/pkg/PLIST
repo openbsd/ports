@@ -1,9 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/05/21 19:55:08 angelos Exp $
 bin/camlp4
-bin/camlp4r
 bin/camlp4o
+bin/camlp4o.opt
+bin/camlp4r
+bin/camlp4r.opt
 bin/mkcamlp4
-bin/odyl
 bin/ocpp
+bin/odyl
 lib/camlp4/ast2pt.cmi
 lib/camlp4/camlp4.cma
 lib/camlp4/camlp4_top.cma
@@ -31,7 +34,9 @@ lib/camlp4/pa_extend_m.cmo
 lib/camlp4/pa_format.cmo
 lib/camlp4/pa_ifdef.cmi
 lib/camlp4/pa_ifdef.cmo
+lib/camlp4/pa_o.cmi
 lib/camlp4/pa_o.cmo
+lib/camlp4/pa_olabl.cmo
 lib/camlp4/pa_oop.cmo
 lib/camlp4/pa_op.cmo
 lib/camlp4/pa_r.cmo
@@ -43,8 +48,8 @@ lib/camlp4/pcaml.mli
 lib/camlp4/plexer.cmi
 lib/camlp4/plexer.cmx
 lib/camlp4/plexer.mli
-lib/camlp4/pr_dump.cmo
 lib/camlp4/pr_depend.cmo
+lib/camlp4/pr_dump.cmo
 lib/camlp4/pr_extend.cmo
 lib/camlp4/pr_null.cmo
 lib/camlp4/pr_o.cmo
@@ -61,4 +66,11 @@ lib/camlp4/stdpp.mli
 lib/camlp4/token.cmi
 lib/camlp4/token.cmx
 lib/camlp4/token.mli
+man/man1/camlp4.1
+man/man1/camlp4o.1
+man/man1/camlp4o.opt.1
+man/man1/camlp4r.1
+man/man1/camlp4r.opt.1
+man/man1/mkcamlp4.1
+man/man1/ocpp.1
 @dirrm lib/camlp4
