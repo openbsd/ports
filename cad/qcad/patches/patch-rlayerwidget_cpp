@@ -1,0 +1,20 @@
+$OpenBSD: patch-rlayerwidget_cpp,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rlayerwidget.cpp.orig	Thu May 16 21:57:48 2002
++++ rlayerwidget.cpp	Thu May 16 22:00:09 2002
+@@ -282,7 +282,7 @@ RLayerWidget::updateLayerList()
+             newItem = new RListBoxItem(lay->getName(), *pxmHidden);
+           }
+ 
+-          layerList->inSort(newItem);
++          layerList->insertItem(newItem);
+ 
+           if( lay->getName()==selStr ) {
+             selItem = newItem;
+@@ -294,6 +294,7 @@ RLayerWidget::updateLayerList()
+       }
+       //layerList->setAutoUpdate(true);
+     }
++    layerList->sort();
+     layerList->repaint();
+ 
+     if( selItem ) layerList->setCurrentItem( selItem );

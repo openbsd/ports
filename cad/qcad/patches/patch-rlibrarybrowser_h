@@ -1,0 +1,11 @@
+$OpenBSD: patch-rlibrarybrowser_h,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rlibrarybrowser.h.orig	Sun Mar 25 03:17:10 2001
++++ rlibrarybrowser.h	Wed May  8 02:37:34 2002
+@@ -12,6 +12,7 @@
+ 
+ #include <qlabel.h>
+ #include <qlist.h>
++#include <qstringlist.h>
+ 
+ #include "rwidget.h"
+ 

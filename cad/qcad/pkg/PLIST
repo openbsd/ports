@@ -1,11 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 14:45:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/17 18:39:46 naddy Exp $
 bin/qcad
-share/doc/qcad/AUTHORS
-share/doc/qcad/COPYING
-share/doc/qcad/INSTALL
-share/doc/qcad/MANIFEST
-share/doc/qcad/README
-share/doc/qcad/TODO
 share/doc/qcad/en/001.html
 share/doc/qcad/en/002.html
 share/doc/qcad/en/003.html

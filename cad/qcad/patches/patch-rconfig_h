@@ -1,0 +1,21 @@
+$OpenBSD: patch-rconfig_h,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rconfig.h.orig	Wed May  8 00:23:36 2002
++++ rconfig.h	Wed May  8 00:39:04 2002
+@@ -63,7 +63,7 @@ public:
+ 
+   QString getLanguageSign( QString _languageName );
+   QString getLanguageName( QString _languageSign );
+-  QFont::CharSet getLanguageCharset( QString _languageName );
++  // QFont::CharSet getLanguageCharset( QString _languageName );
+   int     getLanguageNum();
+   QString getLanguage(int _index);
+ 
+@@ -83,7 +83,7 @@ private:
+   struct languageStruct {      // Struct for a language
+     QString name;              // Name of Language ("English")
+     QString sign;              // Sign of Language ("en")
+-    QFont::CharSet charset;    // Char set of this language (Latin1, Latin2, ...)
++    //    QFont::CharSet charset;    // Char set of this language (Latin1, Latin2, ...)
+   };
+   QList<languageStruct> languageList;
+ 

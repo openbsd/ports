@@ -1,0 +1,23 @@
+$OpenBSD: patch-rmultilinedit_cpp,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rmultilinedit.cpp.orig	Sun Mar 25 03:17:10 2001
++++ rmultilinedit.cpp	Thu May  9 05:25:48 2002
+@@ -14,8 +14,9 @@
+ **
+ *****************************************************************************/
+ 
+-#include <qmultilinedit.h>
++#include <qmultilineedit.h>
+ #include <qfiledialog.h>
++#include <qframe.h>
+ 
+ #include "rmultilinedit.h"
+   
+@@ -153,7 +154,7 @@ RMultiLineEdit::saveFile()
+ void
+ RMultiLineEdit::resizeEvent(QResizeEvent *_ev)
+ {
+-  QTableView::resizeEvent( _ev );
++  QFrame::resizeEvent( _ev );
+ }
+ 
+ 

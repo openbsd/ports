@@ -1,0 +1,11 @@
+$OpenBSD: patch-rgraphic_h,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rgraphic.h.orig	Sun Mar 25 03:17:10 2001
++++ rgraphic.h	Wed May  8 01:59:21 2002
+@@ -23,6 +23,7 @@
+ #include <qframe.h>
+ #include <qlist.h>
+ #include <qstack.h>
++#include <qcursor.h>
+ 
+ #include "relement.h"
+ #include "rflags.h"

@@ -1,0 +1,13 @@
+$OpenBSD: patch-rmultilinedit_h,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rmultilinedit.h.orig	Sun Mar 25 03:17:10 2001
++++ rmultilinedit.h	Thu May  9 05:25:26 2002
+@@ -16,8 +16,7 @@
+ #ifndef RMULTILINEDIT_H
+ #define RMULTILINEDIT_H
+ 
+-#include <qmultilinedit.h>
+-
++#include <qmultilineedit.h>
+ 
+ class RMultiLineEdit : public QMultiLineEdit
+ {

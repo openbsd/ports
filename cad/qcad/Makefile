@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/11 00:31:22 espie Exp $
-
-NOT_FOR_ARCHS=	alpha
+# $OpenBSD: Makefile,v 1.7 2002/05/17 18:38:55 naddy Exp $
 
 COMMENT=		"Qt-based 2D CAD system"
 
 PKGNAME=		${DISTNAME:S/-src//}
 DISTNAME=		qcad-1.4.7-src
 CATEGORIES=     	cad x11
-NEED_VERSION=		1.497
+NEED_VERSION=		1.528
 
 HOMEPAGE=		http://www.qcad.org/
 
@@ -21,19 +19,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}archives/
 
-MODULES=	qt2
+MODULES=	qt3
 
 MAKE_FLAGS= \
 	CC='${CXX}' \
-	CFLAGS='${CXXFLAGS} -DPREFIX=\"${PREFIX}\"' \
-	INCPATH='-I${LOCALBASE}/include -I${MODQT_INCDIR}' \
+	CFLAGS='-Wall ${CXXFLAGS} -DPREFIX=\"${PREFIX}\"' \
+	INCPATH='-I${MODQT_INCDIR}' \
 	LINK='${CXX}' \
 	LFLAGS='' \
 	LIBS='-L${MODQT_LIBDIR} -L${LOCALBASE}/lib -lqt -L${X11BASE}/lib -lX11' 
 
 NO_REGRESS=		Yes
-
-DOCS=			AUTHORS COPYING INSTALL MANIFEST README TODO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/qcad ${PREFIX}/bin
@@ -45,6 +41,5 @@ do-install:
 	cd ${WRKSRC}/libraries; cp -R * ${PREFIX}/share/qcad/libraries 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qcad
 	cd ${WRKSRC}/doc; cp -R * ${PREFIX}/share/doc/qcad 
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/qcad
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-rmath_h,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rmath.h.orig	Tue May  7 23:54:20 2002
++++ rmath.h	Wed May  8 00:37:59 2002
+@@ -75,8 +75,12 @@ QString     mtPageFormatToString( PageFo
+ double      mtGetPageWidthMM( PageFormat _pf );
+ double      mtGetPageHeightMM( PageFormat _pf );
+ 
++/*
++ * Not needed in Qt 3
++ *
+ QFont::CharSet mtStringToCharset( const QString &_cs, bool *ok=0 );
+ QString     mtCharsetToString( QFont::CharSet _cs );
++*/
+ 
+ double      mtCalculate( const QString &_expression, double _default=0.0, bool *_ok=0 );
+ double      mtGetMM( double _v, Unit _unit );

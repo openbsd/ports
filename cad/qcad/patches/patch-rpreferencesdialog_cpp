@@ -1,0 +1,57 @@
+$OpenBSD: patch-rpreferencesdialog_cpp,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rpreferencesdialog.cpp.orig	Sun Mar 25 03:17:10 2001
++++ rpreferencesdialog.cpp	Thu May  9 03:46:07 2002
+@@ -209,8 +209,10 @@ RPreferencesDialog::RPreferencesDialog(Q
+       }
+       cbLanguage->setEditText( RCONFIG->getLanguageName( RCONFIG->getSetting("Language:Language") ) );
+ 
++/* not needed for Qt3
+       connect( cbLanguage, SIGNAL(activated(const QString &)),
+              this, SLOT(slotLanguageChanged(const QString &)) );
++*/
+ 
+       bl->addStretch( 100 );
+   }
+@@ -234,12 +236,14 @@ RPreferencesDialog::RPreferencesDialog(Q
+       cb->setEditText( RCONFIG->getSetting("Application:FontName") );
+       cbFontName = cb;
+ 
++/* Not needed for Qt 3
+       // Charset:
+       new QLabel( tr("Charset"), gb );
+       cb = new RComboBox( true, gb );
+       cb->fillInCharsets();
+       cb->setEditText( RCONFIG->getSetting("Application:Charset") );
+       cbCharset = cb;
++*/
+ 
+       // Font sizes box:
+       gb = new QGroupBox( 2, Horizontal, tr("Font sizes"), wdg );
+@@ -803,8 +807,8 @@ RPreferencesDialog::accept()
+     //
+     RCONFIG->addSetting( "Application:FontName",
+                          cbFontName->currentText() );
+-    RCONFIG->addSetting( "Application:Charset",
+-                         cbCharset->currentText() );
++    // RCONFIG->addSetting( "Application:Charset",
++    //                     cbCharset->currentText() );
+     RCONFIG->addSetting( "Application:FontSize0",
+                          cbFontSize0->currentText() );
+     RCONFIG->addSetting( "Application:FontSize1",
+@@ -1163,14 +1167,13 @@ RPreferencesDialog::slotPageFormatChange
+ 
+ 
+ /** Slot language changed -> adjust charset
+-*/
++* Now handled by Qt 3
+ void
+ RPreferencesDialog::slotLanguageChanged(const QString &)
+ {
+   cbCharset->setEditText( mtCharsetToString( RCONFIG->getLanguageCharset( cbLanguage->currentText() ) ) );
+ }
+-
+-
++*/
+ 
+ /** Slot page orientation changed -> swap width/height
+ */

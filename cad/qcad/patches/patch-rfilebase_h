@@ -1,0 +1,12 @@
+$OpenBSD: patch-rfilebase_h,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rfilebase.h.orig	Sun Mar 25 03:17:10 2001
++++ rfilebase.h	Wed May 15 01:54:32 2002
+@@ -45,7 +45,7 @@ public:
+   bool    gotoBufLine(char* _lstr);
+   bool    gotoBufLineString(char* _lstr);
+ 
+-  void    replaceBinaryBytesBy(char _c);
++//  void    replaceBinaryBytesBy(char _c);
+   void    separateBuf(char _c1=13,
+                       char _c2=10,
+                       char _c3=0,

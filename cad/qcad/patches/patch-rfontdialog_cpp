@@ -1,0 +1,12 @@
+$OpenBSD: patch-rfontdialog_cpp,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rfontdialog.cpp.orig	Sun Mar 25 03:17:10 2001
++++ rfontdialog.cpp	Thu May  9 05:02:05 2002
+@@ -648,7 +648,7 @@ RFontDialog::cutText() 
+ void
+ RFontDialog::copyText() 
+ {
+-  meText->copyText();
++  meText->copy();
+ }
+ 
+ 

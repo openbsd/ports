@@ -1,6 +1,15 @@
-$OpenBSD: patch-rfile_cpp,v 1.1.1.1 2001/08/11 14:45:26 naddy Exp $
+$OpenBSD: patch-rfile_cpp,v 1.2 2002/05/17 18:39:46 naddy Exp $
 --- rfile.cpp.orig	Sun Mar 25 03:17:10 2001
-+++ rfile.cpp	Thu Aug  9 03:34:06 2001
++++ rfile.cpp	Wed May  8 00:51:25 2002
+@@ -255,7 +255,7 @@ fileGetFormatInfo(const QString& _file, 
+             RLOG("\nValue: ");
+             RLOG(fValue);
+             
+-            if(!stricmp(fName, _name)) {
++            if(!qstricmp(fName, _name)) {
+               //strncpy(_value, fValue, _maxLength);
+               ret = fValue;
+               done=true;
 @@ -275,6 +275,10 @@ fileGetFormatInfo(const QString& _file, 
    return ret;
  }

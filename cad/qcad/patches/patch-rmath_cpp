@@ -1,0 +1,22 @@
+$OpenBSD: patch-rmath_cpp,v 1.1 2002/05/17 18:39:46 naddy Exp $
+--- rmath.cpp.orig	Wed May  8 02:39:51 2002
++++ rmath.cpp	Wed May  8 02:42:14 2002
+@@ -1034,7 +1034,8 @@ mtGetPageHeightMM( PageFormat _pf )
+ }
+ 
+ 
+-
++/* Not needed for Qt 3
++ *
+ QFont::CharSet
+ mtStringToCharset( const QString &_cs, bool *ok )
+ {
+@@ -1136,7 +1137,7 @@ mtCharsetToString( QFont::CharSet _cs )
+ 
+   return "ISO-8859-1";
+ }
+-
++*/
+ 
+ /** Calculates a mathematical expression using the
+     expression parser classes from Giovanni Dicanio
