@@ -1,0 +1,18 @@
+$OpenBSD: patch-t_BioGraphics_t,v 1.1.1.1 2005/03/03 01:42:12 espie Exp $
+--- t/BioGraphics.t.orig	Thu Mar  3 01:16:54 2005
++++ t/BioGraphics.t	Thu Mar  3 01:17:24 2005
+@@ -32,12 +32,12 @@ BEGIN { 
+ 
+     eval {
+ 	require GD;
+-	require Text::Shellwords;
++	require Text::ParseWords;
+ 	require Bio::Graphics::FeatureFile;
+ 	require Bio::Graphics;
+     };
+     if( $@ ) {
+-	print STDERR "GD or Text::Shellwords modules are not installed. This means that Bio::Graphics module is unusable. Skipping tests.\n";
++	print STDERR "GD or Text::ParseWords modules are not installed. This means that Bio::Graphics module is unusable. Skipping tests.\n";
+       $error = 1;
+     }
+ }

@@ -1,0 +1,21 @@
+$OpenBSD: patch-doc_howto_html_Graphics-HOWTO_html,v 1.1.1.1 2005/03/03 01:42:12 espie Exp $
+--- doc/howto/html/Graphics-HOWTO.html.orig	Thu Mar  3 01:16:54 2005
++++ doc/howto/html/Graphics-HOWTO.html	Thu Mar  3 01:18:04 2005
+@@ -77,9 +77,7 @@ BioPerl DocBook
+       around).  If you use libgd 2.0.1 or higher, be sure it matches GD
+       version 2.0.1 or higher.
+     </p><p>
+-      You will also need to install the Text::Shellwords module, which is
+-      available from CPAN.
+-    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="gettingStarted"></a>3.&nbsp;Getting Started</h2></div></div><div></div></div><p>
++    </div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="gettingStarted"></a>3.&nbsp;Getting Started</h2></div></div><div></div></div><p>
+       All the code examples and BLAST input files we'll use are available in
+       the doc/howto/examples/graphics directory in the BioPerl package. 
+     </p><p>
+@@ -865,4 +863,4 @@ PRES1		127	310	700
+ 	  "perldoc Bio::Graphics::Glyph::arrow."
+ 	</p></div></div></div><div xmlns="" id="customfooter">
+ BioPerl DocBook
+-</div></body></html>
+\ No newline at end of file
++</div></body></html>

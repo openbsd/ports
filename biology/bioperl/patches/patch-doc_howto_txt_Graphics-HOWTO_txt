@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_howto_txt_Graphics-HOWTO_txt,v 1.1.1.1 2005/03/03 01:42:12 espie Exp $
+--- doc/howto/txt/Graphics-HOWTO.txt.orig	Thu Mar  3 01:16:54 2005
++++ doc/howto/txt/Graphics-HOWTO.txt	Thu Mar  3 01:18:21 2005
+@@ -95,9 +95,6 @@ Lincoln Stein
+    around). If you use libgd 2.0.1 or higher, be sure it matches GD
+    version 2.0.1 or higher.
+ 
+-   You will also need to install the Text::Shellwords module, which is
+-   available from CPAN.
+-
+ 3. Getting Started
+ 
+    All the code examples and BLAST input files we'll use are available in

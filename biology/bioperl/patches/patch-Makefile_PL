@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2005/03/03 01:42:12 espie Exp $
+--- Makefile.PL.orig	Thu Mar  3 01:16:54 2005
++++ Makefile.PL	Thu Mar  3 01:17:04 2005
+@@ -29,7 +29,7 @@
+ 	     'HTML::Parser'             => '0.0/HTML parsing/HTML parsing of GDB page/Bio::DB::GDB',
+ 	     'DBD::mysql'               => '0.0/Mysql driver/loading and querying of Mysql-based GFF feature databases/Bio::DB::GFF',
+ 	     'GD'                       => '1.3/Graphical Drawing Toolkit/rendering Sequences and Features/Bio::Graphics',
+-	     'Text::Shellwords'         => '0.0/Execute shell commands/test scripts/Bio::Graphics',
++	     'Text::ParseWords'         => '0.0/Execute shell commands/test scripts/Bio::Graphics',
+ 	     'SVG'                      => '2.26/Generate optional SVG output/Bio::Graphics/Bio::Graphics::Pictogram',
+ 	     'SVG::Graph'               => '0.01/Generate optional SVG output/creating SVG images/Bio::TreeIO::svggraph',
+ 	     'GD::SVG'                  => '0.0/Generate optional SVG output/creating SVG images/Bio::Graphics::Panel',
