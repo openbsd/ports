@@ -1,15 +1,14 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.8 2000/04/18 07:13:06 angelos Exp $
+# $OpenBSD: Makefile,v 1.9 2000/07/14 06:11:05 kevlo Exp $
 #
 
-DISTNAME=	tclcl-src-1.0b8
-PKGNAME=	tclcl-1.0b8
+DISTNAME=	tclcl-src-1.0b9
+PKGNAME=	tclcl-1.0b9
 CATEGORIES=	devel
-NEED_VERSION=	1.230
+NEED_VERSION=	1.314
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -22,9 +21,8 @@ LIB_DEPENDS=    tk83.1::x11/tk/8.3 \
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
-FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin

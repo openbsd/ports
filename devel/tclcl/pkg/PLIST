@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/14 06:11:31 kevlo Exp $
 bin/tcl2c++
 bin/otcldoc
 include/Tcl.h
