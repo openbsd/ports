@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/01/19 09:02:06 form Exp $
+# $OpenBSD: Makefile,v 1.14 2001/02/23 10:23:40 fgsch Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 DISTNAME=       micq-${VERSION}
@@ -8,6 +8,8 @@ MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V${VERSION}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>
+
+HOMEPAGE=	http://phantom.iquest.net/micq/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
