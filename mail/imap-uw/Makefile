@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/02/18 15:27:57 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2001/02/18 15:28:22 jakob Exp $
 
 DISTNAME=	imap-2000c
 
@@ -8,7 +8,7 @@ NEED_VERSION=	1.302
 
 HOMEPAGE=	http://www.washington.edu/imap/
 
-MAINTAINER=     jakob@openbsd.org
+MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes
