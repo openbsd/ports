@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2003/03/30 14:07:47 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2003/04/09 13:50:38 wilfried Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -158,6 +158,8 @@
      SUBDIR += xteddy
 #    SUBDIR += xtic
 #    SUBDIR += xtriangles
+     SUBDIR += xwelltris
+     SUBDIR += xwelltris,no_sdl
      SUBDIR += xzip
 #    SUBDIR += yahtzee
 #    SUBDIR += yamsweeper
