@@ -18,6 +18,8 @@ LIB_DEPENDS=		kdecore.1.::x11/kde/libs \
 			gif.4.1::graphics/giflib \
 			QwSpriteField.6.::x11/kde/support
 
+BUILD_DEPENDS=		convert::graphics/ImageMagick
+
 FAKE=			Yes
 USE_BZIP2=		Yes
 USE_GMAKE=		Yes
@@ -35,5 +37,12 @@ pre-build:
 	@echo "*** for the 'limit' or 'ulimit' command."
 	@echo ""
 
+
+# Bug in idiot convert... need to go through an intermediate format, yuck,
+# yuck and yuck
+post-install:
+	cd ${PREFIX}/share/apps/ksame/pics && \
+		convert stones.gif stones.xpm && rm -f stones.gif && \
+		convert stones.xpm stones.bmp && rm -f stones.xpm
 
 .include <bsd.port.mk>
