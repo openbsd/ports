@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/07/10 15:32:23 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/11/27 16:46:24 lebel Exp $
 bin/neon-config
 include/neon/ne_207.h
 include/neon/ne_acl.h
@@ -74,19 +74,27 @@ man/man3/ne_set_server_auth.3
 man/man3/ne_set_useragent.3
 man/man3/ne_shave.3
 man/man3/ne_sock_init.3
-man/man3/ne_ssl_certificate.3
+man/man3/ne_ssl_cert_cmp.3
+man/man3/ne_ssl_cert_export.3
+man/man3/ne_ssl_cert_free.3
+man/man3/ne_ssl_cert_identity.3
+man/man3/ne_ssl_cert_import.3
+man/man3/ne_ssl_cert_issuer.3
+man/man3/ne_ssl_cert_read.3
+man/man3/ne_ssl_cert_signedby.3
+man/man3/ne_ssl_cert_subject.3
+man/man3/ne_ssl_cert_write.3
 man/man3/ne_ssl_clicert_decrypt.3
 man/man3/ne_ssl_clicert_encrypted.3
 man/man3/ne_ssl_clicert_free.3
 man/man3/ne_ssl_clicert_name.3
 man/man3/ne_ssl_clicert_owner.3
 man/man3/ne_ssl_clicert_read.3
-man/man3/ne_ssl_dname.3
 man/man3/ne_ssl_dname_cmp.3
-man/man3/ne_ssl_load_ca.3
-man/man3/ne_ssl_load_default_ca.3
 man/man3/ne_ssl_readable_dname.3
 man/man3/ne_ssl_set_verify.3
+man/man3/ne_ssl_trust_cert.3
+man/man3/ne_ssl_trust_default_ca.3
 man/man3/ne_status.3
 man/man3/ne_strdup.3
 man/man3/ne_strndup.3
@@ -112,6 +120,7 @@ share/doc/neon/html/apas10.html
 share/doc/neon/html/apas11.html
 share/doc/neon/html/apas12.html
 share/doc/neon/html/api.html
+share/doc/neon/html/biblio.html
 share/doc/neon/html/compliance.html
 share/doc/neon/html/features.html
 share/doc/neon/html/gfdl.html
@@ -125,6 +134,7 @@ share/doc/neon/html/refbufapp.html
 share/doc/neon/html/refbufcr.html
 share/doc/neon/html/refbufdest.html
 share/doc/neon/html/refbufutil.html
+share/doc/neon/html/refcert.html
 share/doc/neon/html/refclicert.html
 share/doc/neon/html/refconfig.html
 share/doc/neon/html/referr.html
@@ -140,7 +150,8 @@ share/doc/neon/html/refsess.html
 share/doc/neon/html/refshave.html
 share/doc/neon/html/refsockinit.html
 share/doc/neon/html/refsslca.html
-share/doc/neon/html/refsslcert.html
+share/doc/neon/html/refsslcert2.html
+share/doc/neon/html/refsslcertio.html
 share/doc/neon/html/refssldname.html
 share/doc/neon/html/refsslvfy.html
 share/doc/neon/html/refstatus.html
