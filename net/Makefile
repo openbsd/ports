@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2002/11/10 19:49:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.241 2002/11/10 20:05:15 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -172,6 +172,7 @@
      SUBDIR += sing
      SUBDIR += sirc
      SUBDIR += slirp
+     SUBDIR += smokeping
      SUBDIR += sniffit
      SUBDIR += snort
      SUBDIR += ssldump
