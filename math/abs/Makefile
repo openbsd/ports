@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 01:58:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/22 01:48:33 kevlo Exp $
 
 COMMENT=	"free spreadsheet with graphical user interface"
 
 DISTNAME=	abs-src-0.8
-PKGNAME=	abs-0.8
+PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	math
 NEED_VERSION=	1.402
 
