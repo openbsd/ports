@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/01/16 01:10:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/04/14 18:39:58 brad Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/gphoto2-abilities-list.h
@@ -21,6 +21,8 @@ include/gphoto2/gphoto2-widget.h
 include/gphoto2/gphoto2.h
 lib/gphoto2/${VERSION}/libgphoto2_agfa_cl20.a
 lib/gphoto2/${VERSION}/libgphoto2_agfa_cl20.la
+lib/gphoto2/${VERSION}/libgphoto2_aox.a
+lib/gphoto2/${VERSION}/libgphoto2_aox.la
 lib/gphoto2/${VERSION}/libgphoto2_barbie.a
 lib/gphoto2/${VERSION}/libgphoto2_barbie.la
 lib/gphoto2/${VERSION}/libgphoto2_canon.a

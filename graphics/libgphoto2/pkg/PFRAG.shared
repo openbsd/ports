@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/01/16 01:10:47 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/04/14 18:39:58 brad Exp $
 lib/gphoto2/${VERSION}/libgphoto2_agfa_cl20.so
+lib/gphoto2/${VERSION}/libgphoto2_aox.so
 lib/gphoto2/${VERSION}/libgphoto2_barbie.so
 lib/gphoto2/${VERSION}/libgphoto2_canon.so
 lib/gphoto2/${VERSION}/libgphoto2_casio_qv.so
