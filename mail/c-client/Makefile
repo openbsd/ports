@@ -1,5 +1,5 @@
 # $tgId: obsd.ports,v 3.38 2002/11/27 19:37:23 tg Exp $
-# $OpenBSD: Makefile,v 1.27 2003/02/26 16:17:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.28 2003/06/15 21:41:16 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 NO_REGRESS=	Yes
@@ -20,12 +20,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
+FLAVORS=	kerberos
+FLAVOR?=
+
 SHLIB=		libc-client.so.4.0
 SUBST_VARS=	SHLIB
 
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" \
-		SSLTYPE="unix" EXTRAAUTHENTICATORS="gss" \
-		CC="${CC}"
+		SSLTYPE="unix" CC="${CC}"
+
+.if ${FLAVOR:L:Mkerberos}
+MAKE_FLAGS+=	EXTRAAUTHENTICATORS="gss"
+.endif
 
 ALL_TARGET=	bso
 
