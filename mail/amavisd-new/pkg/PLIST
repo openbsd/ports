@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/23 15:24:54 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/30 22:18:13 robert Exp $
 sbin/amavisd
 share/doc/amavisd-new/AAAREADME.first
 share/doc/amavisd-new/INSTALL
@@ -25,3 +25,5 @@ share/doc/amavisd-new/README.sendmail-dual
 share/doc/amavisd-new/RELEASE_NOTES
 share/doc/amavisd-new/amavisd.conf
 @dirrm share/doc/amavisd-new
+@cwd ${SYSCONFDIR}
+@extra amavisd.conf
