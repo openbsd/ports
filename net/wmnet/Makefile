@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/30 21:10:43 jolan Exp $
 
 COMMENT=	"little X dock.app network monitor"
 
@@ -10,6 +10,7 @@ MASTER_SITES=	${HOMEPAGE}download/
 
 MAINTAINER=	Vladimir Popov <pva48@mail.ru>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -9,5 +9,3 @@ The speedometer keeps track of the current speed per second and shows it
 in a color corresponding to which of rx or tx that has the highest speed
 at the moment.  Also, the graph is drawn in a way that the highest speed
 is drawn on top of the other while the other is in the background.
-
-WWW: ${HOMEPAGE}

@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/03 15:08:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/10/30 21:10:43 jolan Exp $
+@group kmem
+@mode 2555
 bin/wmnet
+@mode
+@group
 man/cat1/wmnet.0
