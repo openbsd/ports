@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/08 23:15:59 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/22 21:53:45 espie Exp $
 
 DISTNAME=	GDGraph3d-0.55
 PKGNAME=	p5-GD-Graph3d-0.55
@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR= GD
 BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/GD/Graph.pm::graphics/p5-GD-Graph
 RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/GD/Graph.pm::graphics/p5-GD-Graph
 
-MAINTAINER=	Anil Madhavapeddy, <avsm@openbsd.org>
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
