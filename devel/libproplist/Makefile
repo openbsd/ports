@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/12 18:04:21 jasoni Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/03 03:00:03 jasoni Exp $
 
-DISTNAME=	libPropList-0.9.1
-PKGNAME=	libproplist-0.9.1	
+DISTNAME=	libPropList-0.10.0
+PKGNAME=	libproplist-0.10.0
 CATEGORIES=	devel
 NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
@@ -9,7 +9,6 @@ MASTER_SITE_SUBDIR= libs
 
 MAINTAINER=	jasoni@openbsd.org
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
