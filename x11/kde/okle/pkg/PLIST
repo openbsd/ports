@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/06 17:05:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/06 19:29:20 espie Exp $
 bin/okle
 bin/okle_gui
 share/applnk/Multimedia/okle.desktop
@@ -34,14 +34,7 @@ share/locale/sv/LC_MESSAGES/okle-0.2.3.mo
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/apps/okle/pics
 @dirrm share/apps/okle
 @comment @dirrm share/apps
 @dirrm share/applnk/Multimedia
-@dirrm share/applnk
