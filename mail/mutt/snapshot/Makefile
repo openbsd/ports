@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2003/01/14 16:37:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2003/03/20 19:11:19 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
-VERSION=	1.5.3
+VERSION=	1.5.4
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+= --with-curses
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= automake
 .else
 SUPDISTFILES+=  patch-${VERSION}.rr.compressed.1.gz:0
 CONFIGURE_STYLE= gnu
@@ -73,10 +73,6 @@ CONFIGURE_ARGS+= --with-domain="${DOMAIN}"
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
-
-post-configure:
-# make sure `missing' as the proper bits sets.
-	@chmod 755 ${WRKSRC}/missing
 
 post-install:
 	@strip ${PREFIX}/bin/mutt

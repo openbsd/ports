@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/24 13:09:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2003/03/20 19:11:19 lebel Exp $
 
 COMMENT=	"tty-based e-mail client"
 
-VERSION=	1.4
+VERSION=	1.4.1
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
@@ -31,7 +31,6 @@ PATCH_LIST=     gcc-* patch-*
 .endif
 
 SYSCONFDIR=	/etc/mutt
-CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-flock --disable-fcntl \
@@ -54,8 +53,10 @@ CONFIGURE_ARGS+= --with-curses
 PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
 PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
+CONFIGURE_STYLE= automake
 .else
 SUPDISTFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
+CONFIGURE_STYLE= gnu
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
