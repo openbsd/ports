@@ -1,6 +1,15 @@
-$OpenBSD: patch-despoof_c,v 1.2 2002/02/24 00:15:30 pvalchev Exp $
---- despoof.c.orig	Tue Jul 25 08:51:24 2000
-+++ despoof.c	Sat Feb 23 17:10:52 2002
+$OpenBSD: patch-despoof_c,v 1.3 2005/03/15 01:37:06 mjc Exp $
+--- despoof.c.orig	Tue Jul 25 07:51:24 2000
++++ despoof.c	Mon Mar 14 10:51:17 2005
+@@ -34,7 +34,7 @@ struct bpf_program pcapfilter;
+ struct in_addr net, mask;
+ pcap_t *pd;
+ char pcap_err[PCAP_ERRBUF_SIZE];
+-u_char *ebuf;
++u_char ebuf[LIBNET_ERRBUF_SIZE];
+ char *dev;
+ struct libnet_link_int *l;
+ int num_of_questions, link_offset, verbose, target_answers, unexpected, inquery;
 @@ -150,7 +150,7 @@ void grab_packet(u_char *data1, struct p
  
    if (targetaddr == ip->ip_src.s_addr) 
