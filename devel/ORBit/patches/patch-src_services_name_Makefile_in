@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_services_name_Makefile_in,v 1.1 2001/03/08 15:01:20 brad Exp $
---- src/services/name/Makefile.in.orig	Tue Mar  6 23:02:39 2001
-+++ src/services/name/Makefile.in	Tue Mar  6 23:08:41 2001
-@@ -123,7 +123,7 @@ CLEANFILES = my_cosnaming_built
+--- src/services/name/Makefile.in.orig	Tue Jan 30 15:56:13 2001
++++ src/services/name/Makefile.in	Wed Mar 14 17:07:50 2001
+@@ -123,7 +123,7 @@
  DEPS = $(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			$(top_builddir)/src/IIOP/libIIOP.la				libORBitCosNaming.la
  
  
 -LDADDS =  	$(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/IIOP/libIIOP.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			libORBitCosNaming.la						@GLIB_LIBS@ 							-lm
-+LDADDS =  	$(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/IIOP/libIIOP.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			libORBitCosNaming.la						@GLIB_LIBS@ 							-lm -lwrap
++LDADDS =  	$(top_builddir)/src/orb/libORBit.la				$(top_builddir)/src/IIOP/libIIOP.la				$(top_builddir)/src/ORBitutil/libORBitutil.la 			libORBitCosNaming.la						@GLIB_LIBS@ 							-lm @LIB_WRAP@
  
  
  #name-client.c boot.c orbit-name-server.c new-name-server.c: CosNaming.h

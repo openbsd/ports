@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_services_event_Makefile_in,v 1.1 2001/03/08 15:01:19 brad Exp $
---- src/services/event/Makefile.in.orig	Tue Mar  6 23:02:35 2001
-+++ src/services/event/Makefile.in	Tue Mar  6 23:08:24 2001
-@@ -115,7 +115,7 @@ noinst_PROGRAMS = event-consumer #event-
+--- src/services/event/Makefile.in.orig	Tue Jan 30 15:56:16 2001
++++ src/services/event/Makefile.in	Wed Mar 14 17:09:04 2001
+@@ -115,7 +115,7 @@
  DEPS = $(top_builddir)/src/orb/libORBit.la					$(top_builddir)/src/ORBitutil/libORBitutil.la				$(top_builddir)/src/IIOP/libIIOP.la
  
  
 -LDADDS =  	$(top_builddir)/src/orb/libORBit.la					$(top_builddir)/src/IIOP/libIIOP.la					$(top_builddir)/src/ORBitutil/libORBitutil.la				@GLIB_LIBS@ 								-lm
-+LDADDS =  	$(top_builddir)/src/orb/libORBit.la					$(top_builddir)/src/IIOP/libIIOP.la					$(top_builddir)/src/ORBitutil/libORBitutil.la				@GLIB_LIBS@ 								-lm -lwrap
++LDADDS =  	$(top_builddir)/src/orb/libORBit.la					$(top_builddir)/src/IIOP/libIIOP.la					$(top_builddir)/src/ORBitutil/libORBitutil.la				@GLIB_LIBS@ 								-lm @LIB_WRAP@
  
  
  event_consumer_SOURCES = event-consumer.c					CosEventComm-skels.c	 						CosEventChannel-common.c 						CosEventChannel-stubs.c
