@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.21 2003/06/12 22:04:37 pvalchev Exp $
+# $OpenBSD: make-plist,v 1.22 2003/06/15 13:31:37 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -30,21 +30,26 @@
 use strict;
 
 
+use IO::File;
 use File::Find;
 use File::Spec;
 use File::Temp qw/ tempdir /;
 
 my %annotated;
 my %annotated_dir;
-my $keep = '';
 my $manual = 0;
+my %out;
+my @has_shared;
+my ($plist, $pshared);
 
 sub annotate
 {
-	my $filename = shift;
+	my $oldfh = shift;
+	my $name = shift;
+	my $newfh = shift;
+	my $comment_printed = 0;
 	my ($mode, $owner, $group, $nocheck) = ('', '', '', '');
-	open(OLDFILE, '<', $filename) or die "Can't read $filename";
-	while(<OLDFILE>) {
+	while(<$oldfh>) {
 		chomp;
 		if (m/^\@mode\s*/) {
 			$mode = $';
@@ -55,27 +60,36 @@ sub annotate
 		} elsif (m/^\@comment\s+no checksum$/) {
 			$nocheck = 1;
 		} elsif (m/^\@option no-default-conflict/||m/^\@pkgcfl/) {
-			$keep.="$_\n";
+			printf $newfh "$_\n";
 		} elsif (m/^\@exec\s+/ || m/^\@unexec\s+/) {
 			$_=$';
 			# we don't warn for stuff we probably added...
 			next if m/^mkdir -p/||m/^install-info /;
 			$manual = 1;
-		} elsif (/^\@comment\s+/) {
+		} elsif (m/^\@comment\s+\$OpenBSD\:.*\$$/) {
+			print $newfh "$_\n";
+			$comment_printed = 1;
+			next;
+		} elsif (m/^\@comment\s+/) {
 			$_ = $';
 			if (m/^\@dirrm\s+/) {
 				$_ = $';
-				$annotated_dir{$_} = 1;
+				$annotated_dir{$_} = [ $name, $newfh, 'comment'];
+				next;
 			} else {
-				$annotated{$_} = [ 'comment' ] 
+				$annotated{$_} = [ $name, $newfh, 'comment'] 
 				    unless defined $annotated{$_};
 			}
+		} elsif (m/^\@dirrm\s+/) {
+			$_=$';
+			$annotated_dir{$_} = [ $name, $newfh ];
+			next;
 		} elsif (m/^\@/) {
 			next;
 		} elsif (m/^\!?\%\%(.*)\%\%/) {
 			my $frag = $1;
 			if ($frag ne "SHARED") {
-				$keep.="$_\n";
+				printf $newfh "$_\n";
 				$manual = 1;
 			}
 		} elsif (m/\$\{.*\}/) {
@@ -83,10 +97,13 @@ sub annotate
 		}
 
 		if ("$mode$owner$group$nocheck" ne '') {
-			$annotated{$_} = [ $mode, $owner, $group, $nocheck ];
+			$annotated{$_} = [ $name, $newfh, $mode, $owner, $group, $nocheck ];
 			$nocheck = '';
+		} else {
+			$annotated{$_} = [ $name, $newfh ];
 		}
 	}
+	print $newfh "\@comment \$OpenBSD\$\n" unless $comment_printed;
 }
 
 # read an mtree file, and produce the corresponding directory hierarchy
@@ -145,7 +162,7 @@ sub add_info
 	for my $d (sort (keys %$infodir) ) {
 		for my $f (sort @{$infodir->{$d}}) {
 			my $d2 = strip($d);
-			print "$header --info-dir=\%D/$d2 \%D/$d2/$f\n";
+			$out{$plist}->print("$header --info-dir=\%D/$d2 \%D/$d2/$f\n");
 		}
 	}
 }
@@ -186,32 +203,53 @@ sub augment_mtree
 sub handle_file
 {
     my $fname = strip(shift);
+    my $out = shift;
     my $string = "$fname\n";
 
     if (defined $annotated{$fname}) {
-    	my ($mode, $owner, $group, $nocheck) = @{$annotated{$fname}};
-	if ($mode eq 'comment') {
-		print "\@comment $fname\n";
-		return;
+    	my $l = $annotated{$fname};
+	if (@$l == 3) {
+		$l->[1]->print("\@comment$string");
+	} elsif (@$l == 2) {
+		$l->[1]->print($string);
+	} else {
+	    my ($outname, $fh, $mode, $owner, $group, $nocheck) = @$l;
+	    if ($mode ne '') {
+		    $string="\@mode $mode\n$string\@mode\n";
+	    }
+	    if ($owner ne '') {
+		    $string="\@owner $owner\n$string\@owner\n";
+	    }
+	    if ($group ne '') {
+		    $string="\@group $group\n$string\@group\n";
+	    }
+	    if ($nocheck ne '') {
+		    $string="\@comment no checksum\n$string";
+	    }
+	    print $fh $string;
 	}
-	if ($mode ne '') {
-		$string="\@mode $mode\n$string\@mode\n";
-	}
-	if ($owner ne '') {
-		$string="\@owner $owner\n$string\@owner\n";
-	}
-	if ($group ne '') {
-		$string="\@group $group\n$string\@group\n";
-	}
-	if ($nocheck ne '') {
-		$string="\@comment no checksum\n$string";
-	}
+    } else {
+    	print $out $string;
     }
-    print $string;
 }
 
+sub may_annotate_and_move
+{
+	my $p = shift;
 
-my ($plist, $pshared);
+	if (-e $p) {
+	    my $fh = new IO::File "<$p";
+	    rename($p, "$p.orig") or die "Can't rename $p to $p.orig";
+	    my $newfh = new IO::File ">$p";
+	    annotate($fh, $p, $newfh);
+	    close $fh;
+	    $out{$p} = $newfh;
+	    return 1;
+    	} else {
+		return 0;
+	}
+}
+
 
 my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
 die "Update bsd.port.mk" if @ARGV == 0;
@@ -238,18 +276,17 @@ for my $pkg (split(/\s+/, $ENV{'DEPS'})) {
 	augment_mtree($mtree, $destdir, $ENV{'PKGREPOSITORY'}."/$pkg.tgz");
 }
 
-if (-e $plist) {
-    annotate($plist);
-    rename($plist, "$plist.orig") or die "Can't rename $plist to $plist.orig";
-}
+may_annotate_and_move($plist);
+may_annotate_and_move($pshared) and push(@has_shared, $out{$plist});
 
-if (-e $pshared) {
-    annotate($pshared);
-    rename($pshared, "$pshared.orig") or die "Can't rename $pshared to $pshared.orig";
-}
 
-open(PLIST, '>', $plist) or die "Can't write to $plist";
-select PLIST;
+my $multi = $ENV{'MULTI_PACKAGES'};
+unless ($multi eq '') {
+	for my $sub (split(/\s+/, $multi)) {
+		may_annotate_and_move("$plist$sub");
+		may_annotate_and_move("$pshared$sub") and push(@has_shared, $out{"$plist$sub"});
+	}
+}
 
 for (@ARGV) {
 	if (m/\=/) {
@@ -259,7 +296,9 @@ for (@ARGV) {
 	}
 }
 
-print "\@comment \$OpenBSD\$\n$keep";
+my ($name, $fh);
+while (($name, $fh) = each %out) {
+}
 
 # compare all files against those dates
 my @date = (stat $ENV{INSTALL_PRE_COOKIE})[9, 10];
@@ -310,37 +349,47 @@ for my $d (keys %$mtree) {
 add_info('@unexec install-info --delete', \%infodir);
 
 for my $f (sort @files) {
-	handle_file($f) unless ($f =~ m|/dir$|) && (defined $infodir{$`});
+	handle_file($f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $infodir{$`});
 }
 
+for my $fh (@has_shared) {
+    	$fh->print("\%\%SHARED\%\%\n");
+}
+
+
 if (@libfiles > 0) {
-    	print "\%\%SHARED\%\%\n";
-	open(SHARED, ">$pshared") or die "Can't write to $pshared";
-	print SHARED "\@comment \$OpenBSD\$\n";
+    	$out{$plist}->print("\%\%SHARED\%\%\n") if @has_shared == 0;
 	for my $f (sort @libfiles) {
-	    print SHARED strip($f), "\n";
+	    handle_file(strip($f), $out{$pshared});
 	}
 	for my $d (sort (keys %ldconfig)) {
 		if (defined $newdir{$d}) {
-			print SHARED "NEWDYNLIBDIR(\%D/", strip($d), ")\n";
+			$out{$pshared}->print("NEWDYNLIBDIR(\%D/", strip($d), ")\n");
 		} else {
-			print SHARED "DYNLIBDIR(\%D/", strip($d), ")\n";
+			$out{$pshared}->print("DYNLIBDIR(\%D/", strip($d), ")\n");
 		}
 	}
-	close SHARED;
 }
 
 for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 	my $dname = strip($d);
-	if ($annotated_dir{$dname}) {
-		print "\@comment \@dirrm $dname\n";
+	if (defined $annotated_dir{$dname}) {
+		my $l = $annotated_dir{$dname};
+		if (!$has_stuff{$d}) {
+			$l->[1]->print("\@exec mkdir -p \%D/$dname\n");
+		}
+		if (@$l == 3) {
+			$l->[1]->print("\@comment \@dirrm $dname\n");
+		} else {
+			$l->[1]->print("\@dirrm $dname\n");
+		}
 	} else {
 		# case of new directory that does not hold anything: it's marked
 		# for removal, but it must exist first
 		if (!$has_stuff{$d}) {
-			print "\@exec mkdir -p \%D/$dname\n";
+			$out{$plist}->print("\@exec mkdir -p \%D/$dname\n");
 		}
-		print "\@dirrm $dname\n";
+		$out{$plist}->print("\@dirrm $dname\n");
 	}
 }
 	
