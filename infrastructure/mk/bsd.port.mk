@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.107 1999/08/10 19:54:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.108 1999/08/10 19:55:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2010,28 +2010,9 @@ checksum: fetch
 #
 .if !target(plist)
 plist: install
-	@${MKDIR} ${PKGDIR}
-	@(dirs=""; \
-	  ld=""; \
-	  for f in `${FIND} ${PREFIX} -newer ${INSTALL_PRE_COOKIE} -print 2> /dev/null`; do \
-	   ff=`${ECHO} $$f | ${SED} -e 's|^${PREFIX}/||'`; \
-	   if [ -d $$f -a ! -L $$f ]; then dirs="$$ff $$dirs"; \
-	   else \
-	    ${ECHO} $$ff; \
-	    if ${ECHO} $$f | ${GREP} -E -q -e '[^/]+\.so\.[0-9]+\.[0-9]+$$'; then \
-	     ld="$$LDCONFIG `${DIRNAME} $$f`"; \
-	    fi; \
-	   fi; \
-	  done; \
-	  for f in $$dirs; do \
-       if ${GREP} -q -e `${BASENAME} $$f` ${MTREE_FILE}; then \
-        :; \
-       else \
-        ${ECHO} "@dirrm $$f"; \
-       fi; \
-      done; \
-	  for f in $$ld; do ${ECHO} "@exec ${LDCONFIG} -m $$f"; done; \
-	) > ${PLIST}-auto
+	@PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
+	INSTALL_PRE_COOKIE=${INSTALL_PRE_COOKIE} \
+	${PERL} ${PORTSDIR}/infrastructure/install/make-plist > ${PLIST}-auto
 .endif
 
 ################################################################
