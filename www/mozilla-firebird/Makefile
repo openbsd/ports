@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/26 11:06:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2003/05/27 12:26:40 wilfried Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -50,10 +50,12 @@ CONFIGURE_ARGS=					\
 		--disable-tests			\
 		--disable-ldap
 
-CONFIGURE_ENV=	CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1 \
+CFLAGS+=	-fno-stack-protector
+CONFIGURE_ENV=	MOZ_PHOENIX=1 \
 		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
-		CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1
+MAKE_ENV=	MOZ_PHOENIX=1 \
+		LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
+		
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla-firebird
@@ -71,6 +73,6 @@ do-install:
 		${TAR} -xf - -C ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/MozillaFirebird ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regxpcom  ${MOB}/MozillaFirebird-bin ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/MozillaFirebird-bin ${MOZ}
 
 .include <bsd.port.mk>
