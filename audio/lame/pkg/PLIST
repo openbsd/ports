@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/26 11:26:51 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/08/26 12:00:38 espie Exp $
 !%%no_x11%%
 bin/lame
 bin/mp3rtp
-include/lame.h
+include/lame/lame.h
 lib/libmp3lame.a
 lib/libmp3lame.la
 man/man1/lame.1
@@ -16,4 +16,6 @@ share/doc/lame/lame.css
 share/doc/lame/modes.html
 share/doc/lame/node6.html
 share/doc/lame/switchs.html
+%%SHARED%%
 @dirrm share/doc/lame
+@dirrm include/lame
