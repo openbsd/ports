@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2003/01/15 17:25:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.248 2003/01/16 10:12:41 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -173,6 +173,7 @@
      SUBDIR += silc-client
      SUBDIR += silc-server
      SUBDIR += sing
+     SUBDIR += sipsak
      SUBDIR += sirc
      SUBDIR += slirp
      SUBDIR += smokeping
