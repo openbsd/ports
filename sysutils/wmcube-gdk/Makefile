@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/28 14:32:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/30 08:58:05 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows rotating 3d-object and CPU load'
 
-DISTNAME=		wmcube-gdk
-PKGNAME=		wmcube-gdk-0.0
+DISTNAME=		wmcube-gdk-0.98p1
 CATEGORIES=		sysutils x11 x11/windowmaker
 NEED_VERSION=		1.448
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES=		${HOMEPAGE}software/
 
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
 
