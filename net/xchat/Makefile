@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2000/04/09 17:37:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/09 21:15:18 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 DISTNAME=	xchat-1.2.1
 CATEGORIES=	x11
 NEED_VERSION=	 1.230
-FAKE=No
 MASTER_SITES=	http://xchat.org/files/source/1.2/ \
 		http://xchat.linuxpower.org/files/source/1.2/
 
