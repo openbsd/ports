@@ -1,0 +1,15 @@
+*** speakfree.h.orig	Wed Sep  9 19:19:40 1998
+--- speakfree.h	Wed Sep  9 19:20:01 1998
+***************
+*** 18,23 ****
+--- 18,27 ----
+  #define BSD_like
+  #endif
+  
++ #ifdef __OpenBSD__
++ #define BSD_like
++ #endif
++ 
+  #ifdef sgi
+  #define _BSD_SIGNALS
+  #endif
