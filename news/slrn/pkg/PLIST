@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/09/15 18:21:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/02/05 08:02:55 sturm Exp $
 bin/slrn
+bin/slrnpull
 @man man/man1/slrn.1
+@man man/man1/slrnpull.1
 share/doc/slrn/
 share/doc/slrn/COPYING
 share/doc/slrn/COPYRIGHT
@@ -20,6 +22,15 @@ share/doc/slrn/score.txt
 share/doc/slrn/slrn-doc.html
 share/doc/slrn/slrn.rc
 share/doc/slrn/slrnfuns.txt
+share/doc/slrn/slrnpull/
+share/doc/slrn/slrnpull/README
+share/doc/slrn/slrnpull/README.offline
+share/doc/slrn/slrnpull/SETUP
+share/doc/slrn/slrnpull/score
+share/doc/slrn/slrnpull/setgid.txt
+share/doc/slrn/slrnpull/slrn.rc
+share/doc/slrn/slrnpull/slrnpull.conf
+share/doc/slrn/slrnpull/slrnpull.sh
 share/locale/
 share/locale/be/
 share/locale/be/LC_MESSAGES/
@@ -54,6 +65,9 @@ share/locale/pl/LC_MESSAGES/slrn.mo
 share/locale/ru/
 share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/slrn.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
+share/locale/sv/LC_MESSAGES/slrn.mo
 share/locale/tr/
 share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/slrn.mo
