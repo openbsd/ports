@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 14:03:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/11/15 06:56:40 obecian Exp $
 
 DISTNAME=	dia-0.86
 CATEGORIES=	graphics
@@ -10,7 +10,8 @@ HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
 
 LIB_DEPENDS=	gdk_imlib.19::graphics/imlib \
 		art_lgpl.5::graphics/libart \
-		popt::devel/popt
+		popt::devel/popt \
+		xml.4::textproc/libxml
 
 MAINTAINER=	Mark Grimes <obecian@openbsd.org>
 
