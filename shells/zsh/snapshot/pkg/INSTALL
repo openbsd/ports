@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/07/05 03:51:25 brad Exp $
+# $OpenBSD: INSTALL,v 1.1 2001/05/10 19:42:34 lebel Exp $
 #
 # Pre/post-installation setup of zsh
 

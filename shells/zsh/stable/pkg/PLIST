@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/02/11 04:20:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.1 2001/05/10 19:42:35 lebel Exp $
 bin/zsh
 bin/zsh-${VERSION}
 @unexec install-info --delete %D/info/zsh.info %D/info/dir

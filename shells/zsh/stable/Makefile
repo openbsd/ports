@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/10 18:58:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.1 2001/05/10 19:42:35 lebel Exp $
 
-COMMENT=	"the Z shell, Bourne shell-compatible, development flavor"
+COMMENT=	"the Z shell, Bourne shell-compatible, release flavor"
 
-VERSION=	3.1.9
+VERSION=	3.0.8
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 NEED_VERSION=	1.402
@@ -26,10 +26,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SUBST_VARS=	VERSION
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
-		--enable-fndir='$${datadir}/zsh/functions' \
-		--disable-dynamic
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free
 
 FLAVORS=	static
 FLAVOR?=
