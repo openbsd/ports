@@ -1,0 +1,18 @@
+*** appenv.h.orig	Mon Jul 15 00:48:59 1996
+--- appenv.h	Thu Jul 30 10:20:09 1998
+***************
+*** 59,65 ****
+--- 59,71 ----
+  #include <sys/types.h>
+  #include <sys/stat.h>
+  #include <sys/ioctl.h>
++ #if defined(__NetBSD__) || defined(__OpenBSD__)
++ #include <soundcard.h>
++ /* Ensure we SIGIO */
++ #undef _POSIX_SOURCE
++ #else
+  #include <sys/soundcard.h>
++ #endif
+  #include <stdlib.h>
+  #include <stdio.h>
+  #include <errno.h>

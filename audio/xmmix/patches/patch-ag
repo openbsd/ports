@@ -1,0 +1,19 @@
+*** widget.h.orig	Mon Jul 15 00:49:10 1996
+--- widget.h	Thu Jul 30 10:17:25 1998
+***************
+*** 119,125 ****
+  extern void	widget_init(widgets_t *);
+  extern void	create_widgets(widgets_t *);
+  extern void	post_realize_config(widgets_t *);
+! extern void	register_callbacks(widgets_t *);
+  
+  #endif /* __WIDGET_H__ */
+  
+--- 119,125 ----
+  extern void	widget_init(widgets_t *);
+  extern void	create_widgets(widgets_t *);
+  extern void	post_realize_config(widgets_t *);
+! extern void	register_callbacks(widgets_t *, XtAppContext);
+  
+  #endif /* __WIDGET_H__ */
+  

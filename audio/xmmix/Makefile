@@ -3,7 +3,7 @@
 # Date created:		May 21 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/22 00:25:22 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/30 04:01:17 form Exp $
 #
 
 DISTNAME=	xmmix-1.2
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/
 
-MAINTAINER=	angelos@openbsd.org
+MAINTAINER=	form@vs.itam.nsc.ru
 
 USE_IMAKE=	yes
 REQUIRES_MOTIF=	yes

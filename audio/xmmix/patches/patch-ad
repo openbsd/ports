@@ -1,0 +1,87 @@
+*** mixer.c.orig	Thu Nov  7 22:00:26 1996
+--- mixer.c	Thu Jul 30 10:31:56 1998
+***************
+*** 104,109 ****
+--- 104,117 ----
+   ***********************/
+  
+  
++ #if defined(__NetBSD__) || defined(__OpenBSD__)
++ void
++ mxchg(int sig)
++ {
++ 	deliverSIGIO();
++ }
++ #endif
++ 
+  /*
+   * do_ioctl
+   *	Perform ioctl command.  If file is not yet open or if we
+***************
+*** 681,691 ****
+--- 689,701 ----
+  	/* Query sound driver version */
+  	if ((fp = fopen("/dev/sndstat", "r")) == NULL) {
+  		if (!app_data.demo) {
++ #if !defined(__NetBSD__) && !defined(__OpenBSD__)
+  			fprintf(errfp, "%s: %s: %s\n",
+  				PROGNAME,
+  				"Cannot open /dev/sndstat",
+  				"assuming pre-3.0 sound driver.");
+  			maxdevs = MAXDEVS_V2;
++ #endif
+  		}
+  		return;
+  	}
+***************
+*** 915,920 ****
+--- 925,931 ----
+  mx_start(widgets_t *m)
+  {
+  	char	msg[256];
++ 	int one = 1;
+  
+  	if (app_data.autoload != NULL && app_data.autoload[0] != '\0' &&
+  	    strcmp(app_data.autoload, "/dev/null") != 0) {
+***************
+*** 930,935 ****
+--- 941,954 ----
+  		}
+  	}
+  
++ #if defined(__NetBSD__) || defined(__OpenBSD__)
++ 	signal(SIGIO, mxchg);
++ 	ioctl(dev_fd, FIOASYNC, &one);
++ #endif
++ 
++ 	/* Query hardware mixer settings */
++ 	mx_queryhw(&widgets);
++ 
+  	/* Update screen controls to match current status */
+  	mx_updctl(m);
+  }
+***************
+*** 1531,1536 ****
+--- 1550,1571 ----
+  	if (p->reason != XmCR_FOCUS || form == (Widget) NULL)
+  		return;
+  
++ 	/* Query hardware mixer settings */
++ 	mx_queryhw(&widgets);
++ 
++ 	/* Update screen controls */
++ 	mx_updctl(&widgets);
++ }
++ 
++ 
++ /*
++  * mx_change
++  *	Mixer device has changed
++  */
++ /*ARGSUSED*/
++ void
++ mx_change(XtPointer client_data)
++ {
+  	/* Query hardware mixer settings */
+  	mx_queryhw(&widgets);
+  

@@ -1,0 +1,12 @@
+*** mixer.h.orig	Mon Jul 15 00:49:04 1996
+--- mixer.h	Thu Jul 30 10:17:25 1998
+***************
+*** 78,83 ****
+--- 78,84 ----
+  extern void	mx_fsok_btn(Widget, XtPointer, XtPointer);
+  extern void	mx_fscancel_btn(Widget, XtPointer, XtPointer);
+  extern void	mx_focuschg(Widget, XtPointer, XtPointer);
++ extern void	mx_change(XtPointer);
+  
+  #endif	/* __MIXER_H__ */
+  

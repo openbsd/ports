@@ -1,0 +1,50 @@
+*** widget.c.orig	Mon Jul 15 00:49:09 1996
+--- widget.c	Thu Jul 30 10:32:50 1998
+***************
+*** 973,978 ****
+--- 973,982 ----
+  	delw = XmInternAtom(display, "WM_DELETE_WINDOW", False);
+  }
+  
++ static XtSignalId sigid;
++ void deliverSIGIO() {
++ 	XtNoticeSignal(sigid);
++ }
+  
+  /*
+   * register_callbacks
+***************
+*** 985,991 ****
+   *	Nothing
+   */
+  void
+! register_callbacks(widgets_t *m)
+  {
+  	int	i;
+  
+--- 989,995 ----
+   *	Nothing
+   */
+  void
+! register_callbacks(widgets_t *m, XtAppContext app)
+  {
+  	int	i;
+  
+***************
+*** 1126,1131 ****
+--- 1130,1144 ----
+  		XmNfocusCallback,
+  		(XtCallbackProc) mx_focuschg, (XtPointer) m->form
+  	);
++ 
++ #if defined(__NetBSD__) || defined(__OpenBSD__)
++ 	/*
++ 	 * Mixer SIGIO change callback
++ 	 */
++ 	sigid = XtAppAddSignal(app,
++ 		(XtSignalCallbackProc) mx_change, (XtPointer) 0
++ 	);
++ #endif
+  
+  	/*
+  	 * Install WM_DELETE_WINDOW handler

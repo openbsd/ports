@@ -1,0 +1,19 @@
+*** main.c.orig	Thu Nov  7 22:01:43 1996
+--- main.c	Thu Jul 30 10:17:25 1998
+***************
+*** 159,165 ****
+  	post_realize_config(&widgets);
+  
+  	/* Register callback routines */
+! 	register_callbacks(&widgets);
+  
+  	/* Initialize screen controls */
+  	mx_start(&widgets);
+--- 159,165 ----
+  	post_realize_config(&widgets);
+  
+  	/* Register callback routines */
+! 	register_callbacks(&widgets, app);
+  
+  	/* Initialize screen controls */
+  	mx_start(&widgets);
