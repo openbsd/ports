@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/01 03:04:03 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/06 21:55:03 rohee Exp $
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
@@ -9,8 +9,8 @@ MAINTAINER=	brad@openbsd.org
 GNU_CONFIGURE=	yes
 
 post-install:
-	@mkdir -p ${PREFIX}/man/man1
-	@mkdir -p ${PREFIX}/share/doc/queso
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/queso
 	${INSTALL_MAN} ${FILESDIR}/queso.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${PREFIX}/share/doc/queso
 
