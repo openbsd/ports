@@ -1,12 +1,5 @@
-# OpenBSD makefile for: mshell
-# Version required:     93/3/3
-# Date created:         May 20 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.3 1999/11/09 03:43:23 turan Exp $
-#
-
-BROKEN=		mshell.c:52: syntax error before 1
+# $OpenBSD: Makefile,v 1.4 1999/11/14 01:27:05 rohee Exp $
+# Original from: Angelos D. Keromytis
 
 DISTNAME=	mshell
 PKGNAME=	mshell-1.0
@@ -17,7 +10,6 @@ DISTFILES=	7432.Z
 MAINTAINER=	angelos@openbsd.org
 
 NO_WRKSUBDIR=	yes
-MAN1=		mshell.1
 
 do-extract:
 	@rm -rf ${WRKDIR}
