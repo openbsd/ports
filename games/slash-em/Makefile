@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/09/15 19:57:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/09/18 21:22:24 espie Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Hard"
 DISTNAME=	se006e4f8
@@ -28,6 +28,8 @@ SUBST_VARS=GAMEDIR
 # qt flavor is apparently not working yet
 FLAVORS=no_x11 #qt
 FLAVOR?=
+# ... but let fragments work
+PKG_ARGS+=-Dqt=0
 
 .if ${FLAVOR:L} == "no_x11"
 NETHACKCONFIG=${FILESDIR}/simple-config
