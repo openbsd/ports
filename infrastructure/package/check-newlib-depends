@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.5 2005/03/02 20:45:37 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.6 2005/03/05 11:36:26 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -26,14 +26,19 @@ use File::Basename;
 use OpenBSD::PackageLocator;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
+use OpenBSD::SharedLibs;
 use File::Temp;
 use Getopt::Std;
 
-our ($opt_o);
+our ($opt_o, $opt_d);
 package OpenBSD::PackingList;
 
 package OpenBSD::PackingElement;
 sub check_wantlibs
+{
+}
+
+sub depwalk
 {
 }
 
@@ -42,7 +47,7 @@ sub check_wantlibs
 {
 	my ($item, $t, $where, $handle) = @_;
 	my $name = $item->{name};
-	$name =~ s/^(.*\/)?(.*)\.\d+\.\d+$/$2/;
+	$name =~ s/^(.*\/)?(.*)\.(\d+)\.\d+$/$2.$3/;
 	$t->{haslib}->{$name} = 1;
 }
 
@@ -101,19 +106,72 @@ sub check_wantlibs
 		for my $lib (@l) {
 			# don't look for modules
 			next if $lib =~ m/\.so$/;
-			$lib =~ s/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/$2/;
+			$lib =~ s/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/$2.$3/;
 			$t->{needlib}->{$lib} = $fullname;
 		}
 	}
-	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/) {
-		$t->{haslib}->{$2} = 2;
+	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.(\d+)\.\d+$/) {
+		$t->{haslib}->{"$2.$3"} = 2;
 	}
 	unlink($where.$fullname);
 }
 
+package OpenBSD::PackingElement::Dependency;
+
+sub depwalk
+{
+	my ($self, $h) = @_;
+	$h->{$self->{def}} = 1;
+}
+
 package main;
 
-getopts('o');
+getopts('od:');
+
+my $done = {};
+
+sub get_plist
+{
+	my $pkgname = shift;
+
+	my $location = "$opt_d/$pkgname.tgz";
+
+	my $true_package = OpenBSD::PackageLocator->find($pkgname);
+	return 0 unless $true_package;
+	my $dir = $true_package->info();
+	# twice read
+	return 0 unless -d $dir;
+	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+	$true_package->close();
+	rmtree($dir);
+	OpenBSD::SharedLibs::add_plist_libs($plist);
+}
+
+sub report_lib_issue
+{
+	my ($plist, $lib, $binary) = @_;
+
+	OpenBSD::SharedLibs::add_system_libs('/');
+	my $libspec = "$lib.0";
+	my $want = $lib;
+	$want =~ s/\.\d+$//;
+	for my $dir (qw(/usr /usr/X11R6)) {
+		my @r = OpenBSD::SharedLibs::lookup_libspec($dir, $libspec);
+		if (grep { $_ eq 'system' } @r) {
+			print "Missing system lib: $want ($binary)\n";
+			return;
+		}
+	}
+#	my $h = {};
+#	$plist->visit('depwalk', $h);
+#
+#	for my $pname (keys %$h) {
+#		next if $done->{$pname};
+#		$h->{$pname} = get_plist($pname);
+#	}
+
+	print "Missing: $want ($binary)\n";
+}
 
 sub analyze 
 {
@@ -125,7 +183,7 @@ sub analyze
 	$plist->visit('check_wantlibs', $t, $where, @l);
 	while (my ($lib, $fullname) = each %{$t->{needlib}}) {
 		if (!defined $t->{haslib}->{$lib}) {
-			print "Missing: $lib ($fullname)\n";
+			report_lib_issue($plist, $lib, $fullname);
 		}
 		$t->{haslib}->{$lib} = 2;
 	}
