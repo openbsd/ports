@@ -1,23 +1,30 @@
 # Makefile for:		w3m
-# Version required:	991008
-# Date created:		08 Oct 1999
+# Version required:	0.1.6
+# Date created:		31 Jan 2000
 # Who:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/10/26 14:20:07 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/01/30 22:35:13 d Exp $
 
-DISTNAME=	w3m-991008
+DISTNAME=	w3m-0.1.6
 
 CATEGORIES=	www
 
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
+MASTER_SITES=	\
 		ftp://ftp.firedrake.org/w3m/ \
+		ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://www.instinct.org/~pgl/w3m/
 
 MAINTAINER=	dugsong@monkey.org
 
 WRKSRC=		${WRKDIR}/w3m
 
-NO_CONFIGURE=	yes
+CONFIGURE_ARGS=	-yes
+HAS_CONFIGURE=	yes
+MAKE_ENV=	DESTDIR=
 
+pre-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m/
+	${INSTALL_DATA} ${WRKSRC}/doc/[F-Sk-m]* ${PREFIX}/share/doc/w3m/
 
 .include <bsd.port.mk>
