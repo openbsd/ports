@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/23 00:37:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2003/03/31 14:36:02 sturm Exp $
 
 COMMENT=	"clone of the Plan9 editor 'acme'"
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	simple
+USE_X11=	Yes
 CONFIGURE_STYLE= autoconf
 
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/03/01 03:21:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/03/31 14:36:02 sturm Exp $
 
 COMMENT=	"X11 over a low bandwidth link"
 VERSION=	3.8.1
@@ -20,6 +20,8 @@ MASTER_SITES=	http://ftp.ecrc.de/pub/netsw/x11/extensions/dxpc/ \
 #HOMEPAGE=	http://www.vigor.nu/dxpc/
 
 LIB_DEPENDS=	lzo::archivers/lzo
+
+USE_X11=	Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=--with-lzo-lib=${PREFIX}
