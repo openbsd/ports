@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/12 20:40:02 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/17 18:47:40 fgsch Exp $
 
-PKGNAME=	pccts-1.33
+PKGNAME=	pccts-1.33r22
 CATEGORIES=	devel lang
 NEED_VERSION=	1.302
 MASTER_SITES=	http://www.polhode.com/
-DISTNAME=	pccts133mr
+DISTNAME=	pccts133mr22
 
 MAINTAINER=	fgsch@openbsd.org
 
-LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
