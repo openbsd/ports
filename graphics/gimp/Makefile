@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2001/10/29 02:06:52 brad Exp $
+# $OpenBSD: Makefile,v 1.67 2001/11/01 02:39:05 brad Exp $
 
 COMMENT=	"GNU Image Manipulation Program"
 
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR= gimp/v1.2/v${VERSION}
 
 HOMEPAGE=	http://www.gimp.org/
 
-MODULES=	gtk
-LIB_DEPENDS=	aa.1.3::graphics/aalib \
+LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+ \
+		aa.1.3::graphics/aalib \
 		mpeg.13::graphics/mpeg-lib \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff

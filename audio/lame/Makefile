@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/29 08:46:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/11/01 02:39:05 brad Exp $
 
 COMMENT=	"Lame Ain't an MP3 Encoder"
 
@@ -35,7 +35,7 @@ FAKE_FLAGS=	${MAKE_FLAGS}
 
 .if ${FLAVOR:L} != "no_x11"
 CONFIGURE_ARGS+=	--enable-mp3x
-MODULES+=		gtk
+LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 .endif
 
 .include <bsd.port.mk>

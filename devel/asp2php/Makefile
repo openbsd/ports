@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/29 09:24:09 shell Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/01 02:39:05 brad Exp $
 
 COMMENT=		"convert ASP code to PHP code"
 
@@ -21,7 +21,7 @@ FLAVOR?=
 
 .if ${FLAVOR} != "no_x11"
 USE_X11=		Yes
-MODULES+=		gtk
+LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 ALL_TARGET=		all gtkasp2php
 .endif
 

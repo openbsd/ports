@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2001/10/29 08:47:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2001/11/01 02:39:05 brad Exp $
 
 COMMENT=	"Matt's traceroute - network diagnostic tool"
 
 DISTNAME=	mtr-0.42
 CATEGORIES=	net
-NEED_VERSION=	1.474
+NEED_VERSION=	1.475
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
@@ -33,7 +33,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-gtk
 CONFIGURE_ARGS+=	--with-gtk-prefix=/nonexisting
 .else
-MODULES+=		gtk
+LIB_DEPENDS+=		gtk.1.2,gdk.1.2::x11/gtk+
 .endif
 
 .include <bsd.port.mk>
