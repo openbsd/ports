@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/05/27 18:59:17 pvalchev Exp $
 #
 # conserver de-installation
 
@@ -7,14 +7,16 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/conserver.cf
+PASSWD_FILE=${SYSCONFDIR}/conserver.passwd
 
 if [ -f $CONFIG_FILE ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
-    echo "| this step as root:"
+    echo "| these steps as root:"
     echo "|"
     echo "|           rm -f $CONFIG_FILE"
+    echo "|           rm -f $PASSWD_FILE"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

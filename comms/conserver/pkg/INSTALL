@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2003/05/26 20:20:53 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/05/27 18:59:17 pvalchev Exp $
 #
 # Pre/post-installation setup of conserver
 
@@ -9,7 +9,10 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/conserver.cf
-SAMPLE_CONFIG_FILE=$PREFIX/share/examples/conserver/conserver.cf
+PASSWD_FILE=${SYSCONFDIR}/conserver.passwd
+SAMPLE_DIR=$PREFIX/share/examples/conserver
+SAMPLE_CONFIG_FILE=$SAMPLE_DIR/conserver.cf
+SAMPLE_PASSWD_FILE=$SAMPLE_DIR/conserver.passwd
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -17,9 +20,9 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration file, $CONFIG_FILE,"
-    echo "| has NOT been changed.  You may want to compare it to the"
-    echo "| current sample file, $SAMPLE_CONFIG_FILE,"
+    echo "| The existing $1 configuration files, $CONFIG_FILE and"
+    echo "| $PASSWD_FILE have NOT been changed.  You may want to"
+    echo "| compare them to the current sample files in $SAMPLE_DIR,"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
@@ -30,12 +33,14 @@ do_notice()
 do_install()
 {
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    install -o root -g wheel -m 600 $SAMPLE_PASSWD_FILE $PASSWD_FILE
     echo
     echo "+---------------"
-    echo "| The $1 configuration file, $CONFIG_FILE,"
-    echo "| has been installed.  Please view this file and change"
+    echo "| The $1 configuration files, $CONFIG_FILE and"
+    echo "| $PASSWD_FILE,"
+    echo "| have been installed.  Please view these files and change"
     echo "| the configuration to meet your needs."
-    echo "| Refer to $PREFIX/share/examples/conserver/README.OpenBSD"
+    echo "| Refer to $SAMPLE_DIR/README.OpenBSD"
     echo "+---------------"
     echo
 
