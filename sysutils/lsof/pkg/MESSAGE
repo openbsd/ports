@@ -1,7 +1,5 @@
-
-	*****
-	* If you wish to allow lsof to be used by other than root you must
-	* make it sgid to the group kmem.  However, the code has NOT been
-	* audited... you have been warned.
-	*****
-
+*****
+* If you wish to allow lsof to be used by other than root you must
+* make it sgid to the group kmem.  However, the code has NOT been
+* audited... you have been warned.
+*****

@@ -1,56 +1,53 @@
-# $OpenBSD: Makefile,v 1.28 2000/06/29 22:30:20 angelos Exp $
+# $OpenBSD: Makefile,v 1.29 2000/09/02 03:26:56 brad Exp $
 
-DISTNAME=	lsof_4.50_W
-PKGNAME=	lsof-4.50_W
+DISTNAME=	lsof_4.51_W
+PKGNAME=	lsof-4.51_W
 CATEGORIES=	sysutils
-NEED_VERSION=	1.191
-FAKE=No
+NEED_VERSION=	1.322
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
 		ftp://ftp.crc.doc.ca/packages/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
-NO_PACKAGE=	"compile from source to set proper options"
-
-
 MAINTAINER=     angelos@openbsd.org
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-HAS_CONFIGURE=	yes
+MAKE_FLAGS=	DEBUG="${CFLAGS}"
+
+CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
+CONFIGURE_ENV=	LSOF_CC="${CC}"
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
+
 WRKDIST=	${WRKDIR}/${SRCBALL_NAME}
 
-.if ( ${MACHINE_ARCH} == "sparc" )
-IS_INTERACTIVE=	yes
-.if defined( SUN4 )
+.if ${MACHINE_ARCH} == "sparc"
+IS_INTERACTIVE=	Yes
+.if defined(SUN4) && ${SUN4:U} == YES
 CDEF=-DSUN4
-.endif
-.if defined( SUN4C )
+.elif defined(SUN4C) && ${SUN4C:U} == YES
 CDEF=-DSUN4C
-.endif
-.if defined( SUN4M )
+.elif defined(SUN4M) && ${SUN4M:U} == YES
 CDEF=-DSUN4M
 .endif
-MAKE_ENV += "CDEF=${CDEF}"
-.if !defined( CDEF )
+MAKE_ENV=	CDEF="${CDEF}"
+.if !defined(CDEF)
 pre-build:
 	@echo
 	@echo "*** when building for a sparc you must specify one of"
-	@echo "***	SUN4=YES, SUN4C=YES, or SUN4M=YES"
+	@echo "***	SUN4=Yes, SUN4C=Yes, or SUN4M=Yes"
 	@echo "*** on the make command line"
 	@echo
 .endif
 .endif
 
 post-extract:
-	@(cd ${WRKDIR} ; \
+	@(cd ${WRKDIR}; \
 	EXPMD5=`/usr/bin/grep MD5 README.${SRCBALL_NAME} | \
 	    /usr/bin/sed 's/^[ ]*//'` ; \
 	CALCMD5=`md5 ${SRCBALL_NAME}.tar` ; \
@@ -59,17 +56,14 @@ post-extract:
 	    echo "($$EXPMD5 != $$CALCMD5)" ; \
 	    exit 1 ; \
 	fi ; \
-	${TAR} -xf ${SRCBALL_NAME}.tar \
-	)
+	tar -xf ${SRCBALL_NAME}.tar)
 	@(cd ${WRKSRC}; echo "y" | ./Inventory || exit 1)
 
-
 do-install:
-	${INSTALL_PROGRAM} -o ${BINOWN} -g ${BINGRP} -m 0755 \
-	    ${WRKSRC}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/cat8/lsof.8
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
+	${INSTALL_PROGRAM} ${WRKBUILD}/lsof ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/cat8/lsof.8
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
-	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
+	@chmod 444 ${PREFIX}/share/lsof/00*
 
 .include <bsd.port.mk>
