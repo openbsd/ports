@@ -1,18 +1,18 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
---- po/Makefile.in.in.orig	Tue Jun  6 07:53:55 2000
-+++ po/Makefile.in.in	Sat Jun 24 03:18:13 2000
-@@ -19,8 +19,9 @@ VPATH = @srcdir@
+--- po/Makefile.in.in.orig	Mon Aug  7 04:16:24 2000
++++ po/Makefile.in.in	Thu Aug 10 13:53:06 2000
+@@ -19,9 +19,10 @@
+ 
  prefix = @prefix@
  exec_prefix = @exec_prefix@
- datadir = $(prefix)/@DATADIRNAME@
--localedir = $(datadir)/locale
-+localedir = $(prefix)/share/locale
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
  gnulocaledir = $(prefix)/share/locale
 +gettextintldir = $(prefix)/share/gettext/intl
  gettextsrcdir = $(prefix)/share/gettext/po
  subdir = po
  
-@@ -39,7 +40,7 @@ DEFS = @DEFS@
+@@ -40,7 +41,7 @@
  CFLAGS = @CFLAGS@
  CPPFLAGS = @CPPFLAGS@
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
  
  COMPILE = $(CC) -c $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS)
  
-@@ -73,7 +74,7 @@ INSTOBJEXT = @INSTOBJEXT@
+@@ -74,7 +75,7 @@
  	  && rm -f $$file && $(GMSGFMT) -o $$file $<
  
  .po.cat:
@@ -30,7 +30,7 @@ $OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
  	  && rm -f $@ && $(GENCAT) $@ $*.msg
  
  
-@@ -93,7 +94,7 @@ $(srcdir)/$(PACKAGE).pot: $(POTFILES)
+@@ -94,7 +95,7 @@
  $(srcdir)/cat-id-tbl.c: stamp-cat-id; @:
  $(srcdir)/stamp-cat-id: $(PACKAGE).pot
  	rm -f cat-id-tbl.tmp
@@ -39,76 +39,7 @@ $OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2000/06/24 14:31:38 naddy Exp $
  		| sed -e "s/@PACKAGE NAME@/$(PACKAGE)/" > cat-id-tbl.tmp
  	if cmp -s cat-id-tbl.tmp $(srcdir)/cat-id-tbl.c; then \
  	  rm cat-id-tbl.tmp; \
-@@ -111,9 +112,9 @@ install-data: install-data-@USE_NLS@
- install-data-no: all
- install-data-yes: all
- 	if test -r "$(MKINSTALLDIRS)"; then \
--	  $(MKINSTALLDIRS) $(datadir); \
-+	  $(MKINSTALLDIRS) $(DESTDIR)$(datadir); \
- 	else \
--	  $(SHELL) $(top_srcdir)/mkinstalldirs $(datadir); \
-+	  $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir); \
- 	fi
- 	@catalogs='$(CATALOGS)'; \
- 	for cat in $$catalogs; do \
-@@ -125,27 +126,30 @@ install-data-yes: all
- 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
- 	  dir=$$destdir/$$lang/LC_MESSAGES; \
- 	  if test -r "$(MKINSTALLDIRS)"; then \
--	    $(MKINSTALLDIRS) $$dir; \
-+	    $(MKINSTALLDIRS) $(DESTDIR)$$dir; \
- 	  else \
--	    $(SHELL) $(top_srcdir)/mkinstalldirs $$dir; \
-+	    $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$$dir; \
- 	  fi; \
- 	  if test -r $$cat; then \
--	    $(INSTALL_DATA) $$cat $$dir/$(PACKAGE)$(INSTOBJEXT); \
--	    echo "installing $$cat as $$dir/$(PACKAGE)$(INSTOBJEXT)"; \
-+	    $(INSTALL_DATA) $$cat $(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT); \
-+	    echo "installing $$cat as" \
-+		 "$(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT)"; \
- 	  else \
--	    $(INSTALL_DATA) $(srcdir)/$$cat $$dir/$(PACKAGE)$(INSTOBJEXT); \
-+	    $(INSTALL_DATA) $(srcdir)/$$cat \
-+	      $(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT); \
- 	    echo "installing $(srcdir)/$$cat as" \
--		 "$$dir/$(PACKAGE)$(INSTOBJEXT)"; \
-+		 "$(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT)"; \
- 	  fi; \
- 	  if test -r $$cat.m; then \
--	    $(INSTALL_DATA) $$cat.m $$dir/$(PACKAGE)$(INSTOBJEXT).m; \
--	    echo "installing $$cat.m as $$dir/$(PACKAGE)$(INSTOBJEXT).m"; \
-+	    $(INSTALL_DATA) $$cat.m $(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT).m; \
-+	    echo "installing $$cat.m as" \
-+		 "$(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT).m"; \
- 	  else \
- 	    if test -r $(srcdir)/$$cat.m ; then \
- 	      $(INSTALL_DATA) $(srcdir)/$$cat.m \
--		$$dir/$(PACKAGE)$(INSTOBJEXT).m; \
-+		$(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT).m; \
- 	      echo "installing $(srcdir)/$$cat as" \
--		   "$$dir/$(PACKAGE)$(INSTOBJEXT).m"; \
-+		   "$(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT).m"; \
- 	    else \
- 	      true; \
- 	    fi; \
-@@ -153,12 +157,12 @@ install-data-yes: all
- 	done
- 	if test "$(PACKAGE)" = "gettext"; then \
- 	  if test -r "$(MKINSTALLDIRS)"; then \
--	    $(MKINSTALLDIRS) $(gettextsrcdir); \
-+	    $(MKINSTALLDIRS) $(DESTDIR)$(gettextsrcdir); \
- 	  else \
--	    $(SHELL) $(top_srcdir)/mkinstalldirs $(gettextsrcdir); \
-+	    $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(gettextsrcdir); \
- 	  fi; \
- 	  $(INSTALL_DATA) $(srcdir)/Makefile.in.in \
--			  $(gettextsrcdir)/Makefile.in.in; \
-+			  $(DESTDIR)$(gettextsrcdir)/Makefile.in.in; \
- 	else \
- 	  : ; \
- 	fi
-@@ -180,7 +184,7 @@ uninstall:
+@@ -184,7 +185,7 @@
  
  check: all
  
