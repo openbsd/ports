@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/12 02:06:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/26 03:50:26 kevlo Exp $
+
+COMMENT=	"convert Big5/GB encoded files to postscript"
 
 DISTNAME=       bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}

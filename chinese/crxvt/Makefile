@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2001/01/28 07:28:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/26 03:50:38 kevlo Exp $
+
+COMMENT=	"Chinese(Big5) VT100 terminal emulator for X"
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-${DISTNAME}

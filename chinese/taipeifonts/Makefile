@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2001/01/29 05:46:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2001/03/26 03:50:46 kevlo Exp $
+
+COMMENT=	"extra chinese fonts"
 
 DISTNAME=       zh-fonts-taipei-1.01
 CATEGORIES=     chinese x11
