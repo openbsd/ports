@@ -1,0 +1,21 @@
+@comment $OpenBSD
+bin/eboard
+bin/eboard-addtheme
+bin/eboard-config
+man/man1/eboard-addtheme.1
+man/man1/eboard-config.1
+man/man6/eboard.6
+share/doc/eboard/Crafty.txt
+share/doc/eboard/FICS-Timeseal.txt
+share/doc/eboard/GNUChess4.txt
+share/doc/eboard/GNUChess5.txt
+share/doc/eboard/Scripts.txt
+share/doc/eboard/Sjeng.txt
+share/doc/eboard/Themes.txt
+share/eboard/basic_g.png 
+share/eboard/basic_w.png
+share/eboard/basic_y.png
+share/eboard/eboard_themes.conf
+share/eboard/rock.png
+@dirrm share/eboard
+@dirrm share/doc/eboard
