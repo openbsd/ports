@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/05/11 08:18:02 cannings Exp $
-lib/libXg.so.0.0
-lib/libframe.so.0.0
-lib/libplan9c.so.0.0
-DYNLIBDIR(%D/lib)
