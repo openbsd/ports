@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2001/03/07 15:58:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.91 2001/03/09 08:47:00 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += asapm
      SUBDIR += asclock:classic,english
      SUBDIR += asfiles
+     SUBDIR += astime
      SUBDIR += aterm
 #    SUBDIR += auis
      SUBDIR += bbdate
@@ -99,9 +100,11 @@
      SUBDIR += wmcalclock
      SUBDIR += wmdate
      SUBDIR += wminfo
+     SUBDIR += wmitime
      SUBDIR += wmpinboard
      SUBDIR += wmthemeinstall
      SUBDIR += wmtime
+     SUBDIR += wmtz
      SUBDIR += wmweather
      SUBDIR += wmx
      SUBDIR += wterm
