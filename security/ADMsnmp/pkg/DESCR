@@ -1,0 +1,28 @@
+
+                      ___      ______      _       _
+                    /     \   |   _   \   |  \   /  |
+                   |  / \  |  |  |  \  |  |   \_/   |
+                   | |___| |  |  |_ /  |  |   \_/   |
+..oO  THE          |  ---  |  |       /   |  |   |  |         CreW Oo..
+                   '''   '''   '''''''    ''''   ''''        
+                               presents
+
+                         [ ADMsnmp v 0.1 ]
+                      * SNMP audit scanner *
+
+ADMsnmp is an snmpd audit scanner.
+Any of you know how weak and funny snmp is?
+You can obtain a great deal of usefull info  like  admin name's, 
+you can play with the interface of the router, reboot the machine
+get the password file of the router (Ascend), or execute commands remoteley,
+anyway snmp is a BIG hole.
+
+ADMsnmp can brute force the snmp community name (with a wordfile) or
+make a wordfile list derived the hostname.
+ADMsnmp can report to you all valid community
+names found and inform you if writable access to the MIB has been attained.
+
+ADMsnmp is very easy to use and designed with speed in mind!
+
+The ADM Crew
+(thx to #as400 who help me to boot my as400 )
