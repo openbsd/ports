@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 18:59:02 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/15 21:32:34 brad Exp $
 
 DISTNAME=	w3m-0.1.6
 CATEGORIES=	www
@@ -19,6 +19,13 @@ CONFIGURE_ARGS=	-yes
 MAKE_ENV=	DESTDIR=
 
 WRKDIST=	${WRKDIR}/w3m
+
+HOST!=	uname -n
+
+pre-configure:
+	@echo "# Configuretion at ${HOST}" > ${WRKBUILD}/config.param
+	@sed -e 's|!!PREFIX!!|${PREFIX}|' ${FILESDIR}/config.param >> \
+		${WRKBUILD}/config.param
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/w3m
