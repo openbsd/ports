@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.41 2000/07/04 02:17:54 krw Exp $
+# $OpenBSD: Makefile,v 1.42 2000/07/08 22:42:34 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
-DISTNAME=	lesstif-0.91.3
+DISTNAME=	lesstif-0.91.4
 CATEGORIES=	x11
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
+
+HOMEPAGE=	http://www.lesstif.org/
 
 MAINTAINER=	brad@openbsd.org
 
