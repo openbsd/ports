@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/12/29 15:15:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/24 01:43:01 jolan Exp $
 
 COMMENT=	"archive files using LZW compression (.lzh files)"
 
@@ -11,6 +11,7 @@ HOMEPAGE=       http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
 
 MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 
+# Restrictive
 PERMIT_PACKAGE_CDROM=	"requires advance notification"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"requires advance notification"
