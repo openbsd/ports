@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 16:23:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/10/26 18:06:04 fgsch Exp $
 
 DISTNAME=	xntp3-5.93e-export
 PKGNAME=	xntp3-5.93e
 CATEGORIES=	sysutils
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://ftp.hawaii.edu/mirrors/ntp/ \
-		ftp://ftp.cs.umn.edu/mirrors00/ftp.udel.edu/pub/ntp/ \
-		ftp://ftp.udel.edu/pub/ntp/
+MASTER_SITES=	ftp://ftp.cs.umn.edu/mirrors00/ftp.udel.edu/pub/ntp/ntp3/ \
+		ftp://ftp.udel.edu/pub/ntp/ntp3/
 
 HOMEPAGE=	http://www.eecis.udel.edu/~mills/ntp/html/
 
