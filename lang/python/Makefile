@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/06/05 17:00:21 jasoni Exp $
+# $OpenBSD: Makefile,v 1.31 2001/07/19 18:07:14 jasoni Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
@@ -68,8 +68,9 @@ pre-configure:
 	@echo ""
 	@echo "***"
 	@echo "*** Building Python with ${FLAVOR}"
-	@echo "*** You can set ${FLAVORS} by saying"
-	@echo "*** make FLAVOR=\"set of options\""
+	@echo "***"
+	@echo "*** You can set ${FLAVORS} by typing"
+	@echo "*** FLAVOR=\"set of options\" make"
 	@echo "***"
 	@echo ""
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/19 10:30:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/19 18:07:14 jasoni Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 
@@ -68,8 +68,9 @@ pre-configure:
 	@echo ""
 	@echo "***"
 	@echo "*** Building Python with ${FLAVOR}"
-	@echo "*** You can set ${FLAVORS} by saying"
-	@echo "*** make FLAVOR=\"set of options\""
+	@echo "***"
+	@echo "*** You can set ${FLAVORS} by typing"
+	@echo "*** FLAVOR=\"set of options\" make"
 	@echo "***"
 	@echo ""
 
@@ -80,7 +81,7 @@ post-configure:
 post-install:
 	@strip ${PREFIX}/bin/python
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python1.5; tar -xf -)
-	
+
 .include <bsd.port.mk>
 
 # The tools package is not flavor dependent.
