@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:03 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/03 00:58:43 turan Exp $
+
+BROKEN=		install: /usr/ports/chinese/lunar/work/lunar-2.1/: Inappropriate file type or format.
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1

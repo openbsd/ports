@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:54 brad Exp $	
+# $OpenBSD: Makefile,v 1.4 1999/11/03 00:58:43 turan Exp $	
+
+BROKEN=		distsite problems.  wait for fix by kevlo
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
