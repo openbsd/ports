@@ -1967,7 +1967,7 @@ amaya-french-dict-20011029|www/amaya/french-dict||French dictionary for the Amay
 analog-5.32|www/analog||extremely fast program for analysing WWW logfiles|www/analog/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|www||||any|y|y|y|y
 august-0.63b|www/august||html editor designed for the experienced web designer|www/august/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|www|||ImageMagick-*:graphics/ImageMagick tk-8.4.*:x11/tk/8.4 weblint-*:www/weblint|any|y|y|y|y
 bk2site-1.1.8|www/bk2site||convert Netscape bookmarks into a Yahoo-like website|www/bk2site/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|www||||any|y|y|y|y
-bluefish-0.12|www/bluefish||HTML editor for experienced web designers|www/bluefish/pkg/DESCR|Damien Couderc <couderc@openbsd.org>|www|aspell::textproc/aspell/core gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 pcre::devel/pcre|:devel/gmake||any|y|y|y|y
+bluefish-0.12|www/bluefish||HTML editor for experienced web designers|www/bluefish/pkg/DESCR|Damien Couderc <couderc@openbsd.org>|www|aspell::textproc/aspell/core gtk-x11-2.0.0.14,gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14::x11/gtk+2 pcre::devel/pcre|:devel/gmake||any|y|y|y|y
 calamaris-2.58|www/calamaris||proxy-cache-servers logfiles analizer|www/calamaris/pkg/DESCR|Alexander Yurchenko <grange@openbsd.org>|www sysutils||||any|y|y|y|y
 cgicc-3.2.1|www/cgicc||c++ compliant CGI applications libraries|www/cgicc/pkg/DESCR|Shell Hung <shell@openbsd.org>|www devel||||any|y|y|y|y
 cgiparse-0.9b|www/cgiparse||C library to parse CGI Forms|www/cgiparse/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|www||||any|y|y|y|y
