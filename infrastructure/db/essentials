@@ -1,4 +1,4 @@
-# $Id: essentials,v 1.4 1999/09/25 22:56:42 turan Exp $ 
+# $Id: essentials,v 1.5 1999/09/27 00:25:51 brad Exp $ 
 # This is the list of packages that will be on the CD
 # there can be some omissions, as long as build-depends/run-depends work
 archivers/bzip2
@@ -13,7 +13,6 @@ devel/glib
 devel/gmake
 devel/id-utils
 devel/m4
-devel/mm
 editors/emacs
 graphics/aalib
 graphics/compface
