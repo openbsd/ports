@@ -1,13 +1,14 @@
 #!/bin/sh
 #
-#	$OpenBSD: bind9-enable,v 1.5 2001/02/12 17:15:53 brad Exp $
+#	$OpenBSD: bind9-enable,v 1.6 2001/08/21 18:00:25 jakob Exp $
 #
 #	this script replaces OpenBSD named files with the corresponding
 #	files from BIND v9.
 
 PREFIX=y0y0y0
 BINDIR=/usr/sbin
-config=/var/named/etc/named.conf
+CHROOT=/var/named
+config=${CHROOT}/etc/named.conf
 
 if [ `id -u` -ne 0 ]; then
     echo "You must be root to run this script."
@@ -71,7 +72,8 @@ done
 
 for file in \
     named rndc lwresd \
-    dnssec-keygen dnssec-makekeyset dnssec-signkey dnssec-signzone
+    dnssec-keygen dnssec-makekeyset dnssec-signkey dnssec-signzone \
+    named-checkconf named-checkzone
 do
     echo " $BINDIR/$file -> $PREFIX/sbin/$file"
     rm -f $BINDIR/$file
@@ -84,19 +86,36 @@ echo done.
 ######################################################################
 echo "Setup directory structure:"
 
-if [ ! -d /var/named/var ]; then
-    echo " /var/named/var"
-    install -d -o root -g wheel -m 755 /var/named/var
+if [ ! -d ${CHROOT} ]; then
+    echo " ${CHROOT}"
+    install -d -o root -g wheel -m 755 ${CHROOT}/var
 fi
 
-if [ ! -d /var/named/var/run ]; then
-    echo " /var/named/var/run"
-    install -d -o named -g wheel -m 755 /var/named/var/run
+if [ ! -d ${CHROOT}/dev ]; then
+    echo " ${CHROOT}/dev"
+    install -d -o root -g wheel -m 755 ${CHROOT}/dev
 fi
 
-if [ ! -d /var/named/var/tmp ]; then
-    echo " /var/named/var/tmp"
-    install -d -o named -g wheel -m 755 /var/named/var/tmp
+test -e ${CHROOT}/dev/null    || mknod ${CHROOT}/dev/null c 2 2
+test -e ${CHROOT}/dev/random  || mknod ${CHROOT}/dev/random  c 45 0
+test -e ${CHROOT}/dev/srandom || mknod ${CHROOT}/dev/srandom c 45 1
+test -e ${CHROOT}/dev/urandom || mknod ${CHROOT}/dev/urandom c 45 2
+test -e ${CHROOT}/dev/prandom || mknod ${CHROOT}/dev/prandom c 45 3
+test -e ${CHROOT}/dev/arandom || mknod ${CHROOT}/dev/arandom c 45 4
+
+if [ ! -d ${CHROOT}/var ]; then
+    echo " ${CHROOT}/var"
+    install -d -o root -g wheel -m 755 ${CHROOT}/var
+fi
+
+if [ ! -d ${CHROOT}/var/run ]; then
+    echo " ${CHROOT}/var/run"
+    install -d -o named -g wheel -m 755 ${CHROOT}/var/run
+fi
+
+if [ ! -d ${CHROOT}/var/tmp ]; then
+    echo " ${CHROOT}/var/tmp"
+    install -d -o named -g wheel -m 755 ${CHROOT}/var/tmp
 fi
 
 echo ""

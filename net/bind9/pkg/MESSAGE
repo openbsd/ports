@@ -2,6 +2,8 @@ If you want to replace the OpenBSD named, use the following command:
 
 	${PREFIX}/sbin/bind9-enable
 
-PLEASE NOTE that there is no bind9-disable command. Sample configuration
-files can be found in ${PREFIX}/share/examples/bind9 and should be copied
-to /var/named if used.
+PLEASE NOTE that even there is a bind9-disable command, it will only remove
+the links created in /usr/sbin - NOT reinstall the OpenBSD named.
+
+Sample configuration files can be found in ${PREFIX}/share/examples/bind9
+and should be copied to /var/named if used.
