@@ -1,0 +1,22 @@
+--- nam_stream.cc.orig	Wed Jan  5 21:48:04 2000
++++ nam_stream.cc	Wed Jan  5 22:00:35 2000
+@@ -23,8 +23,10 @@
+ #ifdef WIN32
+ #include <limits.h>
+ #else
++#ifndef __OpenBSD__
+ #include <values.h>
+ #endif
++#endif
+ 
+ #include <assert.h>
+ 
+@@ -408,6 +410,8 @@
+ 	insure_backing(tell() + 1);
+ 	return getc(back_);
+ }
++
++#define MAXLONG (((off_t) 1) << ((sizeof(off_t) * 8) - 1)) - 1
+ 
+ off_t
+ NamStreamPipe::seek(off_t offset, int whence)
