@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.3 2000/03/03 21:24:51 espie Exp $
+# $OpenBSD: make-plist,v 1.4 2000/04/17 21:00:56 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -39,7 +39,9 @@ use strict;
 
 use File::Find;
 
-my (%newdir, %occupied, %ldconfig, %infodir, @files);
+my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files);
+
+print "\@comment \$OpenBSD\$\n";
 
 # compare all files against this date
 my $date = (stat $ENV{INSTALL_PRE_COOKIE})[10];
@@ -100,6 +102,7 @@ find(
 	sub {
 		my $cdate = (lstat $_)[10];
 		if ($cdate >= $date) {
+			$has_stuff{$File::Find::dir} = 1;
 			if (-d _) {
 				$newdir{$File::Find::name} = 1;
 			} else {
@@ -141,6 +144,11 @@ for my $f (sort @files) {
 }
 
 for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
+	# case of new directory that does not hold anything: it's marked
+	# for removal, but it must exist first
+	if (!$has_stuff{$d}) {
+		print "\@exec mkdir -p \%D/", strip($d), "\n";
+	}
 	print "\@dirrm ",strip($d), "\n";
 }
 	
