@@ -1,0 +1,11 @@
+$OpenBSD: gcc-patch-errhnd_hpp,v 1.1 2003/04/16 20:59:18 sturm Exp $
+--- errhnd.hpp.orig	Tue Apr 15 22:24:57 2003
++++ errhnd.hpp	Tue Apr 15 22:27:07 2003
+@@ -2,7 +2,6 @@
+ #define _RAR_ERRHANDLER_
+ 
+ #if (defined(GUI) || !defined(_WIN_32)) && !defined(SFX_MODULE) || defined(RARDLL)
+-#define ALLOW_EXCEPTIONS
+ #endif
+ 
+ enum { SUCCESS,WARNING,FATAL_ERROR,CRC_ERROR,LOCK_ERROR,WRITE_ERROR,

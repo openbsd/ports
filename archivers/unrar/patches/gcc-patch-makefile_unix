@@ -1,0 +1,12 @@
+$OpenBSD: gcc-patch-makefile_unix,v 1.1 2003/04/16 20:59:18 sturm Exp $
+--- makefile.unix.orig	Sat Dec 14 16:09:01 2002
++++ makefile.unix	Sat Dec 14 16:09:44 2002
+@@ -41,6 +41,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o
+ 
+ .cpp.o:
+ 	$(COMPILE) -D$(WHAT) -c $<
++sha1.o: sha1.cpp
++	$(COMPILE) -O0 -c $?
+ 
+ all:	unrar
+ 
