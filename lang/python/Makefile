@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2001/07/29 02:47:21 jasoni Exp $
+# $OpenBSD: Makefile,v 1.34 2001/07/29 02:49:04 jasoni Exp $
 
 COMMENT= 	"interpreted object-oriented programming language"
 COMMENT-tools=	"extra tools for python"
@@ -43,8 +43,6 @@ CONFIGURE_ARGS+= --with-fpectl
 CONFIGURE_ENV+=	OPT='${CFLAGS}' LDSHARED="cc -shared -fpic"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a::devel/gmp
-
-#WRKDIST=	${WRKDIR}/Python-${VERSION}
 
 # If libc_r exists, thread support is compiled in by default unless this
 # is a SPARC system where threads are currently non functional.
