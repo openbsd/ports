@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 04:10:07 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/19 07:12:46 obecian Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
-VER=	1.2.0
-PROJ=	SDL_net
+VER=		1.2.2
+PROJ=		SDL_net
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-net-${VER}
 CATEGORIES=	devel net
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl \
-	GUI.::devel/guilib
+		GUI.::devel/guilib
 
 USE_X11=	Yes
 
