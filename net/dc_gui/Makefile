@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/03 19:29:08 nino Exp $
+# $OpenBSD: Makefile,v 1.3 2004/04/18 17:38:37 naddy Exp $
 
 COMMENT=		"GUI for dctc (Direct Connect Text Clone)"
 
@@ -22,8 +22,5 @@ SEPARATE_BUILD=		simple
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@cd ${WRKSRC}; touch Makefile.in */Makefile.in aclocal.m4 stamp-h.in
 
 .include <bsd.port.mk>

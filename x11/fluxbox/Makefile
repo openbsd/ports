@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/02/25 02:35:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2004/04/18 17:38:37 naddy Exp $
 
 COMMENT=	"window manager based on the original Blackbox code"
 
@@ -28,10 +28,6 @@ USE_GMAKE=		Yes
 
 USE_X11=		Yes
 SUBST_VARS=		VERSION
-
-# prevent cascading autotools rebuild
-post-patch:
-	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/menu ${PREFIX}/share/fluxbox

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/03/31 23:00:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2004/04/18 17:38:37 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -32,10 +32,6 @@ CONFIGURE_ARGS=	--enable-all
 LIB_DEPENDS+=	slang.14::devel/libslang
 CONFIGURE_ARGS+=--with-slang="${LOCALBASE}"
 .endif
-
-# prevent autotools rebuild cascade
-post-patch:
-	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.ac
 
 post-install:
 	perl -i -pe 's:\$$SYSCONFDIR:${SYSCONFDIR}:g' \

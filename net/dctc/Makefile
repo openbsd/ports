@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/21 01:18:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/18 17:38:37 naddy Exp $
 
 COMMENT=		"Direct Connect clone"
 
@@ -19,9 +19,6 @@ LIB_DEPENDS=    	glib.1.2,gthread.1.2::devel/glib
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-DMSG_NOSIGNAL=0"
-
-post-configure:
-	@cd ${WRKSRC}; touch Makefile.in src/Makefile.in aclocal.m4 stamp-h.in
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dctc; \
