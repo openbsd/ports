@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2004/12/22 06:17:28 marcm Exp $
+--- configure.orig	Wed Sep 29 14:53:05 2004
++++ configure	Mon Oct 11 17:57:21 2004
+@@ -9016,7 +9016,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -20863,7 +20863,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  have_fwrite_unlocked=yes
++  have_fwrite_unlocked=no
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -22242,7 +22242,7 @@ echo $ECHO_N "checking ID3TAG_LIBS... $E
+ echo "${ECHO_T}$ID3TAG_LIBS" >&6
+         else
+             ID3TAG_CFLAGS=""
+-            ID3TAG_LIBS=""
++            ID3TAG_LIBS="-lid3tag"
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+             ID3TAG_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "id3tag >= 0.15.0b"`
+@@ -22260,7 +22260,7 @@ echo "${ECHO_T}$ID3TAG_LIBS" >&6
+   if test $succeeded = yes; then
+      enable_mp3=yes
+   else
+-     enable_mp3=no
++     enable_mp3=yes
+   fi
+ 
+   if test x"$enable_mp3" = xno; then
