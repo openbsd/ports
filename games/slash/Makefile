@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/11/09 01:49:56 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/07 03:05:15 brad Exp $
 #
 
 DISTNAME=	slash-e8
@@ -8,6 +8,7 @@ MAINTAINER=	espie@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= nethack
 DISTFILES=	nethack-3.2.2${EXTRACT_SUFX}
 
 MASTER_SITES+=	http://www.rz.tu-ilmenau.de/~wi019/Slash/
