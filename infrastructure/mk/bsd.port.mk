@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.431 2001/07/30 14:55:07 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.432 2001/07/30 15:07:49 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -948,7 +948,7 @@ USE_BZIP2?= No
 
 EXTRACT_CASES?= 
 
-_SED_FIX_SHAR?=	sed -e '1,/^\#\![[:blank:]]*\/bin\/sh[[:space:]]*$$/d'
+_SED_FIX_SHAR?=	sed -n -e '/^\#\![[:blank:]]*\/bin\/sh[[:space:]]*$$/,$$p'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
 .if ${USE_ZIP:L} != "no"
