@@ -10,3 +10,5 @@ UNIX that has been contributed by others is also included.
 The library is capable of dealing with images that are written to
 follow the 5.0 or 6.0 TIFF spec.  There is also considerable support
 for some of the more esoteric portions of the 6.0 TIFF spec.
+
+WWW: ${HOMEPAGE}
