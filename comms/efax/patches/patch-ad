@@ -1,5 +1,5 @@
 --- fax.orig	Wed Mar 24 08:07:28 1999
-+++ fax	Thu Oct 28 17:55:36 1999
++++ fax	Thu Oct 28 22:50:23 1999
 @@ -28,16 +28,17 @@
  # /dev/modem is a link to /dev/cua1, then getty, uucp, kermit,
  # pppd, dip, etc. must *all* use either /dev/modem or /dev/cua1.
@@ -31,21 +31,7 @@
  # LOCK='-x /usr/spool/uucp/LCK..$DEV'		# older systems
  # LOCK='-x /var/lock/LCK..$DEV -x /var/spool/uucp/LCK..$DEV' # both
  # LOCK='-x #/usr/spool/uucp/LCK..$DEV'		# binary format
-@@ -98,9 +100,21 @@
- # FCINIT='-or'			# Multi-Tech (for bit reversal)
- 
- # ****************************************************************
-+# Look for and run /etc/efaxrc and ~/.efaxrc, which contain
-+# settings in the same format.
-+# ****************************************************************
-+for f in /etc/efaxrc $HOME/.efaxrc
-+do
-+	if [ -f $f ]; then
-+	.	$f
-+	fi
-+done
-+
-+# ****************************************************************
+@@ -101,6 +103,7 @@
  # The remaining options probably won't need to be changed.
  # ****************************************************************
  
@@ -53,7 +39,20 @@
  # Configuration files that are sourced if they exist.  Comment
  # out if you don't need to use config files. Warning: any type of
  # shell command in these files will be executed.
-@@ -413,6 +427,15 @@
+@@ -404,7 +407,11 @@
+ # --- End of user configuration section ---
+ # ****************************************************************
+ 
+-# --- source configuration files
++# ****************************************************************
++# --- source configuration files, which contain
++# --- settings in the same format.
++# ****************************************************************
++
+ 
+ for f in $CONFIGFILES
+ do
+@@ -413,6 +420,15 @@
  		eval "`cat $f`"
  	fi
  done
