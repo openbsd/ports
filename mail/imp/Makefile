@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/07/15 09:18:49 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.12 2004/07/31 23:34:10 avsm Exp $ 
 
 COMMENT=	"highly configurable pop3/imap4 webmail client"
 
-V=		3.2.4
+V=		3.2.5
 HORDE_MODULE=	imp
 HORDE_NAME=	IMP
 
