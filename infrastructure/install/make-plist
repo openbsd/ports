@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.7 2000/07/08 15:13:49 espie Exp $
+# $OpenBSD: make-plist,v 1.8 2000/07/08 18:09:10 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -116,12 +116,13 @@ find(
 				if (/\.so\.\d+\.\d+$/) {
 					$ldconfig{$File::Find::dir} = 1;
 					push(@libfiles, $File::Find::name);
-				}
-				push(@files, $File::Find::name);
-				if (/\.info$/) {
-					my $d = $File::Find::dir;
-					$infodir{$d} = [] unless defined $infodir{$d};
-					push(@{$infodir{$d}}, $_);
+				} else {
+					push(@files, $File::Find::name);
+					if (/\.info$/) {
+						my $d = $File::Find::dir;
+						$infodir{$d} = [] unless defined $infodir{$d};
+						push(@{$infodir{$d}}, $_);
+					}
 				}
 			}
 		} else {
