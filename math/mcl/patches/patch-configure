@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/07/08 10:55:20 sturm Exp $
---- configure.orig	Tue Jul  8 12:22:58 2003
-+++ configure	Tue Jul  8 12:41:36 2003
+$OpenBSD: patch-configure,v 1.2 2004/05/07 23:35:51 pvalchev Exp $
+--- configure.orig	2004-05-07 23:24:32.000000000 +0100
++++ configure	2004-05-07 23:26:05.000000000 +0100
 @@ -2956,13 +2956,13 @@ fi
  
  # FIXME: Replace `main' with a function in `-lpthread':

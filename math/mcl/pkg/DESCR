@@ -1,8 +1,8 @@
-The MCL algorithm is short for the Markov Cluster Algorithm,
-a fast and scalable cluster algorithm for graphs based on
-simulation of (stochastic) flow in graphs.  The algorithm was
-developed by Stijn van Dongen at the Centre for Mathematics and
-Computer Science (also known as CWI) in the Netherlands.
+The Markov Cluster Algorithm (MCL) is a fast and scalable
+cluster algorithm for graphs based on simulation of (stochastic)
+flow in graphs.  The algorithm was developed by Stijn van Dongen
+at the Centre for Mathematics and Computer Science in the
+Netherlands.
 
 The MCL algorithm is very fast, very scalable, and has a number
 of attractive properties causing it to deliver high-quality
