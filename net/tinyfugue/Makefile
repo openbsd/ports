@@ -7,9 +7,11 @@
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
-# $OpenBSD: Makefile,v 1.3 1999/10/26 11:32:15 downsj Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/30 13:07:10 turan Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=	tf-40s1
 PKGNAME=	tf-4.0s1
