@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2000/07/07 03:41:36 kevlo Exp $
+--- Makefile.PL.orig	Thu Jul  6 05:06:42 2000
++++ Makefile.PL	Thu Jul  6 05:06:51 2000
+@@ -6,14 +6,14 @@ use Config;
+ # <lzoconf.h> and <lzo1x.h> can be found.
+ 
+ #$LZO_INCLUDE = '-I/usr/include/lzo';
+-#$LZO_INCLUDE = '-I/usr/local/include';
++$LZO_INCLUDE = '-I/usr/local/include';
+ #$LZO_INCLUDE = '-I/usr/local/include/lzo';
+ 
+ # If liblzo is not installed in some place obvious, uncomment the next
+ # line and change the path to point to the directory where liblzo is
+ # installed.
+ 
+-#$LZO_LIB     = '-L/usr/local/lib';
++$LZO_LIB     = '-L/usr/local/lib';
+ 
+ 
+ # It shouldn't be necessary to change anything from here on.

@@ -1,0 +1,5 @@
+Perl-LZO provides LZO bindings for Perl5. I.e. you can access the
+LZO library from your Perl scripts thereby compressing ordinary
+Perl strings.
+
+WWW: ${HOMEPAGE}
