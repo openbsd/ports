@@ -15,7 +15,7 @@
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${PREFIX} --libdir ${PREFIX}/share/cbb  \
 +		--destdir ${PREFIX} --perlpath /usr/bin/perl \
-+		--wishpath ${PREFIX}/bin/wish8.0
++		--wishpath ${LOCALBASE}/bin/wish8.0
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \
