@@ -4,12 +4,14 @@
 # Date created:		18 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:51 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/12 05:11:49 marc Exp $
 #
 
 DISTNAME=       tin1.3-unoff-BETA-970930
 PKGNAME=        tin-1.3.970930
 CATEGORIES=	news
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
 		ftp://ftp.nuxi.com/pub/tin/
