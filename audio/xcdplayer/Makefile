@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/06 18:56:43 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/01/23 05:51:32 brad Exp $
 
 DISTNAME=	xcdplayer-2.2
 CATEGORIES=	audio
@@ -9,5 +9,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=      yes
+
+pre-patch:
+	@cp ${FILESDIR}/cdrom_freebsd.c ${WRKSRC}
+	@cp ${FILESDIR}/cdrom_freebsd.h ${WRKSRC}
+	@mv ${WRKSRC}/xcdplayer.1 ${WRKSRC}/xcdplayer.man
 
 .include <bsd.port.mk>
