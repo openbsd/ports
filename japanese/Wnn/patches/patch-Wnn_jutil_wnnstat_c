@@ -1,6 +1,7 @@
---- Wnn/jutil/wnnstat.c.orig	Tue Jul 29 01:21:32 1997
-+++ Wnn/jutil/wnnstat.c	Tue Jul 29 01:41:42 1997
-@@ -69,7 +69,7 @@
+$OpenBSD: patch-Wnn_jutil_wnnstat_c,v 1.1 2000/04/16 21:53:31 espie Exp $
+--- Wnn/jutil/wnnstat.c.orig	Thu Apr 13 20:41:34 2000
++++ Wnn/jutil/wnnstat.c	Thu Apr 13 20:41:39 2000
+@@ -69,7 +69,7 @@ struct wnn_ret_buf rb = {0, NULL};
  #define W_DIC_ALL 5
  #define W_VERSION 6
  
@@ -9,7 +10,7 @@
  extern  int eujis_to_jis8(), eujis_to_sjis();
  #endif
  #ifdef CHINESE
-@@ -129,13 +129,13 @@
+@@ -129,13 +129,13 @@ char **argv;
  	strcpy(lang, WNN_DEFAULT_LANG);
  
  #ifdef JAPANESE
@@ -26,7 +27,7 @@
  #endif
  	switch(c){
  	case 'w':
-@@ -317,13 +317,13 @@
+@@ -317,13 +317,13 @@ static void
  usage()
  {
  #ifdef JAPANESE

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_jlib_js_c,v 1.1 2000/04/16 21:53:31 espie Exp $
+--- Wnn/jlib/js.c.orig	Fri Aug 19 03:30:48 1994
++++ Wnn/jlib/js.c	Thu Apr 13 20:41:38 2000
+@@ -221,7 +221,7 @@ register char *lang;
+ #endif
+ 	return -1;
+     }
+-    if (connect(sd,(caddr_t)&saddr,strlen(saddr.sun_path)+sizeof(saddr.sun_family)) == ERROR) {
++    if (connect(sd,(caddr_t)&saddr,SUN_LEN(&saddr)) == ERROR) {
+ 
+ #if DEBUG
+ 	xerror("jslib:Can't connect socket.\n");

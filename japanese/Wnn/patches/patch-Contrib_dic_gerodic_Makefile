@@ -1,5 +1,6 @@
---- ./Contrib/dic/gerodic/Makefile.orig	Sun Jun 27 00:09:13 1993
-+++ ./Contrib/dic/gerodic/Makefile	Tue Jul 29 12:06:28 1997
+$OpenBSD: patch-Contrib_dic_gerodic_Makefile,v 1.1 2000/04/16 21:53:30 espie Exp $
+--- Contrib/dic/gerodic/Makefile.orig	Sat Jun 26 17:09:13 1993
++++ Contrib/dic/gerodic/Makefile	Thu Apr 13 20:41:39 2000
 @@ -4,8 +4,9 @@
  #	Jun. 26th '93 Wnn Consortium
  #

@@ -1,0 +1,16 @@
+$OpenBSD: patch-Wnn_include_commonhd_h,v 1.1 2000/04/16 21:53:30 espie Exp $
+--- Wnn/include/commonhd.h.orig	Sat Apr 15 22:21:11 2000
++++ Wnn/include/commonhd.h	Sat Apr 15 22:21:48 2000
+@@ -153,6 +153,12 @@ typedef  unsigned char UCHAR;
+ #endif /* sun */
+ #endif /* luna */
+ 
++#ifdef __OpenBSD__
++#undef TERMCAP
++#define TERMINFO
++#define SRAND48
++#endif
++
+ #if defined(SYSVR2) || defined(sun)
+ # define SRAND48
+ #endif

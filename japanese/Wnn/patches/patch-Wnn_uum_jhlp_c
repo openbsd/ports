@@ -1,0 +1,189 @@
+$OpenBSD: patch-Wnn_uum_jhlp_c,v 1.1 2000/04/16 21:53:31 espie Exp $
+--- Wnn/uum/jhlp.c.orig	Sat Apr 15 21:09:13 2000
++++ Wnn/uum/jhlp.c	Sat Apr 15 21:38:38 2000
+@@ -80,6 +80,9 @@ struct passwd *getpwuid();
+ 
+ jmp_buf kk_env;
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ #ifdef SYSVR2
+ #	include <sys/param.h>
+ #endif /* SYSVR2 */
+@@ -166,14 +169,14 @@ char **argv;
+     flow_control = FLOW_CONTROL;
+     code_trans = default_code_trans;
+ 
+-    strcpy(username, getpwuid(getuid())->pw_name);
++    strlcpy(username, getpwuid(getuid())->pw_name, PATHNAMELEN);
+     if((name = getenv(WNN_USERNAME_ENV)) != NULL){
+-	strcpy(username, name);
++	strlcpy(username, name, PATHNAMELEN);
+     }
+     for (i = 1; i < argc;) {
+ 	if (!strcmp(argv[i++], "-L")) {
+ 	    if (i >= argc || argv[i][0] == '-') default_usage();
+-	    strcpy(lang_dir, argv[i++]);
++	    strlcpy(lang_dir, argv[i++], 32);
+ 	    for (;i < argc; i++) {
+ 		argv[i - 2] = argv[i];
+ 	    }
+@@ -185,12 +188,7 @@ char **argv;
+ 
+     if(*lang_dir == '\0') {
+ 	if ((p = getenv("LANG")) != NULL) {
+-	    if (strlen(p) >= 4) {
+-		strncpy(lang_dir, p, 5);
+-		lang_dir[5] = '\0';
+-	    } else {
+-		strcpy(lang_dir, p);
+-	    }
++	    strlcpy(lang_dir, p, 5);
+ 	}
+     }
+     for (f = function_db; *lang_dir && f && f->lang; f++) {
+@@ -233,8 +231,8 @@ char **argv;
+ 	    server_env = WNN_DEF_SERVER_ENV;
+ 	}
+ 	if(name = getenv(server_env)) {
+-	    strcpy(def_servername, name);
+-	    strcpy(def_reverse_servername, name);
++	    strlcpy(def_servername, name, PATHNAMELEN);
++	    strlcpy(def_reverse_servername, name, PATHNAMELEN);
+ 	}
+     }
+ 
+@@ -263,9 +261,11 @@ char **argv;
+ 
+ 
+ #if defined(BSD42) && !defined(DGUX)
++#if !(defined(BSD) && (BSD >= 199306))
+     if (saveutmp() < 0) {
+ 	puts("Can't save utmp\n");
+     }
++#endif
+ #endif /* BSD42 */
+ 
+ 
+@@ -492,7 +492,7 @@ static int do_X_opt()
+ 
+ static int do_k_opt()
+ {
+-    strcpy(uumkey_name_in_uumrc, optarg);
++    strlcpy(uumkey_name_in_uumrc, optarg, PATHNAMELEN);
+     if (*uumkey_name_in_uumrc == '\0') {
+ 	return -1;
+     }
+@@ -502,7 +502,7 @@ static int do_k_opt()
+ 
+ static int do_c_opt()
+ {
+-    strcpy(convkey_name_in_uumrc, optarg);
++    strlcpy(convkey_name_in_uumrc, optarg, PATHNAMELEN);
+     if (*convkey_name_in_uumrc == '\0') {
+ 	return -1;
+     }
+@@ -512,7 +512,7 @@ static int do_c_opt()
+ 
+ static int do_r_opt()
+ {
+-    strcpy(rkfile_name_in_uumrc, optarg);
++    strlcpy(rkfile_name_in_uumrc, optarg, PATHNAMELEN);
+     if (*rkfile_name_in_uumrc == '\0') {
+ 	return -1;
+     }
+@@ -528,8 +528,8 @@ static int do_l_opt()
+ 
+ static int do_D_opt()
+ {
+-    strcpy(def_servername, optarg);
+-    strcpy(def_reverse_servername, optarg);
++    strlcpy(def_servername, optarg, PATHNAMELEN);
++    strlcpy(def_reverse_servername, optarg, PATHNAMELEN);
+     if (*def_servername == '\0') {
+ 	return -1;
+     }
+@@ -538,7 +538,7 @@ static int do_D_opt()
+ 
+ static int do_n_opt()
+ {
+-    strcpy(username, optarg);
++    strlcpy(username, optarg, PATHNAMELEN);
+     if (*username == '\0') {
+ 	return -1;
+     }
+@@ -581,14 +581,14 @@ char **argv;
+ #endif	/* SYSVR2 */
+   extern char *index();
+   
+-  strcpy(ostr, default_getoptstr);
+-  strcat(ostr, lang_db->getoptstr);
++  strlcpy(ostr, default_getoptstr, sizeof(ostr));
++  strlcat(ostr, lang_db->getoptstr, sizeof(ostr));
+   while ((c = getopt(argc, argv, ostr)) != EOF) {
+     if (!(p = index(default_ostr, c)) || (*do_opt[p - default_ostr])() < 0) {
+ 	if (!(p = index(lang_db->ostr, c)) ||
+ 	    (*lang_db->do_opt[p - lang_db->ostr])() < 0) {
+-	    strcpy(ostr, default_ostr);
+-	    strcat(ostr, lang_db->ostr);
++	    strlcpy(ostr, default_ostr, sizeof(ostr));
++	    strlcat(ostr, lang_db->ostr, sizeof(ostr));
+ 	    usage(ostr);
+ 	}
+     }
+@@ -771,7 +771,12 @@ chld_handler()
+ #endif
+     int pid;
+ 
+-    if ((pid = wait3(&status, WNOHANG | WUNTRACED, NULL)) == child_id) {
++/*
++ * Remove warning.
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ */
++/*  if ((pid = wait3(&status, WNOHANG | WUNTRACED, NULL)) == child_id) { */
++    if ((pid = wait3((int *)&status, WNOHANG | WUNTRACED, NULL)) == child_id) {
+ 	if (WIFSTOPPED(status)) {
+ #ifdef SIGCONT
+ 	    kill(pid, SIGCONT);
+@@ -1140,9 +1145,11 @@ char **argv;
+ 	setpgrp(0, pid);
+ #endif /* BSD42 */
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+ 	if (setutmp(ttypfd) == ERROR) {
+ 	    puts("Can't set utmp.");
+ 	} 
++#endif
+ 
+ #ifdef linux
+ 	setsid();
+@@ -1562,9 +1569,11 @@ do_end()
+ 	perror(prog);
+     }
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+     if (resetutmp(ttypfd) == ERROR) {
+ 	printf("Can't reset utmp.");
+     }
++#endif
+ #ifdef TIOCSSIZE
+     pty_rowcol.ts_lines = 0;
+     pty_rowcol.ts_cols = 0;
+@@ -1636,7 +1645,16 @@ ptyname(b, pty, no)
+ char *b, *pty;
+ int no;
+ {
++/*
++ * Change pseudo-devices.
++ * Because FreeBSD's master pseudo-devices are pty[p-sP-S][0-9a-v].
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ */
++#if (defined(BSD) && (BSD >= 199306)) /* 4.4BSD-Lite by Taoka */
++    sprintf(b, "%s%1c%1c", pty, "pqrsPQRS"[(no >> 5)], ((no & 0x1f > 9)? 'a' : '0') + (no & 0x1f));
++#else /* ! 4.4BSD-Lite */
+     sprintf(b, "%s%1c%1x", pty, 'p' + (no >> 4), no & 0x0f);
++#endif /* ! 4.4BSD-Lite */
+ }
+ #endif /* !sgi */
+ 

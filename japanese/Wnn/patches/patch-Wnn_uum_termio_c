@@ -1,0 +1,26 @@
+$OpenBSD: patch-Wnn_uum_termio_c,v 1.1 2000/04/16 21:53:32 espie Exp $
+--- Wnn/uum/termio.c.orig	Thu Jul  1 01:33:10 1993
++++ Wnn/uum/termio.c	Sun Apr 16 00:24:11 2000
+@@ -93,7 +93,7 @@ openTermData()
+         fprintf(stderr, "Cannot get terminal name.");
+         return(-1);
+     }
+-    strcpy(Term_Name, cp);
++    strlcpy(Term_Name, cp, 128);
+ 
+     if ((strlen(Term_Name) > 2) && (strcmp(Term_Name + (strlen(Term_Name) - 2),"-j") == 0)) {
+ 	fprintf(stderr, MSG_GET(4));
+@@ -102,11 +102,13 @@ openTermData()
+ 	*/
+ 	return(-1);
+     }
++#ifndef __OpenBSD__
+     setupterm(0,1,&status);
+     reset_shell_mode();
+     if (status != 1){
+         return(-1);
+     }
++#endif
+ #if defined(uniosu)
+     if(jterm < 2) {	/* kanji terminal */
+         fprintf(stderr, "Not kanji terminal. Goodbye !\n");

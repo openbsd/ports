@@ -1,0 +1,144 @@
+$OpenBSD: patch-config_Project_tmpl,v 1.1 2000/04/16 21:53:37 espie Exp $
+--- config/Project.tmpl.orig	Mon Aug 29 10:40:17 1994
++++ config/Project.tmpl	Sun Apr 16 02:10:53 2000
+@@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242
+  *                                                                          *
+  ***************************************************************************/
+ 
++#define JNeqnCmd		jneqn -Tnippon
++#define JNroffCmd		jnroff -Tnippon
++#define JEqnCmd			jeqn -Tnippon -Tps
++#define JTroffCmd		jgroff -Tnippon -Tps
++#define JColCmd			cat 
++#define JTblCmd			jtbl -Tnippon
++
++           JTROFF = JTroffCmd
++           JNROFF = JNroffCmd
++             JTBL = JTblCmd
++             JEQN = JEqnCmd
++            JNEQN = JNeqnCmd
++             JCOL = JColCmd
++
+ #define ProjectX		6	/* do *not* change this line */
+ 
+ /* The following project-specific rules are defined at the end of this file:
+@@ -1085,13 +1099,8 @@ clean::									@@\
+ /* */# OMRON INPUT MATHOD MAKE ENV
+ /* */#
+ 
+-#if defined(uniosu) || (defined(SVR4) && !defined(DGUX)) || defined(hpux)
+ #define termLibrary -lcurses
+ #define cvtfileDir ./sysV
+-#else
+-#define termLibrary -ltermcap
+-#define cvtfileDir ./bsd
+-#endif
+ 
+ #define	WnnSpecialObjectRule(obj, depends, direct, define)	@@\
+ obj : depends							@@\
+@@ -1100,7 +1109,7 @@ obj : depends							@@\
+ #ifdef WnnMakeDirectories
+ #undef WnnMakeDirectories
+ #endif
+-#define WnnMakeDirectories(step,dir)					@@\
++#define WnnMakeDirectories(step,dirs)					@@\
+ step::									@@\
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac;			@@\
+ 	DirFailPrefix@for i in dirs; do if [ -d $(DESTDIR)$$i ]; then \	@@\
+@@ -1134,17 +1143,21 @@ install:: list								@@\
+ 		$(WNNTOUCH) $(DESTDIR)dest/$$i); fi \			@@\
+ 	done
+ 
++/*
++ *  Only Japanese
++ *    - Satoshi
++ */
+ #ifndef BuildWnn
+ #define BuildWnn	YES
+ #endif
+ #ifndef BuildCWnn
+-#define BuildCWnn	YES
++#define BuildCWnn	NO
+ #endif
+ #ifndef BuildKWnn
+-#define BuildKWnn	YES
++#define BuildKWnn	NO
+ #endif
+ #ifndef BuildXwnmo
+-#define BuildXwnmo	YES
++#define BuildXwnmo	NO
+ #endif
+ 
+ #ifndef BuildJserver
+@@ -1169,7 +1182,7 @@ install:: list								@@\
+ #define BuildWnnMan	YES
+ #endif
+ #ifndef BuildJlibV3
+-#define BuildJlibV3	NO
++#define BuildJlibV3	YES
+ #endif
+ #if BuildPubdic || BuildWnnConsDic
+ #define BuildWnnDicUtilForCompile	YES
+@@ -1230,7 +1243,7 @@ install:: list								@@\
+  * as YES. Default is that dictionary isn't installed if it exist already.
+  */
+ 
+-       WNNOWNER = wnn
++       WNNOWNER = $(WNNOWNER_INDIRECT)
+ #ifdef UseInstalled
+           IMTOP = $(TOP)
+ #else
+@@ -1248,7 +1261,7 @@ install:: list								@@\
+          WNNTOP = $(IMTOP)/Wnn
+        JWNNLANG = ja_JP
+      JWNNWNNDIR = $(WNNWNNDIR)/$(JWNNLANG)
+-     JWNNBINDIR = $(WNNBINDIR)/Wnn4
++     JWNNBINDIR = $(WNNBINDIR)
+      JWNNINCDIR = $(WNNINCDIR)/wnn
+      JWNNDICDIR = $(JWNNWNNDIR)/dic
+   JWNNPUBDICDIR = $(JWNNDICDIR)/pubdic
+@@ -1363,3 +1376,44 @@ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
+ #else
+       IMAKE_CMD = $(IMAKE) -I$(IMIRULESRC) -I$(IRULESRC) $(IMAKE_DEFINES)
+ #endif
++
++/* InstallJManPageLong: specific rules for japanese language manpages */
++#define InstallJManPageLong(file,destdir,dest)                          @@\
++all:: file.0								@@\
++									@@\
++file.0:: file.man							@@\
++	@if [ -f file.man ]; \						@@\
++	then \								@@\
++	tmp=`mktemp /tmp/man.XXXXXXXX` || exit 2 ; \			@@\
++	cat file.man | $(JNEQN) | $(JTBL) | $(JNROFF) $(MANMACROS) |  $(JCOL) > $$tmp; \	@@\
++	cp $$tmp file.0; \						@@\
++	$(RM) $$tmp; \							@@\
++	fi 								@@\
++									@@\
++install.man::                                                           @@\
++	MakeDir($(DESTDIR)destdir)					@@\
++	-@if [ -f file.0 ]; \						@@\
++	then \								@@\
++	$(INSTALL) -c $(INSTMANFLAGS) file.0 $(DESTDIR)destdir/dest.0; \@@\
++	fi								@@\
++									@@\
++clean::									@@\
++	RemoveFile(file.0)
++
++/*
++ * InstallJManPage - generate rules to install the indicated manual page.
++ */
++#ifndef InstallJManPage
++#define	InstallJManPage(file,destdir)					@@\
++InstallJManPageLong(file,destdir,file)
++#endif /* InstallJManPage */
++
++
++/*
++ * XXX override default rules, since Wnn only has japanese manpages.
++ */
++#undef InstallManPage
++#define InstallManPage	InstallJManPage
++#undef InstallManPageLong
++#define InstallManPageLong InstallJManPageLong
++          MANPATH := $(MANPATH)/ja_JP.EUC

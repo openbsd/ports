@@ -1,5 +1,6 @@
---- ./Wnn/jlib.V3/jlib.h.orig	Tue Sep 17 06:30:30 1991
-+++ ./Wnn/jlib.V3/jlib.h	Fri Sep  5 21:37:24 1997
+$OpenBSD: patch-Wnn_jlib_V3_jlib_h,v 1.1 2000/04/16 21:53:30 espie Exp $
+--- Wnn/jlib.V3/jlib.h.orig	Mon Sep 16 23:30:30 1991
++++ Wnn/jlib.V3/jlib.h	Thu Apr 13 20:41:40 2000
 @@ -51,12 +51,14 @@
  /*
  	Nihongo	Henkan	Library Header File

@@ -1,0 +1,32 @@
+$OpenBSD: patch-Wnn_uum_wnnrc_op_c,v 1.1 2000/04/16 21:53:32 espie Exp $
+--- Wnn/uum/wnnrc_op.c.orig	Sat Apr 15 21:28:33 2000
++++ Wnn/uum/wnnrc_op.c	Sat Apr 15 21:31:43 2000
+@@ -148,7 +148,7 @@ char	*s;
+ #endif /* defined(SYSVR2) && !defined(AIXV3) */
+ 
+     if(*s != '~' && *s != '@') {
+-	strcpy(tmp, s);
++	strlcpy(tmp, s, sizeof(tmp));
+ 	*s = '\0';
+ 	noerr = 1;
+     }else{
+@@ -160,7 +160,7 @@ char	*s;
+ #else
+ 	if(NULL != (p = strchr(++s1, '/'))){
+ #endif
+-		strcpy(tmp, p);
++		strlcpy(tmp, p, sizeof(tmp));
+ 		*p = '\0';
+ 	} else *tmp = '\0';
+  /* ここまでは準備。s…先頭、s1…２文字目、p…最初の'/'のあったところ
+@@ -581,8 +581,8 @@ open_uumrc()
+     }
+     strcpy(buf, LIBDIR);
+     strcat(buf, "/");
+-    strcat(buf, lang_dir);
+-    strcat(buf, RCFILE);
++    strlcat(buf, lang_dir, sizeof buf);
++    strlcat(buf, RCFILE, sizeof buf);
+     if((fp = fopen(buf, "r")) != NULL){
+ 	if(verbose_option) fprintf(stderr, "uumrc: using uumrc %s\r\n", buf);
+ 	return fp;

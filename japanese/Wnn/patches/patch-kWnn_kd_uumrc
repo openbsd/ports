@@ -1,5 +1,6 @@
---- ./kWnn/kd/uumrc.orig	Tue Jun 28 11:29:51 1994
-+++ ./kWnn/kd/uumrc	Sat Jul 19 02:48:17 1997
+$OpenBSD: patch-kWnn_kd_uumrc,v 1.1 2000/04/16 21:53:38 espie Exp $
+--- kWnn/kd/uumrc.orig	Tue Jun 28 04:29:51 1994
++++ kWnn/kd/uumrc	Thu Apr 13 20:41:39 2000
 @@ -8,7 +8,7 @@
  setconvenv	@LIBDIR/@LANG/wnnenvrc
  setkankanaenv	@LIBDIR/@LANG/wnnenvrc_R

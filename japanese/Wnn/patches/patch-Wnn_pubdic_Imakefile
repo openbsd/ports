@@ -1,0 +1,44 @@
+$OpenBSD: patch-Wnn_pubdic_Imakefile,v 1.1 2000/04/16 21:53:31 espie Exp $
+--- Wnn/pubdic/Imakefile.orig	Tue Aug 23 04:21:30 1994
++++ Wnn/pubdic/Imakefile	Thu Apr 13 20:41:38 2000
+@@ -96,11 +96,17 @@ LinkSourceFile(tankan.u,$(PUBDICSRC))
+ instserver:: install
+ 
+ WnnMakeDirectories(install,$(JWNNDICDIR))
+-#if WnnInstallDicForcibly
++/*
++ * Bugfix.
++ * Because "NO" is same to "YES"!!
++ * And some additional bugfix.
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ */
++#if (WnnInstallDicForcibly == YES)
+ InstallMultiple($(DIC),$(JWNNPUBDICDIR))
+ 
+ install::
+-	@for i in $(DICS); \
++	@for i in $(DIC); \
+ 	do \
+ 		$(WNNTOUCH) $(DESTDIR)$(JWNNPUBDICDIR)/$$i ;\
+ 	done
+@@ -108,7 +114,20 @@ install::
+ #else
+ WnnInstallDicMultiple($(DIC),$(JWNNPUBDICDIR))
+ #endif
++
++#if (WnnInstallDicForcibly == YES)
+ InstallMultiple($(FZKDATA),$(JWNNPUBDICDIR))
++
++install::
++	@for i in $(FZKDATA); \
++	do \
++		$(WNNTOUCH) $(DESTDIR)$(JWNNPUBDICDIR)/$$i ;\
++	done
++
++#else
++WnnInstallDicMultiple($(FZKDATA),$(JWNNPUBDICDIR))
++#endif
++
+ InstallMultiple($(FZK_SRC),$(JWNNFZKSRCDIR))
+ 
+ depend::

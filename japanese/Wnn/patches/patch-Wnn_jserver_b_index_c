@@ -1,6 +1,7 @@
---- ./Wnn/jserver/b_index.c.orig	Tue Jun 28 11:06:49 1994
-+++ ./Wnn/jserver/b_index.c	Sat Jul 19 00:45:21 1997
-@@ -99,8 +99,8 @@
+$OpenBSD: patch-Wnn_jserver_b_index_c,v 1.1 2000/04/16 21:53:31 espie Exp $
+--- Wnn/jserver/b_index.c.orig	Tue Jun 28 04:06:49 1994
++++ Wnn/jserver/b_index.c	Thu Apr 13 20:41:39 2000
+@@ -99,8 +99,8 @@ struct JT  *jt;
  
  	/** For each tuple in ri1[0] create b_nodes */
  	for (i=0; i<jt->maxri1[0]; i++){	
@@ -11,7 +12,7 @@
  		b_index_add(jt, yomi, serial);
  	}
  	return(b_cnt);
-@@ -133,7 +133,7 @@
+@@ -133,7 +133,7 @@ struct	JT  *jt;
  int   serial;
  {
  	w_char *yomi;
@@ -20,7 +21,7 @@
  	delete_b_node(jt, yomi, 0, 0 );
  }
  
-@@ -160,7 +160,7 @@
+@@ -160,7 +160,7 @@ int	p_node;
  			tmp_node = jt->bind[tmp_node].pter_son;
  		}
  		yo_kanji = KANJI_str( 
@@ -29,7 +30,7 @@
  		if  ( yomi[level] > yo_kanji[level] ) {
  			buf_node1 = buf_node2;
  			buf_node2 = jt->bind[buf_node2].pter_next ;
-@@ -216,7 +216,7 @@
+@@ -216,7 +216,7 @@ int	p_node;			/* cureent b_node */
  			tmp_node = jt->bind[tmp_node].pter_son;
  		}
  		yo_kanji = KANJI_str( 

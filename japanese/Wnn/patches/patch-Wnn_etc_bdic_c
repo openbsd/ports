@@ -1,0 +1,46 @@
+$OpenBSD: patch-Wnn_etc_bdic_c,v 1.1 2000/04/16 21:53:30 espie Exp $
+--- Wnn/etc/bdic.c.orig	Sat Apr 15 22:36:49 2000
++++ Wnn/etc/bdic.c	Sat Apr 15 22:37:12 2000
+@@ -291,7 +291,7 @@ register int n;
+ static
+ #endif
+ int
+-getnstr(ifpter, n, st)
++priv_getnstr(ifpter, n, st)
+ register FILE *ifpter;
+ register int n;
+ register char *st;
+@@ -672,13 +672,13 @@ struct wnn_file_head *hp;
+     char wnn_file_string[WNN_FILE_STRING_LEN + 1];
+     int err = 0;
+     
+-    getnstr(ifpter, WNN_FILE_STRING_LEN, wnn_file_string);
++    priv_getnstr(ifpter, WNN_FILE_STRING_LEN, wnn_file_string);
+     if(strncmp(wnn_file_string, WNN_FILE_STRING, WNN_FILE_STRING_LEN))
+ 	err = -1;
+     if(getint((&hp->file_type), ifpter) == -1) err = -1;
+     if(input_file_uniq(&(hp->file_uniq), ifpter) == -1) err = -1;
+     if(input_file_uniq(&(hp->file_uniq_org), ifpter) == -1) err = -1;
+-    getnstr(ifpter, WNN_PASSWD_LEN, hp->file_passwd);
++    priv_getnstr(ifpter, WNN_PASSWD_LEN, hp->file_passwd);
+     getnull(ifpter, 36);
+     return(err);
+ }
+@@ -725,7 +725,7 @@ FILE *ifpter;
+        getint(&(funiq->time), ifpter) == -1 ||
+        getint(&(funiq->dev), ifpter) == -1 ||
+        getint(&(funiq->inode), ifpter) == -1 ||
+-       getnstr(ifpter, WNN_HOSTLEN, funiq->createhost) == -1)
++       priv_getnstr(ifpter, WNN_HOSTLEN, funiq->createhost) == -1)
+ 	return(-1);
+     return(0);
+ }
+@@ -1237,7 +1237,7 @@ struct JT *jt1;
+        getint(&jt1->maxtable , ifpter) == -1 ||
+        getint(&jt1->maxhontai , ifpter) == -1 ||
+        getint(&jt1->gosuu , ifpter) == -1 ||
+-       getnstr(ifpter, WNN_PASSWD_LEN, jt1->hpasswd) == -1 ||
++       priv_getnstr(ifpter, WNN_PASSWD_LEN, jt1->hpasswd) == -1 ||
+        getint(&jt1->total , ifpter) == -1 ||
+        getint(&jt1->maxri1[D_YOMI] , ifpter) == -1 ||
+        getint(&jt1->maxri1[D_KANJI] , ifpter) == -1 ||

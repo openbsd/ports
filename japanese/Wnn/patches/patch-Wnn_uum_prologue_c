@@ -1,0 +1,36 @@
+$OpenBSD: patch-Wnn_uum_prologue_c,v 1.1 2000/04/16 21:53:32 espie Exp $
+--- Wnn/uum/prologue.c.orig	Sat Apr 15 21:33:07 2000
++++ Wnn/uum/prologue.c	Sat Apr 15 21:35:31 2000
+@@ -87,7 +87,7 @@ open_romkan()
+ 
+     romkan_set_lang(lang_dir);
+     if (*rkfile_name_in_uumrc != '\0') {
+-	strcpy(name, rkfile_name_in_uumrc);
++	strlcpy(name, rkfile_name_in_uumrc, sizeof name);
+     }else {
+ 	strcpy(name , LIBDIR);
+ 	strcat(name , RKFILE);
+@@ -280,8 +280,8 @@ int first;
+     for (p = normal_env; p; p = p->next) {
+ 	cur_normal_env = p;
+ 	get_envrc_name(uumrc_name);
+-	strcpy(environment, username);
+-	strcat(environment, p->env_name_str);
++	strlcpy(environment, username, sizeof environment);
++	strlcat(environment, p->env_name_str, sizeof environment);
+ 	if (servername == NULL && def_servername && *def_servername) {
+             servername = malloc(strlen(def_servername)+1);
+ 	    strcpy(servername, def_servername);
+@@ -321,9 +321,9 @@ int first;
+     for (p = reverse_env; p; p = p->next) {
+         cur_reverse_env = p;
+         if (get_envrc_name_reverse(uumrc_name) > 0) {
+-            strcpy(environment, username);
+-            strcat(environment, p->env_name_str);
+-            strcat(environment, "R");
++            strlcpy(environment, username, sizeof environment);
++            strlcat(environment, p->env_name_str, sizeof environment);
++            strlcat(environment, "R", sizeof environment);
+ 	    if (reverse_servername == NULL && def_reverse_servername
+ 		&& *def_reverse_servername) {
+ 		reverse_servername =

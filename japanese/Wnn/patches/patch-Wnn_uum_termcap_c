@@ -1,0 +1,29 @@
+$OpenBSD: patch-Wnn_uum_termcap_c,v 1.1 2000/04/16 21:53:32 espie Exp $
+--- Wnn/uum/termcap.c.orig	Fri Mar 26 08:07:38 1993
++++ Wnn/uum/termcap.c	Sat Apr 15 21:32:53 2000
+@@ -50,6 +50,7 @@
+  */
+ #include <stdio.h>
+ #include <ctype.h>
++#include <sys/ioctl.h>
+ #include <sys/errno.h>
+ #include "commonhd.h"
+ 
+@@ -142,7 +143,7 @@ getTermData()
+ 	fprintf(stderr, "Cannot get terminal information.\n");
+ 	return(-1); 
+     }
+-    strcpy(Term_Name,name);
++    strlcpy(Term_Name,name, 128);
+     pter = TermDataArea;
+ 
+     Term_ResetScreen = tgetstr("rs" , &pter);
+@@ -196,7 +197,7 @@ getTermData()
+ 	    keypad_fun = 0;
+ 	}
+ /*  and needs more precise check of Terminal status. */
+-#ifdef DGUX	/* copied from JLS5.4.2 */
++#if defined(DGUX) || defined(BSD43)	/* copied from JLS5.4.2 */
+ 	{
+ 	    struct winsize ws;
+ 	    if ((ioctl(0, TIOCGWINSZ, &ws) == 0) &&
