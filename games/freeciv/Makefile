@@ -3,10 +3,10 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/06/13 23:26:43 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/08/22 04:47:11 mickey Exp $
 #
 
-DISTNAME=	freeciv-1.6.3
+DISTNAME=	freeciv-1.7.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://freeciv.ultraviolet.org/pub/freeciv/
 EXTRACT_SUFX=	.tar.gz
@@ -19,7 +19,7 @@ OS_HAS_XPM=	2.3
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 
-WRKSRC=		${WRKDIR}/freeciv-1.6.3
+WRKSRC=		${WRKDIR}/freeciv-1.7.0
 USE_IMAKE=      	yes
 NO_INSTALL_MANPAGES=	yes
 
