@@ -5,18 +5,18 @@
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
-+	$(mkinstalldirs) $(DESTDIR)$(PREFIX)/lib/fnlib
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/lib/fnlib
  	@list='$(sysconf_DATA)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
 -	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(sysconfdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(prefix)/lib/fnlib/$$p.sample"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(prefix)/lib/fnlib/$$p.sample; \
  	  else if test -f $$p; then \
 -	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p"; \
 -	    $(INSTALL_DATA) $$p $(DESTDIR)$(sysconfdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample"; \
-+	    $(INSTALL_DATA) $$p $(DESTDIR)$(PREFIX)/lib/fnlib/$$p.sample; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(prefix)/lib/fnlib/$$p.sample"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(prefix)/lib/fnlib/$$p.sample; \
  	  fi; fi; \
  	done
  
@@ -24,7 +24,7 @@
  	@$(NORMAL_UNINSTALL)
  	list='$(sysconf_DATA)'; for p in $$list; do \
 -	  rm -f $(DESTDIR)$(sysconfdir)/$$p; \
-+	  rm -f $(DESTDIR)$(PREFIX)/lib/fnlib/$$p; \
++	  rm -f $(DESTDIR)$(prefix)/lib/fnlib/$$p; \
  	done
  tags: TAGS
  TAGS:
@@ -33,7 +33,7 @@
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
  installdirs:
 -	$(mkinstalldirs)  $(DESTDIR)$(sysconfdir)
-+	$(mkinstalldirs)  $(DESTDIR)$(PREFIX)/lib/fnlib
++	$(mkinstalldirs)  $(DESTDIR)$(prefix)/lib/fnlib
  
  
  mostlyclean-generic:
