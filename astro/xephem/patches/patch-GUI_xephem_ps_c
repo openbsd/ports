@@ -1,6 +1,6 @@
---- GUI/xephem/ps.c.orig	Wed Feb 24 22:16:01 1999
-+++ GUI/xephem/ps.c	Fri Mar 12 11:46:34 1999
-@@ -1693,16 +1693,24 @@
+--- GUI/xephem/ps.c.orig	Wed Oct  6 13:50:22 1999
++++ GUI/xephem/ps.c	Thu Jul 11 22:59:22 2002
+@@ -1693,16 +1693,24 @@ XtPointer call;
  	if (wantp) {
  	    /* print */
  	    char name[1024];
