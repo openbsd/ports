@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 1999/03/13 05:11:43 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 1999/03/21 05:55:24 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -10,6 +10,7 @@
 #    SUBDIR += amiwm
      SUBDIR += asclock
 #    SUBDIR += asfiles
+     SUBDIR += aterm
 #    SUBDIR += auis
      SUBDIR += bclock
      SUBDIR += blackbox
