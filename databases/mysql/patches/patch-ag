@@ -1,5 +1,5 @@
 --- configure.orig	Sat Jan  1 11:33:47 2000
-+++ configure	Mon Jan  3 14:24:18 2000
++++ configure	Tue Jan  4 12:42:57 2000
 @@ -2740,7 +2740,7 @@
    ;;
  esac
@@ -79,3 +79,12 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
+@@ -7964,7 +7917,7 @@
+ #include <pthread.h>
+ int main() {
+ pthread_attr_t thr_attr;
+-ptread_attr_setscope(&thr_attr,0);
++pthread_attr_setscope(&thr_attr,0);
+ ; return 0; }
+ EOF
+ if { (eval echo configure:7971: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
