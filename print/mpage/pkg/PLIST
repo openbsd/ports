@@ -1,0 +1,7 @@
+bin/mpage
+lib/mpage/ISO-Latin.2
+lib/mpage/ISO-Latin.1
+lib/mpage/ISO-8859.1
+lib/mpage/ISO+STD+OTH
+lib/mpage/CP850.PC
+man/man1/mpage.1

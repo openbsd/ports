@@ -1,0 +1,40 @@
+--- Makefile.orig	Wed Nov 26 10:16:06 1997
++++ Makefile	Tue Aug 10 19:48:25 1999
+@@ -45,7 +45,7 @@
+ #          PAGE_A4 for European A4
+ #
+ # PAGESIZE=PAGE_LETTER
+-PAGESIZE=PAGE_A4
++# PAGESIZE=PAGE_A4
+ 
+ #
+ # Define your spooler type
+@@ -55,7 +55,6 @@
+ SPOOL_TYPE=BSD_SPOOLER
+ 
+ # PREFIX=e:/usr		# OS/2 type
+-PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ LIBDIR=$(PREFIX)/lib
+ MANDIR=$(PREFIX)/man/man1
+@@ -111,6 +110,9 @@
+ # If you are using gcc, you probably don't need to change anything here.
+ 
+ # Linux:
++#CFLAGS = -O2 -s $(DEFS) -Wall
++
++# OpenBSD:
+ CFLAGS = -O2 -s $(DEFS) -Wall
+ 
+ # AIX (xlC on aix 4):
+@@ -142,6 +144,9 @@
+ SMPL =  sample.c page.c glob.c args.c
+ SOBJ =  sample$(O) page$(O) glob$(O) args$(O)
+ 
++all:	mpage$(E) msample$(E)
++        @echo Done!
++
+ default:	mpage$(E) msample$(E)
+ 	@echo Done!
+ 
+
