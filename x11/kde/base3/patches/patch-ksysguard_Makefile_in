@@ -1,0 +1,12 @@
+$OpenBSD: patch-ksysguard_Makefile_in,v 1.1.1.1 2002/03/23 15:04:03 espie Exp $
+--- ksysguard/Makefile.in.orig	Wed Mar 20 17:34:55 2002
++++ ksysguard/Makefile.in	Wed Mar 20 17:35:09 2002
+@@ -291,7 +291,7 @@ x_libraries = @x_libraries@
+ appsdir = $(kde_appsdir)/System
+ 
+ # claim, which subdirectories you want to install
+-SUBDIRS = CContLib ksysguardd gui pics example
++SUBDIRS = CContLib @KSYSGUARDD_DIR@ gui pics example
+ 
+ KDE_ICON = ksysguard
+ subdir = ksysguard

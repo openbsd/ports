@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 15:04:48 espie Exp $
+lib/libkbackgammon.so.0.0
+lib/libkdegames.so.1.1
+lib/libkdehighscores.so.0.1
+lib/libksirtetbase.so.0.1
+lib/libksirtetcommon.so.0.1
+DYNLIBDIR(%D/lib)

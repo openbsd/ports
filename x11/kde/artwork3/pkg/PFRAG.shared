@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 15:09:35 espie Exp $
+lib/kde3/libkwin_cde.so.0.0
+lib/kde3/libkwin_cde_config.so.0.0
+lib/kde3/libkwin_glow.so.0.0
+lib/kde3/libkwin_glow_config.so.0.0
+lib/kde3/libkwin_openlook.so.0.0
+lib/kde3/plugins/styles/libdotnet.so.0.0
+NEWDYNLIBDIR(%D/lib/kde3)
+NEWDYNLIBDIR(%D/lib/kde3/plugins/styles)
