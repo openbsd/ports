@@ -1,11 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 21:01:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/02 08:06:09 kevlo Exp $
 bin/kdirstat
+share/applnk/
+share/applnk/Utilities/
 share/applnk/Utilities/kdirstat.desktop
+share/apps/kdirstat/
+share/apps/kdirstat/icons/
+share/apps/kdirstat/icons/hicolor/
+share/apps/kdirstat/icons/hicolor/16x16/
+share/apps/kdirstat/icons/hicolor/16x16/actions/
 share/apps/kdirstat/icons/hicolor/16x16/actions/symlink.png
+share/apps/kdirstat/icons/hicolor/32x32/
+share/apps/kdirstat/icons/hicolor/32x32/actions/
 share/apps/kdirstat/icons/hicolor/32x32/actions/symlink.png
+share/apps/kdirstat/icons/hicolor/48x48/
+share/apps/kdirstat/icons/hicolor/48x48/actions/
 share/apps/kdirstat/icons/hicolor/48x48/actions/symlink.png
+share/apps/kdirstat/icons/locolor/
+share/apps/kdirstat/icons/locolor/16x16/
+share/apps/kdirstat/icons/locolor/16x16/actions/
 share/apps/kdirstat/icons/locolor/16x16/actions/symlink.png
 share/apps/kdirstat/kdirstatui.rc
+share/doc/HTML/en/kdirstat/
 share/doc/HTML/en/kdirstat/common
 share/doc/HTML/en/kdirstat/feedback-mail.png
 share/doc/HTML/en/kdirstat/index.cache.bz2
@@ -13,28 +28,19 @@ share/doc/HTML/en/kdirstat/index.docbook
 share/doc/HTML/en/kdirstat/kdirstat-config-cleanups.png
 share/doc/HTML/en/kdirstat/kdirstat-config-tree-colors.png
 share/doc/HTML/en/kdirstat/kdirstat-main.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kdirstat.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kdirstat.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kdirstat.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kdirstat.png
+share/locale/de/LC_MESSAGES/kdirstat.mo
 share/locale/fr/LC_MESSAGES/kdirstat.mo
 share/locale/ja/LC_MESSAGES/kdirstat.mo
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/doc/HTML/en/kdirstat
-@dirrm share/apps/kdirstat/icons/locolor/16x16/actions
-@dirrm share/apps/kdirstat/icons/locolor/16x16
-@dirrm share/apps/kdirstat/icons/locolor
-@dirrm share/apps/kdirstat/icons/hicolor/48x48/actions
-@dirrm share/apps/kdirstat/icons/hicolor/48x48
-@dirrm share/apps/kdirstat/icons/hicolor/32x32/actions
-@dirrm share/apps/kdirstat/icons/hicolor/32x32
-@dirrm share/apps/kdirstat/icons/hicolor/16x16/actions
-@dirrm share/apps/kdirstat/icons/hicolor/16x16
-@dirrm share/apps/kdirstat/icons/hicolor
-@dirrm share/apps/kdirstat/icons
-@dirrm share/apps/kdirstat

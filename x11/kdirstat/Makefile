@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/08/02 08:06:07 kevlo Exp $
 
 COMMENT=	"graphical disk usage utility for KDE"
 
-DISTNAME=	kdirstat-2.3.7
+DISTNAME=	kdirstat-2.4.0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://kdirstat.sourceforge.net/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdesu,kdeui,kio,kdefx::x11/kde/libs3
+LIB_DEPENDS=	kdecore.6,DCOP,kdesu,kdeui,kio,kdefx::x11/kde/libs3
 
 MODULES=	kde
 
