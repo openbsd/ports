@@ -1,0 +1,27 @@
+ROX-Filer is a fast and powerful graphical file manager for
+the X Window System. 
+
+You can use it as a small and fast filer within your current desktop.
+Or get it to manage your pinboard, panels and applications... 
+
+Features:
+	- Fast scanning of directories (in the background) 
+	- Uncluttered display (popup menus are used throughout)
+	- Background file operations
+		(copy, move, link, delete, permissions, find)
+	- Powerful expression-based find feature with on-line quick reference
+	- Mounts and unmounts filesystems
+		(just Shift-Click on the mount point)
+	- Supports the XDND protocol,
+		which provides for drag-and-drop file loading,
+		and the new XDS extension which allows drag-and-drop saving 
+	- VFS support allows browsing around inside zip files
+		(and other types of archive)
+	- Fully configurable from the Options dialog box
+	- User-defined key bindings for all menu entries
+	- A pop-up minibuffer allows navigating the filesystem using
+		shell-style tab completion
+	- The minibuffer can also be used for quickly entering shell commands
+ 	- Full printable manual provided (PostScript format)
+
+WWW: ${HOMEPAGE}
