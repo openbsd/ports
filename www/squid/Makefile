@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 1999/05/22 18:23:46 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/07/08 23:27:39 brad Exp $
 
-DISTNAME=	squid-2.2.STABLE3
+DISTNAME=	squid-2.2.STABLE4
 PKGNAME=	squid-2.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
-		ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
-		ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
-		ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
+MASTER_SITES=	http://squid.nlanr.net/Squid/v2/2.2/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@openbsd.org
