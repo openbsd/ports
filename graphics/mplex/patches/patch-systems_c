@@ -1,0 +1,11 @@
+$OpenBSD: patch-systems_c,v 1.1 2002/08/12 19:33:31 wcobb Exp $
+--- systems.c.orig	Thu Jul 18 15:21:27 2002
++++ systems.c	Thu Jul 18 15:21:30 2002
+@@ -38,7 +38,6 @@ unsigned int     which_streams;
+     int i,j,tmp;
+     unsigned char *index;
+     unsigned char *size_offset;
+-    FILE* file;
+ 
+     index = sector->buf;
+     sector->length_of_sector=0;

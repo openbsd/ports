@@ -1,25 +1,110 @@
-$OpenBSD: patch-inptstrm_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
---- inptstrm.c.orig	Wed May 31 09:04:11 1995
-+++ inptstrm.c	Sun Jun 10 00:43:14 2001
-@@ -1,4 +1,5 @@
- #include "main.h"
-+extern int Interactive;
- /*************************************************************************
-     MPEG Streams Kontrolle
+$OpenBSD: patch-inptstrm_c,v 1.2 2002/08/12 19:33:31 wcobb Exp $
+--- inptstrm.c.orig	Wed May 31 10:04:11 1995
++++ inptstrm.c	Thu Jul 18 16:00:00 2002
+@@ -5,18 +5,43 @@
+     Basic Checks on MPEG Streams
+ *************************************************************************/
  
-@@ -310,6 +311,7 @@ unsigned int length;
++extern int Interactive;
++
+ void marker_bit (bs, what)
+ Bit_stream_struc *bs;
+ unsigned int what;
+ {
+     if (what != get1bit(bs))
+     {
+-        printf ("\nError in MPEG stream at offset (bits) %ul: supposed marker bit not found.\n",sstell(bs));
++        printf ("\nError in MPEG stream at offset (bits) %lu: supposed marker bit not found.\n",sstell(bs));
+         exit (1);
+     }
+ }
+ 
+-
++unsigned int bitrate_index [3][16] =
++    {{0,32,64,96,128,160,192,224,256,288,320,352,384,416,448,0},
++     {0,32,48,56,64,80,96,112,128,160,192,224,256,320,384,0},
++     {0,32,40,48,56,64,80,96,112,128,160,192,224,256,320,0}};
++
++static double picture_rates [9] = { 0., 24000./1001., 24., 25., 
++	30000./1001., 30., 50., 60000./1001., 60. };
++    
++static double ratio [16] = { 0., 1., 0.6735, 0.7031, 0.7615, 0.8055,
++	0.8437, 0.8935, 0.9157, 0.9815, 1.0255, 1.0695, 1.0950, 1.1575,
++	1.2015, 0.};
++
++static double frequency [4] = {44.1, 48, 32, 0};
++static unsigned int slots [4] = {12, 144, 0, 0};
++static unsigned int samples [4] = {384, 1152, 0, 0};
++
++static char mode [4][15] =
++    { "stereo", "joint stereo", "dual channel", "single channel" };
++static char copyright [2][20] =
++    { "no copyright","copyright protected" };
++static char original [2][10] =
++    { "copy","original" };
++static char emphasis [4][20] =
++    { "none", "50/15 microseconds", "reserved", "CCITT J.17" };
+ 
+ /*************************************************************************
+     MPEG Verifikation der Inputfiles
+@@ -293,7 +318,7 @@ unsigned int length;
+ 	} else break;
+     } while (!end_bs(&video_bs));
+ 
+-    printf ("\nDone, stream bit offset %ld.\n",offset_bits);
++    printf ("\nDone, stream bit offset %d.\n",offset_bits);
+ 
+     video_info->stream_length = offset_bits >> 3;
+     for (i=0; i<4; i++)
+@@ -310,7 +335,8 @@ unsigned int length;
      fclose (info_file);
      output_info_video (video_info);
  
-+  if( Interactive )
-     ask_continue ();
+-    ask_continue ();
++    if (Interactive)
++        ask_continue ();
  }
  
-@@ -565,6 +567,7 @@ unsigned int length;
+ /*************************************************************************
+@@ -414,7 +440,7 @@ printf("\n+------------------ AUDIO STRE
+     else if (audio_info->bit_rate == 0xf)
+ 	printf ("Bit rate       : reserved\n");
+     else
+-	printf ("Bit rate       : %8u bytes/sec (%3u kbit/sec)\n",
++	printf ("Bit rate       : %8lu bytes/sec (%3lu kbit/sec)\n",
+ 		 bitrate*128, bitrate);
+ 
+     if (audio_info->frequency == 3)
+@@ -456,7 +482,6 @@ unsigned int length;
+     FILE* info_file;
+     Bit_stream_struc audio_bs;
+     unsigned int offset_bits=0;
+-    unsigned int stream_length=0; 
+     unsigned int framesize;
+     unsigned int padding_bit;
+     unsigned int skip;
+@@ -464,7 +489,6 @@ unsigned int length;
+     double PTS;
+     double samples_per_second;
+     Aaunit_struc access_unit;
+-    unsigned long syncword;
+     int i;
+     unsigned int prozent;
+     unsigned int old_prozent=0;
+@@ -559,13 +583,14 @@ unsigned int length;
+ 	else break;
+     } while (!end_bs(&audio_bs));
+ 
+-    printf ("\nDone, stream bit offset %ld.\n",offset_bits);
++    printf ("\nDone, stream bit offset %d.\n",offset_bits);
+ 
+     audio_info->stream_length = offset_bits >> 3;
      close_bit_stream_r (&audio_bs);
      fclose (info_file);
      output_info_audio (audio_info);
-+  if( Interactive )
-     ask_continue ();
+-    ask_continue ();
++    if (Interactive)
++        ask_continue ();
  
  }
+ 

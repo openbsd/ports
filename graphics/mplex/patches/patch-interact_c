@@ -1,7 +1,28 @@
-$OpenBSD: patch-interact_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
---- interact.c.orig	Wed May 31 07:18:33 1995
-+++ interact.c	Sun Jun 10 00:43:14 2001
-@@ -67,7 +67,7 @@ void ask_continue ()
+$OpenBSD: patch-interact_c,v 1.2 2002/08/12 19:33:31 wcobb Exp $
+--- interact.c.orig	Wed May 31 08:18:33 1995
++++ interact.c	Thu Jul 18 16:00:06 2002
+@@ -5,9 +5,12 @@
+     Intro Screen and argument check
+ *************************************************************************/
+ 
++extern int Verbose;
++
+ void intro(argc)
+ int argc;
+ {
++    if (Verbose) {
+     printf("\n***************************************************************\n");
+     printf(  "*               MPEG1/SYSTEMS      Multiplexer                *\n");
+     printf(  "*               (C)  Christoph Moar, 1994/1995                *\n");
+@@ -19,6 +22,7 @@ int argc;
+     printf(  "*  License in the file COPYING for more details.              *\n");
+     printf(  "*  Release %s (%s)                                  *\n",MPLEX_VER,MPLEX_DATE);
+     printf(  "***************************************************************\n\n");
++    }
+ 
+     if (argc < 3)
+     {	
+@@ -67,7 +71,7 @@ void ask_continue ()
      char input[20];
  
      printf ("\nContinue processing (y/n) : ");
@@ -10,7 +31,7 @@ $OpenBSD: patch-interact_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
      while (input[0]!='N'&&input[0]!='n'&&input[0]!='y'&&input[0]!='Y');
  
      if (input[0]=='N' || input[0]=='n')
-@@ -92,7 +92,7 @@ unsigned char ask_verbose ()
+@@ -92,7 +96,7 @@ unsigned char ask_verbose ()
      char input[20];
  
      printf ("\nVery verbose mode (y/n) : ");
@@ -19,3 +40,38 @@ $OpenBSD: patch-interact_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
      while (input[0]!='N'&&input[0]!='n'&&input[0]!='y'&&input[0]!='Y');
  
      if (input[0]=='N' || input[0]=='n') return (FALSE); else return (TRUE);
+@@ -115,6 +119,8 @@ unsigned int buf_v;
+ unsigned int buf_a;
+ unsigned char verbose;
+ {
++    if (!Verbose)
++        return;
+     printf ("| %7d | %7d |",nsectors_a,nsectors_v);
+     printf (" %7d | %11d |",nsectors_p,nbytes);
+     printf (" %6d | %6d |",buf_a,buf_v);
+@@ -124,6 +130,8 @@ unsigned char verbose;
+ 
+ void status_header ()
+ {
++    if (!Verbose)
++        return;
+     status_footer();
+     printf("|  Audio  |  Video  | Padding | Bytes  MPEG | Audio  | Video  |\n");
+     printf("| Sectors | Sectors | Sectors | System File | Buffer | Buffer |\n");
+@@ -134,6 +142,8 @@ void status_header ()
+ void status_message (what)
+ unsigned char what;
+ {
++  if (!Verbose)
++      return;
+   switch (what)
+   {
+   case STATUS_AUDIO_END:
+@@ -152,5 +162,7 @@ unsigned char what;
+ 
+ void status_footer ()
+ {
++  if (!Verbose)
++      return;
+   printf("+---------+---------+---------+-------------+--------+--------+\n");
+ }

@@ -1,0 +1,36 @@
+$OpenBSD: patch-main_h,v 1.1 2002/08/12 19:33:31 wcobb Exp $
+--- main.h.orig	Thu Jul 18 15:04:48 2002
++++ main.h	Thu Jul 18 15:08:34 2002
+@@ -292,32 +292,3 @@ void status_footer	  ();	/* Endzeile				
+ void ask_continue	  ();	/* Soll weiter gearbeitet werden ?	*/
+ unsigned char ask_verbose ();	/* Soll verbose gearbeitet werden ?	*/
+ 
+-/*************************************************************************
+-    Statische Arrays
+-*************************************************************************/
+-
+-static double picture_rates [9] = { 0., 24000./1001., 24., 25., 
+-	30000./1001., 30., 50., 60000./1001., 60. };
+-
+-static double ratio [16] = { 0., 1., 0.6735, 0.7031, 0.7615, 0.8055,
+-	0.8437, 0.8935, 0.9157, 0.9815, 1.0255, 1.0695, 1.0950, 1.1575,
+-	1.2015, 0.};
+-
+-static unsigned int bitrate_index [3][16] =
+-    {{0,32,64,96,128,160,192,224,256,288,320,352,384,416,448,0},
+-     {0,32,48,56,64,80,96,112,128,160,192,224,256,320,384,0},
+-     {0,32,40,48,56,64,80,96,112,128,160,192,224,256,320,0}};
+-
+-static double frequency [4] = {44.1, 48, 32, 0};
+-static unsigned int slots [4] = {12, 144, 0, 0};
+-static unsigned int samples [4] = {384, 1152, 0, 0};
+-
+-static char mode [4][15] =
+-    { "stereo", "joint stereo", "dual channel", "single channel" };
+-static char copyright [2][20] =
+-    { "no copyright","copyright protected" };
+-static char original [2][10] =
+-    { "copy","original" };
+-static char emphasis [4][20] =
+-    { "none", "50/15 microseconds", "reserved", "CCITT J.17" };
+-

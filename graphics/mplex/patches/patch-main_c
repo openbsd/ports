@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
---- main.c.orig	Wed Apr  5 04:51:53 1995
-+++ main.c	Sun Jun 10 00:56:44 2001
+$OpenBSD: patch-main_c,v 1.2 2002/08/12 19:33:31 wcobb Exp $
+--- main.c.orig	Wed Apr  5 05:51:53 1995
++++ main.c	Thu Jul 18 15:49:22 2002
 @@ -59,6 +59,7 @@
  *************************************************************************/
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-main_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
      struct timeval  tp_global_end;
  #endif
  
-+int Interactive=0;
++int Interactive=0, Verbose=0;
 +
  int main (argc, argv)
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-main_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
      unsigned int which_streams=0;
      double	startup_delay=0;
  
-+    int tmp, fd;
++    int fd;
 +
 +    if( getopt( argc, argv, "i" ) == 'i' )
 +      Interactive=1;

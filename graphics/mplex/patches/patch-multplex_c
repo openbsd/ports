@@ -1,12 +1,55 @@
-$OpenBSD: patch-multplex_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
---- multplex.c.orig	Tue Jun  6 08:16:52 1995
-+++ multplex.c	Sun Jun 10 00:43:14 2001
+$OpenBSD: patch-multplex_c,v 1.2 2002/08/12 19:33:31 wcobb Exp $
+--- multplex.c.orig	Tue Jun  6 09:16:52 1995
++++ multplex.c	Thu Jul 18 15:57:13 2002
 @@ -1,4 +1,5 @@
  #include "main.h"
 +extern int Interactive;
  #ifdef TIMER
      extern long total_sec;
      extern long total_usec;
+@@ -45,11 +46,11 @@ unsigned int    which_streams;
+ 
+ {
+ 
+-    FILE *istream_v;			/* Inputstream Video	*/
+-    FILE *istream_a;			/* Inputstream Audio	*/
++    FILE *istream_v = NULL;		/* Inputstream Video	*/
++    FILE *istream_a = NULL;		/* Inputstream Audio	*/
+     FILE *ostream;			/* Outputstream MPEG	*/
+-    FILE *vunits_info;			/* Input Video Units	*/
+-    FILE *aunits_info;			/* Input Audio Units	*/
++    FILE *vunits_info = NULL;		/* Input Video Units	*/
++    FILE *aunits_info = NULL;		/* Input Audio Units	*/
+ 
+     Vaunit_struc video_au;		/* Video Access Unit	*/
+     Aaunit_struc audio_au;		/* Audio Access Unit	*/
+@@ -67,7 +68,6 @@ unsigned int    which_streams;
+     unsigned int mux_rate;
+     unsigned char picture_start;
+     unsigned char audio_frame_start;
+-    unsigned int bytes_left;
+     unsigned int audio_bytes;
+     unsigned int video_bytes;
+ 
+@@ -76,7 +76,9 @@ unsigned int    which_streams;
+     unsigned int nsec_p=0;
+ 
+     unsigned char* index;
+-	
++
++    extern unsigned int bitrate_index[3][16];
++
+     Timecode_struc SCR_audio_delay;
+     Timecode_struc SCR_video_delay;
+     Timecode_struc current_SCR;
+@@ -89,7 +91,6 @@ unsigned int    which_streams;
+     Pack_struc 		pack;
+     Sys_header_struc 	sys_header;
+     Sector_struc 	sector;
+-    Timecode_struc	timestamp;
+ 
+     unsigned long sector_size;
+     unsigned long min_packet_data;
 @@ -129,6 +130,7 @@ unsigned int    which_streams;
  	picture_start = TRUE;
      }
@@ -28,7 +71,7 @@ $OpenBSD: patch-multplex_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
  
      write_pack = packets_per_pack;
      video_buffer_size *= 1024;
-@@ -197,6 +205,7 @@ printf("\n+------------------ MPEG/SYSTE
+@@ -197,21 +205,31 @@ printf("\n+------------------ MPEG/SYSTE
  		 (double)(packets_per_pack-1.))) / (double)(packets_per_pack) );
      data_rate = ceil(dmux_rate/50.)*50;
  
@@ -36,10 +79,15 @@ $OpenBSD: patch-multplex_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
      printf ("\ncomputed multiplexed stream data rate    : %7.3f\n",dmux_rate);
      printf ("target data rate (e.g. %6u)           : ",data_rate);
      scanf  ("%lf", &dmux_rate);
-@@ -206,12 +215,21 @@ printf("\n+------------------ MPEG/SYSTE
-     scanf  ("%u", &video_delay_ms);
+     printf ("\nstartup sectors_delay                    : ");
+-    scanf  ("%u", &sectors_delay);
++    scanf  ("%lu", &sectors_delay);
+     printf ("video stream startup offset (ms)         : ");
+-    scanf  ("%u", &video_delay_ms);
++    scanf  ("%lu", &video_delay_ms);
      printf ("audio stream startup offset (ms)         : ");
-     scanf  ("%u", &audio_delay_ms);
+-    scanf  ("%u", &audio_delay_ms);
++    scanf  ("%lu", &audio_delay_ms);
 +} else {
 +    dmux_rate=data_rate;
 +    sectors_delay=8;
@@ -58,3 +106,21 @@ $OpenBSD: patch-multplex_c,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
  
  #ifdef TIMER
      gettimeofday (&tp_global_start,NULL);
+@@ -501,8 +519,6 @@ printf("\n+------------------ MPEG/SYSTE
+     if (which_streams & STREAMS_VIDEO) unlink (video_units);
+     if (which_streams & STREAMS_AUDIO) unlink (audio_units); 
+ 
+-    printf ("\nDone, tmp files removed.\n\n");
+-
+ #ifdef TIMER
+     gettimeofday (&tp_global_end, NULL);
+     global_sec = 10*(tp_global_end.tv_sec - tp_global_start.tv_sec);
+@@ -1051,8 +1067,6 @@ unsigned char marker_pack;
+ unsigned int which_streams;
+ 
+ {
+-    unsigned int bytes_left;
+-    unsigned int temp;
+     Pack_struc *pack_ptr;
+     Sys_header_struc *sys_header_ptr;
+ 
