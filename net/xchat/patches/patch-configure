@@ -1,0 +1,26 @@
+--- configure.orig	Sun Aug 27 15:46:16 2000
++++ configure	Sun Aug 27 15:46:59 2000
+@@ -3685,10 +3685,7 @@
+   echo
+ fi
+ 
+-if test "$gtkfe" = yes; then
+-  gtkfe=yes
+-  imlib=yes
+-else
++if test "$gtkfe" != yes; then
+   gnome=no
+   imlib=no
+   panel=no
+@@ -4412,11 +4409,6 @@
+     CFLAGS="$CFLAGS -g"
+   fi
+ fi
+-
+-if test "$system" = "OpenBSD"; then
+-   CFLAGS="$CFLAGS -pthread"
+-fi
+-
+ 
+ for ac_func in snprintf
+ do
