@@ -13,10 +13,8 @@ Simulators included in this package:
 	  PDP-10, PDP-11, PDP-15, VAX
 	- GRI Corporation GRI-909
 	- IBM 1401, 1620, 1130, System 3
-	- Interdata (perkin-Elmer) 16b and 32b systems
 	- Hewlett Packard HP 2116, 2100, 21MX
 	- Honeywell H316
 	- MITS Altair 8800, with both 8080 and Z80
-	- Scientific Data Systems SDS 940
 
 WWW: ${HOMEPAGE}

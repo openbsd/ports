@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2002/11/28 16:41:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2002/11/28 16:47:46 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -35,8 +35,6 @@ VMEM_WARNING=		Yes
 
 pre-build:
 	@mkdir ${WRKBUILD}/BIN
-#	@cp ${WRKDIST}/AltairZ80/altairZ80_defs.h \
-#	    ${WRKDIR}/AltairZ80/altairz80_defs.h
 
 do-install:
 .for f in ${SIMS}
