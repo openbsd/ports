@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 1999/12/05 18:14:15 dugsong Exp $
+# $OpenBSD: Makefile,v 1.55 1999/12/15 05:16:24 dugsong Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -67,7 +67,6 @@
      SUBDIR += netpipe
 #    SUBDIR += netpipes
 #    SUBDIR += nettest
-     SUBDIR += nfr
      SUBDIR += ngrep
      SUBDIR += nmap
      SUBDIR += nsping
