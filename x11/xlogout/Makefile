@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/18 00:36:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/04/14 02:07:17 naddy Exp $
+
+COMMENT=	"simple logout button"
 
 DISTNAME=	xlogout-1.1
 CATEGORIES=	x11
-NEED_VERSION=	1.319
+NEED_VERSION=	1.363
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
