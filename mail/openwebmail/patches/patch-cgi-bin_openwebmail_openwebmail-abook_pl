@@ -1,0 +1,9 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-abook_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-abook.pl.orig	Thu Nov 21 17:40:04 2002
++++ cgi-bin/openwebmail/openwebmail-abook.pl	Thu Jan 30 14:45:07 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/suidperl -T
++#!/usr/bin/perl -T
+ #
+ # openwebmail-abook.pl - address book program
+ #

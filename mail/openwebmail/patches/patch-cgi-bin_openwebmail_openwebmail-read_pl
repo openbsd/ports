@@ -1,0 +1,9 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-read_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-read.pl.orig	Tue Nov 26 11:34:13 2002
++++ cgi-bin/openwebmail/openwebmail-read.pl	Thu Jan 30 14:45:07 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/suidperl -T
++#!/usr/bin/perl -T
+ #
+ # openwebmail-read.pl - message reading program
+ #

@@ -1,0 +1,9 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-folder_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-folder.pl.orig	Thu Nov 21 08:46:42 2002
++++ cgi-bin/openwebmail/openwebmail-folder.pl	Thu Jan 30 14:45:07 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/suidperl -T
++#!/usr/bin/perl -T
+ #
+ # openwebmail-folder.pl - mail folder management program
+ #

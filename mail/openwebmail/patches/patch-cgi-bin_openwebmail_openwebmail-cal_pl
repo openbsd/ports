@@ -1,0 +1,9 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-cal_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-cal.pl.orig	Mon Nov 18 12:28:23 2002
++++ cgi-bin/openwebmail/openwebmail-cal.pl	Thu Jan 30 14:45:07 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/suidperl -T
++#!/usr/bin/perl -T
+ #
+ # openwebmail-cal.pl - calendar program
+ #

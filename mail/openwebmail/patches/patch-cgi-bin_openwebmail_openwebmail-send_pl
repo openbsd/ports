@@ -1,0 +1,9 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-send_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail-send.pl.orig	Wed Nov 27 09:34:37 2002
++++ cgi-bin/openwebmail/openwebmail-send.pl	Thu Jan 30 14:45:07 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/suidperl -T
++#!/usr/bin/perl -T
+ #
+ # openwebmail-send.pl - mail composing and sending program
+ #

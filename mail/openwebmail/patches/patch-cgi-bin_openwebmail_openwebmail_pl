@@ -1,0 +1,20 @@
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail_pl,v 1.1 2003/01/30 07:57:26 kevlo Exp $
+--- cgi-bin/openwebmail/openwebmail.pl.orig	Tue Nov 26 11:33:50 2002
++++ cgi-bin/openwebmail/openwebmail.pl	Thu Jan 30 14:45:08 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/suidperl -T
++#!/usr/bin/perl -T
+ #################################################################
+ #                                                               #
+ # Open WebMail - Provides a web interface to user mailboxes     #
+@@ -47,8 +47,8 @@ use vars qw($folderdir);
+ use vars qw(%lang_text %lang_err);	# defined in lang/xy
+ use vars qw($pop3_authserver);	# defined in auth_pop3.pl
+ 
+-readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf.default");
+-readconf(\%config, \%config_raw, "$SCRIPT_DIR/etc/openwebmail.conf") if (-f "$SCRIPT_DIR/etc/openwebmail.conf");
++readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf.default");
++readconf(\%config, \%config_raw, "/var/www/conf/openwebmail/openwebmail.conf") if (-f "/var/www/conf/openwebmail/openwebmail.conf");
+ 
+ # setuid is required if mails is located in user's dir
+ if ( $>!=0 && ($config{'use_homedirspools'}||$config{'use_homedirfolders'}) ) {
