@@ -6,19 +6,21 @@
 			http://www.openbsd.org
 
 
-When things go wrong
-====================
-There are several contacts for the ports tree.
+Contacts
+========
 * individual ports list a 
 MAINTAINER=  
-line in their Makefile.  Try to contact that person first.
+line in their Makefile.  
 * specific issues related to the ports framework (e.g., bugs in
 bsd.port.mk)  should go to ports-admin@openbsd.org
 * ports without explicit maintainers, and other general issues should
 go to ports@openbsd.org
 
-As a general rule, try to contact the MAINTAINER first.  If nothing happens
-after a reasonable delay, start plaguing him, or go to the next step.
+Considering the size of the ports tree, and even though we strive to
+eradicate all bugs, things may go wrong on invidual ports.  
+In such a case, as a general rule, try to contact the MAINTAINER first.  
+If nothing happens after a reasonable delay, start plaguing him, 
+or go to the next step.
 
 Developpers with a major investment in the ports tree include
 brad@cvs.openbsd.org, turan@cvs.openbsd.org, espie@cvs.openbsd.org
@@ -327,4 +329,4 @@ please visit
 
 	http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.6 1999/09/26 10:52:55 espie Exp $
+$OpenBSD: README,v 1.7 1999/10/07 14:35:52 espie Exp $
