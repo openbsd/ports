@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/10/24 17:19:12 shell Exp $
+# $OpenBSD: Makefile,v 1.38 2002/01/06 07:10:28 brad Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += db
@@ -9,7 +9,6 @@
      SUBDIR += gq
      SUBDIR += iodbc
      SUBDIR += mysql
-     SUBDIR += mysql,max
      SUBDIR += mysql2pgsql
      SUBDIR += mysqlgui
      SUBDIR += openldap
