@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_fe-text_Makefile_in,v 1.5 2003/04/19 15:45:22 couderc Exp $
---- src/fe-gtk/Makefile.in.orig	Wed Dec 11 10:42:59 2002
-+++ src/fe-gtk/Makefile.in	Sat Apr 19 16:19:19 2003
-@@ -125,7 +125,7 @@ localedir = $(datadir)/locale
- bin_PROGRAMS = xchat
- 
- CFLAGS = $(GUI_CFLAGS)
--LIBS = $(GUI_LIBS)
-+LIBS = $(GUI_LIBS) $(INTLLIBS)
- 
- INCLUDES = -I$(includedir) -I$(top_srcdir)/intl -DLOCALEDIR=\"$(localedir)\"
- 
+$OpenBSD: patch-src_fe-text_Makefile_in,v 1.6 2003/05/30 15:34:45 brad Exp $
+--- src/fe-text/Makefile.in.orig	Fri May 30 11:24:22 2003
++++ src/fe-text/Makefile.in	Fri May 30 11:24:36 2003
+@@ -146,7 +146,7 @@ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ $(LIBICONV)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/fe-text.Po ./$(DEPDIR)/glib.Po
