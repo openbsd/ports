@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/19 01:33:26 david Exp $
+lib/mod_security.so
+sbin/mod_security-enable
+share/doc/mod_security/CHANGES
+share/doc/mod_security/INSTALL
+share/doc/mod_security/LICENSE
+share/doc/mod_security/README
+share/doc/mod_security/modsecurity-manual-1.7.pdf
+share/examples/mod_security/httpd.conf.example-full
+share/examples/mod_security/httpd.conf.example-minimal
+@dirrm share/examples/mod_security
+@dirrm share/doc/mod_security

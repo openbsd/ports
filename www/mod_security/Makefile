@@ -1,0 +1,47 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/11/19 01:33:26 david Exp $
+
+COMMENT=	"Web intrusion detection and prevention engine"
+
+# This port currently only works with archs supporting dynamic loading
+# and has Apache that supports DSO's.
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+
+DISTNAME=	mod_security-1.7.3
+CATEGORIES=	www
+
+MASTER_SITES=	http://www.modsecurity.org/download/
+MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=mod-security/}
+
+HOMEPAGE=	http://www.modsecurity.org/
+MAINTAINER=	David Krause <david@openbsd.org>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+NO_REGRESS=	Yes
+
+DOCS=	CHANGES INSTALL LICENSE README modsecurity-manual-1.7.pdf
+
+WRKSRC=		${WRKDIR}/mod_security_1.7.3
+
+do-build:
+	cd ${WRKSRC}/apache1 && /usr/sbin/apxs -Wc,"${CFLAGS}" -c \
+		mod_security.c -o ${WRKBUILD}/mod_security.so
+	sed 's,!!PREFIX!!,${PREFIX},' < ${FILESDIR}/mod_security-enable \
+		> ${WRKBUILD}/mod_security-enable
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_security
+	${INSTALL_DATA} ${WRKBUILD}/mod_security.so ${PREFIX}/lib
+	${INSTALL_SCRIPT} ${WRKBUILD}/mod_security-enable ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/httpd.conf.example-* \
+		${PREFIX}/share/examples/mod_security
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mod_security
+.for i in ${DOCS}
+	 ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/mod_security
+.endfor
+
+.include <bsd.port.mk>
