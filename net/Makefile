@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2002/04/20 01:54:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.210 2002/04/29 02:48:06 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += ickle
      SUBDIR += icmpinfo
      SUBDIR += ipband
+     SUBDIR += ipcad
      SUBDIR += ipcheck
      SUBDIR += iperf
      SUBDIR += ipfm
