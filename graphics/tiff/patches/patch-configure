@@ -1,11 +1,17 @@
---- configure.orig	Tue Dec  4 09:50:16 2001
-+++ configure	Tue Dec  4 09:50:58 2001
-@@ -1179,7 +1179,7 @@ if [ "$DSO" = auto ]; then
+--- configure.orig	Thu Nov 15 12:21:05 2001
++++ configure	Wed Jan 23 20:46:16 2002
+@@ -1179,8 +1179,12 @@ if [ "$DSO" = auto ]; then
  	DSO=GNULD
  	;;
      *-openbsd*)
 -	DSOSUF=so.${DIST_MAJOR}.${DIST_MINOR}
+-	LIBCOPTS='-fpic'
 +	DSOSUF=so.${DIST_MAJOR}${DIST_MINOR}.${DIST_POINT}
- 	LIBCOPTS='-fpic'
++	if [ `uname -m` = "sparc64" ]; then
++	  LIBCOPTS='-fPIC'
++	else
++	  LIBCOPTS='-fpic'
++	fi
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	case "$TARGET" in
+ 	   *-openbsd[01].* | *-openbsd2.[0-7] | *-openbsd2.[0-7].*)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/01/19 09:34:42 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2002/01/24 04:55:50 brad Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
@@ -28,6 +28,11 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --with-ZIP --with-JPEG \
 		--with-LIBGL="no" --with-LIBIMAGE="no" \
 		--with-INSTALL="sh ${WRKSRC}/port/install.sh" \
 		--noninteractive
+
+# Internal Compiler Error
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* sup-sparc64
+.endif
 
 DOCDIR=	${PREFIX}/share/doc/tiff
 

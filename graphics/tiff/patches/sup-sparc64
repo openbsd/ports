@@ -1,0 +1,11 @@
+--- libtiff/Makefile.in.orig	Wed Jan 23 20:32:58 2002
++++ libtiff/Makefile.in	Wed Jan 23 20:39:54 2002
+@@ -278,7 +278,7 @@ tif_dir.o: ${SRCDIR}/tif_dir.c
+ tif_dirinfo.o: ${SRCDIR}/tif_dirinfo.c
+ 	${CC} -c ${CFLAGS} ${SRCDIR}/tif_dirinfo.c
+ tif_dirread.o: ${SRCDIR}/tif_dirread.c
+-	${CC} -c ${CFLAGS} ${SRCDIR}/tif_dirread.c
++	${CC} -c ${CFLAGS} -O0 ${SRCDIR}/tif_dirread.c
+ tif_dirwrite.o: ${SRCDIR}/tif_dirwrite.c
+ 	${CC} -c ${CFLAGS} ${SRCDIR}/tif_dirwrite.c
+ tif_dumpmode.o: ${SRCDIR}/tif_dumpmode.c
