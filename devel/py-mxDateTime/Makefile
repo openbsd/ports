@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/23 21:11:42 ish Exp $
+# $OpenBSD: Makefile,v 1.13 2004/03/02 07:41:32 ish Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Date and Time types for Python"
 
-VERSION=	2.0.3
+VERSION=	2.0.5
 DISTNAME=	egenix-mx-base-${VERSION}
 PKGNAME=	py-mxDateTime-${VERSION}
 CATEGORIES=	devel
