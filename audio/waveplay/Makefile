@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/24 22:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/06/12 23:25:39 pvalchev Exp $
 # $FreeBSD: ports/audio/waveplay/Makefile,v 1.2 1999/08/25 04:36:16 obrien Exp $
 
 # assumes unaligned access, no struct padding, little endian
@@ -10,10 +10,10 @@ CATEGORIES=	audio
 
 MASTER_SITES=	http://sore.totto.to/~ysonoda/FreeBSD/ports/
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"no license"
+PERMIT_PACKAGE_FTP=	"no license"
+PERMIT_DISTFILES_CDROM=	"no license"
+PERMIT_DISTFILES_FTP=	"no license"
 
 MAKE_FLAGS=	CFLAGS='${CFLAGS}' LIBS=-lossaudio
 
