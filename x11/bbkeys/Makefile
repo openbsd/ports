@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/13 22:13:25 espie Exp $
 
 COMMENT=	"X keygrabber for blackbox"
 
@@ -27,7 +27,7 @@ PATCH_LIST=	qt-*
 .else
 PATCH_LIST=
 .endif
-RUN_DEPENDS=	blackbox::x11/blackbox
+RUN_DEPENDS=	::x11/blackbox
 
 CONFIGURE_STYLE= gnu
 

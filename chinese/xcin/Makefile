@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/26 03:56:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/13 22:13:22 espie Exp $
 
 COMMENT=	"chinese input utility for X"
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
 CATEGORIES=	chinese
-NEED_VERSION=   1.364
+NEED_VERSION=   1.496
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/old/ \
 		ftp://ftp.shellhung.org/pub/OpenBSD/packages/chinese/
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
+RUN_DEPENDS=	::chinese/taipeifonts
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=	--os=OpenBSD --no-menu

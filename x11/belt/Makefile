@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/11 14:11:30 heko Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:25 espie Exp $
 
 COMMENT=		"Small menubar for X11 written in Perl/Tk"
 V=			1.18
@@ -23,7 +23,7 @@ NO_BUILD=		Yes
 WRKDIST=		${WRKDIR}
 EXTRACT_ONLY=		belticons.tar.gz
 
-RUN_DEPENDS=		${LOCALBASE}/libdata/perl5/site_perl/i386-openbsd/Tk.pm::x11/p5-Tk
+RUN_DEPENDS=		::x11/p5-Tk
 
 USE_X11=		Yes
 

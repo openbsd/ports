@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/13 03:24:27 obecian Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/13 22:13:22 espie Exp $
 
 COMMENT=	"Tcl/Tk CD player"
 DISTNAME=	xcd-1.6
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -21,7 +21,7 @@ FAKE_FLAGS=BINDIR=${WRKINST}${PREFIX}/bin \
 	MANDIR=${WRKINST}${PREFIX}/man/man1
 WRKDIST=	${WRKDIR}/xcd
 
-RUN_DEPENDS=	wish8.3::x11/tk/8.3
+RUN_DEPENDS=	::x11/tk/8.3
 
 do-configure:
 	cd ${WRKDIST} && \

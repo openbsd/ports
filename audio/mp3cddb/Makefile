@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/13 22:13:22 espie Exp $
 
 COMMENT=	"embedding CDDB information in MP3s"
 DISTNAME=	mp3cddb-0.1
 CATEGORIES=	audio
-NEED_VERSION=	1.364
+NEED_VERSION=	1.496
 HOMEPAGE=	http://k2.jozsef.kando.hu/~drewie/mp3cddb/
 MASTER_SITES=	${HOMEPAGE}
-RUN_DEPENDS=	${PREFIX}/libdata/perl5/site_perl/MPEG/MP3Info.pm::audio/p5-MP3-Info \
-		${PREFIX}/libdata/perl5/site_perl/CDDB.pm::audio/p5-cddb \
-		mp3info::audio/mp3info
+RUN_DEPENDS=	::audio/p5-MP3-Info \
+		::audio/p5-cddb \
+		::audio/mp3info
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

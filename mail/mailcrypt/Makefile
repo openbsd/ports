@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/23 17:02:42 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"emacs interface to PGP and GnuPG"
 
 DISTNAME=	mailcrypt-3.5.6
 CATEGORIES=     mail
-NEED_VERSION=	1.413
+NEED_VERSION=	1.496
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mailcrypt
 
@@ -22,23 +22,23 @@ FLAVORS=	emacs gnupg pgp pgp5 xemacs
 FLAVOR?=	emacs gnupg
 
 .if ${FLAVOR:L:Memacs}
-BUILD_DEPENDS=	emacs::editors/emacs
+BUILD_DEPENDS=	::editors/emacs
 .endif
 
 .if ${FLAVOR:L:Mxemacs}
-BUILD_DEPENDS=	xemacs::editors/xemacs21
+BUILD_DEPENDS=	::editors/xemacs21
 .endif
 
 .if ${FLAVOR:L:Mgnupg}
-RUN_DEPENDS=	gpg::security/gnupg
+RUN_DEPENDS=	::security/gnupg
 .endif
 
 .if ${FLAVOR:L:Mpgp}
-RUN_DEPENDS=	pgp::security/pgp
+RUN_DEPENDS=	::security/pgp
 .endif
 
 .if ${FLAVOR:L:Mpgp5}
-RUN_DEPENDS=	pgp5::security/pgp5
+RUN_DEPENDS=	::security/pgp5
 .endif
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/13 11:24:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/13 22:13:24 espie Exp $
 
 COMMENT=	"LaTeX to HTML converter"
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/ \
    		ftp://ftp.funet.fi/pub/mirrors/ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
 
-RUN_DEPENDS=	ppmtogif::graphics/netpbm \
-		pnmtopng::graphics/netpbm \
-		gs::print/ghostscript/gnu
+RUN_DEPENDS=	::graphics/netpbm \
+		::graphics/netpbm \
+		::print/ghostscript/gnu
 
 NO_BUILD=	Yes
 

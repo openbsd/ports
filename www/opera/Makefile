@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/13 22:13:25 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -7,7 +7,7 @@ COMMENT=	"fast and customizable WWW browser"
 PKGNAME=	opera-5.05tp1p1
 DISTNAME=	opera-5.05_tp1-static_qt-libnpp-0.1.1
 CATEGORIES=	www
-NEED_VERSION=	1.435
+NEED_VERSION=	1.496
 HOMEPAGE=	http://www.opera.com/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -21,8 +21,8 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/505/ \
 		http://opera.online.no/linux/tgz/505/
 EXTRACT_SUFX=	.x86.tar.gz
 
-RUN_DEPENDS=	/emul/linux/usr/lib/libpng.so.2:redhat_base->=6.2p1:emulators/redhat/base \
-		/emul/linux/usr/X11R6/lib/libXm.so.2::emulators/redhat/motif
+RUN_DEPENDS=	:redhat_base->=6.2p1:emulators/redhat/base \
+		::emulators/redhat/motif
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

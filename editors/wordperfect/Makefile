@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 00:29:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"graphical word processor ported from Windows"
 
@@ -8,7 +8,7 @@ FAKE=		No
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -23,7 +23,7 @@ MASTER_SITES=	see_do-fetch_target
 
 DISTNAME=	WordPerfect
 
-RUN_DEPENDS=    /emul/linux/lib/libc.so.5::emulators/linux_lib
+RUN_DEPENDS=    ::emulators/linux_lib
 
 IS_INTERACTIVE=	yes
 

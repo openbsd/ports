@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/11/13 13:53:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/13 22:13:22 espie Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
 DISTNAME=	disc-cover-1.2.2
 CATEGORIES=     audio
-NEED_VERSION=	1.438
+NEED_VERSION=	1.496
 
 HOMEPAGE=	http://eek.wi.leidenuniv.nl/~jvhemert/disc-cover
 
@@ -18,11 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/unstable/
 
-PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-RUN_DEPENDS=	latex::print/teTeX/base \
-		convert::graphics/ImageMagick \
-		${PERL_MODULES}/LWP.pm::www/p5-libwww \
-		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Audio/CD.pm::audio/p5-Audio-CD
+RUN_DEPENDS=	::print/teTeX/base \
+		::graphics/ImageMagick \
+		::www/p5-libwww \
+		::audio/p5-Audio-CD
 
 NO_REGRESS=	Yes
 

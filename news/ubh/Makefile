@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/11 15:56:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/13 22:13:24 espie Exp $
 
 COMMENT=	"download and decode binaries posted to Usenet"
 
 DISTNAME=	ubh-2.1
 CATEGORIES=	news
-NEED_VERSION=	1.434
+NEED_VERSION=	1.496
 
 HOMEPAGE=	http://ubh.sourceforge.net/
 
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/download/
 
 PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
-RUN_DEPENDS=	${PERL_MODULES}/MIME/Tools.pm::mail/p5-MIME-tools \
-		${PERL_MODULES}/Net/NNTP.pm::net/p5-libnet \
-		${PERL_MODULES}/News/Newsrc.pm::news/p5-News-Newsrc
+RUN_DEPENDS=	::mail/p5-MIME-tools \
+		::net/p5-libnet \
+		::news/p5-News-Newsrc
 
 NO_BUILD=	Yes
 

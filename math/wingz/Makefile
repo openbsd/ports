@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/11/13 22:13:23 espie Exp $
 #
 
 COMMENT=	"commercial spreadsheet"
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	i386
 DISTNAME=	Wingz-142
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	math
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
@@ -29,7 +29,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/Wingz/Wingz.Xdefs ${PREFIX}/lib/X11/app-defaults/Wingz
 	@install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
 	
-RUN_DEPENDS=    /emul/linux/lib/libc.so.6::emulators/redhat/base
+RUN_DEPENDS=    ::emulators/redhat/base
 
 WRKDIST=	${WRKDIR}
 

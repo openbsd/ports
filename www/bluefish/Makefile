@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/07/30 17:49:05 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/11/13 22:13:24 espie Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
 DISTNAME=	bluefish-0.6
 CATEGORIES=	www 
-NEED_VERSION=	1.364
+NEED_VERSION=	1.496
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
 MAINTAINER=	Damien Couderc <couderc.damien@wanadoo.fr>
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	weblint::www/weblint
+RUN_DEPENDS=	::www/weblint
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gdk_imlib::graphics/imlib
 

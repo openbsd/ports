@@ -3,14 +3,14 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2001/09/08 06:39:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/13 22:13:24 espie Exp $
 #
 
 COMMENT=	"Tk script to read GNU info files and display them"
 
 DISTNAME=	tkinfo-2.5
 CATEGORIES=	misc 
-NEED_VERSION=	1.454
+NEED_VERSION=	1.496
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://math-www.uni-paderborn.de/~axel/tkinfo/
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	wish8.3::x11/tk/8.3
+RUN_DEPENDS=	::x11/tk/8.3
 
 NO_BUILD=	Yes
 

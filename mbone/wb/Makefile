@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/27 20:56:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/13 22:13:23 espie Exp $
 #
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
 DISTNAME=       wb-1.59
 CATEGORIES=	mbone
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 MASTER_SITES=   ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=      i386-wb-1.59.tar.Z
 ONLY_FOR_ARCHS=	i386
@@ -22,8 +22,7 @@ WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes
 USE_X11=	Yes
 
-# XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
-RUN_DEPENDS=	gs::print/ghostscript/gnu
+RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 
 .if !defined(NO_WARNINGS)
 pre-fetch:

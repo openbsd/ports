@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/01 08:11:31 jasoni Exp $
+# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:24 espie Exp $
 
 COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
 DISTNAME=	catdoc-0.91.4
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
 
 HOMEPAGE=	http://www.fe.msk.ru/~vitus/catdoc/index.html	
@@ -20,7 +20,7 @@ FLAVORS=	tk
 FLAVOR?=
 
 .if ${FLAVOR:L:Mtk}
-RUN_DEPENDS=	wish8.0::x11/tk/8.0
+RUN_DEPENDS=	::x11/tk/8.0
 .else
 CONFIGURE_ARGS+=--disable-wordview
 .endif

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/07/25 11:03:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:24 espie Exp $
 
 COMMENT=	automated domain testing tool
 
 DISTNAME=	doc-2.2.3
 CATEGORIES=    	net
-NEED_VERSION=	1.413
+NEED_VERSION=	1.496
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
-RUN_DEPENDS=		${LOCALBASE}/sbin/bind9-enable::net/bind9
+RUN_DEPENDS=		::net/bind9
 
 do-build:
 	mv ${WRKSRC}/doc ${WRKSRC}/doc.dist

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/10 22:11:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"module for graph plotting"
 
 DISTNAME=	GDGraph-1.33
 PKGNAME=	p5-GD-Graph-1.33
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= GD
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/GD.pm::graphics/p5-GD \
-		${LOCALBASE}/libdata/perl5/site_perl/GD/Text.pm::graphics/p5-GD-TextUtil
+RUN_DEPENDS=	::graphics/p5-GD \
+		::graphics/p5-GD-TextUtil
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

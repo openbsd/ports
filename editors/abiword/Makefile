@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/06/15 15:27:36 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/11/13 22:13:23 espie Exp $
 
 BROKEN=		"Needs upgrade to newer version"
 
@@ -7,7 +7,7 @@ COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 VERSION=	0.7.12
 PKGNAME=	abiword-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 MASTER_SITES=	http://www.abisource.com/downloads/Version-${VERSION}/lf/
 DISTFILES=	abi-${VERSION}.tar.gz abidistfiles.tar.gz expat.tar.gz \
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.abisource.com/
 
 LIB_DEPENDS=	png.2::graphics/png \
 		gtk.1.2::x11/gtk+
-RUN_DEPENDS=	ispell::textproc/ispell
+RUN_DEPENDS=	::textproc/ispell
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

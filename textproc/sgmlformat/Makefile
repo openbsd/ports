@@ -4,14 +4,14 @@
 # Whom:			jfieber
 #
 # $FreeBSD: Makefile,v 1.9 1998/02/21 21:59:37 jfieber Exp $
-# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/13 22:13:24 espie Exp $
 #
 
 COMMENT=	"generate groff/HTML from linuxdoc/docbook SGML documents"
 
 DISTNAME=	sgmlformat-1.7
 CATEGORIES=	textproc print
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
@@ -22,9 +22,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	onsgmls::textproc/openjade
-RUN_DEPENDS+=	${PREFIX}/share/sgml/linuxdoc::textproc/linuxdoc \
-		${PREFIX}/share/sgml/docbook::textproc/docbook
+RUN_DEPENDS=	::textproc/openjade \
+		::textproc/linuxdoc \
+		::textproc/docbook
 
 FAKE_FLAGS=PREFIX=${PREFIX}
 

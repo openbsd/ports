@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 14:52:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/13 22:13:24 espie Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://ipcheck.sourceforge.net/releases/
 
-RUN_DEPENDS=		python:python-*:lang/python
+RUN_DEPENDS=		:python-*:lang/python
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes

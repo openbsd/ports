@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/28 03:26:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"simple mail counter"
 
 DISTNAME=	cmail-3.1
 CATEGORIES=	mail
-NEED_VERSION=	1.364
+NEED_VERSION=	1.496
 
 HOMEPAGE=	http://www.chocobo.cx/chip/projects.html
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
 EXTRACT_SUFX=	.tar.bz2
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/Net/POP3.pm::net/p5-libnet
+RUN_DEPENDS=	::net/p5-libnet
 
 CONFIGURE_STYLE= perl
 

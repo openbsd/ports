@@ -3,7 +3,7 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.14 2001/09/16 17:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/11/13 22:13:24 espie Exp $
 #
 
 COMMENT=	"view, distribute and print PDF documents"
@@ -11,7 +11,7 @@ COMMENT=	"view, distribute and print PDF documents"
 DISTNAME=	linux-ar-405
 PKGNAME=	acroread-4.05
 CATEGORIES=	print
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 ONLY_FOR_ARCHS=	i386
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	"commercial software"
 PERMIT_DISTFILES_CDROM=	"commercial software"
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat/base
+RUN_DEPENDS=	::emulators/redhat/base
 
 WRKDIST=	${WRKDIR}/ILINXR.install
 

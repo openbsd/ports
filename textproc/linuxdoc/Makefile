@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 04:11:47 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/11/13 22:13:24 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
 
 COMMENT=	"Linuxdoc SGML DTD"
 
 DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
-RUN_DEPENDS=	${LOCALBASE}/share/sgml/iso8879/catalog::textproc/iso8879
+RUN_DEPENDS=	::textproc/iso8879
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/02 15:18:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:23 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	"Java Development Kit for Java 1.1 platform"
 
 DISTNAME=	jdk-1.1.8
 CATEGORIES=	devel
-NEED_VERSION=	1.407
+NEED_VERSION=	1.496
 
 HOMEPAGE=	http://www.freebsd.org/java/
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
@@ -20,7 +20,7 @@ MASTER_SITES=	http://ftp7.de.freebsd.org/pub/FreeBSD/JDK/
 DISTFILES=	jdk1.1.8_AOUT.V1999-11-9.tar.gz
 EXTRACT_ONLY=
 
-RUN_DEPENDS=	/emul/freebsd/usr/lib/compat/aout/libc.so.3.1:freebsd_lib->=2.2.8:emulators/freebsd_lib
+RUN_DEPENDS=	:freebsd_lib->=2.2.8:emulators/freebsd_lib
 
 NO_BUILD=	Yes
 

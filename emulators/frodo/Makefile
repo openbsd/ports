@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/30 17:12:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
@@ -8,7 +8,7 @@ DISTFILES=	FrodoV4_1a.Src${EXTRACT_SUFX} TkGui.tcl.gz
 EXTRACT_ONLY=	FrodoV4_1a.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 CONFIGURE_STYLE=	gnu
 USE_X11=		Yes
 
-RUN_DEPENDS=	${WISH}::x11/tk/8.3
+RUN_DEPENDS=	::x11/tk/8.3
 
 WISH=wish8.3
 FRODOLIBDIR=${PREFIX}/lib/frodo

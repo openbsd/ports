@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/25 16:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
+NEED_VERSION=	1.496
 
 PKGNAME=	redhat_motif-2.1.30
 
@@ -9,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 MASTER_SITE_SUBDIR=	contrib/openmotif/linux-rpm
 DISTFILES=	openmotif-2.1.30-1_ICS.i386.rpm
 
-RUN_DEPENDS=	/emul/linux/sbin/ldconfig::emulators/redhat/base
+RUN_DEPENDS=	::emulators/redhat/base
 
 EXTRACT_FILES=	usr/X11R6/lib/libMrm.so.2.1 \
 		usr/X11R6/lib/libUil.so.2.1 \

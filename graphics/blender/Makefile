@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/16 17:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"3D creation software"
 ONLY_FOR_ARCHS=	i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386
 PKGNAME=	blender-2.12
 DISTNAME=	blender2.12-linux-glibc2.1.2-i386-static
 CATEGORIES=	graphics
-NEED_VERSION=	1.413
+NEED_VERSION=	1.496
 HOMEPAGE=	http://www.blender.nl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} demo212.tgz LogicBricks212.tgz
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	"no commercial use"
 
 MASTER_SITES=	ftp://ftp.blender.nl/pub/
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat/base
+RUN_DEPENDS=	::emulators/redhat/base
 
 NO_BUILD=	Yes
 

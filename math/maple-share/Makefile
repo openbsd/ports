@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/30 13:15:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/13 22:13:23 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -17,7 +17,7 @@ TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	mapleshare-5.5
 CATEGORIES=     math
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 # if someone wants to buy the sparc version and check it, be my guest...
 
@@ -66,7 +66,7 @@ do-fetch:
 		fi\
 	done
 
-RUN_DEPENDS=maple::math/maple
+RUN_DEPENDS=::math/maple
 NO_BUILD=Yes 
 
 pre-fake:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2001/10/02 20:18:59 heko Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2001/11/13 22:13:24 espie Exp $
 
 DIST_SUBDIR?=			amaya
 CATEGORIES?=			www
@@ -17,7 +17,7 @@ MASTER_SITES?=			http://www.w3.org/Amaya/Distribution/ \
 				ftp://mirror.aarnet.edu.au/pub/amaya/ \
             			ftp://ftp.funet.fi/pub/mirrors/ftp.w3.org/pub/afs/w3.org/ftp/pub/amaya/
 
-DICT_RUN_DEPENDS?=		${PREFIX}/bin/amaya:amaya-*:www/amaya/browser
+DICT_RUN_DEPENDS?=		:amaya-*:www/amaya/browser
 
 dict_install_frag=	\
 	${INSTALL_DATA_DIR} ${PREFIX}/Amaya/dicopar; \

@@ -3,7 +3,7 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.13 2001/10/24 12:48:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/13 22:13:25 espie Exp $
 #
 
 COMMENT=	"CDE like desktop with GTK"
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	Imlib.19,gdk_imlib::graphics/imlib \
 		gtk.1::x11/gtk+
-RUN_DEPENDS=	${LOCALBASE}/bin/sox::audio/sox
+RUN_DEPENDS=	::audio/sox
 
 USE_X11=	Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/16 17:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/13 22:13:23 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,7 +6,7 @@ COMMENT=	emulates the Nintendo Entertainment System
 
 PKGNAME=	ines-1.2
 DISTNAME=	iNES12-Linux-80x86-bin
-NEED_VERSION=	1.364
+NEED_VERSION=	1.496
 CATEGORIES=	emulators games
 HOMEPAGE=	http://www.komkon.org/fms/iNES/
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.Z
 
-RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat/base
+RUN_DEPENDS=	::emulators/redhat/base
 
 USE_X11=	Yes
 NO_BUILD=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/13 03:02:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=	"generate index pages for displaying images"
 
 DISTNAME=	indexpage-1.0.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.414
+NEED_VERSION=	1.496
 
 HOMEPAGE=	http://www.lysator.liu.se/~unicorn/hacks/indexpage/
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-RUN_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/Image/Size.pm::graphics/p5-Image-Size \
-		convert::graphics/ImageMagick
+RUN_DEPENDS=	::graphics/p5-Image-Size \
+		::graphics/ImageMagick
 
 NO_BUILD=	Yes
 

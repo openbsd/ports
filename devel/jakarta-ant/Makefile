@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/17 12:15:48 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/13 22:13:23 espie Exp $
 
 COMMENT=        "java equivalent to make"
 
 DISTNAME=       jakarta-ant-1.3
 DISTFILES=	jakarta-ant-1.3-bin.tar.gz
 CATEGORIES=     devel
-NEED_VERSION=   1.414
+NEED_VERSION=   1.496
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-ant/release/v1.3/bin/
 
 HOMEPAGE=       http://jakarta.apache.org/ant/
@@ -14,7 +14,7 @@ MAINTAINER=     Felix Kronlage <fkr@grummel.net>
 
 # XXX: USE_JAVA=TBD
 JAVA_HOME=	${LOCALBASE}/jdk1.2-blackdown
-RUN_DEPENDS=    ${JAVA_HOME}/bin/java::devel/jdk/1.2-blackdown
+RUN_DEPENDS=    ::devel/jdk/1.2-blackdown
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=   Yes

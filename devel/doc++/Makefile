@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/26 03:28:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/13 22:13:22 espie Exp $
 
 COMMENT=	"documentation system for C, C++, IDL and Java"
 
 DISTNAME=	doc++-3.4.8
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.496
 
 HOMEPAGE=	http://docpp.sourceforge.net/
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/doctools 
 
-RUN_DEPENDS=	gs:ghostscript-*:print/ghostscript/gnu \
-		tex:teTeX_base-*:print/teTeX/base
+RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
+		:teTeX_base-*:print/teTeX/base
 
 USE_GMAKE=	Yes
 

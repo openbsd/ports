@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/11/02 00:40:08 jcs Exp $
+# $OpenBSD: Makefile,v 1.21 2001/11/13 22:13:24 espie Exp $
 
 DISTNAME=	gaim-0.47
 CATEGORIES=	net
@@ -19,7 +19,7 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 USE_X11=	Yes
 LIB_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+ \
 		gdk_pixbuf.2::graphics/gdk-pixbuf
-RUN_DEPENDS=	ispell::textproc/ispell
+RUN_DEPENDS=	::textproc/ispell
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --disable-gnome --disable-artsc
