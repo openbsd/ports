@@ -1,0 +1,39 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2002/08/18 14:50:00 naddy Exp $
+--- Imakefile.orig	Tue Aug 14 15:30:24 2001
++++ Imakefile	Wed Jan 23 14:05:04 2002
+@@ -1,5 +1,5 @@
+ XCOMM Should install to /usr or /usr/local ??
+-DESTDIR=/usr
++#DESTDIR=/usr
+ 
+ XCOMM Name of man subdirectory of DESTDIR:
+ MANDIR=/X11R6/man/man1
+@@ -8,7 +8,7 @@ XCOMM Name of bin subdirectory of DESTDI
+ BINDIR=/X11R6/bin
+ 
+ XCOMM Name of share subdirectory of DESTDIR:
+-SHAREDIR=/share/sunclock
++SHAREDIR=${PREFIX}/share/sunclock
+ 
+ XCOMM
+ XCOMM Compile options:
+@@ -38,13 +38,13 @@ CCOPTIONS = -Ae $(XPMINC) $(JINC) -DZLIB
+ #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
+ 
+ # Solaris, Linux
+-#XPMLIBDIR=-L/usr/X11R6/lib
+-#XPMINC=-I/usr/X11R6/include/X11
+-#JLIBDIR=-L/usr/lib
+-#ZLIBDIR=-L/usr/lib
+-#JINC=-I/usr/include
++XPMLIBDIR=-L{X11BASE}/lib
++XPMINC=-I{X11BASE}/include/X11
++JLIBDIR=-L{LOCALBASE}/lib
++ZLIBDIR=-L{LOCALBASE}/lib
++JINC=-I{LOCALBASE}/include
+ 
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
++CCOPTIONS+= -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
+ #endif
+ 
+ SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \

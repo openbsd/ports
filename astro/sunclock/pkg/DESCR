@@ -1,0 +1,8 @@
+sunclock displays a map of the Earth and shows which portion is illuminated by
+the Sun. It can commute between two states, the "clock window" and the "map
+window". The clock window displays a small map of the Earth and therefore
+occupies little space on the screen, while the "map window" displays a large map
+and offers more advanced functions: local time of cities, Sun and Moon position,
+etc.
+
+WWW: ${HOMEPAGE}
