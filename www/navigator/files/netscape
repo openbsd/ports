@@ -1,8 +1,8 @@
 #!/bin/sh
-
-# Wrapper for the fortified Netscape navigator program.
+# $OpenBSD: netscape,v 1.5 1999/05/03 14:11:49 brad Exp $
 #
-# dugsong@OpenBSD.ORG
+# Wrapper for the fortified Netscape navigator program.
+# dugsong@openbsd.org
 
 MOZILLA_HOME=@netscape_home@
 export MOZILLA_HOME

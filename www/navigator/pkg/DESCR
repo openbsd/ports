@@ -1,5 +1,4 @@
-
-Netscape stand-alone Navigator 4.51 for the i386, fortified
+Netscape stand-alone Navigator 4.51 for i386, fortified
 -----------------------------------------------------------
 
 Release notes for this version of Netscape are available on-line.  After
@@ -15,8 +14,3 @@ a program that provides world-wide, unconditional, full strength
 128-bit cryptography to export-crippled Netscape browsers.
 
 NOTICE: Use of this port requires a kernel compiled with 'option COMPAT_BSDOS'
-
--d.
-
----
-http://www.monkey.org/~dugsong/

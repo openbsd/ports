@@ -1,42 +1,26 @@
-*** Fortify-1.4.1-unix-x86/src/common/Makefile-orig	Tue Nov  3 12:02:51 1998
---- Fortify-1.4.1-unix-x86/src/common/Makefile	Tue Nov  3 12:05:28 1998
-***************
-*** 1,9 ****
-  
-! CC	= gcc # -Wall -ansi
-  
-  # For GNU/Linux/BSD systems
-! CFLAGS	= -I. -O2	# -static
-! YACC	= bison -y
-  LDFLAGS = -static
-  LEX    = lex -l
-  RANLIB = ranlib
---- 1,9 ----
-  
-! #CC	= gcc # -Wall -ansi
-  
-  # For GNU/Linux/BSD systems
-! #CFLAGS	= -I. -O2	# -static
-! #YACC	= bison -y
-  LDFLAGS = -static
-  LEX    = lex -l
-  RANLIB = ranlib
-***************
-*** 35,42 ****
-  #LDFLAGS = -non_shared
-  #RANLIB = :
-  
-  # Everything else
-! #CFLAGS	= -I. -O
-! #YACC	= yacc
-  #LDFLAGS = # -static
-  #RANLIB = :
---- 35,42 ----
-  #LDFLAGS = -non_shared
-  #RANLIB = :
-  
-  # Everything else
-! CFLAGS	= -I. -O2
-! YACC	= yacc
-  #LDFLAGS = # -static
-  #RANLIB = :
+--- Fortify-1.4.1-unix-x86/src/common/Makefile.orig	Tue Mar 30 09:36:44 1999
++++ Fortify-1.4.1-unix-x86/src/common/Makefile	Mon May  3 09:30:25 1999
+@@ -1,9 +1,9 @@
+ 
+-CC	= gcc # -Wall -ansi
++#CC	= gcc # -Wall -ansi
+ 
+ # For GNU/Linux/BSD systems
+-CFLAGS	= -I. -O2	# -static
+-YACC	= bison -y
++#CFLAGS	= -I. -O2	# -static
++#YACC	= bison -y
+ LDFLAGS = -static
+ LEX    = lex -l
+ RANLIB = ranlib
+@@ -36,8 +36,8 @@
+ #RANLIB = :
+ 
+ # Everything else
+-#CFLAGS	= -I. -O
+-#YACC	= yacc
++CFLAGS	= -I. -O2
++YACC	= yacc
+ #LDFLAGS = # -static
+ #RANLIB = :
+ 

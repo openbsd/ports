@@ -1,176 +1,119 @@
-*** navigator-v451.x86-bsdi-bsd2/ns-install.orig	Mon Mar  1 02:58:55 1999
---- navigator-v451.x86-bsdi-bsd2/ns-install	Sat Apr 24 10:09:11 1999
-***************
-*** 87,107 ****
-  fi
-  
-  #
-! # If MOZILLA_HOME is set, assume that is the place to install.
-! # Otherwise, make an educated guess at the "right" default
-! # directory.
-  #
-! if test ! -z "${MOZILLA_HOME}"
-! then
-! 	INSTALL_DIR="${MOZILLA_HOME}"
-! else
-! 	if test -d /opt
-! 	then
-! 		INSTALL_DIR="/opt/netscape"
-! 	else
-! 		INSTALL_DIR="/usr/local/netscape"
-! 	fi
-! fi
-  
-  #
-  # See if we have to use the lame SYS-V echo command flags.
---- 87,95 ----
-  fi
-  
-  #
-! # We use OpenBSD's ports environment instead.
-  #
-! INSTALL_DIR="${PREFIX}/netscape"
-  
-  #
-  # See if we have to use the lame SYS-V echo command flags.
-***************
-*** 139,184 ****
-  	fi
-  done
-  
-- echo ""
-- echo "Please specify the directory path under which the software will be"
-- echo "installed.  The default directory is ${INSTALL_DIR}, but you may"
-- echo "install anywhere you wish (if you have permission to do so)."
-- echo ""
-  flag=1
-  while test ${flag} -eq 1
-  do
-! 	${ECHO} "Location for ${PRODUCT} software [${INSTALL_DIR}]: ${ENDER}"
-! 	read TARGET
-! 	if test -z "${TARGET}"
-! 	then
-! 		TARGET="${INSTALL_DIR}"
-! 	fi
-! 	if test ! -z "`echo ${TARGET} | grep '~'`"
-! 	then
-! 		TARGET=`echo ${TARGET} | sed "s:~:${HOME}:"`
-! 	fi
-  
-  	flag=0
-  	if test ! -d ${TARGET}
-  	then
-! 		echo ""
-! 		${ECHO} "${TARGET}: No such directory.  Do you wish to create it? (y/n)[y] ${ENDER}"
-! 		read check
-! 		if test "${check}" = "n" -o "${check}" = "N"
-  		then
-! 			flag=1
-! 		else
-! 			#
-! 			# The -p flag may cause an error on some HP-UX systems.
-! 			# Removing the -p will work for 'basename TARGET' as long
-! 			# as 'dirname TARGET' exists.
-! 			#
-! 			mkdir -p ${TARGET}
-! 			if test $? -ne 0
-! 			then
-! 				echo "ERROR: Problem creating ${TARGET}"
-! 				exit 2
-! 			fi
-  		fi
-  	else
-  		echo ""
---- 127,145 ----
-  	fi
-  done
-  
-  flag=1
-  while test ${flag} -eq 1
-  do
-! 	TARGET="${INSTALL_DIR}"
-  
-  	flag=0
-  	if test ! -d ${TARGET}
-  	then
-! 		mkdir -p ${TARGET}
-! 		if test $? -ne 0
-  		then
-! 		    echo "ERROR: Problem creating ${TARGET}"
-! 		    exit 2
-  		fi
-  	else
-  		echo ""
-***************
-*** 186,198 ****
-  		echo ""
-  		echo "The existing contents may be modified or replaced if you install in"
-  		echo "this directory.  If you choose not to install in '${TARGET}',"
-! 		echo "you will be prompted for a different directory."
-  		echo ""
-  		${ECHO} "Do you wish to install in '${TARGET}'? (y/n)[y] ${ENDER}"
-  		read check
-  		if test "${check}" = "n" -o "${check}" = "N"
-  		then
-! 			flag=1
-  		fi
-  	fi
-  
---- 147,159 ----
-  		echo ""
-  		echo "The existing contents may be modified or replaced if you install in"
-  		echo "this directory.  If you choose not to install in '${TARGET}',"
-! 		echo "you should set your PREFIX environment variable and try again."
-  		echo ""
-  		${ECHO} "Do you wish to install in '${TARGET}'? (y/n)[y] ${ENDER}"
-  		read check
-  		if test "${check}" = "n" -o "${check}" = "N"
-  		then
-! 		    exit 2
-  		fi
-  	fi
-  
-***************
-*** 203,211 ****
-  		then
-  			echo ""
-  			echo "You do not have write permission in ${TARGET}."
-! 			echo "Change the permissions, or select another directory, and try again."
-  			echo ""
-! 			flag=1
-  		else
-  			/bin/rm -f ${TARGET}/${TESTFILE}
-  		fi
---- 164,172 ----
-  		then
-  			echo ""
-  			echo "You do not have write permission in ${TARGET}."
-! 			echo "Change the permissions and try again."
-  			echo ""
-! 			exit 2
-  		else
-  			/bin/rm -f ${TARGET}/${TESTFILE}
-  		fi
-***************
-*** 294,303 ****
-  	# avoid users having to set MOZILLA_JAVA_FONT_PROPERTY_PATH, or
-  	# just assuming Java font-handling is broken.
-  	#
-! 	if test ! -z "`ls /bin/uname`"
-  	then
-  		MOVE_FONTS="TRUE"
-! 		case `/bin/uname` in
-  			AIX)
-  				PLATFORM="aix"
-  				;;
---- 255,264 ----
-  	# avoid users having to set MOZILLA_JAVA_FONT_PROPERTY_PATH, or
-  	# just assuming Java font-handling is broken.
-  	#
-! 	if test ! -z "`ls /usr/bin/uname`"
-  	then
-  		MOVE_FONTS="TRUE"
-! 		case `/usr/bin/uname` in
-  			AIX)
-  				PLATFORM="aix"
-  				;;
+--- navigator-v451.x86-bsdi-bsd2/ns-install.orig	Sun Feb 28 20:58:55 1999
++++ navigator-v451.x86-bsdi-bsd2/ns-install	Mon May  3 09:30:25 1999
+@@ -87,21 +87,9 @@
+ fi
+ 
+ #
+-# If MOZILLA_HOME is set, assume that is the place to install.
+-# Otherwise, make an educated guess at the "right" default
+-# directory.
++# We use OpenBSD's ports environment instead.
+ #
+-if test ! -z "${MOZILLA_HOME}"
+-then
+-	INSTALL_DIR="${MOZILLA_HOME}"
+-else
+-	if test -d /opt
+-	then
+-		INSTALL_DIR="/opt/netscape"
+-	else
+-		INSTALL_DIR="/usr/local/netscape"
+-	fi
+-fi
++INSTALL_DIR="${PREFIX}/netscape"
+ 
+ #
+ # See if we have to use the lame SYS-V echo command flags.
+@@ -139,46 +127,19 @@
+ 	fi
+ done
+ 
+-echo ""
+-echo "Please specify the directory path under which the software will be"
+-echo "installed.  The default directory is ${INSTALL_DIR}, but you may"
+-echo "install anywhere you wish (if you have permission to do so)."
+-echo ""
+ flag=1
+ while test ${flag} -eq 1
+ do
+-	${ECHO} "Location for ${PRODUCT} software [${INSTALL_DIR}]: ${ENDER}"
+-	read TARGET
+-	if test -z "${TARGET}"
+-	then
+-		TARGET="${INSTALL_DIR}"
+-	fi
+-	if test ! -z "`echo ${TARGET} | grep '~'`"
+-	then
+-		TARGET=`echo ${TARGET} | sed "s:~:${HOME}:"`
+-	fi
++	TARGET="${INSTALL_DIR}"
+ 
+ 	flag=0
+ 	if test ! -d ${TARGET}
+ 	then
+-		echo ""
+-		${ECHO} "${TARGET}: No such directory.  Do you wish to create it? (y/n)[y] ${ENDER}"
+-		read check
+-		if test "${check}" = "n" -o "${check}" = "N"
++		mkdir -p ${TARGET}
++		if test $? -ne 0
+ 		then
+-			flag=1
+-		else
+-			#
+-			# The -p flag may cause an error on some HP-UX systems.
+-			# Removing the -p will work for 'basename TARGET' as long
+-			# as 'dirname TARGET' exists.
+-			#
+-			mkdir -p ${TARGET}
+-			if test $? -ne 0
+-			then
+-				echo "ERROR: Problem creating ${TARGET}"
+-				exit 2
+-			fi
++		    echo "ERROR: Problem creating ${TARGET}"
++		    exit 2
+ 		fi
+ 	else
+ 		echo ""
+@@ -186,13 +147,13 @@
+ 		echo ""
+ 		echo "The existing contents may be modified or replaced if you install in"
+ 		echo "this directory.  If you choose not to install in '${TARGET}',"
+-		echo "you will be prompted for a different directory."
++		echo "you should set your PREFIX environment variable and try again."
+ 		echo ""
+ 		${ECHO} "Do you wish to install in '${TARGET}'? (y/n)[y] ${ENDER}"
+ 		read check
+ 		if test "${check}" = "n" -o "${check}" = "N"
+ 		then
+-			flag=1
++		    exit 2
+ 		fi
+ 	fi
+ 
+@@ -203,9 +164,9 @@
+ 		then
+ 			echo ""
+ 			echo "You do not have write permission in ${TARGET}."
+-			echo "Change the permissions, or select another directory, and try again."
++			echo "Change the permissions and try again."
+ 			echo ""
+-			flag=1
++			exit 2
+ 		else
+ 			/bin/rm -f ${TARGET}/${TESTFILE}
+ 		fi
+@@ -294,10 +255,10 @@
+ 	# avoid users having to set MOZILLA_JAVA_FONT_PROPERTY_PATH, or
+ 	# just assuming Java font-handling is broken.
+ 	#
+-	if test ! -z "`ls /bin/uname`"
++	if test ! -z "`ls /usr/bin/uname`"
+ 	then
+ 		MOVE_FONTS="TRUE"
+-		case `/bin/uname` in
++		case `/usr/bin/uname` in
+ 			AIX)
+ 				PLATFORM="aix"
+ 				;;
