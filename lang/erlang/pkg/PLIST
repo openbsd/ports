@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name erlang-47.4.0
 bin/erlc
 bin/erl
 lib/erlang/lib/compiler-1.2.1/ebin/beam_opcodes.hrl

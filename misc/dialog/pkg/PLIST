@@ -1,4 +1,2 @@
-@cwd /usr/local
-@name dialog-0.6z
 bin/dialog
 man/man1/dialog.1

@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name lsof-4.34
 man/man1/lsof.1
 sbin/lsof
 share/lsof/00MANIFEST

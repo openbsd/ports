@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name hexedit-1.0.0
 bin/hexedit
 man/man1/hexedit.1
 share/doc/hexedit/COPYING

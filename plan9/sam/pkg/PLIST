@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name sam-4.3-19980506
 bin/samsave
 bin/sam
 bin/samterm

@@ -1,4 +1,2 @@
-@cwd /usr/local
-@name dxpc-3.7.0
 bin/dxpc
 man/man1/dxpc.1

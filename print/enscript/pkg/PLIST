@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name enscript-1.6.1
 bin/diffpp
 bin/sliceprint
 bin/enscript

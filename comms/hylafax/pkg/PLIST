@@ -1,4 +1,3 @@
-@cwd /usr/local
 @exec install -d -o bin -g bin -m 755 %D/lib/fax
 @exec install -d -m 755 %D/man/man1
 @exec install -d -m 755 %D/man/man5

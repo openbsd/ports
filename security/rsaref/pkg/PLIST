@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name rsaref-2.0
 lib/librsaref.a
 lib/librsaref.so.2.0
 include/rsa.h

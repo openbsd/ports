@@ -1,5 +1,3 @@
-@cwd /usr/X11R6
-@name xcolors-1.3
 bin/xcolors
 lib/X11/app-defaults/Xcolors
 man/cat1/xcolors.0

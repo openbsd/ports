@@ -1,5 +1,3 @@
-@cwd /usr/X11R6
-@name xdino-5.4.4
 lib/X11/app-defaults/Dino
 bin/xdino
 man/man1/xdino.1

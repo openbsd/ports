@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name guavac-1.2
 bin/guavac
 bin/guavad
 bin/gcok

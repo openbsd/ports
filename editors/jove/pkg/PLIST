@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name jove-4.16
 bin/jove
 bin/teachjove
 libexec/jove/portsrv

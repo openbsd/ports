@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name mm-2.7
 bin/audiocompose
 bin/audiosend
 bin/extcompose

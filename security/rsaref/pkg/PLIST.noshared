@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name rsaref-2.0
 lib/librsaref.a
 include/rsa.h
 include/_des.h

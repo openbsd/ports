@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name amanda-2.4.1p1
 lib/libamanda.a
 lib/libamanda.la
 lib/libamtape.a

@@ -1,6 +1,3 @@
-@cwd /usr/local
-@name amaya-1.4a
-@pkgdep lesstif-0.86.0
 bin/amaya
 thot/amaya/HTML.STR
 thot/amaya/HTML.conf

@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name rzsz-3.48
 bin/rz
 bin/rx
 bin/rb

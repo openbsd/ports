@@ -1,6 +1,3 @@
-@cwd /usr/X11R6
-@name explorer-0.72
-@pkgdep qt-1.33
 lib/X11/explorer/icons/about.bmp
 lib/X11/explorer/icons/expl_01.bmp
 lib/X11/explorer/icons/expl_02.bmp

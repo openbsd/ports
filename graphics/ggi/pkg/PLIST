@@ -1,5 +1,3 @@
-@cwd /usr/local/
-@name libggi-2.0b1
 bin/monitest
 lib/ggi/display/mansync.so
 lib/ggi/display/mansync.la

@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name html-4.0b
 share/sgml/html/catalog
 share/sgml/html/2.0/html.decl
 share/sgml/html/2.0/html-1.dtd

@@ -1,6 +1,3 @@
-@cwd /usr/X11R6
-@name nedit-5.0.2
-@pkgdep lesstif-0.85
 lib/X11/app-defaults/NEdit
 bin/nedit
 bin/ncl

@@ -1,9 +1,3 @@
-@cwd /usr/local
-@name kdebase-1.0
-@pkgdep giflib-3.0
-@pkgdep jpeg-6b
-@pkgdep kdelibs-1.0
-@pkgdep qt-1.40
 bin/kfmwarn
 bin/kfmclient
 bin/kioslave

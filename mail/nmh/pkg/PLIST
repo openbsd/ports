@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name nmh-0.27
 bin/ali
 bin/anno
 bin/burst

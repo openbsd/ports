@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name ssh-1.2.26
 bin/ssh1
 bin/ssh
 bin/slogin

@@ -1,9 +1,3 @@
-@cwd /usr/local
-@name exmh-2.0.2
-@pkgdep nmh-0.27
-@pkgdep mm-2.7
-@pkgdep tcl-8.0.2
-@pkgdep tk-8.0.2
 bin/exmh-async
 bin/exmh-bg
 bin/exmh

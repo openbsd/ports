@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name xwpe-1.5.9a
 bin/we
 bin/xwe
 bin/xwpe

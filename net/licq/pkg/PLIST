@@ -1,6 +1,3 @@
-@cwd /usr/local
-@name licq-0.43
-@pkgdep qt-1.40
 bin/licq.javaconvert
 bin/licq.micqconvert
 bin/licq.winconvert

@@ -1,4 +1,3 @@
-@cwd /usr/X11R6
 lib/X11/app-defaults/XFaces
 include/X11/pixmaps/andrew-shape.xpm
 include/X11/pixmaps/andrew.xpm

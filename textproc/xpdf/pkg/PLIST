@@ -1,4 +1,3 @@
-@name xpdf-0.80
 bin/xpdf
 bin/pdftops
 bin/pdftotext

@@ -1,4 +1,2 @@
-@cwd /usr/X11R6
-@name xcoloredit-1.2
 bin/xcoloredit
 man/cat1/xcoloredit.0

@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name netpipes-4.1.1-export
 bin/faucet
 bin/hose
 bin/sockdown

@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name kdelibs-1.0
 lib/libkdecore.so.1.0
 lib/libkdecore.la
 lib/libkdeui.so.1.0

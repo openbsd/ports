@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name idled-1.16
 lib/idled.cf.template
 libexec/idled
 man/man5/idled.cf.5

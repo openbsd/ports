@@ -1,6 +1,3 @@
-@cwd /usr/local
-@name kaffe-1.0.b3
-@pkgdep jpeg-6b
 man/man1/kaffe.1
 lib/kaffe/libnative.so.1.00
 lib/kaffe/libnative.so
