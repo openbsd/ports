@@ -1,7 +1,7 @@
-$OpenBSD: patch-glib_gnulib_g-gnulib_h,v 1.1 2004/06/22 03:15:02 marcm Exp $
---- glib/gnulib/g-gnulib.h.orig	2004-04-01 07:34:06.000000000 -0800
-+++ glib/gnulib/g-gnulib.h	2004-04-01 07:35:10.000000000 -0800
-@@ -41,6 +41,8 @@
+$OpenBSD: patch-glib_gnulib_g-gnulib_h,v 1.2 2004/12/07 06:16:21 marcm Exp $
+--- glib/gnulib/g-gnulib.h.orig	Sat Oct 23 18:16:24 2004
++++ glib/gnulib/g-gnulib.h	Thu Dec  2 23:50:53 2004
+@@ -44,6 +44,8 @@
  #define HAVE_SNPRINTF 0
  #endif
  
