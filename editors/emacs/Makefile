@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/21 17:27:56 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/10/23 17:26:07 espie Exp $
 
 VER=		20.7
 DISTNAME=	emacs-${VER}
@@ -7,7 +7,8 @@ NEED_VERSION=	1.336
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= emacs
 
-MAINTAINER=	xenophon@irtnog.org
+# Nick: Xenophon Fenderson
+MAINTAINER=	Matthew Economou <xenophon@irtnog.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
