@@ -1,0 +1,123 @@
+$OpenBSD: patch-Doc_zsh_texi,v 1.3 2002/07/01 15:34:04 lebel Exp $
+--- Doc/zsh.texi.orig	Mon Jun 17 09:39:51 2002
++++ Doc/zsh.texi	Mon Jul  1 10:00:36 2002
+@@ -7,6 +7,10 @@
+ @end iftex
+ @setfilename zsh.info
+ @settitle zsh
++@dircategory Shells
++@direntry
++* Zsh: (zsh).			The Z shell.
++@end direntry
+ @c %**end of header
+ 
+ @ifinfo
+@@ -2910,7 +2914,7 @@ you may see in your prompt (see
+ A history expansion begins with the first character of the @t{histchars}
+ parameter, which is `@t{!}' by default, and may occur anywhere on the
+ command line; history expansions do not nest.  The `@t{!}' can be escaped
+-with `@t{\}' or can be enclosed between a pair of single quotes (@t{@value{dsq}})
++with `@t{\}' or can be enclosed between a pair of single quotes (@t{'}@t{'})
+ to suppress its special meaning.  Double quotes will @emph{not} work for
+ this.  Following this history character is an optional event designator
+ (@ref{Event Designators}) and then an optional word
+@@ -6974,7 +6978,7 @@ For example,
+ @example
+ unsetopt localtraps
+ trap - INT
+-fn() @{ setopt localtraps; trap @value{dsq} INT; sleep 3; @}
++fn() @{ setopt localtraps; trap @t{'}@t{'} INT; sleep 3; @}
+ @end example
+ 
+ @noindent
+@@ -7214,7 +7218,8 @@ Array expansions of the form
+ @cindex rc, quoting style
+ @cindex quoting style, rc
+ @item @t{RC_QUOTES}
+-Allow the character sequence `@t{@value{dsq}}' to signify a single quote
++Allow the character sequence `@t{'}@t{'}' to signify a single
++quote
+ within singly quoted strings.  Note this does not apply in quoted strings
+ using the format @t{$'}@var{...}@t{'}, where a backslashed single quote can
+ be used.
+@@ -10994,7 +10999,7 @@ An interrupt character will not be inser
+ @item @t{quote-line} (ESC-') (unbound) (unbound)
+ Quote the current line; that is, put a `@t{'}' character at the
+ beginning and the end, and convert all `@t{'}' characters
+-to `@t{'\@value{dsq}}'.
++to `@t{'\}@t{'}@t{'}'.
+ 
+ @tindex quote-region
+ @item @t{quote-region} (ESC-") (unbound) (unbound)
+@@ -14099,7 +14104,7 @@ different types of matches displayed sep
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' group-name @value{dsq}
++zstyle ':completion:*' group-name @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -14371,7 +14376,7 @@ zstyle ':completion:*:default' list-colo
+ 
+ @noindent
+ The default colors are the same as for the GNU @t{ls} command and can be
+-obtained by setting the style to an empty string (i.e. @t{@value{dsq}}).
++obtained by setting the style to an empty string (i.e. @t{'}@t{'}).
+ 
+ @kindex list-grouped, completion style
+ @item @t{list-grouped}
+@@ -14478,7 +14483,7 @@ completion one would do:
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' matcher-list @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++zstyle ':completion:*' matcher-list @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -14503,7 +14508,7 @@ the @t{_complete} completer, one would d
+ @example
+ zstyle ':completion:*' completer _complete _prefix
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-       @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++       @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -14521,7 +14526,7 @@ match specifications for each occurrence
+ @example
+ zstyle ':completion:*' completer _complete _correct _complete:foo
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-    @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++    @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ zstyle ':completion:*:foo:*' matcher-list \ 
+     'm:@{a-zA-Z@}=@{A-Za-z@} r:|[-_./]=* r:|=*'
+ @end example
+@@ -17648,7 +17653,7 @@ generates at least one match. E.g.:
+ 
+ @noindent
+ @example
+-compctl -M @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++compctl -M @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -17860,7 +17865,7 @@ use is
+ 
+ @noindent
+ @example
+-compctl -D -f + -H 0 @value{dsq}
++compctl -D -f + -H 0 @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -17948,7 +17953,7 @@ performed on the first word in the range
+ 
+ @noindent
+ @example
+-compctl -x 'r[-exec,;]' -l @value{dsq} -- find
++compctl -x 'r[-exec,;]' -l @t{'}@t{'} -- find
+ @end example
+ 
+ @noindent

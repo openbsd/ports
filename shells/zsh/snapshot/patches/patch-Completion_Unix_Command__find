@@ -1,0 +1,87 @@
+$OpenBSD: patch-Completion_Unix_Command__find,v 1.1 2002/07/01 15:34:04 lebel Exp $
+--- Completion/Unix/Command/_find.orig	Tue Dec 11 10:46:22 2001
++++ Completion/Unix/Command/_find	Mon Jul  1 10:05:34 2002
+@@ -1,59 +1,39 @@
+-#compdef find
++#compdef find (OpenBSD)
++# Sebastian Stark <seb@todesplanet.de>
+ 
+ _arguments \
+-  '*-daystart' \
+-  '*-depth' \
+-  '*-follow' \
+-  '*-help' \
+-  '*-maxdepth:maximum search depth:' \
+-  '*-mindepth:minimum search depth:' \
+-  '*-mount' \
+-  '*-noleaf' \
+-  '*-version' \
+-  '*-xdev' \
+-  '*-amin:access time (minutes):' \
+-  '*-cmin:inode change time (minutes):' \
+-  '*-mmin:modification time (minutes):' \
+-  '*-atime:access time (days):' \
+-  '*-ctime:inode change time (days):' \
+-  '*-mtime:modification time (days):' \
++  '*-amin:access time (minutes)' \
+   '*-anewer:file to compare (access time):_files' \
++  '*-atime:access time (days)' \
++  '*-cmin:inode change time (minutes)' \
+   '*-cnewer:file to compare (inode change time):_files' \
+-  '*-newer:file to compare (modification time):_files' \
+-  '*-used:access after inode change (days):' \
++  '*-ctime:inode change time (minutes)' \
+   '*-empty' \
+-  '*-false' \
+-  '*-fstype:file system type:_file_systems' \
+-  '*-gid:numeric group ID:' \
++  '*-exec:program: _command_names -e:*\;::program arguments: _normal' \
++  '*-execdir:program: _command_names -e:*\;::program arguments: _normal' \
++  '*-flags:special file flag:(arch opaque nodump sappnd schg uappnd uchg)' \
++  '*-follow' \
++  '*-fstype:filesystem type:(local rdonly union xfs umap procfs portal null nfs msdos mfs kernfs ffs fdesc ext2fs cd9660 ados)' \
+   '*-group:group:_groups' \
+-  '*-uid:numeric user ID:' \
+-  '*-user:user:_users' \
+-  '*-lname:link pattern to search:' \
+-  '*-ilname:link pattern to search (case insensitive):' \
+-  '*-name:name pattern to search:' \
+   '*-iname:name pattern to search (case insensitive):' \
+-  '*-path:path pattern to search:' \
+-  '*-ipath:path pattern to search (case insensitive):' \
+-  '*-regex:regular expression to search:' \
+-  '*-iregex:regular expression to search (case insensitive):' \
+-  '*-inum:inode number:' \
++  '*-inum:inode number' \
+   '*-links:number of links:' \
++  '*-ls' \
++  '*-maxdepth:maximum search depth:' \
++  '*-mindepth:minimum search depth:' \
++  '*-mmin:modification time (minutes):' \
++  '*-mtime:modification time (days):' \
++  '*-name:name pattern to search:' \
++  '*-newer:file to compare (modification time):_files' \
+   '*-nouser' \
+   '*-nogroup' \
+-  '*-perm:file permission bits:' \
+-  '*-size:file size:' \
+-  '*-true' \
+-  '*-type:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
+-  '*-xtype:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
+-  '*-exec:program: _command_names -e:*\;::program arguments: _normal' \
+   '*-ok:program: _command_names -e:*\;::program arguments: _normal' \
+-  '*-fls:output file:_files' \
+-  '*-fprint:output file:_files' \
+-  '*-fprint0:output file:_files' \
+-  '*-fprintf:output file:_files:output format:' \
++  '*-path:path pattern to search:' \
++  '*-perm:file permission bits:' \
+   '*-print' \
+   '*-print0' \
+-  '*-printf:output format:' \
+   '*-prune' \
+-  '*-ls' \
++  '*-size:file size:' \
++  '*-type:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
++  '*-user:user:_users' \
+   '*:directory:_files -/'
