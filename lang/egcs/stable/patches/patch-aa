@@ -1,31 +1,97 @@
 --- gcc/configure.in.orig	Fri Aug 28 02:19:04 1998
-+++ gcc/configure.in	Fri Oct  2 15:17:19 1998
-@@ -868,6 +868,13 @@
++++ gcc/configure.in	Sun Oct 11 03:10:08 1998
+@@ -868,6 +868,14 @@
  		fixincludes=fixinc.wrap
  		tmake_file=t-netbsd
  		;;
 +	i[[34567]]86-*-openbsd*)
 +		tm_file=i386/openbsd.h
 +		xm_file="xm-openbsd.h ${xm_file}"
-+		# On OpenBSD, the headers are already okay, except for math.h.
-+		fixincludes=fixinc.wrap
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
 +		tmake_file=t-openbsd
++		#use_collect2=yes
 +		;;
  	i[[34567]]86-*-coff*)
  		tm_file=i386/i386-coff.h
  		tmake_file=i386/t-i386bare
-@@ -1634,6 +1641,14 @@
- 		# On NetBSD, the headers are already okay, except for math.h.
- 		fixincludes=fixinc.wrap
+@@ -1636,6 +1644,15 @@
  		tmake_file=t-netbsd
-+		float_format=m68k
-+		;;
+ 		float_format=m68k
+ 		;;
 +	m68k*-*-openbsd*)
 +		tm_file=m68k/openbsd.h
 +		xm_file="xm-openbsd.h ${xm_file}"
-+		# On OpenBSD, the headers are already okay, except for math.h.
-+		fixincludes=fixinc.wrap
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
 +		tmake_file=t-openbsd
- 		float_format=m68k
- 		;;
++		float_format=m68k
++		#use_collect2=yes
++		;;
  	m68k-*-sysv3*)			# Motorola m68k's running system V.3
+ 		xm_file="xm-alloca.h ${xm_file}"
+ 		xm_defines=USG
+@@ -1956,6 +1973,20 @@
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
+ 		;;
++	mips*el-*-openbsd*)  		    # MIPS running OpenBSD
++		tm_file=mips/openbsd-le.h
++		tmake_file=t-libc-ok
++		xm_file="xm-openbsd.h ${xm_file}"
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
++		;;
++	mips*-*-openbsd*)	    # MIPS big-endian running OpenBSD
++		tm_file=mips/openbsd-be.h
++		xm_file="xm-openbsd.h ${xm_file}"
++		tmake_file=t-libc-ok
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
++		;;
+ 	mips-sony-bsd* | mips-sony-newsos*)	# Sony NEWS 3600 or risc/news.
+ 		tm_file="mips/news4.h ${tm_file}"
+ 		if [[ x$stabs = xyes ]]; then
+@@ -2287,6 +2318,13 @@
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
+ 		;;
++	ns32k-*-openbsd*)
++		tm_file=ns32k/openbsd.h
++		xm_file="xm-openbsd.h ${xm_file}"
++		tmake_file=t-libc-ok
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
++		;;
+         pdp11-*-bsd)
+ 		tm_file="${tm_file} pdp11/2bsd.h"
+                 ;;
+@@ -2582,6 +2620,13 @@
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
+ 		;;
++	sparc-*-openbsd*)
++		tm_file=sparc/openbsd.h
++		xm_file="xm-openbsd.h ${xm_file}"
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
++		tmake_file=t-libc-ok
++		;;
+ 	sparc-*-bsd*)
+ 		tm_file=sparc/bsd.h
+ 		;;
+@@ -2774,6 +2819,14 @@
+ 		# On NetBSD, the headers are already okay, except for math.h.
+ 		fixincludes=fixinc.wrap
+ 		tmake_file=t-netbsd
++		float_format=vax
++		;;
++	vax-*-openbsd*)
++		tm_file=vax/openbsd.h
++		xm_file="xm-openbsd.h ${xm_file}"
++		tmake_file="t-libc-ok vax/t-openbsd"
++		# On OpenBSD, the headers are already okay.
++		fixincludes=Makefile.in
+ 		float_format=vax
+ 		;;
+ 	vax-*-ultrix*)			# vaxen running ultrix

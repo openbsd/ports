@@ -1,0 +1,9 @@
+--- gcc/cpp.texi.orig	Thu Oct  8 21:23:50 1998
++++ gcc/cpp.texi	Thu Oct  8 21:23:58 1998
+@@ -1,5 +1,5 @@
+ \input texinfo
+-@setfilename cpp.info
++@setfilename ecpp.info
+ @settitle The C Preprocessor
+ 
+ @ifinfo
