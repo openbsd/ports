@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.174 2000/01/30 15:19:40 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.175 2000/02/01 14:39:20 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -812,8 +812,11 @@ MASTER_SITE_LOCAL?= \
 MASTER_SITES?=
 # Substitute subdirectory names in intermediate form
 _MASTER_SITES:=		${MASTER_SITES:S@%SUBDIR%@${MASTER_SITE_SUBDIR}@}
-PATCH_SITES?=
+.if defined(PATCH_SITES)
 _PATCH_SITES:=		${PATCH_SITES:S@%SUBDIR%@${PATCH_SITE_SUBDIR}@}
+.else
+_PATCH_SITES:=		${_MASTER_SITES}
+.endif
 # I guess we're in the master distribution business! :)  As we gain mirror
 # sites for distfiles, add them to this list.
 .if !defined(MASTER_SITE_OVERRIDE)
@@ -840,6 +843,8 @@ PATCH_SITES${_I}:=	${_PATCH_SITES${_I}} ${MASTER_SITE_BACKUP}
 .    else
 PATCH_SITES${_I}:= ${MASTER_SITE_OVERRIDE} ${_PATCH_SITES${_I}}
 .    endif
+.  elsif defined(MASTER_SITES${_I})
+_PATCH_SITES${_I}:= ${MASTER_SITES${_I}}
 .  endif
 .endfor
 
