@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/16 13:30:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2001/04/30 03:52:13 fgsch Exp $
 
-DISTNAME=	cgoban-1.9.10
+COMMENT=	X11 Go Toolset
+
+DISTNAME=	cgoban-1.9.11
 CATEGORIES=	games x11
-NEED_VERSION=	1.309
-MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
+NEED_VERSION=	1.405
+MASTER_SITES=	http://www.igoweb.org/~wms/comp/cgoban/
+
+HOMEPAGE=	${MASTER_SITES}
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
