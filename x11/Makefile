@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 1999/12/08 19:54:52 jason Exp $
+# $OpenBSD: Makefile,v 1.40 1999/12/30 02:45:32 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -32,7 +32,6 @@
      SUBDIR += fltk
      SUBDIR += flwm
 #    SUBDIR += fvwm
-     SUBDIR += fvwm2
 #    SUBDIR += fvwm2-english
 #    SUBDIR += fvwm95
      SUBDIR += getbdf
@@ -75,7 +74,6 @@
 #    SUBDIR += tycoon
      SUBDIR += viewfax
      SUBDIR += windowmaker
-     SUBDIR += wm2
      SUBDIR += wmx
      SUBDIR += wterm
 #    SUBDIR += x3270
