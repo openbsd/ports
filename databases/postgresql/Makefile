@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.66 2003/11/11 15:11:34 margarida Exp $
+# $OpenBSD: Makefile,v 1.67 2003/12/23 19:40:32 brad Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
 COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
-VERSION=	7.3.2
+VERSION=	7.3.5
 DISTNAME=	postgresql-${VERSION}
-PKGNAME-clients=postgresql-clients-${VERSION}p1
-PKGNAME-docs=	postgresql-docs-${VERSION}p1
-PKGNAME-tcl=	postgresql-tcl-${VERSION}p1
+PKGNAME-clients=postgresql-clients-${VERSION}
+PKGNAME-docs=	postgresql-docs-${VERSION}
+PKGNAME-tcl=	postgresql-tcl-${VERSION}
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.postgresql.org/
@@ -17,6 +17,7 @@ HOMEPAGE=	http://www.postgresql.org/
 MAINTAINER=	Brandon Palmer <bpalmer@crimelabs.net>, \
 		Peter Galbavy <peter.galbavy@knowtion.net>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	"without fee clause"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"without fee clause"
