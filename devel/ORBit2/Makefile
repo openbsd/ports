@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 19:35:55 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/06/14 05:59:20 marcm Exp $
 
 COMMENT=		"a high-performance CORBA Object Request Broker"
 
@@ -35,8 +35,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-indent
-# Debugging
-CONFIGURE_ARGS+=	--enable-debug=yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
