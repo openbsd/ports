@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2005/01/31 03:42:30 brad Exp $
---- src/Makefile.in.orig	Tue Jan 18 15:11:46 2005
-+++ src/Makefile.in	Sun Jan 30 21:44:28 2005
-@@ -154,7 +154,7 @@ host_vendor = @host_vendor@
+$OpenBSD: patch-src_Makefile_in,v 1.5 2005/02/12 13:17:36 brad Exp $
+--- src/Makefile.in.orig	Sun Feb  6 07:23:52 2005
++++ src/Makefile.in	Sat Feb 12 07:54:34 2005
+@@ -146,7 +146,7 @@ host_vendor = @host_vendor@
  includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
