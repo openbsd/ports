@@ -1,0 +1,12 @@
+$OpenBSD: patch-automake_in,v 1.1 2000/12/15 17:37:58 espie Exp $
+--- automake.in.orig	Fri Dec 15 04:02:29 2000
++++ automake.in	Fri Dec 15 04:02:47 2000
+@@ -1957,7 +1957,7 @@ sub handle_texinfo
+ 	# dependency list.
+ 	@texi_deps = ();
+ 	push (@texi_deps, $info_cursor);
+-	push (@texi_deps, $vtexi) if $vtexi;
++	push (@texi_deps, '$(srcdir)/'.$vtexi) if $vtexi;
+ 
+ 	# Canonicalize name first.
+ 	($canonical = $infobase) =~ tr/A-Za-z0-9_/_/c;

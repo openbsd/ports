@@ -1,0 +1,12 @@
+$OpenBSD: patch-texi-vers_am,v 1.1 2000/12/15 17:37:58 espie Exp $
+--- texi-vers.am.orig	Fri Dec 15 04:05:35 2000
++++ texi-vers.am	Fri Dec 15 04:06:17 2000
+@@ -15,7 +15,7 @@
+ ## along with this program; if not, write to the Free Software
+ ## Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ ## 02111-1307, USA.
+-$(srcdir)/@VTEXI@: @MAINTAINER_MODE_TRUE@stamp-@VTI@
++$(srcdir)/@VTEXI@: @MAINTAINER_MODE_TRUE@$(srcdir)/stamp-@VTI@
+ 	@:
+ 
+ ## Depend on configure.in so that version number updates cause a
