@@ -1,22 +1,14 @@
-# OpenBSD makefile for:	plor
-# Version Required:	0.3.0
-# Date Created:		19 Dec 1997
-# Whom:			joey
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/20 02:36:06 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/21 01:01:51 marc Exp $
 #
 
-DISTNAME=	plor-0.3.1
+DISTNAME=	plor-0.3.2
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
-		ftp://ftp.unipd.it/pub/Linux/pluto/developers/ \
-		ftp://ftp.linux.it/pub/Pluto/developers/
 
 MAINTAINER=	joey@OpenBSD.ORG
 
-GNU_CONFIGURE=	yes
+MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/utils/
 
-MAN1=		plor.1
+GNU_CONFIGURE=	yes
 
 DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
 		plor.html plor.txt
