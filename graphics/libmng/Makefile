@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/19 16:29:42 brad Exp $
 
 COMMENT=	"Multiple-image Network Graphics (MNG) reference library"
 
-DISTNAME=	libmng-1.0.3
+DISTNAME=	libmng-1.0.4
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libmng/}
 
 HOMEPAGE=	http://www.libmng.com/
@@ -24,16 +23,11 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		--with-jpeg="${LOCALBASE}"
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DMNG_FULL_CMS" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -llcms -lm"
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
-		patch-*
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lm"
 
 post-install:
-	@cd ${WRKSRC}/doc/man && \
+	cd ${WRKSRC}/doc/man && \
 		${INSTALL_MAN} libmng.3 ${PREFIX}/man/man3 && \
 		${INSTALL_MAN} mng.5 jng.5 ${PREFIX}/man/man5
 
