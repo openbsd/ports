@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.mule,v 1.4 2002/08/03 18:00:18 naddy Exp $
+@comment $OpenBSD: PFRAG.mule,v 1.5 2002/09/19 18:28:55 naddy Exp $
 @unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/latin-unity.info
 @unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/lookup.info
 @unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/mule-ucs.info
