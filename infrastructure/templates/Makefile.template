@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.34 2001/09/20 20:59:27 brad Exp $
+# $OpenBSD: Makefile.template,v 1.35 2001/09/28 01:48:58 naddy Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -142,7 +142,6 @@ MASTER_SITES=		???
 #NO_DEPENDS=		Yes
 #NO_CHECKSUM=		Yes
 #NO_BUILD=		Yes
-#NO_INSTALL=		Yes
 #NO_PKG_REGISTER=	Yes
 
 # Overrides for default values

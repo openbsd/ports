@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.461 2001/09/27 10:34:19 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.462 2001/09/28 01:48:58 naddy Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -72,7 +72,6 @@ ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 #				  displayed instead of the port being generated.
 #
 # NO_DESCRIBE	- Use a dummy (do-nothing) describe target.
-# NO_INSTALL	- Use a dummy (do-nothing) install target.
 # NO_PACKAGE	- Use a dummy (do-nothing) package target.
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # BROKEN		- Port is broken.  Set this string to the reason why.
