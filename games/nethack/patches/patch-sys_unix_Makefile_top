@@ -1,8 +1,14 @@
---- sys/unix/Makefile.top.orig	Tue Dec 10 21:20:10 1996
-+++ sys/unix/Makefile.top	Sun Mar 19 20:10:34 2000
-@@ -15,15 +15,15 @@
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.1 2000/04/16 20:49:00 espie Exp $
+--- sys/unix/Makefile.top.orig	Sat Dec 11 06:21:05 1999
++++ sys/unix/Makefile.top	Fri Apr 14 14:13:19 2000
+@@ -13,18 +13,19 @@
+ # execute things like 'data' and 'rumors')
+ # MAKE = make
  
++include ${NETHACKCONFIG}
++
  # make NetHack
+-PREFIX	 = /usr
  GAME     = nethack
 -GAMEUID  = games
 -GAMEGRP  = bin
@@ -21,26 +27,23 @@
  
  # GAMEDIR also appears in config.h as "HACKDIR".
  #
-@@ -32,13 +32,14 @@
+@@ -33,11 +34,12 @@ DIRPERM  = 0755
  # therefore there should not be anything in GAMEDIR that you want to keep
  # (if there is, you'll have to do the installation by hand or modify the
  # instructions)
--GAMEDIR  = /usr/games/lib/$(GAME)dir
--SHELLDIR = /usr/games
-+GAMEDIR  = ${DESTDIR}${PREFIX}/lib/$(GAME)dir
-+REALGAMEDIR  = ${PREFIX}/lib/$(GAME)dir
-+SHELLDIR = ${DESTDIR}${PREFIX}/bin
+-GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir
+-SHELLDIR = $(PREFIX)/games
++REALGAMEDIR = ${PREFIX}/lib/$(GAME)dir
++GAMEDIR = ${DESTDIR}${REALGAMEDIR}
++SHELLDIR = $(DESTDIR)$(PREFIX)/bin
  
- # per discussion in Install.X11
+ # per discussion in Install.X11 and Install.Qt
 -VARDATND = 
-+#VARDATND = 
++# VARDATND = 
  # VARDATND = x11tiles pet_mark.xbm
--# VARDATND = x11tiles pet_mark.xbm rip.xpm
-+VARDATND = x11tiles pet_mark.xbm rip.xpm
+ # VARDATND = x11tiles pet_mark.xbm rip.xpm
  
- VARDATD = data oracles options quest.dat rumors
- VARDAT = $(VARDATD) $(VARDATND)
-@@ -137,7 +138,7 @@
+@@ -139,7 +141,7 @@ dofiles:
  	$(MAKE) dofiles-$${target-nodlb}
  	cp src/$(GAME) $(GAMEDIR)
  	-rm -f $(SHELLDIR)/$(GAME)

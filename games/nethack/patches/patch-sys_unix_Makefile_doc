@@ -1,6 +1,7 @@
---- sys/unix/Makefile.doc.orig	Tue Dec 10 21:20:08 1996
-+++ sys/unix/Makefile.doc	Fri Jul 24 15:21:40 1998
-@@ -31,15 +31,15 @@
+$OpenBSD: patch-sys_unix_Makefile_doc,v 1.1 2000/04/16 20:49:00 espie Exp $
+--- sys/unix/Makefile.doc.orig	Sat Dec 11 06:21:05 1999
++++ sys/unix/Makefile.doc	Fri Apr 14 14:13:19 2000
+@@ -31,15 +31,15 @@ Guidebook.dvi:	Guidebook.tex
  
  
  GAME	= nethack

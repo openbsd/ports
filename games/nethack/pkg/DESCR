@@ -4,12 +4,13 @@ and finish the game ?   At least, you're starting with a bonus: a puppy
 
 If you find that game too easy, you may want to try slash instead.
 
-- in order to use nethack with X11 graphics, you will have to add
-${PREFIX}/lib/X11/fonts/hack to your fontpath, see xset(1) and Xserver(1), also
-/usr/X11R6/lib/X11/xdm or /usr/X11R6/lib/X11/xinit for proper configuration.
+- in order to use nethack with X11 graphics, you need the nethack-*-x11 
+FLAVOR. You will also have to add ${PREFIX}/lib/X11/fonts/hack to your 
+fontpath, see xset(1) and Xserver(1), also /usr/X11R6/lib/X11/xdm or 
+/usr/X11R6/lib/X11/xinit for proper configuration.
 
-- the tty with colors mode expects a black background and white foreground to 
-run properly, e.g., xterm -fg white -bg black
+- the tty with colors mode uses ANSI colors, unless it finds a suitable
+termcap entry, for instance xterm-color. 
 
 - Marc
 espie@cvs.openbsd.org
