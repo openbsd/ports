@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/15 16:51:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/18 01:19:57 naddy Exp $
 bin/gconftool-2
 include/gconf/2/gconf/gconf-changeset.h
 include/gconf/2/gconf/gconf-client.h
@@ -189,10 +189,10 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrm share/aclocal
 @dirrm lib/pkgconfig
 @dirrm lib/GConf/2
-@unexec rmdir %D/lib/GConf 2>/dev/null || true
+@dirrm lib/GConf
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2
-@unexec rmdir %D/include/gconf 2>/dev/null || true
+@dirrm include/gconf
 @cwd ${SYSCONFDIR}
 @extra gconf/2/path
 @extra gconf/2/

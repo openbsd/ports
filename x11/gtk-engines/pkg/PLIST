@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/07/12 05:59:33 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/18 01:19:57 naddy Exp $
 share/themes/Metal/ICON.png
 share/themes/Metal/README.html
 share/themes/Metal/gtk/gtkrc
@@ -85,12 +85,12 @@ share/themes/Redmond95/README.html
 share/themes/Redmond95/gtk/gtkrc
 %%SHARED%%
 @dirrm share/themes/Redmond95/gtk
-@unexec rmdir %D/share/themes/Redmond95 2>/dev/null || true
+@dirrm share/themes/Redmond95
 @dirrm share/themes/Raleigh/gtk
 @dirrm share/themes/Raleigh
 @dirrm share/themes/Pixmap/gtk
-@unexec rmdir %D/share/themes/Pixmap 2>/dev/null || true
+@dirrm share/themes/Pixmap
 @dirrm share/themes/Notif/gtk
 @dirrm share/themes/Notif
 @dirrm share/themes/Metal/gtk
-@unexec rmdir %D/share/themes/Metal 2>/dev/null || true
+@dirrm share/themes/Metal

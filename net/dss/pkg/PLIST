@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/23 16:19:28 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/18 01:19:57 naddy Exp $
 bin/qtpasswd
 bin/mp3broadcaster
 bin/playlistbroadcaster
@@ -10,5 +10,5 @@ share/examples/dss/qtgroups
 share/examples/dss/qtusers
 share/examples/dss/relayconfig.xml
 share/examples/dss/streamingserver.xml
-@unexec rmdir %D/share/examples/dss 2>/dev/null || true
-@unexec rmdir %D/share/doc/dss 2>/dev/null || true
+@dirrm share/examples/dss
+@dirrm share/doc/dss

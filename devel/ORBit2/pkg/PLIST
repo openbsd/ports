@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/15 16:51:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/18 01:19:57 naddy Exp $
 @pkgcfl linc-*
 bin/ior-decode-2
 bin/linc-cleanup-sockets
@@ -77,7 +77,7 @@ share/gtk-doc/html/ORBit2/up.png
 share/idl/orbit-2.0/CosNaming.idl
 %%SHARED%%
 @dirrm share/idl/orbit-2.0
-@unexec rmdir %D/share/idl 2>/dev/null || true
+@dirrm share/idl
 @dirrm share/gtk-doc/html/ORBit2
 @dirrm share/gtk-doc/html
 @dirrm share/gtk-doc
