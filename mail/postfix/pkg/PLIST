@@ -3,6 +3,8 @@ sbin/postcat
 sbin/postconf
 sbin/postdrop
 sbin/postfix
+sbin/postfix-enable
+sbin/postfix-disable
 sbin/postkick
 sbin/postlock
 sbin/postlog
@@ -89,13 +91,11 @@ man/man8/showq.8
 man/man8/smtp.8
 man/man8/smtpd.8
 man/man8/trivial-rewrite.8
-share/doc/postfix/Makefile.in
 share/doc/postfix/access.5.html
 share/doc/postfix/aliases.5.html
 share/doc/postfix/architecture.html
 share/doc/postfix/backstage.html
 share/doc/postfix/basic.html
-share/doc/postfix/big-picture.fig
 share/doc/postfix/big-picture.gif
 share/doc/postfix/big-picture.html
 share/doc/postfix/bounce.8.html
@@ -106,9 +106,7 @@ share/doc/postfix/defer.8.html
 share/doc/postfix/delivering.html
 share/doc/postfix/error.8.html
 share/doc/postfix/faq.html
-share/doc/postfix/flow.fig
 share/doc/postfix/goals.html
-share/doc/postfix/inbound.fig
 share/doc/postfix/inbound.gif
 share/doc/postfix/index.html
 share/doc/postfix/local.8.html
@@ -116,7 +114,6 @@ share/doc/postfix/mailq.1.html
 share/doc/postfix/master.8.html
 share/doc/postfix/motivation.html
 share/doc/postfix/newaliases.1.html
-share/doc/postfix/outbound.fig
 share/doc/postfix/outbound.gif
 share/doc/postfix/pickup.8.html
 share/doc/postfix/pipe.8.html
@@ -140,7 +137,6 @@ share/doc/postfix/rewrite.html
 share/doc/postfix/security.html
 share/doc/postfix/sendmail.1.html
 share/doc/postfix/showq.8.html
-share/doc/postfix/small-picture.fig
 share/doc/postfix/small-picture.gif
 share/doc/postfix/smtp.8.html
 share/doc/postfix/smtpd.8.html
@@ -149,3 +145,4 @@ share/doc/postfix/trivial-rewrite.8.html
 share/doc/postfix/uce.html
 share/doc/postfix/virtual.5.html
 @dirrm share/doc/postfix
+@unexec [ -f /etc/mailer.conf.postfix ] && rm -f /etc/mailer.conf.postfix

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 1999/09/26 20:35:13 jakob Exp $
+# $OpenBSD: DEINSTALL,v 1.5 1999/10/07 20:58:04 jakob Exp $
 #
 # De-installation setup of postfix
 
@@ -16,60 +16,53 @@ MAILDROPGID=12
 #
 do_accts()
 {
-    echo
+    echo ""
     echo "+---------------"
     echo "| Delete the 'postfix' user account, and 'postfix' and 'maildrop'"
     echo "| group accounts manually for a full de-installation."
     echo "| To do this: execute 'rmuser postfix' and 'rmgroup maildrop' as root."
     echo "+---------------"
-    echo
+    echo ""
 }
 
 # Function: set up the postfix spool dir / chroot area
 #
 do_spooldir()
 {
-    echo
+    echo ""
     echo "+---------------"
     echo "| Delete the /var/spool/postfix spool directory manually"
     echo "| for a full de-installation."
     echo "| To do this: execute 'rm -rf /var/spool/postfix' as root."
     echo "+---------------"
-    echo
-}
-
-# Function: replace sendmail binaries with postfix
-#
-do_sendmail()
-{
-    if [ ! -f /etc/mailer.conf.pre-postfix ]; then return ; fi
-
-    printf "Do you want to restore sendmail? [Y/n] "
-    read ans
-    case $ans in n*|N*) return ;; esac
-    echo
-    echo "-> Restoring sendmail"
-    mv /etc/mailer.conf /etc/mailer.conf.postfix
-    mv /etc/mailer.conf.pre-postfix /etc/mailer.conf
+    echo ""
 }
 
 # Function: install the postfix configuration files from the samples
 #
 do_configs()
 {
-    echo
+    echo ""
     echo "+---------------"
     echo "| The existing $1 configuration files in ${CONFIG_DIR},"
     echo "| have NOT been deleted. To do this: execute"
     echo "| 'rm -rf /etc/postfix' as root."
     echo "+---------------"
-    echo
+    echo ""
+}
+
+# Function: disable the installed postfix mailer.conf
+#
+do_disable()
+{
+    echo -n "-> "
+    $PREFIX/sbin/postfix-disable
 }
 
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
-    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    echo "usage: $0 distname { DEINSTALL }" >&2
     exit 1
 fi
 
@@ -79,8 +72,8 @@ case $2 in
     DEINSTALL)
 	do_accts
 	do_spooldir
-        do_configs $1
-	do_sendmail
+	do_configs $1
+	do_disable
 	;;
     *)
 	echo "Usage: `basename $0` distname DEINSTALL" >&2
