@@ -1,18 +1,3 @@
---- libiberty/mkstemp.c.orig	Tue Jan 12 11:43:52 1999
-+++ libiberty/mkstemp.c	Tue Jan 12 11:44:48 1999
-@@ -37,6 +37,7 @@
- #endif
- #include "ansidecl.h"
- 
-+#ifndef HAVE_MKSTEMPS
- /* We need to provide a type for gcc_uint64_t.  */
- #ifdef __GNUC__
- typedef unsigned long long gcc_uint64_t;
-@@ -126,3 +127,4 @@
-   template[0] = '\0';
-   return -1;
- }
-+#endif
 --- libiberty/Makefile.in.orig	Tue Jan 12 11:44:02 1999
 +++ libiberty/Makefile.in	Tue Jan 12 11:45:05 1999
 @@ -125,7 +125,7 @@
@@ -43,14 +28,3 @@
    AC_CHECK_FUNCS(memset random rename rindex sigsetmask strcasecmp)
    AC_CHECK_FUNCS(strchr strdup strncasecmp strrchr strstr strtod strtol)
    AC_CHECK_FUNCS(strtoul tmpnam vasprintf vfprintf vprintf vsprintf waitpid)
---- gcc/configure.in.orig	Wed Dec 30 23:05:07 1998
-+++ gcc/configure.in	Tue Jan 12 11:43:41 1999
-@@ -370,7 +370,7 @@
- fi
- 
- AC_CHECK_FUNCS(strtoul bsearch strerror putenv popen bcopy bzero bcmp \
--	index rindex strchr strrchr kill getrlimit setrlimit atoll atoq \
-+	index mkstemps rindex strchr strrchr kill getrlimit setrlimit atoll atoq \
- 	sysconf isascii gettimeofday strsignal putc_unlocked fputc_unlocked \
- 	fputs_unlocked)
- 
