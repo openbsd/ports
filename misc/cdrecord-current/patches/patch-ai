@@ -1,0 +1,11 @@
+--- include/mconfig.h-	Wed Dec 17 08:33:34 1997
++++ include/mconfig.h	Wed Dec 17 08:33:37 1997
+@@ -439,7 +439,7 @@
+ #	define	USLEEPISVOID
+ #endif
+ 
+-#if defined(mips) && !(defined(ultrix) || defined(sony) || defined(sgi))
++#if defined(mips) && !(defined(ultrix) || defined(sony) || defined(sgi) || defined(__OpenBSD__))
+ #	define	HAVE_COFF
+ #	define	HAVE_UNISTD_H
+ #	define	HAVE_USGSHM
