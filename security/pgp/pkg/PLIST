@@ -1,0 +1,27 @@
+bin/pgp
+man/man1/pgp.1
+lib/pgp/config.txt
+lib/pgp/de.hlp
+lib/pgp/en.hlp
+lib/pgp/es.hlp
+lib/pgp/fr.hlp
+lib/pgp/keys.asc
+lib/pgp/language.txt
+lib/pgp/pgp.hlp
+share/doc/pgp/appnote.doc
+share/doc/pgp/blurb.txt
+share/doc/pgp/changes.doc
+share/doc/pgp/faq.txt
+share/doc/pgp/keyserv.doc
+share/doc/pgp/mitlicen.txt
+share/doc/pgp/pgformat.doc
+share/doc/pgp/pgp262i.dif
+share/doc/pgp/pgp263i.dif
+share/doc/pgp/pgp_vms.hlp
+share/doc/pgp/pgpdoc1.txt
+share/doc/pgp/pgpdoc2.txt
+share/doc/pgp/politic.doc
+share/doc/pgp/przon26i.asc
+share/doc/pgp/setup.doc
+@dirrm lib/pgp
+@dirrm share/doc/pgp
