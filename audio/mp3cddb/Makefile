@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/04/27 22:45:42 margarida Exp $
+# $OpenBSD: Makefile,v 1.17 2004/02/03 07:32:00 sturm Exp $
 
 COMMENT=	"embedding CDDB information in MP3s"
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	::audio/p5-MP3-Info \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mp3cddb

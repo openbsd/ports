@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/06/04 22:16:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/03 07:32:00 sturm Exp $
 # Original from: Stephane Peter <megastep@megastep.org>
 
 COMMENT=	"script generating a self-extractible .tgz from a directory"
@@ -24,6 +24,7 @@ EXTRACT_SUFX=		.gz.sh
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 post-extract:
 	@cd ${WRKDIR} && ${SH} ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

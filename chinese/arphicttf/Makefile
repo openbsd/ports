@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/24 23:52:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/03 07:28:12 sturm Exp $
 
 COMMENT=	"chinese big5/gb truetype fonts"
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	::chinese/ttfm
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 WRKDIST=        ${WRKDIR}/arphic 
 

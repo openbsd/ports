@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/18 21:41:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/03 07:28:12 sturm Exp $
 
 COMMENT=	"rpm2cpio, simple perl converter"
 
@@ -21,6 +21,7 @@ DISTFILES=	rpm2cpio
 EXTRACT_ONLY=	
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${FULLDISTDIR}/rpm2cpio ${PREFIX}/bin

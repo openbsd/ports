@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/26 23:49:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/03 07:28:12 sturm Exp $
 
 COMMENT=	"convert a MySQL dump to a PostgreSQL dump"
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${FULLDISTDIR}/mysql2pgsql ${PREFIX}/bin

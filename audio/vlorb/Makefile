@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/03 01:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/03 07:32:00 sturm Exp $
 
 COMMENT=		"audio CD to audio file encoder"
 DISTNAME=		vlorb-1.2
@@ -22,6 +22,7 @@ RUN_DEPENDS=		:cdparanoia-*:audio/cdparanoia \
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 pre-install:
 	@perl -i -pe 's:/etc/vlorbrc:${SYSCONFDIR}/vlorbrc:g' \
