@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/11/03 20:34:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/18 18:03:30 sturm Exp $
 
 COMMENT=	"single process stack of system monitors for GTK+2"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gthread-2.0.0.0::devel/glib2 \
 		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 
