@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.PIC-g77,v 1.1 2004/09/15 19:06:57 espie Exp $
+lib/fpic/libfrtbegin.a
+lib/fpic/libg2c.a
+lib/fpic/libg2c.la

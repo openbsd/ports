@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2004/01/31 14:58:03 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2004/09/15 19:06:57 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -331,15 +331,15 @@ send-results:
 
 
 .if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"
-SED_PLIST=|sed -e '/^IFPIC:/s///'
+PKG_ARGS+=-DPIC=1
 .else
-SED_PLIST=|sed -e '/^IFPIC:/d'
+PKG_ARGS+=-DPIC=0
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
-SED_PLIST+=|sed -e '/^IFPPC:/s///'
+PKG_ARGS+=-DPPC=1
 .else
-SED_PLIST+=|sed -e '/^IFPPC:/d'
+PKG_ARGS+=-DPPC=0
 .endif
 
 GCC_NAME=${WRKBUILD}/gcc/xgcc

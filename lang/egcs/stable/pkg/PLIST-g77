@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-g77,v 1.12 2004/08/09 00:02:22 espie Exp $
+@comment $OpenBSD: PLIST-g77,v 1.13 2004/09/15 19:06:57 espie Exp $
 @pkgcfl egcs-*-core
 bin/eg77
 @info info/g77.info
@@ -8,7 +8,5 @@ lib/libfrtbegin.a
 lib/libg2c.a
 lib/libg2c.la
 @man man/man1/eg77.1
-IFPIC:lib/fpic/libfrtbegin.a
-IFPIC:lib/fpic/libg2c.a
-IFPIC:lib/fpic/libg2c.la
 %%SHARED%%
+%%PIC%%

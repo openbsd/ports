@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2004/08/09 00:02:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2004/09/15 19:06:57 espie Exp $
 @pkgcfl egcs-*-core
 bin/ecpp
 bin/egcc
@@ -13,11 +13,9 @@ bin/${CONFIG}-gcc-${V}
 lib/gcc-lib/
 lib/gcc-lib/${CONFIG}/
 lib/gcc-lib/${CONFIG}/${V}/
-IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/
 lib/gcc-lib/${CONFIG}/${V}/cc1
 lib/gcc-lib/${CONFIG}/${V}/collect2
 lib/fpic/
-IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/libgcc.a
 lib/gcc-lib/${CONFIG}/${V}/include/
 lib/gcc-lib/${CONFIG}/${V}/include/README
 lib/gcc-lib/${CONFIG}/${V}/include/limits.h
@@ -36,7 +34,6 @@ lib/gcc-lib/${CONFIG}/${V}/install-tools/include/limits.h
 lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders
 lib/gcc-lib/${CONFIG}/${V}/install-tools/mkheaders.conf
 lib/gcc-lib/${CONFIG}/${V}/libgcc.a
-IFPPC:lib/gcc-lib/${CONFIG}/${V}/crtsavres.o
 lib/gcc-lib/${CONFIG}/${V}/specs
 lib/libiberty.a
 @man man/man1/cpp.1
@@ -45,3 +42,5 @@ lib/libiberty.a
 @comment @man man/man7/fsf-funding.7
 @comment @man man/man7/gfdl.7
 @comment @man man/man7/gpl.7
+%%PIC%%
+%%PPC%%
