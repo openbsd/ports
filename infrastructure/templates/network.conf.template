@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.69 2004/05/25 10:31:08 xsa Exp $
+# $OpenBSD: network.conf.template,v 1.70 2004/07/05 16:13:47 xsa Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! 
@@ -174,7 +174,7 @@ MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.cise.ufl.edu/pub/mirrors/tex-archive/ \
 	ftp://ftp.tex.ac.uk/tex-archive/ \
 	ftp://ftp.kddlabs.co.jp/CTAN/ \
-	ftp://sunsite.auc.dk/pub/tex/ctan/ \
+	ftp://sunsite.dk/pub/tex/ctan/ \
 	ftp://ctan.tug.org/tex-archive/ \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/ \
 	ftp://ftp.dante.de/tex-archive/ \
