@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/01/09 16:15:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.33 2004/01/12 12:32:29 grange Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -64,7 +64,7 @@ ERRORS +=	"Fatal: cannot use i386 or i486 flavors with i686"
 .endif
 
 .if ${FLAVOR:L:Mx86_64}
-CONFIGURE_ARGS+= --enable-x86-64
+CONFIGURE_ARGS+= --enable-x86-64 --enable-all-optimizations
 . if ! ${FLAVOR:L:Mi686}
 ERRORS +=	"Fatal: x86_64 emulation requires i686 flavor"
 . endif
