@@ -1,6 +1,6 @@
---- xoverutil.c.orig	Fri Jan  8 22:35:06 1999
-+++ xoverutil.c	Fri Jan  8 22:07:13 1999
-@@ -528,7 +528,7 @@
+--- xoverutil.c.orig	Tue Mar 16 22:30:06 1999
++++ xoverutil.c	Tue Mar 16 22:32:35 1999
+@@ -518,7 +518,7 @@
  		    error, getcwd( s, 1024 ) );
  
  	strcpy( newfile, ".overview.XXXXXX" );
@@ -9,7 +9,7 @@
  	    struct iovec oooh[UIO_MAXIOV];
  	    int vi, vc, va;
  
-@@ -581,8 +581,7 @@
+@@ -571,8 +571,7 @@
  		   .overview file I think */
  	    }
  	} else {

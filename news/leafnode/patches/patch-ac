@@ -1,6 +1,6 @@
---- miscutil.c.orig	Mon Feb 15 17:34:08 1999
-+++ miscutil.c	Mon Feb 15 17:34:33 1999
-@@ -79,8 +79,8 @@
+--- miscutil.c.orig	Tue Mar 16 22:33:40 1999
++++ miscutil.c	Tue Mar 16 22:34:36 1999
+@@ -85,8 +85,8 @@
  	    return FALSE;
  	}
  

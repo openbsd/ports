@@ -1,10 +1,10 @@
---- Makefile.in.orig	Mon Feb 15 18:23:31 1999
-+++ Makefile.in	Mon Feb 15 18:26:59 1999
+--- Makefile.in.orig	Tue Mar 16 22:27:16 1999
++++ Makefile.in	Tue Mar 16 22:27:21 1999
 @@ -24,8 +24,10 @@
  BINDIR = $(PREFIX_USR)/sbin
  MANDIR = $(PREFIX_USR)/man
  SPOOLDIR = $(PREFIX_VAR)/spool/news
--LIBDIR   = /usr/lib/leafnode
+-LIBDIR   = /etc/leafnode
 -LOCKFILE = "/var/lock/news/fetch.lck"
 +LIBDIR = $(PREFIX_USR)/share/doc/leafnode
 +ETCDIR = @sysconfdir@
@@ -13,7 +13,7 @@
  
  # RPM crap
  RPM = @RPM@
-@@ -96,50 +98,56 @@
+@@ -96,50 +98,57 @@
  
  config.o: config.c Makefile
  	$(CC) -c -DSPOOLDIR=\"$(SPOOLDIR)\" \
@@ -53,7 +53,7 @@
  	-chown news.news $(SPOOLDIR)/interesting.groups
  	-chown news.news $(SPOOLDIR)/out.going
  	cd $(SPOOLDIR)/message.id ; for a in 0 1 2 3 4 5 6 7 8 9 ; do \
--		for b in 0 1 2 3 4 5 6 7 8 9 ; do \
+ 		for b in 0 1 2 3 4 5 6 7 8 9 ; do \
 -			mkdir -p $${a}$${b}0 $${a}$${b}1 $${a}$${b}2 \
 -				$${a}$${b}3 $${a}$${b}4 $${a}$${b}5 \
 -				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
@@ -64,14 +64,14 @@
 -				$${a}$${b}9 ; \
 -			done ; done
 -	cp config.example $(LIBDIR)
-+                for b in 0 1 2 3 4 5 6 7 8 9 ; do \
-+                        for c in 0 1 2 3 4 5 6 7 8 9 ; do \
-+                        test -d "$$a$$b$$c" || \
-+				 $(INSTALL) -d -o news -g news "$$a$$b$$c"; \
-+                        done ; done ; done
++			for c in 0 1 2 3 4 5 6 7 8 9 ; do \
++			test -d "$$a$$b$$c" || \
++				$(INSTALL) -d -o news -g news "$$a$$b$$c"; \
++			done ; done ; done
 +	${BSD_INSTALL_DATA} README INSTALL config.example $(LIBDIR)
 +	test -f $(ETCDIR)/config || \
 +		${BSD_INSTALL_DATA} config.example $(ETCDIR)/config
++
  	chmod 2755 $(SPOOLDIR)
 -	@echo Edit /etc/inetd.conf to start $(BINDIR)/leafnode and restart inetd
 -	@echo If you update from a leafnode version \< 1.6, do a "make update"
