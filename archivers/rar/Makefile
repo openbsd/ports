@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/02/10 23:14:28 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/03/04 17:58:29 turan Exp $
 
 DISTNAME=	rarbsd
 PKGNAME=	rar-2.02
@@ -19,6 +19,11 @@ NO_CDROM=	"NOFEE: Can not charge for distribution"
 NO_PACKAGE=	"Only unmodified original package can be distributed"
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"Shareware.  Requires registration."
+PERMIT_PACKAGE_FTP=	"Shareware.  Requires registration."
+PERMIT_DISTFILES_CDROM=	"Shareware.  Requires registration."
+PERMIT_DISTFILES_FTP=	Yes
 
 NEED_VERSION=	1.191
 NO_BUILD=	yes
@@ -44,5 +49,9 @@ do-install:
 			${PREFIX}/share/rar/default.sfx && \
 		${INSTALL_DATA} Dos.SFX \
 			${PREFIX}/share/rar/dos.sfx
+
+post-install:
+	@echo '*** Note that this software is shareware.'
+	@echo '*** You are required to register after 40 days of use.'
 
 .include <bsd.port.mk>
