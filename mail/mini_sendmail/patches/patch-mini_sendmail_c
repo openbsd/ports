@@ -1,16 +1,24 @@
-$OpenBSD: patch-mini_sendmail_c,v 1.1.1.1 2003/07/22 23:01:16 jolan Exp $
---- mini_sendmail.c.orig	Thu Nov 21 14:27:55 2002
-+++ mini_sendmail.c	Sat Jul 19 22:47:43 2003
-@@ -129,6 +129,8 @@ main( int argc, char** argv )
- 	    timeout = atoi( &(argv[argn][2]) );
- 	else if ( strcmp( argv[argn], "-v" ) == 0 )
+$OpenBSD: patch-mini_sendmail_c,v 1.2 2003/11/05 04:51:08 jolan Exp $
+--- mini_sendmail.c.orig	2003-09-29 11:17:25.000000000 -0500
++++ mini_sendmail.c	2003-11-04 22:32:55.000000000 -0600
+@@ -43,6 +43,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <netdb.h>
+ 
+ #ifdef DO_RECEIVED
+@@ -131,6 +132,8 @@ main( int argc, char** argv )
  	    verbose = 1;
+ 	else if ( strcmp( argv[argn], "--" ) == 0 )
+ 	    ;	/* ignore */
 +	else if ( strcmp( argv[argn], "-i" ) == 0 || strcmp ( argv[argn], "-oi" ) == 0 )
-+	    /* do nothing */ ;
++	    ;   /* ignore */
  	else
  	    usage();
  	++argn;
-@@ -575,14 +577,16 @@ open_client_socket( void )
+@@ -577,14 +580,16 @@ open_client_socket( void )
      sock_family = PF_INET6;
  
  #ifdef DO_MINUS_S
