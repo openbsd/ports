@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/07/20 07:43:20 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/09/08 21:32:55 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -34,6 +34,7 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG" \
 FAKE_FLAGS+=	${MAKE_FLAGS}
 .else
 LIB_DEPENDS+=	ttf.1.3::print/freetype
+USE_X11=	Yes
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
 		LIBS="libgd.la -lm -lpng -lz -ljpeg -lttf -lXpm -lX11" \
 		INCLUDEDIRS="-I. -I/usr/local/include -I/usr/X11R6/include -I/usr/X11R6/include/X11" \
