@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/07/23 14:15:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/26 10:23:07 peter Exp $
 
 COMMENT=	"Objective Caml bindings for PostgreSQL"
 CATEGORIES=	databases
@@ -22,7 +22,7 @@ NO_REGRESS= 	Yes
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	pq.3::databases/postgresql
+LIB_DEPENDS=	pq.3:postgresql-client-*:databases/postgresql
 MY_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include/postgresql
 MY_LIBDIRS=	${LOCALBASE]/lib
 EXAMPLES_DIR=	${PREFIX}/share/examples/ocaml-postgresql

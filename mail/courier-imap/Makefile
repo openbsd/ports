@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2004/07/06 21:00:11 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.41 2004/07/26 10:18:25 peter Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -81,7 +81,7 @@ PSEUDO_FLAVORS+=	no_pgsql
 MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--with-pgsql-libs=${LOCALBASE}/lib \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
-PGSQL_DEPENDS+=		pq.2::databases/postgresql
+PGSQL_DEPENDS+=		pq.2:postgresql-client-*:databases/postgresql
 .endif
 
 # pop3 has no dependencies
