@@ -1,0 +1,12 @@
+$OpenBSD: patch-pilot-mail_c,v 1.1 2001/06/03 21:40:21 brad Exp $
+--- pilot-mail.c.orig	Sun Jun  3 17:38:13 2001
++++ pilot-mail.c	Sun Jun  3 17:38:42 2001
+@@ -15,7 +15,7 @@
+ #define POPUSER		""
+ #define POPPASS		""
+ #define PILOTFROM	""
+-#define SENDMAIL	"/usr/lib/sendmail -t -i"
++#define SENDMAIL	"/usr/sbin/sendmail -t -i"
+ #define POPKEEP 	"keep"
+ #define DISPOSE		"keep"
+ #define TOPILOT_MHDIR   ""
