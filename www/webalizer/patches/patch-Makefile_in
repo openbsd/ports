@@ -1,15 +1,17 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2000/07/13 02:30:22 danh Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2000/09/01 16:38:51 danh Exp $
 --- Makefile.in.orig	Fri Mar 24 18:13:16 2000
-+++ Makefile.in	Wed Jul 12 21:04:56 2000
-@@ -23,7 +23,7 @@ BINDIR = @bindir@
++++ Makefile.in	Fri Sep  1 12:03:51 2000
+@@ -23,8 +23,8 @@ BINDIR = @bindir@
  MANDIR = @mandir@/man1
  CC     = @CC@
  CFLAGS = @CFLAGS@
 -LIBS   = @LIBS@
+-DEFS   = @DEFS@@OPTS@
 +LIBS   = @LIBS@ -ljpeg
- DEFS   = @DEFS@@OPTS@
++DEFS   = @DEFS@@OPTS@ -DUSE_DNS
  LDFLAGS= @LDFLAGS@
  INSTALL= @INSTALL@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
 @@ -85,9 +85,6 @@ distclean: clean
  install: all
  	$(INSTALL_PROGRAM) webalizer ${BINDIR}/webalizer

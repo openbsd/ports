@@ -1,0 +1,25 @@
+$OpenBSD: patch-dns_resolv_c,v 1.1 2000/09/01 16:38:51 danh Exp $
+--- dns_resolv.c.orig	Fri Mar 24 17:31:59 2000
++++ dns_resolv.c	Fri Sep  1 12:15:04 2000
+@@ -42,6 +42,7 @@
+ #include <string.h>
+ #include <unistd.h>                           /* normal stuff             */
+ #include <ctype.h>
++#include <sys/param.h>
+ #include <sys/utsname.h>
+ #include <sys/times.h>
+ #include <zlib.h>
+@@ -60,6 +61,13 @@
+ #ifndef _SYS_TYPES_H
+ #include <sys/types.h>
+ #endif
++
++/* include <sys/socket.h> on 4.4BSD systems */
++#ifdef BSD4_4
++#include <errno.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#endif /* BSD4_4 */
+ 
+ /* some systems need this */
+ #ifdef HAVE_MATH_H
