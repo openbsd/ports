@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.668 2004/11/27 12:36:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.669 2004/11/27 14:07:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1233,19 +1233,6 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 ${WRKPKG}/COMMENT${SUBPACKAGE}:
 	@echo ${_COMMENT} >$@
 
-${WRKPKG}/PLIST${SUBPACKAGE}: ${WRKPKG}/depends${SUBPACKAGE}
-	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
-	@mv -f $@.tmp $@
-
-${WRKPKG}/depends${SUBPACKAGE}:
-	@mkdir -p ${WRKPKG}
-	@>$@
-.if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (${NO_SHARED_LIBS:L} != "yes" && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
-	@${_depfile_fragment}; \
-	_depends_result=$@ ${MAKE} _solve-package-depends
-.endif
-
 ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
 	@echo "\nMaintainer: ${MAINTAINER}" >>$@
@@ -2447,53 +2434,6 @@ _print-package-args:
 .   endfor
 .endif
 
-# Write a correct list of dependencies for packages.
-_solve-package-depends:
-.for _i in ${RUN_DEPENDS}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo '${_i}' |{ \
-		IFS=:; read dep pkg pkgpath target; \
-		dir=$$pkgpath; ${_flavor_fragment}; \
-		default=`eval $$toset ${MAKE} _print-packagename`; \
-		: $${pkg:=$$default}; \
-		echo "@newdepend $$pkgpath:$$pkg:$$default" >>$${_depends_result}; }
-.endfor
-.if ${NO_SHARED_LIBS:L} != "yes"
-.  for _i in ${LIB_DEPENDS}
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo '${_i}'|{ \
-		IFS=:; read dep pkg pkgpath target; \
-		dir=$$pkgpath; ${_flavor_fragment}; \
-		libspecs='';comma=''; \
-		default=`eval $$toset ${MAKE} _print-packagename`; \
-		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
-		if pkg_info -q -e $$pkg; then \
-			listlibs='ls $$shdir 2>/dev/null'; \
-		else \
-			eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
-			listlibs='pkg_info -L ${PKGREPOSITORY}/$$default.tgz|grep $$shdir|sed -e "s,^$$shdir/,,"'; \
-		fi; \
-		IFS=,; for d in $$dep; do \
-			${_libresolve_fragment}; \
-			case "$$check" in \
-			*.a) continue;; \
-			Missing\ library|Error:*) \
-				echo 1>&2 "Can't resolve libspec $$d"; \
-				exit 1;; \
-			*) \
-				libspecs="$$libspecs$$comma$$shprefix$$check"; \
-				comma=',';; \
-			esac; \
-		done; \
-		case "X$$libspecs" in \
-		X) ;;\
-		*) \
-			echo "@libdepend $$pkgpath:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
-		esac; \
-	}
-.  endfor
-.endif
-
 # recursively build a list of dirs for package running, ready for tsort
 _recurse-run-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
@@ -2658,7 +2598,7 @@ uninstall deinstall:
 	_build-dir-depends _delete-package-links _fetch-makefile _fetch-onefile \
 	_package _package-links _print-packagename \
 	_recurse-all-dir-depends _recurse-lib-depends-check \ 
-	_recurse-run-dir-depends _solve-package-depends _refetch \
+	_recurse-run-dir-depends _refetch \
 	addsum _print-package-args \
 	all all-dir-depends build \
 	build-depends build-depends-list build-dir-depends \
