@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
-# ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.176 2000/02/02 00:15:07 espie Exp $$
+# ex:ts=4 sw=4 filetype=make:
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.177 2000/02/02 15:28:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -435,7 +435,11 @@ PORTSDIR?=		/usr/ports
 LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
+.if defined(DIST_SUBDIR)
 FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
+.else
+FULLDISTDIR?=	${DISTDIR}
+.endif
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
