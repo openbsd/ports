@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/06 05:42:53 sturm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -26,6 +26,7 @@ BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 LIB_DEPENDS=		art_lgpl_2.5::graphics/libart \
 			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 			pango-1.0.0.0::devel/pango \
+			popt.0::devel/popt \
 			xml2.6::textproc/libxml
 
 USE_GMAKE=		Yes
