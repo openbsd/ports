@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/25 13:01:19 espie Exp $
-# $Id: Makefile,v 1.3 2001/07/25 13:01:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/25 14:45:10 espie Exp $
+# $Id: Makefile,v 1.4 2001/07/25 14:45:10 espie Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -72,7 +72,7 @@ DISTFILES=		${DISTNAME}.tar.gz \
 DOCS=			AUTHORS COPYING ChangeLog FAQ INSTALL NEWS \
 			README TODO
 
-SUBST_VARS=		MAINTAINER
+SUBST_VARS=		MAINTAINER	PKGNAME-vorbis PKGNAME-esd
 
 .if defined(PACKAGING) 
 

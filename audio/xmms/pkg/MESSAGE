@@ -9,3 +9,5 @@ should decrease the buffer size if your hardware can handle it.
 Please direct issues regarding the Sun output driver to the
 author, ${MAINTAINER}.
 
+If you need vorbis input or esd output, please look at 
+${PKGNAME-vorbis} and ${PKGNAME-esd}.
