@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.2 1999/05/18 16:46:39 espie Exp $
+# $OpenBSD: Makefile.template,v 1.3 1999/10/05 00:00:38 brad Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -60,6 +60,10 @@ MASTER_SITES=		???
 # build/configuration variables
 #
 # requires bsd.port.mk 1.71 or later
+#
+# when using USE_AUTOCONF/GNU_CONFIGURE/HAS_CONFIGURE only use ONE of
+# them
+#
 #SEPARATE_BUILD=	concurrent  (build simultaneously on all arches)
 #SEPARATE_BUILD=	simple  (configure/build still recreates files in source)
 #USE_EGCC=		yes
