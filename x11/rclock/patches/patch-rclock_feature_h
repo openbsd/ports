@@ -1,5 +1,6 @@
---- rclock/feature.h.orig	Sun Oct 31 12:37:05 1999
-+++ rclock/feature.h	Sun Oct 31 12:37:31 1999
+$OpenBSD: patch-rclock_feature_h,v 1.1 2001/06/22 20:53:20 jasoni Exp $
+--- rclock/feature.h.orig	Mon Apr 20 00:30:42 1998
++++ rclock/feature.h	Fri Jun 22 13:43:33 2001
 @@ -53,7 +53,7 @@
  #define MAIL
  /* #define MAIL_BELL */
