@@ -1,0 +1,11 @@
+--- configure.orig	Tue Dec  4 09:50:16 2001
++++ configure	Tue Dec  4 09:50:58 2001
+@@ -1179,7 +1179,7 @@ if [ "$DSO" = auto ]; then
+ 	DSO=GNULD
+ 	;;
+     *-openbsd*)
+-	DSOSUF=so.${DIST_MAJOR}.${DIST_MINOR}
++	DSOSUF=so.${DIST_MAJOR}${DIST_MINOR}.${DIST_POINT}
+ 	LIBCOPTS='-fpic'
+ 	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
+ 	case "$TARGET" in
