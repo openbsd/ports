@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/04/21 04:06:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/18 21:44:24 naddy Exp $
 # $RuOBSD: Makefile,v 1.7 2002/03/26 19:14:05 grange Exp $
 
 COMMENT=		"Free Unix Spectrum Emulator"
 
-DISTNAME=		fuse-0.4.2
+DISTNAME=		fuse-0.5.0
 CATEGORIES=		emulators
-NEED_VERSION=		1.524
 
 HOMEPAGE=		http://www.srcf.ucam.org/~pak21/spectrum/fuse.html
 
