@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/08 18:42:10 millert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/03/08 00:42:32 sturm Exp $
 rtty/README
-rtty/bin
 rtty/bin/Startup
 rtty/bin/agelog
 rtty/bin/agelogs
@@ -9,15 +8,17 @@ rtty/bin/locbrok
 rtty/bin/rtty
 rtty/bin/startsrv
 rtty/bin/ttysrv
-rtty/dev
-rtty/log
-rtty/opt
-rtty/pid
-rtty/sock
-@dirrm rtty/bin
-@dirrm rtty/dev
-@dirrm rtty/log
-@dirrm rtty/opt
-@dirrm rtty/pid
+@exec mkdir -p %D/rtty/sock
 @dirrm rtty/sock
+@exec mkdir -p %D/rtty/pid
+@dirrm rtty/pid
+@exec mkdir -p %D/rtty/out
+@dirrm rtty/out
+@exec mkdir -p %D/rtty/opt
+@dirrm rtty/opt
+@exec mkdir -p %D/rtty/log
+@dirrm rtty/log
+@exec mkdir -p %D/rtty/dev
+@dirrm rtty/dev
+@dirrm rtty/bin
 @dirrm rtty
