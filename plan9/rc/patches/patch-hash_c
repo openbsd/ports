@@ -1,0 +1,11 @@
+--- hash.c.orig	Thu Apr  4 12:08:22 2002
++++ hash.c	Wed Feb 19 22:14:51 2003
+@@ -241,7 +241,7 @@
+ 	bool flag;
+ };
+ static struct nameflag maybeexport[] = {
+-	{ "prompt", FALSE },
++	/* { "prompt", FALSE },*/
+ 	{ "version", FALSE }
+ };
+ 
