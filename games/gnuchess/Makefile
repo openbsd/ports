@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:55 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 01:54:31 angelos Exp $
 #
 
-DISTNAME=	gnuchess-4.0.pl77
-PKGNAME=	gnuchess-4.0.77
+DISTNAME=	gnuchess-4.0.pl79
+PKGNAME=	gnuchess-4.0.79
 CATEGORIES=	games
-
-#BROKEN=	"newer version available"
 
 MAINTAINER=	angelos@openbsd.org
 
