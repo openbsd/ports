@@ -22,7 +22,6 @@ editors/jove
 editors/vim
 graphics/ImageMagick
 graphics/aalib
-graphics/compface
 graphics/gimp
 graphics/jpeg
 graphics/mpeg-lib
@@ -33,7 +32,6 @@ graphics/tiff34
 graphics/xfig
 graphics/xpaint
 graphics/xv
-lang/egcs-stable
 lang/expect
 lang/tcl80
 mail/cucipop
@@ -60,7 +58,7 @@ print/freetype
 print/ghostscript5
 print/gv
 print/psutils
-print/teTeX
+print/teTeX/base
 print/transfig
 security/pgp USA_RESIDENT=YES
 security/pgp USA_RESIDENT=NO
@@ -80,6 +78,9 @@ x11/Xaw3d
 x11/gtk+
 x11/lesstif
 x11/rxvt
-x11/tk81
+x11/tk80
 x11/viewfax
 x11/xcolors
+x11/qt
+x11/kdebase
+x11/kdelibs
