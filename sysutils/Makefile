@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.73 2003/08/09 03:19:07 jolan Exp $
+# $OpenBSD: Makefile,v 1.74 2003/08/23 19:25:34 sturm Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
+     SUBDIR += anacron
      SUBDIR += apc-upsd
      SUBDIR += autossh
      SUBDIR += bchunk
