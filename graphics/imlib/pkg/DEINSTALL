@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2000/08/12 08:17:57 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/03/02 19:55:32 brad Exp $
 #
 # Imlib de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=/etc
+CONFIG_DIR=${SYSCONFDIR}
 
 echo
 echo "+---------------"
