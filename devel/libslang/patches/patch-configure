@@ -1,6 +1,6 @@
 --- configure.orig	Tue Feb 20 21:17:29 2001
-+++ configure	Sun Mar  4 00:51:51 2001
-@@ -2017,6 +2017,18 @@
++++ configure	Fri Dec  7 23:35:39 2001
+@@ -2017,6 +2017,18 @@ case "$host_os" in
         CC_SHARED="cc \$(CFLAGS) -shared -K pic"
       fi
       ;;
@@ -12,24 +12,24 @@
 +    ELF_LINK_CMD="\$(ELF_LINK)"
 +    ELF_DEP_LIBS="\$(DL_LIB) -lm"
 +    CC_SHARED="$CC -shared $ELF_CFLAGS"
-+    if test "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != ""; then
++    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
 +      DYNAMIC_LINK_FLAGS="-Wl,-E"
 +    fi
 +  ;;
    * )
      echo "Note: ELF compiler for host_os=$host_os may be wrong"
      ELF_CC="$CC"
-@@ -2087,6 +2099,9 @@
+@@ -2087,6 +2099,9 @@ case "$host_os" in
        RPATH="-rpath "
      fi
    ;;
 +  *openbsd*)
-+    RPATH="-Wl,-rpath,"
++    RPATH="-Wl,-R,"
 +  ;;
  esac
  
      if test "X$RPATH" != "X"
-@@ -2100,7 +2115,7 @@
+@@ -2100,7 +2115,7 @@ fi
  
  
  echo $ac_n "checking size of short""... $ac_c" 1>&6
@@ -38,7 +38,7 @@
  if eval "test \"`echo '$''{'ac_cv_sizeof_short'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2108,7 +2123,7 @@
+@@ -2108,7 +2123,7 @@ else
    ac_cv_sizeof_short=2
  else
    cat > conftest.$ac_ext <<EOF
@@ -47,7 +47,7 @@
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2119,7 +2134,7 @@
+@@ -2119,7 +2134,7 @@ main()
    exit(0);
  }
  EOF
@@ -56,7 +56,7 @@
  then
    ac_cv_sizeof_short=`cat conftestval`
  else
-@@ -2139,7 +2154,7 @@
+@@ -2139,7 +2154,7 @@ EOF
  
  
  echo $ac_n "checking size of int""... $ac_c" 1>&6
@@ -65,7 +65,7 @@
  if eval "test \"`echo '$''{'ac_cv_sizeof_int'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2147,7 +2162,7 @@
+@@ -2147,7 +2162,7 @@ else
    ac_cv_sizeof_int=4
  else
    cat > conftest.$ac_ext <<EOF
@@ -74,7 +74,7 @@
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2158,7 +2173,7 @@
+@@ -2158,7 +2173,7 @@ main()
    exit(0);
  }
  EOF
@@ -83,7 +83,7 @@
  then
    ac_cv_sizeof_int=`cat conftestval`
  else
-@@ -2178,7 +2193,7 @@
+@@ -2178,7 +2193,7 @@ EOF
  
  
  echo $ac_n "checking size of long""... $ac_c" 1>&6
@@ -92,7 +92,7 @@
  if eval "test \"`echo '$''{'ac_cv_sizeof_long'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2186,7 +2201,7 @@
+@@ -2186,7 +2201,7 @@ else
    ac_cv_sizeof_long=4
  else
    cat > conftest.$ac_ext <<EOF
@@ -101,7 +101,7 @@
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2197,7 +2212,7 @@
+@@ -2197,7 +2212,7 @@ main()
    exit(0);
  }
  EOF
@@ -110,7 +110,7 @@
  then
    ac_cv_sizeof_long=`cat conftestval`
  else
-@@ -2217,7 +2232,7 @@
+@@ -2217,7 +2232,7 @@ EOF
  
  
  echo $ac_n "checking size of float""... $ac_c" 1>&6
@@ -119,7 +119,7 @@
  if eval "test \"`echo '$''{'ac_cv_sizeof_float'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2225,7 +2240,7 @@
+@@ -2225,7 +2240,7 @@ else
    ac_cv_sizeof_float=4
  else
    cat > conftest.$ac_ext <<EOF
@@ -128,7 +128,7 @@
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2236,7 +2251,7 @@
+@@ -2236,7 +2251,7 @@ main()
    exit(0);
  }
  EOF
@@ -137,7 +137,7 @@
  then
    ac_cv_sizeof_float=`cat conftestval`
  else
-@@ -2256,7 +2271,7 @@
+@@ -2256,7 +2271,7 @@ EOF
  
  
  echo $ac_n "checking size of double""... $ac_c" 1>&6
@@ -146,7 +146,7 @@
  if eval "test \"`echo '$''{'ac_cv_sizeof_double'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
-@@ -2264,7 +2279,7 @@
+@@ -2264,7 +2279,7 @@ else
    ac_cv_sizeof_double=8
  else
    cat > conftest.$ac_ext <<EOF
@@ -155,7 +155,7 @@
  #include "confdefs.h"
  #include <stdio.h>
  main()
-@@ -2275,7 +2290,7 @@
+@@ -2275,7 +2290,7 @@ main()
    exit(0);
  }
  EOF
@@ -164,7 +164,7 @@
  then
    ac_cv_sizeof_double=`cat conftestval`
  else
-@@ -2304,7 +2319,7 @@
+@@ -2304,7 +2319,7 @@ JD_Terminfo_Dirs="/usr/lib/terminfo \
  TERMCAP=-ltermcap
  
  echo $ac_n "checking for Terminfo""... $ac_c" 1>&6
@@ -173,7 +173,7 @@
  for terminfo_dir in $JD_Terminfo_Dirs
  do
     if test -d $terminfo_dir 
-@@ -2407,7 +2422,7 @@
+@@ -2407,7 +2422,7 @@ PROGRAM_ELF_ORULES="$PROGRAM_ELF_ORULES
  
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
@@ -182,7 +182,7 @@
  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
                 awk '{ print $3 }'`
  slang_major_version=`echo $slang_version |
-@@ -2417,7 +2432,8 @@
+@@ -2417,7 +2432,8 @@ slang_minor_version=`echo $slang_version
  slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
   awk '{ print ($1 - $2*10000 - $3*100) }'`
  
