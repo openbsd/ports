@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/20 21:49:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/20 19:36:24 jakob Exp $
 
 DISTNAME=	stunnel-3.8
 CATEGORIES=	security
+NEED_VERSION=	1.302
 
 MAINTAINER=     jakob@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	yes
-PERMIT_PACKAGE_FTP=	yes
-PERMIT_DISTFILES_CDROM=	yes
-PERMIT_DISTFILES_FTP=	yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=	http://mike.daewoo.com.pl/computer/stunnel/
 
@@ -19,10 +20,8 @@ MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
 		ftp://ftp.all.de/pub2/unix/security/stunnel/
 
-GNU_CONFIGURE=	yes
-
-ALL_TARGET=	stunnel
-FAKE=		Yes
+CONFIGURE_STYLE=	gnu
+ALL_TARGET=		stunnel
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stunnel ${PREFIX}/sbin

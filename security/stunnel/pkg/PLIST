@@ -1,2 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/20 19:36:25 jakob Exp $
 sbin/stunnel
 man/man8/stunnel.8
