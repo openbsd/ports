@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/27 20:11:37 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/09/27 22:09:34 naddy Exp $
 
 DISTNAME=	tar-1.13.17
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 NEED_VERSION=	1.330
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
+		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
+		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/
 
 LIB_DEPENDS=	intl.1::devel/gettext
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
