@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2002/07/25 09:42:36 nino Exp $
-share/gtk-doc/html/gdk-pixbuf/a4093.html
+@comment $OpenBSD: PLIST-docs,v 1.2 2002/08/11 11:03:28 nino Exp $
+share/gtk-doc/html/gdk-pixbuf/a4187.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-animation.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-creating.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-file-loading.html
@@ -22,8 +22,8 @@ share/gtk-doc/html/gdk-pixbuf/index.html
 share/gtk-doc/html/gdk-pixbuf/index.sgml
 share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/r27.html
-share/gtk-doc/html/gdk-pixbuf/x4112.html
-share/gtk-doc/html/gdk-pixbuf/x4160.html
+share/gtk-doc/html/gdk-pixbuf/x4206.html
+share/gtk-doc/html/gdk-pixbuf/x4254.html
 share/gtk-doc/html/gdk/X_cursor.png
 share/gtk-doc/html/gdk/arrow.png
 share/gtk-doc/html/gdk/based_arrow_down.png
@@ -130,7 +130,7 @@ share/gtk-doc/html/gdk/watch.png
 share/gtk-doc/html/gdk/xterm.png
 share/gtk-doc/html/gtk/abstractobjects.html
 share/gtk-doc/html/gtk/buttonwidgets.html
-share/gtk-doc/html/gtk/c17377.html
+share/gtk-doc/html/gtk/c17328.html
 share/gtk-doc/html/gtk/deprecatedobjects.html
 share/gtk-doc/html/gtk/displaywidgets.html
 share/gtk-doc/html/gtk/gtk-accelerator-maps.html

@@ -1,50 +1,59 @@
-# $OpenBSD: Makefile,v 1.2 2002/07/26 05:16:12 nino Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/11 11:03:27 nino Exp $
 
-COMMENT=		"multi-platform graphical toolkit"
-COMMENT-docs=           "gtk+-2 documentation"
+COMMENT=			"multi-platform graphical toolkit"
+COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=		2.0.5
-DISTNAME=		gtk+-${VERSION}
-PKGNAME=		gtk+2-${VERSION}
-PKGNAME-docs=		gtk+2-docs-${VERSION}
-CATEGORIES=		x11 devel
+VERSION=			2.0.6
+DISTNAME=			gtk+-${VERSION}
+PKGNAME=			gtk+2-${VERSION}
+PKGNAME-docs=			gtk+2-docs-${VERSION}
+CATEGORIES=			x11 devel
 
-HOMEPAGE=		http://www.gtk.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+HOMEPAGE=			http://www.gtk.org
+MAINTAINER=			Nils Nordman <nino@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE_FTP=		Yes
+PERMIT_DISTFILES_CDROM=		Yes
+PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=		ftp://ftp.gtk.org/pub/gtk/v2.0/
-EXTRACT_SUFX=           .tar.bz2
+MASTER_SITES=			ftp://ftp.gtk.org/pub/gtk/v2.0/
+EXTRACT_SUFX=           	.tar.bz2
 
-MULTI_PACKAGES=         -docs
+MULTI_PACKAGES=         	-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=		glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2 \
-			pango-1.0.=0,pangox-1.0.=0,pangoxft-1.0.=0::devel/pango \
-			atk-1.0.=0::devel/atk \
-			tiff.35::graphics/tiff \
-			png.3::graphics/png \
-			jpeg.62::graphics/tiff
-BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
-RUN_DEPENDS=		${BUILD_DEPENDS}
+LIB_DEPENDS=			glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2 \
+				pango-1.0.=0,pangox-1.0.=0,pangoxft-1.0.=0::devel/pango \
+				atk-1.0.=0::devel/atk \
+				tiff.35::graphics/tiff \
+				png.3::graphics/png \
+				jpeg.62::graphics/tiff
+BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 .endif
 
-USE_X11=		Yes
-USE_GMAKE=		Yes
+# library versions (major:minor)
+LIBGDK_X11_VERSION=		0:5
+LIBGDK_PIXBUF_VERSION=		0:5
+LIBGDK_PIXBUF_XLIB_VERSION=	0:5
+LIBGTK_X11_VERSION=		0:5
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= 	--enable-static
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+USE_X11=			Yes
+USE_GMAKE=			Yes
+CONFIGURE_STYLE=		gnu
+CONFIGURE_ARGS+=		${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= 		--enable-static
+CONFIGURE_ARGS+= 		--disable-gtk-doc
+CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+				LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=			LIBGDK_X11_VERSION="${LIBGDK_X11_VERSION}" \
+				LIBGDK_PIXBUF_VERSION="${LIBGDK_PIXBUF_VERSION}" \
+				LIBGDK_PIXBUF_XLIB_VERSION="${LIBGDK_PIXBUF_XLIB_VERSION}" \
+				LIBGTK_X11_VERSION="${LIBGTK_X11_VERSION}"
 
-NO_REGRESS=		Yes
+NO_REGRESS=			Yes
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/gtk-2.0; \

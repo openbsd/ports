@@ -1,13 +1,12 @@
-$OpenBSD: patch-demos_Makefile_in,v 1.1.1.1 2002/07/25 09:42:35 nino Exp $
---- demos/Makefile.in.orig	Mon Jun 24 19:40:50 2002
-+++ demos/Makefile.in	Mon Jun 24 19:46:52 2002
-@@ -973,7 +973,8 @@ test-inline-pixbufs.h: $(top_builddir)/g
+$OpenBSD: patch-demos_Makefile_in,v 1.2 2002/08/11 11:03:27 nino Exp $
+--- demos/Makefile.in.orig	Thu Aug  1 00:10:15 2002
++++ demos/Makefile.in	Sun Aug 11 11:15:08 2002
+@@ -974,7 +974,7 @@ maintainer-clean-generic clean mostlycle
+ test-inline-pixbufs.h: $(top_builddir)/gdk-pixbuf/gdk-pixbuf-csource apple-red.png gnome-foot.png
  	(topdir=`cd $(top_builddir) && pwd` ; curdir=`pwd` ; \
  	  cd $(srcdir) &&				     \
- 	    GDK_PIXBUF_MODULEDIR=$$topdir/gdk-pixbuf/.libs \
--	      $$topdir/gdk-pixbuf/gdk-pixbuf-csource --build-list \
-+	    LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs \
-+		$$topdir/gdk-pixbuf/gdk-pixbuf-csource --build-list \
+-	      $(pixbuf_csource) --build-list \
++	      LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs $(pixbuf_csource) --build-list \
  	        apple_red apple-red.png gnome_foot gnome-foot.png >$$curdir/test-inline-pixbufs.h)
  $(testpixbuf_OBJECTS): test-inline-pixbufs.h
  

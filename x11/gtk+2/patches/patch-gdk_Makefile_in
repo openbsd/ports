@@ -1,0 +1,20 @@
+$OpenBSD: patch-gdk_Makefile_in,v 1.1 2002/08/11 11:03:28 nino Exp $
+--- gdk/Makefile.in.orig	Sun Aug 11 11:30:17 2002
++++ gdk/Makefile.in	Sun Aug 11 11:31:07 2002
+@@ -214,7 +214,6 @@ gtarget = @gdktarget@
+ # since automake doesn't support conditionalized libsomething_la_LDFLAGS
+ # we use the general approach here
+ LDFLAGS = @STRIP_BEGIN@ 						\
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 		\
+ 	-export-dynamic 						\
+ 	-rpath $(libdir) 						\
+ 	$(no_undefined)							\
+@@ -338,7 +337,7 @@ X_CFLAGS = @X_CFLAGS@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+-libgdk_x11_2_0_la_LDFLAGS = 
++libgdk_x11_2_0_la_LDFLAGS = -version-info $(LIBGDK_X11_VERSION)
+ libgdk_x11_2_0_la_DEPENDENCIES =  x11/libgdk-x11.la
+ libgdk_x11_2_0_la_OBJECTS =  gdk.lo gdkcolor.lo gdkcursor.lo gdkdraw.lo \
+ gdkevents.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkkeys.lo gdkkeyuni.lo \

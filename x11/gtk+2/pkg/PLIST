@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/25 09:42:35 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/08/11 11:03:28 nino Exp $
 bin/gdk-pixbuf-csource
 bin/gtk-demo
 bin/gtk-query-immodules-2.0
@@ -273,6 +273,7 @@ share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/tree_store.c
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
+share/locale/bg/LC_MESSAGES/gtk20.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20.mo
 share/locale/cy/LC_MESSAGES/gtk20.mo
@@ -297,6 +298,7 @@ share/locale/it/LC_MESSAGES/gtk20.mo
 share/locale/ja/LC_MESSAGES/gtk20.mo
 share/locale/ko/LC_MESSAGES/gtk20.mo
 share/locale/lt/LC_MESSAGES/gtk20.mo
+share/locale/lv/LC_MESSAGES/gtk20.mo
 share/locale/ms/LC_MESSAGES/gtk20.mo
 share/locale/nl/LC_MESSAGES/gtk20.mo
 share/locale/nn/LC_MESSAGES/gtk20.mo

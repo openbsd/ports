@@ -1,0 +1,20 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.1 2002/08/11 11:03:28 nino Exp $
+--- gtk/Makefile.in.orig	Thu Aug  1 00:10:06 2002
++++ gtk/Makefile.in	Sun Aug 11 12:15:31 2002
+@@ -213,7 +213,6 @@ gtarget = @gdktarget@
+ # we use the general approach here
+ libgtkincludedir = $(includedir)/gtk-2.0/gtk
+ LDFLAGS = @STRIP_BEGIN@ \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)			\
+ 	-export-dynamic								\
+ 	-rpath $(libdir)							\
+ 	$(no_undefined)								\
+@@ -686,7 +685,7 @@ X_CFLAGS = @X_CFLAGS@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+-libgtk_x11_2_0_la_LDFLAGS = 
++libgtk_x11_2_0_la_LDFLAGS = -version-info $(LIBGTK_X11_VERSION)
+ libgtk_x11_2_0_la_LIBADD = 
+ libgtk_x11_2_0_la_OBJECTS =  gtkaccelgroup.lo gtkaccelmap.lo \
+ gtkaccellabel.lo gtkaccessible.lo gtkadjustment.lo gtkalignment.lo \
