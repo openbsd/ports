@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2002/03/17 04:55:03 brad Exp $
+# $OpenBSD: Makefile,v 1.66 2002/04/06 23:12:17 brad Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-config-file-path=/var/www/conf \
 			--enable-calendar \
