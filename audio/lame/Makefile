@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2000/08/16 16:42:01 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/08/23 17:19:33 jakob Exp $
 
-DISTNAME=		lame3.85beta
-PKGNAME=		lame-3.85beta
+DISTNAME=		lame3.86beta
+PKGNAME=		lame-3.86beta
 CATEGORIES=     	audio
 NEED_VERSION=		1.302
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=		gtk.1.2::x11/gtk+
 
-WRKDIST=		${WRKDIR}/lame3.85
+WRKDIST=		${WRKDIR}/lame3.86
 USE_GMAKE=		Yes
 ALL_TARGET=		lame mp3x
 

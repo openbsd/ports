@@ -1,31 +1,17 @@
---- Makefile.orig	Mon Jul  3 02:57:41 2000
-+++ Makefile	Mon Jul 31 10:38:48 2000
-@@ -165,6 +165,20 @@
- 
- 
+--- Makefile.orig	Thu Aug  3 22:07:56 2000
++++ Makefile	Wed Aug 23 15:31:44 2000
+@@ -235,11 +235,11 @@
  ##########################################################################
-+# OpenBSD
-+##########################################################################
-+ifeq ($(UNAME),OpenBSD)
-+#  remove if you do not have GTK or do not want the GTK frame analyzer
+ ifeq ($(UNAME),OpenBSD)
+ #  remove if you do not have GTK or do not want the GTK frame analyzer
+-   GTK = -DHAVEGTK `gtk12-config --cflags`
+-   GTKLIBS = `gtk12-config --libs` 
 +   GTK = -DHAVEGTK `gtk-config --cflags`
 +   GTKLIBS = `gtk-config --libs` 
-+# Comment out next 2 lines if you want to remove VBR histogram capability
-+   BRHIST_SWITCH = -DBRHIST
+ # Comment out next 2 lines if you want to remove VBR histogram capability
+    BRHIST_SWITCH = -DBRHIST
+-   LIBTERMCAP = -lncurses
 +   LIBTERMCAP = -lcurses
-+
-+endif
-+
-+
-+##########################################################################
- # FreeBSD
- ##########################################################################
- ifeq ($(UNAME),FreeBSD)
-@@ -352,6 +366,7 @@
- #	cd libmp3lame
- #	make libmp3lame
- 	ar cr libmp3lame.a  $(OBJ) 
-+	ranlib libmp3lame.a
+ endif
  
- clean:
- 	-$(RM) $(gtk_obj) $(OBJ) $(DEP) $(PGM) main.o rtp.o mp3rtp mp3rtp.o \
+ 
