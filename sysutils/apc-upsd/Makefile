@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/04/26 15:00:32 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2003/11/24 08:11:43 kevlo Exp $
 
 COMMENT=	"UPS software for APC UPS models"
 
@@ -7,8 +7,6 @@ PKGNAME=	${DISTNAME}-19991128
 CATEGORIES=	sysutils
 
 MASTER_SITES=	http://www.knienieder.com/software/
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
