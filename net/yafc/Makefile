@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/02/09 12:37:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/07 09:28:28 avsm Exp $
+
+COMMENT=	"powerful console ftp client with many features"
 
 DISTNAME=	yafc-0.6.6
 CATEGORIES=	net
-NEED_VERSION=	1.351
+NEED_VERSION=	1.387
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= yafc
 
@@ -16,9 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--without-readline --with-catgets
-# doesn't work with 2.8's old readline version
-# remove the --without-readline when binutils is upgraded
+CONFIGURE_ARGS=	--with-readline --with-catgets
 
 DOCS=	NEWS README TODO
 
