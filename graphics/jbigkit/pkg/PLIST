@@ -1,9 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/06/10 18:16:10 brad Exp $
 include/jbig.h
 bin/pbmtojbg
 bin/jbgtopbm
 lib/libjbig.a
-lib/libjbig.so.1.2
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/jbgtopbm.1
 man/man1/pbmtojbg.1
 man/man5/pbm.5
