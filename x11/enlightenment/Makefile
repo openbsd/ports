@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/28 04:20:26 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/04 03:58:26 brad Exp $
 
-DISTNAME=	enlightenment-0.16.3
+DISTNAME=	enlightenment-0.16.5
 CATEGORIES=     x11
-NEED_VERSION=	1.320
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
 		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
@@ -11,8 +11,8 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 HOMEPAGE=	http://www.enlightenment.org/
 
 LIB_DEPENDS=	esd.2.19::audio/esound \
-		Fnlib.0.5::graphics/fnlib \
-		ghttp.1.0::www/libghttp
+		Fnlib.5::graphics/fnlib \
+		ghttp.1::www/libghttp
 
 MAINTAINER=	op21@squish.org
 

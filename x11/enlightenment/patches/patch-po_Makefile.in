@@ -1,0 +1,38 @@
+--- po/Makefile.in.in.orig	Tue Oct  3 23:11:20 2000
++++ po/Makefile.in.in	Tue Oct  3 23:15:20 2000
+@@ -115,7 +115,7 @@
+ 	if test -r "$(MKINSTALLDIRS)"; then \
+ 	  $(MKINSTALLDIRS) $(DESTDIR)$(datadir); \
+ 	else \
+-	  $(SHELL) $(top_srcdir)/mkinstalldirs $(datadir); \
++	  $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir); \
+ 	fi
+ 	@catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \
+@@ -129,7 +129,7 @@
+ 	  if test -r "$(MKINSTALLDIRS)"; then \
+ 	    $(MKINSTALLDIRS) $(DESTDIR)$$dir; \
+ 	  else \
+-	    $(SHELL) $(top_srcdir)/mkinstalldirs $$dir; \
++	    $(SHELL) $(top_srcdir)/mkinstalldirs $(DESTDIR)$$dir; \
+ 	  fi; \
+ 	  if test -r $$cat; then \
+ 	    $(INSTALL_DATA) $$cat $(DESTDIR)$$dir/$(PACKAGE)$(INSTOBJEXT); \
+@@ -173,12 +173,12 @@
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+-	  rm -f $(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
+-	  rm -f $(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
+-	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
+-	  rm -f $(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
++	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
++	  rm -f $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
++	  rm -f $(DESTDIR)$(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT); \
++	  rm -f $(DESTDIR)$(gnulocaledir)/$$lang/LC_MESSAGES/$(PACKAGE)$(INSTOBJEXT).m; \
+ 	done
+-	rm -f $(gettextsrcdir)/po-Makefile.in.in
++	rm -f $(DESTDIR)$(gettextsrcdir)/po-Makefile.in.in
+ 
+ check: all
+ 

@@ -1,0 +1,299 @@
+--- configure.orig	Tue Oct  3 15:58:14 2000
++++ configure	Tue Oct  3 16:12:28 2000
+@@ -4227,7 +4227,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -5518,8 +5518,9 @@
+ 
+ 
+ 
++enable_dlopen=no
+ echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
+-echo "configure:5523: checking for dlopen in -ldl" >&5
++echo "configure:5524: checking for dlopen in -ldl" >&5
+ ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5527,7 +5528,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-ldl -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5531 "configure"
++#line 5532 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5538,7 +5539,7 @@
+ dlopen()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5542: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5543: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5553,20 +5554,73 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  DL_LIBS=-ldl 
++  DL_LIBS=-ldl
++  enable_dlopen=yes
+ else
+   echo "$ac_t""no" 1>&6
++fi
++
++if test "x$enable_dlopen" = "xno"; then
++echo $ac_n "checking for dlopen""... $ac_c" 1>&6
++echo "configure:5566: checking for dlopen" >&5
++if eval "test \"`echo '$''{'ac_cv_func_dlopen'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  cat > conftest.$ac_ext <<EOF
++#line 5571 "configure"
++#include "confdefs.h"
++/* System header to define __stub macros and hopefully few prototypes,
++    which can conflict with char dlopen(); below.  */
++#include <assert.h>
++/* Override any gcc2 internal prototype to avoid an error.  */
++/* We use char because int might match the return type of a gcc2
++    builtin and then its argument prototype would still apply.  */
++char dlopen();
++
++int main() {
++
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined (__stub_dlopen) || defined (__stub___dlopen)
++choke me
++#else
++dlopen();
++#endif
+ 
+-echo "Warning: Enlightenment requires the dl (dynamic loader) library"
++; return 0; }
++EOF
++if { (eval echo configure:5594: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++  rm -rf conftest*
++  eval "ac_cv_func_dlopen=yes"
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  eval "ac_cv_func_dlopen=no"
++fi
++rm -f conftest*
++fi
++
++if eval "test \"`echo '$ac_cv_func_'dlopen`\" = yes"; then
++  echo "$ac_t""yes" 1>&6
++  enable_dlopen=yes
++else
++  echo "$ac_t""no" 1>&6
++fi
++
++fi
++
++
++if test "x$enable_dlopen" = "xno"; then
++echo "Warning: Enlightenment requires dlopen() (dynamic loader)"
+ echo "to be supported on your platform for module support.  Modules"
+ echo "have been disabled (this will affect functionality)"
+ echo "configure: warning: Module Support Disabled (no dynamic loader)" 1>&2
+ fi
+ 
+-
+-
+ echo $ac_n "checking for XTestGrabControl in -lXtst""... $ac_c" 1>&6
+-echo "configure:5570: checking for XTestGrabControl in -lXtst" >&5
++echo "configure:5624: checking for XTestGrabControl in -lXtst" >&5
+ ac_lib_var=`echo Xtst'_'XTestGrabControl | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5574,7 +5628,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lXtst $X_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5578 "configure"
++#line 5632 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5585,7 +5639,7 @@
+ XTestGrabControl()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5589: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5643: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5613,7 +5667,7 @@
+ fi
+ 
+ echo $ac_n "checking for XTestQueryExtension in -lXtst""... $ac_c" 1>&6
+-echo "configure:5617: checking for XTestQueryExtension in -lXtst" >&5
++echo "configure:5671: checking for XTestQueryExtension in -lXtst" >&5
+ ac_lib_var=`echo Xtst'_'XTestQueryExtension | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5621,7 +5675,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lXtst $X_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5625 "configure"
++#line 5679 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5632,7 +5686,7 @@
+ XTestQueryExtension()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5636: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5690: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5654,7 +5708,7 @@
+ 
+ 
+ echo $ac_n "checking for XkbQueryExtension in -lXext""... $ac_c" 1>&6
+-echo "configure:5658: checking for XkbQueryExtension in -lXext" >&5
++echo "configure:5712: checking for XkbQueryExtension in -lXext" >&5
+ ac_lib_var=`echo Xext'_'XkbQueryExtension | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5662,7 +5716,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lXext $X_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5666 "configure"
++#line 5720 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5673,7 +5727,7 @@
+ XkbQueryExtension()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5677: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5731: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5697,7 +5751,7 @@
+ fi
+ 
+ echo $ac_n "checking for XineramaQueryExtension in -lXinerama""... $ac_c" 1>&6
+-echo "configure:5701: checking for XineramaQueryExtension in -lXinerama" >&5
++echo "configure:5755: checking for XineramaQueryExtension in -lXinerama" >&5
+ ac_lib_var=`echo Xinerama'_'XineramaQueryExtension | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5705,7 +5759,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lXinerama $X_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5709 "configure"
++#line 5763 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5716,7 +5770,7 @@
+ XineramaQueryExtension()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5720: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5774: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5753,7 +5807,7 @@
+ 
+ if test "x$enable_zoom" = "xyes"; then
+ echo $ac_n "checking for XF86VidModeQueryExtension in -lXxf86vm""... $ac_c" 1>&6
+-echo "configure:5757: checking for XF86VidModeQueryExtension in -lXxf86vm" >&5
++echo "configure:5811: checking for XF86VidModeQueryExtension in -lXxf86vm" >&5
+ ac_lib_var=`echo Xxf86vm'_'XF86VidModeQueryExtension | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5761,7 +5815,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lXxf86vm $X_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5765 "configure"
++#line 5819 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5772,7 +5826,7 @@
+ XF86VidModeQueryExtension()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5776: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5830: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5808,7 +5862,7 @@
+ 
+ 
+ echo $ac_n "checking for mass_quantities_of_bass_ale in -lFridge""... $ac_c" 1>&6
+-echo "configure:5812: checking for mass_quantities_of_bass_ale in -lFridge" >&5
++echo "configure:5866: checking for mass_quantities_of_bass_ale in -lFridge" >&5
+ ac_lib_var=`echo Fridge'_'mass_quantities_of_bass_ale | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5816,7 +5870,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lFridge  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5820 "configure"
++#line 5874 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5827,7 +5881,7 @@
+ mass_quantities_of_bass_ale()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5831: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5885: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -5855,7 +5909,7 @@
+ fi
+ 
+ echo $ac_n "checking for mass_quantities_of_any_ale in -lFridge""... $ac_c" 1>&6
+-echo "configure:5859: checking for mass_quantities_of_any_ale in -lFridge" >&5
++echo "configure:5913: checking for mass_quantities_of_any_ale in -lFridge" >&5
+ ac_lib_var=`echo Fridge'_'mass_quantities_of_any_ale | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -5863,7 +5917,7 @@
+   ac_save_LIBS="$LIBS"
+ LIBS="-lFridge  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 5867 "configure"
++#line 5921 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -5874,7 +5928,7 @@
+ mass_quantities_of_any_ale()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:5878: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:5932: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
