@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/29 15:19:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2000/11/18 22:54:07 avsm Exp $
 
-DISTNAME=	yafc-0.6.2
+DISTNAME=	yafc-0.6.5
 CATEGORIES=	net
-NEED_VERSION=	1.336
+NEED_VERSION=	1.340
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= yafc
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-readline --with-catgets
-# doesn't work with 2.7's old readline version
+# doesn't work with 2.8's old readline version
 # remove the --without-readline when binutils is upgraded
 
 DOCS=	NEWS README TODO
