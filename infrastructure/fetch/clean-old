@@ -1,0 +1,52 @@
+#! /bin/sh
+# clean old distfiles
+# This script actually produces another shell-script that you may edit
+# before executing.
+
+# $OpenBSD: clean-old,v 1.1 2000/12/06 11:55:11 espie Exp $
+#
+# Copyright (c) 2000 Marc Espie.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE OPENBSD PROJECT AND CONTRIBUTORS
+# ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+# A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OPENBSD
+# PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+# LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+set -e
+: ${PORTSDIR=/usr/ports}
+: ${DISTDIR=${PORTSDIR}/distfiles}
+: ${TMPDIR=/tmp}
+if [ ! -f $DISTDIR/Makefile ]
+then
+	echo >&2 "missing $DISTDIR/Makefile, run make mirror-maker first"
+	exit 1
+fi
+cd $DISTDIR
+
+TMP1=`mktemp $TMPDIR/list.XXXXXXXXXX` || exit 1
+trap 'rm -f $TMP1 $TMP2' 0 1 2 3 5 10 15
+TMP2=`mktemp ${TMPDIR}/list.XXXXXXXXXX` || exit 1
+touch force$$
+make -f Makefile -k FETCH=echo F=force$$ all|sort -u >$TMP1
+rm force$$
+find . -type f -print|sed -e 's,^\./,,' |grep -v '^Makefile$' |sort -u >$TMP2
+echo "#! /bin/sh"
+echo "cd $DISTDIR"
+diff -u $TMP1 $TMP2|tail +3|grep '^\+'|sed -e 's,^\+,rm ,'
+rm $TMP1 $TMP2
