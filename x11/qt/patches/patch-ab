@@ -1,9 +1,9 @@
 --- configs/openbsd-g++-static.orig	Fri Feb 26 12:02:08 1999
-+++ configs/openbsd-g++-static	Fri May 28 12:25:37 1999
++++ configs/openbsd-g++-static	Mon Jun  7 09:28:27 1999
 @@ -1,30 +1,30 @@
  # Compiling
 -SYSCONF_CXX		= g++
-+SYSCONF_CXX		= $(CX)
++SYSCONF_CXX		= $(SYS_CXX)
  
  # Compiling with support libraries
 -SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
@@ -33,7 +33,7 @@
  
  # Linking applications
 -SYSCONF_LINK		= g++
-+SYSCONF_LINK		= $(CX)
++SYSCONF_LINK		= $(SYS_CXX)
  SYSCONF_LFLAGS		= 
  SYSCONF_LIBS		= 
  
@@ -51,12 +51,12 @@
  				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
  # Compiling application source
 -SYSCONF_CXXFLAGS	= -O2 -fno-strength-reduce
-+SYSCONF_CXXFLAGS	= $(CXFLAGS) -fno-strength-reduce
++SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS) -fno-strength-reduce
  # Compiling library source
 -SYSCONF_CXXFLAGS_LIB	= -O2 -fno-strength-reduce -fPIC
-+SYSCONF_CXXFLAGS_LIB	= $(CXFLAGS) -fno-strength-reduce -fPIC
++SYSCONF_CXXFLAGS_LIB	= $(SYS_CXXFLAGS) -fno-strength-reduce -fPIC
  # Compiling shared-object source
 -SYSCONF_CXXFLAGS_SHOBJ	= -O2 -fno-strength-reduce -fPIC
-+SYSCONF_CXXFLAGS_SHOBJ	= $(CXFLAGS) -fno-strength-reduce -fPIC
++SYSCONF_CXXFLAGS_SHOBJ	= $(SYS_CXXFLAGS) -fno-strength-reduce -fPIC
  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_STATIC)
  SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_STATIC)

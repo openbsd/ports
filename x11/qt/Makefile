@@ -1,25 +1,21 @@
-# $OpenBSD: Makefile,v 1.20 1999/05/28 18:10:19 brad Exp $
+# $OpenBSD: Makefile,v 1.21 1999/06/07 15:58:48 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-NEED_VERSION=	1.64
+NEED_VERSION=	1.96
 
 MAINTAINER=	brad@openbsd.org
 
 LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/MesaGL \
 		MesaGLU.3.0:${PORTSDIR}/graphics/MesaGL
 
-# Internal Compiler errors
-.if ${MACHINE_ARCH} == "sparc"
-PATCH_LIST=	patch-* sup-sparc
-.endif
-
+USE_EGXX=	yes
 USE_GMAKE=	yes
 USE_X11=	yes
-MAKE_ENV+=	QTDIR=${WRKSRC} CX="${CXX}" CXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	QTDIR=${WRKSRC} SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	dragdrop drawdemo forever hello layout life menu movies pref \
