@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/03/05 18:30:29 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/03/19 00:58:06 espie Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8
 CATEGORIES=	graphics
-NEED_VERSION=	1.223
+NEED_VERSION=	1.227
 MASTER_SITES=	ftp://beaver.its.vu.edu.au/pub/enlightenment/enlightenment/libs/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/imlib/ \
 		ftp://ftp.squish.org/pub/enlightenment/imlib/
@@ -32,11 +32,12 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk-config"
+		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
 pre-build:
 	@echo ""
@@ -50,6 +51,5 @@ pre-build:
 post-install:
 	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${LOCALBASE}/share/aclocal/
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
