@@ -1,6 +1,6 @@
 :
 
-MOZILLA_HOME=%%LOCALBASE%%/mozilla
+MOZILLA_HOME=%%LOCALBASE%%/%%MOZDIR%%
 
 if [ -z "$MOZ_PLUGIN_PATH" ]; then
   MOZ_PLUGIN_PATH=~/.mozilla/plugins/
