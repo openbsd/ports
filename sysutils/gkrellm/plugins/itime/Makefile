@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/10 13:42:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/20 20:19:39 sturm Exp $
 
 COMMENT=	"GkrellM2 plugin that shows Interet Time"
 
 VERSION=	1.0.1
 DISTNAME=	gkrellmitime-${VERSION}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net sysutils/gkrellm
 
 HOMEPAGE=	http://eric.bianchi.free.fr/gkrellm/

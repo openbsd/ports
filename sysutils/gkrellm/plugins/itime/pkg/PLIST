@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/03 20:34:17 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2005/01/20 20:19:39 sturm Exp $
+lib/gkrellm2/
+lib/gkrellm2/plugins/
 lib/gkrellm2/plugins/gkrellm_itime.so

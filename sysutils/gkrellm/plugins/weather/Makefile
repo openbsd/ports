@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/12 04:55:36 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/20 20:19:40 sturm Exp $
 
 COMMENT=	"Weather plugin for GkrellM2"
 
 DISTNAME=	gkrellweather-2.0.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11 sysutils/gkrellm
 EXTRACT_SUFX=	.tgz
 
