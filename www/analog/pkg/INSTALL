@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 1999/12/13 17:26:55 form Exp $
+# $OpenBSD: INSTALL,v 1.3 2000/05/31 18:48:39 form Exp $
 #
 # Pre/post-installation setup of analog
 
@@ -18,6 +18,8 @@ IMAGES="analogo.gif bara1.gif bara16.gif bara2.gif bara32.gif bara4.gif \
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=/etc/analog.cfg
+SAMPLE_CONFIG_FILE=${PREFIX}/share/analog/analog.cfg
 
 # verify proper execution
 #
@@ -25,6 +27,35 @@ if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file, ${CONFIG_FILE},"
+    echo "| has NOT been changed.  You may want to compare it to the"
+    echo "| current sample file, ${SAMPLE_CONFIG_FILE},"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install the default analog.cfg from the sample
+#
+do_install()
+{
+    install -o root -g wheel -m 644 ${SAMPLE_CONFIG_FILE} ${CONFIG_FILE}
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration file, ${CONFIG_FILE},"
+    echo "| has been installed.  Please view this file and change"
+    echo "| the configuration to meet your needs."
+    echo "+---------------"
+    echo
+
+}
 
 # Verify/process the command
 #
@@ -38,13 +69,16 @@ case $2 in
 		install -d -o root -g daemon -m 755 /var/www/cgi-bin
 	for img in ${IMAGES}; do
 		install -o root -g bin -m 444 \
-			${PREFIX}/lib/analog/images/${img} \
+			${PREFIX}/share/analog/images/${img} \
 			/var/www/htdocs/analog-images
 	done
-	install -o root -g bin -m 111 ${PREFIX}/lib/analog/anlgform.pl \
+	install -o root -g bin -m 111 ${PREFIX}/share/analog/anlgform.pl \
 		/var/www/cgi-bin
-	[ -f /etc/analog.cfg ] || install -o root -g wheel -m 444 \
-		${PREFIX}/lib/analog/analog.cfg /etc
+	if [ -f ${CONFIG_FILE} ]; then
+		do_notice $1
+	else
+		do_install $1
+	fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

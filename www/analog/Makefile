@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/01 17:23:54 form Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/31 18:48:37 form Exp $
 
-DISTNAME=	analog-4.1
+DISTNAME=	analog-4.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FAKE=		Yes
 
 ETCDIR=		/etc
-ANALOGDIR=	${PREFIX}/lib/analog
+ANALOGDIR=	${PREFIX}/share/analog
 CONFIGFILE=	${ETCDIR}/analog.cfg
 DOCDIR=		${PREFIX}/share/doc/analog
 HTTPDIR=	/var/www
@@ -35,18 +35,21 @@ CFLAGS+=	-DANALOGDIR=\\\"${ANALOGDIR}/\\\" \
 		-DIMAGEDIR=\\\"${IMAGEDIR}/\\\" \
 		-DANALOG=\\\"${PREFIX}/bin/analog\\\"
 
+ALL_TARGET=	analog
+
 post-patch:
 	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
 	@sed -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
 		> ${WRKSRC}/anlgform.pl
 
 do-install:
-	@${INSTALL_DATA_DIR} ${DOCDIR}
-	@${INSTALL_DATA_DIR} ${ANALOGDIR}/lang
-	@${INSTALL_DATA_DIR} ${ANALOGDIR}/images
-	@${INSTALL_DATA_DIR} ${HTTPDIR}/htdocs${IMAGEDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/analog
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/analog
+	${INSTALL_DATA_DIR} ${ANALOGDIR}/lang
+	${INSTALL_DATA_DIR} ${ANALOGDIR}/images
 	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/analog
 	${INSTALL_DATA} ${WRKSRC}/images/* ${ANALOGDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${ANALOGDIR}

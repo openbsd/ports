@@ -1,7 +1,6 @@
-# $OpenBSD: patch-ac,v 1.5 2000/03/22 10:37:16 form Exp $
-
---- analog.cfg.orig	Wed Mar 22 16:28:54 2000
-+++ analog.cfg	Wed Mar 22 16:29:15 2000
+$OpenBSD: patch-analog_cfg,v 1.1 2000/05/31 18:48:38 form Exp $
+--- analog.cfg.orig	Thu Jun  1 00:48:11 2000
++++ analog.cfg	Thu Jun  1 00:50:06 2000
 @@ -7,7 +7,7 @@
  # There is a much more extensive configuration file in examples/big.cfg
  #

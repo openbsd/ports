@@ -1,9 +1,8 @@
-# $OpenBSD: patch-ab,v 1.4 1999/12/13 17:30:30 form Exp $
-
---- anlgform.pl.orig	Mon Dec 13 23:07:41 1999
-+++ anlgform.pl	Mon Dec 13 23:08:47 1999
-@@ -39,6 +39,8 @@
- $progname = $0 || 'anlgform.pl';  # can $0 ever not be set?
+$OpenBSD: patch-anlgform_pl,v 1.1 2000/05/31 18:48:39 form Exp $
+--- anlgform.pl.orig	Wed May 31 22:46:16 2000
++++ anlgform.pl	Thu Jun  1 00:47:18 2000
+@@ -39,6 +39,8 @@ $lt = localtime;
+ $progname = $0 || 'anlgform.pl';
  if (($^O =~ /win32/i || $^O =~ /^win/i) && Win32::GetShortPathName($analog)) {
      $analog = Win32::GetShortPathName($analog);
 +} else {

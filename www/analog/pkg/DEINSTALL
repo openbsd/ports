@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 1999/12/13 17:26:55 form Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2000/05/31 18:48:39 form Exp $
 #
 # analog deinstallation
 
@@ -17,18 +17,24 @@ IMAGES="analogo.gif bara1.gif bara16.gif bara2.gif bara32.gif bara4.gif \
 #
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
+CONFIG_FILE=/etc/analog.cfg
 
 for img in ${IMAGES}; do rm -f /var/www/htdocs/analog-images/${img}; done
 rmdir /var/www/htdocs/analog-images
 rm -f /var/www/cgi-bin/anlgform.pl
-if [ -f /etc/analog.cfg ]; then
-	echo ""
-	echo "+---------------"
-	echo "| To completely deinstall the $1 package you need to remove"
-	echo "| /etc/analog.cfg file manually."
-	echo "|"
-	echo "+---------------"
-	echo ""
+
+if [ -f ${CONFIG_FILE} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -f ${CONFIG_FILE}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
 fi
 
 exit 0
