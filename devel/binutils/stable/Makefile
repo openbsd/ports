@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/13 10:54:45 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2002/10/25 22:37:12 naddy Exp $
 
 COMMENT=		"GNU development tools"
 
 DISTNAME=		binutils-2.11.2
 CATEGORIES=		devel
-NEED_VERSION=		1.528
 MASTER_SITES=           ${MASTER_SITE_GNU:=binutils/}
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,6 +36,8 @@ TARGET_ARCH=		${MACHINE_ARCH}
 .endif
 
 TARGET_DIR=		$${PREFIX}/${TARGET_ARCH}-unknown-openbsd${OSREV}
+
+REGRESS_TARGET=		check
 
 FILES=			ar nm-new objdump ranlib size strings strip-new 
 
