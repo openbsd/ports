@@ -1,0 +1,83 @@
+*** /dev/null	Tue May 19 01:26:19 1998
+--- xfedor.man	Tue May 19 01:28:40 1998
+***************
+*** 0 ****
+--- 1,78 ----
++ 
++    XFEDOR(1)            X Version 11                                XFEDOR(1)
++ 
++    NAME
++ 	xfedor - font, cursor, icon editor.
++ 
++    SYNTAX
++        	xfedor 	[-f fontfile[.bdf]] [-b bitmapfile[.xbm]]
++                 [-m mousefiles] [-p pixmapfile[.xpm]] 
++                 [-z] [-xy] [-f1 fontname] [-f2 fontname]
++                 [-g +x+y] [-d host:display.screen]
++ 
++    DESCRIPTION
++ 	xfedor is an X Window System Version 11 client.
++ 	xfedor is essentially a font editor for X11 bdf files (V 2.1).
++ 	xfedor can also generates limited (128x128) bitmaps in X11 format
++ 	or in XPM format (color) and has facilities for creating cursors.
++         xfedor is pure Xlib and doesn't support X resources.
++ 
++    ARGUMENTS
++         -f fontfile
++ 	    a bdf file to be read at startup.
++ 	    (xfedor appends .bdf if there is no extention).
++      	-b bitmapfile
++             bitmap file in X11 format : "include file C".
++             (priority to .xbm extensions)
++      	-m mousefiles
++             two bitmap X11 files, mousefileFore and mousefileMask,
++             are looking for in $MAP directory. (as at run-time)
++      	-p pixmapfile
++             pixmap file (color) in XPM format (ASCII editable)
++             (priority for .xpm extensions)
++ 	-rv 
++ 	    reverse video : white on black (default black on white).
++         -f1 fontname
++             font to be use in general interface
++         -f2 fontname
++             font to be use in mouse guide lines
++         +x+y
++ 	    initial geometry of the main window (default 10,10).
++      	-z, -xy
++             Pixmap format used in image transferts (XPutImage,XGetImage).
++ 
++    SHELL VARIABLES
++ 	BDF
++ 	    directory for read and write bdf files.
++             default value is empty string (current).
++ 	SOS
++ 	    directory where xfedor search help files (optional).
++             default is /usr/local/lib/X11/xfedor.
++ 	MAP
++ 	    directory to read and write bitmap/pixmap files from.
++             default value is empty string (current).
++ 	DISPLAY
++ 	    default server name.
++       	HOME
++ 	    User home directory. Used as ~ replacement when it 
++             appears as the first character of file name.
++ 
++             If the file name begins by a /, full path is taken.
++ 
++    FILES
++ 	$SOS/*.sos	help files:
++                  (*.sos, with * = {BEZIERS,FILL,METRIC,ROTATE,
++                     WRITE,CIRCLE,FONT,NUM,SAVE,CUTAP,GARB,SOS,
++                     RECTANGLE,EDIT,LINE,RESIZE,TRANSLATE,default)
++ 	$MAP/Fore*	bitmap files for cursor foreground
++ 	$MAP/Mask*	bitmap files for cursor background
++ 	$BDF/*.bdf	Bitmap Distribution Format Files.
++     	$MAP/*.xbm   	Bitmap X11 file (#define ..)
++     	$MAP/*.xpm      XPM format file (color format in ASCII).
++ 
++    SEE ALSO
++ 	bitmap(X), bdftosnf(X), xsetroot(X), pixmap.
++ 
++    AUTHORS
++ 	A young Daniel DARDAILLER
++ 
