@@ -1,6 +1,6 @@
-$OpenBSD: patch-gfx_src_freetype_nsFreeType_h,v 1.1 2004/11/05 07:37:56 jolan Exp $
---- gfx/src/freetype/nsFreeType.h.orig	Wed Jun 11 13:15:22 2003
-+++ gfx/src/freetype/nsFreeType.h	Fri Nov  5 00:25:48 2004
+$OpenBSD: patch-gfx_src_freetype_nsFreeType_h,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
+--- gfx/src/freetype/nsFreeType.h.orig	Fri Apr 16 23:31:42 2004
++++ gfx/src/freetype/nsFreeType.h	Sat Nov  6 02:11:14 2004
 @@ -104,13 +104,15 @@ typedef FT_Error (*FT_Outline_Decompose_
  typedef FT_Error (*FT_New_Face_t)(FT_Library, const char*, FT_Long, FT_Face*);
  typedef FT_Error (*FT_Set_Charmap_t)(FT_Face face, FT_CharMap  charmap);
@@ -16,10 +16,10 @@ $OpenBSD: patch-gfx_src_freetype_nsFreeType_h,v 1.1 2004/11/05 07:37:56 jolan Ex
                         FTC_Face_Requester, FT_Pointer, FTC_Manager*);
 -typedef FT_Error (*FTC_Image_Cache_New_t)(FTC_Manager, FTC_Image_Cache*);
 +typedef FT_Error (*FTC_Image_Cache_New_t)(FTC_Manager, FTC_ImageCache*);
- 
- typedef FT_ULong (*FT_Get_First_Char_t)(FT_Face, FT_UInt*);
- typedef FT_ULong (*FT_Get_Next_Char_t)(FT_Face, FT_ULong, FT_UInt*);
-@@ -157,7 +159,7 @@ protected:
+ // #ifdef MOZ_SVG
+ typedef FT_Error (*FT_Glyph_Transform_t)(FT_Glyph, FT_Matrix*, FT_Vector*);
+ typedef FT_Error (*FT_Get_Kerning_t)
+@@ -165,7 +167,7 @@ protected:
    FT_Outline_Decompose_t    nsFT_Outline_Decompose;
    FT_Set_Charmap_t          nsFT_Set_Charmap;
    FTC_Image_Cache_Lookup_t  nsFTC_Image_Cache_Lookup;
@@ -28,7 +28,7 @@ $OpenBSD: patch-gfx_src_freetype_nsFreeType_h,v 1.1 2004/11/05 07:37:56 jolan Ex
    FTC_Manager_Done_t        nsFTC_Manager_Done;
    FTC_Manager_New_t         nsFTC_Manager_New;
    FTC_Image_Cache_New_t     nsFTC_Image_Cache_New;
-@@ -195,7 +197,7 @@ protected:
+@@ -213,7 +215,7 @@ protected:
    PRLibrary      *mSharedLib;
    FT_Library      mFreeTypeLibrary;
    FTC_Manager     mFTCacheManager;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptc_platforms_unixish_x86_h,v 1.1 2004/11/13 14:25:51 kettenis Exp $
---- xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h.orig	Thu Jan  8 19:17:07 2004
-+++ xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h	Fri Nov 12 21:09:52 2004
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptc_platforms_unixish_x86_h,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
+--- xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h.orig	Mon Nov 22 00:44:00 2004
++++ xpcom/reflect/xptcall/src/md/unix/xptc_platforms_unixish_x86.h	Mon Nov 22 00:44:50 2004
 @@ -107,12 +107,16 @@
  #define THUNK_BASED_THIS_ADJUST
  

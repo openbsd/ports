@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_io_nsNativeCharsetUtils_cpp,v 1.1.1.1 2004/02/15 19:37:25 wilfried Exp $
---- xpcom/io/nsNativeCharsetUtils.cpp.orig	2003-07-30 07:58:28.000000000 +0200
-+++ xpcom/io/nsNativeCharsetUtils.cpp	2003-12-12 12:41:30.000000000 +0100
-@@ -294,7 +294,11 @@ nsNativeCharsetConverter::LazyInit()
+$OpenBSD: patch-xpcom_io_nsNativeCharsetUtils_cpp,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
+--- xpcom/io/nsNativeCharsetUtils.cpp.orig	2004-05-27 20:55:10.000000000 +0200
++++ xpcom/io/nsNativeCharsetUtils.cpp	2004-06-16 09:50:16.000000000 +0200
+@@ -295,7 +295,11 @@ nsNativeCharsetConverter::LazyInit()
  {
      const char  *blank_list[] = { "", NULL };
      const char **native_charset_list = blank_list;

@@ -1,24 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/18 13:15:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/11/26 18:29:15 pvalchev Exp $
 @conflict mozilla-firebird-*
+%%SHARED%%
 bin/firefox
 bin/mozilla-firefox
 mozilla-firefox/
+mozilla-firefox/LICENSE
 mozilla-firefox/chrome/
-mozilla-firefox/chrome/US/
-mozilla-firefox/chrome/US.jar
-mozilla-firefox/chrome/US/locale/
-mozilla-firefox/chrome/US/locale/US/
-mozilla-firefox/chrome/US/locale/US/browser-region/
-mozilla-firefox/chrome/US/locale/US/communicator-region/
-mozilla-firefox/chrome/US/locale/US/global-region/
-mozilla-firefox/chrome/US/locale/US/navigator-region/
 mozilla-firefox/chrome/browser/
 mozilla-firefox/chrome/browser.jar
 mozilla-firefox/chrome/browser/content/
 mozilla-firefox/chrome/browser/content/browser/
+mozilla-firefox/chrome/browser/content/browser-region/
 mozilla-firefox/chrome/browser/content/browser/bookmarks/
 mozilla-firefox/chrome/browser/content/browser/cookieviewer/
 mozilla-firefox/chrome/browser/content/browser/history/
+mozilla-firefox/chrome/browser/content/browser/migration/
 mozilla-firefox/chrome/browser/content/browser/pref/
 mozilla-firefox/chrome/chromelist.txt
 mozilla-firefox/chrome/classic/
@@ -29,71 +25,35 @@ mozilla-firefox/chrome/classic/skin/classic/browser/
 mozilla-firefox/chrome/classic/skin/classic/browser/bookmarks/
 mozilla-firefox/chrome/classic/skin/classic/browser/pref/
 mozilla-firefox/chrome/classic/skin/classic/communicator/
-mozilla-firefox/chrome/classic/skin/classic/communicator/alerts/
-mozilla-firefox/chrome/classic/skin/classic/communicator/bookmarks/
-mozilla-firefox/chrome/classic/skin/classic/communicator/brand/
 mozilla-firefox/chrome/classic/skin/classic/communicator/cookie/
-mozilla-firefox/chrome/classic/skin/classic/communicator/directory/
-mozilla-firefox/chrome/classic/skin/classic/communicator/icons/
-mozilla-firefox/chrome/classic/skin/classic/communicator/profile/
-mozilla-firefox/chrome/classic/skin/classic/communicator/related/
-mozilla-firefox/chrome/classic/skin/classic/communicator/search/
-mozilla-firefox/chrome/classic/skin/classic/communicator/sidebar/
-mozilla-firefox/chrome/classic/skin/classic/communicator/taskbar/
-mozilla-firefox/chrome/classic/skin/classic/communicator/xpinstall/
-mozilla-firefox/chrome/classic/skin/classic/editor/
-mozilla-firefox/chrome/classic/skin/classic/editor/icons/
 mozilla-firefox/chrome/classic/skin/classic/global/
+mozilla-firefox/chrome/classic/skin/classic/global/alerts/
 mozilla-firefox/chrome/classic/skin/classic/global/arrow/
 mozilla-firefox/chrome/classic/skin/classic/global/checkbox/
 mozilla-firefox/chrome/classic/skin/classic/global/console/
-mozilla-firefox/chrome/classic/skin/classic/global/filepicker/
 mozilla-firefox/chrome/classic/skin/classic/global/icons/
 mozilla-firefox/chrome/classic/skin/classic/global/menu/
-mozilla-firefox/chrome/classic/skin/classic/global/progressmeter/
 mozilla-firefox/chrome/classic/skin/classic/global/radio/
 mozilla-firefox/chrome/classic/skin/classic/global/scrollbar/
-mozilla-firefox/chrome/classic/skin/classic/global/splitter/
+mozilla-firefox/chrome/classic/skin/classic/global/throbber/
 mozilla-firefox/chrome/classic/skin/classic/global/toolbar/
 mozilla-firefox/chrome/classic/skin/classic/global/tree/
-mozilla-firefox/chrome/classic/skin/classic/messenger/
-mozilla-firefox/chrome/classic/skin/classic/messenger/addressbook/
-mozilla-firefox/chrome/classic/skin/classic/messenger/addressbook/icons/
-mozilla-firefox/chrome/classic/skin/classic/messenger/icons/
-mozilla-firefox/chrome/classic/skin/classic/messenger/messengercompose/
-mozilla-firefox/chrome/classic/skin/classic/messenger/smime/
-mozilla-firefox/chrome/classic/skin/classic/messenger/smime/icons/
 mozilla-firefox/chrome/classic/skin/classic/mozapps/
 mozilla-firefox/chrome/classic/skin/classic/mozapps/downloads/
+mozilla-firefox/chrome/classic/skin/classic/mozapps/extensions/
+mozilla-firefox/chrome/classic/skin/classic/mozapps/plugins/
 mozilla-firefox/chrome/classic/skin/classic/mozapps/pref/
+mozilla-firefox/chrome/classic/skin/classic/mozapps/profile/
+mozilla-firefox/chrome/classic/skin/classic/mozapps/shared/
+mozilla-firefox/chrome/classic/skin/classic/mozapps/update/
 mozilla-firefox/chrome/classic/skin/classic/mozapps/xpinstall/
-mozilla-firefox/chrome/classic/skin/classic/navigator/
-mozilla-firefox/chrome/classic/skin/classic/navigator/btn1/
-mozilla-firefox/chrome/classic/skin/classic/navigator/icons/
 mozilla-firefox/chrome/comm/
 mozilla-firefox/chrome/comm.jar
 mozilla-firefox/chrome/comm/content/
 mozilla-firefox/chrome/comm/content/autoconfig/
 mozilla-firefox/chrome/comm/content/communicator/
-mozilla-firefox/chrome/comm/content/communicator-platform/
-mozilla-firefox/chrome/comm/content/communicator-region/
-mozilla-firefox/chrome/comm/content/communicator/alerts/
-mozilla-firefox/chrome/comm/content/communicator/directory/
-mozilla-firefox/chrome/comm/content/communicator/history/
-mozilla-firefox/chrome/comm/content/communicator/p3p/
-mozilla-firefox/chrome/comm/content/communicator/pref/
-mozilla-firefox/chrome/comm/content/communicator/profile/
-mozilla-firefox/chrome/comm/content/communicator/related/
-mozilla-firefox/chrome/comm/content/communicator/search/
-mozilla-firefox/chrome/comm/content/communicator/sidebar/
-mozilla-firefox/chrome/comm/content/communicator/xml/
-mozilla-firefox/chrome/comm/content/communicator/xpinstall/
 mozilla-firefox/chrome/comm/content/cookie/
-mozilla-firefox/chrome/comm/content/navigator/
-mozilla-firefox/chrome/comm/content/navigator-platform/
-mozilla-firefox/chrome/comm/content/navigator-region/
 mozilla-firefox/chrome/comm/content/necko/
-mozilla-firefox/chrome/comm/content/p3p/
 mozilla-firefox/chrome/comm/content/xbl-marquee/
 mozilla-firefox/chrome/embed-sample/
 mozilla-firefox/chrome/embed-sample.jar
@@ -108,63 +68,97 @@ mozilla-firefox/chrome/embed-sample/skin/classic/embed/
 mozilla-firefox/chrome/en-US/
 mozilla-firefox/chrome/en-US.jar
 mozilla-firefox/chrome/en-US/locale/
-mozilla-firefox/chrome/en-US/locale/en-US/
-mozilla-firefox/chrome/en-US/locale/en-US/autoconfig/
-mozilla-firefox/chrome/en-US/locale/en-US/browser/
-mozilla-firefox/chrome/en-US/locale/en-US/browser/bookmarks/
-mozilla-firefox/chrome/en-US/locale/en-US/browser/cookieviewer/
-mozilla-firefox/chrome/en-US/locale/en-US/browser/history/
-mozilla-firefox/chrome/en-US/locale/en-US/browser/pref/
-mozilla-firefox/chrome/en-US/locale/en-US/browser/sidebar/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/directory/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/dom/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/history/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/layout/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/pref/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/profile/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/search/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/security/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/sidebar/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/webservices/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/xml/
-mozilla-firefox/chrome/en-US/locale/en-US/communicator/xpinstall/
-mozilla-firefox/chrome/en-US/locale/en-US/cookie/
-mozilla-firefox/chrome/en-US/locale/en-US/global/
-mozilla-firefox/chrome/en-US/locale/en-US/global/history/
-mozilla-firefox/chrome/en-US/locale/en-US/mozapps/
-mozilla-firefox/chrome/en-US/locale/en-US/mozapps/downloads/
-mozilla-firefox/chrome/en-US/locale/en-US/mozapps/xpinstall/
-mozilla-firefox/chrome/en-US/locale/en-US/navigator/
-mozilla-firefox/chrome/en-US/locale/en-US/necko/
-mozilla-firefox/chrome/en-US/locale/en-US/p3p/
-mozilla-firefox/chrome/en-US/locale/en-US/passwordmgr/
-mozilla-firefox/chrome/en-US/locale/en-US/pipnss/
-mozilla-firefox/chrome/en-US/locale/en-US/pippki/
-mozilla-firefox/chrome/en-mac/
-mozilla-firefox/chrome/en-mac.jar
-mozilla-firefox/chrome/en-mac/locale/
-mozilla-firefox/chrome/en-mac/locale/en-US/
-mozilla-firefox/chrome/en-mac/locale/en-US/communicator-platform/
-mozilla-firefox/chrome/en-mac/locale/en-US/communicator-platform/pref/
-mozilla-firefox/chrome/en-mac/locale/en-US/global-platform/
-mozilla-firefox/chrome/en-mac/locale/en-US/navigator-platform/
-mozilla-firefox/chrome/en-unix/
-mozilla-firefox/chrome/en-unix.jar
-mozilla-firefox/chrome/en-unix/locale/
-mozilla-firefox/chrome/en-unix/locale/en-US/
-mozilla-firefox/chrome/en-unix/locale/en-US/communicator-platform/
-mozilla-firefox/chrome/en-unix/locale/en-US/communicator-platform/pref/
-mozilla-firefox/chrome/en-unix/locale/en-US/global-platform/
-mozilla-firefox/chrome/en-unix/locale/en-US/navigator-platform/
-mozilla-firefox/chrome/en-win/
-mozilla-firefox/chrome/en-win.jar
-mozilla-firefox/chrome/en-win/locale/
-mozilla-firefox/chrome/en-win/locale/en-US/
-mozilla-firefox/chrome/en-win/locale/en-US/communicator-platform/
-mozilla-firefox/chrome/en-win/locale/en-US/communicator-platform/pref/
-mozilla-firefox/chrome/en-win/locale/en-US/global-platform/
-mozilla-firefox/chrome/en-win/locale/en-US/navigator-platform/
+mozilla-firefox/chrome/en-US/locale/browser/
+mozilla-firefox/chrome/en-US/locale/browser-region/
+mozilla-firefox/chrome/en-US/locale/browser/bookmarks/
+mozilla-firefox/chrome/en-US/locale/browser/cookieviewer/
+mozilla-firefox/chrome/en-US/locale/browser/history/
+mozilla-firefox/chrome/en-US/locale/browser/migration/
+mozilla-firefox/chrome/en-US/locale/browser/pref/
+mozilla-firefox/chrome/en-US/locale/browser/sidebar/
+mozilla-firefox/chrome/en-US/locale/cookie/
+mozilla-firefox/chrome/en-US/locale/global/
+mozilla-firefox/chrome/en-US/locale/global-platform/
+mozilla-firefox/chrome/en-US/locale/global-platform/mac/
+mozilla-firefox/chrome/en-US/locale/global-platform/unix/
+mozilla-firefox/chrome/en-US/locale/global-platform/win/
+mozilla-firefox/chrome/en-US/locale/global-region/
+mozilla-firefox/chrome/en-US/locale/global/dom/
+mozilla-firefox/chrome/en-US/locale/global/history/
+mozilla-firefox/chrome/en-US/locale/global/layout/
+mozilla-firefox/chrome/en-US/locale/global/security/
+mozilla-firefox/chrome/en-US/locale/global/webservices/
+mozilla-firefox/chrome/en-US/locale/global/xml/
+mozilla-firefox/chrome/en-US/locale/global/xpinstall/
+mozilla-firefox/chrome/en-US/locale/mozapps/
+mozilla-firefox/chrome/en-US/locale/mozapps/downloads/
+mozilla-firefox/chrome/en-US/locale/mozapps/extensions/
+mozilla-firefox/chrome/en-US/locale/mozapps/plugins/
+mozilla-firefox/chrome/en-US/locale/mozapps/profile/
+mozilla-firefox/chrome/en-US/locale/mozapps/update/
+mozilla-firefox/chrome/en-US/locale/mozapps/xpinstall/
+mozilla-firefox/chrome/en-US/locale/necko/
+mozilla-firefox/chrome/en-US/locale/passwordmgr/
+mozilla-firefox/chrome/en-US/locale/pipnss/
+mozilla-firefox/chrome/en-US/locale/pippki/
+mozilla-firefox/chrome/help/
+mozilla-firefox/chrome/help.jar
+mozilla-firefox/chrome/help/content/
+mozilla-firefox/chrome/help/content/help/
+mozilla-firefox/chrome/help/locale/
+mozilla-firefox/chrome/help/locale/en-US/
+mozilla-firefox/chrome/help/locale/en-US/help/
+mozilla-firefox/chrome/help/skin/
+mozilla-firefox/chrome/help/skin/classic/
+mozilla-firefox/chrome/help/skin/classic/help/
+mozilla-firefox/chrome/inspector/
+mozilla-firefox/chrome/inspector.jar
+mozilla-firefox/chrome/inspector/content/
+mozilla-firefox/chrome/inspector/content/inspector/
+mozilla-firefox/chrome/inspector/content/inspector/extensions/
+mozilla-firefox/chrome/inspector/content/inspector/jsutil/
+mozilla-firefox/chrome/inspector/content/inspector/jsutil/events/
+mozilla-firefox/chrome/inspector/content/inspector/jsutil/rdf/
+mozilla-firefox/chrome/inspector/content/inspector/jsutil/system/
+mozilla-firefox/chrome/inspector/content/inspector/jsutil/xpcom/
+mozilla-firefox/chrome/inspector/content/inspector/jsutil/xul/
+mozilla-firefox/chrome/inspector/content/inspector/prefs/
+mozilla-firefox/chrome/inspector/content/inspector/search/
+mozilla-firefox/chrome/inspector/content/inspector/search/modules/
+mozilla-firefox/chrome/inspector/content/inspector/search/modules/findFiles/
+mozilla-firefox/chrome/inspector/content/inspector/search/modules/junkImgs/
+mozilla-firefox/chrome/inspector/content/inspector/tests/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/boxModel/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/computedStyle/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/dom/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/domNode/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/jsObject/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/styleRules/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/stylesheets/
+mozilla-firefox/chrome/inspector/content/inspector/viewers/xblBindings/
+mozilla-firefox/chrome/inspector/locale/
+mozilla-firefox/chrome/inspector/locale/en-US/
+mozilla-firefox/chrome/inspector/locale/en-US/inspector/
+mozilla-firefox/chrome/inspector/locale/en-US/inspector/search/
+mozilla-firefox/chrome/inspector/locale/en-US/inspector/viewers/
+mozilla-firefox/chrome/inspector/skin/
+mozilla-firefox/chrome/inspector/skin/classic/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/viewers/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/viewers/boxModel/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/viewers/dom/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/viewers/domNode/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/viewers/styleRules/
+mozilla-firefox/chrome/inspector/skin/classic/inspector/viewers/xblBindings/
+mozilla-firefox/chrome/inspector/skin/modern/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/viewers/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/viewers/boxModel/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/viewers/dom/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/viewers/domNode/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/viewers/styleRules/
+mozilla-firefox/chrome/inspector/skin/modern/inspector/viewers/xblBindings/
 mozilla-firefox/chrome/installed-chrome.txt
 mozilla-firefox/chrome/modern/
 mozilla-firefox/chrome/modern.jar
@@ -187,8 +181,14 @@ mozilla-firefox/chrome/toolkit/content/global/
 mozilla-firefox/chrome/toolkit/content/global-platform/
 mozilla-firefox/chrome/toolkit/content/global-region/
 mozilla-firefox/chrome/toolkit/content/global/bindings/
+mozilla-firefox/chrome/toolkit/content/global/xml/
 mozilla-firefox/chrome/toolkit/content/mozapps/
 mozilla-firefox/chrome/toolkit/content/mozapps/downloads/
+mozilla-firefox/chrome/toolkit/content/mozapps/extensions/
+mozilla-firefox/chrome/toolkit/content/mozapps/plugins/
+mozilla-firefox/chrome/toolkit/content/mozapps/profile/
+mozilla-firefox/chrome/toolkit/content/mozapps/shared/
+mozilla-firefox/chrome/toolkit/content/mozapps/update/
 mozilla-firefox/chrome/toolkit/content/mozapps/xpinstall/
 mozilla-firefox/chrome/toolkit/content/passwordmgr/
 mozilla-firefox/components/
@@ -199,7 +199,6 @@ mozilla-firefox/components/autoconfig.xpt
 mozilla-firefox/components/bookmarks.xpt
 mozilla-firefox/components/caps.xpt
 mozilla-firefox/components/chardet.xpt
-mozilla-firefox/components/chrome.xpt
 mozilla-firefox/components/commandhandler.xpt
 mozilla-firefox/components/composer.xpt
 mozilla-firefox/components/content_base.xpt
@@ -216,6 +215,7 @@ mozilla-firefox/components/dom_core.xpt
 mozilla-firefox/components/dom_css.xpt
 mozilla-firefox/components/dom_events.xpt
 mozilla-firefox/components/dom_html.xpt
+mozilla-firefox/components/dom_loadsave.xpt
 mozilla-firefox/components/dom_range.xpt
 mozilla-firefox/components/dom_stylesheets.xpt
 mozilla-firefox/components/dom_traversal.xpt
@@ -226,7 +226,9 @@ mozilla-firefox/components/dom_xul.xpt
 mozilla-firefox/components/downloads.xpt
 mozilla-firefox/components/editor.xpt
 mozilla-firefox/components/embed_base.xpt
+mozilla-firefox/components/extensions.xpt
 mozilla-firefox/components/exthandler.xpt
+mozilla-firefox/components/fastfind.xpt
 mozilla-firefox/components/filepicker.xpt
 mozilla-firefox/components/find.xpt
 mozilla-firefox/components/gfx.xpt
@@ -234,8 +236,9 @@ mozilla-firefox/components/helperAppDlg.xpt
 mozilla-firefox/components/history.xpt
 mozilla-firefox/components/htmlparser.xpt
 mozilla-firefox/components/imglib2.xpt
+mozilla-firefox/components/inspector-cmdline.js
+mozilla-firefox/components/inspector.xpt
 mozilla-firefox/components/intl.xpt
-mozilla-firefox/components/ipcd.xpt
 mozilla-firefox/components/jar.xpt
 mozilla-firefox/components/jsconsole-clhandler.js
 mozilla-firefox/components/jsconsole.xpt
@@ -246,6 +249,7 @@ mozilla-firefox/components/layout_xul.xpt
 mozilla-firefox/components/layout_xul_tree.xpt
 mozilla-firefox/components/locale.xpt
 mozilla-firefox/components/lwbrk.xpt
+mozilla-firefox/components/migration.xpt
 mozilla-firefox/components/mimetype.xpt
 mozilla-firefox/components/mozbrwsr.xpt
 mozilla-firefox/components/mozfind.xpt
@@ -265,6 +269,7 @@ mozilla-firefox/components/necko_strconv.xpt
 mozilla-firefox/components/necko_viewsource.xpt
 mozilla-firefox/components/nsCloseAllWindows.js
 mozilla-firefox/components/nsDictionary.js
+mozilla-firefox/components/nsExtensionManager.js
 mozilla-firefox/components/nsFilePicker.js
 mozilla-firefox/components/nsHelperAppDlg.js
 mozilla-firefox/components/nsInterfaceInfoToIDL.js
@@ -272,11 +277,11 @@ mozilla-firefox/components/nsKillAll.js
 mozilla-firefox/components/nsProgressDialog.js
 mozilla-firefox/components/nsProxyAutoConfig.js
 mozilla-firefox/components/nsResetPref.js
+mozilla-firefox/components/nsSetDefaultBrowser.js
 mozilla-firefox/components/nsSidebar.js
-mozilla-firefox/components/nsUpdateNotifier.js
+mozilla-firefox/components/nsUpdateService.js
 mozilla-firefox/components/nsXmlRpcClient.js
 mozilla-firefox/components/oji.xpt
-mozilla-firefox/components/p3p.xpt
 mozilla-firefox/components/passwordmgr.xpt
 mozilla-firefox/components/pipboot.xpt
 mozilla-firefox/components/pipnss.xpt
@@ -284,25 +289,22 @@ mozilla-firefox/components/pippki.xpt
 mozilla-firefox/components/plugin.xpt
 mozilla-firefox/components/pref.xpt
 mozilla-firefox/components/prefetch.xpt
-mozilla-firefox/components/prefmigr.xpt
 mozilla-firefox/components/profile.xpt
-mozilla-firefox/components/profilesharingsetup.xpt
 mozilla-firefox/components/progressDlg.xpt
 mozilla-firefox/components/proxyObjInst.xpt
 mozilla-firefox/components/rdf.xpt
-mozilla-firefox/components/related.xpt
 mozilla-firefox/components/satchel.xpt
 mozilla-firefox/components/search.xpt
+mozilla-firefox/components/shellservice.xpt
 mozilla-firefox/components/shistory.xpt
 mozilla-firefox/components/sidebar.xpt
+mozilla-firefox/components/toolkitprofile.xpt
 mozilla-firefox/components/txmgr.xpt
 mozilla-firefox/components/txtsvc.xpt
-mozilla-firefox/components/typeaheadfind.xpt
-mozilla-firefox/components/ucnative.xpt
 mozilla-firefox/components/uconv.xpt
 mozilla-firefox/components/unicharutil.xpt
+mozilla-firefox/components/update.xpt
 mozilla-firefox/components/uriloader.xpt
-mozilla-firefox/components/util.xpt
 mozilla-firefox/components/webBrowser_core.xpt
 mozilla-firefox/components/webbrowserpersist.xpt
 mozilla-firefox/components/webshell_idls.xpt
@@ -329,33 +331,32 @@ mozilla-firefox/defaults/autoconfig/
 mozilla-firefox/defaults/autoconfig/platform.js
 mozilla-firefox/defaults/autoconfig/prefcalls.js
 mozilla-firefox/defaults/pref/
-mozilla-firefox/defaults/pref/all.js
-mozilla-firefox/defaults/pref/editor.js
-mozilla-firefox/defaults/pref/mailnews.js
-mozilla-firefox/defaults/pref/non-shared.txt
-mozilla-firefox/defaults/pref/security-prefs.js
-mozilla-firefox/defaults/pref/unix.js
-mozilla-firefox/defaults/pref/xpinstall.js
+mozilla-firefox/defaults/pref/firefox-l10n.js
+mozilla-firefox/defaults/pref/firefox.js
+mozilla-firefox/defaults/pref/inspector.js
 mozilla-firefox/defaults/profile/
-mozilla-firefox/defaults/profile/US/
-mozilla-firefox/defaults/profile/US/bookmarks.html
-mozilla-firefox/defaults/profile/US/chrome/
-mozilla-firefox/defaults/profile/US/chrome/userChrome-example.css
-mozilla-firefox/defaults/profile/US/chrome/userContent-example.css
-mozilla-firefox/defaults/profile/US/localstore.rdf
-mozilla-firefox/defaults/profile/US/mimeTypes.rdf
-mozilla-firefox/defaults/profile/US/panels.rdf
-mozilla-firefox/defaults/profile/US/search.rdf
 mozilla-firefox/defaults/profile/bookmarks.html
 mozilla-firefox/defaults/profile/chrome/
 mozilla-firefox/defaults/profile/chrome/userChrome-example.css
 mozilla-firefox/defaults/profile/chrome/userContent-example.css
+mozilla-firefox/defaults/profile/extensions/
+mozilla-firefox/defaults/profile/extensions/Extensions.rdf
+mozilla-firefox/defaults/profile/extensions/installed-extensions.txt
+mozilla-firefox/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+mozilla-firefox/defaults/profile/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 mozilla-firefox/defaults/profile/localstore.rdf
 mozilla-firefox/defaults/profile/mimeTypes.rdf
-mozilla-firefox/defaults/profile/panels.rdf
+mozilla-firefox/defaults/profile/prefs.js
 mozilla-firefox/defaults/profile/search.rdf
 mozilla-firefox/firefox-bin
-mozilla-firefox/mozilla-config
+mozilla-firefox/firefox-config
+mozilla-firefox/greprefs/
+mozilla-firefox/greprefs/all.js
+mozilla-firefox/greprefs/security-prefs.js
+mozilla-firefox/greprefs/xpinstall.js
+mozilla-firefox/mozicon16.xpm
+mozilla-firefox/mozicon50.xpm
+mozilla-firefox/mozilla-firefox-bin
 mozilla-firefox/regchrome
 mozilla-firefox/regxpcom
 mozilla-firefox/res/
@@ -365,7 +366,6 @@ mozilla-firefox/res/arrowd.gif
 mozilla-firefox/res/bloatcycle.html
 mozilla-firefox/res/broken-image.gif
 mozilla-firefox/res/builtin/
-mozilla-firefox/res/builtin/htmlBindings.xml
 mozilla-firefox/res/builtin/platformHTMLBindings.xml
 mozilla-firefox/res/charsetData.properties
 mozilla-firefox/res/charsetalias.properties
@@ -405,6 +405,9 @@ mozilla-firefox/res/html/gopher-sound.gif
 mozilla-firefox/res/html/gopher-telnet.gif
 mozilla-firefox/res/html/gopher-text.gif
 mozilla-firefox/res/html/gopher-unknown.gif
+mozilla-firefox/res/inspector/
+mozilla-firefox/res/inspector/search-registry.rdf
+mozilla-firefox/res/inspector/viewer-registry.rdf
 mozilla-firefox/res/langGroups.properties
 mozilla-firefox/res/language.properties
 mozilla-firefox/res/loading-image.gif
@@ -426,31 +429,18 @@ mozilla-firefox/res/samples/bform.css
 mozilla-firefox/res/samples/bg.jpg
 mozilla-firefox/res/samples/cform.css
 mozilla-firefox/res/samples/checkboxTest.xul
-mozilla-firefox/res/samples/colorpicker.xul
 mozilla-firefox/res/samples/demoform.css
-mozilla-firefox/res/samples/dexopenchrome.xul
-mozilla-firefox/res/samples/dexparamdialog.html
-mozilla-firefox/res/samples/dexparamdialog.xul
 mozilla-firefox/res/samples/find.html
 mozilla-firefox/res/samples/gear1.gif
-mozilla-firefox/res/samples/hidetoolicon.css
-mozilla-firefox/res/samples/hidetoolicon.xul
 mozilla-firefox/res/samples/image_props.html
 mozilla-firefox/res/samples/mozform.css
 mozilla-firefox/res/samples/printsetup.html
 mozilla-firefox/res/samples/raptor.jpg
 mozilla-firefox/res/samples/rock_gra.gif
-mozilla-firefox/res/samples/sampleimages/
-mozilla-firefox/res/samples/sampleimages/bongo.gif
-mozilla-firefox/res/samples/sampleimages/down.gif
-mozilla-firefox/res/samples/sampleimages/left.gif
-mozilla-firefox/res/samples/sampleimages/right.gif
-mozilla-firefox/res/samples/sampleimages/up.gif
 mozilla-firefox/res/samples/scrollbarTest1.xul
 mozilla-firefox/res/samples/scrollbarTest2.xul
 mozilla-firefox/res/samples/sliderTest1.xul
 mozilla-firefox/res/samples/soundtest.html
-mozilla-firefox/res/samples/tab.xul
 mozilla-firefox/res/samples/test.wav
 mozilla-firefox/res/samples/test0.html
 mozilla-firefox/res/samples/test1.html
@@ -485,8 +475,6 @@ mozilla-firefox/res/samples/test_weight.html
 mozilla-firefox/res/samples/toolbarTest1.xul
 mozilla-firefox/res/samples/treeTest1.css
 mozilla-firefox/res/samples/treeTest1.xul
-mozilla-firefox/res/samples/widgets.xul
-mozilla-firefox/res/samples/xpmenu.xul
 mozilla-firefox/res/samples/xulTest.css
 mozilla-firefox/res/table-add-column-after-active.gif
 mozilla-firefox/res/table-add-column-after-hover.gif
@@ -544,120 +532,15 @@ mozilla-firefox/res/viewer.properties
 mozilla-firefox/res/viewsource.css
 mozilla-firefox/run-mozilla.sh
 mozilla-firefox/searchplugins/
+mozilla-firefox/searchplugins/amazondotcom.png
+mozilla-firefox/searchplugins/amazondotcom.src
+mozilla-firefox/searchplugins/creativecommons.png
+mozilla-firefox/searchplugins/creativecommons.src
+mozilla-firefox/searchplugins/dictionary.png
+mozilla-firefox/searchplugins/dictionary.src
+mozilla-firefox/searchplugins/eBay.gif
+mozilla-firefox/searchplugins/eBay.src
 mozilla-firefox/searchplugins/google.gif
 mozilla-firefox/searchplugins/google.src
-@exec mkdir -p %D/mozilla-firefox/chrome/toolkit/content/passwordmgr
-@exec mkdir -p %D/mozilla-firefox/chrome/toolkit/content/mozapps/xpinstall
-@exec mkdir -p %D/mozilla-firefox/chrome/toolkit/content/mozapps/downloads
-@exec mkdir -p %D/mozilla-firefox/chrome/toolkit/content/global/bindings
-@exec mkdir -p %D/mozilla-firefox/chrome/toolkit/content/global-region
-@exec mkdir -p %D/mozilla-firefox/chrome/toolkit/content/global-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/pippki/content/pippki
-@exec mkdir -p %D/mozilla-firefox/chrome/pipnss/content/pipnss
-@exec mkdir -p %D/mozilla-firefox/chrome/modern/skin/modern/communicator/cookie
-@exec mkdir -p %D/mozilla-firefox/chrome/en-win/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/en-win/locale/en-US/global-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/en-win/locale/en-US/communicator-platform/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/en-unix/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/en-unix/locale/en-US/global-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/en-unix/locale/en-US/communicator-platform/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/en-mac/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/en-mac/locale/en-US/global-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/en-mac/locale/en-US/communicator-platform/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/pippki
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/pipnss
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/passwordmgr
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/p3p
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/necko
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/navigator
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/mozapps/xpinstall
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/mozapps/downloads
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/global/history
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/cookie
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/xpinstall
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/xml
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/webservices
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/sidebar
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/security
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/search
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/profile
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/layout
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/history
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/dom
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/communicator/directory
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/browser/sidebar
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/browser/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/browser/history
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/browser/cookieviewer
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/browser/bookmarks
-@exec mkdir -p %D/mozilla-firefox/chrome/en-US/locale/en-US/autoconfig
-@exec mkdir -p %D/mozilla-firefox/chrome/embed-sample/skin/classic/embed
-@exec mkdir -p %D/mozilla-firefox/chrome/embed-sample/locale/en-US/embed
-@exec mkdir -p %D/mozilla-firefox/chrome/embed-sample/content/embed
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/xbl-marquee
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/p3p
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/necko
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/navigator-region
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/navigator-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/navigator
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/cookie
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/xpinstall
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/xml
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/sidebar
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/search
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/related
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/profile
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/p3p
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/history
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/directory
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator/alerts
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator-region
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/communicator-platform
-@exec mkdir -p %D/mozilla-firefox/chrome/comm/content/autoconfig
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/navigator/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/navigator/btn1
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/mozapps/xpinstall
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/mozapps/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/mozapps/downloads
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/messenger/smime/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/messenger/messengercompose
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/messenger/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/messenger/addressbook/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/tree
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/toolbar
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/splitter
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/scrollbar
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/radio
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/progressmeter
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/menu
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/filepicker
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/console
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/checkbox
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/global/arrow
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/editor/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/xpinstall
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/taskbar
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/sidebar
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/search
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/related
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/profile
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/icons
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/directory
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/cookie
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/brand
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/bookmarks
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/communicator/alerts
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/browser/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/classic/skin/classic/browser/bookmarks
-@exec mkdir -p %D/mozilla-firefox/chrome/browser/content/browser/pref
-@exec mkdir -p %D/mozilla-firefox/chrome/browser/content/browser/history
-@exec mkdir -p %D/mozilla-firefox/chrome/browser/content/browser/cookieviewer
-@exec mkdir -p %D/mozilla-firefox/chrome/browser/content/browser/bookmarks
-@exec mkdir -p %D/mozilla-firefox/chrome/US/locale/US/navigator-region
-@exec mkdir -p %D/mozilla-firefox/chrome/US/locale/US/global-region
-@exec mkdir -p %D/mozilla-firefox/chrome/US/locale/US/communicator-region
-@exec mkdir -p %D/mozilla-firefox/chrome/US/locale/US/browser-region
-%%SHARED%%
+mozilla-firefox/searchplugins/yahoo.gif
+mozilla-firefox/searchplugins/yahoo.src

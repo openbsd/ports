@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/08 17:19:37 robert Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/11/26 18:29:15 pvalchev Exp $
 @lib mozilla-firefox/components/libaccessibility.so.1.0
 @lib mozilla-firefox/components/libappcomps.so.1.0
 @lib mozilla-firefox/components/libautoconfig.so.1.0
@@ -19,28 +19,23 @@
 @lib mozilla-firefox/components/libhtmlpars.so.1.0
 @lib mozilla-firefox/components/libi18n.so.1.0
 @lib mozilla-firefox/components/libimglib2.so.1.0
-@lib mozilla-firefox/components/libipcdc.so.1.0
+@lib mozilla-firefox/components/libinspector.so.1.0
 @lib mozilla-firefox/components/libjar50.so.1.0
 @lib mozilla-firefox/components/libjsd.so.1.0
-@lib mozilla-firefox/components/libjsdom.so.1.0
 @lib mozilla-firefox/components/libmork.so.1.0
 @lib mozilla-firefox/components/libmozfind.so.1.0
 @lib mozilla-firefox/components/libnecko.so.1.0
 @lib mozilla-firefox/components/libnecko2.so.1.0
 @lib mozilla-firefox/components/libnsappshell.so.1.0
-@lib mozilla-firefox/components/libnsprefm.so.1.0
 @lib mozilla-firefox/components/liboji.so.1.0
-@lib mozilla-firefox/components/libp3p.so.1.0
 @lib mozilla-firefox/components/libpipboot.so.1.0
 @lib mozilla-firefox/components/libpipnss.so.1.0
 @lib mozilla-firefox/components/libpippki.so.1.0
 @lib mozilla-firefox/components/libpref.so.1.0
-@lib mozilla-firefox/components/libprofile.so.1.0
 @lib mozilla-firefox/components/librdf.so.1.0
 @lib mozilla-firefox/components/libtoolkitcomps.so.1.0
 @lib mozilla-firefox/components/libtransformiix.so.1.0
 @lib mozilla-firefox/components/libtxmgr.so.1.0
-@lib mozilla-firefox/components/libtypeaheadfind.so.1.0
 @lib mozilla-firefox/components/libuconv.so.1.0
 @lib mozilla-firefox/components/libucvmath.so.1.0
 @lib mozilla-firefox/components/libuniversalchardet.so.1.0

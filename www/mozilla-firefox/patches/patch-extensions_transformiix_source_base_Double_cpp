@@ -1,7 +1,7 @@
-$OpenBSD: patch-extensions_transformiix_source_base_Double_cpp,v 1.1.1.1 2004/02/15 19:37:25 wilfried Exp $
---- extensions/transformiix/source/base/Double.cpp.orig	2004-01-14 01:22:02.000000000 +0100
-+++ extensions/transformiix/source/base/Double.cpp	2004-02-13 13:44:07.000000000 +0100
-@@ -108,17 +108,19 @@ typedef union {
+$OpenBSD: patch-extensions_transformiix_source_base_Double_cpp,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
+--- extensions/transformiix/source/base/Double.cpp.orig	2004-01-15 22:23:18.000000000 +0100
++++ extensions/transformiix/source/base/Double.cpp	2004-06-16 09:50:16.000000000 +0200
+@@ -114,17 +114,19 @@ typedef union txdpun {
  #define TX_DOUBLE_HI32_EXPMASK   0x7ff00000
  #define TX_DOUBLE_HI32_MANTMASK  0x000fffff
  

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2004/10/31 07:23:13 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/26 18:29:14 pvalchev Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		0.8
+VER=		1.0
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p1
+PKGNAME=	mozilla-firefox-${VER}
 
 CATEGORIES=	www
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/ \
-		http://ftp.mozilla.org/pub/firefox/releases/${VER}/
-DISTFILES=	firefox-source-${VER}.tar.bz2
+MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/firefox/releases/${VER}/source/ \
+		http://ftp.mozilla.org/pub/firefox/releases/${VER}/source/
+DISTFILES=	firefox-${VER}-source.tar.bz2
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha
@@ -39,6 +39,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
+SUBST_VARS=	LOCALBASE PORTSDIR
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
 				${WRKSRC}/nsprpub/build/autoconf \
@@ -60,9 +61,12 @@ CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
 # from browser/config/mozconfig
 CONFIGURE_ARGS+=--disable-ldap			\
 		--disable-mailnews		\
-		--enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices \
+		--enable-extensions=cookie,xml-rpc,xmlextras,pref,transformiix,universalchardet,webservices,inspector,gnomevfs,negotiateauth \
 		--enable-crypto			\
-		--disable-composer
+		--disable-composer		\
+		--enable-single-profile		\
+		--disable-profilesharing
+
 
 # There is no problem with the propolice-enabled gcc3 on amd64 and sparc64,
 # but it is reported to still be broken on others.
@@ -83,21 +87,25 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC}/nsprpub && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+	@cd ${WRKSRC}/directory/c-sdk && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 	@perl -pi -e 's|_LOCALBASE_|${LOCALBASE}|g; s|_X11BASE_|${X11BASE}|g' \
 		${WRKSRC}/browser/app/mozilla.in
 
 do-install:
-	${INSTALL_DATA_DIR} ${MOZ}
-.for dir in chrome components defaults res searchplugins
+.for dir in chrome components defaults greprefs res searchplugins
+	${INSTALL_DATA_DIR} ${MOZ}/${dir}
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
 	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
-	@chmod 444 ${MOZ}/*.so.1.0 ${MOZ}/components/*.so.1.0
+	@chmod 444 ${MOZ}/*.so.1.0 ${MOZ}/components/*.so.1.0 ${MOZ}/components/*.js
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${MOZ}
+	${INSTALL_DATA} ${WRKSRC}/browser/app/mozicon16.xpm ${WRKSRC}/browser/app/mozicon50.xpm ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/firefox ${PREFIX}/bin/
-	ln ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
-	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/mozilla-config ${MOZ}
+	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
+	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/firefox-config ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regchrome ${MOB}/regxpcom ${MOB}/firefox-bin ${MOZ}
+	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
 
 .include <bsd.port.mk>

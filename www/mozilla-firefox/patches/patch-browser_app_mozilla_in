@@ -1,7 +1,7 @@
-$OpenBSD: patch-browser_app_mozilla_in,v 1.1.1.1 2004/02/15 19:37:25 wilfried Exp $
---- browser/app/mozilla.in.orig	2003-07-26 09:51:05.000000000 +0200
-+++ browser/app/mozilla.in	2004-01-19 15:19:46.000000000 +0100
-@@ -33,6 +33,7 @@
+$OpenBSD: patch-browser_app_mozilla_in,v 1.2 2004/11/26 18:29:15 pvalchev Exp $
+--- browser/app/mozilla.in.orig	Tue Oct 26 11:26:11 2004
++++ browser/app/mozilla.in	Thu Oct 28 17:20:22 2004
+@@ -73,6 +73,7 @@ moz_pis_startstop_scripts()
  #set -x
  
  moz_libdir=%MOZAPPDIR%
@@ -9,7 +9,7 @@ $OpenBSD: patch-browser_app_mozilla_in,v 1.1.1.1 2004/02/15 19:37:25 wilfried Ex
  MRE_HOME=%MREDIR%
  
  # Use run-mozilla.sh in the current dir if it exists
-@@ -106,7 +107,11 @@ do
+@@ -214,7 +215,11 @@ do
    esac
  done
  
@@ -20,5 +20,5 @@ $OpenBSD: patch-browser_app_mozilla_in,v 1.1.1.1 2004/02/15 19:37:25 wilfried Ex
 +
 +export MOZ_PLUGIN_PATH MRE_HOME
  eval "set -- $moreargs"
- if [ $debugging = 1 ]
- then
+ 
+ ## Start addon scripts
