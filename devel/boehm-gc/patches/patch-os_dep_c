@@ -1,11 +1,12 @@
-$OpenBSD: patch-os_dep_c,v 1.4 2003/10/15 12:58:11 todd Exp $
---- os_dep.c.orig	2003-06-14 05:11:00.000000000 +1000
-+++ os_dep.c	2003-10-15 13:40:09.000000000 +1000
-@@ -391,6 +391,18 @@ static void *tiny_sbrk(ptrdiff_t increme
+$OpenBSD: patch-os_dep_c,v 1.5 2003/10/16 04:11:15 todd Exp $
+--- os_dep.c.orig	2003-06-13 14:11:00.000000000 -0500
++++ os_dep.c	2003-10-16 02:31:36.000000000 -0500
+@@ -391,6 +391,30 @@ static void *tiny_sbrk(ptrdiff_t increme
    }
  #endif
  
-+#if defined(OPENBSD) && defined(__ELF__)
++#if defined(OPENBSD)
++  #if defined(__ELF__)
 +  ptr_t GC_data_start;
 +
 +  void GC_init_openbsd_elf()
@@ -15,6 +16,17 @@ $OpenBSD: patch-os_dep_c,v 1.4 2003/10/15 12:58:11 todd Exp $
 +	/* some versions.						*/
 +    GC_data_start = GC_find_limit((ptr_t)&end, FALSE);
 +  }
++  #else
++  ptr_t GC_data_start;
++
++  void GC_init_openbsd_aout()
++  {
++    extern ptr_t GC_find_limit();
++	/* This may need to be environ, without the underscore, for	*/
++	/* some versions.						*/
++    GC_data_start = GC_find_limit((ptr_t)&end, FALSE);
++  }
++  #endif
 +#endif
 +
  # ifdef OS2

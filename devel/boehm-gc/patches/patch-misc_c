@@ -1,13 +1,17 @@
-$OpenBSD: patch-misc_c,v 1.4 2003/10/15 12:58:11 todd Exp $
---- misc.c.orig	2003-05-30 01:50:10.000000000 +1000
-+++ misc.c	2003-10-15 13:40:09.000000000 +1000
-@@ -635,7 +635,10 @@ void GC_init_inner()
+$OpenBSD: patch-misc_c,v 1.5 2003/10/16 04:11:15 todd Exp $
+--- misc.c.orig	2003-05-29 10:50:10.000000000 -0500
++++ misc.c	2003-10-16 02:31:36.000000000 -0500
+@@ -635,7 +635,14 @@ void GC_init_inner()
  #   if defined(SEARCH_FOR_DATA_START)
  	GC_init_linux_data_start();
  #   endif
 -#   if (defined(NETBSD) || defined(OPENBSD)) && defined(__ELF__)
-+#   if defined(OPENBSD) && defined(__ELF__)
++#   if defined(OPENBSD)
++#     if defined(__ELF__)
 +	GC_init_openbsd_elf();
++#     else
++	GC_init_openbsd_aout();
++#     endif
 +#   endif
 +#   if defined(NETBSD) && defined(__ELF__)
  	GC_init_netbsd_elf();
