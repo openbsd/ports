@@ -1,0 +1,17 @@
+
+Help on configuration: ${HOMEPAGE}
+(beware that you need to setup daemontools first)
+
+The accounts and groups that you need to create could look like this:
+-> /etc/group
+dnscache:*:2000:
+tinydns:*:2100:
+dnslog:*:2200:
+-> /etc/master.passwd
+dnscache:*:2000:2000::0:0:DJBDNS:/nonexistent:/sbin/nologin
+tinydns:*:2100:2100::0:0:DJBDNS:/nonexistent:/sbin/nologin
+dnslog:*:2200:2200::0:0:DJBDNS:/nonexistent:/sbin/nologin
+
+After running dnscache-conf, do the following in your new dnscache
+directory to get a strong(er) random seed:
+  dd if=/dev/srandom of=seed bs=128 count=1

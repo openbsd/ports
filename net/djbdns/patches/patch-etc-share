@@ -1,0 +1,20 @@
+$OpenBSD: patch-etc-share,v 1.1.1.1 2000/07/13 08:56:20 camield Exp $
+
+Usage of /usr/local/etc is deprecated on OpenBSD. Use /usr/local/share
+instead.
+
+--- dnscache-conf.c.orig	Tue Feb 29 08:29:49 2000
++++ dnscache-conf.c	Tue Feb 29 08:30:37 2000
+@@ -87,10 +87,10 @@
+   if (chdir(auto_home) == -1)
+     strerr_die4sys(111,FATAL,"unable to switch to ",auto_home,": ");
+   seed_addtime();
+-  fdrootservers = open_read("etc/dnscache/@");
++  fdrootservers = open_read("share/dnscache/@");
+   seed_addtime();
+   if (fdrootservers == -1)
+-    strerr_die4sys(111,FATAL,"unable to open ",auto_home,"/etc/dnscache/@: ");
++    strerr_die4sys(111,FATAL,"unable to open ",auto_home,"/share/dnscache/@: ");
+   seed_addtime();
+ 
+   init(dir,FATAL);

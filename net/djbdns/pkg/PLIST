@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/13 08:56:22 camield Exp $
+bin/axfr-get
+bin/axfrdns
+bin/axfrdns-conf
+bin/dnscache
+bin/dnscache-conf
+bin/dnsfilter
+bin/dnsip
+bin/dnsipq
+bin/dnsmx
+bin/dnsname
+bin/dnsq
+bin/dnstrace
+bin/dnstxt
+bin/pickdns
+bin/pickdns-conf
+bin/pickdns-data
+bin/random-ip
+bin/rbldns
+bin/rbldns-conf
+bin/rbldns-data
+bin/tinydns
+bin/tinydns-conf
+bin/tinydns-data
+bin/tinydns-edit
+bin/tinydns-get
+bin/walldns
+bin/walldns-conf
+share/dnscache/@
+share/dnscache/VERSION
+@dirrm share/dnscache
