@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/12 21:21:28 angelos Exp $
 #
+
+BROKEN=		tries to use /usr/local/bin/perl
 
 DISTNAME=	ucd-snmp-3.6.2
 CATEGORIES=	net
