@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2001/01/21 21:07:16 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2001/02/02 16:47:13 brad Exp $
 
-VERSION=	4.32
+VERSION=	4.33
 DISTNAME=	pine${VERSION}
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
