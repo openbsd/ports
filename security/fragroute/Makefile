@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/30 01:00:55 jsyn Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/16 15:36:57 naddy Exp $
 			
 COMMENT=		"intercept, modify, and rewrite egress traffic"
 
@@ -21,8 +21,8 @@ MASTER_SITES=		http://www.monkey.org/~dugsong/fragroute/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		 --with-libevent=/usr
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libevent.a::devel/libevent \
-			${LOCALBASE}/lib/libdnet.a::net/libdnet
+BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.a::net/libdnet
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2002/06/16 15:36:57 naddy Exp $
 
 COMMENT=		"voice over misconfigured internet telephones"
 
@@ -18,9 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/vomit-lite
 
-MASTER_SITES=		http://vomit.xtdnet.nl/
+MASTER_SITES=		${HOMEPAGE}
 
-BUILD_DEPENDS=		${LOCALBASE}/lib/libevent.a::devel/libevent
 LIB_DEPENDS=		net::net/libnet
 
 SEPARATE_BUILD=		concurrent
