@@ -1,6 +1,6 @@
---- src/config/abi_defs.mk.orig	Mon Mar 13 19:48:16 2000
-+++ src/config/abi_defs.mk	Mon Jun 12 04:15:47 2000
-@@ -396,6 +396,9 @@
+--- src/config/abi_defs.mk.orig	Fri Jun  9 18:48:49 2000
++++ src/config/abi_defs.mk	Sun Jul 16 05:24:11 2000
+@@ -419,6 +419,9 @@
  EXTRA_LIBS	+=	$(GTK_LIBS)
  ABI_OPTIONS+=Gnome:Off
  endif
