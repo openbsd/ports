@@ -1,5 +1,5 @@
---- navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install.orig	Mon May  3 09:00:09 1999
-+++ navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install	Mon May  3 09:07:15 1999
+--- navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install.orig	Mon Mar  1 15:15:20 1999
++++ navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install	Sat May 15 20:30:38 1999
 @@ -87,21 +87,9 @@
  fi
  
@@ -117,3 +117,36 @@
  			AIX)
  				PLATFORM="aix"
  				;;
+@@ -385,10 +347,10 @@
+ 	then
+ 		mv ${TARGET}/vreg.old ${TARGET}/vreg
+ 	else
+-		mv ./vreg ${TARGET}/vreg
++		cp ./vreg ${TARGET}/vreg
+ 	fi
+ else
+-	mv ./vreg ${TARGET}/vreg
++	cp ./vreg ${TARGET}/vreg
+ fi
+ 
+ #
+@@ -415,7 +377,6 @@
+ 	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
+ 	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
+ 	echo ""
+-	/bin/rm -f ns-install ${PACKAGE} ${REG_INFILE} core
+ 	exit 3
+ fi
+ 
+@@ -424,11 +385,6 @@
+ echo "The Netscape ${PRODUCT} software installation is complete."
+ echo ""
+ echo ""
+-
+-#
+-# Get rid of the trash.
+-#
+-/bin/rm -f ns-install ${PACKAGE} ${REG_INFILE}
+ 
+ echo ""
+ exit 0
