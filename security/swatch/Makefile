@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/10 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/05 22:27:45 angelos Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"Simple WATCHdog log filtering program"
@@ -8,7 +8,7 @@ CATEGORIES=	security sysutils
 NEED_VERSION=	1.489
 MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/ \
 		ftp://ftp.stanford.edu/general/security-tools/swatch/ \
-      		ftp.cert.dfn.de/pub/tools/audit/swatch/
+      		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/
 
 HOMEPAGE=	http://www.stanford.edu/~atkins/swatch/
 
