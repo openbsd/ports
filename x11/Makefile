@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2001/11/15 06:34:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.122 2001/11/15 19:30:24 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += chbg
      SUBDIR += ctwm
      SUBDIR += dclock
+     SUBDIR += e16keyedit
      SUBDIR += emiclock
 #    SUBDIR += emu
      SUBDIR += enlightenment
