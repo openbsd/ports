@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/29 10:02:57 xsa Exp $
 @man man/man8/tinyproxy.8
 sbin/tinyproxy
 share/doc/tinyproxy/
@@ -10,7 +10,6 @@ share/doc/tinyproxy/default.html
 share/doc/tinyproxy/filter-howto.txt
 share/doc/tinyproxy/stats.html
 share/examples/tinyproxy/
+@sample ${SYSCONFDIR}/tinyproxy/
 share/examples/tinyproxy/tinyproxy.conf
-@cwd ${SYSCONFDIR}
-@extra tinyproxy/tinyproxy.conf
-@extra tinyproxy/
+@sample ${SYSCONFDIR}/tinyproxy/tinyproxy.conf
