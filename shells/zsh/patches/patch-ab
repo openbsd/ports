@@ -1,6 +1,6 @@
---- Doc/Makefile.in.orig	Wed Dec 18 05:14:11 1996
-+++ Doc/Makefile.in	Mon Jun 16 20:40:29 1997
-@@ -93,7 +93,8 @@
+--- Doc/Makefile.in.orig	Tue Aug  3 22:56:17 1999
++++ Doc/Makefile.in	Tue Aug  3 22:57:17 1999
+@@ -91,7 +91,8 @@
  everything: all zsh_us.ps zsh_a4.ps zsh_toc.html
  
  zsh.info: zsh.texi
@@ -10,11 +10,11 @@
  	echo Info documentation cannot be compiled without $(MAKEINFO). ; \
  	echo You can find precompiled info files in zsh-doc.tar.gz. ; }
  
-@@ -127,7 +128,7 @@
+@@ -125,7 +126,7 @@
  # install info pages, creating install directory if necessary
  install.info: zsh.info
  	$(top_srcdir)/mkinstalldirs $(infodir)
--	for file in zsh.info zsh.info-[1-9]; do \
+-	for file in zsh.info zsh.info-[1-9]*; do \
 +	for file in zsh.info*; do \
  	  [ -f "$$file" ] && $(INSTALL_DATA) $$file $(infodir) ; \
  	done

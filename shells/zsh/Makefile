@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 1999/06/23 17:01:43 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/08/04 03:57:39 brad Exp $
 
-DISTNAME=       zsh-3.0.5
+DISTNAME=	zsh-3.0.6
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.math.gatech.edu/pub/zsh/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 MAINTAINER=	gene@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-zsh-mem --enable-zsh-secure-free
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free
 
 # If you want to build a static binary, uncomment the following line
 #LDFLAGS+=-static
