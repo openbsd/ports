@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/31 23:30:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/02 17:45:54 pvalchev Exp $
 
 COMMENT=	"mod_perl class for generating browsable MP3 directory lists"
 DISTNAME=	Apache-MP3-2.19
@@ -17,9 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/mod_perl.so:mod_perl-*:www/mod_perl
-RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${LOCALBASE}/libdata/perl5/site_perl/MP3/Info.pm:p5-MP3-Info-*:audio/p5-MP3-Info
+PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl
+
+RUN_DEPENDS=	${LOCALBASE}/lib/mod_perl.so:mod_perl->=1.14:www/mod_perl \
+		${PERL_MODULES}/MP3/Info.pm:p5-MP3-Info->=0.8:audio/p5-MP3-Info
 
 CONFIGURE_STYLE= perl
 
