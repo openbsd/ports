@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/24 01:59:24 jsyn Exp $
+sbin/ddclient
+share/doc/ddclient/README
+share/doc/ddclient/README.cisco
+share/examples/ddclient/sample-etc_cron.d_ddclient
+share/examples/ddclient/sample-etc_ddclient.conf
+share/examples/ddclient/sample-etc_dhclient-enter-hooks
+share/examples/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe
+share/examples/ddclient/sample-etc_ppp_ip-up.local
+share/examples/ddclient/sample-etc_rc.d_init.d_ddclient
+share/examples/ddclient/sample-etc_rc.d_init.d_ddclient.redhat
+@dirrm share/examples/ddclient
+@dirrm share/doc/ddclient
