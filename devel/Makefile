@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/02/10 23:55:57 niklas Exp $
+# $OpenBSD: Makefile,v 1.7 1998/04/09 20:29:02 marc Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -39,7 +39,7 @@
 #    SUBDIR += linux_devel
 #    SUBDIR += linuxgdb
      SUBDIR += m4
-     SUBDIR += makedepend
+#    SUBDIR += makedepend
 #    SUBDIR += mkmf
 #    SUBDIR += mprof
 #    SUBDIR += nana
