@@ -1,0 +1,8 @@
+libwmf is a library to parse and convert WMF graphic files into
+other formats.  Currently, there exist drivers for PNG, EPS, SVG
+(the XML-based W3C format), FIG, Magick, and others.  The library
+is actively under development as part of the wvWare project, to
+convert WMF graphics embedded in Microsoft file formats into a form
+viewable from a web-browser.
+
+WWW: ${HOMEPAGE}
