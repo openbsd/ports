@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/17 20:05:07 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2002/04/02 01:04:19 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -21,46 +21,15 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 
-BUILD_DEPENDS=	::audio/liba52
+BUILD_DEPENDS=	::audio/liba52 
 
 LIB_DEPENDS=	dvdread::devel/libdvdread \
 		xml2::textproc/libxml \
 		jpeg.62::graphics/jpeg
 
 .if ${MACHINE_ARCH} == "i386"
-.  if exists(/usr/bin/as-static)
-pre-build:
-	ln -sf /usr/bin/as-static ${WRKDIR}/as
-.  else
-# i386 gas is currently ancient... but we can trick binutils into
-# building a gas with only static binary support that will be enough
-# for our purposes
-.include <bsd.own.mk>
-BSDSRCDIR?=/usr/src
-BINUTILS=${BSDSRCDIR}/gnu/usr.bin/binutils
-BINOBJ=${WRKDIR}/binutils
-
-post-extract:
-	@test -f  ${BINUTILS}/Makefile.bsd-wrapper || \
-		{ echo >&2 "You must have binutils sources to build this"; \
-		echo >&2 "Please make sure the ${BINUTILS} dir is populated and retry"; \
-		exit 1; }
-	@mkdir -p ${BINOBJ}
-
-post-configure:
-	@cd ${BINOBJ} && PATH="/bin:/usr/bin:/sbin:/usr/sbin" \
-	    sh ${BINUTILS}/configure \
-	    --disable-nls --disable-gdbtk --disable-commonbfdlib
-	@cd ${BINOBJ} && \
-	    sed -e 's,SUBDIRS *=,SUBDIRS ?=,' <Makefile >Makefile.tmp && \
-	    mv -f Makefile.tmp Makefile
-
-pre-build:
-	@cd ${BINOBJ} && SUBDIRS='opcodes bfd gas' make ALL_MODULES='all-opcodes all-bfd all-gas' ALL_X11_MODULES='' 
-	@ln -sf ${BINOBJ}/gas/as-new  ${WRKDIR}/as
-.  endif
+BUILD_DEPENDS+=	::devel/binutils/stable
+MAKE_ENV=GAS_DIR=${TRUEPREFIX}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin
 .endif
-
-MAKE_ENV=WRKDIR=${WRKDIR}
 
 .include <bsd.port.mk>

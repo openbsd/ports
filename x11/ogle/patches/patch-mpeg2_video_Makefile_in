@@ -5,7 +5,7 @@
  @AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
  @AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
 -@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-+@AMDEP_TRUE@	PATH=${WRKDIR}:$$PATH $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@AMDEP_TRUE@	PATH=${GAS_DIR}:$$PATH $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
  
  .c.obj:
