@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.13 2001/10/11 22:31:41 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/bzip2.info
+@comment $OpenBSD: PLIST,v 1.14 2001/10/11 23:13:31 brad Exp $
 bin/bunzip2
 bin/bzcat
 bin/bzip2
 bin/bzip2recover
 include/bzlib.h
+@unexec install-info --delete --info-dir=%D/info %D/info/bzip2.info
 info/bzip2.info
+@exec install-info --info-dir=%D/info %D/info/bzip2.info
 lib/libbz2.a
+%%SHARED%%
 man/man1/bunzip2.1
 man/man1/bzcat.1
 man/man1/bzip2.1
@@ -16,6 +18,4 @@ share/doc/bzip2/manual_2.html
 share/doc/bzip2/manual_3.html
 share/doc/bzip2/manual_4.html
 share/doc/bzip2/manual_toc.html
-%%SHARED%%
 @dirrm share/doc/bzip2
-@exec install-info --info-dir=%D/info %D/info/bzip2.info
