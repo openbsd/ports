@@ -1,0 +1,97 @@
+$OpenBSD: patch-wmcube_wmcube_c,v 1.1.1.1 2001/01/12 15:24:42 naddy Exp $
+--- wmcube/wmcube.c.orig	Mon Oct 23 22:11:47 2000
++++ wmcube/wmcube.c	Thu Jan 11 15:56:26 2001
+@@ -53,6 +53,10 @@
+ #include <kvm.h>
+ #endif
+ 
++#ifdef OPENBSD
++#include <kvm.h>
++#endif
++
+ #include "../wmgeneral/wmgeneral.h"
+ #include "../wmgeneral/misc.h"
+ 
+@@ -127,6 +131,11 @@ static kvm_t            *kd;
+ static struct nlist     nlst[] = { {"_cp_time"}, {0} };
+ #endif
+ 
++#ifdef OPENBSD
++static kvm_t            *kd;
++static struct nlist     nlst[] = { {"_cp_time"}, {0} };
++#endif
++
+ int main(int argc, char **argv)
+ {
+ 	int		j, i = 0, rot_speed = 0, cpu_usage = 0, rot_step = 1;
+@@ -858,6 +867,10 @@ void print_help() {
+ 	printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
+ #endif
+ 
++#ifdef OPENBSD
++	printf("  -n  : exclude \"nice\" processes. (default OFF)\n");
++#endif
++
+ 	printf("  -b  : draw the cube in a brighter color. (default OFF)\n");
+ 	printf("  -i  : invert cube speed. (default OFF)\n");
+ 	printf("  -p  : do not display cpu-load (default OFF)\n");
+@@ -1273,16 +1286,54 @@ int calc_cpu_total() {
+ 
+ #elif defined OPENBSD
+ 
++#include <nlist.h>
++#include <fcntl.h>
++#include <sys/dkstat.h>
++
+ int init_calc_cpu()
+ {
+-	return 0;
++
++        if ((kd = kvm_open(NULL, NULL, NULL, O_RDONLY, "kvm_open")) == NULL)
++        {
++                printf("\nError: unable to open kvm\n\n");
++                exit(0);
++        }
++        kvm_nlist(kd, nlst);
++        if (nlst[0].n_type == 0) 
++        {
++                printf("\nError: unable to get nlist\n\n");
++                exit(1);
++        }
++
++        return 0;
+ }
+ 
+ int calc_cpu_total() {
+-        double avenrun[3];
+-        
+-        (void) getloadavg(avenrun, sizeof(avenrun) / sizeof(avenrun[0]));
+-        return(((5.0*avenrun[0] + 0.5) > 50) ? 50 : (5.0*avenrun[0] + 0.5))*2;
++        int total, used, t=0;
++        static int previous_total = 0, previous_used = 0;
++        int cpu,nice,system,idle;
++        unsigned long int cpu_time[CPUSTATES];
++
++        if (kvm_read(kd, nlst[0].n_value, &cpu_time, sizeof(cpu_time))
++                != sizeof(cpu_time))
++        {
++                printf("\nError reading kvm\n\n");
++                exit(0);
++        }
++
++        cpu = cpu_time[CP_USER];
++        nice = cpu_time[CP_NICE];
++        system = cpu_time[CP_SYS];
++        idle = cpu_time[CP_IDLE];
++
++        used = cpu + system + use_nice*nice;
++        total = used + idle + (1-use_nice)*nice;
++
++        t = 100 * (double)(used - previous_used) / (double)(total - previous_total);
++        previous_total = total;
++        previous_used = used;
++
++        return t;
+ }
+ 
+ 

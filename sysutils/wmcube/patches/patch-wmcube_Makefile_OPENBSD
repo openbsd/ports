@@ -1,0 +1,75 @@
+$OpenBSD: patch-wmcube_Makefile_OPENBSD,v 1.1.1.1 2001/01/12 15:24:42 naddy Exp $
+--- wmcube/Makefile.OPENBSD.orig	Sun Oct  8 22:38:46 2000
++++ wmcube/Makefile.OPENBSD	Thu Jan 11 19:45:33 2001
+@@ -1,37 +1,34 @@
+-CC = gcc
+-OS = -DOPENBSD
+-
+-LIBDIR = -L/usr/X11R6/lib -L./libdocapp/
+-
+-# Edit OSLIBS as appropriate to include OS specific libraries.
+-
+-OSLIBS = 
+-LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
+-INCLUDES = -I/usr/X11R6/include
+-CFLAGS = -Wall -O2 $(OS) $(INCLUDES)
+-
+-OBJS =	wmcube.o \
+-		../wmgeneral/wmgeneral.o \
+-		../wmgeneral/misc.o \
+-		../wmgeneral/list.o
+-
+-.c.o:
+-	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
+-
+-wmcube: $(OBJS)
+-	$(CC) -o wmcube $^ -lXext $(LIBDIR) $(LIBS) $>
+-
+-all:: wmcube
+-
+-clean::
+-	for i in $(OBJS) ; do \
+-		rm -f $$i ; \
+-	done
+-	rm -f wmcube
+-	rm -f *~
+-
+-install:: wmcube
+-	cp -f wmcube /usr/local/bin/
+-	chmod 755 /usr/local/bin/wmcube
+-	chown root:root /usr/local/bin/wmcube
+-	@echo "wmCube installation finished..."
++CC?= cc
++OS = -DOPENBSD
++
++LIBDIR = -L${X11BASE}/lib -L./libdocapp/
++
++# Edit OSLIBS as appropriate to include OS specific libraries.
++
++OSLIBS = -lkvm
++LIBS   = -lXpm -lXext -lX11 -lm $(OSLIBS)
++INCLUDES = -I${X11BASE}/include
++CFLAGS += $(OS) $(INCLUDES)
++
++OBJS =	wmcube.o \
++		../wmgeneral/wmgeneral.o \
++		../wmgeneral/misc.o \
++		../wmgeneral/list.o
++
++.c.o:
++	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
++
++wmcube: $(OBJS)
++	$(CC) -o wmcube $(OBJS) -lXext $(LIBDIR) $(LIBS)
++
++all:: wmcube
++
++clean::
++	for i in $(OBJS) ; do \
++		rm -f $$i ; \
++	done
++	rm -f wmcube
++	rm -f *~
++
++install:: wmcube
++	$(BSD_INSTALL_PROGRAM) wmcube $(PREFIX)/bin
