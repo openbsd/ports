@@ -1,5 +1,5 @@
 --- configure.in.orig	Tue Feb 10 04:58:57 1998
-+++ configure.in	Mon May  4 00:36:08 1998
++++ configure.in	Sun May  2 23:09:38 1999
 @@ -330,7 +330,7 @@
  dnl BETA NOTE: ! Will you please add to this list?  Nonexistent dirs
  dnl are dropped from the list at runtime, so it is safe to add
@@ -17,13 +17,10 @@
    *-*-nextstep* ) opsys=nextstep ;;
    *-*-vms       ) opsys=vms ;;
  
-@@ -1017,6 +1018,19 @@
-                       machine=hp9000s300 ;;
-       pc532-*-netbsd* | ns32k-*-netbsd* )  machine=ns32000 ;;
-       pmax-*-netbsd*  | mips-*-netbsd*  )  machine=pmax ;;
-+    esac
-+  ;;
-+
+@@ -1020,6 +1021,19 @@
+     esac
+   ;;
+ 
 +  dnl OpenBSD ports
 +  *-*-openbsd* )
 +    case "${canonical}" in
@@ -34,6 +31,38 @@
 +      ns32k-*-openbsd*)	machine=ns32000 ;;
 +      sparc-*-openbsd*)	machine=sparc ;;
 +      vax-*-netbsd*)	machine=vax ;;
-     esac
-   ;;
++    esac
++  ;;
++
+   dnl Acorn RISCiX:
+   arm-acorn-riscix1.1* ) machine=acorn opsys=riscix1-1 ;;
+   arm-acorn-riscix1.2* | arm-acorn-riscix ) machine=acorn opsys=riscix1-2 ;;
+@@ -2924,22 +2938,22 @@
  
+   dnl Autodetect ncurses.
+   if test -z "$with_ncurses"; then
+-    AC_CHECK_LIB(ncurses, tgetent, with_ncurses=yes, with_ncurses=no)
++    AC_CHECK_LIB(curses, tgetent, with_ncurses=yes, with_ncurses=no)
+   fi
+   if test "$with_ncurses" = "yes"; then
+     AC_DEFINE(HAVE_NCURSES)
+-    AC_CHECK_HEADER(ncurses/curses.h, curses_h_path=ncurses/curses.h)
+-    AC_CHECK_HEADER(ncurses/term.h, term_h_path=ncurses/term.h)
++    AC_CHECK_HEADER(curses.h, curses_h_path=curses.h)
++    AC_CHECK_HEADER(term.h, term_h_path=term.h)
+     XE_ADD_OBJS(terminfo.o)
+-    XE_PREPEND(-lncurses, LIBS)
++    XE_PREPEND(-lcurses, LIBS)
+ 
+     if test "$ac_cv_header_ncurses_curses_h" != "yes" ; then
+       dnl Try again, and check for the bogus ncurses/ include bug.
+       dnl (i.e. ncurses/curses.h bogusly includes <unctrl.h> instead of
+       dnl <ncurses/unctrl.h>)
+       save_c_switch_site="$c_switch_site"
+-      c_switch_site="$c_switch_site -I/usr/include/ncurses"
+-      AC_CHECK_HEADER(ncurses/curses.h, curses_h_path=ncurses/curses.h)
++      c_switch_site="$c_switch_site -I/usr/include/"
++      AC_CHECK_HEADER(curses.h, curses_h_path=curses.h)
+       if test "$ac_cv_header_ncurses_curses_h" = "yes"
+         then AC_MSG_WARN("Your system has the bogus ncurses include bug.")
+         else c_switch_site="$save_c_switch_site"
