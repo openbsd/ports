@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/07/31 21:17:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2004/08/16 21:26:01 naddy Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PYTHON_VER=	2.3
+LIB_DEPENDS=	guile.9::lang/guile
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::lang/tcl/8.4 \
-		::lang/guile \
 		::lang/ruby
 
 MULTI_PACKAGES=	-examples
