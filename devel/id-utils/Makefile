@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/29 00:43:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 1999/10/07 16:02:55 espie Exp $
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
@@ -8,27 +8,55 @@ MAINTAINER=	ports@OpenBSD.ORG
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
 		ftp://ftp.enst.fr/pub/gnu/gnits/
 
-.if defined(WITH_EMACS) && ${WITH_EMACS}==emacs
-# need to byte-compile a .el file
-#
-BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
-PKGNAME=${DISTNAME}-emacs
-CONFIGURE_ARGS+=--with-emacs
-PLIST=${PKGDIR}/PLIST.emacs
-.elsif defined(WITH_EMACS) && ${WITH_EMACS}==xemacs
-BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs
-PKGNAME=${DISTNAME}-xemacs
-CONFIGURE_ARGS+=--with-emacs=xemacs
-PLIST=${PKGDIR}/PLIST.xemacs
-.else
+# take over the management of emacs file, as the current process is abysmal.
 CONFIGURE_ARGS=--without-emacs
+PKGNAME=${DISTNAME}
+.if defined(WITHOUT_EMACS)
+PKGNAME:=${PKGNAME}-noemacs
+.else
+BUILD_DEPENDS+=	emacs:${PORTSDIR}/editors/emacs
 .endif
+.if defined(WITHOUT_XEMACS)
+PKGNAME:=${PKGNAME}-noxemacs
+.else
+BUILD_DEPENDS+=	xemacs:${PORTSDIR}/editors/xemacs
+.endif
+PLIST=${WRKBUILD}/PLIST
+
+post-build:
+.if !defined(WITHOUT_EMACS)
+	mkdir -p ${WRKBUILD}/elisp
+	cd ${WRKBUILD}/elisp && ln -s -f ${WRKSRC}/lisp/id-utils.el && \
+	EMACS=emacs ${SHELL} ${WRKSRC}/lisp/elisp-comp id-utils.el
+.endif
+.if !defined(WITHOUT_XEMACS)
+	mkdir -p ${WRKBUILD}/xelisp
+	cd ${WRKBUILD}/xelisp && ln -s -f ${WRKSRC}/lisp/id-utils.el && \
+	EMACS=xemacs ${SHELL} ${WRKSRC}/lisp/elisp-comp id-utils.el
+.endif
+
+pre-install:
+	@cp ${FILESDIR}/PLIST ${PLIST}
+.if !defined(WITHOUT_EMACS)
+	@echo "share/emacs/site-lisp/id-utils.el" >>${PLIST}
+	@echo "share/emacs/site-lisp/id-utils.elc" >>${PLIST}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.el ${PREFIX}/share/emacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.elc ${PREFIX}/share/emacs/site-lisp
+.endif
+.if !defined(WITHOUT_XEMACS)
+	@echo "lib/emacs/site-lisp/id-utils.el" >>${PLIST}
+	@echo "lib/emacs/site-lisp/id-utils.elc" >>${PLIST}
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/emacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.el ${PREFIX}/lib/emacs/site-lisp
+	${INSTALL_DATA} ${WRKBUILD}/elisp/id-utils.elc ${PREFIX}/lib/emacs/site-lisp
+.endif
+	
 
 # International files don't want to be built separately
 #
 SEPARATE_BUILD=	simple
 GNU_CONFIGURE=	yes
-USE_AUTOCONF= yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

@@ -1,16 +1,11 @@
---- Makefile.in.orig	Wed Sep 29 00:57:27 1999
-+++ Makefile.in	Wed Sep 29 01:17:49 1999
-@@ -91,11 +91,12 @@ USE_NLS = @USE_NLS@
- VERSION = @VERSION@
- l = @l@
- lispdir = @lispdir@
-+sublisp = @sublisp@
+--- lisp/elisp-comp.orig	Thu Oct  7 16:57:37 1999
++++ lisp/elisp-comp	Thu Oct  7 16:58:03 1999
+@@ -34,7 +34,7 @@
+   cd $tempdir
  
+   echo "(setq load-path (cons nil load-path))" > script
+-  emacs -batch -l script -f batch-byte-compile *.el
++  ${EMACS} -batch -l script -f batch-byte-compile *.el
+   mv *.elc ..
  
- AUTOMAKE_OPTIONS = gnits 1.2h
- 
--SUBDIRS = lib libidu intl src lisp m4 po doc testsuite
-+SUBDIRS = lib libidu intl src ${sublisp} m4 po doc testsuite
- 
- # Remove this file here (it is created via configure), not from within intl.
- DISTCLEANFILES = intl/libintl.h
+   cd ..

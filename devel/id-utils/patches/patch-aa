@@ -1,37 +1,11 @@
---- configure.in.orig	Wed Sep 29 00:58:44 1999
-+++ configure.in	Wed Sep 29 02:20:37 1999
-@@ -127,7 +127,33 @@ AC_SUBST(LANGUAGE_MAP_FILE)
- ################ Find a home for Emacs Lisp code #############################
- ##############################################################################
+--- Makefile.in.orig	Thu Oct  7 16:58:15 1999
++++ Makefile.in	Thu Oct  7 16:58:22 1999
+@@ -95,7 +95,7 @@
  
--AM_PATH_LISPDIR
-+AC_ARG_WITH([emacs], 
-+[  --with-emacs            check for emacs flavor], 
-+[ sublisp=lisp
-+if test "$withval" = "yes" -o "$withval" = "emacs"; then
-+	lispdir="\$(prefix)/share/emacs/site-lisp"
-+else
-+	if test "$withval" = "xemacs"; then
-+		lispdir="\$(prefix)/lib/xemacs/site-lisp"
-+	else
-+		if test "$withval" = "no"; then
-+			lispdir=
-+			sublisp=
-+		else
-+			AC_MSG_ERROR("Unknown value: --with-emacs=$withval")
-+		fi
-+	fi
-+fi
-+],
-+[
-+sublisp=
-+lispdir=
-+]
-+)
-+
-+AC_SUBST(lispdir)
-+
-+AC_SUBST(sublisp)
+ AUTOMAKE_OPTIONS = gnits 1.2h
  
- ##############################################################################
- ################ Generate the configure script ###############################
+-SUBDIRS = lib libidu intl src lisp m4 po doc testsuite
++SUBDIRS = lib libidu intl src m4 po doc testsuite
+ 
+ # Remove this file here (it is created via configure), not from within intl.
+ DISTCLEANFILES = intl/libintl.h
