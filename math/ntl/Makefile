@@ -1,33 +1,41 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/15 08:59:48 reinhard Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/28 23:02:50 naddy Exp $
 
 COMMENT=	"Victor Shoup's Number Theory Library"
 
-DISTNAME=	ntl-5.1a
+DISTNAME=	ntl-5.2
 CATEGORIES=	math
-NEED_VERSION=	1.402
-MASTER_SITES=	http://www.shoup.net/ntl/
-
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.shoup.net/ntl/
 
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
+# GPL
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+
+MASTER_SITES=	${HOMEPAGE}
+
+LIB_DEPENDS=	gmp.4::devel/gmp
+
+WRKBUILD=	${WRKSRC}/src
 MAKE_FILE=	makefile
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS= CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS= CC="${CC}" CFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		NTL_GMP_LIP=on GMP_PREFIX="${LOCALBASE}"
+
+REGRESS_TARGET=	check
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/include/NTL
-	@cd ${WRKDIST}/../include/NTL; ${INSTALL_DATA} *.h ${PREFIX}/include/NTL
-	@cd ${WRKDIST}; ${INSTALL_DATA} ntl.a ${PREFIX}/lib/libntl.a
+	@cd ${WRKSRC}/include/NTL; ${INSTALL_DATA} *.h ${PREFIX}/include/NTL
+	@cd ${WRKBUILD}; ${INSTALL_DATA} ntl.a ${PREFIX}/lib/libntl.a
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/NTL
-	@cd ${WRKDIST}/../doc; ${INSTALL_DATA} *.txt ${PREFIX}/share/doc/NTL
-	@cd ${WRKDIST}/../doc; ${INSTALL_DATA} *.html ${PREFIX}/share/doc/NTL
+	@cd ${WRKSRC}/doc; ${INSTALL_DATA} *.txt ${PREFIX}/share/doc/NTL
+	@cd ${WRKSRC}/doc; ${INSTALL_DATA} *.html ${PREFIX}/share/doc/NTL
 
 .include <bsd.port.mk>

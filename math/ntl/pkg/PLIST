@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/08 16:15:35 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/28 23:02:51 naddy Exp $
 include/NTL/FFT.h
 include/NTL/FacVec.h
 include/NTL/GF2.h
@@ -165,6 +165,7 @@ share/doc/NTL/vec_ZZ_pE.txt
 share/doc/NTL/vec_lzz_p.txt
 share/doc/NTL/vec_lzz_pE.txt
 share/doc/NTL/vector.txt
+share/doc/NTL/version.txt
 share/doc/NTL/xdouble.txt
 @dirrm share/doc/NTL
 @dirrm include/NTL
