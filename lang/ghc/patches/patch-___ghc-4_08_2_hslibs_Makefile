@@ -1,0 +1,14 @@
+Only build the pieces of the library we will need for the
+bootstrap
+
+--- ../ghc-4.08.2/hslibs/Makefile.orig	Fri Jul  4 13:39:45 2003
++++ ../ghc-4.08.2/hslibs/Makefile	Fri Jul  4 13:41:38 2003
+@@ -11,7 +11,7 @@
+ else
+ # order is important here, there are dependencies between the libraries...
+ ifneq "$(TARGETPLATFORM)" "i386-unknown-mingw32"
+-SUBDIRS = lang concurrent posix util data text net tools
++SUBDIRS = lang concurrent posix util data text 
+ else
+ SUBDIRS = lang concurrent util data text net tools
+ endif

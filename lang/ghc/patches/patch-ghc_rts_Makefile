@@ -1,0 +1,16 @@
+Tell make to also compile the .s file
+This code replaces the silly [] of code used in Adjustor.c
+
+--- ghc/rts/Makefile.orig	Thu Jul 10 14:46:51 2003
++++ ghc/rts/Makefile	Thu Jul 10 14:47:42 2003
+@@ -53,6 +53,10 @@
+ HC_SRCS = $(filter %.hc, $(SRCS))
+ HC_OBJS = $(patsubst %.hc,%.$(way_)o, $(HC_SRCS))
+ 
++C_OBJS += obscure_ccall.o
++obscure_ccall.o :
++	$(GHC) -c obscure_ccall.s
++
+ CLEAN_FILES += $(HC_OBJS)
+ 
+ # Override the default $(LIBOBJS) (defaults to $(HS_OBJS))

@@ -1,0 +1,12 @@
+The assembly code to go in .text, replacing the opcodes for this
+code that were stored in an array in .data land, by a C hacker.
+
+--- /dev/null	Thu Jul 10 14:39:57 2003
++++ ghc/rts/obscure_ccall.s	Thu Jul 10 14:48:47 2003
+@@ -0,0 +1,6 @@
++        .text
++        .globl __obscure_ccall_ret_code
++
++__obscure_ccall_ret_code:
++        addl $4, %esp
++        ret

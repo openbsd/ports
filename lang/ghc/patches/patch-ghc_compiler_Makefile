@@ -1,0 +1,26 @@
+Note: -H sets the initial size of the garbage collected heap used
+by the compiler to compiled a Haskell file. There appears to be
+some kind of garbage collection bug in  the stage1 compiler build
+by ghc4.08.2. It manifests itself as non-deterministic seg
+faults, particularly in low-memory conditions. GHC will die
+inside scavenge_mutable_list() or evacuate(). This only happens
+in the stage1 compiler though, and then, only rarely.
+
+It doesn't appear to affect the final, stage-2, compiler.
+
+I haven't been able to work this one out. But, upping the size
+of the inital heap prevents garbage collects occuring as often,
+reducing the probability of this bug stopping our build. -H80m
+was determined experimentally.
+
+--- ghc/compiler/Makefile.orig	Sat Jul 12 10:00:33 2003
++++ ghc/compiler/Makefile	Sat Jul 12 10:00:39 2003
+@@ -338,7 +338,7 @@
+ 
+ SRC_CC_OPTS += -Iparser -I. -O
+ SRC_HC_OPTS += -recomp $(GhcHcOpts) $(GhcStage$(stage)HcOpts)
+-SRC_HC_OPTS += -H16M
++SRC_HC_OPTS += -H80M
+ 
+ ifeq "$(BootingFromHc)" "YES"
+ SRC_CC_OPTS += -D__GLASGOW_HASKELL__=$(ProjectVersionInt)

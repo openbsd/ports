@@ -1,18 +1,17 @@
-ELF x86 is here
+ELF
 
-$OpenBSD: patch-ghc_driver_mangler_ghc-asm_lprl,v 1.1.1.1 2003/05/29 16:38:31 avsm Exp $
---- ghc/driver/mangler/ghc-asm.lprl.orig	Wed Apr 23 14:52:45 2003
-+++ ghc/driver/mangler/ghc-asm.lprl	Wed Apr 23 14:53:18 2003
-@@ -144,7 +144,7 @@ sub init_TARGET_STUFF {
+--- ghc/driver/mangler/ghc-asm.lprl.orig	Fri Jul  4 10:55:44 2003
++++ ghc/driver/mangler/ghc-asm.lprl	Fri Jul  4 10:55:58 2003
+@@ -142,7 +142,7 @@
      $T_create_word  = "\t.word";
  
      #--------------------------------------------------------#
 -    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|openbsd|nextstep3|cygwin32|mingw32)$/ ) {
-+    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|openbsdaout|nextstep3|cygwin32|mingw32)$/ ) {
++    } elsif ( $TargetPlatform =~ /^i386-.*-(linuxaout|freebsd2|nextstep3|cygwin32|mingw32)$/ ) {
  				# NeXT added but not tested. CaS
  
      $T_STABBY	    = 1; # 1 iff .stab things (usually if a.out format)
-@@ -176,12 +176,12 @@ sub init_TARGET_STUFF {
+@@ -172,7 +172,7 @@
      $T_create_word  = "\t.word";
  
      #--------------------------------------------------------#
@@ -21,9 +20,3 @@ $OpenBSD: patch-ghc_driver_mangler_ghc-asm_lprl,v 1.1.1.1 2003/05/29 16:38:31 av
  
      $T_STABBY	    = 0; # 1 iff .stab things (usually if a.out format)
      $T_US	    = ''; # _ if symbols have an underscore on the front
-     $T_PRE_APP	    = # regexp that says what comes before APP/NO_APP
--		      ($TargetPlatform =~ /-(linux|freebsd|netbsd)$/) ? '#' : '/' ;
-+		      ($TargetPlatform =~ /-(linux|freebsd|netbsd|openbsd)$/) ? '#' : '/' ;
-     $T_CONST_LBL    = '^\.LC(\d+):$'; # regexp for what such a lbl looks like
-     $T_POST_LBL	    = ':';
-     $T_X86_PRE_LLBL_PAT = '\.L';

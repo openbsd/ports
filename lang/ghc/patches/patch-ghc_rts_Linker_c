@@ -1,19 +1,21 @@
-start to get ghci working
+sprintf.
+preliminary attempts to get object file loading working, so that
+ghci will work
 
---- ghc/rts/Linker.c.orig	Mon Oct 14 03:50:54 2002
-+++ ghc/rts/Linker.c	Thu May  1 09:59:09 2003
-@@ -56,7 +56,7 @@
+--- ghc/rts/Linker.c.orig	Wed Apr 30 07:37:31 2003
++++ ghc/rts/Linker.c	Sun Jul  6 21:29:55 2003
+@@ -59,7 +59,7 @@
  #include <sys/mman.h>
  #endif
  
--#if defined(linux_TARGET_OS) || defined(solaris2_TARGET_OS) || defined(freebsd_TARGET_OS)
-+#if defined(linux_TARGET_OS) || defined(solaris2_TARGET_OS) || defined(freebsd_TARGET_OS) || defined(openbsd_TARGET_OS)
+-#if defined(linux_TARGET_OS) || defined(solaris2_TARGET_OS) || defined(freebsd_TARGET_OS) || defined(netbsd_TARGET_OS)
++#if defined(linux_TARGET_OS) || defined(solaris2_TARGET_OS) || defined(freebsd_TARGET_OS) || defined(netbsd_TARGET_OS) || defined(openbsd_TARGET_OS)
  #  define OBJFORMAT_ELF
  #elif defined(cygwin32_TARGET_OS) || defined (mingw32_TARGET_OS)
  #  define OBJFORMAT_PEi386
-@@ -642,7 +642,11 @@ addDLL( char *dll_name )
-    void *hdl;
-    char *errmsg;
+@@ -724,7 +724,11 @@
+ 
+    initLinker();
  
 +#if !defined(openbsd_TARGET_OS)
     hdl= dlopen(dll_name, RTLD_NOW | RTLD_GLOBAL);
@@ -23,7 +25,20 @@ start to get ghci working
     if (hdl == NULL) {
        /* dlopen failed; return a ptr to the error msg. */
        errmsg = dlerror();
-@@ -1893,7 +1897,15 @@ ocResolve_PEi386 ( ObjectCode* oc )
+@@ -763,10 +767,10 @@
+       	extension. */
+ 
+    buf = stgMallocBytes(strlen(dll_name) + 10, "addDLL");
+-   sprintf(buf, "%s.DLL", dll_name);
++   snprintf(buf, strlen(dll_name) + 10, "%s.DLL", dll_name);
+    instance = LoadLibrary(buf);
+    if (instance == NULL) {
+-	 sprintf(buf, "%s.DRV", dll_name);	// KAA: allow loading of drivers (like winspool.drv)
++	 snprintf(buf, strlen(dll_name) + 10, "%s.DRV", dll_name);	// KAA: allow loading of drivers (like winspool.drv)
+ 	 instance = LoadLibrary(buf);
+ 	 if (instance == NULL) {
+ 		stgFree(buf);
+@@ -2001,7 +2005,15 @@
  #  define ELF_NEED_PLT      /* needs Procedure Linkage Tables */
  #endif
  

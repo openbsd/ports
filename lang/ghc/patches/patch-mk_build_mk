@@ -1,0 +1,9 @@
+SplitObjs are unnecessary (it splits object files up), and seems
+to use enormous amounts of memory, eventually stomping on my
+stack/data/file size ulimits when set, and dumping core. Solution
+: turn it off
+
+--- mk/build.mk.orig	Fri Jul 11 10:14:53 2003
++++ mk/build.mk	Fri Jul 11 16:54:28 2003
+@@ -0,0 +1,1 @@
++SplitObjs=NO
