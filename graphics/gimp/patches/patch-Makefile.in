@@ -1,0 +1,39 @@
+--- Makefile.in.orig	Thu Jan 25 13:44:52 2001
++++ Makefile.in	Thu Jan 25 13:49:11 2001
+@@ -419,21 +419,21 @@
+ 
+ install-gimpsysconfDATA: $(gimpsysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(gimpsysconfdir)
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/gimp
+ 	@list='$(gimpsysconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(gimpsysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(gimpsysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(gimpsysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(gimpsysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(datadir)/examples/gimp/$$p-sample; \
+ 	  fi; fi; \
+ 	done
+ 
+ uninstall-gimpsysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	list='$(gimpsysconf_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(gimpsysconfdir)/$$p; \
++	  rm -f $(DESTDIR)$(datadir)/examples/gimp/$$p-sample; \
+ 	done
+ 
+ install-m4dataDATA: $(m4data_DATA)
+@@ -638,7 +638,7 @@
+ installdirs-am:
+ 	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(gimpdatadir) \
+ 		$(DESTDIR)$(mandir)/man1 $(DESTDIR)$(mandir)/man5 \
+-		$(DESTDIR)$(gimpdatadir) $(DESTDIR)$(gimpsysconfdir) \
++		$(DESTDIR)$(gimpdatadir) $(DESTDIR)$(datadir)/examples/gimp \
+ 		$(DESTDIR)$(m4datadir)
+ 
+ 

@@ -1,6 +1,6 @@
---- configure.orig	Fri Sep 22 15:11:11 2000
-+++ configure	Wed Sep 27 18:01:16 2000
-@@ -3478,7 +3478,10 @@
+--- configure.orig	Sun Jan 21 21:48:18 2001
++++ configure	Thu Jan 25 12:51:38 2001
+@@ -3470,7 +3470,10 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -12,3 +12,16 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -7147,9 +7150,9 @@
+ 
+ fi
+ 
+-gimpdatadir=$datadir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
+-gimpsysconfdir=$sysconfdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
++gimpdatadir=$datadir/$PACKAGE
++gimpplugindir=$libdir/$PACKAGE
++gimpsysconfdir=$sysconfdir/$PACKAGE
+ 
+ localedir='${prefix}/${DATADIRNAME}/locale'
+ 

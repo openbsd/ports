@@ -1,10 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2000/10/08 18:55:44 brad Exp $
-lib/gimp/1.1/modules/libcdisplay_gamma.so.0.0
-lib/gimp/1.1/modules/libcdisplay_highcontrast.so.0.0
-lib/gimp/1.1/modules/libcolorsel_gtk.so.0.0
-lib/gimp/1.1/modules/libcolorsel_triangle.so.0.0
-lib/gimp/1.1/modules/libcolorsel_water.so.0.0
-lib/libgck.so.27.0
-lib/libgimp.so.27.0
-lib/libgimpui.so.27.0
+@comment $OpenBSD: PFRAG.shared,v 1.6 2001/01/26 00:34:30 brad Exp $
+lib/gimp/modules/libcolorsel_gtk.so.0.0
+lib/gimp/modules/libcolorsel_triangle.so.0.0
+lib/gimp/modules/libcolorsel_water.so.0.0
+lib/libgck.so.0.1
+lib/libgimp.so.0.1
+lib/libgimpui.so.0.1
 DYNLIBDIR(%B)

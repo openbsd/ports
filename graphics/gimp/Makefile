@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2000/10/22 22:15:18 marc Exp $
+# $OpenBSD: Makefile,v 1.57 2001/01/26 00:34:29 brad Exp $
 
-DISTNAME=	gimp-1.1.27
+DISTNAME=	gimp-1.2.1
 CATEGORIES=	graphics
 NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/old/v1.1.27/ \
-		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/old/v1.1.27/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/old/v1.1.27/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.2/v1.2.1/ \
+		ftp://ftp.sunet.se/pub/gnu/gimp/v1.2/v1.2.1/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/v1.2/v1.2.1/
 
 HOMEPAGE=	http://www.gimp.org/
 
@@ -24,14 +24,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-#		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${PREFIX}/share/aclocal
+pre-extract:
+	@if [ -f ${LOCALBASE}/lib/libgimp.so.?.? ]; then \
+	   echo "+-------------------"; \
+	   echo "| ERROR: you MUST remove the existing gimp installation"; \
+	   echo "| before compiling this version. To fully remove run"; \
+	   echo "| these commands as user root"; \
+	   echo "|"; \
+	   echo "|      pkg_delete -f `pkg_info -e 'gimp-*'`"; \
+	   echo "|      ldconfig -R"; \
+	   echo "|"; \
+	   echo "+-------------------"; \
+	   exit 1; \
+	fi
 
 .include <bsd.port.mk>

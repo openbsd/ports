@@ -1,6 +1,6 @@
---- libgimp/Makefile.in.orig	Sat Sep 23 17:10:44 2000
-+++ libgimp/Makefile.in	Wed Sep 27 17:41:58 2000
-@@ -216,11 +216,11 @@
+--- libgimp/Makefile.in.orig	Mon Jan 22 00:03:09 2001
++++ libgimp/Makefile.in	Wed Jan 24 09:22:21 2001
+@@ -211,11 +211,11 @@
  gimpinclude_HEADERS =  	gimp.h				${PDB_WRAPPERS_H}		gimpchainbutton.h		gimpchannel.h			gimpcolorbutton.h		gimpcolordisplay.h		gimpcolorselector.h		gimpcolorspace.h	        gimpcompat.h			gimpdrawable.h			gimpdialog.h			gimpenums.h			gimpenv.h			gimpexport.h			gimpfeatures.h			gimpfileselection.h		gimpgradientselect.h		gimphelpui.h			gimpimage.h			gimplayer.h			gimplimits.h			gimpmath.h			gimpmatrix.h			gimpmenu.h			gimpmodule.h			gimpparasite.h			gimpparasiteio.h		gimppatheditor.h		gimppixelrgn.h			gimppixmap.h			gimpproceduraldb.h		gimpquerybox.h			gimpselection.h			gimpsignal.h			gimpsizeentry.h			gimptile.h			gimptypes.h			gimpui.h			gimpunit.h			gimpunitmenu.h			gimputils.h			gimpvector.h			gimpwidgets.h			gimpintl.h
  
  
