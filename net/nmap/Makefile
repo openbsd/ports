@@ -1,13 +1,12 @@
 # OpenBSD makefile for:	nmap
-# Version required:	2.02
+# Version required:	2.03
 # Date created:		10 January 1999
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/01/11 05:37:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/07 23:24:46 dugsong Exp $
 #
 
-DISTNAME=		nmap-2.02
-PKGNAME=		nmap-2.02
+DISTNAME=		nmap-2.03
 CATEGORIES=     	net
 
 MAINTAINER=		angelos@openbsd.org
