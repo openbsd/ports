@@ -3,7 +3,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 08:12:40 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:07 espie Exp $
 #
 
 DISTNAME=	tkman-2.0.6
@@ -19,7 +19,7 @@ RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/tkman
+	@mkdir -p ${PREFIX}/share/doc/tkman
 	${INSTALL_DATA} ${WRKSRC}/tkman-help.html ${PREFIX}/share/doc/tkman
 .endif
 

@@ -23,8 +23,8 @@ RUN_DEPENDS=	tcpclient:${PORTSDIR}/net/ucspi-tcp
 RUN_DEPENDS+=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail/qmail
 
 pre-build:
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
-	@${ECHO} ${QMAILDIR} > ${WRKSRC}/conf-qmail
+	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
+	@echo ${QMAILDIR} > ${WRKSRC}/conf-qmail
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		26 Mar 1999
 # Whom:                 Jim Mock <jim@FreeBSD.org>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/12/14 05:22:46 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:08 espie Exp $
 
 DISTNAME=	gaim-0.9.10
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+= --disable-esd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gaim ${PREFIX}/bin
-	@${ECHO} "===>  Installing pixmaps"
+	@echo "===>  Installing pixmaps"
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gaim/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/share/gaim/pixmaps
 

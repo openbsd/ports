@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/21 15:22:53 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:07 espie Exp $
 
 DISTNAME=	speak_freely-7.1
 CATEGORIES=	mbone audio security
@@ -16,7 +16,7 @@ MAKE_ENV+=	CCFLAGS=-DM_LITTLE_ENDIAN
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/speak_freely
+	@mkdir -p ${PREFIX}/lib/speak_freely
 	@$(INSTALL_DATA) ${WRKSRC}/busy.au ${WRKSRC}/ring.au \
 		${PREFIX}/lib/speak_freely
 

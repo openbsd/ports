@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/05 03:12:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:05 espie Exp $
 
 DISTNAME=	asmail-0.50
 CATEGORIES=	mail x11
@@ -25,7 +25,7 @@ post-install:
 .for pixmap in ${PIXMAPS}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${pixmap} ${PREFIX}/include/X11/pixmaps
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/asmail
+	mkdir -p ${PREFIX}/share/doc/asmail
 	${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/doc/asmail
 	strip ${PREFIX}/bin/asmail
 

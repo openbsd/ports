@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/02 22:24:54 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:03 espie Exp $
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
@@ -12,15 +12,15 @@ MAINTAINER=	angelos@openbsd.org
 USE_IMAKE=	yes
 
 pre-install:
-	@${MKDIR} ${PREFIX}/lib/xjewel.font
+	@mkdir -p ${PREFIX}/lib/xjewel.font
 	@(cd ${WRKSRC}/bitmaps; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
 		${PREFIX}/lib/xjewel.font)
 
 post-install:
-	@(${MV} ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
-	  ${ECHO} "#!/bin/sh"				>  ${PREFIX}/bin/xjewel; \
-	  ${ECHO} "xset +fp ${PREFIX}/lib/xjewel.font"	>> ${PREFIX}/bin/xjewel; \
-	  ${ECHO} "xjewel_"				>> ${PREFIX}/bin/xjewel; \
+	@(mv ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
+	  echo "#!/bin/sh"				>  ${PREFIX}/bin/xjewel; \
+	  echo "xset +fp ${PREFIX}/lib/xjewel.font"	>> ${PREFIX}/bin/xjewel; \
+	  echo "xjewel_"				>> ${PREFIX}/bin/xjewel; \
 	  ${CHMOD} ugo+x ${PREFIX}/bin/xjewel)
 
 .include <bsd.port.mk>

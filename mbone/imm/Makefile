@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:07 espie Exp $
 
 DISTNAME=	imm.source
 PKGNAME=	imm-3.5a1
@@ -17,9 +17,9 @@ USE_X11=	yes
 WRKDIST=		${WRKDIR}/mnm
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/openbsd
-	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/Makefile.openbsd ${WRKSRC}/src
+	@mkdir -p ${WRKSRC}/openbsd
+	@cp ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
+	@cp ${FILESDIR}/Makefile.openbsd ${WRKSRC}/src
 
 # The included makefile doesn't have an "install" target.
 do-install:
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/openbsd/lscomp ${PREFIX}/bin
 # and no man pages at all yet.
 # But include the very limited documentation
-	@${MKDIR} ${PREFIX}/share/doc/imm
+	@mkdir -p ${PREFIX}/share/doc/imm
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/imm
 	${INSTALL_DATA} ${WRKSRC}/imm_readme.txt ${PREFIX}/share/doc/imm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:10 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 
 DISTNAME=       vnc-3.3.2r3_unixsrc
@@ -25,16 +25,16 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
 	${INSTALL_PROGRAM} ${WRKSRC}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
 	${INSTALL_PROGRAM} ${WRKSRC}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
-	${SED}  -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
+	sed  -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
 		< ${WRKSRC}/vncserver \
 		> ${WRKSRC}/vncserver.local
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
 # The documentation comes with bogus ownerships; this is a little leaky security-wise
-	${MKDIR} ${PREFIX}/share/doc/vnc
+	mkdir -p ${PREFIX}/share/doc/vnc
 	tar -C ${PREFIX}/share/doc/vnc -xzf ${DISTDIR}/vnc-3.3.2_doc.tgz
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
 # Go install Java classes
-	${MKDIR} ${PREFIX}/share/vnc
-	${CP} -R ${WRKSRC}/classes ${PREFIX}/share/vnc
+	mkdir -p ${PREFIX}/share/vnc
+	cp -R ${WRKSRC}/classes ${PREFIX}/share/vnc
 
 .include <bsd.port.mk>

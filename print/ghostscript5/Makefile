@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/02/11 00:37:35 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/02/11 01:10:11 espie Exp $
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
@@ -66,17 +66,17 @@ pre-fetch:
 .endif
 
 post-extract:
-	@${TOUCH} ${WRKSRC}/adler32.c
-	@${TOUCH} ${WRKSRC}/deflate.c
-	@${TOUCH} ${WRKSRC}/trees.c
-	@${TOUCH} ${WRKSRC}/adler32.o
-	@${TOUCH} ${WRKSRC}/deflate.o
-	@${TOUCH} ${WRKSRC}/trees.o
-	@${LN} -sf ${JPEG_DIR} ${WRKSRC}/jpeg-6b
-	@${LN} -sf ${PNG_DIR} ${WRKSRC}/libpng
-	@cd ${WRKSRC} && ${MV} devs.mak devs.mak.keep
+	@touch ${WRKSRC}/adler32.c
+	@touch ${WRKSRC}/deflate.c
+	@touch ${WRKSRC}/trees.c
+	@touch ${WRKSRC}/adler32.o
+	@touch ${WRKSRC}/deflate.o
+	@touch ${WRKSRC}/trees.o
+	@ln -sf ${JPEG_DIR} ${WRKSRC}/jpeg-6b
+	@ln -sf ${PNG_DIR} ${WRKSRC}/libpng
+	@cd ${WRKSRC} && mv devs.mak devs.mak.keep
 	@cd ${WRKSRC} && ${SETENV} unzip -La ${DISTDIR}/${HP850_DRV}
-	@cd ${WRKSRC} && ${RM} devs.mak && ${MV} devs.mak.keep devs.mak
+	@cd ${WRKSRC} && rm devs.mak && mv devs.mak.keep devs.mak
 	@cp ${DISTDIR}/${PDFENCRYPT} ${WRKSRC}
 
 do-configure:
@@ -89,7 +89,7 @@ do-configure:
 .endif
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/share/ghostscript/fonts \
+	@mkdir -p ${PREFIX}/share/ghostscript ${PREFIX}/share/ghostscript/fonts \
 		${PREFIX}/bin ${PREFIX}/man/man1
 	(cd ${PREFIX}/share/ghostscript/fonts ; \
 			${TAR} -xzf ${DISTDIR}/${GS_FONTS_STD} ; \

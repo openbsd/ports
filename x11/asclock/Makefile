@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/19 05:49:06 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:14 espie Exp $
 #
 
 DISTNAME=	asclock
@@ -19,7 +19,7 @@ USE_IMAKE=	yes
 
 pre-configure:
 	(cd ${WRKSRC}; \
-	${ECHO} ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)
+	echo ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)
 	@${ECHO_MSG} "*****************  NOTE  *****************"
 	@${ECHO_MSG} "*                                        *"
 	@${ECHO_MSG} "*  You can choose languages for asclock. *"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/03/24 03:10:06 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 01:10:03 espie Exp $
 
 DISTNAME=       libggi-2.0b1
 CATEGORIES=     graphics
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-gii=${PREFIX}/
 
 post-install:
-	${MKDIR} -p ${docdir}
+	mkdir -p ${docdir}
 	${INSTALL_DATA} ${WRKSRC}/README ${docdir}/README
 	${INSTALL_DATA} ${WRKSRC}/libggi.conf ${docdir}/libggi.conf.example
 	${INSTALL_DATA} ${WRKSRC}/extensions/misc/libggimisc.conf \

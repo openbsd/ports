@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/09 02:27:16 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:06 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 #
 
@@ -18,10 +18,10 @@ USE_X11=	YES
 GNU_CONFIGURE=	YES
 
 pre-configure:
-	@${CP} -f ${FILESDIR}/config.cache ${WRKSRC}
+	@cp -f ${FILESDIR}/config.cache ${WRKSRC}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/xfmail
+	mkdir -p ${PREFIX}/share/doc/xfmail
 	${INSTALL_DATA} ${WRKSRC}/Copyright ${PREFIX}/share/doc/xfmail
 
 .include <bsd.port.mk>

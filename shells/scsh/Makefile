@@ -3,7 +3,7 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.5 1998/04/12 22:26:30 marc Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:12 espie Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -23,14 +23,14 @@ MAN1=		scsh.1
 post-install:
 	(cd ${WRKSRC} ; \
 	 ${INSTALL_DATA} README RELEASE NEWS COPYING ${PREFIX}/lib/scsh/doc)
-	${RM} -f ${PREFIX}/share/doc/scsh
-	$(LN) -fs ${PREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
-	@$(ECHO)
-	@$(ECHO) "Finished installing $(DISTNAME)"
-	@$(ECHO) "To complete the install, you should notify the system"
-	@$(ECHO) "that $(PREFIX)/bin/scsh is a valid shell by adding it to"
-	@$(ECHO) "/etc/shells."
-	@$(ECHO) "If you are unfamiliar with this file, consult the shells(5)"
-	@$(ECHO) "manual page."
+	rm -f ${PREFIX}/share/doc/scsh
+	ln -fs ${PREFIX}/lib/scsh/doc ${PREFIX}/share/doc/scsh
+	@echo
+	@echo "Finished installing $(DISTNAME)"
+	@echo "To complete the install, you should notify the system"
+	@echo "that $(PREFIX)/bin/scsh is a valid shell by adding it to"
+	@echo "/etc/shells."
+	@echo "If you are unfamiliar with this file, consult the shells(5)"
+	@echo "manual page."
 
 .include <bsd.port.mk>

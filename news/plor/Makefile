@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/06 19:48:00 rohee Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:10 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	plor-0.3.2
@@ -15,7 +15,7 @@ DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
 
 post-install:
 .if !defined{NOPORTDOCS}
-	@${MKDIR} ${PREFIX}/share/doc/plor
+	@mkdir -p ${PREFIX}/share/doc/plor
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/plor
 .endfor

@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.3 1999/11/03 01:22:10 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:11 espie Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -18,16 +18,16 @@ NO_PACKAGE=	package must be made manually with three paper sizes
 fetch-depends:
 .if !defined(NO_WARNINGS)
 .if !defined(PAGESIZE)
-	@${ECHO} ""
-	@${ECHO} You must define your favorite page size:
-	@${ECHO} PAGE_LETTER for US letter
-	@${ECHO} PAGE_LEGAL for legal
-	@${ECHO} PAGE_A4 for European/Australian A4
-	@${ECHO} ""
-	@${ECHO} by setting the enivonment variable PAGESIZE=PAGE_A4
-	@${ECHO} or by the command \"make PAGESIZE=PAGE_A4\"
-	@${ECHO} ""
-	@${FALSE}
+	@echo ""
+	@echo You must define your favorite page size:
+	@echo PAGE_LETTER for US letter
+	@echo PAGE_LEGAL for legal
+	@echo PAGE_A4 for European/Australian A4
+	@echo ""
+	@echo by setting the enivonment variable PAGESIZE=PAGE_A4
+	@echo or by the command \"make PAGESIZE=PAGE_A4\"
+	@echo ""
+	@exit 1
 .endif
 .endif
 

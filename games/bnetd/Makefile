@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/11 03:48:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 01:10:02 espie Exp $
 
 DISTNAME=	bnetd-0.4.19
 CATEGORIES=	games 
@@ -17,7 +17,7 @@ do-install:
 	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} * ${PREFIX}/bin
 	cd ${WRKSRC}/sbin; ${INSTALL_PROGRAM} * ${PREFIX}/sbin
 	cd ${WRKSRC}/man; ${INSTALL_MAN}  bnchat.1 bnetd.1 bnftp.1 bnpass.1 ${PREFIX}/man/man1; ${INSTALL_MAN} bnetd.conf.4 bntext.4 bnmotd.txt.4 bnnews.txt.4 ${PREFIX}/man/man4
-	${MKDIR} ${PREFIX}/bnetd; ${CP} -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${WRKSRC}/reports ${PREFIX}/bnetd
+	mkdir -p ${PREFIX}/bnetd; cp -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${WRKSRC}/reports ${PREFIX}/bnetd
 
 
 .include <bsd.port.mk>

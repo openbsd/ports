@@ -3,7 +3,7 @@
 # Date created:		31 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:04 espie Exp $
 #
 
 DISTNAME=	gofer230a
@@ -19,7 +19,7 @@ LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
 do-install:
-	${MKDIR} ${LIBDIR}
+	mkdir -p ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofer ${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/src/gofc ${LIBDIR}
 	${INSTALL_MAN} ${WRKDIR}/docs/gofer.1 ${PREFIX}/man/man1
-	${MKDIR} ${LIBDIR}/docs
+	mkdir -p ${LIBDIR}/docs
 	${INSTALL_DATA} ${WRKDIR}/docs/* ${LIBDIR}/docs
 
 .include <bsd.port.mk>

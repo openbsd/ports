@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/09/06 18:23:45 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/11 01:09:59 espie Exp $
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio
@@ -16,16 +16,16 @@ CONFIGURE_ARGS+= --sysconfdir=${SYSCONFDIR}
 post-configure:
 .for ff in rplay.conf.5 rplay.helpers.5 rplay.hosts.5 rplayd.8
 	@cd ${WRKSRC}/doc; \
-		${SED} -e "s,/usr/local/etc,${SYSCONFDIR},g" ${ff} >${ff}.tmp; \
-		${MV} ${ff}.tmp ${ff}
+		sed -e "s,/usr/local/etc,${SYSCONFDIR},g" ${ff} >${ff}.tmp; \
+		mv ${ff}.tmp ${ff}
 .endfor
 
 post-install:
 	@if [ ! -d /etc/rplay ]; then \
-		${ECHO} "Installing default configs..."; \
-		${MKDIR} /etc/rplay; \
-		${ECHO} localhost >/etc/rplay/rplay.hosts; \
-		${TOUCH} /etc/rplay/rplay.{conf,helpers,servers}; \
+		echo "Installing default configs..."; \
+		mkdir -p /etc/rplay; \
+		echo localhost >/etc/rplay/rplay.hosts; \
+		touch /etc/rplay/rplay.{conf,helpers,servers}; \
 	fi
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.6 2000/02/11 00:37:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:04 espie Exp $
 
 NEED_VERSION=	1.116
 DISTNAME=	Wnn4.2
@@ -59,8 +59,8 @@ post-patch:
 pre-build:
 	for file in ${WRKSRC}/config/Project.tmpl \
 		${WRKSRC}/Contrib/dic/gerodic/Makefile; do \
-	  ${MV} $$file $$file.orig2; \
-	  ${SED} 's!^\([ ]*PREFIX = \).*$$!\1${PREFIX}!' \
+	  mv $$file $$file.orig2; \
+	  sed 's!^\([ ]*PREFIX = \).*$$!\1${PREFIX}!' \
 		$$file.orig2 > $$file; \
 	done
 
@@ -80,7 +80,7 @@ post-install:
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 .if defined(PORT_DOCDIR)
-	${MKDIR} ${PORT_DOCDIR}
+	mkdir -p ${PORT_DOCDIR}
 	@(cd ${DOC_FROM}; tar cvf - manual manual.en | \
 		(cd ${PORT_DOCDIR}; tar xf -))
 	@chown -R bin.bin ${PORT_DOCDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/11 00:37:19 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/11 01:10:01 espie Exp $
 #
 
 PKGNAME=	minicom-1.82.1
@@ -20,7 +20,7 @@ WRKDIST=		${WRKDIR}/${PKGNAME}/src
 
 post-install:
 .if exists(/etc/minicom/minicom.users)
-	@${ECHO} "*** Found existing /etc/minicom/minicom.users -- not replacing."
+	@echo "*** Found existing /etc/minicom/minicom.users -- not replacing."
 .else
 	${INSTALL_DATA} ${WRKSRC}/minicom.users /etc/minicom
 .endif

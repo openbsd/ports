@@ -19,7 +19,7 @@ INSTALL_TARGET=	setup check
 NO_MTREE=	yes
 
 pre-build:
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
+	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

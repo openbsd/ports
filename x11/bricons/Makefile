@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/14 22:29:00 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 01:10:14 espie Exp $
 
 DISTNAME=	bricons
 PKGNAME=	bricons-3.0
@@ -14,7 +14,7 @@ USE_IMAKE=	yes
 post-install:
 	${INSTALL_DATA} $(WRKDIR)/bricons/Xbricons $(PREFIX)/lib/X11/app-defaults/
 	${INSTALL_DATA} $(WRKDIR)/bricons/bitmaps/* $(PREFIX)/include/X11/bitmaps/
-	${MKDIR} $(PREFIX)/include/X11/pixmaps
+	mkdir -p $(PREFIX)/include/X11/pixmaps
 	${INSTALL_DATA} $(WRKDIR)/bricons/*.xpm $(PREFIX)/include/X11/pixmaps/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "     Use ./files/DOTbriconsrc as an example. This  file"

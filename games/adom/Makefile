@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:02 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 DISTNAME=	adom-g14
@@ -26,7 +26,7 @@ ADOMOWN?=	games
 HISCORE_DIR=	/var/lib/adom
 
 pre-fetch:
-	@${ECHO} "Your kernel must have COMPAT_LINUX (GENERIC does)"
+	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ADOM_DOC}

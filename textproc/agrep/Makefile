@@ -3,7 +3,7 @@
 # Date created:			  December 1, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/04/12 23:23:00 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:13 espie Exp $
 #
 
 DISTNAME=	agrep-2.04
@@ -23,7 +23,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/agrep ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/agrep.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/agrep
+	@mkdir -p ${PREFIX}/share/doc/agrep
 	@${INSTALL_MAN} ${WRKSRC}/agrep.algorithms ${PREFIX}/share/doc/agrep
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/11 00:37:37 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/11 01:10:12 espie Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
@@ -35,18 +35,18 @@ MAN5=		libsocks5.conf.5 socks5.conf.5
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-	  ${ECHO} ""; \
-	  ${ECHO} "NEC requires that you grab the dist files from their"; \
-	  ${ECHO} "web site at http://www.socks.nec.com.  Please make sure"; \
-	  ${ECHO} "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
-	  ${ECHO} "and run make again."; \
-	  ${ECHO} ""; \
+	  echo ""; \
+	  echo "NEC requires that you grab the dist files from their"; \
+	  echo "web site at http://www.socks.nec.com.  Please make sure"; \
+	  echo "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
+	  echo "and run make again."; \
+	  echo ""; \
 	  exit 1;\
 	fi
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/socks
-	${MKDIR} ${PREFIX}/share/doc/socks
+	mkdir -p ${PREFIX}/lib/socks
+	mkdir -p ${PREFIX}/share/doc/socks
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/lib/socks
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/socks
 	${LDCONFIG} -m ${PREFIX}/lib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/24 03:14:00 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:03 espie Exp $
 
 DISTNAME=       libgii-0.1
 CATEGORIES=     graphics
@@ -24,7 +24,7 @@ CONFIGURE_ARGS+= --enable-static
 docdir=${PREFIX}/share/doc/gii
 
 post-install:
-	${MKDIR} -p ${docdir}
+	mkdir -p ${docdir}
 	${INSTALL_DATA} ${WRKSRC}/README ${docdir}
 	${INSTALL_DATA} ${WRKSRC}/libgii.conf ${docdir}/libgii.conf.example
 	${LDCONFIG} -m ${PREFIX}/lib

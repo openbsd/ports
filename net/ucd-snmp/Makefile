@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/29 09:40:16 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:10 espie Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.2
@@ -34,7 +34,7 @@ SBIN=		snmpd snmptrapd
 post-install:
 	( cd ${PREFIX}/bin; strip ${BIN} )
 	( cd ${PREFIX}/sbin; strip ${SBIN} )
-	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
+	@mkdir -p ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/etc/* ; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
 

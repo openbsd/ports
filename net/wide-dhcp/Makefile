@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/09 04:11:52 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:10 espie Exp $
 
 DISTNAME=       dhcp-1.4.0p3
 PKGNAME=        wide-dhcp-1.4.0.3
@@ -13,18 +13,18 @@ MAKE_ENV=	OSTYPE=`uname`
 post-install:
 .if !defined(NOPORTDOCS)
 	@if [ ! -d ${PREFIX}/share/doc/dhcp ]; then \
-		${MKDIR} ${PREFIX}/share/doc/dhcp; \
+		mkdir -p ${PREFIX}/share/doc/dhcp; \
 	fi
 	@if [ ! -d ${PREFIX}/share/examples/dhcp ]; then \
-		${MKDIR} ${PREFIX}/share/examples/dhcp; \
+		mkdir -p ${PREFIX}/share/examples/dhcp; \
 	fi
-	@${CP} ${WRKSRC}/README ${PREFIX}/share/doc/dhcp/
-	@${CP} ${WRKSRC}/README.jis ${PREFIX}/share/doc/dhcp/
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.pool ${PREFIX}/share/examples/dhcp/dhcpdb.pool.sample
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.relay ${PREFIX}/share/examples/dhcp/dhcpdb.relay.sample
-	@${CP} ${WRKSRC}/db_sample/dhcpdb.server ${PREFIX}/share/examples/dhcp/dhcpdb.server.sample
-	@${CP} ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/doc/dhcp/
-	@${CP} ${WRKSRC}/db_sample/intro.dhcp.jis ${PREFIX}/share/doc/dhcp/
+	@cp ${WRKSRC}/README ${PREFIX}/share/doc/dhcp/
+	@cp ${WRKSRC}/README.jis ${PREFIX}/share/doc/dhcp/
+	@cp ${WRKSRC}/db_sample/dhcpdb.pool ${PREFIX}/share/examples/dhcp/dhcpdb.pool.sample
+	@cp ${WRKSRC}/db_sample/dhcpdb.relay ${PREFIX}/share/examples/dhcp/dhcpdb.relay.sample
+	@cp ${WRKSRC}/db_sample/dhcpdb.server ${PREFIX}/share/examples/dhcp/dhcpdb.server.sample
+	@cp ${WRKSRC}/db_sample/intro.dhcp ${PREFIX}/share/doc/dhcp/
+	@cp ${WRKSRC}/db_sample/intro.dhcp.jis ${PREFIX}/share/doc/dhcp/
 .endif
 	@echo "***"
 	@echo "*** Don't forget to enable kernel BPF support!"

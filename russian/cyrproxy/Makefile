@@ -1,5 +1,5 @@
 # $FreeBSD: ports/russian/cyrproxy/Makefile,v 1.4 1999/08/31 01:46:57 peter Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/26 07:35:48 form Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:11 espie Exp $
 
 DISTNAME=		cyrproxy-1.4.2
 CATEGORIES=		russian net www
@@ -10,7 +10,7 @@ MAINTAINER=		form@openbsd.org
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cyrproxy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrproxy
-#	${MKDIR} ${PREFIX}/www/cgi-bin
+#	mkdir -p ${PREFIX}/www/cgi-bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cyrproxy ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpspy ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/cyrcoder/cyrtrans ${PREFIX}/bin

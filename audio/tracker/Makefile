@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/11 00:37:17 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/11 01:10:00 espie Exp $
 
 DISTNAME=	tracker-5.3
 CATEGORIES=	audio
@@ -18,18 +18,18 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		COMPRESSION_FILE=/etc/compression_methods -f
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/Arch/OpenBSD
-	@${CP} files/audio.c files/config.h ${WRKSRC}/Arch/OpenBSD
+	@mkdir -p ${WRKSRC}/Arch/OpenBSD
+	@cp files/audio.c files/config.h ${WRKSRC}/Arch/OpenBSD
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/tracker
-	@${MKDIR} ${PREFIX}/lib/tracker
+	@mkdir -p ${PREFIX}/share/doc/tracker
+	@mkdir -p ${PREFIX}/lib/tracker
 	@cd ${WRKSRC}/Docs && \
 	makeinfo --no-split tracker.texinfo -o tracker.info && \
 	$(INSTALL_MAN) tracker.info ${PREFIX}/info && \
-	${RM} -f tracker.info *.orig
-	${CP} -R ${WRKSRC}/Docs/* ${PREFIX}/share/doc/tracker
-	${CP} ${WRKSRC}/Lib/compression_methods ${PREFIX}/lib/tracker/compression_methods.sample
+	rm -f tracker.info *.orig
+	cp -R ${WRKSRC}/Docs/* ${PREFIX}/share/doc/tracker
+	cp ${WRKSRC}/Lib/compression_methods ${PREFIX}/lib/tracker/compression_methods.sample
 
 # there is a small test module included. This target tests that
 # - tracker correctly handles compressed files (only after install),

@@ -14,7 +14,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/waveplay ${PREFIX}/bin/waveplay
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/waveplay
+	@mkdir -p ${PREFIX}/share/doc/waveplay
 	@${STRIP} ${PREFIX}/bin/waveplay
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/waveplay/
 	${INSTALL_DATA} ${WRKSRC}/README.jp ${PREFIX}/share/doc/waveplay/

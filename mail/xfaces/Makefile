@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:37 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:06 espie Exp $
 
 BROKEN=		bad packing lists
 
@@ -20,7 +20,7 @@ pre-configure:
 	@ln -sf ../sounds ${WRKSRC}
 
 pre-install:
-	@${MKDIR} ${LOCALBASE}/share/sounds
-	@${MKDIR} ${X11BASE}/include/X11/pixmaps
+	@mkdir -p ${LOCALBASE}/share/sounds
+	@mkdir -p ${X11BASE}/include/X11/pixmaps
 
 .include <bsd.port.mk>

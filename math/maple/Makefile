@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/10 09:38:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:06 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -55,14 +55,14 @@ do-fetch:
 			mkdir -p ${FULLDISTDIR}/`dirname $$file`;\
 			ln -sf ${CDROM}/$$file ${FULLDISTDIR}/$$file;\
 		else\
-			${ECHO} "File $$file not found. Is your cdrom mounted as ${CDROM} ?";\
+			echo "File $$file not found. Is your cdrom mounted as ${CDROM} ?";\
 		fi\
 	done
 
 MAPLE_SCRIPTS=maple march mint updtsrc xmaple
 
 do-install:
-	@mkdir -p ${MAPLE_DIR} || ${ECHO} "${MAPLE_DIR} already exists"
+	@mkdir -p ${MAPLE_DIR} || echo "${MAPLE_DIR} already exists"
 	@cd ${MAPLE_DIR} && yes | ${FULLDISTDIR}/install
 	@echo "But this installation script does it for you"
 	@for file in ${MAPLE_SCRIPTS}; do\

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:36 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:12 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	crack5.0
@@ -19,7 +19,7 @@ pre-configure:
 .if !defined(USE_DES)
 	@/bin/mv -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.notused
 	@/bin/mv -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
-	@${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
+	@cp -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
 .endif
 
 pre-build:
@@ -36,8 +36,8 @@ do-build:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/crack
-	@${RM} -f ${WRKSRC}/Run/*
+	@mkdir -p ${PREFIX}/crack
+	@rm -f ${WRKSRC}/Run/*
 	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/08/18 02:06:26 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:00 espie Exp $
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
@@ -25,13 +25,13 @@ retest: build
 # Move it so patch doesn't get confused.
 #
 pre-patch:
-	@${MV} ${WRKSRC}/src/RCS ${WRKSRC}/src/RCS-
+	@mv ${WRKSRC}/src/RCS ${WRKSRC}/src/RCS-
 
 pre-install:
-	[ -d ${PREFIX}/lib/lmbench ] || ${MKDIR} ${PREFIX}/lib/lmbench
+	[ -d ${PREFIX}/lib/lmbench ] || mkdir -p ${PREFIX}/lib/lmbench
 
 do-install:
-	${CP} ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
+	cp ${FILESDIR}/Makefile ${PREFIX}/lib/lmbench
 	tar -C ${WRKSRC} -cf - Results bin scripts | \
 	  tar -C ${PREFIX}/lib/lmbench -xf -
 .for man in ${MAN1}

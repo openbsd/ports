@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:04 espie Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -52,7 +52,7 @@ LIB_NAME=	libonew${INPUT_METHOD}.a
 PORT_DOCDIR=	${LOCALBASE}/share/doc/ja-onew${INPUT_METHOD}
 
 post-patch:
-	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
+	sed	-e 's,%LOCALBASE%,${LOCALBASE},g' \
 		-e 's,%X11BASE%,${X11BASE},g' \
 		${ONEW_CONF} > ${WRKSRC}/ONEW_CONF
 
@@ -60,12 +60,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libonew.a ${LOCALBASE}/lib/${LIB_NAME}
 .if !defined(NOPORTDOCS)
 .if defined(PORT_DOCDIR)
-	${MKDIR} ${PORT_DOCDIR}
+	mkdir -p ${PORT_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.ONEW ${PORT_DOCDIR}
 .endif
 .endif
 .if defined(WNN6)
-	${MKDIR} ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6
+	mkdir -p ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6
 	for file in 1B_TOUPPER 1B_ZENHIRA 1B_ZENKATA 1B_newTOUPPER \
 			2A_CTRL 2B_DAKUTEN 2B_JIS 2B_ROMKANA 2_TCODE \
 			3B_HANKATA 3B_KATAKANA 3B_ZENKAKU autork \
@@ -73,10 +73,10 @@ do-install:
 		${INSTALL_DATA} ${LOCALBASE}/lib/wnn/ja_JP/rk/$${file} \
 			 ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6; \
 	done
-	@${ECHO} "############################################################"
-	@${ECHO} "We install all files in ${LOCALBASE}/lib/wnn/ja_JP/rk/"
-	@${ECHO} "  into new directory ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/"
-	@${ECHO} "############################################################"
+	@echo "############################################################"
+	@echo "We install all files in ${LOCALBASE}/lib/wnn/ja_JP/rk/"
+	@echo "  into new directory ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/"
+	@echo "############################################################"
 .endif
 
 .include <bsd.port.mk>

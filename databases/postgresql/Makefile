@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/02/11 00:37:20 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2000/02/11 01:10:01 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
@@ -71,7 +71,7 @@ MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
-		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
+		--with-template=`uname -s | tr '[A-Z]' '[a-z]'` \
 		--with-includes="${PREFIX}/include ${TCL_INCDIR} \
 		${TK_INCDIR}" ${WITH_TCL} --with-libraries=${PREFIX}/lib
 
@@ -89,35 +89,35 @@ PGDATA=		/var/pgsql/data
 post-configure:
 .if defined(USE_TCL) && ${USE_TCL:U} == "YES"
 	@if [ x"${NO_SHARED_LIBS}" = "x" ]; then \
-		${CP} ${PKGDIR}/PLIST.tcl ${WRKDIR}/PLIST; \
+		cp ${PKGDIR}/PLIST.tcl ${WRKDIR}/PLIST; \
 	else \
-		${CP} ${PKGDIR}/PLIST.tcl.noshared ${WRKDIR}/PLIST; \
+		cp ${PKGDIR}/PLIST.tcl.noshared ${WRKDIR}/PLIST; \
 	fi
 .else
 	@if [ x"${NO_SHARED_LIBS}" = "x" ]; then \
-		${CP} ${PKGDIR}/PLIST ${WRKDIR}/PLIST; \
+		cp ${PKGDIR}/PLIST ${WRKDIR}/PLIST; \
 	else \
-		${CP} ${PKGDIR}/PLIST.noshared ${WRKDIR}/PLIST; \
+		cp ${PKGDIR}/PLIST.noshared ${WRKDIR}/PLIST; \
 	fi
 .endif
 
 .if defined(USE_TCL) && ${USE_TCL:U} == "YES"
 post-patch:
-	@${MV} ${WRKSRC}/bin/pgaccess/main.tcl \
+	@mv ${WRKSRC}/bin/pgaccess/main.tcl \
 		${WRKSRC}/bin/pgaccess/main.tcl.orig
-	@${SED} -e "s=wish=${LOCALBASE}/bin/wish8.0=" \
+	@sed -e "s=wish=${LOCALBASE}/bin/wish8.0=" \
 		${WRKSRC}/bin/pgaccess/main.tcl.orig \
 		> ${WRKSRC}/bin/pgaccess/main.tcl
 .endif
 
 pre-build:
-	@${MKDIR} ${WRKSRC}/pgwrap
-	@${CP} ${FILESDIR}/pgwrap.c ${FILESDIR}/pgwrap.h ${WRKSRC}/pgwrap
-	@${SED} -e "s,@PGUSER@,${PGUSER},g" -e "s,@PGBIN@,${PGBIN},g" \
+	@mkdir -p ${WRKSRC}/pgwrap
+	@cp ${FILESDIR}/pgwrap.c ${FILESDIR}/pgwrap.h ${WRKSRC}/pgwrap
+	@sed -e "s,@PGUSER@,${PGUSER},g" -e "s,@PGBIN@,${PGBIN},g" \
 		-e "s,@PGLIB@,${PGLIB},g" -e "s,@PGDATA@,${PGDATA},g" \
 		-e "s,@PREFIX@,${PREFIX},g" < ${FILESDIR}/Makefile.in \
 		> ${WRKSRC}/pgwrap/Makefile
-	@${SED} -e "s,@PREFIX@,${PREFIX},g" \
+	@sed -e "s,@PREFIX@,${PREFIX},g" \
 		< ${FILESDIR}/README.OpenBSD.in \
 		> ${WRKSRC}/../doc/README.OpenBSD
 	(cd ${WRKSRC}/pgwrap; ${MAKE} depend && ${MAKE})
@@ -126,8 +126,8 @@ pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/pgsql
 
 post-install:
-	@${RMDIR} ${PREFIX}/pgsql/include/port/bsd
-	@${RMDIR} ${PREFIX}/pgsql/include/port
+	@rmdir ${PREFIX}/pgsql/include/port/bsd
+	@rmdir ${PREFIX}/pgsql/include/port
 	${INSTALL_PROGRAM} ${WRKSRC}/pgwrap/pgwrap ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgsql
 	${INSTALL_DATA} ${WRKSRC}/../doc/FAQ* ${PREFIX}/share/doc/pgsql

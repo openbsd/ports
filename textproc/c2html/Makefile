@@ -3,7 +3,7 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/07/20 16:41:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:13 espie Exp $
 #
 
 DISTNAME=		c2html-0.6.1
@@ -20,7 +20,7 @@ MAN1=			c2html.1
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/c2html ${PREFIX}/bin
 	@ ${INSTALL_MAN} ${WRKSRC}/c2html.1 ${PREFIX}/man/man1
-	@ ${MKDIR} ${PREFIX}/share/doc/c2html
+	@ mkdir -p ${PREFIX}/share/doc/c2html
 .for file in COPYING README
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/c2html
 .endfor

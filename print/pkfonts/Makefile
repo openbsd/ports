@@ -2,7 +2,7 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 1999/10/31 06:27:48 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:11 espie Exp $
 #
 
 NEED_VERSION=	1.116
@@ -49,12 +49,12 @@ pre-fetch:
 .endif
 
 do-extract:
-	${MKDIR} ${WRKDIR}
+	mkdir -p ${WRKDIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/fonts
+	mkdir -p ${PREFIX}/lib/fonts
 	tar -C ${PREFIX}/lib/fonts -xzf ${FULLDISTDIR}/${DISTFILES}
-	@${CP} ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
+	@cp ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
 
 pre-clean:
 	@rm -f ${PKGDIR}/PLIST  # created by do-install above

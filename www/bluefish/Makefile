@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/02 02:34:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:13 espie Exp $
 
 DISTNAME=	bluefish-0.3.5
 CATEGORIES=	www 
@@ -22,7 +22,7 @@ CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include"
 do-install:
-	@${MKDIR} ${PREFIX}/lib/bluefish
+	@mkdir -p ${PREFIX}/lib/bluefish
 	${INSTALL_PROGRAM} ${WRKSRC}/src/bluefish ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/data/php3_functions ${PREFIX}/lib/bluefish
 	${INSTALL_DATA} ${WRKSRC}/data/rxml_functions ${PREFIX}/lib/bluefish
@@ -34,9 +34,9 @@ do-install:
 post-install:
 	@strip ${PREFIX}/bin/bluefish
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing bluefish docs in ${PREFIX}/share/doc/bluefish"
-	@${ECHO} "===>   A manual is available online at http://bluefish.linuxbox.com/manual/"
-	@${MKDIR} ${PREFIX}/share/doc/bluefish && ${CHMOD} a+rx ${PREFIX}/share/doc/bluefish
+	@echo "===>   Installing bluefish docs in ${PREFIX}/share/doc/bluefish"
+	@echo "===>   A manual is available online at http://bluefish.linuxbox.com/manual/"
+	@mkdir -p ${PREFIX}/share/doc/bluefish && ${CHMOD} a+rx ${PREFIX}/share/doc/bluefish
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bluefish
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/04/18 23:52:41 turan Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:12 espie Exp $
 #
 # Based on FreeBSD port by Murray Stokely <murray@cdrom.com>
 
@@ -17,7 +17,7 @@ post-build:
 
 post-install:
 	cd ${WRKSRC}/diag && make install
-	${MKDIR} ${PREFIX}/share/mkhybrid
+	mkdir -p ${PREFIX}/share/mkhybrid
 	${INSTALL_DATA} ${FILESDIR}/macmaping.tbl ${PREFIX}/share/mkhybrid
 
 .include <bsd.port.mk>

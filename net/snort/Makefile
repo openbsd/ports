@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/03 03:58:54 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:10 espie Exp $
 
 DISTNAME=	snort-1.5.1
 CATEGORIES=	net security
@@ -15,6 +15,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/snort.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snort
 	${INSTALL_DATA} ${WRKSRC}/*-lib ${PREFIX}/share/snort
-	@${ECHO} "===> Rule examples installed in ${PREFIX}/share/snort"
+	@echo "===> Rule examples installed in ${PREFIX}/share/snort"
 
 .include <bsd.port.mk>

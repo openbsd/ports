@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/11 00:37:22 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/11 01:10:01 espie Exp $
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
@@ -17,10 +17,10 @@ MAKE_ENV+=	SYS_JOERC="/etc/joe" TERMINFO="1"
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/joe ${PREFIX}/bin
 	@cd ${PREFIX}/bin; \
-		${LN} -sf joe jmacs; \
-		${LN} -sf joe jpico; \
-		${LN} -sf joe jstar; \
-		${LN} -sf joe rjoe
+		ln -sf joe jmacs; \
+		ln -sf joe jpico; \
+		ln -sf joe jstar; \
+		ln -sf joe rjoe
 	${INSTALL_MAN} ${WRKSRC}/joe.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/joe
 	${INSTALL_DATA} ${WRKSRC}/jmacsrc ${PREFIX}/lib/joe
@@ -29,11 +29,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/jstarrc ${PREFIX}/lib/joe
 	${INSTALL_DATA} ${WRKSRC}/rjoerc ${PREFIX}/lib/joe
 	@if [ ! -d /etc/joe ]; then \
-		${ECHO} "***"; \
-		${ECHO} "*** Finished installing joe."; \
-		${ECHO} "*** Default configuration files stored in ${PREFIX}/lib/joe."; \
-		${ECHO} "*** If you wish to change joe configuration, copy these"; \
-		${ECHO} "*** files to /etc/joe and edit them."; \
+		echo "***"; \
+		echo "*** Finished installing joe."; \
+		echo "*** Default configuration files stored in ${PREFIX}/lib/joe."; \
+		echo "*** If you wish to change joe configuration, copy these"; \
+		echo "*** files to /etc/joe and edit them."; \
 	fi
 
 .include <bsd.port.mk>

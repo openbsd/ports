@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/05 15:23:20 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:04 espie Exp $
 
 DISTNAME=	tgif-4.1.25
 CATEGORIES=	graphics
@@ -17,12 +17,12 @@ DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
 READMES=	Copyright HISTORY README
 
 post-extract:
-	@${RM} -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
-	@${CP} ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
+	@rm -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
+	@cp ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
 		${WRKDIR}/${DISTNAME}/Tgif.tmpl
 
 post-install:
-	@${MKDIR} ${TGIFDOC}
+	@mkdir -p ${TGIFDOC}
 	(cd ${WRKSRC} ;\
 		${INSTALL_DATA} ${DEMO_FILES} ${TGIFDOC} ;\
 		${INSTALL_DATA} ${READMES} ${TGIFDOC} ;)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/12 08:45:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:14 espie Exp $
 
 DISTNAME=	  	weblint-1.020	
 CATEGORIES=     	www
@@ -10,8 +10,8 @@ MASTER_SITES=		ftp://ftp.weblint.org/pub/weblint/ \
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO} "==>   Installing weblint docs in ${PREFIX}/share/doc/weblint"
-	@${MKDIR} ${PREFIX}/share/doc/weblint && ${CHMOD} a+rx ${PREFIX}/share/doc/weblint
+	@echo "==>   Installing weblint docs in ${PREFIX}/share/doc/weblint"
+	@mkdir -p ${PREFIX}/share/doc/weblint && ${CHMOD} a+rx ${PREFIX}/share/doc/weblint
 	@${INSTALL_DATA} ${WRKSRC}/weblint.ps ${PREFIX}/share/doc/weblint
 	@${INSTALL_DATA} ${WRKSRC}/weblintrc ${PREFIX}/share/doc/weblint
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/weblint	

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/01/26 11:54:13 peter Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:05 espie Exp $
 #
 
 DISTNAME=	exim-3.12
@@ -10,9 +10,9 @@ MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
 DISTFILES=	exim-3.12.tar.gz exim-texinfo-3.10.tar.gz
 
 do-configure:
-	@${MKDIR} ${WRKSRC}/Local
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Local
-	@${CP} ${FILESDIR}/eximon.conf ${WRKSRC}/Local
+	@mkdir -p ${WRKSRC}/Local
+	@cp ${FILESDIR}/Makefile ${WRKSRC}/Local
+	@cp ${FILESDIR}/eximon.conf ${WRKSRC}/Local
 	@(cd ${WRKSRC}/doc ; \
 	for i in ../../exim-texinfo-3.10/doc/* ; do \
 		ln -sf $$i ; \
@@ -23,7 +23,7 @@ pre-install:
 #	${INSTALL} -d /var/log/exim
 
 post-install:
-	@${CP} ${WRKSRC}/src/configure.default /etc/exim/configure.sample
+	@cp ${WRKSRC}/src/configure.default /etc/exim/configure.sample
 	@echo "EXIM is installed. You must now edit /etc/exim/configure"
 	@echo "and set the correct values for your system."
 	@echo

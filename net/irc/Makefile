@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/10 17:45:51 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:09 espie Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 DISTNAME=       irc2.10.1
@@ -30,8 +30,8 @@ MAN8=           ircd.8 iauth.8 ircdwatch.8
 GNU_CONFIGURE=	yes
 
 post-patch:
-	${SED} -e s,!!SYSLOG_FACILITY!!,$(SYSLOG_FACILITY), $(WRKSRC)/support/config.h.dist > $(WRKSRC)/support/config.h.dist.new
-	${MV} $(WRKSRC)/support/config.h.dist.new $(WRKSRC)/support/config.h.dist
+	sed -e s,!!SYSLOG_FACILITY!!,$(SYSLOG_FACILITY), $(WRKSRC)/support/config.h.dist > $(WRKSRC)/support/config.h.dist.new
+	mv $(WRKSRC)/support/config.h.dist.new $(WRKSRC)/support/config.h.dist
 
 do-build:
 	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
@@ -42,8 +42,8 @@ do-install:
 	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 pre-install:
-	@${MKDIR} ${PREFIX}/lib/ircd
-	@${TOUCH} ${PREFIX}/lib/ircd/users ${PREFIX}/lib/ircd/opers \
+	@mkdir -p ${PREFIX}/lib/ircd
+	@touch ${PREFIX}/lib/ircd/users ${PREFIX}/lib/ircd/opers \
 		${PREFIX}/lib/ircd/rejects
 
 .include <bsd.port.mk>

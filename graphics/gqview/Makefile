@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:04 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1999/08/25 06:14:08 obrien Exp $
 
 DISTNAME=	gqview-0.7.0.src
@@ -20,7 +20,7 @@ ALL_TARGET=	gqview
 WRKDIST=	${WRKDIR}/${PKGNAME}
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/gqview
+	@mkdir -p ${PREFIX}/share/doc/gqview
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview/README
 
 .include <bsd.port.mk>

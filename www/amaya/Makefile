@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:13 espie Exp $
 #
 # Amaya, the W3C http://www.w3.org browser
 #
@@ -29,7 +29,7 @@ USE_GMAKE	= yes
 CONFIGURE_ARGS	= -with-amaya
 
 do-configure:
-	${MKDIR} ${WRKBUILD} && cd ${WRKBUILD} && ../configure ${CONFIGURE_ARGS}
+	mkdir -p ${WRKBUILD} && cd ${WRKBUILD} && ../configure ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>
 

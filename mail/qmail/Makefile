@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/01/28 12:43:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:06 espie Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
@@ -27,13 +27,13 @@ SETUPFILES=	${WRKSRC}/config	${WRKSRC}/config-fast	\
 		${WRKSRC}/ipmeprint	${WRKSRC}/install
 
 pre-build:
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-qmail
+	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
 	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 
 post-install:
-	@${MKDIR} ${PREFIX}/setup
-	@${CP} ${SETUPFILES} ${PREFIX}/setup
+	@mkdir -p ${PREFIX}/setup
+	@cp ${SETUPFILES} ${PREFIX}/setup
 	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

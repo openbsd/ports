@@ -3,7 +3,7 @@
 # Date created:			  Mon June 23, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/29 02:53:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:08 espie Exp $
 #
 
 DISTNAME=	icmpinfo-1.11
@@ -21,7 +21,7 @@ do-install:
 	/bin/chmod 4555 ${PREFIX}/bin/icmpinfo
 	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/${MAN1}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/icmpinfo
+	@mkdir -p ${PREFIX}/share/doc/icmpinfo
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/icmpinfo
 .endif
 

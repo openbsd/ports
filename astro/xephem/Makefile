@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/23 21:58:00 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/11 01:09:59 espie Exp $
 
 DISTNAME=	xephem-3.2.2
 CATEGORIES=	astro
@@ -29,24 +29,24 @@ do-install:
 	 ${SETENV} ${MAKE_ENV} \
 	 ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
 	@(cd ${WRKSRC}/GUI/xephem && \
-	 ${SED} -e 's,: .$$,: ${PREFIX}/lib/X11/xephem,' XEphem.ad > XEphem && \
+	 sed -e 's,: .$$,: ${PREFIX}/lib/X11/xephem,' XEphem.ad > XEphem && \
 	 ${INSTALL_DATA} XEphem ${PREFIX}/lib/X11/app-defaults)
-	@${MKDIR} ${PREFIX}/lib/X11/xephem
-	@${MKDIR} ${PREFIX}/lib/X11/xephem/auxil
+	@mkdir -p ${PREFIX}/lib/X11/xephem
+	@mkdir -p ${PREFIX}/lib/X11/xephem/auxil
 	@(cd ${WRKSRC}/GUI/xephem/auxil; \
 	   for f in *; do \
 	     ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/auxil; \
 	   done)
-	@${MKDIR} ${PREFIX}/lib/X11/xephem/catalogs
+	@mkdir -p ${PREFIX}/lib/X11/xephem/catalogs
 	@(cd ${WRKSRC}/GUI/xephem/catalogs; \
 	   for f in *; do \
 	     ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/catalogs; \
 	   done)
-	@${MKDIR} ${PREFIX}/lib/X11/xephem/tools
+	@mkdir -p ${PREFIX}/lib/X11/xephem/tools
 	@(cd ${WRKSRC}/GUI/xephem/tools; \
 	   for f in *; do \
 	     if [ -d $$f ]; then \
-	       ${MKDIR} ${PREFIX}/lib/X11/xephem/tools/$$f; \
+	       mkdir -p ${PREFIX}/lib/X11/xephem/tools/$$f; \
 	       (cd $$f; \
 	         for i in *; do \
 	           ${INSTALL_DATA} $$i ${PREFIX}/lib/X11/xephem/tools/$$f; \
@@ -55,12 +55,12 @@ do-install:
 	       ${INSTALL_DATA} $$f ${PREFIX}/lib/X11/xephem/tools; \
 	     fi; \
 	   done)
-	@${ECHO} ""
-	@${ECHO} "*** The initial auxil, catalogs, and tools files have"
-	@${ECHO} "*** been placed in ${PREFIX}/lib/X11/xephem.  Move them"
-	@${ECHO} "*** where you will.  Once moved you MUST modify"
-	@${ECHO} "*** ${PREFIX}/lib/X11/app-defaults/XEphem"
-	@${ECHO} "*** At a minimum you must change XEphem.BaseDir."
-	@${ECHO} ""
+	@echo ""
+	@echo "*** The initial auxil, catalogs, and tools files have"
+	@echo "*** been placed in ${PREFIX}/lib/X11/xephem.  Move them"
+	@echo "*** where you will.  Once moved you MUST modify"
+	@echo "*** ${PREFIX}/lib/X11/app-defaults/XEphem"
+	@echo "*** At a minimum you must change XEphem.BaseDir."
+	@echo ""
 
 .include <bsd.port.mk>

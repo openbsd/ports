@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/11/30 00:48:44 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:11 espie Exp $
 
 WITH_EDITLINE=	yes
 DISTNAME=	rc-1.6
@@ -38,7 +38,7 @@ pre-fetch:
 
 pre-configure:
 .if defined(WITH_EDITLINE) && ${WITH_EDITLINE:U} == YES
-	@${ECHO_MSG} "===>  Compiling editline"
+	@echo "===>  Compiling editline"
 	(cd ${EDITLINE} && make)
 .endif
 

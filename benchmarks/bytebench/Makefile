@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:53 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:00 espie Exp $
 
 DISTNAME=       bytebench-3.1
 CATEGORIES=	benchmarks
@@ -9,9 +9,9 @@ MASTER_SITES=   ftp://ftp.inria.fr/system/benchmark/
 EXTRACT_SUFX=	.tar.Z
 
 do-install:
-		-${MKDIR} $(PREFIX)/lib/bytebench
+		-mkdir -p $(PREFIX)/lib/bytebench
 		for f in Makefile README Run doc pgms results testdir; \
-			do ${CP} -R $(WRKSRC)/$$f $(PREFIX)/lib/bytebench; done
+			do cp -R $(WRKSRC)/$$f $(PREFIX)/lib/bytebench; done
 		echo "#!/bin/sh"		   >  $(PREFIX)/bin/bytebench
 		echo "TMPDIR=\$${TMPDIR-/var/tmp}" >> $(PREFIX)/bin/bytebench
 		echo "RESULTDIR=/tmp"		   >> $(PREFIX)/bin/bytebench
@@ -25,7 +25,7 @@ do-install:
 		chmod 755 $(PREFIX)/lib/bytebench/doc
 		chmod 755 $(PREFIX)/lib/bytebench/pgms
 		chmod 755 $(PREFIX)/lib/bytebench/pgms/*
-		${RM} -f $(PREFIX)/lib/bytebench/pgms/*.orig
+		rm -f $(PREFIX)/lib/bytebench/pgms/*.orig
 		chmod 755 $(PREFIX)/lib/bytebench/results
 		chmod 755 $(PREFIX)/lib/bytebench/testdir
 

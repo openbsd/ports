@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.6 1999/11/17 08:46:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:10:12 espie Exp $
 #
 
 DISTNAME=		LPRng-3.6.12
@@ -41,7 +41,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/lpd.perms ${PREFIX}/lib/lpd.perms-sample
 	test -f /etc/lpd.conf || ${INSTALL_DATA} ${WRKSRC}/lpd.conf /etc
 	test -f /etc/lpd.perms || ${INSTALL_DATA} ${WRKSRC}/lpd.perms /etc
-	${MKDIR} ${PREFIX}/share/doc/LPRng
+	mkdir -p ${PREFIX}/share/doc/LPRng
 	(cd ${WRKSRC}/HOWTO && ${INSTALL_DATA} ${HTMLFILES} \
 		${PREFIX}/share/doc/LPRng )
 	@cat ${PKGDIR}/MESSAGE

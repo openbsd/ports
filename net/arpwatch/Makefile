@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/22 00:31:38 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:08 espie Exp $
 
 DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
@@ -15,7 +15,7 @@ INSTALL_TARGET=	install install-man
 
 post-install:
 	@if [ ! -d ${PREFIX}/arpwatch ]; then \
-		${MKDIR} ${PREFIX}/arpwatch; \
+		mkdir -p ${PREFIX}/arpwatch; \
 		chmod 775 ${PREFIX}/arpwatch; \
 		chown root.operator ${PREFIX}/arpwatch;	\
 	fi

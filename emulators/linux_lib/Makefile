@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/02/10 20:39:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/02/11 01:10:02 espie Exp $
 # $NetBSD: Makefile,v 1.10 1998/04/24 09:07:55 agc Exp $
 # $FreeBSD Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
 
@@ -20,7 +20,7 @@ NO_PACKAGE=	yes
 EXTRACT_ONLY=
 
 pre-install:
-	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
+	@[ -d ${PREFIX} ] || mkdir -p ${PREFIX}
 
 do-install:
 	@zcat ${DISTDIR}/${DISTNAME}.tar.gz | (cd ${PREFIX}; pax -r)
@@ -28,18 +28,18 @@ do-install:
 post-install:
 # Creating usr/local/lib to prevent linux ldconfig from scanning OpenBSD
 # local libraries...
-	@${MKDIR} ${PREFIX}/usr/local/lib
+	@mkdir -p ${PREFIX}/usr/local/lib
 	${PREFIX}/sbin/ldconfig || /usr/bin/true
-	-@${RMDIR} ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
-	${MKDIR} ${PREFIX}/usr/lib/zoneinfo
-	${LN} -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
-	${MKDIR} ${PREFIX}/dev
-	${LN} -sf /dev/console ${PREFIX}/dev/tty0
-	${LN} -sf /dev/ttyC0 ${PREFIX}/dev/tty1
-	${LN} -sf /dev/ttyC1 ${PREFIX}/dev/tty2
-	${LN} -sf /dev/ttyC2 ${PREFIX}/dev/tty3
-	${LN} -sf /dev/ttyC3 ${PREFIX}/dev/tty4
-	${LN} -sf /dev/sound ${PREFIX}/dev/dsp
+	-@rmdir ${PREFIX}/usr/local/lib ${PREFIX}/usr/local
+	mkdir -p ${PREFIX}/usr/lib/zoneinfo
+	ln -sf /etc/localtime ${PREFIX}/usr/lib/zoneinfo/localtime
+	mkdir -p ${PREFIX}/dev
+	ln -sf /dev/console ${PREFIX}/dev/tty0
+	ln -sf /dev/ttyC0 ${PREFIX}/dev/tty1
+	ln -sf /dev/ttyC1 ${PREFIX}/dev/tty2
+	ln -sf /dev/ttyC2 ${PREFIX}/dev/tty3
+	ln -sf /dev/ttyC3 ${PREFIX}/dev/tty4
+	ln -sf /dev/sound ${PREFIX}/dev/dsp
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

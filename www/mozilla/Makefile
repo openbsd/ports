@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/11 01:10:13 espie Exp $
 #
 # From: $NetBSD: Makefile,v 1.13 1998/08/04 13:09:21 fvdl Exp $
 #	but modified to use lesstif 0.86.0...
@@ -33,16 +33,16 @@ MAKE_ENV+=	BUILD_OPT=1
 
 .if !defined(NO_WARNINGS)
 pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "*** Please see ${FILESDIR}/README for general caveats"
-	@${ECHO} ""
+	@echo ""
+	@echo "*** Please see ${FILESDIR}/README for general caveats"
+	@echo ""
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dist/${MOZ_OBJDIR}/bin/moz-export ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/dist/${MOZ_OBJDIR}/bin/mozilla-export ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/moz-export ${PREFIX}/bin/mozilla
-	${MKDIR} ${MOZ_LIBDIR}
+	ln -sf ${PREFIX}/bin/moz-export ${PREFIX}/bin/mozilla
+	mkdir -p ${MOZ_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/${MOZ_OBJDIR}/bin/*.so* ${MOZ_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/${MOZ_OBJDIR}/lib/*.so* ${MOZ_LIBDIR}
 

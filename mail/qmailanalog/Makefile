@@ -24,7 +24,7 @@ NO_MTREE=	yes
 RUN_DEPENDS=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail
 
 pre-build:
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
+	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX} > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

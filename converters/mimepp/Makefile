@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 06:20:04 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:01 espie Exp $
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
@@ -30,16 +30,16 @@ EXAMPLES=	attach.cpp attach.h basicmsg.cpp basicmsg.h exampl01.cpp \
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/libmimepp.a ${PREFIX}/lib
-	@ ${MKDIR} ${PREFIX}/include/mimepp
+	@ mkdir -p ${PREFIX}/include/mimepp
 .for file in ${INCLUDE}
 	@ ${INSTALL_DATA} ${WRKSRC}/mimepp/${file} ${PREFIX}/include/mimepp
 .endfor
-	@ ${MKDIR} ${PREFIX}/share/doc/mimepp
+	@ mkdir -p ${PREFIX}/share/doc/mimepp
 .for file in ${DOC}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mimepp
 .endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/mimepp
-	@ ${MKDIR} ${PREFIX}/share/examples/mimepp
+	@ mkdir -p ${PREFIX}/share/examples/mimepp
 	@ ${INSTALL_DATA} ${FILESDIR}/Makefile ${PREFIX}/share/examples/mimepp
 .for file in ${EXAMPLES}
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/mimepp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/26 21:09:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/11 01:09:59 espie Exp $
 
 DISTNAME=	tosha-0.6
 CATEGORIES=	audio
@@ -8,8 +8,8 @@ MAINTAINER=	angelos@openbsd.org
 
 post-install:
 	@if [ -e /etc/tosharc ] ; then \
-		${ECHO} "===> You might wish to update /etc/tosharc"; \
-		${ECHO} "===> check ${PREFIX}/lib/tosha/tosharc.sample"; \
+		echo "===> You might wish to update /etc/tosharc"; \
+		echo "===> check ${PREFIX}/lib/tosha/tosharc.sample"; \
 	else \
 		cp ${PREFIX}/lib/tosha/tosharc.sample /etc/tosharc; \
 	fi

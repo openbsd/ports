@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/02/02 17:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/02/11 01:10:04 espie Exp $
 
 # This is a configuration file for egcs, stable release.
 
@@ -127,7 +127,7 @@ MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
 pre-fetch:
 .if (${MACHINE_ARCH} == "i386")
 	@(cd /tmp && /usr/bin/as -k ${FILESDIR}/gas-bug/test-i386-gas.s) || \
-	(${ECHO} "Your gas has a bug, see ${FILESDIR}/gas-bug for details"; ${FALSE})
+	(echo "Your gas has a bug, see ${FILESDIR}/gas-bug for details"; exit 1)
 .endif
 
 #### 
@@ -153,9 +153,9 @@ PATCH_LIST+=patch-java-*
 # get openbsd configuration files where they should be
 post-patch:
 		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs ${RM}
-	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
-	${RM} -rf ${WRKSRC}/texinfo 
+	find ${WRKSRC} -name \*.orig|xargs rm
+	cp -R ${FILESDIR}/config/* ${WRKSRC}
+	rm -rf ${WRKSRC}/texinfo 
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
@@ -222,7 +222,7 @@ do-build:
 	@(cd ${WRKBUILD}; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
 	(echo "*** Make bootstrap failed."; \
-	echo "*** Look at ${WRKBUILD}/warnings for errors"; ${FALSE})
+	echo "*** Look at ${WRKBUILD}/warnings for errors"; exit 1)
 
 ####
 # Install & tests section 
@@ -236,8 +236,8 @@ post-build:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
-	@${ECHO} "Please send the tests results to the egcs project"
-	@${ECHO} "By invoking make send-results"
+	@echo "Please send the tests results to the egcs project"
+	@echo "By invoking make send-results"
 
 send-results: 
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}

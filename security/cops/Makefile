@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/06 19:44:57 rohee Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/11 01:10:11 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	cops_104
@@ -27,8 +27,8 @@ do-build:
 	(cd ${WRKSRC} ; make EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}")
 
 do-install:
-	(cd ${WRKDIR} ; rm -rf ${PREFIX}/cops ; ${MKDIR} ${PREFIX}/cops ; \
-	${CP} -R ${DISTNAME}/* ${PREFIX}/cops ; \
+	(cd ${WRKDIR} ; rm -rf ${PREFIX}/cops ; mkdir -p ${PREFIX}/cops ; \
+	cp -R ${DISTNAME}/* ${PREFIX}/cops ; \
 	chmod -R go-rwx ${PREFIX}/cops ; \
 	rm -rf ${PREFIX}/cops/*.old ${PREFIX}/cops/src)
 

@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/05/19 06:22:26 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:14 espie Exp $
 #
 
 DISTNAME=	mouseclock-1.0
@@ -20,7 +20,7 @@ NO_INSTALL_MANPAGES= yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mouseclock
+	@mkdir -p ${PREFIX}/share/doc/mouseclock
 	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/mouseclock
 .endif
 

@@ -3,7 +3,7 @@
 # Date created:        December 21, 1997
 # Whom:                Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/24 21:50:36 don Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/11 01:10:14 espie Exp $
 #
 
 DISTNAME=	xmold
@@ -16,7 +16,7 @@ MAINTAINER=	don@OpenBSD.ORG
 USE_IMAKE=	yes
 
 do-install:
-	@${MKDIR} -p ${PREFIX}/bin
+	@mkdir -p ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/xmold ${PREFIX}/bin
 
 .include <bsd.port.mk>
