@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
 
-BUILD_DEPENDS=		cabextract:cabextract-*:archivers/cabextract \
-			ttmkfdir:ttmkfdir-*:x11/ttmkfdir
+BUILD_DEPENDS=		cabextract:cabextract-*:archivers/cabextract
 
 NO_BUILD=		Yes
 
@@ -43,10 +42,10 @@ do-extract:
 .endfor
 
 do-install:
-	${TRUEPREFIX}/bin/ttmkfdir -d ${WRKDIST} > ${WRKDIST}/fonts.dir
+	mkfontscale ${WRKDIST}
 	${INSTALL_DATA_DIR} "${PREFIX}/${INST_DIR}"
-	${INSTALL_DATA} ${WRKDIST}/*.ttf ${WRKDIST}/fonts.dir "${PREFIX}/${INST_DIR}"
+	${INSTALL_DATA} ${WRKDIST}/*.ttf ${WRKDIST}/fonts.scale "${PREFIX}/${INST_DIR}"
 	tr -d \\015 < ${WRKDIST}/licen.txt > "${PREFIX}/${INST_DIR}/eula.txt"
-	ln -s fonts.dir "${PREFIX}/${INST_DIR}/fonts.scale"
+	ln -s fonts.scale "${PREFIX}/${INST_DIR}/fonts.dir"
 
 .include <bsd.port.mk>
