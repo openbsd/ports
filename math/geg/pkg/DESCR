@@ -1,0 +1,7 @@
+This is mathematical functions grapher used for plotting 2d
+functions like f(x) = x^4 - 2. It allows you to view/compare
+multiple function's graphs simultaneously, using different colours.
+Geg can zoom in/out selections, and is very easy to use by math
+students and teachers, providing nice gtk interface.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/12 16:03:49 reinhard Exp $
+bin/geg
+man/man1/geg.1
+share/doc/geg/README
+@dirrm share/doc/geg
