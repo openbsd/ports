@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/07/28 05:22:23 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/16 01:33:58 naddy Exp $
 
 COMMENT=	"object-oriented SGML/XML parser toolkit and DSSSL engine"
 
@@ -27,6 +27,7 @@ SGMLFILES= 	fot.dtd catalog dsssl.dtd style-sheet.dtd builtins.dsl \
 		demo.sgm demo.dsl
 	
 VMEM_WARNING=	Yes
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/sp
