@@ -1,0 +1,6 @@
+kmplayer is a front-end for mplayer, together with
+desktop files to embed it in konqueror.
+
+The front-end is not very useful, but the embeddable
+part means lots of windows video sites suddenly start
+working in konqueror.
