@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/01 15:32:27 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/10/07 19:11:54 pvalchev Exp $
 
 COMMENT=	"creates CD's on a CD-Recorder"
 
 # It's pretty easy to add other architectures,
 # mail me if you miss a particular one.
-ONLY_FOR_ARCHS=	alpha amiga hp300 i386 mac68k mvme68k sparc sun3
+ONLY_FOR_ARCHS=	alpha amiga hp300 i386 mac68k macppc mvme68k sparc sun3
 
 DISTNAME=	cdrecord-1.9
 CATEGORIES=	misc
@@ -27,8 +27,12 @@ MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}"
 # we instead explicitly install what we want.
 OBJDIR=		OBJ/${MACHINE}-openbsd-${CC}
 
+.if ${MACHINE} != i386
 post-extract:
-	@cp -f ${FILESDIR}/rules/*.rul ${WRKSRC}/RULES
+	@cd ${WRKSRC}/RULES && \
+	  ln -sf i386-openbsd-gcc.rul ${MACHINE}-openbsd-gcc.rul; \
+	  ln -sf i386-openbsd-cc.rul ${MACHINE}-openbsd-cc.rul
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrecord
