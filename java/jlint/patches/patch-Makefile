@@ -1,6 +1,27 @@
---- Makefile.orig	Thu Jun 28 09:42:55 2001
-+++ Makefile	Fri Jun 29 10:08:52 2001
-@@ -65,10 +65,11 @@
+$OpenBSD: patch-Makefile,v 1.2 2002/09/28 22:30:10 naddy Exp $
+--- Makefile.orig	Wed Aug  8 19:38:28 2001
++++ Makefile	Sun Sep 29 00:32:47 2002
+@@ -3,8 +3,8 @@
+ # Makefile for Unix and GNU/Linux with gcc/g++ compiler
+ # Edit here:
+ 
+-CC=gcc
+-CPP=g++
++#CC=gcc
++CPP?=${CXX}
+ 
+ # Hints:
+ # if you use egcs-2.90.* version of GCC please add option -fno-exceptions 
+@@ -18,7 +18,7 @@ CPP=g++
+ 
+ # Optimized version
+ 
+-CFLAGS = -c -Wall -O2 -g -DSLIST
++CFLAGS += -DSLIST -c
+ # add -DHASH_TABLE for extra speed (may sometimes produce inconsistent results)
+ 
+ # Optimized version with switched off asserts
+@@ -65,10 +65,11 @@ zip:
  	cd ..; rm -f jlint-$(VERSION).zip; zip -v jlint-$(VERSION).zip $(DISTFILES) `find jlint-$(VERSION)/jlintwin32 | grep -v CVS`
  
  install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/09/28 22:30:10 naddy Exp $
 
 COMMENT=	"Java program analyzer and checker"
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+MAKE_ENV+=	CC="${CC}" CPP="${CXX}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
