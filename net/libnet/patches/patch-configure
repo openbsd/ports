@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jun 24 20:06:07 2000
++++ configure	Sat Jun 24 20:06:17 2000
+@@ -1532,7 +1532,7 @@
+ EOF
+ 
+     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS"
+-    MAN_PREFIX="$prefix/local/man/man3/"
++    MAN_PREFIX="$prefix/man/man3/"
+     LIB_PREFIX="$prefix/lib/"
+     INC_PREFIX="$prefix/include/"
+     BIN_PREFIX="$prefix/bin/"

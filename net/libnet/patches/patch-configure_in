@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Mar 10 00:36:04 2000
++++ configure.in	Sat Jun 24 19:41:53 2000
+@@ -177,7 +177,7 @@
+     AC_DEFINE(LIBNET_BSDISH_OS)
+     AC_DEFINE(HAVE_SOCKADDR_SA_LEN)
+     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS"
+-    MAN_PREFIX="$prefix/local/man/man3/"
++    MAN_PREFIX="$prefix/man/man3/"
+     LIB_PREFIX="$prefix/lib/"
+     INC_PREFIX="$prefix/include/"
+     BIN_PREFIX="$prefix/bin/"
