@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/12 01:28:32 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/03 11:28:00 avsm Exp $
 horde/nag/COPYING
 horde/nag/README
 horde/nag/config/conf.php.dist
@@ -17,20 +17,24 @@ horde/nag/graphics/down.gif
 horde/nag/graphics/list.gif
 horde/nag/graphics/nag.gif
 horde/nag/graphics/note.gif
+horde/nag/graphics/print.gif
 horde/nag/graphics/refresh.gif
 horde/nag/graphics/search.gif
 horde/nag/graphics/up.gif
 horde/nag/index.php
 horde/nag/lib/Driver.php
 horde/nag/lib/Driver/sql.php
-horde/nag/lib/Nag.php
+horde/nag/lib/${HORDE_NAME}.php
 horde/nag/lib/api.php
 horde/nag/lib/base.php
 horde/nag/lib/constants.php
 horde/nag/lib/version.php
 horde/nag/list.php
+horde/nag/locale/bg_BG/LC_MESSAGES/nag.mo
 horde/nag/locale/cs_CZ/LC_MESSAGES/nag.mo
+horde/nag/locale/da_DK/LC_MESSAGES/nag.mo
 horde/nag/locale/de_DE/LC_MESSAGES/nag.mo
+horde/nag/locale/el_GR/LC_MESSAGES/nag.mo
 horde/nag/locale/en_US/help.xml
 horde/nag/locale/es_ES/LC_MESSAGES/nag.mo
 horde/nag/locale/fi_FI/LC_MESSAGES/nag.mo
@@ -39,19 +43,25 @@ horde/nag/locale/fr_FR/LC_MESSAGES/nag.mo
 horde/nag/locale/hu_HU/LC_MESSAGES/nag.mo
 horde/nag/locale/it_IT/LC_MESSAGES/nag.mo
 horde/nag/locale/ko_KR/LC_MESSAGES/nag.mo
+horde/nag/locale/lt_LT/LC_MESSAGES/nag.mo
+horde/nag/locale/nb_NO/LC_MESSAGES/nag.mo
 horde/nag/locale/nl_NL/LC_MESSAGES/nag.mo
 horde/nag/locale/nn_NO/LC_MESSAGES/nag.mo
 horde/nag/locale/pt_BR/LC_MESSAGES/nag.mo
 horde/nag/locale/ru_RU.KOI8-R/LC_MESSAGES/nag.mo
 horde/nag/locale/ru_RU/LC_MESSAGES/nag.mo
+horde/nag/locale/sk_SK/LC_MESSAGES/nag.mo
 horde/nag/locale/sv_SE/LC_MESSAGES/nag.mo
 horde/nag/locale/zh_CN/LC_MESSAGES/nag.mo
 horde/nag/locale/zh_TW/LC_MESSAGES/nag.mo
 horde/nag/menu.php
 horde/nag/po/Makefile
 horde/nag/po/README
+horde/nag/po/bg_BG.po
 horde/nag/po/cs_CZ.po
+horde/nag/po/da_DK.po
 horde/nag/po/de_DE.po
+horde/nag/po/el_GR.po
 horde/nag/po/es_ES.po
 horde/nag/po/extract.pl
 horde/nag/po/fi_FI.po
@@ -59,12 +69,16 @@ horde/nag/po/fr_FR.po
 horde/nag/po/hu_HU.po
 horde/nag/po/it_IT.po
 horde/nag/po/ko_KR.po
+horde/nag/po/lt_LT.po
+horde/nag/po/nag.pot
+horde/nag/po/nb_NO.po
 horde/nag/po/nl_NL.po
 horde/nag/po/nn_NO.po
 horde/nag/po/pt_BR.po
 horde/nag/po/ru_RU.KOI8-R.po
 horde/nag/po/ru_RU.po
 horde/nag/po/shtool
+horde/nag/po/sk_SK.po
 horde/nag/po/sv_SE.po
 horde/nag/po/xgettext.sh
 horde/nag/po/zh_CN.po
@@ -77,6 +91,8 @@ horde/nag/templates/common-footer.inc
 horde/nag/templates/common-header.inc
 horde/nag/templates/index/css.inc
 horde/nag/templates/index/notconfigured.inc
+horde/nag/templates/javascript/open_print_win.js
+horde/nag/templates/javascript/print.js
 horde/nag/templates/list/actions.inc
 horde/nag/templates/list/empty.inc
 horde/nag/templates/list/footer.inc
@@ -86,6 +102,7 @@ horde/nag/templates/list/task_footers.inc
 horde/nag/templates/list/task_headers.inc
 horde/nag/templates/list/task_summaries.inc
 horde/nag/templates/menu/menu.inc
+horde/nag/templates/prefs/category_management.inc
 horde/nag/templates/search/begin.inc
 horde/nag/templates/search/end.inc
 horde/nag/templates/search/search.inc
@@ -100,8 +117,10 @@ horde/nag/view.php
 @dirrm horde/nag/templates/view
 @dirrm horde/nag/templates/task
 @dirrm horde/nag/templates/search
+@dirrm horde/nag/templates/prefs
 @dirrm horde/nag/templates/menu
 @dirrm horde/nag/templates/list
+@dirrm horde/nag/templates/javascript
 @dirrm horde/nag/templates/index
 @dirrm horde/nag/templates
 @dirrm horde/nag/scripts/drivers
@@ -113,6 +132,8 @@ horde/nag/view.php
 @dirrm horde/nag/locale/zh_CN
 @dirrm horde/nag/locale/sv_SE/LC_MESSAGES
 @dirrm horde/nag/locale/sv_SE
+@dirrm horde/nag/locale/sk_SK/LC_MESSAGES
+@dirrm horde/nag/locale/sk_SK
 @dirrm horde/nag/locale/ru_RU/LC_MESSAGES
 @dirrm horde/nag/locale/ru_RU.KOI8-R/LC_MESSAGES
 @dirrm horde/nag/locale/ru_RU.KOI8-R
@@ -123,6 +144,10 @@ horde/nag/view.php
 @dirrm horde/nag/locale/nn_NO
 @dirrm horde/nag/locale/nl_NL/LC_MESSAGES
 @dirrm horde/nag/locale/nl_NL
+@dirrm horde/nag/locale/nb_NO/LC_MESSAGES
+@dirrm horde/nag/locale/nb_NO
+@dirrm horde/nag/locale/lt_LT/LC_MESSAGES
+@dirrm horde/nag/locale/lt_LT
 @dirrm horde/nag/locale/ko_KR/LC_MESSAGES
 @dirrm horde/nag/locale/ko_KR
 @dirrm horde/nag/locale/it_IT/LC_MESSAGES
@@ -136,10 +161,16 @@ horde/nag/view.php
 @dirrm horde/nag/locale/es_ES/LC_MESSAGES
 @dirrm horde/nag/locale/es_ES
 @dirrm horde/nag/locale/en_US
+@dirrm horde/nag/locale/el_GR/LC_MESSAGES
+@dirrm horde/nag/locale/el_GR
 @dirrm horde/nag/locale/de_DE/LC_MESSAGES
 @dirrm horde/nag/locale/de_DE
+@dirrm horde/nag/locale/da_DK/LC_MESSAGES
+@dirrm horde/nag/locale/da_DK
 @dirrm horde/nag/locale/cs_CZ/LC_MESSAGES
 @dirrm horde/nag/locale/cs_CZ
+@dirrm horde/nag/locale/bg_BG/LC_MESSAGES
+@dirrm horde/nag/locale/bg_BG
 @dirrm horde/nag/locale
 @dirrm horde/nag/lib/Driver
 @dirrm horde/nag/lib
