@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.1 2001/05/08 00:54:40 matt Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/27 00:36:45 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Java Development Kit for Java 2 Standard Edition 1.3"
 
-DISTNAME=	jdk1.3.0_02
-PKGNAME=	jdk-linux-1.3.0_02
+DISTNAME=	jdk1.3.1
+PKGNAME=	jdk-linux-1.3.1
 CATEGORIES=	devel java
 NEED_VERSION=	1.407
 
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Gruber <christian.edward.gruber@gmx.net>
 
-RUN_DEPENDS=	${PREFIX}/emul/redhat/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
-DISTFILES=	j2sdk-1_3_0_02-linux.bin
+BUILD_DEPENDS=	${LOCALBASE}/emul/redhat/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
+RUN_DEPENDS=	${LOCALBASE}/emul/redhat/usr/X11R6/lib/libXp.so.6:redhat_base->=6.2:emulators/redhat_base
+DISTFILES=	j2sdk-1_3_1-linux-i386.bin
 EXTRACT_CASES+=	*.bin) \
 		    tail +253 ${DISTDIR}/$$archive > ${WRKDIR}/$$archive && \
 		    chmod u+x ${WRKDIR}/$$archive && \
@@ -40,7 +41,7 @@ do-fetch:
            exit 1 ; \
 	fi
 
-JDK_HOME=	${PREFIX}/jdk1.3.0-linux
+JDK_HOME=	${PREFIX}/jdk1.3.1-linux
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${JDK_HOME}
