@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/06 21:03:25 msf Exp $
+${P5SITE}/Test/MockObject.pm
+${P5SITE}/Test/MockObject/Extends.pm
+@comment ${P5ARCH}/auto/Test/MockObject/.packlist
+man/man3p/Test::MockObject.3p
+man/man3p/Test::MockObject::Extends.3p
+@comment @dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Test/MockObject
+@comment @dirrm ${P5ARCH}/auto/Test
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Test/MockObject
+@comment @dirrm ${P5SITE}/Test

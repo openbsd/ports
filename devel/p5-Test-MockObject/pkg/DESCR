@@ -1,0 +1,3 @@
+Test::MockObject allows you to create objects that conform to particular
+interfaces with very little code. You don't have to reimplement the
+behavior, just the input and the output.
