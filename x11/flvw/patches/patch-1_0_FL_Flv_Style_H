@@ -1,6 +1,6 @@
-$OpenBSD: patch-1_0_FL_Flv_Style_H,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+$OpenBSD: patch-1_0_FL_Flv_Style_H,v 1.2 2002/09/27 23:33:36 naddy Exp $
 --- 1.0/FL/Flv_Style.H.orig	Sun Jan 30 13:38:46 2000
-+++ 1.0/FL/Flv_Style.H	Sat Feb 10 18:49:06 2001
++++ 1.0/FL/Flv_Style.H	Sat Sep 28 01:33:11 2002
 @@ -79,6 +79,7 @@ class Flv_Style_List
  {
  public:
@@ -9,3 +9,12 @@ $OpenBSD: patch-1_0_FL_Flv_Style_H,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
  
  	void clear(void);									//	Undefine all styles in list
    void compact(void);								//	Release any unused style memory
+@@ -108,7 +109,7 @@ private:
+ class Flv_Style
+ {
+ public:
+-	friend Flv_Style_List;									//	Hack for value
++	friend class Flv_Style_List;									//	Hack for value
+ 	Flv_Style();
+ 	Flv_Style( int value );
+ 
