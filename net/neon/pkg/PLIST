@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/19 02:56:40 lebel Exp $
+bin/neon-config
+include/neon/ne_207.h
+include/neon/ne_acl.h
+include/neon/ne_alloc.h
+include/neon/ne_auth.h
+include/neon/ne_basic.h
+include/neon/ne_compress.h
+include/neon/ne_cookies.h
+include/neon/ne_dates.h
+include/neon/ne_defs.h
+include/neon/ne_i18n.h
+include/neon/ne_locks.h
+include/neon/ne_md5.h
+include/neon/ne_props.h
+include/neon/ne_redirect.h
+include/neon/ne_request.h
+include/neon/ne_session.h
+include/neon/ne_socket.h
+include/neon/ne_string.h
+include/neon/ne_uri.h
+include/neon/ne_utils.h
+include/neon/ne_xml.h
+lib/libneon.a
+%%SHARED%%
+@dirrm include/neon
