@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/10/24 12:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2002/05/14 09:21:35 mark Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
@@ -6,8 +6,7 @@ DISTNAME=	gtk+-1.2.10
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 devel
 NEED_VERSION=	1.475
-MASTER_SITES=   ${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= stable/sources/gtk+
+MASTER_SITES=   ${MASTER_SITE_GNOME:=stable/sources/gtk+/}
 
 HOMEPAGE=	http://www.gtk.org/
 
