@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2003/07/21 17:51:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.24 2003/10/01 23:13:23 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
 DISTNAME=	eboard-0.9.0
 PKGNAME=	${DISTNAME}
-CATEGORIES=	games
+CATEGORIES=	games x11
 
 HOMEPAGE=	http://eboard.sourceforge.net/
 
