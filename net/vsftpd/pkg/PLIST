@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/19 15:42:02 couderc Exp $
+man/man5/vsftpd.conf.5
+man/man8/vsftpd.8
+sbin/vsftpd
+share/examples/vsftpd/INTERNET_SITE/README
+share/examples/vsftpd/INTERNET_SITE/vsftpd.conf
+share/examples/vsftpd/INTERNET_SITE/vsftpd.xinetd
+share/examples/vsftpd/INTERNET_SITE_NOINETD/README
+share/examples/vsftpd/INTERNET_SITE_NOINETD/vsftpd.conf
+share/examples/vsftpd/PER_IP_CONFIG/README
+share/examples/vsftpd/PER_IP_CONFIG/hosts.allow
+share/examples/vsftpd/README
+share/examples/vsftpd/VIRTUAL_HOSTS/README
+share/examples/vsftpd/VIRTUAL_USERS/README
+share/examples/vsftpd/VIRTUAL_USERS/logins.txt
+share/examples/vsftpd/VIRTUAL_USERS/vsftpd.conf
+share/examples/vsftpd/VIRTUAL_USERS/vsftpd.pam
+share/examples/vsftpd/VIRTUAL_USERS_2/README
+@dirrm share/examples/vsftpd/VIRTUAL_USERS_2
+@dirrm share/examples/vsftpd/VIRTUAL_USERS
+@dirrm share/examples/vsftpd/VIRTUAL_HOSTS
+@dirrm share/examples/vsftpd/PER_IP_CONFIG
+@dirrm share/examples/vsftpd/INTERNET_SITE_NOINETD
+@dirrm share/examples/vsftpd/INTERNET_SITE
+@dirrm share/examples/vsftpd
