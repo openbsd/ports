@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/09/18 09:36:44 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2004/10/09 14:50:45 sturm Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -34,7 +34,8 @@ LIB_DEPENDS+=Imlib::graphics/imlib \
 	ungif::graphics/libungif \
 	gphoto2,gphoto2_port::graphics/libgphoto2
 .endif
-BUILD_DEPENDS+=::print/teTeX/base
+BUILD_DEPENDS+=	::print/teTeX/base \
+		:pkgconfig-*:devel/pkgconfig
 
 CONFIGURE_ENV+=	\
 	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
