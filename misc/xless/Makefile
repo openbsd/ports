@@ -3,9 +3,9 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 07:01:41 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/27 20:09:30 marc Exp $
 #
-      
+
 DISTNAME=	xless-1.7
 CATEGORIES=	misc	
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 MASTER_SITE_SUBDIR=     applications
 
 MAINTAINER=	angelos@openbsd.org
-      
+
 USE_IMAKE=	yes
-      
+
 .include <bsd.port.mk>
