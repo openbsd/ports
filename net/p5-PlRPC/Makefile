@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/11/27 21:36:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2003/07/17 05:24:04 kevlo Exp $
 
 COMMENT=	"module for writing rpc servers and clients"
 
-DISTNAME=	PlRPC-0.2016
+DISTNAME=	PlRPC-0.2017
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
 
