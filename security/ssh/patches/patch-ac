@@ -17,7 +17,7 @@
 -ZLIBLIBS	= -L$(ZLIBDIR) -lz
 +ZLIBINCDIR	= /usr/include
 +ZLIBLIBDIR	= /usr/lib
-+ZLIBDEP		= $(ZLIBINCDIR)/libz.a
++ZLIBDEP		= $(ZLIBLIBDIR)/libz.a
 +ZLIBLIBS	= -L$(ZLIBLIBDIR) -lz
  
  RSAREFDIR	= rsaref2
