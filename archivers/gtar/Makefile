@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/15 22:13:13 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/01/01 00:42:12 brad Exp $
 
 DISTNAME=	tar-1.13
 CATEGORIES=	archivers
@@ -11,6 +11,9 @@ MAINTAINER=	niklas@openbsd.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
+
+post-extract:
+	@rm -f ${WRKSRC}/doc/tar.info*
 
 post-install:
 	@strip ${PREFIX}/bin/gtar

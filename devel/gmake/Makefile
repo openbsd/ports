@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/12/17 14:29:10 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/01/01 00:43:42 brad Exp $
 
 DISTNAME=	make-3.78.1
 PKGNAME=	gmake-3.78.1
@@ -11,6 +11,9 @@ MAINTAINER=	todd@openbsd.org
 SEPARATE_BUILD=	simple
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s/^/g/'
+
+post-extract:
+	@rm -f ${WRKSRC}/make.info*
 
 post-install:
 	@chmod g-s ${PREFIX}/bin/gmake
