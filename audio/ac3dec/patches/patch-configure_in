@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/04/22 22:57:27 avsm Exp $
+--- configure.in.orig	Wed Mar 29 17:51:24 2000
++++ configure.in	Sun Apr 22 23:49:45 2001
+@@ -29,7 +29,7 @@ case "$host" in
+ i?86-*) AC_DEFINE(__i386__);;
+ alpha*-*) AC_DEFINE(__alpha__);;
+ sparc-*) AC_DEFINE(__sparc__);;
+-ppc-*) AC_DEFINE(__ppc__);;
++ppc-*|powerpc-*) AC_DEFINE(__ppc__);;
+ *) echo "$host is not currently supported by ac3dec"; exit 1;;
+ esac
+ 
