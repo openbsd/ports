@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/02/06 12:59:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/05/06 06:26:17 brad Exp $
 bin/gwenview
 man/man1/gwenview.1
 share/applnk/Graphics/gwenview.desktop
@@ -10,6 +10,10 @@ share/apps/gwenview/icons/hicolor/16x16/actions/dnd5.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd6.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd7.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd8.png
+share/apps/gwenview/icons/hicolor/16x16/actions/flip.png
+share/apps/gwenview/icons/hicolor/16x16/actions/mirror.png
+share/apps/gwenview/icons/hicolor/16x16/actions/rotate_left.png
+share/apps/gwenview/icons/hicolor/16x16/actions/rotate_right.png
 share/apps/gwenview/icons/hicolor/16x16/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/22x22/actions/actualsize.png
 share/apps/gwenview/icons/hicolor/22x22/actions/autozoom.png
@@ -71,6 +75,65 @@ share/locale/xx/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/locale/zu/LC_MESSAGES/gwenview.mo
+@comment @dirrm share/locale/zu/LC_MESSAGES
+@comment @dirrm share/locale/zu
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/xx/LC_MESSAGES
+@comment @dirrm share/locale/xx
+@comment @dirrm share/locale/xh/LC_MESSAGES
+@comment @dirrm share/locale/xh
+@comment @dirrm share/locale/ven/LC_MESSAGES
+@comment @dirrm share/locale/ven
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/nso/LC_MESSAGES
+@comment @dirrm share/locale/nso
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/nb/LC_MESSAGES
+@comment @dirrm share/locale/nb
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/he/LC_MESSAGES
+@comment @dirrm share/locale/he
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fo/LC_MESSAGES
+@comment @dirrm share/locale/fo
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale
+@comment @dirrm share/icons/hicolor/16x16/apps
+@comment @dirrm share/icons/hicolor/16x16
 @dirrm share/apps/gwenview/icons/hicolor/32x32/actions
 @dirrm share/apps/gwenview/icons/hicolor/32x32
 @dirrm share/apps/gwenview/icons/hicolor/22x22/actions
@@ -80,3 +143,4 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @dirrm share/apps/gwenview/icons/hicolor
 @dirrm share/apps/gwenview/icons
 @dirrm share/apps/gwenview
+@comment @dirrm share/apps
