@@ -1,6 +1,6 @@
---- configure.orig	Tue Sep  7 11:21:06 1999
-+++ configure	Fri Jun 30 00:48:48 2000
-@@ -1783,7 +1783,7 @@
+--- configure.orig	Tue Sep  7 17:21:06 1999
++++ configure	Fri Jun 30 22:43:24 2000
+@@ -1783,7 +1783,7 @@ case "$host_os" in
  aix*)
    ac_symcode='[BCDTU]'
    ;;
@@ -9,21 +9,18 @@
    ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
    ac_symxfrm='_\1 \1'
    ;;
-@@ -3828,7 +3828,7 @@
+@@ -3868,13 +3868,13 @@ do
+   done
+ done
  
- if test -z ""; then
++ac_kde_libraries="$kde_libdir"
  
--kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/kde/include /usr/include/kde /usr/include /opt/kde/include $x_includes $qt_includes"
-+kde_incdirs="/usr/lib/kde/include /usr/local/kde/include /usr/kde/include /usr/include/kde /usr/include /usr/local/include /opt/kde/include $x_includes $qt_includes"
- test -n "$KDEDIR" && kde_incdirs="$KDEDIR/include $KDEDIR $kde_incdirs"
- kde_incdirs="$ac_kde_includes $kde_incdirs"
- 
-@@ -3852,7 +3852,7 @@
+ if test -n "$ac_kde_libraries" && test ! -r "$ac_kde_libraries/libkdecore.la"; then
+ { echo "configure: error: 
+ in the prefix, you've chosen, are no KDE libraries installed. This will fail.
  So, check this please and use another prefix!" 1>&2; exit 1; }
  fi
+-ac_kde_libraries="$kde_libdir"
  
--kde_libdirs="/usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib /usr/X11R6/lib /opt/kde/lib /usr/X11R6/kde/lib"
-+kde_libdirs="/usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib /usr/local/lib /usr/X11R6/lib /opt/kde/lib /usr/X11R6/kde/lib"
- test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib $KDEDIR $kde_libdirs"
- kde_libdirs="$ac_kde_libraries $kde_libdirs"
- 
+ if test "$ac_kde_includes" = NO || test "$ac_kde_libraries" = NO; then
+   ac_cv_have_kde="have_kde=no"

@@ -1,0 +1,18 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2000/06/30 21:00:23 espie Exp $
+--- aclocal.m4.orig	Fri Jun 30 22:43:28 2000
++++ aclocal.m4	Fri Jun 30 22:44:25 2000
+@@ -784,13 +784,13 @@ kde_libdirs="/usr/lib/kde/lib /usr/local
+ test -n "$KDEDIR" && kde_libdirs="$KDEDIR/lib $KDEDIR $kde_libdirs"
+ kde_libdirs="$ac_kde_libraries $kde_libdirs"
+ AC_FIND_FILE(libkdecore.la, $kde_libdirs, kde_libdir)
++ac_kde_libraries="$kde_libdir"
+ 
+ if test -n "$ac_kde_libraries" && test ! -r "$ac_kde_libraries/libkdecore.la"; then
+ AC_MSG_ERROR([
+ in the prefix, you've chosen, are no KDE libraries installed. This will fail.
+ So, check this please and use another prefix!])
+ fi
+-ac_kde_libraries="$kde_libdir"
+ 
+ if test "$ac_kde_includes" = NO || test "$ac_kde_libraries" = NO; then
+   ac_cv_have_kde="have_kde=no"

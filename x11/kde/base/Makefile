@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/30 05:07:12 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/30 21:00:22 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.2
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
 		 --with-qt-includes="${LOCALBASE}/include/X11/qt" \
 		 --with-qt-libraries="${LOCALBASE}/lib"
-CONFIGURE_ENV=	RUN_KAPPFINDER=no
+CONFIGURE_ENV=	RUN_KAPPFINDER=no KDEDIR=/usr/local
 
 pre-build:
 	@echo ""
