@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/05/27 17:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/05/31 10:18:06 espie Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -41,7 +41,7 @@ FLAVOR=intl
 # No default flavor, error.
 FLAVOR?=
 .if empty(FLAVOR)
-.BEGIN:
+pre-fetch pre-extract:
 	@echo ""
 	@echo "The variable USA_RESIDENT must be set to either Yes or No"
 	@echo "in order to build this package.  USA residents that are"
