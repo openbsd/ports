@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2002/06/09 05:24:39 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/20 07:40:44 shell Exp $
 
 COMMENT=	"perl module for calculates time differences"
 
-VERSION=	0.19
+VERSION=	1.0
 DISTNAME=	Date-Handler-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.524
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Date/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
