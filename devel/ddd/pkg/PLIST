@@ -2,3 +2,15 @@
 bin/ddd
 @mode 444
 man/man1/ddd.1
+info/ddd.info
+info/ddd.info-1
+info/ddd.info-10
+info/ddd.info-2
+info/ddd.info-3
+info/ddd.info-4
+info/ddd.info-5
+info/ddd.info-6
+info/ddd.info-7
+info/ddd.info-8
+info/ddd.info-9
+@dirrm info 

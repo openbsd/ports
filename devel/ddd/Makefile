@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 1999/09/21 16:34:09 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/12/03 08:03:28 kevlo Exp $
 
-DISTNAME=	ddd-3.1.6
+DISTNAME=	ddd-3.1.90
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
