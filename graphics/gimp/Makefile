@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/02/10 17:46:06 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/02/11 06:30:49 brad Exp $
 
 DISTNAME=	gimp-1.1.16
 CATEGORIES=	graphics
@@ -15,7 +15,6 @@ LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.35:${PORTSDIR}/graphics/tiff
 
-USE_X11=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
@@ -43,8 +42,8 @@ pre-extract:
 	fi
 
 post-install:
-	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
-	${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${LOCALBASE}/share/aclocal/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${PREFIX}/share/aclocal
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
