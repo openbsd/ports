@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/02 14:50:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/01/25 07:07:35 mark Exp $
 bin/ion
 bin/ion-edit
 bin/ion-man
@@ -16,5 +16,5 @@ share/examples/ion/look-greyviolet.conf
 share/examples/ion/look-simpleblue.conf
 share/examples/ion/look-wheat.conf
 share/examples/ion/sample.conf
-@dirrm share/doc/ion
 @dirrm share/examples/ion
+@dirrm share/doc/ion
