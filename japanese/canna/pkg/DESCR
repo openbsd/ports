@@ -1,0 +1,18 @@
+Canna is a Kana-Kanji conversion engine.
+This package holds the Canna libraries.
+For a fully functional system, you need access to a server,
+or to install the cannaserver and cannadict packages as well.
+
+Kana-kanji conversion is usually started with '^o'.
+
+In theory, canna supports Mule (Multi-lingual emacs) and kinput2.
+
+From NetBSD:
+  To use from Mule (CANNA version), in .emacs file:
+
+     (if (and (boundp 'CANNA) CANNA) ; Is it CANNA MULE?
+        (progn
+         (load-library "canna")
+         (canna) ))
+
+The nvi-m17n-*-canna package supports canna.

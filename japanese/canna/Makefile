@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/22 11:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/22 13:01:11 espie Exp $
 
 DISTNAME=	Canna35b2
 PKGNAME=	cannalib-3.5b2
@@ -18,11 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No Fee
 PERMIT_DISTFILES_CDROM=	No Fee
 
-MULTI_PACKAGES=-dict
+MULTI_PACKAGES=-dict -server
 SUBPACKAGE?=
 .if ${SUBPACKAGE}=="-dict"
 PKGNAME=	cannadict-3.5b2
 PREFIX=		/var/dict
+.elif ${SUBPACKAGE}=="-server"
+PKGNAME=	cannaserver-3.5b2
 .endif
 
 USE_IMAKE=	Yes

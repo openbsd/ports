@@ -1,0 +1,4 @@
+Canna is a Kana-Kanji conversion engine.
+This package holds the basic Canna conversion dictionaries.
+
+Those dictionaries install under /var/dict/canna.

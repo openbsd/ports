@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-dict,v 1.1.1.1 2000/04/22 11:50:38 espie Exp $
+@comment $OpenBSD: PLIST-dict,v 1.2 2000/04/22 13:01:12 espie Exp $
 @group daemon
+@exec install -d -m 0755 -o daemon %D/canna
 canna/canna/chimei.ctd
 canna/canna/dics.dir
 canna/canna/hojomwd.ctd
@@ -19,4 +20,7 @@ canna/canna/iroha.cbd
 canna/canna/iroha.cld
 canna/canna/bushu.cld
 @dirrm canna/canna
-@dirrm canna
+@unexec rmdir %D/canna/group || true
+@unexec rmdir %D/canna/user || true
+@unexec rmdir %D/canna || echo "Finish removing %D/canna manually"
+@unexec echo "Remove /var/spool/canna manually"
