@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1 2002/02/15 19:42:18 matt Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/12/13 16:03:49 sturm Exp $
 #
 # Clean up python symlink, if it was ours.
 #
@@ -14,3 +14,7 @@ then
 	rm -f ${PREFIX}/bin/python
 fi
 
+if [ ${PREFIX}/bin/pydoc -ef ${PREFIX}/bin/pydoc2.1 ]
+then
+	rm -f ${PREFIX}/bin/pydoc
+fi

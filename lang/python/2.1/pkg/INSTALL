@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1 2002/02/15 19:42:18 matt Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/12/13 16:03:49 sturm Exp $
 #
 # Set us up as the default python if there is not one already.
 #
@@ -26,5 +26,20 @@ then
 
 EOT
 	fi
-fi
 
+	if [ ! -e ${PREFIX}/bin/pydoc ]
+	then
+		cd ${PREFIX}/bin
+		ln -s pydoc2.1 pydoc
+	else
+		cat <<EOT
+
++---------------
+| ${PREFIX}/bin/pydoc already exists.  If you want to use this
+| package as your system default pydoc, make ${PREFIX}/bin/pydoc a
+| symlink to ${PREFIX}/bin/pydoc2.1.
++---------------
+
+EOT
+	fi
+fi
