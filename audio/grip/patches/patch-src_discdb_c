@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_discdb_c,v 1.1 2005/03/22 15:02:45 robert Exp $
+--- src/discdb.c.orig	Tue Mar 22 15:46:22 2005
++++ src/discdb.c	Tue Mar 22 15:48:14 2005
+@@ -274,7 +274,7 @@
+     query->query_match=MATCH_EXACT;
+     query->query_matches=0;
+ 
+-    while((inbuffer=DiscDBReadLine(&result))) {
++    while(query->query_matches < MAX_INEXACT_MATCHES && (inbuffer=DiscDBReadLine(&result))) {
+       query->query_list[query->query_matches].list_genre=
+ 	DiscDBGenreValue(g_strstrip(strtok(inbuffer," ")));
+       
+@@ -294,7 +294,7 @@
+     query->query_match=MATCH_INEXACT;
+     query->query_matches=0;
+ 
+-    while((inbuffer=DiscDBReadLine(&result))) {
++    while(query->query_matches < MAX_INEXACT_MATCHES && (inbuffer=DiscDBReadLine(&result))) {
+       query->query_list[query->query_matches].list_genre=
+ 	DiscDBGenreValue(g_strstrip(strtok(inbuffer," ")));
+       
