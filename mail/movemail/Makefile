@@ -3,10 +3,8 @@
 # Date created:        May 16 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:37 turan Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/05 05:35:39 kevlo Exp $
 #
-
-BROKEN= bad packing lists
 
 DISTNAME=      movemail-1.0
 CATEGORIES=    mail
