@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/11/02 21:13:35 brad Exp $
+lib/libgif.so.5.0
+lib/libungif.so.5.0
+DYNLIBDIR(%B)

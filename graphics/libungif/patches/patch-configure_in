@@ -1,0 +1,15 @@
+--- configure.in.orig	Tue Oct 30 18:54:49 2001
++++ configure.in	Tue Oct 30 18:55:00 2001
+@@ -21,12 +21,6 @@ dnl Checks for libraries.
+     AC_CHECK_LIB(m, pow, [MATH_LIB="${MATH_LIB} -lm"
+                  COMPILABLE_EXTRAS="${COMPILABLE_EXTRAS} gifclrmp gifrotat"] )
+ 
+-if test ${MATH_LIB}; then
+-    AC_CHECK_LIB(rle, rle_hdr_init, [RLE_LIB="${RLE_LIBS} -lrle -lm"
+-                 COMPILABLE_EXTRAS="${COMPILABLE_EXTRAS} gif2rle rle2gif"],
+-                 ,"-lm" )
+-fi
+-
+ dnl I don't have this on my system.  Could someone else configure it and
+ dnl check that it works?
+     AC_CHECK_LIB(gl_s, main, [GL_S_LIB="${GL_S_LIB} -lgl_s $X_LIBS"
