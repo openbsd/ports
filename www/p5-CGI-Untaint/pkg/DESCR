@@ -1,0 +1,3 @@
+This module provides a simple, convenient, abstracted and
+extensible manner for validating and untainting the input
+from web forms.
