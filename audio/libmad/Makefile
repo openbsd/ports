@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/12/10 21:26:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/10 21:36:53 naddy Exp $
 
 COMMENT=	"high-quality MPEG audio decoder"
 
@@ -6,7 +6,7 @@ DISTNAME=	libmad-0.15.0b
 CATEGORIES=	audio
 HOMEPAGE=	http://mad.sourceforge.net/
 
-MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
