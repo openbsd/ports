@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/29 20:19:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2003/12/29 13:45:30 espie Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
@@ -29,6 +29,12 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	 LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-opengl-player
+
+.include <bsd.own.mk>
+USE_GCC3?=No
+.if ${USE_GCC3:L} == "yes"
+MAKE_FLAGS+=libsmpeg_la_LIBADD="audio/libaudio.la video/libvideo.la -lsupc++"
+.endif
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/smpeg.3 ${PREFIX}/man/man3
