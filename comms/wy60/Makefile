@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/07 21:59:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/02/22 16:34:07 naddy Exp $
 
 COMMENT=	"curses-based emulator for the Wyse 60 terminal"
 
-DISTNAME=	wy60-2.0.4
+DISTNAME=	wy60-2.0.6
 CATEGORIES=	comms
 HOMEPAGE=	http://gutschke.com/wy60/
 
