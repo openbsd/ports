@@ -1,0 +1,11 @@
+$OpenBSD: patch-cvs2cl_pl,v 1.3 2003/02/03 08:14:52 pvalchev Exp $
+--- cvs2cl.pl.orig	Tue Feb 13 08:20:10 2001
++++ cvs2cl.pl	Mon Feb  3 01:01:41 2003
+@@ -1,6 +1,4 @@
+-#!/bin/sh
+-exec perl -w -x $0 ${1+"$@"} # -*- mode: perl; perl-indent-level: 2; -*-
+-#!perl -w
++#!/usr/bin/perl
+ 
+ ##############################################################
+ ###                                                        ###
