@@ -1,0 +1,19 @@
+*** configure.orig	Sat Sep 27 15:04:16 1997
+--- configure	Sat Sep 27 15:04:23 1997
+***************
+*** 2511,2517 ****
+  	CFLAGS="$CFLAGS -DNEXT -DXMOSAIC_HACK"
+  	;;
+  openbsd*)
+! 	LIBS="$LIBS -lcompat"
+  	;;
+  osf*)
+  	# Increase the maximum size of functions that will be optimized.
+--- 2511,2517 ----
+  	CFLAGS="$CFLAGS -DNEXT -DXMOSAIC_HACK"
+  	;;
+  openbsd*)
+! 	LIBS="$LIBS -lcompat -lcurses -ltermlib"
+  	;;
+  osf*)
+  	# Increase the maximum size of functions that will be optimized.
