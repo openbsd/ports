@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2001/07/15 18:07:15 naddy Exp $
---- configure.orig	Sun Jan 30 03:26:06 2000
-+++ configure	Fri Jul 13 00:23:01 2001
+$OpenBSD: patch-configure,v 1.2 2001/09/29 07:06:24 pvalchev Exp $
+--- configure.orig	Sat Jan 29 19:26:06 2000
++++ configure	Sat Sep 29 00:52:02 2001
 @@ -774,9 +774,23 @@ LIBPLPLOT=""
  ### Allow the user disable support for command line editing using GNU
  ### readline.
@@ -27,7 +27,30 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/07/15 18:07:15 naddy Exp $
  if $USE_READLINE; then
    cat >> confdefs.h <<\EOF
  #define USE_READLINE 1
-@@ -2801,10 +2815,16 @@ SH_LD="$CXX"
+@@ -2438,7 +2452,7 @@ int main ()
+ }
+ #if defined (sun)
+ int MAIN_ () { return 0; }
+-#elif defined (linux) && defined (__ELF__)
++#elif (defined (linux) && defined (__ELF__)) || defined(__OpenBSD__)
+ int MAIN__ () { return 0; }
+ #endif
+ EOF
+@@ -2707,12 +2721,7 @@ else
+   { echo "configure: error: See the file INSTALL for more information." 1>&2; exit 1; }
+ fi
+ 
+-FORTRAN_MAIN_FLAG=
+-case "$canonical_host_type" in
+-  *-linux-*)
+-    FORTRAN_MAIN_FLAG="-u MAIN__"
+-  ;;
+-esac
++  FORTRAN_MAIN_FLAG="-u MAIN__"
+ if test -n "$FORTRAN_MAIN_FLAG"; then
+   echo "$ac_t""defining FORTRAN_MAIN_FLAG to be $FORTRAN_MAIN_FLAG" 1>&6
+ fi
+@@ -2801,10 +2810,16 @@ SH_LD="$CXX"
  SH_LDFLAGS=-shared
  RLD_FLAG=
  case "$canonical_host_type" in
@@ -45,7 +68,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2001/07/15 18:07:15 naddy Exp $
    alpha*-dec-osf*)
      CPICFLAG=
      CXXPICFLAG=
-@@ -4004,8 +4024,11 @@ if test "$ac_cv_header_fnmatch_h" = yes 
+@@ -4004,8 +4019,11 @@ if test "$ac_cv_header_fnmatch_h" = yes 
    cat > conftest.$ac_ext <<EOF
  #line 4006 "configure"
  #include "confdefs.h"
