@@ -1,0 +1,16 @@
+$OpenBSD: patch-innobase_Makefile_in,v 1.1 2003/05/21 07:04:54 pvalchev Exp $
+--- innobase/Makefile.in.orig	Mon May 19 21:41:20 2003
++++ innobase/Makefile.in	Mon May 19 21:41:55 2003
+@@ -343,10 +343,10 @@ distcheck: dist
+ check-am: all-am
+ check: check-recursive
+ all-am: Makefile $(HEADERS) ib_config.h
+-installdirs: installdirs-recursive
++installdirs:
+ installdirs-am:
+ 
+-install: install-recursive
++install:
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+ uninstall: uninstall-recursive
