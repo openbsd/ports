@@ -1,0 +1,11 @@
+$OpenBSD: patch-xneko_c,v 1.1 2003/01/18 09:03:33 pvalchev Exp $
+--- xneko.c.orig	Sat Jan 18 01:34:37 2003
++++ xneko.c	Sat Jan 18 01:35:01 2003
+@@ -140,6 +140,7 @@ static char sccsid[] = "@(#)xneko.c	8.1 
+ #include <stdio.h>
+ 
+ #include <signal.h>
++#include <string.h>
+ #include <math.h>
+ #include <sys/time.h>
+ 

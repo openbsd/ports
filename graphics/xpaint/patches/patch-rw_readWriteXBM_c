@@ -1,0 +1,23 @@
+$OpenBSD: patch-rw_readWriteXBM_c,v 1.1 2003/01/18 09:03:33 pvalchev Exp $
+--- rw/readWriteXBM.c.orig	Sat Sep  2 16:08:33 2000
++++ rw/readWriteXBM.c	Sat Jan 18 01:48:50 2003
+@@ -17,8 +17,6 @@
+ #include <stdio.h>
+ #include "image.h"
+ 
+-int strncmp(char *, char *, int);
+-
+ #define TRUE 1
+ #define FALSE 0
+ 
+@@ -54,9 +52,8 @@ int strncmp(char *, char *, int);
+  */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <ctype.h>
+-
+-extern char *strrchr(char *, char);
+ 
+ 
+ #define MAX_SIZE 255
