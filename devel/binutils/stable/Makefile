@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/06/05 04:03:55 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2003/06/05 18:28:24 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -36,6 +36,7 @@ FLAVOR?=
 .if !empty(FLAVOR:L) && ${FLAVOR:L} != ${MACHINE_ARCH}
 CONFIGURE_ARGS+=	--target=${FLAVOR:L}-unknown-openbsd${OSREV}
 TARGET_ARCH=		${FLAVOR:L}
+PLIST=			${PKGDIR}/PLIST.cross
 .else
 TARGET_ARCH=		${MACHINE_ARCH}
 .endif
@@ -59,12 +60,15 @@ post-patch:
 do-install:
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/man/man1
+.if exists (${WRKSRC}/gprof/gprof)
+	cd ${WRKSRC} && \
+	   ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin && \
+	   ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1
+.endif
 	cd ${WRKSRC} && {						\
 	    ${INSTALL_PROGRAM} gas/as-new ${TARGET_DIR}/bin/as;		\
-	    ${INSTALL_PROGRAM} gprof/gprof ${TARGET_DIR}/bin;		\
 	    ${INSTALL_PROGRAM} ld/ld-new ${TARGET_DIR}/bin/ld;		\
 	    ${INSTALL_MAN} gas/doc/as.1 ${TARGET_DIR}/man/man1;		\
-	    ${INSTALL_MAN} gprof/gprof.1 ${TARGET_DIR}/man/man1;	\
 	    ${INSTALL_MAN} ld/ld.1 ${TARGET_DIR}/man/man1;		\
 	    for s in ${FILES}; do					\
 		d=`echo $${s} | sed s/-new//`;				\

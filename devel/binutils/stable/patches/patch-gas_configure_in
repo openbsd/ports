@@ -1,5 +1,5 @@
 --- gas/configure.in.orig	Wed Oct 30 12:07:32 2002
-+++ gas/configure.in	Tue Jun  3 20:59:35 2003
++++ gas/configure.in	Thu Jun  5 12:36:15 2003
 @@ -260,7 +260,7 @@ changequote([,])dnl
  					;;
  			    esac
@@ -9,16 +9,19 @@
        i386-*-linux*aout* | i386-*-linux*oldld)   fmt=aout em=linux ;;
        i386-*-linux*coff*)   fmt=coff em=linux ;;
        i386-*-linux-gnu*)    fmt=elf em=linux bfd_gas=yes ;;
-@@ -460,7 +460,11 @@ changequote([,])dnl
+@@ -460,7 +460,14 @@ changequote([,])dnl
                              ;;
        sparc-*-openbsd*)     em=nbsd
                              case ${cpu} in
 -                               sparc) fmt=aout ;;
-+                               sparc) case ${os} in
-+				  openbsd[01].* | openbsd2.[0-9] | openbsd3.[0-1]))
-+				     fmt=aout ;;
-+				  *)
-+				     fmt=elf ;;
++                               sparc)
++				  case ${os} in
++				     openbsd[[01]].* | openbsd2.[[0-9]] | openbsd3.[[0-1]])
++					 fmt=aout ;;
++				     *)
++					 fmt=elf ;;
++				  esac
++				  ;;
                                 sparc64) fmt=elf ;;
                              esac
                              ;;

@@ -1,5 +1,5 @@
 --- bfd/config.bfd.orig	Thu Nov  7 11:57:50 2002
-+++ bfd/config.bfd	Thu Apr 24 15:39:06 2003
++++ bfd/config.bfd	Thu Jun  5 14:00:37 2003
 @@ -405,7 +405,7 @@ case "${targ}" in
  	targ_cflags=-DOLD_FREEBSD_ABI_LABEL ;;
      esac
@@ -32,7 +32,23 @@
      targ_defvec=bfd_elf32_bigmips_vec
      targ_selvecs="bfd_elf32_littlemips_vec ecoff_big_vec ecoff_little_vec"
      ;;
-@@ -1129,6 +1129,11 @@ case "${targ}" in
+@@ -1041,10 +1041,14 @@ case "${targ}" in
+     targ_selvecs=bfd_elf32_sparc_vec
+     targ_underscore=yes
+     ;;
+-  sparc-*-openbsd*)
++  sparc*-*-openbsd[01].* | sparc*-*-openbsd2.[0-9] | sparc*-*-openbsd3.[0-1])
+     targ_defvec=sparcnetbsd_vec
+     targ_underscore=yes
+     ;;
++  sparc-*-openbsd*)
++   targ_defvec=bfd_elf32_sparc_vec
++   targ_selvecs=sparcnetbsd_vec
++   ;;
+   sparc-*-elf* | sparc-*-solaris2.[0-6] | sparc-*-solaris2.[0-6].*)
+     targ_defvec=bfd_elf32_sparc_vec
+     targ_selvecs=sunos_big_vec
+@@ -1129,6 +1133,11 @@ case "${targ}" in
  
    vax-*-bsd* | vax-*-ultrix*)
      targ_defvec=vaxbsd_vec
