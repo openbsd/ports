@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/09/14 10:43:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 1999/10/07 19:49:50 brad Exp $
 
 DISTNAME=	zsh-3.0.6
 CATEGORIES=	shells
@@ -27,12 +27,6 @@ post-install:
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
-	@$(ECHO)
-	@$(ECHO) "Finished installing $(DISTNAME)"
-	@$(ECHO) "To complete the install, you should notify the system"
-	@$(ECHO) "that $(PREFIX)/bin/zsh is a valid shell by adding it to"
-	@$(ECHO) "/etc/shells."
-	@$(ECHO) "If you are unfamiliar with this file, consult the shells(5)"
-	@$(ECHO) "manual page."
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
