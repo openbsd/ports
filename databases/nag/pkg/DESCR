@@ -1,4 +1,0 @@
-Nag is a set of PHP scripts that implement a simple, multiuser task list
-manager. It makes extensive use of the new Horde 2.0 web application
-framework. The development versions also support multiple task lists and
-sharing task lists between users.
