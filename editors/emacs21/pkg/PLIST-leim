@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-leim,v 1.1 2003/07/06 12:46:45 naddy Exp $
+@comment $OpenBSD: PLIST-leim,v 1.2 2003/07/08 14:49:56 naddy Exp $
 share/emacs/${VERSION}/leim/ja-dic/ja-dic.elc
 share/emacs/${VERSION}/leim/leim-list.el
 share/emacs/${VERSION}/leim/quail/4Corner.elc
@@ -51,4 +51,3 @@ share/emacs/${VERSION}/leim/quail/tsang-cns.elc
 share/emacs/${VERSION}/leim/quail/viqr.elc
 @dirrm share/emacs/${VERSION}/leim/quail
 @dirrm share/emacs/${VERSION}/leim/ja-dic
-@dirrm share/emacs/${VERSION}/leim

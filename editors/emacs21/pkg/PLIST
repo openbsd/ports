@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/07/06 18:59:28 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/07/08 14:49:56 naddy Exp $
 bin/b2m
 bin/ctags
 bin/ebrowse
@@ -1214,6 +1214,8 @@ share/emacs/site-lisp/subdirs.el
 @dirrm share/emacs/${VERSION}/lisp/emacs-lisp
 @dirrm share/emacs/${VERSION}/lisp/calendar
 @dirrm share/emacs/${VERSION}/lisp
+@exec mkdir -p %D/share/emacs/${VERSION}/leim
+@dirrm share/emacs/${VERSION}/leim   
 @dirrm share/emacs/${VERSION}/etc/e
 @dirrm share/emacs/${VERSION}/etc
 @dirrm share/emacs/${VERSION}
