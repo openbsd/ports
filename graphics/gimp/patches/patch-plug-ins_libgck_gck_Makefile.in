@@ -1,6 +1,6 @@
---- plug-ins/libgck/gck/Makefile.in.orig	Tue Aug 22 13:10:27 2000
-+++ plug-ins/libgck/gck/Makefile.in	Tue Aug 22 13:10:42 2000
-@@ -191,7 +191,7 @@
+--- plug-ins/libgck/gck/Makefile.in.orig	Sat Sep 23 17:11:04 2000
++++ plug-ins/libgck/gck/Makefile.in	Wed Sep 27 17:42:00 2000
+@@ -192,7 +192,7 @@
  gckinclude_HEADERS =  	gck.h
  
  

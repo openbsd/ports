@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2000/09/24 07:04:07 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2000/09/28 01:39:46 brad Exp $
 
-DISTNAME=	gimp-1.1.25
+DISTNAME=	gimp-1.1.26
 CATEGORIES=	graphics
 NEED_VERSION=	1.330
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.25/ \
-		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.25/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.25/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.1/v1.1.26/ \
+		ftp://ftp.sunet.se/pub/gnu/gimp/v1.1/v1.1.26/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/v1.1/v1.1.26/
 
 HOMEPAGE=	http://www.gimp.org/
 
@@ -24,7 +24,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
