@@ -1,5 +1,5 @@
 # 
-# $OpenBSD: Makefile,v 1.9 2000/05/31 16:13:08 hugh Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/02 19:47:07 hugh Exp $
 # 
 
 DISTNAME=		ucd-snmp-4.1.2
@@ -27,8 +27,9 @@ CONFIGURE_ARGS+=	--with-logfile='/var/log/snmpd'
 
 FAKE=			Yes
 
-BIN=            snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset    \
-                snmpstatus snmptest snmptranslate snmptrap snmpwalk
+BIN=		encode_keychange snmpbulkget snmpbulkwalk snmpdelta \
+		snmpget snmpgetnext snmpnetstat snmpset snmpstatus  \
+		snmptable snmptest snmptranslate snmptrap snmpusm snmpwalk 
 SBIN=           snmpd snmptrapd
 
 post-install:

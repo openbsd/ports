@@ -1,0 +1,8 @@
+--- local/tkmib.orig	Fri Jun  2 15:26:05 2000
++++ local/tkmib	Fri Jun  2 15:26:11 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl55 -w
++#!/usr/bin/perl -w
+ 
+ require 5;
+ 

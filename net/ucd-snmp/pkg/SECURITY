@@ -1,5 +1,7 @@
-$OpenBSD: SECURITY,v 1.1 2000/06/02 15:45:06 hugh Exp $
+$OpenBSD: SECURITY,v 1.2 2000/06/02 19:47:08 hugh Exp $
 
 ${WRKSRC}/snmplib/snmp_api.c:
 	
 	mktemp() used to create pathname for a UNIX domain socket in /tmp
+
+sprintf, strcat, and strcpy are in wide use.  Use at your own risk.
