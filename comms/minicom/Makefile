@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.31 2001/03/30 11:33:39 form Exp $
+# $OpenBSD: Makefile,v 1.32 2001/10/12 03:30:30 brad Exp $
 
 COMMENT=	"MS-DOS Telix-like serial communication program"
 
 DISTNAME=	${PKGNAME}.src
 PKGNAME=	minicom-1.83.1
 CATEGORIES=	comms
-NEED_VERSION=	1.320
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/serialcomm/dialout
 
 HOMEPAGE=	http://www.pp.clinet.fi/~walker/minicom.html
 
-BUILD_DEPENDS=	msgfmt::devel/gettext
-RUN_DEPENDS=	kermit::comms/kermit \
-		lrz::comms/lrzsz
+MODULES=	gettext
+RUN_DEPENDS=	::comms/kermit \
+		::comms/lrzsz
 
 MAINTAINER=     Oleg Safiullin <form@openbsd.org>
 
