@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/06 12:42:32 reinhard Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/02 03:22:16 espie Exp $
 
 COMMENT=	"filemanager for X Window"
 
@@ -43,5 +43,7 @@ post-install:
 	${INSTALL_DATA} ${XNLAUNCHFILES} ${PREFIX}/share/examples/xnc
 	cd ${PREFIX}/bin && \
 	${STRIP} es ives vs xjpegroot xnc xnlaunch xncloader xncsetup
+	sed -e 's,^ ,,' <${PREFIX}/man/man1/xnlaunch.1 >${PREFIX}/man/cat1/xnlaunch.0
+	rm -f ${PREFIX}/man/man1/xnlaunch.1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/12/06 12:42:32 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/02 03:22:16 espie Exp $
 @pkgcfl es-[0-9]*
 bin/bzip.xnc
 bin/es
@@ -14,12 +14,12 @@ bin/xncloader
 bin/xncsetup
 bin/xnlaunch
 bin/zips.xnc
+man/cat1/xnlaunch.0
 man/man1/es.1
 man/man1/ives.1
 man/man1/vs.1
 man/man1/xjpegroot.1
 man/man1/xnc.1
-man/man1/xnlaunch.1
 share/examples/xnc/.launch.menu
 share/examples/xnc/.xnlaunch.ini
 share/examples/xnc/graphs.gif
