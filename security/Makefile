@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2004/11/08 16:10:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.143 2004/12/20 22:43:26 msf Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -128,6 +128,7 @@
      SUBDIR += stunnel
      SUBDIR += swatch
      SUBDIR += tempwatch
+     SUBDIR += tinyca
      SUBDIR += towitoko
      SUBDIR += vomit
      SUBDIR += vpnc
