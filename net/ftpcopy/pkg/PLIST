@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/12 00:07:09 naddy Exp $
+bin/ftpcopy
+bin/ftpcp
+bin/ftpls
+man/man1/ftpcopy.1
+man/man1/ftpcp.1
+man/man1/ftpls.1
