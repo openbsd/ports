@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/09 15:37:24 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/22 01:43:32 margarida Exp $
 
 COMMENT=	"interactive utility that displays info about online users"
 
 DISTNAME=	whowatch-1.4
 CATEGORIES=	sysutils
 
-MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
-		http://janek.ae.krakow.pl/~suszyckm/download/
-
 HOMEPAGE=	http://wizard.ae.krakow.pl/~mike/
 
-MAINTAINER=	Mark Grimes <mark@stateful.net>
+MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
+		http://janek.ae.krakow.pl/~suszyckm/download/ \
+		${MASTER_SITE_PACKETSTORM:=UNIX/IDS/}
 
+MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
