@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/18 21:52:43 jakob Exp $
+include/c-client/dummy.h
+include/c-client/env.h
+include/c-client/env_unix.h
+include/c-client/fdstring.h
+include/c-client/flstring.h
+include/c-client/fs.h
+include/c-client/ftl.h
+include/c-client/imap4r1.h
+include/c-client/linkage.c
+include/c-client/linkage.h
+include/c-client/mail.h
+include/c-client/misc.h
+include/c-client/nl.h
+include/c-client/nntp.h
+include/c-client/osdep.h
+include/c-client/pop3.h
+include/c-client/rfc822.h
+include/c-client/smtp.h
+include/c-client/tcp.h
+@dirrm include/c-client
+lib/libc-client.a
