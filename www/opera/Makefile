@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/05/12 19:35:45 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/05/15 12:56:46 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -7,7 +7,10 @@ COMMENT=	"fast and customizable WWW browser"
 PKGNAME=	opera-7.50
 DISTNAME=	opera-7.50-20040511.1-static-qt.i386-en
 CATEGORIES=	www
+
 HOMEPAGE=	http://www.opera.com/
+
+MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"Commercial software"
 PERMIT_PACKAGE_FTP=	"Commercial software"
