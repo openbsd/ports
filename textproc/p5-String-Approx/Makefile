@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/17 15:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/04/19 07:20:37 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module for approximate matching"
 
-DISTNAME=	String-Approx-3.22
+DISTNAME=	String-Approx-3.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5 
 
