@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/05/15 00:53:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.28 2003/05/15 14:35:45 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
@@ -21,9 +21,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 
+MODULES=	iconv
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
-		glib.1.2::devel/glib \
+LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
+		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
