@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/02/01 14:59:23 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/02/04 09:13:59 espie Exp $
 ${KDE}/kcm_kgamma.so
 ${KDE}/kcm_kmrml.so
 ${KDE}/kcm_kviewcanvasconfig.so
@@ -32,13 +32,17 @@ ${KDE}/kviewerpart.so
 ${KDE}/libkghostviewpart.so
 ${KDE}/libkmrmlpart.so
 ${KDE}/libkpdfpart.so
+${KDE}/libksvgplugin.so
+${KDE}/libksvgrendererlibart.so
 ${KDE}/libkviewcanvas.so
 ${KDE}/libkviewviewer.so
 ${KDE}/mrmlsearch.so
+${KDE}/svgthumbnail.so
 lib/libkdeinit_kuickshow.so
 lib/libkdeinit_kview.so
 lib/libkdeinit_mrmlsearch.so
 lib/libkimageviewer.so.0.0
 lib/libkmultipage.so.0.0
+lib/libksvg.so.0.1
+lib/libtext2path.so.0.0
 DYNLIBDIR(%D/lib)
-DYNLIBDIR(%D/${KDE})

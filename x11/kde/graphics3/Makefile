@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/02/02 00:47:20 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2004/02/04 09:13:58 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -16,7 +16,8 @@ FULLPKGNAME-kpov=kpovmodeller-${VERSION}
 SUBPACKAGE?=
 
 LIB_DEPENDS= \
-	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts,kutils::x11/kde/libs3
+	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3 \
+	fribidi::devel/fribidi
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-kamera"
