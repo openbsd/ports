@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/31 09:28:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/02 14:15:29 espie Exp $
 
+BROKEN=		"Unlicenced version, expired"
 DISTNAME=	mtv-1.0.6.0
 CATEGORIES=	graphics
 NEED_VERSION=	1.322
