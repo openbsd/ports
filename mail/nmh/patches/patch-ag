@@ -1,23 +1,27 @@
---- ./sbr/lock_file.c.orig	Sat Mar 20 15:55:07 1999
-+++ ./sbr/lock_file.c	Sat Mar 20 16:00:47 1999
-@@ -401,7 +401,7 @@
- static void
- lockname (char *file, struct lockinfo *li, int isnewlock)
- {
--    int bplen, tmplen;
-+    int bplen, tmplen, lockfd;
-     char *bp, *cp;
- 
- #if 0
-@@ -452,7 +452,10 @@
+--- sbr/lock_file.c.orig	Sun Sep 12 06:50:12 1999
++++ sbr/lock_file.c	Tue Feb 29 18:11:50 2000
+@@ -463,16 +463,18 @@
  	else
  	    snprintf (li->tmplock, sizeof(li->tmplock), "%.*s,LCK.XXXXXX",
  		     cp - li->curlock, li->curlock);
--	mktemp (li->tmplock);
-+	lockfd = mkstemp (li->tmplock);
-+	if (lockfd == -1)
-+	    return -1;
-+	close (lockfd);
+-/*
+-  Mkstemp work postponed until later -Doug
+ #ifdef HAVE_MKSTEMP
+-	mkstemp (li->tmplock);
++	{
++	    int lockfd;
++
++	    lockfd = mkstemp (li->tmplock);
++	    if (lockfd == -1)
++	        return;
++	    close (lockfd);
++	}
+ #else
+-*/
+ 	mktemp (li->tmplock);
+-/*
+ #endif
+-*/
+ 
  	unlink (li->tmplock);	/* remove any stray */
      }
- }

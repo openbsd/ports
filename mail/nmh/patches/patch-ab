@@ -1,18 +1,29 @@
---- ./sbr/m_scratch.c.orig	Sat Mar 20 15:33:22 1999
-+++ ./sbr/m_scratch.c	Sat Mar 20 16:17:33 1999
-@@ -13,9 +13,14 @@
- {
-     char *cp;
+--- sbr/m_scratch.c.orig	Sat Jan 29 10:52:43 2000
++++ sbr/m_scratch.c	Tue Feb 29 17:58:33 2000
+@@ -15,16 +15,20 @@
      static char buffer[BUFSIZ], tmpfil[BUFSIZ];
-+    int fd;
  
      snprintf (tmpfil, sizeof(tmpfil), "%sXXXXXX", template);
--    mktemp (tmpfil);
-+    fd = mkstemp (tmpfil);
-+    if (fd == -1)
-+	return 0;
-+    close (fd);
-+    unlink (tmpfil);
+-/*
+-  Mkstemp work postponed until later -Doug
+ #ifdef HAVE_MKSTEMP
+-    mkstemp (tmpfil);
++    {
++        int fd;
++
++	fd = mkstemp (tmpfil);
++	if (fd == -1)
++	    return 0;
++	close (fd);
++	unlink (tmpfil);
++    }
+ #else
+-*/
+     mktemp (tmpfil);
+-/*
+ #endif
+-*/
++
+     /* nasty - this really means: if there is no '/' in the path */
      if ((cp = r1bindex (file, '/')) == file)
  	strncpy (buffer, tmpfil, sizeof(buffer));
-     else

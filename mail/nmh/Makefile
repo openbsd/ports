@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/01 16:16:27 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/08 05:11:35 kevlo Exp $
 
-BROKEN=		security problems.  needs to be fixed.
-
-DISTNAME=		nmh-1.0
+DISTNAME=		nmh-1.0.3
 CATEGORIES=     	mail
 
 MAINTAINER=		ports@openbsd.org
@@ -13,7 +11,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-MASTER_SITES=		ftp://ftp.math.gatech.edu/pub/nmh/
+MASTER_SITES= 		ftp://ftp.math.gatech.edu/pub/nmh/
 
 SYSCONFDIR=		${PREFIX}/lib/nmh
 GNU_CONFIGURE=		yes

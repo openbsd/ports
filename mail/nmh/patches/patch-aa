@@ -1,19 +1,6 @@
---- ./config.h.in.orig	Sat Mar 20 15:30:51 1999
-+++ ./config.h.in	Sat Mar 20 15:32:37 1999
-@@ -37,9 +37,9 @@
-  *  OpenBSD 2.x
-  *  BSD/OS 2.x
-  */
--/* #define BIND     1 */
--/* #define BSD42    1 */
--/* #define BSD44    1 */
-+#define BIND	1
-+#define BSD42	1
-+#define BSD44	1
- 
- /*
-  *  SCO 4.x
-@@ -72,8 +72,8 @@
+--- config.h.in.~1~	Sun Feb  6 04:40:21 2000
++++ config.h.in	Tue Feb 29 19:06:41 2000
+@@ -23,8 +23,8 @@
   * other programs which may modify your maildrops.
   * Currently you can only use one type.
   */

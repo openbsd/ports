@@ -16,7 +16,6 @@ bin/mhparam
 bin/mhpath
 bin/mhshow
 bin/mhstore
-bin/mhtest
 bin/msgchk
 bin/msh
 bin/packf
@@ -28,6 +27,7 @@ bin/rmf
 bin/rmm
 bin/scan
 bin/send
+bin/sendfiles
 bin/show
 bin/sortm
 bin/viamail
@@ -55,6 +55,7 @@ lib/nmh/digestcomps
 lib/nmh/distcomps
 lib/nmh/forwcomps
 lib/nmh/rcvdistcomps
+lib/nmh/rcvdistcomps.outbox
 lib/nmh/replcomps
 lib/nmh/replgroupcomps
 lib/nmh/MailAliases
@@ -67,6 +68,7 @@ libexec/dp
 libexec/fmtdump
 libexec/install-mh
 libexec/mhl
+libexec/mhtest
 libexec/post
 libexec/rcvdist
 libexec/rcvpack
@@ -74,7 +76,6 @@ libexec/rcvstore
 libexec/rcvtty
 libexec/slocal
 libexec/spost
-libexec/sendfiles
 man/man1/ali.1
 man/man1/anno.1
 man/man1/burst.1
@@ -127,6 +128,7 @@ man/man5/mh-mail.5
 man/man5/mh-profile.5
 man/man5/mh-sequence.5
 man/man5/mh-tailor.5
+man/man5/mh_profile.5
 man/man8/ap.8
 man/man8/conflict.8
 man/man8/dp.8

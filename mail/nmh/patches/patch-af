@@ -1,17 +1,6 @@
---- ./uip/spost.c.orig	Sat Mar 20 15:45:06 1999
-+++ ./uip/spost.c	Sat Mar 20 16:45:37 1999
-@@ -339,8 +339,8 @@
- 	out = stdout;
-     }
-     else {
--	    mktemp (tmpfil);
--	    if ((out = fopen (tmpfil, "w")) == NULL)
-+	    int fd = mkstemp (tmpfil);
-+	    if ((fd == -1) || ((out = fdopen (fd, "w")) == NULL))
- 		adios (tmpfil, "unable to create");
- 	    chmod (tmpfil, 0600);
- 	}
-@@ -700,8 +700,8 @@
+--- uip/spost.c.orig	Sun Feb  6 04:41:00 2000
++++ uip/spost.c	Tue Feb 29 17:52:41 2000
+@@ -727,8 +727,8 @@
      char *vec[6];
      FILE * in, *out;
  

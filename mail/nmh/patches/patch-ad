@@ -1,12 +1,21 @@
---- ./uip/mshcmds.c.orig	Sat Mar 20 15:41:58 1999
-+++ ./uip/mshcmds.c	Sat Mar 20 15:42:22 1999
-@@ -932,7 +932,8 @@
+--- uip/mshcmds.c.orig	Sun Feb  6 04:40:55 2000
++++ uip/mshcmds.c	Tue Feb 29 18:08:49 2000
+@@ -935,16 +935,12 @@
  
  					/* foil search of .mh_profile */
      snprintf (buf, sizeof(buf), "%sXXXXXX", invo_name);
--    vec[0] = (char *)mktemp (buf);
+-/*
+-  Mkstemp work postponed until later -Doug
+ #ifdef HAVE_MKSTEMP
+-    vec[0] = (char *)mkstemp (buf);
 +    close (mkstemp (buf));
 +    vec[0] = buf;
+ #else
+-*/
+     vec[0] = (char *)mktemp (buf);
+-/*
+ #endif
+-*/
      vec[vecp++] = "-file";
      vec[vecp] = NULL;
      if (!msgp)
