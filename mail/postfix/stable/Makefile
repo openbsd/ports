@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.67 2004/07/26 13:48:59 brad Exp $
+# $OpenBSD: Makefile,v 1.68 2004/09/26 20:24:06 brad Exp $
 
-VERSION=	2.1.4
+VERSION=	2.1.5
 DISTNAME=	postfix-${VERSION}
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
