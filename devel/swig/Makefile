@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2000/08/18 01:30:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/12 15:58:53 kevlo Exp $
 
-DISTNAME=	swig1.3a3
-PKGNAME=	swig-1.3a3
+DISTNAME=	swig1.3a4
+PKGNAME=	swig-1.3a4
 CATEGORIES=	devel
 NEED_VERSION=	1.319
 
@@ -18,9 +18,10 @@ HOMEPAGE=	http://www.swig.org/
 
 BUILD_DEPENDS+=	python::lang/python \
 		tclsh8.3::lang/tcl/8.3 \
-		guile::lang/guile
+		guile::lang/guile \
+		ruby::lang/ruby
 
-WRKDIST=	${WRKDIR}/SWIG1.3a3
+WRKDIST=	${WRKDIR}/SWIG1.3a4
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu 

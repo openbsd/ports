@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Jun 15 10:03:25 2000
-+++ Makefile.in	Thu Aug 17 10:04:06 2000
-@@ -111,9 +111,9 @@
+--- Makefile.in.orig	Tue Sep 12 23:32:08 2000
++++ Makefile.in	Tue Sep 12 23:36:20 2000
+@@ -185,9 +185,9 @@
  # TARGETS: install & friends
  #####################################################################
  
@@ -12,7 +12,7 @@
  MKINSTDIRS      = $(srcdir)/mkinstalldirs
  
  install: install-main install-lib install-runtime
-@@ -125,54 +125,54 @@
+@@ -199,60 +199,60 @@
  	@if [ -f swig.exe ]; then					\
  		$(INSTALL_PROGRAM) swig.exe $(BIN_DIR)/swig.exe;	\
  	else								\
@@ -26,7 +26,7 @@
 +	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)
  #	cd $(SWIG_LIB); rm -rf *
  #	The following line has `*.swg' removed -- add it back if needed.
- 	@cd $(srcdir)/Lib; for i in *.i; \
+ 	@cd $(srcdir)/Lib; for i in *.i *.swg; \
  	    do \
  	    echo "Installing Lib/$$i"; \
 -            ../$(INSTALL_DATA) $$i $(SWIG_LIB)/$$i; \
@@ -46,7 +46,7 @@
  	    do \
  	    echo "Installing Lib/perl5/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/perl5/$$i; \
-+	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/perl5/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/perl5/$$i; \
  	    done;
 -	@$(MKINSTDIRS) $(SWIG_LIB)/python
 +	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/python
@@ -54,7 +54,7 @@
  	    do \
  	    echo "Installing Lib/python/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/python/$$i; \
-+	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/python/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/python/$$i; \
  	    done;
 -	@$(MKINSTDIRS) $(SWIG_LIB)/guile
 +	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/guile
@@ -62,7 +62,7 @@
  	    do \
  	    echo "Installing Lib/guile/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/guile/$$i; \
-+	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/guile/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/guile/$$i; \
  	    done;
 -	@$(MKINSTDIRS) $(SWIG_LIB)/java
 +	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/java
@@ -70,7 +70,7 @@
  	    do \
  	    echo "Installing Lib/java/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/java/$$i; \
-+	    $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/java/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/java/$$i; \
  	    done;
 -	@$(MKINSTDIRS) $(SWIG_LIB)/mzscheme
 +	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/mzscheme
@@ -79,6 +79,14 @@
  	    echo "Installing Lib/mzscheme/$$i"; \
 -            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/mzscheme/$$i; \
 +            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/mzscheme/$$i; \
+ 	    done;
+-	@$(MKINSTDIRS) $(SWIG_LIB)/ruby
++	@$(MKINSTDIRS) $(DESTDIR)$(SWIG_LIB)/ruby
+ 	@cd $(srcdir)/Lib/ruby; for i in *.i *.swg Makefile.swig extconf.rb; \
+ 	    do \
+ 	    echo "Installing Lib/ruby/$$i"; \
+-            ../../$(INSTALL_DATA) $$i $(SWIG_LIB)/ruby/$$i; \
++            $(INSTALL_DATA) $$i $(DESTDIR)$(SWIG_LIB)/ruby/$$i; \
  	    done;
  
  install-runtime:
