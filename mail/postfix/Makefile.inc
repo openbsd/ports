@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.47 2005/03/07 18:26:39 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.48 2005/03/10 07:26:27 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -71,12 +71,6 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 
 post-patch:
 	@find ${WRKSRC} -type f -name '*.bak.orig' -print | xargs rm
-
-post-install:
-.if defined(IPV6VERSION) && defined(IPV6POSTFIX)
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
-	@${INSTALL_DATA} ${WRKSRC}/pfixtls/doc/* ${PREFIX}/share/doc/postfix/tls
-.endif
 
 do-configure:
 	@cd ${WRKSRC}; ${MAKE_PROGRAM} makefiles \
