@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/07 16:06:08 heko Exp $
+# $OpenBSD: Makefile,v 1.26 2001/09/07 20:45:07 brad Exp $
 
 COMMENT=	"Berkeley DB package, revision 3"
 
@@ -62,9 +62,9 @@ CONFIGURE_ARGS+=	--enable-java
 PORTPATH=		/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/jdk${JDK_VERSION}/bin
 .endif
 
-post-configure:
 .if ${FLAVOR:L:Mjava}
-	@-ln -s ${LOCALBASE}/jdk${JDK_VERSION}/include/freebsd/jni_md.h \
+post-configure:
+	@ln -sf ${LOCALBASE}/jdk${JDK_VERSION}/include/freebsd/jni_md.h \
 		${WRKBUILD}/jni_md.h
 .endif
 
@@ -74,30 +74,26 @@ post-install:
 
 # Installing examples for each language installed. (No examples for
 # tcl available, only tests.)
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/db
-	@echo "Installing samples: ${PREFIX}/share/examples/db/*.c ..."
-	@cd ${WRKSRC}/examples_c; ${INSTALL_DATA} *.c \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/db
+	cd ${WRKSRC}/examples_c; ${INSTALL_DATA} *.c \
 		${PREFIX}/share/examples/db
 
 .if ${FLAVOR:L:Mc++}
-	@echo "Installing samples: ${PREFIX}/share/examples/db/*.cpp ..."
-	@cd ${WRKSRC}/examples_cxx; ${INSTALL_DATA} *.cpp \
+	cd ${WRKSRC}/examples_cxx; ${INSTALL_DATA} *.cpp \
 		${PREFIX}/share/examples/db
 .endif
 
 .if ${FLAVOR:L:Mjava}
-	@echo "Installing samples: ${PREFIX}/share/examples/db/*.java ..."
-	@cd ${WRKSRC}/examples_java; ${INSTALL_DATA} *.java \
+	cd ${WRKSRC}/examples_java; ${INSTALL_DATA} *.java \
 		${PREFIX}/share/examples/db
 .endif
 
 .include <bsd.port.mk>
 
-# From postgreSQL port Makefile.
+# From PostgreSQL port Makefile.
 .if ${FLAVOR:L:Mc++} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-c++%%/r${PKGDIR}/PFRAG.c++.shared' -e '//d'
 .elif ${FLAVOR:L:Mc++} && defined(NO_SHARED_LIBS) && \
-        ${NO_SHARED_LIBS:L} == "yes"
+	${NO_SHARED_LIBS:L} == "yes"
 SED_PLIST+=-e '/%%SHARED-c++%%/d'
 .endif
-
