@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/01/24 08:22:47 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2001/01/28 15:29:58 avsm Exp $
 #
 
 #    SUBDIR += Scilab
@@ -35,6 +35,7 @@
      SUBDIR += p5-AI-NeuralNet-BackProp
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
+     SUBDIR += p5-Math-GMP
 #    SUBDIR += p5-MatrixReal
      SUBDIR += p5-Set-IntSpan
 #    SUBDIR += pari
