@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/01/11 04:06:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2002/01/11 04:12:26 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -51,7 +51,6 @@ PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+= --enable-compressed
 CONFIGURE_STYLE= autoconf
 .else
-SUPDISTFILES+=	patch-${VERSION}.rr.compressed.2.gz:0
 CONFIGURE_STYLE= gnu
 .endif
 
