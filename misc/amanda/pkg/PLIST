@@ -36,10 +36,6 @@ libexec/chg-rth
 libexec/chg-chs
 libexec/chg-chio
 libexec/chg-zd-mtx
-libexec/amcat.awk
-libexec/amplot.awk
-libexec/amplot.g
-libexec/amplot.gp
 man/man8/amadmin.8
 man/man8/amanda.8
 man/man8/amcheck.8
@@ -101,5 +97,4 @@ sbin/amverify
 sbin/amstatus
 sbin/amrestore
 sbin/amrecover
-sbin/amplot
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
