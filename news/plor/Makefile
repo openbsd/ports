@@ -1,28 +1,29 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/24 06:22:12 kevlo Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
-FAKE=No
 
 MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/utils/
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
+FAKE=		Yes
 
 DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
 		plor.html plor.txt
 
 post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/plor ${PREFIX}/bin  
 .if !defined{NOPORTDOCS}
-	@mkdir -p ${PREFIX}/share/doc/plor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/plor
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/plor
 .endfor
