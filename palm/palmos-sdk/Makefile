@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/22 17:59:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/22 18:36:08 brad Exp $
 
 COMMENT=	"PalmOS include files"
 
@@ -21,7 +21,7 @@ SUBST_VARS=	PKGNAME
 
 MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/dist/
 
-FETCH_DEPENDS=	curl::net/curl
+FETCH_DEPENDS=	curl:curl-*:net/curl
 
 DISTSPECIAL=	${DISTNAME}${EXTRACT_SUFX} \
 		sdk35-update1${EXTRACT_SUFX}
