@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/11 02:07:44 jcs Exp $
 
 COMMENT=	"open source client for Windows Terminal Server"
 
 DISTNAME=	rdesktop-1.0.0
-PATCHLEVEL=	19.7.2
+PATCHLEVEL=	19.7.3
 PKGNAME=	${DISTNAME}.p${PATCHLEVEL}
 CATEGORIES=	x11 net
-NEED_VERSION=	1.447
+NEED_VERSION=	1.454
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -27,7 +27,6 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 LIB_DEPENDS=	gmp.4.1::devel/gmp
 
-ALL_TARGET=	rdesktop
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgmp -lX11 \
 			-lcrypto"
