@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/04/18 22:12:09 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/04/20 03:10:40 brad Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -11,6 +11,7 @@
      SUBDIR += ha
 #    SUBDIR += hpack.non-usa.only
      SUBDIR += lha
+     SUBDIR += lzo
      SUBDIR += nulib
      SUBDIR += p5-Compress-Zlib
      SUBDIR += rar
