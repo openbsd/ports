@@ -1,4 +1,4 @@
-$OpenBSD: patch-app_rsrc_h,v 1.1 2002/02/02 00:52:18 naddy Exp $
+$OpenBSD: patch-app_rsrc_h,v 1.2 2002/04/26 11:37:10 wcobb Exp $
 --- app_rsrc.h.orig	Mon Feb 12 17:17:53 2001
 +++ app_rsrc.h	Wed Aug 15 13:46:30 2001
 @@ -399,20 +399,20 @@ static XtResource Resources[] = {
@@ -14,11 +14,11 @@ $OpenBSD: patch-app_rsrc_h,v 1.1 2002/02/02 00:52:18 naddy Exp $
      { RNplayCmdMpeg2, RCplayCmd, XtRString, sizeof(String),
          XtOffsetOf(AppResources, play_cmd_mpeg2 ), XtRImmediate,
 -        "mpg123"  },
-+        "%%LOCALBASE%%/bin/mpg123"  },
++        "%%LOCALBASE%%/bin/mpg321"  },
      { RNplayCmdMpeg3, RCplayCmd, XtRString, sizeof(String),
          XtOffsetOf(AppResources, play_cmd_mpeg3 ), XtRImmediate,
 -        "mpg123"  },
-+        "%%LOCALBASE%%/bin/mpg123"  },
++        "%%LOCALBASE%%/bin/mpg321"  },
  
      { RNvideoCnvtScript, RCvideoCnvtScript, XtRString, sizeof(String),
          XtOffsetOf(AppResources, video_cnvt_script ), XtRImmediate,

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Fxtv,v 1.1 2002/02/02 00:52:18 naddy Exp $
+$OpenBSD: patch-Fxtv,v 1.2 2002/04/26 11:37:10 wcobb Exp $
 --- Fxtv.orig	Mon Feb 12 17:07:05 2001
 +++ Fxtv	Wed Aug 15 13:46:30 2001
 @@ -13,7 +13,7 @@ Fxtv*defaultInput:      tuner           
@@ -20,8 +20,8 @@ $OpenBSD: patch-Fxtv,v 1.1 2002/02/02 00:52:18 naddy Exp $
 -Fxtv*playCmdMpeg3:      mpg123
 +Fxtv*recCmdMpeg2:       %%LOCALBASE%%/bin/mp3encode -l 2 -p 1
 +Fxtv*recCmdMpeg3:       %%LOCALBASE%%/bin/mp3encode -l 3 -p 2
-+Fxtv*playCmdMpeg2:      %%LOCALBASE%%/bin/mpg123
-+Fxtv*playCmdMpeg3:      %%LOCALBASE%%/bin/mpg123
++Fxtv*playCmdMpeg2:      %%LOCALBASE%%/bin/mpg321
++Fxtv*playCmdMpeg3:      %%LOCALBASE%%/bin/mpg321
  
  ! Custom MPEG video/system stream conversion script
 -!Fxtv*videoCnvtScript:   /usr/X11R6/lib/X11/fxtv/fxtv_cnvt.sh
