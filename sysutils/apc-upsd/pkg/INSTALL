@@ -1,0 +1,65 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/04/20 02:23:39 kevlo Exp $
+#
+# Pre/post-installation setup of apc-upsd
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+APC_UPSD=/etc/apc-upsd.conf
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The file ${APC_UPSD} exists on your system.  It has"
+    echo "| NOT been updated.  Please look at the file "
+    echo "| ${PREFIX}/lib/apc-upsd/apc-upsd.conf"
+    echo "| and add any desired (but missing) entries into your"
+    echo "| current ${APC_UPSD}"
+}
+
+# Function: install the screenrc where it is supposed to be.
+#
+do_install()
+{
+    cp ${PREFIX}/lib/apc-upsd/apc-upsd.conf /etc
+    echo
+    echo "+---------------"
+    echo "| The file ${APC_UPSD} has been created on your system."
+    echo "| You may want to verify/edit its contents"
+    echo "|"
+    echo "+---------------"
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        if [ -e ${APC_UPSD} ]; then
+            do_notice $1
+        else
+            do_install $1
+        fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

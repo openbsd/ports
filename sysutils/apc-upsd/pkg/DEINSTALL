@@ -1,0 +1,25 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2000/04/20 02:23:39 kevlo Exp $
+#
+# apc-upsd de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+APC_UPSD=/etc/apc-upsd.conf
+
+if [ -e ${APC_UPSD} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -f ${APC_UPSD}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0

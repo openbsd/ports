@@ -2,14 +2,13 @@
 # Date created:         28 Dec 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:38:15 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/20 02:23:33 kevlo Exp $
 #
 
 DISTNAME=       apc-upsd
 PKGNAME=        apc-upsd
 CATEGORIES=     sysutils
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=   http://www.knienieder.com/software/
 
 MAINTAINER=     kevlo@openbsd.org
@@ -21,18 +20,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=   .tgz
 
+FAKE=		Yes
+
 WRKDIST=         ${WRKDIR}/${PKGNAME}/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apc-upsd ${PREFIX}/sbin
 
 post-install:
-	@mkdir -p ${PREFIX}/share/doc/apc-upsd
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/apc-upsd
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/apc-upsd
 	${INSTALL_DATA} ${WRKSRC}/../doc/smart-protocol ${PREFIX}/share/doc/apc-upsd
-
-	if [ ! -f /etc/apc-upsd.conf ] ; then \
-		${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 644 \
-			${WRKSRC}/apc-upsd.conf /etc/apc-upsd.conf; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/apc-upsd.conf ${PREFIX}/lib/apc-upsd
 
 .include <bsd.port.mk>

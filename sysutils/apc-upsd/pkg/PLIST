@@ -1,6 +1,5 @@
+lib/apc-upsd/apc-upsd.conf
 sbin/apc-upsd
 share/doc/apc-upsd/smart-protocol
+@dirrm lib/apc-upsd
 @dirrm share/doc/apc-upsd 
-@cwd /etc
-@cwd /etc
-apc-upsd.conf
