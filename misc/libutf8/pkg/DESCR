@@ -1,0 +1,3 @@
+This library provides UTF-8 locale support, for use on systems 
+which don't have UTF-8 locales, or whose UTF-8 locales are 
+unreasonably slow.

@@ -1,0 +1,45 @@
+$OpenBSD: patch-autoconf_ltconfig,v 1.1.1.1 2001/02/08 20:05:22 todd Exp $
+--- autoconf/ltconfig.orig	Thu Feb  1 11:49:59 2001
++++ autoconf/ltconfig	Thu Feb  1 11:53:47 2001
+@@ -826,10 +826,18 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib$libobjs'
+-    hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
++    case "$host_os" in
++      openbsd2.[01234567])
++       archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='-R$libdir'
++      ;;
++      *)
++       archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
++       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      ;;
++    esac
+     ;;
+ 
+   os2*)
+@@ -1199,11 +1207,19 @@ linux-gnu*)
+   fi
+   ;;
+ 
+-netbsd* | openbsd*)
++netbsd*)
+   version_type=sunos
+   library_names_spec='${libname}${release}.so.$versuffix'
+   finish_cmds='PATH="$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  ;;
++
++openbsd*)
++  version_type=sunos
++  library_names_spec='${libname}${release}.so.$versuffix'
++  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method='pass_all'
+   ;;
+ 
+ os2*)
