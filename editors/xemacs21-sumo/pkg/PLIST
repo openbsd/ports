@@ -1,206 +1,202 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/04/18 23:33:54 espie Exp $
-@pkgcfl emacs-*
-@comment mailcrypt is included in xemacs-sumo-21
-@comment the conflict is only on info files
-@pkgcfl mailcrypt-*
+@comment $OpenBSD: PLIST,v 1.5 2002/03/22 07:19:44 jasoni Exp $
 %%mule%%
-@unexec install-info --delete --info-dir=%D/info %D/info/auctex.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* BBDB: (bbdb).	The Big Brother Database.' %D/info/bbdb.info
-@unexec install-info --delete --info-dir=%D/info --entry='* Calc: (calc).               Scientific, financial, and symbolic calculator for Emacs' %D/info/calc.info
-@unexec install-info --delete --info-dir=%D/info %D/info/cc-mode.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ediff.info
-@unexec install-info --delete --info-dir=%D/info %D/info/efs.info
-@unexec install-info --delete --info-dir=%D/info %D/info/eicq.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* Elib: (elib).	Emacs Lib (misc. routines).' %D/info/elib.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* Emacs-MIME: (emacs-mime).		MIME support for XEmacs' %D/info/emacs-mime.info
-@unexec install-info --delete --info-dir=%D/info %D/info/eshell.info
-@unexec install-info --delete --info-dir=%D/info %D/info/eudc.info
-@unexec install-info --delete --info-dir=%D/info %D/info/forms.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gnus-mime-en.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gnus-mime-ja.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* Gnus: (gnus).	Gnus Mail and News reader.' %D/info/gnus.info
-@unexec install-info --delete --info-dir=%D/info %D/info/hm--html-mode.info
-@unexec install-info --delete --info-dir=%D/info %D/info/idlwave.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* ILISP: (ilisp).	Interactive Lisp in XEmacs.' %D/info/ilisp.info
-@unexec install-info --delete --info-dir=%D/info %D/info/ispell.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* MailCrypt: (mailcrypt).	XEmacs Interface to PGP/GnuPG.' %D/info/mailcrypt.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* Message: (message).	XEmacs Message-composition mode.' %D/info/message.info
-@unexec install-info --delete --info-dir=%D/info %D/info/mew.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* Mev-J: (mew.jis).		Mew (ja)' %D/info/mew.jis.info
-@unexec install-info --delete --info-dir=%D/info %D/info/mh-e.info
-@unexec install-info --delete --info-dir=%D/info %D/info/pcl-cvs.info
-@unexec install-info --delete --info-dir=%D/info %D/info/psgml-api.info
-@unexec install-info --delete --info-dir=%D/info %D/info/psgml.info
-@unexec install-info --delete --info-dir=%D/info %D/info/reftex.info
-@unexec install-info --delete --info-dir=%D/info %D/info/rmail.info
-@unexec install-info --delete --info-dir=%D/info %D/info/semantic.info
-@unexec install-info --delete --info-dir=%D/info %D/info/send-pr.info
-@unexec install-info --delete --info-dir=%D/info %D/info/speedbar.info
-@unexec install-info --delete --info-dir=%D/info %D/info/supercite.info
-@unexec install-info --delete --info-dir=%D/info %D/info/tm-edit-en.info
-@unexec install-info --delete --info-dir=%D/info %D/info/tm-edit-ja.info
-@unexec install-info --delete --info-dir=%D/info %D/info/tm-en.info
-@unexec install-info --delete --info-dir=%D/info %D/info/tm-ja.info
-@unexec install-info --delete --info-dir=%D/info --entry='* Tm-Mh-E-En::            MIME extension for MH-E mail reader' %D/info/tm-mh-e-en.info
-@unexec install-info --delete --info-dir=%D/info %D/info/tm-mh-e-ja.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* TM-View-EN: (tm-view-en).		MIME Viewing extension (en).' %D/info/tm-view-en.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* TM-View-JA: (tm-view-ja).		MIME Viewing extension (ja).' %D/info/tm-view-ja.info
-@unexec install-info --delete --info-dir=%D/info --entry='* Tm-Vm-EN: (tm-vm-en).              MIME extension for VM mail reader' %D/info/tm-vm-en.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* VHDL-mode: (vhdl-mode).	Mode for editing VHDL code.' %D/info/vhdl-mode.info
-@unexec install-info --delete --info-dir=%D/info %D/info/viper.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* VM: (vm).		VM Mail reader.' %D/info/vm.info
-@unexec install-info --delete --info-dir=%D/info %D/info/w3-faq.info
-@unexec install-info --delete --info-dir=%D/info %D/info/w3.info
-@unexec install-info --delete --info-dir=%D/info --section='XEmacs Editor' --entry='* ZenIRC: (zenirc).		XEmacs IRC client.' %D/info/zenirc.info
-info/auctex.info
-info/auctex.info-1
-info/auctex.info-2
-info/auctex.info-3
-info/bbdb.info
-info/bbdb.info-1
-info/bbdb.info-2
-info/bbdb.info-3
-info/calc.info
-info/calc.info-1
-info/calc.info-10
-info/calc.info-11
-info/calc.info-12
-info/calc.info-13
-info/calc.info-14
-info/calc.info-15
-info/calc.info-16
-info/calc.info-17
-info/calc.info-18
-info/calc.info-19
-info/calc.info-2
-info/calc.info-20
-info/calc.info-21
-info/calc.info-22
-info/calc.info-23
-info/calc.info-24
-info/calc.info-25
-info/calc.info-26
-info/calc.info-27
-info/calc.info-3
-info/calc.info-4
-info/calc.info-5
-info/calc.info-6
-info/calc.info-7
-info/calc.info-8
-info/calc.info-9
-info/cc-mode.info
-info/cc-mode.info-1
-info/cc-mode.info-2
-info/cc-mode.info-3
-info/cc-mode.info-4
-info/ediff.info
-info/ediff.info-1
-info/ediff.info-2
-info/ediff.info-3
-info/efs.info
-info/eicq.info
-info/elib.info
-info/elib.info-1
-info/elib.info-2
-info/emacs-mime.info
-info/eshell.info
-info/eudc.info
-info/forms.info
-info/gnus-mime-en.info
-info/gnus-mime-ja.info
-info/gnus.info
-info/gnus.info-1
-info/gnus.info-10
-info/gnus.info-11
-info/gnus.info-12
-info/gnus.info-13
-info/gnus.info-14
-info/gnus.info-15
-info/gnus.info-16
-info/gnus.info-17
-info/gnus.info-18
-info/gnus.info-2
-info/gnus.info-3
-info/gnus.info-4
-info/gnus.info-5
-info/gnus.info-6
-info/gnus.info-7
-info/gnus.info-8
-info/gnus.info-9
-info/hm--html-mode.info
-info/hm--html-mode.info-1
-info/hm--html-mode.info-2
-info/hm--html-mode.info-3
-info/idlwave.info
-info/idlwave.info-1
-info/idlwave.info-2
-info/idlwave.info-3
-info/ilisp.info
-info/ilisp.info-1
-info/ilisp.info-2
-info/ispell.info
-info/mailcrypt.info
-info/mailcrypt.info-1
-info/mailcrypt.info-2
-info/message.info
-info/mew.info
-info/mew.info-1
-info/mew.info-2
-info/mew.info-3
-info/mew.jis.info
-info/mew.jis.info-1
-info/mew.jis.info-2
-info/mh-e.info
-info/mh-e.info-1
-info/mh-e.info-2
-info/mh-e.info-3
-info/mh-e.info-4
-info/pcl-cvs.info
-info/pcl-cvs.info-1
-info/pcl-cvs.info-2
-info/psgml-api.info
-info/psgml.info
-info/reftex.info
-info/reftex.info-1
-info/reftex.info-2
-info/reftex.info-3
-info/reftex.info-4
-info/reftex.info-5
-info/rmail.info
-info/semantic.info
-info/send-pr.info
-info/speedbar.info
-info/supercite.info
-info/supercite.info-1
-info/supercite.info-2
-info/supercite.info-3
-info/tm-edit-en.info
-info/tm-edit-ja.info
-info/tm-en.info
-info/tm-ja.info
-info/tm-mh-e-en.info
-info/tm-mh-e-ja.info
-info/tm-view-en.info
-info/tm-view-ja.info
-info/tm-vm-en.info
-info/vhdl-mode.info
-info/viper.info
-info/viper.info-1
-info/viper.info-2
-info/viper.info-3
-info/viper.info-4
-info/viper.info-5
-info/vm.info
-info/vm.info-1
-info/vm.info-2
-info/vm.info-3
-info/w3-faq.info
-info/w3.info
-info/w3.info-1
-info/w3.info-2
-info/w3.info-3
-info/w3.info-4
-info/zenirc.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/auctex.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* BBDB: (bbdb).	The Big Brother Database.' %D/lib/xemacs/xemacs-packages/info/bbdb.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --entry='* Calc: (calc).               Scientific, financial, and symbolic calculator for Emacs' %D/lib/xemacs/xemacs-packages/info/calc.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/cc-mode.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/ediff.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/efs.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/eicq.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Elib: (elib).	Emacs Lib (misc. routines).' %D/lib/xemacs/xemacs-packages/info/elib.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Emacs-MIME: (emacs-mime).		MIME support for XEmacs' %D/lib/xemacs/xemacs-packages/info/emacs-mime.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/eshell.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/eudc.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/forms.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/gnus-mime-en.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/gnus-mime-ja.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Gnus: (gnus).	Gnus Mail and News reader.' %D/lib/xemacs/xemacs-packages/info/gnus.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/hm--html-mode.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/idlwave.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* ILISP: (ilisp).	Interactive Lisp in XEmacs.' %D/lib/xemacs/xemacs-packages/info/ilisp.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/ispell.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* MailCrypt: (mailcrypt).	XEmacs Interface to PGP/GnuPG.' %D/lib/xemacs/xemacs-packages/info/mailcrypt.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Message: (message).	XEmacs Message-composition mode.' %D/lib/xemacs/xemacs-packages/info/message.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/mew.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Mev-J: (mew.jis).		Mew (ja)' %D/lib/xemacs/xemacs-packages/info/mew.jis.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/mh-e.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/pcl-cvs.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/psgml-api.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/psgml.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/reftex.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/rmail.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/semantic.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/send-pr.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/speedbar.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/supercite.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-edit-en.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-edit-ja.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-en.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-ja.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --entry='* Tm-Mh-E-En::            MIME extension for MH-E mail reader' %D/lib/xemacs/xemacs-packages/info/tm-mh-e-en.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-mh-e-ja.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* TM-View-EN: (tm-view-en).		MIME Viewing extension (en).' %D/lib/xemacs/xemacs-packages/info/tm-view-en.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* TM-View-JA: (tm-view-ja).		MIME Viewing extension (ja).' %D/lib/xemacs/xemacs-packages/info/tm-view-ja.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --entry='* Tm-Vm-EN: (tm-vm-en).              MIME extension for VM mail reader' %D/lib/xemacs/xemacs-packages/info/tm-vm-en.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* VHDL-mode: (vhdl-mode).	Mode for editing VHDL code.' %D/lib/xemacs/xemacs-packages/info/vhdl-mode.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/viper.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* VM: (vm).		VM Mail reader.' %D/lib/xemacs/xemacs-packages/info/vm.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/w3-faq.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/w3.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* ZenIRC: (zenirc).		XEmacs IRC client.' %D/lib/xemacs/xemacs-packages/info/zenirc.info
+lib/xemacs/xemacs-packages/info/auctex.info
+lib/xemacs/xemacs-packages/info/auctex.info-1
+lib/xemacs/xemacs-packages/info/auctex.info-2
+lib/xemacs/xemacs-packages/info/auctex.info-3
+lib/xemacs/xemacs-packages/info/bbdb.info
+lib/xemacs/xemacs-packages/info/bbdb.info-1
+lib/xemacs/xemacs-packages/info/bbdb.info-2
+lib/xemacs/xemacs-packages/info/bbdb.info-3
+lib/xemacs/xemacs-packages/info/calc.info
+lib/xemacs/xemacs-packages/info/calc.info-1
+lib/xemacs/xemacs-packages/info/calc.info-10
+lib/xemacs/xemacs-packages/info/calc.info-11
+lib/xemacs/xemacs-packages/info/calc.info-12
+lib/xemacs/xemacs-packages/info/calc.info-13
+lib/xemacs/xemacs-packages/info/calc.info-14
+lib/xemacs/xemacs-packages/info/calc.info-15
+lib/xemacs/xemacs-packages/info/calc.info-16
+lib/xemacs/xemacs-packages/info/calc.info-17
+lib/xemacs/xemacs-packages/info/calc.info-18
+lib/xemacs/xemacs-packages/info/calc.info-19
+lib/xemacs/xemacs-packages/info/calc.info-2
+lib/xemacs/xemacs-packages/info/calc.info-20
+lib/xemacs/xemacs-packages/info/calc.info-21
+lib/xemacs/xemacs-packages/info/calc.info-22
+lib/xemacs/xemacs-packages/info/calc.info-23
+lib/xemacs/xemacs-packages/info/calc.info-24
+lib/xemacs/xemacs-packages/info/calc.info-25
+lib/xemacs/xemacs-packages/info/calc.info-26
+lib/xemacs/xemacs-packages/info/calc.info-27
+lib/xemacs/xemacs-packages/info/calc.info-3
+lib/xemacs/xemacs-packages/info/calc.info-4
+lib/xemacs/xemacs-packages/info/calc.info-5
+lib/xemacs/xemacs-packages/info/calc.info-6
+lib/xemacs/xemacs-packages/info/calc.info-7
+lib/xemacs/xemacs-packages/info/calc.info-8
+lib/xemacs/xemacs-packages/info/calc.info-9
+lib/xemacs/xemacs-packages/info/cc-mode.info
+lib/xemacs/xemacs-packages/info/cc-mode.info-1
+lib/xemacs/xemacs-packages/info/cc-mode.info-2
+lib/xemacs/xemacs-packages/info/cc-mode.info-3
+lib/xemacs/xemacs-packages/info/cc-mode.info-4
+lib/xemacs/xemacs-packages/info/ediff.info
+lib/xemacs/xemacs-packages/info/ediff.info-1
+lib/xemacs/xemacs-packages/info/ediff.info-2
+lib/xemacs/xemacs-packages/info/ediff.info-3
+lib/xemacs/xemacs-packages/info/efs.info
+lib/xemacs/xemacs-packages/info/eicq.info
+lib/xemacs/xemacs-packages/info/elib.info
+lib/xemacs/xemacs-packages/info/elib.info-1
+lib/xemacs/xemacs-packages/info/elib.info-2
+lib/xemacs/xemacs-packages/info/emacs-mime.info
+lib/xemacs/xemacs-packages/info/eshell.info
+lib/xemacs/xemacs-packages/info/eudc.info
+lib/xemacs/xemacs-packages/info/forms.info
+lib/xemacs/xemacs-packages/info/gnus-mime-en.info
+lib/xemacs/xemacs-packages/info/gnus-mime-ja.info
+lib/xemacs/xemacs-packages/info/gnus.info
+lib/xemacs/xemacs-packages/info/gnus.info-1
+lib/xemacs/xemacs-packages/info/gnus.info-10
+lib/xemacs/xemacs-packages/info/gnus.info-11
+lib/xemacs/xemacs-packages/info/gnus.info-12
+lib/xemacs/xemacs-packages/info/gnus.info-13
+lib/xemacs/xemacs-packages/info/gnus.info-14
+lib/xemacs/xemacs-packages/info/gnus.info-15
+lib/xemacs/xemacs-packages/info/gnus.info-16
+lib/xemacs/xemacs-packages/info/gnus.info-17
+lib/xemacs/xemacs-packages/info/gnus.info-18
+lib/xemacs/xemacs-packages/info/gnus.info-2
+lib/xemacs/xemacs-packages/info/gnus.info-3
+lib/xemacs/xemacs-packages/info/gnus.info-4
+lib/xemacs/xemacs-packages/info/gnus.info-5
+lib/xemacs/xemacs-packages/info/gnus.info-6
+lib/xemacs/xemacs-packages/info/gnus.info-7
+lib/xemacs/xemacs-packages/info/gnus.info-8
+lib/xemacs/xemacs-packages/info/gnus.info-9
+lib/xemacs/xemacs-packages/info/hm--html-mode.info
+lib/xemacs/xemacs-packages/info/hm--html-mode.info-1
+lib/xemacs/xemacs-packages/info/hm--html-mode.info-2
+lib/xemacs/xemacs-packages/info/hm--html-mode.info-3
+lib/xemacs/xemacs-packages/info/idlwave.info
+lib/xemacs/xemacs-packages/info/idlwave.info-1
+lib/xemacs/xemacs-packages/info/idlwave.info-2
+lib/xemacs/xemacs-packages/info/idlwave.info-3
+lib/xemacs/xemacs-packages/info/ilisp.info
+lib/xemacs/xemacs-packages/info/ilisp.info-1
+lib/xemacs/xemacs-packages/info/ilisp.info-2
+lib/xemacs/xemacs-packages/info/ispell.info
+lib/xemacs/xemacs-packages/info/mailcrypt.info
+lib/xemacs/xemacs-packages/info/mailcrypt.info-1
+lib/xemacs/xemacs-packages/info/mailcrypt.info-2
+lib/xemacs/xemacs-packages/info/message.info
+lib/xemacs/xemacs-packages/info/mew.info
+lib/xemacs/xemacs-packages/info/mew.info-1
+lib/xemacs/xemacs-packages/info/mew.info-2
+lib/xemacs/xemacs-packages/info/mew.info-3
+lib/xemacs/xemacs-packages/info/mew.jis.info
+lib/xemacs/xemacs-packages/info/mew.jis.info-1
+lib/xemacs/xemacs-packages/info/mew.jis.info-2
+lib/xemacs/xemacs-packages/info/mh-e.info
+lib/xemacs/xemacs-packages/info/mh-e.info-1
+lib/xemacs/xemacs-packages/info/mh-e.info-2
+lib/xemacs/xemacs-packages/info/mh-e.info-3
+lib/xemacs/xemacs-packages/info/mh-e.info-4
+lib/xemacs/xemacs-packages/info/pcl-cvs.info
+lib/xemacs/xemacs-packages/info/pcl-cvs.info-1
+lib/xemacs/xemacs-packages/info/pcl-cvs.info-2
+lib/xemacs/xemacs-packages/info/psgml-api.info
+lib/xemacs/xemacs-packages/info/psgml.info
+lib/xemacs/xemacs-packages/info/reftex.info
+lib/xemacs/xemacs-packages/info/reftex.info-1
+lib/xemacs/xemacs-packages/info/reftex.info-2
+lib/xemacs/xemacs-packages/info/reftex.info-3
+lib/xemacs/xemacs-packages/info/reftex.info-4
+lib/xemacs/xemacs-packages/info/reftex.info-5
+lib/xemacs/xemacs-packages/info/rmail.info
+lib/xemacs/xemacs-packages/info/semantic.info
+lib/xemacs/xemacs-packages/info/send-pr.info
+lib/xemacs/xemacs-packages/info/speedbar.info
+lib/xemacs/xemacs-packages/info/supercite.info
+lib/xemacs/xemacs-packages/info/supercite.info-1
+lib/xemacs/xemacs-packages/info/supercite.info-2
+lib/xemacs/xemacs-packages/info/supercite.info-3
+lib/xemacs/xemacs-packages/info/tm-edit-en.info
+lib/xemacs/xemacs-packages/info/tm-edit-ja.info
+lib/xemacs/xemacs-packages/info/tm-en.info
+lib/xemacs/xemacs-packages/info/tm-ja.info
+lib/xemacs/xemacs-packages/info/tm-mh-e-en.info
+lib/xemacs/xemacs-packages/info/tm-mh-e-ja.info
+lib/xemacs/xemacs-packages/info/tm-view-en.info
+lib/xemacs/xemacs-packages/info/tm-view-ja.info
+lib/xemacs/xemacs-packages/info/tm-vm-en.info
+lib/xemacs/xemacs-packages/info/vhdl-mode.info
+lib/xemacs/xemacs-packages/info/viper.info
+lib/xemacs/xemacs-packages/info/viper.info-1
+lib/xemacs/xemacs-packages/info/viper.info-2
+lib/xemacs/xemacs-packages/info/viper.info-3
+lib/xemacs/xemacs-packages/info/viper.info-4
+lib/xemacs/xemacs-packages/info/viper.info-5
+lib/xemacs/xemacs-packages/info/vm.info
+lib/xemacs/xemacs-packages/info/vm.info-1
+lib/xemacs/xemacs-packages/info/vm.info-2
+lib/xemacs/xemacs-packages/info/vm.info-3
+lib/xemacs/xemacs-packages/info/w3-faq.info
+lib/xemacs/xemacs-packages/info/w3.info
+lib/xemacs/xemacs-packages/info/w3.info-1
+lib/xemacs/xemacs-packages/info/w3.info-2
+lib/xemacs/xemacs-packages/info/w3.info-3
+lib/xemacs/xemacs-packages/info/w3.info-4
+lib/xemacs/xemacs-packages/info/zenirc.info
 lib/xemacs/xemacs-packages/etc/BABYL
 lib/xemacs/xemacs-packages/etc/auctex/style/amsart.el
 lib/xemacs/xemacs-packages/etc/auctex/style/amsart.elc
@@ -4459,53 +4455,55 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc
 @dirrm lib/xemacs/xemacs-packages/etc/auctex/style
 @dirrm lib/xemacs/xemacs-packages/etc/auctex
 @dirrm lib/xemacs/xemacs-packages/etc
+@unexec rm %D/lib/xemacs/xemacs-packages/info/dir
+@dirrm lib/xemacs/xemacs-packages/info
 @dirrm lib/xemacs/xemacs-packages
 @dirrm lib/xemacs
-@exec install-info --info-dir=%D/info %D/info/auctex.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* BBDB: (bbdb).	The Big Brother Database.' %D/info/bbdb.info
-@exec install-info --info-dir=%D/info --entry='* Calc: (calc).               Scientific, financial, and symbolic calculator for Emacs' %D/info/calc.info
-@exec install-info --info-dir=%D/info %D/info/cc-mode.info
-@exec install-info --info-dir=%D/info %D/info/ediff.info
-@exec install-info --info-dir=%D/info %D/info/efs.info
-@exec install-info --info-dir=%D/info %D/info/eicq.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* Elib: (elib).	Emacs Lib (misc. routines).' %D/info/elib.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* Emacs-MIME: (emacs-mime).		MIME support for XEmacs' %D/info/emacs-mime.info
-@exec install-info --info-dir=%D/info %D/info/eshell.info
-@exec install-info --info-dir=%D/info %D/info/eudc.info
-@exec install-info --info-dir=%D/info %D/info/forms.info
-@exec install-info --info-dir=%D/info %D/info/gnus-mime-en.info
-@exec install-info --info-dir=%D/info %D/info/gnus-mime-ja.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* Gnus: (gnus).	Gnus Mail and News reader.' %D/info/gnus.info
-@exec install-info --info-dir=%D/info %D/info/hm--html-mode.info
-@exec install-info --info-dir=%D/info %D/info/idlwave.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* ILISP: (ilisp).	Interactive Lisp in XEmacs.' %D/info/ilisp.info
-@exec install-info --info-dir=%D/info %D/info/ispell.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* MailCrypt: (mailcrypt).	XEmacs Interface to PGP/GnuPG.' %D/info/mailcrypt.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* Message: (message).	XEmacs Message-composition mode.' %D/info/message.info
-@exec install-info --info-dir=%D/info %D/info/mew.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* Mev-J: (mew.jis).		Mew (ja)' %D/info/mew.jis.info
-@exec install-info --info-dir=%D/info %D/info/mh-e.info
-@exec install-info --info-dir=%D/info %D/info/pcl-cvs.info
-@exec install-info --info-dir=%D/info %D/info/psgml-api.info
-@exec install-info --info-dir=%D/info %D/info/psgml.info
-@exec install-info --info-dir=%D/info %D/info/reftex.info
-@exec install-info --info-dir=%D/info %D/info/rmail.info
-@exec install-info --info-dir=%D/info %D/info/semantic.info
-@exec install-info --info-dir=%D/info %D/info/send-pr.info
-@exec install-info --info-dir=%D/info %D/info/speedbar.info
-@exec install-info --info-dir=%D/info %D/info/supercite.info
-@exec install-info --info-dir=%D/info %D/info/tm-edit-en.info
-@exec install-info --info-dir=%D/info %D/info/tm-edit-ja.info
-@exec install-info --info-dir=%D/info %D/info/tm-en.info
-@exec install-info --info-dir=%D/info %D/info/tm-ja.info
-@exec install-info --info-dir=%D/info --entry='* Tm-Mh-E-En::            MIME extension for MH-E mail reader' %D/info/tm-mh-e-en.info
-@exec install-info --info-dir=%D/info %D/info/tm-mh-e-ja.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* TM-View-EN: (tm-view-en).		MIME Viewing extension (en).' %D/info/tm-view-en.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* TM-View-JA: (tm-view-ja).		MIME Viewing extension (ja).' %D/info/tm-view-ja.info
-@exec install-info --info-dir=%D/info --entry='* Tm-Vm-EN: (tm-vm-en).              MIME extension for VM mail reader' %D/info/tm-vm-en.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* VHDL-mode: (vhdl-mode).	Mode for editing VHDL code.' %D/info/vhdl-mode.info
-@exec install-info --info-dir=%D/info %D/info/viper.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* VM: (vm).		VM Mail reader.' %D/info/vm.info
-@exec install-info --info-dir=%D/info %D/info/w3-faq.info
-@exec install-info --info-dir=%D/info %D/info/w3.info
-@exec install-info --info-dir=%D/info --section='XEmacs Editor' --entry='* ZenIRC: (zenirc).		XEmacs IRC client.' %D/info/zenirc.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/auctex.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* BBDB: (bbdb).	The Big Brother Database.' %D/lib/xemacs/xemacs-packages/info/bbdb.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --entry='* Calc: (calc).               Scientific, financial, and symbolic calculator for Emacs' %D/lib/xemacs/xemacs-packages/info/calc.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/cc-mode.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/ediff.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/efs.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/eicq.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Elib: (elib).	Emacs Lib (misc. routines).' %D/lib/xemacs/xemacs-packages/info/elib.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Emacs-MIME: (emacs-mime).		MIME support for XEmacs' %D/lib/xemacs/xemacs-packages/info/emacs-mime.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/eshell.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/eudc.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/forms.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/gnus-mime-en.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/gnus-mime-ja.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Gnus: (gnus).	Gnus Mail and News reader.' %D/lib/xemacs/xemacs-packages/info/gnus.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/hm--html-mode.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/idlwave.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* ILISP: (ilisp).	Interactive Lisp in XEmacs.' %D/lib/xemacs/xemacs-packages/info/ilisp.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/ispell.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* MailCrypt: (mailcrypt).	XEmacs Interface to PGP/GnuPG.' %D/lib/xemacs/xemacs-packages/info/mailcrypt.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Message: (message).	XEmacs Message-composition mode.' %D/lib/xemacs/xemacs-packages/info/message.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/mew.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* Mev-J: (mew.jis).		Mew (ja)' %D/lib/xemacs/xemacs-packages/info/mew.jis.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/mh-e.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/pcl-cvs.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/psgml-api.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/psgml.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/reftex.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/rmail.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/semantic.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/send-pr.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/speedbar.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/supercite.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-edit-en.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-edit-ja.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-en.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-ja.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --entry='* Tm-Mh-E-En::            MIME extension for MH-E mail reader' %D/lib/xemacs/xemacs-packages/info/tm-mh-e-en.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/tm-mh-e-ja.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* TM-View-EN: (tm-view-en).		MIME Viewing extension (en).' %D/lib/xemacs/xemacs-packages/info/tm-view-en.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* TM-View-JA: (tm-view-ja).		MIME Viewing extension (ja).' %D/lib/xemacs/xemacs-packages/info/tm-view-ja.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --entry='* Tm-Vm-EN: (tm-vm-en).              MIME extension for VM mail reader' %D/lib/xemacs/xemacs-packages/info/tm-vm-en.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* VHDL-mode: (vhdl-mode).	Mode for editing VHDL code.' %D/lib/xemacs/xemacs-packages/info/vhdl-mode.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/viper.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* VM: (vm).		VM Mail reader.' %D/lib/xemacs/xemacs-packages/info/vm.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/w3-faq.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info %D/lib/xemacs/xemacs-packages/info/w3.info
+@exec install-info --info-dir=%D/lib/xemacs/xemacs-packages/info --section='XEmacs Editor' --entry='* ZenIRC: (zenirc).		XEmacs IRC client.' %D/lib/xemacs/xemacs-packages/info/zenirc.info

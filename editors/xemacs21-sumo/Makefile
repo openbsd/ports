@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 20:46:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/22 07:19:44 jasoni Exp $
 
 # 
 # What port/package will be created
@@ -55,12 +55,7 @@ NO_BUILD=		Yes
 do-install:
 .for archive in ${DISTFILES}
 	pax -rzs '%^\.%${PREFIX}/lib/xemacs%' \
-		-f ${FULLDISTDIR}/${archive} \
-		-c './*-packages/info'
-
-	pax -rzs '%^\./[^\ ]*-packages/info%${PREFIX}/info%' \
-		-f ${FULLDISTDIR}/${archive} \
-		'./*-packages/info'
+		-f ${FULLDISTDIR}/${archive} 
 .endfor
 # cruft in the main archive ... (GNU tar, GNU as in 'compatible' - with itself)
 	rm -f ${PREFIX}/lib/xemacs/@LongLink

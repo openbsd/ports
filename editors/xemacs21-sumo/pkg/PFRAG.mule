@@ -1,14 +1,14 @@
-@comment  $OpenBSD: PFRAG.mule,v 1.1.1.1 2001/03/01 21:28:37 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/lookup.info
-@unexec install-info --delete --info-dir=%D/info %D/info/skk.info
-info/lookup.info
-info/lookup.info-1
-info/lookup.info-2
-info/skk.info
-info/skk.info-1
-info/skk.info-2
-info/skk.info-3
-info/skk.info-4
+@comment  $OpenBSD: PFRAG.mule,v 1.2 2002/03/22 07:19:44 jasoni Exp $
+@unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/xemacs-packages/info/lookup.info
+@unexec install-info --delete --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/xemacs-packages/info/skk.info
+lib/xemacs/mule-packages/info/lookup.info
+lib/xemacs/mule-packages/info/lookup.info-1
+lib/xemacs/mule-packages/info/lookup.info-2
+lib/xemacs/mule-packages/info/skk.info
+lib/xemacs/mule-packages/info/skk.info-1
+lib/xemacs/mule-packages/info/skk.info-2
+lib/xemacs/mule-packages/info/skk.info-3
+lib/xemacs/mule-packages/info/skk.info-4
 lib/xemacs/mule-packages/etc/app-defaults/de/Emacs
 lib/xemacs/mule-packages/etc/app-defaults/fr/Emacs
 lib/xemacs/mule-packages/etc/app-defaults/ja/Emacs
@@ -399,6 +399,8 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/de
 @dirrm lib/xemacs/mule-packages/etc/app-defaults
 @dirrm lib/xemacs/mule-packages/etc
+@unexec rm %D/lib/xemacs/mule-packages/info/dir
+@dirrm lib/xemacs/mule-packages/info
 @dirrm lib/xemacs/mule-packages
-@exec install-info --info-dir=%D/info %D/info/lookup.info
-@exec install-info --info-dir=%D/info %D/info/skk.info
+@exec install-info --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/lookup.info
+@exec install-info --info-dir=%D/lib/xemacs/mule-packages/info %D/lib/xemacs/mule-packages/info/skk.info
