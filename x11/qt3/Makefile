@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/01/07 01:23:20 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2003/01/09 23:06:30 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -264,11 +264,11 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 
 
-PKGNAME=		qt3-${VERSION}
+PKGNAME=		qt3-${VERSION}p0
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-base=	qt3-base-${VERSION}
+FULLPKGNAME-base=	qt3-base-${VERSION}p0
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
 .include <bsd.port.mk>
