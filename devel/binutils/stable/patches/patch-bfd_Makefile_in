@@ -1,6 +1,6 @@
-$OpenBSD: patch-bfd_Makefile_in,v 1.1 2002/04/30 18:12:43 fgsch Exp $
---- bfd/Makefile.in.orig	Tue Apr 30 01:44:39 2002
-+++ bfd/Makefile.in	Tue Apr 30 01:44:51 2002
+$OpenBSD: patch-bfd_Makefile_in,v 1.2 2002/05/08 11:02:40 fgsch Exp $
+--- bfd/Makefile.in.orig	Mon Jun 11 07:03:59 2001
++++ bfd/Makefile.in	Wed May  8 00:57:12 2002
 @@ -863,6 +863,7 @@ maintainer-clean-recursive:
  	rev=''; list='$(SUBDIRS)'; for subdir in $$list; do \
  	  rev="$$subdir $$rev"; \
@@ -9,3 +9,12 @@ $OpenBSD: patch-bfd_Makefile_in,v 1.1 2002/04/30 18:12:43 fgsch Exp $
  	done; \
  	test "$$dot_seen" = "no" && rev=". $$rev"; \
  	target=`echo $@ | sed s/-recursive//`; \
+@@ -1223,7 +1224,7 @@ host-aout.lo: Makefile
+ aout-params.h: gen-aout
+ 	./gen-aout host > aout-params.h
+ gen-aout: $(srcdir)/gen-aout.c Makefile
+-	$(CC) -o gen-aout $(CFLAGS) $(LFLAGS) $(srcdir)/gen-aout.c
++	$(CC) -o gen-aout $(CSEARCH) $(CFLAGS) $(LFLAGS) $(srcdir)/gen-aout.c
+ 
+ $(BFD_H): stmp-bfd-h ; @true
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gas_config_tc-alpha_c,v 1.1 2002/05/08 11:02:40 fgsch Exp $
+--- gas/config/tc-alpha.c.orig	Wed May  8 01:40:24 2002
++++ gas/config/tc-alpha.c	Wed May  8 03:03:14 2002
+@@ -2356,7 +2356,7 @@ insert_operand (insn, operand, val, file
+ 
+       insn = (*operand->insert) (insn, val, &errmsg);
+       if (errmsg)
+-	as_warn (errmsg);
++	as_warn ("%s", errmsg);
+     }
+   else
+     insn |= ((val & ((1 << operand->bits) - 1)) << operand->shift);
