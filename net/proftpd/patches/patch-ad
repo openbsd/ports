@@ -1,15 +1,15 @@
---- src/log.c.orig	Sun Jun  7 16:12:04 1998
-+++ src/log.c	Sun Jun  7 16:15:34 1998
-@@ -38,7 +38,7 @@
- static int syslog_open = FALSE;
+--- src/log.c.orig	Sat Oct 17 22:24:41 1998
++++ src/log.c	Mon Dec 14 15:14:12 1998
+@@ -44,7 +44,7 @@
+ static int syslog_discard = FALSE;
  static int logstderr = TRUE;
  static int debug_level = DEBUG0;	/* Default is no debug logging */
 -static int facility = LOG_DAEMON;
 +static int facility = LOG_FTP;
- static int runfd = -1;
- static char *runfn = NULL;
- static int xferfd = -1;
-@@ -463,7 +463,7 @@
+ static int set_facility = -1;
+ static char *syslog_fn = NULL;
+ static char *syslog_hostname;
+@@ -718,7 +718,7 @@
  
    buf[1023] = '\0';
  

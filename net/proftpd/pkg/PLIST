@@ -1,10 +1,8 @@
 bin/ftpcount
-bin/ftpwho
 libexec/proftpd
 sbin/ftpshut
 man/man8/proftpd.8
 man/man8/ftpshut.8
-man/man1/ftpwho.1
 man/man1/ftpcount.1
 @unexec echo "***"
 @unexec echo "*** You should remove /etc/proftpd.conf manually"
