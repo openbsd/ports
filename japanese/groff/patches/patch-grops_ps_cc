@@ -1,0 +1,12 @@
+$OpenBSD: patch-grops_ps_cc,v 1.1 2000/04/20 22:40:40 espie Exp $
+--- grops/ps.cc.orig	Fri Apr 21 00:25:37 2000
++++ grops/ps.cc	Fri Apr 21 00:25:53 2000
+@@ -1506,7 +1506,7 @@ int main(int argc, char **argv)
+       }
+     case 'c':
+       if (sscanf(optarg, "%d", &ncopies) != 1 || ncopies <= 0) {
+-	error("bad number of copies `%s'", optarg);
++	error("bad number of copies `%1'", optarg);
+ 	ncopies = 1;
+       }
+       break;

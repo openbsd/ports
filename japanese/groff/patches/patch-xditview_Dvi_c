@@ -1,0 +1,14 @@
+$OpenBSD: patch-xditview_Dvi_c,v 1.1 2000/04/20 22:40:42 espie Exp $
+--- xditview/Dvi.c.orig	Fri Apr 21 00:32:15 2000
++++ xditview/Dvi.c	Fri Apr 21 00:32:41 2000
+@@ -353,8 +353,8 @@ static void OpenFile (dw)
+ 	dw->dvi.tmpFile = 0;
+ 	if (!dw->dvi.seek) {
+ 		strcpy (tmpName, "/tmp/dviXXXXXX");
+-		mktemp (tmpName);
+-		dw->dvi.tmpFile = fopen (tmpName, "w+");
++		fd = mkstemp (tmpName);
++		dw->dvi.tmpFile = fdopen (fd, "w+");
+ 		unlink (tmpName);
+ 	}
+ 	dw->dvi.requested_page = 1;
