@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2000/09/24 07:04:07 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/10/03 08:18:43 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8.1
@@ -11,8 +11,6 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gif.4.1::graphics/giflib \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff
-BUILD_DEPENDS=	convert::graphics/ImageMagick
-RUN_DEPENDS=	convert::graphics/ImageMagick
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -25,7 +23,7 @@ USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
