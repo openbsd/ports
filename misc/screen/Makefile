@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2000/05/18 00:06:42 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/06/18 01:37:39 espie Exp $
 
 DISTNAME=	screen-3.9.5
+PKGNAME=	screen-3.9.5p1
 CATEGORIES=	misc
 NEED_VERSION=	1.234
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
