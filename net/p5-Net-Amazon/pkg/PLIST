@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/27 18:53:52 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/11 16:50:40 xsa Exp $
 ${P5SITE}/Net/Amazon.pm
-@comment ${P5SITE}/Net/Amazon.pm.orig
 ${P5SITE}/Net/Amazon/Attribute/Review.pm
-@comment ${P5SITE}/Net/Amazon/Attribute/Review.pm.orig
 ${P5SITE}/Net/Amazon/Attribute/ReviewSet.pm
-@comment ${P5SITE}/Net/Amazon/Attribute/ReviewSet.pm.orig
 ${P5SITE}/Net/Amazon/Property.pm
-@comment ${P5SITE}/Net/Amazon/Property.pm.orig
 ${P5SITE}/Net/Amazon/Property/Book.pm
 ${P5SITE}/Net/Amazon/Property/DVD.pm
 ${P5SITE}/Net/Amazon/Property/Music.pm
@@ -16,8 +12,11 @@ ${P5SITE}/Net/Amazon/Request/Artist.pm
 ${P5SITE}/Net/Amazon/Request/Blended.pm
 ${P5SITE}/Net/Amazon/Request/BrowseNode.pm
 ${P5SITE}/Net/Amazon/Request/Keyword.pm
+${P5SITE}/Net/Amazon/Request/Manufacturer.pm
 ${P5SITE}/Net/Amazon/Request/Power.pm
 ${P5SITE}/Net/Amazon/Request/Similar.pm
+${P5SITE}/Net/Amazon/Request/Sort.pm
+${P5SITE}/Net/Amazon/Request/TextStream.pm
 ${P5SITE}/Net/Amazon/Request/UPC.pm
 ${P5SITE}/Net/Amazon/Request/Wishlist.pm
 ${P5SITE}/Net/Amazon/Response.pm
@@ -26,8 +25,10 @@ ${P5SITE}/Net/Amazon/Response/Artist.pm
 ${P5SITE}/Net/Amazon/Response/Blended.pm
 ${P5SITE}/Net/Amazon/Response/BrowseNode.pm
 ${P5SITE}/Net/Amazon/Response/Keyword.pm
+${P5SITE}/Net/Amazon/Response/Manufacturer.pm
 ${P5SITE}/Net/Amazon/Response/Power.pm
 ${P5SITE}/Net/Amazon/Response/Similar.pm
+${P5SITE}/Net/Amazon/Response/TextStream.pm
 ${P5SITE}/Net/Amazon/Response/UPC.pm
 ${P5SITE}/Net/Amazon/Response/Wishlist.pm
 @comment ${P5ARCH}/auto/Net/Amazon/.packlist
@@ -44,8 +45,11 @@ man/man3p/Net::Amazon::Request::Artist.3p
 man/man3p/Net::Amazon::Request::Blended.3p
 man/man3p/Net::Amazon::Request::BrowseNode.3p
 man/man3p/Net::Amazon::Request::Keyword.3p
+man/man3p/Net::Amazon::Request::Manufacturer.3p
 man/man3p/Net::Amazon::Request::Power.3p
 man/man3p/Net::Amazon::Request::Similar.3p
+man/man3p/Net::Amazon::Request::Sort.3p
+man/man3p/Net::Amazon::Request::TextStream.3p
 man/man3p/Net::Amazon::Request::UPC.3p
 man/man3p/Net::Amazon::Request::Wishlist.3p
 man/man3p/Net::Amazon::Response.3p
@@ -53,17 +57,21 @@ share/examples/p5-Net-Amazon/artist
 share/examples/p5-Net-Amazon/asin
 share/examples/p5-Net-Amazon/asin-de
 share/examples/p5-Net-Amazon/asin_cache
+share/examples/p5-Net-Amazon/asin_dvd
 share/examples/p5-Net-Amazon/asin_fetch
 share/examples/p5-Net-Amazon/asin_img
 share/examples/p5-Net-Amazon/blended.pl
 share/examples/p5-Net-Amazon/browse
+share/examples/p5-Net-Amazon/cd_fetch
 share/examples/p5-Net-Amazon/cheapo
 share/examples/p5-Net-Amazon/heavy
 share/examples/p5-Net-Amazon/keyword
+share/examples/p5-Net-Amazon/manufacturer
 share/examples/p5-Net-Amazon/maxauthors
 share/examples/p5-Net-Amazon/power
 share/examples/p5-Net-Amazon/reviews
 share/examples/p5-Net-Amazon/sim
+share/examples/p5-Net-Amazon/textstream
 share/examples/p5-Net-Amazon/upc
 share/examples/p5-Net-Amazon/wishlist
 @dirrm share/examples/p5-Net-Amazon
