@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.22 2003/06/15 13:31:37 espie Exp $
+# $OpenBSD: make-plist,v 1.23 2003/06/16 22:42:54 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -348,6 +348,10 @@ for my $d (keys %$mtree) {
 
 add_info('@unexec install-info --delete', \%infodir);
 
+unless (defined $out{$plist}) {
+	$out{$plist} = new IO::File ">$plist";
+	$out{$plist}->print("\@comment \$OpenBSD\$\n");
+}
 for my $f (sort @files) {
 	handle_file($f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $infodir{$`});
 }
@@ -358,6 +362,11 @@ for my $fh (@has_shared) {
 
 
 if (@libfiles > 0) {
+	unless (defined $out{$pshared}) {
+		$out{$pshared} = new IO::File ">$pshared";
+		$out{$pshared}->print("\@comment \$OpenBSD\$\n");
+	}
+
     	$out{$plist}->print("\%\%SHARED\%\%\n") if @has_shared == 0;
 	for my $f (sort @libfiles) {
 	    handle_file(strip($f), $out{$pshared});
