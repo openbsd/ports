@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2002/12/29 19:25:33 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2002/12/30 19:31:29 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
@@ -20,11 +20,11 @@ AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS+=	${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs="${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
-CONFIGURE_ARGS+=	--disable-threading
-CONFIGURE_ARGS+=	--disable-mt
+#CONFIGURE_ARGS+=	--disable-threading
+#CONFIGURE_ARGS+=	--disable-mt
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 CONFIGURE_ARGS+=	--enable-mitshm
-#CONFIGURE_ARGS+=	--enable-debug
+#CONFIGURE_ARGS+=	--enable-debug=full
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--enable-final
 .if !${CONFIGURE_ARGS:M--with-motif}
@@ -35,10 +35,11 @@ USE_GMAKE?=		Yes
 
 PORTHOME?=${WRKDIR}
 
-CONFIGURE_ENV+=		UIC_PATH="${MODQT_UIC}"
+CONFIGURE_ENV+=		UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 MODQT_OVERRIDE_UIC=No
+MODQT_MT=Yes
 
 SUBST_VARS+=	KDE
 MAKE_FLAGS+=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
