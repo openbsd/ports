@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1997/12/03 03:57:23 angelos Exp $
+# $OpenBSD: Makefile,v 1.4 1997/12/03 04:05:29 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -39,7 +39,7 @@
 #    SUBDIR += kde
 #    SUBDIR += kdebase
 #    SUBDIR += kdelibs
-#    SUBDIR += lesstif
+     SUBDIR += lesstif
 #    SUBDIR += libdnd
 #    SUBDIR += libsx
 #    SUBDIR += lupe
