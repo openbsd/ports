@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.13 2002/03/21 10:36:54 form Exp $
+# $OpenBSD: Makefile,v 1.14 2002/04/15 20:46:25 pvalchev Exp $
 
 COMMENT=	"generate a cross-referenced HTML mail archive"
 
@@ -34,6 +34,8 @@ FLAVOR?=
 .if ${FLAVOR:L} == "gdbm"
 CONFIGURE_ARGS+=--with-gdbm
 LIB_DEPENDS=	gdbm.::databases/gdbm
+.else
+CONFIGURE_ARGS+=--without-gdbm
 .endif
 
 do-install:
