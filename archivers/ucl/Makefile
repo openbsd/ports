@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/31 15:36:46 naddy Exp $
 
 COMMENT=	"portable lossless data compression library"
 
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	:nasm-*:devel/nasm
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		concurrent
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --enable-static
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acconfig
 MAKE_FLAGS=		CFLAGS_O=""
 
 .include <bsd.port.mk>

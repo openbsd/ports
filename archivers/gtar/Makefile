@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/05/15 12:57:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2004/07/31 15:36:46 naddy Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDSTATIC}" \
 		DEFAULT_ARCHIVE=/dev/rst0 \
 		DEFAULT_RMT_COMMAND=/etc/rmt
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 FLAVORS=	static
 FLAVOR?=

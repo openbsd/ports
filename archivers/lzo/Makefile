@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/02/23 00:33:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/07/31 15:36:46 naddy Exp $
 
 COMMENT=	"portable speedy lossless data compression library"
 
@@ -20,6 +20,7 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acconfig
 
 REGRESS_TARGET=	test
 
