@@ -1,0 +1,24 @@
+--- Makefile.orig	Wed Jan 24 00:50:36 2001
++++ Makefile	Sun Feb 18 13:50:08 2001
+@@ -431,20 +431,10 @@
+ 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+ 	$(LN) $(TOOLS)/$@ .
+ 
+-build:	OSTYPE rebuild rebuildclean bundled
++build:	OSTYPE bundled
+ 
+ OSTYPE:
+-	@echo Building c-client for $(OS)...
+-	echo $(SPECIALS) $(EXTRASPECIALS) > c-client/SPECIALS
+-	$(CD) c-client;$(MAKE) $(OS) EXTRACFLAGS='$(EXTRACFLAGS)'\
+-	 EXTRALDFLAGS='$(EXTRALDFLAGS)'\
+-	 EXTRADRIVERS='$(EXTRADRIVERS)'\
+-	 EXTRAAUTHENTICATORS='$(EXTRAAUTHENTICATORS)'\
+-	 SPECIALAUTHENTICATORS='$(SPECIALAUTHENTICATORS)'\
+-	 PASSWDTYPE=$(PASSWDTYPE)\
+-	 $(SPECIALS) $(EXTRASPECIALS)
+ 	echo $(OS) > OSTYPE
+-	$(TOUCH) rebuild
+ 
+ rebuild:
+ 	@echo Rebuilding c-client for `$(CAT) OSTYPE`...

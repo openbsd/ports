@@ -1,0 +1,31 @@
+--- src/imapd/Makefile.orig	Sun Feb 18 13:08:48 2001
++++ src/imapd/Makefile	Sun Feb 18 13:28:34 2001
+@@ -36,24 +36,16 @@
+ #EXTRACFLAGS= -DNETSCAPE_BRAIN_DAMAGE=\"http://www.washington.edu/pine\"
+ 
+ 
+-# Get local definitions from c-client directory
+-
+-C = ../c-client
+-CCLIENTLIB = $C/c-client.a
+-CC = `cat $C/CCTYPE`
+-CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
++CFLAGS = -I$(PREFIX)/include/c-client $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
+ 	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
+-LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
++LDFLAGS = -L$(PREFIX)/lib -lc-client -lssl -lcrypto
+ 
+ all:	imapd
+ 
+-imapd: $(CCLIENTLIB) imapd.o
++imapd: imapd.o
+ 	$(CC) $(CFLAGS) -o imapd imapd.o $(LDFLAGS)
+ 
+-imapd.o: $C/mail.h $C/misc.h $C/osdep.h
+-
+-$(CCLIENTLIB):
+-	cd $C;make
++imapd.o:
+ 
+ clean:
+ 	rm -f *.o imapd || true

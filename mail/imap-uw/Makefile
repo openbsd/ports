@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/02/18 15:26:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2001/02/18 15:27:57 jakob Exp $
 
 DISTNAME=	imap-2000c
 
@@ -18,6 +18,8 @@ PERMIT_DISTFILES_FTP=	yes
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.cac.washington.edu/imap/old/
 EXTRACT_SUFX=	.tar.Z
+
+LIB_DEPENDS=	c-client.2.1::mail/c-client
 
 ALL_TARGET=	bso
 MAKE_FLAGS=	SPECIALAUTHENTICATORS=ssl
