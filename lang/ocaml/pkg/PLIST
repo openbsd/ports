@@ -241,6 +241,7 @@ man/man1/ocamlyacc.1
 man/man1/ocamlc.opt.1
 man/man1/ocamlmktop.1
 man/man1/ocamlopt.opt.1
+share/doc/ocaml/LICENSE
 share/doc/ocaml/html/contents_motif.gif
 share/doc/ocaml/html/index.html
 share/doc/ocaml/html/libgraph.gif
