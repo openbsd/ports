@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/09/24 07:57:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2003/09/28 19:15:52 jolan Exp $
 
 # 64-bit issues, unaligned memory access
 ONLY_FOR_ARCHS=	i386 macppc
@@ -57,7 +57,7 @@ MULTI_PACKAGES+=-voice
 SUBPACKAGE?=
 
 .if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-3dmusic"
+. if ${SUBPACKAGE} == "-3domusic"
 RUN_DEPENDS=	::games/uqm
 . endif
 . if ${SUBPACKAGE} == "-voice"
