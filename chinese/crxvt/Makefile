@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2003/09/22 22:53:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/21 21:51:36 espie Exp $
 
 COMMENT=	"Chinese(Big5) VT100 terminal emulator for X"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=   "no license"
 PERMIT_PACKAGE_FTP=     "no license"
 PERMIT_DISTFILES_CDROM= "no license"
 PERMIT_DISTFILES_FTP=   "no license"
+WANTLIB=		c X11
 
 RUN_DEPENDS=	::chinese/taipeifonts
 

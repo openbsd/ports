@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/01/06 20:58:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/21 21:51:36 espie Exp $
 
 COMMENT=	"chinese input utility for X"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 c
 
 RUN_DEPENDS=	::chinese/taipeifonts
 

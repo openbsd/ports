@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/10/26 23:49:32 naddy Exp $	
+# $OpenBSD: Makefile,v 1.5 2004/11/21 21:51:36 espie Exp $	
 
 COMMENT=	"convert between GB and BIG-5 codes"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 DISTFILES=	hc-30.tar.gz hc-supp.tab

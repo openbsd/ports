@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/22 18:31:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/21 21:51:36 espie Exp $
 
 COMMENT=	"library for Chinese language processing"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 
