@@ -1,0 +1,12 @@
+$OpenBSD: patch-rpm_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
+--- rpm.c.orig	Mon Dec 30 00:28:26 2002
++++ rpm.c	Mon Dec 30 00:28:31 2002
+@@ -1191,7 +1191,7 @@ int main(int argc, const char ** argv)
+ 	    close(p[1]);
+ 	    dup2(p[0], STDIN_FILENO);
+ 	    close(p[0]);
+-	    execl("/bin/sh", "/bin/sh", "-c", pipeOutput, NULL);
++	    execl("/bin/sh", "/bin/sh", "-c", pipeOutput, (void *)NULL);
+ 	    fprintf(stderr, _("exec failed\n"));
+ 	}
+ 

@@ -1,0 +1,75 @@
+$OpenBSD: patch-lib_signature_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
+--- lib/signature.c.orig	Mon Dec 30 00:27:20 2002
++++ lib/signature.c	Mon Dec 30 00:28:17 2002
+@@ -253,11 +253,11 @@ static int makePGPSignature(const char *
+ 	    switch(pgpVer) {
+ 	    case PGP_2:
+ 		execlp(path, "pgp", "+batchmode=on", "+verbose=0", "+armor=off",
+-		    name, "-sb", file, sigfile, NULL);
++		    name, "-sb", file, sigfile, (void *)NULL);
+ 		break;
+ 	    case PGP_5:
+ 		execlp(path,"pgps", "+batchmode=on", "+verbose=0", "+armor=off",
+-		    name, "-b", file, "-o", sigfile, NULL);
++		    name, "-b", file, "-o", sigfile, (void *)NULL);
+ 		break;
+ 	    case PGP_UNKNOWN:
+ 	    case PGP_NOTDETECTED:
+@@ -340,7 +340,7 @@ static int makeGPGSignature(const char *
+ 	execlp("gpg", "gpg",
+ 	       "--batch", "--no-verbose", "--no-armor", "--passphrase-fd", "3",
+ 	       "-u", name, "-sbo", sigfile, file,
+-	       NULL);
++	       (void *)NULL);
+ 	rpmError(RPMERR_EXEC, _("Couldn't exec gpg"));
+ 	_exit(RPMERR_EXEC);
+     }
+@@ -536,14 +536,14 @@ static int verifyPGPSignature(const char
+ 		   "+OutputInformationFD=1",
+ 		   /* Write "WARNING: ... is not trusted to... to stdout: */
+ 		   "+OutputWarningFD=1",
+-		   sigfile, "-o", datafile, NULL);
++		   sigfile, "-o", datafile, (void *)NULL);
+ 	    /* Restore stderr so we can print the error message below. */
+ 	    dup2(save_stderr, 2);
+ 	    close(save_stderr);
+ 	}   break;
+ 	case PGP_2:
+ 	    execlp(path, "pgp", "+batchmode=on", "+verbose=0",
+-		   sigfile, datafile, NULL);
++		   sigfile, datafile, (void *)NULL);
+ 	    break;
+ 	case PGP_UNKNOWN:
+ 	case PGP_NOTDETECTED:
+@@ -622,7 +622,7 @@ static int verifyGPGSignature(const char
+ 	execlp("gpg", "gpg",
+ 	       "--batch", "--no-verbose", 
+ 	       "--verify", sigfile, datafile,
+-	       NULL);
++	       (void *)NULL);
+ 	fprintf(stderr, _("exec failed!\n"));
+ 	rpmError(RPMERR_EXEC, 
+ 		 _("Could not run gpg.  Use --nogpg to skip GPG checks."));
+@@ -683,7 +683,7 @@ static int checkPassPhrase(const char *p
+ 	    execlp("gpg", "gpg",
+ 	           "--batch", "--no-verbose", "--passphrase-fd", "3",
+ 	           "-u", name, "-so", "-",
+-	           NULL);
++	           (void *)NULL);
+ 	    rpmError(RPMERR_EXEC, _("Couldn't exec gpg"));
+ 	    _exit(RPMERR_EXEC);
+ 	}   /*@notreached@*/ break;
+@@ -702,11 +702,11 @@ static int checkPassPhrase(const char *p
+ 		switch(pgpVer) {
+ 		case PGP_2:
+ 		    execlp(path, "pgp", "+batchmode=on", "+verbose=0",
+-			name, "-sf", NULL);
++			name, "-sf", (void *)NULL);
+ 		    break;
+ 		case PGP_5:	/* XXX legacy */
+ 		    execlp(path,"pgps", "+batchmode=on", "+verbose=0",
+-			name, "-f", NULL);
++			name, "-f", (void *)NULL);
+ 		    break;
+ 		case PGP_UNKNOWN:
+ 		case PGP_NOTDETECTED:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_c,v 1.1 2002/12/30 09:15:26 pvalchev Exp $
+--- common.c.orig	Mon Dec 30 00:30:09 2002
++++ common.c	Mon Dec 30 00:30:19 2002
+@@ -589,7 +589,7 @@ int view_thumb(char *pathname)
+ 	}
+ 
+ 	if (childpid == 0) { /* child */
+-		execlp("xv", "xv", TEMP_FILE_NAME, "-geometry", "+200+100", NULL);
++		execlp("xv", "xv", TEMP_FILE_NAME, "-geometry", "+200+100", (void *)NULL);
+ 		perror("exec");
+ 	} else { /* parent */
+ 		printf("(d)elete (o)old (n)ew (g)et (q)uit (enter)nothing\n");
