@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/19 12:22:24 espie Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		ICE IIOP ORBit ORBitCosNaming ORBitutil SM X11 Xext \
 			Xi Xinerama audiofile c esd gconf-1 gconf-gtk-1 gdk \
-			gdk_imlib glib gmodule gnome gthread gtk gtkembedmoz \
-			gtksuperwin jpeg m nspr4 oaf plc4 plds4 png popt \
-			pthread stdc++ tiff ungif wrap xml xpcom z 
+			gdk_imlib glib gmodule gnome gthread gtk \
+			jpeg m oaf png popt \
+			pthread stdc++ tiff ungif wrap xml z \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=galeon/}
 
@@ -29,14 +29,12 @@ MODGCC3_LANGS=		C++
 BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
 			:mozilla-devel-${MOZ}:www/mozilla,-devel \
 			:scrollkeeper->=0.3.12:textproc/scrollkeeper
-RUN_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
-			:scrollkeeper->=0.3.12:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 			gdk_pixbuf::graphics/gdk-pixbuf \
 			glade,glade-gnome::devel/libglade,gnome \
 			gnomevfs::x11/gnome/vfs
-
-#			gtkembedmoz,gtksuperwin,nspr4,plc4,plds4,xpcom::www/mozilla
+LIB_DEPENDS+= 		mozilla/gtkembedmoz,mozilla/gtksuperwin,mozilla/xpcom,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla-${MOZ}:www/mozilla
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
