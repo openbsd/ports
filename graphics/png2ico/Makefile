@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/12 07:38:08 wcobb Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/24 00:34:16 naddy Exp $
 
 COMMENT=	"Convert PNG images to Windows .ico files"
 
@@ -17,17 +17,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	png.3::graphics/png
-USE_GMAKE=	Yes
-NO_REGRESS=	Yes
-WRKSRC=		${WRKDIR}/png2ico
+MODULES=	gcc3
+MODGCC3_ARCHES=	sparc64
+MODGCC3_LANGS=	C++
 
-post-patch:
-	cd ${WRKSRC} && \
-	    perl -pi -e \
-	        's|-W -Wall -O2|${CXXFLAGS} -I${LOCALBASE}/include/libpng|' \
-	        ${WRKSRC}/Makefile && \
-	    perl -pi -e 's|-lpng|-L${LOCALBASE}/lib -lpng|' ${WRKSRC}/Makefile
+LIB_DEPENDS=	png.3::graphics/png
+
+MAKE_ENV=	CXX="${CXX}"
+NO_REGRESS=	Yes
+WRKDIST=	${WRKDIR}/png2ico
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/png2ico ${PREFIX}/bin
