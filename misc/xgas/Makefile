@@ -2,7 +2,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/03/22 21:36:10 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/04 15:15:58 kevlo Exp $
 #
 
 DISTNAME=	xgas
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=      yes
+FAKE=		Yes
+USE_IMAKE=      Yes
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xgas
