@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/02/29 00:08:50 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/08/10 08:36:46 espie Exp $
+lib/
+lib/php/
+pear/doc/Log/
+pear/doc/Log/docs/
+pear/doc/Log/docs/examples/
 pear/doc/Log/docs/examples/composite.php
 pear/doc/Log/docs/examples/console.php
 pear/doc/Log/docs/examples/display.php
@@ -14,7 +19,10 @@ pear/doc/Log/docs/examples/sqlite.php
 pear/doc/Log/docs/examples/syslog.php
 pear/doc/Log/docs/examples/win.php
 pear/doc/Log/docs/guide.txt
+@comment pear/lib/.filemap
+@comment pear/lib/.lock
 pear/lib/.registry/log.reg
+pear/lib/Log/
 pear/lib/Log.php
 pear/lib/Log/composite.php
 pear/lib/Log/console.php
@@ -29,6 +37,8 @@ pear/lib/Log/sql.php
 pear/lib/Log/sqlite.php
 pear/lib/Log/syslog.php
 pear/lib/Log/win.php
+pear/tests/Log/
+pear/tests/Log/tests/
 pear/tests/Log/tests/composite.phpt
 pear/tests/Log/tests/console.phpt
 pear/tests/Log/tests/display.phpt
@@ -39,11 +49,3 @@ pear/tests/Log/tests/null.phpt
 pear/tests/Log/tests/priority.phpt
 pear/tests/Log/tests/singleton.phpt
 pear/tests/Log/tests/sqlite.phpt
-@dirrm pear/tests/Log/tests
-@dirrm pear/tests/Log
-@dirrm pear/lib/Log
-@dirrm pear/doc/Log/docs/examples
-@dirrm pear/doc/Log/docs
-@dirrm pear/doc/Log
-@dirrm lib/php
-@dirrm lib

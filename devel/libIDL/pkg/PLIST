@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/02/21 22:36:31 marcm Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/libIDL2.info
+@comment $OpenBSD: PLIST,v 1.9 2004/08/10 08:36:46 espie Exp $
 bin/libIDL-config-2
+include/libIDL-2.0/
+include/libIDL-2.0/libIDL/
 include/libIDL-2.0/libIDL/IDL.h
-info/libIDL2.info
+@info info/libIDL2.info
 lib/libIDL-2.a
 lib/libIDL-2.la
+lib/pkgconfig/
 lib/pkgconfig/libIDL-2.0.pc
 %%SHARED%%
-@dirrm include/libIDL-2.0/libIDL
-@dirrm include/libIDL-2.0
-@exec install-info --info-dir=%D/info %D/info/libIDL2.info

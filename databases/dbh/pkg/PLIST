@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:00:12 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 08:36:46 espie Exp $
 include/dbh.h
 include/dbh_config.h
 include/dbh_functions.h
 lib/libdbh.a
 lib/libdbh.la
+lib/pkgconfig/
 lib/pkgconfig/dbh-1.0.pc
 %%SHARED%%
-@dirrm lib/pkgconfig

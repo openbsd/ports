@@ -1,13 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/15 16:51:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:36:46 espie Exp $
 bin/perltidy
+${P5SITE}/Perl/
 ${P5SITE}/Perl/Tidy.pm
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Perl/
+@comment ${P5ARCH}/auto/Perl/Tidy/
 @comment ${P5ARCH}/auto/Perl/Tidy/.packlist
-@comment ${P5ARCH}/perllocal.pod
-man/man1/perltidy.1
-man/man3p/Perl::Tidy.3p
+@man man/man1/perltidy.1
+@man man/man3p/Perl::Tidy.3p
+share/doc/perltidy/
 share/doc/perltidy/stylekey.pod
 share/doc/perltidy/testfile.pl
 share/doc/perltidy/tutorial.pod
+share/examples/perltidy/
 share/examples/perltidy/README
 share/examples/perltidy/bbtidy.pl
 share/examples/perltidy/ex_mp.pl
@@ -20,11 +26,3 @@ share/examples/perltidy/perltidy.bat
 share/examples/perltidy/perlxmltok.pl
 share/examples/perltidy/testfa.t
 share/examples/perltidy/testff.t
-@dirrm share/examples/perltidy
-@dirrm share/doc/perltidy
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Perl/Tidy
-@comment @dirrm ${P5ARCH}/auto/Perl
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Perl
