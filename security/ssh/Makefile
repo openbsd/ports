@@ -1,34 +1,30 @@
-# $OpenBSD: Makefile,v 1.31 1999/04/08 05:36:11 marc Exp $
-#
-# Maximal ssh package requires YES values for
-# USE_PERL, USE_TCPWRAP
-#
+# $OpenBSD: Makefile,v 1.32 1999/05/14 05:27:30 brad Exp $
 
 DISTNAME=       ssh-1.2.26
 CATEGORIES=	security net
-
+MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
+		ftp://ftp.cs.hut.fi/pub/ssh/
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 RESTRICTED=	"Crypto; export-controlled"
 
-MAINTAINER=	todd@OpenBSD.ORG
-
-MASTER_SITES= 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
-		ftp://ftp.cs.hut.fi/pub/ssh/
+MAINTAINER=	todd@openbsd.org
 
 .if defined(NO_WARNINGS) || (defined(USA_RESIDENT) && ${USA_RESIDENT} == YES)
 DISTFILES=	${DISTNAME}.tar.gz rsaref2.tar.gz
-MASTER_SITES+=	\
-	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
-	ftp://idea.dsi.unimi.it/pub/security/crypt/math/
+MASTER_SITES+=	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
+		ftp://idea.dsi.unimi.it/pub/security/crypt/math/
 .endif
 
 ETCDIR?=	/etc
 RSHPROG?=	/usr/bin/rsh
 
-IS_INTERACTIVE=	YES
-USE_PERL=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${ETCDIR} --with-rsh=${RSHPROG}
+IS_INTERACTIVE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --prefix=${PREFIX} \
+		--with-etcdir=${ETCDIR} \
+		--with-rsh=${RSHPROG} \
+		--with-libwrap
+CONFIGURE_ENV= PERL=/usr/bin/perl
 
 .if defined(X11) && ${X11} == NO
 CONFIGURE_ARGS= --without-x
@@ -47,6 +43,11 @@ CONFIGURE_ARGS= --without-x
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CONFIGURE_ARGS+= --with-rsaref
+.endif
+
+# Include SOCKS firewall support
+.if defined(USE_SOCKS) && ${USE_SOCKS} == YES
+CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .endif
 
 # Include support for the SecureID card
@@ -111,38 +112,8 @@ post-install:
 		${ECHO} "Generating a secret host key..."; \
 		${PREFIX}/bin/ssh-keygen -f ${ETCDIR}/ssh_host_key -N ""; \
 	fi
-.if !defined(NOMANCOMPRESS)
 	${RM} -f ${PREFIX}/man/man1/slogin.1
 	${LN} -sf ssh.1 ${PREFIX}/man/man1/slogin.1
-.endif
 	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
-
 .include <bsd.port.mk>
-
-# Following stuff must be after <bsd.port.mk> to expand exists() properly
-
-.if defined(USE_PERL) && ${USE_PERL} == YES || \
-    exists(/usr/bin/perl) && \
-    (!defined(USE_PERL) || ${USE_PERL} != NO)
-CONFIGURE_ENV+= PERL=/usr/bin/perl
-.else
-CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
-.endif
-
-# Include tcp-wrapper support (call remote identd)
-.if (defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES) || \
-    (exists(${PREFIX}/lib/libwrap.a) && \
-    (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)) && \
-    ${OPSYS} != OpenBSD
-CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
-CONFIGURE_ARGS+= --with-libwrap
-LIB_DEPENDS+=   wrap\\.7\\.:${PORTSDIR}/security/tcp_wrapper
-.elif ${OPSYS} == OpenBSD && (!defined(USE_TCPWRAP) ||  ${USE_TCPWRAP} != NO)
-CONFIGURE_ARGS+= --with-libwrap
-.endif
-
-# Include SOCKS firewall support
-.if defined(USE_SOCKS) && ${USE_SOCKS} == YES
-CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
-.endif
