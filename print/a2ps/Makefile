@@ -1,12 +1,13 @@
 # New ports collection makefile for:    a2ps
-# Version required:     4.9.9
+# Version required:     4.10.4
 # Date created:         31 January 1998
 # Whom:                 Tobias Weingartner (weingart@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.5 1998/08/10 22:01:56 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/09/30 03:27:07 angelos Exp $
 #
 
-DISTNAME=	a2ps-4.10.3
+DISTNAME=	a2ps-4.10.4
+PKGNAME=	a2ps
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 

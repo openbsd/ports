@@ -1,4 +1,5 @@
 @cwd /usr/local
+bin/composeglyphs
 bin/ogonkify
 bin/compose
 bin/a2ps

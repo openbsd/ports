@@ -1,4 +1,5 @@
 @cwd /usr/local
+bin/composeglyphs
 bin/ogonkify
 bin/compose
 bin/a2ps
@@ -272,6 +273,6 @@ share/a2ps/ppd/level2.ppd
 @exec if test -r /etc/a2ps.cfg; then echo "*******************"; echo "* Warning: /etc/a2ps.cfg exists."; echo "* It has NOT been changed.  You must update by hand."; echo "* See %D/lib/a2ps.cfg-sample."; echo "*******************"; else cp %D/lib/a2ps.cfg /etc; fi
 @unexec echo ""
 @unexec echo "*******************"
-@unexec echo "* You man now remove the file /etc/a2ps.cfg"
+@unexec echo "* You may now remove the file /etc/a2ps.cfg"
 @unexec echo "*******************"
 @unexec echo ""

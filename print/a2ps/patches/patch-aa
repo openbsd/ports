@@ -1,31 +1,27 @@
---- etc/Makefile.in.~1~	Thu Jun 25 07:23:57 1998
-+++ etc/Makefile.in	Mon Aug 10 11:43:28 1998
-@@ -281,6 +281,8 @@
- all-local: a2ps.cfg
- 
- install-data-local: a2ps.cfg
-+	@$(mkinstalldirs) ${PREFIX}/lib
-+	@$(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).cfg ${PREFIX}/lib/$(PACKAGE).cfg-sample;
- 	$(mkinstalldirs) $(sysconfdir)
- 	@if test -r $(sysconfdir)/$(PACKAGE).cfg; then \
- 	  if cmp $(sysconfdir)/$(PACKAGE).cfg $(top_builddir)/etc/$(PACKAGE).cfg 2> /dev/null ; then \
-@@ -289,15 +291,14 @@
- 	     echo;	\
- 	     echo "*******************";	\
- 	     echo "* Warning: $(sysconfdir)/$(PACKAGE).cfg exist."; \
--	     echo "* It has been moved as $(sysconfdir)/$(PACKAGE).cfg.old"; \
-+	     echo "* It has NOT been changed.  You must update by hand."; \
-+	     echo "* See ${PREFIX}/lib/$(PACKAGE).cfg-sample."; \
- 	     echo "*******************";	\
- 	     echo; \
--	     mv $(sysconfdir)/$(PACKAGE).cfg $(sysconfdir)/$(PACKAGE).cfg.old; \
--	     $(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).cfg $(sysconfdir)/$(PACKAGE).cfg ; \
- 	  fi \
--	else \
-+	 else \
- 	  $(INSTALL_DATA) $(top_builddir)/etc/$(PACKAGE).cfg $(sysconfdir)/$(PACKAGE).cfg; \
--	fi
-+	 fi
- 
- uninstall-local:
- 	rm -f $(sysconfdir)/$(PACKAGE).cfg
+*** src/main.c.orig	Thu Jun 18 17:54:14 1998
+--- src/main.c	Thu Jun 18 17:55:12 1998
+***************
+*** 603,613 ****
+  {
+  #define PREFIX "% "
+    FILE * tmp_file;
+!   char * tmp_filename;
+    char buf [BUFSIZ];
+  
+!   tmp_filename = tmpnam (NULL);
+!   tmp_file = fopen (tmp_filename, "w");
+    if (!tmp_file)
+      error (1, errno, _("cannot open file `%s'"), tmp_filename);
+  
+--- 603,613 ----
+  {
+  #define PREFIX "% "
+    FILE * tmp_file;
+!   char tmp_filename[40];
+    char buf [BUFSIZ];
+  
+!   snprintf(tmp_filename, 40, "%s/a2ps.XXXXXXXX", P_tmpdir);
+!   tmp_file = fdopen (mkstemp(tmp_filename), "w");
+    if (!tmp_file)
+      error (1, errno, _("cannot open file `%s'"), tmp_filename);
+  
