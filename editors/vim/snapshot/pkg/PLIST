@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2001/06/04 14:52:48 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.12 2001/06/11 01:02:53 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -23,6 +23,8 @@ share/vim/vim60${V}/colors/evening.vim
 share/vim/vim60${V}/colors/morning.vim
 share/vim/vim60${V}/colors/peachpuff.vim
 share/vim/vim60${V}/colors/shine.vim
+share/vim/vim60${V}/compiler/README.txt
+share/vim/vim60${V}/compiler/msvc.vim
 share/vim/vim60${V}/doc/autocmd.txt
 share/vim/vim60${V}/doc/change.txt
 share/vim/vim60${V}/doc/cmdline.txt
@@ -156,6 +158,7 @@ share/vim/vim60${V}/ftplugin/vim.vim
 share/vim/vim60${V}/ftplugin/xs.vim
 share/vim/vim60${V}/ftplugof.vim
 share/vim/vim60${V}/indent.vim
+share/vim/vim60${V}/indent/ada.vim
 share/vim/vim60${V}/indent/config.vim
 share/vim/vim60${V}/indent/fortran.vim
 share/vim/vim60${V}/indent/html.vim
@@ -323,6 +326,7 @@ share/vim/vim60${V}/syntax/ishd.vim
 share/vim/vim60${V}/syntax/iss.vim
 share/vim/vim60${V}/syntax/ist.vim
 share/vim/vim60${V}/syntax/jam.vim
+share/vim/vim60${V}/syntax/jargon.vim
 share/vim/vim60${V}/syntax/java.vim
 share/vim/vim60${V}/syntax/javacc.vim
 share/vim/vim60${V}/syntax/javascript.vim
@@ -542,6 +546,7 @@ share/vim/vim60${V}/vimrc_example.vim
 @dirrm share/vim/vim60${V}/indent
 @dirrm share/vim/vim60${V}/ftplugin
 @dirrm share/vim/vim60${V}/doc
+@dirrm share/vim/vim60${V}/compiler
 @dirrm share/vim/vim60${V}/colors
 @dirrm share/vim/vim60${V}
 @dirrm share/vim
