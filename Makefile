@@ -1,24 +1,26 @@
-# $OpenBSD: Makefile,v 1.45 2004/06/21 21:28:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.46 2004/07/20 12:01:13 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
 PKGPATH=
-.if defined(key) || defined(name) || defined(category) || defined(author)
+.if defined(SUBDIR)
+# nothing to do
+.elif defined(key) || defined(name) || defined(category) || defined(author)
 
 # set up subdirs from the index, assume it's up-to-date
 _CMD=perl ${.CURDIR}/infrastructure/build/index-retrieve index='${.CURDIR}/INDEX'
-.  if defined(key)
+.    if defined(key)
 _CMD+=key='${key}'
-.  endif
-.  if defined(name)
+.    endif
+.    if defined(name)
 _CMD+=maintainer='${name}'
-.  endif
-.  if defined(category)
+.    endif
+.    if defined(category)
 _CMD+=category='${category}'
-.  endif
-.  if defined(maintainer)
+.    endif
+.    if defined(maintainer)
 _CMD+=maintainer='${maintainer}'
-.  endif
+.    endif
 SUBDIR != ${_CMD}
 .elif defined(SUBDIRLIST)
 SUBDIR != sed -e 's,[ 	]*\#.*,,' -e '/^[ 	]*$$/d' ${SUBDIRLIST}
