@@ -1,13 +1,13 @@
---- xfstt.cpp.orig	Sat Dec 11 12:23:45 1999
-+++ xfstt.cpp	Mon Sep 18 09:25:40 2000
+--- xfstt.cpp.orig	Sat Dec 11 18:23:45 1999
++++ xfstt.cpp	Thu Jan 18 15:34:06 2001
 @@ -11,8 +11,8 @@
  #define UNSTRAPLIMIT	10500U
  
  // Change these if you don't lie being FHS complient
 -#define TTFONTDIR	"/usr/share/fonts/truetype"
 -#define TTCACHEDIR      "/var/cache/xfstt"
-+#define TTFONTDIR	"/usr/X11R6/lib/X11/fonts/TrueType"
-+#define TTCACHEDIR      "/usr/X11R6/lib/X11/fonts/TrueType"
++#define TTFONTDIR	"/usr/local/lib/X11/fonts/TrueType"
++#define TTCACHEDIR      "/usr/local/lib/X11/fonts/TrueType"
  
  #define TTINFO_LEAF     "ttinfo.dir"
  #define TTNAME_LEAF     "ttname.dir"
