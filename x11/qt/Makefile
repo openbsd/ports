@@ -1,20 +1,25 @@
-# $OpenBSD: Makefile,v 1.30 2000/03/08 01:27:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.31 2000/03/08 08:55:32 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.223
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
+NEED_VERSION=	1.218
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	MesaGL.3.0:graphics/Mesa
+PERMIT_PACKAGE_CDROM=
+PERMIT_PACKAGE_FTP=
+PERMIT_DISTFILES_CDROM=
+PERMIT_DISTFILES_FTP=
+
+FAKE=	Yes
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
-FAKE=           Yes
 MAKE_ENV=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS=	VER_MAJ="1" VER_MIN="45"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	dragdrop drawdemo forever hello layout life menu movies pref \
@@ -22,7 +27,7 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	tetrix tictac timestmp tooltip validator widgets xform
 
 do-configure:
-	@cd ${WRKSRC} && env ${MAKE_ENV} ${MAKE_PROGRAM} ${USE_TARGET}
+	@cd ${WRKSRC} && env ${MAKE_ENV} make ${USE_TARGET}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/qt
@@ -54,7 +59,6 @@ do-install:
 .endfor
 	@echo "."
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${PREFIX}/lib/qt/examples
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
