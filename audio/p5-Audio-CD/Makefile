@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 03:21:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/06 10:08:38 avsm Exp $
 
 DISTNAME=	Audio-CD-0.04
 PKGNAME=	p5-${DISTNAME}
@@ -16,6 +16,8 @@ MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Audio
 
 CONFIGURE_STYLE= perl
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS=	cdaudio.1::audio/libcdaudio
 
