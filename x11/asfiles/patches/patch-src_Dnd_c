@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Dnd_c,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
+$OpenBSD: patch-src_Dnd_c,v 1.2 2001/03/14 20:29:52 wilfried Exp $
 --- src/Dnd.c.orig	Mon Jan 20 14:57:58 1997
-+++ src/Dnd.c	Wed Feb  7 16:16:25 2001
++++ src/Dnd.c	Wed Mar 14 20:43:56 2001
 @@ -400,9 +400,10 @@ static void computeFromAndTo(FileWindowR
  
  void RootDropCommand(FileRec *file, char *directory, int type)
@@ -14,14 +14,43 @@ $OpenBSD: patch-src_Dnd_c,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
      unsigned int mask;
      char label[200], cmd[1024], drop[1024], icon[1024];
      Display *dpy = XtDisplay(toplevel);
-@@ -508,7 +509,9 @@ static void handleExternalDrop(Widget wi
+@@ -491,6 +492,8 @@ static void handleExternalDrop(Widget wi
+     char to[MAXPATHLEN], from[MAXPATHLEN];
+     char *t;
+     FILE *fp;
++    int fd;
++    int e=0;
+     FileWindowRec *fw;
+     int i, Type;
+     /* who am I */
+@@ -508,15 +511,25 @@ static void handleExternalDrop(Widget wi
      case DndRawData:
      case DndText:
          DndGetData(&Data,&Size);
 -	t = tempnam(fw->directory, "New");
+-	fp = fopen(t, "w");
 +	t = malloc(strlen(fw->directory)+15);
 +	sprintf(t,"%s/NewXXXXXXXXXX", fw->directory);
-+	mkstemp(t);
- 	fp = fopen(t, "w");
++	if ((fd = mkstemp(t)) != -1) {
++	    if((fp = fdopen(fd, "w"))) {
++		if(fwrite(Data, 1, Size, fp)!=Size)
++		    e=1;
++		fclose(fp);
++	    } else {
++	    	unlink(t);
++		close(fd);
++		e=1;
++	    }
++	} else
++	    e=1;
  	free(t);
- 	if(!fp || fwrite(Data, 1, Size, fp)!=Size)
+-	if(!fp || fwrite(Data, 1, Size, fp)!=Size)
+-	{
++	if (e) {
+ 	    error("Copy: Cannot write file ", to);
+ 	    return;
+ 	}
+-	fclose(fp);
+ 	break;
+     case DndFile:
+     case DndDir:
