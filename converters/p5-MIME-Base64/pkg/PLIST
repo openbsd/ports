@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/08/21 00:53:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2001/01/08 23:41:11 avsm Exp $
 libdata/perl5/site_perl/${ARCH}-openbsd/MIME/Base64.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/MIME/QuotedPrint.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/MIME/Base64/.packlist
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/MIME/Base64/Base64.bs
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/MIME/Base64/Base64.so
 man/man3/MIME::Base64.3p

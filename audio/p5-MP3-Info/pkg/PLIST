@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/08/21 01:52:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 23:41:11 avsm Exp $
 libdata/perl5/site_perl/MP3/Info.pm
 libdata/perl5/site_perl/MPEG/MP3Info.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/MP3/Info/.packlist
 man/man3/MP3::Info.3p
 man/man3/MPEG::MP3Info.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/MP3/Info

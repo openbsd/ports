@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/08/21 02:57:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/01/08 23:41:10 avsm Exp $
 bin/dbiproxy
 bin/dbish
 libdata/perl5/site_perl/${ARCH}-openbsd/Bundle/DBI.pm
@@ -16,7 +16,6 @@ libdata/perl5/site_perl/${ARCH}-openbsd/DBI/ProxyServer.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/DBI/Shell.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/DBI/W32ODBC.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/Win32/DBIODBC.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBI/.packlist
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBI/DBI.bs
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBI/DBI.so
 libdata/perl5/site_perl/${ARCH}-openbsd/auto/DBI/DBIXS.h

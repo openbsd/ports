@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/08/21 00:54:22 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/01/08 23:41:09 avsm Exp $
 bin/puudecode
 bin/puuencode
 libdata/perl5/site_perl/Convert/UU.pm
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/Convert/UU/.packlist
 man/man1/puudecode.1
 man/man1/puuencode.1
 man/man3/Convert::UU.3p
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Convert/UU
