@@ -1,0 +1,38 @@
+$OpenBSD: patch-app_menubar_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
+--- app/menubar.c.orig	Tue Jul 30 02:50:28 2002
++++ app/menubar.c	Tue Jul 30 02:52:01 2002
+@@ -117,7 +117,7 @@ menubar_clear_callback (gint reply,
+ 			gpointer data)
+ {
+     if(reply == 0) {
+-	if((gint)data == 0) {
++	if(GPOINTER_TO_INT(data) == 0) {
+ 	    gui_free_xm();
+ 	    gui_new_xm();
+ 	    xm->modified = 0;
+@@ -709,19 +709,22 @@ menubar_gnome_to_gtk (GnomeUIInfo *gnome
+ 	switch(gnometree->type) {
+ 	case GNOME_APP_UI_SUBTREE:
+ 	    menubar_gtk_items[n].callback = (GtkItemFactoryCallback)gnometree->func;
+-	    menubar_gtk_items[n].callback_action = (guint)gnometree->funcparam;
++	    menubar_gtk_items[n].callback_action =
++	        GPOINTER_TO_UINT(gnometree->funcparam);
+ 	    menubar_gtk_items[n].item_type = "<Branch>";
+ 	    strip_underscores(buf, buf);
+ 	    n = menubar_gnome_to_gtk((GnomeUIInfo*)gnometree->dummy1, n + 1, buf) - 1;
+ 	    break;
+ 	case GNOME_APP_UI_ITEM:
+ 	    menubar_gtk_items[n].callback = (GtkItemFactoryCallback)gnometree->func;
+-	    menubar_gtk_items[n].callback_action = (guint)gnometree->funcparam;
++	    menubar_gtk_items[n].callback_action =
++	        GPOINTER_TO_UINT(gnometree->funcparam);
+ 	    menubar_gtk_items[n].item_type = NULL;
+ 	    break;
+ 	case GNOME_APP_UI_TOGGLEITEM:
+ 	    menubar_gtk_items[n].callback = (GtkItemFactoryCallback)gnometree->func;
+-	    menubar_gtk_items[n].callback_action = (guint)gnometree->funcparam;
++	    menubar_gtk_items[n].callback_action =
++	        GPOINTER_TO_UINT(gnometree->funcparam);
+ 	    menubar_gtk_items[n].item_type = "<ToggleItem>";
+ 	    break;
+ 	case GNOME_APP_UI_SEPARATOR:

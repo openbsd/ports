@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_file-operations_c,v 1.1 2002/05/30 09:08:28 wcobb Exp $
---- app/file-operations.c.orig	Tue May 28 23:38:51 2002
-+++ app/file-operations.c	Tue May 28 23:39:04 2002
+$OpenBSD: patch-app_file-operations_c,v 1.2 2002/07/30 06:51:15 wcobb Exp $
+--- app/file-operations.c.orig	Sat Feb  9 12:20:12 2002
++++ app/file-operations.c	Tue Jul 30 02:47:43 2002
 @@ -25,6 +25,7 @@
  
  #include <errno.h>
@@ -9,3 +9,12 @@ $OpenBSD: patch-app_file-operations_c,v 1.1 2002/05/30 09:08:28 wcobb Exp $
  
  #include "i18n.h"
  #include <gdk/gdktypes.h>
+@@ -214,7 +215,7 @@ void
+ fileops_open_dialog (void *dummy,
+ 		     void *index)
+ {
+-    int n = (int)index;
++    int n = GPOINTER_TO_INT(index);
+ 
+     if(!fileops_dialogs[n]) {
+ 	error_error(_("Operation not supported."));

@@ -1,0 +1,12 @@
+$OpenBSD: patch-app_gui_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
+--- app/gui.c.orig	Tue Jul 30 02:49:25 2002
++++ app/gui.c	Tue Jul 30 02:49:38 2002
+@@ -474,7 +474,7 @@ keyevent (GtkWidget *widget,
+ 	sample_editor_handle_keys,
+ 	modinfo_page_handle_keys,
+     };
+-    gboolean pressed = (gboolean)data;
++    gboolean pressed = (gboolean)GPOINTER_TO_INT(data);
+     gboolean handled = FALSE;
+     gboolean entry_focus = GTK_IS_ENTRY(GTK_WINDOW(mainwindow)->focus_widget);
+ 

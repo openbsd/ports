@@ -1,0 +1,21 @@
+$OpenBSD: patch-app_gui-subs_c,v 1.1 2002/07/30 06:51:15 wcobb Exp $
+--- app/gui-subs.c.orig	Tue Jul 30 02:47:58 2002
++++ app/gui-subs.c	Tue Jul 30 02:49:08 2002
+@@ -359,7 +359,7 @@ gui_build_option_menu (OptionMenuItem it
+     {
+       menu_item = gtk_radio_menu_item_new_with_label (group, items[i].name);
+       gtk_signal_connect (GTK_OBJECT (menu_item), "activate",
+-			  (GtkSignalFunc) items[i].func, (void*)i);
++			  (GtkSignalFunc) items[i].func, GINT_TO_POINTER(i));
+       group = gtk_radio_menu_item_group (GTK_RADIO_MENU_ITEM (menu_item));
+       gtk_menu_append (GTK_MENU (menu), menu_item);
+       if (i == history)
+@@ -443,7 +443,7 @@ cdialog_close (gpointer data)
+     gtk_widget_destroy(cdialog);
+     cdialog = NULL;
+     
+-    ccallback((gint)data, ccallbackdata);
++    ccallback(GPOINTER_TO_INT(data), ccallbackdata);
+ }
+ 
+ static void
