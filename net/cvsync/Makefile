@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2003/04/17 11:41:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/04/22 00:41:31 naddy Exp $
 
 COMMENT=	"portable CVS repository synchronization utility"
 
-DISTNAME=	cvsync-0.19.4
+DISTNAME=	cvsync-0.19.5
 CATEGORIES=	net
 HOMEPAGE=	http://www.daemon-systems.org/cvsync/
 
@@ -20,7 +20,8 @@ MASTER_SITES=	${HOMEPAGE} \
 USE_GMAKE=	Yes
 MAKE_ENV=	CVSYNC_DEFAULT_CONFIG="${SYSCONFDIR}/cvsync.conf" \
 		CVSYNCD_DEFAULT_CONFIG="${SYSCONFDIR}/cvsyncd.conf" \
-		BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}"
+		INSTALL_MAN_OPTS="-o ${MANOWN} -g ${MANGRP} -m ${MANMODE}" \
+		INSTALL_BIN_OPTS="-o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${INSTALL_STRIP}"
 
 EXAMPLESDIR=	${PREFIX}/share/examples/cvsync
 

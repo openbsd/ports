@@ -1,9 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/03/29 02:56:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/22 00:41:31 naddy Exp $
 bin/cvscan
 bin/cvsync
 bin/cvsyncd
 bin/rcscan
 bin/rcscmp
+man/man1/cvscan.1
+man/man1/cvsync.1
+man/man1/cvsyncd.1
+man/man1/rcscan.1
+man/man1/rcscmp.1
 share/examples/cvsync/cvsync.conf
 share/examples/cvsync/cvsyncd.conf
 @dirrm share/examples/cvsync
