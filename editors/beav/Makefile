@@ -1,18 +1,16 @@
-# OpenBSD makefile for:	beav
-# Version required:	1.40-7 (debian)
-# Date created:		05 November 97
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 18:55:14 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/08 22:59:00 marc Exp $
 #
 
 DISTNAME=	beav_140-7
 PKGNAME=	beav-1.40.7
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.debian.org/debian/bo/source/editors/ \
-		ftp://theta.iis.u-tokyo.ac.jp/pub2/Linux/distributions/debian/bo/source/editors/
+
+BROKEN=		"sources moved and/or no longer available"
 
 MAINTAINER=	joey@OpenBSD.org
+
+MASTER_SITES=	ftp://ftp.debian.org/debian/bo/source/editors/ \
+		ftp://theta.iis.u-tokyo.ac.jp/pub2/Linux/distributions/debian/bo/source/editors/
 
 WRKSRC=		${WRKDIR}/beav-140
 PATCH_STRIP=	-p1
