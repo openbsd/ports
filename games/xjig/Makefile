@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/26 16:51:22 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/04 12:04:08 kevlo Exp $
 
 DISTNAME=	xjig-2.4
 CATEGORIES=	games
@@ -19,7 +19,7 @@ MAKE_FILE=	Makefile.Linux
 FAKE=			Yes
 
 do-install:
-	@mkdir -p ${PREFIX}/share/xjig
+	${INSTALL_DATA_DIR} ${PREFIX}/share/xjig
 	${INSTALL_PROGRAM} ${WRKSRC}/xjig ${PREFIX}/bin/xjig
 	${INSTALL_MAN} ${WRKSRC}/xjig.man ${PREFIX}/man/man1/xjig.1
 	${INSTALL_DATA} ${WRKSRC}/tina.gif ${PREFIX}/share/xjig
