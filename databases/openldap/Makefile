@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/05/11 18:46:33 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2003/11/23 02:55:20 pvalchev Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -44,7 +44,8 @@ CONFIGURE_ARGS+=	\
 			--enable-ldap \
 			--enable-shell \
 			--enable-passwd \
-			--enable-slurpd
+			--enable-slurpd \
+			${CONFIGURE_SHARED}
 
 # disable IPv6 until implemented correctly
 CONFIGURE_ARGS+=	--disable-ipv6
