@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2005/02/14 01:26:56 dons Exp $
+# $OpenBSD: Makefile,v 1.19 2005/02/19 03:42:11 dons Exp $
 # 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 # And on NetBSD's 5.04.3 .hc boot script
 
-ONLY_FOR_ARCHS= i386 
-#                   sparc amd64
+ONLY_FOR_ARCHS= i386 amd64
+#                   sparc
  
 # The general solution for other architectures will be to boot
 # via unregisterised .hc files generated on openbsd-*-i386. See:
@@ -57,9 +57,9 @@ DISTFILES=	ghc-${V}-src.tar.bz2 \
 		ghc-regress-${V}.tar.bz2:2
 
 # this tarball is the first step in porting to a new architecture
-SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2
-#		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2 \
-#		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
+SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2 \
+ 		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
+#		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2
 
 # datasize around 130M on amd64
 VMEM_WARNING=	Yes
