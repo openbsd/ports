@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/07/19 22:03:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/20 03:10:10 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -22,12 +22,6 @@ MASTER_SITES=	${HOMEPAGE}/release/ \
 
 FLAVORS=	sun esd arts no_x11
 FLAVOR?=	sun
-
-.if empty(FLAVOR:L:Msun) && empty(FLAVOR:L:Mesd)
-ERRORS+=    "Fatal: You must choose a flavor from: sun, esd" \
-	    "   to select the appropriate sound system you want to use." \
-	    "   Additionally, you can append your other choices afterwards."
-.endif
 
 USE_GMAKE=	Yes
 
@@ -64,7 +58,6 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 USE_X11=	Yes
-LDFLAGS=	"-Wl,R${X11BASE}/lib -L${X11BASE}/lib"
 .endif
 
 post-patch:
