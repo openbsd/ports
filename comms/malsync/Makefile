@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/11/03 00:59:31 turan Exp $
-
-BROKEN=		dependency pilot-utils is also broken
+# $OpenBSD: Makefile,v 1.4 1999/11/10 20:04:30 jakob Exp $
 
 PKGNAME=	malsync-1.6
 DISTNAME=	malsync_1_6
@@ -15,7 +13,7 @@ MAINTAINER=	evan.cordes@UMICH.EDU
 MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/AvantGo/ \
 		http://corp.avantgo.com/mal/source/
 
-LIB_DEPENDS=	pilot-link:${PORTSDIR}/comms/pilot-link
+LIB_DEPENDS=	pisock.3:${PORTSDIR}/comms/pilot-link
 
 NO_WRKSUBDIR=	yes
 
