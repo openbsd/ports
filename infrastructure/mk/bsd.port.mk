@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.639 2004/08/11 22:25:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.640 2004/08/11 22:42:47 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1924,7 +1924,7 @@ _delete-package-links:
 _internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
 	@${MAKE} all-dir-depends|tsort -r|while read dir; do \
-		case "$$dir" in ${PKGPATH}) t=_internal-clean;; *) t=clean;; esac; \
+		case "$$dir" in ${FULLPKGPATH}) t=_internal-clean;; *) t=clean;; esac; \
 		unset FLAVOR SUBPACKAGE || true; \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No $$t; \
