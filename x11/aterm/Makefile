@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.26 2002/03/17 21:48:34 jcs Exp $
-
-COMMENT=	"color vt102 terminal emulator with transparency support"
+# $OpenBSD: Makefile,v 1.27 2002/03/17 22:24:18 jcs Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
-NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= aterm
-
-HOMEPAGE=	http://aterm.sourceforge.net/
-
-MAINTAINER=	Mark Grimes <mark@openbsd.org>
+NEED_VERSION=	1.509
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	Yes
+COMMENT=	"color vt102 terminal emulator with transparency support"
+HOMEPAGE=	http://aterm.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= aterm
 
+MAINTAINER=	Joshua Stein <jcs@rt.fm>
+
+USE_X11=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-xgetdefault --enable-ttygid
 
