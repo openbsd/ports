@@ -1,15 +1,21 @@
---- src/Makefile.in.orig	Tue May 30 02:15:41 2000
-+++ src/Makefile.in	Tue Sep  5 00:09:54 2000
-@@ -10,6 +10,8 @@
- # $JED_ROOT.  /usr/local/jed is a good choice.  For a private installation,
- # use, e.g., $(HOME)/src/jed
+--- src/Makefile.in.orig	Mon Feb 19 13:33:22 2001
++++ src/Makefile.in	Wed Feb 21 21:00:23 2001
+@@ -31,6 +31,14 @@
+ JED_INFO_FILES = ../info/*
+ 
  #---------------------------------------------------------------------------
-+DESTDIR = 
++# DESTDIR is designed to facilitate making packages.  Normally it is empty
++#---------------------------------------------------------------------------
++DESTDIR =
++DEST_BIN_DIR = $(DESTDIR)$(BIN_DIR)
++DEST_MAN_DIR = $(DESTDIR)$(MAN_DIR)
++DEST_JED_ROOT = $(DESTDIR)$(JED_ROOT)
 +
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- #JED_ROOT = $(HOME)/src/jed# <--- make sure # is at end of file!!
-@@ -157,57 +159,57 @@
++#---------------------------------------------------------------------------
+ # Location of jed source code 
+ #---------------------------------------------------------------------------
+ # Location of jed source code (absolute path)
+@@ -160,79 +168,79 @@
  	/bin/rm -rf $(OBJDIR) Makefile sysconf.h
  
  install_directories:
@@ -19,46 +25,64 @@
 -	$(MKINSDIR) $(JED_ROOT)/bin
 -	$(MKINSDIR) $(JED_ROOT)/info
 -	$(MKINSDIR) $(JED_ROOT)/doc
+-	$(MKINSDIR) $(JED_ROOT)/doc/txt
+-	$(MKINSDIR) $(JED_ROOT)/doc/manual
 -	$(MKINSDIR) $(JED_ROOT)/lib
 -	$(MKINSDIR) $(JED_ROOT)/lib/colors
+-	$(MKINSDIR) $(JED_ROOT)/lib/colors/Xjed
 -	$(MKINSDIR) $(JED_ROOT)/lib/tm
 +	$(MKINSDIR) $(DESTDIR)$(prefix)/info
 +	$(MKINSDIR) $(DESTDIR)$(prefix)/share/doc/jed
-+	$(MKINSDIR) $(DESTDIR)$(BIN_DIR)
-+	$(MKINSDIR) $(DESTDIR)$(MAN_DIR)
-+	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)
-+	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/bin
-+	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/lib
-+	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/lib/colors
-+	$(MKINSDIR) $(DESTDIR)$(JED_ROOT)/lib/tm
++	$(MKINSDIR) $(DESTDIR)$(prefix)/share/doc/jed/txt
++	$(MKINSDIR) $(DESTDIR)$(prefix)/share/doc/jed/manual
++	$(MKINSDIR) $(DEST_BIN_DIR)
++	$(MKINSDIR) $(DEST_MAN_DIR)
++	$(MKINSDIR) $(DEST_JED_ROOT)
++	$(MKINSDIR) $(DEST_JED_ROOT)/bin
++	$(MKINSDIR) $(DEST_JED_ROOT)/lib
++	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors
++	$(MKINSDIR) $(DEST_JED_ROOT)/lib/colors/Xjed
++	$(MKINSDIR) $(DEST_JED_ROOT)/lib/tm
  
  install: all install_directories
 -	$(INSTALL) $(OBJDIR)/jed $(BIN_DIR)/
 -	-$(INSTALL) $(OBJDIR)/xjed $(BIN_DIR)/
 -	-$(INSTALL) $(OBJDIR)/rgrep $(BIN_DIR)/
 -	-$(INSTALL) $(OBJDIR)/getmail $(JED_ROOT)/bin/
-+	$(INSTALL) $(OBJDIR)/jed $(DESTDIR)$(BIN_DIR)/
-+	-$(INSTALL) $(OBJDIR)/xjed $(DESTDIR)$(BIN_DIR)/
-+	-$(INSTALL) $(OBJDIR)/rgrep $(DESTDIR)$(BIN_DIR)/
-+	-$(INSTALL) $(OBJDIR)/getmail $(DESTDIR)$(JED_ROOT)/bin/
++	$(INSTALL) $(OBJDIR)/jed $(DEST_BIN_DIR)/
++	-$(INSTALL) $(OBJDIR)/xjed $(DEST_BIN_DIR)/
++	-$(INSTALL) $(OBJDIR)/rgrep $(DEST_BIN_DIR)/
++	-$(INSTALL) $(OBJDIR)/getmail $(DEST_JED_ROOT)/bin/
  	@for i in $(JED_LIB_FILES); \
  	do \
 -		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/; \
 -		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/; \
-+		echo $(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/; \
-+		$(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/; \
++		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/; \
++		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/; \
  		if [ "$$?" != "0" ]; then \
  		  exit 1; \
  		fi; \
  	done
 -	$(INSTALL_DATA) $(JED_COLOR_FILES) $(JED_ROOT)/lib/colors/
-+	$(INSTALL_DATA) $(JED_COLOR_FILES) $(DESTDIR)$(JED_ROOT)/lib/colors/
++	$(INSTALL_DATA) $(JED_COLOR_FILES) $(DEST_JED_ROOT)/lib/colors/
  	@for i in $(JED_COLOR_FILES); \
  	do \
 -		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/colors/; \
 -		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/colors/; \
-+		echo $(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/colors/; \
-+		$(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/colors/; \
++		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/colors/; \
++		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/colors/; \
+ 		if [ "$$?" != "0" ]; then \
+ 		  exit 1; \
+ 		fi; \
+ 	done
+-	$(INSTALL_DATA) $(JED_COLOR_FILES) $(JED_ROOT)/lib/colors/
++	$(INSTALL_DATA) $(JED_COLOR_FILES) $(DEST_JED_ROOT)/lib/colors/
+ 	@for i in $(XJED_COLOR_FILES); \
+ 	do \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/colors/Xjed/; \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/colors/Xjed/; \
++		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/colors/Xjed/; \
++		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/colors/Xjed/; \
  		if [ "$$?" != "0" ]; then \
  		  exit 1; \
  		fi; \
@@ -67,15 +91,15 @@
  	do \
 -		$(INSTALL_DATA) $$i $(MAN_DIR)/; \
 -		echo $(INSTALL_DATA) $$i $(MAN_DIR)/; \
-+		$(INSTALL_DATA) $$i $(DESTDIR)$(MAN_DIR)/; \
-+		echo $(INSTALL_DATA) $$i $(DESTDIR)$(MAN_DIR)/; \
++		$(INSTALL_DATA) $$i $(DEST_MAN_DIR)/; \
++		echo $(INSTALL_DATA) $$i $(DEST_MAN_DIR)/; \
  	done
  	@for i in $(JED_TM_FILES); \
  	do \
 -		$(INSTALL_DATA) $$i $(JED_ROOT)/lib/tm/; \
 -		echo $(INSTALL_DATA) $$i $(JED_ROOT)/lib/tm/; \
-+		$(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/tm/; \
-+		echo $(INSTALL_DATA) $$i $(DESTDIR)$(JED_ROOT)/lib/tm/; \
++		$(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/tm/; \
++		echo $(INSTALL_DATA) $$i $(DEST_JED_ROOT)/lib/tm/; \
  	done
  	@for i in $(JED_DOC_FILES); \
  	do \
@@ -83,6 +107,20 @@
 -		echo $(INSTALL_DATA) $$i $(JED_ROOT)/doc/; \
 +		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/; \
 +		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/; \
+ 	done
+ 	@for i in $(JED_DOC_TXT_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/doc/txt; \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/doc/txt; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/txt; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/txt; \
+ 	done
+ 	@for i in $(JED_DOC_MAN_FILES); \
+ 	do \
+-		$(INSTALL_DATA) $$i $(JED_ROOT)/doc/manual; \
+-		echo $(INSTALL_DATA) $$i $(JED_ROOT)/doc/manual; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/manual; \
++		echo $(INSTALL_DATA) $$i $(DESTDIR)$(prefix)/share/doc/jed/manual; \
  	done
  	@for i in $(JED_INFO_FILES); \
  	do \
