@@ -1,1 +1,1 @@
-a perl5 interface to Gd Graphics Library
+module to interface with the GD graphics library
