@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/07/05 18:38:38 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/09/17 04:32:56 pvalchev Exp $
 @pkgcfl fvwm2-*
 @pkgcfl fvicons-*
 bin/FvwmCommand
@@ -390,6 +390,7 @@ man/man1/FvwmTaskBar.1
 man/man1/FvwmTheme.1
 man/man1/FvwmWharf.1
 man/man1/FvwmWinList.1
+man/man1/fvwm-config.1
 man/man1/fvwm-menu-desktop.1
 man/man1/fvwm-menu-directory.1
 man/man1/fvwm-menu-headlines.1
