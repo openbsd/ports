@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/18 00:41:03 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/01 21:19:17 naddy Exp $
 
 COMMENT=	"free MPEG-2 video stream decoder"
 DISTNAME=	mpeg2dec-0.4.0b
@@ -27,5 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="-lX11 -lXext -lXv"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} --disable-sdl
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>

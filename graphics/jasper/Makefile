@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/07 03:18:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/01 21:19:17 naddy Exp $
 
 COMMENT=	"reference implementation of JPEG-2000"
 
@@ -20,5 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --without-x --disable-opengl
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/acaux
 
 .include <bsd.port.mk>

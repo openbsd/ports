@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/06 06:40:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/01 21:19:17 naddy Exp $
 
 COMMENT=	"library for decoding/generating MPEG TS/DVB PSI tables"
 VER=		0.1.4
@@ -19,5 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>

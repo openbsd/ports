@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/05/10 18:32:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2004/08/01 21:19:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -22,6 +22,9 @@ MODULES=	gettext
 CONFIGURE_STYLE=gnu old
 CONFIGURE_ARGS=	--srcdir=${WRKSRC} ${WRKBUILD}
 SEPARATE_BUILD=	simple
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/src/autoconf \
+				${WRKSRC}/ffcall/autoconf \
+				${WRKSRC}/libcharset/autoconf
 
 MAKE_FLAGS=	INSTALL='install -c' \
 		INSTALL_PROGRAM='install -c -s -m 555' \

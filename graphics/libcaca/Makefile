@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/18 06:41:11 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/01 21:19:17 naddy Exp $
 
 COMMENT=		"color ascii art library"
 DISTNAME=		libcaca-0.9
@@ -28,5 +28,6 @@ USE_X11=		Yes
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--disable-doc --disable-slang
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 .include <bsd.port.mk>
