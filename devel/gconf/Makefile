@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/13 20:52:08 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/13 21:18:43 todd Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.1
@@ -11,7 +11,7 @@ MAINTAINER=		Nils Nordman <nino@nforced.com>
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/GConf
 
-LIB_DEPENDS=		oaf.::devel/oaf \
+LIB_DEPENDS=		oaf.::x11/gnome/oaf \
 			gnome.36::x11/gnome/libs
 
 FLAVORS= 		guile db3
