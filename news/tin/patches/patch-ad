@@ -1,0 +1,153 @@
+*** doc/tin.1.orig	Mon Jun 23 17:25:38 1997
+--- doc/tin.1	Tue Jul  8 18:05:55 1997
+***************
+*** 33,39 ****
+  .SH DESCRIPTION
+  .I Tin
+  is a full-screen easy to use Netnews reader. It can read news locally
+! (i.e., \fI/var/spool/news\fP) or remotely (\fIrtin\fP or \fItin -r\fP option) 
+  via a NNTP (Network News Transport Protocol) server. It will automatically 
+  utilize NOV (News OVerview) style index files if available locally or via the 
+  NNTP XOVER command.
+--- 33,39 ----
+  .SH DESCRIPTION
+  .I Tin
+  is a full-screen easy to use Netnews reader. It can read news locally
+! (i.e., \fI/var/news\fP) or remotely (\fIrtin\fP or \fItin -r\fP option)
+  via a NNTP (Network News Transport Protocol) server. It will automatically 
+  utilize NOV (News OVerview) style index files if available locally or via the 
+  NNTP XOVER command.
+***************
+*** 113,119 ****
+  .B -r
+  read news remotely from the default NNTP server specified in the
+  environment variable NNTPSERVER or contained in the file
+! \fI/etc/nntpserver\fP.
+  .TP
+  .B -R
+  read news saved by the -S option.
+--- 113,119 ----
+  .B -r
+  read news remotely from the default NNTP server specified in the
+  environment variable NNTPSERVER or contained in the file
+! \fI/usr/local/etc/nntpserver\fP.
+  .TP
+  .B -R
+  read news saved by the -S option.
+***************
+*** 206,219 ****
+  .PP
+  A slightly better method is to set \fItin\fP setuid news and have all index 
+  files created and updated in the news spool directory 
+! (i.e., \fI/var/spool/news/.news\fP). This has the advantage that there will 
+  only be one copy of the index files on each machine on your network, but the 
+  disadvantage is that you will have \fItin\fP running setuid news.
+  .PP
+  A better method is to install the \fItind\fP index file updating daemon and 
+  have it create and update index files for all groups in your active file at
+  regular intervals in the news spool directory 
+! (i.e., \fI/var/spool/news/.news\fP). This has the advantage that there will 
+  only be one copy of the index files on each machine on your network and 
+  \fItin\fP must not be setuid news, but the disadvantage is that you will have 
+  to have news permissions to install \fItind\fP and root permissions to install
+--- 206,219 ----
+  .PP
+  A slightly better method is to set \fItin\fP setuid news and have all index 
+  files created and updated in the news spool directory 
+! (i.e., \fI/var/news/.news\fP). This has the advantage that there will
+  only be one copy of the index files on each machine on your network, but the 
+  disadvantage is that you will have \fItin\fP running setuid news.
+  .PP
+  A better method is to install the \fItind\fP index file updating daemon and 
+  have it create and update index files for all groups in your active file at
+  regular intervals in the news spool directory 
+! (i.e., \fI/var/news/.news\fP). This has the advantage that there will
+  only be one copy of the index files on each machine on your network and 
+  \fItin\fP must not be setuid news, but the disadvantage is that you will have 
+  to have news permissions to install \fItind\fP and root permissions to install
+***************
+*** 223,229 ****
+  The best method is to install the \fItind\fP index file updating daemon on your
+  NNTP server and have it create and update index files for all groups in your
+  active file at regular intervals in the news spool directory 
+! (i.e., \fI/var/spool/news/.news\fP).
+  This has the advantage that there will only be one copy of the index files on
+  the NNTP server for the whole of your network, but the disadvantage is that you
+  will have to install my NNTP server patches to allow \fItin\fP to retrieve 
+--- 223,229 ----
+  The best method is to install the \fItind\fP index file updating daemon on your
+  NNTP server and have it create and update index files for all groups in your
+  active file at regular intervals in the news spool directory 
+! (i.e., \fI/var/news/.news\fP).
+  This has the advantage that there will only be one copy of the index files on
+  the NNTP server for the whole of your network, but the disadvantage is that you
+  will have to install my NNTP server patches to allow \fItin\fP to retrieve 
+***************
+*** 252,258 ****
+  When a user starts \fItin\fP it is possible to inform them of any important
+  changes/information concerning the news system by displaying a message of the
+  day (motd) file. The motd file should be created in your news lib directory
+! (i.e., \fI/usr/lib/news/motd\fP) and should have file permissions set to 0644.
+  The motd file will only be displayed if its contents is newer than the last
+  time the user started \fItin\fP. If reading news via NNTP my XMOTD patch will
+  have to have been applied to your NNTP server.
+--- 252,258 ----
+  When a user starts \fItin\fP it is possible to inform them of any important
+  changes/information concerning the news system by displaying a message of the
+  day (motd) file. The motd file should be created in your news lib directory
+! (i.e., \fI/usr/local/news/lib/motd\fP) and should have file permissions set to 0644.
+  The motd file will only be displayed if its contents is newer than the last
+  time the user started \fItin\fP. If reading news via NNTP my XMOTD patch will
+  have to have been applied to your NNTP server.
+***************
+*** 1747,1753 ****
+  \fBNNTPSERVER\fP
+  The default NNTP server to remotely read news from.  This variable only
+  needs to be set if the -r command line option is specified and the file
+! \fI/etc/nntpserver\fP does not exist.
+  .TP
+  \fBNNTPPORT\fP
+  The NNTP tcp port to read news from.  This variable only
+--- 1747,1753 ----
+  \fBNNTPSERVER\fP
+  The default NNTP server to remotely read news from.  This variable only
+  needs to be set if the -r command line option is specified and the file
+! \fI/usr/local/etc/nntpserver\fP does not exist.
+  .TP
+  \fBNNTPPORT\fP
+  The NNTP tcp port to read news from.  This variable only
+***************
+*** 1989,2004 ****
+  \fI$HOME/.sigfixed\fP
+  fixed part of a randomly generated signature.
+  .TP 2i
+! \fI/usr/lib/news/active.times\fP
+  Contains list of new newsgroups as they are added to the news history file.
+  .TP 2i
+! \fI/usr/lib/news/motd\fP
+  News message of the day file.
+  .TP 2i
+! \fI/usr/lib/news/newsgroups\fP
+  Short description of all newsgroups.
+  .TP 2i
+! \fI/usr/lib/news/subscriptions\fP
+  List of newsgroups to subscribe first time user to.
+  .SH BUGS
+  Yes
+--- 1989,2004 ----
+  \fI$HOME/.sigfixed\fP
+  fixed part of a randomly generated signature.
+  .TP 2i
+! \fI/usr/local/news/lib/active.times\fP
+  Contains list of new newsgroups as they are added to the news history file.
+  .TP 2i
+! \fI/usr/local/news/lib/motd\fP
+  News message of the day file.
+  .TP 2i
+! \fI/usr/local/news/lib/newsgroups\fP
+  Short description of all newsgroups.
+  .TP 2i
+! \fI/usr/local/news/lib/subscriptions\fP
+  List of newsgroups to subscribe first time user to.
+  .SH BUGS
+  Yes

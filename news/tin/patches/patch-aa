@@ -1,0 +1,27 @@
+*** configure.orig	Tue Nov 18 05:32:36 1997
+--- configure	Tue Nov 18 05:37:23 1997
+***************
+*** 2874,2880 ****
+  		cf_save_LIBS="$LIBS"
+  		echo $ac_n "checking for initscr in -lncurses""... $ac_c" 1>&6
+  echo "configure:2877: checking for initscr in -lncurses" >&5
+! 		LIBS="-lncurses $LIBS"
+  		cat > conftest.$ac_ext <<EOF
+  #line 2880 "configure"
+  #include "confdefs.h"
+--- 2874,2888 ----
+  		cf_save_LIBS="$LIBS"
+  		echo $ac_n "checking for initscr in -lncurses""... $ac_c" 1>&6
+  echo "configure:2877: checking for initscr in -lncurses" >&5
+! 		case $host_os in # XXX
+! 		  openbsd*)
+! 			echo -n "(trying -lcurses for OpenBSD)..."
+! 			LIBS="-lcurses $LIBS"
+! 		  ;;
+! 		  *)
+! 			LIBS="-lncurses $LIBS"
+! 		  ;;
+! 		esac
+  		cat > conftest.$ac_ext <<EOF
+  #line 2880 "configure"
+  #include "confdefs.h"
