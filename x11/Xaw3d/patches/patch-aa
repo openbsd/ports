@@ -1,6 +1,18 @@
---- Imakefile.orig	Mon Sep  6 18:13:17 1999
-+++ Imakefile	Mon Sep  6 18:15:19 1999
-@@ -39,9 +39,9 @@
+--- Imakefile.orig	Tue Oct 15 16:41:19 1996
++++ Imakefile	Sat Apr  8 16:37:33 2000
+@@ -6,7 +6,11 @@
+ #define DoProfileLib ProfileLibXaw 
+ #define HasSharedData YES
+ #define LibName Xaw3d
++#if XFree86Version < 4000
+ #define SoRev SOXAWREV
++#else
++#define SoRev SOXAW6REV
++#endif
+ #define IncSubdir X11
+ #define IncSubSubdir Xaw3d
+ 
+@@ -39,9 +43,9 @@
  
         LINTLIBS = $(LINTXLIB) $(LINTXTOOL)
  
@@ -12,7 +24,7 @@
  
  HEADERS = \
  	AllWidgets.h \
-@@ -222,6 +222,12 @@
+@@ -222,6 +226,12 @@
  #endif
  #ifdef YaccCmd
  YACC=YaccCmd
