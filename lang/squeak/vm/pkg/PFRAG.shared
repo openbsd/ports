@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2004/07/21 11:19:30 espie Exp $
+lib/squeak/${V}-${MAJOR}/npsqueak.so

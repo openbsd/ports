@@ -1,0 +1,4 @@
+Squeak is a comprehensive smalltalk 80 system, that was originally
+fostered by Apple and Disney.
+
+The current release does not work on 64 bits system.

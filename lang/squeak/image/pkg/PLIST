@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1 2004/07/21 11:19:30 espie Exp $
+bin/inisqueak
+lib/squeak/Squeak${V}-5429.changes.gz
+lib/squeak/Squeak${V}-5429.image.gz
+lib/squeak/inisqueak
+lib/squeak/squeak.changes.gz
+lib/squeak/squeak.image.gz
+@dirrm lib/squeak

@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1 2004/07/21 11:19:30 espie Exp $
+bin/squeak
+share/doc/squeak/COPYING.gz
+share/doc/squeak/COPYRIGHT.gz
+share/doc/squeak/LICENSE.gz
+share/doc/squeak/README.Contributing.gz
+share/doc/squeak/README.Keyboard.gz
+share/doc/squeak/README.Sound.gz
+lib/squeak/${V}-${MAJOR}/B3DAcceleratorPlugin
+lib/squeak/${V}-${MAJOR}/UnixOSProcessPlugin
+lib/squeak/${V}-${MAJOR}/XDisplayControlPlugin
+lib/squeak/${V}-${MAJOR}/npsqueakrun
+lib/squeak/${V}-${MAJOR}/squeak
+lib/squeak/${V}-${MAJOR}/vm-display-X11
+lib/squeak/${V}-${MAJOR}/vm-display-null
+lib/squeak/${V}-${MAJOR}/vm-sound-null
+lib/squeak/npsqueakregister
+man/man1/inisqueak.1
+man/man1/squeak.1
+%%SHARED%%
+@dirrm lib/squeak/${V}-${MAJOR}
+@dirrm lib/squeak
+@dirrm share/doc/squeak
