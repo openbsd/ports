@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.542 2003/02/06 03:45:15 brad Exp $
+#	$OpenBSD: bsd.port.mk,v 1.543 2003/03/02 17:54:27 pvalchev Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1488,8 +1488,9 @@ checksum: fetch
 		  	cd ${.CURDIR} && ${MAKE} refetch PROBLEMS="$$list"; \
 		  else \
 			echo "Make sure the Makefile and checksum file ($$checksum_file)"; \
-			echo "are up to date.  If you want to override this check, type"; \
-			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
+			echo "are up to date.  If you want to fetch a good copy of this"; \
+			echo "file from the OpenBSD main archive, type"; \
+			echo "\"make REFETCH=true [other args]\"."; \
 			exit 1; \
 		  fi; \
 		fi ; \
