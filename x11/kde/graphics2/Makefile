@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/10 19:44:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/21 16:33:18 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.400
-VERSION=		2.1.1
+VERSION=		2.2
 DISTNAME=		kdegraphics-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -22,7 +22,7 @@ CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-debug
+CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared

@@ -1,16 +1,11 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/03/30 13:05:01 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/08/21 16:33:18 espie Exp $
+lib/libkcolorchooser.so.0.0
 lib/libkdvi.so.0.0
 lib/libkfax.so.0.0
 lib/libkghostview.so.1.0
-lib/libkif_kdeeffects.so.1.0
-lib/libkif_magick.so.1.0
-lib/libkifplugin.so.3.0
 lib/libkmultipage.so.0.0
 lib/libkpagetest.so.0.0
 lib/libkview.so.0.0
 lib/libkviewerpart.so.0.0
 lib/libkviewpart.so.0.0
-lib/libminimagick.so.5.1
-lib/libpixie_color.so.1.0
-lib/libpixie_thumb.so.1.0
 DYNLIBDIR(%D/lib)
