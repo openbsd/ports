@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2004/10/18 15:55:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.200 2004/11/08 16:11:07 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -113,6 +113,7 @@
 #    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Tk
      SUBDIR += paragui
+     SUBDIR += pbrowser
      SUBDIR += pekwm
      SUBDIR += piewm
      SUBDIR += pwm
@@ -126,7 +127,6 @@
      SUBDIR += qt2
      SUBDIR += qt2-designer
      SUBDIR += qt3
-     SUBDIR += qt3,mt
      SUBDIR += qvwm
      SUBDIR += qvwm,esound
      SUBDIR += qvwm,esound,imlib
