@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/10 20:04:49 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/01 14:59:39 jakob Exp $
 bin/smokeping
 lib/smokeping/smokeping.cgi
 libdata/perl5/site_perl/ISG/ParseConfig.pm
+libdata/perl5/site_perl/ISG/VppGateway.pm
 libdata/perl5/site_perl/Smokeping.pm
+libdata/perl5/site_perl/probes/CiscoRTTMonDNS.pm
+libdata/perl5/site_perl/probes/CiscoRTTMonEchoICMP.pm
+libdata/perl5/site_perl/probes/CiscoRTTMonTcpConnect.pm
+libdata/perl5/site_perl/probes/Curl.pm
+libdata/perl5/site_perl/probes/DNS.pm
 libdata/perl5/site_perl/probes/EchoPing.pm
 libdata/perl5/site_perl/probes/EchoPingChargen.pm
 libdata/perl5/site_perl/probes/EchoPingDiscard.pm
@@ -13,13 +19,20 @@ libdata/perl5/site_perl/probes/EchoPingSmtp.pm
 libdata/perl5/site_perl/probes/FPing.pm
 libdata/perl5/site_perl/probes/FPing6.pm
 libdata/perl5/site_perl/probes/IOSPing.pm
+libdata/perl5/site_perl/probes/RemoteFPing.pm
 libdata/perl5/site_perl/probes/base.pm
 libdata/perl5/site_perl/probes/basefork.pm
 libdata/perl5/site_perl/probes/basevars.pm
+libdata/perl5/site_perl/probes/telnetIOSPing.pm
 man/man1/smokeping.1
 man/man1/smokeping.cgi.1
 man/man1/smokeping_config.1
 man/man1/smokeping_install.1
+share/doc/smokeping/CiscoRTTMonDNS.pm.txt
+share/doc/smokeping/CiscoRTTMonEchoICMP.pm.txt
+share/doc/smokeping/CiscoRTTMonTcpConnect.pm.txt
+share/doc/smokeping/Curl.pm.txt
+share/doc/smokeping/DNS.pm.txt
 share/doc/smokeping/EchoPing.pm.txt
 share/doc/smokeping/EchoPingChargen.pm.txt
 share/doc/smokeping/EchoPingDiscard.pm.txt
@@ -31,6 +44,7 @@ share/doc/smokeping/FPing.pm.txt
 share/doc/smokeping/FPing6.pm.txt
 share/doc/smokeping/IOSPing.pm.txt
 share/doc/smokeping/ParseConfig.pm.txt
+share/doc/smokeping/RemoteFPing.pm.txt
 share/doc/smokeping/Smokeping.pm.txt
 share/doc/smokeping/base.pm.txt
 share/doc/smokeping/basefork.pm.txt
@@ -39,6 +53,7 @@ share/doc/smokeping/smokeping.cgi.txt
 share/doc/smokeping/smokeping.txt
 share/doc/smokeping/smokeping_config.txt
 share/doc/smokeping/smokeping_install.txt
+share/doc/smokeping/telnetIOSPing.pm.txt
 share/examples/smokeping/basepage.html
 share/examples/smokeping/config
 share/examples/smokeping/config-echoping
