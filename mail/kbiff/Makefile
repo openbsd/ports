@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/02 12:24:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2003/01/08 16:59:16 lebel Exp $
 
 COMMENT=		"new mail notification utility"
 
-DISTNAME=		kbiff-3.6.1
+DISTNAME=		kbiff-3.6.3
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=    	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=  	Yes
 MODULES=		qt3
+MODQT_MT=		Yes
 
 MASTER_SITES=		http://devel-home.kde.org/~granroth/kbiff/
 
@@ -32,7 +33,6 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--disable-mt
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		KDEDIR=${LOCALBASE} 
 
