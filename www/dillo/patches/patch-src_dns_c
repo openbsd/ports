@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dns_c,v 1.4 2003/02/22 17:11:05 couderc Exp $
---- src/dns.c.orig	Thu Dec 26 13:39:57 2002
-+++ src/dns.c	Sat Feb 22 18:47:04 2003
+$OpenBSD: patch-src_dns_c,v 1.5 2003/04/28 18:20:53 couderc Exp $
+--- src/dns.c.orig	Tue Mar  4 21:50:40 2003
++++ src/dns.c	Wed Apr 23 20:29:36 2003
 @@ -30,14 +30,13 @@
  #include "dns.h"
  #include "list.h"
@@ -26,7 +26,7 @@ $OpenBSD: patch-src_dns_c,v 1.4 2003/02/22 17:11:05 couderc Exp $
     gint index;
     GSList *hosts = NULL;
  
-@@ -313,18 +312,28 @@ static void Dns_blocking_server(void)
+@@ -313,12 +312,22 @@ static void Dns_blocking_server(void)
     DEBUG_MSG(3, "Dns_blocking_server: dns_server[%d].hostname = %s\n",
               index, dns_server[index].hostname);
  
@@ -55,10 +55,3 @@ $OpenBSD: patch-src_dns_c,v 1.4 2003/02/22 17:11:05 couderc Exp $
     }
  
     /* write IP to server data channel */
-    DEBUG_MSG(3, "Dns_blocking_server: IP of %s is %p\n",
-              dns_server[index].hostname, hosts);
--   dns_server[index].ip_addr = hosts;
-+   dns_server[index].addr_list = hosts;
-    dns_server[index].ip_ready = TRUE;
- 
-    DEBUG_MSG(3, "Dns_blocking_server: leaving...\n");
