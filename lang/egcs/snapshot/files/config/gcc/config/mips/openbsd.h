@@ -1,5 +1,5 @@
 /* GCC configuration for  OpenBSD Mips ABI32 */
-/* $OpenBSD: openbsd.h,v 1.2 1999/02/06 16:31:15 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.3 1999/02/06 21:49:02 espie Exp $ */
 
 /* Default mips is little endian, unless otherwise specified */
 
@@ -12,14 +12,12 @@
 #define OBSD_HAS_DECLARE_OBJECT
 #include <openbsd.h>
 
-
 /* run-time target specifications */
 #define CPP_PREDEFINES "-DMIPSEL -D_MIPSEL -DSYSTYPE_BSD \
 -D__NO_LEADING_UNDERSCORES__ -D__GP_SUPPORT__ \
 -D__unix__  -D__OpenBSD__ -D__mips__ \
 -Asystem(unix) -Asystem(OpenBSD) -Amachine(mips)"
 
-
 /* layout of source language data types
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
@@ -34,7 +32,7 @@
 
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
-
+
 /* Controlling the compilation driver 
  * ---------------------------------- */
 

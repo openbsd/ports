@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.1 1999/02/02 01:17:19 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.2 1999/02/06 21:49:02 espie Exp $ */
 
 #include <ns32k/ns32k.h>
 
@@ -43,8 +43,7 @@
 /* run-time target specifications */
 #define CPP_PREDEFINES "-Dunix -Dns32k -Dns32000 -Dns32532 -D__OpenBSD__ -Dpc532 -D__ns32k__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(ns32k) -Amachine(ns32k)"
 
-
-/* layout of source language data types
+/* Layout of source language data types
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -59,6 +58,8 @@
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE	32
 
+/* Specific options for DBX Output
+ * ------------------------------- */
 /* This is BSD, so it wants DBX format.  */
 #define DBX_DEBUGGING_INFO
 
@@ -69,8 +70,9 @@
    continuation back on).  */
 #define DBX_CONTIN_CHAR '?'
 
+/* Stack & calling: aggregate returns
+ * ---------------------------------- */
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
-
 #undef PCC_STATIC_STRUCT_RETURN
 #define DEFAULT_PCC_STRUCT_RETURN 0

@@ -1,11 +1,10 @@
-/* $OpenBSD: openbsd.h,v 1.1 1999/02/02 01:17:19 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.2 1999/02/06 21:49:03 espie Exp $ */
 #include <vax/vax.h>
 #include <openbsd.h>
 
 #define CPP_PREDEFINES "-Dunix -Dvax -D__OpenBSD__ -Asystem(unix) -Asystem(OpenBSD) -Acpu(vax) -Amachine(vax)"
 
-
-/* layout of source language data types
+/* Layout of source language data types
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE

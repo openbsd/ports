@@ -1,3 +1,5 @@
+/* $OpenBSD: openbsd.h,v 1.5 1999/02/06 21:49:03 espie Exp $ */
+
 #include <pa/pa.h>
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #include <openbsd.h>

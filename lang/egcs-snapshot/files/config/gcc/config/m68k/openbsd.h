@@ -1,9 +1,9 @@
-/* $OpenBSD: openbsd.h,v 1.4 1999/01/22 22:35:06 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.5 1999/02/06 21:49:01 espie Exp $ */
 /* vi:ts=8: 
  */
 
-/* m68k is an old configuration that does not use the TARGET_CPU_DEFAULT
- * framework. */
+/* m68k is an old configuration that does not yet use the TARGET_CPU_DEFAULT
+   framework. */
 #define TARGET_DEFAULT (MASK_BITFIELD | MASK_68881 | MASK_68020)
 
 #include <m68k/m68k.h>
@@ -24,8 +24,7 @@
 #define ASM_SPEC "%| %{m68030} %{m68040} %{m68060} %{fpic:-k} %{fPIC:-k -K}"
  */
 
-
-/* layout of source language data types
+/* Layout of source language data types
  * ------------------------------------ */
 /* this must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
@@ -40,6 +39,8 @@
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
+/* Storage layout
+ * -------------- */
 /* Every structure or union's size must be a multiple of 2 bytes.  */
 #define STRUCTURE_SIZE_BOUNDARY 16
 
@@ -55,17 +56,23 @@
    continuation back on).  */
 #define DBX_CONTIN_CHAR '?'
 
+/* Stack & calling: aggregate returns
+ * ---------------------------------- */
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
-/* aout-m68k-openbsd does not handle dwarf2 unwinds and initialization info
-   correctly */
+/* Assembler format: exception region output 
+ * ----------------------------------------- */
+/* all configurations that don't use elf must be explicit about not using
+   dwarf unwind information. egcs doesn't try too hard to check internal
+   configuration files...  */
 #define DWARF2_UNWIND_INFO 0
 
-/* TODO: MI_THUNK is busted. I need to figure out what bra func@PLTPC means
- * under linux, and find the corresponding construction for our gas/pic
- * setup. */
+
+/* TODO: ASM_OUTPUT_MI_THUNK is busted. I need to figure out 
+   what bra func@PLTPC means under linux, and find the corresponding 
+   construction for our gas/pic setup. */
 #if 0
 /* taken from linux.h. Processor dependent optimized code to handle C++
  * multiple inheritance vtable lookup
