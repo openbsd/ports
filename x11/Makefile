@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2001/11/06 14:12:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.120 2001/11/12 00:22:23 heko Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -20,11 +20,13 @@
      SUBDIR += bbkeys,qt
      SUBDIR += bbpager
      SUBDIR += bclock
+     SUBDIR += belt
      SUBDIR += blackbox
      SUBDIR += blast
 #    SUBDIR += blt
      SUBDIR += bricons
 #    SUBDIR += camltk41
+     SUBDIR += chbg
      SUBDIR += ctwm
      SUBDIR += dclock
      SUBDIR += emiclock
@@ -90,6 +92,7 @@
      SUBDIR += qvwm,esound
      SUBDIR += qvwm,esound,imlib
      SUBDIR += qvwm,imlib
+     SUBDIR += ratpoison
      SUBDIR += rclock
      SUBDIR += rdesktop
      SUBDIR += rep-gtk
@@ -110,6 +113,7 @@
 #    SUBDIR += tkgoodstuff
 #    SUBDIR += tkstep80
      SUBDIR += tktable
+     SUBDIR += treewm
      SUBDIR += ttmkfdir
      SUBDIR += tvtwm
 #    SUBDIR += tycoon
