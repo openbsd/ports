@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/03 03:43:16 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/05/04 17:59:35 margarida Exp $
 bin/egon
 bin/gvu
 bin/mgptotxt
@@ -10,6 +10,7 @@ bin/siagrun
 bin/tsiag
 bin/xedplus
 bin/xfiler
+doc/siag/antiword/README
 lib/siag/antiword/8859-1.txt
 lib/siag/antiword/antiword
 lib/siag/plugins/clipart
@@ -407,6 +408,7 @@ share/siag/common/dictionary.gl
 share/siag/common/dictionary.hr
 share/siag/common/dictionary.hu
 share/siag/common/dictionary.it
+share/siag/common/dictionary.nl
 share/siag/common/dictionary.no
 share/siag/common/dictionary.pl
 share/siag/common/dictionary.pt_BR
@@ -491,3 +493,6 @@ share/siag/xfiler/makeicons
 @dirrm lib/siag/plugins
 @dirrm lib/siag/antiword
 @dirrm lib/siag
+@dirrm doc/siag/antiword
+@dirrm doc/siag
+@dirrm doc
