@@ -6,4 +6,15 @@ facilities for verifying incoming sender and recipient addresses, for refusing
 mail from specified hosts, networks, or senders, and for controlling mail
 relaying. This version also supports the STARTTLS extension.
 
+This port can be built with the following flavors:
+
+no_x11 - do not build eximon which requires X11
+no_perl - do not include perl support
+no_tls - do not include SSL/TLS support
+mysql - support mysql queries for lookups
+pgsql - support pgsql queries for lookups
+ldap - support ldap (OpenLDAP) queries for lookups
+
+All these flavors are independent of each other.
+
 WWW: ${HOMEPAGE}
