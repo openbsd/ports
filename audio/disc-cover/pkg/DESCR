@@ -12,5 +12,3 @@ supported include a simple text output, a CDDB compatible format,
 HTML and an output format that can be used with cdlabelgen
 (http://www.red-bean.com/~bwf/software/cdlabelgen/), another cover
 builder.
-
-WWW: ${HOMEPAGE}
