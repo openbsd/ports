@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2003/05/02 02:10:33 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2003/08/24 01:21:35 jolan Exp $
+
+# sync with mplayer archs due to dependency
+ONLY_FOR_ARCHS=i386 macppc
 
 DISTNAME=mplayer-fontmaker-0.90
 CATEGORIES=x11
