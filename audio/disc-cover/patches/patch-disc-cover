@@ -1,12 +1,12 @@
-$OpenBSD: patch-disc-cover,v 1.1.1.1 2001/08/16 21:56:35 pvalchev Exp $
---- disc-cover.orig	Thu Jun 14 21:53:51 2001
-+++ disc-cover	Thu Jun 14 21:55:43 2001
-@@ -36,7 +36,7 @@
- 
+$OpenBSD: patch-disc-cover,v 1.2 2002/12/18 09:36:21 sturm Exp $
+--- disc-cover.orig	Tue Dec 10 22:21:28 2002
++++ disc-cover	Tue Dec 10 22:24:53 2002
+@@ -39,7 +39,7 @@ my ($config_homedir) = "";
+ $config_homedir = "$ENV{HOME}" if (defined $ENV{HOME});
  my ($config_tmp_dir) = '/tmp';
  my ($config_output_format) = 'ps';
 -my ($config_device) = "/dev/cdrom";
 +my ($config_device) = "/dev/cd0c";
- my ($config_cddb_cache_directory) = "$ENV{HOME}/.cddb";
+ my ($config_cddb_cache_directory) = "$config_homedir/.cddb";
  my ($config_flaptext) = split ',', (getpwuid($<))[6];
  my ($config_version_config) = undef;
