@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/12/16 02:28:30 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2002/03/10 21:01:44 brad Exp $
 
 COMMENT=	"SGI audiofile library clone"
 
@@ -21,5 +21,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+do-regress:
+	@cd ${WRKBUILD}/test && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
