@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgichk3_c,v 1.1 2002/03/24 10:20:24 jsyn Exp $
---- cgichk3.c.orig	Tue Sep 12 21:12:21 2000
-+++ cgichk3.c	Tue Sep 12 21:18:42 2000
-@@ -119,20 +119,11 @@
+$OpenBSD: patch-cgichk3_c,v 1.2 2004/01/04 20:50:04 espie Exp $
+--- cgichk3.c.orig	2000-01-03 18:50:02.000000000 +0100
++++ cgichk3.c	2004-01-04 21:47:43.000000000 +0100
+@@ -119,20 +119,11 @@ struct cgidownload url[1000];
  FILE *cgidata;
  FILE *fp_log;
  
@@ -24,7 +24,7 @@ $OpenBSD: patch-cgichk3_c,v 1.1 2002/03/24 10:20:24 jsyn Exp $
     {
      switch(i)
       {
-@@ -146,11 +137,18 @@
+@@ -146,11 +137,18 @@ if(argc>3) 
         { gettxtmode = 1; break; }
        case 'c':
         { httpdport = atoi(optarg); break; }
@@ -44,7 +44,7 @@ $OpenBSD: patch-cgichk3_c,v 1.1 2002/03/24 10:20:24 jsyn Exp $
  
  if(proxymode==1)
    {
-@@ -420,14 +418,15 @@
+@@ -420,14 +418,15 @@ close(sock);
  int usage(char *argv[])
  {
   printf("-= CGI Checker Version 3.5 =-");
@@ -62,3 +62,14 @@ $OpenBSD: patch-cgichk3_c,v 1.1 2002/03/24 10:20:24 jsyn Exp $
   exit(0);
  }
  
+@@ -436,8 +435,8 @@ int banner()
+  printf("CGI Checker Version 3.6 by [CKS & fdisk]\n");
+  printf("Drop any bugs,changes,comments to cksss@singnet.com.sg or fdisk@netplan.gr\n\n");
+  printf("Proxy support tested on Squid,WinRoute,Netscape,WinGate,Network Appliance proxies\n\n");
+- printf("Greetings to: ech0 security, boun, hury, NtWak0, datawar, Ken William and all 
+-              the hardworking people in PacketStorm\n");
++ printf("Greetings to: ech0 security, boun, hury, NtWak0, datawar, Ken William and all \n"
++"              the hardworking people in PacketStorm\n");
+  printf("Thanks to   : Dug Song for the subterfuge attack against IDS feature\n");
+  printf("            : su1d_sh3ll for the modifications he did in the previous version\n");
+  printf("            : dethwork for more CGI updates\n");
