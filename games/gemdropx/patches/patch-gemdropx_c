@@ -1,0 +1,32 @@
+$OpenBSD: patch-gemdropx_c,v 1.1.1.1 2001/09/02 05:01:53 pvalchev Exp $
+--- gemdropx.c.orig	Tue Dec 28 02:54:17 1999
++++ gemdropx.c	Sat Sep  1 22:46:35 2001
+@@ -36,7 +36,7 @@
+ #endif
+ 
+ #ifndef NOSOUND
+-#include <mixer.h>
++#include <SDL_mixer.h>
+ #endif
+ 
+ #include "data/images/nothing.xbm"
+@@ -281,6 +281,7 @@ void setup(void)
+               SDL_GetError());
+       exit(1);
+     }
++  atexit(SDL_Quit);
+   
+   
+   /* Set the size of the window: */
+@@ -2231,9 +2232,11 @@ int main(int argc, char * argv[])
+ 		 (JS_VERSION & 0x0000FF));
+ #endif
+ 
++#ifndef NOSOUND
+ 	  SDL_VERSION(&sdlver);
+ 	  printf("SDL version %d.%d.%d\n\n", sdlver.major,
+ 		 sdlver.minor, sdlver.patch);
++#endif
+ 
+ 	  exit(0);
+ 	}
