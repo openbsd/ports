@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/24 23:28:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/03 01:54:06 espie Exp $
 
 CATEGORIES=	print
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.247
 MASTER_SITES=	http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
 HOMEPAGE=	http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
 DISTFILES=	pdf_sec.ps
@@ -16,14 +16,20 @@ PERMIT_DISTFILES_CDROM=	No
 
 NO_BUILD=Yes
 
+DISTNAME=	ghostscript_encrypt
+FLAVORS=aladdin gnu
+
 .if defined(ALADDIN)
-DISTNAME=	aladdin-ghostscript-encrypt
+FLAVOR=aladdin
+.endif
+
+FLAVOR?=gnu
+
+.if ${FLAVOR:L} == "aladdin"
 GSDIR=${PREFIX}/share/ghostscript/6.01/lib
 RUN_DEPENDS=${GSDIR}::print/ghostscript/aladdin
-PLIST=${PKGDIR}/PLIST.aladdin
 .else
 # Gnu ghostscript, default
-DISTNAME=	ghostscript-encrypt
 GSDIR=${PREFIX}/share/ghostscript/5.50
 RUN_DEPENDS=${GSDIR}::print/ghostscript/gnu
 .endif

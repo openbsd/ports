@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/30 21:09:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/03 01:54:06 espie Exp $
 
 SUBDIR += aladdin
 SUBDIR += aladdin:a4
 SUBDIR += gnu
 SUBDIR += gnu:a4
-SUBDIR += encrypt
+SUBDIR += encrypt:aladdin
+SUBDIR += encrypt:gnu
 
 .include <bsd.port.subdir.mk>
