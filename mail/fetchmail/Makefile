@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	fetchmail
-# Version required:     4.3.8
+# Version required:     4.5.4
 # Date created:		10 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.5 1998/03/01 05:40:44 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/08/01 02:01:55 marc Exp $
 #
 
-DISTNAME=       fetchmail-4.3.8
+DISTNAME=       fetchmail-4.5.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
@@ -14,12 +14,10 @@ MAINTAINER=	ports@OpenBSD.ORG
 
 GNU_CONFIGURE=	yes
 #CONFIGURE_ARGS+= --enable-opie
-CONFIGURE_ENV+= LDFLAGS="${CFLAGS}"
-MAN1=		fetchmail.1
-
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_EBONES)
 CONFIGURE_ARGS += --with-kerberos=/usr/include/kerberosIV
 .endif
+CONFIGURE_ENV+= ${SETENV} LDFLAGS="${CFLAGS}"
 
 FDOC=   ${PREFIX}/share/doc/fetchmail
 

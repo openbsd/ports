@@ -1,12 +1,16 @@
+@cwd /usr/local
+@name fetchmail-4.5.4
 bin/fetchmail
+bin/fetchmailconf
 man/man1/fetchmail.1
-share/doc/fetchmail/README
-share/doc/fetchmail/COPYING
+man/man1/fetchmailconf.1
+share/doc/fetchmail/sample.rcfile
 share/doc/fetchmail/FAQ
 share/doc/fetchmail/NOTES
 share/doc/fetchmail/FEATURES
+share/doc/fetchmail/README
+share/doc/fetchmail/COPYING
 share/doc/fetchmail/fetchmail-FAQ.html
-share/doc/fetchmail/design-notes.html
 share/doc/fetchmail/fetchmail-features.html
-share/doc/fetchmail/sample.rcfile
+share/doc/fetchmail/design-notes.html
 @dirrm share/doc/fetchmail
