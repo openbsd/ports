@@ -1,0 +1,151 @@
+$OpenBSD: patch-abcde,v 1.1.1.1 2002/03/18 15:08:45 wilfried Exp $
+--- abcde.orig	Mon Jan 28 06:44:02 2002
++++ abcde	Thu Mar 14 17:38:57 2002
+@@ -12,6 +12,25 @@
+ 
+ VERSION=2.0.3
+ 
++f_seq_row () {
++	i=$1
++	while [ $i -ne $2+1 ]
++		do      
++			echo $i
++			i=`expr $i + 1`
++		done
++	}
++
++f_seq_line () {
++	i=$1
++	while [ $i -ne $2+1 ]
++		do      
++			printf $i" "
++			i=`expr $i + 1`
++		done
++		echo
++	}
++
+ usage ()
+ {
+ echo "This is abcde v$VERSION."
+@@ -574,7 +593,7 @@ do_cddbread ()
+ 			fi
+ 			# List out disc title/author and contents
+ 			echo ---- "$(cut '-d ' -f4- "$ABCDETEMPDIR/cddbquery")" ---- >> "$ABCDETEMPDIR/cddbchoices"
+-			for TRACK in $(seq 1 $TRACKS)
++			for TRACK in $(f_seq_row 1 $TRACKS)
+ 			do
+ 				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
+ 			done
+@@ -590,7 +609,7 @@ do_cddbread ()
+ 			$CDDBTOOL template $(cat "$ABCDETEMPDIR/discid") > "$ABCDETEMPDIR/cddbread.1"
+ 			# List out disc title/author and contents of template
+ 			echo ---- Unknown Artist / Unknown Album ---- >> "$ABCDETEMPDIR/cddbchoices"
+-			for TRACK in $(seq 1 $TRACKS)
++			for TRACK in $(f_seq_row 1 $TRACKS)
+ 			do
+ 				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
+ 			done
+@@ -620,7 +639,7 @@ do_cddbread ()
+ 				fi
+ 				# List out disc title/author and contents
+ 				echo \#$X: ---- "$DISCINFO" ---- >> "$ABCDETEMPDIR/cddbchoices"
+-				for TRACK in $(seq 1 $TRACKS)
++				for TRACK in $(f_seq_row 1 $TRACKS)
+ 				do
+ 					echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.$X" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
+ 				done
+@@ -717,20 +736,18 @@ do_cddbedit ()
+ 		EDITCDDB=n
+ 	fi
+ 	if [ "$EDITCDDB" = "y" ]; then
+-		# Use the debian sensible-editor wrapper to pick the editor that the
+-		# user has requested via their $EDITOR environment variable
+-		if [ -x "/usr/bin/sensible-editor" ]; then
+-			/usr/bin/sensible-editor "$CDDBDATA"
+-		elif [ -x "$EDITOR" ]; then
+-			# That failed, try to load the preferred editor, starting
++		if [ -x "$EDITOR" ]; then
++			# Try to load the preferred editor, starting
+ 			# with their EDITOR variable
+ 			$EDITOR "$CDDBDATA"
++		elif [ -x "/usr/local/bin/$EDITOR" ]; then
++			/usr/local/bin/$EDITOR "$CDDBDATA"
+ 		# If that fails, check for a vi
+ 		elif [ -x /usr/bin/vi ]; then
+ 			/usr/bin/vi "$CDDBDATA"
+-		# ae should be on all debian systems
+-		elif [ -x /bin/ae ]; then
+-			/bin/ae "$CDDBDATA"
++		# mg should be on all OpenBSD systems
++		elif [ -x /usr/bin/mg ]; then
++			/usr/bin/mg "$CDDBDATA"
+ 		# bomb out
+ 		else
+ 			echo "No editor available. Check your EDITOR environment variable." >&2
+@@ -889,12 +906,12 @@ INTERACTIVE=y
+ CDROMREADERSYNTAX=cdparanoia
+ OUTPUTTYPE=ogg
+ ENCODERSYNTAX=default
+-OUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.$OUTPUTTYPE'
++OUTPUTFORMAT='${ARTISTFILE}/${TRACKNUM}-${TRACKFILE}.${OUTPUTTYPE}'
+ VAOUTPUTFORMAT=${OUTPUTFORMAT}
+ PLAYLISTFORMAT='${ARTISTFILE}_-_${ALBUMFILE}.m3u'
+ PLAYLISTDATAPREFIX=''
+ COMMENT=''
+-ID3TAGV=2
++ID3TAGV=1
+ ENCNICE=10
+ READNICE=10
+ VARIOUSARTISTS=n
+@@ -964,13 +981,7 @@ if [ -z "$WAVOUTPUTDIR" ]; then
+ 	WAVOUTPUTDIR="$OUTPUTDIR"
+ fi
+ 
+-# If this is a devfs system, default to /dev/cdroms/cdrom0
+-# instead of /dev/cdrom
+-if [ -e /dev/cdroms/cdrom0 ]; then
+-	CDROM=/dev/cdroms/cdrom0
+-else
+-	CDROM=/dev/cdrom
+-fi
++CDROM=/dev/cd0c
+ 
+ # Load system defaults
+ if [ -r /etc/abcde.conf ]; then
+@@ -1010,7 +1021,7 @@ while [ $# -gt 0 ]; do
+ 	if [ "$RSTART" = "$REND" ]; then 
+ 		NEWTRACKS="$RSTART"
+ 	else
+-		NEWTRACKS=$(seq -s ' ' $RSTART $REND)
++		NEWTRACKS=$(f_seq_line $RSTART $REND)
+ 	fi
+ 	TRACKQUEUE=$(echo "$TRACKQUEUE" "$NEWTRACKS")
+ 
+@@ -1101,15 +1112,12 @@ if [ "$OUTPUTTYPE" = "ogg" ]; then NEEDC
+ 
+ # Make sure a buncha things exist
+ for X in $CDROMREADER $CDDISCID ${NEEDTAGGER+$TAGGER} $ENCODER $WGET \
+-	${NEEDDISTMP3+$DISTMP3} ${NEEDCOMMENTER+$VORBISCOMMENT} seq
++	${NEEDDISTMP3+$DISTMP3} ${NEEDCOMMENTER+$VORBISCOMMENT}
+ do
+ 	# Cut off the command-line options we just added in
+ 	X=$(echo $X | cut -d' ' -f2)
+-	if [ "$(which $X)" = "" ]; then
+-		echo "abcde error: $X is not in your path." >&2
+-		exit 1
+-	elif [ ! -x $(which $X) ]; then
+-		echo "abcde error: $X is not executable." >&2
++	if [ ! -x "$(which $X)" ]; then
++		echo "abcde error: Can't find $X." >&2
+ 		exit 1
+ 	fi 
+ done
+@@ -1191,7 +1199,7 @@ fi
+ # Figure out where each track is going to be encoded
+ ENCODELOCATIONS="$(echo $REMOTEHOSTS | tr , ' ')"
+ if [ "$MAXPROCS" != "0" ]; then
+-	for NUM in $(seq 1 "$MAXPROCS")
++	for NUM in $(f_seq_row 1 "$MAXPROCS")
+ 	do
+ 		ENCODELOCATIONS="$ENCODELOCATIONS %local$NUM%"
+ 	done

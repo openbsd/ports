@@ -1,0 +1,38 @@
+$OpenBSD: patch-abcde_conf,v 1.1.1.1 2002/03/18 15:08:45 wilfried Exp $
+--- abcde.conf.orig	Mon Jan 21 03:35:31 2002
++++ abcde.conf	Thu Mar 14 17:38:02 2002
+@@ -59,14 +59,14 @@
+ #VORBISCOMMENT=vorbiscomment
+ 
+ # Options to call programs with
+-#LAMEOPTS=
++#LAMEOPTS='-b 192'
+ #GOGOOPTS=
+ #BLADEENCOPTS=
+ #L3ENCOPTS=
+ #XINGMP3ENCOPTS=
+ #MP3ENCOPTS=
+ #VORBIZEOPTS=
+-#OGGENCOPTS=
++#OGGENCOPTS='-b 192'
+ #ID3OPTS=
+ #ID3V2OPTS=
+ #CDPARANOIAOPTS=
+@@ -96,7 +96,7 @@
+ #NOCDDBQUERY=n
+ 
+ # CD device you want to read from
+-#CDROM=/dev/cdrom
++#CDROM=/dev/cd0c
+ 
+ # If you'd like to make a default location that overrides the current
+ # directory for putting mp3's, uncomment this.
+@@ -115,7 +115,7 @@
+ # OUTPUTTYPE, ALBUMFILE, ARTISTFILE, TRACKFILE, and TRACKNUM.
+ # Make sure to single-quote this variable. abcde will automatically create
+ # the directory portion of this filename.
+-#OUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.${OUTPUTTYPE}'
++#OUTPUTFORMAT='${ARTISTFILE}/${TRACKNUM}-${TRACKFILE}.${OUTPUTTYPE}'
+ 
+ # Like OUTPUTFORMAT but for Various Artists discs.
+ #VAOUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.${OUTPUTTYPE}'

@@ -1,0 +1,8 @@
+abcde is a front end command-line utility (actually, a shell script)
+that grabs tracks off a CD, encodes them to ogg or mp3 format, and
+tags and names them with data from a CDDB server, all in one go.
+
+You may want to copy ${PREFIX}/share/examples/abcde/abcde.conf
+to your homedir as .abcde.conf and adjust it to your needs.
+
+WWW: ${HOMEPAGE}
