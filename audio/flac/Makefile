@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/31 20:24:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/26 14:18:23 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 COMMENT-xmms=	"XMMS input plugin for playing FLAC files"
@@ -31,6 +31,7 @@ LIB_DEPENDS+=	xmms.2::audio/xmms
 BUILD_DEPENDS+=	nasm::devel/nasm
 .endif
 
+USE_LIBTOOL=	Yes	# included libtool is broken
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 
@@ -43,6 +44,8 @@ DOCDIR=		${PREFIX}/share/doc/flac
 
 post-extract:
 	@rm -rf ${WRKSRC}/obj
+# configure ignores LIBTOOL
+	@cd ${LOCALBASE}/share/libtool && cp ltconfig ltmain.sh ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
