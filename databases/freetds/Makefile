@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/06 19:58:33 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 00:12:12 jcs Exp $
 
 DISTNAME=	freetds-0.52
 CATEGORIES=	databases
@@ -24,8 +24,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 MAKE_ENV=	RM=rm
 
 post-install:
+	@sed -e "s:@sysconfdir@:${SYSCONFDIR}:g" ${WRKSRC}/freetds.conf > \
+		${WRKSRC}/freetds.conf.new
 	@mkdir ${PREFIX}/share/examples/freetds
-	${INSTALL_DATA} ${WRKSRC}/freetds.conf \
+	${INSTALL_DATA} ${WRKSRC}/freetds.conf.new \
 		${PREFIX}/share/examples/freetds/freetds.conf-sample
 
 .include <bsd.port.mk>
