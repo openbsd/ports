@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/07 21:05:33 lebel Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
-V=			2.95
+V=			3.0.0
 DISTNAME=		grip-${V}
-PKGNAME=		${DISTNAME}p1
 CATEGORIES=		audio
 NEED_VERSION=		1.515
-EXTRACT_SUFX=		.tgz
+EXTRACT_SUFX=		.tar.gz
 
 MAINTAINER=		David Lebel <lebel@openbsd.org>
 
@@ -20,17 +19,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.nostatic.org/grip/
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
-			gthread.1.2::devel/glib
+LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
+		gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
+		ghttp::www/libghttp \
+		id3.3.8::audio/id3lib
 
+USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
-ALL_TARGET=		gripnopar gcd
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I/usr/local/include -pthread" \
+			LDFLAGS="-L/usr/local/lib -pthread"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/grip ${PREFIX}/bin/	
-	${INSTALL_PROGRAM} ${WRKSRC}/gcd ${PREFIX}/bin/	
-	${INSTALL_DATA} ${WRKSRC}/grip.1 ${PREFIX}/man/man1/
+CONFIGURE_ARGS+=	--disable-cdpar
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2002/05/07 21:05:33 lebel Exp $
+--- configure.orig	Sat Apr 13 14:30:44 2002
++++ configure	Tue May  7 12:03:37 2002
+@@ -8264,7 +8264,7 @@ main ()
+ EOF
+ if { (eval echo configure:8266: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ then
+-  . conftest.id3
++  . $srcdir/conftest.id3
+    echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}"
+ else
+   echo "configure: failed program was:" >&5

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_grip_h,v 1.1 2002/05/07 21:05:33 lebel Exp $
+--- src/grip.h.orig	Fri Feb 15 11:34:01 2002
++++ src/grip.h	Thu Feb 21 12:07:40 2002
+@@ -42,7 +42,7 @@
+ 
+ #define RRand(range) (random()%(range))
+ 
+-#if defined(__linux__) || defined(__FreeBSD__) || defined(__osf__)  /* __osf__ ?? */
++#if defined(__linux__) || defined(__OpenBSD__) || defined(__osf__)  /* __osf__ ?? */
+ 
+ #define MAILER "/usr/sbin/sendmail -i -t"
+ 

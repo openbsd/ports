@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cdplay_c,v 1.1 2002/05/07 21:05:33 lebel Exp $
+--- src/cdplay.c.orig	Sun Mar  3 13:10:47 2002
++++ src/cdplay.c	Tue May  7 12:07:19 2002
+@@ -87,7 +87,7 @@ static void DiscDBToggle(GtkWidget *widg
+   if(ginfo->looking_up) {
+ #if defined(__sun__)
+     pthread_exit(&status);
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+     pthread_kill(ginfo->discdb_thread,0);
+ #else
+     pthread_kill_other_threads_np();
