@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
---- config.orig	Sun Aug 25 19:50:21 2002
-+++ config	Sun Nov 17 10:43:18 2002
+$OpenBSD: patch-config,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- config.orig	Wed Mar  5 11:34:15 2003
++++ config	Sat Mar 29 18:17:02 2003
 @@ -104,7 +104,7 @@
  #      flat, except for confdir/templates, where the HTML templates
  #      for CGI output reside (e.g. Privoxy's 404 error page).
@@ -19,7 +19,7 @@ $OpenBSD: patch-config,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
  
  #  
  #  1.3. actionsfile
-@@ -417,8 +417,8 @@ jarfile jarfile
+@@ -438,8 +438,8 @@ jarfile jarfile
  #      don't end up locked out from the information on why they were
  #      locked out in the first place!
  #  

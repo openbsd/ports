@@ -1,7 +1,7 @@
-$OpenBSD: patch-actions_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
---- actions.c.orig	Sun May 26 08:13:16 2002
-+++ actions.c	Sun Nov 17 12:55:23 2002
-@@ -1194,7 +1194,7 @@ static int load_one_actions_file(struct 
+$OpenBSD: patch-actions_c,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- actions.c.orig	Fri Feb 28 07:52:10 2003
++++ actions.c	Sat Mar 29 18:17:02 2003
+@@ -1206,7 +1206,7 @@ static int load_one_actions_file(struct 
              init_action(cur_action);
  
              /* trim { */
@@ -10,7 +10,7 @@ $OpenBSD: patch-actions_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
  
              /* check we have a trailing } and then trim it */
              end = actions_buf + strlen(actions_buf) - 1;
-@@ -1294,7 +1294,7 @@ static int load_one_actions_file(struct 
+@@ -1306,7 +1306,7 @@ static int load_one_actions_file(struct 
  
           new_alias->name = strdup(buf);
  

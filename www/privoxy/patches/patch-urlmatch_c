@@ -1,7 +1,7 @@
-$OpenBSD: patch-urlmatch_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
---- urlmatch.c.orig	Sun Nov 17 12:20:12 2002
-+++ urlmatch.c	Sun Nov 17 12:33:11 2002
-@@ -664,7 +664,7 @@ jb_err create_url_spec(struct url_spec *
+$OpenBSD: patch-urlmatch_c,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- urlmatch.c.orig	Fri Feb 28 08:09:29 2003
++++ urlmatch.c	Sat Mar 29 18:17:03 2003
+@@ -686,7 +686,7 @@ jb_err create_url_spec(struct url_spec *
           return JB_ERR_MEMORY;
        }
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-miscutil_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
---- miscutil.c.orig	Sun Nov 17 12:20:12 2002
-+++ miscutil.c	Sun Nov 17 12:50:52 2002
-@@ -337,7 +337,7 @@ char *strdup( const char *s )
+$OpenBSD: patch-miscutil_c,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- miscutil.c.orig	Tue Nov 12 09:28:18 2002
++++ miscutil.c	Sat Mar 29 18:17:03 2003
+@@ -344,7 +344,7 @@ char *strdup( const char *s )
  
     if (result != NULL)
     {
@@ -10,7 +10,7 @@ $OpenBSD: patch-miscutil_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
     }
  
     return( result );
-@@ -375,7 +375,7 @@ char *safe_strerror(int err)
+@@ -382,7 +382,7 @@ char *safe_strerror(int err)
  
     if (s == NULL)
     {

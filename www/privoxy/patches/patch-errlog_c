@@ -1,7 +1,7 @@
-$OpenBSD: patch-errlog_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
---- errlog.c.orig	Sun Nov 17 12:20:12 2002
-+++ errlog.c	Sun Nov 17 12:45:19 2002
-@@ -540,7 +540,7 @@ void log_error(int loglevel, char *fmt, 
+$OpenBSD: patch-errlog_c,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- errlog.c.orig	Thu Mar  6 22:41:04 2003
++++ errlog.c	Sat Mar 29 18:17:02 2003
+@@ -564,7 +564,7 @@ void log_error(int loglevel, char *fmt, 
           case 'd':
              ival = va_arg( ap, int );
              oldoutc = outc;
@@ -10,7 +10,7 @@ $OpenBSD: patch-errlog_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
              if (outc < BUFFER_SIZE-1) 
              {
                 strcpy(outbuf + oldoutc, tempbuf);
-@@ -553,7 +553,7 @@ void log_error(int loglevel, char *fmt, 
+@@ -577,7 +577,7 @@ void log_error(int loglevel, char *fmt, 
           case 'u':
              uval = va_arg( ap, unsigned );
              oldoutc = outc;
@@ -19,7 +19,7 @@ $OpenBSD: patch-errlog_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
              if (outc < BUFFER_SIZE-1) 
              {
                 strcpy(outbuf + oldoutc, tempbuf);
-@@ -570,13 +570,13 @@ void log_error(int loglevel, char *fmt, 
+@@ -594,13 +594,13 @@ void log_error(int loglevel, char *fmt, 
              {
                 lval = va_arg( ap, long );
                 oldoutc = outc;
@@ -35,7 +35,7 @@ $OpenBSD: patch-errlog_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
              }
              else
              {
-@@ -668,7 +668,7 @@ void log_error(int loglevel, char *fmt, 
+@@ -700,7 +700,7 @@ void log_error(int loglevel, char *fmt, 
  #endif /* ndef HAVE_STRERROR */
              if (sval == NULL)
              {
@@ -44,7 +44,7 @@ $OpenBSD: patch-errlog_c,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
                 sval = tempbuf;
              }
  #endif /* ndef _WIN32 */
-@@ -714,7 +714,7 @@ void log_error(int loglevel, char *fmt, 
+@@ -754,7 +754,7 @@ void log_error(int loglevel, char *fmt, 
                 hrs = ((days < -1 ? 24 : 1 < days ? -24 : days * 24) + tm_now->tm_hour - gmt.tm_hour); 
                 mins = hrs * 60 + tm_now->tm_min - gmt.tm_min; 
                 strftime (tempbuf, BUFFER_SIZE-6, "%d/%b/%Y:%H:%M:%S ", tm_now); 

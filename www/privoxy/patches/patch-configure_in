@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
---- configure.in.orig	Mon Nov 25 21:04:43 2002
-+++ configure.in	Mon Nov 25 21:05:32 2002
+$OpenBSD: patch-configure_in,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- configure.in.orig	Tue Mar 25 19:25:00 2003
++++ configure.in	Sat Mar 29 18:17:02 2003
 @@ -1,4 +1,4 @@
 -dnl Process this file with autoconf to produce a configure script.
 +/rdnl Process this file with autoconf to produce a configure script.
  dnl 
- dnl $Id: patch-configure_in,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+ dnl $Id: patch-configure_in,v 1.2 2003/04/01 20:52:59 sturm Exp $
  dnl 
-@@ -617,24 +617,6 @@ if test $dodk != no; then
+@@ -705,24 +705,6 @@ if test $dodk != no; then
  fi
  AC_SUBST(WDUMP)
  AC_SUBST(DB2HTML)

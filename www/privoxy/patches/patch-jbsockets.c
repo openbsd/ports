@@ -1,41 +1,30 @@
-$OpenBSD: patch-jbsockets.c,v 1.1 2003/02/24 06:44:26 pvalchev Exp $
---- jbsockets.c.orig	Sun May 26 16:41:27 2002
-+++ jbsockets.c	Thu Feb 13 13:44:58 2003
-@@ -185,6 +185,7 @@ const char jbsockets_rcs[] = "$Id: jbsoc
+$OpenBSD: patch-jbsockets.c,v 1.2 2003/04/01 20:52:59 sturm Exp $
+--- jbsockets.c.orig	Thu Mar  6 22:41:04 2003
++++ jbsockets.c	Sat Mar 29 18:40:39 2003
+@@ -237,7 +237,7 @@ const char jbsockets_rcs[] = "$Id: jbsoc
  
- #include "config.h"
+ #endif
  
-+#include <pthread.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <string.h>
-@@ -710,8 +711,13 @@ int accept_connection(struct client_stat
+-#ifdef OSX_DARWIN
++#if defined(OSX_DARWIN) || defined(__OpenBSD__)
+ #include <pthread.h>
+ #include "jcc.h"
+ /* jcc.h is for mutex semaphores only */
+@@ -723,7 +723,7 @@ int accept_connection(struct client_stat
+       {
           host = NULL;
        }
- #else
--      host = gethostbyaddr((const char *)&server.sin_addr, 
--                           sizeof(server.sin_addr), AF_INET);
-+		{
-+				  static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-+				  pthread_mutex_lock(&mutex);
-+				  host = gethostbyaddr((const char *)&server.sin_addr, 
-+											  sizeof(server.sin_addr), AF_INET);
-+				  pthread_mutex_unlock(&mutex);
-+		}
- #endif
-       if (host == NULL)
+-#elif defined(OSX_DARWIN)
++#elif defined(OSX_DARWIN) || defined(__OpenBSD__)
+       pthread_mutex_lock(&gethostbyaddr_mutex);
+       host = gethostbyaddr((const char *)&server.sin_addr, 
+                            sizeof(server.sin_addr), AF_INET);
+@@ -802,7 +802,7 @@ unsigned long resolve_hostname_to_ip(con
        {
-@@ -784,7 +790,12 @@ unsigned long resolve_hostname_to_ip(con
           hostp = NULL;
        }
- #else
--      hostp = gethostbyname(host);
-+		{
-+				  static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-+				  pthread_mutex_lock(&mutex);
-+				  hostp = gethostbyname(host);
-+				  pthread_mutex_unlock(&mutex);
-+		}
- #endif /* def HAVE_GETHOSTBYNAME_R_(6|5|3)_ARGS */
-       if (hostp == NULL)
-       {
+-#elif OSX_DARWIN
++#elif defined(OSX_DARWIN) || defined(__OpenBSD__)
+       pthread_mutex_lock(&gethostbyname_mutex);
+       hostp = gethostbyname(host);
+       pthread_mutex_unlock(&gethostbyname_mutex);
