@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/12/26 23:46:05 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/03/07 14:37:58 reinhard Exp $
 bin/irssi
-lib/irssi/modules/libfe_common_irc_dcc.a
-lib/irssi/modules/libfe_common_irc_dcc.la
-lib/irssi/modules/libfe_common_irc_flood.a
-lib/irssi/modules/libfe_common_irc_flood.la
-lib/irssi/modules/libfe_common_irc_notifylist.a
-lib/irssi/modules/libfe_common_irc_notifylist.la
+lib/irssi/modules/libfe_irc_dcc.a
+lib/irssi/modules/libfe_irc_dcc.la
+lib/irssi/modules/libfe_irc_notifylist.a
+lib/irssi/modules/libfe_irc_notifylist.la
 lib/irssi/modules/libirc_dcc.a
 lib/irssi/modules/libirc_dcc.la
 lib/irssi/modules/libirc_flood.a
@@ -17,13 +15,19 @@ lib/irssi/modules/libproxy.la
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
 share/doc/irssi/formats.txt
+share/doc/irssi/manual.txt
+share/doc/irssi/perl.txt
+share/doc/irssi/signals.txt
+share/doc/irssi/special_vars.txt
+share/doc/irssi/startup-HOWTO.html
+share/doc/irssi/startup-HOWTO.txt
 share/doc/irssi/help/action
 share/doc/irssi/help/admin
 share/doc/irssi/help/alias
 share/doc/irssi/help/away
 share/doc/irssi/help/ban
-share/doc/irssi/help/bantype
 share/doc/irssi/help/beep
+share/doc/irssi/help/bind
 share/doc/irssi/help/cat
 share/doc/irssi/help/cd
 share/doc/irssi/help/channel
@@ -40,6 +44,7 @@ share/doc/irssi/help/die
 share/doc/irssi/help/disconnect
 share/doc/irssi/help/echo
 share/doc/irssi/help/eval
+share/doc/irssi/help/exec
 share/doc/irssi/help/format
 share/doc/irssi/help/hash
 share/doc/irssi/help/help
@@ -56,8 +61,11 @@ share/doc/irssi/help/kickban
 share/doc/irssi/help/kill
 share/doc/irssi/help/knockout
 share/doc/irssi/help/lastlog
+share/doc/irssi/help/layout
+share/doc/irssi/help/levels
 share/doc/irssi/help/links
 share/doc/irssi/help/list
+share/doc/irssi/help/load
 share/doc/irssi/help/log
 share/doc/irssi/help/lusers
 share/doc/irssi/help/map
@@ -83,9 +91,11 @@ share/doc/irssi/help/quit
 share/doc/irssi/help/quote
 share/doc/irssi/help/rawlog
 share/doc/irssi/help/reconnect
+share/doc/irssi/help/rehash
 share/doc/irssi/help/reload
 share/doc/irssi/help/restart
 share/doc/irssi/help/rmreconns
+share/doc/irssi/help/rmrejoins
 share/doc/irssi/help/rping
 share/doc/irssi/help/run
 share/doc/irssi/help/save
@@ -106,6 +116,7 @@ share/doc/irssi/help/ts
 share/doc/irssi/help/unalias
 share/doc/irssi/help/unban
 share/doc/irssi/help/unignore
+share/doc/irssi/help/unload
 share/doc/irssi/help/unnotify
 share/doc/irssi/help/unquery
 share/doc/irssi/help/unsilence
@@ -114,6 +125,7 @@ share/doc/irssi/help/userhost
 share/doc/irssi/help/ver
 share/doc/irssi/help/version
 share/doc/irssi/help/voice
+share/doc/irssi/help/wait
 share/doc/irssi/help/wall
 share/doc/irssi/help/wallchops
 share/doc/irssi/help/wallops
@@ -123,11 +135,6 @@ share/doc/irssi/help/whowas
 share/doc/irssi/help/window
 share/doc/irssi/help/wjoin
 share/doc/irssi/help/wquery
-share/doc/irssi/manual.txt
-share/doc/irssi/perl.txt
-share/doc/irssi/signals.txt
-share/doc/irssi/special_vars.txt
-share/doc/irssi/startup-HOWTO.txt
 share/examples/irssi/colorless.theme
 share/examples/irssi/config
 share/examples/irssi/default.theme

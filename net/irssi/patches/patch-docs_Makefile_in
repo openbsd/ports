@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.1 2000/12/26 23:46:05 reinhard Exp $
---- docs/Makefile.in.orig	Sun Dec  3 08:24:43 2000
-+++ docs/Makefile.in	Wed Dec 27 00:17:06 2000
-@@ -113,7 +113,7 @@ perlpath = @perlpath@
+$OpenBSD: patch-docs_Makefile_in,v 1.2 2001/03/07 14:37:58 reinhard Exp $
+--- docs/Makefile.in.orig	Sun Mar  4 17:24:08 2001
++++ docs/Makefile.in	Wed Mar  7 14:23:49 2001
+@@ -116,7 +116,7 @@ perl_static_lib = @perl_static_lib@
+ perlpath = @perlpath@
  sedpath = @sedpath@
- static_lib = @static_lib@
  
 -docdir = $(prefix)/doc/irssi
 +docdir = $(prefix)/share/doc/irssi
  
- doc_DATA =  	botnet.txt 	design.txt 	formats.txt 	manual.txt 	perl.txt 	signals.txt 	special_vars.txt 	startup-HOWTO.txt
+ doc_DATA =  	botnet.txt 	design.txt 	formats.txt 	manual.txt 	perl.txt 	signals.txt 	special_vars.txt 	startup-HOWTO.html 	startup-HOWTO.txt
  
