@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/07/08 21:24:51 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/08/08 17:03:21 avsm Exp $
 bin/couriertls
 bin/deliverquota
 bin/imapd
@@ -12,7 +12,7 @@ libexec/authlib/authuserdb
 libexec/couriertcpd
 libexec/imapd-ssl.rc
 libexec/imapd.rc
-libexec/logger
+libexec/courierlogger
 libexec/makedatprog
 man/man1/couriertcpd.1
 man/man1/maildirmake.1

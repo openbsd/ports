@@ -1,12 +1,13 @@
---- Makefile.in.orig	Fri Dec 29 14:57:58 2000
-+++ Makefile.in	Fri Dec 29 14:58:29 2000
-@@ -821,9 +821,6 @@ install-exec-local:
+$OpenBSD: patch-Makefile_in,v 1.4 2002/08/08 17:03:21 avsm Exp $
+--- Makefile.in.orig	Thu Aug  8 16:48:19 2002
++++ Makefile.in	Thu Aug  8 16:48:41 2002
+@@ -832,9 +832,6 @@ install-exec-local:
  	test ! -x tcpd/couriertls || $(INSTALL_PROGRAM) $(INSTALL_STRIP_FLAG) \
  		tcpd/couriertls $(DESTDIR)$(bindir)/couriertls
  	$(mkinstalldirs) $(DESTDIR)$(sbindir)
 -	for f in mkimapdcert mkpop3dcert vchkpw2userdb makeuserdb pw2userdb userdb ; \
 -		do rm -f $(DESTDIR)$(sbindir)/$$f ; \
 -		$(LN_S) $(datadir)/$$f $(DESTDIR)$(sbindir)/$$f ; done
+ 	$(mkinstalldirs) $(DESTDIR)$(localstatedir)
  
- # If authlib built authpam, install the PAM configuration file
- 
+ install-exec-hook:

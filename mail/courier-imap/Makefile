@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/07/08 21:24:50 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.29 2002/08/08 17:03:21 avsm Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -6,7 +6,7 @@ COMMENT-ldap=	"ldap authentication module for courier-imap"
 COMMENT-mysql=	"mysql authentication module for courier-imap"
 COMMENT-pgsql=	"pgsql authentication module for courier-imap"
 
-COURIERVER=	1.5.1
+COURIERVER=	1.5.3
 DISTNAME=	courier-imap-${COURIERVER}
 FULLPKGNAME-pop3= courier-pop3-${COURIERVER}
 
@@ -24,8 +24,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-pop3 -ldap -mysql -pgsql
+MULTI_PACKAGES=	-pop3
 SUBPACKAGE?=
+FLAVOR?=
 
 COURIERCONF=	${SYSCONFDIR}/courier-imap
 COURIERSTATE=	/var/run/courier-imap
@@ -47,19 +48,35 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-db=gdbm --with-authpwd
 
 # mysql
+PSEUDO_FLAVORS+=	no_mysql
+.if ${FLAVOR:L:Mno_mysql}
+CONFIGURE_ARGS+=	--without-authmysql
+.else
+MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-authmysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
 MYSQL_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
+.endif
 
 # openldap
+PSEUDO_FLAVORS+=	no_ldap
+.if ${FLAVOR:L:Mno_ldap}
+CONFIGURE_ARGS+=	--without-authldap
+.else
+MULTI_PACKAGES+=	-ldap
 CONFIGURE_ARGS+=	--with-authldap
 LDAP_DEPENDS+=		ldap.2,lber.2:openldap-client-2.*:databases/openldap
+.endif
 
 # postgresql
+PSEUDO_FLAVORS+=	no_pgsql
+.if !${FLAVOR:L:Mno_pgsql}
+MULTI_PACKAGES+=	-pgsql
 CONFIGURE_ARGS+=	--with-pgsql-libs=${LOCALBASE}/lib \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
 PGSQL_DEPENDS+=		pq.2::databases/postgresql
+.endif
 
 # pop3 has no dependencies
 POP3_DEPENDS=
