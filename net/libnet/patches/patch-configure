@@ -1,24 +1,14 @@
-$OpenBSD: patch-configure,v 1.2 2001/01/10 01:00:37 naddy Exp $
---- configure.orig	Wed Oct 27 20:47:27 1999
-+++ configure	Wed Jan 10 00:14:20 2001
-@@ -901,11 +901,6 @@ fi
+--- configure.orig	Mon Feb 19 00:53:23 2001
++++ configure	Mon Feb 19 00:54:54 2001
+@@ -958,11 +958,6 @@ fi
  
  
  
 -if test $ac_cv_prog_gcc = yes; then
--    CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -Wall'
+-    CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
 -    CFLAGS="$CCOPTS"
 -fi
 -
  # Check whether --with-pf_packet or --without-pf_packet was given.
  if test "${with_pf_packet+set}" = set; then
    withval="$with_pf_packet"
-@@ -1532,7 +1527,7 @@ EOF
- EOF
- 
-     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS"
--    MAN_PREFIX="$prefix/local/man/man3/"
-+    MAN_PREFIX="$prefix/man/man3/"
-     LIB_PREFIX="$prefix/lib/"
-     INC_PREFIX="$prefix/include/"
-     BIN_PREFIX="$prefix/bin/"
