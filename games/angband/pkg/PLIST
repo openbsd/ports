@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/22 11:14:51 espie Exp $
 bin/angband
 share/angband/
 @comment share/angband/apex/
@@ -66,4 +66,11 @@ share/angband/pref/xtra-xxx.prf
 @comment share/angband/save/
 @comment share/angband/user/
 share/angband/xtra/
-@extraunexec rm -rf /var/games/angband
+@mode 775
+@group games
+@sample /var/games/angband/
+@sample /var/games/angband/apex/
+@sample /var/games/angband/save/
+@sample /var/games/angband/data/
+@sample /var/games/angband/bone/
+@extraunexec rm /var/games/angband/*/* 2>/dev/null || true
