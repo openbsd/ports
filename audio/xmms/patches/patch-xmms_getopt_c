@@ -1,0 +1,47 @@
+$OpenBSD: patch-xmms_getopt_c,v 1.1 2002/08/31 07:15:11 wcobb Exp $
+--- xmms/getopt.c.orig	Sat Aug 31 02:16:38 2002
++++ xmms/getopt.c	Sat Aug 31 02:21:19 2002
+@@ -73,9 +73,10 @@
+ 
+ #ifdef VMS
+ #include <unixlib.h>
+-#if HAVE_STRING_H - 0
+-#include <string.h>
+ #endif
++
++#ifdef HAVE_STRING_H
++#include <string.h>
+ #endif
+ 
+ #if defined (WIN32) && !defined (__CYGWIN32__)
+@@ -226,19 +227,6 @@ static char *
+ 	return 0;
+ }
+ 
+-/* If using GCC, we can safely declare strlen this way.
+-   If not using GCC, it is ok not to declare it.  */
+-#ifdef __GNUC__
+-/* Note that Motorola Delta 68k R3V7 comes with GCC but not stddef.h.
+-   That was relevant to code that was here before.  */
+-#if !defined (__STDC__) || !__STDC__
+-/* gcc with -traditional declares the built-in strlen to return int,
+-   and has done so at least since version 2.4.5. -- rms.  */
+-extern int strlen(const char *);
+-
+-#endif /* not __STDC__ */
+-#endif /* __GNUC__ */
+-
+ #endif /* not __GNU_LIBRARY__ */
+ 
+ /* Handle permutation of arguments.  */
+@@ -606,8 +594,8 @@ int
+ 		for (p = longopts, option_index = 0; p->name; p++, option_index++)
+ 			if (!strncmp(p->name, nextchar, nameend - nextchar))
+ 			{
+-				if ((unsigned int) (nameend - nextchar)
+-				    == (unsigned int) strlen(p->name))
++				if ((size_t) (nameend - nextchar)
++				    == strlen(p->name))
+ 				{
+ 					/* Exact match found.  */
+ 					pfound = p;

@@ -1,0 +1,30 @@
+$OpenBSD: patch-Output_sun_configure_c,v 1.1 2002/08/31 07:15:11 wcobb Exp $
+--- Output/sun/configure.c.orig	Sat Aug 31 02:24:28 2002
++++ Output/sun/configure.c	Sat Aug 31 02:24:53 2002
+@@ -152,7 +152,7 @@ configure_mixer_volumedev_scan(gchar *ty
+ 			item = gtk_menu_item_new_with_label(_(info.label.name));
+ 			gtk_signal_connect(GTK_OBJECT(item), "activate",
+ 			    configure_win_mixer_volume_dev_cb,
+-			    (gpointer) info.index);
++			    GINT_TO_POINTER(info.index));
+ 
+ 			gtk_widget_show(item);
+ 			gtk_menu_append(GTK_MENU(menu), item);
+@@ -336,7 +336,7 @@ configure_mixer_toggle_button(GtkWidget 
+ 			gtk_signal_connect(GTK_OBJECT(toggle_cbutton),
+ 			    "toggled",
+ 			    GTK_SIGNAL_FUNC(mixer_cbutton_toggled_cb),
+-			    (gpointer) mixer.dev);
++			    GINT_TO_POINTER(mixer.dev));
+ 		}
+ 	}
+ }
+@@ -405,8 +405,6 @@ configure_stats_loop(void)
+ 	}
+ 	while (stats_frame.active && stats_frame.fd) {
+ 		audio_info_t info;
+-		int wseek;
+-		int rerror;
+ 		gchar sl[32];
+ 
+ 		pthread_mutex_lock(&stats_frame.audioctl_mutex);
