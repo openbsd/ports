@@ -1,6 +1,6 @@
-$OpenBSD: patch-audio_esd_c,v 1.1 2001/04/24 00:48:12 naddy Exp $
---- audio_esd.c.orig	Fri May 28 17:06:29 1999
-+++ audio_esd.c	Sun Apr 15 00:22:08 2001
+$OpenBSD: patch-audio_esd_c,v 1.2 2004/04/20 01:45:30 jolan Exp $
+--- audio_esd.c.orig	1999-05-28 10:06:29.000000000 -0500
++++ audio_esd.c	2004-04-19 11:15:34.000000000 -0500
 @@ -75,7 +75,7 @@ int audio_open(struct audio_info_struct 
    else if (ai->rate > esd_rate)
      return -1;
@@ -18,14 +18,14 @@ $OpenBSD: patch-audio_esd_c,v 1.1 2001/04/24 00:48:12 naddy Exp $
  void audio_queueflush (struct audio_info_struct *ai)
  {
 -        ioctl (ai->fn, I_FLUSH, FLUSHRW);
--}
++  return;
+ }
 -#endif
 -
 -#ifdef NETBSD
 -void audio_queueflush (struct audio_info_struct *ai)
 -{
 -        ioctl (ai->fn, AUDIO_FLUSH, 0);
-+  return;
- }
+-}
 -#endif
 -
