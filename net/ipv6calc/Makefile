@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/10/07 15:58:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2003/12/12 18:07:36 pvalchev Exp $
 
 COMMENT=	"tool for manipulating IPv6 addresses"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
 
-MAKE_FLAGS=	CC="${CC}" COPTS="${CFLAGS}"
+MAKE_FLAGS=	CC="${CC}" COPTS+="${CFLAGS}"
 
 REGRESS_TARGET=	test
 
