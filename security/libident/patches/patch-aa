@@ -1,60 +1,39 @@
-*** Makefile.orig	Sun Sep 15 01:13:03 1996
---- Makefile	Sun Sep 15 01:14:06 1996
-***************
-*** 8,14 ****
-  RANLIB=ranlib
-  AR=ar cq
-  
-! INSTROOT=/usr/local
-  LIBDIR=$(INSTROOT)/lib
-  INCDIR=$(INSTROOT)/include
-  MANDIR=$(INSTROOT)/man/man3
---- 8,14 ----
-  RANLIB=ranlib
-  AR=ar cq
-  
-! INSTROOT=${PREFIX}
-  LIBDIR=$(INSTROOT)/lib
-  INCDIR=$(INSTROOT)/include
-  MANDIR=$(INSTROOT)/man/man3
-***************
-*** 19,25 ****
-  # Add -DHAVE_ANSIHEADERS if your system have the ANSI C header files
-  # needed for our purposes (stdlib, string, unistd).
-  #
-! CFLAGS = -O
-  
-  LDLIBS =
-  LIBIDENT = libident.a
---- 19,25 ----
-  # Add -DHAVE_ANSIHEADERS if your system have the ANSI C header files
-  # needed for our purposes (stdlib, string, unistd).
-  #
-! #CFLAGS = -O
-  
-  LDLIBS =
-  LIBIDENT = libident.a
-***************
-*** 32,37 ****
---- 32,38 ----
-  	@echo ""
-  	@echo aix
-  	@echo bsd
-+ 	@echo openbsd
-  	@echo dynix
-  	@echo hpux
-  	@echo irix
-***************
-*** 121,126 ****
---- 122,132 ----
-  #
-  bsd:
-  	@$(MAKE) all CC="$(CC)" CFLAGS="-O -DSIGRETURNTYPE=int"
-+ 
-+ #
-+ # FreeBSD 2.x
-+ openbsd:
-+ 	@$(MAKE) all CC="$(CC)" CFLAGS="${CFLAGS} -Wall -DHAVE_ANSIHEADERS"
-  
-  #
-  #
+--- Makefile.orig	Tue Jan 19 16:11:38 1999
++++ Makefile	Tue Jan 19 16:13:57 1999
+@@ -8,7 +8,7 @@
+ RANLIB=ranlib
+ AR=ar cq
+ 
+-INSTROOT=/usr/local
++INSTROOT=${PREFIX}
+ LIBDIR=$(INSTROOT)/lib
+ INCDIR=$(INSTROOT)/include
+ MANDIR=$(INSTROOT)/man/man3
+@@ -19,7 +19,7 @@
+ # Add -DHAVE_ANSIHEADERS if your system have the ANSI C header files
+ # needed for our purposes (stdlib, string, unistd).
+ #
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ LDLIBS =
+ LIBIDENT = libident.a
+@@ -33,6 +33,7 @@
+ 	@echo aix
+ 	@echo bsd
+ 	@echo bsd2.11
++	@echo openbsd
+ 	@echo dynix
+ 	@echo hpux
+ 	@echo irix
+@@ -126,6 +127,10 @@
+ bsd2.11:
+ 	@$(MAKE) all CC="$(CC)" CFLAGS="-O -DSIGRETURNTYPE=int -DHAVE_ANSIHEADERS"
+ 
++#
++# OpenBSD 2.x
++openbsd:
++	@$(MAKE) all CC="$(CC)" CFLAGS="${CFLAGS} -Wall -DHAVE_ANSIHEADERS"
+ 
+ #
+ #
