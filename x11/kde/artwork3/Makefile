@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/12/07 20:19:13 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2003/12/08 02:08:23 brad Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -9,7 +9,5 @@ LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kscreensaver::x11/kde/libs3 \
     kwin::x11/kde/base3
 SEPARATE_BUILD=flavored
 
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/apps/kthememgr/Themes
 
 .include <bsd.port.mk>
