@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/28 18:16:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/18 19:16:18 sturm Exp $
 
 COMMENT=	"Python interface to XMMS"
 
@@ -24,6 +24,8 @@ LIB_DEPENDS=	xmms.3::audio/xmms
 MODPY_DISTUTILS_BUILD=		build_ext
 MODPY_DISTUTILS_BUILDARGS=	-I${LOCALBASE}/include \
 				-L${LOCALBASE}/lib
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-xmms

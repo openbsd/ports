@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/10/11 12:41:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/18 19:16:18 sturm Exp $
 
 COMMENT=	"read and manipulate ID3 tags on MP3 files with Python"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	python
+
+NO_REGRESS=	Yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/py_/py-/}
 
