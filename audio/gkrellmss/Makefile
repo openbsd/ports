@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/12 14:43:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/24 14:28:47 lebel Exp $
 
 COMMENT=	"GKrellM Sound Scope"
 
@@ -17,6 +17,7 @@ MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 

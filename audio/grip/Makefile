@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/24 12:09:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/24 14:24:29 lebel Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			gthread.1.2::devel/glib
 
 USE_GMAKE=		Yes
+NO_REGRESS=		Yes
 
 ALL_TARGET=		gripnopar gcd
 
