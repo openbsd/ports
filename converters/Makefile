@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/09/29 21:32:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/12/27 08:40:54 brad Exp $
 #
 
     SUBDIR += base64
@@ -30,6 +30,7 @@
 #   SUBDIR += uudx
 #   SUBDIR += uulib
     SUBDIR += wv
+    SUBDIR += wv2
 #   SUBDIR += xdeview
     SUBDIR += xlhtml
 
