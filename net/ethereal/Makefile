@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/08/13 06:35:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.32 2000/08/15 14:31:54 jakob Exp $
 
 DISTNAME=	ethereal-0.8.11
 CATEGORIES=	net x11
@@ -12,6 +12,7 @@ MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 HOMEPAGE=	http://ethereal.zing.org/
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+
+BUILD_DEPENDS=	python::lang/python
 
 MAINTAINER=     jakob@openbsd.org
 
@@ -21,7 +22,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-USE_GMAKE=		Yes
 SYSCONFDIR=		${PREFIX}/share/ethereal
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
