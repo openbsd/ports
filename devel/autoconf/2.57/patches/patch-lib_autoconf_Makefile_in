@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_autoconf_Makefile_in,v 1.1.1.1 2003/06/09 12:04:15 espie Exp $
+--- lib/autoconf/Makefile.in.orig	Mon Nov 25 17:00:51 2002
++++ lib/autoconf/Makefile.in	Mon Nov 25 17:01:01 2002
+@@ -101,7 +101,7 @@ dist_autoconflib_DATA = \
+         functions.m4 headers.m4 types.m4 libs.m4 programs.m4
+ 
+ 
+-nodist_autoconflib_DATA = autoconf.m4f
++nodist_autoconflib_DATA = # autoconf.m4f
+ CLEANFILES = $(nodist_autoconflib_DATA)
+ 
+ TAGS_FILES = $(dist_autoconflib_DATA)

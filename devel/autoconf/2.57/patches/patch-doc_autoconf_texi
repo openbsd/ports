@@ -1,0 +1,53 @@
+$OpenBSD: patch-doc_autoconf_texi,v 1.1.1.1 2003/06/09 12:04:15 espie Exp $
+--- doc/autoconf.texi.orig	Tue Dec  3 08:16:32 2002
++++ doc/autoconf.texi	Mon Jun  9 12:05:18 2003
+@@ -4,6 +4,7 @@
+ @setfilename autoconf.info
+ @include version.texi
+ @settitle Autoconf
++@dircategory Programming & development tools
+ @setchapternewpage odd
+ @setcontentsaftertitlepage
+ @finalout
+@@ -97,30 +98,30 @@ published by the Free Software Foundatio
+ 
+ @dircategory GNU programming tools
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts
++* Autoconf-2.57: (autoconf-2.57).         Create source code configuration scripts
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* autoscan: (autoconf)autoscan Invocation.
++* autoscan: (autoconf-2.57)autoscan Invocation.
+                                 Semi-automatic @file{configure.ac} writing
+-* ifnames: (autoconf)ifnames Invocation.
++* ifnames: (autoconf-2.57)ifnames Invocation.
+                                 Listing the conditionals in source code
+-* autoconf: (autoconf)autoconf Invocation.
++* autoconf: (autoconf-2.57)autoconf Invocation.
+                                 How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
++* autoreconf: (autoconf-2.57)autoreconf Invocation.
+                                 Remaking multiple @command{configure} scripts
+-* autoheader: (autoconf)autoheader Invocation.
++* autoheader: (autoconf-2.57)autoheader Invocation.
+                                 How to create configuration templates
+-* autom4te: (autoconf)autom4te Invocation.
++* autom4te: (autoconf-2.57)autom4te Invocation.
+                                 The Autoconf executables backbone
+-* configure: (autoconf)configure Invocation.
++* configure: (autoconf-2.57)configure Invocation.
+                                 Configuring a package
+-* autoupdate: (autoconf)autoupdate Invocation.
++* autoupdate: (autoconf-2.57)autoupdate Invocation.
+                                 Automatic update of @file{configure.ac}
+-* config.status: (autoconf)config.status Invocation.
++* config.status: (autoconf-2.57)config.status Invocation.
+                                 Recreating a configuration
+-* testsuite: (autoconf)testsuite Invocation.
++* testsuite: (autoconf-2.57)testsuite Invocation.
+                                 Running an Autotest test suite
+ @end direntry
+ 
