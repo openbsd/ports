@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2000/07/20 00:18:28 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2000/07/26 14:01:46 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -86,7 +86,7 @@ BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
 BUILD_DEPENDS+=bison::devel/bison
 .endif
 
-LATEST_DATE=2000-07-17
+LATEST_DATE=2000-07-24
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -243,7 +243,6 @@ CONFIGURE_ENV=LANGUAGES='${LANGS}'
 
 
 CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
---disable-subdir-texinfo \
 --disable-nls
 
 # This is needed, as internal cpp is no longer compatible with the
