@@ -1,6 +1,6 @@
---- servconf.c.~1~	Tue Jan 20 04:24:08 1998
-+++ servconf.c	Sat Apr 11 17:33:32 1998
-@@ -203,7 +203,7 @@
+--- servconf.c.orig	Mon May 11 15:37:44 1998
++++ servconf.c	Sun May 31 12:48:17 1998
+@@ -209,7 +209,7 @@
    if (options->idle_timeout == -1)
      options->idle_timeout = 0;
    if (options->check_mail == -1)

@@ -1,15 +1,15 @@
 # OpenBSD makefile for:	ssh
-# Version required:     1.2.22
+# Version required:     1.2.23
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.21 1998/05/24 01:22:11 marc Exp $
+# $OpenBSD: Makefile,v 1.22 1998/06/02 18:09:46 marc Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.22
+DISTNAME=       ssh-1.2.23
 CATEGORIES=	security net
 NO_CDROM=	"CRYPTO: Third party crypto not allowed."
 

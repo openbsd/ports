@@ -1,6 +1,6 @@
---- server_config.sample.orig	Tue Jan 20 04:20:14 1998
-+++ server_config.sample	Sat Apr 11 17:32:30 1998
-@@ -16,13 +16,14 @@
+--- server_config.sample.~1~	Sun May 31 12:49:26 1998
++++ server_config.sample	Sun May 31 12:50:13 1998
+@@ -16,14 +16,14 @@
  FascistLogging no
  PrintMotd yes
  KeepAlive yes
@@ -12,6 +12,7 @@
  PasswordAuthentication yes
  PermitEmptyPasswords yes
  UseLogin no
+-# CheckMail no
 +CheckMail no
  # PidFile /u/zappa/.ssh/pid
  # AllowHosts *.our.com friend.other.com

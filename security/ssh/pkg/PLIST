@@ -1,27 +1,61 @@
-bin/scp
-bin/ssh
-@exec ln -fs %f %B/slogin
+bin/ssh1
+@exec ln -fs %f %B/ssh
+@unexec rm -f %B/ssh
+@exec ln -fs %B/ssh %B/slogin
 @unexec rm -f %B/slogin
-bin/ssh-add
-bin/ssh-agent
-bin/ssh-askpass
-bin/ssh-keygen
-bin/make-ssh-known-hosts
-man/man1/make-ssh-known-hosts.1
-man/man1/scp.1
-man/man1/ssh-add.1
-man/man1/ssh-agent.1
-man/man1/ssh-keygen.1
-man/man1/ssh.1
-@exec ln -fs %f %B/slogin.1
+bin/ssh-keygen1
+@exec ln -fs %f %B/ssh-keygen
+@unexec rm -f %B/ssh-keygen
+bin/ssh-agent1
+@exec ln -fs %f %B/ssh-agent
+@unexec rm -f %B/ssh-agent
+bin/ssh-add1
+@exec ln -fs %f %B/ssh-add
+@unexec rm -f %B/ssh-add
+bin/scp1
+@exec ln -fs %f %B/scp
+@unexec rm -f %B/scp
+bin/ssh-askpass1
+@exec ln -fs %f %B/ssh-askpass
+@unexec rm -f %B/ssh-askpass
+bin/make-ssh-known-hosts1
+@exec ln -fs %f %B/make-ssh-known-hosts
+@unexec rm -f %B/make-ssh-known-hosts
+sbin/sshd1
+@exec ln -fs %f %B/sshd
+@unexec rm -f %B/sshd
+man/man1/make-ssh-known-hosts1.1
+@exec ln -fs %f %B/make-ssh-known-hosts.1
+@unexec rm -f %B/make-ssh-known-hosts.1
+man/man1/scp1.1
+@exec ln -fs %f %B/scp.1
+@unexec rm -f %B/scp.1
+man/man1/ssh-keygen1.1
+@exec ln -fs %f %B/ssh-keygen.1
+@unexec rm -f %B/ssh-keygen.1
+man/man1/ssh-agent1.1
+@exec ln -fs %f %B/ssh-agent.1
+@unexec rm -f %B/ssh-agent.1
+man/man1/ssh-add1.1
+@exec ln -fs %f %B/ssh-add.1
+@unexec rm -f %B/ssh-add.1
+man/man1/ssh1.1
+@exec ln -fs %f %B/ssh.1
+@unexec rm -f %B/ssh.1
+@exec ln -fs %f %B/slogin1.1
+@unexec rm -f %B/slogin1.1
+@exec ln -fs %B/ssh.1 %B/slogin.1
 @unexec rm -f %B/slogin.1
-man/man8/sshd.8
-sbin/sshd
+man/man8/sshd1.8
+@exec ln -fs %f %B/sshd.8
+@unexec rm -f %B/sshd.8
 lib/ssh/server_config.sample
 @exec if [ ! -f /etc/sshd_config ]; then cp %D/%F /etc/sshd_config; fi
 lib/ssh/host_config.sample
 @exec if [ ! -f /etc/ssh_config ]; then cp %D/%F /etc/ssh_config; fi
 @exec if [ ! -f /etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f /etc/ssh_host_key; fi
 @dirrm lib/ssh
-@unexec echo "ssh configuration files stored in /etc have not been removed."
-@unexec echo "you may wish to remove them manually."
+@unexec echo "***"
+@unexec echo "*** ssh configuration files stored in /etc have not been removed."
+@unexec echo "*** you may wish to remove them manually."
+@unexec echo "***"
