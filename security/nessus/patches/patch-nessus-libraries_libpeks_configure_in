@@ -1,0 +1,29 @@
+$OpenBSD: patch-nessus-libraries_libpeks_configure_in,v 1.1 2001/01/13 03:32:07 matt Exp $
+--- nessus-libraries/libpeks/configure.in.orig	Fri Oct  6 05:32:03 2000
++++ nessus-libraries/libpeks/configure.in	Fri Jan 12 21:09:28 2001
+@@ -87,9 +87,9 @@ AC_ARG_ENABLE(gmp,[  --enable-gmp[=/path
+ # can we use gmp as provided by the os ?
+ unset gmplink
+ case $enable_gmp in ''|yes)
+-  AC_CHECK_LIB(gmp,mp_set_memory_functions,gmplink=-lgmp,,$gmpldflags)
+-  AC_CHECK_LIB(gmp2,mp_set_memory_functions,gmplink=-lgmp2,,$gmpldflags)
+-  AC_CHECK_LIB(gmp3,mp_set_memory_functions,gmplink=-lgmp3,,$gmpldflags)
++  AC_CHECK_LIB(gmp,__gmp_set_memory_functions,gmplink=-lgmp,,$gmpldflags)
++  AC_CHECK_LIB(gmp2,__gmp_set_memory_functions,gmplink=-lgmp2,,$gmpldflags)
++  AC_CHECK_LIB(gmp3,__gmp_set_memory_functions,gmplink=-lgmp3,,$gmpldflags)
+ esac
+ 
+ # config options consistency checks
+@@ -125,9 +125,9 @@ else
+ 	AC_MSG_RESULT([from $gmpsrc (configured)])
+ 
+ 	gmpldflags="-L$gmpsrc -L$gmpsrc/lib"
+-        AC_CHECK_LIB(gmp,mp_set_memory_functions,gmplink=-lgmp,,$gmpldflags)
+-        AC_CHECK_LIB(gmp2,mp_set_memory_functions,gmplink=-lgmp2,,$gmpldflags)
+-        AC_CHECK_LIB(gmp3,mp_set_memory_functions,gmplink=-lgmp3,,$gmpldflags)
++        AC_CHECK_LIB(gmp,__gmp_set_memory_functions,gmplink=-lgmp,,$gmpldflags)
++        AC_CHECK_LIB(gmp2,__gmp_set_memory_functions,gmplink=-lgmp2,,$gmpldflags)
++        AC_CHECK_LIB(gmp3,__gmp_set_memory_functions,gmplink=-lgmp3,,$gmpldflags)
+ 	test -z "$gmplink" && AC_MSG_ERROR([
+  *** You loose - the gmp lib was not found at $gmpsrc])
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2000/12/28 16:07:05 matt Exp $
+# $OpenBSD: Makefile,v 1.18 2001/01/13 03:32:07 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
@@ -36,7 +36,7 @@ FLAVORS=no_x11
 FLAVOR?=
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--localstatedir=/var
+CONFIGURE_ARGS+=--localstatedir=/var --enable-gmp=${LOCALBASE}
 
 LIB_DEPENDS=	gmp.4.1::devel/gmp
 

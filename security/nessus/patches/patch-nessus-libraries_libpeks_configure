@@ -1,0 +1,159 @@
+$OpenBSD: patch-nessus-libraries_libpeks_configure,v 1.1 2001/01/13 03:32:07 matt Exp $
+--- nessus-libraries/libpeks/configure.orig	Fri Oct  6 05:32:04 2000
++++ nessus-libraries/libpeks/configure	Fri Jan 12 21:19:18 2001
+@@ -890,9 +890,9 @@ fi
+ # can we use gmp as provided by the os ?
+ unset gmplink
+ case $enable_gmp in ''|yes)
+-  echo $ac_n "checking for mp_set_memory_functions in -lgmp""... $ac_c" 1>&6
+-echo "configure:895: checking for mp_set_memory_functions in -lgmp" >&5
+-ac_lib_var=`echo gmp'_'mp_set_memory_functions | sed 'y%./+-%__p_%'`
++  echo $ac_n "checking for __gmp_set_memory_functions in -lgmp""... $ac_c" 1>&6
++echo "configure:895: checking for __gmp_set_memory_functions in -lgmp" >&5
++ac_lib_var=`echo gmp'_'__gmp_set_memory_functions | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -904,10 +904,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mp_set_memory_functions();
++char __gmp_set_memory_functions();
+ 
+ int main() {
+-mp_set_memory_functions()
++__gmp_set_memory_functions()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:914: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -930,9 +930,9 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-  echo $ac_n "checking for mp_set_memory_functions in -lgmp2""... $ac_c" 1>&6
+-echo "configure:935: checking for mp_set_memory_functions in -lgmp2" >&5
+-ac_lib_var=`echo gmp2'_'mp_set_memory_functions | sed 'y%./+-%__p_%'`
++  echo $ac_n "checking for __gmp_set_memory_functions in -lgmp2""... $ac_c" 1>&6
++echo "configure:935: checking for __gmp_set_memory_functions in -lgmp2" >&5
++ac_lib_var=`echo gmp2'_'__gmp_set_memory_functions | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -944,10 +944,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mp_set_memory_functions();
++char __gmp_set_memory_functions();
+ 
+ int main() {
+-mp_set_memory_functions()
++__gmp_set_memory_functions()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:954: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -970,9 +970,9 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-  echo $ac_n "checking for mp_set_memory_functions in -lgmp3""... $ac_c" 1>&6
+-echo "configure:975: checking for mp_set_memory_functions in -lgmp3" >&5
+-ac_lib_var=`echo gmp3'_'mp_set_memory_functions | sed 'y%./+-%__p_%'`
++  echo $ac_n "checking for __gmp_set_memory_functions in -lgmp3""... $ac_c" 1>&6
++echo "configure:975: checking for __gmp_set_memory_functions in -lgmp3" >&5
++ac_lib_var=`echo gmp3'_'__gmp_set_memory_functions | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -984,10 +984,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mp_set_memory_functions();
++char __gmp_set_memory_functions();
+ 
+ int main() {
+-mp_set_memory_functions()
++__gmp_set_memory_functions()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:994: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -1046,9 +1046,9 @@ else
+ 	echo "$ac_t""from $gmpsrc (configured)" 1>&6
+ 
+ 	gmpldflags="-L$gmpsrc -L$gmpsrc/lib"
+-        echo $ac_n "checking for mp_set_memory_functions in -lgmp""... $ac_c" 1>&6
+-echo "configure:1051: checking for mp_set_memory_functions in -lgmp" >&5
+-ac_lib_var=`echo gmp'_'mp_set_memory_functions | sed 'y%./+-%__p_%'`
++        echo $ac_n "checking for __gmp_set_memory_functions in -lgmp""... $ac_c" 1>&6
++echo "configure:1051: checking for __gmp_set_memory_functions in -lgmp" >&5
++ac_lib_var=`echo gmp'_'__gmp_set_memory_functions | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -1060,10 +1060,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mp_set_memory_functions();
++char __gmp_set_memory_functions();
+ 
+ int main() {
+-mp_set_memory_functions()
++__gmp_set_memory_functions()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1070: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -1086,9 +1086,9 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-        echo $ac_n "checking for mp_set_memory_functions in -lgmp2""... $ac_c" 1>&6
+-echo "configure:1091: checking for mp_set_memory_functions in -lgmp2" >&5
+-ac_lib_var=`echo gmp2'_'mp_set_memory_functions | sed 'y%./+-%__p_%'`
++        echo $ac_n "checking for __gmp_set_memory_functions in -lgmp2""... $ac_c" 1>&6
++echo "configure:1091: checking for __gmp_set_memory_functions in -lgmp2" >&5
++ac_lib_var=`echo gmp2'_'__gmp_set_memory_functions | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -1100,10 +1100,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mp_set_memory_functions();
++char __gmp_set_memory_functions();
+ 
+ int main() {
+-mp_set_memory_functions()
++__gmp_set_memory_functions()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1110: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -1126,9 +1126,9 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-        echo $ac_n "checking for mp_set_memory_functions in -lgmp3""... $ac_c" 1>&6
+-echo "configure:1131: checking for mp_set_memory_functions in -lgmp3" >&5
+-ac_lib_var=`echo gmp3'_'mp_set_memory_functions | sed 'y%./+-%__p_%'`
++        echo $ac_n "checking for __gmp_set_memory_functions in -lgmp3""... $ac_c" 1>&6
++echo "configure:1131: checking for __gmp_set_memory_functions in -lgmp3" >&5
++ac_lib_var=`echo gmp3'_'__gmp_set_memory_functions | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -1140,10 +1140,10 @@ cat > conftest.$ac_ext <<EOF
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char mp_set_memory_functions();
++char __gmp_set_memory_functions();
+ 
+ int main() {
+-mp_set_memory_functions()
++__gmp_set_memory_functions()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1150: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
