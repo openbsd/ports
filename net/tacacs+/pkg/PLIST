@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/30 05:18:07 jsyn Exp $
+bin/tac_plus
+man/man1/tac_plus.1
+share/doc/tacacs+/users_guide
+@dirrm share/doc/tacacs+
