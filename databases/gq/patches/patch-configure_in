@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/05/27 23:49:13 naddy Exp $
+--- configure.in.orig	Fri Jul  5 08:49:19 2002
++++ configure.in	Wed May 28 01:26:41 2003
+@@ -123,7 +123,17 @@ AC_ARG_WITH(kerberos-prefix,
+ 	    ]
+ )
+ 
++AC_ARG_WITH(sasl-prefix,
++	    [  --with-sasl-prefix=PFX     Prefix where SASL libs and headers \
++are installed],
++	    [
++	     CPPFLAGS="$CPPFLAGS -I$with_sasl_prefix/include/sasl"
++	    ]
++)
++
+ AC_CHECK_HEADERS([sasl.h], [AC_DEFINE(HAVE_SASL)])
++
++AC_CHECK_LIB(ldap, ldap_sasl_interactive_bind_s)
+ 
+ AC_CHECK_HEADERS(iconv.h, HAVE_ICONV_H=yes)
+ 
