@@ -1,0 +1,11 @@
+--- gtkgl/Makefile.in.orig	Mon Jun 14 13:02:27 1999
++++ gtkgl/Makefile.in	Mon Jun 14 13:02:40 1999
+@@ -87,7 +87,7 @@
+ 
+ gtkglinclude_HEADERS = gdkgl.h gtkglarea.h
+ libgtkgl_la_SOURCES = gdkgl.c gtkglarea.c
+-libgtkgl_la_LDFLAGS = -version-info $(GTKGL_LIBRARY_VERSION)
++libgtkgl_la_LDFLAGS = -version-info 1:2:0
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ LTLIBRARIES =  $(lib_LTLIBRARIES)

@@ -1,12 +1,12 @@
 include/gtkgl/gdkgl.h
 include/gtkgl/gtkglarea.h
-@dirrm include/gtkgl
-lib/libgtkgl.so.4.0
+lib/libgtkgl.so.1.2
 @exec /sbin/ldconfig -m %B
-lib/libgtkgl.la
 lib/libgtkgl.a
+lib/libgtkgl.la
 share/aclocal/gtkgl.m4
 share/doc/gtkglarea/HOWTO.txt
 share/doc/gtkglarea/gdkgl.txt
 share/doc/gtkglarea/gtkglarea.txt
+@dirrm include/gtkgl
 @dirrm share/doc/gtkglarea

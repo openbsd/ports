@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jun 14 12:29:11 1999
++++ configure	Mon Jun 14 12:29:40 1999
+@@ -1411,7 +1411,7 @@
+ aix*)
+   ac_symcode='[BCDTU]'
+   ;;
+-sunos* | cygwin32* | mingw32*)
++sunos* | cygwin32* | mingw32* | openbsd*)
+   ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
+   ac_symxfrm='_\1 \1'
+   ;;
