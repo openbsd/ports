@@ -1,0 +1,65 @@
+--- figlet.6.orig	Thu Jun 10 03:51:37 1999
++++ figlet.6	Wed Dec 15 04:21:35 1999
+@@ -34,8 +34,7 @@
+ ]
+ [
+ .B \-w
+-.IR outputwidth
+-]
++.IR outputwidth ]
+ .PD 0
+ .IP
+ .PD
+@@ -50,7 +49,27 @@
+ [
+ .I message
+ ]
+-
++.LP
++.B chkfont
++.I fontfile
++[
++.I ...
++]
++.LP
++.B figlist
++[
++.B \-d
++.I font_directory
++]
++.LP
++.B showfigfonts
++[
++.B \-d
++.I font_directory
++]
++[
++sample_word
++]
+ .SH DESCRIPTION
+ .B FIGlet
+ prints its input using large characters
+@@ -94,6 +113,23 @@
+ in compressed form.
+ See
+ .BR "COMPRESSED FONTS" .
++
++.B chkfont
++checks
++.B FIGlet
++fonts for formatting errors.
++.B chkfont
++is useful for those wishing to design or edit their own fonts.
++
++.B figlist
++lists all the available fonts and control files.
++
++.B showfigfonts
++displays a sample of each avaiable font in 
++.I font_directory
++using the name of the font as the sample text, unless
++.I sample_word
++is specified.
+ 
+ .SH USAGE
+ Just start up
