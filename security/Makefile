@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 1999/05/31 16:13:43 dugsong Exp $
+# $OpenBSD: Makefile,v 1.21 1999/05/31 17:13:21 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
+     SUBDIR += ADMsmb
      SUBDIR += ADMsnmp
      SUBDIR += SSLeay
      SUBDIR += bounix
