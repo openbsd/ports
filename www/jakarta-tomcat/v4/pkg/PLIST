@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 15:29:31 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/15 09:31:03 reinhard Exp $
 ${DISTNAME}/LICENSE
 ${DISTNAME}/RELEASE-NOTES-4.0-B1.txt
 ${DISTNAME}/RELEASE-NOTES-4.0-B2.txt
@@ -20,12 +20,14 @@ ${DISTNAME}/bin/catalina.sh
 ${DISTNAME}/bin/digest.sh
 ${DISTNAME}/bin/jasper.sh
 ${DISTNAME}/bin/jspc.sh
+${DISTNAME}/bin/setclasspath.sh
 ${DISTNAME}/bin/shutdown.sh
 ${DISTNAME}/bin/startup.sh
+${DISTNAME}/bin/tool-wrapper.sh
 ${DISTNAME}/common/lib/activation.jar
 ${DISTNAME}/common/lib/jdbc2_0-stdext.jar
 ${DISTNAME}/common/lib/jndi.jar
-${DISTNAME}/common/lib/jta.jar
+${DISTNAME}/common/lib/jta-spec1_0_1.jar
 ${DISTNAME}/common/lib/mail.jar
 ${DISTNAME}/common/lib/naming-common.jar
 ${DISTNAME}/common/lib/naming-resources.jar
@@ -341,6 +343,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-tree.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/Constants.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpCertificates.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConfigurationHandler.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnection.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnector.html
@@ -353,6 +356,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequestHandler.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.Stream.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpSSLData.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-frame.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-tree.html
@@ -427,6 +431,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-fr
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-summary.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/package-tree.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/Constants.html
+${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/GenericPrincipal.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/JDBCRealm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/JNDIRealm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/MemoryRealm.html
@@ -620,6 +625,7 @@ ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-jndi-realm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/fs-memory-realm.html
 ${DISTNAME}/webapps/tomcat-docs/catalina/funcspecs/index.html
 ${DISTNAME}/webapps/tomcat-docs/class-loader-howto.html
+${DISTNAME}/webapps/tomcat-docs/config/ajp.html
 ${DISTNAME}/webapps/tomcat-docs/config/context.html
 ${DISTNAME}/webapps/tomcat-docs/config/defaultcontext.html
 ${DISTNAME}/webapps/tomcat-docs/config/engine.html
@@ -630,6 +636,7 @@ ${DISTNAME}/webapps/tomcat-docs/config/loader.html
 ${DISTNAME}/webapps/tomcat-docs/config/logger.html
 ${DISTNAME}/webapps/tomcat-docs/config/manager.html
 ${DISTNAME}/webapps/tomcat-docs/config/realm.html
+${DISTNAME}/webapps/tomcat-docs/config/resources.html
 ${DISTNAME}/webapps/tomcat-docs/config/server.html
 ${DISTNAME}/webapps/tomcat-docs/config/service.html
 ${DISTNAME}/webapps/tomcat-docs/config/valve.html
