@@ -1,7 +1,8 @@
 
 This software is subject to the terms of the IBM Jikes Compiler Open
-Source License Agreement in doc/jikes*/license.htm, also at this URL:
-http://oss.software.ibm.com/developerworks/opensource/jikes/project/.
+Source License Agreement in ${PREFIX}share/doc/jikes/license.htm, 
+also available at this URL:
+http://ibm.com/developerworks/oss/jikes/
 
 Copyright (C) 1996, 1998, International Business Machines Corporation
 and others.  All Rights Reserved.
