@@ -1,5 +1,5 @@
-lib/ethereal/plugins/0.8.12/libgryphon.so.0.0
-lib/ethereal/plugins/0.8.12/gryphon.la
-lib/ethereal/plugins/0.8.12/libgryphon.a
-@exec ln -s libgryphon.so.0.0 %D/lib/ethereal/plugins/0.8.12/libgryphon.so
-@unexec rm %D/lib/ethereal/plugins/0.8.12/libgryphon.so
+lib/ethereal/plugins/0.8.13/libgryphon.so.0.0
+lib/ethereal/plugins/0.8.13/gryphon.la
+lib/ethereal/plugins/0.8.13/libgryphon.a
+@exec ln -s libgryphon.so.0.0 %D/lib/ethereal/plugins/0.8.13/libgryphon.so
+@unexec rm %D/lib/ethereal/plugins/0.8.13/libgryphon.so
