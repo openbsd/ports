@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:39:33 espie Exp $
-@pkgcfl upsd-*
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:11:38 espie Exp $
+@conflict upsd-*
 bin/apcsmart
 bin/bcmxcp
 bin/belkin

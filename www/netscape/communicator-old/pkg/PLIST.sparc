@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST.sparc,v 1.6 2004/01/15 22:07:28 sturm Exp $
-@pkgcfl navigator-*
+@comment $OpenBSD: PLIST.sparc,v 1.7 2004/09/18 13:15:27 espie Exp $
+@conflict navigator-*
 bin/netscape
 netscape/LICENSE
 netscape/Netscape.ad

@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/08/16 15:27:47 robert Exp $
-@pkgcfl libgtop-*[0-9]
-@pkgcfl libgtop-*[0-9]p[0-9]
-@pkgcfl libgtop-*[0-9]-guile
-@pkgcfl libgtop-*[0-9]p[0-9]-guile
+@comment $OpenBSD: PLIST,v 1.14 2004/09/18 13:19:25 espie Exp $
+@conflict libgtop-*
 bin/dns-helper
 bin/gconfigger
 bin/gnome-bug

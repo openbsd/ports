@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:35:59 espie Exp $
-@pkgcfl cyrus-sasl-*
+@comment $OpenBSD: PLIST,v 1.10 2004/09/18 13:06:43 espie Exp $
+@conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
 include/sasl/md5.h

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:50 espie Exp $
-@pkgcfl communicator-*
-@pkgcfl navigator-*
+@comment $OpenBSD: PLIST,v 1.5 2004/09/18 13:15:27 espie Exp $
+@conflict communicator-*
+@conflict navigator-*
 bin/netscape
 netscape/
 netscape/LICENSE

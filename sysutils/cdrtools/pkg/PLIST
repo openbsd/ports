@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:39:32 espie Exp $
-@pkgcfl cdrecord-*
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:11:38 espie Exp $
+@conflict cdrecord-*
 bin/cdda2wav
 bin/cdrecord
 bin/devdump

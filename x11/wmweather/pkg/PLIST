@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:32 espie Exp $
-@pkgcfl gkrellweather-*
+@comment $OpenBSD: PLIST,v 1.4 2004/09/18 13:19:26 espie Exp $
+@conflict gkrellweather-*
 bin/GrabWeather
 bin/wmWeather
 @man man/man1/wmWeather.1

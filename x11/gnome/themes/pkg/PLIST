@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/06/23 03:26:20 marcm Exp $
-@pkgcfl gtk-thinice-engine-*
+@comment $OpenBSD: PLIST,v 1.9 2004/09/18 13:19:25 espie Exp $
+@conflict gtk-thinice-engine-*
 lib/gtk-2.0/2.4.0/engines/libcrux-engine.a
 lib/gtk-2.0/2.4.0/engines/libcrux-engine.la
 lib/gtk-2.0/2.4.0/engines/libcrux-engine.so

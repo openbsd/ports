@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:36:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/18 13:06:43 espie Exp $
 @option no-default-conflict
-@pkgcfl pgp-2.*
+@conflict pgp->=2,<3
 bin/pgp
 lib/pgp/
 lib/pgp/config.txt

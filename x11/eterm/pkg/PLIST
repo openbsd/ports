@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:28 espie Exp $
-@pkgcfl ja-eterm-[0-9]*
-@pkgcfl eterm-[0-9]*
+@comment $OpenBSD: PLIST,v 1.7 2004/09/18 13:19:26 espie Exp $
+@conflict ja-eterm-*
+@conflict eterm-*
 bin/Esetroot
 bin/Etbg
 bin/Etcolors.sh

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/09/15 19:26:30 espie Exp $
-@pkgcfl openmotif-*
+@comment $OpenBSD: PLIST,v 1.26 2004/09/18 13:19:26 espie Exp $
+@conflict openmotif-*
 LessTif/
 LessTif/Motif1.2/
 LessTif/Motif1.2/bin/

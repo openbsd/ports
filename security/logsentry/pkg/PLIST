@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:36:00 espie Exp $
-@pkgcfl logcheck-1.1.1
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:06:43 espie Exp $
+@conflict logcheck-1.1.1
 bin/logtail
 share/doc/logsentry/
 share/doc/logsentry/CREDITS

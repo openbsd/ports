@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:36:03 espie Exp $
-@pkgcfl dante-*
+@comment $OpenBSD: PLIST,v 1.10 2004/09/18 13:06:43 espie Exp $
+@conflict dante-*
 bin/rarchie
 bin/rfinger
 bin/rftp

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:39:34 espie Exp $
-@pkgcfl nut-[0-9]*
+@comment $OpenBSD: PLIST,v 1.8 2004/09/18 13:11:38 espie Exp $
+@conflict nut-*
 sbin/upsd
 share/examples/upsd/
 share/examples/upsd/upsd.conf-sample
