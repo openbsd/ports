@@ -1,0 +1,22 @@
+--- ./Imakefile.org	Sun Nov 27 01:57:15 1994
++++ ./Imakefile	Sun Nov 27 02:04:16 1994
+@@ -33,7 +33,7 @@
+ #ifdef UltrixArchitecture
+   LOCAL_DEFINES = $(XPM_DEF) -DNOSTEMP
+ #else
+-  LOCAL_DEFINES = $(XPM_DEF)
++  LOCAL_DEFINES = $(XPM_DEF) -DBITMAPDIR=\"$(INCROOT)/X11/bitmaps\" -DSHAPE
+ #endif
+ 
+ LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(EXTENSIONLIB) $(XPMLIB) $(XLIB) $(MATHLIB) $(LEXLIB)
+--- ./twm.h.org	Thu Oct 15 13:31:50 1992
++++ ./twm.h	Sun Dec 22 15:48:14 1996
+@@ -305,8 +305,6 @@
+ #define TBPM_MENU ":menu"	/* name of titlebar pixmap for menus */
+ #define TBPM_QUESTION ":question"	/* name of unknown titlebar pixmap */
+ 
+-extern char *malloc(), *calloc(), *realloc(), *getenv();
+-extern int free();
+ extern void Reborder(), Done();
+ void ComputeCommonTitleOffsets();
+ void ComputeWindowTitleOffsets(), ComputeTitleLocation();

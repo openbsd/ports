@@ -1,0 +1,5 @@
+bin/piewm
+bin/ssetroot
+lib/X11/piewm/system.twmrc
+man/cat1/piewm.0
+@dirrm lib/X11/piewm

@@ -1,0 +1,99 @@
+--- ./Imakefile.orig	Mon Nov 23 15:50:18 1992
++++ ./Imakefile	Tue Nov 22 16:32:18 1994
+@@ -22,10 +22,10 @@
+ /**/# <X11/xpm.h>.
+ /**/#
+ 
+-       PIEWMDIR = /usr/local/lib/piewm
+-         XPMLIB	= -L../xpm -lXpm
+-        XPM_DEF = -DXPM -I../xpm
+-    XLOADIM_DEF = -DXLOADIMAGE=\"/usr/local/bin/xloadimage\"
++       PIEWMDIR = $(LIBDIR)/piewm
++         XPMLIB	= -L$(USRLIBDIR) -lXpm
++        XPM_DEF = -DXPM
++    XLOADIM_DEF = -DXLOADIMAGE=\"$(BINDIR)/xloadimage\"
+         MATHLIB = -lm
+ 
+ /**/#   Ultrix doesn't have a mkstemp in libc...
+@@ -36,7 +36,7 @@
+   LOCAL_DEFINES = $(XPM_DEF)
+ #endif
+ 
+-LOCAL_LIBRARIES = $(XMULIB) $(EXTENSIONLIB) $(XPMLIB) $(XLIB) $(MATHLIB)
++LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(EXTENSIONLIB) $(XPMLIB) $(XLIB) $(MATHLIB)
+        LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+         DEFINES = ExtensionDefines $(LOCAL_DEFINES) $(SIGNAL_DEFINES)
+ 
+@@ -61,9 +61,9 @@
+ ComplexProgramTarget(piewm)
+ NormalProgramTarget(ssetroot,ssetroot.o,,$(LOCAL_LIBRARIES),)
+ 
+-MakeDirectories(install,$(TWMDIR))
+-InstallNonExec(system.twmrc,$(TWMDIR))
+-/**/# InstallNamedProg(ssetroot,xsetroot,$(BINDIR))
++MakeDirectories(install,$(PIEWMDIR))
++InstallNonExec(system.twmrc,$(PIEWMDIR))
++/**/# InstallNamedProg(ssetroot,ssetroot,$(BINDIR))
+ 
+ gram.h gram.c: gram.y
+ 	$(YACC) $(YFLAGS) gram.y
+--- ./gram.y.orig	Wed Oct  7 23:41:31 1992
++++ ./gram.y	Wed May 18 11:50:47 1994
+@@ -71,7 +71,7 @@
+ extern int do_single_keyword(), do_string_keyword(), do_number_keyword();
+ extern name_list **do_colorlist_keyword();
+ extern int do_color_keyword();
+-extern int yylineno;
++int yylineno;
+ %}
+ 
+ %union
+--- ./lex.l.orig	Sun Oct  4 00:50:52 1992
++++ ./lex.l	Wed May 18 11:50:49 1994
+@@ -43,6 +43,18 @@
+ 
+ extern int ParseError;
+ 
++
++#undef YY_INPUT
++#define YY_INPUT(buf,result,max_size) \
++        { \
++          int res = (*twmInputFunc)() ; \
++          if (res == NULL) result = YY_NULL ; \
++          else { \
++            buf[0] = res ; \
++            result = 1 ; \
++          } \
++        }
++
+ %}
+ 
+ string				\"([^"]|\\.)*\"
+@@ -88,13 +100,13 @@
+ 				  ParseError = 1;
+ 				}
+ %%
+-yywrap() { return(1);}
++/* yywrap() { return(1);} */
+ 
+ #undef unput
+-#undef input
++/* #undef input */
+ #undef output
+ #undef feof
+ #define unput(c)	twmUnput(c)
+-#define input()		(*twmInputFunc)()
++/* #define input()		(*twmInputFunc)() */
+ #define output(c)	TwmOutput(c)
+ #define feof()		(1)
+--- ./menus.c.orig	Sun Nov 15 10:04:46 1992
++++ ./menus.c	Wed May 18 12:12:53 1994
+@@ -673,7 +683,7 @@
+ 	FD_ZERO(&exceptfds); FD_SET(fd, &exceptfds); 
+ 
+ 	if (!deferred) {
+-	    select(fd + 1, &readfds, &exceptfds, NULL);
++	    select(fd + 1, &readfds, NULL, &exceptfds, NULL);
+ 	} else {
+ 	    gettimeofday(&now_time, NULL);
+ 	    now_time.tv_sec -= start_time.tv_sec;

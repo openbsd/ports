@@ -1,0 +1,38 @@
+--- ./menus.c.org	Wed May 18 12:12:53 1994
++++ ./menus.c	Thu Nov 17 08:40:01 1994
+@@ -634,7 +634,7 @@
+ {
+     MenuItem *mi;
+     MenuItem *badItem = NULL;
+-    int fd = dpy->fd;
++    int fd = ConnectionNumber(dpy);
+     struct timeval start_time, now_time, delay_time;
+     fd_set readfds, exceptfds;
+     int deferred;
+--- ./LocPixmap.c.org	Wed May 18 11:13:01 1994
++++ ./LocPixmap.c	Thu Nov 17 08:49:20 1994
+@@ -140,11 +140,11 @@
+ /*	    xrm_class[0] = XrmPermStringToQuark ("BitmapFilePath"); */
+ 	    xrm_class[0] = XrmStringToQuark ("BitmapFilePath");
+ 	    xrm_class[1] = NULLQUARK;
+-	    if (/* !XrmGetDatabase(dpy) */ !(dpy->db)) {
++	    if (!XrmGetDatabase(dpy) /* !(dpy->db) */) {
+ 		/* what a hack; need to initialize it */
+ 		(void) XGetDefault (dpy, "", "");
+ 	    }
+-	    if (XrmQGetResource (/* XrmGetDatabase(dpy) */ dpy->db,
++	    if (XrmQGetResource (XrmGetDatabase(dpy) /* dpy->db */,
+ 				 xrm_name, xrm_class, 
+ 				 &rep_type, &value) &&
+ /*		rep_type == XrmPermStringToQuark("String") */
+--- ./Imakefile.org	Sun May 22 00:05:43 1994
++++ ./Imakefile	Thu Nov 17 08:54:08 1994
+@@ -36,7 +36,7 @@
+   LOCAL_DEFINES = $(XPM_DEF)
+ #endif
+ 
+-LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(EXTENSIONLIB) $(XPMLIB) $(XLIB) $(MATHLIB)
++LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) $(EXTENSIONLIB) $(XPMLIB) $(XLIB) $(MATHLIB) $(LEXLIB)
+        LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
+         DEFINES = ExtensionDefines $(LOCAL_DEFINES) $(SIGNAL_DEFINES)
+ 
