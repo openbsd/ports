@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/09/06 05:48:49 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/03 06:27:05 itojun Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
+# Originally by: peter.galbavy@knowledge.com
 
-#
-# The version of the port was done by peter.galbavy@knowledge.com
-#
-DISTNAME=	zebra-0.88
+DISTNAME=	zebra-0.89
 CATEGORIES=	net
-NEED_VERSION=	1.324
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
@@ -33,11 +31,8 @@ CONFIGURE_STYLE= gnu
 FLAVORS=	snmp
 FLAVOR?=
 
-# broken in 0.88 - try later
-# CONFIGURE_ARGS+= --enable-vtysh
-
 .if ${FLAVOR:L:Msnmp}
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsnmp.a::net/ucd-snmp
+LIB_DEPENDS=	snmp.41::net/ucd-snmp
 CONFIGURE_ARGS+= --enable-snmp
 .endif
 

@@ -1,7 +1,7 @@
---- doc/Makefile.in.orig	Thu Aug 24 17:37:42 2000
-+++ doc/Makefile.in	Thu Aug 24 17:37:49 2000
-@@ -74,7 +74,7 @@
- KERNEL_METHOD = @KERNEL_METHOD@
+--- doc/Makefile.in.orig	Mon Oct  2 20:19:08 2000
++++ doc/Makefile.in	Mon Oct  2 23:11:34 2000
+@@ -75,7 +75,7 @@
+ LIBPAM = @LIBPAM@
  LIB_IPV6 = @LIB_IPV6@
  LIB_REGEX = @LIB_REGEX@
 -MAKEINFO = @MAKEINFO@
