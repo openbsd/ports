@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/07/20 22:41:40 chris Exp $
+# $OpenBSD: Makefile,v 1.21 2000/07/23 18:21:20 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
@@ -9,7 +9,8 @@ MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
 EXTRACT_SUFX=	-src.tar.gz
 DIST_SUBDIR=	squid
 
-PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch:0
+PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch:0 \
+		squid-2.3.stable4-internal_dns_rcode_table_formatting.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SYSCONFDIR=	/etc/squid
 STATEDIR?=	/var/squid
-SUBST_VARS=SYSCONFDIR STATEDIR
+SUBST_VARS=	SYSCONFDIR STATEDIR
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--localstatedir="${STATEDIR}"
