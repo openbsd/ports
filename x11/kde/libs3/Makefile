@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2005/03/29 21:18:36 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2005/03/30 10:34:33 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.4.0
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}
+PKGNAME=		${DISTNAME}p0
 MODKDE_VERSION?=	3.4
 
 FLAVORS=debug
@@ -20,7 +20,8 @@ LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 WANTLIB=	c ICE SM X11 Xext Xrender audiofile esd glib-2.0.0.0 \
 		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg m mad ogg \
 		ossaudio png pthread stdc++ util vorbis vorbisenc vorbisfile \
-		xml2 z
+		xml2 z krb5 gssapi ssl crypto asn1
+
 CONFIGURE_ARGS+= --enable-cups
 
 BUILD_DEPENDS+=	::print/cups # crypto,ssl,cups
@@ -45,6 +46,10 @@ EXTRA_MANPAGES= artsmessage cupsdconf dcop \
     kio_uiserver kmailservice \
     ksendbugmail ksvgtopng ktelnetservice \
     meinproc 
+
+post-extract:
+	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
+	chmod a+x ${WRKDIR}/bin/krb5-config
 
 post-build:
 	@mkdir -p ${WRKBUILD}/man/man1
