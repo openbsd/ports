@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.10 2005/01/14 01:42:58 brad Exp $
---- configure.in.orig	Sat Dec 18 12:25:07 2004
-+++ configure.in	Wed Dec 22 10:48:19 2004
+$OpenBSD: patch-configure_in,v 1.11 2005/03/30 03:07:52 brad Exp $
+--- configure.in.orig	Fri Mar  4 19:38:15 2005
++++ configure.in	Tue Mar 29 22:03:45 2005
 @@ -439,41 +439,7 @@ AC_SUBST(PERL5)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
@@ -54,19 +54,7 @@ $OpenBSD: patch-configure_in,v 1.10 2005/01/14 01:42:58 brad Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
-@@ -1076,6 +1043,11 @@ case $SYSTEM_TYPE in
-     CXXFLAGS="$CXXFLAGS -Dunix"
-     OVERRIDE_MT_LD_ADD="\$(top_srcdir)/mit-pthreads/obj/libpthread.a"
-     ;;
-+  *openbsd*)
-+    echo "Adding fix for OpenBSD"
-+    CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
-+    CXXFLAGS="$CXXFLAGS -DHAVE_BROKEN_REALPATH"
-+    ;;
-   *bsdi*)
-     echo "Adding fix for BSDI"
-     CFLAGS="$CFLAGS -D__BSD__ -DHAVE_BROKEN_REALPATH"
-@@ -1566,7 +1538,7 @@ then
+@@ -1566,7 +1533,7 @@ then
    AC_CHECK_LIB(c_r,strtok_r)
    case "$with_osf32_threads---$target_os" in
      # Don't keep -lc_r in LIBS; -pthread handles it magically
@@ -75,7 +63,7 @@ $OpenBSD: patch-configure_in,v 1.10 2005/01/14 01:42:58 brad Exp $
  
    esac
    AC_CHECK_FUNCS(strtok_r pthread_init)
-@@ -1593,29 +1565,6 @@ case $SYSTEM_TYPE in
+@@ -1593,29 +1560,6 @@ case $SYSTEM_TYPE in
  AC_SYS_RESTARTABLE_SYSCALLS
      ;;
  esac
