@@ -16,7 +16,7 @@
 +LDDESTDIR+=	-L${X11BASE}/lib
 +LDADD+=	${LDDESTDIR}	-lX11 -lm
 +
-+MANDIR=        ${X11BASE}/man/man
++MANDIR=        ${X11BASE}/man/cat
 +
 +BINOWN=        bin
 +BINDIR=        ${X11BASE}/bin
