@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2003/11/27 04:34:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2003/12/27 07:16:40 pvalchev Exp $
 
 COMMENT=	"USB access library"
 
 VERSION=	0.1.7
 DISTNAME=	libusb-${VERSION}
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libusb.sourceforge.net/
@@ -23,5 +23,8 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+post-extract:
+	@rm ${WRKSRC}/usb.h
 
 .include <bsd.port.mk>
