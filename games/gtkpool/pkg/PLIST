@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/19 06:28:31 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/10/25 11:59:07 naddy Exp $
 bin/gtkpool
 share/gtkpool/ball_10_lg.xpm
 share/gtkpool/ball_10_sm.xpm
@@ -32,13 +32,16 @@ share/gtkpool/ball_9_lg.xpm
 share/gtkpool/ball_9_sm.xpm
 share/gtkpool/ball_cue_lg.xpm
 share/gtkpool/ball_cue_sm.xpm
+share/gtkpool/ball_drop.raw
+share/gtkpool/ball_hit.raw
 share/gtkpool/bllq-icon.xpm
 share/gtkpool/blpl-icon.xpm
-share/gtkpool/click.raw
 share/gtkpool/mabl-icon.xpm
 share/gtkpool/maho-icon.xpm
 share/gtkpool/pool_table_black-laquer.xpm
 share/gtkpool/pool_table_black-pearl.xpm
 share/gtkpool/pool_table_mahogany.xpm
 share/gtkpool/pool_table_maple-burl.xpm
+@comment share/icons/gtkpool.png
+@comment @dirrm share/icons
 @dirrm share/gtkpool

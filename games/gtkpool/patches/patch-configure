@@ -1,11 +1,20 @@
-$OpenBSD: patch-configure,v 1.1 2002/02/19 06:44:32 pvalchev Exp $
---- configure.orig	Mon Feb 18 23:34:03 2002
-+++ configure	Mon Feb 18 23:35:37 2002
-@@ -1963,7 +1963,8 @@ fi
+$OpenBSD: patch-configure,v 1.2 2002/10/25 11:59:06 naddy Exp $
+--- configure.orig	Thu Oct 24 12:18:05 2002
++++ configure	Thu Oct 24 12:19:31 2002
+@@ -1576,8 +1576,6 @@ fi
+       if test "$kde_very_strict" = "yes"; then
+         CXXFLAGS="-Wold-style-cast -Wredundant-decls -Wconversion $CXXFLAGS"
+       fi
+-    else
+-      CXXFLAGS="-O2 $CXXFLAGS"
+     fi
+   fi
+ 
+@@ -1963,7 +1961,8 @@ fi
    KDE_CXXFLAGS=
    
  
--CXXFLAGS="-DHAVE_CONFIG_H -I. -I.. -O2 -O0 -g3 -Wall `gtk-config --cflags` -lgtk -lgdk -lglib $USE_EXCEPTIONS"
+-CXXFLAGS="-DHAVE_CONFIG_H -I. -I.. -O2 -O0 -Wall `gtk-config --cflags` -lgtk -lgdk -lglib -lm -lX11 $USE_EXCEPTIONS"
 +CXXFLAGS="-DHAVE_CONFIG_H -I. -I.. `gtk-config --cflags` $CXXFLAGS $USE_EXCEPTIONS"
 +LDFLAGS="`gtk-config --libs` $LDFLAGS"
  

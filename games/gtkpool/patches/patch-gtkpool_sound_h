@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtkpool_sound_h,v 1.1 2002/02/19 06:28:31 pvalchev Exp $
---- gtkpool/sound.h.orig	Mon Jan 14 02:16:58 2002
-+++ gtkpool/sound.h	Mon Feb 18 23:07:32 2002
+$OpenBSD: patch-gtkpool_sound_h,v 1.2 2002/10/25 11:59:06 naddy Exp $
+--- gtkpool/sound.h.orig	Thu Oct 24 12:04:12 2002
++++ gtkpool/sound.h	Thu Oct 24 12:05:20 2002
 @@ -29,7 +29,11 @@
  
  void play_sound(char *sound, int count);
@@ -10,6 +10,6 @@ $OpenBSD: patch-gtkpool_sound_h,v 1.1 2002/02/19 06:28:31 pvalchev Exp $
 +#else
 +void open_sound_device(char *name = "/dev/audio");
 +#endif
+ void close_sound_device();
  void configure_sound_device();
  
- class SoundError {

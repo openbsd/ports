@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2002/02/19 06:44:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/25 11:59:06 naddy Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
-DISTNAME=	gtkpool-0.4.1
+DISTNAME=	gtkpool-0.5.0
 CATEGORIES=	games x11
-NEED_VERSION=	1.504
 MASTER_SITES=	${HOMEPAGE}	
 
 HOMEPAGE=	http://gtkpool.seul.org/
@@ -25,6 +24,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	LIBS="-lossaudio"
 
 post-extract:
-	@touch ${WRKSRC}/configure* ${WRKSRC}/*.{in,m4}
+	@touch ${WRKSRC}/configure* ${WRKSRC}/*.in ${WRKSRC}/*.m4
 
 .include <bsd.port.mk>
