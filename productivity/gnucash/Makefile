@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2005/03/08 22:26:45 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2005/04/04 22:49:50 todd Exp $
 
-NOT_FOR_ARCHS=	${LP64}
+NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	"Quicken-like money and finance manager"
 DISTNAME=	gnucash-1.8.11
