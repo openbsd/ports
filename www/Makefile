@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/10/26 14:32:46 dugsong Exp $
+# $OpenBSD: Makefile,v 1.15 1999/10/31 20:47:30 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -7,7 +7,6 @@
      SUBDIR += amaya-english-dict
      SUBDIR += amaya-french-dict
      SUBDIR += analog
-     SUBDIR += apache
 #    SUBDIR += apache-current
 #    SUBDIR += apache-php
 #    SUBDIR += apache-ssl
