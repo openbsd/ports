@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/22 21:18:53 naddy Exp $
 
 COMMENT=	"japanese groff"
 
@@ -9,7 +9,7 @@ DISTNAME=	groff-1.10
 
 PATCHFILES=	jgroff-0.99.diff.gz:0
 
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU:=groff/}
 
 MASTER_SITES0=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
                 ftp://ftp.tohoku.ac.jp/pub/GNU/japanese/
