@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/11 22:24:48 espie Exp $
+bin/rpm2cpio

@@ -1,0 +1,6 @@
+Rpm archives are actually cpio archive disguised behind another header.
+
+Rpm2cpio is a simple perl filter that strips this header, without
+having to install the whole rpm program.
+
+WWW: ${HOMEPAGE}
