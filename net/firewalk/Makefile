@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 00:24:49 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/04/01 00:32:48 brad Exp $
 
 PKGNAME=	firewalk-0.7c
 DISTNAME=	firewalk-final-0.7c
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
-		LDFLAGS="-L/usr/local/include"
+		LDFLAGS="-L/usr/local/lib"
 
 ALL_TARGET=	firewalk
 
