@@ -1,11 +1,12 @@
-bin/glimpseindex
 bin/agrep
-bin/glimpseserver
 bin/glimpse
+bin/glimpseindex
+bin/glimpseserver
 bin/wgconvert
-man/man1/glimpse.1.gz
-man/man1/glimpseindex.1.gz
-man/man1/glimpseserver.1.gz
-man/man1/agrep.1.gz
+man/man1/agrep.1
+man/man1/glimpse.1
+man/man1/glimpseindex.1
+man/man1/glimpseserver.1
 share/doc/glimpse/COPYRIGHT
 share/doc/glimpse/README
+@dirrm share/doc/glimpse

@@ -3,7 +3,7 @@
 # Date created:		25 Jan 1998
 # Whom:			weingart@openbsd.org
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/25 20:35:33 weingart Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/01 06:04:57 marc Exp $
 #
 
 PKGNAME=	glimpse-4.1
@@ -20,6 +20,15 @@ MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
 pre-configure:
 	chmod ugo+x ${WRKSRC}/configure
+
+pre-build:
+	@echo ""
+	@echo "*** WARNING: you may see an error such as"
+	@echo "*** ./main.c:3041: virtual memory exhausted"
+	@echo "*** when building this package.  If you do you must increase"
+	@echo "*** your limits.  See the man page for your shell and look"
+	@echo "*** for the 'limit' or 'ulimit' command."
+	@echo ""
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/glimpse
