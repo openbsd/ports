@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmd_docbook-to-man_sh,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
+$OpenBSD: patch-cmd_docbook-to-man_sh,v 1.2 2005/02/14 12:07:37 espie Exp $
 --- cmd/docbook-to-man.sh.orig	Mon Jun 17 05:50:30 1996
 +++ cmd/docbook-to-man.sh	Sat Feb 12 00:07:52 2005
 @@ -40,9 +40,12 @@
@@ -30,33 +30,6 @@ $OpenBSD: patch-cmd_docbook-to-man_sh,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
  DECL=$DOCBOOK/docbook.dcl
  #PROLOG=$DOCBOOK/docbook.prolog
  
-@@ -78,7 +81,7 @@ then	echo "usage:  docbook-to-man docboo
- fi
- 
- if `$doElanPSInclude`
--then	cat > /tmp/dtm.$$.psinc <<\!
-+then	cat > $TMPFILE <<\!
- ...\" $Header: /home/cvs/ports/textproc/docbook-to-man/patches/patch-cmd_docbook-to-man_sh,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
- ...\"
- ...\"	transcript compatibility for postscript use.
-@@ -101,7 +104,7 @@ then	cat > /tmp/dtm.$$.psinc <<\!
- .sp \\$2u	\" move below the image
- ..
- !
--else	cat > /tmp/dtm.$$.psinc <<\!
-+else	cat > $TMPFILE <<\!
- ...\" $Header: /home/cvs/ports/textproc/docbook-to-man/patches/patch-cmd_docbook-to-man_sh,v 1.1.1.1 2005/02/14 11:56:38 espie Exp $
- ...\"
- ...\"	transcript compatibility for postscript use.
-@@ -125,7 +128,7 @@ else	cat > /tmp/dtm.$$.psinc <<\!
- !
- fi
- 
--cat >> /tmp/dtm.$$.psinc <<\!
-+cat >> $TMPFILE <<\!
- .de pF
- .ie     \\*(f1 .ds f1 \\n(.f
- .el .ie \\*(f2 .ds f2 \\n(.f
 @@ -168,8 +171,13 @@ cat >> /tmp/dtm.$$.psinc <<\!
  #!
  #fi
