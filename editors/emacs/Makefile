@@ -3,7 +3,7 @@
 # Date created:		14 Nov 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 18:56:43 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/04 07:22:46 niklas Exp $
 #
 
 DISTNAME=	emacs-20.2
@@ -15,7 +15,17 @@ MAINTAINER=	joey@OpenBSD.ORG
 WRKSRC=		${WRKDIR}/emacs-20.2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	i386-unknown-openbsd2.2 --with-x-toolkit
+
+.if ${MACHINE} == "arc" || ${MACHINE} == "pmax" || ${MACHINE} == "wgrisc"
+M_ARCH=		mipsel
+.elif ${MACHINE} == "hkmips" || ${MACHINE} == "sgi"
+M_ARCH=		mips
+.else
+M_ARCH=		${MACHINE_ARCH}
+.endif
+
+GCCARCH=	${M_ARCH}-unknown-openbsd`uname -r`
+CONFIGURE_ARGS=	${GCCARCH} --with-x-toolkit
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
 
