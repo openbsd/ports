@@ -3,7 +3,7 @@
 # Date created:	 	December 18, 1997	
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.5 1998/06/10 02:56:37 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/06/14 08:10:31 marc Exp $
 #
 
 # NOTE:
@@ -12,7 +12,7 @@
 # the case.  However, since there may be code someplace/somewhere that
 # depends upon libtiff34 the following symbolic links are created:
 #	libtiff34.a -> libtiff.a
-#	libtiff34.so.1.0 -> libtiff.so.1.0
+#	libtiff34.so.1.0 -> libtiff.so.3.4
 #	tiff34.h -> tiff.h
 #	tiffio34.h -> tiffio.h
 #
@@ -47,7 +47,7 @@ DOCDIR=	${PREFIX}/share/doc/tiff34
 #
 post-install:
 	${LN} -sf libtiff.a ${PREFIX}/lib/libtiff34.a
-	${LN} -sf libtiff.so.1.0 ${PREFIX}/lib/libtiff34.so.1.0
+	${LN} -sf libtiff.so.3.4 ${PREFIX}/lib/libtiff34.so.1.0
 	${LN} -sf tiff.h ${PREFIX}/include/tiff34.h
 	${LN} -sf tiffio.h ${PREFIX}/include/tiffio34.h
 .if !defined(NOPORTDOCS)

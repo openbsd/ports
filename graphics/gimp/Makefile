@@ -3,7 +3,7 @@
 # Date created:		1998-Jun-07
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.6 1998/06/13 23:26:54 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/06/14 08:10:27 marc Exp $
 #
 
 # What port/package will be created
@@ -28,7 +28,7 @@ LIB_DEPENDS=		gtk\\.1\\.:${PORTSDIR}/x11/gtk+ \
 			jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 			mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
 			png\\.1\\.:${PORTSDIR}/graphics/png \
-			tiff\\.1\\.:${PORTSDIR}/graphics/tiff34
+			tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34
 OS_RELEASE!=		uname -r
 OS_HAS_XPM=		2.3
 .if ( ${OS_RELEASE} < ${OS_HAS_XPM} )

@@ -3,7 +3,7 @@
 # Date created:		8 Feb 1998
 # Whom:			d
 #
-# $OpenBSD: Makefile,v 1.3 1998/05/06 02:57:32 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/14 08:10:23 marc Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl1
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 # no dependency on ghostscript because we don't know which
 # version the user prefers
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
-LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
+LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		1998-Mar-20
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.3 1998/05/06 02:55:59 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/06/14 08:10:40 marc Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -32,7 +32,7 @@ PATCHFILES+=	grabpatch vispatch mp-tiff-patch
 MAINTAINER=	ports@OpenBSD.ORG
 
 LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-		tiff34\\.1:${PORTSDIR}/graphics/tiff34 \
+		tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
 		png\\.1\\.:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes

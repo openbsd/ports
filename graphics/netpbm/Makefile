@@ -3,7 +3,7 @@
 # Date created:		14 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/14 05:41:13 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/06/14 08:10:29 marc Exp $
 # NetBSD: Makefile,v 1.14 1998/04/22 14:22:43 agc Exp
 #
 
@@ -21,7 +21,7 @@ DISTFILES=	netpbm-1mar1994.tar.gz \
 MAINTAINER=	form@vs.itam.nsc.ru
 
 LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-		tiff34\\.1:${PORTSDIR}/graphics/tiff34 \
+		tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
 		png\\.1\\.:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/netpbm

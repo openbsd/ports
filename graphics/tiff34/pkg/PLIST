@@ -1,7 +1,7 @@
 lib/libtiff.a
 @exec ln -sf %f %B/libtiff34.a
 @unexec rm -f %B/libtiff34.a
-lib/libtiff.so.1.0
+lib/libtiff.so.3.4
 @exec ln -sf %f %B/libtiff.so
 @exec ln -sf %f %B/libtiff34.so.1.0
 @unexec rm -f %B/libtiff.so
