@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/02/04 19:33:48 reinhard Exp $
+# $OpenBSD: Makefile,v 1.58 2001/02/06 08:10:23 obecian Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -12,6 +12,7 @@
      SUBDIR += cgichk
      SUBDIR += cops
      SUBDIR += crack
+     SUBDIR += crank
      SUBDIR += cyrus-sasl
      SUBDIR += dante
      SUBDIR += despoof
