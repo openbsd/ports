@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2001/03/02 20:03:34 brad Exp $
 bin/gqview
 share/doc/gqview/COPYING
 share/doc/gqview/ChangeLog
