@@ -1,0 +1,23 @@
+--- libclamav/scanners.c.orig	Sun Oct 17 01:24:48 2004
++++ libclamav/scanners.c	Tue Dec 21 16:37:12 2004
+@@ -494,11 +494,6 @@ static int cli_scangzip(int desc, const 
+ 
+ #ifdef HAVE_BZLIB_H
+ 
+-#ifdef NOBZ2PREFIX
+-#define BZ2_bzReadOpen bzReadOpen
+-#define BZ2_bzReadClose bzReadClose
+-#define BZ2_bzRead bzRead
+-#endif
+ 
+ static int cli_scanbzip(int desc, const char **virname, long int *scanned, const struct cl_node *root, const struct cl_limits *limits, unsigned int options, int *arec, int *mrec)
+ {
+@@ -519,7 +514,7 @@ static int cli_scanbzip(int desc, const 
+ 	if(limits->archivememlim)
+ 	    memlim = 1;
+ 
+-    if((bfd = BZ2_bzReadOpen(&bzerror, fs, 0, memlim, NULL, 0)) == NULL) {
++    if((bfd = (BZFILE *)BZ2_bzReadOpen(&bzerror, fs, 0, memlim, NULL, 0)) == NULL) {
+ 	cli_dbgmsg("Bzip: Can't initialize bzip2 library (descriptor: %d).\n", desc);
+ 	fclose(fs);
+ 	return CL_EBZIP;

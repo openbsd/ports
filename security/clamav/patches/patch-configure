@@ -1,0 +1,49 @@
+--- configure.orig	Sun Oct 17 18:37:47 2004
++++ configure	Sun Jan  9 12:24:10 2005
+@@ -10339,11 +10339,11 @@ extern "C"
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char bzReadOpen ();
++char BZ2_bzReadOpen ();
+ int
+ main ()
+ {
+-bzReadOpen ();
++BZ2_bzReadOpen ();
+   ;
+   return 0;
+ }
+@@ -10704,6 +10704,8 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/types.h>
++#include <netinet/in.h>
+ #include <resolv.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -11527,6 +11529,7 @@ _ACEOF
+ openbsd*)
+     if test "$have_pthreads" = "yes"; then
+ 	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread"
++	ADDITIONAL_LIBS="-pthread"
+ 	if test "$disable_cr" = "yes"; then
+ 	    CLAMD_LIBS="$CLAMD_LIBS -pthread"
+ 	    CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread"
+@@ -12405,6 +12408,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++#include <sys/types.h>
+ #include <tcpd.h>
+ int allow_severity = 0;
+ int deny_severity  = 0;
+@@ -12460,6 +12464,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++#include <sys/types.h>
+ #include <tcpd.h>
+ int allow_severity = 0;
+ int deny_severity  = 0;

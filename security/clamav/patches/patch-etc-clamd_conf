@@ -1,0 +1,20 @@
+--- etc/clamd.conf.orig	Mon Oct 11 03:14:30 2004
++++ etc/clamd.conf	Tue Dec 21 16:37:52 2004
+@@ -11,7 +11,7 @@ Example
+ # LogFile must be writable for the user running daemon.
+ # A full path is required.
+ # Default: disabled
+-#LogFile /tmp/clamd.log
++#LogFile /var/log/clamd.log
+ 
+ # By default the log file is locked for writing - the lock protects against
+ # running clamd multiple times (if want to run another clamd, please
+@@ -62,7 +62,7 @@ Example
+ 
+ # Path to the database directory.
+ # Default: hardcoded (depends on installation options)
+-#DatabaseDirectory /var/lib/clamav
++#DatabaseDirectory /var/db/clamav
+ 
+ # The daemon works in a local OR a network mode. Due to security reasons we
+ # recommend the local mode.

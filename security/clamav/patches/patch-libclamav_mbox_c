@@ -1,0 +1,14 @@
+--- libclamav/mbox.c.orig	Sun Oct 17 15:25:31 2004
++++ libclamav/mbox.c	Tue Dec 21 16:37:12 2004
+@@ -472,11 +472,6 @@ static	char	const	rcsid[] = "$Id: mbox.c
+ #define	NDEBUG	/* map CLAMAV debug onto standard */
+ #endif
+ 
+-#ifdef CL_THREAD_SAFE
+-#ifndef	_REENTRANT
+-#define	_REENTRANT	/* for Solaris 2.8 */
+-#endif
+-#endif
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

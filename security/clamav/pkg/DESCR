@@ -1,0 +1,4 @@
+Clam Antivirus is an anti-virus scanner written from scratch. It is licensed
+under GNU GPL2 and uses the virus database from OpenAntiVirus, which is an
+another free anti-virus project. In contrast to the OpenAntiVirus (which is
+written in Java), Clam Antivirus is written entirely in C and POSIX compliant.
