@@ -6,3 +6,5 @@ libevent is meant to replace the asynchronous event loop found in
 event driven network servers. An application just needs to call
 event_dispatch() and can then add or remove events dynamically without
 having to change the event loop.
+
+WWW: ${HOMEPAGE}

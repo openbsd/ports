@@ -1,4 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/23 15:17:55 dugsong Exp $
-man/man3/event.3
+@comment $OpenBSD: PLIST,v 1.2 2001/04/07 04:42:22 brad Exp $
 include/event.h
 lib/libevent.a
+man/man3/event.3
+man/man3/event_add.3
+man/man3/event_del.3
+man/man3/event_dispatch.3
+man/man3/event_init.3
+man/man3/event_initalized.3
+man/man3/event_pending.3
+man/man3/event_set.3
+man/man3/timeout_add.3
+man/man3/timeout_del.3
+man/man3/timeout_initalized.3
+man/man3/timeout_pending.3
+man/man3/timeout_set.3

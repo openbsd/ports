@@ -1,0 +1,85 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/04/07 04:42:21 brad Exp $
+--- Makefile.in.orig	Tue Mar  6 13:27:36 2001
++++ Makefile.in	Sat Apr  7 00:16:24 2001
+@@ -8,7 +8,7 @@
+ srcdir          = @srcdir@
+ VPATH           = @srcdir@
+ 
+-install_prefix  =
++DESTDIR         = 
+ prefix          = @prefix@
+ exec_prefix	= @exec_prefix@
+ libdir		= @libdir@
+@@ -16,47 +16,48 @@ mandir		= @mandir@
+ includedir	= @includedir@
+ 
+ CC	= @CC@
++RANLIB  = @RANLIB@
+ DEFS	= @DEFS@
+ CFLAGS	= @CFLAGS@ $(DEFS) -Wall -I.
+ LDFLAGS	= @LDFLAGS@
+ 
+ INSTALL	= @INSTALL@
+-INSTALL_DATA	= @INSTALL_DATA@
++INSTALL_DATA = @INSTALL_DATA@
+ LN_S = @LN_S@
+ 
+-HDRS	= event.h
+-SRCS	= event.c @EVSRCS@
+-OBJS	= $(SRCS:.c=.o)
++HDRS = event.h
++SRCS = event.c @EVSRCS@
++OBJS = $(SRCS:.c=.o)
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $(srcdir)/$*.c
++	$(CC) $(CFLAGS) -c $<
+ 
+ all: libevent.a
+ 
+ libevent.a: $(OBJS)
+ 	@echo "building $@"
+ 	ar cru $@ $(OBJS)
+-	@RANLIB@ $@
++	$(RANLIB) $@
+ 
+ install:
+-	$(INSTALL) -d $(install_prefix)$(libdir)
+-	$(INSTALL_DATA) libevent.a $(libdir)
+-	$(INSTALL) -d $(install_prefix)$(mandir)/man3
+-	$(INSTALL_DATA) *.3 $(install_prefix)$(mandir)/man3
+-	$(INSTALL) -d $(install_prefix)$(includedir)
+-	$(INSTALL_DATA) *.h $(install_prefix)$(includedir)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_init.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_dispatch.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_set.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_add.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_del.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_pending.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 event_initalized.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 timeout_set.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 timeout_add.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 timeout_del.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 timeout_pending.3)
+-	(cd $(install_prefix)$(mandir)/man3 && $(LN_S) event.3 timeout_initalized.3)
++	$(INSTALL) -d $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) libevent.a $(DESTDIR)$(libdir)
++	$(INSTALL) -d $(DESTDIR)$(mandir)/man3
++	$(INSTALL_DATA) $(srcdir)/event.3 $(DESTDIR)$(mandir)/man3
++	$(INSTALL) -d $(DESTDIR)$(includedir)
++	$(INSTALL_DATA) $(srcdir)/event.h $(DESTDIR)$(includedir)
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_init.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_dispatch.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_set.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_add.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_del.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_pending.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 event_initalized.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 timeout_set.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 timeout_add.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 timeout_del.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 timeout_pending.3
++	@cd $(DESTDIR)$(mandir)/man3 && $(LN_S) event.3 timeout_initalized.3
+ 
+ clean:
+ 	rm -f *.o *~ libevent.a

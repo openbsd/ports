@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/04/07 04:42:21 brad Exp $
+--- configure.in.orig	Sat Apr  7 00:00:08 2001
++++ configure.in	Sat Apr  7 00:01:33 2001
+@@ -24,10 +24,10 @@ if test "x$ac_cv_header_sys_queue_h" = "
+ #endif
+ ], AC_MSG_RESULT(yes),
+ 		       [ AC_MSG_RESULT(no, using our own)
+-			 CFLAGS="$CFLAGS -Imissing/queue" ]
++			 CFLAGS='$CFLAGS -I$(srcdir)/missing/queue' ]
+ 	)
+ else
+-	CFLAGS="$CFLAGS -Imissing/queue"
++	CFLAGS='$CFLAGS -I$(srcdir)/missing/queue'
+ fi
+ 
+ if test "x$ac_cv_header_sys_time_h" = "xyes"; then
+@@ -40,10 +40,10 @@ if test "x$ac_cv_header_sys_time_h" = "x
+ #endif
+ ], AC_MSG_RESULT(yes),
+ 		       [ AC_MSG_RESULT(no, using our own)
+-			 CFLAGS="$CFLAGS -Imissing/time" ]
++			 CFLAGS='$CFLAGS -I$(srcdir)/missing/time' ]
+ 	)
+ else
+-	CFLAGS="$CFLAGS -Imissing/time"
++	CFLAGS='$CFLAGS -I$(srcdir)/missing/time'
+ fi
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
