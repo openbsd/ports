@@ -1,0 +1,6 @@
+$OpenBSD: SECURITY,v 1.1.1.1 2001/07/13 18:53:55 pvalchev Exp $
+
+${WRKSRC}/src/plotone.c and editpwin.c
+  call to tmpnam seems ok, uses wrapper script grace_openw() for writing
+
+Program makes extensive use of strcat and friends.
