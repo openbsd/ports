@@ -1,0 +1,13 @@
+--- Imake.options.orig	Tue Aug  1 09:42:25 2000
++++ Imake.options	Tue Aug  1 09:43:48 2000
+@@ -31,8 +31,8 @@
+ 
+ #define XAW3D
+ 
+-XAWINCDIR = -I/usr/X11R6/include/X11/Xaw3d
+-XAWLIBDIR = -L/usr/X11R6/lib
++XAWINCDIR = -I/usr/local/include/X11/Xaw3d
++XAWLIBDIR = -L/usr/local/lib
+ 
+ /* Magic headers. *********************************************************/
+ 

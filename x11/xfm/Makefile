@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/17 22:35:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/08/01 09:47:28 kevlo Exp $
 
-DISTNAME=		xfm-1.3.2
+DISTNAME=		xfm-1.4.2
 CATEGORIES=		x11
-MASTER_SITES=		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+NEED_VERSION=		1.319
+MASTER_SITES=		ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 MAINTAINER=		ports@openbsd.org
 
@@ -11,8 +11,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-FAKE=			Yes
 
-USE_IMAKE=		Yes
+LIB_DEPENDS=		Xaw3d.6::x11/Xaw3d
+
+CONFIGURE_STYLE=	imake
 
 .include <bsd.port.mk>

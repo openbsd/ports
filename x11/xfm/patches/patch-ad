@@ -1,0 +1,65 @@
+--- Imakefile.orig	Wed Oct 29 04:19:02 1997
++++ Imakefile	Tue Aug  1 10:08:34 2000
+@@ -37,7 +37,7 @@
+ 
+ CppScriptTarget(xfm.install.script,bin/xfm.install.cpp,\
+ -DLIBDIR=$(XFMLIBDIR),)
+-InstallScript(xfm.install,$(DESTDIR)$(BINDIR))
++InstallScript(xfm.install,$(BINDIR))
+ 
+ /* rules to create and install the appdefaults file, the config files and the
+    pixmaps */
+@@ -53,32 +53,32 @@
+ InstallAppDefaults(Xfm)
+ 
+ install::
+-	MakeDir($(XFMLIBDIR)/bitmaps)
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/bitmaps/?* $(XFMLIBDIR)/bitmaps
+-	MakeDir($(XFMLIBDIR)/pixmaps)
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/pixmaps/?* $(XFMLIBDIR)/pixmaps
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/bitmaps)
++	$(INSTALL) -c $(INSTDATFLAGS) lib/bitmaps/?* $(DESTDIR)$(XFMLIBDIR)/bitmaps
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/pixmaps)
++	$(INSTALL) -c $(INSTDATFLAGS) lib/pixmaps/?* $(DESTDIR)$(XFMLIBDIR)/pixmaps
+ 
+ #ifndef USE_3DICONS
+ install::
+-	MakeDir($(XFMLIBDIR)/dot.xfm)
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/$(XFMRC) $(XFMLIBDIR)/dot.xfm/xfmrc
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/xfmdev $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/magic $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Apps $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Graphics $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Hosts $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) lib/Toolbox $(XFMLIBDIR)/dot.xfm
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/dot.xfm)
++	$(INSTALL) -c $(INSTDATFLAGS) lib/$(XFMRC) $(DESTDIR)$(XFMLIBDIR)/dot.xfm/xfmrc
++	$(INSTALL) -c $(INSTDATFLAGS) lib/xfmdev $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/magic $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Apps $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Graphics $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Hosts $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) lib/Toolbox $(DESTDIR)$(XFMLIBDIR)/dot.xfm
+ #else
+ install::
+-	MakeDir($(XFMLIBDIR)/icons)
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/icons/?* $(XFMLIBDIR)/icons
+-	MakeDir($(XFMLIBDIR)/dot.xfm)
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/xfmrc $(XFMLIBDIR)/dot.xfm/xfmrc
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/xfmdev $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/magic $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/Apps $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/Graphics $(XFMLIBDIR)/dot.xfm
+-	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/Toolbox $(XFMLIBDIR)/dot.xfm
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/icons)
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/icons/?* $(DESTDIR)$(XFMLIBDIR)/icons
++	MakeDir($(DESTDIR)$(XFMLIBDIR)/dot.xfm)
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/xfmrc $(DESTDIR)$(XFMLIBDIR)/dot.xfm/xfmrc
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/xfmdev $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/magic $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/Apps $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/Graphics $(DESTDIR)$(XFMLIBDIR)/dot.xfm
++	$(INSTALL) -c $(INSTDATFLAGS) contrib/3dicons/Toolbox $(DESTDIR)$(XFMLIBDIR)/dot.xfm
+ #endif
+ 
+ /* Use the following before installing over an existing version of xfm. (You
