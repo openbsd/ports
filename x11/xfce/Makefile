@@ -3,12 +3,12 @@
 # Date created:		28 Jan 2000
 # Whom:			Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.7 2000/06/12 15:04:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/08/16 03:41:21 kevlo Exp $
 #
 
-DISTNAME=	xfce-3.4.0
+DISTNAME=	xfce-3.4.4
 CATEGORIES=	x11
-NEED_VERSION=	 1.301
+NEED_VERSION=	1.301
 MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	kevlo@openbsd.org
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	Imlib.19::graphics/imlib \
 		gtk.1::x11/gtk+
-RUN_DEPENDS=	sox::audio/sox
+RUN_DEPENDS=	${LOCALBASE}/bin/esdplay::audio/esound
 
 GTK_CONFIG=	${LOCALBASE}/bin/gtk-config
 
@@ -29,8 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+=--localstatedir={PREFIX}/share \
-		--datadir=${PREFIX}/share \
-		--with-xpm=${X11BASE}
+CONFIGURE_ARGS+=--with-xpm=${X11BASE}
 
 .include <bsd.port.mk>

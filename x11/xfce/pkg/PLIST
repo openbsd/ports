@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/12 15:04:49 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/08/16 03:41:34 kevlo Exp $
 bin/CDE2Xfcepal
 bin/startxfce
 bin/xfbd
@@ -45,14 +45,15 @@ man/man1/xfclock.1
 man/man1/xfgnome.1
 man/man1/xfhelp.1
 man/man1/xflock.1
+man/man1/xfmountdev.1
 man/man1/xfmouse.1
 man/man1/xfpager.1
 man/man1/xfprint.1
 man/man1/xfsound.1
 man/man1/xfterm.1
 man/man1/xftrash.1
+man/man1/xftree.1
 man/man1/xfwm.1
-man/man1/xfmountdev.1
 share/xfce/COPYING
 share/xfce/XFce3.logo
 share/xfce/backdrops/A-Little-Exercise-3.jpg
@@ -367,6 +368,7 @@ share/xfce/palettes/Alpine
 share/xfce/palettes/Analog
 share/xfce/palettes/Anthracite
 share/xfce/palettes/Bahamas
+share/xfce/palettes/Bronze
 share/xfce/palettes/Cheese
 share/xfce/palettes/Citrouille
 share/xfce/palettes/Clinky
@@ -378,6 +380,7 @@ share/xfce/palettes/Fall
 share/xfce/palettes/Golden
 share/xfce/palettes/Grayscale
 share/xfce/palettes/Ground
+share/xfce/palettes/Helice
 share/xfce/palettes/HiContrast
 share/xfce/palettes/HiTech
 share/xfce/palettes/Iceland
@@ -459,6 +462,7 @@ share/xfce/sounds/zap01.wav
 share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
+share/xfce/textures/bronze.xpm
 share/xfce/textures/cheese.xpm
 share/xfce/textures/craters.xpm
 share/xfce/textures/ground.xpm
@@ -469,48 +473,48 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@dirrm lib/xfce
-@dirrm share/xfce/backdrops
-@dirrm share/xfce/help
-@dirrm share/xfce/icons
-@dirrm share/xfce/locale/ca/LC_MESSAGES
-@dirrm share/xfce/locale/ca
-@dirrm share/xfce/locale/da/LC_MESSAGES
-@dirrm share/xfce/locale/da
-@dirrm share/xfce/locale/de/LC_MESSAGES
-@dirrm share/xfce/locale/de
-@dirrm share/xfce/locale/es/LC_MESSAGES
-@dirrm share/xfce/locale/es
-@dirrm share/xfce/locale/et/LC_MESSAGES
-@dirrm share/xfce/locale/et
-@dirrm share/xfce/locale/fi/LC_MESSAGES
-@dirrm share/xfce/locale/fi
-@dirrm share/xfce/locale/fr/LC_MESSAGES
-@dirrm share/xfce/locale/fr
-@dirrm share/xfce/locale/gl/LC_MESSAGES
-@dirrm share/xfce/locale/gl
-@dirrm share/xfce/locale/hu/LC_MESSAGES
-@dirrm share/xfce/locale/hu
-@dirrm share/xfce/locale/it/LC_MESSAGES
-@dirrm share/xfce/locale/it
-@dirrm share/xfce/locale/ja/LC_MESSAGES
-@dirrm share/xfce/locale/ja
-@dirrm share/xfce/locale/nl/LC_MESSAGES
-@dirrm share/xfce/locale/nl
-@dirrm share/xfce/locale/pl/LC_MESSAGES
-@dirrm share/xfce/locale/pl
-@dirrm share/xfce/locale/ro/LC_MESSAGES
-@dirrm share/xfce/locale/ro
-@dirrm share/xfce/locale/ru/LC_MESSAGES
-@dirrm share/xfce/locale/ru
-@dirrm share/xfce/locale/sk/LC_MESSAGES
-@dirrm share/xfce/locale/sk
-@dirrm share/xfce/locale/sv/LC_MESSAGES
-@dirrm share/xfce/locale/sv
+@dirrm share/xfce/textures
+@dirrm share/xfce/sounds
+@dirrm share/xfce/palettes
 @dirrm share/xfce/locale/zh/LC_MESSAGES
 @dirrm share/xfce/locale/zh
+@dirrm share/xfce/locale/sv/LC_MESSAGES
+@dirrm share/xfce/locale/sv
+@dirrm share/xfce/locale/sk/LC_MESSAGES
+@dirrm share/xfce/locale/sk
+@dirrm share/xfce/locale/ru/LC_MESSAGES
+@dirrm share/xfce/locale/ru
+@dirrm share/xfce/locale/ro/LC_MESSAGES
+@dirrm share/xfce/locale/ro
+@dirrm share/xfce/locale/pl/LC_MESSAGES
+@dirrm share/xfce/locale/pl
+@dirrm share/xfce/locale/nl/LC_MESSAGES
+@dirrm share/xfce/locale/nl
+@dirrm share/xfce/locale/ja/LC_MESSAGES
+@dirrm share/xfce/locale/ja
+@dirrm share/xfce/locale/it/LC_MESSAGES
+@dirrm share/xfce/locale/it
+@dirrm share/xfce/locale/hu/LC_MESSAGES
+@dirrm share/xfce/locale/hu
+@dirrm share/xfce/locale/gl/LC_MESSAGES
+@dirrm share/xfce/locale/gl
+@dirrm share/xfce/locale/fr/LC_MESSAGES
+@dirrm share/xfce/locale/fr
+@dirrm share/xfce/locale/fi/LC_MESSAGES
+@dirrm share/xfce/locale/fi
+@dirrm share/xfce/locale/et/LC_MESSAGES
+@dirrm share/xfce/locale/et
+@dirrm share/xfce/locale/es/LC_MESSAGES
+@dirrm share/xfce/locale/es
+@dirrm share/xfce/locale/de/LC_MESSAGES
+@dirrm share/xfce/locale/de
+@dirrm share/xfce/locale/da/LC_MESSAGES
+@dirrm share/xfce/locale/da
+@dirrm share/xfce/locale/ca/LC_MESSAGES
+@dirrm share/xfce/locale/ca
 @dirrm share/xfce/locale
-@dirrm share/xfce/palettes
-@dirrm share/xfce/sounds
-@dirrm share/xfce/textures
+@dirrm share/xfce/icons
+@dirrm share/xfce/help
+@dirrm share/xfce/backdrops
 @dirrm share/xfce
+@dirrm lib/xfce
