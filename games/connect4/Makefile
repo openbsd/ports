@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/27 20:56:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/08/05 20:46:50 jsyn Exp $
 
 COMMENT=	"curses version of the classic game"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.402
 MASTER_SITES=	ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
 EXTRACT_SUFX=		# empty
 
-EXTRACT_CASES=	connect4) gunshar ${FULLDISTDIR}/$$archive ;;
+EXTRACT_CASES=	connect4) ${_SED_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
 
-
-BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -DSCOREFILE=\"${SCOREFILE}\"'
 
 WRKDIST=	${WRKDIR}
