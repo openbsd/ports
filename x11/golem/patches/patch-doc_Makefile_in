@@ -1,0 +1,19 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2002/12/29 21:13:44 margarida Exp $
+--- doc/Makefile.in.orig	Sun May  6 22:51:49 2001
++++ doc/Makefile.in	Sun Dec 29 15:06:40 2002
+@@ -1,12 +1,11 @@
+ # Makefile
+ 
+-all: golem.1.gz
++all: golem.1
+ 
+ clean:
+-	-rm -f golem.1.gz
++	-rm -f golem.1
+ 
+-golem.1.gz: golem.mdoc
++golem.1: golem.mdoc
+ 	cp golem.mdoc golem.1
+-	gzip golem.1
+ 
+ full: clean all
