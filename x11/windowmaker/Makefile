@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2002/01/04 22:40:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.51 2002/04/29 09:00:59 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -11,6 +11,7 @@ HOMEPAGE=		http://www.windowmaker.org/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -36,6 +37,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-dependency-tracking \
 			--enable-gnome \
 			--enable-kde
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libpng"
 
 FLAVORS=		i18n
 FLAVOR?=
