@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2003/07/19 18:20:11 jolan Exp $
+# $OpenBSD: Makefile,v 1.114 2003/09/23 23:40:46 jolan Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += lcms
      SUBDIR += libart
      SUBDIR += libdivxdecore
+     SUBDIR += libdvbpsi
      SUBDIR += libexif
      SUBDIR += libgphoto2
      SUBDIR += libmng
