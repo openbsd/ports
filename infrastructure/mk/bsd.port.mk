@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.367 2001/03/28 11:28:31 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.368 2001/03/28 11:32:29 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1212,7 +1212,7 @@ ${_EXTRACT_COOKIE}:
 .if target(post-extract)
 	@cd ${.CURDIR} && exec ${MAKE} post-extract
 .endif
-	@${_MAKE_COOKIE} ${_EXTRACT_COOKIE}
+	@${_MAKE_COOKIE} $@
 
 
 
@@ -1222,7 +1222,7 @@ ${_EXTRACT_COOKIE}:
 ${_PREPATCH_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} pre-patch
 .  if ${PATCH_CHECK_ONLY:L} != "yes"
-	@${_MAKE_COOKIE} ${_PREPATCH_COOKIE}
+	@${_MAKE_COOKIE} $@
 .  endif
 .endif
 
@@ -1262,7 +1262,7 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} post-distpatch
 .endif
 .if ${PATCH_CHECK_ONLY:L} != "yes"
-	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
+	@${_MAKE_COOKIE} $@
 .endif
 
 # The real patch
@@ -1318,7 +1318,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  if ${CONFIGURE_STYLE:L:Mautoconf}
 	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 .  endif
-	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
+	@${_MAKE_COOKIE} $@
 .endif
 
 
@@ -1377,7 +1377,7 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 .if target(post-configure)
 	@cd ${.CURDIR} && exec ${MAKE} post-configure
 .endif
-	@${_MAKE_COOKIE} ${_CONFIGURE_COOKIE}
+	@${_MAKE_COOKIE} $@
 
 
 # The real build
@@ -1399,7 +1399,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 	@cd ${.CURDIR} && exec ${MAKE} post-build
 .  endif
 .endif
-	@${_MAKE_COOKIE} ${_BUILD_COOKIE}
+	@${_MAKE_COOKIE} $@
 
 _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
 
@@ -1458,7 +1458,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 		echo >&2 "*** bad links in ${WRKINST}"; \
 		exit 1; \
 	fi
-	@${SUDO} ${_MAKE_COOKIE} ${_FAKE_COOKIE}
+	@${SUDO} ${_MAKE_COOKIE} $@
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 	@cd ${.CURDIR} && DEPENDS_TARGET=package exec ${MAKE} run-depends lib-depends
@@ -1471,7 +1471,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 	fi
 .  endif
 	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
-	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_COOKIE}
+	@${SUDO} ${_MAKE_COOKIE} $@
 .endif 
 
 _SUBPACKAGE_COOKIES=
@@ -1536,7 +1536,7 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${_SUBPACKAGE_COOKIES} ${_PKG_PREREQ}
 .  endif
 .endif
 .if !defined(PACKAGE_NOINSTALL)
-	@${_MAKE_COOKIE} ${_PACKAGE_COOKIE}
+	@${_MAKE_COOKIE} $@
 .endif
 
 .if !target(fetch-all)
