@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/09/22 21:35:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/11 13:29:22 alek Exp $
 
 COMMENT=		"lightweight HTTP/SSL proxy"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--with-config=${SYSCONFDIR}/tinyproxy/tinyproxy.conf

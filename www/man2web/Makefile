@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/04 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"convert man pages to HTML"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=man2web/}
 

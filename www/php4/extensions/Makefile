@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/10/13 01:46:02 danh Exp $
+# $OpenBSD: Makefile,v 1.36 2004/12/11 13:29:22 alek Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -11,6 +11,8 @@ PREFIX?=	${CHROOT_DIR}
 
 FLAVORS=	no_x11
 FLAVOR?= 
+
+WANTLIB=	crypto gssapi krb5 m ncurses panel ssl z
 
 RUN_DEPENDS=	:php4-core-${V}:www/php4/core
 MODULES=	devel/gettext
@@ -118,6 +120,7 @@ CONFIGURE_ARGS+=	--with-gd=shared ${GRAPHIC_CONFIG} \
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=               yes
 CONFIGURE_ARGS+=       --with-xpm-dir=${X11BASE}
+WANTLIB+=		X11 Xpm 
 .else
 CONFIGURE_ARGS+=       --without-xpm-dir
 FULLPKGNAME-gd=		php4-gd-${V}-no_x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/12/20 01:17:43 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/11 13:29:20 alek Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -15,11 +15,15 @@ FLAVOR?=		motif
 
 LIB_DEPENDS+=	 	expat.2::textproc/expat
 
+WANTLIB=		ICE SM X11 Xext Xp Xt c m z
+
 .if ${FLAVOR:L} == "gtk"
 
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 # I'm too lazy to write a proper imlib autoconf test.
 LIB_DEPENDS+=		gdk_imlib.19::graphics/imlib
+
+WANTLIB+=		Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff
 
 .elif ${FLAVOR:L} == "motif"
 

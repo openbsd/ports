@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/21 00:16:21 couderc Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"squid redirector"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 MASTER_SITES=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/src/
 

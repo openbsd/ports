@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/08 09:25:15 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"Apache module for logging to an SQL database"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		z
 
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_log_sql/
 EXTRACT_SUFX=	.tar.bz2

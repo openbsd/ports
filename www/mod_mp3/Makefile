@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/16 10:40:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"turns Apache into an MP3 or Ogg streaming server"
 
@@ -40,6 +40,7 @@ LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
 CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 CONF=	${EXAMPLESRC}/mp3_with_mysql.conf
 EXAMPLES+=	${EXAMPLESRC}/mysql_schema
+WANTLIB=	m
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/10/18 19:44:43 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"HTTP latency performance testing client"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ssl 
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 

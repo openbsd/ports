@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2004/08/10 08:46:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.58 2004/12/11 13:29:22 alek Exp $
 
 COMMENT=	"pager/text-based web browser"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto curses m ssl z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
@@ -39,6 +40,7 @@ DOCS=	FAQ.html HISTORY MANUAL.html README README.dict README.func \
 LIB_DEPENDS+=	gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
 CONFIGURE_ARGS+=--with-imagelib=gdk-pixbuf
 DOCS+=		README.img
+WANTLIB+=	X11 Xext Xi gdk glib gmodule gtk jpeg png tiff
 .else
 CONFIGURE_ARGS+=--enable-image=no
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/24 17:37:49 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/11 13:29:22 alek Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -41,6 +41,8 @@ PHP_VERSION=	${V}
 .for i in TRUEPREFIX PHP_CONFIG_FILE MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
+
+WANTLIB=	c crypto des m ssl z
 
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 PREFIX=		${CHROOT_DIR}

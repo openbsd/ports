@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/12 20:06:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"bozotic HTTP server"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ssl 
 
 MASTER_SITES=	${HOMEPAGE} \
 		http://www.mguillaud.net/ports/bozohttpd/

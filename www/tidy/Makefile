@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/07/14 14:07:45 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/11 13:29:22 alek Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}src/ \
 		${HOMEPAGE}src/old/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/11 06:54:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/11 13:29:21 alek Exp $
 
 COMMENT=	"provides HTTP Basic authentication via bsd auth"
 DISTNAME=	bsdauth-0.7
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		c
 
 NO_REGRESS=	Yes
 
