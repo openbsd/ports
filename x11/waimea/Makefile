@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/18 02:05:19 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/15 21:57:29 couderc Exp $
 
 COMMENT=		"Virtual desktop manager for X11"
 
-VERSION=0.3.5
+VERSION=		0.4.0
 DISTNAME=		waimea-${VERSION}
 CATEGORIES=		x11
 
-HOMEPAGE=		http://waimea.sourceforge.net
+HOMEPAGE=		http://www.waimea.org
 
 MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
