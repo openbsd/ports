@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2000/05/28 20:37:15 jakob Exp $
+# $OpenBSD: Makefile,v 1.30 2000/06/29 03:34:07 jasoni Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
      SUBDIR += ac3dec
      SUBDIR += amp
      SUBDIR += bladeenc
+     SUBDIR += bwap
 #    SUBDIR += cam
 #    SUBDIR += cddbd
 #    SUBDIR += cdplay
