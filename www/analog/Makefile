@@ -3,11 +3,11 @@
 # Date created:		11 Aug 1998
 # Whom:			Oleg Safiullin <form@OpenBSD.ORG>
 #
-# $OpenBSD: Makefile,v 1.2 1998/10/20 08:39:49 form Exp $
+# $OpenBSD: Makefile,v 1.3 1998/11/10 05:06:35 form Exp $
 #
 
-DISTNAME=	analog3.0
-PKGNAME=	analog-3.0
+DISTNAME=	analog3.1
+PKGNAME=	analog-3.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.lightside.net/analog/ \
