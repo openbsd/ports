@@ -3,7 +3,7 @@
 # Date created:         18 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.4 1998/05/20 08:20:58 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 1998/05/20 08:22:48 angelos Exp $
 #
 
 DISTNAME=       rman-3.0.5
@@ -20,5 +20,7 @@ MAN1=		rman.1
 
 post-install:
 	@strip ${PREFIX}/bin/rman
+	@chmod 755 $(PREFIX}/bin/rman
+	@chmod 644 ${PREFIX}/man/man1/rman.1
 
 .include <bsd.port.mk>
