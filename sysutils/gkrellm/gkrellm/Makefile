@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/19 17:27:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/03/03 19:49:42 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"single process stack of system monitors for GTK+2 (server)"
 COMMENT-client=	"single process stack of system monitors for GTK+2"
 
-V=		2.1.25
+V=		2.1.27
 DISTNAME=	gkrellm-${V}
 PKGNAME=	gkrellm-server-${V}
 PKGNAME-client=	gkrellm-${V}
