@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2001/01/21 16:22:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2001/02/12 20:13:39 jakob Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
-DISTNAME=	dat-4116
+DISTNAME=	dat-4120
 PKGNAME=	uvscan_${DISTNAME}
 CATEGORIES=	security
 NEED_VERSION=	1.302
