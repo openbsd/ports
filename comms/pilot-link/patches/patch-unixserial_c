@@ -1,8 +1,8 @@
-$OpenBSD: patch-unixserial_c,v 1.1 2002/07/10 14:24:47 ian Exp $
+$OpenBSD: patch-unixserial_c,v 1.2 2002/09/06 06:25:31 pvalchev Exp $
 
---- libsock/unixserial.c.orig	Mon Aug  6 11:39:00 2001
-+++ libsock/unixserial.c	Mon Aug  6 11:42:01 2001
-@@ -156,6 +156,13 @@
+--- libsock/unixserial.c.orig	Wed Jun  6 14:00:17 2001
++++ libsock/unixserial.c	Thu Sep  5 23:47:21 2002
+@@ -156,6 +156,13 @@ pi_serial_open(struct pi_socket *ps, str
  
  	int i;
  
@@ -16,11 +16,10 @@ $OpenBSD: patch-unixserial_c,v 1.1 2002/07/10 14:24:47 ian Exp $
  #ifndef SGTTY
  	struct termios tcn;
  #else
-@@ -166,6 +173,15 @@
- 		tty = getenv("PILOTPORT");
+@@ -167,9 +174,20 @@ pi_serial_open(struct pi_socket *ps, str
  	if (!tty)
  		tty = "<Null>";
-+
+ 
 +	for (retries = 0 ; retries <= maxretries ; retries++ ) {
 +	  if ((rc = open(tty, O_RDWR | O_NONBLOCK)) == -1) {
 +	    usleep(50000);
@@ -29,6 +28,13 @@ $OpenBSD: patch-unixserial_c,v 1.1 2002/07/10 14:24:47 ian Exp $
 +	    break;
 +	  }
 +	}
- 
++
++/* Huh? already open(2) above
  	if ((ps->mac->fd = open(tty, O_RDWR | O_NONBLOCK)) == -1) {
++*/
++	if (rc == -1)
  		return -1;	/* errno already set */
+-	}
+ 
+ 	if (!isatty(ps->mac->fd)) {
+ 		close(ps->mac->fd);
