@@ -1,71 +1,91 @@
---- Makefile.orig	Sun May  2 10:38:44 1999
-+++ Makefile	Sat Jun 19 22:55:17 1999
-@@ -3,8 +3,8 @@
+--- Makefile.orig	Sat Sep 18 11:29:44 1999
++++ Makefile	Tue Sep 21 10:56:06 1999
+@@ -3,20 +3,19 @@
  
  # Debugging options
  
 -DEBUG = -g -DHEXDUMP
--#DEBUG = -O
 +#DEBUG = -g -DHEXDUMP
+ #DEBUG = -g -DHEXDUMP -DNOCRYPTO
+ #DEBUG = -O
 +DEBUG = 
+   
+ # Installation 
  
- #   Uncomment the appropriate LFLAGS statement below according
- #   to your machine type.
-@@ -26,8 +26,8 @@
- # option may speed up certain compression modes.  If you get a
- # warning about -float being ignored in non -cckr compiles, it
- # has no effect on your system.
--CC = cc -signed
--LFLAGS = -laudio -lcurses -lm
-+#CC = cc -signed
-+#LFLAGS = -laudio -lcurses -lm
+ # Install program
+ INSTALL = /usr/bin/install
+-# Installation root directory
+-INSTDIR = /usr/local
+ # Binaries
+-INSTDIR_BIN = $(INSTDIR)/bin
++INSTDIR_BIN = $(PREFIX)/bin
+ # Manual pages
+-INSTDIR_MAN = $(INSTDIR)/man
++INSTDIR_MAN = $(PREFIX)/man
  
- # ** Linux users please note: many Linux audio drivers are
- #    half-duplex, even through your sound card may actually
-@@ -108,12 +108,15 @@
- #CCFLAGS = -DHEWLETT_PACKARD -DOLDCC
- #LFLAGS = -lAlib -lcurses -ltermcap -lm
+ #   Uncomment the appropriate CC, CCFLAGS, and LFLAGS statements below
+ #   according to your machine type.
+@@ -38,9 +37,9 @@
+ #    functionality is working.	Please see the detailed description
+ #    of the available flags which follows these declarations.
+ #
+-CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN
+-CC = gcc -O3 # for GNU's gcc compiler
+-LFLAGS = -lncurses -lm
++#CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN
++#CC = gcc -O3 # for GNU's gcc compiler
++#LFLAGS = -lncurses -lm
+ #
+ # If the above LFLAGS doesn't work, try the one below.
+ #LFLAGS = -lcurses -lm
+@@ -223,6 +222,12 @@
+ #CCFLAGS = -DM_LITTLE_ENDIAN
+ #LFLAGS = -lcurses -ltermcap -lcompat -lm
  
-+# OpenBSD
++#			     OpenBSD 2.5
++
++#
 +LFLAGS = -L${LOCALBASE}/lib -lcurses -ltermcap -lcompat -lm -lossaudio
 +
- # Where Perl is located on your system.  This is used to make
- # a directly-executable version of sfvod.
--PERL = /usr/local/bin/perl
-+PERL = /usr/bin/perl
- 
- # If your audio hardware is half duplex, uncomment the next line
++#				
+ #			   Hewlett-Packard
+ #		      (courtesy of Marc Kilian)
+ #
+@@ -238,7 +243,7 @@
+ # If your audio hardware is half duplex, uncomment the next line.
+ # You can also, if you wish, define this on the CCFLAGS definition
+ # for your hardware platform.
 -#DUPLEX = -DHALF_DUPLEX
-+DUPLEX = -DHALF_DUPLEX
++DUPLEX?= -DHALF_DUPLEX
  
  # If your getdomainname() does not return the DNS domainname, define:
  #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
-@@ -141,7 +144,7 @@
+@@ -269,7 +274,7 @@
  
  #   Compiler flags
  
 -CFLAGS = $(DEBUG) -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
-+CFLAGS += $(DEBUG) -Iadpcm -Ilpc -Iidea -Imd5 -Iblowfish -I/usr/include -I${LOCALBASE}/include $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
++CFLAGS += $(DEBUG) -Iadpcm -Ilpc -Imd5 -Iidea -Iblowfish -I/usr/include -I${LOCALBASE}/include $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
  
- PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfreflect sfvod
+ PROGRAMS = sfspeaker sfmike sflaunch sflwld sflwl sfecho sfreflect sfvod
  
-@@ -150,12 +153,12 @@
- SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o hp_audio.o
+@@ -278,12 +283,12 @@
+ SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o audio_hp.o audio_sgi.o common.o
  
- sfspeaker: $(SPKROBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o
--	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.o md5/md5.o idea/idea.o lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
-+	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.o md5/md5.o idea/idea.o lpc10/liblpc10.a -lgsm lpc/lpc.o xdsub.o -ldes $(LFLAGS) -o sfspeaker
+ sfspeaker: $(SPKROBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o 
+-	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
++	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a -lgsm lpc/lpc.o xdsub.o -ldes $(LFLAGS) -o sfspeaker
  
- MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o hp_audio.o
+ MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o audio_hp.o audio_sgi.o
  
  sfmike: $(MIKEOBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
--	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.o md5/md5.o idea/idea.o -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
-+	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.o md5/md5.o idea/idea.o -lm blowfish/libblowfish.a lpc10/liblpc10.a -lgsm lpc/lpc.o -ldes $(LFLAGS) -o sfmike
+-	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
++	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a -lgsm lpc/lpc.o -ldes $(LFLAGS) -o sfmike
  
- LWLDOBJS = lwld.o html.o xdsub.o
+ LAUNCHOBJS = launch.o soundbyte.o usleep.o g711.o
  
-@@ -191,11 +194,11 @@
- 	chmod 755 sfvod
+@@ -337,11 +342,11 @@
+ #	in make not necessarily available on all platforms.
  
  adpcmlib.o:
 -	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC)" )
@@ -78,7 +98,7 @@
  	echo "DES" >deslib.o
  
  libblowfish.o:
-@@ -203,7 +206,6 @@
+@@ -349,7 +354,6 @@
  	echo "BLOWFISH" >libblowfish.o
  
  libdes.o:
@@ -86,7 +106,7 @@
  	echo "LIBDES" >libdes.o
  
  lpclib.o:
-@@ -215,15 +217,14 @@
+@@ -361,15 +365,14 @@
  	echo "LPC" >lpc10lib.o
  
  gsmlib.o:
@@ -103,4 +123,12 @@
 +	( echo "Building IDEA library."; cd idea ; make CC="$(CC) $(CCFLAGS) $(DEBUG)" )
  	echo "IDEA" >idealib.o
  
- codecs.o:   codecs.c speakfree.h
+ #   Object file dependencies
+@@ -462,5 +465,5 @@
+ #	be root to install in system directories.
+ 
+ install: $(PROGRAMS)
+-	$(INSTALL) -o root -g root -m 755 -s $(PROGRAMS) $(INSTDIR_BIN)
+-	$(INSTALL) -o root -g root -m 644 *.1 $(INSTDIR_MAN)/man1
++	$(INSTALL) -o root -g wheel -m 755 -s $(PROGRAMS) $(INSTDIR_BIN)
++	$(INSTALL) -o root -g wheel -m 444 *.1 $(INSTDIR_MAN)/man1

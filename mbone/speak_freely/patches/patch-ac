@@ -1,5 +1,5 @@
---- idea/Makefile.orig	Sat Jun 19 21:59:52 1999
-+++ idea/Makefile	Sat Jun 19 22:00:06 1999
+--- idea/Makefile.orig	Wed Sep  1 08:06:06 1999
++++ idea/Makefile	Tue Sep 21 09:42:31 1999
 @@ -6,8 +6,8 @@
  
  #   Compiler flags
@@ -9,5 +9,5 @@
 +#CC = cc
 +#CFLAGS = -O
  
- all:	idea.o
+ all:	idea.a
  

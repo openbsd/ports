@@ -1,12 +1,12 @@
---- mike.c.orig	Tue Apr  6 10:50:42 1999
-+++ mike.c	Sat Jun 19 22:50:40 1999
+--- mike.c.orig	Tue Sep 14 09:27:51 1999
++++ mike.c	Tue Sep 21 09:48:37 1999
 @@ -1,4 +1,4 @@
 -/*#define USE_CURSES*/
 +#define USE_CURSES
  #define BYTE_SWAP_DEBUG
  /*
  
-@@ -845,6 +845,9 @@
+@@ -871,6 +871,9 @@
  		    (sb->buffer.buffer_len > 16)) {
  		    pktlen += sizeof(sb->sendinghost);
  		}

@@ -1,10 +1,10 @@
+bin/sfecho
 bin/sfspeaker
 bin/sfmike
 bin/sflwl
-sbin/sfecho
-sbin/sflwld
-sbin/sfvod
-sbin/sfreflect
+bin/sflwld
+bin/sfvod
+bin/sfreflect
 lib/speak_freely/ring.au
 lib/speak_freely/busy.au
 man/man1/sfecho.1

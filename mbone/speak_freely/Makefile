@@ -1,36 +1,23 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/21 07:09:56 turan Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/21 15:22:53 brad Exp $
 
-BROKEN=		"sources unavailible"
+DISTNAME=	speak_freely-7.1
+CATEGORIES=	mbone audio security
+MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/prior-releases/7.1/
 
-DISTNAME=       speak_freely-7.0
-CATEGORIES=     mbone audio security
-MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/
-
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=	angelos@openbsd.org
 
 LIB_DEPENDS=	gsm.1.0:${PORTSDIR}/audio/gsm
 
-UTILS=   sfspeaker sfmike sflwl
-DEMNS=   sfecho sflwld
-DDEMNS=  sfvod sfreflect
-SFLIB=   ${PREFIX}/lib/speak_freely
+MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 
-do-install:
-	@if [ ! -d ${SFLIB} ]; then \
-		install -d -o ${BINOWN} -g ${BINGRP} -m 755 ${SFLIB}; \
-	fi
-	@$(INSTALL_DATA) ${WRKSRC}/busy.au ${WRKSRC}/ring.au ${SFLIB}
-	@for p in ${UTILS}; do \
-		$(INSTALL_PROGRAM) ${WRKSRC}/$$p ${PREFIX}/bin; \
-		$(INSTALL_MAN) ${WRKSRC}/$$p.1 ${PREFIX}/man/man1; \
-	done;
-	@for p in ${DEMNS}; do \
-		$(INSTALL_PROGRAM) ${WRKSRC}/$$p ${PREFIX}/sbin; \
-		$(INSTALL_MAN) ${WRKSRC}/$$p.1 ${PREFIX}/man/man1; \
-	done;
-	@for p in ${DDEMNS}; do \
-		$(INSTALL_SCRIPT) ${WRKSRC}/$$p ${PREFIX}/sbin; \
-		$(INSTALL_MAN) ${WRKSRC}/$$p.1 ${PREFIX}/man/man1; \
-	done;
+.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arc" || \
+ ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "pmax" || ${MACHINE_ARCH} == "sparc")
+MAKE_ENV+=	CCFLAGS=-DM_LITTLE_ENDIAN
+.endif
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/speak_freely
+	@$(INSTALL_DATA) ${WRKSRC}/busy.au ${WRKSRC}/ring.au \
+		${PREFIX}/lib/speak_freely
 
 .include <bsd.port.mk>
