@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/03/10 04:00:14 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/03/23 22:00:04 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.42
@@ -15,7 +15,7 @@ LIB_DEPENDS=	MesaGL\\.3\\.:${PORTSDIR}/graphics/MesaGL
 .endif
 
 .if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"Currently doesn't build on sparc due to g++ bug"
+BROKEN=		"Currently does not build on sparc due to g++ bug"
 .endif
 
 USE_GMAKE=	yes
@@ -125,15 +125,15 @@ post-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${USE_TARGET}
 
 do-install:
+	if [ -f ${WRKSRC}/lib/libqt.a ]; then \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib; \
+	fi
+	if [ -f ${WRKSRC}/lib/libqt.so.1.42 ]; then \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.42 ${X11BASE}/lib; \
+	 ${LN} -sf ${X11BASE}/lib/libqt.so.1.42 ${X11BASE}/lib/libqt.so; \
+	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${X11BASE}/bin
-.if exists(${WRKSRC}/lib/libqt.a)
-	${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib
-.endif
-.if exists(${WRKSRC}/lib/libqt.so.1.42)
-	${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.42 ${X11BASE}/lib
-	${LN} -sf ${X11BASE}/lib/libqt.so.1.42 ${X11BASE}/lib/libqt.so
 	${LDCONFIG} -m ${PREFIX}/lib
-.endif
 	${MKDIR} -p ${PREFIX}/include/X11/qt
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
