@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_pgsql_php_pgsql_h,v 1.1 2001/04/24 19:43:28 naddy Exp $
+--- ext/pgsql/php_pgsql.h.orig	Tue Sep 12 22:13:36 2000
++++ ext/pgsql/php_pgsql.h	Tue Apr 24 13:15:55 2001
+@@ -29,7 +29,7 @@ extern zend_module_entry pgsql_module_en
+ 
+ #ifdef PHP_PGSQL_PRIVATE
+ #undef SOCKET_SIZE_TYPE
+-#include <postgres.h>
++#include <postgres_fe.h>
+ #include <libpq-fe.h>
+ 
+ #ifdef PHP_WIN32
