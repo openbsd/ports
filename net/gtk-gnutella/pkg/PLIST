@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/20 20:12:11 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/12/26 16:24:49 sturm Exp $
 bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/gtk-gnutella/
+share/gtk-gnutella/bogons.txt
+share/gtk-gnutella/geo-ip.txt
 share/gtk-gnutella/gwcache.boot
 share/gtk-gnutella/hostiles.txt
 share/gtk-gnutella/pixmaps/
@@ -16,6 +18,10 @@ share/gtk-gnutella/pixmaps/download.xpm
 share/gtk-gnutella/pixmaps/exit.xpm
 share/gtk-gnutella/pixmaps/filter.xpm
 share/gtk-gnutella/pixmaps/firewall.xpm
+share/gtk-gnutella/pixmaps/firewall_punchable.xpm
+share/gtk-gnutella/pixmaps/firewall_tcp.xpm
+share/gtk-gnutella/pixmaps/firewall_udp.xpm
+share/gtk-gnutella/pixmaps/firewall_udp_punchable.xpm
 share/gtk-gnutella/pixmaps/freeze.xpm
 share/gtk-gnutella/pixmaps/icon.xpm
 share/gtk-gnutella/pixmaps/leaf.xpm
@@ -29,6 +35,7 @@ share/gtk-gnutella/pixmaps/stock_form-time-field-16.xpm
 share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
+share/gtk-gnutella/pixmaps/warning.xpm
 share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
@@ -42,6 +49,9 @@ share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
+share/locale/ja/LC_MESSAGES/gtk-gnutella.mo
 share/locale/nl/
 share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo

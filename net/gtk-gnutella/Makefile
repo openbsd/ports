@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/26 16:24:49 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
-DISTNAME=		gtk-gnutella-0.94
+DISTNAME=		gtk-gnutella-0.95
 CATEGORIES=     	net 
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
@@ -40,5 +40,7 @@ CONFIGURE_ARGS=		-d  -e \
 
 FAKE_FLAGS=		INSTALL_PREFIX=${DESTDIR}
 INSTALL_TARGET=		install install.man
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
