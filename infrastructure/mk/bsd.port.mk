@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.541 2003/01/14 18:18:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.542 2003/02/06 03:45:15 brad Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1340,7 +1340,7 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 ${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 .endfor
 
-# Do a brute-force ldd on all files under WRKINST. 
+# Do a brute-force ldd/objdump on all files under WRKINST. 
 .if ${ELF_TOOLCHAIN:L} == "no"
 ${_LIBLIST}: ${_FAKE_COOKIE}
 	@${SUDO} mkdir -p ${WRKINST}/usr/libexec
@@ -1360,7 +1360,7 @@ ${_LIBLIST}: ${_FAKE_COOKIE}
 		sed 's/\ lib//g' |\
 		sed 's/  NEEDED     /	library: /g' |\
 		sed 's/\.so\./ /g' |\
-		sed 's/\./\ /g'|\
+		sed 's/^\(.*\)\ \([^\.]*\)\.\([^\.]*\)/\1\ \2\ \3/g' |\
 		sort -u >$@
 .endif
 
