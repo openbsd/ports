@@ -6,8 +6,13 @@ functions or programs.
 
 Comes with a set of icons.
 
-Flavors:
-	rplay	- build with audio/rplay and provide sound support
-	debug	- turn on debugging messages
+Packages can be built with additional FLAVORs:
+
+ rplay:	build with audio/rplay and provide sound support
+	This FLAVOR requires the rplay package.
+
+ debug:	turn on debugging messages
+
+ i18n:	enable experimental multibyte character support
 
 WWW: ${HOMEPAGE}
