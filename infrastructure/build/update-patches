@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: update-patches,v 1.1 2000/04/19 11:16:27 espie Exp $
+# $OpenBSD: update-patches,v 1.2 2000/06/07 00:47:47 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -25,8 +25,8 @@
 # SUCH DAMAGE.
 
 # Find out all .orig files and strip the name to what diff will use
-find $WRKDIST -type f -name '*.orig' | fgrep -v $DISTORIG | \
-sed -e "s,^$WRKDIST/\(.*\)\.orig\$,\1," | {
+cd $WRKDIST && find . -type f -name '*.orig' | fgrep -v $DISTORIG | \
+sed -e "s,^./\(.*\)\.orig\$,\1," | {
 while read file 
 do
     echo 1>&2 "Processing $file"
@@ -64,7 +64,7 @@ do
     # Build a sensible name for the patch file
     patchname=patch-`echo $file|sed -e s,[/.],_,g`
     echo 1>&2 "No patch-* found for $file, creating $patchname"
-    { echo '$OpenBSD: update-patches,v 1.1 2000/04/19 11:16:27 espie Exp $'; (cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file.orig $file) } >$patchname
+    { echo '$OpenBSD: update-patches,v 1.2 2000/06/07 00:47:47 espie Exp $'; (cd $WRKDIST && diff ${DIFF_ARGS} -u -p $file.orig $file) } >$patchname
     edit="$edit $patchname"
     accounted="$accounted $patchname"
 done
@@ -87,7 +87,7 @@ do
     esac
 done
 
-# Check for $Id: update-patches,v 1.1 2000/04/19 11:16:27 espie Exp $ and similar bugs in all those patch files.
+# Check for $Id: update-patches,v 1.2 2000/06/07 00:47:47 espie Exp $ and similar bugs in all those patch files.
 for i in $accounted
 do
     if sed -e '/1,^---/ d' $i|grep '$(Id|OpenBSD'
