@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/05/20 06:22:06 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 2000/05/22 15:41:35 espie Exp $
 
 DISTNAME=	ocaml-3.00
 CATEGORIES=	lang
@@ -16,6 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE=		Yes
 HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--tkdefs '-I${PREFIX}/include/tk8.3 -I${PREFIX}/include/tcl8.3'
+LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3 \
+		tk83.1.3::x11/tk/8.3
 
 # ocaml's configure script is too smart for its own good
 
