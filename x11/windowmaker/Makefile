@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/09/28 14:37:06 wilfried Exp $
+# $OpenBSD: Makefile,v 1.47 2001/10/05 19:28:50 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -19,6 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
 EXTRACT_SUFX=		.tar.bz2
+
+PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+			${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+			patch-*
 
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			jpeg.62::graphics/jpeg \
