@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/26 07:35:05 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/08 19:41:43 naddy Exp $
 
 COMMENT=	"IO:: style interface to Compress::Zlib"
 
-DISTNAME=	IO-Zlib-1.01
+DISTNAME=	IO-Zlib-1.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=IO/}
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
