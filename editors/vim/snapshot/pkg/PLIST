@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2001/08/06 02:33:24 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.18 2001/08/13 14:14:22 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -33,6 +33,7 @@ share/vim/vim60${V}/compiler/README.txt
 share/vim/vim60${V}/compiler/jikes.vim
 share/vim/vim60${V}/compiler/msvc.vim
 share/vim/vim60${V}/compiler/tidy.vim
+share/vim/vim60${V}/delmenu.vim
 share/vim/vim60${V}/doc/autocmd.txt
 share/vim/vim60${V}/doc/change.txt
 share/vim/vim60${V}/doc/cmdline.txt
@@ -156,6 +157,7 @@ share/vim/vim60${V}/ftplugin/changelog.vim
 share/vim/vim60${V}/ftplugin/cpp.vim
 share/vim/vim60${V}/ftplugin/debchangelog.vim
 share/vim/vim60${V}/ftplugin/fortran.vim
+share/vim/vim60${V}/ftplugin/ishd.vim
 share/vim/vim60${V}/ftplugin/java.vim
 share/vim/vim60${V}/ftplugin/kwt.vim
 share/vim/vim60${V}/ftplugin/mail.vim
@@ -179,6 +181,7 @@ share/vim/vim60${V}/indent/css.vim
 share/vim/vim60${V}/indent/eterm.vim
 share/vim/vim60${V}/indent/fortran.vim
 share/vim/vim60${V}/indent/html.vim
+share/vim/vim60${V}/indent/ishd.vim
 share/vim/vim60${V}/indent/java.vim
 share/vim/vim60${V}/indent/make.vim
 share/vim/vim60${V}/indent/matlab.vim
