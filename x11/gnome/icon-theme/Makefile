@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/12 20:16:58 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/06 06:32:51 marcm Exp $
 
 COMMENT=		"the base GNOME icon theme"
 
-DISTNAME=		gnome-icon-theme-1.0.1
+DISTNAME=		gnome-icon-theme-1.0.6
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
