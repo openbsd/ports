@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2003/08/14 01:06:51 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/07/05 19:13:39 espie Exp $
 lib/libgsl.so.0.0
 lib/libgslblascblas.so.0.0
 lib/libgslblasnative.so.0.0
-NEWDYNLIBDIR(%B)
+DYNLIBDIR(%B)
