@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/07/15 06:29:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2002/07/30 22:50:55 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/28 11:55:25 rse Exp $
 
 # XXX This will panic any vax
@@ -6,13 +6,11 @@ NOT_FOR_ARCHS=	vax
 
 COMMENT=	"shared memory lib for apps with pre-forked process model"
 
-DISTNAME=	mm-1.1.3
+DISTNAME=	mm-1.2.1
 CATEGORIES=	devel
-NEED_VERSION=	1.363
-MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
-		ftp://ftp.engelschall.com/sw/mm/
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
-HOMEPAGE=	http://www.engelschall.com/sw/mm/
+HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -25,10 +23,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-post-build:
-	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
-
-test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} test
+REGRESS_TARGET=	test
 
 .include <bsd.port.mk>

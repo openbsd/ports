@@ -1,7 +1,6 @@
-MM - Shared Memory Library
-Copyright (c) 1999 Ralf S. Engelschall, All rights reserved.
+OSSP mm - Shared Memory Allocation
 
-The MM library is a 2-layer abstraction library which simplifies
+The OSSP mm library is a 2-layer abstraction library which simplifies
 the usage of shared memory between forked (and this way strongly
 related) processes under Unix platforms. On the first layer it
 hides all platform dependent implementation details (allocation

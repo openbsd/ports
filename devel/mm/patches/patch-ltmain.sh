@@ -1,57 +1,20 @@
---- ltmain.sh.orig	Sat Jul  1 10:13:38 2000
-+++ ltmain.sh	Tue Feb 20 13:50:18 2001
-@@ -1079,7 +1079,18 @@ compiler."
- 	    # These systems don't actually have c library (as such)
+--- ltmain.sh.orig	Tue Jul 30 18:42:37 2002
++++ ltmain.sh	Tue Jul 30 18:44:15 2002
+@@ -1737,11 +1737,6 @@ compiler."
  	    continue
- 	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
- 	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
-+          esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
-@@ -1091,6 +1102,10 @@ compiler."
- 	deplibs="$deplibs $arg"
- 	;;
+ 	  fi
  
-+      -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -1795,6 +1810,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
- 	  ;;
-+        *-*-openbsd*)
-+          # Do not include libc due to us having libc/libc_r.
-+          ;;
-         *-*-rhapsody*)
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
-@@ -2623,7 +2641,7 @@ static const void *lt_preloaded_setup() 
- 	  # linked before any other PIC object.  But we must not use
- 	  # pic_flag when linking with -static.  The problem exists in
- 	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
--	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
-+	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
- 	    case "$compile_command " in
- 	    *" -static "*) ;;
- 	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
-@@ -3567,40 +3585,6 @@ libdir='$install_libdir'\
+-	  if test "$installed" = no; then
+-	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+-	  fi
+-
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then
+ 	    # figure out the soname
+ 	    set dummy $library_names
+@@ -4446,40 +4441,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
@@ -61,7 +24,7 @@
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
