@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/27 17:35:55 margarida Exp $
 
 COMMENT=		"file integrity checker"
 
@@ -8,7 +8,8 @@ CATEGORIES=		security
 
 HOMEPAGE=		http://integrit.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=integrit/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=integrit/} \
+			http://www.noserose.net/e/integrit/download/
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
