@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/11/28 00:28:59 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/12/29 23:58:11 brad Exp $
 
 DISTNAME=	slang-1.3.10
 PKGNAME=	libslang-1.3.10
@@ -15,7 +15,7 @@ GNU_CONFIGURE=  yes
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
 
-test:
+test:	build
 	@cd ${WRKSRC} && make runtests
 
 .include <bsd.port.mk>
