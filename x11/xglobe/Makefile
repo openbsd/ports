@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 04:41:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/06/09 19:54:21 espie Exp $
 
 COMMENT=	"display the Earth on X11"
 
@@ -22,8 +22,8 @@ USE_X11=		Yes
 
 MAKE_FLAGS=XGLOBE_DIR=${PREFIX}
 
-FLAVORS=no_map gfx qt2
-FLAVOR?=qt2
+FLAVORS=no_map
+FLAVOR?=
 .if ${FLAVOR:L:Mno_map}
 DISTFILES=${DISTNAME}-no-map${EXTRACT_SUFX}
 
@@ -36,22 +36,10 @@ post-install::
 .endif
 
 
-.if ${FLAVOR:L:Mqt2}
 LIB_DEPENDS=qt.2.::x11/qt2
 MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt2
 MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib/qt2
 MAKE_FLAGS+=MOC=moc2
-.else
-MAKE_FLAGS+=QT_LIB_DIR=${LOCALBASE}/lib
-LIB_DEPENDS=qt.1.45::x11/qt
-MAKE_FLAGS+=QT_INCLUDE_DIR=${LOCALBASE}/include/X11/qt
-.  if ${FLAVOR:L:Mgfx}
-MAKE_FLAGS+=WITH_QIMGIO=-DWITH_QIMAGEIO
-MAKE_FLAGS+=LIBS='-lX11 -lqt -lm -lqimgio -lpng -lz -ljpeg'
-LIB_DEPENDS+=jpeg.::graphics/jpeg
-LIB_DEPENDS+=png.::graphics/png
-.  endif
-.endif
 
 # for linking against libpng
 MAKE_FLAGS+='LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
