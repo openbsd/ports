@@ -1,4 +1,4 @@
-$OpenBSD: patch-rclock_feature_h,v 1.1 2001/06/22 20:53:20 jasoni Exp $
+$OpenBSD: patch-rclock_feature_h,v 1.1 2003/05/30 11:18:02 naddy Exp $
 --- rclock/feature.h.orig	Mon Apr 20 00:30:42 1998
 +++ rclock/feature.h	Fri Jun 22 13:43:33 2001
 @@ -53,7 +53,7 @@

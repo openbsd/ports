@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2003/05/18 17:48:23 ish Exp $
+# $OpenBSD: Makefile,v 1.29 2003/05/30 11:18:02 naddy Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
+COMMENT-clock=	"analog clock for X11 w/appoint. reminder and mail notif"
 
-DISTNAME=	rxvt-2.6.4
+VER=		2.6.4
+DISTNAME=	rxvt-${VER}
+PKGNAME-clock=	rclock-${VER}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \
@@ -17,9 +20,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+MULTI_PACKAGES=	-clock
+SUBPACKAGE?=
+
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/autoconf
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 CONFIGURE_ARGS=		--enable-utmp \
 			--enable-wtmp \
 			--with-xpm \

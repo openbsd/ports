@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2003/04/27 08:04:26 sturm Exp $
+# $OpenBSD: Makefile,v 1.166 2003/05/30 11:18:01 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -126,7 +126,6 @@
      SUBDIR += qvwm,esound,imlib
      SUBDIR += qvwm,imlib
      SUBDIR += ratpoison
-     SUBDIR += rclock
      SUBDIR += rdesktop
      SUBDIR += rep-gtk
      SUBDIR += root-tail

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/06/22 20:53:21 jasoni Exp $
-bin/rclock
-man/man1/rclock.1
