@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2001/03/09 08:47:00 wilfried Exp $
+# $OpenBSD: Makefile,v 1.92 2001/03/22 00:01:03 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += qt
      SUBDIR += qt2
      SUBDIR += qt2:gl
+     SUBDIR += qt2-designer
      SUBDIR += qvwm
      SUBDIR += qvwm:esound
      SUBDIR += qvwm:esound,imlib
