@@ -8,3 +8,5 @@ text rendering.
 
 Flavors:
 	no_x11 - do not include the use of X11 functionality.
+
+WWW: ${HOMEPAGE}
