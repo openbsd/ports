@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2004/10/06 08:53:04 xsa Exp $
+# $OpenBSD: Makefile,v 1.157 2004/10/12 20:07:17 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -10,6 +10,7 @@
      SUBDIR += august
      SUBDIR += bk2site
      SUBDIR += bluefish
+     SUBDIR += bozohttpd
      SUBDIR += calamaris
      SUBDIR += cgicc
      SUBDIR += cgiparse
