@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2004/05/24 07:35:47 dhartmei Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/06/06 18:23:15 sturm Exp $
 #
 # milter-spamd de-installation
 
@@ -8,15 +8,17 @@ DIR=/var/spool/milter-spamd
 USER=_milter-spamd
 GROUP=_milter-spamd
 
-echo
-echo "+---------------"
-echo "| To completely deinstall the $1 package you need to perform"
-echo "| these steps as root:"
-echo "|"
-echo "|	      userdel $USER"
-echo "|	      groupdel $GROUP"
-echo "|	      rm -rf $DIR"
-echo "+---------------"
-echo
+if [ ${PKG_DELETE_EXTRA} != Yes ]; then
+	echo
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to perform"
+	echo "| these steps as root:"
+	echo "|"
+	echo "|	      userdel $USER"
+	echo "|	      groupdel $GROUP"
+	echo "|	      rm -rf $DIR"
+	echo "+---------------"
+	echo
+fi
 
 exit 0
