@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.12 2004/05/04 20:53:10 jakob Exp $
+# $OpenBSD: INSTALL,v 1.13 2004/07/18 00:30:26 brad Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -141,14 +141,6 @@ do_notice()
     echo "| If you want to restore sendmail, this is done using the following command:"
     echo "|"
     echo "|     $PREFIX/sbin/postfix-disable"
-    echo "+---------------"
-    echo "| WARNING!"
-    echo "|"
-    echo "| This port has changed its user/groups from 'postfix' to '_postfix'" 
-    echo "| and 'postdrop' to '_postdrop'. If you installed this port before,"
-    echo "| ensure all permissions are set correctly and then"
-    echo "|    rmuser postfix"
-    echo "|    groupdel postdrop"
     echo "+---------------"
     echo ""
 }
