@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2002/11/26 08:56:53 sturm Exp $
---- data/Makefile.in.orig	Sat Jul 27 13:49:11 2002
-+++ data/Makefile.in	Sun Nov 24 23:51:00 2002
-@@ -91,7 +91,7 @@ SDL_LIBS = @SDL_LIBS@
+$OpenBSD: patch-data_Makefile_in,v 1.2 2003/09/24 08:30:09 jolan Exp $
+--- data/Makefile.in.orig	2003-09-20 08:06:10.000000000 -0500
++++ data/Makefile.in	2003-09-24 03:21:43.000000000 -0500
+@@ -90,7 +90,7 @@ SDL_LIBS = @SDL_LIBS@
  VERSION = @VERSION@
  ac_aux_dir = @ac_aux_dir@
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/11/26 08:56:53 sturm Exp $
---- configure.orig	Sat Jul 27 13:48:21 2002
-+++ configure	Sun Nov 24 23:53:28 2002
+$OpenBSD: patch-configure,v 1.2 2003/09/24 08:30:09 jolan Exp $
+--- configure.orig	2003-09-19 11:14:09.000000000 -0500
++++ configure	2003-09-24 03:23:05.000000000 -0500
 @@ -922,9 +922,9 @@ fi
  
  
@@ -13,3 +13,11 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/11/26 08:56:53 sturm Exp $
  fi
  cat >> confdefs.h <<EOF
  #define DOOMWADDIR "$DOOMWADDIR"
+@@ -1220,7 +1220,6 @@ EOF
+   echo '    the source to insert the relevant pragmas so structures are packed.'
+ fi
+ 
+-CFLAGS_OPT="-O2 -fomit-frame-pointer"
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then
+   enableval="$enable_debug"

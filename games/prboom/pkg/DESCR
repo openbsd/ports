@@ -13,7 +13,7 @@ which is available at:
 
 ftp://ftp.idsoftware.com/idstuff/doom/doom-1.8.wad.gz
 
+Install it to ${PREFIX}/share/prboom as "doom.wad".
+
 If you wish to be able to play the Doom background music, simply
 install any FLAVOR of the audio/timidity port.
-
-WWW: ${HOMEPAGE}
