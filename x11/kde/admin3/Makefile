@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/03/07 21:08:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/13 04:22:37 brad Exp $
 
-COMMENT= 		"X11 toolkit, admin tools"
+COMMENT= 		"K Desktop Environment, admin tools"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.2.1
 DISTNAME=		kdeadmin-${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2004/03/07 21:08:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2004/04/13 04:22:37 brad Exp $
 
-COMMENT= 		"X11 toolkit, extra language support"
+COMMENT= 		"K Desktop Environment, extra language support"
 CATEGORIES=		x11 x11/kde devel
 VERSION=		3.2.1
 DISTNAME=		kdebindings-${VERSION}

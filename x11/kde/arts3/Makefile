@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2004/03/07 21:08:43 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2004/04/13 04:22:37 brad Exp $
 
-COMMENT=		"X11 toolkit, multimedia hub"
+COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.2.1
 DISTNAME=		arts-1.2.1

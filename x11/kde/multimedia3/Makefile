@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2004/03/07 21:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2004/04/13 04:22:37 brad Exp $
 
-COMMENT= 		"X11 toolkit, multimedia applications"
+COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.2.1
 DISTNAME=		kdemultimedia-${VERSION}

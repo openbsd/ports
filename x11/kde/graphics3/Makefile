@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2004/04/10 13:00:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.35 2004/04/13 04:22:37 brad Exp $
 
-COMMENT=		"X11 toolkit, graphic applications"
-COMMENT-kamera=		"kde interface to digital cameras"
-COMMENT-kpov=		"modeller for povray"
+COMMENT=		"K Desktop Environment, graphic applications"
+COMMENT-kamera=		"KDE interface to digital cameras"
+COMMENT-kpov=		"KDE modeller for povray"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.2.1
 DISTNAME=		kdegraphics-${VERSION}

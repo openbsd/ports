@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2004/03/07 21:08:44 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/04/13 04:22:37 brad Exp $
 
-COMMENT=		"X11 toolkit, edutainment"
+COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
 VERSION=		3.2.1
 DISTNAME=		kdeedu-${VERSION}
