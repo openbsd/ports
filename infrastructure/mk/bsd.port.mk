@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.236 2000/03/26 16:01:08 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.237 2000/03/26 21:23:20 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -22,7 +22,10 @@ FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.236 2000/03/26 16:01:08 espie Exp $$
 # is listed), a port is maintained by the subscribers of the ports@openbsd.org
 # mailing list, and any correspondence should be directed there.  
 #
+
 OpenBSD_MAINTAINER= ports-admin@openbsd.org
+
+.include <bsd.own.mk>
 
 # NEED_VERSION: we need at least this version of bsd.port.mk for this 
 # port  to build
@@ -185,7 +188,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
 # AUTOCONF_DIR  - Where to apply autoconf (default: ${WRKSRC}).
 # USE_IMAKE		- Port uses imake.
-# USE_X11		- Port uses X11 and installs in ${X11BASE}
+# USE_X11		- Port uses X11.
 # NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
 #						target.
 # HAS_CONFIGURE	- Says that the port has its own configure script.
@@ -630,7 +633,6 @@ EXTRACT_SUFX?=		.tar.gz
 
 .endif
 
-.include <bsd.own.mk>
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 .if defined(OBJMACHINE)
