@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/02/07 01:46:24 espie Exp $
-@comment unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
-@comment unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
-@comment unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
-@comment unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
+@comment $OpenBSD: PLIST,v 1.8 2004/03/07 21:08:45 espie Exp $
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
+@comment @unexec install-info --delete --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
 bin/kmdr-editor
 bin/kmdr-executor
 bin/kxsldbg
@@ -1059,6 +1059,7 @@ share/apps/quanta/toolbar/check_grey.png
 share/apps/quanta/toolbar/close.png
 share/apps/quanta/toolbar/color.png
 share/apps/quanta/toolbar/copy.png
+share/apps/quanta/toolbar/css.png
 share/apps/quanta/toolbar/customlayout.png
 share/apps/quanta/toolbar/cut.png
 share/apps/quanta/toolbar/date.png
@@ -1209,7 +1210,9 @@ share/apps/quanta/toolbar/textarea.png
 share/apps/quanta/toolbar/tree_win.png
 share/apps/quanta/toolbar/ttab.png
 share/apps/quanta/toolbar/undo.png
+share/apps/quanta/toolbar/view_text.png
 share/apps/quanta/toolbar/vpl.png
+share/apps/quanta/toolbar/vpl_text.png
 share/apps/quanta/toolbar/wiznewprjfin.png
 share/apps/quanta/toolbar/wiznewprjglb.png
 share/apps/quanta/toolbar/wiznewprjloc.png
@@ -1468,7 +1471,7 @@ share/services/kxsldbg_part.desktop
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk
-@comment exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
-@comment exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
-@comment exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
-@comment exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/TemplateMagic.pl.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/dwt.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/htmlquickstart.info
+@comment @exec install-info --info-dir=%D/share/apps/quanta/scripts %D/share/apps/quanta/scripts/tidy.info

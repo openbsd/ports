@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2004/02/03 21:31:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2004/03/07 21:08:43 espie Exp $
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy
@@ -603,6 +603,7 @@ share/apps/kappfinder/apps/Internet/knews.desktop
 share/apps/kappfinder/apps/Internet/licq.desktop
 share/apps/kappfinder/apps/Internet/mldonkey_gui.desktop
 share/apps/kappfinder/apps/Internet/mozilla-firebird.desktop
+share/apps/kappfinder/apps/Internet/mozilla-firefox.desktop
 share/apps/kappfinder/apps/Internet/mozilla-thunderbird.desktop
 share/apps/kappfinder/apps/Internet/mozilla.desktop
 share/apps/kappfinder/apps/Internet/netscape.desktop
@@ -735,6 +736,7 @@ share/apps/kconf_update/klipper-1-2.pl
 share/apps/kconf_update/klipper-kde31.sh
 share/apps/kconf_update/klipperrc.upd
 share/apps/kconf_update/klippershortcuts.upd
+share/apps/kconf_update/konqueror_gestures_kde321_update.upd
 share/apps/kconf_update/konsole.upd
 share/apps/kconf_update/ksmserver.upd
 share/apps/kconf_update/kuriikwsfilter.upd
@@ -957,6 +959,7 @@ share/apps/khelpcenter/plugins/userguide.desktop
 share/apps/khelpcenter/plugins/welcome.desktop
 share/apps/khelpcenter/table-of-contents.xslt
 share/apps/khotkeys/kde32b1.khotkeys
+share/apps/khotkeys/konqueror_gestures_kde321.khotkeys
 share/apps/kicker/applets/clockapplet.desktop
 share/apps/kicker/applets/klipper.desktop
 share/apps/kicker/applets/ksysguardapplet.desktop
@@ -3775,8 +3778,9 @@ share/wallpapers/triplegears.jpg
 @dirrm include/ksplash
 @dirrm include/ksgrd
 @dirrm include/kate/utils
-@extra ${SYSCONFDIR}/xdg/menus/kde-settings.menu
-@extra ${SYSCONFDIR}/xdg/menus/kde-information.menu
-@extra ${SYSCONFDIR}/xdg/menus/kde-screensavers.menu
-@extra ${SYSCONFDIR}/xdg/menus/applications-merged/kde-essential.menu
-@extra ${SYSCONFDIR}/ksysguarddrc
+@cwd ${SYSCONFDIR}
+@extra xdg/menus/kde-settings.menu
+@extra xdg/menus/kde-information.menu
+@extra xdg/menus/kde-screensavers.menu
+@extra xdg/menus/applications-merged/kde-essential.menu
+@extra ksysguarddrc

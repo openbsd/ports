@@ -1,6 +1,6 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.8 2004/02/02 23:07:36 espie Exp $
---- kscd/libwm/Makefile.in.orig	2004-02-02 19:55:44.000000000 +0100
-+++ kscd/libwm/Makefile.in	2004-02-02 19:58:09.000000000 +0100
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
+--- kscd/libwm/Makefile.in.orig	2004-02-29 22:47:09.000000000 +0100
++++ kscd/libwm/Makefile.in	2004-03-02 23:36:46.000000000 +0100
 @@ -384,11 +384,11 @@ subdirs = include
  SUBDIRS = audio
  INCLUDES = $(all_includes) 
@@ -30,8 +30,8 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.8 2004/02/02 23:07:36 espie Exp $
  bin_PROGRAMS = $(CDDA_SLAVE)
  cddaslave_SOURCES = cddaslave.c plat_linux_cdda.c plat_sun_cdda.c
  
--cddaslave_LDADD = audio/libworkmanaudio.a libworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
-+cddaslave_LDADD = audio/libworkmanaudio.a libkworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
+-cddaslave_LDADD = audio/libworkmanaudio.la libworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
++cddaslave_LDADD = audio/libworkmanaudio.la libkworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
  subdir = kscd/libwm
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
@@ -71,8 +71,8 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.8 2004/02/02 23:07:36 espie Exp $
  	plat_sun_cdda.$(OBJEXT)
  @KDE_USE_FINAL_FALSE@cddaslave_OBJECTS = $(cddaslave_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@cddaslave_OBJECTS = $(cddaslave_final_OBJECTS)
--cddaslave_DEPENDENCIES = audio/libworkmanaudio.a libworkman.la
-+cddaslave_DEPENDENCIES = audio/libworkmanaudio.a libkworkman.la
+-cddaslave_DEPENDENCIES = audio/libworkmanaudio.la libworkman.la
++cddaslave_DEPENDENCIES = audio/libworkmanaudio.la libkworkman.la
  cddaslave_LDFLAGS =
  
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

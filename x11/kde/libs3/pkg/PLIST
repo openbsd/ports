@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/02/07 01:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/03/07 21:08:44 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -30,7 +30,7 @@ bin/kdesu_stub
 bin/kdontchangethehostname
 bin/kfile
 bin/kfmexec
-bin/kgrantpty
+@comment bin/kgrantpty
 bin/kimage_concat
 bin/kinstalltheme
 bin/kio_http_cache_cleaner
@@ -710,8 +710,10 @@ ${KDE}/ktexteditor_isearch.la
 ${KDE}/ktexteditor_kdatatool.la
 ${KDE}/libkatepart.la
 ${KDE}/libkcertpart.la
+${KDE}/libkdeprint_management_module.la
 ${KDE}/libkhtmlpart.la
 ${KDE}/libkmultipart.la
+${KDE}/libshellscript.la
 ${KDE}/plugins/designer/kdewidgets.la
 ${KDE}/plugins/styles/highcolor.la
 ${KDE}/plugins/styles/keramik.la
@@ -759,7 +761,6 @@ lib/libktexteditor.la
 lib/libkutils.la
 lib/libkwalletbackend.la
 lib/libkwalletclient.la
-lib/libshellscript.la
 lib/libvcard.la
 share/applications/kde/kresources.desktop
 share/apps/LICENSES/ARTISTIC
@@ -1021,6 +1022,7 @@ share/apps/khtml/css/quirks.css
 share/apps/khtml/icons/crystalsvg/128x128/actions/bug.png
 share/apps/khtml/icons/crystalsvg/16x16/actions/bug.png
 share/apps/khtml/icons/crystalsvg/16x16/actions/images_display.png
+share/apps/khtml/icons/crystalsvg/16x16/actions/wallet_open.png
 share/apps/khtml/icons/crystalsvg/22x22/actions/bug.png
 share/apps/khtml/icons/crystalsvg/22x22/actions/dbgnext.png
 share/apps/khtml/icons/crystalsvg/22x22/actions/dbgrun.png
@@ -2442,6 +2444,7 @@ share/icons/crystalsvg/16x16/actions/2rightarrow.png
 share/icons/crystalsvg/16x16/actions/2uparrow.png
 share/icons/crystalsvg/16x16/actions/about_kde.png
 share/icons/crystalsvg/16x16/actions/airbrush.png
+share/icons/crystalsvg/16x16/actions/apply.png
 share/icons/crystalsvg/16x16/actions/attach.png
 share/icons/crystalsvg/16x16/actions/back.png
 share/icons/crystalsvg/16x16/actions/blend.png
@@ -2820,6 +2823,7 @@ share/icons/crystalsvg/22x22/actions/2rightarrow.png
 share/icons/crystalsvg/22x22/actions/2uparrow.png
 share/icons/crystalsvg/22x22/actions/about_kde.png
 share/icons/crystalsvg/22x22/actions/airbrush.png
+share/icons/crystalsvg/22x22/actions/apply.png
 share/icons/crystalsvg/22x22/actions/attach.png
 share/icons/crystalsvg/22x22/actions/back.png
 share/icons/crystalsvg/22x22/actions/blend.png
@@ -3119,6 +3123,7 @@ share/icons/crystalsvg/32x32/actions/2leftarrow.png
 share/icons/crystalsvg/32x32/actions/2rightarrow.png
 share/icons/crystalsvg/32x32/actions/2uparrow.png
 share/icons/crystalsvg/32x32/actions/about_kde.png
+share/icons/crystalsvg/32x32/actions/apply.png
 share/icons/crystalsvg/32x32/actions/attach.png
 share/icons/crystalsvg/32x32/actions/back.png
 share/icons/crystalsvg/32x32/actions/blend.png
@@ -4000,7 +4005,6 @@ share/mimelnk/application/x-lzop.desktop
 share/mimelnk/application/x-magicpoint.desktop
 share/mimelnk/application/x-msaccess.desktop
 share/mimelnk/application/x-msdos-program.desktop
-share/mimelnk/application/x-mswinurl.desktop
 share/mimelnk/application/x-mswrite.desktop
 share/mimelnk/application/x-object.desktop
 share/mimelnk/application/x-ogg.desktop
@@ -4126,6 +4130,7 @@ share/mimelnk/text/x-log.desktop
 share/mimelnk/text/x-lyx.desktop
 share/mimelnk/text/x-makefile.desktop
 share/mimelnk/text/x-moc.desktop
+share/mimelnk/text/x-mswinurl.desktop
 share/mimelnk/text/x-objcsrc.desktop
 share/mimelnk/text/x-pascal.desktop
 share/mimelnk/text/x-perl.desktop
@@ -4196,6 +4201,7 @@ share/services/ppm.kimgio
 share/services/rlogin.protocol
 share/services/rtsp.protocol
 share/services/shellscript.desktop
+share/services/ssh.protocol
 share/services/telnet.protocol
 share/services/tga.kimgio
 share/services/tiff.kimgio
@@ -4537,6 +4543,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kate
 @dirrm include/kabc
 @dirrm include/dom
-@extra ${SYSCONFDIR}/xdg/menus/applications.menu
-@extra ${SYSCONFDIR}/xdg/menus/
-@extra ${SYSCONFDIR}/xdg/
+@cwd ${SYSCONFDIR}
+@extra xdg/menus/applications.menu
+@extra xdg/menus/
+@extra xdg/

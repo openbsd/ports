@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/02/07 01:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/03/07 21:08:43 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -27,6 +27,7 @@ ${KDE}/kwin3_kde1.la
 ${KDE}/kwin3_kstep.la
 ${KDE}/kwin3_openlook.la
 ${KDE}/kwin3_plastik.la
+${KDE}/kwin3_system.la
 ${KDE}/kwin_cde_config.la
 ${KDE}/kwin_glow_config.la
 ${KDE}/kwin_icewm_config.la
@@ -434,6 +435,7 @@ share/apps/kwin/kde1.desktop
 share/apps/kwin/kstep.desktop
 share/apps/kwin/openlook.desktop
 share/apps/kwin/plastik.desktop
+share/apps/kwin/system.desktop
 share/apps/kworldclock/maps/alt/1200.jpg
 share/apps/kworldclock/maps/alt/200.jpg
 share/apps/kworldclock/maps/alt/400.jpg
@@ -671,12 +673,14 @@ share/icons/Locolor/16x16/apps/iconthemes.png
 share/icons/Locolor/16x16/apps/input_devices_settings.png
 share/icons/Locolor/16x16/apps/kab.png
 share/icons/Locolor/16x16/apps/kabalone.png
+share/icons/Locolor/16x16/apps/kalzium.png
 share/icons/Locolor/16x16/apps/kappfinder.png
 share/icons/Locolor/16x16/apps/karm.png
 share/icons/Locolor/16x16/apps/kasteroids.png
 share/icons/Locolor/16x16/apps/kbabel.png
 share/icons/Locolor/16x16/apps/kbackgammon.png
 share/icons/Locolor/16x16/apps/kblackbox.png
+share/icons/Locolor/16x16/apps/kbruch.png
 share/icons/Locolor/16x16/apps/kcalc.png
 share/icons/Locolor/16x16/apps/kcharselect.png
 share/icons/Locolor/16x16/apps/kchart.png
@@ -714,10 +718,12 @@ share/icons/Locolor/16x16/apps/kfm_home.png
 share/icons/Locolor/16x16/apps/kfontinst.png
 share/icons/Locolor/16x16/apps/kfract.png
 share/icons/Locolor/16x16/apps/kghostview.png
+share/icons/Locolor/16x16/apps/khangman.png
 share/icons/Locolor/16x16/apps/khelpcenter.png
 share/icons/Locolor/16x16/apps/khexedit.png
 share/icons/Locolor/16x16/apps/kicker.png
 share/icons/Locolor/16x16/apps/kiconedit.png
+share/icons/Locolor/16x16/apps/kig.png
 share/icons/Locolor/16x16/apps/killustrator.png
 share/icons/Locolor/16x16/apps/kit.png
 share/icons/Locolor/16x16/apps/kivio.png
@@ -725,6 +731,7 @@ share/icons/Locolor/16x16/apps/kjots.png
 share/icons/Locolor/16x16/apps/kjumpingcube.png
 share/icons/Locolor/16x16/apps/klaptopdaemon.png
 share/icons/Locolor/16x16/apps/kless.png
+share/icons/Locolor/16x16/apps/klettres.png
 share/icons/Locolor/16x16/apps/klipper.png
 share/icons/Locolor/16x16/apps/kljettool.png
 share/icons/Locolor/16x16/apps/klpq.png
@@ -732,11 +739,13 @@ share/icons/Locolor/16x16/apps/kmahjongg.png
 share/icons/Locolor/16x16/apps/kmail.png
 share/icons/Locolor/16x16/apps/kmailcvt.png
 share/icons/Locolor/16x16/apps/kmenuedit.png
+share/icons/Locolor/16x16/apps/kmessedwords.png
 share/icons/Locolor/16x16/apps/kmid.png
 share/icons/Locolor/16x16/apps/kmidi.png
 share/icons/Locolor/16x16/apps/kmines.png
 share/icons/Locolor/16x16/apps/kmix.png
 share/icons/Locolor/16x16/apps/kmoon.png
+share/icons/Locolor/16x16/apps/kmplot.png
 share/icons/Locolor/16x16/apps/knewsticker.png
 share/icons/Locolor/16x16/apps/knode.png
 share/icons/Locolor/16x16/apps/knotes.png
@@ -752,6 +761,7 @@ share/icons/Locolor/16x16/apps/kpackage.png
 share/icons/Locolor/16x16/apps/kpager.png
 share/icons/Locolor/16x16/apps/kpaint.png
 share/icons/Locolor/16x16/apps/kpat.png
+share/icons/Locolor/16x16/apps/kpercentage.png
 share/icons/Locolor/16x16/apps/kpixmap2bitmap.png
 share/icons/Locolor/16x16/apps/kpm.png
 share/icons/Locolor/16x16/apps/kpoker.png
@@ -772,6 +782,7 @@ share/icons/Locolor/16x16/apps/ksokoban.png
 share/icons/Locolor/16x16/apps/kspaceduel.png
 share/icons/Locolor/16x16/apps/kspread.png
 share/icons/Locolor/16x16/apps/kspreadcalc.png
+share/icons/Locolor/16x16/apps/kstars.png
 share/icons/Locolor/16x16/apps/ksysctrl.png
 share/icons/Locolor/16x16/apps/ksysguard.png
 share/icons/Locolor/16x16/apps/ksysv.png
@@ -995,6 +1006,7 @@ share/icons/Locolor/32x32/apps/iconthemes.png
 share/icons/Locolor/32x32/apps/input_devices_settings.png
 share/icons/Locolor/32x32/apps/kab.png
 share/icons/Locolor/32x32/apps/kabalone.png
+share/icons/Locolor/32x32/apps/kalzium.png
 share/icons/Locolor/32x32/apps/kappfinder.png
 share/icons/Locolor/32x32/apps/karm.png
 share/icons/Locolor/32x32/apps/kasteroids.png
@@ -1002,6 +1014,7 @@ share/icons/Locolor/32x32/apps/katomic.png
 share/icons/Locolor/32x32/apps/kbabel.png
 share/icons/Locolor/32x32/apps/kbackgammon.png
 share/icons/Locolor/32x32/apps/kblackbox.png
+share/icons/Locolor/32x32/apps/kbruch.png
 share/icons/Locolor/32x32/apps/kcalc.png
 share/icons/Locolor/32x32/apps/kcharselect.png
 share/icons/Locolor/32x32/apps/kchart.png
@@ -1038,26 +1051,31 @@ share/icons/Locolor/32x32/apps/kfm_home.png
 share/icons/Locolor/32x32/apps/kfontinst.png
 share/icons/Locolor/32x32/apps/kfract.png
 share/icons/Locolor/32x32/apps/kghostview.png
+share/icons/Locolor/32x32/apps/khangman.png
 share/icons/Locolor/32x32/apps/khelpcenter.png
 share/icons/Locolor/32x32/apps/khexedit.png
 share/icons/Locolor/32x32/apps/kiconedit.png
+share/icons/Locolor/32x32/apps/kig.png
 share/icons/Locolor/32x32/apps/killustrator.png
 share/icons/Locolor/32x32/apps/kit.png
 share/icons/Locolor/32x32/apps/kivio.png
 share/icons/Locolor/32x32/apps/kjots.png
 share/icons/Locolor/32x32/apps/kjumpingcube.png
 share/icons/Locolor/32x32/apps/kless.png
+share/icons/Locolor/32x32/apps/klettres.png
 share/icons/Locolor/32x32/apps/klipper.png
 share/icons/Locolor/32x32/apps/kljettool.png
 share/icons/Locolor/32x32/apps/klpq.png
 share/icons/Locolor/32x32/apps/kmahjongg.png
 share/icons/Locolor/32x32/apps/kmail.png
 share/icons/Locolor/32x32/apps/kmailcvt.png
+share/icons/Locolor/32x32/apps/kmessedwords.png
 share/icons/Locolor/32x32/apps/kmid.png
 share/icons/Locolor/32x32/apps/kmidi.png
 share/icons/Locolor/32x32/apps/kmines.png
 share/icons/Locolor/32x32/apps/kmix.png
 share/icons/Locolor/32x32/apps/kmoon.png
+share/icons/Locolor/32x32/apps/kmplot.png
 share/icons/Locolor/32x32/apps/knewsticker.png
 share/icons/Locolor/32x32/apps/knode.png
 share/icons/Locolor/32x32/apps/knotes.png
@@ -1073,6 +1091,7 @@ share/icons/Locolor/32x32/apps/kpackage.png
 share/icons/Locolor/32x32/apps/kpager.png
 share/icons/Locolor/32x32/apps/kpaint.png
 share/icons/Locolor/32x32/apps/kpat.png
+share/icons/Locolor/32x32/apps/kpercentage.png
 share/icons/Locolor/32x32/apps/kpixmap2bitmap.png
 share/icons/Locolor/32x32/apps/kpm.png
 share/icons/Locolor/32x32/apps/kpoker.png
@@ -1093,6 +1112,7 @@ share/icons/Locolor/32x32/apps/ksokoban.png
 share/icons/Locolor/32x32/apps/kspaceduel.png
 share/icons/Locolor/32x32/apps/kspread.png
 share/icons/Locolor/32x32/apps/kspreadcalc.png
+share/icons/Locolor/32x32/apps/kstars.png
 share/icons/Locolor/32x32/apps/ksysctrl.png
 share/icons/Locolor/32x32/apps/ksysguard.png
 share/icons/Locolor/32x32/apps/ksysv.png
@@ -2395,6 +2415,7 @@ share/icons/kdeclassic/16x16/apps/kbackgammon_engine.png
 share/icons/kdeclassic/16x16/apps/kbattleship.png
 share/icons/kdeclassic/16x16/apps/kblackbox.png
 share/icons/kdeclassic/16x16/apps/kbounce.png
+share/icons/kdeclassic/16x16/apps/kbruch.png
 share/icons/kdeclassic/16x16/apps/kcalc.png
 share/icons/kdeclassic/16x16/apps/kcharselect.png
 share/icons/kdeclassic/16x16/apps/kchart.png
@@ -2451,6 +2472,7 @@ share/icons/kdeclassic/16x16/apps/kdmconfig.png
 share/icons/kdeclassic/16x16/apps/kdvi.png
 share/icons/kdeclassic/16x16/apps/kedit.png
 share/icons/kdeclassic/16x16/apps/keditbookmarks.png
+share/icons/kdeclassic/16x16/apps/keduca.png
 share/icons/kdeclassic/16x16/apps/kenolaba.png
 share/icons/kdeclassic/16x16/apps/keyboard.png
 share/icons/kdeclassic/16x16/apps/keyboard_layout.png
@@ -2466,6 +2488,7 @@ share/icons/kdeclassic/16x16/apps/khelpcenter.png
 share/icons/kdeclassic/16x16/apps/khexedit.png
 share/icons/kdeclassic/16x16/apps/kicker.png
 share/icons/kdeclassic/16x16/apps/kiconedit.png
+share/icons/kdeclassic/16x16/apps/kig.png
 share/icons/kdeclassic/16x16/apps/kio_uiserver.png
 share/icons/kdeclassic/16x16/apps/kit.png
 share/icons/kdeclassic/16x16/apps/kiten.png
@@ -2546,8 +2569,10 @@ share/icons/kdeclassic/16x16/apps/kudesigner.png
 share/icons/kdeclassic/16x16/apps/kugar.png
 share/icons/kdeclassic/16x16/apps/kuickshow.png
 share/icons/kdeclassic/16x16/apps/kuser.png
+share/icons/kdeclassic/16x16/apps/kverbos.png
 share/icons/kdeclassic/16x16/apps/kview.png
 share/icons/kdeclassic/16x16/apps/kviewshell.png
+share/icons/kdeclassic/16x16/apps/kvoctrain.png
 share/icons/kdeclassic/16x16/apps/kwikdisk.png
 share/icons/kdeclassic/16x16/apps/kwin.png
 share/icons/kdeclassic/16x16/apps/kwin4.png
@@ -3763,6 +3788,7 @@ share/icons/kdeclassic/32x32/apps/kbackgammon_engine.png
 share/icons/kdeclassic/32x32/apps/kbattleship.png
 share/icons/kdeclassic/32x32/apps/kblackbox.png
 share/icons/kdeclassic/32x32/apps/kbounce.png
+share/icons/kdeclassic/32x32/apps/kbruch.png
 share/icons/kdeclassic/32x32/apps/kcalc.png
 share/icons/kdeclassic/32x32/apps/kchart.png
 share/icons/kdeclassic/32x32/apps/kcmdevices.png
@@ -3806,6 +3832,7 @@ share/icons/kdeclassic/32x32/apps/kdmconfig.png
 share/icons/kdeclassic/32x32/apps/kdvi.png
 share/icons/kdeclassic/32x32/apps/kedit.png
 share/icons/kdeclassic/32x32/apps/keditbookmarks.png
+share/icons/kdeclassic/32x32/apps/keduca.png
 share/icons/kdeclassic/32x32/apps/kenolaba.png
 share/icons/kdeclassic/32x32/apps/key_bindings.png
 share/icons/kdeclassic/32x32/apps/keyboard.png
@@ -3821,6 +3848,7 @@ share/icons/kdeclassic/32x32/apps/khangman.png
 share/icons/kdeclassic/32x32/apps/khelpcenter.png
 share/icons/kdeclassic/32x32/apps/khexedit.png
 share/icons/kdeclassic/32x32/apps/kiconedit.png
+share/icons/kdeclassic/32x32/apps/kig.png
 share/icons/kdeclassic/32x32/apps/kit.png
 share/icons/kdeclassic/32x32/apps/kivio.png
 share/icons/kdeclassic/32x32/apps/kjobviewer.png
@@ -3901,6 +3929,7 @@ share/icons/kdeclassic/32x32/apps/kuickshow.png
 share/icons/kdeclassic/32x32/apps/kuser.png
 share/icons/kdeclassic/32x32/apps/kview.png
 share/icons/kdeclassic/32x32/apps/kviewshell.png
+share/icons/kdeclassic/32x32/apps/kvoctrain.png
 share/icons/kdeclassic/32x32/apps/kwikdisk.png
 share/icons/kdeclassic/32x32/apps/kwin.png
 share/icons/kdeclassic/32x32/apps/kwin4.png
@@ -4203,6 +4232,7 @@ share/icons/kdeclassic/48x48/apps/kdisknav.png
 share/icons/kdeclassic/48x48/apps/kdmconfig.png
 share/icons/kdeclassic/48x48/apps/kdvi.png
 share/icons/kdeclassic/48x48/apps/kedit.png
+share/icons/kdeclassic/48x48/apps/keduca.png
 share/icons/kdeclassic/48x48/apps/kenolaba.png
 share/icons/kdeclassic/48x48/apps/keyboard.png
 share/icons/kdeclassic/48x48/apps/keyboard_layout.png
@@ -4282,6 +4312,7 @@ share/icons/kdeclassic/48x48/apps/kugar.png
 share/icons/kdeclassic/48x48/apps/kuser.png
 share/icons/kdeclassic/48x48/apps/kview.png
 share/icons/kdeclassic/48x48/apps/kviewshell.png
+share/icons/kdeclassic/48x48/apps/kvoctrain.png
 share/icons/kdeclassic/48x48/apps/kwin.png
 share/icons/kdeclassic/48x48/apps/kwin4.png
 share/icons/kdeclassic/48x48/apps/kword.png

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2004/02/07 01:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2004/03/07 21:08:44 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.0
+VERSION=		3.2.1
 DISTNAME=		kdelibs-${VERSION}
 MODKDE_VERSION?=	3.2
 
@@ -25,3 +25,4 @@ SUBST_VARS=EXTRA_CONFIG SAMPLECONFDIR
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 	
 .include <bsd.port.mk>
+MODGNU_AUTOCONF_FILES+= dcop/dcop-path.h.in

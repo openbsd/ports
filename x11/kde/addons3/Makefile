@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2004/02/07 01:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2004/03/07 21:08:43 espie Exp $
 
 COMMENT=		"X11 toolkit, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.0
+VERSION=		3.2.1
 DISTNAME=		kdeaddons-${VERSION}
 MODKDE_VERSION=		3.2
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/02/04 09:13:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/03/07 21:08:44 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -218,6 +218,7 @@ ${KDE}/svgthumbnail.la
 lib/libkdeinit_kuickshow.la
 lib/libkdeinit_kview.la
 lib/libkdeinit_mrmlsearch.la
+lib/libkghostviewlib.la
 lib/libkimageviewer.la
 lib/libkmultipage.la
 lib/libksvg.la

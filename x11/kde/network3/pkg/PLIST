@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/02/07 01:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2004/03/07 21:08:44 espie Exp $
 @pkgcfl sirc-*
 bin/dsirc
 bin/feedbrowser
@@ -274,6 +274,7 @@ share/apps/kopete/icons/crystalsvg/64x64/apps/icq_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/msn_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/sms_protocol.png
 share/apps/kopete/icons/crystalsvg/64x64/apps/yahoo_protocol.png
+share/apps/kopete/ircchatui.rc
 share/apps/kopete/kopetechatwindow.rc
 share/apps/kopete/kopeteemailwindow.rc
 share/apps/kopete/kopeteui.rc
@@ -900,7 +901,9 @@ share/apps/kppp/Rules/Portugal/PT_Regional.rst
 share/apps/kppp/Rules/Portugal/PT_Regional_Ilhas.rst
 share/apps/kppp/Rules/Portugal/PT_YesNET.rst
 share/apps/kppp/Rules/Portugal/PT_YesNET_Ilhas.rst
-share/apps/kppp/Rules/Romania/RomTelecom.rst
+share/apps/kppp/Rules/Romania/Romtelecom_Acces_Special_Internet.rst
+share/apps/kppp/Rules/Romania/Romtelecom_Interurban.rst
+share/apps/kppp/Rules/Romania/Romtelecom_Local.rst
 share/apps/kppp/Rules/Romania/Zapp-Mobile.rst
 share/apps/kppp/Rules/Russia/TEMPLATE.ru
 share/apps/kppp/Rules/Russia/mtu-intel_standart.rst
@@ -1003,7 +1006,6 @@ share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
 share/apps/krdc/rdp-keymaps/ar
 share/apps/krdc/rdp-keymaps/common
-share/apps/krdc/rdp-keymaps/convert-map
 share/apps/krdc/rdp-keymaps/da
 share/apps/krdc/rdp-keymaps/de
 share/apps/krdc/rdp-keymaps/en-gb

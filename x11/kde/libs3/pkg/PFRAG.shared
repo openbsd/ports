@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/02/01 14:59:23 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/03/07 21:08:44 espie Exp $
 ${KDE}/dcopserver.so
 ${KDE}/kabc_dir.so
 ${KDE}/kabc_file.so
@@ -48,8 +48,10 @@ ${KDE}/ktexteditor_isearch.so
 ${KDE}/ktexteditor_kdatatool.so
 ${KDE}/libkatepart.so
 ${KDE}/libkcertpart.so
+${KDE}/libkdeprint_management_module.so
 ${KDE}/libkhtmlpart.so
 ${KDE}/libkmultipart.so
+${KDE}/libshellscript.so
 ${KDE}/plugins/designer/kdewidgets.so
 ${KDE}/plugins/styles/highcolor.so
 ${KDE}/plugins/styles/keramik.so
@@ -96,6 +98,5 @@ lib/libktexteditor.so.0.0
 lib/libkutils.so.3.0
 lib/libkwalletbackend.so.1.0
 lib/libkwalletclient.so.1.0
-lib/libshellscript.so.0.0
 lib/libvcard.so.0.0
 DYNLIBDIR(%D/lib)

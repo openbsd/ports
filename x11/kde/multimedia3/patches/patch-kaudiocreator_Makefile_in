@@ -1,0 +1,21 @@
+$OpenBSD: patch-kaudiocreator_Makefile_in,v 1.1 2004/03/07 21:08:44 espie Exp $
+--- kaudiocreator/Makefile.in.orig	2004-03-07 14:34:54.000000000 +0100
++++ kaudiocreator/Makefile.in	2004-03-07 14:35:06.000000000 +0100
+@@ -393,7 +393,7 @@ kaudiocreator_LDFLAGS = $(all_libraries)
+ 
+ AM_CPPFLAGS = -static -Wall
+ 
+-kaudiocreator_LDADD = $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la $(top_builddir)/kscd/libwm/libworkman.la
++kaudiocreator_LDADD = $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la $(top_builddir)/kscd/libwm/libkworkman.la
+ 
+ updatedir = $(kde_datadir)/kconf_update
+ update_DATA = kaudiocreator-libkcddb.upd
+@@ -427,7 +427,7 @@ kaudiocreator_nofinal_OBJECTS = main.$(O
+ @KDE_USE_FINAL_FALSE@kaudiocreator_OBJECTS = $(kaudiocreator_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@kaudiocreator_OBJECTS = $(kaudiocreator_final_OBJECTS)
+ kaudiocreator_DEPENDENCIES = $(top_builddir)/libkcddb/libkcddb.la \
+-	$(top_builddir)/kscd/libwm/libworkman.la
++	$(top_builddir)/kscd/libwm/libkworkman.la
+ 
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.15 2004/02/01 14:59:22 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.16 2004/03/07 21:08:43 espie Exp $
 ${KDE}/appletproxy.so
-${KDE}/childpanel_panelextension.so.0.0
+${KDE}/childpanel_panelextension.so
 ${KDE}/clock_panelapplet.so
 ${KDE}/cursorthumbnail.so
 ${KDE}/djvuthumbnail.so
@@ -145,7 +145,7 @@ ${KDE}/kwin_quartz_config.so
 ${KDE}/kwrite.so
 ${KDE}/kwrited.so
 ${KDE}/kxkb.so
-${KDE}/launcher_panelapplet.so.0.0
+${KDE}/launcher_panelapplet.so
 ${KDE}/libkdeprint_part.so
 ${KDE}/libkfindpart.so
 ${KDE}/libkmanpart.so

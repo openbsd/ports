@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/02/02 23:07:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/03/07 21:08:44 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
+bin/kaudiocreator
 bin/kmid
 bin/kmix
 bin/kmixctrl
@@ -210,6 +211,7 @@ lib/libkdeinit_kmix.la
 lib/libkdeinit_kmixctrl.la
 lib/libkdeinit_krec.la
 lib/libkdeinit_noatun.la
+lib/libkmidlib.la
 lib/libkworkman.la
 lib/libmpeg.la
 lib/libnoatun.la
@@ -217,7 +219,6 @@ lib/libnoatunarts.la
 lib/libnoatuncontrols.la
 lib/libnoatuntags.la
 lib/libwinskinvis.la
-lib/libworkmanaudio.a
 lib/libyafcore.la
 lib/libyafxplayer.la
 lib/mcop/Arts/ArtsBuilderLoader.mcopclass
@@ -355,6 +356,7 @@ share/applications/kde/artsbuilder.desktop
 share/applications/kde/artscontrol.desktop
 share/applications/kde/audiocd.desktop
 share/applications/kde/kaboodle.desktop
+share/applications/kde/kaudiocreator.desktop
 share/applications/kde/kmid.desktop
 share/applications/kde/kmix.desktop
 share/applications/kde/kmixcfg.desktop
@@ -456,6 +458,9 @@ share/apps/kaboodle/icons/crystalsvg/16x16/actions/kaboodleloop.png
 share/apps/kaboodle/icons/crystalsvg/22x22/actions/kaboodleloop.png
 share/apps/kaboodle/kaboodlepartui.rc
 share/apps/kaboodle/kaboodleui.rc
+share/apps/kaudiocreator/kaudiocreatorui.rc
+share/apps/kaudiocreator/pics/check.png
+share/apps/kconf_update/kaudiocreator-libkcddb.upd
 share/apps/kconf_update/noatun.upd
 share/apps/kconf_update/noatun20update
 share/apps/kicker/applets/artscontrolapplet.desktop
@@ -740,6 +745,8 @@ share/apps/noatun/systrayui.rc
 share/apps/noatun/voiceprint.plugin
 share/apps/noatun/winskin.plugin
 share/apps/profiles/kscd.profile.xml
+share/config.kcfg/kaudiocreator.kcfg
+share/config.kcfg/kaudiocreator_encoders.kcfg
 share/config.kcfg/libkcddb.kcfg
 share/doc/HTML/en/artsbuilder/apis.docbook
 share/doc/HTML/en/artsbuilder/arts-structure.png
@@ -871,6 +878,7 @@ share/icons/crystalsvg/16x16/actions/artsmidimanager.png
 share/icons/crystalsvg/16x16/apps/artsbuilder.png
 share/icons/crystalsvg/16x16/apps/artscontrol.png
 share/icons/crystalsvg/16x16/apps/kaboodle.png
+share/icons/crystalsvg/16x16/apps/kaudiocreator.png
 share/icons/crystalsvg/16x16/apps/kmid.png
 share/icons/crystalsvg/16x16/apps/kmix.png
 share/icons/crystalsvg/16x16/apps/krec.png
@@ -893,6 +901,7 @@ share/icons/crystalsvg/32x32/actions/artsmediatypes.png
 share/icons/crystalsvg/32x32/actions/artsmidimanager.png
 share/icons/crystalsvg/32x32/apps/artscontrol.png
 share/icons/crystalsvg/32x32/apps/kaboodle.png
+share/icons/crystalsvg/32x32/apps/kaudiocreator.png
 share/icons/crystalsvg/32x32/apps/kmid.png
 share/icons/crystalsvg/32x32/apps/kmix.png
 share/icons/crystalsvg/32x32/apps/krec.png
@@ -927,6 +936,8 @@ share/icons/crystalsvg/scalable/actions/artsfftscope.svg
 share/icons/crystalsvg/scalable/actions/artsmediatypes.svg
 share/icons/crystalsvg/scalable/actions/artsmidimanager.svg
 share/icons/crystalsvg/scalable/apps/artscontrol.svg
+share/icons/locolor/16x16/apps/kaudiocreator.png
+share/icons/locolor/32x32/apps/kaudiocreator.png
 share/mimelnk/application/x-artsbuilder.desktop
 share/mimelnk/audio/x-karaoke.desktop
 share/mimelnk/interface/x-winamp-skin.desktop
@@ -948,6 +959,11 @@ share/servicetypes/audiomidi.desktop
 share/servicetypes/krec_exportitem.desktop
 %%SHARED%%
 @dirrm share/mimelnk/interface
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/scalable/actions
 @dirrm share/icons/crystalsvg/64x64/apps
 @dirrm share/icons/crystalsvg/48x48/apps
@@ -1023,6 +1039,8 @@ share/servicetypes/krec_exportitem.desktop
 @dirrm share/apps/kmid
 @dirrm share/apps/kicker/applets
 @dirrm share/apps/kicker
+@dirrm share/apps/kaudiocreator/pics
+@dirrm share/apps/kaudiocreator
 @dirrm share/apps/kaboodle/icons/crystalsvg/22x22/actions
 @dirrm share/apps/kaboodle/icons/crystalsvg/22x22
 @dirrm share/apps/kaboodle/icons/crystalsvg/16x16/actions

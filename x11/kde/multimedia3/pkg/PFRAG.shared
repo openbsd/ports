@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2004/02/02 23:07:36 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2004/03/07 21:08:44 espie Exp $
 ${KDE}/kcm_audiocd.so
 ${KDE}/kcm_cddb.so
 ${KDE}/kcm_kmix.so
@@ -59,6 +59,7 @@ lib/libkdeinit_kmix.so
 lib/libkdeinit_kmixctrl.so
 lib/libkdeinit_krec.so
 lib/libkdeinit_noatun.so
+lib/libkmidlib.so.0.0
 lib/libkworkman.so.6.0
 lib/libmpeg-0.3.0.so
 lib/libmpeg.so
