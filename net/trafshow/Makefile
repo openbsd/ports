@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/05/06 23:22:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2004/06/03 16:28:12 david Exp $
 
 COMMENT=	"full screen visualization of network traffic"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz
 
-# See RP#3565 before enabling
+# See PR#3565 before enabling
 #PATCHFILES=	trafshow-31-v6-20010322a.diff.gz:0
 #PATCH_DIST_STRIP= -p1
 
