@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2000/04/18 23:56:26 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/04/20 01:17:11 kevlo Exp $
 
-BROKEN=		"Default floppy names are wrong"
-DATE=		19991121
+DATE=		20000417
 DISTNAME=	mtools-3.9.6
 PKGNAME=	mtools-3.9.6.${DATE}
 CATEGORIES=	sysutils
