@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/12/18 11:31:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2000/01/16 23:51:05 fgsch Exp $
 
 DATE=		19991121
 DISTNAME=	mtools-3.9.6
@@ -16,9 +16,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@${LN} -s . ${WRKSRC}/mtools
+	@/bin/ln -s . ${WRKSRC}/mtools
 
 post-patch:
-	@${RM} ${WRKSRC}/mtools
+	@/bin/rm ${WRKSRC}/mtools
 
 .include <bsd.port.mk>
