@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.19 2004/10/13 06:29:22 jolan Exp $
+$OpenBSD: user.list,v 1.20 2004/11/13 01:52:25 alek Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -30,7 +30,7 @@ id  user		group		port options
 519 _news				news/leafnode
 520 _majordomo		_majordomo	mail/majordomo
 521 _exim		_exim		mail/exim noauto
-522 _xcept				comms/xcept noauto
+522 _xcept		_xcept		comms/xcept
 523 _ffproxy		_ffproxy	www/ffproxy
 524			_mail		mail/openwebmail
 525 _quagga		_quagga		net/quagga
