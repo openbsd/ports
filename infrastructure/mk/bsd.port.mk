@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.631 2004/08/03 16:18:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.632 2004/08/03 19:30:25 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -90,8 +90,6 @@ NO_SHARED_LIBS?=	Yes
 .  endif
 .endfor
 NO_SHARED_LIBS?=	No
-
-SHARED_ONLY?=	No
 
 # Global path locations.
 PORTSDIR?=		/usr/ports
@@ -202,6 +200,8 @@ DEF_UMASK?=		022
 NO_DEPENDS?= No
 NO_BUILD?= No
 NO_REGRESS?= No
+SHARED_ONLY?=	No
+
 DIST_SUBDIR?=
 
 .if !empty(DIST_SUBDIR)
