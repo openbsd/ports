@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/10/11 04:29:10 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/11/05 08:20:43 espie Exp $
+%%SHARED%%
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
 bin/scrollkeeper-gen-seriesid
@@ -166,6 +167,5 @@ share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
 @exec %D/bin/xmlcatalog --noout --add "public" "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "file://%D/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" /var/db/xmlcatalog
 @exec %D/bin/scrollkeeper-rebuilddb -q
 @unexec xmlcatalog --noout --del "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" /var/db/xmlcatalog
-%%SHARED%%
 @extraunexec rm -rf /var/db/scrollkeeper/
 @extraunexec rm -f /var/log/scrollkeeper.log*
