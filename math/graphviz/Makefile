@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/11 00:32:53 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/29 12:19:49 espie Exp $
 
 CATEGORIES=	math devel graphics
 NEED_VERSION=	1.406
@@ -30,8 +30,9 @@ CONFIGURE_ARGS=--with-freetypeincludedir=${X11BASE}/include/freetype2
 CONFIGURE_SCRIPT=autogen.sh
 USE_GMAKE=	Yes
 
-ACCEPT_GRAPHVIZ_LICENSE?=No
+.include <bsd.own.mk>
 
+ACCEPT_GRAPHVIZ_LICENSE?=No
 .if ${ACCEPT_GRAPHVIZ_LICENSE:L} == "no"
 post-extract:
 	@echo "You must read ${WRKDIST}/COPYING first"
