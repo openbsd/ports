@@ -1,12 +1,11 @@
-$OpenBSD: sup-alpha-src_idl-compiler_Makefile_in,v 1.1.1.1 2003/01/31 18:25:37 todd Exp $
---- src/idl-compiler/Makefile.in.orig	Sun Sep  1 23:07:22 2002
-+++ src/idl-compiler/Makefile.in	Sun Sep  1 23:06:55 2002
-@@ -267,7 +267,7 @@ maintainer-clean-libtool:
- 
- orbit-idl-2$(EXEEXT): $(orbit_idl_2_OBJECTS) $(orbit_idl_2_DEPENDENCIES)
+--- Makefile.in.orig	Wed Dec  1 14:38:29 2004
++++ Makefile.in	Wed Dec  1 14:39:17 2004
+@@ -269,7 +269,7 @@
+ 	done
+ orbit-idl-2$(EXEEXT): $(orbit_idl_2_OBJECTS) $(orbit_idl_2_DEPENDENCIES) 
  	@rm -f orbit-idl-2$(EXEEXT)
 -	$(LINK) $(orbit_idl_2_LDFLAGS) $(orbit_idl_2_OBJECTS) $(orbit_idl_2_LDADD) $(LIBS)
 +	$(LINK) $(orbit_idl_2_LDFLAGS) $(orbit_idl_2_OBJECTS) $(orbit_idl_2_LDADD) $(LIBS) -static
  
- tags: TAGS
- 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

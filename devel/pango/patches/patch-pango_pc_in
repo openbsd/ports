@@ -1,11 +1,10 @@
-$OpenBSD: patch-pango_pc_in,v 1.3 2003/09/23 06:12:41 marcm Exp $
---- pango.pc.in.orig	2003-07-24 12:39:24.000000000 -0700
-+++ pango.pc.in	2003-09-05 11:51:12.000000000 -0700
-@@ -9,6 +9,6 @@ Name: Pango
+--- pango.pc.in.orig	Wed Dec  1 14:20:32 2004
++++ pango.pc.in	Wed Dec  1 14:21:45 2004
+@@ -9,6 +9,6 @@
  Description: Internationalized text handling
  Version: @VERSION@
  Requires: glib-2.0,gobject-2.0,gmodule-2.0
--Libs: -L${libdir} -lpango-@PANGO_API_VERSION@
-+Libs: -L${libdir} @PKGCONFIG_X_LIBS@ -lpango-@PANGO_API_VERSION@
+-Libs: -L${libdir} -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
++Libs: -L${libdir} @PKGCONFIG_X_LIBS@ -lpango-@PANGO_API_VERSION@ @PKGCONFIG_MATH_LIBS@
  Cflags: -I${includedir}/pango-1.0
  

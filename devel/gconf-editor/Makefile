@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/23 11:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/10 20:33:59 marcm Exp $
 
 COMMENT=		"editor for the GConf configuration system"
 
-DISTNAME=		gconf-editor-2.6.2
+DISTNAME=		gconf-editor-2.8.2
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -22,7 +22,7 @@ WANTLIB=		ORBit-2.0.0 X11 Xext Xft Xinerama Xrender \
 			iconv intl m pango-1.0.0.0 pangoft2-1.0.0.0 \
 			pangoxft-1.0.0.0 pangox-1.0.0.0 popt pthread
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gconf-editor/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \

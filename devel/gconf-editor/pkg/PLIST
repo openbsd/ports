@@ -1,8 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:43:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/12/10 20:33:59 marcm Exp $
 bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/
 share/applications/gconf-editor.desktop
+share/gnome/
+share/gnome/help/
+share/gnome/help/gconf-editor/
+share/gnome/help/gconf-editor/C/
+share/gnome/help/gconf-editor/C/figures/
+share/gnome/help/gconf-editor/C/figures/entry-blank.png
+share/gnome/help/gconf-editor/C/figures/entry-bool.png
+share/gnome/help/gconf-editor/C/figures/entry-list.png
+share/gnome/help/gconf-editor/C/figures/entry-number.png
+share/gnome/help/gconf-editor/C/figures/entry-schema.png
+share/gnome/help/gconf-editor/C/figures/entry-string.png
+share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/C/gconf-editor.xml
+share/gnome/help/gconf-editor/C/legal.xml
 share/locale/
 share/locale/am/
 share/locale/am/LC_MESSAGES/
@@ -22,6 +36,9 @@ share/locale/bg/LC_MESSAGES/gconf-editor.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gconf-editor.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/gconf-editor.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gconf-editor.mo
@@ -40,6 +57,9 @@ share/locale/de/LC_MESSAGES/gconf-editor.mo
 share/locale/el/
 share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/gconf-editor.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
+share/locale/en_CA/LC_MESSAGES/gconf-editor.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gconf-editor.mo
@@ -121,12 +141,21 @@ share/locale/mr/LC_MESSAGES/gconf-editor.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gconf-editor.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
+share/locale/nb/LC_MESSAGES/gconf-editor.mo
+share/locale/ne/
+share/locale/ne/LC_MESSAGES/
+share/locale/ne/LC_MESSAGES/gconf-editor.mo
 share/locale/nl/
 share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gconf-editor.mo
 share/locale/no/
 share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/gconf-editor.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/gconf-editor.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gconf-editor.mo
@@ -184,6 +213,9 @@ share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/
 share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
+share/omf/
+share/omf/gconf-editor/
+share/omf/gconf-editor/gconf-editor-C.omf
 share/pixmaps/
 share/pixmaps/gconf-editor/
 share/pixmaps/gconf-editor.png
@@ -195,4 +227,3 @@ share/pixmaps/gconf-editor/entry-schema.png
 share/pixmaps/gconf-editor/entry-string.png
 share/pixmaps/gconf-editor/folder-closed.png
 share/pixmaps/gconf-editor/folder-open.png
-share/pixmaps/gconf-editor/stock-about-16.png

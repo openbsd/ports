@@ -1,18 +1,20 @@
-$OpenBSD: patch-gconf_default_path_in,v 1.2 2004/06/23 03:23:48 marcm Exp $
---- gconf/default.path.in.orig	2004-04-01 06:41:49.000000000 -0700
-+++ gconf/default.path.in	2004-06-19 21:43:56.000000000 -0600
-@@ -7,7 +7,7 @@
+--- gconf/default.path.in.orig	Wed Dec  1 15:18:26 2004
++++ gconf/default.path.in	Wed Dec  1 15:19:44 2004
+@@ -6,7 +6,7 @@
+ # See the GConf manual for details
  
  # Look first in systemwide mandatory settings directory
- # (commented out until xml backend knows how to be read-only for users)
--xml:readonly:@EXPANDED_SYSCONFDIR@/gconf/gconf.xml.mandatory
+-xml:readonly:@EXPANDED_SYSGCONFDIR@/gconf.xml.mandatory
 +xml:readonly:/var/db/gconf/gconf.xml.mandatory
  
  # To read in any mandatory settings that the Sys Admin may have created
  # prior to a desktop system upgrade. The SysAdmin can stick read-only system
-@@ -27,4 +27,4 @@ xml:readwrite:$(HOME)/.gconf
- include @EXPANDED_SYSCONFDIR@/gconf/2/local-defaults.path
+@@ -26,7 +26,7 @@
+ include @EXPANDED_SYSGCONFDIR@/2/local-defaults.path
  
  # Finally, look at the systemwide defaults
--xml:readonly:@EXPANDED_SYSCONFDIR@/gconf/gconf.xml.defaults
+-xml:readonly:@EXPANDED_SYSGCONFDIR@/gconf.xml.defaults
 +xml:readonly:/var/db/gconf/gconf.xml.defaults
+ 
+ 
+ 

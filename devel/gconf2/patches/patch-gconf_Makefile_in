@@ -1,12 +1,10 @@
-$OpenBSD: patch-gconf_Makefile_in,v 1.5 2004/06/23 03:23:48 marcm Exp $
---- gconf/Makefile.in.orig	2004-06-14 10:24:43.000000000 -0600
-+++ gconf/Makefile.in	2004-06-19 21:40:56.000000000 -0600
-@@ -144,7 +144,7 @@ NULL = 
+--- gconf/Makefile.in.orig	Wed Dec  1 15:09:31 2004
++++ gconf/Makefile.in	Wed Dec  1 15:16:57 2004
+@@ -208,6 +208,7 @@
+ 	-DVERSION=\""$(VERSION)"\"					\
+ 	-DGCONF_ENABLE_INTERNALS=1					\
+ 	-DGCONFD=\""$(GCONFD_BINARY_NAME)"\"				\
++	-DGCONF_CONFIG_SOURCE=\""$(GCONF_CONFIG_SOURCE)"\"		\
+ 	$(NULL)
  
- GCONFD_BINARY_NAME = gconfd-2
  
--INCLUDES =  	-I$(top_srcdir)								-I$(top_builddir)							$(DEPENDENT_WITH_XML_AND_GTK_CFLAGS) 					-DG_LOG_DOMAIN=\"GConf\"						-DGCONF_LOCALE_DIR=\""$(gconflocaledir)"\"			        -DGCONF_SRCDIR=\""$(absolute_top_srcdir)"\"				-DGCONF_CONFDIR=\""$(sysconfdir)/gconf/$(MAJOR_VERSION)"\"		-DGCONF_ETCDIR=\""$(sysconfdir)/gconf"\"				-DGCONF_BINDIR=\""$(bindir)"\"						-DGCONF_SERVERDIR=\""$(libexecdir)"\"           	-DGCONF_BUILDDIR=\""$(top_builddir)"\"					-DGCONF_BACKEND_DIR=\""$(pkglibdir)/$(MAJOR_VERSION)"\"			-DVERSION=\""$(VERSION)"\"						-DGCONF_ENABLE_INTERNALS=1						-DGCONFD=\""$(GCONFD_BINARY_NAME)"\"					$(NULL)
-+INCLUDES =  	-I$(top_srcdir)								-I$(top_builddir)							$(DEPENDENT_WITH_XML_AND_GTK_CFLAGS) 					-DG_LOG_DOMAIN=\"GConf\"						-DGCONF_LOCALE_DIR=\""$(gconflocaledir)"\"			        -DGCONF_SRCDIR=\""$(absolute_top_srcdir)"\"				-DGCONF_CONFDIR=\""$(sysconfdir)/gconf/$(MAJOR_VERSION)"\"		-DGCONF_ETCDIR=\""$(sysconfdir)/gconf"\"				-DGCONF_BINDIR=\""$(bindir)"\"						-DGCONF_SERVERDIR=\""$(libexecdir)"\"           	-DGCONF_BUILDDIR=\""$(top_builddir)"\"					-DGCONF_BACKEND_DIR=\""$(pkglibdir)/$(MAJOR_VERSION)"\"			-DVERSION=\""$(VERSION)"\"						-DGCONF_ENABLE_INTERNALS=1						-DGCONFD=\""$(GCONFD_BINARY_NAME)"\"					-DGCONF_CONFIG_SOURCE=\""$(GCONF_CONFIG_SOURCE)"\"					$(NULL)
- 
- 
- EFENCE = 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/12/10 20:33:59 marcm Exp $
 include/libgsf-1/
 include/libgsf-1/gsf/
 include/libgsf-1/gsf-win32/
@@ -17,10 +17,12 @@ include/libgsf-1/gsf/gsf-input-gzip.h
 include/libgsf-1/gsf/gsf-input-impl.h
 include/libgsf-1/gsf/gsf-input-iochannel.h
 include/libgsf-1/gsf/gsf-input-memory.h
+include/libgsf-1/gsf/gsf-input-proxy.h
 include/libgsf-1/gsf/gsf-input-stdio.h
 include/libgsf-1/gsf/gsf-input-textline.h
 include/libgsf-1/gsf/gsf-input.h
 include/libgsf-1/gsf/gsf-libxml.h
+include/libgsf-1/gsf/gsf-meta-names.h
 include/libgsf-1/gsf/gsf-msole-utils.h
 include/libgsf-1/gsf/gsf-outfile-impl.h
 include/libgsf-1/gsf/gsf-outfile-msole.h

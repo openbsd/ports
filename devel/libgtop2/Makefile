@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/10 20:33:59 marcm Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
-V=			2.6.0
+V=			2.8.1
 DISTNAME=		libgtop-${V}
 PKGNAME=		libgtop2-${V}
 CATEGORIES=		devel
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtop/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgtop/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 # GPL

@@ -1,6 +1,5 @@
-$OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
---- sysdeps/freebsd/procmap.c.orig	Wed Mar 10 03:18:59 2004
-+++ sysdeps/freebsd/procmap.c	Sat Jul 31 13:07:27 2004
+--- sysdeps/freebsd/procmap.c.orig	Fri Sep 24 18:49:06 2004
++++ sysdeps/freebsd/procmap.c	Wed Dec  1 19:58:45 2004
 @@ -35,7 +35,7 @@
  #include <vm/vm_object.h>
  #include <vm/vm_prot.h>
@@ -10,24 +9,22 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
  #include <uvm/uvm_extern.h>
  #else
  #include <vm/vm_object.h>
-@@ -57,11 +57,14 @@
- #include <sys/user.h>
+@@ -58,10 +58,12 @@
  #endif
  #include <sys/sysctl.h>
--#if !defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)
-+#if defined(__NetBSD__) && (__NetBSD_Version__ >= 105020000) || defined(__OpenBSD__)
+ #if !defined(__NetBSD__) || (__NetBSD_Version__ < 105020000)
+-#include <vm/vm.h>
 +#include <uvm/uvm.h>
 +#else
- #include <vm/vm.h>
  #endif
  
 -#if defined(__NetBSD__) && (__NetBSD_Version__ >= 104000000)
 +#if defined(__NetBSD__) && \
-+	(__NetBSD_Version__ >= 104000000) && (__NetBSD_Version__ < 105020000)
++    (__NetBSD_Version__ >= 104000000) && (__NetBSD_Version__ < 105020000)
  /* Fixme ... */
  #undef _KERNEL
  #define _UVM_UVM_AMAP_I_H_ 1
-@@ -95,7 +98,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -95,7 +97,7 @@
  	struct kinfo_proc *pinfo;
  	struct vm_map_entry entry, *first;
  	struct vmspace vmspace;
@@ -36,7 +33,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
  	struct vnode vnode;
  	struct inode inode;
  #else
-@@ -181,7 +184,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -179,7 +181,7 @@
   			continue;
  #endif
  #else
@@ -45,7 +42,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
   		if (UVM_ET_ISSUBMAP (&entry))
  			continue;
  #else
-@@ -207,7 +210,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -205,7 +207,7 @@
  
  		i++;
  
@@ -54,7 +51,7 @@ $OpenBSD: patch-sysdeps_freebsd_procmap_c,v 1.1 2004/08/01 06:06:35 marcm Exp $
  		if (!entry.object.uvm_obj)
  			continue;
  
-@@ -231,7 +234,7 @@ glibtop_get_proc_map_p (glibtop *server,
+@@ -229,7 +231,7 @@
  			glibtop_error_io_r (server, "kvm_read (object)");
  #endif
  

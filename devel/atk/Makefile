@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/08/10 12:42:21 xsa Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/10 20:33:59 marcm Exp $
 
 COMMENT=		"accessibility toolkit used by gtk+"
 
-DISTNAME=		atk-1.6.1
+DISTNAME=		atk-1.8.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/atk/1.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 MODULES=		devel/gettext

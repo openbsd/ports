@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/10 20:33:59 marcm Exp $
 
 COMMENT=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
 
-VERSION=		1.10.0
+VERSION=		1.11.1
 DISTNAME=		libgsf-${VERSION}
 PKGNAME-gnome=		libgsf-gnome-${VERSION}
 CATEGORIES=		devel
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgsf/1.10/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgsf/1.11/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
@@ -30,7 +30,6 @@ LIB_DEPENDS=		bz2.10.2::archivers/bzip2 \
 			xml2.8.4::textproc/libxml \
 			glib-2.0.0.11,gobject-2.0.0.11::devel/glib2
 
-SEPARATE_BUILD= 	concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

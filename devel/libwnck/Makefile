@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2004/11/23 21:40:35 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/10 20:34:00 marcm Exp $
 
 COMMENT=		"window navigator construction kit"
 
-DISTNAME=		libwnck-2.6.2
+DISTNAME=		libwnck-2.8.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libwnck/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libwnck/2.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

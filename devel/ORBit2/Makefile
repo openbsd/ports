@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/23 11:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/10 20:33:58 marcm Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
-DISTNAME=		ORBit2-2.10.2
+DISTNAME=		ORBit2-2.12.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.labs.redhat.com/orbit/
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c glib-2.0.0.0 m pthread
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ORBit2/2.10/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ORBit2/2.12/}
 EXTRACT_SUFX=		.tar.bz2
 
 # fix for Alpha
