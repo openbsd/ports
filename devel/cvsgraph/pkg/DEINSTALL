@@ -1,0 +1,36 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/06/29 13:39:51 espie Exp $
+#
+# De-installation setup of viewcvs
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFDIR=${SYSCONFDIR}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+	DEINSTALL)
+		echo ""
+		echo "+---------------"
+		echo "| The existing $1 configuration file"
+		echo "| in $CONFDIR,"
+		echo "| has NOT been deleted. To do this: execute"
+		echo "| 'rm -f $CONFDIR/cvsgraph.conf' as root."
+		echo "+---------------"
+		echo ""
+	;;
+	*)
+	echo "Usage: `basename $0` distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0
