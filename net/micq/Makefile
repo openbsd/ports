@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2004/12/16 00:31:23 alek Exp $
+# $OpenBSD: Makefile,v 1.34 2005/02/20 06:57:14 david Exp $
 # $FreeBSD: Makefile,v 1.6 1999/06/03 08:31:06 ache Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
-DISTNAME=       micq-0.4.12
+DISTNAME=       micq-0.5
 CATEGORIES=	net
 
 MAINTAINER=	David Krause <david@openbsd.org>
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
+WANTLIB=		c crypto ssl
 
 MASTER_SITES=	${HOMEPAGE}source/ \
 		http://http.uk.micq.org/source/ \
@@ -22,16 +22,8 @@ MASTER_SITES=	${HOMEPAGE}source/ \
 
 EXTRACT_SUFX=	.tgz
 
-FLAVORS=	ssl
-FLAVOR?=
-
-.if ${FLAVOR:L:Mssl}
-LIB_DEPENDS=	gnutls.12::security/gnutls
-CONFIGURE_ARGS+= --enable-ssl
-WANTLIB+=		gcrypt gpg-error iconv intl z
-.else
-CONFIGURE_ARGS+= --disable-ssl
-.endif
+CONFIGURE_ARGS+= --disable-iconv --enable-ssl=openssl
+CONFIGURE_ENV+=	MICQ_EXTRAVERSION="OpenBSD Ports Tree"
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
