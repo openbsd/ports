@@ -1,0 +1,36 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/02/08 12:48:23 espie Exp $
+
+COMMENT= 		"logic circuit simulator for kde"
+CATEGORIES=		cad education x11 x11/kde
+DISTNAME=		klogic-1.404
+
+HOMEPAGE=	http://www.a-rostin.de/klogic/
+
+MASTER_SITES=${HOMEPAGE}
+
+# GPL
+PERMIT_DISTFILES_CDROM?=	Yes
+PERMIT_DISTFILES_FTP?=		Yes
+PERMIT_PACKAGE_CDROM?=		Yes
+PERMIT_PACKAGE_FTP?=		Yes
+
+
+MODKDE_VERSION= 3.1
+MODULES=	kde
+
+LIB_DEPENDS= kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
+
+MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
+CONFIGURE_STYLE?=	autoconf
+AUTOCONF_NEW=		Yes
+USE_GMAKE=		Yes
+CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
+PORTHOME?=${WRKDIR}
+
+CONFIGURE_ENV=		${MODKDE_CONFIGURE_ENV}
+MAKE_ENV+=		${MODKDE_CONFIGURE_ENV}
+MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
+
+CFLAGS+=-fno-stack-protector
+
+.include <bsd.port.mk>
