@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/28 15:17:35 espie Exp $
+lib/libonew${FLAVOR_EXT}.a
+share/doc/ja-onew${FLAVOR_EXT}/README.ONEW
+@dirrm share/doc/ja-onew${FLAVOR_EXT}

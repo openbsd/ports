@@ -1,0 +1,6 @@
+ONEW is a library for using Japanese Input Method Canna, Wnn4, or
+Wnn6.
+
+Available flavors are:
+	wnn4
+	canna
