@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/28 19:22:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/26 19:36:00 jakob Exp $
 
 DISTNAME=	cyrus-sasl-1.5.21
 CATEGORIES=     security
-NEED_VERSION=	1.241
+NEED_VERSION=	1.302
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/sasl/
 
@@ -15,9 +15,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-FAKE=			yes
-
-GNU_CONFIGURE=		yes
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/sasl \
 			--enable-krb4=/usr \
 			--enable-static \
