@@ -1,4 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.17 2003/03/11 21:10:44 jakob Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.18 2003/05/04 23:19:33 margarida Exp $
+lib/ethereal/plugins/${VERSION}/artnet.a
+lib/ethereal/plugins/${VERSION}/artnet.la
+lib/ethereal/plugins/${VERSION}/artnet.so
 lib/ethereal/plugins/${VERSION}/coseventcomm.a
 lib/ethereal/plugins/${VERSION}/coseventcomm.la
 lib/ethereal/plugins/${VERSION}/coseventcomm.so
