@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2002/04/08 19:05:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2002/10/24 16:21:35 naddy Exp $
 
 COMMENT=	"interactive astronomical ephemeris"
 DISTNAME=	xephem-3.2.3
 CATEGORIES=	astro
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/
 
 HOMEPAGE=	http://www.clearskyinstitute.com/xephem/
@@ -25,6 +24,8 @@ do-build:
 	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 	@cd ${WRKSRC}/GUI/xephem && \
 	  ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/xephem/auxil

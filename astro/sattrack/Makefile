@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/10/24 16:21:35 naddy Exp $
 
 COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
-NEED_VERSION=	1.515
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
@@ -22,5 +21,7 @@ post-patch:
 	@sed -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/../run/gettle > $(WRKSRC)/../run/gettle.new
 	@mv $(WRKSRC)/../run/getsts.new $(WRKSRC)/../run/getsts
 	@mv $(WRKSRC)/../run/gettle.new $(WRKSRC)/../run/gettle
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/10/24 16:21:35 naddy Exp $
 
 COMMENT=	"earth as seen from the direction of the sun"
 
 DISTNAME=	xworld-2.0
 CATEGORIES=	astro x11
-NEED_VERSION=   1.515
 
 MAINTAINER=	Vladimir Kotal <vlada@openbsd.cz>
 
@@ -24,6 +23,7 @@ CONFIGURE_ENV=	CAT=cat \
 		LDLIBS="-lm -L${X11BASE}/lib -lX11" \
 		MORELIBS=""
 INSTALL_STRIP=
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xworld ${PREFIX}/bin
