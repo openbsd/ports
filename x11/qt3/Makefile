@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.29 2003/05/13 00:26:32 naddy Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -190,7 +190,7 @@ pre-install:
 	fi; done
 .else
 MT_SUFX=
-LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt.so.3.12 editor.so.1.0 qui.so.1.0
 
 post-patch:
 	-rm -rf ${WRKSRC}/examples
