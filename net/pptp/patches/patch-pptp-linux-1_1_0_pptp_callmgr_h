@@ -1,0 +1,11 @@
+$OpenBSD: patch-pptp-linux-1_1_0_pptp_callmgr_h,v 1.1 2003/01/24 11:49:21 reinhard Exp $
+--- pptp-linux-1.1.0/pptp_callmgr.h.orig	Sat Dec 23 09:19:51 2000
++++ pptp-linux-1.1.0/pptp_callmgr.h	Tue Aug  6 13:37:44 2002
+@@ -6,4 +6,7 @@
+  */
+ 
+ #define PPTP_SOCKET_PREFIX "/var/run/pptp/"
++
++#ifndef PPTP_CALLMGR_BINARY
+ #define PPTP_CALLMGR_BINARY "./pptp_callmgr"
++#endif

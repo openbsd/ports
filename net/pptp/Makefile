@@ -1,44 +1,45 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/01/24 11:49:21 reinhard Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/04/10 01:14:01 jtk Exp $
 
 COMMENT=	'PPTP client package for Microsoft VPN servers'
-DISTNAME=	pptp-linux-1.0.2
-PKGNAME=	pptp-1.0.2
 
+DISTNAME=	pptp-linux-1.1.0-1
+PKGNAME=	pptp-1.1.0
 CATEGORIES=	net
-MASTER_SITES= 	http://cag.lcs.mit.edu/~cananian/Synaptics/release/
+MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=pptpclient/}
 
-HOMEPAGE=	http://cag.lcs.mit.edu/~cananian/Projects/PPTP/
+HOMEPAGE=	http://pptpclient.sf.net
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   Yes 
-PERMIT_PACKAGE_FTP=     Yes 
-PERMIT_DISTFILES_CDROM= Yes 
+# GPL
+PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-# bbaa: workaround for buggy Alcatel ADSL 1000 modems
-FLAVORS+=	bbaa
-FLAVOR?= 
+WRKSRC=		${WRKDIST}/pptp-linux-1.1.0
+REGRESS_TARGET=	vector_test
 
-.if ${FLAVOR:L:Mbbaa}
-# needs a slightly modified patch; backup default patch
-pre-patch:
-		@cp -p ${PATCHDIR}/patch-pptc_ctrl_c ${PATCHDIR}/patch-pptc_ctrl_c.orig
-		@cp ${FILESDIR}/patch-pptc_ctrl_c ${PATCHDIR}/patch-pptc_ctrl_c
-.endif
+DIRS=	Documentation Reference
 
 post-patch:
-		@cd ${WRKSRC}; sed -e s,PREFIX,${PREFIX}, \
-			< ${FILESDIR}/pptp_8 > pptp.8
-		@cd ${WRKSRC}; sed -e s,PREFIX,${PREFIX}, \
-			< ${FILESDIR}/pptp_reconnect > pptp-reconnect
+	@cd ${WRKSRC}; sed -e s,PREFIX,${PREFIX}, < \
+	    ${FILESDIR}/pptp_8 > pptp.8
+	@cd ${WRKSRC}; sed -e s,PREFIX,${PREFIX}, < \
+	    ${FILESDIR}/pptp_reconnect > pptp-reconnect
 
-.if ${FLAVOR:L:Mbbaa}
-# move default patch back
-post-install:
-		@mv ${PATCHDIR}/patch-pptc_ctrl_c.orig ${PATCHDIR}/patch-pptc_ctrl_c
-.endif
+post-extract:
+	@cd ${WRKDIST} && tar xzf pptp-linux-1.1.0.tar.gz
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/pptp-reconnect ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${PREFIX}/man/man8
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pptp
+	${INSTALL_DATA} ${WRKSRC}/USING ${PREFIX}/share/doc/pptp/
+	@cd ${WRKSRC} && \
+	    tar cf - ${DIRS} | (cd ${PREFIX}/share/doc/pptp && tar -xf -)
 
 NO_REGRESS=	Yes
 

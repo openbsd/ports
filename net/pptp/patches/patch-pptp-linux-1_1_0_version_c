@@ -1,0 +1,9 @@
+$OpenBSD: patch-pptp-linux-1_1_0_version_c,v 1.1 2003/01/24 11:49:21 reinhard Exp $
+--- pptp-linux-1.1.0/version.c.orig	Mon Mar 11 02:50:47 2002
++++ pptp-linux-1.1.0/version.c	Tue Aug  6 17:46:37 2002
+@@ -5,4 +5,4 @@
+  */
+ 
+ #include "config.h"
+-const char * version = "pptp-linux version " PPTP_LINUX_VERSION;
++const char * version = "pptp-client version " PPTP_LINUX_VERSION;

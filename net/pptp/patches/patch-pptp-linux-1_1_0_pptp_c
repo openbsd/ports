@@ -1,0 +1,12 @@
+$OpenBSD: patch-pptp-linux-1_1_0_pptp_c,v 1.1 2003/01/24 11:49:21 reinhard Exp $
+--- pptp-linux-1.1.0/pptp.c.orig	Mon Mar 11 02:51:41 2002
++++ pptp-linux-1.1.0/pptp.c	Tue Aug  6 13:43:11 2002
+@@ -9,7 +9,7 @@
+ #include <sys/socket.h>
+ #if defined(__FreeBSD__)
+ #include <libutil.h>
+-#elif defined(__NetBSD__)
++#elif defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <util.h>
+ #else
+ #include <pty.h>

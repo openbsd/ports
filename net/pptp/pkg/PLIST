@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/21 14:02:52 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/24 11:49:21 reinhard Exp $
+man/man8/pptp.8
 sbin/pptp
-sbin/pptp_callmgr
 sbin/pptp-reconnect
-share/doc/pptp/USING
-share/doc/pptp/INSTALL
-share/doc/pptp/README
-share/doc/pptp/NEWS
+share/doc/pptp/Documentation/DESIGN.CALLMGR
+share/doc/pptp/Documentation/DESIGN.PPTP
+share/doc/pptp/Documentation/PORTING
 share/doc/pptp/Reference/README
 share/doc/pptp/Reference/ms-chap.txt
 share/doc/pptp/Reference/pptp-draft.txt
@@ -16,10 +15,7 @@ share/doc/pptp/Reference/rfc1702.txt
 share/doc/pptp/Reference/rfc1990.txt
 share/doc/pptp/Reference/rfc791.txt
 share/doc/pptp/Reference/rfc793.txt
-share/doc/pptp/Documentation/DESIGN.CALLMGR
-share/doc/pptp/Documentation/DESIGN.PPTP
-share/doc/pptp/Documentation/PORTING
-man/man8/pptp.8
-@dirrm share/doc/pptp/Documentation
+share/doc/pptp/USING
 @dirrm share/doc/pptp/Reference
+@dirrm share/doc/pptp/Documentation
 @dirrm share/doc/pptp
