@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/04/20 17:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/05/08 16:01:22 espie Exp $
 
      SUBDIR+= libs2
      SUBDIR+= base2
@@ -74,5 +74,6 @@
      SUBDIR+= i18n3,zh_CN
      SUBDIR+= i18n3,zh_TW
      SUBDIR+= i18n3,zu
+     SUBDIR+= anime-sitters
 
 .include <bsd.port.subdir.mk>
