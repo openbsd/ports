@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/14 09:09:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/15 13:17:59 wilfried Exp $
 
 COMMENT=	"sdl shoot 'em up; stop evil army from getting your oil"
 
 DISTNAME=	OilWar-1.2.1
-PKGNAME=	${DISTNAME:L}
+PKGNAME=	${DISTNAME:L}p0
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.2ndpoint.fi/projektit/filut/
 
@@ -22,23 +22,18 @@ MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	C++
 
 USE_X11=	Yes
+NO_REGRESS=     Yes
 
-LIB_DEPENDS=	SDL_image::devel/sdl-image
+LIB_DEPENDS=	SDL_image::devel/sdl-image \
+		SDL_mixer::devel/sdl-mixer
 
 CONFIGURE_STYLE=gnu
 
-FLAVORS=	no_sound
-FLAVOR?=
-
-.if ${FLAVOR:L:Mno_sound}
-CONFIGURE_ARGS+=--disable-sound
-.else
-LIB_DEPENDS+=	SDL_mixer::devel/sdl-mixer
-.endif
-
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/oilwar
-	${INSTALL_DATA} ${WRKSRC}/*.{png,wav} ${PREFIX}/share/oilwar
+	${INSTALL_DATA_DIR} ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc/oilwar,oilwar}
 	${INSTALL_PROGRAM} ${WRKSRC}/oilwar ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/oilwar
+	${INSTALL_DATA} ${WRKSRC}/*.{png,wav} ${PREFIX}/share/oilwar
 
 .include <bsd.port.mk>

@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/14 09:09:50 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/15 13:17:59 wilfried Exp $
 @group games
 @mode 2555
 bin/oilwar
-@group
 @mode
+@group
+share/doc/oilwar/README
 share/oilwar/background.png
 share/oilwar/bitmaps.png
-!%%no_sound%%
-@exec install -m 664 -o root -g games /dev/null %B/oilwar.scores
-@unexec rm -f %B/oilwar.scores
+share/oilwar/bulletricochet.wav
+share/oilwar/explode.wav
+share/oilwar/gasp.wav
+share/oilwar/singlegunshot.wav
 @dirrm share/oilwar
+@dirrm share/doc/oilwar

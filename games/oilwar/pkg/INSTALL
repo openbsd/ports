@@ -1,0 +1,35 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2003/04/15 13:17:59 wilfried Exp $
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCORE_FILE=/var/games/oilwar.scores
+
+do_install()
+{
+    touch $SCORE_FILE
+    chown root:games $SCORE_FILE
+    chmod 664 $SCORE_FILE
+}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        if [ ! -f $SCORE_FILE ]; then
+            do_install $1
+        fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

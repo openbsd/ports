@@ -1,0 +1,167 @@
+$OpenBSD: patch-Main_cpp,v 1.1 2003/04/15 13:17:59 wilfried Exp $
+--- Main.cpp.orig	Wed Apr  2 10:57:33 2003
++++ Main.cpp	Mon Apr 14 11:54:54 2003
+@@ -60,6 +60,8 @@ int GunChannel = 1;
+ Mix_Chunk *pRicochetSound = NULL;
+ Mix_Chunk *pExplosionSound = NULL;
+ Mix_Chunk *pDeathSound = NULL;
++bool Sounds = true;
++bool PlaySounds = true;
+ #endif
+ 
+ list<UnitData> Tanks;
+@@ -96,7 +98,7 @@ int main (int argc, char *argv[])
+ 		// Check command line
+ 		if ( argc > 1 )
+ 		{
+-			for ( int i = 1; i <= argc; i++ )
++			for ( int i = 1; i < argc; i++ )
+ 			{
+ 				// Version
+ 				if ( strcmp (argv[i], "-v") == 0 || strcmp (argv[i], "--version") == 0 )
+@@ -111,12 +113,25 @@ int main (int argc, char *argv[])
+ 					return 0;
+ 				}
+ 				
++				#ifdef SOUND
++				// Sound
++				if ( strcmp (argv[i], "-s") == 0 || strcmp (argv[i], "--no-sound") == 0 )
++				{
++					cout << "Disabling sounds\n";
++					Sounds = false;
++					continue;
++				}
++				#endif
++				
+ 				// Help
+ 				if ( strcmp (argv[i], "--help") == 0 )
+ 				{
+ 					cout << "Usage: oilwar [OPTION]\n\n";
+ 					cout << "Options\n";
+ 					cout << " -v, --version      Display version information and exit.\n";
++					#ifdef SOUND
++					cout << " -s, --no-sound     Disable sounds\n";
++					#endif
+ 					cout << " --help             Display this help and exit.\n";
+ 					cout << "\nData and score file locations\n";
+ 					cout << " Data dir: " << DATA_DIR << '\n';
+@@ -150,11 +165,15 @@ int main (int argc, char *argv[])
+ 		}
+ 		
+ 		#ifdef SOUND
+-		// Open audio
+-		if ( Mix_OpenAudio (22050, AUDIO_S16, 2, 4096) )
++		if ( Sounds )
+ 		{
+-			cerr << "Unable to open audio: " << Mix_GetError () << endl;
+-			return 1;
++			// Open audio
++			if ( Mix_OpenAudio (22050, AUDIO_S16, 2, 4096) )
++			{
++				cerr << "Unable to open audio: " << Mix_GetError () << endl;
++				cout << "Disabling sound\n";
++				Sounds = false;
++			}
+ 		}
+ 		#endif
+ 		
+@@ -166,11 +185,14 @@ int main (int argc, char *argv[])
+ 		pBitmaps = LoadImage ("bitmaps.png", true);
+ 		
+ 		#ifdef SOUND
+-		// Load sounds
+-		pGunSound = LoadSound ("singlegunshot.wav");
+-		pRicochetSound = LoadSound ("bulletricochet.wav");
+-		pExplosionSound = LoadSound ("explode.wav");
+-		pDeathSound = LoadSound ("gasp.wav");
++		if ( Sounds )
++		{
++			// Load sounds
++			pGunSound = LoadSound ("singlegunshot.wav");
++			pRicochetSound = LoadSound ("bulletricochet.wav");
++			pExplosionSound = LoadSound ("explode.wav");
++			pDeathSound = LoadSound ("gasp.wav");
++		}
+ 		#endif
+ 		
+ 		// Load highscores
+@@ -214,6 +236,12 @@ int main (int argc, char *argv[])
+ 							case SDLK_ESCAPE:
+ 								Running = false;
+ 								break;
++							#ifdef SOUND
++							case SDLK_s:
++								// Toggle sounds
++								PlaySounds = !PlaySounds;
++								break;
++							#endif
+ 							case SDLK_F10:
+ 								cout << "Saving screenshot to shot.bmp" << endl;
+ 								SDL_SaveBMP (pScreen, "shot.bmp");
+@@ -317,6 +345,7 @@ int main (int argc, char *argv[])
+ 					Explosion (int (grenade->x + 0.5f), int (grenade->y + 0.5f));
+ 					
+ 					#ifdef SOUND
++					if ( Sounds && PlaySounds )
+ 						Mix_PlayChannel (-1, pExplosionSound, 0);
+ 					#endif
+ 					
+@@ -433,6 +462,7 @@ int main (int argc, char *argv[])
+ 					}
+ 				
+ 					#ifdef SOUND
++					if ( Sounds && PlaySounds )
+ 						Mix_PlayChannel (-1, pExplosionSound, 0);
+ 					#endif
+ 				}
+@@ -658,8 +688,11 @@ void FireGun (Sint16 x, Sint16 y)
+ 			
+ 			#ifdef SOUND
+ 			// Sounds
+-			Mix_PlayChannel (-1, pDeathSound, 0);
+-			Mix_PlayChannel (GunChannel, pGunSound, 0);
++			if ( Sounds && PlaySounds )
++			{
++				Mix_PlayChannel (-1, pDeathSound, 0);
++				Mix_PlayChannel (GunChannel, pGunSound, 0);
++			}
+ 			#endif
+ 			
+ 			break;
+@@ -674,7 +707,8 @@ void FireGun (Sint16 x, Sint16 y)
+ 		{
+ 			#ifdef SOUND
+ 			// Sounds
+-			Mix_PlayChannel (GunChannel, pGunSound, 0);
++			if ( Sounds && PlaySounds )
++				Mix_PlayChannel (GunChannel, pGunSound, 0);
+ 			#endif
+ 
+ 			tank->hits++;
+@@ -692,13 +726,14 @@ void FireGun (Sint16 x, Sint16 y)
+ 				
+ 				#ifdef SOUND
+ 				// Sounds
+-				Mix_PlayChannel (-1, pExplosionSound, 0);
++				if ( Sounds && PlaySounds )
++					Mix_PlayChannel (-1, pExplosionSound, 0);
+ 				#endif
+ 
+ 				break;
+ 			}
+ 			#ifdef SOUND
+-			else
++			else if ( Sounds && PlaySounds )
+ 				Mix_PlayChannel (-1, pRicochetSound, 0);
+ 			#endif
+ 		}
+@@ -713,7 +748,8 @@ void FireGun (Sint16 x, Sint16 y)
+ 			
+ 			#ifdef SOUND
+ 			// Sounds
+-			Mix_PlayChannel (GunChannel, pGunSound, 0);
++			if ( Sounds && PlaySounds )
++				Mix_PlayChannel (GunChannel, pGunSound, 0);
+ 			#endif
+ 		}
+ 	}
