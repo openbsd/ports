@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/01 17:12:58 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/29 03:44:29 brad Exp $
 
-DISTNAME=	curl-5.11
+DISTNAME=	curl-6.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
@@ -9,14 +9,19 @@ MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
-BUILD_DEPENDS=	${PREFIX}/ssl/lib/libcrypto.a:${PORTSDIR}/security/SSLeay \
-		${PREFIX}/ssl/lib/libssl.a:${PORTSDIR}/security/SSLeay
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-ssl
+USE_AUTOCONF=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I/usr/include/ssl"
 
 CURLDOCDIR=	${PREFIX}/share/doc/curl
 CURLDOCFILES=	CHANGES INSTALL LEGAL MPL-1.0.txt README RESOURCES TODO
+MAKEFILES=	Makefile src/Makefile
+
+post-configure:
+.for x in ${MAKEFILES}
+	@${MV} ${WRKSRC}/${x} ${WRKSRC}/${x}.pre_sed
+	@${SED} -e s,@SHELL@,${SH}, \
+	${WRKSRC}/${x}.pre_sed > ${WRKSRC}/${x}
+.endfor
 
 post-install:
 	@${MKDIR} ${CURLDOCDIR}
