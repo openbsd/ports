@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1998/11/26 17:24:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.13 1999/02/07 02:44:31 jasoni Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -36,6 +36,7 @@
 #    SUBDIR += lclint
 #    SUBDIR += libdlmalloc
 #    SUBDIR += libmalloc
+     SUBDIR += libproplist
      SUBDIR += libslang
      SUBDIR += libtool
 #    SUBDIR += linux_devel
