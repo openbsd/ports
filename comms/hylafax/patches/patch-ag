@@ -1,5 +1,5 @@
---- configure.orig	Wed Sep  2 12:58:28 1998
-+++ configure	Wed Sep  2 13:11:44 1998
+--- configure.orig	Sat Feb 14 11:46:28 1998
++++ configure	Thu Jun 17 03:55:04 1999
 @@ -248,7 +248,7 @@
  test -d /usr/ucb && PATH=$PATH:/usr/ucb			# Sun and others
  test -d /usr/contrib/bin && PATH=$PATH:/usr/contrib/bin	# BSDi
@@ -9,6 +9,15 @@
  PATH=$PATH:$OPATH
  
  POSIXLY_CORRECT=1; export POSIXLY_CORRECT		# disable GNU extensions
+@@ -911,7 +911,7 @@
+     compiler=$1
+     if isGNU $compiler; then
+ 	ISGXX=yes
+-	checkGCCVersion $compiler 2 6 1 || return 1
++#	checkGCCVersion $compiler 2 6 1 || return 1
+     else
+ 	ISGXX=no
+     fi
 @@ -3399,6 +3399,7 @@
      *-solaris*)	LOCKS="+ascii";;
      *-freebsd*)	LOCKS=ascii;;

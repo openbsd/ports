@@ -1,7 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/01 02:57:55 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/06/17 16:57:01 espie Exp $
 
 DISTNAME=	hylafax-v4.0pl2
-PKGNAME=	hylafax-4.0.2
+.if defined(A4)
+PKGNAME=	hylafax-4.0.2-A4
+.else
+PKGNAME= hylafax-4.0.2-letter
+.endif
+
 CATEGORIES=	comms
 
 MAINTAINER=	d@openbsd.org
@@ -12,6 +17,8 @@ EXTRACT_SUFX=	-tar.gz
 BUILD_DEPENDS+= ${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 RUN_DEPENDS=	ghostscript-5.10:${PORTSDIR}/print/ghostscript5
 LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 
+
+USE_EGXX=yes
 
 .if !defined(A4)
 PAGESIZE=	North American Letter
@@ -37,6 +44,7 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
+CONFIGURE_ENV=CONFIG_SOCKARGLENTYPE=::socklen_t
 pre-fetch:
 .if !defined(NO_WARNINGS)
 .if !defined(A4)

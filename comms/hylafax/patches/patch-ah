@@ -1,10 +1,90 @@
---- util/Types.h.orig	Wed Sep  2 16:36:00 1998
-+++ util/Types.h	Wed Sep  2 16:36:20 1998
-@@ -26,6 +26,7 @@
- #ifndef _Types_
- #define	_Types_
- 
-+#include <std.h>
- #include "string.h"
- #include "assert.h"
- #include "stdio.h"
+142,143c142,143
+<   HylaFAXServer::listStatus,	HylaFAXServer::listStatusFile,
+<   HylaFAXServer::nlstStatus,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listStatus,	&HylaFAXServer::listStatusFile,
+>   &HylaFAXServer::nlstStatus,	&HylaFAXServer::nlstUnixFile, },
+146,147c146,147
+<   HylaFAXServer::listSendQ,	HylaFAXServer::listSendQFile,
+<   HylaFAXServer::nlstSendQ,	HylaFAXServer::nlstSendQFile, },
+---
+>   &HylaFAXServer::listSendQ,	&HylaFAXServer::listSendQFile,
+>   &HylaFAXServer::nlstSendQ,	&HylaFAXServer::nlstSendQFile, },
+150,151c150,151
+<   HylaFAXServer::listSendQ,	HylaFAXServer::listSendQFile,
+<   HylaFAXServer::nlstSendQ,	HylaFAXServer::nlstSendQFile, },
+---
+>   &HylaFAXServer::listSendQ,	&HylaFAXServer::listSendQFile,
+>   &HylaFAXServer::nlstSendQ,	&HylaFAXServer::nlstSendQFile, },
+154,155c154,155
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+158,159c158,159
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+162,163c162,163
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+166,167c166,167
+<   HylaFAXServer::listRecvQ,	HylaFAXServer::listRecvQFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listRecvQ,	&HylaFAXServer::listRecvQFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+170,171c170,171
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+174,175c174,175
+<   HylaFAXServer::listRecvQ,	HylaFAXServer::listRecvQFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listRecvQ,	&HylaFAXServer::listRecvQFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+178,179c178,179
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+182,183c182,183
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+186,187c186,187
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+190,191c190,191
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+194,195c194,195
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
+198,199c198,199
+<   HylaFAXServer::listDirectory,	HylaFAXServer::listUnixFile,
+<   HylaFAXServer::nlstDirectory,	HylaFAXServer::nlstUnixFile, },
+---
+>   &HylaFAXServer::listDirectory,	&HylaFAXServer::listUnixFile,
+>   &HylaFAXServer::nlstDirectory,	&HylaFAXServer::nlstUnixFile, },
