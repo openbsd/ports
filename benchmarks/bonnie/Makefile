@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/08/30 02:05:14 brad Exp $
 
 COMMENT=	"performance test of filesystem I/O"
-DISTNAME=       Bonnie
+
+DISTNAME=	Bonnie
 PKGNAME=	bonnie-1.0
 CATEGORIES=	benchmarks
+NEED_VERSION=	1.435
+MASTER_SITES=	ftp://ftp.sunet.se/pub/benchmark/Bonnie/ \
+		ftp://swedishchef.lerc.nasa.gov/drlabs/io/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 
@@ -12,18 +17,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-FAKE_FLAGS=		PREFIX=${WRKINST}${PREFIX}
 
-MASTER_SITES=   ftp://ftp.sunet.se/pub/benchmark/Bonnie/ \
-		ftp://swedishchef.lerc.nasa.gov/drlabs/io/
-EXTRACT_SUFX=   .tar.Z
+SEPARATE_BUILD=	concurrent
 
-MAKE_FLAGS=CFLAGS='${CFLAGS} -static'
+do-build:
+	${CC} ${CFLAGS} -o ${WRKBUILD}/bonnie.o -c ${WRKSRC}/Bonnie.c
+	cd ${WRKBUILD}; ${CC} -static -o bonnie bonnie.o
 
 do-install:
-	@${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
-	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKBUILD}/Bonnie ${PREFIX}/bin/bonnie
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
+	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKBUILD}/bonnie ${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
