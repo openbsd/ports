@@ -1,0 +1,26 @@
+--- Fortify-1.4.1-unix-sparc/src/common/Makefile-orig	Mon May  3 08:53:57 1999
++++ Fortify-1.4.1-unix-sparc/src/common/Makefile	Mon May  3 08:55:19 1999
+@@ -1,9 +1,9 @@
+ 
+-CC	= gcc # -Wall -ansi
++#CC	= gcc # -Wall -ansi
+ 
+ # For GNU/Linux/BSD systems
+-CFLAGS	= -I. -O2	# -static
+-YACC	= bison -y
++#CFLAGS	= -I. -O2	# -static
++#YACC	= bison -y
+ LDFLAGS = -static
+ LEX    = lex -l
+ RANLIB = ranlib
+@@ -36,8 +36,8 @@
+ #RANLIB = :
+ 
+ # Everything else
+-#CFLAGS	= -I. -O
+-#YACC	= yacc
++CFLAGS	= -I. -O
++YACC	= yacc
+ #LDFLAGS = # -static
+ #RANLIB = :
+ 

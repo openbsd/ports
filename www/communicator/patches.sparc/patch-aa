@@ -1,0 +1,172 @@
+--- communicator-v451.sparc-sun-sunos4.1.3_U1/ns-install.orig	Mon Mar  1 15:03:59 1999
++++ communicator-v451.sparc-sun-sunos4.1.3_U1/ns-install	Sat May 15 23:26:34 1999
+@@ -87,21 +87,9 @@
+ fi
+ 
+ #
+-# If MOZILLA_HOME is set, assume that is the place to install.
+-# Otherwise, make an educated guess at the "right" default
+-# directory.
++# We use OpenBSD's ports environment instead.
+ #
+-if test ! -z "${MOZILLA_HOME}"
+-then
+-	INSTALL_DIR="${MOZILLA_HOME}"
+-else
+-	if test -d /opt
+-	then
+-		INSTALL_DIR="/opt/netscape"
+-	else
+-		INSTALL_DIR="/usr/local/netscape"
+-	fi
+-fi
++INSTALL_DIR="${PREFIX}/netscape"
+ 
+ #
+ # See if we have to use the lame SYS-V echo command flags.
+@@ -139,46 +127,19 @@
+ 	fi
+ done
+ 
+-echo ""
+-echo "Please specify the directory path under which the software will be"
+-echo "installed.  The default directory is ${INSTALL_DIR}, but you may"
+-echo "install anywhere you wish (if you have permission to do so)."
+-echo ""
+ flag=1
+ while test ${flag} -eq 1
+ do
+-	${ECHO} "Location for ${PRODUCT} software [${INSTALL_DIR}]: ${ENDER}"
+-	read TARGET
+-	if test -z "${TARGET}"
+-	then
+-		TARGET="${INSTALL_DIR}"
+-	fi
+-	if test ! -z "`echo ${TARGET} | grep '~'`"
+-	then
+-		TARGET=`echo ${TARGET} | sed "s:~:${HOME}:"`
+-	fi
++	TARGET="${INSTALL_DIR}"
+ 
+ 	flag=0
+ 	if test ! -d ${TARGET}
+ 	then
+-		echo ""
+-		${ECHO} "${TARGET}: No such directory.  Do you wish to create it? (y/n)[y] ${ENDER}"
+-		read check
+-		if test "${check}" = "n" -o "${check}" = "N"
++		mkdir -p ${TARGET}
++		if test $? -ne 0
+ 		then
+-			flag=1
+-		else
+-			#
+-			# The -p flag may cause an error on some HP-UX systems.
+-			# Removing the -p will work for 'basename TARGET' as long
+-			# as 'dirname TARGET' exists.
+-			#
+-			mkdir -p ${TARGET}
+-			if test $? -ne 0
+-			then
+-				echo "ERROR: Problem creating ${TARGET}"
+-				exit 2
+-			fi
++		    echo "ERROR: Problem creating ${TARGET}"
++		    exit 2
+ 		fi
+ 	else
+ 		echo ""
+@@ -186,13 +147,14 @@
+ 		echo ""
+ 		echo "The existing contents may be modified or replaced if you install in"
+ 		echo "this directory.  If you choose not to install in '${TARGET}',"
++		echo "you should set your PREFIX environment variable and try again."
+ 		echo "you will be prompted for a different directory."
+ 		echo ""
+ 		${ECHO} "Do you wish to install in '${TARGET}'? (y/n)[y] ${ENDER}"
+ 		read check
+ 		if test "${check}" = "n" -o "${check}" = "N"
+ 		then
+-			flag=1
++		    exit 2
+ 		fi
+ 	fi
+ 
+@@ -203,9 +165,9 @@
+ 		then
+ 			echo ""
+ 			echo "You do not have write permission in ${TARGET}."
+-			echo "Change the permissions, or select another directory, and try again."
++			echo "Change the permissions and try again."
+ 			echo ""
+-			flag=1
++			exit 2
+ 		else
+ 			/bin/rm -f ${TARGET}/${TESTFILE}
+ 		fi
+@@ -294,10 +256,10 @@
+ 	# avoid users having to set MOZILLA_JAVA_FONT_PROPERTY_PATH, or
+ 	# just assuming Java font-handling is broken.
+ 	#
+-	if test ! -z "`ls /bin/uname`"
++	if test ! -z "`ls /usr/bin/uname`"
+ 	then
+ 		MOVE_FONTS="TRUE"
+-		case `/bin/uname` in
++		case `/usr/bin/uname` in
+ 			AIX)
+ 				PLATFORM="aix"
+ 				;;
+@@ -319,19 +281,6 @@
+ 			mv ${TARGET}/java/classes/${PLATFORM}/* ${TARGET}/java/classes/.
+ 		fi
+ 	fi
+-
+-	#
+-	# Is this a virgin install?  If so, create the .netscape dir
+-	# and put the default bookmark file in it.
+-	#
+-	if test ! -d ${HOME}/.netscape
+-	then
+-		# New install, or upgrade from 0.x or 1.x.
+-		mkdir ${HOME}/.netscape
+-		cp ${TARGET}/bookmark.htm ${HOME}/.netscape/bookmarks.html
+-		chmod 644 ${HOME}/.netscape/bookmarks.html
+-		echo "${HOME}/.netscape/bookmarks.html" >> ${LOGFILE}
+-	fi
+ fi
+ 
+ echo ""
+@@ -385,10 +334,10 @@
+ 	then
+ 		mv ${TARGET}/vreg.old ${TARGET}/vreg
+ 	else
+-		mv ./vreg ${TARGET}/vreg
++		cp ./vreg ${TARGET}/vreg
+ 	fi
+ else
+-	mv ./vreg ${TARGET}/vreg
++	cp ./vreg ${TARGET}/vreg
+ fi
+ 
+ #
+@@ -415,7 +364,6 @@
+ 	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
+ 	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
+ 	echo ""
+-	/bin/rm -f ns-install ${PACKAGE} ${REG_INFILE} core
+ 	exit 3
+ fi
+ 
+@@ -424,11 +372,6 @@
+ echo "The Netscape ${PRODUCT} software installation is complete."
+ echo ""
+ echo ""
+-
+-#
+-# Get rid of the trash.
+-#
+-/bin/rm -f ns-install ${PACKAGE} ${REG_INFILE}
+ 
+ echo ""
+ exit 0

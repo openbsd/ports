@@ -1,0 +1,28 @@
+--- Fortify-1.4.1-unix-sparc/src/cmdline/Makefile-orig	Mon May  3 08:55:46 1999
++++ Fortify-1.4.1-unix-sparc/src/cmdline/Makefile	Mon May  3 08:56:51 1999
+@@ -2,11 +2,11 @@
+ COMMON	= ../common
+ INC	= -I. -I$(COMMON)
+ 
+-CC	= gcc # -Wall
++#CC	= gcc # -Wall
+ 
+ # For GNU/Linux systems
+-CFLAGS	= $(INC) -O2	# -static
+-LDFLAGS = -static
++#CFLAGS	= $(INC) -O2	# -static
++#LDFLAGS = -static
+ 
+ # MKLinux and Linux-ppc:
+ #CFLAGS  = $(INC) -O2       # -static
+@@ -30,8 +30,8 @@
+ #LDFLAGS = # -static
+ 
+ # Everything else
+-#CFLAGS	= $(INC) -O
+-#LDFLAGS = # -static
++CFLAGS	= $(INC) -O2
++LDFLAGS = # -static
+ 
+ # ----------------------------------------------------------------------
+ # You should not need to modify anything below here
