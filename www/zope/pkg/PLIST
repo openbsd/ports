@@ -1,20 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/28 12:47:20 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/01/20 17:13:28 mbalmer Exp $
 @newgroup _zope:534
 @newuser _zope:534:_zope:daemon:Zope Account:/nonexistent:/sbin/nologin
 lib/zope/
 lib/zope/bin/
 lib/zope/bin/README.txt
+lib/zope/bin/analyze.py
 lib/zope/bin/check_catalog.py
+lib/zope/bin/checkbtrees.py
 lib/zope/bin/compilezpy.py
 lib/zope/bin/copyzopeskel.py
 @unexec rm -f %D/lib/zope/bin/copyzopeskel.pyc
 lib/zope/bin/decompilezpy.py
+lib/zope/bin/fsdump.py
+lib/zope/bin/fsrefs.py
+lib/zope/bin/fstail.py
+lib/zope/bin/fstest.py
 lib/zope/bin/load_site.py
+lib/zope/bin/migrate.py
 lib/zope/bin/mkzeoinstance.py
 lib/zope/bin/mkzopeinstance.py
+lib/zope/bin/netspace.py
+lib/zope/bin/parsezeolog.py
 lib/zope/bin/python
+lib/zope/bin/repozo.py
 lib/zope/bin/requestprofiler.py
+lib/zope/bin/space.py
 lib/zope/bin/test.py
+lib/zope/bin/timeout.py
+lib/zope/bin/zeopack.py
+lib/zope/bin/zeoqueue.py
+lib/zope/bin/zeoreplay.py
+lib/zope/bin/zeoserverlog.py
+lib/zope/bin/zeoup.py
+lib/zope/bin/zodbload.py
 lib/zope/bin/zpasswd.py
 lib/zope/doc/
 lib/zope/doc/CHANGES.txt
@@ -1362,6 +1380,8 @@ lib/zope/lib/python/Products/Transience/
 lib/zope/lib/python/Products/Transience/Fake.py
 lib/zope/lib/python/Products/Transience/Fake.pyc
 lib/zope/lib/python/Products/Transience/HowTransienceWorks.stx
+lib/zope/lib/python/Products/Transience/TransactionHelper.py
+lib/zope/lib/python/Products/Transience/TransactionHelper.pyc
 lib/zope/lib/python/Products/Transience/Transience.py
 lib/zope/lib/python/Products/Transience/Transience.pyc
 lib/zope/lib/python/Products/Transience/TransienceInterfaces.py
@@ -1382,8 +1402,12 @@ lib/zope/lib/python/Products/Transience/tests/__init__.py
 lib/zope/lib/python/Products/Transience/tests/__init__.pyc
 lib/zope/lib/python/Products/Transience/tests/fauxtime.py
 lib/zope/lib/python/Products/Transience/tests/fauxtime.pyc
+lib/zope/lib/python/Products/Transience/tests/testCounters.py
+lib/zope/lib/python/Products/Transience/tests/testCounters.pyc
 lib/zope/lib/python/Products/Transience/tests/testTimeoutRelated.py
 lib/zope/lib/python/Products/Transience/tests/testTimeoutRelated.pyc
+lib/zope/lib/python/Products/Transience/tests/testTransactionHelper.py
+lib/zope/lib/python/Products/Transience/tests/testTransactionHelper.pyc
 lib/zope/lib/python/Products/Transience/tests/testTransientObject.py
 lib/zope/lib/python/Products/Transience/tests/testTransientObject.pyc
 lib/zope/lib/python/Products/Transience/tests/testTransientObjectContainer.py
@@ -2551,6 +2575,8 @@ lib/zope/lib/python/ZPublisher/tests/testHTTPRequest.py
 lib/zope/lib/python/ZPublisher/tests/testHTTPRequest.pyc
 lib/zope/lib/python/ZPublisher/tests/testHTTPResponse.py
 lib/zope/lib/python/ZPublisher/tests/testHTTPResponse.pyc
+lib/zope/lib/python/ZPublisher/tests/testPublish.py
+lib/zope/lib/python/ZPublisher/tests/testPublish.pyc
 lib/zope/lib/python/ZPublisher/tests/testTaintedString.py
 lib/zope/lib/python/ZPublisher/tests/testTaintedString.pyc
 lib/zope/lib/python/ZPublisher/tests/test_xmlrpc.py
@@ -2807,6 +2833,8 @@ lib/zope/lib/python/docutils/languages/eo.py
 lib/zope/lib/python/docutils/languages/eo.pyc
 lib/zope/lib/python/docutils/languages/es.py
 lib/zope/lib/python/docutils/languages/es.pyc
+lib/zope/lib/python/docutils/languages/fi.py
+lib/zope/lib/python/docutils/languages/fi.pyc
 lib/zope/lib/python/docutils/languages/fr.py
 lib/zope/lib/python/docutils/languages/fr.pyc
 lib/zope/lib/python/docutils/languages/it.py
@@ -2819,6 +2847,8 @@ lib/zope/lib/python/docutils/languages/sk.py
 lib/zope/lib/python/docutils/languages/sk.pyc
 lib/zope/lib/python/docutils/languages/sv.py
 lib/zope/lib/python/docutils/languages/sv.pyc
+lib/zope/lib/python/docutils/languages/zh_tw.py
+lib/zope/lib/python/docutils/languages/zh_tw.pyc
 lib/zope/lib/python/docutils/nodes.py
 lib/zope/lib/python/docutils/nodes.pyc
 lib/zope/lib/python/docutils/parsers/
@@ -2844,6 +2874,8 @@ lib/zope/lib/python/docutils/parsers/rst/directives/parts.py
 lib/zope/lib/python/docutils/parsers/rst/directives/parts.pyc
 lib/zope/lib/python/docutils/parsers/rst/directives/references.py
 lib/zope/lib/python/docutils/parsers/rst/directives/references.pyc
+lib/zope/lib/python/docutils/parsers/rst/directives/tables.py
+lib/zope/lib/python/docutils/parsers/rst/directives/tables.pyc
 lib/zope/lib/python/docutils/parsers/rst/languages/
 lib/zope/lib/python/docutils/parsers/rst/languages/__init__.py
 lib/zope/lib/python/docutils/parsers/rst/languages/__init__.pyc
@@ -2859,6 +2891,8 @@ lib/zope/lib/python/docutils/parsers/rst/languages/eo.py
 lib/zope/lib/python/docutils/parsers/rst/languages/eo.pyc
 lib/zope/lib/python/docutils/parsers/rst/languages/es.py
 lib/zope/lib/python/docutils/parsers/rst/languages/es.pyc
+lib/zope/lib/python/docutils/parsers/rst/languages/fi.py
+lib/zope/lib/python/docutils/parsers/rst/languages/fi.pyc
 lib/zope/lib/python/docutils/parsers/rst/languages/fr.py
 lib/zope/lib/python/docutils/parsers/rst/languages/fr.pyc
 lib/zope/lib/python/docutils/parsers/rst/languages/it.py
@@ -2871,6 +2905,8 @@ lib/zope/lib/python/docutils/parsers/rst/languages/sk.py
 lib/zope/lib/python/docutils/parsers/rst/languages/sk.pyc
 lib/zope/lib/python/docutils/parsers/rst/languages/sv.py
 lib/zope/lib/python/docutils/parsers/rst/languages/sv.pyc
+lib/zope/lib/python/docutils/parsers/rst/languages/zh_tw.py
+lib/zope/lib/python/docutils/parsers/rst/languages/zh_tw.pyc
 lib/zope/lib/python/docutils/parsers/rst/roles.py
 lib/zope/lib/python/docutils/parsers/rst/roles.pyc
 lib/zope/lib/python/docutils/parsers/rst/roman.py
@@ -2932,6 +2968,11 @@ lib/zope/lib/python/reStructuredText/README.txt
 lib/zope/lib/python/reStructuredText/__init__.py
 lib/zope/lib/python/reStructuredText/__init__.pyc
 lib/zope/lib/python/reStructuredText/reStructuredText.txt
+lib/zope/lib/python/reStructuredText/tests/
+lib/zope/lib/python/reStructuredText/tests/__init__.py
+lib/zope/lib/python/reStructuredText/tests/__init__.pyc
+lib/zope/lib/python/reStructuredText/tests/testReST.py
+lib/zope/lib/python/reStructuredText/tests/testReST.pyc
 lib/zope/lib/python/tempstorage/
 lib/zope/lib/python/tempstorage/TemporaryStorage.py
 lib/zope/lib/python/tempstorage/TemporaryStorage.pyc
@@ -2945,6 +2986,7 @@ lib/zope/lib/python/tempstorage/tests/__init__.py
 lib/zope/lib/python/tempstorage/tests/__init__.pyc
 lib/zope/lib/python/tempstorage/tests/testTemporaryStorage.py
 lib/zope/lib/python/tempstorage/tests/testTemporaryStorage.pyc
+lib/zope/lib/python/version.txt
 lib/zope/lib/python/webdav/
 lib/zope/lib/python/webdav/Collection.py
 lib/zope/lib/python/webdav/Collection.pyc

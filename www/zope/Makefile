@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2004/08/06 08:03:39 xsa Exp $
+# $OpenBSD: Makefile,v 1.21 2005/01/20 17:13:28 mbalmer Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented web application server"
 
-VERSION=	2.7.2
+VERSION=	2.7.4
 DISTNAME=	Zope-${VERSION}-0
 PKGNAME=	${DISTNAME:S/-0//g:L}
 CATEGORIES=     www
 
 HOMEPAGE=	http://www.zope.org/
 
-MAINTAINER=	Marc Balmer <marc@msys.ch>
+MAINTAINER=	Marc Balmer <mbalmer@openbsd.org>
 
 # Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes
