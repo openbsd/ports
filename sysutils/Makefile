@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2002/06/26 02:33:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.46 2002/09/05 12:40:08 lebel Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -20,6 +20,7 @@
      SUBDIR += mtools
      SUBDIR += nut
      SUBDIR += nut,cgi
+     SUBDIR += pftop
      SUBDIR += pstree
      SUBDIR += radiusreport
      SUBDIR += rtty
