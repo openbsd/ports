@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/11 07:47:15 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/04 21:40:43 espie Exp $
 
 DISTNAME=	asmail-0.50
 CATEGORIES=	mail x11
-FAKE=No
+#FAKE=No
 MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/apps/asmail/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/asmail/
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
 PIXMAPS=	e/e-no.xpm e/e0.xpm e/e1.xpm e/e10.xpm e/e11.xpm e/e2.xpm \
 		e/e3.xpm e/e4.xpm e/e5.xpm e/e6.xpm e/e7.xpm e/e8.xpm e/e9.xpm \
@@ -32,7 +32,7 @@ post-install:
 .for pixmap in ${PIXMAPS}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${pixmap} ${PREFIX}/include/X11/pixmaps
 .endfor
-	mkdir -p ${PREFIX}/share/doc/asmail
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asmail
 	${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/doc/asmail
 	strip ${PREFIX}/bin/asmail
 
