@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/04/09 09:47:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2005/01/29 00:19:12 alek Exp $
 
 COMMENT=	"two-dimensional drawing tool and hyper-object browser"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		X11 Xext c m
 
 RUN_DEPENDS=	::graphics/netpbm
 

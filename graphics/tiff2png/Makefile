@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/27 00:03:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2005/01/29 00:19:12 alek Exp $
 
 COMMENT=	"converts TIFF images to PNG format"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c jpeg m z
 
 MAKE_FLAGS=	CC="${CC}" OPTIMFLAGS="${CFLAGS}" DEBUGFLAGS="-Wall -W" \
 		CFLAGS='$$(TIFF_VERSION) -DFAXPECT $$(MIN_INVERT) $$(OPTIMFLAGS) $$(DEBUGFLAGS) -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include' \
