@@ -1,22 +1,5 @@
-Wed Sep  1 15:14:28 CEST 1999
-	* libI77/configure.in:  Check for mkstemp and getenv.
-	* libI77/configure:  Rebuilt.
-	* libI77/open.c (f_open):  Use safer mkstemp function if available,
-	still providing TMPDIR functionality if getenv is available.
-
---- libf2c/libI77/configure.in.orig	Wed Sep  1 14:49:56 1999
-+++ libf2c/libI77/configure.in	Wed Sep  1 15:11:59 1999
-@@ -129,7 +129,7 @@ else
-   AC_MSG_RESULT(no)
- fi
- 
--AC_CHECK_FUNCS(tempnam)
-+AC_CHECK_FUNCS(tempnam mkstemp getenv)
- 
- # posix will guarantee the right behaviour for sprintf, else we can't be
- # sure; HEADER_STDC wouldn't be the right check in sunos4, for instance.
---- libf2c/libI77/open.c.orig	Wed Sep  1 14:51:55 1999
-+++ libf2c/libI77/open.c	Wed Sep  1 15:11:29 1999
+--- libf2c/libI77/open.c.orig	Thu Nov 25 21:07:14 1999
++++ libf2c/libI77/open.c	Thu Nov 25 21:00:03 1999
 @@ -136,6 +136,7 @@ integer f_open(olist *a)
  	char buf[256], *s;
  	cllist x;
@@ -25,7 +8,7 @@ Wed Sep  1 15:14:28 CEST 1999
  	FILE *tf;
  #ifndef NON_UNIX_STDIO
  	int n;
-@@ -209,6 +210,23 @@ integer f_open(olist *a)
+@@ -209,6 +210,24 @@ integer f_open(olist *a)
  	 case 's':
  	 case 'S':
  		b->uscrtch=1;
@@ -36,8 +19,9 @@ Wed Sep  1 15:14:28 CEST 1999
 +		if (s && strlen (s) + sizeof (TEMPLATE) + 2 < sizeof (buf))
 +		  strcpy (buf, s);
 +	        else
++	   	  strcpy (buf, "/tmp");
 +#else
-+		  strcpy (buf, "/tmp");
++	        strcpy (buf, "/tmp");
 +#endif
 +	        strcat (buf, TEMPLATE);
 +		fd = mkstemp(buf);
@@ -49,7 +33,7 @@ Wed Sep  1 15:14:28 CEST 1999
  #ifdef HAVE_TEMPNAM		/* Allow use of TMPDIR preferentially. */
  		s = tempnam (0, buf);
  		if (strlen (s) >= sizeof (buf))
-@@ -223,6 +241,7 @@ integer f_open(olist *a)
+@@ -223,6 +242,7 @@ integer f_open(olist *a)
  		(void) mktemp(buf);
  #endif
  #endif /* ! defined (HAVE_TEMPNAM) */
@@ -57,7 +41,7 @@ Wed Sep  1 15:14:28 CEST 1999
  		goto replace;
  	case 'n':
  	case 'N':
-@@ -242,6 +261,7 @@ integer f_open(olist *a)
+@@ -242,6 +262,7 @@ integer f_open(olist *a)
  		if (tf = fopen(buf,f__w_mode[0]))
  			fclose(tf);
  	}
