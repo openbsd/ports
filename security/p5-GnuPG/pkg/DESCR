@@ -1,0 +1,4 @@
+GnuPG is a perl interface to the GNU Privacy Guard. It uses the
+shared memory coprocess interface that gpg provides for its wrappers.
+It tries its best to map the interactive interface of the gpg to a
+more programmatic model.
