@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:43 jolan Exp $
+lib/aspell/ru.multi
+lib/aspell/ru.rws
+lib/aspell/russian.alias
+share/aspell/ru.dat
+share/aspell/ru_phonet.dat

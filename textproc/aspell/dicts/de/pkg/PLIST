@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
+lib/aspell/de-only.rws
+lib/aspell/de.multi
+lib/aspell/de_CH-only.rws
+lib/aspell/de_CH.multi
+lib/aspell/de_DE-only.rws
+lib/aspell/de_DE.multi
+lib/aspell/deutsch.alias
+lib/aspell/german.alias
+lib/aspell/swiss.alias
+share/aspell/de.dat
+share/aspell/de_phonet.dat
