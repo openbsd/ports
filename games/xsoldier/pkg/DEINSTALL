@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2002/09/16 08:18:11 pvalchev Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/09/18 19:27:49 pvalchev Exp $
 #
 # xsoldier de-installation script
 
@@ -34,7 +34,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -d $SCORE_DIR ]; then
+	if [ -f $SCORE_FILE ]; then
 	    do_notice "$1"
 	fi
 	;;
