@@ -3,13 +3,13 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.10 1997/12/17 22:59:11 joey Exp $
+# $OpenBSD: Makefile,v 1.11 1998/01/23 05:11:32 todd Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.21
+DISTNAME=       ssh-1.2.22
 CATEGORIES=	security net
 MASTER_SITES= 	\
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
