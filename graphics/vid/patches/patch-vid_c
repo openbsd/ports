@@ -1,6 +1,54 @@
-$OpenBSD: patch-vid_c,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
---- vid.c.orig	Mon May  8 00:59:03 2000
-+++ vid.c	Sat Jun  9 01:33:37 2001
+$OpenBSD: patch-vid_c,v 1.2 2002/05/24 22:47:13 naddy Exp $
+--- vid.c.orig	Mon May  8 06:59:03 2000
++++ vid.c	Sat May 25 00:36:03 2002
+@@ -48,15 +48,15 @@ ov511_reg_read(int fd, int reg) {
+   struct usb_ctl_request ur;
+   unsigned char data[1024];
+   
+-  ur.request.bmRequestType = UT_READ_VENDOR_INTERFACE;
+-  ur.request.bRequest = 2;
++  ur.ucr_request.bmRequestType = UT_READ_VENDOR_INTERFACE;
++  ur.ucr_request.bRequest = 2;
+   
+-  USETW(ur.request.wValue, 0);	/* unused */
+-  USETW(ur.request.wIndex, reg); /* index */
+-  USETW(ur.request.wLength, 1);	/* payload len in bytes */
+-  ur.data = data;
+-  ur.flags = 0;
+-  ur.actlen = 0;
++  USETW(ur.ucr_request.wValue, 0);	/* unused */
++  USETW(ur.ucr_request.wIndex, reg);	/* index */
++  USETW(ur.ucr_request.wLength, 1);	/* payload len in bytes */
++  ur.ucr_data = data;
++  ur.ucr_flags = 0;
++  ur.ucr_actlen = 0;
+   
+   if(ioctl(fd, USB_DO_REQUEST, &ur) < 0) {
+     return -1;
+@@ -72,15 +72,15 @@ ov511_reg_write(int fd, int reg, int val
+ 
+   data[0] = val;
+   
+-  ur.request.bmRequestType = UT_WRITE_VENDOR_INTERFACE;
+-  ur.request.bRequest = 2;
++  ur.ucr_request.bmRequestType = UT_WRITE_VENDOR_INTERFACE;
++  ur.ucr_request.bRequest = 2;
+   
+-  USETW(ur.request.wValue, 0);	/* unused */
+-  USETW(ur.request.wIndex, reg); /* index */
+-  USETW(ur.request.wLength, 1);	/* payload len in bytes */
+-  ur.data = data;
+-  ur.flags = 0;
+-  ur.actlen = 0;
++  USETW(ur.ucr_request.wValue, 0);	/* unused */
++  USETW(ur.ucr_request.wIndex, reg);	/* index */
++  USETW(ur.ucr_request.wLength, 1);	/* payload len in bytes */
++  ur.ucr_data = data;
++  ur.ucr_flags = 0;
++  ur.ucr_actlen = 0;
+   
+   if(ioctl(fd, USB_DO_REQUEST, &ur) < 0) {
+     return -1;
 @@ -217,12 +217,15 @@ main(int argc, char *argv[]) {
    struct vidstate vs;		/* current read state */
    int small = 0;		/* use 320x240 */
@@ -33,8 +81,8 @@ $OpenBSD: patch-vid_c,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
  
 -    if(udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
 -      fprintf(stderr, "device %s is not an OmniVision OV511\n", devname);
-+    if(udi.vendorNo != 0x05A9 || (udi.productNo != 0x0511 &&
-+				  udi.productNo != 0xa511)) {
++    if(udi.udi_vendorNo != 0x05A9 || (udi.udi_productNo != 0x0511 &&
++				  udi.udi_productNo != 0xa511)) {
 +      fprintf(stderr, "device %s is not an OmniVision OV511 or OV511+\n", devname);
        exit(1);
      }
@@ -44,8 +92,8 @@ $OpenBSD: patch-vid_c,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
  	continue;
        if(ioctl(fd, USB_GET_DEVICEINFO, &udi) < 0
 -	 || udi.vendorNo != 0x05A9 || udi.productNo != 0x0511) {
-+	 || udi.vendorNo != 0x05A9 || (udi.productNo != 0x0511 &&
-+				       udi.productNo != 0xa511)) {
++	 || udi.udi_vendorNo != 0x05A9 || (udi.udi_productNo != 0x0511 &&
++				       udi.udi_productNo != 0xa511)) {
  	close(fd);
  	fd = -1;
  	continue;
@@ -61,7 +109,7 @@ $OpenBSD: patch-vid_c,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
      devname = dev;
    }
 +
-+  isplus = udi.productNo == 0xa511;
++  isplus = udi.udi_productNo == 0xa511;
 +  bufsize = (isplus ? 961 : 993);
    
    /* reset the OV511 */
@@ -149,9 +197,10 @@ $OpenBSD: patch-vid_c,v 1.1.1.1 2001/06/19 03:25:08 angelos Exp $
      exit(1);
  
    /* select the 993-byte alternative */
-   alt.interface_index = 0;
+-  alt.interface_index = 0;
 -  alt.alt_no = 1;
-+  alt.alt_no = (isplus ? 7 : 1);
++  alt.uai_interface_index = 0;
++  alt.uai_alt_no = (isplus ? 7 : 1);
    if(ioctl(fd, USB_SET_ALTINTERFACE, &alt) < 0) {
      perror("USB_SET_ALTINTERFACE");
      exit(1);
