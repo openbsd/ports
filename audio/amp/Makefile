@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/23 23:19:22 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/26 07:50:00 brad Exp $
+
+BROKEN=		unsupported and not working properly
 
 DISTNAME=	amp-0.7.6
 CATEGORIES=	audio

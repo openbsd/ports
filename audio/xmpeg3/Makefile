@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/26 07:51:21 brad Exp $
+
+BROKEN=		unsupported and not working properly
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
