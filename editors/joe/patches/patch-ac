@@ -1,0 +1,19 @@
+*** b.c.orig	Thu Apr 16 17:59:05 1998
+--- b.c	Thu Apr 16 17:59:39 1998
+***************
+*** 1630,1636 ****
+     if(x==1)
+      {
+      char *z;
+!     s=getenv("HOME");
+      z=vsncpy(NULL,0,sz(s));
+      z=vsncpy(z,sLEN(z),sz(n+x));
+      vsrm(n);
+--- 1630,1636 ----
+     if(x==1)
+      {
+      char *z;
+!     s=(char *)getenv("HOME");
+      z=vsncpy(NULL,0,sz(s));
+      z=vsncpy(z,sLEN(z),sz(n+x));
+      vsrm(n);

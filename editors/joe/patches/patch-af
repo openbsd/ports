@@ -1,0 +1,54 @@
+*** termcap.c.orig	Thu Apr 16 18:04:11 1998
+--- termcap.c	Thu Apr 16 18:05:15 1998
+***************
+*** 153,159 ****
+  char *tp, *pp, *qq, *namebuf, **npbuf, *idxname;
+  int sortsiz;
+  
+! if(!name && !(name=joeterm) && !(name=getenv("TERM"))) return 0;
+  cap=(CAP *)malloc(sizeof(CAP));
+  cap->tbuf=vsmk(4096);
+  cap->abuf=0;
+--- 153,159 ----
+  char *tp, *pp, *qq, *namebuf, **npbuf, *idxname;
+  int sortsiz;
+  
+! if(!name && !(name=joeterm) && !(name=(char *)getenv("TERM"))) return 0;
+  cap=(CAP *)malloc(sizeof(CAP));
+  cap->tbuf=vsmk(4096);
+  cap->abuf=0;
+***************
+*** 175,190 ****
+  cap->sort=(struct sortentry *)malloc(sizeof(struct sortentry)*(sortsiz=64));
+  cap->sortlen=0;
+  
+! tp=getenv("TERMCAP");
+  
+  if(tp && tp[0]=='/') namebuf=vsncpy(NULL,0,sz(tp));
+  else
+   {
+   if(tp) cap->tbuf=vsncpy(sv(cap->tbuf),sz(tp));
+!  if((tp=getenv("TERMPATH"))) namebuf=vsncpy(NULL,0,sz(tp));
+   else
+    {
+!   if((tp=getenv("HOME")))
+     namebuf=vsncpy(NULL,0,sz(tp)),
+     namebuf=vsadd(namebuf,'/');
+    else
+--- 175,190 ----
+  cap->sort=(struct sortentry *)malloc(sizeof(struct sortentry)*(sortsiz=64));
+  cap->sortlen=0;
+  
+! tp=(char *)getenv("TERMCAP");
+  
+  if(tp && tp[0]=='/') namebuf=vsncpy(NULL,0,sz(tp));
+  else
+   {
+   if(tp) cap->tbuf=vsncpy(sv(cap->tbuf),sz(tp));
+!  if((tp=(char *)getenv("TERMPATH"))) namebuf=vsncpy(NULL,0,sz(tp));
+   else
+    {
+!   if((tp=(char *)getenv("HOME")))
+     namebuf=vsncpy(NULL,0,sz(tp)),
+     namebuf=vsadd(namebuf,'/');
+    else

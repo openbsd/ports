@@ -1,11 +1,19 @@
 bin/joe
-bin/jmacs
-bin/jstar
-bin/rjoe
-bin/jpico
-lib/joerc
-lib/jmacsrc
-lib/jstarrc
-lib/rjoerc
-lib/jpicorc
+@exec ln %D/%F %B/jmacs
+@unexec rm -f %B/jmacs
+@exec ln %D/%F %B/jstar
+@unexec rm -f %B/jstar
+@exec ln %D/%F %B/rjoe
+@unexec rm -f %B/rjoe
+@exec ln %D/%F %B/jpico
+@unexec rm -f %B/jpico
+bin/termidx
+lib/joe/joerc
+lib/joe/jmacsrc
+lib/joe/jstarrc
+lib/joe/rjoerc
+lib/joe/jpicorc
+lib/joe/termcap
+lib/joe/terminfo
 man/man1/joe.1
+@dirrm lib/joe

@@ -1,0 +1,46 @@
+*** main.c.orig	Thu Apr 16 18:00:34 1998
+--- main.c	Thu Apr 16 18:01:27 1998
+***************
+*** 187,198 ****
+   run=namprt(argv[0]);
+  #endif 
+  
+!  if(s=getenv("LINES")) sscanf(s,"%d",&lines);
+!  if(s=getenv("COLUMNS")) sscanf(s,"%d",&columns);
+!  if(s=getenv("BAUD")) sscanf(s,"%u",&Baud);
+   if(getenv("DOPADDING")) dopadding=1;
+   if(getenv("NOXON")) noxon=1;
+!  if(s=getenv("JOETERM")) joeterm=s;
+  
+  #ifndef __MSDOS__
+   if(!(cap=getcap(NULL,9600,NULL,NULL)))
+--- 187,198 ----
+   run=namprt(argv[0]);
+  #endif 
+  
+!  if(s=(char *)getenv("LINES")) sscanf(s,"%d",&lines);
+!  if(s=(char *)getenv("COLUMNS")) sscanf(s,"%d",&columns);
+!  if(s=(char *)getenv("BAUD")) sscanf(s,"%u",&Baud);
+   if(getenv("DOPADDING")) dopadding=1;
+   if(getenv("NOXON")) noxon=1;
+!  if(s=(char *)getenv("JOETERM")) joeterm=s;
+  
+  #ifndef __MSDOS__
+   if(!(cap=getcap(NULL,9600,NULL,NULL)))
+***************
+*** 249,255 ****
+    }
+  
+   vsrm(s);
+!  s=getenv("HOME");
+   if(s)
+    {
+    s=vsncpy(NULL,0,sz(s));
+--- 249,255 ----
+    }
+  
+   vsrm(s);
+!  s=(char *)getenv("HOME");
+   if(s)
+    {
+    s=vsncpy(NULL,0,sz(s));

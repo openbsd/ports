@@ -1,0 +1,21 @@
+*** Makefile.orig	Thu Apr 16 17:56:49 1998
+--- Makefile	Thu Apr 16 17:57:27 1998
+***************
+*** 10,17 ****
+  # to go:
+  
+  WHEREJOE = /usr/local/bin
+! WHERERC = /usr/local/lib
+! WHEREMAN = /usr/man/man1
+  
+  # If you want to use TERMINFO, you have to set
+  # the following variable to 1.  Also you have to
+--- 10,17 ----
+  # to go:
+  
+  WHEREJOE = /usr/local/bin
+! WHERERC = /usr/local/lib/joe
+! WHEREMAN = /usr/local/man/man1
+  
+  # If you want to use TERMINFO, you have to set
+  # the following variable to 1.  Also you have to
