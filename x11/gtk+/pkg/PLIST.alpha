@@ -103,16 +103,12 @@ include/gtk/gtktypebuiltins.h
 lib/libglib.a
 @exec ranlib %D/%F
 lib/libglib.la
-lib/libglib.so.1.4
 lib/libgdk.a
 @exec ranlib %D/%F
 lib/libgdk.la
-lib/libgdk.so.1.4
 lib/libgtk.a
 @exec ranlib %D/%F
 lib/libgtk.la
-lib/libgtk.so.1.4
-@exec /sbin/ldconfig -m %B
 lib/glib/include/glibconfig.h
 bin/gtk-config
 man/man1/gtk-config.1

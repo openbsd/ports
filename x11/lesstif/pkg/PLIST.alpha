@@ -135,12 +135,9 @@ lib/X11/mwm/system.mwmrc
 lib/libMrm.a
 @exec ranlib %D/%F
 lib/libMrm.la
-lib/libMrm.so.1.2
 lib/libXm.a
 @exec ranlib %D/%F
 lib/libXm.la
-lib/libXm.so.1.2
-@exec /sbin/ldconfig -m %D/lib
 man/man1/mwm.1
 man/man1/xmbind.1
 man/man1/lesstif.1
