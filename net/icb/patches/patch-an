@@ -1,0 +1,20 @@
+--- tcl/tclCmdAH.c.~1~	Wed Sep 30 18:02:49 1998
++++ tcl/tclCmdAH.c	Wed Sep 30 18:08:25 1998
+@@ -46,7 +46,6 @@
+ #if !(defined(BSD) && BSD >= 199306)
+ extern long lseek();
+ #endif
+-extern char *mktemp();
+ 
+ /*
+  *----------------------------------------------------------------------
+@@ -507,8 +506,7 @@
+     } else {
+ 	char tmp[sizeof(TMP_FILE_NAME) + 1];
+ 	strcpy(tmp, TMP_FILE_NAME);
+-	mktemp(tmp);
+-	stdIn[0] = open(tmp, O_RDWR|O_CREAT, 0);
++	stdIn[0] = mkstemp(tmp);
+ 	if (stdIn[0] < 0) {
+ 	    sprintf(interp->result,
+ 		    "couldn't create input file for \"%.50s\" command: %.50s",
