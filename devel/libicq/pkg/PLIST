@@ -1,5 +1,0 @@
-include/libicq.h
-lib/libicq.a
-lib/libicq.la
-lib/libicq.so.0.3
-@exec /sbin/ldconfig -m %B
