@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2004/08/10 09:38:35 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2004/10/17 17:45:51 wilfried Exp $
 
 COMMENT=	"GTK+2 IRC client"
 
 MAJOR=		2.0
-VERSION=	${MAJOR}.9
+VERSION=	${MAJOR}.10
 DISTNAME=	xchat-${VERSION}
 PKGNAME=	xchat2-${VERSION}
 CATEGORIES=	net x11
@@ -19,6 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/source/2.0/
 MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=xchat/}
+MASTER_SITES1=	${HOMEPAGE}files/source/2.0/patches/
+PATCHFILES=	xc2010-fixfocus.diff:1 xc2010-fixtabcomp3.diff:1
+PATCH_DIST_STRIP= -p1
 
 EXTRACT_SUFX=	.tar.bz2
 

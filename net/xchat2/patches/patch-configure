@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.6 2004/06/20 17:54:58 couderc Exp $
+$OpenBSD: patch-configure,v 1.7 2004/10/17 17:45:51 wilfried Exp $
 --- configure.orig	2004-05-31 16:47:07.000000000 +0200
 +++ configure	2004-06-20 17:07:09.000000000 +0200
 @@ -1831,7 +1831,7 @@ fi
@@ -7,6 +7,6 @@ $OpenBSD: patch-configure,v 1.6 2004/06/20 17:54:58 couderc Exp $
  # Define the identity of the package.
 - PACKAGE=xchat
 + PACKAGE=xchat2
-  VERSION=2.0.9
+  VERSION=2.0.10
  
  
