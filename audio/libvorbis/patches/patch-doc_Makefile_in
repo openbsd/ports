@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2003/12/14 00:52:22 naddy Exp $
---- doc/Makefile.in.orig	2003-11-17 19:44:21.000000000 +0100
-+++ doc/Makefile.in	2003-11-21 13:40:57.000000000 +0100
-@@ -108,7 +108,7 @@ AUTOMAKE_OPTIONS = foreign
- 
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2004/09/30 19:39:56 naddy Exp $
+--- doc/Makefile.in.orig	Thu Sep 23 20:23:40 2004
++++ doc/Makefile.in	Thu Sep 23 20:24:39 2004
+@@ -184,7 +184,7 @@ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
  SUBDIRS = vorbisfile vorbisenc
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
  
- static_docs = components.png 	draft-kerr-avt-vorbis-rtp-02.txt 	eightphase.png 	evenlsp.png 	floor1-1.png 	floor1-2.png 	floor1-3.png 	floor1-4.png 	floor1_inverse_dB_table.html 	floorval.png 	fourphase.png 	framing.html 	helper.html 	hufftree-under.png 	hufftree.png 	index.html 	lspmap.png 	oddlsp.png 	oggstream.html 	programming.html 	residue-pack.png 	residue2.png 	squarepolar.png 	stereo.html 	stream.png 	v-comment.html 	vorbis-clip.txt 	vorbis-errors.txt 	vorbis-fidelity.html 	vorbis.html 	vorbisword2.png 	wait.png 	white-ogg.png 	white-xifish.png 	window1.png 	window2.png
- 
+ ### all of the static docs, commited to SVN and included as is
+ static_docs = \

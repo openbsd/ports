@@ -1,43 +1,43 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2004/01/25 17:20:18 naddy Exp $
---- lib/Makefile.in.orig	2003-11-17 19:44:17.000000000 +0100
-+++ lib/Makefile.in	2004-01-25 16:28:41.000000000 +0100
-@@ -75,7 +75,7 @@ GCJ = @GCJ@
- GCJFLAGS = @GCJFLAGS@
- HAVE_LIB = @HAVE_LIB@
- LIB = @LIB@
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2004/09/30 19:39:57 naddy Exp $
+--- lib/Makefile.in.orig	Thu Sep 23 21:36:43 2004
++++ lib/Makefile.in	Thu Sep 23 21:40:02 2004
+@@ -57,10 +57,10 @@ am_libvorbis_la_OBJECTS = mdct.lo smallf
+ 	info.lo floor1.lo floor0.lo res0.lo mapping0.lo registry.lo \
+ 	codebook.lo sharedbook.lo lookup.lo bitrate.lo
+ libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
+-libvorbisenc_la_DEPENDENCIES = libvorbis.la
++libvorbisenc_la_DEPENDENCIES = 
+ am_libvorbisenc_la_OBJECTS = vorbisenc.lo
+ libvorbisenc_la_OBJECTS = $(am_libvorbisenc_la_OBJECTS)
+-libvorbisfile_la_DEPENDENCIES = libvorbis.la
++libvorbisfile_la_DEPENDENCIES = 
+ am_libvorbisfile_la_OBJECTS = vorbisfile.lo
+ libvorbisfile_la_OBJECTS = $(am_libvorbisfile_la_OBJECTS)
+ am_barkmel_OBJECTS = barkmel.$(OBJEXT)
+@@ -152,7 +152,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@
 +LIBS = 
  LIBTOOL = @LIBTOOL@
  LN_S = @LN_S@
- LTLIB = @LTLIB@
-@@ -114,15 +114,13 @@ lib_LTLIBRARIES = libvorbis.la libvorbis
- 
- libvorbis_la_SOURCES = mdct.c smallft.c block.c envelope.c window.c lsp.c 			lpc.c analysis.c synthesis.c psy.c info.c 			floor1.c floor0.c 			res0.c mapping0.c registry.c codebook.c sharedbook.c 			lookup.c bitrate.c 			envelope.h lpc.h lsp.h codebook.h misc.h psy.h 			masking.h os.h mdct.h smallft.h highlevel.h 			registry.h scales.h window.h lookup.h lookup_data.h 			codec_internal.h backends.h bitrate.h 
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -248,14 +248,12 @@ libvorbis_la_SOURCES = mdct.c smallft.c 
+ 			registry.h scales.h window.h lookup.h lookup_data.h\
+ 			codec_internal.h backends.h bitrate.h 
  
 -libvorbis_la_LDFLAGS = -no-undefined -version-info @V_LIB_CURRENT@:@V_LIB_REVISION@:@V_LIB_AGE@
 +libvorbis_la_LDFLAGS = -version-info @V_LIB_CURRENT@:@V_LIB_REVISION@:@V_LIB_AGE@
- 
+ libvorbis_la_LIBADD = @OGG_LIBS@ @VORBIS_LIBS@
  libvorbisfile_la_SOURCES = vorbisfile.c
 -libvorbisfile_la_LDFLAGS = -no-undefined -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
 -libvorbisfile_la_LIBADD = libvorbis.la
 +libvorbisfile_la_LDFLAGS = -version-info @VF_LIB_CURRENT@:@VF_LIB_REVISION@:@VF_LIB_AGE@
- 
  libvorbisenc_la_SOURCES = vorbisenc.c 
 -libvorbisenc_la_LDFLAGS = -no-undefined -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
 -libvorbisenc_la_LIBADD = libvorbis.la
 +libvorbisenc_la_LDFLAGS = -version-info @VE_LIB_CURRENT@:@VE_LIB_REVISION@:@VE_LIB_AGE@
- 
- EXTRA_PROGRAMS = barkmel tone psytune
  CLEANFILES = $(EXTRA_PROGRAMS)
-@@ -147,9 +145,9 @@ libvorbis_la_OBJECTS =  mdct.lo smallft.
- window.lo lsp.lo lpc.lo analysis.lo synthesis.lo psy.lo info.lo \
- floor1.lo floor0.lo res0.lo mapping0.lo registry.lo codebook.lo \
- sharedbook.lo lookup.lo bitrate.lo
--libvorbisfile_la_DEPENDENCIES =  libvorbis.la
-+libvorbisfile_la_LIBADD =
- libvorbisfile_la_OBJECTS =  vorbisfile.lo
--libvorbisenc_la_DEPENDENCIES =  libvorbis.la
-+libvorbisenc_la_LIBADD =
- libvorbisenc_la_OBJECTS =  vorbisenc.lo
- barkmel_OBJECTS =  barkmel.$(OBJEXT)
- barkmel_LDADD = $(LDADD)
+ barkmel_SOURCES = barkmel.c
+ tone_SOURCES = tone.c

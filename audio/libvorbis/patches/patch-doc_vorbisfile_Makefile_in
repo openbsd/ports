@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_vorbisfile_Makefile_in,v 1.3 2003/12/14 00:52:22 naddy Exp $
---- doc/vorbisfile/Makefile.in.orig	2003-11-17 19:44:21.000000000 +0100
-+++ doc/vorbisfile/Makefile.in	2003-11-21 13:40:57.000000000 +0100
-@@ -106,7 +106,7 @@ pthread_lib = @pthread_lib@
- 
- AUTOMAKE_OPTIONS = foreign
- 
+$OpenBSD: patch-doc_vorbisfile_Makefile_in,v 1.4 2004/09/30 19:39:57 naddy Exp $
+--- doc/vorbisfile/Makefile.in.orig	Thu Sep 23 20:25:10 2004
++++ doc/vorbisfile/Makefile.in	Thu Sep 23 20:25:35 2004
+@@ -174,7 +174,7 @@ target_alias = @target_alias@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/vorbisfile
 +docdir = $(datadir)/doc/$(PACKAGE)/vorbisfile
- 
- doc_DATA = OggVorbis_File.html callbacks.html chaining_example_c.html 	chainingexample.html crosslap.html datastructures.html decoding.html 	example.html exampleindex.html fileinfo.html index.html 	initialization.html ov_bitrate.html ov_bitrate_instant.html 	ov_callbacks.html ov_clear.html ov_comment.html ov_crosslap.html 	ov_info.html ov_open.html ov_open_callbacks.html ov_pcm_seek.html 	ov_pcm_seek_lap.html ov_pcm_seek_page.html ov_pcm_seek_page_lap.html 	ov_pcm_tell.html ov_pcm_total.html ov_raw_seek.html 	ov_raw_seek_lap.html ov_raw_tell.html ov_raw_total.html ov_read.html 	ov_read_float.html ov_seekable.html ov_serialnumber.html 	ov_streams.html ov_test.html ov_test_callbacks.html ov_test_open.html 	ov_time_seek.html ov_time_seek_lap.html ov_time_seek_page.html 	ov_time_seek_page_lap.html ov_time_tell.html ov_time_total.html 	overview.html reference.html return.html seekexample.html seeking.html 	seeking_example_c.html seeking_test_c.html seekingexample.html 	style.css threads.html vorbis_comment.html vorbis_info.html 	vorbisfile_example_c.html
- 
+ doc_DATA = OggVorbis_File.html callbacks.html chaining_example_c.html\
+ 	chainingexample.html crosslap.html datastructures.html decoding.html\
+ 	example.html exampleindex.html fileinfo.html index.html\
