@@ -1,0 +1,130 @@
+# $OpenBSD: patch-install-sh,v 1.1 2000/05/18 04:41:32 form Exp $
+
+--- install.sh.orig	Wed Apr 22 00:45:42 1998
++++ install.sh	Thu May 18 11:26:48 2000
+@@ -15,15 +15,16 @@
+ 	exit 1
+ fi
+ 
+-if test ! -d $1
+-then
+-	mkdir $1
+-	if [ $? != 0 ]
+-	then
+-		echo "$1: No such directory"
+-		exit 1
+-	fi
+-fi
++#if test ! -d $1
++#then
++#	mkdir $1
++#	if [ $? != 0 ]
++#	then
++#		echo "$1: No such directory"
++#		exit 1
++#	fi
++#fi
++#chown uucp $1
+ 
+ if test ! -d $2
+ then
+@@ -41,8 +42,8 @@
+ then
+ 	echo "Installing minicom in $2"
+ 	cp minicom $2/minicom
+-	chown root $2/minicom
+-	chgrp uucp $2/minicom
++	chown uucp $2/minicom
++	chgrp dialer $2/minicom
+ 	chmod 755 $2/minicom
+ fi
+ 
+@@ -54,18 +55,18 @@
+ 	cp $i $2/$i
+ 	chmod 755 $2/$i
+ 	chown root $2/$i
+-	chgrp root $2/$i
++	chgrp wheel $2/$i
+   fi
+ done
+ 
+-if test -f keyserv
+-then
+-	echo "Installing keyserv in $1"
+-	cp keyserv $1/keyserv
+-	chmod 755 $1/keyserv
+-	chown root $1/keyserv
+-	chgrp root $1/keyserv
+-fi
++#if test -f keyserv
++#then
++#	echo "Installing keyserv in $1"
++#	cp keyserv $1/keyserv
++#	chmod 755 $1/keyserv
++#	chown root $1/keyserv
++#	chgrp wheel $1/keyserv
++#fi
+ 
+ echo "Installing manpages in $3"
+ for i in minicom.1 runscript.1 ascii-xfr.1
+@@ -73,30 +74,30 @@
+ 	cp ../man/$i $3
+ 	chmod 644 $3/$i
+ 	chown root $3/$i
+-	chgrp root $3/$i
++	chgrp wheel $3/$i
+ done
+ 
+-if [ ! -f $1/minicom.users ]
+-then
+-	echo "Installing sample config file minicom.users in $1"
+-	cp minicom.users $1
+-	chown root $1/minicom.users
+-	chgrp root $1/minicom.users
+-	chmod 644 $1/minicom.users
+-fi
++#if [ ! -f $1/minicom.users ]
++#then
++#	echo "Installing sample config file minicom.users in $1"
++#	cp minicom.users $1
++#	chown root $1/minicom.users
++#	chgrp wheel $1/minicom.users
++#	chmod 644 $1/minicom.users
++#fi
+ 
+ mkdir -p $4 2>/dev/null
+ 
+ if test -d $4
+ then
+ 		echo "Installing script demos, docs, & character tables in $4"
+-		cp ../doc/* $4
++		##cp ../doc/* $4
+ 		cp -r ../demos $4
+ 		cp -r ../tables $4
+ 		chmod -f 644 $4/* $4/demos/* $4/tables/*
+ 		chmod -f a+x $4/demos $4/tables
+ 		chown -f root $4/* $4/demos/* $4/tables/*
+-		chgrp -f root $4/* $4/demos/* $4/tables/*
++		chgrp -f wheel $4/* $4/demos/* $4/tables/*
+ else
+ 	echo "You don't have a $4 directory - script examples not installed."
+ fi
+@@ -106,11 +107,12 @@
+     rm minicom.o
+ fi
+ 	
+-echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
+-echo
+-echo "chmod +s $2/minicom"
+-echo
+-echo "or make your modem device in the /dev directory world writable "
+-echo "with chmod a+rw"
++###echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
++###echo
++###echo "chmod +s $2/minicom"
++###echo
++chmod u+s $2/minicom
++###echo "or make your modem device in the /dev directory world writable "
++###echo "with chmod a+rw"
+ 
+ exit 0

@@ -1,3 +1,5 @@
+# $OpenBSD: patch-window-c,v 1.1 2000/05/18 04:41:32 form Exp $
+
 --- window.c.orig	Tue Aug 11 03:10:29 1998
 +++ window.c	Tue Aug 11 03:07:12 1998
 @@ -104,7 +104,7 @@

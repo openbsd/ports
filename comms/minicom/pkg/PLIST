@@ -1,24 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.6 2000/05/18 04:41:32 form Exp $
+bin/ascii-xfr
+@owner uucp
+@group dialer
+@mode 6555
 bin/minicom
+@owner
+@group
+@mode
 bin/runscript
 bin/xminicom
-bin/ascii-xfr
+man/man1/ascii-xfr.1
 man/man1/minicom.1
 man/man1/runscript.1
-man/man1/ascii-xfr.1
+share/doc/minicom/demos/htsalogin
+share/doc/minicom/demos/saralogin
+share/doc/minicom/demos/scriptdemo
+share/doc/minicom/demos/unixlogin
+share/doc/minicom/tables/mc.iso
+share/doc/minicom/tables/mc.noconv
+share/doc/minicom/tables/mc.pc8
+share/doc/minicom/tables/mc.sf7
+share/locale/fi_FI/LC_MESSAGES/minicom.mo
+share/locale/fr/LC_MESSAGES/minicom.mo
+share/locale/ja_JP.sjis/LC_MESSAGES/minicom.mo
+share/locale/ja_JP.ujis/LC_MESSAGES/minicom.mo
+share/locale/ko/LC_MESSAGES/minicom.mo
+share/locale/pl/LC_MESSAGES/minicom.mo
+share/locale/pt_BR/LC_MESSAGES/minicom.mo
 share/minicom/minicom.users
-share/minicom/demos/htsalogin
-share/minicom/demos/saralogin
-share/minicom/demos/unixlogin
-share/minicom/demos/scriptdemo
-share/minicom/tables/mc.pc8
-share/minicom/tables/mc.sf7
-share/minicom/tables/mc.iso
-share/minicom/tables/mc.noconv
-@dirrm share/minicom/tables
-@dirrm share/minicom/demos
 @dirrm share/minicom
-@unexec echo "***"
-@unexec echo "*** Finished uninstalling minicom."
-@unexec echo "*** Please remove /etc/minicom directory if you"
-@unexec echo "*** don't want to keep minicom configuration files."
-@unexec echo "***"
+@dirrm share/doc/minicom/tables
+@dirrm share/doc/minicom/demos
+@dirrm share/doc/minicom

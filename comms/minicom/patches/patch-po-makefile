@@ -1,0 +1,26 @@
+# $OpenBSD: patch-po-makefile,v 1.1 2000/05/18 04:41:32 form Exp $
+
+--- po/Makefile.orig	Thu May 18 10:57:15 2000
++++ po/Makefile	Thu May 18 10:59:02 2000
+@@ -1,7 +1,7 @@
+ INSTALL= /usr/bin/install -c
+ INSTALL_PROGRAM= ${INSTALL}
+ INSTALL_DATA= ${INSTALL} -m 644
+-INSTALLNLSDIR=/usr/share/locale
++INSTALLNLSDIR= $(PREFIX)/share/locale
+ 
+ MSGMERGE = msgmerge
+ 
+@@ -52,9 +52,9 @@
+ install: $(CATALOGS)
+ 	for n in $(CATALOGS); do \
+ 	    l=`basename $$n .mo`; \
+-	    $(INSTALL) -m 755 -d $(R)$(INSTALLNLSDIR)/$$l; \
+-	    $(INSTALL) -m 755 -d $(R)$(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
+-	    $(INSTALL) -m 644 $$n $(R)$(INSTALLNLSDIR)/$$l/LC_MESSAGES/minicom.mo; \
++	    $(INSTALL) -m 755 -d $(INSTALLNLSDIR)/$$l; \
++	    $(INSTALL) -m 755 -d $(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
++	    $(INSTALL) -m 644 $$n $(INSTALLNLSDIR)/$$l/LC_MESSAGES/minicom.mo; \
+ 	done
+ 
+ %.mo: %.po

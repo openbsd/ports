@@ -1,36 +1,38 @@
-# $OpenBSD: Makefile,v 1.23 2000/04/09 17:36:09 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/05/18 04:41:30 form Exp $
 
-BROKEN=		installs files automatically in /etc
-
-PKGNAME=	minicom-1.82.1
+PKGNAME=	minicom-1.83.0
 DISTNAME=	${PKGNAME}.src
 CATEGORIES=	comms
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.230
+FAKE=		Yes
 
 MAINTAINER=     form@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
-		http://www.clinet.fi/~walker/
-
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.pp.clinet.fi/~walker/mc-dev/  \
+		http://www.clinet.fi/~walker/  \
+		http://www.pp.clinet.fi/~walker/
 MASTER_SITE_SUBDIR=     apps/serialcomm/dialout
 
-RUN_DEPENDS=	kermit::comms/kermit
-RUN_DEPENDS+=	lrz::comms/lrzsz
+BUILD_DEPENDS=	gmake::devel/gmake msgfmt::devel/gettext
+RUN_DEPENDS=	kermit::comms/kermit lrz::comms/lrzsz
 
-WRKDIST=		${WRKDIR}/${PKGNAME}/src
+MAKE_ENV=	GMAKE="${GMAKE}"
+
+WRKDIST=	${WRKDIR}/${PKGNAME}/src
+
+pre-build:
+	@mv ${WRKBUILD}/xminicom ${WRKBUILD}/xminicom.orig
+	@sed -e "s,@PREFIX@,${PREFIX},g" -e "s,@X11BASE@,${X11BASE},g" \
+		${FILESDIR}/xminicom.in > ${WRKBUILD}/xminicom
 
 post-install:
-.if exists(/etc/minicom/minicom.users)
-	@echo "*** Found existing /etc/minicom/minicom.users -- not replacing."
-.else
-	${INSTALL_DATA} ${WRKSRC}/minicom.users /etc/minicom
-.endif
+	${INSTALL_DATA_DIR} ${PREFIX}/share/minicom
+	${INSTALL_DATA} ${WRKBUILD}/minicom.users ${PREFIX}/share/minicom
 
 .include <bsd.port.mk>

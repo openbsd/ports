@@ -1,0 +1,32 @@
+# $OpenBSD: patch-util-c,v 1.1 2000/05/18 04:41:32 form Exp $
+
+--- util.c.orig	Sat May 16 14:13:12 1998
++++ util.c	Wed May 17 13:30:55 2000
+@@ -187,6 +187,13 @@
+   if (setreuid(eff_uid, real_uid) < 0)
+ 	fprintf(stderr, "minicom: cannot setreuid(%d, %d)\n", eff_uid, real_uid);
+   not_suid = 1;
++#else
++#ifdef HAS_EUID
++  if (setegid(real_gid) < 0)
++        fprintf(stderr, "minicom: cannot setegid(%d)\n", real_gid);
++  if (seteuid(real_uid) < 0)
++        fprintf(stderr, "minicom: cannot seteuid(%d)\n", real_uid);
++#endif
+ #endif
+ }
+ 
+@@ -198,6 +205,13 @@
+   if (setreuid(real_uid, eff_uid) < 0)
+ 	fprintf(stderr, "minicom: cannot setreuid(%d, %d)\n", real_uid, eff_uid);
+   not_suid = 0;
++#else
++#ifdef HAS_EUID
++  if (setegid(eff_gid) < 0)
++       fprintf(stderr, "minicom: cannot setegid(%d)\n", eff_gid);
++  if (seteuid(eff_uid) < 0)
++       fprintf(stderr, "minicom: cannot seteuid(%d)\n", eff_uid);
++#endif
+ #endif
+ }
+ 

@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: xminicom.in,v 1.1 2000/05/18 04:41:30 form Exp $
+#
+# Run minicom in X-Windows environment
+#
+XTERM=@X11BASE@/bin/xterm
+
+if [ -x ${XTERM} ]; then
+	exec ${XTERM} -fg grey -bg black -n minicom -T minicom -geometry 80x25 \
+		-e @PREFIX@/bin/minicom -m -c on $*
+fi
+
+echo "xminicom: can't execute ${XTERM}" >&2
+exit 1

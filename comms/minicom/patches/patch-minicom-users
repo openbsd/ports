@@ -1,0 +1,16 @@
+# $OpenBSD: patch-minicom-users,v 1.1 2000/05/18 04:41:32 form Exp $
+
+--- minicom.users.orig	Thu Jan 18 22:08:02 1996
++++ minicom.users	Wed May 17 13:19:45 2000
+@@ -26,7 +26,10 @@
+ #
+ 
+ # Everyone has access to all configurations.
+-ALL
++# ALL
++
++# Only root can access minicom by default
++root
+ 
+ ## The rest are examples.
+ ## # Erik only has access to the default configuration
