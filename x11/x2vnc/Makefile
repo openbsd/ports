@@ -1,14 +1,14 @@
 # Makefile for:         x2vnc
-# Version required:     1.0
-# Date created:         12 Jan 2000
-# Whom:                 dugsong@monkey.org
+# Version required:     1.1
+# Date created:         20 Jan 2001
+# Whom:                 smart@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/01/21 01:54:23 dugsong Exp $
 
-DISTNAME=	x2vnc-1.0
+DISTNAME=	x2vnc-1.1
 
 CATEGORIES=     x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.341
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
