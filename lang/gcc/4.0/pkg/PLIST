@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/01/03 16:23:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/01/04 17:37:21 espie Exp $
 %%SHARED%%
 bin/ec++
 bin/ecpp
@@ -192,6 +192,22 @@ include/c++/${V}/ext/stdio_filebuf.h
 include/c++/${V}/ext/stdio_sync_filebuf.h
 include/c++/${V}/fstream
 include/c++/${V}/functional
+include/c++/${V}/iomanip
+include/c++/${V}/ios
+include/c++/${V}/iosfwd
+include/c++/${V}/iostream
+include/c++/${V}/istream
+include/c++/${V}/iterator
+include/c++/${V}/limits
+include/c++/${V}/list
+include/c++/${V}/locale
+include/c++/${V}/map
+include/c++/${V}/memory
+include/c++/${V}/new
+include/c++/${V}/numeric
+include/c++/${V}/ostream
+include/c++/${V}/queue
+include/c++/${V}/set
 include/c++/${V}/${CONFIG}/
 include/c++/${V}/${CONFIG}/bits/
 include/c++/${V}/${CONFIG}/bits/atomic_word.h
@@ -212,26 +228,7 @@ include/c++/${V}/${CONFIG}/bits/gthr-tpf.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O0g.gch
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O2g.gch
 include/c++/${V}/${CONFIG}/bits/time_members.h
-include/c++/${V}/iomanip
-include/c++/${V}/ios
-include/c++/${V}/iosfwd
-include/c++/${V}/iostream
-include/c++/${V}/istream
-include/c++/${V}/iterator
-include/c++/${V}/limits
-include/c++/${V}/list
-include/c++/${V}/locale
-include/c++/${V}/map
-include/c++/${V}/memory
-include/c++/${V}/new
-include/c++/${V}/numeric
-include/c++/${V}/ostream
-include/c++/${V}/queue
-include/c++/${V}/set
 include/c++/${V}/sstream
 include/c++/${V}/stack
 include/c++/${V}/stdexcept
