@@ -16,7 +16,7 @@ MAINTAINER?=	Jolan Luff <jolan@openbsd.org>
 # BSD:	xfce4-mixer, xfce4-systray, xfce4-toys, xfce4-trigger-launcher, 
 #	xfce4-systemload-plugin, xfce4-battery-plugin, xfce4-showdesktop-plugin,
 #	xfce4-diskperf-plugin, xfce4-clipman-plugin, xfce4-fsguard-plugin,
-#	xfce4-wavelan-plugin, xfce4-xmms-plugin
+#	xfce4-wavelan-plugin, xfce4-xmms-plugin, xfce4-weather-plugin
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/01/31 03:37:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2004/04/08 01:59:26 jolan Exp $
 
      SUBDIR+= xfce4-battery-plugin
      SUBDIR+= xfce4-clipman-plugin 
@@ -15,5 +15,6 @@
      SUBDIR+= xfce4-toys
      SUBDIR+= xfce4-trigger-launcher
      SUBDIR+= xfce4-wavelan-plugin
+     SUBDIR+= xfce4-weather-plugin
 
 .include <bsd.port.subdir.mk>
