@@ -1,0 +1,3 @@
+Net::IRC is a comprehensive Perl implementation of the IRC protocol
+(RFC 1459), supported and developed by several members of the EFnet
+IRC channel #perl.

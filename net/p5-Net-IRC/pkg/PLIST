@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 02:59:03 kevlo Exp $
+libdata/perl5/site_perl/Net/IRC.pm
+libdata/perl5/site_perl/Net/IRC/Connection.pm
+libdata/perl5/site_perl/Net/IRC/DCC.pm
+libdata/perl5/site_perl/Net/IRC/Event.pm 
+man/man3/Net::Connection.3p
+man/man3/Net::DCC.3p
+man/man3/Net::Event.3p
+man/man3/Net::IRC.3p
+@dirrm libdata/perl5/site_perl/Net/IRC
