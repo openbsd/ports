@@ -1,0 +1,58 @@
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
+--- sys/unix/Makefile.top.orig	Wed May  2 01:07:44 2001
++++ sys/unix/Makefile.top	Tue Jul  3 19:06:32 2001
+@@ -13,19 +13,19 @@
+ # execute things like 'data' and 'rumors')
+ # MAKE = make
+ 
++include ${NETHACKCONFIG}
++
+ # make NetHack
+-PREFIX   = /usr
+ GAME     = slashem
+-# GAME     = slashem.prg
+-GAMEUID  = games
+-GAMEGRP  = bin
++GAMEUID  = bin
++GAMEGRP  = games
+ 
+ # Permissions - some places use setgid instead of setuid, for instance
+ # See also the option "SECURE" in include/config.h
+-GAMEPERM = 04755
+-FILEPERM = 0644
++GAMEPERM = 02755
++FILEPERM = 0664
+ EXEPERM  = 0755
+-DIRPERM  = 0755
++DIRPERM  = 0775
+ 
+ # GAMEDIR also appears in config.h as "HACKDIR".
+ # VARDIR may also appear in unixconf.h as "VAR_PLAYGROUND" else GAMEDIR
+@@ -38,7 +38,8 @@ DIRPERM  = 0755
+ # These must agree with the definitions in unixconf.h
+ 
+ # Defs. for non file areas support.
+-GAMEDIR  = $(PREFIX)/local/slashemdir
++REALGAMEDIR  = $(PREFIX)/lib/$(GAME)dir
++GAMEDIR  = $(DESTDIR)${REALGAMEDIR}
+ VARDIR = $(GAMEDIR)
+ FILE_AREA_VAR = $(VARDIR)
+ FILE_AREA_SAVE = $(VARDIR)/save
+@@ -47,7 +48,7 @@ FILE_AREA_UNSHARE = $(GAMEDIR)
+ FILE_AREA_DOC = $(GAMEDIR)
+ FILE_AREA_BONES = $(FILE_AREA_VAR)
+ FILE_AREA_LEVL = $(FILE_AREA_VAR)
+-SHELLDIR = $(PREFIX)/local/bin
++SHELLDIR = $(DESTDIR)$(PREFIX)/bin
+ 
+ # Defs. compatible with Linux's FSSTND 1.2
+ # FILE_AREA_VAR = /var/lib/games/slashem
+@@ -242,7 +243,7 @@ dofiles:
+ 	cp license doc/Guidebook.txt $(FILE_AREA_DOC)
+ #	cp win/Qt/KDE/kslashem.kdelnk $(KDEDIR)/share/applnk/Games
+ 	-rm -f $(SHELLDIR)/$(GAME)
+-	sed -e 's;/usr/games/lib/nethackdir;$(FILE_AREA_UNSHARE);' \
++	sed -e 's;/usr/games/lib/nethackdir;$(REALGAMEDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+ 		> $(SHELLDIR)/$(GAME)

@@ -1,0 +1,46 @@
+$OpenBSD: patch-include_config_h,v 1.1.1.1 2001/07/04 11:14:54 espie Exp $
+--- include/config.h.orig	Wed May  2 01:07:54 2001
++++ include/config.h	Tue Jul  3 18:57:56 2001
+@@ -139,7 +139,7 @@
+  *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | pnmdepth 255 |
+  *     ppmquant 90 | ppmtoxpm >x11tiles_big.xpm
+  */
+-/* # define USE_XPM */		/* Disable if you do not have the XPM library */
++# define USE_XPM 		/* Disable if you do not have the XPM library */
+ # ifdef USE_XPM
+ #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
+ # endif
+@@ -152,6 +152,7 @@
+  *		LOGFILE and NEWS refer to files in the playground.
+  */
+ 
++#define WIZARD "games"
+ #ifndef WIZARD		/* allow for compile-time or Makefile changes */
+ # ifndef KR1ED
+ #  define WIZARD  "wizard" /* the person allowed to use the -D option */
+@@ -181,12 +182,12 @@
+ 
+ #ifdef UNIX
+ /* path and file name extension for compression program */
+-# define COMPRESS "/usr/bin/compress" /* Lempel-Ziv compression */
+-# define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
++/* # define COMPRESS "/usr/bin/compress" /* Lempel-Ziv compression */
++/* # define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
+ 
+ /* An example of one alternative you might want to use: */
+-/* # define COMPRESS "/usr/local/bin/gzip" */   /* FSF gzip compression */
+-/* # define COMPRESS_EXTENSION ".gz" */	     /* normal gzip extension */
++# define COMPRESS "/usr/bin/gzip"   /* FSF gzip compression */
++# define COMPRESS_EXTENSION ".gz"   /* normal gzip extension */
+ 
+ /* # define COMPRESS "/usr/bin/bzip2"	*//* bzip2 compression */
+ /* # define COMPRESS_EXTENSION ".bz2"	*//* bzip2 extension */
+@@ -315,7 +316,7 @@ typedef unsigned char	uchar;
+  * functions that have been macroized.
+  */
+ /* WAC Can be defined under DJGPP,  even though it's DOS*/
+-/*#define VISION_TABLES */ /* use vision tables generated at compile time */
++#define VISION_TABLES /* use vision tables generated at compile time */
+ #ifndef VISION_TABLES
+ # ifndef NO_MACRO_CPATH
+ #  define MACRO_CPATH	/* use clear_path macros instead of functions */

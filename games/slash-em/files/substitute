@@ -1,0 +1,6 @@
+s/\bNETHACK\b/SLASH/g;
+s/\bNet[hH]ack\b(?!\s+v3.1)/Slash/g;
+s/\bnethack\b/slash/g;
+s/\bnethackdir\b/slashdir/g;
+s|/usr/games|/usr/local|g;
+s/\brecover\b/srecover/g;
