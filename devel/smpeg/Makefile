@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/09 23:26:20 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/18 22:59:34 pvalchev Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
@@ -16,12 +16,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	ftp://ftp.linuxgames.com/pub/${SMPEG_DIR} \
-		ftp://sunsite.auc.dk/pub/os/linux/loki/${SMPEG_DIR} \
-		ftp://boudicca.tux.org/misc/lokigames/${SMPEG_DIR} \
-		ftp://snuffleupagus.animearchive.org/loki/${SMPEG_DIR} \
-		http://ftp.gameaholic.com/mirrors/ftp.lokigames.com/${SMPEG_DIR}
-SMPEG_DIR=	open-source/smpeg/
+MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/%SUBDIR%/ \
+		ftp://snuffleupagus.animearchive.org/loki/%SUBDIR%/ \
+		ftp://ftp.linuxgames.com/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR= open-source/smpeg
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		SDL.:sdl-*-!no_x11:devel/sdl
