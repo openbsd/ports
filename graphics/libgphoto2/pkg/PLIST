@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/09 23:55:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/05/14 08:42:37 brad Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/gphoto2-abilities-list.h
@@ -166,7 +166,6 @@ share/libgphoto2/2.1.1/konica/spanish
 @exec mkdir -p %D/share/doc/libgphoto2/linux-hotplug
 @dirrm share/doc/libgphoto2/linux-hotplug
 @dirrm share/doc/libgphoto2
-@dirrm lib/pkgconfig
 @dirrm lib/gphoto2_port/0.5.1
 @dirrm lib/gphoto2_port
 @dirrm lib/gphoto2/2.1.1
