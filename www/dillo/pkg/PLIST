@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/02/26 13:43:27 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/07/06 16:14:21 xsa Exp $
 bin/dillo
 bin/dpid
 bin/dpidc
@@ -17,3 +17,6 @@ share/examples/dillo/dpidrc
 @dirrm lib/dillo/dpi/bookmarks
 @dirrm lib/dillo/dpi
 @dirrm lib/dillo
+@cwd ${SYSCONFDIR}
+@extra dillorc
+@extra dpidrc

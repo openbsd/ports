@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2004/02/26 13:43:27 couderc Exp $
+# $OpenBSD: INSTALL,v 1.2 2004/07/06 16:14:21 xsa Exp $
 #
 # post-installation setup of dillo
 
@@ -13,10 +13,10 @@ do_notice()
 {
   echo
   echo "+---------------"
-  echo "| The existing $1 configuration files in $CONFIG_DIR have NOT"
-  echo "| been changed.  You may want to compare them to the current samples in"
+  echo "| The existing $1 configuration file in $CONFIG_DIR has NOT"
+  echo "| been changed.  You may want to compare it to the current sample in"
   echo "| $SAMPLE_CONFIG_DIR, and update your configuration"
-  echo "| files as needed."
+  echo "| file as needed."
   echo "+---------------"
   echo
 }
@@ -26,8 +26,9 @@ do_install()
   install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/$1 $CONFIG_DIR
   echo
   echo "+---------------"
-  echo "| The $1 configuration files have been installed in $CONFIG_DIR."
-  echo "| Please view these files and change the configuration to meet your needs."
+  echo "| The $1 configuration file has been installed in $CONFIG_DIR."
+  echo "| Please view this file and change the configuration to"
+  echo "| meet your needs."
   echo "+---------------"
   echo
 }
