@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/25 21:58:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/09 23:41:43 naddy Exp $
 
 COMMENT=		"video stream processing tools"
 
 DISTNAME=		transcode-0.6.14
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.transcoding.org/
@@ -14,8 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		ICE SM X11 Xaw Xext Xpm Xt Xv c freetype \
-			m pthread stdc++ usbhid z
+WANTLIB=		ICE SM X11 Xext Xv c freetype m pthread \
+			usbhid vorbisenc z
 
 MASTER_SITES=		http://www.jakemsr.com/transcode/ \
 			http://dl.fkb.wormulon.net/transcode/
@@ -56,7 +57,10 @@ SEPARATE_BUILD=		concurrent
 SHARED_ONLY=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			FFMPEG_LIBS_EXTRALIBS="-lmp3lame -la52 -lvorbisenc -lvorbis -logg"
+
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-a52 \

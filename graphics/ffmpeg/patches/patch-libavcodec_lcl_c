@@ -1,30 +1,21 @@
-$OpenBSD: patch-libavcodec_lcl_c,v 1.1 2004/10/13 01:38:21 jolan Exp $
---- libavcodec/lcl.c.orig	Tue Jan 13 12:26:44 2004
-+++ libavcodec/lcl.c	Wed Oct  6 21:22:41 2004
-@@ -287,7 +287,7 @@ static int decode_frame(AVCodecContext *
+$OpenBSD: patch-libavcodec_lcl_c,v 1.2 2005/02/09 23:41:43 naddy Exp $
+--- libavcodec/lcl.c.orig	Sun Jan 23 10:09:06 2005
++++ libavcodec/lcl.c	Fri Jan 28 00:15:49 2005
+@@ -297,7 +297,7 @@ static int decode_frame(AVCodecContext *
                      return -1;
                  }
                  if (mthread_outlen != (unsigned int)(c->zstream.total_out)) {
 -                    av_log(avctx, AV_LOG_ERROR, "Mthread1 decoded size differs (%u != %lu)\n",
 +                    av_log(avctx, AV_LOG_ERROR, "Mthread1 decoded size differs (%u != %lld)\n",
                             mthread_outlen, c->zstream.total_out);
-                 }
-                 zret = inflateReset(&(c->zstream));
-@@ -305,7 +305,7 @@ static int decode_frame(AVCodecContext *
                      return -1;
                  }
-                 if ((c->decomp_size - mthread_outlen) != (unsigned int)(c->zstream.total_out)) {
--                    av_log(avctx, AV_LOG_ERROR, "Mthread2 decoded size differs (%d != %lu)\n",
-+                    av_log(avctx, AV_LOG_ERROR, "Mthread2 decoded size differs (%d != %lld)\n",
-                            c->decomp_size - mthread_outlen, c->zstream.total_out);
-                 }
-             } else {
-@@ -319,7 +319,7 @@ static int decode_frame(AVCodecContext *
+@@ -331,7 +331,7 @@ static int decode_frame(AVCodecContext *
                      return -1;
                  }
                  if (c->decomp_size != (unsigned int)(c->zstream.total_out)) {
 -                    av_log(avctx, AV_LOG_ERROR, "Decoded size differs (%d != %lu)\n",
 +                    av_log(avctx, AV_LOG_ERROR, "Decoded size differs (%d != %lld)\n",
                             c->decomp_size, c->zstream.total_out);
+                     return -1;
                  }
-             }

@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2005/01/25 21:58:59 naddy Exp $
---- configure.orig	Wed Nov 17 19:54:16 2004
-+++ configure	Thu Dec 30 18:12:18 2004
+$OpenBSD: patch-configure,v 1.2 2005/02/09 23:41:43 naddy Exp $
+--- configure.orig	Mon Nov 15 20:46:34 2004
++++ configure	Thu Jan 27 20:46:05 2005
+@@ -27170,7 +27170,7 @@ else
+   with_ffmpeg_libs_l="/usr${deflib}"
+ fi
+ 
+-FFMPEG_LIBS_EXTRALIBS="-lm -lz $PTHREAD_LIBS"
++FFMPEG_LIBS_EXTRALIBS="$FFMPEG_LIBS_EXTRALIBS -lm -lz $PTHREAD_LIBS"
+ 
+ save_CPPFLAGS="$CPPFLAGS"
+ CPPFLAGS="$CPPFLAGS -I$with_ffmpeg_libs_i"
+@@ -27450,7 +27450,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_avcodec_avcodec_thread_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_avcodec_avcodec_thread_init" >&6
+ if test $ac_cv_lib_avcodec_avcodec_thread_init = yes; then
+-  FFMPEG_LIBS_LIBS="-L$with_ffmpeg_libs_l -lavcodec $FFMPEG_LIB_EXTRALIBS"
++  FFMPEG_LIBS_LIBS="-L$with_ffmpeg_libs_l -lavcodec $FFMPEG_LIBS_EXTRALIBS"
+ else
+   { { echo "$as_me:$LINENO: error: error transcode depends on the FFmpeg (libavcodec) libraries and headers" >&5
+ echo "$as_me: error: error transcode depends on the FFmpeg (libavcodec) libraries and headers" >&2;}
 @@ -37422,7 +37422,7 @@ if test "${ac_cv_lib_mjpegutils_y4m_si_g
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else

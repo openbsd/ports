@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/16 22:53:17 alek Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/09 23:41:42 naddy Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
-DISTNAME=	ffmpeg-0.4.9-pre1
-PKGNAME=	${DISTNAME:S/9-p/9p/}p0
-SV=		4.9
-CATEGORIES=	graphics x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
+DISTNAME=	FFMpeg-20050130
+PKGNAME=	${DISTNAME:L}
 
-HOMEPAGE=	http://ffmpeg.sourceforge.net/
+CATEGORIES=	graphics x11
+MASTER_SITES=	http://www.jakemsr.com/
+#		http://mplayerhq.hu/MPlayer/cvs/
+
+EXTRACT_SUFX=	.tar.bz2
+
+HOMEPAGE=	http://www.ffmpeg.org/
 
 MAINTAINER=	Jacob Meuser <jakemsr@jakemsr.com>
 
@@ -20,6 +23,7 @@ WANTLIB=		X11 Xext c m ogg ossaudio pthread usbhid z
 
 BUILD_DEPENDS=	::textproc/texi2html
 LIB_DEPENDS=	SDL.2.0::devel/sdl \
+		a52.0.0::audio/liba52 \
 		mp3lame.0.1::audio/lame \
 		vorbis.3.0,vorbisenc.2.0::audio/libvorbis
 
@@ -40,6 +44,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--extra-cflags="-I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		--disable-opts \
+		--enable-a52 \
 		--enable-pp \
 		--enable-mp3lame \
 		--enable-vorbis \
@@ -49,17 +54,18 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 
 MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
+# shared libpostproc
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+CONFIGURE_ARGS+=--enable-shared-pp
+.endif
+
 # bktr(4) support
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "powerpc"
 CONFIGURE_ARGS+=--disable-v4l
 .endif
 
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-CONFIGURE_ARGS+=--enable-a52bin
-RUN_DEPENDS=	::audio/liba52
-.else
-CONFIGURE_ARGS+=--enable-a52
-.endif
+# version numbers for the shared libraries
+SV=		5.0
 
 post-extract:
 	@cp ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
@@ -76,7 +82,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ffserver ${PREFIX}/bin/ffserver
 	${INSTALL_DATA_DIR} ${PREFIX}/include/ffmpeg
 	${INSTALL_DATA_DIR} ${PREFIX}/include/postproc
-	${INSTALL_DATA} ${WRKSRC}/libavcodec/{avcodec,common,rational}.h \
+	${INSTALL_DATA} ${WRKSRC}/libavcodec/{avcodec,common,rational,mpegaudio}.h \
 		${PREFIX}/include/ffmpeg
 	${INSTALL_DATA} ${WRKSRC}/libavformat/{avformat.h,avio.h,rtp.h,rtsp.h,rtspcodes.h} \
 		${PREFIX}/include/ffmpeg
@@ -86,9 +92,13 @@ do-install:
 		${WRKBUILD}/libavformat/libavformat.a ${PREFIX}/lib
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libavcodec.so.${SV} \
-		${PREFIX}/lib/libavcodec.so.${SV}
-	${INSTALL_DATA} ${WRKBUILD}/libavformat/libavformat.so.${SV} \
-		${PREFIX}/lib/libavformat.so.${SV}
+		${WRKBUILD}/libavformat/libavformat.so.${SV} \
+		${WRKBUILD}/libavcodec/libpostproc/libpostproc.so.${SV} \
+		${PREFIX}/lib
+.else
+	${INSTALL_DATA} ${WRKBUILD}/libavcodec/libpostproc/libpostproc.a \
+		${PREFIX}/lib
 .endif
 	
 .include <bsd.port.mk>
+

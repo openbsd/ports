@@ -1,43 +1,26 @@
-$OpenBSD: patch-configure,v 1.8 2004/10/13 01:38:21 jolan Exp $
---- configure.orig	Mon Jul  5 11:06:16 2004
-+++ configure	Fri Oct  8 17:42:35 2004
-@@ -232,6 +232,12 @@ make="gmake"
+$OpenBSD: patch-configure,v 1.9 2005/02/09 23:41:42 naddy Exp $
+--- configure.orig	Fri Jan 21 14:16:04 2005
++++ configure	Tue Feb  8 17:03:22 2005
+@@ -248,6 +248,12 @@ make="gmake"
  CFLAGS="-pthread"
  LDFLAGS="$LDFLAGS -export-dynamic -pthread"
  ;;
 +OpenBSD)
 +strip="echo"
-+extralibs="$extralibs -lossaudio"
++extralibs="$extralibs -lossaudio -pthread"
 +source_path="`echo $0 | sed -e 's#/configure##'`"
-+SLIBSUF=.so`grep '#define FFMPEG_VERSION ' $source_path/libavcodec/avcodec.h | cut -d '"' -f 2 | cut -d '0' -f 2 | cut -d '-' -f 1`
++SLIBSUF=.so.5.0
 +;;
  BSD/OS)
  v4l="no"
  audio_oss="yes"
-@@ -347,9 +353,9 @@ for opt do
-   ;;
-   --make=*) make=`echo $opt | cut -d '=' -f 2`
-   ;;
--  --extra-cflags=*) CFLAGS="${opt#--extra-cflags=}"
-+  --extra-cflags=*) CFLAGS="$CFLAGS ${opt#--extra-cflags=}"
-   ;;
--  --extra-ldflags=*) LDFLAGS=${opt#--extra-ldflags=}
-+  --extra-ldflags=*) LDFLAGS="$LDFLAGS ${opt#--extra-ldflags=}"
-   ;;
-   --extra-libs=*) extralibs=${opt#--extra-libs=}
-   ;;
-@@ -1122,8 +1128,12 @@ fi
- if test "$pthreads" = "yes" ; then
+@@ -1219,9 +1225,6 @@ if test "$pthreads" = "yes" ; then
    echo "HAVE_PTHREADS=yes" >> config.mak
    echo "#define HAVE_PTHREADS 1" >> $TMPH
+   echo "#define HAVE_THREADS 1" >> $TMPH
 -  if test $targetos != FreeBSD; then
 -     extralibs="$extralibs -lpthread"
-+  if test $targetos = OpenBSD; then
-+     extralibs="$extralibs -pthread"
-+  else
-+     if test $targetos != FreeBSD; then
-+        extralibs="$extralibs -lpthread"
-+     fi
-   fi
+-  fi
  fi
  if test "$sdl" = "yes" ; then
+   echo "CONFIG_SDL=yes" >> config.mak

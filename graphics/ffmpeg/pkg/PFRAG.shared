@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2004/10/07 06:12:11 jolan Exp $
-@lib lib/libavcodec.so.4.9
-@lib lib/libavformat.so.4.9
+@comment $OpenBSD: PFRAG.shared,v 1.10 2005/02/09 23:41:43 naddy Exp $
+@lib lib/libavcodec.so.5.0
+@lib lib/libavformat.so.5.0
+@lib lib/libpostproc.so.5.0

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2004/12/04 21:44:34 sturm Exp $
---- src/Makefile.in.orig	Fri Nov 26 00:46:51 2004
-+++ src/Makefile.in	Fri Nov 26 00:56:34 2004
+$OpenBSD: patch-src_Makefile_in,v 1.2 2005/02/09 23:41:43 naddy Exp $
+--- src/Makefile.in.orig	Mon Jul 19 11:57:53 2004
++++ src/Makefile.in	Thu Jan 27 21:27:58 2005
 @@ -211,7 +211,7 @@ lib_LTLIBRARIES = libquicktime.la
  # Library dependencies are emtpy no
  # Maybe we need zlib to read compressed quicktime headers
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2004/12/04 21:44:34 sturm Exp $
  @HAVE_FSEEKO_FALSE@FSEEKO_SRC = lqt_fseeko.c
  
  
+@@ -392,7 +392,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libquicktime.la: $(libquicktime_la_OBJECTS) $(libquicktime_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libquicktime_la_LDFLAGS) $(libquicktime_la_OBJECTS) $(libquicktime_la_LIBADD) $(LIBS)
++	$(LINK) -rpath $(libdir) $(libquicktime_la_LDFLAGS) $(libquicktime_la_OBJECTS) $(libquicktime_la_LIBADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

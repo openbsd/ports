@@ -1,7 +1,23 @@
-$OpenBSD: patch-libavcodec_Makefile,v 1.8 2004/10/13 01:38:21 jolan Exp $
---- libavcodec/Makefile.orig	Fri Jun 18 06:11:15 2004
-+++ libavcodec/Makefile	Wed Oct  6 20:30:07 2004
-@@ -177,6 +177,7 @@ OBJS := $(OBJS) $(ASM_OBJS)
+$OpenBSD: patch-libavcodec_Makefile,v 1.9 2005/02/09 23:41:43 naddy Exp $
+--- libavcodec/Makefile.orig	Sat Jan 22 09:52:00 2005
++++ libavcodec/Makefile	Tue Feb  8 17:03:22 2005
+@@ -76,11 +76,11 @@ ifeq ($(CONFIG_AC3),yes)
+ OBJS+= a52dec.o
+ 
+ # using builtin liba52 or runtime linked liba52.so.0
+-ifneq ($(CONFIG_A52BIN),yes)
+-OBJS+= liba52/bit_allocate.o liba52/bitstream.o liba52/downmix.o \
+-	liba52/imdct.o  liba52/parse.o liba52/crc.o liba52/resample.o
++#ifneq ($(CONFIG_A52BIN),yes)
++#OBJS+= liba52/bit_allocate.o liba52/bitstream.o liba52/downmix.o \
++#	liba52/imdct.o  liba52/parse.o liba52/crc.o liba52/resample.o
++#endif
+ endif
+-endif
+ 
+ # currently using libdts for dts decoding
+ ifeq ($(CONFIG_DTS),yes)
+@@ -199,6 +199,7 @@ OBJS := $(OBJS) $(ASM_OBJS)
  LIB= $(LIBPREF)avcodec$(LIBSUF)
  ifeq ($(BUILD_SHARED),yes)
  SLIB= $(SLIBPREF)avcodec$(SLIBSUF)
@@ -9,3 +25,12 @@ $OpenBSD: patch-libavcodec_Makefile,v 1.8 2004/10/13 01:38:21 jolan Exp $
  endif
  TESTS= imgresample-test dct-test motion-test fft-test
  
+@@ -222,7 +223,7 @@ ifeq ($(CONFIG_WIN32),yes)
+ 	$(CC) $(SHFLAGS) -Wl,--output-def,$(@:.dll=.def) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS)
+ 	-lib /machine:i386 /def:$(@:.dll=.def)
+ else
+-	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(EXTRALIBS) $(AMREXTRALIBS) $(LDFLAGS)
++	$(CC) $(SHFLAGS) -o $@ $(OBJS) $(AMREXTRALIBS) $(LDFLAGS)
+ endif
+ 
+ dsputil.o: dsputil.c dsputil.h

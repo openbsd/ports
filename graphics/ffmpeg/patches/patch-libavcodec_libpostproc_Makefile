@@ -1,0 +1,13 @@
+$OpenBSD: patch-libavcodec_libpostproc_Makefile,v 1.1 2005/02/09 23:41:43 naddy Exp $
+--- libavcodec/libpostproc/Makefile.orig	Tue Feb  8 17:10:14 2005
++++ libavcodec/libpostproc/Makefile	Tue Feb  8 17:11:03 2005
+@@ -38,8 +38,7 @@ postprocess_pic.o: postprocess.c
+ 	$(CC) -c $(CFLAGS) -fomit-frame-pointer -fPIC -DPIC -I.. -I../.. -o $@ $<
+ 
+ $(SPPLIB): $(SPPOBJS)
+-	$(CC) -shared -Wl,-soname,$(SPPLIB).0 \
+-	-o $(SPPLIB) $(SPPOBJS)
++	$(CC) -shared -o $(SPPLIB) $(SPPOBJS)
+ endif
+ 
+ $(PPLIB): $(PPOBJS)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-vhook_ppm_c,v 1.1 2004/10/07 06:12:11 jolan Exp $
---- vhook/ppm.c.orig	Sun Sep 28 15:58:57 2003
-+++ vhook/ppm.c	Thu Oct  7 00:46:12 2004
-@@ -73,7 +73,7 @@ rwpipe *rwpipe_open( int argc, char *arg
+$OpenBSD: patch-vhook_ppm_c,v 1.2 2005/02/09 23:41:43 naddy Exp $
+--- vhook/ppm.c.orig	Wed Jan 12 20:48:23 2005
++++ vhook/ppm.c	Sun Jan 16 21:01:36 2005
+@@ -74,7 +74,7 @@ rwpipe *rwpipe_open( int argc, char *arg
              close( output[ 0 ] );
              close( output[ 1 ] );
  
