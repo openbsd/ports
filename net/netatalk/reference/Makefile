@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/14 14:32:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/12 18:02:44 sturm Exp $
 
 NOT_FOR_ARCHS=	powerpc		# char is unsigned
 
@@ -16,13 +16,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CONFDIR=	${SYSCONFDIR}/netatalk
+
 MAKE_FLAGS=	CC="${CC}" OPTOPTS="${CFLAGS} -Wall" \
-		PREFIX="${PREFIX}" SYSCONFDIR="${SYSCONFDIR}"
+		PREFIX="${PREFIX}" SYSCONFDIR="${CONFDIR}"
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
 
-SYSCONFDIR=	/etc/netatalk
-
 NO_REGRESS=	Yes
+
+SUBST_VARS=	CONFDIR
 
 # NOTES:
 # Will compile with kerberos support in apfd and papd.

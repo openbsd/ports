@@ -1,4 +1,4 @@
-$OpenBSD: patch-uucp_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+$OpenBSD: patch-uucp_1,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- uucp.1.orig	Sun Aug 20 15:29:46 1995
 +++ uucp.1	Thu Jul 12 04:07:23 2001
 @@ -181,15 +181,15 @@ The file names may be changed at compila
@@ -6,7 +6,7 @@ $OpenBSD: patch-uucp_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  .br
 -/usr/lib/uucp/config - Configuration file.
-+/etc/uucp/config - Configuration file.
++%%SYSCONFDIR%%/uucp/config - Configuration file.
  .br
 -/usr/spool/uucp -
 +/var/spool/uucp -

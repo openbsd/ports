@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/14 14:32:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/12 18:02:45 sturm Exp $
 
 COMMENT=	"AFP file and print services for AppleTalk/IP networks"
 
@@ -19,14 +19,16 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 
 SEPARATE_BUILD= 	concurrent
 
-SYSCONFDIR=	/etc/netatalk
 CONFIGURE_STYLE=	gnu
+
+CONFDIR=		${SYSCONFDIR}/netatalk
+SUBST_VARS=		CONFDIR
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} 
 CONFIGURE_ARGS+=	--with-flock-locks
 CONFIGURE_ARGS+=	--with-ssl=/usr
-CONFIGURE_ARGS+=	--with-config-dir=${SYSCONFDIR}
-CONFIGURE_ARGS+=	--with-pkgconfdir=${SYSCONFDIR}
+CONFIGURE_ARGS+=	--with-config-dir=${CONFDIR}
+CONFIGURE_ARGS+=	--with-pkgconfdir=${CONFDIR}
 CONFIGURE_ARGS+=	--with-uams-path=${PREFIX}/lib/netatalk/uams
 CONFIGURE_ARGS+=	--with-tcp-wrappers
 

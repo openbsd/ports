@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/07/23 11:52:12 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/05/12 18:02:45 sturm Exp $
 #
 # Pre/post-installation setup of netatalk
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${CONFDIR}
 NLS_DIR=$CONFIG_DIR/nls
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/netatalk
 SAMPLE_CONFIG_NLS=$PREFIX/share/nls/netatalk

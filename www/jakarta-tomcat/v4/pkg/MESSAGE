@@ -7,5 +7,5 @@ For more information on application development with Tomcat, see
 Note that Tomcat may be started with the following command:
 	${PREFIX}/${DISTNAME}/bin/startup.sh
 
-Configuration files are in `/etc/tomcat'.
+Configuration files are in `${SYSCONFDIR}/tomcat'.
 `$CATALINA_BASE' is `/var/tomcat'.

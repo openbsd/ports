@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: Makefile,v 1.18 2003/05/12 18:02:45 sturm Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -32,10 +32,10 @@ FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
 		SBINDIR="${WRKINST}${PREFIX}/libexec" \
 		VARDIR="${WRKINST}/var"
 
-SYSCONFDIR=	/etc/samba
+CONFDIR=	${SYSCONFDIR}/samba
 SAMBA_SPOOL=	/var/spool/samba
 SAMBA_LOGDIR=	/var/log
-SUBST_VARS=	SAMBA_SPOOL
+SUBST_VARS=	SAMBA_SPOOL CONFDIR
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
@@ -43,11 +43,11 @@ CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
 		--sbindir="${PREFIX}/libexec" \
 		--disable-cups \
-		--with-configdir="${SYSCONFDIR}" \
+		--with-configdir="${CONFDIR}" \
 		--with-lockdir="${SAMBA_SPOOL}" \
 		--with-piddir="/var/run" \
 		--with-logfilebase="${SAMBA_LOGDIR}" \
-		--with-privatedir="${SYSCONFDIR}" \
+		--with-privatedir="${CONFDIR}" \
 		--with-swatdir="${PREFIX}/share/swat" \
 		--with-ssl \
 		--with-sslinc="/usr/include/ssl" \

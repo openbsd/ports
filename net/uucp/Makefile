@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/28 01:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/05/12 18:02:45 sturm Exp $
 
 COMMENT=	"UUCP suite"
 
@@ -16,8 +16,8 @@ WRKDIST=	${WRKDIR}/uucp-1.06.1
 CONFIGURE_STYLE= gnu dest old
 
 MAKE_FLAGS+=	sbindir='$$(PREFIX)/libexec/uucp' \
-		newconfigdir=/etc/uucp \
-		oldconfigdir=/etc/uucp \
+		newconfigdir=${SYSCONFDIR}/uucp \
+		oldconfigdir=${SYSCONFDIR}/uucp \
 		MAKEINFO='makeinfo --no-split'
 
 NO_REGRESS=	Yes
@@ -26,6 +26,9 @@ FAKE_FLAGS=	DESTDIR=${WRKINST} $(MAKE_FLAGS)
 FAKE_TARGET=	install install-info
 
 post-install:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," \
+		${PREFIX}/man/man1/uu{cp,stat,x}.1 \
+		${PREFIX}/man/man8/uu{cico,xqt}.8
 	@mv ${PREFIX}/libexec/uucp/uusched ${PREFIX}/bin
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/cu
 	@chmod ${BINMODE} ${PREFIX}/bin/cu

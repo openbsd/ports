@@ -1,4 +1,4 @@
-$OpenBSD: patch-uustat_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+$OpenBSD: patch-uustat_1,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- uustat.1.orig	Sun Aug 20 15:29:55 1995
 +++ uustat.1	Thu Jul 12 04:08:06 2001
 @@ -540,9 +540,9 @@ The file names may be changed at compila
@@ -6,7 +6,7 @@ $OpenBSD: patch-uustat_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  .br
 -/usr/lib/uucp/config - Configuration file.
-+/etc/uucp/config - Configuration file.
++%%SYSCONFDIR%%/uucp/config - Configuration file.
  .br
 -/usr/spool/uucp -
 +/var/spool/uucp -

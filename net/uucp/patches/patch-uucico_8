@@ -1,4 +1,4 @@
-$OpenBSD: patch-uucico_8,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+$OpenBSD: patch-uucico_8,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- uucico.8.orig	Sun Aug 20 15:29:42 1995
 +++ uucico.8	Thu Jul 12 04:05:49 2001
 @@ -250,8 +250,8 @@ is equivalent to
@@ -17,10 +17,10 @@ $OpenBSD: patch-uucico_8,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  .br
 -/usr/lib/uucp/config - Configuration file.
-+/etc/uucp/config - Configuration file.
++%%SYSCONFDIR%%/uucp/config - Configuration file.
  .br
 -/usr/lib/uucp/passwd - Default UUCP password file.
-+/etc/uucp/passwd - Default UUCP password file.
++%%SYSCONFDIR%%/uucp/passwd - Default UUCP password file.
  .br
 -/usr/spool/uucp -
 +/var/spool/uucp -

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 19:37:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/05/12 18:02:44 sturm Exp $
 
 DISTNAME=	sqsh-2.1
 CATEGORIES=	databases shells
@@ -18,15 +18,19 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 MODULES=	gettext
 LIB_DEPENDS=	tds.0,ct.0::databases/freetds
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu old
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		SYBASE="${LOCALBASE}"
-CONFIGURE_ARGS=	--with-readline --sysconfdir=/etc
+CONFIGURE_ARGS=	--with-readline --sysconfdir='${SYSCONFDIR}'
 
 ALL_TARGET=	
 NO_REGRESS=	Yes
+
+post-patch:
+	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/Makefile.in \
+		${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sqsh ${PREFIX}/bin/

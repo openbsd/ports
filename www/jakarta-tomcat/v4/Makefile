@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/11 14:36:21 reinhard Exp $
+# $OpenBSD: Makefile,v 1.9 2003/05/12 18:02:45 sturm Exp $
 
 COMMENT=	"Java servlet 2.3 and Java server pages 1.2 server"
 
@@ -30,7 +30,7 @@ NO_REGRESS=	Yes
 
 CONF_FILES=catalina.policy server-noexamples.xml.config server.xml \
 tomcat-users.xml web.xml
-CONFDIR=	/etc/tomcat
+CONFDIR=	${SYSCONFDIR}/tomcat
 DIRS=		bin classes common conf lib server webapps
 DOCS=LICENSE RELEASE-NOTES-4.0-B1.txt RELEASE-NOTES-4.0-B2.txt \
 RELEASE-NOTES-4.0-B3.txt RELEASE-NOTES-4.0-B4.txt RELEASE-NOTES-4.0-B5.txt \

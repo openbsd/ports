@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/01/28 00:47:21 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/05/12 18:02:44 sturm Exp $
 #
 # Pre/post-installation setup of ircd
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${CONFDIR}
 #CONFIG_FILE1=ircd.conf
 #CONFIG_FILE2=iauth.conf
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/ircd

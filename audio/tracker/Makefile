@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/04/10 18:08:56 jsyn Exp $
+# $OpenBSD: Makefile,v 1.21 2003/05/12 18:02:44 sturm Exp $
 
 COMMENT=	"MOD player"
 DISTNAME=	tracker-5.3
@@ -21,7 +21,7 @@ MAKE_FLAGS=	MACHINE=openbsd CC=$(CC) INSTALL="$(INSTALL)" \
 		CFLAGS_openbsd='-O3 -funroll-loops -finline-functions ${COPTS}' \
 		INST_BIN_OPT="-c -s -m $(BINMODE) -o $(BINOWN) -g $(BINGRP)" \
 		INST_MAN_OPT="-c -m 644 -o $(BINOWN) -g $(BINGRP)" \
-		COMPRESSION_FILE='$${DESTDIR}/etc/compression_methods' \
+		COMPRESSION_FILE='$${DESTDIR}${SYSCONFDIR}/compression_methods' \
 		PREFIX='$${DESTDIR}/${PREFIX}'
 
 NO_REGRESS=	Yes
@@ -31,6 +31,9 @@ FAKE_FLAGS=	${MAKE_FLAGS}
 post-extract:
 	@mkdir -p ${WRKSRC}/Arch/OpenBSD
 	@cp files/{audio.c,config.h} ${WRKSRC}/Arch/OpenBSD
+
+pre-install:
+	${INSTALL_DATA_DIR} ${DESTDIR}${SYSCONFDIR}
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tracker

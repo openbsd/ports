@@ -1,4 +1,4 @@
-$OpenBSD: patch-uux_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+$OpenBSD: patch-uux_1,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- uux.1.orig	Sun Aug 20 15:29:57 1995
 +++ uux.1	Thu Jul 12 04:08:36 2001
 @@ -40,7 +40,7 @@ file to a command being executed on a re
@@ -15,7 +15,7 @@ $OpenBSD: patch-uux_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  .br
 -/usr/lib/uucp/config - Configuration file.
-+/etc/uucp/config - Configuration file.
++%%SYSCONFDIR%%/uucp/config - Configuration file.
  .br
 -/usr/spool/uucp -
 +/var/spool/uucp -

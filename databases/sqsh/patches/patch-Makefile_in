@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/12/23 23:27:23 jcs Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2003/05/12 18:02:44 sturm Exp $
 --- Makefile.in.orig	Sun Dec 23 16:57:51 2001
 +++ Makefile.in	Sun Dec 23 16:59:00 2001
 @@ -17,7 +17,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/12/23 23:27:23 jcs Exp $
  INSTALL_MAN    = $(src_dir)/autoconf/install-man
  
 -SQSHRC_GLOBAL  = $(prefix)/etc/sqshrc
-+SQSHRC_GLOBAL  = /etc/sqshrc
++SQSHRC_GLOBAL  = %%SYSCONFDIR%%/sqshrc
  
  MAN_PAGES      = sqsh.1
  SRCS           = $(OBJS:.o=.c)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-cu_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+$OpenBSD: patch-cu_1,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- cu.1.orig	Sun Aug 20 15:29:24 1995
 +++ cu.1	Thu Jul 12 04:04:26 2001
 @@ -304,7 +304,7 @@ The file name may be changed at compilat
@@ -6,7 +6,7 @@ $OpenBSD: patch-cu_1,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
  
  .br
 -/usr/lib/uucp/config - Configuration file.
-+/etc/uucp/config - Configuration file.
++%%SYSCONFDIR%%/uucp/config - Configuration file.
  .SH AUTHOR
  Ian Lance Taylor
  <ian@airs.com>

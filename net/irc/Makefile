@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2003/05/12 18:02:44 sturm Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 COMMENT=	"internet relay chat (irc) server"
@@ -18,11 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SYSCONFDIR=	/etc/ircd
-CONFIGURE_STYLE= gnu
+CONFDIR=	${SYSCONFDIR}/ircd
+CONFIGURE_STYLE= gnu old
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/support
 CONFIGURE_ARGS=	--logdir="/var/log/ircd" \
 		--localstatedir="/var/run" \
+		--sysconfdir=${CONFDIR}
 
 FLAVORS=	ipv6
 FLAVOR?=	
@@ -37,6 +38,8 @@ SYSLOG_FACILITY=	LOG_LOCAL5
 ALL_TARGET=	server
 
 WRKBUILD=	${WRKSRC}/support
+
+SUBST_VARS=	CONFDIR
 
 post-patch:
 	@sed -e s#!!SYSLOG_FACILITY!!#$(SYSLOG_FACILITY)#g \
