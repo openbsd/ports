@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmysql_r_libmysql_c,v 1.1 2002/03/27 18:49:09 brad Exp $
+--- libmysql_r/libmysql.c.orig	Thu Feb 14 12:30:17 2002
++++ libmysql_r/libmysql.c	Wed Mar 27 09:49:18 2002
+@@ -712,7 +712,7 @@ static void mysql_read_default_options(s
+ 	  *end=0;				/* Remove '=' */
+ 	}
+ 	/* Change all '_' in variable name to '-' */
+-	for (end= *option ; (end= strcend(end,'_')) ; )
++	for (end= *option ; (end= strcend(end,'_')) && *end; )
+ 	  *end= '-';
+ 	switch (find_type(*option+2,&option_types,2)) {
+ 	case 1:				/* port */
