@@ -1,6 +1,3 @@
-LibGII README
-=============
-
 LibGII (General Input Interface) is intended to be to input what our LibGGI
 (General Graphics Interface) library is to graphics.
 
@@ -15,33 +12,4 @@ the mhub utility found in the demos directory. mhub is a mouse event repeater
 and converter. See mhub(1) and the files doc/env.txt and doc/input.txt for
 more info.
 
-
-How to install and use
-======================
-
-See the files INSTALL and INSTALL.autoconf for installation instructions.
-
-Demos are found in the programs/demos sub directory.  They are built
-automatically.
-
-
-The GGI mailing list
-====================
-
-To subscribe to the GGI mailing list, send a message with the word
-"subscribe" in the Subject: field to ggi-develop-request@eskimo.com
-To unsubscribe from the GGI mailing list, send a message with the word
-"unsubscribe" in the Subject: field to ggi-develop-request@eskimo.com
-
-This is a high volume mailing list with well over 1000 messages a month!
-So be prepared.
-
-
-GGI resources
-=============
-
-Web site: http://www.ggi-project.org/
-FTP site: ftp://ftp.ggi-project.org/pub/ggi
-
-XGGI home: http://www.stacken.kth.se/~mackan/ggi/xggi/
-(XGGI is an X server which runs on LibGGI)
+WWW: ${HOMEPAGE}

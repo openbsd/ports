@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/11 08:51:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2000/09/23 23:55:52 brad Exp $
 
-DISTNAME=       libgii-0.6
-CATEGORIES=     graphics
-NEED_VERSION=	1.301
+DISTNAME=	libgii-0.6
+CATEGORIES=	graphics
+NEED_VERSION=	1.330
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
 
-MAINTAINER=     todd@openbsd.org
+MAINTAINER=	Todd Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
-
+USE_X11=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ARGS+= --enable-static --enable-mutexes="int"
 
-DOCDIR=		${PREFIX}/share/doc/gii
+DOCS=	README
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/libgii.conf ${DOCDIR}/libgii.conf.example
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gii
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gii
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gii
+	${INSTALL_DATA} ${WRKSRC}/libgii.conf
+		${PREFIX}/share/examples/gii/libgii.conf.example
 
 .include <bsd.port.mk>

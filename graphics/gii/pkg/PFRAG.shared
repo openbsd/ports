@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/09/23 23:55:53 brad Exp $
+lib/ggi/filter/mouse.so
+lib/ggi/filter/save.so
+lib/ggi/input/file.so
+lib/ggi/input/linux_mouse.so
+lib/ggi/input/mouse.so
+lib/ggi/input/null.so
+lib/ggi/input/spaceorb.so
+lib/ggi/input/stdin.so
+lib/ggi/input/x.so
+lib/ggi/input/xwin.so
+lib/libgg.so.0.6
+lib/libgii.so.0.6
+DYNLIBDIR(%B)
