@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2001/08/12 20:04:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.161 2001/08/14 14:33:12 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -20,6 +20,7 @@
      SUBDIR += cidr
      SUBDIR += clog
      SUBDIR += courtney
+     SUBDIR += ctrace
      SUBDIR += curl
      SUBDIR += curl,kerberos
      SUBDIR += cvsup
@@ -42,6 +43,7 @@
      SUBDIR += fping
      SUBDIR += ftpcopy
      SUBDIR += gaim
+     SUBDIR += gaim,esd
      SUBDIR += gated
      SUBDIR += gtk-gnutella
      SUBDIR += hping
