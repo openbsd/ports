@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/11 03:35:42 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/11 03:50:41 djm Exp $
 
 COMMENT=	"Python API for dealing with timezones"
 
@@ -10,9 +10,7 @@ HOMEPAGE=	http://pytz.sourceforge.net/
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
-MODULES=	lang/python
-
-# BSD License
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
