@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/01/27 13:42:48 todd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:41:31 espie Exp $
 bin/faxalter
 bin/faxcover
 bin/faxmail
@@ -6,6 +6,7 @@ bin/faxrm
 bin/faxstat
 bin/sendfax
 bin/sendpage
+lib/fax/
 lib/fax/faxcover.ps
 lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
@@ -13,16 +14,115 @@ lib/fax/hfaxd.conf
 lib/fax/hylafax.sh.sample
 lib/fax/pagesizes
 lib/fax/typerules
-man/man1/faxalter.1
-man/man1/faxcover.1
-man/man1/faxmail.1
-man/man1/faxrm.1
-man/man1/faxstat.1
-man/man1/hylafax-client.1
-man/man1/sendfax.1
-man/man1/sendpage.1
-man/man1/sgi2fax.1
-man/man1/textfmt.1
+libdata/hylafax/
+libdata/hylafax/COPYRIGHT
+libdata/hylafax/archive/
+libdata/hylafax/bin/
+libdata/hylafax/bin/archive
+libdata/hylafax/bin/faxrcvd
+libdata/hylafax/bin/mkcover
+libdata/hylafax/bin/notify
+libdata/hylafax/bin/notify.awk
+libdata/hylafax/bin/pcl2fax
+libdata/hylafax/bin/pdf2fax.gs
+libdata/hylafax/bin/pollrcvd
+libdata/hylafax/bin/ps2fax.dps
+libdata/hylafax/bin/ps2fax.gs
+libdata/hylafax/bin/ps2fax.imp
+libdata/hylafax/bin/tiff2fax
+libdata/hylafax/bin/wedged
+libdata/hylafax/client/
+libdata/hylafax/config/
+libdata/hylafax/config/att-dataport
+libdata/hylafax/config/att-dataport-2
+libdata/hylafax/config/att-dataport-2.0
+libdata/hylafax/config/att-dpexpress-2
+libdata/hylafax/config/cirrus
+libdata/hylafax/config/class1
+libdata/hylafax/config/class1.0
+libdata/hylafax/config/class2
+libdata/hylafax/config/class2.0
+libdata/hylafax/config/class2.1
+libdata/hylafax/config/davicom-2
+libdata/hylafax/config/digi
+libdata/hylafax/config/digi-2
+libdata/hylafax/config/digi-20
+libdata/hylafax/config/dsi-scout+
+libdata/hylafax/config/e-tech
+libdata/hylafax/config/eicon
+libdata/hylafax/config/eicon-2
+libdata/hylafax/config/elsa-microlink-56k-basic-2.0
+libdata/hylafax/config/everex-2496d
+libdata/hylafax/config/exar
+libdata/hylafax/config/gvc-288
+libdata/hylafax/config/gvc-288-2
+libdata/hylafax/config/hayes
+libdata/hylafax/config/intel-400e
+libdata/hylafax/config/lucent
+libdata/hylafax/config/lucent-isa
+libdata/hylafax/config/lucent-mt-2
+libdata/hylafax/config/lucent-mt-20
+libdata/hylafax/config/lucent-mt-21
+libdata/hylafax/config/moto-288
+libdata/hylafax/config/mt-1432
+libdata/hylafax/config/nuvo-voyager
+libdata/hylafax/config/ppi-pm14400fxmt
+libdata/hylafax/config/ppi-pm14400fxsa
+libdata/hylafax/config/prometheus
+libdata/hylafax/config/rc144ac
+libdata/hylafax/config/rc144ac-1
+libdata/hylafax/config/rc288dpi
+libdata/hylafax/config/rc288dpi-1
+libdata/hylafax/config/rc32acl
+libdata/hylafax/config/rc32acl-1
+libdata/hylafax/config/rockwell-k56
+libdata/hylafax/config/rockwell-rc
+libdata/hylafax/config/sierra
+libdata/hylafax/config/skel
+libdata/hylafax/config/telebit-qblazer
+libdata/hylafax/config/telebit-t3000
+libdata/hylafax/config/telebit-wb
+libdata/hylafax/config/topic
+libdata/hylafax/config/tricom2842
+libdata/hylafax/config/uds-fastalk
+libdata/hylafax/config/umc92144
+libdata/hylafax/config/umc9624
+libdata/hylafax/config/usr-2.0
+libdata/hylafax/config/usr-rts
+libdata/hylafax/config/usr-xon
+libdata/hylafax/config/zyxel-1496e
+libdata/hylafax/config/zyxel-1496e-1
+libdata/hylafax/config/zyxel-1496e-2.0
+libdata/hylafax/config/zyxel-2864
+libdata/hylafax/dev/
+libdata/hylafax/docq/
+libdata/hylafax/doneq/
+libdata/hylafax${SYSCONFDIR}/
+libdata/hylafax${SYSCONFDIR}/cover.templ
+libdata/hylafax${SYSCONFDIR}/dialrules
+libdata/hylafax${SYSCONFDIR}/dialrules.europe
+libdata/hylafax${SYSCONFDIR}/dialrules.sf-ba
+libdata/hylafax${SYSCONFDIR}/dpsprinter.ps
+libdata/hylafax${SYSCONFDIR}/hosts.hfaxd
+libdata/hylafax${SYSCONFDIR}/lutRS18.pcf
+libdata/hylafax${SYSCONFDIR}/xferfaxlog
+libdata/hylafax/info/
+libdata/hylafax/log/
+libdata/hylafax/pollq/
+libdata/hylafax/recvq/
+libdata/hylafax/sendq/
+libdata/hylafax/status/
+libdata/hylafax/tmp/
+@man man/man1/faxalter.1
+@man man/man1/faxcover.1
+@man man/man1/faxmail.1
+@man man/man1/faxrm.1
+@man man/man1/faxstat.1
+@man man/man1/hylafax-client.1
+@man man/man1/sendfax.1
+@man man/man1/sendpage.1
+@man man/man1/sgi2fax.1
+@man man/man1/textfmt.1
 man/man5/cid.5f
 man/man5/destctrls.5f
 man/man5/dialrules.5f
@@ -53,6 +153,7 @@ man/man8/faxcron.8c
 man/man8/faxdeluser.8c
 man/man8/faxgetty.8c
 man/man8/faxinfo.8c
+man/man8/faxlock.8c
 man/man8/faxmodem.8c
 man/man8/faxq.8c
 man/man8/faxqclean.8c
@@ -88,6 +189,7 @@ sbin/faxcron
 sbin/faxdeluser
 sbin/faxgetty
 sbin/faxinfo
+sbin/faxlock
 sbin/faxmodem
 sbin/faxmsg
 sbin/faxq
@@ -113,7 +215,6 @@ sbin/tiffcheck
 sbin/tsitest
 sbin/typetest
 sbin/xferfaxstats
-@dirrm lib/fax
 @exec install -d -o uucp -g dialer -m 755 /var/spool/hylafax
 @exec ln -s /var/spool/hylafax %D/hylafax
 @exec install -d -o uucp -g dialer -m 700 %D/hylafax/archive
@@ -132,88 +233,3 @@ sbin/xferfaxstats
 @exec install -d -o uucp -g dialer -m 755 %D/hylafax/status
 @exec install -d -o uucp -g dialer -m 700 %D/hylafax/tmp
 @exec mkfifo %D/hylafax/FIFO; chown uucp:dialer %D/hylafax/FIFO; chmod 600 %D/hylafax/FIFO
-hylafax/COPYRIGHT
-hylafax/bin/faxrcvd
-hylafax/bin/mkcover
-hylafax/bin/notify
-hylafax/bin/notify.awk
-hylafax/bin/pcl2fax
-hylafax/bin/pdf2fax.gs
-hylafax/bin/pollrcvd
-hylafax/bin/ps2fax.dps
-hylafax/bin/ps2fax.gs
-hylafax/bin/ps2fax.imp
-hylafax/bin/tiff2fax
-hylafax/bin/wedged
-hylafax/config/att-dataport
-hylafax/config/att-dataport-2
-hylafax/config/att-dataport-2.0
-hylafax/config/att-dpexpress-2
-hylafax/config/cirrus
-hylafax/config/class1
-hylafax/config/class2
-hylafax/config/class2.0
-hylafax/config/dsi-scout+
-hylafax/config/e-tech
-hylafax/config/elsa-microlink-56k-basic-2.0
-hylafax/config/everex-2496d
-hylafax/config/exar
-hylafax/config/gvc-288
-hylafax/config/gvc-288-2
-hylafax/config/intel-400e
-hylafax/config/lucent
-hylafax/config/lucent-mt-2
-hylafax/config/moto-288
-hylafax/config/mt-1432
-hylafax/config/nuvo-voyager
-hylafax/config/ppi-pm14400fxmt
-hylafax/config/ppi-pm14400fxsa
-hylafax/config/rc144ac
-hylafax/config/rc144ac-1
-hylafax/config/rc288dpi
-hylafax/config/rc288dpi-1
-hylafax/config/rc32acl
-hylafax/config/rc32acl-1
-hylafax/config/rockwell-k56
-hylafax/config/rockwell-rc
-hylafax/config/sierra
-hylafax/config/skel
-hylafax/config/telebit-qblazer
-hylafax/config/telebit-t3000
-hylafax/config/telebit-wb
-hylafax/config/tricom2842
-hylafax/config/uds-fastalk
-hylafax/config/umc92144
-hylafax/config/umc9624
-hylafax/config/usr-2.0
-hylafax/config/usr-rts
-hylafax/config/usr-xon
-hylafax/config/zyxel-1496e
-hylafax/config/zyxel-1496e-1
-hylafax/config/zyxel-1496e-2.0
-hylafax/config/zyxel-2864
-hylafax/etc/cover.templ
-hylafax/etc/dialrules
-hylafax/etc/dialrules.europe
-hylafax/etc/dialrules.sf-ba
-hylafax/etc/dpsprinter.ps
-hylafax/etc/hosts.hfaxd
-hylafax/etc/lutRS18.pcf
-hylafax/etc/xferfaxlog
-@dirrm hylafax/tmp
-@dirrm hylafax/status
-@dirrm hylafax/sendq
-@dirrm hylafax/recvq
-@dirrm hylafax/pollq
-@dirrm hylafax/log
-@dirrm hylafax/info
-@dirrm hylafax/etc
-@dirrm hylafax/doneq
-@dirrm hylafax/docq
-@dirrm hylafax/dev
-@dirrm hylafax/config
-@dirrm hylafax/client
-@dirrm hylafax/bin
-@dirrm hylafax/archive
-@unexec rm -f %D/hylafax/FIFO
-@unexec rm %D/hylafax
