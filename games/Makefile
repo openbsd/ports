@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2002/12/23 07:24:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.82 2003/02/03 04:11:15 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += bombermaze
      SUBDIR += burgerspace
 #    SUBDIR += bs
+     SUBDIR += bzflag
      SUBDIR += castle-combat
      SUBDIR += cgoban
      SUBDIR += circuit
