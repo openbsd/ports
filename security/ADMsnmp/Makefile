@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/24 07:55:54 jsyn Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/13 07:54:09 jsyn Exp $
 
 COMMENT=		"SNMP audit scanner"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=   "no license"
 
 MASTER_SITES=		ftp://adm.freelsd.net/pub/ADM/ \
 			http://adm.freelsd.net/ADM/ \
-			${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	groups/ADM
+			${MASTER_SITE_PACKETSTORM:=groups/ADM/}
 
 WRKDIST=		${WRKDIR}/ADMsnmp
 

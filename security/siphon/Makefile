@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/25 06:30:38 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 07:54:10 jsyn Exp $
 			
 COMMENT=		"passive network mapping tool"
 
@@ -15,8 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://siphon.datanerds.net/ \
-			${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/utilities
+			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}
 
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS='${CFLAGS} -Wall -I. \

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 20:40:07 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 07:54:09 jsyn Exp $
 
 COMMENT=        	"hostname scanner"
 
 DISTNAME=		resolv-0.9.9a
 CATEGORIES=     	net
 NEED_VERSION=   	1.515
-MASTER_SITES=		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/scanners
+MASTER_SITES=		${MASTER_SITE_PACKETSTORM:=UNIX/scanners/}
 
 MAINTAINER=     	Jason Peel <jsyn@openbsd.org>
 

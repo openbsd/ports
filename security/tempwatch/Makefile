@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/24 08:07:13 jsyn Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/13 07:54:10 jsyn Exp $
 
 COMMENT=		"temporary file auditing tool"
 
@@ -19,8 +19,7 @@ DISTFILES=		l0pht-watch${EXTRACT_SUFX} watch.txt:0
 EXTRACT_ONLY=		l0pht-watch${EXTRACT_SUFX}
 
 MASTER_SITES=		http://www.atstake.com/research/tools/ \
-  	 		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	9901-exploits
+  	 		${MASTER_SITE_PACKETSTORM:=9901-exploits/}
 MASTER_SITES0=		http://www.atstake.com/research/advisories/1999/
 
 WRKDIST=		${WRKDIR}/temp-watch
