@@ -1,4 +1,10 @@
-This is procmail, the ultimate incoming mail processor.
+Procmail, the autonomous mail processor.
+
+Procmail is a powerful mail processing suite.  It is used to
+create mail servers, sort email into separate folders (based
+on rules created with 'recipes' of regular expressions), run
+programs when receiving mail, and much more.
+
 
 Flavors:
 	lmtp - Build with LMTP support
