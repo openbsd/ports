@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2004/04/28 01:30:53 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2004/07/10 01:49:42 jolan Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"videolan client; multimedia player"
 
-VER=		0.7.1
-DISTNAME=	vlc-${VER}
-PKGNAME=	${DISTNAME}p0
+V=		0.7.2
+DISTNAME=	vlc-${V}
 CATEGORIES=	x11
-MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${VER}/ \
-		http://www.fr.videolan.org/pub/videolan/vlc/${VER}/
+MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${V}/ \
+		http://www.fr.videolan.org/pub/videolan/vlc/${V}/
 
 HOMEPAGE=	http://www.videolan.org/vlc/
 
@@ -31,7 +32,6 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		mad.2::audio/libmad \
 		ogg::audio/libogg \
 		vorbis,vorbisenc::audio/libvorbis \
-		dvbpsi.1.1::graphics/libdvbpsi \
 		mpeg2::graphics/libmpeg2 \
 		avcodec::graphics/ffmpeg \
 		fribidi::devel/fribidi \
@@ -41,17 +41,29 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-logg" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
-CONFIGURE_ARGS+=--disable-oss \
+CONFIGURE_ARGS+=--disable-altivec \
+		--disable-oss \
 		--enable-sdl \
 		--enable-mad \
 		--disable-optimizations \
-		--disable-vcd \
 		--disable-dvd \
+		--disable-dvdnav \
+		--disable-dvbpsi \
+		--disable-vcd \
+		--disable-mod \
+		--disable-mkv \
+		--disable-dts \
+		--disable-wxwindows \
 		--disable-cddax \
 		--disable-skins2 \
 		--disable-speex \
-		--enable-faad
-
+		--enable-faad \
+		--disable-dvbpsi \
+		--disable-v4l \
+		--disable-pvr \
+		--disable-fb \
+		--disable-qnx \
+		--disable-slp
 
 FLAVORS=	no_dvd
 FLAVOR?=
@@ -60,12 +72,6 @@ FLAVOR?=
 SED_PLIST+=	|sed -e '/^IF${MACHINE_ARCH}:/s///'
 .else
 SED_PLIST+=	|sed -e '/^IFi386:/d'
-.endif
-
-.if ${MACHINE_ARCH} == "powerpc"
-SED_PLIST+=	|sed -e '/^IF${MACHINE_ARCH}:/s///'
-.else
-SED_PLIST+=	|sed -e '/^IFpowerpc:/d'
 .endif
 
 # XXX video window initialization fails without this
