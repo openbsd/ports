@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.7 2002/02/03 06:16:09 brad Exp $
---- Makefile.orig	Fri Jan 25 18:34:53 2002
-+++ Makefile	Sun Feb  3 00:38:08 2002
+$OpenBSD: patch-Makefile,v 1.8 2002/09/20 13:13:49 brad Exp $
+--- Makefile.orig	Sat Jan 26 01:34:53 2002
++++ Makefile	Fri Sep 20 12:16:57 2002
 @@ -11,9 +11,8 @@ LDFLAGS=
  BIGFILES=-D_FILE_OFFSET_BITS=64
  CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
@@ -127,9 +127,9 @@ $OpenBSD: patch-Makefile,v 1.7 2002/02/03 06:16:09 brad Exp $
 +	@cd $(DESTDIR)$(PREFIX)/bin; ln -fs bzdiff bzcmp
 +	$(BSD_INSTALL_MAN) bzip2.1 bzgrep.1 bzmore.1 bzdiff.1 \
 +			$(DESTDIR)$(PREFIX)/man/man1
-+	@cd $(DESTDIR)$(PREFIX)/man/man1; ln -fs bzip.1 bunzip2.1; \
-+			ln -fs bzip.1 bzcat.1; \
-+			ln -fs bzip.1 bzip2recover.1
++	@cd $(DESTDIR)$(PREFIX)/man/man1; ln -fs bzip2.1 bunzip2.1; \
++			ln -fs bzip2.1 bzcat.1; \
++			ln -fs bzip2.1 bzip2recover.1
 +	@cd $(DESTDIR)$(PREFIX)/man/man1; ln -fs bzgrep.1 bzegrep.1; \
 +			ln -fs bzgrep.1 bzfgrep.1
 +	@cd $(DESTDIR)$(PREFIX)/man/man1; ln -fs bzmore.1 bzless.1
