@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/08 11:46:11 reinhard Exp $
+bin/gtkballs
+man/man6/gtkballs.6
+share/doc/gtkballs/README
+share/doc/gtkballs/README.russian
+share/doc/gtkballs/TODO
+share/gtkballs/COPYING
+share/gtkballs/blue_ball.xpm
+share/gtkballs/brown_ball.xpm
+share/gtkballs/cyan_ball.xpm
+share/gtkballs/empty_cell.xpm
+share/gtkballs/green_ball.xpm
+share/gtkballs/gtkballs.xpm
+share/gtkballs/gtkballs_about.xpm
+share/gtkballs/paw_down_1.xpm
+share/gtkballs/paw_down_2.xpm
+share/gtkballs/paw_left_1.xpm
+share/gtkballs/paw_left_2.xpm
+share/gtkballs/paw_right_1.xpm
+share/gtkballs/paw_right_2.xpm
+share/gtkballs/paw_up_1.xpm
+share/gtkballs/paw_up_2.xpm
+share/gtkballs/pink_ball.xpm
+share/gtkballs/red_ball.xpm
+share/gtkballs/score
+share/gtkballs/small_blue_ball.xpm
+share/gtkballs/small_brown_ball.xpm
+share/gtkballs/small_cyan_ball.xpm
+share/gtkballs/small_green_ball.xpm
+share/gtkballs/small_pink_ball.xpm
+share/gtkballs/small_red_ball.xpm
+share/gtkballs/small_yellow_ball.xpm
+share/gtkballs/yellow_ball.xpm
+@dirrm share/gtkballs
+@dirrm share/doc/gtkballs

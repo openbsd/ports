@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/08 11:46:11 reinhard Exp $ 
+--- Makefile.orig	Tue Mar 30 12:30:09 1999
++++ Makefile	Thu Feb 15 12:42:03 2001
+@@ -1,20 +1,15 @@
+ #
+ # C compiler
+ #
+-CC?=cc
+-
+-#
+-# Installation prefix
+-#
+-PREFIX=/usr/local
++CC?=${CC}
+ 
+ #
+ # C options
+ #
+-CFLAGS = -Wall -pedantic -g
+ CFLAGS+= -DPREFIX=\"$(PREFIX)\"
+-CFLAGS+= `gtk-config --cflags` 
++CFLAGS+= $(CINC) 
+ CLIBS= `gtk-config --libs`
++CINC=  `gtk-config --cflags`
+ 
+ RM=rm -f
+ PROGS=gtkballs

@@ -1,0 +1,6 @@
+GtkBalls is a clone of the well-known game "Lines" using the
+Gtk+ library. It is a logic game - the idea is to put five or
+more balls of the same color in horizontal/vertical/diagonal
+line in order to remove them.
+
+WWW: ${HOMEPAGE}
