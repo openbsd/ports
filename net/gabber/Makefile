@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/16 00:31:21 alek Exp $
+# $OpenBSD: Makefile,v 1.8 2005/01/28 18:23:13 alek Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
 
 DISTNAME=		gabber-0.8.7
-PKGNAME=		${DISTNAME}p0
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		net x11/gnome
 
 HOMEPAGE=		http://gabber.sourceforge.net/
@@ -17,17 +17,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		audiofile esd gdk gdk_imlib gdk_pixbuf gdkmm glib \
-			gmodule gnome gnomecanvaspixbuf gnomesupport gnomeui \
+			gmodule gnome stdc++ tiff z gnomesupport gnomeui \
 			gtk gtkmm iconv intl jpeg ungif xml ICE SM X11 Xext \
-			Xi Xss art_lgpl c crypto freetype m png pthread ssl \
-			stdc++ tiff z
+			Xi Xss art_lgpl c crypto freetype m png pthread ssl
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gabber/}
 
 LIB_DEPENDS=		sigc.0::devel/libsigc++ gal.19::devel/gal \
 			gnomemm.9::x11/gnomemm \
 			glade.5,glade-gnome.5:libglade-*-gnome:devel/libglade,gnome \
-			gnomeprint.16::x11/gnome/print
+			gnomeprint.16::x11/gnome/print \
+			gnomecanvaspixbuf.1::graphics/gdk-pixbuf,-gnome
 
 RUN_DEPENDS=		:gnupg-*:security/gnupg \
 			:scrollkeeper->=0.1.12:textproc/scrollkeeper
