@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_libnet_resolve_c,v 1.1 2005/03/14 14:04:18 espie Exp $
+--- src/libnet_resolve.c.orig	Mon Mar 14 11:19:14 2005
++++ src/libnet_resolve.c	Mon Mar 14 11:38:17 2005
+@@ -35,10 +35,12 @@
+ #endif
+ #include "../include/libnet.h"
+ 
++#define MYBUFSIZE 512
++
+ u_char *
+ libnet_host_lookup(u_long in, u_short use_name)
+ {
+-    static u_char hostname[512], hostname2[512];
++    static u_char hostname[MYBUFSIZE], hostname2[MYBUFSIZE];
+     static u_short which;
+     u_char *p;
+ 
+@@ -63,7 +65,8 @@ libnet_host_lookup(u_long in, u_short us
+     {
+ 
+         p = (u_char *)&in;
+-        sprintf(((which % 2) ? hostname : hostname2),  "%d.%d.%d.%d",
++        snprintf(((which % 2) ? hostname : hostname2),  MYBUFSIZE, 
++		"%d.%d.%d.%d",
+                 (p[0] & 255), (p[1] & 255), (p[2] & 255), (p[3] & 255));
+     }
+     else if (use_name == LIBNET_RESOLVE)
+@@ -91,13 +94,12 @@ libnet_host_lookup_r(u_long in, u_short 
+     {
+ 
+         p = (u_char *)&in;
+-        sprintf(hostname, "%d.%d.%d.%d",
++        snprintf(hostname, MYBUFSIZE, "%d.%d.%d.%d",
+                 (p[0] & 255), (p[1] & 255), (p[2] & 255), (p[3] & 255));
+     }
+     else
+     {
+-        /* XXX - sizeof(hostname) == 4 bytes you moron.  FIX THAT. - r */
+-        strncpy(hostname, host_ent->h_name, sizeof(hostname));
++        strncpy(hostname, host_ent->h_name, MYBUFSIZE);
+     }
+ }
+ 
+@@ -175,7 +177,7 @@ libnet_get_ipaddr(struct libnet_link_int
+     fd = socket(PF_INET, SOCK_DGRAM, 0);
+     if (fd < 0)
+     {
+-        sprintf(ebuf, "socket: %s", strerror(errno));
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "socket: %s", strerror(errno));
+         return (0);
+     }
+ 

@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2005/03/14 14:04:18 espie Exp $
+--- src/libnet_link_bpf.c.orig	Mon Mar 14 11:23:41 2005
++++ src/libnet_link_bpf.c	Mon Mar 14 11:37:47 2005
+@@ -61,7 +61,7 @@ libnet_bpf_open(char *errbuf)
+      */
+     for (i = 0;;i++)
+     {
+-        sprintf(device, "/dev/bpf%d", i);
++        snprintf(device, sizeof(device), "/dev/bpf%d", i);
+ 
+         fd = open(device, O_RDWR);
+         if (fd == -1 && errno == EBUSY)
+@@ -83,7 +83,7 @@ libnet_bpf_open(char *errbuf)
+ 
+     if (fd == -1)
+     {
+-        sprintf(errbuf, "%s: %s", device, ll_strerror(errno));
++        snprintf(errbuf, LIBNET_ERRBUF_SIZE, "%s: %s", device, ll_strerror(errno));
+     }
+     return (fd);
+ }
+@@ -104,7 +104,7 @@ libnet_open_link_interface(char *device,
+     l = (struct libnet_link_int *)malloc(sizeof(*l));
+     if (!l)
+     {
+-        sprintf(ebuf, "malloc: %s", ll_strerror(errno));
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "malloc: %s", ll_strerror(errno));
+ #if (__DEBUG)
+         libnet_error(LN_ERR_CRITICAL, "bpf libnet_open_link_interface: malloc %s",
+                 ll_strerror(errno));
+@@ -125,13 +125,13 @@ libnet_open_link_interface(char *device,
+      */
+     if (ioctl(l->fd, BIOCVERSION, (caddr_t)&bv) < 0)
+     {
+-        sprintf(ebuf, "BIOCVERSION: %s", ll_strerror(errno));
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "BIOCVERSION: %s", ll_strerror(errno));
+         goto bad;
+     }
+ 
+     if (bv.bv_major != BPF_MAJOR_VERSION || bv.bv_minor < BPF_MINOR_VERSION)
+     {
+-        sprintf(ebuf, "kernel bpf filter out of date");
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "kernel bpf filter out of date");
+         goto bad;
+     }
+ 
+@@ -141,7 +141,7 @@ libnet_open_link_interface(char *device,
+     strncpy(ifr.ifr_name, device, sizeof(ifr.ifr_name));
+     if (ioctl(l->fd, BIOCSETIF, (caddr_t)&ifr) == -1)
+     {
+-        sprintf(ebuf, "%s: %s", device, ll_strerror(errno));
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "%s: %s", device, ll_strerror(errno));
+         goto bad;
+     }
+ 
+@@ -150,7 +150,7 @@ libnet_open_link_interface(char *device,
+      */
+     if (ioctl(l->fd, BIOCGDLT, (caddr_t)&v) == -1)
+     {
+-        sprintf(ebuf, "BIOCGDLT: %s", ll_strerror(errno));
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "BIOCGDLT: %s", ll_strerror(errno));
+         goto bad;
+     }
+ 
+@@ -161,7 +161,7 @@ libnet_open_link_interface(char *device,
+ #if defined(BIOCGHDRCMPLT) && defined(BIOCSHDRCMPLT)
+     if (ioctl(l->fd, BIOCSHDRCMPLT, &spoof_eth_src) == -1)
+     {
+-        sprintf(ebuf, "BIOCSHDRCMPLT: %s", ll_strerror(errno));
++        snprintf(ebuf, LIBNET_ERRBUF_SIZE, "BIOCSHDRCMPLT: %s", ll_strerror(errno));
+         goto bad;
+     }
+ #endif

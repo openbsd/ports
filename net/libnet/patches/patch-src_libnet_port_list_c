@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_libnet_port_list_c,v 1.1 2005/03/14 14:04:18 espie Exp $
+--- src/libnet_port_list.c.orig	Mon Mar 14 11:26:27 2005
++++ src/libnet_port_list.c	Mon Mar 14 11:28:58 2005
+@@ -256,16 +256,18 @@ libnet_plist_chain_dump_string(struct li
+     {
+         if (p->bport == p->eport)
+         {
+-            i = sprintf(&buf[j], "%d", p->bport);
++            i = snprintf(&buf[j], BUFSIZ-j, "%d", p->bport);
+         }
+         else
+         {
+-            i = sprintf(&buf[j], "%d-%d", p->bport, p->eport);
++            i = snprintf(&buf[j], BUFSIZ-j, "%d-%d", p->bport, p->eport);
+         }
+         j += i;
++	if (j >= BUFSIZ)
++		break;
+         if (p->next)
+         {
+-            sprintf(&buf[j++], ",");
++            snprintf(&buf[j++], BUFSIZ-j, ",");
+         }
+     }
+     return (strdup(buf));       /* XXX - reentrancy == no */

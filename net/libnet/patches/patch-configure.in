@@ -1,5 +1,5 @@
---- configure.in.orig	2001-01-17 21:59:30.000000000 +0100
-+++ configure.in	2003-12-31 10:41:03.000000000 +0100
+--- configure.in.orig	Wed Jan 17 21:59:30 2001
++++ configure.in	Mon Mar 14 11:18:27 2005
 @@ -33,6 +33,9 @@ AC_PREFIX_DEFAULT(/usr)
  
  if test "$prefix" = "NONE"; then
@@ -21,9 +21,9 @@
 -    CFLAGS="$CCOPTS"
 +dnl    CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
 +dnl    CFLAGS="$CCOPTS"
-+dnl fi
  dnl fi
 -fi
++dnl fi
  
  dnl
  dnl Check for package inclusion/exclusion

@@ -1,0 +1,63 @@
+$OpenBSD: patch-src_libnet_if_addr_c,v 1.1 2005/03/14 14:04:18 espie Exp $
+--- src/libnet_if_addr.c.orig	Mon Mar 14 11:25:21 2005
++++ src/libnet_if_addr.c	Mon Mar 14 11:37:14 2005
+@@ -64,7 +64,7 @@ libnet_ifaddrlist(register struct libnet
+     fd = socket(AF_INET, SOCK_DGRAM, 0);
+     if (fd < 0)
+     {
+-        sprintf(errbuf, "socket: %s", strerror(errno));
++        snprintf(errbuf, LIBNET_ERRBUF_SIZE, "socket: %s", strerror(errno));
+         return (-1);
+     }
+     ifc.ifc_len = sizeof(ibuf);
+@@ -74,7 +74,7 @@ libnet_ifaddrlist(register struct libnet
+             SIOCGIFCONF,
+             (char *)&ifc) < 0 || ifc.ifc_len < sizeof(struct ifreq))
+     {
+-        sprintf(errbuf, "SIOCGIFCONF: %s", strerror(errno));
++        snprintf(errbuf, LIBNET_ERRBUF_SIZE, "SIOCGIFCONF: %s", strerror(errno));
+         close(fd);
+         return (-1);
+     }
+@@ -110,7 +110,7 @@ libnet_ifaddrlist(register struct libnet
+         if (ioctl(fd, SIOCGIFFLAGS, (char *)&ifr) < 0)
+         {
+             if (errno == ENXIO) continue;
+-            sprintf(errbuf,
++            snprintf(errbuf, LIBNET_ERRBUF_SIZE,
+                     "SIOCGIFFLAGS: %.*s: %s",
+                     (int)sizeof(ifr.ifr_name),
+                      ifr.ifr_name,
+@@ -129,7 +129,7 @@ libnet_ifaddrlist(register struct libnet
+         device[sizeof(device) - 1] = '\0';
+         if (ioctl(fd, SIOCGIFADDR, (char *)&ifr) < 0)
+         {
+-            sprintf(errbuf, "SIOCGIFADDR: %s: %s", device, strerror(errno));
++            snprintf(errbuf, LIBNET_ERRBUF_SIZE, "SIOCGIFADDR: %s: %s", device, strerror(errno));
+             close(fd);
+             return (-1);
+         }
+@@ -170,12 +170,12 @@ libnet_select_device(struct sockaddr_in 
+     c = libnet_ifaddrlist(&address_list, err_buf);
+     if (c < 0)
+     {
+-        sprintf(errbuf, "ifaddrlist : %s\n", err_buf);
++        snprintf(errbuf, LIBNET_ERRBUF_SIZE, "ifaddrlist : %s\n", err_buf);
+         return (-1);
+     }
+     else if (c == 0)
+     {
+-        sprintf(errbuf, "No network interfaces found.\n");
++        snprintf(errbuf, LIBNET_ERRBUF_SIZE, "No network interfaces found.\n");
+         return (-1);
+     }
+     if (*device)
+@@ -189,7 +189,7 @@ libnet_select_device(struct sockaddr_in 
+         }
+         if (i <= 0)
+         {
+-            sprintf(errbuf, "Can't find interface %s\n", *device);
++            snprintf(errbuf, LIBNET_ERRBUF_SIZE, "Can't find interface %s\n", *device);
+             return (-1);
+         }
+     }

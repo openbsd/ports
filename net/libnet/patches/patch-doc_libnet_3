@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_libnet_3,v 1.1 2005/03/14 14:04:18 espie Exp $
+--- doc/libnet.3.orig	Mon Mar 14 11:33:02 2005
++++ doc/libnet.3	Mon Mar 14 11:33:34 2005
+@@ -19,7 +19,7 @@ supplementary and complementary function
+ 
+ For a much more verbose treatment of libnet, including verbosely commented
+ examples, please see the online web-based documentation at
+-http://www.packetfactory.net/libnet/manual/.
++http://www.packetfactory.net/projects/libnet/dist/deprecated/manual/.
+ 
+ .SH SYNOPSIS
+ .nf

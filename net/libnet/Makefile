@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2005/03/14 14:04:18 espie Exp $
 
 COMMENT=	"raw IP packet construction library"
 
 DISTNAME=	libnet-1.0.2a
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/deprecated/

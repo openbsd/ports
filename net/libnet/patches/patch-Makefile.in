@@ -1,5 +1,5 @@
---- Makefile.in.orig	2001-02-05 18:51:41.000000000 +0100
-+++ Makefile.in	2003-12-31 10:41:03.000000000 +0100
+--- Makefile.in.orig	Mon Feb  5 18:51:41 2001
++++ Makefile.in	Mon Mar 14 11:18:27 2005
 @@ -36,7 +36,7 @@ AR          =   @AR@
  LN          =   @LN@
  CC          =   @CC@
@@ -14,12 +14,12 @@
  		src/libnet_if_addr.o\
  		src/libnet_port_list.o 
 +SHOBJECTS=	$(OBJECTS:S/.o/.so/)
-+
+ 
 +PICFLAG= -fpic
 +SHLIB= $(LIBNET).so.0.0
 +
 +.SUFFIXES: .o .so
- 
++
  .c.o:
  	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEFINES) -c $< -o $@
  
