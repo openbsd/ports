@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/15 17:24:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/17 20:10:01 jakob Exp $
 
 COMMENT=	SIP Express Router
+
+ONLY_FOR_ARCHS= i386 sparc64
 
 VERSION=	0.8.10
 DISTNAME=	ser-${VERSION}_src
@@ -18,9 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-# This port currently only works with archs supporting dynamic loading
-ONLY_FOR_ARCHS= alpha i386 m68k powerpc sparc sparc64
 
 WRKDIST=	${WRKDIR}/ser-${VERSION}
 
