@@ -1,6 +1,6 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2002/03/04 16:13:05 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Mon Feb 18 13:46:20 2002
-+++ mkspecs/openbsd-g++/qmake.conf	Tue Feb 26 18:48:36 2002
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.2 2002/03/28 11:47:18 espie Exp $
+--- mkspecs/openbsd-g++/qmake.conf.orig	Mon Mar 18 10:45:57 2002
++++ mkspecs/openbsd-g++/qmake.conf	Thu Mar 28 03:28:04 2002
 @@ -8,6 +8,7 @@ MAKEFILE_GENERATOR	= UNIX
  TEMPLATE		= app
  CONFIG			+= qt warn_on release
@@ -20,3 +20,11 @@ $OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.1.1.1 2002/03/04 16:13:05 esp
  QMAKE_INCDIR_X11	= /usr/X11R6/include
  QMAKE_LIBDIR_X11	= /usr/X11R6/lib
  QMAKE_INCDIR_QT		= $(QTDIR)/include
+@@ -58,6 +59,7 @@ QMAKE_LFLAGS_THREAD	= -pthread
+ QMAKE_LIBS		=
+ QMAKE_LIBS_DYNLOAD	=
+ QMAKE_LIBS_X11		= -lXext -lX11 -lm
++QMAKE_LIBS_X11SM	= -lICE -lSM
+ QMAKE_LIBS_QT		= -lqt
+ QMAKE_LIBS_QT_THREAD	= -lqt-mt
+ QMAKE_LIBS_OPENGL	= -lGLU -lGL -lXmu
