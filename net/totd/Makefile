@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/06/11 01:15:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/11 01:22:05 fgsch Exp $
 # $NetBSD: Makefile,v 1.3 2000/01/21 10:01:23 itojun Exp $
 
 DISTNAME=	totd-1.1p4
@@ -14,12 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=         ${WRKDIR}/totd-1.1p4
-
 CONFIGURE_STYLE=	gnu
 
-pre-install:
-	echo mierda
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/totd
 	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/share/totd
 
