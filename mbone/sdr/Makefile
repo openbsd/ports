@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.5 1999/09/03 16:12:40 angelos Exp $
+#   $OpenBSD: Makefile,v 1.6 1999/09/04 23:24:31 angelos Exp $
 
 DISTNAME=	sdr-2.7e
 CATEGORIES=	mbone
@@ -23,6 +23,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/src/libs.tcl
 	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/configure ${WRKSRC}
+	@${CP} ${FILESDIR}/image_directory.xbm ${WRKSRC}/sdr/src/
 	@${CHMOD} 755 ${WRKSRC}/configure
 
 post-install:
