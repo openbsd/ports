@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/11/13 15:24:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2002/01/25 00:56:46 jsyn Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -12,11 +12,11 @@
      SUBDIR += cooledit,python
 #    SUBDIR += e93
      SUBDIR += ee
+     SUBDIR += elvis
+     SUBDIR += elvis,no_x11
      SUBDIR += emacs
      SUBDIR += emacs,no_X11
      SUBDIR += emacs-leim
-     SUBDIR += elvis
-     SUBDIR += elvis,no_x11
      SUBDIR += hexedit
      SUBDIR += hnb 
      SUBDIR += jed

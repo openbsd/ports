@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2002/01/23 20:53:48 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2002/01/25 00:56:46 jsyn Exp $
 
-    SUBDIR += uae
     SUBDIR += bochs
-    SUBDIR += bochs:debug
-    SUBDIR += frodo
+    SUBDIR += bochs,debug
     SUBDIR += freebsd_lib
+    SUBDIR += frodo
     SUBDIR += ines
     SUBDIR += mastergear
     SUBDIR += redhat
     SUBDIR += simh
     SUBDIR += snes9x
     SUBDIR += spim
+    SUBDIR += uae
     SUBDIR += vgb
     SUBDIR += wine
     SUBDIR += x48
