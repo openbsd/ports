@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/08/04 19:20:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/09 17:53:34 xsa Exp $
 
 COMMENT=	"powerful IMAP/Maildir synchronization and reader support"
 
-DISTNAME=	offlineimap_4.0.6
+DISTNAME=	offlineimap_4.0.8
 CATEGORIES=	mail
 PKGNAME=        ${DISTNAME:S/_/-/}
 
