@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/08/25 15:34:13 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2000/08/25 21:12:44 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.2
@@ -87,9 +87,9 @@ TK_INCDIR=	${LOCALBASE}/include/tk8.3
 MAKE_ENV=	USE_TCL=true TCL_INCDIR="${TCL_INCDIR}" TK_INCDIR="${TK_INCDIR}"
 CONFIGURE_ARGS+= --with-tcl \
 		--with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3" \
-		--with-includes="${PREFIX}/include ${TCL_INCDIR} ${TK_INCDIR}"
+		--with-includes="${LOCALBASE}/include ${TCL_INCDIR} ${TK_INCDIR}"
 .else
-CONFIGURE_ARGS+= --with-includes="${PREFIX}/include"
+CONFIGURE_ARGS+= --with-includes="${LOCALBASE}/include"
 .endif
 
 DOCDIR=		${WRKSRC}/../doc
@@ -120,7 +120,7 @@ post-patch:
 
 post-build:
 	@mkdir -p ${WRKBUILD}/pgwrap
-	@cp ${FILESDIR}/pgwrap.c ${FILESDIR}/pgwrap.h ${WRKBUILD}/pgwrap
+	@cp ${FILESDIR}/{pgwrap.c,pgwrap.h} ${WRKBUILD}/pgwrap
 	@sed -e "s,@PGUSER@,${PGUSER},g" -e "s,@PGBIN@,${PGBIN},g" \
 		-e "s,@PGLIB@,${PGLIB},g" -e "s,@PGDATA@,${PGDATA},g" \
 		-e "s,@PREFIX@,${PREFIX},g" < ${FILESDIR}/Makefile.in \
@@ -128,7 +128,7 @@ post-build:
 	@sed -e "s,@PREFIX@,${PREFIX},g" \
 		< ${FILESDIR}/README.OpenBSD.in \
 		> ${WRKSRC}/../README.OpenBSD
-	(cd ${WRKBUILD}/pgwrap; ${MAKE} depend && ${MAKE})
+	@cd ${WRKBUILD}/pgwrap && ${MAKE} depend && ${MAKE}
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/pgwrap/pgwrap ${PREFIX}/bin
