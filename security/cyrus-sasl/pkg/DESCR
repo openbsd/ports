@@ -12,4 +12,4 @@ WWW: ${HOMEPAGE}
 
 Availible flavors:
 
-  db - use the the berkeley db library from databases/db
+  db - use the berkeley db library from databases/db

@@ -9,7 +9,7 @@ The game can either run in windowed mode or in fullscreen mode. You
 can (usually) switch between them during play by pressing Alt-Enter.
 
 The play area (apart from the score/lives/etc. display) is square
-and centred, just like in the the original Hyperoid did. This might
+and centred, just like in the original Hyperoid did. This might
 change, but for now that is how it works.
 
 WWW: ${HOMEPAGE}
