@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_fe_common_core_fe_settings_c,v 1.1 2004/03/08 03:11:03 pvalchev Exp $
+--- src/fe-common/core/fe-settings.c.orig	Wed Mar  3 15:15:39 2004
++++ src/fe-common/core/fe-settings.c	Wed Mar  3 15:16:47 2004
+@@ -83,6 +83,10 @@
+ 			    "set", &optlist, &key, &value))
+ 		return;
+ 
++	if (*key == '\0') {
++		cmd_params_free(free_arg);
++		return;
++	}
+ 	clear = g_hash_table_lookup(optlist, "clear") != NULL;
+ 	set_default = g_hash_table_lookup(optlist, "default") != NULL;
+ 
