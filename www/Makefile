@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2004/05/26 13:59:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.141 2004/06/11 08:05:32 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -119,6 +119,9 @@
      SUBDIR += reportmagic
      SUBDIR += snownews
      SUBDIR += squid
+     SUBDIR += squid,snmp
+     SUBDIR += squid,snmp,transparent
+     SUBDIR += squid,transparent
      SUBDIR += surfraw
      SUBDIR += thttpd
      SUBDIR += tidy
