@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/12/27 23:31:16 jose Exp $
+# $OpenBSD: Makefile,v 1.10 2004/03/04 01:48:02 naddy Exp $
 
 CATEGORIES=	math devel graphics
 
@@ -23,7 +23,7 @@ CONFIGURE_ENV=TCLCONFIG=${LOCALBASE}/lib/tcl8.4/tclConfig.sh \
 	TKCONFIG=${LOCALBASE}/lib/tk8.4/tkConfig.sh \
 	LIBS=-lz \
 	LDFLAGS=-L${LOCALBASE}/lib \
-	CPPFLAGS='-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4'
+	CPPFLAGS='-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${X11BASE}/include'
 
 CONFIGURE_ARGS=	--with-freetypeincludedir=${X11BASE}/include/freetype2 \
 		--with-pngincludedir=${LOCALBASE}/include/libpng
@@ -51,9 +51,6 @@ AUTOCONF_VERSION=	2.13
 BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
 		::devel/metaauto \
 		::devel/automake
-
-pre-configure:
-	@rm ${WRKDIR}/bin/automake ${WRKDIR}/bin/aclocal
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/graphviz
