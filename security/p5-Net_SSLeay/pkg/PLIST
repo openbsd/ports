@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/09/26 04:50:42 shell Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/12/09 11:15:30 shell Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/SSLeay.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/SSLeay/Handle.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/ptrtstrun.pl
@@ -8,18 +8,30 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/debug_read.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/do_https.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/do_https2.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/do_https3.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/do_https4.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/dump_peer_certificate.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/get_https.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/get_https3.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/get_https4.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/head_https.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/head_https3.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/head_https4.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/https_cat.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/make_form.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/make_headers.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/new_x_ctx.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/open_proxy_tcp_connection.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/open_tcp_connection.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/post_https.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/post_https3.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/post_https4.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/put_https.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/put_https3.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/put_https4.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/randomize.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/set_cert_and_key.al
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/set_proxy.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/set_server_cert_and_key.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/ssl_read_CRLF.al
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/SSLeay/ssl_read_all.al
@@ -35,6 +47,7 @@ man/man3/Net::SSLeay.3p
 man/man3/Net::SSLeay::Handle.3p
 share/examples/p5-Net-SSLeay/bulk.pl
 share/examples/p5-Net-SSLeay/callback.pl
+share/examples/p5-Net-SSLeay/cli-cert.pl
 share/examples/p5-Net-SSLeay/get_authenticated_page.pl
 share/examples/p5-Net-SSLeay/get_page.pl
 share/examples/p5-Net-SSLeay/https-proxy-snif.pl
