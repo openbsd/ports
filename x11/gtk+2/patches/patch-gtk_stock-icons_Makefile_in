@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_stock-icons_Makefile_in,v 1.1 2003/09/23 06:12:41 marcm Exp $
+--- gtk/stock-icons/Makefile.in.orig	2003-09-04 10:18:44.000000000 -0700
++++ gtk/stock-icons/Makefile.in	2003-09-05 14:43:19.000000000 -0700
+@@ -446,7 +446,7 @@ VARIABLES6 = @STRIP_BEGIN@ 									\
+ noinst_DATA = gtkstockpixbufs.h
+ CLEANFILES = $(noinst_DATA)
+ @CROSS_COMPILING_TRUE@pixbuf_csource = @CROSS_COMPILING_TRUE@$(GDK_PIXBUF_CSOURCE)
+-@CROSS_COMPILING_FALSE@pixbuf_csource = @CROSS_COMPILING_FALSE@GDK_PIXBUF_MODULE_FILE=$(top_builddir)/gdk-pixbuf/gdk-pixbuf.loaders $(top_builddir)/gdk-pixbuf/gdk-pixbuf-csource
++@CROSS_COMPILING_FALSE@pixbuf_csource = @CROSS_COMPILING_FALSE@LD_LIBRARY_PATH=$(top_builddir)/gdk-pixbuf/.libs GDK_PIXBUF_MODULE_FILE=$(top_builddir)/gdk-pixbuf/gdk-pixbuf.loaders $(top_builddir)/gdk-pixbuf/gdk-pixbuf-csource
+ @CROSS_COMPILING_TRUE@pixbuf_csource_deps = 
+ @CROSS_COMPILING_FALSE@pixbuf_csource_deps = @CROSS_COMPILING_FALSE@$(top_builddir)/gdk-pixbuf/gdk-pixbuf-csource $(top_builddir)/gdk-pixbuf/gdk-pixbuf.loaders
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.4 2003/06/30 03:57:38 marcm Exp $
---- modules/Makefile.in.orig	Sun Jun  8 21:41:47 2003
-+++ modules/Makefile.in	Thu Jun 19 09:18:58 2003
-@@ -123,6 +123,7 @@ WIN32_LIBS = @WIN32_LIBS@
+$OpenBSD: patch-modules_Makefile_in,v 1.5 2003/09/23 06:12:41 marcm Exp $
+--- modules/Makefile.in.orig	2003-08-27 08:39:02.000000000 -0700
++++ modules/Makefile.in	2003-09-05 11:47:52.000000000 -0700
+@@ -119,6 +119,7 @@ WIN32_LIBS = @WIN32_LIBS@
  XFT_CFLAGS = @XFT_CFLAGS@
  XFT_LIBS = @XFT_LIBS@
  ms_librarian = @ms_librarian@
@@ -9,7 +9,7 @@ $OpenBSD: patch-modules_Makefile_in,v 1.4 2003/06/30 03:57:38 marcm Exp $
  
  SUBDIRS = \
  	arabic		\
-@@ -344,21 +345,11 @@ maintainer-clean-generic clean mostlycle
+@@ -340,21 +341,11 @@ maintainer-clean-generic clean mostlycle
  
  
  install-data-local:

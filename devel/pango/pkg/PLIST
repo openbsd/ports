@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:52:47 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/23 06:12:41 marcm Exp $
 bin/pango-querymodules
 include/pango-1.0/pango/pango-attributes.h
 include/pango-1.0/pango/pango-break.h
@@ -85,6 +85,7 @@ share/gtk-doc/html/pango/PangoMarkupFormat.html
 share/gtk-doc/html/pango/home.png
 share/gtk-doc/html/pango/index.html
 share/gtk-doc/html/pango/index.sgml
+share/gtk-doc/html/pango/ix01.html
 share/gtk-doc/html/pango/layout.gif
 share/gtk-doc/html/pango/left.png
 share/gtk-doc/html/pango/lowlevel.html

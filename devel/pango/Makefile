@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/08/13 16:57:51 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/09/23 06:12:41 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.2.3
+DISTNAME=		pango-1.2.5
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=		glib-2.0.0.8,gmodule-2.0.0.8,gobject-2.0.0.8::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 # library versions (major:minor)
-OBSD_LIB_VERSION=	0:9
+OBSD_LIB_VERSION=	0:11
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

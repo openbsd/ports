@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2003/08/24 20:48:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/09/23 06:12:41 marcm Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.2.2
+VERSION=			2.2.4
 DISTNAME=			gtk+-${VERSION}
 PKGNAME=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
@@ -37,7 +37,7 @@ BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-OBSD_LIB_VERSION=		0:12
+OBSD_LIB_VERSION=		0:14
 
 USE_X11=			Yes
 USE_GMAKE=			Yes

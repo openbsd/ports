@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2003/06/30 03:55:29 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/09/23 06:12:41 marcm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
 
-VERSION=		2.2.2
+VERSION=		2.2.3
 DISTNAME=		glib-${VERSION}
 PKGNAME=		glib2-${VERSION}
 PKGNAME-docs=           glib2-docs-${VERSION}
@@ -30,7 +30,7 @@ BUILD_DEPENDS=          :pkgconfig->=0.14:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-OBSD_LIB_VERSION=	0:10
+OBSD_LIB_VERSION=	0:11
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		simple

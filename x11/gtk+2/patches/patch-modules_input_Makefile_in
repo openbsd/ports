@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_input_Makefile_in,v 1.4 2003/06/30 03:59:03 marcm Exp $
---- modules/input/Makefile.in.orig	Mon Jun  9 14:26:12 2003
-+++ modules/input/Makefile.in	Thu Jun 19 09:54:26 2003
-@@ -823,7 +823,8 @@ install-data-local:
+$OpenBSD: patch-modules_input_Makefile_in,v 1.5 2003/09/23 06:12:41 marcm Exp $
+--- modules/input/Makefile.in.orig	2003-09-04 10:18:53.000000000 -0700
++++ modules/input/Makefile.in	2003-09-05 13:45:46.000000000 -0700
+@@ -856,7 +856,8 @@ install-data-local:
          fi
  
  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
