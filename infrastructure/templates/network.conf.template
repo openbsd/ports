@@ -1,7 +1,8 @@
-# $OpenBSD: network.conf.template,v 1.63 2003/06/13 12:56:31 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.64 2003/06/15 21:10:45 avsm Exp $
 
 #
-# NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
+# NEVER EDIT THIS FILE DIRECTLY!!!! 
+# ALWAYS COPY IT TO ../db/network.conf FIRST.
 #
 
 # Default OpenBSD backup site
