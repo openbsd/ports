@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/03 12:43:46 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/20 11:04:48 form Exp $
 
-DISTNAME=	analog4.02
-PKGNAME=	analog-4.02
+DISTNAME=	analog4.03
+PKGNAME=	analog-4.03
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
@@ -15,6 +15,13 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		ftp://ftp.netcasting.net/pub/packages/analog/
 
 MAINTAINER=	form@OpenBSD.ORG
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+FAKE=		Yes
 
 ETCDIR=		/etc
 ANALOGDIR=	${PREFIX}/lib/analog
@@ -46,8 +53,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${ANALOGDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${ANALOGDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${ANALOGDIR}
-
-post-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
