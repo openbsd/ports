@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/19 15:00:46 danh Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/23 00:20:23 brad Exp $
 
 DISTNAME=	cucipop-1.31
 CATEGORIES=	mail
@@ -20,9 +20,9 @@ FLAVORS=	no_ipv6
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_ipv6}
-MAKE_FLAGS=	CFLAGS="${CFLAGS}" LDFLAGS=""
+MAKE_FLAGS=	CFLAGS="${CFLAGS}" LDFLAGS="" MD5_OBJ=""
 .else
-MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS=""
+MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
 .endif
 
 post-patch:
