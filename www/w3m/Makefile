@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/29 11:41:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2001/09/29 14:57:52 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -14,7 +14,7 @@ V_IMG=		1.10
 V_M17N=		0.19
 
 DISTNAME=	w3m-${V_BASE}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	www
 NEED_VERSION=	1.427
 HOMEPAGE=	http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/
@@ -59,11 +59,11 @@ ERRORS+=	"Fatal: Flavors 'image' and 'm17n' are mutually exclusive."
 
 .if  ${FLAVOR:L:Mimage}
 
-PKGNAME=	${DISTNAME}.${V_IMG}
+PKGNAME=	${DISTNAME}.${V_IMG}p1
 PATCHFILES=	${IMG_PATCH}
 HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/
 DOCS+=		README.img
-PATCH_LIST+=	base-mimehead_c
+PATCH_LIST+=	base-mimehead_c base-url_c
 LIB_DEPENDS+=	Imlib.19::graphics/imlib
 
 .elif ${FLAVOR:L:Mm17n}
