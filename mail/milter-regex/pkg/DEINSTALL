@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2004/01/07 14:57:34 dhartmei Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2004/04/15 07:34:11 xsa Exp $
 #
 # milter-regex de-installation
 
@@ -8,15 +8,17 @@ DIR=/var/spool/milter-regex
 USER=_milter-regex
 GROUP=_milter-regex
 
-echo
-echo "+---------------"
-echo "| To completely deinstall the $1 package you need to perform"
-echo "| these steps as root:"
-echo "|"
-echo "|	      userdel $USER"
-echo "|	      groupdel $GROUP"
-echo "|	      rm -rf $DIR"
-echo "+---------------"
-echo
+if [ ${PKG_DELETE_EXTRA} != Yes -a -d $DIR ]; then
+	echo
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to perform"
+	echo "| these steps as root:"
+	echo "|"
+	echo "|	      userdel $USER"
+	echo "|	      groupdel $GROUP"
+	echo "|	      rm -rf $DIR"
+	echo "+---------------"
+	echo
+fi
 
 exit 0

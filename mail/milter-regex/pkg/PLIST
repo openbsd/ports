@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1 2003/10/19 17:54:06 dhartmei Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/15 07:34:11 xsa Exp $
 libexec/milter-regex
 man/man8/milter-regex.8
+@extraunexec rm -rf /var/spool/milter-regex
+@extraunexec userdel _milter-regex
+@extraunexec groupdel _milter-regex

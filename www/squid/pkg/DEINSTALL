@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.8 2003/07/08 20:43:21 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.9 2004/04/15 07:34:11 xsa Exp $
 #
 # Squid de-installation
 
@@ -10,21 +10,21 @@ SQUIDDIR=${SQUIDDIR}
 SQUIDUSER=_squid
 SQUIDGROUP=_squid
 
-echo
-echo "+---------------"
-echo "| To completely deinstall the $1 package you need to perform"
-echo "| these steps as root:"
-echo "|"
-echo "|           userdel $SQUIDUSER"
-echo "|           groupdel $SQUIDGROUP"
-echo "|           rm -rf $CONFIG_DIR"
-echo "|           rm -rf $PREFIX/share/squid"
-echo "|           rm -rf $SQUIDDIR"
-echo "|           rm -f /var/run/squid.pid"
-echo "|"
-echo "| Do not do this if you plan on re-installing $1"
-echo "| at some future time."
-echo "+---------------"
-echo
+if [ ${PKG_DELETE_EXTRA} != Yes -a -d $CONFIG_DIR ]; then
+	echo "+---------------"
+	echo "| To completely deinstall the $1 package you need to perform"
+	echo "| these steps as root:"
+	echo "|"
+	echo "|           userdel $SQUIDUSER"
+	echo "|           groupdel $SQUIDGROUP"
+	echo "|           rm -rf $CONFIG_DIR"
+	echo "|           rm -rf $PREFIX/share/squid"
+	echo "|           rm -rf $SQUIDDIR"
+	echo "|           rm -f /var/run/squid.pid"
+	echo "|"
+	echo "| Do not do this if you plan on re-installing $1"
+	echo "| at some future time."
+	echo "+---------------"
+fi
 
 exit 0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/03/03 01:20:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/04/15 07:34:11 xsa Exp $
 bin/RunAccel
 bin/RunCache
 bin/squidclient
@@ -882,3 +882,10 @@ share/examples/squid/squid.conf
 @dirrm share/examples/squid/errors/Bulgarian
 @dirrm share/examples/squid/errors
 @dirrm share/examples/squid
+@extraunexec rm -rf ${SYSCONFDIR}/squid
+@extraunexec rm -rf ${PREFIX}/share/squid
+@extraunexec rm -rf /var/squid
+@cwd /var/run
+@extra squid.pid
+@extraunexec userdel _squid
+@extraunexec groupdel _squid
