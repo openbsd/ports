@@ -1,0 +1,12 @@
+$OpenBSD: patch-contrib_xmindpath_pathnames_h,v 1.1 2002/09/27 16:24:42 pvalchev Exp $
+--- contrib/xmindpath/pathnames.h.orig	Fri Sep 27 01:36:26 2002
++++ contrib/xmindpath/pathnames.h	Fri Sep 27 01:37:26 2002
+@@ -38,7 +38,7 @@
+ #endif
+ 
+ #define	_PATH_ACULOG		"/var/log/aculog"
+-#if defined(__NetBSD__) || defined(__FreeBSD__)
++#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define	_PATH_LOCKDIRNAME	"/var/spool/lock/LCK..%s"
+ #else
+ #define	_PATH_LOCKDIRNAME	"/var/spool/uucp/LCK..%s"

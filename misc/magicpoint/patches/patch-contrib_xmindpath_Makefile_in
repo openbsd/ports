@@ -1,0 +1,14 @@
+$OpenBSD: patch-contrib_xmindpath_Makefile_in,v 1.1 2002/09/27 16:24:42 pvalchev Exp $
+--- contrib/xmindpath/Makefile.in.orig	Fri Sep 27 01:41:37 2002
++++ contrib/xmindpath/Makefile.in	Fri Sep 27 01:43:19 2002
+@@ -24,8 +24,8 @@ main.o:	$(srcdir)/main.c
+ uucplock.o:	$(srcdir)/uucplock.c
+ 
+ install::
+-	$(INSTALL) -s -o uucp -g bin -m 4755 $(TARGET) $(bindir)
+-	$(INSTALL) -o bin -g bin -m 444 $(TARGET).1 $(mandir)/man1
++	$(INSTALL) -s -o root -g bin $(TARGET) $(bindir)
++	$(INSTALL) -o root -g bin -m 444 $(TARGET).1 $(mandir)/man1
+ 
+ includes::
+ 
