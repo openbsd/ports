@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2002/07/19 22:44:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.142 2002/07/23 07:58:32 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -140,7 +140,6 @@
      SUBDIR += unclutter
      SUBDIR += viewfax
      SUBDIR += windowmaker
-     SUBDIR += windowmaker,i18n
      SUBDIR += windowmaker-extra
      SUBDIR += wmbutton
      SUBDIR += wmcalclock
