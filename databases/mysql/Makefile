@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/03/24 22:07:08 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2001/03/27 00:04:28 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database"
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR= MySQL-3.23
 
 HOMEPAGE=	http://www.mysql.com/
 
-LIB_DEPENDS=	pthread.13::devel/pth
+LIB_DEPENDS=	pthread.14::devel/pth
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -40,8 +40,8 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-readline \
 		 --without-bench \
 		 --without-mit-threads
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
+		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
