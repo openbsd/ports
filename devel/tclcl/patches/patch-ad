@@ -1,6 +1,15 @@
---- Makefile.in.orig	Fri Jul 14 06:47:54 2000
-+++ Makefile.in	Fri Jul 14 06:52:19 2000
-@@ -99,6 +99,11 @@
+--- Makefile.in.orig	Tue Nov 30 03:20:09 1999
++++ Makefile.in	Fri Mar 16 19:31:07 2001
+@@ -66,7 +66,7 @@ INCLUDES = \
+ LIB	= \
+ 	@V_LIBS@
+ 
+-CFLAGS	= $(CCOPT) $(DEFINE)
++CFLAGS	= @CFLAGS@ $(DEFINE)
+ 
+ # Explicitly define compilation rules since SunOS 4's make doesn't like gcc.
+ # Also, gcc does not remove the .o before forking 'as', which can be a
+@@ -99,6 +99,11 @@ TCL_82_LIBRARY_FILES = \
  	$(LIBRARY_TCL)/history.tcl \
  	$(LIBRARY_TCL)/word.tcl \
  	$(LIBRARY_TCL)/http2.1/http.tcl
