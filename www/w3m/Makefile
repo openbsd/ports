@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2001/12/22 16:14:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2002/01/07 18:16:12 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
 COMMENT-japanese=	"Japanese text-based web browser/pager"
 
-DISTNAME=	w3m-0.2.3.2
+DISTNAME=	w3m-0.2.4
 CATEGORIES=	www
 NEED_VERSION=	1.498
 HOMEPAGE=	http://w3m.sourceforge.net/
