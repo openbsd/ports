@@ -4,7 +4,7 @@
 # OpenBSD port by: Gregory Steuck <greg@nest.cx>
 #
 # $FreeBSD: ports/devel/cook/Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
-# $OpenBSD: Makefile,v 1.2 2000/06/27 02:06:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/27 05:59:48 kevlo Exp $
 #
 
 DISTNAME=	cook-2.15
@@ -13,9 +13,10 @@ NEED_VERSION=	1.307
 
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 
+HOMEPAGE=       http://www.canb.auug.org.au/~millerp/cook/
+
 MAINTAINER=	greg@nest.cx
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
