@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/03/15 09:20:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 1999/08/02 21:51:34 niklas Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += kaffe
      SUBDIR += kaffe1
 #    SUBDIR += lcc
+     SUBDIR += libgcj
 #    SUBDIR += logo
      SUBDIR += mawk
 #    SUBDIR += mit-scheme
