@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/22 18:18:44 espie Exp $
 @mode 2555
 @group games
 bin/kobodl
@@ -123,4 +123,7 @@ share/kobodeluxe/sfx/tububells2.agw
 share/kobodeluxe/sfx/warmpad1.agw
 share/kobodeluxe/sfx/xylophone1.agw
 share/kobodeluxe/sfx/xylophone2.agw
-@extraunexec rm -rf /var/games/kobodeluxe
+@mode 775
+@group games
+@sample /var/games/kobodeluxe/
+@extraunexec rm  /var/games/kobodeluxe/* 2>/dev/null || true
