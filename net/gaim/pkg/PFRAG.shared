@@ -1,6 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.22 2004/04/24 08:04:13 brad Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.23 2004/06/25 20:52:11 brad Exp $
 lib/gaim/autorecon.so
 lib/gaim/docklet.so
+lib/gaim/extplacement.so
 lib/gaim/gaim-remote.so
 lib/gaim/gestures.so
 lib/gaim/history.so

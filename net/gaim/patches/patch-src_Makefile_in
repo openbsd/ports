@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2004/06/02 19:16:26 brad Exp $
---- src/Makefile.in.orig	2004-05-30 13:18:41.000000000 -0400
-+++ src/Makefile.in	2004-05-31 23:59:20.000000000 -0400
-@@ -603,7 +603,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
+$OpenBSD: patch-src_Makefile_in,v 1.5 2004/06/25 20:52:10 brad Exp $
+--- src/Makefile.in.orig	2004-06-24 18:51:32.000000000 -0600
++++ src/Makefile.in	2004-06-25 13:20:20.000000000 -0600
+@@ -620,7 +620,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUD
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
  	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

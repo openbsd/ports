@@ -1,10 +1,78 @@
-@comment $OpenBSD: PLIST,v 1.31 2004/06/02 19:16:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.32 2004/06/25 20:52:11 brad Exp $
 bin/gaim
 bin/gaim-remote
-include/gaim-remote/remote-socket.h
-include/gaim-remote/remote.h
+include/gaim/account.h
+include/gaim/accountopt.h
+include/gaim/away.h
+include/gaim/blist.h
+include/gaim/buddyicon.h
+include/gaim/cmds.h
+include/gaim/config.h
+include/gaim/connection.h
+include/gaim/conversation.h
+include/gaim/core.h
+include/gaim/debug.h
+include/gaim/dnd-hints.h
+include/gaim/eventloop.h
+include/gaim/ft.h
+include/gaim/gaim-disclosure.h
+include/gaim/gaim.h
+include/gaim/gtkaccount.h
+include/gaim/gtkblist.h
+include/gaim/gtkcellrendererprogress.h
+include/gaim/gtkconn.h
+include/gaim/gtkconv.h
+include/gaim/gtkdebug.h
+include/gaim/gtkeventloop.h
+include/gaim/gtkft.h
+include/gaim/gtkimhtml.h
+include/gaim/gtkimhtmltoolbar.h
+include/gaim/gtkinternal.h
+include/gaim/gtklog.h
+include/gaim/gtknotify.h
+include/gaim/gtkplugin.h
+include/gaim/gtkpluginpref.h
+include/gaim/gtkpounce.h
+include/gaim/gtkprefs.h
+include/gaim/gtkprivacy.h
+include/gaim/gtkrequest.h
+include/gaim/gtkroomlist.h
+include/gaim/gtksound.h
+include/gaim/gtksourceiter.h
+include/gaim/gtkutils.h
+include/gaim/imgstore.h
+include/gaim/internal.h
+include/gaim/log.h
+include/gaim/md5.h
+include/gaim/multi.h
+include/gaim/network.h
+include/gaim/notify.h
+include/gaim/plugin.h
+include/gaim/pluginpref.h
+include/gaim/pounce.h
+include/gaim/prefs.h
+include/gaim/privacy.h
+include/gaim/proxy.h
+include/gaim/prpl.h
+include/gaim/remote-socket.h
+include/gaim/remote.h
+include/gaim/request.h
+include/gaim/roomlist.h
+include/gaim/server.h
+include/gaim/sha.h
+include/gaim/signals.h
+include/gaim/sound.h
+include/gaim/sslconn.h
+include/gaim/status.h
+include/gaim/stock.h
+include/gaim/stringref.h
+include/gaim/ui.h
+include/gaim/util.h
+include/gaim/value.h
+include/gaim/xmlnode.h
 @comment lib/gaim/autorecon.la
 @comment lib/gaim/docklet.la
+@comment lib/gaim/extplacement.la
 @comment lib/gaim/gaim-remote.la
 @comment lib/gaim/gestures.la
 @comment lib/gaim/history.la
@@ -30,6 +98,7 @@ include/gaim-remote/remote.h
 @comment lib/gaim/ticker.la
 @comment lib/gaim/timestamp.la
 @comment lib/libgaim-remote.la
+lib/pkgconfig/gaim.pc
 man/man1/gaim-remote.1
 man/man1/gaim.1
 share/applications/gaim.desktop
@@ -338,4 +407,4 @@ share/sounds/gaim/send.wav
 @dirrm share/pixmaps/gaim
 @dirrm share/pixmaps
 @dirrm share/applications
-@dirrm include/gaim-remote
+@dirrm include/gaim
