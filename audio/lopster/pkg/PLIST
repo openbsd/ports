@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:16:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2005/01/23 21:42:49 naddy Exp $
 bin/lopster
 share/lopster/
 share/lopster/pixmaps/
@@ -29,6 +29,10 @@ share/lopster/pixmaps/project.xpm
 share/lopster/pixmaps/search.xpm
 share/lopster/pixmaps/server.xpm
 share/lopster/pixmaps/server_con.xpm
+share/lopster/pixmaps/server_deact.xpm
+share/lopster/pixmaps/server_napi.xpm
+share/lopster/pixmaps/server_nnapi.xpm
+share/lopster/pixmaps/server_perm.xpm
 share/lopster/pixmaps/share_all.xpm
 share/lopster/pixmaps/share_none.xpm
 share/lopster/pixmaps/share_part.xpm
