@@ -1,0 +1,11 @@
+--- icmp_rdp.c.orig	Wed Nov 24 06:16:31 1999
++++ icmp_rdp.c	Wed Nov 24 06:17:32 1999
+@@ -384,7 +384,7 @@
+ 
+   memcpy(&ip_packet, packet + 14, sizeof(struct ip));
+ 
+-  return(ip_packet.ip_src._S_un._S_addr);
++  return(ip_packet.ip_src.s_addr);
+ }
+ 
+ void send_icmp_rdisc_response(int sock, struct values *value_pass){

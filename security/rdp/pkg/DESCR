@@ -1,0 +1,22 @@
+from rdp.advisory:
+
+  The ICMP Router Discovery Protocol (IRDP) comes enabled by default on
+DHCP clients that are running Microsoft Windows95 (w/winsock2),
+Windows95b, Windows98, Windows98se, and Windows2000 machines.  By
+spoofing IRDP Router Advertisements, an attacker can remotely add default
+route entries on a remote system.  The default route entry added by the
+attacker will be preferred over the default route obtained from the DHCP
+server.
+
+  SunOS systems will also intentionally use IRDP under specific
+conditions. For Solaris2.6, the IRDP daemon, in.rdisc, will be started
+if the following conditions are met:
+
+		. The system is a host, not a router.
+		. The system did not learn a default gateway from a 
+		  DHCP server.
+		. The system does not have any static routes.
+		. The system does not have a valid /etc/defaultrouter
+		  file.
+
+-d.
