@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/04 15:30:53 naddy Exp $
+bin/randread
+share/doc/randread/README
+@dirrm share/doc/randread
