@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.219 2000/03/04 14:40:21 turan Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.220 2000/03/04 18:16:02 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1829,10 +1829,15 @@ _ALLFILES=${ALLFILES}
 .endif
 
 fetch-makefile:
-.if ${MIRROR_DISTFILE:L} == "yes"
-	@echo "all:: "`make package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`
-	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
+	@echo -n "all"
+.if defined(PERMIT_DISTFILES_FTP) && ${PERMIT_DISTFILES_FTP:L} == "yes"
+	@echo -n " ftp"
 .endif
+.if defined(PERMIT_DISTFILES_CDROM) && ${PERMIT_DISTFILES_CDROM:L} == "yes"
+	@echo -n " cdrom"
+.endif
+	@echo ":: "`make package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}`
+	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes _fetch-makefile-helper
 
 _fetch-makefile-helper:
 # write generic package dependencies

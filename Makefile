@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/03/03 14:23:10 turan Exp $
+# $OpenBSD: Makefile,v 1.21 2000/03/04 18:16:02 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -64,3 +64,14 @@ search:	${.CURDIR}/INDEX
 .else
 	@grep -i ${key} ${.CURDIR}/INDEX | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\nArchs:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10); }'
 .endif
+
+
+MIRROR_MK?= ${.CURDIR}/distfiles/Makefile
+
+mirror-maker:
+	@mkdir -p ${MIRROR_MK:H}
+	@echo "default:: ftp cdrom" >${MIRROR_MK}
+	@echo ".PHONY: default all ftp cdrom" >>${MIRROR_MK}
+	@make fetch-makefile \
+		ECHO_MSG='echo >&2' \
+		FULL_PACKAGE_NAME=Yes >>${MIRROR_MK}
