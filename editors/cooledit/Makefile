@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/08 22:39:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/01/17 16:56:42 espie Exp $
 
-CATEGORIES=		editor
+CATEGORIES=		editors
 MASTER_SITES=		${HOMEPAGE}
 HOMEPAGE= 	http://cooledit.sourceforge.net/ 
 DISTNAME=	cooledit-3.17.2
