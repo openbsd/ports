@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2001/02/12 16:15:37 espie Exp $
 bin/xfedor
 lib/X11/xfedor/BEZIERS.sos
 lib/X11/xfedor/CIRCLE.sos
