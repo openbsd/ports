@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_kernel_qimage_cpp,v 1.3 2004/09/20 20:05:51 brad Exp $
+--- src/kernel/qimage.cpp.orig	Sun Sep 19 20:58:07 2004
++++ src/kernel/qimage.cpp	Sun Sep 19 21:01:10 2004
+@@ -5723,6 +5723,9 @@ static void read_xpm_image_or_array( QIm
+ 	image.create( w, h, 8, ncols );
+     }
+ 
++    if (image.isNull())
++        return;
++
+     QMap<QString, int> colorMap;
+     int currentColor;
+ 

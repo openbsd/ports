@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/09/15 19:25:12 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2004/09/20 20:05:51 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,7 +8,7 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 COMMENT-base=		"include and docs for qt3"
 
-PKGNAME=		qt3-${VERSION}
+PKGNAME=		qt3-${VERSION}p1
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
@@ -67,7 +67,7 @@ PKGDEBUG=
 .endif
 
 .if ${FLAVOR:L:Mmt}
-FULLPKGNAME=		qt3-mt-${VERSION}${PKGDEBUG}
+FULLPKGNAME=		qt3-mt-${VERSION}p1${PKGDEBUG}
 CONFIGURE_ARGS+=-thread
 .else
 CONFIGURE_ARGS+=-no-thread
