@@ -1,0 +1,12 @@
+$OpenBSD: patch-gc_translate_c,v 1.1 2003/06/26 12:30:22 naddy Exp $
+--- gc_translate.c.orig	Wed Jun 25 12:00:13 2003
++++ gc_translate.c	Thu Jun 26 11:13:53 2003
+@@ -1,4 +1,7 @@
+-//#include <stdio.h>
++#include <stdio.h>
++#include <string.h>
++
++#include "geekcode.h"
+ 
+ void sexlife(char sexcode[16]){
+   if(strncmp(&sexcode[1],"+++++",6)==0) printf("I am Madonna\n"); else
