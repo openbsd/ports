@@ -1,10 +1,17 @@
-$OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
---- print.c.orig	Mon Oct 15 22:12:15 2001
-+++ print.c	Wed Jan 23 02:11:39 2002
-@@ -60,6 +60,11 @@ static char rcsid[] = "$OpenBSD: print.c
+$OpenBSD: patch-print_c,v 1.3 2003/01/20 01:45:14 naddy Exp $
+--- print.c.orig	Mon Jan 20 00:08:15 2003
++++ print.c	Mon Jan 20 02:10:19 2003
+@@ -53,12 +53,18 @@ static char rcsid[] = "$OpenBSD: print.c
+ #include <fts.h>
+ #include <grp.h>
+ #include <pwd.h>
++#include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
  #include <tzfile.h>
  #include <unistd.h>
- #include <utmp.h>
 +#ifdef COLORLS
 +#include <ctype.h>
 +#include <termcap.h>
@@ -13,18 +20,22 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
  
  #include "ls.h"
  #include "extern.h"
-@@ -69,9 +74,40 @@ static void	printlink __P((FTSENT *));
- static void	printtime __P((time_t));
- static int	printtype __P((u_int));
- static int	compute_columns __P((DISPLAY *, int *));
+@@ -67,10 +73,44 @@ static int	printaname(FTSENT *, u_long, 
+ static void	printlink(FTSENT *);
+ static void	printtime(time_t);
+ static int	printtype(u_int);
++static void	printsize(size_t, off_t);
+ static int	compute_columns(DISPLAY *, int *);
 +#ifdef COLORLS
-+static void	endcolor __P((int));
-+static int	colortype __P((mode_t));
++static void	endcolor(int);
++static int	colortype(mode_t);
 +#endif
-+
  
  #define	IS_NOPRINT(p)	((p)->fts_number == NO_PRINT)
  
++typedef enum { NONE = 0, KILO, MEGA, GIGA, TERA, PETA /* , EXA */ } unit_t;
++static unit_t unit_adjust(double *);
++
 +#ifdef COLORLS
 +/* Most of these are taken from <sys/stat.h> */
 +typedef enum Colors {
@@ -37,8 +48,8 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
 +	C_CHR,		/* character special */
 +	C_SUID,		/* setuid executable */
 +	C_SGID,		/* setgid executable */
-+	C_WSDIR,	/* directory writeble to others, with sticky bit */
-+	C_WDIR,		/* directory writeble to others, without sticky bit */
++	C_WSDIR,	/* directory writable to others, with sticky bit */
++	C_WDIR,		/* directory writable to others, without sticky bit */
 +	C_NUMCOLORS	/* just a place-holder */
 +} Colors ;
 +
@@ -54,7 +65,7 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
  void
  printscol(dp)
  	DISPLAY *dp;
-@@ -94,6 +130,9 @@ printlong(dp)
+@@ -93,6 +133,9 @@ printlong(dp)
  	FTSENT *p;
  	NAMES *np;
  	char buf[20];
@@ -64,7 +75,19 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
  
  	if (dp->list->fts_level != FTS_ROOTLEVEL && (f_longform || f_size))
  		(void)printf("total %lu\n", howmany(dp->btotal, blocksize));
-@@ -128,7 +167,15 @@ printlong(dp)
+@@ -117,17 +160,25 @@ printlong(dp)
+ 			(void)printf("%3d, %3d ",
+ 			    major(sp->st_rdev), minor(sp->st_rdev));
+ 		else if (dp->bcfile)
+-			(void)printf("%*s%*qd ",
++			(void)printf("%*s%*lld ",
+ 			    8 - dp->s_size, "", dp->s_size, sp->st_size);
+ 		else
+-			(void)printf("%*qd ", dp->s_size, sp->st_size);
++			printsize(dp->s_size, sp->st_size);
+ 		if (f_accesstime)
+ 			printtime(sp->st_atime);
+ 		else if (f_statustime)
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
@@ -80,7 +103,7 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
  		if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  			(void)printtype(sp->st_mode);
  		if (S_ISLNK(sp->st_mode))
-@@ -229,6 +276,9 @@ printaname(p, inodefield, sizefield)
+@@ -228,6 +279,9 @@ printaname(p, inodefield, sizefield)
  {
  	struct stat *sp;
  	int chcnt;
@@ -90,7 +113,7 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
  
  	sp = p->fts_statp;
  	chcnt = 0;
-@@ -237,7 +287,15 @@ printaname(p, inodefield, sizefield)
+@@ -236,7 +290,15 @@ printaname(p, inodefield, sizefield)
  	if (f_size)
  		chcnt += printf("%*qd ",
  		    (int)sizefield, howmany(sp->st_blocks, blocksize));
@@ -106,11 +129,10 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -359,6 +417,155 @@ printtype(mode)
- 	}
+@@ -359,6 +421,156 @@ printtype(mode)
  	return (0);
  }
-+
+ 
 +#ifdef COLORLS
 +static int
 +putch(c)
@@ -155,6 +177,7 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
 +endcolor(sig)
 +	int sig;
 +{
++	tputs(ansi_coloff, 1, sig ? writech : putch);
 +	tputs(attrs_off, 1, sig ? writech : putch);
 +}
 +
@@ -204,7 +227,9 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
 +parsecolors(cs)
 +	const char *cs;
 +{
-+	int i, j, len;
++	int i;
++	int j;
++	size_t len;
 +	char c[2];
 +	short legacy_warn = 0;
 +
@@ -226,10 +251,9 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
 +			if (c[j] >= '0' && c[j] <= '7') {
 +				colors[i].num[j] = c[j] - '0';
 +				if (!legacy_warn) {
-+					fprintf(stderr,
-+					    "warn: LSCOLORS should use "
++					warnx("LSCOLORS should use "
 +					    "characters a-h instead of 0-9 ("
-+					    "see the manual page)\n");
++					    "see the manual page)");
 +				}
 +				legacy_warn = 1;
 +			} else if (c[j] >= 'a' && c[j] <= 'h')
@@ -240,9 +264,8 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
 +			} else if (tolower((unsigned char)c[j] == 'x'))
 +				colors[i].num[j] = -1;
 +			else {
-+				fprintf(stderr,
-+				    "error: invalid character '%c' in LSCOLORS"
-+				    " env var\n", c[j]);
++				warnx("invalid character '%c' in LSCOLORS"
++				    " env var", c[j]);
 +				colors[i].num[j] = -1;
 +			}
 +		}
@@ -250,15 +273,74 @@ $OpenBSD: patch-print_c,v 1.2 2002/01/23 01:27:32 naddy Exp $
 +}
 +
 +void
-+colorquit(sig)
-+	int sig;
++colorquit(int sig)
 +{
 +	endcolor(sig);
 +
 +	(void)signal(sig, SIG_DFL);
 +	(void)kill(getpid(), sig);
 +}
++
 +#endif /*COLORLS*/
- 
++
  static void
  printlink(p)
+ 	FTSENT *p;
+@@ -378,4 +590,57 @@ printlink(p)
+ 	path[lnklen] = '\0';
+ 	(void)printf(" -> ");
+ 	(void)putname(path);
++}
++
++static void
++printsize(size_t width, off_t bytes)
++{
++	double dbytes;
++	unit_t unit;
++
++	if (f_humanval) {
++		dbytes = bytes;
++		unit = unit_adjust(&dbytes);
++
++		if (dbytes == 0)
++			(void)printf("%*s ", width, "0B");
++		else
++			(void)printf("%*.*f%c ", width - 1, dbytes > 10 ? 0 : 1,
++			    dbytes, "BKMGTPE"[unit]);
++	} else
++		(void)printf("%*lld ", width, bytes);
++}
++
++/*
++ * Output in "human-readable" format.  Uses 3 digits max and puts
++ * unit suffixes at the end.  Makes output compact and easy to read,
++ * especially on huge disks.
++ *
++ */
++static unit_t
++unit_adjust(double *val)
++{
++	double abval;
++	unit_t unit;
++
++	abval = fabs(*val);
++	if (abval < 1024)
++		unit = NONE;
++	else if (abval < 1048576ULL) {
++		unit = KILO;
++		*val /= 1024;
++	} else if (abval < 1073741824ULL) {
++		unit = MEGA;
++		*val /= 1048576;
++	} else if (abval < 1099511627776ULL) {
++		unit = GIGA;
++		*val /= 1073741824ULL;
++	} else if (abval < 1125899906842624ULL) {
++		unit = TERA;
++		*val /= 1099511627776ULL;
++	} else /* if (abval < 1152921504606846976ULL) */ {
++		unit = PETA;
++		*val /= 1125899906842624ULL;
++	}
++	return (unit);
+ }

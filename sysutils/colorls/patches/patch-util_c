@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_c,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
---- util.c.orig	Tue Oct 16 20:52:42 2001
-+++ util.c	Tue Oct 16 20:55:13 2001
+$OpenBSD: patch-util_c,v 1.2 2003/01/20 01:45:14 naddy Exp $
+--- util.c.orig	Mon Jan 20 00:08:15 2003
++++ util.c	Mon Jan 20 01:54:08 2003
 @@ -72,7 +72,11 @@ void
  usage()
  {
@@ -8,9 +8,9 @@ $OpenBSD: patch-util_c,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
 -	    "usage: %s [-1ACFLRSTWacdfiklmnopqrstux] [file ...]\n",
 -             __progname);
 +#ifdef COLORLS
-+	    "usage: %s [-1ACFGLRSTWacdfiklmnopqrstux]"
++	    "usage: %s [-1ACFGLRSTWacdfhiklmnopqrstux]"
 +#else
-+	    "usage: %s [-1ACFLRSTWacdfiklmnopqrstux]"
++	    "usage: %s [-1ACFLRSTWacdfhiklmnopqrstux]"
 +#endif
 +		" [file ...]\n", __progname);
  	exit(1);

@@ -1,7 +1,15 @@
-$OpenBSD: patch-ls_h,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
---- ls.h.orig	Tue Oct 16 20:48:35 2001
-+++ ls.h	Tue Oct 16 20:49:27 2001
-@@ -53,6 +53,9 @@ extern int f_size;		/* list size in shor
+$OpenBSD: patch-ls_h,v 1.2 2003/01/20 01:45:14 naddy Exp $
+--- ls.h.orig	Mon Jan 20 00:08:15 2003
++++ ls.h	Mon Jan 20 01:51:54 2003
+@@ -45,6 +45,7 @@ extern long blocksize;		/* block size un
+ 
+ extern int f_accesstime;	/* use time of last access */
+ extern int f_flags;		/* show flags associated with a file */
++extern int f_humanval;		/* show human-readable file sizes */
+ extern int f_inode;		/* print inode */
+ extern int f_longform;		/* long listing format */
+ extern int f_nonprint;		/* show unprintables as ? */
+@@ -53,6 +54,9 @@ extern int f_size;		/* list size in shor
  extern int f_statustime;	/* use time of last mode change */
  extern int f_type;		/* add type character for non-regular files */
  extern int f_typedir;		/* add type character for directories */
