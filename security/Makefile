@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2004/01/25 16:59:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.129 2004/02/03 07:20:42 ish Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -97,6 +97,7 @@
      SUBDIR += pwgen
      SUBDIR += py-Rijndael
      SUBDIR += py-cryptkit
+     SUBDIR += py-crypto
      SUBDIR += py-gnupg
      SUBDIR += py-openssl
      SUBDIR += py-sslwrapper
