@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/03/28 12:29:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2001/04/05 12:09:58 espie Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -20,7 +20,7 @@
      SUBDIR += knapster
      SUBDIR += lame
      SUBDIR += libao
-     SUBDIR += libao:arts,esd,sun
+     SUBDIR += libao,arts,esd,sun
      SUBDIR += libcdaudio
      SUBDIR += libogg
      SUBDIR += libvorbis
@@ -61,15 +61,15 @@
      SUBDIR += wmmixer
      SUBDIR += wmmp3
      SUBDIR += wmtune
-     SUBDIR += wmtune:radiotrack
-     SUBDIR += wmtune:zoltrix
+     SUBDIR += wmtune,radiotrack
+     SUBDIR += wmtune,zoltrix
      SUBDIR += workman
      SUBDIR += wsoundprefs
      SUBDIR += wsoundserver
-     SUBDIR += wsoundserver:esd
+     SUBDIR += wsoundserver,esd
      SUBDIR += xcd
      SUBDIR += xcdplayer
-     SBUDIR += xhippo
+     SUBDIR += xhippo
      SUBDIR += xmcd
      SUBDIR += xmix
      SUBDIR += xmmix
