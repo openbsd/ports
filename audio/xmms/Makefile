@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/24 12:09:05 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/25 04:19:45 pvalchev Exp $
 # Uses pthreads
 
 ONLY_FOR_ARCHS=	i386
@@ -32,7 +32,7 @@ MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
 			ftp://ftp.stealth.net/xmms/%SUBDIR%/
 
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
-			ftp://vedge.com/ar/pub/xmms/
+			ftp://vedge.com.ar/pub/xmms/
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
