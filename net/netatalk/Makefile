@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/18 13:00:26 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2001/08/16 03:23:21 brad Exp $
 
 COMMENT=	"File and Print Services for AppleTalk Networks"
 
 DISTNAME=       netatalk-990130
 CATEGORIES=	net
-NEED_VERSION=	1.384
+NEED_VERSION=	1.435
 MASTER_SITES=	ftp://terminator.rs.itd.umich.edu/unix/netatalk/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/terminator.rs.itd.umich.edu/unix/netatalk/
 
@@ -29,6 +29,9 @@ SYSCONFDIR=	/etc/netatalk
 # support for kerberos outside the US, so your on your
 # own. Still need to add support for AFS. Will update
 # the Port shortly.
+
+post-extract:
+	@cp -f ${FILESDIR}/cvolume_iconres.h ${WRKSRC}/etc/afpd
 
 post-patch:
 	@rm -rf ${WRKSRC}/include/netatalk
