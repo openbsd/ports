@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.382 2001/04/02 11:45:11 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.383 2001/04/02 11:50:25 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -590,24 +590,27 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
-.  if defined(NO_SHARED_LIBS)
+	@echo "@comment name="`cd ${.CURDIR} && exec make package-name FULL_PACKAGE_NAME=Yes` >$@.tmp
+.if defined(NEW_DEPENDS)
+	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >$@.tmp
+.endif
+.if defined(NO_SHARED_LIBS)
 	@sed -e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
 		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
-		${SED_PLIST} >$@.tmp && mv -f $@.tmp $@
-.  else
+		${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@
+.else
 	@if [ -x /sbin/ldconfig ]; then \
 		sed -e '/^%%!SHARED%%$$/d' \
 			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
 			-e '//d' <$? ${SED_PLIST} \
-			| sed -f ${LDCONFIG_SED_SCRIPT} >$@.tmp && mv -f $@.tmp $@; \
+			| sed -f ${LDCONFIG_SED_SCRIPT} >>$@.tmp && mv -f $@.tmp $@; \
 	else \
 		sed -e '/^%%!SHARED%%$$/d' \
 			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
 			-e '//d' <$? \
-			${SED_PLIST} >$@.tmp && mv -f $@.tmp $@; \
+			${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@; \
 	fi
-.  endif
-	@echo "@comment name="`cd ${.CURDIR} && exec make package-name FULL_PACKAGE_NAME=Yes` >>$@
+.endif
 
 MTREE_FILE?=
 MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
@@ -628,7 +631,9 @@ _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}
 .if !defined(PKG_ARGS)
 PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
+.if !defined(NEW_DEPENDS)
 PKG_ARGS+=-P "`cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' ${MAKE} package-depends|${_SORT_DEPENDS}`"
+.endif
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${WRKPKG}/INSTALL${SUBPACKAGE}
 _PKG_PREREQ+=${WRKPKG}/INSTALL${SUBPACKAGE}
@@ -2289,6 +2294,43 @@ package-depends:
 .  endif
 .endif
 
+# Only keep pkg:dir spec
+.if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
+_ALWAYS_DEP2 = ${LIB_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/} \
+	${MISC_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.else
+_ALWAYS_DEP2=
+.endif
+
+.if defined(RUN_DEPENDS)
+_RUN_DEP2 = ${RUN_DEPENDS:C/^[^:]*:([^:]*:[^:]*).*$/\1/}
+.else
+_RUN_DEP2=
+.endif
+
+new-depends:
+.if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
+	@unset FLAVOR SUBPACKAGE || true; \
+	: $${self:=self}; \
+	for spec in `echo ${_ALWAYS_DEP2} ${_RUN_DEP2} \
+		| tr '\040' '\012' | sort -u`; do \
+		dir=$${spec#*:}; pkg=$${spec%:*}; \
+		${_flavor_fragment}; \
+		default=`cd ${PORTSDIR} && cd $$dir 2>/dev/null && eval $$toset ${MAKE} package-name`; \
+		: $${pkg:=$$default}; \
+		echo "@newdepend $$self:$$pkg:$$default"; \
+		toset="$$toset self=\"$$default\""; \
+		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
+			if ! eval $$toset ${MAKE} new-depends; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
+				exit 1; \
+			fi; \
+		else \
+			echo 1>&2 "*** @pkgdep registration bogus: \"$$dir\" non-existent"; \
+			exit 1; \
+		fi; \
+	done
+.endif
 README_NAME?=	${TEMPLATES}/README.port
 
 .if !target(readmes)
