@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2005/01/07 11:33:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/09 00:54:47 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -12,7 +12,9 @@ MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
+.if ${MACHINE_ARCH} == "i386"
 MAKE_ADA=Yes
+.endif
 
 MAKE_GXX?=No
 MAKE_FORTRAN?=No
@@ -71,6 +73,7 @@ MULTI_PACKAGES+=-c++ -estdc
 .if ${MAKE_FORTRAN:L} == "yes"
 LANGS:=${LANGS},f95
 MULTI_PACKAGES+=-f95
+CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
 .if ${MAKE_OBJC:L} == "yes"
 LANGS:=${LANGS},objc
@@ -98,7 +101,7 @@ CONFIGURE_ENV+=ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 CFLAGS=-O2 -g
 
 
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS+= \
 	--verbose \
 	--program-transform-name=s,^,e, \
 	--disable-nls  \
