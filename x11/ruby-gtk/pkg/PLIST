@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/14 10:34:34 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/09/06 12:06:26 couderc Exp $
 lib/ruby/1.6/${MACHINE_ARCH}-openbsd${OPSYS_VER}/gtk.so
 @comment share/ruby-gtk/doc/.happy
 share/ruby-gtk/doc/gtkbrows.rb
@@ -14,6 +14,8 @@ share/ruby-gtk/sample/helloworld.rb
 share/ruby-gtk/sample/item_factory.rb
 share/ruby-gtk/sample/keyboard_grab.rb
 share/ruby-gtk/sample/pointer_grab.rb
+share/ruby-gtk/sample/t-gtkplug.rb
+share/ruby-gtk/sample/t-gtksocket.rb
 share/ruby-gtk/sample/test/test.rb
 share/ruby-gtk/sample/test/test.xpm
 share/ruby-gtk/sample/test/test0.rb
