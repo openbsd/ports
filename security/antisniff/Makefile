@@ -3,16 +3,16 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 16:42:13 turan Exp $
-
-BROKEN=		no checksum, version has changed, patches do not apply
+# $OpenBSD: Makefile,v 1.4 2000/02/15 17:00:15 dugsong Exp $
 
 PKGNAME=	antisniff-1.0
-DISTNAME=	anti_sniff_researchv1
 
 CATEGORIES=	security
 
+DISTNAME=	anti_sniff_researchv1
+
 MASTER_SITES=	http://www.l0pht.com/antisniff/dist/
+
 NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
