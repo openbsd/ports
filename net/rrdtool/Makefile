@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/06/15 10:39:42 camield Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/19 09:11:27 camield Exp $
 
 DISTNAME=		rrdtool-1.0.23
 CATEGORIES=     	net
@@ -27,13 +27,15 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .if ${FLAVOR:L:Mtcl}
-BROKEN=			"currently doesn't work"
 # Makefile in tcl subdir does not work with our make
 USE_GMAKE=		Yes
 LIB_DEPENDS=		tcl83::lang/tcl/8.3
-# tclConfig.sh seems to be a bit confused about installation paths...
-# (so this does not work)
-CONFIGURE_ARGS+=	--with-tcllib=/usr/local/lib/tcl8.3
+MAKE_FLAGS+=		CFLAGS+=-I${LOCALBASE}/include/tcl8.3
+CONFIGURE_ARGS+=	--with-tcllib='${LOCALBASE}/lib/tcl8.3'
+
+post-install:
+	cd ${WRKSRC};  ${MAKE} site-tcl-install
+
 .else
 CONFIGURE_ARGS+=	--without-tcllib
 .endif

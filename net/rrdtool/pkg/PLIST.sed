@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sed,v 1.1 2000/06/15 10:39:45 camield Exp $
+@comment $OpenBSD: PLIST.sed,v 1.2 2000/06/19 09:11:27 camield Exp $
 bin/rrdcgi
 bin/rrdtool
 bin/trytime
@@ -7,8 +7,6 @@ lib/librrd.a
 lib/librrd.la
 %%SHARED%%
 libdata/perl5/site_perl/@ARCH@-openbsd/RRDp.pm
-libdata/perl5/site_perl/@ARCH@-openbsd/RRDs.pm
-libdata/perl5/site_perl/@ARCH@-openbsd/auto/RRDs/RRDs.bs
 man/man1/RRDp.1
 man/man1/RRDs.1
 man/man1/bin_dec_hex.1

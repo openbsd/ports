@@ -1,5 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/15 10:39:44 camield Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/06/19 09:11:27 camield Exp $
 lib/librrd.so.0.0
+%%tcl%%
+libdata/perl5/site_perl/@ARCH@-openbsd/RRDs.pm
+libdata/perl5/site_perl/@ARCH@-openbsd/auto/RRDs/RRDs.bs   
 libdata/perl5/site_perl/@ARCH@-openbsd/auto/RRDs/RRDs.so
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
 @unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
