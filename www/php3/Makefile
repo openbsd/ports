@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2000/10/29 20:37:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2000/11/24 07:39:00 jakob Exp $
 
-DISTNAME=	php-3.0.16
-PKGNAME=	php3-3.0.16
+DISTNAME=	php-3.0.18
+PKGNAME=	php3-3.0.18
 CATEGORIES=	www lang
 NEED_VERSION=	1.319
 
