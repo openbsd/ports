@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2003/08/21 14:46:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/10/26 09:33:23 sturm Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
 DISTNAME=	samba-2.2.8a
 CATEGORIES=	net
-MASTER_SITES=	http://us1.samba.org/samba/ftp/ \
-		http://us2.samba.org/samba/ftp/ \
-		http://us3.samba.org/samba/ftp/ \
-		http://us4.samba.org/samba/ftp/ \
-		http://se.samba.org/samba/ftp/ \
-		ftp://ftp.samba.org/pub/samba/ \
-		ftp://ca.samba.org/pub/samba/ \
-		ftp://ftp.ring.gr.jp/pub/net/samba/
+MASTER_SITES=	http://us1.samba.org/samba/ftp/old-versions/ \
+		http://us4.samba.org/samba/ftp/old-versions/
 
 HOMEPAGE=	http://www.samba.org/
 
