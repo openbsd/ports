@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/25 18:37:43 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/13 19:25:03 brad Exp $
 
-DISTNAME=	curl-5.5.1
+DISTNAME=	curl-5.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
 		ftp://ftp.all.de/pub2/unix/network/www/curl/ \
@@ -13,8 +13,7 @@ BUILD_DEPENDS=	${PREFIX}/ssl/lib/libcrypto.a:${PORTSDIR}/security/SSLeay \
 		${PREFIX}/ssl/lib/libssl.a:${PORTSDIR}/security/SSLeay
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/ssl/include/ \
-		LDFLAGS=-L${PREFIX}/ssl/lib/
+CONFIGURE_ARGS+= --with-ssl
 
 CURLDOCDIR=	${PREFIX}/share/doc/curl
 CURLDOCFILES=	CHANGES INSTALL LEGAL MPL-1.0.txt README RESOURCES TODO
