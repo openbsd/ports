@@ -1,5 +1,5 @@
---- lib/Makefile.skel.orig	Wed Jun  2 11:50:51 1999
-+++ lib/Makefile.skel	Wed Jun  2 11:51:35 1999
+--- lib/Makefile.skel.orig	Mon Feb 12 19:12:22 2001
++++ lib/Makefile.skel	Tue Jan 22 23:13:57 2002
 @@ -6,7 +6,7 @@
  
  LIB=	liblsof.a
@@ -8,4 +8,4 @@
 +CDEF+=	${RC_CFLAGS}
  CDEFS=	${CDEF} ${CFGF}
  INCL=	${DINC}
- CFLAGS=	${CDEFS} ${INCL} ${DEBUG}
+ 

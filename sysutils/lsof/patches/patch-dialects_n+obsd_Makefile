@@ -1,6 +1,6 @@
---- dialects/n+obsd/Makefile.orig	Wed Jun  2 11:52:15 1999
-+++ dialects/n+obsd/Makefile	Wed Jun  2 11:52:53 1999
-@@ -12,7 +12,6 @@
+--- dialects/n+obsd/Makefile.orig	Thu Nov  1 13:26:34 2001
++++ dialects/n+obsd/Makefile	Tue Jan 22 23:13:30 2002
+@@ -14,7 +14,6 @@ S=/usr/include/sys
  L=/usr/include/local
  P=
  

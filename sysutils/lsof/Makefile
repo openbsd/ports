@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.37 2001/12/24 06:56:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.38 2002/01/25 00:58:18 pvalchev Exp $
 
 COMMENT=	"list information about open files"
 
-VERSION=	4.61B
-DISTNAME=	lsof_${VERSION}.n+obsd
-PKGNAME=	lsof-${VERSION}
+VERSION=	4.61
+DISTNAME=	lsof_${VERSION}
+PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	sysutils
-NEED_VERSION=	1.502
-MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
-		ftp://ftp.crc.doc.ca/packages/lsof/NEW/ \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
+NEED_VERSION=	1.504
+MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
+		ftp://ftp.crc.doc.ca/packages/lsof/ \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
 HOMEPAGE=	http://www-rcd.cc.purdue.edu/~abe/
 
@@ -27,8 +27,8 @@ CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
 
-SRCBALL_NAME=	${DISTNAME}
-WRKDIST=	${WRKDIR}/${SRCBALL_NAME}
+SRCBALL_NAME=	${DISTNAME}_src
+WRKDIST=	${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 
 .if ${MACHINE_ARCH} == "sparc"
 IS_INTERACTIVE=	Yes
@@ -51,8 +51,8 @@ pre-build:
 .endif
 
 post-extract:
-	@(cd ${WRKDIR}; \
-	EXPMD5=`/usr/bin/grep MD5 README.${SRCBALL_NAME} | \
+	@(cd ${WRKDIST}/..; \
+	EXPMD5=`/usr/bin/grep MD5 README.${DISTNAME} | \
 	    /usr/bin/sed 's/^[ ]*//'` ; \
 	CALCMD5=`md5 ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
@@ -61,7 +61,6 @@ post-extract:
 	    exit 1 ; \
 	fi ; \
 	tar -xf ${SRCBALL_NAME}.tar)
-	@(cd ${WRKSRC}; echo "y" | ./Inventory || exit 1)
 
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
