@@ -1,0 +1,29 @@
+$OpenBSD: patch-panel-plugin_wi_bsd_c,v 1.1 2004/01/08 23:09:12 jolan Exp $
+--- panel-plugin/wi_bsd.c.orig	2003-11-11 12:43:51.000000000 -0600
++++ panel-plugin/wi_bsd.c	2004-01-08 15:00:36.000000000 -0600
+@@ -23,7 +23,7 @@
+  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#if defined(__NetBSD__) || defined(__FreeBSD__)
++#if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #include <sys/types.h>
+ #include <sys/cdefs.h>
+@@ -47,9 +47,16 @@
+ #include <net80211/ieee80211_ioctl.h>
+ #include <dev/ic/wi_ieee.h>
+ #else
++#if !defined __OpenBSD__
+ #include <dev/pcmcia/if_wavelan_ieee.h>
+ #endif
+ #endif
++#ifdef __OpenBSD__
++#include <net/if_ieee80211.h>
++#include <dev/ic/if_wi_ieee.h>
++#define le16toh(x) letoh16(x)
++#endif
++#endif
+ 
+ #include <stdio.h>
+ #include <string.h>

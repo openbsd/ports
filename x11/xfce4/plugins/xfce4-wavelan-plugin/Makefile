@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/02 02:56:25 jolan Exp $
-
-BROKEN=	"crashes xfce4-panel"
+# $OpenBSD: Makefile,v 1.3 2004/01/08 23:09:12 jolan Exp $
 
 COMMENT=	"displays stats from a WLAN interface"
 DISTNAME=	xfce4-wavelan-plugin-0.1.0
