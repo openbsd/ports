@@ -1,0 +1,11 @@
+$OpenBSD: patch-calendar_libical_src_libical_icalrecur_c,v 1.1.1.1 2004/06/25 16:21:32 marcm Exp $
+--- calendar/libical/src/libical/icalrecur.c.orig	2003-12-11 18:44:25.000000000 -0800
++++ calendar/libical/src/libical/icalrecur.c	2003-12-11 18:46:39.000000000 -0800
+@@ -154,6 +154,7 @@ typedef long intptr_t;
+ #include <string.h> /* for strdup and strchr*/
+ #include <assert.h>
+ #include <stddef.h> /* For offsetof() macro */
++#include <inttypes.h> /* for intptr_t */
+ 
+ #include "pvl.h"
+ 

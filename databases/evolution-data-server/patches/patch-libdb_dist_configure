@@ -1,0 +1,21 @@
+$OpenBSD: patch-libdb_dist_configure,v 1.1.1.1 2004/06/25 16:21:32 marcm Exp $
+--- libdb/dist/configure.orig	2004-02-13 12:09:05.000000000 -0800
++++ libdb/dist/configure	2004-04-09 21:35:09.000000000 -0700
+@@ -7948,7 +7948,7 @@ _ACEOF
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+@@ -7958,7 +7958,7 @@ _ACEOF
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+         ;;
+       esac
