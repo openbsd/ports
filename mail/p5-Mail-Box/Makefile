@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/22 23:21:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/25 13:00:00 avsm Exp $
 
-DISTNAME=		Mail-Box-1.100
+DISTNAME=		Mail-Box-1.110
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 NEED_VERSION=		1.356
