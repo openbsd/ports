@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/11/13 16:21:43 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/11/15 23:58:01 brad Exp $
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -164,9 +164,13 @@ include/omapi/private.h
 include/omapi/result.h
 include/omapi/types.h
 lib/libdns.a
+lib/libdns.la
 lib/libisc.a
+lib/libisc.la
 lib/liblwres.a
+lib/liblwres.la
 lib/libomapi.a
+lib/libomapi.la
 %%SHARED%%
 man/man1/dig.1
 man/man1/host.1
@@ -204,13 +208,13 @@ share/doc/bind9/misc/dnssec
 share/doc/bind9/misc/ipv6
 share/doc/bind9/misc/migration
 share/doc/bind9/misc/options
-@dirrm share/doc/bind9/misc
-@dirrm share/doc/bind9/arm
-@dirrm share/doc/bind9
 share/examples/bind9/named.conf
 share/examples/bind9/named.root
 share/examples/bind9/named.localhost
 share/examples/bind9/named.loopback
+@dirrm share/doc/bind9/misc
+@dirrm share/doc/bind9/arm
+@dirrm share/doc/bind9
 @dirrm share/examples/bind9
 @dirrm include/omapi
 @dirrm include/lwres
