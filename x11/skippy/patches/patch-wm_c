@@ -1,0 +1,95 @@
+--- wm.c.orig	Wed May 19 23:23:49 2004
++++ wm.c	Sat Jan 22 16:14:40 2005
+@@ -258,7 +258,7 @@
+ 		return 0;
+ 	
+ 	for(i = 0; i < items_read; i++)
+-		l = dlist_add(l, (void*)((CARD32*)data)[i]);
++		l = dlist_add(l, (void*)((unsigned long*)data)[i]);
+ 	
+ 	XFree(data);
+ 	
+@@ -293,10 +293,10 @@
+ 	return rootpmap;
+ }
+ 
+-CARD32
++unsigned long
+ wm_get_current_desktop(Display *dpy)
+ {
+-	CARD32 desktop = 0;
++	unsigned long desktop = 0;
+ 	unsigned char *data;
+ 	int status, real_format;
+ 	Atom real_type;
+@@ -309,7 +309,7 @@
+ 	if(status != Success)
+ 		return 0;
+ 	if(items_read)
+-		desktop = ((CARD32*)data)[0];
++		desktop = ((unsigned long*)data)[0];
+ 	XFree(data);
+ 	
+ 	return desktop;
+@@ -479,7 +479,7 @@
+ 		
+ 		return result;
+ 	} else {
+-		CARD32 attr;
++		unsigned long attr;
+ 		
+ 		status = XGetWindowProperty(dpy, win, _WIN_STATE,
+ 		                  0L, 1L, False, XA_CARDINAL, &real_type, &real_format,
+@@ -490,7 +490,7 @@
+ 				XFree(data);
+ 			return 0;
+ 		}
+-		attr = (((CARD32*)data)[0]) & (WIN_STATE_MINIMIZED |
++		attr = (((unsigned long*)data)[0]) & (WIN_STATE_MINIMIZED |
+ 		                             WIN_STATE_SHADED |
+ 		                             WIN_STATE_HIDDEN);
+ 		if(attr)
+@@ -510,7 +510,7 @@
+ 					XFree(data);
+ 				return 1; /* If there's no _WIN_HINTS, assume it's 0, thus valid */
+ 			}
+-			attr = ((CARD32*)data)[0];
++			attr = ((unsigned long*)data)[0];
+ 			if(attr & WIN_HINTS_SKIP_TASKBAR)
+ 				result = 0;
+ 			XFree(data);
+@@ -520,14 +520,14 @@
+ 	}
+ }
+ 
+-CARD32
++unsigned long
+ wm_get_window_desktop(Display *dpy, Window win)
+ {
+ 	int status, real_format;
+ 	Atom real_type;
+ 	unsigned long items_read, items_left;
+ 	unsigned char *data;
+-	CARD32 desktop = 0;
++	unsigned long desktop = 0;
+ 	
+ 	if(WM_PERSONALITY == WM_PERSONALITY_GNOME)
+ 	{
+@@ -537,7 +537,7 @@
+ 		if(status == Success)
+ 		{
+ 			if(items_read)
+-				desktop = (((CARD32*)data)[0] & WIN_STATE_STICKY) ? (CARD32)-1 : 0;
++				desktop = (((unsigned long*)data)[0] & WIN_STATE_STICKY) ? (unsigned long)-1 : 0;
+ 			
+ 			XFree(data);
+ 			
+@@ -555,7 +555,7 @@
+ 		return wm_get_current_desktop(dpy);
+ 	
+ 	if(items_read)
+-		desktop = ((CARD32*)data)[0];
++		desktop = ((unsigned long*)data)[0];
+ 	else
+ 		desktop = wm_get_current_desktop(dpy);
+ 	

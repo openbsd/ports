@@ -1,0 +1,21 @@
+$OpenBSD: patch-clientwin_c,v 1.1 2005/03/22 20:29:44 matthieu Exp $
+--- clientwin.c.orig	Sat Jan 22 16:10:02 2005
++++ clientwin.c	Sat Jan 22 16:10:51 2005
+@@ -33,7 +33,7 @@
+ clientwin_validate_func(dlist *l, void *data)
+ {
+ 	ClientWin *cw = (ClientWin *)l->data;
+-	CARD32 desktop = (*(CARD32*)data),
++	unsigned long desktop = (*(unsigned long*)data),
+ 		w_desktop = wm_get_window_desktop(cw->mainwin->dpy, cw->client.window);
+ 	
+ #ifdef XINERAMA
+@@ -43,7 +43,7 @@
+ 		return 0;
+ #endif
+ 	
+-	return (w_desktop == (CARD32)-1 || desktop == w_desktop) &&
++	return (w_desktop == (unsigned long)-1 || desktop == w_desktop) &&
+ 	       wm_validate_window(cw->mainwin->dpy, cw->client.window);
+ }
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/19 17:27:01 alek Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/22 20:29:44 matthieu Exp $
 
 COMMENT=		"a full-screen X11 task-switcher like Apple's Expose"
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xinerama Xrender c fontconfig freetype m
+WANTLIB=		Imlib2 X11 Xext Xft Xinerama Xrender c \
+			fontconfig freetype m
 
 USE_X11=		Yes
 

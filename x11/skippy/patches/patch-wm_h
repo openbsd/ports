@@ -1,0 +1,18 @@
+$OpenBSD: patch-wm_h,v 1.1 2005/03/22 20:29:44 matthieu Exp $
+--- wm.h.orig	Sat Jan 22 16:09:11 2005
++++ wm.h	Sat Jan 22 16:09:11 2005
+@@ -66,12 +66,12 @@
+ void wm_use_netwm_fullscreen(Bool b);
+ dlist *wm_get_stack(Display *dpy);
+ Pixmap wm_get_root_pmap(Display *dpy);
+-CARD32 wm_get_current_desktop(Display *dpy);
++unsigned long wm_get_current_desktop(Display *dpy);
+ FcChar8 *wm_get_window_title(Display *dpy, Window window, int *length_return);
+ Window wm_get_group_leader(Display *dpy, Window window);
+ void wm_set_fullscreen(Display *dpy, Window window, int x, int y, unsigned int width, unsigned int height);
+ int wm_validate_window(Display *dpy, Window win);
+-CARD32 wm_get_window_desktop(Display *dpy, Window win);
++unsigned long wm_get_window_desktop(Display *dpy, Window win);
+ Window wm_get_focused(Display *dpy);
+ void wm_ignore_skip_taskbar(Bool b);
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-skippy_c,v 1.1 2005/03/22 20:29:44 matthieu Exp $
+--- skippy.c.orig	Sat Jan 22 16:11:17 2005
++++ skippy.c	Sat Jan 22 16:11:33 2005
+@@ -72,7 +72,7 @@
+ 	int die = 0;
+ 	dlist *iter, *tmp;
+ 	Window dummy_w, *tree_windows;
+-	CARD32 desktop = wm_get_current_desktop(mw->dpy);
++	unsigned long desktop = wm_get_current_desktop(mw->dpy);
+ 	Bool refocus = False;
+ 	
+ 	/* Update the main window's geometry (and Xinerama info if applicable) */
