@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/26 04:56:36 turan Exp $
-
-BROKEN=		bad packing lists
+# $OpenBSD: Makefile,v 1.6 1999/11/05 02:16:40 kevlo Exp $
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
