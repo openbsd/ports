@@ -1,0 +1,54 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
+--- configure.orig	Tue Mar 19 09:28:29 2002
++++ configure	Mon May 20 14:00:29 2002
+@@ -2865,7 +2865,7 @@ EOF
+ fi
+ 
+ XML_I18N_MERGE_OAF_RULE='\%.oaf : \%.oaf.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
+-	$(top_builddir)/xml-i18n-merge -o $(top_srcdir)/po $< $*.oaf'
++	sed s/_value/value/ $< > $*.oaf'
+ 
+ XML_I18N_MERGE_SERVER_RULE='\%.server : \%.server.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
+ 	$(top_builddir)/xml-i18n-merge -o $(top_srcdir)/po $< $*.server'
+@@ -5128,8 +5128,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -5138,8 +5138,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -5655,6 +5655,8 @@ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+   need_version=no
++  sys_lib_search_path_spec="/usr/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
+@@ -8600,6 +8602,10 @@ echo "${ECHO_T}$gt_cv_func_gettext_libin
+ fi
+ 
+ 	   fi
++
++           if test "$gt_cv_func_gettext_libintl" = "yes"; then
++             LIBS="$LIBS -lintl";
++           fi
+ 
+ 	   if test "$gt_cv_func_gettext_libc" = "yes" \
+ 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then
