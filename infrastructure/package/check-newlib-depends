@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.3 2005/01/31 09:51:32 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.4 2005/01/31 10:09:42 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -29,6 +29,7 @@ use OpenBSD::PackingList;
 use File::Temp;
 use Getopt::Std;
 
+our ($opt_o);
 package OpenBSD::PackingList;
 
 package OpenBSD::PackingElement;
@@ -74,7 +75,12 @@ sub check_wantlibs
 	eval { $file->create(); };
 	unless ($@) {
 		my $n = shellquote("$where$fullname");
-		open(my $cmd, "objdump -p $n 2>/dev/null|");
+		my $cmd;
+		if ($main::opt_o) {
+			open($cmd, "ldd -f 'NEEDED lib%o.so.%m.%n\\n'|");
+		} else {
+			open($cmd, "objdump -p $n 2>/dev/null|");
+		}
 		local $_;
 		my @l;
 		while(<$cmd>) {
@@ -106,6 +112,8 @@ sub check_wantlibs
 }
 
 package main;
+
+getopts('o');
 
 sub analyze 
 {
