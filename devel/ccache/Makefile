@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/04/22 03:15:49 margarida Exp $
+# $OpenBSD: Makefile,v 1.6 2003/09/28 17:19:14 naddy Exp $
 
 COMMENT=	"compiler cache"
 
-DISTNAME=	ccache-2.2
+DISTNAME=	ccache-2.3
 CATEGORIES=	devel
 HOMEPAGE=	http://ccache.samba.org/
 
@@ -14,10 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
+MASTER_SITES=	${HOMEPAGE}ftp/ccache/
 
 CONFIGURE_STYLE=	gnu
-
-REGRESS_TARGET=		check
 
 .include <bsd.port.mk>

@@ -11,5 +11,3 @@ warnings that would be produced if you use the real compiler.
 ccache typically adds a little bit of a slowdown to uncached compiles,
 but makes up for it with drastic speedups in already-seen compiles
 that it has cached.
-
-WWW: ${HOMEPAGE}
