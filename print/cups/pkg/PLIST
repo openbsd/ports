@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/01/16 13:18:18 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/01/21 21:40:25 mbalmer Exp $
 @newgroup _cups:541
-@newuser _cups:541:541:daemon:CUPS:/nonexistant:/sbin/nologin
+@newuser _cups:541:541:daemon:CUPS:/nonexistent:/sbin/nologin
 @unexec ${PREFIX}/sbin/cups-disable -q
 bin/cancel
 bin/cups-config
