@@ -1,0 +1,11 @@
+--- cfsd.8-	Sat Jan  1 04:35:00 1994
++++ cfsd.8	Thu Apr 27 19:02:40 2000
+@@ -25,7 +25,7 @@
+ /usr/local/etc/cfsd
+ invokes cfs (in /etc/rc)
+ .TP
+-/etc/mount -o port=3049,intr localhost:/ /crypt
++/sbin/mount -o port=3049,intr,nfsv2 localhost:/ /crypt
+ mounts cfs on /crypt (in /etc/rc)
+ .SH FILES
+ .TP
