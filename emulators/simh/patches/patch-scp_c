@@ -1,8 +1,8 @@
-$OpenBSD: patch-scp_c,v 1.7 2003/02/02 20:19:56 fgsch Exp $
---- scp.c.orig	Mon Jan 13 20:24:36 2003
-+++ scp.c	Sun Feb  2 16:35:36 2003
-@@ -570,7 +570,10 @@ while (stat != SCPE_EXIT) {				/* in cas
- 	if (sim_vm_read != NULL)			/* sim routine? */
+$OpenBSD: patch-scp_c,v 1.8 2003/05/28 16:31:07 fgsch Exp $
+--- scp.c.orig	Mon Mar  3 16:05:26 2003
++++ scp.c	Wed May 28 13:23:37 2003
+@@ -581,7 +581,10 @@ while (stat != SCPE_EXIT) {				/* in cas
+ 	else if (sim_vm_read != NULL)			/* sim routine? */
  	    cptr = (*sim_vm_read) (cbuf, CBUFSIZE, stdin);
  	else cptr = read_line (cbuf, CBUFSIZE, stdin);	/* read command line */
 -	if (cptr == NULL) continue;			/* ignore EOF */
@@ -11,5 +11,5 @@ $OpenBSD: patch-scp_c,v 1.7 2003/02/02 20:19:56 fgsch Exp $
 +		continue;				/* ignore EOF */
 +	}
  	if (*cptr == 0) continue;			/* ignore blank */
- 	if (sim_log) fprintf (sim_log, "sim> %s\n", cbuf); /* log cmd */
+ 	if (sim_log) fprintf (sim_log, "sim> %s\n", cptr); /* log cmd */
  	cptr = get_glyph (cptr, gbuf, 0);		/* get command glyph */

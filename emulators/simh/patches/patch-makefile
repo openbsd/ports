@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.5 2003/02/02 20:24:47 fgsch Exp $
---- makefile.orig	Mon Jan 13 20:36:40 2003
-+++ makefile	Sun Feb  2 17:04:30 2003
+$OpenBSD: patch-makefile,v 1.6 2003/05/28 16:31:07 fgsch Exp $
+--- makefile.orig	Sun Mar  2 15:44:14 2003
++++ makefile	Wed May 28 13:24:55 2003
 @@ -3,24 +3,25 @@
  # Note: -O2 is sometimes broken in GCC when setjump/longjump is being
  # used. Try -O2 only with released simulators.
@@ -41,7 +41,20 @@ $OpenBSD: patch-makefile,v 1.5 2003/02/02 20:24:47 fgsch Exp $
  
  
  #
-@@ -225,108 +226,108 @@ all : ${BIN}pdp1${EXE} ${BIN}pdp4${EXE} 
+@@ -223,117 +224,117 @@ ALL = ${BIN}pdp1${EXE} ${BIN}pdp4${EXE} 
+ all : ${ALL}
+ 
+ clean :
+-ifeq ($(WIN32),)
++#ifeq ($(WIN32),)
+ 	${RM} ${ALL}
+-else
+-	if exist BIN\*.exe del /q BIN\*.exe
+-endif
++#else
++#	if exist BIN\*.exe del /q BIN\*.exe
++#endif
+ #
  # Individual builds
  #
  ${BIN}pdp1${EXE} : ${PDP1} ${SIM}
