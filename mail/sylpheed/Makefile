@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/02/18 21:42:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/02/28 20:06:27 couderc Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
@@ -7,7 +7,7 @@ CATEGORIES=    	mail news x11
 NEED_VERSION=	1.504
 HOMEPAGE=	http://sylpheed.good-day.net
 
-MAINTAINER=	Damien Couderc <couderc.damien@wanadoo.fr>
+MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

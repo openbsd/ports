@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/22 18:11:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/28 20:06:27 couderc Exp $
 
 COMMENT=	"squid redirector"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.440
 
 HOMEPAGE=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/jesred/
 
-MAINTAINER=	Damien Couderc <couderc.damien@wanadoo.fr>
+MAINTAINER=	Damien Couderc <couderc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

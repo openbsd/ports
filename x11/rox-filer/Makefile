@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/02/18 21:21:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/28 20:06:27 couderc Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
@@ -11,7 +11,7 @@ NEED_VERSION=		1.504
 
 HOMEPAGE=		http://rox.sourceforge.net/
 
-MAINTAINER=		Damien Couderc <couderc.damien@wanadoo.fr>
+MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

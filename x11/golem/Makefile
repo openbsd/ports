@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/11 00:51:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/28 20:06:27 couderc Exp $
 
 COMMENT=		"Fast and light window manager with plug-ins"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.503
 
 HOMEPAGE=		http://golem.sourceforge.net/
 
-MAINTAINER=		Damien Couderc <couderc.damien@wanadoo.fr>
+MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

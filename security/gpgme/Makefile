@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/28 20:06:27 couderc Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.489
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
 
-MAINTAINER=		Damien Couderc <couderc.damien@wanadoo.fr>
+MAINTAINER=		Damien Couderc <couderc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
