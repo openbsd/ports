@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2002/11/17 02:54:01 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2002/11/21 00:27:32 margarida Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
      SUBDIR += apc-upsd
+     SUBDIR += autossh
      SUBDIR += bchunk
      SUBDIR += bubblemon
      SUBDIR += bubblemon-dockapp
