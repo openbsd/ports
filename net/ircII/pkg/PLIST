@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2002/04/30 15:51:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2002/12/08 23:21:34 brad Exp $
 bin/ircII
 bin/ircII-${VERSION}
 bin/ircbug
@@ -103,8 +103,6 @@ share/irc/help/dcc/list
 share/irc/help/dcc/raw
 share/irc/help/dcc/rename
 share/irc/help/dcc/send
-share/irc/help/dcc/talk
-share/irc/help/dcc/tmsg
 share/irc/help/deop
 share/irc/help/describe
 share/irc/help/die
@@ -257,7 +255,9 @@ share/irc/help/on/flood
 share/irc/help/on/help
 share/irc/help/on/hook
 share/irc/help/on/icb_error
+share/irc/help/on/icb_motd
 share/irc/help/on/icb_status
+share/irc/help/on/icb_who
 share/irc/help/on/idle
 share/irc/help/on/input
 share/irc/help/on/invite
@@ -341,6 +341,7 @@ share/irc/help/set/ctcp_reply_backlog_seconds
 share/irc/help/set/ctcp_reply_flood_size
 share/irc/help/set/ctcp_reply_ignore_seconds
 share/irc/help/set/dcc_block_size
+share/irc/help/set/dcchost
 share/irc/help/set/debug
 share/irc/help/set/decrypt_program
 share/irc/help/set/display
@@ -534,6 +535,7 @@ share/irc/script/english
 share/irc/script/events
 share/irc/script/extensions
 share/irc/script/finger
+share/irc/script/fkeys
 share/irc/script/flood
 share/irc/script/fnet
 share/irc/script/functions

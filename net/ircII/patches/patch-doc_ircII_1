@@ -1,5 +1,6 @@
---- doc/ircII.1.orig	Tue Apr  2 21:02:44 2002
-+++ doc/ircII.1	Tue Apr 30 11:25:39 2002
+$OpenBSD: patch-doc_ircII_1,v 1.1 2002/12/08 23:21:34 brad Exp $
+--- doc/ircII.1.orig	Wed Oct 30 08:57:51 2002
++++ doc/ircII.1	Sun Dec  8 18:02:52 2002
 @@ -3,7 +3,7 @@
  .SH NAME
  ircII \- interface to the Internet Relay Chat system
@@ -9,7 +10,7 @@
  .RB [ \-c
  .IR chan ]
  .RB [ \-p
-@@ -59,7 +59,7 @@ Load the .ircrc file before connection t
+@@ -60,7 +60,7 @@ Load the .ircrc file before connection t
  .B \-f
  Use flow control (^S and ^Q) to stop/start the display.
  Normally these are both bound to other functions within
@@ -18,7 +19,7 @@
  This switch is ignored if the
  .B \ -d
  switch is used.
-@@ -109,7 +109,7 @@ default: the username).
+@@ -110,7 +110,7 @@ default: the username).
  .TP
  .I server
  Set the list of servers with which
@@ -27,7 +28,7 @@
  will try to connect upon startup.
  This list is also used by the program's
  .B /server
-@@ -139,9 +139,9 @@ is taken to be the Server Group for this
+@@ -142,9 +142,9 @@ is taken to be the Server Group for this
  .TP
  .BI \-a
  This adds the normal
@@ -39,7 +40,7 @@
  servers.
  .TP
  .BI \-v
-@@ -151,7 +151,7 @@ and exit.
+@@ -154,7 +154,7 @@ and exit.
  .TP
  .BI \-q
  Start up
@@ -48,7 +49,7 @@
  quickly -- don't load the IRCRC file.
  .TP
  .BI \-h " hostname"
-@@ -204,32 +204,32 @@ need to have a leading slash character '
+@@ -208,32 +208,32 @@ need to have a leading slash character '
  This allows predefinition of aliases and other features.
  .SH EXAMPLES
  .TP
@@ -89,7 +90,7 @@
  Interface
  .I IRC
  with a program called
-@@ -239,7 +239,7 @@ with a program called
+@@ -243,7 +243,7 @@ with a program called
  .br
  .B "setenv IRCNAME \"The one and only :)\""
  .TP
@@ -98,10 +99,10 @@
  Set the username (if not specified elsewhere) to "Mermaid".
  The user's name (when provided inside parentheses in response to a
  WHOIS command) is set to "The one and only :)".
-@@ -330,9 +330,6 @@ The initial list of servers if none are 
- .TP
+@@ -335,9 +335,6 @@ The initial list of servers if none are 
  .B ircII.motd
- Message of the day.  This file is displayed only once each time it is changed.
+ Message of the day.
+ This file is displayed only once each time it is changed.
 -.SH "SEE ALSO"
 -irc(1),
 -ircd(8)
