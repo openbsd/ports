@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2005/03/16 21:09:21 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2005/04/04 21:13:22 robert Exp $
 
-FULLPKGNAME=	php5-extensions-${V}p1
+FULLPKGNAME=	php5-extensions-${V}
 COMMENT=	"informational package about PHP5 extensions"
 
 MULTI_PACKAGES=
@@ -280,7 +280,7 @@ XMLRPC_WANTLIB=		iconv
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php5${i}-${V}p1
+FULLPKGNAME${i}=	php5${i}-${V}
 .endif
 .endfor
 

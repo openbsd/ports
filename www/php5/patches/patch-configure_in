@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
---- configure.in.orig	Mon Jul 26 23:07:27 2004
-+++ configure.in	Mon Jul 26 23:08:27 2004
+$OpenBSD: patch-configure_in,v 1.2 2005/04/04 21:13:22 robert Exp $
+--- configure.in.orig	Wed Mar 30 23:43:12 2005
++++ configure.in	Sun Apr  3 12:37:35 2005
 @@ -31,9 +31,7 @@
  AC_INIT(README.CVS-RULES)
  
@@ -10,9 +10,9 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
 -done
 +CONFIGURE_COMMAND="Built via the OpenBSD Ports Tree"
  
- AC_CANONICAL_HOST
+ PHP_CANONICAL_HOST
  AC_CONFIG_HEADER(main/php_config.h)
-@@ -830,14 +828,14 @@
+@@ -876,7 +874,7 @@
  
  case $php_build_target in
  program|static)
@@ -21,15 +21,18 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
      if test -z "$PHP_MODULES"; then
          enable_shared=no
      fi
- ;;
+@@ -884,8 +882,8 @@
  shared)
      enable_static=no
--    standard_libtool_flag=-prefer-pic
-+    standard_libtool_flag=
+     case $with_pic in
+-      yes) standard_libtool_flag='-prefer-pic';;
+-      no)  standard_libtool_flag='-prefer-non-pic';;
++      yes) standard_libtool_flag='';;
++      no)  standard_libtool_flag='';;
+     esac
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
  ;;
- esac
-@@ -1019,7 +1017,7 @@
+@@ -1070,7 +1068,7 @@
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`

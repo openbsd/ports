@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_php-config_in,v 1.1 2004/11/24 13:15:09 alek Exp $
---- scripts/php-config.in.orig	Thu Nov 18 21:50:05 2004
-+++ scripts/php-config.in	Thu Nov 18 21:51:36 2004
+$OpenBSD: patch-scripts_php-config_in,v 1.2 2005/04/04 21:13:22 robert Exp $
+--- scripts/php-config.in.orig	Wed Mar 16 07:36:54 2005
++++ scripts/php-config.in	Sun Apr  3 12:39:04 2005
 @@ -1,8 +1,8 @@
  #! /bin/sh
  
@@ -9,6 +9,6 @@ $OpenBSD: patch-scripts_php-config_in,v 1.1 2004/11/24 13:15:09 alek Exp $
  version="@PHP_VERSION@"
 -includedir="@includedir@/php"
 +includedir="@includedir@"
- includes="-I$includedir -I$includedir/main -I$includedir/Zend"
+ includes="-I$includedir -I$includedir/main -I$includedir/TSRM -I$includedir/Zend"
  ldflags="@PHP_LDFLAGS@"
  libs="@EXTRA_LIBS@"
