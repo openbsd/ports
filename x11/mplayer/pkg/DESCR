@@ -38,9 +38,4 @@ Flavors:
   win32: enables win32 codecs (i386-only)  To use this flavor, your
          kernel must be rebuilt with option USER_LDT
 
-  vorbis: enables vorbis, requires audio/libvorbis. There is a hack
-          that allows AVI files to contain an Ogg Vorbis audio stream,
-          but makes them incompatible with standard AVI. You need this
-          to play those AVIs
-
 WWW: ${HOMEPAGE}

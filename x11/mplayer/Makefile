@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/08/15 19:00:40 mark Exp $
+# $OpenBSD: Makefile,v 1.27 2002/08/16 19:20:54 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -7,7 +7,6 @@ COMMENT=		"Movie player"
 DISTNAME=		MPlayer-0.90pre5
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
-NEED_VERSION=		1.527
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.mplayerhq.hu
@@ -35,7 +34,8 @@ LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		dvdread.::devel/libdvdread \
 		mp3lame::audio/lame \
-		ungif::graphics/libungif
+		ungif::graphics/libungif \
+		vorbis.0,vorbisfile.1::audio/libvorbis
 
 .if ${ELF_TOOLCHAIN} == "no"
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
@@ -50,6 +50,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--disable-arts \
 		--enable-select \
 		--enable-vidix \
+		--enable-vorbis \
 		--with-extraincdir="${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--with-extralibdir=${LOCALBASE}/lib
 
@@ -57,7 +58,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad vorbis win32 iconv no_x11
+FLAVORS=	sdl ggi debug mad win32 iconv no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -100,13 +101,6 @@ CONFIGURE_ARGS+=--enable-mad
 LIB_DEPENDS+=	mad::audio/mad
 .else
 CONFIGURE_ARGS+=--disable-mad
-.endif
-
-.if ${FLAVOR:L:Mvorbis}
-CONFIGURE_ARGS+=--enable-vorbis
-LIB_DEPENDS+=	vorbis.0,vorbisfile.1::audio/libvorbis
-.else
-CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .if ${FLAVOR:L:Miconv}
