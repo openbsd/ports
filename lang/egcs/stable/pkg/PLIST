@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/09/01 11:43:06 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/09/15 11:51:35 espie Exp $
 @option no-default-conflict
 @pkgcfl egcs-*-core
 @pkgcfl gcc-*-core
@@ -75,7 +75,6 @@ lib/libiberty.a
 man/man1/cpp.1
 man/man1/egcc.1
 man/man1/gcov.1
-%%SHARED%%
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic

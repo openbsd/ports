@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/09/10 23:55:13 miod Exp $
+# $OpenBSD: Makefile,v 1.48 2001/09/15 11:51:35 espie Exp $
 
 # This is a configuration file for egcs
 
@@ -54,10 +54,10 @@ PERMIT_DISTFILES_CDROM=Yes
 # and g77-tests only holds duplicates from the main testsuite archive.
 #MAKE_TESTS=yes
 MAKE_GXX=Yes
-#MAKE_FORTRAN=Yes
+MAKE_FORTRAN=Yes
 # we don't care about chill
 #MAKE_CHILL=yes
-#MAKE_OBJC=Yes
+MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
 
 MULTI_PACKAGES=
@@ -163,6 +163,7 @@ post-patch:
 	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/libffi && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/fastjar && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libjava && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC} && rm -rf texinfo
 	cd ${WRKSRC} && rm -rf zlib
 
@@ -250,6 +251,7 @@ USE_GMAKE= yes
 ALL_TARGET=bootstrap
 #ALL_TARGET=bootstrap3
 # ALL_TARGET=bootstrap-lean
+MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
 FAKE_FLAGS=DESTDIR=${WRKINST}
 
@@ -299,6 +301,6 @@ RUN_DEPENDS+=egcc::lang/egcs/stable
 .  endif
 .endif
 
-SUBST_VARS=OSREV V
+SUBST_VARS=V OSREV
 .include <bsd.port.mk>
 
