@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Sep  1 14:43:54 2000
-+++ Makefile.in	Fri Sep  1 14:47:58 2000
+--- Makefile.in.orig	Fri Sep  1 12:07:26 2000
++++ Makefile.in	Tue Sep  5 20:11:29 2000
 @@ -7,6 +7,8 @@
  srcdir = @srcdir@
  VPATH = @srcdir@
@@ -21,15 +21,6 @@
  LIBS = @LIBS@
  
  CPP=@CPP@
-@@ -59,7 +61,7 @@
- 	kmapdef.o acls.o braille.o braille_tsi.o logfile.o layer.o \
- 	sched.o teln.o nethack.o
- 
--all:	screen
-+all:	screen screen.info
- 
- screen: $(OFILES)
- 	$(CC) $(LDFLAGS) -o $@ $(OFILES) $(LIBS)
 @@ -68,14 +70,14 @@
  	$(CC) -c -I. -I$(srcdir) $(M_CFLAGS) $(DEFS) $(OPTIONS) $(CFLAGS) $<
  

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2000/09/01 20:58:11 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2000/09/06 00:28:05 brad Exp $
 
 VERSION=	3.9.8
 DISTNAME=	screen-${VERSION}
 CATEGORIES=	misc
-NEED_VERSION=	1.322
+NEED_VERSION=	1.324
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 
 HOMEPAGE=	http://www.gnu.org/software/screen/
@@ -15,10 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SUBST_VARS=	SYSCONFDIR VERSION
+SUBST_VARS=	VERSION
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
+
+ALL_TARGET=	screen screen.info
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/screen
