@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/06/26 02:36:04 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/08/27 02:46:17 lebel Exp $
 !%%no_gle%%
 bin/xscreensaver
 bin/xscreensaver-command
@@ -343,7 +343,6 @@ man/man1/endgame.1
 man/man1/engine.1
 man/man1/epicycle.1
 man/man1/euler2d.1
-man/man1/extrusion.1
 man/man1/fadeplot.1
 man/man1/flag.1
 man/man1/flame.1
@@ -479,6 +478,15 @@ share/locale/pt/LC_MESSAGES/xscreensaver.mo
 share/locale/ru/LC_MESSAGES/xscreensaver.mo
 share/locale/sv/LC_MESSAGES/xscreensaver.mo
 share/locale/wa/LC_MESSAGES/xscreensaver.mo
+share/xscreensaver/screensaver-cmndln.xpm
+share/xscreensaver/screensaver-colorselector.xpm
+share/xscreensaver/screensaver-diagnostic.xpm
+share/xscreensaver/screensaver-locking.xpm
+share/xscreensaver/screensaver-power.xpm
+share/xscreensaver/screensaver-snap.xpm
+share/xscreensaver/xscreensaver-demo.glade2
+share/xscreensaver/xscreensaver.xpm
+@dirrm share/xscreensaver
 @dirrm libexec/xscreensaver
 @dirrm lib/xscreensaver/config
 @dirrm lib/xscreensaver

@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/26 02:36:03 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2002/08/27 02:46:17 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
 VERSION=		4.05
 DISTNAME=		xscreensaver-${VERSION}
+PKGNAME=		xscreensaver-${VERSION}p1
 CATEGORIES=     	x11
-NEED_VERSION=		1.487
 
 HOMEPAGE=		http://www.jwz.org/xscreensaver/
 
-MAINTAINER=		David Lebel <lebel@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@lectroid.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -18,24 +18,28 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.jwz.org/xscreensaver/
 
-# depends on XML (it needs both of them!)
-LIB_DEPENDS+=		xml2.6::textproc/libxml xml.9::textproc/libxml1
-CONFIGURE_ARGS+=	--with-xml
+MODULES=		gettext
 
-# gdk pixbuf
-LIB_DEPENDS+=		gdk_pixbuf.2,gdk_pixbuf_xlib.2::graphics/gdk-pixbuf
-CONFIGURE_ARGS+=	--with-pixbuf
+LIB_DEPENDS+=		xml2.6::textproc/libxml
 
-NO_REGRESS=		Yes
+MAKE_ENV+=		${CONFIGURE_ENV}
+
 USE_X11=		Yes
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+NO_REGRESS=		Yes
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver"
 CONFIGURE_ARGS+=	--with-gl
 CONFIGURE_ARGS+=	--with-xpm
 CONFIGURE_ARGS+=	--without-gnome
 CONFIGURE_ARGS+=	--with-zippy=/usr/games/fortune
 CONFIGURE_ARGS+=	--without-kerberos
+CONFIGURE_ARGS+=	--with-xml
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 FLAVORS=		no_gle
 FLAVOR?=		
@@ -46,11 +50,6 @@ CONFIGURE_ARGS+=	--with-gle
 .else
 CONFIGURE_ARGS+=	--without-gle
 .endif
-
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-MAKE_ENV+=		${CONFIGURE_ENV}
 
 post-install:
 # rename deco to xdeco, so it doesn't conflict with misc/deco

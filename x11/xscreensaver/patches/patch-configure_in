@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/08/27 02:46:17 lebel Exp $
+--- configure.in.orig	Tue Jun 11 02:02:00 2002
++++ configure.in	Tue Aug 20 20:34:13 2002
+@@ -1823,6 +1823,10 @@ AC_ARG_WITH(gtk,
+ [  --with-gtk              Use the Gtk toolkit for the user interface.],
+   [with_gtk="$withval"; with_gtk_req="$withval"],[with_gtk=yes])
+ 
++AC_ARG_WITH(gtk2,
++[  --with-gtk2             Use the Gtk2 toolkit for the user interface.],
++  [with_gtk2="$withval"; with_gtk_req2="$withval"],[with_gtk2=no])
++
+ # if --with-gtk=/directory/ was specified, remember that directory so that
+ # we can also look for the `gtk-config' program in that directory.
+ case "$with_gtk" in
+@@ -1904,7 +1908,12 @@ if test "$with_gtk" = yes; then
+     gtk_path="$foo:$gtk_path"
+   fi
+ 
+-  AC_PATH_PROGS(pkg_config, pkg-config,, $gtk_path)
++  # Nifty hack: if we don't specify gtk2 we don't want it.  If gtk2 isn't asked
++  # for specifically, we don't use pkgconfig; therefore we don't pick up gtk2
++  # as gtk2 only uses pkgconfig.
++  if test "$with_gtk2" = yes; then
++    AC_PATH_PROGS(pkg_config, pkg-config,, $gtk_path)
++  fi
+ 
+   if test -n "$pkg_config" ; then
+     #
+@@ -1953,7 +1962,10 @@ if test "$with_gtk" = yes; then
+       fi
+     fi
+ 
+-    if test "$have_gtk" = no; then
++    # Nifty hack #2: If we did specify gtk2, don't give us gtk1.  We shouldn't
++    # even be here anymore unless $with_gtk2 == yes, so the gtk1 stuff below
++    # will never get run.
++    if test "$have_gtk" = no -a "$with_gtk2" = no; then
+       #
+       # we don't have GTK 2.  Let's look for GTK 1.
+       #
