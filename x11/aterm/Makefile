@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/05/15 17:58:51 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/06/09 06:09:24 jcs Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
@@ -17,7 +17,7 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--enable-xgetdefault --enable-ttygid
+CONFIGURE_ARGS=	--enable-xgetdefault --enable-ttygid --enable-utmp
 
 FLAVORS=	big5 lite
 FLAVOR?=
