@@ -1,8 +1,9 @@
---- src/Makefile.in.orig	Wed Oct 24 13:44:18 2001
-+++ src/Makefile.in	Wed Oct 24 13:46:08 2001
-@@ -250,6 +250,18 @@ maintainer-clean-compile:
- .S.lo:
- 	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+$OpenBSD: sup-sparc64,v 1.2 2002/10/09 14:14:40 brad Exp $
+--- src/Makefile.in.orig	Fri Jul 12 21:31:52 2002
++++ src/Makefile.in	Wed Oct  9 05:47:37 2002
+@@ -412,6 +412,18 @@ distclean-depend:
+ 	$(LTCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ CCDEPMODE = @CCDEPMODE@
  
 +lzo1b_5.lo:
 +	$(LIBTOOL) --mode=compile $(COMPILE) -O1 -c $<
