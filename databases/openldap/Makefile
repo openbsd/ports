@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/22 14:03:04 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/22 18:43:58 espie Exp $
 
 MULTI_PACKAGES=	-client
 SUBPACKAGE?=
@@ -9,7 +9,7 @@ CATEGORIES=	databases net
 NEED_VERSION=	1.338
 
 .if ${SUBPACKAGE} == "-client"
-PKGNAME=	openldap-client-${VERSION}
+PKGNAME=	openldapclient-${VERSION}
 .else
 PKGNAME=	openldap-${VERSION}
 .endif
