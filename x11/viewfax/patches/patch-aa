@@ -1,18 +1,18 @@
---- Imakefile.orig	Sat Oct 14 15:52:03 1995
-+++ Imakefile	Sat Jun 10 02:55:15 2000
-@@ -1,14 +1,6 @@
+$OpenBSD: patch-aa,v 1.3 2004/05/17 16:32:33 naddy Exp $
+--- Imakefile.orig	Wed May 12 10:57:28 2004
++++ Imakefile	Wed May 12 11:00:07 2004
+@@ -1,13 +1,6 @@
  # Imakefile for viewfax
  
--#ifdef __FreeBSD__
--/* infect all their makefiles with ".include <bsd.foo.mk>" and then
--   complain about this.  Sheesh! :-) */
--HELPDIR = ${USRLIBDIR}/X11
--#else
+-#if 0
+-define these if the defaults are unsuitable
 -BINDIR = /usr/local/bin		/* where you want the binary installed */
 -MANDIR = /usr/local/man/man1	/* where you want the man file installed */
 -HELPDIR = /usr/local/lib	/* where you want the help file installed */
 -#endif
-+HELPDIR=${USRLIBDIR}/X11/viewfax
- 
+-
+-HELPDIR = ${USRLIBDIR}/X11
++HELPDIR = ${USRLIBDIR}/X11/viewfax
  DEFINES = -DHELPFILE=\"$(HELPDIR)/viewfax.tif\"
  
+ SRCS = viewfax.c faxinput.c faxinit.c faxexpand.c
