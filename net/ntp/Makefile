@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/07 18:21:05 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2001/02/08 14:01:17 danh Exp $
 
-DISTNAME=	ntp-4.0.99k
+VERSION=	4.0.99k
+DISTNAME=	ntp-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.352
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
@@ -19,7 +20,7 @@ MULTI_PACKAGES=	-doc
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} == "-doc"
-PKGNAME=	ntp-doc-4.0.99k
+PKGNAME=	ntp-doc-${VERSION}
 .endif
 
 SEPARATE_BUILD=	concurrent
