@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2004/02/22 17:18:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2004/03/31 23:00:32 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
@@ -39,7 +39,8 @@ post-patch:
 
 post-install:
 	perl -i -pe 's:\$$SYSCONFDIR:${SYSCONFDIR}:g' \
-		${PREFIX}/man/man5/nanorc.5
+		${PREFIX}/man/man5/nanorc.5 \
+		${PREFIX}/man/man1/nano.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nano
 	${INSTALL_DATA} ${WRKSRC}/nanorc.sample ${PREFIX}/share/examples/nano
 
