@@ -1,11 +1,11 @@
---- include/config.h.orig	Tue May  4 20:31:35 1999
-+++ include/config.h	Mon Jun 14 00:31:35 1999
+--- include/config.h.orig	Mon Jul 19 19:38:33 1999
++++ include/config.h	Mon Jul 19 19:39:09 1999
 @@ -546,7 +546,7 @@
  #undef EPIC_DEBUG		/* force coredump on panic */
  #define EXEC_COMMAND		/* allow /exec comamnd */
  #undef HACKED_DCC_WARNING	/* warn if handshake != sender */
 -#undef HARD_UNFLASH		/* do a hard reset instead of soft on refresh */
-+#define	HARD_UNFLASH		/* do a hard reset instead of soft on refresh */
++#define HARD_UNFLASH		/* do a hard reset instead of soft on refresh */
  #undef NO_BOTS			/* no bots allowed */
  #undef NO_CHEATING		/* always do it the "right" way, no shortcuts */
  #undef STRIP_EXTRANEOUS_SPACES	/* strip leading and trailing spaces */
