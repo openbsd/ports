@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/27 19:43:36 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/05 22:05:34 sturm Exp $
 bin/honeyd
 include/honeyd/debug.h
 include/honeyd/hooks.h
@@ -10,7 +10,21 @@ share/honeyd/README
 share/honeyd/config.sample
 share/honeyd/nmap.assoc
 share/honeyd/nmap.prints
+share/honeyd/pf.os
+share/honeyd/scripts/proxy.pl
+share/honeyd/scripts/router-telnet.pl
+share/honeyd/scripts/smtp.pl
+share/honeyd/scripts/snmp/README
+share/honeyd/scripts/snmp/buildSNMPConfig.pl
+share/honeyd/scripts/snmp/default.snmp
+share/honeyd/scripts/snmp/fake-snmp.pl
+share/honeyd/scripts/snmp/linux-2.4.snmp.tpl
+share/honeyd/scripts/snmp/windows2000.snmp.tpl
+share/honeyd/scripts/test.sh
+share/honeyd/scripts/web.sh
 share/honeyd/xprobe2.conf
+@dirrm share/honeyd/scripts/snmp
+@dirrm share/honeyd/scripts
 @dirrm share/honeyd
 @dirrm lib/honeyd
 @dirrm include/honeyd
