@@ -1,0 +1,9 @@
+SQLite is a C library that implements an embeddable SQL database engine.
+Programs that link with the SQLite library can have SQL database access
+without running a separate RDBMS process. The distribution comes with a
+standalone command-line access program (sqlite) that can be used to
+administer an SQLite database and which serves as an example of how to
+use the SQLite library.
+
+This is version 3 of the SQLite engine, it is not backwards compatible
+with databases created with SQLite version 2.
