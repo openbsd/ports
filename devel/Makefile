@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2001/09/08 06:51:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.106 2001/09/09 11:21:58 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
+     SUBDIR += p5-Attribute-Handlers
      SUBDIR += p5-B-Graph
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
