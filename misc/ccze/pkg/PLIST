@@ -1,27 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/05 18:58:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/16 09:40:29 sturm Exp $
 bin/ccze
 bin/ccze-cssdump
-include/ccze.h
-lib/ccze/apm.so
-lib/ccze/distcc.so
-lib/ccze/exim.so
-lib/ccze/fetchmail.so
-lib/ccze/ftpstats.so
-lib/ccze/httpd.so
-lib/ccze/icecast.so
-lib/ccze/oops.so
-lib/ccze/php.so
-lib/ccze/postfix.so
-lib/ccze/procmail.so
-lib/ccze/proftpd.so
-lib/ccze/squid.so
-lib/ccze/sulog.so
-lib/ccze/super.so
-lib/ccze/syslog.so
-lib/ccze/ulogd.so
-lib/ccze/vsftpd.so
-lib/ccze/xferlog.so
 man/man1/ccze.1
 man/man1/ccze-cssdump.1
-man/man7/ccze-plugin.7
-@dirrm lib/ccze

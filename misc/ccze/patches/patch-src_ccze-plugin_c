@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ccze-plugin_c,v 1.1 2003/07/16 09:40:29 sturm Exp $
+--- src/ccze-plugin.c.orig	Tue May 13 20:09:08 2003
++++ src/ccze-plugin.c	Wed Jul 16 11:18:38 2003
+@@ -208,7 +208,7 @@ ccze_plugin_load (const char *name)
+ }
+ 
+ static int
+-_ccze_plugin_select (const struct dirent *de)
++_ccze_plugin_select (struct dirent *de)
+ {
+   if (strstr (de->d_name, ".so"))
+     return 1;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ccze-compat_c,v 1.1 2003/07/16 09:40:29 sturm Exp $
+--- src/ccze-compat.c.orig	Wed Jul 16 11:18:56 2003
++++ src/ccze-compat.c	Wed Jul 16 11:19:07 2003
+@@ -275,7 +275,7 @@ ccze_getsubopt (char **optionp, char *co
+ 		char **valuep)
+ {
+   int i = getsubopt (optionp, tokens, valuep);
+-#if HAVE_SUBOPTARg
++#if HAVE_SUBOPTARG
+   if (!*valuep && suboptarg)
+     *valuep = strdup (suboptarg);
+ #endif

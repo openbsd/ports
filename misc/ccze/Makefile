@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/05 18:58:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/16 09:40:29 sturm Exp $
 
 COMMENT=	"log colorizer"
 
 DISTNAME=	ccze-0.2.1	
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <thuglife@bsd.hu>
@@ -17,10 +18,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
+
 LIB_DEPENDS=	pcreposix,pcre::devel/pcre
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-builtins=all
 
 .include <bsd.port.mk>

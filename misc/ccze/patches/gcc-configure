@@ -1,0 +1,37 @@
+$OpenBSD: gcc-configure,v 1.1 2003/07/16 09:40:29 sturm Exp $
+--- configure.orig	Tue May 13 20:09:47 2003
++++ configure	Wed Jul 16 10:40:30 2003
+@@ -3794,6 +3794,8 @@ fi
+ 
+ done
+ 
++_SAVE_CFLAGS=$CFLAGS
++CFLAGS=-O0
+ echo "$as_me:$LINENO: checking for GNU libc compatible malloc" >&5
+ echo $ECHO_N "checking for GNU libc compatible malloc... $ECHO_C" >&6
+ if test "${ac_cv_func_malloc_0_nonnull+set}" = set; then
+@@ -3866,6 +3868,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+ fi
++CFLAGS=$_SAVE_CFLAGS
+ 
+ 
+ 
+@@ -4011,6 +4014,8 @@ fi
+ 
+ done
+ 
++_SAVE_CFLAGS=$CFLAGS
++CFLAGS=-O0
+ echo "$as_me:$LINENO: checking for GNU libc compatible realloc" >&5
+ echo $ECHO_N "checking for GNU libc compatible realloc... $ECHO_C" >&6
+ if test "${ac_cv_func_realloc_0_nonnull+set}" = set; then
+@@ -4083,6 +4088,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+ fi
++CFLAGS=$_SAVE_CFLAGS
+ 
+ 
+ 
