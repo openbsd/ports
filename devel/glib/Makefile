@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.42 2001/08/30 02:10:40 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2001/09/20 03:45:14 brad Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.10
 CATEGORIES=	devel
-NEED_VERSION=	1.435
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
-		http://www.ameth.org/gimp/gtk/v1.2/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.gimp.org/gtk/v1.2/
+NEED_VERSION=	1.458
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR= stable/sources/glib
 
 HOMEPAGE=	http://www.gtk.org/
 
