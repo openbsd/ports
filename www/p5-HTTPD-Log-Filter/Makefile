@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/18 19:44:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/12 06:12:08 pvalchev Exp $
 
 COMMENT=	"httpd log filter library"
 
-DISTNAME=	HTTPD-Log-Filter-1.07
+DISTNAME=	HTTPD-Log-Filter-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTTPD/}
