@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/19 02:52:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/12 07:27:19 kevlo Exp $
 
 VERSION=	0.7.5
 DISTNAME=	gacc_${VERSION}.orig
@@ -23,6 +23,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples/gacc
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 WRKDIST=        ${WRKDIR}/gacc-${VERSION}.orig
 
