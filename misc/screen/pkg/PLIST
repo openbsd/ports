@@ -8,13 +8,4 @@ info/screen.info
 @exec install-info %D/info/screen.info %D/info/dir
 lib/screen/screencap
 lib/screen/screenrc
-@exec echo ""
-@exec echo "*** The latest version of the screenrc and screencap files"
-@exec echo "*** can be found %D/lib/screen"
-@exec if [ -f /etc/screenrc ]; then echo "*** Your /etc/screenrc has NOT been changed"; else cp %B/%f /etc; echo "*** screenrc has been copied into /etc"; fi
-@exec echo ""
 @dirrm lib/screen
-@unexec echo ""
-@unexec echo "*** To completely uninstall this package you must also remove"
-@unexec echo "*** the file /etc/screenrc by hand"
-@unexec echo ""

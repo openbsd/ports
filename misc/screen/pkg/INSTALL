@@ -1,0 +1,78 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 1999/04/09 03:15:19 marc Exp $
+#
+# Pre/post-installation setup of screen
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCREENRC=/etc/screenrc
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The file ${SCREENRC} exists on your system.  It has"
+    echo "| NOT been updated.  Please look at the file "
+    echo "| ${PREFIX}/lib/screen/screenrc"
+    echo "| and add any desired (but missing) entries into your"
+    echo "| current ${SCREENRC}"
+}
+
+# Function: install the screenrc where it is supposed to be.
+#
+do_install()
+{
+    cp ${PREFIX}/lib/screen/screenrc /etc
+    echo
+    echo "+---------------"
+    echo "| The file ${SCREENRC} has been created on your system."
+    echo "| You may want to verify/edit its contents"
+}
+
+# Function: tell people about the screencap file
+#
+do_screencap()
+{
+    echo "|"
+    echo "| The file ${PREFIX}/lib/screen/screencap contains a"
+    echo "| termcap like description of the screen virtual terminal."
+    echo "| You may use it to update your terminal database."
+    echo "| See termcap(5)."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -f ${SCREENRC} ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	do_screencap $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
+

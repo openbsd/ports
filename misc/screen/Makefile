@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/03/25 02:09:36 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/04/09 03:15:18 marc Exp $
 #
 
 DISTNAME=       screen-3.7.6
@@ -26,15 +26,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/screen
 	@${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/lib/screen/screenrc
 	@${INSTALL_DATA} ${WRKSRC}/terminfo/screencap ${PREFIX}/lib/screen
-	@${ECHO} ""
-	@${ECHO} "*** The latest version of the screenrc and screencap files"
-	@${ECHO} "*** can be found ${PREFIX}/lib/screen"
-	@if [ -f /etc/screenrc ]; then \
-	  ${ECHO} "*** Your /etc/screenrc has NOT been changed"; \
-	 else \
-	  cp ${PREFIX}/lib/screen/screenrc /etc; \
-	  ${ECHO} "*** screenrc has been copied into /etc"; \
-	 fi
-	@${ECHO} ""
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
