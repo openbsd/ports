@@ -1,10 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 1998/07/02 11:10:16 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/07/07 09:35:20 form Exp $
 # NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
 #
 
 DISTNAME=		icb-5.0.9
 CATEGORIES=		net
-MASTER_SITES=		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+
+MASTER_SITES=		ftp://ftp.swcp.com/pub/icb/clients/unix/  \
+			ftp://ftp.swcp.com/pub/icb/clients/  \
+			ftp://ftp.swcp.com/pub/icb/server/  \
+			ftp://ftp.empire.net/pub/icb/clients/  \
+			ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/
+
+EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		form@vs.itam.nsc.ru
 
