@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/10/09 22:37:55 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/10/19 12:15:26 espie Exp $
 lib/libDCOP.so.1.0
 lib/libartsc.so.0.0
 lib/libartscbackend.so.0.0

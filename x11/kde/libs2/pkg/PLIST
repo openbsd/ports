@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/10/09 22:37:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/10/19 12:15:26 espie Exp $
 bin/artsc-config
 bin/artscat
 bin/artsd
@@ -21,6 +21,7 @@ bin/kio_uiserver
 bin/klauncher
 bin/kmailservice
 bin/knotify
+bin/ksendbugmail
 bin/lnusertemp
 bin/mcopidl
 bin/settheme
@@ -72,7 +73,6 @@ include/arts/tcpserver.h
 include/arts/type.h
 include/arts/unixconnection.h
 include/arts/unixserver.h
-include/arts/utils.h
 include/arts/weakreference.h
 include/artsc/artsc.h
 include/booktoken.h
@@ -169,6 +169,7 @@ include/kdialog.h
 include/kdialogbase.h
 include/kdirlister.h
 include/kdirnotify.h
+include/kdirnotify_stub.h
 include/kdiroperator.h
 include/kdirsize.h
 include/kdirwatch.h
@@ -210,6 +211,7 @@ include/kimageio.h
 include/kinstance.h
 include/kio/connection.h
 include/kio/defaultprogress.h
+include/kio/file.h
 include/kio/global.h
 include/kio/job.h
 include/kio/jobclasses.h
@@ -225,6 +227,7 @@ include/kio/slaveinterface.h
 include/kio/statusbarprogress.h
 include/kio/tcpslavebase.h
 include/kio/uiserver.h
+include/kio/uiserver_stub.h
 include/kipc.h
 include/kjanuswidget.h
 include/kjavaapplet.h
@@ -306,12 +309,14 @@ include/kspell.h
 include/kspelldlg.h
 include/kssl.h
 include/ksslcertificate.h
+include/ksslcertificatecache.h
 include/ksslcertificatefactory.h
 include/ksslcertificatehome.h
 include/ksslconnectioninfo.h
 include/ksslinfodlg.h
 include/ksslpeerinfo.h
 include/ksslsettings.h
+include/ksslutils.h
 include/ksslx509map.h
 include/kstaticdeleter.h
 include/kstatusbar.h
@@ -458,28 +463,346 @@ share/apps/khtml/khtml.rc
 share/apps/khtml/khtml_browser.rc
 share/apps/khtml/khtml_popupmenu.rc
 share/apps/kjava/kjava-classes.zip
+share/apps/ksgmltools/ca/catalog
+share/apps/ksgmltools/ca/entities/fdl-notice.docbook
+share/apps/ksgmltools/ca/entities/gpl-notice.docbook
+share/apps/ksgmltools/ca/entities/help-menu.docbook
+share/apps/ksgmltools/ca/entities/lgpl-notice.docbook
+share/apps/ksgmltools/ca/entities/report-bugs.docbook
+share/apps/ksgmltools/ca/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/ca/entities/underBSDLicense.docbook
+share/apps/ksgmltools/ca/entities/underFDL.docbook
+share/apps/ksgmltools/ca/entities/underGPL.docbook
+share/apps/ksgmltools/ca/entities/underX11License.docbook
+share/apps/ksgmltools/ca/kde-prologue.entities
+share/apps/ksgmltools/ca/strings.entities
+share/apps/ksgmltools/ca/user.entities
 share/apps/ksgmltools/catalog
-share/apps/ksgmltools/dtd/fdl-notice.entities
+share/apps/ksgmltools/cs/catalog
+share/apps/ksgmltools/cs/entities/fdl-notice.docbook
+share/apps/ksgmltools/cs/entities/gpl-notice.docbook
+share/apps/ksgmltools/cs/entities/help-menu.docbook
+share/apps/ksgmltools/cs/entities/lgpl-notice.docbook
+share/apps/ksgmltools/cs/entities/report-bugs.docbook
+share/apps/ksgmltools/cs/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/cs/entities/underBSDLicense.docbook
+share/apps/ksgmltools/cs/entities/underFDL.docbook
+share/apps/ksgmltools/cs/entities/underGPL.docbook
+share/apps/ksgmltools/cs/entities/underX11License.docbook
+share/apps/ksgmltools/cs/kde-prologue.entities
+share/apps/ksgmltools/cs/strings.entities
+share/apps/ksgmltools/cs/user.entities
+share/apps/ksgmltools/da/catalog
+share/apps/ksgmltools/da/entities/fdl-notice.docbook
+share/apps/ksgmltools/da/entities/gpl-notice.docbook
+share/apps/ksgmltools/da/entities/help-menu.docbook
+share/apps/ksgmltools/da/entities/lgpl-notice.docbook
+share/apps/ksgmltools/da/entities/report-bugs.docbook
+share/apps/ksgmltools/da/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/da/entities/underBSDLicense.docbook
+share/apps/ksgmltools/da/entities/underFDL.docbook
+share/apps/ksgmltools/da/entities/underGPL.docbook
+share/apps/ksgmltools/da/entities/underX11License.docbook
+share/apps/ksgmltools/da/kde-prologue.entities
+share/apps/ksgmltools/da/strings.entities
+share/apps/ksgmltools/da/user.entities
+share/apps/ksgmltools/de/catalog
+share/apps/ksgmltools/de/entities/fdl-notice.docbook
+share/apps/ksgmltools/de/entities/gpl-notice.docbook
+share/apps/ksgmltools/de/entities/help-menu.docbook
+share/apps/ksgmltools/de/entities/lgpl-notice.docbook
+share/apps/ksgmltools/de/entities/report-bugs.docbook
+share/apps/ksgmltools/de/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/de/entities/underBSDLicense.docbook
+share/apps/ksgmltools/de/entities/underFDL.docbook
+share/apps/ksgmltools/de/entities/underGPL.docbook
+share/apps/ksgmltools/de/entities/underX11License.docbook
+share/apps/ksgmltools/de/kde-prologue.entities
+share/apps/ksgmltools/de/strings.entities
+share/apps/ksgmltools/de/user.entities
 share/apps/ksgmltools/dtd/kde-genent.entities
+share/apps/ksgmltools/dtd/kde-modifications.elements
 share/apps/ksgmltools/dtd/kde-next.dtd
 share/apps/ksgmltools/dtd/kde-prologue.entities
 share/apps/ksgmltools/dtd/kde-rdbhier2.elements
 share/apps/ksgmltools/dtd/kde-rdbpool.elements
 share/apps/ksgmltools/dtd/kde.dtd
+share/apps/ksgmltools/el/catalog
+share/apps/ksgmltools/el/entities/fdl-notice.docbook
+share/apps/ksgmltools/el/entities/gpl-notice.docbook
+share/apps/ksgmltools/el/entities/help-menu.docbook
+share/apps/ksgmltools/el/entities/lgpl-notice.docbook
+share/apps/ksgmltools/el/entities/report-bugs.docbook
+share/apps/ksgmltools/el/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/el/entities/underBSDLicense.docbook
+share/apps/ksgmltools/el/entities/underFDL.docbook
+share/apps/ksgmltools/el/entities/underGPL.docbook
+share/apps/ksgmltools/el/entities/underX11License.docbook
+share/apps/ksgmltools/el/kde-prologue.entities
+share/apps/ksgmltools/el/strings.entities
+share/apps/ksgmltools/el/user.entities
+share/apps/ksgmltools/en/catalog
+share/apps/ksgmltools/en/entities/fdl-notice.docbook
+share/apps/ksgmltools/en/entities/gpl-notice.docbook
+share/apps/ksgmltools/en/entities/help-menu.docbook
+share/apps/ksgmltools/en/entities/lgpl-notice.docbook
+share/apps/ksgmltools/en/entities/report-bugs.docbook
+share/apps/ksgmltools/en/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/en/entities/underBSDLicense.docbook
+share/apps/ksgmltools/en/entities/underFDL.docbook
+share/apps/ksgmltools/en/entities/underGPL.docbook
+share/apps/ksgmltools/en/entities/underX11License.docbook
+share/apps/ksgmltools/en/kde-prologue.entities
+share/apps/ksgmltools/en/strings.entities
+share/apps/ksgmltools/en/user.entities
 share/apps/ksgmltools/entities/artistic-license.docbook
 share/apps/ksgmltools/entities/artisticlicense-links.docbook
 share/apps/ksgmltools/entities/bsd-license.docbook
 share/apps/ksgmltools/entities/bsdlicense-links.docbook
-share/apps/ksgmltools/entities/fdl-notice.docbook
-share/apps/ksgmltools/entities/gpl-notice.docbook
-share/apps/ksgmltools/entities/help-menu.docbook
-share/apps/ksgmltools/entities/lgpl-notice.docbook
 share/apps/ksgmltools/entities/license-links.docbook
 share/apps/ksgmltools/entities/qpl-license.docbook
 share/apps/ksgmltools/entities/qpllicense-links.docbook
 share/apps/ksgmltools/entities/x11-license.docbook
 share/apps/ksgmltools/entities/x11license-links.docbook
+share/apps/ksgmltools/es/catalog
+share/apps/ksgmltools/es/entities/fdl-notice.docbook
+share/apps/ksgmltools/es/entities/gpl-notice.docbook
+share/apps/ksgmltools/es/entities/help-menu.docbook
+share/apps/ksgmltools/es/entities/lgpl-notice.docbook
+share/apps/ksgmltools/es/entities/report-bugs.docbook
+share/apps/ksgmltools/es/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/es/entities/underBSDLicense.docbook
+share/apps/ksgmltools/es/entities/underFDL.docbook
+share/apps/ksgmltools/es/entities/underGPL.docbook
+share/apps/ksgmltools/es/entities/underX11License.docbook
+share/apps/ksgmltools/es/kde-prologue.entities
+share/apps/ksgmltools/es/strings.entities
+share/apps/ksgmltools/es/user.entities
+share/apps/ksgmltools/et/catalog
+share/apps/ksgmltools/et/entities/fdl-notice.docbook
+share/apps/ksgmltools/et/entities/gpl-notice.docbook
+share/apps/ksgmltools/et/entities/help-menu.docbook
+share/apps/ksgmltools/et/entities/lgpl-notice.docbook
+share/apps/ksgmltools/et/entities/report-bugs.docbook
+share/apps/ksgmltools/et/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/et/entities/underBSDLicense.docbook
+share/apps/ksgmltools/et/entities/underFDL.docbook
+share/apps/ksgmltools/et/entities/underGPL.docbook
+share/apps/ksgmltools/et/entities/underX11License.docbook
+share/apps/ksgmltools/et/kde-prologue.entities
+share/apps/ksgmltools/et/strings.entities
+share/apps/ksgmltools/et/user.entities
+share/apps/ksgmltools/fi/catalog
+share/apps/ksgmltools/fi/entities/fdl-notice.docbook
+share/apps/ksgmltools/fi/entities/gpl-notice.docbook
+share/apps/ksgmltools/fi/entities/help-menu.docbook
+share/apps/ksgmltools/fi/entities/lgpl-notice.docbook
+share/apps/ksgmltools/fi/entities/report-bugs.docbook
+share/apps/ksgmltools/fi/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/fi/entities/underBSDLicense.docbook
+share/apps/ksgmltools/fi/entities/underFDL.docbook
+share/apps/ksgmltools/fi/entities/underGPL.docbook
+share/apps/ksgmltools/fi/entities/underX11License.docbook
+share/apps/ksgmltools/fi/kde-prologue.entities
+share/apps/ksgmltools/fi/strings.entities
+share/apps/ksgmltools/fi/user.entities
+share/apps/ksgmltools/fr/catalog
+share/apps/ksgmltools/fr/entities/fdl-notice.docbook
+share/apps/ksgmltools/fr/entities/gpl-notice.docbook
+share/apps/ksgmltools/fr/entities/help-menu.docbook
+share/apps/ksgmltools/fr/entities/lgpl-notice.docbook
+share/apps/ksgmltools/fr/entities/report-bugs.docbook
+share/apps/ksgmltools/fr/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/fr/entities/underBSDLicense.docbook
+share/apps/ksgmltools/fr/entities/underFDL.docbook
+share/apps/ksgmltools/fr/entities/underGPL.docbook
+share/apps/ksgmltools/fr/entities/underX11License.docbook
+share/apps/ksgmltools/fr/kde-prologue.entities
+share/apps/ksgmltools/fr/strings.entities
+share/apps/ksgmltools/fr/user.entities
+share/apps/ksgmltools/hu/catalog
+share/apps/ksgmltools/hu/entities/fdl-notice.docbook
+share/apps/ksgmltools/hu/entities/gpl-notice.docbook
+share/apps/ksgmltools/hu/entities/help-menu.docbook
+share/apps/ksgmltools/hu/entities/lgpl-notice.docbook
+share/apps/ksgmltools/hu/entities/report-bugs.docbook
+share/apps/ksgmltools/hu/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/hu/entities/underBSDLicense.docbook
+share/apps/ksgmltools/hu/entities/underFDL.docbook
+share/apps/ksgmltools/hu/entities/underGPL.docbook
+share/apps/ksgmltools/hu/entities/underX11License.docbook
+share/apps/ksgmltools/hu/kde-prologue.entities
+share/apps/ksgmltools/hu/strings.entities
+share/apps/ksgmltools/hu/user.entities
+share/apps/ksgmltools/it/catalog
+share/apps/ksgmltools/it/entities/fdl-notice.docbook
+share/apps/ksgmltools/it/entities/gpl-notice.docbook
+share/apps/ksgmltools/it/entities/help-menu.docbook
+share/apps/ksgmltools/it/entities/lgpl-notice.docbook
+share/apps/ksgmltools/it/entities/report-bugs.docbook
+share/apps/ksgmltools/it/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/it/entities/underBSDLicense.docbook
+share/apps/ksgmltools/it/entities/underFDL.docbook
+share/apps/ksgmltools/it/entities/underGPL.docbook
+share/apps/ksgmltools/it/entities/underX11License.docbook
+share/apps/ksgmltools/it/kde-prologue.entities
+share/apps/ksgmltools/it/strings.entities
+share/apps/ksgmltools/it/user.entities
+share/apps/ksgmltools/ja/catalog
+share/apps/ksgmltools/ja/entities/fdl-notice.docbook
+share/apps/ksgmltools/ja/entities/gpl-notice.docbook
+share/apps/ksgmltools/ja/entities/help-menu.docbook
+share/apps/ksgmltools/ja/entities/lgpl-notice.docbook
+share/apps/ksgmltools/ja/entities/report-bugs.docbook
+share/apps/ksgmltools/ja/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/ja/entities/underBSDLicense.docbook
+share/apps/ksgmltools/ja/entities/underFDL.docbook
+share/apps/ksgmltools/ja/entities/underGPL.docbook
+share/apps/ksgmltools/ja/entities/underX11License.docbook
+share/apps/ksgmltools/ja/kde-prologue.entities
+share/apps/ksgmltools/ja/strings.entities
+share/apps/ksgmltools/ja/user.entities
 share/apps/ksgmltools/kde.dcl
+share/apps/ksgmltools/nl/catalog
+share/apps/ksgmltools/nl/entities/fdl-notice.docbook
+share/apps/ksgmltools/nl/entities/gpl-notice.docbook
+share/apps/ksgmltools/nl/entities/help-menu.docbook
+share/apps/ksgmltools/nl/entities/lgpl-notice.docbook
+share/apps/ksgmltools/nl/entities/report-bugs.docbook
+share/apps/ksgmltools/nl/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/nl/entities/underBSDLicense.docbook
+share/apps/ksgmltools/nl/entities/underFDL.docbook
+share/apps/ksgmltools/nl/entities/underGPL.docbook
+share/apps/ksgmltools/nl/entities/underX11License.docbook
+share/apps/ksgmltools/nl/kde-prologue.entities
+share/apps/ksgmltools/nl/strings.entities
+share/apps/ksgmltools/nl/user.entities
+share/apps/ksgmltools/no/catalog
+share/apps/ksgmltools/no/entities/fdl-notice.docbook
+share/apps/ksgmltools/no/entities/gpl-notice.docbook
+share/apps/ksgmltools/no/entities/help-menu.docbook
+share/apps/ksgmltools/no/entities/lgpl-notice.docbook
+share/apps/ksgmltools/no/entities/report-bugs.docbook
+share/apps/ksgmltools/no/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/no/entities/underBSDLicense.docbook
+share/apps/ksgmltools/no/entities/underFDL.docbook
+share/apps/ksgmltools/no/entities/underGPL.docbook
+share/apps/ksgmltools/no/entities/underX11License.docbook
+share/apps/ksgmltools/no/kde-prologue.entities
+share/apps/ksgmltools/no/strings.entities
+share/apps/ksgmltools/no/user.entities
+share/apps/ksgmltools/pl/catalog
+share/apps/ksgmltools/pl/entities/fdl-notice.docbook
+share/apps/ksgmltools/pl/entities/gpl-notice.docbook
+share/apps/ksgmltools/pl/entities/help-menu.docbook
+share/apps/ksgmltools/pl/entities/lgpl-notice.docbook
+share/apps/ksgmltools/pl/entities/report-bugs.docbook
+share/apps/ksgmltools/pl/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/pl/entities/underBSDLicense.docbook
+share/apps/ksgmltools/pl/entities/underFDL.docbook
+share/apps/ksgmltools/pl/entities/underGPL.docbook
+share/apps/ksgmltools/pl/entities/underX11License.docbook
+share/apps/ksgmltools/pl/kde-prologue.entities
+share/apps/ksgmltools/pl/strings.entities
+share/apps/ksgmltools/pl/user.entities
+share/apps/ksgmltools/pt-BR/catalog
+share/apps/ksgmltools/pt-BR/entities/fdl-notice.docbook
+share/apps/ksgmltools/pt-BR/entities/gpl-notice.docbook
+share/apps/ksgmltools/pt-BR/entities/help-menu.docbook
+share/apps/ksgmltools/pt-BR/entities/lgpl-notice.docbook
+share/apps/ksgmltools/pt-BR/entities/report-bugs.docbook
+share/apps/ksgmltools/pt-BR/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/pt-BR/entities/underBSDLicense.docbook
+share/apps/ksgmltools/pt-BR/entities/underFDL.docbook
+share/apps/ksgmltools/pt-BR/entities/underGPL.docbook
+share/apps/ksgmltools/pt-BR/entities/underX11License.docbook
+share/apps/ksgmltools/pt-BR/kde-prologue.entities
+share/apps/ksgmltools/pt-BR/strings.entities
+share/apps/ksgmltools/pt-BR/user.entities
+share/apps/ksgmltools/pt/catalog
+share/apps/ksgmltools/pt/entities/fdl-notice.docbook
+share/apps/ksgmltools/pt/entities/gpl-notice.docbook
+share/apps/ksgmltools/pt/entities/help-menu.docbook
+share/apps/ksgmltools/pt/entities/lgpl-notice.docbook
+share/apps/ksgmltools/pt/entities/report-bugs.docbook
+share/apps/ksgmltools/pt/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/pt/entities/underBSDLicense.docbook
+share/apps/ksgmltools/pt/entities/underFDL.docbook
+share/apps/ksgmltools/pt/entities/underGPL.docbook
+share/apps/ksgmltools/pt/entities/underX11License.docbook
+share/apps/ksgmltools/pt/kde-prologue.entities
+share/apps/ksgmltools/pt/strings.entities
+share/apps/ksgmltools/pt/user.entities
+share/apps/ksgmltools/ro/catalog
+share/apps/ksgmltools/ro/entities/fdl-notice.docbook
+share/apps/ksgmltools/ro/entities/gpl-notice.docbook
+share/apps/ksgmltools/ro/entities/help-menu.docbook
+share/apps/ksgmltools/ro/entities/lgpl-notice.docbook
+share/apps/ksgmltools/ro/entities/report-bugs.docbook
+share/apps/ksgmltools/ro/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/ro/entities/underBSDLicense.docbook
+share/apps/ksgmltools/ro/entities/underFDL.docbook
+share/apps/ksgmltools/ro/entities/underGPL.docbook
+share/apps/ksgmltools/ro/entities/underX11License.docbook
+share/apps/ksgmltools/ro/kde-prologue.entities
+share/apps/ksgmltools/ro/strings.entities
+share/apps/ksgmltools/ro/user.entities
+share/apps/ksgmltools/ru/catalog
+share/apps/ksgmltools/ru/entities/fdl-notice.docbook
+share/apps/ksgmltools/ru/entities/gpl-notice.docbook
+share/apps/ksgmltools/ru/entities/help-menu.docbook
+share/apps/ksgmltools/ru/entities/lgpl-notice.docbook
+share/apps/ksgmltools/ru/entities/report-bugs.docbook
+share/apps/ksgmltools/ru/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/ru/entities/underBSDLicense.docbook
+share/apps/ksgmltools/ru/entities/underFDL.docbook
+share/apps/ksgmltools/ru/entities/underGPL.docbook
+share/apps/ksgmltools/ru/entities/underX11License.docbook
+share/apps/ksgmltools/ru/kde-prologue.entities
+share/apps/ksgmltools/ru/strings.entities
+share/apps/ksgmltools/ru/user.entities
+share/apps/ksgmltools/sk/catalog
+share/apps/ksgmltools/sk/entities/fdl-notice.docbook
+share/apps/ksgmltools/sk/entities/gpl-notice.docbook
+share/apps/ksgmltools/sk/entities/help-menu.docbook
+share/apps/ksgmltools/sk/entities/lgpl-notice.docbook
+share/apps/ksgmltools/sk/entities/report-bugs.docbook
+share/apps/ksgmltools/sk/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/sk/entities/underBSDLicense.docbook
+share/apps/ksgmltools/sk/entities/underFDL.docbook
+share/apps/ksgmltools/sk/entities/underGPL.docbook
+share/apps/ksgmltools/sk/entities/underX11License.docbook
+share/apps/ksgmltools/sk/kde-prologue.entities
+share/apps/ksgmltools/sk/strings.entities
+share/apps/ksgmltools/sk/user.entities
+share/apps/ksgmltools/sl/catalog
+share/apps/ksgmltools/sl/entities/fdl-notice.docbook
+share/apps/ksgmltools/sl/entities/gpl-notice.docbook
+share/apps/ksgmltools/sl/entities/help-menu.docbook
+share/apps/ksgmltools/sl/entities/lgpl-notice.docbook
+share/apps/ksgmltools/sl/entities/report-bugs.docbook
+share/apps/ksgmltools/sl/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/sl/entities/underBSDLicense.docbook
+share/apps/ksgmltools/sl/entities/underFDL.docbook
+share/apps/ksgmltools/sl/entities/underGPL.docbook
+share/apps/ksgmltools/sl/entities/underX11License.docbook
+share/apps/ksgmltools/sl/kde-prologue.entities
+share/apps/ksgmltools/sl/strings.entities
+share/apps/ksgmltools/sl/user.entities
+share/apps/ksgmltools/sr/catalog
+share/apps/ksgmltools/sr/entities/fdl-notice.docbook
+share/apps/ksgmltools/sr/entities/gpl-notice.docbook
+share/apps/ksgmltools/sr/entities/help-menu.docbook
+share/apps/ksgmltools/sr/entities/lgpl-notice.docbook
+share/apps/ksgmltools/sr/entities/report-bugs.docbook
+share/apps/ksgmltools/sr/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/sr/entities/underBSDLicense.docbook
+share/apps/ksgmltools/sr/entities/underFDL.docbook
+share/apps/ksgmltools/sr/entities/underGPL.docbook
+share/apps/ksgmltools/sr/entities/underX11License.docbook
+share/apps/ksgmltools/sr/kde-prologue.entities
+share/apps/ksgmltools/sr/strings.entities
+share/apps/ksgmltools/sr/user.entities
 share/apps/ksgmltools/stylesheets/kde-anchor.dsl
 share/apps/ksgmltools/stylesheets/kde-faq.dsl
 share/apps/ksgmltools/stylesheets/kde-img.dsl
@@ -517,10 +840,10 @@ share/apps/ksgmltools/stylesheets/kde-l1no.dsl
 share/apps/ksgmltools/stylesheets/kde-l1no.ent
 share/apps/ksgmltools/stylesheets/kde-l1pl.dsl
 share/apps/ksgmltools/stylesheets/kde-l1pl.ent
-share/apps/ksgmltools/stylesheets/kde-l1pt-BR.dsl
-share/apps/ksgmltools/stylesheets/kde-l1pt-BR.ent
 share/apps/ksgmltools/stylesheets/kde-l1pt.dsl
 share/apps/ksgmltools/stylesheets/kde-l1pt.ent
+share/apps/ksgmltools/stylesheets/kde-l1ptbr.dsl
+share/apps/ksgmltools/stylesheets/kde-l1ptbr.ent
 share/apps/ksgmltools/stylesheets/kde-l1ro.dsl
 share/apps/ksgmltools/stylesheets/kde-l1ro.ent
 share/apps/ksgmltools/stylesheets/kde-l1ru.dsl
@@ -533,13 +856,42 @@ share/apps/ksgmltools/stylesheets/kde-l1sr.dsl
 share/apps/ksgmltools/stylesheets/kde-l1sr.ent
 share/apps/ksgmltools/stylesheets/kde-l1sv.dsl
 share/apps/ksgmltools/stylesheets/kde-l1sv.ent
-share/apps/ksgmltools/stylesheets/kde-l1zh-CN.dsl
-share/apps/ksgmltools/stylesheets/kde-l1zh-CN.ent
+share/apps/ksgmltools/stylesheets/kde-l1zhcn.dsl
+share/apps/ksgmltools/stylesheets/kde-l1zhcn.ent
 share/apps/ksgmltools/stylesheets/kde-navig.dsl
 share/apps/ksgmltools/stylesheets/kde-search.dsl
 share/apps/ksgmltools/stylesheets/kde-ttlpg.dsl
 share/apps/ksgmltools/stylesheets/kde.css
 share/apps/ksgmltools/stylesheets/kde.dsl
+share/apps/ksgmltools/sv/catalog
+share/apps/ksgmltools/sv/entities/fdl-notice.docbook
+share/apps/ksgmltools/sv/entities/gpl-notice.docbook
+share/apps/ksgmltools/sv/entities/help-menu.docbook
+share/apps/ksgmltools/sv/entities/lgpl-notice.docbook
+share/apps/ksgmltools/sv/entities/report-bugs.docbook
+share/apps/ksgmltools/sv/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/sv/entities/underBSDLicense.docbook
+share/apps/ksgmltools/sv/entities/underFDL.docbook
+share/apps/ksgmltools/sv/entities/underGPL.docbook
+share/apps/ksgmltools/sv/entities/underX11License.docbook
+share/apps/ksgmltools/sv/kde-prologue.entities
+share/apps/ksgmltools/sv/strings.entities
+share/apps/ksgmltools/sv/user.entities
+share/apps/ksgmltools/zh-CN/catalog
+share/apps/ksgmltools/zh-CN/entities/fdl-notice.docbook
+share/apps/ksgmltools/zh-CN/entities/gpl-notice.docbook
+share/apps/ksgmltools/zh-CN/entities/help-menu.docbook
+share/apps/ksgmltools/zh-CN/entities/lgpl-notice.docbook
+share/apps/ksgmltools/zh-CN/entities/report-bugs.docbook
+share/apps/ksgmltools/zh-CN/entities/underArtisticLicense.docbook
+share/apps/ksgmltools/zh-CN/entities/underBSDLicense.docbook
+share/apps/ksgmltools/zh-CN/entities/underFDL.docbook
+share/apps/ksgmltools/zh-CN/entities/underGPL.docbook
+share/apps/ksgmltools/zh-CN/entities/underX11License.docbook
+share/apps/ksgmltools/zh-CN/kde-prologue.entities
+share/apps/ksgmltools/zh-CN/strings.entities
+share/apps/ksgmltools/zh-CN/user.entities
+share/apps/kssl/caroot/ca-bundle.crt
 share/apps/kstyle/pixmaps/aquaice.png
 share/apps/kstyle/pixmaps/black_combo.png
 share/apps/kstyle/pixmaps/blkmarble.png
@@ -670,7 +1022,6 @@ share/icons/hicolor/22x22/actions/1leftarrow.png
 share/icons/hicolor/22x22/actions/1rightarrow.png
 share/icons/hicolor/22x22/actions/2leftarrow.png
 share/icons/hicolor/22x22/actions/2rightarrow.png
-share/icons/hicolor/22x22/actions/add_point.png
 share/icons/hicolor/22x22/actions/airbrush.png
 share/icons/hicolor/22x22/actions/attach.png
 share/icons/hicolor/22x22/actions/back.png
@@ -684,15 +1035,16 @@ share/icons/hicolor/22x22/actions/connect_established.png
 share/icons/hicolor/22x22/actions/connect_no.png
 share/icons/hicolor/22x22/actions/contents.png
 share/icons/hicolor/22x22/actions/contexthelp.png
-share/icons/hicolor/22x22/actions/contiguous.png
 share/icons/hicolor/22x22/actions/crop.png
+share/icons/hicolor/22x22/actions/decrypted.png
 share/icons/hicolor/22x22/actions/down.png
 share/icons/hicolor/22x22/actions/editcopy.png
 share/icons/hicolor/22x22/actions/editcut.png
 share/icons/hicolor/22x22/actions/editdelete.png
 share/icons/hicolor/22x22/actions/editpaste.png
+share/icons/hicolor/22x22/actions/editshred.png
 share/icons/hicolor/22x22/actions/edittrash.png
-share/icons/hicolor/22x22/actions/elliptical.png
+share/icons/hicolor/22x22/actions/encrypted.png
 share/icons/hicolor/22x22/actions/eraser.png
 share/icons/hicolor/22x22/actions/exec.png
 share/icons/hicolor/22x22/actions/filenew.png
@@ -705,8 +1057,9 @@ share/icons/hicolor/22x22/actions/find.png
 share/icons/hicolor/22x22/actions/finish.png
 share/icons/hicolor/22x22/actions/folder_new.png
 share/icons/hicolor/22x22/actions/forward.png
+share/icons/hicolor/22x22/actions/gear.png
 share/icons/hicolor/22x22/actions/gohome.png
-share/icons/hicolor/22x22/actions/handdrawn.png
+share/icons/hicolor/22x22/actions/goto.png
 share/icons/hicolor/22x22/actions/help.png
 share/icons/hicolor/22x22/actions/kde/0001.png
 share/icons/hicolor/22x22/actions/kde/0002.png
@@ -760,12 +1113,15 @@ share/icons/hicolor/22x22/actions/kde/0049.png
 share/icons/hicolor/22x22/actions/kde/0050.png
 share/icons/hicolor/22x22/actions/lasso.png
 share/icons/hicolor/22x22/actions/leftjust.png
+share/icons/hicolor/22x22/actions/lock.png
 share/icons/hicolor/22x22/actions/mail_forward.png
+share/icons/hicolor/22x22/actions/mail_generic.png
 share/icons/hicolor/22x22/actions/mail_get.png
 share/icons/hicolor/22x22/actions/mail_reply.png
 share/icons/hicolor/22x22/actions/mail_replyall.png
 share/icons/hicolor/22x22/actions/mail_send.png
 share/icons/hicolor/22x22/actions/move.png
+share/icons/hicolor/22x22/actions/news_subscribe.png
 share/icons/hicolor/22x22/actions/next.png
 share/icons/hicolor/22x22/actions/openterm.png
 share/icons/hicolor/22x22/actions/paintbrush.png
@@ -777,13 +1133,11 @@ share/icons/hicolor/22x22/actions/player_start.png
 share/icons/hicolor/22x22/actions/player_stop.png
 share/icons/hicolor/22x22/actions/previous.png
 share/icons/hicolor/22x22/actions/queue.png
-share/icons/hicolor/22x22/actions/rectangular.png
 share/icons/hicolor/22x22/actions/redo.png
 share/icons/hicolor/22x22/actions/reload.png
 share/icons/hicolor/22x22/actions/rightjust.png
 share/icons/hicolor/22x22/actions/run.png
 share/icons/hicolor/22x22/actions/showmenu.png
-share/icons/hicolor/22x22/actions/smart_select.png
 share/icons/hicolor/22x22/actions/spellcheck.png
 share/icons/hicolor/22x22/actions/start.png
 share/icons/hicolor/22x22/actions/stop.png
@@ -797,10 +1151,12 @@ share/icons/hicolor/22x22/actions/text_right.png
 share/icons/hicolor/22x22/actions/text_under.png
 share/icons/hicolor/22x22/actions/top.png
 share/icons/hicolor/22x22/actions/undo.png
+share/icons/hicolor/22x22/actions/unlock.png
 share/icons/hicolor/22x22/actions/up.png
 share/icons/hicolor/22x22/actions/viewmag+.png
 share/icons/hicolor/22x22/actions/viewmag-.png
 share/icons/hicolor/22x22/actions/viewmag.png
+share/icons/hicolor/22x22/actions/window_fullscreen.png
 share/icons/hicolor/22x22/actions/window_nofullscreen.png
 share/icons/hicolor/22x22/actions/wizard.png
 share/icons/hicolor/32x32/actions/1leftarrow.png
@@ -816,17 +1172,21 @@ share/icons/hicolor/32x32/actions/colors.png
 share/icons/hicolor/32x32/actions/configure.png
 share/icons/hicolor/32x32/actions/contents.png
 share/icons/hicolor/32x32/actions/contexthelp.png
+share/icons/hicolor/32x32/actions/decrypted.png
 share/icons/hicolor/32x32/actions/down.png
 share/icons/hicolor/32x32/actions/editcopy.png
 share/icons/hicolor/32x32/actions/editcut.png
 share/icons/hicolor/32x32/actions/editdelete.png
 share/icons/hicolor/32x32/actions/editpaste.png
+share/icons/hicolor/32x32/actions/editshred.png
+share/icons/hicolor/32x32/actions/edittrash.png
+share/icons/hicolor/32x32/actions/encrypted.png
 share/icons/hicolor/32x32/actions/exec.png
 share/icons/hicolor/32x32/actions/filenew.png
 share/icons/hicolor/32x32/actions/fileopen.png
 share/icons/hicolor/32x32/actions/fileprint.png
-share/icons/hicolor/32x32/actions/files.png
 share/icons/hicolor/32x32/actions/filesave.png
+share/icons/hicolor/32x32/actions/filter.png
 share/icons/hicolor/32x32/actions/find.png
 share/icons/hicolor/32x32/actions/finish.png
 share/icons/hicolor/32x32/actions/folder_new.png
@@ -887,13 +1247,16 @@ share/icons/hicolor/32x32/actions/kde/0048.png
 share/icons/hicolor/32x32/actions/kde/0049.png
 share/icons/hicolor/32x32/actions/kde/0050.png
 share/icons/hicolor/32x32/actions/leftjust.png
+share/icons/hicolor/32x32/actions/lock.png
 share/icons/hicolor/32x32/actions/mail_forward.png
+share/icons/hicolor/32x32/actions/mail_generic.png
 share/icons/hicolor/32x32/actions/mail_get.png
 share/icons/hicolor/32x32/actions/mail_reply.png
 share/icons/hicolor/32x32/actions/mail_replyall.png
 share/icons/hicolor/32x32/actions/mail_send.png
 share/icons/hicolor/32x32/actions/misc.png
 share/icons/hicolor/32x32/actions/mouse.png
+share/icons/hicolor/32x32/actions/news_subscribe.png
 share/icons/hicolor/32x32/actions/next.png
 share/icons/hicolor/32x32/actions/openterm.png
 share/icons/hicolor/32x32/actions/player_eject.png
@@ -907,6 +1270,8 @@ share/icons/hicolor/32x32/actions/redo.png
 share/icons/hicolor/32x32/actions/reload.png
 share/icons/hicolor/32x32/actions/rightjust.png
 share/icons/hicolor/32x32/actions/rotate.png
+share/icons/hicolor/32x32/actions/rotate_ccw.png
+share/icons/hicolor/32x32/actions/rotate_cw.png
 share/icons/hicolor/32x32/actions/run.png
 share/icons/hicolor/32x32/actions/spellcheck.png
 share/icons/hicolor/32x32/actions/start.png
@@ -920,14 +1285,17 @@ share/icons/hicolor/32x32/actions/text_right.png
 share/icons/hicolor/32x32/actions/text_under.png
 share/icons/hicolor/32x32/actions/top.png
 share/icons/hicolor/32x32/actions/undo.png
+share/icons/hicolor/32x32/actions/unlock.png
 share/icons/hicolor/32x32/actions/up.png
 share/icons/hicolor/32x32/actions/viewmag+.png
 share/icons/hicolor/32x32/actions/viewmag-.png
 share/icons/hicolor/32x32/actions/viewmag.png
+share/icons/hicolor/32x32/actions/window_fullscreen.png
 share/icons/hicolor/32x32/actions/window_nofullscreen.png
 share/icons/hicolor/32x32/actions/wizard.png
 share/icons/hicolor/32x32/filesystems/desktop.png
 share/icons/hicolor/32x32/filesystems/exec.png
+share/icons/hicolor/32x32/filesystems/file_broken.png
 share/icons/hicolor/32x32/filesystems/file_locked.png
 share/icons/hicolor/32x32/filesystems/folder.png
 share/icons/hicolor/32x32/filesystems/folder_blue.png
@@ -940,7 +1308,7 @@ share/icons/hicolor/32x32/filesystems/folder_red.png
 share/icons/hicolor/32x32/filesystems/folder_yellow.png
 share/icons/hicolor/32x32/filesystems/ftp.png
 share/icons/hicolor/32x32/filesystems/link.png
-share/icons/hicolor/32x32/filesystems/lock.png
+share/icons/hicolor/32x32/filesystems/lockoverlay.png
 share/icons/hicolor/32x32/filesystems/pipe.png
 share/icons/hicolor/32x32/filesystems/shredder.png
 share/icons/hicolor/32x32/filesystems/socket.png
@@ -985,11 +1353,13 @@ share/icons/hicolor/32x32/mimetypes/p_src.png
 share/icons/hicolor/32x32/mimetypes/pdf.png
 share/icons/hicolor/32x32/mimetypes/pk.png
 share/icons/hicolor/32x32/mimetypes/postscript.png
+share/icons/hicolor/32x32/mimetypes/py_src.png
 share/icons/hicolor/32x32/mimetypes/readme.png
 share/icons/hicolor/32x32/mimetypes/recycled.png
 share/icons/hicolor/32x32/mimetypes/resource.png
 share/icons/hicolor/32x32/mimetypes/rpm.png
 share/icons/hicolor/32x32/mimetypes/s_src.png
+share/icons/hicolor/32x32/mimetypes/shell2_src.png
 share/icons/hicolor/32x32/mimetypes/sound.png
 share/icons/hicolor/32x32/mimetypes/tar.png
 share/icons/hicolor/32x32/mimetypes/tex.png
@@ -1000,7 +1370,6 @@ share/icons/hicolor/32x32/mimetypes/vcalendar.png
 share/icons/hicolor/32x32/mimetypes/vcard.png
 share/icons/hicolor/32x32/mimetypes/video.png
 share/icons/hicolor/32x32/mimetypes/y_src.png
-share/icons/hicolor/48x48/actions/gear.png
 share/icons/hicolor/48x48/actions/kde/0001.png
 share/icons/hicolor/48x48/actions/kde/0002.png
 share/icons/hicolor/48x48/actions/kde/0003.png
@@ -1051,9 +1420,9 @@ share/icons/hicolor/48x48/actions/kde/0047.png
 share/icons/hicolor/48x48/actions/kde/0048.png
 share/icons/hicolor/48x48/actions/kde/0049.png
 share/icons/hicolor/48x48/actions/kde/0050.png
-share/icons/hicolor/48x48/actions/misc.png
 share/icons/hicolor/48x48/filesystems/desktop.png
 share/icons/hicolor/48x48/filesystems/exec.png
+share/icons/hicolor/48x48/filesystems/file_broken.png
 share/icons/hicolor/48x48/filesystems/file_locked.png
 share/icons/hicolor/48x48/filesystems/folder.png
 share/icons/hicolor/48x48/filesystems/folder_blue.png
@@ -1066,7 +1435,7 @@ share/icons/hicolor/48x48/filesystems/folder_red.png
 share/icons/hicolor/48x48/filesystems/folder_yellow.png
 share/icons/hicolor/48x48/filesystems/ftp.png
 share/icons/hicolor/48x48/filesystems/link.png
-share/icons/hicolor/48x48/filesystems/lock.png
+share/icons/hicolor/48x48/filesystems/lockoverlay.png
 share/icons/hicolor/48x48/filesystems/shredder.png
 share/icons/hicolor/48x48/filesystems/socket.png
 share/icons/hicolor/48x48/filesystems/trashcan_empty.png
@@ -1110,11 +1479,13 @@ share/icons/hicolor/48x48/mimetypes/p_src.png
 share/icons/hicolor/48x48/mimetypes/pdf.png
 share/icons/hicolor/48x48/mimetypes/pk.png
 share/icons/hicolor/48x48/mimetypes/postscript.png
+share/icons/hicolor/48x48/mimetypes/py_src.png
 share/icons/hicolor/48x48/mimetypes/readme.png
 share/icons/hicolor/48x48/mimetypes/recycled.png
 share/icons/hicolor/48x48/mimetypes/resource.png
 share/icons/hicolor/48x48/mimetypes/rpm.png
 share/icons/hicolor/48x48/mimetypes/s_src.png
+share/icons/hicolor/48x48/mimetypes/shell2_src.png
 share/icons/hicolor/48x48/mimetypes/sound.png
 share/icons/hicolor/48x48/mimetypes/tar.png
 share/icons/hicolor/48x48/mimetypes/tex.png
@@ -1126,12 +1497,14 @@ share/icons/hicolor/48x48/mimetypes/vcard.png
 share/icons/hicolor/48x48/mimetypes/video.png
 share/icons/hicolor/48x48/mimetypes/y_src.png
 share/icons/hicolor/index.desktop
-share/icons/hicolor/scalable/filesystems/exec.png
+share/icons/locolor/16x16/actions/1downarrow.png
 share/icons/locolor/16x16/actions/1leftarrow.png
 share/icons/locolor/16x16/actions/1rightarrow.png
+share/icons/locolor/16x16/actions/1uparrow.png
+share/icons/locolor/16x16/actions/2downarrow.png
 share/icons/locolor/16x16/actions/2leftarrow.png
 share/icons/locolor/16x16/actions/2rightarrow.png
-share/icons/locolor/16x16/actions/add_point.png
+share/icons/locolor/16x16/actions/2uparrow.png
 share/icons/locolor/16x16/actions/airbrush.png
 share/icons/locolor/16x16/actions/attach.png
 share/icons/locolor/16x16/actions/back.png
@@ -1140,13 +1513,15 @@ share/icons/locolor/16x16/actions/bookmark.png
 share/icons/locolor/16x16/actions/bookmark_add.png
 share/icons/locolor/16x16/actions/bookmark_toolbar.png
 share/icons/locolor/16x16/actions/bottom.png
-share/icons/locolor/16x16/actions/circle_select.png
 share/icons/locolor/16x16/actions/colorpicker.png
 share/icons/locolor/16x16/actions/configure.png
+share/icons/locolor/16x16/actions/connect_creating.png
+share/icons/locolor/16x16/actions/connect_established.png
+share/icons/locolor/16x16/actions/connect_no.png
 share/icons/locolor/16x16/actions/contents.png
 share/icons/locolor/16x16/actions/contexthelp.png
-share/icons/locolor/16x16/actions/contiguous.png
 share/icons/locolor/16x16/actions/crop.png
+share/icons/locolor/16x16/actions/decrypted.png
 share/icons/locolor/16x16/actions/down.png
 share/icons/locolor/16x16/actions/editcopy.png
 share/icons/locolor/16x16/actions/editcut.png
@@ -1154,19 +1529,18 @@ share/icons/locolor/16x16/actions/editdelete.png
 share/icons/locolor/16x16/actions/editpaste.png
 share/icons/locolor/16x16/actions/editshred.png
 share/icons/locolor/16x16/actions/edittrash.png
-share/icons/locolor/16x16/actions/elliptical.png
-share/icons/locolor/16x16/actions/encrypt.png
+share/icons/locolor/16x16/actions/encrypted.png
 share/icons/locolor/16x16/actions/eraser.png
 share/icons/locolor/16x16/actions/exec.png
 share/icons/locolor/16x16/actions/exit.png
 share/icons/locolor/16x16/actions/fileclose.png
-share/icons/locolor/16x16/actions/filemail.png
 share/icons/locolor/16x16/actions/filenew.png
 share/icons/locolor/16x16/actions/fileopen.png
 share/icons/locolor/16x16/actions/fileprint.png
 share/icons/locolor/16x16/actions/filequickprint.png
 share/icons/locolor/16x16/actions/filesave.png
 share/icons/locolor/16x16/actions/fill.png
+share/icons/locolor/16x16/actions/filter.png
 share/icons/locolor/16x16/actions/find.png
 share/icons/locolor/16x16/actions/finish.png
 share/icons/locolor/16x16/actions/flag.png
@@ -1175,19 +1549,19 @@ share/icons/locolor/16x16/actions/forward.png
 share/icons/locolor/16x16/actions/gear.png
 share/icons/locolor/16x16/actions/gohome.png
 share/icons/locolor/16x16/actions/goto.png
-share/icons/locolor/16x16/actions/handdrawn.png
 share/icons/locolor/16x16/actions/help.png
 share/icons/locolor/16x16/actions/idea.png
 share/icons/locolor/16x16/actions/key.png
-share/icons/locolor/16x16/actions/lasso.png
 share/icons/locolor/16x16/actions/lock.png
 share/icons/locolor/16x16/actions/mail_forward.png
+share/icons/locolor/16x16/actions/mail_generic.png
 share/icons/locolor/16x16/actions/mail_get.png
 share/icons/locolor/16x16/actions/mail_reply.png
 share/icons/locolor/16x16/actions/mail_replyall.png
 share/icons/locolor/16x16/actions/mail_send.png
-share/icons/locolor/16x16/actions/misc.png
 share/icons/locolor/16x16/actions/move.png
+share/icons/locolor/16x16/actions/news_subscribe.png
+share/icons/locolor/16x16/actions/news_unsubscribe.png
 share/icons/locolor/16x16/actions/next.png
 share/icons/locolor/16x16/actions/openterm.png
 share/icons/locolor/16x16/actions/paintbrush.png
@@ -1199,14 +1573,12 @@ share/icons/locolor/16x16/actions/player_start.png
 share/icons/locolor/16x16/actions/player_stop.png
 share/icons/locolor/16x16/actions/previous.png
 share/icons/locolor/16x16/actions/queue.png
-share/icons/locolor/16x16/actions/quickprint.png
-share/icons/locolor/16x16/actions/rectangular.png
 share/icons/locolor/16x16/actions/redo.png
 share/icons/locolor/16x16/actions/reload.png
 share/icons/locolor/16x16/actions/rotate.png
+share/icons/locolor/16x16/actions/rotate_ccw.png
+share/icons/locolor/16x16/actions/rotate_cw.png
 share/icons/locolor/16x16/actions/run.png
-share/icons/locolor/16x16/actions/send.png
-share/icons/locolor/16x16/actions/smart_select.png
 share/icons/locolor/16x16/actions/spellcheck.png
 share/icons/locolor/16x16/actions/stamp.png
 share/icons/locolor/16x16/actions/start.png
@@ -1221,8 +1593,8 @@ share/icons/locolor/16x16/actions/text_right.png
 share/icons/locolor/16x16/actions/text_under.png
 share/icons/locolor/16x16/actions/top.png
 share/icons/locolor/16x16/actions/transform.png
-share/icons/locolor/16x16/actions/trash.png
 share/icons/locolor/16x16/actions/undo.png
+share/icons/locolor/16x16/actions/unlock.png
 share/icons/locolor/16x16/actions/up.png
 share/icons/locolor/16x16/actions/viewmag+.png
 share/icons/locolor/16x16/actions/viewmag-.png
@@ -1244,13 +1616,14 @@ share/icons/locolor/16x16/filesystems/folder_open.png
 share/icons/locolor/16x16/filesystems/folder_red.png
 share/icons/locolor/16x16/filesystems/folder_yellow.png
 share/icons/locolor/16x16/filesystems/ftp.png
-share/icons/locolor/16x16/filesystems/lock.png
+share/icons/locolor/16x16/filesystems/lockoverlay.png
 share/icons/locolor/16x16/filesystems/pipe.png
 share/icons/locolor/16x16/filesystems/socket.png
 share/icons/locolor/16x16/filesystems/trashcan_empty.png
 share/icons/locolor/16x16/filesystems/trashcan_full.png
 share/icons/locolor/16x16/filesystems/www.png
 share/icons/locolor/16x16/filesystems/zip.png
+share/icons/locolor/16x16/mimetypes/applix.png
 share/icons/locolor/16x16/mimetypes/binary.png
 share/icons/locolor/16x16/mimetypes/binary2.png
 share/icons/locolor/16x16/mimetypes/blockdevice.png
@@ -1261,13 +1634,16 @@ share/icons/locolor/16x16/mimetypes/cpp_src.png
 share/icons/locolor/16x16/mimetypes/document.png
 share/icons/locolor/16x16/mimetypes/dvi.png
 share/icons/locolor/16x16/mimetypes/f_src.png
-share/icons/locolor/16x16/mimetypes/font.png
+share/icons/locolor/16x16/mimetypes/font_bitmap.png
+share/icons/locolor/16x16/mimetypes/font_truetype.png
+share/icons/locolor/16x16/mimetypes/font_type1.png
 share/icons/locolor/16x16/mimetypes/gf.png
 share/icons/locolor/16x16/mimetypes/h_src.png
 share/icons/locolor/16x16/mimetypes/html.png
 share/icons/locolor/16x16/mimetypes/image.png
 share/icons/locolor/16x16/mimetypes/info.png
 share/icons/locolor/16x16/mimetypes/java_src.png
+share/icons/locolor/16x16/mimetypes/kmultiple.png
 share/icons/locolor/16x16/mimetypes/l_src.png
 share/icons/locolor/16x16/mimetypes/log.png
 share/icons/locolor/16x16/mimetypes/make.png
@@ -1277,22 +1653,28 @@ share/icons/locolor/16x16/mimetypes/midi.png
 share/icons/locolor/16x16/mimetypes/mime_empty.png
 share/icons/locolor/16x16/mimetypes/misc.png
 share/icons/locolor/16x16/mimetypes/moc_src.png
+share/icons/locolor/16x16/mimetypes/netscape_doc.png
+share/icons/locolor/16x16/mimetypes/news.png
 share/icons/locolor/16x16/mimetypes/o_src.png
 share/icons/locolor/16x16/mimetypes/p_src.png
 share/icons/locolor/16x16/mimetypes/pdf.png
 share/icons/locolor/16x16/mimetypes/pk.png
 share/icons/locolor/16x16/mimetypes/postscript.png
+share/icons/locolor/16x16/mimetypes/py_src.png
 share/icons/locolor/16x16/mimetypes/readme.png
 share/icons/locolor/16x16/mimetypes/recycled.png
+share/icons/locolor/16x16/mimetypes/resource.png
 share/icons/locolor/16x16/mimetypes/rpm.png
 share/icons/locolor/16x16/mimetypes/s_src.png
+share/icons/locolor/16x16/mimetypes/shell2_src.png
 share/icons/locolor/16x16/mimetypes/sound.png
-share/icons/locolor/16x16/mimetypes/source.png
 share/icons/locolor/16x16/mimetypes/tar.png
 share/icons/locolor/16x16/mimetypes/tex.png
 share/icons/locolor/16x16/mimetypes/tgz.png
 share/icons/locolor/16x16/mimetypes/txt.png
 share/icons/locolor/16x16/mimetypes/unknown.png
+share/icons/locolor/16x16/mimetypes/vcalendar.png
+share/icons/locolor/16x16/mimetypes/vcard.png
 share/icons/locolor/16x16/mimetypes/video.png
 share/icons/locolor/16x16/mimetypes/y_src.png
 share/icons/locolor/32x32/actions/gear.png
@@ -1311,7 +1693,7 @@ share/icons/locolor/32x32/filesystems/folder_open.png
 share/icons/locolor/32x32/filesystems/folder_red.png
 share/icons/locolor/32x32/filesystems/folder_yellow.png
 share/icons/locolor/32x32/filesystems/ftp.png
-share/icons/locolor/32x32/filesystems/lock.png
+share/icons/locolor/32x32/filesystems/lockoverlay.png
 share/icons/locolor/32x32/filesystems/pipe.png
 share/icons/locolor/32x32/filesystems/socket.png
 share/icons/locolor/32x32/filesystems/trashcan_empty.png
@@ -1320,21 +1702,26 @@ share/icons/locolor/32x32/filesystems/www.png
 share/icons/locolor/32x32/filesystems/zip.png
 share/icons/locolor/32x32/mimetypes/applix.png
 share/icons/locolor/32x32/mimetypes/binary.png
+share/icons/locolor/32x32/mimetypes/binary2.png
 share/icons/locolor/32x32/mimetypes/blockdevice.png
 share/icons/locolor/32x32/mimetypes/c_src.png
 share/icons/locolor/32x32/mimetypes/chardevice.png
 share/icons/locolor/32x32/mimetypes/core.png
 share/icons/locolor/32x32/mimetypes/cpp_src.png
+share/icons/locolor/32x32/mimetypes/deb.png
 share/icons/locolor/32x32/mimetypes/document.png
 share/icons/locolor/32x32/mimetypes/dvi.png
 share/icons/locolor/32x32/mimetypes/f_src.png
-share/icons/locolor/32x32/mimetypes/font.png
+share/icons/locolor/32x32/mimetypes/font_bitmap.png
+share/icons/locolor/32x32/mimetypes/font_truetype.png
+share/icons/locolor/32x32/mimetypes/font_type1.png
 share/icons/locolor/32x32/mimetypes/gf.png
 share/icons/locolor/32x32/mimetypes/h_src.png
 share/icons/locolor/32x32/mimetypes/html.png
 share/icons/locolor/32x32/mimetypes/image.png
 share/icons/locolor/32x32/mimetypes/info.png
 share/icons/locolor/32x32/mimetypes/java_src.png
+share/icons/locolor/32x32/mimetypes/kmultiple.png
 share/icons/locolor/32x32/mimetypes/l_src.png
 share/icons/locolor/32x32/mimetypes/log.png
 share/icons/locolor/32x32/mimetypes/make.png
@@ -1342,23 +1729,30 @@ share/icons/locolor/32x32/mimetypes/man.png
 share/icons/locolor/32x32/mimetypes/metafont.png
 share/icons/locolor/32x32/mimetypes/midi.png
 share/icons/locolor/32x32/mimetypes/mime_empty.png
+share/icons/locolor/32x32/mimetypes/misc.png
 share/icons/locolor/32x32/mimetypes/moc_src.png
+share/icons/locolor/32x32/mimetypes/netscape_doc.png
+share/icons/locolor/32x32/mimetypes/news.png
 share/icons/locolor/32x32/mimetypes/o_src.png
 share/icons/locolor/32x32/mimetypes/p_src.png
 share/icons/locolor/32x32/mimetypes/pdf.png
 share/icons/locolor/32x32/mimetypes/pk.png
 share/icons/locolor/32x32/mimetypes/postscript.png
+share/icons/locolor/32x32/mimetypes/py_src.png
 share/icons/locolor/32x32/mimetypes/readme.png
 share/icons/locolor/32x32/mimetypes/recycled.png
 share/icons/locolor/32x32/mimetypes/resource.png
 share/icons/locolor/32x32/mimetypes/rpm.png
 share/icons/locolor/32x32/mimetypes/s_src.png
+share/icons/locolor/32x32/mimetypes/shell2_src.png
 share/icons/locolor/32x32/mimetypes/sound.png
 share/icons/locolor/32x32/mimetypes/tar.png
 share/icons/locolor/32x32/mimetypes/tex.png
 share/icons/locolor/32x32/mimetypes/tgz.png
 share/icons/locolor/32x32/mimetypes/txt.png
 share/icons/locolor/32x32/mimetypes/unknown.png
+share/icons/locolor/32x32/mimetypes/vcalendar.png
+share/icons/locolor/32x32/mimetypes/vcard.png
 share/icons/locolor/32x32/mimetypes/video.png
 share/icons/locolor/32x32/mimetypes/y_src.png
 share/icons/locolor/index.desktop
@@ -1460,6 +1854,8 @@ share/mimelnk/text/x-java.desktop
 share/mimelnk/text/x-makefile.desktop
 share/mimelnk/text/x-moc.desktop
 share/mimelnk/text/x-pascal.desktop
+share/mimelnk/text/x-perl.desktop
+share/mimelnk/text/x-python.desktop
 share/mimelnk/text/x-tcl.desktop
 share/mimelnk/text/x-tex.desktop
 share/mimelnk/text/x-vcalendar.desktop
@@ -1483,6 +1879,7 @@ share/services/kcookiejar.desktop
 share/services/khtml.desktop
 share/services/kio_uiserver.desktop
 share/services/kmailservice.protocol
+share/services/knewsservice.protocol
 share/services/knotify.desktop
 share/services/krl.kimgio
 share/services/png.kimgio
@@ -1520,8 +1917,6 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/icons/locolor/16x16/actions
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
-@dirrm share/icons/hicolor/scalable/filesystems
-@dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/48x48/mimetypes
 @dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/actions/kde
@@ -1547,9 +1942,61 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps
 @dirrm share/apps/kstyle
+@dirrm share/apps/kssl/caroot
+@dirrm share/apps/kssl
+@dirrm share/apps/ksgmltools/zh-CN/entities
+@dirrm share/apps/ksgmltools/zh-CN
+@dirrm share/apps/ksgmltools/sv/entities
+@dirrm share/apps/ksgmltools/sv
 @dirrm share/apps/ksgmltools/stylesheets
+@dirrm share/apps/ksgmltools/sr/entities
+@dirrm share/apps/ksgmltools/sr
+@dirrm share/apps/ksgmltools/sl/entities
+@dirrm share/apps/ksgmltools/sl
+@dirrm share/apps/ksgmltools/sk/entities
+@dirrm share/apps/ksgmltools/sk
+@dirrm share/apps/ksgmltools/ru/entities
+@dirrm share/apps/ksgmltools/ru
+@dirrm share/apps/ksgmltools/ro/entities
+@dirrm share/apps/ksgmltools/ro
+@dirrm share/apps/ksgmltools/pt/entities
+@dirrm share/apps/ksgmltools/pt-BR/entities
+@dirrm share/apps/ksgmltools/pt-BR
+@dirrm share/apps/ksgmltools/pt
+@dirrm share/apps/ksgmltools/pl/entities
+@dirrm share/apps/ksgmltools/pl
+@dirrm share/apps/ksgmltools/no/entities
+@dirrm share/apps/ksgmltools/no
+@dirrm share/apps/ksgmltools/nl/entities
+@dirrm share/apps/ksgmltools/nl
+@dirrm share/apps/ksgmltools/ja/entities
+@dirrm share/apps/ksgmltools/ja
+@dirrm share/apps/ksgmltools/it/entities
+@dirrm share/apps/ksgmltools/it
+@dirrm share/apps/ksgmltools/hu/entities
+@dirrm share/apps/ksgmltools/hu
+@dirrm share/apps/ksgmltools/fr/entities
+@dirrm share/apps/ksgmltools/fr
+@dirrm share/apps/ksgmltools/fi/entities
+@dirrm share/apps/ksgmltools/fi
+@dirrm share/apps/ksgmltools/et/entities
+@dirrm share/apps/ksgmltools/et
+@dirrm share/apps/ksgmltools/es/entities
+@dirrm share/apps/ksgmltools/es
 @dirrm share/apps/ksgmltools/entities
+@dirrm share/apps/ksgmltools/en/entities
+@dirrm share/apps/ksgmltools/en
+@dirrm share/apps/ksgmltools/el/entities
+@dirrm share/apps/ksgmltools/el
 @dirrm share/apps/ksgmltools/dtd
+@dirrm share/apps/ksgmltools/de/entities
+@dirrm share/apps/ksgmltools/de
+@dirrm share/apps/ksgmltools/da/entities
+@dirrm share/apps/ksgmltools/da
+@dirrm share/apps/ksgmltools/cs/entities
+@dirrm share/apps/ksgmltools/cs
+@dirrm share/apps/ksgmltools/ca/entities
+@dirrm share/apps/ksgmltools/ca
 @dirrm share/apps/ksgmltools
 @dirrm share/apps/kjava
 @dirrm share/apps/khtml/css

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/10/09 22:38:38 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/10/19 12:15:27 espie Exp $
 lib/libappletproxy.so.0.0
 lib/libclockapplet.so.1.0
 lib/libhtmlsearch.so.0.0
+lib/libkaccess.so.0.0
 lib/libkcm_access.so.0.0
 lib/libkcm_arts.so.0.0
 lib/libkcm_background.so.0.0
@@ -32,6 +33,7 @@ lib/libkcm_kwinmouse.so.0.0
 lib/libkcm_kwinoptions.so.0.0
 lib/libkcm_layout.so.0.0
 lib/libkcm_locale.so.0.0
+lib/libkcm_midi.so.0.0
 lib/libkcm_nsplugin.so.0.0
 lib/libkcm_passwords.so.0.0
 lib/libkcm_samba.so.0.0
@@ -88,6 +90,7 @@ lib/libkwinsystem.so.0.0
 lib/libkwrite.so.0.0
 lib/libkwrited.so.0.0
 lib/libkwritepart.so.0.0
+lib/libkxkb.so.0.0
 lib/libkxmlrpcd.so.0.0
 lib/libnsplugin.so.1.1
 lib/libquicklauncher.so.1.0

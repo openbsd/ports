@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/09 22:38:34 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/19 12:15:26 espie Exp $
 
 CATEGORIES=		x11 x11/kde
-VERSION=		1.94
+VERSION=		2.0rc2
 DISTNAME=		kdebase-${VERSION}
 DIST_SUBDIR=		kde
 
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	unstable/distribution/KDE-${VERSION}/tar/src/
+MASTER_SITE_SUBDIR=	unstable/distribution/${VERSION:U}/tar/src/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=	kdecore.::x11/kde/libs2 \
