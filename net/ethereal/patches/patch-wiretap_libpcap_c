@@ -1,0 +1,12 @@
+$OpenBSD: patch-wiretap_libpcap_c,v 1.1 2003/05/14 21:12:07 canacar Exp $
+--- wiretap/libpcap.c.orig	Wed May 14 11:37:25 2003
++++ wiretap/libpcap.c	Wed May 14 11:51:31 2003
+@@ -385,7 +385,7 @@ static const struct {
+ 	 * defined with the value 17.
+ 	 */
+ #if !defined(DLT_LANE8023) || (DLT_LANE8023 != 17)
+-	{ 17,		WTAP_ENCAP_PFLOG },
++	{ 17,		WTAP_ENCAP_OLD_PFLOG },
+ #endif
+ 
+ 	/*
