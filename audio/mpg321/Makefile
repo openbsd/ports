@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2003/12/10 21:28:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/04/05 20:26:25 naddy Exp $
+
+# not very useful with static libao
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
