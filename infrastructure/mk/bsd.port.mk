@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.423 2001/07/18 14:52:27 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.424 2001/07/18 16:19:47 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -305,6 +305,7 @@ PKGDIR?=		${.CURDIR}/pkg
 
 PREFIX?=		${LOCALBASE}
 TRUEPREFIX?=	${PREFIX}
+DESTDIRNAME?=	DESTDIR
 DESTDIR?=		${WRKINST}
 
 CONFIGURE_STYLE?=
@@ -438,14 +439,14 @@ CXXFLAGS+=		${CXXDIAGFLAGS}
 
 MAKE_FLAGS?=	
 .if !defined(FAKE_FLAGS)
-FAKE_FLAGS=DESTDIR=${WRKINST}
+FAKE_FLAGS=${DESTDIRNAME}=${WRKINST}
 .endif
 
 MAKE_FILE?=		Makefile
 MAKE_ENV+=		PATH='${PORTPATH}' PREFIX='${PREFIX}' \
 	LOCALBASE='${LOCALBASE}' X11BASE='${X11BASE}' \
 	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS}' \
-	TRUEPREFIX='${PREFIX}' DESTDIR=''
+	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}=''
 
 FETCH_CMD?=		/usr/bin/ftp
 
@@ -957,13 +958,13 @@ CONFIGURE_ENV+=		PATH=${PORTPATH}
 
 .if ${CONFIGURE_STYLE:L:Mgnu}
 .  if ${CONFIGURE_STYLE:L:Mdest}
-CONFIGURE_ARGS+=	--prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_ARGS+=	--prefix='$${${DESTDIRNAME}}${PREFIX}'
 .  else
 CONFIGURE_ARGS+=	--prefix='${PREFIX}'
 .  endif
 .  if empty(CONFIGURE_STYLE:L:Mold)
 .    if ${CONFIGURE_STYLE:L:Mdest}
-CONFIGURE_ARGS+=	--sysconfdir='$${DESTDIR}${SYSCONFDIR}'
+CONFIGURE_ARGS+=	--sysconfdir='$${${DESTDIRNAME}}${SYSCONFDIR}'
 .    else
 CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
 .    endif
@@ -1583,13 +1584,13 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@arch=`/usr/bin/perl -e 'use Config; print $$Config{archname}, "\n";'`; \
      cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} \
      /usr/bin/perl Makefile.PL \
-     	PREFIX='$${DESTDIR}${PREFIX}' \
-		INSTALLSITELIB='$${DESTDIR}${PREFIX}/libdata/perl5/site_perl' \
+     	PREFIX='$${${DESTDIRNAME}}${PREFIX}' \
+		INSTALLSITELIB='$${${DESTDIRNAME}}${PREFIX}/libdata/perl5/site_perl' \
 		INSTALLSITEARCH="\$${INSTALLSITELIB}/$$arch" \
-		INSTALLPRIVLIB='$${DESTDIR}/usr/./libdata/perl5' \
+		INSTALLPRIVLIB='$${${DESTDIRNAME}}/usr/./libdata/perl5' \
 		INSTALLARCHLIB="\$${INSTALLPRIVLIB}/$$arch" \
-		INSTALLMAN1DIR='$${DESTDIR}${PREFIX}/man/man1' \
-		INSTALLMAN3DIR='$${DESTDIR}${PREFIX}/man/man3' \
+		INSTALLMAN1DIR='$${${DESTDIRNAME}}${PREFIX}/man/man1' \
+		INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3' \
 		INSTALLBIN='$${PREFIX}/bin' \
 		INSTALLSCRIPT='$${INSTALLBIN}' ${CONFIGURE_ARGS}
 .  endif
@@ -1644,7 +1645,7 @@ ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .endif
 	@${_MAKE_COOKIE} $@
 
-_FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} DESTDIR=${WRKINST}
+_FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
 .if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
