@@ -1,19 +1,15 @@
-# OpenBSD makefile for: x48
-# Version required:     0.4.0   
-# Date created:         19 November 1997
-# Whom:                 todd@OpenBSD.org
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/30 15:07:56 todd Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/15 04:55:16 marc Exp $
 #
 
-DISTNAME=	x48-0.4.0
-CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+DISTNAME=		x48-0.4.0
+CATEGORIES=		emulators
+
+MAINTAINER=		todd@OpenBSD.org
+
+MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
 
-MAINTAINER=	todd@OpenBSD.org
-
-USE_IMAKE=	yes
+USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
 
 post-install:
