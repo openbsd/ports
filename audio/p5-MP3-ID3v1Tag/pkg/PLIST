@@ -1,9 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:16:55 espie Exp $
 ${P5SITE}/MP3/
 ${P5SITE}/MP3/ID3v1Tag.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/MP3/
-@comment ${P5ARCH}/auto/MP3/ID3v1Tag/
-@comment ${P5ARCH}/auto/MP3/ID3v1Tag/.packlist
 @man man/man3p/MP3::ID3v1Tag.3p

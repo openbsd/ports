@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/09/14 23:16:56 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"FM radio input plug-in for XMMS"
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/03 10:22:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:16:56 espie Exp $
 bin/wmxmms
 bin/xmms
 bin/xmms-config
@@ -75,8 +75,6 @@ share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/xmms.mo
 share/locale/gl/LC_MESSAGES/xmms.mo
 share/locale/hr/LC_MESSAGES/xmms.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/xmms.mo
 share/locale/id/LC_MESSAGES/xmms.mo
 share/locale/it/LC_MESSAGES/xmms.mo
@@ -101,8 +99,6 @@ share/locale/no/LC_MESSAGES/xmms.mo
 share/locale/pl/LC_MESSAGES/xmms.mo
 share/locale/pt/LC_MESSAGES/xmms.mo
 share/locale/pt_BR/LC_MESSAGES/xmms.mo
-share/locale/ro/
-share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/xmms.mo
 share/locale/ru/LC_MESSAGES/xmms.mo
 share/locale/sk/LC_MESSAGES/xmms.mo
@@ -134,11 +130,7 @@ share/locale/vi/LC_MESSAGES/xmms.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/xmms.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/xmms.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/xmms.mo
 share/xmms/
 share/xmms/wmxmms.xpm

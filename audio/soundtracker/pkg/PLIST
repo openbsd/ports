@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/16 21:04:53 naddy Exp $
-%%gnome%%
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:16:55 espie Exp $
 bin/soundtracker
+share/doc/soundtracker/
 share/doc/soundtracker/FAQ
 share/doc/soundtracker/NEWS
 share/doc/soundtracker/README
@@ -16,4 +16,6 @@ share/locale/pl/LC_MESSAGES/soundtracker.mo
 share/locale/ru/LC_MESSAGES/soundtracker.mo
 share/locale/sl/LC_MESSAGES/soundtracker.mo
 share/locale/sv/LC_MESSAGES/soundtracker.mo
-@dirrm share/doc/soundtracker
+share/soundtracker/
+share/soundtracker/soundtracker_splash.png
+%%gnome%%

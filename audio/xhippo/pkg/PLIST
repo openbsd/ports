@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/03 10:57:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:16:56 espie Exp $
 bin/xhippo
 @man man/man1/xhippo.1
 share/doc/xhippo/
@@ -13,7 +13,6 @@ share/doc/xhippo/xhippo.txt.gz
 share/doc/xhippo/xhippo_toc.html
 share/examples/xhippo/
 share/examples/xhippo/xhippo.config-sample
+@sample ${SYSCONFDIR}/xhippo.config
 share/examples/xhippo/xhippo.gtkrc
 share/locale/de/LC_MESSAGES/xhippo.mo
-@cwd ${SYSCONFDIR}
-@extra xhippo.config

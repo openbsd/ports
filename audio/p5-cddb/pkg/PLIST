@@ -1,7 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:16:55 espie Exp $
 ${P5SITE}/CDDB.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/CDDB/
-@comment ${P5ARCH}/auto/CDDB/.packlist
 @man man/man3p/CDDB.3p

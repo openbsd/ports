@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:16:54 espie Exp $
 bin/cddb
 ${P5SITE}/CDDB_get.pm
 ${P5SITE}/auto/
 ${P5SITE}/auto/CDDB_get/
 ${P5SITE}/auto/CDDB_get/autosplit.ix
 @comment ${P5SITE}/cddb.pl
-${P5ARCH}/
-${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/CDDB_get/
-@comment ${P5ARCH}/auto/CDDB_get/.packlist
 @man man/man3p/CDDB_get.3p

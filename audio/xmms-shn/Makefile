@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2004/05/04 16:43:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/09/14 23:16:56 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS input plugin for playing shorten files"
 

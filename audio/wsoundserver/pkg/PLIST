@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/09 20:59:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
 bin/get-wsound-flags
 bin/getsoundset
 bin/setsoundset
@@ -13,6 +13,6 @@ man/man1/setsoundset.1x
 man/man1/wsoundplay.1x
 man/man1/wsoundserver.1x
 share/WindowMaker/Defaults/WindowMaker/WMSound
+share/doc/wsoundserver/
 share/doc/wsoundserver/COPYING
 %%SHARED%%
-@dirrm share/doc/wsoundserver

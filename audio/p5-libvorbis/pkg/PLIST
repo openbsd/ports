@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/06 14:37:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:16:55 espie Exp $
 @comment bin/pogg
 ${P5ARCH}/
 ${P5ARCH}/Ogg/
@@ -6,7 +6,6 @@ ${P5ARCH}/Ogg/Vorbis.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Ogg/
 ${P5ARCH}/auto/Ogg/Vorbis/
-@comment ${P5ARCH}/auto/Ogg/Vorbis/.packlist
 ${P5ARCH}/auto/Ogg/Vorbis/Vorbis.bs
 ${P5ARCH}/auto/Ogg/Vorbis/Vorbis.so
 ${P5ARCH}/auto/Ogg/Vorbis/autosplit.ix

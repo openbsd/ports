@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/04/05 22:19:35 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/14 23:16:54 espie Exp $
 bin/lopster
+share/lopster/
+share/lopster/pixmaps/
 share/lopster/pixmaps/arrowd.xpm
 share/lopster/pixmaps/arrowl.xpm
 share/lopster/pixmaps/arrowr.xpm
@@ -38,5 +40,3 @@ share/lopster/pixmaps/statistic.xpm
 share/lopster/pixmaps/transfer.xpm
 share/lopster/pixmaps/user1.xpm
 share/lopster/pixmaps/user2.xpm
-@dirrm share/lopster/pixmaps
-@dirrm share/lopster

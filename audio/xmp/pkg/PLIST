@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/05/18 07:40:55 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:16:56 espie Exp $
 bin/xmp
 bin/xxmp
-man/man1/xmp.1
-man/man1/xxmp.1
+lib/xmms/
+lib/xmms/Input/
+@man man/man1/xmp.1
+@man man/man1/xxmp.1
+share/examples/xmp/
 share/examples/xmp/xmp-modules.conf
 share/examples/xmp/xmp.conf
-@dirrm share/examples/xmp

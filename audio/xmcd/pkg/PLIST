@@ -1,41 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/13 09:31:06 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:16:56 espie Exp $
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd
 bin/wm2xmcd
 bin/xmcd
 lib/X11/app-defaults/XMcd
+libexec/xmcd/
 libexec/xmcd/cda
 libexec/xmcd/cddbcmd
 libexec/xmcd/dp2xmcd
 libexec/xmcd/wm2xmcd
 libexec/xmcd/xmcd
-man/man1/cda.1
-man/man1/cddbcmd.1
-man/man1/dp2xmcd.1
-man/man1/wm2xmcd.1
-man/man1/xmcd.1
+@man man/man1/cda.1
+@man man/man1/cddbcmd.1
+@man man/man1/dp2xmcd.1
+@man man/man1/wm2xmcd.1
+@man man/man1/xmcd.1
 sbin/xmcdconfig
+share/doc/xmcd/
 share/doc/xmcd/ACKS
 share/doc/xmcd/CDDB
 share/doc/xmcd/CHANGES
+share/doc/xmcd/COPYING
+share/doc/xmcd/COPYING.LIB
 share/doc/xmcd/DRIVES
 share/doc/xmcd/FAQ
 share/doc/xmcd/FEATURES
+share/doc/xmcd/INSTALL
+share/doc/xmcd/INSTALL.VMS
 share/doc/xmcd/PLATFORM
+share/doc/xmcd/PORTING
 share/doc/xmcd/README
 share/doc/xmcd/RELNOTES
 share/doc/xmcd/WEB
+share/examples/xmcd/
 share/examples/xmcd/bkgnd.gif
 share/examples/xmcd/common.cfg
 share/examples/xmcd/device.cfg
 share/examples/xmcd/discog.html
 share/examples/xmcd/sites
 share/examples/xmcd/xmcdlogo.gif
+share/xmcd/
+share/xmcd/app-defaults/
+share/xmcd/app-defaults/XKeysymDB
 share/xmcd/cddb
 share/xmcd/config
 share/xmcd/discog
 share/xmcd/docs
+share/xmcd/help/
 share/xmcd/help/Ab.btn
 share/xmcd/help/DbMode.lbl
 share/xmcd/help/DbProg.btn
@@ -140,14 +152,17 @@ share/xmcd/help/WwCancel.btn
 share/xmcd/help/WwGo.btn
 share/xmcd/help/WwSearch.opt
 share/xmcd/help/WwSelect.rbx
+share/xmcd/pixmaps/
 share/xmcd/pixmaps/xmcd.icon
 share/xmcd/pixmaps/xmcd.xpm
 share/xmcd/pixmaps/xmcd_a.px
 share/xmcd/pixmaps/xmcd_b.px
+share/xmcd/scripts/
 share/xmcd/scripts/genidx
 share/xmcd/scripts/ncsarmt
 share/xmcd/scripts/ncsawrap
 share/xmcd/scripts/nswrap
+share/xmcd/tbl/
 share/xmcd/tbl/Acer
 share/xmcd/tbl/Apple
 share/xmcd/tbl/Aztech
@@ -187,13 +202,5 @@ share/xmcd/tbl/Tatung
 share/xmcd/tbl/Teac
 share/xmcd/tbl/Toshiba
 share/xmcd/tbl/Yamaha
-@dirrm libexec/xmcd
-@dirrm share/doc/xmcd
-@dirrm share/examples/xmcd
-@dirrm share/xmcd/help
-@dirrm share/xmcd/pixmaps
-@dirrm share/xmcd/scripts
-@dirrm share/xmcd/tbl
-@dirrm share/xmcd
 @extraunexec rm -rf ${SYSCONFDIR}/xmcd
 @extraunexec rm -rf /var/db/xmcd

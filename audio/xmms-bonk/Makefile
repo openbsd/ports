@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/25 02:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/09/14 23:16:56 espie Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS input plugin to play bonk files"
 

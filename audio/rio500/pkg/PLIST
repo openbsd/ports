@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/28 20:34:50 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
 bin/rio_add_directory
 bin/rio_add_folder
 bin/rio_add_song
@@ -7,6 +7,8 @@ bin/rio_font_info
 bin/rio_format
 bin/rio_get_song
 bin/rio_stat
+share/rio500/
+share/rio500/fonts/
 share/rio500/fonts/6581.fon
 share/rio500/fonts/Readme.txt
 share/rio500/fonts/amiga.fon
@@ -39,5 +41,3 @@ share/rio500/fonts/sin.fon
 share/rio500/fonts/star.fon
 share/rio500/fonts/trek.fon
 share/rio500/fonts/triangle.fon
-@dirrm share/rio500/fonts
-@dirrm share/rio500

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/10 17:39:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:16:56 espie Exp $
 bin/xmmix
 lib/X11/app-defaults/XMmix
 lib/X11/xmmix.hlp
-man/cat1/xmmix.0
+@man man/cat1/xmmix.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/03 22:07:40 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/aomodule.so
+share/examples/py-ao/
 share/examples/py-ao/test.py
-@dirrm share/examples/py-ao
