@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2002/04/29 09:00:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.52 2002/04/30 13:05:04 brad Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-dependency-tracking \
 			--enable-gnome \
 			--enable-kde
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libpng"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
 
 FLAVORS=		i18n
 FLAVOR?=
