@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/09/17 14:34:02 millert Exp $
+# $OpenBSD: Makefile,v 1.36 2004/09/18 00:24:44 brad Exp $
 
 DISTNAME=	aterm-0.4.2
 CATEGORIES=	x11
@@ -21,17 +21,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LIBS="-lutil"
 FLAVORS=	big5 lite
 FLAVOR?=
 
+PATCH_LIST+=	patch-src_command_c
+
 .if ${FLAVOR:L:Mbig5}
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
-PATCH_LIST=	patch-src_Makefile_in patch-src_command_c
+PATCH_LIST+=	patch-src_Makefile_in
 
 CONFIGURE_ARGS+= --enable-big5
 
 post-patch:
 	@cd ${FILESDIR}; cp -f {cli_xcin.c,protocol.h,state.h} \
 		${WRKSRC}/src
-.else
-PATCH_LIST=	patch-src_command_c
 .endif
 
 .if ${FLAVOR:L:Mlite}
