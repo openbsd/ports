@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 1999/04/01 02:16:39 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/06/02 02:40:31 brad Exp $
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
 CATEGORIES=	archivers
+MASTER_SITES=	ftp://ftp.rarsoft.com/pub/rar/ \
+		ftp://ftp.cdrom.com/pub/sac/pack/
+EXTRACT_SUFX=
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"NOFEE: Can not charge for distribution"
@@ -10,30 +13,23 @@ NO_PACKAGE=     Only unmodified original package can be distributed
 
 MAINTAINER=     ports@openbsd.org
 
-MASTER_SITES=	ftp://ftp.creabel.com/pub/rar/
-EXTRACT_SUFX=
+EXTRACT_CMD=		# empty
+EXTRACT_BEFORE_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# empty
 
+NO_BUILD=	yes
 NO_WRKSUBDIR=   yes
-EXTRACT_CMD=
-EXTRACT_BEFORE_ARGS=
 
 pre-extract:
-	chmod a+x ${DISTDIR}/${DISTFILES}
+	@chmod a+x ${DISTDIR}/${DISTFILES}
 
 post-extract:
-	chmod a-x ${DISTDIR}/${DISTFILES}
-
-do-build:
-	cd ${WRKSRC} && \
-		for i in *.Txt *.Lst; do \
-			${TR} -d '\015' < $$i > $$i.tmp; \
-			${MV} $$i.tmp $$i; \
-		done
+	@chmod a-x ${DISTDIR}/${DISTFILES}
 
 do-install:
-	install -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
+	@install -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
 		${PREFIX}/share/doc/rar ${PREFIX}/share/rar
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} rar ${PREFIX}/bin/rar && \
 		${INSTALL_MAN} Rar.Txt ${PREFIX}/man/cat1/rar.1 && \
 		${INSTALL_MAN} Rar_FAQ.txt TechNote.Txt License.Txt Internet.Txt \
