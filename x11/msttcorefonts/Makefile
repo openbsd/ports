@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.7 2004/01/10 03:33:45 brad Exp $
 
 COMMENT=		"Microsoft TrueType core fonts"
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	"may not sell"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
+DIST_SUBDIR=		${DISTNAME}
 
 BUILD_DEPENDS=		cabextract:cabextract-*:archivers/cabextract
 
@@ -38,13 +39,13 @@ DISTFILES=		andale32.exe \
 INST_DIR=		${PREFIX}/lib/X11/fonts/mscorefonts
 
 EXTRACT_CASES=		*.exe) cabextract ${FULLDISTDIR}/$$archive \
-			--lowercase --directory=${WRKDIST} ;;
+			--lowercase --quiet --directory=${WRKDIST} ;;
 
 do-install:
-	${INSTALL_DATA_DIR} ${INST_DIR}; \
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INST_DIR}; \
-	${X11BASE}/bin/mkfontscale ${INST_DIR}; \
-	${X11BASE}/bin/mkfontdir ${INST_DIR};
-	tr -d \\015 < ${WRKDIST}/licen.txt > "${INST_DIR}/eula.txt"
+	${INSTALL_DATA_DIR} ${INST_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${INST_DIR}
+	${X11BASE}/bin/mkfontscale ${INST_DIR}
+	${X11BASE}/bin/mkfontdir ${INST_DIR}
+	tr -d \\015 < ${WRKDIST}/licen.txt > ${INST_DIR}/eula.txt
 
 .include <bsd.port.mk>
