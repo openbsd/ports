@@ -1,0 +1,23 @@
+--- doc/Makefile.in.orig	Fri Nov 24 21:44:35 1995
++++ doc/Makefile.in	Wed Dec 15 16:32:21 1999
+@@ -26,7 +26,7 @@
+ transform = @program_transform_name@
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ TOUCH = echo timestamp >
+ 
+@@ -52,9 +52,11 @@
+ all info check: sharutils.info remsync.info
+ 
+ sharutils.info: sharutils.texi version.texi
++	@rm -f $(srcdir)/sharutils.info*
+ 	cd $(srcdir) && $(MAKEINFO) sharutils.texi
+ 
+ remsync.info: remsync.texi version.texi
++	@rm -f $(srcdir)/remsync.info*
+ 	cd $(srcdir) && $(MAKEINFO) remsync.texi
+ 
+ dvi: sharutils.dvi remsync.dvi

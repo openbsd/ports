@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/06 17:15:07 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/15 21:58:47 brad Exp $
 
 DISTNAME=	sharutils-4.2
 CATEGORIES=	archivers
@@ -15,20 +15,12 @@ CONFIGURE_ARGS=	--program-prefix=g --disable-uucode --disable-nls
 INSTALL_TARGET=	install install-man
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/po/sharutils.pot
-
-pre-configure:
-	@${RM} -f ${WRKSRC}/doc/*.info*
+	@touch ${WRKSRC}/po/sharutils.pot
 
 post-install:
-.for file in gshar gunshar
-	@${STRIP} ${PREFIX}/bin/${file}
-.endfor
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	 ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
-.for info in remsync.info sharutils.info
-	@install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
-.endfor
+	@strip ${PREFIX}/bin/gshar
+	@strip ${PREFIX}/bin/gunshar
+	@install-info ${PREFIX}/info/remsync.info ${PREFIX}/info/dir
+	@install-info ${PREFIX}/info/sharutils.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
