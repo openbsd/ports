@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.337 2000/09/23 22:03:21 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.338 2000/10/02 07:53:24 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1417,6 +1417,10 @@ addsum: fetch-all
 
 ${_EXTRACT_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} checksum build-depends lib-depends misc-depends
+.if ${OPSYS_VER} < 2.8
+	@${ECHO_MSG} "*** Warning: using a new ports tree on a ${OPSYS_VER} system"
+	@${ECHO_MSG} "*** Things may not work, as make was updated"
+.endif
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 .if target(pre-extract)
 	@cd ${.CURDIR} && exec ${MAKE} pre-extract
