@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/08/01 19:13:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/07 20:51:13 sturm Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -22,6 +22,7 @@ CONFIGURE_ENV+=	PYTHON_VER=${PYTHON_VER}
 CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif
 
+MODULES=		gettext
 USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
