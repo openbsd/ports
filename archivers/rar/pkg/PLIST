@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/06/10 20:22:16 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2000/11/12 16:22:02 espie Exp $
 bin/rar
-man/cat1/rar.1
 share/rar/dos.sfx
 share/rar/default.sfx
 share/rar/rarfiles.lst
 share/doc/rar/TechNote.Txt
+share/doc/rar/Rar.Txt
 share/doc/rar/Rar_FAQ.txt
 share/doc/rar/License.Txt
 share/doc/rar/Internet.Txt
