@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dns_c,v 1.7 2004/02/21 01:37:19 couderc Exp $
---- src/dns.c.orig	2003-11-21 17:44:02.000000000 +0100
-+++ src/dns.c	2004-02-21 02:11:12.000000000 +0100
+$OpenBSD: patch-src_dns_c,v 1.8 2004/12/04 20:44:27 couderc Exp $
+--- src/dns.c.orig	Fri May 21 16:13:07 2004
++++ src/dns.c	Wed Aug 18 17:46:09 2004
 @@ -31,14 +31,13 @@
  #include "dns.h"
  #include "list.h"

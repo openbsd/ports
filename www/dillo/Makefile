@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/02/26 13:43:26 couderc Exp $
+# $OpenBSD: Makefile,v 1.19 2004/12/04 20:44:27 couderc Exp $
 
 COMMENT=		"Fast and light gtk-based web browser"
 
-VERSION=		0.8.0
+VERSION=		0.8.3
 DISTNAME=		dillo-${VERSION}
 CATEGORIES=     	www
 

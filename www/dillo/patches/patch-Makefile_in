@@ -1,18 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/02/26 13:43:26 couderc Exp $
---- Makefile.in.orig	2004-02-08 13:56:10.000000000 +0100
-+++ Makefile.in	2004-02-26 14:15:26.000000000 +0100
-@@ -197,12 +197,12 @@ uninstall-info-am:
- sysconfDATA_INSTALL = $(INSTALL_DATA)
+$OpenBSD: patch-Makefile_in,v 1.2 2004/12/04 20:44:27 couderc Exp $
+--- Makefile.in.orig	Mon Oct 25 13:12:09 2004
++++ Makefile.in	Sat Dec  4 19:28:46 2004
+@@ -234,12 +234,12 @@ distclean-hdr:
+ uninstall-info-am:
  install-sysconfDATA: $(sysconf_DATA)
  	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
-+	$(mkinstalldirs) $(PREFIX)/share/examples/dillo/
+-	test -z "$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
++	$(mkdir_p) $(PREFIX)/share/examples/dillo/
  	@list='$(sysconf_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
- 	  echo " $(sysconfDATA_INSTALL) $$d$$p $(DESTDIR)$(sysconfdir)/$$f"; \
--	  $(sysconfDATA_INSTALL) $$d$$p $(DESTDIR)$(sysconfdir)/$$f; \
-+	  $(sysconfDATA_INSTALL) $$d$$p $(PREFIX)/share/examples/dillo/$$f; \
+ 	  echo " $(sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  $(sysconfDATA_INSTALL) "$$d$$p" "$(PREFIX)/share/examples/dillo/$$f"; \
  	done
  
  uninstall-sysconfDATA:

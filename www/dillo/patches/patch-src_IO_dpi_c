@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_IO_dpi_c,v 1.5 2004/02/21 01:37:19 couderc Exp $
---- src/IO/dpi.c.orig	2004-02-21 01:46:30.000000000 +0100
-+++ src/IO/dpi.c	2004-02-21 01:46:42.000000000 +0100
-@@ -334,9 +334,9 @@ static gint Dpi_start_dpid()
+$OpenBSD: patch-src_IO_dpi_c,v 1.6 2004/12/04 20:44:27 couderc Exp $
+--- src/IO/dpi.c.orig	Thu Jul 15 15:37:28 2004
++++ src/IO/dpi.c	Sat Dec  4 19:28:46 2004
+@@ -339,9 +339,9 @@ static gint Dpi_start_dpid()
        /* This is the child process.  Execute the command. */
        gchar *path1 = a_Misc_prepend_user_home(".dillo/dpid");
        close(st_pipe[0]);

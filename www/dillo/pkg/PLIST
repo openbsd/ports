@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:49:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/04 20:44:28 couderc Exp $
 bin/dillo
 bin/dpid
 bin/dpidc
@@ -8,6 +8,8 @@ lib/dillo/dpi/bookmarks/
 lib/dillo/dpi/bookmarks/bookmarks.dpi
 lib/dillo/dpi/downloads/
 lib/dillo/dpi/downloads/downloads.dpi
+lib/dillo/dpi/file/
+lib/dillo/dpi/file/file.dpi
 lib/dillo/dpi/ftp/
 lib/dillo/dpi/ftp/ftp.filter.dpi
 lib/dillo/dpi/hello/

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dillo_c,v 1.5 2004/02/21 01:37:19 couderc Exp $
---- src/dillo.c.orig	2004-02-06 16:53:59.000000000 +0100
-+++ src/dillo.c	2004-02-21 02:11:12.000000000 +0100
+$OpenBSD: patch-src_dillo_c,v 1.6 2004/12/04 20:44:27 couderc Exp $
+--- src/dillo.c.orig	Thu Jun 10 17:22:55 2004
++++ src/dillo.c	Wed Aug 18 17:46:45 2004
 @@ -48,6 +48,7 @@
  #include "interface.h"
  #include "dw.h"

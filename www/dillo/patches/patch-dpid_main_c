@@ -1,9 +1,9 @@
-$OpenBSD: patch-dpid_main_c,v 1.1 2004/02/21 01:37:19 couderc Exp $
---- dpid/main.c.orig	2004-02-21 01:50:12.000000000 +0100
-+++ dpid/main.c	2004-02-21 01:51:00.000000000 +0100
+$OpenBSD: patch-dpid_main_c,v 1.2 2004/12/04 20:44:27 couderc Exp $
+--- dpid/main.c.orig	Fri May 21 16:13:49 2004
++++ dpid/main.c	Wed Aug 18 17:47:53 2004
 @@ -67,7 +67,7 @@ int start_filter_plugin(struct dp dpi_at
     }
-    if ( pid == 0) { 
+    if ( pid == 0) {
        /* Child, start plugin */
 -      if (execl(dpi_attr.path, dpi_attr.path, NULL) == -1) {
 +      if (execl(dpi_attr.path, dpi_attr.path, (void *)NULL) == -1) {
