@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2001/12/18 18:53:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2002/01/17 12:56:40 naddy Exp $
 
 COMMENT=	"small, easy to use editor"
 
-DISTNAME=	nano-1.0.7
+DISTNAME=	nano-1.0.8
 CATEGORIES=	editors
 NEED_VERSION=	1.474
 HOMEPAGE=	http://www.nano-editor.org/
