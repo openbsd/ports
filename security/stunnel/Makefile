@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.28 2003/11/23 02:06:46 pvalchev Exp $
 
 COMMENT=	"SSL encryption wrapper for standard network daemons"
 
@@ -28,7 +28,8 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pem-dir=${SYSCONFDIR}/ssl \
 			--with-random=/dev/arandom \
 			--with-ssl=/usr \
-			--localstatedir=/var
+			--localstatedir=/var \
+			${CONFIGURE_SHARED}
 NO_REGRESS=		Yes
 
 do-install:
