@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2002/01/29 19:40:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.40 2002/02/03 03:15:31 angelos Exp $
 
 COMMENT=	"list information about open files"
 
@@ -47,6 +47,7 @@ pre-build:
 	@echo "***	SUN4=Yes, SUN4C=Yes, or SUN4M=Yes"
 	@echo "*** on the make command line"
 	@echo
+	exit 1;
 .endif
 .endif
 
