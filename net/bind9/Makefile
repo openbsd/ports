@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/16 07:36:52 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/16 15:28:01 jakob Exp $
 
 VERSION=	9.0.0
 DISTNAME=	bind-${VERSION}
@@ -20,9 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--sysconfdir=/etc \
-			--localstatedir=/var
+			--localstatedir=/var \
+			--with-libtool
 SEPARATE_BUILD=		concurrent
-FAKE_FLAGS+=		MAKEDEFS='DESTDIR=${WRKINST}'
+FAKE_FLAGS+=		DESTDIR=${WRKINST} \
+			MAKEDEFS='DESTDIR=${WRKINST}'
 
 EXAMPLEFILES=		named.conf named.root \
 			named.localhost named.loopback

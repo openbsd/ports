@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/16 07:36:53 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/09/16 15:28:02 jakob Exp $
 bin/dig
 bin/host
+bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
 include/dns/a6.h
@@ -166,6 +167,7 @@ lib/libdns.a
 lib/libisc.a
 lib/liblwres.a
 lib/libomapi.a
+%%SHARED%%
 man/man1/host.1
 man/man5/rndc.conf.5
 man/man8/dnssec-keygen.8
