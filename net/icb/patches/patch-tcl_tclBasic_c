@@ -1,0 +1,11 @@
+$OpenBSD: patch-tcl_tclBasic_c,v 1.1 2001/03/12 15:59:02 wilfried Exp $
+--- tcl/tclBasic.c.orig	Fri Feb 24 22:19:53 1995
++++ tcl/tclBasic.c	Sun Feb 11 11:58:22 2001
+@@ -132,6 +132,7 @@ Tcl_CreateInterp()
+     iPtr->errorLine = 0;
+     iPtr->commandPtr = NULL;
+     iPtr->globalPtr = NULL;
++    iPtr->localPtr = NULL;
+     iPtr->numLevels = 0;
+     iPtr->framePtr = NULL;
+     iPtr->varFramePtr = NULL;

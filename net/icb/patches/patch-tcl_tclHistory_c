@@ -1,0 +1,19 @@
+$OpenBSD: patch-tcl_tclHistory_c,v 1.1 2001/03/12 15:59:02 wilfried Exp $
+--- tcl/tclHistory.c.orig	Fri Feb 24 22:19:55 1995
++++ tcl/tclHistory.c	Sun Feb 11 12:01:16 2001
+@@ -664,6 +664,7 @@ RevCommand(iPtr, string)
+     revPtr->lastIndex = iPtr->evalLast - iPtr->historyFirst - 1;
+     revPtr->newSize = strlen(string);
+     revPtr->newBytes = malloc((unsigned) (revPtr->newSize+1));
++    revPtr->nextPtr = NULL;
+     strcpy(revPtr->newBytes, string);
+     InsertRev(iPtr, revPtr);
+ }
+@@ -732,6 +733,7 @@ RevResult(iPtr, string)
+     argv[0] = string;
+     revPtr->newBytes = Tcl_Merge(1, argv);
+     revPtr->newSize = strlen(revPtr->newBytes);
++    revPtr->nextPtr = NULL;
+     InsertRev(iPtr, revPtr);
+ }
+ 

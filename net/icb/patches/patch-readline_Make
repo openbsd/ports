@@ -1,0 +1,13 @@
+$OpenBSD: patch-readline_Make,v 1.1 2001/03/12 15:59:02 wilfried Exp $
+--- readline/Make.orig	Fri Feb 24 22:19:59 1995
++++ readline/Make	Mon Mar 12 16:55:33 2001
+@@ -34,8 +34,7 @@
+ READLINE_DEFINES = $(TYPES) -DVI_MODE
+ 
+ DEBUG_FLAGS = -g
+-LDFLAGS = $(DEBUG_FLAGS) 
+-CFLAGS = $(DEBUG_FLAGS) $(USG) -I. -I..
++CFLAGS += $(USG) -I. -I..
+ 
+ # A good alternative is gcc -traditional.
+ #CC = gcc -traditional

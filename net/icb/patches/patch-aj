@@ -1,6 +1,25 @@
---- tcl/tclProc.c.orig	Fri Feb 24 16:19:56 1995
-+++ tcl/tclProc.c	Sun Jan 16 01:53:10 2000
-@@ -793,11 +793,13 @@
+--- tcl/tclProc.c.orig	Fri Feb 24 22:19:56 1995
++++ tcl/tclProc.c	Sun Feb 11 12:27:12 2001
+@@ -124,8 +124,8 @@
+ 	    argPtr = (Var *) malloc(VAR_SIZE(nameLength, valueLength));
+ 	    procPtr->argPtr = argPtr;
+ 	} else {
+-	    argPtr->nextPtr = (Var *) malloc(VAR_SIZE(nameLength, valueLength));
+-	    argPtr = argPtr->nextPtr;
++	    procPtr->argPtr->nextPtr = (Var *) malloc(VAR_SIZE(nameLength, valueLength));
++	    argPtr = procPtr->argPtr->nextPtr;
+ 	}
+ 	strcpy(argPtr->name, fieldValues[0]);
+ 	if (fieldCount == 2) {
+@@ -136,6 +136,7 @@
+ 	}
+ 	argPtr->valueLength = valueLength;
+ 	argPtr->flags = 0;
++	argPtr->globalPtr = NULL;
+ 	argPtr->nextPtr = NULL;
+ 	free((char *) fieldValues);
+     }
+@@ -793,11 +794,13 @@
       */
  
      procDone:
@@ -16,3 +35,20 @@
      }
      iPtr->framePtr = frame.callerPtr;
      iPtr->varFramePtr = frame.callerVarPtr;
+@@ -826,13 +829,14 @@
+ ProcDeleteProc(procPtr)
+     register Proc *procPtr;		/* Procedure to be deleted. */
+ {
+-    register Var *argPtr;
++    register Var *argPtr, *arg1Ptr;
+ 
+     free((char *) procPtr->command);
+-    for (argPtr = procPtr->argPtr; argPtr != NULL; argPtr = argPtr->nextPtr) {
++    for (argPtr = procPtr->argPtr; argPtr != NULL; argPtr = arg1Ptr) {
+ 	if (argPtr->flags & VAR_DYNAMIC) {
+ 	    free(argPtr->value);
+ 	}
++	arg1Ptr = argPtr->nextPtr;
+ 	free((char *) argPtr);
+     }
+     free((char *) procPtr);
