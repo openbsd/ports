@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/25 16:23:30 naddy Exp $
 
 COMMENT=	"GNU dbm"
 
 DISTNAME=	gdbm-1.8.0
 CATEGORIES=	databases
-NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU:=gdbm/}
 
 HOMEPAGE=	http://www.gnu.org/software/gdbm/
@@ -17,5 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

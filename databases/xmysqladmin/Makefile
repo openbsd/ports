@@ -1,5 +1,5 @@
 # $FreeBSD: ports/databases/xmysqladmin/Makefile,v 1.25 1999/11/23 02:59:09 billf Exp $
-# $OpenBSD: Makefile,v 1.17 2002/07/19 18:42:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/25 16:23:30 naddy Exp $
 
 COMMENT=	"X11 front end to the mysqladmin command"
 
@@ -18,11 +18,12 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 
 LIB_DEPENDS=	forms.0::x11/xforms \
 		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql \
-		jpeg.::graphics/jpeg
+		jpeg.62::graphics/jpeg
+
+USE_X11=	Yes
+ALL_TARGET=	xmysqladmin
+NO_REGRESS=	Yes
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
-
-USE_X11=	yes
-ALL_TARGET=	xmysqladmin
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/06 10:29:39 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/25 16:23:30 naddy Exp $
 
 COMMENT=	"PostgreSQL database adapter for Python"
 
@@ -6,7 +6,6 @@ VERSION=	1.0.9
 DISTNAME=	psycopg-${VERSION}
 PKGNAME=	py-psycopg-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.504
 
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 HOMEPAGE=	http://initd.org/software/psycopg
@@ -39,6 +38,8 @@ CONFIGURE_ARGS=	--with-python=python${PYTHON_VER}		\
 		--with-mxdatetime-includes=${DATETIME_PATH}/mxDateTime
 
 SUBST_VARS=	PYTHON_VER
+
+NO_REGRESS=	Yes
 
 pre-install:
 	mkdir -p ${PREFIX}/lib/zope/lib/python/Products/

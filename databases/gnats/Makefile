@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 18:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/25 16:23:30 naddy Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
@@ -7,7 +7,6 @@ CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=gnats/snapshots/}
 HOMEPAGE=	http://sources.redhat.com/gnats/
 MAINTAINER=	Dug Song <dugsong@monkey.org>
-NEED_VERSION=	1.444
 
 FLAVORS=	www
 FLAVOR?=
@@ -25,6 +24,8 @@ PERMIT_PACKAGE_FTP=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--with-full-gnats --with-release-based
 CONFIGURE_ENV+=	SEND_PR=/usr/bin/false
+
+NO_REGRESS=	Yes
 
 INSTALL_TARGET=	install-gnats install-send-pr install-info
 
