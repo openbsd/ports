@@ -1,0 +1,17 @@
++---------------------------------------------------
+| The X11 fonts for ${PKGNAME} have been installed to
+|
+|   ${FONTDIR}
+|
+| You must add them to your X11 font paths with the
+| following command:
+|
+|   xset +fp ${FONTDIR}
+|
+| To enable this permanently when the X11 server is
+| started, add
+| 
+|   FontPath "${FONTDIR}"
+| 
+| in the "Files" section of your XF86Config file.
++---------------------------------------------------

@@ -1,0 +1,15 @@
+$OpenBSD: patch-boust,v 1.1.1.1 2002/11/28 12:43:44 naddy Exp $
+--- boust.orig	Thu Nov  7 00:06:00 2002
++++ boust	Wed Nov  6 23:53:47 2002
+@@ -2,9 +2,9 @@
+ # In sh check to see if the "--o" argument is present.
+ # If it is, run tclsh, otherwise, run wish.
+ # (The backslash makes the following line a comment as well... \
+-THESH="wish"
++THESH="wish8.3"
+ # blah\
+-for arg in "$@" ; do if [ "$arg" == "--o" ] ; then THESH="tclsh" ; fi ; done ; \
++for arg in "$@" ; do if [ "$arg" == "--o" ] ; then THESH="tclsh8.3" ; fi ; done ; \
+ # \
+ exec $THESH "$0" "$@"
+ 

@@ -1,0 +1,15 @@
+Boustrophedon is a reading-/writing-style that alternates direction
+every line. It was originally created by the ancient Greeks. Once one
+gets good at reading the 'backwards' text, reading (and writing) can
+go much faster, as the eye (or hand) does not have to whip back to the
+margin when the end of a line is reached. One simply goes down a line
+and continues in the opposite direction.
+
+In the case of a paragraph ending, the next paragraph should retain
+the horizontal position, and (depending on which the text is closest
+to: the center of the screen or the margin) continues in the same
+direction, or continue in the opposite direction.
+
+This program formats the text-files to be read in this manner.
+
+WWW: ${HOMEPAGE}
