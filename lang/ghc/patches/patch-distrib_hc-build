@@ -1,11 +1,18 @@
 SplitObjs just slows things down, and can overrun ulimits
+
+And GHC produces stack_smash_handler() core dumps on sparc 
+unless propolice is turned off. This used to happen on x86, but
+has been fixed. Someone want to fix this on sparc?
+
 Help ghc find libgmp.a
+
 And that old regex doesn't work/is a gnu grep thing?
+
 And touch some files to avoid recompiling ghc/compiler on install
 
---- distrib/hc-build.orig	Fri Jul 25 20:23:30 2003
-+++ distrib/hc-build	Sun Aug 24 11:36:45 2003
-@@ -37,10 +37,15 @@
+--- distrib/hc-build.orig	Fri Jul 25 04:23:30 2003
++++ distrib/hc-build	Tue Sep 23 02:35:34 2003
+@@ -37,10 +37,20 @@
  *)
  cat >mk/build.mk <<END
  # empty
@@ -16,12 +23,17 @@ And touch some files to avoid recompiling ghc/compiler on install
  ;;
  esac
  
++if [ `uname -m` == "sparc" ] ; then
++	echo "SRC_HC_OPTS+=-optc-fno-stack-protector" >> mk/build.mk
++	echo "SRC_CC_OPTS+=-fno-stack-protector" >> mk/build.mk
++fi
++
 +export CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 +
  echo "*** Building compiler..."
  ./configure --enable-hc-boot $configopts
  
-@@ -75,12 +80,11 @@
+@@ -75,12 +85,11 @@
  # The reconfigure step updates a few files, which can lead to
  # unnecessary recompilations.  Touch a bunch of things here to avoid
  # having to recompile stuff that we've already built.
@@ -35,7 +47,7 @@ And touch some files to avoid recompiling ghc/compiler on install
  
  # Do includes and RTS now
  $MAKE -C ghc/includes boot && $MAKE -C ghc/includes all
-@@ -96,6 +100,6 @@
+@@ -96,6 +105,6 @@
  $MAKE -C hslibs  boot all
  
  # Avoid relinking the compiler during 'make install':

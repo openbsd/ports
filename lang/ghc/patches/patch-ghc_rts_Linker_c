@@ -1,10 +1,10 @@
-$OpenBSD: patch-ghc_rts_Linker_c,v 1.4 2003/09/01 20:32:14 espie Exp $
+$OpenBSD: patch-ghc_rts_Linker_c,v 1.5 2004/01/08 20:33:23 avsm Exp $
 sprintf.
 preliminary attempts to get object file loading working, so that
 ghci will work. Needs revisiting, to check all lib interfaces
 
---- ghc/rts/Linker.c.orig	Wed Apr 30 07:37:31 2003
-+++ ghc/rts/Linker.c	Sun Jul  6 21:29:55 2003
+--- ghc/rts/Linker.c.orig	Fri May 30 08:40:51 2003
++++ ghc/rts/Linker.c	Fri Nov  7 12:32:30 2003
 @@ -59,7 +59,7 @@
  #include <sys/mman.h>
  #endif
@@ -14,19 +14,7 @@ ghci will work. Needs revisiting, to check all lib interfaces
  #  define OBJFORMAT_ELF
  #elif defined(cygwin32_TARGET_OS) || defined (mingw32_TARGET_OS)
  #  define OBJFORMAT_PEi386
-@@ -724,7 +724,11 @@
- 
-    initLinker();
- 
-+#if !defined(openbsd_TARGET_OS)
-    hdl= dlopen(dll_name, RTLD_NOW | RTLD_GLOBAL);
-+#else
-+   hdl= dlopen(dll_name, RTLD_LAZY);
-+#endif
-    if (hdl == NULL) {
-       /* dlopen failed; return a ptr to the error msg. */
-       errmsg = dlerror();
-@@ -763,10 +767,10 @@
+@@ -773,10 +773,10 @@
        	extension. */
  
     buf = stgMallocBytes(strlen(dll_name) + 10, "addDLL");
@@ -39,7 +27,7 @@ ghci will work. Needs revisiting, to check all lib interfaces
  	 instance = LoadLibrary(buf);
  	 if (instance == NULL) {
  		stgFree(buf);
-@@ -2001,7 +2005,15 @@
+@@ -2011,7 +2011,15 @@
  #  define ELF_NEED_PLT      /* needs Procedure Linkage Tables */
  #endif
  

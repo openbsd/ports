@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/09/01 22:46:28 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/01/08 20:33:23 avsm Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 # And on NetBSD's 5.04.3 .hc boot script
@@ -6,20 +6,17 @@
 # The build process:
 #       1) build a full ghc6 from pre-generated 6.0.1 C files
 
-ONLY_FOR_ARCHS= i386
-# The general solution for other architectures [alpha, powerpc,
-# sparc64, hppa, mips, m68k at least] will be to boot via
-# unregisterised .hc files generated on openbsd-*-i386. See:
+ONLY_FOR_ARCHS= i386 sparc
+# The general solution for other architectures will be to boot
+# via unregisterised .hc files generated on openbsd-*-i386. See:
 #
 #  http://haskell.org/ghc/docs/latest/html/building/sec-porting-ghc.html
 #  http://cvs.haskell.org/cgi-bin/cvsweb.cgi/fptools/distrib/cross-port
 #
-# The best bets are powerpc, sparc, sparc64 and alpha, which are
-# working, or have recently worked, on linux. m68k needs to have
-# its asm format set in the mangler, before we can do any kind of
-# build. sparc is in a slightly better position, as we have
-# 4.08.2 .hc source, but the C-built ghc4 goes into an infinite
-# loop, when I last tried -- dons
+# The best bets are powerpc and alpha. sparc64 and amd64 should
+# work. hppa and mips have recently worked. m68k hasn't worked
+# for a long time now, and on mac68k at least _ld_ dies with a
+# malloc error when linking the ghc binary.
 
 COMMENT=	"compiler for the functional language Haskell"
 COMMENT-doc=	"documentation for the functional language Haskell"
@@ -51,10 +48,11 @@ DOC_DIR=	${PREFIX}/share/doc/ghc
 DISTFILES=	ghc-${V}-src.tar.bz2 \
 		${DOC_FILES:C/(.+)/\1.html.tar.gz:0/g} \
 		${DOC_FILES1:C/(.+)/\1-html.tar.gz:1/g} \
-		ghc-regress-${V}.tar.bz2:2 \
+		ghc-regress-${V}.1.tar.bz2:2 \
 		ghc-${V}-${ARCH}-hc.tar.gz:2
 
-# only i386 hc src exists at the moment
+# only i386 and sparc .hc src exist at the moment. generating
+# this tarball is the first step in porting to a new architecture
 SUPDISTFILES=	ghc-${V}-${ARCH}-hc.tar.gz:2
 
 USE_GMAKE=	Yes

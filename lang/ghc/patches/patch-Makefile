@@ -9,7 +9,7 @@ Add a "check" target to make regress work nicely.
 +check::
 +	( cd testsuite/tests/ghc-regress ; $(MAKE) $(MFLAGS) )
 +	@(sed 's/ started at .*$$//' actual.result > actual.result_)
-+	@(if cmp -s expected.result actual.result_ ; then \
++	@(if cmp -s `uname -m`.expected.result actual.result_ ; then \
 +                echo "All is good!" ; \
 +          else \
 +                echo ;\
@@ -18,5 +18,5 @@ Add a "check" target to make regress work nicely.
 +                echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@";\
 +                echo ;\
 +                echo "here is a diff:" ;\
-+                diff -u expected.result actual.result_ ;\
++                diff -u `uname -m`.expected.result actual.result_ ;\
 +          fi ; exit 0 )

@@ -1,42 +1,21 @@
-$OpenBSD: patch-configure,v 1.4 2003/08/12 13:25:18 avsm Exp $
-Falsely detects leading underscore. Plan for sparc.
-Help configure find libgmp properly. i.e. fix test for gmp
-
---- configure.orig	Tue Jul 29 05:01:34 2003
-+++ configure	Thu Aug  7 11:25:32 2003
+--- configure.orig	Mon Jul 28 13:01:34 2003
++++ configure	Sat Sep 20 18:53:45 2003
 @@ -1708,6 +1708,15 @@
          HostVendor_CPP='sun'
          HostOS_CPP='solaris2'
          ;;
-+sparc-*-openbsd*) #hack
-+        HostPlatform=sparc-sun-openbsd #hack
-+        TargetPlatform=sparc-sun-openbsd #hack
-+        BuildPlatform=sparc-sun-openbsd #hack
-+        HostPlatform_CPP='sparc_sun_openbsd'
++sparc-*-openbsd*)
++        HostPlatform=sparc-unknown-openbsd
++        TargetPlatform=sparc-unknown-openbsd
++        BuildPlatform=sparc-unknown-openbsd
++        HostPlatform_CPP='sparc_unknown_openbsd'
 +        HostArch_CPP='sparc'
-+        HostVendor_CPP='sun'
++        HostVendor_CPP='unknown'
 +        HostOS_CPP='openbsd'
 +        ;;
  *)
          echo "Unrecognised platform: $HostPlatform"
          exit 1
-@@ -19591,12 +19600,13 @@
- #endif
- /* We use char because int might match the return type of a gcc2
-    builtin and then its argument prototype would still apply.  */
--char __gmpz_fdiv_qr ();
-+#include <gmp.h>
-+
- int
- main ()
- {
--__gmpz_fdiv_qr ();
--  ;
-+  mpz_ptr a, b, p, q;
-+  mpz_fdiv_qr(p,q,a,b);
-   return 0;
- }
- _ACEOF
 @@ -23646,6 +23656,7 @@
  else
  
