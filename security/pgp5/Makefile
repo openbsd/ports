@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/12/13 05:56:17 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/13 05:59:13 brad Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -27,6 +27,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
+LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
 CONFIGURE_ARGS=	--with-rsaref
 .endif
 
