@@ -1,28 +1,50 @@
 # OpenBSD makefile for:		lsof
-# Version required:     3.87
+# Version required:     4.34
 # Date created:         25 November 1997
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 1997/12/22 00:49:23 niklas Exp $
+# $OpenBSD: Makefile,v 1.6 1998/07/25 21:21:20 marc Exp $
 #
 
-DISTNAME=	lsof_4.15_W
-PKGNAME=	lsof-4.15
+DISTNAME=	lsof_4.34_W
+PKGNAME=	lsof-4.34
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
 MAINTAINER=     angelos@openbsd.org
+
+MASTER_SITES=	ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n openbsd
-MAN1=		lsof.1
 
-ONLY_FOR_ARCHS=	alpha amiga arc hp300 i386 mac68k mvme68k pmax sun3 wgrisc
+NO_PACKAGE=	compile from source to set proper options
 
 SRCBALL_NAME=	${DISTNAME:S/_W$//}
+
+.if ( ${MACHINE_ARCH} == "sparc" )
+.if defined( SUN4 )
+CDEF=-DSUN4
+.endif
+.if defined( SUN4C )
+CDEF=-DSUN4C
+.endif
+.if defined( SUN4M )
+CDEF=-DSUN4M
+.endif
+MAKE_ENV += "CDEF=${CDEF}"
+.if !defined( CDEF )
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "*** when building for a sparc you must specify one of"
+	@${ECHO} "***	SUN4=YES, SUN4C=YES, or SUN4M=YES"
+	@${ECHO} "*** on the make command line"
+	@${ECHO} ""
+	@false
+.endif
+.endif
 
 post-extract:
 	@( cd ${WRKDIR} ; \
