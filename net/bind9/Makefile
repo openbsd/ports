@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2003/01/21 16:43:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.38 2003/01/21 17:29:09 jakob Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -65,7 +65,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bind9/misc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bind9
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${PREFIX}/share/doc/bind9/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.gif  ${PREFIX}/share/doc/bind9/arm
 .for file in ${EXAMPLEFILES}
 	${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/share/examples/bind9
 .endfor

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/07/07 11:21:59 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/01/21 17:29:09 jakob Exp $
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -296,7 +296,6 @@ share/doc/bind9/arm/Bv9ARM.ch07.html
 share/doc/bind9/arm/Bv9ARM.ch08.html
 share/doc/bind9/arm/Bv9ARM.ch09.html
 share/doc/bind9/arm/Bv9ARM.html
-share/doc/bind9/arm/isc.color.gif
 share/doc/bind9/misc/dnssec
 share/doc/bind9/misc/ipv6
 share/doc/bind9/misc/migration
