@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/10 19:40:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/10 19:42:25 pvalchev Exp $
 
 # XXX might not be hard to add more (macppc at least)
 ONLY_FOR_ARCHS=		i386
@@ -83,6 +83,12 @@ CONFIGURE_ARGS+=--disable-ossaudio
 .endif
 
 .if ${FLAVOR:L:Mwin32}
+pre-fetch:
+	@echo
+	@echo "  WARNING: This application requires a kernel compiled with"
+	@echo "           'option USER_LDT' for proper operation. The GENERIC"
+	@echo "           kernel does not have this option enabled by default."
+	@echo
 RUN_DEPENDS+=	win32/divx.dll::graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
