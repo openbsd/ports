@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/12/23 23:45:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/02/25 00:08:10 brad Exp $
 bin/fax2ps
 bin/fax2tiff
 bin/gif2tiff
@@ -9,6 +9,7 @@ bin/raw2tiff
 bin/rgb2ycbcr
 bin/thumbnail
 bin/tiff2bw
+bin/tiff2pdf
 bin/tiff2ps
 bin/tiff2rgba
 bin/tiffcmp
@@ -36,6 +37,7 @@ man/man1/rgb2ycbcr.1
 man/man1/sgi2tiff.1
 man/man1/thumbnail.1
 man/man1/tiff2bw.1
+man/man1/tiff2pdf.1
 man/man1/tiff2ps.1
 man/man1/tiff2rgba.1
 man/man1/tiffcmp.1
@@ -128,6 +130,7 @@ man/man3/TIFFWriteScanline.3t
 man/man3/TIFFWriteTile.3t
 man/man3/TIFFbuffer.3t
 man/man3/TIFFcodec.3t
+man/man3/TIFFcolor.3t
 man/man3/TIFFfree.3t
 man/man3/TIFFmalloc.3t
 man/man3/TIFFmemcmp.3t
@@ -189,5 +192,6 @@ share/doc/tiff/v3.5.5.html
 share/doc/tiff/v3.5.6-beta.html
 share/doc/tiff/v3.5.7.html
 share/doc/tiff/v3.6.0.html
+share/doc/tiff/v3.6.1.html
 @dirrm share/doc/tiff/images
 @dirrm share/doc/tiff
