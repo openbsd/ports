@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/10 03:18:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/14 16:23:42 naddy Exp $
 
 COMMENT=	"extensible window manager"
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
 		rep.10::lang/librep \
-		gdk_imlib.19::graphics/imlib
+		Imlib.19,gdk_imlib.19::graphics/imlib
 
 MAINTAINER=	Robbie Gates <robbie@g7.org>
 
@@ -31,7 +31,8 @@ USE_GMAKE=      Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/etc
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --disable-capplet --disable-themer \
+CONFIGURE_ARGS+= --without-audiofile --without-esd \
+		 --disable-capplet --disable-themer \
 		 --disable-gnome-widgets --disable-linguas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
