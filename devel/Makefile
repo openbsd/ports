@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/01/30 00:45:26 niklas Exp $
+# $OpenBSD: Makefile,v 1.6 1998/02/10 23:55:57 niklas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += autoconf
      SUBDIR += automake
 #    SUBDIR += bcc
+     SUBDIR += bison
 #    SUBDIR += boehm-gc
 #    SUBDIR += cccc
 #    SUBDIR += cflow
