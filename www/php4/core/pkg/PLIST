@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/08/12 04:27:41 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/05/02 19:49:01 avsm Exp $
 @pkgcfl php3-*
+bin/pear
 bin/php
-lib/php/modules/libphp4.so
+bin/php-config
+bin/phpextdist
+bin/phpize
+lib/php/libphp4.so
 sbin/phpxs
 share/doc/php4/php.ini-dist
 share/doc/php4/php.ini-recommended

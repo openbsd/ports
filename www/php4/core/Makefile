@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/04/03 10:26:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2003/05/02 19:49:00 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 PKGNAME=	php4-core-${V}
@@ -30,19 +30,23 @@ MODULES=	gettext iconv
 SUBST_VARS=	PHP_CONFIG_FILE
 PHP_VERSION=	${V}
 
-.for i in TRUEPREFIX PHP_CONFIG_FILE MODULES_DIR PHP_VERSION
+.for i in TRUEPREFIX PHP_CONFIG_FILE MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/${MODULES_SUBDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}
 
-do-install:
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/${MODULES_SUBDIR}
+INSTALL_TARGET=	install-programs install-pear
+FAKE_FLAGS= 	INSTALL_ROOT=${DESTDIR}
+
+post-install:
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so ${PREFIX}/${APACHE_MODULE_SUBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin
 .for i in dist recommended
-	@sed 's,MODULES_DIR,${MODULES_DIR},' \
+	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
+	     -e 's,OPENBSD_INCLUDE_PATH,/pear/lib:${CHROOT_DIR}/pear/lib,' \
 		<${WRKSRC}/php.ini-${i} \
 		>${PREFIX}/share/doc/php4/php.ini-${i}
 .endfor

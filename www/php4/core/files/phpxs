@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: phpxs,v 1.2 2002/08/17 01:39:25 avsm Exp $
+# $OpenBSD: phpxs,v 1.3 2003/05/02 19:49:01 avsm Exp $
 #
-# Copyright (c) 2002 Anil Madhavapeddy.
+# Copyright (c) 2002,2003 Anil Madhavapeddy.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -31,9 +31,10 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 # variables substituted during package build time
 php_version=PHP_VERSION
 php_module_path=MODULES_DIR
+apache_module_path=APACHE_MODULE_DIR
 php_cfg=PHP_CONFIG_FILE
 php_example=TRUEPREFIX/share/doc/php4
-php_module=${php_module_path}/libphp4.so
+php_module=${apache_module_path}/libphp4.so
 
 showusage() {
     echo

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.3 2002/08/12 04:27:41 avsm Exp $
+# $OpenBSD: INSTALL,v 1.4 2003/05/02 19:49:01 avsm Exp $
 #
 # php4 installation
 
@@ -14,19 +14,20 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| To finish the install, you need to enable the php4"
-    echo "| module using the following command"
+    echo "| To finish the install, enable the php4 module with:"
+    echo "|	$PREFIX/sbin/phpxs -s"
     echo "|"
-    echo "|       $PREFIX/sbin/phpxs -s"
-    echo "|"
-    echo "| To actually enable parsing of PHP scripts, you also"
-    echo "| need to manually add the following to your "
+    echo "| To enable parsing of PHP scripts, add the following to"
     echo "| /var/www/conf/httpd.conf:"
     echo "|"
     echo "|       AddType application/x-httpd-php .php"
     echo "|"
     echo "| Copy the config file below into ${PHP_CONFIG_FILE}"
-    echo "| ${PREFIX}/share/doc/php4/php.ini-dist"
+    echo "| ${PREFIX}/share/doc/php4/php.ini-recommended"
+    echo "|"
+    echo "| Don't forget that the default OpenBSD httpd is chrooted"
+    echo "| into /var/www by default, so you may need to create support"
+    echo "| directories such as /var/www/tmp for PHP to work correctly."
     echo "+---------------"
     echo
 }
