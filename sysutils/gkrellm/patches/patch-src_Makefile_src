@@ -1,27 +1,17 @@
-$OpenBSD: patch-src_Makefile_src,v 1.5 2002/01/20 23:51:31 jcs Exp $
---- src/Makefile.src.orig	Thu Dec 20 13:09:48 2001
-+++ src/Makefile.src	Sun Jan 20 17:38:58 2002
-@@ -1,15 +1,15 @@
- GTK_CONFIG ?= gtk-config
- EXTRAOBJS ?= md5c.o
- BINMODE ?= 755
--INSTALLDIR ?= /usr/local/bin
--INCLUDEDIR ?= /usr/local/include
-+INSTALLDIR ?= ${PREFIX}/bin
-+INCLUDEDIR ?= ${PREFIX}/include
- INCLUDEMODE ?= 644
- INCLUDEDIRMODE ?= 755
--MANDIR ?= /usr/local/share/man/man1
-+MANDIR ?= ${PREFIX}/man/man1
+$OpenBSD: patch-src_Makefile_src,v 1.6 2002/07/29 03:46:28 jcs Exp $
+--- src/Makefile.src.orig	Sun Jun 30 21:13:04 2002
++++ src/Makefile.src	Sun Jul 28 22:35:14 2002
+@@ -9,8 +9,7 @@
  MANMODE ?= 644
  MANDIRMODE ?= 755
  INSTALL ?= install
 -LINK_FLAGS ?= -Wl,-E
+-CC ?= gcc
 +LINK_FLAGS ?= -Wl
+ STRIP ?= -s
  
  GKRELLM_INCLUDES = gkrellm.h gkrellm_public_proto.h
- 
-@@ -19,7 +19,7 @@
+@@ -21,7 +20,7 @@
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
@@ -30,17 +20,16 @@ $OpenBSD: patch-src_Makefile_src,v 1.5 2002/01/20 23:51:31 jcs Exp $
  FLAGS+= $(PTHREAD_INC)
  
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
-@@ -36,8 +36,7 @@
+@@ -38,7 +37,7 @@
      FLAGS += -DHAVE_GETADDRINFO
  endif
  
--
--CC = gcc -Wall $(FLAGS) $(CFLAGS)
+-CC += -Wall $(FLAGS)
 +CFLAGS += $(FLAGS)
  
  OBJS =	main.o alerts.o apm.o base64.o clock.o cpu.o disk.o fs.o hostname.o \
  	inet.o mail.o meminfo.o net.o proc.o sensors.o uptime.o \
-@@ -63,6 +62,9 @@
+@@ -70,6 +69,9 @@
  netbsd:
  	$(MAKE) PTHREAD_INC=-I/usr/local/include \
  	GTK_CONFIG=gtk-config GTOP_LIBS= EXTRAOBJS= SYS_LIBS="-lkvm" gkrellm

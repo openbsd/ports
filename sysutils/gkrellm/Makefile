@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2002/06/23 23:42:13 jcs Exp $
+# $OpenBSD: Makefile,v 1.19 2002/07/29 03:46:28 jcs Exp $
 
-DISTNAME=	gkrellm-1.2.12
+DISTNAME=	gkrellm-1.2.13
 HOMEPAGE=	http://www.gkrellm.net/
 COMMENT=	"single process stack of system monitors"
 
 CATEGORIES=	sysutils
-NEED_VERSION=	1.524
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
