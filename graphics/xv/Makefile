@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/06 05:05:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/24 02:27:48 kevlo Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
@@ -25,7 +25,7 @@ HOMEPAGE=	http://www.trilon.com/xv/index.html
 
 LIB_DEPENDS=    jpeg.62.::graphics/jpeg \
 		tiff.35.::graphics/tiff \
-		png.1.::graphics/png
+		png.2.::graphics/png
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/06 01:27:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/24 02:27:58 kevlo Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	libtool::devel/libtool
 # (if you don't, I think it will build a command-line-only Java--untested).
 LIB_DEPENDS=	jpeg.62.::graphics/jpeg \
 		gif.4.::graphics/giflib \
-		png.1.::graphics/png \
+		png.2.::graphics/png \
 		gmp.4.::devel/gmp
 
 HOMEPAGE=	http://www.kaffe.org/

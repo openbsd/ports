@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/05/21 14:05:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.40 2001/05/24 02:28:35 kevlo Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -22,7 +22,7 @@ MASTER_SITE_SUBDIR=	beta/srcs
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
-			png.1::graphics/png \
+			png.2::graphics/png \
 			gif.4.1::graphics/giflib
 
 SEPARATE_BUILD=		concurrent

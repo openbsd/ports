@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 04:08:40 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/24 02:27:10 kevlo Exp $
 
 COMMENT=	"SDL image library"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	SDL.:sdl-*-!no_x11:devel/sdl \
-	png.1::graphics/png \
+	png.2::graphics/png \
 	tiff.35::graphics/tiff \
 	jpeg.62.::graphics/jpeg
 

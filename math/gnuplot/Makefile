@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/28 19:35:31 danh Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/24 02:28:00 kevlo Exp $
 
 COMMENT=	"command-driven interactive function plotting program"
 
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= gnuplot
 
 HOMEPAGE=	http://www.gnuplot.org/
 
-LIB_DEPENDS=	png.1::graphics/png
+LIB_DEPENDS=	png.2::graphics/png
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/05 21:05:10 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/24 02:28:12 kevlo Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -36,7 +36,7 @@ PNGDIR=graphics/png
 BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
 		/nonexistent::${PNGDIR}:patch
 
-LIB_DEPENDS=	png.1::${PNGDIR}
+LIB_DEPENDS=	png.2::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 

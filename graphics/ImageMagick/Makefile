@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2001/04/06 17:33:28 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2001/05/24 02:27:25 kevlo Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		jbig.1.2::graphics/jbigkit \
 		mpeg.13::graphics/mpeg-lib \
-		png.1::graphics/png \
+		png.2::graphics/png \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype \
 		xml2.5::textproc/libxml

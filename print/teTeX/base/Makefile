@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.12 2001/05/06 03:20:02 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/24 02:28:23 kevlo Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -28,7 +28,7 @@ TETEX_SRC=teTeX-src-1.0.7.tar.gz
 
 RUN_DEPENDS=${PREFIX}/share/texmf/ls-R:teTeX_texmf-1.0.*:print/teTeX/texmf
 BUILD_DEPENDS=${PREFIX}/share/texmf/ls-R::print/teTeX/texmf
-LIB_DEPENDS= png.1::graphics/png 
+LIB_DEPENDS= png.2::graphics/png 
 
 PNGDIR=${PREFIX}
 

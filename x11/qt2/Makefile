@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/05/06 04:41:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.25 2001/05/24 02:28:32 kevlo Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -53,7 +53,7 @@ EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 LIB_DEPENDS=
 
 .if !defined(PACKAGING) || ${SUBPACKAGE} != "-html"
-LIB_DEPENDS+=	png.1.::graphics/png \
+LIB_DEPENDS+=	png.2.::graphics/png \
 		mng.1.::graphics/libmng
 .endif
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-examples"

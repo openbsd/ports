@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/06 00:28:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2001/05/24 02:27:13 kevlo Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -15,7 +15,7 @@ DIST_SUBDIR=	abiword
 
 HOMEPAGE=	http://www.abisource.com/
 
-LIB_DEPENDS=	png.1::graphics/png \
+LIB_DEPENDS=	png.2::graphics/png \
 		gtk.1.2::x11/gtk+
 RUN_DEPENDS=	ispell::textproc/ispell
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 04:41:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/05/24 02:28:26 kevlo Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
@@ -10,7 +10,7 @@ MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
 HOMEPAGE=	http://www.afterstep.org/
 
-LIB_DEPENDS=	png.1::graphics/png \
+LIB_DEPENDS=	png.2::graphics/png \
 		jpeg.62::graphics/jpeg
 
 MAINTAINER=	ports@openbsd.org

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 05:05:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:27:50 kevlo Exp $
 
 COMMENT=	"converts TIFF images to PNG format"
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 HOMEPAGE=	http://www.libpng.org/pub/png/apps/tiff2png.html
 
 LIB_DEPENDS=	tiff.35::graphics/tiff \
-		png.1::graphics/png
+		png.2::graphics/png
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/03/30 08:13:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/24 02:28:02 kevlo Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # plus sign is for localized (i.e. Japanese) version
 LIB_DEPENDS+=	ttf.1::print/freetype \
-		png.1::graphics/png
+		png.2::graphics/png
 
 CONFIGURE_STYLE=imake gnu
 CONFIGURE_ARGS=	--disable-vflib

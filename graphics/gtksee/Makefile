@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/22 21:45:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:27:55 kevlo Exp $
 
 DISTNAME=	gtksee-0.5.0
 CATEGORIES=	graphics
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	gtk.1::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		png.1::graphics/png \
+		png.2::graphics/png \
 		intl.1::devel/gettext
 RUN_DEPENDS=	bzip::archivers/bzip \
 		bzip2::archivers/bzip2

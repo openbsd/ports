@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/05/06 05:05:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.28 2001/05/24 02:27:31 kevlo Exp $
 
 COMMENT=	"converts GIF images to the PNG format"
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
 
 HOMEPAGE=	http://www.tuxedo.org/~esr/gif2png/
 
-LIB_DEPENDS=	png.1::graphics/png
+LIB_DEPENDS=	png.2::graphics/png
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 03:19:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:16 kevlo Exp $
 
 COMMENT=	"convert HTML pages to PDF/PS format"
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX=		.zip
 MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/1.8.11/
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/fluid::x11/fltk
-LIB_DEPENDS=		png.1::graphics/png \
+LIB_DEPENDS=		png.2::graphics/png \
 			jpeg.62::graphics/jpeg
 
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/05 21:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/05/24 02:28:14 kevlo Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 COMMENT=	"GNU Postscript interpreter"
@@ -40,7 +40,7 @@ BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
 		/nonexistent::${PNGDIR}:patch \
 		unzip::archivers/unzip \
 
-LIB_DEPENDS=	png.1::${PNGDIR}
+LIB_DEPENDS=	png.2::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs${VERSION}

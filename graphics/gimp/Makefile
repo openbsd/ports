@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2001/05/15 13:11:06 brad Exp $
+# $OpenBSD: Makefile,v 1.60 2001/05/24 02:27:35 kevlo Exp $
 
 COMMENT=	"the GNU Image Manipulation Program"
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.gimp.org/
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		aa.1.3::graphics/aalib \
 		mpeg.13::graphics/mpeg-lib \
-		png.1::graphics/png \
+		png.2::graphics/png \
 		tiff.35::graphics/tiff
 BUILD_DEPENDS=	wget:wget-*:net/wget
 RUN_DEPENDS=	${BUILD_DEPENDS}

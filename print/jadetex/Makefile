@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/19 11:08:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/24 02:28:19 kevlo Exp $
 
 COMMENT=		"macros for the OpenJade DSSSL TeX backend"
 
@@ -18,7 +18,7 @@ MASTER_SITES=		http://www.tug.org/applications/jadetex/
 EXTRACT_SUFX=		.zip
 WRKDIST=		${WRKDIR}/jadetex
 
-LIB_DEPENDS=		png.1::graphics/png
+LIB_DEPENDS=		png.2::graphics/png
 BUILD_DEPENDS=		tex::print/teTeX/base \
 			${LOCALBASE}/share/texmf/web2c/texmf.cnf::print/teTeX/texmf
 RUN_DEPENDS=		${BUILD_DEPENDS}

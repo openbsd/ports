@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/04/14 02:26:49 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/24 02:27:41 kevlo Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
@@ -18,7 +18,7 @@ DIST_SUBDIR=	netpbm
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		png.1::graphics/png
+		png.2::graphics/png
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 02:31:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:05 kevlo Exp $
 
 COMMENT=	"filemanager for X Window"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=    jpeg.62.::graphics/jpeg \
-                png.1.::graphics/png 
+                png.2.::graphics/png 
 
 USE_X11=	Yes
 

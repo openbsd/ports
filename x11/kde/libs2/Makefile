@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/10 19:44:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/24 02:28:30 kevlo Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -17,7 +17,7 @@ EXTRACT_SUFX=		.tar.bz2
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 LIB_DEPENDS= 	qt.2.::x11/qt2 \
-		png.1.::graphics/png \
+		png.2.::graphics/png \
 		jpeg.62.::graphics/jpeg \
 		tiff.35.::graphics/tiff \
 		audiofile.::devel/libaudiofile \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/05 21:29:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:40 kevlo Exp $
 
 COMMENT=	designer for qt2
 
@@ -41,7 +41,7 @@ MAKE_FLAGS= 	SYSCONF_CXXFLAGS_QT=-I${LOCALBASE}/include/X11/qt2 \
 
 
 LIB_DEPENDS=	jpeg.62.::graphics/jpeg \
-		png.1.::graphics/png \
+		png.2.::graphics/png \
 		mng.1.::graphics/libmng \
 		qt.2::x11/qt2 \
 		kdecore.::x11/kde/libs2

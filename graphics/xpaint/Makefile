@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/06 05:05:53 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2001/05/24 02:27:44 kevlo Exp $
 
 COMMENT=	"simple paint program"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		png.1::graphics/png
+		png.2::graphics/png
 
 CONFIGURE_STYLE=	imake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/04/21 14:47:05 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2001/05/24 02:27:28 kevlo Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 COMMENT=	"graphics library for fast PNG creation"
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.boutell.com/gd/http/ \
 HOMEPAGE=	http://www.boutell.com/gd/
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1::graphics/png \
+		png.2::graphics/png \
 		ttf.1.3::print/freetype
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

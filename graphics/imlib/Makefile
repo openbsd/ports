@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/04/18 19:26:50 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2001/05/24 02:27:38 kevlo Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR= stable/sources/imlib
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		gif.4.1::graphics/giflib \
-		png.1::graphics/png \
+		png.2::graphics/png \
 		tiff.35::graphics/tiff
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

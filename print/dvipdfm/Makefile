@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 03:19:51 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:07 kevlo Exp $
 
 COMMENT=	"converts DVI files to PDF format"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://gaspra.kettering.edu/dvipdfm/
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a::print/teTeX/base
-LIB_DEPENDS=		png.1::graphics/png
+LIB_DEPENDS=		png.2::graphics/png
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		--with-kpathsea=${LOCALBASE} --with-png=${LOCALBASE}

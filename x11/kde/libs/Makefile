@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/06 04:41:16 lebel Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/24 02:28:28 kevlo Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 COMMENT=	"X11 libraries + a windows manager and much more"
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	msgfmt::devel/gettext
 LIB_DEPENDS=	qt.1.45::x11/qt \
 		gif.4.1::graphics/giflib \
 		jpeg.62::graphics/jpeg \
-		png.1::graphics/png \
+		png.2::graphics/png \
 		tiff.35::graphics/tiff
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

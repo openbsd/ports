@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/01 20:18:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/24 02:27:53 kevlo Exp $
 
 COMMENT=	"replacement library for imlib"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/unstable/sources/gdk-pixbuf/
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
 
-LIB_DEPENDS=	png.1::graphics/png \
+LIB_DEPENDS=	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		tiff.35.::graphics/tiff \
 		gtk.1.2::x11/gtk+

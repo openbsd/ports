@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/06 00:29:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/24 02:27:22 kevlo Exp $
 
 # 
 # Description
@@ -142,7 +142,7 @@ CONFIGURE_ARGS+=--without-jpeg
 . endif
 
 . if !${FLAVOR:L:Mno_png}
-LIB_DEPENDS+=	png.1.::graphics/png
+LIB_DEPENDS+=	png.2.::graphics/png
 CONFIGURE_ARGS+=--with-png
 . else
 CONFIGURE_ARGS+=--without-png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 03:19:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/05/24 02:28:21 kevlo Exp $
 
 COMMENT=		"C library to produce PDF files"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.pdflib.com/pdflib/download/
 
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
-			png.1::graphics/png \
+			png.2::graphics/png \
 			tiff.35::graphics/tiff
 
 CONFIGURE_STYLE=	gnu

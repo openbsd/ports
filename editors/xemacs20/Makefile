@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/05/06 00:29:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/24 02:27:16 kevlo Exp $
 
 COMMENT=	"extensible, customizable real-time display editor"
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--with-mule
 SUPDISTFILES=${DISTNAME}-mule${EXTRACT_SUFX}
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1::graphics/png
+		png.2::graphics/png
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
