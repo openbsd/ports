@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/02/09 19:17:32 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2003/04/05 14:45:19 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -8,7 +8,7 @@ COMMENT-postgresql=	PostgresSQL plugin for qt3
 COMMENT-mysql=		MySQL plugin for qt3
 COMMENT-base=		include and docs for qt3
 
-VERSION=	1.1
+VERSION=	1.2
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -48,6 +48,8 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 		-system-zlib -sm -no-g++-exceptions \
 		-v -stl -xrender \
 		-no-sql-odbc \
+		-tablet \
+		-xinerama \
 		-I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
@@ -57,12 +59,12 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 MULTI_PACKAGES+=-base -html
 
 .if ${FLAVOR:L:Mmt}
-FULLPKGNAME=		qt3-mt-${VERSION}p0
+FULLPKGNAME=		qt3-mt-${VERSION}
 CONFIGURE_ARGS+=-thread
-ALL_TARGET=sub-src sub-tools
+MULTI_PACKAGES+=	-examples
 .else
 CONFIGURE_ARGS+=-no-thread
-MULTI_PACKAGES+=	-examples
+ALL_TARGET=sub-src sub-tools
 .endif
 
 # This is needed to find plugins
@@ -156,15 +158,7 @@ PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig
 
 .if ${FLAVOR:L:Mmt}
 MT_SUFX=-mt
-LIBRARIES=qt${MT_SUFX}.so.3.11 qui${MT_SUFX}.so.1.0
-
-post-patch:
-	-rm -rf ${WRKSRC}/examples
-	-rm -rf ${WRKSRC}/tutorial
-
-.else
-MT_SUFX=
-LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt${MT_SUFX}.so.3.12 qui${MT_SUFX}.so.1.0
 
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
@@ -194,6 +188,14 @@ pre-install:
 	if [ -x $$i/$$i ]; then \
 	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
+.else
+MT_SUFX=
+LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
+
+post-patch:
+	-rm -rf ${WRKSRC}/examples
+	-rm -rf ${WRKSRC}/tutorial
+
 .endif
 
 do-install:
@@ -203,6 +205,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
 	# includes
 	@rm -f ${WRKSRC}/include/qt_{mac,windows}.h
+	@rm -f ${WRKSRC}/include/qmotif{,dialog,widget}.h
+	@rm -f ${WRKSRC}/include/qxtwidget.h
 	${INSTALL_DATA_DIR} ${QT_INCDIR}/private
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${QT_INCDIR}
 	${INSTALL_DATA} ${WRKSRC}/include/private/*.h ${QT_INCDIR}/private
@@ -264,11 +268,11 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 
 
-PKGNAME=		qt3-${VERSION}p0
+PKGNAME=		qt3-${VERSION}
 PKGNAME-mysql=		qt3-mysql-${VERSION}
 PKGNAME-postgresql=	qt3-postgresql-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-base=	qt3-base-${VERSION}p0
+FULLPKGNAME-base=	qt3-base-${VERSION}
 FULLPKGNAME-html=	qt3-html-${VERSION}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.12 2003/01/20 12:58:58 espie Exp $
---- mkspecs/openbsd-g++/qmake.conf.orig	Mon Dec  9 10:41:32 2002
-+++ mkspecs/openbsd-g++/qmake.conf	Sun Jan 19 15:55:15 2003
+$OpenBSD: patch-mkspecs_openbsd-g++_qmake_conf,v 1.13 2003/04/05 14:45:19 espie Exp $
+--- mkspecs/openbsd-g++/qmake.conf.orig	Mon Feb 24 09:31:39 2003
++++ mkspecs/openbsd-g++/qmake.conf	Sat Mar 22 18:07:01 2003
 @@ -8,6 +8,7 @@ MAKEFILE_GENERATOR	= UNIX
  TEMPLATE		= app
  CONFIG			+= qt warn_on release

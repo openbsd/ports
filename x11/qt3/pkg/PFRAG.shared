@@ -1,12 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2003/01/06 06:22:53 espie Exp $
-lib/libqt.so.3.11
-lib/libqui.so.1.0
-lib/qt3/libqt.so.3.11
-lib/qt3/libqui.so.1.0
-lib/qt3/plugins/designer/libcppeditor.so
-lib/qt3/plugins/designer/libdlgplugin.so
-lib/qt3/plugins/designer/librcplugin.so
-lib/qt3/plugins/designer/libwizards.so
-lib/qt3/plugins/imageformats/libqjpeg.so
-lib/qt3/plugins/imageformats/libqmng.so
+@comment $OpenBSD: PFRAG.shared,v 1.8 2003/04/05 14:45:19 espie Exp $
+lib/libqui${FLAVOR_EXT}.so.1.0
+lib/qt3/libqui${FLAVOR_EXT}.so.1.0
 DYNLIBDIR(%D/lib)
+NEWDYNLIBDIR(%D/lib/qt3)

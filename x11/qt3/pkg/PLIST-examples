@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2002/11/23 18:52:22 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2003/04/05 14:45:19 espie Exp $
 lib/qt3/examples/Makefile
 lib/qt3/examples/README
 lib/qt3/examples/aclock/Makefile
@@ -1060,6 +1060,7 @@ lib/qt3/examples/tablet/canvas.h
 lib/qt3/examples/tablet/main.cpp
 lib/qt3/examples/tablet/scribble.cpp
 lib/qt3/examples/tablet/scribble.h
+lib/qt3/examples/tablet/tablet
 lib/qt3/examples/tablet/tablet.doc
 lib/qt3/examples/tablet/tablet.pro
 lib/qt3/examples/tablet/tabletstats.cpp

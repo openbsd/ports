@@ -1,46 +1,46 @@
-@comment $OpenBSD: PLIST-mt,v 1.6 2003/02/09 19:17:33 espie Exp $
-bin/assistant-mt
-bin/designer3-mt
-bin/findtr3-mt
-bin/linguist-mt
-bin/lrelease-mt
-bin/lupdate-mt
-bin/moc3-mt
-bin/qm2ts-mt
-bin/qmake-mt
-bin/qt20fix3-mt
-bin/qtconfig-mt
-bin/qtrename1403-mt
-bin/uic3-mt
-lib/qt3/bin-mt/assistant
-lib/qt3/bin-mt/designer
-lib/qt3/bin-mt/findtr
-lib/qt3/bin-mt/linguist
-lib/qt3/bin-mt/lrelease
-lib/qt3/bin-mt/lupdate
-lib/qt3/bin-mt/moc
-lib/qt3/bin-mt/qm2ts
-lib/qt3/bin-mt/qmake
-lib/qt3/bin-mt/qt20fix
-lib/qt3/bin-mt/qtconfig
-lib/qt3/bin-mt/qtrename140
-lib/qt3/bin-mt/uic
-lib/libqt-mt.so.3.11
+@comment $OpenBSD: PLIST-mt,v 1.7 2003/04/05 14:45:20 espie Exp $
+bin/assistant${FLAVOR_EXT}
+bin/designer3${FLAVOR_EXT}
+bin/findtr3${FLAVOR_EXT}
+bin/linguist${FLAVOR_EXT}
+bin/lrelease${FLAVOR_EXT}
+bin/lupdate${FLAVOR_EXT}
+bin/moc3${FLAVOR_EXT}
+bin/qm2ts${FLAVOR_EXT}
+bin/qmake${FLAVOR_EXT}
+bin/qt20fix3${FLAVOR_EXT}
+bin/qtconfig${FLAVOR_EXT}
+bin/qtrename1403${FLAVOR_EXT}
+bin/uic3${FLAVOR_EXT}
+lib/libqt-mt.so.3.12
 lib/libqui-mt.so.1.0
-lib/qt3/libqt-mt.so.3.11
+lib/qt3/bin${FLAVOR_EXT}/assistant
+lib/qt3/bin${FLAVOR_EXT}/designer
+lib/qt3/bin${FLAVOR_EXT}/findtr
+lib/qt3/bin${FLAVOR_EXT}/linguist
+lib/qt3/bin${FLAVOR_EXT}/lrelease
+lib/qt3/bin${FLAVOR_EXT}/lupdate
+lib/qt3/bin${FLAVOR_EXT}/moc
+lib/qt3/bin${FLAVOR_EXT}/qm2ts
+lib/qt3/bin${FLAVOR_EXT}/qmake
+lib/qt3/bin${FLAVOR_EXT}/qt20fix
+lib/qt3/bin${FLAVOR_EXT}/qtconfig
+lib/qt3/bin${FLAVOR_EXT}/qtrename140
+lib/qt3/bin${FLAVOR_EXT}/uic
+lib/qt3/libqt-mt.so.3.12
 lib/qt3/libqui-mt.so.1.0
-lib/qt3/plugins-mt/designer/libcppeditor.so
-lib/qt3/plugins-mt/designer/libdlgplugin.so
-lib/qt3/plugins-mt/designer/librcplugin.so
-lib/qt3/plugins-mt/designer/libwizards.so
-lib/qt3/plugins-mt/imageformats/libqjpeg.so
-lib/qt3/plugins-mt/imageformats/libqmng.so
+lib/qt3/plugins${FLAVOR_EXT}/designer/libcppeditor.so
+lib/qt3/plugins${FLAVOR_EXT}/designer/libdlgplugin.so
+lib/qt3/plugins${FLAVOR_EXT}/designer/librcplugin.so
+lib/qt3/plugins${FLAVOR_EXT}/designer/libwizards.so
+lib/qt3/plugins${FLAVOR_EXT}/imageformats/libqjpeg.so
+lib/qt3/plugins${FLAVOR_EXT}/imageformats/libqmng.so
 DYNLIBDIR(%D/lib)
-@exec mkdir -p %D/lib/qt3/plugins-mt/styles
-@exec mkdir -p %D/lib/qt3/plugins-mt/sqldrivers
-@dirrm lib/qt3/plugins-mt/styles
-@dirrm lib/qt3/plugins-mt/sqldrivers
-@dirrm lib/qt3/plugins-mt/imageformats
-@dirrm lib/qt3/plugins-mt/designer
-@dirrm lib/qt3/plugins-mt
-@dirrm lib/qt3/bin-mt
+@exec mkdir -p %D/lib/qt3/plugins${FLAVOR_EXT}/styles
+@exec mkdir -p %D/lib/qt3/plugins${FLAVOR_EXT}/sqldrivers
+@dirrm lib/qt3/plugins${FLAVOR_EXT}/styles
+@dirrm lib/qt3/plugins${FLAVOR_EXT}/sqldrivers
+@dirrm lib/qt3/plugins${FLAVOR_EXT}/imageformats
+@dirrm lib/qt3/plugins${FLAVOR_EXT}/designer
+@dirrm lib/qt3/plugins${FLAVOR_EXT}
+@dirrm lib/qt3/bin${FLAVOR_EXT}

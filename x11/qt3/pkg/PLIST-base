@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST-base,v 1.4 2003/02/06 11:18:09 espie Exp $
+@comment $OpenBSD: PLIST-base,v 1.5 2003/04/05 14:45:19 espie Exp $
 @pkgcfl qt3-0.*
 @pkgcfl qt3-1.0
 @pkgcfl qt3-1.1
+include/X11/qt3/jri.h
+include/X11/qt3/jri_md.h
+include/X11/qt3/jritypes.h
+include/X11/qt3/npapi.h
+include/X11/qt3/npupp.h
 include/X11/qt3/private/qapplication_p.h
 include/X11/qt3/private/qcolor_p.h
 include/X11/qt3/private/qcom_p.h
@@ -202,11 +207,8 @@ include/X11/qt3/qmime.h
 include/X11/qt3/qmlined.h
 include/X11/qt3/qmngio.h
 include/X11/qt3/qmodules.h
-include/X11/qt3/qmotif.h
-include/X11/qt3/qmotifdialog.h
 include/X11/qt3/qmotifplusstyle.h
 include/X11/qt3/qmotifstyle.h
-include/X11/qt3/qmotifwidget.h
 include/X11/qt3/qmovie.h
 include/X11/qt3/qmsgbox.h
 include/X11/qt3/qmultilinedit.h
@@ -215,6 +217,7 @@ include/X11/qt3/qmutex.h
 include/X11/qt3/qnamespace.h
 include/X11/qt3/qnetwork.h
 include/X11/qt3/qnetworkprotocol.h
+include/X11/qt3/qnp.h
 include/X11/qt3/qobjcoll.h
 include/X11/qt3/qobjdefs.h
 include/X11/qt3/qobject.h
@@ -375,11 +378,11 @@ include/X11/qt3/qwindow.h
 include/X11/qt3/qwindowdefs.h
 include/X11/qt3/qwindowsstyle.h
 include/X11/qt3/qwindowsxpstyle.h
+include/X11/qt3/qwinexport.h
 include/X11/qt3/qwizard.h
 include/X11/qt3/qwmatrix.h
 include/X11/qt3/qworkspace.h
 include/X11/qt3/qxml.h
-include/X11/qt3/qxtwidget.h
 lib/qt3/man/man1/lrelease.1
 lib/qt3/man/man1/lupdate.1
 lib/qt3/man/man1/moc3.1
@@ -592,11 +595,8 @@ lib/qt3/man/man3/QMetaObject.3
 lib/qt3/man/man3/QMetaProperty.3
 lib/qt3/man/man3/QMimeSource.3
 lib/qt3/man/man3/QMimeSourceFactory.3
-lib/qt3/man/man3/QMotif.3
-lib/qt3/man/man3/QMotifDialog.3
 lib/qt3/man/man3/QMotifPlusStyle.3
 lib/qt3/man/man3/QMotifStyle.3
-lib/qt3/man/man3/QMotifWidget.3
 lib/qt3/man/man3/QMouseDriverFactory.3
 lib/qt3/man/man3/QMouseDriverPlugin.3
 lib/qt3/man/man3/QMouseEvent.3
@@ -604,6 +604,10 @@ lib/qt3/man/man3/QMoveEvent.3
 lib/qt3/man/man3/QMovie.3
 lib/qt3/man/man3/QMutex.3
 lib/qt3/man/man3/QMutexLocker.3
+lib/qt3/man/man3/QNPInstance.3
+lib/qt3/man/man3/QNPStream.3
+lib/qt3/man/man3/QNPWidget.3
+lib/qt3/man/man3/QNPlugin.3
 lib/qt3/man/man3/QNetworkOperation.3
 lib/qt3/man/man3/QNetworkProtocol.3
 lib/qt3/man/man3/QObject.3
@@ -776,7 +780,6 @@ lib/qt3/man/man3/QXmlNamespaceSupport.3
 lib/qt3/man/man3/QXmlParseException.3
 lib/qt3/man/man3/QXmlReader.3
 lib/qt3/man/man3/QXmlSimpleReader.3
-lib/qt3/man/man3/QXtWidget.3
 lib/qt3/man/man3/Qt.3
 lib/qt3/man/man3/qaccel.3
 lib/qt3/man/man3/qaccessible.3
@@ -986,11 +989,8 @@ lib/qt3/man/man3/qmetaobject.3
 lib/qt3/man/man3/qmetaproperty.3
 lib/qt3/man/man3/qmimesource.3
 lib/qt3/man/man3/qmimesourcefactory.3
-lib/qt3/man/man3/qmotif.3
-lib/qt3/man/man3/qmotifdialog.3
 lib/qt3/man/man3/qmotifplusstyle.3
 lib/qt3/man/man3/qmotifstyle.3
-lib/qt3/man/man3/qmotifwidget.3
 lib/qt3/man/man3/qmousedriverfactory.3
 lib/qt3/man/man3/qmousedriverplugin.3
 lib/qt3/man/man3/qmouseevent.3
@@ -1000,6 +1000,10 @@ lib/qt3/man/man3/qmutex.3
 lib/qt3/man/man3/qmutexlocker.3
 lib/qt3/man/man3/qnetworkoperation.3
 lib/qt3/man/man3/qnetworkprotocol.3
+lib/qt3/man/man3/qnpinstance.3
+lib/qt3/man/man3/qnplugin.3
+lib/qt3/man/man3/qnpstream.3
+lib/qt3/man/man3/qnpwidget.3
 lib/qt3/man/man3/qobject.3
 lib/qt3/man/man3/qobjectcleanuphandler.3
 lib/qt3/man/man3/qobjectlist.3
@@ -1171,7 +1175,6 @@ lib/qt3/man/man3/qxmlnamespacesupport.3
 lib/qt3/man/man3/qxmlparseexception.3
 lib/qt3/man/man3/qxmlreader.3
 lib/qt3/man/man3/qxmlsimplereader.3
-lib/qt3/man/man3/qxtwidget.3
 lib/qt3/mkspecs/aix-g++/qmake.conf
 lib/qt3/mkspecs/aix-g++/qplatformdefs.h
 lib/qt3/mkspecs/aix-xlc-64/qmake.conf
@@ -1197,6 +1200,8 @@ lib/qt3/mkspecs/hpux-acc/qmake.conf
 lib/qt3/mkspecs/hpux-acc/qplatformdefs.h
 lib/qt3/mkspecs/hpux-cc/qmake.conf
 lib/qt3/mkspecs/hpux-cc/qplatformdefs.h
+lib/qt3/mkspecs/hpux-g++-64/qmake.conf
+lib/qt3/mkspecs/hpux-g++-64/qplatformdefs.h
 lib/qt3/mkspecs/hpux-g++/qmake.conf
 lib/qt3/mkspecs/hpux-g++/qplatformdefs.h
 lib/qt3/mkspecs/hurd-g++/qmake.conf
@@ -1219,6 +1224,8 @@ lib/qt3/mkspecs/linux-kcc/qmake.conf
 lib/qt3/mkspecs/linux-kcc/qplatformdefs.h
 lib/qt3/mkspecs/linux-pgcc/qmake.conf
 lib/qt3/mkspecs/linux-pgcc/qplatformdefs.h
+lib/qt3/mkspecs/lynxos-g++/qmake.conf
+lib/qt3/mkspecs/lynxos-g++/qplatformdefs.h
 lib/qt3/mkspecs/mac9-mwerks/mwerksapp.xml
 lib/qt3/mkspecs/mac9-mwerks/mwerkslib.xml
 lib/qt3/mkspecs/mac9-mwerks/qmake.conf
@@ -1261,7 +1268,6 @@ lib/qt3/mkspecs/tru64-cxx/qmake.conf
 lib/qt3/mkspecs/tru64-cxx/qplatformdefs.h
 lib/qt3/mkspecs/tru64-g++/qmake.conf
 lib/qt3/mkspecs/tru64-g++/qplatformdefs.h
-lib/qt3/mkspecs/ultrix-g++/qmake.conf
 lib/qt3/mkspecs/unixware-cc/qmake.conf
 lib/qt3/mkspecs/unixware-cc/qplatformdefs.h
 lib/qt3/mkspecs/unixware-g++/qmake.conf
@@ -1269,6 +1275,7 @@ lib/qt3/mkspecs/unixware-g++/qplatformdefs.h
 lib/qt3/mkspecs/win32-borland/qmake.conf
 lib/qt3/mkspecs/win32-borland/qplatformdefs.h
 lib/qt3/mkspecs/win32-g++/qmake.conf
+lib/qt3/mkspecs/win32-g++/qplatformdefs.h
 lib/qt3/mkspecs/win32-icc/qmake.conf
 lib/qt3/mkspecs/win32-icc/qplatformdefs.h
 lib/qt3/mkspecs/win32-icc/win32app.dsp
@@ -1281,7 +1288,6 @@ lib/qt3/mkspecs/win32-msvc/qplatformdefs.h
 lib/qt3/mkspecs/win32-msvc/win32app.dsp
 lib/qt3/mkspecs/win32-msvc/win32dll.dsp
 lib/qt3/mkspecs/win32-msvc/win32lib.dsp
-lib/qt3/mkspecs/win32-visage/qmake.conf
 lib/qt3/mkspecs/win32-watcom/qmake.conf
 share/doc/qt3/FAQ
 share/doc/qt3/LICENSE.GPL
@@ -1289,7 +1295,6 @@ share/doc/qt3/README
 share/doc/qt3/README.QT
 share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/win32-watcom
-@dirrm lib/qt3/mkspecs/win32-visage
 @dirrm lib/qt3/mkspecs/win32-msvc.net
 @dirrm lib/qt3/mkspecs/win32-msvc
 @dirrm lib/qt3/mkspecs/win32-icc
@@ -1297,7 +1302,6 @@ share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/win32-borland
 @dirrm lib/qt3/mkspecs/unixware-g++
 @dirrm lib/qt3/mkspecs/unixware-cc
-@dirrm lib/qt3/mkspecs/ultrix-g++
 @dirrm lib/qt3/mkspecs/tru64-g++
 @dirrm lib/qt3/mkspecs/tru64-cxx
 @dirrm lib/qt3/mkspecs/solaris-kcc
@@ -1316,6 +1320,7 @@ share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/macx-mwerks
 @dirrm lib/qt3/mkspecs/macx-g++
 @dirrm lib/qt3/mkspecs/mac9-mwerks
+@dirrm lib/qt3/mkspecs/lynxos-g++
 @dirrm lib/qt3/mkspecs/linux-pgcc
 @dirrm lib/qt3/mkspecs/linux-kcc
 @dirrm lib/qt3/mkspecs/linux-icc
@@ -1326,6 +1331,7 @@ share/doc/qt3/changes-3.${VERSION}
 @dirrm lib/qt3/mkspecs/irix-cc-64
 @dirrm lib/qt3/mkspecs/irix-cc
 @dirrm lib/qt3/mkspecs/hurd-g++
+@dirrm lib/qt3/mkspecs/hpux-g++-64
 @dirrm lib/qt3/mkspecs/hpux-g++
 @dirrm lib/qt3/mkspecs/hpux-cc
 @dirrm lib/qt3/mkspecs/hpux-acc-o64
