@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/05 22:40:09 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2001/06/02 23:41:45 pvalchev Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
 DISTNAME=	pilot-link.0.9.3
 PKGNAME=	pilot-link-0.9.3
-CATEGORIES=	comms
+CATEGORIES=	comms palm
 NEED_VERSION=	1.406
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

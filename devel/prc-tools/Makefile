@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/17 14:00:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/06/02 23:41:44 pvalchev Exp $
 
 COMMENT=	"PalmPilot(tm) development environment"
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
-CATEGORIES=     devel pilot
+CATEGORIES=     devel palm
 NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
