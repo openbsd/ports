@@ -1,20 +1,25 @@
-Fluxbox is yet another windowmanager for X.
-It's based on the Blackbox 0.61.1 code. Fluxbox looks like blackbox and
-handles styles, colors, window placement and similar thing exactly like
-blackbox (100% theme/style compability).
+Fluxbox is yet another window manager for X. It's based on the
+original Blackbox 0.61.1 code. Fluxbox looks like Blackbox and
+handles styles, colors, window placement and similar thing exactly
+like Blackbox (100% theme/style compability).
 
-So what's the difference between fluxbox and blackbox then?
-The answer is: LOTS!
+So what's the difference between Fluxbox and Blackbox then? The
+answer is: LOTS!
 
-Here is a list of features that fluxbox already has, or is in the works...
-	* Configurable window tabs.
-	* Iconbar (for minimized/iconified windows)
-	* Wheel scroll changes workspace
-	* Configurable titlebar (placement of buttons, new buttons etc) | 
-	* KDE support
-	* GNOME support
-	* New native integrated keygrabber (supports emacs like keychains)
-	* Maximize over slit option
-	* Other minor features
+Here is a list of features that have been added to Fluxbox:
+
+ * New native integrated keygrabber (supports emacs like keychains)
+ * Wheel scroll changes workspace
+ * pwm-like window tabs
+ * Iconbar (for minimized/iconified windows)
+ * Configurable titlebar (placement of buttons, new buttons, etc)
+ * Maximize over slit option
+ * Slit dockapp ordering
+ * KDE 3 support
+ * GNOME 2 support
+ * Extended window manager hints support
+ * AntiAliased font support
+ * UTF-8 support
+ * Lots of other minor features
 
 WWW: ${HOMEPAGE}
