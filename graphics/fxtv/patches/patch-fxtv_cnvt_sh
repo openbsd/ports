@@ -1,21 +1,21 @@
-$OpenBSD: patch-fxtv_cnvt_sh,v 1.1 2002/02/02 00:52:18 naddy Exp $
---- fxtv_cnvt.sh.orig	Mon Feb 12 17:18:40 2001
-+++ fxtv_cnvt.sh	Wed Aug 15 13:47:57 2001
+$OpenBSD: patch-fxtv_cnvt_sh,v 1.2 2004/01/02 19:03:12 espie Exp $
+--- fxtv_cnvt.sh.orig	2001-02-12 22:18:40.000000000 +0100
++++ fxtv_cnvt.sh	2004-01-02 19:53:56.000000000 +0100
 @@ -40,12 +40,12 @@
  
  # Default to $PATH
  if [ -z "$PATH_FXTV" ]; then
 -   PATH_FXTV="fxtv"
-+   PATH_FXTV="%%LOCALBASE%%/bin/fxtv"
++   PATH_FXTV="/usr/local/bin/fxtv"
  fi
 -PATH_SOX="sox"
 -PATH_MPEG_MUSICIN="mpeg_musicin"
 -PATH_MPEG_ENCODE="mpeg_encode"
 -PATH_MPLEX="mplex"
-+PATH_SOX="%%LOCALBASE%%/bin/sox"
-+PATH_MPEG_MUSICIN="%%LOCALBASE%%/bin/mp3encode"
-+PATH_MPEG_ENCODE="%%LOCALBASE%%/bin/mpeg_encode"
-+PATH_MPLEX="%%LOCALBASE%%/bin/mplex"
++PATH_SOX="/usr/local/bin/sox"
++PATH_MPEG_MUSICIN="/usr/local/bin/mp3encode"
++PATH_MPEG_ENCODE="/usr/local/bin/mpeg_encode"
++PATH_MPLEX="/usr/local/bin/mplex"
  
  #--------------------- MPEG_ENCODE PARAMETER FILE TEMPLATES ------------------
  
@@ -54,7 +54,7 @@ $OpenBSD: patch-fxtv_cnvt_sh,v 1.1 2002/02/02 00:52:18 naddy Exp $
  MPEG_ENC_PARAM_STR_TIFF=\
  'BASE_FILE_FORMAT  PPM
 -INPUT_CONVERT     tifftopnm *'
-+INPUT_CONVERT     %%LOCALBASE%%/bin/tifftopnm *'
++INPUT_CONVERT     /usr/local/bin/tifftopnm *'
  
  MPEG_ENC_PARAM_STR_PPM=\
 -'BASE_FILE_FORMAT  PPM         
