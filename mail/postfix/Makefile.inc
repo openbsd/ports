@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2001/10/26 18:40:23 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2001/11/11 13:48:17 espie Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -47,7 +47,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=	lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 MAKE_CCARGS+=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif

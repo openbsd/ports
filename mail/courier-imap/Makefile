@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/10/24 12:22:45 espie Exp $ 
+# $OpenBSD: Makefile,v 1.24 2001/11/11 13:48:16 espie Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
@@ -55,7 +55,7 @@ ERRORS+= "Fatal: Conflicting flavor: You must choose either ldap or mysql."
 CONFIGURE_ARGS+=	--with-authmysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
-LIB_DEPENDS+=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-authmysql
 .endif
