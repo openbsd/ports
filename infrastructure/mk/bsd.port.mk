@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.391 2001/04/08 16:56:22 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.392 2001/04/09 23:16:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2374,7 +2374,7 @@ ${_i:L}-depends-list:
 	: $${_ECHO='echo -n'}; \
 	: $${_FINAL_ECHO:='echo "\" to ${_i:L}."'}; space=''; \
 	eval $${_INITIAL_ECHO}; \
-	for spec in `echo ${_ALWAYS_DEP2} ${_${_i}_DEP2} \
+	for spec in `echo '${_ALWAYS_DEP2} ${_${_i}_DEP2}' \
 		| tr '\040' '\012' | sort -u`; do \
 		dir=$${spec#*:}; pkg=$${spec%:*}; \
 		case X"$$pkg" in \
@@ -2389,7 +2389,7 @@ new-depends:
 .if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
 	@unset FLAVOR SUBPACKAGE || true; \
 	: $${self:=self}; \
-	for spec in `echo ${_ALWAYS_DEP2} ${_RUN_DEP2} \
+	for spec in `echo '${_ALWAYS_DEP2} ${_RUN_DEP2}' \
 		| tr '\040' '\012' | sort -u`; do \
 		dir=$${spec#*:}; pkg=$${spec%:*}; \
 		${_flavor_fragment}; \
