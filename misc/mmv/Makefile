@@ -1,0 +1,48 @@
+# OpenBSD makefile for:	mmv
+# Version required:	1.01b
+# Date created:		June 6 1998
+# Whom:			Angelos D. Keromytis
+#
+# $OpenBSD: Makefile,v 1.1.1.1 1998/06/08 02:52:32 angelos Exp $
+#
+
+DISTNAME=	mmv
+PKGNAME=	mmv-1.01b
+CATEGORIES=	misc
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
+DISTFILES=	part01.Z part02.Z
+
+PATCH_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume22/
+PATCHFILES=	mmv.pch.Z
+
+MAINTAINER=	angelos@openbsd.org
+
+NO_CDROM=	"No redistribution for charge"
+NO_PACKAGE=	"No modification"
+DIST_SUBDIR=	${DISTNAME}
+NO_WRKSUBDIR=	yes
+PATCH_DIST_ARGS= -d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP} mmv.c
+MAN1=		mmv.1
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}/tmp
+	@(for file in ${DISTFILES}; do \
+		${CP} ${DISTDIR}/${DIST_SUBDIR}/$$file ${WRKDIR}/tmp; \
+	 done ; \
+	 uncompress ${WRKDIR}/tmp/*; \
+	 cd ${WRKDIR}; \
+	 for file in tmp/part0* ; do \
+	     ${SH} ${SCRIPTDIR}/unshar $$file; \
+	 done ; \
+	 ${CAT} mmv.c.? >mmv.c ; ${RM} mmv.c.? )
+
+do-install:
+	(cd ${PREFIX}/bin ; ${RM} -f mmv mad mcp mln ; \
+	 ${INSTALL_PROGRAM} ${WRKSRC}/mmv ${PREFIX}/bin ; \
+	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
+	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
+	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
+	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1 ; )
+
+.include <bsd.port.mk>
