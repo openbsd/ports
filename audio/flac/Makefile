@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/09/26 14:18:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/09 15:05:20 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
 COMMENT-xmms=	"XMMS input plugin for playing FLAC files"
@@ -7,7 +7,7 @@ VERSION=	1.0
 DISTNAME=	flac-${VERSION}
 PKGNAME-xmms=	xmms-flac-${VERSION}
 CATEGORIES=	audio archivers
-NEED_VERSION=	1.427
+NEED_VERSION=	1.474
 HOMEPAGE=	http://flac.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -21,12 +21,17 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flac
 EXTRACT_SUFX=		-src.tar.gz
 
+# architectures XMMS runs on
+.if ${MACHINE_ARCH} == "i386"
 MULTI_PACKAGES=	-xmms
 SUBPACKAGE?=
-
-.if !defined(PACKAGING)
+.  if !defined(PACKAGING)
 LIB_DEPENDS+=	xmms.2::audio/xmms
+.  endif
+.else
+CONFIGURE_ENV=	XMMS_CONFIG=/usr/bin/false
 .endif
+
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	nasm::devel/nasm
 .endif
