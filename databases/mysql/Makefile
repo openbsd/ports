@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/01/04 17:39:42 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/01/05 06:13:43 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.29
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
 		http://mysql.pingzero.net/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ 
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	brad@openbsd.org
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"pthreads are currently not working SPARC"
