@@ -1,0 +1,8 @@
+Dnstracer determines where a given Domain Name Server (DNS) gets
+its information from, and follows the chain of DNS servers back to
+the servers which know the data.
+
+Its behaviour is similair to ntptrace(8), which does it for the
+NTP protocol.
+
+WWW: ${HOMEPAGE}
