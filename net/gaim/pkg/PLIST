@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2003/09/26 23:57:57 brad Exp $
+@comment $OpenBSD: PLIST,v 1.24 2003/10/12 02:20:44 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
@@ -21,6 +21,9 @@ include/gaim-remote/remote.h
 @comment lib/gaim/libzephyr.la
 @comment lib/gaim/notify.la
 @comment lib/gaim/spellchk.la
+@comment lib/gaim/ssl-gnutls.la
+@comment lib/gaim/ssl-nss.la
+@comment lib/gaim/ssl.la
 @comment lib/gaim/statenotify.la
 @comment lib/gaim/ticker.la
 @comment lib/gaim/timestamp.la

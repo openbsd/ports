@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.46 2003/09/30 01:04:15 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2003/10/12 02:20:43 brad Exp $
 
-DISTNAME=	gaim-0.70
+DISTNAME=	gaim-0.71
 CATEGORIES=	net
 
 # GPL
@@ -17,7 +17,8 @@ MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 MODULES=	gettext
 
-LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
+		gnutls::security/gnutls
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
