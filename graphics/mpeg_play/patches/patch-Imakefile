@@ -1,0 +1,15 @@
+$OpenBSD: patch-Imakefile,v 1.1 2001/04/21 13:36:15 avsm Exp $
+--- Imakefile.orig	Sat Apr 21 13:20:34 2001
++++ Imakefile	Sat Apr 21 13:20:34 2001
+@@ -1,9 +1,9 @@
+ /* See Makefile.proto for flags to define */
+-        DESTDIR = /usr/pkg/video
++        /* DESTDIR = /usr/pkg/video */
+         NDEBUG  = /* -DNDEBUG */
+        /*ANALYSIS = -DANALYSIS */
+           SHMEM = -DSH_MEM
+-  EXTRA_DEFINES = $(NDEBUG) $(ANALYSIS) $(SHMEM)
++  EXTRA_DEFINES = $(NDEBUG) $(ANALYSIS) $(SHMEM) -DSIG_ONE_PARAM
+         DEPLIBS = $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XLIB)
+ SYS_LIBRARIES   = -lm -lc

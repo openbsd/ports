@@ -1,0 +1,30 @@
+$OpenBSD: patch-video_h,v 1.1 2001/04/21 13:36:16 avsm Exp $
+--- video.h.orig	Sat Apr 21 15:17:26 2001
++++ video.h	Sat Apr 21 15:18:50 2001
+@@ -431,6 +431,17 @@ extern unsigned int cacheMiss[8][8];
+ #define __SCO__ 1
+ #endif
+ 
++#ifdef __OpenBSD__
++
++#include <machine/endian.h>
++#if BYTE_ORDER == LITTLE_ENDIAN
++#define LITTLE_ENDIAN_ARCHITECTURE 1
++#else
++#define BIG_ENDIAN_ARCHITECTURE 1
++#endif
++
++#else
++
+ #if defined(__i386__) || defined(__VAX__) || defined(__MIPSEL__) || defined(__alpha__) || defined(__SCO__)
+ #undef  BIG_ENDIAN_ARCHITECTURE
+ #define LITTLE_ENDIAN_ARCHITECTURE 1
+@@ -439,6 +450,8 @@ extern unsigned int cacheMiss[8][8];
+ #if defined(__RS6000__) || defined(__SPARC__) || defined(__680x0__) || defined(__HPUX__) || defined(__MIPSEB__) || defined(convex) || defined(__convex__)
+ #undef  LITTLE_ENDIAN_ARCHITECTURE
+ #define BIG_ENDIAN_ARCHITECTURE 1
++#endif
++
+ #endif
+ 
+ #if !defined(LITTLE_ENDIAN_ARCHITECTURE) && !defined(BIG_ENDIAN_ARCHITECTURE)
