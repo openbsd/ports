@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/06/22 17:24:42 sturm Exp $
 #
 # privoxy de-installation
 
@@ -16,7 +16,7 @@ echo "| these steps as root:"
 echo "|"
 echo "|           rm -rf $CONFIG_DIR"
 echo "|           rm -rf $LOG_DIR"
-echo "|           rmuser privoxy"
+echo "|           rmuser _privoxy"
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"
 echo "| at some future time."

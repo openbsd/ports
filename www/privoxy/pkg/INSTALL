@@ -1,13 +1,14 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/02/26 15:13:04 david Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/22 17:24:42 sturm Exp $
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/privoxy
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/privoxy
 LOG_DIR=/var/log/privoxy
-PRIVOXYUSER=privoxy
-PRIVOXYGROUP=privoxy
+PRIVOXYUSER=_privoxy
+PRIVOXYGROUP=_privoxy
+ID=516
 
 do_install_usergroup()
 {
@@ -17,14 +18,14 @@ do_install_usergroup()
     echo "===> Using $PRIVOXYGROUP group for Privoxy"
   else
     echo "===> Creating $PRIVOXYGROUP group for Privoxy"
-    groupadd $PRIVOXYGROUP
+    groupadd -g $ID $PRIVOXYGROUP
   fi
   userinfo -e $PRIVOXYUSER
   if [ $? -eq 0 ]; then
     echo "===> Using $PRIVOXYUSER user for Privoxy"
   else
     echo "===> Creating $PRIVOXYUSER user for Privoxy"
-    useradd -g $PRIVOXYGROUP -d /nonexistent -L daemon -c 'Privoxy Account' -s /sbin/nologin $PRIVOXYUSER
+    useradd -g $PRIVOXYGROUP -d /nonexistent -L daemon -c 'Privoxy Account' -s /sbin/nologin -u $ID $PRIVOXYUSER
   fi
 }
 
@@ -73,10 +74,21 @@ do_message_bottom()
     echo "|"
     echo "|     if [ -x ${PREFIX}/sbin/privoxy ]; then"
     echo "|             echo -n ' privoxy';"
-    echo "|             ${PREFIX}/sbin/privoxy --user privoxy.privoxy ${SYSCONFDIR}/privoxy/config"
+    echo "|             ${PREFIX}/sbin/privoxy --user $PRIVOXYUSER.$PRIVOXYGROUP ${SYSCONFDIR}/privoxy/config"
     echo "|     fi"
     echo "+---------------"
     echo
+}
+
+do_warning()
+{
+    echo "+---------------"
+    echo "| WARNING!"
+    echo "|"
+    echo "| This port has changed its user/group from 'privoxy' to '_privoxy'."
+    echo "| If you installed this port before, ensure all permissions are set"
+    echo "| correctly and then \"rmuser privoxy\"."
+    echo "+---------------"
 }
 
 # verify proper execution
@@ -103,6 +115,7 @@ case $2 in
 	   do_install_log $1
 	fi
 	do_message_bottom
+	do_warning
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
