@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/08 19:27:29 wcobb Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 18:50:42 espie Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -11,8 +11,7 @@ NEED_VERSION=		1.507
 
 MAINTAINER=		Wilbern Cobb <wcobb@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	zsnes
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=zsnes/}
 DISTFILES=		zsnes${VERSION:S/.//}src${EXTRACT_SUFX}
 
 # GPL

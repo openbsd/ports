@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"Mr Do video arcade game for X11"
 
@@ -6,8 +6,7 @@ DISTNAME=	xmris.4.04
 PKGNAME=	xmris-4.04
 CATEGORIES=	games
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	"no fee"

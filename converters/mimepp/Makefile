@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/13 18:50:37 espie Exp $
 
 COMMENT=	"C++ class library for MIME messages"
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE_FTP=	"restrictive non-commercial license"
 PERMIT_DISTFILES_CDROM=	"restrictive non-commercial license"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	devel/lang/c++
+MASTER_SITES=		${MASTER_SITE_SUNSITE:=devel/lang/c++/}
 
 MAKE_FILE=		makefile.unx
 ALL_TARGET=		lib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 14:37:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"Tie hashes to DBI relational databases"
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Tie
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tie/}
 
 CONFIGURE_STYLE= perl
 

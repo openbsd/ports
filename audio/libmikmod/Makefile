@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/15 09:30:33 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"mikmod sound library"
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/files/libmikmod/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=apps/sound/libs
+		${MASTER_SITE_SUNSITE:=apps/sound/libs/}
 
 PATCH_LIST=     ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
                 ${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \

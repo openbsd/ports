@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/04/28 08:25:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"breakout game with many levels, powerups, good graphics" 
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= lgames
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgames/}
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer \

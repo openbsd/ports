@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 01:06:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"drive some car across the moon"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/arcade
+MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/arcade/}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--sharedstatedir=/var/games --with-setgid=games

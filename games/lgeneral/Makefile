@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/28 22:40:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"turn-based strategy engine"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= lgeneral
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgeneral/}
 
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_mixer::devel/sdl-mixer

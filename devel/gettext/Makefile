@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/12/02 22:35:26 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2002/05/13 18:50:39 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
@@ -6,8 +6,7 @@ COMMENT=	"GNU gettext"
 DISTNAME=	gettext-0.10.40
 CATEGORIES=	devel
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gettext
+MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
 
 HOMEPAGE=	http://www.gnu.org/software/gettext/
 

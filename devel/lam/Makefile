@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/08 17:19:36 todd Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:39 espie Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.1
@@ -13,12 +13,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.lam-mpi.org/download/%SUBDIR%/ \
-			http://www.thinkingnerds.com/lam/download/%SUBDIR%/ \
-			http://lam.squyres.com/download/%SUBDRI%/ \
-			http://lam.fries.net/download/%SUBDIR%/ \
-			http://lam.kresge.com/download/%SUBDIR%/
-MASTER_SITE_SUBDIR=	files
+MASTER_SITES=		http://www.lam-mpi.org/download/files/ \
+			http://www.thinkingnerds.com/lam/download/files/ \
+			http://lam.squyres.com/download/files/ \
+			http://lam.fries.net/download/files/ \
+			http://lam.kresge.com/download/files/
 
 HOMEPAGE=		http://www.lam-mpi.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/20 13:18:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 18:50:41 espie Exp $
 
 COMMENT=	"module for containing a set of scalars"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Set
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Set/}
 
 CONFIGURE_STYLE= perl
 

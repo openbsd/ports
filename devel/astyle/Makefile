@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=		"indenter and formatter of C/C++/Java source files"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	astyle
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=astyle/}
 EXTRACT_SUFX=		.zip
 USE_GMAKE=		Yes
 ALL_TARGET=		astyle

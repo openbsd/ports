@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/20 02:12:34 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:42 espie Exp $
 COMMENT=	"computer simulation game"
 
 VERSION=	0.9.12
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	gtk.1.2,gdk::x11/gtk+ 
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=corewars
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=corewars/}
 
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 20:57:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/13 18:50:42 espie Exp $
 
 COMMENT=	"NetHack derivative"
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= falconseye
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=falconseye/}
 
 LIB_DEPENDS=	SDL::devel/sdl
 RUN_DEPENDS=	:hackdata-*:games/hackdata

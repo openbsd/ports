@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2002/03/21 05:28:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.33 2002/05/13 18:50:39 espie Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
 DISTNAME=	ddd-3.3
 CATEGORIES=	devel
 NEED_VERSION=	1.402
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= ddd
+MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
 HOMEPAGE=	http://www.gnu.org/software/ddd/
 

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"save your computers from the evil clutches of Bill"
 
 DISTNAME=	xbill-2.0
 CATEGORIES=	games x11
 NEED_VERSION=	1.515
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= games
+MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"modules to handle various Unicode issues"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Unicode
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Unicode/}
 
 BUILD_DEPENDS=	::converters/p5-MIME-Base64
 

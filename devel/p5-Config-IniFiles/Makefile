@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/03 02:58:54 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:40 espie Exp $
 
 COMMENT=	"module for reading .ini-style configuration files"
 
@@ -6,8 +6,7 @@ DISTNAME=	Config-IniFiles-2.27
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Config
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Config/}
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"client interface to LDAP servers"
 
@@ -8,8 +8,7 @@ PKGNAME=	p5-ldap-${VERSION}
 CATEGORIES=	databases perl5
 NEED_VERSION=	1.515
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
 HOMEPAGE=	http://perl-ldap.sourceforge.net/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/12/28 22:40:09 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/13 18:50:40 espie Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= libuta
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libuta/}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \

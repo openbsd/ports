@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/24 12:09:04 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"full-screen ncurses or GTK-based audio mixer"
 
@@ -15,10 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aumix/} \
 		http://jpj.net/~trevor/aumix/ \
 		http://jpj.net/~trevor/aumix/old/
-MASTER_SITE_SUBDIR= aumix
 
 MODULES=	gettext
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/02/23 01:48:37 rohee Exp $
+# $OpenBSD: Makefile,v 1.27 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=		"mpg123 front-end with skin support"
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://ftp1.sourceforge.net/gqmpeg/ \
-			${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gqmpeg
+			${MASTER_SITE_SOURCEFORGE:=gqmpeg/}
 
 MODULES=		gettext
 BUILD_DEPENDS=		::audio/mpg123

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/04/19 17:26:40 shell Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:42 espie Exp $
 
 
 COMMENT=	"python codes checker"
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pychecker
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 
 PYTHON_VER=	2.2
 

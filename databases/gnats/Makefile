@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/09 16:16:02 millert Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
 DISTNAME=	gnats-3.113.1
 CATEGORIES=	databases devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=gnats/snapshots
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=gnats/snapshots/}
 HOMEPAGE=	http://sources.redhat.com/gnats/
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 NEED_VERSION=	1.444

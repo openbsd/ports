@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/09 02:23:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2002/05/13 18:50:37 espie Exp $
 
 COMMENT=	"extended Module Player; many formats plus an X11 display"
 DISTNAME=	xmp-1.1.5
 CATEGORIES=	audio
 NEED_VERSION=	1.363
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= apps/sound/players
+MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/players/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

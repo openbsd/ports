@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/10 15:08:34 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:39 espie Exp $
 
 COMMENT=	"GNU automated testing framework"
 
 DISTNAME=	dejagnu-1.3
 CATEGORIES=	devel
 NEED_VERSION=	1.474
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= dejagnu
+MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 

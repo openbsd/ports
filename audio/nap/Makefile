@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/04 00:09:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"gnu curses-based napster client"
 
@@ -16,12 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nap/} \
 		http://quasar.mathstat.uottawa.ca/~selinger/nap/ \
 		http://theory.stanford.edu/~selinger/nap/
 	      	
-MASTER_SITE_SUBDIR= nap
-
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 

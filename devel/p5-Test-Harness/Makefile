@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/09 05:59:37 shell Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:41 espie Exp $
 
 COMMENT=	"perl module for running perl test scripts with statistics"
 
@@ -8,8 +8,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.525
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Test
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 

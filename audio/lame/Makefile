@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/05/11 20:42:53 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
@@ -7,8 +7,7 @@ VERSION=	3.92
 DISTNAME=	lame-${VERSION}
 CATEGORIES=	audio
 NEED_VERSION=	1.507
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= lame
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 
 HOMEPAGE=	http://www.mp3dev.org/
 

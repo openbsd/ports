@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/05/08 15:38:06 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2002/05/13 18:50:43 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -7,12 +7,10 @@ CATEGORIES=	games
 NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh340/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
-		${MASTER_SITE_GNU}
+		${MASTER_SITE_GNU:=nethack/}
 DISTFILES=	nethack-340.tgz
 
 HOMEPAGE=	http://nethack.org/
-
-MASTER_SITE_SUBDIR= nethack
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/24 23:18:55 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"multi-platform cd player development library"
 DISTNAME=	libcdaudio-0.99.6
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libcdaudio
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=libcdaudio/}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/09 03:46:29 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/13 18:50:40 espie Exp $
 
 COMMENT=	"BSD process resource limit and priority functions"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= BSD
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=BSD/}
 
 CONFIGURE_STYLE= perl
 

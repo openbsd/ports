@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/03/24 17:46:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.35 2002/05/13 18:50:37 espie Exp $
 
 BROKEN=			"doesn't fake properly"
 
@@ -11,8 +11,7 @@ FLAVORS=		a4
 FLAVOR?=
 HOMEPAGE=		http://www.HylaFAX.org/
 
-MASTER_SITE_SUBDIR=	source
-MASTER_SITES=	ftp://ftp.hylafax.org/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

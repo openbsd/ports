@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=		"perl interface to query for cddb-information"
 
@@ -9,8 +9,7 @@ NEED_VERSION=		1.515
 
 HOMEPAGE= 		http://armin.emx.at/cddb/
 
-MASTER_SITES= 		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FO/FONKIE
+MASTER_SITES= 		${MASTER_SITE_PERL_CPAN:=../by-authors/id/F/FO/FONKIE/}
 
 MAINTAINER=     	Felix Kronlage <fkr@grummel.net>	
 

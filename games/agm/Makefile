@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 20:57:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/13 18:50:42 espie Exp $
 #
 
 COMMENT=		"AnaGram search utility"
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	"no license available"
 PERMIT_DISTFILES_CDROM=	"no license available"
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/amusements
+MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/amusements/}
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/agm ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/06 10:24:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:40 espie Exp $
 
 COMMENT=	"curses(3) based terminal widgets"
 
@@ -7,8 +7,7 @@ PKGNAME=	p5-Curses-Widgets-1.992
 
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.502
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= Curses
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
 HOMEPAGE=	http://www.odinicfoundation.org/arthur/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

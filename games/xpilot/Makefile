@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/04/28 17:37:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"multiplayer 2d space battles game"
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		ftp://ftp.xpilot.org/pub/xpilot/old \
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= games/multiplayer
+		${MASTER_SITE_XCONTRIB:=games/multiplayer/}
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

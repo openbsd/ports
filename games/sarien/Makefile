@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/24 23:03:54 aaron Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=		"interpreter for old Sierra AGI games"
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sarien
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarien/}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/sarien ${PREFIX}/bin

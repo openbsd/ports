@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/03/25 16:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"free clone of mpg123, a command-line mp3 player"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mpg321
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpg321/}
 
 LIB_DEPENDS=	ao.3::audio/libao \
 		mad.1,id3tag.1::audio/mad

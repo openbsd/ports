@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/05 07:55:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:43 espie Exp $
 
 COMMENT=	"silly little game based on Spacetaxi for the C64"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	taxipilot
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=taxipilot/}
 
 BUILD_DEPENDS=	::x11/qt2-designer
 

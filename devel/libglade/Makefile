@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/14 21:08:45 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/13 18:50:39 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			0.17
@@ -8,8 +8,7 @@ NEED_VERSION=   	1.497
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= 	stable/sources/libglade
+MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/libglade/}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/06 07:16:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:42 espie Exp $
 
 COMMENT=	"tool to allow the creation and revision of form based test"
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	keduca
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=keduca/}
 
 BUILD_DEPENDS=	::x11/qt2-designer
 

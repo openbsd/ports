@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/02/21 01:04:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/13 18:50:42 espie Exp $
 #
 
 COMMENT=		"HP48sx emulator"
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/emulators
+MASTER_SITES=		${MASTER_SITE_SUNSITE:=system/emulators/}
 
 CONFIGURE_STYLE=	imake noman
 

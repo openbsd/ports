@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2002/05/12 18:15:14 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"high-performance CORBA ORB with support for the C language"
 
 DISTNAME=	ORBit-0.5.13
 CATEGORIES=	devel
 NEED_VERSION=	1.500
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= stable/sources/ORBit
+MASTER_SITES=	${MASTER_SITE_GNOME:=stable/sources/ORBit/}
 
 HOMEPAGE=	http://www.labs.redhat.com/orbit/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/03/21 20:57:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/13 18:50:42 espie Exp $
 #
 
 COMMENT=	"GNU version of Shogi"
@@ -11,13 +11,12 @@ NEED_VERSION=	1.515
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
 # License: GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gnushogi
+MASTER_SITES=	${MASTER_SITE_GNU:=gnushogi/}
 
 DOCFILES= BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam
@@ -27,11 +26,11 @@ post-configure:
 	echo "prefix=${PREFIX}" >> ${WRKSRC}/src/Makefile
 
 do-build:
-	(cd ${WRKSRC}/src; \
-	make gnushogir; \
-	make gnushogi.bbk; \
-	make gnushogi; \
-	make gnushogix )
+	cd ${WRKSRC}/src; \
+	${MAKE} gnushogir; \
+	${MAKE} gnushogi.bbk; \
+	${MAKE} gnushogi; \
+	${MAKE} gnushogix
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnushogi

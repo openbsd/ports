@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/07 15:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
 DISTNAME=	wv-0.6.5
 CATEGORIES=	converters
 NEED_VERSION=	1.460
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= wvware
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
 
 HOMEPAGE=	http://www.wvware.com/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>

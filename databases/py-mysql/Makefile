@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 20:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=		"python interface to MySQL"
 
@@ -8,8 +8,7 @@ PKGNAME=		py-mysql-${VERSION}
 CATEGORIES=		databases
 NEED_VERSION=		1.515
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mysql-python
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mysql-python/}
 
 HOMEPAGE=		http://dustman.net/andy/python/MySQLdb/
 

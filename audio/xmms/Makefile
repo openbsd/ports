@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/08 19:26:24 wcobb Exp $
+# $OpenBSD: Makefile,v 1.24 2002/05/13 18:50:37 espie Exp $
 # Uses pthreads
 
 COMMENT=		"Multimedia player for the X Window System"
@@ -27,11 +27,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITE_SUBDIR=	1.2.x
-MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
-			ftp://ftp.xmms.org/xmms/%SUBDIR%/ \
-			ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/ \
-			ftp://ftp.stealth.net/xmms/%SUBDIR%/
+V=			1.2.x
+MASTER_SITES=		http://www.xmms.org/files/$V/ \
+			ftp://ftp.xmms.org/xmms/$V/ \
+			ftp://ftp.sunet.se/pub/multimedia/xmms/$V/ \
+			ftp://ftp.stealth.net/xmms/$V/
 
 MASTER_SITES0=		http://vedge.com.ar/hack/ \
 			http://mirror.csoft.org/xmms/

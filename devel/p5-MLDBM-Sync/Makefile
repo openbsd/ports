@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/22 08:48:08 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:41 espie Exp $
 
 COMMENT=	"safe concurrent access to MLDBM databases"
 
@@ -8,8 +8,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.515
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= MLDBM
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MLDBM/}
 
 MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 

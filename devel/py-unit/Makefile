@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/03/21 20:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/13 18:50:42 espie Exp $
 
 
 COMMENT=		"unit testing framework for python"
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	pyunit
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyunit/}
 
 FLAVORS=		no_x11
 FLAVOR?=

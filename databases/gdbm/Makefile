@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:38 espie Exp $
 
 COMMENT=	"GNU dbm"
 
 DISTNAME=	gdbm-1.8.0
 CATEGORIES=	databases
 NEED_VERSION=	1.402
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gdbm
+MASTER_SITES=	${MASTER_SITE_GNU:=gdbm/}
 
 HOMEPAGE=	http://www.gnu.org/software/gdbm/
 

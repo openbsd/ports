@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/11 02:10:03 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"opensource Napster(tm) server"
 
 DISTNAME=	opennap-0.42
 CATEGORIES=	audio net
 NEED_VERSION=	1.413
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= opennap
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opennap/}
 
 HOMEPAGE=	http://opennap.sourceforge.net/
 

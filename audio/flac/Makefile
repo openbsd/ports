@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/02/01 15:18:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/13 18:50:36 espie Exp $
 
 COMMENT=	"free lossless audio codec"
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	flac
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flac/}
 EXTRACT_SUFX=		-src.tar.gz
 
 LIB_DEPENDS=	ogg.3::audio/libogg

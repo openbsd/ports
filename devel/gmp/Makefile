@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/22 20:50:02 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/13 18:50:39 espie Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
@@ -6,8 +6,7 @@ DISTNAME=	gmp-3.1.1
 CATEGORIES=	devel math
 NEED_VERSION=	1.363
 
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= gmp
+MASTER_SITES=	${MASTER_SITE_GNU:=gmp/}
 
 HOMEPAGE=	http://www.swox.com/gmp/
 
