@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/07 06:11:07 brad Exp $
-
-BROKEN=		"no available dist site"
+# $OpenBSD: Makefile,v 1.11 2000/10/13 00:34:20 brad Exp $
 
 DISTNAME=	jftpgw-0.0.11
 CATEGORIES=	net
