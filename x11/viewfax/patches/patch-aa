@@ -1,0 +1,15 @@
+--- Imakefile.orig	Sat Oct 14 10:52:03 1995
++++ Imakefile	Sun Jan 23 02:23:06 2000
+@@ -5,9 +5,9 @@
+    complain about this.  Sheesh! :-) */
+ HELPDIR = ${USRLIBDIR}/X11
+ #else
+-BINDIR = /usr/local/bin		/* where you want the binary installed */
+-MANDIR = /usr/local/man/man1	/* where you want the man file installed */
+-HELPDIR = /usr/local/lib	/* where you want the help file installed */
++BINDIR = ${PREFIX}/bin		/* where you want the binary installed */
++MANDIR = ${PREFIX}/man/cat1	/* where you want the man file installed */
++HELPDIR = ${PREFIX}/lib/X11/viewfax	/* where you want the help file installed */
+ #endif
+ 
+ DEFINES = -DHELPFILE=\"$(HELPDIR)/viewfax.tif\"
