@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/05 13:17:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/18 04:01:22 kevlo Exp $
 
 COMMENT=	"download manager for KDE"
 
-DISTNAME=	kmago-1.1.1
+DISTNAME=	kmago-1.1.2
 CATEGORIES=	net
 NEED_VERSION=	1.387
 
@@ -30,6 +30,7 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ENV=	MOC=${LOCALBASE}/bin/moc2  KDEDIR=/usr/local
 
 FLAVORS=	wget
