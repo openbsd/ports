@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2000/06/25 22:30:07 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/07/15 07:06:18 brad Exp $
 
 DISTNAME=	gif2png-2.3.2
 CATEGORIES=	graphics
-NEED_VERSION=	1.301
+NEED_VERSION=	1.310
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
 		ftp://ftp.ccil.org/pub/esr/
 
