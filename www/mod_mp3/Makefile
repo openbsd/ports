@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/26 00:08:45 alek Exp $
 
 COMMENT=	"turns Apache into an MP3 or Ogg streaming server"
 
@@ -7,6 +7,7 @@ COMMENT=	"turns Apache into an MP3 or Ogg streaming server"
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 DISTNAME=	mod_mp3-0.39
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www audio
 MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/
