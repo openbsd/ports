@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2005/02/11 16:35:05 naddy Exp $
 
 COMMENT=	"multi-window tail(1) utility"
 
-VERSION=	3.4.2
+VERSION=	3.4.5
 DISTNAME=	multitail-${VERSION}
 CATEGORIES=	sysutils
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ncurses util 
 
 WANTLIB=	c m ncurses util
 
