@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/06/17 04:47:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.29 2004/07/06 00:58:39 kevlo Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -34,7 +34,9 @@ CONFIGURE_ARGS+= --with-tclincl=${LOCALBASE}/include/tcl8.4 \
 		 --with-tcllib==${LOCALBASE}/lib/tcl8.4 \
 		 --with-guilelib=${LOCALBASE}/lib \
 		 --with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
-		 ${CONFIGURE_SHARED}
+		 ${CONFIGURE_SHARED} \
+		 --without-php4 \
+		 --without-ocaml
 
 ALL_TARGET=	swig runtime
 
