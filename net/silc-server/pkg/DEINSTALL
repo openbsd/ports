@@ -1,9 +1,8 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/12/29 21:22:13 brad Exp $
 #
 # silc-server de-installation
 
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/silcd

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/12/16 03:40:02 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/12/29 21:22:13 brad Exp $
 #
 # Pre/post-installation setup of silc-server
 
@@ -46,10 +46,8 @@ do_install()
 {
     install -d -o silcd -g silcd -m 700 $CONFIG_DIR
     install -d -o silcd -g silcd -m 700 $LOG_DIR
-    cp $SAMPLE_CONFIG_DIR/silcd.conf $CONFIG_DIR/silcd.conf
-    cp $SAMPLE_CONFIG_DIR/silcalgs.conf $CONFIG_DIR/silcalgs.conf
-    chown -R silcd:silcd $CONFIG_DIR
-    chmod 600 $CONFIG_DIR/*.conf
+    install -o silcd -g silcd -m 600 $SAMPLE_CONFIG_DIR/silcd.conf $CONFIG_DIR/silcd.conf
+    install -o silcd -g silcd -m 600 $SAMPLE_CONFIG_DIR/silcalgs.conf $CONFIG_DIR/silcalgs.conf
     echo
     echo "+---------------"
     echo "|"
