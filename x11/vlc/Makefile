@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2003/08/18 22:14:56 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2003/10/18 01:13:17 jolan Exp $
 
 COMMENT=	"videolan client; multimedia player"
 
 VER=		0.6.2
 DISTNAME=	vlc-${VER}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${VER}/ \
 		http://www.fr.videolan.org/pub/videolan/vlc/${VER}/
@@ -30,6 +30,7 @@ LIB_DEPENDS=	SDL::devel/sdl \
 		mad.1,id3tag.1::audio/mad \
 		ogg::audio/libogg \
 		vorbis,vorbisenc::audio/libvorbis \
+		dvbpsi.1.1::graphics/libdvbpsi \
 		mpeg2::graphics/libmpeg2 \
 		avcodec::graphics/ffmpeg
 
@@ -38,7 +39,6 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=--disable-oss \
 		--enable-sdl \
-		--disable-dvbpsi \
 		--enable-mad \
 		--disable-optimizations \
 		--disable-vcd \
@@ -48,15 +48,15 @@ FLAVORS=	no_dvd
 FLAVOR?=
 
 .if ${MACHINE_ARCH} == "i386"
-SED_PLIST+=	|sed -e '/^IFCRAPPYHW:/s///'
+SED_PLIST+=	|sed -e '/^IF${MACHINE_ARCH}:/s///'
 .else
-SED_PLIST+=	|sed -e '/^IFCRAPPYHW:/d'
+SED_PLIST+=	|sed -e '/^IFi386:/d'
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
-SED_PLIST+=	|sed -e '/^IFPPC:/s///'
+SED_PLIST+=	|sed -e '/^IF${MACHINE_ARCH}:/s///'
 .else
-SED_PLIST+=	|sed -e '/^IFPPC:/d'
+SED_PLIST+=	|sed -e '/^IFpowerpc:/d'
 .endif
 
 # XXX video window initialization fails without this
