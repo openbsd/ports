@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2002/11/25 17:15:34 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2002/11/25 20:08:48 jakob Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 HOMEPAGE=	http://www.washington.edu/pine/
 
 BUILD_DEPENDS=	:c-client->=4.41:mail/c-client
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
