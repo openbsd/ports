@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/09/22 22:53:37 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2003/10/11 01:37:55 brad Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -12,7 +12,7 @@ MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/
 MASTER_SITES0=	http://www.mame.net/zips/
 MASTER_SITES1=	http://www.sys2064.com/files/mame/
-MASTER_SITES2=	http://cheat.retrogames.com/
+MASTER_SITES2=	${MASTER_SITE_BACKUP}
 
 HOMEPAGE=	http://x.mame.net
 
