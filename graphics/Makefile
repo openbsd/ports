@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2001/06/15 09:11:55 reinhard Exp $
+# $OpenBSD: Makefile,v 1.68 2001/06/19 03:27:02 angelos Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -47,11 +47,11 @@
      SUBDIR += mpeg-lib
 #    SUBDIR += mpeg2codec
 #    SUBDIR += mpeg2play
-#    SUBDIR += mpeg_encode
+     SUBDIR += mpeg_encode
      SUBDIR += mpeg_play
 #    SUBDIR += mpeg_stat
 #    SUBDIR += mpegedit
-#    SUBDIR += mplex
+     SUBDIR += mplex
      SUBDIR += mtv
      SUBDIR += netpbm
      SUBDIR += p5-Imager
@@ -86,6 +86,7 @@
 #    SUBDIR += txtmerge
 #    SUBDIR += urt
 #    SUBDIR += vcg
+     SUBDIR += vid
 #    SUBDIR += whirlgif
      SUBDIR += wmgrabimage
      SUBDIR += wmicons
