@@ -1,0 +1,30 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2003/03/01 07:08:34 pvalchev Exp $
+--- aclocal.m4.orig	Wed Mar 20 14:23:10 2002
++++ aclocal.m4	Fri Feb 28 22:50:06 2003
+@@ -606,7 +606,7 @@ ac_libs_safe="$LIBS"
+ 
+ CXXFLAGS="$CXXFLAGS -I$qt_includes"
+ LDFLAGS="$X_LDFLAGS"
+-LIBS="-lqt -lXext -lX11 $LIBSOCKET"
++LIBS="-lqt-mt -pthread -lXext -lX11 $LIBSOCKET"
+ LD_LIBRARY_PATH=
+ export LD_LIBRARY_PATH
+ LIBRARY_PATH=
+@@ -653,7 +653,7 @@ AC_DEFUN(AC_PATH_QT_1_3,
+ [
+ AC_REQUIRE([K_PATH_X])
+ AC_REQUIRE([KDE_USE_QT])
+-LIBQT=${LIBQTMT:-"-lqt"}
++LIBQT=${LIBQTMT:-"-lqt-mt -pthread"}
+ if test $kde_qtver = 2; then
+   
+   AC_REQUIRE([AC_FIND_PNG])
+@@ -793,7 +793,7 @@ AC_SUBST(QT_INCLUDES)
+ AC_SUBST(QT_LDFLAGS)
+ AC_PATH_QT_MOC
+ 
+-LIB_QT="${LIBQTMT:--lqt}"' $(LIBPNG) -lXext $(LIB_X11) $(X_PRE_LIBS)'
++LIB_QT="${LIBQTMT:--lqt-mt}"' -pthread $(LIBPNG) -lXext $(LIB_X11) $(X_PRE_LIBS)'
+ AC_SUBST(LIB_QT)
+ 
+ ])
