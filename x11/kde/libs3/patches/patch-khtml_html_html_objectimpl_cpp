@@ -1,0 +1,12 @@
+$OpenBSD: patch-khtml_html_html_objectimpl_cpp,v 1.1 2002/06/03 10:06:20 espie Exp $
+--- khtml/html/html_objectimpl.cpp.orig	Wed May  8 20:27:54 2002
++++ khtml/html/html_objectimpl.cpp	Mon Jun  3 12:00:43 2002
+@@ -327,7 +327,7 @@ void HTMLObjectElementImpl::attach()
+     KHTMLView* w = getDocument()->view();
+     bool loadplugin = w->part()->pluginsEnabled();
+     KURL u = getDocument()->completeURL(url);
+-    for (KHTMLPart* part = w->part(); part; part = part->parentPart())
++    for (KHTMLPart* part = w->part()->parentPart(); part; part = part->parentPart())
+         if (part->url() == u) {
+             loadplugin = false;
+             break;
