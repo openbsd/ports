@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/28 16:10:33 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/12 01:30:26 marcm Exp $
 bin/gnumeric
 bin/ssconvert
 lib/bonobo/servers/GNOME_Gnumeric.server
@@ -85,6 +85,7 @@ lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/pie.la
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/pie.so
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/plot-types.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_pie/plugin.xml
+lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/gog-bubble-prefs.glade
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/plot-types.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/plot_xy/xy.la
@@ -701,8 +702,6 @@ share/schemas/gnumeric/gnumeric-plugins.schemas
 @dirrm share/omf/gnumeric
 @dirrm share/mc/templates
 @dirrm share/mc
-@dirrm share/locale/en_CA/LC_MESSAGES
-@dirrm share/locale/en_CA
 @dirrm share/gnumeric/${VERSION}-bonobo/templates
 @dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C/figures
 @dirrm share/gnumeric/${VERSION}-bonobo/share/gnome/help/gnumeric/C
