@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_imap_php_imap_c,v 1.1 2001/03/06 09:04:31 avsm Exp $
+
+This is a backport from PHP-4.0.5-dev to fix imap-ssl linking
+- avsm
+
+--- ext/imap/php_imap.c.orig	Tue Mar  6 08:19:18 2001
++++ ext/imap/php_imap.c	Tue Mar  6 08:20:11 2001
+@@ -411,6 +411,8 @@ PHP_MINIT_FUNCTION(imap)
+ 	mail_link(&newsdriver);      /* link in the news driver */
+ 	mail_link(&philedriver);     /* link in the phile driver */
+ 	auth_link(&auth_log);        /* link in the log authenticator */
++        ssl_onceonlyinit ();
++        auth_link (&auth_ssl);       /* link in the ssl authenticator */
+ #endif
+ 	mail_link(&dummydriver);     /* link in the dummy driver */
+ #else

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/02/28 15:05:54 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2001/03/06 09:04:30 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -63,14 +63,14 @@ CONFIGURE_ARGS+=	--without-gettext
 .endif
 
 .if ${FLAVOR:L:Mimap}
-CONFIGURE_ARGS+=	--with-imap=${PREFIX}
+CONFIGURE_ARGS+=	--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
 LIB_DEPENDS+=		c-client.2::mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif
 
 .if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 LIB_DEPENDS+=		ldap.2::databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=	--without-mm
 
 .if ${FLAVOR:L:Mrecode}
 CONFIGURE_ARGS+=	--with-recode
-BUILD_DEPENDS+=		${PREFIX}/lib/librecode.a::converters/recode
+BUILD_DEPENDS+=		${LOCALBASE}/lib/librecode.a::converters/recode
 .else
 CONFIGURE_ARGS+=	--without-recode
 .endif
@@ -116,12 +116,12 @@ MAKE_FLAGS+=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include'
 LIB_DEPENDS+=		gd.18::graphics/gd
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+=	--with-gd \
-			--with-jpeg-dir=${PREFIX} \
+			--with-jpeg-dir=${LOCALBASE} \
 			--with-ttf
 .else
 USE_X11=		yes
 CONFIGURE_ARGS+=	--with-gd \
-			--with-jpeg-dir=${PREFIX} \
+			--with-jpeg-dir=${LOCALBASE} \
 			--with-xpm-dir=${X11BASE} \
 			--with-ttf
 .endif
@@ -130,8 +130,8 @@ CONFIGURE_ARGS+=	--without-gd
 .endif
 
 .if ${FLAVOR:L:Mpdflib}
-CONFIGURE_ARGS+=	--with-pdflib=${PREFIX}
-BUILD_DEPENDS+=		${PREFIX}/lib/libpdf.a::print/pdflib
+CONFIGURE_ARGS+=	--with-pdflib=${LOCALBASE}
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libpdf.a::print/pdflib
 .else
 CONFIGURE_ARGS+=	--without-pdflib
 .endif
@@ -149,7 +149,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS+=		mysqlclient.10::databases/mysql
 .if ${FLAVOR:L:Mmysql_bundled}
 .BEGIN:
@@ -171,7 +171,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 .if ${FLAVOR:L:Miodbc}
 CONFIGURE_ARGS+=        --with-iodbc
-BUILD_DEPENDS+=         ${PREFIX}/lib/libiodbc.a::databases/iodbc
+BUILD_DEPENDS+=         ${LOCALBASE}/lib/libiodbc.a::databases/iodbc
 .else
 CONFIGURE_ARGS+=        --without-iodbc
 .endif        
