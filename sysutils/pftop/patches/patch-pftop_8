@@ -1,0 +1,40 @@
+$OpenBSD: patch-pftop_8,v 1.1 2003/06/25 18:08:57 david Exp $
+--- pftop.8.orig	Tue Sep 10 13:58:15 2002
++++ pftop.8	Tue Jun 24 18:15:19 2003
+@@ -90,13 +90,6 @@ terminal.
+ .It Fl o Ar field
+ Sort the process display area using the specified field as the
+ primary key.
+-.It Fl r
+-Reverse the sort order.
+-.It Fl s Ar time
+-Set the delay between display updates to
+-.Ar time
+-seconds.
+-The default delay is 5 seconds.
+ Accepted field arguments are:
+ .Ar age ,
+ .Ar bytes ,
+@@ -109,6 +102,13 @@ Accepted field arguments are:
+ .Ar sport ,
+ and
+ .Ar src .
++.It Fl r
++Reverse the sort order.
++.It Fl s Ar time
++Set the delay between display updates to
++.Ar time
++seconds.
++The default delay is 5 seconds.
+ .It Fl v Ar view
+ Select the initial arrangement of the columns. Available
+ views are:
+@@ -121,7 +121,7 @@ views are:
+ and
+ .Ar label .
+ The
+-.Ar rule
++.Ar rules
+ and
+ .Ar label
+ views display rules, while the other views display states.
