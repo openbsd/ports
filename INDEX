@@ -143,6 +143,7 @@ joe-2.8|editors/joe||Joe's own editor|editors/joe/pkg/DESCR|ports@openbsd.org|ed
 jove-4.16|editors/jove||Jonathan's Own Version of Emacs|editors/jove/pkg/DESCR|ports@openbsd.org|editors|||any|n|y|n|y
 nedit-5.0.2|editors/nedit||X11/Motif GUI text editor|editors/nedit/pkg/DESCR|ports@openbsd.org|editors x11|lesstif-0.89.9|lesstif-0.89.9|any|y|y|y|y
 nvi-m17n-1.79.19991117|editors/nvi-m17n||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|itojun@itojun.org|editors|||any|y|y|y|y
+nvi-m17n-1.79.19991117-canna|editors/nvi-m17n,canna||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|itojun@itojun.org|editors|cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
 textedit-1.0|editors/textedit||standard OpenLook text editor for X11|editors/textedit/pkg/DESCR|ian@OpenBSD.ORG|editors|xview-config-3.2.1 xview-lib-3.2.1|xview-lib-3.2.1|any|n|n|n|n
 uemacs-4.0|editors/uemacs||full screen simple editor|editors/uemacs/pkg/DESCR|ports@openbsd.org|editors|unzip-5.40||any|n|y|n|y
 vim-5.6-gtk|editors/vim,gtk||vi clone, many additional features|editors/vim/pkg/DESCR|jasoni@openbsd.org|editors|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|gettext-0.10.35 glib-1.2.7 gtk+-1.2.7|any|n|y|n|y
@@ -177,8 +178,8 @@ gnushogi-1.2.3|games/gnushogi||GNU version of Shogi|games/gnushogi/pkg/DESCR|ang
 hackdata|games/hackdata||common data for the nethack/slash ports|games/hackdata/pkg/DESCR|espie@openbsd.org|games|||any|y|y|y|y
 nethack-3.3.0|games/nethack||dungeon explorin', hackin', game.  Piece of cake|games/nethack/pkg/DESCR|espie@openbsd.org|games||hackdata|any|y|y|y|y
 nethack-3.3.0-x11|games/nethack,x11||dungeon explorin', hackin', game.  Piece of cake|games/nethack/pkg/DESCR|espie@openbsd.org|games||hackdata|any|y|y|y|y
-slash-e8|games/slash||dungeon explorin', hackin' game, but harder than nethack|games/slash/pkg/DESCR|espie@openbsd.org|games||hackdata|any|y|y|y|y
-slash-e8-x11|games/slash,x11||dungeon explorin', hackin' game, but harder than nethack|games/slash/pkg/DESCR|espie@openbsd.org|games||hackdata|any|y|y|y|y
+slash-3.2.2-e8|games/slash||dungeon explorin', hackin' game, but harder than nethack|games/slash/pkg/DESCR|espie@openbsd.org|games||hackdata|any|y|y|y|y
+slash-3.2.2-e8-x11|games/slash,x11||dungeon explorin', hackin' game, but harder than nethack|games/slash/pkg/DESCR|espie@openbsd.org|games||hackdata|any|y|y|y|y
 netris-0.5|games/netris||network head-to-head version of T*tris|games/netris/pkg/DESCR|angelos@openbsd.org|games|||any|y|y|y|y
 spider-1.1|games/spider||challenging double decked solitaire game|games/spider/pkg/DESCR|angelos@openbsd.org|games|||any|y|y|y|y
 starlanes-1.2.2|games/starlanes||the classic space-age stock trading game|games/starlanes/pkg/DESCR|angelos@openbsd.org|games|||any|y|y|y|y
@@ -257,9 +258,21 @@ zh-Wnn-4.2|japanese/Wnn||Chinese input method|japanese/Wnn/pkg/DESCR-zh|espie@op
 zh-Wnn-dict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Chinese Wnn|japanese/Wnn/pkg/DESCR-zhdict|espie@openbsd.org|chinese|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
 ko-Wnn-4.2|japanese/Wnn||Korean input method|japanese/Wnn/pkg/DESCR-ko|espie@openbsd.org|korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
 ko-Wnn-dict-4.2|japanese/Wnn|/var/dict/Wnn|dictionaries for Korean Wnn|japanese/Wnn/pkg/DESCR-kodict|espie@openbsd.org|korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
+Wnn-xwnmo-4.2|japanese/Wnn||X11 input method for Wnn|japanese/Wnn/pkg/DESCR-xwnmo|espie@openbsd.org|japanese chinese korean|ja-groff-1.10_0.99|Wnn-data-4.2|any|y|y|y|y
+Wnn-data-4.2|japanese/Wnn-data||common files to all languages of Wnn|japanese/Wnn-data/pkg/DESCR|espie@cvs.openbsd.org|japanese chinese korean|||any|y|y|y|y
+cannalib-3.5b2|japanese/canna||canna (kana-kanji converter) libraries|japanese/canna/pkg/DESCR|ports@openbsd.org|japanese|||any|n|y|n|y
+cannadict-3.5b2|japanese/canna|/var/dict|canna (kana-kanji converter) dictionnaries|japanese/canna/pkg/DESCR-dict|ports@openbsd.org|japanese|||any|n|y|n|y
+cannaserver-3.5b2|japanese/canna||canna (kana-kanji converter) server|japanese/canna/pkg/DESCR-server|ports@openbsd.org|japanese|||any|n|y|n|y
+ja-kinput2-3.0-wnn|japanese/kinput2,wnn||X input method for Japanese, wnn support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2||any|y|y|y|y
+ja-kinput2-3.0-canna|japanese/kinput2,canna||X input method for Japanese, canna support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
+ja-kinput2-3.0-canna-wnn|japanese/kinput2,canna,wnn||X input method for Japanese, canna and wnn support|japanese/kinput2/pkg/DESCR|sigh@kuzirabekon.econ.nagasaki-u.ac.jp|japanese x11|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 cannalib-3.5b2|cannalib-3.5b2|any|y|y|y|y
+kakasi-2.3.1|japanese/kakasi||Kanji -> kana converter|japanese/kakasi/pkg/DESCR|espie@cvs.openbsd.org|japanese|||any|y|y|y|y
+ja-fonts-gnu-1.2|japanese/intlfonts||extra japanese fonts|japanese/intlfonts/pkg/DESCR|espie@cvs.openbsd.org|japanese x11|||any|y|y|y|y
+ja-fonts-funet|japanese/funetfonts||extra japanese fonts, marumoji|japanese/funetfonts/pkg/DESCR|espie@cvs.openbsd.org|japanese x11|||any|n|y|n|y
 ja-groff-1.10_0.99|japanese/groff||japanese groff|japanese/groff/pkg/DESCR|espie@cvs.openbsd.org|japanese textproc print|||any|y|y|y|y
 ja-jvim-2.0r|japanese/jvim||Japanized Vim|japanese/jvim/pkg/DESCR|espie@openbsd.org|japanese editors|||any|y|y|y|y
 ja-jvim-wnn4-2.0r|japanese/jvim-wnn4||Japanized Vim (with Wnn4)|japanese/jvim-wnn4/pkg/DESCR|espie@openbsd.org|japanese editors|Wnn-data-4.2 ja-groff-1.10_0.99 ja-Wnn-4.2 ja-onew-wnn4-2.2.10||any|y|y|y|y
+kanjips|japanese/kanjips||converts Japanese fonts in PostScript documents|japanese/kanjips/pkg/DESCR|espie@openbsd.org|japanese print|||any|y|y|y|y
 ja-kterm-6.2.0|japanese/kterm||Japanese-capable xterm|japanese/kterm/pkg/DESCR|ports@openbsd.org|japanese x11|||any|y|y|y|y
 ja-kterm-6.2.0-xaw3d|japanese/kterm,xaw3d||Japanese-capable xterm|japanese/kterm/pkg/DESCR|ports@openbsd.org|japanese x11|Xaw3d-1.5|Xaw3d-1.5|any|y|y|y|y
 ja-less-3.32p2.48|japanese/less||less + zcat + ISO-2022 - a pager similar to more and pg|japanese/less/pkg/DESCR|espie@openbsd.org|japanese|||any|y|y|y|y
@@ -438,12 +451,12 @@ tcptrace-5.2.1|net/tcptrace||A TCP dump file analysis tool|net/tcptrace/pkg/DESC
 tintin-1.5.6|net/tintin++||client program to help playing muds|net/tintin++/pkg/DESCR|ports@OpenBSD.ORG|net games|||any|y|y|y|y
 tf-4.0s1|net/tinyfugue||programmable MUD client, with macro support and more|net/tinyfugue/pkg/DESCR|ports@openbsd.org|net games|||any|y|y|y|y
 tircproxy-0.4.3|net/tircproxy||transparent irc proxy|net/tircproxy/pkg/DESCR|garath@ntplx.net|net|||any|y|y|y|y
-totd-1.1p2|net/totd||DNS proxy that supports IPv6 <==> IPv4 record translation|net/totd/pkg/DESCR|itojun@itojun.org|net|||any|y|y|y|y
+totd-1.1p4|net/totd||DNS proxy that supports IPv6 <==> IPv4 record translation|net/totd/pkg/DESCR|itojun@itojun.org|net|||any|y|y|y|y
 trafshow-3.1|net/trafshow||full screen visualization of network traffic|net/trafshow/pkg/DESCR|mickey@openbsd.org|net|||any|y|y|y|y
 ucd-snmp-3.6.2|net/ucd-snmp||extendable SNMP implementation|net/ucd-snmp/pkg/DESCR|hugh@openbsd.org|net|||any|y|y|y|y
 ucspi-tcp-0.88|net/ucspi-tcp||tools for building TCP client-server applications|net/ucspi-tcp/pkg/DESCR|cd@sentia.nl|net|||any|y|y|y|y
 vnc-3.3.2r3|net/vnc||display X & Win32 desktops on remote X/Win32/Java displays|net/vnc/pkg/DESCR|brad@openbsd.org|net|||any|y|y|y|y
-vtun-2.0|net/vtun||Virtual Tunnels over TCP/IP networks with traffic shaping|net/vtun/pkg/DESCR|kevlo@openbsd.org|net|lzo-1.06|lzo-1.06|any|y|y|y|y
+vtun-2.1|net/vtun||Virtual Tunnels over TCP/IP networks with traffic shaping|net/vtun/pkg/DESCR|kevlo@openbsd.org|net|lzo-1.06|lzo-1.06|any|y|y|y|y
 wget-1.5.3|net/wget||retrieve files from the 'net via HTTP and FTP|net/wget/pkg/DESCR|angelos@openbsd.org|net|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
 wide-dhcp-1.4.0.3|net/wide-dhcp||Dynamic Host Configuration Protocol, WIDE-Implementation|net/wide-dhcp/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
 xarchie-2.0.10|net/xarchie||X11 front-end program for the archie network search service|net/xarchie/pkg/DESCR|ports@openbsd.org|net|||any|y|y|y|y
@@ -464,7 +477,8 @@ rc-1.6|plan9/rc||shell (clone of plan9 shell)|plan9/rc/pkg/DESCR|markus@openbsd.
 sam-4.3-19980506|plan9/sam||X11 version of Rob Pike's editor, sam|plan9/sam/pkg/DESCR|markus@openbsd.org|plan9|||any|y|y|y|y
 tcs-19950325|plan9/tcs||translate character sets|plan9/tcs/pkg/DESCR|markus@openbsd.org|plan9|||any|y|y|y|y
 wily-0.13.41|plan9/wily||clone of the Plan9 editor `acme'|plan9/wily/pkg/DESCR|angelos@openbsd.org|plan9 editors|autoconf-2.13||any|y|y|y|y
-a2ps|print/a2ps||format ascii files for printing on PostScript printers|print/a2ps/pkg/DESCR|weingart@OpenBSD.org|print|jpeg-6b png-1.0.3 tiff-3.5.4 gmake-3.78.1 unzip-5.40 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 Xaw3d-1.5 teTeX_texmf-1.0.2 ImageMagick-4.2.9 gv-3.5.8 psutils-1.17-a4 teTeX_base-1.0.7|jpeg-6b png-1.0.3 tiff-3.5.4 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 Xaw3d-1.5 teTeX_texmf-1.0.2 ImageMagick-4.2.9 gv-3.5.8 psutils-1.17-a4 teTeX_base-1.0.7|any|y|y|y|y
+a2ps-a4|print/a2ps,a4||format ascii files for printing on PostScript printers|print/a2ps/pkg/DESCR|weingart@OpenBSD.org|print|jpeg-6b png-1.0.3 tiff-3.5.4 gmake-3.78.1 unzip-5.40 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 Xaw3d-1.5 teTeX_texmf-1.0.2 ImageMagick-4.2.9 gv-3.5.8 psutils-1.17-a4 teTeX_base-1.0.7|jpeg-6b png-1.0.3 tiff-3.5.4 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 Xaw3d-1.5 teTeX_texmf-1.0.2 ImageMagick-4.2.9 gv-3.5.8 psutils-1.17-a4 teTeX_base-1.0.7|any|y|y|y|y
+a2ps-letter|print/a2ps,letter||format ascii files for printing on PostScript printers|print/a2ps/pkg/DESCR|weingart@OpenBSD.org|print|jpeg-6b png-1.0.3 tiff-3.5.4 gmake-3.78.1 unzip-5.40 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 Xaw3d-1.5 teTeX_texmf-1.0.2 ImageMagick-4.2.9 gv-3.5.8 psutils-1.17-a4 teTeX_base-1.0.7|jpeg-6b png-1.0.3 tiff-3.5.4 bzip2-0.9.5d jbigkit-1.1 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 ghostscript-5.50 transfig-3.2.3 Xaw3d-1.5 teTeX_texmf-1.0.2 ImageMagick-4.2.9 gv-3.5.8 psutils-1.17-a4 teTeX_base-1.0.7|any|y|y|y|y
 acroread-4.0|print/acroread||view, distribute and print PDF documents|print/acroread/pkg/DESCR|angelos@openbsd.org|print||linux_lib-2.6.1|i386|n|n|n|y
 afm-1.0|print/afm||Adobe Font Metrics|print/afm/pkg/DESCR|d@openbsd.org|print|||any|n|y|n|y
 bibview-2.2|print/bibview||GUI for manipulating BibTeX bibliography databases|print/bibview/pkg/DESCR|angelos@openbsd.org|databases print|||any|y|y|y|y
@@ -518,8 +532,10 @@ nessus-0.98.3|security/nessus||free network security scanner|security/nessus/pkg
 nfsshell-1.0|security/nfsshell||NFS auditing tool|security/nfsshell/pkg/DESCR|dugsong@monkey.org|security|||any|n|y|n|y
 outguess-0.13b|security/outguess||universal steganography tool|security/outguess/pkg/DESCR|dugsong@monkey.org|security|||any|?|?|?|?
 parse-1.0|security/parse||watch a tcpdump trace in real-time|security/parse/pkg/DESCR|dugsong@monkey.org|security|||any|?|?|?|?
-pgp-2.6.3|security/pgp||Intl and US versions of Pretty Good Privacy 2.6.3[i]a|security/pgp/pkg/DESCR|ports@openbsd.org|security|||any|n|y|n|y
-pgp-5.0i|security/pgp5||Pretty Good Privacy 5.0i (international)|security/pgp5/pkg/DESCR|fgsch@openbsd.org|security|autoconf-2.13||any|n|y|n|y
+pgp-2.6.3-usa|security/pgp,usa||Intl and US versions of Pretty Good Privacy 2.6.3[i]a|security/pgp/pkg/DESCR|ports@openbsd.org|security|rsaref-2.0|rsaref-2.0|any|n|y|n|y
+pgp-2.6.3-intl|security/pgp,intl||Intl and US versions of Pretty Good Privacy 2.6.3[i]a|security/pgp/pkg/DESCR|ports@openbsd.org|security|||any|n|y|n|y
+pgp-5.0i-usa|security/pgp5,usa||Pretty Good Privacy 5.0i (international)|security/pgp5/pkg/DESCR|fgsch@openbsd.org|security|autoconf-2.13 rsaref-2.0|rsaref-2.0|any|n|y|n|y
+pgp-5.0i-intl|security/pgp5,intl||Pretty Good Privacy 5.0i (international)|security/pgp5/pkg/DESCR|fgsch@openbsd.org|security|autoconf-2.13||any|n|y|n|y
 PGPlib|security/pgplib||library to generate (and manipulate) PGP packets|security/pgplib/pkg/DESCR|ports@openbsd.org|security|gmake-3.78.1||any|y|y|y|y
 portscanner-1.0|security/portscanner||simple and easy to use TCP port scanner|security/portscanner/pkg/DESCR|brad@openbsd.org|security|||any|n|y|n|y
 radiusniff-0.2|security/radiusniff||radius sniffer|security/radiusniff/pkg/DESCR|nny@sinister.com|security|||any|n|y|n|y
@@ -577,7 +593,6 @@ c2html-0.9|textproc/c2html||C-language sources to HTML converter|textproc/c2html
 catdoc-0.90b4|textproc/catdoc||MS Word ==> ASCII or TeX, Tk viewer included|textproc/catdoc/pkg/DESCR|angelos@openbsd.org|textproc||tcl-8.0.5 tk-8.0.5|any|y|y|y|y
 docbook-3.0|textproc/docbook||SGML DTD designed for computer documentation|textproc/docbook/pkg/DESCR|angelos@openbsd.org|textproc||iso8879-1986|any|n|y|n|y
 expat-1.1|textproc/expat||XML 1.0 parser written in C|textproc/expat/pkg/DESCR|dugsong@monkey.org|textproc|unzip-5.40||any|y|y|y|y
-figlet-2.2|textproc/figlet||converts ordinary text into large letters of varying fonts|textproc/figlet/pkg/DESCR|aaron@openbsd.org|textproc graphics|||any|y|y|y|y
 glimpse-4.1|textproc/glimpse||text search engine|textproc/glimpse/pkg/DESCR|weingart@openbsd.org|textproc databases|||any|n|y|n|y
 html-4.0b|textproc/html||all W3C published SGML DTDs for HTML|textproc/html/pkg/DESCR|angelos@openbsd.org|textproc|||any|y|y|y|y
 info2html-1.1|textproc/info2html||translate GNU info files into HTML pages|textproc/info2html/pkg/DESCR|angelos@openbsd.org|textproc|||any|y|y|y|y
