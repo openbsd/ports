@@ -1,0 +1,21 @@
+# $OpenBSD: DEINSTALL,v 1.1 2000/03/26 01:10:39 espie Exp $
+#
+# zsh de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+if grep -q ${PREFIX}/bin/scsh /etc/shells; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to edit"
+    echo "| /etc/shells and remove this line:"
+    echo "|"
+    echo "|           ${PREFIX}/bin/scsh"
+    echo "|"
+    echo "+---------------"
+    echo
+fi
+
+exit 0

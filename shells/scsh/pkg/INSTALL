@@ -1,0 +1,52 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/03/26 01:10:39 espie Exp $
+#
+# Pre/post-installation setup of es
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| For proper use of $1 you should notify the system"
+    echo "| that ${PREFIX}/bin/scsh is a valid shell by adding it to the"
+    echo "| the file /etc/shells.  If you are unfamiliar with this file"
+    echo "| consult the shells(5) manual page"
+    echo "+---------------"
+    echo
+}
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if grep -q ${PREFIX}/bin/scsh /etc/shells; then
+	    :
+	else
+	    do_notice $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
