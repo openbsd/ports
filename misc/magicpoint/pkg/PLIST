@@ -48,11 +48,11 @@ share/doc/mgp/sample/v6-jp.mgp
 share/doc/mgp/sample/v6.mgp
 share/doc/mgp/sample/v6header.eps
 share/doc/mgp/sample/v6header.gif
-man/man1/mgp.1
-man/man1/mgp2ps.1
-man/man1/mgpembed.1
-man/man1/mgpnet.1
-man/man1/xwintoppm.1
+man/cat1/mgp.0
+man/cat1/mgp2ps.0
+man/cat1/mgpembed.0
+man/cat1/mgpnet.0
+man/cat1/xwintoppm.0 
 man/man1/xmindpath.1
 @dirrm lib/X11/mgp
 @dirrm share/doc/mgp/sample
