@@ -1,22 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/02/11 00:51:27 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/07/08 21:24:51 avsm Exp $
 bin/couriertls
+bin/deliverquota
 bin/imapd
+bin/maildirmake
+libexec/authlib/authcram
 libexec/authlib/authdaemon
 libexec/authlib/authdaemond
 libexec/authlib/authdaemond.plain
+libexec/authlib/authpwd
+libexec/authlib/authuserdb
 libexec/couriertcpd
-libexec/deliverquota
 libexec/imapd-ssl.rc
 libexec/imapd.rc
 libexec/logger
 libexec/makedatprog
 man/man1/couriertcpd.1
+man/man1/maildirmake.1
 man/man7/authcram.7
 man/man7/authdaemon.7
 man/man7/authdaemond.7
 man/man7/authlib.7
 man/man7/authpwd.7
-man/man7/authshadow.7
 man/man7/authuserdb.7
 man/man8/deliverquota.8
 man/man8/imapd.8
@@ -33,11 +37,15 @@ sbin/pw2userdb
 sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
+share/doc/courier-imap/README.authmysql.html
+share/doc/courier-imap/README.authmysql.myownquery
+share/doc/courier-imap/README.authpostgres.html
+share/doc/courier-imap/README.ldap
 share/examples/courier-imap/authdaemonrc
 share/examples/courier-imap/imapd
 share/examples/courier-imap/imapd-ssl
 share/examples/courier-imap/imapd.cnf
 share/examples/courier-imap/quotawarnmsg.example
-%%ldap%%
-%%mysql%%
 @dirrm share/examples/courier-imap
+@dirrm share/doc/courier-imap
+@dirrm libexec/authlib

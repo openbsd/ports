@@ -1,0 +1,7 @@
+This package provides a PostgreSQL database authentication backend
+for Courier-IMAP.
+
+Documentation is installed in:
+  ${LOCALBASE}/share/doc/courier-imap
+
+WWW: ${HOMEPAGE}
