@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2000/12/26 18:24:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.74 2000/12/27 02:19:37 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -143,6 +143,7 @@
      SUBDIR += xtacy
      SUBDIR += xtattr
      SUBDIR += xterm
+     SUBDIR += xtermset
      SUBDIR += xtestpicture
 #    SUBDIR += xtide
      SUBDIR += xtoolwait
