@@ -1,0 +1,7 @@
+bin/gogo
+share/doc/gogo/readme.txt
+share/doc/gogo/readme_e.txt
+share/doc/gogo/japandoc/faq.html
+share/doc/gogo/japandoc/faq.txt
+share/doc/gogo/japandoc/install.txt
+share/doc/gogo/japandoc/makefaq.awk

@@ -1,0 +1,35 @@
+--- ../virgin/gogo224b/Makefile	Fri Jan 21 19:28:35 2000
++++ ./Makefile	Sun Jan 30 17:11:46 2000
+@@ -40,8 +40,13 @@
+ 
+ # NetBSD/i386 1.4.1
+ #CC=gcc -D__unix__ -c -mcpu=pentiumpro -malign-double -O6 -fstrength-reduce -fexpensive-optimizations  -finline-functions -fomit-frame-pointer -funroll-loops
++
++# OpenBSD/i386	2.6 
++CC=gcc -D__unix__ -c -mcpu=pentiumpro -malign-double -O6 -fstrength-reduce -fexpensive-optimizations  -finline-functions -fomit-frame-pointer -funroll-loops
++
+ endif
+ 
++
+ AS=nasm
+ LD=gcc
+ 
+@@ -53,9 +58,9 @@
+ 
+ #if Borland C++ then add -D__BORLANDC__ to ASFLAGS
+ 
+-ASFLAGS=-f elf -D__unix__ $(E3DN)
++#ASFLAGS=-f elf -D__unix__ $(E3DN)
+ #if FreeBSD 2.x then
+-#ASFLAGS = -f aoutb -D__unix__ -DAOUT
++ASFLAGS = -f aoutb -D__unix__ -DAOUT
+ 
+ LDFLAGS=$(PROF)
+ 
+@@ -150,3 +155,6 @@
+ msubtbl.o  : msubtbl.nas nasm.h
+ msub3dn.o  : msub3dn.nas nasm.h
+ msubfpu.o  : msubfpu.nas nasm.h
++
++install:	gogo
++	install -s -m 755 gogo ${PREFIX}/bin
