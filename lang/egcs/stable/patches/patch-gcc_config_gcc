@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_config_gcc,v 1.3 2002/05/29 13:22:11 espie Exp $
+--- gcc/config.gcc.orig	Wed May 29 14:55:49 2002
++++ gcc/config.gcc	Wed May 29 15:00:00 2002
+@@ -579,6 +579,7 @@ alpha*-*-openbsd*)
+ 	# default x-alpha is only appropriate for dec-osf.
+ 	target_cpu_default="MASK_GAS"
+ 	tmake_file="alpha/t-alpha alpha/t-ieee"
++	gas=yes gnu_ld=yes
+ 	;;
+ 
+ alpha*-dec-osf*)
+@@ -3086,6 +3087,11 @@ sparc-*-openbsd*)
+ 	tmake_file="t-libc-ok t-openbsd sparc/t-openbsd"
+ 	# we need collect2 until our bug is fixed...
+ 	use_collect2=yes
++	;;
++sparc64-*-openbsd*)
++	tm_file=sparc/openbsd64.h
++	xm_file=sparc/xm-sp64.h
++	gas=yes gnu_ld=yes
+ 	;;
+ sparc-*-bsd*)
+ 	tm_file="${tm_file} sparc/bsd.h"

@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.1 2002/05/29 13:22:11 espie Exp $
+--- gcc/config/rs6000/t-openbsd.orig	Wed May 29 15:17:34 2002
++++ gcc/config/rs6000/t-openbsd	Wed May 29 15:17:29 2002
+@@ -0,0 +1,11 @@
++# include t-rs6000 too
++# this is taken from t-ppcos
++
++MULTILIB_MATCHES_FLOAT	= msoft-float=mcpu?403 \
++			  msoft-float=mcpu?mpc403 \
++			  msoft-float=mcpu?ppc403
++MULTILIB_MATCHES        = ${MULTILIB_MATCHES_FLOAT} \
++                          fPIC=mrelocatable-lib \
++                          fPIC=mrelocatable \
++                          fPIC=fpic           
++
