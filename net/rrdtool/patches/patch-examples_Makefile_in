@@ -1,16 +1,7 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2000/06/14 05:57:49 jakob Exp $
---- examples/Makefile.in.orig	Mon Jun 12 14:29:20 2000
-+++ examples/Makefile.in	Tue Jun 13 22:11:11 2000
-@@ -36,8 +36,6 @@ mandir = @mandir@
- includedir = @includedir@
- oldincludedir = /usr/include
- 
--DESTDIR =
--
- pkgdatadir = $(datadir)/@PACKAGE@
- pkglibdir = $(libdir)/@PACKAGE@
- pkgincludedir = $(includedir)/@PACKAGE@
-@@ -91,7 +89,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2000/06/29 21:12:24 jakob Exp $
+--- examples/Makefile.in.orig	Tue Jun 13 06:47:13 2000
++++ examples/Makefile.in	Thu Jun 29 13:40:25 2000
+@@ -91,7 +91,7 @@ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
  
  EXTRA_DIST = cgi-demo.cgi.in    piped-demo.pl.in   shared-demo.pl.in stripes.pl.in bigtops.pl.in minmax.pl.in
  

@@ -1,16 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2000/06/14 05:57:49 jakob Exp $
---- doc/Makefile.in.orig	Mon Jun 12 14:29:16 2000
-+++ doc/Makefile.in	Tue Jun 13 22:11:11 2000
-@@ -32,8 +32,6 @@ mandir = @mandir@
- includedir = @includedir@
- oldincludedir = /usr/include
- 
--DESTDIR =
--
- pkgdatadir = $(datadir)/@PACKAGE@
- pkglibdir = $(libdir)/@PACKAGE@
- pkgincludedir = $(includedir)/@PACKAGE@
-@@ -106,9 +104,9 @@ HTML = $(POD:.pod=.html) $(PMP:.pm=.html
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2000/06/29 21:12:24 jakob Exp $
+--- doc/Makefile.in.orig	Tue Jun 13 06:47:10 2000
++++ doc/Makefile.in	Thu Jun 29 13:40:03 2000
+@@ -106,9 +106,9 @@ HTML = $(POD:.pod=.html) $(PMP:.pm=.html
  EXTRA_DIST = $(POD) $(HTML) $(TXT)
  
  # some install rules
