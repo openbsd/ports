@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2005/04/05 22:50:57 alek Exp $
 bin/exmh
 bin/exmh-async
 bin/exmh-bg
@@ -7,8 +7,6 @@ bin/ftp.expect
 bin/inc.expect
 @man man/man1/exmh.1
 share/exmh/
-share/exmh/.mime.tcl.swp
-share/exmh/1058.1.txt
 share/exmh/PgpDecryptExpect
 share/exmh/addr.tcl
 share/exmh/aliases.tcl
@@ -43,6 +41,7 @@ share/exmh/bitmaps/send.xbm
 share/exmh/bitmaps/sign.xbm
 share/exmh/bitmaps/unmark.xbm
 share/exmh/bitmaps/write.xbm
+share/exmh/bogo.tcl
 share/exmh/busy.tcl
 share/exmh/buttons.tcl
 share/exmh/clink.au
@@ -166,6 +165,7 @@ share/exmh/mh.tcl
 share/exmh/mime.tcl
 share/exmh/mime.types
 share/exmh/mimeSun.tcl
+share/exmh/mimencode.tcl
 share/exmh/mosaic.tcl
 share/exmh/msg.tcl
 share/exmh/msgShow.tcl
