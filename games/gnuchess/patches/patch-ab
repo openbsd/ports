@@ -42,12 +42,3 @@
  		    p = GNUANinbuf1;
  		    q = GNUANinbuf;
  		    while (true)
-@@ -1724,7 +1724,7 @@
-     move_percent[black] = ((float) same_moves[black]) * 200 / (float) (GNUANmovecnt + (GNUANmovecnt % 2 ? 1 : 0));
-     fprintf (fpout, "\n           White's percentage was %5.2f%%.     Black's percentage was %5.2f%%.\n", move_percent[white], move_percent[black]);
-     time (&end_time);
--    elapsed_time = difftime(end_time - start_time);
-+    elapsed_time = difftime(end_time, start_time);
-     fprintf (fpout, "\n           Elapsed time was %ld seconds.\n", elapsed_time);
-     fclose (fpin);
-     fclose (fpout);
