@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.1 2003/12/26 10:44:10 jakob Exp $
+--- configure.orig	2003-10-12 00:39:44.000000000 +0200
++++ configure	2003-11-19 22:48:20.000000000 +0100
+@@ -6411,7 +6411,6 @@ openbsd*)
+     shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+@@ -19751,6 +19750,7 @@ echo "configure:19748: checking for TCP 
+ #line 19752 "configure"
+ #include "confdefs.h"
+ 
++#include <sys/types.h>
+ #include <tcpd.h>
+ int allow_severity = 0;
+ int deny_severity  = 0;

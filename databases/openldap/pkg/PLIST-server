@@ -1,23 +1,20 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2002/01/15 08:35:52 jakob Exp $
-libexec/fax500
-libexec/go500
-libexec/go500gw
-libexec/in.xfingerd
-libexec/mail500
-libexec/maildap
-libexec/rcpt500
-libexec/rp500
+@comment $OpenBSD: PLIST-server,v 1.4 2003/12/26 10:44:10 jakob Exp $
 libexec/slapd
 libexec/slurpd
-libexec/xrpcomp
+man/man5/slapd-bdb.5
+man/man5/slapd-dnssrv.5
+man/man5/slapd-ldap.5
+man/man5/slapd-ldbm.5
+man/man5/slapd-meta.5
+man/man5/slapd-null.5
+man/man5/slapd-passwd.5
+man/man5/slapd-perl.5
+man/man5/slapd-shell.5
+man/man5/slapd-sql.5
+man/man5/slapd-tcl.5
+man/man5/slapd.access.5
 man/man5/slapd.conf.5
 man/man5/slapd.replog.5
-man/man8/fax500.8
-man/man8/go500.8
-man/man8/go500gw.8
-man/man8/in.xfingerd.8
-man/man8/mail500.8
-man/man8/rcpt500.8
 man/man8/slapadd.8
 man/man8/slapcat.8
 man/man8/slapd.8
@@ -28,16 +25,22 @@ sbin/slapadd
 sbin/slapcat
 sbin/slapindex
 sbin/slappasswd
-share/openldap/go500gw.help
-share/openldap/rcpt500.help
-share/examples/openldap/slapd.conf
 share/examples/openldap/schema/corba.schema
 share/examples/openldap/schema/core.schema
 share/examples/openldap/schema/cosine.schema
 share/examples/openldap/schema/inetorgperson.schema
 share/examples/openldap/schema/java.schema
-share/examples/openldap/schema/krb5-kdc.schema
 share/examples/openldap/schema/misc.schema
 share/examples/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
+share/examples/openldap/slapd.conf
+share/openldap/ucdata/case.dat
+share/openldap/ucdata/cmbcl.dat
+share/openldap/ucdata/comp.dat
+share/openldap/ucdata/ctype.dat
+share/openldap/ucdata/decomp.dat
+share/openldap/ucdata/kdecomp.dat
+share/openldap/ucdata/num.dat
+@dirrm share/openldap/ucdata
+@dirrm share/openldap
 @dirrm share/examples/openldap/schema

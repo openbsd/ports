@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/12/26 10:44:10 jakob Exp $
+--- Makefile.in.orig	2003-12-15 23:35:14.000000000 +0100
++++ Makefile.in	2003-12-15 23:36:00.000000000 +0100
+@@ -32,3 +32,9 @@ distclean: veryclean FORCE
+ check: test
+ test: FORCE
+ 	cd tests; make test
++
++test-ldbm: FORCE
++	cd tests; make ldbm
++
++test-bdb: FORCE
++	cd tests; make bdb
