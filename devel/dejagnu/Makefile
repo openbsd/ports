@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2003/12/27 23:41:41 jose Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/21 01:52:03 espie Exp $
 
 COMMENT=	"framework to test programs"
 
 DISTNAME=	dejagnu-1.4.3
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
-LIB_DEPENDS=	tk84::x11/tk/8.4
+LIB_DEPENDS=	tk84:tk-8.4.*:x11/tk/8.4
 RUN_DEPENDS=	::lang/expect
 
 # GPL
