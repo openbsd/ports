@@ -8,16 +8,15 @@ and to publish them as freeware on the Internet, with freely available
 copies of significant or representative software. 
 
 Simulators included in this package:
-	- Data Central Nova
-	- Data Central Eclipse
-	- Digital Equipment Corporation PDP-1, PDP-4, PDP-8, PDP-9, PDP-10,
-	  PDP-11, PDP-15
-	- Digital Equipment Corporation VAX
-	- IBM 1401
-	- IBM System 3
-	- Hewlett Packard HP 2100
+	- Data Central Nova, Eclipse
+	- Digital Equipment Corporation PDP-1, PDP-4, PDP-7, PDP-8, PDP-9,
+	  PDP-10, PDP-11, PDP-15, VAX
+	- GRI Corporation GRI-909
+	- IBM 1401, 1620, 1130, System 3
+	- Interdata (perkin-Elmer) 16b and 32b systems
+	- Hewlett Packard HP 2116, 2100, 21MX
 	- Honeywell H316
-	- MITS Altair 8800
-	- MITS Altair Z80
+	- MITS Altair 8800, with both 8080 and Z80
+	- Scientific Data Systems SDS 940
 
 WWW: ${HOMEPAGE}

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2002/10/29 23:55:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2002/11/28 16:41:11 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
 
-DISTNAME=		simh-2.10b3
+DISTNAME=		simh-2.10-1
 CATEGORIES=		emulators
 MASTER_SITES=		http://simh.trailing-edge.com/sources/
-DISTFILES=		simhv210-0b3.zip xq_beta5.zip
+DISTFILES=		simhv210-1.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/
 
@@ -20,7 +20,7 @@ WRKDIST=		${WRKDIR}
 UNZIP=			unzip -a -o
 
 COPTS=			-DUSE_SOCKLEN_T
-MAKE_FILE=		makefile
+MAKE_FILE=		makefile_ether
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
 COPTS+=			-O0
@@ -35,14 +35,13 @@ VMEM_WARNING=		Yes
 
 pre-build:
 	@mkdir ${WRKBUILD}/BIN
-	@cp ${WRKDIST}/AltairZ80/altairZ80_defs.h \
-	    ${WRKDIR}/AltairZ80/altairz80_defs.h
+#	@cp ${WRKDIST}/AltairZ80/altairZ80_defs.h \
+#	    ${WRKDIR}/AltairZ80/altairz80_defs.h
 
 do-install:
 .for f in ${SIMS}
 	${INSTALL_PROGRAM} ${WRKBUILD}/BIN/${f} ${PREFIX}/bin/simh-${f}
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/simh
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA} ${WRKDIST}/VAX/ka655.bin ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/simh
