@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:42:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/24 12:10:30 kevlo Exp $
 
 DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
+NEED_VERSION=	1.340
 MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/
+
+HOMEPAGE=	http://www.whizkidtech.net/gcl/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
