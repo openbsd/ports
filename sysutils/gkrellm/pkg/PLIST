@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/01/06 21:06:50 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/10/31 17:11:31 sturm Exp $
+@group kmem
+@mode 2755
 bin/gkrellm
+@group
+@mode
 include/gkrellm/gkrellm.h
 include/gkrellm/gkrellm_public_proto.h
 man/man1/gkrellm.1
