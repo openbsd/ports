@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/17 06:26:54 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/24 22:54:32 shell Exp $
 
 COMMENT=	"perl module for getting image information"
 
-DISTNAME=	Image-Info-1.07
+VERSION=	1.08
+DISTNAME=	Image-Info-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
-NEED_VERSION=	1.391
+NEED_VERSION=	1.443
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
