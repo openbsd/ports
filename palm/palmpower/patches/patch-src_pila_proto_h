@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_pila_proto_h,v 1.1.1.1 2001/07/04 17:08:18 pvalchev Exp $
+--- src/pila/proto.h.orig	Sun Jun 10 23:37:22 2001
++++ src/pila/proto.h	Sun Jun 10 23:37:28 2001
+@@ -122,8 +122,6 @@ int strcap(char *, char *);
+ 
+ char *skipSpace(char *);
+ 
+-int getopt(int, char *[], char *, int *);
+-
+ void help(void);
+ 
+ int movem(int, char *, char *, int *);
