@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ $2 = POST-INSTALL ]; then
+	ldconfig -m $PKG_PREFIX
+fi
