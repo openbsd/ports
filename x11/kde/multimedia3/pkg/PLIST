@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/10/19 00:25:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/12/12 11:33:25 espie Exp $
 bin/artsbuilder
 bin/artscontrol
 bin/kaboodle
@@ -682,6 +682,11 @@ share/apps/kmid/maps/gm.map
 share/apps/kmix/
 share/apps/kmix/kmixui.rc
 share/apps/kmix/pics/
+share/apps/kmix/pics/Listener.png
+share/apps/kmix/pics/SpeakerFrontLeft.png
+share/apps/kmix/pics/SpeakerFrontRight.png
+share/apps/kmix/pics/SpeakerRearLeft.png
+share/apps/kmix/pics/SpeakerRearRight.png
 share/apps/kmix/pics/kmixdocked.png
 share/apps/kmix/pics/kmixdocked_error.png
 share/apps/kmix/pics/kmixdocked_mute.png

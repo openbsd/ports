@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.2 2004/10/26 19:13:01 espie Exp $
---- kdecore/network/kresolver.cpp.orig	Sun Oct  3 09:40:16 2004
-+++ kdecore/network/kresolver.cpp	Tue Oct 26 20:04:49 2004
+$OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.3 2004/12/12 11:33:24 espie Exp $
+--- kdecore/network/kresolver.cpp.orig	Sun Nov 28 18:30:44 2004
++++ kdecore/network/kresolver.cpp	Mon Dec  6 11:59:15 2004
 @@ -58,6 +58,10 @@
  #include "kresolver_p.h"
  #include "ksocketaddress.h"
@@ -259,14 +259,7 @@ $OpenBSD: patch-kdecore_network_kresolver_cpp,v 1.2 2004/10/26 19:13:01 espie Ex
  #endif
  
    return lst;
-@@ -838,23 +909,33 @@ QStrList KResolver::serviceName(const ch
- QStrList KResolver::serviceName(int port, const char *protoname)
- {
-   struct servent *se;
--#ifndef HAVE_GETSERVBYNAME_R
-+#ifndef HAVE_GETSERVBYPORT_R
-   QMutexLocker locker(&getXXbyYYmutex);
- 
+@@ -844,17 +915,27 @@ QStrList KResolver::serviceName(int port
    se = getservbyport(port, protoname);
  
  #else

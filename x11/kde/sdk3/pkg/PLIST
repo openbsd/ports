@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/10/19 00:25:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/12/12 11:33:25 espie Exp $
 bin/adddebug
 bin/build-progress.sh
 bin/catalogmanager
@@ -12,6 +12,7 @@ bin/cvs2dist
 bin/cvsaskpass
 bin/cvsbackport
 bin/cvsblame
+bin/cvsforwardport
 bin/cvslastchange
 bin/cvslastlog
 bin/cvsrevertlast

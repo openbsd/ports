@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2004/10/19 00:25:29 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/12 11:33:25 espie Exp $
 
 COMMENT= 		"KDE personal information applications"
 COMMENT-kpilot=		"KDE interface to sync with Palm Pilot"
 CATEGORIES=		x11 x11/kde productivity
-VERSION=		3.3.1
+VERSION=		3.3.2
 DISTNAME=		kdepim-${VERSION}
 PKGNAME=		${DISTNAME}
 MODKDE_VERSION=		3.3.0

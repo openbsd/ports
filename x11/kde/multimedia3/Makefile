@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2004/10/19 00:25:28 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2004/12/12 11:33:25 espie Exp $
 
 COMMENT= 		"K Desktop Environment, multimedia applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.1
+VERSION=		3.3.2
 DISTNAME=		kdemultimedia-${VERSION}
 MODKDE_VERSION=		3.3.0
 

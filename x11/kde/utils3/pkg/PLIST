@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/18 09:36:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/12/12 11:33:25 espie Exp $
 bin/ark
 bin/irkick
 bin/kcalc
@@ -72,6 +72,8 @@ ${KDE}/ksim_panelextension.la
 ${KDE}/ksim_panelextension.so
 ${KDE}/ksim_sensors.la
 ${KDE}/ksim_sensors.so
+${KDE}/ksim_snmp.la
+${KDE}/ksim_snmp.so
 ${KDE}/libarkpart.la
 ${KDE}/libarkpart.so
 ${KDE}/libkbyteseditwidget.la
@@ -273,6 +275,7 @@ share/apps/ksim/monitors/
 share/apps/ksim/monitors/DFree.desktop
 share/apps/ksim/monitors/Lm_sensors.desktop
 share/apps/ksim/monitors/Net.desktop
+share/apps/ksim/monitors/Snmp.desktop
 share/apps/ksim/monitors/cpu.desktop
 share/apps/ksim/monitors/disk.desktop
 share/apps/ksim/pics/

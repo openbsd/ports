@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2004/10/19 00:25:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/12 11:33:23 espie Exp $
 
 COMMENT= 		"K Desktop Environment, admin tools"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.1
+VERSION=		3.3.2
 DISTNAME=		kdeadmin-${VERSION}
 MODKDE_VERSION?=	3.3.0
 

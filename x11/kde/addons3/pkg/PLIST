@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2004/10/19 00:25:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2004/12/12 11:33:23 espie Exp $
 bin/atlantikdesigner
 bin/exif.py
 bin/fsview
@@ -229,7 +229,6 @@ share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/add/news_add.desktop
-share/apps/konqsidebartng/kicker_entries/mplayer.desktop
 share/apps/konqueror/icons/crystalsvg/16x16/actions/google.png
 share/apps/konqueror/kpartplugins/
 share/apps/konqueror/kpartplugins/searchbar.rc

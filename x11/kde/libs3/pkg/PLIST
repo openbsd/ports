@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/10/19 00:25:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2004/12/12 11:33:25 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -387,6 +387,7 @@ include/kio/tcpslavebase.h
 include/kio/thumbcreator.h
 include/kio/uiserver.h
 include/kio/uiserver_stub.h
+include/kiobuffer.h
 include/kipc.h
 include/kjanuswidget.h
 include/kjs/
@@ -693,6 +694,7 @@ include/kuser.h
 include/kuserprofile.h
 include/kvmallocator.h
 include/kwallet.h
+include/kwallettypes.h
 include/kwin.h
 include/kwindowinfo.h
 include/kwindowlistmenu.h
@@ -1414,6 +1416,7 @@ share/apps/ksgmltools2/customization/cs/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/cs/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/cs/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/cs/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/cs/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/cs/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/cs/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/cs/lang.entities
@@ -4532,6 +4535,7 @@ share/mimelnk/all/all.desktop
 share/mimelnk/all/allfiles.desktop
 share/mimelnk/application/
 share/mimelnk/application/illustrator.desktop
+share/mimelnk/application/java.desktop
 share/mimelnk/application/mathml+xml.desktop
 share/mimelnk/application/msexcel.desktop
 share/mimelnk/application/mspowerpoint.desktop
@@ -4682,6 +4686,7 @@ share/mimelnk/application/x-zerosize.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/application/xhtml+xml.desktop
+share/mimelnk/application/xml.desktop
 share/mimelnk/audio/
 share/mimelnk/audio/aac.desktop
 share/mimelnk/audio/ac3.desktop

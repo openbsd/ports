@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2004/10/19 00:25:27 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2004/12/12 11:33:24 espie Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.3.1
+VERSION=		3.3.2
 DISTNAME=		kdelibs-${VERSION}
 MODKDE_VERSION?=	3.3.0
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		tiff.35::graphics/tiff \
 		jasper::graphics/jasper
 
+WANTLIB=c
 CONFIGURE_ARGS+= --disable-cups
 
 SEPARATE_BUILD=	flavored

@@ -1,10 +1,10 @@
-$OpenBSD: patch-kiten_Makefile_am,v 1.2 2004/02/01 14:59:22 espie Exp $
---- kiten/Makefile.am.orig	2003-12-16 15:15:50.000000000 +0100
-+++ kiten/Makefile.am	2004-01-18 16:29:56.000000000 +0100
-@@ -22,6 +22,7 @@ bin_PROGRAMS = kiten kitengen
+$OpenBSD: patch-kiten_Makefile_am,v 1.3 2004/12/12 11:33:24 espie Exp $
+--- kiten/Makefile.am.orig	Sun Nov 28 17:57:00 2004
++++ kiten/Makefile.am	Thu Dec  9 22:01:43 2004
+@@ -21,6 +21,7 @@ bin_PROGRAMS = kiten kitengen
+ 
  kitengen_SOURCES = xjdxgen.c
  kitengen_LDFLAGS = $(all_libraries) $(KDE_RPATH) 
- kitengen_LDADD = $(LIB_QT)
 +kitengen_LINK = $(CXXLINK)
  
  METASOURCES = AUTO

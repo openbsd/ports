@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/09/18 09:36:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/12/12 11:33:24 espie Exp $
 bin/celestrongps
 bin/fliccd
 bin/indiserver
@@ -395,6 +395,21 @@ share/apps/klatin/data/vocabs/en/QR.kvtml
 share/apps/klatin/data/vocabs/en/S.kvtml
 share/apps/klatin/data/vocabs/en/TU.kvtml
 share/apps/klatin/data/vocabs/en/V.kvtml
+share/apps/klatin/data/vocabs/pl/
+share/apps/klatin/data/vocabs/pl/A.kvtml
+share/apps/klatin/data/vocabs/pl/BC.kvtml
+share/apps/klatin/data/vocabs/pl/D.kvtml
+share/apps/klatin/data/vocabs/pl/EF.kvtml
+share/apps/klatin/data/vocabs/pl/GHI1.kvtml
+share/apps/klatin/data/vocabs/pl/I2L.kvtml
+share/apps/klatin/data/vocabs/pl/M.kvtml
+share/apps/klatin/data/vocabs/pl/N.kvtml
+share/apps/klatin/data/vocabs/pl/OP1.kvtml
+share/apps/klatin/data/vocabs/pl/P2.kvtml
+share/apps/klatin/data/vocabs/pl/QR.kvtml
+share/apps/klatin/data/vocabs/pl/S.kvtml
+share/apps/klatin/data/vocabs/pl/TU.kvtml
+share/apps/klatin/data/vocabs/pl/V.kvtml
 share/apps/klatin/klatinui.rc
 share/apps/klettres/
 share/apps/klettres/cs.txt
