@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/08/02 20:46:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.19 2002/10/25 21:46:21 naddy Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 
      SUBDIR += arc
@@ -15,6 +15,7 @@
      SUBDIR += lha
      SUBDIR += lzo
      SUBDIR += lzop
+     SUBDIR += macutil
      SUBDIR += makeself
      SUBDIR += nulib
      SUBDIR += p5-Archive-Tar
