@@ -1,0 +1,12 @@
+$OpenBSD: patch-color_c,v 1.1.1.1 2002/05/01 23:19:48 pvalchev Exp $
+--- color.c.orig	Tue Mar 19 16:12:58 2002
++++ color.c	Tue Mar 19 16:13:16 2002
+@@ -25,7 +25,7 @@
+ 
+ #include <stdio.h>
+ 
+-#if !defined(__NetBSD__)
++#if !defined(__OpenBSD__)
+ #include <values.h>
+ #endif
+ 
