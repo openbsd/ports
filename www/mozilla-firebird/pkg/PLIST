@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/08/04 12:54:18 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/11/25 05:13:02 jolan Exp $
 bin/mozilla-firebird
 mozilla-firebird/MozillaFirebird-bin
 mozilla-firebird/chrome/US.jar
@@ -73,6 +73,8 @@ mozilla-firebird/components/lwbrk.xpt
 mozilla-firebird/components/mimetype.xpt
 mozilla-firebird/components/mozbrwsr.xpt
 mozilla-firebird/components/mozfind.xpt
+mozilla-firebird/components/myspell/en-US.aff
+mozilla-firebird/components/myspell/en-US.dic
 mozilla-firebird/components/necko.xpt
 mozilla-firebird/components/necko_about.xpt
 mozilla-firebird/components/necko_cache.xpt
@@ -102,6 +104,7 @@ mozilla-firebird/components/nsUpdateNotifier.js
 mozilla-firebird/components/nsXmlRpcClient.js
 mozilla-firebird/components/oji.xpt
 mozilla-firebird/components/p3p.xpt
+mozilla-firebird/components/passwordmgr.xpt
 mozilla-firebird/components/pipboot.xpt
 mozilla-firebird/components/pipnss.xpt
 mozilla-firebird/components/pippki.xpt
@@ -120,6 +123,7 @@ mozilla-firebird/components/search.xpt
 mozilla-firebird/components/shistory.xpt
 mozilla-firebird/components/sidebar.xpt
 mozilla-firebird/components/signonviewer.xpt
+mozilla-firebird/components/spellchecker.xpt
 mozilla-firebird/components/timebomb.xpt
 mozilla-firebird/components/txmgr.xpt
 mozilla-firebird/components/txtsvc.xpt
@@ -353,8 +357,6 @@ mozilla-firebird/res/unixcharset.properties
 mozilla-firebird/res/viewer.properties
 mozilla-firebird/res/viewsource.css
 mozilla-firebird/run-mozilla.sh
-mozilla-firebird/searchplugins/dmoz.gif
-mozilla-firebird/searchplugins/dmoz.src
 mozilla-firebird/searchplugins/google.gif
 mozilla-firebird/searchplugins/google.src
 %%SHARED%%
@@ -381,11 +383,15 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/defaults/pref
 @dirrm mozilla-firebird/defaults/autoconfig
 @dirrm mozilla-firebird/defaults
+@dirrm mozilla-firebird/components/myspell
 @dirrm mozilla-firebird/components
+@exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/passwordmgr
+@dirrm mozilla-firebird/chrome/toolkit/content/passwordmgr
+@exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/mozapps/downloads
+@dirrm mozilla-firebird/chrome/toolkit/content/mozapps/downloads
+@dirrm mozilla-firebird/chrome/toolkit/content/mozapps
 @exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/global/widgets
 @dirrm mozilla-firebird/chrome/toolkit/content/global/widgets
-@exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/global/bindings
-@dirrm mozilla-firebird/chrome/toolkit/content/global/bindings
 @exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/global-region
 @dirrm mozilla-firebird/chrome/toolkit/content/global-region
 @exec mkdir -p %D/mozilla-firebird/chrome/toolkit/content/global-platform
@@ -443,18 +449,25 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/pippki
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/pipnss
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/pipnss
+@exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/passwordmgr
+@dirrm mozilla-firebird/chrome/en-US/locale/en-US/passwordmgr
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/p3p
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/p3p
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/necko
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/necko
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/navigator
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/navigator
+@exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/mozapps/downloads
+@dirrm mozilla-firebird/chrome/en-US/locale/en-US/mozapps/downloads
+@dirrm mozilla-firebird/chrome/en-US/locale/en-US/mozapps
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/global
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/global
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/cookie
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/cookie
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/xpinstall
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/xpinstall
+@exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/xml
+@dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/xml
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/webservices
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/communicator/webservices
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/communicator/wallet
@@ -486,6 +499,8 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/browser/history
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/browser/downloads
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/browser/downloads
+@exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/browser/cookieviewer
+@dirrm mozilla-firebird/chrome/en-US/locale/en-US/browser/cookieviewer
 @exec mkdir -p %D/mozilla-firebird/chrome/en-US/locale/en-US/browser/bookmarks
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/browser/bookmarks
 @dirrm mozilla-firebird/chrome/en-US/locale/en-US/browser
@@ -562,6 +577,11 @@ mozilla-firebird/searchplugins/google.src
 @exec mkdir -p %D/mozilla-firebird/chrome/classic/skin/classic/navigator/btn1
 @dirrm mozilla-firebird/chrome/classic/skin/classic/navigator/btn1
 @dirrm mozilla-firebird/chrome/classic/skin/classic/navigator
+@exec mkdir -p %D/mozilla-firebird/chrome/classic/skin/classic/mozapps/pref
+@dirrm mozilla-firebird/chrome/classic/skin/classic/mozapps/pref
+@exec mkdir -p %D/mozilla-firebird/chrome/classic/skin/classic/mozapps/downloads
+@dirrm mozilla-firebird/chrome/classic/skin/classic/mozapps/downloads
+@dirrm mozilla-firebird/chrome/classic/skin/classic/mozapps
 @exec mkdir -p %D/mozilla-firebird/chrome/classic/skin/classic/messenger/smime/icons
 @dirrm mozilla-firebird/chrome/classic/skin/classic/messenger/smime/icons
 @dirrm mozilla-firebird/chrome/classic/skin/classic/messenger/smime
@@ -643,6 +663,8 @@ mozilla-firebird/searchplugins/google.src
 @dirrm mozilla-firebird/chrome/browser/content/browser/history
 @exec mkdir -p %D/mozilla-firebird/chrome/browser/content/browser/downloads
 @dirrm mozilla-firebird/chrome/browser/content/browser/downloads
+@exec mkdir -p %D/mozilla-firebird/chrome/browser/content/browser/cookieviewer
+@dirrm mozilla-firebird/chrome/browser/content/browser/cookieviewer
 @exec mkdir -p %D/mozilla-firebird/chrome/browser/content/browser/bookmarks
 @dirrm mozilla-firebird/chrome/browser/content/browser/bookmarks
 @dirrm mozilla-firebird/chrome/browser/content/browser

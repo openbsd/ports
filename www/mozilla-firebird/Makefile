@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2003/10/18 19:44:48 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2003/11/25 05:13:02 jolan Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
 COMMENT=	"redesign of Mozilla's browser component"
 
-VER=		0.6.1
+VER=		0.7
 DISTNAME=	mozilla
 PKGNAME=	mozilla-firebird-${VER}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://ftp.mozilla.org/pub/firebird/releases/${VER}/
-DISTFILES=	MozillaFirebird-source-${VER}.tar.bz2
+DISTFILES=	MozillaFirebird-source-${VER}.tar.gz
 
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc64 powerpc
