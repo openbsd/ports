@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/11/30 01:06:34 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2005/01/16 22:53:17 alek Exp $
 
 COMMENT=	"audio/video converter and streamer with bktr(4) support"
 DISTNAME=	ffmpeg-0.4.9-pre1
-PKGNAME=	${DISTNAME:S/9-p/9p/}
+PKGNAME=	${DISTNAME:S/9-p/9p/}p0
 SV=		4.9
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
@@ -20,7 +20,6 @@ WANTLIB=		X11 Xext c m ogg ossaudio pthread usbhid z
 
 BUILD_DEPENDS=	::textproc/texi2html
 LIB_DEPENDS=	SDL.2.0::devel/sdl \
-		a52::audio/liba52 \
 		mp3lame.0.1::audio/lame \
 		vorbis.3.0,vorbisenc.2.0::audio/libvorbis
 
@@ -44,7 +43,6 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-pp \
 		--enable-mp3lame \
 		--enable-vorbis \
-		--enable-a52bin \
 		--enable-gpl \
 		--enable-pthreads \
 		--disable-debug
@@ -54,6 +52,13 @@ MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 # bktr(4) support
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "powerpc"
 CONFIGURE_ARGS+=--disable-v4l
+.endif
+
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+CONFIGURE_ARGS+=--enable-a52bin
+RUN_DEPENDS=	::audio/liba52
+.else
+CONFIGURE_ARGS+=--enable-a52
 .endif
 
 post-extract:
