@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.611 2004/02/07 22:36:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.612 2004/04/19 18:57:54 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1149,22 +1149,22 @@ ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
 	@echo "@comment subdir=${FULLPKGPATH} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
 	@sort -u <${WRKPKG}/depends${SUBPACKAGE}>>$@.tmp
 .if defined(NO_SHARED_LIBS)
-	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
-		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
-		-e '//d' -e '/^%%SHARED%%$$/d' <${PLIST} \
+	@sed -e '/^!%%SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' -e '//d' \
+		-e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' -e '//d' \
+		-e '/^%%SHARED%%$$/d' <${PLIST} \
 		${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@
 .else
 	@if [ -x /sbin/ldconfig ]; then \
 		sed -e '/^!%%SHARED%%$$/d' \
 			-e '/^%%!SHARED%%$$/d' \
-			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
-			-e '//d' <${PLIST} ${SED_PLIST} \
+			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' \
+			<${PLIST} ${SED_PLIST} \
 			| sed -f ${LDCONFIG_SED_SCRIPT} >>$@.tmp && mv -f $@.tmp $@; \
 	else \
 		sed -e '/^!%%SHARED%%$$/d' \
 			-e '/^%%!SHARED%%$$/d' \
-			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' \
-			-e '//d' <${PLIST} \
+			-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' \
+			<${PLIST} \
 			${SED_PLIST} >>$@.tmp && mv -f $@.tmp $@; \
 	fi
 .endif
