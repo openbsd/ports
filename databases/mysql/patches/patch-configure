@@ -1,6 +1,6 @@
---- configure.orig	Sat Feb 12 21:46:09 2000
-+++ configure	Sun Feb 13 22:09:51 2000
-@@ -2743,7 +2743,7 @@
+--- configure.orig	Wed Jan 17 04:40:02 2001
++++ configure	Sat Jan 20 23:03:57 2001
+@@ -2964,7 +2964,7 @@
    ;;
  esac
  fi
@@ -9,9 +9,9 @@
  if test -n "$HOSTNAME"; then
    echo "$ac_t""$HOSTNAME" 1>&6
  else
-@@ -2871,29 +2871,7 @@
+@@ -3098,35 +3098,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
- echo "configure:2873: checking "how to check if pid exists"" >&5
+ echo "configure:3100: checking "how to check if pid exists"" >&5
  PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
@@ -34,13 +34,35 @@
 -then
 -  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
 -else
--  { echo "configure: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." 1>&2; exit 1; }
+-  case $SYSTEM_TYPE in
+-    *darwin*)
+-      FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-      ;;
+-    *)
+-      { echo "configure: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." 1>&2; exit 1; }
+-  esac
 -fi
 +FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
  
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
-@@ -4646,8 +4624,6 @@
+@@ -4936,6 +4908,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 4938 "configure"
+ #include "confdefs.h"
++#include <stdio.h>
+ #include <tcpd.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+@@ -4961,6 +4934,7 @@
+       cat > conftest.$ac_ext <<EOF
+ #line 4963 "configure"
+ #include "confdefs.h"
++#include <stdio.h>
+ #include <tcpd.h>
+ int allow_severity = 0;
+ int deny_severity  = 0;
+@@ -5823,8 +5797,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -49,17 +71,18 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -4881,28 +4857,6 @@
+@@ -6046,29 +6018,6 @@
+ 
  fi
  
- 
+-
 -# Build optimized or debug version ?
 -# First check for gcc and g++
 -if test "$ac_cv_prog_gcc" = "yes"
 -then
 -  DEBUG_CFLAGS="-g"
 -  DEBUG_OPTIMIZE_CC="-O"
--  OPTIMIZE_CFLAGS="-O6"
+-  OPTIMIZE_CFLAGS="$MAX_C_OPTIMIZE"
 -else
 -  DEBUG_CFLAGS="-g"
 -  DEBUG_OPTIMIZE_CC=""

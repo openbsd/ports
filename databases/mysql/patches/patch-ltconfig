@@ -1,5 +1,5 @@
---- ltconfig.orig	Tue Dec 21 16:10:09 1999
-+++ ltconfig	Wed Dec 13 09:24:57 2000
+--- ltconfig.orig	Wed Jan 17 04:39:50 2001
++++ ltconfig	Fri Jan 19 12:07:13 2001
 @@ -1105,6 +1105,9 @@
      with_gnu_ld=no
    fi
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1391,10 +1394,18 @@
+@@ -1402,10 +1405,21 @@
      ;;
  
    openbsd*)
@@ -26,12 +26,15 @@
 +      *)
 +	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
 +	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	if [ "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != "" ]; then
++	  export_dynamic_flag_spec='${wl}-E'
++	fi
 +      ;;
 +    esac
      ;;
  
    os2*)
-@@ -1961,13 +1972,10 @@
+@@ -2022,13 +2036,10 @@
  
  openbsd*)
    version_type=sunos

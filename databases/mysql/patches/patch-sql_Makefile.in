@@ -1,0 +1,12 @@
+--- sql/Makefile.in.orig	Wed Jan 17 04:46:33 2001
++++ sql/Makefile.in	Fri Jan 19 11:02:49 2001
+@@ -1769,8 +1769,7 @@
+ 
+ sql_yacc.o:	sql_yacc.cc sql_yacc.h
+ 		@echo "Note: The following compile may take a long time."
+-		@echo "If it fails, re-run configure with --with-low-memory"
+-		$(CXXCOMPILE) $(LM_CFLAGS) -c $<
++		$(CXXCOMPILE) $(LM_CFLAGS) -O0 -c $<
+ 
+ lex_hash.h:	lex.h gen_lex_hash.cc sql_yacc.h
+ 		$(MAKE) gen_lex_hash

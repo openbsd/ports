@@ -1,0 +1,10 @@
+--- scripts/Makefile.in.orig	Wed Jan 17 04:46:35 2001
++++ scripts/Makefile.in	Fri Jan 19 11:00:11 2001
+@@ -345,6 +345,7 @@
+ 	  -e 's!@''datadir''@!$(datadir)!g' \
+ 	  -e 's!@''localstatedir''@!$(localstatedir)!g' \
+ 	  -e 's!@''libexecdir''@!$(libexecdir)!g' \
++	  -e 's!@''pkgdatadir''@!$(pkgdatadir)!g' \
+ 	  -e 's!@''pkglibdir''@!$(pkglibdir)!g' \
+ 	  -e 's!@''pkgincludedir''@!$(pkgincludedir)!g' \
+ 	  -e 's!@''CC''@!@CC@!'\

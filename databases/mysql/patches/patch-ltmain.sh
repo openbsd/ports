@@ -1,8 +1,8 @@
---- ltmain.sh.orig	Thu Dec 30 19:42:50 1999
-+++ ltmain.sh	Wed Dec 13 09:25:00 2000
-@@ -1789,6 +1789,9 @@
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
+--- ltmain.sh.orig	Wed Jan 17 04:39:53 2001
++++ ltmain.sh	Fri Jan 19 12:01:17 2001
+@@ -1799,6 +1799,9 @@
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
  	  ;;
 +	*-*-openbsd*)
 +	  # do not include libc due to us having libc/libc_r.
@@ -10,7 +10,7 @@
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"
-@@ -3522,40 +3525,6 @@
+@@ -3567,40 +3570,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
