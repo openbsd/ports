@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/10/13 06:26:51 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/16 21:28:36 jolan Exp $
 
 COMMENT=		"Nostromo Hypertext Transfer Protocol"
 
-DISTNAME=		nostromo-1.1
+DISTNAME=		nostromo-1.2
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
