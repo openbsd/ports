@@ -1,9 +1,10 @@
-# $OpenBSD: i386,v 1.2 2004/03/14 22:42:57 pvalchev Exp $
+# $OpenBSD: i386,v 1.3 2004/03/15 07:24:38 pvalchev Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
 net/cvsup
+net/cvsync
 sysutils/mergemaster
 editors/vim/stable,no_x11
 editors/emacs21
@@ -23,7 +24,7 @@ graphics/gif2png
 shells/zsh/stable,static
 shells/bash2,static
 shells/tcsh,static
-devel/autoconf/2.57
+devel/autoconf/2.59
 devel/automake
 books/autobook
 devel/bison
@@ -48,7 +49,7 @@ www/mozilla-firefox
 x11/qt3,-base
 x11/kde/base3
 x11/kde/office3
-x11/kde/network3
+x11/kde/pim3
 #x11/kde/edu3
 x11/windowmaker
 x11/windowmaker-extra
@@ -80,10 +81,8 @@ www/links
 graphics/gqview
 #net/epic4
 net/irssi
-print/ghostview
 sysutils/pftop
 security/bsd-airtools
-editors/cooledit
 editors/abiword
 archivers/zip
 net/snort
@@ -109,6 +108,7 @@ security/gnupg
 net/libdnet
 net/nsd
 graphics/ImageMagick
+audio/abcde
 www/php4/core
 www/php4/core,-pear
 www/php4/extensions,-mysql
