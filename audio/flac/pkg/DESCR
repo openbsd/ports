@@ -1,0 +1,11 @@
+FLAC stands for Free Lossless Audio Codec.  Grossly oversimplified,
+FLAC is similar to MP3, but lossless.  The FLAC project consists
+of:
+
+* The stream format.
+* libFLAC, which implements a reference encoder, stream decoder,
+  and file decoder.
+* flac, which is a command-line wrapper around libFLAC to encode
+  and decode .flac files.
+
+WWW: ${HOMEPAGE}
