@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2001/08/12 08:49:15 shell Exp $
+# $OpenBSD: Makefile,v 1.97 2001/08/14 20:49:35 lebel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -48,7 +48,6 @@
      SUBDIR += libproplist
      SUBDIR += libsigc++
      SUBDIR += libslang
-     SUBDIR += libtai
      SUBDIR += libtool
      SUBDIR += libuta
      SUBDIR += lincvs
