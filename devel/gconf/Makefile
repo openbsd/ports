@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/15 01:22:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/19 02:50:34 brad Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 V=			1.0.7
 DISTNAME=		GConf-${V}
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		devel
 NEED_VERSION=   	1.490
 HOMEPAGE=		http://www.gnome.org
@@ -45,8 +46,8 @@ CONFIGURE_ARGS+=	--enable-db3
 CONFIGURE_ARGS+=	--disable-db3
 .endif
 
-pre-extract:
-	@if pkg dependencies check GConf-\*; then \
+pre-build:
+	@if pkg dependencies check gconf-\*; then \
                 if pkg dependencies check ${DISTNAME}; then \
                         :; \
                 else \
