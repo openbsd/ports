@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/03 02:40:21 pvalchev Exp $
-bin/oproute
-share/doc/oproute/README
-@dirrm share/doc/oproute
