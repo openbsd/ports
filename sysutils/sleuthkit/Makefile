@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2005/02/16 20:41:27 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/03/16 15:43:19 naddy Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
 VERSION=		1.73
 DISTNAME=		sleuthkit-${VERSION}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		sysutils security
 
 HOMEPAGE=		http://www.sleuthkit.org/

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/02/16 20:41:27 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/16 15:43:19 naddy Exp $
+@conflict ja-jvim-*
 bin/dcalc
 bin/dcat
 bin/diskstat

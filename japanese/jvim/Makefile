@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2005/02/22 13:52:25 alek Exp $
+# $OpenBSD: Makefile,v 1.22 2005/03/16 15:43:19 naddy Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	"Japanized Vim"
@@ -6,7 +6,7 @@ COMMENT-canna=	"Japanized Vim, canna input method"
 COMMENT-wnn=	"Japanized Vim, wnn input method"
 COMMENT-wnn-canna="Japanized Vim, canna or wnn input method"
 DISTNAME=	jvim2.0r+onew2.2.10
-PKGNAME=	ja-jvim-2.0r
+PKGNAME=	ja-jvim-2.0rp0
 CATEGORIES=	japanese editors
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \

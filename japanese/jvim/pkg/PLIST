@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:56:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/03/16 15:43:19 naddy Exp $
+@conflict sleuthkit-*
 bin/jcat
 bin/jfold
 bin/jgrep
