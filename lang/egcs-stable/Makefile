@@ -3,11 +3,10 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.8 1998/12/23 02:45:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 1999/01/09 16:53:22 espie Exp $
 #
 
-# This is a configuration file for egcs, stable release
-# right now, we only configure i386.
+# This is a configuration file for egcs, stable release.
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
@@ -157,7 +156,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_SCRIPT=../source/configure
 
-CONFIGURE_ENV=CFLAGS=-O2
+#CONFIGURE_ENV=CFLAGS=-O2
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --with-gnu-ld --with-gnu-as \
 --program-transform-name=s,^,e,
