@@ -1,20 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/03/07 08:21:12 pvalchev Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/annotate.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gdb.info
-@unexec install-info --delete --info-dir=%D/info %D/info/gdbint.info
-@unexec install-info --delete --info-dir=%D/info %D/info/stabs.info
+@comment $OpenBSD: PLIST,v 1.2 2004/08/03 11:21:32 espie Exp $
 bin/gdb
 bin/gdbtui
-info/annotate.info
-info/gdb.info
-info/gdb.info-1
-info/gdbint.info
-info/gdbint.info-1
-info/stabs.info
-info/stabs.info-1
-man/man1/gdb.1
-man/man1/gdbtui.1
-@exec install-info --info-dir=%D/info %D/info/annotate.info
-@exec install-info --info-dir=%D/info %D/info/gdb.info
-@exec install-info --info-dir=%D/info %D/info/gdbint.info
-@exec install-info --info-dir=%D/info %D/info/stabs.info
+@info info/annotate.info
+@info info/gdb.info
+@info info/gdbint.info
+@info info/stabs.info
+@man man/man1/gdb.1
+@man man/man1/gdbtui.1
