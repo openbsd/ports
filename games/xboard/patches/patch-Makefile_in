@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/08/06 12:53:29 fgsch Exp $
---- Makefile.in.orig	Tue Feb 20 01:02:22 2001
-+++ Makefile.in	Mon Aug  6 07:39:53 2001
-@@ -63,16 +63,14 @@ more: all pseudo-source info FAQ html dv
+$OpenBSD: patch-Makefile_in,v 1.2 2002/03/07 18:37:17 fgsch Exp $
+--- Makefile.in.orig	Sat Feb  2 04:57:38 2002
++++ Makefile.in	Thu Mar  7 15:15:15 2002
+@@ -21,7 +21,7 @@ man6ext = .6
+ # Yuck; the autoconf generated configure script sets an infodir variable
+ # and provides a command-line flag to change it, but the default is 
+ # /usr/info instead of /usr/share/info.
+-infodir = $(prefix)/share/info
++infodir = $(prefix)/info
+ 
+ CC = @CC@
+ CFLAGS = @CFLAGS@ @CPPFLAGS@ -DINFODIR=\"$(infodir)\"
+@@ -67,16 +67,14 @@ more: all pseudo-source info FAQ html dv
  
  install: installdirs xboard zic2xpm cmail pxboard xboard.man cmail.man \
  		zic2xpm.man
