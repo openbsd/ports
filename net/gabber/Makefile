@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/12 06:27:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/09 19:04:37 sturm Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
 
 DISTNAME=		gabber-0.8.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net x11/gnome
 
 HOMEPAGE=		http://gabber.sourceforge.net/
@@ -20,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gabber/}
 
 LIB_DEPENDS=		sigc.0::devel/libsigc++ gal.19::devel/gal \
 			gnomemm.9::x11/gnomemm \
-			glade.5,glade-gnome.5::devel/libglade,gnome \
+			glade.5,glade-gnome.5:libglade-*-gnome:devel/libglade,gnome \
 			gnomeprint.16::x11/gnome/print
 
 RUN_DEPENDS=		:gnupg-*:security/gnupg \
