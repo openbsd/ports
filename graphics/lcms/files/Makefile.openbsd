@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile.openbsd,v 1.2 2002/02/21 17:17:09 brad Exp $
+# $OpenBSD: Makefile.openbsd,v 1.3 2003/05/12 04:10:54 brad Exp $
 # Makefile for lcms
 
 PREFIX?= /usr/local
 LIBDIR=	${PREFIX}/lib
 
 SHLIB_MAJOR=	1
-SHLIB_MINOR=	8
+SHLIB_MINOR=	9
 
 LIB=	lcms
-SRCS!=	${MAKE} -f ${.CURDIR}/Makefile -V SRCS
+SRCS!=	${MAKE} -f ${.CURDIR}/makefile -V SRCS
 
 HDRS=	lcms.h icc34.h
 
 CFLAGS+= -Wall
 CPPFLAGS+= -I${.CURDIR}/../include
+LDADD=	-lm
 
 NOPROFILE= Yes
 DEBUGLIBS= No

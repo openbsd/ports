@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/25 23:08:40 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2003/05/12 04:10:54 brad Exp $
 
 COMMENT=	"color management library"
 
-DISTNAME=	lcms-1.08
+DISTNAME=	lcms-1.09
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://openbsd.comstyle.com/pub/brad/source/
+MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/
 
 HOMEPAGE=	http://www.littlecms.com/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
