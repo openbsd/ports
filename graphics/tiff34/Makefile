@@ -3,7 +3,7 @@
 # Date created:	 	December 18, 1997	
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.6 1998/06/14 08:10:31 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/08/23 04:30:30 marc Exp $
 #
 
 # NOTE:
@@ -47,7 +47,7 @@ DOCDIR=	${PREFIX}/share/doc/tiff34
 #
 post-install:
 	${LN} -sf libtiff.a ${PREFIX}/lib/libtiff34.a
-	${LN} -sf libtiff.so.3.4 ${PREFIX}/lib/libtiff34.so.1.0
+	[ ! -f libtiff.so.3.4 ] || ${LN} -sf libtiff.so.3.4 ${PREFIX}/lib/libtiff34.so.1.0
 	${LN} -sf tiff.h ${PREFIX}/include/tiff34.h
 	${LN} -sf tiffio.h ${PREFIX}/include/tiffio34.h
 .if !defined(NOPORTDOCS)
