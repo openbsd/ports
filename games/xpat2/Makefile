@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/04/09 17:36:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/04/12 18:43:59 turan Exp $
+
+BROKEN=		does not build
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
