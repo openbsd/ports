@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/08/07 18:31:33 wcobb Exp $
+# $OpenBSD: Makefile,v 1.3 2002/08/15 18:41:36 wcobb Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -29,6 +29,7 @@ MAKE_FILE=      makefile
 ALL_TARGET=	vislib
 NO_REGRESS=	Yes
 
+CFLAGS+=	-I${LOCALBASE}/include/libpng
 MAKE_FLAGS=	CC="${CC}"
 MTREE_FILE=	${FILESDIR}/mtree
 
