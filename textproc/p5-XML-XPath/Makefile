@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/17 00:39:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/04/09 23:25:30 avsm Exp $
 
-DISTNAME=	XML-XPath-1.07
+COMMENT=	"modules for parsing and evaluating XPath statements"
+
+DISTNAME=	XML-XPath-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.391
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= XML
 
