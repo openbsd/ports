@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/12 06:29:59 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/15 05:04:47 turan Exp $
 
 BROKEN=		new distsites needed.  sources do not fetch consistantly.
 
@@ -10,10 +10,10 @@ NEED_VERSION=	1.191
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5

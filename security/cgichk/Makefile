@@ -3,7 +3,7 @@
 # Date created:		27 Oct 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/12 08:02:30 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:09 turan Exp $
 
 PKGNAME=	cgichk-3.0
 
@@ -18,10 +18,10 @@ MASTER_SITES=	http://web.singnet.com.sg/~cksss/ \
 MAINTAINER=	dugsong@monkey.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 NO_CONFIGURE=	yes
 

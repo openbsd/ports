@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/12 06:30:06 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/15 05:05:28 turan Exp $
 
 DISTNAME=	enlightenment-0.16.3
 CATEGORIES=     x11
@@ -8,10 +8,10 @@ MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 MAINTAINER=	op21@squish.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 LIB_DEPENDS=	esd.2.16:${PORTSDIR}/audio/esound \
 		Fnlib.0.5:${PORTSDIR}/graphics/fnlib \

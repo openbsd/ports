@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/12 08:41:10 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:45 turan Exp $
 
 DISTNAME=	rtptools-1.9
 CATEGORIES=	mbone
@@ -7,10 +7,10 @@ MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/schulzrinne/rtptools/
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 MAKE_ENV=	ARCH=openbsd CC=cc
 

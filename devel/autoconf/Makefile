@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/12 08:02:12 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/15 05:04:09 turan Exp $
 
 DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
@@ -8,10 +8,10 @@ MASTER_SITE_SUBDIR= autoconf
 MAINTAINER=	espie@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 # Both are needed for now as bsd.port.mk does not cause RUN_DEPENDS to
 # be created before running configure, which causes the build to do the

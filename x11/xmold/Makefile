@@ -3,7 +3,7 @@
 # Date created:        December 21, 1997
 # Whom:                Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/12 08:41:14 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:36 turan Exp $
 #
 
 DISTNAME=	xmold
@@ -14,10 +14,10 @@ MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 MAINTAINER=	don@OpenBSD.ORG
 
 LICENSE_TYPE=		NONE
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 USE_IMAKE=	yes
 

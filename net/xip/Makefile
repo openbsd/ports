@@ -3,7 +3,7 @@
 # Date created:		21 Jun 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:29 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:02 turan Exp $
 
 DISTNAME=	xip-1.3.2
 
@@ -14,10 +14,10 @@ MASTER_SITES=	http://www.capmedia.fr/mgall/xip/
 MAINTAINER=	dugsong@monkey.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 USE_AUTOCONF=	yes
 

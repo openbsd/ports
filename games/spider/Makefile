@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/12 06:29:52 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:24 turan Exp $
 
 DISTNAME=	spider
 PKGNAME=	spider-1.1
@@ -9,10 +9,10 @@ MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/ \
 MAINTAINER=	angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.doc

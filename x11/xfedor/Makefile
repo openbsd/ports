@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/12 06:30:08 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:34 turan Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -10,10 +10,10 @@ MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
 MAINTAINER=     angelos@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 USE_IMAKE=      yes
 

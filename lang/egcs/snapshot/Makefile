@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2000/02/12 08:02:22 turan Exp $
+# $OpenBSD: Makefile,v 1.65 2000/02/15 05:04:36 turan Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -15,10 +15,10 @@ CATEGORIES=	lang
 MAINTAINER=	Marc.Espie@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 MIRROR_DISTFILE=no
 

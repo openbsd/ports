@@ -3,7 +3,7 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/12 08:41:12 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:10 turan Exp $
 
 DISTNAME=	john-1.6
 
@@ -12,10 +12,10 @@ CATEGORIES=     security
 MAINTAINER=	dugsong@monkey.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=	http://www.openwall.com/john/ \
 		http://www.false.com/security/john/ \

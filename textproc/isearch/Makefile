@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/12 06:30:05 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/15 05:05:21 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
 
 BROKEN=		C++ syntax errors, index.cxx:533: ANSI C++ forbids declaration PhraseLength with no type
@@ -11,10 +11,10 @@ MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 GNU_CONFIGURE= yes 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/12 08:02:35 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/15 05:05:39 turan Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 DISTNAME=	xtraceroute-0.8.14
@@ -12,10 +12,10 @@ HOMEPAGE=	http://www.dtek.chalmers.se/~d3august/xt/index.html
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		MesaGL.3:${PORTSDIR}/graphics/Mesa \

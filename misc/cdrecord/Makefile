@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/12 08:02:24 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/15 05:04:48 turan Exp $
 
 DISTNAME=	cdrecord-1.6.1
 CATEGORIES=	misc
@@ -7,10 +7,10 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 MAINTAINER=	niklas@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 # It's pretty easy to add other architectures,
 # mail me if you miss a particular one.

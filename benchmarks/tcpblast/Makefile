@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/12 08:41:08 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:04 turan Exp $
 
 NEED_VERSION=		1.191
 DISTNAME=		tcpblast
@@ -8,10 +8,10 @@ CATEGORIES=		net benchmarks
 MAINTAINER=		ports@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 # Link the contained source files into the build environment
 FULLDISTDIR=		${.CURDIR}/src

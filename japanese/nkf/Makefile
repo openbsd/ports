@@ -1,5 +1,5 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.3 2000/02/12 06:29:56 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:36 turan Exp $
 
 
 DISTNAME=	nkf-1.62
@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/
 MAINTAINER=	espie@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 MAKEFILE=${FILESDIR}/Makefile
 
 ALL_TARGET=nkf

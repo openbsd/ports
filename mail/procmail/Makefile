@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/02/12 08:02:24 turan Exp $
+# $OpenBSD: Makefile,v 1.12 2000/02/15 05:04:42 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       procmail-3.14
@@ -25,10 +25,10 @@ INSTALL_TARGET= install-suid install.man
 MAINTAINER=     rohee@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 HOMEPAGE=	http://www.procmail.org
 

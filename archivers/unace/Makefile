@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/14 22:12:48 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/15 05:03:54 turan Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 
 DISTNAME=	unacepub
@@ -11,10 +11,10 @@ NEED_VERSION=	1.191
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PKG_CDROM=	yes
-PERMIT_PKG_FTP=		yes
-PERMIT_DISTF_CDROM=	yes
-PERMIT_DISTF_FTP=	yes
+PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_FTP=	yes
 
 USE_ZIP=	yes
 

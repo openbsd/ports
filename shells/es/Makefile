@@ -3,7 +3,7 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/12 08:58:17 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:13 turan Exp $
 #
 
 DISTNAME=       es-0.9-alpha1
@@ -14,10 +14,10 @@ MASTER_SITES=   ftp://ftp.sys.toronto.edu/pub/es/
 MAINTAINER=	gene@OpenBSD.ORG
 
 LICENSE_TYPE=		PD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 post-install:
 	@echo

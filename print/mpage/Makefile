@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.5 2000/02/12 06:30:02 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:07 turan Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -14,10 +14,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ianm@cit.nepean.uws.edu.au
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 NO_PACKAGE=	package must be made manually with three paper sizes
 

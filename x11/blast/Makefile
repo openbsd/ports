@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			don
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/12 08:02:33 turan Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:27 turan Exp $
 #
 
 DISTNAME=	blast-1.0-ss-9.03
@@ -16,10 +16,10 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 MAINTAINER=	don@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 USE_X11=	yes
 MAN1=		blast.1

@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:33 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:28 turan Exp $
 #
 
 DISTNAME=	explorer-0.72
@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://jungfrau.ptf.hro.nl/pub/explorer/
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 

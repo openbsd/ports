@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/12 08:41:08 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:16 turan Exp $
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
@@ -6,10 +6,10 @@ CATEGORIES=	devel
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 MASTER_SITES=	http://www.backplane.com/xmake/ \
 		ftp://atari.saturn5.com/pub/dlowe/

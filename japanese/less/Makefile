@@ -5,7 +5,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.5 2000/02/12 06:29:56 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:35 turan Exp $
 #
 
 DISTNAME=	less-332
@@ -29,10 +29,10 @@ MAINTAINER=espie@openbsd.org
 #MAINTAINER=	nobu@psrc.isac.co.jp
 
 LICENSE_TYPE=		BSD
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 GNU_CONFIGURE=	Yes
 MAN1=		jless.1 jlesskey.1

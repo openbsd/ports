@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/15 02:38:18 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/15 05:04:22 turan Exp $
 
 BROKEN=		sources missing
 
@@ -9,10 +9,10 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/
 MAINTAINER=	israfil@gmx.net
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 # If USE_GTK is defined, freeciv will be built with a prettier look and
 # feel:

@@ -3,7 +3,7 @@
 # Date created:         14 Mar 1999
 # Whom:                 dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/12 08:02:30 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:11 turan Exp $
 
 PKGNAME=	nessus-${VERS}
 
@@ -30,10 +30,10 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/ \
 MAINTAINER=	dugsong@monkey.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PKG_CDROM=	YES
-PERMIT_PKG_FTP=		YES
-PERMIT_DISTF_CDROM=	YES
-PERMIT_DISTF_FTP=	YES
+PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE_FTP=	YES
+PERMIT_DISTFILES_CDROM=	YES
+PERMIT_DISTFILES_FTP=	YES
 
 LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+
 
