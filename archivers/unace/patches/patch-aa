@@ -1,13 +1,25 @@
-diff -ru ../../1/unix/makefile ./unix/makefile
---- ../../1/unix/makefile	Wed Jul  1 05:29:10 1998
-+++ ./unix/makefile	Tue Feb 23 20:48:11 1999
-@@ -16,7 +16,8 @@
+--- unix/makefile.orig	Wed Jul  1 04:29:10 1998
++++ unix/makefile	Thu May 20 20:23:50 1999
+@@ -16,11 +16,11 @@
  #CFLAGS = -Wall -O3 -s #-DNDEBUG
  #CFLAGS = -g -Wall -DMDEBUG
  #CFLAGS = -O3 -fno-strength-reduce -fomit-frame-pointer # These are for Linux
 -CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
 +#CFLAGS = -O -g -Wall -dLO_HI_BYTE_ORDER
-+CFLAGS += -O3 -fno-strength-reduce -fomit-frame-pointer
  CHALLOC = challoc.o
  CHALLOC =
  CHNEW = chnew.o challoc.o
+-CC = gcc
++#CC = gcc
+ 
+ ifeq ($(OSTYPE), Linux)
+ CFLAGS += -DUNIX -DCASEINSENSE
+@@ -38,7 +38,7 @@
+ 
+ 
+ unace$(EXEEXT): $(OBJ) $(CHALLOC)
+-	gcc $(CFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
+ 
+ clean:
+ 	rm -f *.o a.out core unace unace.exe
