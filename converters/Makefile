@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2005/01/14 18:04:38 todd Exp $
+# $OpenBSD: Makefile,v 1.29 2005/02/06 15:16:39 sturm Exp $
 #
 
     SUBDIR += base64
@@ -10,9 +10,11 @@
     SUBDIR += libiconv
     SUBDIR += mimepp
     SUBDIR += mpack
+    SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
     SUBDIR += p5-Convert-BinHex
+    SUBDIR += p5-Convert-PEM
     SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-Convert-UUlib
