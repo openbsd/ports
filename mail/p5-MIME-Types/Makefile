@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/11 15:04:38 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2004/04/29 16:04:50 robert Exp $
 
 COMMENT=	"perl module to manage MIME types"
 
-DISTNAME=	MIME-Types-1.12
+DISTNAME=	MIME-Types-1.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	mail perl5
 
