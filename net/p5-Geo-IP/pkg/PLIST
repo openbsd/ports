@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/11 19:46:03 naddy Exp $
+${P5ARCH}/
+${P5ARCH}/Geo/
+${P5ARCH}/Geo/IP/
+${P5ARCH}/Geo/IP.pm
+${P5ARCH}/Geo/IP/Record.pm
+${P5ARCH}/Geo/IP/Record.pod
+${P5ARCH}/Geo/Mirror.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Geo/
+${P5ARCH}/auto/Geo/IP/
+${P5ARCH}/auto/Geo/IP/IP.bs
+${P5ARCH}/auto/Geo/IP/IP.so
+@man man/man3p/Geo::IP.3p
+@man man/man3p/Geo::IP::Record.3p
+@man man/man3p/Geo::Mirror.3p

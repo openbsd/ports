@@ -1,0 +1,7 @@
+This module uses a file based database. This database simply contains IP
+blocks as keys, and countries as values. This database should be more
+complete and accurate than reverse DNS lookups.
+
+This module can be used to automatically select the geographically closest
+mirror, to analyze your web server logs to determine the countries of your
+visitors, for credit card fraud detection, and for software export controls.
