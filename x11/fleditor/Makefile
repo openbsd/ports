@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/09/07 16:18:28 heko Exp $
+# $OpenBSD: Makefile,v 1.6 2001/09/07 16:35:51 heko Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
@@ -34,7 +34,7 @@ post-patch:
 	@rmdir ${WRKSRC}/obj
 
 do-install:
-	@${_install_shared_frag}
+	@${install_shared_frag}
 	${INSTALL_DATA} ${WRKBUILD}/libfleditor.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/include/FL
 	${INSTALL_DATA} ${WRKSRC}/FL/*.[Hh] ${PREFIX}/include/FL
@@ -42,9 +42,9 @@ do-install:
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-_install_shared_frag= :
+install_shared_frag= :
 .else
-_install_shared_frag=\
+install_shared_frag=\
 	${INSTALL_DATA} ${WRKBUILD}/libfleditor.so* ${PREFIX}/lib
 .endif
 
