@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/10 19:01:21 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/01/12 01:40:33 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.7
@@ -42,7 +42,7 @@ pre-build:
 	@echo ""
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/aclocal
+	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/imlib.m4 ${LOCALBASE}/share/aclocal/
 	@${LDCONFIG} -m ${PREFIX}/lib
 
