@@ -3,11 +3,9 @@
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.2 1999/10/26 04:56:37 turan Exp $
-# $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:37 turan Exp $
+# $Id: Makefile,v 1.3 1999/11/03 05:24:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/03 05:24:13 kevlo Exp $
 #
-
-BROKEN=		bad packing lists
 
 DISTNAME=	magicpoint-1.05a
 # question is for localized (i.e. Japanese) version
