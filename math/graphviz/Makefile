@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/09 23:36:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/11 00:32:53 brad Exp $
 
 CATEGORIES=	math devel graphics
 NEED_VERSION=	1.406
@@ -42,8 +42,8 @@ post-extract:
 
 LIB_DEPENDS=	tcl83.::lang/tcl/8.3 \
 		tk83.::x11/tk/8.3 \
-		jpeg.::graphics/jpeg \
-		png.::graphics/png
+		jpeg.62::graphics/jpeg \
+		png.2::graphics/png
 
 BUILD_DEPENDS=	autoconf::devel/autoconf \
 		automake::devel/automake
