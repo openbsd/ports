@@ -1,0 +1,11 @@
+--- include/config.h.orig	Mon Jan  8 06:24:22 2001
++++ include/config.h	Wed Feb 27 19:57:16 2002
+@@ -35,7 +35,7 @@
+  * too peruse this function all you like. It's not a BACKDOOR in any way, 
+  * shape or form.
+  */
+-#define WANT_NOTIFY_BITCHX_COM ON
++#undef WANT_NOTIFY_BITCHX_COM ON
+ 
+ 
+ /*

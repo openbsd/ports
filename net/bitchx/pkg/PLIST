@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2000/09/16 04:19:59 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2002/03/01 00:18:11 brad Exp $
 bin/BitchX
 bin/BitchX-${VERSION}
 bin/scr-bx
 libexec/wserv-bitchx
+man/man1/BitchX.1
 share/bitchx/BitchX.help
 share/bitchx/BitchX.ircnames
+share/bitchx/BitchX.kick
 share/bitchx/BitchX.quit
-share/bitchx/BitchX.reasons
 share/bitchx/help/1_General/1_General
 share/bitchx/help/1_General/4op
 share/bitchx/help/1_General/about
@@ -57,6 +58,7 @@ share/bitchx/help/1_General/dcc/activecount
 share/bitchx/help/1_General/dcc/autoget
 share/bitchx/help/1_General/dcc/autooverwrite
 share/bitchx/help/1_General/dcc/autorename
+share/bitchx/help/1_General/dcc/autoresume
 share/bitchx/help/1_General/dcc/bot
 share/bitchx/help/1_General/dcc/chat
 share/bitchx/help/1_General/dcc/close
@@ -466,7 +468,6 @@ share/bitchx/help/4_Misc/window/window
 share/bitchx/help/5_Programming/5_Programming
 share/bitchx/help/5_Programming/alias
 share/bitchx/help/5_Programming/assign
-share/bitchx/help/5_Programming/blah
 share/bitchx/help/5_Programming/bless
 share/bitchx/help/5_Programming/break
 share/bitchx/help/5_Programming/call
@@ -714,6 +715,7 @@ share/bitchx/help/6_Functions/numonchannel
 share/bitchx/help/6_Functions/numwords
 share/bitchx/help/6_Functions/onchannel
 share/bitchx/help/6_Functions/open
+share/bitchx/help/6_Functions/ovserver
 share/bitchx/help/6_Functions/pad
 share/bitchx/help/6_Functions/pattern
 share/bitchx/help/6_Functions/pid
@@ -916,12 +918,15 @@ share/bitchx/help/findcomm
 share/bitchx/help/functions
 share/bitchx/help/out
 share/bitchx/script/actplug.gmz
+share/bitchx/script/auto_resume
 share/bitchx/script/bxglobal
 share/bitchx/script/bxtcl.tcl
 share/bitchx/script/example-.bitchxrc
 share/bitchx/script/file.tcl
 share/bitchx/script/fserve+vfs.tar.gz
+share/bitchx/script/fserve.irc
 share/bitchx/script/menu.bx
+share/bitchx/script/query
 share/bitchx/script/query.bx
 share/bitchx/translation/ASCII
 share/bitchx/translation/CP437
@@ -956,21 +961,21 @@ share/bitchx/translation/SWEDISH_NAMES_COM
 share/bitchx/translation/SWISS
 share/bitchx/translation/UNITED_KINGDOM
 share/bitchx/translation/UNITED_KINGDOM_COM
-@dirrm share/bitchx/help/1_General/ctcp
-@dirrm share/bitchx/help/1_General/dcc
-@dirrm share/bitchx/help/1_General
-@dirrm share/bitchx/help/2_Queries
-@dirrm share/bitchx/help/3_Operators
-@dirrm share/bitchx/help/4_Misc/bind
-@dirrm share/bitchx/help/4_Misc/set
-@dirrm share/bitchx/help/4_Misc/window
-@dirrm share/bitchx/help/4_Misc
+@dirrm share/bitchx/translation
+@dirrm share/bitchx/script
+@dirrm share/bitchx/help/8_Scripts
+@dirrm share/bitchx/help/7_Docs
+@dirrm share/bitchx/help/6_Functions
 @dirrm share/bitchx/help/5_Programming/on
 @dirrm share/bitchx/help/5_Programming
-@dirrm share/bitchx/help/6_Functions
-@dirrm share/bitchx/help/7_Docs
-@dirrm share/bitchx/help/8_Scripts
+@dirrm share/bitchx/help/4_Misc/window
+@dirrm share/bitchx/help/4_Misc/set
+@dirrm share/bitchx/help/4_Misc/bind
+@dirrm share/bitchx/help/4_Misc
+@dirrm share/bitchx/help/3_Operators
+@dirrm share/bitchx/help/2_Queries
+@dirrm share/bitchx/help/1_General/dcc
+@dirrm share/bitchx/help/1_General/ctcp
+@dirrm share/bitchx/help/1_General
 @dirrm share/bitchx/help
-@dirrm share/bitchx/script
-@dirrm share/bitchx/translation
 @dirrm share/bitchx
