@@ -3,8 +3,10 @@
 # Date created:         24 November 1997
 # Whom:                 angelos
 #
-# $OpenBSD: Makefile,v 1.2 1998/04/10 01:41:44 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/06 20:36:59 marc Exp $
 #
+
+BROKEN=		"source file no longer available"
 
 DISTNAME=       nulib-3.25
 CATEGORIES=	archivers
