@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.85 2001/09/10 23:55:11 miod Exp $
+# $OpenBSD: Makefile,v 1.86 2001/09/30 19:36:46 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 
+BROKEN=		"Older than stable port, needs to be updated"
 COM=		'GNU compiler collection (experimental)'
 COMMENT=	${COM}: core C compiler
 COMMENT-c++ =	${COM}: C++ compiler
