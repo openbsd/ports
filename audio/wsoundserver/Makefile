@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/19 10:11:16 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
 DISTNAME=		WSoundServer-0.4.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio
-NEED_VERSION=		1.482
+NEED_VERSION=		1.513
 
 HOMEPAGE=		http://shadowmere.student.utwente.nl/
 
@@ -43,9 +43,6 @@ CONFIGURE_ARGS+=	--enable-esd
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
-
-post-patch:
-	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wsoundserver
