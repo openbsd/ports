@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/21 16:46:47 todd Exp $
+# $OpenBSD: Makefile,v 1.9 2003/11/02 17:40:17 margarida Exp $
 
 COMMENT=		"parallelized login hacker"
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=		http://www.thehackerschoice.com/releases/
 
 NO_REGRESS=		Yes
 
