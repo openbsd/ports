@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/24 20:32:30 pvalchev Exp $
-lib/libIDL.so.4.4
-DYNLIBDIR(%B)

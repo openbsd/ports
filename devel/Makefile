@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2002/03/24 20:33:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.124 2002/03/24 20:40:39 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -57,7 +57,6 @@
      SUBDIR += libglade,gnome
      SUBDIR += libgtop
      SUBDIR += libgtop,gnome
-     SUBDIR += libidl
      SUBDIR += libproplist
      SUBDIR += libsigc++
      SUBDIR += libslang
