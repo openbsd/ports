@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:44:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/12/14 01:40:26 kevlo Exp $
 ${P5ARCH}/
 ${P5ARCH}/XML/
 ${P5ARCH}/XML/Parser/
@@ -16,6 +16,7 @@ ${P5ARCH}/XML/Parser/Encodings/iso-8859-7.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-8.enc
 ${P5ARCH}/XML/Parser/Encodings/iso-8859-9.enc
 ${P5ARCH}/XML/Parser/Encodings/windows-1250.enc
+${P5ARCH}/XML/Parser/Encodings/windows-1252.enc
 ${P5ARCH}/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
 ${P5ARCH}/XML/Parser/Encodings/x-euc-jp-unicode.enc
 ${P5ARCH}/XML/Parser/Encodings/x-sjis-cp932.enc
@@ -24,6 +25,12 @@ ${P5ARCH}/XML/Parser/Encodings/x-sjis-jisx0221.enc
 ${P5ARCH}/XML/Parser/Encodings/x-sjis-unicode.enc
 ${P5ARCH}/XML/Parser/Expat.pm
 ${P5ARCH}/XML/Parser/LWPExternEnt.pl
+${P5ARCH}/XML/Parser/Style/
+${P5ARCH}/XML/Parser/Style/Debug.pm
+${P5ARCH}/XML/Parser/Style/Objects.pm
+${P5ARCH}/XML/Parser/Style/Stream.pm
+${P5ARCH}/XML/Parser/Style/Subs.pm
+${P5ARCH}/XML/Parser/Style/Tree.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/XML/
 ${P5ARCH}/auto/XML/Parser/
@@ -32,3 +39,8 @@ ${P5ARCH}/auto/XML/Parser/Expat/Expat.bs
 ${P5ARCH}/auto/XML/Parser/Expat/Expat.so
 @man man/man3p/XML::Parser.3p
 @man man/man3p/XML::Parser::Expat.3p
+@man man/man3p/XML::Parser::Style::Debug.3p
+@man man/man3p/XML::Parser::Style::Objects.3p
+@man man/man3p/XML::Parser::Style::Stream.3p
+@man man/man3p/XML::Parser::Style::Subs.3p
+@man man/man3p/XML::Parser::Style::Tree.3p
