@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.2 1998/10/13 15:01:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/16 00:03:51 espie Exp $
 
 DISTNAME=icon_lib-9.3.1
 DIST_SUBDIR=icon
@@ -22,6 +22,7 @@ WRKSRC=${WRKDIR}
 MASTER_SITES=ftp://ftp.cs.arizona.edu:/icon/library/
 
 BUILD_DEPENDS=${PREFIX}/bin/icont:${PORTSDIR}/lang/icon
+RUN_DEPENDS=${PREFIX}/bin/iconx:${PORTSDIR}/lang/icon
 
 # temporary values for building programs
 IPATH=${WRKSRC}/gprocs ${WRKSRC}/procs
