@@ -1,0 +1,4 @@
+lib/libnet.a
+include/libnet.h
+include/libnet-headers.h
+man/man3/libnet.3
