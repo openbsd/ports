@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/01/26 00:34:30 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/02/07 20:40:21 brad Exp $
 #
 # Pre/post-installation setup of gimp
 
@@ -27,6 +27,9 @@ do_install()
 {
     install -d -o root -g wheel -m 755 $CONFIG_DIR
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gimprc-sample $CONFIG_DIR/gimprc
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gimprc_user-sample $CONFIG_DIR/gimprc_user
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gtkrc-sample $CONFIG_DIR/gtkrc
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/gtkrc_user-sample $CONFIG_DIR/gtkrc_user
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/ps-menurc-sample $CONFIG_DIR/ps-menurc
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/unitrc-sample $CONFIG_DIR/unitrc
     echo

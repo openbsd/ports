@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2001/01/26 00:34:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.29 2001/02/07 20:40:21 brad Exp $
 bin/escputil
 bin/gimp
 bin/gimp-config
@@ -261,6 +261,8 @@ man/man5/gimprc.5
 share/aclocal/gimp.m4
 share/examples/gimp/gimprc-sample
 share/examples/gimp/gimprc_user-sample
+share/examples/gimp/gtkrc-sample
+share/examples/gimp/gtkrc_user-sample
 share/examples/gimp/ps-menurc-sample
 share/examples/gimp/unitrc-sample
 share/gimp/brushes/10x10square.gbr
