@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/08/19 01:34:03 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/08/19 01:41:23 brad Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
-NEED_VERSION=	1.191
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
 
