@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2003/12/30 03:10:02 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/25 05:49:35 jolan Exp $
 
 COMMENT=	"text mode rss newsreader"
-DISTNAME=	snownews-1.4.2
+DISTNAME=	snownews-1.4.4
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
