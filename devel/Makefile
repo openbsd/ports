@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.264 2004/12/08 05:47:01 msf Exp $
+# $OpenBSD: Makefile,v 1.265 2004/12/08 18:02:03 xsa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -186,6 +186,7 @@
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-Module-Build
+     SUBDIR += p5-Module-CoreList
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
      SUBDIR += p5-Number-Compare-Date
