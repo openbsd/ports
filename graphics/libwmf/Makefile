@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/13 15:28:15 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/04 04:12:57 pvalchev Exp $
 
 COMMENT=	"WMF handling and conversion library"
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	xml2::textproc/libxml \
 		png.2::graphics/png
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	LIBS="-lm"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --with-png=${LOCALBASE} --with-freetype=${X11BASE}
 CONFIGURE_ARGS+= --with-jpeg=${LOCALBASE} --with-zlib=/usr
