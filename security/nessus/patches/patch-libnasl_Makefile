@@ -1,6 +1,7 @@
---- libnasl/Makefile.orig	Sat Jun 10 16:30:05 2000
-+++ libnasl/Makefile	Sat Jun 10 16:29:20 2000
-@@ -8,7 +8,7 @@
+$OpenBSD: patch-libnasl_Makefile,v 1.1 2000/10/01 00:35:52 matt Exp $
+--- libnasl/Makefile.orig	Fri Mar 10 08:32:45 2000
++++ libnasl/Makefile	Tue Sep 26 13:48:04 2000
+@@ -8,7 +8,7 @@ nasl.tmpl: nasl.tmpl.in configure
  	touch $@
  
  install :

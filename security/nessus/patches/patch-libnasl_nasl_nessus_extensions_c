@@ -1,0 +1,12 @@
+$OpenBSD: patch-libnasl_nasl_nessus_extensions_c,v 1.1 2000/10/01 00:35:52 matt Exp $
+--- libnasl/nasl/nessus_extensions.c.orig	Sat Sep 16 17:01:21 2000
++++ libnasl/nasl/nessus_extensions.c	Tue Sep 26 13:48:04 2000
+@@ -19,7 +19,7 @@
+  */
+ #include <includes.h>
+ #include <nasl_raw.h>
+-#include <nessus/pcap.h>
++#include <pcap.h>
+ #include "strutils.h"
+ #include "nasl_inet.h"
+ #include "defines.h"

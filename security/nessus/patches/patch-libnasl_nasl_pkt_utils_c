@@ -1,0 +1,12 @@
+$OpenBSD: patch-libnasl_nasl_pkt_utils_c,v 1.1 2000/10/01 00:35:52 matt Exp $
+--- libnasl/nasl/pkt_utils.c.orig	Sat Sep 16 17:01:21 2000
++++ libnasl/nasl/pkt_utils.c	Tue Sep 26 13:48:04 2000
+@@ -18,7 +18,7 @@
+  *
+  */
+ #include <includes.h>
+-#include <nessus/pcap.h>
++#include <pcap.h>
+ #include <nasl_raw.h>
+ #include "strutils.h"
+ #include "nasl_inet.h"

@@ -1,5 +1,6 @@
---- libnasl/nasl/init.c.orig	Sat Jun 10 12:52:36 2000
-+++ libnasl/nasl/init.c	Sat Jun 10 12:52:49 2000
+$OpenBSD: patch-libnasl_nasl_init_c,v 1.1 2000/10/01 00:35:52 matt Exp $
+--- libnasl/nasl/init.c.orig	Wed Jul 26 07:37:14 2000
++++ libnasl/nasl/init.c	Tue Sep 26 13:48:04 2000
 @@ -19,7 +19,7 @@
   */
  #include <includes.h>

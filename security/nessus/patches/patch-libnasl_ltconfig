@@ -1,6 +1,7 @@
---- libnasl/ltconfig.orig	Fri Jul 14 22:22:14 2000
-+++ libnasl/ltconfig	Fri Jul 14 22:22:24 2000
-@@ -2002,7 +2002,7 @@
+$OpenBSD: patch-libnasl_ltconfig,v 1.1 2000/10/01 00:35:52 matt Exp $
+--- libnasl/ltconfig.orig	Mon Apr  3 11:13:02 2000
++++ libnasl/ltconfig	Tue Sep 26 13:48:05 2000
+@@ -2002,7 +2002,7 @@ openbsd*)
      need_version=no
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'

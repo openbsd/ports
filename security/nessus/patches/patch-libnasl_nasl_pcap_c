@@ -1,5 +1,6 @@
---- libnasl/nasl/pcap.c.orig	Sat Jun 10 12:55:31 2000
-+++ libnasl/nasl/pcap.c	Sat Jun 10 12:55:36 2000
+$OpenBSD: patch-libnasl_nasl_pcap_c,v 1.1 2000/10/01 00:35:52 matt Exp $
+--- libnasl/nasl/pcap.c.orig	Tue Aug  1 11:52:14 2000
++++ libnasl/nasl/pcap.c	Tue Sep 26 13:48:04 2000
 @@ -21,7 +21,7 @@
  #include <includes.h>
  #include <nasl_raw.h>
