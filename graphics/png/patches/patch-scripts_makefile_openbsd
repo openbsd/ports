@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.9 2004/07/06 21:53:16 brad Exp $
---- scripts/makefile.openbsd.orig	Thu Oct  3 07:32:34 2002
-+++ scripts/makefile.openbsd	Tue Jul  6 17:33:35 2004
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.10 2004/09/20 01:24:11 brad Exp $
+--- scripts/makefile.openbsd.orig	Sat Sep 11 22:19:36 2004
++++ scripts/makefile.openbsd	Sat Sep 18 22:43:38 2004
 @@ -1,13 +1,16 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
@@ -16,9 +16,9 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.9 2004/07/06 21:53:16 brad Exp $
 +DOCDIR=	${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.5
+-SHLIB_MINOR=	1.2.7
 +SHLIB_MAJOR=	4
-+SHLIB_MINOR=	0
++SHLIB_MINOR=	1
  
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
