@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2004/09/15 18:32:13 espie Exp $
-@lib lib/liba2ps.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2005/02/11 19:44:38 alek Exp $
+@lib lib/liba2ps.so.2.0
