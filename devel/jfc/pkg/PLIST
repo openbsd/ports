@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/05 09:39:10 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2001/01/03 07:35:43 kevlo Exp $
 share/java/classes/swing1_1_1/multi.jar
 share/java/classes/swing1_1_1/swingall.jar
 share/java/classes/swing1_1_1/swing.jar
@@ -2065,5 +2065,5 @@ share/java/swing1_1_1/examples/TableExample/TableExample.jar
 @dirrm share/java/swing1_1_1/examples/TableExample
 @dirrm share/java/swing1_1_1/examples
 @dirrm share/java/swing1_1_1/
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true
+@unexec rmdir %D/share/java/classes || true
+@unexec rmdir %D/share/java || true
