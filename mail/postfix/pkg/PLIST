@@ -60,7 +60,8 @@ lib/postfix/main.cf
 lib/postfix/main.cf.orig
 lib/postfix/master.cf
 lib/postfix/master.cf.orig
-lib/postfix/postfix-script
+lib/postfix/postfix-script-sgid
+lib/postfix/postfix-script-nosgid
 lib/postfix/relocated
 lib/postfix/sample-aliases.cf
 lib/postfix/sample-canonical.cf
