@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2005/03/03 07:16:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.359 2005/03/07 17:10:25 todd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += dnstracer
      SUBDIR += doc
      SUBDIR += drill
+     SUBDIR += dsocks
      SUBDIR += dss
      SUBDIR += dxpc
      SUBDIR += echoping
