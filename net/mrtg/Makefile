@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 1999/11/28 05:22:43 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/12/06 01:25:33 brad Exp $
 
-DISTNAME=	mrtg-2.8.8
+DISTNAME=	mrtg-2.8.9
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
@@ -24,10 +24,10 @@ do-install:
 	@mkdir -p ${PREFIX}/share/doc/mrtg
 	@mkdir -p ${PREFIX}/lib/mrtg
 	@for file in ${WRKSRC}/doc/*; do \
-		${INSTALL_DATA} $$file ${PREFIX}/share/doc/mrtg; \
+	 ${INSTALL_DATA} $$file ${PREFIX}/share/doc/mrtg; \
 	done
 	@for file in ${WRKSRC}/images/*.gif; do \
-		${INSTALL_DATA} $$file ${PREFIX}/share/mrtg; \
+	 ${INSTALL_DATA} $$file ${PREFIX}/share/mrtg; \
 	done
 	${INSTALL_PROGRAM} ${WRKSRC}/run/rateup ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/run/cfgmaker ${PREFIX}/bin
@@ -41,6 +41,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-mrtg.cfg ${PREFIX}/lib/mrtg/mrtg.cfg.sample
 
 post-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	@PKG_PREFIX="${PREFIX}" sh  ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
