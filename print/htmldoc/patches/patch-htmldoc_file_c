@@ -1,0 +1,17 @@
+$OpenBSD: patch-htmldoc_file_c,v 1.1.1.1 2001/02/21 23:31:31 avsm Exp $
+--- htmldoc/file.c.orig	Tue Feb 13 10:31:16 2001
++++ htmldoc/file.c	Wed Feb 21 21:53:19 2001
+@@ -410,11 +410,11 @@ file_find(const char *path,		/* I - Path
+              GetCurrentProcessId(), web_files);
+ #else
+     if ((tmpdir = getenv("TMPDIR")) == NULL)
+-      tmpdir = "/var/tmp";
++      tmpdir = "/tmp";
+ 
+     snprintf(filename, sizeof(filename), "%s/%06d.%06d", tmpdir, web_files,
+              getpid());
+-    if ((fd = open(filename, O_CREAT | O_EXCL | O_TRUNC, 0600)) >= 0)
++    if ((fd = open(filename, O_CREAT | O_EXCL , 0600)) != -1)
+       close(fd);
+     else
+     {

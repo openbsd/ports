@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/02/21 23:31:31 avsm Exp $
+--- Makefile.in.orig	Wed Feb 21 20:39:13 2001
++++ Makefile.in	Wed Feb 21 20:39:24 2001
+@@ -67,7 +67,7 @@ install:
+ 	$(MAKE) all
+ 	for dir in $(INSTALLDIRS); do\
+ 		echo Installing in $$dir...;\
+-		(cd $$dir; $(MAKE) -$(MAKEFLAGS) clean) || break;\
++		(cd $$dir; $(MAKE) -$(MAKEFLAGS) install) || break;\
+ 	done
+ 
+ 
