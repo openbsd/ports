@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/09/15 18:32:15 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/02 21:10:04 alek Exp $
 
 COMMENT=	"PDF-generating toolkit for Python"
 
@@ -9,7 +9,7 @@ CATEGORIES=	print graphics
 
 HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

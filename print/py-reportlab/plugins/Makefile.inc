@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.2 2004/08/03 21:31:08 xsa Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2004/11/02 21:10:03 alek Exp $
 
 CATEGORIES=	print graphics
 
 HOMEPAGE=	http://www.reportlab.org/rl_toolkit.html
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

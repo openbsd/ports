@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/27 08:55:23 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/02 21:10:04 alek Exp $
 
 COMMENT=	"barcode generator for reportlab"
 
@@ -6,8 +6,7 @@ VERSION=	0.9.2
 DISTNAME=	rlbarcode-${VERSION}
 PKGNAME=	py-reportlab-barcode-${VERSION}
 
-MASTER_SITES=	http://eufemia.signoff.com.pl/~alek/ \
-		http://metawers.nic.com.pl:81/openbsd-ports/
+MASTER_SITES=	http://www.reportlab.org/ftp/extensions/
 
 WRKDIST=	${WRKDIR}
 
