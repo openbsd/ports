@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/09/22 23:13:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.29 2004/04/06 03:12:19 brad Exp $
 
 COMMENT=	"GNU make"
 
@@ -25,12 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
-
-# XXX workaround sparc64 gcc optimization bug where gmake built
-# with optimization level > 0 would get random sig11's.
-.if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=	-O0
-.endif
 
 post-extract:
 	@rm -f ${WRKSRC}/doc/make.info*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/10/16 22:22:00 brad Exp $
+# $OpenBSD: Makefile,v 1.34 2004/04/06 03:12:19 brad Exp $
 
 COMMENT=	"GNU parser generator"
 
@@ -18,11 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV=	MAKEINFOFLAGS="--no-split"
-
-# XXX workaround gcc bugs on sparc64
-.if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=	-O0
-.endif
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
