@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/03 07:08:36 mark Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/28 00:19:40 mark Exp $
 
 COMMENT=	"Library of Emacs Input Method"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
-BUILD_DEPENDS=	:emacs-*:editors/emacs21
-RUN_DEPENDS=	:emacs-*:editors/emacs21
+BUILD_DEPENDS=	:emacs-${VERSION}*:editors/emacs21
+RUN_DEPENDS=	:emacs-${VERSION}*:editors/emacs21
 
 SUBST_VARS=	VERSION
 
