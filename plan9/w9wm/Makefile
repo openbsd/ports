@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/22 20:48:50 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/08 19:11:37 brad Exp $
 
 DISTNAME=	w9wm-0.1
 CATEGORIES=	plan9
@@ -6,7 +6,7 @@ NEED_VERSION=	1.330
 MASTER_SITES=	http://inferno.cs.univ-paris8.fr/~drieu/w9wm/ \
 		http://www.resentment.org/~unix/
 
-MAINTAINER=	unix@resentment.org
+MAINTAINER=	William Yodlowsky <unix@resentment.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
