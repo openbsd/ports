@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/25 08:40:57 jakob Exp $
+bin/doc
+libexec/doc/doc-1.awk
+libexec/doc/doc-3.awk
+libexec/doc/doc-4.awk
+man/man8/doc.8
+@dirrm libexec/doc

@@ -1,0 +1,6 @@
+Doc is an initial implementation of an automated domain testing tool.
+We expect considerable design modification and implementation changes
+to be made as experience is gained through use in the Internet.  At
+some point, we expect the design to stabilize and a production
+version, implemented in something other than the current UNIX-tool
+patchwork, to be released.
