@@ -1,13 +1,28 @@
-$OpenBSD: patch-kioslave_man_kio_man_h,v 1.1 2002/04/16 13:59:18 espie Exp $
---- kioslave/man/kio_man.h.orig	Tue Apr 16 14:38:14 2002
-+++ kioslave/man/kio_man.h	Tue Apr 16 15:31:42 2002
-@@ -60,6 +60,9 @@ public:
+$OpenBSD: patch-kioslave_man_kio_man_h,v 1.2 2002/04/18 00:26:40 espie Exp $
+--- kioslave/man/kio_man.h.orig	Tue Apr 16 15:51:05 2002
++++ kioslave/man/kio_man.h	Thu Apr 18 02:06:08 2002
+@@ -60,12 +60,16 @@ public:
  
  private:
      void checkManPaths();
 +    QStringList manDirectories();
 +    QMap<QString, QString> buildIndexMap(const QString& section);
-+    void addWhatIs(QMap<QString, QString>& i, const QString& f, const QString& mark);
++    bool addWhatIs(QMap<QString, QString>& i, const QString& f, const QString& mark);
      QStringList findPages(const QString& section, 
                            const QString &title, 
                            bool full_path = true);
+ 
+     void addToBuffer(const char *buffer, int buflen);
+     QString pageName(const QString& page) const;
++    QStringList buildSectionList(const QStringList& dirs) const;
+     QCString output_string;
+ 
+     static MANProtocol *_self;
+@@ -73,6 +77,7 @@ private:
+     QString common_dir;
+ 
+     QStringList m_manpath;
++    QStringList section_names;
+ };
+ 
+ 
