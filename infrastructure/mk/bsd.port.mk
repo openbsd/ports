@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.115 1999/09/20 21:42:01 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.116 1999/09/22 10:16:58 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -130,6 +130,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  and ${PATCHFILES} will be put in this subdirectory of
 #				  ${DISTDIR}.  Also they will be fetched in this subdirectory 
 #				  from FreeBSD mirror sites.
+# FULLDISTDIR	- ${DISTDIR}/${DIST_SUBDIR}, useful for non-standard
+#                 installations that override fetch and/or extract.
 # ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}.
 # MIRROR_DISTFILE - Whether the distfile is redistributable without restrictions.
 #				  Defaults to "yes", set this to "no" if restrictions exist.
@@ -423,7 +425,7 @@ PORTSDIR?=		/usr/ports
 LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
-_DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
+FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
@@ -1310,12 +1312,12 @@ describe:
 
 .if !target(do-fetch)
 do-fetch:
-	@${MKDIR} ${_DISTDIR}
-	@cd ${_DISTDIR}; \
+	@${MKDIR} ${FULLDISTDIR}
+	@cd ${FULLDISTDIR}; \
 	 for file in ${DISTFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
-				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
+				${ECHO_MSG} ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
 				exit 1; \
@@ -1326,8 +1328,8 @@ do-fetch:
 				fi ; \
 			fi ; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-			if [ ! -w ${_DISTDIR}/. ]; then \
-				${ECHO_MSG} ">> Can't download to ${_DISTDIR} (permission denied?)."; \
+			if [ ! -w ${FULLDISTDIR}/. ]; then \
+				${ECHO_MSG} ">> Can't download to ${FULLDISTDIR} (permission denied?)."; \
 				exit 1; \
 			fi; \
 			for site in ${MASTER_SITES}; do \
@@ -1337,16 +1339,16 @@ do-fetch:
 				fi \
 			done; \
 			${ECHO_MSG} ">> Couldn't fetch it - please try to retrieve this";\
-			${ECHO_MSG} ">> port manually into ${_DISTDIR} and try again."; \
+			${ECHO_MSG} ">> port manually into ${FULLDISTDIR} and try again."; \
 			exit 1; \
 	    fi \
 	 done
 .if defined(PATCHFILES)
-	@cd ${_DISTDIR}; \
+	@cd ${FULLDISTDIR}; \
 	 for file in ${PATCHFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
-				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
+				${ECHO_MSG} ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
 				exit 1; \
@@ -1359,7 +1361,7 @@ do-fetch:
 				fi \
 			done; \
 			${ECHO_MSG} ">> Couldn't fetch it - please try to retrieve this";\
-			${ECHO_MSG} ">> port manually into ${_DISTDIR} and try again."; \
+			${ECHO_MSG} ">> port manually into ${FULLDISTDIR} and try again."; \
 			exit 1; \
 	    fi \
 	 done
@@ -1434,7 +1436,7 @@ do-extract:
 .endif
 	@PATH=${PORTPATH}; \
 	for file in ${EXTRACT_ONLY}; do \
-		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
 		then \
 			exit 1; \
 		fi \
@@ -1447,7 +1449,7 @@ do-extract:
 do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@cd ${_DISTDIR}; \
+	@cd ${FULLDISTDIR}; \
 	  for i in ${PATCHFILES}; do \
 	  	case ${PATCH_DEBUG_TMP} in \
 			yes) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
@@ -1853,11 +1855,11 @@ pre-distclean:
 .if !target(distclean)
 distclean: pre-distclean clean
 	@${ECHO_MSG} "===>  Dist cleaning for ${PKGNAME}"
-	@if cd ${_DISTDIR} 2>/dev/null; then \
+	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		${RM} -f ${DISTFILES} ${PATCHFILES}; \
 	fi
 .if defined(DIST_SUBDIR)
-	-@${RMDIR} ${_DISTDIR}  
+	-@${RMDIR} ${FULLDISTDIR}  
 .endif
 .endif
 
@@ -1887,12 +1889,12 @@ fetch-list-recursive:
 
 .if !target(fetch-list-one-pkg)
 fetch-list-one-pkg:
-	@${MKDIR} ${_DISTDIR}
-	@[ -z "${_DISTDIR}" ] || ${ECHO} "${MKDIR} ${_DISTDIR}"
-	@(cd ${_DISTDIR}; \
+	@${MKDIR} ${FULLDISTDIR}
+	@[ -z "${FULLDISTDIR}" ] || ${ECHO} "${MKDIR} ${FULLDISTDIR}"
+	@(cd ${FULLDISTDIR}; \
 	 for file in ${DISTFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			${ECHO} -n "cd ${_DISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
+			${ECHO} -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
 			for site in ${MASTER_SITES} ; do \
 				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
@@ -1900,10 +1902,10 @@ fetch-list-one-pkg:
 		fi \
 	done)
 .if defined(PATCHFILES)
-	@(cd ${_DISTDIR}; \
+	@(cd ${FULLDISTDIR}; \
 	 for file in ${PATCHFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			${ECHO} -n "cd ${_DISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
+			${ECHO} -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
 			for site in ${PATCH_SITES}; do \
 				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
