@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/16 16:51:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/03/17 16:06:52 wilfried Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/07 04:20:49 hubertf Exp $
 
-COMMENT=	ac3 audio (as used on DVDs) decoding tools
+COMMENT=	'ac3 audio (as used on DVDs) decoding tools'
 
 DISTNAME=	ac3dec-0.6.1
 CATEGORIES=	audio
