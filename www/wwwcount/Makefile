@@ -1,28 +1,40 @@
-# OpenBSD makefile for:    wwwcount
-# Version required:     2.3
-# Date created:         17 Nov 1997
-# Whom:                 ejovi
+# OpenBSD makefile for:	wwwcount
+# Version required:	2.3
+# Date created:		17 Nov 1997
+# Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/19 01:07:58 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/08/11 03:16:49 form Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
 # For digit images look at:
 # http://www.digitmania.holowww.com/
 
-DISTNAME=       wwwcount2.3
-PKGNAME=        wwwcount-2.3
-CATEGORIES=     www
-MASTER_SITES=   http://www.fccc.edu/users/muquit/src/wwwcount2.3/
+DISTNAME=	wwwcount2.4
+PKGNAME=	wwwcount-2.4
+CATEGORIES=	www
+MASTER_SITES=	http://www.fccc.edu/users/muquit/src/wwwcount2.4/
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=	form@vs.itam.nsc.ru
 
-GNU_CONFIGURE=  yes
-IS_INTERACTIVE= yes
+GNU_CONFIGURE=	yes
+IS_INTERACTIVE=	yes
 MAN1=		mkstrip.1
+
+.if defined(USE_RELOAD)
+COUNT_RELOAD=	-DCOUNT_RELOAD=1
+.endif
 
 pre-configure:
 	cd ${WRKSRC}; yes "" | PREFIX=${PREFIX} ./Count-config
+
+pre-build:
+.if !defined(USE_RELOAD)
+	@echo "***"
+	@echo "*** Do \"make USE_RELOAD=yes\" if you want to disable"
+	@echo "*** \"reload ignore\" feature."
+	@echo "***"
+.endif
 
 post-build:
 	cd ${WRKSRC}/utils; ${MAKE}

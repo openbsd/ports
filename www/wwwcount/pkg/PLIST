@@ -1,7 +1,5 @@
-www/cgi-bin/Count.cgi
-etc/Counter/conf/count.cfg
-etc/Counter/data/sample.dat
-lib/Counter/rgb.txt
+bin/extdgts
+bin/mkstrip
 lib/Counter/digits/A/strip.gif
 lib/Counter/digits/B/strip.gif
 lib/Counter/digits/C/strip.gif
@@ -9,15 +7,8 @@ lib/Counter/digits/D/strip.gif
 lib/Counter/digits/D/lenna.gif
 lib/Counter/digits/E/strip.gif
 lib/Counter/digits/mkstrip.sh
-bin/mkstrip
+lib/Counter/rgb.txt
 man/man1/mkstrip.1
-@exec touch /var/log/Counter.log
-@exec chown nobody.nogroup /var/log/Counter.log
-@exec chmod 644 /var/log/Counter.log
-@unexec rm /var/log/Counter.log
-@dirrm etc/Counter/data
-@dirrm etc/Counter/conf
-@dirrm etc/Counter
 @dirrm lib/Counter/digits/A
 @dirrm lib/Counter/digits/B
 @dirrm lib/Counter/digits/C
@@ -25,3 +16,8 @@ man/man1/mkstrip.1
 @dirrm lib/Counter/digits/E
 @dirrm lib/Counter/digits
 @dirrm lib/Counter
+@unexec rm -f /var/www/cgi-bin/Count.cgi /var/www/logs/Counter.log
+@unexec echo "***"
+@unexec echo "*** Please remove /var/www/Counter directory and its"
+@unexec echo "*** contents manually to complete uninstall process."
+@unexec echo "***"
