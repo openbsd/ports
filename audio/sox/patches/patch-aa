@@ -22,7 +22,7 @@
   #include <i386/isa/sblast.h>
   #else
   #ifdef LINUXSOUND
-! #include <machine/soundcard.h>
+! #include <soundcard.h>
   #else
   #include <sys/sb.h>
   #endif
