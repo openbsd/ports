@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/28 12:30:14 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/01/01 18:27:11 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.483
-VERSION=		2.2.1
+NEED_VERSION=		1.504
+VERSION=		2.2.2
 DISTNAME=		kdeartwork-${VERSION}
 DIST_SUBDIR=		kde
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	kdecore.3,kdeui::x11/kde/libs2
 BUILD_DEPENDS+=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
 
 CONFIGURE_STYLE=	autoconf
+AUTOCONF_NEW=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
 CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
