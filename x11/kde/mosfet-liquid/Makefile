@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/21 16:25:09 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/21 17:41:19 espie Exp $
 V=0.5
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.402
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--enable-mitshm
 
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2
+CONFIGURE_ENV+=		UIC_NOT_NEEDED=true
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-configure:
