@@ -1,14 +1,6 @@
-# OpenBSD makefile for:	postfix
-# Version required:	beta-19990122
-# Date created:		1998-Dec-10
-# Whom:			dugsong@OpenBSD.ORG
-#
-# Relevant URLs:	http://www.postfix.org/
-#			http://www.alphaworks.ibm.com/formula/securemailer/
-#
-# $OpenBSD: Makefile,v 1.6 1999/06/13 16:15:57 dugsong Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/26 20:35:59 jakob Exp $
 
-DISTNAME=	postfix-19990601
+DISTNAME=	postfix-19990906-pl05
 CATEGORIES=     mail
 
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
@@ -19,7 +11,6 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 MAINTAINER=	dugsong@monkey.org
 
 IS_INTERACTIVE=	yes
-
 NO_CONFIGURE=	yes
 
 ALL_TARGET=	default
