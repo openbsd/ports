@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/09 15:37:23 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/22 01:49:19 margarida Exp $
 
 COMMENT=		"rip shoutcast streams to local mp3s"
 
@@ -7,7 +7,7 @@ CATEGORIES=		audio
 
 HOMEPAGE=		http://streamripper.sourceforge.net/
 
-MAINTAINER=		Mark Grimes <mark@stateful.net>
+MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,14 +19,10 @@ MASTER_SITES=		http://streamripper.sourceforge.net/dl/
 
 CONFIGURE_STYLE=	gnu
 
-DOC=	CHANGES COPYING README THANKS
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/streamripper
-.for file in ${DOC}
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/streamripper
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/streamripper
 
 NO_REGRESS=		Yes
 

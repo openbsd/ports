@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/02/19 08:19:42 mark Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/22 01:49:19 margarida Exp $
 bin/streamripper
-share/doc/streamripper/CHANGES
-share/doc/streamripper/COPYING
 share/doc/streamripper/README
-share/doc/streamripper/THANKS
 @dirrm share/doc/streamripper
