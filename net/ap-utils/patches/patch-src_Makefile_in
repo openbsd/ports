@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
+--- src/Makefile.in.orig	Sun Jan 19 14:47:17 2003
++++ src/Makefile.in	Sun Jan 19 14:47:29 2003
+@@ -106,7 +106,7 @@ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIB
+ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+ 
+-CFLAGS = 
++CFLAGS = @CFLAGS@
+ DEFS = -DLOCALEDIR=\"$(datadir)/locale\" -DHAVE_CONFIG_H
+ INCLUDES = -I../lib -I.. -I../intl
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ap-utils_h,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
+--- lib/ap-utils.h.orig	Sun Jan 19 14:50:08 2003
++++ lib/ap-utils.h	Sun Jan 19 14:50:19 2003
+@@ -46,7 +46,7 @@
+ 
+ /* GNU gettext stuff*/
+ #include <locale.h>
+-#include <libgnuintl.h>
++#include <intl/libgnuintl.h>
+ #define _(String) gettext (String)
+ 
+ #define TITLE "Wireless Access Point Utilites for Unix"

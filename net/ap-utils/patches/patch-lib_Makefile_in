@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
+--- lib/Makefile.in.orig	Sun Jan 19 14:46:59 2003
++++ lib/Makefile.in	Sun Jan 19 14:47:12 2003
+@@ -106,7 +106,7 @@ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIB
+ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+ 
+-CFLAGS = -I../intl
++CFLAGS = @CFLAGS@
+ 
+ noinst_LIBRARIES = libap.a
+ 

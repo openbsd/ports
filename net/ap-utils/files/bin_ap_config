@@ -1,0 +1,52 @@
+# $OpenBSD: bin_ap_config,v 1.1.1.1 2003/01/20 17:15:57 sturm Exp $
+Policy: /usr/local/bin/ap-config, Emulation: native
+	native-__sysctl: permit
+	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then permit
+	native-break: permit
+	native-close: permit
+	native-exit: permit
+	native-fcntl: permit
+	native-fork: permit
+	native-fsread: filename eq "$HOME/.ap-config" then permit
+	native-fsread: filename eq "$HOME/.terminfo" then permit
+	native-fsread: filename eq "$HOME/.terminfo.db" then permit
+	native-fsread: filename eq "/etc/malloc.conf" then permit
+	native-fsread: filename eq "/usr/X11R6/lib" then permit
+	native-fsread: filename eq "/usr/lib" then permit
+	native-fsread: filename eq "/usr/lib/libc.so.29.0" then permit
+	native-fsread: filename eq "/usr/lib/libmenu.so.2.0" then permit
+	native-fsread: filename eq "/usr/lib/libncurses.so.9.0" then permit
+	native-fsread: filename eq "/usr/libexec/ld.so" then permit
+	native-fsread: filename eq "/usr/local/lib" then permit
+	native-fsread: filename eq "/usr/share/misc/terminfo.db" then permit
+	native-fsread: filename eq "/var/run/ld.so.hints" then permit
+	native-fstat: permit
+	native-fstatfs: permit
+	native-fswrite: filename eq "$HOME/.ap-config" then permit
+	native-getdirentries: permit
+	native-getegid: permit
+	native-geteuid: permit
+	native-getgid: permit
+	native-gettimeofday: permit
+	native-getuid: permit
+	native-ioctl: permit
+	native-issetugid: permit
+	native-lseek: permit
+	native-madvise: permit
+	native-mmap: permit
+	native-mprotect: permit
+	native-munmap: permit
+	native-nanosleep: permit
+	native-pipe: permit
+	native-poll: permit
+	native-pread: permit
+	native-read: permit
+	native-recvfrom: permit
+	native-sendto: sockaddr match "inet-*:161" then permit
+	native-setitimer: permit
+	native-setsockopt: permit
+	native-sigaction: permit
+	native-sigprocmask: permit
+	native-socket: sockdom eq "AF_INET" and socktype eq "SOCK_DGRAM" then permit
+	native-wait4: permit
+	native-write: permit

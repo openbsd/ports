@@ -1,0 +1,18 @@
+Wireless Access Point Utilites for Unix
+
+This is a set of utilites to configure and monitor Wireless Access Points
+under Unix using SNMP. This package includes three utilities:
+
+ap-mrtg		- to get stats from AP and return it in MRTG format;
+ap-trapd	- to receive, parse and log trap messages from AP;
+ap-config	- to configure and get stats from Atmel-MIB based
+		  APs and devices that support IEEE 802.11 MIB and
+		  NWN DOT11EXT MIB;
+
+Supported Hardware
+
+ap-utils probably works with all Access Points based on the Atmel chipset.
+It may also work with APs with IEEE 802.11 MIB and NWN DOT11EXT MIB support,
+such as Compex WP11.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,6 @@
++------------
+| The ap-config systrace sample policy has been installed into
+| ${PREFIX}/share/examples/systrace. Please view this file
+| and change the policy to meet your needs. You can install this
+| file into /etc/systrace or your ~/.systrace directory.
++------------
