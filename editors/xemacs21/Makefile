@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2003/03/01 03:19:15 pvalchev Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -49,11 +49,16 @@ MODULES=	gettext
 
 USE_GMAKE=		Yes
 
+.include <bsd.own.mk>
+
 # 'configure.in' modified to generate a 'configure'
 # that knows about curses really being ncurses
 
 CONFIGURE_STYLE=	autoconf old dest
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng"
+.if (${ELF_TOOLCHAIN} == "yes")
+CONFIGURE_ENV+=		LDFLAGS="-Z"
+.endif
 CONFIGURE_ARGS+=	--with-gnu-make \
 			--gung-ho \
 			--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
