@@ -1,6 +1,5 @@
+bin/screen
 bin/screen-3.9.5
-@exec ln -sf %B%f %B/screen
-@unexec rm -f %B/screen
 man/man1/screen.1
 @unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
