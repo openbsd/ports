@@ -1,6 +1,7 @@
---- ltmain.sh.orig	Thu Feb  8 21:12:21 2001
-+++ ltmain.sh	Sun Feb 18 08:12:00 2001
-@@ -1081,6 +1081,17 @@
+$OpenBSD: patch-ltmain.sh,v 1.4 2001/06/02 20:18:44 brad Exp $
+--- ltmain.sh.orig	Wed May  9 16:34:38 2001
++++ ltmain.sh	Sat Jun  2 01:19:09 2001
+@@ -1081,6 +1081,17 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
@@ -18,7 +19,7 @@
  	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
-@@ -1093,6 +1104,10 @@
+@@ -1093,6 +1104,10 @@ compiler."
  	deplibs="$deplibs $arg"
  	;;
  
@@ -29,7 +30,7 @@
        -module)
  	module=yes
  	continue
-@@ -1798,6 +1813,9 @@
+@@ -1798,6 +1813,9 @@ compiler."
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
  	  ;;
@@ -39,7 +40,7 @@
          *-*-rhapsody*)
  	  # rhapsody is a little odd...
  	  deplibs="$deplibs -framework System"
-@@ -3570,40 +3588,6 @@
+@@ -3570,40 +3588,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.13 2001/02/15 01:14:34 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.1 2001/06/02 20:18:45 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 

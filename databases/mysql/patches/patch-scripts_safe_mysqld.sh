@@ -1,6 +1,7 @@
---- scripts/safe_mysqld.sh.orig	Wed Apr 18 04:45:53 2001
-+++ scripts/safe_mysqld.sh	Thu Apr 19 19:44:46 2001
-@@ -73,30 +73,9 @@
+$OpenBSD: patch-scripts_safe_mysqld.sh,v 1.4 2001/06/02 20:18:44 brad Exp $
+--- scripts/safe_mysqld.sh.orig	Wed May  9 16:34:36 2001
++++ scripts/safe_mysqld.sh	Sat Jun  2 01:19:10 2001
+@@ -73,30 +73,9 @@ parse_arguments() {
    done
  }
  
@@ -34,7 +35,7 @@
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -222,10 +201,10 @@
+@@ -222,10 +201,10 @@ fi
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
  # Does this work on all systems?
@@ -49,7 +50,7 @@
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -240,34 +219,6 @@
+@@ -240,34 +219,6 @@ do
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break

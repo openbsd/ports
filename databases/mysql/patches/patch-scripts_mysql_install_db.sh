@@ -1,5 +1,6 @@
---- scripts/mysql_install_db.sh.orig	Wed Apr 18 04:45:56 2001
-+++ scripts/mysql_install_db.sh	Thu Apr 19 19:36:59 2001
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.6 2001/06/02 20:18:44 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Wed May  9 16:34:39 2001
++++ scripts/mysql_install_db.sh	Sat Jun  2 01:19:10 2001
 @@ -7,12 +7,9 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
@@ -16,7 +17,7 @@
  defaults=
  case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -33,10 +30,10 @@
+@@ -33,10 +30,10 @@ parse_arguments() {
  
    for arg do
      case "$arg" in
@@ -28,7 +29,7 @@
        *)
          if test -n "$pick_args"
          then
-@@ -69,7 +66,6 @@
+@@ -69,7 +66,6 @@ ldata=
  execdir=
  bindir=
  basedir=
@@ -36,7 +37,7 @@
  parse_arguments `$print_defaults $defaults mysqld mysql_install_db`
  parse_arguments PICK-ARGS-FROM-ARGV "$@"
  
-@@ -96,53 +92,37 @@
+@@ -96,53 +92,37 @@ mdata=$ldata/mysql
  
  if test ! -x $execdir/mysqld
  then
@@ -108,7 +109,7 @@
  
  # Initialize variables
  c_d="" i_d=""
-@@ -309,12 +289,6 @@
+@@ -309,12 +289,6 @@ $c_c
  END_OF_DATA
  then
    echo ""
@@ -121,7 +122,7 @@
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "This is done with:"
    echo "$bindir/mysqladmin -u root -p password 'new-password'"
-@@ -330,15 +304,6 @@
+@@ -330,15 +304,6 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo
