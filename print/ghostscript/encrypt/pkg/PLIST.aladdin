@@ -1,0 +1,5 @@
+@comment Stub to avoid tripping @exec
+share/ghostscript/6.0/lib/.gs-encrypt
+@exec mv %D/share/ghostscript/6.0/lib/pdf_sec.ps %D/share/ghostscript/6.0/lib/pdf_sec.stub
+share/ghostscript/6.0/lib/pdf_sec.ps
+@unexec mv %D/share/ghostscript/6.0/lib/pdf_sec.stub %D/share/ghostscript/6.0/lib/pdf_sec.ps
