@@ -1,0 +1,69 @@
+$OpenBSD: README,v 1.1 1999/01/13 13:58:46 espie Exp $
+
+Warning: highly experimental port.
+
+It is assumed you know what you are doing by playing with this.
+
+I am currently rewriting the openbsd configuration files, mostly from
+scratch, in order to clean them up.  Goal is to have something I can
+file up with the FSF as soon as possible, so that egcs 1.1.2 will have
+*official* openbsd support.
+
+There are copyright issues involved.
+
+If configuration for your favorite processor does not work, there are
+two possibilities:
+
+- you can send me complete bug reports, telling me what's wrong, and I will
+try to get a viable configuration.
+- you can do it yourself but, for any non-trivial change, you *MUST* file
+a copyright assignment with the FSF. Otherwise, your patch won't make it
+to the official egcs distribution, and we all lose.
+
+One point of the clean-up is to be able to trace the configuration
+precisely, so that it becomes easier to track newer versions of egcs,
+or port OpenBSD to other architectures. Accordingly, each code fragment
+has to be tagged with the place it originally came from, and variations
+from standard practice have to be thoroughly documented.
+
+For instance, if you have to change CC1_SPEC for OpenBSD, it is important
+to know what you changed from that default processor configuration: when
+egcs evolves and add new specs, it's easier to know what to pick up, and
+what to leave alone.
+
+As another example, netbsd recently added '.globl' to ASM_WEAKEN_LABEL,
+and I don't know why yet... I am trying to figure out why, and whether
+we need it to.
+
+As a final example, it turns out that a large part of openbsd configuration
+information in gcc 2.8.1 was just random cut&paste which didn't make much
+sense in many cases... Ultimately, I hope that all egcs/gcc openbsd flavors
+will use the same configuration files.
+
+From a technical point of view, part of the challenge is that some bugs
+may come from the compiler, some from the assembler, and from the linker.
+It's likely that the only way to resolve many bugs will be to finally 
+upgrade to a recent binutils... For instance, C++ currently has to resort
+to substandard setjump/longjump exceptions as we don't handle dwarf2 unwind
+info correctly.
+
+Accordingly, if you use this port, you MUST track current. For instance,
+Jason recently fixed a bug in gas that showed up during sparc bootstrap.
+
+Please read the Makefile before attempting to build this port. There might
+be some tweaks involved. Start with make patch, then read the
+documentation, and decide on changes. For instance, C++ folks may wish to 
+play with -fsquangle: since this is an option you need to activate for
+building the library, you had better decide from the start.
+
+On the other hand, there are several known situations which confuse our
+specific flavor of gas. For instance, recent snapshots build fine on the
+older machines with default CFLAGS (-O2 -g), but crash when -g is removed.
+
+Once you get through all those caveats, and manage to build egcs, one
+nice point is that you get fairly good C, C++, f77, objective-C, and
+java compilers.
+
+
+--
+	Marc Espie

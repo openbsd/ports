@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd.h,v 1.5 1999/01/12 11:27:40 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.6 1999/01/13 13:58:46 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -52,7 +52,13 @@
    still uses a special flavor of gas that needs to be told when generating 
    pic code. */
 #undef ASM_SPEC
-#define ASM_SPEC " %| %{fpic:-k} %{fPIC:-k -K}"
+#define ASM_SPEC "%| %{fpic:-k} %{fPIC:-k -K}"
+#else
+/* Since we use gas, stdin -> - is a good idea, but we don't want to
+   override native specs just for that. */
+#ifndef ASM_SPEC
+#define ASM_SPEC "%|"
+#endif
 #endif
 
 
@@ -100,10 +106,10 @@
 
 /* Support of shared libraries, mostly imported from svr4.h through netbsd. */
 /* Two differences from svr4.h:
-   - we use .-_func instead of a local label,
-   - we put a space after commas in expressions such as 
-     .type _func, @function
-     This is more readable, for a human being as well as for the C++ demangler.
+   - we use .- _func instead of a local label,
+   - we put extra spaces in expressions such as 
+     .type _func , @function
+     This is more readable for a human being and confuses c++filt less.
  */
 /* These macros are needed for correct pic code generation, but they
    should not break anything even if that specific system does not yet handle
@@ -150,7 +156,7 @@
   do {									\
     fprintf (FILE, "\t%s\t ", TYPE_ASM_OP);				\
     assemble_name (FILE, NAME);						\
-    fputs (", ", FILE);							\
+    fputs (" , ", FILE);						\
     fprintf (FILE, TYPE_OPERAND_FMT, "function");			\
     putc ('\n', FILE);							\
     ASM_DECLARE_RESULT (FILE, DECL_RESULT (DECL));			\
@@ -165,7 +171,7 @@
       {									\
 	fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);				\
 	assemble_name (FILE, (FNAME));					\
-	fputs(", .-", FILE);						\
+	fputs(" , .- ", FILE);						\
 	assemble_name (FILE, (FNAME));					\
 	putc ('\n', FILE);						\
       }									\
@@ -177,7 +183,7 @@
   do {									\
     fprintf (FILE, "\t%s\t ", TYPE_ASM_OP);				\
     assemble_name (FILE, NAME);						\
-    fputs (", ", FILE);							\
+    fputs (" , ", FILE);						\
     fprintf (FILE, TYPE_OPERAND_FMT, "object");				\
     putc ('\n', FILE);							\
     size_directive_output = 0;						\
@@ -186,7 +192,7 @@
 	size_directive_output = 1;					\
 	fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);				\
 	assemble_name (FILE, NAME);					\
-	fprintf (FILE, ",%d\n",  int_size_in_bytes (TREE_TYPE (DECL)));	\
+	fprintf (FILE, " , %d\n", int_size_in_bytes (TREE_TYPE (DECL)));\
       }									\
     ASM_OUTPUT_LABEL(FILE, NAME);					\
   } while (0)
@@ -208,22 +214,33 @@ do {									 \
 	 size_directive_output = 1;					 \
 	 fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);			 \
 	 assemble_name (FILE, name);					 \
-	 fprintf (FILE, ", %d\n",  int_size_in_bytes (TREE_TYPE (DECL))); \
+	 fprintf (FILE, " , %d\n", int_size_in_bytes (TREE_TYPE (DECL)));\
        }								 \
    } while (0)
+
+
+/* Those are `generic' ways to weaken/globalize a label. We shouldn't need
+   to override a processor specific definition. Hence, #ifndef ASM_*
+   In case overriding turns out to be needed, one can always #undef ASM_* 
+   before including this file.  */
 
 /* Tell the assembler that a symbol is weak.  */
 /* XXX binutils assembler should make weak labels global itself.  If you 
    need to emit a .globl here, it's likely your assembler is broken.  */
-#undef ASM_WEAKEN_LABEL
+#ifndef ASM_WEAKEN_LABEL
 #define ASM_WEAKEN_LABEL(FILE,NAME) \
   do { fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
        fputc ('\n', FILE); } while (0)
+#endif
 
 /* Tell the assembler that a symbol is global. */
-#undef ASM_GLOBALIZE_LABEL
+#ifndef ASM_GLOBALIZE_LABEL
 #define ASM_GLOBALIZE_LABEL(FILE,NAME) \
   do { fputs ("\t.globl\t", FILE); assemble_name (FILE, NAME); \
        fputc ('\n', FILE); } while(0)
+#endif
 
+
+/* Use VTABLE_THUNKS always: we don't have to worry about binary
+   compatibility with older C++ code. */
 #define DEFAULT_VTABLE_THUNKS 1
