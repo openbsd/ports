@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/08/23 16:06:03 peter Exp $
+# $OpenBSD: Makefile,v 1.11 2000/08/25 01:18:20 brad Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 
 #
@@ -6,6 +6,7 @@
 #
 DISTNAME=	zebra-0.88
 CATEGORIES=	net
+NEED_VERSION=	1.320
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
@@ -16,6 +17,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# you might need debugging, it's a developer release !
+#CFLAGS+=	-g
+
+SYSCONFDIR=	/etc/zebra
+SUBST_VARS=	SYSCONFDIR
+
+CONFIGURE_STYLE= gnu
 
 #
 # The snmp flavor doesn't quite work. The configue test for libsnmp.a
@@ -30,19 +39,15 @@ FLAVOR?=
 # CONFIGURE_ARGS+= --enable-vtysh
 
 .if ${FLAVOR:L:Msnmp}
-DEPENDS+=	net/ucd-snmp
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsnmp.a::net/ucd-snmp
 CONFIGURE_ARGS+= --enable-snmp
 .endif
 
-# you might need debugging, it's a developer release !
-#CFLAGS+=	-g
-
-SYSCONFDIR=	/etc/zebra
-CONFIGURE_STYLE= gnu
-
 post-install:
-	mkdir -p ${WRKINST}/usr/local/share/zebra
-	cp ${WRKINST}/etc/zebra/* ${WRKINST}/usr/local/share/zebra
-	chmod 0644 ${WRKINST}/usr/local/share/zebra/*
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zebra
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/zebra
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/zebra
+	${INSTALL_DATA} ${WRKSRC}/bgpd/README.mbgp ${PREFIX}/share/doc/zebra
+	${INSTALL_DATA} ${WRKINST}/etc/zebra/* ${PREFIX}/share/examples/zebra
 
 .include <bsd.port.mk>

@@ -1,19 +1,39 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/08/23 16:05:42 peter Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/08/25 01:18:21 brad Exp $
 #
 # Pre/post-installation setup of zebra
-
-SAMPLES="bgpd.conf.sample bgpd.conf.sample2 ripd.conf.sample
-	 ripngd.conf.sample zebra.conf.sample ospfd.conf.sample
-	 ospf6d.conf.sample README.mbgp"
 
 # exit on errors, use a sane path and install prefix
 #
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=/etc/zebra
-SAMPLE_CONFIG_DIR=${PREFIX}/share/zebra
+CONFIG_DIR=${SYSCONFDIR}
+SAMPLE_CONFIG_DIR=$PREFIX/share/examples/zebra
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| have NOT been changed.  You may want to compare them to the"
+    echo "| current sample files in $SAMPLE_CONFIG_DIR,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+do_notice_conf()
+{
+    install -d -o root -g wheel -m 755 $CONFIG_DIR
+    echo
+    echo "+---------------"
+    echo "| Sample $1 configuration files have been installed in"
+    echo "| $SAMPLE_CONFIG_DIR.  Please rename and install these files"
+    echo "| into $CONFIG_DIR. Change the configuration to meet your needs."
+    echo "+---------------"
+    echo
+}
 
 # verify proper execution
 #
@@ -22,20 +42,6 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
-do_notice()
-{
-    echo
-    echo "+---------------"
-    echo "| Sample $1 configuration files have been installed in"
-    echo "| ${CONFIG_DIR}.  Please review and rename these files and change"
-    echo "| the configuration to meet your needs."
-    echo "+---------------"
-    echo
-
-}
-
 # Verify/process the command
 #
 case $2 in
@@ -43,13 +49,11 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	install -d -o root -g bin -m 755 /etc/zebra
-	for file in ${SAMPLES}; do
-		install -o root -g bin -m 444 \
-			${PREFIX}/share/zebra/${file} \
-			${CONFIG_DIR}
-	done
-	do_notice $1
+	if [ ! -d $CONFIG_DIR ]; then
+	   do_notice_conf $1
+	else
+	   do_notice $1
+	fi
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
