@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2000/09/06 20:23:56 marc Exp $
+# $OpenBSD: Makefile,v 1.47 2000/09/07 04:02:07 brad Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -29,22 +29,17 @@
      SUBDIR += nfsshell
      SUBDIR += outguess
      SUBDIR += parse
-     SUBDIR += pgp:usa
-     SUBDIR += pgp:intl
-     SUBDIR += pgp5:usa
-     SUBDIR += pgp5:intl
+     SUBDIR += pgp
+     SUBDIR += pgp5
      SUBDIR += pgplib
      SUBDIR += portscanner
      SUBDIR += ppgen
      SUBDIR += radiusniff
      SUBDIR += rdp
-     SUBDIR += rsaref
      SUBDIR += scanlogd
      SUBDIR += sftp
      SUBDIR += smurflog
      SUBDIR += socks5
-     SUBDIR += ssl26
-     SUBDIR += sslintl
      SUBDIR += stel
      SUBDIR += strobe
      SUBDIR += stunnel
