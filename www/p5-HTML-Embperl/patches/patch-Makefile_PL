@@ -1,0 +1,59 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2001/03/19 17:31:36 peter Exp $
+--- Makefile.PL.orig	Mon Mar 19 15:29:31 2001
++++ Makefile.PL	Mon Mar 19 15:49:52 2001
+@@ -26,48 +26,48 @@ $EP2 = -f "epcmd2.c" ; 
+ %neededmodules =
+     ( 
+       'mod_perl.c' => { name	    => 'perl_module', 
+-			path	    => ['$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so', '$apache_src/mod_perl.so'],
++			path	    => ['$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so', '$apache_src/mod_perl.so', '/usr/local/lib/mod_perl.so'],
+ 			win32path   => ['$mpdll', '$mpdll/apachemoduleperl.dll', '$EPBINDIR/modules/apachemoduleperl.dll'],
+ 			file	    => 'libperl.so',
+ 			win32file   => 'apachemoduleperl.dll',
+ 		      },
+       'mod_dir.c'  => { name	    => 'dir_module', 
+-			path	    => ['$apache_src/modules/standard/mod_dir.so', '$EPBINDIR/modules/mod_dir.so', '$apache_src/mod_dir.so'],
++			path	    => ['$apache_src/modules/standard/mod_dir.so', '$EPBINDIR/modules/mod_dir.so', '$apache_src/mod_dir.so', '$apache_src/modules/mod_dir.so'],
+ 			win32path   => ['$apache_src/modules/standard/apachemoduledir.dll', '$EPBINDIR/modules/apachemoduledir.dll'],
+ 			file	    => 'mod_dir.so',
+ 			win32file   => 'apachemoduledir.dll',
+ 		      },
+ 
+       'mod_env.c'  => { name	    => 'env_module', 
+-			path	    => ['$apache_src/modules/standard/mod_env.so', '$EPBINDIR/modules/mod_env.so', '$apache_src/mod_env.so'],
++			path	    => ['$apache_src/modules/standard/mod_env.so', '$EPBINDIR/modules/mod_env.so', '$apache_src/mod_env.so', '$apache_src/modules/mod_env.so'],
+ 			win32path   => ['$apache_src/modules/standard/apachemoduleenv.dll', '$EPBINDIR/modules/apachemoduleenv.dll'],
+ 			file	    => 'mod_env.so',
+ 			win32file   => 'apachemoduleenv.dll',
+ 		      },
+ 
+       'mod_mime.c'  => { name	    => 'mime_module', 
+-			path	    => ['$apache_src/modules/standard/mod_mime.so', '$EPBINDIR/modules/mod_mime.so', '$apache_src/mod_mime.so'],
++			path	    => ['$apache_src/modules/standard/mod_mime.so', '$EPBINDIR/modules/mod_mime.so', '$apache_src/mod_mime.so', '$apache_src/modules/mod_mime.so'],
+ 			win32path   => ['$apache_src/modules/standard/apachemodulemime.dll', '$EPBINDIR/modules/apachemodulemime.dll'],
+ 			file	    => 'mod_mime.so',
+ 			win32file   => 'apachemodulemime.dll',
+ 		      },
+ 
+       'mod_alias.c'  => { name	    => 'alias_module', 
+-			path	    => ['$apache_src/modules/standard/mod_alias.so', '$EPBINDIR/modules/mod_alias.so', '$apache_src/mod_alias.so'],
++			path	    => ['$apache_src/modules/standard/mod_alias.so', '$EPBINDIR/modules/mod_alias.so', '$apache_src/mod_alias.so', '$apache_src/modules/mod_alias.so'],
+ 			win32path   => ['$apache_src/modules/standard/apachemodulealias.dll', '$EPBINDIR/modules/apachemodulealias.dll'],
+ 			file	    => 'mod_alias.so',
+ 			win32file   => 'apachemodulealias.dll',
+ 		      },
+ 
+       'mod_cgi.c'  => { name	    => 'cgi_module', 
+-			path	    => ['$apache_src/modules/standard/mod_cgi.so', '$EPBINDIR/modules/mod_cgi.so', '$apache_src/mod_cgi.so'],
++			path	    => ['$apache_src/modules/standard/mod_cgi.so', '$EPBINDIR/modules/mod_cgi.so', '$apache_src/mod_cgi.so', '$apache_src/modules/mod_cgi.so'],
+ 			win32path   => ['$apache_src/modules/standard/apachemodulecgi.dll', '$EPBINDIR/modules/apachemodulecgi.dll'],
+ 			file	    => 'mod_cgi.so',
+ 			win32file   => 'apachemodulecgi.dll',
+ 		      },
+ 
+       'mod_actions.c'  => { name	    => 'action_module', 
+-			path	    => ['$apache_src/modules/standard/mod_actions.so', '$EPBINDIR/modules/mod_actions.so', '$apache_src/mod_actions.so'],
++			path	    => ['$apache_src/modules/standard/mod_actions.so', '$EPBINDIR/modules/mod_actions.so', '$apache_src/mod_actions.so', '$apache_src/modules/mod_actions.so'],
+ 			win32path   => ['$apache_src/modules/standard/apachemoduleactions.dll', '$EPBINDIR/modules/apachemoduleactions.dll'],
+ 			file	    => 'mod_actions.so',
+ 			win32file   => 'apachemoduleactions.dll',

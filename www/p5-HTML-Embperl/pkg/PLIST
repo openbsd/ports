@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/19 17:31:36 peter Exp $
+libdata/perl5/site_perl/i386-openbsd/HTML/Changes.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/Embperl.pm
+libdata/perl5/site_perl/i386-openbsd/HTML/Embperl.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/Embperl/Mail.pm
+libdata/perl5/site_perl/i386-openbsd/HTML/Embperl/Module.pm
+libdata/perl5/site_perl/i386-openbsd/HTML/Embperl/Session.pm
+libdata/perl5/site_perl/i386-openbsd/HTML/EmbperlD.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/EmbperlObject.pm
+libdata/perl5/site_perl/i386-openbsd/HTML/Faq.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/Features.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/FeaturesD.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/INSTALL.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/Intro.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/IntroD.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/IntroEmbperlObject.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/NEWS.pod
+libdata/perl5/site_perl/i386-openbsd/HTML/TipsAndTricks.pod
+libdata/perl5/site_perl/i386-openbsd/auto/HTML/Embperl/.packlist
+libdata/perl5/site_perl/i386-openbsd/auto/HTML/Embperl/Embperl.bs
+libdata/perl5/site_perl/i386-openbsd/auto/HTML/Embperl/Embperl.so
+man/man3/HTML::Embperl.3
+man/man3/HTML::EmbperlD.3
+man/man3/HTML::EmbperlObject.3
+@dirrm libdata/perl5/site_perl/i386-openbsd/auto/HTML/Embperl
+@dirrm libdata/perl5/site_perl/i386-openbsd/HTML/Embperl

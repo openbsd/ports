@@ -1,0 +1,5 @@
+Embperl gives you the power to embed Perl code in your HTML documents
+and the ability to build your Web site out of small reusable objects
+in a OO-style. You can also take advantage all available Perl
+modules, (including DBI for database access) use their functionality
+and easily include their output into your web pages.
