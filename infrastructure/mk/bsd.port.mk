@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.392 2001/04/09 23:16:50 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.393 2001/04/11 15:55:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -199,7 +199,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 .endif
 
 FAKE?=Yes
-NEW_DEPENDS=Yes
+NEW_DEPENDS?=Yes
 WRKINST?=${WRKDIR}/fake-${ARCH}${FLAVOR_EXT}
 
 # Get the architecture
@@ -599,7 +599,7 @@ DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 # And create the actual files from sources
 ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST}
 	@echo "@comment name=${PKGPATH}/${FULLPKGNAME} cdrom=${PERMIT_PACKAGE_CDROM:L} ftp=${PERMIT_PACKAGE_FTP:L}" >$@.tmp
-.if defined(NEW_DEPENDS)
+.if ${NEW_DEPENDS:L} == "yes"
 	@self=${FULLPKGNAME} exec ${MAKE} new-depends|sort -u >>$@.tmp
 .endif
 .if defined(NO_SHARED_LIBS)
@@ -639,7 +639,7 @@ _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}
 .if !defined(PKG_ARGS)
 PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
-.if !defined(NEW_DEPENDS)
+.if ${NEW_DEPENDS} != "yes"
 PKG_ARGS+=-P "`cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' ${MAKE} package-depends|${_SORT_DEPENDS}`"
 .endif
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
@@ -2101,7 +2101,7 @@ describe:
 		echo -n "/dev/null|"; \
 	fi; \
 	echo -n "${MAINTAINER}|${CATEGORIES}|"
-.if defined(NEW_DEPENDS)
+.if ${NEW_DEPENDS:L} == "yes"
 .  if !empty(_ALWAYS_DEP2) || !empty(_BUILD_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} build-depends-list
 .  endif
@@ -2111,7 +2111,7 @@ describe:
 .  endif
 .endif
 	@echo -n "|"
-.if defined(NEW_DEPENDS)
+.if ${NEW_DEPENDS:L} == "yes"
 .  if !empty(_ALWAYS_DEP2) || !empty(_RUN_DEP2)
 	@cd ${.CURDIR} && _FINAL_ECHO=: _INITIAL_ECHO=: exec ${MAKE} run-depends-list
 .  endif
