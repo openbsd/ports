@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/02/04 07:39:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/07/05 22:09:52 jolan Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 COMMENT-devguide=	"Evolution Developer's Guide"
@@ -63,7 +63,7 @@ FLAVOR?=
 LIB_DEPENDS+=		ldap.2,lber.2::databases/openldap
 
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
-.if defined(NO_SHARED_LIBS)
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 CONFIGURE_ARGS+=	--with-static-ldap=yes
 .else
 CONFIGURE_ARGS+=	--with-static-ldap=no
