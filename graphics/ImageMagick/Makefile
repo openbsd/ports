@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2003/08/04 11:50:36 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2003/09/09 00:47:57 pvalchev Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	"Patents on freetype"
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
