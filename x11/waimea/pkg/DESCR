@@ -1,0 +1,6 @@
+Waimea is a virtual desktop window manager for X11 designed to be fast and
+highly customizable.
+It uses Blackbox image rendering engine (Blackbox styles support) and
+can use Xft library for font rendering (anti-aliased font support).
+
+WWW: ${HOMEPAGE}

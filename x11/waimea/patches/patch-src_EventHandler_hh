@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_EventHandler_hh,v 1.1.1.1 2002/09/01 09:23:11 couderc Exp $
+--- src/EventHandler.hh.orig	Fri Aug 30 10:42:45 2002
++++ src/EventHandler.hh	Fri Aug 30 10:54:49 2002
+@@ -15,7 +15,7 @@
+ #define __EventHandler_hh
+ 
+ #include <sys/types.h>
+-#include <sys/timeb.h>
++#include <sys/time.h>
+ #include <X11/Xlib.h>
+ #include <hash_set.h>
+ 
+@@ -64,7 +64,7 @@ private:
+     Waimea *waimea;
+     ResourceHandler *rh;
+     Window last_click_win;
+-    struct timeb last_click;
++    struct timeval last_click;
+ };
+ 
+ Bool eventmatch(WaAction *, EventDetail *);
