@@ -1,20 +1,37 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/07/06 04:00:11 mjc Exp $
 
 COMMENT=	"Classic Gnu Chess"
 
-DISTNAME=	gnuchess-4.0.pl80
-PKGNAME=	gnuchess-4.0.80
-CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU:=gnuchess/}
+DISTNAME=	gnuchess-5.07
+DISTFILES=	${DISTNAME}.tar.gz book_1.01.pgn.gz
 
-# License: GPL
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
+
+MAINTAINER=	Michael Coulter <mjc@openbsd.org>
+
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 
-WRKDIST=	${WRKDIR}/${DISTNAME}/src
+MAKE_FLAGS+=		CFLAGS="${CFLAGS} -DBOOK_PREFIX=\\\"${TRUEPREFIX}\\\""
+
+README=			${WRKSRC}/doc/README
+BOOK_FILE=		${WRKSRC}/src/book.dat
+
+post-build:
+		cd ${WRKSRC}/src && ln -sf ../../book_1.01.pgn
+		cd ${WRKSRC}/src && \
+		printf "book add book_1.01.pgn\nquit\n" | ./gnuchess ; echo
+
+post-install:
+		${INSTALL_DATA_DIR} ${PREFIX}/share/gnuchess
+		${INSTALL_DATA} ${BOOK_FILE} ${PREFIX}/share/gnuchess
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnuchess
+		${INSTALL_DATA} ${README} ${PREFIX}/share/doc/gnuchess
 
 .include <bsd.port.mk>
