@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/01 06:20:06 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/08 06:04:54 marc Exp $
 
 DISTNAME=       bison-1.25
 CATEGORIES=	devel
@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 # bison installs bison.info*... remove our patch original before installing
 #
 pre-install:
-	@${RM} ${WRKSRC}/bison.info.orig
+	@${RM} -f ${WRKSRC}/bison.info.orig
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
