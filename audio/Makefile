@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2001/08/16 21:58:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.66 2001/08/21 00:06:50 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -59,6 +59,7 @@
      SUBDIR += rplay
      SUBDIR += rsynth
 #    SUBDIR += s3mod
+     SUBDIR += shorten
      SUBDIR += sox
 #    SUBDIR += splay
      SUBDIR += teknap
@@ -84,6 +85,7 @@
      SUBDIR += xmix
      SUBDIR += xmmix
      SUBDIR += xmms
+     SUBDIR += xmms-shn
      SUBDIR += xmp
 
 .include <bsd.port.subdir.mk>
