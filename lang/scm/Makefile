@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/30 15:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/01/31 14:03:33 espie Exp $
 # losely based on the FreeBSD port
 
 CATEGORIES=	lang
@@ -57,8 +57,6 @@ do-install:
 .for file in ${SCM_DATA}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/scm
 .endfor
-	@touch ${PREFIX}/share/scm/implcat
-	@touch ${PREFIX}/share/scm/slibcat
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/scm/slib
 	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/scm/slib
 	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info

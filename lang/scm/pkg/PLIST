@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/30 14:59:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/31 14:03:33 espie Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/scm.info
 @unexec install-info --delete --info-dir=%D/info %D/info/slib.info
 bin/scm
@@ -14,7 +14,6 @@ share/scm/Macexp.scm
 share/scm/Macro.scm
 share/scm/Transcen.scm
 share/scm/Tscript.scm
-share/scm/implcat
 share/scm/mkimpcat.scm
 share/scm/require.scm
 share/scm/slib/Bev2slib.scm
@@ -136,7 +135,8 @@ share/scm/slib/withfile.scm
 share/scm/slib/wttest.scm
 share/scm/slib/wttree.scm
 share/scm/slib/yasyn.scm
-share/scm/slibcat
+@exec cd %D/share/scm && %D/bin/scm -fslib/mklibcat.scm
+@unexec rm %D/share/scm/implcat %D/share/scm/slibcat
 @dirrm share/scm/slib
 @dirrm share/scm
 @exec install-info --info-dir=%D/info %D/info/scm.info
