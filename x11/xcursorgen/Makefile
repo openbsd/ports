@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/04/25 07:51:36 miod Exp $
+# $OpenBSD: Makefile,v 1.5 2003/04/30 06:47:31 matthieu Exp $
 
 COMMENT=	"X11 Cursors themes"
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.cryptonomicon.org/distfiles/ \
-			http://lithely.net/distfiles/
+MASTER_SITES= 		http://lithely.net/distfiles/
 
 
 USE_X11=		Yes
