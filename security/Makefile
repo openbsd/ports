@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2001/05/16 15:30:13 jakob Exp $
+# $OpenBSD: Makefile,v 1.71 2001/05/19 16:20:53 markus Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -63,7 +63,6 @@
      SUBDIR += rdp
      SUBDIR += scanlogd
      SUBDIR += scanssh
-     SUBDIR += sftp
      SUBDIR += shash
      SUBDIR += shash,static
      SUBDIR += slurpie
