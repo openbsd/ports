@@ -1,8 +1,8 @@
 # $FreeBSD: Makefile,v 1.9 1998/12/02 05:56:01 asami Exp $
-# $OpenBSD: Makefile,v 1.2 1999/09/02 22:00:02 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/09/03 16:15:52 angelos Exp $
 
-DISTNAME=	vatsrc-4.0b2
-PKGNAME=	vat-4.0b2
+DISTFILES=	vatsrc-4.0b2.tar.gz
+DISTNAME=	vat-4.0b2
 CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 
