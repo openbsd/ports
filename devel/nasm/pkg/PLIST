@@ -1,5 +1,24 @@
 bin/nasm
 bin/ndisasm
+info/nasm.info
 man/man1/nasm.1
 man/man1/ndisasm.1
-share/nasm/internal.doc
+share/doc/nasm/internal.doc
+share/doc/nasm/nasmdo10.html
+share/doc/nasm/nasmdoc0.html
+share/doc/nasm/nasmdoc1.html
+share/doc/nasm/nasmdoc2.html
+share/doc/nasm/nasmdoc3.html
+share/doc/nasm/nasmdoc4.html
+share/doc/nasm/nasmdoc5.html
+share/doc/nasm/nasmdoc6.html
+share/doc/nasm/nasmdoc7.html
+share/doc/nasm/nasmdoc8.html
+share/doc/nasm/nasmdoc9.html
+share/doc/nasm/nasmdoca.html
+share/doc/nasm/nasmdoci.html
+share/doc/nasm/nasmdoc.ps
+share/doc/nasm/nasmdoc.src
+share/doc/nasm/nasmdoc.txt
+share/doc/nasm/rdsrc.pl
+@dirrm share/doc/nasm

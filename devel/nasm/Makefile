@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/01 06:20:08 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/04/05 10:27:34 rohee Exp $
 
 DISTNAME=	nasm-0.97
 CATEGORIES=	devel lang
@@ -9,13 +9,21 @@ MAINTAINER=	angelos@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/assemblers
-HAS_CONFIGURE=
 
-do-install:
-	cd ${WRKSRC} && \
-	${INSTALL_PROGRAM} nasm ndisasm ${PREFIX}/bin &&\
-	${INSTALL_MAN} nasm.1 ndisasm.1 ${PREFIX}/man/man1
-	$(MKDIR) -p $(PREFIX)/share/nasm
-	${INSTALL_MAN} $(WRKSRC)/*.doc $(PREFIX)/share/nasm
+GNU_CONFIGURE=	yes
+
+post-install:
+	${MKDIR} ${PREFIX}/share/doc/nasm
+	${INSTALL_MAN} ${WRKSRC}/*.doc ${PREFIX}/share/doc/nasm
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/nasm
+	${INSTALL_DATA} ${WRKSRC}/doc/nasmdoc.ps ${PREFIX}/share/doc/nasm
+	${INSTALL_DATA} ${WRKSRC}/doc/nasmdoc.src ${PREFIX}/share/doc/nasm
+	${INSTALL_DATA} ${WRKSRC}/doc/nasmdoc.txt ${PREFIX}/share/doc/nasm
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/rdsrc.pl ${PREFIX}/share/doc/nasm
+	${MKDIR} ${PREFIX}/info
+	${INSTALL_DATA} $(WRKSRC)/doc/nasm.info $(PREFIX)/info
+	test -f ${PREFIX}/info/dir || \
+		sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/nasm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
