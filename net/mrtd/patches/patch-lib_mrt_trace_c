@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_mrt_trace_c,v 1.1 2002/12/06 02:12:29 pvalchev Exp $
+--- lib/mrt/trace.c.orig	Thu Nov 28 22:25:08 2002
++++ lib/mrt/trace.c	Thu Nov 28 22:25:25 2002
+@@ -496,7 +496,7 @@ int set_trace (trace_t * tmp, int first,
+ 	    tmp->flags &= ~va_arg (ap, long);
+ 	    break;
+ 	case TRACE_USE_SYSLOG:
+-	    tmp->syslog_flag = va_arg(ap, u_char);
++	    tmp->syslog_flag = va_arg(ap, u_int);
+ 	    break;
+ 	case TRACE_MAX_FILESIZE:
+    	    if (tmp->slave) break; /* ignore */

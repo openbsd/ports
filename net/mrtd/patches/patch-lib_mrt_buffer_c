@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_mrt_buffer_c,v 1.1 2002/12/06 02:12:28 pvalchev Exp $
+--- lib/mrt/buffer.c.orig	Thu Nov 28 22:24:33 2002
++++ lib/mrt/buffer.c	Thu Nov 28 22:25:05 2002
+@@ -375,9 +375,7 @@ buffer_vprintf (buffer_t *buffer, char *
+ 	case 'X':
+ 	case 'x':
+ 	case 'b':
+-	    if (argtype == 'h')
+-		ulongarg = va_arg (ap, short);
+-	    else if (argtype == 'l')
++	    if (argtype == 'l')
+ 		ulongarg = va_arg (ap, long);
+ 	    else
+ 		ulongarg = va_arg (ap, int);
