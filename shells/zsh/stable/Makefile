@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/01/08 02:00:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/01/27 18:58:36 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -7,13 +7,13 @@ VERSION=	4.0.4
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
 NEED_VERSION=	1.474
-MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
+MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
+		ftp://ftp.zsh.org/zsh/ \
 		http://www.zsh.org/pub/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
 		ftp://ftp.cenatls.cena.dgac.fr/pub/shells/zsh/ \
 		ftp://mrrl.lut.ac.uk/zsh/ \
-		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 EXTRACT_SUFX=	.tar.bz2
