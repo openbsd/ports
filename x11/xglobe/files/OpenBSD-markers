@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.15 2001/08/15 02:29:19 danh Exp $
+# $OpenBSD: OpenBSD-markers,v 1.16 2001/08/21 00:11:32 miod Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -12,19 +12,21 @@
 40.033779  	-105.250051	"Miller"	# Todd
 35.660977	-97.468803	"Fries"		# Todd
 40.7517		-73.9942	"Shalayeff"	# Michael
-40.85		-96.75		"Phillips"	# Jim, OpenBSD journal
+40.85		-96.75		"Phillips"	# James, OpenBSD journal
 41.881		-87.628		"Creighton"	# Brandon
 42.2731		-83.782		"Campbell"	# Aaron
 42.2775		-83.754167	"Provos"	# Niels
-42.280556	-83.754722 	"Rees"		# Jim Rees
+42.280556	-83.754722 	"Rees"		# Jim
 42.281336	-83.738587	"Turan"		# Chris
 42.3813		-71.1283	"Janzen"	# Paul
 43.1342		-78.966048	"Harnett"	# Daniel L.
 43.5826		1.4376		"Herrb"		# Matthieu
 43.633          -79.500         "Smith"         # Brad
 43.70		-79.42		"Westerback"	# Ken
+43.9183		-78.6838	"Bertrand" 	# Louis
+45.29		-73.34		"Lebel"		# David
 45.5		-73.5		"Cote"		# Yannick
-45.78 		3.08		"Vallat"	# Miod
+45.78 		3.08		"Vallat"	# Miodrag
 47.50		7.60		"Hartmeier"	# Daniel
 48.3		15.7		"Sammer"	# Reinhard J.
 48.87		2.33		"Espie"		# Marc
@@ -41,7 +43,5 @@
 57.717		11.967		"Hallqvist"	# Niklas
 59.33		18.08		"Grabowski"	# Art
 59.43		17.81		"Jansson"	# Mats O
-60.12399	24.52438	"Virtanen"	# Jukka
-43.9183		-78.6838	"Bertrand" 	# Louis
-45.29		-73.34		"Lebel"		# David
 60.10		24.57		"Korpela"	# Heikki
+60.12399	24.52438	"Virtanen"	# Jukka
