@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/01/19 03:36:53 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/03/12 01:33:32 naddy Exp $
 #
 
     SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += ish
+    SUBDIR += libiconv
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Convert-ASN1
