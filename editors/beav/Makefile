@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 14:03:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/14 22:54:35 espie Exp $
 
 DISTNAME=	beav_1.40-13
-PKGNAME=	beav-1.40-13
+PKGNAME=	beav-1.40.13
 CATEGORIES=	editors
 NEED_VERSION=	1.319
 

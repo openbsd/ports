@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/14 13:23:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/14 22:54:35 espie Exp $
 
 DISTNAME=	sam
-PKGNAME=	sam-4.3-19980506
+PKGNAME=	sam-4.3.19980506
 CATEGORIES=	plan9
 NEED_VERSION=	1.342
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/research/ \
