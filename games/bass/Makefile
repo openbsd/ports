@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/02 11:38:29 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/08/08 20:15:12 jolan Exp $
 
 COMMENT=	"Beneath A Steel Sky"
 DISTNAME=	BASS-CD
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	:scummvm->=0.5.0:games/scummvm
+RUN_DEPENDS=	:scummvm->=0.5.1:games/scummvm
 
 WRKDIST=	${WRKDIR}/sky-cd
 
