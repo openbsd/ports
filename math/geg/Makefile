@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/27 07:16:44 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2005/02/27 09:39:10 alek Exp $
 
 COMMENT=	"simple program for plotting 2d mathematical functions"
 
 DISTNAME=	geg-1.0.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	math
 
 MASTER_SITES=	http://www.infolaunch.com/~daveb/ \
@@ -24,8 +25,7 @@ WANTLIB=		X11 Xext Xi c gdk gmodule m
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		glib.1::devel/glib \
-		gdk_imlib::graphics/imlib
+		glib.1::devel/glib
 
 CONFIGURE_STYLE= gnu
 
