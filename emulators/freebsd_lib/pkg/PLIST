@@ -1,0 +1,70 @@
+sbin/ldconfig
+usr/lib/compat/libc.so.2.2
+usr/lib/compat/libdialog.so.2.0
+usr/lib/compat/libforms.so.2.0
+usr/lib/compat/libg++.so.2.0
+usr/lib/compat/libg++.so.3.0
+usr/lib/compat/libgcc.so.261.0
+usr/lib/compat/libgmp.so.2.0
+usr/lib/compat/libgnumalloc.so.2.0
+usr/lib/compat/libncurses.so.2.0
+usr/lib/compat/libreadline.so.2.0
+usr/lib/compat/libresolv.so.2.0
+usr/lib/compat/liby.so.2.0
+usr/lib/libalias.so.2.4
+usr/lib/libc.so.3.1
+usr/lib/libcrypt.so.2.0
+usr/lib/libcalendar.so.2.0
+usr/lib/libcom_err.so.2.0
+usr/lib/libcurses.so.2.0
+usr/lib/libedit.so.2.0
+usr/lib/libf2c.so.2.0
+usr/lib/libftpio.so.4.0
+usr/lib/libipx.so.2.0
+usr/lib/libkvm.so.2.0
+usr/lib/libmytinfo.so.2.0
+usr/lib/libncurses.so.3.1
+usr/lib/libopie.so.2.0
+usr/lib/libpcap.so.2.2
+usr/lib/librpcsvc.so.2.0
+usr/lib/libscsi.so.2.0
+usr/lib/libskey.so.2.0
+usr/lib/libz.so.2.0
+usr/lib/libss.so.2.0
+usr/lib/libtermcap.so.2.1
+usr/lib/libtermlib.so.2.1
+usr/lib/libutil.so.2.2
+usr/lib/libvgl.so.1.0
+usr/lib/libxpg4.so.2.0
+usr/lib/libc_r.so.3.0
+usr/lib/libscrypt.so.2.0
+usr/lib/libtelnet.so.2.0
+usr/lib/libm.so.2.0
+usr/lib/libdialog.so.3.1
+usr/lib/libg++.so.4.0
+usr/lib/libgmp.so.3.0
+usr/lib/libmp.so.3.0
+usr/lib/libgnuregex.so.2.0
+usr/lib/libreadline.so.3.0
+usr/lib/libstdc++.so.2.0
+usr/libexec/ld.so
+usr/X11R6/lib/libICE.so.6.3
+usr/X11R6/lib/libPEX5.so.6.0
+usr/X11R6/lib/libSM.so.6.0
+usr/X11R6/lib/libX11.so.6.1
+usr/X11R6/lib/libXIE.so.6.0
+usr/X11R6/lib/libXaw.so.6.1
+usr/X11R6/lib/libXext.so.6.3
+usr/X11R6/lib/libXi.so.6.0
+usr/X11R6/lib/libXmu.so.6.0
+usr/X11R6/lib/libXp.so.6.2
+usr/X11R6/lib/libXt.so.6.0
+usr/X11R6/lib/libXtst.so.6.1
+usr/X11R6/lib/liboldX.so.6.0
+@dirrm sbin
+@dirrm usr/X11R6/lib
+@dirrm usr/X11R6
+@dirrm usr/libexec
+@dirrm usr/lib/compat
+@dirrm usr/lib
+@dirrm usr

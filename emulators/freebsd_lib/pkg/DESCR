@@ -1,0 +1,3 @@
+These libraries are part of the FreeBSD compatibility options
+for OpenBSD. These libraries provide support for binaries built
+on FreeBSD 2.0.x, 2.1.x and 2.2.x systems.
