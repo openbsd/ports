@@ -3,7 +3,7 @@
 # Date created:		28 April 1998
 # Whom:			Ejovi Nuwere <ejovi@ejovi.net>
 #
-# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/06/27 02:45:05 pvalchev Exp $
 #
 
 COMMENT=	"download news articles from NNTP server"
@@ -16,7 +16,7 @@ NEED_VERSION=	1.402
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-# License: NONE
+# License: BSD
 PERMIT_PACKAGE_CDROM=	YES
 PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
