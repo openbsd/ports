@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2004/07/13 18:55:43 brad Exp $
+# $OpenBSD: Makefile,v 1.72 2004/07/18 07:16:53 brad Exp $
 
 COMMENT=	"image processing tools"
 
@@ -68,5 +68,13 @@ RUN_DEPENDS+=	:netpbm-*:graphics/netpbm
 BUILD_DEPENDS+=	:netpbm-*:graphics/netpbm
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-${DASHVER}//}
+
+post-install:
+	@perl -pi -e s#'-L${WRKBUILD}/magick/.libs '#''#g \
+		${PREFIX}/bin/Magick-config
+.for f in Magick++ Magick Wand
+	@perl -pi -e s#'-L${WRKBUILD}/magick/.libs '#''#g \
+		${PREFIX}/lib/lib${f}.la
+.endfor
 
 .include <bsd.port.mk>
