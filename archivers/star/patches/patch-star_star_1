@@ -1,0 +1,23 @@
+$OpenBSD: patch-star_star_1,v 1.1.1.1 2000/10/01 21:15:49 naddy Exp $
+--- star/star.1.orig	Tue Jun 23 02:41:37 1998
++++ star/star.1	Sun Oct  1 23:09:59 2000
+@@ -15,10 +15,18 @@
+ .if n .ds s sz
+ .TH STAR 1 "Release 1.1" "J\*org Schilling" "Schily\'s USER COMMANDS"
+ .SH NAME
+-star \- unique standard tape archiver
++star, ustar \- unique standard tape archiver
+ .SH SYNOPSIS
+ .B
+ star
++.I command
++[
++.I options
++] 
++.I file1 .\|.\|. filen
++.br
++.B
++ustar
+ .I command
+ [
+ .I options

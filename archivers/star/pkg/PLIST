@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/10/01 21:15:49 naddy Exp $
+bin/star
+bin/ustar
+man/man1/star.1
+man/man1/ustar.1

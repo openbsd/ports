@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_standard_h,v 1.1.1.1 2000/10/01 21:15:49 naddy Exp $
+--- include/standard.h.orig	Sun Jan 26 12:49:31 1997
++++ include/standard.h	Sun Oct  1 23:09:58 2000
+@@ -182,7 +182,7 @@ extern	void	setfp __PR((void * const *))
+ extern	int	wait_chld __PR((int));
+ extern	int	geterrno __PR((void));
+ extern	void	raisecond __PR((const char *, long));
+-extern	int	snprintf __PR((char *, unsigned, const char *, ...));
++/*extern	int	snprintf __PR((char *, unsigned, const char *, ...));*/
+ /*extern	int	sprintf __PR((char *, const char *, ...)); ist woanders falsch deklariert !!!*/
+ extern	char	*strcatl __PR((char *, ...));
+ extern	int	streql __PR((const char *, const char *));

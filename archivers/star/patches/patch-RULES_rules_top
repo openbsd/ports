@@ -1,0 +1,12 @@
+$OpenBSD: patch-RULES_rules_top,v 1.1.1.1 2000/10/01 21:15:49 naddy Exp $
+--- RULES/rules.top.orig	Sun Apr 27 01:47:38 1997
++++ RULES/rules.top	Sun Oct  1 23:09:58 2000
+@@ -151,7 +151,7 @@ __PARCH=	$(_PARCH:$(_UNIQ)=$(PARCH_DEF))
+ PARCH=		$(__PARCH:$(_UNIQ)%=%)
+ 
+ #OARCH=		$(MARCH)$(-O_ARCH)-$(C_ARCH)
+-OARCH=		$(PARCH)$(-O_ARCH)-$(C_ARCH)
++OARCH=		$(K_ARCH)$(-O_ARCH)-$(C_ARCH)
+ XARCH=		$(K_ARCH)$(-O_ARCH)-$(C_ARCH)
+ .print:
+ 	echo $(XP_ARCH) $(P_ARCH)
