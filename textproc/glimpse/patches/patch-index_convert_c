@@ -1,0 +1,12 @@
+$OpenBSD: patch-index_convert_c,v 1.1 2003/04/25 20:25:14 avsm Exp $
+--- index/convert.c.orig	Sat Apr 19 17:37:47 2003
++++ index/convert.c	Sat Apr 19 17:38:07 2003
+@@ -791,7 +791,7 @@ change_format(InputFilenames, ReadIntoMe
+ 			sprintf(s, "mv -f %s %s", outname, realname);
+ 			if (system(s) == -1) fprintf(stderr, "Errno=%d -- could not execute: %s\n", errno, s);
+ #else
+-			if (rename(outname, realname) == -1) fprintf(stderr, "Errno=%d -- could not rename %s as %s\n", outname, realname);
++			if (rename(outname, realname) == -1) fprintf(stderr, "Errno=%d -- could not rename %s as %s\n", errno, outname, realname);
+ #endif
+ 		}
+ 		unlink(outname);
