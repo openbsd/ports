@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/05 21:11:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.18 2002/11/08 15:35:19 fgsch Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
-DISTNAME= 	cdrdao-1.1.5
+DISTNAME= 	cdrdao-1.1.7
 CATEGORIES=	audio misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cdrdao/}
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
 HOMEPAGE=	http://cdrdao.sourceforge.net/
-
-IGNORE=		"Project frozen because of License issues. See http://cdrdao.sourceforge.net/news.html for details"
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
@@ -18,12 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=		::devel/pccts
-
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf dest
+CONFIGURE_STYLE=	gnu dest
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib
-CONFIGURE_ARGS+=	--with-posix-threads=no
+CONFIGURE_ARGS+=	--with-posix-threads=no --without-lame \
+			--with-gtkmm-prefix=/nonexistent
 MAKE_ENV=		CCOM="${CC}"
 
 .if ${MACHINE} != "i386" || ${CC} != "cc"
@@ -33,7 +30,7 @@ pre-configure:
 .endif
 
 post-install:
-	@strip ${PREFIX}/bin/cdrdao
+	@strip ${PREFIX}/bin/cdrdao ${PREFIX}/bin/toc2cue
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrdao
 	cd ${WRKDIST} && ${INSTALL_DATA} README README.PlexDAE \
 	    ${PREFIX}/share/doc/cdrdao
