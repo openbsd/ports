@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/16 12:43:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/11/30 12:40:48 naddy Exp $
 
 COMMENT=	"perl cache interface"
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Cache/}
 
 BUILD_DEPENDS=	:p5-Digest-SHA1->=2.01:security/p5-Digest-SHA1 \
-		:p5-Storable->=2.04:devel/p5-Storable \
 		:p5-IPC-ShareLite->=0.08:devel/p5-IPC-ShareLite \
 		:p5-Error->=0.15:devel/p5-Error
 RUN_DEPENDS=	${BUILD_DEPENDS}
