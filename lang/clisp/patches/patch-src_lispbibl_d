@@ -1,41 +1,12 @@
-$OpenBSD: patch-src_lispbibl_d,v 1.3 2002/06/18 16:11:30 naddy Exp $
---- src/lispbibl.d.orig	Wed Jul 11 17:47:57 2001
-+++ src/lispbibl.d	Tue Jun 18 18:07:44 2002
-@@ -79,6 +79,37 @@
- #   (und evtl. gcc-cpp, ccpaux).
+$OpenBSD: patch-src_lispbibl_d,v 1.4 2004/01/20 23:15:19 naddy Exp $
+--- src/lispbibl.d.orig	2004-01-11 02:22:07.000000000 +0100
++++ src/lispbibl.d	2004-01-11 02:23:43.000000000 +0100
+@@ -89,7 +89,7 @@
  
  
-+#ifdef __OpenBSD__
-+#ifdef __i386__
-+#define i386
-+#endif
-+#ifdef __alpha__
-+#define alpha
-+#endif
-+#ifdef __powerpc__
-+#define powerpc
-+#define RS6000
-+#endif
-+#ifdef __m68__
-+#define m68
-+#endif
-+#ifdef __sparc__
-+#define sparc
-+#endif
-+#ifdef __sun3__
-+#define sun3
-+#endif
-+#ifdef __m88k__
-+#define m88k
-+#endif
-+#ifdef __mips__
-+#define mips
-+#endif
-+#ifdef __vax__
-+#define vax
-+#endif
-+#endif
-+
- # diese Maschine: AMIGA oder ACORN oder OS2 oder WIN32 oder GENERIC_UNIX
- #if (defined(__unix) || defined(__unix__) || defined(_AIX) || defined(sinix) || defined(__MACH__) || defined(__POSIX__) || defined(__NetBSD__) || defined(__BEOS__)) && !defined(unix)
+ # this machine: AMIGA or ACORN or OS2 or WIN32 or GENERIC_UNIX
+-#if (defined(__unix) || defined(__unix__) || defined(_AIX) || defined(sinix) || defined(__MACH__) || defined(__POSIX__) || defined(__NetBSD__) || defined(__BEOS__)) && !defined(unix)
++#if (defined(__unix) || defined(__unix__) || defined(_AIX) || defined(sinix) || defined(__MACH__) || defined(__POSIX__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__BEOS__)) && !defined(unix)
    #define unix
+ #endif
+ #if (defined(amiga) || defined(AMIGA))
