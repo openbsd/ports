@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.43 2005/02/21 21:45:52 sturm Exp $
+#	$OpenBSD: Makefile,v 1.44 2005/03/07 14:06:50 espie Exp $
 
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
@@ -52,6 +52,7 @@
     SUBDIR += psutils
     SUBDIR += py-reportlab
 #   SUBDIR += rtf2latex
+    SUBDIR += scribus
     SUBDIR += teTeX
 #   SUBDIR += tex
 #   SUBDIR += texinfo
