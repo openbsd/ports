@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/11/27 07:50:28 ish Exp $
+# $OpenBSD: Makefile,v 1.13 2003/01/11 04:32:57 ish Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
-PKGNAME=	redhat_base-6.2p5
+PKGNAME=	redhat_base-6.2p6
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
@@ -14,7 +14,7 @@ DISTFILES=	${RPMS}
 RPMDIR=		${FULLDISTDIR}
 
 RPMS=		ldconfig-1.9.5-16.i386.rpm \
-		glibc-2.1.3-23.i386.rpm:0 \
+		glibc-2.1.3-28.i386.rpm:0 \
 		termcap-10.2.7-9.noarch.rpm \
 		libtermcap-2.0.8-20.i386.rpm \
 		bash-1.14.7-23.6x.i386.rpm:0 \
@@ -33,7 +33,7 @@ RPMS=		ldconfig-1.9.5-16.i386.rpm \
 		ld.so-1.9.5-13.i386.rpm \
 		libc-5.3.12-31.i386.rpm \
 		libjpeg-6b-10.i386.rpm \
-		libpng-1.0.5-3.i386.rpm
+		libpng-1.0.14-0.6x.3.i386.rpm:0
 
 REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/zoneinfo
 REMOVE_FILES=	/etc/localtime

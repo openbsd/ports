@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/04 08:51:14 jasoni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/01/11 04:32:57 ish Exp $
 @pkgcfl linux_lib-*
 @exec mkdir -p %D/dev
 @exec ln -sf /dev/console %D/dev/tty0
@@ -8,6 +8,7 @@
 @exec ln -sf /dev/ttyC3 %D/dev/tty4
 @exec ln -sf /dev/ttyC4 %D/dev/tty5
 @exec ln -sf /dev/sound %D/dev/dsp
+@exec ln -sf /dev/null %D/dev/null
 @unexec rm -rf %D/dev
 bin/basename
 bin/bash
@@ -494,7 +495,7 @@ usr/lib/libopcodes.la
 usr/lib/libopcodes.so
 usr/lib/libpanel.so.4
 usr/lib/libpng.so.2
-usr/lib/libpng.so.2.1.0.5
+usr/lib/libpng.so.2.1.0.14
 usr/lib/libreadline.so.3
 usr/lib/librpm.so.0
 usr/lib/librpm.so.0.0.0
