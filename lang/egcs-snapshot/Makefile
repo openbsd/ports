@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.10 1998/12/17 23:04:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 1998/12/19 00:55:44 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -114,11 +114,49 @@ DISTFILES+=egcs-chill-${LATEST}${EXTRACT_SUFX}
 
 .endif
 
-# to do: check egcs-stable mirror list for sites which carry snapshots
+MASTER_SITES=	
+MASTER_SITES+=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
+MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
+MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
+#MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
+MASTER_SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
+#MASTER_SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
+#MASTER_SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
 
-MASTER_SITES=	\
-	ftp://egcs.cygnus.com/pub/${DIRECTORY} \
-	ftp://ftp.lip6.fr/pub/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.fu-berlin.de/unix/languages/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
+#MASTER_SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
+#MASTER_SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
+#MASTER_SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
+#MASTER_SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
+
+# couldn't contact those, maybe they work ?
+MASTER_SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
+MASTER_SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
+MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
+MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
+MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
 
 PATCH_SITES = ${MASTER_SITES}
 
