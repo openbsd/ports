@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/12 17:05:07 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/02/13 01:42:33 brad Exp $
 libdata/perl5/site_perl/WML/Card.pm
 libdata/perl5/site_perl/WML/Card/7110.pm
 libdata/perl5/site_perl/WML/Card/Palm.pm
@@ -6,7 +6,5 @@ libdata/perl5/site_perl/WML/Card/UP.pm
 libdata/perl5/site_perl/WML/Deck.pm
 man/man3/WML::Card.3p
 man/man3/WML::Deck.3p
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/WML/Card
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/WML
 @dirrm libdata/perl5/site_perl/WML/Card
 @dirrm libdata/perl5/site_perl/WML
