@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2001/06/07 20:17:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/07/26 17:37:46 naddy Exp $
 
 COMMENT=	"free lossless audio codec"
+COMMENT-xmms=	"FLAC input plugin for XMMS"
 
-PKGNAME=	${DISTNAME:S/-src//}
-DISTNAME=	flac-0.10-src
+VERSION=	1.0
+PKGNAME=	flac-${VERSION}
+PKGNAME-xmms=	flac-xmms-${VERSION}
+DISTNAME=	flac-${VERSION}-src
 CATEGORIES=	audio archivers
-NEED_VERSION=	1.402
+NEED_VERSION=	1.427
 HOMEPAGE=	http://flac.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -18,19 +21,32 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	flac
 
+MULTI_PACKAGES=	-xmms
+SUBPACKAGE?=
+
+.if !defined(PACKAGING)
+LIB_DEPENDS+=	xmms.2::audio/xmms
+.endif
 .if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	nasm::devel/nasm
+BUILD_DEPENDS+=	nasm::devel/nasm
 .endif
 
+USE_LIBTOOL=	Yes	# included libtool is broken
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
-CONFIGURE_ENV=	XMMS_CONFIG=no
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-src//}
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-xmms"
+LIB_DEPENDS=	FLAC.1::audio/flac
+RUN_DEPENDS=	xmms::audio/xmms
+.endif
 
 DOCDIR=		${PREFIX}/share/doc/flac
 
 post-extract:
 	@rm -rf ${WRKSRC}/obj
+# configure ignores LIBTOOL
+	@cd ${LOCALBASE}/share/libtool && cp ltconfig ltmain.sh ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

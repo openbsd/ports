@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugin_xmms_Makefile_in,v 1.1 2001/07/26 17:37:46 naddy Exp $
+--- src/plugin_xmms/Makefile.in.orig	Tue Jul 24 20:56:15 2001
++++ src/plugin_xmms/Makefile.in	Tue Jul 24 20:56:47 2001
+@@ -117,8 +117,8 @@ LIBTOOL = $(top_builddir)/libtool-disabl
+ 
+ xmmsinputplugin_LTLIBRARIES = libxmms-flac.la
+ libxmms_flac_la_SOURCES = plugin.c
+-libxmms_flac_la_LIBADD = $(top_builddir)/src/libFLAC/libFLAC.la @XMMS_LIBS@
+-#libxmms_flac_la_LIBADD = -L$(top_builddir)/src/libFLAC/.libs -lFLAC @XMMS_LIBS@
++#libxmms_flac_la_LIBADD = $(top_builddir)/src/libFLAC/libFLAC.la @XMMS_LIBS@
++libxmms_flac_la_LIBADD = -L$(top_builddir)/src/libFLAC/.libs -lFLAC @XMMS_LIBS@
+ libxmms_flac_la_LDFLAGS = -module -avoid-version
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
