@@ -1,12 +1,12 @@
-$OpenBSD: patch-anlgform_pl,v 1.1 2000/05/31 18:48:39 form Exp $
---- anlgform.pl.orig	Wed May 31 22:46:16 2000
-+++ anlgform.pl	Thu Jun  1 00:47:18 2000
-@@ -39,6 +39,8 @@ $lt = localtime;
+$OpenBSD: patch-anlgform_pl,v 1.2 2001/11/22 11:10:39 form Exp $
+--- anlgform.pl.orig	Wed Nov  7 17:06:34 2001
++++ anlgform.pl	Thu Nov 22 17:05:08 2001
+@@ -47,6 +47,8 @@ $lt = localtime;
  $progname = $0 || 'anlgform.pl';
  if (($^O =~ /win32/i || $^O =~ /^win/i) && Win32::GetShortPathName($analog)) {
      $analog = Win32::GetShortPathName($analog);
 +} else {
-+    $analog = "@PREFIX@/bin/analog";
++    $analog = "/usr/local/bin/analog";
  }
  
  # coerce query keys to caps in a new (key, pointer to array) hash called args

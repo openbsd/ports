@@ -1,8 +1,8 @@
-$OpenBSD: patch-examples_big_cfg,v 1.1 2001/05/20 05:56:37 form Exp $
---- examples/big.cfg.orig	Sun May 20 12:28:02 2001
-+++ examples/big.cfg	Sun May 20 12:28:59 2001
-@@ -18,7 +18,7 @@
- # If you need a LOGFORMAT command it must go here, above the LOGFILE commands.
+$OpenBSD: patch-examples_big_cfg,v 1.2 2001/11/22 11:10:39 form Exp $
+--- examples/big.cfg.orig	Wed Nov  7 17:06:35 2001
++++ examples/big.cfg	Thu Nov 22 17:05:07 2001
+@@ -19,7 +19,7 @@
+ # it must go here, above the LOGFILE commands.
  # LOGFORMAT MICROSOFT-NA
  # The logfile(s) to be analysed
 -LOGFILE logfile.log
@@ -10,7 +10,7 @@ $OpenBSD: patch-examples_big_cfg,v 1.1 2001/05/20 05:56:37 form Exp $
  # LOGFILE /old/logs/access_log.*
  #
  # Your organisation's name and URL for the top line of the report
-@@ -29,7 +29,7 @@ HOSTURL none
+@@ -30,7 +30,7 @@ HOSTURL none
  OUTFILE Report.html
  #
  # URL for the images directory
