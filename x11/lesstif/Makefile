@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			form@vs.itam.nsc.ru
 #
-# $OpenBSD: Makefile,v 1.6 1998/05/06 06:05:05 form Exp $
+# $OpenBSD: Makefile,v 1.7 1998/06/02 20:51:48 marc Exp $
 # FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp
 #
 
@@ -24,7 +24,7 @@ USE_X11=	yes
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE=	yes
-pre-fetch:
+pre-install:
 	@${ECHO} "***********************************************************"
 	@${ECHO} "*                      W a r n i n g                      *"
 	@${ECHO} "* This port will overwrite your Motif installation.       *"
