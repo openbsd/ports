@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2001/08/28 14:36:00 wilfried Exp $
+# $OpenBSD: Makefile,v 1.38 2001/09/13 21:38:39 todd Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
      SUBDIR += LPRng
      SUBDIR += apc-upsd
      SUBDIR += bubblemon-dockapp
+     SUBDIR += bubblemon
      SUBDIR += cfengine
      SUBDIR += contool
      SUBDIR += gkrellm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2001/09/03 07:58:03 shell Exp $
+# $OpenBSD: Makefile,v 1.81 2001/09/13 21:38:39 todd Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += gd
      SUBDIR += gd,no_x11
      SUBDIR += gdk-pixbuf
+     SUBDIR += gdk-pixbuf,gnome
 #    SUBDIR += geomview
 #    SUBDIR += gfont
      SUBDIR += ggi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2001/09/09 11:21:58 avsm Exp $
+# $OpenBSD: Makefile,v 1.107 2001/09/13 21:38:39 todd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -23,9 +23,11 @@
      SUBDIR += doc++
      SUBDIR += ectags
      SUBDIR += flawfinder
+     SUBDIR += gconf
      SUBDIR += gengameng
      SUBDIR += gettext
      SUBDIR += gindent
+     SUBDIR += glade
      SUBDIR += glib
      SUBDIR += gmake
      SUBDIR += gmp
@@ -47,6 +49,10 @@
      SUBDIR += libavl
      SUBDIR += libdockapp
      SUBDIR += libevent
+     SUBDIR += libgtop
+     SUBDIR += libgtop,gnome
+     SUBDIR += libglade
+     SUBDIR += libglade,gnome
      SUBDIR += libproplist
      SUBDIR += libsigc++
      SUBDIR += libslang

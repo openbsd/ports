@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2001/09/07 03:15:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.115 2001/09/13 21:38:39 todd Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -48,9 +48,12 @@
      SUBDIR += fvwm95
      SUBDIR += fsv
      SUBDIR += gkrellweather
+     SUBDIR += gnome
+     SUBDIR += gtk-engines
      SUBDIR += gtk+
      SUBDIR += gtkglarea
      SUBDIR += gtkmm
+     SUBDIR += gtop
 #    SUBDIR += gwm
      SUBDIR += icewm
      SUBDIR += ion

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2001/08/21 13:20:34 shell Exp $
+# $OpenBSD: Makefile,v 1.67 2001/09/13 21:38:39 todd Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -57,6 +57,7 @@
      SUBDIR += rxp
      SUBDIR += sgmlformat
      SUBDIR += sablotron
+     SUBDIR += scrollkeeper
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += spiff

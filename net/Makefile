@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2001/09/09 21:59:21 obecian Exp $
+# $OpenBSD: Makefile,v 1.171 2001/09/13 21:38:39 todd Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += gaim
      SUBDIR += gaim,esd
      SUBDIR += gated
+     SUBDIR += gnomeicu
      SUBDIR += gnut
      SUBDIR += gtk-gnutella
      SUBDIR += hping
