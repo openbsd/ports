@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2000/03/22 08:06:29 brad Exp $
+# $OpenBSD: Makefile,v 1.48 2000/03/27 03:05:57 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -62,9 +62,10 @@
      SUBDIR += swisswatch
 #    SUBDIR += sxpc
 #    SUBDIR += tix
+     SUBDIR += tk
 #    SUBDIR += tk41
 #    SUBDIR += tk42
-     SUBDIR += tk80
+#    SUBDIR += tk80
 #    SUBDIR += tk82
 #    SUBDIR += tkdesk
 #    SUBDIR += tkgoodstuff
