@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/09/30 01:34:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/01 18:07:26 jsg Exp $
 
 COMMENT=	"collection of various tools for scummvm"
 # this tarball is horribly packaged
@@ -23,8 +23,9 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-.if (!${MACHINE_ARCH} == "alpha" && !${MACHINE_ARCH} == "i386" && \
-     !${MACHINE_ARCH} == "vax")
+.if (!${MACHINE_ARCH} == "alpha" && !${MACHINE_ARCH} == "amd64" && \
+     !${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "vax")
+
 CFLAGS+=	-DSCUMM_BIG_ENDIAN
 CXXFLAGS+=	-DSCUMM_BIG_ENDIAN
 .endif
