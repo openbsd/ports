@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/03 11:25:05 turan Exp $
-
-BROKEN=		installs files automatically in /etc
+# $OpenBSD: Makefile,v 1.11 2000/03/07 01:57:50 kevlo Exp $
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
@@ -20,7 +18,6 @@ MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/amanda/
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--sysconfdir=/etc \
 		--localstatedir=/var \
 		--with-gnutar_list_dir=/var/db/amanda/gnutar-lists \
 		--with-user=operator \

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/01/27 00:22:41 marc Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/03/07 01:58:07 kevlo Exp $
 #
 # Pre/post-installation setup of amanda
 
@@ -7,6 +7,7 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PREFIX:-/usr/local}
 EXAMPLE_DIR=${EXAMPLE_DIR:-${PREFIX}/share/examples/amanda}
+EXAMPLECONF_DIR=/usr/local/lib/amanda
 CONF_DIR=/etc/amanda
 
 if [ $# -ne 2 ]; then
@@ -29,11 +30,15 @@ do_configuration()
     if [ -d ${CONF_DIR} ]; then
 	echo "** The directory ${CONF_DIR} exists.  Your existing configuration"
 	echo "** files have not been changed.  You MAY need to update your"
-	echo "** configuration."
+	echo "** configuration.  Please look at the directory"
+        echo "** ${EXAMPLECONF_DIR} and add any desired (but missing) entries into"
+        echo "** your current ${CONF_DIR}"
+
     else
-	mkdir -p ${CONF_DIR}
-	mkdir -p ${CONF_DIR}/csd
-	cp ${EXAMPLE_DIR}/amanda.conf ${CONF_DIR}/csd
+	mkdir -p ${EXAMPLECONF_DIR} ${CONF_DIR}
+	mkdir -p ${EXAMPLECONF_DIR}/csd ${CONF_DIR}/csd
+	cp ${EXAMPLE_DIR}/amanda.conf ${EXAMPLECONF_DIR}/csd
+        cp ${EXAMPLE_DIR}/amanda.conf ${CONF_DIR}/csd
 	echo "** The directory ${CONF_DIR} has been created with a sample"
 	echo "** configuration.  You probably need to modify the files for"
 	echo "** your site."
@@ -56,10 +61,11 @@ do_crontab()
 {
     echo ""
     echo "** See ${CONF_DIR}/crontab.sample for sample crontab entries"
-    cat >${CONF_DIR}/crontab.sample <<EOF
+    cat >${EXAMPLECONF_DIR}/crontab.sample <<EOF
 0 16 * * 1-5 /usr/local/bin/amcheck -m csd
 45 0 * * 2-6 /usr/local/bin/amdump csd
 EOF
+    cp ${EXAMPLECONF_DIR}/crontab.sample ${CONF_DIR}
 }
 
 # Run the amanda "patch-system" command to update /etc/services and

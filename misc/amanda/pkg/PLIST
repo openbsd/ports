@@ -1,3 +1,5 @@
+lib/amanda/crontab.sample
+lib/amanda/csd/amanda.conf
 lib/libamanda-2.4.1p1.so.0.0
 lib/libamanda.a
 lib/libamanda.la
@@ -80,6 +82,8 @@ share/examples/amanda/HP-DAT.ps
 share/examples/amanda/amanda.conf
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi.conf
+@dirrm lib/amanda/csd
+@dirrm lib/amanda
 @dirrm share/examples/amanda
 sbin/amadmin
 sbin/amcheck
