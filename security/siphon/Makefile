@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/16 14:56:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/30 02:12:47 brad Exp $
 
 COMMENT=		"passive network mapping tool"
 
@@ -19,6 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.gravitino.net/projects/siphon/ \
 			http://packetstorm.securify.com/UNIX/utilities/siphon/
 
+MAKE_FLAGS=		CC="${CC}" \
+			CFLAGS='${CFLAGS} -Wall -I. \
+				-DSYSCONFDIR="\"${SYSCONFDIR}\""' \
+			CCFLAGS='-pthread \
+				-DSYSCONFDIR="\"${SYSCONFDIR}\""'
 MAKE_ENV=		SYSCONFDIR="${SYSCONFDIR}"
 
 do-install:
