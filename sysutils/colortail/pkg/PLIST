@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/26 00:30:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/03 14:43:39 robert Exp $
 bin/colortail
-man/man1/colortail.1
+@man man/man1/colortail.1
+share/examples/colortail/
 share/examples/colortail/conf.daemon
 share/examples/colortail/conf.kernel
 share/examples/colortail/conf.messages
 share/examples/colortail/conf.secure
 share/examples/colortail/conf.xferlog
-@dirrm share/examples/colortail
