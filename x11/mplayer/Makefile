@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2003/02/16 07:25:18 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2003/02/17 14:55:34 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -22,19 +22,20 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
-#MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
-MASTER_SITES0=		http://www.sightly.net/mplayer/
+MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 
 MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
 
 SKIN=		default
-SKINVER=	1.1
+SKINVER=	1.7
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}-${SKINVER}${EXTRACT_SUFX}:0
 
 .include <bsd.own.mk>
 
 .if ${ELF_TOOLCHAIN} == "no"
 BUILD_DEPENDS=	:binutils->=2.11.2:devel/binutils/stable
+MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
+CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as
 .endif
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
@@ -42,14 +43,9 @@ LIB_DEPENDS=	png::graphics/png \
 		ungif,gif::graphics/libungif \
 		vorbis.0,vorbisfile.1::audio/libvorbis
 
-.if ${ELF_TOOLCHAIN} == "no"
-MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
-.endif
-
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as \
-		--disable-alsa \
+CONFIGURE_ARGS+=--disable-alsa \
 		--disable-ossaudio \
 		--disable-arts \
 		--disable-nas \

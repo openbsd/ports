@@ -18,10 +18,12 @@ antialiased shaded subtitles (9 supported types!!!) with european/ISO
 8859-1,2 (hungarian, english, czech, etc), cyrillic, korean fonts, and
 OSD?
 
-MPlayer might fail due to lack of shared memory, eg when using gui mode under
-KDE.  You can use config to change the shared memory limits without needing to
-recompile the kernel, e.g., "config -e -o bsd2 bsd".  On i386 it should be
-sufficient to add 8 to shmseg and 2048 to shmmaxpgs. 
+MPlayer might fail due to lack of shared memory, eg when using gui mode
+under KDE.  Starting with OpenBSD 3.3, sysctl(8) can modify the shared
+memory parameters.  A reasonable choice would be:
+
+kern.shminfo.shmseg=32
+kern.shminfo.shmall=32768
 
 Flavors:
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2003/01/03 23:06:36 brad Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2003/02/17 14:55:34 brad Exp $
 bin/gmplayer
 share/mplayer/Skin/default/README
 share/mplayer/Skin/default/VERSION
@@ -19,6 +19,7 @@ share/mplayer/Skin/default/menus.png
 share/mplayer/Skin/default/next.png
 share/mplayer/Skin/default/pause.png
 share/mplayer/Skin/default/play.png
+share/mplayer/Skin/default/playbar.png
 share/mplayer/Skin/default/plb.png
 share/mplayer/Skin/default/pos.png
 share/mplayer/Skin/default/prev.png

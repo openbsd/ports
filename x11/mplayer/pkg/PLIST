@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/02/16 07:25:18 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/02/17 14:55:34 brad Exp $
+@exec echo "This package may need further setup. Run pkg_info mplayer to find out more"
 bin/mencoder
 bin/mplayer
 lib/mplayer/vidix/cyberblade_vid.so
