@@ -1,11 +1,60 @@
-$OpenBSD: patch-x_c,v 1.1 2002/07/29 14:41:49 fgsch Exp $
---- x.c.orig	Mon Jul 29 00:07:39 2002
-+++ x.c	Mon Jul 29 00:08:27 2002
-@@ -694,7 +694,6 @@ static void x_process_events(void *data)
+$OpenBSD: patch-x_c,v 1.2 2002/07/29 23:46:35 fgsch Exp $
+--- x.c.orig	Mon Jun 17 05:22:20 2002
++++ x.c	Mon Jul 29 13:29:30 2002
+@@ -169,6 +169,20 @@ x_hash_table[X_HASH_TABLE_SIZE];
+ 
+ static int flush_in_progress=0;
+ 
++static void x_do_paste(struct graphics_device* gd)
++{
++	int num=0;
++	unsigned char *buffer,*p;
++				
++	buffer=XFetchBytes(x_display,&num);
++	for (p=buffer;num>0;num--,p++)
++	{
++		if (*p==10)gd->keyboard_handler(gd,KBD_ENTER,0);
++		else
++			if (*p>=32)gd->keyboard_handler(gd,*p,0);
++	}
++	if (buffer)XFree(buffer);
++}
+ 
+ static void x_do_flush(void *ignore)
+ {
+@@ -606,6 +620,11 @@ static void x_process_events(void *data)
+ 				gd=x_find_gd(&(event.xkey.window));
+ 				if (!gd)break;
+ 				x_translate_key((XKeyEvent*)(&event),&k,&f);
++				if (k == KBD_INS && f == KBD_SHIFT)
++				{
++					x_do_paste(gd);
++					return;
++				}
+ 				gd->keyboard_handler(gd,k,f);
+ 			}
+ 			break;
+@@ -694,21 +713,8 @@ static void x_process_events(void *data)
  
  					case 2:
  					a=B_MIDDLE;
 -					if (shift_pressed) /* paste */
- 					{
- 						int num=0;
- 						unsigned char *buffer,*p;
+-					{
+-						int num=0;
+-						unsigned char *buffer,*p;
+-						
+-						buffer=XFetchBytes(x_display,&num);
+-						for (p=buffer;num>0;num--,p++)
+-						{
+-							if (*p==10)gd->keyboard_handler(gd,KBD_ENTER,0);
+-							else
+-								if (*p>=32)gd->keyboard_handler(gd,*p,0);
+-						}
+-						if (buffer)XFree(buffer);
+-						return;
+-					}
++					x_do_paste(gd);
++					return;
+ 					break;
+ 
+ 					case 4:
