@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.5 2004/12/14 04:55:08 marcm Exp $
+--- configure.orig	Sun Dec 12 16:12:11 2004
++++ configure	Sun Dec 12 16:12:28 2004
+@@ -8269,7 +8269,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
