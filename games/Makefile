@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2002/03/20 08:27:43 mark Exp $
+# $OpenBSD: Makefile,v 1.73 2002/04/21 03:49:40 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += eboard
      SUBDIR += eboard-extras
 #    SUBDIR += empire
+     SUBDIR += enigma
      SUBDIR += falconseye
      SUBDIR += fire
 #    SUBDIR += flying
