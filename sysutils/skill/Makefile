@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/01 19:15:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2001/01/12 11:08:36 jakob Exp $
 
 DISTNAME=		skill-4.0
 CATEGORIES=     	sysutils
@@ -12,6 +12,8 @@ PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=		ftp://jaguar.cs.utah.edu/pub/skill/
 EXTRACT_SUFX=		.tgz
+
+MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'
 
 do-configure:
 	@cd ${WRKDIST}; ./Config
