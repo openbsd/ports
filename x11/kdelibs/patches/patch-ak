@@ -1,9 +1,10 @@
---- admin/ltmain.sh.orig	Mon May 31 19:08:57 1999
-+++ admin/ltmain.sh	Mon May 31 19:09:13 1999
-@@ -2633,40 +2633,6 @@
+--- admin/ltmain.sh.orig	Tue Mar  7 18:37:26 2000
++++ admin/ltmain.sh	Tue Mar  7 18:38:16 2000
+@@ -2632,41 +2632,6 @@
+ 
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
- 
+-
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
 -    for libdir in $libdirs; do

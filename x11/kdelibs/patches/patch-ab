@@ -1,11 +1,11 @@
---- kab/Makefile.in.orig	Mon May 31 19:13:44 1999
-+++ kab/Makefile.in	Mon May 31 19:14:04 1999
-@@ -181,7 +181,7 @@
+--- kab/Makefile.in.orig	Tue Mar  7 18:17:16 2000
++++ kab/Makefile.in	Tue Mar  7 18:17:36 2000
+@@ -180,7 +180,7 @@
  include_HEADERS =  	stl_headers.h 	kabapi.h 	kab.h 	addressbook.h 	configDB.h 	keyvaluemap.h 	sections.h
  
  
 -libkab_la_LDFLAGS = -version-info 2:0 $(X_LDFLAGS) $(QT_LDFLAGS)
-+libkab_la_LDFLAGS = -version-info 1:1 $(X_LDFLAGS) $(QT_LDFLAGS)
++libkab_la_LDFLAGS = -version-info 1:2 $(X_LDFLAGS) $(QT_LDFLAGS)
  libkab_la_LIBADD = -lXext $(LIB_QT)
  
  # just to make sure, automake makes them 

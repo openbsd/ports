@@ -1,11 +1,11 @@
---- mediatool/Makefile.in.orig	Mon May 31 19:19:50 1999
-+++ mediatool/Makefile.in	Mon May 31 19:20:01 1999
-@@ -189,7 +189,7 @@
+--- mediatool/Makefile.in.orig	Tue Mar  7 18:34:44 2000
++++ mediatool/Makefile.in	Tue Mar  7 18:35:50 2000
+@@ -188,7 +188,7 @@
  include_HEADERS = mediatool.h kaudio.h
  noinst_HEADERS = chunk.h playlist.h
  
 -libmediatool_la_LDFLAGS = -version-info 2:0 
-+libmediatool_la_LDFLAGS = -version-info 1:1
++libmediatool_la_LDFLAGS = -version-info 1:2
  libmediatool_la_LIBADD = $(LIBCOMPAT)
  
  libmediatool_la_METASOURCES = kaudio.moc

@@ -1,11 +1,11 @@
---- kspell/Makefile.in.orig	Mon May 31 19:19:24 1999
-+++ kspell/Makefile.in	Mon May 31 19:19:36 1999
-@@ -182,7 +182,7 @@
+--- kspell/Makefile.in.orig	Tue Mar  7 18:33:43 2000
++++ kspell/Makefile.in	Tue Mar  7 18:33:58 2000
+@@ -181,7 +181,7 @@
  INCLUDES = -I$(top_srcdir)/kdecore -I$(top_srcdir)/kdeui $(QT_INCLUDES) $(X_INCLUDES)
  
  lib_LTLIBRARIES = libkspell.la
 -libkspell_la_LDFLAGS = -version-info 2:0
-+libkspell_la_LDFLAGS = -version-info 1:1
++libkspell_la_LDFLAGS = -version-info 1:2
  
  include_HEADERS = kspell.h ksconfig.h kprocio.h kspelldlg.h
  noinst_HEADERS = version.h

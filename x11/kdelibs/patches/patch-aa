@@ -1,11 +1,11 @@
---- jscript/Makefile.in.orig	Mon May 31 19:12:52 1999
-+++ jscript/Makefile.in	Mon May 31 19:13:26 1999
-@@ -190,7 +190,7 @@
+--- jscript/Makefile.in.orig	Tue Mar  7 18:15:59 2000
++++ jscript/Makefile.in	Tue Mar  7 18:16:39 2000
+@@ -189,7 +189,7 @@
  ####### Files
  
  libjscript_la_SOURCES = t1.c t2.c cpp2bison.cpp jstree.cpp jsexec.cpp builtin.cpp
 -libjscript_la_LDFLAGS = -version-info $(SOMAJOR):$(SOMINOR) 
-+libjscript_la_LDFLAGS = -version-info 1:1
++libjscript_la_LDFLAGS = -version-info 1:2
  libjscript_la_LIBADD = 
  
  include_HEADERS = bison2cpp.h jstree.h jsexec.h jserror.h builtin.h

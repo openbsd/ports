@@ -1,11 +1,11 @@
---- kdecore/Makefile.in.orig	Wed Apr 28 11:24:06 1999
-+++ kdecore/Makefile.in	Mon May 31 19:14:51 1999
-@@ -190,7 +190,7 @@
+--- kdecore/Makefile.in.orig	Tue Mar  7 18:18:17 2000
++++ kdecore/Makefile.in	Tue Mar  7 18:18:33 2000
+@@ -189,7 +189,7 @@
  libkdecore_la_SOURCES = kconfig.cpp kconfigbase.cpp ksimpleconfig.cpp 	kcolorgroup.cpp kapp.cpp kurl.cpp ksock.cpp drag.cpp 	 kprocess.cpp kprocctrl.cpp klocale.cpp 	libintl.cpp fakes.cpp kiconloader.cpp kdebug.cpp 	kstdaccel.cpp kwm.cpp krootprop.cpp kcharsets.cpp kcharsetsdata.cpp 	kchartables.cpp kstring.cpp kpixmap.cpp dither.cpp 	kckey.cpp kaccel.cpp kglobalaccel.cpp kclipboard.cpp 	krect.cpp ksize.cpp kpoint.cpp
  
  
 -libkdecore_la_LDFLAGS = -version-info 2:0
-+libkdecore_la_LDFLAGS = -version-info 1:1
++libkdecore_la_LDFLAGS = -version-info 1:2
  # libkdecore_la_LIBADD = 
  
  libkdecore_la_METASOURCES = drag.moc kapp.moc kclipboard.moc 	kconfig.moc kconfigbase.moc kdebugdialog.moc kglobalaccel.moc 	kiconloader.moc kprocctrl.moc kprocess.moc ksimpleconfig.moc 	ksock.moc 

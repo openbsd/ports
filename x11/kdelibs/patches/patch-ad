@@ -1,11 +1,11 @@
---- kdeui/Makefile.in.orig	Mon May 31 19:15:11 1999
-+++ kdeui/Makefile.in	Mon May 31 19:15:23 1999
-@@ -180,7 +180,7 @@
+--- kdeui/Makefile.in.orig	Tue Mar  7 18:19:29 2000
++++ kdeui/Makefile.in	Tue Mar  7 18:19:49 2000
+@@ -179,7 +179,7 @@
  EXTRA_DIST = $(data_DATA) CHANGES.kdatepicker USERS.kdatepicker
  
  lib_LTLIBRARIES = libkdeui.la
 -libkdeui_la_LDFLAGS = -version-info 2:0  
-+libkdeui_la_LDFLAGS = -version-info 1:1
++libkdeui_la_LDFLAGS = -version-info 1:2  
  
  include_HEADERS = kledlamp.h kprogress.h kpanner.h kcolordlg.h kselect.h 		kdatepik.h kdatetbl.h 		kfontdialog.h kmsgbox.h kpopmenu.h ktabctl.h 		ktreelist.h kstatusbar.h ktopwidget.h ktmainwindow.h 		ktoolbar.h kmenubar.h kbutton.h kslider.h kseparator.h 		klined.h kcombo.h krestrictedline.h kintegerline.h			kspinbox.h kcolorbtn.h kiconloaderdialog.h 		kwmmapp.h kbuttonbox.h ktablistbox.h kcontainer.h 		knewpanner.h kcontrol.h keditcl.h ktoolboxmgr.h kled.h			kdbtn.h knotebook.h ktabbar.h kwizard.h kkeydialog.h 		kurllabel.h kruler.h kquickhelp.h kcursor.h
  

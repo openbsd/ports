@@ -1,11 +1,11 @@
---- khtmlw/Makefile.in.orig	Wed Apr 28 11:24:11 1999
-+++ khtmlw/Makefile.in	Mon May 31 19:17:25 1999
-@@ -186,7 +186,7 @@
+--- khtmlw/Makefile.in.orig	Tue Mar  7 18:31:51 2000
++++ khtmlw/Makefile.in	Tue Mar  7 18:32:04 2000
+@@ -185,7 +185,7 @@
  
  
  noinst_HEADERS = htmlchain.h
 -libkhtmlw_la_LDFLAGS = -version-info 2:0
-+libkhtmlw_la_LDFLAGS = -version-info 1:1
++libkhtmlw_la_LDFLAGS = -version-info 1:2
  
  data_DATA = khtmlw_dnd.xpm
  datadir = $(kde_datadir)/khtmlw/pics
