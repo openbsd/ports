@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name WindowMaker-0.51.0
 @pkgdep giflib-3.0
 @pkgdep jpeg-6b
 @pkgdep libPropList-0.8.3
@@ -18,7 +16,8 @@ bin/wmsetbg
 bin/wmaker.inst
 bin/wm-oldmenu2new
 bin/wsetfont
-lib/libwraster.so.1.2
+bin/wkdemenu.pl
+lib/libwraster.so.2.0
 lib/libwraster.la
 lib/libwraster.a
 lib/libWINGs.a
@@ -32,21 +31,11 @@ man/man1/wmsetbg.1x
 man/man1/seticons.1x
 man/man1/wmaker.1x
 man/man1/wxcopy.1x
-include/wraster.h
-include/WINGs.h
-include/WUtil.h
-include/WINGsP.h
-include/WMaker.h
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
 share/WindowMaker/Backgrounds/BlueImage.jpeg
-share/WindowMaker/Defaults/WMRootMenu
-share/WindowMaker/Defaults/WMWindowAttributes
-share/WindowMaker/Defaults/WindowMaker
-share/WindowMaker/Defaults/WMState
-share/WindowMaker/Defaults/WMGLOBAL
 share/WindowMaker/IconSets/Default.iconset
 share/WindowMaker/Icons/BitchX.tiff
 share/WindowMaker/Icons/DefaultAppIcon.tiff
@@ -189,9 +178,19 @@ share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
 share/WindowMaker/Themes/Night.themed/style
 share/WindowMaker/Themes/Checker.themed/checker.xpm
 share/WindowMaker/Themes/Checker.themed/style
+share/WindowMaker/Themes/LeetWM.themed/LeetWM.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb1.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb2.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMTile1.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMtb1.jpg
+share/WindowMaker/Themes/LeetWM.themed/LeetWMtb2.jpg
+share/WindowMaker/Themes/LeetWM.themed/style
+share/WindowMaker/Themes/STEP2000.themed/BlueImage2.jpeg
+share/WindowMaker/Themes/STEP2000.themed/style
 share/WindowMaker/Themes/Default.style
 share/WindowMaker/Themes/OpenStep.style
 share/WindowMaker/Themes/Pastel.style
+share/WindowMaker/Themes/SteelBlueSilk.style
 share/WindowMaker/README
 share/WindowMaker/README.themes
 share/WindowMaker/autostart.sh
@@ -219,11 +218,22 @@ share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
 share/WindowMaker/menu.sl
 share/WindowMaker/menu.tr
+share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
+etc/WindowMaker/WMRootMenu
+etc/WindowMaker/WMWindowAttributes
+etc/WindowMaker/WindowMaker
+etc/WindowMaker/WMState
+etc/WindowMaker/WMGLOBAL
+include/wraster.h
+include/WINGs.h
+include/WUtil.h
+include/WINGsP.h
+include/WMaker.h
 GNUstep/Apps/WPrefs.app/xpm/advancetonewworkspace.xpm
 GNUstep/Apps/WPrefs.app/xpm/animations.xpm
 GNUstep/Apps/WPrefs.app/xpm/appearance.xpm
@@ -354,6 +364,9 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm GNUstep/Apps/WPrefs.app
 @dirrm GNUstep/Apps
 @dirrm GNUstep
+@dirrm etc/WindowMaker
+@dirrm share/WindowMaker/Themes/STEP2000.themed
+@dirrm share/WindowMaker/Themes/LeetWM.themed
 @dirrm share/WindowMaker/Themes/Checker.themed
 @dirrm share/WindowMaker/Themes/Night.themed
 @dirrm share/WindowMaker/Themes
@@ -361,9 +374,7 @@ GNUstep/Apps/WPrefs.app/WPrefs.xpm
 @dirrm share/WindowMaker/Pixmaps
 @dirrm share/WindowMaker/Icons
 @dirrm share/WindowMaker/IconSets
-@dirrm share/WindowMaker/Defaults
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
 @dirrm share/WINGs
-@dirrm lib/locale
 @exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib

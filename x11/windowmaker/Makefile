@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 1999/03/08 05:17:59 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 1999/03/09 04:13:58 jasoni Exp $
 #
 
-DISTNAME=	WindowMaker-0.51.0
+DISTNAME=	WindowMaker-0.51.1
 CATEGORIES=	x11
 
 MAINTAINER=	jasoni@openbsd.org
@@ -18,12 +18,14 @@ LIB_DEPENDS=	PropList\\.1\\.:${PORTSDIR}/devel/libproplist \
                 tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
                 png\\.1\\.:${PORTSDIR}/graphics/png \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib
+
 GNU_CONFIGURE=	YES
-CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib" \
+CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib" \
 		CPPFLAGS="-I${PREFIX}/include"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/share/WindowMaker/Pixmaps \
-		--with-gfx-incs="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
-		--with-gfx-libs=-L${PREFIX}/lib \
+		--with-incs-from="-I${PREFIX}/include -I${PREFIX}/include/giflib" \
+		--with-libs-from="-L${PREFIX}/lib" \
 		--disable-debug
 
 post-install:	
