@@ -1,7 +1,7 @@
 mICQ is a very portable text-mode ICQ clone - it is known to compile
 under Linux, BSD, AIX, HPUX, Windows, AmigaOS and with restrictions
 BeOS. Originally written by Matthew D. Smith, a great part of mICQ has
-been rewritten by Rüdiger Kuhlmann, in particular the support for the
+been rewritten by Ruediger Kuhlmann, in particular the support for the
 new version 8 of the ICQ protocol that became necessary, the
 internationalization, the file transfer and some restructuring of the
 code.

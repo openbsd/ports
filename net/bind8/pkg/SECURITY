@@ -1,4 +1,4 @@
-$OpenBSD: SECURITY,v 1.4 2001/10/06 10:35:14 ho Exp $
+$OpenBSD: SECURITY,v 1.5 2003/01/20 19:10:01 naddy Exp $
 
 Quick notes on security issues using BIND 8
 -------------------------------------------
@@ -47,5 +47,5 @@ There are also some functionality/bugfix patches (from the indicated sources).
 
 
 --
-Håkan Olsson <ho@openbsd.org>
+Hakan Olsson <ho@openbsd.org>
 Jakob Schlyter <jakob@openbsd.org>

@@ -11,9 +11,9 @@ with the user, using an X11 frontend if desired.  Xcept also provides
 basic scripting facilities.
 
 The package has been developed by Arno Augustin and Frank Hoering at
-the University of Nürnberg-Erlangen, Germany.  XCept version 2 has
+the University of Nuernberg-Erlangen, Germany.  XCept version 2 has
 been the last version distributed under a BSD-style copyright; the
 package went commercial in later versions.  The authors no longer
 distribute or support version 2.
 
-Jörg Wunsch  <joerg@FreeBSD.org>
+Joerg Wunsch <joerg@FreeBSD.org>

@@ -11,19 +11,19 @@ Enscript supports following character sets:
   - ISO-8859-7		ISO Greek
   - ascii		7 bit ascii
   - ascii fi se		7 bit ascii with following encodings:
-			  '{'  = ä (adieresis)
-			  '|'  = ö (odieresis)
-			  '}'  = å (aring)
-			  '['  = Ä (Adieresis)
-			  '\\' = Ö (Odieresis)
-			  ']'  = Å (Aring)
+			  '{' = adieresis
+			  '|' = odieresis
+			  '}' = aring
+			  '[' = Adieresis
+			  '\' = Odieresis
+			  ']' = Aring
   - ascii dk no		7 bit ascii with following encodings:
-			  '{'  = æ (ae)
-			  '|'  = ø (oslash)
-			  '}'  = å (aring)
-			  '['  = Æ (AE)
-			  '\\' = Ø (Oslash)
-			  ']'  = Å (Aring)
+			  '{' = ae
+			  '|' = oslash
+			  '}' = aring
+			  '[' = AE
+			  '\' = Oslash
+			  ']' = Aring
   - IBM/PC		standard PC/DOS character set
   - Mac			Macintosh character set
   - VMS			VMS multinational charset

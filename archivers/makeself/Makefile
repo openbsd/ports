@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/29 15:15:18 fgsch Exp $
-# Original from: Stéphane Peter <megastep@megastep.org>
+# $OpenBSD: Makefile,v 1.3 2003/01/20 19:10:00 naddy Exp $
+# Original from: Stephane Peter <megastep@megastep.org>
 
 COMMENT=	"script generating a self-extractible .tgz from a directory"
 

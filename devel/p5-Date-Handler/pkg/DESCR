@@ -1,7 +1,7 @@
 Date::Handler is a container for dates that holds all the methods
 to transform itself from Timezone to Timezone and format itself.
 This module idea comes from an original version written by dLux
-(Szabó, Balázs) <dlux@kapu.hu> in his module Class::Date.
+(Szabo, Balazs) <dlux@kapu.hu> in his module Class::Date.
 
 Date::Handler is implemented in pure Perl using POSIX modules, it
 encapsulates the environment variable TZ for it's time zone management
