@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2002/11/28 16:16:42 margarida Exp $
+# $OpenBSD: Makefile,v 1.146 2002/12/01 21:16:21 margarida Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -123,6 +123,7 @@
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Storable
      SUBDIR += p5-String-CRC32
+     SUBDIR += p5-String-Scanf
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Test-Harness
