@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/12 03:35:19 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/05 13:15:06 kevlo Exp $
 
-DISTNAME=	PlRPC-0.2014
+COMMENT=	"module for writing rpc servers and clients"
+
+DISTNAME=	PlRPC-0.2015
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.387
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
