@@ -1,1 +1,2 @@
 bin/wterm
+@exec chmod 4755 %D/bin/wterm
