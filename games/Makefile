@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1998/09/25 01:05:32 marc Exp $
+# $OpenBSD: Makefile,v 1.17 1998/09/25 01:23:04 marc Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -36,6 +36,7 @@
 #    SUBDIR += oonsoo
 #    SUBDIR += qcc
 #    SUBDIR += quakeserver
+     SUBDIR += slash
 #    SUBDIR += sokoban
      SUBDIR += spider
      SUBDIR += starlanes
