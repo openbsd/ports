@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/07 04:45:21 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/07 04:51:53 angelos Exp $
 
 DISTNAME=	xearth-1.0
 CATEGORIES=	astro x11
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
 
-NO_CDROM=	"NOFEE:	Can not sell"
+NO_CDROM=	"NOFEE:	Cannot sell"
 
 LICENSE_TYPE=   NOFEE
 PERMIT_PACKAGE_CDROM=   "Cannot sell."
