@@ -1,0 +1,21 @@
+*** configure.orig	Fri Dec 18 11:56:36 1998
+--- configure	Fri Dec 18 11:56:59 1998
+***************
+*** 4517,4523 ****
+    
+  
+  cat >> confdefs.h <<EOF
+! #define LOCALEDIR "$prefix/$DATADIRNAME"
+  EOF
+  
+  cat >> confdefs.h <<EOF
+--- 4517,4525 ----
+    
+  
+  cat >> confdefs.h <<EOF
+! #ifndef LOCALEDIR
+! #define LOCALEDIR "$prefix/$DATADIRNAME/locale"
+! #endif
+  EOF
+  
+  cat >> confdefs.h <<EOF
