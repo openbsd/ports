@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/29 08:02:20 jakob Exp $
+lib/python${PYTHON_VER}/site-packages/DNS/Base.py
+lib/python${PYTHON_VER}/site-packages/DNS/Base.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/Base.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/Class.py
+lib/python${PYTHON_VER}/site-packages/DNS/Class.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/Class.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/Lib.py
+lib/python${PYTHON_VER}/site-packages/DNS/Lib.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/Lib.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/Opcode.py
+lib/python${PYTHON_VER}/site-packages/DNS/Opcode.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/Opcode.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/Status.py
+lib/python${PYTHON_VER}/site-packages/DNS/Status.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/Status.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/Type.py
+lib/python${PYTHON_VER}/site-packages/DNS/Type.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/Type.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/__init__.py
+lib/python${PYTHON_VER}/site-packages/DNS/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/__init__.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/lazy.py
+lib/python${PYTHON_VER}/site-packages/DNS/lazy.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/lazy.pyo
+lib/python${PYTHON_VER}/site-packages/DNS/win32dns.py
+lib/python${PYTHON_VER}/site-packages/DNS/win32dns.pyc
+lib/python${PYTHON_VER}/site-packages/DNS/win32dns.pyo
+@dirrm lib/python${PYTHON_VER}/site-packages/DNS
