@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2001/09/27 00:32:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2001/09/28 17:56:09 jakob Exp $
 
-MULTI_PACKAGES=	-client
-PKGNAME-client=	openldap-client-${VERSION}
-
-COMMENT= 	Open source LDAP client and server software
-COMMENT-client=	Open source LDAP client software
+COMMENT=	"Open source LDAP software (client)"
+COMMENT-server=	"Open source LDAP software (server)"
 
 VERSION=	2.0.15
 DISTNAME=	openldap-${VERSION}
+FULLPKGNAME=	openldap-client-${VERSION}
+PKGNAME-server=	openldap-server-${VERSION}
 CATEGORIES=	databases net
 NEED_VERSION=	1.451
 
@@ -49,6 +48,9 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 FLAVORS=	sasl
 FLAVOR?=
 
+MULTI_PACKAGES=	-server
+SUBPACKAGE?=
+
 .if ${FLAVOR:L} == "sasl"
 CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
@@ -58,6 +60,10 @@ LIB_DEPENDS+=		sasl::security/cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl \
 			--disable-spasswd
+.endif
+
+.if ${SUBPACKAGE} == "-server"
+RUN_DEPENDS=	openldap:openldap-client-${VERSION}:databases/openldap
 .endif
 
 pre-build:

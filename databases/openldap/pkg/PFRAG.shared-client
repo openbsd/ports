@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-client,v 1.8 2001/09/21 07:29:35 jakob Exp $
-lib/liblber.so.2.10
-lib/libldap.so.2.10
-lib/libldap_r.so.2.10
-DYNLIBDIR(%B)

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/09/08 22:27:54 jakob Exp $
-@pkgcfl openldap-client-*
+@comment $OpenBSD: PLIST,v 1.7 2001/09/28 17:56:09 jakob Exp $
 bin/ldapadd
 bin/ldapdelete
 bin/ldapmodify
@@ -215,52 +214,9 @@ man/man5/ldaptemplates.conf.5
 man/man5/ldif.5
 man/man5/ud.conf.5
 share/openldap/ldapfriendly
+@dirrm share/openldap
 share/examples/openldap/ldap.conf
 share/examples/openldap/ldapfilter.conf
 share/examples/openldap/ldaptemplates.conf
 share/examples/openldap/ldapsearchprefs.conf
-libexec/fax500
-libexec/go500
-libexec/go500gw
-libexec/in.xfingerd
-libexec/mail500
-libexec/maildap
-libexec/rcpt500
-libexec/rp500
-libexec/slapd
-libexec/slurpd
-libexec/xrpcomp
-man/man5/slapd.conf.5
-man/man5/slapd.replog.5
-man/man8/fax500.8
-man/man8/go500.8
-man/man8/go500gw.8
-man/man8/in.xfingerd.8
-man/man8/mail500.8
-man/man8/rcpt500.8
-man/man8/slapadd.8
-man/man8/slapcat.8
-man/man8/slapd.8
-man/man8/slapindex.8
-man/man8/slappasswd.8
-man/man8/slurpd.8
-sbin/slapadd
-sbin/slapcat
-sbin/slapindex
-sbin/slappasswd
-share/openldap/go500gw.help
-share/openldap/rcpt500.help
-share/examples/openldap/slapd.conf
-share/examples/openldap/schema/corba.schema
-share/examples/openldap/schema/core.schema
-share/examples/openldap/schema/cosine.schema
-share/examples/openldap/schema/inetorgperson.schema
-share/examples/openldap/schema/java.schema
-share/examples/openldap/schema/krb5-kdc.schema
-share/examples/openldap/schema/misc.schema
-share/examples/openldap/schema/nadf.schema
-share/examples/openldap/schema/nis.schema
-share/examples/openldap/schema/openldap.schema
-@dirrm share/examples/openldap/schema
 @dirrm share/examples/openldap
-@dirrm share/openldap
