@@ -1,0 +1,18 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/27 20:14:49 espie Exp $
+${KDE}/libkabcformat_kdeaccounts.so.0.0
+${KDE}/libkfile_cpp.so.0.0
+${KDE}/libkfile_diff.so.0.0
+${KDE}/libkfile_po.so.0.0
+${KDE}/libkomparenavtreepart.so.0.0
+${KDE}/libkomparepart.so.0.0
+${KDE}/libpoauxiliary.so.0.0
+${KDE}/libpocompendium.so.0.0
+${KDE}/libpothumbnail.so.0.0
+lib/libcatalogmanager.so.1.0
+lib/libcervisia.so.1.0
+lib/libkbabel.so.1.0
+lib/libkbabelcommon.so.1.0
+lib/libkbabeldict.so.1.0
+lib/libkbabeldictplugin.so.1.0
+lib/libkspy.so.1.0
+DYNLIBDIR(%D/lib)
