@@ -1,0 +1,21 @@
+$OpenBSD: patch-1_0_src_Flv_List_cxx,v 1.1 2002/02/26 13:22:53 wilfried Exp $
+--- 1.0/src/Flv_List.cxx.orig	Thu Jan 27 13:21:38 2000
++++ 1.0/src/Flv_List.cxx	Mon Feb 25 14:19:36 2002
+@@ -679,7 +679,7 @@ int Flv_List::select_start_row(int n)			
+ //================================================================
+ void Flv_List::client_area( int &X, int &Y, int &W, int &H )
+ {
+-	char sv=0, sh=0;
++	int sv=0, sh=0;
+ 	int th, v, rw;
+ 
+ 	X = x(); Y = y(); W = w(); H = h();
+@@ -813,7 +813,7 @@ void Flv_List::draw_border(Flv_Style &s,
+ //	them if nessasary, also update X,Y,W,H to be inside box
+ void Flv_List::draw_scrollbars(int &X, int &Y, int &W, int &H )
+ {
+-	char sv=0, sh=0;
++	int sv=0, sh=0;
+ 	int th, x, rw;
+ 
+ 
