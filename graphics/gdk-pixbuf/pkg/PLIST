@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/02/25 18:39:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/03/23 06:22:17 brad Exp $
 bin/gdk-pixbuf-config
 include/gdk-pixbuf/gdk-pixbuf-features.h
 include/gdk-pixbuf/gdk-pixbuf-loader.h
@@ -11,7 +11,6 @@ lib/libgdk_pixbuf.a
 lib/libgdk_pixbuf.la
 lib/libgdk_pixbuf_xlib.a
 lib/libgdk_pixbuf_xlib.la
-%%gnome%%
 %%SHARED%%
 share/aclocal/gdk-pixbuf.m4
 share/html/gdk-pixbuf-decl.txt

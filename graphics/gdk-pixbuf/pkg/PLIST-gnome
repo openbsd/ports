@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.gnome,v 1.2 2001/09/14 03:41:29 heko Exp $
+@comment $OpenBSD: PLIST-gnome,v 1.1 2002/03/23 06:22:17 brad Exp $
 include/gdk-pixbuf/gnome-canvas-pixbuf.h
 lib/gnomecanvaspixbufConf.sh
 lib/libgnomecanvaspixbuf.a
 lib/libgnomecanvaspixbuf.la
-%%SHARED-gnome%%
+%%SHARED%%

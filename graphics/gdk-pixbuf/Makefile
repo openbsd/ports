@@ -1,23 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2002/02/25 18:39:41 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/23 06:22:17 brad Exp $
 
-COMMENT=	"replacement library for Imlib"
+COMMENT=	"GdkPixbuf graphics library"
+COMMENT-gnome=	"GdkPixbuf graphics library (GNOME Canvas)"
 
-PKGNAME=	${DISTNAME}p1
-DISTNAME=	gdk-pixbuf-0.10.1
+VERSION=	0.10.1
+FULLPKGNAME=	${DISTNAME}p1
+FULLPKGNAME-gnome=	gdk-pixbuf-gnome-${VERSION}
+DISTNAME=	gdk-pixbuf-${VERSION}
 CATEGORIES=	graphics
 NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= unstable/sources/gdk-pixbuf
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
-
-LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.2::graphics/png \
-		tiff.35.::graphics/tiff \
-		gtk.1.2,gdk.1.2::x11/gtk+
-
-FLAVORS=	gnome
-FLAVOR?=	
 
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
 
@@ -34,12 +29,35 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static \
-		 --disable-modules
+		 --disable-modules \
+		 --disable-mmx
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if ${FLAVOR:L:Mgnome}
+FLAVORS=	no_gnome
+FLAVOR?=	
+
+MULTI_PACKAGES=
+.if !${FLAVOR:L:Mno_gnome}
+MULTI_PACKAGES+= -gnome
+.endif
+SUBPACKAGE?=
+
+LIB_DEPENDS+=	jpeg.62::graphics/jpeg \
+		png.2::graphics/png \
+		tiff.35.::graphics/tiff \
+		gtk.1.2,gdk.1.2::x11/gtk+
+
+.if ${SUBPACKAGE} == "" && ${FLAVOR} != "no_gnome" || \
+	${SUBPACKAGE} == "-gnome"
 LIB_DEPENDS+=	gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
+.endif
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-gnome"
+LIB_DEPENDS+=	gdk_pixbuf.2::graphics/gdk-pixbuf
+.endif
+
+.if ${MULTI_PACKAGES:M-gnome}
 CONFIGURE_ARGS+= --with-gnome
 .else
 CONFIGURE_ARGS+= --without-gnome
@@ -51,10 +69,3 @@ pre-patch:
 		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g'
 
 .include <bsd.port.mk>
-
-.if ${FLAVOR:L:Mgnome} && !defined(NO_SHARED_LIBS)
-SED_PLIST+=-e '/%%SHARED-gnome%%/r${PKGDIR}/PFRAG.gnome.shared' -e '//d'
-.elif ${FLAVOR:L:Mgnome} && defined(NO_SHARED_LIBS) && \
-	${NO_SHARED_LIBS:L} == "yes"
-SED_PLIST+=-e '/%%SHARED-gnome%%/d'
-.endif
