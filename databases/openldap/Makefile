@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2005/01/26 08:27:47 jakob Exp $
+# $OpenBSD: Makefile,v 1.48 2005/01/27 23:43:02 alek Exp $
 
 COMMENT=	"Open source LDAP software (client)"
 COMMENT-server=	"Open source LDAP software (server)"
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto m perl pthread ssl util wrap
+WANTLIB=		c crypto ssl
 
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		ftp://ftp.net.lut.ac.uk/openldap/openldap-release/ \
@@ -98,6 +98,7 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 
 .if ${SUBPACKAGE} == "-server"
 RUN_DEPENDS=	openldap:openldap-client-${VERSION}:databases/openldap
+WANTLIB+=	perl util wrap m pthread
 .endif
 
 pre-build:
