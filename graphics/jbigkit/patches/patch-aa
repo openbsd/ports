@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Apr  8 07:19:41 2000
-+++ Makefile	Tue Jun 20 13:29:41 2000
++++ Makefile	Tue Jun 20 15:21:53 2000
 @@ -16,7 +16,12 @@
  	@echo "Enter 'make test' in order to start some automatic tests."
  
@@ -25,7 +25,7 @@
 +	${BSD_INSTALL_DATA_DIR} ${PREFIX}/lib
 +	${BSD_INSTALL_MAN_DIR} ${PREFIX}/man/man1
 +	cd pbmtools; ${BSD_INSTALL_PROGRAM} jbgtopbm pbmtojbg ${PREFIX}/bin; \
-+	${BSD_INSTALL_MAN} jbgtopbm.1 pbmtojbg.1 ${PREFIX}/man/man1; \
++	${BSD_INSTALL_MAN} jbgtopbm.1 pbmtojbg.1 ${PREFIX}/man/man1
 +	${BSD_INSTALL_DATA} libjbig/jbig.h ${PREFIX}/include
 +	${BSD_INSTALL_DATA} libjbig/libjbig.a ${PREFIX}/lib
 +	@if [ -f libjbig/libjbig.so.$(VERSION) ]; then \
