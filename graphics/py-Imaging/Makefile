@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/08/04 19:46:14 xsa Exp $
+# $OpenBSD: Makefile,v 1.23 2004/08/06 08:15:42 xsa Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -26,7 +26,7 @@ MASTER_SITES=		http://www.pythonware.net/storage/
 MODULES=		lang/python
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		:python-tkinter-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-tkinter
+RUN_DEPENDS=		${MODPY_TKINTER_DEPENDS}
 LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tk84::x11/tk/8.4
 
