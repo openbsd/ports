@@ -1,0 +1,24 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/06 22:54:29 matt Exp $
+lib/libhosts_gatherer.so.1.0
+lib/libnasl.so.1.0
+lib/libnessus.so.1.0
+lib/libpeks.a
+lib/libpeks.so
+lib/libpeks.so.0
+lib/libpeks.so.0.8
+lib/libpeks.so.0.8.11
+lib/libpeksmp.a
+lib/nessus/plugins/accounts.nes
+lib/nessus/plugins/bind_bof.nes
+lib/nessus/plugins/find_service.nes
+lib/nessus/plugins/ftp_bounce_scan.nes
+lib/nessus/plugins/ftp_write_dirs.nes
+lib/nessus/plugins/linux_tftp.nes
+lib/nessus/plugins/nfs_world_export.nes
+lib/nessus/plugins/nmap_tcp_connect.nes
+lib/nessus/plugins/nmap_wrapper.nes
+lib/nessus/plugins/objectserver.nes
+lib/nessus/plugins/queso.nes
+lib/nessus/plugins/smad.nes
+lib/nessus/plugins/tftp_grab_file.nes
+DYNLIBDIR(lib)
