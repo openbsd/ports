@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/09/01 05:13:17 fgsch Exp $
+# $OpenBSD: INSTALL,v 1.5 2004/06/23 05:00:15 brad Exp $
 #
 # Pre/post-installation setup of gnats
 
@@ -9,8 +9,6 @@ CONFIG_FILE=${SYSCONFDIR}/gnats-db.conf
 USER=_gnats
 ID=501
 
-# Function: set up gnats user account.
-#
 do_accts()
 {
     userinfo -e $USER
@@ -27,8 +25,6 @@ do_accts()
     fi
 }
 
-# Function: install the gnats configuration file from the samples
-#
 do_configs()
 {
     if [ -f ${CONFIG_FILE} ]; then
@@ -50,23 +46,13 @@ do_configs()
 	echo "| the configuration to meet your needs."
 	echo "+---------------"
     fi
-	echo "| WARNING!"
-	echo "|"
-	echo "| This port has changed its user from 'gnats' to '_gnats'. If you"
-	echo "| installed this port before, ensure all permissions are set"
-	echo "| correctly and then \"rmuser gnats\"."
-	echo "+---------------"
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
 	do_accts
