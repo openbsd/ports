@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/10/18 18:20:40 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/07/24 14:20:49 espie Exp $
 bin/rar
-share/rar/dos.sfx
-share/rar/default.sfx
-share/rar/rarfiles.lst
-share/doc/rar/TechNote.Txt
+share/doc/rar/
+share/doc/rar/Internet.Txt
+share/doc/rar/License.Txt
 share/doc/rar/Rar.Txt
 share/doc/rar/Rar_FAQ.txt
-share/doc/rar/License.Txt
-share/doc/rar/Internet.Txt
-@dirrm share/doc/rar
-@dirrm share/rar
+share/doc/rar/TechNote.Txt
+share/rar/
+share/rar/default.sfx
+share/rar/dos.sfx
+share/rar/rarfiles.lst
 @exec sysctl -w kern.emul.${EMUL}=1

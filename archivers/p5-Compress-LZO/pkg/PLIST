@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/31 15:11:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/07/24 14:20:49 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Compress/
 ${P5ARCH}/Compress/LZO.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compress/
+${P5ARCH}/auto/Compress/LZO/
 @comment ${P5ARCH}/auto/Compress/LZO/.packlist
 ${P5ARCH}/auto/Compress/LZO/LZO.bs
-${P5ARCH}/auto/Compress/LZO/LZO.so
 ${P5ARCH}/auto/Compress/LZO/autosplit.ix
+man/man3p/
 man/man3p/Compress::LZO.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Compress/LZO
-@dirrm ${P5ARCH}/auto/Compress
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Compress
-@dirrm ${P5ARCH}
+%%SHARED%%

@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/10 00:41:32 lebel Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/cpio.info
+@comment $OpenBSD: PLIST,v 1.2 2004/07/24 14:20:49 espie Exp $
 bin/gcpio
-info/cpio.info
+@info info/cpio.info
 man/man1/gcpio.1
-@exec install-info --info-dir=%D/info %D/info/cpio.info

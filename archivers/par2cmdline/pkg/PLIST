@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/23 05:20:48 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/24 14:20:49 espie Exp $
 bin/par2
+share/doc/par2cmdline/
 share/doc/par2cmdline/README
-@dirrm share/doc/par2cmdline

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/10 20:22:17 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/07/24 14:20:49 espie Exp $
 bin/unarj
-share/doc/unarj/unarj.doc
+share/doc/unarj/
 share/doc/unarj/technote.doc
-@dirrm share/doc/unarj
+share/doc/unarj/unarj.doc

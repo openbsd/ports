@@ -1,14 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/06/10 19:10:58 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/07/24 14:20:49 espie Exp $
 bin/gmail-files
 bin/gmailshar
 bin/gremsync
 bin/gshar
 bin/gunshar
-@unexec install-info --delete --info-dir=%D/info %D/info/remsync.info
-@unexec install-info --delete --info-dir=%D/info %D/info/sharutils.info
-info/remsync.info
-info/sharutils.info
-@exec install-info --info-dir=%D/info %D/info/remsync.info
-@exec install-info --info-dir=%D/info %D/info/sharutils.info
+@info info/remsync.info
+@info info/sharutils.info
 man/man1/gshar.1
 man/man1/gunshar.1

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2004/07/24 14:20:49 espie Exp $
+${P5ARCH}/auto/Compress/Zlib/Zlib.so

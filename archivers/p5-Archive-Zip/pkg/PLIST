@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/31 19:37:57 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/07/24 14:20:49 espie Exp $
 bin/crc32
+${P5SITE}/Archive/
+${P5SITE}/Archive/Zip/
 ${P5SITE}/Archive/Zip.pm
 @comment ${P5SITE}/Archive/Zip.pod
 ${P5SITE}/Archive/Zip/BufferedFileHandle.pm
@@ -7,12 +9,10 @@ ${P5SITE}/Archive/Zip/BufferedFileHandle.pm
 ${P5SITE}/Archive/Zip/MemberRead.pm
 ${P5SITE}/Archive/Zip/MockFileHandle.pm
 ${P5SITE}/Archive/Zip/Tree.pm
+@comment ${P5ARCH}/auto/Archive/
+@comment ${P5ARCH}/auto/Archive/Zip/
 @comment ${P5ARCH}/auto/Archive/Zip/.packlist
 man/man3p/Archive::Zip.3p
 man/man3p/Archive::Zip::FAQ.3p
 man/man3p/Archive::Zip::MemberRead.3p
 man/man3p/Archive::Zip::Tree.3p
-@comment @dirrm ${P5ARCH}/auto/Archive/Zip
-@comment @dirrm ${P5ARCH}/auto/Archive
-@dirrm ${P5SITE}/Archive/Zip
-@dirrm ${P5SITE}/Archive

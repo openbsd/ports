@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/22 19:29:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/07/24 14:20:49 espie Exp $
 bin/smt
 bin/star
 bin/tartest
@@ -8,7 +8,7 @@ man/man1/star.1
 man/man1/tartest.1
 man/man1/ustar.1
 man/man8/srmt.8
+share/examples/star/
 share/examples/star/srmt.conf.sample
-@dirrm share/examples/star
 @cwd ${SYSCONFDIR}
 @extra srmt.conf
