@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/27 09:42:42 kevlo Exp $
+bin/xhippo
+share/doc/xhippo/ChangeLog
+share/doc/xhippo/gnu-xhippo.html
+share/doc/xhippo/screenshot.jpeg
+share/doc/xhippo/xhippo.info.gz
+share/doc/xhippo/xhippo.ps.gz
+share/doc/xhippo/xhippo.sgml
+share/doc/xhippo/xhippo.txt.gz
+share/examples/xhippo/xhippo.config-sample
+@dirrm share/doc/xhippo
+@dirrm share/examples/xhippo
