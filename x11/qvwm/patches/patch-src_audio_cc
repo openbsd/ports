@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_audio_cc,v 1.1 2004/01/15 18:25:36 espie Exp $
+--- src/audio.cc.orig	2004-01-15 19:20:05.000000000 +0100
++++ src/audio.cc	2004-01-15 19:20:15.000000000 +0100
+@@ -232,7 +232,7 @@ int Audio::setFormat(int bits, int encod
+ #endif
+ 
+ #ifdef SUN
+-  struct audio_info_t ainfo;
++  audio_info_t ainfo;
+ 
+   AUDIO_INITINFO(&ainfo);
+ 
+@@ -271,7 +271,7 @@ int Audio::setChannels(int channels)
+ #endif
+ 
+ #ifdef SUN
+-  struct audio_info_t ainfo;
++  audio_info_t ainfo;
+ 
+   AUDIO_INITINFO(&ainfo);
+   ainfo.play.channels = channels;
+@@ -300,7 +300,7 @@ int Audio::setSamplingRate(int rate)
+ #endif
+ 
+ #ifdef SUN
+-  struct audio_info_t ainfo;
++  audio_info_t ainfo;
+ 
+   AUDIO_INITINFO(&ainfo);
+   ainfo.play.sample_rate = rate;
