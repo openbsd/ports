@@ -1,0 +1,35 @@
+$OpenBSD: patch-pptHtml_nspptview,v 1.1.1.1 2001/07/13 15:16:22 avsm Exp $
+--- pptHtml/nspptview.orig	Wed Oct 13 17:46:03 1999
++++ pptHtml/nspptview	Fri Jul 13 12:30:48 2001
+@@ -1,4 +1,4 @@
+-#!/bin/tcsh
++#!/bin/csh
+ 
+ if ($#argv != 1) then
+     echo "Usage: $0 file.doc"
+@@ -9,12 +9,13 @@ set source = $argv[1]
+ 
+ #Generate a unique html filename (/tmp/scriptname.pidnum.html)
+ set com = $0
+-set tmp = /tmp/$com:t.$$
+-set html = $tmp.html
++set tmp = `mktemp -d /tmp/nspptview.XXXXXXXXXX` || exit 1
++set tmp2 = `mktemp -d $tmp/nspptview.XXXXXXXXXX` || exit 1
++set html = $tmp2.html
+ 
+ pptHtml $source > $html
+-if ((!(-s $html)) | ($status)) then
+-    echo "$0: failed to generate HTML file"
++if ((!(-r $html)) | ($status)) then
++    echo "$0"": failed to generate HTML file"
+     exit 1
+ endif
+ 
+@@ -24,6 +25,6 @@ nsopen $html
+ #I do NOT remove the html file so that the user can click 
+ #on the "Back" button without generating a "file not found"
+ #error - but uncomment the next line if you want it.
+-rm $tmp*
++rm -rf $tmp
+ 
+ exit 0
