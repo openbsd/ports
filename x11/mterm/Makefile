@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/13 18:48:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/05/28 21:42:50 naddy Exp $
 
 COMMENT=		"dockable program launcher"
 
-DISTNAME=		mterm-0.4.2a
+DISTNAME=		mterm-0.4.2b
 CATEGORIES=		x11
 
 HOMEPAGE=		http://mterm.sourceforge.net/
