@@ -1,4 +1,4 @@
-$OpenBSD: patch-tvcapture_c,v 1.2 2002/07/19 10:17:11 wcobb Exp $
+$OpenBSD: patch-tvcapture_c,v 1.3 2002/09/17 11:38:33 wcobb Exp $
 --- tvcapture.c.orig	Mon Feb 12 14:59:22 2001
 +++ tvcapture.c	Fri Jul 19 06:53:10 2002
 @@ -35,7 +35,8 @@
@@ -57,20 +57,4 @@ $OpenBSD: patch-tvcapture_c,v 1.2 2002/07/19 10:17:11 wcobb Exp $
          default :
               fprintf( stderr, "TVCAPTUREQueryDriverState(): Bad INPUT %ld\n",
                        larg );
-@@ -1729,7 +1721,7 @@ TV_BOOL TVCAPTUREConfigure( TV_CAPTURE  
-         goto RETURN;
-     }
- 
--    if ( c->xfer_mode == TV_TRANSFER_DIRECT )
-+    if ( c->xfer_mode == TV_TRANSFER_DIRECT ) {
-         if ( !( x->visual_modes[ x->active_visual ] & TV_TRANSFER_DIRECT )) {
-             strcpy( S_err_msg, "Active visual does not support direct video");
-             goto RETURN;
-@@ -1738,6 +1730,7 @@ TV_BOOL TVCAPTUREConfigure( TV_CAPTURE  
-             strcpy( S_err_msg, "Direct transfer only supported for video" );
-             goto RETURN;
-         }
-+    }
- 
-     /*  Get capture geometry  */
-     if ( c->xfer_mode == TV_TRANSFER_DIRECT ) {
+
