@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/22 05:30:14 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/06/10 07:03:26 pvalchev Exp $
 bin/gentoo
-share/doc/gentoo/CONFIG-CHANGES
 share/doc/gentoo/FAQ
-share/doc/gentoo/README
-share/doc/gentoo/README.NLS
-share/doc/gentoo/README.gtkrc
 share/doc/gentoo/acks.html
 share/doc/gentoo/buttons.html
 share/doc/gentoo/columns.html

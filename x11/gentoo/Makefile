@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/22 05:30:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/10 07:03:26 pvalchev Exp $
 
 COMMENT=		"GTK+ Graphical filemanager"
 
-VERSION=		0.11.24
+VERSION=		0.11.25
 DISTNAME=		gentoo-${VERSION}
 CATEGORIES=		x11	
 NEED_VERSION=		1.531
@@ -26,13 +26,9 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 NO_REGRESS=		Yes
 
-FILES=		CONFIG-CHANGES README README.NLS README.gtkrc	
-
 post-install:
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && \
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gentoo && \
-	${INSTALL_DATA} ${FILES} ${PREFIX}/share/doc/gentoo
-	@cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/gentoo
-
+	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/gentoo
 
 .include <bsd.port.mk>
