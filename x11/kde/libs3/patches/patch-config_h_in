@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_h_in,v 1.4 2002/06/03 10:06:20 espie Exp $
---- config.h.in.orig	Tue May 21 16:41:11 2002
-+++ config.h.in	Tue May 28 12:28:36 2002
-@@ -584,6 +584,9 @@
- /* path to su */
- #undef __PATH_SU
+$OpenBSD: patch-config_h_in,v 1.5 2003/01/27 19:16:47 espie Exp $
+--- config.h.in.orig	Tue Jan 14 14:01:45 2003
++++ config.h.in	Tue Jan 14 16:31:26 2003
+@@ -928,6 +928,9 @@ int snprintf(char *str, size_t n, char c
+ #endif
+ 
  
 +/* path to sudo */
 +#undef __PATH_SUDO

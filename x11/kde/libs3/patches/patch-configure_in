@@ -1,31 +1,18 @@
-$OpenBSD: patch-configure_in,v 1.7 2003/01/13 20:50:04 espie Exp $
---- configure.in.orig	Tue Dec 17 11:42:55 2002
-+++ configure.in	Mon Jan 13 21:45:03 2003
-@@ -585,6 +585,12 @@ AC_CHECK_FUNC(getaddrinfo,
-     AC_DEFINE(GETADDRINFO_RETURNS_UNIX, 1, [Define if getaddrinfo returns AF_UNIX sockets])
-   ]
- )
-+case "$target" in
-+	  *-*-openbsd*)
-+	  dnl our getaddrinfo is not thread-safe yet
-+      AC_DEFINE(HAVE_BROKEN_GETADDRINFO, 1, [Define if getaddrinfo is broken and should be replaced])
-+	    ;;
-+esac
- LIBS="$my_LIBS"
- 
- AC_MSG_CHECKING([if struct sockaddr has member sa_len])
-@@ -912,6 +918,14 @@ if test "$path_su" = "no"; then
-     AC_MSG_WARN(su was not found)
- else
+$OpenBSD: patch-configure_in,v 1.8 2003/01/27 19:16:47 espie Exp $
+--- configure.in.orig	Tue Jan 14 14:01:29 2003
++++ configure.in	Tue Jan 14 16:31:26 2003
+@@ -1051,6 +1051,14 @@ else
      AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
-+fi
-+
+ fi
+ 
 +dnl Check for sudo
 +AC_PATH_PROG(path_sudo, "sudo", "no")
 +if test "$path_sudo" = "no"; then
 +    AC_MSG_WARN(sudo was not found)
 +else
 +    AC_DEFINE_UNQUOTED(__PATH_SUDO, "$path_sudo", [path to sudo])
- fi
- 
++fi
++
  dnl Check for POSIX.1b scheduling
+ AC_MSG_CHECKING([POSIX.1b scheduling])
+ AC_TRY_LINK([
