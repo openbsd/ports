@@ -1,0 +1,23 @@
+$OpenBSD: patch-libjava_aclocal_m4,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- libjava/aclocal.m4.orig	Mon Jun  3 16:36:32 2002
++++ libjava/aclocal.m4	Mon Jun  3 16:37:31 2002
+@@ -447,3 +447,19 @@ for am_file in <<$1>>; do
+ done<<>>dnl>>)
+ changequote([,]))])
+ 
++dnl From Bruno Haible.
++
++AC_DEFUN([AM_LANGINFO_CODESET],
++[
++  AC_CACHE_CHECK([for nl_langinfo and CODESET], am_cv_langinfo_codeset,
++    [AC_TRY_LINK([#include <langinfo.h>],
++      [char* cs = nl_langinfo(CODESET);],
++      am_cv_langinfo_codeset=yes,
++      am_cv_langinfo_codeset=no)
++    ])
++  if test $am_cv_langinfo_codeset = yes; then
++    AC_DEFINE(HAVE_LANGINFO_CODESET, 1,
++      [Define if you have <langinfo.h> and nl_langinfo(CODESET).])
++  fi
++])
++

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_java_jv-scan_c,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- gcc/java/jv-scan.c.orig	Fri Feb  1 22:07:31 2002
++++ gcc/java/jv-scan.c	Mon Jun  3 16:42:13 2002
+@@ -199,7 +199,7 @@ DEFUN (main, (argc, argv),
+ 	    /* There's no point in trying to find the current encoding
+ 	       unless we are going to do something intelligent with it
+ 	       -- hence the test for iconv.  */
+-#if defined (HAVE_LOCALE_H) && defined (HAVE_ICONV) && defined (HAVE_NL_LANGINFO)
++#if defined (HAVE_LOCALE_H) && defined (HAVE_ICONV) && defined (HAVE_LANGINFO_CODESET)
+ 	    setlocale (LC_CTYPE, "");
+ 	    if (encoding == NULL)
+ 	      encoding = nl_langinfo (CODESET);

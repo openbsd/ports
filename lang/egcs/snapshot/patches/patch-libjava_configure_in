@@ -1,0 +1,11 @@
+$OpenBSD: patch-libjava_configure_in,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- libjava/configure.in.orig	Mon Jun  3 16:37:37 2002
++++ libjava/configure.in	Mon Jun  3 16:44:50 2002
+@@ -520,6 +520,7 @@ else
+      AC_DEFINE(HAVE_PROC_SELF_EXE)])
+ 
+    AM_ICONV
++   AM_LANGINFO_CODESET
+    AM_LC_MESSAGES
+    AC_STRUCT_TIMEZONE
+ 

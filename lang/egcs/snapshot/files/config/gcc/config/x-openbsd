@@ -1,3 +1,0 @@
-# Enforce yacc even when the FSF wants bison
-
-BISON=yacc

@@ -1,0 +1,14 @@
+$OpenBSD: patch-libtool_m4,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- libtool.m4.orig	Wed Aug 22 11:19:01 2001
++++ libtool.m4	Wed Aug 22 11:19:46 2001
+@@ -620,6 +620,10 @@ newsos6)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
++openbsd*)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
++
+ osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'

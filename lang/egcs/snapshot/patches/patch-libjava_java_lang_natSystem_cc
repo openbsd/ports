@@ -1,0 +1,12 @@
+$OpenBSD: patch-libjava_java_lang_natSystem_cc,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- libjava/java/lang/natSystem.cc.orig	Sun Apr  7 13:30:08 2002
++++ libjava/java/lang/natSystem.cc	Mon Jun  3 16:43:16 2002
+@@ -168,7 +168,7 @@ java::lang::System::identityHashCode (jo
+ }
+ 
+ #if ! defined (DEFAULT_FILE_ENCODING) && defined (HAVE_ICONV) \
+-    && defined (HAVE_NL_LANGINFO)
++    && defined (HAVE_LANGINFO_CODESET)
+ 
+ static char *
+ file_encoding ()

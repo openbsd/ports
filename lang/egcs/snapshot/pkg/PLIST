@@ -1,78 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/07 01:54:50 naddy Exp $
-@option no-default-conflict
+@comment $OpenBSD: PLIST,v 1.8 2002/06/05 23:58:50 espie Exp $
 @pkgcfl egcs-*-core
-@unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
-@unexec install-info --delete --info-dir=%D/info %D/info/egcc.info
+bin/ecpp
 bin/egcc
 bin/egccbug
-bin/ecpp
-@comment bin/eprotoize
-@comment bin/eunprotoize
 bin/egcov
-bin/@GCCARCH@-gcc
-@comment lib/gcc-lib/@GCCARCH@/@VERSION@/SYSCALLS.c.X
-lib/gcc-lib/@GCCARCH@/@VERSION@/cc1
-lib/gcc-lib/@GCCARCH@/@VERSION@/collect2
-lib/gcc-lib/@GCCARCH@/@VERSION@/cpp0
-lib/gcc-lib/@GCCARCH@/@VERSION@/libgcc.a
-lib/gcc-lib/@GCCARCH@/@VERSION@/specs
-lib/gcc-lib/@GCCARCH@/@VERSION@/tradcpp0
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/syslimits.h
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/limits.h
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/float.h
-@comment lib/gcc-lib/@GCCARCH@/@VERSION@/include/math.h
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/README
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/stdarg.h
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/machine/ansi.h
-lib/gcc-lib/@GCCARCH@/@VERSION@/include/varargs.h
+bin/${CONFIG}-egcc
+lib/gcc-lib/${CONFIG}/${V}/cc1
+lib/gcc-lib/${CONFIG}/${V}/collect2
+lib/gcc-lib/${CONFIG}/${V}/cpp0
+IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/include/README
+lib/gcc-lib/${CONFIG}/${V}/include/float.h
+lib/gcc-lib/${CONFIG}/${V}/include/limits.h
+lib/gcc-lib/${CONFIG}/${V}/include/machine/ansi.h
+lib/gcc-lib/${CONFIG}/${V}/include/stdarg.h
+lib/gcc-lib/${CONFIG}/${V}/include/stdbool.h
+lib/gcc-lib/${CONFIG}/${V}/include/syslimits.h
+lib/gcc-lib/${CONFIG}/${V}/include/varargs.h
+lib/gcc-lib/${CONFIG}/${V}/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/specs
+lib/gcc-lib/${CONFIG}/${V}/tradcpp0
 lib/libiberty.a
-info/ecpp.info
-info/ecpp.info-1
-info/ecpp.info-2
-info/ecpp.info-3
-info/egcc.info
-info/egcc.info-1
-info/egcc.info-10
-info/egcc.info-11
-info/egcc.info-12
-info/egcc.info-13
-info/egcc.info-14
-info/egcc.info-15
-info/egcc.info-16
-info/egcc.info-17
-info/egcc.info-18
-info/egcc.info-19
-info/egcc.info-2
-info/egcc.info-20
-info/egcc.info-21
-info/egcc.info-22
-info/egcc.info-23
-info/egcc.info-24
-info/egcc.info-25
-info/egcc.info-26
-info/egcc.info-27
-info/egcc.info-28
-info/egcc.info-29
-info/egcc.info-3
-info/egcc.info-30
-info/egcc.info-31
-info/egcc.info-32
-info/egcc.info-4
-info/egcc.info-5
-info/egcc.info-6
-info/egcc.info-7
-info/egcc.info-8
-info/egcc.info-9
-man/man1/ecccp.1
+man/man1/cpp.1
 man/man1/egcc.1
-@dirrm lib/gcc-lib/@GCCARCH@/@VERSION@/include/machine
-@dirrm lib/gcc-lib/@GCCARCH@/@VERSION@/include
-@dirrm lib/gcc-lib/@GCCARCH@/@VERSION@
-@dirrm lib/gcc-lib/@GCCARCH@
+man/man1/gcov.1
+@comment man/man7/fsf-funding.7
+@comment man/man7/gfdl.7
+@comment man/man7/gpl.7
+%%SHARED%%
+@dirrm lib/gcc-lib/${CONFIG}/${V}/include/machine
+@dirrm lib/gcc-lib/${CONFIG}/${V}/include
+IFPIC:@dirrm lib/gcc-lib/${CONFIG}/${V}/fpic
+@dirrm lib/gcc-lib/${CONFIG}/${V}
+@dirrm lib/gcc-lib/${CONFIG}
 @dirrm lib/gcc-lib
-@dirrm @GCCARCH@/include
-@dirrm @GCCARCH@
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@exec install-info --info-dir=%D/info %D/info/ecpp.info
-@exec install-info --info-dir=%D/info %D/info/egcc.info
+IFPIC:@exec mkdir -p %D/lib/fpic
+IFPIC:@dirrm lib/fpic

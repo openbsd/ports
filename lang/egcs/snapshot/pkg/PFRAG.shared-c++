@@ -1,5 +1,3 @@
-@comment $OpenBSD: PFRAG.shared-c++,v 1.2 2002/04/07 01:54:50 naddy Exp $
-lib/libstdc++.so.32.0
-lib/libstdc++.so.2.10.0
-lib/gcc-lib/@GCCARCH@/@VERSION@/libstdc++.so
-lib/gcc-lib/@GCCARCH@/@VERSION@/libstdc++.a
+@comment $OpenBSD: PFRAG.shared-c++,v 1.3 2002/06/05 23:58:50 espie Exp $
+lib/fpic/libestdc++.so.4.0
+lib/libestdc++.so.4.0

@@ -1,15 +1,8 @@
-$OpenBSD: README,v 1.7 1999/11/24 00:15:04 espie Exp $
+$OpenBSD: README,v 1.8 2002/06/05 23:58:49 espie Exp $
 
 Warning: highly experimental port.
 
 It is assumed you know what you are doing by playing with this.
-
-Some common problems:
-- this port has no bison/yacc dependency. post-patch DOES fix the
-timestamps so that the generated parser files are newer than the
-corresponding yacc source. If this fails for you, blame your setup. *RUN*
-a time protocol over NFS networks, heck, get a clue.
-
 
 If configuration for your favorite processor does not work, there are
 two possibilities:
@@ -47,17 +40,3 @@ building the library, you had better decide from the start.
 Once you get through all those caveats, and manage to build egcs, one
 nice point is that you get fairly good C, C++, f77, objective-C, and
 java compilers.
-
-Thread support
---------------
-I'm currently building on d's work with respect to libc_r... I've added
-some provisions for adding -pthread everywhere it's currently needed.
-
-Test support needs the same -pthread, e.g., you'll probably have to edit
-/usr/local/share/dejagnu/baseboards/unix.exp to add
-set_board_info cflags	"-pthread"
-I haven't yet modified the testsuite framework for that. I'm somewhat
-hoping we'll find a less kludgy solution than -pthread to activate libc_r.
-This is tied to weak symbol support.
---
-	Marc Espie

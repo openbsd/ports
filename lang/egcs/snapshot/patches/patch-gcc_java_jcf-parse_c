@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_java_jcf-parse_c,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- gcc/java/jcf-parse.c.orig	Mon Apr 22 22:36:47 2002
++++ gcc/java/jcf-parse.c	Mon Jun  3 16:41:58 2002
+@@ -876,7 +876,7 @@ parse_source_file_1 (file, finput)
+   /* There's no point in trying to find the current encoding unless we
+      are going to do something intelligent with it -- hence the test
+      for iconv.  */
+-#if defined (HAVE_LOCALE_H) && defined (HAVE_ICONV) && defined (HAVE_NL_LANGINFO)
++#if defined (HAVE_LOCALE_H) && defined (HAVE_ICONV) && defined (HAVE_LANGINFO_CODESET)
+   setlocale (LC_CTYPE, "");
+   if (current_encoding == NULL)
+     current_encoding = nl_langinfo (CODESET);

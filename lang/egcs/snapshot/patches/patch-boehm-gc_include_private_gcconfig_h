@@ -1,0 +1,11 @@
+$OpenBSD: patch-boehm-gc_include_private_gcconfig_h,v 1.1 2002/06/05 23:58:50 espie Exp $
+--- boehm-gc/include/private/gcconfig.h.orig	Mon Jun  3 21:18:07 2002
++++ boehm-gc/include/private/gcconfig.h	Mon Jun  3 21:27:09 2002
+@@ -553,6 +553,7 @@
+ #	define HEURISTIC2
+ 	extern char etext[];
+ #	define DATASTART ((ptr_t)(etext))
++#       define DYNAMIC_LOADING
+ #   endif
+ #   ifdef NETBSD
+ #	define OS_TYPE "NETBSD"
