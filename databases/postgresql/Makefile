@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/10/22 18:46:02 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2000/11/30 19:23:14 dugsong Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.2
@@ -73,7 +73,7 @@ CONFIGURE_ARGS= --prefix="${PREFIX}/pgsql" --enable-locale \
 		--with-template="openbsd" --with-libraries="${PREFIX}/lib"
 CONFIGURE_ENV=	POSTGRESDIR="${PREFIX}/pgsql"
 
-FLAVORS=	tcl
+FLAVORS=	odbc tcl
 FLAVOR?=
 
 MULTI_PACKAGES=	-docs
@@ -89,6 +89,10 @@ CONFIGURE_ARGS+= --with-tcl \
 		--with-includes="${LOCALBASE}/include ${TCL_INCDIR} ${TK_INCDIR}"
 .else
 CONFIGURE_ARGS+= --with-includes="${LOCALBASE}/include"
+.endif
+
+.if ${FLAVOR:L:Modbc}
+CONFIGURE_ARGS+= --with-odbc
 .endif
 
 DOCDIR=		${WRKSRC}/../doc

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.odbc,v 1.1 2000/11/30 19:23:14 dugsong Exp $
+pgsql/odbcinst.ini
+pgsql/lib/libpsqlodbc.a
+pgsql/lib/libpsqlodbc.so.0.26
+pgsql/lib/libpsqlodbc.so.0
+pgsql/lib/libpsqlodbc.so
+pgsql/include/iodbc/iodbc.h
+@dirrm pgsql/include/iodbc

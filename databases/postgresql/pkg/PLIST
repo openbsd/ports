@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2000/08/25 15:34:13 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2000/11/30 19:23:14 dugsong Exp $
 bin/pgwrap
 pgsql/bin/createdb
 pgsql/bin/createlang
@@ -66,6 +66,7 @@ pgsql/lib/pg_ident.conf.sample
 pgsql/lib/pg_options.sample
 pgsql/lib/postmaster.opts.default.sample
 %%tcl%%
+%%odbc%%
 %%SHARED%%
 pgsql/man/man1/createdb.1
 pgsql/man/man1/createlang.1
