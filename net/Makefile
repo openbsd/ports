@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2000/04/21 18:45:12 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2000/05/26 01:54:43 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -93,6 +93,7 @@
      SUBDIR += publicfile
      SUBDIR += queso
 #    SUBDIR += radius
+     SUBDIR += radiusd-cistron
 #    SUBDIR += ratoolset
 #    SUBDIR += rdist6
 #    SUBDIR += ripetools

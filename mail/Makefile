@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/05/24 09:33:46 form Exp $
+# $OpenBSD: Makefile,v 1.28 2000/05/26 01:54:43 espie Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -50,6 +50,7 @@
      SUBDIR += rblsmtpd
      SUBDIR += serialmail
 #    SUBDIR += smail
+     SUBDIR += solid-pop3d
      SUBDIR += tkrat
      SUBDIR += vrfy
      SUBDIR += xfaces
