@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/06 08:38:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/01 03:25:34 brad Exp $
 
 COMMENT=	"creating & editing GIF images and animations"
 
 DISTNAME=	gifsicle-1.30
 CATEGORIES=    	graphics
-NEED_VERSION=	1.488
+NEED_VERSION=	1.500
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=		--enable-gifdiff
 SEPARATE_BUILD=		concurrent
 
 .if ${FLAVOR:L:Mno_x11}
-USE_X11=	No
 CONFIGURE_ARGS+=	--disable-gifview
 .else
 USE_X11=	Yes
