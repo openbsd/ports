@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 1999/05/23 01:42:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.17 1999/05/23 01:45:45 angelos Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -12,6 +12,7 @@
 #    SUBDIR += maplay
 #    SUBDIR += mikmod
      SUBDIR += mp3encode
+     SUBDIR += mp3info
      SUBDIR += mpegaudio
      SUBDIR += mpg123
 #    SUBDIR += mxv
