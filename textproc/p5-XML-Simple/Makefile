@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2005/02/04 05:52:35 kevlo Exp $
 
 COMMENT=	"trivial perl API for reading/writing XML"
 
-DISTNAME=	XML-Simple-2.12
+DISTNAME=	XML-Simple-2.14
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
