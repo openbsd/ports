@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/05/16 00:59:47 matt Exp $
+# $OpenBSD: Makefile,v 1.40 2001/05/19 00:10:03 matt Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -77,7 +77,7 @@ post-install:
 	@for i in ${WRKSRC}/../docs/textdocs/* ; do \
 	 ${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/textdocs ;\
 	done
-	@sed -e 's:/usr/spool/samba/:${SAMBA_SPOOL}:g' \
+	@sed -e 's:/usr/spool/samba:${SAMBA_SPOOL}:g' \
 	 -e 's:/usr/local/samba/var/log:${SAMBA_LOGDIR}/smbd:g' \
 	 ${WRKSRC}/../examples/smb.conf.default > ${SAMPLE_CONFIG}
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin
