@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/03/08 23:01:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/13 13:37:56 kurt Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -8,10 +8,10 @@ COMMENT=		"Apache-Tomcat AJP Connector"
 
 V=			1.2.8
 DISTNAME=		jakarta-tomcat-connectors-${V}-src
-PKGNAME=		mod_jk-${V}
+PKGNAME=		mod_jk-${V}p0
 CATEGORIES=		www
 
-HOMEPAGE=		http://jakarta.apache.org/tomcat/tomcat-4.1-doc/jk2/
+HOMEPAGE=		http://jakarta.apache.org/tomcat/connectors-doc/index.html
 
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
@@ -42,7 +42,7 @@ do-install:
 	sed 's,/usr/local,${TRUEPREFIX},' \
 		< ${FILESDIR}/mod_jk-enable >${WRKSRC}/mod_jk-enable
 	${INSTALL_SCRIPT} ${WRKSRC}/mod_jk-enable ${PREFIX}/sbin/mod_jk-enable
-	${INSTALL_PROGRAM} ${WRKBUILD}/apache-1.3/mod_jk.so.0.0 ${PREFIX}/lib/mod_jk.so
+	${INSTALL_DATA} ${WRKBUILD}/apache-1.3/mod_jk.so.0.0 ${PREFIX}/lib/mod_jk.so
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mod_jk
 	${INSTALL_DATA} ${FILESDIR}/mod_jk.conf ${PREFIX}/share/examples/mod_jk
 .for file in ${EXAMPLES}
