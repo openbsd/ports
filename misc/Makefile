@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2001/10/31 19:41:11 marc Exp $
+# $OpenBSD: Makefile,v 1.58 2001/12/07 13:57:09 brad Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -65,6 +65,7 @@
      SUBDIR += remind
      SUBDIR += rpm
      SUBDIR += screen
+     SUBDIR += screen,static
      SUBDIR += sh-utils
      SUBDIR += splitvt
 #    SUBDIR += team
