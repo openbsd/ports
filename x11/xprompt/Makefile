@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/22 20:27:36 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/17 02:34:45 kevlo Exp $
 #
 
 DISTNAME=	xprompt-1.4
@@ -12,14 +12,12 @@ MASTER_SITES=   ftp://ftp.nsg.bc.ca/pub/nsg/src/xprompt/
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
-
-MAN1=		xprompt.1
+FAKE=		Yes
+USE_IMAKE=	Yes
 
 .include <bsd.port.mk>

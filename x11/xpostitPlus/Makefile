@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/22 20:27:36 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/17 02:35:02 kevlo Exp $
 #
 
 DISTNAME=	XPostitPlus-2.3
@@ -13,12 +13,12 @@ MASTER_SITE_SUBDIR=	office
 
 MAINTAINER=	ports@OpenBSD.ORG
 
-LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+FAKE=		Yes
+USE_IMAKE=	Yes
 
 .include <bsd.port.mk>
