@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/02 21:13:35 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/11 05:17:33 brad Exp $
 
 COMMENT=	"tools and library routines for working with GIF images"
 
 DISTNAME=	libungif-4.1.0b1
 CATEGORIES=	graphics
-NEED_VERSION=	1.475
+NEED_VERSION=	1.500
 MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/
 
 HOMEPAGE=	http://prtr-13.ucsc.edu/~badger/software/libungif/index.shtml
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --without-x
 
