@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2005/02/24 22:24:55 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2005/03/14 07:05:09 alek Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
@@ -24,7 +24,7 @@ FLAVOR?=
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS+= --enable-javascript --with-ssl
+CONFIGURE_ARGS+= --enable-javascript --with-ssl --without-sdl
 
 .if !${FLAVOR:L:Mno_x11}
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
