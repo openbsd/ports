@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2002/07/15 22:04:18 naddy Exp $
+--- configure.orig	Mon Jul 15 23:56:06 2002
++++ configure	Mon Jul 15 23:56:35 2002
+@@ -846,7 +846,6 @@ cat >> confdefs.h <<EOF
+ EOF
+ 
+ 
+-CFLAGS="$CFLAGS -Wall -O2"
+ echo $ac_n "checking build system type""... $ac_c" 1>&6
+ echo "configure:852: checking build system type" >&5
+ 
