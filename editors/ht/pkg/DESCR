@@ -19,5 +19,3 @@ Support includes the following file formats:
 * M$ object files (.obj) 
 
 Suports 'copy', 'paste', histories, as well as 'undo'.
-
-WWW: ${HOMEPAGE}

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/04 01:59:27 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2003/11/02 01:34:46 margarida Exp $
 
 COMMENT=		"file editor/viewer/analyzer for executables"
 
-DISTNAME=		ht-0.7.2
+DISTNAME=		ht-0.7.3
 CATEGORIES=		editors
 
 HOMEPAGE=		http:/hte.sourceforge.net/
@@ -18,16 +18,16 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+USE_GMAKE=		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=
 
 .if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+=	 --disable-x11-textmode
-.endif
-
+CONFIGURE_ARGS+=	--disable-x11-textmode
+.else
 USE_X11=		Yes
-USE_GMAKE=		Yes
+.endif
 
 DOCS=			README ht.html
 
