@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/06/09 20:32:19 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/02/20 23:31:29 pvalchev Exp $
 bin/gist
 bin/yorick
 include/README
@@ -22,6 +22,7 @@ include/gist.h
 include/graph.i
 include/gtext.h
 include/hash.h
+include/heapsort.h
 include/hex.h
 include/hex.i
 include/hlevel.h
@@ -57,6 +58,7 @@ include/xfancy.h
 include/yasync.h
 include/ydata.h
 include/yio.h
+include/yversion.h
 lib/libyor.a
 man/man1/gist.1
 man/man1/yorick.1
@@ -66,6 +68,7 @@ share/doc/yorick/graph.doc
 share/doc/yorick/hex.doc
 share/doc/yorick/library.doc
 share/doc/yorick/math.doc
+share/doc/yorick/refs.pdf
 share/doc/yorick/refs.ps
 share/doc/yorick/refs.tex
 share/doc/yorick/std.doc
