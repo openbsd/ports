@@ -1,15 +1,16 @@
 --- unix/Makefile.orig	Mon Nov 29 00:22:42 1999
-+++ unix/Makefile	Sun Mar 26 17:07:23 2000
-@@ -125,10 +125,10 @@
++++ unix/Makefile	Sun Jul 23 22:24:56 2000
+@@ -125,11 +125,9 @@
  # install
  install:        $(ZIPS)
  	-$(INSTALL_D) $(BINDIR)
 -	$(INSTALL) $(ZIPS) $(BINDIR)
+-	-cd $(BINDIR); $(CHMOD) $(BINFLAGS) $(ZIPS)
 +	$(BSD_INSTALL_PROGRAM) $(ZIPS) $(BINDIR)
- 	-cd $(BINDIR); $(CHMOD) $(BINFLAGS) $(ZIPS)
  	-$(INSTALL_D) $(MANDIR)
 -	$(INSTALL) man/zip.1 $(MANDIR)/zip.$(manext)
+-	$(CHMOD) $(MANFLAGS) $(MANDIR)/zip.$(manext)
 +	$(BSD_INSTALL_MAN) man/zip.1 $(MANDIR)/zip.$(manext)
- 	$(CHMOD) $(MANFLAGS) $(MANDIR)/zip.$(manext)
  
  uninstall:
+ 	-cd $(BINDIR); rm -f $(ZIPS)
