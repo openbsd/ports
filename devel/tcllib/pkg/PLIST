@@ -1,244 +1,281 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/09 16:59:37 todd Exp $
-lib/tcllib1.3/base64/base64.tcl
-lib/tcllib1.3/base64/pkgIndex.tcl
-lib/tcllib1.3/base64/uuencode.tcl
-lib/tcllib1.3/base64/yencode.tcl
-lib/tcllib1.3/calendar/calendar.tcl
-lib/tcllib1.3/calendar/gregorian.tcl
-lib/tcllib1.3/calendar/pkgIndex.tcl
-lib/tcllib1.3/calendar/tclIndex
-lib/tcllib1.3/cmdline/cmdline.tcl
-lib/tcllib1.3/cmdline/pkgIndex.tcl
-lib/tcllib1.3/cmdline/typedCmdline.tcl
-lib/tcllib1.3/comm/comm.tcl
-lib/tcllib1.3/comm/pkgIndex.tcl
-lib/tcllib1.3/control/ascaller.tcl
-lib/tcllib1.3/control/assert.tcl
-lib/tcllib1.3/control/control.tcl
-lib/tcllib1.3/control/do.tcl
-lib/tcllib1.3/control/no-op.tcl
-lib/tcllib1.3/control/pkgIndex.tcl
-lib/tcllib1.3/control/tclIndex
-lib/tcllib1.3/counter/counter.tcl
-lib/tcllib1.3/counter/pkgIndex.tcl
-lib/tcllib1.3/crc/cksum.tcl
-lib/tcllib1.3/crc/crc32.tcl
-lib/tcllib1.3/crc/pkgIndex.tcl
-lib/tcllib1.3/crc/sum.tcl
-lib/tcllib1.3/csv/csv.tcl
-lib/tcllib1.3/csv/pkgIndex.tcl
-lib/tcllib1.3/dns/dns.tcl
-lib/tcllib1.3/dns/pkgIndex.tcl
-lib/tcllib1.3/exif/exif.tcl
-lib/tcllib1.3/exif/pkgIndex.tcl
-lib/tcllib1.3/fileutil/fileutil.tcl
-lib/tcllib1.3/fileutil/pkgIndex.tcl
-lib/tcllib1.3/ftp/ftp.tcl
-lib/tcllib1.3/ftp/ftp_geturl.tcl
-lib/tcllib1.3/ftp/pkgIndex.tcl
-lib/tcllib1.3/ftpd/ftpd.tcl
-lib/tcllib1.3/ftpd/pkgIndex.tcl
-lib/tcllib1.3/html/html.tcl
-lib/tcllib1.3/html/pkgIndex.tcl
-lib/tcllib1.3/htmldoc/base64.html
-lib/tcllib1.3/htmldoc/calculus.html
-lib/tcllib1.3/htmldoc/cksum.html
-lib/tcllib1.3/htmldoc/cmdline.html
-lib/tcllib1.3/htmldoc/combinatorics.html
-lib/tcllib1.3/htmldoc/comm.html
-lib/tcllib1.3/htmldoc/control.html
-lib/tcllib1.3/htmldoc/counter.html
-lib/tcllib1.3/htmldoc/crc32.html
-lib/tcllib1.3/htmldoc/csv.html
-lib/tcllib1.3/htmldoc/dns.html
-lib/tcllib1.3/htmldoc/dtformat.html
-lib/tcllib1.3/htmldoc/dtformatter.html
-lib/tcllib1.3/htmldoc/exif.html
-lib/tcllib1.3/htmldoc/expander.html
-lib/tcllib1.3/htmldoc/fileutil.html
-lib/tcllib1.3/htmldoc/ftp.html
-lib/tcllib1.3/htmldoc/ftpd.html
-lib/tcllib1.3/htmldoc/graph.html
-lib/tcllib1.3/htmldoc/html.html
-lib/tcllib1.3/htmldoc/htmlparse.html
-lib/tcllib1.3/htmldoc/irc.html
-lib/tcllib1.3/htmldoc/javascript.html
-lib/tcllib1.3/htmldoc/log.html
-lib/tcllib1.3/htmldoc/math.html
-lib/tcllib1.3/htmldoc/matrix.html
-lib/tcllib1.3/htmldoc/md5.html
-lib/tcllib1.3/htmldoc/mime.html
-lib/tcllib1.3/htmldoc/mpexpand.html
-lib/tcllib1.3/htmldoc/ncgi.html
-lib/tcllib1.3/htmldoc/nntp.html
-lib/tcllib1.3/htmldoc/pool.html
-lib/tcllib1.3/htmldoc/pop3.html
-lib/tcllib1.3/htmldoc/pop3d.html
-lib/tcllib1.3/htmldoc/pop3d_dbox.html
-lib/tcllib1.3/htmldoc/pop3d_udb.html
-lib/tcllib1.3/htmldoc/profiler.html
-lib/tcllib1.3/htmldoc/queue.html
-lib/tcllib1.3/htmldoc/report.html
-lib/tcllib1.3/htmldoc/sha1.html
-lib/tcllib1.3/htmldoc/smtp.html
-lib/tcllib1.3/htmldoc/smtpd.html
-lib/tcllib1.3/htmldoc/stack.html
-lib/tcllib1.3/htmldoc/stooop.html
-lib/tcllib1.3/htmldoc/sum.html
-lib/tcllib1.3/htmldoc/textutil.html
-lib/tcllib1.3/htmldoc/tree.html
-lib/tcllib1.3/htmldoc/uri.html
-lib/tcllib1.3/htmldoc/uuencode.html
-lib/tcllib1.3/htmldoc/yencode.html
-lib/tcllib1.3/htmlparse/htmlparse.tcl
-lib/tcllib1.3/htmlparse/pkgIndex.tcl
-lib/tcllib1.3/irc/irc.tcl
-lib/tcllib1.3/irc/pkgIndex.tcl
-lib/tcllib1.3/javascript/javascript.tcl
-lib/tcllib1.3/javascript/pkgIndex.tcl
-lib/tcllib1.3/log/log.tcl
-lib/tcllib1.3/log/pkgIndex.tcl
-lib/tcllib1.3/math/calculus.tcl
-lib/tcllib1.3/math/combinatorics.tcl
-lib/tcllib1.3/math/fuzzy.tcl
-lib/tcllib1.3/math/geometry.tcl
-lib/tcllib1.3/math/math.tcl
-lib/tcllib1.3/math/misc.tcl
-lib/tcllib1.3/math/pkgIndex.tcl
-lib/tcllib1.3/math/tclIndex
-lib/tcllib1.3/md5/md5.tcl
-lib/tcllib1.3/md5/pkgIndex.tcl
-lib/tcllib1.3/mime/mime.tcl
-lib/tcllib1.3/mime/pkgIndex.tcl
-lib/tcllib1.3/mime/smtp.tcl
-lib/tcllib1.3/ncgi/ncgi.tcl
-lib/tcllib1.3/ncgi/pkgIndex.tcl
-lib/tcllib1.3/nntp/nntp.tcl
-lib/tcllib1.3/nntp/pkgIndex.tcl
-lib/tcllib1.3/pkgIndex.tcl
-lib/tcllib1.3/pop3/pkgIndex.tcl
-lib/tcllib1.3/pop3/pop3.tcl
-lib/tcllib1.3/pop3d/pkgIndex.tcl
-lib/tcllib1.3/pop3d/pop3d.tcl
-lib/tcllib1.3/pop3d/pop3d_dbox.tcl
-lib/tcllib1.3/pop3d/pop3d_udb.tcl
-lib/tcllib1.3/profiler/pkgIndex.tcl
-lib/tcllib1.3/profiler/profiler.tcl
-lib/tcllib1.3/report/pkgIndex.tcl
-lib/tcllib1.3/report/report.tcl
-lib/tcllib1.3/sha1/pkgIndex.tcl
-lib/tcllib1.3/sha1/sha1.tcl
-lib/tcllib1.3/smtpd/pkgIndex.tcl
-lib/tcllib1.3/smtpd/smtpd.tcl
-lib/tcllib1.3/stooop/mkpkgidx.tcl
-lib/tcllib1.3/stooop/pkgIndex.tcl
-lib/tcllib1.3/stooop/stooop.tcl
-lib/tcllib1.3/stooop/switched.tcl
-lib/tcllib1.3/stooop/xifo.tcl
-lib/tcllib1.3/struct/graph.tcl
-lib/tcllib1.3/struct/matrix.tcl
-lib/tcllib1.3/struct/pkgIndex.tcl
-lib/tcllib1.3/struct/pool.tcl
-lib/tcllib1.3/struct/pooltest.tcl
-lib/tcllib1.3/struct/queue.tcl
-lib/tcllib1.3/struct/stack.tcl
-lib/tcllib1.3/struct/struct.tcl
-lib/tcllib1.3/struct/tree.tcl
-lib/tcllib1.3/textutil/adjust.tcl
-lib/tcllib1.3/textutil/expander.tcl
-lib/tcllib1.3/textutil/pkgIndex.tcl
-lib/tcllib1.3/textutil/split.tcl
-lib/tcllib1.3/textutil/tabify.tcl
-lib/tcllib1.3/textutil/textutil.tcl
-lib/tcllib1.3/textutil/trim.tcl
-lib/tcllib1.3/uri/pkgIndex.tcl
-lib/tcllib1.3/uri/uri.tcl
-lib/tcllib1.3/uri/urn-scheme.tcl
-man/man.macros
+@comment $OpenBSD: PLIST,v 1.2 2003/12/21 16:04:05 jose Exp $
+lib/${TCLLIB}/base64/base64.tcl
+lib/${TCLLIB}/base64/pkgIndex.tcl
+lib/${TCLLIB}/base64/uuencode.tcl
+lib/${TCLLIB}/base64/yencode.tcl
+lib/${TCLLIB}/cmdline/cmdline.tcl
+lib/${TCLLIB}/cmdline/pkgIndex.tcl
+lib/${TCLLIB}/cmdline/typedCmdline.tcl
+lib/${TCLLIB}/comm/comm.tcl
+lib/${TCLLIB}/comm/pkgIndex.tcl
+lib/${TCLLIB}/control/ascaller.tcl
+lib/${TCLLIB}/control/assert.tcl
+lib/${TCLLIB}/control/control.tcl
+lib/${TCLLIB}/control/do.tcl
+lib/${TCLLIB}/control/no-op.tcl
+lib/${TCLLIB}/control/pkgIndex.tcl
+lib/${TCLLIB}/control/tclIndex
+lib/${TCLLIB}/counter/counter.tcl
+lib/${TCLLIB}/counter/pkgIndex.tcl
+lib/${TCLLIB}/crc/cksum.tcl
+lib/${TCLLIB}/crc/crc16.tcl
+lib/${TCLLIB}/crc/crc32.tcl
+lib/${TCLLIB}/crc/pkgIndex.tcl
+lib/${TCLLIB}/crc/sum.tcl
+lib/${TCLLIB}/csv/csv.tcl
+lib/${TCLLIB}/csv/pkgIndex.tcl
+lib/${TCLLIB}/des/des.tcl
+lib/${TCLLIB}/des/pkgIndex.tcl
+lib/${TCLLIB}/dns/dns.tcl
+lib/${TCLLIB}/dns/pkgIndex.tcl
+lib/${TCLLIB}/dns/resolv.tcl
+lib/${TCLLIB}/doctools/api.tcl
+lib/${TCLLIB}/doctools/api_idx.tcl
+lib/${TCLLIB}/doctools/api_toc.tcl
+lib/${TCLLIB}/doctools/changelog.tcl
+lib/${TCLLIB}/doctools/checker.tcl
+lib/${TCLLIB}/doctools/checker_idx.tcl
+lib/${TCLLIB}/doctools/checker_toc.tcl
+lib/${TCLLIB}/doctools/cvs.tcl
+lib/${TCLLIB}/doctools/docidx.tcl
+lib/${TCLLIB}/doctools/doctoc.tcl
+lib/${TCLLIB}/doctools/doctools.tcl
+lib/${TCLLIB}/doctools/mpformats/_common.tcl
+lib/${TCLLIB}/doctools/mpformats/_html.tcl
+lib/${TCLLIB}/doctools/mpformats/_idx_common.tcl
+lib/${TCLLIB}/doctools/mpformats/_nroff.tcl
+lib/${TCLLIB}/doctools/mpformats/_text.tcl
+lib/${TCLLIB}/doctools/mpformats/_toc_common.tcl
+lib/${TCLLIB}/doctools/mpformats/_xml.tcl
+lib/${TCLLIB}/doctools/mpformats/c.msg
+lib/${TCLLIB}/doctools/mpformats/de.msg
+lib/${TCLLIB}/doctools/mpformats/en.msg
+lib/${TCLLIB}/doctools/mpformats/fmt.html
+lib/${TCLLIB}/doctools/mpformats/fmt.latex
+lib/${TCLLIB}/doctools/mpformats/fmt.list
+lib/${TCLLIB}/doctools/mpformats/fmt.nroff
+lib/${TCLLIB}/doctools/mpformats/fmt.null
+lib/${TCLLIB}/doctools/mpformats/fmt.text
+lib/${TCLLIB}/doctools/mpformats/fmt.tmml
+lib/${TCLLIB}/doctools/mpformats/fmt.wiki
+lib/${TCLLIB}/doctools/mpformats/idx.html
+lib/${TCLLIB}/doctools/mpformats/idx.nroff
+lib/${TCLLIB}/doctools/mpformats/idx.null
+lib/${TCLLIB}/doctools/mpformats/idx.text
+lib/${TCLLIB}/doctools/mpformats/idx.wiki
+lib/${TCLLIB}/doctools/mpformats/toc.html
+lib/${TCLLIB}/doctools/mpformats/toc.nroff
+lib/${TCLLIB}/doctools/mpformats/toc.null
+lib/${TCLLIB}/doctools/mpformats/toc.text
+lib/${TCLLIB}/doctools/mpformats/toc.tmml
+lib/${TCLLIB}/doctools/mpformats/toc.wiki
+lib/${TCLLIB}/doctools/pkgIndex.tcl
+lib/${TCLLIB}/exif/exif.tcl
+lib/${TCLLIB}/exif/pkgIndex.tcl
+lib/${TCLLIB}/fileutil/fileutil.tcl
+lib/${TCLLIB}/fileutil/pkgIndex.tcl
+lib/${TCLLIB}/ftp/ftp.tcl
+lib/${TCLLIB}/ftp/ftp_geturl.tcl
+lib/${TCLLIB}/ftp/pkgIndex.tcl
+lib/${TCLLIB}/ftpd/ftpd.tcl
+lib/${TCLLIB}/ftpd/pkgIndex.tcl
+lib/${TCLLIB}/html/html.tcl
+lib/${TCLLIB}/html/pkgIndex.tcl
+lib/${TCLLIB}/htmlparse/htmlparse.tcl
+lib/${TCLLIB}/htmlparse/pkgIndex.tcl
+lib/${TCLLIB}/irc/irc.tcl
+lib/${TCLLIB}/irc/pkgIndex.tcl
+lib/${TCLLIB}/javascript/javascript.tcl
+lib/${TCLLIB}/javascript/pkgIndex.tcl
+lib/${TCLLIB}/log/log.tcl
+lib/${TCLLIB}/log/logger.tcl
+lib/${TCLLIB}/log/pkgIndex.tcl
+lib/${TCLLIB}/math/calculus.tcl
+lib/${TCLLIB}/math/combinatorics.tcl
+lib/${TCLLIB}/math/fuzzy.tcl
+lib/${TCLLIB}/math/geometry.tcl
+lib/${TCLLIB}/math/liststat.tcl
+lib/${TCLLIB}/math/math.tcl
+lib/${TCLLIB}/math/misc.tcl
+lib/${TCLLIB}/math/optimize.tcl
+lib/${TCLLIB}/math/pdf_stat.tcl
+lib/${TCLLIB}/math/pkgIndex.tcl
+lib/${TCLLIB}/math/plotstat.tcl
+lib/${TCLLIB}/math/statistics.tcl
+lib/${TCLLIB}/math/tclIndex
+lib/${TCLLIB}/md4/md4.tcl
+lib/${TCLLIB}/md4/md4c.tcl
+lib/${TCLLIB}/md4/pkgIndex.tcl
+lib/${TCLLIB}/md5/md5.tcl
+lib/${TCLLIB}/md5/pkgIndex.tcl
+lib/${TCLLIB}/mime/mime.tcl
+lib/${TCLLIB}/mime/performance.tcl
+lib/${TCLLIB}/mime/pkgIndex.tcl
+lib/${TCLLIB}/mime/smtp.tcl
+lib/${TCLLIB}/ncgi/ncgi.tcl
+lib/${TCLLIB}/ncgi/pkgIndex.tcl
+lib/${TCLLIB}/nntp/nntp.tcl
+lib/${TCLLIB}/nntp/pkgIndex.tcl
+lib/${TCLLIB}/ntp/pkgIndex.tcl
+lib/${TCLLIB}/ntp/time.tcl
+lib/${TCLLIB}/pkgIndex.tcl
+lib/${TCLLIB}/pop3/clnt.tcl
+lib/${TCLLIB}/pop3/pkgIndex.tcl
+lib/${TCLLIB}/pop3/pop3.tcl
+lib/${TCLLIB}/pop3/srv.tcl
+lib/${TCLLIB}/pop3d/pkgIndex.tcl
+lib/${TCLLIB}/pop3d/pop3d.tcl
+lib/${TCLLIB}/pop3d/pop3d_dbox.tcl
+lib/${TCLLIB}/pop3d/pop3d_udb.tcl
+lib/${TCLLIB}/profiler/pkgIndex.tcl
+lib/${TCLLIB}/profiler/profiler.tcl
+lib/${TCLLIB}/report/pkgIndex.tcl
+lib/${TCLLIB}/report/report.tcl
+lib/${TCLLIB}/sha1/pkgIndex.tcl
+lib/${TCLLIB}/sha1/sha1.tcl
+lib/${TCLLIB}/smtpd/pkgIndex.tcl
+lib/${TCLLIB}/smtpd/smtpd.tcl
+lib/${TCLLIB}/soundex/pkgIndex.tcl
+lib/${TCLLIB}/soundex/soundex.tcl
+lib/${TCLLIB}/stooop/mkpkgidx.tcl
+lib/${TCLLIB}/stooop/pkgIndex.tcl
+lib/${TCLLIB}/stooop/stooop.tcl
+lib/${TCLLIB}/stooop/switched.tcl
+lib/${TCLLIB}/stooop/xifo.tcl
+lib/${TCLLIB}/struct/graph.tcl
+lib/${TCLLIB}/struct/list.tcl
+lib/${TCLLIB}/struct/matrix.tcl
+lib/${TCLLIB}/struct/pkgIndex.tcl
+lib/${TCLLIB}/struct/pool.tcl
+lib/${TCLLIB}/struct/pooltest.tcl
+lib/${TCLLIB}/struct/prioqueue.tcl
+lib/${TCLLIB}/struct/queue.tcl
+lib/${TCLLIB}/struct/record.tcl
+lib/${TCLLIB}/struct/skiplist.tcl
+lib/${TCLLIB}/struct/stack.tcl
+lib/${TCLLIB}/struct/struct.tcl
+lib/${TCLLIB}/struct/tree.tcl
+lib/${TCLLIB}/textutil/adjust.tcl
+lib/${TCLLIB}/textutil/dehypht.tex
+lib/${TCLLIB}/textutil/eshyph_vo.tex
+lib/${TCLLIB}/textutil/expander.tcl
+lib/${TCLLIB}/textutil/ithyph.tex
+lib/${TCLLIB}/textutil/pkgIndex.tcl
+lib/${TCLLIB}/textutil/split.tcl
+lib/${TCLLIB}/textutil/tabify.tcl
+lib/${TCLLIB}/textutil/textutil.tcl
+lib/${TCLLIB}/textutil/trim.tcl
+lib/${TCLLIB}/uri/pkgIndex.tcl
+lib/${TCLLIB}/uri/uri.tcl
+lib/${TCLLIB}/uri/urn-scheme.tcl
 man/mann/base64.n
 man/mann/calculus.n
+man/mann/changelog.n
 man/mann/cksum.n
 man/mann/cmdline.n
 man/mann/combinatorics.n
 man/mann/comm.n
 man/mann/control.n
 man/mann/counter.n
+man/mann/crc16.n
 man/mann/crc32.n
 man/mann/csv.n
-man/mann/dns.n
-man/mann/dtformat.n
-man/mann/dtformatter.n
+man/mann/cvs.n
+man/mann/des.n
+man/mann/docidx.n
+man/mann/docidx_api.n
+man/mann/docidx_fmt.n
+man/mann/doctoc.n
+man/mann/doctoc_api.n
+man/mann/doctoc_fmt.n
+man/mann/doctools.n
+man/mann/doctools_api.n
+man/mann/doctools_fmt.n
 man/mann/exif.n
 man/mann/expander.n
 man/mann/fileutil.n
 man/mann/ftp.n
 man/mann/ftpd.n
+man/mann/fuzzy.n
 man/mann/graph.n
 man/mann/html.n
 man/mann/htmlparse.n
 man/mann/irc.n
 man/mann/javascript.n
 man/mann/log.n
+man/mann/logger.n
 man/mann/math.n
 man/mann/matrix.n
+man/mann/md4.n
 man/mann/md5.n
 man/mann/mime.n
 man/mann/mpexpand.n
 man/mann/ncgi.n
 man/mann/nntp.n
+man/mann/ntp_time.n
+man/mann/optimize.n
 man/mann/pool.n
 man/mann/pop3.n
 man/mann/pop3d.n
 man/mann/pop3d_dbox.n
 man/mann/pop3d_udb.n
+man/mann/prioqueue.n
 man/mann/profiler.n
 man/mann/queue.n
+man/mann/record.n
 man/mann/report.n
 man/mann/sha1.n
+man/mann/skiplist.n
 man/mann/smtp.n
 man/mann/smtpd.n
+man/mann/soundex.n
 man/mann/stack.n
+man/mann/statistics.n
 man/mann/stooop.n
+man/mann/struct_list.n
+man/mann/struct_tree.n
 man/mann/sum.n
+man/mann/tcllib_dns.n
 man/mann/textutil.n
-man/mann/tree.n
 man/mann/uri.n
 man/mann/uuencode.n
 man/mann/yencode.n
-@dirrm lib/tcllib1.3/uri
-@dirrm lib/tcllib1.3/textutil
-@dirrm lib/tcllib1.3/struct
-@dirrm lib/tcllib1.3/stooop
-@dirrm lib/tcllib1.3/smtpd
-@dirrm lib/tcllib1.3/sha1
-@dirrm lib/tcllib1.3/report
-@dirrm lib/tcllib1.3/profiler
-@dirrm lib/tcllib1.3/pop3d
-@dirrm lib/tcllib1.3/pop3
-@dirrm lib/tcllib1.3/nntp
-@dirrm lib/tcllib1.3/ncgi
-@dirrm lib/tcllib1.3/mime
-@dirrm lib/tcllib1.3/md5
-@dirrm lib/tcllib1.3/math
-@dirrm lib/tcllib1.3/log
-@dirrm lib/tcllib1.3/javascript
-@dirrm lib/tcllib1.3/irc
-@dirrm lib/tcllib1.3/htmlparse
-@dirrm lib/tcllib1.3/htmldoc
-@dirrm lib/tcllib1.3/html
-@dirrm lib/tcllib1.3/ftpd
-@dirrm lib/tcllib1.3/ftp
-@dirrm lib/tcllib1.3/fileutil
-@dirrm lib/tcllib1.3/exif
-@exec mkdir -p %D/lib/tcllib1.3/doctools
-@dirrm lib/tcllib1.3/doctools
-@dirrm lib/tcllib1.3/dns
-@dirrm lib/tcllib1.3/csv
-@dirrm lib/tcllib1.3/crc
-@dirrm lib/tcllib1.3/counter
-@dirrm lib/tcllib1.3/control
-@dirrm lib/tcllib1.3/comm
-@dirrm lib/tcllib1.3/cmdline
-@dirrm lib/tcllib1.3/calendar
-@dirrm lib/tcllib1.3/base64
-@dirrm lib/tcllib1.3
+@dirrm lib/${TCLLIB}/uri
+@dirrm lib/${TCLLIB}/textutil
+@dirrm lib/${TCLLIB}/struct
+@dirrm lib/${TCLLIB}/stooop
+@dirrm lib/${TCLLIB}/soundex
+@dirrm lib/${TCLLIB}/smtpd
+@dirrm lib/${TCLLIB}/sha1
+@dirrm lib/${TCLLIB}/report
+@dirrm lib/${TCLLIB}/profiler
+@dirrm lib/${TCLLIB}/pop3d
+@dirrm lib/${TCLLIB}/pop3
+@dirrm lib/${TCLLIB}/ntp
+@dirrm lib/${TCLLIB}/nntp
+@dirrm lib/${TCLLIB}/ncgi
+@dirrm lib/${TCLLIB}/mime
+@dirrm lib/${TCLLIB}/md5
+@dirrm lib/${TCLLIB}/md4
+@dirrm lib/${TCLLIB}/math
+@dirrm lib/${TCLLIB}/log
+@dirrm lib/${TCLLIB}/javascript
+@dirrm lib/${TCLLIB}/irc
+@dirrm lib/${TCLLIB}/htmlparse
+@dirrm lib/${TCLLIB}/html
+@dirrm lib/${TCLLIB}/ftpd
+@dirrm lib/${TCLLIB}/ftp
+@dirrm lib/${TCLLIB}/fileutil
+@dirrm lib/${TCLLIB}/exif
+@dirrm lib/${TCLLIB}/doctools/mpformats
+@dirrm lib/${TCLLIB}/doctools
+@dirrm lib/${TCLLIB}/dns
+@dirrm lib/${TCLLIB}/des
+@dirrm lib/${TCLLIB}/csv
+@dirrm lib/${TCLLIB}/crc
+@dirrm lib/${TCLLIB}/counter
+@dirrm lib/${TCLLIB}/control
+@dirrm lib/${TCLLIB}/comm
+@dirrm lib/${TCLLIB}/cmdline
+@dirrm lib/${TCLLIB}/base64
+@dirrm lib/${TCLLIB}
