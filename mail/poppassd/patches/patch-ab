@@ -1,5 +1,5 @@
---- poppassd.c.orig	Mon Jun  5 02:32:38 2000
-+++ poppassd.c	Mon Jun  5 02:32:38 2000
+--- poppassd.c.orig	2004-01-05 04:15:51.000000000 +0100
++++ poppassd.c	2004-01-05 04:16:07.000000000 +0100
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -32,6 +32,15 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
+@@ -125,7 +125,7 @@
+ #include <ctype.h>
+ #include <strings.h>
+ #include <errno.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <pwd.h>
+ #include <string.h>
+ #include <termios.h>
 @@ -145,8 +145,9 @@
  static char *P1[] =
     {"Old password:",
@@ -43,7 +52,7 @@
      "Changing password for *\n*'s Old password:",
      ""};
  
-@@ -165,7 +166,9 @@ static char *P3[] =
+@@ -165,9 +166,12 @@ static char *P3[] =
      
  static char *P4[] =
     {"\n",
@@ -52,8 +61,11 @@
 +    "\n\nNIS password has been changed on *.\n",
      ""};
  
++void WriteToClient(char *fmt, ...);
  
-@@ -186,11 +189,7 @@ char *argv[];
+ main (argc, argv)
+ int argc;
+@@ -186,11 +190,7 @@ char *argv[];
       
       *user = *oldpass = *newpass = 0;
       
@@ -66,7 +78,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -218,6 +217,7 @@ char *argv[];
+@@ -218,6 +218,7 @@ char *argv[];
  
       if (chkPass (user, oldpass, pw) == FAILURE)
       {
@@ -74,7 +86,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +264,28 @@ char *argv[];
+@@ -264,28 +265,28 @@ char *argv[];
  
  	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
  	  {
@@ -107,7 +119,7 @@
  	       WriteToClient ("500 Server error (abnormal exit), get help!");
  	       exit (1);
  	  }
-@@ -304,17 +304,19 @@ char *argv[];
+@@ -304,17 +305,19 @@ char *argv[];
       }
       else      /* Child */
       {
@@ -138,7 +150,7 @@
  	  setuid (pw->pw_uid);
  	  setgid (pw->pw_gid);
  	  dochild (master, slavedev, user);
-@@ -324,7 +326,7 @@ char *argv[];
+@@ -324,7 +327,7 @@ char *argv[];
  /*
   * dochild
   *
@@ -147,7 +159,7 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -338,13 +340,6 @@ char *slavedev, *user;
+@@ -338,13 +341,6 @@ char *slavedev, *user;
     int slave;
     struct termios stermios;
  
@@ -161,7 +173,7 @@
     /* Open slave pty and acquire as new controlling terminal. */
  
     if ((slave = open(slavedev, O_RDWR)) < 0) {
-@@ -387,10 +382,10 @@ char *slavedev, *user;
+@@ -387,10 +383,10 @@ char *slavedev, *user;
        return(0);
     }
  
@@ -175,7 +187,7 @@
        return(0);
     }
  }
-@@ -408,15 +403,20 @@ char *slavedev, *user;
+@@ -408,15 +404,20 @@ char *slavedev, *user;
   *
   * Modified by Norstad to remove assumptions about number of pty's allocated
   * on this UNIX box.
@@ -197,7 +209,7 @@
     dirp = opendir("/dev");
     while ((dp = readdir(dirp)) != NULL) {
        if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,9 +485,11 @@ char *user, *oldpass, *newpass, *emess;
+@@ -485,9 +486,11 @@ char *user, *oldpass, *newpass, *emess;
       }
  
       writestring(master, pswd);
@@ -210,7 +222,7 @@
       return SUCCESS;
  }
  
-@@ -566,6 +568,7 @@ char *buf;
+@@ -566,6 +569,7 @@ char *buf;
  	}
  	n += m;
  	buf[n] = 0;
@@ -218,3 +230,20 @@
  	initialSegment = 0;
          for (s = expected; **s != 0; s++) {
             result = match(buf, *s);
+@@ -630,13 +634,12 @@ char *buf;
+    }
+ }
+ 
+-WriteToClient (fmt, va_alist)
+-char *fmt;
+-va_dcl
++void
++WriteToClient (char *fmt, ...)
+ {
+ 	va_list ap;
+ 	
+-	va_start (ap);
++	va_start (ap, fmt);
+ 	vfprintf (stdout, fmt, ap);
+ 	fputs ("\r\n", stdout );
+ 	fflush (stdout);
