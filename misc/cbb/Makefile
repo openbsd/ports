@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2004/12/09 16:19:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2005/02/09 00:15:20 alek Exp $
 
 COMMENT=	"checkbook balancing tool"
 
 DISTNAME=	cbb-0.73
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	misc
 HOMEPAGE=	http://cbb.sourceforge.net/
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
-LIB_DEPENDS=	tk80.1.:tk->=8.0,<8.1:x11/tk/8.0
-RUN_DEPENDS=	:plan-*:misc/plan
+RUN_DEPENDS=	:plan-*:misc/plan \
+		:tk->=8.0,<8.1:x11/tk/8.0
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
