@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_in,v 1.2 2004/08/02 15:43:11 brad Exp $
+$OpenBSD: patch-ltmain_in,v 1.3 2004/08/05 18:04:55 brad Exp $
 --- ltmain.in.orig	Thu Apr  1 22:46:15 2004
-+++ ltmain.in	Mon Aug  2 11:38:08 2004
++++ ltmain.in	Tue Aug  3 21:58:08 2004
 @@ -2151,10 +2151,17 @@ EOF
  	    absdir="$libdir"
  	  fi
@@ -23,15 +23,16 @@ $OpenBSD: patch-ltmain_in,v 1.2 2004/08/02 15:43:11 brad Exp $
  	fi # $installed = yes
  	name=`$echo "X$laname" | $Xsed -e 's/\.la$//' -e 's/^lib//'`
  
-@@ -2273,7 +2280,6 @@ EOF
- 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
- 	  if test "$installed" = no; then
- 	    notinst_deplibs="$notinst_deplibs $lib"
--	    need_relink=yes
- 	  fi
- 	  # This is a shared library
- 
-@@ -5824,40 +5830,6 @@ relink_command=\"$relink_command\""
+@@ -2468,7 +2475,7 @@ EOF
+ 	    add_dir=
+ 	    add=
+ 	    # Finalize command for both is simple: just hardcode it.
+-	    if test "$hardcode_direct" = yes; then
++	    if test "$hardcode_direct" = yes && test -f $libdir/$linklib; then
+ 	      add="$libdir/$linklib"
+ 	    elif test "$hardcode_minus_L" = yes; then
+ 	      add_dir="-L$libdir"
+@@ -5824,40 +5831,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  
