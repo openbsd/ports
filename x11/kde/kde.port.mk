@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.1 2003/02/08 12:37:50 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.2 2003/02/25 00:19:43 espie Exp $
 MODULES+=	qt3
 MODQT_OVERRIDE_UIC?=No
 MODQT_MT?=Yes
@@ -22,7 +22,7 @@ MODKDE_CONFIGURE_ARGS+=	--disable-dependency-tracking
 .endif
 MODKDE_CONFIGURE_ARGS+=	--enable-final
 
-MODKE_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
+MODKDE_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/admin
 
 MODKDE_CONFIGURE_ENV=		UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MODKDE_CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
@@ -34,4 +34,6 @@ SUBST_VARS+=	KDE
 MODKDE_VERSION?=
 .if ${MODKDE_VERSION} == "3.1"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-*
+.elif ${MODKDE_VERSION} == "2.2.2"
+PATCH_LIST=	${PORTSDIR}/x11/kde/patches-2.2.2/patch-* patch-*
 .endif
