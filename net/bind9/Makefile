@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2001/02/27 08:39:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/07 07:53:22 jakob Exp $
 
-VERSION=	9.1.1rc3
+VERSION=	9.1.1rc4
 DISTNAME=	bind-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.336
