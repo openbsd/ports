@@ -1,6 +1,33 @@
-$OpenBSD: patch-configure,v 1.6 2002/10/31 21:15:08 naddy Exp $
+$OpenBSD: patch-configure,v 1.7 2002/11/03 01:55:16 naddy Exp $
 --- configure.orig	Wed Sep 25 06:53:08 2002
-+++ configure	Thu Oct 31 16:51:04 2002
++++ configure	Sun Nov  3 02:48:51 2002
+@@ -5388,7 +5388,7 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+@@ -5398,7 +5398,7 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
+         ;;
+       esac
+@@ -9519,7 +9519,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_l
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  . conftest.id3; echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}"
++  . ./conftest.id3; echo "${ID3LIB_MAJOR}.${ID3LIB_MINOR}.${ID3LIB_PATCH}"
+ else
+   echo "$as_me: program exited with status $ac_status" >&5
+ echo "$as_me: failed program was:" >&5
 @@ -11113,7 +11113,7 @@ OUR_CFLAGS_HEAD='-I$(top_builddir) -I$(s
  if test x$debug = xtrue; then
  	OUR_CFLAGS_TAIL="-g -O0 -DDEBUG"
