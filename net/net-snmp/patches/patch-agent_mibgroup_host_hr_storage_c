@@ -1,0 +1,11 @@
+$OpenBSD: patch-agent_mibgroup_host_hr_storage_c,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+--- agent/mibgroup/host/hr_storage.c.orig	Wed Jul 14 14:54:04 2004
++++ agent/mibgroup/host/hr_storage.c	Wed Jul 14 14:54:33 2004
+@@ -133,6 +133,7 @@
+ #include <net-snmp/library/read_config.h>
+ 
+ #define HRSTORE_MONOTONICALLY_INCREASING
++#undef MBSTAT_SYMBOL
+ 
+         /*********************
+ 	 *

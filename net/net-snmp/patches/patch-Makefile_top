@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_top,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+--- Makefile.top.orig	Tue Feb 17 12:50:00 2004
++++ Makefile.top	Tue Aug  3 09:41:11 2004
+@@ -34,7 +34,9 @@ INSTALL_PREFIX  = @INSTALL_PREFIX@
+ #
+ INSTALL		= $(LIBTOOL) --mode=install @INSTALL@
+ UNINSTALL	= $(LIBTOOL) --mode=uninstall rm -f
+-INSTALL_DATA    = @INSTALL_DATA@
++INSTALL_DATA    = $(LIBTOOL) --mode=install @INSTALL_DATA@
++INSTALL_PROGRAM = $(LIBTOOL) --mode=install @INSTALL_PROGRAM@
++INSTALL_SCRIPT  = $(LIBTOOL) --mode=install @INSTALL_SCRIPT@
+ SED		= @SED@
+ LN_S		= @LN_S@
+ AUTOCONF	= @AUTOCONF@

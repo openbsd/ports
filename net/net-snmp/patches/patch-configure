@@ -1,0 +1,88 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+--- configure.orig	Sat Mar 20 02:13:55 2004
++++ configure	Tue Jul 20 11:26:17 2004
+@@ -6954,6 +6954,7 @@ openbsd*)
+   need_lib_prefix=no
+   need_version=no
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
+     case "$host_os" in
+     openbsd2.[89] | openbsd2.[89].*)
+       shlibpath_overrides_runpath=no
+@@ -6966,7 +6967,7 @@ openbsd*)
+     shlibpath_overrides_runpath=yes
+   fi
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  finish_cmds=''
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
+@@ -9206,34 +9207,6 @@ fi
+ echo "$as_me:$LINENO: result: $EXTRACPPFLAGS" >&5
+ echo "${ECHO_T}$EXTRACPPFLAGS" >&6
+ 
+-# Prefixes must begin with "/" or [A-Z] followed by colon.
+-
+-if test "x$prefix" = "xNONE"; then
+-  prefix=/usr/local
+-fi
+-
+-fch=`echo $prefix | sed 's/\(.\).*/\1/'`
+-if test $fch != "/" ; then
+-   sch=`echo $prefix | sed 's/.\(.\).*/\1/'`
+-   if test $sch != ":" ; then
+-      prefix=`pwd`/$prefix
+-      echo "adjusting prefix to $prefix"
+-   fi
+-fi
+-
+-if test "x$exec_prefix" = "xNONE"; then
+-  exec_prefix=$prefix
+-fi
+-
+-fch=`echo $exec_prefix | sed 's/\(.\).*/\1/'`
+-if test $fch != "/" ; then
+-   sch=`echo $exec_prefix | sed 's/.\(.\).*/\1/'`
+-   if test $sch != ":" ; then
+-      exec_prefix=`pwd`/$exec_prefix
+-      echo "adjusting exec_prefix to $exec_prefix"
+-   fi
+-fi
+-
+ # Set SNMPLIBPATH & SNMPSHAREPATH
+ 
+ SNMPLIBPATH=""
+@@ -11374,6 +11347,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <tcpd.h>
+ 		     int allow_severity = 0;
+ 		     int deny_severity  = 0;
+@@ -11566,6 +11540,7 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++#include <sys/types.h>
+ #include <tcpd.h>
+ 		         int allow_severity = 0;
+ 	                 int deny_severity  = 0;
+@@ -13997,7 +13972,7 @@ done
+ 
+ 
+ 
+-for ac_header in malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h
++for ac_header in sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -14020,6 +13995,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/param.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext

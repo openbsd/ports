@@ -1,0 +1,16 @@
+$OpenBSD: patch-agent_mibgroup_ucd_snmp_h,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+--- agent/mibgroup/ucd_snmp.h.orig	Mon Jun  9 18:11:51 2003
++++ agent/mibgroup/ucd_snmp.h	Tue Jul 20 10:34:34 2004
+@@ -40,8 +40,10 @@ config_arch_require(freebsd5, ucd-snmp/v
+ config_arch_require(freebsd5, ucd-snmp/memory_freebsd2)
+ config_arch_require(netbsd1, ucd-snmp/vmstat_netbsd1)
+ config_arch_require(netbsd1, ucd-snmp/memory_netbsd1)
+-config_arch_require(openbsd2, ucd-snmp/vmstat_netbsd1)
+-config_arch_require(openbsd2, ucd-snmp/memory_netbsd1)
++config_arch_require(openbsd2, ucd-snmp/vmstat_freebsd2)
++config_arch_require(openbsd2, ucd-snmp/memory_freebsd2)
++config_arch_require(openbsd3, ucd-snmp/vmstat_netbsd1)
++config_arch_require(openbsd3, ucd-snmp/memory_netbsd1)
+ config_arch_require(bsdi4, ucd-snmp/vmstat_bsdi4)
+ config_arch_require(darwin1, ucd-snmp/vmstat_freebsd2)
+ config_arch_require(darwin1, ucd-snmp/memory_freebsd2)

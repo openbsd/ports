@@ -1,0 +1,30 @@
+$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+--- agent/mibgroup/mibII/tcpTable.c.orig	Mon Mar 15 18:27:45 2004
++++ agent/mibgroup/mibII/tcpTable.c	Tue Jul 20 10:14:54 2004
+@@ -434,7 +434,7 @@ tcpTable_next_entry( void **loop_context
+      * and update the loop context ready for the next one.
+      */
+     *data_context = (void*)entry;
+-    *loop_context = (void*)entry->INP_NEXT_SYMBOL;
++    *loop_context = (void*)entry->inp_next;
+     return index;
+ }
+ 
+@@ -444,7 +444,7 @@ tcpTable_free(netsnmp_cache *cache, void
+     TCPTABLE_ENTRY_TYPE *p;
+     while (tcp_head) {
+         p = tcp_head;
+-        tcp_head = tcp_head->INP_NEXT_SYMBOL;
++        tcp_head = tcp_head->inp_next;
+         free(p);
+     }
+ 
+@@ -771,7 +771,7 @@ tcpTable_load(netsnmp_cache *cache, void
+             nnew->state == 8 /*  closeWait  */ )
+             tcp_estab++;
+ 
+-        entry      = nnew->inp_queue.cqe_next;	/* Next kernel entry */
++        entry      = nnew->pcb.inp_queue.cqe_next; /* Next kernel entry */
+ 	nnew->inp_next = tcp_head;
+ 	tcp_head   = nnew;
+ 

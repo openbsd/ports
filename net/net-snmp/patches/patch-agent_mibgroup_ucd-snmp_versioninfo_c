@@ -1,0 +1,18 @@
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_versioninfo_c,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+--- agent/mibgroup/ucd-snmp/versioninfo.c.orig	Wed Feb  4 06:25:20 2004
++++ agent/mibgroup/ucd-snmp/versioninfo.c	Fri Jul 30 11:19:51 2004
+@@ -94,7 +94,13 @@ var_extensible_version(struct variable *
+     char           *cptr;
+     time_t          curtime;
+ #ifdef CONFIGURE_OPTIONS
+-    static char     config_opts[] = CONFIGURE_OPTIONS;
++#ifndef __STRING
++#define __STRING(x)	#x
++#endif
++#ifndef __string
++#define __string(x)	__STRING(x)
++#endif
++    static char     config_opts[] = __string(CONFIGURE_OPTIONS);
+ #endif
+ 
+     DEBUGMSGTL(("ucd-snmp/versioninfo", "var_extensible_version: "));

@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST-perl,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+@comment ${P5ARCH}/
+@comment ${P5ARCH}/Bundle/
+@comment ${P5ARCH}/Bundle/Makefile.subs.pl
+${P5ARCH}/NetSNMP/
+${P5ARCH}/NetSNMP/ASN.pm
+${P5ARCH}/NetSNMP/OID.pm
+${P5ARCH}/NetSNMP/agent/
+${P5ARCH}/NetSNMP/agent.pm
+${P5ARCH}/NetSNMP/agent/default_store.pm
+${P5ARCH}/NetSNMP/agent/netsnmp_request_infoPtr.pm
+${P5ARCH}/NetSNMP/default_store.pm
+${P5ARCH}/SNMP.pm
+@comment ${P5ARCH}/auto/
+@comment ${P5ARCH}/auto/Bundle/
+@comment ${P5ARCH}/auto/Bundle/NetSNMP/
+@comment ${P5ARCH}/auto/Bundle/NetSNMP/.packlist
+${P5ARCH}/auto/NetSNMP/
+${P5ARCH}/auto/NetSNMP/ASN/
+${P5ARCH}/auto/NetSNMP/ASN/ASN.bs
+${P5ARCH}/auto/NetSNMP/ASN/ASN.so
+@comment ${P5ARCH}/auto/NetSNMP/ASN/autosplit.ix
+${P5ARCH}/auto/NetSNMP/OID/
+${P5ARCH}/auto/NetSNMP/OID/OID.bs
+${P5ARCH}/auto/NetSNMP/OID/OID.so
+@comment ${P5ARCH}/auto/NetSNMP/OID/autosplit.ix
+${P5ARCH}/auto/NetSNMP/agent/
+${P5ARCH}/auto/NetSNMP/agent/agent.bs
+${P5ARCH}/auto/NetSNMP/agent/agent.so
+@comment ${P5ARCH}/auto/NetSNMP/agent/autosplit.ix
+${P5ARCH}/auto/NetSNMP/agent/default_store/
+${P5ARCH}/auto/NetSNMP/agent/default_store/autosplit.ix
+${P5ARCH}/auto/NetSNMP/agent/default_store/default_store.bs
+${P5ARCH}/auto/NetSNMP/agent/default_store/default_store.so
+${P5ARCH}/auto/NetSNMP/default_store/
+@comment ${P5ARCH}/auto/NetSNMP/default_store/autosplit.ix
+${P5ARCH}/auto/NetSNMP/default_store/default_store.bs
+${P5ARCH}/auto/NetSNMP/default_store/default_store.so
+${P5ARCH}/auto/SNMP/
+${P5ARCH}/auto/SNMP/SNMP.bs
+${P5ARCH}/auto/SNMP/SNMP.so
+@comment ${P5ARCH}/auto/SNMP/autosplit.ix
+@comment man/man3p/
+@man man/man3p/NetSNMP::ASN.3p
+@man man/man3p/NetSNMP::OID.3p
+@man man/man3p/NetSNMP::agent.3p
+@man man/man3p/NetSNMP::agent::default_store.3p
+@man man/man3p/NetSNMP::default_store.3p
+@man man/man3p/NetSNMP::netsnmp_request_infoPtr.3p
+@man man/man3p/SNMP.3

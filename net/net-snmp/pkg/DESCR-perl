@@ -1,0 +1,5 @@
+This is the Perl5 'SNMP' extension module.  The SNMP module provides a
+full featured, tri-lingual SNMP (SNMPv3, SNMPv2c, SNMPv1) API.  The SNMP
+module also provides an interface to the SMI MIB parse-tree for run-time
+access to parsed MIB data.  The SNMP module internals rely on the
+Net-SNMP toolkit library (previously known as ucd-snmp).
