@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/03/22 23:03:23 avsm Exp $
+--- Makefile.orig	Wed Oct 28 20:30:03 1998
++++ Makefile	Wed Mar 21 22:11:23 2001
+@@ -17,7 +17,7 @@
+ 
+ # You probably want to change this:
+ #INSTROOT = ${HOME}
+-INSTROOT = /depot/collections0/netpipes4.1
++INSTROOT = ${PREFIX}
+ #INSTROOT = /usr/local
+ INSTBIN = ${INSTROOT}/bin
+ INSTMAN = ${INSTROOT}/man
+@@ -59,7 +59,7 @@ INSTMAN = ${INSTROOT}/man
+ #CFLAGS = -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
+ 
+ # Linux (developed with RedHat 4.2, libc5)
+-CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
++#CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_INET_ATON $(CDEBUGFLAGS)
+ 
+ # SGI
+ #CFLAGS = -DSYSV $(CDEBUGFLAGS)
+@@ -71,7 +71,7 @@ CFLAGS = -DUSE_IOCTL -DPOSIX_SIG -DHAVE_
+ #CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
+ 
+ # FreeBSD
+-#CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
++CFLAGS += -DPOSIX_SIG
+ 
+ # AIX 4.1.4 and 3.2.5
+ #CFLAGS = -DPOSIX_SIG -DAIX $(CDEBUGFLAGS)
+@@ -140,13 +140,13 @@ ssl-criteria.o: ssl-criteria.c
+ install : all
+ 	test -d ${INSTROOT}  || mkdir ${INSTROOT}
+ 	test -d ${INSTBIN}  || mkdir ${INSTBIN}
+-	cp ${PROGRAMS} ${INSTBIN}/
++	${BSD_INSTALL_PROGRAM} ${PROGRAMS} ${INSTBIN}/
+ 	- rm -f ${INSTBIN}/getsockname
+ 	ln -s getpeername ${INSTBIN}/getsockname
+-	- [ -x ssl-auth ] && cp ssl-auth ${INSTBIN}/
++	- [ -x ssl-auth ] && ${BSD_INSTALL_PROGRAM} ssl-auth ${INSTBIN}/
+ 	test -d ${INSTMAN}  || mkdir ${INSTMAN}
+ 	test -d ${INSTMAN}/man1  || mkdir ${INSTMAN}/man1
+-	cp ${MANPAGES} ${INSTMAN}/man1/
++	${BSD_INSTALL_MAN} ${MANPAGES} ${INSTMAN}/man1/
+ 
+ #
+ 
