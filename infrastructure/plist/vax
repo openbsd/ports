@@ -1,0 +1,66 @@
+# $OpenBSD: vax,v 1.1 2003/09/23 01:31:01 pvalchev Exp $
+# This is the master list of subdirs used to choose vax packages.
+# Use with ${PORTSDIR}/infrastructure/package/check-plist
+# to create actual SUBDIRLIST to pass to ports main Makefile.
+net/uucp
+net/rsync
+sysutils/mergemaster
+editors/vim/stable,no_x11
+#editors/emacs21 broken
+#archivers/unzip
+archivers/bzip2
+#print/teTeX/base
+archivers/lzo
+net/dxpc
+net/nmap,no_x11
+net/pptp
+#sysutils/cdrtools
+mail/procmail
+mail/fetchmail
+misc/screen
+sysutils/mtools
+#net/samba
+#net/netatalk/stable
+#converters/recode
+misc/buffer
+#databases/mysql
+#databases/mysql,-server
+graphics/gif2png
+shells/zsh/stable,static
+shells/bash2,static
+shells/tcsh,static
+#lang/expect
+devel/autoconf/2.57
+devel/automake
+books/autobook
+devel/bison
+sysutils/colorls
+archivers/gtar,static
+archivers/star,static
+misc/amanda
+mail/mutt/stable
+#audio/libao,-esd
+#audio/vorbis-tools
+#audio/mpg321
+net/curl
+net/wget
+net/ircII
+security/keychain
+devel/id-utils
+editors/nvi-m17n
+textproc/antiword
+mail/exim,no_x11
+benchmarks/tcpblast
+comms/efax
+net/epic4
+sysutils/pftop
+archivers/cabextract
+archivers/ha
+archivers/lzop
+archivers/makeself
+archivers/ucl
+archivers/zip
+archivers/zoo
+net/snort
+devel/gmake
+net/ntop
