@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/08 04:45:53 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/20 10:35:36 alek Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	"commercial contributor must indemnify all others"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"commercial contributor must indemnify all others"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MAKE_FLAGS=		CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/20 10:35:37 alek Exp $
 
 COMMENT=	"graphical display for the current uvm status"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=		X11 c 
 
 MASTER_SITES=	http://www.netbsd.org/~chuck/gz/
 

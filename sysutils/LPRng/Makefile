@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/08/10 08:46:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/20 10:35:34 alek Exp $
 
 COMMENT=	"enhanced printer spooler"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ssl util
 
 MODULES=	devel/gettext converters/libiconv
 LIB_DEPENDS=	gdbm.2::databases/gdbm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/12/20 10:35:36 alek Exp $
 
 COMMENT=	"list tcp connections to/from the local machine"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 RUN_DEPENDS=	::sysutils/lsof
 

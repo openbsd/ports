@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/20 10:35:36 alek Exp $
 
 DISTNAME=       xps-3.21
 CATEGORIES=     sysutils x11
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm util 
 
 COMMENT=	"graphically display and update dynamically the process tree"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/20 10:35:35 alek Exp $
 
 COMMENT=	"log out idle users and those hogging resources"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}"
 

@@ -3,7 +3,7 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.13 2002/08/05 02:25:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/20 10:35:36 alek Exp $
 #
 
 COMMENT=	"APC Smart UPS Monitoring Daemon"
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	"missing license"
 PERMIT_PACKAGE_FTP=	"missing license"
 PERMIT_DISTFILES_CDROM=	"missing license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c 
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 

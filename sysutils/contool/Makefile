@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2004/12/20 10:35:35 alek Exp $
 
 COMMENT=	"console tool for openlook"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	NOFEE
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	NOFEE
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext c
 
 LIB_DEPENDS=	xview.3,olgx.3::x11/xview/lib
 BUILD_DEPENDS=	::x11/xview/config

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/20 10:35:36 alek Exp $
 
 COMMENT=	"signal or reprioritize specified processes"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		c
 
 MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
 EXTRACT_SUFX=		.tgz
