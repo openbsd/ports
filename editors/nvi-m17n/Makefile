@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/23 10:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/23 10:55:40 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		${MASTER_SITES0}
 
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
+NEED_VERSION=	1.210
 
 MAINTAINER=	itojun@itojun.org
 
@@ -64,8 +65,6 @@ post-build:
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
 	@echo "bin/nvi-${encoding}" >> ${PLIST}
 .endfor
-	@echo "Read ${PREFIX}/share/vi/README.* for" >${WRKDIR}/MESSAGE
-	@echo "using multilingual facilities." >>${WRKDIR}/MESSAGE
 
 post-install:
 .for encoding in ${ENCODING}
