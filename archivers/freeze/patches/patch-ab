@@ -1,15 +1,6 @@
 --- Makefile.in.orig	Wed Feb 24 08:36:56 1993
-+++ Makefile.in	Sun Dec 26 00:20:23 1999
-@@ -3,7 +3,7 @@
- VPATH         = $(srcdir)
- 
- CC            = @CC@
--CFLAGS        = -I.     # -O2   # for gcc 2.2.2
-+CFLAGS       += -I.
- 
- INSTALL       = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -15,10 +15,11 @@
++++ Makefile.in	Sun Mar 26 15:52:20 2000
+@@ -15,6 +15,7 @@
  
  .PHONY:         default
  
@@ -17,11 +8,6 @@
  default:        prog
  
  # Added the prefix macro, so that it was easier to change installation place.
--prefix        = /usr/local
-+prefix        = $(PREFIX)
- DEST          = $(prefix)/bin
- MANDEST       = $(prefix)/man/man1
- SEC           = 1
 @@ -32,9 +33,9 @@
  
  # define DEFFILE as a filename with freeze's default Huffman values
