@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.23 2001/07/29 12:26:40 espie Exp $
+# $OpenBSD: network.conf.template,v 1.24 2001/08/26 21:23:42 heko Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -228,3 +228,23 @@ MASTER_SITE_WINDOWMAKER+=	\
 	ftp://ftp.ziobudda.net/pub/Mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/X11/window-managers/windowmaker/%SUBDIR%/
+
+MASTER_SITE_SOURCEWARE+=	\
+	ftp://sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/sourceware/%SUBDIR%/ \
+	ftp://ftp.fic.uni.lodz.pl/pub/sources.redhat.com/pub/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
+	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://ftp.sun.ac.za/sites/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/ \
+	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR% \
+	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
+	ftp://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
+	ftp://planetmirror.com/pub/sourceware/%SUBDIR%/ \
+	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://sysg.kek.jp/cygnus/%SUBDIR%/ \
+	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://www.carfield.com.hk/mirror/sources.redhat.com/%SUBDIR%/	

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2001/07/13 11:24:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2001/08/26 21:23:42 heko Exp $
 
 COMMENT=	"GNU Scientific Library"
 
 DISTNAME=	gsl-0.6
 CATEGORIES=	devel
-NEED_VERSION=	1.402
-MASTER_SITES=	ftp://sources.redhat.com/pub/gsl/ \
-		ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/gsl/
-
+NEED_VERSION=	1.444
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=gsl
 HOMEPAGE=	http://sources.redhat.com/gsl/
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2001/07/13 11:23:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2001/08/26 21:23:42 heko Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
 DISTNAME=	bzip2-1.0.1
 CATEGORIES=	archivers
-NEED_VERSION=	1.384
-MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v100/ \
-		ftp://ftp.yggdrasil.com/mirrors/site/sourceware.cygnus.com/pub/bzip2/v100/ \
-      		ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/bzip2/v100/
-
+NEED_VERSION=	1.444
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=bzip2/v100
 HOMEPAGE=	http://sourceware.cygnus.com/bzip2/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
