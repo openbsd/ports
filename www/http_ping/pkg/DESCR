@@ -1,0 +1,4 @@
+http_ping is like the regular ping command, except that it sends HTTP
+requests instead of ICMP echo requests.
+
+WWW: ${HOMEPAGE}
