@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2002/01/10 10:48:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.42 2002/02/09 21:10:04 brad Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
@@ -52,13 +52,11 @@ MAKE_FLAGS=	LDAPLIBS="-lldap -llber" \
 		LDAPCFLAGS="-DENABLE_LDAP -I${LOCALBASE}/include"
 .endif
 
-do-configure:
-	@cp -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
-
-pre-build:
+do-build:
 	@sed -e s#!!PREFIX!!#${PREFIX}#g \
 		${WRKSRC}/doc/tech-notes.txt > ${WRKSRC}/doc/tech-notes.txt.new
 	@mv ${WRKSRC}/doc/tech-notes.txt.new ${WRKSRC}/doc/tech-notes.txt
+	@cd ${WRKSRC}; ./build bso CC="${CC}"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine

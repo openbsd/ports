@@ -1,3 +1,0 @@
-all:
-	./build bso
-
