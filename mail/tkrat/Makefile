@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 18:30:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/17 20:14:01 turan Exp $
 
 DISTNAME=	tkrat-2.0b8
 CATEGORIES=	mail x11
@@ -11,6 +11,11 @@ LIB_DEPENDS=	tcl82.1.3:lang/tcl82 \
 		tk82.1.3:x11/tk82	
 
 MAINTAINER=	riks@wni.com
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-tcl-bin="${LOCALBASE}/bin" \
