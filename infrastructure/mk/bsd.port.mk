@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.633 2004/08/03 21:18:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.634 2004/08/05 23:43:45 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -607,11 +607,14 @@ _SYSTRACE_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
 
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS+=MACHINE_ARCH ARCH HOMEPAGE PREFIX SYSCONFDIR FLAVOR_EXT MAINTAINER
+_tmpvars=
 _SED_SUBST=sed
 .for _v in ${SUBST_VARS}
 _SED_SUBST+=-e 's|$${${_v}}|${${_v}}|g'
+_tmpvars += ${_v}='${${_v}}'
 .endfor
 _SED_SUBST+=-e 's,$${FLAVORS},${FLAVOR_EXT},g' -e 's,$$\\,$$,g'
+_tmpvars += FLAVORS='${FLAVOR_EXT}'
 # and append it to the PLIST substitution pipeline
 SED_PLIST+=|${_SED_SUBST}
 
@@ -1058,11 +1061,6 @@ VMEM_WARNING?=	No
 _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
 _CLEANDEPENDS?=Yes
-
-_tmpvars:=
-.  for _v in ${SUBST_VARS}
-_tmpvars += ${_v}='${${_v}}'
-.  endfor
 
 # mirroring utilities
 .if !empty(DIST_SUBDIR)
@@ -1993,6 +1991,14 @@ _do_libs_too=
 .  else
 _do_libs_too=NO_SHARED_LIBS=Yes
 .  endif
+
+_extra_prefixes=
+.if defined(MULTI_PACKAGES)
+.  for _s in ${MULTI_PACKAGES}
+_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} ${MAKE} show=PREFIX`
+.  endfor
+.endif
+
 _internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
 	@mkdir -p ${PKGDIR}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} \
@@ -2006,7 +2012,8 @@ _internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
 	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
 	SHARED_ONLY="${SHARED_ONLY}" \
-	perl ${PORTSDIR}/infrastructure/install/make-plist ${PKGDIR} ${_tmpvars}
+	perl ${PORTSDIR}/infrastructure/install/make-plist \
+	${_extra_prefixes} ${_tmpvars}
 .endif
 
 update-patches:
