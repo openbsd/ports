@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-mess,v 1.4 2002/02/05 15:27:17 naddy Exp $
-@pkgcfl xmame+xmess-*
-@pkgcfl xmame-*
+@comment $OpenBSD: PLIST-mess,v 1.5 2004/09/18 12:39:37 espie Exp $
+@conflict xmame+xmess-*
+@conflict xmame-*
 bin/xmess
-man/man6/xmess.6
+@man man/man6/xmess.6
+share/doc/xmame/
 share/doc/xmame/README
 share/doc/xmame/changes.mess
 share/doc/xmame/changes.opengl
@@ -10,6 +11,7 @@ share/doc/xmame/changes.unix
 share/doc/xmame/credits.mess
 share/doc/xmame/dga2.txt
 share/doc/xmame/gamelist.mess
+share/doc/xmame/img/
 share/doc/xmame/img/xmame.jpg
 share/doc/xmame/imgtool.txt
 share/doc/xmame/liesmich.unix
@@ -40,8 +42,6 @@ share/doc/xmame/xmame-gdoc-7.html
 share/doc/xmame/xmame-gdoc-8.html
 share/doc/xmame/xmame-gdoc.html
 share/doc/xmame/xmame.css
+share/xmess/
 share/xmess/sysinfo.dat
 share/xmess/xmessrc
-@dirrm share/xmess
-@dirrm share/doc/xmame/img
-@dirrm share/doc/xmame

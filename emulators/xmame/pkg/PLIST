@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:42:05 espie Exp $
-@pkgcfl xmame-*
-@pkgcfl xmess-*
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 12:39:37 espie Exp $
+@conflict xmame-*
+@conflict xmess-*
 bin/xmame
 bin/xmess
-@man  man/man6/xmame.6
-@man  man/man6/xmess.6
+@man man/man6/xmame.6
+@man man/man6/xmess.6
 share/doc/xmame/
 share/doc/xmame/README
 share/doc/xmame/changes.mame

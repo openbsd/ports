@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-gl,v 1.4 2002/02/05 15:27:17 naddy Exp $
-@pkgcfl xmame-*
-@pkgcfl xmess-*
+@comment $OpenBSD: PLIST-gl,v 1.5 2004/09/18 12:39:37 espie Exp $
+@conflict xmame-*
+@conflict xmess-*
 bin/xmame
 bin/xmess
-man/man6/xmame.6
-man/man6/xmess.6
+@man man/man6/xmame.6
+@man man/man6/xmess.6
+share/doc/xmame/
 share/doc/xmame/README
 share/doc/xmame/changes.mame
 share/doc/xmame/changes.mess
@@ -15,6 +16,7 @@ share/doc/xmame/dga2.txt
 share/doc/xmame/gamelist.mame
 share/doc/xmame/gamelist.mess
 share/doc/xmame/hsnew.txt
+share/doc/xmame/img/
 share/doc/xmame/img/xmame.jpg
 share/doc/xmame/imgtool.txt
 share/doc/xmame/liesmich.unix
@@ -46,37 +48,35 @@ share/doc/xmame/xmame-gdoc-7.html
 share/doc/xmame/xmame-gdoc-8.html
 share/doc/xmame/xmame-gdoc.html
 share/doc/xmame/xmame.css
+share/xmame/
+share/xmame/cab/
+share/xmame/cab/glmame/
 share/xmame/cab/glmame/cabfront.jpg
 share/xmame/cab/glmame/cabtitle.jpg
 share/xmame/cab/glmame/glmame.cab
+share/xmame/cab/glmamejau/
 share/xmame/cab/glmamejau/cabfront.jpg
 share/xmame/cab/glmamejau/cabside.jpg
 share/xmame/cab/glmamejau/cabtitle.jpg
 share/xmame/cab/glmamejau/glmamejau.cab
+share/xmame/cab/trans/
 share/xmame/cab/trans/trans.cab
 share/xmame/cheat.dat
 share/xmame/hiscore.dat
 share/xmame/history.dat
 share/xmame/xmamerc
+share/xmess/
+share/xmess/cab/
+share/xmess/cab/glmame/
 share/xmess/cab/glmame/cabfront.jpg
 share/xmess/cab/glmame/cabtitle.jpg
 share/xmess/cab/glmame/glmame.cab
+share/xmess/cab/glmamejau/
 share/xmess/cab/glmamejau/cabfront.jpg
 share/xmess/cab/glmamejau/cabside.jpg
 share/xmess/cab/glmamejau/cabtitle.jpg
 share/xmess/cab/glmamejau/glmamejau.cab
+share/xmess/cab/trans/
 share/xmess/cab/trans/trans.cab
 share/xmess/sysinfo.dat
 share/xmess/xmessrc
-@dirrm share/xmess/cab/trans
-@dirrm share/xmess/cab/glmamejau
-@dirrm share/xmess/cab/glmame
-@dirrm share/xmess/cab
-@dirrm share/xmess
-@dirrm share/xmame/cab/trans
-@dirrm share/xmame/cab/glmamejau
-@dirrm share/xmame/cab/glmame
-@dirrm share/xmame/cab
-@dirrm share/xmame
-@dirrm share/doc/xmame/img
-@dirrm share/doc/xmame
