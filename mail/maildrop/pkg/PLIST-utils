@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST-utils,v 1.1 2003/03/31 13:43:17 avsm Exp $
+bin/deliverquota
+bin/maildirmake
+bin/makeuserdb
+bin/pw2userdb
+bin/userdb
+bin/userdbpw
+bin/vchkpw2userdb
+man/man1/maildirmake.1
+man/man8/deliverquota.8
+man/man8/makeuserdb.8
+man/man8/pw2userdb.8
+man/man8/userdb.8
+man/man8/userdbpw.8
+man/man8/vchkpw2userdb.8
