@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 1999/09/22 22:31:40 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/27 15:03:08 brad Exp $
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/solitaires
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
