@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2002/06/17 02:21:43 mark Exp $
---- configure.orig	Fri May 17 06:41:27 2002
-+++ configure	Wed Jun 12 21:56:47 2002
+$OpenBSD: patch-configure,v 1.6 2002/10/28 01:19:06 mark Exp $
+--- configure.orig	Fri Jun 14 09:53:14 2002
++++ configure	Sun Oct 27 17:14:31 2002
 @@ -7754,13 +7754,13 @@ if test $check_ncurses -ne 0; then
     curses_warn=0
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ec_plugins_c,v 1.1 2002/06/17 02:21:43 mark Exp $
---- src/ec_plugins.c.orig	Sun Jun 16 21:23:52 2002
-+++ src/ec_plugins.c	Sun Jun 16 21:24:36 2002
+$OpenBSD: patch-src_ec_plugins_c,v 1.2 2002/10/28 01:19:06 mark Exp $
+--- src/ec_plugins.c.orig	Fri Mar  8 00:49:56 2002
++++ src/ec_plugins.c	Sun Oct 27 17:14:32 2002
 @@ -57,7 +57,7 @@
     #define RTLD_NOW DL_LAZY
  #endif
@@ -10,4 +10,3 @@ $OpenBSD: patch-src_ec_plugins_c,v 1.1 2002/06/17 02:21:43 mark Exp $
     #define SYM_PREFIX "_"     // for the symbols loaded with dlsym
  #else
     #define SYM_PREFIX ""
-

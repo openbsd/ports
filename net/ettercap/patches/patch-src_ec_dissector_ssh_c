@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ec_dissector_ssh_c,v 1.1 2002/06/17 02:21:43 mark Exp $
+$OpenBSD: patch-src_ec_dissector_ssh_c,v 1.2 2002/10/28 01:19:06 mark Exp $
 --- src/ec_dissector_ssh.c.orig	Fri Mar  8 00:49:55 2002
-+++ src/ec_dissector_ssh.c	Wed Jun 12 21:56:47 2002
++++ src/ec_dissector_ssh.c	Sun Oct 27 17:14:31 2002
 @@ -29,6 +29,7 @@
  #else
  	#include <arpa/nameser.h>
