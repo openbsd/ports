@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2002/03/21 21:17:54 brad Exp $
+--- lib/Makefile.in.orig	Thu Nov 29 06:16:53 2001
++++ lib/Makefile.in	Thu Mar 21 15:34:27 2002
+@@ -328,6 +328,13 @@ distclean-depend:
+ @AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ 	$(COMPILE) -c `cygpath -w $<`
+ CCDEPMODE = @CCDEPMODE@
++
++rfc1035.$(OBJEXT):
++@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++	$(COMPILE) -O0 -c `test -f $< || echo '$(srcdir)/'`$<
++
+ uninstall-info-am:
+ 
+ tags: TAGS
