@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/26 15:22:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/29 20:59:47 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
 
-DISTNAME=	star-1.4.1
+DISTNAME=	star-1.4.2
 CATEGORIES=	archivers sysutils
-NEED_VERSION=	1.515
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -47,6 +46,7 @@ do-install:
 .endfor
 	cd ${PREFIX}/bin; ln -sf star ustar
 	cd ${PREFIX}/man/man1; ln -sf star.1 ustar.1
+	${INSTALL_PROGRAM} ${WRKBUILD}/mt/${OBJ}/smt ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/rmt/${OBJ}/rmt ${PREFIX}/libexec/srmt
 	perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' ${WRKSRC}/rmt/rmt.1
 	${INSTALL_MAN} ${WRKSRC}/rmt/rmt.1 ${PREFIX}/man/man8/srmt.8

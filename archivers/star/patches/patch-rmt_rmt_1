@@ -1,6 +1,6 @@
-$OpenBSD: patch-rmt_rmt_1,v 1.2 2002/05/30 23:27:48 naddy Exp $
---- rmt/rmt.1.orig	Thu Jul  5 21:47:45 2001
-+++ rmt/rmt.1	Fri May 24 17:21:31 2002
+$OpenBSD: patch-rmt_rmt_1,v 1.3 2002/11/29 20:59:47 naddy Exp $
+--- rmt/rmt.1.orig	Sun Nov 10 17:58:57 2002
++++ rmt/rmt.1	Fri Nov 29 21:26:50 2002
 @@ -13,13 +13,11 @@
  .if n .ds o oe
  .if n .ds u ue
@@ -18,7 +18,7 @@ $OpenBSD: patch-rmt_rmt_1,v 1.2 2002/05/30 23:27:48 naddy Exp $
  
  .SH DESCRIPTION
  .IX  "rmt command"  ""  "\fLrmt\fP \(em remote magnetic tape protocol server"
-@@ -31,10 +29,10 @@ version of the 
+@@ -31,9 +29,9 @@ version of the 
  remote tape server program.
  .B rmt
  is a program used by programs like
@@ -26,13 +26,11 @@ $OpenBSD: patch-rmt_rmt_1,v 1.2 2002/05/30 23:27:48 naddy Exp $
 +.BR star (1)
  and
 -.B ufsdump 
--hat like to access remote magnetic tape drives and files
 +.BR dump (8)
-+that like to access remote magnetic tape drives and files
+ that like to access remote magnetic tape drives and files
  through an interprocess communication connection.
  .B rmt
- is normally started up with an
-@@ -441,8 +439,8 @@ Any other command causes
+@@ -519,8 +517,8 @@ Any other command causes
  to exit.
  .SH FILES
  .TP
@@ -41,20 +39,29 @@ $OpenBSD: patch-rmt_rmt_1,v 1.2 2002/05/30 23:27:48 naddy Exp $
 +%%SYSCONFDIR%%/srmt.conf
 +Default values can be set for the following options in %%SYSCONFDIR%%/srmt.conf.
  For example:
- .SM USER=tape
+ .sp
+ .BR DEBUG= /tmp/rmt.debug
+@@ -568,7 +566,7 @@ If standard input of 
+ is not a socket from a remote host, 
+ .B rmt
+ will compare the host entry from 
+-.B /etc/default/rmt
++.B %%SYSCONFDIR%%/srmt.conf
+ with the following strings:
  .RS
-@@ -491,12 +489,12 @@ This implementation of
+ .TP 10
+@@ -635,12 +633,12 @@ This implementation of
  adds some security features to the server that make it behave
  slightly different from older implementations.
- Read the documentation about the file 
+ Read the above documentation about the file 
 -/etc/default/rmt
 +%%SYSCONFDIR%%/srmt.conf
  to make sure your local installation is configured for your needs.
  .LP
- To grant the same permissions as with the old
+ To grant the same permissions as with old
  .B rmt
 -servers, create a file /etc/default/rmt and add the following lines
-+servers, create a file %%SYSCONFDIR%%/rmt.conf and add the following lines
++servers, create a file %%SYSCONFDIR%%/srmt.conf and add the following lines
  to this file:
  .LP
  .BR USER= *
