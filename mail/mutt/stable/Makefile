@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/01/02 22:05:42 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/08 03:20:40 fgsch Exp $
 
 COMMENT=	"tty-based e-mail client"
 
@@ -22,7 +22,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang imap pop compressed mixmaster
+# disable compressed FLAVOR for the time being, until the author of the patch
+# provide a new patch fro 1.2.5.1 (or a later version).
+FLAVORS=	slang imap pop mixmaster # compressed 
 FLAVOR?=
 
 SYSCONFDIR=	/etc/mutt
