@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/30 21:42:31 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/05 17:03:23 naddy Exp $
 
 COMMENT=	"web-based java ssh client"
 
@@ -22,10 +22,7 @@ PREFIX?=	/var/www
 
 NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
-
-do-extract:
-	@mkdir -p ${WRKSRC}
-	@(cd ${DISTDIR} && ${UNZIP} -qq ${DISTNAME}${EXTRACT_SUFX} -d ${WRKSRC})
+WRKDIST=	${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/htdocs/mindterm
