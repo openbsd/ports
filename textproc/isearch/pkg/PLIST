@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/07 01:54:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/07/26 19:00:15 naddy Exp $
 bin/Iindex
 bin/Isearch
 bin/Iutil
 share/doc/Isearch/QuickStart.html
 share/doc/Isearch/IsearchFeatures.html
 share/doc/Isearch/IsearchTutorial.html
-
+@dirrm share/doc/Isearch
