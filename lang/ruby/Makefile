@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/03/23 14:12:32 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/03 06:34:53 jsyn Exp $
 
 COMMENT=	object oriented script language with threads
 VERSION=1.6.2
@@ -48,7 +48,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ruby
 	cd ${PREFIX}/share/doc && \
 	tar -s/ruby-man-1.4/ruby/ -zxf ${FULLDISTDIR}/${MANARCH}
-
+	@strip ${PREFIX}/bin/ruby
 
 REV=1.6
 SUB=${ARCH}-openbsd${OSREV}
