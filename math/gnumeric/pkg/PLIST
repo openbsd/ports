@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/12/10 20:39:22 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/12/22 06:02:27 marcm Exp $
 bin/gnumeric
 bin/gnumeric-${VERSION}
 bin/ssconvert
@@ -99,6 +99,11 @@ lib/gnumeric/${VERSION}/plugins/plot_radar/
 lib/gnumeric/${VERSION}/plugins/plot_radar/plot-types.xml
 lib/gnumeric/${VERSION}/plugins/plot_radar/plugin.xml
 lib/gnumeric/${VERSION}/plugins/plot_radar/radar.la
+lib/gnumeric/${VERSION}/plugins/plot_surface/
+lib/gnumeric/${VERSION}/plugins/plot_surface/gog-contour-prefs.glade
+lib/gnumeric/${VERSION}/plugins/plot_surface/plot-types.xml
+lib/gnumeric/${VERSION}/plugins/plot_surface/plugin.xml
+lib/gnumeric/${VERSION}/plugins/plot_surface/surface.la
 lib/gnumeric/${VERSION}/plugins/plot_xy/
 lib/gnumeric/${VERSION}/plugins/plot_xy/gog-bubble-prefs.glade
 lib/gnumeric/${VERSION}/plugins/plot_xy/plot-types.xml
