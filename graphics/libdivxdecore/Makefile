@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/26 16:58:17 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/09 15:46:48 espie Exp $
 
 COMMENT=	"opendivx decoding API"
 
@@ -7,7 +7,7 @@ CATEGORIES=	graphics devel
 NEED_VERSION=	1.480
 MASTER_SITES=	http://download2.projectmayo.com/dnload/divx4linux/xmps/
 
-HOMEPAGE=	http://www.projectmajo.com/projects/detail.php?projectId=1
+HOMEPAGE=	http://www.projectmayo.com/projects/detail.php?projectId=1
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
