@@ -1,5 +1,6 @@
---- Makefile.in.orig	Sat Mar 25 00:13:16 2000
-+++ Makefile.in	Fri May 26 03:27:30 2000
+$OpenBSD: patch-Makefile_in,v 1.1 2000/07/13 02:30:22 danh Exp $
+--- Makefile.in.orig	Fri Mar 24 18:13:16 2000
++++ Makefile.in	Wed Jul 12 21:04:56 2000
 @@ -23,7 +23,7 @@ BINDIR = @bindir@
  MANDIR = @mandir@/man1
  CC     = @CC@

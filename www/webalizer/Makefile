@@ -1,33 +1,27 @@
-# 
-# $OpenBSD: Makefile,v 1.2 2000/07/10 20:28:03 danh Exp $
-#
+# $OpenBSD: Makefile,v 1.3 2000/07/13 02:30:21 danh Exp $
 
-DISTNAME=		webalizer-2.00-12-src
-PKGNAME=		webalizer-2.00_12
-EXTRACT_SUFX=		.tgz
-CATEGORIES=     	www
-HOMEPAGE=		http://www.mrunix.net/webalizer/
+DISTNAME=	webalizer-2.00-12-src
+PKGNAME=	webalizer-2.00_12
+CATEGORIES=     www
+NEED_VERSION=	1.314
+HOMEPAGE=	http://www.mrunix.net/webalizer/
 
-MAINTAINER=		danh@openbsd.org
+MAINTAINER=	danh@openbsd.org
 
-MASTER_SITES=		ftp://ftp.mrunix.net/pub/webalizer/pre-release/
+MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/
+EXTRACT_SUFX=	.tgz
 
-LICENCE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-LIB_DEPENDS=    	gd.18::graphics/gd
+LIB_DEPENDS=    gd.18::graphics/gd
 
-HAS_CONFIGURE=		Yes 
-CONFIGURE_ARGS+=	--enable-dns
-CONFIGURE_ARGS+=	--with-png=${LOCALBASE}/lib
+WRKDIST=	${WRKDIR}/webalizer-2.00-12
 
-WRKDIST=		${WRKDIR}/webalizer-2.00-12
-
-FAKE=			Yes
-FAKE_FLAGS+=		prefix='${WRKINST}${PREFIX}'
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS+= --enable-dns --with-png=${LOCALBASE}/lib
 
 post-install:
 	cd ${PREFIX}/bin; ln -s webalizer webazolver

@@ -19,3 +19,5 @@ uncompressed on the fly as it is being read.  In addition, the Webalizer
 also supports DNS lookup capabilities if enabled at compile time.
 
 The OpenBSD port enables Reverse-DNS lookup by default.
+
+WWW: ${HOMEPAGE}
