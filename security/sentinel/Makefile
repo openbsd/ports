@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/01 20:09:47 jsyn Exp $
+# $OpenBSD: Makefile,v 1.6 2001/12/01 22:57:55 jsyn Exp $
 
 COMMENT=		"remote promiscous mode detection tool"
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes	
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.packetfactory.net/Projects/sentinel/ 
+MASTER_SITES=		http://www.packetfactory.net/Projects/sentinel/ \
+			http://packetstorm.decepticons.org/UNIX/IDS/sentinel/ 
 
 LIB_DEPENDS=		net::net/libnet
 
