@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/06/03 14:51:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/15 14:52:58 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,6 +22,7 @@ MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 
 LIB_DEPENDS=	xmms.3::audio/xmms
 
+MAKE_ENV=	CXX="${CXX}"
 ALL_TARGET=
 
 do-install:
