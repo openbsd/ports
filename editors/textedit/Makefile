@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/04 15:10:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/04 21:18:23 espie Exp $
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
@@ -21,11 +21,5 @@ USE_IMAKE=	Yes
 FAKE=		Yes
 
 MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
-do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/textedit $(PREFIX)/bin/textedit
-	$(INSTALL_MAN) $(WRKSRC)/textedit.man $(PREFIX)/man/man1/textedit.1
-	#don't really need these as they're included only in this program
-	#$(INSTALL_DATA) $(WRKSRC)/textedit.icon $(PREFIX)/include/X11/bitmaps
-	#$(INSTALL_DATA) $(WRKSRC)/textedit.mask.icon $(PREFIX)/include/X11/bitmaps
 
 .include <bsd.port.mk>
