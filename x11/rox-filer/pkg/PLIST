@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/12/10 22:38:36 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/12 16:27:18 couderc Exp $
 bin/rox
 man/man1/ROX-Filer.1
 man/man1/rox.1
@@ -57,6 +57,8 @@ rox/ROX-Filer/src/bind.c
 rox/ROX-Filer/src/bind.h
 rox/ROX-Filer/src/bookmarks.c
 rox/ROX-Filer/src/bookmarks.h
+rox/ROX-Filer/src/cell_icon.c
+rox/ROX-Filer/src/cell_icon.h
 rox/ROX-Filer/src/choices.c
 rox/ROX-Filer/src/choices.h
 rox/ROX-Filer/src/collection.c
@@ -152,6 +154,8 @@ rox/ROX-Filer/src/usericons.c
 rox/ROX-Filer/src/usericons.h
 rox/ROX-Filer/src/view_collection.c
 rox/ROX-Filer/src/view_collection.h
+rox/ROX-Filer/src/view_details.c
+rox/ROX-Filer/src/view_details.h
 rox/ROX-Filer/src/view_iface.c
 rox/ROX-Filer/src/view_iface.h
 rox/ROX-Filer/src/wrapped.c
