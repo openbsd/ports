@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.14 2001/03/30 12:32:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2001/04/22 13:23:40 espie Exp $
 @mode u+s
 @owner root
 bin/konsole_grantpty
 bin/kcheckpass
 @mode
 @owner
-@group utmp
-@mode g+s
-bin/konsole
-@group
-@mode
 bin/appletproxy
 bin/chooser
 bin/conttest

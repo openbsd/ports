@@ -1,0 +1,14 @@
+$OpenBSD: patch-konsole_src_TEPty_C,v 1.7 2001/04/22 13:23:39 espie Exp $
+--- konsole/src/TEPty.C.orig	Sun Apr 22 15:06:36 2001
++++ konsole/src/TEPty.C	Sun Apr 22 15:07:12 2001
+@@ -126,6 +126,10 @@ extern "C" {
+         #include <utmp.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++/* Let konsole_grantpty do it */
++#	undef USE_LOGIN
++#endif
+ #include <signal.h>
+ 
+ #ifdef HAVE_TERMIOS_H

@@ -1,0 +1,20 @@
+$OpenBSD: patch-konsole_src_Makefile_in,v 1.1 2001/04/22 13:23:39 espie Exp $
+--- konsole/src/Makefile.in.orig	Sun Apr 22 15:07:19 2001
++++ konsole/src/Makefile.in	Sun Apr 22 15:08:21 2001
+@@ -307,6 +307,7 @@ konsole_LDFLAGS = $(all_libraries) $(KDE
+ 
+ konsole_grantpty_SOURCES = konsole_grantpty.c
+ konsole_grantpty_LDFLAGS = $(KDE_RPATH)
++konsole_grantpty_LIBADD = $(LIBUTIL)
+ 
+ # Not AUTO here, because there are some unused files
+ #>- METASOURCES = TEWidget.moc TEmuVt102.moc session.moc konsole.moc        TEmulation.moc TEPty.moc kwrited.moc konsole_part.moc 
+@@ -544,7 +545,7 @@ konsole$(EXEEXT): $(konsole_OBJECTS) $(k
+ 
+ konsole_grantpty$(EXEEXT): $(konsole_grantpty_OBJECTS) $(konsole_grantpty_DEPENDENCIES)
+ 	@rm -f konsole_grantpty$(EXEEXT)
+-	$(LINK) $(konsole_grantpty_LDFLAGS) $(konsole_grantpty_OBJECTS) $(konsole_grantpty_LDADD) $(LIBS)
++	$(LINK) $(konsole_grantpty_LDFLAGS) $(konsole_grantpty_OBJECTS) $(konsole_grantpty_LDADD) $(konsole_grantpty_LIBADD) $(LIBS)
+ 
+ kwrited$(EXEEXT): $(kwrited_OBJECTS) $(kwrited_DEPENDENCIES)
+ 	@rm -f kwrited$(EXEEXT)
