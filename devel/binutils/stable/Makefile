@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/10/11 00:52:21 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2004/01/19 01:56:05 brad Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -81,9 +81,17 @@ post-extract:
 	@cp -f ${FILESDIR}/te-obsd.h ${WRKSRC}/gas/config
 
 post-patch:
-	@cd ${WRKSRC}/bfd && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	@-cd ${WRKSRC}/bfd && { automake; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf; }
+	@cd ${WRKSRC}/binutils && automake
 	@-cd ${WRKSRC}/gas && { automake; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf; }
+	@cd ${WRKSRC}/gprof && automake
 	@cd ${WRKSRC}/ld && automake
+	@cd ${WRKSRC}/opcodes && automake
+
+post-build:
+	cd ${WRKBUILD}/binutils/doc && ${MAKE} info
+	cd ${WRKBUILD}/gas/doc && ${MAKE} info
+	cd ${WRKBUILD}/ld && ${MAKE} ld.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${TARGET_DIR}/bin
