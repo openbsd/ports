@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/05/18 00:30:32 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2000/06/22 18:18:45 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	BitchX-1.0c16
@@ -8,7 +8,7 @@ PKGNAME=	bitchx-1.0c16-socks5
 PKGNAME=	bitchx-1.0c16
 .endif
 CATEGORIES=	net
-NEED_VERSION=	1.234
+NEED_VERSION=	1.302
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
 
@@ -23,12 +23,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no obvious license"
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
 SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_STYLE= gnu dest
 
 .if defined(USE_SOCKS5) && ${USE_SOCKS5:U} == YES
 CONFIGURE_ARGS+= --with-socks5="${LOCALBASE}"
