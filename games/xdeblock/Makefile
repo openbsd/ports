@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2004/01/09 21:16:48 sturm Exp $
 
 COMMENT=	"block action game"
 
@@ -6,7 +6,7 @@ DISTNAME=	xdeblock
 PKGNAME=	xdeblock-1.0
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
+MASTER_SITES=	http://www.vector.co.jp/pack/unix/game/action/block/
 EXTRACT_SUFX=	.tgz
 
 # License: NONE
