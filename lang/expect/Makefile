@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/18 05:02:08 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/10/21 17:31:44 niklas Exp $
 #
 
 DISTNAME=	expect
 PKGNAME=	expect-5.26
 CATEGORIES=	lang tcl80 tk80
-MASTER_SITES=	http://expect.nist.gov/
+#MASTER_SITES=	http://expect.nist.gov/
 
 MAINTAINER=	niklas@openbsd.org
 
