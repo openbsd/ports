@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/06/06 06:06:38 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/08/13 13:59:09 espie Exp $
 bin/xhippo
 man/man1/xhippo.1
 share/doc/xhippo/ChangeLog
@@ -10,7 +10,7 @@ share/doc/xhippo/xhippo.ps.gz
 share/doc/xhippo/xhippo.sgml
 share/doc/xhippo/xhippo.txt.gz
 share/doc/xhippo/xhippo_toc.html
-share/examples/xhippo/xhippo.gtkrc 
+share/examples/xhippo/xhippo.gtkrc
 share/examples/xhippo/xhippo.config-sample
 share/locale/de/LC_MESSAGES/xhippo.mo
 @dirrm share/examples/xhippo
