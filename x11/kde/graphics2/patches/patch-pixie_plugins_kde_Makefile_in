@@ -1,0 +1,19 @@
+$OpenBSD: patch-pixie_plugins_kde_Makefile_in,v 1.1 2001/04/23 23:19:50 espie Exp $
+--- pixie/plugins/kde/Makefile.in.orig	Tue Apr 24 00:55:15 2001
++++ pixie/plugins/kde/Makefile.in	Tue Apr 24 00:56:01 2001
+@@ -231,13 +231,13 @@ DEFS = @DEFS@ -I. -I$(srcdir) -I../../..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libkif_kdeeffects_la_DEPENDENCIES =  ../../libifplugin/libkifplugin.la
++libkif_kdeeffects_la_DEPENDENCIES =  
+ #>- libkif_kdeeffects_la_OBJECTS =  dialogs.lo effects.lo
+ #>+ 5
+ libkif_kdeeffects_la_final_OBJECTS = libkif_kdeeffects_la.all_cpp.lo 
+ libkif_kdeeffects_la_nofinal_OBJECTS = dialogs.lo effects.lo \
+ libkif_kdeeffects_la_meta_unload.lo 
+-@KDE_USE_FINAL_FALSE@libkif_kdeeffects_la_OBJECTS = $(libkif_kdeeffects_la_nofinal_OBJECTS)
++@KDE_USE_FINAL_FALSE@libkif_kdeeffects_la_OBJECTS = $(libkif_kdeeffects_la_nofinal_OBJECTS) ../../libifplugin/ifplugin.lo
+ @KDE_USE_FINAL_TRUE@libkif_kdeeffects_la_OBJECTS = $(libkif_kdeeffects_la_final_OBJECTS)
+ CXXFLAGS = @CXXFLAGS@
+ #>- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
