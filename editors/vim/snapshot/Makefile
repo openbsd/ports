@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/09/21 14:46:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.35 2001/09/24 17:38:00 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 
@@ -6,7 +6,7 @@ V=		ax
 DISTNAME=	vim-6.0${V}
 PKGNAME=	${DISTNAME}
 CATEGORIES=	editors
-NEED_VERSION=	1.422
+NEED_VERSION=	1.460
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unreleased/unix/ \
 		ftp://nuxi.ucdavis.edu/pub/vim/unreleased/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unreleased/unix/ \
@@ -25,8 +25,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	iconv.2::converters/libiconv
-
+MODULES=	gettext iconv
 FLAVORS=	huge gtk athena motif no_x11 perl python
 FLAVOR?=	gtk
 
