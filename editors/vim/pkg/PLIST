@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/06/09 18:43:16 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/07/12 19:32:59 lebel Exp $
 !%%no_x11%%
 bin/ex
 bin/rview

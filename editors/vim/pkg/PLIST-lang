@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.7 2004/06/09 18:43:16 lebel Exp $
+@comment $OpenBSD: PLIST-lang,v 1.1 2004/07/12 19:32:59 lebel Exp $
 share/vim/${P}/lang/README.txt
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/cs/LC_MESSAGES/vim.mo

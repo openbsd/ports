@@ -1,4 +1,4 @@
-$OpenBSD: sup-m68k-src_Makefile,v 1.2 2003/06/27 17:57:52 lebel Exp $
+$OpenBSD: sup-vax-src_Makefile,v 1.1 2004/07/12 19:32:59 lebel Exp $
 --- src/Makefile.orig	Wed Sep 26 08:10:59 2001
 +++ src/Makefile	Thu Oct 25 00:52:08 2001
 @@ -1969,10 +1969,10 @@ objects/digraph.o: digraph.c
