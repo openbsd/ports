@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.6 2000/07/03 13:01:49 espie Exp $
+# $OpenBSD: make-plist,v 1.7 2000/07/08 15:13:49 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -160,9 +160,9 @@ if (@libfiles > 0) {
 	}
 	for my $d (sort (keys %ldconfig)) {
 		if (defined $newdir{$d}) {
-			print SHARED "NEWDYNLIBDIR(", strip($d), ")\n";
+			print SHARED "NEWDYNLIBDIR(\%D/", strip($d), ")\n";
 		} else {
-			print SHARED "DYNLIBDIR(", strip($d), ")\n";
+			print SHARED "DYNLIBDIR(\%D/", strip($d), ")\n";
 		}
 	}
 	close SHARED;
