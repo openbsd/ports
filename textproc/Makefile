@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2002/01/04 18:12:17 shell Exp $
+# $OpenBSD: Makefile,v 1.73 2002/01/05 14:54:15 shell Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += openjade
      SUBDIR += p5-Blatte
      SUBDIR += p5-Font-TTF
+     SUBDIR += p5-Libxml
      SUBDIR += p5-String-Approx
      SUBDIR += p5-String-Random
      SUBDIR += p5-String-Similarity
@@ -45,6 +46,7 @@
      SUBDIR += p5-XML-LibXSLT
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-RSS
+     SUBDIR += p5-XML-RegExp
      SUBDIR += p5-XML-SAX
      SUBDIR += p5-XML-Sablotron
      SUBDIR += p5-XML-Simple
