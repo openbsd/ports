@@ -1,0 +1,20 @@
+$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
+--- aclocal.m4.orig	Mon Jul 26 23:06:19 2004
++++ aclocal.m4	Mon Jul 26 23:06:53 2004
+@@ -1655,6 +1655,7 @@
+   
+     PHP_CHECK_LIBRARY(crypto, CRYPTO_free, [
+       PHP_ADD_LIBRARY(crypto,,$1)
++      PHP_ADD_LIBRARY(des,,$1)
+     ],[
+       AC_MSG_ERROR([libcrypto not found!])
+     ],[
+@@ -3934,7 +3935,7 @@
+   need_version=no
+   library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major $libname.so'
+   soname_spec='${libname}${release}.so$major'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig $libdir'
++  finish_cmds=
+   shlibpath_var=LD_LIBRARY_PATH
+   sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
+   sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"

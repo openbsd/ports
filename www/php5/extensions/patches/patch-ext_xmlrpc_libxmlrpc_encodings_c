@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_xmlrpc_libxmlrpc_encodings_c,v 1.1.1.1 2004/10/02 11:32:35 robert Exp $
+--- ext/xmlrpc/libxmlrpc/encodings.c.orig	Tue Jul 27 01:05:53 2004
++++ ext/xmlrpc/libxmlrpc/encodings.c	Tue Jul 27 01:06:08 2004
+@@ -70,7 +70,7 @@
+          if(outbuf) {
+             out_ptr = (char*)outbuf;
+             while(inlenleft) {
+-               st = iconv(ic, (char**)&src, &inlenleft, &out_ptr, &outlenleft);
++               st = iconv(ic, (const char**)&src, &inlenleft, &out_ptr, &outlenleft);
+                if(st == -1) {
+                   if(errno == E2BIG) {
+                      int diff = out_ptr - outbuf;

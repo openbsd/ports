@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_calendar_calendar_c,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
+--- ext/calendar/calendar.c.orig	Mon Jul 26 23:12:25 2004
++++ ext/calendar/calendar.c	Mon Jul 26 23:12:43 2004
+@@ -277,7 +277,7 @@
+ 
+ 	calendar->from_jd(jd, &year, &month, &day);
+ 
+-	sprintf(date, "%i/%i/%i", month, day, year);
++	snprintf(date, sizeof date, "%i/%i/%i", month, day, year);
+ 	add_assoc_string(return_value, "date", date, 1);
+ 
+ 	add_assoc_long(return_value, "month", month);

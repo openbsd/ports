@@ -1,0 +1,13 @@
+LDAP is the Lightweight Directory Access Protocol, and is a protocol
+used to access "Directory Servers". The Directory is a special kind
+of database that holds information in a tree structure.
+
+The concept is similar to your hard disk directory structure, except
+that in this context, the root directory is "The world" and the
+first level subdirectories are "countries". Lower levels of the
+directory structure contain entries for companies, organisations
+or places, while yet lower still we find directory entries for
+people, and perhaps equipment or documents.
+
+The PHP LDAP library allows you to query and set values in remote
+and local LDAP databases.

@@ -1,0 +1,2 @@
+These functions allow you to work with arbitrary-length integers
+using the GNU MP library.

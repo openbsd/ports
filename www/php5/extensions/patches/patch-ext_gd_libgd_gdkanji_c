@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_gd_libgd_gdkanji_c,v 1.1.1.1 2004/10/02 11:32:35 robert Exp $
+--- ext/gd/libgd/gdkanji.c.orig	Tue Jul 27 01:02:49 2004
++++ ext/gd/libgd/gdkanji.c	Tue Jul 27 01:03:21 2004
+@@ -362,7 +362,7 @@
+   from_len = strlen ((const char *) from) + 1;
+   to_len = BUFSIZ;
+ 
+-  if ((int) iconv(cd, (char **) &from, &from_len, (char **) &to, &to_len) == -1)
++  if ((int) iconv(cd, (const char **) &from, &from_len, (char **) &to, &to_len) == -1)
+     {
+ #ifdef HAVE_ERRNO_H
+       if (errno == EINVAL)

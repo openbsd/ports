@@ -1,0 +1,18 @@
+These functions allow you to access records stored in dBase-format
+(dbf) databases.
+
+There is no support for indexes or memo fields. There is no support
+for locking, too. Two concurrent webserver processes modifying the
+same dBase file will very likely ruin your database.
+
+dBase files are simple sequential files of fixed length records.
+Records are appended to the end of the file and delete records are
+kept until you call dbase_pack().
+
+We recommend that you do not use dBase files as your production
+database. Choose any real SQL server instead; MySQL or Postgres are
+common choices with PHP. dBase support is here to allow you to
+import and export data to and from your web database, because the
+file format is commonly understood by Windows spreadsheets and
+organizers.
+

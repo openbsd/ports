@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-mhash,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
+lib/php/modules/mhash.so

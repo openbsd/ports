@@ -1,0 +1,8 @@
+These functions build the foundation for accessing Berkeley DB style
+databases.
+
+This is a general abstraction layer for several file-based databases.
+As such, functionality is limited to a common subset of features
+supported by modern databases such as Sleepycat Software's DB2.
+(This is not to be confused with IBM's DB2 software, which is
+supported through the ODBC functions.)

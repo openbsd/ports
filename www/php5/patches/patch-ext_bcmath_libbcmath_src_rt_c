@@ -1,0 +1,21 @@
+$OpenBSD: patch-ext_bcmath_libbcmath_src_rt_c,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
+--- ext/bcmath/libbcmath/src/rt.c.orig	Mon Jul 26 23:11:15 2004
++++ ext/bcmath/libbcmath/src/rt.c	Mon Jul 26 23:11:49 2004
+@@ -45,7 +45,7 @@
+   char error_mesg [255];
+ 
+   va_start (args, mesg);
+-  vsprintf (error_mesg, mesg, args);
++  vsnprintf (error_mesg, sizeof error_mesg, mesg, args);
+   va_end (args);
+ 
+   fprintf (stderr, "bc math warning: %s\n", error_mesg);
+@@ -58,7 +58,7 @@
+   char error_mesg [255];
+ 
+   va_start (args, mesg);
+-  vsprintf (error_mesg, mesg, args);
++  vsnprintf (error_mesg, sizeof error_mesg, mesg, args);
+   va_end (args);
+ 
+   fprintf (stderr, "bc math error: %s\n", error_mesg);

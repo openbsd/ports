@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_bcmath_libbcmath_src_output_c,v 1.1.1.1 2004/10/02 11:32:37 robert Exp $
+--- ext/bcmath/libbcmath/src/output.c.orig	Mon Jul 26 23:09:43 2004
++++ ext/bcmath/libbcmath/src/output.c	Mon Jul 26 23:09:22 2004
+@@ -71,7 +71,7 @@
+   int len, ix;
+ 
+   if (space) (*out_char) (' ');
+-  sprintf (digits, "%ld", val);
++  snprintf (digits, sizeof digits, "%ld", val);
+   len = strlen (digits);
+   while (size > len)
+     {
