@@ -3,11 +3,12 @@
 # Date created:				December 1, 1997
 # Whom:					Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.8 2000/04/21 23:12:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/06/19 07:19:35 kevlo Exp $
 #
 
-DISTNAME=		c2html-0.9
+DISTNAME=		c2html-0.9.2
 CATEGORIES=		textproc www
+NEED_VERSION=		1.307
 
 # Old versions seem to stay there...
 MASTER_SITES=		http://user.cs.tu-berlin.de/%7Eschintke/x2html/ \
@@ -22,10 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=		Yes
-FAKE=			Yes
-
-MAN1=			c2html.1
+CONFIGURE_STYLE=	gnu
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/c2html ${PREFIX}/bin
