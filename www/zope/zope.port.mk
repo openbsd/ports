@@ -1,4 +1,4 @@
-# $OpenBSD: zope.port.mk,v 1.1 2004/08/03 12:08:10 xsa Exp $
+# $OpenBSD: zope.port.mk,v 1.2 2004/08/03 17:08:29 xsa Exp $
 #
 #	zope.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -20,7 +20,7 @@ NO_REGRESS=	Yes
 # dirty way to do it with no modifications in bsd.port.mk
 .if !target(do-build)
 do-build:
-	${PYTHON_BIN} ${PYTHON_LIBDIR}/compileall.py ${WRKDIST}
+	${PYTHON_BIN} ${PYTHON_LIBDIR}/compileall.py ${WRKDIST} || true
 .endif
 
 post-install:
