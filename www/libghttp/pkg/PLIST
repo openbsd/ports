@@ -1,6 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/20 05:17:48 brad Exp $
 include/ghttp.h
 include/ghttp_constants.h
 lib/libghttp.a
 lib/libghttp.la
-lib/libghttp.so.1.0
-@exec /sbin/ldconfig -m %B
+%%SHARED%%

@@ -1,6 +1,15 @@
---- ltmain.sh.orig	Sun Apr 18 02:38:56 1999
-+++ ltmain.sh	Sun Apr 18 02:39:12 1999
-@@ -2633,40 +2633,6 @@
+--- ltmain.sh.orig	Thu Jul 20 01:06:33 2000
++++ ltmain.sh	Thu Jul 20 01:06:47 2000
+@@ -2619,7 +2619,7 @@
+ 	  # linked before any other PIC object.  But we must not use
+ 	  # pic_flag when linking with -static.  The problem exists in
+ 	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
+-	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
++	  *-*-freebsd2*|*-*-freebsd3.0*|*-*-freebsdelf3.0*)
+ 	    case "$compile_command " in
+ 	    *" -static "*) ;;
+ 	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
+@@ -3555,40 +3555,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
@@ -10,10 +19,10 @@
 -      echo "   $libdir"
 -    done
 -    echo
--    echo "To link against installed libraries in a given directory, LIBDIR,"
--    echo "you must use the \`-LLIBDIR' flag during linking."
--    echo
--    echo " You will also need to do at least one of the following:"
+-    echo "If you ever happen to want to link against installed libraries"
+-    echo "in a given directory, LIBDIR, you must either use libtool, and"
+-    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
 -      echo "     during execution"

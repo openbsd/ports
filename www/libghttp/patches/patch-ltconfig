@@ -1,11 +1,10 @@
---- ltconfig.orig	Tue Jun 15 09:29:16 1999
-+++ ltconfig	Tue Jun 15 09:29:52 1999
-@@ -1378,7 +1378,7 @@
- aix*)
-   symcode='[BCDTU]'
+--- ltconfig.orig	Sat Apr 15 21:33:21 2000
++++ ltconfig	Thu Jul 20 01:06:11 2000
+@@ -2004,6 +2004,7 @@
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method='pass_all'
    ;;
--sunos* | cygwin32* | mingw32*)
-+sunos* | cygwin32* | mingw32* | openbsd*)
-   sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
-   symxfrm='_\1 \1'
-   ;;
+ 
+ os2*)

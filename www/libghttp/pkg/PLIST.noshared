@@ -1,4 +1,0 @@
-include/ghttp.h
-include/ghttp_constants.h
-lib/libghttp.a
-lib/libghttp.la
