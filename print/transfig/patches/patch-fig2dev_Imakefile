@@ -1,5 +1,5 @@
 --- fig2dev/Imakefile.orig	Thu Apr 19 13:19:38 2001
-+++ fig2dev/Imakefile	Tue Jun 19 12:08:19 2001
++++ fig2dev/Imakefile	Tue Jun 19 15:31:27 2001
 @@ -28,13 +28,13 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.  This will be made automatic in the future.
@@ -47,7 +47,7 @@
 -XPMLIBDIR = $(USRLIBDIR)
 -XPMINC = -I/usr/include/X11
 +XPMLIBDIR = ${X11BASE}/lib
-+XPMINC = -I${X11BASE}/include/X11 -I$(INCDIR)/X11
++XPMINC = -I${X11BASE}/include/X11
  #endif
  
  XCOMM ****************
@@ -73,3 +73,12 @@
  
  install::
  	[ -d $(DESTDIR)$(FIG2DEV_LIBDIR) ] || mkdir $(DESTDIR)$(FIG2DEV_LIBDIR)
+@@ -185,7 +185,7 @@ XCOMM **********************************
+ XCOMM *** You shouldn't have to change anything below this point ***
+ XCOMM **************************************************************
+ 
+-DIR_DEFS=	-DBITMAPDIR=\\\"$(DESTDIR)$(XFIGLIBDIR)/bitmaps\\\"
++DIR_DEFS=	-DBITMAPDIR=\\\"$(XFIGLIBDIR)/bitmaps\\\"
+ 
+ #ifdef USEPNG
+ DUSEPNG = -DUSE_PNG
