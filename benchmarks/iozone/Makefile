@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 1999/09/17 09:39:06 turan Exp $
-
-BROKEN=		"sources changed.  checksums differ."
+# $OpenBSD: Makefile,v 1.12 1999/09/20 20:38:13 brad Exp $
 
 DISTNAME=	iozone
-PKGNAME=	iozone-3.7
+PKGNAME=	iozone-3.9
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/
 EXTRACT_SUFX=	.tar
 
 NEED_VERSION=	1.92
 
-MAINTAINER=	niklas@openbsd.org
+MAINTAINER=	brad@openbsd.org
 
 MAKEFILE=	makefile
 ALL_TARGET=	openbsd
