@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/08/22 03:10:54 kevlo Exp $
+# $OpenBSD: Makefile,v 1.15 2000/09/02 13:06:19 kevlo Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 DISTNAME=       xfmail-1.4.6
@@ -29,6 +29,15 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/X11" \
 		LDFLAGS="-L${LOCALBASE}/lib/X11"
+
+FLAVORS=	threads
+FLAVOR?=
+
+.if ${FLAVOR:L} == "threads"
+CONFIGURE_ARGS+= --enable-threads
+.else
+CONFIGURE_ARGS+= --without-threads
+.endif	
 
 pre-configure:
 	@cp -f ${FILESDIR}/config.cache ${WRKSRC}

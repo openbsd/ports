@@ -1,20 +1,11 @@
---- configure.orig	Mon May 29 05:14:05 2000
-+++ configure	Tue Aug 22 03:34:09 2000
-@@ -2778,14 +2778,14 @@
-   echo "$ac_t""no" 1>&6
- fi
- 
--			echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
--echo "configure:2783: checking for pthread_create in -lpthread" >&5
-+			echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
-+echo "configure:2783: checking for pthread_create in -lc_r" >&5
- ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
- if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+--- configure.orig	Mon May 29 12:14:05 2000
++++ configure	Sat Sep  2 20:12:26 2000
+@@ -2785,7 +2785,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lpthread  $LIBS"
-+LIBS="-lc_r  $LIBS"
++LIBS="-pthread  $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 2791 "configure"
  #include "confdefs.h"
@@ -23,7 +14,7 @@
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  LIBS="$LIBS -lpthread"
-+  LIBS="$LIBS -lc_r"
++  LIBS="$LIBS -pthread"
  else
    echo "$ac_t""no" 1>&6
  fi
