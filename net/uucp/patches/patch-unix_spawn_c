@@ -1,0 +1,17 @@
+Deal with _POSIX_SAVED_IDS when relinquishing privileges
+
+$OpenBSD: patch-unix_spawn_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+--- unix/spawn.c.orig	Sun Aug 20 15:30:41 1995
++++ unix/spawn.c	Thu Jul 12 21:56:10 2001
+@@ -353,8 +353,10 @@ ixsspawn (pazargs, aidescs, fkeepuid, fk
+   if (! fkeepuid)
+     {
+       /* Return to the uid of the invoking user.  */
+-      (void) setuid (getuid ());
++      (void) setegid (getgid ());
+       (void) setgid (getgid ());
++      (void) seteuid (getuid ());
++      (void) setuid (getuid ());
+     }
+   else
+     {

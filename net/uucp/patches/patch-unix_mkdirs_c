@@ -1,0 +1,29 @@
+handle "/*" path parsing correctly; netbsd pr#2970, darcey@druid.com
+
+$OpenBSD: patch-unix_mkdirs_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+--- unix/mkdirs.c.orig	Sun Aug 20 15:30:30 1995
++++ unix/mkdirs.c	Thu Jul 12 21:56:10 2001
+@@ -28,11 +28,6 @@ fsysdep_make_dirs (zfile, fpublic)
+     {
+       if (*z == '/' && z != zcopy)
+ 	{
+-	  /* Some versions of uuto will send a double slash.  Some
+-             systems will fail to create a directory ending in a
+-             slash.  */
+-	  if (z[-1] == '/')
+-	    continue;
+ 	  *z = '\0';
+ 	  if (mkdir (zcopy, imode) != 0
+ 	      && errno != EEXIST
+@@ -48,6 +43,11 @@ fsysdep_make_dirs (zfile, fpublic)
+ 	      return FALSE;
+ 	    }
+ 	  *z = '/';
++	  /* Some versions of uuto will send a double slash.  Some
++             systems will fail to create a directory ending in a
++             slash.  */
++      while (z[1] == '/')
++        z++;
+ 	}
+     }
+ 

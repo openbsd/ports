@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/uucp.info
+bin/cu
+bin/uucp
+bin/uulog
+bin/uuname
+bin/uupick
+bin/uusched
+bin/uustat
+bin/uuto
+bin/uux
+info/uucp.info
+libexec/uucp/uuchk
+libexec/uucp/uucico
+libexec/uucp/uuconv
+libexec/uucp/uuxqt
+man/man1/cu.1
+man/man1/uucp.1
+man/man1/uustat.1
+man/man1/uux.1
+man/man8/uucico.8
+man/man8/uuxqt.8
+@dirrm libexec/uucp
+@exec install-info --info-dir=%D/info %D/info/uucp.info

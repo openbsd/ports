@@ -1,0 +1,14 @@
+use %s with fprintf
+
+$OpenBSD: patch-uuconv_c,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
+--- uuconv.c.orig	Sun Aug 20 15:29:45 1995
++++ uuconv.c	Thu Jul 12 21:38:53 2001
+@@ -684,7 +684,7 @@ uvwrite_chat_script (e, pzarg)
+     {
+       if ((*pz)[0] != '-' && pz != pzarg)
+ 	fprintf (e, " ");
+-      fprintf (e, *pz);
++      fprintf (e, "%s", *pz);
+     }
+ }
+ 
