@@ -1,5 +1,5 @@
---- readRC.c.orig	Tue Jun 25 05:50:39 1996
-+++ readRC.c	Tue May 30 06:09:51 2000
+--- readRC.c.orig	Wed Jun 13 12:00:10 2001
++++ readRC.c	Wed Jun 13 12:01:58 2001
 @@ -30,12 +30,6 @@
  #include <unistd.h>
  #endif
@@ -13,7 +13,7 @@
  #define RC_FILENAME	".XPaintrc"
  
  static String defaultRC[] =
-@@ -66,17 +60,18 @@ openTemp(char **np)
+@@ -66,17 +60,18 @@
  {
      char *n;
      char xx[256];
@@ -25,7 +25,7 @@
 -    strcpy(xx, n);
 -    strcat(xx, "/XPaintXXXXXXX");
 -    n = mktemp(xx);
-+    snprintf(xx, 256, "%s/%s", n, "/XPaintXXXXXXX");
++    snprintf(xx, 256, "%s/%s", n, "/XPaintXXXXXXX"); 
 +    fd = mkstemp(xx);
 +    n = xx;
      tempName[++tempIndex] = XtNewString(n);

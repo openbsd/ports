@@ -1,5 +1,5 @@
---- rw/rwTable.c.~1~	Fri Jul  3 19:18:59 1998
-+++ rw/rwTable.c	Fri Jul  3 19:20:44 1998
+--- rw/rwTable.c.orig	Wed Jun 13 11:48:14 2001
++++ rw/rwTable.c	Wed Jun 13 11:50:05 2001
 @@ -231,6 +231,7 @@
  char *
  RWGetMsg()
@@ -8,7 +8,7 @@
  #if defined(BSD4_4)
      __const extern char *__const sys_errlist[];
  #else
-@@ -239,6 +240,7 @@
+@@ -245,6 +246,7 @@
  #endif
  #endif
      extern int errno;
