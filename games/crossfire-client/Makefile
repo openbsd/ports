@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/07/18 15:15:05 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/13 22:54:28 naddy Exp $
 
 COMMENT=	"graphical networked AD&D style game"
 
@@ -16,11 +16,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=crossfire/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=crossfire/}
 
-LIB_DEPENDS=   	gtk.1.2::x11/gtk+ \
+LIB_DEPENDS=   	gtk.1.2,gdk.1.2::x11/gtk+ \
 	        png.1::graphics/png \
-		SDL::devel/sdl
+		SDL.1,SDL_image.1::devel/sdl
 
 CONFIGURE_ARGS=	--disable-gnome	
 
