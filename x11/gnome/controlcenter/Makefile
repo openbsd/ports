@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/07 20:55:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/09 16:28:44 naddy Exp $
 
 COMMENT=		"GNOME control center"
 V=			1.4.0.1
@@ -19,8 +19,9 @@ LIB_DEPENDS=		gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
 			gnome.36::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
 
-BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
-RUN_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper
+BUILD_DEPENDS=		::textproc/scrollkeeper
+RUN_DEPENDS=		::textproc/scrollkeeper \
+			::x11/gtk-engines
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -40,6 +41,6 @@ post-extract:
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/control-center; \
-	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/control-center/
+	cp -pR ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/control-center/
 
 .include <bsd.port.mk>
