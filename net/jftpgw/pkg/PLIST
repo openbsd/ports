@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/11 18:45:42 brad Exp $
-man/man1/jftpgw.1
+@comment $OpenBSD: PLIST,v 1.6 2004/08/11 20:02:05 brad Exp $
+@man man/man1/jftpgw.1
 sbin/jftpgw
 share/examples/jftpgw/
 share/examples/jftpgw/jftpgw.conf
-@cwd ${SYSCONFDIR}
-@extra jftpgw.conf
+@sample ${SYSCONFDIR}/jftpgw.conf
