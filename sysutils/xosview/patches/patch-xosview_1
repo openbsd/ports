@@ -1,6 +1,15 @@
-$OpenBSD: patch-xosview_1,v 1.3 2002/06/13 02:54:58 form Exp $
+$OpenBSD: patch-xosview_1,v 1.4 2002/06/17 02:34:18 form Exp $
 --- xosview.1.orig	Mon Feb 25 04:55:19 2002
-+++ xosview.1	Wed Jun 12 19:48:31 2002
++++ xosview.1	Sun Jun 16 21:55:33 2002
+@@ -126,7 +126,7 @@ an abbreviation for all three of the fre
+ 
+ \fBCPU Usage\fP
+    Linux  : user | nice | system | idle
+-   *BSD   : user | nice | system | idle
++   *BSD   : user | nice | system | interrupt | idle
+    IRIX   : user | system | interrupt | wait | idle
+    HPUX   : user | nice | system | interrupt | idle
+ 
 @@ -185,7 +185,7 @@ an abbreviation for all three of the fre
      Linux  : %left | %used
      NetBSD : %left | %used

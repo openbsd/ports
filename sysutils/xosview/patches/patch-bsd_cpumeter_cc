@@ -1,0 +1,48 @@
+$OpenBSD: patch-bsd_cpumeter_cc,v 1.1 2002/06/17 02:34:18 form Exp $
+--- bsd/cpumeter.cc.orig	Sun Jun 16 21:45:08 2002
++++ bsd/cpumeter.cc	Sun Jun 16 21:50:59 2002
+@@ -32,11 +32,12 @@ CVSID_DOT_H(CPUMETER_H_CVSID);
+ 
+ CPUMeter::CPUMeter( XOSView *parent )
+ #if defined(XOSVIEW_FREEBSD) || defined(XOSVIEW_BSDI) || \
+-  (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000))
+-: FieldMeterGraph( parent, 5, "CPU", "USR/NICE/SYS/INT/FREE" ){
++  (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000)) || \
++  defined(XOSVIEW_OPENBSD)
++: FieldMeterGraph( parent, 5, "CPU", "USR/NICE/SYS/INT/IDLE" ){
+ #define FREE_INDEX 4
+ #else
+-: FieldMeterGraph( parent, 4, "CPU", "USR/NICE/SYS/FREE" ){
++: FieldMeterGraph( parent, 4, "CPU", "USR/NICE/SYS/IDLE" ){
+ #define FREE_INDEX 3
+ #endif
+   for ( int i = 0 ; i < 2 ; i++ )
+@@ -59,7 +60,8 @@ void CPUMeter::checkResources( void ){
+   setfieldcolor( 1, parent_->getResource("cpuNiceColor") );
+   setfieldcolor( 2, parent_->getResource("cpuSystemColor") );
+ #if defined(XOSVIEW_FREEBSD) || defined(XOSVIEW_BSDI) || \
+-  (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000))
++  (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000)) || \
++  defined(XOSVIEW_OPENBSD)
+   setfieldcolor( 3, parent_->getResource("cpuInterruptColor") );
+   setfieldcolor( 4, parent_->getResource("cpuFreeColor") );
+ #else
+@@ -81,7 +83,7 @@ void CPUMeter::getcputime( void ){
+   static double lastTotal = 0, lastLastTotal = -1;
+ 
+   //  Begin NetBSD-specific code...  BCG
+-#if  defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000)
++#if defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000)
+   u_int64_t tempCPU[CPUSTATES];
+ #else
+   long tempCPU[CPUSTATES];
+@@ -92,7 +94,8 @@ void CPUMeter::getcputime( void ){
+   cputime_[cpuindex_][0] = tempCPU[0];
+   cputime_[cpuindex_][1] = tempCPU[1];
+ #if defined(XOSVIEW_FREEBSD) || defined(XOSVIEW_BSDI) || \
+-  (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000))
++  (defined(XOSVIEW_NETBSD) && (__NetBSD_Version__ >= 104260000)) || \
++  defined(XOSVIEW_OPENBSD)
+   // FreeBSD seems at least to be filling cp_time[CP_INTR].  So, we add that
+   // as another field. (pavel 25-Jan-1998)
+   cputime_[cpuindex_][2] = tempCPU[2];
