@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2000/08/04 16:52:00 brad Exp $
+# $OpenBSD: INSTALL,v 1.5 2000/08/04 17:49:20 brad Exp $
 #
 # Pre/post-installation setup of vtun
 
@@ -27,7 +27,7 @@ do_notice()
 
 do_install()
 {
-    install -o root -g wheel $SAMPLE_CONFIG_FILE $CONFIG_FILE
+    install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo
     echo "+---------------"
     echo "| The $1 configuration file, $CONFIG_FILE,"
