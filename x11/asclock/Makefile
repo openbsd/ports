@@ -1,65 +1,35 @@
-# OpenBSD makefile for:   asclock
-# Version required:    1.0
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:44 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.7 2001/01/06 16:43:44 naddy Exp $
 
-DISTNAME=	asclock
-PKGNAME=	asclock-1.0
+DISTNAME=	asclock-2.0.12
 CATEGORIES=	x11
-NEED_VERSION=	1.305
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=		applications
-EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	ports@openbsd.org
+NEED_VERSION=	1.348
+MASTER_SITES=	ftp://ftp.afterstep.org/apps/asclock/ \
+		ftp://fuf.sh.cvut.cz/pub/AfterStep/apps/asclock/ \
+		http://www.tigr.net/afterstep/download/asclock/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	imake
+THEMES=		Freeamp Newstone Orb Stone beats classic penguin shaped
+CLASSICS=	beats classic shaped
+LANGUAGES=	english german portuguese dutch norwegian italian \
+		swedish spanish hungarian breton french czech russian \
+		ukrainian slovene indonesian danish hebrew japanese
 
-FLAVORS=english german portuguese dutch norwegian italian swedish spanish \
-hungarian breton french czech
+FLAVORS=	${THEMES:L} ${LANGUAGES}
+FLAVOR?=	classic english
 
-FLAVOR?=english
+CONFIGURE_STYLE= imake
+USE_X11=	Yes
 
-
-# Note we test whether FLAVOR contains english or german or...
-# there are some other options to asclock building, maybe we should extend
-# the flavor ?
-
-.if ${FLAVOR:L:Menglish}
-ASCLOCK_LANG=1
-.elif ${FLAVOR:L:Mgerman}
-ASCLOCK_LANG=2
-.elif ${FLAVOR:L:Mportuguese}
-ASCLOCK_LANG=3
-.elif ${FLAVOR:L:Mdutch}
-ASCLOCK_LANG=4
-.elif ${FLAVOR:L:Mnorwegian}
-ASCLOCK_LANG=5
-.elif ${FLAVOR:L:Mitalian}
-ASCLOCK_LANG=6
-.elif ${FLAVOR:L:Mswedish}
-ASCLOCK_LANG=7
-.elif ${FLAVOR:L:Mspanish}
-ASCLOCK_LANG=8
-.elif ${FLAVOR:L:Mhungarian}
-ASCLOCK_LANG=9
-.elif ${FLAVOR:L:Mbreton}
-ASCLOCK_LANG=0
-.elif ${FLAVOR:L:Mfrench}
-ASCLOCK_LANG=a
-.elif ${FLAVOR:L:Mczech}
-ASCLOCK_LANG=b
-.endif
+pre-fetch:
+	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \
+	     FLAVOR='${FLAVOR}' ${FILESDIR}/configure chk
 
 pre-configure:
-	@cd ${WRKSRC} && echo ${ASCLOCK_LANG} | ./configure >/dev/null
+	@THEMES='${THEMES}' CLASSICS='${CLASSICS}' LANGUAGES='${LANGUAGES}' \
+	     WRKSRC=${WRKSRC} FLAVOR='${FLAVOR}' ${FILESDIR}/configure conf
 
 .include <bsd.port.mk>

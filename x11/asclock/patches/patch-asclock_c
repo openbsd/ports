@@ -1,0 +1,12 @@
+$OpenBSD: patch-asclock_c,v 1.1 2001/01/06 16:43:45 naddy Exp $
+--- asclock.c.orig	Fri Jan  5 20:35:47 2001
++++ asclock.c	Fri Jan  5 20:59:45 2001
+@@ -24,7 +24,7 @@ GC NormalGC;
+ Window iconwin, win;       /* My home is my window */
+ char *Geometry;
+ char *LedColor = "LightSeaGreen";
+-char exec_str[] = "echo no program has been specified >/dev/console";
++char exec_str[MAX_PATH_LEN];
+ char *ERR_colorcells = "not enough free color cells or xpm not found\n";
+ char *ampers = " &";
+ char month_xpm_fn[MAX_PATH_LEN]="";
