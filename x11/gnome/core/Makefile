@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/30 09:18:42 wilfried Exp $
 
 COMMENT=		"core GNOME system"
 V=			1.4.0.4
 DISTNAME=		gnome-core-${V}
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.473
+NEED_VERSION=   	1.498
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -22,8 +22,8 @@ LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 			gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
 			capplet::x11/gnome/controlcenter
 
-BUILD_DEPENDS=		::textproc/scrollkeeper
-RUN_DEPENDS=		::textproc/scrollkeeper
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -41,6 +41,6 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-core; \
-	cp -rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-core/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-core/
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/17 13:17:00 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/30 09:18:42 wilfried Exp $
 
 COMMENT=		"GNOME control center"
 V=			1.4.0.1
 DISTNAME=		control-center-${V}
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.473
+NEED_VERSION=   	1.498
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
@@ -19,9 +19,9 @@ LIB_DEPENDS=		gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
 			gnome.36,gnorba,gtkxmhtml::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
 
-BUILD_DEPENDS=		::textproc/scrollkeeper
-RUN_DEPENDS=		::textproc/scrollkeeper \
-			::x11/gtk-engines
+BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
+			:gtk-engines->=0.12:x11/gtk-engines
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
