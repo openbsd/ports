@@ -1,4 +1,4 @@
-$OpenBSD: patch-autoconf_ltmain_sh,v 1.3 2001/08/27 13:17:17 brad Exp $
+$OpenBSD: patch-autoconf_ltmain_sh,v 1.4 2001/08/31 20:44:08 brad Exp $
 --- autoconf/ltmain.sh.orig	Sun Aug 26 23:27:18 2001
 +++ autoconf/ltmain.sh	Sun Aug 26 23:35:52 2001
 @@ -1031,12 +1031,28 @@ compiler."
@@ -11,7 +11,7 @@ $OpenBSD: patch-autoconf_ltmain_sh,v 1.3 2001/08/27 13:17:17 brad Exp $
 +	    ;;
 +	  esac
 +	fi
-+	if test "$X$arg" = "X-lc_r"; then
++	if test "X$arg" = "X-lc_r"; then
 +	  case $host in
 +	  *-*-openbsd*)
 +	    # Do not include libc_r directly, use -pthread flag.
