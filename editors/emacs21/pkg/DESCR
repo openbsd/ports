@@ -12,4 +12,5 @@ running subshells within Emacs windows (Shell), running a Lisp
 read-eval-print loop (Lisp-Interaction-Mode), automated psychotherapy
 (Doctor :-) and many more.
 
-WWW: ${HOMEPAGE}
+Flavors:
+          no_x11     - build without X11 support
