@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/06/30 03:55:29 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/07/05 07:16:08 marcm Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -67,7 +67,7 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
-lib/charset.alias
+@comment lib/charset.alias
 lib/glib-2.0/include/glibconfig.h
 lib/libglib-2.0.a
 lib/libglib-2.0.la
