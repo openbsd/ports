@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/01 11:28:24 shell Exp $
+libdata/perl5/site_perl/XML/SAX.pm
+libdata/perl5/site_perl/XML/SAX/Base.pm
+libdata/perl5/site_perl/XML/SAX/Exception.pm
+libdata/perl5/site_perl/XML/SAX/ParserFactory.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/DTDDecls.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/DebugHandler.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/DocType.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/EncodingDetect.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/Exception.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/Productions.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/Reader.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/Stream.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/String.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/Reader/URI.pm
+libdata/perl5/site_perl/XML/SAX/PurePerl/XMLDecl.pm
+libdata/perl5/site_perl/XML/SAX/placeholder.pl
+man/man3/XML::SAX.3p
+man/man3/XML::SAX::Base.3p
+man/man3/XML::SAX::Exception.3p
+man/man3/XML::SAX::ParserFactory.3p
+man/man3/XML::SAX::PurePerl.3p
+man/man3/XML::SAX::PurePerl::Reader.3p
+@dirrm libdata/perl5/site_perl/XML/SAX/PurePerl/Reader
+@dirrm libdata/perl5/site_perl/XML/SAX/PurePerl

@@ -1,0 +1,3 @@
+XML::SAX is a SAX parser access API for Perl. It includes classes
+and APIs required for implementing SAX drivers, along with a factory
+class for returning any SAX parser installed on the user's system.
