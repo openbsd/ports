@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mod_frontpage-enable,v 1.1 2001/08/13 15:50:22 brad Exp $
+# $OpenBSD: mod_frontpage-enable,v 1.2 2001/08/13 16:40:54 danh Exp $
 
 MODULE=!!PREFIX!!/lib/mod_frontpage.so
 
@@ -10,7 +10,7 @@ if [ `id -u` -ne 0 ]; then
 fi
 
 if [ ! -f ${MODULE} ]; then
-    echo "Can not find mod_frontpage module (${MODULE})"
+    echo "Cannot find mod_frontpage module (${MODULE})"
     exit 1
 else
     echo "Enabling Frontpage module..."
