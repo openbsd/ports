@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/08/11 09:42:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/08/12 06:15:57 kevlo Exp $
 @option no-default-conflict
 @pkgcfl tcl-8.3.*
 bin/tclsh8.3
-include/tcl8.3/tcl.h
-include/tcl8.3/tclDecls.h
 include/tcl8.3/generic/regcustom.h
 include/tcl8.3/generic/regerrs.h
 include/tcl8.3/generic/regex.h
@@ -20,23 +18,13 @@ include/tcl8.3/generic/tclMath.h
 include/tcl8.3/generic/tclPlatDecls.h
 include/tcl8.3/generic/tclPort.h
 include/tcl8.3/generic/tclRegexp.h
+include/tcl8.3/tcl.h
+include/tcl8.3/tclDecls.h
 include/tcl8.3/unix/tclUnixPort.h
 include/tcl8.3/unix/tclUnixThrd.h
 lib/libtcl83.a
 lib/libtclstub83.a
-%%SHARED%%
 lib/tcl8.3/auto.tcl
-lib/tcl8.3/history.tcl
-lib/tcl8.3/init.tcl
-lib/tcl8.3/ldAix
-lib/tcl8.3/ldAout.tcl
-lib/tcl8.3/package.tcl
-lib/tcl8.3/parray.tcl
-lib/tcl8.3/safe.tcl
-lib/tcl8.3/tclAppInit.c
-lib/tcl8.3/tclConfig.sh
-lib/tcl8.3/tclIndex
-lib/tcl8.3/word.tcl
 lib/tcl8.3/encoding/ascii.enc
 lib/tcl8.3/encoding/big5.enc
 lib/tcl8.3/encoding/cp1250.enc
@@ -106,10 +94,14 @@ lib/tcl8.3/encoding/macTurkish.enc
 lib/tcl8.3/encoding/macUkraine.enc
 lib/tcl8.3/encoding/shiftjis.enc
 lib/tcl8.3/encoding/symbol.enc
+lib/tcl8.3/history.tcl
 lib/tcl8.3/http1.0/http.tcl
 lib/tcl8.3/http1.0/pkgIndex.tcl
 lib/tcl8.3/http2.3/http.tcl
 lib/tcl8.3/http2.3/pkgIndex.tcl
+lib/tcl8.3/init.tcl
+lib/tcl8.3/ldAix
+lib/tcl8.3/ldAout.tcl
 lib/tcl8.3/man/man1/tclsh.1
 lib/tcl8.3/man/man3/Access.3
 lib/tcl8.3/man/man3/AddErrInfo.3
@@ -696,21 +688,29 @@ lib/tcl8.3/msgcat1.0/msgcat.tcl
 lib/tcl8.3/msgcat1.0/pkgIndex.tcl  
 lib/tcl8.3/opt0.4/optparse.tcl
 lib/tcl8.3/opt0.4/pkgIndex.tcl  
+lib/tcl8.3/package.tcl
+lib/tcl8.3/parray.tcl
+lib/tcl8.3/safe.tcl
+lib/tcl8.3/tclAppInit.c
+lib/tcl8.3/tclConfig.sh
+lib/tcl8.3/tclIndex
 lib/tcl8.3/tcltest1.0/pkgIndex.tcl
 lib/tcl8.3/tcltest1.0/tcltest.tcl
+lib/tcl8.3/word.tcl
+%%SHARED%%
+@dirrm lib/tcl8.3/tcltest1.0
+@dirrm lib/tcl8.3/opt0.4
+@dirrm lib/tcl8.3/msgcat1.0
+@dirrm lib/tcl8.3/man/mann
+@dirrm lib/tcl8.3/man/man3
+@dirrm lib/tcl8.3/man/man1
+@dirrm lib/tcl8.3/man
 @exec echo "tcl8.3 manpages are in %D/lib/tcl8.3/man; you may wish to add this directory to /etc/man.conf"
 @unexec echo "Please remove %D/lib/tcl8.3/man from /etc/man.conf manually if needed"
-@dirrm include/tcl8.3/generic
-@dirrm include/tcl8.3/unix
-@dirrm include/tcl8.3
-@dirrm lib/tcl8.3/encoding
-@dirrm lib/tcl8.3/http1.0
 @dirrm lib/tcl8.3/http2.3
-@dirrm lib/tcl8.3/man/man1
-@dirrm lib/tcl8.3/man/man3
-@dirrm lib/tcl8.3/man/mann
-@dirrm lib/tcl8.3/man
-@dirrm lib/tcl8.3/msgcat1.0
-@dirrm lib/tcl8.3/opt0.4
-@dirrm lib/tcl8.3/tcltest1.0
+@dirrm lib/tcl8.3/http1.0
+@dirrm lib/tcl8.3/encoding
 @dirrm lib/tcl8.3
+@dirrm include/tcl8.3/unix
+@dirrm include/tcl8.3/generic
+@dirrm include/tcl8.3
