@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/13 05:50:33 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/17 03:56:37 marc Exp $
 #
 
-DISTNAME=	xephem-3.2.1
+DISTNAME=	xephem-3.2.2
 CATEGORIES=	astro
 NO_CDROM=	"NOFEE:	Can not sell"
 MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/xephem-3.2/
