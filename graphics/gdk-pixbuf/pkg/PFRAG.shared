@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2001/03/08 18:33:52 naddy Exp $
+lib/libgdk_pixbuf.so.2.0
+lib/libgdk_pixbuf_xlib.so.2.0
+DYNLIBDIR(%B)
