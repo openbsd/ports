@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/25 05:43:49 jsyn Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/02 11:12:17 obecian Exp $
 
 COMMENT=		"http tunneling utility for ssh"
 
-DISTNAME=		corkscrew-1.5
+DISTNAME=		corkscrew-2.0
 CATEGORIES=    		security net
 NEED_VERSION=		1.425
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.agroman.net/corkscrew/
 
 CONFIGURE_STYLE=	gnu 
-
-WRKDIST=		${WRKDIR}/corkscrew
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/corkscrew
