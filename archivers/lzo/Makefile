@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/26 23:17:03 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/10 20:22:15 brad Exp $
 
 DISTNAME=	lzo-1.06
 CATEGORIES=	archivers devel
-NEED_VERSION=	1.218
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/util/arc/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
 		${MASTER_SITE_SUNSITE}
@@ -15,10 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 

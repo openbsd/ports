@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/02 11:56:22 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/10 20:22:16 brad Exp $
 
 DISTNAME=	Compress-Zlib-1.08
 PKGNAME=	p5-Cmprs-Zlib-1.08
 CATEGORIES=	archivers perl5
-NEED_VERSION=	1.290
+NEED_VERSION=	1.301
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Compress
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-CONFIGURE_STYLE=	perl
+
+CONFIGURE_STYLE= perl
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/06/10 20:22:15 brad Exp $
 include/lzo1.h
 include/lzo16bit.h
 include/lzo1a.h
@@ -12,8 +13,7 @@ include/lzoconf.h
 include/lzoutil.h
 lib/liblzo.a
 lib/liblzo.la
-lib/liblzo.so.1.0
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 share/doc/lzo/LZO.FAQ
 share/doc/lzo/LZO.TXT
 share/doc/lzo/LZOAPI.TXT
