@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2000/11/19 12:26:07 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2000/11/21 10:38:25 jakob Exp $
 
-DISTNAME=	dante-1.1.5
+DISTNAME=	dante-1.1.6
 CATEGORIES=	security
 NEED_VERSION=	1.310
 
