@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/18 14:07:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/03/08 07:57:51 alek Exp $
 
 COMMENT=	"Robust Audio Tool from UCL"
 
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m ossaudio tcl80 c X11 Xext
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/3.0.33/
 

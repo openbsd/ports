@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/12/18 14:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2005/03/08 07:57:51 alek Exp $
 
 COMMENT=	"Network Text Editor multicast tool from UCL"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m c X11
 
 BUILD_DEPENDS=	::mbone/common
 LIB_DEPENDS=	tcl80.1.5:tcl-8.0.*:lang/tcl/8.0 \

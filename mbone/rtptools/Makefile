@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/03/01 01:31:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2005/03/08 07:57:51 alek Exp $
 
 COMMENT=	"record, playback and monitor RTPv2 data streams"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	"no license"
+WANTLIB=		c
 
 MAKE_ENV=	ARCH=openbsd CC=cc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/12/18 14:11:40 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2005/03/08 07:57:51 alek Exp $
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c X11 m
 
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
