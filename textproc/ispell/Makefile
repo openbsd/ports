@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/23 03:06:34 jasoni Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/23 13:25:42 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	ispell-3.1.20
@@ -12,6 +12,7 @@ FRENCH_DICT=	francais-IREQ-1.4
 GERMAN_DICT=	hk2-deutsch
 DISTFILES=	${DISTNAME}.tar.gz ${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${GERMAN_DICT}.tar.gz
+HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
 
 PATCHFILES=	ispell-html-mode.patch:2
 
