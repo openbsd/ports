@@ -2,3 +2,5 @@ eboard-extras contains new piece sets and sounds meant to be used in
 the eboard chess board interface. But formats are standard (PGN for
 graphics and WAV for sounds) and you can use it anywhere you please.
 This pack 1 comes with 22 new piece sets and 3 sounds.
+
+WWW: ${HOMEPAGE}
