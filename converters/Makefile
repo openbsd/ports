@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 1998/04/29 05:04:15 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/24 23:30:51 angelos Exp $
 #
 
+    SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += ish
 #   SUBDIR += kdesupport
