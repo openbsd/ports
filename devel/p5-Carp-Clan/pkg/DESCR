@@ -1,0 +1,5 @@
+This module reports errors from the perspective of the caller of a
+"clan" of modules, similar to "Carp.pm" itself. But instead of giving
+it a number of levels to skip on the calling stack, you give it a
+pattern to characterize the package names of the "clan" of modules
+which shall never be blamed for any error. 
