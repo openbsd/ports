@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.310 2000/06/30 21:42:36 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.311 2000/06/30 21:48:50 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -165,7 +165,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  version is >= this version then a notice will be
 #				  displayed instead the port being generated.
 # FAKE		    - Install first into ${WRKINST}, build the package from there,
-#				  and perform the real install from the package (default: No)
+#				  and perform the real install from the package (default: Yes)
 # FAKE_FLAGS	- Flags to pass to make for the fake install, used to
 # 				  override the default install directory (Defaults:
 # 				  something relevant for gnu configure and imake)
