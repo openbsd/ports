@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2001/07/17 15:23:36 naddy Exp $
+--- doc/Makefile.in.orig	Tue Jul 17 16:31:38 2001
++++ doc/Makefile.in	Tue Jul 17 16:32:01 2001
+@@ -87,7 +87,7 @@ plugindir = @plugindir@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ 
+ doc_DATA = API USAGE DRIVERS WANTED
+ 

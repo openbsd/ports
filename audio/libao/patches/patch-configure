@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1 2001/07/17 15:23:35 naddy Exp $
+--- configure.orig	Tue Jul 17 16:15:46 2001
++++ configure	Tue Jul 17 16:16:18 2001
+@@ -1510,7 +1510,7 @@ if test -z "$GCC"; then
+                 PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
+         *)
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p" ;;
+         esac
+ else
+@@ -1525,9 +1525,9 @@ else
+                 CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8"
+                 PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
+         *)
+-                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                DEBUG="-g -Wall -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char" ;;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save"

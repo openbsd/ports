@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_plugins_arts_Makefile_in,v 1.1 2001/07/17 15:23:36 naddy Exp $
+--- src/plugins/arts/Makefile.in.orig	Tue Jul 17 16:37:00 2001
++++ src/plugins/arts/Makefile.in	Tue Jul 17 16:39:44 2001
+@@ -88,18 +88,17 @@ AUTOMAKE_OPTIONS = foreign
+ 
+ @HAVE_ARTS_TRUE@artsltlibs = libarts.la
+ @HAVE_ARTS_FALSE@artsltlibs = 
+-@HAVE_ARTS_TRUE@artsldflags = -export-dynamic -avoid-version
++@HAVE_ARTS_TRUE@artsldflags = -export-dynamic -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+ @HAVE_ARTS_FALSE@artsldflags = 
+ @HAVE_ARTS_TRUE@artssources = ao_arts.c
+ @HAVE_ARTS_FALSE@artssources = 
+ 
+-INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include
++INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/include @ARTS_CFLAGS@
+ 
+ libdir = $(plugindir)
+ lib_LTLIBRARIES = $(artsltlibs)
+ 
+ libarts_la_LDFLAGS = $(artsldflags)
+-CFLAGS = @ARTS_CFLAGS@
+ libarts_la_LIBADD = @ARTS_LIBS@
+ libarts_la_SOURCES = $(artssources)
+ 
+@@ -116,6 +115,7 @@ LIBS = @LIBS@
+ libarts_la_DEPENDENCIES = 
+ @HAVE_ARTS_FALSE@libarts_la_OBJECTS = 
+ @HAVE_ARTS_TRUE@libarts_la_OBJECTS =  ao_arts.lo
++CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2001/07/17 15:23:36 naddy Exp $
+--- src/Makefile.in.orig	Tue Jul 17 16:33:21 2001
++++ src/Makefile.in	Tue Jul 17 16:33:36 2001
+@@ -105,7 +105,7 @@ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ libao_la_LIBADD = 
+ libao_la_OBJECTS =  audio_out.lo ao_au.lo ao_raw.lo ao_wav.lo ao_null.lo
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -DSHARED_LIB_EXT=\".so.@LIB_CURRENT@.@LIB_REVISION@\"
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)

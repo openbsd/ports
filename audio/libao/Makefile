@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/06/30 13:16:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/07/17 15:23:35 naddy Exp $
 
 COMMENT=	"portable audio output library"
 DISTNAME=	libao-0.7.0
@@ -37,16 +37,9 @@ LIB_DEPENDS+=	esd.2::audio/esound
 
 .endif
 
-BUILD_DEPENDS=	automake::devel/automake
-
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 MAKE_FLAGS=	PLUGINS='${PLUGINS}'
 FAKE_FLAGS=	${MAKE_FLAGS} DESTDIR=${WRKINST}
-
-post-patch:
-	@cd ${WRKSRC} && \
-		touch aclocal.m4 configure.in && \
-		automake -i
 
 .include <bsd.port.mk>
