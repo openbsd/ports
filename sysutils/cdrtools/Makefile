@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/13 14:08:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/05 21:41:07 naddy Exp $
 
 COMMENT=		"ISO 9660 filesystem and CD creation tools"
 
 DISTNAME=		cdrtools-1.10
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		sysutils
 NEED_VERSION=		1.522
 HOMEPAGE=		http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html

@@ -8,8 +8,8 @@ This package contains the following software:
   devdup (dump a device or file in hex)
   isoinfo (analyze or list an ISO-9660 image)
   isovrfy (verify an ISO-9660 image)
+  mkisofs (ISO-9660 filesystem image creator)
   readcd (read data CDs, write to DVD-RAM and copy
     Solaris boot CDs)
-  smkisofs (ISO-9660 filesystem image creator)
 
 WWW: ${HOMEPAGE}
