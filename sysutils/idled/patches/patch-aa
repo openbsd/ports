@@ -1,12 +1,19 @@
 --- Makefile.orig	Fri May 17 00:05:28 1996
-+++ Makefile	Wed Jun  7 03:03:13 2000
-@@ -165,27 +165,28 @@ INCLUDE = 
++++ Makefile	Mon Mar 12 16:10:10 2001
+@@ -2,7 +2,6 @@
+ #
+ 
+ # C compiler flags
+-CC = cc
+ RM = rm
+ INCLUDE = 
+ 
+@@ -165,27 +164,27 @@ INCLUDE = 
  #        If you add it, '-lkvm' must also be added to the SPECLIBS line
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
 -#DEFS += -O -m486
 -#DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
-+DEFS += -O2
 +DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
  #DEFS += -DPROC_SEARCH_1
  #SPECLIBS = -lkvm
@@ -44,7 +51,7 @@
  
  ######################################################################
  ######################################################################
-@@ -215,25 +216,25 @@ INCLUDE = 
+@@ -215,25 +214,25 @@ INCLUDE = 
  # SVR4  --  Solaris 2.x
  # Use install3 for /usr/sbin/install
  # and install1 for /usr/ucb/install
@@ -86,7 +93,16 @@
  
  ######################################################################
  ######################################################################
-@@ -479,18 +480,16 @@ install1: all 
+@@ -428,7 +427,7 @@ LOGFILE = ${LOGDEST}/idled.log
+ # HERE are the big CFLAGS
+ # Add -g if you want debugging
+ # Add -O or whatever variant for optimization
+-CFLAGS = ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
++CFLAGS += ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
+ 
+ # For HP's ANSI C compiler (use -g instead of +O3 for debugging)
+ # CFLAGS = +O3 -Aa -D_HPUX_SOURCE ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
+@@ -479,18 +478,16 @@ install1: all 
  	@echo "file can serve as a guide, as well as the man pages."
  
  # BSD like, but with some enhancements like: install -s -> strip binary
@@ -110,7 +126,7 @@
  
  # Aix Prefers install2
  install2: all 
-@@ -527,7 +526,7 @@ ${MAN}: idled.man.form idled.cf.man.form
+@@ -527,7 +524,7 @@ ${MAN}: idled.man.form idled.cf.man.form
  
  lint: ${SRC} ${SRCg}
  	lint -hxn ${DEFS} ${SRC} ${SRCg}
