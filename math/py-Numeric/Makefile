@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2003/07/31 19:11:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/10/21 19:51:50 sturm Exp $
 
 COMMENT=	"fast array facility to the Python language"
 
-VERSION=	22.0
+VERSION=	23.1
 DISTNAME=	Numeric-${VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
@@ -18,15 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=numpy/}
 HOMEPAGE=	http://www.pfdubois.com/numpy/
 
-FLAVORS=	python2.1
-FLAVOR?=
-
 MODULES=	python
 
-.if ${FLAVOR:L:Mpython2.1}
-MODPY_VERSION=	2.1
-.endif
-
-NO_REGRESS=	Yes
+do-regress:
+	cd ${WRKSRC}/Test && ${MODPY_BIN} -i test.py
 
 .include <bsd.port.mk>

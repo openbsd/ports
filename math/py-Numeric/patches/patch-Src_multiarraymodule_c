@@ -1,0 +1,12 @@
+$OpenBSD: patch-Src_multiarraymodule_c,v 1.1 2003/10/21 19:51:50 sturm Exp $
+--- Src/multiarraymodule.c.orig	2003-10-20 20:45:07.000000000 +0200
++++ Src/multiarraymodule.c	2003-10-20 20:45:13.000000000 +0200
+@@ -1524,7 +1524,7 @@ static PyObject *array_set_string_functi
+ }
+ 
+ static struct PyMethodDef array_module_methods[] = {
+-    {"set_string_function", array_set_string_function, METH_VARARGS|METH_KEYWORDS, doc_set_string_function},
++    {"set_string_function", (PyCFunction)array_set_string_function, METH_VARARGS|METH_KEYWORDS, doc_set_string_function},
+ 		
+     {"array",	(PyCFunction)array_array, METH_VARARGS|METH_KEYWORDS, doc_array},
+     {"arange",  (PyCFunction)array_arange, METH_VARARGS|METH_KEYWORDS, doc_arange},

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/07/31 19:11:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/10/21 19:51:50 sturm Exp $
 include/python${MODPY_VERSION}/Numeric/arrayobject.h
 include/python${MODPY_VERSION}/Numeric/f2c.h
 include/python${MODPY_VERSION}/Numeric/ranlib.h
@@ -27,12 +27,6 @@ lib/python${MODPY_VERSION}/site-packages/Numeric/Numeric.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/Numeric.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/Precision.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/Precision.pyc
-lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses/Properties.py
-lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses/Properties.pyc
-lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses/Properties_version.py
-lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses/Properties_version.pyc
-lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/RNG.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/Statistics.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/Statistics.pyc
@@ -44,22 +38,13 @@ lib/python${MODPY_VERSION}/site-packages/Numeric/UserArray.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/UserArray.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/_numpy.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/arrayfns.so
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/__init__.py
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/_kinds.so
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/kinds.py
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/kinds.pyc
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/kinds_version.py
-lib/python${MODPY_VERSION}/site-packages/Numeric/kinds/kinds_version.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/lapack_lite.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/multiarray.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/numeric_version.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/numeric_version.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/ranlib.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/umath.so
-@dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/kinds
 @dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/RNG
-@dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/PropertiedClasses
 @dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/MA
 @dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/FFT
 @dirrm lib/python${MODPY_VERSION}/site-packages/Numeric

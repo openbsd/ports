@@ -1,0 +1,22 @@
+$OpenBSD: patch-Test_test_py,v 1.1 2003/10/21 19:51:50 sturm Exp $
+--- Test/test.py.orig	2003-08-07 03:24:11.000000000 +1000
++++ Test/test.py	2003-08-12 02:53:26.000000000 +1000
+@@ -1,3 +1,7 @@
++import sys
++import distutils.util
++sys.path.append("../lib.%s-%s" % (distutils.util.get_platform(), sys.version[0:3]))
++
+ import unittest, types, math
+ import Numeric
+ 
+@@ -163,7 +167,9 @@ class BasicNumericTestCase (unittest.Tes
+         assert eq(x - y, [0, 0, 3, 3, 6, 3])
+         assert eq(x * y, [1, 4, 0, 8, 10, 18])
+         assert eq(y / x, [1, 1, 0, 0, 0, 0])
+-        assert eq(y // x, [1, 1, 0, 0, 0, 0])
++        # We can't test floor division with python 2.1
++        # (this unit test didn't check it properly anyway)
++        #assert eq(y // x, [1, 1, 0, 0, 0, 0])
+         assert eq(x**2, [1, 4, 9, 16, 25, 36])
+ 
+     def testComparisons (self):
