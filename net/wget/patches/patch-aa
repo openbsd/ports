@@ -1,5 +1,5 @@
---- doc/wget.texi.orig	Thu Sep 10 20:34:56 1998
-+++ doc/wget.texi	Mon Dec 13 22:43:14 1999
+--- doc/wget.texi.orig	Fri Sep 11 02:34:56 1998
++++ doc/wget.texi	Fri Apr  7 01:03:57 2000
 @@ -9,6 +9,11 @@
  @setchapternewpage on
  @c %**end of header
@@ -12,3 +12,329 @@
  @iftex
  @c Remove this if you don't use A4 paper.
  @afourpaper
+@@ -123,7 +128,7 @@ Wget is capable of descending recursivel
+ @sc{html} documents and @sc{ftp} directory trees, making a local copy of
+ the directory hierarchy similar to the one on the remote server.  This
+ feature can be used to mirror archives and home pages, or traverse the
+-web in search of data, like a @sc{www} robot (@xref{Robots}).  In that
++web in search of data, like a @sc{www} robot (@pxref{Robots})  In that
+ spirit, Wget understands the @code{norobots} convention.
+ 
+ @sp 1
+@@ -156,7 +161,7 @@ option.
+ @sp 1
+ @item
+ Builtin features offer mechanisms to tune which links you wish to follow
+-(@xref{Following Links}).
++(@pxref{Following Links})
+ 
+ @sp 1
+ @item
+@@ -167,8 +172,8 @@ representations can be customized to you
+ @sp 1
+ @item
+ Most of the features are fully configurable, either through command line
+-options, or via the initialization file @file{.wgetrc} (@xref{Startup
+-File}).  Wget allows you to define @dfn{global} startup files
++options, or via the initialization file @file{.wgetrc} (@pxref{Startup
++File})  Wget allows you to define @dfn{global} startup files
+ (@file{/usr/local/etc/wgetrc} by default) for site settings.
+ 
+ @sp 1
+@@ -176,7 +181,7 @@ File}).  Wget allows you to define @dfn{
+ Finally, GNU Wget is free software.  This means that everyone may use
+ it, redistribute it and/or modify it under the terms of the GNU General
+ Public License, as published by the Free Software Foundation
+-(@xref{Copying}).
++(@pxref{Copying})
+ @end itemize
+ 
+ @node Invoking, Recursive Retrieval, Overview, Top
+@@ -197,7 +202,7 @@ line.  @var{URL} is a @dfn{Uniform Resou
+ 
+ However, you may wish to change some of the default parameters of
+ Wget.  You can do it two ways: permanently, adding the appropriate
+-command to @file{.wgetrc} (@xref{Startup File}), or specifying it on
++command to @file{.wgetrc} (@pxref{Startup File}) or specifying it on
+ the command line.
+ 
+ @menu
+@@ -327,7 +332,7 @@ clear the @file{.wgetrc} settings.  For 
+ sets @code{exclude_directories} to @file{/cgi-bin}, the following
+ example will first reset it, and then set it to exclude @file{/~nobody}
+ and @file{/~somebody}.  You can also clear the lists in @file{.wgetrc}
+-(@xref{Wgetrc Syntax}).
++(@pxref{Wgetrc Syntax})
+ 
+ @example
+ wget -X '' -X /~nobody,/~somebody
+@@ -354,7 +359,7 @@ specified via the @samp{-o}, output is r
+ @item -e @var{command}
+ @itemx --execute @var{command}
+ Execute @var{command} as if it were a part of @file{.wgetrc}
+-(@xref{Startup File}).  A command thus invoked will be executed
++(@pxref{Startup File})  A command thus invoked will be executed
+ @emph{after} the commands in @file{.wgetrc}, thus taking precedence over
+ them.
+ @end table
+@@ -386,7 +391,7 @@ administrator may have chosen to compile
+ which case @samp{-d} will not work.  Please note that compiling with
+ debug support is always safe---Wget compiled with the debug support will
+ @emph{not} print any debug info unless requested with @samp{-d}.
+-@xref{Reporting Bugs} for more information on how to use @samp{-d} for
++@xref{Reporting Bugs}, for more information on how to use @samp{-d} for
+ sending bug reports.
+ 
+ @cindex quiet
+@@ -511,7 +516,7 @@ reverse; it is suitable for downloading 
+ 
+ @item -N
+ @itemx --timestamping
+-Turn on time-stamping.  @xref{Time-Stamping} for details.
++Turn on time-stamping.  @xref{Time-Stamping}, for details.
+ 
+ @cindex server response, print
+ @item -S
+@@ -665,7 +670,7 @@ encode them using either the @code{basic
+ @code{digest} authentication scheme.
+ 
+ Another way to specify username and password is in the @sc{url} itself
+-(@xref{URL Format}).  For more information about security issues with
++(@pxref{URL Format})  For more information about security issues with
+ Wget, @xref{Security Considerations}.
+ 
+ @cindex proxy
+@@ -797,13 +802,13 @@ to work behind firewalls.
+ @table @samp
+ @item -r
+ @itemx --recursive
+-Turn on recursive retrieving.  @xref{Recursive Retrieval} for more
++Turn on recursive retrieving.  @xref{Recursive Retrieval}, for more
+ details.
+ 
+ @item -l @var{depth}
+ @itemx --level=@var{depth}
+-Specify recursion maximum depth level @var{depth} (@xref{Recursive
+-Retrieval}).  The default maximum depth is 5.
++Specify recursion maximum depth level @var{depth} (@pxref{Recursive
++Retrieval})  The default maximum depth is 5.
+ 
+ @cindex proxy filling
+ @cindex delete after retrieval
+@@ -855,24 +860,24 @@ purposes.
+ @item -A @var{acclist} --accept @var{acclist}
+ @itemx -R @var{rejlist} --reject @var{rejlist}
+ Specify comma-separated lists of file name suffixes or patterns to
+-accept or reject (@xref{Types of Files} for more details).
++accept or reject (@pxref{Types of Files} for more details).
+ 
+ @item -D @var{domain-list}
+ @itemx --domains=@var{domain-list}
+ Set domains to be accepted and @sc{dns} looked-up, where
+ @var{domain-list} is a comma-separated list.  Note that it does
+ @emph{not} turn on @samp{-H}.  This option speeds things up, even if
+-only one host is spanned (@xref{Domain Acceptance}).
++only one host is spanned (@pxref{Domain Acceptance})
+ 
+ @item --exclude-domains @var{domain-list}
+ Exclude the domains given in a comma-separated @var{domain-list} from
+-@sc{dns}-lookup (@xref{Domain Acceptance}).
++@sc{dns}-lookup (@pxref{Domain Acceptance})
+ 
+ @item -L
+ @itemx --relative
+ Follow relative links only.  Useful for retrieving a specific home page
+ without any distractions, not even those from the same hosts
+-(@xref{Relative Links}).
++(@pxref{Relative Links})
+ 
+ @cindex follow FTP links
+ @item --follow-ftp
+@@ -881,32 +886,32 @@ Wget will ignore all the @sc{ftp} links.
+ 
+ @item -H
+ @itemx --span-hosts
+-Enable spanning across hosts when doing recursive retrieving (@xref{All
+-Hosts}).
++Enable spanning across hosts when doing recursive retrieving (@pxref{All
++Hosts})
+ 
+ @item -I @var{list}
+ @itemx --include-directories=@var{list}
+ Specify a comma-separated list of directories you wish to follow when
+-downloading (@xref{Directory-Based Limits} for more details.)  Elements
++downloading (@pxref{Directory-Based Limits} for more details)  Elements
+ of @var{list} may contain wildcards.
+ 
+ @item -X @var{list}
+ @itemx --exclude-directories=@var{list}
+ Specify a comma-separated list of directories you wish to exclude from
+-download (@xref{Directory-Based Limits} for more details.)  Elements of
++download (@pxref{Directory-Based Limits} for more details)  Elements of
+ @var{list} may contain wildcards.
+ 
+ @item -nh
+ @itemx --no-host-lookup
+ Disable the time-consuming @sc{dns} lookup of almost all hosts
+-(@xref{Host Checking}).
++(@pxref{Host Checking})
+ 
+ @item -np
+ @item --no-parent
+ Do not ever ascend to the parent directory when retrieving recursively.
+ This is a useful option, since it guarantees that only the files
+ @emph{below} a certain hierarchy will be downloaded.
+-@xref{Directory-Based Limits} for more details.
++@xref{Directory-Based Limits}, for more details.
+ @end table
+ 
+ @node Recursive Retrieval, Following Links, Invoking, Top
+@@ -957,7 +962,7 @@ The load can be minimized by lowering th
+ (@samp{-l}) and/or by lowering the number of retries (@samp{-t}).  You
+ may also consider using the @samp{-w} option to slow down your requests
+ to the remote servers, as well as the numerous options to narrow the
+-number of followed links (@xref{Following Links}).
++number of followed links (@pxref{Following Links})
+ 
+ Recursive retrieval is a good thing when used properly.  Please take all
+ precautions not to wreak havoc through carelessness.
+@@ -1494,11 +1499,11 @@ by default. You may use @samp{inf} for i
+ appropriate.
+ 
+ Most of the commands have their equivalent command-line option
+-(@xref{Invoking}), except some more obscure or rarely used ones.
++(@pxref{Invoking}) except some more obscure or rarely used ones.
+ 
+ @table @asis
+ @item accept/reject = @var{string}
+-Same as @samp{-A}/@samp{-R} (@xref{Types of Files}).
++Same as @samp{-A}/@samp{-R} (@pxref{Types of Files})
+ 
+ @item add_hostdir = on/off
+ Enable/disable host-prefixed file names.  @samp{-nH} disables it.
+@@ -1539,7 +1544,7 @@ Turning dirstruct on or off, the same as
+ respectively.
+ 
+ @item domains = @var{string}
+-Same as @samp{-D} (@xref{Domain Acceptance}).
++Same as @samp{-D} (@pxref{Domain Acceptance})
+ 
+ @item dot_bytes = @var{n}
+ Specify the number of bytes ``contained'' in a dot, as seen throughout
+@@ -1547,7 +1552,7 @@ the retrieval (1024 by default).  You ca
+ @samp{k} or @samp{m}, representing kilobytes and megabytes,
+ respectively.  With dot settings you can tailor the dot retrieval to
+ suit your needs, or you can use the predefined @dfn{styles}
+-(@xref{Download Options}).
++(@pxref{Download Options})
+ 
+ @item dots_in_line = @var{n}
+ Specify the number of dots that will be printed in each line throughout
+@@ -1561,10 +1566,10 @@ Specify the dot retrieval @dfn{style}, a
+ 
+ @item exclude_directories = @var{string}
+ Specify a comma-separated list of directories you wish to exclude from
+-download, the same as @samp{-X} (@xref{Directory-Based Limits}).
++download, the same as @samp{-X} (@pxref{Directory-Based Limits})
+ 
+ @item exclude_domains = @var{string}
+-Same as @samp{--exclude-domains} (@xref{Domain Acceptance}).
++Same as @samp{--exclude-domains} (@pxref{Domain Acceptance})
+ 
+ @item follow_ftp = on/off
+ Follow @sc{ftp} links from @sc{html} documents, the same as @samp{-f}.
+@@ -1628,7 +1633,7 @@ Same as @samp{-nc}.
+ 
+ @item no_parent = on/off
+ Disallow retrieving outside the directory hierarchy, like
+-@samp{--no-parent} (@xref{Directory-Based Limits}).
++@samp{--no-parent} (@pxref{Directory-Based Limits})
+ 
+ @item no_proxy = @var{string}
+ Use @var{string} as the comma-separated list of domains to avoid in
+@@ -1670,8 +1675,8 @@ Recursion level, the same as @samp{-l}.
+ Recursive on/off, the same as @samp{-r}.
+ 
+ @item relative_only = on/off
+-Follow only relative links, the same as @samp{-L} (@xref{Relative
+-Links}).
++Follow only relative links, the same as @samp{-L} (@pxref{Relative
++Links})
+ 
+ @item remove_listing = on/off
+ If set to on, remove @sc{ftp} listings downloaded by Wget.  Setting it
+@@ -1682,7 +1687,7 @@ When set to on, retrieve symbolic links 
+ same as @samp{--retr-symlinks}.
+ 
+ @item robots = on/off
+-Use (or not) @file{/robots.txt} file (@xref{Robots}).  Be sure to know
++Use (or not) @file{/robots.txt} file (@pxref{Robots})  Be sure to know
+ what you are doing before changing the default (which is @samp{on}).
+ 
+ @item server_response = on/off
+@@ -1690,7 +1695,7 @@ Choose whether or not to print the @sc{h
+ responses, the same as @samp{-S}.
+ 
+ @item simple_host_check = on/off
+-Same as @samp{-nh} (@xref{Host Checking}).
++Same as @samp{-nh} (@pxref{Host Checking})
+ 
+ @item span_hosts = on/off
+ Same as @samp{-H}.
+@@ -1699,7 +1704,7 @@ Same as @samp{-H}.
+ Set timeout value, the same as @samp{-T}.
+ 
+ @item timestamping = on/off
+-Turn timestamping on/off. The same as @samp{-N} (@xref{Time-Stamping}).
++Turn timestamping on/off. The same as @samp{-N} (@pxref{Time-Stamping})
+ 
+ @item tries = @var{n}
+ Set number of retries per @sc{url}, the same as @samp{-t}.
+@@ -1986,9 +1991,9 @@ wget -r -l1 --no-parent -A.gif http://ho
+ @end example
+ 
+ It is a bit of a kludge, but it works.  @samp{-r -l1} means to retrieve
+-recursively (@xref{Recursive Retrieval}), with maximum depth of 1.
++recursively (@pxref{Recursive Retrieval}) with maximum depth of 1.
+ @samp{--no-parent} means that references to the parent directory are
+-ignored (@xref{Directory-Based Limits}), and @samp{-A.gif} means to
++ignored (@pxref{Directory-Based Limits}) and @samp{-A.gif} means to
+ download only the @sc{gif} files.  @samp{-A "*.gif"} would have worked
+ too.
+ 
+@@ -2003,7 +2008,7 @@ wget -nc -r http://www.gnu.ai.mit.edu/
+ 
+ @item
+ If you want to encode your own username and password to @sc{http} or
+-@sc{ftp}, use the appropriate @sc{url} syntax (@xref{URL Format}).
++@sc{ftp}, use the appropriate @sc{url} syntax (@pxref{URL Format})
+ 
+ @example
+ wget ftp://hniksic:mypassword@@jagor.srce.hr/.emacs
+@@ -2012,7 +2017,7 @@ wget ftp://hniksic:mypassword@@jagor.src
+ @item
+ If you do not like the default retrieval visualization (1K dots with 10
+ dots per cluster and 50 dots per line), you can customize it through dot
+-settings (@xref{Wgetrc Commands}).  For example, many people like the
++settings (@pxref{Wgetrc Commands})  For example, many people like the
+ ``binary'' style of retrieval, with 8K dots and 512K lines:
+ 
+ @example
+@@ -2027,7 +2032,7 @@ wget --dot-style=micro http://fly.cc.fer
+ @end example
+ 
+ To make these settings permanent, put them in your @file{.wgetrc}, as
+-described before (@xref{Sample Wgetrc}).
++described before (@pxref{Sample Wgetrc})
+ @end itemize
+ 
+ @node Guru Usage,  , Advanced Usage, Examples
+@@ -2057,7 +2062,7 @@ wget --mirror -A.html http://www.w3.org/
+ @item
+ But what about mirroring the hosts networkologically close to you?  It
+ seems so awfully slow because of all that @sc{dns} resolving.  Just use
+-@samp{-D} (@xref{Domain Acceptance}).
++@samp{-D} (@pxref{Domain Acceptance})
+ 
+ @example
+ wget -rN -Dsrce.hr http://www.srce.hr/
