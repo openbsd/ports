@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/04 01:32:46 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 15:02:48 naddy Exp $
 ${P5SITE}/GD/Barcode.pm
 ${P5SITE}/GD/Barcode/COOP2of5.pm
 ${P5SITE}/GD/Barcode/Code39.pm
@@ -11,6 +11,7 @@ ${P5SITE}/GD/Barcode/Matrix2of5.pm
 ${P5SITE}/GD/Barcode/NW7.pm
 ${P5SITE}/GD/Barcode/UPCA.pm
 ${P5SITE}/GD/Barcode/UPCE.pm
+@comment ${P5ARCH}/auto/GD/Barcode/.packlist
 man/man3p/GD::Barcode.3p
 man/man3p/GD::Barcode::COOP2of5.3p
 man/man3p/GD::Barcode::Code39.3p
@@ -23,4 +24,6 @@ man/man3p/GD::Barcode::Matrix2of5.3p
 man/man3p/GD::Barcode::NW7.3p
 man/man3p/GD::Barcode::UPCA.3p
 man/man3p/GD::Barcode::UPCE.3p
+@comment @dirrm ${P5ARCH}/auto/GD/Barcode
 @dirrm ${P5SITE}/GD/Barcode
+@dirrm ${P5SITE}/GD

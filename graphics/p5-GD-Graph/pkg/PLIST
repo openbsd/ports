@@ -1,22 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/07/15 03:11:48 kevlo Exp $
-libdata/perl5/site_perl/GD/Graph.pm
-libdata/perl5/site_perl/GD/Graph/Data.pm
-libdata/perl5/site_perl/GD/Graph/Error.pm
-libdata/perl5/site_perl/GD/Graph/FAQ.pod
-libdata/perl5/site_perl/GD/Graph/area.pm
-libdata/perl5/site_perl/GD/Graph/axestype.pm
-libdata/perl5/site_perl/GD/Graph/bars.pm
-libdata/perl5/site_perl/GD/Graph/colour.pm
-libdata/perl5/site_perl/GD/Graph/hbars.pm
-libdata/perl5/site_perl/GD/Graph/lines.pm
-libdata/perl5/site_perl/GD/Graph/linespoints.pm
-libdata/perl5/site_perl/GD/Graph/mixed.pm
-libdata/perl5/site_perl/GD/Graph/pie.pm
-libdata/perl5/site_perl/GD/Graph/points.pm
-libdata/perl5/site_perl/GD/Graph/utils.pm
+@comment $OpenBSD: PLIST,v 1.6 2003/12/31 15:02:48 naddy Exp $
+${P5SITE}/GD/Graph.pm
+${P5SITE}/GD/Graph/Data.pm
+${P5SITE}/GD/Graph/Error.pm
+${P5SITE}/GD/Graph/FAQ.pod
+${P5SITE}/GD/Graph/area.pm
+${P5SITE}/GD/Graph/axestype.pm
+${P5SITE}/GD/Graph/bars.pm
+${P5SITE}/GD/Graph/colour.pm
+${P5SITE}/GD/Graph/hbars.pm
+${P5SITE}/GD/Graph/lines.pm
+${P5SITE}/GD/Graph/linespoints.pm
+${P5SITE}/GD/Graph/mixed.pm
+${P5SITE}/GD/Graph/pie.pm
+${P5SITE}/GD/Graph/points.pm
+${P5SITE}/GD/Graph/utils.pm
+@comment ${P5ARCH}/auto/GD/Graph/.packlist
 man/man3p/GD::Graph.3p
 man/man3p/GD::Graph::Data.3p
 man/man3p/GD::Graph::Error.3p
 man/man3p/GD::Graph::FAQ.3p
 man/man3p/GD::Graph::colour.3p
 man/man3p/GD::Graph::hbars.3p
+@comment @dirrm ${P5ARCH}/auto/GD/Graph
+@dirrm ${P5SITE}/GD/Graph
+@dirrm ${P5SITE}/GD

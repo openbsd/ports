@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/GD/Text.pm
-libdata/perl5/site_perl/GD/Text/Align.pm
-libdata/perl5/site_perl/GD/Text/Wrap.pm
+@comment $OpenBSD: PLIST,v 1.5 2003/12/31 15:02:48 naddy Exp $
+${P5SITE}/GD/Text.pm
+${P5SITE}/GD/Text/Align.pm
+${P5SITE}/GD/Text/Wrap.pm
+@comment ${P5ARCH}/auto/GD/Text/.packlist
 man/man3p/GD::Text.3p
 man/man3p/GD::Text::Align.3p
 man/man3p/GD::Text::Wrap.3p
-@dirrm libdata/perl5/site_perl/GD/Text
+@comment @dirrm ${P5ARCH}/auto/GD/Text
+@dirrm ${P5SITE}/GD/Text
+@dirrm ${P5SITE}/GD
