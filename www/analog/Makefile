@@ -1,21 +1,19 @@
-# Ports makefile for:	analog
-# Version required:	3.0
-# Date created:		11 Aug 1998
-# Whom:			Oleg Safiullin <form@OpenBSD.ORG>
-#
-# $OpenBSD: Makefile,v 1.3 1998/11/10 05:06:35 form Exp $
+# $OpenBSD: Makefile,v 1.4 1999/02/24 06:07:26 fgsch Exp $
 #
 
-DISTNAME=	analog3.1
-PKGNAME=	analog-3.1
+DISTNAME=	analog3.11
+PKGNAME=	analog-3.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
-		http://www.lightside.net/analog/ \
-		http://www.gamesdomain.com/analog/ \
-		http://www.monash.edu.au/mirror/analog/ \
-		http://www.gamesdomain.co.uk/analog/ \
-		ftp://download.netvision.net.il/pub/mirrors/analog/ \
-		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
+		http://www.magma.ca/~brendanr/analog/ \
+		http://brendanr.simplenet.com/analog/ \
+		http://analog.gsp.com/ \
+		http://www.reverse.net/analog/ \
+		http://www.rge.com/pub/infosystems/statistics/analog/ \
+		http://blip.cetlink.net/analog/ \
+		http://analog.technomancer.com/ \
+		http://analog.wizard.net/ \
+		ftp://ftp.netcasting.net/pub/packages/analog/
 
 MAINTAINER=	form@OpenBSD.ORG
 

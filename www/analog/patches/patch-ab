@@ -1,61 +1,37 @@
-*** analhead.h.orig	Sun Jun 14 23:05:08 1998
---- analhead.h	Tue Aug 11 14:48:40 1998
-***************
-*** 18,25 ****
-  /* the URL of your host's home page, for linking to at the top of the
-     output; use "none" for no linking. */
-  
-! #define HTTPDIR "/usr/local/etc/httpd/"
-! #define ANALOGDIR HTTPDIR"analog/"
-  /* The directories where your HTTP stuff lives and where your analog stuff
-     lives. You don't really need these; they are just used in this file to
-     build up other filenames. Note how you can stick together names by
---- 18,31 ----
-  /* the URL of your host's home page, for linking to at the top of the
-     output; use "none" for no linking. */
-  
-! #ifndef HTTPDIR
-! #define HTTPDIR "/var/www/"
-! #endif
-! 
-! #ifndef ANALOGDIR
-! #define ANALOGDIR "/usr/local/lib/analog/"
-! #endif
-! 
-  /* The directories where your HTTP stuff lives and where your analog stuff
-     lives. You don't really need these; they are just used in this file to
-     build up other filenames. Note how you can stick together names by
-***************
-*** 33,39 ****
-  /* The name of the default logfile. Can be a list, separated by commas
-     (but no spaces), and can include wild cards. */
-  
-! #define IMAGEDIR "images/"
-  /* URL of the directory where the images for the graphical reports live.
-     The URL can be absolute, or relative to the output page: e.g., just the
-     empty string "" for the same directory as the output page. */
---- 39,45 ----
-  /* The name of the default logfile. Can be a list, separated by commas
-     (but no spaces), and can include wild cards. */
-  
-! #define IMAGEDIR "/images/"
-  /* URL of the directory where the images for the graphical reports live.
-     The URL can be absolute, or relative to the output page: e.g., just the
-     empty string "" for the same directory as the output page. */
-***************
-*** 41,47 ****
-  #define LANGDIR ANALOGDIR"lang/"
-  /* Directory where the language files live. */
-  
-! #define DEFAULTCONFIGFILE ANALOGDIR"analog.cfg"
-  /* the name of the default configuration file; see README.html for a
-     description of this file. Use "none" for no configuration file. */
-  
---- 47,53 ----
-  #define LANGDIR ANALOGDIR"lang/"
-  /* Directory where the language files live. */
-  
-! #define DEFAULTCONFIGFILE ETCDIR"analog.cfg"
-  /* the name of the default configuration file; see README.html for a
-     description of this file. Use "none" for no configuration file. */
-  
+--- analhead.h.orig	Wed Nov 25 16:46:10 1998
++++ analhead.h	Wed Feb 24 01:47:54 1999
+@@ -18,8 +18,14 @@
+ /* the URL of your host's home page, for linking to at the top of the
+    output; use "none" for no linking. */
+ 
+-#define HTTPDIR "/usr/local/etc/httpd/"
+-#define ANALOGDIR HTTPDIR"analog/"
++#ifndef HTTPDIR
++#define HTTPDIR "/var/www/"
++#endif
++
++#ifndef ANALOGDIR
++#define ANALOGDIR "/usr/local/lib/analog/"
++#endif
++
+ /* The directories where your HTTP stuff lives and where your analog stuff
+    lives. You don't really need these; they are just used in this file to
+    build up other filenames. Note how you can stick together names by
+@@ -33,7 +39,7 @@
+ /* The name of the default logfile. Can be a list, separated by commas
+    (but no spaces), and can include wild cards. */
+ 
+-#define IMAGEDIR "images/"
++#define IMAGEDIR "/images/"
+ /* URL of the directory where the images for the graphical reports live.
+    The URL can be absolute, or relative to the output page: e.g., just the
+    empty string "" for the same directory as the output page. */
+@@ -41,7 +47,7 @@
+ #define LANGDIR ANALOGDIR"lang/"
+ /* Directory where the language files live. */
+ 
+-#define DEFAULTCONFIGFILE ANALOGDIR"analog.cfg"
++#define DEFAULTCONFIGFILE ETCDIR"analog.cfg"
+ /* the name of the default configuration file; see README.html for a
+    description of this file. Use "none" (NOT ANALOGDIR"none"!) for no
+    configuration file. */
