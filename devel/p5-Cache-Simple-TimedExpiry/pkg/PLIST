@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/21 03:34:25 msf Exp $
+${P5SITE}/Cache/
+${P5SITE}/Cache/Simple/
+${P5SITE}/Cache/Simple/TimedExpiry.pm
+@man man/man3p/Cache::Simple::TimedExpiry.3p

@@ -1,0 +1,3 @@
+Set the cache's expiry policy to expire entries after SECONDS seconds.
+Setting this changes the expiry policy for pre-existing cache entries
+and for new ones.
