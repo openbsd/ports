@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/26 16:50:38 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/09/15 14:54:04 espie Exp $
 
 DISTNAME=	connect4
 PKGNAME=	connect4-3.2
 CATEGORIES=	games
-NEED_VERSION=	1.230
+NEED_VERSION=	1.330
 MASTER_SITES=	ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
 EXTRACT_SUFX=		# empty
 
-EXTRACT_CMD=		gunshar
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_CASES=	connect4) gunshar ${FULLDISTDIR}/$$archive ;;
 
 MAINTAINER=	angelos@openbsd.org
 
@@ -22,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	gunshar::archivers/gshar+gunshar
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -DSCOREFILE=\"${SCOREFILE}\"'
-FAKE=		Yes
 
 WRKDIST=	${WRKDIR}
 
