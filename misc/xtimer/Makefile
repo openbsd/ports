@@ -3,7 +3,7 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 02:31:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:48 espie Exp $
 #
 
 COMMENT=	"super simple digital timer for X11"
@@ -13,8 +13,6 @@ PKGNAME=	xtimer-0.8089
 CATEGORIES=	misc
 NEED_VERSION=	1.402
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xtimer/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

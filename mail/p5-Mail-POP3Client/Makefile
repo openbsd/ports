@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.12 2001/05/06 01:46:34 lebel Exp $
+#   $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"perl module to talk to a POP3 (RFC1081) server"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.402
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Mail
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

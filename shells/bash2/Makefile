@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
 DISTNAME=	bash-2.05
 CATEGORIES=	shells
 NEED_VERSION=	1.392
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

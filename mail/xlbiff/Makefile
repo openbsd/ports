@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 01:47:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"display from/subject from incoming mails using X11"
 
@@ -7,8 +7,6 @@ CATEGORIES=	mail x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

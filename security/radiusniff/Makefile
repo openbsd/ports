@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/28 20:13:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/28 13:05:49 espie Exp $
 # Original from: FreeLSD <freelsd@freelsd.net>
 
 COMMENT=		"radius sniffer"
 
 DISTNAME=		radiusniff-0.2
 CATEGORIES=     	security
-MAINTAINER=		ports@openbsd.org
 NEED_VERSION=		1.402
 
 PERMIT_PACKAGE_CDROM=	"not specified, vague license"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/06 05:05:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/28 13:05:47 espie Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 
 COMMENT=	"X-based TV Display and Capture (use with the bt848 driver)"
@@ -20,8 +20,6 @@ LIB_DEPENDS=	tiff.35::graphics/tiff \
 #		mpeg_musicin::audio/mpegaudio \
 #		mpeg_encode::graphics/mpeg_encode \
 #		mplex::graphics/mplex
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

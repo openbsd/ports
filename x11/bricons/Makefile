@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/17 14:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=	"quick start-up utility for applications on an X11 display"
 
@@ -6,8 +6,6 @@ PKGNAME=	bricons-3.0
 DISTNAME=	bricons-athena-3.0
 CATEGORIES=	x11
 NEED_VERSION=	1.363
-
-MAINTAINER=     ports@openbsd.org
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

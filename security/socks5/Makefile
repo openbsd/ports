@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/08/24 22:21:02 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"SOCKS v5 application layer gateway and clients"
 
@@ -8,8 +8,6 @@ CATEGORIES=	security net
 NEED_VERSION=	1.435
 
 HOMEPAGE=	http://www.socks.nec.com/reference/socks5.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	commercial
 PERMIT_PACKAGE_FTP=	commercial

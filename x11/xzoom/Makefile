@@ -3,7 +3,7 @@
 # Date created:		December 21, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 2001/07/09 17:12:02 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:51 espie Exp $
 #
 
 COMMENT=	"magnify, rotate, mirror the image on the X11 screen"
@@ -14,8 +14,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/X
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

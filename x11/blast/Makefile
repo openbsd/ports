@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			don
 #
-# $OpenBSD: Makefile,v 1.9 2001/05/06 04:41:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:50 espie Exp $
 #
 
 COMMENT=	"blow holes through windows"
@@ -14,8 +14,6 @@ CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

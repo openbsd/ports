@@ -2,7 +2,7 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 02:31:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:48 espie Exp $
 #
 
 COMMENT=	"animated simulation of an ideal gas"
@@ -13,8 +13,6 @@ CATEGORIES=     misc
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/demos
-
-MAINTAINER=     ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/07/20 23:52:48 rohee Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
@@ -10,8 +10,6 @@ NEED_VERSION=	1.402
 FAKE=No
 
 ONLY_FOR_ARCHS= i386
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

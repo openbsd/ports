@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/07/09 17:11:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=	"X11 fonts (.bdf files) editor"
 
@@ -7,8 +7,6 @@ PKGNAME=	xfed-1.0
 CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/contrib/programs/
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

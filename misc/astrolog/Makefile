@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/05 20:46:50 jsyn Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/28 13:05:48 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"astrology program for X11 and alpha-numeric terminals"
@@ -14,8 +14,6 @@ MASTER_SITES=   http://www.astrolog.org/ftp/ephem/ \
 EXTRACT_ONLY=   ${DISTNAME}.shr
 EPHEM=          LRZ5_24 CHI_24 CPJV_24
 DISTFILES=      ${EXTRACT_ONLY} ${EPHEM}
-
-MAINTAINER=     ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

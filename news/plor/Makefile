@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:48 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'alpha-release readers for reading SOUP and QWK packets'
@@ -6,8 +6,6 @@ COMMENT=	'alpha-release readers for reading SOUP and QWK packets'
 DISTNAME=	plor-0.3.2
 CATEGORIES=	news
 NEED_VERSION=	1.405
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

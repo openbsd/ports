@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 02:59:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:48 espie Exp $
 
 COMMENT=	"C-news"
 
@@ -11,8 +11,6 @@ NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/09/16 17:02:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:47 espie Exp $
 #
 
 COMMENT=	"commercial spreadsheet"
@@ -11,8 +11,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"shareware"
 PERMIT_PACKAGE_FTP=	"shareware"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/28 13:05:44 espie Exp $
 
 COMMENT=	"packing and unpacking of shell archives"
 
@@ -7,8 +7,6 @@ CATEGORIES=	archivers
 NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sharutils
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

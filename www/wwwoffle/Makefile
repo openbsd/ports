@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/13 11:24:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=		"WWW OFFLine Explorer"
 
@@ -8,8 +8,6 @@ CATEGORIES=		www
 NEED_VERSION=		1.402
 
 HOMEPAGE=		http://www.gedanken.demon.co.uk/wwwoffle/
-
-MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

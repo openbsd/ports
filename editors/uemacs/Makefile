@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/05/06 00:29:19 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"full screen simple editor"
 
@@ -11,8 +11,6 @@ DISTFILES=	ue400dev.zip
 EXTRACT_SUFX=	.zip
 
 EXTRACT_CASES=	*.zip) ${UNZIP} -Laq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"weird no fee license"
 PERMIT_PACKAGE_FTP=	Yes

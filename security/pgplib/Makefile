@@ -3,7 +3,7 @@
 # Date created:		September 28, 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2001/09/12 14:21:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"library to generate (and manipulate) PGP packets"
 
@@ -14,8 +14,6 @@ CATEGORIES=	security
 NEED_VERSION=	1.402
 FAKE=No
 MASTER_SITES=	ftp://dslab1.cs.uit.no/pub/
-
-MAINTAINER=	ports@openbsd.org
 
 #This port contains crypto subject to US export laws.
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:28 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"John Horton Conway's Game of Life"
 
@@ -7,8 +7,6 @@ CATEGORIES=	games
 NEED_VERSION=	1.402
 MASTER_SITES=ftp://ftp.ccil.org/pub/esr/
 HOMEPAGE=http://www.cs.jhu.edu/~callahan/lifepage.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

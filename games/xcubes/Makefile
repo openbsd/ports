@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/06/20 01:43:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
 #
 
 COMMENT=	"cube puzzle for X11"
@@ -6,8 +6,6 @@ COMMENT=	"cube puzzle for X11"
 DISTNAME=	xcubes-5.5.2
 CATEGORIES=	games
 NEED_VERSION=	1.402
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

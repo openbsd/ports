@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/01 23:54:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=		"directory synchronization over mail"
 
@@ -7,8 +7,6 @@ DISTNAME=		ctmkit
 CATEGORIES=     	net devel
 NEED_VERSION=		1.363
 HOMEPAGE=		http://www.openbsd.org/ctm.html
-
-MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

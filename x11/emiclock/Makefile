@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/07/09 17:11:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:50 espie Exp $
 #
 
 COMMENT=	"hyper-animated face analog clock for X11"
@@ -12,8 +12,6 @@ DISTNAME=	emiclock-2.0.2
 CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
-
-MAINTAINER=	ports@openbsd.org
 
 CONFIGURE_STYLE=imake
 

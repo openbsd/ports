@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:49 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"list tcp connections to/from the local machine"
@@ -8,8 +8,6 @@ CATEGORIES=	sysutils net
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar
-
-MAINTAINER=     ports@OpenBSD.ORG
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

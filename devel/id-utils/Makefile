@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2001/06/20 01:43:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"gid/lid tools for looking up variables in code"
 
 DISTNAME=	id-utils-3.2d
 CATEGORIES=	devel
 NEED_VERSION=	1.402
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

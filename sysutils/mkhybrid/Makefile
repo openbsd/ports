@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2001/02/24 17:47:28 danh Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:49 espie Exp $
 
 DISTNAME=	mkhybrid-1.12b5.1
 CATEGORIES=	sysutils
 NEED_VERSION=	1.305
 MASTER_SITES=	ftp://ftp.ge.ucl.ac.uk/pub/linux/misc/ \
 	ftp://ftp.gwdg.de/pub/linux/misc/mkhybrid/attic/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No

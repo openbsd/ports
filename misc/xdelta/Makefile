@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 02:31:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:48 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/09/03 00:05:11 jmacd Exp $
 
 COMMENT=	"binary delta generator and prototype RCS replacement"
@@ -12,8 +12,6 @@ HOMEPAGE=	http://www.xcf.berkeley.edu/~jmacd/xdelta.html
 
 LIB_DEPENDS=	gdbm.2::databases/gdbm \
 		glib.1.2::devel/glib
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -3,7 +3,7 @@
 # Date created:		May 19 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.13 2001/07/09 17:11:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:50 espie Exp $
 #
 
 COMMENT=	"display the current time using the X11 root cursor"
@@ -13,8 +13,6 @@ CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/clocks
-
-MAINTAINER=	ports@openbsd.org
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

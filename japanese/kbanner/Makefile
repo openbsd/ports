@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/06 01:11:39 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"display kanji files in large letters"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/program.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

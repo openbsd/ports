@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:48 espie Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
 
 COMMENT=	"programmable MUD client, with macro support and more"
@@ -11,8 +11,6 @@ MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.demon.co.uk/pub/games/mud/
 
 HOMEPAGE=	http://tf.tcp.com/~hawkeye/tf/
-
-MAINTAINER=	ports@openbsd.org
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 2001/07/09 17:11:21 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:50 espie Exp $
 #
 
 COMMENT=	"Swiss railway clock emulation"
@@ -13,8 +13,6 @@ CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/X/R5contrib/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

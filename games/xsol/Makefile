@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/06/20 01:43:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"solitaire"
 
@@ -7,8 +7,6 @@ PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/08 03:58:14 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/28 13:05:48 espie Exp $
 
 COMMENT=	"benchmarking tool for analysing TCP and UDP performance"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
 EXTRACT_ONLY=
 DIST_SUBDIR=	ttcp
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/14 17:24:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:47 espie Exp $
 #
 
 COMMENT=	"Ericsson's high-level functional programming language"
@@ -7,8 +7,6 @@ VERSION=		47.4.0
 DISTNAME=		erlang-${VERSION}
 CATEGORIES=     	lang
 NEED_VERSION=		1.402
-
-MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 00:29:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
 #
 
 COMMENT=	"Jonathan's Own Version of Emacs"
@@ -8,8 +8,6 @@ CATEGORIES=	editors
 NEED_VERSION=	1.402
 
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

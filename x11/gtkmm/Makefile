@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=	"C++ interface for gtk+"
 
@@ -11,8 +11,6 @@ BUILD_DEPENDS=	gm4::devel/m4
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		sigc.0.0::devel/libsigc++
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

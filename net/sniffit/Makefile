@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/13 11:24:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:48 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
 
 COMMENT=	"packet sniffer program; for educational use"
@@ -15,8 +15,6 @@ PATCHFILES=	sniffit_0.3.7.beta-6.1.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://reptile.rug.ac.be/~coder/sniffit/sniffit.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes

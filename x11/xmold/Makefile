@@ -3,7 +3,7 @@
 # Date created:        December 21, 1997
 # Whom:                Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.10 2001/07/09 17:11:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:51 espie Exp $
 #
 
 COMMENT=	"mold spreading over your X11 screen"
@@ -15,8 +15,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 
 HOMEPAGE=	http://cclub.cc.tut.ac.jp/lib/xwin/xmold.html
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

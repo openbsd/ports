@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 04:59:56 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:48 espie Exp $
 
 COMMENT=	"point-to-point bandwith measurement tool"
 
@@ -8,8 +8,6 @@ MASTER_SITES=	ftp://ftp.lip6.fr/pub/networking/
 NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.fibrespeed.net/~mbabcock/mirrors/bing/bing.html
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

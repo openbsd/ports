@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/05/06 03:46:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"Pretty Good Privacy 2.6.3ia"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes

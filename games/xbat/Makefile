@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 01:06:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:46 espie Exp $
 #
 
 COMMENT=	"XEVIOUS-like shooting game"
@@ -9,8 +9,6 @@ CATEGORIES=     games
 NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/index_e.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"possible copyright infringement"
 PERMIT_PACKAGE_FTP=	"possible copyright infringement"

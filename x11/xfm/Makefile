@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/09/04 05:33:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=	"X11 File Manager"
 
@@ -7,8 +7,6 @@ CATEGORIES=	x11
 NEED_VERSION=	1.448
 
 HOMEPAGE=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/27 20:56:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"powerful make utility"
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
 NEED_VERSION=	1.402
-
-MAINTAINER=	ports@openbsd.org
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

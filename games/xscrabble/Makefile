@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"X11 version of the popular board game"
 
@@ -7,8 +7,6 @@ PKGNAME=	xscrabble-1.0
 CATEGORIES=	games
 NEED_VERSION=	1.402
 MASTER_SITES=	http://people.freebsd.org/~mph/distfiles/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/28 13:05:47 espie Exp $
 # $FreeBSD: ports/graphics/mpeg_encode/Makefile,v 1.11 2000/10/28 13:05:25 lioux Exp $
 #
 
@@ -9,8 +9,6 @@ PKGNAME=	${BASENAME}
 DISTNAME=	${BASENAME}-1.5b-src
 CATEGORIES=	graphics
 NEED_VERSION=   1.402
-
-MAINTAINER=	ports@openbsd.org
 
 # BSD
 PERMIT_PACKAGE_CDROM=   No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"communication package for X11"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.406
 
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 EXTRACT_SUFX=	-tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/12 04:17:53 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"set the root window to the moon in its current phase"
 DISTNAME=	xphoon
@@ -7,8 +7,6 @@ CATEGORIES=	astro x11
 NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=   "Cannot sell."
 PERMIT_PACKAGE_FTP=     Yes

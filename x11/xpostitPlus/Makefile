@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/07/09 17:11:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:51 espie Exp $
 
 COMMENT=	"PostIt (R) messages onto your X11 screen"
 
@@ -7,8 +7,6 @@ CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2001/06/20 01:43:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"system performance measurement"
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
-
-MAINTAINER=	ports@openbsd.org
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"Data Display Debugger, graphical front-end for GDB, etc"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ddd
 
 HOMEPAGE=	http://www.gnu.org/software/ddd/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

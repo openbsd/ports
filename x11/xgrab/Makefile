@@ -3,7 +3,7 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.14 2001/07/09 17:11:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:51 espie Exp $
 #
 
 COMMENT=	"X11 image grabber"
@@ -15,8 +15,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

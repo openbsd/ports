@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/08/08 23:31:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"Motif CD player"
 
@@ -7,8 +7,6 @@ DISTNAME=	xmcd-2.6
 CATEGORIES=	audio
 NEED_VERSION=	1.400
 HOMEPAGE=	http://metalab.unc.edu/tkan/xmcd/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

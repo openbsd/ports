@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/20 22:48:54 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:49 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"system secureness checker"
@@ -8,8 +8,6 @@ PKGNAME=	cops-1.04
 CATEGORIES=	security
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/scanners/cops/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

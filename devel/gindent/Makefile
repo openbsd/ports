@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/06 00:13:00 lebel Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"GNU utility to indent C source files"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= indent
 
 HOMEPAGE=	http://www.gnu.org/software/indent/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

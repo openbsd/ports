@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/19 03:23:26 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/28 13:05:47 espie Exp $
 # $FreeBSD: ports/graphics/mplex/Makefile,v 1.8 2000/05/29 23:54:39 steve Exp $
 #
 
@@ -7,8 +7,6 @@ COMMENT=	"Multiplexes MPEG component streams into system layers"
 DISTNAME=	mplex-1.1
 CATEGORIES=	graphics
 NEED_VERSION=   1.402
-
-MAINTAINER=	ports@openbsd.org
 
 # GNU
 PERMIT_PACKAGE_CDROM=	     Yes

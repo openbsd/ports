@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/05 22:39:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"B Plus file transfer protocol"
 
@@ -6,8 +6,6 @@ DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
 NEED_VERSION=	1.406
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	Yes

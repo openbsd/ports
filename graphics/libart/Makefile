@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/01 00:39:07 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"high-performance 2D graphics library"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.435
 MASTER_SITES=	http://www.artofcode.com/libart/
 
 HOMEPAGE=	http://www.artofcode.com/libart.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

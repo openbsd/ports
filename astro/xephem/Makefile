@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/18 15:01:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"interactive astronomical ephemeris"
 DISTNAME=	xephem-3.2.3
@@ -7,8 +7,6 @@ NEED_VERSION=	1.400
 MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/
 
 HOMEPAGE=	http://www.clearskyinstitute.com/xephem/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

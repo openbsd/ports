@@ -3,7 +3,7 @@
 # Date created:         December 21, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.11 2001/05/06 04:41:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:51 espie Exp $
 #
 
 COMMENT=	"X11 trippy color-cycling toy"
@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://sidehack.gweep.net/pub/software/ \
 		http://www.ultranet.com/~jjohnson/
 
 HOMEPAGE=	http://sidehack.gweep.net/~jer/xtacy.html
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

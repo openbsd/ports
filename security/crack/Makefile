@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:49 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	'"Sensible" Unix Password Cracker'
@@ -9,8 +9,6 @@ CATEGORIES=	security
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
-
-MAINTAINER=     ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

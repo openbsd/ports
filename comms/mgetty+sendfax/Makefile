@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/05 22:40:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/28 13:05:45 espie Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 
 COMMENT=	"handle external logins, send and receive faxes"
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/ \
 		ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 HOMEPAGE=	http://alpha.greenie.net/mgetty/
-
-MAINTAINER=	ports@openbsd.org
 
 MAKE_ENV+=	prefix="${PREFIX}" spool="/var/spool" \
 		CONFDIR="/etc/mgetty+sendfax" \

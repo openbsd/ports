@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/04/20 07:53:01 reinhard Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/28 13:05:48 espie Exp $
 
 COMMENT=	userland arp-proxy daemon
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.397
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://skoda.sockpuppet.org/tqbf/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

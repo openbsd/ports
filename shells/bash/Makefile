@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/10 15:30:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"GNU Bourne Again Shell"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bash
 
 HOMEPAGE=	http://www.gnu.org/software/bash/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

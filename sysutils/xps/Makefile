@@ -3,15 +3,13 @@
 # Date created:         28 April 2001
 # Whom:                 Angelos D. Keromytis (angelos@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.5 2001/07/28 18:49:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/28 13:05:49 espie Exp $
 #
 
 DISTNAME=       xps-3.21
 CATEGORIES=     sysutils x11
 
 MASTER_SITES=   ftp://netwinder.org/users/r/rocky/
-
-MAINTAINER=     ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

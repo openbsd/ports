@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/24 12:09:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"OpenLook-based CD player"
 DISTNAME=	WorkMan-1.3a
@@ -7,8 +7,6 @@ CATEGORIES=	audio
 NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications/WorkMan
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

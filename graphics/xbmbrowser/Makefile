@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/06 05:05:52 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/28 13:05:47 espie Exp $
 # $FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp $
 
 COMMENT=	"view complete directories of X bitmaps and X pixmaps"
@@ -9,8 +9,6 @@ CATEGORIES=	graphics
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

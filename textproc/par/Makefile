@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/19 05:51:04 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"paragraph reflow for email"
 
@@ -7,8 +7,6 @@ PKGNAME=        par-1.52
 CATEGORIES=	textproc
 NEED_VERSION=	1.440
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

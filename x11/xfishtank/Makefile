@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2001/07/08 04:19:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:50 espie Exp $
 #
 
 COMMENT=	"fish swim in the background of your screen"
@@ -12,8 +12,6 @@ DISTNAME=	xfishtank-2.2
 CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"

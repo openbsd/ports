@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:45 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
 
 COMMENT=	"extract files from ARJ archives"
@@ -8,8 +8,6 @@ CATEGORIES=	archivers
 NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"May not charge"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/09 17:11:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:51 espie Exp $
 
 COMMENT=	"snowy and Santa-y desktop"
 
@@ -8,8 +8,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"vague license"
 PERMIT_PACKAGE_FTP=	Yes

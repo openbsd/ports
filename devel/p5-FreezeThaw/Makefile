@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 00:13:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"module for converting structures to strings and back"
 
@@ -8,8 +8,6 @@ CATEGORIES=	devel perl5
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= FreezeThaw
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

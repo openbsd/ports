@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/06/27 20:56:26 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"block action game"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 EXTRACT_SUFX=	.tgz
 
-
-MAINTAINER=	ports@openbsd.org
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

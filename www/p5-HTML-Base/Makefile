@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/10 19:20:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=	"base HTML library"
 
@@ -8,8 +8,6 @@ CATEGORIES=	www perl5
 NEED_VERSION=	1.407
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

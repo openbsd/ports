@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/05/06 03:49:21 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"extensible shell, derived from plan9's rc"
 
@@ -7,8 +7,6 @@ PKGNAME=	es-0.9b1
 CATEGORIES=	shells
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/20 01:43:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:49 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net> 
 
 COMMENT=	"text search engine by CNIDR"
@@ -10,8 +10,6 @@ PKGNAME=	isearch-1.14
 CATEGORIES=	textproc databases
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

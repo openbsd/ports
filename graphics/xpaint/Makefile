@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/06/20 01:43:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"simple paint program"
 
@@ -7,8 +7,6 @@ CATEGORIES=	graphics x11
 NEED_VERSION=	1.402
 
 HOMEPAGE=	http://home.worldonline.dk/~torsten/xpaint/
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

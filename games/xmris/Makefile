@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"Mr Do video arcade game for X11"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

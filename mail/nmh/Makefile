@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/06 01:46:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"new MH mail handling program"
 
@@ -7,8 +7,6 @@ CATEGORIES=     	mail
 NEED_VERSION=	1.402
 MASTER_SITES=           ftp://ftp.mhost.com/pub/nmh/ 
 HOMEPAGE=		http://www.mhost.com/nmh/
-
-MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

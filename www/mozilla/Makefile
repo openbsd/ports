@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/08/30 13:43:20 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/28 13:05:50 espie Exp $
 # Uses pthreads
 
 COMMENT=	"free version of the Netscape browser"
@@ -12,8 +12,6 @@ BROKEN=		core dumps in dynamic library constructor
 
 CATEGORIES=	www
 NEED_VERSION=	1.435
-
-MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
 

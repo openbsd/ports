@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/21 13:36:13 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"play mpeg movies on X11"
 
@@ -7,8 +7,6 @@ CATEGORIES=	graphics
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
 EXTRACT_SUFX=	-src.tar.gz
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

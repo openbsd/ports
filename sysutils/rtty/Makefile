@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/06/20 01:43:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:49 espie Exp $
 #
 
 COMMENT=	"multiuser "tip"/"cu" replacement with logging"
@@ -6,8 +6,6 @@ COMMENT=	"multiuser "tip"/"cu" replacement with logging"
 DISTNAME=       rtty-3.2
 CATEGORIES=	sysutils
 NEED_VERSION=	1.402
-
-MAINTAINER=	ports@openbsd.org
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/16 03:00:01 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.26 2001/10/28 13:05:46 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 FAKE=No
@@ -19,8 +19,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gcc-2.7.2.2${EXTRACT_SUFX}:2
 
 HOMEPAGE=	http://www.palmos.com/dev/tech/tools/gcc/
-
-MAINTAINER=	ports@openbsd.org
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/05/06 00:29:10 lebel Exp $
+# $OpenBSD: Makefile,v 1.25 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"joe's own editor"
 
@@ -8,8 +8,6 @@ CATEGORIES=	editors
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/05/05 23:24:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.17 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"GNU dbm"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gdbm
 
 HOMEPAGE=	http://www.gnu.org/software/gdbm/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.8 2001/07/09 17:11:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/28 13:05:51 espie Exp $
 #
 
 COMMENT=	"changing xterm attributes"
@@ -12,8 +12,6 @@ DISTNAME=	xtattr-1.0
 CATEGORIES=	x11
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-
-MAINTAINER=	ports@OpenBSD.ORG
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

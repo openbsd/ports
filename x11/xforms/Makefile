@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/31 00:02:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/28 13:05:51 espie Exp $
 
 COMMENT=	"GUI toolkit for X11"
 
@@ -22,8 +22,6 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	xforms/${MASTER_SITE_SUBDIR}
 
 HOMEPAGE=	http://world.std.com/~xforms/
-
-MAINTAINER=	ports@openbsd.org
 
 # I asked the author and I got permission (OpenBSD is a similar enough case
 # to Linux) -- espie@

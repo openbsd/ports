@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/06 06:25:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2001/10/28 13:05:49 espie Exp $
 
 COMMENT="GNU PostScript interpreter"
 
@@ -25,13 +25,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 
-MAINTAINER=	ports@openbsd.org
-
 JPEGDIR=graphics/jpeg
 PNGDIR=graphics/png
 
-BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
-		/nonexistent::${PNGDIR}:patch
+BUILD_DEPENDS=	::${JPEGDIR}:patch ::${PNGDIR}:patch
 
 LIB_DEPENDS=	png.2::${PNGDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/06/07 15:49:04 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"text editor"
 
@@ -14,8 +14,6 @@ MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 HOMEPAGE=	http://space.mit.edu/~davis/jed/
 
 LIB_DEPENDS=	slang.14::devel/libslang
-
-MAINTAINER=     ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

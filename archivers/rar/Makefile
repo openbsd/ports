@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2001/10/28 13:05:45 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -27,8 +27,6 @@ EXTRACT_CASES=	*.sfx) ${SUDO} chmod a+x ${FULLDISTDIR}/$$archive && \
 			${FULLDISTDIR}/$$archive;;
 
 HOMEPAGE=	http://www.rarsoft.com
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"Shareware.  Requires registration."
 PERMIT_PACKAGE_FTP=	"Shareware.  Requires registration."

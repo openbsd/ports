@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/07/01 15:29:49 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/28 13:05:46 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/ \
 EXTRACT_ONLY=
 
 HOMEPAGE=	http://www.freebsd.org/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

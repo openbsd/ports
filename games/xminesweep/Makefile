@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:29 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"Windows minesweeper"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/games/ \
 		ftp://ftp.uni-halle.de/pub/X11/contrib/games/ \
 		ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/09 10:49:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/28 13:05:50 espie Exp $
 
 COMMENT=	"banner-ad blocking proxy server"
 
@@ -9,8 +9,6 @@ NEED_VERSION=	1.364
 
 MASTER_SITES=	http://internet.junkbuster.com/
 HOMEPAGE=	http://internet.junkbuster.com/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

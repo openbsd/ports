@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/07/01 23:20:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:48 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	"run two shells in a split window/terminal"
@@ -8,8 +8,6 @@ CATEGORIES=	misc
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
-
-MAINTAINER=     ports@OpenBSD.ORG
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

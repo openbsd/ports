@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/25 01:58:55 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"getopt(3)-like library with a number of enhancements"
 
@@ -8,8 +8,6 @@ NEED_VERSION=	1.474
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MODULES=	gettext
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

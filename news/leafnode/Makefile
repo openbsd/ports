@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/06/10 21:32:25 rohee Exp $
+# $OpenBSD: Makefile,v 1.20 2001/10/28 13:05:48 espie Exp $
 
 COMMENT=	"USENET software package designed for small sites"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/			\
 		ftp://ftp.unixpower.org/pub/leafnode/			\
 		ftp://ftp.stikman.com/pub/leafnode/			\
 		ftp://ftp.gigabell.net/pub/leafnode/
-
-MAINTAINER=	ports@openbsd.org
 
 HOMEPAGE=	http://www.leafnode.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/05/06 01:46:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"Cubic Circle's POP3 daemon"
 
@@ -10,8 +10,6 @@ MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 
 PATCHFILES=	cucipop-1.31-v6-20010223.diff.gz:0
 PATCH_DIST_STRIP= -p1
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/05 22:39:58 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"receive/send files via X/Y/ZMODEM protocol"
 
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/ \
 		http://194.245.36.15/uwe/archive/ \
 		ftp://ftp.ihg.uni-duisburg.de/uwe/ \
 		ftp://ftp.kddlabs.co.jp/pub/Linux/packages/stampedelinux/stampedelinux/unstable/pre-0.90/source/comm/lrzsz/source/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"possible copyright issue with rzsz"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/04/13 03:24:07 obecian Exp $
+# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:45 espie Exp $
 
 COMMENT=	"embedding CDDB information in MP3s"
 DISTNAME=	mp3cddb-0.1
@@ -9,8 +9,6 @@ MASTER_SITES=	${HOMEPAGE}
 RUN_DEPENDS=	${PREFIX}/libdata/perl5/site_perl/MPEG/MP3Info.pm::audio/p5-MP3-Info \
 		${PREFIX}/libdata/perl5/site_perl/CDDB.pm::audio/p5-cddb \
 		mp3info::audio/mp3info
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

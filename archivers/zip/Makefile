@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/10/04 22:26:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2001/10/28 13:05:45 espie Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
 DISTFILES=	zip23.tar.gz zcrypt29.zip
 
 HOMEPAGE=	http://www.ctan.org/tex-archive/tools/zip/info-zip/Zip.html
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

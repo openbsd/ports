@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/05/06 01:46:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:47 espie Exp $
 
 COMMENT=	"MIME implementation"
 
@@ -8,8 +8,6 @@ CATEGORIES=	mail
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/06/27 20:56:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"Pac-man-like game under X11"
 
@@ -6,8 +6,6 @@ DISTNAME=	xchomp-pl1
 CATEGORIES=	games
 NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
-
-MAINTAINER=	ports@openbsd.org
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	"no license"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/09/04 23:26:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/28 13:05:49 espie Exp $
 
 COMMENT=	"Unix shell embedded into Scheme"
 
@@ -6,8 +6,6 @@ DISTNAME=	scsh-0.5.3
 CATEGORIES=	shells lang
 NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/
-
-MAINTAINER= 	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"required to notify authors"
 PERMIT_PACKAGE_FTP=	Yes

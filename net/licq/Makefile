@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/07/08 10:53:21 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/10/28 13:05:48 espie Exp $
 
 COMMENT=	"ICQ clone for UNIX"
 
@@ -6,8 +6,6 @@ DISTNAME=	licq-0.61
 CATEGORIES=	net
 NEED_VERSION=	1.363
 MASTER_SITES=	http://licq.wibble.net/
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

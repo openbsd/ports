@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 01:06:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/10/28 13:05:46 espie Exp $
 
 COMMENT=	"save your computers from the evil clutches of Bill"
 
@@ -8,8 +8,6 @@ NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= games
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
