@@ -7,7 +7,7 @@
 #
 
 # Installing user's home directory
-HOME		= /nonexistent
+HOME		= /none
 
 # Directory where the client will be installed.
 BINDIR		= @PREFIX@/bin
@@ -19,11 +19,11 @@ MANDIR		= @PREFIX@/man
 CC		= cc
 
 # Compile options.
-CFLAGS		= -O2  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
-TCLCFLAGS	= -O2  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+CFLAGS		= -O2 ${DEBUG} -DSTRINGS_H -DTIME_H
+TCLCFLAGS	= -O2 ${DEBUG} -DSTRINGS_H -DTIME_H
 
 # Lint flags
-LFLAGS		= -u  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+LFLAGS		= -u  -DSTRINGS_H -DTIME_H
 
 # System dependent source file.
 SYSDEP		=sysdep.bsd
@@ -41,14 +41,15 @@ PMAKE		=
 MAKEDEPEND	= makedepend
 
 # Makefile dependency generator.
-DEPENDFLAGS	= -fMake  -DNO_LRAND48 -DSTRINGS_H -DTIME_H
+DEPENDFLAGS	= -fMake  -DSTRINGS_H -DTIME_H
 
 # Hostname and port of remote server.
-DEFAULTHOST	= cvs.openbsd.org
+DEFAULTHOST	= 129.24.12.18
 DEFAULTPORT	= 7326
 
 # Directory for support files
-LIBDIR = /etc
+LIBDIR = @PREFIX@/lib/icb
 
 # location of server database
-SERVERLIST = /etc/icb/icbserverdb
+SERVERLIST = @PREFIX@/lib/icbserverdb
+

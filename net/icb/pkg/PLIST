@@ -1,7 +1,9 @@
+@cwd /usr/local
+@name icb-5.0.9
 bin/icb
-libdata/icbserverdb
-libdata/icb/sample.icbrc
-libdata/icb/bartender
-libdata/icb/confuse
-libdata/icb/echofile
-@dirrm libdata/icb
+lib/icb/sample.icbrc
+lib/icb/bartender
+lib/icb/confuse
+lib/icb/echofile
+lib/icbserverdb
+@dirrm lib/icb
