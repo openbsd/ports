@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/12 12:00:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/12 15:12:53 todd Exp $
 
 #
 # From:
@@ -57,7 +57,7 @@ do-install:
 	echo '#! /bin/sh' >${PREFIX}/bin/hotjava
 	echo 'exec ${TRUEPREFIX}/${JAVA} -classpath \
 	${TRUEPREFIX}/${JDK}/lib/classes.zip:${TRUEPREFIX}/share/java/HotJava/Browser.jar \
-	sunw.hotjava.Main -Dhotjava.home=${TRUEPREFIX}/share/java/HotJava' \
+	sunw.hotjava.Main -Dhotjava.home=${TRUEPREFIX}/share/java/HotJava $$@' \
 		>>${PREFIX}/bin/hotjava
 	chmod a+rx ${PREFIX}/bin/hotjava
 
