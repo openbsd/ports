@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/23 23:37:53 matt Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -13,9 +13,13 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 FLAVORS=	python
 FLAVOR?=
 
+PYTHON_VER=	2.2
+
 .if ${FLAVOR:L:Mpython}
-BUILD_DEPENDS+=	:python-2.1*:lang/python/2.1
-RUN_DEPENDS+=	:python-2.1*:lang/python/2.1
+BUILD_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+RUN_DEPENDS+=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+CFLAGS+=	-pthread
+CONFIGURE_ENV+=	PYTHON_VER=${PYTHON_VER}
 .else
 CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif
