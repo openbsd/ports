@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.626 2004/07/24 13:53:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.627 2004/08/02 12:10:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1199,7 +1199,7 @@ ${WRKPKG}/depends${SUBPACKAGE}:
 	@>$@
 .if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
 	@${_depfile_fragment}; \
-	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _solve-package-depends
+	_depends_result=$@ ${MAKE} _solve-package-depends
 .endif
 
 ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
@@ -2306,18 +2306,18 @@ _solve-package-depends:
 .for _i in ${RUN_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo '${_i}' |{ \
-		IFS=:; read dep pkg dir target; \
-		${_flavor_fragment}; \
+		IFS=:; read dep pkg pkgpath target; \
+		dir=$$pkgpath; ${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		: $${pkg:=$$default}; \
-		echo "@newdepend $$self:$$pkg:$$default" >>$${_depends_result}; }
+		echo "@newdepend $$pkgpath:$$pkg:$$default" >>$${_depends_result}; }
 .endfor
 .if !defined(NO_SHARED_LIBS)
 .  for _i in ${LIB_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo '${_i}'|{ \
-		IFS=:; read dep pkg dir target; \
-		${_flavor_fragment}; \
+		IFS=:; read dep pkg pkgpath target; \
+		dir=$$pkgpath; ${_flavor_fragment}; \
 		libspecs='';comma=''; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
@@ -2342,7 +2342,7 @@ _solve-package-depends:
 		case "X$$libspecs" in \
 		X) ;;\
 		*) \
-			echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
+			echo "@libdepend $$pkgpath:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
 		esac; \
 	}
 .  endfor
