@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/09/01 04:24:38 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/12/18 14:19:27 brad Exp $
 
 ONLY_FOR_ARCHS=	sparc
 NEED_VERSION=	1.322
@@ -7,7 +7,7 @@ PROGRAM_V=	4.61
 V2:=		${PROGRAM_V:S/.//}
 
 DISTNAME=	communicator-v${V2}-export.sparc-sun-sunos4.1.3_U1
-PKGNAME=	communicator-${PROGRAM_V}
+PKGNAME=	communicator-${PROGRAM_V}p1
 LOCATION=	sunos413/complete_install
 DIRNAME=	communicator-v${V2}.sparc-sun-sunos4.1.3_U1
 
