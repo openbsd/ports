@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2004/05/22 15:49:08 sturm Exp $
+# $OpenBSD: Makefile,v 1.140 2004/05/26 13:59:42 sturm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -103,6 +103,8 @@
      SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTPD-Log-Filter
 #    SUBDIR += p5-HTTPD-Tools
+     SUBDIR += p5-Maypole
+     SUBDIR += p5-Maypole-Authentication-UserSessionCookie
      SUBDIR += p5-SOAP-Lite
      SUBDIR += p5-URI
      SUBDIR += p5-WWW-Curl
