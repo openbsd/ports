@@ -1,6 +1,6 @@
---- include/config.h.orig	Mon Jul 19 19:38:33 1999
-+++ include/config.h	Mon Jul 19 19:39:09 1999
-@@ -546,7 +546,7 @@
+--- include/config.h.orig	Fri Sep 17 19:26:51 1999
++++ include/config.h	Sat Oct  2 11:19:08 1999
+@@ -548,7 +548,7 @@
  #undef EPIC_DEBUG		/* force coredump on panic */
  #define EXEC_COMMAND		/* allow /exec comamnd */
  #undef HACKED_DCC_WARNING	/* warn if handshake != sender */
