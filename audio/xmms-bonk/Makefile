@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/24 22:20:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2003/01/05 03:13:06 lebel Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,6 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 
 LIB_DEPENDS=	xmms.3::audio/xmms
+
+# gcc3
+MODULES=		gcc3
+MODGCC3_ARCHES=         sparc64
+MODGCC3_LANGS+=         c++
 
 MAKE_ENV=	CXX="${CXX}"
 ALL_TARGET=
