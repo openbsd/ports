@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/22 22:33:33 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/26 04:56:36 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	xonix-1.4
 CATEGORIES=	games

@@ -3,8 +3,10 @@
 # Date created:				May 16 1998
 # Whom:	      				Angelos D. Keromytis
 #
-#   $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:16:20 angelos Exp $
+#   $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:37 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=	POP3Client-1_15
 PKGNAME=	p5-Mail-POP3Client-1.15

@@ -3,8 +3,10 @@
 # Date created:         May 21 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/22 01:10:39 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:38 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=       info2html-1.1
 CATEGORIES=	textproc

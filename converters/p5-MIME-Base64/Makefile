@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 1999/08/18 02:22:21 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/26 04:56:35 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=       MIME-Base64-2.11
 PKGNAME=        MIME-Base64-2.11

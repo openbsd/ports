@@ -3,8 +3,10 @@
 # Date created:		May 17 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 05:20:42 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:38 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=	bibview-2.2
 CATEGORIES=	databases print

@@ -3,8 +3,10 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1999/03/12 19:25:02 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/26 04:56:37 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=	xtar-1.4
 CATEGORIES=	misc

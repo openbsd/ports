@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:59 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/10/26 04:56:36 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	xmine-1.0.3-Xaw
 PKGNAME=	xmine-1.0.3

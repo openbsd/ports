@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 1999/08/27 02:18:06 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/10/26 04:56:38 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	mrtg-2.8.8
 CATEGORIES=	net

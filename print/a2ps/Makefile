@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 1999/09/14 10:01:31 espie Exp $
+# $OpenBSD: Makefile,v 1.11 1999/10/26 04:56:39 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=	a2ps-4.10.4
 PKGNAME=	a2ps

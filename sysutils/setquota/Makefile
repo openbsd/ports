@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/05/23 06:01:04 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/26 04:56:38 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+BROKEN=		bad packing lists
 
 DISTNAME=	setquota-0.1
 CATEGORIES=	sysutils

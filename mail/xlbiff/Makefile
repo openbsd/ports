@@ -3,7 +3,9 @@
 # Date created:		May 16 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 03:32:55 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:36 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	xlbiff-3.0
 CATEGORIES=	mail x11

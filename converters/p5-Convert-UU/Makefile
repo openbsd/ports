@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 1999/08/18 02:20:38 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1999/10/26 04:56:35 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	Convert-UU-0.40
 PKGNAME=	Convert-UU-0.40

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:56 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/10/26 04:56:35 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	Seyon-2.14b
 PKGNAME=	seyon-2.14b

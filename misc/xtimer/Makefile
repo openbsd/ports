@@ -3,8 +3,10 @@
 # Date created:		May 20 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 07:53:08 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/26 04:56:37 turan Exp $
 #
+
+BROKEN=		bad packing lists
 
 DISTNAME=	xtimer-8087
 PKGNAME=	xtimer-0.8087

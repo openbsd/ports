@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/27 20:48:36 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/10/26 04:56:36 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	xminesweep3.0
 PKGNAME=	xminesweep-3.0

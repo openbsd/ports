@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:08 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/26 04:56:36 turan Exp $
+
+BROKEN=		bad packing lists
 
 DISTNAME=	aXe-6.1.2
 CATEGORIES=	editors
