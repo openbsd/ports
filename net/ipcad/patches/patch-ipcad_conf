@@ -1,0 +1,28 @@
+$RuOBSD: patch-ipcad_conf,v 1.3 2002/04/27 02:41:28 form Exp $
+--- ipcad.conf.orig	Mon Mar 25 10:10:39 2002
++++ ipcad.conf	Sat Apr 27 09:39:15 2002
+@@ -71,11 +71,11 @@ rsh enable at 127.0.0.1;
+ #
+ 
+ rsh root@127.0.0.1 admin;       /* Can shutdown ipcad */
+-rsh staff@127.0.0.1 backup;     /* Can dump/restore/import accounting table */
+-rsh vlm@127.0.0.1;              /* Can view and modify accounting tables */
++#rsh staff@127.0.0.1 backup;     /* Can dump/restore/import accounting table */
++#rsh vlm@127.0.0.1;              /* Can view and modify accounting tables */
+ /* Note the order! */
+-rsh luser@127.0.0.1 deny;       /* Deny this user from even viewing tables */
+-rsh 127.0.0.1 view-only;        /* Other users can view current tables */
++#rsh luser@127.0.0.1 deny;       /* Deny this user from even viewing tables */
++#rsh 127.0.0.1 view-only;        /* Other users can view current tables */
+ 
+ 
+ #################
+@@ -95,7 +95,7 @@ memory_limit = 1m;
+ # Chroot to this directory before processing.
+ #
+ 
+-chroot = /adm/tmp;
++chroot = /var/ipcad;
+ 
+ #
+ # Dump memory table to this file on exit and read on startup
