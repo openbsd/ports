@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/06/23 20:07:17 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/29 01:13:04 pvalchev Exp $
 
 COMMENT=	"cross-platform multimedia library"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${HOMEPAGE}/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
 
-FLAVORS=	sun oss esd gl arts no_x11
+FLAVORS=	sun oss esd arts no_x11
 FLAVOR?=	sun
 
 .if empty(FLAVOR:L:Msun) && empty(FLAVOR:L:Moss) && empty(FLAVOR:L:Mesd)
@@ -58,12 +58,6 @@ CONFIGURE_ARGS+= --disable-esd
 CONFIGURE_ARGS+= --enable-oss
 .else
 CONFIGURE_ARGS+= --disable-oss
-.endif
-
-.if ${FLAVOR:L:Mgl}
-CONFIGURE_ARGS+= --enable-video-opengl
-.else
-CONFIGURE_ARGS+= --disable-video-opengl
 .endif
 
 .if ${FLAVOR:L:Marts}
