@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Dec 14 23:00:19 1999
-+++ Makefile.in	Sat Jan  8 20:13:34 2000
++++ Makefile.in	Sat Jan 29 21:17:41 2000
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -38,34 +38,41 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -363,6 +365,11 @@
- 	@MAKE_LIB@
- 	$(RANLIB) ${TK_LIB_FILE}
+@@ -346,7 +348,7 @@
  
+ all: binaries libraries doc
+ 
+-binaries: ${TK_LIB_FILE} ${STUB_LIB_FILE} wish
++binaries: ${TK_LIB_FILE} ${STUB_LIB_FILE} libtk82.a wish
+ 
+ libraries:
+ 
+@@ -361,12 +363,15 @@
+ ${TK_LIB_FILE}: ${OBJS}
+ 	rm -f ${TK_LIB_FILE}
+ 	@MAKE_LIB@
+-	$(RANLIB) ${TK_LIB_FILE}
+ 
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f ${STUB_LIB_FILE}
+ 	@MAKE_STUB_LIB@
+-	$(RANLIB) ${STUB_LIB_FILE}
++
 +libtk82.a: ${OBJS}
 +	rm -f libtk82.a
 +	ar cr libtk82.a ${OBJS}
 +	$(RANLIB) libtk82.a
-+
- ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
- 	rm -f ${STUB_LIB_FILE}
- 	@MAKE_STUB_LIB@
-@@ -425,7 +432,7 @@
- # some ranlibs write to current directory, and this might not always be
- # possible (e.g. if installing as root).
  
--install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
-+install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) libtk82.a wish
- 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
- 	    do \
- 	    if [ ! -d $$i ] ; then \
-@@ -441,10 +448,15 @@
+ # Make target which outputs the list of the .o contained in the Tk lib
+ # usefull to build a single big shared library containing Tcl/Tk and other
+@@ -439,12 +444,15 @@
+ 	chmod +x $(UNIX_DIR)/install-sh
+ 	chmod +x $(UNIX_DIR)/mkLinks
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
- 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
+-	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@echo "Installing libtk82.a"
 +	@$(INSTALL_DATA) libtk82.a $(LIB_INSTALL_DIR)/libtk82.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk82.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk82.a
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
@@ -76,7 +83,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE)"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -458,6 +470,7 @@
+@@ -458,6 +466,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
@@ -84,7 +91,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -468,11 +481,19 @@
+@@ -468,11 +477,19 @@
  		fi; \
  	    done;
  	chmod +x $(UNIX_DIR)/install-sh
