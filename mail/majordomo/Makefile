@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/06 01:46:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/31 13:45:34 dhartmei Exp $
 
 COMMENT=	"mailing list manager"
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/
 
 HOMEPAGE=	http://www.greatcircle.com/majordomo/
 
-MAINTAINER=	Daniel Hartmeier <daniel@reichardt.ch>
+MAINTAINER=	Daniel Hartmeier <daniel@benzedrine.cx>
 
 # I sent a mail to greatcircle.com asking for these permissions.
 # Until I get an answer, I assume nothing. 
