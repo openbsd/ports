@@ -1,0 +1,12 @@
+$OpenBSD: patch-sim_sock_c,v 1.1 2002/03/26 07:37:21 form Exp $
+--- sim_sock.c.orig	Tue Mar 26 12:45:29 2002
++++ sim_sock.c	Tue Mar 26 12:46:25 2002
+@@ -129,7 +129,7 @@ return newsock;						/* got it! */
+ SOCKET sim_accept_conn (SOCKET master, UNIT *uptr, uint32 *ipaddr)
+ {
+ int32 sta;
+-#if defined (macintosh) 
++#if defined (macintosh) || defined(USE_SOCKLEN_T)
+ socklen_t size; 
+ #else 
+ size_t size; 
