@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2005/01/04 20:59:16 wilfried Exp $
+# $OpenBSD: Makefile,v 1.15 2005/01/04 21:27:27 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64 powerpc
 
@@ -33,7 +33,8 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
-		png.3::graphics/png
+		png.3::graphics/png \
+		esd.2::audio/esound
 
 VMEM_WARNING=	Yes
 
