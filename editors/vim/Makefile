@@ -1,42 +1,43 @@
-# $OpenBSD: Makefile,v 1.9 1999/09/27 06:59:03 jasoni Exp $
+# $OpenBSD: Makefile,v 1.10 1999/09/28 15:29:53 jasoni Exp $
 
-DISTNAME=		vim-5.5
-CATEGORIES=		editors
+DISTNAME=	vim-5.5
+CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
-				ftp://ftp.nuxi.com/pub/vim/unix/ \
-				ftp://ftp.oce.nl/pub/vim/unix/  \
-				ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
-				ftp://ftp.is.co.za/applications/editors/vim/  \
-				ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
-DISTFILES=		${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
+		ftp://ftp.nuxi.com/pub/vim/unix/ \
+		ftp://ftp.oce.nl/pub/vim/unix/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
+		ftp://ftp.is.co.za/applications/editors/vim/  \
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/ 
+DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-rt.tar.gz
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-PATCHFILES=		5.5.001 5.5.002 5.5.003 5.5.004 5.5.005 5.5.006
+PATCHFILES=	5.5.001 5.5.002 5.5.003 5.5.004 5.5.005 5.5.006 \
+		5.5.008 5.5.009
 
-MAINTAINER=		jasoni@openbsd.org
+MAINTAINER=	jasoni@openbsd.org
 
-DIST_SUBDIR=		vim
-WRKSRC=				${WRKDIR}/${DISTNAME}/src
-PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--with-tliba="curses"
+DIST_SUBDIR=	vim
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+PATCH_DIST_ARGS=-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-tliba="curses"
 
 .if !defined(LIGHT_VERSION)
 .if defined(HAVE_MOTIF)
-REQUIRES_MOTIF=		yes
-CONFIGURE_ARGS+=	--enable-gui="motif"
-CONFIGURE_ENV+=		MOTIFHOME=${X11BASE}
+REQUIRES_MOTIF=	yes
+CONFIGURE_ARGS+=--enable-gui="motif"
+CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 .elif defined(USE_ATHENA)
-CONFIGURE_ARGS+=	--enable-gui="athena"
+CONFIGURE_ARGS+=--enable-gui="athena"
 .else
-LIB_DEPENDS=		glib.1.2:${PORTSDIR}/devel/glib \
-					gtk.1.2:${PORTSDIR}/x11/gtk+
-CONFIGURE_ARGS+= 	--enable-gui="gtk" 
+LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
+		gtk.1.2:${PORTSDIR}/x11/gtk+
+CONFIGURE_ARGS+=--enable-gui="gtk" 
 .endif
 .else
-CONFIGURE_ARGS+= 	--enable-gui="no" --without-x
-PKGNAME=			${DISTNAME}-light
-PLIST=				${PKGDIR}/PLIST-light
+CONFIGURE_ARGS+=--enable-gui="no" --without-x
+PKGNAME=	${DISTNAME}-light
+PLIST=		${PKGDIR}/PLIST-light
 .endif
 
 pre-configure:
