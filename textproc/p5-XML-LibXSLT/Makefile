@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/27 05:11:52 shell Exp $
+# $OpenBSD: Makefile,v 1.16 2002/06/08 13:54:35 wilfried Exp $
 
 COMMENT=	"fast XSLT module for perl"
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
 BUILD_DEPENDS=	::textproc/p5-XML-LibXML
-RUN_DPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xml2.6::textproc/libxml \
 		xslt::textproc/libxslt
 
