@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/05/30 08:57:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/06/05 23:31:06 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
@@ -8,7 +8,7 @@ bin/ecpp
 bin/egcc
 bin/egccbug
 bin/egcov
-bin/${MACHINE_ARCH}-unknown-openbsd${V}-egcc
+bin/${CONFIG}-egcc
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -63,21 +63,21 @@ info/gccint.info-6
 info/gccint.info-7
 info/gccint.info-8
 info/gccint.info-9
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/collect2
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cpp0
-IFPIC:lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic/libgcc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/README
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/float.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/limits.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/machine/ansi.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/stdarg.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/stdbool.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/syslimits.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/varargs.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/libgcc.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/specs
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/tradcpp0
+lib/gcc-lib/${CONFIG}/${V}/cc1
+lib/gcc-lib/${CONFIG}/${V}/collect2
+lib/gcc-lib/${CONFIG}/${V}/cpp0
+IFPIC:lib/gcc-lib/${CONFIG}/${V}/fpic/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/include/README
+lib/gcc-lib/${CONFIG}/${V}/include/float.h
+lib/gcc-lib/${CONFIG}/${V}/include/limits.h
+lib/gcc-lib/${CONFIG}/${V}/include/machine/ansi.h
+lib/gcc-lib/${CONFIG}/${V}/include/stdarg.h
+lib/gcc-lib/${CONFIG}/${V}/include/stdbool.h
+lib/gcc-lib/${CONFIG}/${V}/include/syslimits.h
+lib/gcc-lib/${CONFIG}/${V}/include/varargs.h
+lib/gcc-lib/${CONFIG}/${V}/libgcc.a
+lib/gcc-lib/${CONFIG}/${V}/specs
+lib/gcc-lib/${CONFIG}/${V}/tradcpp0
 lib/libiberty.a
 man/man1/cpp.1
 man/man1/egcc.1
@@ -86,11 +86,11 @@ man/man1/gcov.1
 @comment man/man7/gfdl.7
 @comment man/man7/gpl.7
 %%SHARED%%
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/machine
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include
-IFPIC:@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/fpic
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}
+@dirrm lib/gcc-lib/${CONFIG}/${V}/include/machine
+@dirrm lib/gcc-lib/${CONFIG}/${V}/include
+IFPIC:@dirrm lib/gcc-lib/${CONFIG}/${V}/fpic
+@dirrm lib/gcc-lib/${CONFIG}/${V}
+@dirrm lib/gcc-lib/${CONFIG}
 @dirrm lib/gcc-lib
 IFPIC:@exec mkdir -p %D/lib/fpic
 IFPIC:@dirrm lib/fpic

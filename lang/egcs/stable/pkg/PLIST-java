@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.2 2002/05/30 08:57:32 espie Exp $
+@comment $OpenBSD: PLIST-java,v 1.3 2002/06/05 23:31:06 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/gcj.info
 bin/eaddr2name.awk
@@ -1178,9 +1178,9 @@ info/gcj.info-2
 IFPIC:lib/fpic/libgcj.a
 IFPIC:lib/fpic/libgcj.la
 IFPIC:lib/fpic/libgcj.spec
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/gcj/libgcj-config.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/jc1
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/jvgenmain
+lib/gcc-lib/${CONFIG}/${V}/include/gcj/libgcj-config.h
+lib/gcc-lib/${CONFIG}/${V}/jc1
+lib/gcc-lib/${CONFIG}/${V}/jvgenmain
 lib/libgcj.a
 lib/libgcj.la
 lib/libgcj.spec
@@ -1197,7 +1197,7 @@ man/man1/rmiregistry.1
 share/java/libgcj-${V}.jar
 @dirrm share/java
 @dirrm lib/security
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/gcj
+@dirrm lib/gcc-lib/${CONFIG}/${V}/include/gcj
 @dirrm include/org/xml/sax/helpers
 @dirrm include/org/xml/sax/ext
 @dirrm include/org/xml/sax

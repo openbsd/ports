@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-c++,v 1.7 2002/05/30 08:57:32 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.8 2002/06/05 23:31:06 espie Exp $
 @pkgcfl egcs-*-core
 bin/ec++
 bin/ec++filt
 bin/eg++
-bin/${MACHINE_ARCH}-unknown-openbsd${V}-ec++
-bin/${MACHINE_ARCH}-unknown-openbsd${V}-eg++
+bin/${CONFIG}-ec++
+bin/${CONFIG}-eg++
 include/g++-v3/algorithm
 include/g++-v3/backward/algo.h
 include/g++-v3/backward/algobase.h
@@ -149,22 +149,22 @@ include/g++-v3/ext/stl_hashtable.h
 include/g++-v3/ext/stl_rope.h
 include/g++-v3/fstream
 include/g++-v3/functional
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/atomicity.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/basic_file.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/c++config.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/c++io.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/c++locale.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/codecvt_specializations.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/cpu_limits.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/ctype_base.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/ctype_inline.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/ctype_noninline.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr-default.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr-posix.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr-single.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/gthr.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/messages_members.h
-include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits/os_defines.h
+include/g++-v3/${CONFIG}/bits/atomicity.h
+include/g++-v3/${CONFIG}/bits/basic_file.h
+include/g++-v3/${CONFIG}/bits/c++config.h
+include/g++-v3/${CONFIG}/bits/c++io.h
+include/g++-v3/${CONFIG}/bits/c++locale.h
+include/g++-v3/${CONFIG}/bits/codecvt_specializations.h
+include/g++-v3/${CONFIG}/bits/cpu_limits.h
+include/g++-v3/${CONFIG}/bits/ctype_base.h
+include/g++-v3/${CONFIG}/bits/ctype_inline.h
+include/g++-v3/${CONFIG}/bits/ctype_noninline.h
+include/g++-v3/${CONFIG}/bits/gthr-default.h
+include/g++-v3/${CONFIG}/bits/gthr-posix.h
+include/g++-v3/${CONFIG}/bits/gthr-single.h
+include/g++-v3/${CONFIG}/bits/gthr.h
+include/g++-v3/${CONFIG}/bits/messages_members.h
+include/g++-v3/${CONFIG}/bits/os_defines.h
 include/g++-v3/iomanip
 include/g++-v3/ios
 include/g++-v3/iosfwd
@@ -194,14 +194,14 @@ IFPIC:lib/fpic/libestdc++.a
 IFPIC:lib/fpic/libestdc++.la
 IFPIC:lib/fpic/libsupc++.a
 IFPIC:lib/fpic/libsupc++.la
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1plus
+lib/gcc-lib/${CONFIG}/${V}/cc1plus
 lib/libestdc++.a
 lib/libestdc++.la
 lib/libsupc++.a
 lib/libsupc++.la
 man/man1/eg++.1
-@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}/bits
-@dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${V}
+@dirrm include/g++-v3/${CONFIG}/bits
+@dirrm include/g++-v3/${CONFIG}
 @dirrm include/g++-v3/ext
 @dirrm include/g++-v3/bits
 @dirrm include/g++-v3/backward

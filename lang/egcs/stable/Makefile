@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2002/05/30 08:57:32 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2002/06/05 23:31:06 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
-#MAKE_ADA=Yes
+MAKE_ADA=Yes
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
@@ -320,6 +320,7 @@ RUN_DEPENDS+=::lang/egcs/stable
 .  endif
 .endif
 
-SUBST_VARS=V OSREV
+CONFIG=${MACHINE_ARCH}-unknown-openbsd${OSREV}
+SUBST_VARS=CONFIG V
 .include <bsd.port.mk>
 

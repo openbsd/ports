@@ -1,19 +1,19 @@
-@comment $OpenBSD: PLIST-objc,v 1.7 2002/05/30 08:57:32 espie Exp $
+@comment $OpenBSD: PLIST-objc,v 1.8 2002/06/05 23:31:06 espie Exp $
 @pkgcfl egcs-*-core
 IFPIC:lib/fpic/libobjc.a
 IFPIC:lib/fpic/libobjc.la
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/cc1obj
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/NXConstStr.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/Object.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/Protocol.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/encoding.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/hash.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/objc-api.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/objc-list.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/objc.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/sarray.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/thr.h
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc/typedstream.h
+lib/gcc-lib/${CONFIG}/${V}/cc1obj
+lib/gcc-lib/${CONFIG}/${V}/include/objc/NXConstStr.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/Object.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/Protocol.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/encoding.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/hash.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/objc-api.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/objc-list.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/objc.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/sarray.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/thr.h
+lib/gcc-lib/${CONFIG}/${V}/include/objc/typedstream.h
 lib/libobjc.la
 lib/libobjc.a
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/objc
+@dirrm lib/gcc-lib/${CONFIG}/${V}/include/objc

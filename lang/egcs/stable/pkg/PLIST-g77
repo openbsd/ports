@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-g77,v 1.7 2002/05/30 08:57:32 espie Exp $
+@comment $OpenBSD: PLIST-g77,v 1.8 2002/06/05 23:31:06 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/g77.info
 bin/eg77
@@ -28,8 +28,8 @@ IFPIC:lib/fpic/libfrtbegin.a
 IFPIC:lib/fpic/libg2c.a
 IFPIC:lib/fpic/libg2c.la
 lib/libfrtbegin.a
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/f771
-lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${V}/${V}/include/g2c.h
+lib/gcc-lib/${CONFIG}/${V}/f771
+lib/gcc-lib/${CONFIG}/${V}/include/g2c.h
 lib/libg2c.a
 lib/libg2c.la
 man/man1/eg77.1
