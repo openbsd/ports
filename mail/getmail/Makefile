@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2003/08/01 11:49:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2003/09/27 12:07:16 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
-DISTNAME=	getmail-3.1.8
+DISTNAME=	getmail-3.2.0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.qcc.ca/~charlesc/software/getmail-3.0/
