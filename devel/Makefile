@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/01/09 06:26:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.56 2001/01/19 03:14:29 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -45,6 +45,7 @@
      SUBDIR += gsl
      SUBDIR += id-utils
 #    SUBDIR += ilu
+     SUBDIR += jad
      SUBDIR += jdk
      SUBDIR += jfc
      SUBDIR += kdbg
@@ -109,7 +110,7 @@
 #    SUBDIR += p5-Religion
 #    SUBDIR += p5-Resources
 #    SUBDIR += p5-Sort-Versions
-#    SUBDIR += p5-Storable
+     SUBDIR += p5-Storable
 #    SUBDIR += p5-Term-ReadKey
 #    SUBDIR += p5-Time
      SUBDIR += p5-Time-TimeDate
