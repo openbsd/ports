@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/09/23 12:38:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/23 15:56:04 brad Exp $
 
 DISTNAME=	sdd-1.22
 CATEGORIES=	sysutils
-NEED_VERSION=	1.319
+NEED_VERSION=	1.336
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 
 USE_GMAKE=	Yes
-MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}
+MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}" CCOM="${CC}"
 
 do-configure:
 	@cd ${WRKSRC}/RULES; \
