@@ -1,9 +1,9 @@
-$OpenBSD: patch-nicotine,v 1.1.1.1 2004/02/16 21:16:06 xsa Exp $
---- nicotine.orig	2003-10-17 17:49:41.000000000 +0200
-+++ nicotine	2004-02-11 23:45:14.000000000 +0100
+$OpenBSD: patch-nicotine,v 1.2 2005/01/25 21:56:51 mjc Exp $
+--- nicotine.orig	Fri Jan 21 13:10:19 2005
++++ nicotine	Fri Jan 21 13:12:25 2005
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!/usr/bin/env python%%MODPY_VERSION%%
- # Copyright (c) 2003 Hyriand. All rights reserved.
+ # Copyright (c) 2003-2004 Hyriand. All rights reserved.
  #
  # Based on code from PySoulSeek, original copyright note:
