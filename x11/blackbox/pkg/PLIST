@@ -1,14 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/08/11 03:45:05 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2000/08/16 15:34:45 brad Exp $
 bin/blackbox
+bin/bsetbg
 bin/bsetroot
+man/man1/blackbox.1
+man/man1/bsetroot.1
 share/Blackbox/menu
 share/Blackbox/nls/POSIX
 share/Blackbox/nls/US_ASCII
 share/Blackbox/nls/en
 share/Blackbox/nls/en_US
 share/Blackbox/nls/es
+share/Blackbox/nls/fr
 share/Blackbox/nls/C/blackbox.cat
+share/Blackbox/nls/da_DK/blackbox.cat
 share/Blackbox/nls/es_ES/blackbox.cat
+share/Blackbox/nls/et_EE/blackbox.cat
+share/Blackbox/nls/fr_FR/blackbox.cat
 share/Blackbox/nls/pt_BR/blackbox.cat
 share/Blackbox/nls/ru_RU/blackbox.cat
 share/Blackbox/nls/sv_SE/blackbox.cat
@@ -31,9 +38,14 @@ share/doc/blackbox/ChangeLog
 share/doc/blackbox/ChangeLog-0.40.x
 share/doc/blackbox/ChangeLog-0.50.x
 share/doc/blackbox/ChangeLog-0.51.x
+share/doc/blackbox/ChangeLog-0.60.x
 share/doc/blackbox/README
+share/doc/blackbox/README.bsetbg
 @dirrm share/Blackbox/nls/C
+@dirrm share/Blackbox/nls/da_DK
 @dirrm share/Blackbox/nls/es_ES
+@dirrm share/Blackbox/nls/et_EE
+@dirrm share/Blackbox/nls/fr_FR
 @dirrm share/Blackbox/nls/pt_BR
 @dirrm share/Blackbox/nls/ru_RU
 @dirrm share/Blackbox/nls/sv_SE

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2000/08/11 03:45:03 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/08/16 15:34:43 brad Exp $
 
-DISTNAME=	blackbox-0.60.3
+DISTNAME=	blackbox-0.61.0
 CATEGORIES=	x11
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/ \
@@ -16,10 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--disable-styled-frames
 
 DOCS=	AUTHORS ChangeLog ChangeLog-0.40.x ChangeLog-0.50.x \
-	ChangeLog-0.51.x README
+	ChangeLog-0.51.x ChangeLog-0.60.x README README.bsetbg
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/blackbox
