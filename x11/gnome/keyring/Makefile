@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/10 20:36:43 marcm Exp $
 
 COMMENT=		"password agent for the GNOME project"
 
-DISTNAME=		gnome-keyring-0.2.1
+DISTNAME=		gnome-keyring-0.4.0
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-keyring/0.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-keyring/0.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext

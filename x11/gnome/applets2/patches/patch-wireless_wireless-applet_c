@@ -1,6 +1,6 @@
---- wireless/wireless-applet.c.orig	Tue Apr 13 04:39:46 2004
-+++ wireless/wireless-applet.c	Tue Jun 22 13:48:18 2004
-@@ -30,6 +30,20 @@
+--- wireless/wireless-applet.c.orig	Sat Oct 30 06:46:28 2004
++++ wireless/wireless-applet.c	Fri Dec 10 10:16:59 2004
+@@ -30,12 +30,30 @@
  #include <math.h>
  #include <dirent.h>
  
@@ -21,9 +21,7 @@
  #include <gnome.h>
  #include <panel-applet.h>
  #include <panel-applet-gconf.h>
-@@ -37,7 +51,11 @@
- 
- #include <egg-screen-help.h>
+ #include <glade/glade.h>
  
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +#define CFG_DEVICE "an0"
@@ -33,7 +31,7 @@
  #define CFG_UPDATE_INTERVAL 2
  
  typedef enum {
-@@ -94,6 +112,12 @@ static void wireless_applet_help_cb (Bon
+@@ -92,6 +110,12 @@ static void wireless_applet_help_cb (Bon
  		WirelessApplet *applet);
  static void wireless_applet_about_cb (BonoboUIComponent *uic,
  		WirelessApplet *applet);
@@ -46,7 +44,7 @@
  static void prefs_response_cb (GtkDialog *dialog, gint response, gpointer data);
  
  static const BonoboUIVerb wireless_menu_verbs [] = {
-@@ -159,7 +183,7 @@ wireless_applet_draw (WirelessApplet *ap
+@@ -161,7 +185,7 @@ wireless_applet_draw (WirelessApplet *ap
  	/* Update the image */
  	percent = CLAMP (percent, -1, 100);
  
@@ -55,7 +53,7 @@
  		state = PIX_BROKEN;
  	else if (percent == 0)
  		state = PIX_NO_LINK;
-@@ -190,6 +214,7 @@ wireless_applet_update_state (WirelessAp
+@@ -192,6 +216,7 @@ wireless_applet_update_state (WirelessAp
  	int percent;
  
  	/* Calculate the percentage based on the link quality */
@@ -63,7 +61,7 @@
  	if (level < 0) {
  		percent = -1;
  	} else {
-@@ -200,6 +225,9 @@ wireless_applet_update_state (WirelessAp
+@@ -202,6 +227,9 @@ wireless_applet_update_state (WirelessAp
  			percent = CLAMP (percent, 0, 100);
  		}
  	}
@@ -73,7 +71,7 @@
  
  	wireless_applet_draw (applet, percent);
  }
-@@ -242,14 +270,152 @@ wireless_applet_set_show_percent (Wirele
+@@ -244,14 +272,152 @@ wireless_applet_set_show_percent (Wirele
  	}
  }
  
@@ -228,7 +226,7 @@
  	gboolean found = FALSE;
  
  	/* resest list of available wireless devices */
-@@ -257,8 +423,35 @@ wireless_applet_read_device_state (Wirel
+@@ -259,8 +425,35 @@ wireless_applet_read_device_state (Wirel
  	g_list_free (applet->devices);
  	applet->devices = NULL;
  
@@ -264,7 +262,7 @@
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -292,6 +485,7 @@ wireless_applet_read_device_state (Wirel
+@@ -294,6 +487,7 @@ wireless_applet_read_device_state (Wirel
  				found = TRUE;
  			}
  		}
@@ -272,7 +270,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -303,17 +497,23 @@ wireless_applet_read_device_state (Wirel
+@@ -305,17 +499,23 @@ wireless_applet_read_device_state (Wirel
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -296,17 +294,14 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -360,6 +560,7 @@ show_warning_dialog (gchar *mesg,...) 
+@@ -364,10 +564,12 @@ show_warning_dialog (gchar *mesg,...) 
  static void
  start_file_read (WirelessApplet *applet)
  {
 +#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
- 		gtk_tooltips_set_tip (applet->tips,
-@@ -368,6 +569,7 @@ start_file_read (WirelessApplet *applet)
- 				NULL);
- 		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
+ 		show_error_dialog (applet, _("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
 +#endif
  }

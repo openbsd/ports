@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2004/10/17 04:41:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/10 20:36:46 marcm Exp $
 
 COMMENT=		"GNOME Virtual File System"
 
-VERSION=		2.6.1.1
+VERSION=		2.8.2
 DISTNAME=		gnome-vfs-${VERSION}
 PKGNAME=		gnome-vfs2-${VERSION}
 CATEGORIES=		devel x11/gnome
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-vfs/2.8/}
 
 MODULES=		devel/gettext
 
@@ -33,6 +33,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE= 	gnu old
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

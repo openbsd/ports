@@ -1,14 +1,15 @@
-$OpenBSD: patch-configure,v 1.7 2004/07/08 17:09:38 marcm Exp $
---- configure.orig	Mon Jun 28 01:06:51 2004
-+++ configure	Thu Jul  8 09:11:37 2004
-@@ -24246,7 +24246,9 @@ fi
+--- configure.orig	Mon Dec  6 02:50:23 2004
++++ configure	Fri Dec 10 10:16:59 2004
+@@ -24563,7 +24563,11 @@ fi
  
- 	;;
-   # list of supported OS cores that do not use libapm
--  *-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
-+  *-*-freebsd*|*-*-netbsd*)
-+	;;
-+  i386-*-openbsd*|powerpc-*-openbsd*)
- 	;;
-   *)
- 	echo "warning: ${host} is not supported by battstat_applet, not building" >&2
+ 	   ;;
+        # list of supported OS cores that do not use libapm
+-       *-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
++       *-*-freebsd*|*-*-netbsd*)
++       ;;
++       i386-*-openbsd*|powerpc-*-openbsd*)
++       ;;
++       *)
+ 	   ;;
+        *)
+ 	   echo "warning: ${host} is not supported by battstat_applet, not building" >&2

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2004/11/21 10:34:59 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2004/12/10 20:36:42 marcm Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 COMMENT-battstat=	"GNOME applet for monitoring battery level"
 
-VERSION=		2.6.2
+VERSION=		2.8.2
 DISTNAME=		gnome-applets-${VERSION}
 PKGNAME=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}p0
@@ -12,7 +12,7 @@ CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-applets/2.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

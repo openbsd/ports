@@ -1,82 +1,94 @@
-$OpenBSD: patch-ltmain_sh,v 1.4 2004/06/23 03:26:21 marcm Exp $
---- ltmain.sh.orig	2004-04-20 16:57:41.000000000 -0600
-+++ ltmain.sh	2004-06-21 17:35:59.000000000 -0600
-@@ -1082,6 +1082,17 @@ compiler."
+--- ltmain.sh.orig	Mon Aug  9 13:07:34 2004
++++ ltmain.sh	Wed Dec  1 18:12:31 2004
+@@ -1374,6 +1374,17 @@
  	continue
  	;;
  
-+      -pthread)
-+        case $host in
-+        *-*-openbsd*)
-+          deplibs="$deplibs $arg"
-+          ;;
-+        *)
-+          continue
-+          ;;
-+        esac
-+        ;;
++	-pthread)
++	case $host in
++	    *-*-openbsd*)
++	    deplibs="deplibs $arg"
++	    ;;
++	    *)
++	    continue
++	    ;;
++	esac
++	;;
 +
        -module)
  	module=yes
  	continue
-@@ -1522,6 +1533,19 @@ compiler."
+@@ -2024,6 +2035,21 @@
  	  fi
  	  continue
  	  ;;
-+	-pthread)
++	  
++	  -pthread)
 +	  case $linkmode in
-+	  lib)
-+	    deplibs="$deplib $deplibs"
-+	    newdependency_libs="$deplib $newdependency_libs"
-+	    ;;
-+	  prog)
-+	    compile_deplibs="$deplib $compile_deplibs"
-+	    finalize_deplibs="$deplib $finalize_deplibs"
-+	    ;;
++	      lib)
++	      deplibs="$deplib $deplibs"
++	      newdependency_libs="$deplib $newdependency_libs"
++	      ;;
++	      prog)
++	      compile_deplibs="$deplib $compile_deplibs"
++	      finalize_deplibs="$deplib $finalize_deplibs"
++	      ;;
 +	  esac
 +	  continue
 +	  ;;
++
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -4575,40 +4599,6 @@ relink_command=\"$relink_command\""
-     # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+@@ -2274,10 +2300,6 @@
+ 	link_static=no # Whether the deplib will be linked statically
+ 	if test -n "$library_names" &&
+ 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
+-	  if test "$installed" = no; then
+-	    notinst_deplibs="$notinst_deplibs $lib"
+-	    need_relink=yes
+-	  fi
+ 	  # This is a shared library
  
--    echo "----------------------------------------------------------------------"
--    echo "Libraries have been installed in:"
+ 	  # Warn about portability, can't link against -module's on
+@@ -5827,40 +5849,6 @@
+     # Exit here if they wanted silent mode.
+     test "$show" = : && exit $EXIT_SUCCESS
+ 
+-    $echo "----------------------------------------------------------------------"
+-    $echo "Libraries have been installed in:"
 -    for libdir in $libdirs; do
--      echo "   $libdir"
+-      $echo "   $libdir"
 -    done
--    echo
--    echo "If you ever happen to want to link against installed libraries"
--    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
--    echo "flag during linking and do at least one of the following:"
+-    $echo
+-    $echo "If you ever happen to want to link against installed libraries"
+-    $echo "in a given directory, LIBDIR, you must either use libtool, and"
+-    $echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
+-    $echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
--      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
--      echo "     during execution"
+-      $echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
+-      $echo "     during execution"
 -    fi
 -    if test -n "$runpath_var"; then
--      echo "   - add LIBDIR to the \`$runpath_var' environment variable"
--      echo "     during linking"
+-      $echo "   - add LIBDIR to the \`$runpath_var' environment variable"
+-      $echo "     during linking"
 -    fi
 -    if test -n "$hardcode_libdir_flag_spec"; then
 -      libdir=LIBDIR
 -      eval flag=\"$hardcode_libdir_flag_spec\"
 -
--      echo "   - use the \`$flag' linker flag"
+-      $echo "   - use the \`$flag' linker flag"
 -    fi
 -    if test -n "$admincmds"; then
--      echo "   - have your system administrator run these commands:$admincmds"
+-      $echo "   - have your system administrator run these commands:$admincmds"
 -    fi
 -    if test -f /etc/ld.so.conf; then
--      echo "   - have your system administrator add LIBDIR to \`/etc/ld.so.conf'"
+-      $echo "   - have your system administrator add LIBDIR to \`/etc/ld.so.conf'"
 -    fi
--    echo
--    echo "See any operating system documentation about shared libraries for"
--    echo "more information, such as the ld(1) and ld.so(8) manual pages."
--    echo "----------------------------------------------------------------------"
-     exit 0
+-    $echo
+-    $echo "See any operating system documentation about shared libraries for"
+-    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
+-    $echo "----------------------------------------------------------------------"
+     exit $EXIT_SUCCESS
      ;;
  

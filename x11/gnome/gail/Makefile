@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 10:56:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/10 20:36:43 marcm Exp $
 
 COMMENT=		"GNOME Accessibility Implementation Library"
 
-DISTNAME=		gail-1.6.6
+DISTNAME=		gail-1.8.1
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gail/1.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gail/1.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext
 
 BUILD_DEPENDS= 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS= 		atk-1.0.300.0::devel/atk \
+LIB_DEPENDS= 		atk-1.0.800.0::devel/atk \
 			gnomecanvas-2::x11/gnome/libgnomecanvas
 
 SEPARATE_BUILD=		concurrent

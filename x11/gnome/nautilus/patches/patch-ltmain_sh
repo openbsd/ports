@@ -1,22 +1,46 @@
-$OpenBSD: patch-ltmain_sh,v 1.4 2004/06/23 03:26:18 marcm Exp $
---- ltmain.sh.orig	2004-04-05 17:24:18.000000000 -0600
-+++ ltmain.sh	2004-06-21 00:10:02.000000000 -0600
-@@ -1844,9 +1844,12 @@ EOF
- 	  if test "$linkmode,$pass" = "prog,link"; then
- 	    compile_deplibs="$deplib $compile_deplibs"
- 	    finalize_deplibs="$deplib $finalize_deplibs"
--	  else
--	    deplibs="$deplib $deplibs"
+--- ltmain.sh.orig	Mon Aug  9 13:07:34 2004
++++ ltmain.sh	Wed Dec  1 18:12:31 2004
+@@ -1374,6 +1374,17 @@
+ 	continue
+ 	;;
+ 
++	-pthread)
++	case $host in
++	    *-*-openbsd*)
++	    deplibs="deplibs $arg"
++	    ;;
++	    *)
 +	    continue
++	    ;;
++	esac
++	;;
++
+       -module)
+ 	module=yes
+ 	continue
+@@ -2024,6 +2035,21 @@
  	  fi
-+	  if test "$linkmode" = "lib"; then
-+	    newdependency_libs="$deplib $newdependency_libs"
-+	  fi
-+	  deplibs="$deplib $deplibs"
  	  continue
  	  ;;
- 	-l*)
-@@ -2259,10 +2262,6 @@ EOF
++	  
++	  -pthread)
++	  case $linkmode in
++	      lib)
++	      deplibs="$deplib $deplibs"
++	      newdependency_libs="$deplib $newdependency_libs"
++	      ;;
++	      prog)
++	      compile_deplibs="$deplib $compile_deplibs"
++	      finalize_deplibs="$deplib $finalize_deplibs"
++	      ;;
++	  esac
++	  continue
++	  ;;
++
+ 	%DEPLIBS%)
+ 	  alldeplibs=yes
+ 	  continue
+@@ -2274,10 +2300,6 @@
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -25,11 +49,11 @@ $OpenBSD: patch-ltmain_sh,v 1.4 2004/06/23 03:26:18 marcm Exp $
 -	    need_relink=yes
 -	  fi
  	  # This is a shared library
- 	
-       # Warn about portability, can't link against -module's on some systems (darwin)
-@@ -5804,40 +5803,6 @@ relink_command=\"$relink_command\""
+ 
+ 	  # Warn about portability, can't link against -module's on
+@@ -5827,40 +5849,6 @@
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = : && exit $EXIT_SUCCESS
  
 -    $echo "----------------------------------------------------------------------"
 -    $echo "Libraries have been installed in:"
@@ -65,6 +89,6 @@ $OpenBSD: patch-ltmain_sh,v 1.4 2004/06/23 03:26:18 marcm Exp $
 -    $echo "See any operating system documentation about shared libraries for"
 -    $echo "more information, such as the ld(1) and ld.so(8) manual pages."
 -    $echo "----------------------------------------------------------------------"
-     exit 0
+     exit $EXIT_SUCCESS
      ;;
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.7 2004/07/08 17:09:38 marcm Exp $
---- ltmain.sh.orig	Thu May 13 08:23:52 2004
-+++ ltmain.sh	Thu Jul  8 09:12:16 2004
+$OpenBSD: patch-ltmain_sh,v 1.8 2004/12/10 20:36:42 marcm Exp $
+--- ltmain.sh.orig	Mon Dec  6 02:50:14 2004
++++ ltmain.sh	Fri Dec 10 10:16:59 2004
 @@ -1857,9 +1857,12 @@ EOF
  	  if test "$linkmode,$pass" = "prog,link"; then
  	    compile_deplibs="$deplib $compile_deplibs"
@@ -16,7 +16,7 @@ $OpenBSD: patch-ltmain_sh,v 1.7 2004/07/08 17:09:38 marcm Exp $
  	  continue
  	  ;;
  	-l*)
-@@ -2274,10 +2277,6 @@ EOF
+@@ -2270,10 +2273,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -27,7 +27,7 @@ $OpenBSD: patch-ltmain_sh,v 1.7 2004/07/08 17:09:38 marcm Exp $
  	  # This is a shared library
  
  	  # Warn about portability, can't link against -module's on
-@@ -5827,40 +5826,6 @@ relink_command=\"$relink_command\""
+@@ -5828,40 +5827,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit $EXIT_SUCCESS
  

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/10 16:44:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/10 20:36:43 marcm Exp $
 
 COMMENT=		"GNOME frontend for GhostScript"
-DISTNAME=		ggv-2.6.2	
+DISTNAME=		ggv-2.8.1
 CATEGORIES=		print x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/	
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ggv/2.6/}	
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ggv/2.8/}	
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext

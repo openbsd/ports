@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2004/10/17 04:41:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/10 20:36:42 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
-VERSION=		2.6.1
+VERSION=		2.8.1
 DISTNAME=		control-center-${VERSION}
 PKGNAME=		control-center2-${VERSION}
 CATEGORIES=		x11 x11/gnome
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/control-center/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/control-center/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:25 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:36:47 marcm Exp $
 bin/gnome-help
 bin/yelp
 lib/bonobo/
@@ -19,6 +19,9 @@ share/locale/bg/LC_MESSAGES/yelp.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/yelp.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/yelp.mo
 share/locale/ca/LC_MESSAGES/yelp.mo
 share/locale/cs/LC_MESSAGES/yelp.mo
 share/locale/cy/
@@ -36,6 +39,9 @@ share/locale/en_GB/LC_MESSAGES/yelp.mo
 share/locale/eo/LC_MESSAGES/yelp.mo
 share/locale/es/LC_MESSAGES/yelp.mo
 share/locale/et/LC_MESSAGES/yelp.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/yelp.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/yelp.mo
@@ -60,6 +66,9 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/yelp.mo
 share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/yelp.mo
 share/locale/kn/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
 share/locale/li/
@@ -69,6 +78,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/yelp.mo
 share/locale/lv/LC_MESSAGES/yelp.mo
+share/locale/mi/
+share/locale/mi/LC_MESSAGES/
+share/locale/mi/LC_MESSAGES/yelp.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/yelp.mo
@@ -84,6 +96,7 @@ share/locale/mr/LC_MESSAGES/yelp.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/yelp.mo
+share/locale/nb/LC_MESSAGES/yelp.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/yelp.mo
@@ -109,9 +122,15 @@ share/locale/sv/LC_MESSAGES/yelp.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/yelp.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/yelp.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/yelp.mo
+share/locale/tk/
+share/locale/tk/LC_MESSAGES/
+share/locale/tk/LC_MESSAGES/yelp.mo
 share/locale/tr/LC_MESSAGES/yelp.mo
 share/locale/uk/LC_MESSAGES/yelp.mo
 share/locale/vi/LC_MESSAGES/yelp.mo

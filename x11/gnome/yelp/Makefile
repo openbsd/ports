@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/10 16:44:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/10 20:36:46 marcm Exp $
 
 COMMENT=		"GNOME help browser"
 
-VERSION=		2.6.1
+VERSION=		2.6.4
 DISTNAME=		yelp-${VERSION}
 CATEGORIES=		x11/gnome
 

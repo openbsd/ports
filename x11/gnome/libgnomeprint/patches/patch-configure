@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2004/07/25 00:24:30 marcm Exp $
---- configure.orig	Tue Jun 22 10:49:59 2004
-+++ configure	Sun Jul 18 20:05:06 2004
-@@ -9087,7 +9087,7 @@ nto-qnx*)
+--- configure.orig	Wed Dec  1 19:06:46 2004
++++ configure	Wed Dec  1 19:07:23 2004
+@@ -9397,7 +9397,7 @@
  openbsd*)
    version_type=sunos
    need_lib_prefix=no
@@ -10,12 +9,12 @@ $OpenBSD: patch-configure,v 1.4 2004/07/25 00:24:30 marcm Exp $
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -22438,7 +22438,7 @@ GNOME_PRINT_DATA_DIR='${datadir}/libgnom
+@@ -23855,7 +23855,7 @@
  GNOME_PRINT_DATA_DIR=$GNOME_PRINT_DATA_DIR
  
  
 -LIBGNOMEPRINT_CFLAGS="$GP_CFLAGS $FREETYPE_CFLAGS"
 +LIBGNOMEPRINT_CFLAGS="$FREETYPE_CFLAGS $GP_CFLAGS"
- LIBGNOMEPRINT_LIBS="$GP_LIBS $FREETYPE_LIBS"
+ LIBGNOMEPRINT_LIBS="$GP_LIBS $FREETYPE_LIBS $Z_LIBS"
  
  

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/07/28 04:55:59 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/12/10 20:36:43 marcm Exp $
 lib/bonobo/libgedit-control.so
+lib/gedit-2/plugins/libchangecase.so
 lib/gedit-2/plugins/libdocinfo.so
 lib/gedit-2/plugins/libindent.so
 lib/gedit-2/plugins/libsample.so

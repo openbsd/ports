@@ -1,10 +1,9 @@
-$OpenBSD: patch-config_gdm_conf_in,v 1.3 2004/09/15 04:15:25 marcm Exp $
---- config/gdm.conf.in.orig	Mon Aug  2 15:20:59 2004
-+++ config/gdm.conf.in	Fri Sep 10 20:42:41 2004
-@@ -72,8 +72,8 @@ TimedLoginDelay=30
- # you should create these user and group.  Anyone found running this as
- # someone too privilaged will get a kick in the ass.  This should have
- # access to only the gdm directories and files.
+--- config/gdm.conf.in.orig	Thu Dec  2 12:40:35 2004
++++ config/gdm.conf.in	Thu Dec  2 12:42:19 2004
+@@ -71,8 +71,8 @@
+ # User and group used for running gdm GUI applicaitons.  By default this
+ # is set to user gdm and group gdm.  This user/group should have very
+ # limited permissions and access to ony the gdm directories and files.
 -User=gdm
 -Group=gdm
 +User=_x11
@@ -12,7 +11,7 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.3 2004/09/15 04:15:25 marcm Exp $
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
  #KillInitClients=true
-@@ -96,8 +96,8 @@ DisplayInitDir=@EXPANDED_SYSCONFDIR@/gdm
+@@ -95,8 +95,8 @@
  XKeepsCrashing=@EXPANDED_SYSCONFDIR@/gdm/XKeepsCrashing
  # Reboot, Halt and suspend commands, you can add different commands
  # separated by a semicolon and gdm will use the first one it can find
@@ -23,12 +22,12 @@ $OpenBSD: patch-config_gdm_conf_in,v 1.3 2004/09/15 04:15:25 marcm Exp $
  #SuspendCommand=
  # Probably should not touch the below this is the standard setup
  ServAuthDir=@EXPANDED_AUTHDIR@
-@@ -136,7 +136,7 @@ Xnest=@X_SERVER_PATH@/Xnest -audit 0 -na
+@@ -135,7 +135,7 @@
  # we force X to use specific vts.  turn VTAllocation to false if this
  # is causing problems.
  #FirstVT=7
 -#VTAllocation=true
 +VTAllocation=false
  # Should double login be treated with a warning (and possibility to change
- # vts on linux systems for console logins)
+ # vts on linux and freebsd systems for console logins)
  #DoubleLoginWarning=true

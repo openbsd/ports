@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/08/10 10:56:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/10 20:36:44 marcm Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
-DISTNAME=		libgnomeprintui-2.6.2
+DISTNAME=		libgnomeprintui-2.8.1
 CATEGORIES=		x11/gnome devel
 
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprintui/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libgnomeprintui/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext

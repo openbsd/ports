@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/09/15 04:15:25 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/10 20:36:43 marcm Exp $
 
 
 COMMENT=		"GNOME display manager"
 
-DISTNAME=		gdm-2.6.0.4
+DISTNAME=		gdm-2.6.0.6
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.jirka.org/gdm.html

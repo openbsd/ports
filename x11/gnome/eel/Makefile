@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/10 10:56:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/10 20:36:42 marcm Exp $
 
 COMMENT=		"Eazel Extensions Library"
 
-DISTNAME=		eel-2.6.2
+DISTNAME=		eel-2.8.2
 CATEGORIES=		devel x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eel/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/eel/2.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2004/10/17 04:41:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/12/10 20:36:45 marcm Exp $
 
 COMMENT=		"GNOME shell and file manager"
 
-DISTNAME=		nautilus-2.6.3
+DISTNAME=		nautilus-2.8.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/nautilus/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/nautilus/2.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL
@@ -39,7 +39,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -DWEB_NAVIGATION_ENABLED" \
 				-L${LOCALBASE}/lib"
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nautilus; \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/gnome/* ${PREFIX}/share/examples/nautilus/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nautilus; 
 
 .include <bsd.port.mk>

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2004/10/10 16:44:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/12/10 20:36:46 marcm Exp $
 
 COMMENT=		"GNOME session"
 
-DISTNAME=		gnome-session-2.6.2
+DISTNAME=		gnome-session-2.8.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-session/2.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

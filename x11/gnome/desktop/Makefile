@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/10/10 16:44:12 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/12/10 20:36:42 marcm Exp $
 
 COMMENT=		"components for the GNOME desktop"
 
-DISTNAME=		gnome-desktop-2.6.2
+DISTNAME=		gnome-desktop-2.8.1
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-desktop/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
@@ -31,6 +31,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
+CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

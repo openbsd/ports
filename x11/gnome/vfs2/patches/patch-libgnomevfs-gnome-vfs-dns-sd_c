@@ -1,0 +1,127 @@
+--- libgnomevfs/gnome-vfs-dns-sd.c.orig	Wed Dec  1 17:56:06 2004
++++ libgnomevfs/gnome-vfs-dns-sd.c	Wed Dec  1 18:04:28 2004
+@@ -60,7 +60,7 @@
+ } dns_message_header;
+ 
+ typedef struct {
+-	char name[NS_MAXDNAME];
++       char name[MAXDNAME];
+ 	guint16 type;
+ 	guint16 class;
+ 	guint32 ttl;
+@@ -225,7 +225,7 @@
+ 	      unsigned char *p,
+ 	      dns_message_header *header)
+ {
+-	if (reply_len < NS_HFIXEDSZ)
++       if (reply_len < HFIXEDSZ)
+ 		return -1;
+ 
+ 	header->id = decode_16 (p); p += 2;
+@@ -235,7 +235,7 @@
+ 	header->nscount = decode_16 (p); p += 2;
+ 	header->arcount = decode_16 (p); p += 2;
+ 
+-	return NS_HFIXEDSZ;
++	return HFIXEDSZ;
+ }
+ 
+ 
+@@ -308,7 +308,7 @@
+ 	unsigned char reply[DNS_REPLY_SIZE];
+ 	unsigned char *p;
+ 	char *searchdomain;
+-	char name[NS_MAXDNAME];
++	char name[MAXDNAME];
+ 	dns_message_header header;
+ 	dns_message_rr rr;
+ 	int res;
+@@ -324,7 +324,7 @@
+ 	/* Use TCP to support large queries */
+ 	_res.options |= RES_USEVC;
+ 	searchdomain = g_strconcat ("_browse._dns-sd._udp.", domain, NULL);
+-	reply_len = res_search (searchdomain, ns_c_in, ns_t_ptr,
++	reply_len = res_search (searchdomain, C_IN, T_PTR,
+ 				reply, sizeof (reply));
+ 	g_free (searchdomain);
+ 	if (reply_len == -1) {
+@@ -368,7 +368,7 @@
+ 			goto error;
+ 		p += len;
+ 		
+-		if (rr.type == ns_t_ptr) {
++		if (rr.type == T_PTR) {
+ 			len = dn_expand (reply, reply + reply_len, p, name, sizeof(name));
+ 			if (len < 0) 
+ 				goto error;
+@@ -419,7 +419,7 @@
+ 	unsigned char reply[DNS_REPLY_SIZE];
+ 	unsigned char *p;
+ 	char *searchdomain;
+-	char name[NS_MAXDNAME];
++	char name[MAXDNAME];
+ 	dns_message_header header;
+ 	dns_message_rr rr;
+ 	GArray *array;
+@@ -436,7 +436,7 @@
+ 	/* Use TCP to support large queries */
+ 	_res.options |= RES_USEVC;
+ 	searchdomain = g_strconcat (type, ".", domain, NULL);
+-	reply_len = res_search (searchdomain, ns_c_in, ns_t_ptr,
++	reply_len = res_search (searchdomain, C_IN, T_PTR,
+ 				reply, sizeof (reply));
+ 	g_free (searchdomain);
+ 	if (reply_len == -1) {
+@@ -482,11 +482,12 @@
+ 			goto error;
+ 		p += len;
+ 		
+-		if (rr.type == ns_t_ptr) {
++		if (rr.type == T_PTR) {
+ 			GnomeVFSDNSSDService service;
+-			char ptr_service[NS_MAXDNAME];
+-			char ptr_type[NS_MAXDNAME];
+-			char ptr_domain[NS_MAXDNAME];
++
++			char ptr_service[MAXDNAME];
++			char ptr_type[MAXDNAME];
++			char ptr_domain[MAXDNAME];
+ 			
+ 			len = dn_expand (reply, reply + reply_len, p, name, sizeof(name));
+ 			if (len < 0) 
+@@ -580,7 +581,7 @@
+ 	int reply_len, len, i;
+ 	unsigned char reply[DNS_REPLY_SIZE];
+ 	unsigned char *p;
+-	char dnsname[NS_MAXDNAME];
++	char dnsname[MAXDNAME];
+ 	dns_message_header header;
+ 	dns_message_rr rr;
+ 	char *full_name;
+@@ -600,7 +601,7 @@
+ 	_res.options |= RES_USEVC;
+   
+ 	full_name = service_to_dns_name (name, type, domain);
+-	reply_len = res_search (full_name, ns_c_in, ns_t_any,
++	reply_len = res_search (full_name, C_IN, T_ANY,
+ 				reply, sizeof (reply));
+ 	g_free (full_name);
+ 	if (reply_len == -1) {
+@@ -644,7 +645,7 @@
+ 			goto error;
+ 		p += len;
+ 		
+-		if (rr.type == ns_t_srv) {
++		if (rr.type == T_SRV) {
+ 			unsigned char *pp;
+ 			int priority, weight, port;
+ 			
+@@ -665,7 +666,7 @@
+ 			}
+ 		}
+ 		
+-		if (rr.type == ns_t_txt) {
++		if (rr.type == T_TXT) {
+ 			*text_raw_out = g_memdup (p, rr.rdlength);
+ 			*text_raw_len_out = rr.rdlength;
+ 		}

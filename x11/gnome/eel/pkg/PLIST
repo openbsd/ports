@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:36:42 marcm Exp $
 include/eel-2/
 include/eel-2/eel/
 include/eel-2/eel/eel-accessibility.h
@@ -31,6 +31,9 @@ include/eel-2/eel/eel-i18n.h
 include/eel-2/eel/eel-image-table.h
 include/eel-2/eel/eel-labeled-image.h
 include/eel-2/eel/eel-marshal.h
+include/eel-2/eel/eel-mime-application-chooser.h
+include/eel-2/eel/eel-mime-extensions.h
+include/eel-2/eel/eel-open-with-dialog.h
 include/eel-2/eel/eel-pango-extensions.h
 include/eel-2/eel/eel-preferences-glade.h
 include/eel-2/eel/eel-preferences.h
@@ -50,6 +53,9 @@ lib/pkgconfig/eel-2.0.pc
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/eel-2.0.mo
+share/locale/ang/
+share/locale/ang/LC_MESSAGES/
+share/locale/ang/LC_MESSAGES/eel-2.0.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/eel-2.0.mo
@@ -140,12 +146,16 @@ share/locale/mr/LC_MESSAGES/eel-2.0.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/eel-2.0.mo
+share/locale/nb/LC_MESSAGES/eel-2.0.mo
 share/locale/ne/
 share/locale/ne/LC_MESSAGES/
 share/locale/ne/LC_MESSAGES/eel-2.0.mo
 share/locale/nl/LC_MESSAGES/eel-2.0.mo
 share/locale/nn/LC_MESSAGES/eel-2.0.mo
 share/locale/no/LC_MESSAGES/eel-2.0.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/eel-2.0.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/eel-2.0.mo

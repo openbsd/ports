@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/11 04:27:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/12/10 20:36:45 marcm Exp $
 bin/metacity
 bin/metacity-message
 bin/metacity-theme-viewer
@@ -41,6 +41,9 @@ share/locale/bg/LC_MESSAGES/metacity.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/metacity.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/metacity.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/metacity.mo
@@ -103,9 +106,13 @@ share/locale/mn/LC_MESSAGES/metacity.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/metacity.mo
+share/locale/nb/LC_MESSAGES/metacity.mo
 share/locale/nl/LC_MESSAGES/metacity.mo
 share/locale/nn/LC_MESSAGES/metacity.mo
 share/locale/no/LC_MESSAGES/metacity.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/metacity.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/metacity.mo
@@ -132,6 +139,9 @@ share/locale/ta/LC_MESSAGES/metacity.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/metacity.mo
+share/locale/tk/
+share/locale/tk/LC_MESSAGES/
+share/locale/tk/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
 share/locale/vi/

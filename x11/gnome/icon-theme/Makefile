@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2004/07/07 14:32:10 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/10 20:36:43 marcm Exp $
 
 COMMENT=		"the base GNOME icon theme"
 
-DISTNAME=		gnome-icon-theme-1.2.3
+DISTNAME=		gnome-icon-theme-2.8.0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
 MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-icon-theme/1.2/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-icon-theme/2.8/}
 EXTRACT_SUFX=           .tar.bz2
 
 # LGPL

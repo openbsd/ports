@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/10/17 04:41:20 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/12/10 20:36:42 marcm Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
 bin/gnome-control-center
 bin/gnome-default-applications-properties
-bin/gnome-file-types-properties
 bin/gnome-font-properties
 bin/gnome-font-viewer
 bin/gnome-keybinding-properties
@@ -58,7 +57,6 @@ share/control-center-2.0/capplets/accessibility-keyboard.desktop
 share/control-center-2.0/capplets/at-properties.desktop
 share/control-center-2.0/capplets/background.desktop
 share/control-center-2.0/capplets/default-applications.desktop
-share/control-center-2.0/capplets/file-types.desktop
 share/control-center-2.0/capplets/font-properties.desktop
 share/control-center-2.0/capplets/gnome-network-preferences.desktop
 share/control-center-2.0/capplets/gnome-settings-mouse.desktop
@@ -72,7 +70,6 @@ share/control-center-2.0/interfaces/
 share/control-center-2.0/interfaces/acme.glade
 share/control-center-2.0/interfaces/apply-font.glade
 share/control-center-2.0/interfaces/at-enable-dialog.glade
-share/control-center-2.0/interfaces/file-types-properties.glade
 share/control-center-2.0/interfaces/font-properties.glade
 share/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade
 share/control-center-2.0/interfaces/gnome-background-properties.glade
@@ -175,6 +172,9 @@ share/locale/bg/LC_MESSAGES/control-center-2.0.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/control-center-2.0.mo
+share/locale/bs/
+share/locale/bs/LC_MESSAGES/
+share/locale/bs/LC_MESSAGES/control-center-2.0.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/control-center-2.0.mo
@@ -237,6 +237,7 @@ share/locale/mn/LC_MESSAGES/control-center-2.0.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/control-center-2.0.mo
+share/locale/nb/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
 share/locale/no/LC_MESSAGES/control-center-2.0.mo

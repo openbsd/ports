@@ -1,17 +1,16 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/09/15 04:12:56 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/12/10 20:36:46 marcm Exp $
 lib/bonobo/monikers/libmoniker_gnome_vfs_std.so
 lib/gnome-vfs-2.0/modules/libbzip2.so
 lib/gnome-vfs-2.0/modules/libcdda.so
-lib/gnome-vfs-2.0/modules/libextfs.so
+lib/gnome-vfs-2.0/modules/libdns-sd.so
 lib/gnome-vfs-2.0/modules/libfile.so
 lib/gnome-vfs-2.0/modules/libftp.so
 lib/gnome-vfs-2.0/modules/libgzip.so
 lib/gnome-vfs-2.0/modules/libhttp.so
 lib/gnome-vfs-2.0/modules/libnntp.so
-lib/gnome-vfs-2.0/modules/libssh.so
 lib/gnome-vfs-2.0/modules/libtar.so
 lib/gnome-vfs-2.0/modules/libvfolder-desktop.so
 lib/gnome-vfs-2.0/modules/libvfs-pipe.so
 lib/gnome-vfs-2.0/modules/libvfs-test.so
 lib/gnome-vfs-2.0/modules/libvfs-translate.so
-@lib lib/libgnomevfs-2.so.600.1
+@lib lib/libgnomevfs-2.so.800.2

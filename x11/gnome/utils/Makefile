@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/10/10 16:44:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/10 20:36:46 marcm Exp $
 
 COMMENT=		"GNOME utility programs"
 
-DISTNAME=		gnome-utils-2.6.2
+DISTNAME=		gnome-utils-2.8.1
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-utils/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-utils/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \

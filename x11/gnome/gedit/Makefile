@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/20 14:48:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/10 20:36:43 marcm Exp $
 
 COMMENT=		"Lightweight GNOME text editor"
-DISTNAME=		gedit-2.6.2	
+DISTNAME=		gedit-2.8.2
 CATEGORIES=		editors x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/	
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gedit/2.6/}	
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gedit/2.8/}	
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
