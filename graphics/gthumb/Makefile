@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/16 17:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/09 17:26:59 sturm Exp $
 
 COMMENT=		"Image viewer and browser for GNOME"
 
 VERSION=		0.13
 DISTNAME=		gthumb-${VERSION}
-PKGNAME=		${DISTNAME}p1
+PKGNAME=		${DISTNAME}p2
 CATEGORIES=		graphics x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gthumb/}
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=		bonobo,bonobox::x11/gnome/bonobo \
 			gnomevfs.::x11/gnome/vfs \
-			glade-gnome.4,glade.4::devel/libglade,gnome \
+			glade-gnome.4,glade.4:libglade-*-gnome:devel/libglade,gnome \
 			gnomeprint.::x11/gnome/print 
 
 USE_X11=		Yes
