@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/02/02 06:15:14 pvalchev Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.1
 NEED_VERSION=		1.358
-CATEGORIES=     	devel math net comms parallel
+CATEGORIES=     	devel math net comms
 COMMENT=		great implementation of the message passing interface
 
 MAINTAINER=		Todd Fries <todd@OpenBSD.org>
