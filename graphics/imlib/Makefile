@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 1999/10/28 03:09:35 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/10 19:01:21 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= sources/imlib
+MASTER_SITE_SUBDIR= stable/sources/imlib
 
 NEED_VERSION=	1.73
 
