@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2001/12/18 01:40:48 avsm Exp $
+# $OpenBSD: Makefile,v 1.61 2001/12/18 12:48:32 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--enable-sysvsem \
 			--enable-sysvshm \
 			--enable-inline-optimization \
+			--enable-sockets \
 			--disable-debug
 
 USE_LIBTOOL=	Yes
