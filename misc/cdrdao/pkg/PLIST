@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/12 21:34:38 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/05 07:46:53 fgsch Exp $
 bin/cdrdao
 man/man1/cdrdao.1
 share/doc/cdrdao/README
 share/doc/cdrdao/README.PlexDAE
 @dirrm share/doc/cdrdao
+share/cdrdao/drivers
+@dirrm share/cdrdao

@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/02 02:12:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/05 07:46:52 fgsch Exp $
 
-DISTNAME= 	cdrdao-1.1.3
+DISTNAME= 	cdrdao-1.1.4
 CATEGORIES=	audio misc
 NEED_VERSION=	1.305
-MASTER_SITES=	http://www.ping.de/sites/daneb/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cdrdao
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
+
+HOMEPAGE=	http://www.ping.de/sites/daneb/
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
