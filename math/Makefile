@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/19 16:47:03 reinhard Exp $
+# $OpenBSD: Makefile,v 1.17 2001/01/23 15:07:59 kevlo Exp $
 #
 
 #    SUBDIR += Scilab
@@ -32,6 +32,8 @@
 #    SUBDIR += numpy
 #    SUBDIR += octave
 #    SUBDIR += oleo
+     SUBDIR += p5-AI-NeuralNet-BackProp
+     SUBDIR += p5-AI-NeuralNet-Mesh
 #    SUBDIR += p5-MatrixReal
 #    SUBDIR += pari
 #    SUBDIR += plplot
