@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/07 00:23:24 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/18 16:23:07 naddy Exp $
 
 COMMENT=	"interpretive macro/programming language"
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc lang
 
 HOMEPAGE=	http://micans.org/zoem/
 
-MAINTAINER=	Andreas Kahari <andreas.kahari@unix.net>
+MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/11/26 17:14:49 alek Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/18 16:23:07 naddy Exp $
 
 COMMENT=	"periodic command scheduler"
 
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	http://sourceforge.net/projects/anacron/
 
-MAINTAINER=	Andreas Kahari <andreas.kahari@unix.net>
+MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

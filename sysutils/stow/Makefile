@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/08 19:06:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/18 16:23:07 naddy Exp $
 
 COMMENT=	"manages software package installations with symlinks"
 
@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.gnu.org/software/stow/stow.html
 
-MAINTAINER=	Andreas Kahari <andreas.kahari@unix.net>
+MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

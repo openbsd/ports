@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/27 20:31:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/18 16:23:07 naddy Exp $
 
 COMMENT=	"dynamic .signature generator"
 
@@ -7,7 +7,7 @@ CATEGORIES=	mail
 
 HOMEPAGE=	http://signify.sourceforge.net/
 
-MAINTAINER=	Andreas Kahari <andreas.kahari@unix.net>
+MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes

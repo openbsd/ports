@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/06/30 23:30:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/18 16:23:07 naddy Exp $
 
 COMMENT=	"clustering algorithm for graphs"
 
@@ -9,7 +9,7 @@ CATEGORIES=	math
 
 HOMEPAGE=	http://micans.org/mcl/
 
-MAINTAINER=	Andreas Kahari <andreas.kahari@unix.net>
+MAINTAINER=	Andreas Kahari <andreas.kahari@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
