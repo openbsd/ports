@@ -8802,6 +8802,7 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/fonts/source/public/euxm
 @dirrm share/texmf/fonts/source/public/ecc
 @dirrm share/texmf/fonts/source/public/dstroke
+@dirrm share/texmf/fonts/source/public/cs
 @dirrm share/texmf/fonts/source/public/concrete
 @dirrm share/texmf/fonts/source/public/concmath
 @dirrm share/texmf/fonts/source/public/cmextra

@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+BEGIN 
+{
+	$prefix=$ENV{'PREFIX'};
+}
+
+s/^(prefix\s*\=\s*)$prefix/$1\$(DESTDIR)$prefix/;
+s/^(texmf\s*\=\s*)$prefix/$1\$(DESTDIR)$prefix/;
