@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2001/12/25 03:25:26 shell Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/29 19:43:49 fgsch Exp $
 
 COMMENT=	"view and edit files in hexadecimal or ASCII"
 
 DISTNAME=	hexedit-1.2.2
 CATEGORIES=	editors
-NEED_VERSION=	1.503
 MASTER_SITES=	http://www.chez.com/prigaux/	\
 		http://merd.net/pixel/
 EXTRACT_SUFX=	.src.tgz

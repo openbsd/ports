@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:50 fgsch Exp $
 
 COMMENT=	"High-level language for numerical computations"
 VERSION=	2.0.16
 DISTNAME=	octave-${VERSION}
 CATEGORIES=    	math
-NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.che.wisc.edu/octave/
 

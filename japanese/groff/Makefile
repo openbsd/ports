@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 01:11:37 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:49 fgsch Exp $
 
 COMMENT=	"japanese groff"
 
 CATEGORIES=	japanese textproc print
-NEED_VERSION=	1.402
 
 PKGNAME=	ja-groff-1.10_0.99
 DISTNAME=	groff-1.10

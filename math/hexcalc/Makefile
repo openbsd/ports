@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/18 07:41:46 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:50 fgsch Exp $
 
 COMMENT=	"multi-radix calculator for x11"
 
@@ -7,7 +7,6 @@ DISTNAME=	hexcalc
 PKGNAME=	${DISTNAME}-${DATE}
 CATEGORIES=	math
 EXTRACT_SUFX=	..tar.Z
-NEED_VERSION=	1.363
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

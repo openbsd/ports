@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2002/07/19 22:25:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/29 19:43:50 fgsch Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
 VERSION=		21.1.14
 DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
-NEED_VERSION=		1.513
 
 HOMEPAGE=		http://www.xemacs.org/
 

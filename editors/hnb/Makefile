@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/13 12:37:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:49 fgsch Exp $
 
 COMMENT=	"hierarchical notebook"
 
 DISTNAME=	hnb-1.8.1
 CATEGORIES=	editors
-NEED_VERSION=	1.528
 
 HOMEPAGE=	http://hnb.sourceforge.net/
 

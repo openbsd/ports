@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/02/20 23:31:28 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/12/29 19:43:50 fgsch Exp $
 
 COMMENT=	"interpreted language for scientific computing"
 
 VERSION=	1.5
 DISTNAME=	yorick-${VERSION}.08
 CATEGORIES=	math devel
-NEED_VERSION=	1.504
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
 EXTRACT_SUFX=	.tgz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/06/09 05:36:32 wilfried Exp $
+# $OpenBSD: Makefile,v 1.26 2002/12/29 19:43:50 fgsch Exp $
 
 COMMENT=	"extensible, customizable real-time display editor"
 
@@ -7,7 +7,6 @@ COMMENT=	"extensible, customizable real-time display editor"
 
 DISTNAME=	xemacs-20.4
 CATEGORIES=	editors
-NEED_VERSION=	1.402
 FAKE=		No
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${DISTNAME}/ \

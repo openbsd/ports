@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/06/09 05:36:32 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2002/12/29 19:43:50 fgsch Exp $
 
 COMMENT=	"graphical word processor ported from Windows"
 
@@ -8,7 +8,6 @@ FAKE=		No
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-NEED_VERSION=	1.496
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

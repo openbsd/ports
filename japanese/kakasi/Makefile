@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 01:11:38 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 19:43:49 fgsch Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	"Kanji -> kana converter"
 
 DISTNAME=	kakasi-2.3.1
 CATEGORIES=	japanese
-NEED_VERSION=	1.402
 MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/
 
 HOMEPAGE=	http://kakasi.namazu.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/06/09 05:36:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.22 2002/12/29 19:43:50 fgsch Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -17,7 +17,6 @@ TRUEMAPLE_DIR?=${TRUEPREFIX}/maple
 
 DISTNAME=	maple-5.5
 CATEGORIES=     math
-NEED_VERSION=	1.496
 
 RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 

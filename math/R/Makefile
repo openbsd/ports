@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/06 13:44:37 ian Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 19:43:50 fgsch Exp $
 
 # R, a clone of the S-Plus (based on AT&T S) statistical package 
 
 COMMENT=	"clone of S, a powerful math/statistics/graphics language"
 DISTNAME=		R-1.4.1
 CATEGORIES=     	math
-NEED_VERSION=		1.359
 
 HOMEPAGE=		http://www.r-project.org/
 

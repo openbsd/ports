@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2002/03/24 20:27:12 lebel Exp $
+# $OpenBSD: Makefile,v 1.45 2002/12/29 19:43:49 fgsch Exp $
 
 COMMENT=	"vi clone, many additional features"
 
 CATEGORIES=	editors
-NEED_VERSION=	1.402
 
 HOMEPAGE=	http://www.vim.org/
 
