@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/17 12:22:17 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/07 13:13:37 reinhard Exp $
 
 # Build just the Tomcat connector for our in-tree Apache
 COMMENT=	"Tomcat (Servlet/JSP) - Apache Connector"
 
-VER=		3.2.1
+VER=		3.2.2
 PKGNAME=	jserv-${VER}
 DISTNAME=	jakarta-tomcat-${VER}-src
 CATEGORIES=	www
-NEED_VERSION=	1.414
-MASTER_SITES=	http://jakarta.apache.org/builds/tomcat/release/v3.2.1/src/
+NEED_VERSION=	1.419
+MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v3.2.2/src/
 
 HOMEPAGE=	http://jakarta.apache.org/
 
