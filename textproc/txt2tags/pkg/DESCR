@@ -1,0 +1,3 @@
+txt2tags is a format conversion tool written in Python that generates
+HTML, XHTML, SGML, LaTeX, Lout, Man Page, MoinMoin, Magic Point and
+PageMaker documents from a single text file with minimal markup.
