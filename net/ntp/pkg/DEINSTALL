@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2001/03/20 15:53:40 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2001/03/24 17:20:36 danh Exp $
 #
 # ntp de-installation
 
@@ -15,7 +15,7 @@ if [ -f "$CONFIG_FILE" ]; then
     echo "| To completely deinstall the $1 package you need to"
     echo "| perform this step as root:"
     echo "|"
-    echo "|           rm -f $CONFIG_DIR/ntp.*"
+    echo "|           rm -f $CONFIG_FILE"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1 at"
     echo "| some future time.  You may also want to remove any"
