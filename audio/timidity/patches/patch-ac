@@ -1,0 +1,12 @@
+diff -u ../timidity-0.2i/instrum.c ./instrum.c
+--- ../timidity-0.2i/instrum.c	Mon May 20 08:15:10 1996
++++ ./instrum.c	Fri Feb  5 11:53:23 1999
+@@ -31,7 +31,7 @@
+ #include <strings.h>
+ #endif
+ 
+-#if defined(__FreeBSD__) || defined (__WIN32__)
++#if defined(__FreeBSD__) || defined (__WIN32__) || defined(__OpenBSD__)
+ #include <stdlib.h>
+ #else
+ #include <malloc.h>
