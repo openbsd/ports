@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:25 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/02/13 06:51:36 kevlo Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k hp300
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 sparc m68k hp300
 DISTNAME=       xfmail-1.4.6
 CATEGORIES=     mail x11
 NEED_VERSION=	1.328
-MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/1.4.6-3/src/
+MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/old/1.4.6-3/src/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://xfmail.slappy.org/
