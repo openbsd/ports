@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2003/05/12 07:26:41 wcobb Exp $
+# $OpenBSD: Makefile,v 1.167 2003/05/13 10:42:16 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -25,6 +25,7 @@
      SUBDIR += cvs2cl 
      SUBDIR += cvsgraph
      SUBDIR += cvsplot
+     SUBDIR += cvsutils
      SUBDIR += cvsweb
      SUBDIR += ddd
      SUBDIR += dejagnu
