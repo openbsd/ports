@@ -1,0 +1,47 @@
+$OpenBSD: patch-despoof_c,v 1.1.1.1 2001/01/05 23:25:07 danh Exp $
+--- despoof.c.orig	Tue Jul 25 10:51:24 2000
++++ despoof.c	Fri Jan  5 18:15:03 2001
+@@ -150,7 +150,7 @@ void grab_packet(u_char *data1, struct p
+ 
+   if (targetaddr == ip->ip_src.s_addr) 
+   {
+-    if (((inquery == 1) && (icmp->icmp_type == ICMP_ECHOREPLY)) || ((inquery == 2) && (icmp->icmp_type == ICMP_TIMESTAMPREPLY)) || ((inquery == 3) && (sport == ntohs(tcphdr->th_dport))))
++    if (((inquery == 1) && (icmp->icmp_type == ICMP_ECHOREPLY)) || ((inquery == 2) && (icmp->icmp_type == ICMP_TSTAMPREPLY)) || ((inquery == 3) && (sport == ntohs(tcphdr->th_dport))))
+     {
+       if (ttlval == ip->ip_ttl)
+       {
+@@ -285,7 +285,7 @@ void usage(char *prog)
+   fprintf(stderr,"    -a set ACK flag on TCP packets\n");
+   fprintf(stderr,"    -h this help screen\n");
+   fprintf(stderr,"    -v verbose\n");
+-  fprintf(stderr,"  -d device to grab local IP or sniff from, default is eth0\n");
++  fprintf(stderr,"  -d device to grab local IP or sniff from\n");
+   fprintf(stderr,"  -l local port to bind to, default is 80\n");
+   fprintf(stderr,"  -p target port to send to, default is 80\n");
+   fprintf(stderr,"  -i inquery packet type to send/receive, types include the following:\n");
+@@ -311,7 +311,7 @@ int main(int argc, char **argv)
+   u_long dst_ip = 0;
+   pid_t pid;
+   
+-  dev = "eth0"; /* default */
++  dev = NULL;
+   verbose = 0;
+   prog = argv[0];
+   sport = 80;
+@@ -408,6 +408,16 @@ int main(int argc, char **argv)
+     fprintf(stderr, "=== and spoof your source IP address at the same time.\n");
+     usage(prog);
+     exit(-1);
++  }
++
++  if (dev == NULL) 
++  {
++    dev = pcap_lookupdev(pcap_err);
++    if (dev == NULL) 
++    {
++      fprintf(stderr, "=== No devices found.\n");
++      exit(-1);
++    }
+   }
+ 
+   if(!spoof)

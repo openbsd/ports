@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/05 23:25:07 danh Exp $
+bin/despoof
+share/doc/despoof/LICENSE
+share/doc/despoof/README
+@dirrm share/doc/despoof
