@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/15 22:27:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/05/15 23:16:59 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -28,7 +28,9 @@ BUILD_DEPENDS=	::devel/binutils/stable
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
 		gtk,gdk::x11/gtk+ \
-		dvdread.::devel/libdvdread
+		dvdread.::devel/libdvdread \
+		mp3lame::audio/lame \
+		ungif::graphics/libungif
 
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
 
