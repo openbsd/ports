@@ -1,17 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2003/08/11 12:55:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2003/12/16 18:54:01 sturm Exp $
 
 COMMENT=        "Zope documentation"
 
-# unversioned, so set to the version of Zope that it covers
-VERSION=	2.5
-DISTNAME=	ZopeBook
-PKGNAME=	zopebook-${VERSION}
+DISTNAME=	ZopeBook-2_6
+PKGNAME=	${DISTNAME:L:S/_/./}
 CATEGORIES=	books
 
-HOMEPAGE=	http://old.zope.org/Documentation/Books/ZopeBook/current/
-MASTER_SITES=	${HOMEPAGE}
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	zopebook-${VERSION}
+HOMEPAGE=	http://zope.org/Documentation/Books/ZopeBook/
 
 MAINTAINER=	Xavier Santolaria <xavier@santolaria.net>
 
@@ -21,19 +16,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	${HOMEPAGE}/2_6Edition/
+DISTFILES=	${DISTNAME}.pdf
+EXTRACT_ONLY=
+
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 INSTALL_LOC=	${PREFIX}/share/doc/zopebook
-DOC_SUBDIRS=	Figures
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_LOC}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${INSTALL_LOC}
-.for i in ${DOC_SUBDIRS}
-	${INSTALL_DATA_DIR} ${INSTALL_LOC}/$i
-	${INSTALL_DATA} `find ${WRKSRC}/$i -maxdepth 1 -type f` \
-		${INSTALL_LOC}/$i
-.endfor
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} ${INSTALL_LOC}
 
 .include <bsd.port.mk>
