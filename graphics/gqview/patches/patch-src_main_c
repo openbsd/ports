@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_c,v 1.1 2003/06/18 01:56:15 avsm Exp $
+--- src/main.c.orig	Tue Jun 17 02:02:21 2003
++++ src/main.c	Tue Jun 17 02:02:43 2003
+@@ -159,7 +159,7 @@ static void editor_line_break(gchar *com
+ 
+ void start_editor_from_path_list(gint n, GList *list)
+ {
+-	gchar current_path[512];
++	gchar current_path[MAXPATHLEN];
+ 	gchar *success;
+ 	gchar *cmd;
+ 	gchar *buf;
