@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/01/16 14:30:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/18 08:11:38 wilfried Exp $
 
 COMMENT=	"extremely lightweight and simple web browser for gnome"
 
 V=		1.2.10
 DISTNAME=	epiphany-${V}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.gnome.org/projects/epiphany/
@@ -21,8 +22,11 @@ EXTRACT_SUFX=	.tar.bz2
 
 BUILD_DEPENDS=	:mozilla-devel-*-gtk2:www/mozilla,-devel,gtk2 \
 		:pkgconfig-*:devel/pkgconfig \
-		:p5-XML-Parser-*:textproc/p5-XML-Parser
-RUN_DEPENDS=	:gnome-desktop-*:x11/gnome/desktop
+		:p5-XML-Parser-*:textproc/p5-XML-Parser \
+		:scrollkeeper-*:textproc/scrollkeeper
+RUN_DEPENDS=	:gnome-desktop-*:x11/gnome/desktop \
+		:gnome-themes-*:x11/gnome/themes \
+		:hicolor-icon-theme-*:x11/hicolor-icon-theme
 LIB_DEPENDS=	gnomeui-2::x11/gnome/libgnomeui \
 		mozilla/gtkembedmoz,mozilla/nspr4,mozilla/plc4,mozilla/plds4,mozilla/xpcom:mozilla-*-gtk2:www/mozilla,gtk2
 
