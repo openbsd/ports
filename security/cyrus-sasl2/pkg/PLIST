@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/08/18 19:01:12 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/12/09 16:01:04 espie Exp $
 @pkgcfl cyrus-sasl-*
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -27,7 +27,7 @@ lib/sasl2/libplain.a
 lib/sasl2/libplain.la
 lib/sasl2/libsasldb.a
 lib/sasl2/libsasldb.la
-man/cat8/saslauthd.8
+man/cat8/saslauthd.0
 man/man3/sasl.3
 man/man3/sasl_authorize_t.3
 man/man3/sasl_auxprop.3
