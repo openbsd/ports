@@ -1,13 +1,13 @@
---- ctags/Makefile.in.orig	Tue Jul 27 18:43:52 1999
-+++ ctags/Makefile.in	Tue Jul 27 18:45:22 1999
+--- ctags/Makefile.in.orig	Mon Sep 27 00:18:29 1999
++++ ctags/Makefile.in	Mon Sep 27 00:18:41 1999
 @@ -6,8 +6,8 @@
  # These are the names of the installed programs, in case you wish to change
  # them.
  #
--CTAGS_PROG	= ctags
--ETAGS_PROG	= etags
-+CTAGS_PROG	= vim-ctags
-+ETAGS_PROG	= vim-etags
+-CTAGS_PROG = ctags
+-ETAGS_PROG = etags
++CTAGS_PROG = vim-ctags
++ETAGS_PROG = vim-etags
  
  # This suffix will be added to all program names. This is especially for
  # installation on Win95/NT hosts using GNU-Win32
