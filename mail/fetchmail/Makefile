@@ -1,29 +1,26 @@
-# $OpenBSD: Makefile,v 1.40 2000/04/26 18:43:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.41 2000/06/08 16:58:54 brad Exp $
 
-DISTNAME=       fetchmail-5.3.8
+DISTNAME=	fetchmail-5.4.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ 
+
 MAINTAINER=	fgsch@openbsd.org
 
-FAKE=			YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+FAKE=	Yes
 
-GNU_CONFIGURE=		YES
-CONFIGURE_ARGS+= --disable-nls
+GNU_CONFIGURE=	Yes
+CONFIGURE_ARGS+= --disable-nls --enable-inet6
 .if defined(WITH_KERBEROS) && ${WITH_KERBEROS:U} == YES
 CONFIGURE_ARGS+= --with-kerberos
 .endif
 .if defined(WITH_SSL) && ${WITH_SSL:U} == YES
 CONFIGURE_ARGS+= --with-ssl
-.endif
-.if defined(WITH_INET6) && ${WITH_INET6:U} == YES
-CONFIGURE_ARGS+= --enable-inet6
 .endif
 
 post-install:
