@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.19 2000/03/29 15:59:51 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.20 2000/03/30 02:09:31 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -64,7 +64,7 @@ _SUBDIRUSE: .USE
 			display=" ($$flavor)"; \
 		else \
 			flavor=''; \
-			disply=''; \
+			display=''; \
 		fi; \
 		if cd ${.CURDIR}/$${entry}.${MACHINE} 2>/dev/null; then \
 			edir=$${entry}.${MACHINE}; \
