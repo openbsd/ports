@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/28 06:48:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/29 23:33:58 fgsch Exp $
 
 DISTNAME=	cgoban-1.9.10
-CATEGORIES=	games
-NEED_VERSION=	1.308
+CATEGORIES=	games x11
+NEED_VERSION=	1.309
 MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
 
 MAINTAINER=	fgsch@openbsd.org
