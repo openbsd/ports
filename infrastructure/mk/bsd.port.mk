@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.583 2003/08/14 15:29:20 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.584 2003/08/15 00:04:45 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -738,7 +738,7 @@ ${WRKPKG}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
 .  endif
 .endif
 .if ${FAKE:L} == "yes"
-PKG_ARGS+=		-s ${WRKINST}${PREFIX}
+PKG_ARGS+=		-S ${WRKINST}
 .endif
 
 CHMOD?=		/bin/chmod
