@@ -1,12 +1,12 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2002/01/08 11:05:53 espie Exp $
---- ltmain.sh.orig	Tue Dec 11 10:38:20 2001
-+++ ltmain.sh	Tue Dec 11 10:38:29 2001
-@@ -2075,7 +2075,7 @@ EOF
- 	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/06/15 23:09:34 espie Exp $
+--- ltmain.sh.orig	Sun Nov  4 19:16:20 2001
++++ ltmain.sh	Sun Jun 16 00:48:18 2002
+@@ -1716,7 +1716,7 @@ compiler."
+ 
  	  if test "$installed" = no; then
  	    notinst_deplibs="$notinst_deplibs $lib"
 -	    need_relink=yes
 +	    need_relink=no
  	  fi
- 	  # This is a shared library
- 	  if test "$linkmode" = lib &&
+ 
+ 	  if test -n "$old_archive_from_expsyms_cmds"; then

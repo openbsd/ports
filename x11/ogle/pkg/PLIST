@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/08 11:05:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/06/15 23:09:34 espie Exp $
 bin/ifo_dump
 bin/ogle
 include/ogle/dvd.h
@@ -9,8 +9,8 @@ lib/ogle/libdvdcontrol.a
 lib/ogle/libdvdcontrol.la
 lib/ogle/libmsgevents.a
 lib/ogle/libmsgevents.la
-lib/ogle/ogle_a52
 lib/ogle/ogle_ac3_p
+lib/ogle/ogle_audio
 lib/ogle/ogle_cli
 lib/ogle/ogle_ctrl
 lib/ogle/ogle_mpeg_ps

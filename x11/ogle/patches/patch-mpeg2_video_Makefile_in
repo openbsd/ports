@@ -1,11 +1,11 @@
---- mpeg2_video/Makefile.in.orig	Fri Dec  7 18:45:26 2001
-+++ mpeg2_video/Makefile.in	Mon Dec 10 01:53:49 2001
-@@ -548,7 +548,7 @@ distclean-depend:
- .c.o:
- @AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
- @AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
--@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-+@AMDEP_TRUE@	PATH=${GAS_DIR}:$$PATH $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- 	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
+--- mpeg2_video/Makefile.in.orig	Wed Jun 12 00:13:36 2002
++++ mpeg2_video/Makefile.in	Sun Jun 16 00:51:56 2002
+@@ -466,7 +466,7 @@ uninstall-pkglibPROGRAMS:
+ 	done
  
- .c.obj:
+ .c.o:
+-	$(COMPILE) -c $<
++	PATH=${GAS_DIR}:$$PATH $(COMPILE) -c $<
+ 
+ # FIXME: We should only use cygpath when building on Windows,
+ # and only if it is available.

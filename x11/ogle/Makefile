@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/19 00:27:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/06/15 23:09:34 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -6,7 +6,7 @@ CATEGORIES=	x11
 NEED_VERSION=	1.500
 
 COMMENT=	"DVD player"
-DISTNAME=	ogle-0.8.2
+DISTNAME=	ogle-0.8.3
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
 MASTER_SITES=	${HOMEPAGE}dist/
@@ -30,7 +30,7 @@ LIB_DEPENDS=	dvdread::devel/libdvdread \
 FLAVORS=	altivec
 FLAVOR?=
 
-CONFIGURE_ARGS=--disable-oss --enable-sunaudio
+CONFIGURE_ARGS=--disable-oss --disable-sunaudio --enable-obsdaudio
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	::devel/binutils/stable

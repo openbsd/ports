@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/01/08 11:05:53 espie Exp $
-lib/ogle/libdvdcontrol.so.5.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2002/06/15 23:09:34 espie Exp $
+lib/ogle/libdvdcontrol.so.6.0
 @exec ln -s %D/%F %D/lib # link libdvdcontrol
 @unexec rm %D/lib/%f 	 # unlink libdvdcontrol
 lib/ogle/libmsgevents.so.4.0
