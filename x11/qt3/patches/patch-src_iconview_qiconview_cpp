@@ -1,0 +1,78 @@
+$OpenBSD: patch-src_iconview_qiconview_cpp,v 1.1 2004/01/08 01:12:59 brad Exp $
+--- src/iconview/qiconview.cpp.orig	2003-12-29 04:26:24.000000000 -0500
++++ src/iconview/qiconview.cpp	2003-12-29 05:12:33.000000000 -0500
+@@ -3264,9 +3264,11 @@ void QIconView::doAutoScroll()
+ {
+     QRect oldRubber = QRect( *d->rubber );
+ 
+-    QPoint pos = QCursor::pos();
+-    pos = viewport()->mapFromGlobal( pos );
+-    pos = viewportToContents( pos );
++    QPoint vp = viewport()->mapFromGlobal( QCursor::pos() );
++    QPoint pos = viewportToContents( vp );
++
++    if ( pos == d->rubber->bottomRight() )
++	return;
+ 
+     d->rubber->setRight( pos.x() );
+     d->rubber->setBottom( pos.y() );
+@@ -3360,14 +3362,14 @@ void QIconView::doAutoScroll()
+ 	    emit selectionChanged( d->currentItem );
+     }
+ 
+-    if ( !QRect( 0, 0, viewport()->width(), viewport()->height() ).contains( pos ) &&
++    if ( !QRect( 50, 50, viewport()->width()-100, viewport()->height()-100 ).contains( vp ) &&
+ 	 !d->scrollTimer ) {
+ 	d->scrollTimer = new QTimer( this );
+ 
+ 	connect( d->scrollTimer, SIGNAL( timeout() ),
+ 		 this, SLOT( doAutoScroll() ) );
+ 	d->scrollTimer->start( 100, FALSE );
+-    } else if ( QRect( 0, 0, viewport()->width(), viewport()->height() ).contains( pos ) &&
++    } else if ( QRect( 50, 50, viewport()->width()-100, viewport()->height()-100 ).contains( vp ) &&
+ 		d->scrollTimer ) {
+ 	disconnect( d->scrollTimer, SIGNAL( timeout() ),
+ 		    this, SLOT( doAutoScroll() ) );
+@@ -4773,7 +4775,7 @@ void QIconView::contentsDropEvent( QDrop
+ 
+     QIconViewItem *i = findItem( e->pos() );
+ 
+-    if ( !i && e->source() == viewport() && d->currentItem && !d->cleared ) {
++    if ( (!i || i == d->currentItem) && e->source() == viewport() && d->currentItem && !d->cleared ) {
+ 	if ( !d->rearrangeEnabled )
+ 	    return;
+ 	QRect r = d->currentItem->rect();
+@@ -5216,11 +5218,11 @@ QIconViewItem* QIconView::findItem( Dire
+ 	d->findContainers( dir, relativeTo, searchRect);
+ 
+     cList->first();
+-    while ( cList->current() && !centerMatch ) {
++    while ( cList->current() ) {
+ 	QPtrList<QIconViewItem> &list = (cList->current())->items;
+ 	for ( item = list.first(); item; item = list.next() ) {
+ 	    if ( neighbourItem( dir, relativeTo, item ) &&
+-		 searchRect.contains( item->rect().center() ) &&
++		 searchRect.intersects( item->rect() ) &&
+ 		 item != currentItem() ) {
+  		int ml = (relativeTo - item->rect().center()).manhattanLength();
+ 		if ( centerMatch ) {
+@@ -6148,7 +6150,9 @@ void QIconView::rebuildContainers()
+ 	    item->d->container2 = 0;
+ 	    c->items.append( item );
+ 	    item = item->next;
+-	} else if ( c->rect.intersects( item->rect() ) ) {
++	} else if ( c->rect.intersects( item->rect() ) && (
++			( d->arrangement == LeftToRight && item->y() >= c->rect.y() ) ||
++			( d->arrangement == TopToBottom && item->x() >= c->rect.x() ) ) ) {
+ 	    item->d->container1 = c;
+ 	    c->items.append( item );
+ 	    c = c->n;
+@@ -6292,7 +6296,7 @@ void QIconView::handleItemChange( QIconV
+ 			    item->selected = TRUE;
+ 			    selectedRect = selectedRect.unite( item->rect() );
+ 			}
+-		    } else if ( item->selected ) {
++		    } else if ( item->selected && !control ) {
+ 			item->selected = FALSE;
+ 			unselectedRect = unselectedRect.unite( item->rect() );
+ 			changed = TRUE;

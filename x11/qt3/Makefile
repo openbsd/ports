@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/10/08 17:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.31 2004/01/08 01:12:59 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		"C++ X11 GUI toolkit"
@@ -8,7 +8,14 @@ COMMENT-postgresql=	"PostgresSQL plugin for qt3"
 COMMENT-mysql=		"MySQL plugin for qt3"
 COMMENT-base=		"include and docs for qt3"
 
-VERSION=	1.2
+PKGNAME=		qt3-${VERSION}
+PKGNAME-mysql=		qt3-mysql-${VERSION}
+PKGNAME-postgresql=	qt3-postgresql-${VERSION}
+PKGNAME-examples=	qt3-examples-${VERSION}
+FULLPKGNAME-base=	qt3-base-${VERSION}
+FULLPKGNAME-html=	qt3-html-${VERSION}
+
+VERSION=	2.3
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -28,26 +35,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#CXXFLAGS+=	-g
-
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	C++
 
 USE_X11=	Yes
-#USE_GMAKE=	Yes
 MAKE_ENV=	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
 		LD_LIBRARY_PATH="${WRKDIST}/lib"
 
 # For qsettings to write its setup
-PORTHOME="${WRKDIST}"
+PORTHOME=	${WRKDIST}
 
 MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
-		-system-zlib -sm -no-g++-exceptions \
-		-v -stl -xrender \
+CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zlib \
+		-qt-imgfmt-mng -qt-imgfmt-png -qt-imgfmt-jpeg -sm -no-g++-exceptions \
+		-v -stl -xrender -xft -fast \
 		-no-sql-odbc \
 		-tablet \
 		-xinerama \
@@ -71,12 +75,7 @@ ALL_TARGET=sub-src sub-tools
 # This is needed to find plugins
 CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
 CONFIGURE_ARGS+=	-plugindir ${QT_PLUGINSDIR}
-#CONFIGURE_ARGS+=-static -debug
-#CONFIGURE_ARGS+=-debug
-#CONFIGURE_ARGS+=-static
 
-# For XFree 4
-#CONFIGURE_ARGS+=-xft
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" 
 
 SUBPACKAGE?=
@@ -105,9 +104,6 @@ LIB_DEPENDS+=mysqlclient::databases/mysql
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 	-plugin-sql-mysql
 .endif
-
-# This one doesn't work
-#LIB_DEPENDS+=iodbc::databases/iodbc
 
 .if !empty(FLAVOR:L:Mno_postgresql)
 CONFIGURE_ARGS+=-no-sql-psql
@@ -148,7 +144,7 @@ QT_BINDIR=	${QT_LIBDIR}/bin${MT_SUFX}
 # for manpages in MESSAGE
 SUBST_VARS=	VERSION QT_LIBDIR QT_DOC
 
-DOCS=	FAQ LICENSE.GPL README README.QT \
+DOCS=	FAQ LICENSE.GPL README README-QT.TXT \
 	changes-3*
 
 VMEM_WARNING=	Yes
@@ -159,7 +155,7 @@ PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig
 
 .if ${FLAVOR:L:Mmt}
 MT_SUFX=-mt
-LIBRARIES=qt${MT_SUFX}.so.3.12 qui${MT_SUFX}.so.1.0
+LIBRARIES=qt${MT_SUFX}.so.3.23 qui${MT_SUFX}.so.1.0
 
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
@@ -191,7 +187,7 @@ pre-install:
 	fi; done
 .else
 MT_SUFX=
-LIBRARIES=qt.so.3.12 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt.so.3.23 editor.so.1.0 qui.so.1.0
 
 post-patch:
 	-rm -rf ${WRKSRC}/examples
@@ -244,13 +240,8 @@ do-install:
 	@ln -sf ${TRUEPREFIX}/lib/qt3/bin${MT_SUFX}/$p ${PREFIX}/bin/$p${MT_SUFX}
 .endfor
 	# plugins
-	${INSTALL_DATA_DIR} ${QT_PLUGINSDIR}/imageformats \
-		${QT_PLUGINSDIR}/sqldrivers ${QT_PLUGINSDIR}/styles \
-		${QT_PLUGINSDIR}/designer
-	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqjpeg.so \
-	    ${QT_PLUGINSDIR}/imageformats
-	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqmng.so \
-	    ${QT_PLUGINSDIR}/imageformats
+	${INSTALL_DATA_DIR} ${QT_PLUGINSDIR}/designer \
+		${QT_PLUGINSDIR}/sqldrivers ${QT_PLUGINSDIR}/styles
 .if empty(FLAVOR:L:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
@@ -267,13 +258,5 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
-
-
-PKGNAME=		qt3-${VERSION}
-PKGNAME-mysql=		qt3-mysql-${VERSION}
-PKGNAME-postgresql=	qt3-postgresql-${VERSION}
-PKGNAME-examples=	qt3-examples-${VERSION}
-FULLPKGNAME-base=	qt3-base-${VERSION}
-FULLPKGNAME-html=	qt3-html-${VERSION}
 
 .include <bsd.port.mk>

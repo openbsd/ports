@@ -1,7 +1,7 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.9 2003/04/05 14:45:19 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Mon Feb 24 09:30:51 2003
-+++ qmake/generators/unix/unixmake2.cpp	Sat Mar 22 17:57:45 2003
-@@ -228,10 +228,14 @@ UnixMakefileGenerator::writeMakeParts(QT
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.10 2004/01/08 01:12:59 brad Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	2003-11-10 05:22:48.000000000 -0500
++++ qmake/generators/unix/unixmake2.cpp	2003-12-29 04:35:25.000000000 -0500
+@@ -293,10 +293,14 @@ UnixMakefileGenerator::writeMakeParts(QT
      } else if (!project->isActiveConfig("staticlib") && project->variables()["QMAKE_APP_FLAG"].isEmpty()) {
  	t << "TARGETA	= " << var("TARGETA") << endl;
  	if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
@@ -20,7 +20,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.9 2003/04/05 14:45:19 es
  	} else {
  	    t << "TARGETD	= " << var("TARGET_x") << endl;
  	    t << "TARGET0	= " << var("TARGET_") << endl;
-@@ -1024,6 +1028,7 @@ void UnixMakefileGenerator::init2()
+@@ -1238,6 +1242,7 @@ void UnixMakefileGenerator::init2()
  							    project->first("VER_PAT"));
  	    }
  	    project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
@@ -28,7 +28,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.9 2003/04/05 14:45:19 es
  	} else {
  	    project->variables()["TARGET_"].append("lib" + project->first("TARGET") + "." +
  						   project->first("QMAKE_EXTENSION_SHLIB"));
-@@ -1044,10 +1049,19 @@ void UnixMakefileGenerator::init2()
+@@ -1258,10 +1263,19 @@ void UnixMakefileGenerator::init2()
  		project->variables()["TARGET_x"].append("lib" + project->first("TARGET") + "." +
  							project->first("QMAKE_EXTENSION_SHLIB") +
  							"." + project->first("VER_MAJ"));
@@ -52,7 +52,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.9 2003/04/05 14:45:19 es
  		project->variables()["TARGET_x.y.z"].append("lib" + project->first("TARGET") +
  							    "." +
  							    project->variables()[
-@@ -1056,7 +1070,10 @@ void UnixMakefileGenerator::init2()
+@@ -1270,7 +1284,10 @@ void UnixMakefileGenerator::init2()
  							    project->first("VER_MIN") +  "." +
  							    project->first("VER_PAT"));
  	    }
@@ -64,3 +64,59 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.9 2003/04/05 14:45:19 es
  	}
  	if(project->isEmpty("QMAKE_LN_SHLIB"))
  	    project->variables()["QMAKE_LN_SHLIB"].append("ln -s");
+@@ -1358,6 +1375,20 @@ void UnixMakefileGenerator::init2()
+ }
+ 
+ QString
++UnixMakefileGenerator::prefixedVariable( const QString &projectVariableName, const QString &defaultSuffix )
++{
++    QString prefix = qInstallPath();
++
++    QString value = var( projectVariableName );
++    if ( value.isEmpty() )
++	value = "${prefix}" + defaultSuffix;
++    else if ( value.startsWith( prefix ) )
++	value.replace( prefix, "${prefix}" );
++
++    return value;
++}
++
++QString
+ UnixMakefileGenerator::libtoolFileName()
+ {
+     QString ret = var("TARGET");
+@@ -1476,13 +1507,13 @@ UnixMakefileGenerator::writePkgConfigFil
+     QTextStream t(&ft);
+ 
+     QString prefix = qInstallPath();
+-    QString libDir = prefix + "/lib";
+-    QString includeDir = prefix + "/include";
++    QString libDir = prefixedVariable( "libs.path", "/lib" );
++    QString includeDir = prefixedVariable( "headers.path", "/include" );
+ 
+-    t << "prefix=" << libDir << endl;
++    t << "prefix=" << prefix << endl;
+     t << "exec_prefix=${prefix}\n"
+-      << "libdir=${exec_prefix}/lib\n"
+-      << "includedir=${prefix}/include" << endl;
++      << "libdir=" << libDir << endl
++      << "includedir=" << includeDir << endl;
+     // non-standard entry. Provides useful info normally only
+     // contained in the internal .qmake.cache file
+     t << varGlue("CONFIG", "qt_config=", " ", "") << endl << endl;
+@@ -1499,7 +1530,7 @@ UnixMakefileGenerator::writePkgConfigFil
+ 	libs << "QMAKE_LIBS"; //obvious one
+     if(project->isActiveConfig("thread"))
+ 	libs << "QMAKE_LFLAGS_THREAD"; //not sure about this one, but what about things like -pthread?
+-    t << "Libs: -L" << libDir << " -l" << lname << " ";
++    t << "Libs: -L${libdir} -l" << var( "QMAKE_ORIG_TARGET" ) << " ";
+     for(QStringList::ConstIterator it = libs.begin(); it != libs.end(); ++it)
+ 	t << project->variables()[(*it)].join(" ") << " ";
+     t << endl;
+@@ -1511,5 +1542,5 @@ UnixMakefileGenerator::writePkgConfigFil
+       << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
+       << project->variables()["PRL_EXPORT_CXXFLAGS"].join(" ")
+ 	//      << varGlue("DEFINES","-D"," -D"," ")
+-      << " -I" << includeDir;
++      << " -I${includedir}" << endl;
+ }

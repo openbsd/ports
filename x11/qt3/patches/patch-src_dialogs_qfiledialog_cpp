@@ -1,21 +1,12 @@
-$OpenBSD: patch-src_dialogs_qfiledialog_cpp,v 1.5 2003/06/17 01:29:17 avsm Exp $
---- src/dialogs/qfiledialog.cpp.orig	Mon Feb 24 08:29:49 2003
-+++ src/dialogs/qfiledialog.cpp	Tue Jun 17 02:25:13 2003
-@@ -3165,7 +3165,7 @@ void QFileDialog::setDir( const QString 
- 	if ( i == 1 ) {
- #if defined(QT_THREAD_SUPPORT) && defined(_POSIX_THREAD_SAFE_FUNCTIONS)
- 
--#  ifndef _POSOX_LOGIN_NAME_MAX
-+#  ifndef _POSIX_LOGIN_NAME_MAX
- #    define _POSIX_LOGIN_NAME_MAX 9
- #  endif // _POSIX_LOGIN_NAME_MAX
- 
-@@ -3182,7 +3182,7 @@ void QFileDialog::setDir( const QString 
+$OpenBSD: patch-src_dialogs_qfiledialog_cpp,v 1.6 2004/01/08 01:12:59 brad Exp $
+--- src/dialogs/qfiledialog.cpp.orig	2003-10-09 21:47:08.000000000 -0400
++++ src/dialogs/qfiledialog.cpp	2003-11-11 19:36:27.000000000 -0500
+@@ -3157,7 +3157,7 @@ void QFileDialog::setDir( const QString 
  	    user = dr.mid( 1, i-1 ).local8Bit();
  	dr = dr.mid( i, dr.length() );
  	struct passwd *pw;
 -#if defined(QT_THREAD_SUPPORT) && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && !defined(Q_OS_FREEBSD)
-+#if defined(QT_THREAD_SUPPORT) && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && !defined(__OpenBSD__)
++#if defined(QT_THREAD_SUPPORT) && defined(_POSIX_THREAD_SAFE_FUNCTIONS) && !(defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD))
  	struct passwd mt_pw;
  	char buffer[2048];
  	if ( ::getpwnam_r( user, &mt_pw, buffer, 2048, &pw ) == 0 && pw == &mt_pw )

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.7 2003/04/05 14:45:19 espie Exp $
---- configure.orig	Tue Feb 11 04:19:48 2003
-+++ configure	Sat Mar 22 17:59:44 2003
-@@ -830,7 +830,7 @@ while [ "$#" -gt 0 ]; do
+$OpenBSD: patch-configure,v 1.8 2004/01/08 01:12:59 brad Exp $
+--- configure.orig	2003-10-21 06:04:20.000000000 -0400
++++ configure	2003-12-27 19:52:21.000000000 -0500
+@@ -913,7 +913,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
  	if [ "$VAL" = "yes" ]; then
  	    if [ "$OPT_VERBOSE" = "$VAL" ]; then 	    # takes two verboses to turn on qmake debugs
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure,v 1.7 2003/04/05 14:45:19 espie Exp $
              else
  		OPT_VERBOSE=yes
  	    fi
-@@ -1440,7 +1440,7 @@ if echo $MODULES | grep sql >/dev/null; 
+@@ -1537,7 +1537,7 @@ if echo $MODULES | grep sql >/dev/null; 
      MYSQL_REQ="-lmysqlclient mysql.h"
      OCI_REQ="-lclntsh -lwtc8 oci.h"
      PSQL_REQ="-lpq postgres.h libpq/libpq-fs.h catalog/pg_type.h libpq-fe.h"
 -    ODBC_REQ="-lodbc sql.h sqlext.h"
 +    ODBC_REQ="-liodbc sql.h sqlext.h"
      TDS_REQ="-lsybdb sybfront.h sybdb.h"
+     DB2_REQ="-ldb2 sqlcli.h sqlcli1.h"
      for _SQLDR in $CFG_SQL_AVAILABLE; do
- 	case $_SQLDR in
-@@ -2001,7 +2001,7 @@ if [ "$Edition" = "free" ]; then
+@@ -2177,7 +2177,7 @@ if [ "$Edition" = "free" ]; then
  	else
  	    echo "Do you accept the terms of $affix license? \c"
  	fi
@@ -28,3 +28,25 @@ $OpenBSD: patch-configure,v 1.7 2003/04/05 14:45:19 espie Exp $
  	echo
  	if [ "$acceptance" = "yes" ]; then
  	    break
+@@ -2601,8 +2601,8 @@ fi
+ if [ "$CFG_LIBMNG" = "system" ]; then
+     QMAKE_CONFIG="$QMAKE_CONFIG system-mng"
+     if [ "$CFG_MNG" = "yes" ]; then
+-	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT+=-lmng\""
+-	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT_THREAD+=-lmng\""
++	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT+=-lmng -llcms -ljpeg\""
++	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT_THREAD+=-lmng -llcms -ljpeg\""
+     fi
+ fi
+ if [ "$CFG_MNG" = "no" ]; then
+@@ -2628,8 +2628,8 @@ fi
+ if [ "$CFG_LIBPNG" = "system" ]; then
+     QMAKE_CONFIG="$QMAKE_CONFIG system-png"
+     if [ "$CFG_PNG" = "yes" ]; then
+-	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT+=-lpng\""
+-	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT_THREAD+=-lpng\""
++	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT+=-lpng -lz\""
++	QMAKE_VARS="$QMAKE_VARS \"QMAKE_LIBS_QT_THREAD+=-lpng -lz\""
+     fi
+ fi
+ if [ "$CFG_PNG" = "no" ]; then
