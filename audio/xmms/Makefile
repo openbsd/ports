@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2005/01/02 20:27:16 alek Exp $
+# $OpenBSD: Makefile,v 1.38 2005/02/07 15:05:51 espie Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -66,7 +66,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-ipv6
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			CFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DOCS=			README NEWS FAQ
