@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/03/19 03:34:04 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/28 15:52:08 lebel Exp $
 bin/neon-config
 include/neon/ne_207.h
 include/neon/ne_acl.h
@@ -84,6 +84,7 @@ share/neon/macros/socklen-arg-type.m4
 share/neon/macros/strftime.m4
 %%SHARED%%
 @dirrm share/neon/macros
+@dirrm share/neon
 @dirrm share/doc/neon/html
 @dirrm share/doc/neon
 @dirrm include/neon
