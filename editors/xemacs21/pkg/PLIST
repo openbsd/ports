@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:01:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/11/07 10:00:48 espie Exp $
 bin/ellcc
 bin/gnuattach
 bin/gnuclient
@@ -11,10 +11,9 @@ bin/xemacs-b2m
 bin/xemacs-ctags
 bin/xemacs-etags
 bin/xemacs-rcs-checkin
-info/xemacs-${VERSION}/
+@info info/xemacs-${VERSION}/
 @info info/xemacs-${VERSION}/cl.info
 @info info/xemacs-${VERSION}/custom.info
-info/xemacs-${VERSION}/dir
 @info info/xemacs-${VERSION}/emodules.info
 info/xemacs-${VERSION}/external-widget.info
 @info info/xemacs-${VERSION}/info.info

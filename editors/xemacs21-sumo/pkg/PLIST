@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:01:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/11/07 10:00:47 espie Exp $
 lib/xemacs/
 lib/xemacs/xemacs-packages/
 lib/xemacs/xemacs-packages/etc/
@@ -1133,7 +1133,7 @@ lib/xemacs/xemacs-packages/etc/w3/unknown.document.xbm
 lib/xemacs/xemacs-packages/etc/w3/uuencoded.document.xbm
 lib/xemacs/xemacs-packages/etc/w3/workstation.xbm
 lib/xemacs/xemacs-packages/etc/xslt-process/
-lib/xemacs/xemacs-packages/etc/xslt-process/doc/
+@info lib/xemacs/xemacs-packages/etc/xslt-process/doc/
 lib/xemacs/xemacs-packages/etc/xslt-process/doc/xslt-process.gif
 @info lib/xemacs/xemacs-packages/etc/xslt-process/doc/xslt-process.info
 lib/xemacs/xemacs-packages/etc/xslt-process/doc/xslt-process.pdf
@@ -1164,45 +1164,18 @@ lib/xemacs/xemacs-packages/etc/zenirc/server-list
 lib/xemacs/xemacs-packages/etc/zenirc/tao-of-irc
 lib/xemacs/xemacs-packages/etc/zenirc/tour.of.irc
 lib/xemacs/xemacs-packages/etc/zenirc/undernet
-lib/xemacs/xemacs-packages/info/
+@info lib/xemacs/xemacs-packages/info/
 @info lib/xemacs/xemacs-packages/info/auctex.info
 @info lib/xemacs/xemacs-packages/info/bbdb.info
 @info lib/xemacs/xemacs-packages/info/build.info
-lib/xemacs/xemacs-packages/info/calc.info
-lib/xemacs/xemacs-packages/info/calc.info-1
-lib/xemacs/xemacs-packages/info/calc.info-10
-lib/xemacs/xemacs-packages/info/calc.info-11
-lib/xemacs/xemacs-packages/info/calc.info-12
-lib/xemacs/xemacs-packages/info/calc.info-13
-lib/xemacs/xemacs-packages/info/calc.info-14
-lib/xemacs/xemacs-packages/info/calc.info-15
-lib/xemacs/xemacs-packages/info/calc.info-16
-lib/xemacs/xemacs-packages/info/calc.info-17
-lib/xemacs/xemacs-packages/info/calc.info-18
-lib/xemacs/xemacs-packages/info/calc.info-19
-lib/xemacs/xemacs-packages/info/calc.info-2
-lib/xemacs/xemacs-packages/info/calc.info-20
-lib/xemacs/xemacs-packages/info/calc.info-21
-lib/xemacs/xemacs-packages/info/calc.info-22
-lib/xemacs/xemacs-packages/info/calc.info-23
-lib/xemacs/xemacs-packages/info/calc.info-24
-lib/xemacs/xemacs-packages/info/calc.info-25
-lib/xemacs/xemacs-packages/info/calc.info-26
-lib/xemacs/xemacs-packages/info/calc.info-27
-lib/xemacs/xemacs-packages/info/calc.info-3
-lib/xemacs/xemacs-packages/info/calc.info-4
-lib/xemacs/xemacs-packages/info/calc.info-5
-lib/xemacs/xemacs-packages/info/calc.info-6
-lib/xemacs/xemacs-packages/info/calc.info-7
-lib/xemacs/xemacs-packages/info/calc.info-8
-lib/xemacs/xemacs-packages/info/calc.info-9
+@info lib/xemacs/xemacs-packages/info/calc.info
 @info lib/xemacs/xemacs-packages/info/cc-mode.info
 @info lib/xemacs/xemacs-packages/info/clearcase.info
 @info lib/xemacs/xemacs-packages/info/ediff.info
 @info lib/xemacs/xemacs-packages/info/efs.info
 @info lib/xemacs/xemacs-packages/info/eieio.info
 @info lib/xemacs/xemacs-packages/info/elib.info
-lib/xemacs/xemacs-packages/info/emacs-mime.info
+@info lib/xemacs/xemacs-packages/info/emacs-mime.info
 @info lib/xemacs/xemacs-packages/info/eshell.info
 @info lib/xemacs/xemacs-packages/info/ess.info
 @info lib/xemacs/xemacs-packages/info/eudc.info
@@ -1216,13 +1189,8 @@ lib/xemacs/xemacs-packages/info/emacs-mime.info
 @info lib/xemacs/xemacs-packages/info/liece.info
 @info lib/xemacs/xemacs-packages/info/mailcrypt.info
 @info lib/xemacs/xemacs-packages/info/message.info
-lib/xemacs/xemacs-packages/info/mew.info
-lib/xemacs/xemacs-packages/info/mew.info-1
-lib/xemacs/xemacs-packages/info/mew.info-2
-lib/xemacs/xemacs-packages/info/mew.info-3
-lib/xemacs/xemacs-packages/info/mew.jis.info
-lib/xemacs/xemacs-packages/info/mew.jis.info-1
-lib/xemacs/xemacs-packages/info/mew.jis.info-2
+@info lib/xemacs/xemacs-packages/info/mew.info
+@info lib/xemacs/xemacs-packages/info/mew.jis.info
 @info lib/xemacs/xemacs-packages/info/mh-e.info
 @info lib/xemacs/xemacs-packages/info/mmm.info
 @info lib/xemacs/xemacs-packages/info/patcher.info
@@ -1241,10 +1209,7 @@ lib/xemacs/xemacs-packages/info/mew.jis.info-2
 @info lib/xemacs/xemacs-packages/info/tramp.info
 @info lib/xemacs/xemacs-packages/info/vhdl-mode.info
 @info lib/xemacs/xemacs-packages/info/viper.info
-lib/xemacs/xemacs-packages/info/vm.info
-lib/xemacs/xemacs-packages/info/vm.info-1
-lib/xemacs/xemacs-packages/info/vm.info-2
-lib/xemacs/xemacs-packages/info/vm.info-3
+@info lib/xemacs/xemacs-packages/info/vm.info
 @info lib/xemacs/xemacs-packages/info/w3-faq.info
 @info lib/xemacs/xemacs-packages/info/w3.info
 @info lib/xemacs/xemacs-packages/info/xslt-process.info
