@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/25 18:57:06 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/06/03 22:56:44 naddy Exp $
 lib/zope/lib/python/Products/CMFPlone/.cvsignore
 lib/zope/lib/python/Products/CMFPlone/CREDITS.txt
 lib/zope/lib/python/Products/CMFPlone/ChangeLog
@@ -49,20 +49,11 @@ lib/zope/lib/python/Products/CMFPlone/migrations/beta2_beta3.py
 lib/zope/lib/python/Products/CMFPlone/migrations/beta3_rc1.py
 lib/zope/lib/python/Products/CMFPlone/migrations/final_one_zero_one.py
 lib/zope/lib/python/Products/CMFPlone/migrations/migration_util.py
+lib/zope/lib/python/Products/CMFPlone/migrations/one01_one02.py
 lib/zope/lib/python/Products/CMFPlone/migrations/rc1_rc2.py
 lib/zope/lib/python/Products/CMFPlone/migrations/rc2_final.py
 lib/zope/lib/python/Products/CMFPlone/refresh.txt
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/calendar_popup.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/calendar_support.pt
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/event_edit.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getBeginAndEndTimes.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getClassForDay.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getEventString.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getNextMonth.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getPopupPositionScript.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getPopupScript.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/getPreviousMonth.py
-lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/validate_event_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCollector/collector_add_issue_form.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCollector/collector_contents.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCollector/collector_edit_form.pt
@@ -109,7 +100,6 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki/wikipage_toc.
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki/wikipage_view.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/ratings/rate_content.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_3rdParty/ratings/ratings_box.pt
-lib/zope/lib/python/Products/CMFPlone/skins/plone_content/data.xml.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_content/discussionitem_view.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_content/document_edit_form.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_content/document_edit_form.pt.properties
@@ -140,12 +130,17 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_content/newsitem_view.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_content/newsitem_view.pt.properties
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_formtooltip.js.dtml
 lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/plone_javascripts.js.dtml
+lib/zope/lib/python/Products/CMFPlone/skins/plone_ecmascript/vcXMLRPC.js.dtml
+lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/.#folder_listing.pt.1.36.4.4
+lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/calendar_popup.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/content_status_history.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/content_status_history.pt.properties
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/discussion_reply_form.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/discussion_reply_form.pt.properties
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/discussion_reply_preview.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/discussion_reply_preview.pt.properties
+lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/enabling_cookies.pt
+lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/enabling_cookies.pt.properties
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/folder_edit_form.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/folder_factories.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/folder_factories.pt.properties
@@ -158,6 +153,8 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/folder_rename_form.pt.pr
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/help.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/history_comparison.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/history_form.pt
+lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/insufficient_privileges.pt
+lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/insufficient_privileges.pt.properties
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/join_form.pt
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/join_form.pt.properties
 lib/zope/lib/python/Products/CMFPlone/skins/plone_forms/logged_in.py
@@ -202,8 +199,6 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_images/arrowBlank.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/arrowDown.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/arrowUp.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/backtalk.gif
-lib/zope/lib/python/Products/CMFPlone/skins/plone_images/bullet.gif
-lib/zope/lib/python/Products/CMFPlone/skins/plone_images/bulletBig.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/defaultUser.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/discussionitem_icon.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_images/document_icon.gif
@@ -264,6 +259,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/discussio
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/document_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/editSynProperties.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/enableSyndication.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/event_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/file_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/folder_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/getFilenameFromRequest.py
@@ -277,6 +273,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/register.
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/sendto.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_content_status_modify.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_document_edit.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_event_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_file_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_folder_edit.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_folder_rename.py
@@ -292,10 +289,15 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_synPropertiesForm.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/fromPortalTime.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/generateId.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getBeginAndEndTimes.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getEventString.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getFolderContents.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getNextMonth.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getObjSize.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPersonalFolderFor.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPlonePersonalPortait.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPopupScript.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getPreviousMonth.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/getReplyReplies.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/hasActionId.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/homePageText.py
@@ -315,6 +317,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/prepare_slots.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/queryCatalog.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/quick_undo.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/rejectAnonymous.py
+lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/require_login.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/reverseList.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/save_xml.py
 lib/zope/lib/python/Products/CMFPlone/skins/plone_scripts/selectedTabs.py
@@ -381,6 +384,7 @@ lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/logo.jpg
 lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/stylesheet_properties.props
 lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/user.gif
 lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/plone.css.dtml
+lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/ploneCustom.css.dtml
 lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/ploneNS4.css.dtml
 lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/plonePresentation.css.dtml
 lib/zope/lib/python/Products/CMFPlone/skins/plone_styles/plonePrint.css.dtml
@@ -443,6 +447,7 @@ lib/zope/lib/python/Products/CMFPlone/version.txt
 lib/zope/lib/python/Products/CMFPlone/www/addPropertySheet.zpt
 lib/zope/lib/python/Products/CMFPlone/www/addSite.zpt
 lib/zope/lib/python/Products/CMFPlone/www/migrationTool.dtml
+lib/zope/lib/python/Products/DCWorkflow/.#version.txt.1.8
 lib/zope/lib/python/Products/DCWorkflow/CHANGES.txt
 lib/zope/lib/python/Products/DCWorkflow/ContainerTab.py
 lib/zope/lib/python/Products/DCWorkflow/DCWorkflow.py
@@ -585,6 +590,7 @@ lib/zope/lib/python/Products/i18n/plone-ca.po
 lib/zope/lib/python/Products/i18n/plone-cs.po
 lib/zope/lib/python/Products/i18n/plone-da.po
 lib/zope/lib/python/Products/i18n/plone-de.po
+lib/zope/lib/python/Products/i18n/plone-en.po
 lib/zope/lib/python/Products/i18n/plone-eo.po
 lib/zope/lib/python/Products/i18n/plone-es.po
 lib/zope/lib/python/Products/i18n/plone-eu.po
