@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/06/11 01:34:03 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/08/03 17:25:45 fgsch Exp $
 bin/xmahjongg
 man/man6/xmahjongg.6
-share/xmahjongg/layouts/default
-share/xmahjongg/layouts/bridge
-share/xmahjongg/layouts/wedges
-share/xmahjongg/layouts/ceremonial
-share/xmahjongg/layouts/farandole
-share/xmahjongg/layouts/arena
-share/xmahjongg/layouts/theater
-share/xmahjongg/layouts/deepwell
-share/xmahjongg/layouts/hourglass
-share/xmahjongg/layouts/arrow
-share/xmahjongg/layouts/papillon
-share/xmahjongg/tiles/thin.gif
-share/xmahjongg/tiles/small.gif
-share/xmahjongg/tiles/thick.gif
-share/xmahjongg/tiles/gnome.gif
-share/xmahjongg/tiles/gnome2.gif
-share/xmahjongg/tiles/dorothys.gif
-share/xmahjongg/tiles/dorwhite.gif
-share/xmahjongg/tiles/real.gif
 share/xmahjongg/backgrounds/default.gif
 share/xmahjongg/backgrounds/green.gif
-@dirrm share/xmahjongg/layouts
+share/xmahjongg/layouts/arena
+share/xmahjongg/layouts/arrow
+share/xmahjongg/layouts/bridge
+share/xmahjongg/layouts/ceremonial
+share/xmahjongg/layouts/deepwell
+share/xmahjongg/layouts/default
+share/xmahjongg/layouts/farandole
+share/xmahjongg/layouts/hourglass
+share/xmahjongg/layouts/papillon
+share/xmahjongg/layouts/theater
+share/xmahjongg/layouts/wedges
+share/xmahjongg/tiles/dorothys.gif
+share/xmahjongg/tiles/dorwhite.gif
+share/xmahjongg/tiles/gnome.gif
+share/xmahjongg/tiles/gnome2.gif
+share/xmahjongg/tiles/real.gif
+share/xmahjongg/tiles/small.gif
+share/xmahjongg/tiles/thick.gif
+share/xmahjongg/tiles/thin.gif
 @dirrm share/xmahjongg/tiles
+@dirrm share/xmahjongg/layouts
 @dirrm share/xmahjongg/backgrounds
 @dirrm share/xmahjongg

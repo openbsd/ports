@@ -1,6 +1,7 @@
---- Makefile.in.orig	Mon Apr  3 22:40:40 2000
-+++ Makefile.in	Wed Apr  5 04:23:32 2000
-@@ -510,13 +510,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/08/03 17:25:45 fgsch Exp $
+--- Makefile.in.orig	Sun Jul  1 01:15:44 2001
++++ Makefile.in	Fri Aug  3 14:21:13 2001
+@@ -513,13 +513,13 @@ images.c: $(IMAGES) giftoc
  	./giftoc -extern -makename -dir $(srcdir) $(IMAGES) > $@
  
  install-share:
