@@ -1,32 +1,33 @@
-# $OpenBSD: Makefile,v 1.35 2000/02/15 05:05:30 turan Exp $
+# $OpenBSD: Makefile,v 1.36 2000/03/12 01:11:48 espie Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 DISTNAME=	lesstif-0.89.9
 CATEGORIES=	x11
+NEED_VERSION=	1.73
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
 
-NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	yes
+USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
+FAKE=		Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static --enable-production --enable-build-12 \
 		--disable-build-20 --disable-build-Xbae --disable-build-Xlt \
 		--disable-debug --with-editres
 
 .if defined(HAVE_MOTIF)
-IS_INTERACTIVE=	yes
+IS_INTERACTIVE=	Yes
 
 pre-install:
 	@echo "***********************************************************"
@@ -58,13 +59,12 @@ post-install:
 	@rm -f ${PREFIX}/lib/libMrm.so
 	@rm -f ${PREFIX}/lib/libXm.so
 .for lib in ${STATIC_LIBS}
-	@ln -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib
+	@ln -sf ${TRUEPREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib
 .endfor
 .for lib in ${SHARED_LIBS}
 	@if [ "x${NO_SHARED_LIBS}" = "x" ]; then \
-	  ln -sf ${PREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib; \
+	  ln -sf ${TRUEPREFIX}/LessTif/Motif1.2/lib/${lib} ${PREFIX}/lib; \
 	 fi
 .endfor
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
