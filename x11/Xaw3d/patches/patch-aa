@@ -1,5 +1,5 @@
---- ./Imakefile.org	Wed May 29 08:38:40 1996
-+++ ./Imakefile	Mon Aug  5 22:46:04 1996
+--- Imakefile.orig	Wed May 29 10:38:40 1996
++++ Imakefile	Thu Aug 20 01:39:40 1998
 @@ -7,7 +7,7 @@
  #define HasSharedData YES
  #define LibName Xaw3d
@@ -21,3 +21,16 @@
  
  HEADERS = \
  	AllWidgets.h \
+@@ -221,6 +221,12 @@
+ #endif
+ #ifdef YaccCmd
+ YACC=YaccCmd
++#endif
++
++/* gcc 2.8.1 bug workaround */
++#ifdef AlphaArchitecture
++    CXXDEBUGFLAGS = -O0
++      CDEBUGFLAGS = -O0
+ #endif
+ 
+ all::
