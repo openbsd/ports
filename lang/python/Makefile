@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	python
-# Version required:	1.5
-# Date created:		9 January 1998
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/24 22:33:50 don Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/23 04:24:10 marc Exp $
 #
 
 DISTNAME=	python1.5
