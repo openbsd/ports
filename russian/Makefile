@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/05 21:28:12 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.9 2002/06/11 06:50:01 jsyn Exp $
 
      SUBDIR += cyrproxy
      SUBDIR += d1489
