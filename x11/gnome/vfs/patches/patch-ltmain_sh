@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2002/02/15 19:11:16 nino Exp $
---- ltmain.sh.orig	Sun Jan 20 15:11:07 2002
-+++ ltmain.sh	Tue Feb 12 21:16:13 2002
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/03/25 17:14:36 nino Exp $
+--- ltmain.sh.orig	Sun Jan 20 09:11:07 2002
++++ ltmain.sh	Sun Feb 17 11:03:53 2002
 @@ -1058,6 +1058,17 @@ compiler."
  	continue
  	;;
@@ -23,9 +23,9 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2002/02/15 19:11:16 nino Exp $
  	  fi
  	  continue
  	  ;;
-+    -pthread)
-+      continue
-+      ;;
++	-pthread)
++	  continue
++	  ;;
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
