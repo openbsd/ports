@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/12/07 15:27:10 peter Exp $
+# $OpenBSD: Makefile,v 1.8 2001/04/22 09:03:40 peter Exp $
 ##################################################
 #          The Exim mail transport agent         #
 ##################################################
@@ -348,7 +348,7 @@ LOOKUP_NIS=yes
 # don't need to set LOOKUP_INCLUDE if the relevant directories are already
 # specified in INCLUDE.
 
-# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
+# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/include/postgresql
 # LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq
 
 # If you have set LDAP=yes, you should set LDAP_LIB_TYPE to indicate which LDAP
