@@ -3,3 +3,5 @@ doc comments in C++ and CORBA source.
 
 Among other things, this is used to build documentation for the
 kde libraries.
+
+WWW: ${HOMEPAGE}

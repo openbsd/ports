@@ -3,3 +3,5 @@ whois referrals. The author of Net::Whois and the author of this
 module disgreed on how to solve the problem of parsing a distrubuted
 and non-standardized whois system, so he created this divergent
 module.
+
+WWW: ${HOMEPAGE}

@@ -26,3 +26,5 @@ you have the permission to do so. Since programs of this ilk can
 consume a bit of CPU on their own, some effort has been made to turn
 off the update process when the program is iconified or or not
 visible.
+
+WWW: ${HOMEPAGE}

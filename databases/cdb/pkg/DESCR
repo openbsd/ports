@@ -16,3 +16,5 @@ constant databases. Its database structure provides several features:
 cdb is designed to be used in mission-critical applications like
 e-mail.  Database replacement is safe against system crashes. Readers
 don't have to pause during a rewrite.
+
+WWW: ${HOMEPAGE}

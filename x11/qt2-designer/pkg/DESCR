@@ -4,3 +4,5 @@ dependency issues.
 
 Namely, it can handle kde applications, but it depends on kde being
 installed for that... and kde needs qt2 to build.
+
+WWW: ${HOMEPAGE}

@@ -8,3 +8,5 @@ miquels@drinkel.ow.org).  Note, minicom is covered by the GNU GPL.
 
 -- David	(obrien@cs.ucdavis.edu)
 -- OpenBSD port by Oleg Safiullin <form@vs.itam.nsc.ru>
+
+WWW: ${HOMEPAGE}

@@ -37,3 +37,5 @@ OS fingerprint:
 
 Kill a connection:
   from the connections list you can kill all the connections you want 
+
+WWW: ${HOMEPAGE}
