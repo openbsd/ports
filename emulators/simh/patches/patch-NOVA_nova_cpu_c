@@ -1,7 +1,7 @@
-$OpenBSD: patch-NOVA_nova_cpu_c,v 1.1 2002/02/04 05:10:29 form Exp $
---- NOVA/nova_cpu.c.orig	Thu Jan 31 22:29:11 2002
-+++ NOVA/nova_cpu.c	Thu Jan 31 22:28:48 2002
-@@ -432,21 +432,21 @@ if (IR & I_OPR) {					/* operate? */
+$OpenBSD: patch-NOVA_nova_cpu_c,v 1.2 2002/02/04 10:56:39 form Exp $
+--- NOVA/nova_cpu.c.orig	Mon Feb  4 11:39:20 2002
++++ NOVA/nova_cpu.c	Mon Feb  4 11:39:21 2002
+@@ -441,21 +441,21 @@ if (IR & I_OPR) {					/* operate? */
  		src = src ^ DMASK;
  		break;
  	case 1:						/* NEG */
@@ -28,7 +28,7 @@ $OpenBSD: patch-NOVA_nova_cpu_c,v 1.1 2002/02/04 05:10:29 form Exp $
  		break;
  	case 7:						/* AND */
  		src = src & (AC[dstAC] | CBIT);
-@@ -458,10 +458,10 @@ if (IR & I_OPR) {					/* operate? */
+@@ -467,10 +467,10 @@ if (IR & I_OPR) {					/* operate? */
  	case 0:						/* nop */
  		break;
  	case 1:						/* L */

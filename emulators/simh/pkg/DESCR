@@ -17,5 +17,6 @@ Simulators included in this package:
 	- Hewlett Packard HP 2100
 	- Honeywell H316
 	- MITS Altair 8800
+	- MITS Altair Z80
 
 WWW: ${HOMEPAGE}
