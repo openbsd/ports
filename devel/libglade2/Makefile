@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/17 16:13:32 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/12/16 19:41:09 naddy Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 V=			2.0.1
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=		gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 			xml2.7::textproc/libxml
 
