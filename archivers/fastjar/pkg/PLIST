@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/07 03:18:00 kevlo Exp $
+bin/fastjar
