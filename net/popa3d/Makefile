@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2001/08/11 20:22:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2001/08/18 20:57:43 brad Exp $
+
+COMES_WITH=	3.0
 
 COMMENT=	"security first POP3 daemon"
 
