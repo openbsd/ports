@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/07 21:37:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/08 20:57:46 wilfried Exp $
 
 COMMENT=	"perl module to perform XSLT transformations"
 
@@ -13,7 +13,6 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 BUILD_DEPENDS=  ::textproc/p5-XML-Parser \
 		::textproc/p5-XML-DOM
 RUN_DEPENDS=    ${BUILD_DEPENDS}
-LIB_DEPENDS=	exslt::textproc/libxslt
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
