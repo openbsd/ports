@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.361 2001/03/16 14:56:41 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.362 2001/03/17 11:16:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -994,7 +994,7 @@ uninstall deinstall package:
 fetch: fetch-depends
 # You need to define PERMIT_* to make the warning go away.
 # See ports/infrastructure/templates/Makefile.template
-	@${ECHO_MSG} "===> Checking files for ${PKGNAME}"
+	@${ECHO_MSG} "===>  Checking files for ${PKGNAME}"
 .  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
     !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
 	@echo >&2 "*** The licensing info for this port is incomplete."
