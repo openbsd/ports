@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.57 2003/08/04 14:37:48 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.58 2003/08/04 14:45:31 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -117,7 +117,26 @@ ${__target}: _SUBDIRUSE
 ${__target}: _SUBDIRUSE_DEP
 .endfor
 
+.if defined(clean) && ${clean:L:Mdepends}
+clean:
+.  for i in ${_SKIPPED}
+	@echo "===> $i skipped"
+.  endfor
+	@${_depfile_fragment}; for d in ${_FULLSUBDIR}; do \
+		dir=$$d; \
+		${_flavor_fragment}; \
+		set +e; \
+		if ! eval  $$toset ${MAKE} all-dir-depends ECHO_MSG=:; then \
+			${REPORT_PROBLEM}; \
+		fi; \
+	done| tsort -r|while read dir; do \
+		unset FLAVOR SUBPACKAGE || true; \
+		${_flavor_fragment}; \
+		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
+	done
+.else
 clean: _SUBDIRUSE
+.endif
 .if defined(clean) && ${clean:L:Mreadmes}
 	rm -f ${.CURDIR}/README.html
 .endif
