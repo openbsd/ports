@@ -1,4 +1,4 @@
-bin/screen-3.7.4
+bin/screen-3.7.6
 @exec ln -sf %f %B/screen
 @unexec rm -f %B/screen
 man/man1/screen.1

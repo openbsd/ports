@@ -1,12 +1,12 @@
 # OpenBSD makefile for:	screen
-# Version required:     3.7.4
+# Version required:     3.7.6
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.4 1998/04/14 20:34:21 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/02/20 00:42:29 fgsch Exp $
 #
 
-DISTNAME=       screen-3.7.4
+DISTNAME=       screen-3.7.6
 CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
