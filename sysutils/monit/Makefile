@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2005/02/07 19:01:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2005/04/05 23:02:58 alek Exp $
 
 COMMENT=	"monitoring and managing daemons utility"
 
-VERSION=	4.2.1
+VERSION=	4.4
 DISTNAME=	monit-${VERSION}
 CATEGORIES=	sysutils
 
@@ -34,5 +34,6 @@ post-install:
 	  ${PREFIX}/share/doc/monit
 	cd ${WRKSRC} && ${INSTALL_DATA} monitrc \
 	  ${PREFIX}/share/examples/monit
+	${INSTALL_DATA} ${WRKSRC}/contrib/monit.php ${PREFIX}/share/examples/monit \
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 11:56:46 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/04/05 23:02:58 alek Exp $
 bin/monit
 @man man/man1/monit.1
 share/doc/monit/
@@ -9,5 +9,6 @@ share/doc/monit/UPGRADE.txt
 share/doc/monit/examples.html
 share/doc/monit/monit.html
 share/examples/monit/
+share/examples/monit/monit.php
 share/examples/monit/monitrc
 @sample ${SYSCONFDIR}/monitrc
