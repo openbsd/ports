@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/07/27 23:34:56 matt Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/05 16:10:27 ian Exp $
 #
 # If you are getting compile errors like these:
 #     Undefined symbol `_postOutOfMemory' referenced from text segment
@@ -28,7 +28,7 @@ HOMEPAGE=	http://www.kaffe.org/
 # nullpointerexceptions everywhere).
 ONLY_FOR_ARCHS=	i386 # sparc m68k
 
-MAINTAINER=	ian@OpenBSD.ORG
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

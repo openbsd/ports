@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/05/28 00:29:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/05 16:10:24 ian Exp $
 
 DISTNAME=       efax-0.9
 PKGNAME=        efax-0.9
 CATEGORIES=	comms
 FAKE=		Yes
 
-MAINTAINER=	ian@OpenBSD.ORG
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

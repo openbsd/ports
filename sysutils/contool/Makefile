@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/04 21:37:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/10/05 16:10:26 ian Exp $
 
 DISTNAME=	contool-3.3a
 CATEGORIES=	sysutils
 NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 
-MAINTAINER=		ian@openbsd.org
+MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_CDROM=	NOFEE
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_CDROM=	NOFEE
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	xview.3.::x11/xview/lib

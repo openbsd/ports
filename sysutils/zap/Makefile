@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/30 15:39:23 kevlo Exp $
-#
+# $OpenBSD: Makefile,v 1.8 2000/10/05 16:10:25 ian Exp $
 
 PKGNAME=	zap-1.1
 DISTNAME=	zap-1.1
@@ -8,9 +7,8 @@ CATEGORIES=	sysutils
 NEED_VERSION=	1.191
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-MAINTAINER=	ian@openbsd.org
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/04/11 01:37:57 ian Exp $
+# $OpenBSD: Makefile,v 1.17 2000/10/05 16:10:27 ian Exp $
 
 DISTNAME=	olvwm4
 PKGNAME=	olvwm-4.2
@@ -7,7 +7,7 @@ NEED_VERSION=	1.230
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	olvwm4.tar.Z
 
-MAINTAINER=	ian@openbsd.org
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

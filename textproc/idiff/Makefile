@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/28 14:04:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/05 16:10:25 ian Exp $
 #
 
 PKGNAME=	idiff-1.0
@@ -6,7 +6,7 @@ DISTNAME=	idiff-1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-MAINTAINER=	ian@openbsd.org
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
