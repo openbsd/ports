@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+ -p not supported on OpenBSD install. author notified 
+--- Makefile.orig	Mon Dec 16 23:38:18 2002
++++ Makefile	Sun Jan  5 18:11:01 2003
+@@ -44,10 +44,10 @@ uninstall-doc:
+ 	$(MAKE) -C doc uninstall
+ 
+ install-bin:
+-	install -p -d -m 0755 -o root -g 0 $(DESTDIR)$(BINDIR)
+-	install -p -d -m 0755 -o root -g 0 $(DESTDIR)$(DATADIR)
+-	install -p -m 0755 -o root -g 0 $(OUTFILE) $(DESTDIR)$(BINDIR)/$(OUTFILE)
+-	install -p -m 0644 -o root -g 0 help.txt $(DESTDIR)$(DATADIR)/help.txt
++	install -d -m 0755 -o root -g 0 $(DESTDIR)$(BINDIR)
++	install -d -m 0755 -o root -g 0 $(DESTDIR)$(DATADIR)
++	install    -m 0755 -o root -g 0 $(OUTFILE) $(DESTDIR)$(BINDIR)/$(OUTFILE)
++	install    -m 0644 -o root -g 0 help.txt $(DESTDIR)$(DATADIR)/help.txt
+ 
+ uninstall-bin:
+ 	rm -f $(DESTDIR)$(BINDIR)/$(OUTFILE)

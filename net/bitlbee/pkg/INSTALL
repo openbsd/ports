@@ -1,0 +1,86 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+#
+# Pre/post-installation setup of Bitlbee
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+DB_DIR=${DB_DIR}
+BITLBEEUSER=bitlbee
+BITLBEEGROUP=bitlbee
+
+do_notice_existingdir() {
+echo <<EOF
+
++---------------"
+| You appear to already have a Bitlbee-settings dir in $DB_DIR
+|
+| This directory has been preserved. If you want to start from
+| from the default, you should perform this steps as root:
+|
+| # rm -rf $DB_DIR/*
+|
++---------------
+
+EOF
+}
+
+do_usergroup_install() {
+  # Create bitlbee user and group
+  groupinfo -e $BITLBEEGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $BITLBEEGROUP group for Bitlbee"
+  else
+    echo "===> Creating $BITLBEEGROUP group for Bitlbee"
+    groupadd $BITLBEEGROUP
+  fi
+  userinfo -e $BITLBEEUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $BITLBEEUSER user for Bitlbee"
+  else
+    echo "===> Creating $BITLBEEUSER user for Bitlbee"
+    useradd -g $BITLBEEGROUP -d /nonexistent -L daemon -c 'Bitlbee Account' -s /sbin/nologin $BITLBEEUSER
+  fi
+}
+
+do_database_install() {
+  install -m 0770 -d -o ${BITLBEEUSER} -g ${BITLBEEGROUP} ${DB_DIR}
+}
+
+do_manual_notice() {
+cat <<EOF
+
+To enable bitlbee you have to add a line like:
+
+    127.0.0.1:6667    stream  tcp     nowait bitlbee /usr/local/libexec/bitlbee bitlbee
+
+to your /etc/inetd.conf and restart inetd with
+
+    # kill -HUP \`cat /var/run/inetd.pid\`
+
+
+EOF
+}
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	if [ -d $DB_DIR ]; then
+	  do_notice_existingdir $1
+	fi
+	do_usergroup_install
+	;;
+    POST-INSTALL)
+	if [ ! -d $DB_DIR ]; then
+	  do_database_install
+	fi
+	  do_manual_notice
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

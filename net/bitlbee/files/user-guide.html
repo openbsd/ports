@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org">
+<title>BitlBee User Guide</title>
+<meta name="GENERATOR" content=
+"Modular DocBook HTML Stylesheet Version 1.76b+ ">
+</head>
+<body class="BOOK">
+<div class="BOOK"><a name="BITLBEE-USER-GUIDE"></a>
+<div class="TITLEPAGE">
+<h1 class="TITLE"><a name="AEN2">BitlBee User Guide</a></h1>
+
+<h3 class="AUTHOR"><a name="AEN4">Jelmer Vernooij</a></h3>
+
+<div class="LEGALNOTICE"><a name="LEGALNOTICE"></a>
+<p>Permission is granted to copy, distribute and/or modify this
+document under the terms of the <a href="gnome-help:fdl" target=
+"_top"><i class="CITETITLE">GNU Free Documentation License</i></a>,
+Version 1.1 or any later version published by the Free Software
+Foundation with no Invariant Sections, no Front-Cover Texts, and no
+Back-Cover Texts. You may obtain a copy of the <i class=
+"CITETITLE">GNU Free Documentation License</i> from the Free
+Software Foundation by visiting <a href="http://www.fsf.org"
+target="_top">their Web site</a> or by writing to: Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+02111-1307, USA.</p>
+</div>
+
+<hr>
+</div>
+
+<div class="TOC">
+<dl>
+<dt><b>Table of Contents</b></dt>
+
+<dt>1. <a href="#INSTALLATION">Installation</a></dt>
+
+<dd>
+<dl>
+<dt><a href="#AEN18">Downloading the package</a></dt>
+
+<dt><a href="#AEN23">Compiling</a></dt>
+
+<dt><a href="#AEN41">Configuration</a></dt>
+</dl>
+</dd>
+
+<dt>2. <a href="#USAGE">Usage</a></dt>
+
+<dd>
+<dl>
+<dt><a href="#AEN60">Connecting to the server</a></dt>
+
+<dt><a href="#AEN63">The #bitlbee control channel</a></dt>
+
+<dt><a href="#AEN67">Commands</a></dt>
+
+<dd>
+<dl>
+<dt><a href="#AEN70">help</a></dt>
+
+<dt><a href="#AEN76">login</a></dt>
+
+<dt><a href="#AEN83">slist</a></dt>
+
+<dt><a href="#AEN90">logout</a></dt>
+
+<dt><a href="#AEN98">add</a></dt>
+
+<dt><a href="#AEN106">remove</a></dt>
+
+<dt><a href="#AEN113">block</a></dt>
+
+<dt><a href="#AEN119">allow</a></dt>
+
+<dt><a href="#AEN126">set</a></dt>
+
+<dt><a href="#AEN131">save</a></dt>
+</dl>
+</dd>
+
+<dt><a href="#AEN136">Settings</a></dt>
+
+<dd>
+<dl>
+<dt><a href="#AEN140">private</a></dt>
+
+<dt><a href="#AEN145">save_on_quit</a></dt>
+
+<dt><a href="#AEN150">html</a></dt>
+
+<dt><a href="#AEN155">debug</a></dt>
+</dl>
+</dd>
+
+<dt><a href="#AEN160">Talking to people</a></dt>
+</dl>
+</dd>
+
+<dt>3. <a href="#SUPPORT">Support</a></dt>
+
+<dd>
+<dl>
+<dt><a href="#AEN169">BitlBee is beta software</a></dt>
+
+<dt><a href="#AEN172">Support channels</a></dt>
+
+<dd>
+<dl>
+<dt><a href="#AEN174">The World Wide Web</a></dt>
+
+<dt><a href="#AEN178">IRC</a></dt>
+
+<dt><a href="#AEN181">Mailinglists</a></dt>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+
+<div class="CHAPTER">
+<hr>
+<h1><a name="INSTALLATION">Chapter 1. Installation</a></h1>
+
+<div class="SECT1">
+<h2 class="SECT1"><a name="AEN18">Downloading the package</a></h2>
+
+<p>The latest BitlBee release is always available from <a href=
+"http://www.lintux.cx/bitlbee.html" target=
+"_top">http://www.lintux.cx/bitlbee.html</a>. Download the package
+with your favorite program and unpack it: <b class="COMMAND">tar
+xvfz BitlBee-0.71.tar.gz</b></p>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN23">Compiling</a></h2>
+
+<p>BitlBee's build system has to be configured before compiling.
+The <tt class="FILENAME">configure</tt> script will do this for
+you. Just run it, it'll set up with nice and hopefully well-working
+defaults. If you want to change some settings, just try <b class=
+"COMMAND">./configure --help</b> and see what you can do.</p>
+
+<p>Some variables that might be of interest to the normal user:</p>
+
+<ul>
+<li>
+<p>config - The place where BitlBee will save settings for all the
+users. <tt class="FILENAME">/var/bitlbee/</tt> is the default
+value.</p>
+</li>
+
+<li>
+<p>tcpd - If you enable this one, you can specify what hosts should
+be allowed to use your BitlBee by editting <tt class=
+"FILENAME">/etc/hosts.deny</tt> and/or <tt class=
+"FILENAME">/etc/hosts.deny</tt>.</p>
+</li>
+</ul>
+
+<p>After running <tt class="FILENAME">configure</tt>, you should
+run <b class="COMMAND">make</b>. After that, run <b class=
+"COMMAND">make install</b> as root.</p>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN41">Configuration</a></h2>
+
+<p>By default, BitlBee runs as the user nobody. You might want to
+run it as a seperate user (some computers run named or apache as
+nobody).</p>
+
+<p>Since BitlBee uses inetd, you should add the following line to
+<tt class="FILENAME">/etc/inetd.conf</tt>:</p>
+
+<table border="0" bgcolor="#E0E0E0" width="100%">
+<tr>
+<td>
+<pre class="PROGRAMLISTING">
+127.0.0.1:6667    stream  tcp     nowait bitlbee /usr/local/sbin/bitlbee bitlbee
+</pre>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+<p>Inetd has to be restarted after changing the configuration.  <b
+class="COMMAND">kill -HUP `cat /var/run/inetd.pid`</b> should do the
+job.</p>
+
+<p>You should create a directory where BitlBee can store it's data
+files. This should be the directory named after the value 'CONFIG'
+in Makefile.settings. The default is <tt class=
+"FILENAME">/var/bitlbee</tt>, which can be created with the
+command <b class="COMMAND">mkdir -p /var/bitlbee</b>. This
+directory has to be owned by the user that runs bitlbee. To make
+'nobody' owner of this directory, run <b class="COMMAND">chown
+nobody /var/bitlbee</b>. Because things like passwords are
+saved in this directory, it's probably a good idea to make this
+directory owner-read-/writable only.</p>
+<p>Note from port-maintainer: already done</p>
+</div>
+</div>
+
+<div class="CHAPTER">
+<hr>
+<h1><a name="USAGE">Chapter 2. Usage</a></h1>
+
+<div class="SECT1">
+<h2 class="SECT1"><a name="AEN60">Connecting to the server</a></h2>
+
+<p>Since BitlBee acts just like any other irc daemon, you can
+connect to it with your favorite irc client. Launch it and connect
+to localhost port 6667 (or whatever host/port you are running
+bitlbee on).</p>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN63">The #bitlbee control
+channel</a></h2>
+
+<p>Once you are connected to the BitlBee server, you should 'join'
+#bitlbee on that server. This channel acts like the 'buddy list'
+you have on the various other chat networks.</p>
+
+<p>The user 'root' always hangs around in #bitlbee and acts as your
+interface to bitlbee. All commands you give on #bitlbee are
+'answered' by root.</p>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN67">Commands</a></h2>
+
+<p>BitlBee can be configured by giving 'commands' in the #bitlbee
+channel. 'root' responds to these commands.</p>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN70">help</a></h3>
+
+<p>Syntax: <b class="COMMAND">help</b></p>
+
+<p>Gives a list of commands bitlbee supports with syntax. You can
+get an up-to-date list of available commands using the <b class=
+"COMMAND">help commands</b> command. This information is usually
+more up-to-date than the information in this file.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN76">login</a></h3>
+
+<p>Syntax: <b class="COMMAND">login &lt;protocol&gt;
+&lt;username&gt; &lt;password&gt; [&lt;server&gt;]</b></p>
+
+<p>Logs in to the given server with the specified protocol,
+username and password. Specifying the server is optional and
+principally only necessary when using oscar.</p>
+
+<p>Example:</p>
+
+<table border="0" bgcolor="#E0E0E0" width="100%">
+<tr>
+<td>
+<pre class="PROGRAMLISTING">
+00:10 &lt; ctrlsoft&gt; login jabber ctrlsoft@jabber.org secret
+00:10 &lt; root&gt; JABBER - Logging in: Connecting
+00:10 &lt; root&gt; JABBER - Logging in: Connected
+00:10 &lt; root&gt; JABBER - Logging in: Requesting Authentication Method
+00:10 &lt; root&gt; JABBER - Logging in: Authenticating
+00:10 &lt; root&gt; JABBER - Logged in
+</pre>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN83">slist</a></h3>
+
+<p>Syntax: <b class="COMMAND">slist</b></p>
+
+<p>Gives a list of all active connections to servers</p>
+
+<p>Example:</p>
+
+<table border="0" bgcolor="#E0E0E0" width="100%">
+<tr>
+<td>
+<pre class="PROGRAMLISTING">
+00:09 &lt; ctrlsoft&gt; slist
+00:09 &lt; root&gt;  0. MSN, jelmervernooij@hotmail.com
+00:09 &lt; root&gt;  1. OSCAR, 30761007 on login.icq.com
+00:09 &lt; root&gt;  2. OSCAR, JelmerVernooij on login.oscar.aol.com
+00:09 &lt; root&gt;  3. JABBER, ctrlsoft@jabber.org
+00:09 &lt; root&gt; End of connection list
+</pre>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN90">logout</a></h3>
+
+<p>Syntax: <b class="COMMAND">logout
+&lt;connection-number&gt;</b></p>
+
+<p>Log out of the specified connection number's network. The
+correct connection number can be retrieved by running the <b class=
+"COMMAND">slist</b> command.</p>
+
+<p>Example:</p>
+
+<table border="0" bgcolor="#E0E0E0" width="100%">
+<tr>
+<td>
+<pre class="PROGRAMLISTING">
+00:11 &lt; ctrlsoft&gt; logout 3
+00:11 -!- gryp [gryp@jabber.jabber.org] has quit [Leaving...]
+00:11 &lt; root&gt; JABBER - Logged out
+</pre>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN98">add</a></h3>
+
+<p>Syntax: <b class="COMMAND">add &lt;connection&gt;
+&lt;handle&gt;</b></p>
+
+<p>Adds the given buddy at the specified connection to your buddy
+list. The connection number can be retrieved with the <b class=
+"COMMAND">slist</b> command.</p>
+
+<p>Example:</p>
+
+<table border="0" bgcolor="#E0E0E0" width="100%">
+<tr>
+<td>
+<pre class="PROGRAMLISTING">
+00:15 &lt; ctrlsoft&gt; add 3 gryp@jabber.org
+00:15 -!- gryp (gryp@jabber.org) [gryp@jabber.jabber.org] has joined #bitlbee
+</pre>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN106">remove</a></h3>
+
+<p>Syntax: <b class="COMMAND">remove &lt;nick&gt;</b></p>
+
+<p>Removes the specified nick from your buddy list.</p>
+
+<p>Example:</p>
+
+<table border="0" bgcolor="#E0E0E0" width="100%">
+<tr>
+<td>
+<pre class="PROGRAMLISTING">
+00:14 &lt; ctrlsoft&gt; remove gryp
+00:14 -!- gryp [gryp@jabber.jabber.org] has quit [Leaving...]
+</pre>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN113">block</a></h3>
+
+<p>Syntax: <b class="COMMAND">block
+[&lt;nick&lt;|&lt;connection&gt; &lt;handle&gt;]</b></p>
+
+<p>Puts the specified user on your ignore list. Either specify the
+users' nick when you have him/her in your contact list or a
+connection number and a user handle. The connection number can be
+retrieved with the <b class="COMMAND">slist</b> command.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN119">allow</a></h3>
+
+<p>Syntax: <b class="COMMAND">allow
+[&lt;nick&lt;|&lt;connection&gt; &lt;handle&gt;]</b></p>
+
+<p>Reverse of <b class="COMMAND">block</b>. Unignores the specified
+user or user handle on specified connection. Connection number can
+be retrieved using the <b class="COMMAND">slist</b> command.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN126">set</a></h3>
+
+<p>Syntax: <b class="COMMAND">set [&lt;variable&gt;]
+[&lt;value&gt;]</b></p>
+
+<p>Without any arguments, this command lists all the set variables.
+You can also specify a single argument, a variable name, to get
+that variable's value. To change this value, specify the new value
+as the second argument.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN131">save</a></h3>
+
+<p>Syntax: <b class="COMMAND">save</b></p>
+
+<p>This command saves all your nicks and accounts immediately.
+Handy if you have the autosave functionality disabled, or if you
+don't trust the program's stability... ;-)</p>
+</div>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN136">Settings</a></h2>
+
+<p>BitlBee can be configured by using the <b class=
+"COMMAND">set</b> command. The available settings are discussed in
+this section.</p>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN140">private</a></h3>
+
+<p>Type: boolean</p>
+
+<p>Default: False</p>
+
+<p>If value is true, messages from users will appear in seperate
+query windows. If false, messages from users will appear in
+#bitlbee.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN145">save_on_quit</a></h3>
+
+<p>Type: boolean</p>
+
+<p>Default: True</p>
+
+<p>If enabled causes bitlbee to save all current settings and
+account details when user disconnects.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN150">html</a></h3>
+
+<p>Type: string</p>
+
+<p>Default: nostrip</p>
+
+<p>Determines what bitlbee should do with HTML in messages. If set
+to nostrip, HTML in messages will not be touched. If set to strip,
+all html will be stripped from messages.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN155">debug</a></h3>
+
+<p>Type: boolean</p>
+
+<p>Default: False</p>
+
+<p>Some debugging messages can be sent to the control channel if
+you wish. They're probably not really useful for you, unless you're
+doing some development on BitlBee.</p>
+</div>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN160">Talking to people</a></h2>
+
+<p>You can talk to by starting a query with them. In most irc
+clients, this can be done with either <b class="COMMAND">/msg
+&lt;nick&gt; &lt;text&gt;</b> or <b class="COMMAND">/query
+&lt;nick&gt;</b>.</p>
+
+<p>To keep the number of open query windows limited, you can also
+talk to people in the control channel, like <b class=
+"COMMAND">&lt;nick&gt;: &lt;text&gt;</b>.</p>
+</div>
+</div>
+
+<div class="CHAPTER">
+<hr>
+<h1><a name="SUPPORT">Chapter 3. Support</a></h1>
+
+<div class="SECT1">
+<h2 class="SECT1"><a name="AEN169">BitlBee is beta
+software</a></h2>
+
+<p>Although BitlBee has quite some functionality it is still beta.
+That means it can crash at any time, corrupt your data or whatever.
+Don't use it in any production environment and don't rely on
+it.</p>
+</div>
+
+<div class="SECT1">
+<hr>
+<h2 class="SECT1"><a name="AEN172">Support channels</a></h2>
+
+<div class="SECT2">
+<h3 class="SECT2"><a name="AEN174">The World Wide Web</a></h3>
+
+<p><a href="http://www.lintux.cx/bitlbee.html" target=
+"_top">http://www.lintux.cx/bitlbee.html</a> is the homepage of
+bitlbee and contains the most recent news on bitlbee and the latest
+releases.</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN178">IRC</a></h3>
+
+<p>BitlBee is discussed on #bitlbee on the OFTC IRC network(server:
+irc.oftc.net).</p>
+</div>
+
+<div class="SECT2">
+<hr>
+<h3 class="SECT2"><a name="AEN181">Mailinglists</a></h3>
+
+<p>BitlBee doesn't have any mailinglists (yet).</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+

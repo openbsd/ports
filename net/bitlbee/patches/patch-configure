@@ -1,0 +1,37 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+--- configure.orig	Mon Dec 23 02:33:38 2002
++++ configure	Mon Dec 23 02:34:03 2002
+@@ -84,22 +84,23 @@ cat<<EOF>config.h
+ EOF
+ 
+ if [ "$debug" = "1" ]; then
+-	echo 'CFLAGS=-g' >> Makefile.settings
++	echo 'CFLAGS+=-g' >> Makefile.settings
+ 	echo 'DEBUG=1' >> Makefile.settings
+ else
+-	echo 'CFLAGS=-O3' >> Makefile.settings;
++echo
++#	echo 'CFLAGS+=-O3' >> Makefile.settings;
+ fi
+ 
+ echo CFLAGS+=-I`pwd` -I`pwd`/protocols -I. >> Makefile.settings
+ 
+-if type gcc > /dev/null 2> /dev/null; then
+-	echo "CC=gcc" >> Makefile.settings;
+-elif type cc > /dev/null 2> /dev/null; then
+-	echo "CC=cc" >> Makefile.settings;
+-else
+-	echo 'Cannot find a C compiler, aborting.'
+-	exit 1;
+-fi
++#if type gcc > /dev/null 2> /dev/null; then
++#	echo "CC=gcc" >> Makefile.settings;
++#elif type cc > /dev/null 2> /dev/null; then
++#	echo "CC=cc" >> Makefile.settings;
++#else
++#	echo 'Cannot find a C compiler, aborting.'
++#	exit 1;
++#fi
+ 
+ if type ld > /dev/null 2> /dev/null; then
+ 	echo "LD=ld" >> Makefile.settings;

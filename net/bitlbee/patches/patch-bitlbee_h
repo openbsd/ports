@@ -1,0 +1,13 @@
+$OpenBSD: patch-bitlbee_h,v 1.1.1.1 2003/04/16 18:51:08 wilfried Exp $
+Use a more usefull name for the server
+--- bitlbee.h.orig	Thu Dec 19 23:11:38 2002
++++ bitlbee.h	Thu Dec 19 23:12:00 2002
+@@ -26,7 +26,7 @@
+ 
+ #define _( x ) x
+ 
+-#define ROOT_NICK "root"
++#define ROOT_NICK "bitlbee"
+ #define ROOT_FN "User manager"
+ #define DEFAULT_AWAY "Away from computer"
+ #define CONTROL_TOPIC "Welcome to the control channel. Type help for help information."
