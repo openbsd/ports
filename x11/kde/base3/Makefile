@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/23 14:37:21 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/28 17:18:46 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
@@ -12,9 +12,10 @@ LIB_DEPENDS= kdecore.4,DCOP,artskde,kabc,katepartinterfaces,kdefakes,kdefx,kdepr
 		cdda_paranoia,cdda_interface::audio/cdparanoia
 
 BUILD_DEPENDS=	::audio/lame
+SEPARATE_BUILD=	simple
 
 post-install:
 	rm -rf ${PREFIX}/share/config/kdm
-	${INSTALL_PROGRAM} ${WRKSRC}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKBUILD}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 
 .include <bsd.port.mk>

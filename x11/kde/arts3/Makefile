@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/23 14:37:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/28 17:18:46 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 CATEGORIES=		x11 x11/kde
@@ -8,6 +8,7 @@ DISTNAME=		arts-1.0.1
 
 NOT_FOR_ARCHS=
 LIB_DEPENDS= 	audiofile::devel/libaudiofile
+SEPARATE_BUILD=simple
 		
 pre-build:
 	@if pkg dependencies check kdelibs-\*; then \
