@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Unix,v 1.1 2001/04/14 14:43:05 espie Exp $
---- config.Unix.orig	Sat Jun  7 00:00:00 1997
-+++ config.Unix	Sat Apr 14 04:57:36 2001
+$OpenBSD: patch-config_Unix,v 1.2 2002/10/28 00:27:54 pvalchev Exp $
+--- config.Unix.orig	Fri Jun  6 16:00:00 1997
++++ config.Unix	Sun Oct 27 12:21:36 2002
 @@ -32,10 +32,10 @@ XCOMM ##################################
  XCOMM --------------------------------------------------------------------
  XCOMM  Destination directories.
@@ -16,3 +16,12 @@ $OpenBSD: patch-config_Unix,v 1.1 2001/04/14 14:43:05 espie Exp $
  
  XCOMM --------------------------------------------------------------------
  XCOMM --- The name of the Xaw3d library.
+@@ -110,7 +110,7 @@ XCOMM ----------------------------------
+ XCOMM --------------------------------------------------------------------
+ XCOMM --- Use extra code for setenv() and getenv() ?
+ XCOMM --------------------------------------------------------------------
+-#if !defined(LinuxArchitecture) && !defined(FreeBSDArchitecture)
++#if !defined(LinuxArchitecture) && !defined(FreeBSDArchitecture) && !defined(OpenBSDArchitecture)
+ #   define USE_SETENV_CODE
+ #endif
+ 
