@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/18 22:56:32 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/09 11:23:37 avsm Exp $
+libdata/perl5/site_perl/Attribute/Params/Validate.pm
 libdata/perl5/site_perl/Params/Validate.pm
 libdata/perl5/site_perl/Params/Validate/Heavy.pm
+man/man3/Attribute::Params::Validate.3p
 man/man3/Params::Validate.3p
 @dirrm libdata/perl5/site_perl/Params/Validate

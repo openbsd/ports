@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/18 22:56:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/09 11:23:37 avsm Exp $
 
 COMMENT=	"perl module to validate function/method parameters"
 
-DISTNAME=	Params-Validate-0.04
+DISTNAME=	Params-Validate-0.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 NEED_VERSION=	1.401
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=  ../../authors/id/D/DR/DROLSKY
+MASTER_SITE_SUBDIR=  Attribute
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
