@@ -1,21 +1,18 @@
-$OpenBSD: patch-include_unixconf_h,v 1.3 2002/03/23 14:51:46 espie Exp $
---- include/unixconf.h.orig	Thu Mar 21 00:42:56 2002
-+++ include/unixconf.h	Sat Mar 23 15:25:25 2002
-@@ -19,7 +19,12 @@
+$OpenBSD: patch-include_unixconf_h,v 1.4 2004/08/11 10:15:07 espie Exp $
+--- include/unixconf.h.orig	Mon Dec  8 00:39:13 2003
++++ include/unixconf.h	Tue Aug 10 13:34:38 2004
+@@ -19,6 +19,10 @@
   */
  
  /* define exactly one of the following four choices */
--/* #define BSD 1 */	/* define for 4.n BSD  */
 +/* procure the real define BSD */
 +#ifdef HAVE_SYS_PARAM_H
 +#include <sys/param.h>
 +#endif
-+/* #define BSD	1	/* define for 4.n BSD  */
-+
+ /* #define BSD 1 */	/* define for 4.n/Free/Open/Net BSD  */
  			/* also for relatives like SunOS 4.x, DG/UX, and */
  			/* older versions of Linux */
- /* #define ULTRIX */	/* define for Ultrix v3.0 or higher (but not lower) */
-@@ -32,7 +37,7 @@
+@@ -32,7 +36,7 @@
  
  
  /* define any of the following that are appropriate */
@@ -24,7 +21,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.3 2002/03/23 14:51:46 espie Exp $
  			/* including Solaris 2+ */
  #define NETWORK		/* if running on a networked system */
  			/* e.g. Suns sharing a playground through NFS */
-@@ -47,6 +52,7 @@
+@@ -47,6 +51,7 @@
  			 * job control (note that AIX is SYSV otherwise)
  			 * Also define this for AIX 3.2 */
  
@@ -32,7 +29,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.3 2002/03/23 14:51:46 espie Exp $
  #define TERMINFO	/* uses terminfo rather than termcap */
  			/* Should be defined for most SYSV, SVR4 (including
  			 * Solaris 2+), HPUX, and Linux systems.  In
-@@ -132,7 +138,7 @@
+@@ -132,7 +137,7 @@
   * "extra output" method is used, but not all systems provide access to
   * a fine-grained timer.
   */
@@ -41,7 +38,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.3 2002/03/23 14:51:46 espie Exp $
  #endif
  
  /*
-@@ -143,7 +149,7 @@
+@@ -143,7 +148,7 @@
   * A stat system call is done on the mailbox every MAILCKFREQ moves.
   */
  
@@ -50,7 +47,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.3 2002/03/23 14:51:46 espie Exp $
  
  /* The Andrew Message System does mail a little differently from normal
   * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
-@@ -280,7 +286,7 @@
+@@ -284,7 +289,7 @@
  #endif
  
  #if defined(BSD) || defined(ULTRIX)
@@ -59,7 +56,7 @@ $OpenBSD: patch-include_unixconf_h,v 1.3 2002/03/23 14:51:46 espie Exp $
  #define memcpy(d, s, n)		bcopy(s, d, n)
  #define memcmp(s1, s2, n)	bcmp(s2, s1, n)
  # endif
-@@ -304,9 +310,7 @@
+@@ -308,9 +313,7 @@
  #endif
  
  #ifdef TIMED_DELAY

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2004/08/10 11:23:24 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2004/08/11 10:15:07 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
-V=3.4.1
+V=3.4.3
 DISTNAME=	nethack-$V
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nethack/} \
-		ftp://ftp.nethack.org/pub/nethack/nh341/src/ \
+		ftp://ftp.nethack.org/pub/nethack/nh${V:S/.//g}/src/ \
 		ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU:=nethack/}
-DISTFILES=	nethack-${V:S/.//g}.tgz
+DISTFILES=	nethack-${V:S/.//g}-src.tgz
 
 HOMEPAGE=	http://nethack.org/
 
