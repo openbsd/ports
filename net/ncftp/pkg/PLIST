@@ -1,0 +1,5 @@
+@cwd /usr/local
+@name ncftp
+bin/ncftp
+man/man1/ncftp.1
+
