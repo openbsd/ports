@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/11/21 19:01:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/23 06:19:12 pvalchev Exp $
 
 COMMENT=		"commandline screen capture util"
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=		X11 Xext c freetype m
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/
 
