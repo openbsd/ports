@@ -1,6 +1,6 @@
---- Doc/zsh.texi.orig	Mon Mar  6 18:38:07 2000
-+++ Doc/zsh.texi	Mon Mar  6 18:39:52 2000
-@@ -2,11 +2,15 @@
+--- Doc/zsh.texi.orig	Tue Feb 29 03:29:07 2000
++++ Doc/zsh.texi	Tue Jul  4 21:58:54 2000
+@@ -2,6 +2,10 @@
  @c %**start of header
  @setfilename zsh.info
  @settitle    zsh
@@ -11,27 +11,49 @@
  @c %**end of header
  
  @ifinfo
- @c Note to RedHat: Do NOT change this to @{@}.  It really should be @'@'.
--@set dsq @'@'
-+@set dsq @'{}@'{}
- @end ifinfo
- @iftex
- @c The sequence {} disappears completely in TeX, leaving only the quotes.
-@@ -1062,7 +1066,7 @@
- the smallest matching pattern is preferred; in the second form, the
- largest matching pattern is preferred.  If name is an
- array and the substitution is not quoted or the @code{@@} flag or the 
--@code{@var{name[@@]}} syntax is used, matching is performed on each array 
-+@code{@var{name}[@@]} syntax is used, matching is performed on each array 
- elements separately.
+@@ -834,7 +838,7 @@
+ A character may be @dfn{quoted} (that is, made to stand for itself) by
+ preceding it with a @code{\}.  @code{\} followed by a newline is
+ ignored.  All characters enclosed between a pair of single quotes
+-(@t{@value{dsq}}) are quoted, except the first character of @code{histchars}
++(@t{'}@t{'}) are quoted, except the first character of @code{histchars}
+ (@code{!} by default).  A single quote cannot appear within single
+ quotes.  Inside double quotes (@code{""}), parameter and command
+ substitution occurs, and @code{\} quotes the characters @code{\},
+@@ -1622,7 +1626,7 @@
+ @code{histchars} parameter which is @code{!} by default and may occur 
+ anywhere on the command line; history substitutions do not nest.  The 
+ @code{!} can be escaped with @code{\} or can be enclosed between a pair of 
+-single quotes (@t{@value{dsq}}) 
++single quotes (@t{'}@t{'}) 
+ to suppress its special meaning. Double quotes will not work for this.
  
- @item $@{@var{name}:#@var{pattern}@}
-@@ -1566,7 +1570,7 @@
  @noindent
- If a @code{:} appears in a qualifier list, the remainder of the
- expression in parentheses is interpreted as a modifier
--(@xref{Modifiers}).  Note that each modifier must be introduced by a
-+(@pxref{Modifiers})  Note that each modifier must be introduced by a
- separate @code{:}.  Note also that the result after modification does
- not have to be an existing file.  The name of any existing file can be
- followed by a modifier of the form @code{(:@dots{})} even if no filename
+@@ -5183,7 +5187,7 @@
+ @cindex rc, quoting style
+ @cindex quoting style, rc
+ @pindex RC_QUOTES
+-Allow the character sequence @t{@value{dsq}} to signify a single quote within
++Allow the character sequence @t{'}@t{'} to signify a single quote within
+ singly quoted strings.
+ 
+ @item RCS (+f)
+@@ -7008,7 +7012,8 @@
+ use is
+ 
+ @example
+-compctl -D -f + -H 0 @value{dsq} -X '(No file found; using history)'
++
++compctl -D -f + -H 0 @t{'}@t{'} -X '(No file found; using history)'
+ @end example
+ 
+ which forces completion to look back in the history list for a word if no
+@@ -7071,7 +7076,7 @@
+ name completion performed on the first word in the range.  For example,
+ 
+ @example
+-compctl -x 'r[-exec,;]' -l @value{dsq} -- find
++compctl -x 'r[-exec,;]' -l @t{'}@t{'} -- find
+ @end example
+ 
+ completes arguments between @code{-exec} and the following @code{;} (or the
