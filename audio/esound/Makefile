@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/14 18:09:26 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/06 18:06:11 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 DISTNAME=	esound-0.2.8
@@ -19,7 +19,7 @@ CONFIGURE_ARGS+= --enable-static --with-libwrap
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal/
-	@${INSTALL_DATA} ${WRKSRC}/esd.m4 ${LOCALBASE}/share/aclocal/
+	${INSTALL_DATA} ${WRKSRC}/esd.m4 ${LOCALBASE}/share/aclocal/
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
