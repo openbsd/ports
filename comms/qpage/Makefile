@@ -1,9 +1,9 @@
-# New ports collection makefile for:	qpage
+# OpenBSD makefile for:	qpage
 # Version required:	3.2
-# Date created:		02 Aug 1997
-# Whom:			joes@seaport.net
+# Date created:		May 16 1998
+# Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/17 02:33:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/17 02:53:19 angelos Exp $
 #
 
 DISTNAME=	qpage-3.2
@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.it.mtu.edu/pub/QuickPage/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	joes@seaport.net
+MAINTAINER=	angelos@openbsd.org
 
 MAN1=		qpage.1
 
