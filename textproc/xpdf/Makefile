@@ -1,27 +1,22 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/31 00:19:03 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/09/15 21:59:56 brad Exp $
 
-DISTNAME=		xpdf-0.80
-CATEGORIES=		textproc
+DISTNAME=	xpdf-0.90
+CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
+		ftp://ftp.duke.edu/pub/X11/contrib/applications/ \
+		ftp://ftp.foolabs.com/pub/xpdf/
+MASTER_SITE_SUBDIR= support/xpdf
+EXTRACT_SUFX=	.tgz
 
-MASTER_SITES=		ftp://ftp.foolabs.com/pub/xpdf/
-
-DISTFILES=		xpdf-0.80.tgz
-
-MAINTAINER=		apollo@slcnet.net
-
-# If you dont want the decryption patch (you probably do), comment out
-# the the following PATCHxxx variables.
-# Please note though that it is encryption..and we all know about how
-# the US feel about that. (no exporting)
-#
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES=		ftp://ftp.sci.usq.edu.au/pub/linux/xpdf/
-PATCHFILES=		xpdf-0.80-decrypt.patch
+PATCH_SITES=	http://www.fefe.de/
+PATCHFILES=	xpdf-0.90-fefe-diff2.gz
 
-USE_X11=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-gzip \
-			--with-Xpm-includes=${X11BASE}/include
+MAINTAINER=	apollo@slcnet.net
+
+USE_X11=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gzip
+CONFIGURE_ENV=	CXXFLAGS=-fno-const-strings
 
 .include <bsd.port.mk>
