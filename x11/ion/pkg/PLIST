@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/09 21:16:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/08/10 16:58:10 naddy Exp $
 bin/ion
 bin/pwm
+lib/ion/
 lib/ion/de.la
 lib/ion/dock.la
 lib/ion/floatws.la
 lib/ion/ion-completefile
 lib/ion/ionws.la
+lib/ion/lc/
 lib/ion/lc/ioncore-efbb.lc
 lib/ion/lc/ioncorelib-mplexfns.lc
 lib/ion/lc/ioncorelib.lc
@@ -13,34 +15,61 @@ lib/ion/lc/menulib.lc
 lib/ion/lc/querylib.lc
 lib/ion/menu.la
 lib/ion/query.la
-man/man1/ion.1
-man/man1/pwm.1
+@man man/man1/ion.1
+@man man/man1/pwm.1
+share/doc/ion/
 share/doc/ion/ChangeLog
 share/doc/ion/LICENSE
 share/doc/ion/README
+share/examples/ion/
+@sample ${SYSCONFDIR}/ion/
 share/examples/ion/dock-draw.lua
+@sample ${SYSCONFDIR}/ion/dock-draw.lua
 share/examples/ion/dock.lua
+@sample ${SYSCONFDIR}/ion/dock.lua
 share/examples/ion/draw.lua
+@sample ${SYSCONFDIR}/ion/draw.lua
 share/examples/ion/floatws.lua
+@sample ${SYSCONFDIR}/ion/floatws.lua
 share/examples/ion/ion-bindings.lua
+@sample ${SYSCONFDIR}/ion/ion-bindings.lua
 share/examples/ion/ion-menus.lua
+@sample ${SYSCONFDIR}/ion/ion-menus.lua
 share/examples/ion/ion.lua
+@sample ${SYSCONFDIR}/ion/ion.lua
 share/examples/ion/ionws.lua
+@sample ${SYSCONFDIR}/ion/ionws.lua
 share/examples/ion/kludges.lua
+@sample ${SYSCONFDIR}/ion/kludges.lua
 share/examples/ion/look-brownsteel.lua
+@sample ${SYSCONFDIR}/ion/look-brownsteel.lua
 share/examples/ion/look-clean.lua
+@sample ${SYSCONFDIR}/ion/look-clean.lua
 share/examples/ion/look-cleanios.lua
+@sample ${SYSCONFDIR}/ion/look-cleanios.lua
 share/examples/ion/look-cleanviolet.lua
+@sample ${SYSCONFDIR}/ion/look-cleanviolet.lua
 share/examples/ion/look-dusky.lua
+@sample ${SYSCONFDIR}/ion/look-dusky.lua
 share/examples/ion/look-greyviolet.lua
+@sample ${SYSCONFDIR}/ion/look-greyviolet.lua
 share/examples/ion/look-ios.lua
+@sample ${SYSCONFDIR}/ion/look-ios.lua
 share/examples/ion/look-simpleblue.lua
+@sample ${SYSCONFDIR}/ion/look-simpleblue.lua
 share/examples/ion/look-wheat2.lua
+@sample ${SYSCONFDIR}/ion/look-wheat2.lua
 share/examples/ion/menu.lua
+@sample ${SYSCONFDIR}/ion/menu.lua
 share/examples/ion/pwm-bindings.lua
+@sample ${SYSCONFDIR}/ion/pwm-bindings.lua
 share/examples/ion/pwm-menus.lua
+@sample ${SYSCONFDIR}/ion/pwm-menus.lua
 share/examples/ion/pwm.lua
+@sample ${SYSCONFDIR}/ion/pwm.lua
 share/examples/ion/query.lua
+@sample ${SYSCONFDIR}/ion/query.lua
+share/ion/
 share/ion/delib.lua
 share/ion/ion-edit
 share/ion/ion-man
@@ -54,9 +83,4 @@ share/ion/menulib.lua
 share/ion/querylib.lua
 share/ion/welcome_message.txt
 %%SHARED%%
-@dirrm share/ion
-@dirrm share/examples/ion
-@dirrm share/doc/ion
-@dirrm lib/ion/lc
-@dirrm lib/ion
 @extraunexec rm -rf ${SYSCONFDIR}/ion

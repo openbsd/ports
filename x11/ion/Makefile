@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2004/07/09 21:16:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/10 16:58:09 naddy Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
-DISTNAME=	ion-2-20040601
-PKGNAME=	ion-2.20040601
+DISTNAME=	ion-2-20040729
+PKGNAME=	ion-2.20040729
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
 CATEGORIES=	x11
@@ -27,6 +27,6 @@ LIB_DEPENDS=	ltdl.4::devel/libtool \
 
 .include <bsd.port.mk>
 
-.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+.if ${NO_SHARED_LIBS:L} == "yes"
 MAKE_ENV=	PRELOAD_MODULES=1
 .endif
