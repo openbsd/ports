@@ -1,4 +1,3 @@
-
 To finish the install, you need to enable the mod_jk
 module using the following command as root:
 
@@ -10,4 +9,3 @@ you should fully stop and then start the server.
 
 Please see ${DOCDIR}/README.OpenBSD
 for more information.
-
