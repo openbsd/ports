@@ -1,0 +1,15 @@
+--- ext/socket/addrinfo.h.orig	Wed Dec  8 14:26:11 1999
++++ ext/socket/addrinfo.h	Wed Dec  8 14:26:22 1999
+@@ -113,12 +113,6 @@
+ #define	AI_DEFAULT	(AI_V4MAPPED_CFG | AI_ADDRCONFIG)
+ 
+ /*
+- * Constants for getnameinfo()
+- */
+-#define	NI_MAXHOST	1025
+-#define	NI_MAXSERV	32
+-
+-/*
+  * Flag values for getnameinfo()
+  */
+ #define	NI_NOFQDN	0x00000001

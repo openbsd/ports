@@ -1,0 +1,6 @@
+$OpenBSD: SECURITY,v 1.1.1.1 2000/03/28 13:16:02 espie Exp $
+
+One use of mktemp replaced with mkstemp.
+
+Would need a thorough audit to be trusted. Seems to have
+a tainting mechanism similar to perl.

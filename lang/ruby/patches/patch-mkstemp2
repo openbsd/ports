@@ -1,0 +1,11 @@
+--- configure.in.orig	Sun Dec 12 21:45:32 1999
++++ configure.in	Sun Dec 12 21:47:28 1999
+@@ -180,7 +180,7 @@ AC_CHECK_FUNCS(fmod killpg drand48 rando
+ 	      truncate chsize times utimes fcntl lockf setitimer\
+ 	      setruid seteuid setreuid setrgid setegid setregid\
+ 	      getpgrp setpgrp getpgid setpgid getgroups getpriority\
+-	      dlopen sigprocmask sigaction _setjmp setsid)
++	      dlopen sigprocmask sigaction _setjmp setsid mkstemp)
+ AC_STRUCT_TIMEZONE
+ if test "$ac_cv_func_strftime" = no; then
+     AC_TRY_LINK([],
