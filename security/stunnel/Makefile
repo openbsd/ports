@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2001/07/15 18:37:01 jakob Exp $
+# $OpenBSD: Makefile,v 1.13 2001/07/23 08:55:25 jakob Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-3.15
+DISTNAME=	stunnel-3.16
 CATEGORIES=	security
 NEED_VERSION=	1.363
 
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.stunnel.org/
+HOMEPAGE=	http://stunnel.mirt.net/
 
-MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
-		ftp://stunnel.mirt.net/stunnel/ \
+MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
+		http://www.stunnel.org/download/stunnel/src/ \
 		http://mike.daewoo.com.pl/computer/stunnel/ \
 		http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.fu-berlin.de/unix/security/stunnel/ \
