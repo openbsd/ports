@@ -1,0 +1,7 @@
+--- gcc/config/openbsd.h.orig	Mon Dec 31 21:02:38 2001
++++ gcc/config/openbsd.h	Mon Dec 31 21:03:04 2001
+@@ -311,3 +311,4 @@ do {									 \
+    as this depends on a few other details as well...  */
+ #define HANDLE_SYSV_PRAGMA
+ 
++#define LIBSTDCXX "-lestdc++"

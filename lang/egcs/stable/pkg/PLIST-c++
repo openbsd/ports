@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-c++,v 1.4 2001/10/31 18:46:29 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.5 2002/01/01 01:21:18 espie Exp $
 @pkgcfl egcs-*-c++
 @pkgcfl gcc-*-c++
 bin/ec++
 bin/ec++filt
+bin/eg++
 bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-c++
 bin/${MACHINE_ARCH}-unknown-openbsd${OSREV}-g++
 include/g++-v3/algorithm
@@ -225,16 +226,17 @@ include/g++-v3/typeinfo
 include/g++-v3/utility
 include/g++-v3/valarray
 include/g++-v3/vector
-lib/fpic/libstdc++.a
-lib/fpic/libstdc++.la
+lib/fpic/libestdc++.a
+lib/fpic/libestdc++.la
 lib/fpic/libsupc++.a
 lib/fpic/libsupc++.la
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/cc1plus
-lib/libstdc++.a
-lib/libstdc++.la
+lib/libestdc++.a
+lib/libestdc++.la
 lib/libsupc++.a
 lib/libsupc++.la
 man/man1/eg++.1
+%%SHARED%%
 @dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}/bits
 @dirrm include/g++-v3/${MACHINE_ARCH}-unknown-openbsd${OSREV}
 @dirrm include/g++-v3/ext

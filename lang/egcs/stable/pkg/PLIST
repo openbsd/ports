@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2001/10/31 18:46:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/01/01 01:21:18 espie Exp $
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gcc.info
 bin/ecpp
-bin/eg++
 bin/egcc
 bin/egccbug
 bin/egcov
@@ -74,6 +73,10 @@ lib/libiberty.a
 man/man1/cpp.1
 man/man1/egcc.1
 man/man1/gcov.1
+man/man7/fsf-funding.7
+man/man7/gfdl.7
+man/man7/gpl.7
+%%SHARED%%
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include/machine
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/include
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd${OSREV}/${V}/fpic

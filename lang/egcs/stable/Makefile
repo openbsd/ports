@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/10/31 18:46:28 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2002/01/01 01:21:18 espie Exp $
 
 # This is a configuration file for egcs
 
@@ -63,7 +63,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.0.2
+V=3.0.3
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -72,7 +72,8 @@ MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-DISTFILES=  gcc-$V${EXTRACT_SUFX}
+DISTFILES=  gcc-3.0.2${EXTRACT_SUFX}
+PATCHFILES=	gcc-3.0.2-3.0.3.diff.bz2
 
 SITES=	
 
@@ -136,6 +137,12 @@ MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 
 #### 
 # Patch section
+
+pre-patch:
+	cd ${WRKDIR} && mv gcc-3.0.2 gcc-3.0.3
+
+PATCH_DIST_STRIP=-p1
+
 
 # get openbsd configuration files where they should be
 post-patch:

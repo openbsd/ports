@@ -1,0 +1,20 @@
+--- libstdc++-v3/src/Makefile.in.orig	Mon Dec 31 21:04:07 2001
++++ libstdc++-v3/src/Makefile.in	Mon Dec 31 21:06:05 2001
+@@ -128,7 +128,7 @@ mkinstalldirs = $(SHELL) $(toplevel_srcd
+ CXX = @glibcpp_CXX@
+ toolexecdir = @glibcpp_toolexecdir@
+ toolexeclibdir = @glibcpp_toolexeclibdir@
+-toolexeclib_LTLIBRARIES = libstdc++.la
++toolexeclib_LTLIBRARIES = libestdc++.la
+ 
+ # Compile flags that should be constant throughout the build, both for
+ # SUBDIRS and for libstdc++-v3 in general.
+@@ -320,7 +320,7 @@ distclean-libtool:
+ 
+ maintainer-clean-libtool:
+ 
+-libstdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES)
++libestdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES)
+ 	$(CXXLINK) -rpath $(toolexeclibdir) $(libstdc___la_LDFLAGS) $(libstdc___la_OBJECTS) $(libstdc___la_LIBADD) $(LIBS)
+ .cc.o:
+ 	$(CXXCOMPILE) -c $<
