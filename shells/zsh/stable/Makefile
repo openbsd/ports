@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/24 15:25:46 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/24 15:51:02 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -49,6 +49,7 @@ SUBST_VARS=	VERSION
 
 REGRESS_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
 	        INSTALL_DATA="install -c -m 444" \
-		INSTALL="install -c"
+		INSTALL="install -c" \
+		TMPPREFIX=${WRKBUILD}/tmp
 	        
 .include <bsd.port.mk>
