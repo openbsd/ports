@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_Font_cc,v 1.2 2002/05/03 13:47:10 lebel Exp $
 --- src/Font.cc.orig	Wed Mar 27 19:47:44 2002
 +++ src/Font.cc	Sat Apr 27 06:06:23 2002
 @@ -25,6 +25,8 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_Theme_cc,v 1.2 2002/05/03 13:47:10 lebel Exp $
 --- src/Theme.cc.orig	Thu Apr  4 13:28:19 2002
 +++ src/Theme.cc	Sat Apr 27 06:06:23 2002
 @@ -382,7 +382,7 @@ void Theme::loadMenuStyle() {
