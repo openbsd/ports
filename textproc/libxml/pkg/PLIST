@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2001/11/06 08:57:44 shell Exp $
+@comment $OpenBSD: PLIST,v 1.14 2001/11/07 01:44:17 kevlo Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -10,14 +10,12 @@ include/libxml/catalog.h
 include/libxml/debugXML.h
 include/libxml/encoding.h
 include/libxml/entities.h
-include/libxml/globals.h
 include/libxml/hash.h
 include/libxml/list.h
 include/libxml/nanoftp.h
 include/libxml/nanohttp.h
 include/libxml/parser.h
 include/libxml/parserInternals.h
-include/libxml/threads.h
 include/libxml/tree.h
 include/libxml/uri.h
 include/libxml/valid.h
