@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2004/06/06 18:25:57 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.39 2004/07/01 12:19:35 avsm Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
@@ -6,10 +6,10 @@ COMMENT-ldap=	"ldap authentication module for courier-imap"
 COMMENT-mysql=	"mysql authentication module for courier-imap"
 COMMENT-pgsql=	"pgsql authentication module for courier-imap"
 
-COURIERVER=	1.7.2
+COURIERVER=	3.0.5
 DISTNAME=	courier-imap-${COURIERVER}
-FULLPKGNAME=	courier-imap-${COURIERVER}p0
-FULLPKGNAME-pop3= courier-pop3-${COURIERVER}p0
+FULLPKGNAME=	courier-imap-${COURIERVER}
+FULLPKGNAME-pop3= courier-pop3-${COURIERVER}
 FULLPKGNAME-ldap= courier-ldap-${COURIERVER}
 FULLPKGNAME-mysql= courier-mysql-${COURIERVER}
 FULLPKGNAME-pgsql= courier-pgsql-${COURIERVER}
@@ -49,8 +49,7 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-authdaemonvar=${COURIERSTATE} \
 		--enable-workarounds-for-imap-client-bugs \
 		--with-db=gdbm --with-authpwd \
-		--localstatedir=${COURIERSTATE} \
-		--without-ipv6
+		--localstatedir=${COURIERSTATE}
 
 # mysql
 PSEUDO_FLAVORS+=	no_mysql

@@ -1,6 +1,6 @@
-$OpenBSD: patch-imap_pop3d-ssl_dist_in,v 1.3 2003/02/17 16:14:34 avsm Exp $
---- imap/pop3d-ssl.dist.in.orig	Wed Aug 28 13:32:19 2002
-+++ imap/pop3d-ssl.dist.in	Mon Feb 17 15:59:23 2003
+$OpenBSD: patch-imap_pop3d-ssl_dist_in,v 1.4 2004/07/01 12:19:35 avsm Exp $
+--- imap/pop3d-ssl.dist.in.orig	2004-05-16 14:57:32.000000000 +1000
++++ imap/pop3d-ssl.dist.in	2004-05-16 14:58:25.000000000 +1000
 @@ -135,7 +135,7 @@ TLS_STARTTLS_PROTOCOL=TLS1
  # servers, and is optional for SSL/TLS clients.  TLS_CERTFILE is usually
  # treated as confidential, and must not be world-readable.

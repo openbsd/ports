@@ -1,34 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/08/19 11:28:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/07/01 12:19:35 avsm Exp $
 @pkgcfl imap-uw-*
 bin/couriertls
+bin/deliverquota
 bin/imapd
+bin/maildiracl
+bin/maildirkw
+@comment bin/maildirmake
 libexec/authlib/authcram
 libexec/authlib/authdaemon
 libexec/authlib/authdaemond
 libexec/authlib/authdaemond.plain
 libexec/authlib/authpwd
 libexec/authlib/authuserdb
-libexec/courierlogger
 libexec/couriertcpd
 libexec/imapd-ssl.rc
 libexec/imapd.rc
 libexec/makedatprog
 man/man1/couriertcpd.1
-man/man7/authcram.7
-man/man7/authdaemon.7
-man/man7/authdaemond.7
+man/man1/maildiracl.1
+man/man1/maildirkw.1
+man/man1/maildirmake.1
 @mode 0444
 man/man7/authlib.7
 @mode
-man/man7/authpwd.7
-man/man7/authuserdb.7
+man/man8/deliverquota.8
 man/man8/imapd.8
+man/man8/makeuserdb.8
 man/man8/mkimapdcert.8
+man/man8/userdb.8
+man/man8/userdbpw.8
+sbin/authenumerate
+sbin/courierlogger
 sbin/imaplogin
 sbin/makeuserdb
 sbin/mkimapdcert
 sbin/pw2userdb
-sbin/userdb
 sbin/userdbpw
 sbin/vchkpw2userdb
 share/examples/courier-imap/authdaemonrc

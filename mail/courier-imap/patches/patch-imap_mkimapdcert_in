@@ -1,12 +1,9 @@
-$OpenBSD: patch-imap_mkimapdcert_in,v 1.4 2001/09/30 23:15:57 avsm Exp $
---- imap/mkimapdcert.in.orig	Sun Aug 26 15:57:55 2001
-+++ imap/mkimapdcert.in	Sun Sep 30 22:32:35 2001
-@@ -9,30 +9,29 @@
- # IMAP over SSL.  Normally this script would get called by an automatic
- # package installation routine.
+$OpenBSD: patch-imap_mkimapdcert_in,v 1.5 2004/07/01 12:19:35 avsm Exp $
+--- imap/mkimapdcert.in.orig	2004-05-16 14:41:01.000000000 +1000
++++ imap/mkimapdcert.in	2004-05-16 14:52:55.000000000 +1000
+@@ -12,27 +12,28 @@
+ test -x @OPENSSL@ || exit 0
  
--test -x @OPENSSL@ || exit 0
--
  prefix="@prefix@"
 +SSLDIR="/etc/ssl/private"
  

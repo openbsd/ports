@@ -1,13 +1,13 @@
-$OpenBSD: patch-imap_mkpop3dcert_in,v 1.1 2000/12/29 18:51:57 avsm Exp $
---- imap/mkpop3dcert.in.orig	Fri Oct  6 17:50:37 2000
-+++ imap/mkpop3dcert.in	Fri Dec 29 17:29:17 2000
-@@ -13,25 +13,27 @@ test -x @OPENSSL@ || exit 0
+$OpenBSD: patch-imap_mkpop3dcert_in,v 1.2 2004/07/01 12:19:35 avsm Exp $
+--- imap/mkpop3dcert.in.orig	2004-05-16 14:49:25.000000000 +1000
++++ imap/mkpop3dcert.in	2004-05-16 14:56:32.000000000 +1000
+@@ -12,26 +12,27 @@
+ test -x @OPENSSL@ || exit 0
  
  prefix="@prefix@"
++SSLDIR=/etc/ssl/private
  
 -if test -f @datadir@/pop3d.pem
-+SSLDIR=/etc/ssl/private
-+
 +if test -f ${SSLDIR}/pop3d.pem
  then
 -	echo "@datadir@/pop3d.pem already exists."
