@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Thu Mar  2 03:00:14 2000
++++ Makefile.in	Sat Apr  8 12:32:01 2000
+@@ -10,7 +10,7 @@
+ SUBDIRS = @INTLSUB@ @POSUB@
+ 
+ # Install variables
+-prefix=@prefix@
++prefix=${PREFIX}
+ 
+ datadir = $(prefix)/@DATADIRNAME@
+ localedir = $(datadir)/locale
+--- po/Makefile.in.in.orig	Thu Jun 24 08:07:56 1999
++++ po/Makefile.in.in	Sat Apr  8 12:32:21 2000
+@@ -16,7 +16,7 @@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+ 
+-prefix = @prefix@
++prefix = ${PREFIX}
+ exec_prefix = @exec_prefix@
+ datadir = $(prefix)/@DATADIRNAME@
+ localedir = $(datadir)/locale
