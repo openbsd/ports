@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/12/26 09:49:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/13 07:04:57 kevlo Exp $
 
 DISTNAME=	xsnow-1.40
 CATEGORIES=	x11
@@ -8,6 +8,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@openbsd.org
 
-USE_IMAKE=	yes
+FAKE=		Yes
+USE_IMAKE=	Yes
 
 .include <bsd.port.mk>
