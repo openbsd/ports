@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/31 07:25:05 sturm Exp $
 
 COMMENT=		"Text widget that extends GTK2's GtkTextView widget"
 DISTNAME=		gtksourceview-1.1.1
@@ -30,5 +30,6 @@ LIB_DEPENDS=		gnomeprint-2-2::x11/gnome/libgnomeprintui
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-build_tests
 
 .include <bsd.port.mk>
