@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/08 06:42:59 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/22 07:59:04 robert Exp $
 
 COMMENT=		"Open Crypto Development Kit"
 
-VERSION=		0.5.4
+VERSION=		0.5.5
 DISTNAME=		opencdk-${VERSION}
 CATEGORIES=		security
 
@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/opencdk/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/opencdk/ \
 		http://sunsite.dk/pub/security/gcrypt/alpha/gnutls/opencdk/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/opencdk/
+EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	gcrypt.12::security/libgcrypt
 
