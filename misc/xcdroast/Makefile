@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/13 22:39:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2003/02/17 18:10:35 naddy Exp $
 
 COMMENT=		"gtk-based frontend to cdrtools"
-
-DISTNAME=		xcdroast-0.98alpha9
-PKGNAME=		xcdroast-0.98a9p1
+DISTNAME=		xcdroast-0.98alpha13
+PKGNAME=		xcdroast-0.98a13
 CATEGORIES=		misc x11
-
-HOMEPAGE=		http://www.xcdroast.org
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
+
+HOMEPAGE=		http://www.xcdroast.org/
 
 MAINTAINER=		Jolan Luff <jolan@cryptonomicon.org>
 
@@ -17,24 +16,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=		:cdrtools->=1.10:sysutils/cdrtools
+RUN_DEPENDS=		:cdrtools->=2.0:sysutils/cdrtools
 LIB_DEPENDS=		gtk.1.2,glib.1.2::x11/gtk+ \
-			Imlib.19,gdk_imlib.19::graphics/imlib
+			gdk_pixbuf.2::graphics/gdk-pixbuf
 
-USE_X11=		Yes
-NO_REGRESS=		Yes
-
-post-patch:
-	@perl -pi -e 's,/etc,${SYSCONFDIR},g;	\
-		s,/usr/local,${LOCALBASE},g;'	\
-		${WRKSRC}/xcdroast.h
+NO_REGRESS=	Yes
+USE_X11=	Yes
+CONFIGURE_STYLE=gnu
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xcdroast
-	${INSTALL_DATA} ${WRKSRC}/README.nonroot \
-		${PREFIX}/share/doc/xcdroast
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/xpms/xcdricon.xpm \
+	${INSTALL_DATA} ${WRKSRC}/src/xpms/xcdricon.xpm \
 		${PREFIX}/share/pixmaps/xcdricon.xpm
 
 .include <bsd.port.mk>

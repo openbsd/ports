@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tools_c,v 1.1 2003/02/17 18:10:35 naddy Exp $
+--- src/tools.c.orig	Wed Jan  1 08:49:38 2003
++++ src/tools.c	Wed Feb  5 18:06:13 2003
+@@ -924,7 +924,7 @@ gchar tmp[1024];
+ 
+ gint isroot() {
+ 
+-	if (getuid() == 0) {
++	if (geteuid() == 0) {
+ 		return 1;
+ 	} else {
+ 		return 0;

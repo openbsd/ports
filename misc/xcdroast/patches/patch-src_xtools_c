@@ -1,16 +1,15 @@
-$OpenBSD: patch-xtools_c,v 1.1.1.1 2002/07/14 19:34:28 wilfried Exp $
---- xtools.c.orig	Tue Jul 17 13:39:15 2001
-+++ xtools.c	Fri Jun  7 08:27:41 2002
-@@ -2264,7 +2264,7 @@ gint count;
- 
+$OpenBSD: patch-src_xtools_c,v 1.1 2003/02/17 18:10:35 naddy Exp $
+--- src/xtools.c.orig	Tue Dec 31 08:29:27 2002
++++ src/xtools.c	Wed Feb  5 18:06:51 2003
+@@ -2559,6 +2559,7 @@ gint count;
  /* do change the group rights for nonroot mode */
  /* this seems only be required with /bin/sh being bash2 */
--
+ 
 +#if 0
  void fix_guid() {
  
  	dodebug(3,"Current gid/egid = %d/%d\n", getgid(), getegid());
-@@ -2276,7 +2276,7 @@ void fix_guid() {
+@@ -2570,7 +2571,7 @@ void fix_guid() {
  	setregid(getegid(), getgid());
  	dodebug(3,"Current gid/egid after setregid = %d/%d\n", getgid(), getegid());
  }

@@ -5,17 +5,17 @@ Due to cdrecord's -scanbus option being wholly unusable under
 OpenBSD, you will need to manually specify the device by using the
 -f option of xcdroast.
 
-Find your CD device:
-	dmesg |grep cd0
-	cd0 at scsibus0 targ 0 lun 0: <PLEXTOR, CD-R PX-W8432T, 1.07> <snip>
+Find your CD device(s), e.g.:
+	dmesg |egrep "cd0|cd1"
+	cd0 at scsibus0 targ 0 lun 0: <HITACHI, DVD-ROM GD-5000, 0213>
+	cd1 at scsibus1 targ 0 lun 0: <PLEXTOR, CD-R PX-W8432T, 1.09>
 
-Specify the device (:bus,targ,lun is optional):
-	"xcdroast -f /dev/rcd0c"
+Specify your devices (:bus,targ,lun is optional):
+	# xcdroast -f /dev/rcd0c,/dev/rcd1c
 
-To begin generating a configuration file, simply run xcdroast with
-the above option as root.  If you wish to learn how to configure
-your system to allow for non-root cd-burning, please consult the
-installed documentation at:
-
-	${PREFIX}/share/doc/xcdroast/README.nonroot
+To begin generating a configuration file, simply run xcdroast as root
+with the correct options.  If you wish to enable CD burning for
+non-root users, click the "Activate Non-Root-Mode" button.  You will be
+presented with the list of commands that are to be executed and
+have the opportunity to cancel.
 
