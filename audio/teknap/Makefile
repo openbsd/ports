@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/27 19:07:17 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/01 08:15:39 jasoni Exp $
 
 COMMENT=	"console napster client"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 CONFIGURE_STYLE=	gnu dest
+
+NO_REGRESS=		Yes
 
 WRKDIST=	${WRKDIR}/TekNap
 
