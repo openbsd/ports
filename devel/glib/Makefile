@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.45 2001/10/28 13:09:45 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2002/01/07 14:32:07 brad Exp $
 # Uses pthreads
 
 COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.10
 CATEGORIES=	devel
-NEED_VERSION=	1.460
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/glib
 
 HOMEPAGE=	http://www.gtk.org/
-
-LIB_DEPENDS=	lib/pth/pthread.14:pth-1.4.*:devel/pth
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -24,12 +22,12 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
-		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
 		patch-*
+
+NO_REGRESS=	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
