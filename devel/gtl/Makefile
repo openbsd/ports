@@ -1,39 +1,42 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/05 10:25:41 reinhard Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/09 10:05:30 reinhard Exp $ 
 
-BROKEN=		"changed download policy; sources no longer available"
-
-DISTNAME=	GTL-0.3.3
-PKGNAME=	gtl-0.3.3
+PKGNAME=	gtl-1.0.0
+DISTNAME=	GTL-1.0.0
 CATEGORIES=	devel
-NEED_VERSION=	1.351
+NEED_VERSION=	1.353
 
 MAINTAINER=	Peter Valchev <pvalchev@toxiclinux.org>
 
-LICENSE_TYPE=		no-commercial-use
-PERMIT_PACKAGE_CDROM=	"redistribution requires written permission"
-PERMIT_PACKAGE_FTP=	"redistribution requires written permission"
-PERMIT_DISTFILES_CDROM=	"redistribution requires written permission"	
-PERMIT_DISTFILES_FTP=	"redistribution requires written permission"
+PERMIT_PACKAGE_CDROM=	"use requires written permission"
+PERMIT_PACKAGE_FTP=	"use requires written permission"
+PERMIT_DISTFILES_CDROM=	"use requires written permission"	
+PERMIT_DISTFILES_FTP=	"use requires written permission"
 
 HOMEPAGE=	http://infosun.fmi.uni-passau.de/GTL/
 
-MASTER_SITES=	${HOMEPAGE}archive/
-
-FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
+MASTER_SITES=	see_do-fetch_target
 
 CONFIGURE_STYLE= gnu
-MAKE_ENV+=	GTL_VERS="0:3"
+MAKE_ENV+=	GTL_VERS="1.0.0"
 
-do-install:
+do-fetch:
+	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
+	 echo "" ; \
+	 echo "  The source of this port cannot be automatically fetched" ; \
+	 echo "  due to licensing restrictions. You MUST visit :" ; \
+	 echo "  ${HOMEPAGE}#down" ; \
+	 echo "  and follow the instructions - you will have to send e-mail" ; \
+	 echo "  with your personal information in order to be accepted." ; \
+	 echo "" ; \
+	 echo "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" ; \
+	 echo "  and then go back and restart this build." ; \
+	 echo "" ; \
+	 exit 1 ; \
+	fi
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtl
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtl/icons
-	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${PREFIX}/share/doc/gtl 
-	${INSTALL_DATA} ${WRKSRC}/doc/html/icons/*.gif ${WRKSRC}/doc/html/icons/*.jpeg ${PREFIX}/share/doc/gtl/icons 
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gtl 
-	${INSTALL_DATA_DIR} ${PREFIX}/include/GTL 
-	${INSTALL_DATA} ${WRKSRC}/include/GTL/*.h ${PREFIX}/include/GTL 
-	${INSTALL_DATA} ${WRKSRC}/src/libGTL.la ${PREFIX}/lib/libGTL.la
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libGTL.so.0.3 ${PREFIX}/lib/libGTL.so.0.3
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libGTL.a ${PREFIX}/lib/libGTL.a
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${PREFIX}/share/doc/gtl
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gtl
 
 .include <bsd.port.mk>

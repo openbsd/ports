@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 16:33:15 reinhard Exp $ 
+@comment $OpenBSD: PLIST,v 1.2 2001/02/09 10:05:33 reinhard Exp $
 include/GTL/GTL.h
 include/GTL/algorithm.h
 include/GTL/bfs.h
@@ -75,21 +75,13 @@ share/doc/gtl/doc004.html
 share/doc/gtl/doc005.html
 share/doc/gtl/doc006.html
 share/doc/gtl/doc007.html
+share/doc/gtl/download.html
 share/doc/gtl/edge.html
 share/doc/gtl/edge_map.html
 share/doc/gtl/fm_partition.html
 share/doc/gtl/graph.html
 share/doc/gtl/header-list.html
 share/doc/gtl/hier.html
-share/doc/gtl/icons/GTL-small.gif
-share/doc/gtl/icons/GTL.jpeg
-share/doc/gtl/icons/contents.gif
-share/doc/gtl/icons/next.gif
-share/doc/gtl/icons/next_gr.gif
-share/doc/gtl/icons/previous.gif
-share/doc/gtl/icons/previous_gr.gif
-share/doc/gtl/icons/up.gif
-share/doc/gtl/icons/up_gr.gif
 share/doc/gtl/index.html
 share/doc/gtl/maxflow_ff.html
 share/doc/gtl/maxflow_pp.html
@@ -104,7 +96,5 @@ share/doc/gtl/refer.html
 share/doc/gtl/st_number.html
 share/doc/gtl/symlist.html
 share/doc/gtl/topsort.html
-%%SHARED%%
-@dirrm share/doc/gtl/icons
 @dirrm share/doc/gtl
 @dirrm include/GTL
