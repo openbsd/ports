@@ -1,8 +1,35 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.6 2002/03/03 01:23:23 brad Exp $
+# $OpenBSD: gnu.port.mk,v 1.7 2002/03/16 01:09:23 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
+
+NEED_VERSION+=1.513
+AUTOCONF_NEW?=	No
+.if ${CONFIGURE_STYLE:L:Mautomake}
+BUILD_DEPENDS+=		::devel/automake
+.endif
+.if ${CONFIGURE_STYLE:L:Mautoupdate}
+CONFIGURE_STYLE+=autoconf
+.endif
+.if ${CONFIGURE_STYLE:L:Mautoconf}
+.  if ${AUTOCONF_NEW:L} == "yes"
+BUILD_DEPENDS+=		::devel/autoconf-new
+AUTOCONF?=			autoconf-new
+AUTOUPDATE?=		autoupdate-new
+AUTOHEADER?=		autoheader-new
+MAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
+FAKE_FLAGS+=		AUTOCONF='${AUTOCONF}' AUTOHEADER='${AUTOHEADER}'
+.  else
+AUTOCONF?=		autoconf
+AUTOUPDATE?=	autoupdate
+AUTOHEADER?=	autoheader
+BUILD_DEPENDS+=		::devel/autoconf
+.  endif
+AUTOCONF_DIR?=${WRKSRC}
+# missing ?= not an oversight
+AUTOCONF_ENV=PATH=${PORTPATH}
+.endif
 
 MODGNU_CONFIG_GUESS_DIRS?=${WRKSRC}
 
@@ -30,3 +57,17 @@ CONFIGURE_ARGS+=	--sysconfdir='${SYSCONFDIR}'
 .endif
 
 REGRESS_TARGET?=	check
+
+.if ${PATCH_CHECK_ONLY:L} != "yes"
+.  if ${CONFIGURE_STYLE:L:Mautoupdate}
+MODGNU_post-patch+= cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
+.  endif
+.  if ${CONFIGURE_STYLE:L:Mautoconf}
+MODGNU_post-patch+= cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
+.  endif
+.  if !${CONFIGURE_STYLE:L:Mautomake}
+MODGNU_post-patch+= ln -s /usr/bin/false ${WRKDIR}/bin/automake;
+MODGNU_post-patch+= ln -s /usr/bin/false ${WRKDIR}/bin/aclocal;
+.  endif
+.endif
+
