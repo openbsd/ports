@@ -1,0 +1,7 @@
+bin/xml2rfc
+share/doc/xml2rfc/README.xml
+share/doc/xml2rfc/README.txt
+share/doc/xml2rfc/rfc2629-author.xml
+share/doc/xml2rfc/rfc2629-author.txt
+share/doc/xml2rfc/rfc2629.dtd
+@dirrm share/doc/xml2rfc
