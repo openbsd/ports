@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/01/19 02:55:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2001/01/21 15:12:22 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 #
 
 #    SUBDIR += Wnn
+     SUBDIR += arphicttf
+     SUBDIR += bg5ps
 #    SUBDIR += big5con
 #    SUBDIR += big5fonts
      SUBDIR += c2t
