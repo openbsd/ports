@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2004/01/27 06:18:59 pvalchev Exp $
+
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Microsoft LANMAN & NT password sniffer/cracker"
 
