@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/29 05:43:30 kevlo Exp $
+lib/X11/fonts/chinese/fonts.alias-kc
+lib/X11/fonts/chinese/kc8x15.pcf.gz
+lib/X11/fonts/chinese/kc12x24.pcf.gz
+lib/X11/fonts/chinese/kc15f.pcf.gz
+lib/X11/fonts/chinese/kc24f.pcf.gz
+@exec cat %B/fonts.alias-* >%B/fonts.alias
+@exec echo "Remember to add %B to your font path."
+@exec /usr/X11R6/bin/mkfontdir %B || true
+@unexec cat %B/fonts.alias-* >%B/fonts.alias
+@unexec /usr/X11R6/bin/mkfontdir %B || true
+@unexec echo "Remove %B manually if it's now empty"
