@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2003/04/01 16:50:08 danh Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2003/05/15 03:49:33 jakob Exp $
 
 COMMENT=	"network time protocol implementation"
 COMMENT-doc=	"network time protocol documentation"
@@ -15,9 +15,9 @@ HOMEPAGE=	http://www.ntp.org/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-doc
