@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/03/02 20:56:09 ish Exp $
 
 COMMENT=	"MS Word ==> ASCII or TeX, Tk viewer included"
 
 DISTNAME=	catdoc-0.91.4
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
+MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/
 
-HOMEPAGE=	http://www.fe.msk.ru/~vitus/catdoc/index.html	
+HOMEPAGE=	http://www.45.free.net/~vitus/ice/catdoc/
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
