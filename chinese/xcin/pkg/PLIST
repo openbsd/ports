@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/06/20 02:59:25 kevlo Exp $
 bin/xcin
 lib/xcin/array30.cin
 lib/xcin/array30.tab

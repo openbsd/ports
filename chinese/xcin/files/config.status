@@ -15,7 +15,7 @@ PATH_XCIN_DIR=/usr/local/lib/xcin
 PATH_XCIN_MAN=/usr/local/man
 
 OPT_XCIN_CFONT=-taipei-ming16-medium-r-normal-*-16-160-*-*-*-*-big5-0
-OPT_XCIN_EFONT=12x24
+OPT_XCIN_EFONT=8x16
 OPT_UTIL_CIN2TAB=yes
 OPT_UTIL_TSINTOOLS=yes
 OPT_INPTAB_SRC=yes

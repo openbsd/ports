@@ -1,43 +1,26 @@
 --- doc/Makefile.in.orig	Wed Feb 24 16:30:33 1999
-+++ doc/Makefile.in 		Fri Jun  9 23:38:40 2000
-@@ -1,25 +1,25 @@
- include ../config.status
- 
- MANS  = @INSTALLALL@
--HOWTO = xcin.HOWTO cin2tab.HOWTO Boshiamy.HOWTO Xfonts.HOWTO
--MISC  = README.xcin XCIN.client.doc
-+#HOWTO = xcin.HOWTO cin2tab.HOWTO Boshiamy.HOWTO Xfonts.HOWTO
-+#MISC  = README.xcin XCIN.client.doc
++++ doc/Makefile.in	Tue Jun 20 18:25:46 2000
+@@ -6,18 +6,18 @@
  
  install:
  	if [ ! -d $(PATH_XCIN_MAN) ]; then $(INSTALL_DIR) $(PATH_XCIN_MAN); fi
- 	if [ ! -d $(PATH_XCIN_MAN)/man1 ]; then $(INSTALL_DIR) $(PATH_XCIN_MAN)/man1; fi
--	for f in $(MANS); do \
+-	if [ ! -d $(PATH_XCIN_MAN)/man1 ]; then $(INSTALL_DIR) $(PATH_XCIN_MAN)/man1; fi
++	if [ ! -d $(PATH_XCIN_MAN)/man1 ]; then $(INSTALL_DIR) $(DESTDIR)$(PATH_XCIN_MAN)/man1; fi
+ 	for f in $(MANS); do \
 -	    $(INSTALL_DATA) man/$$f $(PATH_XCIN_MAN)/man1; \
--	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
--	done
++	    $(INSTALL_DATA) man/$$f $(DESTDIR)$(PATH_XCIN_MAN)/man1; \
+ 	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
+ 	done
 -	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR)/docs; fi
--	for f in $(HOWTO); do \
++	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(DESTDIR)$(PATH_XCIN_DIR)/docs; fi
+ 	for f in $(HOWTO); do \
 -	    $(INSTALL_DATA) howto/$$f $(PATH_XCIN_DIR)/docs; \
--	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
--	done
--	for f in $(MISC); do \
++	    $(INSTALL_DATA) howto/$$f $(DESTDIR)$(PATH_XCIN_DIR)/docs; \
+ 	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
+ 	done
+ 	for f in $(MISC); do \
 -	    $(INSTALL_DATA) misc/$$f $(PATH_XCIN_DIR)/docs; \
--	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
--	done
-+#	for f in $(MANS); do \
-+#	    $(INSTALL_DATA) man/$$f $(PATH_XCIN_MAN)/man1; \
-+#	    echo $(PATH_XCIN_MAN)/man1/$$f >> filelist; \
-+#	done
-+#	if [ ! -d $(PATH_XCIN_DIR)/docs ]; then $(INSTALL_DIR) $(PATH_XCIN_DIR)/docs; fi
-+#	for f in $(HOWTO); do \
-+#	    $(INSTALL_DATA) howto/$$f $(PATH_XCIN_DIR)/docs; \
-+#	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
-+#	done
-+#	for f in $(MISC); do \
-+#	    $(INSTALL_DATA) misc/$$f $(PATH_XCIN_DIR)/docs; \
-+#	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
-+#	done
++	    $(INSTALL_DATA) misc/$$f $(DESTDIR)$(PATH_XCIN_DIR)/docs; \
+ 	    echo $(PATH_XCIN_DIR)/docs/$$f >> filelist; \
+ 	done
  
- clean:
- 	rm -f *.o core
