@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/15 15:49:08 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/14 23:37:49 naddy Exp $
+
 COMMENT=		"cd2ogg with vorbisgain support"
-DISTNAME=		vlorb-1.0
+DISTNAME=		vlorb-1.1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://jk.yazzy.org/projects/vlorb/
@@ -20,7 +21,12 @@ RUN_DEPENDS=		:cdparanoia-*:audio/cdparanoia \
 			:vorbisgain-*:audio/vorbisgain \
 			:p5-CDDB-*:audio/p5-cddb
 
-FAKE_FLAGS=		mandir=${DESTDIR}${TRUEPREFIX}/man
+NO_BUILD=		Yes
 NO_REGRESS=		Yes
+FAKE_FLAGS=		mandir=${DESTDIR}${TRUEPREFIX}/man
+
+pre-install:
+	@perl -i -pe 's:/etc/vlorbrc:${SYSCONFDIR}/vlorbrc:g' \
+		${WRKSRC}/vlorb ${WRKSRC}/vlorb.1
 
 .include <bsd.port.mk>

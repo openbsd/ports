@@ -1,6 +1,12 @@
-$OpenBSD: patch-vlorb,v 1.1.1.1 2003/04/15 15:49:08 espie Exp $
---- vlorb.orig	Tue Apr  8 14:10:01 2003
-+++ vlorb	Tue Apr  8 14:10:47 2003
+$OpenBSD: patch-vlorb,v 1.2 2003/05/14 23:37:49 naddy Exp $
+--- vlorb.orig	Tue May 13 06:50:37 2003
++++ vlorb	Wed May 14 15:54:39 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env perl
++#!/usr/bin/perl
+ #
+ # vlorb, a CD to Ogg Vorbis ripper.
+ # Copyright (c) 2002, Jochem Kossen <j.kossen@home.nl>
 @@ -36,7 +36,7 @@ use warnings;
  my %config;
  
