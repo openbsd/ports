@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/09/17 15:22:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.23 2002/12/01 13:41:34 wilfried Exp $
 
 COMMENT=		'color vt102 terminal emulator with transparency support'
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://largo.windowmaker.org/files/
 
-BUILD_DEPENDS=		:windowmaker->=0.50.0:x11/windowmaker
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		:windowmaker->=0.50.0:x11/windowmaker
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
