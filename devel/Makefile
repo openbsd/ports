@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2004/06/10 01:38:23 msf Exp $
+# $OpenBSD: Makefile,v 1.238 2004/06/10 02:33:12 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -129,6 +129,7 @@
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
      SUBDIR += p5-Cache-Cache
+     SUBDIR += p5-Carp-Assert
      SUBDIR += p5-Carp-Datum
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Container
@@ -151,6 +152,7 @@
      SUBDIR += p5-Date-ICal
      SUBDIR += p5-Date-Leapyear
      SUBDIR += p5-Date-Simple
+     SUBDIR += p5-Devel-Cycle
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-Symdump
@@ -192,6 +194,8 @@
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Differences
+     SUBDIR += p5-Test-Inline
+     SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Taint
