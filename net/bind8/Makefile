@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/29 12:54:22 ho Exp $
+# $OpenBSD: Makefile,v 1.7 1999/11/14 21:17:54 turan Exp $
+
+BROKEN=		SEVERE SECURITY PROBLEMS.  Do not use until fixed.
 
 DISTNAME=	bind-19991020-snapshot
 PKGNAME=	bind-8.2.2
