@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.22 2000/06/09 17:19:46 espie Exp $
+# $OpenBSD: Makefile.template,v 1.23 2000/10/22 16:06:26 espie Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -78,18 +78,22 @@ MASTER_SITES=		???
 #
 # requires bsd.port.mk 1.89 or later
 #
-# when using USE_AUTOCONF/GNU_CONFIGURE/HAS_CONFIGURE only use ONE of
-# them
-#
 #SEPARATE_BUILD=	concurrent  (build simultaneously on all arches)
 #SEPARATE_BUILD=	simple  (configure/build still recreates files in source)
 #USE_GMAKE=		Yes
-#USE_IMAKE=		Yes
-#USE_X11=		Yes (assumed if USE_IMAKE is Yes)
-#USE_AUTOCONF=		Yes
+#USE_X11=		Yes
 #USE_LIBTOOL=		Yes
-#GNU_CONFIGURE=		Yes (assumed if USE_AUTOCONF is Yes)
-#HAS_CONFIGURE=		Yes (assumed if GNU_CONFIGURE is Yes)
+# Set CONFIGURE_STYLE to value corresponding to some standard configuration
+# 	  perl: perl's MakeMaker Makefile.PL
+# 	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
+# 	  sysconfdir), (dest: add DESTDIR, does not handle it),
+# 	  (autoconf: needed by port, implies gnu)
+# 	XXX: cygnus products do NOT use autoconf for making the main 
+# 		configure from configure.in
+# 	  imake [noman]: port uses imake for configuration.
+#   	  (noman: no man page installation)
+# 	  simple: port has its own configure script
+#CONFIGURE_STYLE=	
 #CONFIGURE_SCRIPT=	??? (if other than configure)
 #CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV=		???

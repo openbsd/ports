@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.338 2000/10/02 07:53:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.339 2000/10/22 16:06:25 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -58,12 +58,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # PERMIT_xxx, CONFIGURE_STYLE, or EXTRACT_CASES instead:
 # ========================================================================
 # NO_CDROM		- Port may not go on CDROM.  Set this string to reason.
-# USE_AUTOCONF	- Port uses autoconf (implies GNU_CONFIGURE).
-# USE_IMAKE		- Port uses imake.
-# HAS_CONFIGURE	- Says that the port has its own configure script.
-# GNU_CONFIGURE	- Set if you are using GNU configure (optional).
-# NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
-#						target.
 # EXTRACT_CMD	- Command for extracting archives (default: "gzip",
 #				  "bzip2" if USE_BZIP2, "unzip" if USE_ZIP).
 # EXTRACT_SUFX	- Suffix for archive files (default: ".tar.gz",
@@ -223,7 +217,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # YACC          - yacc program to pass to configure script (default: yacc)
 #                 override with bison if port requires bison.
 # CONFIGURE_SCRIPT - Name of configure script, defaults to 'configure'.
-# CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set.
+# CONFIGURE_ARGS - Pass these args to configure if CONFIGURE_STYLE is
+# 				  simple, gnu or perl.
 # CONFIGURE_SHARED - An argument to GNU configure that expands to
 #				  --enable-shared for those architectures that support
 #				  shared libraries and --disable-shared for architectures
@@ -231,7 +226,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # LIBTOOL_FLAGS	- Pass these flags in ${CONFIGURE} and ${MAKE} environment so
 #				  to be used as args by libtool.
 # CONFIGURE_ENV - Pass these env (shell-like) to configure if
-#				  ${HAS_CONFIGURE} is set.
+#				  CONFIGURE_STYLE is simple, gnu or perl.
 # SCRIPTS_ENV	- Additional environment vars passed to scripts in
 #                 ${SCRIPTDIR} executed by bsd.port.mk.
 # MAKE_ENV		- Additional environment vars passed to sub-make in build
@@ -498,23 +493,7 @@ PKGDIR?=		${.CURDIR}/pkg
 
 PREFIX?=		${LOCALBASE}
 
-# Convert legacy variables into new CONFIGURE_STYLE
 CONFIGURE_STYLE?=
-.if defined(USE_AUTOCONF)
-CONFIGURE_STYLE+=autoconf
-.endif
-.if defined(HAS_CONFIGURE)
-CONFIGURE_STYLE+=simple
-.endif
-.if defined(GNU_CONFIGURE)
-CONFIGURE_STYLE+=gnu
-.endif
-.if defined(USE_IMAKE)
-CONFIGURE_STYLE+=imake
-.endif
-.if defined(NO_INSTALL_MANPAGES)
-CONFIGURE_STYLE+=noman
-.endif
 
 # where configuration files should go
 SYSCONFDIR?=	/etc
