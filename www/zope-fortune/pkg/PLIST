@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/04 21:59:14 naddy Exp $
+lib/zope/lib/python/Products/Fortune/FortuneTag.py
+lib/zope/lib/python/Products/Fortune/README.txt
+lib/zope/lib/python/Products/Fortune/__init__.py
+lib/zope/lib/python/Products/Fortune/fortunesetup.py
+@dirrm lib/zope/lib/python/Products/Fortune
