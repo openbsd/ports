@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2003/11/21 03:43:19 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2003/11/21 05:29:37 jolan Exp $
+
+DIST_SUBDIR?=	aspell
 
 EXTRACT_SUFX?=	.tar.bz2
 
