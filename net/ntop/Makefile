@@ -1,25 +1,24 @@
-# Ports makefile for:	ntop
-# Version required:	0.4
-# Date created:		17 August 1998
-# Whom:			Oleg Safiullin <form@OpenBSD.ORG>
-#
-# $OpenBSD: Makefile,v 1.3 1998/11/29 20:27:11 niklas Exp $
-# FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp
-#
+# $OpenBSD: Makefile,v 1.4 1999/02/25 23:31:51 brad Exp $
+# $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
-DISTNAME=	ntop-0.4-src
-PKGNAME=	ntop-0.4
+DISTNAME=	ntop-1.1cr2
+PKGNAME=	ntop-1.1
 CATEGORIES=	net
-MASTER_SITES=	http://jake.unipi.it/~deri/ntop/
+MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/snapshots/ \
+		ftp://ftp.ee.lbl.gov/
+DISTFILES=	libpcap-0.4.tar.Z ${DISTNAME}.tar.gz
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	brad@OpenBSD.ORG
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--srcdir=. --enable-lsof=no --enable-threads=no
 ALL_TARGET=
 INSTALL_TARGET=	install install-man
 
 MAN8=		ntop.8
+
+post-patch:
+	@cd ${WRKDIR}/libpcap-0.4/; ./configure; make
 
 post-install:
 	strip ${PREFIX}/sbin/ntop
