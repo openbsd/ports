@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/08 23:14:13 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/12 04:16:43 marc Exp $
 
-DISTNAME=		sslUSA-2.7
+DISTNAME=		sslUSA-2.7a
 PKGNAME=		ssl-2.7-USA
 CATEGORIES=     	security
 
