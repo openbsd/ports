@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/13 16:16:35 camield Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/10 03:14:32 jcs Exp $
 bin/asapm
 man/man1/asapm.1
+share/examples/asapm/asapmrc
+@dirrm share/examples/asapm

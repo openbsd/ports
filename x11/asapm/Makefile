@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2001/11/02 17:52:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/10 03:14:32 jcs Exp $
 
 COMMENT=	"Advanced Power Management monitor utility for X Windows"
 
-DISTNAME=	asapm-2.9
+DISTNAME=	asapm-2.11
 HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
-NEED_VERSION=	1.402
+NEED_VERSION=	1.503
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 ONLY_FOR_ARCHS=	i386
@@ -35,5 +35,7 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asapm ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/asapm.man ${PREFIX}/man/man1/asapm.1
+	@mkdir -p ${PREFIX}/share/examples/asapm
+	${INSTALL_DATA} ${WRKSRC}/asapmrc ${PREFIX}/share/examples/asapm/
 
 .include <bsd.port.mk>
