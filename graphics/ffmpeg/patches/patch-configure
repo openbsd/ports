@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.9 2005/02/09 23:41:42 naddy Exp $
+$OpenBSD: patch-configure,v 1.10 2005/02/10 19:59:08 naddy Exp $
 --- configure.orig	Fri Jan 21 14:16:04 2005
-+++ configure	Tue Feb  8 17:03:22 2005
++++ configure	Wed Feb  9 22:53:37 2005
+@@ -107,7 +107,7 @@ case "$cpu" in
+   i386|i486|i586|i686|i86pc|BePC)
+     cpu="x86"
+   ;;
+-  x86_64)
++  amd64|x86_64)
+     if [ "`$cc -dumpmachine | grep x86_64 | cut -d- -f1`" = "x86_64" -a \
+          -z "`echo $CFLAGS | grep -- -m32`"  ]; then
+       cpu="x86_64"
 @@ -248,6 +248,12 @@ make="gmake"
  CFLAGS="-pthread"
  LDFLAGS="$LDFLAGS -export-dynamic -pthread"
@@ -14,6 +23,21 @@ $OpenBSD: patch-configure,v 1.9 2005/02/09 23:41:42 naddy Exp $
  BSD/OS)
  v4l="no"
  audio_oss="yes"
+@@ -785,10 +791,10 @@ EOF
+ $cc -o $TMPE $TMPC 2> /dev/null || _memalign=no
+ fi
+ 
+-if test "$_memalign" = "no" -a "$mmx" = "yes" -a "$memalignhack" != "yes"; then
+-    echo "error, no memalign() but sse enabled, either disable it or use --enable-memalign-hack"
+-    exit 1
+-fi
++#if test "$_memalign" = "no" -a "$mmx" = "yes" -a "$memalignhack" != "yes"; then
++#    echo "error, no memalign() but sse enabled, either disable it or use --enable-memalign-hack"
++#    exit 1
++#fi
+ 
+ cat > $TMPC << EOF
+ #include <time.h>
 @@ -1219,9 +1225,6 @@ if test "$pthreads" = "yes" ; then
    echo "HAVE_PTHREADS=yes" >> config.mak
    echo "#define HAVE_PTHREADS 1" >> $TMPH
