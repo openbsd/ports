@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/05 14:18:16 jakob Exp $
+man/man5/syslog-ng.conf.5
+man/man8/syslog-ng.8
+sbin/syslog-ng
+share/doc/syslog-ng/syslog-ng.html/book1.html
+share/doc/syslog-ng/syslog-ng.html/index.html
+share/doc/syslog-ng/syslog-ng.html/intro.html
+share/doc/syslog-ng/syslog-ng.html/msgroute.html
+share/doc/syslog-ng/syslog-ng.html/reference.html
+share/doc/syslog-ng/syslog-ng.html/tuning.html
+share/doc/syslog-ng/syslog-ng.html/x133.html
+share/doc/syslog-ng/syslog-ng.html/x170.html
+share/doc/syslog-ng/syslog-ng.html/x175.html
+share/doc/syslog-ng/syslog-ng.html/x340.html
+share/doc/syslog-ng/syslog-ng.html/x459.html
+share/doc/syslog-ng/syslog-ng.html/x462.html
+share/doc/syslog-ng/syslog-ng.html/x477.html
+share/doc/syslog-ng/syslog-ng.html/x483.html
+share/doc/syslog-ng/syslog-ng.html/x95.html
+share/doc/syslog-ng/syslog-ng.ps
+share/doc/syslog-ng/syslog-ng.sgml
+share/doc/syslog-ng/syslog-ng.txt
+share/examples/syslog-ng/syslog-ng.conf.sample
+@dirrm share/examples/syslog-ng
+@dirrm share/doc/syslog-ng/syslog-ng.html
+@dirrm share/doc/syslog-ng

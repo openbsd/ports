@@ -1,0 +1,9 @@
+syslog-ng, as the name shows, is a syslogd replacement, but with new
+functionality for the new generation. The original syslogd allows messages
+only to be sorted based on priority/facility pairs; syslog-ng adds the
+possibility to filter based on message contents using regular expressions.
+The new configuration scheme is intuitive and powerful. Forwarding logs
+over TCP and remembering all forwarding hops makes it ideal for firewalled
+environments.
+
+WWW: ${HOMEPAGE}
