@@ -1,11 +1,11 @@
-$OpenBSD: patch-etc-share,v 1.1.1.1 2000/07/13 08:56:20 camield Exp $
+$OpenBSD: patch-etc-share,v 1.2 2000/09/18 06:56:53 camield Exp $
 
 Usage of /usr/local/etc is deprecated on OpenBSD. Use /usr/local/share
 instead.
 
---- dnscache-conf.c.orig	Tue Feb 29 08:29:49 2000
-+++ dnscache-conf.c	Tue Feb 29 08:30:37 2000
-@@ -87,10 +87,10 @@
+--- dnscache-conf.c.orig	Mon Sep 18 00:36:57 2000
++++ dnscache-conf.c	Mon Sep 18 08:45:21 2000
+@@ -88,10 +88,10 @@
    if (chdir(auto_home) == -1)
      strerr_die4sys(111,FATAL,"unable to switch to ",auto_home,": ");
    seed_addtime();

@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/13 08:56:19 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/18 06:56:52 camield Exp $
 
-DISTNAME=	dnscache-1.00
+DISTNAME=	djbdns-1.01
 HOMEPAGE=	http://cr.yp.to/djbdns.html
 CATEGORIES=	net
 MAINTAINER=	cd@sentia.nl
-
-# temporary, until DISTNAME changes
-PKGNAME=	djbdns-1.00
 
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/

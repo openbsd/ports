@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/13 08:56:22 camield Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/09/18 06:56:53 camield Exp $
 bin/axfr-get
 bin/axfrdns
 bin/axfrdns-conf
@@ -10,6 +10,7 @@ bin/dnsipq
 bin/dnsmx
 bin/dnsname
 bin/dnsq
+bin/dnsqr
 bin/dnstrace
 bin/dnstxt
 bin/pickdns
