@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.PPC,v 1.1 2004/09/15 19:06:57 espie Exp $
-lib/gcc-lib/${CONFIG}/${V}/crtsavres.o
