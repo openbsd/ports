@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/30 04:51:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/07/12 06:27:12 marcm Exp $
 bin/glade
 share/glade/gnome/Makefile.am
 share/glade/gnome/aclocal-include.m4
@@ -175,5 +175,5 @@ share/pixmaps/glade/glade_logo.png
 @dirrm share/glade/gtk
 @dirrm share/glade/gnome
 @dirrm share/glade
-@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
-@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/06/12 20:09:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/12 06:27:12 marcm Exp $
 
 COMMENT=		"GNOME panel"
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		gettext
 
 BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig \
-			:scrollkeeper->=0.3.11:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper \
+			:scrollkeeper->=0.3.12:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
 			:control-center2-*:x11/gnome/controlcenter2
 LIB_DEPENDS= 		gnome-desktop-2.0::x11/gnome/desktop \
 			wnck-1.4::devel/libwnck

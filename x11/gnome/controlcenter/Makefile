@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/01/02 03:37:19 marcm Exp $
+# $OpenBSD: Makefile,v 1.21 2003/07/12 06:27:12 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -15,8 +15,8 @@ LIB_DEPENDS=		gdk_pixbuf::graphics/gdk-pixbuf \
 			gnorba,gtkxmhtml::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
 
-BUILD_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
-RUN_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper \
+BUILD_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
+RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper \
 			:gtk-engines->=0.12:x11/gtk-engines
 
 # GPL

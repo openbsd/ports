@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/04 06:41:12 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/12 06:27:12 marcm Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
@@ -21,8 +21,9 @@ MODULE=			gettext
 
 BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
 			:mozilla-devel-${MOZ}:www/mozilla,-devel \
-			:scrollkeeper-*:textproc/scrollkeeper
-RUN_DEPENDS=		:mozilla-${MOZ}:www/mozilla
+			:scrollkeeper->=0.3.12:textproc/scrollkeeper
+RUN_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
+			:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 			gdk_pixbuf::graphics/gdk-pixbuf \
 			glade,glade-gnome::devel/libglade,gnome \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/03/09 17:22:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/12 06:27:12 marcm Exp $
 # $RuOBSD: Makefile,v 1.9 2002/10/28 16:01:41 grange Exp $
 
 COMMENT=		"GNOME jabber client"
@@ -24,7 +24,7 @@ LIB_DEPENDS=		sigc.0::devel/libsigc++ gal.19::devel/gal \
 			gnomeprint.16::x11/gnome/print
 
 RUN_DEPENDS=		:gnupg-*:security/gnupg \
-			:scrollkeeper->=0.1.4:textproc/scrollkeeper
+			:scrollkeeper->=0.1.12:textproc/scrollkeeper
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 

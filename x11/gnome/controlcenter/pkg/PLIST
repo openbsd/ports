@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/01/02 03:37:19 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/07/12 06:27:12 marcm Exp $
 bin/background-properties-capplet
 bin/default-application-properties-capplet
 bin/file-types-capplet
@@ -252,5 +252,5 @@ share/pixmaps/control-center.png
 @dirrm share/control-center/Desktop
 @dirrm share/control-center
 @dirrm include/libcapplet1
-@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
-@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q

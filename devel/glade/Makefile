@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/15 14:27:04 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2003/07/12 06:27:12 marcm Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 
@@ -12,11 +12,11 @@ MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glade/0.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
-BUILD_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper
+BUILD_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 RUN_DEPENDS=		:automake->=1.4:devel/automake \
 			:autoconf->=2.13:devel/autoconf/2.13 \
 			::devel/metaauto \
-			:scrollkeeper->=0.3.11:textproc/scrollkeeper
+			:scrollkeeper->=0.3.12:textproc/scrollkeeper
 
 FLAVORS=		gnome
 FLAVOR?=

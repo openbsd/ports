@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/28 17:22:17 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/12 06:27:12 marcm Exp $
 @comment $RuOBSD: PLIST,v 1.2 2002/10/16 01:24:19 grange Exp $
 bin/gabber
 man/man1/gabber.1
@@ -149,5 +149,5 @@ share/sounds/gabber/gabber_subrequest.wav
 @dirrm share/gnome/help/gabber/C
 @dirrm share/gnome/help/gabber
 @dirrm share/gabber
-@exec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)
-@unexec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)
+@exec %D/bin/scrollkeeper-update -q
+@unexec %D/bin/scrollkeeper-update -q
