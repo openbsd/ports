@@ -3,7 +3,7 @@
 # Date created:		1998-Mar-20
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.5 1999/04/22 19:05:08 rohee Exp $
+# $OpenBSD: Makefile,v 1.6 1999/09/26 21:43:44 espie Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -16,8 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 # Add support for png
 #
-MASTER_SITES+=	ftp://swrinde.nde.swri.edu/pub/png/applications/
-DISTFILES+=	xv-3.10a-png-1.2d.tar.gz
+MASTER_SITES0=	ftp://swrinde.nde.swri.edu/pub/png/applications/
+DISTFILES+=	xv-3.10a-png-1.2d.tar.gz:0
 
 # Up-to-date jpeg/tiff libraries
 #
@@ -29,9 +29,9 @@ PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 # (xpm.patch is integrated in xvpng.diff that is in xv-3.10a-png-1.2d.tar.gz)
 # longname.patch is integrated in patches/patch-aj
 
-PATCH_SITES+=	ftp://ftp.trilon.com/pub/xv/patches/
-PATCHFILES+=	deepcolor.patch gifpatch grabpatch \
-		mp-tiff-patch pdf.patch vispatch xvpng-fix2.patch
+PATCH_SITES0=	ftp://ftp.trilon.com/pub/xv/patches/
+PATCHFILES+=	deepcolor.patch:0 gifpatch:0 grabpatch:0 \
+		mp-tiff-patch:0 pdf.patch:0 vispatch:0 xvpng-fix2.patch:0
 
 MAINTAINER=	rohee@OpenBSD.ORG
 
