@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/18 15:59:57 espie Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
 CATEGORIES=	textproc devel print
 NEED_VERSION=	1.489
-VERSION=3.64
+VERSION=3.67
 DISTNAME=	lgrind-${VERSION}
 DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 	source/regexp.c source/regexp.h source/v2lg.c \
@@ -13,8 +13,10 @@ DISTFILES=source/lgrind.c source/lgutil.c source/lgrindef.c source/lgrindef.h \
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=Yes
-PERMIT_DISTFILES_CDROM=Yes
+# Gripe to Van Jacobson for pissing off lgrind's current caretaker
+# into not maintaining it anymore.
+PERMIT_PACKAGE_CDROM=May not be sold
+PERMIT_DISTFILES_CDROM=May not be sold
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
 
@@ -26,7 +28,7 @@ MASTER_SITES=${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=support/lgrind
 DIST_SUBDIR=${DISTNAME}
 
-MAKE_FLAGS=BASEDIR=${PREFIX} DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef VERSION=${VERSION}
+MAKE_FLAGS=BASEDIR=${PREFIX} DEFSFILE=${PREFIX}/share/texmf/tex/latex/lgrind/lgrindef VERSION=${VERSION} CFLAGS='${CFLAGS}'
 FAKE_FLAGS=BASEDIR=${WRKINST}${PREFIX}
 
 BUILD_DEPENDS=::print/teTeX/base
