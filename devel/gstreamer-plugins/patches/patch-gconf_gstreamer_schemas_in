@@ -1,0 +1,12 @@
+$OpenBSD: patch-gconf_gstreamer_schemas_in,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+--- gconf/gstreamer.schemas.in.orig	Fri Jul 16 22:44:54 2004
++++ gconf/gstreamer.schemas.in	Fri Jul 16 22:44:57 2004
+@@ -5,7 +5,7 @@
+       <applyto>/system/gstreamer/@GST_MAJORMINOR@/default/audiosink</applyto>
+       <owner>gstreamer</owner>
+       <type>string</type>
+-      <default>osssink</default>
++      <default>sunaudiosink</default>
+       <locale name="C">
+         <short>default GStreamer audiosink</short>
+         <long>GStreamer can play audio using any number of output elements.  Some possible choices are osssink, esdsink and alsasink.  The audiosink can be a partial pipeline instead of just one element.</long>

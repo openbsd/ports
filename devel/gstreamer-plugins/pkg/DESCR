@@ -1,0 +1,4 @@
+Plugin support and plugins for the GStreamer streaming-media framework.
+
+This package provides a basic set of plugins to use with
+GStreamer-based applications.

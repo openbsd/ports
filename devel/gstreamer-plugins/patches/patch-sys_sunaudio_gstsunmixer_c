@@ -1,0 +1,16 @@
+$OpenBSD: patch-sys_sunaudio_gstsunmixer_c,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+--- sys/sunaudio/gstsunmixer.c.orig	Fri Oct  1 04:44:22 2004
++++ sys/sunaudio/gstsunmixer.c	Mon Oct 11 16:59:31 2004
+@@ -279,12 +279,6 @@ gst_sunaudiomixer_set_mute (GstMixer * m
+ 
+   AUDIO_INITINFO (&audioinfo);
+ 
+-  if (mute) {
+-    audioinfo.output_muted = 1;
+-  } else {
+-    audioinfo.output_muted = 0;
+-  }
+-
+   if (ioctl (sunaudio->mixer_fd, AUDIO_SETINFO, &audioinfo) < 0) {
+     g_warning ("Error setting volume device");
+     return;

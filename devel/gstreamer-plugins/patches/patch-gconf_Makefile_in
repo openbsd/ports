@@ -1,0 +1,18 @@
+$OpenBSD: patch-gconf_Makefile_in,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+--- gconf/Makefile.in.orig	Thu Nov 25 07:43:38 2004
++++ gconf/Makefile.in	Mon Dec  6 21:47:32 2004
+@@ -807,13 +807,7 @@ gstreamer-@GST_MAJORMINOR@.schemas: gstr
+ 	cp gstreamer.schemas gstreamer-@GST_MAJORMINOR@.schemas
+ 
+ install-data-local:
+-	@GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) \
+-		--makefile-install-rule $(srcdir)/$(schema_DATA) || \
+-		(echo ;\
+-		echo "*****************************************************"; \
+-		echo "Installation of schemas failed, install them manually"; \
+-		echo "*****************************************************";) 
+-	@true
++
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,0 +1,15 @@
+$OpenBSD: patch-sys_oss_oss_probe_c,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+--- sys/oss/oss_probe.c.orig	Tue Jun 22 04:35:13 2004
++++ sys/oss/oss_probe.c	Tue Jul 13 20:53:32 2004
+@@ -55,9 +55,9 @@ main (int argc, char *argv[])
+   int i;
+   Probe *probe;
+ 
+-  fd = open ("/dev/dsp", O_RDWR);
++  fd = open ("/dev/sound", O_RDWR);
+   if (fd < 0) {
+-    perror ("/dev/dsp");
++    perror ("/dev/sound");
+     exit (1);
+   }
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2004/12/22 06:09:18 marcm Exp $
+--- configure.orig	Thu Nov 25 07:42:54 2004
++++ configure	Mon Dec  6 21:47:32 2004
+@@ -8296,7 +8296,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -34518,7 +34518,7 @@ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_Xv_pic_XvQueryExtension" >&5
+ echo "${ECHO_T}$ac_cv_lib_Xv_pic_XvQueryExtension" >&6
+ if test $ac_cv_lib_Xv_pic_XvQueryExtension = yes; then
+-  HAVE_XVIDEO="yes"
++  HAVE_XVIDEO="no" # break this test for now so we get the non-pic Xv
+ else
+   HAVE_XVIDEO="no"
+ fi
