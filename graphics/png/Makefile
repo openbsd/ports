@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/10 06:15:37 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/06/10 06:34:37 brad Exp $
 
 DISTNAME=       libpng-1.0.6
 PKGNAME=        png-1.0.6
@@ -9,6 +9,8 @@ MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 PATCHFILES=	libpng-1.0.6-patch-a.txt.gz \
 		libpng-1.0.6-patch-b.txt.gz \
 		libpng-1.0.6-patch-c.txt.gz
+
+HOMEPAGE=	http://www.libpng.org/pub/png/
 
 MAINTAINER=	brad@openbsd.org
 
