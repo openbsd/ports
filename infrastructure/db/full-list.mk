@@ -1,4 +1,4 @@
-# $Id: full-list.mk,v 1.1 2000/04/18 10:49:29 turan Exp $
+# $Id: full-list.mk,v 1.2 2000/04/18 10:51:00 turan Exp $
 
 SUBDIR += archivers/bzip2
 SUBDIR += archivers/gshar+gunshar
@@ -85,3 +85,5 @@ SUBDIR += x11/xcolors
 SUBDIR += x11/qt
 SUBDIR += x11/kdebase
 SUBDIR += x11/kdelibs
+
+.include <bsd.port.subdir.mk>

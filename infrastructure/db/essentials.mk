@@ -1,4 +1,4 @@
-# $Id: essentials.mk,v 1.1 2000/04/18 10:49:29 turan Exp $ 
+# $Id: essentials.mk,v 1.2 2000/04/18 10:51:00 turan Exp $ 
 
 SUBDIR += archivers/bzip2
 SUBDIR += archivers/gshar+gunshar
@@ -51,3 +51,5 @@ SUBDIR += x11/Xaw3d
 SUBDIR += x11/gtk+
 SUBDIR += x11/tk80
 SUBDIR += x11/xcolors
+
+.include <bsd.port.subdir.mk>
