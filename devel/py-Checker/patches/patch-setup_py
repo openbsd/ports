@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2001/11/28 07:39:35 shell Exp $
+--- setup.py.orig	Wed Nov 28 14:52:01 2001
++++ setup.py	Wed Nov 28 14:52:44 2001
+@@ -64,7 +64,7 @@
+           author_email          = "pychecker@metaslash.com",
+           url                   = "http://pychecker.sourceforge.net/",
+           packages              = [ 'pychecker' ],
+-          data_files            = [ (install_dir, DOC_FILES) ],
++#          data_files            = [ (install_dir, DOC_FILES) ],
+           scripts               = [ LOCAL_SCRIPT, ],
+           long_description      = LONG_DESCRIPTION
+          )
