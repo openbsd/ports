@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/10/23 16:48:12 xsa Exp $
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
 share/doc/py-parsing/
+share/doc/py-parsing/CHANGES
 share/doc/py-parsing/HowToUsePyparsing.html
 share/doc/py-parsing/README
 share/examples/py-parsing/
@@ -21,6 +22,9 @@ share/examples/py-parsing/getNTPservers.py
 share/examples/py-parsing/greeting.py
 share/examples/py-parsing/httpServerLogParser.py
 share/examples/py-parsing/idlParse.py
+share/examples/py-parsing/mozilla.ics
+share/examples/py-parsing/mozillaCalendarParser.py
+share/examples/py-parsing/pgn.py
 share/examples/py-parsing/scanExamples.py
 share/examples/py-parsing/simpleSQL.py
 share/examples/py-parsing/urlExtractor.py
