@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
+%%plugin%%
+bin/swf_play
+include/swfdec/swf.h
+include/swfdec/swfdec.h
+lib/libswfdec.a
+lib/libswfdec.la
+lib/pkgconfig/swfdec.pc
+%%SHARED%%
+@comment @dirrm lib/pkgconfig
+@dirrm include/swfdec

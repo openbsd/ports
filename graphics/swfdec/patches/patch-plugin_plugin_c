@@ -1,0 +1,23 @@
+$OpenBSD: patch-plugin_plugin_c,v 1.1.1.1 2003/06/24 08:11:14 jolan Exp $
+--- plugin/plugin.c.orig	Thu Nov 21 02:51:38 2002
++++ plugin/plugin.c	Wed Jun 11 02:24:05 2003
+@@ -1,8 +1,9 @@
+ 
+ 
+ #include <stdio.h>
+-#include <stdint.h>
++/* #include <stdint.h> */
+ #include <unistd.h>
++#include <sys/signal.h>
+ #include <sys/wait.h>
+ #include <config.h>
+ 
+@@ -240,7 +241,7 @@ static void plugin_stream_as_file(NPP in
+ 
+ /* exported functions */
+ 
+-NPError NP_GetValue(NPP instance, NPPVariable variable, void *value)
++NPError NP_GetValue(void* future, NPPVariable variable, void *value)
+ {
+     NPError err = NPERR_NO_ERROR;
+ 
