@@ -1,36 +1,31 @@
-$OpenBSD: patch-host.defs,v 1.2 2002/07/24 01:12:31 brad Exp $
+$OpenBSD: patch-host.defs,v 1.3 2003/01/02 23:30:21 brad Exp $
 --- host.defs.orig	Tue Jul 23 12:13:21 2002
-+++ host.defs	Tue Jul 23 20:49:50 2002
-@@ -494,6 +494,34 @@ machtype: defined(vax)					: "vax"
++++ host.defs	Thu Jan  2 18:26:15 2003
+@@ -494,6 +494,29 @@ machtype: defined(vax)					: "vax"
  machtype: defined(alpha)				: "alpha"
  enddef	:
  
 +newdef : defined(__OpenBSD__)
 +comment        : OpenBSD
-+vendor : defined(alpha)                                : "digital"
-+vendor : defined(amiga)                                : "commodore"
-+vendor : defined(atari)                                : "atari"
-+vendor : defined(hp300)                                : "hp"
++vendor : defined(__alpha__)                            : "digital"
++vendor : defined(__hppa__)                             : "hp"
 +vendor : defined(M_intel)                              : "intel"
-+vendor : defined(m68k)                                 : "motorola"
-+vendor : defined(mac68k)                               : "apple"
-+vendor : defined(pc532)                                : "national-semi"
-+vendor : defined(pmax) || defined(mips)                : "dec"
-+vendor : defined(M_mipsel)                             : "dec"
-+vendor : defined(sparc)                                : "sun"
-+vendor : defined(sun3)                                 : "sun"
-+vendor : defined(vax)                                  : "digital"
++vendor : defined(__m68k__)                             : "motorola"
++vendor : defined(__m88k__)                             : "motorola"
++vendor : defined(__powerpc__)                          : "motorola"
++vendor : defined(__sparc__) || defined(__sparc64__)    : "sun"
++vendor : defined(__vax__)                              : "digital"
 +hosttype:                                              : "OpenBSD"
 +ostype :                                               : "OpenBSD"
-+machtype: defined(sparc)                               : "sparc"
-+machtype: defined(mc68020)                             : "m68k"
++machtype: defined(__alpha__)                           : "alpha"
++machtype: defined(__hppa__)                            : "hppa"
 +machtype: defined(M_i386)                              : "i386"
-+machtype: defined(M_mipsel)                            : "mipsel"
-+machtype: defined(M_mipseb)                            : "mipseb"
-+machtype: defined(mips)                                        : "mips"
-+machtype: defined(pc532)                               : "pc532"
-+machtype: defined(vax)                                 : "vax"
-+machtype: defined(alpha)                               : "alpha"
++machtype: defined(__m68k__)                            : "m68k"
++machtype: defined(__m88k__)                            : "m88k"
++machtype: defined(__sparc64__)                         : "sparc64"
++machtype: defined(__sparc__)                           : "sparc"
++machtype: defined(__powerpc__)                         : "powerpc"
++machtype: defined(__vax__)                             : "vax"
 +enddef :
 +
  
