@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.8 2000/06/25 07:22:46 brad Exp $
 bin/autoconf
 bin/autoheader
 bin/autoreconf

@@ -9,3 +9,5 @@ macro calls.
 The FSF would make you believe that only gnu-m4 can handle autoconf.
 As of OpenBSD 2.7, this is no longer true. This package does not depend
 on gnu-m4.
+
+WWW: ${HOMEPAGE}
