@@ -1,35 +1,45 @@
-$OpenBSD: patch-ltmain_sh,v 1.4 2003/10/07 05:48:55 marcm Exp $
---- ltmain.sh.orig	2003-02-08 06:47:44.000000000 -0800
-+++ ltmain.sh	2003-09-10 08:27:55.000000000 -0700
-@@ -1085,6 +1085,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.5 2004/01/03 05:53:38 marcm Exp $
+--- ltmain.sh.orig	2003-12-07 11:35:20.000000000 -0800
++++ ltmain.sh	2003-12-08 21:46:16.000000000 -0800
+@@ -1073,6 +1073,17 @@ compiler."
  	continue
  	;;
  
 +      -pthread)
-+	case $host in
-+	*-*-openbsd*)
-+	  deplibs="$deplibs $arg"
-+	  ;;
-+	*)
-+	  continue
-+	  ;;
-+	esac
-+	;;
++        case $host in
++        *-*-openbsd*)
++          deplibs="$deplibs $arg"
++          ;;
++        *)
++          continue
++          ;;
++        esac
++        ;;
 +
        -module)
  	module=yes
  	continue
-@@ -1525,6 +1536,9 @@ compiler."
+@@ -1530,6 +1541,19 @@ compiler."
  	  fi
  	  continue
  	  ;;
-+       -pthread)
-+         continue
-+         ;;
++	-pthread)
++	  case $linkmode in
++	  lib)
++	    deplibs="$deplib $deplibs"
++	    newdependency_libs="$deplib $newdependency_libs"
++	    ;;
++	  prog)
++	    compile_deplibs="$deplib $compile_deplibs"
++	    finalize_deplibs="$deplib $finalize_deplibs"
++	    ;;
++	  esac
++	  continue
++	  ;;
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -1770,11 +1784,6 @@ compiler."
+@@ -1775,10 +1799,6 @@ compiler."
  	    continue
  	  fi
  
@@ -37,13 +47,12 @@ $OpenBSD: patch-ltmain_sh,v 1.4 2003/10/07 05:48:55 marcm Exp $
 -	    notinst_deplibs="$notinst_deplibs $lib"
 -	    need_relink=yes
 -	  fi
--
+ 
  	  if test -n "$old_archive_from_expsyms_cmds"; then
  	    # figure out the soname
- 	    set dummy $library_names
-@@ -4580,40 +4589,6 @@ relink_command=\"$relink_command\""
+@@ -4526,40 +4546,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+     test "$show" = : && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
