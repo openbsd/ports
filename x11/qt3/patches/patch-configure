@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2002/03/04 16:13:05 espie Exp $
+--- configure.orig	Fri Feb 15 09:12:23 2002
++++ configure	Tue Feb 26 18:55:50 2002
+@@ -1064,7 +1064,7 @@ then
+     MYSQL_REQ="-lmysqlclient mysql.h"
+     OCI_REQ="-lclntsh -lwtc8 oci.h"
+     PSQL_REQ="-lpq postgres.h libpq/libpq-fs.h catalog/pg_type.h libpq-fe.h"
+-    ODBC_REQ="-lodbc sql.h sqlext.h"
++    ODBC_REQ="-liodbc sql.h sqlext.h"
+     TDS_REQ="-lsybdb sybfront.h sybdb.h"
+     for _SQLDR in $CFG_SQL_AVAILABLE
+     do
+@@ -1487,7 +1487,7 @@ then
+ 	echo "Type 'no' to decline this license offer."
+ 	echo
+ 	echo "Do you accept the terms of $affix license?"
+-	read acceptance
++	acceptance=yes
+ 	if [ "$acceptance" = "yes" ]
+ 	then
+ 	    break
