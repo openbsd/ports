@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2001/08/14 21:28:17 camield Exp $
+# $OpenBSD: Makefile,v 1.163 2001/08/15 16:48:07 lebel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -65,6 +65,7 @@
      SUBDIR += lftp
      SUBDIR += libnet
      SUBDIR += libnids
+     SUBDIR += libst
      SUBDIR += licq
      SUBDIR += micq
      SUBDIR += mirror
