@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/11/11 16:41:49 provos Exp $
+# $OpenBSD: Makefile,v 1.8 2000/09/22 21:28:28 brad Exp $
 #
 
 #    SUBDIR += Scilab
@@ -13,6 +13,7 @@
 #    SUBDIR += freefem
 #    SUBDIR += fudgit
      SUBDIR += gnuplot
+     SUBDIR += gnuplot:no_x11
 #    SUBDIR += hexcalc
      SUBDIR += hoc
 #    SUBDIR += lapack
