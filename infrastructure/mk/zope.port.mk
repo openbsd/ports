@@ -1,1 +1,1 @@
-.include "${PORTSDIR}/www/zope/files/zope.port.mk"
+.include "${PORTSDIR}/www/zope/zope.port.mk"

@@ -1,4 +1,4 @@
-# $OpenBSD: zope.port.mk,v 1.3 2004/08/03 10:16:36 xsa Exp $
+# $OpenBSD: zope.port.mk,v 1.1 2004/08/03 12:08:10 xsa Exp $
 #
 #	zope.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
