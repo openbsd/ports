@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2003/01/18 17:43:23 avsm Exp $
 
 COMMENT=	strong hash library
 
-DISTNAME=	mhash-0.8.13
+DISTNAME=	mhash-0.8.17
 CATEGORIES=	security
 
-MASTER_SITES=	http://mhash.sourceforge.net/dl/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mhash/}
 
 HOMEPAGE=	http://mhash.sourceforge.net/
 
