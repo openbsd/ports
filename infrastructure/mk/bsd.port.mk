@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.566 2003/07/30 10:40:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.567 2003/07/30 19:31:31 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -44,20 +44,7 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # DEPENDS_TARGET - The target to execute when a port is calling a
 #				  dependency (default: "install").
 #
-# readme		- Create a README.html file describing the category or package
-#				  (somewhat broken due to NEW_DEPENDS)
 
-
-# Somewhat obsolete targets:
-# list-distfiles- list the distribution and patch files used by a port.
-#				  Typical use is (from the top level of the ports tree)
-#				  make ECHO_MSG=: list-distfiles | tee some-file
-#				  (rely on mirror-maker instead)
-# print-depends - print all dependencies for the given package
-#				  (for new dependencies, use
-#				  build-depends-list/run-depends-list instead)
-#
-#
 # Default sequence for "all" is:  fetch checksum extract patch configure build
 #
 # Please read the comments in the targets section below, you
@@ -694,8 +681,15 @@ ${WRKPKG}/PLIST${SUBPACKAGE}: ${PLIST} ${WRKPKG}/depends${SUBPACKAGE}
 .endif
 
 ${WRKPKG}/depends${SUBPACKAGE}:
-	@touch $@
-	@self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ exec ${MAKE} _solve-package-depends
+	@mkdir -p ${WRKPKG}
+	@>$@
+.if (defined(RUN_DEPENDS) && !empty(RUN_DEPENDS)) || (!defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS))
+	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
+	export _DEPENDS_FILE; \
+	echo "|${FULLPKGNAME${SUBPACKAGE}}|" >>$${_DEPENDS_FILE}; \
+	self=${FULLPKGNAME${SUBPACKAGE}} _depends_result=$@ ${MAKE} _recurse-solve-package-depends; \
+	rm -f $${_DEPENDS_FILE}
+.endif
 
 MTREE_FILE?=
 MTREE_FILE+=${PORTSDIR}/infrastructure/db/fake.mtree
@@ -713,7 +707,6 @@ ${WRKPKG}/mtree.spec: ${MTREE_FILE}
 PKG_TMPDIR?=	/var/tmp
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
-_SORT_DEPENDS?=tsort|tail -r
 
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
@@ -770,9 +763,6 @@ SH?=		/bin/sh
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		echo
-
-# XXX
-_DEPEND_ECHO?=		echo
 
 # basic master sites configuration
 
@@ -847,7 +837,7 @@ _EVERYTHING+=${PATCHFILES}
 ALLFILES+=	${_PATCHFILES}
 .endif
 
-.if make(makesum) || make(addsum) || make(list-distfiles) || defined(__FETCH_ALL)
+.if make(makesum) || make(addsum) || defined(__FETCH_ALL)
 .  if defined(SUPDISTFILES)
 _EVERYTHING+= ${SUPDISTFILES}
 ALLFILES+= ${SUPDISTFILES:C/:[0-9]$//}
@@ -1159,8 +1149,13 @@ depends: lib-depends build-depends run-depends regress-depends
 
 # and the rules for the actual dependencies
 
+_FULL_PACKAGE_NAME?=No
 _print-packagename:
+.if ${_FULL_PACKAGE_NAME:L} == "yes"
+	@echo '${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}'
+.else
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
+.endif
 
 .for _DEP in build run lib regress
 _DEP${_DEP}_COOKIES=
@@ -1202,7 +1197,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 				fi;; \
 			esac; \
 			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
-			if eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
+			if eval $$toset ${MAKE} $$target; then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 			else \
 				exit 1; \
@@ -1271,9 +1266,10 @@ uninstall deinstall fake package lib-depends-check manpages-check:
 # going to be tweaked as a result of running lib-depends-check.
 #
 lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
-	@LIB_DEPENDS="`${MAKE} _recurse-lib-depends`" PKG_DBDIR='${PKG_DBDIR}' \
+	@_DEPENDS_FILE=`mktemp /tmp/depends.XXXXXXXXX`; export _DEPENDS_FILE; LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" PKG_DBDIR='${PKG_DBDIR}' \
 		perl ${PORTSDIR}/infrastructure/install/check-libs \
-		${_LIBLIST} ${_BUILDLIBLIST}
+		${_LIBLIST} ${_BUILDLIBLIST}; \
+	rm -f ${_DEPENDS_FILE}
 
 manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
@@ -1805,22 +1801,6 @@ ${_F}:
 .  endif
 .endfor
 
-# list the distribution and patch files used by a port.  Typical
-# use is		make ECHO_MSG=: list-distfiles | tee some-file
-#
-list-distfiles:
-	@echo "${FULLPKGNAME}"
-	@for file in ${ALLFILES}; do \
-		if [ "$$file" != "${EXTRACT_SUFX}" ]; then \
-			if [ -z "${DIST_SUBDIR}" ]; then \
-				printf "\t$$file\n"; \
-			else \
-				printf "\t${DIST_SUBDIR}/$$file\n"; \
-			fi \
-		fi \
-	 done
-	@echo ""
-
 # Some support rules for do-package
 
 package-links:
@@ -1842,103 +1822,67 @@ delete-package-links:
 	@rm -f ${${_l}_PACKAGES}/${FULLPKGNAME${SUBPACKAGE}}${PKG_SUFX}
 .endfor
 
-delete-package:
-	@cd ${.CURDIR} && exec ${MAKE} clean=package
-
-# Checkpatch
-#
-# Special target to verify patches
-
-checkpatch:
-	@cd ${.CURDIR} && exec ${MAKE} PATCH_CHECK_ONLY=Yes patch
-
-# Reinstall
-#
-# Special target to re-run install
-
-reinstall:
-	@cd ${.CURDIR} && exec ${MAKE} clean=install
-	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
-
-# Force rebuild of a package
-repackage:
-	@cd ${.CURDIR} && exec ${MAKE} clean=packages
-	@cd ${.CURDIR} && exec ${MAKE} package
-
-# Rebuild
-#
-# Special target to re-run build
-rebuild:
-	@rm -f ${_BUILD_COOKIE}
-	@cd ${.CURDIR} && exec ${MAKE} build
-
-# Deinstall
-#
-# Special target to remove installation
-
-uninstall deinstall:
-	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME${SUBPACKAGE}}
-
-
-################################################################
-# Some more targets supplied for users' convenience
-################################################################
-
 # Cleaning up
 
+_CLEANDEPENDS?=Yes
+
 clean:
-.if ${clean:L:Mdepends}
-	@cd ${.CURDIR} && exec ${MAKE} clean-depends
-.endif
+.if ${clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
+	@unset FLAVOR SUBPACKAGE || true; \
+	${MAKE} all-dir-depends|tsort -r|while read dir; do \
+		${_flavor_fragment}; \
+		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
+	done
+.else
 	@${ECHO_MSG} "===>  Cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
-.if ${clean:L:Mfake}
+.  if ${clean:L:Mfake}
 	@if cd ${WRKINST} 2>/dev/null; then ${SUDO} rm -rf ${WRKINST}; fi
-.endif
-.if ${clean:L:Mwork}
-.  if ${clean:L:Mflavors}
+.  endif
+.  if ${clean:L:Mwork}
+.    if ${clean:L:Mflavors}
 	@for i in ${.CURDIR}/w-*; do \
 		if [ -L $$i ]; then ${SUDO} rm -rf `readlink $$i`; fi; \
 		${SUDO} rm -rf $$i; \
 	done
-.  else
+.    else
 	@if [ -L ${WRKDIR} ]; then rm -rf `readlink ${WRKDIR}`; fi
 	@rm -rf ${WRKDIR}
+.    endif
 .  endif
-.endif
-.if ${clean:L:Mdist}
+.  if ${clean:L:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
 		if [ "${_DISTFILES}" -o "${_PATCHFILES}" ]; then \
 			rm -f ${_DISTFILES} ${_PATCHFILES}; \
 		fi \
 	fi
-.  if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}
+.    endif
 .  endif
-.endif
-.if ${clean:L:Minstall}
-.  if ${clean:L:Msub}
-.    for _s in ${MULTI_PACKAGES}
+.  if ${clean:L:Minstall}
+.    if ${clean:L:Msub}
+.      for _s in ${MULTI_PACKAGES}
 	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${_s}}
-.    endfor
-.  else
+.      endfor
+.    else
 	-${SUDO} ${PKG_DELETE} ${clean:M-f} ${FULLPKGNAME${SUBPACKAGE}}
+.    endif
 .  endif
-.endif
-.if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
+.  if ${clean:L:Mpackages} || ${clean:L:Mpackage} && ${clean:L:Msub}
 	rm -f ${_PACKAGE_COOKIES}
-.  if defined(MULTI_PACKAGES)
-.    for _s in ${MULTI_PACKAGES}
+.    if defined(MULTI_PACKAGES)
+.      for _s in ${MULTI_PACKAGES}
 	@cd ${.CURDIR} && SUBPACKAGE='${_s}' exec ${MAKE} delete-package-links
-.    endfor
-.  endif
-.elif ${clean:L:Mpackage}
+.      endfor
+.    endif
+.  elif ${clean:L:Mpackage}
 	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
 	rm -f ${PKGFILE${SUBPACKAGE}}
-.endif
-.if ${clean:L:Mbulk}
+.  endif
+.  if ${clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
+.  endif
 .endif
 
 distclean:
@@ -1962,7 +1906,7 @@ plist update-plist: fake ${_DEPrun_COOKIES}
 	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} LDCONFIG="${LDCONFIG}" \
 	MTREE_FILE=${WRKPKG}/mtree.spec \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	DEPS="`${MAKE} package-depends|tsort`" \
+	DEPS="`${MAKE} full-run-depends`" \
 	PKGREPOSITORY=${PKGREPOSITORY} \
 	PLIST=${PLIST} \
 	PFRAG=${PKGDIR}/PFRAG \
@@ -1992,6 +1936,13 @@ _ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
 _ALLFILES=${ALLFILES}
 .endif
 
+_FMN=${PKGPATH}/${FULLPKGNAME}
+.if defined(MULTI_PACKAGES)
+.  for _S in ${MULTI_PACKAGES}
+_FMN+= ${PKGPATH}/${FULLPKGNAME${_S}}
+.  endfor
+.endif
+
 fetch-makefile:
 .if !defined(COMES_WITH)
 	@echo -n "all"
@@ -2001,18 +1952,18 @@ fetch-makefile:
 .  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
 	@echo -n " cdrom"
 .  endif
-	@echo ":: ${PKGPATH}/${FULLPKGNAME}"
-	@cd ${.CURDIR} && exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile-helper
+	@echo ":: ${_FMN}"
+# write generic package dependencies
+	@echo ".PHONY: ${_FMN}"
+.  if ${RECURSIVE_FETCH_LIST:L} == "yes"
+	@echo "${_FMN}: ${_ALLFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends`
+.  else
+	@echo "${_FMN}: ${_ALLFILES}"
+.  endif
+	@exec ${MAKE} __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes _fetch-makefile
 .endif
 
-_fetch-makefile-helper:
-# write generic package dependencies
-	@name='${PKGPATH}/${FULLPKGNAME}'; \
-	echo ".PHONY: $${name}"; \
-	case '${RECURSIVE_FETCH_LIST:L}' in yes) \
-	  echo "$${name}:: "`${MAKE} depends-list package-depends FULL_PACKAGE_NAME=Yes |${_SORT_DEPENDS}`;; \
-	esac; \
-	echo "$${name}:: ${_ALLFILES}"
+_fetch-makefile:
 .if !empty(ALLFILES)
 .  for _F in ${_ALLFILES}
 	@echo '${_F}: $$F'
@@ -2052,21 +2003,6 @@ _fetch-makefile-helper:
 	@echo
 
 
-# The README.html target needs full information (this is passed via
-# depends-list and package-depends)
-FULL_PACKAGE_NAME?=No
-
-# Make variables to pass along on recursive builds
-_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
-
-# XXX
-package-name:
-.  if (${FULL_PACKAGE_NAME:L} == "yes")
-	@${_DEPEND_ECHO} '${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}'
-.  else
-	@${_DEPEND_ECHO} '${FULLPKGNAME${SUBPACKAGE}}'
-.  endif
-
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec
 .if defined(LIB_DEPENDS)
@@ -2096,26 +2032,6 @@ _BUILD_DEP=
 
 _LIB_DEP2= ${LIB_DEPENDS}
 
-_clean-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
-	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in ${_ALWAYS_DEP} ${_RUN_DEP} ${_BUILD_DEP}; do \
-		if fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then :; else \
-			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
-			${_flavor_fragment}; \
-			eval $$toset ${MAKE} CLEANDEPENDS=No ${_DEPEND_THRU} clean _clean-depends; \
-		fi; \
-	done
-.endif
-
-clean-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
-	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
-	export _DEPENDS_FILE; \
-	${MAKE} _clean-depends; \
-	rm -f $${_DEPENDS_FILE}
-.endif
-
 # This target generates an index entry suitable for aggregation into
 # a large index.  Format is:
 #
@@ -2124,8 +2040,13 @@ clean-depends:
 #  for-arch|package-cdrom|package-ftp|distfiles-cdrom|distfiles-ftp
 #
 describe:
-.if !defined(PACKAGING) && defined(MULTI_PACKAGES)
+.if defined(MULTI_PACKAGES) && !defined(PACKAGING)
 	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} describe
+.  if empty(SUBPACKAGE)
+.    for _sub in ${MULTI_PACKAGES}
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} describe
+.    endfor
+.  endif
 .else
 	@echo -n "${FULLPKGNAME${SUBPACKAGE}}|${FULLPKGPATH}|"
 .  if ${PREFIX} == ${LOCALBASE}
@@ -2178,179 +2099,79 @@ describe:
 	@echo "n"
 .    endif
 .  endif
-.  if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
+.endif
+
+README_NAME?=	${TEMPLATES}/README.port
+
+readme readmes:
+.if defined(MULTI_PACKAGES) && !defined(PACKAGING)
+	@cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' FLAVOR='${FLAVOR}' PACKAGING='${SUBPACKAGE}' exec ${MAKE} readme
+.  if empty(SUBPACKAGE)
 .    for _sub in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} describe
+	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING='${_sub}' exec ${MAKE} readme
 .    endfor
 .  endif
+.else
+	@rm -f ${FULLPKGNAME${SUBPACKAGE}}.html
+	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} ${FULLPKGNAME${SUBPACKAGE}}.html
 .endif
 
 
-README.html:
+HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
+
+${FULLPKGNAME${SUBPACKAGE}}.html:
+	@echo ${_COMMENT} >$@.tmp-comment
 	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
-	@cd ${.CURDIR} && ${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS}>$@.tmp1
-.endif
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@cd ${.CURDIR} && ${MAKE} package-depends FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS} >$@.tmp2
-.endif
 .if defined(HOMEPAGE)
 	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
 .else
 	@echo "" >$@.tmp4
 .endif
-.for I in 1 2
-	@if [ -s $@.tmp$I ]; then \
-		{ cat $@.tmp$I | while read n; do \
+.for _I in build run
+.  if !empty(_ALWAYS_DEP) || !empty(_${_I:U}_DEP)
+	@cd ${.CURDIR} && ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
+		while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
-			echo "<li><a href=\"${PKGDEPTH}/$$j/README.html\">$$k</a>"; \
-		 done; } >$@.tmp$Ia; \
-    else \
-    echo "<li>(none)" > $@.tmp$Ia; \
-	fi
+			echo "<li><a href=\"${PKGDEPTH}/$$j/$$k.html\">$$k</a>"; \
+		 done  >$@.tmp-${_I}
+.  else
+	@echo "<li>none" >$@.tmp${_I}
+.  endif
 .endfor
 	@cat ${README_NAME} | \
 		sed -e 's|%%PORT%%|'"`echo ${PKGPATH}  | ${HTMLIFY}`"'|g' \
 			-e '/%%PKG%%/r$@.tmp3' -e '//d' \
-			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' -e '//d' \
+			-e '/%%COMMENT%%/r$@.tmp-comment' -e '//d' \
 			-e '/%%DESCR%%/r${PKGDIR}/DESCR' -e '//d' \
 			-e '/%%HOMEPAGE%%/r$@.tmp4' -e '//d' \
-			-e '/%%BUILD_DEPENDS%%/r$@.tmp1a' -e '//d' \
-			-e '/%%RUN_DEPENDS%%/r$@.tmp2a' -e '//d' \
+			-e '/%%BUILD_DEPENDS%%/r$@.tmp-build' -e '//d' \
+			-e '/%%RUN_DEPENDS%%/r$@.tmp-run' -e '//d' \
 		>> $@
 	@rm -f $@.tmp*
 
-print-depends-list:
+
+print-build-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@echo -n 'This port requires package(s) "'
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
+	@${MAKE} full-build-depends|tr '\012' '\040'|sed -e 's, $$,,'
 	@echo '" to build.'
 .endif
 
-print-package-depends:
+print-run-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@echo -n 'This port requires package(s) "'
-	@unset FLAVOR SUBPACKAGE || true; \
-	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
+	@${MAKE} full-run-depends|tr '\012' '\040'|sed -e 's, $$,,'
 	@echo '" to run.'
 .endif
 
-
-recurse-build-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
-	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
-	unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		${_flavor_fragment}; \
-		if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-build-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-			exit 1; \
-		fi; \
-	done
-.else
-	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
-.endif
-
-depends-list:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
+.for _i in build all run
+full-${_i}-depends:
 	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
+	${MAKE} ${_i}-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
 		${_flavor_fragment}; \
-		if ! eval $$toset ${MAKE} recurse-build-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-			exit 1; \
-		fi; \
+		eval $$toset ${MAKE} _print-packagename ; \
 	done
-.endif
-
-# Build (recursively) a list of package dependencies suitable for tsort
-recurse-package-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name ${_DEPEND_THRU}`; \
-	unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		${_flavor_fragment}; \
-		if ! eval $$toset ${MAKE} _DEPEND_ECHO=\"echo $$pname\" package-name recurse-package-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-			exit 1; \
-		fi; \
-	done
-.else
-	@pname=`cd ${.CURDIR} && ${MAKE} _DEPEND_ECHO='echo -n' package-name`; echo $$pname $$pname
-.endif
-
-# Print list of all libraries we're allowed to depend upon.
-_recurse-lib-depends:
-.for _i in  ${LIB_DEPENDS}
-	@unset FLAVOR SUBPACKAGE  || true; \
-	echo '${_i}' | { \
-		IFS=:; read dep pkg dir target; \
-		${_flavor_fragment}; \
-		IFS=,; for j in $$dep; do echo $$j; done; \
-		eval $$toset ${MAKE} ${_DEPEND_THRU} _recurse-lib-depends; \
-	}
 .endfor
-.for _i in  ${RUN_DEPENDS}
-	@unset FLAVOR SUBPACKAGE  || true; \
-	echo '${_i}' | { \
-		IFS=:; read dep pkg dir target; \
-		${_flavor_fragment}; \
-		eval $$toset ${MAKE} ${_DEPEND_THRU} _recurse-lib-depends; \
-	}
-.endfor
-
-package-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		${_flavor_fragment}; \
-		if ! eval $$toset ${MAKE} recurse-package-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-			exit 1; \
-		fi; \
-	done
-.endif
-
-# recursively build a list of dirs to pass to tsort...
-_recurse-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
-	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		echo "$$self $$dir"; \
-		self2="$$dir"; \
-		${_flavor_fragment}; \
-		toset="$$toset self=\"$$self2\""; \
-		if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-			exit 1; \
-		fi; \
-	done
-.endif
-
-# recursively build a list of dirs to pass to tsort...
-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
-	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_BUILD_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		echo "${FULLPKGPATH} $$dir"; \
-		self2="$$dir"; \
-		${_flavor_fragment}; \
-		toset="$$toset self=\"$$self2\""; \
-		if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-			exit 1; \
-		fi; \
-	done
-.else
-	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
-.endif
 
 .for _i in RUN BUILD LIB
 ${_i:L}-depends-list:
@@ -2368,112 +2189,182 @@ ${_i:L}-depends-list:
 .  endif
 .endfor
 
-# recursively build a list of dirs to pass to tsort...
-_package-recurse-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		echo "$$self $$dir"; \
-		self2="$$dir"; \
-		${_flavor_fragment}; \
-		toset="$$toset self=\"$$self2\""; \
-		if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-			exit 1; \
-		fi; \
-	done
-.endif
+# recursive depend targets
 
-# recursively build a list of dirs to pass to tsort...
-package-dir-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
-	@unset FLAVOR SUBPACKAGE || true; \
-	for dir in `echo ${_ALWAYS_DEP} ${_RUN_DEP} \
-		| tr '\040' '\012' | sort -u`; do \
-		echo "${FULLPKGPATH} $$dir"; \
-		self2="$$dir"; \
-		${_flavor_fragment}; \
-		toset="$$toset self=\"$$self2\""; \
-		if ! eval $$toset ${MAKE} _package-recurse-dir-depends ${_DEPEND_THRU}; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
-			exit 1; \
+# Print list of all libraries that we may depend upon.
+_recurse-lib-depends-check:
+.for _i in  ${LIB_DEPENDS}
+	@unset FLAVOR SUBPACKAGE  || true; \
+	echo '${_i}' | { \
+		IFS=:; read dep pkg dir target; \
+		if fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then :; else \
+			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
+			${_flavor_fragment}; \
+			IFS=,; for j in $$dep; do echo $$j; done; \
+			eval $$toset ${MAKE} _recurse-lib-depends-check; \
 		fi; \
-	done
-.else
-	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
-.endif
+	}
+.endfor
+.for _i in  ${RUN_DEPENDS}
+	@unset FLAVOR SUBPACKAGE  || true; \
+	echo '${_i}' | { \
+		IFS=:; read dep pkg dir target; \
+		if fgrep -q "|$$dir|" $${_DEPENDS_FILE}; then :; else \
+			echo "|$$dir|" >>$${_DEPENDS_FILE}; \
+			${_flavor_fragment}; \
+			eval $$toset ${MAKE} _recurse-lib-depends-check; \
+		fi; \
+	}
+.endfor
 
-_solve-package-depends:
-.if !empty(_RUN_DEP2)
+
+# Write a correct list of dependencies for packages.
+_recurse-solve-package-depends:
+.for _i in ${RUN_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
-	: $${self:=self}; \
-	for spec in `echo '${_RUN_DEP2}' \
-		| tr '\040' '\012' | sort -u`; do \
-		dir=$${spec#*:}; pkg=$${spec%:*}; \
+	echo '${_i}' |{ \
+		IFS=:; read dep pkg dir target; \
 		${_flavor_fragment}; \
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		: $${pkg:=$$default}; \
 		echo "@newdepend $$self:$$pkg:$$default" >>$${_depends_result}; \
-		toset="$$toset self=\"$$default\""; \
-		if ! eval $$toset ${MAKE} _solve-package-depends; then  \
-			echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
-			exit 1; \
-		fi; \
-	done
-.endif
-.if !defined(NO_SHARED_LIBS) && defined(LIB_DEPENDS) && !empty(LIB_DEPENDS)
+		if fgrep -q "|$$default|" ${_DEPENDS_FILE}; then : ; else \
+			echo "|$$default|" >>${_DEPENDS_FILE}; \
+			toset="$$toset self=\"$$default\""; \
+			if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
+				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
+				exit 1; \
+			fi; \
+		fi; }
+.endfor
+.if !defined(NO_SHARED_LIBS)
 .  for _i in ${LIB_DEPENDS}
 	@unset FLAVOR SUBPACKAGE || true; \
-	: $${self:=self}; \
-		echo '${_i}'|{ \
-			IFS=:; read dep pkg dir target; \
-			${_flavor_fragment}; \
-			libspecs='';comma=''; \
-			default=`eval $$toset ${MAKE} _print-packagename`; \
-			case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
-			if pkg dependencies check $$pkg; then \
-				listlibs='ls $$shdir 2>/dev/null'; \
-			else \
-				eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
-				listlibs='pkg_info -L ${PKGREPOSITORY}/$$default.tgz|grep $$shdir|sed -e "s,^$$shdir/,,"'; \
-			fi; \
-			IFS=,; for d in $$dep; do \
-				${_libresolve_fragment}; \
-				case "$$check" in \
-				*.a) continue;; \
-				Missing\ library|Error:*) \
-					echo 1>&2 "Can't resolve libspec $$d"; \
-					exit 1;; \
-				*) \
-					libspecs="$$libspecs$$comma$$shprefix$$check"; \
-					comma=',';; \
-				esac; \
-			done; \
-			case "X$$libspecs" in \
-			X) ;;\
+	echo '${_i}'|{ \
+		IFS=:; read dep pkg dir target; \
+		${_flavor_fragment}; \
+		libspecs='';comma=''; \
+		default=`eval $$toset ${MAKE} _print-packagename`; \
+		case "X$$pkg" in X) pkg=`echo $$default|sed -e 's,-[0-9].*,-*,'`;; esac; \
+		if pkg dependencies check $$pkg; then \
+			listlibs='ls $$shdir 2>/dev/null'; \
+		else \
+			eval $$toset ${MAKE} ${PKGREPOSITORY}/$$default.tgz; \
+			listlibs='pkg_info -L ${PKGREPOSITORY}/$$default.tgz|grep $$shdir|sed -e "s,^$$shdir/,,"'; \
+		fi; \
+		IFS=,; for d in $$dep; do \
+			${_libresolve_fragment}; \
+			case "$$check" in \
+			*.a) continue;; \
+			Missing\ library|Error:*) \
+				echo 1>&2 "Can't resolve libspec $$d"; \
+				exit 1;; \
 			*) \
-				echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
+				libspecs="$$libspecs$$comma$$shprefix$$check"; \
+				comma=',';; \
+			esac; \
+		done; \
+		case "X$$libspecs" in \
+		X) ;;\
+		*) \
+			echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
+			if fgrep -q "|$$default|" ${_DEPENDS_FILE}; then : ; else \
+				echo "lib|$$default|" >>${_DEPENDS_FILE}; \
 				toset="$$toset self=\"$$default\""; \
-				if ! eval $$toset ${MAKE} _solve-package-depends; then  \
+				if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
 					echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
 					exit 1; \
-				fi;; \
-			esac; \
-		}
+				fi; \
+			fi;; \
+		esac; \
+	}
 .  endfor
 .endif
 
-README_NAME?=	${TEMPLATES}/README.port
+# recursively build a list of dirs for package running, ready for tsort
+_recurse-run-dir-depends:
+.for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo "$$self ${_dir}"; \
+	if fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then : ; else \
+		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
+		dir=${_dir}; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"${_dir}\""; \
+		if ! eval $$toset ${MAKE} _recurse-run-dir-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+			exit 1; \
+		fi; \
+	fi
+.endfor
 
-readme readmes:
-	@rm -f README.html
-	@cd ${.CURDIR} && exec ${MAKE} README_NAME=${README_NAME} README.html
+run-dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
+	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
+	export _DEPENDS_FILE; \
+	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends; \
+	rm -f $${_DEPENDS_FILE}
+.else
+	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+.endif
 
-HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
+# recursively build a list of dirs for package building, ready for tsort
+# second and further stages need _RUN_DEP.
+_recurse-all-dir-depends:
+.for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo "$$self ${_dir}"; \
+	if fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then : ; else \
+		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
+		dir=${_dir}; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"${_dir}\""; \
+		if ! eval $$toset ${MAKE} _recurse-all-dir-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+			exit 1; \
+		fi; \
+	fi
+.endfor
 
-print-depends:
-	@cd ${.CURDIR} && exec ${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
+# first stage does not need _RUN_DEP
+_build-dir-depends:
+.for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP}
+	@unset FLAVOR SUBPACKAGE || true; \
+	echo "$$self ${_dir}"; \
+	if fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then : ; else \
+		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
+		dir=${_dir}; \
+		${_flavor_fragment}; \
+		toset="$$toset self=\"${_dir}\""; \
+		if ! eval $$toset ${MAKE} _recurse-all-dir-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+			exit 1; \
+		fi; \
+	fi
+.endfor
+
+build-dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
+	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
+	export _DEPENDS_FILE; \
+	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	self=${FULLPKGPATH} ${MAKE} _build-dir-depends; \
+	rm -f $${_DEPENDS_FILE}
+.else
+	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+.endif
+
+all-dir-depends:
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
+	@: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXXX`}; \
+	export _DEPENDS_FILE; \
+	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	self=${FULLPKGPATH} ${MAKE} _recurse-all-dir-depends; \
+	rm -f $${_DEPENDS_FILE}
+.else
+	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+.endif
 
 link-categories:
 .for _CAT in ${CATEGORIES}
@@ -2508,6 +2399,35 @@ homepage-links:
 .  include "${PORTSDIR}/infrastructure/mk/old-install.mk"
 .endif
 
+#####################################################
+# convenience targets, not really needed
+#####################################################
+
+checkpatch:
+	@cd ${.CURDIR} && exec ${MAKE} PATCH_CHECK_ONLY=Yes patch
+
+clean-depends:
+	@exec ${MAKE} clean=depends
+
+delete-package:
+	@cd ${.CURDIR} && exec ${MAKE} clean=package
+
+reinstall:
+	@cd ${.CURDIR} && exec ${MAKE} clean=install
+	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
+
+repackage:
+	@cd ${.CURDIR} && exec ${MAKE} clean=packages
+	@cd ${.CURDIR} && exec ${MAKE} package
+
+rebuild:
+	@rm -f ${_BUILD_COOKIE}
+	@cd ${.CURDIR} && exec ${MAKE} build
+
+uninstall deinstall:
+	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
+	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME${SUBPACKAGE}}
+
 .if defined(ERRORS)
 .BEGIN:
 .  for _m in ${ERRORS}
@@ -2525,18 +2445,18 @@ homepage-links:
    describe distclean do-build do-configure do-extract \
    do-fetch do-install do-package do-patch extract list-distfiles \
    fetch install lib-depends makesum \
-   package package-depends package-links package-name \
+   package package-depends package-links \
    package-noinstall patch plist update-plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
    post-patch pre-build pre-configure \
    pre-extract pre-fetch pre-install pre-package pre-patch \
-   print-depends-list print-package-depends readme \
-   readmes rebuild reinstall \
+   readme readmes rebuild reinstall \
    repackage run-depends uninstall fetch-all print-depends \
    recurse-build-depends recurse-package-depends \
    distpatch do-distpatch post-distpatch show \
-   link-categories unlink-categories _package _solve-package-depends \
-   dir-depends _recurse-dir-depends package-dir-depends \
-   _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
-   _recurse-lib-depends lib-depends-check \
-   homepage-links manpages-check
+   link-categories unlink-categories _package \
+   lib-depends-check homepage-links manpages-check \
+   _recurse-lib-depends-check _recurse-solve-package-depends \
+   _recurse-run-dir-depends run-dir-depends _recurse-all-dir-depends \
+   _build-dir-depends build-dir-depends all-dir-depends \
+   fetch-makefile _fetch-makefile
