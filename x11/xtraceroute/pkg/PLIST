@@ -1,0 +1,6 @@
+bin/xtraceroute
+share/xtraceroute/earth.tif
+share/xtraceroute/hosts.cache
+share/xtraceroute/networks.cache
+man/man1/xtraceroute.1
+@dirrm share/xtraceroute
