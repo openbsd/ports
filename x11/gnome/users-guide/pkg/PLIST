@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/11 04:27:25 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/10 23:59:35 marcm Exp $
 share/gnome/
 share/gnome/help/
 share/gnome/help/gnome-access-guide/
@@ -124,6 +124,7 @@ share/gnome/help/user-guide/C/figures/workspace_switcher_applet.png
 share/gnome/help/user-guide/C/glossary.xml
 share/gnome/help/user-guide/C/gosbasic.xml
 share/gnome/help/user-guide/C/goscustaccess.xml
+share/gnome/help/user-guide/C/goscustdesk-remotedesktop.xml
 share/gnome/help/user-guide/C/goscustdesk.xml
 share/gnome/help/user-guide/C/goscustlookandfeel.xml
 share/gnome/help/user-guide/C/gosdeskback.xml

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/26 07:35:11 xsa Exp $
+# $OpenBSD: Makefile,v 1.13 2004/12/10 23:59:35 marcm Exp $
 
 COMMENT=		"General GNOME User Documentation"
 
-VERSION=		2.6.0.1
+VERSION=		2.8.1
 DISTNAME=		gnome2-user-docs-${VERSION}
 CATEGORIES=		x11/gnome
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome2-user-docs/2.6/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome2-user-docs/2.8/}
 EXTRACT_SUFX=		.tar.bz2
 
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
