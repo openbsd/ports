@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 1999/06/23 19:28:02 form Exp $
+# $OpenBSD: Makefile,v 1.48 1999/07/14 17:45:46 fgsch Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -22,6 +22,7 @@
 #    SUBDIR += dip
      SUBDIR += dxpc
 #    SUBDIR += echoping
+     SUBDIR += epic4
      SUBDIR += ethereal
      SUBDIR += firewalk
 #    SUBDIR += fping
