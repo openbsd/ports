@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/14 18:24:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/02 12:39:44 espie Exp $
 
 COMMENT=	"source code editing component for GTK+"
 
@@ -26,7 +26,7 @@ NO_REGRESS=	Yes
 
 MAKE_FILE=	makefile
 MAKE_ENV=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' \
-		NO_SHARED_LIBS='${NO_SHARED_LIBS}'
+		NO_SHARED_LIBS='${NO_SHARED_LIBS:L}'
 
 WRKDIST=	${WRKDIR}/scintilla
 WRKSRC=		${WRKDIST}/gtk
