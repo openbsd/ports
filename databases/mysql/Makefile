@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2001/04/07 04:09:53 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2001/04/13 18:15:46 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 COMMENT=	"multithreaded SQL database"
 
 VERSION=	3.23.36
 DISTNAME=	mysql-${VERSION}
+PKGNAME-innodb=mysql-${VERSION}-innodb
 CATEGORIES=	databases
 NEED_VERSION=	1.384
 MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
@@ -41,10 +42,18 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-bench \
 		 --without-mit-threads \
 		 --without-berkeley-db \
-		 --without-innobase \
 		 --without-gemini
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth" \
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
+
+FLAVORS=	innodb
+FLAVOR?=
+
+.if ${FLAVOR:L} == "innodb"
+CONFIGURE_ARGS+= --with-innobase
+.else
+CONFIGURE_ARGS+= --without-innobase
+.endif
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
