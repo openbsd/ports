@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/07/11 07:15:00 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2000/07/22 23:51:19 brad Exp $
 
 DISTNAME=	mutt-1.2.4i
 CATEGORIES=     mail
@@ -24,7 +24,7 @@ FLAVORS=slang curses imap pop
 FLAVOR?=curses
 
 CONFIGURE_STYLE= gnu
-SYSCONFDIR=	${PREFIX}/share/mutt
+SYSCONFDIR=	/etc/mutt
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--enable-external_dotlock
@@ -71,5 +71,8 @@ pre-fetch:
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/mutt
+	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/lib/mutt/Muttrc.sample
+	${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/lib/mutt/mime.types.sample
 
 .include <bsd.port.mk>

@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.12 2000/07/09 03:14:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2000/07/22 23:51:20 brad Exp $
 bin/mutt
 bin/mutt_dotlock
 bin/muttbug
 bin/pgpewrap
 bin/pgpring
+lib/mutt/Muttrc.sample
+lib/mutt/mime.types.sample
 man/man1/mutt.1
 man/man1/mutt_dotlock.1
 man/man5/muttrc.5
@@ -20,6 +22,7 @@ share/doc/mutt/README.UPGRADE
 share/doc/mutt/TODO
 share/doc/mutt/applying-patches.txt
 share/doc/mutt/devel-notes.txt
+share/doc/mutt/manual.txt
 share/doc/mutt/html/manual-1.html
 share/doc/mutt/html/manual-2.html
 share/doc/mutt/html/manual-3.html
@@ -28,7 +31,6 @@ share/doc/mutt/html/manual-5.html
 share/doc/mutt/html/manual-6.html
 share/doc/mutt/html/manual-7.html
 share/doc/mutt/html/manual.html
-share/doc/mutt/manual.txt
 share/doc/mutt/samples/Mush.rc
 share/doc/mutt/samples/Pine.rc
 share/doc/mutt/samples/Tin.rc
@@ -58,9 +60,7 @@ share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/sv/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
-share/mutt/Muttrc
-share/mutt/mime.types
-@dirrm share/mutt
+@dirrm lib/mutt
 @dirrm share/doc/mutt/samples
 @dirrm share/doc/mutt/html
 @dirrm share/doc/mutt
