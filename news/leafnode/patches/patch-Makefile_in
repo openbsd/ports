@@ -1,84 +1,19 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2001/06/10 21:32:26 rohee Exp $
---- Makefile.in.orig	Tue Jun  5 17:36:14 2001
-+++ Makefile.in	Thu Jun  7 23:50:19 2001
-@@ -19,7 +19,7 @@ PCRELIB = @PCRELIB@
- # Flags
- DEBUG  = -g
- STRIP  = -s
--CFLAGS = -I. @DEFS@ @GCC_FLAGS@ $(DEBUG)
-+CFLAGS = -I. @DEFS@ @CFLAGS@
- LIBS   = @LIBS@
+$OpenBSD: patch-Makefile_in,v 1.5 2002/09/24 00:24:19 marcm Exp $
+--- Makefile.in.orig	Fri Sep 20 03:49:58 2002
++++ Makefile.in	Sat Sep 21 20:16:58 2002
+@@ -1062,15 +1062,7 @@ install-data-hook: quickmkdir amiroot
+ 	set -e ; for i in . leaf.node failed.postings interesting.groups \
+ 		out.going message.id temp.files ; do \
+         mkdir -p $(DESTDIR)$(SPOOLDIR)/$$i ; \
+-	if ./amiroot ; then \
+-	 chown news:news $(DESTDIR)$(SPOOLDIR)/$$i ; \
+-	 chmod 2775      $(DESTDIR)$(SPOOLDIR)/$$i ; fi ; \
+ 	done
+-	d="`dirname $(DESTDIR)@LOCKFILE@`" ; mkdir -p "$${d}" && \
+-	if ./amiroot ; then \
+-          chown news:news "$${d}" ; \
+-	  chmod 2775 "$${d}" ; fi
+-	./quickmkdir $(DESTDIR)
  
- # Directories and Paths
-@@ -32,7 +32,9 @@ BINDIR = $(PREFIX_USR)/sbin
- MANDIR = $(PREFIX_USR)/man
- SPOOLDIR = $(PREFIX_VAR)/spool/news
- LIBDIR   = /etc/leafnode
--LOCKFILE = /var/lock/news/fetchnews.lck
-+LOCKFILE = $(SPOOLDIR)/fetchnews.lck
-+
-+INSTALLROOT = $(DESTDIR)
- 
- # RPM crap
- RPM = @RPM@
-@@ -122,51 +124,15 @@ config.o: config.c Makefile
- 		-DVERSION=\"$(VERSION)\" $<
- 
- install: liblnutil.a nntpd fetchnews texpire checkgroups applyfilter newsq
--	$(INSTALL) -d -o root -g 0 -m 755 $(INSTALLROOT)$(MANDIR)/man1
--	$(INSTALL) -d -o root -g 0 -m 755 $(INSTALLROOT)$(MANDIR)/man7
--	$(INSTALL) -d -o root -g 0 -m 755 $(INSTALLROOT)$(MANDIR)/man8
--	$(INSTALL) -d -o root -g bin -m 755 $(INSTALLROOT)$(BINDIR)
--	$(INSTALL) -d -o root -g bin -m 755 $(INSTALLROOT)$(USRDIR)
--	$(INSTALL) -c -g news -m 750 -o news $(STRIP) nntpd $(INSTALLROOT)$(BINDIR)/leafnode
--	$(INSTALL) -c -g news -m 750 -o news $(STRIP) fetchnews $(INSTALLROOT)$(BINDIR)/fetchnews
--	$(INSTALL) -c -g news -m 750 -o news $(STRIP) texpire $(INSTALLROOT)$(BINDIR)/texpire
--	$(INSTALL) -c -g news -m 750 -o news $(STRIP) checkgroups $(INSTALLROOT)$(BINDIR)/checkgroups
--	$(INSTALL) -c -g news -m 750 -o news $(STRIP) applyfilter $(INSTALLROOT)$(BINDIR)/applyfilter
--	$(INSTALL) -c -g news -m 755 -o news $(STRIP) newsq $(INSTALLROOT)$(USRDIR)/newsq
--	$(INSTALL) -c -m 644 $(srcdir)/*.8 $(INSTALLROOT)$(MANDIR)/man8
--	if test $(PCRELIB) ; then $(INSTALL) -c -m 644 $(srcdir)/pcre/pcre.7 $(INSTALLROOT)$(MANDIR)/man7 ; fi
--	$(INSTALL) -c -m 644 $(srcdir)/*.1 $(INSTALLROOT)$(MANDIR)/man1
--	-mkdir -p `dirname $(INSTALLROOT)$(LOCKFILE)`
--	-mkdir -p $(INSTALLROOT)$(SPOOLDIR) $(INSTALLROOT)$(LIBDIR)
--	-mkdir -p $(INSTALLROOT)$(SPOOLDIR)/leaf.node
--	-mkdir -p $(INSTALLROOT)$(SPOOLDIR)/failed.postings
--	-mkdir -p $(INSTALLROOT)$(SPOOLDIR)/message.id
--	-mkdir -p $(INSTALLROOT)$(SPOOLDIR)/interesting.groups
--	-mkdir -p $(INSTALLROOT)$(SPOOLDIR)/out.going
--	-chown news:news `dirname $(INSTALLROOT)$(LOCKFILE)`
--	-chown news:news $(INSTALLROOT)$(SPOOLDIR) $(INSTALLROOT)$(LIBDIR)
--	-chown news:news $(INSTALLROOT)$(SPOOLDIR)/leaf.node
--	-chown news:news $(INSTALLROOT)$(SPOOLDIR)/failed.postings
--	-chown news:news $(INSTALLROOT)$(SPOOLDIR)/message.id
--	-chown news:news $(INSTALLROOT)$(SPOOLDIR)/interesting.groups
--	-chown news:news $(INSTALLROOT)$(SPOOLDIR)/out.going
--	cd $(INSTALLROOT)$(SPOOLDIR)/message.id ; for a in 0 1 2 3 4 5 6 7 8 9 ; do \
--		for b in 0 1 2 3 4 5 6 7 8 9 ; do \
--			mkdir -p $${a}$${b}0 $${a}$${b}1 $${a}$${b}2 \
--				$${a}$${b}3 $${a}$${b}4 $${a}$${b}5 \
--				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
--				$${a}$${b}9 ; \
--			chown news:news $${a}$${b}0 $${a}$${b}1 $${a}$${b}2 \
--				$${a}$${b}3 $${a}$${b}4 $${a}$${b}5 \
--				$${a}$${b}6 $${a}$${b}7 $${a}$${b}8 \
--				$${a}$${b}9 ; \
--			done ; done
--	cp $(srcdir)/config.example $(INSTALLROOT)$(LIBDIR)
--	-chown root:news $(INSTALLROOT)$(LIBDIR)/config.example
--	-chmod 640 $(INSTALLROOT)$(LIBDIR)/config.example
--	chmod 2755 $(INSTALLROOT)$(SPOOLDIR)
--	@echo Edit /etc/inetd.conf to start $(BINDIR)/leafnode and restart inetd
--	@echo If you update from a leafnode version \< 1.9.3, do a \"make update\"
-+	$(INSTALL) -m 750 $(STRIP) nntpd $(INSTALLROOT)$(BINDIR)/leafnode
-+	$(INSTALL) -m 750 $(STRIP) fetchnews $(INSTALLROOT)$(BINDIR)/fetchnews
-+	$(INSTALL) -m 750 $(STRIP) texpire $(INSTALLROOT)$(BINDIR)/texpire
-+	$(INSTALL) -m 750 $(STRIP) checkgroups $(INSTALLROOT)$(BINDIR)/checkgroups
-+	$(INSTALL) -m 750 $(STRIP) applyfilter $(INSTALLROOT)$(BINDIR)/applyfilter
-+	$(INSTALL) -m 755 $(STRIP) newsq $(INSTALLROOT)$(USRDIR)/newsq
-+	$(BSD_INSTALL_MAN) $(srcdir)/*.8 $(INSTALLROOT)$(MANDIR)/man8
-+	if test $(PCRELIB) ; then $(BSD_INSTALL_MAN) $(srcdir)/pcre/pcre.7 $(INSTALLROOT)$(MANDIR)/man7 ; fi
-+	$(BSD_INSTALL_MAN) $(srcdir)/*.1 $(INSTALLROOT)$(MANDIR)/man1
- 
- uninstall: uninstall-bins
- 	-rm -r $(SPOOLDIR)/leaf.node
+ uninstall-local:
+ 	rm -rf $(DESTDIR)$(SPOOLDIR) $(DESTDIR)@LOCKFILE@

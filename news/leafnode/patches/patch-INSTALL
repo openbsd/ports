@@ -1,18 +1,17 @@
-$OpenBSD: patch-INSTALL,v 1.1 2001/02/24 18:04:55 fgsch Exp $
---- INSTALL.orig	Mon Jan  8 04:37:44 2001
-+++ INSTALL	Sat Feb 24 14:50:13 2001
-@@ -64,11 +64,11 @@
- 9. Edit /etc/inetd.conf so that $(BINDIR)/leafnode is executed for incoming
-    NNTP connections.  Here is my inetd.conf line:
+$OpenBSD: patch-INSTALL,v 1.2 2002/09/24 00:24:19 marcm Exp $
+--- INSTALL.orig	Sun Sep 22 00:41:37 2002
++++ INSTALL	Sun Sep 22 00:43:30 2002
+@@ -160,11 +160,10 @@
+     for incoming NNTP connections.  Here is my inetd.conf line (insert
+     it at the leftmost column, without leading spaces!):
  
--nntp    stream  tcp     nowait  news    /usr/sbin/tcpd /usr/local/sbin/leafnode
-+nntp    stream  tcp     nowait  news    /usr/libexec/tcpd /usr/local/sbin/leafnode
+-    nntp stream tcp nowait news /usr/sbin/tcpd /usr/local/sbin/leafnode
++    nntp stream tcp nowait news /usr/libexec/tcpd /usr/local/sbin/leafnode
  
-    This starts leafnode for all connections on the nntp port, subject to
--   /etc/hosts/allow and /etc/hosts.deny screening.  If you don't have
--   /usr/sbin/tcpd you might use this line instead:
-+   /etc/hosts/allow and /etc/hosts.deny screening.  If you don't want to use
-+   /usr/libexec/tcpd you might use this line instead:
+     This starts leafnode for all connections on the nntp port, subject to
+-    /etc/hosts.allow and /etc/hosts.deny screening.  If you don't have
+-    /usr/sbin/tcpd, fetch the tcp_wrappers package and install it.
++    /etc/hosts.allow and /etc/hosts.deny screening.
  
- nntp    stream  tcp     nowait  news    /usr/local/sbin/leafnode
- 
+     Using leafnode without tcpd is not supported and opens your computer
+     to abuse (even happens on modem lines that are only connected during
