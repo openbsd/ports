@@ -1,6 +1,5 @@
-$OpenBSD: patch-Makefile,v 1.1 2001/01/19 04:13:41 jasoni Exp $
---- Makefile.orig	Mon May 31 08:28:44 1999
-+++ Makefile	Thu Jan 18 18:43:30 2001
+--- Makefile.orig	Mon May 31 06:28:44 1999
++++ Makefile	Mon Jan 22 21:45:55 2001
 @@ -2,13 +2,13 @@
  MISCOPT =
  OPT = $(MISCOPT) $(MAXOPT)
@@ -8,8 +7,7 @@ $OpenBSD: patch-Makefile,v 1.1 2001/01/19 04:13:41 jasoni Exp $
 -CFLAGS = $(OPT) -DMAGNIFY=0 -DNDEBUG
 +CFLAGS += $(OPT) -DMAGNIFY=0 -DNDEBUG
  #CFLAGS = -fprofile-arcs -ftest-coverage -DMAGNIFY=0
--CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
-+#CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
+ CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
  #CFLAGS = -O -Wall -pedantic -DDEBUG $(MISCOPT)
  
 -LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
