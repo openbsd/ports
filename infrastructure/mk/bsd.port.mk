@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.118 1999/09/26 10:45:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.119 1999/09/26 10:47:30 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -134,7 +134,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #                 installations that override fetch and/or extract.
 # ALLFILES		- All of ${DISTFILES} and ${PATCHFILES}.
 # MIRROR_DISTFILE - Whether the distfile is redistributable without restrictions.
-#				  Defaults to "yes", set this to "no" if restrictions exist.
+#				  Defaults to "Yes", set this to "No" if restrictions exist.
 # IGNOREFILES	- If some of the ${ALLFILES} are not checksum-able, set
 #				  this variable to their names.
 # PKGNAME		- Name of the package file to create if the DISTNAME 
@@ -267,11 +267,11 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  Arguments to ${FETCH_CMD} before filename (default: none).
 # FETCH_AFTER_ARGS -
 #				  Arguments to ${FETCH_CMD} following filename (default: none).
-# NO_IGNORE     - Set this to YES (most probably in a "make fetch" in
+# NO_IGNORE     - Set this to Yes (most probably in a "make fetch" in
 #                 ${PORTSDIR}) if you want to fetch all distfiles,
 #                 even for packages not built due to limitation by
 #                 absent X or Motif or ONLY_FOR_ARCHS...
-# NO_WARNINGS	- Set this to YES to disable warnings regarding variables
+# NO_WARNINGS	- Set this to Yes to disable warnings regarding variables
 #				  to define to control the build.  Automatically set
 #				  from the "mirror-distfiles" target.
 # ALL_TARGET	- The target to pass to make in the package when building.
@@ -335,7 +335,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #
 # Other variables:
 #
-# NO_SHARED_LIBS - defined as "yes" for those machine architectures that do
+# NO_SHARED_LIBS - defined as "Yes" for those machine architectures that do
 #				  not support shared libraries.  WARNING: This value is
 #				  NOT defined until AFTER ".include bsd.port.mk".  Thus
 #				  you can NOT use something like ".if defined(NO_SHARED_LIBS)"
@@ -369,8 +369,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #				  (your own ports only!)
 # readme		- Create a README.html file describing the category or package
 # mirror-distfiles	- Mirror the distfile(s) if they are freely redistributable
-#				  Setting MIRROR_DISTFILE to "no" in the package Makefile
-#				  will override the default "yes", and the distfile will
+#				  Setting MIRROR_DISTFILE to "No" in the package Makefile
+#				  will override the default "Yes", and the distfile will
 #				  not be fetched.
 # list-distfiles- list the distribution and patch files used by a port.
 #				  Typical use is (from the top level of the ports tree)
@@ -403,20 +403,20 @@ OPSYS_VER!=	uname -r
 #
 .if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "powerpc") || \
     (${MACHINE_ARCH} == "vax") || (${MACHINE_ARCH} == "hppa")
-NO_SHARED_LIBS=	yes
+NO_SHARED_LIBS=	Yes
 .endif
 
 # Compatibility kludge for old scripts
 .if defined(NOCLEANDEPENDS)
-.if ${NOCLEANDEPENDS}=="no"
-CLEANDEPENDS?=yes
+.if ${NOCLEANDEPENDS:L}=="no"
+CLEANDEPENDS?=Yes
 .else
-CLEANDEPENDS?=no
+CLEANDEPENDS?=No
 .endif
 .else
-CLEANDEPENDS?=yes
+CLEANDEPENDS?=Yes
 .endif
-NOMANCOMPRESS?=	yes
+NOMANCOMPRESS?=	Yes
 DEF_UMASK?=		022
 
 .if exists(${.CURDIR}/Makefile.${ARCH}-${OPSYS})
@@ -495,7 +495,7 @@ MAKE_PROGRAM=		${GMAKE}
 MAKE_PROGRAM=		${MAKE}
 .endif
 .if defined(USE_AUTOCONF)
-GNU_CONFIGURE= yes
+GNU_CONFIGURE= Yes
 BUILD_DEPENDS+=		${AUTOCONF}:${PORTSDIR}/devel/autoconf
 AUTOCONF_DIR?=${WRKSRC}
 # missing ?= not an oversight
@@ -611,7 +611,7 @@ FETCH_CMD?=		/usr/bin/ftp
 .endif
 
 # By default, distfiles have no restrictions placed on them
-MIRROR_DISTFILE?=	yes
+MIRROR_DISTFILE?=	Yes
 
 TOUCH?=			/usr/bin/touch
 TOUCH_FLAGS?=	-f
@@ -620,11 +620,11 @@ PATCH?=			/usr/bin/patch
 PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
-PATCH_DEBUG_TMP=	yes
+PATCH_DEBUG_TMP=	Yes
 PATCH_ARGS?=	-d ${WRKSRC} -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-d ${WRKSRC} -E ${PATCH_DIST_STRIP}
 .else
-PATCH_DEBUG_TMP=	no
+PATCH_DEBUG_TMP=	No
 PATCH_ARGS?=	-d ${WRKSRC} --forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
@@ -1062,7 +1062,7 @@ CONFIGURE_ENV+=		PATH=${PORTPATH}
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}
-HAS_CONFIGURE=		yes
+HAS_CONFIGURE=		Yes
 .endif
 
 .if defined(NO_SHARED_LIBS)
@@ -1384,8 +1384,8 @@ do-fetch:
 # fetch - only fetch the distfile if it is allowed to be
 # re-distributed freely
 mirror-distfiles:
-.if (${MIRROR_DISTFILE} == "yes")
-	@make fetch-all __ARCH_OK=yes NO_IGNORE=yes NO_WARNINGS=yes
+.if (${MIRROR_DISTFILE:L} == "yes")
+	@make fetch-all __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes
 .endif
 
 # list the distribution and patch files used by a port.  Typical
@@ -1463,7 +1463,7 @@ do-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
 	  for i in ${PATCHFILES}; do \
-	  	case ${PATCH_DEBUG_TMP} in \
+	  	case ${PATCH_DEBUG_TMP:L} in \
 			yes) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
 		esac; \
 		case $$i in \
@@ -1485,7 +1485,7 @@ do-patch:
 					;; \
 				*) \
 				    if [ -e $$i ]; then \
-						case ${PATCH_DEBUG_TMP} in \
+						case ${PATCH_DEBUG_TMP:L} in \
 							yes) ${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ;; \
 						esac; \
 						${PATCH} ${PATCH_ARGS} < $$i || \
@@ -1720,7 +1720,7 @@ fetch:
 .endif
 .if !target(fetch-all)
 fetch-all:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} __FETCH_ALL=yes real-fetch
+	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} __FETCH_ALL=Yes real-fetch
 .endif
 
 
@@ -1799,7 +1799,7 @@ post-${name}:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=yes ${.MAKEFLAGS} patch
+	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=Yes ${.MAKEFLAGS} patch
 .endif
 
 # Reinstall
@@ -1837,7 +1837,7 @@ pre-clean:
 
 .if !target(clean)
 clean: pre-clean
-.if ${CLEANDEPENDS}=="yes"
+.if ${CLEANDEPENDS:L}=="yes"
 	@${MAKE} clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
@@ -1879,9 +1879,9 @@ distclean: pre-distclean clean
 
 # are we called from bsd.port.subdir.mk (i.e. do we scan all dirs anyways)? XXX
 .ifdef(DIRPRFX)
-RECURSIVE_FETCH_LIST?=	NO
+RECURSIVE_FETCH_LIST?=	No
 .else
-RECURSIVE_FETCH_LIST?=	YES
+RECURSIVE_FETCH_LIST?=	Yes
 .endif
 
 .if !target(fetch-list)
@@ -2015,7 +2015,7 @@ checksum: fetch
 		  if [ "$$OK" != "true" ]; then \
 			${ECHO_MSG} "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
 			${ECHO_MSG} "are up to date.  If you want to override this check, type"; \
-			${ECHO_MSG} "\"make NO_CHECKSUM=yes [other args]\"."; \
+			${ECHO_MSG} "\"make NO_CHECKSUM=Yes [other args]\"."; \
 			exit 1; \
 		  fi) ; \
 	fi
@@ -2043,7 +2043,7 @@ plist: install
 # The README.html target needs full information (this is passed via 
 # depends-list and package-depends)
 .ifndef FULL_PACKAGE_NAME
-FULL_PACKAGE_NAME=NO
+FULL_PACKAGE_NAME=No
 .endif 
 
 # Make variables to pass along on recursive depends computations
@@ -2054,7 +2054,7 @@ _DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}
 # XXX
 .if !target(package-name)
 package-name:
-.if (${FULL_PACKAGE_NAME} == "YES")
+.if (${FULL_PACKAGE_NAME:L} == "yes")
 	@${_DEPEND_ECHO} `${MAKE} package-path`/${PKGNAME}
 .else
 	@${_DEPEND_ECHO} '${PKGNAME}'
@@ -2100,7 +2100,7 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} PACKAGE_NOINSTALL=yes real-package
+	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} PACKAGE_NOINSTALL=Yes real-package
 .endif
 
 ################################################################
@@ -2267,7 +2267,7 @@ clean-depends:
 	   `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` \
 	   `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
 		if cd $$dir 2>/dev/null ; then \
-			${MAKE} CLEANDEPENDS=no clean clean-depends; \
+			${MAKE} CLEANDEPENDS=No clean clean-depends; \
 		fi \
 	done
 .endif
@@ -2357,8 +2357,8 @@ PKGDEPTH!=${MAKE} package-path|${SED} -e 's|[^./][^/]*|..|g'
 README.html:
 	@${ECHO_MSG} "===>  Creating README.html for ${PKGNAME}"
 	@${ECHO} ${PKGNAME} | ${HTMLIFY} > $@.tmp3
-	@${MAKE} depends-list FULL_PACKAGE_NAME=YES | ${SORT_DEPENDS}>$@.tmp1
-	@${MAKE} package-depends FULL_PACKAGE_NAME=YES | ${SORT_DEPENDS} >$@.tmp2
+	@${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS}>$@.tmp1
+	@${MAKE} package-depends FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS} >$@.tmp2
 .for I in 1 2
 	@if [ -s $@.tmp$I ]; then \
 		(${CAT} $@.tmp$I | while read n; do \
@@ -2405,7 +2405,7 @@ print-package-depends:
 
 .if !target(print-depends)
 print-depends: 
-	@${MAKE} FULL_PACKAGE_NAME=YES print-depends-list print-package-depends
+	@${MAKE} FULL_PACKAGE_NAME=Yes print-depends-list print-package-depends
 .endif
 
 # Fake installation of package so that user can pkg_delete it later.
