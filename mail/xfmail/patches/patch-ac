@@ -1,7 +1,0 @@
---- editor/fl_edit.c.orig	Fri Jun 26 03:24:52 1998
-+++ editor/fl_edit.c	Fri Jun 26 03:25:10 1998
-@@ -69,3 +69,3 @@
- 
--#include <forms.h>
-+#include <X11/forms.h>
- #include "fl_edit.h"

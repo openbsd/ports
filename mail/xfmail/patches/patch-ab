@@ -1,7 +1,0 @@
---- ui/umail.h.orig	Fri Jun 26 03:19:23 1998
-+++ ui/umail.h	Fri Jun 26 03:19:35 1998
-@@ -52,3 +52,3 @@
- 
--#include <forms.h>
-+#include <X11/forms.h>
- 

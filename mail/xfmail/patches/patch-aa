@@ -1,7 +1,0 @@
---- ui/newobjs.h.orig	Wed Oct 22 04:31:31 1997
-+++ ui/newobjs.h	Fri Jun 26 03:14:01 1998
-@@ -6,3 +6,3 @@
- 
--#include <forms.h>
-+#include <X11/forms.h>
- #include <sys/param.h>
