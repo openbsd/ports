@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2001/09/10 13:18:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2002/04/15 12:08:31 fgsch Exp $
 
 COMMENT=	GNU version of Go
 
@@ -20,8 +20,5 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 
 MAKE_FLAGS=		MAKEINFO="makeinfo --no-split"
-
-post-configure:
-	@cd ${WRKSRC}/doc && touch gnugo.texi
 
 .include <bsd.port.mk>
