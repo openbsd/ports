@@ -1,0 +1,12 @@
+$OpenBSD: patch-ncftp_getline_c,v 1.1 2003/04/18 00:31:24 naddy Exp $
+--- ncftp/getline.c.orig	Tue Apr  1 01:08:03 2003
++++ ncftp/getline.c	Tue Apr  1 01:08:46 2003
+@@ -367,7 +367,7 @@ gl_getc(void)
+ {
+     int             c;
+ #ifdef __unix__
+-    char            ch;
++    unsigned char   ch;
+ #endif
+ 
+ #ifdef __unix__

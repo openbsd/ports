@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2003/02/12 15:20:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2003/04/18 00:31:24 naddy Exp $
 
 COMMENT=		"ftp replacement with advanced user interface"
 
 DISTNAME=		ncftp-3.1.5
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 HOMEPAGE=		http://www.ncftp.com/ncftp/
 
