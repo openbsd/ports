@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.3 2004/10/04 16:40:48 naddy Exp $
+--- configure.in.orig	Mon Oct  4 18:25:45 2004
++++ configure.in	Mon Oct  4 18:26:20 2004
+@@ -3761,6 +3761,7 @@ if test "$with_mule" = "yes" ; then
+   XE_ADD_OBJS(mule.o mule-ccl.o mule-charset.o file-coding.o)
+ 
+   dnl Use -lintl to get internationalized strerror for Mule
++  LIBS="-liconv ${LIBS}"
+   AC_CHECK_HEADERS(libintl.h)
+   AC_CHECK_LIB(intl, strerror)
+ 
