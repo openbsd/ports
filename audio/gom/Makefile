@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/07/22 02:06:56 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/09/17 09:22:51 turan Exp $
+
+BROKEN=		"sources no longer availible"
 
 DISTNAME=	gom-0.29.99
 CATEGORIES=     audio
