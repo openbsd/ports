@@ -1,6 +1,6 @@
-$OpenBSD: patch-ktools_src_konst_ui_menu_cc,v 1.1.1.1 2001/03/09 09:43:22 reinhard Exp $
---- ktools/src/konst.ui.menu.cc.orig	Sun Feb 18 04:25:58 2001
-+++ ktools/src/konst.ui.menu.cc	Thu Feb 22 22:12:08 2001
+$OpenBSD: patch-ktools_src_konst_ui_menu_cc,v 1.2 2001/05/09 22:48:00 pvalchev Exp $
+--- ktools-1.01/src/konst.ui.menu.cc.orig	Sun Feb 18 04:25:58 2001
++++ ktools-1.01/src/konst.ui.menu.cc	Thu Feb 22 22:12:08 2001
 @@ -215,6 +215,7 @@ int verticalmenu::open() {
                      ret = 0;
                      break;
