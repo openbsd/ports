@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2003/04/06 02:59:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2003/08/22 18:49:46 naddy Exp $
 
 COMMENT=	"graphics file viewer for X11"
 
 VERSION=	4.1
-REVISION=	11	# Debian
+REVISION=	12	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REVISION}
@@ -29,7 +29,7 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff
 
 USE_X11=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 NO_REGRESS=	Yes
