@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/07 13:43:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/24 18:16:28 brad Exp $
 
 COMMENT=	"XFree86-based xterm with Korean language support"
 
 DISTNAME=	hanterm-xf-p19
 CATEGORIES=	korean x11
+NEED_VERSION=	1.460
 MASTER_SITES=	http://www.hanterm.org/download/hanterm-xf/
 HOMEPAGE=	http://www.hanterm.org/
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-LIB_DEPENDS=	iconv.2::converters/libiconv
+MODULES=	iconv
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${PREFIX}/include" \

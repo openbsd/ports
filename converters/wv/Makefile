@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/11 00:51:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/24 18:16:28 brad Exp $
 
 COMMENT=	"convert various Microsoft formats into HTML/PNG"
 
 DISTNAME=	wv-0.6.5
 CATEGORIES=	converters
-NEED_VERSION=	1.402
+NEED_VERSION=	1.460
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= wvware
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+MODULES=	iconv
 LIB_DEPENDS=	wmf.0::graphics/libwmf \
 		png.2::graphics/png \
-		iconv.2::converters/libiconv \
 		Magick.5::graphics/ImageMagick \
 		glib.1::devel/glib
 

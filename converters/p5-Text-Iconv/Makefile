@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/18 03:58:41 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/24 18:16:28 brad Exp $
 
 COMMENT=	"interface to iconv() codeset conversion function"
 
 DISTNAME=	Text-Iconv-1.2
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.439
+NEED_VERSION=	1.460
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Text
 
-LIB_DEPENDS=    iconv.2::converters/libiconv
+MODULES=	iconv
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
