@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/04/16 20:30:20 sturm Exp $
+--- Makefile.orig	Sat Feb 22 15:52:07 2003
++++ Makefile	Sat Feb 22 15:53:42 2003
+@@ -1,4 +1,4 @@
+-CC      = gcc
++CC     ?= gcc
+ OPTS    = -O3 -Wall
+ FILE	= poink
+ DEST	= /bin/ping
+@@ -8,7 +8,8 @@ MANDIR  = /usr/man/man1/
+ all: $(FILE)
+ 
+ $(FILE): $(FILE).c
+-	$(CC) $(OPTS) $(FILE).c -o $(FILE)
++	$(CC) $(CFLAGS) -c $(FILE).c
++	$(CC) $(LDFLAGS) -o $(FILE) $(FILE).o
+ 
+ install: all
+ 	cp $(FILE) $(DEST)

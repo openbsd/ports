@@ -1,0 +1,6 @@
+Nosuid TCP/IP ping is a small, secure replacement for the original ping
+command. Unlike its setuid counterpart, it won't allow flood-pings,
+security compromises and other typical problems. It uses TCP syn-rst
+challenge/response instead of ICMP echo and echo-reply.
+
+WWW: ${HOMEPAGE}

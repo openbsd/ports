@@ -1,0 +1,17 @@
+$OpenBSD: patch-ping_1,v 1.1.1.1 2003/04/16 20:30:20 sturm Exp $
+--- ping.1.orig	Mon Feb 10 19:11:56 2003
++++ ping.1	Sat Feb 22 15:58:58 2003
+@@ -1,11 +1,11 @@
+ .TH C2SH 1 "August, 08, 1998" "poink-1.6"
+ .SH NAME
+-ping \-  Nosuid, secure TCP/IP ping
++poink \-  Nosuid, secure TCP/IP ping
+ .SH SYNOPSIS
+ .hy 0
+ .na
+ .TP
+-.B ping
++.B poink
+ [
+ .B -i
+ .I delay
