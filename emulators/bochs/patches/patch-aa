@@ -1,38 +1,60 @@
---- .bochsrc.orig	Sat Feb 20 00:48:03 1999
-+++ .bochsrc	Sat Feb 20 00:56:25 1999
-@@ -3,7 +3,7 @@
- megs: 16
+--- .bochsrc.orig	Sat Oct 23 02:23:24 1999
++++ .bochsrc	Sun Oct 31 15:15:59 1999
+@@ -2,8 +2,8 @@
+ megs: 32
+ #megs: 16
  #megs: 8
- boot: c
+-boot: c
 -vgaromimage: bios/VGABIOS-elpin-2.20
++boot: a
 +vgaromimage: XXXPREFIXXXX/share/bochs/bios/VGABIOS-elpin-2.20
  
  # You many now use double quotes around pathnames, in case
  # your pathname includes spaces.
-@@ -48,7 +48,8 @@
+@@ -32,7 +32,7 @@
+ #diskc: file=../585M, cyl=1162, heads=16, spt=63
+ #diskc: file=../528M, cyl=1024, heads=16, spt=63
+ 
+-diskc: file=../62M.980115, cyl=940, heads=8, spt=17
++#diskc: file=../62M.980115, cyl=940, heads=8, spt=17
+ #diskc: file="../10M.vga", cyl=306, heads=4, spt=17
+ #diskc: file=../10M.dos622, cyl=306, heads=4, spt=17
+ #diskc: file=../30M.freebsd, cyl=615, heads=6, spt=17
+@@ -47,7 +47,7 @@
+ #diskc: file=../10M.win31, cyl=306, heads=4, spt=17
+ #diskc: file=../rrrr, cyl=1, heads=2, spt=18
+ 
+-cdromd: dev=/dev/cdrom, status=inserted
++#cdromd: dev=/dev/cdrom, status=inserted
+ #cdromd: dev=/dev/cdrom, status=ejected
+ 
+ 
+@@ -57,7 +57,7 @@
  #floppya: 1_44=../1.44.freebsd, status=inserted
  #floppya: 720k=../720k.dos33, status=inserted
  
 -floppya: 1_44=../1.44a, status=inserted
 +floppya: 1_44=/dev/rfd0a, status=inserted
-+#floppya: 1_44=../1.44a, status=inserted
  #floppyb: 1_44=../1.44b, status=inserted
  #floppya: 1_44=/dev/fd0, status=inserted
  #floppyb: 1_44=../1.44b, status=inserted
-@@ -62,14 +63,14 @@
- #romimage: file=../r980820.rom, address=0xe0000
- #romimage: file=bios/BIOS-bochs-990104a, address=0xf0000
- #romimage: file=bios/BIOS-bochs-990127a, address=0xf0000
--romimage: file=bios/BIOS-bochs-990218a, address=0xf0000
-+romimage: file=XXXPREFIXXXX/share/bochs/bios/BIOS-bochs-990218a, address=0xf0000
+@@ -67,7 +67,7 @@
+ #floppya: 1_2=../1.2
+ #floppyb: 1_44=../1.680
  
- #romimage: ../cbios961112
+-romimage: file=bios/BIOS-bochs-990925a, address=0xf0000
++romimage: file=XXXPREFIXXXX/share/bochs/bios/BIOS-bochs-990925a, address=0xf0000
+ 
+ #romimage: file=bios/rombios.bin, address=0xf0000
+ #romimage: file=../cbios961203
+@@ -81,8 +81,8 @@
  #vgaromimage: ../vgacbios961111
  #romimage: ../cbios961203
  
- #log: /dev/null
+-#log: /dev/null
 -log: ./bochs.out
-+log: XXXPREFIXXXX/share/bochs/bochs.out
++log: /dev/null
++#log: ./bochs.out
  keyboard_serial_delay: 200
  floppy_command_delay: 500
  #ips:  1500000
