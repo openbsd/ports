@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/29 09:40:16 turan Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/10 19:31:36 brad Exp $
 
 # If MULE extensions are desired use
 # make USE_MULE=YES
@@ -15,7 +15,7 @@ MAINTAINER=	hgweigand@wiesbaden.netsurf.de
 
 BUILD_DEPENDS=	${PREFIX}/lib/libcompface.a:${PORTSDIR}/graphics/compface
 LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
-		png.1:${PORTSDIR}/graphics/png
+		png.1.3:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -40,15 +40,16 @@ SYS_REL!=	uname -r
 GCCARCH=	${M_ARCH}-unknown-openbsd${SYS_REL}
 
 # Note: x11 includes and libs need NOT be added to --site-{includes,libraries}
-#
 CONFIGURE_ARGS= ${GCCARCH} \
 		${CONFIG_MULE} \
-		--prefix=${PREFIX} \
+		--prefix="${PREFIX}" \
 		--with-gnu-make \
 		--with-ncurses \
-		--statedir=/var/run \
-		--site-includes=/usr/include:${PREFIX}/include \
-		--site-libraries=/usr/lib:${PREFIX}/lib \
+		--with-dialogs="athena" \
+		--with-database="berkdb" \
+		--statedir="/var/run" \
+		--site-includes="/usr/include:${PREFIX}/include" \
+		--site-libraries="/usr/lib:${PREFIX}/lib" \
 		--infopath="${PREFIX}/info:/usr/share/info:${PREFIX}/lib/${DISTNAME}/info" \
 		--rel-alloc
 
@@ -74,18 +75,18 @@ STRIP_PROGS+=	${DISTNAME}
 STRIP_EXECS=	cvtmail digest-doc fakemail gnuserv hexl make-docfile \
 		make-path mmencode movemail profile sorted-doc wakeup yow
 
-.if !defined(NO_WARNINGS)
 pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "*** If MULE extensions are desired use the command line"
-	@${ECHO} "***	make USE_MULE=YES"
-	@${ECHO} ""
+.if !defined(NO_WARNINGS)
+	@echo ""
+	@echo "*** If MULE extensions are desired use the command line"
+	@echo "***	make USE_MULE=YES"
+	@echo ""
 .endif
 
 # Generate platform specific PLIST from template
 pre-install pre-package:
-	@${RM} -f ${WRKDIR}/PLIST
-	@${SED} -e 's/||GCCARCH||/${GCCARCH}/' \
+	@rm -f ${WRKDIR}/PLIST
+	@sed -e 's/||GCCARCH||/${GCCARCH}/' \
 		${PLIST_TEMPLATE} >${WRKDIR}/PLIST
 
 post-install:
@@ -97,7 +98,7 @@ post-install:
 .endfor
 
 # Don't install send-pr for everyone, only for XEmacs' private use.
-	@${RM} -f ${PREFIX}/bin/send-pr
-	@${RM} -f ${PREFIX}/bin/install-sid
+	@rm -f ${PREFIX}/bin/send-pr
+	@rm -f ${PREFIX}/bin/install-sid
 
 .include <bsd.port.mk>
