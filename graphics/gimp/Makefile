@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2001/01/26 00:34:29 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2001/04/11 23:26:25 brad Exp $
+
+COMMENT=	"the GNU Image Manipulation Program"
 
 DISTNAME=	gimp-1.2.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.2/v1.2.1/ \
 		ftp://ftp.sunet.se/pub/gnu/gimp/v1.2/v1.2.1/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/v1.2/v1.2.1/
@@ -14,8 +16,8 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		mpeg.13::graphics/mpeg-lib \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff
-BUILD_DEPENDS=	wget::net/wget
-RUN_DEPENDS=	wget::net/wget
+BUILD_DEPENDS=	wget:wget-*:net/wget
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -31,7 +33,7 @@ CONFIGURE_ARGS+= --enable-static --disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-extract:
+pre-build:
 	@if [ -f ${LOCALBASE}/lib/libgimp.so.?.? ]; then \
 	   echo "+-------------------"; \
 	   echo "| ERROR: you MUST remove the existing gimp installation"; \
