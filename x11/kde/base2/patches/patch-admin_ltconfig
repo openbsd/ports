@@ -1,31 +1,12 @@
---- admin/ltconfig.orig	Fri Sep 22 13:10:22 2000
-+++ admin/ltconfig	Sun Dec 17 03:41:16 2000
-@@ -620,6 +620,12 @@ old_archive_cmds='$AR $AR_FLAGS $oldlib$
- old_postinstall_cmds='chmod 644 $oldlib'
- old_postuninstall_cmds=
- 
-+case "$host_os" in
-+openbsd*)
-+    old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
-+    ;;
-+esac
-+
- # Source the script associated with the $tagname tag configuration.
- if test -n "$tagname"; then
-   . $ltmain
-@@ -1135,6 +1141,15 @@ openbsd*)
-     need_lib_prefix=no
-     need_version=no
-   fi
-+  file_magic_cmd='/usr/bin/env -i /usr/bin/file'
-+  if $file_magic_cmd /usr/lib/libc.so.* | grep ELF >/dev/null; then
-+      deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
-+  else
-+      deplibs_check_method='file_magic OpenBSD/.* demand paged shared library.*'
-+  fi
-+  # trust our libraries, as libtool is abysmally stupid with libgcc
-+  deplibs_check_method=pass_all
-+  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib /usr/local/lib/qt2'
-   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+$OpenBSD: patch-admin_ltconfig,v 1.3 2001/03/12 16:18:34 espie Exp $
+--- admin/ltconfig.orig	Sat Mar 10 15:05:21 2001
++++ admin/ltconfig	Sat Mar 10 15:07:50 2001
+@@ -1162,6 +1162,8 @@ openbsd*)
    shlibpath_var=LD_LIBRARY_PATH
+   # OpenBSD 2.7 the overriding is needed for fast-install
+   shlibpath_overrides_runpath=yes
++  deplib_check_method=pass_all
++  sys_lib_dlsearch_path_spec='/usr/lib /usr/local/lib /usr/X11R6/lib /usr/local/lib/qt2'
+   ;;
+ 
+ os2*)

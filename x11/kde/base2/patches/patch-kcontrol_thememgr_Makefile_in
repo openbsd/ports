@@ -1,0 +1,19 @@
+$OpenBSD: patch-kcontrol_thememgr_Makefile_in,v 1.1 2001/03/12 16:18:34 espie Exp $
+--- kcontrol/thememgr/Makefile.in.orig	Thu Mar  8 20:36:41 2001
++++ kcontrol/thememgr/Makefile.in	Thu Mar  8 20:38:48 2001
+@@ -643,10 +643,12 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local:
+-	cd $(srcdir)/Themes; \
++	cp -rp $(srcdir)/Themes $(srcdir)/Archive; \
++	find $(srcdir)/Archive -type d -name CVS -print -prune|xargs rm -rf; \
++	cd $(srcdir)/Archive; \
+ 	for f in *; do \
+-	  if [ -d $$f -a $$f != "CVS" ]; then \
+-	    tar --exclude CVS -b 16 -c -f - $$f | gzip -c > $(DESTDIR)$(themesdir)/$$f.ktheme; \
++	  if [ -d $$f ]; then \
++	    tar -b 16 -zcf $(DESTDIR)$(themesdir)/$$f.ktheme $$f; \
+ 	  fi; \
+ 	done
+ 

@@ -1,0 +1,20 @@
+$OpenBSD: patch-kioslave_ldap_kldap_h,v 1.1 2001/03/12 16:18:34 espie Exp $
+--- kioslave/ldap/kldap.h.orig	Tue Mar  6 22:58:00 2001
++++ kioslave/ldap/kldap.h	Tue Mar  6 22:59:04 2001
+@@ -8,10 +8,15 @@
+ #include <lber.h>
+ #include <ldap.h>
+ #include <config.h>
+-#ifndef TIME_WITH_SYS_TIME
++#ifdef TIME_WITH_SYS_TIME
+ #include <sys/time.h>
++#include <time.h>
+ #else
++# ifdef HAVE_SYS_TIME_H
++#include <sys/time.h>
++# else
+ #include <time.h>
++# endif
+ #endif
+ 
+ namespace KLDAP

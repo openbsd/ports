@@ -1,6 +1,6 @@
---- konsole/src/main.C.orig	Fri Nov 24 17:06:12 2000
-+++ konsole/src/main.C	Fri Nov 24 17:05:40 2000
-@@ -46,7 +46,9 @@ static KCmdLineOptions options[] =
+--- konsole/src/main.C.orig	Sun Feb 18 16:28:29 2001
++++ konsole/src/main.C	Tue Mar  6 21:52:42 2001
+@@ -67,7 +67,9 @@ public:
  /* --| main |------------------------------------------------------ */
  int main(int argc, char* argv[])
  {
