@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2000/12/05 20:11:28 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/12/26 02:09:27 brad Exp $
 
-DISTNAME=	curl-7.5
+DISTNAME=	curl-7.5.1
 CATEGORIES=	net
 NEED_VERSION=	1.336
 MASTER_SITES=	http://curl.haxx.se/download/ \
