@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/12 19:26:14 wcobb Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 00:03:16 naddy Exp $
 # $FreeBSD: ports/graphics/mplex/Makefile,v 1.8 2000/05/29 23:54:39 steve Exp $
 #
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/general/graphics/mpeg/mplex/ \
 		http://mirror.csoft.org/mplex/
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mplex ${PREFIX}/bin

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/27 00:03:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
 
 COMMENT=	"optimizer for PNG files"
 
 DISTNAME=	pngcrush-1.5.8
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pmt/}
 
 HOMEPAGE=	http://pmt.sourceforge.net/pngcrush/
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MAKE_FLAGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -Wall -I."
 
 MAKE_FILE=	Makefile.gcc
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngcrush ${PREFIX}/bin

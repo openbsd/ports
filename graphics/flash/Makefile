@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/09/28 22:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=	"open source standalone flash(tm) player"
 
 DISTNAME=	flash-0.4.10
 CATEGORIES=	graphics	
 EXTRACT_SUFX=	.tgz
-NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.swift-tools.com/Flash/
 
@@ -22,6 +21,7 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/swfplayer ${PREFIX}/bin

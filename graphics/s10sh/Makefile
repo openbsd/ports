@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/01 22:12:00 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=	"S10sh - a Canon PowerShot digital camera driver"
 
 DISTNAME=	s10sh-0.2.0
 CATEGORIES=	graphics
-NEED_VERSION=	1.498
 MASTER_SITES=	http://www.kyuzz.org/antirez/s10sh-src/
 
 HOMEPAGE=	http://www.kyuzz.org/antirez/s10sh.html
@@ -22,6 +21,8 @@ DOCDIR=		${PREFIX}/share/doc/s10sh
 LIB_DEPENDS=	usb::devel/libusb
 
 CONFIGURE_STYLE= simple
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/s10sh ${PREFIX}/bin

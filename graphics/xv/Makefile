@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2002/10/27 00:03:17 naddy Exp $
 # Original from: Marco S Hyman <marc@OpenBSD.ORG>
 
 COMMENT=	"X11 image display and modification tool"
 
 DISTNAME=	xv-3.10a
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
 MASTER_SITES0=	ftp://swrinde.nde.swri.edu/pub/png/applications/
 MASTER_SITES1=	http://ftp.trilon.com/pub/xv/patches/
@@ -41,6 +41,8 @@ pre-patch:
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/xvpng.diff
 	@mv ${WRKDIR}/xvpng.c ${WRKSRC}
 	@mv ${WRKDIR}/bits/br_png ${WRKSRC}/bits
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xv

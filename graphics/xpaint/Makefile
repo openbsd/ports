@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/09/07 07:09:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.30 2002/10/27 00:03:17 naddy Exp $
 
 COMMENT=		"simple paint program"
 
@@ -24,5 +24,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 CONFIGURE_STYLE= 	imake
 
 WRKDIST=		${WRKDIR}/xpaint
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

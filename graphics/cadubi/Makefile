@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/06/07 21:37:11 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2002/10/27 00:03:16 naddy Exp $
 
 DISTNAME=	cadubi_1.2
 PKGNAME=	${DISTNAME:S/_/-/g}
 CATEGORIES=	graphics editors
-NEED_VERSION=	1.496
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	"May not be used in a for-profit package"
@@ -19,6 +18,7 @@ MAINTAINER=	Joshua Stein <jcs@rt.fm>
 RUN_DEPENDS=	::devel/p5-Term-ReadKey
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cadubi ${PREFIX}/bin

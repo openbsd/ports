@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/09/03 16:50:28 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 00:03:17 naddy Exp $
 
 COMMENT=	"X11 animation player with support for lots of formats"
 
@@ -59,6 +59,8 @@ post-configure:
 
 CONFIGURE_STYLE=	imake
 DOCDIR=${PREFIX}/share/doc/xanim
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

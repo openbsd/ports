@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/23 04:04:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/10/27 00:03:17 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"Unsure of codec's license"
@@ -9,7 +9,6 @@ VERSION=	0.60
 DISTNAME=	w32codec-${VERSION}
 PKGNAME=	win32-codecs-${VERSION}
 CATEGORIES=	graphics
-NEED_VERSION=	1.504
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -23,6 +22,7 @@ MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 EXTRACT_SUFX=	.tar.bz2
 
 NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/win32

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:36:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=	"image and webcam display plugin for gkrellm"
 
 DISTNAME=	gkrellkam-0.3.4
 CATEGORIES=	graphics
-NEED_VERSION=	1.527
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +28,8 @@ RUN_DEPENDS=	:gkrellm-*:sysutils/gkrellm \
 		:wget-*:net/wget
 
 ALL_TARGET=	
+
+NO_REGRESS=	Yes
 
 do-install:
 	@mkdir -p ${PREFIX}/lib/gkrellm/plugins

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/20 00:21:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=			"3D image rendering package"
 
@@ -37,6 +37,8 @@ ALL_TARGET+=			newunix
 
 post-patch:
 	@perl -i -p -e "s#/usr/local/lib#${PREFIX}/share#" ${WRKDIR}/povray31/povray.ini
+
+NO_REGRESS=			Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/povray ${PREFIX}/bin

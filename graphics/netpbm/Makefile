@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/10/04 13:10:34 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2002/10/27 00:03:16 naddy Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
@@ -38,6 +38,8 @@ pre-build:
 	@cp -f ${FILESDIR}/Makefile.config.OpenBSD \
 		${WRKSRC}/Makefile.config
 	@cd ${WRKSRC}/shhopt; ln -sf shhopt.h pm_shhopt.h
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
 

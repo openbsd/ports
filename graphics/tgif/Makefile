@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=	"two-dimensional drawing tool and hyper-object browser"
 
 DISTNAME=	tgif-4.1.40
 CATEGORIES=	graphics
-NEED_VERSION=	1.496
+
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
 
@@ -30,6 +30,8 @@ post-extract:
 	@rm -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
 	@cp ${WRKDIR}/${DISTNAME}/Tgif.tmpl-openbsd \
 		${WRKDIR}/${DISTNAME}/Tgif.tmpl
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${TGIFDOC}

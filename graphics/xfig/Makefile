@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/07/19 23:43:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/27 00:03:17 naddy Exp $
 
 COMMENT=	"CAD drawing program for X11"
 
@@ -34,5 +34,7 @@ CONFIGURE_STYLE= imake
 INSTALL_TARGET=	install install.all
 
 WRKDIST=	${WRKDIR}/xfig.${VERSION}
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

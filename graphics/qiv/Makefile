@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/07/28 20:18:40 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=		"very small and pretty fast gdk/Imlib image viewer"
 
@@ -21,5 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

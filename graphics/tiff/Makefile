@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2002/01/24 04:55:50 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/27 00:03:16 naddy Exp $
 
 COMMENT=	"tools and library routines for working with TIFF images"
 
 DISTNAME=	tiff-v3.5.7
 PKGNAME=	tiff-3.5.7
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/
 
 HOMEPAGE=	http://www.libtiff.org/
@@ -38,6 +38,8 @@ DOCDIR=	${PREFIX}/share/doc/tiff
 
 post-extract:
 	@cp -f ${PORTSDIR}/infrastructure/db/config.guess ${WRKSRC}
+
+NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/images
