@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/04 06:28:26 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/11 08:39:30 fgsch Exp $
 
 DISTNAME=	gnugo-2.6
 CATEGORIES=	games
-NEED_VERSION=   1.226
+NEED_VERSION=   1.301
 
 MAINTAINER=	ports@openbsd.org
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gnugo
 
-FAKE=		Yes
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
