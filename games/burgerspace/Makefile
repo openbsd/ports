@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/07 05:13:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/23 21:35:18 pvalchev Exp $
 
 COMMENT=	"burgertime clone for X"
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://sites.netscape.net/sarrazip/
+#MASTER_SITES=	http://sites.netscape.net/sarrazip/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 LIB_DEPENDS=	gengameng.3.0:gengameng-*:devel/gengameng
 
