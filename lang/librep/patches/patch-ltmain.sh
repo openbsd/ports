@@ -1,5 +1,5 @@
---- etc/ltmain.sh.orig	Fri Mar 10 10:32:21 2000
-+++ etc/ltmain.sh	Tue Feb 20 15:34:52 2001
+--- ltmain.sh.orig	Thu Jan  4 18:03:28 2001
++++ ltmain.sh	Wed Feb 21 12:13:37 2001
 @@ -1079,7 +1079,18 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
@@ -37,10 +37,10 @@
 +        *-*-openbsd*)
 +          # Do not include libc due to us having libc/libc_r.
 +          ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -2619,7 +2637,7 @@ static const void *lt_preloaded_setup() 
+         *-*-rhapsody*)
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+@@ -2623,7 +2641,7 @@ static const void *lt_preloaded_setup() 
  	  # linked before any other PIC object.  But we must not use
  	  # pic_flag when linking with -static.  The problem exists in
  	  # FreeBSD 2.2.6 and is fixed in FreeBSD 3.1.
@@ -49,7 +49,7 @@
  	    case "$compile_command " in
  	    *" -static "*) ;;
  	    *) pic_flag_for_symtable=" $pic_flag -DPIC -DFREEBSD_WORKAROUND";;
-@@ -3555,40 +3573,6 @@ libdir='$install_libdir'\
+@@ -3571,40 +3589,6 @@ libdir='$install_libdir'\
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

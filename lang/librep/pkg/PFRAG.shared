@@ -1,10 +1,18 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2000/08/20 06:04:22 brad Exp $
-lib/librep.so.9.4
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/02/21 17:56:28 danh Exp $
+lib/librep.so.10.3
 DYNLIBDIR(%B)
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libgdbm.so.0.0
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libgettext.so.0.0
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libreadline.so.0.0
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/librecord-profile.so.0.0
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libsdbm.so.0.0
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libtables.so.0.0
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/libtimers.so.0.0
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gettext.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/readline.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/tables.so
+libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/timers.so

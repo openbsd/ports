@@ -1,5 +1,5 @@
---- etc/ltconfig.orig	Fri Mar 10 10:32:21 2000
-+++ etc/ltconfig	Tue Feb 20 15:33:35 2001
+--- ltconfig.orig	Thu Jan  4 18:03:28 2001
++++ ltconfig	Wed Feb 21 12:12:21 2001
 @@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
@@ -10,7 +10,7 @@
  
  esac
  
-@@ -1396,10 +1399,21 @@ else
+@@ -1402,10 +1405,21 @@ else
      ;;
  
    openbsd*)
@@ -34,7 +34,7 @@
      ;;
  
    os2*)
-@@ -1997,13 +2011,10 @@ netbsd*)
+@@ -2021,13 +2035,12 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
@@ -46,6 +46,8 @@
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
 +  deplibs_check_method='pass_all'
++  need_lib_prefix=no
++  need_version=no
    ;;
  
  os2*)
