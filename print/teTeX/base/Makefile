@@ -1,6 +1,6 @@
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.14 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.15 2001/10/06 13:01:23 espie Exp $
 
 COMMENT=	"TeX distribution, executables"
 
@@ -9,6 +9,8 @@ CATEGORIES=	print/teTeX
 NEED_VERSION=	1.402
 DIST_SUBDIR=	teTeX
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+#${MASTER_SITE_TEX_CTAN}/biblio/bibtex/8-bit/bt371src.zip
+
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources
 DISTFILES=	${TETEX_SRC} 
 WRKDIST=	${WRKDIR}/teTeX-1.0
@@ -26,8 +28,10 @@ FLAVOR?=
 
 TETEX_SRC=teTeX-src-1.0.7.tar.gz
 
-RUN_DEPENDS=${PREFIX}/share/texmf/ls-R:teTeX_texmf-1.0.*:print/teTeX/texmf
-BUILD_DEPENDS=${PREFIX}/share/texmf/ls-R::print/teTeX/texmf
+RUN_DEPENDS=:teTeX_texmf-1.0.*:print/teTeX/texmf
+RUN_DEPENDS+=:texi2html->=1.56:textproc/texi2html
+
+BUILD_DEPENDS=::print/teTeX/texmf
 LIB_DEPENDS= png.2::graphics/png 
 
 PNGDIR=${PREFIX}

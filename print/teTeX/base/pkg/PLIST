@@ -1,5 +1,4 @@
-@comment teTeX actually includes texi2html-1.56k
-@pkgcfl texi2html-*
+@comment $OpenBSD: PLIST,v 1.9 2001/10/06 13:01:24 espie Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/dvips.info
 @unexec install-info --delete --info-dir=%D/info %D/info/kpathsea.info
 @unexec install-info --delete --info-dir=%D/info %D/info/latex.info
@@ -104,7 +103,6 @@ bin/texconfig
 bin/texdoc
 bin/texexec
 bin/texhash
-bin/texi2html
 bin/texi2pdf
 bin/texlinks
 bin/texshow
@@ -254,7 +252,6 @@ man/man1/tangle.1
 man/man1/tex.1
 man/man1/texconfig.1
 man/man1/texhash.1
-man/man1/texi2html.1
 man/man1/tetex-dialog.1
 man/man1/tftopl.1
 man/man1/tie.1
