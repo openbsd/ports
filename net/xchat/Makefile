@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/03/01 05:02:02 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/03/02 19:13:30 brad Exp $
 # $FreeBSD: Makefile,v 1.12 1999/06/08 23:41:54 steve Exp $
 
 DISTNAME=	xchat-1.6.4
@@ -10,8 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.xchat.org/
 
-LIB_DEPENDS=	intl.1::devel/gettext \
-		gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 MAINTAINER=	Couderc Damien <couderc.damien@wanadoo.fr>
 
