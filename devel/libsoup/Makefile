@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/11/23 21:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2005/03/10 07:39:21 marcm Exp $
 
 COMMENT=		"a SOAP implementation in C"
 
-DISTNAME=		libsoup-2.2.1
+DISTNAME=		libsoup-2.2.2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
