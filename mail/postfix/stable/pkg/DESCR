@@ -74,16 +74,13 @@ Other significant features of interest
 
 Flavors
 
-* pcre - Add support for Perl-compatible regular expressions.
-
-* sasl - Add support for authenticated SMTP.
-
-* tls - Add support for SSL/TLS using patches from
-  ${TLSHOMEPAGE}.
-
-* ldap - Add support for doing table lookups using LDAP.
-
-* mysql - Add support for doing table lookups using MySQL.
+pcre	Include support for Perl-compatible regular expressions
+sasl	Include support for authenticated SMTP using Cyrus SASL v1 (deprecated)
+sasl2	Include support for authenticated SMTP using Cyrus SASL v2 (recommended)
+tls	Include support for SMTP over SSL/TLS
+ldap	Include support for doing table lookups using LDAP
+mysql	Include support for doing table lookups using MySQL
 
 
 WWW: ${HOMEPAGE}
+WWW: ${TLSHOMEPAGE}
