@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2004/12/10 20:33:59 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/03/15 03:40:21 alek Exp $
 
 COMMENT=		"GNOME Structured File library"
 COMMENT-gnome=		"GNOME specific extensions to libgsf"
 
 VERSION=		1.11.1
 DISTNAME=		libgsf-${VERSION}
-PKGNAME-gnome=		libgsf-gnome-${VERSION}
+PKGNAME=		${DISTNAME}p0
+PKGNAME-gnome=		libgsf-gnome-${VERSION}p0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org/
@@ -34,6 +35,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-gtk-doc
+CONFIGURE_ARGS+=	--with-bz2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -48,14 +50,14 @@ SUBPACKAGE?=
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-gnome"
-LIB_DEPENDS+=   gnomevfs-2::x11/gnome/vfs2 \
-                gsf-1::devel/libgsf
-WANTLIB+=	ORBit-2.0.0 bonobo-2.0.0 bonobo-activation gmodule-2.0.0.0 gthread-2.0.0.0
+LIB_DEPENDS=	gnomevfs-2::x11/gnome/vfs2 \
+		gsf-1::devel/libgsf
+WANTLIB+=	ORBit-2.0.0 bonobo-2.0.0 bonobo-activation gmodule-2.0.0.0 \
+		gthread-2.0.0.0 gconf-2 glib-2.0.0.0 gobject-2.0.0.0 xml2
 . endif
 .else
 . if ${MULTI_PACKAGES:M-gnome}
 LIB_DEPENDS+=   gnomevfs-2::x11/gnome/vfs2
-WANTLIB+=	ORBit-2.0.0 bonobo-2.0.0 bonobo-activation gmodule-2.0.0.0 gthread-2.0.0.0
 . endif
 .endif
 
