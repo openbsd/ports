@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/02/23 10:29:55 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/02/23 12:25:04 reinhard Exp $
 bin/botti
 bin/irssi
 lib/irssi/modules/libirc_bot.a
-lib/irssi/modules/libirc_bot.la
 lib/irssi/modules/libirc_bot.so
 lib/irssi/modules/libirc_proxy.a
-lib/irssi/modules/libirc_proxy.la
+lib/irssi/modules/libirc_proxy.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/Irc.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
@@ -158,7 +157,6 @@ share/doc/irssi/themes/colorless.theme
 share/doc/irssi/themes/default.theme
 share/examples/irssi/colorless.theme
 share/examples/irssi/default.theme
-%%SHARED%%
 @dirrm share/examples/irssi
 @dirrm share/doc/irssi/themes
 @dirrm share/doc/irssi/scripts

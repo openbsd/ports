@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2002/02/21 16:19:54 reinhard Exp $
-lib/irssi/modules/libirc_proxy.so.0.0
-NEWDYNLIBDIR(%D/lib/irssi/modules)
