@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Dec  5 15:18:15 1999
-+++ Makefile.in	Sun Dec  5 16:58:15 1999
+--- Makefile.in.orig	Wed Jan  5 19:23:06 2000
++++ Makefile.in	Tue Feb  1 15:13:45 2000
 @@ -168,7 +168,7 @@
  
  install-binPROGRAMS: $(bin_PROGRAMS)
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(bindir)
-+	$(mkinstalldirs) $(DESTDIR)$(prefix)/libexec
++	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(prefix)/libexec
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
  	  if test -f $$p; then \
  	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
