@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/07/04 17:56:45 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/04/20 01:01:46 pvalchev Exp $
 bin/xp-mapedit
 bin/xp-replay
 bin/xpilot
@@ -30,6 +30,7 @@ share/xpilot/password
 share/xpilot/robots
 share/xpilot/sounds
 share/xpilot/textures/allitems.ppm
+share/xpilot/textures/asteroidconcentrator.ppm
 share/xpilot/textures/ball.ppm
 share/xpilot/textures/ball.xpm
 share/xpilot/textures/base_down.ppm
