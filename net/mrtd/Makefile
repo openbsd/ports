@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2001/08/30 02:24:52 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/05/28 14:13:00 brad Exp $
 # Uses pthreads
 
-COMMENT=		"daemon/libs/toolkit for routing BPG4, RIP, OSPF, etc."
+COMMENT=		"daemon/libs/toolkit for routing BGP4+, RIP, OSPF, etc."
 
 V=			2.2.2a
 DISTNAME=		mrt-${V}-src
