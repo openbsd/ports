@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.25 2003/06/16 17:29:44 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2004/02/01 22:59:49 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
+.if defined(VERSION) && ${VERSION} == "3.1.95"
+MASTER_SITES?=	${MASTER_SITE_KDE:S@$@unstable/${VERSION}/src/@}
+.else
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
+.endif
 EXTRACT_SUFX?=	.tar.bz2
 
 # Parts of kde want shared libraries to work, as some symbols are
