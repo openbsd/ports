@@ -1,5 +1,5 @@
-lib/libPropList.so.1.1
-@exec /sbin/ldconfig -m %B
-lib/libPropList.la
-lib/libPropList.a
 include/proplist.h
+lib/libPropList.a
+lib/libPropList.la
+lib/libPropList.so.2.0
+@exec /sbin/ldconfig -m %B
