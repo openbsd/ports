@@ -1,21 +1,23 @@
 # OpenBSD makefile for:	jpeg
-# Version required:     6a
+# Version required:     6b
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/10 10:45:17 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/05/06 02:48:16 marc Exp $
 #
 
-DISTNAME=       jpegsrc.v6a
-PKGNAME=        jpeg-6a
-CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.uu.net/graphics/jpeg/
+DISTNAME=		jpegsrc.v6b
+PKGNAME=		jpeg-6b
+CATEGORIES=		graphics
+MASTER_SITES=		ftp://ftp.uu.net/graphics/jpeg/
 
-MAINTAINER=     angelos@openbsd.org
-WRKSRC=         ${WRKDIR}/jpeg-6a
+MAINTAINER=		angelos@openbsd.org
+WRKSRC=			${WRKDIR}/jpeg-6b
 GNU_CONFIGURE=	yes
-INSTALL_TARGET= install install-lib
-MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
+.if (${MACHINE_ARCH} != "alpha")
+CONFIGURE_ARGS+=	--enable-shared
+.endif
+CONFIGURE_ARGS+=	--enable-static
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
