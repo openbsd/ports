@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/26 18:24:56 aaron Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/18 18:47:06 naddy Exp $
+@pkgcfl wmweather-*
 bin/GrabWeather
 lib/gkrellm/plugins/gkrellweather.so
