@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/06 08:52:00 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/10 00:23:01 avsm Exp $
+
+COMMENT=	local mail delivery agent with filtering abilities
 
 DISTNAME=	maildrop-1.3.1
 CATEGORIES=    	mail
-NEED_VERSION=	1.351
+NEED_VERSION=	1.391
 
 HOMEPAGE=	http://www.flounder.net/~mrsam/maildrop/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
