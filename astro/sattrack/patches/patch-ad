@@ -1,0 +1,32 @@
+--- ../run/gettle.orig	Tue Mar 14 23:26:06 1995
++++ ../run/gettle	Sat Jan 22 23:51:30 2000
+@@ -24,18 +24,21 @@
+ #
+ #
+ #
+-set ftphost=129.92.1.66
+-set satdir=/home/manfred
+-set satuser=manfred
++set ftphost=archive.afit.af.mil
++set satdir=__PREFIX__/lib
++set satuser=sattrack
+ #
+ #
+ #
+-set userid=$USER@`hostname`.`domainname`
++set hostdot=`hostname | grep '\.'`
++if ("$hostdot" == "") then
++    set userid=$USER@`hostname`.`domainname`
++else
++    set userid=$USER@`hostname`
++endif
+ #
+-if ($USER == $satuser) then 
+-    set satdirusr=$satdir
+-    else
+-    set satdirusr=$HOME
++set satdirusr=$satdir
++if (! -d $satdirusr/SatTrack/tle) then
+     mkdir -p $satdirusr/SatTrack/tle
+ endif
+ #

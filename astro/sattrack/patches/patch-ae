@@ -1,0 +1,20 @@
+--- ../src/include/sattrack.h.orig	Tue Jan 14 10:38:38 1997
++++ ../src/include/sattrack.h	Sat Jan 22 23:37:21 2000
+@@ -74,13 +74,15 @@
+ /*                                                                            */
+ /******************************************************************************/
+ 
+-#define SATDIR                "/usr1/manfred"    /* directory where SatTrack  */
++#ifndef SATDIR
++#define SATDIR                "/usr/local/lib"   /* directory where SatTrack  */
+                                                  /* lives; used if HOMEDIR is */
+                                                  /* undefined in the Makefile */
++#endif
+ 
+ #define DATA                  "SatTrack/data"    /* SatTrack sub-directories  */
+ #define PRED                  "SatTrack/pred"
+-#define RUN                   "SatTrack/run"
++#define RUN                   "../bin"
+ #define TLE                   "SatTrack/tle"
+ #define SRC                   "SatTrack/src"
+ #define INC                   "SatTrack/src/include"

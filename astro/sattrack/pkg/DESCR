@@ -1,6 +1,3 @@
-This is a port of SatTrack version 3.1, which is
-Copyright (c) 1992-1997 Bester Tracking Systems. All Rights Reserved.
-
 SatTrack is a real-time satellite tracking and orbit propagation
 program with an X11 color world map tracking chart. It provides
 two different live displays, for single or multiple satellites,
@@ -26,8 +23,4 @@ Wide Web page with the following URL:
 	http://www.bester.com
 
 The much advanced commercial off-the-shelf version of SatTrack
-(V4.0) can be obtained from Bester Tracking Systems.
-
-Port to FreeBSD 2.2 by
-Brent J. Nordquist <bjn@visi.com>
-Sun Mar  2 1997
+can be obtained from Bester Tracking Systems.
