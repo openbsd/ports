@@ -1,7 +1,17 @@
-$OpenBSD: patch-configure_in,v 1.19 2002/11/30 11:17:26 wcobb Exp $
---- configure.in.orig	Fri Nov  1 21:54:26 2002
-+++ configure.in	Fri Nov  1 22:04:03 2002
-@@ -2484,6 +2484,9 @@ fi
+$OpenBSD: patch-configure_in,v 1.20 2003/04/18 02:37:06 pvalchev Exp $
+--- configure.in.orig	Sun Oct  6 14:34:53 2002
++++ configure.in	Thu Apr 17 20:27:23 2003
+@@ -484,9 +484,6 @@ CheckNASM()
+               win32)
+                   NASMFLAGS="-f win32"
+                   ;;
+-              openbsd)
+-                  NASMFLAGS="-f aoutb"
+-                  ;;
+               *)
+                   NASMFLAGS="-f elf"
+                   ;;
+@@ -2484,6 +2481,9 @@ fi
  if test $ARCH = solaris; then
    SDL_RLD_FLAGS="-R\${exec_prefix}/lib"
  fi
@@ -11,7 +21,7 @@ $OpenBSD: patch-configure_in,v 1.19 2002/11/30 11:17:26 wcobb Exp $
  
  case "$ARCH" in
    openbsd | netbsd | bsdi)
-@@ -2503,7 +2506,7 @@ esac
+@@ -2503,7 +2503,7 @@ esac
  STATIC_SYSTEM_LIBS="$SYSTEM_LIBS"
  
  dnl Output the video drivers we use
