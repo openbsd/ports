@@ -1,6 +1,6 @@
---- gtkgl/Makefile.in.orig	Mon Jun 14 13:02:27 1999
-+++ gtkgl/Makefile.in	Mon Jun 14 13:02:40 1999
-@@ -87,7 +87,7 @@
+--- gtkgl/Makefile.in.orig	Tue Feb 22 13:34:07 2000
++++ gtkgl/Makefile.in	Wed Mar 15 09:38:56 2000
+@@ -90,7 +90,7 @@
  
  gtkglinclude_HEADERS = gdkgl.h gtkglarea.h
  libgtkgl_la_SOURCES = gdkgl.c gtkglarea.c

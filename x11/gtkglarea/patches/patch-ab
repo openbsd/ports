@@ -1,11 +1,10 @@
---- configure.orig	Mon Jun 14 12:29:11 1999
-+++ configure	Mon Jun 14 12:29:40 1999
-@@ -1411,7 +1411,7 @@
- aix*)
-   ac_symcode='[BCDTU]'
+--- ltconfig.orig	Wed Mar 15 09:39:43 2000
++++ ltconfig	Wed Mar 15 09:40:47 2000
+@@ -1962,6 +1962,7 @@
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method='pass_all'
    ;;
--sunos* | cygwin32* | mingw32*)
-+sunos* | cygwin32* | mingw32* | openbsd*)
-   ac_sympat='_\([_A-Za-z][_A-Za-z0-9]*\)'
-   ac_symxfrm='_\1 \1'
-   ;;
+ 
+ os2*)
