@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/09 20:32:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/26 19:19:22 pvalchev Exp $
 
 COMMENT=	"interpreted language for scientific computing"
 
 VERSION=	1.5
-DISTNAME=	yorick-${VERSION}
+DISTNAME=	yorick-${VERSION}.02
 CATEGORIES=	math devel
 NEED_VERSION=	1.414
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/Yorick/
@@ -22,6 +22,8 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE= simple
 Y_DIR=		${PREFIX}/share/yorick
+
+WRKDIST=	${WRKDIR}/yorick-${VERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yorick/yorick ${PREFIX}/bin
