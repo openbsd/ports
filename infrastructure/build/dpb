@@ -49,7 +49,6 @@ our %depend_on = ();
 our %prereqs_of = ();
 
 chomp(my $ARCH = `/usr/bin/arch -s`);
-our %FIFO = ();
 our $MAKE = "/usr/bin/make";
 our $MAKEFLAGS = "BATCH=Yes BIN_PACKAGES=Yes BULK=Yes TRUST_PACKAGES=Yes";
 our $PORTSDIR = $ENV{'PORTSDIR'} || "/usr/ports";
@@ -57,17 +56,23 @@ our $TMPDIR = $ENV{'PKG_TMPDIR'} || '/var/tmp';
 our $TIMEOUT = 60;
 our @SSH = ("/usr/bin/ssh", "-n", "-o ConnectTimeout=$TIMEOUT");
 
+our %FIFO = ();
+our %SHELL = ();
+our %SSH_MASTER = ();
+
 # -A <Arch>: specify architecture of build hosts
-# -b: build dependency file
+# -b: force creation of dependency file
 # -d: debug run, don't actually build any packages
-# -e: perform expensive operations to get full dependency information
+# -e: perform expensive operations to get full dependency information in
+#     order to optimize build order by package importance
 # -F <Hosts File>: one host per line
 # -L <Logdir>: use <Logdir> instead of $PORTSDIR/logs/$ARCH
 # -S <SUBDIRLIST>: use <SUBDIRLIST> instead of all ports
+# -s: build all packages in cwd
 # -T <Dependency File>: use <Dependency File> instead of a temporary one
 # -t <Timeout>: use this timeout instead of the default
-our ($opt_A, $opt_b, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_T, $opt_t);
-getopts('A:bdeF:L:S:T:t:');
+our ($opt_A, $opt_b, $opt_d, $opt_e, $opt_F, $opt_L, $opt_S, $opt_s, $opt_T, $opt_t);
+getopts('A:bdeF:L:S:sT:t:');
 
 $ARCH = $opt_A if defined $opt_A;
 
@@ -76,12 +81,6 @@ $opt_F = "$PORTSDIR/infrastructure/db/hosts-$ARCH" unless defined $opt_F;
 $opt_L = "$PORTSDIR/logs/$ARCH" unless defined $opt_L;
 our $LOGGER = "$PORTSDIR/infrastructure/build/portslogger $opt_L";
 
-unless (defined $opt_T) {
-	$opt_T = new File::Temp( TEMPLATE => 'all-depends.XXXXXXXXXX',
-				 DIR => $TMPDIR,
-				 UNLINK => 0 );
-}
-
 $TIMEOUT = $opt_t if defined $opt_t;
 
 our @dead_children = ();
@@ -89,11 +88,17 @@ our @dead_children = ();
 sub child_handler()
 {
 	while ((my $child = waitpid(-1,1)) > 0) {
+		my $sig = ($? && 255);
+		my $retval = ($? >> 8);
+
+		# host/session died, retry build
+		$retval = 255 if $sig > 0 and $retval == 0;
+		
 		if (defined $CHILD->{$child}) {
-			$CHILD->{$child}[RETVAL] = ($? >> 8);
+			$CHILD->{$child}[RETVAL] = $retval;
 			push(@dead_children, $child);
 		} elsif (exists $CHECK_HOSTS->{$child}) {
-			$CHECK_HOSTS->{$child} = ($? >> 8);
+			$CHECK_HOSTS->{$child} = $retval;
 		}
 	}
 }
@@ -101,6 +106,7 @@ sub child_handler()
 sub term_handler()
 {
 	local $SIG{CHLD} = "IGNORE";
+	local $SIG{HUP}  = "IGNORE";
 	local $SIG{INT}  = "IGNORE";
 	local $SIG{TERM} = "IGNORE";
 
@@ -109,6 +115,23 @@ sub term_handler()
 	}
 	
 	clean_up(1);
+}
+
+sub my_exec($$)
+{
+	my ($args, $out) = @_;
+	
+	$SIG{HUP}  = "DEFAULT";
+	$SIG{INT}  = "DEFAULT";
+	$SIG{TERM} = "DEFAULT";
+
+	open STDOUT, '>', "$out" or
+	  die "Cannot redirect STDOUT: $!";
+	open STDERR, ">&STDOUT" or
+	  die "Cannot redirect STDERR: $!";
+
+	exec @{$args};
+	die "Cannot @{$args}: $!";
 }
 
 sub reap_children()
@@ -122,12 +145,46 @@ sub mark_as_down($)
 {
 	my $host = shift;
 	print "*** lost $host\n";
+	kill_ssh_master($host);
 	push(@DOWN_HOSTS, $host);
 }
 
 sub mark_as_free($)
 {
 	push(@FREE_HOSTS, shift);
+}
+
+sub kill_ssh_master($)
+{
+	my $host = shift;
+	
+	if (defined $SSH_MASTER{$host}) {
+		kill INT => $SSH_MASTER{$host};
+		delete $SSH_MASTER{$host};
+	}
+}
+
+sub start_ssh_master($)
+{
+	my $host = shift;
+	my $pid = fork();
+	die "fork: $!" unless defined $pid;
+
+	if ($pid > 0) {
+		# parent		
+		while (not -e "$TMPDIR/ssh-$host") {
+			# child died?
+			return if ((my $child = waitpid($pid, 1)) > 0);
+			
+			sleep 1;
+		}
+		$SSH_MASTER{$host} = $pid;
+	} else {
+		# child
+		my @args = (@SSH, "-N", "-M", "-S", "$TMPDIR/ssh-$host",
+			    "$host");
+		my_exec(\@args, "/dev/null");
+	}
 }
 
 sub check_host($)
@@ -155,11 +212,8 @@ sub check_host($)
 		return $CHECK_HOSTS->{$pid};
 	} else {
 		# child
-		$SIG{INT}  = "DEFAULT";
-		$SIG{TERM} = "DEFAULT";
-
-		exec @SSH, $host, "exit 0";
-		die "exec(): $!";
+		my @args = (@SSH, "$host", "exit 0");
+		my_exec(\@args, "/dev/null");
 	}
 }
 
@@ -173,9 +227,11 @@ sub check_hosts()
 	for (my $i = 0; $i <= $#DOWN_HOSTS; $i++) {
 		my $host = $DOWN_HOSTS[$i];
 		my $retval = check_host($host);
+
 		if ($retval == 0) {
 			print "*** $host is back\n";
 			mark_as_free($host);
+			start_ssh_master($host);
 			splice(@DOWN_HOSTS, $i, 1);
 			$i--;
 		}
@@ -184,17 +240,23 @@ sub check_hosts()
 	# free hosts still alive?
 	for (my $i = 0; $i <= $#FREE_HOSTS; $i++) {
 		my $host = $FREE_HOSTS[$i];
+		next if ($host =~ /^localhost/);
 		my $retval = check_host($host);
+
 		if ($retval != 0) {
 			mark_as_down($host);
 			splice(@FREE_HOSTS, $i, 1);
 			$i--;
+			next;
+		} elsif ($retval == 0) {
+			start_ssh_master($host) if not -e "$TMPDIR/ssh-$host";
 		}
 	}
 
 	# building hosts all still alive?
 	foreach my $pid (keys %{$CHILD}) {
 		my $host = $CHILD->{$pid}[HOST];
+		next if ($host =~ /^localhost/);
 		my $retval = check_host($host);
 
 		if ($retval != 0) {
@@ -341,8 +403,17 @@ sub parse_hosts_file()
 
 	while (<$fh>) {
 		chomp;
-		mark_as_free($_);
-		$FIFO{$_} = "$TMPDIR/dpg-$_.log";
+		my $host = $_;
+
+		mark_as_free($host);
+
+		if (/^localhost/) {
+			@{$SHELL{$host}} = ("/bin/sh", "-c");
+		} else {
+			@{$SHELL{$host}} =
+			  (@SSH, "-S", "$TMPDIR/ssh-$host", "$host");
+		}
+		$FIFO{$host} = "$TMPDIR/dpb-$host.log";
 	}
 	close($fh);
 }
@@ -365,6 +436,7 @@ sub build_package($$$$)
 		return;
 	} else {
 		# child
+		$SIG{HUP}  = "DEFAULT";
 		$SIG{INT}  = "DEFAULT";
 		$SIG{TERM} = "DEFAULT";
 		$0 = "dpb [slave] - $port";
@@ -379,16 +451,10 @@ sub build_package($$$$)
 			my $arg = "cd $PORTSDIR/$port && ";
 			$arg .= "FLAVOR=\"$flavor\" " if defined $flavor;
 			$arg .= "$MAKE $MAKEFLAGS package";
-
+			my @args = (@{$SHELL{$host}}, $arg);
+			
 			start_logger($host);
-
-			open STDOUT, '>', "$FIFO{$host}" or
-			  die "Cannot redirect STDOUT: $!";
-			open STDERR, ">&STDOUT" or
-			  die "Cannot redirect STDERR: $!";
-
-			exec @SSH, $host, $arg;
-			die "exec(): $!";
+			my_exec(\@args, "$FIFO{$host}");
 		}
 		exit 0;
 	}
@@ -438,11 +504,8 @@ sub start_logger()
 	} else {
 		# child
 		# dies on its own on EOF
-		$SIG{INT}  = "DEFAULT";
-		$SIG{TERM} = "DEFAULT";
-
-		exec("$LOGGER < $FIFO{$host} > /dev/null 2>&1");
-		die "Failed to start logger: $!";
+		my @args = ("$LOGGER < $FIFO{$host}");
+		my_exec(\@args, "/dev/null");
 	}
 }
 
@@ -450,6 +513,11 @@ sub clean_up($)
 {
 	# only remove self generated dependency file
 	unlink($opt_T) if ref $opt_T;
+
+	foreach my $h (keys %SSH_MASTER) {
+		kill_ssh_master($h);
+	}
+
 	foreach my $h (keys %FIFO) {
 		unlink($FIFO{$h});
 	}
@@ -458,15 +526,27 @@ sub clean_up($)
 }
 
 # MAIN
+$SIG{HUP}  = \&term_handler;
 $SIG{INT}  = \&term_handler;
 $SIG{TERM} = \&term_handler;
 $0 = "dpb [master]";
 
 # collect dependency data
-if (defined $opt_b) {
+if (defined $opt_b or not defined $opt_T or not -f $opt_T) {
 	my $arg = "cd $PORTSDIR && $MAKE ";
 
-	if (defined $opt_S) {
+	unless (defined $opt_T) {
+		$opt_T = new File::Temp( TEMPLATE => 'all-depends.XXXXXXXXXX',
+					 DIR => $TMPDIR,
+					 UNLINK => 0 );
+	}
+
+	if (defined $opt_s and defined $opt_S) {
+		die "-s and -S are mutually exclusive!";
+	} elsif (defined $opt_s) {
+		# cwd is somewhere in the ports tree, just build from here
+		$arg = "$MAKE ";
+	} elsif (defined $opt_S) {
 		die "SUBDIRLIST $opt_S not found!" unless (-f $opt_S);
 		$arg .= "SUBDIRLIST=$opt_S ";
 	}
