@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/18 15:01:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/05 21:32:09 espie Exp $
 
 DISTNAME=	axyftp-0.5.1
 CATEGORIES=	net
@@ -21,7 +21,7 @@ USE_MOTIF=	any
 FLAVORS=	gtk
 FLAVOR?=
 
-.if ${FLAVOR:L} == "gtk" 
+.if ${FLAVOR:L:Mgtk}
 LIB_DEPENDS=    gtk.1.2::x11/gtk+
 CONFIGURE_ARGS=	--with-gui=gtk
 .endif
