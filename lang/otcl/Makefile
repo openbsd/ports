@@ -1,11 +1,11 @@
 #
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
-# $OpenBSD: Makefile,v 1.9 2000/04/19 12:49:36 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/07/14 05:15:14 kevlo Exp $
 #
 
-DISTNAME=	otcl-1.0a4
+DISTNAME=	otcl-1.0a5
 CATEGORIES=	lang
-NEED_VERSION=	1.230
+NEED_VERSION=	1.314
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 HOMEPAGE=	ftp://ftp.tns.lcs.mit.edu/pub/otcl/README.html
 
@@ -18,16 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=    tk83.1::x11/tk/8.3
 
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
-CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/tcl8.3/generic \
-		--with-tcl-ver=8.3
-
-MAKE_FLAGS=	INST_OLIBSH='$${DESTDIR}${PREFIX}/lib'
-FAKE_FLAGS=	${MAKE_FLAGS}
-FAKE=		Yes
-
-post-install:
-	ln -sf libotcl.so.1 ${PREFIX}/lib/libotcl.so
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.3/generic \
+		--with-tcl-ver=8.3 \
+		--with-tk-ver=8.3
 
 .include <bsd.port.mk>

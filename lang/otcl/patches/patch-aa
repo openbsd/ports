@@ -1,6 +1,6 @@
---- configure.orig	Mon Feb 22 17:18:58 1999
-+++ configure	Wed Jan  5 19:57:45 2000
-@@ -2602,16 +2602,16 @@
+--- configure.orig	Fri Jul 14 04:07:54 2000
++++ configure	Fri Jul 14 04:09:00 2000
+@@ -2681,16 +2681,16 @@
          DL_LIBS="-ldl"
          SHLD_FLAGS="-Wl,-Bexport"
          ;;
