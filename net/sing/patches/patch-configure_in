@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/12/27 18:07:00 danh Exp $
+$OpenBSD: patch-configure_in,v 1.2 2002/12/27 18:37:07 danh Exp $
 --- configure.in.orig	Wed Apr 18 07:11:08 2001
-+++ configure.in	Fri Dec 27 12:48:53 2002
++++ configure.in	Fri Dec 27 13:32:48 2002
 @@ -7,20 +7,11 @@ AC_INIT(sing.c)
  
  AM_CONFIG_HEADER(config.h)
@@ -83,16 +83,22 @@ $OpenBSD: patch-configure_in,v 1.1 2002/12/27 18:07:00 danh Exp $
                  2.2*)
                     AC_DEFINE(LINUX_22)
                  ;;
-@@ -197,11 +165,8 @@ case "$target_os" in
-                 2.0*)
+@@ -191,17 +159,8 @@ case "$target_os" in
+            AC_DEFINE(OPENBSD)
+            AC_DEFINE(CAN_FRAGMENT)
+            case "`uname -r`" in
+-                1.*)
+-                   AC_DEFINE(STRANGE_BSD_BYTE)
+-                ;;
+-                2.0*)
++                1.*|2.0)
                     AC_DEFINE(STRANGE_BSD_BYTE)
-                 ;;
+-                ;;
 -                2.*)
 -
 -                ;;
-                 *)
+-                *)
 -                  AC_DEFINE(STRANGE_BSD_BYTE)
-+
                  ;;
             esac
             ;;
