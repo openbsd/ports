@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.58 2003/06/18 14:03:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.59 2003/09/25 20:59:01 sturm Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-0.90
+DISTNAME=		MPlayer-0.92
 DIST_SUBDIR=		mplayer
-PKGNAME=		${DISTNAME:L}p1
+PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
 EXTRACT_SUFX=		.tar.bz2
 
@@ -140,11 +140,11 @@ ONLY_FOR_ARCHS=i386
 RUN_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	:win32-codecs-*:graphics/win32-codecs
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32 \
-		--enable-qtx-codecs \
+		--enable-qtx \
 		--with-reallibdir=${LOCALBASE}/lib/win32
 .else
 CONFIGURE_ARGS+=--disable-win32 \
-		--disable-qtx-codecs \
+		--disable-qtx \
 		--disable-real
 .endif
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.21 2003/04/21 15:29:16 brad Exp $
---- configure.orig	Sat Mar 22 11:29:16 2003
-+++ configure	Mon Apr 14 20:13:45 2003
-@@ -3518,7 +3518,7 @@ echores "$_sgiaudio"
+$OpenBSD: patch-configure,v 1.22 2003/09/25 20:59:01 sturm Exp $
+--- configure.orig	2003-08-09 16:12:30.000000000 +0200
++++ configure	2003-08-24 10:47:19.000000000 +0200
+@@ -3524,7 +3524,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.21 2003/04/21 15:29:16 brad Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -4168,7 +4168,7 @@ fi
+@@ -4173,7 +4173,7 @@ fi
  
  
  echocheck "iconv"
@@ -19,13 +19,13 @@ $OpenBSD: patch-configure,v 1.21 2003/04/21 15:29:16 brad Exp $
    _iconv_tmp='#include <iconv.h>'
  
    cat > $TMPC << EOF
-@@ -5400,6 +5400,9 @@ $_def_vcd
- #define DEFAULT_DVD_DEVICE	"D:"
+@@ -5406,6 +5406,9 @@ $_def_vcd
  #elif defined(SYS_DARWIN)
  #define DEFAULT_CDROM_DEVICE    "/dev/rdiskN"
-+#define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
+ #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
 +#elif defined(__OpenBSD__)
 +#define DEFAULT_CDROM_DEVICE	"/dev/rcd0a"
- #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
++#define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
  #else
  #define DEFAULT_CDROM_DEVICE    "/dev/cdrom"
+ #define DEFAULT_DVD_DEVICE	"/dev/dvd"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-libavcodec_common_h,v 1.1 2003/04/17 22:16:18 wilfried Exp $
---- libavcodec/common.h.orig   Thu Apr 17 23:49:10 2003
-+++ libavcodec/common.h        Fri Apr 18 00:00:45 2003
+$OpenBSD: patch-libavcodec_common_h,v 1.2 2003/09/25 20:59:01 sturm Exp $
+--- libavcodec/common.h.orig	2003-01-28 15:37:44.000000000 +0100
++++ libavcodec/common.h	2003-08-24 10:47:19.000000000 +0200
 @@ -158,7 +158,7 @@ typedef signed long long INT64;
  #    include "bswap.h"
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/03/30 12:27:58 miod Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/09/25 20:59:01 sturm Exp $
 @exec echo "This package may need further setup. Run pkg_info mplayer to find out more,"
 @exec echo "and be sure to read the package description carefully."
 bin/mencoder
@@ -13,7 +13,6 @@ lib/mplayer/vidix/rage128_vid.so
 %%SHARED%%
 man/man1/mencoder.1
 man/man1/mplayer.1
-share/mplayer/codecs.conf
 share/mplayer/input.conf
 share/mplayer/menu.conf
 share/doc/mplayer/bugreports.html
