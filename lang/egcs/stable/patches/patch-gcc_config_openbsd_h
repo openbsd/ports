@@ -1,6 +1,29 @@
 --- gcc/config/openbsd.h.orig	Sun Nov 11 22:20:02 2001
-+++ gcc/config/openbsd.h	Fri May 17 02:00:13 2002
-@@ -308,3 +308,4 @@ do {									 \
++++ gcc/config/openbsd.h	Tue Feb 11 22:27:44 2003
+@@ -74,7 +74,7 @@ Boston, MA 02111-1307, USA.  */
+ /* Controlling the compilation driver.  */
+ 
+ /* CPP_SPEC appropriate for OpenBSD. We deal with -posix and -pthread.
+-   XXX the way threads are handling currently is not very satisfying,
++   XXX the way threads are handled currently is not very satisfying,
+    since all code must be compiled with -pthread to work. 
+    This two-stage defines makes it easy to pick that for targets that
+    have subspecs.  */
+@@ -84,10 +84,9 @@ Boston, MA 02111-1307, USA.  */
+ #define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
+ #endif
+ 
+-/* LIB_SPEC appropriate for OpenBSD.  Select the appropriate libc, 
+-   depending on profiling and threads.  Basically, 
+-   -lc(_r)?(_p)?, select _r for threads, and _p for p or pg.  */
+-#define OBSD_LIB_SPEC "%{!shared:-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}}"
++/* LIB_SPEC appropriate for OpenBSD.  Include -lpthread if -pthread is
++   specified on the command line. */
++#define OBSD_LIB_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
+ 
+ #ifndef OBSD_HAS_CORRECT_SPECS
+ 
+@@ -308,3 +307,4 @@ do {									 \
     as this depends on a few other details as well...  */
  #define HANDLE_SYSV_PRAGMA
  

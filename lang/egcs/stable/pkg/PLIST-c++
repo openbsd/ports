@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.11 2002/11/24 11:52:32 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.12 2003/02/15 14:38:27 espie Exp $
 @pkgcfl egcs-*-core
 bin/ec++
 bin/ec++filt
@@ -165,6 +165,7 @@ include/c++/${V}/${CONFIG}/bits/gthr-single.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
+include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/iomanip
 include/c++/${V}/ios
 include/c++/${V}/iosfwd

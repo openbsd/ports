@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.71 2002/11/25 15:37:59 brad Exp $
+# $OpenBSD: Makefile,v 1.72 2003/02/15 14:38:27 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
 MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
+# Java is still mostly broken (boehm-gc)
+MAKE_JAVA=No
 
 
 .if ${MACHINE_ARCH} == "i386"
 MAKE_ADA=Yes
-# Java is still mostly broken (boehm-gc)
-MAKE_JAVA=Yes
+#AS_PATH=/usr/bin/as
+#LD_PATH=/usr/bin/ld
 .else
-MAKE_JAVA=No
 MAKE_ADA=No
 .endif
 
@@ -37,7 +38,8 @@ PKGNAME-java=	gcj-$V
 PKGNAME-objc=	gobjc-$V
 PKGNAME-ada=	gnat-$V
 
-BUILD_DEPENDS=	::devel/autoconf
+BUILD_DEPENDS=	::devel/autoconf/2.13
+BUILD_DEPENDS+=	::devel/metaauto
 
 # This can be patched out, apart from java that wants a pure parser.
 BUILD_DEPENDS+= :bison-*:devel/bison
@@ -73,7 +75,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.2.1
+V=3.2.2
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
@@ -157,9 +159,9 @@ post-patch:
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoheader
+	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoheader
 .for ac_dir in ${ac_dirs}
-	cd ${WRKSRC}/${ac_dir} && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/${ac_dir} && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoconf
 .endfor
 	cd ${WRKSRC} && rm -rf ${rm_dirs}
 
@@ -173,7 +175,7 @@ post-patch:
 # This should not be used for regular releases, but if you're using this
 # snapshot, you know what you're doing, don't you ?
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS=c
@@ -192,6 +194,7 @@ MULTI_PACKAGES+=-objc
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 LANGS:=${LANGS},java
 MULTI_PACKAGES+=-java
+CONFIGURE_ARGS+=--enable-java-gc=system-boehm
 .endif
 .if defined(MAKE_ADA) && ${MAKE_ADA:L} == "yes"
 LANGS:=${LANGS},ada
@@ -227,7 +230,7 @@ CONFIGURE_ARGS+=--enable-sjlj-exceptions
 
 
 # if you wish to try your luck
-#CONFIGURE_ARGS+= --enable-threads=yes
+#CONFIGURE_ARGS+= --enable-threads=posix
 
 .if defined(AS_PATH)
 CONFIGURE_ARGS += --with-as=${AS_PATH}
@@ -259,8 +262,6 @@ ALL_TARGET=bootstrap
 #ALL_TARGET=bootstrap3
 # ALL_TARGET=bootstrap-lean
 MAKE_FLAGS=libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
-
-FAKE_FLAGS=DESTDIR=${WRKINST}
 
 # desactivate the fixincludes mechanism by supplying a script which does
 # nothing

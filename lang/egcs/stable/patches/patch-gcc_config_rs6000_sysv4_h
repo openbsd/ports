@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
---- gcc/config/rs6000/sysv4.h.orig	Fri Sep 13 08:53:05 2002
-+++ gcc/config/rs6000/sysv4.h	Sat Nov 23 23:25:34 2002
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.4 2003/02/15 14:38:27 espie Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Thu Jan 30 15:03:42 2003
++++ gcc/config/rs6000/sysv4.h	Tue Feb 11 22:30:12 2003
 @@ -197,6 +197,8 @@ do {									\
      rs6000_current_abi = ABI_V4;					\
    else if (!strcmp (rs6000_abi_name, "linux"))				\
@@ -134,9 +134,9 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
  
  #define	ENDFILE_DEFAULT_SPEC ""
  
-@@ -1318,6 +1334,47 @@ ncrtn.o%s"
- #define CPP_OS_NETBSD_SPEC "\
- -D__powerpc__ -D__NetBSD__ -D__ELF__ -D__KPRINTF_ATTRIBUTE__"
+@@ -1333,6 +1349,47 @@ ncrtn.o%s"
+ %{mcpu=821:  %{!Dppc*: %{!Dmpc*: -Dmpc821}  } } \
+ %{mcpu=860:  %{!Dppc*: %{!Dmpc*: -Dmpc860}  } }" 
  
 +/* OpenBSD support.  */
 +#ifndef	LIB_OPENBSD_SPEC
@@ -144,7 +144,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
 +#endif
 +
 +#ifndef LIBC_OPENBSD_SPEC
-+#define LIBC_OPENBSD_SPEC "%{!shared:-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}}"
++#define LIBC_OPENBSD_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
 +#endif
 +
 +#ifndef	STARTFILE_OPENBSD_SPEC
@@ -182,7 +182,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
  /* VxWorks support.  */
  /* VxWorks does all the library stuff itself.  */
  #define LIB_VXWORKS_SPEC ""
-@@ -1376,6 +1433,8 @@ ncrtn.o%s"
+@@ -1391,6 +1448,8 @@ ncrtn.o%s"
    { "lib_gnu",			LIB_GNU_SPEC },				\
    { "lib_linux",		LIB_LINUX_SPEC },			\
    { "lib_netbsd",		LIB_NETBSD_SPEC },			\
@@ -191,7 +191,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
    { "lib_vxworks",		LIB_VXWORKS_SPEC },			\
    { "lib_default",		LIB_DEFAULT_SPEC },			\
    { "startfile_ads",		STARTFILE_ADS_SPEC },			\
-@@ -1386,6 +1445,7 @@ ncrtn.o%s"
+@@ -1401,6 +1460,7 @@ ncrtn.o%s"
    { "startfile_gnu",		STARTFILE_GNU_SPEC },			\
    { "startfile_linux",		STARTFILE_LINUX_SPEC },			\
    { "startfile_netbsd",		STARTFILE_NETBSD_SPEC },		\
@@ -199,7 +199,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
    { "startfile_vxworks",	STARTFILE_VXWORKS_SPEC },		\
    { "startfile_default",	STARTFILE_DEFAULT_SPEC },		\
    { "endfile_ads",		ENDFILE_ADS_SPEC },			\
-@@ -1396,6 +1456,7 @@ ncrtn.o%s"
+@@ -1411,6 +1471,7 @@ ncrtn.o%s"
    { "endfile_gnu",		ENDFILE_GNU_SPEC },			\
    { "endfile_linux",		ENDFILE_LINUX_SPEC },			\
    { "endfile_netbsd",		ENDFILE_NETBSD_SPEC },			\
@@ -207,7 +207,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
    { "endfile_vxworks",		ENDFILE_VXWORKS_SPEC },			\
    { "endfile_default",		ENDFILE_DEFAULT_SPEC },			\
    { "link_path",		LINK_PATH_SPEC },			\
-@@ -1410,6 +1471,7 @@ ncrtn.o%s"
+@@ -1425,6 +1486,7 @@ ncrtn.o%s"
    { "link_start_gnu",		LINK_START_GNU_SPEC },			\
    { "link_start_linux",		LINK_START_LINUX_SPEC },		\
    { "link_start_netbsd",	LINK_START_NETBSD_SPEC },		\
@@ -215,7 +215,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
    { "link_start_vxworks",	LINK_START_VXWORKS_SPEC },		\
    { "link_start_default",	LINK_START_DEFAULT_SPEC },		\
    { "link_os",			LINK_OS_SPEC },				\
-@@ -1421,6 +1483,7 @@ ncrtn.o%s"
+@@ -1436,6 +1498,7 @@ ncrtn.o%s"
    { "link_os_linux",		LINK_OS_LINUX_SPEC },			\
    { "link_os_gnu",		LINK_OS_GNU_SPEC },			\
    { "link_os_netbsd",		LINK_OS_NETBSD_SPEC },			\
@@ -223,11 +223,11 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.3 2002/11/24 15:42:48 espie Exp $
    { "link_os_vxworks",		LINK_OS_VXWORKS_SPEC },			\
    { "link_os_default",		LINK_OS_DEFAULT_SPEC },			\
    { "cc1_endian_big",		CC1_ENDIAN_BIG_SPEC },			\
-@@ -1438,6 +1501,7 @@ ncrtn.o%s"
+@@ -1453,6 +1516,7 @@ ncrtn.o%s"
    { "cpp_os_gnu",		CPP_OS_GNU_SPEC },			\
    { "cpp_os_linux",		CPP_OS_LINUX_SPEC },			\
    { "cpp_os_netbsd",		CPP_OS_NETBSD_SPEC },			\
 +  { "cpp_os_openbsd",		CPP_OS_OPENBSD_SPEC },			\
    { "cpp_os_vxworks",		CPP_OS_VXWORKS_SPEC },			\
+   { "cpp_os_rtems",		CPP_OS_RTEMS_SPEC },			\
    { "cpp_os_default",		CPP_OS_DEFAULT_SPEC },
- 

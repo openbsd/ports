@@ -1,7 +1,37 @@
-$OpenBSD: patch-libjava_configure_in,v 1.1 2002/06/03 18:32:30 espie Exp $
---- libjava/configure.in.orig	Mon Jun  3 16:37:37 2002
-+++ libjava/configure.in	Mon Jun  3 16:44:50 2002
-@@ -520,6 +520,7 @@ else
+$OpenBSD: patch-libjava_configure_in,v 1.2 2003/02/15 14:38:27 espie Exp $
+--- libjava/configure.in.orig	Wed May  8 06:26:24 2002
++++ libjava/configure.in	Sun Nov 24 22:14:45 2002
+@@ -294,6 +294,7 @@ changequote(<<,>>)dnl
+ changequote([,])
+   GC=$enableval,
+   GC=boehm)
++GC=system-boehm
+ GCLIBS=
+ GCINCS=
+ GCDEPS=
+@@ -317,6 +318,21 @@ case "$GC" in
+     dnl The POSIX thread support needs to know this.
+     AC_DEFINE(HAVE_BOEHM_GC)
+     ;;
++ system-boehm)
++    AC_MSG_RESULT(system-boehm)
++    GCLIBS=/usr/local/lib/libgc.la
++    GCINCS='-I/usr/local/include'
++    JC1GCSPEC='-fuse-boehm-gc'
++    GCTESTSPEC="-L/usr/local/lib"
++
++    dnl We also want to pick up some cpp flags required when including
++    dnl boehm-config.h.  Yuck.
++    GCINCS="$GCINCS -DSILENT=1 -DNO_SIGNALS=1 -DNO_EXECUTE_PERMISSION=1 -DALL_INTERIOR_POINTERS=1 -DJAVA_FINALIZATION=1 -DGC_GCJ_SUPPORT=1 -DATOMIC_UNCOLLECTABLE=1 "
++    GCOBJS=boehm.lo
++    GCHDR=boehm-gc.h
++    dnl The POSIX thread support needs to know this.
++    AC_DEFINE(HAVE_BOEHM_GC)
++    ;;
+  no)
+     AC_MSG_RESULT(none)
+     GCOBJS=nogc.lo
+@@ -520,6 +536,7 @@ else
       AC_DEFINE(HAVE_PROC_SELF_EXE)])
  
     AM_ICONV

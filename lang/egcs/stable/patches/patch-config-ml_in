@@ -1,0 +1,11 @@
+$OpenBSD: patch-config-ml_in,v 1.1 2003/02/15 14:38:27 espie Exp $
+--- config-ml.in.orig	Mon Feb 10 00:31:41 2003
++++ config-ml.in	Mon Feb 10 00:31:58 2003
+@@ -553,6 +553,7 @@ multi-do:
+ 				LIBCFLAGS="$(LIBCFLAGS) $${flags}" \
+ 				LIBCXXFLAGS="$(LIBCXXFLAGS) $${flags}" \
+ 				LDFLAGS="$(LDFLAGS) $${flags}" \
++				DESTDIR="$(DESTDIR)" \
+ 				$(DO)); then \
+ 		  true; \
+ 		else \
