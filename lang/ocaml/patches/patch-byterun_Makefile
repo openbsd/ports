@@ -1,0 +1,12 @@
+$OpenBSD: patch-byterun_Makefile,v 1.1 2002/12/14 20:03:21 sturm Exp $
+--- byterun/Makefile.orig	Fri Dec 13 23:03:55 2002
++++ byterun/Makefile	Fri Dec 13 23:04:05 2002
+@@ -16,7 +16,7 @@
+ include ../config/Makefile
+ 
+ CC=$(BYTECC)
+-CFLAGS=-O $(BYTECCCOMPOPTS)
++CFLAGS=$(BYTECCCOMPOPTS)
+ DFLAGS=-g -DDEBUG $(BYTECCCOMPOPTS)
+ 
+ OBJS=interp.o misc.o stacks.o fix_code.o startup.o main.o \

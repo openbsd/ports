@@ -1,0 +1,12 @@
+$OpenBSD: patch-yacc_Makefile,v 1.1 2002/12/14 20:03:22 sturm Exp $
+--- yacc/Makefile.orig	Fri Dec 13 23:05:42 2002
++++ yacc/Makefile	Fri Dec 13 23:05:51 2002
+@@ -17,7 +17,7 @@
+ include ../config/Makefile
+ 
+ CC=$(BYTECC)
+-CFLAGS=-O -DNDEBUG $(BYTECCCOMPOPTS)
++CFLAGS=-DNDEBUG $(BYTECCCOMPOPTS)
+ 
+ OBJS= closure.o error.o lalr.o lr0.o main.o mkpar.o output.o reader.o \
+   skeleton.o symtab.o verbose.o warshall.o

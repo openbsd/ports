@@ -1,0 +1,12 @@
+$OpenBSD: patch-otherlibs_num_Makefile,v 1.1 2002/12/14 20:03:21 sturm Exp $
+--- otherlibs/num/Makefile.orig	Fri Dec 13 23:08:13 2002
++++ otherlibs/num/Makefile	Fri Dec 13 23:08:20 2002
+@@ -19,7 +19,7 @@ include ../../config/Makefile
+ 
+ # Compilation options
+ CC=$(BYTECC)
+-CFLAGS=-O -I./bignum/h -I../../byterun $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS)
++CFLAGS=-I./bignum/h -I../../byterun $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS)
+ CAMLC=../../ocamlcomp.sh -w s
+ CAMLOPT=../../ocamlcompopt.sh -w s
+ MKLIB=../../boot/ocamlrun ../../tools/ocamlmklib

@@ -1,0 +1,12 @@
+$OpenBSD: patch-otherlibs_db_Makefile,v 1.1 2002/12/14 20:03:21 sturm Exp $
+--- otherlibs/db/Makefile.orig	Fri Dec 13 23:06:41 2002
++++ otherlibs/db/Makefile	Fri Dec 13 23:07:02 2002
+@@ -24,7 +24,7 @@ CAMLOPT=../../ocamlcompopt.sh
+ MKLIB=../../boot/ocamlrun ../../tools/ocamlmklib
+ COMPFLAGS=-warn-error A
+ 
+-CFLAGS=-I../../byterun -O $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS)
++CFLAGS=-I../../byterun $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS)
+ COBJS=dbstubs.o
+ 
+ all: libmldb.a db.cmi db.cma

@@ -1,0 +1,12 @@
+$OpenBSD: patch-otherlibs_num_bignum_Makefile,v 1.1 2002/12/14 20:03:22 sturm Exp $
+--- otherlibs/num/bignum/Makefile.orig	Fri Dec 13 23:07:56 2002
++++ otherlibs/num/bignum/Makefile	Fri Dec 13 23:08:05 2002
+@@ -11,7 +11,7 @@ RANLIBTEST=test -f /usr/bin/ranlib -o -f
+ LIB = libbignum.a
+ OBJECT = o/KerN.o o/bnInit.o o/bnMult.o o/bnDivide.o o/bnCmp.o o/bzf.o o/bz.o 
+ KERNH = h/BigNum.h 
+-CFLAGS = -c -I./h -O -DCAML_LIGHT
++CFLAGS = -c -I./h -DCAML_LIGHT
+ LDFLAGS =
+ 
+ # extra entries:

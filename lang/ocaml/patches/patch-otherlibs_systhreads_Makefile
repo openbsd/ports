@@ -1,0 +1,21 @@
+$OpenBSD: patch-otherlibs_systhreads_Makefile,v 1.1 2002/12/14 20:03:22 sturm Exp $
+--- otherlibs/systhreads/Makefile.orig	Fri Dec 13 23:08:50 2002
++++ otherlibs/systhreads/Makefile	Fri Dec 13 23:09:29 2002
+@@ -35,7 +35,7 @@ libthreads.a: $(BYTECODE_C_OBJS)
+ 	$(MKLIB) -o threads $(BYTECODE_C_OBJS)
+ 
+ posix_b.o: posix.c
+-	$(BYTECC) -O -I../../byterun $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS) \
++	$(BYTECC) -I../../byterun $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS) \
+ 	   -c posix.c
+ 	mv posix.o posix_b.o
+ 
+@@ -45,7 +45,7 @@ libthreadsnat.a: $(NATIVECODE_C_OBJS)
+ 	$(AR) rc libthreadsnat.a $(NATIVECODE_C_OBJS)
+ 
+ posix_n.o: posix.c
+-	$(NATIVECC) -O -I../../asmrun -I../../byterun $(NATIVECCCOMPOPTS) $(SHAREDCCCOMPOPTS) -DNATIVE_CODE -DTARGET_$(ARCH) -DSYS_$(SYSTEM) -c posix.c
++	$(NATIVECC) -I../../asmrun -I../../byterun $(NATIVECCCOMPOPTS) $(SHAREDCCCOMPOPTS) -DNATIVE_CODE -DTARGET_$(ARCH) -DSYS_$(SYSTEM) -c posix.c
+ 	mv posix.o posix_n.o
+ 
+ threads.cma: $(THREAD_OBJS)

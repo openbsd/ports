@@ -1,0 +1,12 @@
+$OpenBSD: patch-otherlibs_threads_Makefile,v 1.1 2002/12/14 20:03:22 sturm Exp $
+--- otherlibs/threads/Makefile.orig	Fri Dec 13 23:09:39 2002
++++ otherlibs/threads/Makefile	Fri Dec 13 23:09:47 2002
+@@ -16,7 +16,7 @@
+ include ../../config/Makefile
+ 
+ CC=$(BYTECC)
+-CFLAGS=-I../../byterun -O $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS) -g
++CFLAGS=-I../../byterun $(BYTECCCOMPOPTS) $(SHAREDCCCOMPOPTS) -g
+ CAMLC=../../ocamlcomp.sh -I ../unix
+ MKLIB=../../boot/ocamlrun ../../tools/ocamlmklib
+ COMPFLAGS=-warn-error A

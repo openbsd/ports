@@ -1,0 +1,12 @@
+$OpenBSD: patch-asmrun_Makefile,v 1.1 2002/12/14 20:03:21 sturm Exp $
+--- asmrun/Makefile.orig	Fri Dec 13 23:03:13 2002
++++ asmrun/Makefile	Fri Dec 13 23:03:26 2002
+@@ -17,7 +17,7 @@ include ../config/Makefile
+ 
+ CC=$(NATIVECC)
+ FLAGS=-I../byterun -DNATIVE_CODE -DTARGET_$(ARCH) -DSYS_$(SYSTEM) 
+-CFLAGS=$(FLAGS) -O $(NATIVECCCOMPOPTS)
++CFLAGS=$(FLAGS) $(NATIVECCCOMPOPTS)
+ DFLAGS=$(FLAGS) -g -DDEBUG $(NATIVECCCOMPOPTS)
+ PFLAGS=$(FLAGS) -pg -O -DPROFILING $(NATIVECCPROFOPTS)
+ 

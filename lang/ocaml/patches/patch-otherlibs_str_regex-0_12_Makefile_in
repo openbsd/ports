@@ -1,0 +1,12 @@
+$OpenBSD: patch-otherlibs_str_regex-0_12_Makefile_in,v 1.1 2002/12/14 20:03:22 sturm Exp $
+--- otherlibs/str/regex-0.12/Makefile.in.orig	Fri Dec 13 23:31:14 2002
++++ otherlibs/str/regex-0.12/Makefile.in	Fri Dec 13 23:32:53 2002
+@@ -29,7 +29,7 @@ version = 0.12
+ CPPFLAGS = 
+ 
+ # Likewise, you can override CFLAGS to optimize, use -Wall, etc.
+-CFLAGS = -O
++# CFLAGS = -O
+ 
+ # Ditto for LDFLAGS and LOADLIBES.
+ LDFLAGS =
