@@ -6,17 +6,15 @@
 # Relevant URLs:	http://www.postfix.org/
 #			http://www.alphaworks.ibm.com/formula/securemailer/
 #
-# $OpenBSD: Makefile,v 1.5 1999/03/10 03:25:27 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/13 16:15:57 dugsong Exp $
 
-DISTNAME=	postfix-beta-19990122
+DISTNAME=	postfix-19990601
 CATEGORIES=     mail
 
-#BROKEN=	"newer version available"
-
-MASTER_SITES=	ftp://ftp.merit.edu/postfix/ \
-		ftp://ftp.sunet.se/pub/unix/mail/postfix/ \
-		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
-		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
+MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
+		ftp://ftp.sunet.se/pub/unix/mail/postfix/official/ \
+		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/official/ \
+		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/official/
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -27,17 +25,35 @@ NO_CONFIGURE=	yes
 ALL_TARGET=	default
 
 pre-install:
-	@${SH} ${PKGDIR}/INSTALL with PRE-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
+
+do-install:
+	@echo
+	@echo "-> Installing postfix commands in ${PREFIX}/sbin"
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/sbin
+	@echo
+	@echo "-> Installing postfix daemons in ${PREFIX}/libexec/postfix"
+	@${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/postfix
+	@${INSTALL_PROGRAM} ${WRKSRC}/libexec/* ${PREFIX}/libexec/postfix
+	@echo
+	@echo "-> Installing postfix sample config files in ${PREFIX}/lib/postfix"
+	@${INSTALL_DATA_DIR} ${PREFIX}/lib/postfix
+	@${INSTALL_DATA} ${WRKSRC}/conf/* ${PREFIX}/lib/postfix
+	@echo
+	@echo "-> Installing postfix man pages in ${PREFIX}/man"
+	@( cd ${WRKSRC}/man ; \
+	  for mandir in man[0-9] ; do \
+	     ${INSTALL_MAN} $$mandir/* ${PREFIX}/man/$$mandir ; \
+	  done )
+	@echo
+	@echo "-> Installing postfix HTML documentation in ${PREFIX}/share/doc/postfix"
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix
+	@${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/doc/postfix
 
 post-install:
-	@${SH} ${PKGDIR}/INSTALL with POST-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
-MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
-	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 sendmail.1
-
-MAN5=	access.5 aliases.5 canonical.5 relocated.5 transport.5 virtual.5
-
-MAN8=	bounce.8 cleanup.8 defer.8 local.8 master.8 pickup.8 pipe.8 qmgr.8 \
-	showq.8 smtp.8 smtpd.8 trivial-rewrite.8
+post-deinstall:
+	@${SH} ${PKGDIR}/DEINSTALL ${DISTNAME} DEINSTALL
 
 .include <bsd.port.mk>

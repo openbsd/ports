@@ -1,27 +1,63 @@
-sbin/master
-sbin/postfix
-sbin/smtp-source
-sbin/smtp-sink
-sbin/fsstone
-sbin/sendmail
-sbin/pickup
-sbin/cleanup
-sbin/smtpd
-sbin/local
-sbin/trivial-rewrite
-sbin/qmgr
-sbin/smtp
-sbin/bounce
-sbin/pipe
-sbin/showq
 sbin/postalias
 sbin/postcat
 sbin/postconf
 sbin/postdrop
+sbin/postfix
 sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
+sbin/postsuper
+sbin/sendmail
+sbin/smtp-sink
+sbin/smtp-source
+libexec/postfix/bounce
+libexec/postfix/cleanup
+libexec/postfix/error
+libexec/postfix/fsstone
+libexec/postfix/local
+libexec/postfix/master
+libexec/postfix/pickup
+libexec/postfix/pipe
+libexec/postfix/qmgr
+libexec/postfix/showq
+libexec/postfix/smtp
+libexec/postfix/smtpd
+libexec/postfix/trivial-rewrite
+@dirrm libexec/postfix
+lib/postfix/LICENSE
+lib/postfix/access
+lib/postfix/aliases
+lib/postfix/canonical
+lib/postfix/main.cf
+lib/postfix/main.cf.default
+lib/postfix/main.cf.orig
+lib/postfix/master.cf
+lib/postfix/master.cf.orig
+lib/postfix/postfix-script
+lib/postfix/postfix-script-diff
+lib/postfix/postfix-script-nosgid
+lib/postfix/postfix-script-sgid
+lib/postfix/relocated
+lib/postfix/sample-aliases.cf
+lib/postfix/sample-canonical.cf
+lib/postfix/sample-debug.cf
+lib/postfix/sample-ldap.cf
+lib/postfix/sample-local.cf
+lib/postfix/sample-misc.cf
+lib/postfix/sample-pcre.cf
+lib/postfix/sample-rate.cf
+lib/postfix/sample-regexp.cf
+lib/postfix/sample-relocated.cf
+lib/postfix/sample-resource.cf
+lib/postfix/sample-rewrite.cf
+lib/postfix/sample-smtp.cf
+lib/postfix/sample-smtpd.cf
+lib/postfix/sample-transport.cf
+lib/postfix/sample-virtual.cf
+lib/postfix/transport
+lib/postfix/virtual
+@dirrm lib/postfix
 man/man1/mailq.1
 man/man1/newaliases.1
 man/man1/postalias.1
@@ -33,6 +69,7 @@ man/man1/postkick.1
 man/man1/postlock.1
 man/man1/postlog.1
 man/man1/postmap.1
+man/man1/postsuper.1
 man/man1/sendmail.1
 man/man5/access.5
 man/man5/aliases.5
@@ -43,6 +80,7 @@ man/man5/virtual.5
 man/man8/bounce.8
 man/man8/cleanup.8
 man/man8/defer.8
+man/man8/error.8
 man/man8/local.8
 man/man8/master.8
 man/man8/pickup.8
@@ -52,35 +90,9 @@ man/man8/showq.8
 man/man8/smtp.8
 man/man8/smtpd.8
 man/man8/trivial-rewrite.8
-lib/postfix/LICENSE
-lib/postfix/access
-lib/postfix/aliases
-lib/postfix/canonical
-lib/postfix/main.cf
-lib/postfix/main.cf.orig
-lib/postfix/master.cf
-lib/postfix/master.cf.orig
-lib/postfix/postfix-script-sgid
-lib/postfix/postfix-script-nosgid
-lib/postfix/relocated
-lib/postfix/sample-aliases.cf
-lib/postfix/sample-canonical.cf
-lib/postfix/sample-debug.cf
-lib/postfix/sample-ldap.cf
-lib/postfix/sample-local.cf
-lib/postfix/sample-misc.cf
-lib/postfix/sample-rate.cf
-lib/postfix/sample-resource.cf
-lib/postfix/sample-rewrite.cf
-lib/postfix/sample-smtp.cf
-lib/postfix/sample-smtpd.cf
-lib/postfix/sample-transport.cf
-lib/postfix/transport
-lib/postfix/sample-virtual.cf
-lib/postfix/virtual
+share/doc/postfix/Makefile.in
 share/doc/postfix/access.5.html
 share/doc/postfix/aliases.5.html
-share/doc/postfix/anatomy.html
 share/doc/postfix/architecture.html
 share/doc/postfix/backstage.html
 share/doc/postfix/basic.html
@@ -88,13 +100,12 @@ share/doc/postfix/big-picture.fig
 share/doc/postfix/big-picture.gif
 share/doc/postfix/big-picture.html
 share/doc/postfix/bounce.8.html
-@exec ln -sf %D/%F %B/defer.8.html
-@unexec rm -f %B/defer.8.html
 share/doc/postfix/canonical.5.html
 share/doc/postfix/cleanup.8.html
 share/doc/postfix/commands.html
-share/doc/postfix/config.html
+share/doc/postfix/defer.8.html
 share/doc/postfix/delivering.html
+share/doc/postfix/error.8.html
 share/doc/postfix/faq.html
 share/doc/postfix/flow.fig
 share/doc/postfix/goals.html
@@ -102,11 +113,12 @@ share/doc/postfix/inbound.fig
 share/doc/postfix/inbound.gif
 share/doc/postfix/index.html
 share/doc/postfix/local.8.html
+share/doc/postfix/mailq.1.html
 share/doc/postfix/master.8.html
 share/doc/postfix/motivation.html
+share/doc/postfix/newaliases.1.html
 share/doc/postfix/outbound.fig
 share/doc/postfix/outbound.gif
-share/doc/postfix/overview.html
 share/doc/postfix/pickup.8.html
 share/doc/postfix/pipe.8.html
 share/doc/postfix/postalias.1.html
@@ -118,6 +130,7 @@ share/doc/postfix/postkick.1.html
 share/doc/postfix/postlock.1.html
 share/doc/postfix/postlog.1.html
 share/doc/postfix/postmap.1.html
+share/doc/postfix/postsuper.1.html
 share/doc/postfix/qmgr.8.html
 share/doc/postfix/queuing.html
 share/doc/postfix/rate.html
@@ -127,9 +140,6 @@ share/doc/postfix/resource.html
 share/doc/postfix/rewrite.html
 share/doc/postfix/security.html
 share/doc/postfix/sendmail.1.html
-@exec ln -sf %D/%F %B/mailq.1.html
-@exec ln -sf %D/%F %B/newaliases.1.html
-@unexec rm -f %B/mailq.1.html %B/newaliases.1.html
 share/doc/postfix/showq.8.html
 share/doc/postfix/small-picture.fig
 share/doc/postfix/small-picture.gif
@@ -140,6 +150,3 @@ share/doc/postfix/trivial-rewrite.8.html
 share/doc/postfix/uce.html
 share/doc/postfix/virtual.5.html
 @dirrm share/doc/postfix
-@dirrm lib/postfix
-@comment these pkg utilities suk. eesh.
-@unexec /var/db/pkg/postfix-beta-19990122/+DEINSTALL with POST-DEINSTALL

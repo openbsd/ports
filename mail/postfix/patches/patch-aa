@@ -1,58 +1,52 @@
-*** Makefile.in.orig	Thu Jan 21 16:31:18 1999
---- Makefile.in	Sun Jan 31 14:53:04 1999
-***************
-*** 6,11 ****
---- 6,19 ----
-  	showq postalias postcat postconf postdrop postkick postlock postlog \
-  	postmap # man html
-  
-+ PREFIX?=	/usr/local
-+ SBINDIR= 	$(PREFIX)/sbin
-+ LIBDIR=		$(PREFIX)/lib
-+ MANDIR=		$(PREFIX)/man
-+ HTMLDIR=	$(PREFIX)/share/doc
-+ ETCDIR= 	/etc
-+ SPOOLDIR=	/var/spool
-+ 
-  default: update
-  
-  makefiles Makefiles:
-***************
-*** 40,42 ****
---- 48,83 ----
-  	find . -type s -print | xargs rm -f
-  	find . -type d -print | xargs chmod 755
-  	find . -type f -print | xargs chmod a+r
-+ 
-+ install:
-+ 	@echo "-> Creating postfix config directory $(ETCDIR)/postfix"
-+ 	@[ -d $(ETCDIR)/postfix ] || mkdir -p -m 755 $(ETCDIR)/postfix
-+ 	@(cd conf ; for file in * ; do \
-+ 	   if [ ! -f $(ETCDIR)/postfix/$$file ] ; then \
-+ 	      install -m 644 -c $$file $(ETCDIR)/postfix ; \
-+ 	   fi ; \
-+ 	done)
-+ 	@rm $(ETCDIR)/postfix/postfix-script*
-+ 	@install -c -m 755 conf/postfix-script-sgid $(ETCDIR)/postfix/postfix-script
-+ 	@echo
-+ 	@echo "-> Installing postfix sample configs in $(LIBDIR)/postfix"
-+ 	@[ -d $(LIBDIR)/postfix ] || mkdir -p -m 755 $(LIBDIR)/postfix
-+ 	@install -m 644 -c conf/* $(LIBDIR)/postfix
-+ 	@echo
-+ 	@echo "-> Creating postfix spool directory $(SPOOLDIR)/postfix"
-+ 	@[ -d $(SPOOLDIR)/postfix/etc ] || mkdir -p -m 755 $(SPOOLDIR)/postfix/etc
-+ 	@(cd /etc ; cp localtime services resolv.conf $(SPOOLDIR)/postfix/etc)
-+ 	@echo
-+ 	@echo "-> Installing postfix binaries in $(SBINDIR)"
-+ 	@[ -d $(SBINDIR) ] || mkdir -p -m 755 $(SBINDIR)
-+ 	@install -m 755 -c -s bin/* $(SBINDIR)
-+ 	@install -m 2755 -c -s -g maildrop bin/postdrop $(SBINDIR)
-+ 	@echo
-+ 	@echo "-> Installing postfix manpages in $(MANDIR)"
-+ 	@install -m 644 -c man/man1/* $(MANDIR)/man1
-+ 	@install -m 644 -c man/man5/* $(MANDIR)/man5
-+ 	@install -m 644 -c man/man8/* $(MANDIR)/man8
-+ 	@echo
-+ 	@echo "-> Installing postfix HTML docs in $(HTMLDIR)/postfix"
-+ 	@[ -d $(HTMLDIR)/postfix ] || mkdir -p -m 755 $(HTMLDIR)/postfix
-+ 	@install -m 644 -c html/*.html html/*.gif html/*.fig $(HTMLDIR)/postfix
+--- conf/main.cf-orig	Fri Jun 11 11:32:35 1999
++++ conf/main.cf	Fri Jun 11 11:34:41 1999
+@@ -18,19 +18,19 @@
+ # Postfix support programs and daemons. This setting can be overruled
+ # with the command_directory and daemon_directory parameters.
+ #
+-program_directory = /some/where/postfix/bin
++#program_directory = /some/where/postfix/bin
+ 
+ # The command_directory parameter specifies the location of all
+ # postXXX commands.  The default value is $program_directory.
+ #
+-#command_directory = /usr/sbin
++command_directory = y0y0y0/sbin
+ 
+ # The daemon_directory parameter specifies the location of all Postfix
+ # daemon programs (i.e. programs listed in the master.cf file). The
+ # default value is $program_directory. This directory must be owned
+ # by root.
+ #
+-#daemon_directory = /usr/libexec/postfix
++daemon_directory = y0y0y0/libexec/postfix
+ 
+ # QUEUE AND PROCESS OWNERSHIP
+ #
+@@ -40,7 +40,7 @@
+ # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
+ # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
+ #
+-#mail_owner = postfix
++mail_owner = postfix
+ 
+ # The default_privs parameter specifies the default rights used by
+ # the local delivery agent for delivery to external file or command.
+@@ -179,7 +179,7 @@
+ # "postfix reload" to eliminate the delay.
+ #
+ #alias_maps = dbm:/etc/aliases
+-#alias_maps = hash:/etc/aliases
++alias_maps = hash:/etc/aliases
+ #alias_maps = hash:/etc/aliases, nis:mail.aliases
+ 
+ # The alias_database parameter specifies the alias database(s) that
+@@ -189,7 +189,7 @@
+ #
+ #alias_database = dbm:/etc/aliases
+ #alias_database = dbm:/etc/mail/aliases
+-#alias_database = hash:/etc/aliases
++alias_database = hash:/etc/aliases
+ #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
+ 
+ # ADDRESS EXTENSIONS (e.g., user+foo)

@@ -1,40 +1,102 @@
 #!/bin/sh
-
-# Post-deinstallation cleanup of postfix.
+# $OpenBSD: DEINSTALL,v 1.3 1999/06/13 16:15:57 dugsong Exp $
 #
-# dugsong@monkey.org
+# De-installation setup of postfix
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/postfix
+SPOOL_DIR=/var/spool/postfix
 
-if [ "$2" != "POST-DEINSTALL" ]; then exit 0 ; fi
+POSTFIXUID=6
+POSTFIXGID=6
+MAILDROPGID=12
 
-echo
-for file in /usr/sbin/sendmail /usr/bin/mailq /usr/bin/newaliases ; do
-   if [ -f ${file}-orig ]; then
-      echo "-> Restoring original $file"
-      mv ${file}-orig ${file}
-      echo
-   fi
-done
-
-perms=`ls -l /usr/sbin/sendmail | cut -f1 -d' '`
-if [ "$perms" != "-r-sr-xr-x" ]; then
-    echo "-> /usr/sbin/sendmail may need to be setuid root to function"
-    echo "   properly now. You may want to change its permissions manually."
+# Function: set up postfix user/group accounts.
+#
+do_accts()
+{
     echo
+    echo "+---------------"
+    echo "| Delete the 'postfix' user account, and 'postfix' and 'maildrop'"
+    echo "| group accounts manually for a full de-installation."
+    echo "| To do this: execute 'rmuser postfix' and 'rmgroup maildrop' as root."
+    echo "+---------------"
+    echo
+}
+
+# Function: set up the postfix spool dir / chroot area
+#
+do_spooldir()
+{
+    echo
+    echo "+---------------"
+    echo "| Delete the /var/spool/postfix spool directory manually"
+    echo "| for a full de-installation."
+    echo "| To do this: execute 'rm -rf /var/spool/postfix' as root."
+    echo "+---------------"
+    echo
+}
+
+# Function: replace sendmail binaries with postfix
+#
+do_sendmail()
+{
+    if [ ! -f /usr/sbin/sendmail-orig ]; then return ; fi
+
+    printf "Do you want to restore sendmail? [Y/n] "
+    read ans
+    case $ans in n*|N*) return ;; esac
+    echo
+    echo "-> Restoring sendmail"
+    set -x
+    rm -f /usr/sbin/sendmail /usr/bin/mailq /usr/bin/newaliases
+    mv /usr/sbin/sendmail-orig /usr/sbin/sendmail
+    mv /usr/bin/mailq-orig /usr/bin/mailq
+    mv /usr/bin/newaliases-orig /usr/bin/newaliases
+    chmod 555 /usr/sbin/sendmail /usr/bin/mailq /usr/bin/newaliases
+    set +x
+    echo
+    echo "+---------------"
+    echo "| You may need to set sendmail setuid root for a full restore."
+    echo "| To do this: execute 'chmod 14555 /usr/sbin/sendmail' as root."
+    echo "+---------------"
+    echo
+}
+
+# Function: install the postfix configuration files from the samples
+#
+do_configs()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration files in ${CONFIG_DIR},"
+    echo "| have NOT been deleted. To do this: execute"
+    echo "| 'rm -rf /etc/postfix' as root."
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
 fi
 
-if [ -d /etc/postfix ]; then
-    echo "-> /etc/postfix still exists - you may want to remove it manually."
-    echo
-fi
-
-if [ -d /var/spool/postfix ]; then
-    echo "-> /var/spool/postfix still exists - you may want to remove it manually."
-    echo
-fi
-
-echo "-> Account 'smtp' and groups 'smtp' and 'maildrop' still exist -"
-echo "   you may want to remove these manually."
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	do_accts
+	do_spooldir
+        do_configs $1
+	do_sendmail
+	;;
+    *)
+	echo "Usage: `basename $0` distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
 
 exit 0
