@@ -157,7 +157,6 @@ etc/gtk/gtkrc.ja
 etc/gtk/gtkrc.ko
 etc/gtk/gtkrc.ru
 @dirrm etc/gtk
-@dirrm share/aclocal
 @dirrm lib/locale/sv/LC_MESSAGES
 @dirrm lib/locale/ru/LC_MESSAGES
 @dirrm lib/locale/pt/LC_MESSAGES
