@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/05 22:08:02 shell Exp $
+lib/python${PYTHON_VER}/site-packages/pyRijndael.py
+lib/python${PYTHON_VER}/site-packages/pyRijndael.pyc
+lib/python${PYTHON_VER}/site-packages/pyRijndael.pyo
