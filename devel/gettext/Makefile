@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/01/31 21:41:56 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2004/08/03 10:09:02 espie Exp $
 
 COMMENT=	"GNU gettext"
 
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+= --with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${WRKBUILD}/intl/.libs -L${LOCALBASE}/lib"
 
+EXTRA_LOCALES=bg en eo fi he hr lv nb sk uk
 post-extract:
 	@rm -f ${WRKSRC}/doc/gettext.info*
 
@@ -34,6 +35,9 @@ post-install:
 	@cd ${PREFIX}/lib && \
 		perl -pi -e s#'-L${WRKBUILD}/intl/.libs '#''#g \
 			libintl.la
+	@for l in ${EXTRA_LOCALES}; do \
+		${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$$l/LC_MESSAGES; \
+	done
 
 do-regress:
 	@cd ${WRKBUILD}/tests && ${MAKE_PROGRAM} check-TESTS
