@@ -1,0 +1,20 @@
+==============================================================
+The configuration files for Courier-IMAP have been installed
+in /usr/local/share/courier.
+
+You should copy imapd.config and imapd-ssl.config to /etc,
+and edit them to your site's needs.  
+
+It is generally not a good idea to expose plain-text IMAP to
+the outside world, so you can bind the plain-text one to 
+127.0.0.1, and the SSL one to your external IP interface(s).
+Don't forget to configure stunnel correctly before trying to
+use the SSL facility of Courier.
+
+To control the daemon use /usr/local/libexec/imapd.rc and
+/usr/local/libexec/imapd-ssl.rc
+
+More documentation is available at the Courier-IMAP homepage,
+at http://www.inter7.com/courierimap/
+==============================================================
+

@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/03 03:42:55 turan Exp $
+bin/imapd
+bin/maildirmake
+libexec/authlib/authcram
+libexec/authlib/authpwd
+libexec/authlib/authuserdb
+libexec/couriertcpd
+libexec/deliverquota
+libexec/imapd-ssl.rc
+libexec/imapd.rc
+libexec/logger
+libexec/makedatprog
+man/man1/maildirmake.1
+man/man8/authcram.8
+man/man8/authdaemon.8
+man/man8/authdaemond.8
+man/man8/authldap.8
+man/man8/authmysql.8
+man/man8/authpam.8
+man/man8/authpwd.8
+man/man8/authshadow.8
+man/man8/authuserdb.8
+man/man8/authvchkpw.8
+man/man8/couriertcpd.8
+man/man8/deliverquota.8
+man/man8/imapd.8
+man/man8/makeuserdb.8
+man/man8/pw2userdb.8
+man/man8/userdb.8
+man/man8/userdbpw.8
+man/man8/vchkpw2userdb.8
+sbin/imaplogin
+sbin/makeuserdb
+sbin/pw2userdb
+sbin/userdb
+sbin/userdbpw
+sbin/vchkpw2userdb
+share/courier-imap/imapd-ssl.config
+share/courier-imap/imapd.config
+@dirrm share/courier-imap
+@dirrm libexec/authlib
