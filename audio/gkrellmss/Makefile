@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/04/19 18:18:50 lebel Exp $
 
 COMMENT=	"GKrellM Sound Scope"
 
-DISTNAME=	gkrellmss-0.2
+DISTNAME=	gkrellmss-0.4
 CATEGORIES=	audio
 NEED_VERSION=	1.515
 
@@ -25,8 +25,9 @@ BUILD_DEPENDS=	::sysutils/gkrellm \
 		::audio/esound
 RUN_DEPENDS=	::sysutils/gkrellm \
 		::audio/esound
+LIB_DEPENDS=	esd::audio/esound \
+		fftw,rfftw::math/fftw
 
-LIB_DEPENDS+=	esd::audio/esound
 ALL_TARGET=	
 USE_GMAKE=	Yes
 
