@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/05 23:11:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/02 12:45:39 espie Exp $
 
 COMMENT=	"rpm2cpio, simple perl converter"
 
-DISTNAME=	rpm2cpio-1.0
+DISTNAME=	rpm2cpio-1.1
 CATEGORIES=	converters archivers
 NEED_VERSION=	1.402
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.iagora.com/~espel/ \
 		ftp://quatramaran.ens.fr/pub/orabidoo/
 		
 # In case other versions are released
-DIST_SUBDIR=	rpm2cpio-1.0
+DIST_SUBDIR=	rpm2cpio-1.1
 DISTFILES=	rpm2cpio
 
 PERMIT_DISTFILES_CDROM=	Yes
