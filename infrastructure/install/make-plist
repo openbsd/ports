@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.41 2004/08/03 10:51:47 espie Exp $
+# $OpenBSD: make-plist,v 1.42 2004/08/03 11:17:11 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -41,6 +41,12 @@ my %out;
 my @has_shared;
 my @tocheck=();
 my ($plist, $pshared);
+my $shared_only;
+if (defined $ENV{'SHARED_ONLY'}) {
+	if ($ENV{'SHARED_ONLY'} =~ m/^Yes$/i) {
+		$shared_only = 1;
+	}
+}
 
 
 sub is_library
@@ -448,7 +454,7 @@ find(
 				if (is_dir($File::Find::name) || is_subinfo($File::Find::name)) {
 					return;
 				}
-				if (is_library($File::Find::name)) {
+				if (is_library($File::Find::name) && !$shared_only) {
 					$ldconfig{$File::Find::dir} = 1;
 					push(@libfiles, $File::Find::name);
 				} else {
