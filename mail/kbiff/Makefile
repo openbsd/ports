@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/19 23:39:05 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/08/06 03:24:45 lebel Exp $
 
 COMMENT=		"new mail notification utility"
 
-DISTNAME=		kbiff-3.4.2
+DISTNAME=		kbiff-3.5
 CATEGORIES=		mail
 NEED_VERSION=		1.410
 EXTRACT_SUFX=		.tar.bz2
