@@ -7,40 +7,81 @@
 # be edited and then saved to a file called Local/Makefile before first running
 # the make command.
 
-# Blank lines and lines starting with # are ignored. It is also permitted to
-# use the # character to add a comment to a setting, for example
-#
-# EXIM_GID=42   # the "mail" group
-#
-# Consequently, it is not possible to have the # character present in any
-# setting, but I can't think of any cases where this would be wanted.
+# Things that depend on the operating system have default settings in
+# OS/Makefile-Default, but these are overridden for some OS by files called
+# called OS/Makefile-<osname>. You can further override these by creating files
+# called Local/Makefile-<osname>, where "<osname>" stands for the name of your
+# operating system - look at the names in the OS directory to see which names
+# are recognized.
 
-# Things that depend on the operating system have default settings in files
-# called OS/Makefile-<osname>. These can be overridden by creating files
-# called Local/Makefile-<osname>. In particular, the location of the X11
-# libraries is something that is quite variable between different versions
-# of the same operation system (and indeed there are different versions of
-# X11 as well, of course). The three settings concerned here are X11, XINCLUDE,
-# and XLFLAGS (linking flags). There are defaults in OS/Makefile-Default which
-# are overridden for some operating systems in the OS/Makefile-<osname> file.
-# If these are not right for you, put appropriate settings into a file called
-# Local/Makefile-<osname>. In all cases "<osname>" stands for the name of
-# your operating system - look at the names in the OS directory to see which
-# names are recognized.
+# However, if you are building Exim for a single OS only, you can place all the
+# configuration settings in the one file called Local/Makefile; only if you are
+# building for several OS from the same source files do you need to worry
+# about splitting off the OS-dependent settings into separate files.
+
+# One OS-specific thing is the C compiler; the overall default is gcc, but
+# some OS Makefiles specify cc. You can override anything that is set by
+# putting CC=whatever in your Local/Makefile.
+
+# NOTE: You should never need to edit any of the distributed Makefiles; all
+# overriding can be done in your Local/Makefile(s). This will make it easier
+# for you when the next release comes along.
+
+# The location of the X11 libraries is something else that is quite variable
+# even between different versions of the same operation system (and indeed
+# there are different versions of X11 as well, of course). The four settings
+# concerned here are X11, XINCLUDE, XLFLAGS (linking flags) and X11_LD_LIB
+# (dynamic run-time library).
 
 # Another area of variability between systems is the type and location of the
 # dbm library package. Exim has support for ndbm, gdbm, and Berkeley db. By
 # default it assumes ndbm; this often works with gdbm or db, provided they
 # are correctly installed, via their compatibility interfaces. However, Exim
 # can also be configured to use the native calls for Berkeley db 1.85, and
-# there are some locking actions that can be varied by changing the
-# configuration. The defaults are set in OS/Makefile-Default, and can be
-# changed by putting things into an OS-specific Makefile, or indeed into the
-# main Local/Makefile if Exim is being compiled for a single OS only.
+# this is defaulted for some operating systems. The defaults are set in
+# OS/Makefile-Default, and can be changed by putting things into an OS-specific
+# Makefile, or indeed into the main Local/Makefile if Exim is being compiled
+# for a single OS only.
 
 # See also the file doc/dbm.discuss.txt for discussion about different dbm
 # libraries.
+
+# In Local/Makefiles blank lines and lines starting with # are ignored. It is
+# also permitted to use the # character to add a comment to a setting, for
+# example
+#
+# EXIM_GID=42   # the "mail" group
+#
+# Consequently, it is not possible to have the # character present in any
+# setting, but I can't think of any cases where this would be wanted.
 ###############################################################################
+
+
+# /bin/sh is normally used as the shell in which to run commands that are
+# defined in the makefiles. This can be changed if necessary, but note that
+# a Bourne-compatible shell is expected.
+
+# MAKE_SHELL=/bin/sh
+
+
+# The following commands live in different places in some OS. The OS-specific
+# files should normally point to the right place, but they can be overridden
+# here if necessary. Perl is not necessary for running Exim unless you set
+# EXIM_PERL (see below) to get it embedded, but there are some Perl utilities
+# for processing log files. If you haven't got Perl, Exim will still build and
+# run; you just won't be able to run those utilities.
+
+# CHOWN_COMMAND=/usr/bin/chown
+# CHGRP_COMMAND=/usr/bin/chgrp
+# MV_COMMAND=/bin/mv
+# RM_COMMAND=/bin/rm
+# PERL_COMMAND=/usr/bin/perl
+
+
+# The following macro can be used to change the command for building a library
+# of functions. By default the "ar" command is used, with options "cq".
+
+# AR=ar cq
 
 
 # The binary directory: This variable defines where the exim binary will be
@@ -53,20 +94,15 @@
 BIN_DIRECTORY=/usr/local/sbin
 
 
-# The info directory: This variable defines where the exim info file will be
-# installed by "make install" or "exim_intall".
+# The default distribution of Exim contains only the plain text form of the
+# documentation. Other forms are available separately. If you want to install
+# the documentation in "info" format, first fetch the Texinfo documentation
+# sources from the ftp directory and unpack them, which should create files
+# with the extension "texinfo" in the doc directory. Then set INFO_DIRECTORY to
+# your info directory; "make install" will then build the info files and
+# install them there.
 
 INFO_DIRECTORY=/usr/local/info
-
-
-# The following commands live in different places in some OS. The OS-specific
-# files should normally point to the right place, but they can be overridden
-# here if necessary.
-
-# CHOWN_COMMAND=/usr/bin/chown
-# CHGRP_COMMAND=/usr/bin/chgrp
-# MV_COMMAND=/bin/mv
-# RM_COMMAND=/bin/rm
 
 
 # The compress command is used by the exicyclog script to compress old log
@@ -83,7 +119,7 @@ COMPRESS_SUFFIX=gz
 # location of all other runtime files and directories can be changed in the
 # runtime configuration file.
 
-CONFIGURE_FILE=/usr/local/etc/exim/configure
+CONFIGURE_FILE=/etc/exim/configure
 
 
 # In some installations there may be multiple machines sharing file systems,
@@ -94,7 +130,7 @@ CONFIGURE_FILE=/usr/local/etc/exim/configure
 # period (for example, /usr/exim/configure.host.in.some.domain. If this file
 # does not exist, then the bare configuration file name is tried.
 
-# CONFIGURE_FILE_USE_NODE=yes
+CONFIGURE_FILE_USE_NODE=yes
 
 
 # In some esoteric configurations two different versions of Exim are run,
@@ -145,6 +181,13 @@ DIRECTOR_SMARTUSER=yes
 # DB_MODE=0640
 
 
+# Database lock file mode: The mode of zero-length files created in the "db"
+# directory to use for locking purposes defaults to 0640 in the source, and
+# can be changed here.
+
+# DB_LOCKFILE_MODE=0640
+
+
 # Cycling log files: this variable specifies the maximum number of old
 # log files that are kept by the exicyclog log-cycling script.
 
@@ -177,7 +220,24 @@ EXICYCLOG_MAX=10
 # are defaulted in the OS/Makefile-Default file, and can be overridden
 # in local OS-specific make files.
 
-EXIM_MONITOR=eximon.bin
+# EXIM_MONITOR=eximon.bin
+
+
+# Compiling in support for embedded Perl: If you want to be able to
+# use Perl code in Exim's string manipulation language and you have Perl
+# (version 5.004 or later) installed, set EXIM_PERL to perl.o.
+
+EXIM_PERL=perl.o
+
+
+# There are also three options which are used when compiling the Perl interface
+# and when linking with Perl. The default values for these are placed
+# automatically at the head of the Makefile by the script which builds it.
+# However, if you want to override them, you can do so here.
+
+# PERL_CC=
+# PERL_CCOPTS=
+# PERL_LIBS=
 
 
 # The maximum length of header line that Exim is prepared to process. There
@@ -202,7 +262,7 @@ EXIM_MONITOR=eximon.bin
 # "panic", "process" or "reject" to form the final file name. For example,
 # some installations may want something like this:
 
-LOG_FILE_PATH=/var/log/exim_%slog
+LOG_FILE_PATH=/var/log/exim/%s.log
 
 # which results in files with names /var/log/exim_mainlog, etc. The directory
 # in which the log files are placed must exist; Exim does not try to create
@@ -233,6 +293,29 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # LOG_MODE=0640
 
 
+# Included file and database lookup methods. See the manual chapter entitled
+# "File and database lookups" for discussion. DBM and lsearch (linear search)
+# are included by default. LOOKUP_DNSDB does *not* refer to general mail
+# routing using the DNS. It is for the specialist case of using the DNS as
+# a general database facility (not common). For details of cdb files and the
+# tools to build them, see http://www.pobox.com/~djb/cdb.html.
+
+LOOKUP_DBM=yes
+LOOKUP_LSEARCH=yes
+
+# LOOKUP_CDB=yes
+# LOOKUP_DNSDB=yes
+# LOOKUP_LDAP=yes
+# LOOKUP_NIS=yes
+# LOOKUP_NISPLUS=yes
+
+# The TESTDB lookup is for performing tests on the handling of lookup
+# results, and is not useful for general running. It should be included
+# only when debugging the code of Exim.
+
+# LOOKUP_TESTDB=yes
+
+
 # Per-message logs: While a message is in the process of being delivered,
 # comments on its progress are written to a message log, for the benefit of
 # human administrators. These logs are held in a directory called "msglog"
@@ -249,8 +332,10 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # specified here. It must contain precisely one occurrence of "%s". When
 # a daemon is run on the default SMTP port, this is replaced with the null
 # string, but when it is run with some explicit port specified, "%s" is
-# replaced with the port number preceded by a dot. Some installations may
-# want something like this
+# replaced with the port number preceded by a dot. If a daemon is run with
+# only one of -bd and -q<time>, then that option is added on to the end of
+# the file name, allowing sites that run two separate daemons to distinguish
+# them. Some installations may want something like this
 
 PID_FILE_PATH=/var/run/exim%s.pid
 
@@ -293,27 +378,24 @@ ROUTER_QUERYPROGRAM=yes
 
 # The spool directory: This directory is where all the data for messages in
 # transit is kept. There is no default in the source, so its location must be
-# defined in a local configuration file, or in the runtime configuration. It
-# is recommended that you define it here if it is a fixed path, especially if
-# you have not defined LOG_FILE_PATH. Log files are then written in a sub-
-# directory of the spool directory, and it is helpful to have this defined
-# right from the start of execution so that, for example, errors in reading
-# the runtime configuration file can be logged.
+# defined in a local compile-time configuration file, or in the runtime
+# configuration. It is recommended (but not mandatory) that you define it here
+# if it is a fixed path, especially if you have not defined LOG_FILE_PATH. Log
+# files are then written in a sub-directory of the spool directory, and it is
+# helpful to have this defined right from the start of execution so that, for
+# example, errors in reading the runtime configuration file can be logged.
 
-# Exim creates the spool directory if it does not exist, using the mode
-# required for the sub-directory that it is trying to create at the time. If a
-# non-root uid and gid have been defined for Exim (either in this configuration
-# file, or by the runtime configuration options), then this directory and all
-# sub-directories and their files will be created with their owners and groups
-# set to Exim's uid and gid.
+# Exim creates the spool directory if it does not exist. If a non-root uid and
+# gid have been defined for Exim (either in this configuration file, or by the
+# runtime configuration options), then this directory and all sub-directories
+# and their files will be created with their owners and groups set to Exim's
+# uid and gid.
 
 # Many installations will want something like this:
-# SPOOL_DIRECTORY=/var/spool/exim
+SPOOL_DIRECTORY=/var/spool/exim
 
 # Others may prefer to keep all Exim things under one directory:
 # SPOOL_DIRECTORY=/usr/exim/spool
-
-SPOOL_DIRECTORY=/var/spool/exim
 
 
 # If Exim creates the spool directory, it is given this mode, defaulting in the
@@ -338,6 +420,15 @@ SPOOL_DIRECTORY=/var/spool/exim
 # STDERR_FILE=
 
 
+# The appendfile transport can write messages as individual files in a number
+# of formats. The code for three specialist formats, maildir, mailstore, and
+# MBX, is included only when requested by the following settings:
+
+# SUPPORT_MAILDIR=yes
+# SUPPORT_MAILSTORE=yes
+# SUPPORT_MBX=yes
+
+
 # Included transports: These variables determine which individual transport
 # drivers are included in the Exim binary. There are no defaults; those that
 # are wanted must be defined here by setting the appropriate variables to the
@@ -351,11 +442,9 @@ TRANSPORT_AUTOREPLY=yes
 TRANSPORT_PIPE=yes
 TRANSPORT_SMTP=yes
 
-# The Debug transport is special, and should be included only when low-level
-# debugging is being performed. In conjunction with the "debug_transport"
-# configuration option, it permits the subversion of all mail deliveries to
-# a given file.
 
-# TRANSPORT_DEBUG=
+# TCP wrappers:
+
+# USE_TCP_WRAPPERS=yes
 
 # End of EDITME
