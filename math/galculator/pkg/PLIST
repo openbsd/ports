@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:11:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/10/23 12:37:24 naddy Exp $
 bin/galculator
 @man man/man1/galculator.1
 share/applications/
@@ -25,6 +25,12 @@ share/locale/fr/LC_MESSAGES/galculator.mo
 share/locale/ja/
 share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/galculator.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
+share/locale/pl/LC_MESSAGES/galculator.mo
 share/locale/pt_BR/
 share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/galculator.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
+share/locale/ro/LC_MESSAGES/galculator.mo
