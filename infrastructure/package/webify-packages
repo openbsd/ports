@@ -7,6 +7,7 @@
 # definitions from OpenBSD package files (.tgz files).
 # Info: Ryan Walker (walkerr@ssimicro.com)
 # Mangled by Bob Beck (beck@openbsd.org)
+# This file is in the public domain
 # 
 # commited as working on ftp.openbsd.org (so /usr/local/bin/perl isn't a typo)
 # remember this has to work on non openbsd platforms.
