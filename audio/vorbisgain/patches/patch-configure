@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/03/29 00:35:43 naddy Exp $
+--- configure.orig	Fri Jul  5 18:16:48 2002
++++ configure	Sun Mar 23 16:47:22 2003
+@@ -2114,7 +2114,7 @@ if test -z "$GCC"; then
+         case $host in
+         *)
+                 DEBUG="-g"
+-                CFLAGS="-O"
++                CFLAGS=""
+                 PROFILE="-g -p"
+                 ;;
+         esac
+@@ -2122,8 +2122,8 @@ else
+         case $host in
+         *)
+                 DEBUG="-g -Wall -fsigned-char"
+-                CFLAGS="-O2 -fsigned-char"
+-                PROFILE="-O2 -g -pg -fsigned-char"
++                CFLAGS="-fsigned-char"
++                PROFILE="-g -pg -fsigned-char"
+                 ;;
+         esac
+ fi

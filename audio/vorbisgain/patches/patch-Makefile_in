@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/03/29 00:35:43 naddy Exp $
+--- Makefile.in.orig	Sat Mar 22 03:06:49 2003
++++ Makefile.in	Sat Mar 22 03:07:51 2003
+@@ -71,7 +71,7 @@ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+-mandir = @MANDIR@
++mandir = @mandir@
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
+@@ -464,10 +464,10 @@ uninstall-man: uninstall-man1
+ 
+ 
+ debug:
+-        $(MAKE) all CFLAGS="@DEBUG@"
++	$(MAKE) all CFLAGS="@DEBUG@"
+ 
+ profile:
+-        $(MAKE) all CFLAGS="@PROFILE@"
++	$(MAKE) all CFLAGS="@PROFILE@"
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
