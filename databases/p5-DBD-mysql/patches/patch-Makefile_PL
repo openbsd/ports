@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2003/12/30 20:41:29 wilfried Exp $
+--- Makefile.PL.orig	Tue Apr 30 00:42:17 2002
++++ Makefile.PL	Wed Apr  2 15:41:39 2003
+@@ -46,15 +46,6 @@ foreach my $key (sort { $a cmp $b} keys 
+ 	 $key, $source->{$key}, $opt->{$key})
+ }
+ 
+-print <<"MSG";
+-
+-To change these settings, see 'perl Makefile.PL --help' and
+-'perldoc INSTALL'.
+-
+-MSG
+-
+-sleep 5;
+-
+ eval { require File::Spec };
+ my $fileName = $@ ?
+   "t/mysql.mtest" : File::Spec->catfile("t", "mysql.mtest");
