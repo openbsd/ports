@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.2 2001/09/18 22:03:43 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2002/02/15 19:11:16 nino Exp $
 #
 
 set -e
@@ -16,8 +16,6 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
     echo "| FYI, the following configuration files belongs to this package:"
     echo "|"
     for f in \
-	gnome-vfs-mime-magic \
-	vfs/modules/cdda-module.conf \
 	vfs/modules/default-modules.conf
     do
 	echo "| ${SYSCONFDIR}/$f"

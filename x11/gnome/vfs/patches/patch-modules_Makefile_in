@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_Makefile_in,v 1.1 2001/09/18 17:47:33 naddy Exp $
---- modules/Makefile.in.orig	Tue May  8 01:12:52 2001
-+++ modules/Makefile.in	Tue Sep 18 19:34:43 2001
-@@ -181,7 +181,7 @@ EXTRA_DIST =  	default-modules.conf				c
+$OpenBSD: patch-modules_Makefile_in,v 1.2 2002/02/15 19:11:16 nino Exp $
+--- modules/Makefile.in.orig	Sun Jan 20 15:32:18 2002
++++ modules/Makefile.in	Mon Feb  4 14:53:11 2002
+@@ -197,7 +197,7 @@ EXTRA_DIST =  	default-modules.conf				c
  @HAVE_CDDA_TRUE@CDDA_LTLIBS = libcdda.la
  @HAVE_CDDA_FALSE@CDDA_LTLIBS = 
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-modules_Makefile_in,v 1.1 2001/09/18 17:47:33 naddy Exp $
 +module_flags = -module -export_dynamic -avoid-version
  modulesdir = $(libdir)/vfs/modules
  
- modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libvfs-test.la					libhttp.la					libbzip2.la					libgzip.la					libftp.la					libvfs-pipe.la					libvfs-translate.la				$(NULL)
-@@ -217,6 +217,7 @@ libfile_la_LDFLAGS = $(module_flags)
+ modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libnntp.la					libvfs-pipe.la					libvfs-translate.la				libdesktop.la					$(NULL)
+@@ -248,6 +248,7 @@ libssh_la_SRCLIST =  	ssh-method.c 					
  
  libvfs_test_la_SOURCES =  	test-method.c				
  
@@ -18,15 +18,20 @@ $OpenBSD: patch-modules_Makefile_in,v 1.1 2001/09/18 17:47:33 naddy Exp $
  libvfs_test_la_LIBADD = $(XML_LIBS)
  
  ### `gzip' method
-@@ -237,6 +238,7 @@ libbzip2_la_LIBADD = -lbz2
+@@ -266,10 +267,12 @@ libbzip2_la_LIBADD = -lbz2
  
  libftp_la_SOURCES =  	ftp-method.c					ftp-method.h
  
 +libftp_la_LDFLAGS = $(module_flags)
  
- ### `gconf' method
+ ### `nntp' method
  
-@@ -291,7 +293,6 @@ libextfs_la_LIBADD = 
+ libnntp_la_SOURCES =  	nntp-method.c 					nntp-method.h
++libnntp_la_LDFLAGS = $(module_flags)
+ 
+ 
+ ### `nfs' method
+@@ -311,7 +314,6 @@ libextfs_la_LIBADD = 
  libextfs_la_OBJECTS =  extfs-method.lo
  libfile_la_LIBADD = 
  libfile_la_OBJECTS =  file-method.lo
@@ -34,11 +39,14 @@ $OpenBSD: patch-modules_Makefile_in,v 1.1 2001/09/18 17:47:33 naddy Exp $
  libvfs_test_la_DEPENDENCIES = 
  libvfs_test_la_OBJECTS =  test-method.lo
  libhttp_la_DEPENDENCIES = 
-@@ -300,7 +301,6 @@ libbzip2_la_DEPENDENCIES = 
+@@ -320,10 +322,8 @@ libbzip2_la_DEPENDENCIES = 
  libbzip2_la_OBJECTS =  bzip2-method.lo
  libgzip_la_DEPENDENCIES = 
  libgzip_la_OBJECTS =  gzip-method.lo
 -libftp_la_LDFLAGS = 
  libftp_la_LIBADD = 
  libftp_la_OBJECTS =  ftp-method.lo
+-libnntp_la_LDFLAGS = 
+ libnntp_la_LIBADD = 
+ libnntp_la_OBJECTS =  nntp-method.lo
  libvfs_pipe_la_DEPENDENCIES = 

@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/29 17:45:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/15 19:11:16 nino Exp $
 
 COMMENT=		"GNOME Virtual File System"
-V=			1.0.1
-DISTNAME=		gnome-vfs-${V}
+
+DISTNAME=		gnome-vfs-1.0.4
 CATEGORIES=		devel x11/gnome
-NEED_VERSION=   	1.473
-HOMEPAGE=		http://www.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://www.gnome.org/
+
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-vfs
-
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-                        patch-*
 
 LIB_DEPENDS=		gnome.36::x11/gnome/libs \
 			xml.9::textproc/libxml1 \
@@ -22,7 +19,11 @@ LIB_DEPENDS=		gnome.36::x11/gnome/libs \
 			bz2::archivers/bzip2 \
 			gthread::devel/glib
 
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			:gnome-mime-data-*:x11/gnome/mime-data
+RUN_DEPENDS=		:gnome-mime-data-*:x11/gnome/mime-data
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,11 +32,10 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/gtk-1.2 -D_POSIX_THREAD_SYSCALL_SOFT=1" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-vfs; \
-	cp -rp ${PREFIX}/../../etc/* ${PREFIX}/share/examples/gnome-vfs/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/gnome-vfs/
 
 .include <bsd.port.mk>
