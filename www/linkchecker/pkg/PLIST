@@ -1,42 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/09/15 00:25:36 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/10/29 08:20:28 jakob Exp $
 bin/linkchecker
-lib/python2.1/site-packages/DNS/Base.py
-lib/python2.1/site-packages/DNS/Class.py
-lib/python2.1/site-packages/DNS/Lib.py
-lib/python2.1/site-packages/DNS/Opcode.py
-lib/python2.1/site-packages/DNS/Status.py
-lib/python2.1/site-packages/DNS/Type.py
-lib/python2.1/site-packages/DNS/__init__.py
-lib/python2.1/site-packages/DNS/lazy.py
-lib/python2.1/site-packages/DNS/winreg.py
-lib/python2.1/site-packages/_linkchecker_configdata.py
-lib/python2.1/site-packages/linkcheck/CSV.py
-lib/python2.1/site-packages/linkcheck/ChromeUrlData.py
-lib/python2.1/site-packages/linkcheck/Config.py
-lib/python2.1/site-packages/linkcheck/FileUrlData.py
-lib/python2.1/site-packages/linkcheck/FindUrlData.py
-lib/python2.1/site-packages/linkcheck/FtpUrlData.py
-lib/python2.1/site-packages/linkcheck/GopherUrlData.py
-lib/python2.1/site-packages/linkcheck/HostCheckingUrlData.py
-lib/python2.1/site-packages/linkcheck/HttpUrlData.py
-lib/python2.1/site-packages/linkcheck/HttpsUrlData.py
-lib/python2.1/site-packages/linkcheck/JavascriptUrlData.py
-lib/python2.1/site-packages/linkcheck/Logging.py
-lib/python2.1/site-packages/linkcheck/MailtoUrlData.py
-lib/python2.1/site-packages/linkcheck/NntpUrlData.py
-lib/python2.1/site-packages/linkcheck/StringUtil.py
-lib/python2.1/site-packages/linkcheck/TelnetUrlData.py
-lib/python2.1/site-packages/linkcheck/Threader.py
-lib/python2.1/site-packages/linkcheck/UrlData.py
-lib/python2.1/site-packages/linkcheck/__init__.py
-lib/python2.1/site-packages/linkcheck/debuglevels.py
-lib/python2.1/site-packages/linkcheck/fcgi.py
-lib/python2.1/site-packages/linkcheck/lc_cgi.py
-lib/python2.1/site-packages/linkcheck/linkname.py
-lib/python2.1/site-packages/linkcheck/sz_fcgi.py
-lib/python2.1/site-packages/linkcheck/timeoutsocket.py
-lib/python2.1/site-packages/linkcheck/util1.py
-man/man1/linkchecker.1
+lib/python${PYTHON_VER}/site-packages/_linkchecker_configdata.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/CSV.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/Config.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/FileUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/FtpUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/GopherUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/HostCheckingUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/HttpUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/HttpsUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/IgnoredUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/MailtoUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/NntpUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/ProxyUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/StringUtil.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/TelnetUrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/Threader.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/UrlData.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/__init__.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/debuglevels.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/fcgi.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/lc_cgi.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/linkname.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/BlacklistLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/CSVLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/ColoredLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/GMLLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/HtmlLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/Logger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/SQLLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/StandardLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/XMLLogger.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/log/__init__.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/sz_fcgi.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/test_support.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/timeoutsocket.py
+lib/python${PYTHON_VER}/site-packages/linkcheck/util1.py
 share/linkchecker/examples/index.html
 share/linkchecker/examples/lc.cgi
 share/linkchecker/examples/lc.fcgi
@@ -47,7 +46,9 @@ share/linkchecker/examples/linkchecker.bat
 share/linkchecker/linkcheckerrc
 share/locale/de/LC_MESSAGES/linkcheck.mo
 share/locale/fr/LC_MESSAGES/linkcheck.mo
+share/locale/nl/LC_MESSAGES/linkcheck.mo
+share/man/man1/linkchecker.1
 @dirrm share/linkchecker/examples
 @dirrm share/linkchecker
-@dirrm lib/python2.1/site-packages/linkcheck
-@dirrm lib/python2.1/site-packages/DNS
+@dirrm lib/python${PYTHON_VER}/site-packages/linkcheck/log
+@dirrm lib/python${PYTHON_VER}/site-packages/linkcheck

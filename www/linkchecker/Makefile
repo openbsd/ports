@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/10/29 08:20:28 jakob Exp $
 
 COMMENT=	checks HTML documents for broken links
 
-DISTNAME=	linkchecker-1.3.11
+DISTNAME=	linkchecker-1.6.4
 CATEGORIES=    	www
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=linkchecker/}
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/
 
@@ -16,9 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PYTHON_VER=	2.1
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+PYTHON_VER=	2.2
+BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
+		:py-dns-*:net/py-dns
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+SUBST_VARS=	PYTHON_VER
+NO_REGRESS=	Yes
+PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 
 do-configure:
 	cd ${WRKSRC}; python${PYTHON_VER} setup.py config
