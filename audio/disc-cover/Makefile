@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/06/09 05:36:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/08/09 00:23:59 naddy Exp $
 
 COMMENT=	"creates cover for audio cds using cddb and latex"
 
-DISTNAME=	disc-cover-1.3.1
+DISTNAME=	disc-cover-1.3.2
 CATEGORIES=	audio
-NEED_VERSION=	1.504
 
 HOMEPAGE=	http://eek.wi.leidenuniv.nl/~jvhemert/disc-cover
 
