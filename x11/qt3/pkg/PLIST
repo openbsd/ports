@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.20 2004/11/09 21:58:12 espie Exp $
-@conflict qt3
+@comment $OpenBSD: PLIST,v 1.21 2004/12/27 17:13:56 espie Exp $
+@conflict qt3-*
+@conflict qt3-base-*
 bin/assistant
 bin/assistant-mt
 bin/designer3
