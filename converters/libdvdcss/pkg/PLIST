@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/02 15:22:08 espie Exp $
-include/videolan/dvdcss.h
+@comment $OpenBSD: PLIST,v 1.2 2002/05/28 14:14:15 espie Exp $
+include/dvdcss/dvdcss.h
 lib/libdvdcss.a
-lib/libdvdcss.so
-lib/libdvdcss.so.0
-lib/libdvdcss.so.0.0.3
-@dirrm include/videolan
+lib/libdvdcss.la
+%%SHARED%%
+@dirrm include/dvdcss

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/02 16:03:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/28 14:14:15 espie Exp $
 CATEGORIES=converters
 
 COMMENT="Descramble DVDs"
-DISTNAME=libdvdcss-0.0.3.ogle3
+DISTNAME=libdvdcss-1.2.0
 
-MASTER_SITES=http://www.dtek.chalmers.se/groups/dvd/dist/
+MASTER_SITES=http://www.videolan.org/pub/videolan/libdvdcss/1.2.0/
 
 CONFIGURE_STYLE=	gnu
 

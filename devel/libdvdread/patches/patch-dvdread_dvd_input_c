@@ -1,0 +1,47 @@
+$OpenBSD: patch-dvdread_dvd_input_c,v 1.1 2002/05/28 14:14:15 espie Exp $
+--- dvdread/dvd_input.c.orig	Thu May  9 23:32:46 2002
++++ dvdread/dvd_input.c	Tue May 28 16:05:10 2002
+@@ -237,6 +237,32 @@ static int file_close(dvd_input_t dev)
+   return 0;
+ }
+ 
++#ifdef __OpenBSD__
++#include <dirent.h>
++#include <string.h>
++static void *findlibrary(char *base)
++{
++	DIR *d;
++	struct dirent *de;
++	size_t len;
++	void *lib = NULL;
++
++	len = strlen(base);
++
++	d = opendir(".");
++	if (!d)
++		return lib;
++	while ((de = readdir(d)) != NULL) {
++	    if (strncmp(de->d_name, base, len) != 0)
++		continue;
++	    lib = dlopen(de->d_name, RTLD_LAZY);
++	    if (lib)
++	    	break;
++	}
++	closedir(d);
++	return lib;
++}
++#endif
+ 
+ /**
+  * Setup read functions with either libdvdcss or minimal DVD access.
+@@ -247,6 +273,10 @@ int DVDInputSetup(void)
+   char **dvdcss_version = NULL;
+   
+   dvdcss_library = dlopen("libdvdcss.so.2", RTLD_LAZY);
++#if defined(__OpenBSD__)
++  if (!dvdcss_library)
++  	dvdcss_library = findlibrary("libdvdcss.so.2.");
++#endif
+   
+   if(dvdcss_library != NULL) {
+ #if defined(__OpenBSD__) && !defined(__ELF__)
