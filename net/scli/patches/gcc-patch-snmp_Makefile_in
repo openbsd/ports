@@ -1,0 +1,11 @@
+$OpenBSD: gcc-patch-snmp_Makefile_in,v 1.1 2002/10/08 13:02:28 naddy Exp $
+--- snmp/Makefile.in.orig	Tue Oct  8 14:39:57 2002
++++ snmp/Makefile.in	Tue Oct  8 14:41:06 2002
+@@ -216,6 +216,7 @@ g_session.o: g_session.c g_snmp.h ../con
+ 	g_security.h g_sha.h g_md5.h g_transport.h g_session.h \
+ 	g_dispatch.h g_utils.h g_snmp_table.h g_snmp_walk.h
+ g_sha.o: g_sha.c g_sha.h
++	$(COMPILE) -O0 -c g_sha.c
+ g_snmp.o: g_snmp.c g_snmp.h ../config.h g_asn1.h g_message.h \
+ 	g_security.h g_sha.h g_md5.h g_transport.h g_session.h \
+ 	g_dispatch.h g_utils.h g_snmp_table.h g_snmp_walk.h
