@@ -1,25 +1,26 @@
---- Makefile.in.orig	Fri Jul 23 18:13:22 1999
-+++ Makefile.in	Sun Jul 25 15:56:58 1999
-@@ -88,7 +88,7 @@
- libgd_la_SOURCES = gd.c gd_io.c gd_io_file.c gd_io_dp.c gd_io_ss.c 	gd_png.c gd_ss.c gd_gd.c gd_gd2.c gdfontt.c gdfonts.c gdfontmb.c 	gdfontl.c gdfontg.c gdttf.c gdcache.c 	gd.h gdcache.h gdfontl.h gdfonts.h gd_io.h gdfontg.h 	gdfontmb.h gdfontt.h
+--- Makefile.orig	Wed Oct 13 21:20:11 1999
++++ Makefile	Tue Nov 16 15:51:06 1999
+@@ -15,19 +15,21 @@
  
+ #If you don't have FreeType and/or Xpm installed, including the
+ #header files, uncomment this (default).
+-CFLAGS=-O
++#CFLAGS=-O
+ #If you do have FreeType and/or Xpm fully installed, uncomment a
+ #variation of this and comment out the line above. See also LIBS below.
+ #CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
++CFLAGS=-O -DHAVE_LIBTTF
  
--libgd_la_LIBADD = @LIBS@ -lm
-+libgd_la_LIBADD = @LIBS@ -lm -L$(libdir) -lpng
+ #If you don't have FreeType and/or Xpm fully installed, uncomment this
+ #(default).
+-LIBS=-lm -lgd -lpng -lz
++#LIBS=-lm -lgd -lpng -lz
  
- bin_PROGRAMS = pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng
+ #If you do have FreeType and/or Xpm fully installed, uncomment a 
+ #variation of this and comment out the line above. Note that
+ #Xpm requires X11. See also CFLAGS above.
+ #LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
++LIBS=-lm -lgd -lpng -lz -lttf -lX11
  
-@@ -138,11 +138,11 @@
- LTLIBRARIES =  $(lib_LTLIBRARIES)
- 
- 
--DEFS = @DEFS@ -I. -I$(srcdir) 
-+DEFS = @DEFS@ -I. -I$(srcdir) -I$(includedir)
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
--libgd_la_LDFLAGS = 
-+libgd_la_LDFLAGS = -version-info 1:6:0
- libgd_la_DEPENDENCIES = 
- libgd_la_OBJECTS =  gd.lo gd_io.lo gd_io_file.lo gd_io_dp.lo gd_io_ss.lo \
- gd_png.lo gd_ss.lo gd_gd.lo gd_gd2.lo gdfontt.lo gdfonts.lo gdfontmb.lo \
+ #Typical install locations for freetype, zlib, xpm and libpng header files.
+ #If yours are somewhere else, change this. 
