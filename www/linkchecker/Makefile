@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/18 19:44:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/21 18:40:38 sturm Exp $
 
 COMMENT=	"checks HTML documents for broken links"
 
@@ -17,25 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PYTHON_VER=	2.2
-BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
-		:py-dns-*:net/py-dns
-RUN_DEPENDS=	${BUILD_DEPENDS}
+MODULES=	python
 
-SUBST_VARS=	PYTHON_VER
-NO_REGRESS=	Yes
-PY_CMD=		@cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
+MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 
-do-configure:
-	cd ${WRKSRC}; python${PYTHON_VER} setup.py config
-
-do-build:
-	cd ${WRKSRC}; python${PYTHON_VER} setup.py build
+BUILD_DEPENDS+=	:py-dns-*:net/py-dns
 
 NO_REGRESS=	Yes
-
-do-install:
-	cd ${WRKSRC}; python${PYTHON_VER} setup.py install \
-		--root=${WRKINST} --no-compile
 
 .include <bsd.port.mk>
