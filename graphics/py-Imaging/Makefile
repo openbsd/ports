@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/02/15 19:53:43 matt Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/23 00:11:23 matt Exp $
 
 COMMENT=		"python imaging library"
 
@@ -36,8 +36,8 @@ CONFIGURE_STYLE=	gnu
 ALL_TARGET=
 
 LIB_IMAGING=		${WRKSRC}/libImaging
-SITE_PACKAGES=		${PREFIX}/lib/${PYTHON_VER}/site-packages
-PYTHON_INCLUDE_DIR=	${PREFIX}/include/${PYTHON_VER}
+SITE_PACKAGES=		${PREFIX}/lib/python${PYTHON_VER}/site-packages
+PYTHON_INCLUDE_DIR=	${PREFIX}/include/python${PYTHON_VER}
 PIL_INCLUDES=		ImConfig.h ImPlatform.h Imaging.h
 
 do-configure:
