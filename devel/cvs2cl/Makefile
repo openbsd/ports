@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/25 20:49:44 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2000/09/11 16:32:12 avsm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
-DISTNAME=	cvs2cl-2.10
+DISTNAME=	cvs2cl-2.18
 CATEGORIES=     devel
-NEED_VERSION=	1.319
-HOMEPAGE=	http://www.red-bean.com/~kfogel/cvs2cl.shtml
+NEED_VERSION=	1.326
 
-MAINTAINER=	anil@recoil.org
+HOMEPAGE=	http://www.red-bean.com/~kfogel/cvs2cl.shtml
+MAINTAINER=	avsm@openbsd.org
 
 # (license is GPL)
 PERMIT_PACKAGE_CDROM=	Yes 
