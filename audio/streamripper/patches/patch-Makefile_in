@@ -1,0 +1,29 @@
+--- Makefile.in~	Mon Feb 18 21:25:20 2002
++++ Makefile.in	Mon Feb 18 21:33:15 2002
+@@ -1,11 +1,11 @@
+ # Generated automatically from Makefile.in by configure.
+ #Makefile for streamripper
+ 
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+-bindir = /usr/local/bin
+-SHELL = /bin/sh
++#INSTALL_PROGRAM = @INSTALL_PROGRAM@
++#bindir = /usr/local/bin
++#SHELL = /bin/sh
+ 
+-INSTALL = /usr/bin/install -c
++#INSTALL = /usr/bin/install -c
+ 
+ all: consoleapp
+ 
+@@ -17,7 +17,7 @@ consoleapp: 
+ clean:
+ 	rm -f streamripper *.o lib/*.o mpglib/*.o console/*.o *.core core
+ 
+-install:
+-	@echo "- Installing streamripper"
+-	@ $(INSTALL_PROGRAM) streamripper $(bindir)
++#install:
++#	@echo "- Installing streamripper"
++#	@ $(INSTALL_PROGRAM) streamripper $(bindir)
+ 
