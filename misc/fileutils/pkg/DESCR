@@ -1,0 +1,16 @@
+The fileutils package includes a number of GNU versions of common and
+popular file management utilities.  Fileutils includes the following
+tools: chgrp (changes a file's group ownership), chown (changes a
+file's ownership), chmod (changes a file's permissions), cp (copies
+files), dd (copies and converts files), df (shows a filesystem's disk
+usage), dir (gives a brief directory listing), dircolors (the setup
+program for the color version of the ls command), du (shows disk
+usage), install (copies files and sets permissions), ln (creates file
+links), ls (lists directory contents), mkdir (creates directories),
+mkfifo (creates FIFOs or named pipes), mknod (creates special files),
+mv (renames files), rm (removes/deletes files), rmdir (removes empty
+directories), sync (synchronizes memory and disk), touch (changes file
+timestamps), and vdir (provides long directory listings).
+
+All the binaries are prefixed by the letter g to differentiate them
+with the standard applications with the same name.
