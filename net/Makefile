@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2000/04/01 03:04:28 brad Exp $
+# $OpenBSD: Makefile,v 1.69 2000/04/11 05:58:16 camield Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -21,6 +21,7 @@
 #    SUBDIR += dgd-lpmud
 #    SUBDIR += dgd-net
 #    SUBDIR += dip
+     SUBDIR += dnscache
      SUBDIR += dxpc
 #    SUBDIR += echoping
      SUBDIR += epic4
