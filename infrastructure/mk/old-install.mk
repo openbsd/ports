@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.2 2001/01/18 14:58:17 espie Exp $
+# $OpenBSD: old-install.mk,v 1.3 2001/02/15 21:51:32 wilfried Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -82,7 +82,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 .        endfor
 .    endif
 .  endif
-.  if defined(${MESSAGE})
+.  if defined(MESSAGE)
 	@cat	${WRKBUILD}/MESSAGE${SUBPACKAGE}
 .  endif
 .  if !defined(NO_PKG_REGISTER)
