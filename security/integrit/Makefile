@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/27 17:35:55 margarida Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/24 19:48:16 naddy Exp $
 
 COMMENT=		"file integrity checker"
 
@@ -22,11 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=		${WRKDIR}/${DISTNAME:R}
 
 CONFIGURE_STYLE=	gnu
-
-# GCC sparc64 bug.
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=		patch-* gcc-*
-.endif
 
 ALL_TARGET=		integrit utils
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2004/02/19 20:42:05 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2004/02/24 19:48:16 naddy Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -20,11 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	slang mixmaster compressed
 FLAVOR?=
-
-# XXX workaround sparc64 gcc optimization bug
-.if ${MACHINE_ARCH:Msparc64}
-PATCH_LIST=     gcc-* patch-*
-.endif
 
 CONFIGURE_STYLE= autoconf old
 CONFIGURE_ARGS=	--with-sharedir="${PREFIX}/share/mutt" \
