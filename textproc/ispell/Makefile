@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2003/04/10 10:30:07 jsyn Exp $
+# $OpenBSD: Makefile,v 1.34 2003/04/30 10:51:43 jakob Exp $
 
 COMMENT=		"interactive spelling checker"
 COMMENT-dutch=		"ispell dictionary for Dutch"
@@ -38,7 +38,7 @@ GERMAN_DICT=		hk2-deutsch
 SWEDISH_DICT=		iswedish-1.2.1
 RUSSIAN_DICT=		rus-ispell-0.99e7
 PORTUGUESE_DICT=	UMportugues
-SLOVAK_DICT=		ispell-sk-0.1.10
+SLOVAK_DICT=		ispell-sk-0.2.0
 SPANISH_DICT=		espa~nol-1.7
 
 DISTFILES=	${DISTNAME}.tar.gz \
