@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_ptp2_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/ptp2/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/ptp2/Makefile.in	Thu Feb  3 23:33:48 2005
+@@ -191,7 +191,6 @@ EXTRA_DIST = ptp-pack.c
+ camlib_LTLIBRARIES = libgphoto2_ptp2.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2			\
+ 	-I$(top_builddir)/libgphoto2

@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_sipix_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/sipix/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/sipix/Makefile.in	Thu Feb  3 23:33:57 2005
+@@ -195,7 +195,6 @@ camlib_LTLIBRARIES = \
+ EXTRA_DIST = web2.html blink.txt xjpeg.c
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+ 	-I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgphoto2_port_usb_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- libgphoto2_port/usb/Makefile.in.orig	Thu Feb  3 23:48:45 2005
++++ libgphoto2_port/usb/Makefile.in	Thu Feb  3 23:48:53 2005
+@@ -171,7 +171,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = makefile.os2 usb.df usb-os2.c
+ 
+-INCLUDES = -I$(top_srcdir)/intl -I$(top_srcdir)/libgphoto2_port $(USB_CFLAGS)
++INCLUDES = -I$(top_srcdir)/libgphoto2_port $(USB_CFLAGS)
+ 
+ iolibdir = $(libdir)/gphoto2_port/$(VERSION)
+ iolib_LTLIBRARIES = libgphoto2_port_usb.la

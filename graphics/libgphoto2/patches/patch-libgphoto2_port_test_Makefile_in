@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgphoto2_port_test_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- libgphoto2_port/test/Makefile.in.orig	Thu Feb  3 23:48:58 2005
++++ libgphoto2_port/test/Makefile.in	Thu Feb  3 23:49:02 2005
+@@ -173,7 +173,6 @@ target_alias = @target_alias@
+ INCLUDES = \
+ 	$(GPPORT_CFLAGS)	\
+ 	-I$(top_srcdir)/include	\
+-	-I$(top_srcdir)/intl	\
+ 	-I$(top_srcdir)/libgphoto2_port
+ 
+ 

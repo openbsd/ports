@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_kodak_dc120_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/kodak/dc120/Makefile.in.orig	Fri Feb  4 00:01:17 2005
++++ camlibs/kodak/dc120/Makefile.in	Fri Feb  4 00:01:22 2005
+@@ -191,7 +191,6 @@ EXTRA_DIST = kodak.df makefile.os2
+ camlib_LTLIBRARIES = libgphoto2_kodak_dc120.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2
+ 

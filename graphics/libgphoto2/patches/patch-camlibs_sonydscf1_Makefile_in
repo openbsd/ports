@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_sonydscf1_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/sonydscf1/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/sonydscf1/Makefile.in	Thu Feb  3 23:34:00 2005
+@@ -191,7 +191,6 @@ EXTRA_DIST = sonydscf1.df makefile.os2 r
+ camlib_LTLIBRARIES = libgphoto2_sony_dscf1.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2
+ 

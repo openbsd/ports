@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_largan_lmini_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/largan/lmini/Makefile.in.orig	Fri Feb  4 00:02:51 2005
++++ camlibs/largan/lmini/Makefile.in	Fri Feb  4 00:02:55 2005
+@@ -189,7 +189,6 @@ target_alias = @target_alias@
+ camlib_LTLIBRARIES = libgphoto2_largan.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2			\
+ 	-I$(top_builddir)/libgphoto2

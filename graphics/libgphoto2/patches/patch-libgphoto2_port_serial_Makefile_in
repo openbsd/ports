@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgphoto2_port_serial_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- libgphoto2_port/serial/Makefile.in.orig	Thu Feb  3 23:48:24 2005
++++ libgphoto2_port/serial/Makefile.in	Thu Feb  3 23:48:32 2005
+@@ -171,7 +171,7 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = makefile.os2 serial.df
+ 
+-INCLUDES = -I$(top_srcdir)/libgphoto2_port -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir)/libgphoto2_port
+ 
+ iolibdir = $(libdir)/gphoto2_port/$(VERSION)
+ iolib_LTLIBRARIES = libgphoto2_port_serial.la

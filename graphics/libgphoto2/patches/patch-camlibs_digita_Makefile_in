@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_digita_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/digita/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/digita/Makefile.in	Thu Feb  3 23:30:45 2005
+@@ -191,7 +191,6 @@ EXTRA_DIST = digita.df makefile.os2
+ camlib_LTLIBRARIES = libgphoto2_digita.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2
+ 

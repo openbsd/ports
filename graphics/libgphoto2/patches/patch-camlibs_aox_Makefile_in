@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_aox_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/aox/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/aox/Makefile.in	Thu Feb  3 23:30:35 2005
+@@ -189,7 +189,6 @@ target_alias = @target_alias@
+ camlib_LTLIBRARIES = libgphoto2_aox.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port			\
+ 	-I$(top_srcdir)/libgphoto2_port/libgphoto2_port	\
+         -I$(top_srcdir)					\

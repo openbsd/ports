@@ -1,0 +1,11 @@
+$OpenBSD: patch-libgphoto2_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- libgphoto2/Makefile.in.orig	Sun Jan 18 20:48:09 2004
++++ libgphoto2/Makefile.in	Fri Feb  4 00:43:37 2005
+@@ -188,7 +188,6 @@ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ INCLUDES = \
+ 	-I$(top_srcdir)					\
+-	-I$(top_srcdir)/intl				\
+ 	-I$(top_srcdir)/libgphoto2_port/libgphoto2_port	\
+ 	-DLOCALEDIR=\"$(datadir)/locale\"		\
+ 	-DCAMLIBS=\"$(camlibdir)\"			\

@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_konica_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/konica/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/konica/Makefile.in	Thu Feb  3 23:31:02 2005
+@@ -194,7 +194,6 @@ EXTRA_DIST = EXPERTS konica.df makefile.
+ 
+ INCLUDES = \
+  -DLOCALIZATION=\"$(datadir)/$(PACKAGE)/$(VERSION)/konica\"	\
+- -I$(top_srcdir)/intl					\
+  -I$(top_srcdir)/libgphoto2				\
+  -I$(top_srcdir)/libgphoto2_port/libgphoto2_port
+ 

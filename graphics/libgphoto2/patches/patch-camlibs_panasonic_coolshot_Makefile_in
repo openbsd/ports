@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_panasonic_coolshot_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/panasonic/coolshot/Makefile.in.orig	Fri Feb  4 00:04:00 2005
++++ camlibs/panasonic/coolshot/Makefile.in	Fri Feb  4 00:04:04 2005
+@@ -189,7 +189,6 @@ target_alias = @target_alias@
+ camlib_LTLIBRARIES = libgphoto2_panasonic_coolshot.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_toshiba_pdrm11_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/toshiba/pdrm11/Makefile.in.orig	Fri Feb  4 00:05:14 2005
++++ camlibs/toshiba/pdrm11/Makefile.in	Fri Feb  4 00:05:18 2005
+@@ -189,7 +189,6 @@ target_alias = @target_alias@
+ camlib_LTLIBRARIES = libgphoto2_toshiba.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2			\
+ 	-I$(top_builddir)/libgphoto2

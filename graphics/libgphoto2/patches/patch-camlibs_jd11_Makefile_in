@@ -1,0 +1,11 @@
+$OpenBSD: patch-camlibs_jd11_Makefile_in,v 1.1 2005/02/14 19:41:11 alek Exp $
+--- camlibs/jd11/Makefile.in.orig	Thu Feb  3 23:30:23 2005
++++ camlibs/jd11/Makefile.in	Thu Feb  3 23:30:57 2005
+@@ -191,7 +191,6 @@ EXTRA_DIST = jd11.html
+ camlib_LTLIBRARIES = libgphoto2_jd11.la
+ 
+ INCLUDES = \
+-        -I$(top_srcdir)/intl				\
+         -I$(top_srcdir)/libgphoto2_port/libgphoto2_port \
+         -I$(top_srcdir)/libgphoto2
+ 
