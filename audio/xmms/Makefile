@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/03/11 17:38:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2002/03/11 20:32:55 lebel Exp $
 # Uses pthreads
 
 COMMENT=		"Multimedia player for the X Window System"
@@ -79,25 +79,21 @@ SUBST_VARS=		PKGNAME-gnome PKGNAME-vorbis PKGNAME-esd PKGNAME-mikmod
 
 .if defined(PACKAGING)
 . if ${SUBPACKAGE} == "-gnome"
-#RUN_DEPENDS=		::audio/xmms
-RUN_DEPENDS=		::/home/naddy/xmms
+RUN_DEPENDS=		::audio/xmms
 LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
 		panel_applet.0::x11/gnome/core
 . endif
 . if ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=		esd.2::audio/esound
-#RUN_DEPENDS=		::audio/xmms
-RUN_DEPENDS=		::/home/naddy/xmms
+RUN_DEPENDS=		::audio/xmms
 . endif
 . if ${SUBPACKAGE} == "-vorbis"
 LIB_DEPENDS=		vorbis.0,vorbisfile.1::audio/libvorbis
-#RUN_DEPENDS=		::audio/xmms
-RUN_DEPENDS=		::/home/naddy/xmms
+RUN_DEPENDS=		::audio/xmms
 . endif
 . if ${SUBPACKAGE} == "-mikmod"
 LIB_DEPENDS=		mikmod.0::audio/libmikmod
-#RUN_DEPENDS=		::audio/xmms
-RUN_DEPENDS=		::/home/naddy/xmms
+RUN_DEPENDS=		::audio/xmms
 . endif
 .else
 . if ${MULTI_PACKAGES:M-gnome}
