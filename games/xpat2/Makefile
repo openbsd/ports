@@ -1,21 +1,16 @@
-# OpenBSD makefile for: xpat2
-# Version required:	1.04
-# Date created:		May 19 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 01:38:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:50:00 marc Exp $
 #
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
+
+MAINTAINER=	angelos@openbsd.org
+
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/solitaires
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	angelos@openbsd.org
-
 USE_X11=	yes
-MAN6=		xpat2.6
 
 post-install:
 	touch $(PREFIX)/lib/X11/xpat/xpat.log

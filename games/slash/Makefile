@@ -1,28 +1,20 @@
-# New ports collection makefile for:	slash
-# Version required:	nethack 3.2.2, slash e8
-# Date created:	 24 Jul 98
-# Whom:			espie
+# $OpenBSD: Makefile,v 1.4 1998/11/09 01:49:56 marc Exp $
 #
-# $OpenBSD: Makefile,v 1.3 1998/09/25 18:00:28 espie Exp $
-
 
 DISTNAME=	slash-e8
 CATEGORIES=	games
+
+MAINTAINER=	espie@OpenBSD.ORG
+
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
+DISTFILES=	nethack-3.2.2${EXTRACT_SUFX}
 
-DISTFILES= nethack-3.2.2${EXTRACT_SUFX}
-
-MASTER_SITES+=http://www.rz.tu-ilmenau.de/~wi019/Slash/
-
-DISTFILES+= Slash-Unix${EXTRACT_SUFX}
-
-MAINTAINER=    espie@OpenBSD.ORG
+MASTER_SITES+=	http://www.rz.tu-ilmenau.de/~wi019/Slash/
+DISTFILES+=	Slash-Unix${EXTRACT_SUFX}
 
 USE_GMAKE=	yes
-USE_X11= yes
-
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+USE_X11=	yes
 
 NHDIR=${PREFIX}/lib/slashdir
 MAKE_ENV+= NHDIR=${NHDIR}

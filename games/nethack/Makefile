@@ -1,27 +1,17 @@
-# New ports collection makefile for:	nethack
-# Version required:	3.2.2
-# Date created:		27 March 1995
-# Whom:			asami
-#
-# $OpenBSD: Makefile,v 1.1 1998/07/29 01:22:23 espie Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:55 marc Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.2
 CATEGORIES=	games
+
+MAINTAINER=    espie@OpenBSD.ORG
+
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
 		${MASTER_SITE_GNU}
 
-#MAINTAINER=	ports@FreeBSD.ORG
-MAINTAINER=    espie@OpenBSD.ORG
-
-# part of openbsd
-#LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-
 USE_GMAKE=	yes
 USE_X11= yes
-
-MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
 NHDIR=${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR}

@@ -1,13 +1,13 @@
-# OpenBSD makefile for: xchomp
-# Version required:     pl1
-# Date created:         May 19 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 03:27:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:57 marc Exp $
 #
 
 DISTNAME=       xchomp-pl1
 CATEGORIES=	games
+
+BROKEN=		"What should the master site be?"
+
+MAINTAINER=	angelos@openbsd.org
+
 MASTER_SITES=
 MASTER_SITE_SUBDIR=	../../R5contrib
 #
@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	../../R5contrib
 #
 #DISTFILES=	part01.Z part02.Z part03.Z part04.Z part05.Z patch1.Z
 #MASTER_SITES=	ftp://ftp.wustl.edu/usenet/comp.sources.x/volume06
-
-MAINTAINER=	angelos@openbsd.org
 
 WRKSRC=		${WRKDIR}/xchomp
 USE_IMAKE=	yes

@@ -1,21 +1,16 @@
-# OpenBSD makefile for:   gnushogi
-# Version required:    1.2p03
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 03:41:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:55 marc Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
 PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	angelos@openbsd.org
 
+MASTER_SITES=	${MASTER_SITE_GNU}
+
 DOCFILES= BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam
-MAN6=		gnushogi.6
 
 post-configure:
 	echo "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}

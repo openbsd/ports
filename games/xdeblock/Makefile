@@ -1,24 +1,14 @@
-# OpenBSD makefile for:   xdeblock
-# Version required:    v1.0
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:47 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:58 marc Exp $
 #
 
 DISTNAME=	xdeblo_v1.0
 PKGNAME=	xdeblock-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
-DISTFILES=	xdeblock.tgz
 
 MAINTAINER=	angelos@openbsd.org
 
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
+DISTFILES=	xdeblock.tgz
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

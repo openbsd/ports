@@ -1,17 +1,15 @@
-# OpenBSD makefile for: xsol
-# Version required:     2.1.1
-# Date created:         May 19 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 02:15:52 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:50:01 marc Exp $
 #
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/games/
+
+#BROKEN=	"dir/source doesn't exist on specified master site"
 
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	ftp://iraun1.ira.uka.de/pub/x11/games/
 
 USE_IMAKE=      yes
 

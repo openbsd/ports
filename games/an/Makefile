@@ -1,21 +1,16 @@
-# OpenBSD makefile for:	an
-# Version required:	0.93
-# Date created:		July 11 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/12 04:42:27 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:54 marc Exp $
 #
 
 DISTNAME=	an-0.93
 CATEGORIES=	games
-MASTER_SITES=	ftp://suburbia.net/pub/rmj/ \
-		ftp://ftp.suburbia.net/pub/rmj/
 
 MAINTAINER=	angelos@openbsd.org
 
+MASTER_SITES=	ftp://suburbia.net/pub/rmj/ \
+		ftp://ftp.suburbia.net/pub/rmj/
+
 MAKE_ENV+=	DEFS=-DDEFDICT=\\\"/usr/share/dict/words\\\"
 ALL_TARGET=	with-getopt
-MAN6=		an.6
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/an ${PREFIX}/bin

@@ -1,24 +1,14 @@
-# OpenBSD makefile for:	xbill
-# Version required:	2.0
-# Date created:		December 15, 1997
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:44 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:56 marc Exp $
 #
 
 DISTNAME=	xbill-2.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	don@OpenBSD.ORG
 
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games
+EXTRACT_SUFX=	.tgz
 
 USE_IMAKE=	yes
 

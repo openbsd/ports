@@ -1,18 +1,16 @@
-# OpenBSD makefile for:	xminesweep
-# Version required:	3.0
-# Date created:		May 19 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 02:00:14 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:59 marc Exp $
 #
 
 DISTNAME=	xminesweep3.0
 PKGNAME=	xminesweep-3.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/games/
-EXTRACT_SUFX=	.tar.Z
+
+#BROKEN=	"source no longer available on specified MASTER_SITES"
 
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/games/
+EXTRACT_SUFX=	.tar.Z
 
 USE_IMAKE=	yes
 

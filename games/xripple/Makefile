@@ -1,17 +1,16 @@
-# new ports collection makefile for:	xripple
-# Version:				1.0 <no version #>
-# Date created:				18 March 1998
-# Whom:					mickey
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/03/18 19:47:00 mickey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:50:01 marc Exp $
 #
 
 DISTNAME=	xripple
 PKGNAME=	xripple-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://www.cse.unsw.edu.au/pub/users/s2154962/
 
-MAINTAINER=	ports@openbsd.org
+#BROKEN=	"www.cse.unsw.edu.au A record not found"
+#		(Perhaps this is just a transient error)
+
+MAINTAINER=	mickey@openbsd.org
+
+MASTER_SITES=	ftp://www.cse.unsw.edu.au/pub/users/s2154962/
 
 USE_IMAKE=	yes
 ALL_TARGET=	xripple

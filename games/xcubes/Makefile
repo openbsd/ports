@@ -1,21 +1,18 @@
-# OpenBSD makefile for:   xcubes
-# Version required:    V5.4.1
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 01:07:21 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:57 marc Exp $
 #
 
 DISTNAME=	xcubes-5.4.1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/xpuzzles
+
+#BROKEN=	"newer version available"
 
 MAINTAINER=	angelos@openbsd.org
 
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	games/xpuzzles
+
 WRKSRC=		${WRKDIR}/xcubes
 USE_IMAKE=	yes
-MAN1=		xcubes.1
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xcubes ${PREFIX}/bin

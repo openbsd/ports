@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/15 17:02:46 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/11/09 01:49:54 marc Exp $
 #
 
 DISTNAME=	abuse_pd
 PKGNAME=	${DISTNAME}-1.0
 CATEGORIES=	games
 
-BROKEN=		"newer version available"
+#BROKEN=	"newer version available"
 
 MAINTAINER=	todd@OpenBSD.org
 

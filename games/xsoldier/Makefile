@@ -1,22 +1,14 @@
-# OpenBSD makefile for:	xsoldier
-# Version required:	0.96
-# Date created:		December 6, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:26:52 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/11/09 01:50:01 marc Exp $
 #
 
 DISTNAME=	xsoldier-0.96
 CATEGORIES=	games x11
-MASTER_SITES=	http://www.educ.info.kanagawa-u.ac.jp/~s945750/xsoldier/
+
+#BROKEN=	"source doesn't exist on specified master site"
 
 MAINTAINER=	angelos@openbsd.org
 
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+MASTER_SITES=	http://www.educ.info.kanagawa-u.ac.jp/~s945750/xsoldier/
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

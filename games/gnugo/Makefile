@@ -1,16 +1,12 @@
-# OpenBSD makefile for:	gnugo
-# Version required:	1.2
-# Date created:		May 19 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 03:33:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:55 marc Exp $
 #
 
 DISTNAME=	gnugo-1.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 WRKSRC=		${WRKDIR}/gnugo
 ALL_TARGET=	gnugo

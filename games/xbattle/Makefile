@@ -1,17 +1,14 @@
-# OpenBSD makefile for:	xbattle
-# Version required:     15.4.1
-# Date created:         May 19 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 00:02:55 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:56 marc Exp $
 #
 
 DISTNAME=	xbattle-5.4.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/	\
-		ftp://www.tiac.net/users/lesher/xbattle/
 
+#BROKEN?:	there is a 6.0.c version, but I don't know if it is an upgrade
+#		or a different game
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
 USE_IMAKE=	yes
 

@@ -1,19 +1,16 @@
-# OpenBSD makefile for:   xbat
-# Version required:    1.11
-# Date created:        May 19 1998
-# Whom:                Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 01:21:34 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:56 marc Exp $
 #
 
 DISTNAME=	xev111
 PKGNAME=        xbat-1.11
 CATEGORIES=     games
-MASTER_SITES=   http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
+
+#BROKEN=	"You don't have permission to access /~wai/Xbat/ on this server"
+NO_CDROM=	"Possible copyright infringement"
 
 MAINTAINER=	angelos@openbsd.org
 
-NO_CDROM=	Possible copyright infringement
+MASTER_SITES=   http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/Xev111

@@ -1,17 +1,13 @@
-# OpenBSD makefile for: xjewel
-# Version required:     1.6
-# Date created:         May 19 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/20 03:12:38 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:58 marc Exp $
 #
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
-DISTFILES=	xjewel-1.6.tar.z
 
 MAINTAINER=	angelos@openbsd.org
+
+MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+EXTRACT_SUFX=	.tar.z
 
 USE_IMAKE=	yes
 
