@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/20 08:15:15 nino Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/03 19:26:34 nino Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 
@@ -6,7 +6,7 @@ DISTNAME=		libglade-0.17
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Jim Geovedi <negative@magnesium.net>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/libglade/0.17/}
 

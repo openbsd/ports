@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/20 08:15:16 nino Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/03 19:26:34 nino Exp $
 
 COMMENT=		"official Users Guide for GNOME"
 
@@ -7,7 +7,7 @@ PKGNAME=		gnome-${DISTNAME}
 CATEGORIES=		x11/gnome
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Jim Geovedi <negative@magnesium.net>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/users-guide/1.2/}
 
