@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/22 01:09:30 espie Exp $
-@option no-default-conflict
+@comment $OpenBSD: PLIST,v 1.2 2003/12/22 01:14:15 espie Exp $
 share/doc/icon/icon-book${FLAVOR_EXT}.pdf
 @dirrm share/doc/icon
