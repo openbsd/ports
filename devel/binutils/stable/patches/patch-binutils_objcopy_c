@@ -1,6 +1,6 @@
---- binutils/objcopy.c.orig	Fri Mar  8 10:02:46 2002
-+++ binutils/objcopy.c	Fri Mar  8 10:03:36 2002
-@@ -1243,7 +1243,7 @@
+--- binutils/objcopy.c.orig	Thu Jun  7 00:12:27 2001
++++ binutils/objcopy.c	Sun Mar 10 02:28:35 2002
+@@ -1243,7 +1243,7 @@ copy_archive (ibfd, obfd, output_target)
      } *list, *l;
    bfd **ptr = &obfd->archive_head;
    bfd *this_element;
@@ -9,7 +9,7 @@
  
    /* Make a temp directory to hold the contents.  */
  #if defined (_WIN32) && !defined (__CYGWIN32__)
-@@ -1933,7 +1933,7 @@
+@@ -1933,7 +1933,7 @@ strip_main (argc, argv)
        if (output_file != NULL)
  	tmpname = output_file;
        else
@@ -18,7 +18,7 @@
        status = 0;
  
        copy_file (argv[i], tmpname, input_target, output_target);
-@@ -2370,7 +2370,7 @@
+@@ -2370,7 +2370,7 @@ copy_main (argc, argv)
  
    if (output_filename == (char *) NULL)
      {

@@ -1,11 +1,11 @@
---- binutils/bucomm.h.orig     Wed Feb 20 18:35:42 2002
-+++ binutils/bucomm.h  Wed Feb 20 18:36:24 2002
-@@ -166,7 +166,7 @@
-
+--- binutils/bucomm.h.orig	Thu Jun  7 00:12:27 2001
++++ binutils/bucomm.h	Sun Mar 10 02:28:35 2002
+@@ -166,7 +166,7 @@ void list_supported_targets PARAMS ((con
+ 
  void print_arelt_descr PARAMS ((FILE *file, bfd *abfd, boolean verbose));
-
+ 
 -char *make_tempname PARAMS ((char *));
 +char *make_tempname PARAMS ((char *, int));
-
+ 
  bfd_vma parse_vma PARAMS ((const char *, const char *));
-
+ 
