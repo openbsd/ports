@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.powerpc,v 1.1.1.1 2003/07/20 21:09:29 jolan Exp $
-lib/vlc/libmemcpyaltivec.a

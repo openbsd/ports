@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/15 14:25:59 jolan Exp $
-
-# exits immediately (?)
-NOT_FOR_ARCHS=	powerpc
+# $OpenBSD: Makefile,v 1.5 2003/08/16 20:36:12 jolan Exp $
 
 COMMENT=	"videolan client; multimedia player"
 
 VER=		0.6.2
 DISTNAME=	vlc-${VER}
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${VER}/
 
@@ -27,14 +25,16 @@ MODULES=	gettext
 LIB_DEPENDS=	SDL::devel/sdl \
 		gtk.1.2,gdk.1.2::x11/gtk+ \
 		glib,gthread::devel/glib \
+		png::graphics/png \
 		mad.1,id3tag.1::audio/mad \
 		ogg::audio/libogg \
-		vorbis::audio/libvorbis \
+		vorbis,vorbisenc::audio/libvorbis \
 		mpeg2::graphics/libmpeg2 \
 		avcodec::graphics/ffmpeg
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=--disable-oss \
 		--enable-sdl \
 		--disable-dvbpsi \
@@ -43,11 +43,19 @@ CONFIGURE_ARGS+=--disable-oss \
 		--disable-vcd \
 		--disable-dvd
 
-FLAVORS=	i386 powerpc no_dvd
+FLAVORS=	no_dvd
 FLAVOR?=
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-FLAVOR+=${MACHINE_ARCH}
+.if ${MACHINE_ARCH} == "i386"
+SED_PLIST+=	|sed -e '/^IFCRAPPYHW:/s///'
+.else
+SED_PLIST+=	|sed -e '/^IFCRAPPYHW:/d'
+.endif
+
+.if ${MACHINE_ARCH} == "powerpc"
+SED_PLIST+=	|sed -e '/^IFPPC:/s///'
+.else
+SED_PLIST+=	|sed -e '/^IFPPC:/d'
 .endif
 
 # XXX video window initialization fails without this
@@ -59,8 +67,8 @@ CFLAGS+=-mhard-quad-float
 CONFIGURE_ARGS+=--disable-a52 --disable-dvdplay --disable-dvdread
 .else
 CONFIGURE_ARGS+=--enable-a52 --enable-dvdplay --enable-dvdread
-BUILD_DEPENDS+=	::audio/liba52
-LIB_DEPENDS+=	dvdplay::devel/libdvdplay \
+LIB_DEPENDS+=	a52::audio/liba52 \
+		dvdplay::devel/libdvdplay \
 		dvdread::devel/libdvdread
 .endif
 

@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/15 14:26:00 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/08/16 20:36:12 jolan Exp $
 !%%no_dvd%%
-%%i386%%
-%%powerpc%%
 bin/gvlc
 bin/vlc
 bin/vlc-config
@@ -59,7 +57,7 @@ lib/vlc/codec/liblpcm_plugin.so
 lib/vlc/codec/libmpeg_audio_plugin.so
 lib/vlc/codec/librawvideo_plugin.so
 lib/vlc/codec/libspudec_plugin.so
-lib/vlc/codec/libsubsdec_plugin.so
+@comment lib/vlc/codec/libsubsdec_plugin.so
 lib/vlc/codec/libvorbis_plugin.so
 lib/vlc/control/libgestures_plugin.so
 lib/vlc/control/libhttp_plugin.so
@@ -86,6 +84,14 @@ lib/vlc/demux/libts_plugin.so
 lib/vlc/demux/libwav_plugin.so
 lib/vlc/gui/libgtk_plugin.so
 lib/vlc/libffmpeg.a
+IFCRAPPYHW:lib/vlc/libi420_rgb_mmx.a
+IFCRAPPYHW:lib/vlc/libi420_ymga_mmx.a
+IFCRAPPYHW:lib/vlc/libi420_yuy2_mmx.a
+IFCRAPPYHW:lib/vlc/libi422_yuy2_mmx.a
+IFPPC:lib/vlc/libmemcpyaltivec.a
+IFCRAPPYHW:lib/vlc/libmemcpy3dn.a
+IFCRAPPYHW:lib/vlc/libmemcpymmx.a
+IFCRAPPYHW:lib/vlc/libmemcpymmxext.a
 lib/vlc/libstream_out_transcode.a
 lib/vlc/misc/libdummy_plugin.so
 lib/vlc/misc/libfreetype_plugin.so
@@ -125,6 +131,7 @@ lib/vlc/video_filter/libcrop_plugin.so
 lib/vlc/video_filter/libdeinterlace_plugin.so
 lib/vlc/video_filter/libdistort_plugin.so
 lib/vlc/video_filter/libinvert_plugin.so
+lib/vlc/video_filter/liblogo_plugin.so
 lib/vlc/video_filter/libmotionblur_plugin.so
 lib/vlc/video_filter/libtransform_plugin.so
 lib/vlc/video_filter/libwall_plugin.so
