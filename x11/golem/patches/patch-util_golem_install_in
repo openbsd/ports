@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_golem_install_in,v 1.1 2004/06/22 21:13:57 couderc Exp $
+--- util/golem.install.in.orig	Tue Jun 22 23:28:26 2004
++++ util/golem.install.in	Tue Jun 22 23:31:52 2004
+@@ -28,8 +28,8 @@
+ #
+ 
+ # the makefile will replace this with real stuff
+-BINDIR=		#bindir#
+-DATADIR=	#datadir#
++BINDIR=#bindir#
++DATADIR=#datadir#
+ 
+ #
+ # functions to make the .xsession and .xinitrc files
