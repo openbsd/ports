@@ -1,8 +1,12 @@
-lib/X11/fonts/chinese/fonts.alias
-lib/X11/fonts/chinese/fonts.dir
+@comment $OpenBSD: PLIST,v 1.4 2000/08/22 04:14:13 kevlo Exp $
+lib/X11/fonts/chinese/fonts.alias-taipei
 lib/X11/fonts/chinese/taipei15.pcf.gz
 lib/X11/fonts/chinese/taipei16.pcf.gz
 lib/X11/fonts/chinese/taipei24.pcf.gz
 lib/X11/fonts/chinese/taipeik24.pcf.gz
+@exec cat %B/fonts.alias-* >%B/fonts.alias
 @exec echo "Remember to add %B to your font path."
+@exec /usr/X11R6/bin/mkfontdir %B || true
+@unexec cat %B/fonts.alias-* >%B/fonts.alias
+@unexec /usr/X11R6/bin/mkfontdir %B || true
 @unexec echo "Remove %B manually if it's now empty"

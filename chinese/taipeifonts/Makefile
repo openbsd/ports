@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/09 06:57:59 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/22 04:13:58 kevlo Exp $
 
 DISTNAME=       chinese-fonts-taipei
 CATEGORIES=     chinese x11
+NEED_VERSION=	1.319
 DIST_SUBDIR=    chinese-fonts
 
 MASTER_SITES=	ftp://linux.cis.nctu.edu.tw/packages/chinese/fonts/taipeifont/
@@ -20,17 +21,16 @@ DISTFILES=	${FONTS}
 NO_BUILD=	Yes
 EXTRACT_ONLY=
 
-USE_IMAKE=	Yes
-FAKE=		Yes
+CONFIGURE_STYLE=	imake
 
-FONTDIR=${PREFIX}/lib/X11/fonts/chinese
+FONTDIR=	${PREFIX}/lib/X11/fonts/chinese
 
 post-extract:
 	@mkdir -p ${WRKDIST}
-	@cp ${FILESDIR}/Imakefile ${FILESDIR}/taipei.alias ${FILESDIR}/fonts.dir ${WRKDIST}
+	@cp ${FILESDIR}/Imakefile ${FILESDIR}/taipei.alias ${WRKDIST}
 	@for i in ${FONTS} ; do cp $(FULLDISTDIR)/$$i ${WRKDIST}; done
 
 post-install:
-	@cp ${WRKDIST}/fonts.dir ${FONTDIR}
+	@cd ${FONTDIR} && mv fonts.alias fonts.alias-taipei
 
 .include <bsd.port.mk>
