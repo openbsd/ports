@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/29 06:55:40 kevlo Exp $
+bin/axyftp
+share/axyftp/help/artistic.txt
+share/axyftp/help/axyftp.html
+share/axyftp/help/doc.gif
+share/axyftp/help/folder.gif
+share/axyftp/help/glossary.html
+share/axyftp/help/help.html
+share/axyftp/help/intro.html
+share/axyftp/help/lgpl.txt
+share/axyftp/help/link.gif
+share/axyftp/help/main.html
+share/axyftp/help/options.html
+share/axyftp/help/panels.html
+share/axyftp/help/problems.html
+share/axyftp/help/session.html
+share/axyftp/help/up.gif
+man/man1/axyftp.1
+@dirrm share/axyftp/help
+@dirrm share/axyftp

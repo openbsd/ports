@@ -1,0 +1,14 @@
+AxYftp is ftp client with intuitive graphical user interface.
+It is written using Motif widget set and XmAxyList Widget. 
+GTK+ GUI implementation is also available. 
+
+Already available features are :
+
+o user-friendly, intuitive interface (both GTK+ and Motif)
+o passive and non-passive data transfers 
+o convenient session manager window 
+o on-line help system 
+o recursive downloads and uploads ith resume option 
+o multiple delete with option to recurse 
+
+WWW:	http://www.wxftp.seul.org/
