@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network_c,v 1.1 2004/12/28 09:31:05 jakob Exp $
+--- src/network.c.orig	Thu Oct 14 17:03:49 2004
++++ src/network.c	Tue Dec 28 10:29:54 2004
+@@ -125,7 +125,7 @@ int s_poll_wait(s_poll_set *fds, int tim
+     int retval;
+ 
+     do { /* skip "Interrupted system call" errors */
+-        retval=poll(fds->ufds, fds->nfds, 1000*timeout);
++        retval=poll(fds->ufds, fds->nfds, timeout<0 ? -1 : 1000*timeout);
+             /* no timeout -> main loop */
+         if(timeout<0 && retval>0 && s_poll_canread(fds, signal_pipe[0]))
+             signal_pipe_empty();
