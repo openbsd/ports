@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2001/07/30 13:12:10 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/07/30 13:15:24 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
+
+.include <bsd.own.mk>
 
 COMMENT=	"algebraic and symbolic computations; commercial"
 
