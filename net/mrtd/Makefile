@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/14 19:11:32 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: Christopher Turan <turan@openbsd.org>
 #
@@ -7,7 +7,7 @@
 # What port/package will be created
 #
 DISTNAME=		mrt-1.6.0a-990430-src
-PKGNAME=		mrt-1.6.0a
+PKGNAME=		mrtd-1.6.0a
 CATEGORIES=     	net
 NEED_VERSION=		1.191
 FAKE=No
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-# where the source files and patches can be fetched
-#
+CONFIGURE_ARGS+=	--disable-ipv6 --disable-thread
+
 MASTER_SITES=		ftp://ftp.merit.edu/net-research/mrt/
 
 GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
