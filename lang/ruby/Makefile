@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2002/07/03 16:31:28 couderc Exp $
+# $OpenBSD: Makefile,v 1.23 2002/09/20 14:58:38 couderc Exp $
 
-COMMENT=	object oriented script language with threads
+COMMENT=	"object oriented script language with threads"
 VERSION=	1.6.7
 DISTNAME=	ruby-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.362
+
 MASTER_SITES=	ftp://www.ruby-lang.org/pub/ruby/ \
 		ftp://mirror.nucba.ac.jp/pub/ruby/ \
 		ftp://ftp.kr.freebsd.org/pub/ruby/
