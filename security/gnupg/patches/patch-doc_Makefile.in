@@ -1,11 +1,12 @@
---- doc/Makefile.in.orig	Mon Oct 30 13:03:14 2000
-+++ doc/Makefile.in	Tue Oct 17 15:40:48 2000
-@@ -111,7 +111,7 @@
- 
- man_MANS = gpg.1 gpgv.1
+$OpenBSD: patch-doc_Makefile.in,v 1.2 2001/06/05 09:19:06 reinhard Exp $
+--- doc/Makefile.in.orig	Tue May 29 08:59:09 2001
++++ doc/Makefile.in	Fri Jun  1 18:56:47 2001
+@@ -137,7 +137,7 @@ info_TEXINFOS = gpg.texi gpgv.texi
+ # Need this to avoid building of dvis with automake 1.4
+ DVIS = 
  
 -pkgdata_DATA = FAQ faq.html
 +#pkgdata_DATA = FAQ faq.html
  
- BUILT_SOURCES = FAQ faq.html
- 
+ BUILT_SOURCES = FAQ faq.html 
+ # we can't add gpg.texi gpgv.texi here because automake does not like them to

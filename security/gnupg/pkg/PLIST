@@ -1,22 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/05/23 15:28:50 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/06/05 09:19:08 reinhard Exp $
 bin/gpg
 bin/gpgv
-lib/gnupg/rndunix
-lib/gnupg/rndegd
-lib/gnupg/tiger
+@unexec install-info --delete --info-dir=%D/info %D/info/gpg.info
+@unexec install-info --delete --info-dir=%D/info %D/info/gpgv.info
+info/gpg.info
+info/gpgv.info
+@exec install-info --info-dir=%D/info %D/info/gpg.info
+@exec install-info --info-dir=%D/info %D/info/gpgv.info
 %%idea%%
+lib/gnupg/rndegd
+lib/gnupg/rndunix
+lib/gnupg/tiger
 man/man1/gpg.1
 man/man1/gpgv.1
-share/doc/gnupg/README
 share/doc/gnupg/AUTHORS
-share/doc/gnupg/COPYING
-share/doc/gnupg/THANKS
-share/doc/gnupg/TODO
 share/doc/gnupg/BUGS
+share/doc/gnupg/COPYING
 share/doc/gnupg/DETAILS
 share/doc/gnupg/FAQ
-share/doc/gnupg/OpenPGP
 share/doc/gnupg/HACKING
+share/doc/gnupg/OpenPGP
+share/doc/gnupg/README
+share/doc/gnupg/THANKS
+share/doc/gnupg/TODO
 share/doc/gnupg/faq.html
 share/gnupg/options.skel
 share/locale/da/LC_MESSAGES/gnupg.mo
@@ -32,9 +38,39 @@ share/locale/nl/LC_MESSAGES/gnupg.mo
 share/locale/pl/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
 share/locale/pt_PT/LC_MESSAGES/gnupg.mo
-share/locale/ru/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
-@dirrm lib/gnupg
-@dirrm share/doc/gnupg
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/pt_PT/LC_MESSAGES
+@dirrm share/locale/pt_PT
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
+@dirrm share/locale/es_ES/LC_MESSAGES
+@dirrm share/locale/es_ES
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale
 @dirrm share/gnupg
+@dirrm share/doc/gnupg
+@dirrm lib/gnupg
