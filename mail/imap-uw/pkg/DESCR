@@ -1,9 +1,13 @@
 This is the IMAP4rev1 server from the University of Washington.
 Included are backwards-compatible (almost) POP2 and POP3 servers.
 
-        ipop2d           POP2 daemon
-        ipop3d           POP3 daemon
-        imapd            IMAP4rev1 daemon
+	ipop2d		POP2 daemon
+	ipop3d		POP3 daemon
+	imapd		IMAP4rev1 daemon
+
+Flavors
+
+	noplain		Disable plaintext passwords except when using TLS
 
 
 WWW: ${HOMEPAGE}

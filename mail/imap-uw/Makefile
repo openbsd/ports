@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2002/01/10 09:00:42 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2002/06/24 08:31:33 jakob Exp $
 
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
 VERSION=	2001.315
 DISTNAME=	pine4.44
 PKGNAME=	imap-uw-${VERSION}
+PKGNAME-ipop=	ipop-uw-${VERSION}
 CATEGORIES=	mail
 NEED_VERSION=	1.491
 
@@ -21,11 +22,17 @@ PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/imap
-
 ALL_TARGET=	bso
+MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss"
 
-MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" SSLTYPE="unix" \
-		EXTRAAUTHENTICATORS="gss"
+FLAVORS=	noplain
+FLAVOR?=
+
+.if ${FLAVOR:L:Mnoplain}
+MAKE_FLAGS+=	SSLTYPE="nopwd"
+.else
+MAKE_FLAGS+=	SSLTYPE="unix"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
