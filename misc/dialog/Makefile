@@ -3,12 +3,11 @@
 # Date created:			  12 November 1998
 # Whom:				  Yannick Cote 
 #
-# $OpenBSD: Makefile,v 1.4 2000/04/09 17:37:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/20 13:53:03 kevlo Exp $
 #
 
 DISTNAME= 	dialog-0.6z	
 CATEGORIES=	misc
-FAKE=No
 MASTER_SITES=	${MASTER_SITE_SUNSITE} 
 MASTER_SITE_SUBDIR= utils/shell
 
@@ -19,6 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=		YES
+USE_GMAKE=		Yes
+FAKE=			Yes
 
 .include <bsd.port.mk>
