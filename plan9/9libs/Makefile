@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2003/05/24 19:42:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/21 19:19:35 espie Exp $
 
-COMMENT=		"Plan 9 compatability libraries"
+COMMENT=		"Plan 9 compatibility libraries"
 
 VERSION=		1.0
 DISTNAME=		9libs-${VERSION}

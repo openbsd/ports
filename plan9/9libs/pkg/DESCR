@@ -1,8 +1,8 @@
-This is 9libs, a package of Plan 9 compatability libraries derived from
+This is 9libs, a package of Plan 9 compatibility libraries derived from
 the X11 version of Rob Pike's editor, sam. The package consists of:
 
 * libXg, an X11 implementation of Plan 9's libg graphics library.
-  The library's declaration are in include/libg.h
+  The library's declarations are in include/libg.h
 * libframe, a library which implements rectangular text areas using
   libXg. Declarations are in include/frame.h
 * libplan9c, a library which aims to provide implementations of some of
