@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2004/12/01 06:49:06 jolan Exp $
+# $OpenBSD: Makefile,v 1.203 2004/12/02 21:22:08 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -189,6 +189,7 @@
      SUBDIR += wmx
      SUBDIR += wterm
      SUBDIR += wxWidgets
+     SUBDIR += x11vnc
      SUBDIR += x2vnc
      SUBDIR += x2x
 #    SUBDIR += x3270
