@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2000/10/22 14:03:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/11/21 16:05:53 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.3
 CATEGORIES=	print
-NEED_VERSION=	1.310
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ftp.lerc.nasa.gov/ImageMagick/delegates/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/delegates/ \
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
-USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

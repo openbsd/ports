@@ -1,11 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/07/19 23:06:27 brad Exp $
-bin/ftdump
-bin/ftlint
-bin/ftstring
-bin/ftstrpnm
-bin/fttimer
-bin/ftview
-bin/ftzoom
+@comment $OpenBSD: PLIST,v 1.8 2000/11/21 16:05:53 brad Exp $
 include/freetype.h
 include/fterrid.h
 include/ftnameid.h
