@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2002/02/11 00:51:27 avsm Exp $ 
-
-MULTI_PACKAGES=	-pop3
+# $OpenBSD: Makefile,v 1.26 2002/04/17 16:19:39 naddy Exp $ 
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
 
 COURIERVER=	1.4.2
 DISTNAME=	courier-imap-${COURIERVER}
-PKGNAME-pop3=	courier-pop3-${COURIERVER}
+FULLPKGNAME-pop3= courier-pop3-${COURIERVER}
 
 CATEGORIES=	mail
 NEED_VERSION=	1.503
@@ -26,6 +24,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	mysql ldap
 FLAVOR?=
+
+MULTI_PACKAGES=	-pop3
+SUBPACKAGE?=
 
 SEPARATE_BUILD=	concurrent
 COURIERCONF=	${SYSCONFDIR}/courier-imap
@@ -67,6 +68,11 @@ LIB_DEPENDS+=		ldap.2,lber.2:openldap-client-2.*:databases/openldap
 CONFIGURE_ARGS+=	--without-authldap
 .endif
 
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=	:courier-imap-${COURIERVER}:mail/courier-imap
+LIB_DEPENDS=
+.endif
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/courier-imap
 .for i in pop3d-ssl imapd-ssl pop3d imapd
@@ -86,7 +92,3 @@ post-install:
 	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/authdaemonrc.dist ${EXAMPLE_DIR}/authdaemonrc
 
 .include <bsd.port.mk>
-
-.if ${SUBPACKAGE} == "-pop3"
-RUN_DEPENDS+=	${LOCALBASE}/bin/imapd:courier-imap-${COURIERVER}:mail/courier-imap
-.endif
