@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2002/10/21 16:49:06 marcm Exp $
+# $OpenBSD: Makefile,v 1.23 2003/01/21 16:58:11 marcm Exp $
 
 COMMENT=		"USENET software package designed for small sites"
 
-VERSION=		1.9.27
+VERSION=		1.9.32
 DISTNAME=		leafnode-${VERSION}.rel
 PKGNAME=		leafnode-${VERSION}
 CATEGORIES=		news
@@ -22,20 +22,19 @@ EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		pcre::devel/pcre
 
-SYSCONFDIR=		/etc/leafnode
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var
 CONFIGURE_ARGS+=	--with-lockfile=/var/spool/news/fetchnews.lck
 CONFIGURE_ARGS+=	--with-ipv6
 
+DOCS=		README README-FQDN INSTALL FAQ.txt
+
 post-install:
-	@$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/leafnode && \
-	cd ${WRKSRC} && \
-	$(INSTALL_DATA) README README-FQDN INSTALL FAQ.txt \
+	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/leafnode
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/leafnode
+	cd ${WRKSRC} && $(INSTALL_DATA) ${DOCS} \
 		${PREFIX}/share/doc/leafnode
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/leafnode && \
-	mv ${WRKINST}/${SYSCONFDIR}/config.example \
-		${PREFIX}/share/examples/leafnode/config && \
-	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/leafnode/
+	${INSTALL_DATA} ${WRKINST}/${SYSCONFDIR}/leafnode/* \
+		${PREFIX}/share/examples/leafnode/
 
 .include <bsd.port.mk>

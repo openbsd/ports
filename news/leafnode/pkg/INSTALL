@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.4 2002/09/24 00:24:19 marcm Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/01/21 16:58:11 marcm Exp $
 
 P_NAME=leafnode
 
 DIRS='
-.
+leafnode
 '
 
 FILES='
-config
+leafnode/config
 '
 
 SPOOLDIR=/var/spool/news
@@ -33,7 +33,7 @@ do_create_user()
 		echo "User news already exists... ok"
 	else
 		echo -n "Adding user news..."
-		user add -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin news
+		user add -m -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin news
 		echo "ok"
 	fi
 }
@@ -61,7 +61,7 @@ do_create_spool_dirs()
 do_post()
 {
 	DEST_PFX=${SYSCONFDIR}
-	SOURCE_PFX=${PREFIX}/share/examples/${P_NAME}
+	SOURCE_PFX=${PREFIX}/share/examples
 
 	echo 
 	echo "+--------------- ${P_NAME}"
@@ -78,7 +78,7 @@ do_post()
 		if [ -f "${DEST_PFX}/$f" ]; then
 			OLD_CONFS="${OLD_CONFS} $f"
 		else
-			if ! install -m 644 ${SOURCE_PFX}/$f ${DEST_PFX}/$f; then
+			if ! install -m 644 ${SOURCE_PFX}/$f.example ${DEST_PFX}/$f; then
 				echo "| ERROR: The following file could not be installed, exiting: ${DEST_PFX}/$f"
 				exit 1
 			fi

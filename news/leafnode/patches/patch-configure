@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2003/01/21 16:58:11 marcm Exp $
+--- configure.orig	Mon Jan  6 15:20:28 2003
++++ configure	Mon Jan  6 15:22:45 2003
+@@ -1754,7 +1754,7 @@ echo "$as_me: WARNING: *** use --sysconf
+ echo "$as_me: WARNING: ***" >&2;}
+   sleep 1
+ fi
+-sysconfdir=$CONFDIR
++sysconfdir="$CONFDIR/leafnode"
+ 
+ 
+ if test "$localstatedir" = '${prefix}/var' && test "$prefix" = NONE ; then

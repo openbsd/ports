@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.5 2002/09/24 00:24:19 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.6 2003/01/21 16:58:11 marcm Exp $
 #
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 FILES='
-config
+leafnode/config
 '
 
 SPOOLDIR=/var/spool/news
@@ -15,8 +15,8 @@ SPOOLDIR=/var/spool/news
 echo
 echo "+--------------- $1"
 echo "| To fully remove $1 from your system you should also"
-echo "| remove the configuration files from the ${SYSCONFDIR} directory"
-echo "| as well as the news spool directory ${SPOOLDIR}."
+echo "| remove the configuration files from the ${SYSCONFDIR}/leafnode"
+echo "| directory as well as the news spool directory ${SPOOLDIR}."
 echo "|"
 echo "| If you are planning on installing $1 again in the future"
 echo "| you can leave them as they are."
