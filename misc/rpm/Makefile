@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 02:30:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/23 19:27:15 naddy Exp $
 
 COMMENT=	"redhat package manager"
 
+PKGNAME=	${DISTNAME}p1
 DISTNAME=	rpm-3.0.6
 CATEGORIES=	misc archivers emulators
 NEED_VERSION=	1.402
