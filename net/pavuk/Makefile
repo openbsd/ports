@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/27 02:53:47 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2003/01/30 22:39:07 espie Exp $
 
 COMMENT=	"tool to mirror contents of HTTP and FTP servers"
 
@@ -28,7 +28,8 @@ MODULES=	gettext
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-debug --disable-tree  \
-		 --disable-gnome --with-regex=posix
+		 --disable-gnome --with-regex=posix \
+		 --disable-socks
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
