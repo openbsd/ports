@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2003/11/16 22:54:02 jolan Exp $
---- src/Makefile.in.orig	2003-11-16 01:28:51.000000000 -0600
-+++ src/Makefile.in	2003-11-16 16:19:49.000000000 -0600
-@@ -132,7 +132,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2004/06/23 23:38:10 jolan Exp $
+--- src/Makefile.in.orig	2004-06-04 15:00:18.000000000 -0500
++++ src/Makefile.in	2004-06-23 17:34:20.000000000 -0500
+@@ -131,7 +131,7 @@ target_alias = @target_alias@
  SUBDIRS = missing libfaim $(irc_dir)
  bin_PROGRAMS = pork
  
 -AM_CFLAGS = -funsigned-char -Imissing -Wall -Ilibfaim $(irc_include_path) -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(pkgdatadir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
 +AM_CFLAGS = -funsigned-char -Imissing -Wall -Ilibfaim $(irc_include_path) -DHELP_PATH=\"$(pkgdatadir)/help\" -DSYSTEM_PORKRC=\"$(sysconfdir)/porkrc\" $(PERL_CFLAGS) $(DEBUG_CFLAGS)
  
- pork_LDFLAGS = -Lmissing -Llibfaim $(irc_link_path)
- pork_LDADD = -lmissing -lfaim -lncurses $(PERL_LIBS) $(DEBUG_LIBS) $(irc_link_libs)
+ pork_LDADD = missing/libmissing.a libfaim/libfaim.a $(irc_lib_full_path) -lncurses $(PERL_LIBS) $(DEBUG_LIBS)
+ @COMPILE_PERL_FALSE@pork_perl = pork_perl_stub.c

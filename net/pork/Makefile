@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2003/11/16 22:54:02 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/23 23:38:10 jolan Exp $
 
 COMMENT=	"programmable ncurses-based AIM client"
-DISTNAME=	pork-0.99.2
+DISTNAME=	pork-0.99.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--enable-irc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pork

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/14 18:59:08 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/06/23 23:38:10 jolan Exp $
 bin/pork
 share/doc/pork/QUICK_START
 share/doc/pork/README
@@ -7,6 +7,7 @@ share/examples/pork/blist.txt
 share/examples/pork/event_test.pl
 share/examples/pork/np.pl
 share/examples/pork/porkrc
+@comment share/pork/QUICK_START
 share/pork/help/blist/add_block
 share/pork/help/blist/add_permit
 share/pork/help/blist/away
@@ -25,6 +26,7 @@ share/pork/help/blist/remove_permit
 share/pork/help/blist/select
 share/pork/help/blist/show
 share/pork/help/blist/start
+share/pork/help/blist/toggle
 share/pork/help/blist/up
 share/pork/help/blist/warn
 share/pork/help/blist/warn_anon
@@ -54,9 +56,11 @@ share/pork/help/buddy/warn_anon
 share/pork/help/chat/ignore
 share/pork/help/chat/invite
 share/pork/help/chat/join
+share/pork/help/chat/kick
 share/pork/help/chat/leave
 share/pork/help/chat/list
 share/pork/help/chat/send
+share/pork/help/chat/topic
 share/pork/help/chat/unignore
 share/pork/help/chat/who
 share/pork/help/event/add
@@ -79,6 +83,7 @@ share/pork/help/input/clear_to_end
 share/pork/help/input/clear_to_start
 share/pork/help/input/delete
 share/pork/help/input/end
+share/pork/help/input/find_next_cmd
 share/pork/help/input/focus_next
 share/pork/help/input/insert
 share/pork/help/input/left
@@ -90,6 +95,7 @@ share/pork/help/input/send
 share/pork/help/input/start
 share/pork/help/main/acct
 share/pork/help/main/alias
+share/pork/help/main/auto
 share/pork/help/main/away
 share/pork/help/main/bind
 share/pork/help/main/blist
@@ -106,14 +112,19 @@ share/pork/help/main/history
 share/pork/help/main/idle
 share/pork/help/main/input
 share/pork/help/main/keys
+share/pork/help/main/laddr
 share/pork/help/main/lastlog
 share/pork/help/main/load
+share/pork/help/main/lport
 share/pork/help/main/msg
+share/pork/help/main/nick
+share/pork/help/main/notice
 share/pork/help/main/perl
 share/pork/help/main/perl_load
 share/pork/help/main/profile
 share/pork/help/main/query
 share/pork/help/main/quit
+share/pork/help/main/quote
 share/pork/help/main/refresh
 share/pork/help/main/save
 share/pork/help/main/scroll
@@ -121,6 +132,8 @@ share/pork/help/main/set
 share/pork/help/main/timer
 share/pork/help/main/unalias
 share/pork/help/main/unbind
+share/pork/help/main/who
+share/pork/help/main/whowas
 share/pork/help/main/win
 share/pork/help/perl/alias
 share/pork/help/perl/alias_get
@@ -238,6 +251,7 @@ share/pork/help/timer/del_refnum
 share/pork/help/timer/list
 share/pork/help/timer/purge
 share/pork/help/win/bind
+share/pork/help/win/bind_next
 share/pork/help/win/clear
 share/pork/help/win/close
 share/pork/help/win/erase
