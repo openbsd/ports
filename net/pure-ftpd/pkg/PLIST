@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/14 16:31:32 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/12/27 20:13:45 brad Exp $
 bin/pure-pw
 bin/pure-pwconvert
 bin/pure-statsdecode
@@ -23,5 +23,8 @@ share/doc/pure-ftpd/README.Virtual-Users
 share/doc/pure-ftpd/poweredby.jpg
 share/examples/pure-ftpd/pure-ftpd.conf.sample
 share/examples/pure-ftpd/xml_python_processors.txt
+%%ldap%%
+%%mysql%%
+%%postgresql%%
 @dirrm share/examples/pure-ftpd
 @dirrm share/doc/pure-ftpd
