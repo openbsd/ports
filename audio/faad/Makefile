@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/08/24 21:27:30 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2003/10/19 20:51:43 sturm Exp $
 
 COMMENT=	"MPEG2 and MPEG-4 AAC decoder"
 
@@ -33,6 +33,7 @@ PATCH_LIST=	patch-* gcc-*
 .endif
 
 post-patch:
-	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh bootstrap
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		PATH=${PORTPATH} sh bootstrap
 
 .include <bsd.port.mk>
