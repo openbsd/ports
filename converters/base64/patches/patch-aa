@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Aug 11 14:10:15 1997
++++ Makefile	Wed Oct 20 22:45:51 1999
+@@ -1,8 +1,8 @@
+  
+-CC = cc
++#CC = cc
+ PROGS = base64
+ #CFLAGS = -g
+-CFLAGS = -O
++#CFLAGS = -O
+ 
+ all:	$(PROGS)
+ 
