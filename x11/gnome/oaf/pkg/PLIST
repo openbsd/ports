@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/03/26 18:39:12 nino Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/05/29 14:32:55 nino Exp $
 bin/oaf-client
 bin/oaf-config
 bin/oaf-empty-server
@@ -24,6 +24,7 @@ lib/oafConf.sh
 man/man1/oafd.1
 share/aclocal/oaf.m4
 share/examples/oaf/oaf/oaf-config.xml
+@comment share/examples/oaf/oaf/oaf-config.xml.sample
 share/idl/oaf-factory.idl
 share/idl/oaf.idl
 share/locale/az/LC_MESSAGES/oaf.mo
@@ -61,6 +62,70 @@ share/oaf/OAF_naming-service.oaf
 share/oaf/empty.oafinfo
 %%SHARED%%
 @dirrm share/oaf
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/ta/LC_MESSAGES
+@comment @dirrm share/locale/ta
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale
 @dirrm share/examples/oaf/oaf
 @dirrm share/examples/oaf
+@comment @dirrm share/aclocal
 @dirrm include/liboaf
