@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2005/01/11 22:52:55 kurt Exp $
+# $OpenBSD: Makefile,v 1.81 2005/01/19 14:49:33 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -38,13 +38,14 @@ SUBPACKAGE?=
 FLAVORS=	gtk2
 FLAVOR?=
 
-.if ${SUBPACKAGE} == "-devel"
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
 .  if ${FLAVOR:L:Mgtk2}
 RUN_DEPENDS=	::www/mozilla,gtk2
 .  else
 RUN_DEPENDS=	::www/mozilla
 .  endif
-.else
+.endif
+
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
@@ -54,16 +55,15 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
 		esd.2::audio/esound
 
-.  if ${FLAVOR:L:Mgtk2}
+.if ${FLAVOR:L:Mgtk2}
 BUILD_DEPENDS+=	:libIDL-*:devel/libIDL
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 WANTLIB+=	Xcursor Xinerama atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
 		gobject-2.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
-.  else
+.else
 BUILD_DEPENDS+=	:ORBit-*:devel/ORBit
 LIB_DEPENDS+=	gtk.1,gdk.1::x11/gtk+
 WANTLIB+=	Xi glib gmodule
-.  endif
 .endif
 
 USE_X11=	Yes
