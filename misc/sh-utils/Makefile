@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/14 21:53:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/16 00:43:38 brad Exp $
 
 DISTNAME=		sh-utils-2.0
 CATEGORIES=		misc
@@ -19,9 +19,8 @@ LIB_DEPENDS=		intl.1::devel/gettext
 SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--program-prefix=g
+CONFIGURE_ARGS=		--program-prefix="g"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
