@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2003/04/15 02:59:22 brad Exp $
+# $OpenBSD: Makefile,v 1.163 2003/04/16 11:39:10 wilfried Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -137,6 +137,7 @@
 #    SUBDIR += slingshot
      SUBDIR += swisswatch
 #    SUBDIR += sxpc
+     SUBDIR += terminus-font
 #    SUBDIR += tix
      SUBDIR += tk
 #    SUBDIR += tk41
