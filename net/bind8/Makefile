@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/11/14 22:39:16 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 1999/12/06 15:45:01 ho Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P5
 PKGNAME=	bind-8.2.2-P5
@@ -7,6 +7,8 @@ MASTER_SITES=	ftp://ftp.gsnig.net/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/
 
 MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
+
+BROKEN=		"A server running a signed zone can be DOS-ed"
 
 WRKSRC=		${WRKDIR}/named
 PREFIX=		/
