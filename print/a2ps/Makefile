@@ -3,14 +3,14 @@
 # Date created:         31 January 1998
 # Whom:                 Tobias Weingartner (weingart@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.2 1998/04/28 02:17:11 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1998/06/10 20:18:00 weingart Exp $
 #
 
-PKGNAME=	a2ps-4.9.9
-DISTNAME=	a2ps-4.9.9
+PKGNAME=	a2ps-4.10.2
+DISTNAME=	a2ps-4.10.2
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
-DISTFILES=	a2ps-4.9.9.tar.gz
+DISTFILES=	a2ps-4.10.2.tar.gz
 
 MAINTAINER=	weingart@OpenBSD.org
 
