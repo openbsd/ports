@@ -1,0 +1,28 @@
+# OpenBSD makefile for:   isearch
+# Version required:		1.14
+# Date created:			17 Nov 1997
+# Whom:				ejovi
+# $OpenBSD: Makefile,v 1.1.1.1 1997/11/18 02:55:28 joey Exp $
+#
+# Id: Makefile,v 1.4 1997/04/27 00:11:47 asami Exp $
+#
+
+DISTNAME=	Isearch-1.14
+PKGNAME=	isearch-1.14	
+CATEGORIES=	textproc databases
+MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
+
+MAINTAINER=	joey@OpenBSD.ORG
+
+GNU_CONFIGURE= yes 
+
+post-install:
+	strip ${PREFIX}/bin/Isearch
+	strip ${PREFIX}/bin/Iindex
+	strip ${PREFIX}/bin/Iutil
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/Isearch
+	${INSTALL_MAN} ${WRKSRC}/html/*.html ${PREFIX}/share/doc/Isearch
+.endif
+
+.include <bsd.port.mk>
