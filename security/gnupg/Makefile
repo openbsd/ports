@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 1999/11/30 23:13:52 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/12/23 02:54:24 brad Exp $
 
-DISTNAME=	gnupg-1.0.0
+DISTNAME=	gnupg-1.0.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://ftp.progsoc.uts.edu.au/pub/gnupg/gnupg/ \
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://sunsite.icm.edu.pl/pub/security/gcrypt/gnupg/ \
 		ftp://ftp.stacken.kth.se/pub/crypto/gnupg/gnupg/ \
 		ftp://ftp.net.lut.ac.uk/gcrypt/gnupg/
+DISTFILES=	${DISTNAME}.tar.gz gpg.1.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	markus@openbsd.org
 
@@ -23,12 +25,13 @@ GNUPGDOCDIR=	${PREFIX}/share/doc/gnupg
 GNUPGDOCFILES=	README AUTHORS COPYING THANKS TODO BUGS \
 		doc/DETAILS doc/FAQ doc/OpenPGP doc/HACKING
 
+post-extract:
+	@gunzip -c ${FULLDISTDIR}/gpg.1.gz > ${WRKSRC}/doc/gpg.1
+
 post-install:
 	@mkdir -p ${GNUPGDOCDIR}
-	@mkdir -p ${GNUPGDOCDIR}/html
 	@set -e; for f in ${GNUPGDOCFILES}; do \
 	 ${INSTALL_DATA} ${WRKSRC}/$${f} ${GNUPGDOCDIR}; \
 	done
-	@cp ${WRKSRC}/doc/gph/manual/* ${GNUPGDOCDIR}/html
 
 .include <bsd.port.mk>
