@@ -1,0 +1,6 @@
+bin/bk2site
+man/man1/bk2site.1
+share/bk2site/dot.bk2siterc
+share/bk2site/indexbase.html
+share/bk2site/otherbase.html
+@dirrm share/bk2site

@@ -1,0 +1,25 @@
+--- reference.C~	Thu Jun  1 14:14:01 2000
++++ reference.C	Mon Jun 26 01:04:21 2000
+@@ -762,19 +762,19 @@
+       else
+ 	replaceAll(outputString, "%NEW", "");
+     else if (FORMATVARS[i] == "%TIMEFCRE"){
+-      long int l = creationTime;
++      time_t l = creationTime;
+       string c (ctime(&l));
+       c = c.substr(0,c.size()-1);
+       replaceAll(outputString, "%TIMEFCRE", c);
+     }
+     else if (FORMATVARS[i] == "%TIMEFMOD"){
+-      long int l = modifiedTime;
++      time_t l = modifiedTime;
+       string c(ctime(&l));
+       c = c.substr(0,c.size()-1);
+       replaceAll(outputString, "%TIMEFMOD", c);
+     }
+     else if (FORMATVARS[i] == "%TIMEFVIS"){
+-      long int l = visitTime;
++      time_t l = visitTime;
+       string c(ctime(&l));
+       c = c.substr(0,c.size()-1);
+       replaceAll(outputString, "%TIMEFVIS", c);
