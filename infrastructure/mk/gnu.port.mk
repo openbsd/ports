@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.15 2004/02/25 21:50:26 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.16 2004/02/25 22:23:20 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -80,8 +80,10 @@ _MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOUPDATE};
 .  if ${CONFIGURE_STYLE:L:Mautoconf}
 _MODGNU_loop+= echo "Running autoconf-${AUTOCONF_VERSION} in $$d";
 _MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
+.    if ${CONFIGURE_STYLE:L:Mautoheader}
 _MODGNU_loop+= echo "Running autoheader-${AUTOCONF_VERSION} in $$d";
 _MODGNU_loop+= ${_SYSTRACE_CMD} ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER};
+.    endif
 .    if !${CONFIGURE_STYLE:L:Mautomake}
 _MODGNU_loop+= for f in ${MODGNU_AUTOCONF_FILES}; do \
 		case $$f in \
