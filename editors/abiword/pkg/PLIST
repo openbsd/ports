@@ -3,6 +3,7 @@ bin/abiword
 AbiSuite/AbiWord/help/EnUS/help.html
 AbiSuite/AbiWord/readme.txt
 AbiSuite/AbiWord/sample/EnUS/Latin1.abw
+AbiSuite/AbiWord/strings/CaES.strings
 AbiSuite/AbiWord/strings/DaDK.strings
 AbiSuite/AbiWord/strings/DeDE.strings
 AbiSuite/AbiWord/strings/DuNL.strings
@@ -11,6 +12,7 @@ AbiSuite/AbiWord/strings/FiFI.strings
 AbiSuite/AbiWord/strings/FrFR.strings
 AbiSuite/AbiWord/strings/ItIT.strings
 AbiSuite/AbiWord/strings/NoNO.strings
+AbiSuite/AbiWord/strings/PtPT.strings
 AbiSuite/AbiWord/system.profile
 AbiSuite/COPYING
 AbiSuite/bin/AbiWord
