@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2003/10/05 22:00:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.41 2004/05/11 14:56:32 jakob Exp $
 
 COMMENT=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
-VERSION=		2002.339
-DISTNAME=		imap-2002e
+VERSION=		2004.350
+DISTNAME=		imap-2004
 
 PKGNAME=		imap-uw-${VERSION}
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
 ALL_TARGET=	bso
-MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss"
+MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6
 
 MULTI_PACKAGES=	-mailutil
 SUBPACKAGE?=
