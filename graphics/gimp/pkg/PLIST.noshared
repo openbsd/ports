@@ -556,13 +556,13 @@ share/gimp/gimp_logo.ppm
 share/gimp/gimp_splash.ppm
 share/gimp/gimp1_1_splash.ppm
 share/gimp/gimp_tips.txt
-@unexec rm -f %D/share/gimp/gimprc
-@unexec rm -f %D/share/gimp/gimprc_user
-@unexec rm -f %D/share/gimp/gtkrc
-@unexec rm -f %D/share/gimp/gtkrc.forest2
-@unexec rm -f %D/share/gimp/ps-menurc
-@unexec rm -f %D/share/gimp/unitrc
-@unexec rm -f %D/share/gimp/user_install
+share/gimp/gimprc
+share/gimp/gimprc_user
+share/gimp/gtkrc
+share/gimp/gtkrc.forest2
+share/gimp/ps-menurc
+share/gimp/unitrc
+share/gimp/user_install
 @dirrm include/gck
 @dirrm include/libgimp
 @dirrm lib/gimp/1.1/modules
