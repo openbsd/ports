@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/09 17:06:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/06/19 12:59:15 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
-MASTER_SITES=${HOMEPAGE}
-DISTNAME=xglobe-0.5
+#MASTER_SITES=${HOMEPAGE}
+# Temporary release
+MASTER_SITES=ftp://quatramaran.ens.fr/pub/espie/
+DISTNAME=xglobe-0.5p1
 NEED_VERSION=1.295
 
 MAINTAINER=espie@cvs.openbsd.org

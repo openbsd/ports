@@ -1,9 +1,0 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2000/05/19 13:49:35 espie Exp $
---- Makefile.orig	Fri May 19 13:03:55 2000
-+++ Makefile	Fri May 19 13:04:12 2000
-@@ -112,4 +112,4 @@ markerlist.o: markerlist.cpp markerlist.
- 
- earthapp.cpp: earthapp.moc;
- earthapp.moc: earthapp.h
--	$(MOC) -o $@ $<
-+	$(MOC) -o $@ $>
