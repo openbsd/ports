@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2005/03/16 21:55:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2005/04/04 21:11:42 robert Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -308,7 +308,7 @@ XSLT_WANTLIB=		iconv
 
 .for i in ${MULTI_PACKAGES}
 .if !defined(FULLPKGNAME${i})
-FULLPKGNAME${i}=	php4${i}-${V}p1
+FULLPKGNAME${i}=	php4${i}-${V}
 .endif
 .endfor
 

@@ -1,7 +1,20 @@
-$OpenBSD: patch-aclocal_m4,v 1.6 2004/02/29 00:08:08 avsm Exp $
---- aclocal.m4.orig	2004-02-16 15:30:25.000000000 +0000
-+++ aclocal.m4	2004-02-28 17:54:33.000000000 +0000
-@@ -1659,6 +1659,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+$OpenBSD: patch-aclocal_m4,v 1.7 2005/04/04 21:11:42 robert Exp $
+--- aclocal.m4.orig	Wed Mar 30 16:35:19 2005
++++ aclocal.m4	Sun Apr  3 22:21:42 2005
+@@ -1660,10 +1660,9 @@
+     if test "$PHP_KERBEROS_DIR"; then
+       found_kerberos=yes
+       PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/lib, $1)
+-      PHP_ADD_LIBRARY(gssapi_krb5, 1, $1)
+       PHP_ADD_LIBRARY(krb5, 1, $1)
+-      PHP_ADD_LIBRARY(k5crypto, 1, $1)
+-      PHP_ADD_LIBRARY(com_err,  1, $1)
++      PHP_ADD_LIBRARY(crypto, 1, $1)
++      PHP_ADD_LIBRARY(gssapi, 1, $1)
+       PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
+     fi
+   fi
+@@ -1757,6 +1756,7 @@
    
      PHP_CHECK_LIBRARY(crypto, CRYPTO_free, [
        PHP_ADD_LIBRARY(crypto,,$1)
@@ -9,7 +22,7 @@ $OpenBSD: patch-aclocal_m4,v 1.6 2004/02/29 00:08:08 avsm Exp $
      ],[
        AC_MSG_ERROR([libcrypto not found!])
      ],[
-@@ -4074,7 +4075,7 @@ openbsd*)
+@@ -4231,7 +4231,7 @@
      shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
