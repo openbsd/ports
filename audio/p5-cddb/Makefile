@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2003/04/27 17:31:29 margarida Exp $
+# $OpenBSD: Makefile,v 1.12 2003/11/02 17:59:50 margarida Exp $
 
 COMMENT=	"Perl5 module for CDDB"
 
-DISTNAME=	CDDB-1.08
+DISTNAME=	CDDB-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	audio perl5
 
