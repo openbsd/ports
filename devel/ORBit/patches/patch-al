@@ -1,0 +1,14 @@
+$OpenBSD: patch-al,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
+$NetBSD: patch-al,v 1.1 1999/03/05 00:25:10 tron Exp $
+
+--- src/daemons/interface_repository/Makefile.in.orig	Thu Feb 25 16:17:26 1999
++++ src/daemons/interface_repository/Makefile.in	Fri Mar  5 00:52:59 1999
+@@ -100,7 +100,7 @@
+ 
+ 
+ orbit_ird_LDFLAGS = -static
+-orbit_ird_LDADD =  	$(top_builddir)/src/orb/libORBit.la 	$(top_builddir)/src/IIOP/libIIOP.la 	$(top_builddir)/src/ORBitutil/libORBitutil.la 	@GLIB_LIBS@ 	-lm
++orbit_ird_LDADD =  	$(top_builddir)/src/orb/libORBit.la 	$(top_builddir)/src/IIOP/libIIOP.la 	$(top_builddir)/src/ORBitutil/libORBitutil.la 	@GLIB_LIBS@ 	-lm -lwrap
+ 
+ 
+ orbit_ird_SOURCES =  	interface_repository-common.c 	interface_repository-skels.c 	interface_repository-impl.c

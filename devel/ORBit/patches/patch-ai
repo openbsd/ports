@@ -1,0 +1,14 @@
+$OpenBSD: patch-ai,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
+$NetBSD: patch-ai,v 1.1 1999/03/05 00:25:10 tron Exp $
+
+--- libIDL/Makefile.in.orig	Thu Feb 25 16:17:07 1999
++++ libIDL/Makefile.in	Fri Mar  5 00:21:00 1999
+@@ -120,7 +120,7 @@
+ 
+ libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
+ 
+-libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)				  -release $(LT_RELEASE)
++libIDL_la_LDFLAGS = -release $(LT_RELEASE)
+ 
+ 
+ m4datadir = $(datadir)/aclocal

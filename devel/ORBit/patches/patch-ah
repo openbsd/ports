@@ -1,0 +1,21 @@
+$OpenBSD: patch-ah,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
+$NetBSD: patch-ah,v 1.1 1999/03/05 00:25:10 tron Exp $
+
+--- libIDL/configure.orig	Wed Feb 24 20:54:31 1999
++++ libIDL/configure	Fri Mar  5 00:18:15 1999
+@@ -2185,6 +2185,7 @@
+ fi
+ 
+ # Always use our own libtool.
++if false; then
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
+ # Check for any special flags to pass to ltconfig.
+@@ -2416,6 +2417,7 @@
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+ $libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
++fi
+ 
+ # Redirect the config.log output again, so that the ltconfig log is not
+ # clobbered by the next message.

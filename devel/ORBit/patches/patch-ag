@@ -1,0 +1,14 @@
+$OpenBSD: patch-ag,v 1.1.1.1 1999/03/23 19:24:32 rohee Exp $
+
+This one won't be needed anymore when <stdio.h> will be included in <tcpd.h>.
+
+--- src/IIOP/connection.c.orig	Tue Mar 16 23:19:53 1999
++++ src/IIOP/connection.c	Tue Mar 16 23:23:10 1999
+@@ -10,6 +10,7 @@
+ #include "IIOP.h"
+ #include "IIOP-private.h"
+ #include "giop-msg-buffer.h"
++#include <stdio.h> /* tcpd.h use FILE so need <stdio.h> */
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <errno.h>
