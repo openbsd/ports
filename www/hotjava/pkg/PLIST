@@ -11,7 +11,6 @@ share/java/HotJava/admin-docs/index.html
 share/java/HotJava/admin-docs/admin.properties.txt
 share/java/HotJava/admin-docs/banner.gif
 share/java/HotJava/admin-docs/trustProxy.html
-share/java/HotJava/hotjava
 @dirrm share/java/HotJava/admin-docs
 @dirrm share/java/HotJava
 @unexec rmdir %D/share/java || true

@@ -1,7 +1,7 @@
 The latest version of Sun's Hotjava web browser.  See the Hotjava web pages
 at:
 
-WWW: http://java.sun.com/products/hotjava/
+WWW: ${HOMEPAGE}
 
 for more details.
 

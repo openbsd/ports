@@ -1,34 +1,36 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/16 23:06:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/12 12:00:59 espie Exp $
 
 #
 # From:
 # $FreeBSD: ports/www/hotjava/Makefile,v 1.4 2000/02/16 00:19:45 mharo Exp $
 #
 
-DISTNAME=	hjb3_0-linux.sfx
-PKGNAME=	hotjava-3.0
+DISTNAME=	hotjava-3.0
 CATEGORIES=	www
-FAKE=No
+NEED_VERSION=	1.327
 MASTER_SITES=
-EXTRACT_SUFX=
+DISTFILES=	hjb3_0-linux.sfx
+
+EXTRACT_CASES=*.sfx) uudecode ${FULLDISTDIR}/$$archive;;
 
 MAINTAINER=	chris@OpenBSD.org
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java::devel/jdk
+JDK=	jdk1.1.8
+JAR=	${JDK}/bin/jar
+JAVA=	${JDK}/bin/java
 
-LICENSE_TYPE=		NOFEE
+BUILD_DEPENDS=	${PREFIX}/${JAR}::devel/jdk
+RUN_DEPENDS=	${PREFIX}/${JAVA}::devel/jdk
+
+# No Fee
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 MIRROR_DISTFILE=	No
 
-EXTRACT_ONLY=
-
-WRKSRC=		${WRKDIR}
-JDK_VERSION=    1.1.8
-NO_BUILD=	Yes
-NO_PACKAGE=	Yes
+WRKDIST=		${WRKDIR}
+NO_BUILD=		Yes
 
 HOMEPAGE= http://java.sun.com/products/hotjava/
 
@@ -47,12 +49,16 @@ do-fetch:
 	   exit 1 ; \
 	fi
 
-pre-install:
-	@sed -e s,/usr/bin/hotjava,${PREFIX}/bin/hotjava,g ${DISTDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}
-	@${INSTALL_DATA_DIR} ${PREFIX}/share
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/java
-
 do-install:
-	@sh ${WRKDIR}/${DISTNAME} ${PREFIX}/jdk${JDK_VERSION} ${PREFIX}/share/java
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/HotJava
+	cd ${PREFIX}/share/java/HotJava && \
+		${TRUEPREFIX}/${JAR} xf ${WRKDIST}/hjb3_0.jar
+	cd ${PREFIX}/share/java/HotJava && chmod -R a+rX *
+	echo '#! /bin/sh' >${PREFIX}/bin/hotjava
+	echo 'exec ${TRUEPREFIX}/${JAVA} -classpath \
+	${TRUEPREFIX}/${JDK}/lib/classes.zip:${TRUEPREFIX}/share/java/HotJava/Browser.jar \
+	sunw.hotjava.Main -Dhotjava.home=${TRUEPREFIX}/share/java/HotJava' \
+		>>${PREFIX}/bin/hotjava
+	chmod a+rx ${PREFIX}/bin/hotjava
 
 .include <bsd.port.mk>
