@@ -154,7 +154,19 @@ lame_set_lowpasswidth(lame_global_flags *f, int s)
 }
 
 int
+lame_set_highpassfreq(lame_global_flags *f, int s)
+{
+	return 0;
+}
+
+int
 lame_set_highpasswidth(lame_global_flags *f, int s)
+{
+	return 0;
+}
+
+int
+lame_set_bWriteVbrTag(lame_global_flags *f, int s)
 {
 	return 0;
 }

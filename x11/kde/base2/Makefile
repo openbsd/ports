@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/26 12:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2001/08/27 05:44:37 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -28,11 +28,11 @@ USE_MOTIF=	any
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		ldap.2::databases/openldap \
 		vorbis.::audio/libvorbis \
-		libcdda_paranoia.::audio/cdparanoia
+		cdda_paranoia.::audio/cdparanoia
 
 BUILD_DEPENDS=	uic::x11/qt2-designer
 BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
-BUILD_DEPENDS+= ${LOCALBASE}/lame/lame.h::audio/lame
+BUILD_DEPENDS+= ${LOCALBASE}/include/lame/lame.h::audio/lame
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
@@ -40,8 +40,8 @@ CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
-#CONFIGURE_ARGS+=	--disable-debug
-CONFIGURE_ARGS+=	--enable-debug
+CONFIGURE_ARGS+=	--disable-debug
+#CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 
@@ -69,7 +69,7 @@ pre-build:
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
 MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
-MAKE_FLAGS+=LAME_LIBS="-L${LAMEDIR} -lmp3lame -lm"
+MAKE_FLAGS+=LAMEDIR='${LAMEDIR}'
 
 # GPL
 # Note that lame is not a problem, since kdebase is packaged with a
