@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2004/08/03 10:16:37 xsa Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/06 07:35:11 xsa Exp $
 lib/zope/lib/python/AccessControl/cAccessControl.so
 lib/zope/lib/python/Acquisition.so
 lib/zope/lib/python/BDBStorage/_helper.so
@@ -33,15 +33,3 @@ lib/zope/lib/python/ZODB/coptimizations.so
 lib/zope/lib/python/ZODB/winlock.so
 lib/zope/lib/python/initgroups.so
 lib/zope/lib/python/intSet.so
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/AccessControl)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/BDBStorage)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/BTrees)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/DocumentTemplate)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ISO_8859_1_Splitter)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/UnicodeSplitter)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/Products/PluginIndexes/TextIndex/Splitter/ZopeSplitter)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/Products/ZCTextIndex)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/SearchIndex)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/Shared/DC/xml/pyexpat)
-@comment NEWDYNLIBDIR(%D/lib/zope/lib/python/ZODB)

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2004/08/03 10:16:36 xsa Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/06 07:35:11 xsa Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"object-oriented web application server"
 
@@ -26,8 +26,11 @@ PYTHON_VER=	2.3
 PYTHON_BIN=	${LOCALBASE}/bin/python${PYTHON_VER}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	::lang/python/${PYTHON_VER} \
-		::lang/python/${PYTHON_VER},-expat
+RUN_DEPENDS=	::lang/python/${PYTHON_VER}
+
+.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
+RUN_DEPENDS+=	::lang/python/${PYTHON_VER},-expat
+.endif
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}/bin/python${PYTHON_VER} \
