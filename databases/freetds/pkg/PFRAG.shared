@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/08/11 15:31:43 naddy Exp $
+lib/libct.so.0.0
+lib/libsybdb.so.0.0
+lib/libtds.so.0.0
+lib/libtdssrv.so.0.0
+DYNLIBDIR(%B)

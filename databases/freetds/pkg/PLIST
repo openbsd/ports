@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/11 15:31:43 naddy Exp $
+include/bkpublic.h
+include/common.h
+include/cspublic.h
+include/cstypes.h
+include/ctlib.h
+include/ctpublic.h
+include/dblib.h
+include/sqldb.h
+include/sqlfront.h
+include/sybdb.h
+include/syberror.h
+include/sybfront.h
+include/tds.h
+include/tds_configs.h
+include/tdsconvert.h
+include/tdsodbc.h
+include/tdsutil.h
+include/tdsver.h
+lib/libct.a
+lib/libct.la
+lib/libsybdb.a
+lib/libsybdb.la
+lib/libtds.a
+lib/libtds.la
+lib/libtdssrv.a
+lib/libtdssrv.la
+share/examples/freetds/freetds.conf-sample
+%%SHARED%%
+@dirrm share/examples/freetds
