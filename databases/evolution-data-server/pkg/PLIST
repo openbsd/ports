@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/25 16:21:32 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:31:45 espie Exp $
+include/evolution-data-server-1.0/
+include/evolution-data-server-1.0/groupwise/
 include/evolution-data-server-1.0/groupwise/e-gw-connection.h
 include/evolution-data-server-1.0/groupwise/e-gw-container.h
 include/evolution-data-server-1.0/groupwise/e-gw-filter.h
 include/evolution-data-server-1.0/groupwise/e-gw-item.h
 include/evolution-data-server-1.0/groupwise/e-gw-message.h
+include/evolution-data-server-1.0/libebook/
 include/evolution-data-server-1.0/libebook/Evolution-DataServer-Addressbook.h
 include/evolution-data-server-1.0/libebook/e-address-western.h
 include/evolution-data-server-1.0/libebook/e-book-async.h
@@ -17,6 +20,7 @@ include/evolution-data-server-1.0/libebook/e-contact.h
 include/evolution-data-server-1.0/libebook/e-name-western-tables.h
 include/evolution-data-server-1.0/libebook/e-name-western.h
 include/evolution-data-server-1.0/libebook/e-vcard.h
+include/evolution-data-server-1.0/libecal/
 include/evolution-data-server-1.0/libecal/Evolution-DataServer-Calendar.h
 include/evolution-data-server-1.0/libecal/e-cal-component.h
 include/evolution-data-server-1.0/libecal/e-cal-listener.h
@@ -27,6 +31,7 @@ include/evolution-data-server-1.0/libecal/e-cal-util.h
 include/evolution-data-server-1.0/libecal/e-cal-view-listener.h
 include/evolution-data-server-1.0/libecal/e-cal-view.h
 include/evolution-data-server-1.0/libecal/e-cal.h
+include/evolution-data-server-1.0/libedata-book/
 include/evolution-data-server-1.0/libedata-book/Evolution-DataServer-Addressbook.h
 include/evolution-data-server-1.0/libedata-book/e-book-backend-sexp.h
 include/evolution-data-server-1.0/libedata-book/e-book-backend-summary.h
@@ -36,6 +41,7 @@ include/evolution-data-server-1.0/libedata-book/e-data-book-factory.h
 include/evolution-data-server-1.0/libedata-book/e-data-book-types.h
 include/evolution-data-server-1.0/libedata-book/e-data-book-view.h
 include/evolution-data-server-1.0/libedata-book/e-data-book.h
+include/evolution-data-server-1.0/libedata-cal/
 include/evolution-data-server-1.0/libedata-cal/Evolution-DataServer-Calendar.h
 include/evolution-data-server-1.0/libedata-cal/e-cal-backend-cache.h
 include/evolution-data-server-1.0/libedata-cal/e-cal-backend-sexp.h
@@ -46,6 +52,7 @@ include/evolution-data-server-1.0/libedata-cal/e-data-cal-common.h
 include/evolution-data-server-1.0/libedata-cal/e-data-cal-factory.h
 include/evolution-data-server-1.0/libedata-cal/e-data-cal-view.h
 include/evolution-data-server-1.0/libedata-cal/e-data-cal.h
+include/evolution-data-server-1.0/libedataserver/
 include/evolution-data-server-1.0/libedataserver/e-account-list.h
 include/evolution-data-server-1.0/libedataserver/e-account.h
 include/evolution-data-server-1.0/libedataserver/e-component-listener.h
@@ -65,6 +72,7 @@ include/evolution-data-server-1.0/libedataserver/e-url.h
 include/evolution-data-server-1.0/libedataserver/e-util.h
 include/evolution-data-server-1.0/libedataserver/e-xml-hash-utils.h
 include/evolution-data-server-1.0/libedataserver/md5-utils.h
+include/evolution-data-server-1.0/libical/
 include/evolution-data-server-1.0/libical/ical.h
 include/evolution-data-server-1.0/libical/icalarray.h
 include/evolution-data-server-1.0/libical/icalattach.h
@@ -109,6 +117,8 @@ include/evolution-data-server-1.0/libical/sspm.h
 include/evolution-data-server-1.0/libical/vcaltmp.h
 include/evolution-data-server-1.0/libical/vcc.h
 include/evolution-data-server-1.0/libical/vobject.h
+lib/bonobo/
+lib/bonobo/servers/
 lib/bonobo/servers/GNOME_Evolution_DataServer_1.0.server
 lib/libebook.la
 lib/libecal.la
@@ -116,6 +126,7 @@ lib/libedata-book.la
 lib/libedata-cal.la
 lib/libedataserver.la
 lib/libegroupwise.la
+lib/pkgconfig/
 lib/pkgconfig/evolution-data-server-1.0.pc
 lib/pkgconfig/libebook-1.0.pc
 lib/pkgconfig/libecal-1.0.pc
@@ -124,6 +135,9 @@ lib/pkgconfig/libedata-cal-1.0.pc
 lib/pkgconfig/libedataserver-1.0.pc
 lib/pkgconfig/libegroupwise-1.0.pc
 libexec/evolution-data-server-1.0
+share/evolution-data-server-1.0/
+share/evolution-data-server-1.0/zoneinfo/
+share/evolution-data-server-1.0/zoneinfo/Africa/
 share/evolution-data-server-1.0/zoneinfo/Africa/Abidjan.ics
 share/evolution-data-server-1.0/zoneinfo/Africa/Accra.ics
 share/evolution-data-server-1.0/zoneinfo/Africa/Addis_Ababa.ics
@@ -176,6 +190,7 @@ share/evolution-data-server-1.0/zoneinfo/Africa/Timbuktu.ics
 share/evolution-data-server-1.0/zoneinfo/Africa/Tripoli.ics
 share/evolution-data-server-1.0/zoneinfo/Africa/Tunis.ics
 share/evolution-data-server-1.0/zoneinfo/Africa/Windhoek.ics
+share/evolution-data-server-1.0/zoneinfo/America/
 share/evolution-data-server-1.0/zoneinfo/America/Adak.ics
 share/evolution-data-server-1.0/zoneinfo/America/Anchorage.ics
 share/evolution-data-server-1.0/zoneinfo/America/Anguilla.ics
@@ -224,6 +239,7 @@ share/evolution-data-server-1.0/zoneinfo/America/Guyana.ics
 share/evolution-data-server-1.0/zoneinfo/America/Halifax.ics
 share/evolution-data-server-1.0/zoneinfo/America/Havana.ics
 share/evolution-data-server-1.0/zoneinfo/America/Hermosillo.ics
+share/evolution-data-server-1.0/zoneinfo/America/Indiana/
 share/evolution-data-server-1.0/zoneinfo/America/Indiana/Indianapolis.ics
 share/evolution-data-server-1.0/zoneinfo/America/Indiana/Knox.ics
 share/evolution-data-server-1.0/zoneinfo/America/Indiana/Marengo.ics
@@ -234,6 +250,7 @@ share/evolution-data-server-1.0/zoneinfo/America/Iqaluit.ics
 share/evolution-data-server-1.0/zoneinfo/America/Jamaica.ics
 share/evolution-data-server-1.0/zoneinfo/America/Jujuy.ics
 share/evolution-data-server-1.0/zoneinfo/America/Juneau.ics
+share/evolution-data-server-1.0/zoneinfo/America/Kentucky/
 share/evolution-data-server-1.0/zoneinfo/America/Kentucky/Louisville.ics
 share/evolution-data-server-1.0/zoneinfo/America/Kentucky/Monticello.ics
 share/evolution-data-server-1.0/zoneinfo/America/La_Paz.ics
@@ -259,6 +276,7 @@ share/evolution-data-server-1.0/zoneinfo/America/New_York.ics
 share/evolution-data-server-1.0/zoneinfo/America/Nipigon.ics
 share/evolution-data-server-1.0/zoneinfo/America/Nome.ics
 share/evolution-data-server-1.0/zoneinfo/America/Noronha.ics
+share/evolution-data-server-1.0/zoneinfo/America/North_Dakota/
 share/evolution-data-server-1.0/zoneinfo/America/North_Dakota/Center.ics
 share/evolution-data-server-1.0/zoneinfo/America/Panama.ics
 share/evolution-data-server-1.0/zoneinfo/America/Pangnirtung.ics
@@ -295,6 +313,7 @@ share/evolution-data-server-1.0/zoneinfo/America/Whitehorse.ics
 share/evolution-data-server-1.0/zoneinfo/America/Winnipeg.ics
 share/evolution-data-server-1.0/zoneinfo/America/Yakutat.ics
 share/evolution-data-server-1.0/zoneinfo/America/Yellowknife.ics
+share/evolution-data-server-1.0/zoneinfo/Antarctica/
 share/evolution-data-server-1.0/zoneinfo/Antarctica/Casey.ics
 share/evolution-data-server-1.0/zoneinfo/Antarctica/Davis.ics
 share/evolution-data-server-1.0/zoneinfo/Antarctica/DumontDUrville.ics
@@ -304,7 +323,9 @@ share/evolution-data-server-1.0/zoneinfo/Antarctica/Palmer.ics
 share/evolution-data-server-1.0/zoneinfo/Antarctica/South_Pole.ics
 share/evolution-data-server-1.0/zoneinfo/Antarctica/Syowa.ics
 share/evolution-data-server-1.0/zoneinfo/Antarctica/Vostok.ics
+share/evolution-data-server-1.0/zoneinfo/Arctic/
 share/evolution-data-server-1.0/zoneinfo/Arctic/Longyearbyen.ics
+share/evolution-data-server-1.0/zoneinfo/Asia/
 share/evolution-data-server-1.0/zoneinfo/Asia/Aden.ics
 share/evolution-data-server-1.0/zoneinfo/Asia/Almaty.ics
 share/evolution-data-server-1.0/zoneinfo/Asia/Amman.ics
@@ -380,6 +401,7 @@ share/evolution-data-server-1.0/zoneinfo/Asia/Vladivostok.ics
 share/evolution-data-server-1.0/zoneinfo/Asia/Yakutsk.ics
 share/evolution-data-server-1.0/zoneinfo/Asia/Yekaterinburg.ics
 share/evolution-data-server-1.0/zoneinfo/Asia/Yerevan.ics
+share/evolution-data-server-1.0/zoneinfo/Atlantic/
 share/evolution-data-server-1.0/zoneinfo/Atlantic/Azores.ics
 share/evolution-data-server-1.0/zoneinfo/Atlantic/Bermuda.ics
 share/evolution-data-server-1.0/zoneinfo/Atlantic/Canary.ics
@@ -391,6 +413,7 @@ share/evolution-data-server-1.0/zoneinfo/Atlantic/Reykjavik.ics
 share/evolution-data-server-1.0/zoneinfo/Atlantic/South_Georgia.ics
 share/evolution-data-server-1.0/zoneinfo/Atlantic/St_Helena.ics
 share/evolution-data-server-1.0/zoneinfo/Atlantic/Stanley.ics
+share/evolution-data-server-1.0/zoneinfo/Australia/
 share/evolution-data-server-1.0/zoneinfo/Australia/Adelaide.ics
 share/evolution-data-server-1.0/zoneinfo/Australia/Brisbane.ics
 share/evolution-data-server-1.0/zoneinfo/Australia/Broken_Hill.ics
@@ -401,6 +424,7 @@ share/evolution-data-server-1.0/zoneinfo/Australia/Lord_Howe.ics
 share/evolution-data-server-1.0/zoneinfo/Australia/Melbourne.ics
 share/evolution-data-server-1.0/zoneinfo/Australia/Perth.ics
 share/evolution-data-server-1.0/zoneinfo/Australia/Sydney.ics
+share/evolution-data-server-1.0/zoneinfo/Europe/
 share/evolution-data-server-1.0/zoneinfo/Europe/Amsterdam.ics
 share/evolution-data-server-1.0/zoneinfo/Europe/Andorra.ics
 share/evolution-data-server-1.0/zoneinfo/Europe/Athens.ics
@@ -452,6 +476,7 @@ share/evolution-data-server-1.0/zoneinfo/Europe/Warsaw.ics
 share/evolution-data-server-1.0/zoneinfo/Europe/Zagreb.ics
 share/evolution-data-server-1.0/zoneinfo/Europe/Zaporozhye.ics
 share/evolution-data-server-1.0/zoneinfo/Europe/Zurich.ics
+share/evolution-data-server-1.0/zoneinfo/Indian/
 share/evolution-data-server-1.0/zoneinfo/Indian/Antananarivo.ics
 share/evolution-data-server-1.0/zoneinfo/Indian/Chagos.ics
 share/evolution-data-server-1.0/zoneinfo/Indian/Christmas.ics
@@ -463,6 +488,7 @@ share/evolution-data-server-1.0/zoneinfo/Indian/Maldives.ics
 share/evolution-data-server-1.0/zoneinfo/Indian/Mauritius.ics
 share/evolution-data-server-1.0/zoneinfo/Indian/Mayotte.ics
 share/evolution-data-server-1.0/zoneinfo/Indian/Reunion.ics
+share/evolution-data-server-1.0/zoneinfo/Pacific/
 share/evolution-data-server-1.0/zoneinfo/Pacific/Apia.ics
 share/evolution-data-server-1.0/zoneinfo/Pacific/Auckland.ics
 share/evolution-data-server-1.0/zoneinfo/Pacific/Chatham.ics
@@ -503,6 +529,9 @@ share/evolution-data-server-1.0/zoneinfo/Pacific/Wake.ics
 share/evolution-data-server-1.0/zoneinfo/Pacific/Wallis.ics
 share/evolution-data-server-1.0/zoneinfo/Pacific/Yap.ics
 share/evolution-data-server-1.0/zoneinfo/zones.tab
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libebook/
 share/gtk-doc/html/libebook/EBook.html
 share/gtk-doc/html/libebook/EBookListener.html
 share/gtk-doc/html/libebook/EBookView.html
@@ -522,6 +551,7 @@ share/gtk-doc/html/libebook/libebook-e-book-types.html
 share/gtk-doc/html/libebook/libebook.devhelp
 share/gtk-doc/html/libebook/right.png
 share/gtk-doc/html/libebook/up.png
+share/gtk-doc/html/libecal/
 share/gtk-doc/html/libecal/ECal.html
 share/gtk-doc/html/libecal/ECalComponent.html
 share/gtk-doc/html/libecal/ECalListener.html
@@ -539,26 +569,46 @@ share/gtk-doc/html/libecal/libecal-e-cal-util.html
 share/gtk-doc/html/libecal/libecal.devhelp
 share/gtk-doc/html/libecal/right.png
 share/gtk-doc/html/libecal/up.png
+share/idl/
+share/idl/evolution-data-server-1.0/
 share/idl/evolution-data-server-1.0/Evolution-DataServer-Addressbook.idl
 share/idl/evolution-data-server-1.0/Evolution-DataServer-Calendar.idl
 share/idl/evolution-data-server-1.0/Evolution-DataServer.idl
+share/locale/am/
+share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/be/
+share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/bg/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/cs/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/da/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/de/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/el/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/es/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/et/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/fi/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/fr/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/gl/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/hr/LC_MESSAGES/evolution-data-server-1.5.mo
@@ -566,9 +616,15 @@ share/locale/hu/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/it/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/ja/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/ko/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/lv/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/mn/
+share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/nl/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/nn/LC_MESSAGES/evolution-data-server-1.5.mo
@@ -580,41 +636,21 @@ share/locale/ro/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/ru/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/sk/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/sl/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/sv/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/tr/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/uk/LC_MESSAGES/evolution-data-server-1.5.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-1.5.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-1.5.mo
 %%SHARED%%
-@dirrm share/locale/en_AU/LC_MESSAGES
-@dirrm share/locale/en_AU
-@dirrm share/idl/evolution-data-server-1.0
-@dirrm share/gtk-doc/html/libecal
-@dirrm share/gtk-doc/html/libebook
-@dirrm share/evolution-data-server-1.0/zoneinfo/Pacific
-@dirrm share/evolution-data-server-1.0/zoneinfo/Indian
-@dirrm share/evolution-data-server-1.0/zoneinfo/Europe
-@dirrm share/evolution-data-server-1.0/zoneinfo/Australia
-@dirrm share/evolution-data-server-1.0/zoneinfo/Atlantic
-@dirrm share/evolution-data-server-1.0/zoneinfo/Asia
-@dirrm share/evolution-data-server-1.0/zoneinfo/Arctic
-@dirrm share/evolution-data-server-1.0/zoneinfo/Antarctica
-@dirrm share/evolution-data-server-1.0/zoneinfo/America/North_Dakota
-@dirrm share/evolution-data-server-1.0/zoneinfo/America/Kentucky
-@dirrm share/evolution-data-server-1.0/zoneinfo/America/Indiana
-@dirrm share/evolution-data-server-1.0/zoneinfo/America
-@dirrm share/evolution-data-server-1.0/zoneinfo/Africa
-@dirrm share/evolution-data-server-1.0/zoneinfo
-@dirrm share/evolution-data-server-1.0
-@dirrm include/evolution-data-server-1.0/libical
-@dirrm include/evolution-data-server-1.0/libedataserver
-@dirrm include/evolution-data-server-1.0/libedata-cal
-@dirrm include/evolution-data-server-1.0/libedata-book
-@dirrm include/evolution-data-server-1.0/libecal
-@dirrm include/evolution-data-server-1.0/libebook
-@dirrm include/evolution-data-server-1.0/groupwise
-@dirrm include/evolution-data-server-1.0

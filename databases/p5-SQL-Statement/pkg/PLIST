@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/08 16:50:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:31:46 espie Exp $
 ${P5SITE}/SQL/
 ${P5SITE}/SQL/Dialects/
 ${P5SITE}/SQL/Dialects/ANSI.pm
@@ -9,11 +9,6 @@ ${P5SITE}/SQL/Parser.pm
 ${P5SITE}/SQL/Statement/
 ${P5SITE}/SQL/Statement.pm
 ${P5SITE}/SQL/Statement/GetInfo.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/SQL/
-@comment ${P5ARCH}/auto/SQL/Statement/
-@comment ${P5ARCH}/auto/SQL/Statement/.packlist
 @man man/man3p/SQL::Dialects::ANSI.3p
 @man man/man3p/SQL::Dialects::AnyData.3p
 @man man/man3p/SQL::Dialects::CSV.3p

@@ -1,19 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/07/12 15:23:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:31:46 espie Exp $
+@comment ${P5ARCH}/Bundle/DBD/
 @comment ${P5ARCH}/Bundle/DBD/mysql.pm
+${P5ARCH}/DBD/mysql/
 ${P5ARCH}/DBD/mysql.pm
 ${P5ARCH}/DBD/mysql/GetInfo.pm
 @comment ${P5ARCH}/DBD/mysql/INSTALL.pod
+${P5ARCH}/Mysql/
 ${P5ARCH}/Mysql.pm
 ${P5ARCH}/Mysql/Statement.pm
-@comment ${P5ARCH}/auto/DBD/mysql/.packlist
+${P5ARCH}/auto/DBD/
+${P5ARCH}/auto/DBD/mysql/
 ${P5ARCH}/auto/DBD/mysql/mysql.bs
 ${P5ARCH}/auto/DBD/mysql/mysql.so
-@comment man/man3p/Bundle::DBD::mysql.3p
-man/man3p/DBD::mysql.3p
-@comment man/man3p/DBD::mysql::INSTALL.3p
-man/man3p/Mysql.3p
-@dirrm ${P5ARCH}/auto/DBD/mysql
-@dirrm ${P5ARCH}/auto/DBD
-@dirrm ${P5ARCH}/Mysql
-@dirrm ${P5ARCH}/DBD/mysql
-@comment @dirrm ${P5ARCH}/Bundle/DBD
+@man man/man3p/Bundle::DBD::mysql.3p
+@man man/man3p/DBD::mysql.3p
+@man man/man3p/DBD::mysql::INSTALL.3p
+@man man/man3p/Mysql.3p

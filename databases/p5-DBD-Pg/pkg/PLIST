@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/04/13 14:03:44 peter Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/14 23:31:46 espie Exp $
 ${P5ARCH}/DBD/Pg.pm
+${P5ARCH}/auto/DBD/
+${P5ARCH}/auto/DBD/Pg/
 ${P5ARCH}/auto/DBD/Pg/Pg.bs
 ${P5ARCH}/auto/DBD/Pg/Pg.so
-man/man3p/DBD::Pg.3p
-@dirrm ${P5ARCH}/auto/DBD/Pg
+@man man/man3p/DBD::Pg.3p

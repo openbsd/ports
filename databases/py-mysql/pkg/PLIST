@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/07/31 19:12:00 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:31:46 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/CompatMysqldb.py
 lib/python${MODPY_VERSION}/site-packages/CompatMysqldb.pyc
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/connections.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/connections.pyc
+lib/python${MODPY_VERSION}/site-packages/MySQLdb/constants/
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/constants/CLIENT.py
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/constants/CLIENT.pyc
 lib/python${MODPY_VERSION}/site-packages/MySQLdb/constants/CR.py
@@ -30,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/MySQLdb/times.pyc
 lib/python${MODPY_VERSION}/site-packages/_mysql.so
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/_mysql_exceptions.pyc
+share/doc/MySQL-python/
 share/doc/MySQL-python/MySQLdb-1.html
 share/doc/MySQL-python/MySQLdb-2.html
 share/doc/MySQL-python/MySQLdb-3.html
@@ -39,6 +42,3 @@ share/doc/MySQL-python/MySQLdb-FAQ-2.html
 share/doc/MySQL-python/MySQLdb-FAQ-3.html
 share/doc/MySQL-python/MySQLdb-FAQ.html
 share/doc/MySQL-python/MySQLdb.html
-@dirrm share/doc/MySQL-python
-@dirrm lib/python${MODPY_VERSION}/site-packages/MySQLdb/constants
-@dirrm lib/python${MODPY_VERSION}/site-packages/MySQLdb

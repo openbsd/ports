@@ -1,7 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/08 16:14:16 espie Exp $
-lib/db4/libdb.la
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/09/14 23:31:45 espie Exp $
 @lib lib/db4/libdb.so.4.2
-lib/db4/libdb_cxx.la
 @lib lib/db4/libdb_cxx.so.4.2
 @lib lib/libdb.so.4.2
 @lib lib/libdb_cxx.so.4.2

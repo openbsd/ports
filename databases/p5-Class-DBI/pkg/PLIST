@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:31:45 espie Exp $
+${P5SITE}/Class/DBI/
 ${P5SITE}/Class/DBI.pm
 ${P5SITE}/Class/DBI/Column.pm
 ${P5SITE}/Class/DBI/ColumnGrouper.pm
 ${P5SITE}/Class/DBI/Iterator.pm
 ${P5SITE}/Class/DBI/Query.pm
-@comment ${P5ARCH}/auto/Class/DBI/.packlist
-man/man3p/Class::DBI.3p
-man/man3p/Class::DBI::Column.3p
-man/man3p/Class::DBI::ColumnGrouper.3p
-man/man3p/Class::DBI::Iterator.3p
-man/man3p/Class::DBI::Query.3p
-@comment @dirrm ${P5ARCH}/auto/Class/DBI
-@comment @dirrm ${P5ARCH}/auto/Class
-@dirrm ${P5SITE}/Class/DBI
+@man man/man3p/Class::DBI.3p
+@man man/man3p/Class::DBI::Column.3p
+@man man/man3p/Class::DBI::ColumnGrouper.3p
+@man man/man3p/Class::DBI::Iterator.3p
+@man man/man3p/Class::DBI::Query.3p

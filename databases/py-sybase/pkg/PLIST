@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/10/13 17:15:05 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:31:47 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/Sybase.py
 lib/python${MODPY_VERSION}/site-packages/Sybase.pyc
 lib/python${MODPY_VERSION}/site-packages/sybasect.so
+share/examples/py-sybase/
 share/examples/py-sybase/README
 share/examples/py-sybase/array_bind.py
 share/examples/py-sybase/array_bind.sql
@@ -22,4 +23,3 @@ share/examples/py-sybase/rpc.py
 share/examples/py-sybase/rpc.sql
 share/examples/py-sybase/timeout.py
 share/examples/py-sybase/timeout.readme
-@dirrm share/examples/py-sybase

@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/04/01 08:44:27 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:31:45 espie Exp $
 bin/gq
+share/gnome/
+share/gnome/apps/
+share/gnome/apps/Internet/
 share/gnome/apps/Internet/gq.desktop
+share/pixmaps/
+share/pixmaps/gq/
 share/pixmaps/gq/bomb.xpm
 share/pixmaps/gq/hide.xpm
 share/pixmaps/gq/line.xpm
@@ -8,4 +13,3 @@ share/pixmaps/gq/logo.xpm
 share/pixmaps/gq/new.xpm
 share/pixmaps/gq/textarea.xpm
 share/pixmaps/gq/warning.xpm
-@dirrm share/pixmaps/gq

@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/08 16:50:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:31:46 espie Exp $
 ${P5SITE}/Tie/
 ${P5SITE}/Tie/DBI.pm
 ${P5SITE}/Tie/RDBM.pm
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Tie/
-@comment ${P5ARCH}/auto/Tie/DBI/
-@comment ${P5ARCH}/auto/Tie/DBI/.packlist
 @man man/man3p/Tie::DBI.3p
 @man man/man3p/Tie::RDBM.3p

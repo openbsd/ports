@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/09 00:21:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:31:46 espie Exp $
 ${P5ARCH}/
 ${P5ARCH}/Sybase/
 ${P5ARCH}/Sybase/BCP.pm
@@ -8,7 +8,6 @@ ${P5ARCH}/Sybase/DBlib.pm
 ${P5ARCH}/Sybase/Sybperl.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Sybase/
-@comment ${P5ARCH}/auto/Sybase/.packlist
 ${P5ARCH}/auto/Sybase/CTlib/
 ${P5ARCH}/auto/Sybase/CTlib/CTlib.bs
 ${P5ARCH}/auto/Sybase/CTlib/CTlib.so

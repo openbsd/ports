@@ -1,8 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/06/25 16:21:32 marcm Exp $
-lib/libebook.so.7.0
-lib/libecal.so.7.0
-lib/libedata-book.so.0.7
-lib/libedata-cal.so.6.1
-lib/libedataserver.so.4.0
-lib/libegroupwise.so.1.1
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/14 23:31:45 espie Exp $
+@lib lib/libebook.so.7.0
+@lib lib/libecal.so.7.0
+@lib lib/libedata-book.so.0.7
+@lib lib/libedata-cal.so.6.1
+@lib lib/libedataserver.so.4.0
+@lib lib/libegroupwise.so.1.1

@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/07/20 07:46:18 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:31:46 espie Exp $
 ${P5ARCH}/DBD/Sybase.pm
 ${P5ARCH}/DBD/dbd-sybase.pod
-@comment ${P5ARCH}/auto/DBD/Sybase/.packlist
+${P5ARCH}/auto/DBD/
+${P5ARCH}/auto/DBD/Sybase/
 ${P5ARCH}/auto/DBD/Sybase/Sybase.bs
 man/man3p/DBD::Sybase.3
 %%SHARED%%
-@dirrm ${P5ARCH}/auto/DBD/Sybase
-@dirrm ${P5ARCH}/auto/DBD

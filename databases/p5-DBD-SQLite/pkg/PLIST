@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/03 14:25:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:31:46 espie Exp $
 ${P5ARCH}/DBD/SQLite.pm
 @comment ${P5ARCH}/DBD/getsqlite.pl
 ${P5ARCH}/auto/DBD/
 ${P5ARCH}/auto/DBD/SQLite/
-@comment ${P5ARCH}/auto/DBD/SQLite/.packlist
 ${P5ARCH}/auto/DBD/SQLite/SQLite.bs
 ${P5ARCH}/auto/DBD/SQLite/SQLite.so
 @man man/man3p/DBD::SQLite.3p

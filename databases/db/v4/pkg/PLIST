@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/08 16:14:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:31:45 espie Exp $
 @option no-default-conflict
 @pkgcfl db-4*
 bin/db4_archive
@@ -18,9 +18,11 @@ include/db4/db_185.h
 include/db4/db_cxx.h
 lib/db4/
 lib/db4/libdb.a
+lib/db4/libdb.la
 @comment lib/db4/libdb.so
 @comment lib/db4/libdb.so.4
 lib/db4/libdb_cxx.a
+lib/db4/libdb_cxx.la
 @comment lib/db4/libdb_cxx.so
 @comment lib/db4/libdb_cxx.so.4
 share/doc/db4/

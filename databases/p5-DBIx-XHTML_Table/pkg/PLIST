@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/01/17 23:02:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:31:46 espie Exp $
+${P5SITE}/DBIx/
 ${P5SITE}/DBIx/XHTML_Table.pm
-@comment ${P5ARCH}/auto/DBIx/XHTML_Table/.packlist
-man/man3p/DBIx::XHTML_Table.3p
-@comment @dirrm ${P5ARCH}/auto/DBIx/XHTML_Table
-@comment @dirrm ${P5ARCH}/auto/DBIx
-@dirrm ${P5SITE}/DBIx
+@man man/man3p/DBIx::XHTML_Table.3p

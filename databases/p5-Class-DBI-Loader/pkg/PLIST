@@ -1,16 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:31:45 espie Exp $
+${P5SITE}/Class/DBI/Loader/
 ${P5SITE}/Class/DBI/Loader.pm
 ${P5SITE}/Class/DBI/Loader/Generic.pm
 ${P5SITE}/Class/DBI/Loader/Pg.pm
 ${P5SITE}/Class/DBI/Loader/SQLite.pm
 ${P5SITE}/Class/DBI/Loader/mysql.pm
-@comment ${P5ARCH}/auto/Class/DBI/Loader/.packlist
-man/man3p/Class::DBI::Loader.3p
-man/man3p/Class::DBI::Loader::Generic.3p
-man/man3p/Class::DBI::Loader::Pg.3p
-man/man3p/Class::DBI::Loader::SQLite.3p
-man/man3p/Class::DBI::Loader::mysql.3p
-@comment @dirrm ${P5ARCH}/auto/Class/DBI/Loader
-@comment @dirrm ${P5ARCH}/auto/Class/DBI
-@comment @dirrm ${P5ARCH}/auto/Class
-@dirrm ${P5SITE}/Class/DBI/Loader
+@man man/man3p/Class::DBI::Loader.3p
+@man man/man3p/Class::DBI::Loader::Generic.3p
+@man man/man3p/Class::DBI::Loader::Pg.3p
+@man man/man3p/Class::DBI::Loader::SQLite.3p
+@man man/man3p/Class::DBI::Loader::mysql.3p

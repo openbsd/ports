@@ -1,12 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/01/18 00:32:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:31:46 espie Exp $
+${P5SITE}/Bundle/
+${P5SITE}/Bundle/Net/
 ${P5SITE}/Bundle/Net/LDAP.pm
+${P5SITE}/LWP/
+${P5SITE}/LWP/Protocol/
 ${P5SITE}/LWP/Protocol/ldap.pm
+${P5SITE}/Net/
+${P5SITE}/Net/LDAP/
 ${P5SITE}/Net/LDAP.pm
 ${P5SITE}/Net/LDAP.pod
 ${P5SITE}/Net/LDAP/ASN.pm
 ${P5SITE}/Net/LDAP/Bind.pm
 ${P5SITE}/Net/LDAP/Constant.pm
 ${P5SITE}/Net/LDAP/Constant.pod
+${P5SITE}/Net/LDAP/Control/
 ${P5SITE}/Net/LDAP/Control.pm
 ${P5SITE}/Net/LDAP/Control/Paged.pm
 ${P5SITE}/Net/LDAP/Control/ProxyAuth.pm
@@ -18,6 +25,7 @@ ${P5SITE}/Net/LDAP/DSML.pm
 ${P5SITE}/Net/LDAP/Entry.pm
 ${P5SITE}/Net/LDAP/Entry.pod
 ${P5SITE}/Net/LDAP/Examples.pod
+${P5SITE}/Net/LDAP/Extension/
 ${P5SITE}/Net/LDAP/Extension.pm
 ${P5SITE}/Net/LDAP/Extension/SetPassword.pm
 ${P5SITE}/Net/LDAP/Extra.pm
@@ -37,38 +45,28 @@ ${P5SITE}/Net/LDAP/Search.pod
 ${P5SITE}/Net/LDAP/Security.pod
 ${P5SITE}/Net/LDAP/Util.pm
 ${P5SITE}/Net/LDAPS.pm
-@comment ${P5ARCH}/auto/perl-ldap/.packlist
-man/man3p/Bundle::Net::LDAP.3p
-man/man3p/Net::LDAP.3p
-man/man3p/Net::LDAP::Constant.3p
-man/man3p/Net::LDAP::Control.3p
-man/man3p/Net::LDAP::Control::Paged.3p
-man/man3p/Net::LDAP::Control::ProxyAuth.3p
-man/man3p/Net::LDAP::Control::Sort.3p
-man/man3p/Net::LDAP::Control::SortResult.3p
-man/man3p/Net::LDAP::Control::VLV.3p
-man/man3p/Net::LDAP::Control::VLVResponse.3p
-man/man3p/Net::LDAP::DSML.3p
-man/man3p/Net::LDAP::Entry.3p
-man/man3p/Net::LDAP::Examples.3p
-man/man3p/Net::LDAP::Extra.3p
-man/man3p/Net::LDAP::FAQ.3p
-man/man3p/Net::LDAP::Filter.3p
-man/man3p/Net::LDAP::LDIF.3p
-man/man3p/Net::LDAP::Message.3p
-man/man3p/Net::LDAP::RFC.3p
-man/man3p/Net::LDAP::Reference.3p
-man/man3p/Net::LDAP::Schema.3p
-man/man3p/Net::LDAP::Search.3p
-man/man3p/Net::LDAP::Security.3p
-man/man3p/Net::LDAP::Util.3p
-man/man3p/Net::LDAPS.3p
-@comment @dirrm ${P5ARCH}/auto/perl-ldap
-@dirrm ${P5SITE}/Net/LDAP/Extension
-@dirrm ${P5SITE}/Net/LDAP/Control
-@dirrm ${P5SITE}/Net/LDAP
-@dirrm ${P5SITE}/Net
-@dirrm ${P5SITE}/LWP/Protocol
-@dirrm ${P5SITE}/LWP
-@dirrm ${P5SITE}/Bundle/Net
-@dirrm ${P5SITE}/Bundle
+@man man/man3p/Bundle::Net::LDAP.3p
+@man man/man3p/Net::LDAP.3p
+@man man/man3p/Net::LDAP::Constant.3p
+@man man/man3p/Net::LDAP::Control.3p
+@man man/man3p/Net::LDAP::Control::Paged.3p
+@man man/man3p/Net::LDAP::Control::ProxyAuth.3p
+@man man/man3p/Net::LDAP::Control::Sort.3p
+@man man/man3p/Net::LDAP::Control::SortResult.3p
+@man man/man3p/Net::LDAP::Control::VLV.3p
+@man man/man3p/Net::LDAP::Control::VLVResponse.3p
+@man man/man3p/Net::LDAP::DSML.3p
+@man man/man3p/Net::LDAP::Entry.3p
+@man man/man3p/Net::LDAP::Examples.3p
+@man man/man3p/Net::LDAP::Extra.3p
+@man man/man3p/Net::LDAP::FAQ.3p
+@man man/man3p/Net::LDAP::Filter.3p
+@man man/man3p/Net::LDAP::LDIF.3p
+@man man/man3p/Net::LDAP::Message.3p
+@man man/man3p/Net::LDAP::RFC.3p
+@man man/man3p/Net::LDAP::Reference.3p
+@man man/man3p/Net::LDAP::Schema.3p
+@man man/man3p/Net::LDAP::Search.3p
+@man man/man3p/Net::LDAP::Security.3p
+@man man/man3p/Net::LDAP::Util.3p
+@man man/man3p/Net::LDAPS.3p

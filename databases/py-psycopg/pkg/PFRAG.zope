@@ -1,4 +1,13 @@
-@comment $OpenBSD: PFRAG.zope,v 1.2 2002/07/06 10:29:39 shell Exp $
+@comment $OpenBSD: PFRAG.zope,v 1.3 2004/09/14 23:31:46 espie Exp $
+lib/zope/lib/python/Products/ZPsycopgDA/
+lib/zope/lib/python/Products/ZPsycopgDA/DA.py
+lib/zope/lib/python/Products/ZPsycopgDA/DABase.py
+lib/zope/lib/python/Products/ZPsycopgDA/__init__.py
+lib/zope/lib/python/Products/ZPsycopgDA/browse.dtml
+lib/zope/lib/python/Products/ZPsycopgDA/connectionAdd.dtml
+lib/zope/lib/python/Products/ZPsycopgDA/connectionEdit.dtml
+lib/zope/lib/python/Products/ZPsycopgDA/db.py
+lib/zope/lib/python/Products/ZPsycopgDA/icons/
 lib/zope/lib/python/Products/ZPsycopgDA/icons/bin.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/date.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/datetime.gif
@@ -11,14 +20,6 @@ lib/zope/lib/python/Products/ZPsycopgDA/icons/text.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/time.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/view.gif
 lib/zope/lib/python/Products/ZPsycopgDA/icons/what.gif
-lib/zope/lib/python/Products/ZPsycopgDA/DA.py
-lib/zope/lib/python/Products/ZPsycopgDA/DABase.py
-lib/zope/lib/python/Products/ZPsycopgDA/__init__.py
-lib/zope/lib/python/Products/ZPsycopgDA/browse.dtml
-lib/zope/lib/python/Products/ZPsycopgDA/connectionAdd.dtml
-lib/zope/lib/python/Products/ZPsycopgDA/connectionEdit.dtml
-lib/zope/lib/python/Products/ZPsycopgDA/db.py
 lib/zope/lib/python/Products/ZPsycopgDA/table_info.dtml
-@dirrm lib/zope/lib/python/Products/ZPsycopgDA/icons
 @unexec rm -f %D/lib/zope/lib/python/Products/ZPsycopgDA/*.pyo
 @unexec rmdir %D/lib/zope/lib/python/Products/ZPsycopgDA

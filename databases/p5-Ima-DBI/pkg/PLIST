@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/05/26 13:36:07 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:31:46 espie Exp $
+${P5SITE}/Ima/
 ${P5SITE}/Ima/DBI.pm
-@comment ${P5ARCH}/auto/Ima/DBI/.packlist
-man/man3p/Ima::DBI.3p
-@comment @dirrm ${P5ARCH}/auto/Ima/DBI
-@comment @dirrm ${P5ARCH}/auto/Ima
-@dirrm ${P5SITE}/Ima
+@man man/man3p/Ima::DBI.3p
