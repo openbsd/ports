@@ -1,7 +1,37 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2002/09/14 02:14:36 naddy Exp $
+$OpenBSD: patch-aclocal_m4,v 1.2 2002/09/14 15:00:56 naddy Exp $
 --- aclocal.m4.orig	Mon Mar 11 20:35:35 2002
-+++ aclocal.m4	Sat Sep 14 03:42:47 2002
-@@ -3455,6 +3455,11 @@ LIBDL="-ldl"
++++ aclocal.m4	Sat Sep 14 16:29:08 2002
+@@ -2524,10 +2524,8 @@ AC_DEFUN(AC_CHECK_COMPILERS,
+       if test $kde_use_debug_code = "full"; then
+         CFLAGS="-g3 $CFLAGS"
+       else
+-        CFLAGS="-g -O2 $CFLAGS"
++        CFLAGS="-g $CFLAGS"
+       fi
+-    else
+-      CFLAGS="-O2 $CFLAGS"
+     fi
+   fi
+ 
+@@ -2557,7 +2555,7 @@ AC_DEFUN(AC_CHECK_COMPILERS,
+         if test "$kde_use_debug_code" = "full"; then
+           CXXFLAGS="-g3 $CXXFLAGS"
+         else
+-          CXXFLAGS="-g -O2 $CXXFLAGS"
++          CXXFLAGS="-g $CXXFLAGS"
+         fi
+       fi
+       KDE_CHECK_COMPILER_FLAG(fno-builtin,[CXXFLAGS="-fno-builtin $CXXFLAGS"])
+@@ -2568,8 +2566,6 @@ AC_DEFUN(AC_CHECK_COMPILERS,
+     else
+       if test "$CXX" = "KCC"; then
+         CXXFLAGS="+K3 $CXXFLAGS"
+-      else
+-        CXXFLAGS="-O2 $CXXFLAGS"
+       fi  
+     fi
+   fi
+@@ -3455,6 +3451,11 @@ LIBDL="-ldl"
  ac_cv_have_dlfcn=yes
  ])
  
@@ -13,7 +43,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2002/09/14 02:14:36 naddy Exp $
  AC_CHECK_LIB(dld, shl_unload, [
  LIBDL="-ldld"
  ac_cv_have_shload=yes
-@@ -5347,19 +5352,7 @@ netbsd*)
+@@ -5347,19 +5348,7 @@ netbsd*)
    ;;
  
  openbsd* )
