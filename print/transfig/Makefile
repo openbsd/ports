@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/07/19 07:35:18 wilfried Exp $
 
 COMMENT=	"tools to convert Xfig's .fig files"
 
@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/ \
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png
-RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
+RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu \
+		:netpbm->=9.0:graphics/netpbm
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
