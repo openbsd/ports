@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2001/03/21 23:29:20 avsm Exp $
+# $OpenBSD: Makefile,v 1.64 2001/03/24 02:26:01 avsm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += asp2php
      SUBDIR += asp2php:gui
 #    SUBDIR += asl
+     SUBDIR += astyle
      SUBDIR += autobook
      SUBDIR += autoconf
      SUBDIR += automake
