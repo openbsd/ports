@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/08/11 02:39:20 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/12 12:41:23 kevlo Exp $
 
 DISTNAME=	tk8.3.2
 PKGNAME=	tk-8.3.2
@@ -9,14 +9,14 @@ MASTER_SITE_SUBDIR= tcl8_3
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
-LIB_DEPENDS=	tcl83.1.3::lang/tcl/8.3
-
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+LIB_DEPENDS=    tcl83.1.3::lang/tcl/8.3
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \

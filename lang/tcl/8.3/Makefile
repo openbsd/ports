@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/11 02:34:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/12 12:41:28 kevlo Exp $
 
 DISTNAME=	tcl8.3.2
 PKGNAME=	tcl-8.3.2
@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR= tcl8_3
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
-MAINTAINER=	kevlo@openbsd.org
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
