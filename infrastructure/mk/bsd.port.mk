@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.268 2000/04/18 17:35:09 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.269 2000/04/18 20:13:48 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -749,7 +749,7 @@ ${PLIST}: ${PKGDIR}/PLIST.sed${SUBPACKAGE}
 	@sed -e '/%%SHARED%%/d' <$? \
 		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
 .  else
-	@sed -e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared' -e '//d' <$? \
+	@sed -e '/%%SHARED%%/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' <$? \
 		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
 .  endif
 .endif
