@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.535 2002/09/11 19:35:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.536 2002/10/10 21:14:11 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2179,7 +2179,7 @@ update-patches:
 		/bin/sh ${PORTSDIR}/infrastructure/build/update-patches`; \
 	case $$toedit in "");; \
 	*) read i?'edit patches: '; \
-	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
+	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
 	
 
 ################################################################
