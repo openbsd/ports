@@ -1,0 +1,12 @@
+onesixtyone takes a different approach to SNMP scanning. It takes advantage
+of the fact that SNMP is a connectionless protocol and sends all SNMP
+requests as fast as it can. Then the scanner waits for responses to come
+back and logs them, in a fashion similar to Nmap ping sweeps. By default
+onesixtyone waits for 10 milliseconds between sending packets, which is
+adequate for 100MBs switched networks. The user can adjust this value
+via the -w command line option. If set to 0, the scanner will send packets
+as fast as the kernel would accept them, which may lead to packet drop.
+
+Running onesixtyone on a class B network (switched 100MBs with 1Gbs backbone)
+with -w 10 gives us a performance of 3 seconds per class C, with no dropped
+packets. All 65536 IP addresses were scanned in less than 13 minutes.
