@@ -1,10 +1,7 @@
-Patch helping 64 bit cleanness taken from the Debian Linux package made
-by Stéphane Bortmeyer <bortzmeyer@debian.org>. 64 bit patch originally
-by Bart Warmerdam <bartw@xs4all.nl>.
-
---- tcpip.h.orig
-+++ tcpip.h
-@@ -4,12 +4,12 @@
+$OpenBSD: patch-tcpip_h,v 1.1 2003/04/22 12:08:05 avsm Exp $
+--- tcpip.h.orig	Tue Sep 22 21:35:43 1998
++++ tcpip.h	Mon Apr 14 23:50:21 2003
+@@ -4,12 +4,12 @@ typedef struct
    {
      unsigned char vh;
      unsigned char stype;
@@ -21,7 +18,7 @@ by Bart Warmerdam <bartw@xs4all.nl>.
      struct in_addr sip;
      struct in_addr dip;
    }
-@@ -17,15 +17,15 @@
+@@ -17,15 +17,15 @@ iprec;
  
  typedef struct
    {
@@ -44,7 +41,7 @@ by Bart Warmerdam <bartw@xs4all.nl>.
    }
  tcprec;
  
-@@ -35,7 +35,7 @@
+@@ -35,7 +35,7 @@ typedef struct
      struct in_addr dip;
      unsigned char zero;
      unsigned char proto;
@@ -53,7 +50,7 @@ by Bart Warmerdam <bartw@xs4all.nl>.
    }
  tcpsrec;
  
-@@ -43,12 +43,12 @@
+@@ -43,12 +43,12 @@ typedef struct
    {
      unsigned char type;
      unsigned char code;
@@ -71,7 +68,7 @@ by Bart Warmerdam <bartw@xs4all.nl>.
    }
  icmprec;
  
-@@ -67,23 +67,23 @@
+@@ -67,23 +67,23 @@ typedef struct
    {
      struct sockaddr_in from;
      struct sockaddr_in dest;
@@ -103,3 +100,4 @@ by Bart Warmerdam <bartw@xs4all.nl>.
 +void sendicmp (spoofrec *, struct sockaddr_in *, u_int16_t);
 +struct in_addr getlocalip (u_int32_t dest);
  char *tcpip_id(void);
+ 

@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri Mar 24 20:32:01 2000
-+++ Makefile.in	Fri Mar 24 20:36:01 2000
-@@ -14,7 +14,7 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2003/04/22 12:08:05 avsm Exp $
+--- Makefile.in.orig	Tue Sep 22 21:35:42 1998
++++ Makefile.in	Mon Apr 14 23:50:21 2003
+@@ -14,7 +14,7 @@ WARNINGS=-Wall
  LANGUAGE=-DENGLISH
  # LANGUAGE=-DSPANISH
  CFGFILE=-DDFLT_CONFIG_FILE=\"@sysconfdir@/queso.conf\" 
