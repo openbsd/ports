@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/10 21:25:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/01/04 16:57:52 sturm Exp $
+@pkgcfl mad-*
 include/id3tag.h
 lib/libid3tag.a
 lib/libid3tag.la
