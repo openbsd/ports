@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2003/05/21 18:15:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.107 2003/05/22 22:49:47 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -24,7 +24,6 @@
      SUBDIR += gtkhtml
 #    SUBDIR += gwstat
 #    SUBDIR += harvest
-     SUBDIR += hotjava
 #    SUBDIR += http-analyze
      SUBDIR += http_load
      SUBDIR += http_ping
