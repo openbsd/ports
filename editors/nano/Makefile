@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/10 12:16:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2000/09/21 15:10:24 naddy Exp $
 
-DISTNAME=	nano-0.9.16
+DISTNAME=	nano-0.9.18
 CATEGORIES=	editors
-NEED_VERSION=	1.319
+NEED_VERSION=	1.333
 HOMEPAGE=	http://www.asty.org/nano/
 
 MAINTAINER=	naddy@openbsd.org
@@ -21,12 +21,12 @@ FLAVOR?=
 
 LIB_DEPENDS=	intl.1::devel/gettext
 .if ${FLAVOR:L:Mslang}
-LIB_DEPENDS+=	slang.14.1::devel/libslang
+LIB_DEPENDS+=	slang.14.2::devel/libslang
 .endif
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-included-gettext \
-			--includedir='${LOCALBASE}/include'
+CONFIGURE_STYLE=	gnu autoconf
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 .if ${FLAVOR:L:Mslang}
 CONFIGURE_ARGS+=	--with-slang='${LOCALBASE}'
 .endif
