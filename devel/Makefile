@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2002/12/06 20:46:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.150 2002/12/10 16:21:08 couderc Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -147,6 +147,7 @@
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += rats
+     SUBDIR += ruby-ncurses
      SUBDIR += sdl
      SUBDIR += sdl,esd
      SUBDIR += sdl-image
