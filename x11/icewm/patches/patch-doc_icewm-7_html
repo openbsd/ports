@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_icewm-7_html,v 1.4 2004/05/25 16:36:35 naddy Exp $
---- doc/icewm-7.html.orig	Sun May 23 16:39:41 2004
-+++ doc/icewm-7.html	Sun May 23 16:46:26 2004
-@@ -25,8 +25,8 @@
+$OpenBSD: patch-doc_icewm-7_html,v 1.5 2004/06/13 12:25:08 sturm Exp $
+--- doc/icewm-7.html.orig	2004-05-23 08:18:42.000000000 +0200
++++ doc/icewm-7.html	2004-06-13 13:38:31.000000000 +0200
+@@ -25,8 +25,8 @@ directories:</P>
  <DL>
  <DT><B>$HOME/.icewm</B><DD><P>user's personal customization. This location can
  be customized by setting the $ICEWM_PRIVCFG environment variable.</P>
@@ -12,7 +12,7 @@ $OpenBSD: patch-doc_icewm-7_html,v 1.4 2004/05/25 16:36:35 naddy Exp $
  with default files</P>
  </DL>
  </P>
-@@ -34,8 +34,8 @@
+@@ -34,8 +34,8 @@ with default files</P>
  in the system/install directory can be overridden by the user by creating
  the same directory hierarchy under <CODE>$HOME/.icewm</CODE>.</P>
  <P>To customize icewm yourself, you should create the $HOME/.icewm directory and copy

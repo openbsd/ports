@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_wmapp_cc,v 1.3 2004/05/25 16:36:35 naddy Exp $
---- src/wmapp.cc.orig	Sun May 23 16:58:43 2004
-+++ src/wmapp.cc	Sun May 23 17:03:11 2004
-@@ -923,11 +923,11 @@
+$OpenBSD: patch-src_wmapp_cc,v 1.4 2004/06/13 12:25:08 sturm Exp $
+--- src/wmapp.cc.orig	2004-05-23 08:18:19.000000000 +0200
++++ src/wmapp.cc	2004-06-13 13:38:32.000000000 +0200
+@@ -923,11 +923,11 @@ void runRestart(const char *path, char *
          if (args) {
              execvp(path, args);
          } else {
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_wmapp_cc,v 1.3 2004/05/25 16:36:35 naddy Exp $
      }
  
      xapp->alert();
-@@ -1452,6 +1452,8 @@
+@@ -1452,6 +1452,8 @@ static void print_usage(const char *argv
  int main(int argc, char **argv) {
      YLocale locale;
  
@@ -24,12 +24,12 @@ $OpenBSD: patch-src_wmapp_cc,v 1.3 2004/05/25 16:36:35 naddy Exp $
      for (char ** arg = argv + 1; arg < argv + argc; ++arg) {
          if (**arg == '-') {
  #ifdef DEBUG
-@@ -1492,6 +1494,8 @@
-         themeName = newstr(overrideTheme);
+@@ -1493,6 +1495,8 @@ int main(int argc, char **argv) {
  #endif
      YWMApp app(&argc, &argv);
-+
-+    app.runProgram(bg[0], bg);
  
++    app.runProgram(bg[0], bg);
++
  #ifdef CONFIG_GUIEVENTS
      app.signalGuiEvent(geStartup);
+ #endif

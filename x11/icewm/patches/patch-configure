@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2004/05/25 16:36:35 naddy Exp $
---- configure.orig	Sun May 23 16:22:32 2004
-+++ configure	Sun May 23 16:23:04 2004
-@@ -1438,7 +1438,7 @@
+$OpenBSD: patch-configure,v 1.3 2004/06/13 12:25:08 sturm Exp $
+--- configure.orig	2004-05-23 08:18:27.000000000 +0200
++++ configure	2004-06-13 13:43:27.000000000 +0200
+@@ -1438,7 +1438,7 @@ test -n "$target_alias" &&
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
  
@@ -10,3 +10,11 @@ $OpenBSD: patch-configure,v 1.2 2004/05/25 16:36:35 naddy Exp $
  APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
  TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
  TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist" # iceclock
+@@ -2330,7 +2330,6 @@ if { ac_try='rm conftest; $CC -o conftes
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; } >/dev/null 2>&1; then
+   ice_prog_gxx=yes
+-  CXX=$CC
+ else
+   ice_prog_gxx=no
+ fi

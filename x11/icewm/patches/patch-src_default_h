@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_default_h,v 1.2 2004/05/21 17:00:09 naddy Exp $
---- src/default.h.orig	2003-09-27 02:54:45.000000000 -0500
-+++ src/default.h	2004-02-15 17:42:38.000000000 -0600
-@@ -188,8 +188,8 @@ XSV(const char *, moveSizeFontName,     
+$OpenBSD: patch-src_default_h,v 1.3 2004/06/13 12:25:08 sturm Exp $
+--- src/default.h.orig	2004-05-23 08:18:19.000000000 +0200
++++ src/default.h	2004-06-13 13:38:32.000000000 +0200
+@@ -129,8 +129,8 @@ XSV(const char *, acpiIgnoreBatteries,  
  
  XSV(const char *, kdeDataDir,                   KDEDIR)
  XSV(const char *, mailBoxPath,                  0)
