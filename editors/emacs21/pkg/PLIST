@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/11/18 22:41:19 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 17:56:44 espie Exp $
 bin/b2m
 bin/ctags
 bin/ebrowse
@@ -8,174 +8,36 @@ bin/emacsclient
 bin/etags
 bin/grep-changelog
 bin/rcs-checkin
-@unexec install-info --delete %D/info/ada-mode %D/info/dir
-info/ada-mode
-@exec   install-info          %D/info/ada-mode %D/info/dir
-@unexec install-info --delete %D/info/autotype %D/info/dir
-info/autotype
-@exec   install-info          %D/info/autotype %D/info/dir
-@unexec install-info --delete %D/info/ccmode %D/info/dir
-info/ccmode
-info/ccmode-1
-info/ccmode-2
-info/ccmode-3
-info/ccmode-4
-@exec   install-info          %D/info/ccmode %D/info/dir
-@unexec install-info --delete %D/info/cl %D/info/dir
-info/cl
-info/cl-1
-info/cl-2
-info/cl-3
-info/cl-4
-info/cl-5
-info/cl-6
-@exec   install-info          %D/info/cl %D/info/dir
-@unexec install-info --delete %D/info/dired-x %D/info/dir
-info/dired-x
-@exec   install-info          %D/info/dired-x %D/info/dir
-@unexec install-info --delete %D/info/ebrowse %D/info/dir
-info/ebrowse
-@exec   install-info          %D/info/ebrowse %D/info/dir
-@unexec install-info --delete %D/info/ediff %D/info/dir
-info/ediff
-info/ediff-1
-info/ediff-2
-info/ediff-3
-@exec   install-info          %D/info/ediff %D/info/dir
-@unexec install-info --delete %D/info/efaq %D/info/dir
-info/efaq
-info/efaq-1
-info/efaq-2
-info/efaq-3
-info/efaq-4
-info/efaq-5
-@exec   install-info          %D/info/efaq %D/info/dir
-@unexec install-info --delete %D/info/emacs %D/info/dir
-info/emacs
-info/emacs-1
-info/emacs-10
-info/emacs-11
-info/emacs-12
-info/emacs-13
-info/emacs-14
-info/emacs-15
-info/emacs-16
-info/emacs-17
-info/emacs-18
-info/emacs-19
-info/emacs-2
-info/emacs-20
-info/emacs-21
-info/emacs-22
-info/emacs-23
-info/emacs-24
-info/emacs-25
-info/emacs-26
-info/emacs-27
-info/emacs-28
-info/emacs-29
-info/emacs-3
-info/emacs-30
-info/emacs-31
-info/emacs-32
-info/emacs-33
-info/emacs-34
-info/emacs-35
-info/emacs-36
-info/emacs-4
-info/emacs-5
-info/emacs-6
-info/emacs-7
-info/emacs-8
-info/emacs-9
-@exec   install-info          %D/info/emacs %D/info/dir
-@unexec install-info --delete %D/info/emacs-mime %D/info/dir
-info/emacs-mime
-@exec   install-info          %D/info/emacs-mime %D/info/dir
-@unexec install-info --delete %D/info/eshell %D/info/dir
-info/eshell
-@exec   install-info          %D/info/eshell %D/info/dir
-@unexec install-info --delete %D/info/eudc %D/info/dir
-info/eudc
-@exec   install-info          %D/info/eudc %D/info/dir
-@unexec install-info --delete %D/info/forms %D/info/dir
-info/forms
-@exec   install-info          %D/info/forms %D/info/dir
-@unexec install-info --delete %D/info/gnus %D/info/dir
-info/gnus
-info/gnus-1
-info/gnus-10
-info/gnus-11
-info/gnus-12
-info/gnus-13
-info/gnus-14
-info/gnus-15
-info/gnus-16
-info/gnus-17
-info/gnus-2
-info/gnus-3
-info/gnus-4
-info/gnus-5
-info/gnus-6
-info/gnus-7
-info/gnus-8
-info/gnus-9
-@exec   install-info          %D/info/gnus %D/info/dir
-@unexec install-info --delete %D/info/idlwave %D/info/dir
-info/idlwave
-@exec   install-info          %D/info/idlwave %D/info/dir
-@unexec install-info --delete %D/info/info %D/info/dir
-info/info
-@exec   install-info          %D/info/info %D/info/dir
-@unexec install-info --delete %D/info/message %D/info/dir
-info/message
-@exec   install-info          %D/info/message %D/info/dir
-@unexec install-info --delete %D/info/mh-e %D/info/dir
-info/mh-e
-info/mh-e-1
-info/mh-e-2
-info/mh-e-3
-info/mh-e-4
-@exec   install-info          %D/info/mh-e %D/info/dir
-@unexec install-info --delete %D/info/pcl-cvs %D/info/dir
-info/pcl-cvs
-@exec   install-info          %D/info/pcl-cvs %D/info/dir
-@unexec install-info --delete %D/info/reftex %D/info/dir
-info/reftex
-info/reftex-1
-info/reftex-2
-info/reftex-3
-info/reftex-4
-info/reftex-5
-@exec   install-info          %D/info/reftex %D/info/dir
-@unexec install-info --delete %D/info/sc %D/info/dir
-info/sc
-info/sc-1
-info/sc-2
-info/sc-3
-@exec   install-info          %D/info/sc %D/info/dir
-@unexec install-info --delete %D/info/speedbar %D/info/dir
-info/speedbar
-@exec   install-info          %D/info/speedbar %D/info/dir
-@unexec install-info --delete %D/info/vip %D/info/dir
-info/vip
-info/vip-1
-info/vip-2
-@exec   install-info          %D/info/vip %D/info/dir
-@unexec install-info --delete %D/info/viper %D/info/dir
-info/viper
-info/viper-1
-info/viper-2
-info/viper-3
-info/viper-4
-info/viper-5
-@exec   install-info          %D/info/viper %D/info/dir
-@unexec install-info --delete %D/info/widget %D/info/dir
-info/widget
-@exec   install-info          %D/info/widget %D/info/dir
-@unexec install-info --delete %D/info/woman %D/info/dir
-info/woman
-@exec   install-info          %D/info/woman %D/info/dir
+@info info/ada-mode
+@info info/autotype
+@info info/ccmode
+@info info/cl
+@comment info/dir
+@info info/dired-x
+@info info/ebrowse
+@info info/ediff
+@info info/efaq
+@info info/emacs
+@info info/emacs-mime
+@info info/eshell
+@info info/eudc
+@info info/forms
+@info info/gnus
+@info info/idlwave
+@info info/info
+@info info/message
+@info info/mh-e
+@info info/pcl-cvs
+@info info/reftex
+@info info/sc
+@info info/speedbar
+@info info/vip
+@info info/viper
+@info info/widget
+@info info/woman
+libexec/emacs/
+libexec/emacs/${VERSION}/
+libexec/emacs/${VERSION}/${GCCARCH}/
 libexec/emacs/${VERSION}/${GCCARCH}/cvtmail
 libexec/emacs/${VERSION}/${GCCARCH}/digest-doc
 libexec/emacs/${VERSION}/${GCCARCH}/emacsserver
@@ -188,10 +50,13 @@ libexec/emacs/${VERSION}/${GCCARCH}/rcs2log
 libexec/emacs/${VERSION}/${GCCARCH}/sorted-doc
 libexec/emacs/${VERSION}/${GCCARCH}/vcdiff
 libexec/emacs/${VERSION}/${GCCARCH}/yow
-man/man1/ctags.1
-man/man1/emacs.1
-man/man1/etags.1
-man/man1/gfdl.1
+@man man/man1/ctags.1
+@man man/man1/emacs.1
+@man man/man1/etags.1
+@man man/man1/gfdl.1
+share/emacs/
+share/emacs/${VERSION}/
+share/emacs/${VERSION}/etc/
 share/emacs/${VERSION}/etc/BABYL
 share/emacs/${VERSION}/etc/CENSORSHIP
 share/emacs/${VERSION}/etc/COOKIES
@@ -260,6 +125,7 @@ share/emacs/${VERSION}/etc/de-refcard.ps
 share/emacs/${VERSION}/etc/de-refcard.tex
 share/emacs/${VERSION}/etc/dired-ref.ps
 share/emacs/${VERSION}/etc/dired-ref.tex
+share/emacs/${VERSION}/etc/e/
 share/emacs/${VERSION}/etc/e/eterm
 share/emacs/${VERSION}/etc/e/eterm.ti
 share/emacs/${VERSION}/etc/echo.msg
@@ -313,6 +179,8 @@ share/emacs/${VERSION}/etc/ulimit.hack
 share/emacs/${VERSION}/etc/vipcard.tex
 share/emacs/${VERSION}/etc/viperCard.tex
 share/emacs/${VERSION}/etc/yow.lines
+share/emacs/${VERSION}/leim/
+share/emacs/${VERSION}/lisp/
 share/emacs/${VERSION}/lisp/COPYING
 share/emacs/${VERSION}/lisp/README
 share/emacs/${VERSION}/lisp/abbrev.elc
@@ -335,6 +203,7 @@ share/emacs/${VERSION}/lisp/bs.elc
 share/emacs/${VERSION}/lisp/buff-menu.elc
 share/emacs/${VERSION}/lisp/byte-run.elc
 share/emacs/${VERSION}/lisp/calculator.elc
+share/emacs/${VERSION}/lisp/calendar/
 share/emacs/${VERSION}/lisp/calendar/appt.elc
 share/emacs/${VERSION}/lisp/calendar/cal-china.elc
 share/emacs/${VERSION}/lisp/calendar/cal-coptic.elc
@@ -406,6 +275,7 @@ share/emacs/${VERSION}/lisp/edmacro.elc
 share/emacs/${VERSION}/lisp/ehelp.elc
 share/emacs/${VERSION}/lisp/electric.elc
 share/emacs/${VERSION}/lisp/elide-head.elc
+share/emacs/${VERSION}/lisp/emacs-lisp/
 share/emacs/${VERSION}/lisp/emacs-lisp/advice.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/assoc.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/authors.elc
@@ -456,6 +326,7 @@ share/emacs/${VERSION}/lisp/emacs-lisp/tq.elc
 share/emacs/${VERSION}/lisp/emacs-lisp/trace.elc
 share/emacs/${VERSION}/lisp/emacs-lock.elc
 share/emacs/${VERSION}/lisp/emerge.elc
+share/emacs/${VERSION}/lisp/emulation/
 share/emacs/${VERSION}/lisp/emulation/crisp.elc
 share/emacs/${VERSION}/lisp/emulation/edt-lk201.elc
 share/emacs/${VERSION}/lisp/emulation/edt-mapper.elc
@@ -482,6 +353,7 @@ share/emacs/${VERSION}/lisp/emulation/viper.elc
 share/emacs/${VERSION}/lisp/emulation/ws-mode.elc
 share/emacs/${VERSION}/lisp/enriched.elc
 share/emacs/${VERSION}/lisp/env.elc
+share/emacs/${VERSION}/lisp/eshell/
 share/emacs/${VERSION}/lisp/eshell/em-alias.elc
 share/emacs/${VERSION}/lisp/eshell/em-banner.elc
 share/emacs/${VERSION}/lisp/eshell/em-basic.elc
@@ -537,6 +409,7 @@ share/emacs/${VERSION}/lisp/forms.elc
 share/emacs/${VERSION}/lisp/frame.elc
 share/emacs/${VERSION}/lisp/generic-x.el
 share/emacs/${VERSION}/lisp/generic.elc
+share/emacs/${VERSION}/lisp/gnus/
 share/emacs/${VERSION}/lisp/gnus/binhex.elc
 share/emacs/${VERSION}/lisp/gnus/catchup.pbm
 share/emacs/${VERSION}/lisp/gnus/catchup.xpm
@@ -705,6 +578,7 @@ share/emacs/${VERSION}/lisp/indent.elc
 share/emacs/${VERSION}/lisp/info-look.elc
 share/emacs/${VERSION}/lisp/info.elc
 share/emacs/${VERSION}/lisp/informat.elc
+share/emacs/${VERSION}/lisp/international/
 share/emacs/${VERSION}/lisp/international/ccl.elc
 share/emacs/${VERSION}/lisp/international/characters.elc
 share/emacs/${VERSION}/lisp/international/codepage.elc
@@ -746,6 +620,7 @@ share/emacs/${VERSION}/lisp/iswitchb.elc
 share/emacs/${VERSION}/lisp/jit-lock.elc
 share/emacs/${VERSION}/lisp/jka-compr.elc
 share/emacs/${VERSION}/lisp/kermit.elc
+share/emacs/${VERSION}/lisp/language/
 share/emacs/${VERSION}/lisp/language/china-util.elc
 share/emacs/${VERSION}/lisp/language/chinese.elc
 share/emacs/${VERSION}/lisp/language/cyril-util.elc
@@ -786,6 +661,7 @@ share/emacs/${VERSION}/lisp/log-view.elc
 share/emacs/${VERSION}/lisp/lpr.elc
 share/emacs/${VERSION}/lisp/ls-lisp.elc
 share/emacs/${VERSION}/lisp/macros.elc
+share/emacs/${VERSION}/lisp/mail/
 share/emacs/${VERSION}/lisp/mail/blessmail.el
 share/emacs/${VERSION}/lisp/mail/emacsbug.elc
 share/emacs/${VERSION}/lisp/mail/feedmail.elc
@@ -836,6 +712,7 @@ share/emacs/${VERSION}/lisp/mouse-sel.elc
 share/emacs/${VERSION}/lisp/mouse.elc
 share/emacs/${VERSION}/lisp/msb.elc
 share/emacs/${VERSION}/lisp/mwheel.elc
+share/emacs/${VERSION}/lisp/net/
 share/emacs/${VERSION}/lisp/net/ange-ftp.elc
 share/emacs/${VERSION}/lisp/net/browse-url.elc
 share/emacs/${VERSION}/lisp/net/eudc-bob.elc
@@ -858,6 +735,7 @@ share/emacs/${VERSION}/lisp/net/webjump.elc
 share/emacs/${VERSION}/lisp/net/zone-mode.elc
 share/emacs/${VERSION}/lisp/newcomment.elc
 share/emacs/${VERSION}/lisp/novice.elc
+share/emacs/${VERSION}/lisp/obsolete/
 share/emacs/${VERSION}/lisp/obsolete/auto-show.elc
 share/emacs/${VERSION}/lisp/obsolete/cplus-md.elc
 share/emacs/${VERSION}/lisp/obsolete/hilit19.elc
@@ -888,6 +766,7 @@ share/emacs/${VERSION}/lisp/pcvs-info.elc
 share/emacs/${VERSION}/lisp/pcvs-parse.elc
 share/emacs/${VERSION}/lisp/pcvs-util.elc
 share/emacs/${VERSION}/lisp/pcvs.elc
+share/emacs/${VERSION}/lisp/play/
 share/emacs/${VERSION}/lisp/play/5x5.elc
 share/emacs/${VERSION}/lisp/play/animate.elc
 share/emacs/${VERSION}/lisp/play/blackbox.elc
@@ -916,6 +795,7 @@ share/emacs/${VERSION}/lisp/play/studly.elc
 share/emacs/${VERSION}/lisp/play/tetris.elc
 share/emacs/${VERSION}/lisp/play/yow.elc
 share/emacs/${VERSION}/lisp/play/zone.elc
+share/emacs/${VERSION}/lisp/progmodes/
 share/emacs/${VERSION}/lisp/progmodes/ada-mode.elc
 share/emacs/${VERSION}/lisp/progmodes/ada-prj.elc
 share/emacs/${VERSION}/lisp/progmodes/ada-stmt.elc
@@ -1027,6 +907,7 @@ share/emacs/${VERSION}/lisp/talk.elc
 share/emacs/${VERSION}/lisp/tar-mode.elc
 share/emacs/${VERSION}/lisp/tcp.elc
 share/emacs/${VERSION}/lisp/tempo.elc
+share/emacs/${VERSION}/lisp/term/
 share/emacs/${VERSION}/lisp/term.elc
 share/emacs/${VERSION}/lisp/term/AT386.el
 share/emacs/${VERSION}/lisp/term/README
@@ -1062,6 +943,7 @@ share/emacs/${VERSION}/lisp/term/wyse50.el
 share/emacs/${VERSION}/lisp/term/x-win.elc
 share/emacs/${VERSION}/lisp/term/xterm.el
 share/emacs/${VERSION}/lisp/terminal.elc
+share/emacs/${VERSION}/lisp/textmodes/
 share/emacs/${VERSION}/lisp/textmodes/artist.elc
 share/emacs/${VERSION}/lisp/textmodes/bib-mode.elc
 share/emacs/${VERSION}/lisp/textmodes/bibtex.elc
@@ -1106,6 +988,7 @@ share/emacs/${VERSION}/lisp/time.elc
 share/emacs/${VERSION}/lisp/timer.elc
 share/emacs/${VERSION}/lisp/timezone.elc
 share/emacs/${VERSION}/lisp/tmm.elc
+share/emacs/${VERSION}/lisp/toolbar/
 share/emacs/${VERSION}/lisp/toolbar/attach.pbm
 share/emacs/${VERSION}/lisp/toolbar/cancel.pbm
 share/emacs/${VERSION}/lisp/toolbar/cancel.xpm
@@ -1194,32 +1077,7 @@ share/emacs/${VERSION}/lisp/woman.elc
 share/emacs/${VERSION}/lisp/xml.elc
 share/emacs/${VERSION}/lisp/xscheme.elc
 share/emacs/${VERSION}/lisp/xt-mouse.elc
+share/emacs/${VERSION}/site-lisp/
 share/emacs/${VERSION}/site-lisp/subdirs.el
+share/emacs/site-lisp/
 share/emacs/site-lisp/subdirs.el
-@dirrm share/emacs/site-lisp
-@dirrm share/emacs/${VERSION}/site-lisp
-@dirrm share/emacs/${VERSION}/lisp/toolbar
-@dirrm share/emacs/${VERSION}/lisp/textmodes
-@dirrm share/emacs/${VERSION}/lisp/term
-@dirrm share/emacs/${VERSION}/lisp/progmodes
-@dirrm share/emacs/${VERSION}/lisp/play
-@dirrm share/emacs/${VERSION}/lisp/obsolete
-@dirrm share/emacs/${VERSION}/lisp/net
-@dirrm share/emacs/${VERSION}/lisp/mail
-@dirrm share/emacs/${VERSION}/lisp/language
-@dirrm share/emacs/${VERSION}/lisp/international
-@dirrm share/emacs/${VERSION}/lisp/gnus
-@dirrm share/emacs/${VERSION}/lisp/eshell
-@dirrm share/emacs/${VERSION}/lisp/emulation
-@dirrm share/emacs/${VERSION}/lisp/emacs-lisp
-@dirrm share/emacs/${VERSION}/lisp/calendar
-@dirrm share/emacs/${VERSION}/lisp
-@exec mkdir -p %D/share/emacs/${VERSION}/leim
-@dirrm share/emacs/${VERSION}/leim
-@dirrm share/emacs/${VERSION}/etc/e
-@dirrm share/emacs/${VERSION}/etc
-@dirrm share/emacs/${VERSION}
-@dirrm share/emacs
-@dirrm libexec/emacs/${VERSION}/${GCCARCH}
-@dirrm libexec/emacs/${VERSION}
-@dirrm libexec/emacs
