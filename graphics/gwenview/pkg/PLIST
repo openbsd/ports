@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/05 05:02:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/10/06 06:54:25 brad Exp $
 bin/gwenview
 man/man1/gwenview.1
 share/applnk/Graphics/gwenview.desktop
@@ -47,7 +47,6 @@ share/locale/it/LC_MESSAGES/gwenview.mo
 share/locale/ja/LC_MESSAGES/gwenview.mo
 share/locale/ko/LC_MESSAGES/gwenview.mo
 share/locale/nl/LC_MESSAGES/gwenview.mo
-share/locale/no/LC_MESSAGES/gwenview.mo
 share/locale/pl/LC_MESSAGES/gwenview.mo
 share/locale/sv/LC_MESSAGES/gwenview.mo
 @dirrm share/apps/gwenview/icons/locolor/16x16/actions
