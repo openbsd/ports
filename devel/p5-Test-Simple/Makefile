@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/13 08:59:30 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/15 06:42:34 shell Exp $
 
 COMMENT=	"basic utilities for writing tests in perl"
 
-VERSION=	0.11
+VERSION=	0.13
 DISTNAME=	Test-Simple-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
