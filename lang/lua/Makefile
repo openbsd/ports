@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 22:56:05 dbt Exp $
+# $OpenBSD: Makefile,v 1.3 2000/12/19 06:49:59 dbt Exp $
 
-DISTNAME=	lua-3.2
+DISTNAME=	lua-4.0
 CATEGORIES=     lang
 NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -32,6 +32,7 @@ post-build:
 	${BUILD_SHARED}
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKDIST}/include/*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKDIST}/lib/* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/lua ${PREFIX}/bin
@@ -46,7 +47,7 @@ do-install:
 BUILD_SHARED=:
 .else
 BUILD_SHARED=cd ${WRKDIST} && \
-	gcc -shared -fpic -o lib/liblua.so.3.2 src/*.o && \
-	gcc -shared -fpic -o lib/liblualib.so.3.2 src/lib/*.o && \
+	gcc -shared -fpic -o lib/liblua.so.4.0 src/*.o && \
+	gcc -shared -fpic -o lib/liblualib.so.4.0 src/lib/*.o && \
 	rm bin/lua && ${MAKE}
 .endif
