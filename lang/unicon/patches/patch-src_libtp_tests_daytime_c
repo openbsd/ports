@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libtp_tests_daytime_c,v 1.1 2004/01/05 14:37:04 espie Exp $
+--- src/libtp/tests/daytime.c.orig	2004-01-05 15:26:23.000000000 +0100
++++ src/libtp/tests/daytime.c	2004-01-05 15:26:33.000000000 +0100
+@@ -9,6 +9,7 @@
+ #endif
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <tp.h>
+ 
+ int main(int argc, char **argv)

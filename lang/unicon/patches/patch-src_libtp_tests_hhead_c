@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libtp_tests_hhead_c,v 1.1 2004/01/05 14:37:04 espie Exp $
+--- src/libtp/tests/hhead.c.orig	2004-01-05 15:29:46.000000000 +0100
++++ src/libtp/tests/hhead.c	2004-01-05 15:29:54.000000000 +0100
+@@ -13,6 +13,7 @@
+ #ifdef STDC_HEADERS
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #endif
+ 
+ #ifdef HAVE_ERRNO_H
