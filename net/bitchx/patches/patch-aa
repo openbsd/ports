@@ -1,29 +1,11 @@
---- include/config.h.orig	Tue Feb 23 10:59:14 1999
-+++ include/config.h	Wed May 26 11:14:04 1999
-@@ -33,7 +33,7 @@
+--- include/config.h.orig	Wed Dec  1 22:53:07 1999
++++ include/config.h	Wed Dec  1 22:53:28 1999
+@@ -34,7 +34,7 @@
   * too peruse this function all you like. It's not a BACKDOOR in any way, 
   * shape or form.
   */
 -#define WANT_NOTIFY_BITCHX_COM ON
-+#undef WANT_NOTIFY_BITCHX_COM ON
++#undef WANT_NOTIFY_BITCHX_COM
  
  
  /*
-@@ -188,7 +188,7 @@
-  * translation tables from ircII for this to work. Also enable /set TRANSLATE
-  */
-  
--#define TRANSLATION_PATH "/usr/local/lib/bx/translation"
-+#define TRANSLATION_PATH "__PREFIX__/lib/bitchx/translation"
- 
- /*
-  * Below are the IRCII variable defaults.  For boolean variables, use 1 for
-@@ -458,7 +458,7 @@
- 
- #define DEFAULT_FLOATING_POINT_MATH OFF
- #define DEFAULT_LLOOK OFF
--#define DEFAULT_CLOAK ON
-+#define DEFAULT_CLOAK OFF
- 
- #define DEFAULT_AINV 0
- #define DEFAULT_ANNOY_KICK OFF

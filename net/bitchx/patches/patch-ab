@@ -1,62 +1,44 @@
---- configure.orig	Tue Feb 23 10:08:42 1999
-+++ configure	Sun Mar  7 20:13:33 1999
-@@ -4887,7 +4887,7 @@
+--- configure.orig	Fri Oct 29 02:08:41 1999
++++ configure	Mon Dec  6 10:03:33 1999
+@@ -8920,11 +8920,11 @@
+ MV="mv"
  
- if test ! -n "$IRCLIB";
- then
--	IRCLIB=\${prefix}/lib/bx
-+	IRCLIB=\${prefix}/lib/bitchx
- fi
- 
- if test -n "$nextstep"; then
-@@ -5274,7 +5274,7 @@
- if test -z "$CFLAGS"; then CFLAGS=-g -O; fi
- if test -z "$LDFLAGS"; then LDFLAGS= ; fi
- if test -z "$bindir"; then bindir=\${exec_prefix}/bin; fi
--if test -z "$IRCLIB"; then IRCLIB=\${prefix}/lib/bx; fi
-+if test -z "$IRCLIB"; then IRCLIB=\${prefix}/lib/bitchx; fi
- 
+ INSTALL_IRC=\${bindir}/\$\(_VERSION_\)
+-IRCLIB=\${libdir}/bx
++IRCLIB=\${datadir}/bitchx
+ IRCPATH=\~/.BitchX:\~/.BitchX/plugins:.:$PLUGINDIR:\$\(INSTALL_SCRIPT\):\$\(IRCLIB\)
+ TRANSLATION_PATH=\$\(IRCLIB\)/translation
+ HELPDIR=\$\(IRCLIB\)/help
+-INSTALL_WSERV=\$\(IRCLIB\)/wserv
++INSTALL_WSERV=\$\(libexecdir\)/wserv-bitchx
+ INSTALL_SCRBX=\${bindir}/scr-bx
+ INSTALL_SCRIPT=\$\(IRCLIB\)/script
+ INSTALL_HELP_CMD="cp -pr bitchx-docs/* \$(HELPDIR)"
+@@ -9361,27 +9361,3 @@
  
  
-@@ -5657,22 +5657,22 @@
-   echo "To include the CD-ROM player in your bin, edit \"Makefile\" and search for"
-   echo "the CD_* defines and remove the \"#\" in front of each line."
- fi
+ 
+-echo $_VERSION_ \(C\) 1996-1999 Colten Edwards
+-echo ---------------------------------------------------------- 
 -echo
--echo When you are satisfied with your configuration settings, type \"make\" to
--echo compile BitchX. When compiling has finished, the binary will be located in
--echo the directory: $PWD/source/.
+-echo The configuration script has finished. You should look through and make any
+-echo necessary changes to the file \"$srcdir/include/config.h\". 
+-echo When you are satisfied with your configuration settings, type \"make\" to compile
+-echo $_VERSION_.  When make finishes, you can type \"make install\" to install $_VERSION_
+-echo globally \(if you\'re root\), or else you can type \"make install_local\" to 
+-echo install $_VERSION_ to your home directory.
 -echo
--echo \*\*\* IMPORTANT\! PLEASE READ THE FOLLOWING: \*\*\*
+-echo \*\*\* IMPORTANT\! PLEASE READ THE FOLLOWING: \*\*\* 
 -echo
 -echo We are trying to get statistics on the number of BitchX users. In the source
 -echo directory is the file \"cl.c\". This file contains a function that will send a
--echo single UDP packet to BitchX.com. The ONLY information that packet contains
--echo is a user\'s BitchX version and OS. The function does NOT interfere with the
--echo client in any way, and does NOT receive any information back.
--echo
+-echo single UDP packet to BitchX.com. The ONLY information that packet contains is
+-echo the user\'s $_VERSION_ version and OS. This function  does NOT interfere with the
+-echo client in any way, and does NOT receive any information back. 
+-echo 
 -echo We are interested in this information for statistical purposes and to improve
--echo support for various operating systems. YOU ARE NOT REQUIRED TO CONTRIBUTE TO
--echo THIS EFFORT. If you would like to disable this function, remove the line
--echo \"#define WANT_NOTIFY_BITCHX_COM ON\" from the following file:
--echo $PWD/include/config.h.
+-echo support for various operating systems. YOU ARE NOT REQUIRED TO  CONTRIBUTE TO 
+-echo THIS EFFORT. If you would like to disable this function, remove the line 
+-echo \"#define WANT_NOTIFY_BITCHX_COM ON\" from the file \"$srcdir/include/config.h\".
 -echo
-+#echo
-+#echo When you are satisfied with your configuration settings, type \"make\" to
-+#echo compile BitchX. When compiling has finished, the binary will be located in
-+#echo the directory: $PWD/source/.
-+#echo
-+#echo \*\*\* IMPORTANT\! PLEASE READ THE FOLLOWING: \*\*\*
-+#echo
-+#echo We are trying to get statistics on the number of BitchX users. In the source
-+#echo directory is the file \"cl.c\". This file contains a function that will send a
-+#echo single UDP packet to BitchX.com. The ONLY information that packet contains
-+#echo is a user\'s BitchX version and OS. The function does NOT interfere with the
-+#echo client in any way, and does NOT receive any information back.
-+#echo
-+#echo We are interested in this information for statistical purposes and to improve
-+#echo support for various operating systems. YOU ARE NOT REQUIRED TO CONTRIBUTE TO
-+#echo THIS EFFORT. If you would like to disable this function, remove the line
-+#echo \"#define WANT_NOTIFY_BITCHX_COM ON\" from the following file:
-+#echo $PWD/include/config.h.
-+#echo
+-echo

@@ -1,38 +1,20 @@
---- source/misc.c.orig	Sun Sep 26 21:24:43 1999
-+++ source/misc.c	Sun Sep 26 21:26:28 1999
-@@ -4332,7 +4332,7 @@
- #define MAX_RECURSE 5
- #define RECURSE_CPARSE
+--- Makefile.in.orig	Tue Nov  9 03:57:57 1999
++++ Makefile.in	Mon Dec  6 11:30:35 1999
+@@ -108,14 +108,14 @@
+ LN = @LN@
+ CP = @CP@
+ MV = @MV@
+-INSTALL = ./bsdinstall -c -s -m 755
+-INSTALL_DATA = $(topdir)/bsdinstall -c -m 644
++INSTALL = $(BSD_INSTALL_PROGRAM)
++INSTALL_DATA = $(BSD_INSTALL_DATA)
  
--char *convert_output_format_raw(const char *format, const char *str, va_list args)
-+char *convert_output_format_raw(const char *format, const char *str, ...)
- {
- static unsigned char buffer[MAX_RECURSE*BIG_BUFFER_SIZE+1];
- char buffer2[3*BIG_BUFFER_SIZE+1];
-@@ -4344,7 +4344,7 @@
- int old_who_level = who_level;
- int bold = 0;
- extern int in_chelp;
--/*va_list args;*/
-+va_list args;
- int arg_flags;
- char color_mod[] = "kbgcrmywKBGCRMYWn"; 
+ VERSION = @VERSION@
+ _VERSION_ = @_VERSION_@
  
-@@ -4362,7 +4362,7 @@
- 	{
- 
- 		p = (char *)str;
--/*		va_start(args, str);*/
-+		va_start(args, str);
- 		while(p && *p)
- 		{
- 			if (*p == '%')
-@@ -4433,7 +4433,7 @@
- 				p++;
- 			}
- 		}
--/*		va_end(args);*/
-+		va_end(args);
- 	} 
- 	else if (str)
- 		strcpy(buffer2, str);
+ SHELL = @SHELL@
+-MAKE = make $(MFLAGS)
++MAKE = @MAKE@ $(MFLAGS)
+ MFLAGS ='CC=$(CC)'					\
+ 	'CFLAGS=$(CFLAGS)'				\
+ 	'DEFS=$(DEFS)'					\
