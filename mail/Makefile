@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2003/07/14 23:49:32 jolan Exp $
+# $OpenBSD: Makefile,v 1.111 2003/07/16 21:46:40 naddy Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -43,7 +43,6 @@
      SUBDIR += majordomo
      SUBDIR += mboxgrep
      SUBDIR += metamail
-     SUBDIR += mh
      SUBDIR += mixmaster
      SUBDIR += movemail
      SUBDIR += mutt
