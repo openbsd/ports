@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/21 22:36:29 marcm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/05/06 06:02:30 marcm Exp $
 
 COMMENT=		"high-performance CORBA Object Request Broker"
 
-DISTNAME=		ORBit2-2.8.3
+DISTNAME=		ORBit2-2.10.1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.labs.redhat.com/orbit/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ORBit2/2.8/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/ORBit2/2.10/}
 EXTRACT_SUFX=		.tar.bz2
 
 # fix for Alpha
@@ -29,10 +29,9 @@ LIB_DEPENDS=		IDL-2::devel/libIDL \
 			gmodule-2.0.0.0,gobject-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
 			popt::devel/popt
 
-SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.57
+AUTOCONF_VERSION=	2.59
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-indent
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
