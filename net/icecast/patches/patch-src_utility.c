@@ -1,4 +1,4 @@
-$OpenBSD: patch-crypt,v 1.1 2000/08/29 03:40:36 fgsch Exp $
+$OpenBSD: patch-src_utility.c,v 1.1 2000/08/29 04:36:33 brad Exp $
 
 --- src/utility.c.orig	Wed Jul  5 16:52:40 2000
 +++ src/utility.c	Mon Aug 28 23:06:20 2000

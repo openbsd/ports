@@ -1,4 +1,4 @@
-$OpenBSD: patch-icepass,v 1.1 2000/08/29 03:40:36 fgsch Exp $
+$OpenBSD: patch-src_Makefile.in,v 1.1 2000/08/29 04:36:33 brad Exp $
 
 --- src/Makefile.in.orig	Wed Jul  5 17:44:54 2000
 +++ src/Makefile.in	Tue Aug 29 00:12:50 2000
