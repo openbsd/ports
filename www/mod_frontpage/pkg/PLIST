@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/04 17:21:21 danh Exp $
+lib/mod_frontpage.so
+sbin/frontpage-enable
+@mode 4555
+sbin/fpexec

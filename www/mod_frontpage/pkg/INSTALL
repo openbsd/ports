@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/03/04 17:21:21 danh Exp $
+#
+# mod_frontpage installation
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+LICENSE="http://www.rtr.com/fpsupport/fp2000license.htm"
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    if [ ! -d $PREFIX/frontpage ]; then
+    	echo "| Before this module can be of any use, you must first"
+    	echo "| download the FrontPage 2000 Server Extensions and agree"
+    	echo "| to the license agreement which can be found at the "
+    	echo "| following location:"
+    	echo "|"
+    	echo "|       $LICENSE"
+    	echo "|"
+    	echo "| You may choose BSD as the operating system, and use either"
+    	echo "| method of compression.  Once you have the compressed tarball,"
+    	echo "| simply unpack it in ${PREFIX}.  Be sure to preserve the"
+    	echo "| permissions while unpacking!"
+	echo "|"
+    fi
+    echo "| To finish the install, you need to enable the frontpage"
+    echo "| module using the following command"
+    echo "|"
+    echo "|       $PREFIX/sbin/frontpage-enable"
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

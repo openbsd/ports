@@ -1,0 +1,15 @@
+# $OpenBSD: Makefile.OpenBSD,v 1.1.1.1 2001/03/04 17:21:21 danh Exp $
+
+APXS=		/usr/sbin/apxs
+CC!=		$(APXS) -q CC
+CFLAGS!=	$(APXS) -q CFLAGS
+INCLUDES!=	$(APXS) -q INCLUDEDIR
+
+all: mod_frontpage.so fpexec
+
+mod_frontpage.so: mod_frontpage.c
+	$(APXS) -c mod_frontpage.c
+
+fpexec: fpexec.c
+	$(CC) $(CFLAGS) -I$(INCLUDES) fpexec.c -o fpexec
+

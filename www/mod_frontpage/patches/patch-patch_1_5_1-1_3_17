@@ -1,0 +1,484 @@
+--- patch-1.5.1-1.3.17.orig	Tue Feb 20 18:42:01 2001
++++ patch-1.5.1-1.3.17	Sat Feb 24 10:53:39 2001
+@@ -1,405 +1,3 @@
+-diff -rNu ../apache_1.3.17.orig/Makefile.tmpl ./Makefile.tmpl
+---- ../apache_1.3.17.orig/Makefile.tmpl	Mon Jan 15 17:26:17 2001
+-+++ ./Makefile.tmpl	Wed Feb 21 00:35:27 2001
+-@@ -129,6 +129,21 @@
+- 
+- libexecdir_relative   = @libexecdir_relative@
+- 
+-+#   fpexec details
+-+fpexec          = @fpexec@
+-+fpexec_caller   = @fpexec_caller@
+-+fpexec_docroot  = @fpexec_docroot@
+-+fpexec_logexec  = @fpexec_logexec@
+-+fpexec_uidmin   = @fpexec_uidmin@
+-+fpexec_gidmin   = @fpexec_gidmin@
+-+fpexec_userdir  = @fpexec_userdir@
+-+fpexec_safepath = @fpexec_safepath@
+-+fpexec_fpdir    = @fpexec_fpdir@
+-+fpexec_fpuser   = @fpexec_fpuser@
+-+fpexec_fpgroup  = @fpexec_fpgroup@
+-+fpexec_htaccess = @fpexec_htaccess@
+-+fpexec_umask    = @fpexec_umask@
+-+
+- #   suexec details (optional)
+- suexec          = @suexec@
+- suexec_caller   = @suexec_caller@
+-@@ -187,6 +202,9 @@
+- 	  x*390*) _C89_STEPS="0xffffffff"; export _C89_STEPS;; \
+- 	esac; \
+- 	cd $(TOP)/$(SRC); $(MAKE) $(MFLAGS) SDP=$(SRC)/ all
+-+	@if [ ".$(fpexec)" = .1 ]; then \
+-+	    $(MAKE) -f $(TOP)/$(MKF) $(MFLAGS) $(MFWD) build-fpexec; \
+-+        fi
+- 
+- #   build the additional support stuff
+- build-support:
+-@@ -210,6 +228,27 @@
+- 	fi
+- 	@echo "<=== $(SRC)/support"
+- 
+-+#   build fpexec, the wrapper for the FrontPage CGIs
+-+build-fpexec:
+-+	@echo "===> $(SRC)/modules/frontpage"; \
+-+	cd $(TOP)/$(SRC)/modules/frontpage; \
+-+	$(MAKE) $(MFLAGS) \
+-+		EXTRA_CFLAGS='\
+-+			-DFP_HTTPD_USER=\"$(fpexec_caller)\" \
+-+			-DFP_UID_MIN=$(fpexec_uidmin) \
+-+			-DFP_GID_MIN=$(fpexec_gidmin) \
+-+			-DFP_USERDIR_SUFFIX=\"$(fpexec_userdir)\" \
+-+			-DFP_LOG_EXEC=\"$(fpexec_logexec)\" \
+-+			-DFP_DOC_ROOT=\"$(fpexec_docroot)\" \
+-+			-DFP_SAFE_PATH=\"$(fpexec_safepath)\" \
+-+			-DFPDIR=\"$(fpexec_fpdir)\" \
+-+			-DFP_USER=\"$(fpexec_fpuser)\" \
+-+			-DFP_GROUP=\"$(fpexec_fpgroup)\" \
+-+			-DFP_HTACCESS=\"$(fpexec_htaccess)\" \
+-+			-DFP_UMASK=$(fpexec_umask)' \
+-+		fpexec;
+-+	@echo "<=== $(SRC)/modules/frontpage"
+-+
+- ## ------------------------------------------------------------------
+- ##                       Installation Targets
+- ## ------------------------------------------------------------------
+-@@ -341,6 +380,15 @@
+- 			-e 's:[ 	]lib: mod_:' \
+- 			-e 's:\.[soam].*$$:.c:' >>$(SRC)/.apaci.install.conf; \
+- 	fi
+-+	# install fpEXEC, if mod_frontpage was activated
+-+	-@if [ ".$(fpexec)" = .1 ]; then \
+-+		echo "$(INSTALL_PROGRAM) $(TOP)/$(SRC)/modules/frontpage/fpexec $(root)$(sbindir)/fpexec"; \
+-+		$(INSTALL_PROGRAM) $(TOP)/$(SRC)/modules/frontpage/fpexec $(root)$(sbindir)/fpexec; \
+-+		echo "chown root.root $(root)$(sbindir)/fpexec"; \
+-+		chown root.root $(root)$(sbindir)/fpexec; \
+-+		echo "chmod 4711 $(root)$(sbindir)/fpexec"; \
+-+		chmod 4711 $(root)$(sbindir)/fpexec; \
+-+	fi
+- 	@echo "<=== [programs]"
+- 
+- #   install the support programs and scripts
+-@@ -555,6 +603,9 @@
+- clean:
+- 	@echo "===> $(SRC)"
+- 	@$(MAKE) -f $(TOP)/$(MKF) $(MFLAGS) $(MFWD) clean-std $(clean-support)
+-+	@if [ ".$(fpexec)" = .1 ]; then \
+-+		$(MAKE) -f $(TOP)/$(MKF) $(MFLAGS) $(MFWD) clean-fpexec; \
+-+	fi
+- 	@echo "<=== $(SRC)"
+- 	@$(RM) $(TOP)/$(SRC)/.apaci.build.ok
+- 
+-@@ -572,11 +623,22 @@
+- 	fi; \
+- 	echo "<=== $(SRC)/support"
+- 
+-+#   clean fpexec stuff
+-+clean-fpexec:
+-+	@echo "===> $(SRC)/modules/frontpage"; \
+-+	cd $(TOP)/$(SRC)/modules/frontpage; \
+-+	echo "$(RM) fpexec.o fpexec"; \
+-+	$(RM) fpexec.o fpexec; \
+-+	echo "<=== $(SRC)/modules/frontpage"
+-+
+- #   cleanup the source tree by removing anything which was
+- #   created by the configure step and the build target.
+- #   When --shadow is used we just remove the complete shadow tree.
+- distclean:
+- 	@if [ ".$(SRC)" = .src ]; then \
+-+		if [ ".$(fpexec)" = .1 ]; then \
+-+			$(MAKE) -f $(TOP)/$(MKF) $(MFLAGS) $(MFWD) clean-fpexec; \
+-+		fi; \
+- 		$(MAKE) -f $(TOP)/$(MKF) $(MFLAGS) $(MFWD) distclean-normal; \
+- 	else \
+- 		$(MAKE) -f $(TOP)/$(MKF) $(MFLAGS) $(MFWD) distclean-shadow; \
+-diff -rNu ../apache_1.3.17.orig/configure ./configure
+---- ../apache_1.3.17.orig/configure	Mon Jan 15 17:26:17 2001
+-+++ ./configure	Wed Feb 21 00:35:27 2001
+-@@ -251,6 +251,21 @@
+- # if the umask is undefined, we don't change it
+- #suexec_umask=0755
+- 
+-+#   fpexec defaults
+-+fpexec=0
+-+fpexec_docroot='$datadir/htdocs'
+-+fpexec_logexec='$logfiledir/fpexec_log'
+-+fpexec_caller=www
+-+fpexec_userdir=public_html
+-+fpexec_uidmin=100
+-+fpexec_gidmin=100
+-+fpexec_safepath="/usr/local/bin:/usr/bin:/bin"
+-+fpexec_fpdir="/usr/local/frontpage/version4.0/exes"
+-+fpexec_fpuser=bin
+-+fpexec_fpgroup=bin
+-+fpexec_htaccess=".htaccess"
+-+fpexec_umask=022
+-+
+- #   the installation flags
+- iflags_program="-m 755 -s"
+- iflags_core="-m 755"
+-@@ -465,6 +480,23 @@
+-             echo " --suexec-safepath=PATH set the suEXEC safe PATH [$suexec_safepath]"
+-             echo " --suexec-umask=UMASK   set the umask for the suEXEC'd script [server's umask]"
+-             echo ""
+-+            echo "fpEXEC options (only needed in combination with Improved mod_frontpage):"
+-+            echo " --fpexec-caller=NAME   set the fpEXEC username of the allowed caller [$fpexec_caller]"
+-+            echo " --fpexec-docroot=DIR   set the fpEXEC root directory [PREFIX/share/htdocs]"
+-+            echo " --fpexec-logfile=FILE  set the fpEXEC logfile [PREFIX/var/log/fpexec_log]"
+-+            echo " --fpexec-userdir=DIR   set the fpEXEC user directory [$fpexec_userdir]"
+-+            echo " --fpexec-uidmin=UID    set the fpEXEC minimal allowed UID [$fpexec_uidmin]"
+-+            echo " --fpexec-gidmin=GID    set the fpEXEC minimal allowed GID [$fpexec_gidmin]"
+-+            echo " --fpexec-safepath=PATH set the fpEXEC safe PATH [$fpexec_safepath]"
+-+            echo " --fpexec-fpdir=PATH    set the PATH to the FrontPage Server Extensions executables"
+-+            echo "                        [$fpexec_fpdir]"
+-+            echo " --fpexec-fpuser=NAME   set the owning user of the FrontPage Server Extensions dir"
+-+            echo "                        [$fpexec_fpuser]"
+-+            echo " --fpexec-fpgroup=NAME  set the owning group of the FrontPage Server Extensions dir"
+-+            echo "                        [$fpexec_fpgroup]"
+-+            echo " --fpexec-htaccess=FILE set the name of the access control file [$fpexec_htaccess]"
+-+            echo " --fpexec-umask=UMASK   set the umask for the FrontPage executables [$fpexec_umask]"
+-+            echo ""
+-             echo "Deprecated options:"
+-             echo " --layout               backward compat only: use --show-layout"
+-             echo " --compat               backward compat only: use --with-layout=Apache"
+-@@ -816,6 +848,10 @@
+-                                exit 1
+-                            fi
+-                            eval "module_${apc_optarg}=yes" 
+-+                           if [ "x${apc_optarg}" = "xfrontpage" ]; then
+-+                               echo " + enabling Improved mod_frontpage"
+-+                               fpexec=1
+-+                           fi 
+-                            ;;
+-                     esac
+-                     ;;
+-@@ -850,6 +886,10 @@
+-                                exit 1
+-                            fi
+-                            eval "shared_${apc_optarg}=yes" 
+-+                           if [ "x${apc_optarg}" = "xfrontpage" ] && [ "x$fpexec" != "x1" ]; then
+-+                               echo " + enabling Improved mod_frontpage"
+-+                               fpexec=1
+-+                           fi 
+-                            ;;
+-                     esac
+-                     ;;
+-@@ -997,6 +1037,43 @@
+-             suexec_umask="-DSUEXEC_UMASK=$apc_optarg"
+-             suexec_ok=1
+-             ;;
+-+        --fpexec-logfile=*)
+-+            fpexec_logexec="$apc_optarg"
+-+            ;;
+-+        --fpexec-caller=*)
+-+            fpexec_caller="$apc_optarg"
+-+            ;;
+-+        --fpexec-docroot=*)
+-+            fpexec_docroot="$apc_optarg"
+-+            ;;
+-+        --fpexec-userdir=*)
+-+            fpexec_userdir="$apc_optarg"
+-+            ;;
+-+        --fpexec-uidmin=*)
+-+            fpexec_uidmin="$apc_optarg"
+-+            ;;
+-+        --fpexec-gidmin=*)
+-+            fpexec_gidmin="$apc_optarg"
+-+            ;;
+-+        --fpexec-safepath=*)
+-+            fpexec_safepath="$apc_optarg"
+-+            ;;
+-+        --fpexec-fpdir=*)
+-+            fpexec_fpdir="$apc_optarg"
+-+            ;;
+-+        --fpexec-fpuser=*)
+-+            fpexec_fpuser="$apc_optarg"
+-+            ;;
+-+        --fpexec-fpgroup=*)
+-+            fpexec_fpgroup="$apc_optarg"
+-+            ;;
+-+        --fpexec-htaccess=*)
+-+            fpexec_htaccess="$apc_optarg"
+-+            ;;
+-+        --fpexec-umask=*)
+-+            fpexec_umask_val="$apc_optarg"
+-+            fpexec_umask="$apc_optarg"
+-+            ;;
+-         --server-uid=*)
+-             conf_user="$apc_optarg"
+- 	    # protect the '#' against interpretation as comment
+-@@ -1089,6 +1166,68 @@
+- fi
+- 
+- ##
+-+## Errors and warnings for the fpexec setup
+-+##
+-+if [ "x$fpexec" = "x1" ]; then
+-+    if [ "x$suexec_ok" = "x1" ]; then
+-+        if [ "x$fpexec_caller" != "x$suexec_caller" ]; then
+-+            echo "configure:Error: You enabled suEXEC and Improved mod_frontpage, but your"
+-+            echo "                 values for --suexec-caller and --fpexec-caller are not"
+-+            echo "                 equivalent. Choose the same value for both switches."
+-+            echo "                 Note that both switches do have a default value of \"www\"."
+-+            exit 1
+-+        fi
+-+        if [ "x$fpexec_uidmin" != "x$suexec_uidmin" ]; then
+-+            echo " +" 1>&2
+-+            echo " + Warning: Your current values for the target user for suEXEC" 1>&2
+-+            echo " + (value: $suexec_uidmin) and fpEXEC (value: $fpexec_uidmin, this is needed for" 1>&2
+-+            echo " + Improved mod_frontpage) are not equivalent. If you are unsure about your" 1>&2
+-+            echo " + current configuration, read htdocs/manual/suexec.html and the Improved" 1>&2
+-+            echo " + mod_frontpage INSTALL first!" 1>&2
+-+        fi
+-+        if [ "x$fpexec_gidmin" != "x$suexec_gidmin" ]; then
+-+            echo " +" 1>&2
+-+            echo " + Warning: Your current values for the target group for suEXEC" 1>&2
+-+            echo " + (value: $suexec_gidmin) and fpEXEC (value: $fpexec_gidmin, this is needed for" 1>&2
+-+            echo " + Improved mod_frontpage) are not equivalent. If you are unsure about your" 1>&2
+-+            echo " + current configuration, read htdocs/manual/suexec.html and the Improved" 1>&2
+-+            echo " + mod_frontpage INSTALL first!" 1>&2
+-+        fi
+-+    fi
+-+    if [ "x`$aux/getuid.sh`" != "x0" ]; then
+-+        echo " +" 1>&2
+-+        echo " + Warning: You have enabled Improved mod_frontpage. Be aware that you" 1>&2
+-+        echo " + need root privileges to complete the final installation step." 1>&2
+-+    fi
+-+    if [ "x$conf_user" = "x" ]; then
+-+        if [ -f /etc/passwd ] && [ "x$confadjust" = "x1" ]; then
+-+            for uid in nobody www daemon demon http httpd; do
+-+                if [ "x`egrep \^${uid}: /etc/passwd`" != "x" ]; then
+-+                    break
+-+                else
+-+                    uid=nobody
+-+                fi
+-+            done
+-+        else
+-+            uid=nobody
+-+        fi
+-+        if [ "x$fpexec_caller" != "x$uid" ]; then
+-+            echo " +" 1>&2
+-+            echo " + Warning: You will have to change the value of the \"User\" directive" 1>&2
+-+            echo " + in your httpd.conf file to a value of \"$fpexec_caller\" to run the" 1>&2
+-+            echo " + FrontPage Server Extensions." 1>&2
+-+        fi
+-+    else
+-+        if [ "x$fpexec_caller" != "x$conf_user" ]; then
+-+            echo " +" 1>&2
+-+            echo " + Warning: Your values for --server-uid and --fpexec-caller are not" 1>&2
+-+            echo " + equivalent. Change the \"User\" directive in your httpd.conf to a value" 1>&2
+-+            echo " + of \"$fpexec_caller\" to run the FrontPage Server Extensions." 1>&2
+-+        fi
+-+    fi
+-+fi
+-+
+-+##
+- ##  target name
+- ##
+- if [ "x$TARGET" != "x" ]; then
+-@@ -1106,7 +1245,8 @@
+- for var in prefix exec_prefix bindir sbindir libexecdir mandir \
+-            sysconfdir datadir iconsdir htdocsdir cgidir includedir \
+-            localstatedir runtimedir logfiledir proxycachedir \
+--           suexec_docroot suexec_logexec ; do
+-+           suexec_docroot suexec_logexec fpexec_docroot \
+-+           fpexec_logexec fpexec_fpdir ; do
+-     eval "val=\"\$$var\"";
+-     val=`echo $val | sed -e 's:\(.\)/*$:\1:'`
+-     eval "$var=\"$val\""
+-@@ -1268,6 +1408,23 @@
+-         fi
+-         echo ""
+-     fi
+-+    if [ "x$fpexec" = "x1" ]; then
+-+        echo "fpEXEC setup:"
+-+        echo "                          fpexec binary: $sbindir/fpexec"
+-+        echo "                          document root: $fpexec_docroot"
+-+        echo "                         userdir suffix: $fpexec_userdir" 
+-+        echo "                                logfile: $fpexec_logexec"
+-+        echo "                              safe path: $fpexec_safepath"
+-+        echo "                              caller ID: $fpexec_caller"
+-+        echo "                        minimum user ID: $fpexec_uidmin"
+-+        echo "                       minimum group ID: $fpexec_gidmin"
+-+        echo "   FrontPage Server Extensions exes dir: $fpexec_fpdir"
+-+        echo "   FrontPage Server Extensions dir user: $fpexec_fpuser"
+-+        echo "  FrontPage Server Extensions dir group: $fpexec_fpgroup"
+-+        echo "                    access control file: $fpexec_htaccess"
+-+        echo "                                  umask: $fpexec_umask"
+-+        echo ""
+-+    fi
+-     exit 0
+- fi
+- 
+-@@ -1278,6 +1435,19 @@
+-     echo "Creating $mkf"
+- fi
+- sed <Makefile.tmpl >$mkf \
+-+-e "s%@fpexec@%$fpexec%g" \
+-+-e "s%@fpexec_logexec@%$fpexec_logexec%g" \
+-+-e "s%@fpexec_caller@%$fpexec_caller%g" \
+-+-e "s%@fpexec_docroot@%$fpexec_docroot%g" \
+-+-e "s%@fpexec_userdir@%$fpexec_userdir%g" \
+-+-e "s%@fpexec_uidmin@%$fpexec_uidmin%g" \
+-+-e "s%@fpexec_gidmin@%$fpexec_gidmin%g" \
+-+-e "s%@fpexec_safepath@%$fpexec_safepath%g" \
+-+-e "s%@fpexec_fpdir@%$fpexec_fpdir%g" \
+-+-e "s%@fpexec_fpuser@%$fpexec_fpuser%g" \
+-+-e "s%@fpexec_fpgroup@%$fpexec_fpgroup%g" \
+-+-e "s%@fpexec_htaccess@%$fpexec_htaccess%g" \
+-+-e "s%@fpexec_umask@%$fpexec_umask%g" \
+- -e "s%@PLATFORM@%$PLATFORM%g" \
+- -e "s%@PERL@%$PERL%g" \
+- -e "s%@TAR@%$TAR%g" \
+-@@ -1338,6 +1508,9 @@
+- echo "## WITHOUT DISTURBING THE KNOWN MAKE BUILD PROCESS DISPLAY" >>$src/apaci
+- echo "echo '-DHTTPD_ROOT=\"$prefix\"'" >>$src/apaci
+- echo "echo '-DSUEXEC_BIN=\"$sbindir/suexec\"'" >>$src/apaci
+-+echo "echo '-DFPEXEC_BIN=\"$sbindir/fpexec\"'" >>$src/apaci
+-+echo "echo '-DFP_UID_MIN=$fpexec_uidmin'" >>$src/apaci
+-+echo "echo '-DFP_GID_MIN=$fpexec_gidmin'" >>$src/apaci
+- echo "echo '-DSHARED_CORE_DIR=\"$libexecdir\"'" >>$src/apaci
+- echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}${thetarget}.pid\"'" >>$src/apaci
+- echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}${thetarget}.scoreboard\"'" >>$src/apaci
+-diff -rNu ../apache_1.3.17.orig/src/Configuration.tmpl ./src/Configuration.tmpl
+---- ../apache_1.3.17.orig/src/Configuration.tmpl	Sat Aug 14 10:35:43 1999
+-+++ ./src/Configuration.tmpl	Wed Feb 21 00:35:27 2001
+-@@ -436,3 +436,12 @@
+- 
+- AddModule modules/standard/mod_setenvif.o
+- 
+-+## Improved mod_frontpage allows you to use advanced
+-+## features of the FrontPage client with the Apache HTTP
+-+## Server. See http://home.edo.uni-dortmund.de/~chripo/
+-+## for more information about Improved mod_frontpage and
+-+## http://msdn.microsoft.com/workshop/languages/fp/2000/unixfpse.asp
+-+## for the FrontPage Server Extensions
+-+
+-+# AddModule modules/frontpage/mod_frontpage.o
+-+
+-diff -rNu ../apache_1.3.17.orig/src/modules/frontpage/Makefile.tmpl ./src/modules/frontpage/Makefile.tmpl
+---- ../apache_1.3.17.orig/src/modules/frontpage/Makefile.tmpl	Thu Jan  1 01:00:00 1970
+-+++ ./src/modules/frontpage/Makefile.tmpl	Wed Feb 21 00:35:27 2001
+-@@ -0,0 +1,22 @@
+-+fpexec: fpexec.o
+-+	$(CC) $(CFLAGS) $(EXTRA_CFLAGS) fpexec.o -o fpexec $(LDFLAGS)
+-+
+-+#Dependencies
+-+
+-+$(OBJS) $(OBJS_PIC): Makefile
+-+
+-+# DO NOT REMOVE
+-+fpexec.o: fpexec.c $(INCDIR)/ap_config.h $(INCDIR)/ap_mmn.h \
+-+ $(INCDIR)/ap_config_auto.h $(OSDIR)/os.h \
+-+ $(OSDIR)/os-inline.c $(INCDIR)/ap_ctype.h \
+-+ $(INCDIR)/hsregex.h fpexec.h
+-+mod_frontpage.o: mod_frontpage.c $(INCDIR)/httpd.h \
+-+ $(INCDIR)/ap_config.h $(INCDIR)/ap_mmn.h \
+-+ $(INCDIR)/ap_config_auto.h $(OSDIR)/os.h \
+-+ $(OSDIR)/os-inline.c $(INCDIR)/ap_ctype.h \
+-+ $(INCDIR)/hsregex.h $(INCDIR)/ap_alloc.h $(INCDIR)/buff.h \
+-+ $(INCDIR)/ap.h $(INCDIR)/util_uri.h \
+-+ $(INCDIR)/http_config.h $(INCDIR)/http_core.h \
+-+ $(INCDIR)/http_log.h $(INCDIR)/http_main.h \
+-+ $(INCDIR)/http_protocol.h $(INCDIR)/util_script.h \
+-+ mod_frontpage.h fpexec.h
+ diff -rNu ../apache_1.3.17.orig/src/modules/frontpage/fpexec.c ./src/modules/frontpage/fpexec.c
+ --- ../apache_1.3.17.orig/src/modules/frontpage/fpexec.c	Thu Jan  1 01:00:00 1970
+ +++ ./src/modules/frontpage/fpexec.c	Wed Feb 21 00:35:27 2001
+@@ -1260,7 +858,7 @@
+ + *               for fpEXEC.  For most systems, 500 or 100 is common.
+ + */
+ +#ifndef FP_UID_MIN
+-+#define FP_UID_MIN 100
+++#define FP_UID_MIN 1000
+ +#endif
+ +
+ +/*
+@@ -1268,7 +866,7 @@
+ + *               for fpEXEC.  For most systems, 100 is common.
+ + */
+ +#ifndef FP_GID_MIN
+-+#define FP_GID_MIN 100
+++#define FP_GID_MIN 1000
+ +#endif
+ +
+ +/*
+@@ -1277,7 +875,7 @@
+ + *                debugging purposes.
+ + */
+ +#ifndef FP_LOG_EXEC
+-+#define FP_LOG_EXEC "/usr/local/apache/logs/cgi.log"	/* Need me? */
+++#define FP_LOG_EXEC "/var/log/fp_exec.log"	/* Need me? */
+ +#endif
+ +
+ +/*
+@@ -1285,7 +883,7 @@
+ + *
+ + */
+ +#ifndef FP_SAFE_PATH
+-+#define FP_SAFE_PATH "/usr/local/bin:/usr/bin:/bin"
+++#define FP_SAFE_PATH "/usr/bin:/bin:/usr/local/bin"
+ +#endif
+ +
+ +/*
+@@ -1338,7 +936,7 @@
+ + *               that can be used for fpEXEC behavior.
+ + */
+ +#ifndef FP_DOC_ROOT
+-+#define FP_DOC_ROOT "/usr/local/apache/htdocs"
+++#define FP_DOC_ROOT "/var/www/htdocs"
+ +#endif
+ +
+ +/*
+@@ -1371,7 +969,7 @@
+ diff -rNu ../apache_1.3.17.orig/src/modules/frontpage/mod_frontpage.c ./src/modules/frontpage/mod_frontpage.c
+ --- ../apache_1.3.17.orig/src/modules/frontpage/mod_frontpage.c	Thu Jan  1 01:00:00 1970
+ +++ ./src/modules/frontpage/mod_frontpage.c	Wed Feb 21 00:35:27 2001
+-@@ -0,0 +1,553 @@
++@@ -0,0 +1,557 @@
+ +/* ====================================================================
+ + * Copyright (c) 1996-1999 The Apache Group.  All rights reserved.
+ + *
+@@ -1466,8 +1064,12 @@
+ +module MODULE_VAR_EXPORT frontpage_module;
+ +
+ +typedef int boolean;
+++#ifndef FALSE
+ +#define FALSE 0
+++#endif /* FALSE */
+++#ifndef TRUE
+ +#define TRUE  1
+++#endif /* TRUE */
+ +
+ +typedef struct
+ +{
+@@ -2001,7 +1603,7 @@
+ +#define _VTI_PVT "/_vti_pvt"
+ +
+ +#ifndef FPEXEC_BIN
+-+#define FPEXEC_BIN  HTTPD_ROOT "bin/fpexec"
+++#define FPEXEC_BIN  "/usr/local/sbin/fpexec"
+ +#endif
+ +
+ +#endif

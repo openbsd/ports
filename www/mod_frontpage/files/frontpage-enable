@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: frontpage-enable,v 1.1.1.1 2001/03/04 17:21:21 danh Exp $
+
+MODULE=y0y0y0/lib/mod_frontpage.so
+
+if [ ! -f ${MODULE} ]; then
+    echo "can't find FrontPage module (${MODULE})"
+    exit 1
+else
+    echo "enabling frontpage module..."
+    /usr/sbin/apxs -i -a -n frontpage ${MODULE}
+fi
