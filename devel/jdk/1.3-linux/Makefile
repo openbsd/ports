@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/10/26 23:49:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/12/15 17:16:45 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -40,6 +40,13 @@ JDK_HOME=	${PREFIX}/jdk1.3.1-linux
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${JDK_HOME}
+
+# Add OpenBSD resource bundle for javah
+post-patch:
+	@mkdir -p ${WRKSRC}/lib/com/sun/tools/javah/resources
+	@touch ${WRKSRC}/lib/com/sun/tools/javah/resources/OpenBSD_i386.properties
+	@${WRKSRC}/bin/jar -0uvf ${WRKSRC}/lib/tools.jar -C ${WRKSRC}/lib \
+	    com/sun/tools/javah/resources/OpenBSD_i386.properties
 
 do-install:
 	@cp -Rp ${WRKDIST}/* ${JDK_HOME}
