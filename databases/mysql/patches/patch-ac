@@ -1,0 +1,48 @@
+--- scripts/mysql_install_db.sh.orig	Sun Dec 19 01:16:27 1999
++++ scripts/mysql_install_db.sh	Sun Dec 19 01:33:38 1999
+@@ -15,10 +15,6 @@
+ force=0
+ IN_RPM=0
+ 
+-# Are we doing an rpm install?
+-if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
+-if test "$1" = "--force"; then force=1; shift; fi
+-
+ # Get mysqld/safe_mysqld options from /etc/my.cnf or ~/.my.cnf
+ if test -w /
+ then
+@@ -49,21 +45,11 @@
+ 
+ if test ! -x $execdir/mysqld
+ then
+-  if test "$IN_RPM" -eq 1
+-  then
+-    echo "FATAL ERROR $execdir/mysqld not found!"
+-    exit 1
+-  else
+     echo "Didn't find $execdir/mysqld"
+     echo "You should do a 'make install' before executing this script"
+     exit 1
+-  fi
+ fi
+ 
+-# On IRIX hostname is in /usr/bsd so add this to the path
+-PATH=$PATH:/usr/bsd
+-hostname=`hostname`		# Install this too in the user table
+-
+ # Check if hostname is valid
+ if test "$IN_RPM" -eq 0 -a $force -eq 0
+ then
+@@ -255,12 +241,6 @@
+ END_OF_DATA
+ then
+   echo ""
+-  if test "$IN_RPM" -eq 0
+-  then
+-    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
+-    echo "to the right place for your system"
+-    echo
+-  fi
+   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
+   echo "This is done with:"
+   echo "$bindir/mysqladmin -u root password 'new-password'"

@@ -1,0 +1,70 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/01/01 05:54:13 brad Exp $
+#
+# Pre/post-installation setup of MySQL
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+DB_DIR=${PKG_DB_DIR:-/var/mysql
+MYSQLGID=40
+MYSQLUID=40
+PASS=`dd if=/dev/urandom count=1 bs=12 2> /dev/null | encrypt -b 6`
+
+# Function: install the MySQL user account and group
+#	    and create the MySQL database directory
+#
+do_pre_install()
+{
+# Add group 'mysql' to /etc/group
+line=`egrep '^mysql:' /etc/group`
+if [ "$line" = "" ]; then
+      	echo "===> Creating mysql group, gid $MYSQLGID"
+        echo "mysql:*:${MYSQLGID}:" >> /etc/group
+fi
+
+# Add user 'mysql' in /etc/passwd
+line=`egrep '^mysql:' /etc/passwd`
+if [ "$line" = "" ]; then
+        echo "===> Creating MySQL user, uid $MYSQLUID"
+	adduser -batch mysql mysql "MySQL Account,,," ${PASS} > /dev/null 2>&1 /dev/null
+	if [ $? -eq 0 ]; then
+		echo "===> Using account mysql for MySQL, uid $MYSQLUID, gid $MYSQLGID"
+		echo "===> Account setup with random password. Use 'passwd mysql' to set a password."
+	else
+		echo "===> Problem creating account mysql"
+		exit 1
+	fi
+fi
+
+# Create Database Directory mode 775
+mkdir -p -m 775 ${DB_DIR}
+chown mysql.mysql ${DB_DIR}
+echo "===> Created ${DB_DIR} directory to store db files and mysql.sock"	
+}
+
+# Function: create inital database
+#
+do_post_install()
+{
+${PREFIX}/bin/mysql_install_db
+}
+
+# Verify/process the command
+#
+case $2 in 
+    PRE-INSTALL)
+	do_pre_install $1
+	;;
+    POST-INSTALL)
+	do_post_install $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;  
+esac
+
+exit 0

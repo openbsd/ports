@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/02 03:47:36 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2000/01/01 05:54:12 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.22.22
-PKGNAME=	mysql-3.22.22
+DISTNAME=	mysql-3.22.27
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
 		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.22/ \
@@ -12,7 +11,7 @@ MASTER_SITES=	http://www.mysql.org/Downloads/MySQL-3.22/ \
 		http://www.mysql.net/Downloads/MySQL-3.22/ \
 		http://www.gina.net/mysql/Downloads/MySQL-3.22/ \
 		http://mysql.pingzero.net/Downloads/MySQL-3.22/ \
-		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/
+		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ 
 
 MAINTAINER=	ports@openbsd.org
 
@@ -20,32 +19,59 @@ MAINTAINER=	ports@openbsd.org
 BROKEN=		"pthreads are currently not working SPARC"
 .endif
 
+DB_DIR?=	/var/mysql
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir="/var/db/mysql" \
+CONFIGURE_ARGS=	--localstatedir="${DB_DIR}" \
 		--without-perl \
 		--without-debug \
 		--without-readline \
 		--without-bench \
-		--without-mit-threads
+		--without-mit-threads \
+		--with-unix-socket-path="${DB_DIR}/mysql.sock"
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
+
+pre-build:      
+	@echo ""
+	@echo "*** WARNING: you may see an error such as"
+	@echo "***       virtual memory exhausted"
+	@echo "*** when building this package.  If you do you must increase"
+	@echo "*** your limits.  See the man page for your shell and look"
+	@echo "*** for the 'limit' or 'ulimit' command."
+	@echo ""
 
 pre-install:
 	@sed -e "s|@PREFIX@|${PREFIX}|" ${FILESDIR}/startup.sh > ${WRKDIR}/startup.sh
 .if !defined(PACKAGE_BUILDING)
-	@env ${MAKE_ENV} perl ${SCRIPTDIR}/check_old_version
+.if exists(${DB_DIR}) && !defined(OVERWRITE_DB)
+	@echo "You appear to already have a mysql database directory in ${DB_DIR}."
+	@echo ""
+	@echo "In order to preserve your existing data, you should:"
+	@echo "		- dump all your databases"
+	@echo "		- kill mysql if it is running"
+	@echo "		- delete the ${DB_DIR} directory"
+	@echo "		- run 'make install'"
+	@echo "		- start up mysql"
+	@echo "		- re-create all of your database"
+	@echo "		- re-load your data"
+	@echo ""
+	@echo "If you understand the consequences of this upgrade, please re-build this"
+	@echo "port with the environment variable OVERWRITE_DB defined."
+	@false
+.endif
+	@PKG_PREFIX="${PREFIX}" PKG_DB_DIR="${DB_DIR}" sh ${PKGDIR}/INSTALL ${DISTNAME} PRE-INSTALL
 .endif
 
 post-install:
 	@mkdir -p ${PREFIX}/share/doc/mysql
+	@mkdir -p ${PREFIX}/share/doc/mysql/Img
 	@mkdir -p ${PREFIX}/share/mysql/mysql
-.if !defined(PACKAGE_BUILDING)
-	${PREFIX}/bin/mysql_install_db
-.endif
 	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${PREFIX}/lib/mysql
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/Docs/Img/*.gif ${PREFIX}/share/doc/mysql/Img
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 	@${LDCONFIG} -m ${PREFIX}/lib/mysql
 

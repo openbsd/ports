@@ -1,6 +1,6 @@
---- sql/Makefile.in.orig	Wed Dec  1 19:37:03 1999
-+++ sql/Makefile.in	Wed Dec  1 19:40:08 1999
-@@ -1118,7 +1118,7 @@
+--- sql/Makefile.in.orig	Sun Dec 19 01:11:33 1999
++++ sql/Makefile.in	Sun Dec 19 01:11:52 1999
+@@ -1117,7 +1117,7 @@
  #	$(CXXCOMPILE) $(LM_CFLAGS) $< $(mysqld_LDADD)
  
  sql_yacc.o:	sql_yacc.cc sql_yacc.h
