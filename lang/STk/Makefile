@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/29 00:02:51 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/05/05 18:00:22 turan Exp $
 
 VER=		3.1.1
 DISTNAME=       STk-${VER}
@@ -33,5 +33,5 @@ pre-install:
 .if (defined(NO_SHARED_LIBS) && exists(${PKGDIR}/PLIST.template.noshared))
 PLIST_ORIG=	${FILESDIR}/PLIST.template.noshared
 .else
-PLIST_ORIG=	${FILESDIR}/PLIST
+PLIST_ORIG=	${FILESDIR}/PLIST.template
 .endif
