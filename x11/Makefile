@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2004/11/11 05:19:30 jcs Exp $
+# $OpenBSD: Makefile,v 1.202 2004/12/01 06:49:06 jolan Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -107,6 +107,7 @@
      SUBDIR += openbox
      SUBDIR += openmotif
      SUBDIR += oroborus
+     SUBDIR += osd_clock
      SUBDIR += p5-Gtk
      SUBDIR += p5-Gtk,gtkglarea
      SUBDIR += p5-Gtk,gnome
