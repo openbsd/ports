@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2002/07/14 02:07:53 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
 COMMENT=	"GNU Portable Shell Tool"
 
-DISTNAME=	shtool-1.5.4
+DISTNAME=	shtool-1.6.1
 CATEGORIES=	devel
-NEED_VERSION=	1.413
 MASTER_SITES=	${MASTER_SITE_GNU:=shtool/}
 
 HOMEPAGE=	http://www.gnu.org/software/shtool/
