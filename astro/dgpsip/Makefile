@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/19 02:20:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/06 05:46:42 brad Exp $
 
-DISTNAME=	dgpsip-1.28
+DISTNAME=	dgpsip-1.32
 CATEGORIES=	astro
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
+HOMEPAGE=	http://www.wsrcc.com/wolfgang/gps/dgps-ip.html
+
 MAINTAINER=	wsr+dgpsip@wsrcc.com
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://www.wsrcc.com/wolfgang/gps/dgps-ip.html
+FAKE=	Yes
 
 GNU_CONFIGURE=	Yes
-FAKE=		Yes
 
 .include <bsd.port.mk>
