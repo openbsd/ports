@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/09 17:37:24 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/06/08 20:32:35 espie Exp $
 # $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
 
 DISTNAME=       irc2.10.1
 PKGNAME=        irc-2.10.1
 CATEGORIES=	net
 NEED_VERSION=	1.210
-FAKE=No
 
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   http://www.leo.org/pub/comp/general/networking/irc/daemon/ \
                 ftp://ftp.irc.org/irc/server/ \
@@ -42,12 +41,12 @@ post-patch:
 	mv $(WRKSRC)/support/config.h.dist.new $(WRKSRC)/support/config.h.dist
 
 do-build:
-	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET})
+	@cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
-	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} ${INSTALL_TARGET})
+	@cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && \
+	 ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} irc_mode=555 ircd_mode=555 prefix=${WRKINST}/usr/local -f ${MAKE_FILE} ${INSTALL_TARGET}
 
 pre-install:
 	@mkdir -p ${PREFIX}/lib/ircd

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2000/04/09 17:37:21 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/06/08 20:32:35 espie Exp $
 
 DISTNAME=	firewalk-0.8
 CATEGORIES=     net
 NEED_VERSION=	 1.230
-FAKE=No
 MASTER_SITES=	http://www.packetfactory.net/firewalk/
 
 MIRROR_DISTFILE=No
@@ -20,7 +19,8 @@ WRKDIST=		${WRKDIR}/Firewalk
 
 BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet
 
-GNU_CONFIGURE=	Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 
 ALL_TARGET=	firewalk
 
