@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/04/10 16:39:14 jasoni Exp $
+# $OpenBSD: Makefile,v 1.26 2000/04/10 18:33:53 espie Exp $
 
 DISTNAME=	vim-5.6
 CATEGORIES=	editors
@@ -52,6 +52,7 @@ CONFIGURE_ARGS+=--disable-gui --without-x
 .elif ${FLAVOR:L:Mmotif}
 CONFIGURE_ARGS+=--enable-gui="motif"
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
+USE_MOTIF=Yes
 .elif ${FLAVOR:L:Mathena}
 CONFIGURE_ARGS+=--enable-gui="athena"
 .elif ${FLAVOR:L:Mgtk}
