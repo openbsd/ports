@@ -1,38 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2004/06/11 08:00:35 brad Exp $
+# $OpenBSD: Makefile,v 1.64 2004/07/11 17:00:47 brad Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
-DISTNAME=	squid-2.5.STABLE5
-PKGNAME=	${DISTNAME}p4
+DISTNAME=	squid-2.5.STABLE6
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}Versions/v2/2.5/
-MASTER_SITES0=	${HOMEPAGE}Versions/v2/2.5/bugs/
 DIST_SUBDIR=	squid
-
-PATCH_DIST_STRIP= -p1
-PATCHFILES=	${DISTNAME}-helper_warning.patch:0 \
-		${DISTNAME}-vary.patch:0 \
-		${DISTNAME}-deny_info.patch:0 \
-		${DISTNAME}-CONNECT_timeout.patch:0 \
-		${DISTNAME}-cache_swap_log.patch:0 \
-		${DISTNAME}-rfc1035NameUnpack.patch:0 \
-		${DISTNAME}-digest_blank.patch:0 \
-		${DISTNAME}-post_assert.patch:0 \
-		${DISTNAME}-spelling.patch:0 \
-		${DISTNAME}-digest_ERR.patch:0 \
-		${DISTNAME}-turkish_ERR_DNS_FAIL.patch:0 \
-		${DISTNAME}-vary_negatively.patch:0 \
-		${DISTNAME}-range_offset_limit.patch:0 \
-		${DISTNAME}-large_cache_mem.patch:0 \
-		${DISTNAME}-least-load.patch:0 \
-		${DISTNAME}-cacheCurrentUnlinkRequests.patch:0 \
-		${DISTNAME}-debug_client_ip.patch:0 \
-		${DISTNAME}-openbsd_m88k.patch:0 \
-		${DISTNAME}-ftp_html_doctype.patch:0 \
-		${DISTNAME}-dns_localhost.patch:0 \
-		${DISTNAME}-va_copy.patch:0 \
-		${DISTNAME}-CONNECT_log_size.patch:0 \
-		${DISTNAME}-proxy_abuse.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 

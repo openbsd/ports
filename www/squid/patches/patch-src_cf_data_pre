@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cf_data_pre,v 1.14 2004/03/03 01:20:42 brad Exp $
---- src/cf.data.pre.orig	2004-02-10 16:01:21.000000000 -0500
-+++ src/cf.data.pre	2004-03-02 20:10:06.000000000 -0500
-@@ -2383,13 +2383,13 @@ DOC_END
+$OpenBSD: patch-src_cf_data_pre,v 1.15 2004/07/11 17:00:47 brad Exp $
+--- src/cf.data.pre.orig	Fri Apr 30 16:40:39 2004
++++ src/cf.data.pre	Sun Jul 11 12:22:44 2004
+@@ -2389,13 +2389,13 @@ DOC_END
  
  NAME: cache_effective_user
  TYPE: string

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
---- src/Makefile.in.orig	Tue Feb 11 19:03:14 2003
-+++ src/Makefile.in	Mon May 12 07:08:29 2003
+$OpenBSD: patch-src_Makefile_in,v 1.7 2004/07/11 17:00:47 brad Exp $
+--- src/Makefile.in.orig	Tue Jun  8 07:37:22 2004
++++ src/Makefile.in	Sun Jul 11 12:23:14 2004
 @@ -33,7 +33,7 @@ bindir = @bindir@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
  libdir = @libdir@
-@@ -371,8 +371,8 @@ EXTRA_DIST = \
+@@ -373,8 +373,8 @@ EXTRA_DIST = \
  
  
  DEFAULT_PREFIX = $(prefix)
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
  DEFAULT_DNSSERVER = $(libexecdir)/dnsserver$(EXEEXT)
  DEFAULT_LOG_PREFIX = $(localstatedir)/logs
  DEFAULT_CACHE_LOG = $(DEFAULT_LOG_PREFIX)/cache.log
-@@ -387,7 +387,7 @@ DEFAULT_ICON_DIR = $(datadir)/icons
+@@ -389,7 +389,7 @@ DEFAULT_ICON_DIR = $(datadir)/icons
  DEFAULT_ERROR_DIR = $(datadir)/errors/@ERR_DEFAULT_LANGUAGE@
  DEFAULT_MIB_PATH = $(datadir)/mib.txt
  
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
  
  
  # Don't automatically uninstall config files
-@@ -441,7 +441,7 @@ am_cachemgr__CGIEXT__OBJECTS = cachemgr.
+@@ -443,7 +443,7 @@ am_cachemgr__CGIEXT__OBJECTS = cachemgr.
  cachemgr__CGIEXT__OBJECTS = $(am_cachemgr__CGIEXT__OBJECTS)
  cachemgr__CGIEXT__LDADD = $(LDADD)
  cachemgr__CGIEXT__DEPENDENCIES =
@@ -39,7 +39,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
  am_cf_gen_OBJECTS = cf_gen.$(OBJEXT)
  cf_gen_OBJECTS = $(am_cf_gen_OBJECTS)
  cf_gen_LDADD = $(LDADD)
-@@ -836,37 +836,37 @@ CCDEPMODE = @CCDEPMODE@
+@@ -838,37 +838,37 @@ CCDEPMODE = @CCDEPMODE@
  uninstall-info-am:
  install-dataDATA: $(data_DATA)
  	@$(NORMAL_INSTALL)
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -1000,7 +1000,7 @@ check: check-recursive
+@@ -1002,7 +1002,7 @@ check: check-recursive
  all-am: Makefile $(PROGRAMS) $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:
@@ -96,7 +96,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.6 2003/05/13 20:12:03 brad Exp $
  
  install: install-recursive
  install-exec: install-exec-recursive
-@@ -1124,7 +1124,7 @@ cf_gen_defines.h: $(srcdir)/cf_gen_defin
+@@ -1126,7 +1126,7 @@ cf_gen_defines.h: $(srcdir)/cf_gen_defin
  
  cf.data: cf.data.pre Makefile
  	sed "\

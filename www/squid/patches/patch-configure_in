@@ -1,16 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.13 2004/06/11 08:00:36 brad Exp $
---- configure.in.orig	2004-06-11 02:24:20.000000000 -0400
-+++ configure.in	2004-06-11 02:25:12.000000000 -0400
-@@ -9,7 +9,7 @@ dnl
- dnl
- AC_INIT(src/main.c)
- AC_CONFIG_AUX_DIR(cfgaux)
--AM_INIT_AUTOMAKE(squid, 2.5.STABLE5-CVS)
-+AM_INIT_AUTOMAKE(squid, 2.5.STABLE5)
- AM_CONFIG_HEADER(include/autoconf.h)
- AC_REVISION($Revision: 1.13 $)dnl
- AC_PREFIX_DEFAULT(/usr/local/squid)
-@@ -1607,18 +1607,6 @@ dnl during compile.
+$OpenBSD: patch-configure_in,v 1.14 2004/07/11 17:00:47 brad Exp $
+--- configure.in.orig	Thu Jul  8 19:44:39 2004
++++ configure.in	Sun Jul 11 12:23:13 2004
+@@ -1631,18 +1631,6 @@ dnl during compile.
  		;;
  esac
  
