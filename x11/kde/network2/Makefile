@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/12/31 15:05:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/05 00:09:49 espie Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
@@ -20,7 +20,7 @@ MODULES=qt2
 
 LIB_DEPENDS=	kdecore.3,kdeui::x11/kde/libs2
 
-BUILD_DEPENDS=	::x11/qt2-designer :zsh-*:shells/zsh/stable
+BUILD_DEPENDS=	::x11/qt2-designer 
 
 # for kaddressbook
 RUN_DEPENDS+=	::x11/kde/base2
@@ -45,13 +45,8 @@ USE_GMAKE=		Yes
 CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
-pre-build:
-	# Let zsh act as an sh replacement
-	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
-
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
-MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 # Note that lame is not a problem, since kdebase is packaged with a
