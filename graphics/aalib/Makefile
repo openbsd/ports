@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/15 17:11:18 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/03 09:30:19 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 
 DISTNAME=	aalib-1.2
@@ -8,8 +8,8 @@ MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
 MAINTAINER=	brad@openbsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=        --enable-static
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static
 
 pre-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
