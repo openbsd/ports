@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/03/24 22:11:50 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/25 10:29:23 ho Exp $
 
 DISTNAME=	bind-openbsd-8.2.2-P6-19991217
 PKGNAME=	bind-8.2.2-P6
@@ -11,6 +11,7 @@ MAINTAINER=	ho@openbsd.org,jakob@openbsd.org
 
 WRKDIST=	${WRKDIR}/named
 PREFIX=		/
+FAKE=		yes
 NO_MTREE=	yes
 NO_CONFIGURE=	yes
 SAMPLEDIR=	${DESTDIR}/usr/local/share/examples/bind8
@@ -28,7 +29,10 @@ pre-install pre-package:
 post-install:
 	mkdir -p ${SAMPLEDIR}
 	cp ${WRKSRC}/etc/namedb/named.* ${SAMPLEDIR}
-	@${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL ${SAMPLEDIR}
+
+pre-fake:
+	@mkdir -p ${WRKINST}/usr/share/man/cat{1,5,8} ${WRKINST}/usr/share/misc 
+	@mkdir -p ${WRKINST}/usr/sbin ${WRKINST}/usr/libexec
 
 .include <bsd.port.mk>
 

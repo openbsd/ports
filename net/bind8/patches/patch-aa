@@ -1,0 +1,24 @@
+--- ndc/Makefile.orig	Sat Mar 25 10:48:11 2000
++++ ndc/Makefile	Sat Mar 25 10:48:40 2000
+@@ -3,7 +3,7 @@
+ TOP=	${.CURDIR}/..
+ 
+ PROG=	ndc
+-BINDIR= ${DESTDIR}/usr/libexec/named
++BINDIR= /usr/libexec/named
+ 
+ MAN=	ndc.8
+ 
+@@ -16,12 +16,6 @@
+ CLEANFILES+= pathnames.h
+ 
+ beforedepend: pathnames.h
+-
+-beforeinstall:
+-	if [ -f ${BINDIR} ]; then \
+-		rm -f ${BINDIR}; \
+-	fi
+-	mkdir -p -m 755 ${BINDIR}
+ 
+ ndc.o: pathnames.h
+ 
