@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/10 08:48:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/17 12:23:44 wilfried Exp $
 # Original from: Bruno Rohee <rohee@OpenBSD.ORG>
 #
 # Many variables moved to ../Makefile.inc
@@ -17,10 +17,7 @@ WRKBUILD=		${WRKSRC}/obj
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
-
-do-configure:
-	cd ${WRKBUILD} && ${SETENV} ${CONFIGURE_ENV} ../configure ${CONFIGURE_ARGS}
-
+CONFIGURE_SCRIPT=	../configure
 
 pre-install:
 	${STRIP} ${WRKBUILD}/bin/amaya
