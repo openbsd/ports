@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/01 20:22:18 sturm Exp $ 
+# $OpenBSD: Makefile,v 1.7 2004/05/01 23:57:38 avsm Exp $ 
 
 COMMENT=	"contact management module for Horde"
 
-V=		1.2
+V=		1.2.2
 HORDE_MODULE=	turba
 HORDE_NAME=	Turba
 

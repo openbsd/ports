@@ -1,266 +1,289 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/04/03 11:22:29 avsm Exp $
-horde/turba/COPYING
-horde/turba/README
-horde/turba/addobject.php
-horde/turba/addobjectaction.php
-horde/turba/advanced.php
-horde/turba/browse.php
-horde/turba/config/.htaccess
-horde/turba/config/attributes.php.dist
-horde/turba/config/conf.php.dist
-horde/turba/config/html.php.dist
-horde/turba/config/menu.php.dist
-horde/turba/config/prefs.php.dist
-horde/turba/config/sources.php.dist
-horde/turba/data.php
-horde/turba/deleteobject.php
-horde/turba/displayobject.php
-horde/turba/docs/CHANGES
-horde/turba/docs/CREDITS
-horde/turba/docs/INSTALL
-horde/turba/docs/LDAP
-horde/turba/docs/UPDATE
-horde/turba/docs/turba.dia
-horde/turba/docs/turba.pdf
-horde/turba/editobject.php
-horde/turba/editobjectaction.php
-horde/turba/graphics/add.gif
-horde/turba/graphics/checkbox.gif
-horde/turba/graphics/close.gif
-horde/turba/graphics/down.gif
-horde/turba/graphics/group.gif
-horde/turba/graphics/lhand.gif
-horde/turba/graphics/map.gif
-horde/turba/graphics/rhand.gif
-horde/turba/graphics/search.gif
-horde/turba/graphics/turba.gif
-horde/turba/graphics/up.gif
-horde/turba/graphics/user.gif
-horde/turba/index.php
-horde/turba/lib/.htaccess
-horde/turba/lib/AbstractObject.php
-horde/turba/lib/Driver.php
-horde/turba/lib/Driver/ldap.php
-horde/turba/lib/Driver/prefs.php
-horde/turba/lib/Driver/sql.php
-horde/turba/lib/Group.php
-horde/turba/lib/List.php
-horde/turba/lib/List/Plain.php
-horde/turba/lib/List/Tree.php
-horde/turba/lib/ListView.php
-horde/turba/lib/ListView/Rolodex.php
-horde/turba/lib/ListView/Tree.php
-horde/turba/lib/Object.php
-horde/turba/lib/ObjectView.php
-horde/turba/lib/ObjectView/List.php
-horde/turba/lib/ObjectView/PhotoID.php
-horde/turba/lib/Source.php
-horde/turba/lib/${HORDE_NAME}.php
-horde/turba/lib/api.php
-horde/turba/lib/base.php
-horde/turba/lib/version.php
-horde/turba/locale/.htaccess
-horde/turba/locale/bg_BG/LC_MESSAGES/turba.mo
-horde/turba/locale/ca_ES/LC_MESSAGES/turba.mo
-horde/turba/locale/cs_CZ/LC_MESSAGES/turba.mo
-horde/turba/locale/da_DK/LC_MESSAGES/turba.mo
-horde/turba/locale/de_DE/LC_MESSAGES/turba.mo
-horde/turba/locale/de_DE/help.xml
-horde/turba/locale/el_GR/LC_MESSAGES/turba.mo
-horde/turba/locale/en_US/help.xml
-horde/turba/locale/es_ES/LC_MESSAGES/turba.mo
-horde/turba/locale/et_EE/LC_MESSAGES/turba.mo
-horde/turba/locale/fi_FI/LC_MESSAGES/turba.mo
-horde/turba/locale/fi_FI/help.xml
-horde/turba/locale/fr_FR/LC_MESSAGES/turba.mo
-horde/turba/locale/hu_HU/LC_MESSAGES/turba.mo
-horde/turba/locale/it_IT/LC_MESSAGES/turba.mo
-horde/turba/locale/ja_JP/LC_MESSAGES/turba.mo
-horde/turba/locale/ko_KR/LC_MESSAGES/turba.mo
-horde/turba/locale/lt_LT/LC_MESSAGES/turba.mo
-horde/turba/locale/lv_LV/LC_MESSAGES/turba.mo
-horde/turba/locale/nb_NO/LC_MESSAGES/turba.mo
-horde/turba/locale/nl_NL/LC_MESSAGES/turba.mo
-horde/turba/locale/nn_NO/LC_MESSAGES/turba.mo
-horde/turba/locale/pl_PL/LC_MESSAGES/turba.mo
-horde/turba/locale/pt_BR/LC_MESSAGES/turba.mo
-horde/turba/locale/pt_PT/LC_MESSAGES/turba.mo
-horde/turba/locale/ru_RU.KOI8-R/LC_MESSAGES/turba.mo
-horde/turba/locale/ru_RU/LC_MESSAGES/turba.mo
-horde/turba/locale/sk_SK/LC_MESSAGES/turba.mo
-horde/turba/locale/sk_SK/help.xml
-horde/turba/locale/sl_SI/LC_MESSAGES/turba.mo
-horde/turba/locale/sv_SE/LC_MESSAGES/turba.mo
-horde/turba/locale/uk_UA/LC_MESSAGES/turba.mo
-horde/turba/locale/zh_CN/LC_MESSAGES/turba.mo
-horde/turba/locale/zh_TW/LC_MESSAGES/turba.mo
-horde/turba/menu.php
-horde/turba/miniwindow.php
-horde/turba/po/.htaccess
-horde/turba/po/Makefile
-horde/turba/po/README
-horde/turba/po/bg_BG.po
-horde/turba/po/ca_ES.po
-horde/turba/po/cs_CZ.po
-horde/turba/po/da_DK.po
-horde/turba/po/de_DE.po
-horde/turba/po/el_GR.po
-horde/turba/po/es_ES.po
-horde/turba/po/et_EE.po
-horde/turba/po/extract.pl
-horde/turba/po/fi_FI.po
-horde/turba/po/fr_FR.po
-horde/turba/po/hu_HU.po
-horde/turba/po/it_IT.po
-horde/turba/po/ja_JP.po
-horde/turba/po/ko_KR.po
-horde/turba/po/lt_LT.po
-horde/turba/po/lv_LV.po
-horde/turba/po/nb_NO.po
-horde/turba/po/nl_NL.po
-horde/turba/po/nn_NO.po
-horde/turba/po/pl_PL.po
-horde/turba/po/pt_BR.po
-horde/turba/po/pt_PT.po
-horde/turba/po/ru_RU.KOI8-R.po
-horde/turba/po/ru_RU.po
-horde/turba/po/shtool
-horde/turba/po/sk_SK.po
-horde/turba/po/sl_SI.po
-horde/turba/po/sv_SE.po
-horde/turba/po/turba.pot
-horde/turba/po/uk_UA.po
-horde/turba/po/xgettext.sh
-horde/turba/po/zh_CN.po
-horde/turba/po/zh_TW.po
-horde/turba/prefs.php
-horde/turba/scripts/.htaccess
-horde/turba/scripts/${HORDE_NAME}.reg
-horde/turba/scripts/drivers/mysql_create.sql
-horde/turba/scripts/drivers/mysql_upgrade_1.1_to_1.2.sql
-horde/turba/scripts/drivers/pgsql_create.sql
-horde/turba/scripts/drivers/turba.sql
-horde/turba/scripts/ldap/addou
-horde/turba/scripts/ldap/addou.pl
-horde/turba/scripts/ldap/core.schema.patch
-horde/turba/search.php
-horde/turba/status.php
-horde/turba/templates/.htaccess
-horde/turba/templates/add/add.inc
-horde/turba/templates/add/noadd.inc
-horde/turba/templates/add/select.inc
-horde/turba/templates/advanced/criteria.inc
-horde/turba/templates/advanced/foot.inc
-horde/turba/templates/advanced/head.inc
-horde/turba/templates/advanced/results_head.inc
-horde/turba/templates/browse/actions.inc
-horde/turba/templates/browse/column_footers.inc
-horde/turba/templates/browse/column_headers.inc
-horde/turba/templates/browse/contactrow.inc
-horde/turba/templates/browse/footer.inc
-horde/turba/templates/browse/header.inc
-horde/turba/templates/browse/javascript.inc
-horde/turba/templates/browse/search.inc
-horde/turba/templates/browse/select.inc
-horde/turba/templates/common-footer.inc
-horde/turba/templates/common-header.inc
-horde/turba/templates/data/export.inc
-horde/turba/templates/data/import.inc
-horde/turba/templates/display/display.inc
-horde/turba/templates/edit/edit.inc
-horde/turba/templates/index/css.inc
-horde/turba/templates/index/notconfigured.inc
-horde/turba/templates/menu/menu.inc
-horde/turba/templates/miniwindow/frames.inc
-horde/turba/templates/miniwindow/menu.inc
-horde/turba/templates/prefs/columnselect.inc
-horde/turba/templates/search/foot.inc
-horde/turba/templates/search/head.inc
-horde/turba/templates/search/row.inc
-@dirrm horde/turba/templates/search
-@dirrm horde/turba/templates/prefs
-@dirrm horde/turba/templates/miniwindow
-@dirrm horde/turba/templates/menu
-@dirrm horde/turba/templates/index
-@dirrm horde/turba/templates/edit
-@dirrm horde/turba/templates/display
-@dirrm horde/turba/templates/data
-@dirrm horde/turba/templates/browse
-@dirrm horde/turba/templates/advanced
-@dirrm horde/turba/templates/add
-@dirrm horde/turba/templates
-@dirrm horde/turba/scripts/ldap
-@dirrm horde/turba/scripts/drivers
-@dirrm horde/turba/scripts
-@dirrm horde/turba/po
-@dirrm horde/turba/locale/zh_TW/LC_MESSAGES
-@dirrm horde/turba/locale/zh_TW
-@dirrm horde/turba/locale/zh_CN/LC_MESSAGES
-@dirrm horde/turba/locale/zh_CN
-@dirrm horde/turba/locale/uk_UA/LC_MESSAGES
-@dirrm horde/turba/locale/uk_UA
-@dirrm horde/turba/locale/sv_SE/LC_MESSAGES
-@dirrm horde/turba/locale/sv_SE
-@dirrm horde/turba/locale/sl_SI/LC_MESSAGES
-@dirrm horde/turba/locale/sl_SI
-@dirrm horde/turba/locale/sk_SK/LC_MESSAGES
-@dirrm horde/turba/locale/sk_SK
-@dirrm horde/turba/locale/ru_RU/LC_MESSAGES
-@dirrm horde/turba/locale/ru_RU.KOI8-R/LC_MESSAGES
-@dirrm horde/turba/locale/ru_RU.KOI8-R
-@dirrm horde/turba/locale/ru_RU
-@dirrm horde/turba/locale/pt_PT/LC_MESSAGES
-@dirrm horde/turba/locale/pt_PT
-@dirrm horde/turba/locale/pt_BR/LC_MESSAGES
-@dirrm horde/turba/locale/pt_BR
-@dirrm horde/turba/locale/pl_PL/LC_MESSAGES
-@dirrm horde/turba/locale/pl_PL
-@dirrm horde/turba/locale/nn_NO/LC_MESSAGES
-@dirrm horde/turba/locale/nn_NO
-@dirrm horde/turba/locale/nl_NL/LC_MESSAGES
-@dirrm horde/turba/locale/nl_NL
-@dirrm horde/turba/locale/nb_NO/LC_MESSAGES
-@dirrm horde/turba/locale/nb_NO
-@dirrm horde/turba/locale/lv_LV/LC_MESSAGES
-@dirrm horde/turba/locale/lv_LV
-@dirrm horde/turba/locale/lt_LT/LC_MESSAGES
-@dirrm horde/turba/locale/lt_LT
-@dirrm horde/turba/locale/ko_KR/LC_MESSAGES
-@dirrm horde/turba/locale/ko_KR
-@dirrm horde/turba/locale/ja_JP/LC_MESSAGES
-@dirrm horde/turba/locale/ja_JP
-@dirrm horde/turba/locale/it_IT/LC_MESSAGES
-@dirrm horde/turba/locale/it_IT
-@dirrm horde/turba/locale/hu_HU/LC_MESSAGES
-@dirrm horde/turba/locale/hu_HU
-@dirrm horde/turba/locale/fr_FR/LC_MESSAGES
-@dirrm horde/turba/locale/fr_FR
-@dirrm horde/turba/locale/fi_FI/LC_MESSAGES
-@dirrm horde/turba/locale/fi_FI
-@dirrm horde/turba/locale/et_EE/LC_MESSAGES
-@dirrm horde/turba/locale/et_EE
-@dirrm horde/turba/locale/es_ES/LC_MESSAGES
-@dirrm horde/turba/locale/es_ES
-@dirrm horde/turba/locale/en_US
-@dirrm horde/turba/locale/el_GR/LC_MESSAGES
-@dirrm horde/turba/locale/el_GR
-@dirrm horde/turba/locale/de_DE/LC_MESSAGES
-@dirrm horde/turba/locale/de_DE
-@dirrm horde/turba/locale/da_DK/LC_MESSAGES
-@dirrm horde/turba/locale/da_DK
-@dirrm horde/turba/locale/cs_CZ/LC_MESSAGES
-@dirrm horde/turba/locale/cs_CZ
-@dirrm horde/turba/locale/ca_ES/LC_MESSAGES
-@dirrm horde/turba/locale/ca_ES
-@dirrm horde/turba/locale/bg_BG/LC_MESSAGES
-@dirrm horde/turba/locale/bg_BG
-@dirrm horde/turba/locale
-@dirrm horde/turba/lib/ObjectView
-@dirrm horde/turba/lib/ListView
-@dirrm horde/turba/lib/List
-@dirrm horde/turba/lib/Driver
-@dirrm horde/turba/lib
-@dirrm horde/turba/graphics
-@dirrm horde/turba/docs
-@dirrm horde/turba/config
-@dirrm horde/turba
+@comment $OpenBSD: PLIST,v 1.3 2004/05/01 23:57:38 avsm Exp $
+horde/${HORDE_MODULE}/COPYING
+horde/${HORDE_MODULE}/README
+horde/${HORDE_MODULE}/add.php
+horde/${HORDE_MODULE}/addobject.php
+horde/${HORDE_MODULE}/addobjectaction.php
+horde/${HORDE_MODULE}/advanced.php
+horde/${HORDE_MODULE}/browse.php
+horde/${HORDE_MODULE}/config/.htaccess
+horde/${HORDE_MODULE}/config/attributes.php.dist
+horde/${HORDE_MODULE}/config/conf.php.dist
+horde/${HORDE_MODULE}/config/html.php.dist
+horde/${HORDE_MODULE}/config/menu.php.dist
+horde/${HORDE_MODULE}/config/prefs.php.dist
+horde/${HORDE_MODULE}/config/sources.php.dist
+horde/${HORDE_MODULE}/data.php
+horde/${HORDE_MODULE}/delete.php
+horde/${HORDE_MODULE}/deleteobject.php
+horde/${HORDE_MODULE}/display.php
+horde/${HORDE_MODULE}/displayobject.php
+horde/${HORDE_MODULE}/docs/CHANGES
+horde/${HORDE_MODULE}/docs/CREDITS
+horde/${HORDE_MODULE}/docs/INSTALL
+horde/${HORDE_MODULE}/docs/LDAP
+horde/${HORDE_MODULE}/docs/RELEASE_NOTES
+horde/${HORDE_MODULE}/docs/UPDATE
+horde/${HORDE_MODULE}/docs/turba.dia
+horde/${HORDE_MODULE}/docs/turba.pdf
+horde/${HORDE_MODULE}/edit.php
+horde/${HORDE_MODULE}/editobject.php
+horde/${HORDE_MODULE}/editobjectaction.php
+horde/${HORDE_MODULE}/graphics/add.gif
+horde/${HORDE_MODULE}/graphics/checkbox.gif
+horde/${HORDE_MODULE}/graphics/close.gif
+horde/${HORDE_MODULE}/graphics/down.gif
+horde/${HORDE_MODULE}/graphics/group.gif
+horde/${HORDE_MODULE}/graphics/lhand.gif
+horde/${HORDE_MODULE}/graphics/map.gif
+horde/${HORDE_MODULE}/graphics/rhand.gif
+horde/${HORDE_MODULE}/graphics/search.gif
+horde/${HORDE_MODULE}/graphics/${HORDE_MODULE}.gif
+horde/${HORDE_MODULE}/graphics/up.gif
+horde/${HORDE_MODULE}/graphics/user.gif
+horde/${HORDE_MODULE}/index.php
+horde/${HORDE_MODULE}/lib/.htaccess
+horde/${HORDE_MODULE}/lib/AbstractObject.php
+horde/${HORDE_MODULE}/lib/Driver.php
+horde/${HORDE_MODULE}/lib/Driver/ldap.php
+horde/${HORDE_MODULE}/lib/Driver/prefs.php
+horde/${HORDE_MODULE}/lib/Driver/sql.php
+horde/${HORDE_MODULE}/lib/Group.php
+horde/${HORDE_MODULE}/lib/List.php
+horde/${HORDE_MODULE}/lib/List/Plain.php
+horde/${HORDE_MODULE}/lib/List/Tree.php
+horde/${HORDE_MODULE}/lib/ListView.php
+horde/${HORDE_MODULE}/lib/ListView/Rolodex.php
+horde/${HORDE_MODULE}/lib/ListView/Tree.php
+horde/${HORDE_MODULE}/lib/Object.php
+horde/${HORDE_MODULE}/lib/ObjectView.php
+horde/${HORDE_MODULE}/lib/ObjectView/List.php
+horde/${HORDE_MODULE}/lib/ObjectView/PhotoID.php
+horde/${HORDE_MODULE}/lib/Source.php
+horde/${HORDE_MODULE}/lib/Turba.php
+horde/${HORDE_MODULE}/lib/api.php
+horde/${HORDE_MODULE}/lib/base.php
+horde/${HORDE_MODULE}/lib/version.php
+horde/${HORDE_MODULE}/locale/.htaccess
+horde/${HORDE_MODULE}/locale/ar_SY/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/bg_BG/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ca_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/da_DK/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/de_DE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/de_DE/help.xml
+horde/${HORDE_MODULE}/locale/el_GR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/en_US/help.xml
+horde/${HORDE_MODULE}/locale/es_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/et_EE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/fi_FI/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/fi_FI/help.xml
+horde/${HORDE_MODULE}/locale/fr_FR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/gl_ES/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/hu_HU/help.xml
+horde/${HORDE_MODULE}/locale/it_IT/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ja_JP/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ko_KR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/lt_LT/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/lv_LV/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/mk_MK/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/nb_NO/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/nl_NL/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/nn_NO/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/pl_PL/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/pl_PL/help.xml
+horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/pt_PT/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ru_RU.KOI8-R/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/ru_RU/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/sk_SK/help.xml
+horde/${HORDE_MODULE}/locale/sl_SI/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/uk_UA/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/locale/zh_TW/LC_MESSAGES/${HORDE_MODULE}.mo
+horde/${HORDE_MODULE}/menu.php
+horde/${HORDE_MODULE}/miniwindow.php
+horde/${HORDE_MODULE}/po/.htaccess
+horde/${HORDE_MODULE}/po/Makefile
+horde/${HORDE_MODULE}/po/README
+horde/${HORDE_MODULE}/po/ar_SY.po
+horde/${HORDE_MODULE}/po/bg_BG.po
+horde/${HORDE_MODULE}/po/ca_ES.po
+horde/${HORDE_MODULE}/po/cs_CZ.po
+horde/${HORDE_MODULE}/po/da_DK.po
+horde/${HORDE_MODULE}/po/de_DE.po
+horde/${HORDE_MODULE}/po/el_GR.po
+horde/${HORDE_MODULE}/po/es_ES.po
+horde/${HORDE_MODULE}/po/et_EE.po
+horde/${HORDE_MODULE}/po/extract.pl
+horde/${HORDE_MODULE}/po/fi_FI.po
+horde/${HORDE_MODULE}/po/fr_FR.po
+horde/${HORDE_MODULE}/po/gl_ES.po
+horde/${HORDE_MODULE}/po/hu_HU.po
+horde/${HORDE_MODULE}/po/it_IT.po
+horde/${HORDE_MODULE}/po/ja_JP.po
+horde/${HORDE_MODULE}/po/ko_KR.po
+horde/${HORDE_MODULE}/po/lt_LT.po
+horde/${HORDE_MODULE}/po/lv_LV.po
+horde/${HORDE_MODULE}/po/mk_MK.po
+horde/${HORDE_MODULE}/po/nb_NO.po
+horde/${HORDE_MODULE}/po/nl_NL.po
+horde/${HORDE_MODULE}/po/nn_NO.po
+horde/${HORDE_MODULE}/po/pl_PL.po
+horde/${HORDE_MODULE}/po/pt_BR.po
+horde/${HORDE_MODULE}/po/pt_PT.po
+horde/${HORDE_MODULE}/po/ro_RO.po
+horde/${HORDE_MODULE}/po/ru_RU.KOI8-R.po
+horde/${HORDE_MODULE}/po/ru_RU.po
+horde/${HORDE_MODULE}/po/shtool
+horde/${HORDE_MODULE}/po/sk_SK.po
+horde/${HORDE_MODULE}/po/sl_SI.po
+horde/${HORDE_MODULE}/po/sv_SE.po
+horde/${HORDE_MODULE}/po/${HORDE_MODULE}.pot
+horde/${HORDE_MODULE}/po/uk_UA.po
+horde/${HORDE_MODULE}/po/xgettext.sh
+horde/${HORDE_MODULE}/po/zh_CN.po
+horde/${HORDE_MODULE}/po/zh_TW.po
+horde/${HORDE_MODULE}/prefs.php
+horde/${HORDE_MODULE}/scripts/.htaccess
+horde/${HORDE_MODULE}/scripts/${HORDE_NAME}.reg
+horde/${HORDE_MODULE}/scripts/drivers/mysql_create.sql
+horde/${HORDE_MODULE}/scripts/drivers/mysql_upgrade_1.1_to_1.2.sql
+horde/${HORDE_MODULE}/scripts/drivers/pgsql_create.sql
+horde/${HORDE_MODULE}/scripts/drivers/${HORDE_MODULE}.sql
+horde/${HORDE_MODULE}/scripts/ldap/addou
+horde/${HORDE_MODULE}/scripts/ldap/addou.pl
+horde/${HORDE_MODULE}/scripts/ldap/core.schema.patch
+horde/${HORDE_MODULE}/search.php
+horde/${HORDE_MODULE}/status.php
+horde/${HORDE_MODULE}/templates/.htaccess
+horde/${HORDE_MODULE}/templates/add/add.inc
+horde/${HORDE_MODULE}/templates/add/noadd.inc
+horde/${HORDE_MODULE}/templates/add/select.inc
+horde/${HORDE_MODULE}/templates/advanced/criteria.inc
+horde/${HORDE_MODULE}/templates/advanced/foot.inc
+horde/${HORDE_MODULE}/templates/advanced/head.inc
+horde/${HORDE_MODULE}/templates/advanced/results_head.inc
+horde/${HORDE_MODULE}/templates/browse/actions.inc
+horde/${HORDE_MODULE}/templates/browse/column_footers.inc
+horde/${HORDE_MODULE}/templates/browse/column_headers.inc
+horde/${HORDE_MODULE}/templates/browse/contactrow.inc
+horde/${HORDE_MODULE}/templates/browse/footer.inc
+horde/${HORDE_MODULE}/templates/browse/header.inc
+horde/${HORDE_MODULE}/templates/browse/javascript.inc
+horde/${HORDE_MODULE}/templates/browse/search.inc
+horde/${HORDE_MODULE}/templates/browse/select.inc
+horde/${HORDE_MODULE}/templates/common-footer.inc
+horde/${HORDE_MODULE}/templates/common-header.inc
+horde/${HORDE_MODULE}/templates/data/export.inc
+horde/${HORDE_MODULE}/templates/data/import.inc
+horde/${HORDE_MODULE}/templates/display/display.inc
+horde/${HORDE_MODULE}/templates/edit/edit.inc
+horde/${HORDE_MODULE}/templates/index/css.inc
+horde/${HORDE_MODULE}/templates/index/notconfigured.inc
+horde/${HORDE_MODULE}/templates/menu/menu.inc
+horde/${HORDE_MODULE}/templates/miniwindow/frames.inc
+horde/${HORDE_MODULE}/templates/miniwindow/menu.inc
+horde/${HORDE_MODULE}/templates/prefs/columnselect.inc
+horde/${HORDE_MODULE}/templates/search/foot.inc
+horde/${HORDE_MODULE}/templates/search/head.inc
+horde/${HORDE_MODULE}/templates/search/row.inc
+@dirrm horde/${HORDE_MODULE}/templates/search
+@dirrm horde/${HORDE_MODULE}/templates/prefs
+@dirrm horde/${HORDE_MODULE}/templates/miniwindow
+@dirrm horde/${HORDE_MODULE}/templates/menu
+@dirrm horde/${HORDE_MODULE}/templates/index
+@dirrm horde/${HORDE_MODULE}/templates/edit
+@dirrm horde/${HORDE_MODULE}/templates/display
+@dirrm horde/${HORDE_MODULE}/templates/data
+@dirrm horde/${HORDE_MODULE}/templates/browse
+@dirrm horde/${HORDE_MODULE}/templates/advanced
+@dirrm horde/${HORDE_MODULE}/templates/add
+@dirrm horde/${HORDE_MODULE}/templates
+@dirrm horde/${HORDE_MODULE}/scripts/ldap
+@dirrm horde/${HORDE_MODULE}/scripts/drivers
+@dirrm horde/${HORDE_MODULE}/scripts
+@dirrm horde/${HORDE_MODULE}/po
+@dirrm horde/${HORDE_MODULE}/locale/zh_TW/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/zh_TW
+@dirrm horde/${HORDE_MODULE}/locale/zh_CN/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/zh_CN
+@dirrm horde/${HORDE_MODULE}/locale/uk_UA/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/uk_UA
+@dirrm horde/${HORDE_MODULE}/locale/sv_SE/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/sv_SE
+@dirrm horde/${HORDE_MODULE}/locale/sl_SI/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/sl_SI
+@dirrm horde/${HORDE_MODULE}/locale/sk_SK/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/sk_SK
+@dirrm horde/${HORDE_MODULE}/locale/ru_RU/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ru_RU.KOI8-R
+@dirrm horde/${HORDE_MODULE}/locale/ru_RU
+@dirrm horde/${HORDE_MODULE}/locale/ro_RO/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ro_RO
+@dirrm horde/${HORDE_MODULE}/locale/pt_PT/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/pt_PT
+@dirrm horde/${HORDE_MODULE}/locale/pt_BR/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/pt_BR
+@dirrm horde/${HORDE_MODULE}/locale/pl_PL/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/pl_PL
+@dirrm horde/${HORDE_MODULE}/locale/nn_NO/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/nn_NO
+@dirrm horde/${HORDE_MODULE}/locale/nl_NL/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/nl_NL
+@dirrm horde/${HORDE_MODULE}/locale/nb_NO/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/nb_NO
+@dirrm horde/${HORDE_MODULE}/locale/mk_MK/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/mk_MK
+@dirrm horde/${HORDE_MODULE}/locale/lv_LV/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/lv_LV
+@dirrm horde/${HORDE_MODULE}/locale/lt_LT/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/lt_LT
+@dirrm horde/${HORDE_MODULE}/locale/ko_KR/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ko_KR
+@dirrm horde/${HORDE_MODULE}/locale/ja_JP/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ja_JP
+@dirrm horde/${HORDE_MODULE}/locale/it_IT/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/it_IT
+@dirrm horde/${HORDE_MODULE}/locale/hu_HU/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/hu_HU
+@dirrm horde/${HORDE_MODULE}/locale/gl_ES/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/gl_ES
+@dirrm horde/${HORDE_MODULE}/locale/fr_FR/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/fr_FR
+@dirrm horde/${HORDE_MODULE}/locale/fi_FI/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/fi_FI
+@dirrm horde/${HORDE_MODULE}/locale/et_EE/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/et_EE
+@dirrm horde/${HORDE_MODULE}/locale/es_ES/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/es_ES
+@dirrm horde/${HORDE_MODULE}/locale/en_US
+@dirrm horde/${HORDE_MODULE}/locale/el_GR/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/el_GR
+@dirrm horde/${HORDE_MODULE}/locale/de_DE/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/de_DE
+@dirrm horde/${HORDE_MODULE}/locale/da_DK/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/da_DK
+@dirrm horde/${HORDE_MODULE}/locale/cs_CZ/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/cs_CZ
+@dirrm horde/${HORDE_MODULE}/locale/ca_ES/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ca_ES
+@dirrm horde/${HORDE_MODULE}/locale/bg_BG/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/bg_BG
+@dirrm horde/${HORDE_MODULE}/locale/ar_SY/LC_MESSAGES
+@dirrm horde/${HORDE_MODULE}/locale/ar_SY
+@dirrm horde/${HORDE_MODULE}/locale
+@dirrm horde/${HORDE_MODULE}/lib/ObjectView
+@dirrm horde/${HORDE_MODULE}/lib/ListView
+@dirrm horde/${HORDE_MODULE}/lib/List
+@dirrm horde/${HORDE_MODULE}/lib/Driver
+@dirrm horde/${HORDE_MODULE}/lib
+@dirrm horde/${HORDE_MODULE}/graphics
+@dirrm horde/${HORDE_MODULE}/docs
+@dirrm horde/${HORDE_MODULE}/config
+@dirrm horde/${HORDE_MODULE}

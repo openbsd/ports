@@ -6,5 +6,4 @@ ${INSTDIR}/${HORDE_MODULE}/docs/INSTALL
 
 Before installing ${HORDE_NAME}, make sure that Horde is correctly
 configured and working first!
-
 ==============================================================
