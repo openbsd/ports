@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/10/14 15:35:04 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/16 17:00:08 naddy Exp $
 CATEGORIES=	x11
 NEED_VERSION=	1.474
 
 COMMENT=	"DVD player"
 DISTNAME=	ogle-0.8.0
-MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/
 HOMEPAGE=	http://www.dtek.chalmers.se/groups/dvd/
+MASTER_SITES=	${HOMEPAGE}dist/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
