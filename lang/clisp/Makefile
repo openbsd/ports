@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/25 19:40:05 shell Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/30 10:46:45 shell Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
 NOT_FOR_ARCHS=	powerpc sparc
 
 COMMENT=	"ANSI Common Lisp compiler"
 
-DISTNAME=	clisp-2.26
+VERSION=	2.26
+DISTNAME=	clisp-${VERSION}
 CATEGORIES=	lang
 NEED_VERSION=	1.378
 HOMEPAGE=	http://clisp.cons.org/
@@ -17,8 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://clisp.cons.org/pub/lisp/clisp/source/ \
-		ftp://ftp.freesoftware.com/pub/lisp/clisp/source/
+MASTER_SITES=	ftp://clisp.cons.org/pub/lisp/clisp/source/${VERSION}/
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE= gnu old
