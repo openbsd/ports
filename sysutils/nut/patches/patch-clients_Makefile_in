@@ -1,24 +1,20 @@
-$OpenBSD: patch-clients_Makefile_in,v 1.1 2002/10/14 16:14:33 marcm Exp $
---- clients/Makefile.in.orig	Sat Jun  8 02:09:09 2002
-+++ clients/Makefile.in	Mon Sep 30 22:01:28 2002
-@@ -51,16 +51,16 @@ cgilib.o: cgilib.c
- 	$(CC) $(CFLAGS) -c cgilib.c
+$OpenBSD: patch-clients_Makefile_in,v 1.2 2003/01/16 23:42:18 marcm Exp $
+--- clients/Makefile.in.orig	Mon Dec  2 04:09:20 2002
++++ clients/Makefile.in	Sun Dec 29 16:38:29 2002
+@@ -51,13 +51,13 @@ upslog: upslog.c upsclient.o $(LIBDEP)
+ 	$(CC) $(NET_CFLAGS) -o upslog upslog.c upsclient.o $(LIBOBJ) $(NET_LDFLAGS)
  
- multimon.cgi: multimon.c upsfetch.o cgilib.o ../common/parseconf.o $(LIBDEP)
--	$(CC) $(CFLAGS) -o multimon.cgi multimon.c upsfetch.o cgilib.o ../common/parseconf.o $(LIBOBJ)
-+	$(CC) $(CFLAGS) -o multimon.cgi multimon.c upsfetch.o cgilib.o ../common/parseconf.o $(LIBOBJ) -static
+ upsstats.cgi: upsstats.c upsclient.o cgilib.o ../common/parseconf.o $(LIBDEP)
+-	$(CC) $(NET_CFLAGS) -o upsstats.cgi upsstats.c upsclient.o cgilib.o ../common/parseconf.o $(LIBOBJ) $(NET_LDFLAGS)
++	$(CC) $(NET_CFLAGS) -o upsstats.cgi upsstats.c upsclient.o cgilib.o ../common/parseconf.o $(LIBOBJ) $(NET_LDFLAGS) -static
  
- upsset.cgi: upsset.c upsfetch.o cgilib.o ../common/parseconf.o $(LIBDEP)
--	$(CC) $(CFLAGS) -o upsset.cgi upsset.c upsfetch.o cgilib.o ../common/parseconf.o $(LIBOBJ)
-+	$(CC) $(CFLAGS) -o upsset.cgi upsset.c upsfetch.o cgilib.o ../common/parseconf.o $(LIBOBJ) -static
+ upsimage.cgi: upsimage.c upsclient.o cgilib.o $(LIBDEP)
+-	$(CC) $(NET_CFLAGS) $(GD_INCLUDES) -o upsimage.cgi upsimage.c upsclient.o cgilib.o $(GD_LIBS) $(LIBOBJ) $(NET_LDFLAGS)
++	$(CC) $(NET_CFLAGS) $(GD_INCLUDES) -o upsimage.cgi upsimage.c upsclient.o cgilib.o $(GD_LIBS) $(LIBOBJ) $(NET_LDFLAGS) -lgd -static
  
- upsstats.cgi: upsstats.c upsfetch.o cgilib.o $(LIBDEP)
--	$(CC) $(CFLAGS) -o upsstats.cgi upsstats.c upsfetch.o cgilib.o $(LIBOBJ)
-+	$(CC) $(CFLAGS) -o upsstats.cgi upsstats.c upsfetch.o cgilib.o $(LIBOBJ) -static
+ upsset.cgi: upsset.c upsclient.o cgilib.o ../common/parseconf.o $(LIBDEP)
+-	$(CC) $(NET_CFLAGS) -o upsset.cgi upsset.c upsclient.o cgilib.o ../common/parseconf.o $(LIBOBJ) $(NET_LDFLAGS)
++	$(CC) $(NET_CFLAGS) -o upsset.cgi upsset.c upsclient.o cgilib.o ../common/parseconf.o $(LIBOBJ) $(NET_LDFLAGS) -static
  
- upsimage.cgi: upsimage.c upsfetch.o cgilib.o $(LIBDEP)
--	$(CC) $(CFLAGS) -o upsimage.cgi upsimage.c upsfetch.o cgilib.o @GFXLIBS@ -lm $(LIBOBJ)
-+	$(CC) $(CFLAGS) -o upsimage.cgi upsimage.c upsfetch.o cgilib.o @GFXLIBS@ -lm $(LIBOBJ) -lgd -static
- 
- clean:
- 	rm -f *~ *.o $(PROGS) $(SPROGS) $(CGIPROGS)
+ upsmon: upsmon.c upsclient.o ../common/parseconf.o $(LIBDEP)
+ 	$(CC) $(NET_CFLAGS) -o upsmon upsmon.c upsclient.o ../common/parseconf.o $(LIBOBJ) $(NET_LDFLAGS)

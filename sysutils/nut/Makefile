@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/16 23:42:18 marcm Exp $
 
 COMMENT=		"UPS monitoring program supporting many brands"
 COMMENT-cgi=		"CGIs for monitoring Nut-based UPSs"
 
-VERSION=		1.0.0
+VERSION=		1.2.1
 DISTNAME=		nut-${VERSION}
 PKGNAME-cgi=		nut-cgi-${VERSION}
 CATEGORIES=		sysutils
@@ -18,17 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}release/
+MASTER_SITES=		http://penguin.harrison.k12.co.us/mirrors/nut/release/1.2/ \
+			${HOMEPAGE}release/1.2/
 
 FAKE_FLAGS=		INSTALLROOT="${WRKINST}"
 
-CGI_CFG=		hosts.conf multimon.conf upsset.conf
+CGI_CFG=		hosts.conf upsset.conf upsstats.html upsstats-single.html
 WEB_ROOT=		/var/www
 SYSCONFDIR=		/etc/nut
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-statepath="/var/db/nut"
 CONFIGURE_ARGS+=	--with-user=uucp
 CONFIGURE_ARGS+=	--with-group=dialer
+CONFIGURE_ARGS+=	--with-ssl
 
 PSEUDO_FLAVORS=		no_cgi
 FLAVOR?=

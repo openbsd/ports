@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_cgilib_c,v 1.1 2002/10/14 16:14:33 marcm Exp $
---- clients/cgilib.c.orig	Mon Sep 30 10:39:14 2002
-+++ clients/cgilib.c	Mon Sep 30 10:40:24 2002
-@@ -147,7 +147,7 @@ int checkhost(char *check, char **desc)
+$OpenBSD: patch-clients_cgilib_c,v 1.2 2003/01/16 23:42:18 marcm Exp $
+--- clients/cgilib.c.orig	Tue Aug 20 07:39:06 2002
++++ clients/cgilib.c	Sun Dec 29 11:31:52 2002
+@@ -155,7 +155,7 @@ int checkhost(char *check, char **desc)
  	if (!check)
  		return 0;		/* deny null hostnames */
  
