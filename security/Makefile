@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 1999/11/04 17:39:51 dugsong Exp $
+# $OpenBSD: Makefile,v 1.26 1999/12/05 18:24:48 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -15,6 +15,7 @@
 #    SUBDIR += fwtk
      SUBDIR += gnupg
      SUBDIR += john
+     SUBDIR += l0phtcrack
      SUBDIR += libident
      SUBDIR += logsurfer
      SUBDIR += nbaudit
@@ -30,6 +31,7 @@
      SUBDIR += pgplib
 #    SUBDIR += pidentd
      SUBDIR += portscanner
+     SUBDIR += rdp
      SUBDIR += rsaref
      SUBDIR += smurflog
      SUBDIR += socks5
@@ -40,6 +42,7 @@
 #    SUBDIR += super
      SUBDIR += swatch
 #    SUBDIR += tcp_wrapper
+     SUBDIR += tempwatch
 #    SUBDIR += tripwire
 #    SUBDIR += vscan
 #    SUBDIR += xinetd
