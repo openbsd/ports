@@ -1,0 +1,80 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/05/28 19:22:17 jakob Exp $
+include/sasl/hmac-md5.h
+include/sasl/md5.h
+include/sasl/md5global.h
+include/sasl/sasl.h
+include/sasl/saslplug.h
+include/sasl/saslutil.h
+lib/libsasl.a
+lib/libsasl.la
+lib/libsasl.so.8.5
+lib/sasl/libanonymous.a
+lib/sasl/libanonymous.la
+lib/sasl/libanonymous.so.1.14
+lib/sasl/libcrammd5.a
+lib/sasl/libcrammd5.la
+lib/sasl/libcrammd5.so.1.14
+lib/sasl/libdigestmd5.a
+lib/sasl/libdigestmd5.la
+lib/sasl/libdigestmd5.so.0.15
+lib/sasl/libkerberos4.a
+lib/sasl/libkerberos4.la
+lib/sasl/libkerberos4.so.1.14
+lib/sasl/libplain.a
+lib/sasl/libplain.la
+lib/sasl/libplain.so.1.13
+man/man3/sasl.3
+man/man3/sasl_authorize_t.3
+man/man3/sasl_callbacks.3
+man/man3/sasl_checkpass.3
+man/man3/sasl_client_init.3
+man/man3/sasl_client_new.3
+man/man3/sasl_client_start.3
+man/man3/sasl_client_step.3
+man/man3/sasl_decode.3
+man/man3/sasl_done.3
+man/man3/sasl_encode.3
+man/man3/sasl_errstring.3
+man/man3/sasl_getopt_t.3
+man/man3/sasl_getpath_t.3
+man/man3/sasl_getprop.3
+man/man3/sasl_getsecret_t.3
+man/man3/sasl_getsimple_t.3
+man/man3/sasl_listmech.3
+man/man3/sasl_log_t.3
+man/man3/sasl_server_init.3
+man/man3/sasl_server_new.3
+man/man3/sasl_server_start.3
+man/man3/sasl_server_step.3
+man/man3/sasl_setprop.3
+man/man3/sasl_usererr.3
+man/man8/sasldblistusers.8
+man/man8/saslpasswd.8
+sbin/sasldblistusers
+sbin/saslpasswd
+share/doc/sasl/programming.html
+share/doc/sasl/sysadmin.html
+share/doc/sasl/gssapi.html
+share/doc/sasl/index.html
+share/doc/sasl/rfc1321.txt
+share/doc/sasl/rfc2095.txt
+share/doc/sasl/rfc2104.txt
+share/doc/sasl/rfc2222.txt
+share/doc/sasl/rfc2245.txt
+share/doc/sasl/draft-leach-digest-sasl-05.txt
+share/doc/sasl/draft-newman-auth-scram-03.txt
+@unexec rm %D/lib/sasl/libanonymous.so
+@unexec rm %D/lib/sasl/libcrammd5.so
+@unexec rm %D/lib/sasl/libdigestmd5.so
+@unexec rm %D/lib/sasl/libkerberos4.so
+@unexec rm %D/lib/sasl/libplain.so
+@dirrm lib/sasl
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@exec ln -s %D/lib/sasl /usr/lib/sasl
+@exec ln -s libanonymous.so.1.14   %D/lib/sasl/libanonymous.so
+@exec ln -s libcrammd5.so.1.14     %D/lib/sasl/libcrammd5.so
+@exec ln -s libdigestmd5.so.0.15   %D/lib/sasl/libdigestmd5.so
+@exec ln -s libkerberos4.so.1.14   %D/lib/sasl/libkerberos4.so
+@exec ln -s libplain.so.1.13       %D/lib/sasl/libplain.so
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec rm /usr/lib/sasl
