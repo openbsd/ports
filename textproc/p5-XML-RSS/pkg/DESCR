@@ -1,0 +1,6 @@
+This module was created to help those who need to manage RDF Site
+Summary (RSS) files, it makes quick work of creating, updating and
+saving RSS files.
+
+This module currently supports the 0.9, 0.91, and 1.0 versions of
+RSS.

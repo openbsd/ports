@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/21 23:59:21 avsm Exp $
+libdata/perl5/site_perl/XML/RSS.pm
+man/man3/XML::RSS.3p
+share/examples/p5-XML-RSS/0.9/create_rss.pl
+share/examples/p5-XML-RSS/0.9/linuxtoday.rdf
+share/examples/p5-XML-RSS/0.9/rss-0.9.dtd
+share/examples/p5-XML-RSS/0.9/slashdot.rdf
+share/examples/p5-XML-RSS/0.91/create_rss_0.91.pl
+share/examples/p5-XML-RSS/0.91/create_rss_0.91_full.pl
+share/examples/p5-XML-RSS/0.91/fm.rdf
+share/examples/p5-XML-RSS/0.91/fm0.91.rdf
+share/examples/p5-XML-RSS/0.91/fm0.91_full.rdf
+share/examples/p5-XML-RSS/0.91/rss-0.91.dtd
+share/examples/p5-XML-RSS/0.91/xmlnews.rdf
+share/examples/p5-XML-RSS/1.0/create_rss_1.0.pl
+share/examples/p5-XML-RSS/1.0/rss1.0.rdf
+share/examples/p5-XML-RSS/1.0/slash.rdf
+share/examples/p5-XML-RSS/1.0/update_rss_1.0.pl
+share/examples/p5-XML-RSS/README
+share/examples/p5-XML-RSS/convert.pl
+share/examples/p5-XML-RSS/create_rss_multiple.pl
+share/examples/p5-XML-RSS/rss2html.pl
+share/examples/p5-XML-RSS/rss_info.pl
+share/examples/p5-XML-RSS/update_rss.pl
+@dirrm share/examples/p5-XML-RSS/1.0
+@dirrm share/examples/p5-XML-RSS/0.91
+@dirrm share/examples/p5-XML-RSS/0.9
+@dirrm share/examples/p5-XML-RSS
