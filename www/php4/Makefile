@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2001/10/13 23:22:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.55 2001/10/15 00:56:53 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--without-mm
 
 .if ${FLAVOR:L:Mrecode}
 CONFIGURE_ARGS+=	--with-recode=${LOCALBASE}
-BUILD_DEPENDS+=		${LOCALBASE}/lib/librecode.a::converters/recode
+LIB_DEPENDS+=		recode::converters/recode
 .else
 CONFIGURE_ARGS+=	--without-recode
 .endif
@@ -150,7 +150,7 @@ CONFIGURE_ARGS+=	--without-gd
 ERRORS+= "Fatal: pdflib flavor requires the gd flavor also"
 .endif
 CONFIGURE_ARGS+=	--with-pdflib=${LOCALBASE}
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libpdf.a::print/pdflib
+LIB_DEPENDS+=		pdf.2::print/pdflib
 .else
 CONFIGURE_ARGS+=	--without-pdflib
 .endif
@@ -190,7 +190,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 .if ${FLAVOR:L:Miodbc}
 CONFIGURE_ARGS+=        --with-iodbc
-BUILD_DEPENDS+=         ${LOCALBASE}/lib/libiodbc.a::databases/iodbc
+LIB_DEPENDS+=		iodbc.2::databases/iodbc
 .else
 CONFIGURE_ARGS+=        --without-iodbc
 .endif        
