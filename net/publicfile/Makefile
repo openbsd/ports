@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/04 08:19:41 camield Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/26 14:39:29 camield Exp $
 
 DISTNAME=	publicfile-0.52
 HOMEPAGE=	http://cr.yp.to/publicfile.html
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_CONFIGURE=	Yes
-ALL_TARGET=	default WRKINST=${WRKINST}
+ALL_TARGET=	default
 INSTALL_TARGET=	setup check
 
 FAKE=	Yes
@@ -26,6 +26,9 @@ RUN_DEPENDS=	supervise::sysutils/daemontools \
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@echo ${PREFIX}/publicfile > ${WRKSRC}/conf-home
+
+pre-install:
 	@echo ${PREFIX}/publicfile > ${WRKSRC}/conf-home
 
 .include <bsd.port.mk>

@@ -1,15 +1,25 @@
-$OpenBSD: patch-Makefile,v 1.1 2000/04/04 08:19:41 camield Exp $
+$OpenBSD: patch-Makefile,v 1.2 2000/04/26 14:39:30 camield Exp $
 
-Needed for fake installation.
+Needed for fake installation. This way the installer can easily be
+rebuilt with the fake prefix, without rebuilding _everything_.
 
---- Makefile.orig	Tue Apr  4 10:13:38 2000
-+++ Makefile	Tue Apr  4 10:13:52 2000
-@@ -26,7 +26,7 @@
+--- Makefile.orig	Tue Nov  9 08:23:46 1999
++++ Makefile	Wed Apr 26 16:36:46 2000
+@@ -82,7 +82,7 @@
+ 	./compile case_startb.c
  
- auto_home.c: \
- auto-str conf-home
--	./auto-str auto_home `head -1 conf-home` > auto_home.c
-+	./auto-str auto_home ${WRKINST}`head -1 conf-home` > auto_home.c
+ check: \
+-it instcheck
++instcheck
+ 	./instcheck
  
- auto_home.o: \
- compile auto_home.c
+ chkshsgr: \
+@@ -389,7 +389,7 @@
+ 	./choose c trysysel select.h1 select.h2 > select.h
+ 
+ setup: \
+-it install
++install
+ 	./install
+ 
+ sig.a: \
