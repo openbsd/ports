@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/12 16:18:33 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/03/26 13:29:52 espie Exp $
 
+COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.305
+NEED_VERSION=		1.363
 VERSION=		2.1
 DISTNAME=		kdebase-${VERSION}
 DIST_SUBDIR=		kde
@@ -13,6 +14,8 @@ EXTRACT_SUFX=		.tar.bz2
 USE_MOTIF=	Yes
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		ldap.2::databases/openldap
+
+BUILD_DEPENDS=	uic::x11/qt2-designer
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2

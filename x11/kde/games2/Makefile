@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/03/16 15:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/26 13:29:54 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -39,6 +39,7 @@ MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
+BUILD_DEPENDS=	uic::x11/qt2-designer
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2

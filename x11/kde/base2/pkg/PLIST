@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2001/03/14 16:09:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2001/03/26 13:29:53 espie Exp $
 @mode u+s
 @owner root
 bin/konsole_grantpty
@@ -2453,7 +2453,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/C
-@dirrm share/locale
 @dirrm share/icons/locolor/32x32/devices
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/16x16/devices
@@ -2462,10 +2461,8 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/filesystems
 @dirrm share/icons/hicolor/16x16/devices
 @dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2640,5 +2637,4 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
 @dirrm share/applnk
-@dirrm lib/kde2
 @dirrm include/kwin

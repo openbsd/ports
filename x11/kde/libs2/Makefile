@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/12 16:15:19 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/03/26 13:29:51 espie Exp $
 
+COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.305
+NEED_VERSION=		1.363
 VERSION=		2.1
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
@@ -14,7 +15,8 @@ LIB_DEPENDS= 	qt.2.::x11/qt2 \
 		png.1.::graphics/png \
 		jpeg.62.::graphics/jpeg \
 		tiff.35.::graphics/tiff \
-		audiofile.::devel/libaudiofile
+		audiofile.::devel/libaudiofile \
+		pcreposix.::devel/pcre
 
 
 CONFIGURE_STYLE=	autoconf
