@@ -2,8 +2,7 @@
 sectors and writes them into a single or multiple files, or to the
 standard output.
 
-The digital audio data is read through the SCSI bus; thus tosha
-does NOT work with IDE/ATAPI CD-ROM drives nor with proprietary
-interfaces.
+Most IDE/ATAPI CD-ROM drives should work through OpenBSD's atapiscsi
+functionality. Some, though, are known to be problematic.
 
 Oliver Fromme <oliver.fromme@heim3.tu-clausthal.de>
