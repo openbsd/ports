@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/06 14:37:27 espie Exp $
-@lib lib/libogg.so.5.0
+@comment $OpenBSD: PFRAG.shared,v 1.7 2004/09/17 15:39:59 naddy Exp $
+@lib lib/libogg.so.5.1
