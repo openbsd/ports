@@ -1,6 +1,4 @@
-@cwd /usr
-sbin/pgpsendmail
-@cwd /usr/local
+bin/pgpsendmail
 bin/pgpdaemon
 bin/pgppipe
 bin/sendpgppass

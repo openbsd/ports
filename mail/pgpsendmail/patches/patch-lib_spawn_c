@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_spawn_c,v 1.1 2000/06/05 00:04:03 espie Exp $
+--- lib/spawn.c.orig	Thu Sep 25 06:21:58 1997
++++ lib/spawn.c	Mon Jun  5 01:29:48 2000
+@@ -82,7 +82,9 @@ int *err_fd;
+ {
+     int child_pid;
+     int in_fds[2], out_fds[2], err_fds[2];
++#ifndef __OpenBSD__
+     extern char *sys_errlist[];
++#endif
+ 
+     if (*in_fd < 0)
+     {

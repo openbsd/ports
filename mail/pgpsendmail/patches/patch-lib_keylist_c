@@ -1,0 +1,23 @@
+$OpenBSD: patch-lib_keylist_c,v 1.1 2000/06/05 00:04:03 espie Exp $
+--- lib/keylist.c.orig	Sat Oct  4 02:01:20 1997
++++ lib/keylist.c	Mon Jun  5 01:29:49 2000
+@@ -76,7 +76,9 @@ flag freshen_keylist (char *pgppath)
+     char keyring[STRING_LENGTH];
+     char txt[STRING_LENGTH];
+     struct stat statbuf_list, statbuf_keyring;
++#ifndef __OpenBSD__
+     extern char *sys_errlist[];
++#endif
+     static char *argv[] = {"pgp", "-kv", "+language=en", NULL};
+ 
+     sprintf (listfile, "%s/.keylist", pgppath);
+@@ -263,7 +265,9 @@ flag include_mykey (CONST char *pgppath,
+     int ch;
+     FILE *in_fp;
+     char keyfile[STRING_LENGTH];
++#ifndef __OpenBSD__
+     extern char *sys_errlist[];
++#endif
+ 
+     sprintf (keyfile, "%s/mypubkey.asc", pgppath);
+     if ( ( in_fp = fopen (keyfile, "r") ) == NULL )

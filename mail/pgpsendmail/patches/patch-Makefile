@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile,v 1.1 2000/06/05 00:04:02 espie Exp $
+--- Makefile.orig	Tue Oct 21 00:58:19 1997
++++ Makefile	Mon Jun  5 01:29:48 2000
+@@ -30,7 +30,7 @@ DEFINES =
+ 
+ # Where do your manpages reside?
+ #
+-MANDIR = /usr/man
++MANDIR = /usr/local/man
+ 
+ 
+ # Various compilers: if you have problems compiling, you may comment out the
+@@ -112,8 +112,8 @@ match-email-addr:	match-email-addr.o lib
+ 	$(CC) -o match-email-addr match-email-addr.o $(LDFLAGS)
+ 
+ 
+-install: dummy pgpsendmail pgpdaemon sendpgppass pgppipe pgpsign extract-addrs\
+-		match-email-addr install.man
++all_install: dummy pgpsendmail pgpdaemon sendpgppass pgppipe pgpsign \
++	extract-addrs match-email-addr install.man
+ 	./install pgpsendmail $(SENDMAIL)
+ 	./install pgpdaemon
+ 	./install sendpgppass
+@@ -123,8 +123,7 @@ install: dummy pgpsendmail pgpdaemon sen
+ 	./install match-email-addr
+ 
+ install.man: clean
+-	cp -rp man/* $(MANDIR)
+-
++	cp -r man/* $(MANDIR)
+ 
+ reminder:
+ 	@echo ""
