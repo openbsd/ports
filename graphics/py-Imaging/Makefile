@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/11/30 01:06:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2005/01/25 14:25:46 alek Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -39,6 +39,7 @@ PKGNAME-examples=	py-Imaging-examples-${VERSION}
 RUN_DEPENDS=		:py-Imaging-*:graphics/py-Imaging
 LIB_DEPENDS=
 PKG_ARCH=		*
+WANTLIB=
 .endif
 
 CONFIGURE_STYLE=	gnu
