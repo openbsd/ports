@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2005/04/01 16:44:52 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2005/04/04 21:24:00 kurt Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 i386 powerpc sparc sparc64
 
@@ -6,7 +6,7 @@ COMMENT=	"redesign of Mozilla's browser component"
 
 VER=		1.0.2
 DISTNAME=	mozilla
-PKGNAME=	mozilla-firefox-${VER}p0
+PKGNAME=	mozilla-firefox-${VER}p1
 
 CATEGORIES=	www
 
