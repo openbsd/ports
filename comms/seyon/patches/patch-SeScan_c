@@ -1,0 +1,16 @@
+$OpenBSD: patch-SeScan_c,v 1.1 2003/12/30 01:18:55 espie Exp $
+--- SeScan.c.orig	2003-12-30 02:08:16.000000000 +0100
++++ SeScan.c	2003-12-30 02:08:33.000000000 +0100
+@@ -275,9 +275,9 @@ GetFirstWord(line) 
+ #ifdef TEST
+ main()
+ {
+-  scSetInputBuf("Just to see if we'\\'re \\n\\033 able to distinguish' words and strings
+-\"Also 'quotes' inside strings\" and 'strs \"inside quotes\"'
+-Not to forget ^S and ^q control ^ chars");
++  scSetInputBuf("Just to see if we'\\'re \\n\\033 able to distinguish' words and strings\n"
++"\"Also 'quotes' inside strings\" and 'strs \"inside quotes\"'\n"
++"Not to forget ^S and ^q control ^ chars");
+ 
+   while (lGetWord() != 0);
+ }
