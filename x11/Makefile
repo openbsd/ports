@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2003/11/13 21:40:09 brad Exp $
+# $OpenBSD: Makefile,v 1.176 2003/11/16 16:19:23 sturm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -184,6 +184,7 @@
      SUBDIR += xaniroc
      SUBDIR += xantfarm
      SUBDIR += xautolock
+     SUBDIR += xawtv
 #    SUBDIR += xbuffy
      SUBDIR += xcb
      SUBDIR += xco
