@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_c,v 1.1 2003/06/20 13:41:50 avsm Exp $
+--- main.c.orig	Fri Jun 20 14:27:12 2003
++++ main.c	Fri Jun 20 14:27:19 2003
+@@ -393,7 +393,7 @@ main_init(argc, argv)
+ 		if ((f = fopen("/etc/resolv.conf", "r")) != NULL) {
+ 			lprint("IP address of your DNS(s): ");
+ 			while (fgets(buff, 512, f) != NULL) {
+-				if (sscanf(buff, "nameserver%*[ \t]%256s", buff2) == 1) {
++				if (sscanf(buff, "nameserver%*[ \t]%255s", buff2) == 1) {
+ 					if (!inet_aton(buff2, &tmp_addr))
+ 					   continue;
+ 					if (tmp_addr.s_addr == loopback_addr.s_addr)
