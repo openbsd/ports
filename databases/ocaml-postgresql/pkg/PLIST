@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/12 22:03:12 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/23 14:15:04 avsm Exp $
 %%native%%
-lib/ocaml/site-lib/postgresql/META
-lib/ocaml/site-lib/postgresql/libpostgresql_stubs.a
-lib/ocaml/site-lib/postgresql/postgresql.cma
-lib/ocaml/site-lib/postgresql/postgresql.cmi
-lib/ocaml/site-lib/postgresql/postgresql.mli
+lib/ocaml/postgresql/libpostgresql_stubs.a
+lib/ocaml/postgresql/postgresql.cma
+lib/ocaml/postgresql/postgresql.cmi
+lib/ocaml/postgresql/postgresql.mli
 share/examples/ocaml-postgresql/OCamlMakefile
 share/examples/ocaml-postgresql/dump/Makefile
 share/examples/ocaml-postgresql/dump/dump.ml
@@ -22,6 +21,5 @@ share/examples/ocaml-postgresql/test_lo/test_lo.ml
 @dirrm share/examples/ocaml-postgresql/populate
 @dirrm share/examples/ocaml-postgresql/dump
 @dirrm share/examples/ocaml-postgresql
-@dirrm lib/ocaml/site-lib/postgresql
-@dirrm lib/ocaml/site-lib
+@dirrm lib/ocaml/postgresql
 @dirrm lib/ocaml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/29 23:29:12 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/23 14:15:04 avsm Exp $
 
 COMMENT=	"Objective Caml bindings for PostgreSQL"
 CATEGORIES=	databases
@@ -19,29 +19,26 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	ocaml
 NO_REGRESS= 	Yes
-
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
 USE_GMAKE=	Yes
 
 LIB_DEPENDS=	pq.3::databases/postgresql
-BUILD_DEPENDS=	::sysutils/findlib
-RUN_DEPENDS=	::sysutils/findlib
-
 MY_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include/postgresql
 MY_LIBDIRS=	${LOCALBASE]/lib
-FINDLIB_DIR=	${PREFIX}/lib/ocaml/site-lib
 EXAMPLES_DIR=	${PREFIX}/share/examples/ocaml-postgresql
+MAKE_ENV=	MY_CFLAGS="${MY_CFLAGS}" MY_LIBDIRS="${MY_LIBDIRS}"
+PGOCAMLDIR=	${PREFIX}/lib/ocaml/postgresql
 
-MAKE_ENV=	MY_CFLAGS="${MY_CFLAGS}" MY_LIBDIRS="${MY_LIBDIRS}"  \
-		MY_INSTDIR=${DESTDIR}${FINDLIB_DIR}
+BYTECODE_FILES=	postgresql.cma postgresql.cmi postgresql.mli libpostgresql_stubs.a
+NATIVE_FILES=	postgresql.a postgresql.cmxa
+INST_FILES=	${BYTECODE_FILES} ${MODOCAML_NATIVE:S,Yes,${NATIVE_FILES},:S,No,,}
 
-pre-fake:
-	${INSTALL_DATA_DIR} ${FINDLIB_DIR}
-
-post-install:
+do-install:
+	${INSTALL_DATA_DIR} ${PGOCAMLDIR}
+	for i in ${INST_FILES}; do ${INSTALL_DATA} ${WRKBUILD}/lib/$$i ${PGOCAMLDIR}; done
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	@cp -R ${WRKSRC}/examples/* ${EXAMPLES_DIR}
-	@echo INCDIRS := $$\(shell ocamlfind query postgresql\) >> ${EXAMPLES_DIR}/OCamlMakefile
+	@echo INCDIRS = ${LOCALBASE}/lib/ocaml/postgresql >> ${EXAMPLES_DIR}/OCamlMakefile
 	@echo LIBDIRS = ${LOCALBASE}/lib >> ${EXAMPLES_DIR}/OCamlMakefile
 	@cat ${WRKSRC}/OCamlMakefile >> ${EXAMPLES_DIR}/OCamlMakefile
 
