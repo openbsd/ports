@@ -1,0 +1,19 @@
+bin/pngtogd
+bin/pngtogd2
+bin/gdtopng
+bin/gd2topng
+bin/gd2copypal
+bin/gdparttopng
+bin/webpng
+include/gd.h
+include/gd_io.h
+include/gdfontt.h
+include/gdfonts.h
+include/gdfontmb.h
+include/gdfontl.h
+include/gdfontg.h
+lib/libgd.a
+lib/libgd.la
+share/examples/gd/demoin.png
+share/examples/gd/index.html
+@dirrm share/examples/gd
