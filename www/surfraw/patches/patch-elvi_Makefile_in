@@ -1,8 +1,8 @@
---- elvi/Makefile.in.orig	Fri Oct 26 22:00:03 2001
-+++ elvi/Makefile.in	Fri Oct 26 22:02:42 2001
+--- elvi/Makefile.in.orig	Sun Dec 23 11:18:10 2001
++++ elvi/Makefile.in	Mon Dec 24 19:52:05 2001
 @@ -70,14 +70,14 @@ sr_text_browser = @sr_text_browser@
  
- bin_SCRIPTS =  		  altavista 		  amazon 		  appwatch 		  ask 		  austlii 		  britannica 		  cite 		  cnn 		  currency 		  debbugs 		  debcontents 		  debpackages 		  deja 		  excite 		  fast 		  ftpsearch 		  freshmeat 		  jake 		  google 		  linuxdoc 		  netbsd 		  pubmed 		  raging 		  rhyme 		  slashdot 		  sundocs 		  sourceforge 		  stockquote 		  scaleplus 		  sunsolve 		  swhois 		  thesaurus 		  translate 		  W 		  webster 		  wetandwild 		  woffle 		  xxx 		  yahoo
+ bin_SCRIPTS =  		  altavista 		  amazon 		  appwatch 		  ask 		  austlii 		  britannica 		  cite 		  cnn 		  currency 		  debbugs 		  debcontents 		  debpackages 		  deja 		  excite 		  fast 		  filesearching 		  freebsd 		  ftpfind 		  ftpsearch 		  freshmeat 		  jake 		  google 		  slinuxdoc 		  netbsd 		  openbsd 		  pubmed 		  raging 		  rhyme 		  slashdot 		  sundocs 		  sourceforge 		  stockquote 		  scaleplus 		  sunsolve 		  swhois 		  thesaurus 		  translate 		  W 		  webster 		  wetandwild 		  woffle 		  xxx 		  yahoo
  
 -sysconf_DATA = surfraw_elvi.list
 +pkgdata_DATA = surfraw_elvi.list
