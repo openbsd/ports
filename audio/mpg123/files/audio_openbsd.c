@@ -94,6 +94,15 @@ int audio_open(struct audio_info_struct *ai)
     return -1;
   }
 
+  if(ai->output > 0)
+    ainfo.play.port = 0;
+  if(ai->output & AUDIO_OUT_INTERNAL_SPEAKER)
+    ainfo.play.port |= AUDIO_SPEAKER;
+  if(ai->output & AUDIO_OUT_HEADPHONES)
+    ainfo.play.port |= AUDIO_HEADPHONE;
+  if(ai->output & AUDIO_OUT_LINE_OUT)
+    ainfo.play.port |= AUDIO_LINE_OUT;
+
   return ai->fn;
 }
 
