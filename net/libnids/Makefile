@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2003/02/03 06:38:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2003/10/30 00:46:47 pvalchev Exp $
 
 COMMENT=	"network monitoring library with TCP/IP reassembly"
 
-DISTNAME=	libnids-1.16
+DISTNAME=	libnids-1.18
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
