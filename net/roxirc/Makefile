@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2004/02/02 17:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/14 20:24:46 pvalchev Exp $
+
+BROKEN=		"distfile continually changing, cannot keep correct checksum"
 
 COMMENT=	"Tcl/Tk irc client"
 
