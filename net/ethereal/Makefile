@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/04/12 22:09:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.46 2001/05/23 08:38:40 wilfried Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -40,7 +40,7 @@ FLAVOR?=
 .if ${FLAVOR:L} == "snmp"
 CONFIGURE_ARGS+=	--enable-snmp
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto"
-BUILD_DEPENDS+=		${PREFIX}/lib/libsnmp.a::net/ucd-snmp
+LIB_DEPENDS+=		snmp::net/ucd-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
 .endif
