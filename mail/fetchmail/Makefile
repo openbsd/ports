@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2000/07/03 15:08:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.47 2000/07/08 08:54:01 fgsch Exp $
 
 DISTNAME=	fetchmail-5.4.3
 CATEGORIES=	mail
-NEED_VERSION=	1.308
+NEED_VERSION=	1.310
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ 
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu dest
 
 FLAVORS=	kerberos ssl
 
