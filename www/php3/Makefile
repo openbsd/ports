@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/01/04 00:51:23 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2001/01/28 13:31:28 jakob Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--without-imap
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql 
-LIB_DEPENDS+=		mysqlclient.6::databases/mysql
+LIB_DEPENDS+=		mysqlclient.10::databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql 
 .endif

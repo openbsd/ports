@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/01/12 23:06:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.24 2001/01/28 13:31:28 jakob Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--disable-filepro
 
 .if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql=${PREFIX}
-LIB_DEPENDS+=		mysqlclient.6::databases/mysql
+LIB_DEPENDS+=		mysqlclient.10::databases/mysql
 .if ${FLAVOR:L:Mmysql_bundled}
 .BEGIN:
 	@echo "Conflicting flavor: ${FLAVOR}"
