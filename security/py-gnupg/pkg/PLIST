@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/07/31 19:11:59 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/02/09 19:15:39 xsa Exp $
 lib/python${MODPY_VERSION}/site-packages/GnuPGInterface.py
 lib/python${MODPY_VERSION}/site-packages/GnuPGInterface.pyc
-lib/python${MODPY_VERSION}/site-packages/GnuPGInterface.pyo
