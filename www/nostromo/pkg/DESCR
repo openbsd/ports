@@ -1,4 +1,4 @@
-Nostromo is a simple, fast and secure HTTP server which supports:
+nhttpd is a simple, fast, and secure http server which supports:
 
-HTML, CGI, chroot, setuid, basic authentication, virtual hosts, and
+html, cgi, chroot, setuid, basic authentication, virtual hosts, and
 aliases.

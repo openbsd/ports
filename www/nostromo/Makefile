@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/12/12 22:36:05 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/13 20:45:52 jolan Exp $
 
 COMMENT=		"Nostromo Hypertext Transfer Protocol"
 
 DISTNAME=		nostromo-1.4
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 MASTER_SITES=		http://www.nazgul.ch/dev/
 
@@ -18,20 +19,20 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
 NO_REGRESS=		Yes
+WANTLIB=		c
 
 # Change bsd.port.mk vars
 WRKSRC=			${WRKDIST}/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nhttpd/nhttpd ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/crypt ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/nhttpd/nhttpd.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/ChangeLog ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nostromo
 	${INSTALL_DATA} ${WRKDIST}/cgi-bin/printenv \
-		${PREFIX}/share/examples/nostromo
-	${INSTALL_DATA} ${WRKDIST}/conf/crypt \
 		${PREFIX}/share/examples/nostromo
 	${INSTALL_DATA} ${WRKDIST}/conf/mimes \
 		${PREFIX}/share/examples/nostromo
