@@ -1,0 +1,30 @@
+$OpenBSD: patch-innobase_log_log0recv_c,v 1.1 2003/04/14 14:27:43 avsm Exp $
+--- innobase/log/log0recv.c.orig	Mon Apr 14 13:50:44 2003
++++ innobase/log/log0recv.c	Mon Apr 14 13:52:56 2003
+@@ -1381,7 +1381,7 @@ recv_apply_log_recs_for_backup(
+ 							&success);
+ 			if (!success) {
+ 				printf(
+-"InnoDB: Error: cannot open %lu'th data file %s\n", nth_file);
++"InnoDB: Error: cannot open %lu'th data file %s\n", nth_file, data_files[nth_file]);
+ 
+ 				exit(1);
+ 			}
+@@ -1398,7 +1398,7 @@ recv_apply_log_recs_for_backup(
+ 			if (!success) {
+ 				printf(
+ "InnoDB: Error: cannot read page no %lu from %lu'th data file %s\n",
+-				nth_page_in_file, nth_file);
++				nth_page_in_file, nth_file, data_files[nth_file]);
+ 
+ 				exit(1);
+ 			}
+@@ -1426,7 +1426,7 @@ recv_apply_log_recs_for_backup(
+ 			if (!success) {
+ 				printf(
+ "InnoDB: Error: cannot write page no %lu to %lu'th data file %s\n",
+-				nth_page_in_file, nth_file);
++				nth_page_in_file, nth_file, data_files[nth_file]);
+ 
+ 				exit(1);
+ 			}
