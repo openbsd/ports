@@ -1,6 +1,5 @@
 bin/automake
 bin/aclocal
-info/dir
 info/automake.info
 info/automake.info-1
 info/automake.info-2

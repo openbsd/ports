@@ -25,7 +25,6 @@ bin/exponential
 bin/gamma
 bin/gauss
 bin/poisson
-info/dir
 info/gsl-ref.info
 info/gsl-ref.info-1
 info/gsl-ref.info-2

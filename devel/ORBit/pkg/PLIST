@@ -6,7 +6,6 @@ bin/old-name-server
 bin/orbit-event-server
 bin/orbit-ird
 bin/orbit-config
-info/dir
 info/libIDL.info
 share/aclocal/libIDL.m4
 include/libIDL/IDL.h
