@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/27 00:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/18 22:45:12 rohee Exp $
 
 COMMENT=			"3D image rendering package"
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
 PERMIT_DISTFILES_FTP=		Yes
 
-MASTER_SITES=			ftp://mirror.nucba.ac.jp/mirror/povray/Official/Unix/ \
-				ftp://ftp.povray.org/pub/povray/Official/Unix/
+MASTER_SITES=			ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1g/Unix/ \
+				ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.1g/Unix/
 
 DISTFILES=			povuni_s.tgz povuni_d.tgz
 EXTRACT_SUFX=			.tgz
