@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2003/01/30 03:54:08 kevlo Exp $
 
 COMMENT=	"module to determine the size of images in several formats"
 
-DISTNAME=	Image-Size-2.99
+DISTNAME=	Image-Size-2.991
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5 
 
