@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/04/18 12:24:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2001/04/19 16:24:06 naddy Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf
+CONFIGURE_ENV=	LIBS=-lcurses
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/samba" \
 		--localstatedir="/var" \
 		--with-privatedir="${SYSCONFDIR}/samba" \
