@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.34 2001/05/06 03:59:04 lebel Exp $
+# $OpenBSD: Makefile,v 1.35 2001/06/07 00:33:32 angelos Exp $
 
 COMMENT=	"list information about open files"
 
-DISTNAME=	lsof_4.53_W
-PKGNAME=	lsof-4.53
+DISTNAME=	lsof_4.57B.n+obsd
+PKGNAME=	lsof-4.57B
 CATEGORIES=	sysutils
 NEED_VERSION=	1.402
-MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
-		ftp://ftp.crc.doc.ca/packages/lsof/ \
-		ftp://ftp.sunet.se/pub/unix/admin/lsof/
+MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
+		ftp://ftp.crc.doc.ca/packages/lsof/NEW/ \
+		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 
