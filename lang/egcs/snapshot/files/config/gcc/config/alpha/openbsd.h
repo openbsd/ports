@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.8 1999/01/25 20:33:45 espie Exp $ */
+/* $OpenBSD: openbsd.h,v 1.9 1999/02/03 18:04:30 espie Exp $ */
 /* vi:ts=8: 
  */
 
@@ -60,8 +60,10 @@
  * dwarf unwind information. egcs doesn't try too hard to check internal
  * configuration files...
  */
+#ifdef INCOMING_RETURN_ADDR_RTX
 #undef DWARF2_UNWIND_INFO
 #define DWARF2_UNWIND_INFO 0
+#endif
 
 /* taken from alpha/osf.h. This used to be common to all alpha
  * configurations, but elf has departed from it.
