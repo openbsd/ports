@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/11/29 09:53:46 alek Exp $
+# $OpenBSD: Makefile,v 1.27 2005/04/06 00:19:10 pvalchev Exp $
 
 COMMENT=	"network-capable tape backup (client and tape server)"
 COMMENT-client=	"network-capable tape backup (client only)"
@@ -34,7 +34,7 @@ MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/ \
 # the pathnames.
 # Configure looks for gnuplot to see if it should build amplot.
 BUILD_DEPENDS+= :gtar-*:archivers/gtar \
-		:samba-*:net/samba/stable \
+		:samba-*:net/samba \
 		:gnuplot-*:math/gnuplot
 
 # There is no need to set RUN_DEPENDS, because Amanda will run fine
