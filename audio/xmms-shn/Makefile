@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2004/11/21 17:51:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2005/01/02 23:36:19 alek Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	"XMMS input plugin for playing shorten files"
 
 DISTNAME=	xmms-shn-2.4.0
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	audio
 HOMEPAGE=	http://www.etree.org/shnutils/xmms-shn/
 
@@ -19,8 +20,9 @@ WANTLIB=		X11 Xext Xi gdk glib gmodule gtk iconv intl m pthread
 
 MASTER_SITES=	${HOMEPAGE}source/
 
-LIB_DEPENDS=	xmms.4::audio/xmms \
-		gthread.1.2::devel/glib
+LIB_DEPENDS=	gthread.1.2::devel/glib
+RUN_DEPENDS=	::audio/xmms
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 
