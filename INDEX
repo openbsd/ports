@@ -37,6 +37,7 @@ iozone-2.01|/openbsd/ports/benchmarks/iozone|/usr/local|Performance Test of Sequ
 lmbench-1.1|/openbsd/ports/benchmarks/lmbench|/usr/local|A system performance measurement tool|/openbsd/ports/benchmarks/lmbench/pkg/DESCR|joey@OpenBSD.ORG|benchmarks||
 tcpblast-1.0|/openbsd/ports/benchmarks/tcpblast|/usr/local|Measures the throughput of a tcp connection.|/openbsd/ports/benchmarks/tcpblast/pkg/DESCR|ports@FreeBSD.ORG|net benchmarks||
 xengine-1.0.1|/openbsd/ports/benchmarks/xengine|/usr/X11R6|reciprocating engine for X|/openbsd/ports/benchmarks/xengine/pkg/DESCR|joey@OpenBSD.ORG|benchmarks x11|sharutils-4.2|
+spice-3f5|/openbsd/ports/cad/spice|/usr/X11R6|Simulation Program for Integrated Circuit Electronics|/openbsd/ports/cad/spice/pkg/DESCR|marc@openbsd.org|cad||
 zh-c2t-1.0|/openbsd/ports/chinese/c2t|/usr/local|translates GB/Big5 encoding to tone pinyin|/openbsd/ports/chinese/c2t/pkg/DESCR|joey@OpenBSD.ORG|chinese||
 zh-lunar-2.1|/openbsd/ports/chinese/lunar|/usr/local|convert between the Gregorian Solar Calendar (SC) and the Lunar Calendar (LC).|/openbsd/ports/chinese/lunar/pkg/DESCR|joey@OpenBSD.ORG|chinese||
 bpl+-1.0|/openbsd/ports/comms/bpl+|/usr/local|B Plus file transfer protocol|/openbsd/ports/comms/bpl+/pkg/DESCR|joey@OpenBSD.ORG|comms||
@@ -167,7 +168,7 @@ fetchmail-4.3.8|/openbsd/ports/mail/fetchmail|/usr/local|batch mail retrieval/fo
 mm-2.7|/openbsd/ports/mail/metamail|/usr/local|Implementation of MIME, the Multipurpose Internet Mail Extensions.|/openbsd/ports/mail/metamail/pkg/DESCR|joey@OpenBSD.ORG|mail||
 mh-6.8.4|/openbsd/ports/mail/mh|/usr/local|Rand MH mail handling system|/openbsd/ports/mail/mh/pkg/DESCR|angelos@openbsd.org|mail||
 movemail-1.0|/openbsd/ports/mail/movemail|/usr/local|Move your mail box to annother location.|/openbsd/ports/mail/movemail/pkg/DESCR|angelos@openbsd.org|mail||
-nmh-0.24|/openbsd/ports/mail/nmh|/usr/local|The New MH mail handling program|/openbsd/ports/mail/nmh/pkg/DESCR|ports@openbsd.org|mail||
+nmh-0.26|/openbsd/ports/mail/nmh|/usr/local|The New MH mail handling program|/openbsd/ports/mail/nmh/pkg/DESCR|marc@openbsd.org|mail||
 p5-Mail-POP3Client-1.15|/openbsd/ports/mail/p5-Mail-POP3Client|/usr/local|perl5 module to talk to a POP3 (RFC1081) server|/openbsd/ports/mail/p5-Mail-POP3Client/pkg/DESCR|angelos@openbsd.org|mail perl5||
 pgpsendmail-1.4.5|/openbsd/ports/mail/pgpsendmail|/usr/local|PGP sign/encrypt/decrypt messages automatically.|/openbsd/ports/mail/pgpsendmail/pkg/DESCR|joey@OpenBSD.ORG|mail|pgp-2.6.3|
 pine-3.96|/openbsd/ports/mail/pine|/usr/local|Program for Internet E-mail and News|/openbsd/ports/mail/pine/pkg/DESCR|ports@OpenBSD.ORG|mail news||
@@ -299,6 +300,7 @@ explorer-0.72|/openbsd/ports/x11/explorer|/usr/X11R6|File manager which has the 
 freefonts-0.10|/openbsd/ports/x11/freefonts|/usr/X11R6|A collection of ATM fonts from the CICA archives.|/openbsd/ports/x11/freefonts/pkg/DESCR|don@OpenBSD.ORG|x11||
 fvwm-2.0.46|/openbsd/ports/x11/fvwm2|/usr/X11R6|Internationalized (not japanised) fvwm version 2, a window manager for X|/openbsd/ports/x11/fvwm2/pkg/DESCR|don@OpenBSD.ORG|x11|xpm-3.4k|xpm-3.4k
 getbdf-1.0|/openbsd/ports/x11/getbdf|/usr/X11R6|convert any X server font to .bdf format|/openbsd/ports/x11/getbdf/pkg/DESCR|angelos@openbsd.org|x11||
+gtk+-1.0.3|/openbsd/ports/x11/gtk+|/usr/X11R6|General Toolkit for X11 GUI.|/openbsd/ports/x11/gtk+/pkg/DESCR|marc@openbsd.org|x11||
 lesstif-0.83|/openbsd/ports/x11/lesstif|/usr/X11R6|API compatible clone of the Motif toolkit.|/openbsd/ports/x11/lesstif/pkg/DESCR|form@vs.itam.nsc.ru|x11||
 lupe-0.07|/openbsd/ports/x11/lupe|/usr/X11R6|Real-time magnifying glass for X11|/openbsd/ports/x11/lupe/pkg/DESCR|angelos@openbsd.org|x11|gmake-3.76.1|
 mouseclock-1.0|/openbsd/ports/x11/mouseclock|/usr/X11R6|display the current time using the X root cursor|/openbsd/ports/x11/mouseclock/pkg/DESCR|angelos@openbsd.org|x11|gmake-3.76.1|
