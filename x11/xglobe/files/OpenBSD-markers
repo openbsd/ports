@@ -1,9 +1,10 @@
-# $OpenBSD: OpenBSD-markers,v 1.43 2004/02/29 00:56:52 xsa Exp $
+# $OpenBSD: OpenBSD-markers,v 1.44 2004/05/13 18:55:11 pedro Exp $
 # This is a list of OpenBSD developers and related people.
 #
--27.48		153.20		"Leonard"	# David
--34.67  	-58.50 		"Schwindt"	# Federico G.
 -37.457132	144.580589	"Miller"	# Damien
+-34.67  	-58.50 		"Schwindt"	# Federico G.
+-27.48		153.20		"Leonard"	# David
+-22.88		-43.28		"Martelletto"	# Pedro
 25.0		121.400		"Lo"		# Kevin
 32.857736	-117.211507	"Grimes"	# Mark
 33.700077	-117.887943	"Peel"		# Jason
@@ -39,6 +40,7 @@
 45.78 		3.08		"Vallat"	# Miodrag
 47.25		-61.48		"Cobb"		# Wilbern
 47.50		7.60		"Hartmeier"	# Daniel
+47,53		21,63		"Nagy"		# Robert
 48.3		15.7		"Sammer"	# Reinhard J.
 48.87		2.33		"Espie"		# Marc
 48.137970	11.542279	"Friedl"	# Markus
