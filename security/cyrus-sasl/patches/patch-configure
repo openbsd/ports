@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2001/11/15 23:17:59 jakob Exp $
---- configure.orig	Sat Mar 24 02:48:12 2001
-+++ configure	Thu Nov 15 23:33:58 2001
+$OpenBSD: patch-configure,v 1.2 2002/03/25 17:42:07 pvalchev Exp $
+--- configure.orig	Fri Mar 23 18:48:12 2001
++++ configure	Mon Mar 25 10:24:00 2002
 @@ -3997,7 +3997,7 @@ fi
  
  if test "$gssapi" != no; then
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.1 2001/11/15 23:17:59 jakob Exp $
       GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS/lib -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
    elif test "$gss_impl" = "heimdal"; then
 -     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS/lib -lgssapi -lkrb5 -ldes -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
-+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS/lib -lgssapi -lkrb5 -ldes -lasn1 ${LIB_CRYPT} -lcom_err"
++     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS/lib -lgssapi -lkrb5 -ldes -lasn1 ${LIB_CRYPT} -lcom_err -lcrypto -lkafs"
    else
       gssapi="no"
       echo "configure: warning: Disabling GSSAPI" 1>&2
