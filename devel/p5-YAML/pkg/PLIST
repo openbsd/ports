@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:00 espie Exp $
-bin/phone2yaml
-bin/xyx
-bin/yaml2outline
+@comment $OpenBSD: PLIST,v 1.3 2005/03/09 02:25:30 kevlo Exp $
 bin/ysh
 ${P5SITE}/YAML/
 ${P5SITE}/YAML.pm
@@ -10,9 +7,6 @@ ${P5SITE}/YAML/Error.pm
 ${P5SITE}/YAML/Family.pm
 ${P5SITE}/YAML/Node.pm
 ${P5SITE}/YAML/Transfer.pm
-@man man/man1/phone2yaml.1
-@man man/man1/xyx.1
-@man man/man1/yaml2outline.1
 @man man/man1/ysh.1
 @man man/man3p/YAML.3p
 @man man/man3p/YAML::Node.3p
