@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:55 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/08/18 02:09:45 angelos Exp $
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
 
 MAINTAINER=	ports@openbsd.org
-
-MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/net/telnet/telnetx/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${PREFIX}/bin
