@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.2 2002/01/06 15:47:57 shell Exp $
---- setup.py.orig	Sun Jan  6 01:33:24 2002
-+++ setup.py	Sun Jan  6 23:40:49 2002
+$OpenBSD: patch-setup_py,v 1.3 2002/04/19 17:26:40 shell Exp $
+--- setup.py.orig	Thu Mar 21 03:13:13 2002
++++ setup.py	Fri Apr 19 18:25:05 2002
 @@ -10,7 +10,7 @@
  
  import sys
@@ -10,18 +10,18 @@ $OpenBSD: patch-setup_py,v 1.2 2002/01/06 15:47:57 shell Exp $
  
  from distutils.core import setup
  from distutils import sysconfig
-@@ -34,8 +34,8 @@
-     script_suffix = ''
-     if sys.platform == 'win32' :
+@@ -41,8 +41,8 @@
+         script_str = '%s %s %%*\n' % (py_exe, checker_py)
          script_suffix = '.bat'
+ 
 -    LOCAL_SCRIPT = 'pychecker' + script_suffix
 -    LOCAL_SCRIPT = os.path.join(tempfile.gettempdir(), LOCAL_SCRIPT)
 +    LOCAL_SCRIPT = 'pyChecker' + script_suffix
 +    LOCAL_SCRIPT = os.path.join('./', LOCAL_SCRIPT)
      remove_file(LOCAL_SCRIPT)
  
-     install_dir = sysconfig.get_python_lib() + os.sep + 'pychecker'
-@@ -64,7 +64,7 @@
+     try :
+@@ -63,7 +63,7 @@
            author_email          = "pychecker@metaslash.com",
            url                   = "http://pychecker.sourceforge.net/",
            packages              = [ 'pychecker' ],
