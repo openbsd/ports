@@ -35,7 +35,7 @@
   #
   
   # For W3 distribution, machine type for subdirectories
-! WWW_MACH = netbsd
+  WWW_MACH = netbsd
   
   # The ASIS repository's name for the machine we are on
 ! ASIS_MACH = i386/NetBSD
@@ -46,7 +46,7 @@
   #
   
   # For W3 distribution, machine type for subdirectories
-! WWW_MACH = $(OPSYS)
+  WWW_MACH = $(OPSYS)
   
   # The ASIS repository's name for the machine we are on
 ! ASIS_MACH = $(ARCH)/$(OPSYS)
