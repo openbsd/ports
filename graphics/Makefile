@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 1999/03/15 17:12:20 brad Exp $
+# $OpenBSD: Makefile,v 1.24 1999/03/19 08:05:19 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -21,11 +21,10 @@
      SUBDIR += giftrans
      SUBDIR += gii
      SUBDIR += gimp
-#    SUBDIR += gimp-devel
 #    SUBDIR += hdf
 #    SUBDIR += hobbes-icons-xpm
 #    SUBDIR += hpscan
-#    SUBDIR += imlib
+     SUBDIR += imlib
 #    SUBDIR += jbigkit
      SUBDIR += jpeg
      SUBDIR += mpeg-lib
