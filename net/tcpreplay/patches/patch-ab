@@ -1,11 +1,11 @@
---- configure.orig	Sat Jun 12 22:02:02 1999
-+++ configure	Sat Jun 12 22:02:33 1999
+--- configure.orig	Wed May 19 15:55:31 1999
++++ configure	Mon Oct 18 10:39:41 1999
 @@ -1194,7 +1194,7 @@
  done
  
  
 -subdirs="Libnet-0.99 libpcap-0.4"
-+subdirs="Libnet-0.99"
++subdirs=""
  
  
  
@@ -14,7 +14,7 @@
    done
  
 -  for ac_config_dir in Libnet-0.99 libpcap-0.4; do
-+  for ac_config_dir in Libnet-0.99; do
++  for ac_config_dir in ; do
  
      # Do not complain, so a configure script can configure whichever
      # parts of a large source tree are present.
