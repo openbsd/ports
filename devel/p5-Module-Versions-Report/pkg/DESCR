@@ -1,0 +1,5 @@
+If you add "use Module::Versions::Report;" to a program (especially
+handy if your program is one that demonstrates a bug in some module),
+then when the program has finished running, you well get a report
+detailing the all modules in memory, and noting the version of each (for
+modules that defined a $VERSION, at least).
