@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2001/02/15 18:51:01 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/16 07:38:56 wilfried Exp $
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
 NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.10/X11/acontrib/wterm/ \
+MASTER_SITES=	ftp://ftp.kddlabs.co.jp/X11/acontrib/wterm/ \
 		ftp://ftp.riken.go.jp/pub/X11/acontrib/wterm/
 
 BUILD_DEPENDS=	wmaker::x11/windowmaker
