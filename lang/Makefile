@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2000/10/08 18:28:42 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2000/11/18 13:45:21 naddy Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -9,6 +9,7 @@
 #    SUBDIR += bwbasic
      SUBDIR += camlp4
 #    SUBDIR += cim
+     SUBDIR += clisp
 #    SUBDIR += cmucl
 #    SUBDIR += eiffel
      SUBDIR += egcs
