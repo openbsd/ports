@@ -1,15 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/11/05 15:50:52 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/11/08 15:44:18 biorn Exp $
 lib/win32/
 lib/win32/AvidQTAVUICodec.qtx
 lib/win32/BeHereiVideo.qtx
 lib/win32/CLRVIDDC.DLL
 lib/win32/CtWbJpg.DLL
+lib/win32/DECVW_32.DLL
 lib/win32/LCMW2.dll
 lib/win32/LCODCCMW2E.dll
 lib/win32/LCodcCMP.dll
 lib/win32/QuickTime.qts
 lib/win32/QuickTimeEssentials.qtx
 lib/win32/QuickTimeInternetExtras.qtx
+lib/win32/VDODEC32.dll
 lib/win32/ViVD2.dll
 lib/win32/acelpdec.ax
 lib/win32/alf2cd.acm
@@ -87,6 +89,7 @@ lib/win32/tssoft32.acm
 lib/win32/ubv263d+.ax
 lib/win32/ubvmp4d.dll
 lib/win32/ultimo.dll
+lib/win32/vdowave.drv
 lib/win32/vgpix32d.dll
 lib/win32/vid_3ivX.xa
 lib/win32/vid_cvid.xa
@@ -109,9 +112,11 @@ lib/win32/vsslight.dll
 lib/win32/vsswlt.dll
 lib/win32/wma9dmod.dll
 lib/win32/wmadmod.dll
+lib/win32/wmsdmod.dll
 lib/win32/wmspdmod.dll
 lib/win32/wmv8ds32.ax
 lib/win32/wmv9dmod.dll
+lib/win32/wmvadvd.dll
 lib/win32/wmvdmod.dll
 lib/win32/wmvds32.ax
 lib/win32/wnvplay1.dll
