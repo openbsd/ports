@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.299 2000/06/10 15:27:54 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.300 2000/06/10 17:15:06 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -210,7 +210,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 #			      simple: port has its own configure script
 #
 # YACC          - yacc program to pass to configure script (default: yacc)
-#                 override with bison is port requires bison.
+#                 override with bison if port requires bison.
 # CONFIGURE_SCRIPT - Name of configure script, defaults to 'configure'.
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set.
 # CONFIGURE_SHARED - An argument to GNU configure that expands to
@@ -503,6 +503,9 @@ PREFIX?=		${LOCALBASE}
 CONFIGURE_STYLE?=
 .if defined(USE_AUTOCONF)
 CONFIGURE_STYLE+=autoconf
+.endif
+.if defined(HAS_CONFIGURE)
+CONFIGURE_STYLE+=simple
 .endif
 .if defined(GNU_CONFIGURE)
 CONFIGURE_STYLE+=gnu
