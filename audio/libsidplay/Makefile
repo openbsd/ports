@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/22 22:40:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/08/04 23:08:17 naddy Exp $
 
 COMMENT=	"C64 music player and SID chip emulator library"
 
-DISTNAME=	libsidplay-1.36.54
+DISTNAME=	libsidplay-1.36.55
 CATEGORIES=	audio
-NEED_VERSION=	1.530
-
 HOMEPAGE=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
