@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_unix_run-mozilla_sh,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
---- build/unix/run-mozilla.sh.orig	Fri Apr 18 21:12:28 2003
-+++ build/unix/run-mozilla.sh	Sun May 18 04:45:33 2003
+$OpenBSD: patch-build_unix_run-mozilla_sh,v 1.2 2003/05/21 11:09:03 wilfried Exp $
+--- build/unix/run-mozilla.sh.orig	Sat Apr 19 05:12:28 2003
++++ build/unix/run-mozilla.sh	Wed May 21 12:24:37 2003
 @@ -64,11 +64,12 @@
  ##
  #
  cmdname=`basename "$0"`
 -MOZ_DIST_BIN=`dirname "$0"`
-+MOZ_DIST_BIN=/usr/local/mozilla
++MOZ_DIST_BIN=/usr/local/mozilla-firebird
  MOZ_DEFAULT_NAME="./${cmdname}-bin"
  MOZ_APPRUNNER_NAME="./mozilla-bin"
  MOZ_VIEWER_NAME="./viewer"
