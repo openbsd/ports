@@ -1,0 +1,23 @@
+$OpenBSD: patch-osdep_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+--- osdep.h.orig	Thu Feb 10 15:59:25 2005
++++ osdep.h	Sun Feb 27 15:47:13 2005
+@@ -2,6 +2,10 @@
+ #define QEMU_OSDEP_H
+ 
+ #include <stdarg.h>
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <sys/signal.h>
++#endif
+ 
+ int qemu_vsnprintf(char *buf, int buflen, const char *fmt, va_list args);
+ void qemu_vprintf(const char *fmt, va_list ap);
+@@ -31,7 +35,7 @@ extern void __longjmp(jmp_buf env, int v
+ struct qemu_sigaction {
+     union {
+         void (*_sa_handler)(int);
+-        void (*_sa_sigaction)(int, struct siginfo *, void *);
++        void (*_sa_sigaction)(int, qemu_siginfo *, void *);
+     } _u;
+     unsigned long sa_flags;
+     void (*sa_restorer)(void);

@@ -1,0 +1,52 @@
+$OpenBSD: patch-dyngen-exec_h,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+--- dyngen-exec.h.orig	Sun Nov 14 14:51:33 2004
++++ dyngen-exec.h	Sat Feb 26 03:21:02 2005
+@@ -20,11 +20,15 @@
+ #if !defined(__DYNGEN_EXEC_H__)
+ #define __DYNGEN_EXEC_H__
+ 
++#include "config.h"
++
+ /* NOTE: standard headers should be used with special care at this
+    point because host CPU registers are used as global variables. Some
+    host headers do not allow that. */
+ #include <stddef.h>
+-
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#else
+ typedef unsigned char uint8_t;
+ typedef unsigned short uint16_t;
+ typedef unsigned int uint32_t;
+@@ -43,6 +47,7 @@ typedef signed long int64_t;
+ #else
+ typedef signed long long int64_t;
+ #endif
++#endif
+ 
+ #define INT8_MIN		(-128)
+ #define INT16_MIN		(-32767-1)
+@@ -57,11 +62,15 @@ typedef signed long long int64_t;
+ #define UINT32_MAX		(4294967295U)
+ #define UINT64_MAX		((uint64_t)(18446744073709551615))
+ 
++#ifdef __OpenBSD__
++typedef struct __sFILE FILE;
++#else
+ typedef struct FILE FILE;
+ extern int fprintf(FILE *, const char *, ...);
+ extern int printf(const char *, ...);
+ #undef NULL
+ #define NULL 0
++#endif
+ #if defined(_BSD) && !defined(__APPLE__)
+ #include <ieeefp.h>
+ 
+@@ -70,6 +79,7 @@ extern int printf(const char *, ...);
+ #define FE_UPWARD      FP_RP
+ #define FE_TOWARDZERO  FP_RZ
+ #define fesetround(x)  fpsetround(x)
++#define fegetround()   fpgetround()
+ #else
+ #include <fenv.h>
+ #endif

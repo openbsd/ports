@@ -1,0 +1,53 @@
+$OpenBSD: patch-Makefile_target,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+--- Makefile.target.orig	Tue Feb 22 13:27:14 2005
++++ Makefile.target	Tue Mar  1 17:22:05 2005
+@@ -14,7 +14,7 @@ ifdef CONFIG_USER_ONLY
+ VPATH+=:$(SRC_PATH)/linux-user
+ DEFINES+=-I$(SRC_PATH)/linux-user -I$(SRC_PATH)/linux-user/$(TARGET_ARCH)
+ endif
+-CFLAGS=-Wall -O2 -g -fno-strict-aliasing
++#CFLAGS=-Wall -O2 -g -fno-strict-aliasing
+ #CFLAGS+=-Werror
+ LDFLAGS=-g
+ LIBS=
+@@ -127,6 +127,11 @@ else
+ OP_CFLAGS+= -malign-functions=0
+ endif
+ 
++ifeq ($(shell uname -s),OpenBSD)
++OP_CFLAGS+= -fno-stack-protector
++endif
++
++
+ ifdef TARGET_GPROF
+ USE_I386_LD=y
+ endif
+@@ -312,7 +317,10 @@ AUDIODRV += sdlaudio.o
+ endif
+ ifdef CONFIG_OSS
+ AUDIODRV += ossaudio.o
++ifdef CONFIG_OSS_LIBRARY
++LIBS += -lossaudio
+ endif
++endif
+ 
+ pc.o: DEFINES := -DUSE_SB16 $(DEFINES)
+ 
+@@ -404,7 +412,7 @@ gen-op.h: op.o $(DYNGEN)
+ 	$(DYNGEN) -g -o $@ $<
+ 
+ op.o: op.c
+-	$(CC) $(OP_CFLAGS) $(DEFINES) -c -o $@ $<
++	$(CC) $(OP_CFLAGS) $(DEFINES) -fno-stack-protector -c -o $@ $<
+ 
+ helper.o: helper.c
+ 	$(CC) $(HELPER_CFLAGS) $(DEFINES) -c -o $@ $<
+@@ -439,7 +447,7 @@ clean:
+ 
+ install: all 
+ ifneq ($(PROGS),)
+-	install -m 755 -s $(PROGS) "$(bindir)"
++	install -m 755 -s $(PROGS) $(PREFIX)/bin/
+ endif
+ 
+ ifneq ($(wildcard .depend),)

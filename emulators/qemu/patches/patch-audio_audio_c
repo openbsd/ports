@@ -1,0 +1,14 @@
+$OpenBSD: patch-audio_audio_c,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+--- audio/audio.c.orig	Mon Nov 15 04:51:33 2004
++++ audio/audio.c	Tue Feb 15 22:07:06 2005
+@@ -35,6 +35,10 @@
+ #define ldebug(...)
+ #endif
+ 
++#ifdef __OpenBSD__
++#define INT16_MAX		(32767)
++#endif
++
+ #define QC_AUDIO_DRV    "QEMU_AUDIO_DRV"
+ #define QC_VOICES       "QEMU_VOICES"
+ #define QC_FIXED_FORMAT "QEMU_FIXED_FORMAT"

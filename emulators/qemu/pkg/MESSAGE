@@ -1,0 +1,7 @@
++---------------
+| Quick Start:
+| 1. get a bootable floppy image
+| 2. qemu-img create -f qcow virtual.hd 10G
+| 3. qemu -m 32 -fda floppy.fs -boot a virtual.hd
++---------------
+

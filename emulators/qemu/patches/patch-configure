@@ -1,0 +1,55 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+--- configure.orig	Sat Feb 19 11:24:28 2005
++++ configure	Sun Feb 27 15:47:13 2005
+@@ -41,7 +41,7 @@ case "$cpu" in
+   alpha)
+     cpu="alpha"
+   ;;
+-  "Power Macintosh"|ppc|ppc64)
++  "Power Macintosh"|macppc|ppc|ppc64)
+     cpu="powerpc"
+   ;;
+   mips)
+@@ -100,6 +100,7 @@ oss="yes"
+ ;;
+ OpenBSD)
+ bsd="yes"
++openbsd="yes"
+ oss="yes"
+ ;;
+ Darwin)
+@@ -341,7 +342,7 @@ else
+ if test -z "$prefix" ; then
+     prefix="/usr/local"
+ fi
+-mandir="$prefix/share/man"
++mandir="$prefix/man"
+ datadir="$prefix/share/qemu"
+ docdir="$prefix/share/doc/qemu"
+ bindir="$prefix/bin"
+@@ -533,6 +534,9 @@ fi
+ if test "$oss" = "yes" ; then
+   echo "CONFIG_OSS=yes" >> $config_mak
+   echo "#define CONFIG_OSS 1" >> $config_h
++  if test "$openbsd"="yes" ; then
++    echo "CONFIG_OSS_LIBRARY=yes" >> $config_mak
++  fi
+ fi
+ if test "$fmod" = "yes" ; then
+   echo "CONFIG_FMOD=yes" >> $config_mak
+@@ -563,6 +567,15 @@ if [ "$bsd" = "yes" ] ; then
+   echo "#define MAP_ANONYMOUS MAP_ANON" >> $config_h
+   echo "#define _BSD 1" >> $config_h
+ fi
++
++if [ "$openbsd" = "yes" ] ; then
++  echo "#define ENOTSUP 4096" >> $config_h
++  echo "#define PRIx64 \"llX\"" >> $config_h
++  echo "#define qemu_siginfo siginfo_t" >> $config_h
++else
++  echo "#define qemu_siginfo struct siginfo" >> $config_h
++fi     
++
+ 
+ for target in $target_list; do 
+ 

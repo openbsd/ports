@@ -1,0 +1,47 @@
+$OpenBSD: patch-vl_c,v 1.1.1.1 2005/03/07 16:41:28 todd Exp $
+--- vl.c.orig	Thu Feb 10 16:00:06 2005
++++ vl.c	Tue Mar  1 15:53:26 2005
+@@ -42,7 +42,7 @@
+ #include <dirent.h>
+ #ifdef _BSD
+ #include <sys/stat.h>
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ #include <libutil.h>
+ #endif
+ #else
+@@ -1574,11 +1574,34 @@ static int tun_open(char *ifname, int if
+     char *dev;
+     struct stat s;
+ 
++#ifdef __OpenBSD__
++    int i = 0, enoentcount = 0, err = 0;
++    char dname[100];
++
++    for (; i < 10; i++) {
++	snprintf(dname, sizeof dname, "%s%d", "/dev/tun", i);
++	fd = open(dname, O_RDWR);
++	if (fd >= 0)
++	    break;
++	else if (errno != ENOENT || ++enoentcount > 3) {
++		if (errno != EBUSY) {
++	    	    err = errno;
++	    	    break;
++		}
++	} else
++	    err = errno;
++    }
++    if (fd < 0) {
++        fprintf(stderr, "warning: could not open %s (%s): no virtual network emulation\n", dname, strerror(err));
++        return -1;
++    }
++#else
+     fd = open("/dev/tap", O_RDWR);
+     if (fd < 0) {
+         fprintf(stderr, "warning: could not open /dev/tap: no virtual network emulation\n");
+         return -1;
+     }
++#endif
+ 
+     fstat(fd, &s);
+     dev = devname(s.st_rdev, S_IFCHR);
