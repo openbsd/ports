@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/05 18:30:29 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/13 18:57:14 espie Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
@@ -14,12 +14,22 @@ DISTFILES=	${DISTNAME}.tar.gz:0 pcxtoppm.tar.gz rletopnm.tar.gz \
 
 MAINTAINER=	brad@openbsd.org
 
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+
+# Jumble of licenses, some of them don't allow for commercial redistribution
+# TODO: Sort out, maybe separate into two distinct packages ?
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_PACKAGE_CDROM=	No
+
 LIB_DEPENDS=	jpeg.62:graphics/jpeg \
 		tiff.35:graphics/tiff \
 		png.1.3:graphics/png
 
 NO_CONFIGURE=	Yes
 MAKE_ENV=	PREFIX=${PREFIX} MANCP="${INSTALL_MAN}"
+FAKE=		Yes
+FAKE_FLAGS= 	PREFIX=${WRKINST}${PREFIX} MANCP="${INSTALL_MAN}"
 
 WRKDIST=	${WRKDIR}/netpbm
 
