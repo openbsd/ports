@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2001/07/16 13:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2001/07/18 15:26:11 lebel Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -56,6 +56,7 @@
 #    SUBDIR += oonsoo
 #    SUBDIR += qcc
 #    SUBDIR += quakeserver
+     SUBDIR += sdlroids
 #    SUBDIR += sokoban
      SUBDIR += speyes
      SUBDIR += spider
