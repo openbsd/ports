@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
+$OpenBSD: patch-Makefile,v 1.2 2001/07/06 08:05:29 espie Exp $
 --- Makefile.orig	Sun May 26 11:26:46 1996
-+++ Makefile	Fri Apr 27 08:01:39 2001
++++ Makefile	Fri Jul  6 08:53:41 2001
 @@ -24,22 +24,22 @@
  # But where to change without revealing my secret identity?
  
@@ -41,25 +41,26 @@ $OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
  ## Select the HP-UX network audio server
  #SYSTEM += -DHPUX -DAU_HPUX
  #SYSEXTRAS += hpux_a.c
-@@ -91,10 +95,10 @@ SYSEXTRAS += linux_a.c
+@@ -90,31 +94,37 @@ SYSEXTRAS += linux_a.c
+ # have to make do with a non-interactive interface that just prints out
  # messages.
  
++.if defined(CURSES)
  # Select the ncurses full-screen interface
--SYSTEM += -DIA_NCURSES
--SYSEXTRAS += ncurs_c.c
+ SYSTEM += -DIA_NCURSES
+ SYSEXTRAS += ncurs_c.c
 -EXTRAINCS += -I/usr/include/ncurses
 -EXTRALIBS += -lncurses
-+#SYSTEM += -DIA_NCURSES
-+#SYSEXTRAS += ncurs_c.c
-+#EXTRAINCS += -I/usr/include/ncurses
-+#EXTRALIBS += -lncurses -lmytinfo
++EXTRALIBS += -lcurses
++.endif
  
++.if defined(SLANG)
  ## Select the S-Lang full-screen interface
- #SYSTEM += -DIA_SLANG
-@@ -102,19 +106,19 @@ EXTRALIBS += -lncurses
- #EXTRAINCS += -I/usr/include/slang
- #EXTRALIBS += -lslang
- 
+-#SYSTEM += -DIA_SLANG
+-#SYSEXTRAS += slang_c.c
+-#EXTRAINCS += -I/usr/include/slang
+-#EXTRALIBS += -lslang
+-
 -## Select the MOTIF interface
 -#SYSTEM += -DMOTIF
 -#SYSEXTRAS += motif_c.c motif_i.c motif_p.c
@@ -67,12 +68,21 @@ $OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
 -#EXTRAINCS += -I/usr/include/X11
 -#EXTRALIBS += -lXm -lXt -lX11
 -## Solaris needs libgen?
++SYSTEM += -DIA_SLANG
++SYSEXTRAS += slang_c.c
++EXTRAINCS += -I/usr/local/include
++EXTRALIBS += -L/usr/local/lib -lslang -lcurses
++.endif
++
++.if defined(MOTIF)
 +# Select the MOTIF interface
 +SYSTEM += -DMOTIF
 +SYSEXTRAS += motif_c.c motif_i.c motif_p.c
 +EXTRAINCS += -I/usr/local/include -L/usr/local/lib
 +EXTRAINCS += -I/usr/X11R6/include -L/usr/X11R6/lib
-+EXTRALIBS += -lXm -lXt -lX11
++EXTRALIBS += -lXm -lXext -lXt -lX11
++.endif
++
 +# Solaris needs libgen?
  #EXTRALIBS += -lgen
  
@@ -86,7 +96,7 @@ $OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
  #EXTRAINCS +=
  #EXTRALIBS +=
  
-@@ -136,7 +140,7 @@ DISTZIP = timid$(FNVERSION).zip
+@@ -136,7 +146,7 @@ DISTZIP = timid$(FNVERSION).zip
  SDIST = timidity-lib-$(SUPPVERSION).tar.gz
  SDISTZIP = tilib$(FNSUPPVERSION).zip
  
@@ -95,7 +105,7 @@ $OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
  	-DTIMID_VERSION=\"$(VERSION)\" $(SYSTEM) $(EXTRAINCS)
  
  ########### All relevant files.. Anybody know autoconf?
-@@ -228,10 +232,10 @@ bag: bag.c
+@@ -228,10 +238,10 @@ bag: bag.c
  wav2pat: wav2pat.c
  	$(CC) $(CFLAGS) -o wav2pat wav2pat.c
  
@@ -110,7 +120,7 @@ $OpenBSD: patch-Makefile,v 1.1 2001/07/05 10:48:12 espie Exp $
  
  ########### Installation targets
  
-@@ -262,9 +266,9 @@ install.config: $(CONFIGF)
+@@ -262,9 +272,9 @@ install.config: $(CONFIGF)
  	mkdir -p $(TIMID_DIR)
  	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
  

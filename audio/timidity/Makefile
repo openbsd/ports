@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/07/05 10:53:49 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/07/06 08:05:28 espie Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
@@ -17,10 +17,24 @@ PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
 
+
+FLAVORS=motif curses slang
+FLAVOR?=motif
+
+.if ${FLAVOR:L:Mcurses}
+MAKE_FLAGS+=-DCURSES
+.endif
+.if ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
+MAKE_FLAGS+=-DMOTIF
 USE_MOTIF=	any
+.endif
+.if ${FLAVOR:L:Mslang}
+MAKE_FLAGS+=-DSLANG
+LIB_DEPENDS+=slang.::devel/libslang
+.endif
 
 INSTALL_TARGET= install.all
-FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
+FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST} ${MAKE_FLAGS}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/timidity.1 ${PREFIX}/man/man1

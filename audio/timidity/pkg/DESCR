@@ -3,3 +3,8 @@ sound-compatible patch files  to  generate  digital  audio
 data from General MIDI files.  The data can be stored in a
 file for processing, or played in  real  time  through  an
 audio device.
+
+Flavors (non exclusive):
+	motif, lesstif: motif interface
+	slang: 		text interface
+	curses:		ncurses interface, currently non functional)
