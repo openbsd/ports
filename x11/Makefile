@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2003/07/17 22:34:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.171 2003/07/20 21:12:17 jolan Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -154,6 +154,7 @@
      SUBDIR += type1inst
      SUBDIR += unclutter
      SUBDIR += viewfax
+     SUBDIR += vlc
      SUBDIR += waimea
      SUBDIR += wampager
      SUBDIR += windowmaker
