@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 1999/12/15 05:16:24 dugsong Exp $
+# $OpenBSD: Makefile,v 1.56 1999/12/16 06:05:04 angelos Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -76,10 +76,11 @@
 #    SUBDIR += p5-Net-DNS
 #    SUBDIR += p5-Net-Whois
 #    SUBDIR += p5-SNMP
+     SUBDIR += pchar
 #    SUBDIR += pcnfsd
 #    SUBDIR += pmf
      SUBDIR += popa3d
-#     SUBDIR += proftpd
+#    SUBDIR += proftpd
      SUBDIR += queso
 #    SUBDIR += radius
 #    SUBDIR += ratoolset
