@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/02/12 20:13:39 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/02 02:12:50 naddy Exp $
 # $NetBSD: Makefile,v 1.2 2000/06/19 14:30:02 rh Exp $
 
 DISTNAME=	dat-4120
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	"Commercial software"
 PERMIT_DISTFILES_CDROM=	"Commercial software"
 PERMIT_DISTFILES_FTP=	"Commercial software"
 
-ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCHS=	i386
 NO_BUILD=	Yes
 WRKDIST=	${WRKDIR}
 

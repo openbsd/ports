@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/02/17 11:34:21 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/02 02:12:50 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
 DISTNAME=	vlnx407e
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	"Commercial software"
 RUN_DEPENDS=	/emul/linux/lib/libc.so.6::emulators/redhat_base \
 		${PREFIX}/libexec/uvscan/scan.dat::security/uvscan_dat
 
-ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCHS=	i386
 NO_BUILD=	Yes
 WRKDIST=	${WRKDIR}
 
