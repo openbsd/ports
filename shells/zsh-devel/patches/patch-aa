@@ -1,15 +1,22 @@
 --- Doc/Makefile.in.orig	Tue Jul 20 08:10:07 1999
-+++ Doc/Makefile.in	Wed Aug  4 21:36:59 1999
-@@ -74,7 +74,8 @@
++++ Doc/Makefile.in	Tue Dec  7 16:51:36 1999
+@@ -37,7 +37,7 @@
+ 
+ @DEFS_MK@
+ 
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ DVIPS = dvips -D 300
+ TEXI2HTML = texi2html -expandinfo -split_chapter
+@@ -74,6 +74,7 @@
  	$(TEXI2DVI) $(sdir)/zsh.texi
  
  zsh.info: zsh.texi
--	$(MAKEINFO) $(sdir)/zsh.texi; exit 0
 +	@rm -f zsh.info*
-+	$(MAKEINFO) --no-split $(sdir)/zsh.texi; exit 0
+ 	$(MAKEINFO) $(sdir)/zsh.texi; exit 0
  
  zsh.texi: zsh.yo
- 	$(YODL) -o $(sdir)/zsh.texi -I$(sdir) -w ztexi.yo version.yo zsh.yo
 @@ -157,10 +158,10 @@
  # ========== DEPENDENCIES FOR INSTALLING ==========
  
@@ -28,20 +35,17 @@
  install.info: zsh.info
  	$(sdir_top)/mkinstalldirs $(infodir)
 -	for file in zsh.info zsh.info-[1-9]*; do \
-+	for file in zsh.info*; do \
++	for file in zsh.info; do \
  	  if test -f $$file; then \
  	    $(INSTALL_DATA) $$file $(infodir); \
  	  elif test -f $(sdir)/$$file; then \
-@@ -185,9 +186,9 @@
+@@ -185,9 +186,6 @@
  	  else :; \
  	   fi || exit 1; \
  	done
 -	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
 -	  install-info --dir-file=$(infodir)/dir $(infodir)/zsh.info; \
 -	else true; fi
-+#	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
-+#	  install-info --dir-file=$(infodir)/dir $(infodir)/zsh.info; \
-+#	else true; fi
  
  install.html: zsh_toc.html
  	$(sdir_top)/mkinstalldirs $(htmldir)
