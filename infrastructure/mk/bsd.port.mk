@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.120 1999/09/26 10:48:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.121 1999/09/26 10:50:07 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -64,6 +64,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # PREFIX		- Where to install things in general (default: /usr/local).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.
+# MASTER_SITESn	- Primary location(s) for more distribution files, in case
+#				  some distfiles must be fetched from elsewhere.
 # MASTER_SITE_SUBDIR - Directory that "%SUBDIR%" in MASTER_SITES is
 #				  replaced by.
 # PATCH_SITES	- Primary location(s) for distribution patch files
@@ -106,6 +108,9 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # DISTNAME		- Name of port or distribution.
 # DISTFILES		- Name(s) of archive file(s) containing distribution
 #				  (default: ${DISTNAME}${EXTRACT_SUFX}).
+#				  Each name can take an additional :[0-9] suffix, in which
+#				  case it will be fetched from the corresponding 
+#				  MASTER_SITES0...9 sites.
 # SUPDISTFILES  - Names of supplementary archive files that don't get
 # 				  used all the time (default: empty).
 # PATCHFILES	- Name(s) of additional files that contain distribution
@@ -835,15 +840,7 @@ INSTALL_TARGET?=	install
 INSTALL_TARGET+=	install.man
 .endif
 
-# Empty declaration to avoid "variable MASTER_SITES recursive" error
-MASTER_SITES?=
-PATCH_SITES?=
-
-# Substitute subdirectory names
-_MASTER_SITES:=	${MASTER_SITES:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
-PATCH_SITES:=	${PATCH_SITES:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
-MASTER_SITES:= ${_MASTER_SITES}
-
+# basic master sites configuration
 
 .include "${PORTSDIR}/infrastructure/db/network.conf"
 # Where to put distfiles that don't have any other master site
@@ -853,14 +850,102 @@ MASTER_SITE_LOCAL?= \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/LOCAL_PORTS/ \
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/LOCAL_PORTS/
 
+# Empty declarations to avoid "variable XXX is recursive" errors
+MASTER_SITES?=
+MASTER_SITES0?=
+MASTER_SITES1?=
+MASTER_SITES2?=
+MASTER_SITES3?=
+MASTER_SITES4?=
+MASTER_SITES5?=
+MASTER_SITES6?=
+MASTER_SITES7?=
+MASTER_SITES8?=
+MASTER_SITES9?=
+PATCH_SITES?=
+PATCH_SITES0?=
+PATCH_SITES1?=
+PATCH_SITES2?=
+PATCH_SITES3?=
+PATCH_SITES4?=
+PATCH_SITES5?=
+PATCH_SITES6?=
+PATCH_SITES7?=
+PATCH_SITES8?=
+PATCH_SITES9?=
+
+# Substitute subdirectory names in intermediate form
+_MASTER_SITES:=		${MASTER_SITES:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES0:=	${MASTER_SITES0:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES1:=	${MASTER_SITES1:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES2:=	${MASTER_SITES2:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES3:=	${MASTER_SITES3:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES4:=	${MASTER_SITES4:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES5:=	${MASTER_SITES5:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES6:=	${MASTER_SITES6:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES7:=	${MASTER_SITES7:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES8:=	${MASTER_SITES8:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_MASTER_SITES9:=	${MASTER_SITES9:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
+_PATCH_SITES=		${PATCH_SITES:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES0:=		${PATCH_SITES0:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES1:=		${PATCH_SITES1:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES2:=		${PATCH_SITES2:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES3:=		${PATCH_SITES3:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES4:=		${PATCH_SITES4:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES5:=		${PATCH_SITES5:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES6:=		${PATCH_SITES6:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES7:=		${PATCH_SITES7:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES8:=		${PATCH_SITES8:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+_PATCH_SITES9:=		${PATCH_SITES9:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+
 # I guess we're in the master distribution business! :)  As we gain mirror
 # sites for distfiles, add them to this list.
 .if !defined(MASTER_SITE_OVERRIDE)
-MASTER_SITES+=	${MASTER_SITE_BACKUP}
-PATCH_SITES+=	${MASTER_SITE_BACKUP}
+MASTER_SITES:=	${_MASTER_SITES} ${MASTER_SITE_BACKUP}
+MASTER_SITES0:=	${_MASTER_SITES0} ${MASTER_SITE_BACKUP}
+MASTER_SITES1:=	${_MASTER_SITES1} ${MASTER_SITE_BACKUP}
+MASTER_SITES2:=	${_MASTER_SITES2} ${MASTER_SITE_BACKUP}
+MASTER_SITES3:=	${_MASTER_SITES3} ${MASTER_SITE_BACKUP}
+MASTER_SITES4:=	${_MASTER_SITES4} ${MASTER_SITE_BACKUP}
+MASTER_SITES5:=	${_MASTER_SITES5} ${MASTER_SITE_BACKUP}
+MASTER_SITES6:=	${_MASTER_SITES6} ${MASTER_SITE_BACKUP}
+MASTER_SITES7:=	${_MASTER_SITES7} ${MASTER_SITE_BACKUP}
+MASTER_SITES8:=	${_MASTER_SITES8} ${MASTER_SITE_BACKUP}
+MASTER_SITES9:=	${_MASTER_SITES9} ${MASTER_SITE_BACKUP}
+PATCH_SITES:=	${_PATCH_SITES} ${MASTER_SITE_BACKUP}
+PATCH_SITES0:=	${_PATCH_SITES0} ${MASTER_SITE_BACKUP}
+PATCH_SITES1:=	${_PATCH_SITES1} ${MASTER_SITE_BACKUP}
+PATCH_SITES2:=	${_PATCH_SITES2} ${MASTER_SITE_BACKUP}
+PATCH_SITES3:=	${_PATCH_SITES3} ${MASTER_SITE_BACKUP}
+PATCH_SITES4:=	${_PATCH_SITES4} ${MASTER_SITE_BACKUP}
+PATCH_SITES5:=	${_PATCH_SITES5} ${MASTER_SITE_BACKUP}
+PATCH_SITES6:=	${_PATCH_SITES6} ${MASTER_SITE_BACKUP}
+PATCH_SITES7:=	${_PATCH_SITES7} ${MASTER_SITE_BACKUP}
+PATCH_SITES8:=	${_PATCH_SITES8} ${MASTER_SITE_BACKUP}
+PATCH_SITES9:=	${_PATCH_SITES9} ${MASTER_SITE_BACKUP}
 .else
-MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
-PATCH_SITES:=	${MASTER_SITE_OVERRIDE} ${PATCH_SITES}
+MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES}
+MASTER_SITES0:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES0}
+MASTER_SITES1:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES1}
+MASTER_SITES2:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES2}
+MASTER_SITES3:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES3}
+MASTER_SITES4:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES4}
+MASTER_SITES5:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES5}
+MASTER_SITES6:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES6}
+MASTER_SITES7:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES7}
+MASTER_SITES8:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES8}
+MASTER_SITES9:=	${MASTER_SITE_OVERRIDE} ${_MASTER_SITES9}
+PATCH_SITES:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES}
+PATCH_SITES0:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES0}
+PATCH_SITES1:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES1}
+PATCH_SITES2:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES2}
+PATCH_SITES3:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES3}
+PATCH_SITES4:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES4}
+PATCH_SITES5:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES5}
+PATCH_SITES6:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES6}
+PATCH_SITES7:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES7}
+PATCH_SITES8:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES8}
+PATCH_SITES9:=	${MASTER_SITE_OVERRIDE} ${_PATCH_SITES9}
 .endif
 
 # OpenBSD code to handle ports distfiles on a CDROM.  The distfiles
@@ -878,19 +963,24 @@ CDROM_OPT=		-f
 .endif
 .endif
 
-# Derived names so that they're easily overridable.
+# Derive names so that they're easily overridable.
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 PKGNAME?=		${DISTNAME}
+# This one is hardcoded for now
+_DISTFILES=		${DISTFILES:C/:[0-9]$//}
+_PATCHFILES=	${PATCHFILES:C/:[0-9]$//}
 
 .if make(makesum) || make(addsum) || defined(__FETCH_ALL)
 .if defined(SUPDISTFILES)
  DISTFILES+=${SUPDISTFILES}
+ _DISTFILES+=${SUPDISTFILES:C/:[0-9]$//}
 .endif
 .if defined(SUPPATCHFILES)
  PATCHFILES+=${SUPPATCHFILES}
+ _PATCHFILES+=${SUPPATCHFILES:C/:[0-9]$//}
 .endif
 .endif
-ALLFILES?=	${DISTFILES} ${PATCHFILES}
+ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
 
 .if defined(IGNOREFILES)
 CKSUMFILES!=	\
@@ -922,7 +1012,7 @@ _IGNOREFILES?=	${IGNOREFILES}
 
 # This is what is actually going to be extracted, and is overridable
 #  by user.
-EXTRACT_ONLY?=	${DISTFILES}
+EXTRACT_ONLY?=	${_DISTFILES}
 
 # Documentation
 MAINTAINER?=	ports@openbsd.org
@@ -1216,7 +1306,8 @@ describe:
 do-fetch:
 	@${MKDIR} ${FULLDISTDIR}
 	@cd ${FULLDISTDIR}; \
-	 for file in ${DISTFILES}; do \
+	 for fullfile in ${DISTFILES}; do \
+	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
@@ -1234,7 +1325,20 @@ do-fetch:
 				${ECHO_MSG} ">> Can't download to ${FULLDISTDIR} (permission denied?)."; \
 				exit 1; \
 			fi; \
-			for site in ${MASTER_SITES}; do \
+			case $$fullfile in \
+				*:0) sites_list="${MASTER_SITES0}";; \
+				*:1) sites_list="${MASTER_SITES1}";; \
+				*:2) sites_list="${MASTER_SITES2}";; \
+				*:3) sites_list="${MASTER_SITES3}";; \
+				*:4) sites_list="${MASTER_SITES4}";; \
+				*:5) sites_list="${MASTER_SITES5}";; \
+				*:6) sites_list="${MASTER_SITES6}";; \
+				*:7) sites_list="${MASTER_SITES7}";; \
+				*:8) sites_list="${MASTER_SITES8}";; \
+				*:9) sites_list="${MASTER_SITES9}";; \
+				*)   sites_list="${MASTER_SITES}";; \
+			esac; \
+			for site in $$sites_list; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
@@ -1247,7 +1351,8 @@ do-fetch:
 	 done
 .if defined(PATCHFILES)
 	@cd ${FULLDISTDIR}; \
-	 for file in ${PATCHFILES}; do \
+	 for fullfile in ${PATCHFILES}; do \
+	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
@@ -1256,7 +1361,20 @@ do-fetch:
 				exit 1; \
 			fi ; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-			for site in ${PATCH_SITES}; do \
+			case $$fullfile in \
+				*:0) sites_list="${PATCH_SITES0}";; \
+				*:1) sites_list="${PATCH_SITES1}";; \
+				*:2) sites_list="${PATCH_SITES2}";; \
+				*:3) sites_list="${PATCH_SITES3}";; \
+				*:4) sites_list="${PATCH_SITES4}";; \
+				*:5) sites_list="${PATCH_SITES5}";; \
+				*:6) sites_list="${PATCH_SITES6}";; \
+				*:7) sites_list="${PATCH_SITES7}";; \
+				*:8) sites_list="${PATCH_SITES8}";; \
+				*:9) sites_list="${PATCH_SITES9}";; \
+				*)   sites_list="${PATCH_SITES}";; \
+			esac; \
+			for site in $$sites_list; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
@@ -1283,7 +1401,7 @@ mirror-distfiles:
 #
 list-distfiles:
 	@echo "${PKGNAME}"
-	@for file in ${DISTFILES} ${PATCHFILES}; do \
+	@for file in ${_DISTFILES} ${_PATCHFILES}; do \
 		if [ "$$file" != "${EXTRACT_SUFX}" ]; then \
 			if [ -z "${DIST_SUBDIR}" ]; then \
 				printf "\t$$file\n"; \
@@ -1352,7 +1470,7 @@ do-patch:
 .if defined(PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
 	@cd ${FULLDISTDIR}; \
-	  for i in ${PATCHFILES}; do \
+	  for i in ${_PATCHFILES}; do \
 	  	case ${PATCH_DEBUG_TMP:L} in \
 			yes) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
 		esac; \
@@ -1758,7 +1876,7 @@ pre-distclean:
 distclean: pre-distclean clean
 	@${ECHO_MSG} "===>  Dist cleaning for ${PKGNAME}"
 	@if cd ${FULLDISTDIR} 2>/dev/null; then \
-		${RM} -f ${DISTFILES} ${PATCHFILES}; \
+		${RM} -f ${_DISTFILES} ${_PATCHFILES}; \
 	fi
 .if defined(DIST_SUBDIR)
 	-@${RMDIR} ${FULLDISTDIR}  
@@ -1794,10 +1912,24 @@ fetch-list-one-pkg:
 	@${MKDIR} ${FULLDISTDIR}
 	@[ -z "${FULLDISTDIR}" ] || ${ECHO} "${MKDIR} ${FULLDISTDIR}"
 	@(cd ${FULLDISTDIR}; \
-	 for file in ${DISTFILES}; do \
+	 for fullfile in ${DISTFILES}; do \
+	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			${ECHO} -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
-			for site in ${MASTER_SITES} ; do \
+			case $$fullfile in \
+				*:0) sites_list="${MASTER_SITES0}";; \
+				*:1) sites_list="${MASTER_SITES1}";; \
+				*:2) sites_list="${MASTER_SITES2}";; \
+				*:3) sites_list="${MASTER_SITES3}";; \
+				*:4) sites_list="${MASTER_SITES4}";; \
+				*:5) sites_list="${MASTER_SITES5}";; \
+				*:6) sites_list="${MASTER_SITES6}";; \
+				*:7) sites_list="${MASTER_SITES7}";; \
+				*:8) sites_list="${MASTER_SITES8}";; \
+				*:9) sites_list="${MASTER_SITES9}";; \
+				*)   sites_list="${MASTER_SITES}";; \
+			esac; \
+			for site in $$sites_list ; do \
 				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
@@ -1805,10 +1937,24 @@ fetch-list-one-pkg:
 	done)
 .if defined(PATCHFILES)
 	@(cd ${FULLDISTDIR}; \
-	 for file in ${PATCHFILES}; do \
+	 for fullfile in ${PATCHFILES}; do \
+	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			${ECHO} -n "cd ${FULLDISTDIR} && [ -f $$file -o -f `${BASENAME} $$file` ] || " ; \
-			for site in ${PATCH_SITES}; do \
+			case $$fullfile in \
+				*:0) sites_list="${PATCH_SITES0}";; \
+				*:1) sites_list="${PATCH_SITES1}";; \
+				*:2) sites_list="${PATCH_SITES2}";; \
+				*:3) sites_list="${PATCH_SITES3}";; \
+				*:4) sites_list="${PATCH_SITES4}";; \
+				*:5) sites_list="${PATCH_SITES5}";; \
+				*:6) sites_list="${PATCH_SITES6}";; \
+				*:7) sites_list="${PATCH_SITES7}";; \
+				*:8) sites_list="${PATCH_SITES8}";; \
+				*:9) sites_list="${PATCH_SITES9}";; \
+				*)   sites_list="${PATCH_SITES}";; \
+			esac; \
++			for site in $$sites_list; do \
 				${ECHO} -n ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
