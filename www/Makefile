@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/05/16 03:37:54 brad Exp $
+# $OpenBSD: Makefile,v 1.14 1999/10/26 14:32:46 dugsong Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -54,6 +54,7 @@
 #    SUBDIR += vrweb
 #    SUBDIR += w3
 #    SUBDIR += w3c-httpd
+     SUBDIR += w3m
 #    SUBDIR += webcopy
 #    SUBDIR += weblint
 #    SUBDIR += webstone
