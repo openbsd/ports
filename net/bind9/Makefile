@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/03/06 23:48:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.29 2002/03/23 22:05:48 lebel Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # XXX workaround gcc bugs on sparc64
 .if ${MACHINE_ARCH:Msparc64}
-CFLAGS+=        -O0
+PATCH_LIST=	gcc-* patch-*
 .endif
 
 SEPARATE_BUILD=		concurrent
