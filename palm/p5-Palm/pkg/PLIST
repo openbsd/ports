@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/26 00:36:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/15 00:10:09 pvalchev Exp $
 bin/pdbdump
 ${P5SITE}/Palm/Address.pm
 ${P5SITE}/Palm/Datebook.pm
@@ -17,5 +17,4 @@ man/man3p/Palm::PDB.3p
 man/man3p/Palm::Raw.3p
 man/man3p/Palm::StdAppInfo.3p
 man/man3p/Palm::ToDo.3p
-@dirrm ${P5ARCH}/auto/Palm
 @dirrm ${P5SITE}/Palm
