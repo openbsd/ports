@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/03/16 16:50:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/05 20:26:47 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	interactive spelling checker
@@ -25,7 +25,7 @@ MAINTAINER=	ports@openbsd.org
 
 MULTI_PACKAGES=	-french -german
 .for i in ${MULTI_PACKAGES}
-PKGNAME-$i=	ispell-$i-$V
+PKGNAME$i=	ispell$i-$V
 .endfor
 
 PERMIT_PACKAGE_CDROM=	Yes
