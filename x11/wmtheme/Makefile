@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 13:48:11 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/24 14:07:10 lebel Exp $
 
 COMMENT=		"window manager theme utility"
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wmtheme
+
+NO_REGRESS=		Yes
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
 USE_GMAKE=		Yes
