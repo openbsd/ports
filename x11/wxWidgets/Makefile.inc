@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2004/07/16 21:01:35 todd Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2004/08/18 01:02:06 naddy Exp $
 #
 # This library can be built for several GUI toolkits.
 # Most can be installed side-by-side.
@@ -31,6 +31,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 ##############################
 # Depend on various system libraries
+MODULES+=	converters/libiconv
+
 LIB_DEPENDS+=	jpeg.62::graphics/jpeg
 
 MY_INC+=	-I${LOCALBASE}/include/libpng
