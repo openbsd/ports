@@ -1,0 +1,5 @@
+The morseplayer utility reads from its standard input and plays
+corresponding morse code sounds from an audio device.  The program has
+the full character set for the ARRL/FCC Element 2 examination, and
+generates the timing of  `dits',  `dahs', intra-element spacing,
+character spacing, and word spacing as specified by the ARRL.
