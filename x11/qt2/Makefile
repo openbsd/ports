@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/23 09:53:52 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/06/23 14:17:40 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.1.1
@@ -43,28 +43,41 @@ QT_TUTORIAL=	${QT_LIBDIR}/tutorial
 QT_DOC=		${PREFIX}/share/doc/qt2
 
 # for manpages in MESSAGE
-SUBST_VARS=	QT_LIBDIR
+SUBST_VARS=	QT_LIBDIR QT_DOC
 
 #		qt-2.1.1	-> libqt.2.11
 QT_VER=		2.11
 
 post-patch:
-	@cd ${WRKSRC} && cp -R examples examples-src
-	@cd ${WRKSRC} && cp -R tutorial tutorial-src
+	cd ${WRKSRC}/configs; for i in openbsd-*; do \
+	    mv -f $$i $$i.bak && \
+		sed -e s,/usr/local,${LOCALBASE}, \
+		-e s,/usr/X11R6,${X11BASE}, <$$i.bak >$$i; \
+	done
+
+post-configure:
+	cd ${WRKSRC} && cp -R examples examples-src
+	cd ${WRKSRC} && cp -R tutorial tutorial-src
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR} ${QT_DOC}/html ${QT_LIBDIR}/bin \
-	    ${QT_EXAMPLES}/src ${QT_EXAMPLES}/bin \
-	    ${QT_TUTORIAL}/src ${QT_TUTORIAL}/bin \
+	    ${QT_EXAMPLES} ${QT_TUTORIAL} \
 	    ${QT_LIBDIR}/man/man3
 	@cd ${WRKBUILD}/lib; if [ -f libqt.a ]; then \
-		${INSTALL_DATA} libqt.a ${PREFIX}/lib; \
+		${INSTALL_DATA} libqt.a ${PREFIX}/lib/qt2; \
 	fi; \
 	if [ -f libqt.so.2.1.1 ]; then \
 		ln -f libqt.so.2.1.1 libqt.so.2.11; \
-		${INSTALL_DATA} libqt.so.2.11 ${PREFIX}/lib; \
+		${INSTALL_DATA} libqt.so.2.11 ${PREFIX}/lib/qt2; \
+		ln -s ${TRUEPREFIX}/lib/qt2/libqt.so.2.11 ${PREFIX}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
+	ln -s ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/mergetr ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/msg2qm ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/findtr ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qt20fix ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qtrename140 ${PREFIX}/bin
 	# avoid installing broken links
 	-rm ${WRKSRC}/include/qt_{mac,windows}.h
 	${INSTALL_DATA} ${WRKSRC}/include/* ${QT_INCDIR}
@@ -73,15 +86,15 @@ do-install:
 	  sed -e 's,\.3qt,\.3,g' <$$i >$$j && \
 	  	${INSTALL_MAN} $$j ${QT_MANDIR}/man3; \
 	done
-	cp -R ${WRKSRC}/examples-src/* ${QT_EXAMPLES}/src
+	cp -R ${WRKSRC}/examples-src/* ${QT_EXAMPLES}
 	@cd ${WRKSRC}/examples; for i in *; do \
 	if [ -x $$i/$$i ]; then \
-	    ${INSTALL_PROGRAM} $$i/$$i ${QT_EXAMPLES}/bin; \
+	    ${INSTALL_PROGRAM} $$i/$$i ${QT_EXAMPLES}/$$i; \
 	fi; done
-	cp -R ${WRKSRC}/tutorial-src/* ${QT_TUTORIAL}/src
+	cp -R ${WRKSRC}/tutorial-src/* ${QT_TUTORIAL}
 	@cd ${WRKSRC}/tutorial; for i in *; do \
 	if [ -x $$i/$$i ]; then \
-	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/bin; \
+	    ${INSTALL_PROGRAM} $$i/$$i ${QT_TUTORIAL}/$$i; \
 	fi; done
 	cd ${WRKSRC} && ${INSTALL_DATA} ANNOUNCE FAQ LICENSE.QPL README \
 	    README.QT changes-2.1.0 changes-2.1.1 ${QT_DOC}
