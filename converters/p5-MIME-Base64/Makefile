@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2001/05/10 19:20:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=	"Base64 and Quoted-Printable encodings"
 
 DISTNAME=	MIME-Base64-2.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.407
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= MIME
 

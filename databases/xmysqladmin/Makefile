@@ -1,11 +1,11 @@
 # $FreeBSD: ports/databases/xmysqladmin/Makefile,v 1.25 1999/11/23 02:59:09 billf Exp $
-# $OpenBSD: Makefile,v 1.14 2001/11/10 12:29:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=	"X11 front end to the mysqladmin command"
 
 DISTNAME=	xmysqladmin-1.0
 CATEGORIES=	databases
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/

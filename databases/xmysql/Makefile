@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/11/10 12:29:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:46:24 espie Exp $
 # $FreeBSD: ports/databases/xmysql/Makefile,v 1.22 1999/08/31 06:41:26 mharo Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
 
 DISTNAME=	xmysql-1.9
 CATEGORIES=	databases
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
 		http://web.tryc.on.ca/mysql/Downloads/Contrib/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/07 12:15:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=	"documentation for autoconf, automake, libtool"
 
@@ -6,7 +6,7 @@ V=1.2
 SUBST_VARS=V
 DISTNAME=	autobook-${V}
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/17 06:26:53 shell Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=		"perl perl i18n routines"
 
 DISTNAME=		Locale-PGetText-0.16
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=     	devel
-NEED_VERSION=		1.364
+NEED_VERSION=		1.515
 
 MAINTAINER=		Shell Hung <shell@openbsd.org>
 

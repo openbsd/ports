@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2001/06/29 03:16:10 kevlo Exp $	
+# $OpenBSD: Makefile,v 1.17 2002/03/21 20:46:23 espie Exp $	
 
 COMMENT=	"translate GB/Big5 encoding to tone pinyin"
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
-NEED_VERSION=	1.364
+NEED_VERSION=	1.515
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 

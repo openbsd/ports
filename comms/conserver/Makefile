@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/06/20 01:43:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2002/03/21 20:46:23 espie Exp $
 
 COMMENT=	"manage remote serial consoles via TCP/IP"
 
 PKGNAME=	conserver-5.21
 DISTFILES=	conserver-5.21-Beta.shar.gz
 CATEGORIES=	comms
-NEED_VERSION=	1.406
+NEED_VERSION=	1.515
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/29 21:24:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=	"extensible framework for Perl server engines"
 
 DISTNAME=	Net-Server-0.77
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel net perl5
-NEED_VERSION=	1.463
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/07 14:16:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=		'GNU Readline Library Wrapper Module'
 
 DISTNAME=		Term-ReadLine-Gnu-1.11
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

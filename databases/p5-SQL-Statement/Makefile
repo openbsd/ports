@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/20 13:06:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=	"sql parsing and processing"
 
 DISTNAME=	SQL-Statement-0.1020
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5 
-NEED_VERSION=	1.409
+NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/10/16 12:34:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/03/21 20:46:23 espie Exp $
 
 COMMENT=		"command line tool to synchronize Palm pilot to AvantGo"
 
@@ -6,7 +6,7 @@ VERSION=		2.0.6
 DISTNAME=		malsync_${VERSION}.src
 PKGNAME=		malsync-${VERSION}
 CATEGORIES=             comms palm
-NEED_VERSION=		1.408
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.tomw.org/malsync/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2001/08/22 00:04:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/03/21 20:46:26 espie Exp $
 
 COMMENT=		"simple to use text editor for X11"
 
 PKGNAME=		${DISTNAME:L}
 DISTNAME=		aXe-6.1.2
 CATEGORIES=		editors
-NEED_VERSION=		1.402
+NEED_VERSION=		1.515
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

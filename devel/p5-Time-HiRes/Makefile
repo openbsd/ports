@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/10 19:20:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=	"high resolution ualarm, sleep, and gettimeofday module"
 
 DISTNAME=	Time-HiRes-01.20
 PKGNAME=	p5-Time-HiRes-1.20
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.407
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Time
 

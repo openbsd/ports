@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/24 12:14:50 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2002/03/21 20:46:26 espie Exp $
 
 COMMENT=	"standard OpenLook text editor for X11"
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
 CATEGORIES=	editors
-NEED_VERSION=	1.474
+NEED_VERSION=	1.515
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 

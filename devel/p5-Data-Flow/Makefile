@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:22 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=	"extension for simple-minded recipe-controlled build of data"
 
 DISTNAME=	Data-Flow-0.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

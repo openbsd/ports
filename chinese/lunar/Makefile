@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2001/03/26 03:56:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.16 2002/03/21 20:46:23 espie Exp $
 
 COMMENT=	"convert solar calendar to lunar calendar"
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
 CATEGORIES=	chinese
-NEED_VERSION=   1.364
+NEED_VERSION=   1.515
 MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>

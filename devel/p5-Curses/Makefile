@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/09 11:04:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=	"terminal screen handling and optimisation"
 
@@ -6,7 +6,7 @@ DISTNAME=	Curses-1.06
 PKGNAME=	p5-${DISTNAME}
 
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.407
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Curses
 

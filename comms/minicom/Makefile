@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2001/10/12 03:30:30 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2002/03/21 20:46:23 espie Exp $
 
 COMMENT=	"MS-DOS Telix-like serial communication program"
 
 DISTNAME=	${PKGNAME}.src
 PKGNAME=	minicom-1.83.1
 CATEGORIES=	comms
-NEED_VERSION=	1.460
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/serialcomm/dialout
 

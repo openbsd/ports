@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/21 20:46:26 espie Exp $
 
 COMMENT=	"scheme r5 library"
 
 CATEGORIES=	devel
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 V=2c9
 DISTNAME=	slib$V

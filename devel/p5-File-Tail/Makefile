@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=	"library for reading from continuously updated files"
 
 DISTNAME=	File-Tail-0.98
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
-NEED_VERSION=	1.489
+NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= File
 

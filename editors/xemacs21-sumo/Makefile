@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/04/18 23:33:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/21 20:46:26 espie Exp $
 
 # 
 # What port/package will be created
@@ -8,7 +8,7 @@ PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
 DISTFILES=		xemacs-sumo-${VERSION}.tar.gz
 
 CATEGORIES=     	editors
-NEED_VERSION=		1.353
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.xemacs.org/
 

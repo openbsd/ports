@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/01/31 20:34:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2002/03/21 20:46:25 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
 FAKE=No
@@ -8,7 +8,7 @@ VERSION=	0.5.0
 DISTNAME=       prc-tools.${VERSION}
 PKGNAME=	prc-tools-${VERSION}
 CATEGORIES=     devel palm
-NEED_VERSION=	1.448
+NEED_VERSION=	1.515
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
 MASTER_SITES0=	${MASTER_SITE_GNU:S@%SUBDIR%@binutils@}
 MASTER_SITES1=	${MASTER_SITE_GNU:S@%SUBDIR%@gdb@}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/27 08:44:36 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=		'print arrays of data in a nicely formatted listing'
 
 DISTNAME=		Data-ShowTable-3.3
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.364
+NEED_VERSION=		1.515
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 

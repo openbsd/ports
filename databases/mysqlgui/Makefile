@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/14 13:58:34 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=		"graphical sql client for MySQL"
 
 DISTNAME=		mysqlgui-1.7.5
 CATEGORIES=		databases
-NEED_VERSION=		1.482
+NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.mysql.com/downloads/gui-mysqlgui.html
 

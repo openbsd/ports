@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=		"directory synchronization over mail"
 
 PKGNAME=		ctm-19960528
 DISTNAME=		ctmkit
 CATEGORIES=     	net devel
-NEED_VERSION=		1.363
+NEED_VERSION=		1.515
 HOMEPAGE=		http://www.openbsd.org/ctm.html
 
 PERMIT_PACKAGE_CDROM=	Yes

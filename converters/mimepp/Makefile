@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/07 15:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=	"C++ class library for MIME messages"
 
 DISTNAME=		mimepp-1.0
 CATEGORIES=		converters
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 MAINTAINER=		Angelos D. Keromytis <angelos@openbsd.org>
 

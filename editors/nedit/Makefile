@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2002/01/15 04:30:58 form Exp $
+# $OpenBSD: Makefile,v 1.24 2002/03/21 20:46:26 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 COMMENT=	"X11/Motif GUI text editor"
 
 DISTNAME=	nedit-5.2
 CATEGORIES=	editors x11
+NEED_VERSION=	1.515
 
 MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 

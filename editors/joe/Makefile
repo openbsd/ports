@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2002/03/21 20:46:26 espie Exp $
 
 COMMENT=	"joe's own editor"
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8p1
 CATEGORIES=	editors
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2002/02/26 17:35:51 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2002/03/21 20:46:25 espie Exp $
 
 COMMENT=	"superseded by splint"
 
 DISTNAME=	lclint-2.5r
 CATEGORIES=	devel
-NEED_VERSION=	1.470
+NEED_VERSION=	1.515
 DISTFILES=
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/03/21 20:46:26 espie Exp $
 
 COMMENT=	"Motif toolkit Linux libraries"
-NEED_VERSION=	1.496
 
 PKGNAME=	redhat_motif-2.1.30
 

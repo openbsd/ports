@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/07 15:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/21 20:46:24 espie Exp $
 
 COMMENT=	"rpm2cpio, simple perl converter"
 
 DISTNAME=	rpm2cpio-1.1
 CATEGORIES=	converters archivers
-NEED_VERSION=	1.402
+NEED_VERSION=	1.515
 
 HOMEPAGE=	http://www.iagora.com/~espel/hacks.html
 MASTER_SITES=	http://www.iagora.com/~espel/ \
