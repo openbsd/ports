@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/02/26 23:12:31 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2004/09/24 10:36:49 espie Exp $
 
 COMMENT=	"game where you deal drugs on the streets of NY"
 
@@ -49,5 +49,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dopewars
 	${INSTALL_DATA} ${WRKSRC}/doc/example-cfg \
 		${PREFIX}/share/examples/dopewars/dopewars.cfg
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/dopewars/dopewars.sco
+	${PREFIX}/bin/dopewars -C ${PREFIX}/share/examples/dopewars/dopewars.sco
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/29 15:10:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2004/09/24 10:39:27 espie Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
@@ -25,5 +25,9 @@ CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	--localstatedir=/var/games
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtkballs
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/gtkballs/gtkballs-score
 
 .include <bsd.port.mk>

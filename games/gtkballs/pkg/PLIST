@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/24 10:39:27 espie Exp $
+@mode g+s
+@group games
 bin/gtkballs
+@mode
+@group
 @man man/man6/gtkballs.6x
 share/gtkballs/
 share/gtkballs/COPYING
@@ -333,4 +337,8 @@ share/locale/pl/LC_MESSAGES/gtkballs.mo
 share/locale/ru/
 share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gtkballs.mo
-@extra /var/games/gtkballs-scores
+share/examples/gtkballs/
+share/examples/gtkballs/gtkballs-score
+@mode g+w
+@group games
+@sample /var/games/gtkballs-scores
