@@ -1,0 +1,15 @@
+The cdrtools software includes programs to create and/or extract
+ISO 9660 filesystems, verify their integrity, and write them to
+disc.
+
+This package contains the following software:
+  cdda2wav (digital CD audio extraction program)
+  cdrecord (CD recording program)
+  devdup (dump a device or file in hex)
+  isoinfo (analyze or list an ISO-9660 image)
+  isovrfy (verify an ISO-9660 image)
+  readcd (read data CDs, write to DVD-RAM and copy
+    Solaris boot CDs)
+  smkisofs (ISO-9660 filesystem image creator)
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_btorder_h,v 1.1.1.1 2002/05/13 14:08:50 naddy Exp $
+--- include/btorder.h.orig	Sun Sep 23 10:52:07 2001
++++ include/btorder.h	Sun Sep 23 10:51:38 2001
+@@ -20,6 +20,13 @@
+  * the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
+ 
++#ifdef __OpenBSD__
++#if BYTE_ORDER == LITTLE_ENDIAN
++#define _BIT_FIELDS_LTOH
++#elif BYTE_ORDER == BIG_ENDIAN
++#define _BIT_FIELDS_HTOL
++#endif
++#endif
+ 
+ #ifndef	_BTORDER_H
+ #define	_BTORDER_H

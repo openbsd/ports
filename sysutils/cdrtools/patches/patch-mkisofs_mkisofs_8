@@ -1,0 +1,11 @@
+$OpenBSD: patch-mkisofs_mkisofs_8,v 1.1.1.1 2002/05/13 14:08:50 naddy Exp $
+--- mkisofs/mkisofs.8.orig	Mon Apr 16 14:57:33 2001
++++ mkisofs/mkisofs.8	Mon Apr 22 00:32:40 2002
+@@ -2739,7 +2739,6 @@ options.
+ .SH "SEE ALSO
+ .BR cdrecord(1)
+ .BR magic (5),
+-.BR apple_driver (8)
+ 
+ .SH "FUTURE IMPROVEMENTS
+ Some sort of gui interface.
