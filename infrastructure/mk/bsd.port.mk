@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.241 2000/03/29 16:34:45 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.242 2000/03/31 18:05:28 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -25,7 +25,10 @@ FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.241 2000/03/29 16:34:45 espie Exp $$
 
 OpenBSD_MAINTAINER= ports-admin@openbsd.org
 
-.include <bsd.own.mk>
+# recent /usr/share/mk/* should include bsd.own.mk, guard for older versions
+.if !defined(BSD_OWN_MK)
+.  include <bsd.own.mk>
+.endif
 
 # NEED_VERSION: we need at least this version of bsd.port.mk for this 
 # port  to build

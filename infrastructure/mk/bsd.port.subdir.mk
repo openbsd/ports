@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.20 2000/03/30 02:09:31 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.21 2000/03/31 18:05:28 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -34,7 +34,10 @@
 #	tags
 #
 
-.include <bsd.own.mk>
+# recent /usr/share/mk/* should include bsd.own.mk, guard for older versions
+.if !defined(BSD_OWN_MK)
+.  include <bsd.own.mk>
+.endif
 
 .MAIN: all
 
