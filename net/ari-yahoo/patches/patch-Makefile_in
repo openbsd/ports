@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2000/12/24 14:08:54 naddy Exp $
+--- Makefile.in.orig	Sat Dec 23 21:46:00 2000
++++ Makefile.in	Sat Dec 23 21:46:23 2000
+@@ -78,7 +78,7 @@ DEFS = @DEFS@ -I. -I$(srcdir) -I.
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-ari_yahoo_OBJECTS =  ari-yahoo.o yahoolib.o snprintf.o
++ari_yahoo_OBJECTS =  ari-yahoo.o yahoolib.o
+ ari_yahoo_LDADD = $(LDADD)
+ ari_yahoo_DEPENDENCIES = 
+ ari_yahoo_LDFLAGS = 

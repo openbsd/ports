@@ -1,0 +1,6 @@
+This is a simple Yahoo Messenger client that requires no windowing system,
+and it therefore can be quite useful in situations where a minimal system
+is being used or when a windowing system is otherwise unavailable or
+unfeasible.
+
+WWW: ${HOMEPAGE}
