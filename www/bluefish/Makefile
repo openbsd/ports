@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2002/02/28 20:06:27 couderc Exp $
+# $OpenBSD: Makefile,v 1.22 2002/07/18 13:58:41 brad Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
 DISTNAME=	bluefish-0.7
 CATEGORIES=	www 
-NEED_VERSION=	1.496
 HOMEPAGE=	http://bluefish.openoffice.nl/
 
 MAINTAINER=	Damien Couderc <couderc@openbsd.org>
@@ -36,7 +35,7 @@ CONFIGURE_ARGS+= --disable-imlib
 .endif
 
 CONFIGURE_STYLE= autoconf dest
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 # default locations
 CONFIGURE_ENV+=	WEBLINT=${LOCALBASE}/bin/weblint \
