@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/02 22:07:54 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/09/03 16:24:42 angelos Exp $
 
-DISTNAME=	vic-2.8ucl4
+DISTNAME=	vic
+DISTFILES=	vic-2.8ucl4.tar.gz
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
