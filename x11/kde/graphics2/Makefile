@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/22 17:18:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/08/27 13:35:06 espie Exp $
 
 COMMENT= 		"X11 toolkit, graphics applications"
 CATEGORIES=		x11 x11/kde
-NEED_VERSION=		1.400
+NEED_VERSION=		1.447
 VERSION=		2.2
 DISTNAME=		kdegraphics-${VERSION}
 DIST_SUBDIR=		kde
@@ -12,17 +12,18 @@ MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
+MODULES=	qt2
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
 BUILD_DEPENDS=	uic::x11/qt2-designer
 BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
 
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
-CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
+CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--enable-debug
+CONFIGURE_ARGS+=	--disable-debug
+CONFIGURE_ARGS+=	--enable-final
 #CONFIGURE_ARGS+=	--with-xdmdir=/var/X11/kdm
 #CONFIGURE_ARGS+=	--without-motif
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
@@ -32,8 +33,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
-CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
