@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/11/01 13:43:13 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/05 11:23:33 shell Exp $
 
 COMMENT=	"callback framework for C++"
 
@@ -31,5 +31,10 @@ post-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCDIR}
+
+do-regress:
+.for i in handles misc signals
+	@cd ${WRKSRC}/tests/$i; ${MAKE} check-TESTS
+.endfor
 
 .include <bsd.port.mk>
