@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2002/01/14 23:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2002/01/24 23:25:32 naddy Exp $
 
 COMMENT=	"mirroring/synchronization over low bandwidth links"
 
+PKGNAME=	${DISTNAME}p1
 DISTNAME=	rsync-2.5.1
 CATEGORIES=	net
 NEED_VERSION=	1.504
