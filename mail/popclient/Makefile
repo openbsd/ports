@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:42:34 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/30 13:53:02 espie Exp $
 # Whom:           Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	popclient-3.0b6
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=gnu dest
+CONFIGURE_STYLE=gnu dest old
 CONFIGURE_ARGS=	i386-unknown-freebsd2.1.0
 
 ALL_TARGET=
