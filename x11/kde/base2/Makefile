@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/08/21 10:59:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/08/23 22:25:49 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -26,7 +26,9 @@ USE_MOTIF=	any
 .endif
 
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
-		ldap.2::databases/openldap
+		ldap.2::databases/openldap \
+		vorbis.::audio/libvorbis \
+		libcdda_paranoia.::audio/cdparanoia
 
 BUILD_DEPENDS=	uic::x11/qt2-designer
 BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh/stable
@@ -64,6 +66,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
+post-install:
+	rm -rf ${PREFIX}/share/config/kdm
+	${INSTALL_PROGRAM} ${WRKSRC}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 
 MTREE_FILE=${PORTSDIR}/x11/kde/libs2/files/mtree
 

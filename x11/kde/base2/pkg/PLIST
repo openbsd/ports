@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2001/08/20 23:42:08 espie Exp $
-@mode u+s
-@owner root
-bin/konsole_grantpty
-bin/kcheckpass
-@mode
-@owner
+@comment $OpenBSD: PLIST,v 1.19 2001/08/23 22:25:49 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -18,6 +12,11 @@ bin/kbanner.kss
 bin/kblankscrn.kss
 bin/kblob.kss
 bin/kbouboule.kss
+@owner root
+@mode u+s
+bin/kcheckpass
+@mode
+@owner
 bin/kcminit
 bin/kcmshell
 bin/kcontrol
@@ -49,6 +48,11 @@ bin/kmenuedit
 bin/kmorph3d.kss
 bin/konqueror
 bin/konsole
+@owner root
+@mode u+s
+bin/konsole_grantpty
+@mode
+@owner
 bin/kpager
 bin/kpartsaver.kss
 bin/kpersonalizer
@@ -138,6 +142,7 @@ lib/kde2/kcminit.la
 lib/kde2/kcmshell.la
 lib/kde2/kcontrol.la
 lib/kde2/khelpcenter.la
+lib/kde2/kio_audiocd.la
 lib/kde2/kio_filter.la
 lib/kde2/kio_finger.la
 lib/kde2/kio_floppy.la
@@ -154,6 +159,7 @@ lib/kde2/kio_tar.la
 lib/kde2/kio_thumbnail.la
 lib/kde2/libkcm_access.la
 lib/kde2/libkcm_arts.la
+lib/kde2/libkcm_audiocd.la
 lib/kde2/libkcm_background.la
 lib/kde2/libkcm_bell.la
 lib/kde2/libkcm_clock.la
@@ -269,6 +275,10 @@ lib/libtaskbar.la
 lib/libtaskbarapplet.la
 lib/libtaskbarextension.la
 lib/libtaskmanager.la
+libexec/genkdmconf
+@exec mkdir -p %D/share/config/kdm
+@exec %D/libexec/genkdmconf --in %D/share/config/kdm
+@unexec echo "Remove %D/share/config/kdm by hand"
 share/applnk/.directory
 share/applnk/.hidden/konqfilemgr.desktop
 share/applnk/Applications/.directory
@@ -357,6 +367,7 @@ share/applnk/Settings/PowerControl/.directory
 share/applnk/Settings/PowerControl/energy.desktop
 share/applnk/Settings/Sound/.directory
 share/applnk/Settings/Sound/arts.desktop
+share/applnk/Settings/Sound/audiocd.desktop
 share/applnk/Settings/Sound/bell.desktop
 share/applnk/Settings/Sound/kcmnotify.desktop
 share/applnk/Settings/Sound/midi.desktop
@@ -1123,8 +1134,6 @@ share/config/imsmaprc
 share/config/interferencerc
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
-share/config/kdm/README
-share/config/kdm/kdmrc
 share/config/klipperrc
 share/config/konqsidebartng.rc
 share/config/konsolerc
@@ -1954,6 +1963,7 @@ share/locale/l10n/za/flag.png
 share/mimelnk/application/x-konsole.desktop
 share/mimelnk/application/x-ksysguard.desktop
 share/mimelnk/application/x-ktheme.desktop
+share/services/audiocd.protocol
 share/services/bzip.protocol
 share/services/bzip2.protocol
 share/services/finger.protocol
@@ -2250,7 +2260,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kaddressbook
-@dirrm share/config/kdm
 @dirrm share/autostart
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
