@@ -17,6 +17,7 @@ ONLY_FOR_ARCHS= i386
 # build... more work
 
 COMMENT=	"compiler for the functional language Haskell"
+COMMENT-doc=	"documentation for the functional language Haskell"
 
 FULLVER=	5.04.3
 BOOTVER=	4.08.2
@@ -25,6 +26,10 @@ DISTNAME=	ghc-${FULLVER}
 CATEGORIES=	lang
 HOMEPAGE=	http://www.haskell.org/ghc/
 MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
+
+MULTI_PACKAGES=	-doc
+SUBPACKAGE?=
+FULLPKGNAME-doc= ghc-doc-${FULLVER}
 
 # BSD w/o advertising clause
 PERMIT_PACKAGE_CDROM=   Yes
@@ -37,9 +42,14 @@ NO_REGRESS=Yes
 HASKELL=	http://www.haskell.org/
 MASTER_SITES=	${HASKELL}ghc/dist/${FULLVER}/
 MASTER_SITES0=	${HASKELL}ghc/dist/${BOOTVER}/
+MASTER_SITES1=	${HASKELL}ghc/docs/${FULLVER}/
 
-DISTFILES=	ghc-${FULLVER}-src.tar.bz2   \
-		ghc-${BOOTVER}-src.tar.bz2:0
+DIST_SUBDIR=	ghc-${FULLVER}
+DOC_FILES=	users_guide hslibs building libraries
+DOC_DIR=	${PREFIX}/share/doc/ghc
+
+DISTFILES=	ghc-${FULLVER}-src.tar.bz2  ghc-${BOOTVER}-src.tar.bz2:0 \
+		${DOC_FILES:C/(.+)/\1.html.tar.gz:1/g}
 
 .if ${MACHINE_ARCH} == "i386"
     HCSRC=ghc-${BOOTVER}-x86-hc.tar.bz2:0
@@ -80,5 +90,11 @@ pre-configure:
 	  echo "FptoolsHcOpts=-H32m"  >>mk/build.mk)
 
 # note: ghci not in PLIST since it doesnt work yet
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+.for i in ${DOC_FILES:C/(.+)/\1.html.tar.gz/g}
+	@tar zxf ${FULLDISTDIR}/${i} -C ${DOC_DIR}
+.endfor
 
 .include <bsd.port.mk>
