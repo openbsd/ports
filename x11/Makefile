@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2004/10/07 06:21:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.196 2004/10/08 23:37:59 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -99,6 +99,7 @@
      SUBDIR += mterm
      SUBDIR += mxconns
      SUBDIR += neXtaw
+     SUBDIR += numlockx
      SUBDIR += ogle
      SUBDIR += ogle,altivec
      SUBDIR += ogle_gui
