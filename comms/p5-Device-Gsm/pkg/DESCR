@@ -1,0 +1,5 @@
+Device::Gsm class implements basic GSM functions, network registration
+and SMS sending.
+
+This class supports also PDU mode to send SMS messages, and should be
+fairly usable.

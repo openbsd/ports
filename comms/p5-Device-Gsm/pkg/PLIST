@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/04 13:00:14 xsa Exp $
+${P5SITE}/Device/Gsm/
+${P5SITE}/Device/Gsm.pm
+${P5SITE}/Device/Gsm/Charset.pm
+${P5SITE}/Device/Gsm/Pdu.pm
+${P5SITE}/Device/Gsm/Sms/
+${P5SITE}/Device/Gsm/Sms.pm
+${P5SITE}/Device/Gsm/Sms/Structure.pm
+${P5SITE}/Device/Gsm/Sms/Token/
+${P5SITE}/Device/Gsm/Sms/Token.pm
+${P5SITE}/Device/Gsm/Sms/Token/DA.pm
+${P5SITE}/Device/Gsm/Sms/Token/DCS.pm
+${P5SITE}/Device/Gsm/Sms/Token/MR.pm
+${P5SITE}/Device/Gsm/Sms/Token/OA.pm
+${P5SITE}/Device/Gsm/Sms/Token/PDUTYPE.pm
+${P5SITE}/Device/Gsm/Sms/Token/PID.pm
+${P5SITE}/Device/Gsm/Sms/Token/SCA.pm
+${P5SITE}/Device/Gsm/Sms/Token/SCTS.pm
+${P5SITE}/Device/Gsm/Sms/Token/UD.pm
+${P5SITE}/Device/Gsm/Sms/Token/VP.pm
+@man man/man3p/Device::Gsm.3p
+@man man/man3p/Device::Gsm::Pdu.3p
+@man man/man3p/Device::Gsm::Sms.3p
