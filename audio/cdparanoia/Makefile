@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/06/22 19:13:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2004/02/27 13:18:55 naddy Exp $
 
 COMMENT=	"CDDA reading utility with extra data verification features"
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}download/
 EXTRACT_SUFX=	.src.tgz
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoconf autoheader
 AUTOCONF_NEW=		Yes
 CONFIGURE_ENV=		GCC=${CC}
 
