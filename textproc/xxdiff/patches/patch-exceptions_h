@@ -1,0 +1,28 @@
+--- exceptions.h.orig	Mon Sep 30 10:33:26 2002
++++ exceptions.h	Mon Sep 30 10:40:21 2002
+@@ -118,6 +118,8 @@ public:
+       int            helpMask = 0
+    );
+ 
++   virtual ~XxUsageError() throw() { }
++
+ };
+ 
+ 
+@@ -138,6 +140,8 @@ public:
+       const QString& msg = QString::null // use errno string only.
+    );
+ 
++   virtual ~XxIoError() throw() { }
++
+ };
+ 
+ /*==============================================================================
+@@ -158,6 +162,7 @@ public:
+       XX_EXC_PARAMS_DECL(file,line)
+    );
+ 
++   virtual ~XxInternalError() throw() { }
+ };
+ 
+ 

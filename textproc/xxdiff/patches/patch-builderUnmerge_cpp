@@ -1,0 +1,10 @@
+--- builderUnmerge.cpp.orig	Mon Sep 30 10:55:56 2002
++++ builderUnmerge.cpp	Mon Sep 30 10:56:37 2002
+@@ -73,6 +73,7 @@ public:
+       const XxFln f3n2 
+    );
+ 
++   virtual ~XxConflictFormatError() throw() { }
+ };
+ 
+ //------------------------------------------------------------------------------

@@ -1,0 +1,11 @@
+--- builderFiles2.cpp.orig	Mon Sep 30 11:07:34 2002
++++ builderFiles2.cpp	Mon Sep 30 11:08:04 2002
+@@ -177,6 +177,8 @@ public:
+       const XxFln f2n2 
+    );
+ 
++   virtual ~XxParseDiffError() throw() { }
++
+ };
+ 
+ //------------------------------------------------------------------------------

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/07/17 07:27:02 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/16 13:23:41 naddy Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
-DISTNAME=	xxdiff-2.6
+DISTNAME=	xxdiff-2.9.1
 CATEGORIES=	textproc x11
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xxdiff/}
 

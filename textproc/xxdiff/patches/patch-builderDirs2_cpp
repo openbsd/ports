@@ -1,0 +1,11 @@
+--- builderDirs2.cpp.orig	Mon Sep 30 10:54:25 2002
++++ builderDirs2.cpp	Mon Sep 30 10:55:01 2002
+@@ -99,6 +99,8 @@ public:
+       const char* buf
+    );
+ 
++   virtual ~XxParseDiffError() throw() { }
++
+ };
+ 
+ /*==============================================================================
