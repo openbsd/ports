@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2000/03/20 05:00:48 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2000/03/22 03:25:31 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -126,16 +126,16 @@ post-install:
 .endif
 	@cd ${WRKDIR}/${FORTIFY} && \
 	ln -fs languages/English Messages && \
-	{ echo yes ; echo no ; echo no } \
+	{ echo yes ; echo no ; echo no; } \
 	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape
 .if ${MACHINE_ARCH} == "sparc"
 	@cd ${WRKDIR}/${FORTIFY} && \
-	{ echo yes ; echo no ; echo no } \
+	{ echo yes ; echo no ; echo no; } \
 	| src/cmdline/fortify >/dev/null ${PREFIX}/netscape/netscape_nis
 .endif
 	@sed -e 's#@netscape_home@#${TRUEPREFIX}/netscape#' \
 	 ${FILESDIR}/netscape.${MACHINE_ARCH} > ${WRKDIR}/netscape
-	@if [ -f ${PREFIX}/bin/netscape]; then \
+	@if [ -f ${PREFIX}/bin/netscape ]; then \
 	 mv ${PREFIX}/bin/netscape ${PREFIX}/bin/netscape.old; \
 	fi
 	${INSTALL_SCRIPT} ${WRKDIR}/netscape ${PREFIX}/bin
