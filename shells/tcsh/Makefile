@@ -3,13 +3,13 @@
 # Date created:		17 November 1997
 # Whom:			gene
 #
-# $OpenBSD: Makefile,v 1.5 1997/12/14 02:02:58 gene Exp $
+# $OpenBSD: Makefile,v 1.6 1998/01/07 17:22:39 weingart Exp $
 #
 
 DISTNAME=       tcsh-6.07
 PKGNAME=        tcsh-6.07.02
 CATEGORIES=	shells
-MASTER_SITES=   ftp://ftp.deshaw.com/pub/tcsh/
+MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
 
 MAINTAINER=     gene@OpenBSD.ORG
 
