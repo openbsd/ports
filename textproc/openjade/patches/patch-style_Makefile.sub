@@ -1,0 +1,10 @@
+--- style/Makefile.sub.orig	Mon Sep 25 19:28:59 2000
++++ style/Makefile.sub	Mon Sep 25 21:12:46 2000
+@@ -33,6 +33,7 @@
+ 
+ FlowObj.o: FlowObj_inst.cxx
+ primitive.o: primitive_inst.cxx
++	$(CXX) $(ALL_CXXFLAGS) -O0 -c primitive.cxx
+ DssslApp.o: DssslAppMessages.h
+ FlowObj.lo: FlowObj_inst.cxx
+ primitive.lo: primitive_inst.cxx
