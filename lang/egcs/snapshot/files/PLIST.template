@@ -2,11 +2,11 @@
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
 bin/egcc
 bin/ecpp
-bin/eprotoize
-bin/eunprotoize
+dnl bin/eprotoize
+dnl bin/eunprotoize
 bin/egcov
 bin/ARCH-gcc
-lib/gcc-lib/ARCH/VERSION/SYSCALLS.c.X
+dnl lib/gcc-lib/ARCH/VERSION/SYSCALLS.c.X
 lib/gcc-lib/ARCH/VERSION/cc1
 lib/gcc-lib/ARCH/VERSION/collect2
 lib/gcc-lib/ARCH/VERSION/cpp
@@ -16,6 +16,9 @@ lib/gcc-lib/ARCH/VERSION/include/syslimits.h
 lib/gcc-lib/ARCH/VERSION/include/limits.h
 lib/gcc-lib/ARCH/VERSION/include/float.h
 lib/gcc-lib/ARCH/VERSION/include/README
+lib/gcc-lib/ARCH/VERSION/include/stdarg.h
+lib/gcc-lib/ARCH/VERSION/include/machine/ansi.h
+lib/gcc-lib/ARCH/VERSION/include/varargs.h
 lib/libiberty.a
 info/ecpp.info
 info/ecpp.info-1
@@ -73,7 +76,7 @@ lib/gcc-lib/ARCH/VERSION/include/new
 lib/gcc-lib/ARCH/VERSION/include/new.h
 lib/libstdc++.a.2.10.0
 ifdef(`DYNAMIC',
-lib/libstdc++.so.31.0
+lib/libstdc++.so.32.0
 lib/libstdc++.so.2.10.0
 lib/gcc-lib/ARCH/VERSION/libstdc++.so
 lib/gcc-lib/ARCH/VERSION/libstdc++.a
@@ -284,6 +287,7 @@ lib/gcc-lib/ARCH/VERSION/jvgenmain
 @dirrm include/g++-3
 )ifdef(`OBJC',
 @dirrm lib/gcc-lib/ARCH/VERSION/include/objc)
+@dirrm lib/gcc-lib/ARCH/VERSION/include/machine
 @dirrm lib/gcc-lib/ARCH/VERSION/include
 @dirrm lib/gcc-lib/ARCH/VERSION
 @dirrm lib/gcc-lib/ARCH

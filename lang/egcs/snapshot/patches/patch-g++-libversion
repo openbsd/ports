@@ -4,7 +4,7 @@
 -# Base shared lib for OpenBSD i386
 -
 +# Base shared lib for OpenBSD 
-+MAJOR_OFFSET=28
++MAJOR_OFFSET=29
 +MSHLINK = libstdc++.so.`expr $(INTERFACE) + $(MAJOR_OFFSET)`.0
  LIBS    = $(ARLIB) $(ARLINK) $(SHLIB) $(SHLINK) mshlink
  SHFLAGS = -nostdlib -Wl,-Bshareable,-Bforcearchive

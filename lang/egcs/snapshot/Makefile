@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 1999/11/14 22:00:36 turan Exp $
-
-BROKEN=	/usr/ports/lang/egcs/snapshot/work/egcs-19990907/gcc/configure[3588]: syntax error: newline unexpected
+# $OpenBSD: Makefile,v 1.59 1999/11/24 00:15:04 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -33,7 +31,7 @@ MIRROR_DISTFILE=no
 # cygnus packaging scheme is now working, though it is weird.
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
-MAKE_TESTS=yes
+#MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
 # chill is temporarily broken
@@ -49,7 +47,7 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-09-07
+LATEST_DATE=1999-11-10
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -57,7 +55,7 @@ LATEST_DATE=1999-09-07
 
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1999-09-07
+#NEXT_DATE=1999-09-13
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -203,27 +201,14 @@ SUPPATCHFILES+=egcs-${sub}-${LATEST}-${NEXT}.diff.gz
 
 .endif
 
-# Misc bug sections
-pre-fetch:
-.if (${MACHINE_ARCH} == "i386")
-	@(cd /tmp && /usr/bin/as -k ${FILESDIR}/gas-bug/test-i386-gas.s) || \
-	(${ECHO} "Your gas has a bug, see ${FILESDIR}/gas-bug for details"; ${FALSE})
-.endif
-#	@if [ -f /usr/lib/libc.so.* ]; \
-#	then \
-#		ldd /usr/lib/libc.so.* 2>/dev/null || \
-#		(${ECHO} "Your ldd must be patched, see ${FILESDIR}/ldd-patch"; ${FALSE}) \
-#	fi
-
-
 makesum:
-	@${ECHO} ">>>Please make addsum to avoid clobbering old checksums"
-	@${FALSE}
+	@echo 1>&2">>>Please make addsum to avoid clobbering old checksums"
+	@exit 1
 
 # synch the date
 .if defined(NEXT)
 post-extract:
-	${MV} ${WRKDIR}/egcs-${LATEST} ${WRKSRC}
+	mv ${WRKDIR}/egcs-${LATEST} ${WRKSRC}
 .endif
 
 
@@ -251,12 +236,14 @@ PATCH_LIST+=patch-java-*
 post-patch:
 		# avoid packaging include copies along...
 	find ${WRKSRC} -name \*.orig|xargs ${RM}
-	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
+	cp -R ${FILESDIR}/config/* ${WRKSRC}
+	cp -R ${FILESDIR}/include/* ${WRKSRC}/gcc/ginclude
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
 
 
 
@@ -337,7 +324,8 @@ SEPARATE_BUILD=concurrent
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
-ALL_TARGET=bootstrap
+ALL_TARGET=bootstrap 
+#ALL_TARGET=bootstrap3
 # ALL_TARGET=bootstrap-lean
 
 # desactivate the fixincludes mechanism by supplying a script which does
@@ -348,27 +336,31 @@ pre-build:
 # XXX we need to override do-build to get the warnings from within make
 do-build:
 	@(cd ${WRKBUILD}; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
+	${MAKE_ENV} make ${ALL_TARGET} 2>warnings) || \
 	(echo "*** Make bootstrap failed."; \
 	echo "*** Look at ${WRKBUILD}/warnings for errors"; ${FALSE})
 
 ####
 # Install & tests section 
 
-# Tests no longer need to be performed at the end of install, this
-# was a bug in libstdc++/openbsd.ml
+post-build:
+	mkdir -p ${WRKBUILD}/gcc/include/machine
+	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
+
+# Tests still need to be performed at the end of install, I don't know why.
 .if defined(MAKE_TESTS)
 TEST_RESULT=${WRKBUILD}/test.result
 
-post-build:
+post-install:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} check && \
+	${MAKE_ENV} make -f ${MAKEFILE} check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
 	@${ECHO} "Please send the tests results to the egcs project"
 	@${ECHO} "By invoking make send-results"
 
 send-results: 
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
+.else
 .endif
 
 PLIST=${WRKBUILD}/PLIST
@@ -390,14 +382,9 @@ M4FLAGS+= -DOBJC
 M4FLAGS+= -DJAVA
 .endif
 
-special: extract
-		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs ${RM}
-	-${RM} -rf ${WRKSRC}/texinfo 
-	
 GCC_NAME=${WRKBUILD}/gcc/xgcc
 pre-install:
-	${M4} ${M4FLAGS} -DARCH=`${GCC_NAME} -dumpmachine` \
+	m4 ${M4FLAGS} -DARCH=`${GCC_NAME} -dumpmachine` \
 	-DVERSION=`${GCC_NAME} -dumpversion` \
 	<${FILESDIR}/PLIST.template >${PLIST}
 
