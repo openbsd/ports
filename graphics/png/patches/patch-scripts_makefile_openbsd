@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.6 2004/02/24 23:18:58 brad Exp $
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.7 2004/02/25 20:24:41 brad Exp $
 --- scripts/makefile.openbsd.orig	2002-10-03 07:32:34.000000000 -0400
-+++ scripts/makefile.openbsd	2004-02-24 18:16:55.000000000 -0500
++++ scripts/makefile.openbsd	2004-02-25 15:22:57.000000000 -0500
 @@ -1,13 +1,16 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
@@ -58,7 +58,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.6 2004/02/24 23:18:58 brad Exp $
  	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
  
 -test:	pngtest
-+test check: pngtest
++test regress: pngtest
  	cd ${.OBJDIR} && env \
  		LD_LIBRARY_PATH="${.OBJDIR}" ${.OBJDIR}/pngtest
  
