@@ -1,0 +1,44 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/05/26 01:46:02 obecian Exp $
+
+COMMENT=		"visual sound representation"
+
+DISTNAME=		synaesthesia-2.1
+CATEGORIES=     	graphics x11
+NEED_VERSION=		1.409
+
+HOMEPAGE=		http://yoyo.cc.monash.edu.au/~pfh/synaesthesia.html
+
+MAINTAINER=		Mark Grimes <obecian@openbsd.org>
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=		http://yoyo.cc.monash.edu.au/~pfh/
+
+# esound default so it works with mpg123-esd and not just CDs
+FLAVORS=	esd
+FLAVOR?=	esd
+
+LIB_DEPENDS=		SDL.:sdl-*-!no_x11:devel/sdl
+
+SEPARATE_BUILD=		concurrent
+USE_X11=		Yes
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	gnu
+
+.if ${FLAVOR:L:Mesd}
+LIB_DEPENDS+=	esd.2::audio/esound
+CONFIGURE_ARGS+=	--with-esound
+.else
+CONFIGURE_ARGS+=	--disable-esound
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/synaesthesia ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/synaesthesia
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/synaesthesia
+
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- xlib.c.orig	Wed May 23 18:47:16 2001
++++ xlib.c	Wed May 23 18:47:47 2001
+@@ -35,7 +35,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#ifndef __FreeBSD__
++#if defined(__linux__)
+ #include <malloc.h>
+ #else
+ #include <stdlib.h>

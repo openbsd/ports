@@ -1,0 +1,27 @@
+--- syna.h.orig	Wed Jun  7 22:41:06 2000
++++ syna.h	Wed May 23 17:38:05 2001
+@@ -48,22 +48,13 @@
+ #define NumSamples (1<<LogSize)
+ #define RecSize (1<<LogSize-Overlap)
+ 
+-#ifdef __FreeBSD__
+-
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ typedef unsigned short sampleType;
+-
+ #else
+-
+ typedef short sampleType;
+-
+-#ifndef __linux__
+-
+-#warning This target has not been tested!
+-
+-#endif
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <machine/endian.h>
+ #else
+ #include <endian.h>

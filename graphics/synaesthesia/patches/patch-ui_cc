@@ -1,0 +1,13 @@
+--- ui.cc.orig	Wed May 23 18:46:15 2001
++++ ui.cc	Wed May 23 18:46:34 2001
+@@ -1,8 +1,8 @@
++#include <math.h>
++#include <stdlib.h>
+ #include "font.h"
+ #include "icons.h"
+ #include "syna.h"
+-#include <math.h>
+-#include <stdlib.h>
+ 
+ void putChar(unsigned char character,int x,int y,int red,int blue) {
+   unsigned short *ptr = ((unsigned short *)output) + x + y*outWidth;
