@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2004/08/03 14:14:57 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2004/10/04 15:01:44 xsa Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"checks HTML documents for broken links"
 
-DISTNAME=	linkchecker-1.12.3
+DISTNAME=	linkchecker-1.13.5
 CATEGORIES=    	www
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/
@@ -28,7 +28,7 @@ BUILD_DEPENDS+=	:py-dns-*:net/py-dns
 NO_REGRESS=	Yes
 
 post-install:
-	@chmod ${MANMODE} ${PREFIX}/man/man1/linkchecker.1
-	@chmod ${SHAREMODE} ${PREFIX}/share/examples/linkchecker/*
+#	@chmod ${MANMODE} ${PREFIX}/man/man1/linkchecker.1
+#	@chmod ${SHAREMODE} ${PREFIX}/share/examples/linkchecker/*
 
 .include <bsd.port.mk>
