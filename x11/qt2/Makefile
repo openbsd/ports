@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2000/09/22 20:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/10/08 06:02:00 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
-DISTNAME=	qt-2.2.0
-PKGNAME=	qt2-2.0
+VERSION=	2.1
+DISTNAME=	qt-2.${VERSION}
+PKGNAME=	qt2-${VERSION}
 CATEGORIES=	x11
-NEED_VERSION=	1.324
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
-DISTFILES=	qt-x11-2.2.0.tar.gz
+DISTFILES=	qt-x11-2.${VERSION}.tar.gz
 
 HOMEPAGE=	http://www.trolltech.com/qt/
 
@@ -19,8 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-MAKE_ENV=	QTDIR='${WRKSRC}' EXTRA_SAMPLES='${EXTRA_SAMPLES}' \
-	SYS_CXX='${CXX}' SYS_CXXFLAGS='${CXXFLAGS}'
+MAKE_ENV=	QTDIR="${WRKSRC}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
+		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
+		LD_LIBRARY_PATH="${WRKSRC}/lib"
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libpng -system-jpeg -system-zlib -no-thread -sm
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
@@ -28,7 +30,7 @@ CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
-FLAVORS=GL
+FLAVORS=	gl
 FLAVOR?=
 
 MODULES=	tools kernel widgets dialogs \
@@ -37,7 +39,7 @@ EXTRA_SAMPLES=
 .if ${SUBPACKAGE} != "-html"
 LIB_DEPENDS=	png.1.::graphics/png \
 		jpeg.62.::graphics/jpeg
-.  if ${FLAVOR:U} == "GL"
+.  if ${FLAVOR:L} == "gl"
 LIB_DEPENDS+= 	GL.3.2::graphics/Mesa
 MODULES+= opengl
 EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
@@ -55,7 +57,8 @@ QT_DOC=		${PREFIX}/share/doc/qt2
 # for manpages in MESSAGE
 SUBST_VARS=	QT_LIBDIR QT_DOC
 
-DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT changes-2.2.0
+DOCS=	ANNOUNCE FAQ LICENSE.GPL README README.QT \
+	changes-2.2.0 changes-2.2.1
 
 post-patch:
 	@cd ${WRKSRC}/configs; for i in openbsd-*; do \
@@ -88,9 +91,9 @@ do-install:
 	@if [ -f ${WRKBUILD}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.a ${PREFIX}/lib/qt2; \
 	fi
-	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.0 ]; then \
-	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.0 \
-		${PREFIX}/lib/qt2/libqt.so.2.20; \
+	@if [ -f ${WRKBUILD}/lib/libqt.so.2.2.1 ]; then \
+	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqt.so.2.2.1 \
+		${PREFIX}/lib/qt2/libqt.so.2.21; \
 	fi
 	@if [ -f ${WRKBUILD}/lib/libqutil.a ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/libqutil.a ${PREFIX}/lib/qt2; \
@@ -141,10 +144,10 @@ do-install:
 
 .if ${SUBPACKAGE} == "-examples"
 .  if ${FLAVOR:L} == "gl"
-PKGNAME:=qt2-examples-2.0-gl
+PKGNAME:=	qt2-examples-${VERSION}-gl
 .  else
-PKGNAME:=qt2-examples-2.0
+PKGNAME:=	qt2-examples-${VERSION}
 .  endif
 .elif ${SUBPACKAGE} == "-html"
-PKGNAME:=qt2-html-2.0
+PKGNAME:=	qt2-html-${VERSION}
 .endif

@@ -1,7 +1,8 @@
---- configs/openbsd-g++-shared-debug.orig	Fri Sep 22 03:35:35 2000
-+++ configs/openbsd-g++-shared-debug	Fri Sep 22 04:05:46 2000
-@@ -1,11 +1,11 @@
+--- configs/openbsd-g++-shared-debug.orig	Wed Oct  4 05:55:24 2000
++++ configs/openbsd-g++-shared-debug	Sat Oct  7 14:09:52 2000
+@@ -1,12 +1,12 @@
  # Compiling
+ INTERFACE_DECL_PATH 	= .
 -SYSCONF_CXX		= g++
 +SYSCONF_CXX		= $(SYS_CXX)
  SYSCONF_CC		= gcc
@@ -15,7 +16,7 @@
  
  # Compiling YACC output
  SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
-@@ -17,46 +17,46 @@ SYSCONF_RPATH_OPENGL	= 
+@@ -18,30 +18,30 @@
  
  # Linking with support libraries
  # X11
@@ -36,12 +37,14 @@
  # Linking applications
 -SYSCONF_LINK		= g++
 -SYSCONF_LFLAGS		= 
+-SYSCONF_LIBS		= 
 +SYSCONF_LINK		= $(SYS_CXX)
 +SYSCONF_LFLAGS		= -L/usr/X11R6/lib -L/usr/local/lib
- SYSCONF_LIBS		= 
++SYSCONF_LIBS		= -lz
  
  # Link flags for shared objects
- SYSCONF_LFLAGS_SHOBJ	= -Bshareable
+-SYSCONF_LFLAGS_SHOBJ	= -Bshareable
++SYSCONF_LFLAGS_SHOBJ	= -shared
  
  # Flags for threading
 -SYSCONF_CFLAGS_THREAD	= 
@@ -53,14 +56,7 @@
  # SYSCONF_LIBS_THREAD	= ???
  
  # Meta-object compiler
- SYSCONF_MOC		= $(QTDIR)/bin/moc
- 
- # UI compiler
--SYSCONF_UIC		= $(QTDIR)/bin/uic
-+SYSCONF_UIC		= env LD_LIBRARY_PATH="$(QTDIR)/lib" $(QTDIR)/bin/uic
- 
- # Linking shared libraries
- #   - Build the $(TARGET) library, eg. lib$(TARGET).so.2.0.1
+@@ -55,9 +55,9 @@
  #   - Place target in $(DESTDIR) - which has a trailing /
  #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
  #
