@@ -1,5 +1,5 @@
 --- navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install.orig	Mon Mar  1 15:15:20 1999
-+++ navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install	Sat May 15 20:30:38 1999
++++ navigator-v451.sparc-sun-sunos4.1.3_U1/ns-install	Sat May 15 22:57:45 1999
 @@ -87,21 +87,9 @@
  fi
  
@@ -104,6 +104,15 @@
  		else
  			/bin/rm -f ${TARGET}/${TESTFILE}
  		fi
+@@ -285,7 +247,7 @@
+ 		fi
+ 		tar -cf - ${i} | (cd ${TARGET}/java/classes; tar -xf -)
+ 		echo "${i}" >> ${LOGFILE}
+-		/bin/rm -f ${TARGET}/${i} ./${i}
++		/bin/rm -f ${TARGET}/${i}
+ 		echo "${i},${BLDVERS},${TARGET}/java/classes" >> ${REG_INFILE}
+ 	done
+ 
 @@ -294,10 +256,10 @@
  	# avoid users having to set MOZILLA_JAVA_FONT_PROPERTY_PATH, or
  	# just assuming Java font-handling is broken.
@@ -117,7 +126,35 @@
  			AIX)
  				PLATFORM="aix"
  				;;
-@@ -385,10 +347,10 @@
+@@ -319,19 +281,6 @@
+ 			mv ${TARGET}/java/classes/${PLATFORM}/* ${TARGET}/java/classes/.
+ 		fi
+ 	fi
+-
+-	#
+-	# Is this a virgin install?  If so, create the .netscape dir
+-	# and put the default bookmark file in it.
+-	#
+-	if test ! -d ${HOME}/.netscape
+-	then
+-		# New install, or upgrade from 0.x or 1.x.
+-		mkdir ${HOME}/.netscape
+-		cp ${TARGET}/bookmark.htm ${HOME}/.netscape/bookmarks.html
+-		chmod 644 ${HOME}/.netscape/bookmarks.html
+-		echo "${HOME}/.netscape/bookmarks.html" >> ${LOGFILE}
+-	fi
+ fi
+ 
+ echo ""
+@@ -358,7 +307,6 @@
+ 	esac
+ 	${GZIP} -dc ${pkg} | (cd ${TARGET}; tar -x${TAR_OPTIONS}f -)
+ 	echo "${pkg},${BLDVERS},${TARGET}" >> ${REG_INFILE}
+-	/bin/rm -f ${pkg}
+ done
+ 
+ #
+@@ -385,10 +333,10 @@
  	then
  		mv ${TARGET}/vreg.old ${TARGET}/vreg
  	else
@@ -130,7 +167,7 @@
  fi
  
  #
-@@ -415,7 +377,6 @@
+@@ -415,7 +363,6 @@
  	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
  	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
  	echo ""
@@ -138,7 +175,7 @@
  	exit 3
  fi
  
-@@ -424,11 +385,6 @@
+@@ -424,11 +371,6 @@
  echo "The Netscape ${PRODUCT} software installation is complete."
  echo ""
  echo ""
