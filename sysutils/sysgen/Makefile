@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/07/16 19:24:25 naddy Exp $
 
 COMMENT=		"calculates QBUS CSR and Vector assignments"
 
@@ -18,13 +18,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}
-MAN1=			sysgen.1
 
 ALL_TARGET=		sysgen
 NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${ALL_TARGET} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/sysgen.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

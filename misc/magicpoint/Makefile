@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/04/19 13:30:47 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2003/07/16 19:24:25 naddy Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -37,8 +37,6 @@ post-configure:
 post-build:
 	@cd ${WRKSRC}/contrib/xmindpath && ${MAKE_PROGRAM}
 	@cd ${WRKSRC}/contrib/xwintoppm && ${XMKMF}
-
-MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
 DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
 	README.lang SYNTAX TODO.jp USAGE USAGE.jp

@@ -5,7 +5,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
-# $OpenBSD: Makefile,v 1.15 2002/12/29 19:43:49 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2003/07/16 19:24:24 naddy Exp $
 #
 
 COMMENT=	"less + zcat + ISO-2022 - a pager similar to more and pg"
@@ -35,6 +35,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu dest
-MAN1=		jless.1 jlesskey.1
 
 .include <bsd.port.mk>

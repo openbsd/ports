@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/03/31 14:20:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2003/07/16 19:24:25 naddy Exp $
 
 COMMENT=	"visual mail, user and print face server"
 
@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tar.Z
 USE_X11=	Yes
 
 WRKDIST=	$(WRKDIR)/faces
-MAN1=		compface.1 faces.1 face_update.1
-MAN3=		compface.3 
 
 post-extract:
 	@cd ${WRKSRC} && cp Makefile.dist Makefile

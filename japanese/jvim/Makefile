@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/27 00:52:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/07/16 19:24:24 naddy Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	"Japanized Vim"
@@ -51,8 +51,6 @@ JPLIB:=-lonew-${INPUT_METHOD} ${JPLIB}
 .endif
 
 
-MANLANG=	ja_JP.EUC
-MAN1=		jcat.1 jfold.1 jgrep.1 jvim.1
 WRKDIST=	${WRKDIR}/jvim2.0r
 WRKSRC=		${WRKDIST}/src
 

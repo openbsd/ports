@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 19:43:50 fgsch Exp $ 
+# $OpenBSD: Makefile,v 1.4 2003/07/16 19:24:25 naddy Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 #
 
@@ -27,9 +27,6 @@ CONFIGURE_STYLE= 	gnu dest
 FAKE_FLAGS=     	DESTDIR="${WRKINST}"
 MAKE_FLAGS=     	CPPFLAGS="-fPIC -DPIC -Df2cFortran -I${WRKSRC}/libsrc"
 
-
-MAN1=	ncdump.1 ncgen.1
-MAN3=	netcdf.3
 
 post-build:
 	@(cd ${WRKSRC}/libsrc && \
