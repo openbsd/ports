@@ -156,7 +156,6 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/italian
 @dirrm share/mysql/japanese
 @dirrm share/mysql/korean
-@dirrm share/mysql/mysql
 @dirrm share/mysql/norwegian
 @dirrm share/mysql/norwegian-ny
 @dirrm share/mysql/polish
