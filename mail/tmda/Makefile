@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/29 02:44:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/12 16:29:34 lebel Exp $
 
 COMMENT=		"reduce the amount of SPAM/UCE (junk-mail)"
 
-VERSION=		0.45
+VERSION=		0.46
 DISTNAME=		tmda-${VERSION}
 CATEGORIES=		mail
 NEED_VERSION=   	1.503
