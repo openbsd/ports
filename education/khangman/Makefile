@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/08/11 06:02:59 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2003/01/19 03:40:32 brad Exp $
 
 COMMENT=	"classical hangman game for KDE"
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://edu.kde.org/khangman/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
@@ -19,6 +20,7 @@ MASTER_SITES=	${HOMEPAGE}
 LIB_DEPENDS=	kdecore.4,DCOP,kdeui,kdefx::x11/kde/libs3
 
 MODULES=	qt3
+MODQT_MT=	Yes
 
 PORTHOME=	${WRKDIR}
 
@@ -31,7 +33,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --disable-debug --enable-final
-CONFIGURE_ARGS+= --disable-threading --disable-mt
 CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
 CONFIGURE_ARGS+= --with-xinerama
