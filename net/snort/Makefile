@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2001/04/12 15:59:18 bmc Exp $
+# $OpenBSD: Makefile,v 1.15 2001/06/03 05:28:57 brad Exp $
 
 COMMENT=	"highly flexible sniffer/basic NIDS"
 
 DISTNAME=	snort-1.7
 CATEGORIES=	net security
-NEED_VERSION=	1.394
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= snort
 
@@ -30,14 +30,14 @@ CONFIGURE_ARGS+= --enable-flexresp
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-LIB_DEPENDS+=	pg::databases/postgresql
+LIB_DEPENDS+=	pq.2::databases/postgresql
 CONFIGURE_ARGS+= --with-postgresql="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+= --without-postgresql
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS+=	mysqlclient::databases/mysql
+LIB_DEPENDS+=	mysqlclient.10:mysql-client-3.23.*:databases/mysql
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 .else
 CONFIGURE_ARGS+= --without-mysql
