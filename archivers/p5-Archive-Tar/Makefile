@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/22 23:33:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/29 15:15:18 fgsch Exp $
 
 COMMENT=	"perl interface to tar archives"
 VERSION=	0.22
 DISTNAME=	Archive-Tar-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
-NEED_VERSION=	1.502
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Archive/}
 

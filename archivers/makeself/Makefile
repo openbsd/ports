@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/27 15:06:49 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 15:15:18 fgsch Exp $
 # Original from: Stéphane Peter <megastep@megastep.org>
 
 COMMENT=	"script generating a self-extractible .tgz from a directory"
@@ -6,7 +6,6 @@ COMMENT=	"script generating a self-extractible .tgz from a directory"
 DISTNAME=		makeself
 PKGNAME=		makeself-1.5.5
 CATEGORIES=		archivers misc
-NEED_VERSION=		1.500
 
 HOMEPAGE=		http://www.megastep.org/makeself/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/09/15 23:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2002/12/29 15:15:18 fgsch Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -21,7 +21,6 @@ PKGNAME=	rar-2.01
 SUPDISTFILES=	rarsparc.sfx rarbsd.sfx
 
 CATEGORIES=	archivers
-NEED_VERSION=	1.515
 MASTER_SITES=	${HOMEPAGE}/rar/ \
 		ftp://ftp.netlab.sk/public/rarsoft/rar/
 

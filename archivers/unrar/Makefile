@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 20:35:41 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/12/29 15:15:18 fgsch Exp $
 
 COMMENT=	"extract, list & test RAR archives"
 
 DISTNAME=	unrar-2.50
 CATEGORIES=	archivers
-NEED_VERSION=	1.515
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
 PERMIT_PACKAGE_CDROM=	"no fee"

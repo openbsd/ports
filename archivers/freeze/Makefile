@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/28 13:05:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/29 15:15:18 fgsch Exp $
 
 COMMENT=	"FREEZE / MELT compression program - often used in QNX"
 
 DISTNAME=	freeze-2.5
 CATEGORIES=	archivers
-NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/unixfreeware/archive/ \
 		ftp://ftp.warwick.ac.uk/pub/compression/
 

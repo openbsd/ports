@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2002/05/12 21:37:03 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2002/12/29 15:15:18 fgsch Exp $
 
 COMMENT=	"block-sorting file compressor, unencumbered"
 
 DISTNAME=	bzip2-1.0.2
 CATEGORIES=	archivers
-NEED_VERSION=	1.525
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE:=bzip2/v102/}
 
 HOMEPAGE=	http://sources.redhat.com/bzip2/

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/03 20:01:17 wcobb Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 15:15:18 fgsch Exp $
 
 COMMENT=	"portable lossless data compression library"
 
 DISTNAME=	ucl-1.01
 CATEGORIES=	archivers devel
-NEED_VERSION=	1.525
 
 HOMEPAGE=	http://www.oberhumer.com/opensource/ucl
 
