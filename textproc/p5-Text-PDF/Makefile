@@ -1,0 +1,24 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/02/20 02:56:31 kevlo Exp $
+
+DISTNAME=	Text-PDF-0.12
+PKGNAME=	p5-${DISTNAME}
+CATEGORIES=	textproc perl5
+NEED_VERSION=	1.356
+
+MAINTAINER=	Shell Hung <i@shellhung.org>
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR= Text
+
+PERL_MODULES=	${LOCALBASE}/libdata/perl5/site_perl/${ARCH}-openbsd
+BUILD_DEPENDS=	${PERL_MODULES}/Compress/Zlib.pm::archivers/p5-Compress-Zlib
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+CONFIGURE_STYLE= perl
+
+.include <bsd.port.mk>

@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/20 02:56:31 kevlo Exp $
+bin/pdfbklt.plx
+bin/pdfrevert.plx
+bin/pdfstamp.plx
+libdata/perl5/site_perl/Text/PDF/Array.pm
+libdata/perl5/site_perl/Text/PDF/Bool.pm
+libdata/perl5/site_perl/Text/PDF/Dict.pm
+libdata/perl5/site_perl/Text/PDF/File.pm
+libdata/perl5/site_perl/Text/PDF/Filter.pm
+libdata/perl5/site_perl/Text/PDF/Name.pm
+libdata/perl5/site_perl/Text/PDF/Number.pm
+libdata/perl5/site_perl/Text/PDF/Objind.pm
+libdata/perl5/site_perl/Text/PDF/Page.pm
+libdata/perl5/site_perl/Text/PDF/Pages.pm
+libdata/perl5/site_perl/Text/PDF/SFont.pm
+libdata/perl5/site_perl/Text/PDF/String.pm
+libdata/perl5/site_perl/Text/PDF/TTFont.pm
+libdata/perl5/site_perl/Text/PDF/TTFont0.pm
+libdata/perl5/site_perl/Text/PDF/Utils.pm
+libdata/perl5/site_perl/Text/PDF/changes
+man/man3/Text::PDF::Array.3p
+man/man3/Text::PDF::Bool.3p
+man/man3/Text::PDF::Dict.3p
+man/man3/Text::PDF::File.3p
+man/man3/Text::PDF::Filter.3p
+man/man3/Text::PDF::Name.3p
+man/man3/Text::PDF::Number.3p
+man/man3/Text::PDF::Objind.3p
+man/man3/Text::PDF::Page.3p
+man/man3/Text::PDF::Pages.3p
+man/man3/Text::PDF::SFont.3p
+man/man3/Text::PDF::String.3p
+man/man3/Text::PDF::TTFont.3p
+man/man3/Text::PDF::TTFont0.3p
+man/man3/Text::PDF::Utils.3p
+@dirrm libdata/perl5/site_perl/Text/PDF
