@@ -2,6 +2,11 @@
 
 MOZILLA_HOME=%%LOCALBASE%%/mozilla
 
+if [ -z "$MOZ_PLUGIN_PATH" ]; then
+  MOZ_PLUGIN_PATH=~/.mozilla/plugins/
+  export MOZ_PLUGIN_PATH
+fi
+
 if [ -n "$LD_LIBRARY_PATH" ]; then
   LD_LIBRARY_PATH=$MOZILLA_HOME:$LD_LIBRARY_PATH
 else
