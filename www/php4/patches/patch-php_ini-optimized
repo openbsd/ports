@@ -1,4 +1,4 @@
-$OpenBSD: patch-php_ini-optimized,v 1.1 2001/10/04 21:53:04 avsm Exp $
+$OpenBSD: patch-php_ini-optimized,v 1.2 2001/10/05 07:17:34 avsm Exp $
 --- php.ini-optimized.orig	Thu Oct  4 22:37:46 2001
 +++ php.ini-optimized	Thu Oct  4 22:38:32 2001
 @@ -249,7 +249,7 @@ upload_max_filesize = 2M		    ; Maximum 
@@ -10,10 +10,3 @@ $OpenBSD: patch-php_ini-optimized,v 1.1 2001/10/04 21:53:04 avsm Exp $
  ;from="john@doe.com"                ; Define the anonymous ftp password (your email address)
  
  
-@@ -510,4 +510,4 @@ sockets.use_system_read		=	Off	; Use the
- 
- ; Local Variables:
- ; tab-width: 4
--; End:
-\ No newline at end of file
-+; End:
