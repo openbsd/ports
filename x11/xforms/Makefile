@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2002/05/16 13:40:47 naddy Exp $
 
 COMMENT=	"GUI toolkit for X11"
 
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/$S/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/$S/
 S=		openBSD-${XFORMS_ARCH}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	xforms/${MASTER_SITE_SUBDIR}
+DIST_SUBDIR=	xforms/$S
 
 HOMEPAGE=	http://world.std.com/~xforms/
 
