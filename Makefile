@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2002/08/26 22:33:22 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2003/05/10 13:28:08 avsm Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -88,7 +88,7 @@ search:	${.CURDIR}/INDEX
 	@echo "The search target requires a keyword parameter,"
 	@echo "e.g.: \"make search key=somekeyword\""
 .else
-	@egrep -i "${key}" ${.CURDIR}/INDEX | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nL-deps:\t%s\nB-deps:\t%s\nR-deps:\t%s\nArchs:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10, $$11); }'
+	@egrep -i -- "${key}" ${.CURDIR}/INDEX | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nL-deps:\t%s\nB-deps:\t%s\nR-deps:\t%s\nArchs:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9, $$10, $$11); }'
 .endif
 
 
