@@ -1,0 +1,30 @@
+$OpenBSD: patch-kioslave_http_kcookiejar_kcookiejar_kcookieserver_cpp,v 1.1 2004/08/25 21:48:39 robert Exp $
+--- kioslave/http/kcookiejar/kcookieserver.cpp.orig	Wed Jun 11 16:13:29 2003
++++ kioslave/http/kcookiejar/kcookieserver.cpp	Tue Aug 24 00:15:39 2004
+@@ -131,7 +131,7 @@
+   if (!KCookieJar::parseURL(url, fqdn, path))
+      return false;
+ 
+-  KCookieJar::extractDomains( fqdn, domains );
++  mCookieJar->extractDomains( fqdn, domains );
+   for( KHttpCookie *cookie = mPendingCookies->first();
+        cookie != 0L;
+        cookie = mPendingCookies->next())
+@@ -557,7 +557,7 @@
+    if (KCookieJar::parseURL(url, fqdn, dummy))
+    {
+       QStringList domains;
+-      KCookieJar::extractDomains(fqdn, domains);
++      mCookieJar->extractDomains(fqdn, domains);
+       mCookieJar->setDomainAdvice(domains[0],
+                                   KCookieJar::strToAdvice(advice));
+    }
+@@ -573,7 +573,7 @@
+    if (KCookieJar::parseURL(url, fqdn, dummy))
+    {
+       QStringList domains;
+-      KCookieJar::extractDomains(fqdn, domains);
++      mCookieJar->extractDomains(fqdn, domains);
+       advice = mCookieJar->getDomainAdvice(domains[0]);
+    }
+    return KCookieJar::adviceToStr(advice);
