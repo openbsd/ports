@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2004/01/18 01:02:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.30 2004/04/24 08:04:13 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim-remote/remote-socket.h
@@ -15,8 +15,8 @@ include/gaim-remote/remote.h
 @comment lib/gaim/libjabber.la
 @comment lib/gaim/libmsn.la
 @comment lib/gaim/libnapster.la
+@comment lib/gaim/libnovell.la
 @comment lib/gaim/liboscar.la
-@comment lib/gaim/libtoc.la
 @comment lib/gaim/libyahoo.la
 @comment lib/gaim/libzephyr.la
 @comment lib/gaim/notify.la
@@ -49,6 +49,7 @@ share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/mk/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
@@ -85,6 +86,7 @@ share/pixmaps/gaim/dialogs/gaim_question.png
 share/pixmaps/gaim/dialogs/gaim_warning.png
 share/pixmaps/gaim/icons/away.png
 share/pixmaps/gaim/icons/connect.png
+share/pixmaps/gaim/icons/info.png
 share/pixmaps/gaim/icons/msgpend.png
 share/pixmaps/gaim/icons/msgunread.png
 share/pixmaps/gaim/icons/offline.png
@@ -279,12 +281,15 @@ share/pixmaps/gaim/status/default/msn.png
 share/pixmaps/gaim/status/default/na.png
 share/pixmaps/gaim/status/default/napster.png
 share/pixmaps/gaim/status/default/notauthorized.png
+share/pixmaps/gaim/status/default/novell.png
 share/pixmaps/gaim/status/default/occupied.png
 share/pixmaps/gaim/status/default/offline.png
+share/pixmaps/gaim/status/default/rendezvous.png
 share/pixmaps/gaim/status/default/secure.png
 share/pixmaps/gaim/status/default/trepia.png
 share/pixmaps/gaim/status/default/wireless.png
 share/pixmaps/gaim/status/default/yahoo.png
+share/pixmaps/gaim/status/default/zephyr.png
 share/pixmaps/gaim/tb_drag_arrow_down.xpm
 share/pixmaps/gaim/tb_drag_arrow_left.xpm
 share/pixmaps/gaim/tb_drag_arrow_right.xpm
@@ -308,66 +313,5 @@ share/sounds/gaim/send.wav
 @dirrm share/pixmaps/gaim/buttons
 @dirrm share/pixmaps/gaim
 @dirrm share/pixmaps
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sr@Latn/LC_MESSAGES
-@dirrm share/locale/sr@Latn
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hi/LC_MESSAGES
-@dirrm share/locale/hi
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/en_GB
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/locale/am/LC_MESSAGES
-@dirrm share/locale/am
-@dirrm share/locale
 @dirrm share/applications
 @dirrm include/gaim-remote

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.4 2004/01/22 08:59:32 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.5 2004/04/24 08:04:13 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -275,7 +275,7 @@ static gboolean plugin_unload(GaimPlugin *plugin)
 
 static GaimPluginInfo info =
 {
-  2,                                                /* api_version    */
+  GAIM_PLUGIN_API_VERSION,                          /* api_version    */
   GAIM_PLUGIN_STANDARD,                             /* type           */
   NULL,                                             /* ui_requirement */
   GAIM_PLUGIN_FLAG_INVISIBLE,                       /* flags          */

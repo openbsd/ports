@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.58 2004/04/13 01:34:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.59 2004/04/24 08:04:13 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-DISTNAME=	gaim-0.75
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	gaim-0.77
 CATEGORIES=	net
 
 # GPL
@@ -27,7 +26,8 @@ BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-gnutls \
+CONFIGURE_ARGS+= --disable-gevolution \
+		 --disable-gnutls \
 		 --disable-nas \
 		 --disable-nss \
 		 --disable-perl \
