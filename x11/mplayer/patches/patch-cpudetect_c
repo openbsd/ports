@@ -1,0 +1,31 @@
+$OpenBSD: patch-cpudetect_c,v 1.1 2005/03/09 16:07:29 biorn Exp $
+--- cpudetect.c.orig	Thu Oct 21 13:55:19 2004
++++ cpudetect.c	Mon Jan 10 19:47:32 2005
+@@ -182,6 +182,7 @@ void GetCpuCaps( CpuCaps *caps)
+ //		caps->hasMMX2 = 0;
+ //		caps->hasMMX = 0;
+ 
++#ifndef ARCH_X86_64
+ #ifndef HAVE_MMX
+ 	if(caps->hasMMX) mp_msg(MSGT_CPUDETECT,MSGL_WARN,"MMX supported but disabled\n");
+ 	caps->hasMMX=0;
+@@ -206,6 +207,7 @@ void GetCpuCaps( CpuCaps *caps)
+ 	if(caps->has3DNowExt) mp_msg(MSGT_CPUDETECT,MSGL_WARN,"3DNowExt supported but disabled\n");
+ 	caps->has3DNowExt=0;
+ #endif
++#endif
+ }
+ 
+ 
+@@ -320,7 +322,10 @@ LONG CALLBACK win32_sig_handler_sse(EXCE
+  */
+ static void check_os_katmai_support( void )
+ {
+-#if defined(__FreeBSD__)
++#ifdef ARCH_X86_64
++   gCpuCaps.hasSSE=1;
++   gCpuCaps.hasSSE2=1;
++#elif defined(__FreeBSD__)
+    int has_sse=0, ret;
+    size_t len=sizeof(has_sse);
+ 

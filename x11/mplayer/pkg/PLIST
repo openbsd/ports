@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/10/18 06:48:20 biorn Exp $
+@comment $OpenBSD: PLIST,v 1.19 2005/03/09 16:07:29 biorn Exp $
 bin/mencoder
 bin/mplayer
 @man man/man1/mencoder.1
@@ -6,6 +6,7 @@ bin/mplayer
 share/doc/mplayer/
 share/doc/mplayer/amiga.html
 share/doc/mplayer/aspect.html
+share/doc/mplayer/audio.html
 share/doc/mplayer/bsd.html
 share/doc/mplayer/bugreports.html
 share/doc/mplayer/bugreports_advusers.html
@@ -21,7 +22,6 @@ share/doc/mplayer/codecs.html
 share/doc/mplayer/commandline.html
 share/doc/mplayer/control.html
 share/doc/mplayer/custommatrices.html
-share/doc/mplayer/devices.html
 share/doc/mplayer/drives.html
 share/doc/mplayer/dvd.html
 share/doc/mplayer/edl.html
@@ -71,6 +71,7 @@ share/doc/mplayer/tv-input.html
 share/doc/mplayer/usage.html
 share/doc/mplayer/users-vs-dev.html
 share/doc/mplayer/vcd.html
+share/doc/mplayer/video.html
 share/doc/mplayer/windows.html
 share/examples/mplayer/
 @sample ${CONFDIR}/

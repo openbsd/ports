@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2005/01/06 21:33:28 biorn Exp $
+# $OpenBSD: Makefile,v 1.79 2005/03/09 16:07:29 biorn Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
 
 COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
 
-DISTNAME=		MPlayer-1.0pre5try2
+DISTNAME=		MPlayer-1.0pre6a
 DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11

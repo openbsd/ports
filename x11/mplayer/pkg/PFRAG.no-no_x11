@@ -1,5 +1,7 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2004/09/15 19:26:30 espie Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2005/03/09 16:07:29 biorn Exp $
 bin/gmplayer
+share/applications/
+share/applications/mplayer.desktop
 share/mplayer/
 share/mplayer/Skin/
 share/mplayer/Skin/default/
@@ -33,3 +35,5 @@ share/mplayer/Skin/default/subload.png
 share/mplayer/Skin/default/symbols.fnt
 share/mplayer/Skin/default/symbols.png
 share/mplayer/Skin/default/volume.png
+share/pixmaps/
+share/pixmaps/mplayer-desktop.xpm

@@ -1,0 +1,30 @@
+$OpenBSD: patch-mplayer_c,v 1.1 2005/03/09 16:07:29 biorn Exp $
+--- mplayer.c.orig	Tue Dec 21 13:25:58 2004
++++ mplayer.c	Wed Mar  9 16:41:20 2005
+@@ -574,7 +574,7 @@ static void exit_sighandler(int x){
+         gdb_pid = fork();
+         mp_msg(MSGT_CPLAYER, MSGL_INFO, "Forked...\n");
+         if (gdb_pid == 0) { // We are the child
+-          if (execlp("gdb", "gdb", prog_path, spid, NULL) == -1)
++          if (execlp("gdb", "gdb", prog_path, spid, (char *)NULL) == -1)
+             mp_msg(MSGT_CPLAYER, MSGL_ERR, "Couldn't start gdb\n");
+         } else if (gdb_pid < 0) 
+           mp_msg(MSGT_CPLAYER, MSGL_ERR, "Couldn't fork\n");
+@@ -998,7 +998,7 @@ int gui_no_filename=0;
+   mp_msg(MSGT_CPLAYER,MSGL_INFO, "MPlayer " VERSION " (C) 2000-2004 MPlayer Team\n");
+   /* Test for cpu capabilities (and corresponding OS support) for optimizing */
+   GetCpuCaps(&gCpuCaps);
+-#ifdef ARCH_X86
++#if defined (ARCH_X86) || defined (ARCH_X86_64)
+   mp_msg(MSGT_CPLAYER,MSGL_INFO,"CPUflags:  MMX: %d MMX2: %d 3DNow: %d 3DNow2: %d SSE: %d SSE2: %d\n",
+       gCpuCaps.hasMMX,gCpuCaps.hasMMX2,
+       gCpuCaps.has3DNow, gCpuCaps.has3DNowExt,
+@@ -3454,7 +3454,7 @@ if (stream->type==STREAMTYPE_DVDNAV && d
+     case MP_CMD_RUN : {
+ #ifndef __MINGW32__
+         if(!fork()) {
+-          execl("/bin/sh","sh","-c",cmd->args[0].v.s,NULL);
++          execl("/bin/sh","sh","-c",cmd->args[0].v.s,(char *)NULL);
+           exit(0);
+         }
+ #endif
