@@ -1,0 +1,21 @@
+$OpenBSD: patch-Programs_serial_c,v 1.1 2004/11/14 17:34:05 naddy Exp $
+--- Programs/serial.c.orig	Thu Sep 30 15:13:52 2004
++++ Programs/serial.c	Fri Nov 12 22:09:16 2004
+@@ -192,6 +192,17 @@ serialInitializeAttributes (struct termi
+ #ifdef IEXTEN
+   attributes->c_lflag = IEXTEN;
+ #endif /* IEXTEN */
++
++#ifdef _POSIX_VDISABLE
++  if (_POSIX_VDISABLE) {
++    int i;
++    for (i=0; i<NCCS; ++i) {
++      if (i == VTIME) continue;
++      if (i == VMIN) continue;
++      attributes->c_cc[i] = _POSIX_VDISABLE;
++    }
++  }
++#endif /* _POSIX_VDISABLE */
+ }
+ 
+ static int

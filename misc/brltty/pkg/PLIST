@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/11/14 17:34:06 naddy Exp $
 bin/brltty
 bin/brltty-config
 include/brltty/
 include/brltty/api.h
+include/brltty/api_protocol.h
 include/brltty/brldefs.h
 lib/brltty/
 lib/brltty/brltty-brl.lst
@@ -22,6 +23,7 @@ lib/brltty/libbrlttybmd.so
 lib/brltty/libbrlttybmn.so
 lib/brltty/libbrlttybpm.so
 lib/brltty/libbrlttybts.so
+lib/brltty/libbrlttybtt.so
 lib/brltty/libbrlttybva.so
 lib/brltty/libbrlttybvd.so
 lib/brltty/libbrlttybvh.so
@@ -36,7 +38,7 @@ lib/brltty/libbrlttysfv.so
 lib/brltty/libbrlttysgs.so
 lib/libbrlapi.a
 lib/libbrlapi.so
-lib/libbrlapi.so.0.2.0
+lib/libbrlapi.so.0.3.0
 @man man/man1/brltty.1
 @man man/man3/brlapi_closeConnection.3
 @man man/man3/brlapi_connection.3
@@ -52,7 +54,8 @@ lib/libbrlapi.so.0.2.0
 @man man/man3/brlapi_getDriverName.3
 @man man/man3/brlapi_getRaw.3
 @man man/man3/brlapi_getTty.3
-@man man/man3/brlapi_ignoreKeys.3
+@man man/man3/brlapi_ignoreKeyRange.3
+@man man/man3/brlapi_ignoreKeySet.3
 @man man/man3/brlapi_info.3
 @man man/man3/brlapi_initializeConnection.3
 @man man/man3/brlapi_keys.3
@@ -71,7 +74,8 @@ lib/libbrlapi.so.0.2.0
 @man man/man3/brlapi_settings_t.3
 @man man/man3/brlapi_strerror.3
 @man man/man3/brlapi_tty.3
-@man man/man3/brlapi_unignoreKeys.3
+@man man/man3/brlapi_unignoreKeyRange.3
+@man man/man3/brlapi_unignoreKeySet.3
 @man man/man3/brlapi_write.3
 @man man/man3/brlapi_writeBrl.3
 @man man/man3/brlapi_writeBrlDots.3
@@ -112,6 +116,7 @@ share/brltty/brltty-pm-ib_80.hlp
 share/brltty/brltty-pm.conf
 share/brltty/brltty-pm.hlp
 share/brltty/brltty-ts.hlp
+share/brltty/brltty-tt.hlp
 share/brltty/brltty-va.hlp
 share/brltty/brltty-vd.hlp
 share/brltty/brltty-vh.hlp
@@ -135,6 +140,7 @@ share/brltty/text.fi2.tbl
 share/brltty/text.fr-cbifs.tbl
 share/brltty/text.fr-iso01.tbl
 share/brltty/text.fr.tbl
+share/brltty/text.identity.tbl
 share/brltty/text.it.tbl
 share/brltty/text.nabcc.tbl
 share/brltty/text.no-h.tbl

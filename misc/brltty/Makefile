@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2004/09/15 17:54:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/14 17:34:05 naddy Exp $
 
 COMMENT=	"access software for a blind person using a braille terminal"
 
 SHARED_ONLY=	Yes
-DISTNAME=	brltty-3.5
+DISTNAME=	brltty-3.6
 CATEGORIES=	misc
 HOMEPAGE=	http://mielke.cc/brltty
 MASTER_SITES=	${HOMEPAGE}/releases/
@@ -20,7 +20,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
 		--with-data-directory=${LOCALBASE}/share/brltty \
-		--without-flite
+		--without-flite --without-x
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
 NO_REGRESS=	Yes
