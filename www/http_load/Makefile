@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2000/09/29 10:03:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/29 15:13:24 avsm Exp $
 
 DISTNAME=		http_load_17sep00
 PKGNAME=		http_load-17sep00
-CATEGORIES=     	www
+CATEGORIES=     	www benchmarks
 NEED_VERSION=		1.336
 
 HOMEPAGE=		http://www.acme.com/software/http_load/
