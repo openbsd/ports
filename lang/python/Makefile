@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2001/11/06 17:40:31 shell Exp $
+# $OpenBSD: Makefile,v 1.48 2001/11/16 22:18:27 jasoni Exp $
 # Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
@@ -49,7 +49,9 @@ SETUP_LOCAL+=	Setup.tk
 
 CONFIGURE_STYLE= autoconf dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --with-fpectl 
+CONFIGURE_ARGS+= --with-fpectl
+
+REGRESS_TARGET=	test
 
 # Threads support is compiled in by default only on i386 for now.
 .if ${FLAVOR:L:Mthreads}
