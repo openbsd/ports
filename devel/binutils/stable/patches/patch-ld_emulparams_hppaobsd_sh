@@ -1,0 +1,28 @@
+$OpenBSD: patch-ld_emulparams_hppaobsd_sh,v 1.3 2003/06/05 04:25:58 brad Exp $
+--- ld/emulparams/hppaobsd.sh.orig	Mon Jul  8 22:42:13 2002
++++ ld/emulparams/hppaobsd.sh	Thu Apr 24 16:21:02 2003
+@@ -1,5 +1,22 @@
+-. ${srcdir}/emulparams/hppanbsd.sh
+-
++SCRIPT_NAME=elf
++ELFSIZE=32
++OUTPUT_FORMAT="elf32-hppa"
+ TEXT_START_ADDR=0x1000
+ TARGET_PAGE_SIZE=0x1000
+ MAXPAGESIZE=0x1000
++ARCH=hppa
++MACHINE=hppa1.1		# We use 1.1 specific features.
++NOP=0x08000240
++ENTRY="__start"
++OTHER_READONLY_SECTIONS="
++  .PARISC.unwind ${RELOCATING-0} : { *(.PARISC.unwind) }"
++DATA_START_SYMBOLS='PROVIDE ($global$ = .);'
++DATA_PLT=
++PAD_RO=
++RODATA_PADSIZE=${MAXPAGESIZE}
++RODATA_ALIGN=". = ALIGN(${RODATA_PADSIZE}) + (. & (${RODATA_PADSIZE} - 1))"
++PAD_GOT=
++PAD_PLT=
++GENERATE_SHLIB_SCRIPT=yes
++TEMPLATE_NAME=elf32
++EXTRA_EM_FILE=hppaelf
