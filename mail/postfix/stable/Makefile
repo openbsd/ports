@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2001/05/05 22:12:41 jakob Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/27 06:39:33 jakob Exp $
 
-DISTNAME=	postfix-20010228-pl02
-PKGNAME=	postfix-20010228.pl02
+DISTNAME=	postfix-20010228-pl03
+PKGNAME=	postfix-20010228.pl03
 
 MASTER_SITE_SUBDIR=	official
 
