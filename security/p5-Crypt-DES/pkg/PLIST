@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/19 04:35:55 danh Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Crypt/DES.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/DES/DES.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/DES/DES.so
+man/man3/Crypt::DES.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Crypt/DES
