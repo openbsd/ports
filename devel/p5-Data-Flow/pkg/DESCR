@@ -1,0 +1,10 @@
+The module Data::Flow provides its services via objects.
+The objects may be obtained by the usual
+
+         $request = new Data::Flow $recipes;
+
+paradigm. The argument $recipes is a hash reference, which
+provides the rules for request processing. The objects
+support two methods, set() and get(). The first one is
+used to provide input data for processing, the second one
+to obtain the output.

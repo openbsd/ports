@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/09 06:23:54 kevlo Exp $
+libdata/perl5/site_perl/Data/Flow.pm
+libdata/perl5/site_perl/auto/Data/Flow/autosplit.ix
+man/man3/Data::Flow.3p
+@dirrm libdata/perl5/site_perl/auto/Data/Flow
