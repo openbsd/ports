@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zhdict,v 1.3 2000/04/21 15:09:54 espie Exp $
+@comment $OpenBSD: PLIST-zhdict,v 1.4 2001/08/18 13:25:42 espie Exp $
 @comment no checksum
 zh_CN/sys/QianMa.dic
 @comment no checksum
@@ -25,7 +25,7 @@ zh_TW/sys/cns_wd.dic
 zh_TW/sys/full.con
 @comment no checksum
 zh_TW/sys/full.conR
-@exec /usr/local/lib/wnn/install-script
+@exec ${WNNBASE}/lib/wnn/install-script
 @unexec echo "usr info may exist: finish removing %D/zh_CN & %D/zh_TW manually"
 @dirrm zh_TW/sys
 @dirrm zh_CN/sys

@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.37 2001/04/23 23:19:02 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2001/08/18 13:25:42 espie Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -29,7 +29,8 @@ PKGNAME-xwnmo=	Wnn-xwnmo-4.2
 PKGNAME-data=	Wnn-data-4.2
 
 WNNDICDIR=/var/dict/Wnn
-WNNBASE=${PREFIX}
+WNNBASE=${LOCALBASE}
+SUBST_VARS=WNNBASE
 
 .if defined(PACKAGING)
 SUBPACKAGE?=
