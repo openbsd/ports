@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.58 2003/08/18 14:22:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.59 2003/09/03 17:35:47 pvalchev Exp $
 
-NOT_FOR_ARCHS=	vax m68k hppa
+NOT_FOR_ARCHS=	vax m68k hppa powerpc
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
