@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/26 19:19:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/01 09:02:11 pvalchev Exp $
 
 COMMENT=	"interpreted language for scientific computing"
 
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE= simple
+NO_REGRESS=	Yes
 Y_DIR=		${PREFIX}/share/yorick
 
 WRKDIST=	${WRKDIR}/yorick-${VERSION}
