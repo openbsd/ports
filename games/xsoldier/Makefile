@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/03/21 20:57:08 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/09/16 08:18:11 pvalchev Exp $
 
 COMMENT=	"shooting game for X11"
 
 DISTNAME=	xsoldier-0.96
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	games x11
-NEED_VERSION=	1.515
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes

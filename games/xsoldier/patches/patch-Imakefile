@@ -1,5 +1,5 @@
 --- Imakefile.orig	Fri Feb 28 08:48:57 1997
-+++ Imakefile	Mon Apr 17 12:07:29 2000
++++ Imakefile	Mon Sep 16 02:01:05 2002
 @@ -6,58 +6,58 @@
  
  
@@ -16,12 +16,13 @@
 +/* Install Directory                                                       */
 +/* You can't install without write permission of these. => Unplayable. (^^;*/
 +PIXMAPDIR	= ${PREFIX}/lib/X11/xsoldier
-+SCOREDIR	= ${PREFIX}/lib/X11/xsoldier
++SCOREDIR	= /var/games
 +BINDIR		= ${PREFIX}/bin
  
 -/* スコアファイル名．SCOREDIR 以下に置かれます．			   */
+-SCOREFILE	= .scorefile
 +/* Score File Name. It's under SCOREDIR.                                   */
- SCOREFILE	= .scorefile
++SCOREFILE	= xsoldier.scores
  
  
  /* ----------------------------------------------------------------------- */
@@ -80,12 +81,22 @@
  /*									   */
  /* ----------------------------------------------------------------------- */
  
-@@ -85,7 +85,7 @@
+@@ -85,9 +85,9 @@ LOCAL_LDFLAGS	= $(XPMLIBFLAGS)
  
  OBJS = $(SRCS:.c=.o)
  
 -ComplexProgramTarget(xsoldier)
 +ComplexProgramTargetNoMan(xsoldier)
  
- install:: install.pixmap install.score install.bin
+-install:: install.pixmap install.score install.bin
++install:: install.pixmap install.bin
  
+ update:: install.pixmap install.bin
+ 	@echo "install update . done"
+@@ -109,5 +109,5 @@ install.pixmap::
+ install.bin::
+ 	@if [ -d $(BINDIR) ]; then set +x; \
+         else (set -x; $(MKDIRHIER) $(BINDIR)); fi
+-	$(INSTALL) -c -m 4755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
++	$(INSTALL) -c -m 2755 -g games $(PROGRAM) $(BINDIR)/$(PROGRAM)
+ 	@echo "install bin . done"

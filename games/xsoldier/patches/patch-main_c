@@ -1,6 +1,7 @@
---- main.c	Fri Feb 28 08:50:07 1997
-+++ main.c.new	Wed Dec 15 19:35:37 1999
-@@ -129,14 +129,14 @@
+$OpenBSD: patch-main_c,v 1.2 2002/09/16 08:18:11 pvalchev Exp $
+--- main.c.orig	Fri Feb 28 08:50:07 1997
++++ main.c	Mon Sep 16 01:57:49 2002
+@@ -129,14 +129,14 @@ static void arginit(int argc, char *argv
          argv0++;
      else
          argv0 = argv[0];
