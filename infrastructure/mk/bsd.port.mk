@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.334 2000/09/22 02:20:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.335 2000/09/23 12:36:39 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -632,12 +632,9 @@ PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
 PATCH_ARGS?=	-d ${WRKDIST} --forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
-.if defined(BATCH)
-PATCH_ARGS+=		--batch
-PATCH_DIST_ARGS+=	--batch
-.endif
 
-.if defined(PATCH_CHECK_ONLY)
+PATCH_CHECK_ONLY?=No
+.if ${PATCH_CHECK_ONLY:L} != "yes"
 PATCH_ARGS+=	-C
 PATCH_DIST_ARGS+=	-C
 .endif
@@ -1461,7 +1458,9 @@ ${_EXTRACT_COOKIE}:
 .if target(pre-patch)
 ${_PREPATCH_COOKIE}:
 	@cd ${.CURDIR} && exec ${MAKE} pre-patch
+.  if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} ${_PREPATCH_COOKIE}
+.  endif
 .endif
 
 
@@ -1499,8 +1498,9 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(post-distpatch)
 	@cd ${.CURDIR} && exec ${MAKE} post-distpatch
 .endif
+.if ${PATCH_CHECK_ONLY:L} != "yes"
 	@${_MAKE_COOKIE} ${_DISTPATCH_COOKIE}
-
+.endif
 
 # The real patch
 
@@ -1551,10 +1551,12 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(post-patch)
 	@cd ${.CURDIR} && exec ${MAKE} post-patch
 .endif
-.if !defined(PATCH_CHECK_ONLY) && ${CONFIGURE_STYLE:L:Mautoconf}
+.if ${PATCH_CHECK_ONLY:L} != "yes"
+.  if ${CONFIGURE_STYLE:L:Mautoconf}
 	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-.endif
+.  endif
 	@${_MAKE_COOKIE} ${_PATCH_COOKIE}
+.endif
 
 
 # The real configure
