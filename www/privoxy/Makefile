@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/29 09:41:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/15 17:15:35 naddy Exp $
 
 COMMENT=	"web proxy with advanced filtering capabilities"
 
@@ -31,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	@cd ${WRKDIST} && PATH=${PORTPATH} autoheader
+	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoheader
 
 # make install is broken
 do-install:
