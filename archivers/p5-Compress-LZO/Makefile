@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/07 03:41:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/10 20:28:01 danh Exp $
 
 DISTNAME=	perl-lzo-1.00
 PKGNAME=	p5-Cmprs-LZO-1.00
@@ -6,7 +6,7 @@ CATEGORIES=     archivers
 NEED_VERSION=	1.310
 HOMEPAGE=	http://wildsau.idv.uni-linz.ac.at/mfx/lzo.html
 
-MAINTAINER=	danh@nfol.com
+MAINTAINER=	danh@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

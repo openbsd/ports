@@ -1,5 +1,5 @@
 # 
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/26 01:34:27 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/10 20:28:03 danh Exp $
 #
 
 DISTNAME=		webalizer-2.00-12-src
@@ -8,7 +8,7 @@ EXTRACT_SUFX=		.tgz
 CATEGORIES=     	www
 HOMEPAGE=		http://www.mrunix.net/webalizer/
 
-MAINTAINER=		danh@nfol.com
+MAINTAINER=		danh@openbsd.org
 
 MASTER_SITES=		ftp://ftp.mrunix.net/pub/webalizer/pre-release/
 

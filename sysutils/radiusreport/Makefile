@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/12 17:13:47 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/10 20:28:03 danh Exp $
 
 DISTNAME=		radiusreport-0.3b6
 EXTRACT_SUFX=		.tar
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.tibus.net/pgregg/projects/radiusreport/
-MAINTAINER=		danh@nfol.com
+MAINTAINER=		danh@openbsd.org
 
 MASTER_SITES=		${HOMEPAGE}
 

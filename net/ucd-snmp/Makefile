@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/29 21:20:03 jakob Exp $
+# $OpenBSD: Makefile,v 1.14 2000/07/10 20:28:03 danh Exp $
 
 DISTNAME=		ucd-snmp-4.1.2
 CATEGORIES=     	net
 NEED_VERSION=		1.302
 HOMEPAGE=		http://ucd-snmp.ucdavis.edu/
-MAINTAINER=		danh@nfol.com
+MAINTAINER=		danh@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 

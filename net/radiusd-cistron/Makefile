@@ -1,12 +1,10 @@
-#
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/26 01:44:10 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.2 2000/07/10 20:28:02 danh Exp $
 
 DISTNAME=		radiusd-cistron-1.6.3-stable
 PKGNAME=		radiusd-cistron-1.6.3
 CATEGORIES=     	net
 HOMEPAGE=		http://miquels.www.cistron.nl/radius/
-MAINTAINER=		danh@nfol.com
+MAINTAINER=		danh@openbsd.org
 
 MASTER_SITES=		ftp://ftp.cistron.nl/pub/people/miquels/radius/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2000/07/03 00:39:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/10 20:28:04 danh Exp $
 
 DISTNAME=		qvwm-1.1.8
 CATEGORIES=     	x11
 NEED_VERSION=		1.310
 HOMEPAGE=		http://www.qvwm.org/
-MAINTAINER=		danh@nfol.com
+MAINTAINER=		danh@openbsd.org
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
