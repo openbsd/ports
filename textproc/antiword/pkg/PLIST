@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/04/07 20:00:49 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/08/10 11:10:54 espie Exp $
 bin/antiword
-man/man1/antiword.1
+@man man/man1/antiword.1
+share/antiword/
 share/antiword/8859-1.txt
 share/antiword/8859-10.txt
 share/antiword/8859-13.txt
@@ -34,9 +35,8 @@ share/antiword/fontnames.russian
 share/antiword/koi8-r.txt
 share/antiword/koi8-u.txt
 share/antiword/roman.txt
+share/doc/antiword/
 share/doc/antiword/FAQ
 share/doc/antiword/Netscape
 share/doc/antiword/QandA
 share/doc/antiword/ReadMe
-@dirrm share/doc/antiword
-@dirrm share/antiword
