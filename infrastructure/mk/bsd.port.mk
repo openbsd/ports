@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.136 1999/11/21 16:18:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.137 1999/11/22 20:34:14 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1081,31 +1081,14 @@ MANLANG?=	""	# english only by default
 
 .for lang in ${MANLANG}
 
-.for sect in 1 2 3 4 5 6 7 8 9
+.for sect in 1 2 3 4 5 6 7 8 9 L N
 .if defined(MAN${sect})
-_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/man/${lang}/man${sect}/%}
+_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/man/${lang}/man${sect:L}/%}
 .endif
 .if defined(CAT${sect})
-_CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect}/%}
+_CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .endif
 .endfor
-
-.if defined(MANL)
-_MANPAGES+=	${MANL:S%^%${MANLPREFIX}/man/${lang}/manl/%}
-.endif
-
-.if defined(MANN)
-_MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
-.endif
-
-.if defined(CATL)
-_CATPAGES+=	${CATL:S%^%${CATLPREFIX}/man/${lang}/catl/%}
-.endif
-
-.if defined(CATN)
-_CATPAGES+=	${CATN:S%^%${CATNPREFIX}/man/${lang}/catn/%}
-.endif
-
 .endfor
 
 .MAIN: all
