@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 20:16:09 sturm Exp $
+${P5SITE}/Net/SFTP/
+${P5SITE}/Net/SFTP.pm
+${P5SITE}/Net/SFTP/Attributes.pm
+${P5SITE}/Net/SFTP/Buffer.pm
+${P5SITE}/Net/SFTP/Constants.pm
+${P5SITE}/Net/SFTP/Util.pm
+@man man/man3p/Net::SFTP.3p
+@man man/man3p/Net::SFTP::Attributes.3p
+@man man/man3p/Net::SFTP::Buffer.3p
+@man man/man3p/Net::SFTP::Constants.3p
+@man man/man3p/Net::SFTP::Util.3p

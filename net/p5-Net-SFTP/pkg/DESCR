@@ -1,0 +1,6 @@
+Net::SFTP is a pure-Perl implementation of the Secure File
+Transfer Protocol (SFTP)--file transfer built on top of the
+SSH protocol. Net::SFTP uses Net::SSH::Perl to build a
+secure, encrypted tunnel through which files can be transferred
+and managed. It provides a subset of the commands listed in
+the SSH File Transfer Protocol IETF draft.
