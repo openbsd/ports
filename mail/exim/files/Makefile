@@ -52,8 +52,11 @@
 #
 # EXIM_GID=42   # the "mail" group
 #
-# Consequently, it is not possible to have the # character present in any
-# setting, but I can't think of any cases where this would be wanted.
+# However, with some versions of "make" this works only if there is no white
+# space between the end of the setting and the #, so it is probably best
+# avoided. However, a consequence of this facility is that it is not possible
+# to have the # character present in any setting, but I can't think of any
+# cases where this would be wanted.
 ###############################################################################
 
 
@@ -264,7 +267,7 @@ EXIM_PERL=perl.o
 # port, start off a header line, and then just pump junk at it for ever. The
 # message_size_limit option would also catch this, but it may not be set.
 
-# HEADER_MAXSIZE=(1024*1024)
+# HEADER_MAXSIZE="(1024*1024)"
 
 
 # The mode of the input directory: The input directory is where messages are
