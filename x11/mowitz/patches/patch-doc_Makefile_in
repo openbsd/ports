@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2003/02/03 03:30:12 margarida Exp $
+--- doc/Makefile.in.orig	Wed Jan 29 07:47:40 2003
++++ doc/Makefile.in	Wed Jan 29 07:48:06 2003
+@@ -121,7 +121,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-docdir = $(prefix)/doc/Mowitz
++docdir = $(prefix)/share/doc/Mowitz
+ 
+ doc_DATA = Filesel.html \
+ 	ListTree.HISTORY ListTree.README ListTree.gif \
