@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
---- ltconfig.orig	Tue Nov 14 13:17:22 2000
-+++ ltconfig	Mon Feb 12 16:16:51 2001
+$OpenBSD: patch-ltconfig,v 1.2 2001/08/07 13:29:32 wilfried Exp $
+--- ltconfig.orig	Sat May 19 18:44:49 2001
++++ ltconfig	Tue Aug  7 14:55:46 2001
 @@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
@@ -27,7 +27,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
 +      *)
 +	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
 +	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+	if [ "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != "" ]; then
++	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +	  export_dynamic_flag_spec='${wl}-E'
 +	fi
 +      ;;
@@ -35,18 +35,23 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/04/02 15:13:05 wilfried Exp $
      ;;
  
    os2*)
-@@ -1955,13 +1969,10 @@ netbsd*)
+@@ -1955,9 +1969,16 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
 -  if test "$with_gnu_ld" = yes; then
 -    need_lib_prefix=no
 -    need_version=no
--  fi
++  need_lib_prefix=no
++  need_version=no
++  file_magic_cmd=/usr/bin/file
++  file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++    shlibpath_overrides_runpath=no
++  else
++    deplibs_check_method='file_magic OpenBSD.* shared library'
++    shlibpath_overrides_runpath=yes
+   fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-   shlibpath_var=LD_LIBRARY_PATH
-+  deplibs_check_method='pass_all'
-   ;;
- 
- os2*)
