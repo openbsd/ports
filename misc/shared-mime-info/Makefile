@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/14 14:26:57 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2003/03/29 14:35:40 couderc Exp $
 
 COMMENT=		"Shared mime database for desktops"
 
-VERSION=		0.9
+VERSION=		0.10
 DISTNAME=		shared-mime-info-${VERSION}
 CATEGORIES=		misc
 
