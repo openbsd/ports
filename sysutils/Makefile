@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2001/06/16 17:07:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.35 2001/08/14 20:34:09 lebel Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
      SUBDIR += LPRng
      SUBDIR += apc-upsd
      SUBDIR += cfengine
-     SUBDIR += clockspeed
      SUBDIR += contool
      SUBDIR += daemontools
      SUBDIR += gkrellm
@@ -21,7 +20,6 @@
      SUBDIR += rtty
      SUBDIR += safecat
      SUBDIR += sdd
-     SUBDIR += service-config
      SUBDIR += setquota
      SUBDIR += skill
      SUBDIR += socket
