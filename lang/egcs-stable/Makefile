@@ -1,10 +1,14 @@
+<<<<<<< Makefile
+# $OpenBSD: Makefile,v 1.16 1999/03/09 17:22:51 espie Exp $
+=======
 # OpenBSD makefile for:	egcs
 # Version required:	release 1.1.1, preparing for 1.1.2
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.15 1999/03/09 17:12:05 espie Exp $
+# $OpenBSD: Makefile,v 1.16 1999/03/09 17:22:51 espie Exp $
 #
+>>>>>>> 1.12
 
 # This is a configuration file for egcs, stable release.
 
@@ -18,9 +22,13 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
 
+<<<<<<< Makefile
+NEED_VERSION=	1.67
+=======
 # These are the only archs that don't exhibit problems right out of the
 # box right now. see egcs-snapshot for credits
 # If you use another platform, go to egcs-snapshot instead
+>>>>>>> 1.12
 
 ONLY_FOR_ARCHS = i386 sparc m68k alpha
 
