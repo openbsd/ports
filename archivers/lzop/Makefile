@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2003/06/06 18:55:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/02/24 22:12:07 naddy Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 COMMENT=	"fast file compressor similar to gzip"
 
 DISTNAME=	lzop-1.01
 CATEGORIES=	archivers
-HOMEPAGE=	http://www.oberhumer.com/opensource/lzop/
+HOMEPAGE=	http://www.lzop.org/
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 
