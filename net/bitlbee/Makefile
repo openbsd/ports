@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/28 07:38:29 sturm Exp $
-COMMENT=		"IRC-proxy to connect to icq, aol, msn and jabber"
+# $OpenBSD: Makefile,v 1.4 2003/10/08 22:16:49 naddy Exp $
+
+COMMENT=		"IRC proxy to connect to ICQ, AOL, MSN and Jabber"
 
 DISTNAME=		bitlbee-0.80
 CATEGORIES=		net
+PKGNAME=		${DISTNAME}p1
 
-HOMEPAGE=		http://www.lintux.cx/bitlbee.html
+HOMEPAGE=		http://bitlbee.org
 
 MAINTAINER=		Han Boetes <han@linux-mandrake.com>
 
@@ -14,7 +16,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.lintux.cx/downloads/
+
+MASTER_SITES=		http://get.bitlbee.org/src/
+MASTER_SITES0=		http://get.bitlbee.org/patches/
+PATCHFILES=		yahoo.diff:0
+PATCH_DIST_STRIP=	-p1
 
 DB_DIR?=		/var/bitlbee
 DOCS=			${FILESDIR}/user-guide.html
