@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2004/01/16 23:31:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2004/03/02 22:56:54 hshoexer Exp $
 #
 
     SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += html2wml
     SUBDIR += ish
+    SUBDIR += libdvd
     SUBDIR += libdvdcss
     SUBDIR += libiconv
     SUBDIR += mimepp
