@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/03/05 14:09:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/04/03 02:25:06 espie Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -59,8 +59,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-
-MTREE_FILE=${PORTSDIR}/x11/kde/libs2/files/mtree
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/apps/kthememgr/Themes

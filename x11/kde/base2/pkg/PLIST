@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2002/04/02 16:55:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2002/04/03 02:25:06 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2285,7 +2285,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/templates/.source/emptydir
 @dirrm share/templates/.source
 @dirrm share/templates
-@dirrm share/sounds
 @dirrm share/services/useragentstrings
 @dirrm share/services/searchproviders
 @dirrm share/locale/l10n/za
@@ -2364,13 +2363,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/C
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/locale
 @dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
@@ -2400,10 +2393,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
 @dirrm share/apps/kwin/pics
-@dirrm share/apps/kwin/icewm-themes
-@dirrm share/apps/kwin
-@dirrm share/apps/kthememgr/Themes
-@dirrm share/apps/kthememgr
 @dirrm share/apps/ksysguard/pics
 @dirrm share/apps/ksysguard
 @dirrm share/apps/ksplash/pics/locolor
@@ -2423,10 +2412,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/konqueror/dirtree/services
 @dirrm share/apps/konqueror/dirtree/remote/web
 @dirrm share/apps/konqueror/dirtree/remote/ftp
-@dirrm share/apps/konqueror/dirtree/remote
-@dirrm share/apps/konqueror/dirtree
 @dirrm share/apps/konqueror/about
-@dirrm share/apps/konqueror
 @dirrm share/apps/konqsidebartng/virtual_folders/services
 @dirrm share/apps/konqsidebartng/virtual_folders/remote/web
 @dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
@@ -2465,8 +2451,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kicker/icons/hicolor
 @dirrm share/apps/kicker/icons
 @dirrm share/apps/kicker/extensions
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khelpcenter/plugins/Tutorials
 @dirrm share/apps/khelpcenter/plugins
 @dirrm share/apps/khelpcenter
@@ -2479,9 +2463,7 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm share/apps/kdm/pics/users
 @dirrm share/apps/kdm/pics
 @dirrm share/apps/kdm
-@dirrm share/apps/kdisplay/color-schemes
 @dirrm share/apps/kdisplay/app-defaults
-@dirrm share/apps/kdisplay
 @dirrm share/apps/kdewizard/pics
 @dirrm share/apps/kdewizard
 @dirrm share/apps/kdesktop/pics

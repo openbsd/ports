@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2001/12/31 12:30:54 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.15 2002/04/03 02:25:06 espie Exp $
 lib/kde2/libgsthumbnail.so.0.0
 lib/kde2/libhtmlthumbnail.so.0.0
 lib/kde2/libimagethumbnail.so.0.0
@@ -144,4 +144,4 @@ lib/libtaskbarapplet.so.1.0
 lib/libtaskbarextension.so.1.0
 lib/libtaskmanager.so.1.0
 DYNLIBDIR(%D/lib)
-NEWDYNLIBDIR(%D/lib/kde2)
+DYNLIBDIR(%D/lib/kde2)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/02 16:45:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/04/03 02:25:07 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -168,12 +168,6 @@ share/icons/hicolor/48x48/apps/kview.png
 share/icons/locolor/16x16/apps/kcoloredit.png
 share/icons/locolor/32x32/apps/kcoloredit.png
 %%SHARED%%
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/kview
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler

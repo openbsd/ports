@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/02 16:55:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/04/03 02:25:07 espie Exp $
 bin/amor
 bin/kmoon
 bin/kodo
@@ -518,12 +518,6 @@ share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/ktux.png
 share/icons/locolor/32x32/apps/ktux.png
 %%SHARED%%
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/kworldclock
 @dirrm share/doc/HTML/en/kteatime
 @dirrm share/doc/HTML/en/kscore
@@ -539,8 +533,6 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/apps/kodo
 @dirrm share/apps/kmoon/pics
 @dirrm share/apps/kmoon
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/amor/worm
 @dirrm share/apps/amor/tao
 @dirrm share/apps/amor/static

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2002/04/02 23:51:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2002/04/03 02:25:07 espie Exp $
 @pkgcfl arts-*
 bin/artsc-config
 bin/artscat
@@ -2502,6 +2502,8 @@ share/servicetypes/kscan.desktop
 share/servicetypes/ktexteditor.desktop
 share/servicetypes/kurifilterplugin.desktop
 %%SHARED%%
+@exec mkdir -p %D/share/sounds
+@dirrm share/sounds
 @dirrm share/servicetypes
 @dirrm share/services/kded
 @dirrm share/services
@@ -2514,17 +2516,28 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
+@exec mkdir -p %D/share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@exec mkdir -p %D/share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/64x64/mimetypes
 @dirrm share/icons/hicolor/64x64/filesystems
 @dirrm share/icons/hicolor/64x64
 @dirrm share/icons/hicolor/48x48/mimetypes
 @dirrm share/icons/hicolor/48x48/filesystems
 @dirrm share/icons/hicolor/48x48/devices
+@exec mkdir -p %D/share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48/actions
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/mimetypes
 @dirrm share/icons/hicolor/32x32/filesystems
 @dirrm share/icons/hicolor/32x32/devices
+@exec mkdir -p %D/share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32/actions/kde
 @dirrm share/icons/hicolor/32x32/actions
 @dirrm share/icons/hicolor/32x32
@@ -2545,6 +2558,12 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/config/ui
 @dirrm share/config/colors
 @dirrm share/config
+@exec mkdir -p %D/share/apps/kwin/icewm-themes
+@dirrm share/apps/kwin/icewm-themes
+@dirrm share/apps/kwin
+@exec mkdir -p %D/share/apps/kthememgr/Themes
+@dirrm share/apps/kthememgr/Themes
+@dirrm share/apps/kthememgr
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kstyle/pixmaps/riscos
 @dirrm share/apps/kstyle/pixmaps
@@ -2678,6 +2697,9 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/applnk/Utilities
 @exec mkdir -p %D/share/applnk/Toys
 @dirrm share/applnk/Toys
+@exec mkdir -p %D/share/applnk/System/ScreenSavers
+@dirrm share/applnk/System/ScreenSavers
+@dirrm share/applnk/System
 @exec mkdir -p %D/share/applnk/Settings/System/ScreenSavers
 @dirrm share/applnk/Settings/System/ScreenSavers
 @dirrm share/applnk/Settings/System

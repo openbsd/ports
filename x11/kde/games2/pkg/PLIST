@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/04/02 16:45:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2002/04/03 02:25:07 espie Exp $
 bin/kabalone
 bin/kasteroids
 bin/katomic
@@ -1889,12 +1889,6 @@ share/icons/locolor/32x32/apps/kjezz.png
 share/icons/locolor/32x32/apps/kspaceduel.png
 share/icons/locolor/32x32/apps/lskat.png
 %%SHARED%%
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
 @dirrm share/doc/HTML/en/ktuberling

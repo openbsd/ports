@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2002/03/30 00:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2002/04/03 02:25:06 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 COMMENT-plugins=	"X11 toolkit, netscape plugins"
@@ -84,7 +84,5 @@ post-install:
 	rm -rf ${PREFIX}/share/config/kdm
 	${INSTALL_PROGRAM} ${WRKSRC}/kdm/kfrontend/genkdmconf ${PREFIX}/libexec
 	${INSTALL_DATA} ${LAMEDIR}/libmp3lame.so.0.0 ${PREFIX}/lib
-
-MTREE_FILE=${PORTSDIR}/x11/kde/libs2/files/mtree
 
 .include <bsd.port.mk>

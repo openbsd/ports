@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2002/04/02 23:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2002/04/03 02:25:06 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -82,11 +82,6 @@ PERMIT_PACKAGE_FTP=	Yes
 # really `own' the dir. Creating it in kdelibs is the easiest way.
 
 EXTRA_DIRECTORIES= \
-	share/apps/konqueror/dirtree/remote \
-	share/apps/kicker/applets \
-	share/apps/kdisplay/color-schemes \
-	share/apps/kdesktop/programs \
-	share/apps/kab/pics \
 	share/applnk/.hidden \
 	share/applnk/Games/Arcade \
 	share/applnk/Games/Board \
@@ -100,8 +95,21 @@ EXTRA_DIRECTORIES= \
 	share/applnk/Settings/Network \
 	share/applnk/Settings/Personalization \
 	share/applnk/Settings/System/ScreenSavers \
+	share/applnk/System/ScreenSavers \
 	share/applnk/Toys \
-	share/applnk/Utilities
+	share/applnk/Utilities \
+	share/apps/kab/pics \
+	share/apps/kdesktop/programs \
+	share/apps/kdisplay/color-schemes \
+	share/apps/kicker/applets \
+	share/apps/konqueror/dirtree/remote \
+	share/apps/kthememgr/Themes \
+	share/apps/kwin/icewm-themes \
+	share/icons/hicolor/32x32/apps \
+	share/icons/hicolor/48x48/apps \
+	share/icons/locolor/16x16/apps \
+	share/icons/locolor/32x32/apps \
+	share/sounds
 
 post-install:
 .for i in ${EXTRA_DIRECTORIES}
