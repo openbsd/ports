@@ -1,45 +1,118 @@
-$OpenBSD: patch-ltmain.sh,v 1.4 2001/09/21 17:31:55 shell Exp $
---- ltmain.sh.orig	Sat Sep 22 00:01:04 2001
-+++ ltmain.sh	Sat Sep 22 00:04:54 2001
-@@ -1031,12 +1031,28 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
-+	  *-*-openbsd*)
-+	    # Do not include libc due to us having libc/libc_r.
-+	    continue
-+	    ;;
-+	  esac
-+	elif test "$arg" = "-lc_r"; then
-+	  case "$host" in
-+	  *-*-openbsd*)
-+	    # Do not include libc_r directly, use -pthread flag.
-+	    continue
-+	    ;;
- 	  esac
+$OpenBSD: patch-ltmain.sh,v 1.5 2001/10/27 08:39:13 shell Exp $
+--- ltmain.sh.orig	Sat Oct 27 16:20:59 2001
++++ ltmain.sh	Sat Oct 27 16:20:32 2001
+@@ -745,6 +745,7 @@
+     linker_flags=
+     dllsearchpath=
+     lib_search_path=`pwd`
++    inst_prefix_dir=
+ 
+     avoid_version=no
+     dlfiles=
+@@ -875,6 +876,11 @@
+ 	  prev=
+ 	  continue
+ 	  ;;
++	inst_prefix)
++	  inst_prefix_dir="$arg"
++	  prev=
++	  continue
++	  ;;
+ 	release)
+ 	  release="-$arg"
+ 	  prev=
+@@ -975,6 +981,10 @@
  	fi
- 	deplibs="$deplibs $arg"
  	continue
  	;;
- 
-+      -?thread)
-+	deplibs="$deplibs $arg"
++      -inst-prefix-dir)
++	prev=inst_prefix
 +	continue
 +	;;
+ 
+       # The native IRIX linker understands -LANG:*, -LIST:* and -LNO:*
+       # so, if we see these flags be careful not to treat them like -L
+@@ -1068,6 +1078,17 @@
+ 
+       -o) prev=output ;;
+ 
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
++	;;
 +
-       -module)
- 	module=yes
+       -release)
+ 	prev=release
  	continue
-@@ -2405,7 +2421,7 @@
- 	    # Rhapsody C library is in the System framework
- 	    deplibs="$deplibs -framework System"
- 	    ;;
--	  *-*-netbsd*)
-+	  *-*-netbsd* | *-*-openbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
- 	  *)
-@@ -4412,40 +4428,6 @@
+@@ -1845,6 +1866,7 @@
+ 
+ 	  if test "$linkmode" = prog || test "$mode" = relink; then
+ 	    add_shlibpath=
++	    add_prefix_dir=
+ 	    add_dir=
+ 	    add=
+ 	    # Finalize command for both is simple: just hardcode it.
+@@ -1865,10 +1887,20 @@
+ 	      add="-l$name"
+ 	    fi
+ 
++	    if test -n "$inst_prefix_dir"; then
++	      case "$libdir" in
++	      [\\/]*)
++		add_prefix_dir="-L$inst_prefix_dir$libdir"
++	      ;;
++	      esac
++	    fi
++
+ 	    if test "$linkmode" = prog; then
+ 	      test -n "$add_dir" && finalize_deplibs="$add_dir $finalize_deplibs"
++	      test -n "$add_prefix_dir" && finalize_deplibs="$finalize_deplibs $add_prefix_dir"
+ 	      test -n "$add" && finalize_deplibs="$add $finalize_deplibs"
+ 	    else
++	      test -n "$add_prefix_dir" && deplibs="$deplibs $add_prefix_dir"
+ 	      test -n "$add_dir" && deplibs="$add_dir $deplibs"
+ 	      test -n "$add" && deplibs="$add $deplibs"
+ 	    fi
+@@ -3823,7 +3855,7 @@
+ 	fi
+       done
+       # Quote the link command for shipping.
+-      relink_command="cd `pwd`; $SHELL $0 --mode=relink $libtool_args"
++      relink_command="cd `pwd`; $SHELL $0 --mode=relink $libtool_args @inst_prefix_dir@"
+       relink_command=`$echo "X$relink_command" | $Xsed -e "$sed_quote_subst"`
+ 
+       # Only create the output if not a dry run.
+@@ -4124,6 +4156,23 @@
+ 	dir="$dir$objdir"
+ 
+ 	if test -n "$relink_command"; then
++	  # Determine the prefix the user has applied to our future dir.
++	  inst_prefix_dir=`$echo "$destdir" | sed "s%$libdir\$%%"`
++
++	  # Don't allow the user to place us outside of our expected
++	  # location b/c this prevents finding dependent libraries that
++	  # are installed to the same prefix.
++	  if test "$inst_prefix_dir" = "$destdir"; then
++	    $echo "$modename: error: cannot install \`$file' to a directory not ending in $libdir" 1>&2
++	    exit 1
++	  fi
++
++	  if test -n "$inst_prefix_dir"; then
++	    # Stick the inst_prefix_dir data into the link command.
++	    relink_command=`$echo "$relink_command" | sed "s%@inst_prefix_dir@%-inst-prefix-dir $inst_prefix_dir%"`
++	  else
++	    relink_command=`$echo "$relink_command" | sed "s%@inst_prefix_dir@%%"`
++	  fi
+ 	  $echo "$modename: warning: relinking \`$file'" 1>&2
+ 	  $show "$relink_command"
+ 	  if $run eval "$relink_command"; then :
+@@ -4412,40 +4461,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2001/09/21 17:31:55 shell Exp $
-lib/libexslt.so.4.0
-lib/libxslt.so.1.4
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.8 2001/10/27 08:39:13 shell Exp $
+lib/libexslt.so.5.0
+lib/libxslt.so.1.5
+DYNLIBDIR(%D/lib)
