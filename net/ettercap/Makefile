@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2001/12/13 07:37:09 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2001/12/14 20:33:07 obecian Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"multi-purpose sniffer/interceptor/logger"
 
-VER=		0.6.3
+VER=		0.6.3.1
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
-NEED_VERSION=	1.460
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ettercap
 
