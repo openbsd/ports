@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/02 12:48:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/27 07:16:44 alek Exp $
 
 COMMENT=	"High-level language for numerical computations"
 VERSION=	2.0.16
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c g2c m ncurses readline stdc++
 
 MASTER_SITES=		${MASTER_SITE_GNU:=octave/}
 

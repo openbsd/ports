@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/10/08 10:37:24 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2004/12/27 07:16:44 alek Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m z
 
 GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/ \
@@ -51,6 +52,7 @@ REGRESS_IS_INTERACTIVE=	Yes
 REGRESS_FLAGS=		DISPLAY=${DISPLAY}
 USE_X11=		Yes
 USE_MOTIF=		openmotif
+WANTLIB+=		ICE SM X11 Xext Xmu Xp Xpm Xt 
 .  if ${FLAVOR:L:Mxmhtml}
 LIB_DEPENDS+=		XmHTML.1::www/xmhtml
 CONFIGURE_ARGS+=	--enable-xmhtml

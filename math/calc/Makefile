@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/02/25 01:35:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/27 07:16:44 alek Exp $
 #
 
 COMMENT=	"C-style arbitrary precision calculator"
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		c curses readline
 
 HOMEPAGE=	http://www.isthe.com/chongo/tech/comp/calc
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>

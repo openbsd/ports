@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/12/21 11:36:43 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2004/12/27 07:16:44 alek Exp $
 
 
 COMMENT=	"graph drawing software"
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_CDROM=	No
 # As long as the licence is shown, everything is fine
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
+WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c fontconfig freetype m z
 
 MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
 

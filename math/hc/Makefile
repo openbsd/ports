@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/22 01:32:43 margarida Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/27 07:16:44 alek Exp $
 
 COMMENT=	"multi-radix integer desk calculator"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 EXTRACT_SUFX=	.tgz
 
