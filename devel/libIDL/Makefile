@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/09/15 02:13:39 turan Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/02 00:10:11 brad Exp $
 # Original from: mah@everybody.org
 
-DISTNAME=		libIDL-0.6.3
-CATEGORIES=     	devel
+BROKEN=		"Sources no longer available"
 
-MAINTAINER=		mah@everybody.org
+DISTNAME=	libIDL-0.6.3
+CATEGORIES=	devel
+MASTER_SITES=	http://www.rpi.edu/~veliaa/libIDL/
 
-MASTER_SITES=		http://www.rpi.edu/~veliaa/libIDL/
+MAINTAINER=	mah@everybody.org
 
-LIB_DEPENDS=		glib.1.2:${PORTSDIR}/devel/glib
+LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib
 
-GNU_CONFIGURE=		yes (assumed if USE_AUTOCONF is yes)
-USE_AUTOCONF=		yes
+USE_AUTOCONF=	yes
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
