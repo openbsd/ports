@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.56 2004/08/10 21:01:01 espie Exp $
+# $OpenBSD: make-plist,v 1.57 2004/08/11 09:40:17 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -576,9 +576,16 @@ sub grab_all_lists
 
 sub create_object
 {
-	my ($type, $short) = @_;
+	my ($type, $short, $item) = @_;
 
 	if ($type eq "directory") {
+		if (defined $item) {
+			if ($item->isa("OpenBSD::PackingElement::Mandir")) {
+			    return OpenBSD::PackingElement::Mandir->new($short);
+			} elsif ($item->isa("OpenBSD::PackingElement::Fontdir")) {
+			    return OpenBSD::PackingElement::Fontdir->new($short);
+			}
+		}
 		return OpenBSD::PackingElement::Dir->new($short);
 	} elsif ($type eq "manpage") {
 		return OpenBSD::PackingElement::Manpage->new($short);
@@ -636,7 +643,7 @@ sub handle_file
 	    print STDERR "\t$short\n";
 	}
 
-	my $o = create_object($type, $short);
+	my $o = create_object($type, $short, $item);
 	return unless defined $o;
 	my $s = $o->fullstring();
 	if ($foundcomments->{$s}) {
@@ -788,31 +795,37 @@ while (my ($k, $v) = each %$foundcomments) {
 		$plist->tofile($dir.basename($plist->{filename}));
 	}
 
+	my $something_changed = 0;
 	for my $plist (@l) {
 		my $orig = $plist->{original};
 		if ($plist->{nonempty}) {
 			if (defined $orig) {
 				if (compare($dir.basename($plist->{filename}), $orig->{filename}) != 0) {
 					print $plist->{filename}, " changed\n";
+					$something_changed = 1;
 					$plist->{changed} = 1;
 				}
 			} else {
 				print $plist->{filename}, " is new\n";
+				$something_changed = 1;
 				$plist->{changed} = 1;
 			}
 		} else {
 			if (defined $orig) {
 				print $plist->{filename}, " empty\n";
+				$something_changed = 1;
 				$plist->{changed} = 1;
 			}
 		}
 	}
 
-	for my $plist (@l) {
-		my $orig = $plist->{original};
-		if (defined $orig) {
-			die $orig->{filename}.".orig present" 
-			    if -e $orig->{filename}.".orig";
+	if ($something_changed) {
+		for my $plist (@l) {
+			my $orig = $plist->{original};
+			if (defined $orig) {
+				die $orig->{filename}.".orig present" 
+				    if -e $orig->{filename}.".orig";
+			}
 		}
 	}
 	for my $plist (@l) {
