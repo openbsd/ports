@@ -1,13 +1,14 @@
-$OpenBSD: patch-ld_emulparams_hppaobsd_sh,v 1.5 2003/07/16 19:17:22 brad Exp $
---- ld/emulparams/hppaobsd.sh.orig	Mon Jul  8 22:42:13 2002
-+++ ld/emulparams/hppaobsd.sh	Wed Jul  9 16:08:44 2003
+$OpenBSD: patch-ld_emulparams_hppaobsd_sh,v 1.6 2004/02/19 05:51:13 brad Exp $
+--- ld/emulparams/hppaobsd.sh.orig	2002-07-08 22:42:13.000000000 -0400
++++ ld/emulparams/hppaobsd.sh	2004-02-19 00:45:04.000000000 -0500
 @@ -1,5 +1,14 @@
  . ${srcdir}/emulparams/hppanbsd.sh
++MAXPAGESIZE=0x1000
 +. ${srcdir}/emulparams/elf_obsd.sh
  
  TEXT_START_ADDR=0x1000
  TARGET_PAGE_SIZE=0x1000
- MAXPAGESIZE=0x1000
+-MAXPAGESIZE=0x1000
 +ENTRY="__start"
 +
 +unset START
