@@ -1,31 +1,26 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/11 00:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2002/06/14 09:57:08 jsyn Exp $
 
-     SUBDIR+= libs2
+     SUBDIR+= artwork2
      SUBDIR+= base2
      SUBDIR+= games2
-     SUBDIR+= toys2
-     SUBDIR+= office2
-     SUBDIR+= kdoc2
-     SUBDIR+= libs2-doc
      SUBDIR+= graphics2
-     SUBDIR+= network2
+     SUBDIR+= kdoc2
+     SUBDIR+= libs2
+     SUBDIR+= libs2-doc
      SUBDIR+= mosfet-liquid
-     SUBDIR+= artwork2
+     SUBDIR+= network2
+     SUBDIR+= office2
+     SUBDIR+= toys2
 
 # these will obviously conflict with kde2
-     SUBDIR+= arts3
-     SUBDIR+= libs3
-     SUBDIR+= base3
      SUBDIR+= addons3
+     SUBDIR+= anime-sitters
+     SUBDIR+= arts3
      SUBDIR+= artwork3
+     SUBDIR+= base3
      SUBDIR+= edu3
      SUBDIR+= games3
      SUBDIR+= graphics3
-     SUBDIR+= multimedia3
-     SUBDIR+= network3
-     SUBDIR+= toys3
-     SUBDIR+= utils3
-     SUBDIR+= office3
      SUBDIR+= i18n3,af
      SUBDIR+= i18n3,ar
      SUBDIR+= i18n3,az
@@ -74,8 +69,13 @@
      SUBDIR+= i18n3,zh_CN
      SUBDIR+= i18n3,zh_TW
      SUBDIR+= i18n3,zu
-     SUBDIR+= anime-sitters
      SUBDIR+= kdoc3
+     SUBDIR+= libs3
      SUBDIR+= libs3-doc
+     SUBDIR+= multimedia3
+     SUBDIR+= network3
+     SUBDIR+= office3  
+     SUBDIR+= toys3   
+     SUBDIR+= utils3
 
 .include <bsd.port.subdir.mk>
