@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/23 04:57:47 margarida Exp $
 
 COMMENT=		"a reminder/task program aimed at developers"
 
-VERSION=		0.1.14
+VERSION=		0.1.16
 DISTNAME=		devtodo-${VERSION}
 CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://devtodo.sourceforge.net/
 
-MASTER_SITES=		http://devtodo.sourceforge.net/?0.1.14/
+MASTER_SITES=		http://devtodo.sourceforge.net/?0.1.16/
 
 MAINTAINER=		Margarida Sequeira <margarida@openbsd.org>
 
@@ -20,12 +20,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 
+EXAMPLES=		doc/scripts.* doc/todorc.example contrib/*
+DOCS=			README QuickStart 
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/devtodo
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/devtodo
-	cd ${WRKSRC} && ${INSTALL_DATA} README QuickStart \
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} \
   	  ${PREFIX}/share/doc/devtodo
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} scripts.sh scripts.tcsh todorc.example \
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} \
 	  ${PREFIX}/share/examples/devtodo
 
 .include <bsd.port.mk>

@@ -1,20 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/28 01:41:11 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/12/23 04:57:47 margarida Exp $
 bin/devtodo
 bin/tda
 bin/tdd
 bin/tde
+bin/tdl
 bin/tdr
 bin/todo
-man/man1/devtodo.1.gz
-man/man1/tda.1.gz
-man/man1/tdd.1.gz
-man/man1/tde.1.gz
-man/man1/tdr.1.gz
-man/man1/todo.1.gz
+man/man1/devtodo.1
+man/man1/tda.1
+man/man1/tdd.1
+man/man1/tde.1
+man/man1/tdl.1
+man/man1/tdr.1
+man/man1/todo.1
 share/doc/devtodo/QuickStart
 share/doc/devtodo/README
+share/examples/devtodo/changelog2html
+share/examples/devtodo/changelog2todo
 share/examples/devtodo/scripts.sh
 share/examples/devtodo/scripts.tcsh
+share/examples/devtodo/tdrec
+share/examples/devtodo/todo-nodone-html.xslt
+share/examples/devtodo/todo2html-2.xslt
+share/examples/devtodo/todo2html.xslt
+share/examples/devtodo/todo2pdf.README
+share/examples/devtodo/todo2pdf.sh
+share/examples/devtodo/todo2pdf.xslt
 share/examples/devtodo/todorc.example
 @dirrm share/examples/devtodo
 @dirrm share/doc/devtodo
