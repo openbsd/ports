@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/16 23:06:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/08/16 08:56:40 camield Exp $
 
 DISTNAME=	qmail-1.03
 CATEGORIES=	mail
@@ -20,7 +20,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-PREFIX=		/var/qmail
+# Override prefix here or on the 'make' commandline.
+# Using the prefix option of pkg_add will not work, because
+# the prefix is hardwired in the qmail installer.
+PREFIX?=	/var/qmail
 ALL_TARGET=	it man
 INSTALL_TARGET=	setup check
 IS_INTERACTIVE= "if qmail users/groups do not exist yet"
@@ -40,13 +43,15 @@ pre-build:
 pre-install:
 	# preserve installer with correct prefix so it can be used by the
 	# the package later (we create the queue directories with it)
-	@mv ${WRKSRC}/install ${WRKSRC}/install.nonfake
+	mv ${WRKSRC}/install ${WRKSRC}/install.nonfake
 	# rebuild install utilities with fake prefix
-	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
+	echo ${PREFIX} > ${WRKSRC}/conf-qmail
+	# needed when using a different prefix 
+	mkdir -p ${PREFIX}
 
 post-install:
 	# restore original installer
-	@mv ${WRKSRC}/install.nonfake ${WRKSRC}/install
+	mv ${WRKSRC}/install.nonfake ${WRKSRC}/install
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/setup 
 	${INSTALL_PROGRAM} ${SETUPBINARIES} ${PREFIX}/setup
 	${INSTALL_SCRIPT} ${SETUPSCRIPTS} ${PREFIX}/setup
