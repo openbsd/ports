@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/04/02 01:57:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2001/04/17 16:56:37 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt2
@@ -31,8 +31,9 @@ MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
 		-system-zlib -no-thread -sm -no-g++-exceptions \
-		-kde
+		-kde -v
 #CONFIGURE_ARGS+=-static -debug
+#CONFIGURE_ARGS+=-debug
 
 # For XFree 4
 #CONFIGURE_ARGS+=-xft
@@ -41,12 +42,12 @@ CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}" KDEDIR="${LOCALBASE}"
 MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
-FLAVORS=	gl
-FLAVOR?=
-
 MODULES=	tools kernel widgets dialogs \
 		iconview workspace network canvas table xml
 EXTRA_SAMPLES=
+
+MODULES+= opengl
+EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 
 
 LIB_DEPENDS=
@@ -54,13 +55,9 @@ LIB_DEPENDS=
 .if ${SUBPACKAGE} != "-html"
 LIB_DEPENDS+=	png.1.::graphics/png \
 		mng.1.::graphics/libmng
-.  if ${FLAVOR:L} == "gl"
-LIB_DEPENDS+= 	GL.3.2::graphics/Mesa
-MODULES+= opengl
-EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
-.else
-CONFIGURE_ARGS+=-no-opengl
-.  endif
+.endif
+.if ${SUBPACKAGE} == "-examples"
+LIB_DEPENDS+=	qt.2.::x11/qt2
 .endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt2
@@ -86,7 +83,9 @@ post-patch:
 
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
+	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
 	@cd ${WRKSRC} && cp -R tutorial tutorial-src
+	@find ${WRKSRC}/tutorial-src -name '*.orig' |xargs rm
 
 pre-build:
 	@echo ""
@@ -143,7 +142,6 @@ do-install:
 	cp -R ${WRKSRC}/doc/html/* ${QT_DOC}/html
 
 PKGNAME=		qt2-${VERSION}
-PKGNAME-examples-gl=	qt2-examples-${VERSION}-gl
 PKGNAME-examples=	qt2-examples-${VERSION}
 PKGNAME-html=		qt2-html-${VERSION}
 

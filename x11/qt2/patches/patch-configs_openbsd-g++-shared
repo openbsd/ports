@@ -1,23 +1,21 @@
---- configs/openbsd-g++-shared.orig	Wed Nov  8 18:06:37 2000
-+++ configs/openbsd-g++-shared	Tue Nov 21 10:32:18 2000
-@@ -1,13 +1,13 @@
+--- configs/openbsd-g++-shared.orig	Tue Apr 17 15:28:49 2001
++++ configs/openbsd-g++-shared	Tue Apr 17 16:01:44 2001
+@@ -1,11 +1,11 @@
  # Compiling
  INTERFACE_DECL_PATH 	= .
 -SYSCONF_CXX		= g++
+-SYSCONF_CC		= gcc
 +SYSCONF_CXX		= $(SYS_CXX)
- SYSCONF_CC		= gcc
++SYSCONF_CC		= $(SYS_CC)
  DASHCROSS		= 
  
  # Compiling with support libraries
 -SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
 +SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include -I/usr/local/include
  SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
--SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
-+SYSCONF_CXXFLAGS_OPENGL	= -I/usr/local/include -I/usr/X11R6/include
+ SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
  
- # Compiling YACC output
- SYSCONF_CXXFLAGS_YACC     = -Wno-unused -Wno-parentheses
-@@ -19,30 +19,30 @@ SYSCONF_RPATH_OPENGL	= 
+@@ -19,31 +19,31 @@ SYSCONF_RPATH_OPENGL	= 
  
  # Linking with support libraries
  # X11
@@ -30,7 +28,7 @@
  SYSCONF_LIBS_QT_OPENGL	= 
  # OpenGL
 -SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
-+SYSCONF_LFLAGS_OPENGL	= -L$(QTDIR)/lib -L/usr/local/lib -L/usr/X11R6/lib
++SYSCONF_LFLAGS_OPENGL	= -pthread -L/usr/X11R6/lib
  SYSCONF_LIBS_OPENGL	= -lGLU -lGL -lXmu
  # Yacc
  SYSCONF_LIBS_YACC	= 
@@ -51,31 +49,35 @@
 -SYSCONF_CFLAGS_THREAD	= 
 -SYSCONF_CXXFLAGS_THREAD	= 
 -SYSCONF_LFLAGS_THREAD	= 
+-# SYSCONF_LIBS_THREAD	= ???
 +SYSCONF_CFLAGS_THREAD	= -pthread
 +SYSCONF_CXXFLAGS_THREAD	= -pthread
 +SYSCONF_LFLAGS_THREAD	= -pthread
- # SYSCONF_LIBS_THREAD	= ???
++SYSCONF_LIBS_THREAD	= -pthread
  
  # Meta-object compiler
+ SYSCONF_MOC		= $(QTDIR)/bin/moc
 @@ -56,9 +56,9 @@ SYSCONF_UIC		= $(QTDIR)/bin/uic
  #   - Place target in $(DESTDIR) - which has a trailing /
  #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
  #
 -SYSCONF_LINK_SHLIB	= ld
-+SYSCONF_LINK_SHLIB	= $(SYS_CXX) -shared -fPIC
 -SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
 -SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) -Bshareable $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) `lorder /usr/lib/c++rt0.o $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
++SYSCONF_LINK_SHLIB	= $(SYS_CXX) -shared -fPIC
 +SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).`expr $(VER_MIN) \* 10 + $(VER_PATCH)`
 +SYSCONF_LINK_LIB_SHARED	= $(SYSCONF_LINK_SHLIB) $(LFLAGS) -o $(DESTDIR)$(SYSCONF_LINK_TARGET_SHARED) $(OBJECTS) $(OBJMOC) $(LIBS)
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a
-@@ -70,7 +70,7 @@ SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDI
+@@ -70,8 +70,8 @@ SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDI
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) ; \
  				 ranlib $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC)
  # Compiling application source
 -SYSCONF_CXXFLAGS	= -O2
+-SYSCONF_CFLAGS		= -O2
 +SYSCONF_CXXFLAGS	= $(SYS_CXXFLAGS)
- SYSCONF_CFLAGS		= -O2
++SYSCONF_CFLAGS		= $(SYS_CFLAGS)
  # Default link type (static linking is still be used where required)
  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_SHARED)
+ SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_SHARED)
