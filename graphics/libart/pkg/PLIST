@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/10 11:30:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/11 19:03:07 espie Exp $
+@pkgcfl gnome-libs-*
 bin/libart-config
 include/libart_lgpl/art_affine.h
 include/libart_lgpl/art_alphagamma.h
