@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 19:43:50 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/02 03:56:56 kevlo Exp $
 
 COMMENT=	"manage sets of integers"
 
-DISTNAME=	Set-IntSpan-1.07
+DISTNAME=	Set-IntSpan-1.08
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	math perl5
 
