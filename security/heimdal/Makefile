@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/17 13:21:37 todd Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/17 21:05:22 pvalchev Exp $
+
+COMES_WITH=	3.0
 
 COMMENT=	a Kerberos 5 implementation
 
