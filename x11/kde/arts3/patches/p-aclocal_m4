@@ -1,4 +1,4 @@
-$OpenBSD: p-aclocal_m4,v 1.1.1.1 2002/03/23 14:57:58 espie Exp $
+$OpenBSD: p-aclocal_m4,v 1.2 2002/04/21 13:48:11 espie Exp $
 --- aclocal.m4.orig	Tue Mar 19 01:31:41 2002
 +++ aclocal.m4	Wed Mar 20 02:31:41 2002
 @@ -6075,8 +6075,8 @@ nto-qnx)
@@ -28,7 +28,7 @@ $OpenBSD: p-aclocal_m4,v 1.1.1.1 2002/03/23 14:57:58 espie Exp $
 +    _LT_AC_TAGVAR(hardcode_direct, $1)=yes
 +    _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
 +
-+    _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++    _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
 +    _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
 +    _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-R$libdir'
 +    _LT_AC_TAGVAR(remove_libsearchpath, $1)='yes'
