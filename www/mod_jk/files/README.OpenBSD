@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.2 2004/10/12 20:53:06 naddy Exp $
+$OpenBSD: README.OpenBSD,v 1.3 2005/03/05 01:04:11 kurt Exp $
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector
@@ -11,7 +11,7 @@ resides outsite of /var/www. All Apache DSO modules have this problem.
 
 mod_jk AJP13 Basic Setup:
 
-Steps 1-6 cover how to get mod_jk configured to work with a single Tomcat
+Steps 1-5 cover how to get mod_jk configured to work with a single Tomcat
 server (local or remote) where Tomcat serves both the static and dynamic
 content for the default installed Tomcat contexts. If this is your first time
 using mod_jk, start here and get this working first. This section assumes
@@ -19,35 +19,29 @@ that you have installed Tomcat and can access the examples context directly
 (i.e. http://your.tomcat.host:8080/examples/ for Tomcat 4 or 
 http://your.tomcat.host:8080/jsp-examples/ for Tomcat 5).
 
+Sample configuration files will be installed to /var/www/conf if you don't
+already have them.
+
 1) Enable the module by executing /usr/local/sbin/mod_jk-enable with root
 privileges (using sudo).
 
-2) Copy /usr/local/share/examples/mod_jk/workers.properties to 
-/var/www/conf/jk/workers.properties (create /var/www/conf/jk/ if necessary).
-If Tomcat is installed on another machine, edit and change the 
-`worker.ajp13.host' line to the hostname or IP address of the location of 
-Tomcat.
+2) If Tomcat is installed on another machine, edit the sample 
+/var/www/conf/workers.properies file and change the `worker.ajp13w.host'
+line to the hostname or IP address of the location of Tomcat.
 
-3) Copy /usr/local/share/examples/mod_jk/mod_jk.conf to
-/var/www/conf/jk/mod_jk.conf.
+3) Edit /var/www/conf/httpd.conf and add the following line at the end of
+the file to include the sample mod_jk.conf file:
 
-4) Edit /var/www/conf/httpd.conf and add the following line at the end of
-the file:
+   Include /var/www/conf/mod_jk.conf
 
-   Include /var/www/conf/jk/mod_jk.conf
+4) Stop and start Apache using apachectl(1)
 
-5) Stop and start Apache using apachectl(1)
+5) Test mod_jk by accessing the url http://your.apache.host/examples/ for 
+Tomcat 4 or http://your.apache.host/jsp-examples/ for Tomcat 5.
 
-6) Test mod_jk by accessing the url http://your.apache.host/examples/ for 
-Tomcat 4 or http://your.apache.host/jsp-examples/.
-
-mod_jk Resources:
-
-The mod_jk documentation is installed in /usr/local/share/doc/mod_jk. Example
-files for this README are located in /usr/local/share/examples/mod_jk.
 On-line documentation is here:
 
-http://jakarta.apache.org/tomcat/tomcat-4.1-doc/jk2/
+http://jakarta.apache.org/tomcat/connectors-doc/index.html
 
 The mailing list archives for tomcat-user can be found at:
 
