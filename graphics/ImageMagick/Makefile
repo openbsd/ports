@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2004/11/30 01:06:33 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2005/01/09 11:06:38 alek Exp $
 
 COMMENT=	"image processing tools"
 
 VER=		6.0.0
 DASHVER=	2
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=imagemagick/}
 
@@ -13,13 +13,13 @@ HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 
 LIB_DEPENDS+=	bz2.10::archivers/bzip2 \
 		jbig.1.2::graphics/jbigkit \
-		mpeg.13::graphics/mpeg-lib \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff \
 		xml2.6::textproc/libxml \
 		lcms::graphics/lcms \
-		exif::graphics/libexif \
 		jasper::graphics/jasper
+RUN_DEPENDS	::graphics/mpeg-lib
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
