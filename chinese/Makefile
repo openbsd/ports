@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/01/03 21:41:40 joey Exp $
+# $OpenBSD: Makefile,v 1.3 2000/01/18 10:14:53 kevlo Exp $
 # $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
 #
 
@@ -7,7 +7,7 @@
 #    SUBDIR += big5fonts
      SUBDIR += c2t
 #    SUBDIR += celvis
-#    SUBDIR += cless
+     SUBDIR += cless
 #    SUBDIR += cnsfonts
 #    SUBDIR += cxterm
 #    SUBDIR += gb2ps
