@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_ss_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- lib/ss/Makefile.in.orig	2003-11-17 01:05:46.000000000 +0100
++++ lib/ss/Makefile.in	2003-11-17 01:05:55.000000000 +0100
+@@ -29,7 +29,7 @@ ELF_SO_VERSION = 2
+ ELF_IMAGE = libss
+ ELF_MYDIR = ss
+ ELF_INSTALL_DIR = $(root_libdir)
+-ELF_OTHER_LIBS = -L../.. -lcom_err
++ELF_OTHER_LIBS = -L../.. -lext2fs_com_err
+ 
+ BSDLIB_VERSION = 1.0
+ BSDLIB_IMAGE = libss

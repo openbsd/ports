@@ -1,0 +1,18 @@
+$OpenBSD: patch-misc_fsck_8_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- misc/fsck.8.in.orig	2004-02-20 20:42:54.000000000 +0100
++++ misc/fsck.8.in	2004-02-20 20:43:50.000000000 +0100
+@@ -2,11 +2,11 @@
+ .\" Copyright 1993, 1994, 1995 by Theodore Ts'o.  All Rights Reserved.
+ .\" This file may be copied under the terms of the GNU Public License.
+ .\" 
+-.TH FSCK 8 "@E2FSPROGS_MONTH@ @E2FSPROGS_YEAR@" "E2fsprogs version @E2FSPROGS_VERSION@"
++.TH PFSCK 8 "@E2FSPROGS_MONTH@ @E2FSPROGS_YEAR@" "E2fsprogs version @E2FSPROGS_VERSION@"
+ .SH NAME
+-fsck \- check and repair a Linux file system
++pfsck \- check and repair a Linux file system
+ .SH SYNOPSIS
+-.B fsck
++.B pfsck
+ [
+ .B \-sACVRTNP
+ ]

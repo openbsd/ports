@@ -1,0 +1,34 @@
+$OpenBSD: patch-lib_Makefile_elf-lib,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- lib/Makefile.elf-lib.orig	2002-02-24 22:03:59.000000000 +0100
++++ lib/Makefile.elf-lib	2003-11-24 11:46:07.000000000 +0100
+@@ -23,14 +23,14 @@ ELF_SONAME = $(ELF_IMAGE).so.$(ELF_SO_VE
+ 
+ image:		$(ELF_LIB)
+ 
+-$(ELF_LIB): $(OBJS)
++$(ELF_LIB) $(ELF_IMAGE).so: $(OBJS)
+ 	(cd elfshared; $(CC) --shared -o $(ELF_LIB) -Wl,-soname,$(ELF_SONAME) \
+ 		$(OBJS) $(ELF_OTHER_LIBS))
+ 	$(MV) elfshared/$(ELF_LIB) .
+ 	$(RM) -f ../$(ELF_LIB) ../$(ELF_IMAGE).so ../$(ELF_SONAME)
+ 	$(LN) $(ELF_LIB) ../$(ELF_LIB)
+ 	$(LN) ../$(ELF_LIB) ../$(ELF_IMAGE).so
+-	$(LN) ../$(ELF_LIB) ../$(ELF_SONAME)
++#	$(LN) ../$(ELF_LIB) ../$(ELF_SONAME)
+ 
+ installdirs-elf-lib::
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(ELF_INSTALL_DIR) \
+@@ -40,12 +40,9 @@ installdirs:: installdirs-elf-lib
+ 
+ install-shlibs install:: $(ELF_LIB) installdirs-elf-lib
+ 	$(INSTALL_PROGRAM) $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
++	$(INSTALL_DATA) $(ELF_IMAGE).a $(DESTDIR)$(ELF_INSTALL_DIR)/
+ 	$(STRIP) --strip-debug \
+ 		$(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
+-	$(LN_S) -f $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_SONAME)
+-	$(LN_S) -f $(ELF_INSTALL_DIR)/$(ELF_SONAME) \
+-		$(DESTDIR)$(libdir)/$(ELF_IMAGE).so
+-	-$(LDCONFIG)
+ 
+ uninstall-shlibs uninstall::
+ 	$(RM) -f $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB) \

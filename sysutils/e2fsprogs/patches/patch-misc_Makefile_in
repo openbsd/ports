@@ -1,0 +1,28 @@
+$OpenBSD: patch-misc_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- misc/Makefile.in.orig	2002-02-24 22:04:00.000000000 +0100
++++ misc/Makefile.in	2003-11-16 18:04:21.000000000 +0100
+@@ -39,13 +39,13 @@ SRCS=	$(srcdir)/tune2fs.c $(srcdir)/mklo
+ 		$(srcdir)/uuidgen.c $(srcdir)/fstype.c
+ 
+ LIBS= $(LIBEXT2FS) $(LIBCOM_ERR) 
+-DEPLIBS= $(LIBEXT2FS) $(LIBCOM_ERR) 
++DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBCOM_ERR) 
+ 
+ STATIC_LIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
+ STATIC_DEPLIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
+ 
+ LIBS_E2P= $(LIBEXT2FS) $(LIBE2P) $(LIBCOM_ERR) 
+-DEPLIBS_E2P= $(LIBEXT2FS) $(LIBE2P) $(LIBCOM_ERR) 
++DEPLIBS_E2P= $(DEPLIBEXT2FS) $(DEPLIBE2P) $(DEPLIBCOM_ERR) 
+ 
+ .c.o:
+ 	$(CC) -c $(ALL_CFLAGS) $< -o $@
+@@ -76,7 +76,7 @@ check:: base_device
+ mklost+found: $(MKLPF_OBJS)
+ 	$(CC) $(ALL_LDFLAGS) -o mklost+found $(MKLPF_OBJS)
+ 
+-mke2fs: $(MKE2FS_OBJS) $(DEPLIBS) $(LIBE2P) $(DEPLIBUUID)
++mke2fs: $(MKE2FS_OBJS) $(DEPLIBS) $(DEPLIBE2P) $(DEPLIBUUID)
+ 	$(CC) $(ALL_LDFLAGS) -o mke2fs $(MKE2FS_OBJS) $(LIBS) $(LIBE2P) $(LIBUUID)
+ 
+ mke2fs.static: $(MKE2FS_OBJS) $(STATIC_DEPLIBS) $(STATIC_LIBE2P) $(DEPSTATIC_LIBUUID)

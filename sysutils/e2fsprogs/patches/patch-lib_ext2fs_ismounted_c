@@ -1,0 +1,105 @@
+$OpenBSD: patch-lib_ext2fs_ismounted_c,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- lib/ext2fs/ismounted.c.orig	2002-02-24 22:03:59.000000000 +0100
++++ lib/ext2fs/ismounted.c	2003-11-16 17:07:37.000000000 +0100
+@@ -146,50 +146,6 @@ exit:
+ 	return retval;
+ }
+ 
+-/*
+- * Check to see if we're dealing with the swap device.
+- */
+-static int is_swap_device(const char *file)
+-{
+-	FILE		*f;
+-	char		buf[1024], *cp;
+-	dev_t		file_dev;
+-	struct stat	st_buf;
+-	int		ret = 0;
+-
+-	file_dev = 0;
+-#ifndef __GNU__ /* The GNU hurd is broken with respect to stat devices */
+-	if (stat(file, &st_buf) == 0)
+-		file_dev = st_buf.st_rdev;
+-#endif	
+-
+-	if (!(f = fopen("/proc/swaps", "r")))
+-		return 0;
+-	/* Skip the first line */
+-	fgets(buf, sizeof(buf), f);
+-	while (!feof(f)) {
+-		if (!fgets(buf, sizeof(buf), f))
+-			break;
+-		if ((cp = strchr(buf, ' ')) != NULL)
+-			*cp = 0;
+-		if ((cp = strchr(buf, '\t')) != NULL)
+-			*cp = 0;
+-		if (strcmp(buf, file) == 0) {
+-			ret++;
+-			break;
+-		}
+-#ifndef __GNU__
+-		if (file_dev && (stat(buf, &st_buf) == 0) &&
+-		    file_dev == st_buf.st_rdev) {
+-			ret++;
+-			break;
+-		}
+-#endif
+-	}
+-	fclose(f);
+-	return ret;
+-}
+-
+ static errcode_t check_mntent(const char *file, int *mount_flags,
+ 			      char *mtpt, int mtlen)
+ {
+@@ -250,6 +206,50 @@ static errcode_t check_getmntinfo(const 
+ #endif /* HAVE_GETMNTINFO */
+ 
+ /*
++ * Check to see if we're dealing with the swap device.
++ */
++static int is_swap_device(const char *file)
++{
++	FILE		*f;
++	char		buf[1024], *cp;
++	dev_t		file_dev;
++	struct stat	st_buf;
++	int		ret = 0;
++
++	file_dev = 0;
++#ifndef __GNU__ /* The GNU hurd is broken with respect to stat devices */
++	if (stat(file, &st_buf) == 0)
++		file_dev = st_buf.st_rdev;
++#endif	
++
++	if (!(f = fopen("/proc/swaps", "r")))
++		return 0;
++	/* Skip the first line */
++	fgets(buf, sizeof(buf), f);
++	while (!feof(f)) {
++		if (!fgets(buf, sizeof(buf), f))
++			break;
++		if ((cp = strchr(buf, ' ')) != NULL)
++			*cp = 0;
++		if ((cp = strchr(buf, '\t')) != NULL)
++			*cp = 0;
++		if (strcmp(buf, file) == 0) {
++			ret++;
++			break;
++		}
++#ifndef __GNU__
++		if (file_dev && (stat(buf, &st_buf) == 0) &&
++		    file_dev == st_buf.st_rdev) {
++			ret++;
++			break;
++		}
++#endif
++	}
++	fclose(f);
++	return ret;
++}
++
++/*
+  * ext2fs_check_mount_point() returns 1 if the device is mounted, 0
+  * otherwise.  If mtpt is non-NULL, the directory where the device is
+  * mounted is copied to where mtpt is pointing, up to mtlen

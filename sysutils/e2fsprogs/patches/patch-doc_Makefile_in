@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- doc/Makefile.in.orig	2003-11-17 00:40:41.000000000 +0100
++++ doc/Makefile.in	2003-11-17 00:40:53.000000000 +0100
+@@ -24,7 +24,6 @@ install-doc-libs:
+ 	for i in libext2fs.info* ; do \
+ 		$(INSTALL_DATA) $$i $(DESTDIR)$(infodir)/$$i ; \
+ 	done
+-	gzip -9 $(DESTDIR)$(infodir)/libext2fs.info*
+ 
+ uninstall-doc-libs:
+ 	$(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*

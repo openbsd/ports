@@ -1,0 +1,46 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/libext2fs.info
+bin/chattr
+bin/lsattr
+bin/uuidgen
+info/libext2fs.info
+lib/libe2p.a
+lib/libext2fs.a
+lib/libext2fs_com_err.a
+lib/libss.a
+lib/libuuid.a
+man/man1/chattr.1
+man/man1/lsattr.1
+man/man1/uuidgen.1
+man/man8/badblocks.8
+man/man8/debugfs.8
+man/man8/dumpe2fs.8
+man/man8/e2fsck.8
+man/man8/e2image.8
+man/man8/e2label.8
+man/man8/pfsck.8
+man/man8/fsck.ext2.8
+man/man8/fsck.ext3.8
+man/man8/mke2fs.8
+man/man8/mkfs.ext2.8
+man/man8/mkfs.ext3.8
+man/man8/mklost+found.8
+man/man8/resize2fs.8
+man/man8/tune2fs.8
+sbin/badblocks
+sbin/debugfs
+sbin/dumpe2fs
+sbin/e2fsck
+sbin/e2image
+sbin/e2label
+sbin/pfsck
+sbin/fsck.ext2
+sbin/fsck.ext3
+sbin/mke2fs
+sbin/mkfs.ext2
+sbin/mkfs.ext3
+sbin/mklost+found
+sbin/resize2fs
+sbin/tune2fs
+%%SHARED%%
+@exec install-info --info-dir=%D/info %D/info/libext2fs.info

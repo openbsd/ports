@@ -1,0 +1,12 @@
+$OpenBSD: patch-debugfs_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- debugfs/Makefile.in.orig	2003-11-16 17:52:00.000000000 +0100
++++ debugfs/Makefile.in	2003-11-16 17:52:11.000000000 +0100
+@@ -25,7 +25,7 @@ SRCS= debug_cmds.c $(srcdir)/debugfs.c $
+ 	$(srcdir)/htree.c
+ 
+ LIBS= $(LIBEXT2FS) $(LIBE2P) $(LIBSS) $(LIBCOM_ERR)  $(LIBUUID)
+-DEPLIBS= $(LIBEXT2FS) $(LIBE2P) $(LIBSS) $(LIBCOM_ERR)  $(DEPLIBUUID)
++DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBE2P) $(DEPLIBSS) $(DEPLIBCOM_ERR)  $(DEPLIBUUID)
+ 
+ .c.o:
+ 	$(CC) -c $(ALL_CFLAGS) $< -o $@

@@ -1,0 +1,12 @@
+$OpenBSD: patch-resize_Makefile_in,v 1.1.1.1 2004/02/20 19:54:58 espie Exp $
+--- resize/Makefile.in.orig	2003-11-16 18:08:01.000000000 +0100
++++ resize/Makefile.in	2003-11-16 18:08:15.000000000 +0100
+@@ -26,7 +26,7 @@ SRCS= $(srcdir)/extent.c \
+ 	$(srcdir)/sim_progress.c
+ 
+ LIBS= $(LIBEXT2FS) $(LIBCOM_ERR)  
+-DEPLIBS= $(LIBEXT2FS) $(LIBCOM_ERR)
++DEPLIBS= $(DEPLIBEXT2FS) $(DEPLIBCOM_ERR)
+ 
+ STATIC_LIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
+ STATIC_DEPLIBS= $(STATIC_LIBEXT2FS) $(STATIC_LIBCOM_ERR) 
