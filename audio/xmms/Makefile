@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/08/07 22:34:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2002/08/30 12:23:57 wcobb Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-gnome=		"GNOME applet for XMMS"
@@ -57,7 +57,6 @@ LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 
 USE_LIBTOOL=		Yes
 USE_X11=		Yes
-USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
