@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/01/21 16:58:11 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/01/27 19:22:46 sturm Exp $
 bin/leafnode-version
 bin/newsq
 man/man1/leafnode-version.1
@@ -26,3 +26,6 @@ share/examples/leafnode/run.tcpd.dist
 share/examples/leafnode/run.tcpserver.dist
 @dirrm share/examples/leafnode
 @dirrm share/doc/leafnode
+@cwd ${SYSCONFDIR}
+@extra leafnode/config
+@extra leafnode/
