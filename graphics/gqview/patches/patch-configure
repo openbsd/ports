@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2004/02/07 22:00:48 brad Exp $
---- configure.orig	2004-02-03 12:45:27.000000000 -0500
-+++ configure	2004-02-06 14:35:04.000000000 -0500
-@@ -5856,7 +5856,7 @@ fi
+$OpenBSD: patch-configure,v 1.9 2004/02/25 21:33:53 brad Exp $
+--- configure.orig	2004-02-20 18:23:28.000000000 -0500
++++ configure	2004-02-24 15:53:12.000000000 -0500
+@@ -5929,7 +5929,7 @@ fi
  fi
  
  cat >>confdefs.h <<_ACEOF
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.8 2004/02/07 22:00:48 brad Exp $
  _ACEOF
  
  
-@@ -9016,12 +9016,11 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -9223,12 +9223,11 @@ cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2004/02/07 22:00:48 brad Exp $
---- Makefile.in.orig	2003-10-31 11:12:00.000000000 -0500
-+++ Makefile.in	2003-11-02 00:54:28.000000000 -0500
-@@ -128,7 +128,7 @@ EXTRA_DIST = mkinstalldirs  config.rpath
+$OpenBSD: patch-Makefile_in,v 1.8 2004/02/25 21:33:53 brad Exp $
+--- Makefile.in.orig	2004-02-20 18:23:27.000000000 -0500
++++ Makefile.in	2004-02-24 15:53:12.000000000 -0500
+@@ -169,7 +169,7 @@ EXTRA_DIST = mkinstalldirs  config.rpath
  	gqview.1
  
  

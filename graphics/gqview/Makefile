@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2004/02/07 22:00:47 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2004/02/25 21:33:53 brad Exp $
 
 COMMENT=	"Gtk-based graphic file viewer"
 
-DISTNAME=	gqview-1.3.9
+DISTNAME=	gqview-1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gqview/}
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
 
 # gqview only installs these files conditionally if it finds gnome-config.
 # here we will install the files manually, this eases integration with GNOME.
