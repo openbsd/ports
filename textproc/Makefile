@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2001/09/13 21:38:39 todd Exp $
+# $OpenBSD: Makefile,v 1.68 2001/09/20 13:33:21 shell Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -33,6 +33,7 @@
      SUBDIR += p5-Blatte
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-String-Approx
+     SUBDIR += p5-String-Random
      SUBDIR += p5-String-Similarity
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Template
