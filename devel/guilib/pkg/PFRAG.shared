@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/05/07 04:04:36 obecian Exp $
+lib/libGUI.so.0.0
+DYNLIBDIR(%B)

@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Sun May  6 12:16:25 2001
++++ Makefile.am	Sun May  6 12:40:24 2001
+@@ -50,7 +50,6 @@ EXTRA_DIST =			\
+ 	scroll_dn.bmp		\
+ 	scroll_up.bmp
+ libGUI_la_LDFLAGS = 		\
+-        -release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
