@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:38:28 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/22 00:33:12 espie Exp $
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
@@ -20,8 +20,7 @@ RUN_DEPENDS=	ppmtogif::graphics/netpbm \
 
 NO_CONFIGURE=	Yes
 NO_BUILD=	Yes
-IS_INTERACTIVE=	Yes
-NO_PACKAGE=	interactive port
+FAKE=		Yes
 
 DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
 		manual.aux manual.ind manhtml.tex eform.ps changebar.sty \
@@ -64,9 +63,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/example
 	${INSTALL_DATA} ${WRKSRC}/example/* ${PREFIX}/lib/latex2html/example
 	${INSTALL_SCRIPT} ${WRKSRC}/install-test ${WRKSRC}/pstoimg ${WRKSRC}/makemap ${WRKSRC}/texexpand ${WRKSRC}/configure-pstoimg ${WRKSRC}/latex2html.config ${WRKSRC}/pstoimg_nopipes ${WRKSRC}/latex2html ${PREFIX}/lib/latex2html
-	(cd ${PREFIX}/lib/latex2html; PREFIX=${PREFIX} ./install-test)
-	${INSTALL_SCRIPT} ${PREFIX}/lib/latex2html/latex2html ${PREFIX}/bin
-	rm ${PREFIX}/lib/latex2html/*.bak
+	ln -s ${TRUEPREFIX}/lib/latex2html/latex2html ${PREFIX}/bin
 
 .include <bsd.port.mk>
 
