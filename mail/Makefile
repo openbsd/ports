@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2003/11/19 16:59:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.117 2004/01/18 11:48:20 wilfried Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += mini_sendmail
      SUBDIR += mixmaster
      SUBDIR += movemail
+     SUBDIR += mozilla-thunderbird
      SUBDIR += mutt
      SUBDIR += nail
      SUBDIR += nmh
