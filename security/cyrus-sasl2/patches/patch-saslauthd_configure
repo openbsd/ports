@@ -1,7 +1,52 @@
-$OpenBSD: patch-saslauthd_configure,v 1.4 2003/02/23 01:16:29 pvalchev Exp $
---- saslauthd/configure.orig	Mon Dec  9 16:45:05 2002
-+++ saslauthd/configure	Tue Dec 10 00:10:52 2002
-@@ -2636,8 +2636,8 @@ fi
+$OpenBSD: patch-saslauthd_configure,v 1.5 2003/02/27 17:33:01 jakob Exp $
+--- saslauthd/configure.orig	Fri Jan 31 12:55:41 2003
++++ saslauthd/configure	Thu Feb 27 07:39:33 2003
+@@ -1603,7 +1603,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1609 "configure"
+ #include "confdefs.h"
+@@ -2324,7 +2324,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2330 "configure"
+ #include "confdefs.h"
+@@ -2358,7 +2358,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lresolv $LIBS"
++  #LIBS="-lresolv $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -2827,7 +2827,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2833 "configure"
+ #include "confdefs.h"
+@@ -2861,7 +2861,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lresolv $LIBS"
++  #LIBS="-lresolv $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -2927,8 +2927,8 @@ fi
       GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
@@ -12,3 +57,39 @@ $OpenBSD: patch-saslauthd_configure,v 1.4 2003/02/23 01:16:29 pvalchev Exp $
    else
       gssapi="no"
       echo "configure: warning: Disabling GSSAPI" 1>&2
+@@ -2981,7 +2981,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2987 "configure"
+ #include "confdefs.h"
+@@ -3009,7 +3009,7 @@ LIBS="$ac_save_LIBS"
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
++  #GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lresolv"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -4243,7 +4243,7 @@ if eval "test \"`echo '$''{'ac_cv_lib_$a
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lresolv  $LIBS"
++#LIBS="-lresolv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4249 "configure"
+ #include "confdefs.h"
+@@ -4277,7 +4277,7 @@ if eval "test \"`echo '$ac_cv_lib_'$ac_l
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lresolv $LIBS"
++  #LIBS="-lresolv $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
