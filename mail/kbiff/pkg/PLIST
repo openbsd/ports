@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/01/08 16:59:16 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/16 18:28:01 naddy Exp $
 bin/kbiff
-%%SHARED%%
+@comment lib/kbiff.la
 man/man1/kbiff.1
 share/applnk/Internet/kbiff.desktop
 share/apps/kbiff/pics/delete.png
@@ -61,9 +61,74 @@ share/locale/sv/LC_MESSAGES/kbiff.mo
 share/locale/tr/LC_MESSAGES/kbiff.mo
 share/locale/uk/LC_MESSAGES/kbiff.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kbiff.mo
+%%SHARED%%
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no_NY/LC_MESSAGES
+@dirrm share/locale/no_NY
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/is/LC_MESSAGES
+@dirrm share/locale/is
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/he/LC_MESSAGES
+@dirrm share/locale/he
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/br/LC_MESSAGES
+@dirrm share/locale/br
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/fr/kbiff
+@dirrm share/doc/HTML/fr
 @dirrm share/doc/HTML/es/kbiff
+@dirrm share/doc/HTML/es
 @dirrm share/doc/HTML/en/kbiff
 @dirrm share/doc/HTML/de/kbiff
+@dirrm share/doc/HTML/de
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
+@dirrm share/applnk/Internet

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/12/03 20:51:57 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/16 18:28:01 naddy Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -98,6 +98,24 @@ share/locale/tr/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/zh_CN/LC_MESSAGES/mutt.mo
 share/locale/zh_TW/LC_MESSAGES/mutt.mo
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg
 @dirrm share/examples/mutt/iconv
 @dirrm share/examples/mutt
 @dirrm share/doc/mutt/html
