@@ -1,0 +1,40 @@
+--- src/Makefile.in.orig	Fri Jan 22 14:07:01 1999
++++ src/Makefile.in	Sun May  9 12:49:53 1999
+@@ -38,8 +38,8 @@
+ DEFAULT_SWAP_DIR        = $(localstatedir)/cache
+ DEFAULT_PINGER		= $(libexecdir)/$(PINGER_EXE)
+ DEFAULT_UNLINKD		= $(libexecdir)/$(UNLINKD_EXE)
+-DEFAULT_ICON_DIR	= $(sysconfdir)/icons
+-DEFAULT_ERROR_DIR	= $(sysconfdir)/errors
++DEFAULT_ICON_DIR	= $(prefix)/share/squid/icons
++DEFAULT_ERROR_DIR	= $(prefix)/share/squid/errors
+ DEFAULT_MIB_PATH	= $(sysconfdir)/mib.txt
+ 
+ CC		= @CC@
+@@ -325,22 +325,10 @@
+ 			$(RM) -f $(libexecdir)/-$$f; \
+ 		fi; \
+ 	done
+-	$(INSTALL_FILE) $(srcdir)/mib.txt $(DEFAULT_MIB_PATH)
+-	$(INSTALL_FILE) squid.conf $(sysconfdir)/squid.conf.default
+-	@if test -f $(sysconfdir)/squid.conf ; then \
+-		echo "$@ will not overwrite existing $(sysconfdir)/squid.conf" ; \
+-	else \
+-		echo "$(INSTALL_FILE) squid.conf $(sysconfdir)"; \
+-		$(INSTALL_FILE) squid.conf $(sysconfdir); \
+-	fi
+-
+-	$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir)/mime.conf.default
+-	@if test -f $(sysconfdir)/mime.conf ; then \
+-		echo "$@ will not overwrite existing $(sysconfdir)/mime.conf" ; \
+-	else \
+-		echo "$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir)"; \
+-		$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir); \
+-	fi
++	${BSD_INSTALL_DATA_DIR} $(prefix)/lib/squid/conf
++	$(INSTALL_FILE) $(srcdir)/mib.txt $(prefix)/lib/squid/conf/mib.txt.sample
++	$(INSTALL_FILE) squid.conf $(prefix)/lib/squid/conf/squid.conf.sample
++	$(INSTALL_FILE) $(srcdir)/mime.conf $(prefix)/lib/squid/conf/mime.conf.sample
+ 
+ install-pinger:
+ 	@f=pinger; \

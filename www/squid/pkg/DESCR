@@ -1,4 +1,3 @@
-
 SQUID Internet Object Cache  http://squid.nlanr.net/Squid/
 --------------------------------------------------------
 
@@ -19,21 +18,14 @@ SQUID Internet Object Cache  http://squid.nlanr.net/Squid/
   
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
-  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111, USA.
 
 Squid is derived from the ``cached'' software from the ARPA-funded
 Harvest research project.  The Harvest home page is
 http://harvest.cs.colorado.edu/.
 
-Please use our mailing lists for questions, feedback and bug fixes.
+Please use our mailing lists for questions, feedback and bug fixes
 
-        squid-users@nlanr.net	# general questions, pubilc forum
-        squid-bugs@nlanr.net	# bugs and fixes
-        squid@nlanr.net		# other feedback
-
-To subscribe, write to the addresses below with 'Subscribe' in the
-message subject or body
-
-        squid-users-request@nlanr.net
-        squid-users-digest-request@nlanr.net	# daily digest
-
+        squid-users@ircache.net	# general questions, pubilc forum
+        squid-bugs@ircache.net	# bugs and fixes
+        squid@ircache.net	# other feedback

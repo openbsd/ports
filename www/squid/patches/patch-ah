@@ -1,0 +1,25 @@
+--- src/tools.c.orig	Fri Apr 16 13:07:58 1999
++++ src/tools.c	Fri Apr 16 13:13:18 1999
+@@ -83,19 +83,15 @@
+ mail_warranty(void)
+ {
+     FILE *fp = NULL;
+-    char *filename;
+     static char command[256];
+-    if ((filename = tempnam(NULL, appname)) == NULL)
+-	return;
+-    if ((fp = fopen(filename, "w")) == NULL)
++
++    snprintf(command, 256, "mail %s", Config.adminEmail);
++    if ((fp = popen(command, "w")) == NULL)
+ 	return;
+     fprintf(fp, "From: %s\n", appname);
+     fprintf(fp, "To: %s\n", Config.adminEmail);
+     fprintf(fp, "Subject: %s\n", dead_msg());
+     fclose(fp);
+-    snprintf(command, 256, "mail %s < %s", Config.adminEmail, filename);
+-    system(command);		/* XXX should avoid system(3) */
+-    unlink(filename);
+ }
+ 
+ void

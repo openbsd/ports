@@ -1,0 +1,23 @@
+NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.2.RELEASE
+-------------------------------------------------------
+
+ ** An old squid.conf will not work with squid 2.2! **
+
+Documentation on Squid is available at http://squid.nlanr.net/
+The local (OpenBSD) differences are:
+- configuration files are in		/etc/squid
+- sample configuration files are in	/usr/local/lib/squid/conf
+- error message files are in		/usr/local/share/squid/errors
+- sample error message files are in	/usr/local/lib/squid/errors
+- icons are in 				/usr/local/share/squid/icons
+- sample icons are in			/usr/local/lib/squid/icons
+- the cache is in 			/var/squid/cache
+- logs are stored in 			/var/squid/logs
+- the ugid squid runs as is		www:www
+
+You can also edit /etc/rc.local so that Squid is started automatically:
+    if [ -x /usr/local/bin/squid ]; then
+	echo -n ' squid';	/usr/local/bin/squid &
+    fi
+
+Happy caching!

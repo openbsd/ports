@@ -1,17 +1,24 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/17 03:59:28 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/05/09 20:01:50 brad Exp $
 
-DISTNAME=	squid-1.1.22-src
-PKGNAME=	squid-1.1.22
+DISTNAME=	squid-2.2.STABLE2
+PKGNAME=	squid-2.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://mirror.aarnet.edu.au/pub/squid/squid-1.1/ \
-		ftp://squid.nlanr.net/pub/squid-1.1/
+MASTER_SITES=	ftp://squid.nlanr.net/pub/squid-2/STABLE/ \
+		ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
+		ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
+		ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
+EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	d@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PKGNAME}.STABLE2
+STRIP=		# won't install scripts correctly otherwise.
+MAKEFILE=	makefile
 SYSCONFDIR=	/etc/squid
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var/squid
-INSTALL_TARGET=	-f makefile install
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

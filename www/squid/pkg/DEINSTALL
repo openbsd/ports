@@ -1,0 +1,27 @@
+# $OpenBSD: DEINSTALL,v 1.1 1999/05/09 20:01:56 brad Exp $
+#
+# squid de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=/etc/squid/squid.conf
+
+if [ -f ${CONFIG_FILE} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| these steps as root:"
+    echo "|"
+    echo "|           rm -rf /etc/squid"
+    echo "|           rm -rf /usr/local/share/squid"
+    echo "|           rm -rf /var/squid"
+    echo "|           rm -f /var/run/squid.pid"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0

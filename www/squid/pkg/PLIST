@@ -3,12 +3,67 @@ bin/RunAccel
 bin/squid
 bin/client
 libexec/dnsserver
-libexec/ftpget
 libexec/unlinkd
 libexec/cachemgr.cgi
-@exec	mkdir -p /var/squid/logs;	chown www:www /var/squid/logs
-@exec	mkdir -p /var/squid/cache;	chown www:www /var/squid/cache
-@unexec rm -rf /var/squid/logs /var/squid/cache; rmdir /var/squid
-@exec	ln -s /var/squid/logs/squid.pid /var/run/squid.pid
-@unexec	rm -f 				/var/run/squid.pid
-@exec	echo 'Please wait while cache is initialised...'; %f/bin/squid -z
+lib/squid/conf/mib.txt.sample
+lib/squid/conf/squid.conf.sample
+lib/squid/conf/mime.conf.sample
+lib/squid/errors/ERR_ACCESS_DENIED
+lib/squid/errors/ERR_CACHE_ACCESS_DENIED
+lib/squid/errors/ERR_CACHE_MGR_ACCESS_DENIED
+lib/squid/errors/ERR_CANNOT_FORWARD
+lib/squid/errors/ERR_CONNECT_FAIL
+lib/squid/errors/ERR_DNS_FAIL
+lib/squid/errors/ERR_FORWARDING_DENIED
+lib/squid/errors/ERR_FTP_DISABLED
+lib/squid/errors/ERR_FTP_FAILURE
+lib/squid/errors/ERR_FTP_FORBIDDEN
+lib/squid/errors/ERR_FTP_NOT_FOUND
+lib/squid/errors/ERR_FTP_PUT_CREATED
+lib/squid/errors/ERR_FTP_PUT_ERROR
+lib/squid/errors/ERR_FTP_PUT_MODIFIED
+lib/squid/errors/ERR_FTP_UNAVAILABLE
+lib/squid/errors/ERR_INVALID_REQ
+lib/squid/errors/ERR_INVALID_URL
+lib/squid/errors/ERR_LIFETIME_EXP
+lib/squid/errors/ERR_NO_RELAY
+lib/squid/errors/ERR_ONLY_IF_CACHED_MISS
+lib/squid/errors/ERR_READ_ERROR
+lib/squid/errors/ERR_READ_TIMEOUT
+lib/squid/errors/ERR_SHUTTING_DOWN
+lib/squid/errors/ERR_SOCKET_FAILURE
+lib/squid/errors/ERR_UNSUP_REQ
+lib/squid/errors/ERR_URN_RESOLVE
+lib/squid/errors/ERR_WRITE_ERROR
+lib/squid/errors/ERR_ZERO_SIZE_OBJECT
+lib/squid/icons/anthony-binhex.gif
+lib/squid/icons/anthony-bomb.gif
+lib/squid/icons/anthony-box.gif
+lib/squid/icons/anthony-box2.gif
+lib/squid/icons/anthony-c.gif
+lib/squid/icons/anthony-compressed.gif
+lib/squid/icons/anthony-dir.gif
+lib/squid/icons/anthony-dirup.gif
+lib/squid/icons/anthony-dvi.gif
+lib/squid/icons/anthony-f.gif
+lib/squid/icons/anthony-image.gif
+lib/squid/icons/anthony-image2.gif
+lib/squid/icons/anthony-layout.gif
+lib/squid/icons/anthony-link.gif
+lib/squid/icons/anthony-movie.gif
+lib/squid/icons/anthony-pdf.gif
+lib/squid/icons/anthony-portal.gif
+lib/squid/icons/anthony-ps.gif
+lib/squid/icons/anthony-quill.gif
+lib/squid/icons/anthony-script.gif
+lib/squid/icons/anthony-sound.gif
+lib/squid/icons/anthony-tar.gif
+lib/squid/icons/anthony-tex.gif
+lib/squid/icons/anthony-text.gif
+lib/squid/icons/anthony-unknown.gif
+lib/squid/icons/anthony-xbm.gif
+lib/squid/icons/anthony-xpm.gif
+@dirrm lib/squid/conf
+@dirrm lib/squid/icons
+@dirrm lib/squid/errors
+@dirrm lib/squid

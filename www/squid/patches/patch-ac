@@ -1,5 +1,5 @@
---- scripts/RunAccel.in.orig	Sat Aug  8 14:33:13 1998
-+++ scripts/RunAccel.in	Sat Aug  8 14:33:40 1998
+--- scripts/RunAccel.in.orig	Tue Jul  9 13:41:15 1996
++++ scripts/RunAccel.in	Fri Apr 16 12:59:33 1999
 @@ -7,7 +7,7 @@
  
  prefix=@prefix@

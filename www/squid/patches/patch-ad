@@ -1,5 +1,5 @@
---- scripts/RunCache.in.orig	Sat Aug  8 14:33:49 1998
-+++ scripts/RunCache.in	Sat Aug  8 14:34:00 1998
+--- scripts/RunCache.in.orig	Wed Aug  5 06:59:32 1998
++++ scripts/RunCache.in	Fri Apr 16 12:59:34 1999
 @@ -4,7 +4,7 @@
  
  prefix=@prefix@
