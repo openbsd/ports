@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_package,v 1.4 2001/11/21 01:17:43 naddy Exp $
---- bin/package.orig	Fri Nov 16 15:48:52 2001
-+++ bin/package	Fri Nov 16 15:49:31 2001
-@@ -12,7 +12,7 @@ version=2001-10-31
+$OpenBSD: patch-bin_package,v 1.5 2003/05/01 20:50:59 naddy Exp $
+--- bin/package.orig	Wed Apr 23 10:17:04 2003
++++ bin/package	Thu May  1 22:28:17 2003
+@@ -11,7 +11,7 @@ command=package
  
  src="cmd contrib etc lib"
  use="/home /usr/common /exp /usr/local /usr/add-on /usr/addon /usr/tools /usr /opt"
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_package,v 1.4 2001/11/21 01:17:43 naddy Exp $
  ccs="/usr/kvm /usr/ccs/bin"
  org="gnu GNU"
  makefiles="Mamfile Nmakefile nmakefile Makefile makefile"
-@@ -2262,9 +2262,9 @@ $PACKAGE_USE)
+@@ -2592,9 +2592,9 @@ cat $j $k
  			for i in ksh sh bash
  			do	if	onpath $i
  				then	case `$_onpath_ -c 'echo $KSH_VERSION'` in
