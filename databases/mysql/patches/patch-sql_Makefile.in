@@ -1,7 +1,7 @@
-$OpenBSD: patch-sql_Makefile.in,v 1.15 2002/12/14 23:56:43 brad Exp $
---- sql/Makefile.in.orig	Thu Dec  5 04:37:24 2002
-+++ sql/Makefile.in	Fri Dec 13 22:37:51 2002
-@@ -816,8 +816,7 @@ sql_yacc.h:	sql_yacc.yy
+$OpenBSD: patch-sql_Makefile.in,v 1.16 2003/12/30 05:57:30 brad Exp $
+--- sql/Makefile.in.orig	2003-12-14 16:24:04.000000000 -0500
++++ sql/Makefile.in	2003-12-21 01:54:29.000000000 -0500
+@@ -842,8 +842,7 @@ sql_yacc.h:	sql_yacc.yy
  
  sql_yacc.o:	sql_yacc.cc sql_yacc.h
  		@echo "Note: The following compile may take a long time."
@@ -10,4 +10,4 @@ $OpenBSD: patch-sql_Makefile.in,v 1.15 2002/12/14 23:56:43 brad Exp $
 +		$(CXXCOMPILE) $(LM_CFLAGS) -O0 -c $<
  
  lex_hash.h:	lex.h gen_lex_hash.cc sql_yacc.h
- 		$(MAKE) gen_lex_hash
+ 		$(MAKE) gen_lex_hash$(EXEEXT)

@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_m_ctype_h,v 1.1 2001/09/10 02:59:35 brad Exp $
---- include/m_ctype.h.orig	Sat Sep  8 15:08:15 2001
-+++ include/m_ctype.h	Sun Sep  9 20:12:00 2001
-@@ -71,6 +71,15 @@ extern CHARSET_INFO  compiled_charsets[]
- #define __CTYPE_INCLUDED
- #define _CTYPE_USING   /* Don't put names in global namespace. */
+$OpenBSD: patch-include_m_ctype_h,v 1.2 2003/12/30 05:57:30 brad Exp $
+--- include/m_ctype.h.orig	2003-12-14 16:23:48.000000000 -0500
++++ include/m_ctype.h	2003-12-21 01:53:42.000000000 -0500
+@@ -89,6 +89,15 @@ extern const char *compiled_charset_name
+ #undef isascii
+ #undef toascii
  
 +#undef _U
 +#undef _L
@@ -16,34 +16,4 @@ $OpenBSD: patch-include_m_ctype_h,v 1.1 2001/09/10 02:59:35 brad Exp $
 +
  #define	_U	01	/* Upper case */
  #define	_L	02	/* Lower case */
- #define	_N	04	/* Numeral (digit) */
-@@ -86,11 +95,29 @@ extern CHARSET_INFO  compiled_charsets[]
- #define my_sort_order	(default_charset_info->sort_order)
- 
- #ifndef __WIN__
-+#undef _toupper
- #define	_toupper(c)	(char) my_to_upper[(uchar) (c)]
-+#undef _tolower
- #define	_tolower(c)	(char) my_to_lower[(uchar) (c)]
-+
-+#undef toupper
-+#undef tolower
- #define toupper(c)	(char) my_to_upper[(uchar) (c)]
- #define tolower(c)	(char) my_to_lower[(uchar) (c)]
- 
-+#undef isalpha
-+#undef isupper
-+#undef islower
-+#undef isdigit
-+#undef isxdigit
-+#undef isalnum
-+#undef isspace
-+#undef ispunct
-+#undef isprint
-+#undef isgraph
-+#undef iscntrl
-+#undef isascii
-+#undef toascii
- #define	isalpha(c)	((my_ctype+1)[(uchar) (c)] & (_U | _L))
- #define	isupper(c)	((my_ctype+1)[(uchar) (c)] & _U)
- #define	islower(c)	((my_ctype+1)[(uchar) (c)] & _L)
+ #define	_NMR	04	/* Numeral (digit) */

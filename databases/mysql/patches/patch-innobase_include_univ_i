@@ -1,7 +1,7 @@
-$OpenBSD: patch-innobase_include_univ_i,v 1.3 2003/08/26 15:37:18 brad Exp $
---- innobase/include/univ.i.orig	2003-06-06 10:39:16.000000000 -0400
-+++ innobase/include/univ.i	2003-08-24 17:08:11.000000000 -0400
-@@ -118,13 +118,9 @@ memory is read outside the allocated blo
+$OpenBSD: patch-innobase_include_univ_i,v 1.4 2003/12/30 05:57:30 brad Exp $
+--- innobase/include/univ.i.orig	2003-12-14 16:23:49.000000000 -0500
++++ innobase/include/univ.i	2003-12-21 01:53:42.000000000 -0500
+@@ -129,13 +129,9 @@ by one. */
  #define UNIV_INLINE  	__inline
  #else
  /* config.h contains the right def for 'inline' for the current compiler */

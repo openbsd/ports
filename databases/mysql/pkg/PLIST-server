@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2003/08/26 15:37:18 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.7 2003/12/30 05:57:30 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
+@comment bin/make_win_src_distribution
 bin/msql2mysql
 bin/my_print_defaults
 bin/myisamchk
@@ -9,21 +10,27 @@ bin/myisamlog
 bin/myisampack
 bin/mysql_config
 bin/mysql_convert_table_format
+bin/mysql_explain_log
 bin/mysql_find_rows
+bin/mysql_fix_extensions
 bin/mysql_fix_privilege_tables
+bin/mysql_install
 bin/mysql_install_db
+bin/mysql_secure_installation
 bin/mysql_setpermission
+bin/mysql_tableinfo
+bin/mysql_waitpid
 bin/mysql_zap
 bin/mysqlaccess
 bin/mysqlbug
 bin/mysqld_multi
+bin/mysqld_safe
 bin/mysqlhotcopy
 bin/pack_isam
 bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-bin/safe_mysqld
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
@@ -32,24 +39,29 @@ lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
+lib/mysql/libvio.a
 libexec/mysqld
 man/man1/isamchk.1
 man/man1/isamlog.1
+man/man1/mysql_fix_privilege_tables.1
 man/man1/mysql_zap.1
 man/man1/mysqlaccess.1
 man/man1/mysqld.1
 man/man1/mysqld_multi.1
+man/man1/mysqld_safe.1
 man/man1/perror.1
 man/man1/replace.1
-man/man1/safe_mysqld.1
 share/doc/mysql/Flags/argentina.gif
+share/doc/mysql/Flags/armenia.gif
 share/doc/mysql/Flags/australia.gif
 share/doc/mysql/Flags/austria.gif
+share/doc/mysql/Flags/belgium.gif
 share/doc/mysql/Flags/brazil.gif
 share/doc/mysql/Flags/bulgaria.gif
 share/doc/mysql/Flags/canada.gif
 share/doc/mysql/Flags/chile.gif
 share/doc/mysql/Flags/china.gif
+share/doc/mysql/Flags/costa-rica.gif
 share/doc/mysql/Flags/croatia.gif
 share/doc/mysql/Flags/czech-republic.gif
 share/doc/mysql/Flags/denmark.gif
@@ -63,25 +75,28 @@ share/doc/mysql/Flags/hungary.gif
 share/doc/mysql/Flags/iceland.gif
 share/doc/mysql/Flags/indonesia.gif
 share/doc/mysql/Flags/ireland.gif
-share/doc/mysql/Flags/island.gif
 share/doc/mysql/Flags/israel.gif
 share/doc/mysql/Flags/italy.gif
 share/doc/mysql/Flags/japan.gif
-share/doc/mysql/Flags/kroatia.gif
 share/doc/mysql/Flags/latvia.gif
+share/doc/mysql/Flags/mexico.gif
+share/doc/mysql/Flags/new-zealand.gif
 share/doc/mysql/Flags/netherlands.gif
+share/doc/mysql/Flags/norway.gif
+share/doc/mysql/Flags/philippines.gif
 share/doc/mysql/Flags/poland.gif
 share/doc/mysql/Flags/portugal.gif
 share/doc/mysql/Flags/romania.gif
 share/doc/mysql/Flags/russia.gif
 share/doc/mysql/Flags/singapore.gif
+share/doc/mysql/Flags/slovenia.gif
 share/doc/mysql/Flags/south-africa.gif
-share/doc/mysql/Flags/south-africa1.gif
 share/doc/mysql/Flags/south-korea.gif
 share/doc/mysql/Flags/spain.gif
 share/doc/mysql/Flags/sweden.gif
 share/doc/mysql/Flags/switzerland.gif
 share/doc/mysql/Flags/taiwan.gif
+share/doc/mysql/Flags/turkey.gif
 share/doc/mysql/Flags/ukraine.gif
 share/doc/mysql/Flags/usa.gif
 share/doc/mysql/Flags/yugoslavia.gif
@@ -89,6 +104,10 @@ share/doc/mysql/manual.html
 share/doc/mysql/manual.ps
 share/doc/mysql/manual.txt
 share/doc/mysql/manual_toc.html
+@comment share/mysql/Description.plist
+@comment share/mysql/Info.plist
+@comment share/mysql/MySQL-shared-compat.spec
+@comment share/mysql/StartupParameters.plist
 share/mysql/binary-configure
 share/mysql/charsets/Index
 share/mysql/charsets/README
@@ -138,7 +157,8 @@ share/mysql/japanese/errmsg.sys
 share/mysql/japanese/errmsg.txt
 share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
-share/mysql/make_binary_distribution
+@comment share/mysql/make_binary_distribution
+@comment share/mysql/make_sharedlib_distribution
 share/mysql/mi_test_all
 share/mysql/mi_test_all.res
 share/mysql/my-huge.cnf
@@ -154,8 +174,10 @@ share/mysql/norwegian/errmsg.sys
 share/mysql/norwegian/errmsg.txt
 share/mysql/polish/errmsg.sys
 share/mysql/polish/errmsg.txt
+@comment share/mysql/postinstall
 share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
+@comment share/mysql/preinstall
 share/mysql/romanian/errmsg.sys
 share/mysql/romanian/errmsg.txt
 share/mysql/russian/errmsg.sys

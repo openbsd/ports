@@ -1,9 +1,9 @@
-$OpenBSD: patch-mysql-test_Makefile_in,v 1.4 2002/12/14 23:56:43 brad Exp $
---- mysql-test/Makefile.in.orig	Thu Dec  5 04:37:23 2002
-+++ mysql-test/Makefile.in	Fri Dec 13 22:37:51 2002
-@@ -188,7 +188,7 @@ sql_server_dirs = @sql_server_dirs@
- thread_dirs = @thread_dirs@
- uname_prog = @uname_prog@
+$OpenBSD: patch-mysql-test_Makefile_in,v 1.5 2003/12/30 05:57:30 brad Exp $
+--- mysql-test/Makefile.in.orig	2003-12-14 16:24:03.000000000 -0500
++++ mysql-test/Makefile.in	2003-12-21 01:53:42.000000000 -0500
+@@ -205,7 +205,7 @@ uname_prog = @uname_prog@
+ vio_dir = @vio_dir@
+ vio_libs = @vio_libs@
  
 -benchdir_root = $(prefix)
 +benchdir_root = $(datadir)
