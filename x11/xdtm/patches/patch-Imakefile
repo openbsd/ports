@@ -1,6 +1,18 @@
+$OpenBSD: patch-Imakefile,v 1.1 2001/10/05 22:08:20 naddy Exp $
 --- Imakefile.orig	Thu Mar 14 14:02:00 1996
-+++ Imakefile	Mon Apr  3 23:21:23 2000
-@@ -241,27 +241,28 @@
++++ Imakefile	Fri Oct  5 23:30:53 2001
+@@ -143,6 +143,10 @@ XDTMDIR=$(LIBDIR)/xdtm
+          XDTMOPTIONS = -DHAS_STRSTR -DUSE_CWD -DECHO_N -DUSE_TERMIOS
+ #endif
+ 
++#ifdef OpenBSDArchitecture
++         XDTMOPTIONS = -DHAS_STRSTR -DUSE_CWD -DECHO_N -DUSE_TERMIOS
++#endif
++
+ #if defined(LinuxArchitecture)
+          XDTMOPTIONS = -DHAS_STRSTR -DUSE_CWD -DECHO_N -DUSE_TERMIOS
+ #endif
+@@ -241,27 +245,28 @@ install::
  	sed -e 's^\"{icon dir}\"^\"$(XDTMDIR)/icons\"^' \
  	   xdtmrc.orig > xdtmrc
  	sed -e 's^iconfile^$(XDTMDIR)/new_xdtm.xbm^' Xdtm.ad.tmpl > Xdtm.ad

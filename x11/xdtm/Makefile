@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2001/07/09 17:11:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2001/10/05 22:08:20 naddy Exp $
 
-COMMENT=	"Desktop Manager: a graphical shell for X11"
-
+COMMENT=		"Desktop Manager: a graphical shell for X11"
 
 DISTNAME=		xdtm-2.5.8
 CATEGORIES=		x11
-NEED_VERSION=	1.402
+NEED_VERSION=		1.402
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
-
-MAINTAINER=		ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
