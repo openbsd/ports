@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2003/10/03 22:16:38 jason Exp $
+# $OpenBSD: Makefile,v 1.102 2003/10/11 12:42:25 sturm Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -69,6 +69,7 @@
      SUBDIR += p5-libvorbis
 #    SUBDIR += playmidi
      SUBDIR += py-cddb
+     SUBDIR += py-id3
      SUBDIR += py-xmms
 #    SUBDIR += radio
      SUBDIR += rio500
