@@ -1,0 +1,12 @@
+--- pico/osdep/unix.orig	Tue Jan 16 17:29:43 2001
++++ pico/osdep/unix	Thu Jan 18 17:42:19 2001
+@@ -2360,7 +2360,9 @@
+ 	return(NULL);
+     } 
+     else{
++#ifndef MAX
+ #define MAX(x,y)        ((x) > (y) ? (x) : (y))
++#endif
+ 	avail = alloced = MAX(MAX(sbuf.st_size, 512*sbuf.st_blocks), incr);
+ 	if((sbuf.st_mode&S_IFMT) != S_IFDIR){
+ 	    if(e)
