@@ -2,7 +2,6 @@ bin/esd
 bin/esd-config
 bin/esdcat
 bin/esdctl
-bin/esddsp
 bin/esdfilt
 bin/esdloop
 bin/esdmon
