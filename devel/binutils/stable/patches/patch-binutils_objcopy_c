@@ -1,6 +1,6 @@
-$OpenBSD: patch-binutils_objcopy_c,v 1.6 2004/01/08 02:09:54 brad Exp $
+$OpenBSD: patch-binutils_objcopy_c,v 1.7 2004/05/05 22:08:34 brad Exp $
 --- binutils/objcopy.c.orig	2003-06-02 16:35:15.000000000 -0400
-+++ binutils/objcopy.c	2004-01-02 21:36:44.000000000 -0500
++++ binutils/objcopy.c	2004-05-05 17:16:36.000000000 -0400
 @@ -1340,13 +1340,6 @@ copy_object (ibfd, obfd)
      }
  }
@@ -40,7 +40,7 @@ $OpenBSD: patch-binutils_objcopy_c,v 1.6 2004/01/08 02:09:54 brad Exp $
 -	  output_name = make_tempname (output_name);
 -	  if (MKDIR (output_name, 0700) != 0)
 +	  output_name = make_tempname (output_name, 1);
-+	  if (dir == (char *) NULL)
++	  if (output_name == (char *) NULL)
  	    {
 -	      fatal (_("cannot mkdir %s for archive copying (error: %s)"),
 -		     output_name, strerror (errno));
