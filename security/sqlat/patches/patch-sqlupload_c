@@ -1,6 +1,6 @@
-$OpenBSD: patch-sqlupload_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
---- sqlupload.c~	Fri Aug 23 01:10:24 2002
-+++ sqlupload.c	Fri Aug 23 01:10:40 2002
+$OpenBSD: patch-sqlupload_c,v 1.2 2002/09/24 02:21:44 mark Exp $
+--- sqlupload.c.orig	Mon Dec  3 10:08:30 2001
++++ sqlupload.c	Sun Sep 22 23:32:40 2002
 @@ -22,7 +22,6 @@
  #include "sqllib.h"
  #include "util.h"
@@ -9,12 +9,21 @@ $OpenBSD: patch-sqlupload_c,v 1.1.1.1 2002/08/26 07:37:59 mark Exp $
  
  /*
    Set a few default values
-@@ -104,7 +103,7 @@ int SQLUpload(struct args_struct args) {
+@@ -76,6 +75,7 @@ int SQLUpload(struct args_struct args) {
+ 
+   TDSLOGIN *login;
+   TDSSOCKET *tds;
++  TDSCONTEXT *context = NULL;
+   char sTMP[256];
+   char *pUploadFileName;
+   char bLooser = 0;
+@@ -104,7 +104,8 @@ int SQLUpload(struct args_struct args) {
      printf("-- Logging in to %s --\n", args.sIP);
  
    /* try to login */
 -  if( (tds = tds_connect(login)) !=NULL ) {
-+  if( (tds = tds_connect(login, NULL)) !=NULL ) {
++  context = tds_alloc_context();
++  if( (tds = tds_connect(login, context, NULL)) !=NULL ) {
  
      /* check for xp_cmdshell */
      if ( !ifExistsXP(tds, "xp_cmdshell") ) {
