@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/27 23:32:42 jose Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/21 00:59:29 jose Exp $
 
 COMMENT=		"Tcl bindings for Curl"
 NOT_FOR_ARCHS= 		${NO_SHARED_ARCHS}
@@ -6,7 +6,7 @@ NOT_FOR_ARCHS= 		${NO_SHARED_ARCHS}
 DISTNAME=		TclCurl-0.10.5
 CATEGORIES=		net
 
-HOMEPAGE=		http://personal1.iddeo.es/andresgarci/tclcurl/
+HOMEPAGE=		http://personal.iddeo.es/andresgarci/tclcurl/english/
 
 MAINTAINER=		Jose Nazario <jose@crimelabs.net>
 
