@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/24 22:11:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/03/27 21:57:52 dugsong Exp $
 
 DISTNAME=	libnet-1.0
+
 CATEGORIES=	net
+
 NEED_VERSION=	1.191
-MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
+
+MASTER_SITES=	http://www.packetfactory.net/Projects/libnet/dist/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dugsong@monkey.org

@@ -3,14 +3,14 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.7 2000/03/24 23:28:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/27 21:57:52 dugsong Exp $
 
 DISTNAME=	libnids-1.13
 
 CATEGORIES=	net
 NEED_VERSION=	 1.230
 
-MASTER_SITES=	http://www.packetfactory.net/libnids/dist/
+MASTER_SITES=	http://www.packetfactory.net/Projects/libnids/dist/
 
 MAINTAINER=	dugsong@monkey.org
 
