@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2003/06/26 15:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2003/06/27 23:02:45 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -12,9 +12,6 @@ MAKE_JAVA=No
 .if ${MACHINE_ARCH} == "i386"
 #MAKE_ADA=Yes
 MAKE_ADA=No
-MAKE_GXX=No
-MAKE_FORTRAN=Yes
-MAKE_OBJC=Yes
 #AS_PATH=/usr/bin/as
 #LD_PATH=/usr/bin/ld
 .else
@@ -153,7 +150,8 @@ MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 #### 
 # Patch section
 
-ac_dirs=gcc libiberty libstdc++-v3 libf2c/libI77 libffi fastjar libjava
+#ac_dirs=gcc libiberty libstdc++-v3 libf2c/libI77 libffi fastjar libjava
+ac_dirs=gcc libiberty libf2c/libI77 libffi fastjar libjava
 rm_dirs=zlib texinfo #boehm-gc
 
 # get openbsd configuration files where they should be
@@ -167,7 +165,7 @@ post-patch:
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoheader
+#	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoheader
 .for ac_dir in ${ac_dirs}
 	cd ${WRKSRC}/${ac_dir} && PATH=${PORTPATH} AUTOCONF_VERSION=2.13 autoconf
 .endfor
