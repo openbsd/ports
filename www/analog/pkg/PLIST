@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/05/31 18:48:39 form Exp $
+@comment $OpenBSD: PLIST,v 1.10 2000/12/22 10:55:03 form Exp $
 bin/analog
 share/analog/analog.cfg
 share/analog/anlgform.html
@@ -57,12 +57,19 @@ share/analog/lang/README.txt
 share/analog/lang/am.lng
 share/analog/lang/amdom.tab
 share/analog/lang/ba.lng
+share/analog/lang/bg.lng
+share/analog/lang/bgdom.tab
+share/analog/lang/bgh.lng
+share/analog/lang/bghdom.tab
 share/analog/lang/br.lng
 share/analog/lang/bra.lng
 share/analog/lang/brh.lng
 share/analog/lang/cat.lng
 share/analog/lang/cata.lng
+share/analog/lang/catadom.tab
+share/analog/lang/catdom.tab
 share/analog/lang/cath.lng
+share/analog/lang/cathdom.tab
 share/analog/lang/cns.lng
 share/analog/lang/cnt.lng
 share/analog/lang/cz.lng
@@ -87,7 +94,10 @@ share/analog/lang/esh.lng
 share/analog/lang/eshdom.tab
 share/analog/lang/fi.lng
 share/analog/lang/fia.lng
+share/analog/lang/fiadom.tab
+share/analog/lang/fidom.tab
 share/analog/lang/fih.lng
+share/analog/lang/fihdom.tab
 share/analog/lang/fr.lng
 share/analog/lang/fra.lng
 share/analog/lang/fradom.tab
@@ -97,6 +107,7 @@ share/analog/lang/frh.lng
 share/analog/lang/frhdom.tab
 share/analog/lang/gr.lng
 share/analog/lang/gra.lng
+share/analog/lang/hr.lng
 share/analog/lang/hu.cfg
 share/analog/lang/hu.lng
 share/analog/lang/hua.lng
@@ -167,6 +178,8 @@ share/doc/analog/Licence.txt
 share/doc/analog/Readme.html
 share/doc/analog/acknow.html
 share/doc/analog/alias.html
+share/doc/analog/analogo.gif
+share/doc/analog/anlgdocs.css
 share/doc/analog/args.html
 share/doc/analog/bara8.gif
 share/doc/analog/barb1.gif
@@ -188,6 +201,7 @@ share/doc/analog/dns.html
 share/doc/analog/domfile.html
 share/doc/analog/errors.html
 share/doc/analog/faq.html
+share/doc/analog/favicon.ico
 share/doc/analog/form.html
 share/doc/analog/helpers.html
 share/doc/analog/hierreps.html
