@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/12/19 05:46:03 obecian Exp $
+# $OpenBSD: Makefile,v 1.8 2000/12/27 10:10:08 jakob Exp $
 
-DISTNAME=	stunnel-3.9
+DISTNAME=	stunnel-3.11
 CATEGORIES=	security
 NEED_VERSION=	1.305
 
@@ -11,18 +11,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-HOMEPAGE=	http://stunnel.mirt.net/
+HOMEPAGE=	http://www.stunnel.org/
 
-MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
-                http://opensores.thebunker.net/pub/mirrors/stunnel/ \
+MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
+		ftp://stunnel.mirt.net/stunnel/ \
 		http://mike.daewoo.com.pl/computer/stunnel/ \
 		http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.fu-berlin.de/unix/security/stunnel/ \
 		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
 		ftp://ftp.all.de/pub2/unix/security/stunnel/
 
+BUILD_DEPENDS=  sdf::textproc/p5-sdf
+
 CONFIGURE_STYLE=	gnu
-ALL_TARGET=		stunnel
+ALL_TARGET=		stunnel stunnel.8
+
+post-configure:
+	rm ${WRKSRC}/stunnel.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stunnel ${PREFIX}/sbin
