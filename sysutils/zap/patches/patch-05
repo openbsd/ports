@@ -1,0 +1,30 @@
+--- zap.c.orig	Sat Dec 20 11:08:09 1997
++++ zap.c	Tue Sep 29 19:42:56 1998
+@@ -2,12 +2,13 @@
+ 
+ #include <stdio.h>
+ #include <signal.h>
++
+ char	*progname;	/* program name for error message */
+-char	*ps = "ps -ag";	/* system dependent */
++char	*ps = "ps -ax";	/* system dependent */
++
++FILE *efopen(char *file, char *mode);
+ 
+-main(argc, argv)
+-	int argc;
+-	char *argv[];
++main(int argc, char **argv)
+ {
+ 	FILE *fin, *popen();
+ 	char buf[BUFSIZ];
+@@ -26,7 +27,8 @@
+ 			fprintf(stderr, "%s? ", buf);
+ 			if (ttyin() == 'y') {
+ 				sscanf(buf, "%d", &pid);
+-				kill(pid, SIGKILL);
++				if (kill(pid, SIGKILL)<0)
++					perror(buf);
+ 			}
+ 		}
+ 	exit(0);

@@ -1,0 +1,151 @@
+--- zap-slashproc.c.orig	Tue Sep 29 19:39:07 1998
++++ zap-slashproc.c	Tue Sep 29 19:39:07 1998
+@@ -0,0 +1,148 @@
++/*
++ * zap -- fast kill by name using SVR4 /proc
++ * Based on an earlier program of the same name
++ * by Kernighan & Pike, in their classic book
++ * The UNIX Programming Environment, 1984.
++ */
++
++#ident "$Id: patch-03,v 1.1.1.1 1998/09/29 23:59:18 ian Exp $"
++
++#include <stdio.h>
++#include <dirent.h>
++#include <errno.h>
++#include <sys/types.h>
++#include <sys/fault.h>
++#include <sys/syscall.h>
++#include <sys/procfs.h>
++
++#define STREQ(s,t) (*(s)==*(t) && strcmp(s, t)==0)
++
++char *progname;
++int debug;
++void exit();
++int signum = 1;	/* hangup */
++extern int errno;
++int permis = 0;
++
++/*
++ * warn - print best error message possible and clear errno
++ */
++warn(s1, s2)
++char *s1;
++char *s2;
++{
++	char *cmdname;
++	extern int sys_nerr;
++	extern char *sys_errlist[];
++	extern char *progname;
++	extern char *getenv();
++
++	cmdname = getenv("CMDNAME");
++	if (cmdname != NULL && *cmdname != '\0')
++		(void) fprintf(stderr, "%s:", cmdname);	/* No space after :. */
++	if (progname != NULL)
++		(void) fprintf(stderr, "%s: ", progname);
++	(void) fprintf(stderr, s1, s2);
++	if (errno > 0)
++		if (errno < sys_nerr)
++			(void) fprintf(stderr, " (%s)", sys_errlist[errno]);
++		else
++			(void) fprintf(stderr, " (errno=%d)", errno);
++	(void) fputc('\n', stderr);
++	errno = 0;
++}
++
++/*
++ * die - print best error message possible and exit
++ */
++die(s1, s2)
++char *s1;
++char *s2;
++{
++	warn(s1, s2);
++	exit(1);
++}
++
++/*
++ * main - parse arguments and handle options
++ */
++main(argc, argv)
++int argc;
++char *argv[];
++{
++	int c;
++	FILE *in;
++	extern int optind;
++	extern char *optarg;
++	int errors = 0;
++
++	progname = argv[0];
++
++	while ((c = getopt(argc, argv, "ds:")) != EOF)
++		switch (c) {
++		case 's':
++			signum = atoi(argv[optind]);	/* TODO names */
++			break;
++		case 'd':
++			++debug;
++			break;
++		case '?':
++		default:
++			errors++;
++			break;
++		}
++	if (errors) {
++		(void) fprintf(stderr, "usage: %s [-s signum] procname ...\n", progname);
++		exit(2);
++	}
++
++	if (chdir("/proc") < 0) {
++		perror("chdir: /proc");
++		exit(1);
++	}
++
++	if (optind >= argc)
++		die("Must provide a process name", "");
++	else
++		for (; optind < argc; optind++)
++			process(argv[optind]);
++	if (permis) {
++		warn("One or more process files unreadable");
++		++errors;
++	}
++	exit(errors);
++}
++
++
++/*
++ * process - process one process
++ */
++process(name)
++char *name;
++{
++	int fd;
++	DIR *dirp = opendir(".");
++	struct dirent *dp;
++	prpsinfo_t procbuf;
++
++	while ((dp = readdir(dirp)) != NULL)
++		if (dp->d_name[0] != '.') {
++			if ((fd = open(dp->d_name, 0)) < 0) {
++				if (errno == EACCES)
++					++permis;
++				continue;	/* it just exited */
++			}
++			if (ioctl(fd, PIOCPSINFO, &procbuf) < 0)
++				continue;	/* exited, or permission denied */
++			if (strstr(procbuf.pr_fname, name) != 0)
++				if (kill(procbuf.pr_pid, signum) < 0) {
++					char msgbuf[128];
++					sprintf(msgbuf, "kill: process %d",
++						procbuf.pr_pid);
++					perror(msgbuf);
++				}
++			(void) close(fd);
++		}
++	(void)closedir( dirp );
++	return 0;
++}

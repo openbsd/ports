@@ -1,0 +1,4 @@
+The UNIX kill command requires you to know the PID of a process you want
+to kill. The zap program runs ps for you, extracts lines matching a string,
+and asks you if you want to kill them; for each that you reply yes, it
+delivers the signal for you.
