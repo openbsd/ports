@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/08 18:26:40 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/12/09 04:07:46 marc Exp $
 #
 
-DISTNAME=       	ddd-3.0
-CATEGORIES=		devel
+DISTNAME=	ddd-3.1.1
+CATEGORIES=	devel
 
-MAINTAINER=		marc@openbsd.org
+MAINTAINER=	marc@openbsd.org
 
-MASTER_SITES=   	ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/ \
-			ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/
+MASTER_SITES=	ftp://ftp.archive.de.uu.net/pub/programming/debuggers/ddd/ \
+		ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/
 
 # Library dependencies
 #
-LIB_DEPENDS=		Xm\\.1\\.:${PORTSDIR}/x11/lesstif
-USE_GMAKE=		yes
-USE_X11=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		${SETENV} INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			INSTALL_DATA="${INSTALL_DATA}"
+USE_MOTIF=	yes
+USE_GMAKE=	yes
+USE_X11=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_DATA="${INSTALL_DATA}"
 
 pre-build:
 	@echo ""
