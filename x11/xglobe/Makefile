@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2000/12/04 14:22:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/20 15:07:35 espie Exp $
 
 CATEGORIES=x11
 HOMEPAGE=http://wwwrzstud.rz.uni-karlsruhe.de/%7Euddn/xglobe/
 #MASTER_SITES=${HOMEPAGE}
 # Temporary release
 MASTER_SITES=ftp://quatramaran.ens.fr/pub/espie/
-DISTNAME=xglobe-0.5p1
+DISTNAME=xglobe-0.5p2
 NEED_VERSION=1.295
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
@@ -21,7 +21,7 @@ USE_X11=		Yes
 MAKE_FLAGS=XGLOBE_DIR=${PREFIX}
 
 FLAVORS=no_map gfx qt2
-FLAVOR?=
+FLAVOR?=qt2
 .if ${FLAVOR:L:Mno_map}
 DISTFILES=${DISTNAME}-no-map${EXTRACT_SUFX}
 
@@ -53,6 +53,7 @@ LIB_DEPENDS+=png.::graphics/png
 
 # for linking against libpng
 MAKE_FLAGS+='LIB_DIRS=-L$$(QT_LIB_DIR) -L$$(X11_LIB_DIR) -L$(LOCALBASE)/lib'
+MAKE_FLAGS+=COPTS='${COPTS}'
 
 post-install::
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xglobe
