@@ -1,6 +1,6 @@
---- checkgroups.c.~1~	Wed Jul 23 11:35:26 1997
-+++ checkgroups.c	Fri Jul 24 22:20:15 1998
-@@ -72,7 +72,7 @@
+--- checkgroups.c.orig	Fri Jan  8 22:33:30 1999
++++ checkgroups.c	Fri Jan  8 22:08:22 1999
+@@ -75,7 +75,7 @@
      }
  
      setgid( pw->pw_gid );

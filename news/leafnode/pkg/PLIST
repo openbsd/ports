@@ -1,32 +1,16 @@
 @cwd /usr/local
-@name leafnode-1.4.7
-lib/leafnode/config.example
+@name leafnode-1.8.1
+bin/newsq
 lib/leafnode/README
 lib/leafnode/INSTALL
+lib/leafnode/config.example
 man/man1/newsq.1
-man/man8/fetch.8
 man/man8/checkgroups.8
+man/man8/fetch.8
 man/man8/leafnode.8
 man/man8/texpire.8
 sbin/leafnode
 sbin/fetch
 sbin/texpire
 sbin/checkgroups
-sbin/newsq
-sbin/texpire.cron
 @dirrm lib/leafnode
-@comment Lots of things to do by hand to install
-@exec echo ""
-@exec echo "*** edit /etc/inetd.conf to start %D/sbin/leafnode"
-@exec echo "*** Verify /etc/config -- a copy of which is saved"
-@exec echo "*** as %D/lib/leafnode/config.example. See"
-@exec echo "*** %D/lib/leafnode/README and"
-@exec echo "*** %D/lib/leafnode/INSTALL for more information"
-@exec echo ""
-@unexec echo ""
-@unexec echo "*** To completely remove this package you must issue the"
-@unexec echo "*** following commands as root.  Be sure you want to do this."
-@unexec echo "***    rm -rf /etc/leafnode"
-@unexec echo "***    rm -rf /var/run/news"
-@unexec echo "***    rm -rf /var/spool/news"
-@unexec echo ""

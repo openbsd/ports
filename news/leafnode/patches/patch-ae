@@ -1,15 +1,6 @@
---- texpire.c.orig	Wed Jul 23 11:35:26 1997
-+++ texpire.c	Fri Jul 24 22:38:02 1998
-@@ -59,7 +59,7 @@
-     FILE * f;
-     char  *l, *group, *stime, *end;
-     unsigned long i;
--    struct expire_entry *ent, *prev = NULL;
-+    struct expire_entry *ent = NULL, *prev = NULL;
-     
-     sprintf(s, "%s/expireinfo", libdir);
-     if ((f = fopen(s, "r"))) {
-@@ -493,7 +493,7 @@
+--- texpire.c.orig	Fri Jan  8 22:34:59 1999
++++ texpire.c	Fri Jan  8 22:09:34 1999
+@@ -371,7 +371,7 @@
      }
  
      setgid( pw->pw_gid );
