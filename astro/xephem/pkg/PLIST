@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.8 2002/03/18 01:49:09 lebel Exp $
 bin/xephem
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/auxil/README
