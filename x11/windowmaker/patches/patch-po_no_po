@@ -1,0 +1,14 @@
+$OpenBSD: patch-po_no_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+--- po/no.po.orig	Wed Sep 30 00:36:34 1998
++++ po/no.po	Mon May 21 14:47:52 2001
+@@ -11,8 +11,8 @@ msgstr ""
+ "Last-Translator: Marcus Ramberg <draven@mo.himolde.no>\n"
+ "Language-Team: Norwegian \n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=CHARSET\n"
+-"Content-Transfer-Encoding: ENCODING\n"
++"Content-Type: text/plain; charset=iso-8859-1\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #: ../src/generic/error.c:46
+ msgid " fatal error: "

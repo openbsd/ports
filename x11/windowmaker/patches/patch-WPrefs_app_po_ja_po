@@ -1,0 +1,11 @@
+$OpenBSD: patch-WPrefs_app_po_ja_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
+--- WPrefs.app/po/ja.po.orig	Mon May 21 15:26:31 2001
++++ WPrefs.app/po/ja.po	Mon May 21 15:30:23 2001
+@@ -7,6 +7,7 @@ msgstr ""
+ "POT-Creation-Date: 1999-01-09 05:47+0900\n"
+ "Language-Team:  Japanese\n"
+ "Content-Type: text/plain; charset=euc-jp\n"
++"Content-Transfer-Encoding: 8bit\n"
+ "Date: 1999-01-09 05:40:30+0900\n"
+ "From: Jun Nishii <nishii@postman.riken.go.jp>\n"
+ "Xgettext-Options: --default-domain=WPrefs --add-comments --keyword=_\n"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_zh_CN_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+--- po/zh_CN.po.orig	Sat Feb 24 01:35:16 2001
++++ po/zh_CN.po	Mon May 21 15:37:12 2001
+@@ -10,7 +10,7 @@ msgstr ""
+ "Last-Translator: Wang Jian <larkw@263.net>\n"
+ "Language-Team: chinese <zh@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=gb2312-80\n"
++"Content-Type: text/plain; charset=gb2312\n"
+ "Content-Transfer-Encoding: 8-bit\n"
+ "Translator: Wang Jian <larkw@263.net>\n"
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2001/02/15 17:57:56 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.23 2001/05/21 14:06:02 wilfried Exp $
 GNUstep/Apps/WPrefs.app/WPrefs
 GNUstep/Apps/WPrefs.app/WPrefs.tiff
 GNUstep/Apps/WPrefs.app/WPrefs.xpm
@@ -99,6 +99,7 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.la
+%%SHARED%%
 man/man1/geticonset.1x
 man/man1/getstyle.1x
 man/man1/seticons.1x
@@ -230,51 +231,10 @@ share/WindowMaker/Themes/SteelBlueSilk.style
 share/WindowMaker/autostart.sh
 share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
-share/WindowMaker/menu.bg
-share/WindowMaker/menu.ca
-share/WindowMaker/menu.cz
-share/WindowMaker/menu.da
-share/WindowMaker/menu.de
-share/WindowMaker/menu.el
-share/WindowMaker/menu.es
-share/WindowMaker/menu.fi
-share/WindowMaker/menu.fr
-share/WindowMaker/menu.gl
-share/WindowMaker/menu.he
-share/WindowMaker/menu.hr
-share/WindowMaker/menu.hu
-share/WindowMaker/menu.it
-share/WindowMaker/menu.ja
-share/WindowMaker/menu.ko
-share/WindowMaker/menu.nl
-share/WindowMaker/menu.no
-share/WindowMaker/menu.pl
-share/WindowMaker/menu.pt
-share/WindowMaker/menu.ro
-share/WindowMaker/menu.ru
-share/WindowMaker/menu.se
-share/WindowMaker/menu.sk
-share/WindowMaker/menu.sl
-share/WindowMaker/menu.tr
-share/WindowMaker/menu.zh_CN
-share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
-share/WindowMaker/plmenu.bg
-share/WindowMaker/plmenu.da
-share/WindowMaker/plmenu.de
-share/WindowMaker/plmenu.es
-share/WindowMaker/plmenu.fi
-share/WindowMaker/plmenu.fr
-share/WindowMaker/plmenu.hr
-share/WindowMaker/plmenu.it
-share/WindowMaker/plmenu.ko
-share/WindowMaker/plmenu.pl
-share/WindowMaker/plmenu.ro
-share/WindowMaker/plmenu.sk
-share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
-%%SHARED%%
+%%i18n%%
 @dirrm share/WindowMaker/Themes
 @dirrm share/WindowMaker/Styles
 @exec mkdir -p %D/share/WindowMaker/Sounds
@@ -292,5 +252,3 @@ share/WindowMaker/xtree.dat
 @dirrm GNUstep/Apps/WPrefs.app/xpm
 @dirrm GNUstep/Apps/WPrefs.app/tiff
 @dirrm GNUstep/Apps/WPrefs.app
-@dirrm GNUstep/Apps
-@dirrm GNUstep

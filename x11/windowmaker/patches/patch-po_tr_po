@@ -1,0 +1,13 @@
+$OpenBSD: patch-po_tr_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+--- po/tr.po.orig	Wed Oct 21 16:43:53 1998
++++ po/tr.po	Mon May 21 14:52:28 2001
+@@ -2,7 +2,8 @@ msgid ""
+ msgstr ""
+ "Date: 1998-03-12 18:29:09+EET\n"
+ "From: KGF <kgf@wpi.edu>\n"
+-"Content-Type: text/plain; charset=\n"
++"Content-Type: text/plain; charset=iso-8859-9\n"
++"Content-Transfer-Encoding: 8bit\n"
+ "Language-Team: Turkish \n"
+ "Xgettext-Options: --default-domain=WindowMaker --add-comments --keyword=_\n"
+ "Files: ../main.c ../event.c ../window.c ../startup.c ../shutdown.c ../wcore.c ../properties.c ../texture.c ../actions.c ../menu.c ../client.c ../pixmap.c ../image.c ../gradient.c ../button.c ../screen.c ../icon.c ../rootmenu.c ../dialog.c ../resource.c ../moveres.c ../application.c ../colormap.c ../raster.c ../placement.c ../misc.c ../appmenu.c ../keybind.c ../stacking.c ../appicon.c ../switchmenu.c ../dock.c ../winmenu.c ../generic/error.c\n"

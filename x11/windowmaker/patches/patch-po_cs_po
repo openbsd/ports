@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_cs_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+--- po/cs.po.orig	Sat Feb 24 01:35:15 2001
++++ po/cs.po	Mon May 21 14:44:48 2001
+@@ -15,7 +15,7 @@ msgstr ""
+ "Language-Team: czech <cs@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=ISO-8859-2\n"
+-"Content-Transfer-Encoding: unknown\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #: ../src/appicon.c:570 ../src/dialog.c:223 ../src/dock.c:3301
+ #: ../src/dockedapp.c:210 ../src/dockedapp.c:251 ../src/rootmenu.c:1754

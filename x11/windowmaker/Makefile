@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2001/03/28 10:08:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.39 2001/05/21 14:05:58 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
-DISTNAME=		WindowMaker-0.64.0
+DISTNAME=		WindowMaker-0.65.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.409
 
 HOMEPAGE=		http://www.windowmaker.org/
 
@@ -25,12 +25,23 @@ LIB_DEPENDS=		PropList.2::devel/libproplist \
 			png.1::graphics/png \
 			gif.4.1::graphics/giflib
 
+SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
+USE_BZIP2=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
-			--disable-debug \
-			--with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps"
+			--with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
+			--with-nlsdir="${LOCALBASE}/share/locale"
+
+FLAVORS=		i18n
+FLAVOR?=
+
+.if ${FLAVOR:L:Mi18n}
+LIB_DEPENDS+=		intl::devel/gettext
+CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		LINGUAS='bg cs da de el es et fi fr gl hr hu it ja ko nl no pl pt ro ru sk sv tr zh_CN zh_TW.Big5'
+.endif
 
 SYSCONFDIR=		${PREFIX}/share/WindowMaker/Defaults
 
@@ -39,6 +50,9 @@ post-patch:
 		${WRKSRC}/WINGs/wapplication.c \
 		${WRKSRC}/WPrefs.app/Menu.c \
 		${WRKSRC}/WPrefs.app/Paths.c
+# Rename wrongly named locale files
+	@mv ${WRKSRC}/WindowMaker/menu.cz ${WRKSRC}/WindowMaker/menu.cs
+	@mv ${WRKSRC}/WindowMaker/menu.se ${WRKSRC}/WindowMaker/menu.sv
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/WindowMaker/Sounds

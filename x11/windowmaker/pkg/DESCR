@@ -3,4 +3,10 @@ integration support for GNUstep applications. It tries to emulate
 the elegant look and feel of the NEXTSTEP(tm) GUI. It is relatively
 fast, feature rich, and easy to configure and use.
 
+The i18n flavor enables locale support and installs locale files.
+To select a particular locale at runtime you must set the LANG
+environment variable to the locale you want.  If your language uses
+multi-byte characters, such as Japanese or Korean, you must set the
+MultiByteText option to YES in ~/GNUstep/Defaults/WMGLOBAL
+
 WWW: ${HOMEPAGE}

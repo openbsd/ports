@@ -1,0 +1,12 @@
+$OpenBSD: patch-WPrefs_app_po_pt_po,v 1.1 2001/05/21 14:06:00 wilfried Exp $
+--- WPrefs.app/po/pt.po.orig	Mon May 21 15:26:31 2001
++++ WPrefs.app/po/pt.po	Mon May 21 15:30:49 2001
+@@ -13,7 +13,7 @@ msgstr ""
+ "Last-Translator: Eliphas Levy Theodoro <eliphas@conectiva.com.br>\n"
+ "Language-Team: Portuguese \n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=\n"
++"Content-Type: text/plain; charset=iso-8859-1\n"
+ "Content-Transfer-Encoding: 8-bit\n"
+ "Date: 1998-08-24 03:51:26-0300\n"
+ "From: Eliphas Levy Theodoro <eliphas@conectiva.com.br>\n"

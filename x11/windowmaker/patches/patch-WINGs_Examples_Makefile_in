@@ -1,0 +1,12 @@
+$OpenBSD: patch-WINGs_Examples_Makefile_in,v 1.1 2001/05/21 14:05:59 wilfried Exp $
+--- WINGs/Examples/Makefile.in.orig	Mon Apr 30 00:17:53 2001
++++ WINGs/Examples/Makefile.in	Wed May 16 16:44:30 2001
+@@ -112,7 +112,7 @@ server_DEPENDENCIES = $(top_builddir)/WI
+ server_LDADD = $(top_builddir)/WINGs/libWUtil.a @LIBRARY_SEARCH_PATH@ 	@NETLIBS@ @LIBPL@
+ 
+ 
+-INCLUDES = -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@ -DDEBUG
++INCLUDES = -I$(top_srcdir)/WINGs -I$(top_srcdir)/wrlib -I$(top_srcdir)/src 	-DRESOURCE_PATH=\"$(datadir)/WINGs\" @HEADER_SEARCH_PATH@
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../src/config.h

@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_sk_po,v 1.1 2001/05/21 14:06:01 wilfried Exp $
+--- po/sk.po.orig	Sat Feb 24 01:35:16 2001
++++ po/sk.po	Mon May 21 14:50:18 2001
+@@ -18,7 +18,7 @@ msgstr ""
+ "Language-Team: Slovak <sk@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=ISO-8859-2\n"
+-"Content-Transfer-Encoding: unknown\n"
++"Content-Transfer-Encoding: 8bit\n"
+ 
+ #: ../src/appicon.c:550 ../src/dialog.c:234 ../src/dock.c:3293
+ #: ../src/dockedapp.c:211 ../src/main.c:253 ../src/rootmenu.c:1765
