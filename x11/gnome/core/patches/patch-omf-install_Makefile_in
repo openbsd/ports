@@ -1,7 +1,7 @@
-$OpenBSD: patch-omf-install_Makefile_in,v 1.1.1.1 2001/09/13 20:33:28 todd Exp $
---- omf-install/Makefile.in.orig	Thu Sep 13 19:18:18 2001
-+++ omf-install/Makefile.in	Thu Sep 13 19:18:29 2001
-@@ -278,7 +278,6 @@ install-data-local:
+$OpenBSD: patch-omf-install_Makefile_in,v 1.2 2002/02/15 19:18:52 nino Exp $
+--- omf-install/Makefile.in.orig	Sun Jan 27 00:27:36 2002
++++ omf-install/Makefile.in	Sun Feb  3 14:24:28 2002
+@@ -300,7 +300,6 @@ install-data-local:
  	-for file in $(srcdir)/*.omf; do \
  		$(INSTALL_DATA) $(srcdir)/$$file $(DESTDIR)$(omf_dest_dir); \
  	done

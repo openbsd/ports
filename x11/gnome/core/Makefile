@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/30 09:18:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/15 19:18:52 nino Exp $
 
 COMMENT=		"core GNOME system"
-V=			1.4.0.4
-DISTNAME=		gnome-core-${V}
+
+DISTNAME=		gnome-core-1.4.0.6
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.498
-HOMEPAGE=		http://www.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://www.gnome.org/
+
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnome-core
 EXTRACT_SUFX=		.tar.bz2
-
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-                        patch-*
 
 LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 			gnome.36,gnorba,zvt::x11/gnome/libs \
@@ -25,6 +22,7 @@ LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -38,6 +36,11 @@ CONFIGURE_ARGS+= 	--with-kde-docdir=${LOCALBASE}/share
 CONFIGURE_ARGS+= 	--localstatedir=/var/gnome
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-build:
+	@cd ${WRKSRC}; \
+	for f in `find . \( -name '*.desktop.in' -or -name '*.soundlist.in' \) -and ! -path '*desktop-links/*'`; \
+	do ./xml-i18n-merge po $$f $${f%.in} -d -p; done
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-core; \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-panel_doc_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- panel/doc/Makefile.in.orig	Thu Sep 20 18:03:48 2001
-+++ panel/doc/Makefile.in	Thu Sep 20 18:04:15 2001
-@@ -363,7 +363,7 @@ install-data-local:
+$OpenBSD: patch-panel_doc_Makefile_in,v 1.2 2002/02/15 19:18:53 nino Exp $
+--- panel/doc/Makefile.in.orig	Sun Jan 27 00:25:43 2002
++++ panel/doc/Makefile.in	Sun Feb  3 14:24:28 2002
+@@ -392,7 +392,7 @@ install-data-local:
  	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
  	  done; \
  	  echo '-- Installing $(srcdir)/html/index.sgml' ; \

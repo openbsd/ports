@@ -1,12 +1,12 @@
-$OpenBSD: patch-panel_menu_c,v 1.1.1.1 2001/09/13 20:33:28 todd Exp $
---- panel/menu.c.orig	Tue Aug 28 00:18:55 2001
-+++ panel/menu.c	Tue Aug 28 00:18:07 2001
-@@ -5098,7 +5098,7 @@ add_kde_submenu (GtkWidget *root_menu, g
+$OpenBSD: patch-panel_menu_c,v 1.2 2002/02/15 19:18:53 nino Exp $
+--- panel/menu.c.orig	Fri Oct 26 11:13:46 2001
++++ panel/menu.c	Sun Feb  3 14:24:49 2002
+@@ -3804,7 +3804,7 @@ create_kde_menu (GtkWidget *menu, gboole
+ {
+ 	char *pixmap_name;
  
- 	menu = create_kde_menu (NULL, fake_submenus, TRUE, TRUE,
- 				TRUE, launcher_add);
--	pixmap_path = g_concat_dir_and_file (kde_icondir, "exec.xpm");
-+	pixmap_path = g_concat_dir_and_file (kde_icondir, "go.png");
+-	pixmap_name = g_concat_dir_and_file (kde_icondir, "exec.xpm");
++	pixmap_name = g_concat_dir_and_file (kde_icondir, "go.png");
  
- 	if (panel_file_exists(pixmap_path)) {
- 		pixmap = fake_pixmap_at_size (pixmap_path, size);
+ 	if(!fake || menu) {
+ 		menu = create_menu_at (menu, 
