@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/23 21:33:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/22 02:17:15 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += netpipe
      SUBDIR += pear-Benchmark
      SUBDIR += tcpblast
+     SUBDIR += ubench
      SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>
