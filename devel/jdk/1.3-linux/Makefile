@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/03/10 17:09:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.23 2004/05/01 14:29:17 sturm Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -27,8 +27,6 @@ PERMIT_DISTFILES_FTP=	"Redistribution not permitted"
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-# does not identify archive as linux binary, what breaks extraction
-NO_SYSTRACE=	Yes
 
 FETCH_MANUALLY = " You must fetch the distfile for this port manually"
 FETCH_MANUALLY+= " after agreeing to the license agreement at"

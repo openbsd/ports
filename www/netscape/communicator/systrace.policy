@@ -1,0 +1,16 @@
+Policy: ${WRKDIR}/fake-i386/usr/local/netscape/vreg, Emulation: bsdos
+	bsdos-__sysctl: permit
+	bsdos-access: permit
+	bsdos-break: permit
+	bsdos-chdir: permit
+	bsdos-close: permit
+	bsdos-exit: permit
+	bsdos-fcntl: permit
+	bsdos-fstat: permit
+	bsdos-getdirentries: permit
+	bsdos-lseek: permit
+	bsdos-lstat: permit
+	bsdos-open: permit
+	bsdos-read: permit
+	bsdos-stat: permit
+	bsdos-write: permit

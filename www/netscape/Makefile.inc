@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2004/01/15 22:07:28 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2004/05/01 14:29:17 sturm Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -12,7 +12,6 @@ BUILD_DEPENDS=	:redhat_base-*:emulators/redhat/base
 RUN_DEPENDS=	${BUILD_DEPENDS}
 SUPPORTED=	supported
 ONLY_FOR_ARCHS=	i386
-NO_SYSTRACE=	"shell code/linux binary interaction breaks systrace"
 .endif
 
 .if ${EMUL_TYPE} == "sunos"
