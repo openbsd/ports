@@ -21,7 +21,7 @@
   
 ***************
 *** 52,57 ****
---- 52,66 ----
+--- 52,64 ----
   	  tree.o util.o var.o vec.o version.o y.tab.o
   OTHER	= Makefile parse.y mksignal
   GEN	= esdump y.tab.c y.tab.h y.output token.h sigmsgs.c initial.c
@@ -29,11 +29,9 @@
 + all: es
 + 
 + install:
-+ 	$(INSTALL) -c es $(PREFIX)/bin
++ 	$(INSTALL) -s -c es $(PREFIX)/bin
 + 	$(INSTALL) -c esdebug $(PREFIX)/bin/esdebug
 + 	$(INSTALL) -c es.1 $(PREFIX)/man/man1
-+ 	strip $(PREFIX)/bin/es
-+ 	gzip -9nf $(PREFIX)/man/man1/es.1
   
   es	: ${OFILES} initial.o
   	${CC} -o es ${LDFLAGS} ${OFILES} initial.o ${LIBS}
