@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/26 23:54:36 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/09/04 19:58:47 brad Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 DISTNAME=	Mesa-3.2.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.310
+NEED_VERSION=	1.322
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mesa3d
 DISTFILES=	MesaLib-3.2.1.tar.gz MesaDemos-3.2.1.tar.gz
