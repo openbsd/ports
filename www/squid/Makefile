@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/14 01:36:52 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/03/17 03:59:28 brad Exp $
 
 DISTNAME=	squid-1.1.22-src
 PKGNAME=	squid-1.1.22
@@ -10,8 +9,9 @@ MASTER_SITES=	ftp://mirror.aarnet.edu.au/pub/squid/squid-1.1/ \
 MAINTAINER=	d@openbsd.org
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
+SYSCONFDIR=	/etc/squid
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=/etc --localstatedir=/var/squid
+CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var/squid
 INSTALL_TARGET=	-f makefile install
 
 .include <bsd.port.mk>

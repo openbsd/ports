@@ -6,7 +6,6 @@ libexec/dnsserver
 libexec/ftpget
 libexec/unlinkd
 libexec/cachemgr.cgi
-/etc/squid.conf.default
 @exec	mkdir -p /var/squid/logs;	chown www:www /var/squid/logs
 @exec	mkdir -p /var/squid/cache;	chown www:www /var/squid/cache
 @unexec rm -rf /var/squid/logs /var/squid/cache; rmdir /var/squid
