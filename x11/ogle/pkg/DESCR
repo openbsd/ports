@@ -7,7 +7,8 @@ but it doesn't have navigational menus supports.
 As shipped, ogle cannot descramble DVDs. There are
 a few DVDs out there with no scramble protection.
 However, ogle will recognize and use an installed
-descrambling library.
+descrambling library (see converters/libdvdcss in the
+ports tree).
 
 To run ogle, you need a graphics card well supported 
 by XFree, including the Xvideo extension in YUV mode,
