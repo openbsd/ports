@@ -3,7 +3,7 @@
 # Version required:     mpage 2.5
 # Date created:         August, 10th 1999
 # Whom:                 Ian McWilliam
-# $OpenBSD: Makefile,v 1.2 1999/08/28 10:32:03 maja Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/03 01:22:10 turan Exp $
 
 
 DISTNAME=	mpage-2.5
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ianm@cit.nepean.uws.edu.au
+
+NO_PACKAGE=	package must be made manually with three paper sizes
 
 fetch-depends:
 .if !defined(NO_WARNINGS)
