@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/03 01:53:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/21 00:14:56 pvalchev Exp $
 
 COMMENT=	"electronic CAD system"
 
@@ -9,7 +9,7 @@ DISTFILES=	psys-1.57.tar.gz webdoc1.46.tar.gz log-5.61.tar.gz \
 		wolcomp-1.13.tar.gz
 CATEGORIES=	cad
 
-HOMEPAGE=	http://www.pcmp.caltech.edu/chipmunk/
+HOMEPAGE=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 

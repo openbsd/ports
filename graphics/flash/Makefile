@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/27 00:03:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/21 00:14:56 pvalchev Exp $
 
 COMMENT=	"open source standalone flash(tm) player"
 
@@ -6,10 +6,11 @@ DISTNAME=	flash-0.4.10
 CATEGORIES=	graphics	
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://www.swift-tools.com/Flash/
+HOMEPAGE=	http://www.swift-tools.net/Flash/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

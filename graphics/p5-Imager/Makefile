@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/21 00:14:56 pvalchev Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,10 +8,11 @@ DISTNAME=	Imager-0.39
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	graphics perl5
 
-HOMEPAGE=	http://www.eecs.umich.edu/~addi/perl/Imager/
+HOMEPAGE=	http://search.cpan.org/dist/Imager/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
+# Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
