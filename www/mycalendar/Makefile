@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/01 20:22:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/26 09:54:35 alek Exp $
 
 COMMENT=	"lightweight and easy to use web calendar"
 
 V=		2.6
 DISTNAME=	calendar-$V
-PKGNAME=	mycalendar-$V
+PKGNAME=	mycalendar-$Vp0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.fuzzymonkey.org/newfuzzy/software/perl/
@@ -31,5 +31,9 @@ INSTDIR=	${PREFIX}/cgi-bin
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/calendar
 	@cd ${WRKSRC} && cp -R * ${INSTDIR}/calendar
+	${INSTALL_DATA_DIR} ${INSTDIR}/calendar/examples
+	${INSTALL_DATA} ${INSTDIR}/calendar/template.html \
+		${INSTDIR}/calendar/examples
+	@touch ${INSTDIR}/calendar/examples/appointments.txt
 
 .include <bsd.port.mk>
