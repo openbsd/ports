@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 1999/07/08 23:27:39 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/01 00:01:54 brad Exp $
 
-DISTNAME=	squid-2.2.STABLE4
+DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
-MASTER_SITES=	http://squid.nlanr.net/Squid/v2/2.2/
+MASTER_SITES=	http://squid.nlanr.net/Versions/v2/2.2/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@openbsd.org
