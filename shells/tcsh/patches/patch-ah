@@ -1,5 +1,5 @@
-*** sh.exp.c.orig	Wed Nov 26 22:18:20 1997
---- sh.exp.c	Wed Nov 26 22:19:16 1997
+*** sh.exp.c.orig	Thu Dec 17 09:41:49 1998
+--- sh.exp.c	Thu Dec 17 09:42:41 1998
 ***************
 *** 155,161 ****
        * and they define _SC_NGROUPS_MAX without having sysconf
@@ -13,49 +13,7 @@
        * and they define _SC_NGROUPS_MAX without having sysconf
        */
   #   undef _SC_NGROUPS_MAX	
-! #   if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__bsdi__) || defined (__OpenBSD__)
+! #   if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__bsdi__)
   #    define GID_T gid_t
   #   else
   #    define GID_T int
-*** sh.sem.c.orig	Wed Nov 26 21:30:09 1997
---- sh.sem.c	Wed Nov 26 21:32:48 1997
-***************
-*** 51,57 ****
-  #endif /* CLOSE_ON_EXEC */
-  
-  #if defined(__sparc__) || defined(sparc)
-! # if !defined(MACH) && SYSVREL == 0 && !defined(Lynx) && !defined(__NetBSD__)
-  #  include <vfork.h>
-  # endif /* !MACH && SYSVREL == 0 && !Lynx && !__NetBSD__ */
-  #endif /* __sparc__ || sparc */
---- 51,57 ----
-  #endif /* CLOSE_ON_EXEC */
-  
-  #if defined(__sparc__) || defined(sparc)
-! # if !defined(MACH) && SYSVREL == 0 && !defined(Lynx) && !defined(__NetBSD__) && !defined(__OpenBSD__)
-  #  include <vfork.h>
-  # endif /* !MACH && SYSVREL == 0 && !Lynx && !__NetBSD__ */
-  #endif /* __sparc__ || sparc */
-*** tc.os.h.orig	Wed Nov 26 22:22:23 1997
---- tc.os.h	Wed Nov 26 22:23:34 1997
-***************
-*** 77,85 ****
-  # define NOFILE 256
-  #endif /* NOFILE */
-  
-! #if defined(linux) || defined(__NetBSD__) || defined(__FreeBSD__) || SYSVREL >= 4 
-  # undef NEEDstrerror
-! #endif /* linux || __NetBSD__ || __FreeBSD__ || SYSVREL >= 4 */
-  
-  #if !defined(pyr) && !defined(sinix)
-  /* Pyramid's cpp complains about the next line */
---- 77,85 ----
-  # define NOFILE 256
-  #endif /* NOFILE */
-  
-! #if defined(linux) || defined(__NetBSD__) || defined(__FreeBSD__) || SYSVREL >= 4 || defined(__OpenBSD__)
-  # undef NEEDstrerror
-! #endif /* linux || __NetBSD__ || __FreeBSD__ || SYSVREL >= 4 || __OpenBSD__ */
-  
-  #if !defined(pyr) && !defined(sinix)
-  /* Pyramid's cpp complains about the next line */

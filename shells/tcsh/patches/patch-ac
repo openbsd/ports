@@ -1,19 +1,19 @@
-*** sh.h.bak	Sat Oct 19 21:54:12 1996
---- sh.h	Mon Dec 16 03:02:35 1996
+*** sh.h.orig	Fri Sep 18 23:09:13 1998
+--- sh.h	Thu Dec 17 04:30:06 1998
 ***************
-*** 1085,1091 ****
-  /*
-   * To print system call errors...
+*** 268,274 ****
+   * redefines malloc(), so we define the following
+   * to avoid it.
    */
-! #ifdef __NetBSD__
-  # include <errno.h>
-  #else
-  # ifndef linux
---- 1085,1091 ----
-  /*
-   * To print system call errors...
+! # if defined(linux) || defined(sgi)
+  #  define NO_FIX_MALLOC
+  #  include <stdlib.h>
+  # else /* linux */
+--- 268,274 ----
+   * redefines malloc(), so we define the following
+   * to avoid it.
    */
-! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
-  # include <errno.h>
-  #else
-  # ifndef linux
+! # if defined(linux) || defined(sgi) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  #  define NO_FIX_MALLOC
+  #  include <stdlib.h>
+  # else /* linux */

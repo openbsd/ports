@@ -1,56 +1,56 @@
-*** configure.in.orig	Sun Oct 27 08:58:56 1996
---- configure.in	Sat Apr 19 21:37:17 1997
+*** config.guess.orig	Thu Dec 17 04:34:33 1998
+--- config.guess	Thu Dec 17 04:37:18 1998
 ***************
-*** 76,81 ****
---- 76,91 ----
-      tcsh_config_file=sysV88
-    ;;
-  
-+   ## FreeBSD
-+   *-*-freebsd*)
-+     tcsh_config_file=bsd4.4
-+   ;;
-+ 
-+   ## OpenBSD
-+   *-*-openbsd*)
-+     tcsh_config_file=bsd4.4
-+   ;;
-+ 
-    ## NetBSD systems
-    *-*-netbsd*)
-      tcsh_config_file=bsd4.4
-*** configure.orig	Sun Oct 27 08:58:55 1996
---- configure	Sat Apr 19 21:39:29 1997
+*** 65,70 ****
+--- 65,73 ----
+      amiga:NetBSD:*:*)
+        echo m68k-cbm-netbsd${UNAME_RELEASE}
+        exit 0 ;;
++     amiga:OpenBSD:*:*)
++       echo m68k-cbm-openbsd${UNAME_RELEASE}
++       exit 0 ;;
+      arm:RISC*:1.[012]*:*|arm:riscix:1.[012]*:*)
+  	echo arm-acorn-riscix${UNAME_RELEASE}
+  	exit 0;;
 ***************
-*** 582,587 ****
---- 582,597 ----
-      tcsh_config_file=sysV88
-    ;;
-  
-+   ## FreeBSD
-+   *-*-freebsd*)
-+     tcsh_config_file=bsd4.4
-+   ;;
-+ 
-+   ## OpenBSD
-+   *-*-openbsd*)
-+     tcsh_config_file=bsd4.4
-+   ;;
-+ 
-    ## NetBSD systems
-    *-*-netbsd*)
-      tcsh_config_file=bsd4.4
-*** config.guess.dist	Sat Oct 19 10:54:43 1996
---- config.guess	Sat Apr 19 22:52:46 1997
-***************
-*** 308,313 ****
---- 308,316 ----
-      *:FreeBSD:*:*)
-  	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+*** 108,113 ****
+--- 111,125 ----
+      mac68k:NetBSD:*:*)
+  	echo m68k-apple-netbsd${UNAME_RELEASE}
   	exit 0 ;;
-+     *:OpenBSD:*:*)
-+ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++     atari*:OpenBSD:*:*)
++ 	echo m68k-atari-openbsd${UNAME_RELEASE}
 + 	exit 0 ;;
++     sun3*:OpenBSD:*:*)
++ 	echo m68k-sun-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
++     mac68k:OpenBSD:*:*)
++ 	echo m68k-apple-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
+      RISC*:ULTRIX:*:*)
+  	echo mips-dec-ultrix${UNAME_RELEASE}
+  	exit 0 ;;
+***************
+*** 307,312 ****
+--- 319,327 ----
+      hp3[0-9][05]:NetBSD:*:*)
+  	echo m68k-hp-netbsd${UNAME_RELEASE}
+  	exit 0 ;;
++     hp3[0-9][05]:OpenBSD:*:*)
++ 	echo m68k-hp-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
+      i[34]86:BSD/386:*:* | *:BSD/OS:*:*)
+  	echo ${UNAME_MACHINE}-unknown-bsdi${UNAME_RELEASE}
+  	exit 0 ;;
+***************
+*** 315,320 ****
+--- 330,338 ----
+  	exit 0 ;;
       *:NetBSD:*:*)
   	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++ 	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
   	exit 0 ;;
+      *:GNU:*:*)
+  	echo `echo ${UNAME_MACHINE}|sed -e 's,/.*$,,'`-unknown-gnu`echo ${UNAME_RELEASE}|sed -e 's,/.*$,,'`
