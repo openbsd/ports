@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2000/06/10 17:39:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/07/28 23:36:00 jakob Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
 PKGNAME=	gqmpeg-0.6.3
 CATEGORIES=     audio
 NEED_VERSION=	1.230
-MASTER_SITES=	http://gqview.netpedia.net/
+MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/
 
-HOMEPAGE=	http://gqview.netpedia.net/mpeg-over.html
+HOMEPAGE=	http://www.netpedia.net/hosting/gqview/mpeg-index.html
 
 MAINTAINER=	rohee@openbsd.org
 
