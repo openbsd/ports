@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 16:30:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/11/20 07:38:02 camield Exp $
 
-DISTNAME=	scanlogd-2.1
+DISTNAME=	scanlogd-2.2
 HOMEPAGE=	http://www.openwall.com/scanlogd/
 
 CATEGORIES=	security
-NEED_VERSION=	1.313
+NEED_VERSION=	1.340
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	ftp://ftp.openwall.com/scanlogd/ \

@@ -1,22 +1,8 @@
 
-scanlogd requires a seperate user and group named 'scanlogd' to run.  You
-will need to create these manually.
+scanlogd requires a seperate user and group named 'scanlogd' to
+run. You will need to create these manually. For example:
 
-Add a group:
-
-   groupadd scanlogd
-
-then find its gid:
-
-   grep scanlogd /etc/group | cut -f3 -d':'
-
-Now list all the uids to find the highest in use:
-
-   cut -f3 -d':' /etc/passwd
-
-add 1, and add the user with that uid and the gid added above:
-
-  chpass -l -a "scanlogd:*:$uid:$gid:::::/nonexistent:/sbin/nologin"
+groupadd scanlogd
+useradd -c SCANLOGD -d /nonexistent -g scanlogd -s /sbin/nologin scanlogd
 
 The scanlogd program will automatically switch to this user upon startup.
-
