@@ -1,0 +1,48 @@
+$OpenBSD: patch-nsping_c,v 1.1 2002/02/24 00:28:45 pvalchev Exp $
+--- nsping.c.orig	Wed Nov 26 01:11:39 1997
++++ nsping.c	Sat Feb 23 17:23:27 2002
+@@ -57,8 +57,7 @@ int main(int argc, char **argv) {
+ 	u_int32_t address = INADDR_ANY;
+ 	u_int32_t port = getpid() + 1024;
+ 	char *timearg = NULL;
+-	char c;
+-	int i;
++	int i, c;
+ 
+ 	for(i = 0; i < QUERY_BACKLOG; i++) {
+ 		Queries[i].id = -1;
+@@ -67,7 +66,7 @@ int main(int argc, char **argv) {
+ 
+ #define OPTS "z:h:t:p:dP:a:c:T:rR"
+ 
+-	while((c = getopt(argc, argv, OPTS)) != EOF) {
++	while((c = getopt(argc, argv, OPTS)) != -1) {
+ 		switch(c) {
+ 		case 'c':
+ 			Max_Sends = atoi(optarg);
+@@ -189,10 +188,14 @@ int main(int argc, char **argv) {
+ 
+ int guess_zone() {
+ 	char lhn[MAXDNAME];
++	struct hostent *hp;
+ 	char *cp;
+ 
+ 	if(gethostname(lhn, MAXDNAME) < 0) 
+ 		return(0);
++	if((hp = gethostbyname(lhn)) == NULL)
++		return(0);
++	strlcpy(lhn, hp->h_name, sizeof(lhn));
+ 
+ 	cp = strchr(lhn, '.');
+ 	if(!cp || !(*(++cp)))
+@@ -679,9 +682,7 @@ char *xstrdup(char *v) {
+ /* -------------------------------------------------------------------------- */
+ 
+  void usage() {
+-	 fprintf(stderr, "nsping [ -z <zone> | -h <hostname> ] -p <port> -t <timeout>\n"
+-		   "\t\t-a <local address> -P <local port>\n"
+-		   "\t\t-T <type> <-r | -R, recurse?>\n");
++	 fprintf(stderr, "Usage: nsping [-dR] [-c count] [-z zone | -h hostname] [-t timeout] [-p dport] [-P sport] [-a saddr] [-T querytype]\n");
+ 	 return;
+  }
+ 
