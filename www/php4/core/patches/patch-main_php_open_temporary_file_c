@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_php_open_temporary_file_c,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
+--- main/php_open_temporary_file.c.orig	Thu May 10 19:32:30 2001
++++ main/php_open_temporary_file.c	Thu May 10 19:32:44 2001
+@@ -110,7 +110,7 @@ static FILE *php_do_open_temporary_file(
+ 		trailing_slash = "/";
+ 	}
+ 
+-	(void)snprintf(opened_path, MAXPATHLEN, "%s%s%sXXXXXX", path, trailing_slash, pfx);
++	(void)snprintf(opened_path, MAXPATHLEN, "%s%s%sXXXXXXXXXX", path, trailing_slash, pfx);
+ 
+ #ifdef PHP_WIN32
+ 	if (GetTempFileName(path, pfx, 0, opened_path)) {

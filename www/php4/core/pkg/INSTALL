@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# $OpenBSD: INSTALL,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
+#
+# php4 installation
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| To finish the install, you need to enable the php4"
+    echo "| module using the following command"
+    echo "|"
+    echo "|       $PREFIX/sbin/php4-enable"
+    echo "|"
+    echo "| To actually enable parsing of PHP scripts, you also"
+    echo "| need to manually add the following to your "
+    echo "| /var/www/conf/httpd.conf:"
+    echo "|"
+    echo "|       AddType application/x-httpd-php .php"
+    echo "|"
+    echo "| Copy the config file below into /var/www/confsample/php.ini"
+    echo "| ${PREFIX}/share/doc/php4/php.ini-dist"
+    echo "+---------------"
+    echo
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
