@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 1998/10/18 05:02:05 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1998/11/20 03:42:59 marc Exp $
 #
 
-DISTNAME=       slang0.99-38
-PKGNAME=        libslang-0.99.38
+DISTNAME=       slang1.2.2
+PKGNAME=        libslang-1.2.2
 CATEGORIES=	devel
-
-#BROKEN=	"newer version available"
 
 MAINTAINER=     todd@OpenBSD.org
 
@@ -21,8 +19,5 @@ INSTALL_TARGET+=install-elf
 WRKSRC=         ${WRKDIR}/slang
 
 post-install:
-.if (${MACHINE_ARCH} != "alpha")
-	@rm -f ${PREFIX}/lib/libslang.so.99.3[348]
-.endif
 	${LDCONFIG} -m ${PREFIX}/lib
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 lib/libslang.a
-lib/libslang.so.0.9938
-@exec rm -f %D/libslang.so.99.3[348]
+lib/libslang.so.1.22
 @exec /sbin/ldconfig -m %B
 include/slcurses.h
 include/slang.h
