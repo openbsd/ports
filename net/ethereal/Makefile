@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2001/10/07 18:49:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.52 2001/10/07 19:18:16 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -17,7 +17,6 @@ MASTER_SITES=	http://www.ethereal.com/distribution/ \
 
 HOMEPAGE=	http://www.ethereal.com/
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable
 
@@ -28,17 +27,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=		Yes
 SYSCONFDIR=		${PREFIX}/share/ethereal
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
-FLAVORS=	snmp
-
+FLAVORS=	no_x11 snmp
 FLAVOR?=
-.if ${FLAVOR:L} == "snmp"
+
+.if ${FLAVOR:L:Mno_x11}
+USE_X11=		No
+LIB_DEPENDS=		glib.1.2::devel/glib
+CONFIGURE_ARGS+=	--disable-ethereal
+.else
+USE_X11=		Yes
+LIB_DEPENDS=		gtk.1.2::x11/gtk+
+CONFIGURE_ARGS+=	--enable-ethereal
+.endif
+
+.if ${FLAVOR:L:Msnmp}
 CONFIGURE_ARGS+=	--enable-snmp
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" LIBS="-lsnmp -lcrypto"
 LIB_DEPENDS+=		snmp::net/ucd-snmp
