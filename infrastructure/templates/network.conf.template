@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.57 2003/02/23 13:45:51 rohee Exp $
+# $OpenBSD: network.conf.template,v 1.58 2003/02/23 16:46:25 rohee Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -48,7 +48,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/ \
 	ftp://gatekeeper.dec.com/pub/GNU/ \
 	ftp://ftp.uu.net/archive/systems/gnu/ \
-	ftp://ftp.de.uu.net/pub/gnu/ \
+	ftp://ftp.eu.uu.net/pub/gnu/ \
 	ftp://ftp.funet.fi/pub/gnu/prep/ \
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/ \
 	ftp://ftp.digex.net/pub/gnu/ \
@@ -70,8 +70,8 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp.x.org/contrib/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/ \
 	ftp://ftp.kddlabs.co.jp/X11/contrib/ \
-	ftp://mirror.xmission.com/X/contrib/ \
-	ftp://ftp2.x.org/contrib/ \
+	ftp://mirrors.xmission.com/X/contrib/ \
+	ftp://ftp.x.org/contrib/ \
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/ \
 	ftp://ftp.is.co.za/x/contrib/ \
 	ftp://ftp.uvsq.fr/pub/X11/contrib/ \
@@ -107,9 +107,9 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/ \
 	ftp://ftp.kddlabs.co.jp//Linux/metalab.unc.edu/ \
 	ftp://sunsite.sut.ac.jp/pub/archives/linux/sunsite-unc/ \
-	ftp://ftp.dacom.co.kr/pub/mirrors/metalab.unc.edu/Linux/ \
+	ftp://ftp.bora.net/pub/mirrors/metalab.unc.edu/Linux/ \
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/ \
-	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/ \
+	ftp://sunsite.org.uk/packages/linux/sunsite.unc-mirror/ \
 	ftp://ftp.nluug.nl/vol/3/metalab/ \
 	ftp://ftp.is.co.za/linux/sunsite/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/
@@ -125,7 +125,6 @@ MASTER_SITE_GNOME+=	\
 	ftp://archive.progeny.com/GNOME/ \
 	ftp://ftp.acc.umu.se/pub/GNOME/	\
 	ftp://ftp.rpmfind.net/linux/gnome.org/ \
-	ftp://planetmirror.com/pub/gnome/ \
 	ftp://ftp.easynet.nl/mirror/GNOME/ \
 	ftp://ftp.unina.it/pub/linux/GNOME/ \
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/ \
@@ -148,7 +147,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://mirror.hiwaay.net/CPAN/modules/by-module/ \
 	ftp://ftp.bora.net/pub/CPAN/modules/by-module/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
-	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/ \
+	ftp://bioinformatics.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/ \
 	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
 	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
@@ -210,12 +209,11 @@ MASTER_SITE_WINDOWMAKER+=	\
 	ftp://ftp.task.gda.pl/mirror/ftp.windowmaker.org/pub/ \
 	ftp://ftp.nectec.or.th/pub/mirrors/windowmaker/ \
 	ftp://sunsite.ulatina.ac.cr/Mirrors/XWindows/Windomanagers/WindowMaker/ \
-	ftp://ftp.grolier.fr/pub/mirrors/ftp.windowmaker.org/pub/ \
+	ftp://ftp.club-internet.fr/pub/mirrors/ftp.windowmaker.org/pub/ \
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/
 
 MASTER_SITE_SOURCEWARE+=	\
 	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/ \
-	ftp://sourceware.cygnus.com/pub/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/ \
 	ftp://ftp.chg.ru/pub/sourceware/ \
 	ftp://ftp.fic.uni.lodz.pl/pub/sources.redhat.com/pub/ \
@@ -226,7 +224,6 @@ MASTER_SITE_SOURCEWARE+=	\
 	ftp://ftp.unina.it/pub/Unix/cygnus/ \
 	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/ \
 	ftp://gd.tuwien.ac.at/gnu/sourceware/ \
-	ftp://planetmirror.com/pub/sourceware/ \
 	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/ \
 	ftp://sysg.kek.jp/cygnus/ \
 	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/ \
@@ -261,5 +258,4 @@ MASTER_SITE_HORDE+=		\
 	ftp://ftp.it.horde.org/pub/mirror/horde.org/pub/ \
 	ftp://ftp.pt.horde.org/pub/horde-ftp/pub/ \
 	ftp://ftp.br.horde.org/pub/mirrors/ftp.horde.org/pub/ \
-	ftp://ftp.au.horde.org/pub/
-
+	ftp://ftp.my.horde.orgi/ftp.horde.org/pub/
