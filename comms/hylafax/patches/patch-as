@@ -1,0 +1,11 @@
+--- faxd/choptest.c++.orig	Wed Nov 27 00:21:40 1996
++++ faxd/choptest.c++	Sun Feb  8 03:37:58 1998
+@@ -31,7 +31,7 @@
+ #include <unistd.h>
+ #include "G3Decoder.h"
+ #include "Class2Params.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ class MemoryDecoder : public G3Decoder {
+ private:

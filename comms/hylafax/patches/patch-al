@@ -1,0 +1,11 @@
+--- faxd/FaxSend.c++.orig	Wed Nov 27 00:21:33 1996
++++ faxd/FaxSend.c++	Sun Feb  8 03:37:57 1998
+@@ -26,7 +26,7 @@
+ #include "Sys.h"
+ 
+ #include "Dispatcher.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ #include "FaxServer.h"
+ #include "FaxMachineInfo.h"
+ #include "FaxRecvInfo.h"

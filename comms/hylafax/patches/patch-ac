@@ -1,0 +1,11 @@
+--- util/SendFaxClient.c++.orig	Wed Nov 27 00:20:41 1996
++++ util/SendFaxClient.c++	Sun Feb  8 03:38:00 1998
+@@ -716,7 +716,7 @@
+     return tr;   
+ }
+ 
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ /*
+  * Count the number of ``pages'' in a TIFF file.

@@ -1,0 +1,11 @@
+--- faxd/PCFFont.c++.orig	Wed Nov 27 00:21:36 1996
++++ faxd/PCFFont.c++	Sun Feb  8 03:37:58 1998
+@@ -34,7 +34,7 @@
+  */
+ #include <unistd.h>
+ #include "PCFFont.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ #define LSBFirst		0
+ #define MSBFirst		1

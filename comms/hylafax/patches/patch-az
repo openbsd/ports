@@ -1,0 +1,11 @@
+--- hfaxd/HylaFAXServer.c++.orig	Wed Nov 27 00:21:48 1996
++++ hfaxd/HylaFAXServer.c++	Sun Feb  8 03:37:59 1998
+@@ -26,7 +26,7 @@
+ #include "port.h"
+ #include "Sys.h"
+ #include "config.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ #include "HylaFAXServer.h"
+ #include "Dispatcher.h"

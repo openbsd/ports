@@ -1,0 +1,11 @@
+--- hfaxd/FileTransfer.c++.orig	Wed Nov 27 00:21:47 1996
++++ hfaxd/FileTransfer.c++	Sun Feb  8 03:37:59 1998
+@@ -31,7 +31,7 @@
+ #include "Sys.h"
+ #include "config.h"
+ #include "zlib.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ #include <ctype.h>
+ #include <limits.h>

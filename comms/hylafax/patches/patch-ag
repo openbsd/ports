@@ -1,0 +1,11 @@
+--- util/tiffcheck.c++.orig	Wed Nov 27 00:21:04 1996
++++ util/tiffcheck.c++	Sun Feb  8 03:38:01 1998
+@@ -24,7 +24,7 @@
+  */
+ #include "Sys.h"
+ #include "Str.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ static	const char* appName;
+ 

@@ -1,0 +1,11 @@
+--- faxd/tif_fax3.h.orig	Wed Nov 27 00:21:26 1996
++++ faxd/tif_fax3.h	Sun Feb  8 03:37:58 1998
+@@ -35,7 +35,7 @@
+  * in Frank Cringle's viewfax program;
+  *      Copyright (C) 1990, 1995  Frank D. Cringle.
+  */
+-#include "tiff.h"
++#include "tiff34.h"
+ 
+ /*
+  * To override the default routine used to image decoded

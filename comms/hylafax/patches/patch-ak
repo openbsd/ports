@@ -1,0 +1,11 @@
+--- faxd/FaxRecv.c++.orig	Wed Nov 27 00:21:32 1996
++++ faxd/FaxRecv.c++	Sun Feb  8 03:37:57 1998
+@@ -30,7 +30,7 @@
+ #include <errno.h>
+ 
+ #include "Dispatcher.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ #include "FaxServer.h"
+ #include "FaxRecvInfo.h"
+ #include "faxApp.h"			// XXX

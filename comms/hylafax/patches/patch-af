@@ -1,0 +1,11 @@
+--- util/faxinfo.c++.orig	Wed Nov 27 00:21:03 1996
++++ util/faxinfo.c++	Sun Feb  8 03:38:01 1998
+@@ -30,7 +30,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ #include "PageSize.h"
+ #include "Class2Params.h"

@@ -1,0 +1,11 @@
+--- faxd/Class1.c++.orig	Wed Nov 27 00:21:26 1996
++++ faxd/Class1.c++	Sun Feb  8 03:37:57 1998
+@@ -31,7 +31,7 @@
+ #include "ModemConfig.h"
+ #include "HDLCFrame.h"
+ #include "t.30.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ 
+ #include <stdlib.h>
+ #include <ctype.h>

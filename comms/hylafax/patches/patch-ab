@@ -1,0 +1,16 @@
+--- config/zyxel-2864.orig	Wed Nov 27 00:20:29 1996
++++ config/zyxel-2864	Sun Feb  8 03:37:56 1998
+@@ -63,12 +63,11 @@
+ # &B1	  DTE-DCE rate is fixed at DTE setting
+ # &N0	  Auto-negotiate highest possible DCE-DCE link rate
+ # &S0	  DSR always on
+-# *F0	  Deny remote configuration
+ # S18=4	  Receive at 38400
+ # S38.3=1 DCD on/off sequence follows UNIX standard; also
+ #	  fix receiving baud rate at S18 value
+ # 
+-ModemResetCmds:		AT&B1&N0&S0*F0S18=4S38.3=1
++ModemResetCmds:		AT&B1&N0&S0S18=4S38.3=1
+ #
+ ModemDialCmd:		ATDT%s		# no '@' 'cuz then busy not recognized
+ NoCarrierRetrys:	3		# retry 3 times on no carrier

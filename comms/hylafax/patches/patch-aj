@@ -1,0 +1,11 @@
+--- faxd/FaxModem.h.orig	Wed Nov 27 00:21:18 1996
++++ faxd/FaxModem.h	Sun Feb  8 03:37:57 1998
+@@ -30,7 +30,7 @@
+  */
+ #include "ClassModem.h"
+ #include "Class2Params.h"
+-#include "tiffio.h"
++#include "tiffio34.h"
+ #include "G3Decoder.h"
+ #include "FaxSendStatus.h"
+ 

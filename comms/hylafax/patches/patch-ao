@@ -1,0 +1,11 @@
+--- faxd/Getty.c++.orig	Wed Nov 27 00:21:34 1996
++++ faxd/Getty.c++	Sun Feb  8 03:37:57 1998
+@@ -218,7 +218,7 @@
+     // NB: this is executed in the parent
+     fxStr device = fxStr::format("%s/" | line, _PATH_DEV);
+     Sys::chown(device, UUCPLock::getUUCPUid(), UUCPLock::getUUCPGid());
+-    Sys::chmod(device, 0600);			// reset protection
++    Sys::chmod(device, 0660);			// reset protection
+ }
+ 
+ extern void vlogError(const char* fmt, va_list ap);
