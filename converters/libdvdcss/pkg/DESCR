@@ -1,4 +1,17 @@
 libdvdcss is a simple library designed for accessing DVDs like a block
 device without having to worry about the decryption.
 
+Can be controlled through environment variables:
+
+DVDCSS_VERBOSE={0|1|2}: 
+    0: no error messages, no debug messages,
+    1: only error messages (this is the default)
+    2: error and debug messages
+
+DVDCSS_CACHE=directory:
+    specify a directory in which to store title key values. This will
+    speed up descrambling of DVDs which are in the cache. The DVDCSS_CACHE
+    directory is created if it does not exist, and a subdirectory is
+    created, named after the DVD's title or manufacturing date.
+
 WWW: ${HOMEPAGE}
