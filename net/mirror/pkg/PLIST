@@ -1,3 +1,4 @@
+@comment $OpenBSD
 bin/mirror
 bin/do_unlinks
 bin/pkgs_to_mmin
@@ -7,6 +8,8 @@ lib/mirror/dateconv.pl
 lib/mirror/ftp.pl
 lib/mirror/lsparse.pl
 lib/mirror/mirror.defaults.sample
+man/man1/mirror.1
+man/man1/mirrormaster.1
 share/doc/mirror/copyright.html
 share/doc/mirror/index.html
 share/doc/mirror/mirror-faq.html
@@ -17,5 +20,3 @@ share/doc/mirror/mirror-on-dusk.gif
 share/doc/mirror/Lake.class
 @dirrm share/doc/mirror
 @dirrm lib/mirror
-man/man1/mirror.1
-man/man1/mirrormaster.1
