@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/01/02 16:01:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/12 07:17:01 pvalchev Exp $
 bin/larsclock
 bin/larsremote
 bin/larswm
@@ -9,11 +9,8 @@ share/doc/larswm/ChangeLog
 share/doc/larswm/README
 share/doc/larswm/README.9wm
 share/doc/larswm/keyboard_refcard.ms
-share/doc/larswm/larswmrc_refcard.ms
 share/doc/larswm/mouse_refcard.ms
 share/examples/larswm/sample.barclock
-share/examples/larswm/sample.barinfo
-share/examples/larswm/sample.editor
 share/examples/larswm/sample.larswmrc
 share/examples/larswm/sample.xmodmaprc
 share/examples/larswm/sample.xsession
