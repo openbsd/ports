@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/01/25 08:14:30 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/12/25 11:51:23 jakob Exp $
 @pkgcfl postfix-*
 %%tls%%
 libexec/postfix/bounce
@@ -137,6 +137,7 @@ share/doc/postfix/html/trivial-rewrite.8.html
 share/doc/postfix/html/uce.html
 share/doc/postfix/html/virtual.5.html
 share/doc/postfix/html/virtual.8.html
+share/doc/postfix/readme/ADDRESS_CLASS_README
 share/doc/postfix/readme/DB_README
 share/doc/postfix/readme/DEBUG_README
 share/doc/postfix/readme/ETRN_README
@@ -145,12 +146,15 @@ share/doc/postfix/readme/INSTALL
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LMTP_README
+share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MACOSX_README
+share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
 share/doc/postfix/readme/PACKAGE_README
 share/doc/postfix/readme/PCRE_README
 share/doc/postfix/readme/QMQP_README
+share/doc/postfix/readme/RELEASE_NOTES
 share/doc/postfix/readme/RESTRICTION_CLASS_README
 share/doc/postfix/readme/SASL_README
 share/doc/postfix/readme/ULTRIX_README
@@ -180,6 +184,7 @@ share/examples/postfix/sample-flush.cf
 share/examples/postfix/sample-ldap.cf
 share/examples/postfix/sample-lmtp.cf
 share/examples/postfix/sample-local.cf
+share/examples/postfix/sample-mime.cf
 share/examples/postfix/sample-misc.cf
 share/examples/postfix/sample-pcre-access.cf
 share/examples/postfix/sample-pcre-body.cf

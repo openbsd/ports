@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2002/10/29 16:25:28 jakob Exp $
+# $OpenBSD: INSTALL,v 1.6 2002/12/25 11:51:23 jakob Exp $
 #
 # Pre/post-installation setup of postfix
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=/etc/postfix
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/postfix
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/postfix
 SPOOL_DIR=/var/spool/postfix
 
 # Function: set up postfix user/group accounts.
@@ -51,7 +51,7 @@ do_spooldir()
     [ -d $SPOOL_DIR/etc ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/etc
     [ -d $SPOOL_DIR/dev ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/dev
     for file in localtime services resolv.conf ; do
-	install -o root -g wheel -m 755 /etc/$file $SPOOL_DIR/etc
+	install -o root -g wheel -m 644 /etc/$file $SPOOL_DIR/etc
     done
 }
 
@@ -72,45 +72,53 @@ MAILER
     chmod 644 /etc/mailer.conf.postfix
 }
 
-# Function: install the postfix configuration files from the samples
+# Function: update postfix scripts
 #
-do_configs()
+update_scripts()
 {
-    if [ -d $CONFIG_DIR ]; then
-	echo ""
-	echo "+---------------"
-	echo "| The existing $1 configuration files in $CONFIG_DIR,"
-	echo "| have NOT been changed.  You may want to compare them to the"
-	echo "| current sample files, $SAMPLE_CONFIG_DIR,"
-	echo "| and update your configuration as needed."
-	echo "|"
-	echo "| Existing $CONFIG_DIR/postfix-script, however, will be"
-	echo "| updated to the latest version."
-    	echo "+---------------"
-	echo ""
-    else
-	# Install config files.
-	install -d -o root -g wheel -m 755 $CONFIG_DIR
-	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
-
-	# The correct files will be installed later.
-	rm -f $CONFIG_DIR/{postfix-script,postfix-files,post-install}
-
-	echo ""
-	echo "+---------------"
-	echo "| The $1 configuration files in $CONFIG_DIR,"
-	echo "| have been installed.  Please view these files and change"
-	echo "| the configuration to meet your needs."
-	echo "+---------------"
-	echo ""
-    fi
-
+    rm -f $CONFIG_DIR/{postfix-script,postfix-files,post-install}
     install -o root -g wheel -m 544 \
 	$SAMPLE_CONFIG_DIR/{postfix-script,post-install} $CONFIG_DIR
     install -o root -g wheel -m 444 \
 	$SAMPLE_CONFIG_DIR/postfix-files $CONFIG_DIR
+}
 
-    $CONFIG_DIR/post-install command_directory=${PREFIX}/sbin set-permissions
+# Function: install the postfix configuration files from the samples
+#
+do_configs()
+{
+    PINSTALL="${CONFIG_DIR}/post-install command_directory=${PREFIX}/sbin"
+
+    if [ -d $CONFIG_DIR ]; then
+	update_scripts
+
+	echo ""
+	$PINSTALL upgrade-configuration
+	echo ""
+
+	echo "+---------------"
+	echo "| The existing configuration files in $CONFIG_DIR has been preserved."
+	echo "| You may want to compare them to the current sample files,"
+	echo "| $SAMPLE_CONFIG_DIR, and update your configuration as needed."
+	echo "|"
+	echo "| $CONFIG_DIR/post{fix-{script,files},-install} has been updated."
+    	echo "+---------------"
+	echo ""
+    else
+	install -d -o root -g wheel -m 755 $CONFIG_DIR
+	install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/* $CONFIG_DIR
+
+	update_scripts
+
+	$PINSTALL first-install-reminder
+
+	echo "+---------------"
+	echo "| Configuration files has been installed in $CONFIG_DIR."
+	echo "| Please update these files to meet your needs."
+	echo "+---------------"
+    fi
+
+    $PINSTALL set-permissions create-missing
 
     grep syslogd_flags /etc/rc.conf{,.local} 2>/dev/null | grep -q postfix
     if [ $? -eq 1 ]; then
@@ -119,6 +127,7 @@ do_configs()
         echo "| Don't forget to add \"-a /var/spool/postfix/dev/log\" to syslogd_flags"
         echo "| in /etc/rc.conf.local (or /etc/rc.conf) and restart syslogd."
 	echo "+---------------"
+        echo ""
     fi
 }
 
@@ -126,7 +135,18 @@ do_configs()
 #
 do_notice()
 {
+
+    echo "+---------------"
+    echo "| The Postfix SMTP server will reject mail for unknown local users."
+    echo "| If the SMTP server is running chrooted, which is default in OpenBSD,"
+    echo "| you need to keep /etc/{passwd,pwd.db} in sync with"
+    echo "| /var/spool/postfix/etc/{passwd,pwd.db} or adjust the setting of the"
+    echo "| local_recipient_maps parameter in main.cf."
+    echo "|"
+    echo "| For more information, read ${PREFIX}/share/examples/postfix/main.cf"
+    echo "+---------------"
     echo ""
+
     echo "+---------------"
     echo "| Postfix can be set up to replace sendmail entirely. Please read the"
     echo "| documentation at file:$PREFIX/share/doc/postfix/html/index.html or"
@@ -158,9 +178,9 @@ case $2 in
 	do_accts
 	;;
     POST-INSTALL)
+	do_mailwrapper
 	do_spooldir
         do_configs $1
-	do_mailwrapper
 	do_notice
 	;;
     *)
