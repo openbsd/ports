@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.275 2003/05/23 21:35:26 jolan Exp $
+# $OpenBSD: Makefile,v 1.276 2003/05/27 14:35:12 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -28,7 +28,6 @@
      SUBDIR += crawl
      SUBDIR += ctrace
      SUBDIR += curl
-     SUBDIR += curl,kerberos
      SUBDIR += cvsup
      SUBDIR += cvsup,no_x11
 #    SUBDIR += cvsup-mirror

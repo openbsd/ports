@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2003/02/14 02:38:15 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2003/05/27 14:35:13 brad Exp $
 
 COMMENT=	"get files from FTP, Gopher, HTTP or HTTPS servers"
 
@@ -30,17 +30,11 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static \
 		--with-random="/dev/arandom"
 
-FLAVORS=	kerberos
-FLAVOR?=
-
-.if ${FLAVOR:L:Mkerberos}
-CONFIGURE_ARGS+=--with-krb4-includes="/usr/include/kerberosIV" \
-		--disable-ipv6
-.endif
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/curl
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	cd ${WRKSRC}; ${INSTALL_DATA} README ${PREFIX}/share/doc/curl
-	cd ${WRKSRC}; ${INSTALL_DATA} curl-mode.el ${PREFIX}/share/curl
+	cd ${WRKSRC}; ${INSTALL_DATA} curl-mode.el \
+		${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
