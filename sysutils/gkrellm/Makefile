@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/24 12:36:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/29 03:15:39 jcs Exp $
 
 DISTNAME=	gkrellm-1.2.2
 HOMEPAGE=	http://www.gkrellm.net/
 COMMENT=	"single process stack of system monitors"
 
 CATEGORIES=	sysutils
-NEED_VERSION=	1.474
+NEED_VERSION=	1.487
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
@@ -16,9 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	gdk_imlib.19::graphics/imlib \
-		gthread::devel/glib
-
+MODULES=	gtk
+LIB_DEPENDS+=	gdk_imlib.19::graphics/imlib
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
