@@ -1,11 +1,11 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
---- Imakefile.orig	Thu Oct 26 15:18:57 2000
-+++ Imakefile	Wed Sep  5 08:47:31 2001
-@@ -11,6 +11,7 @@ World:
+$OpenBSD: patch-Imakefile,v 1.2 2002/03/25 11:57:45 wilfried Exp $
+--- Imakefile.orig	Sun Mar 24 19:19:15 2002
++++ Imakefile	Sun Mar 24 19:18:12 2002
+@@ -11,6 +11,7 @@
  	@echo Built $(SUBDIRS).
  	@echo 'To build Xvnc, do "cd Xvnc", followed by "make World"'
  	@echo ""
 +	(cd Xvnc; make World)
- 
- MakeSubdirs($(SUBDIRS))
- DependSubdirs($(SUBDIRS))
+
+ libs:
+	@echo 'Building libraries...'

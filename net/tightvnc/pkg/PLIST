@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/03/25 11:51:42 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/03/25 11:57:45 wilfried Exp $
 @pkgcfl tightvnc-viewer-*
 bin/Xvnc
 bin/vncconnect
@@ -125,20 +125,20 @@ share/doc/vnc/vnc_docs/xlibvncviewer.html
 share/doc/vnc/vnc_docs/xvnc.html
 share/doc/vnc/vnc_docs/xvnchistory.html
 share/doc/vnc/vnc_docs/xvncviewer.html
+share/vnc/classes/AuthPanel.class
+share/vnc/classes/ButtonPanel.class
+share/vnc/classes/ClipboardFrame.class
 share/vnc/classes/DesCipher.class
-share/vnc/classes/animatedMemoryImageSource.class
-share/vnc/classes/authenticationPanel.class
-share/vnc/classes/clipboardFrame.class
+share/vnc/classes/OptionsFrame.class
+share/vnc/classes/RfbProto.class
+share/vnc/classes/VncCanvas.class
+share/vnc/classes/VncViewer.class
+share/vnc/classes/VncViewer.jar
 share/vnc/classes/hextile.vnc
 share/vnc/classes/index.vnc
 share/vnc/classes/noshared.vnc
-share/vnc/classes/optionsFrame.class
-share/vnc/classes/rfbProto.class
 share/vnc/classes/shared.vnc
 share/vnc/classes/tight.vnc
-share/vnc/classes/vncCanvas.class
-share/vnc/classes/vncviewer.class
-share/vnc/classes/vncviewer.jar
 share/vnc/classes/zlib.vnc
 @dirrm share/vnc/classes
 @dirrm share/vnc

@@ -1,7 +1,7 @@
-$OpenBSD: patch-vncserver,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
---- vncserver.orig	Mon Jun 25 03:52:14 2001
-+++ vncserver	Wed Sep  5 08:47:31 2001
-@@ -48,13 +48,23 @@ $defaultXStartup
+$OpenBSD: patch-vncserver,v 1.2 2002/03/25 11:57:45 wilfried Exp $
+--- vncserver.orig	Wed Mar 20 00:40:46 2002
++++ vncserver	Sun Mar 24 19:42:20 2002
+@@ -56,13 +56,23 @@
         "xterm -geometry 80x24+10+10 -ls -title \"\$VNCDESKTOP Desktop\" &\n".
         "twm &\n");
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-vncserver,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
  
  &Usage() if ($opt{'-help'} || $opt{'-h'} || $opt{'--help'});
  
-@@ -77,6 +87,25 @@ if ($opt{'-pixelformat'}) {
+@@ -85,6 +95,25 @@
  
  &CheckGeometryAndDepth();
  
@@ -52,16 +52,7 @@ $OpenBSD: patch-vncserver,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
  if ($opt{'-name'}) {
      $desktopName = $opt{'-name'};
  }
-@@ -152,6 +181,8 @@ $cmd .= " -rfbport $vncPort";
- # $cmd .= " -fp /usr/lib/X11/fonts/misc/,/usr/lib/X11/fonts/75dpi/";
- # $cmd .= " -co /usr/lib/X11/rgb";
- #
-+# bmah: Bring in the fontpath we computed earlier.
-+$cmd .= " -fp $fontPath";
- 
- foreach $arg (@ARGV) {
-     $cmd .= " " . &quotedString($arg);
-@@ -193,6 +224,7 @@ if (-e "/tmp/.X11-unix/X$displayNumber")
+@@ -210,6 +239,7 @@
      $ENV{DISPLAY}= "$host:$displayNumber";
  }
  $ENV{VNCDESKTOP}= $desktopName;
@@ -69,3 +60,12 @@ $OpenBSD: patch-vncserver,v 1.1.1.1 2001/09/08 00:38:11 lebel Exp $
  
  system("$vncUserDir/xstartup >> " . &quotedString($desktopLog) . " 2>&1 &");
  
+@@ -221,6 +251,8 @@
+ # CheckGeometryAndDepth simply makes sure that the geometry and depth values
+ # are sensible.
+ #
++# bmah: Bring in the fontpath we computed earlier.
++$cmd .= " -fp $fontPath";
+ 
+ sub CheckGeometryAndDepth
+ {
