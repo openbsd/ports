@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2001/06/29 16:08:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2001/08/19 21:39:09 jakob Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
-VERSION=	1.4
-DISTNAME=	xml2rfc.${VERSION}
-PKGNAME=	xml2rfc-${VERSION}
+VERSION=	1.6
+DISTNAME=	xml2rfc-${VERSION}
 CATEGORIES=	textproc
 NEED_VERSION=	1.363
-
+EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://xml.resource.org/authoring/
-
 HOMEPAGE=	http://xml.resource.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
@@ -19,11 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}
-
-DOCS=		README.xml README.txt \
-		rfc2629-author.xml rfc2629-author.txt \
-		rfc2629.dtd
+WRKDIST=	${WRKDIR}/xml2rfc.${VERSION}
 
 RUN_DEPENDS=	tclsh8.3::lang/tcl/8.3 \
 		${PREFIX}/lib/tcl8.3/TclXML::textproc/TclXML \
@@ -50,7 +44,7 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA} ${WRKSRC}/xml2rfc.tcl ${PREFIX}/share/xml2rfc
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xml2rfc
-.for file in ${DOCS}
+.for file in *.html *.txt *.xml *.dtd
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/xml2rfc
 .endfor
 
