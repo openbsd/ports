@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_token_c,v 1.1 2003/06/19 13:49:22 sturm Exp $
+--- src/token.c.orig	Sun May 25 13:21:28 2003
++++ src/token.c	Wed Jun 18 22:11:06 2003
+@@ -25,7 +25,8 @@
+  *----------------------------------------------------------------------
+  */
+ 
+-#include <arpa/inet.h>	/* For ntohl(), htonl() */
++#include <sys/types.h>
++#include <machine/endian.h>
+ 
+ #include "common.h"
+ 

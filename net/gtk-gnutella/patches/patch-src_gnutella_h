@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gnutella_h,v 1.1 2003/06/19 13:49:22 sturm Exp $
+--- src/gnutella.h.orig	Sat Apr 12 00:58:39 2003
++++ src/gnutella.h	Wed Jun 18 22:11:01 2003
+@@ -26,7 +26,8 @@
+ #ifndef _gnutella_h_
+ #define _gnutella_h_
+ 
+-#include <arpa/inet.h>	/* For ntohl(), htonl() */
++#include <sys/types.h>
++#include <machine/endian.h>
+ 
+ #include "gnet.h"
+ #include "gnet_property_priv.h"
