@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2001/08/13 01:09:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2001/08/14 20:56:58 lebel Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -66,7 +66,6 @@
      SUBDIR += procmail
      SUBDIR += qmail
      SUBDIR += qmailanalog
-     SUBDIR += qtools
      SUBDIR += serialmail
      SUBDIR += smtpclient
      SUBDIR += solid-pop3d
