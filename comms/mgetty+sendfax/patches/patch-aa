@@ -1,0 +1,17 @@
+--- fax/faxspool.in.orig	Fri Aug  8 21:43:55 1997
++++ fax/faxspool.in	Mon Dec 29 22:31:59 1997
+@@ -299,11 +299,11 @@
+ # user name (for authentification)
+ ##########
+ 
+-if user=`logname 2>/dev/null`
+-then :
++if [ `id -u` = 0 ]; then
++    user=root
+ else
+     id=`id`
+-    user=`expr "$id" : "[^( ]*(\([^)]*\)"`
++    user=`logname`
+ fi
+ test -z "$user" && user=$LOGNAME
+ test -z "$user" && user=$USER

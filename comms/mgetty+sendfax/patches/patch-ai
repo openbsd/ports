@@ -1,0 +1,19 @@
+*** mgetty.h.orig	Mon Apr 27 18:48:20 1998
+--- mgetty.h	Mon Apr 27 18:48:42 1998
+***************
+*** 61,67 ****
+  
+  /* bsd stuff */
+  #if defined(__BSD_NET2__) || defined(__386BSD__) || \
+!     defined(__NetBSD__)   || defined(__FreeBSD__)
+  # include <sys/param.h>	/* defines BSD, BSD4_3 and BSD4_4 */
+  # ifndef BSD
+  #  define BSD		/* just in case... */
+--- 61,67 ----
+  
+  /* bsd stuff */
+  #if defined(__BSD_NET2__) || defined(__386BSD__) || \
+!     defined(__NetBSD__)   || defined(__FreeBSD__) || defined(__OpenBSD__)
+  # include <sys/param.h>	/* defines BSD, BSD4_3 and BSD4_4 */
+  # ifndef BSD
+  #  define BSD		/* just in case... */

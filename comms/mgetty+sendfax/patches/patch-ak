@@ -1,0 +1,19 @@
+*** callback/callback.c.orig	Mon Apr 27 18:57:40 1998
+--- callback/callback.c	Mon Apr 27 18:58:04 1998
+***************
+*** 68,74 ****
+  /* prototypes for system functions (that are missing in some 
+   * system header files)
+   */
+! #ifndef __NetBSD__
+  time_t		time _PROTO(( long * tloc ));
+  #endif
+  
+--- 68,74 ----
+  /* prototypes for system functions (that are missing in some 
+   * system header files)
+   */
+! #if !defined(__NetBSD__) && !defined(__OpenBSD__)
+  time_t		time _PROTO(( long * tloc ));
+  #endif
+  

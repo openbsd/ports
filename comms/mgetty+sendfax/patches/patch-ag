@@ -1,0 +1,19 @@
+*** mgetty.c.orig	Mon Apr 27 18:31:37 1998
+--- mgetty.c	Mon Apr 27 18:32:15 1998
+***************
+*** 88,94 ****
+  /* prototypes for system functions (that are missing in some 
+   * system header files)
+   */
+! #ifndef __NetBSD__
+  time_t		time _PROTO(( long * tloc ));
+  #endif
+  
+--- 88,94 ----
+  /* prototypes for system functions (that are missing in some 
+   * system header files)
+   */
+! #if !defined(__NetBSD__) && !defined(__OpenBSD__)
+  time_t		time _PROTO(( long * tloc ));
+  #endif
+  

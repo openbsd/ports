@@ -1,0 +1,71 @@
+bin/autopvf
+bin/basictopvf
+bin/faxspool
+bin/faxq
+bin/faxrm
+bin/faxrunq
+bin/g3cat
+bin/g32pbm
+bin/g3topbm
+bin/newslock
+bin/lintopvf
+bin/mg.echo
+bin/pbm2g3
+bin/pvfamp
+bin/pvfcut
+bin/pvfecho
+bin/pvffft
+bin/pvffile
+bin/pvfmix
+bin/pvfreverse
+bin/pvfsine
+bin/pvfspeed
+bin/pvftoau
+bin/pvftobasic
+bin/pvftolin
+bin/pvftormd
+bin/pvftovoc
+bin/pvftowav
+bin/rmdfile
+bin/rmdtopvf
+bin/vm
+bin/voctopvf
+bin/wavtopvf
+@unexec install-info --delete %D/info/mgetty.info %D/info/dir
+info/mgetty.info
+info/mgetty.info-1
+info/mgetty.info-2
+info/mgetty.info-3
+info/mgetty.info-4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/mgetty.info %D/info/dir
+lib/mgetty+sendfax/cour25.pbm
+lib/mgetty+sendfax/cour25n.pbm
+man/man1/coverpg.1
+man/man1/fax.1
+man/man1/faxq.1
+man/man1/faxrm.1
+man/man1/faxrunq.1
+man/man1/faxspool.1
+man/man1/g3cat.1
+man/man1/g32pbm.1
+man/man1/pbm2g3.1
+man/man1/pvf.1
+man/man1/zplay.1
+man/man4/mgettydefs.4
+man/man5/faxqueue.5
+man/man8/callback.8
+man/man8/faxrunqd.8
+man/man8/mgetty.8
+man/man8/sendfax.8
+sbin/faxrunqd
+sbin/mgetty
+sbin/sendfax
+sbin/vgetty
+@dirrm lib/mgetty+sendfax
+@unexec echo "***"
+@unexec echo "*** Mgetty binaries, libraries and documentation files"
+@unexec echo "*** have been removed. You should remove /etc/mgetty"
+@unexec echo "*** directory manually to complete uninstall mgetty."
+@unexec echo "*** Don't forget to update /etc/ttys."
+@unexec echo "***"

@@ -1,0 +1,19 @@
+*** syslibs.h.orig	Mon Apr 27 18:21:02 1998
+--- syslibs.h	Mon Apr 27 18:30:27 1998
+***************
+*** 7,13 ****
+  #include <stdlib.h>
+  #endif
+  
+! #if !defined( __bsdi__ ) && !defined(__FreeBSD__) && !defined(NeXT)
+  #include <malloc.h>
+  #endif
+  
+--- 7,13 ----
+  #include <stdlib.h>
+  #endif
+  
+! #if !defined( __bsdi__ ) && !defined(__FreeBSD__) && !defined(NeXT) && !defined(__OpenBSD__)
+  #include <malloc.h>
+  #endif
+  

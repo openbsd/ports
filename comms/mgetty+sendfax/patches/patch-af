@@ -1,0 +1,19 @@
+*** logfile.c.orig	Mon Apr 27 18:30:52 1998
+--- logfile.c	Mon Apr 27 18:31:12 1998
+***************
+*** 53,59 ****
+     of those systems that _do_ declare them, it won't hurt */
+  
+  extern int sys_nerr;
+! #if !defined(__NetBSD__) && !defined( __FreeBSD__ ) && !defined(__GLIBC__)
+  extern char *sys_errlist[];
+  #endif
+  
+--- 53,59 ----
+     of those systems that _do_ declare them, it won't hurt */
+  
+  extern int sys_nerr;
+! #if !defined(__NetBSD__) && !defined( __FreeBSD__ ) && !defined(__GLIBC__) && !defined(__OpenBSD__)
+  extern char *sys_errlist[];
+  #endif
+  
