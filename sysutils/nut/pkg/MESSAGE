@@ -1,6 +1,6 @@
 Using the Nut package in an OpenBSD environment:
 
-Once you have the config files under /etc/nut set up properly, the
+Once you have the config files under ${SYSCONFDIR}/nut set up properly, the
 following block can be added to your /etc/rc.local file to start nut.
 
 # Start Nut
