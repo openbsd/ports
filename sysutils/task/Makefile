@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/18 07:21:48 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2002/09/18 19:52:28 jsyn Exp $
 
 COMMENT=		"forensic toolkit based on TCT"
 
 VERSION=		1.50
 DISTNAME=		task-${VERSION}
 CATEGORIES=		sysutils security
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sleuthkit/} \
+			${MASTER_SITE_PACKETSTORM:=UNIX/utilities/}
 
 HOMEPAGE=		http://www.atstake.com/research/tools/task/	
 
