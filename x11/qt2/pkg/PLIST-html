@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.7 2001/03/12 16:21:35 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.8 2001/03/21 23:54:47 espie Exp $
 share/doc/qt2/html/HOWTO-framebuffer.html
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
@@ -1388,6 +1388,10 @@ share/doc/qt2/html/xml-sax.html
 share/doc/qt2/html/xml.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html
+@exec mkdir -p %D/lib/qt2/doc
+@exec ln -s %D/share/doc/qt2/html %D/lib/qt2/doc/html
+@unexec rm %D/lib/qt2/doc/html
+@unexec rmdir %D/lib/qt2
 @dirrm share/doc/qt2/html/designer/figures
 @dirrm share/doc/qt2/html/designer/arrows
 @dirrm share/doc/qt2/html/designer
