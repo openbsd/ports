@@ -1,10 +1,4 @@
-# OpenBSD makefile for: 	xphoon
-# Version required:	18sep91 (in R5 contrib)
-# Date created:		December 1, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/04/10 02:40:18 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:20:13 brad Exp $
 
 DISTNAME=	xphoon
 PKGNAME=	xphoon-91.9.18

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/03/17 03:56:37 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/01 02:20:12 brad Exp $
 
 DISTNAME=	xephem-3.2.2
 CATEGORIES=	astro

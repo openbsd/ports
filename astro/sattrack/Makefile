@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/06 22:37:07 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:20:11 brad Exp $
 
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro

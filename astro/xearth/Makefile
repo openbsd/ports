@@ -1,10 +1,4 @@
-# OpenBSD makefile for:		xearth
-# Version required:     1.0
-# Date created:         1 December 1997
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/04/10 02:40:15 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:20:12 brad Exp $
 
 DISTNAME=	xearth-1.0
 CATEGORIES=	astro x11
