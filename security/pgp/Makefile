@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2003/01/30 22:46:26 margarida Exp $
 
 COMMENT=	"Pretty Good Privacy 2.6.3ia"
 
@@ -6,10 +6,10 @@ DISTNAME=	pgp263is
 PKGNAME=	pgp-2.6.3
 CATEGORIES=	security
 
-MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
-		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
-		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
-
+MASTER_SITES=	http://www.netsw.org/crypto/systems/pgp/ \
+		http://ftp.unicamp.br/pub/security/tools/ \
+		http://incal.net/ftp/pub/privacy/
+		
 PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
