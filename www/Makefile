@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2001/08/05 20:46:53 matt Exp $
+# $OpenBSD: Makefile,v 1.62 2001/08/06 02:00:35 brad Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -22,6 +22,7 @@
 #    SUBDIR += harvest
 #    SUBDIR += http-analyze
      SUBDIR += http_load
+     SUBDIR += http_ping
      SUBDIR += hotjava
      SUBDIR += jakarta-tomcat
      SUBDIR += jserv
