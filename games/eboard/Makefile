@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/02/19 07:46:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/12 17:44:46 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
-DISTNAME=	eboard-0.4.0
+DISTNAME=	eboard-0.4.1
 CATEGORIES=	games
 NEED_VERSION=	1.504
 
