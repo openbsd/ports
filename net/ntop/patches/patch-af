@@ -1,0 +1,93 @@
+--- pbuf.c.orig	Mon Aug  3 14:50:07 1998
++++ pbuf.c	Sun Nov 29 15:49:43 1998
+@@ -32,7 +32,10 @@
+ extern int newSock;
+ extern void sendString(char *x);
+ 
+-
++#define ENC_HDRLEN 12
++#define NULL_HDRLEN 4
++#define PPP_HDRLEN 4
++#define SLIP_HDRLEN 16
+ 
+ #ifdef ETHER_HEADER_HAS_EA
+ #define ESRC(ep) ((ep)->ether_shost.ether_addr_octet)
+@@ -127,7 +130,7 @@
+ char* savestr(const char *str);
+ RETSIGTYPE printHostsTraffic(int signumber_ignored);
+ char* intoa(struct in_addr addr);
+-
++u_int inet_p(int link, const u_char *p);
+ 
+ /* ************************************ */
+ 
+@@ -1080,15 +1083,13 @@
+  */
+ void pbuf_process(u_char *user, const struct pcap_pkthdr *h, const u_char *p)
+ {
+-  struct ether_header *ep;
+-  unsigned long hlen = sizeof(struct ether_header);
++  u_int hlen = link_header_len (datalink, h, p);
+ 
+   u_int caplen = h->caplen;
+   u_int length = h->len;
+ 
+-  if (caplen >= hlen) {
+-    ep = (struct ether_header *)p;
+-    if(ntohs(ep->ether_type) == ETHERTYPE_IP) {
++  if (hlen >= 0 && caplen >= hlen) {
++    if (inet_p (datalink, p)) {
+       ip_print(p+hlen, length);
+     } else {
+       length -= hlen;
+@@ -1103,3 +1104,50 @@
+     printHostsTraffic(0);    
+ }
+ 
++/*
++ * This is where we compute the datalink header length given the datalink
++ * type, a pcap packetheader and a packet buffer.  If the pcap packetheader
++ * and the packet pointers are NULL, we are only validating that the datalink
++ * type is supported.  In that case the header length returned need not be
++ * computed, just something different from -1 needs to be returned.
++ */
++u_int link_header_len(int link, const struct pcap_pkthdr *h, const u_char *p)
++{
++  switch (link) {
++  case DLT_EN10MB:
++  case DLT_IEEE802:
++    return(sizeof(struct ether_header));
++  case DLT_ENC:
++    return(ENC_HDRLEN);
++  case DLT_LOOP:
++  case DLT_NULL:
++    return(NULL_HDRLEN);
++  case DLT_SLIP:
++    return(SLIP_HDRLEN);
++  }
++  return(-1);
++}
++
++/* Predicate for testing if this packet contains an IP ditto.  */
++u_int inet_p(int link, const u_char *p)
++{
++  struct ether_header *ep;
++  u_int family;
++
++  switch (link) {
++  case DLT_EN10MB:
++  case DLT_IEEE802:
++    ep = (struct ether_header *)p;
++    return(ntohs(ep->ether_type) == ETHERTYPE_IP);
++  case DLT_ENC:
++  case DLT_PPP:
++  case DLT_SLIP:
++    return(1);
++  case DLT_LOOP:
++  case DLT_NULL:
++    (void)memcpy(&family, p, sizeof family);
++    return(ntohl(family) == AF_INET);
++  }
++  /* We never get here.  */
++  return(0);
++}

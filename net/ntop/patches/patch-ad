@@ -1,5 +1,5 @@
---- Makefile.in.old    Mon Aug 10 21:23:13 1998
-+++ Makefile.in        Mon Aug 10 21:23:39 1998
+--- Makefile.in.orig	Mon Aug  3 12:43:38 1998
++++ Makefile.in	Sun Nov 29 16:14:26 1998
 @@ -38,17 +38,17 @@
  CC = @CC@
  PROG = ntop
@@ -21,3 +21,17 @@
  
  INSTALL = @INSTALL@
  
+@@ -90,11 +90,10 @@
+ 	rm -f OS.NAME
+ 
+ install: force
+-	$(INSTALL) -m 6111 -o root -g sys $(PROG) $(DESTDIR)$(BINDEST)/$(PROG)
+-	chmod gou+s $(DESTDIR)$(BINDEST)/$(PROG)
++	$(INSTALL) -m 555 -o root -g bin $(PROG) $(DESTDIR)$(BINDEST)/$(PROG)
+ 
+ install-man: force
+-	$(INSTALL) -m 444 -o bin -g bin $(PROG).8 \
++	$(INSTALL) -m 444 -o root -g bin $(PROG).8 \
+ 	    $(DESTDIR)$(MANDEST)/man8/$(PROG).8
+ 
+ lint:	$(GENSRC) force

@@ -1,5 +1,5 @@
---- interface.h.old    Mon Aug 10 21:18:53 1998
-+++ interface.h        Mon Aug 10 21:19:12 1998
+--- interface.h.orig	Fri Jul 31 11:22:13 1998
++++ interface.h	Sun Nov 29 11:27:41 1998
 @@ -25,8 +25,9 @@
   * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
   */
@@ -11,3 +11,17 @@
  #ifdef HAVE_OS_PROTO_H
  #include "os-proto.h"
  #endif
+@@ -37,11 +38,13 @@
+ /* Globals */
+ extern char *program_name;
+ extern char version[], osName[], author[];
++extern int datalink;
+ 
+ /* Packet buffer routines */
+ extern void pbuf_init(int, int);
+ extern void pbuf_process(u_char *, const struct pcap_pkthdr *, const u_char *);
+ extern u_int pbuf_dump(pcap_dumper_t *);
++extern u_int link_header_len(int, const struct pcap_pkthdr *, const u_char *);
+ 
+ /* Utility routines */
+ #ifdef NOVFPRINTF

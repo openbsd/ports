@@ -1,6 +1,31 @@
---- ntop.c.orig	Mon Aug 10 22:44:18 1998
-+++ ntop.c	Mon Aug 10 22:45:29 1998
-@@ -298,11 +298,11 @@
+--- ntop.c.orig	Mon Aug  3 12:12:43 1998
++++ ntop.c	Sun Nov 29 15:31:33 1998
+@@ -40,6 +40,7 @@
+ 
+ /* Globals */
+ char *program_name, *device;
++int datalink;
+ 
+ /* Locals */
+ static pcap_t *p;
+@@ -134,10 +135,15 @@
+ 
+   /* Fire up libpcap */
+   p = pcap_open_live(device, DEFAULT_SNAPLEN, !pflag, 1000, ebuf);
+-
+   if (p == NULL)
+     error(ebuf);
+ 
++  /* Find out what datalink type the interface is */
++  datalink = pcap_datalink(p);
++  if (link_header_len(datalink, 0, 0) == -1)
++    error("unsupported link type");
++
++
+   if (pcap_lookupnet(device, &localnet, &netmask, ebuf) < 0)
+     error(ebuf);
+ 
+@@ -298,11 +304,11 @@
  usage()
  {
    extern char version[];
