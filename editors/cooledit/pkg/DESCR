@@ -10,4 +10,4 @@ Cooledit is a suite of programs consisting of the following:
 	under any window manager
 
 FLAVOR=python  
-	turns it into a programmable editor, must have python 2.
+	turns it into a programmable editor, must have Python 2.

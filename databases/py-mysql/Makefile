@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/07/26 21:04:24 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT=	"python interface to MySQL"
+COMMENT=	"Python interface to MySQL"
 
 VERSION=	0.9.2
 DISTNAME=	MySQL-python-${VERSION}

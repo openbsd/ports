@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2004/05/23 15:58:01 xsa Exp $
+# $OpenBSD: Makefile,v 1.21 2004/07/26 21:04:24 xsa Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-COMMENT=		"python imaging library"
-COMMENT-examples=	"examples for python imaging library"
+COMMENT=		"Python imaging library"
+COMMENT-examples=	"examples for Python imaging library"
 
 VERSION=		1.1.4
 DISTNAME=		Imaging-${VERSION}

@@ -1,7 +1,7 @@
 CryptKit is a developer's toolkit implementing several of the most
 modern and efficient cryptographic algorithms.  The kit is primarily
 written in ANSI C for speed and subsequently wrapped with SWIG for
-ease of use in python.
+ease of use in Python.
 
 CryptKit is small and fast, mainly because it implements excellent
 algorithms: Rijndael (AES), SHA 256 bits, Elliptic Curve PKI,

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/06/15 09:53:12 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/07/26 21:04:24 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT=	"python interface to cURL library"
+COMMENT=	"Python interface to cURL library"
 
 VERSION=	7.12
 DISTNAME=	pycurl-${VERSION}
