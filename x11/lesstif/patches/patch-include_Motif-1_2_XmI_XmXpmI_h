@@ -1,0 +1,28 @@
+$OpenBSD: patch-include_Motif-1_2_XmI_XmXpmI_h,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
+--- include/Motif-1.2/XmI/XmXpmI.h.orig	Thu Sep 21 14:49:43 2000
++++ include/Motif-1.2/XmI/XmXpmI.h	Wed Sep  1 20:30:12 2004
+@@ -90,6 +90,11 @@ extern FILE *popen();
+ 		boundCheckingCalloc((long)(nelem),(long) (elsize))
+ #endif
+ 
++#if defined(SCO) || defined(__USLC__)
++#include <stdint.h>	/* For SIZE_MAX */
++#endif
++#include <limits.h>
++
+ #define XPMMAXCMTLEN BUFSIZ
+ typedef struct {
+     unsigned int type;
+@@ -187,9 +192,9 @@ typedef struct _xpmHashAtom {
+ }      *xpmHashAtom;
+ 
+ typedef struct {
+-    int size;
+-    int limit;
+-    int used;
++    unsigned int size;
++    unsigned int limit;
++    unsigned int used;
+     xpmHashAtom *atomTable;
+ }      xpmHashTable;
+ 

@@ -1,0 +1,339 @@
+$OpenBSD: patch-lib_Xm-2_0_Xpm_c,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
+--- lib/Xm-2.0/Xpm.c.orig	Fri Sep 22 22:35:14 2000
++++ lib/Xm-2.0/Xpm.c	Wed Sep  1 20:30:12 2004
+@@ -53,7 +53,7 @@ int xpmParseDataAndCreate(Display *displ
+ 	XpmAttributes *attributes);
+ 
+ /* 3.2 backward compatibility code */
+-LFUNC(CreateOldColorTable, int, (XpmColor *ct, int ncolors,
++LFUNC(CreateOldColorTable, int, (XpmColor *ct, unsigned int ncolors,
+ 				 XpmColor ***oldct));
+ 
+ LFUNC(FreeOldColorTable, void, (XpmColor **colorTable, int ncolors));
+@@ -64,12 +64,15 @@ LFUNC(FreeOldColorTable, void, (XpmColor
+ static int
+ CreateOldColorTable(ct, ncolors, oldct)
+     XpmColor *ct;
+-    int ncolors;
++    unsigned int ncolors;
+     XpmColor ***oldct;
+ {
+     XpmColor **colorTable, **color;
+     int a;
+ 
++    if (ncolors >= SIZE_MAX / sizeof(XpmColor *)) 
++	return XpmNoMemory;
++
+     colorTable = (XpmColor **) XpmMalloc(ncolors * sizeof(XpmColor *));
+     if (!colorTable) {
+ 	*oldct = NULL;
+@@ -1302,6 +1305,8 @@ WritePixels(FILE *file, unsigned int wid
+     unsigned int x, y, h;
+ 
+     h = height - 1;
++    if (cpp != 0 && width >= (SIZE_MAX - 3)/cpp) 
++	return XpmNoMemory;    
+     p = buf = (char *) XpmMalloc(width * cpp + 3);
+     if (!buf)
+ 	return (XpmNoMemory);
+@@ -2289,6 +2294,9 @@ XpmCreateImageFromXpmImage(display, imag
+ 
+     ErrorStatus = XpmSuccess;
+ 
++    if (image->ncolors >= SIZE_MAX / sizeof(Pixel)) 
++	return (XpmNoMemory);
++
+     /* malloc pixels index tables */
+     image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * image->ncolors);
+     if (!image_pixels)
+@@ -2461,6 +2469,8 @@ CreateXImage(display, visual, depth, for
+ 	return (XpmNoMemory);
+ 
+ #if !defined(FOR_MSW) && !defined(AMIGA)
++    if (height != 0 && (*image_return)->bytes_per_line >= SIZE_MAX / height)
++	return XpmNoMemory;
+     /* now that bytes_per_line must have been set properly alloc data */
+     (*image_return)->data =
+ 	(char *) XpmMalloc((*image_return)->bytes_per_line * height);
+@@ -3531,6 +3541,9 @@ xpmParseDataAndCreate(display, data, ima
+ 	xpmGetCmt(data, &colors_cmt);
+ 
+     /* malloc pixels index tables */
++    if (ncolors >= SIZE_MAX / sizeof(Pixel)) 
++	return XpmNoMemory;
++
+     image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * ncolors);
+     if (!image_pixels)
+ 	RETURN(XpmNoMemory);
+@@ -3789,8 +3802,9 @@ ParseAndPutPixels(
+ 	    }
+ 	    obm = SelectObject(*dc, image->bitmap);
+ #endif
++	    if (ncolors > 256)
++		return (XpmFileInvalid);
+ 
+-
+ 	    memset((char *)colidx, 0, 256 * sizeof(short));
+ 	    for (a = 0; a < ncolors; a++)
+ 		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
+@@ -3894,6 +3908,9 @@ if (cidx[f]) XpmFree(cidx[f]);}
+ 	    char *s;
+ 	    char buf[BUFSIZ];
+ 
++	    if (cpp >= sizeof(buf))
++		return (XpmFileInvalid);
++
+ 	    buf[cpp] = '\0';
+ 	    if (USE_HASHTABLE) {
+ 		xpmHashAtom *slot;
+@@ -4300,7 +4317,7 @@ xpmGetCmt(mdata, cmt)
+ {
+     if (!mdata->type)
+ 	*cmt = NULL;
+-    else if (mdata->CommentLength) {
++    else if (data->CommentLength != 0 && data->CommentLength < SIZE_MAX - 1) {
+ 	*cmt = (char *) XpmMalloc(mdata->CommentLength + 1);
+ 	strncpy(*cmt, mdata->Comment, mdata->CommentLength);
+ 	(*cmt)[mdata->CommentLength] = '\0';
+@@ -4510,7 +4527,7 @@ HashTableGrows(table)
+     xpmHashTable *table;
+ {
+     xpmHashAtom *atomTable = table->atomTable;
+-    int size = table->size;
++    unsigned int size = table->size;
+     xpmHashAtom *t, *p;
+     int i;
+     int oldSize = size;
+@@ -4519,6 +4536,8 @@ HashTableGrows(table)
+     HASH_TABLE_GROWS
+ 	table->size = size;
+     table->limit = size / 3;
++    if (size >= SIZE_MAX / sizeof(*atomTable)) 
++	return (XpmNoMemory);
+     atomTable = (xpmHashAtom *) XpmMalloc(size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (XpmNoMemory);
+@@ -4579,6 +4598,8 @@ xpmHashTableInit(table)
+     table->size = INITIAL_HASH_SIZE;
+     table->limit = table->size / 3;
+     table->used = 0;
++    if (table->size >= SIZE_MAX / sizeof(*atomTable))
++	return (XpmNoMemory);
+     atomTable = (xpmHashAtom *) XpmMalloc(table->size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (XpmNoMemory);
+@@ -4899,7 +4920,7 @@ xpmParseValues(data, width, height, ncol
+     unsigned int *extensions;
+ {
+     unsigned int l;
+-    char buf[BUFSIZ];
++    char buf[BUFSIZ + 1];
+ 
+     if (!data->format) {		/* XPM 2 or 3 */
+ 
+@@ -5008,10 +5029,10 @@ xpmParseColors(data, ncolors, cpp, color
+     XpmColor **colorTablePtr;
+     xpmHashTable *hashtable;
+ {
+-    unsigned int key, l, a, b;
++    unsigned int key, l, a, b, len;
+     unsigned int curkey;		/* current color key */
+     unsigned int lastwaskey;		/* key read */
+-    char buf[BUFSIZ];
++    char buf[BUFSIZ+1];
+     char curbuf[BUFSIZ];		/* current buffer */
+     char **sptr, *s;
+     XpmColor *color;
+@@ -5019,6 +5040,8 @@ xpmParseColors(data, ncolors, cpp, color
+     char **defaults;
+     int ErrorStatus;
+ 
++    if (ncolors >= SIZE_MAX / sizeof(XpmColor))
++	return (XpmNoMemory);
+     colorTable = (XpmColor *) XpmCalloc(ncolors, sizeof(XpmColor));
+     if (!colorTable)
+ 	return (XpmNoMemory);
+@@ -5030,6 +5053,10 @@ xpmParseColors(data, ncolors, cpp, color
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp >= SIZE_MAX - 1) {
++		xpmFreeColorTable(colorTable, ncolors);
++		return (XpmNoMemory);
++	    }
+ 	    color->string = (char *) XpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+@@ -5067,13 +5094,14 @@ xpmParseColors(data, ncolors, cpp, color
+ 		}
+ 		if (!lastwaskey && key < NKEYS) {	/* open new key */
+ 		    if (curkey) {	/* flush string */
+-			s = (char *) XpmMalloc(strlen(curbuf) + 1);
++			len = strlen(curbuf) + 1;
++			s = (char *) XpmMalloc(len);
+ 			if (!s) {
+ 			    xpmFreeColorTable(colorTable, ncolors);
+ 			    return (XpmNoMemory);
+ 			}
+ 			defaults[curkey] = s;
+-			strcpy(s, curbuf);
++			memcpy(s, curbuf, len);
+ 		    }
+ 		    curkey = key + 1;	/* set new key  */
+ 		    *curbuf = '\0';	/* reset curbuf */
+@@ -5084,9 +5112,9 @@ xpmParseColors(data, ncolors, cpp, color
+ 			return (XpmFileInvalid);
+ 		    }
+ 		    if (!lastwaskey)
+-			strcat(curbuf, " ");	/* append space */
++			strlcat(curbuf, " ", sizeof(curbuf)); /* append space */
+ 		    buf[l] = '\0';
+-		    strcat(curbuf, buf);/* append buf */
++		    strlcat(curbuf, buf, sizeof(curbuf));/* append buf */
+ 		    lastwaskey = 0;
+ 		}
+ 	    }
+@@ -5094,12 +5122,13 @@ xpmParseColors(data, ncolors, cpp, color
+ 		xpmFreeColorTable(colorTable, ncolors);
+ 		return (XpmFileInvalid);
+ 	    }
+-	    s = defaults[curkey] = (char *) XpmMalloc(strlen(curbuf) + 1);
++	    len = strlen(curbuf) + 1;
++	    s = defaults[curkey] = (char *) XpmMalloc(len);
+ 	    if (!s) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+ 		return (XpmNoMemory);
+ 	    }
+-	    strcpy(s, curbuf);
++	    memcpy(s, curbuf, len);
+ 	}
+     } else {				/* XPM 1 */
+ 	/* get to the beginning of the first string */
+@@ -5112,6 +5141,10 @@ xpmParseColors(data, ncolors, cpp, color
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp >= SIZE_MAX - 1) {
++		xpmFreeColorTable(colorTable, ncolors);
++		return (XpmNoMemory);
++	    }
+ 	    color->string = (char *) XpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+@@ -5140,16 +5173,17 @@ xpmParseColors(data, ncolors, cpp, color
+ 	    *curbuf = '\0';		/* init curbuf */
+ 	    while ((l = xpmNextWord(data, buf, BUFSIZ))) {
+ 		if (*curbuf != '\0')
+-		    strcat(curbuf, " ");/* append space */
++		    strlcat(curbuf, " ", sizeof(curbuf));/* append space */
+ 		buf[l] = '\0';
+-		strcat(curbuf, buf);	/* append buf */
++		strlcat(curbuf, buf, sizeof(curbuf));	/* append buf */
+ 	    }
+-	    s = (char *) XpmMalloc(strlen(curbuf) + 1);
++	    len = strlen(curbuf) + 1;
++	    s = (char *) XpmMalloc(len);
+ 	    if (!s) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+ 		return (XpmNoMemory);
+ 	    }
+-	    strcpy(s, curbuf);
++	    memcpy(s, curbuf, len);
+ 	    color->c_color = s;
+ 	    *curbuf = '\0';		/* reset curbuf */
+ 	    if (a < ncolors - 1)
+@@ -5174,6 +5208,9 @@ ParsePixels(data, width, height, ncolors
+     unsigned int *iptr, *iptr2;
+     unsigned int a, x, y;
+ 
++    if ((height > 0 && width >= SIZE_MAX / height) ||
++	width * height >= SIZE_MAX / sizeof(unsigned int)) 
++	return XpmNoMemory;
+ #ifndef FOR_MSW
+     iptr2 = (unsigned int *) XpmMalloc(sizeof(unsigned int) * width * height);
+ #else
+@@ -5197,6 +5234,9 @@ ParsePixels(data, width, height, ncolors
+ 	{
+ 	    unsigned short colidx[256];
+ 
++	    if (ncolors > 256)
++		return (XpmFileInvalid);
++
+ 	    memset((char *)colidx, 0, 256 * sizeof(short));
+ 	    for (a = 0; a < ncolors; a++)
+ 		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
+@@ -5274,6 +5314,9 @@ if (cidx[f]) XpmFree(cidx[f]);}
+ 	    char *s;
+ 	    char buf[BUFSIZ];
+ 
++	    if (cpp >= sizeof(buf))
++		return (XpmFileInvalid);
++
+ 	    buf[cpp] = '\0';
+ 	    if (USE_HASHTABLE) {
+ 		xpmHashAtom *slot;
+@@ -5757,7 +5800,8 @@ LFUNC(MSWGetImagePixels, int, (Display *
+ LFUNC(ScanTransparentColor, int, (XpmColor *color, unsigned int cpp,
+ 				  XpmAttributes *attributes));
+ 
+-LFUNC(ScanOtherColors, int, (Display *display, XpmColor *colors, int ncolors,
++LFUNC(ScanOtherColors, int, (Display *display, XpmColor *colors,
++			     unsigned int ncolors,
+ 			     Pixel *pixels, unsigned int mask,
+ 			     unsigned int cpp, XpmAttributes *attributes));
+ 
+@@ -5882,11 +5926,17 @@ XpmCreateXpmImageFromImage(display, imag
+     else
+ 	cpp = 0;
+ 
++    if ((height > 0 && width >= SIZE_MAX / height) ||
++	width * height >= SIZE_MAX / sizeof(unsigned int))
++	RETURN(XpmNoMemory);
+     pmap.pixelindex =
+ 	(unsigned int *) XpmCalloc(width * height, sizeof(unsigned int));
+     if (!pmap.pixelindex)
+ 	RETURN(XpmNoMemory);
+ 
++    if (pmap.size >= SIZE_MAX / sizeof(Pixel)) 
++	RETURN(XpmNoMemory);
++
+     pmap.pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * pmap.size);
+     if (!pmap.pixels)
+ 	RETURN(XpmNoMemory);
+@@ -5951,7 +6001,8 @@ XpmCreateXpmImageFromImage(display, imag
+      * get rgb values and a string of char, and possibly a name for each
+      * color
+      */
+-
++    if (pmap.ncolors >= SIZE_MAX / sizeof(XpmColor))
++	RETURN(XpmNoMemory);
+     colorTable = (XpmColor *) XpmCalloc(pmap.ncolors, sizeof(XpmColor));
+     if (!colorTable)
+ 	RETURN(XpmNoMemory);
+@@ -6010,6 +6061,8 @@ ScanTransparentColor(color, cpp, attribu
+ 
+     /* first get a character string */
+     a = 0;
++    if (cpp >= SIZE_MAX - 1)
++	return (XpmNoMemory);
+     if (!(s = color->string = (char *) XpmMalloc(cpp + 1)))
+ 	return (XpmNoMemory);
+     *s++ = printable[c = a % MAXPRINTABLE];
+@@ -6057,7 +6110,7 @@ static int
+ ScanOtherColors(display, colors, ncolors, pixels, mask, cpp, attributes)
+     Display *display;
+     XpmColor *colors;
+-    int ncolors;
++    unsigned int ncolors;
+     Pixel *pixels;
+     unsigned int mask;
+     unsigned int cpp;
+@@ -6101,6 +6154,8 @@ ScanOtherColors(display, colors, ncolors
+     }
+ 
+     /* first get character strings and rgb values */
++    if (ncolors >= SIZE_MAX / sizeof(XColor) || cpp >= SIZE_MAX - 1)
++	return (XpmNoMemory);
+     xcolors = (XColor *) XpmMalloc(sizeof(XColor) * ncolors);
+     if (!xcolors)
+ 	return (XpmNoMemory);

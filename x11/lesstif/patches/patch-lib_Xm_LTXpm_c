@@ -1,0 +1,329 @@
+$OpenBSD: patch-lib_Xm_LTXpm_c,v 1.1 2004/09/01 22:57:36 pvalchev Exp $
+--- lib/Xm/LTXpm.c.orig	Fri Sep 22 22:35:11 2000
++++ lib/Xm/LTXpm.c	Wed Sep  1 20:33:45 2004
+@@ -53,7 +53,7 @@ int _LtxpmParseDataAndCreate(Display *di
+ 	_LtXpmAttributes *attributes);
+ 
+ /* 3.2 backward compatibility code */
+-LFUNC(CreateOldColorTable, int, (_LtXpmColor *ct, int ncolors,
++LFUNC(CreateOldColorTable, int, (_LtXpmColor *ct, unsigned int ncolors,
+ 				 _LtXpmColor ***oldct));
+ 
+ LFUNC(FreeOldColorTable, void, (_LtXpmColor **colorTable, int ncolors));
+@@ -64,12 +64,15 @@ LFUNC(FreeOldColorTable, void, (_LtXpmCo
+ static int
+ CreateOldColorTable(ct, ncolors, oldct)
+     _LtXpmColor *ct;
+-    int ncolors;
++    unsigned int ncolors;
+     _LtXpmColor ***oldct;
+ {
+     _LtXpmColor **colorTable, **color;
+     int a;
+ 
++    if (ncolors >= SIZE_MAX / sizeof(_LtXpmColor *)) 
++	return _LtXpmNoMemory;
++
+     colorTable = (_LtXpmColor **) _LtXpmMalloc(ncolors * sizeof(_LtXpmColor *));
+     if (!colorTable) {
+ 	*oldct = NULL;
+@@ -2290,6 +2293,9 @@ _LtXpmCreateImageFromXpmImage(display, i
+ 
+     ErrorStatus = _LtXpmSuccess;
+ 
++    if (image->ncolors >= SIZE_MAX / sizeof(Pixel)) 
++	return (_LtXpmNoMemory);
++
+     /* malloc pixels index tables */
+     image_pixels = (Pixel *) _LtXpmMalloc(sizeof(Pixel) * image->ncolors);
+     if (!image_pixels)
+@@ -2462,6 +2468,8 @@ CreateXImage(display, visual, depth, for
+ 	return (_LtXpmNoMemory);
+ 
+ #if !defined(FOR_MSW) && !defined(AMIGA)
++    if (height != 0 && (*image_return)->bytes_per_line >= SIZE_MAX / height)
++	return _LtXpmNoMemory;
+     /* now that bytes_per_line must have been set properly alloc data */
+     (*image_return)->data =
+ 	(char *) _LtXpmMalloc((*image_return)->bytes_per_line * height);
+@@ -3532,6 +3540,9 @@ _LtxpmParseDataAndCreate(display, data, 
+ 	_LtxpmGetCmt(data, &colors_cmt);
+ 
+     /* malloc pixels index tables */
++    if (ncolors >= SIZE_MAX / sizeof(Pixel)) 
++	return _LtXpmNoMemory;
++
+     image_pixels = (Pixel *) _LtXpmMalloc(sizeof(Pixel) * ncolors);
+     if (!image_pixels)
+ 	RETURN(_LtXpmNoMemory);
+@@ -3790,8 +3801,9 @@ ParseAndPutPixels(
+ 	    }
+ 	    obm = SelectObject(*dc, image->bitmap);
+ #endif
++	    if (ncolors > 256)
++		return (_LtXpmFileInvalid);
+ 
+-
+ 	    memset((char *)colidx, 0, 256 * sizeof(short));
+ 	    for (a = 0; a < ncolors; a++)
+ 		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
+@@ -3895,6 +3907,9 @@ if (cidx[f]) _LtXpmFree(cidx[f]);}
+ 	    char *s;
+ 	    char buf[BUFSIZ];
+ 
++	    if (cpp >= sizeof(buf))
++		return (_LtXpmFileInvalid);
++
+ 	    buf[cpp] = '\0';
+ 	    if (USE_HASHTABLE) {
+ 		xpmHashAtom *slot;
+@@ -4301,7 +4316,7 @@ _LtxpmGetCmt(mdata, cmt)
+ {
+     if (!mdata->type)
+ 	*cmt = NULL;
+-    else if (mdata->CommentLength) {
++    else if (mdata->CommentLength != 0 && mdata->CommentLength < SIZE_MAX - 1) {
+ 	*cmt = (char *) _LtXpmMalloc(mdata->CommentLength + 1);
+ 	strncpy(*cmt, mdata->Comment, mdata->CommentLength);
+ 	(*cmt)[mdata->CommentLength] = '\0';
+@@ -4511,7 +4526,7 @@ HashTableGrows(table)
+     xpmHashTable *table;
+ {
+     xpmHashAtom *atomTable = table->atomTable;
+-    int size = table->size;
++    unsigned int size = table->size;
+     xpmHashAtom *t, *p;
+     int i;
+     int oldSize = size;
+@@ -4520,6 +4535,8 @@ HashTableGrows(table)
+     HASH_TABLE_GROWS
+ 	table->size = size;
+     table->limit = size / 3;
++    if (size >= SIZE_MAX / sizeof(*atomTable)) 
++	return (_LtXpmNoMemory);
+     atomTable = (xpmHashAtom *) _LtXpmMalloc(size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (_LtXpmNoMemory);
+@@ -4580,6 +4597,8 @@ _LtxpmHashTableInit(table)
+     table->size = INITIAL_HASH_SIZE;
+     table->limit = table->size / 3;
+     table->used = 0;
++    if (table->size >= SIZE_MAX / sizeof(*atomTable))
++	return (_LtXpmNoMemory);
+     atomTable = (xpmHashAtom *) _LtXpmMalloc(table->size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (_LtXpmNoMemory);
+@@ -4900,7 +4919,7 @@ _LtxpmParseValues(data, width, height, n
+     unsigned int *extensions;
+ {
+     unsigned int l;
+-    char buf[BUFSIZ];
++    char buf[BUFSIZ + 1];
+ 
+     if (!data->format) {		/* XPM 2 or 3 */
+ 
+@@ -5009,10 +5028,10 @@ _LtxpmParseColors(data, ncolors, cpp, co
+     _LtXpmColor **colorTablePtr;
+     xpmHashTable *hashtable;
+ {
+-    unsigned int key, l, a, b;
++    unsigned int key, l, a, b, len;
+     unsigned int curkey;		/* current color key */
+     unsigned int lastwaskey;		/* key read */
+-    char buf[BUFSIZ];
++    char buf[BUFSIZ+1];
+     char curbuf[BUFSIZ];		/* current buffer */
+     char **sptr, *s;
+     _LtXpmColor *color;
+@@ -5020,6 +5039,8 @@ _LtxpmParseColors(data, ncolors, cpp, co
+     char **defaults;
+     int ErrorStatus;
+ 
++    if (ncolors >= SIZE_MAX / sizeof(_LtXpmColor))
++	return (_LtXpmNoMemory);
+     colorTable = (_LtXpmColor *) _LtXpmCalloc(ncolors, sizeof(_LtXpmColor));
+     if (!colorTable)
+ 	return (_LtXpmNoMemory);
+@@ -5031,6 +5052,10 @@ _LtxpmParseColors(data, ncolors, cpp, co
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp >= SIZE_MAX - 1) {
++		_LtxpmFreeColorTable(colorTable, ncolors);
++		return (_LtXpmNoMemory);
++	    }
+ 	    color->string = (char *) _LtXpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		_LtxpmFreeColorTable(colorTable, ncolors);
+@@ -5068,13 +5093,14 @@ _LtxpmParseColors(data, ncolors, cpp, co
+ 		}
+ 		if (!lastwaskey && key < NKEYS) {	/* open new key */
+ 		    if (curkey) {	/* flush string */
+-			s = (char *) _LtXpmMalloc(strlen(curbuf) + 1);
++			len = strlen(curbuf) + 1;
++			s = (char *) _LtXpmMalloc(len);
+ 			if (!s) {
+ 			    _LtxpmFreeColorTable(colorTable, ncolors);
+ 			    return (_LtXpmNoMemory);
+ 			}
+ 			defaults[curkey] = s;
+-			strcpy(s, curbuf);
++			memcpy(s, curbuf, len);
+ 		    }
+ 		    curkey = key + 1;	/* set new key  */
+ 		    *curbuf = '\0';	/* reset curbuf */
+@@ -5085,9 +5111,9 @@ _LtxpmParseColors(data, ncolors, cpp, co
+ 			return (_LtXpmFileInvalid);
+ 		    }
+ 		    if (!lastwaskey)
+-			strcat(curbuf, " ");	/* append space */
++			strlcat(curbuf, " ", sizeof(curbuf));	/* append space */
+ 		    buf[l] = '\0';
+-		    strcat(curbuf, buf);/* append buf */
++		    strlcat(curbuf, buf, sizeof(curbuf));/* append buf */
+ 		    lastwaskey = 0;
+ 		}
+ 	    }
+@@ -5095,12 +5121,13 @@ _LtxpmParseColors(data, ncolors, cpp, co
+ 		_LtxpmFreeColorTable(colorTable, ncolors);
+ 		return (_LtXpmFileInvalid);
+ 	    }
+-	    s = defaults[curkey] = (char *) _LtXpmMalloc(strlen(curbuf) + 1);
++	    len = strlen(curbuf) + 1;
++	    s = defaults[curkey] = (char *) _LtXpmMalloc(len);
+ 	    if (!s) {
+ 		_LtxpmFreeColorTable(colorTable, ncolors);
+ 		return (_LtXpmNoMemory);
+ 	    }
+-	    strcpy(s, curbuf);
++	    memcpy(s, curbuf, len);
+ 	}
+     } else {				/* XPM 1 */
+ 	/* get to the beginning of the first string */
+@@ -5113,6 +5140,10 @@ _LtxpmParseColors(data, ncolors, cpp, co
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp >= SIZE_MAX - 1) {
++		_LtxpmFreeColorTable(colorTable, ncolors);
++		return (_LtXpmNoMemory);
++	    }
+ 	    color->string = (char *) _LtXpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		_LtxpmFreeColorTable(colorTable, ncolors);
+@@ -5141,16 +5172,17 @@ _LtxpmParseColors(data, ncolors, cpp, co
+ 	    *curbuf = '\0';		/* init curbuf */
+ 	    while ((l = _LtxpmNextWord(data, buf, BUFSIZ))) {
+ 		if (*curbuf != '\0')
+-		    strcat(curbuf, " ");/* append space */
++		    strlcat(curbuf, " ", sizeof(curbuf));/* append space */
+ 		buf[l] = '\0';
+-		strcat(curbuf, buf);	/* append buf */
++		strlcat(curbuf, buf, sizeof(curbuf));	/* append buf */
+ 	    }
+-	    s = (char *) _LtXpmMalloc(strlen(curbuf) + 1);
++	    len = strlen(curbuf) + 1;
++	    s = (char *) _LtXpmMalloc(len);
+ 	    if (!s) {
+ 		_LtxpmFreeColorTable(colorTable, ncolors);
+ 		return (_LtXpmNoMemory);
+ 	    }
+-	    strcpy(s, curbuf);
++	    memcpy(s, curbuf, len);
+ 	    color->c_color = s;
+ 	    *curbuf = '\0';		/* reset curbuf */
+ 	    if (a < ncolors - 1)
+@@ -5175,6 +5207,9 @@ ParsePixels(data, width, height, ncolors
+     unsigned int *iptr, *iptr2;
+     unsigned int a, x, y;
+ 
++    if ((height > 0 && width >= SIZE_MAX / height) ||
++	width * height >= SIZE_MAX / sizeof(unsigned int)) 
++	return _LtXpmNoMemory;
+ #ifndef FOR_MSW
+     iptr2 = (unsigned int *) _LtXpmMalloc(sizeof(unsigned int) * width * height);
+ #else
+@@ -5198,6 +5233,9 @@ ParsePixels(data, width, height, ncolors
+ 	{
+ 	    unsigned short colidx[256];
+ 
++	    if (ncolors > 256)
++		return (_LtXpmFileInvalid);
++
+ 	    memset((char *)colidx, 0, 256 * sizeof(short));
+ 	    for (a = 0; a < ncolors; a++)
+ 		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
+@@ -5275,6 +5313,9 @@ if (cidx[f]) _LtXpmFree(cidx[f]);}
+ 	    char *s;
+ 	    char buf[BUFSIZ];
+ 
++	    if (cpp >= sizeof(buf))
++		return (_LtXpmFileInvalid);
++
+ 	    buf[cpp] = '\0';
+ 	    if (USE_HASHTABLE) {
+ 		xpmHashAtom *slot;
+@@ -5758,7 +5799,8 @@ LFUNC(MSWGetImagePixels, int, (Display *
+ LFUNC(ScanTransparentColor, int, (_LtXpmColor *color, unsigned int cpp,
+ 				  _LtXpmAttributes *attributes));
+ 
+-LFUNC(ScanOtherColors, int, (Display *display, _LtXpmColor *colors, int ncolors,
++LFUNC(ScanOtherColors, int, (Display *display, _LtXpmColor *colors, 
++			     unsigned int ncolors,
+ 			     Pixel *pixels, unsigned int mask,
+ 			     unsigned int cpp, _LtXpmAttributes *attributes));
+ 
+@@ -5883,11 +5925,17 @@ _LtXpmCreateXpmImageFromImage(display, i
+     else
+ 	cpp = 0;
+ 
++    if ((height > 0 && width >= SIZE_MAX / height) ||
++	width * height >= SIZE_MAX / sizeof(unsigned int))
++	RETURN(_LtXpmNoMemory);
+     pmap.pixelindex =
+ 	(unsigned int *) _LtXpmCalloc(width * height, sizeof(unsigned int));
+     if (!pmap.pixelindex)
+ 	RETURN(_LtXpmNoMemory);
+ 
++    if (pmap.size >= SIZE_MAX / sizeof(Pixel)) 
++	RETURN(_LtXpmNoMemory);
++
+     pmap.pixels = (Pixel *) _LtXpmMalloc(sizeof(Pixel) * pmap.size);
+     if (!pmap.pixels)
+ 	RETURN(_LtXpmNoMemory);
+@@ -5953,6 +6001,8 @@ _LtXpmCreateXpmImageFromImage(display, i
+      * color
+      */
+ 
++    if (pmap.ncolors >= SIZE_MAX / sizeof(_LtXpmColor))
++	RETURN(_LtXpmNoMemory);
+     colorTable = (_LtXpmColor *) _LtXpmCalloc(pmap.ncolors, sizeof(_LtXpmColor));
+     if (!colorTable)
+ 	RETURN(_LtXpmNoMemory);
+@@ -6011,6 +6061,8 @@ ScanTransparentColor(color, cpp, attribu
+ 
+     /* first get a character string */
+     a = 0;
++    if (cpp >= SIZE_MAX - 1)
++	return (_LtXpmNoMemory);
+     if (!(s = color->string = (char *) _LtXpmMalloc(cpp + 1)))
+ 	return (_LtXpmNoMemory);
+     *s++ = printable[c = a % MAXPRINTABLE];
+@@ -6058,7 +6110,7 @@ static int
+ ScanOtherColors(display, colors, ncolors, pixels, mask, cpp, attributes)
+     Display *display;
+     _LtXpmColor *colors;
+-    int ncolors;
++    unsigned int ncolors;
+     Pixel *pixels;
+     unsigned int mask;
+     unsigned int cpp;
+@@ -6102,6 +6154,8 @@ ScanOtherColors(display, colors, ncolors
+     }
+ 
+     /* first get character strings and rgb values */
++    if (ncolors >= SIZE_MAX / sizeof(XColor) || cpp >= SIZE_MAX - 1)
++	return (_LtXpmNoMemory);
+     xcolors = (XColor *) _LtXpmMalloc(sizeof(XColor) * ncolors);
+     if (!xcolors)
+ 	return (_LtXpmNoMemory);
