@@ -1,6 +1,0 @@
-libdata/perl5/site_perl/i386-openbsd/DBD/Pg.pm 
-libdata/perl5/site_perl/i386-openbsd/DBD/dbd-pg.pod
-libdata/perl5/site_perl/i386-openbsd/auto/DBD/Pg/Pg.bs
-libdata/perl5/site_perl/i386-openbsd/auto/DBD/Pg/Pg.so
-libdata/perl5/site_perl/i386-openbsd/auto/DBD/Pg/.packlist
-@dirrm libdata/perl5/site_perl/i386-openbsd/auto/DBD/Pg
