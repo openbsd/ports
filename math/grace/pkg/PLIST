@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:11:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/10/08 10:37:24 espie Exp $
+bin/grace
+bin/gracebat
 grace/
 grace/auxiliary/
 grace/auxiliary/README
@@ -35,7 +37,6 @@ grace/doc/mygraph.png
 grace/doc/nohelp.html
 grace/doc/philosophical-gnu-sm.jpg
 grace/doc/shiftdata.sh
-grace/doc/xmgrace.1
 grace/examples/
 grace/examples/altaxis.par
 grace/examples/arrows.agr
@@ -142,3 +143,8 @@ grace/templates/
 grace/templates/Default.agr
 %%no_x11%%
 !%%no_x11%%
+include/grace_np.h
+lib/libgrace_np.a
+@man man/man1/grace.1
+@man man/man1/gracebat.1
+@man man/man1/grconvert.1

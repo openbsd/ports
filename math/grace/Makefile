@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/06/13 10:36:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/10/08 10:37:24 espie Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
@@ -73,4 +73,21 @@ CONFIGURE_ARGS+=	--enable-netcdf
 CONFIGURE_ARGS+=	--disable-netcdf
 .endif
 
+GRACE_DIR=${TRUEPREFIX}/grace
+post-install:
+.if ${FLAVOR:L:Mno_x11}
+	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/grace
+	ln -sf ${GRACE_DIR}/bin/grace ${PREFIX}/bin/gracebat
+.else
+	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/grace
+	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/gracebat
+	ln -sf ${GRACE_DIR}/bin/xmgrace ${PREFIX}/bin/xmgrace
+	ln -sf ${GRACE_DIR}/doc/xmgrace.1 ${PREFIX}/man/man1/xmgrace.1
+.endif
+	ln -sf ${GRACE_DIR}/include/grace_np.h ${PREFIX}/include/grace_np.h
+	ln -sf ${GRACE_DIR}/lib/libgrace_np.a ${PREFIX}/lib/libgrace_np.a
+	ln -sf ${GRACE_DIR}/doc/grace.1 ${PREFIX}/man/man1/grace.1
+	ln -sf ${GRACE_DIR}/doc/gracebat.1 ${PREFIX}/man/man1/gracebat.1
+	ln -sf ${GRACE_DIR}/doc/grconvert.1 ${PREFIX}/man/man1/grconvert.1
+	
 .include <bsd.port.mk>

@@ -1,2 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2001/07/13 18:53:55 pvalchev Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2004/10/08 10:37:24 espie Exp $
+bin/xmgrace
 grace/bin/xmgrace
+grace/doc/xmgrace.1
+@man man/man1/xmgrace.1
