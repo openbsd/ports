@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.37 2004/07/20 19:01:22 espie Exp $
+# $OpenBSD: make-plist,v 1.38 2004/07/21 11:00:38 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -64,7 +64,7 @@ sub is_info
 	my $tag = <$fh>;
 	chomp $tag;
 	close $fh;
-	if ($tag =~ /^This is .*, produced by makeinfo version .* from /) {
+	if ($tag =~ /^This is .*, produced by makeinfo version .* from/) {
 		return 1;
 	} else {
 		return 0;
