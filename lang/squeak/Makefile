@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/24 16:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/25 01:00:53 pvalchev Exp $
 
 
 COMMENT=	"smalltalk system"
@@ -49,7 +49,10 @@ CONFIGURE_ENV=RANLIB=ranlib
 ALL_TARGET=all squeak.1
 USE_GMAKE=yes
 
-MAKE_FLAGS=INTERP=gnu-interp docdir=${TRUEPREFIX}/share/doc/squeak-$V
+MAKE_FLAGS=docdir=${TRUEPREFIX}/share/doc/squeak-$V
+.if ${MACHINE_ARCH} != "powerpc"
+MAKE_FLAGS+=INTERP=gnu-interp
+.endif
 FAKE_FLAGS=${MAKE_FLAGS} DESTDIR=${WRKINST}
 
 PLUGINS= Profiler.so SoundCodecPrims.so Squeak3D.so System.so

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_unix_Makefile_in,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
---- src/unix/Makefile.in.orig	Tue Mar 13 23:47:37 2001
-+++ src/unix/Makefile.in	Tue Mar 13 23:48:00 2001
+$OpenBSD: patch-src_unix_Makefile_in,v 1.2 2002/03/25 01:00:53 pvalchev Exp $
+--- src/unix/Makefile.in.orig	Mon Feb 12 15:59:20 2001
++++ src/unix/Makefile.in	Sun Mar 24 17:17:40 2002
 @@ -96,6 +96,7 @@ INSTALL_DATA=	@INSTALL_DATA@
  UNINSTALL=	$(SHELL) $(utldir)/uninstall
  
@@ -9,6 +9,15 @@ $OpenBSD: patch-src_unix_Makefile_in,v 1.1.1.1 2001/03/13 22:59:14 espie Exp $
  AWK=		@AWK@
  LIBTOOL=	@LIBTOOL@
  NM=		@NM@
+@@ -110,7 +111,7 @@ CPPFLAGS=	@CPPFLAGS@
+ CFLAGS=		@CFLAGS@ @J_CFLAGS@ -funroll-loops
+ WFLAGS=		@WFLAGS@
+ 
+-LDFLAGS=	@LDFLAGS@ -avoid-version
++LDFLAGS=	@LDFLAGS@
+ LIBS=		@LIBS@
+ 
+ COMPILE=	$(CC) $(CFLAGS) $(DEFS) $(INCLUDES) $(CPPFLAGS)
 @@ -163,6 +164,7 @@ sqUnixConfig.h : $(unxdir)/sqUnixConfig.
  
  squeak.a : $(UNX_O) $(VER_O) $(GEN_O)
