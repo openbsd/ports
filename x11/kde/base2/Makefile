@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/19 12:15:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/10/21 06:31:23 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 VERSION=		2.0rc2
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/distribution/${VERSION:U}/tar/src/
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=	kdecore.::x11/kde/libs2 \
+LIB_DEPENDS=	kdecore.3.::x11/kde/libs2 \
 		qt.2.::x11/qt2
 
 CONFIGURE_STYLE=	gnu
