@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_xmms_Makefile,v 1.1 2004/06/13 06:11:53 pvalchev Exp $
+--- src/xmms/Makefile.orig	2001-01-16 18:29:41.000000000 -0700
++++ src/xmms/Makefile	2004-06-12 23:27:40.000000000 -0600
+@@ -1,7 +1,7 @@
+ # Extended Module Player src/xmms/Makefile
+ # $Id: patch-src_xmms_Makefile,v 1.1 2004/06/13 06:11:53 pvalchev Exp $
+ 
+-XCFLAGS	= -I../include -DVERSION=\"$(VERSION)\" `xmms-config --cflags` -DXMMS_PLUGIN #-DDEBUG
++XCFLAGS	= -I../include -DVERSION=\"$(VERSION)\" `xmms-config --cflags` -DXMMS_PLUGIN -fPIC #-DDEBUG
+ DFILES = Makefile README xmp-plugin.h $(OBJS:.o=.c)
+ CFILES = xmp-plugin.so
+ 
+@@ -17,7 +17,7 @@ driver.c:
+ 	ln -sf ../player/driver.c .
+ 
+ plugin: $(OBJS) $(DYNDRV)
+-	$(LD) -shared -o xmp-plugin.so $(OBJS) -L../../lib/ -lxmp
++	$(LD) -shared -fPIC -o xmp-plugin.so $(OBJS) -L../../lib/ -lxmp
+ 
+ dyndrv:
+ 	make -C ../../lib shared
