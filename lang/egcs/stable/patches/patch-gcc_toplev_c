@@ -1,0 +1,22 @@
+$OpenBSD: patch-gcc_toplev_c,v 1.3 2003/06/16 17:25:19 sturm Exp $
+--- gcc/toplev.c.orig	Tue May 27 13:53:39 2003
++++ gcc/toplev.c	Tue May 27 13:56:27 2003
+@@ -883,6 +883,9 @@ int align_functions_log;
+    minimum function alignment.  Zero means no alignment is forced.  */
+ int force_align_functions_log;
+ 
++/* Fake StackProtector option, does nothing. */
++int flag_propolice_protection = 0;
++
+ /* Table of supported debugging formats.  */
+ static const struct
+ {
+@@ -1154,6 +1157,8 @@ static const lang_independent_options f_
+    N_("Report on permanent memory allocation at end of run") },
+   { "trapv", &flag_trapv, 1,
+    N_("Trap for signed overflow in addition / subtraction / multiplication") },
++  { "no-stack-protector", &flag_propolice_protection, 0,
++   N_("Fake disable stack protection") },
+ };
+ 
+ /* Table of language-specific options.  */
