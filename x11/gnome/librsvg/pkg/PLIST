@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/07 05:48:55 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/10/07 17:12:23 marcm Exp $
 bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
+include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
 lib/gtk-2.0/2.2.0/engines/libsvg.a
 lib/gtk-2.0/2.2.0/engines/libsvg.la
