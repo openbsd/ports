@@ -1,0 +1,12 @@
+$OpenBSD: patch-Blowfish_xs,v 1.1 2004/05/12 03:56:28 jcs Exp $
+--- Blowfish.xs.orig	Tue Oct 28 15:06:51 2003
++++ Blowfish.xs	Tue Oct 28 15:07:05 2003
+@@ -33,7 +33,7 @@
+ 		char ks[8192];
+ 
+ 		key = (unsigned char *) SvPV(ST(0), key_len);
+-		if (key_len < 8 || key_len > 56)
++		if (key_len > 56)
+ 			croak("Invalid length key");
+ 
+ 		if (blowfish_make_bfkey(key, key_len, ks))
