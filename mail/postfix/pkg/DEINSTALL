@@ -34,6 +34,7 @@ if [ -d /var/spool/postfix ]; then
     echo
 fi
 
-echo "-> Account 'smtp' and group 'smtp' still exist - you may want to remove these manually."
+echo "-> Account 'smtp' and groups 'smtp' and 'maildrop' still exist -"
+echo "   you may want to remove these manually."
 
 exit 0

@@ -1,23 +1,24 @@
 # OpenBSD makefile for:	postfix
-# Version required:	beta-19981211
+# Version required:	beta-19981230
 # Date created:		1998-Dec-10
 # Whom:			dugsong@OpenBSD.ORG
 #
 # Relevant URLs:	http://www.postfix.org/
 #			http://www.alphaworks.ibm.com/formula/securemailer/
 #
-# $OpenBSD: Makefile,v 1.2 1998/12/16 22:00:51 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/12 02:39:30 dugsong Exp $
 
-DISTNAME=	postfix-beta-19981211
+DISTNAME=	postfix-beta-19981230
 
 CATEGORIES=     mail
 
+MASTER_SITES=	ftp://ftp.merit.edu/postfix/ \
+		ftp://ftp.sunet.se/pub/unix/mail/postfix/ \
+		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
+		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/ \
+		ftp://ftp.win.ne.jp/pub/network/mail/postfix/
+
 MAINTAINER=	dugsong@monkey.org
-
-NO_CDROM=	"LIC: redistribution not allowed"
-MIRROR_DISTFILE=no
-
-MASTER_SITES=	see_do-fetch_target
 
 IS_INTERACTIVE=	yes
 
@@ -25,29 +26,14 @@ NO_CONFIGURE=	yes
 
 ALL_TARGET=	default
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	   ${ECHO} "" ; \
-	   ${ECHO} "  The source to this port may not be automatically fetched" ; \
-	   ${ECHO} "  due to licensing restrictions. You MUST fetch the source" ; \
-	   ${ECHO} "  manually after reading and agreeing to the license at:" ; \
-	   ${ECHO} "" ; \
-	   ${ECHO} "      http://www.alphaworks.ibm.com/formula/securemailer/" ; \
-	   ${ECHO} "" ; \
-	   ${ECHO} "  Once ${DISTFILES} has been downloaded,"; \
-	   ${ECHO} "  move it to ${DISTDIR} and then restart this build." ; \
-	   ${ECHO} "" ; \
-	   exit 1 ; \
-	fi
-
 pre-install:
 	@${SH} ${PKGDIR}/INSTALL with PRE-INSTALL
 
 post-install:
 	@${SH} ${PKGDIR}/INSTALL with POST-INSTALL
 
-MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postfix.1 \
-	postkick.1 postlock.1 postlog.1 postmap.1 sendmail.1
+MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
+	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 sendmail.1
 
 MAN5=	access.5 aliases.5 canonical.5 relocated.5 transport.5 virtual.5
 

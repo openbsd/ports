@@ -1,9 +1,9 @@
-*** Makefile.in.orig	Wed Dec  9 07:33:50 1998
---- Makefile.in	Sat Dec 12 19:27:27 1998
+*** Makefile.in.orig	Wed Dec 30 08:04:36 1998
+--- Makefile.in	Mon Jan 11 21:12:36 1999
 ***************
 *** 6,11 ****
 --- 6,19 ----
-  	showq postalias postcat postconf postkick postlock postlog \
+  	showq postalias postcat postconf postdrop postkick postlock postlog \
   	postmap # man html
   
 + PREFIX?=	/usr/local
@@ -18,8 +18,8 @@
   
   makefiles Makefiles:
 ***************
-*** 38,40 ****
---- 46,79 ----
+*** 39,41 ****
+--- 47,81 ----
   	find . -type s -print | xargs rm -f
   	find . -type d -print | xargs chmod 755
   	find . -type f -print | xargs chmod a+r
@@ -45,6 +45,7 @@
 + 	@echo "-> Installing postfix binaries in $(SBINDIR)"
 + 	@[ -d $(SBINDIR) ] || mkdir -p -m 755 $(SBINDIR)
 + 	@install -m 755 -c -s bin/* $(SBINDIR)
++ 	@install -m 2755 -c -s -g maildrop bin/postdrop $(SBINDIR)
 + 	@echo
 + 	@echo "-> Installing postfix manpages in $(MANDIR)"
 + 	@install -m 644 -c man/man1/* $(MANDIR)/man1

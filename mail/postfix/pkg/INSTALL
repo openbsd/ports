@@ -10,8 +10,10 @@ PKG_PREFIX=${PKG_PREFIX:-/usr/local}
 
 SMTPUID=6
 SMTPGID=6
+MAILDROPGID=12
 
 if [ "$2" = "PRE-INSTALL" ]; then
+    # Create postfix user and group.
     line=`egrep '^smtp:' /etc/group`
     if [ "$line" != "" ]; then
 	SMTPGID=`echo $line | cut -f3 -d:`
@@ -29,6 +31,17 @@ if [ "$2" = "PRE-INSTALL" ]; then
 	echo ""
     fi
     echo "-> Using account 'smtp' for postfix, uid $SMTPUID, gid $SMTPGID"
+    echo ""
+    # Create Postfix maildrop group.
+    line=`egrep '^maildrop:' /etc/group`
+    if [ "$line" != "" ]; then
+        MAILDROPGID=`echo $line | cut -f3 -d:`
+    else
+        echo "-> Creating maildrop group, gid $MAILDROPGID"
+        echo "maildrop:*:${MAILDROPGID}:" >> /etc/group
+        echo ""
+    fi
+    echo "-> Using group 'maildrop' for postdrop, gid $MAILDROP"
     echo ""
     exit 0
 fi
