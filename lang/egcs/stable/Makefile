@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2003/06/27 23:02:45 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2003/06/30 12:19:23 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -30,8 +30,8 @@ COMMENT-java=	${COM}: java compiler
 COMMENT-objc=	${COM}: obj C compiler
 COMMENT-ada=	${COM}: Ada compiler
 
-PKGNAME=	gcc-$Vp0
-PKGNAME-c++ =	g++-$Vp0
+PKGNAME=	gcc-$V
+PKGNAME-c++ =	g++-$V
 PKGNAME-estdc =	libstdc++-$V
 PKGNAME-chill=	gchill-$V
 PKGNAME-g77=	g77-$V
@@ -76,7 +76,7 @@ BUILD_DEPENDS+=:bison-*:devel/bison
 
 #### fetch section
 
-V=3.2.2
+V=3.2.3
 DIRECTORY=releases/${DISTNAME}/
 DISTNAME=   gcc-$V
 
