@@ -1,4 +1,3 @@
-==============================================================
 The phpMyAdmin has been installed into ${INSTDIR}
 
 You should point this to the DocumentRoot of your web-server:
@@ -7,5 +6,3 @@ You should point this to the DocumentRoot of your web-server:
 
 You can ensure you have a working install by accessing:
 http://<localhost>/phpMyAdmin/index.php
-
-==============================================================

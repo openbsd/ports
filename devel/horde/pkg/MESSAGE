@@ -1,4 +1,3 @@
-==============================================================
 The Horde Application Framework has been installed into
 ${INSTDIR}
 
@@ -11,5 +10,3 @@ ${INSTDIR}/docs/INSTALL
 
 You can ensure you have a working install by accessing:
 http://<localhost>/horde/test.php
-
-==============================================================

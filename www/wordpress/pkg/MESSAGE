@@ -1,4 +1,3 @@
-==============================================================
 The WordPress has been installed into
 ${INSTDIR}
 
@@ -11,4 +10,3 @@ ${INSTDIR}/readme.html
 
 You can ensure you have a working install by accessing:
 http://<localhost>/wordpress/
-==============================================================

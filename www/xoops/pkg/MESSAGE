@@ -1,8 +1,5 @@
-==============================================================
 The XOOPS has been installed into 
 ${INSTDIR}
 
 Proceed to complete the installation by reading:
 ${INSTDIR}/docs/INSTALL.html
-
-==============================================================

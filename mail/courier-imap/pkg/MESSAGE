@@ -1,4 +1,3 @@
-==============================================================
 Example config files for Courier-IMAP have been installed
 in ${PREFIX}/share/examples/courier-imap.
 
@@ -21,4 +20,3 @@ ${PREFIX}/libexec/authlib/authdaemond start
 
 If you require userdb or quota support, then install the
 courier-utils package.
-==============================================================

@@ -1,4 +1,3 @@
-==============================================================
 The PHP iCalendar has been installed into
 ${INSTDIR}
 
@@ -11,4 +10,3 @@ ${INSTDIR}/README
 
 You can ensure you have a working install by accessing:
 http://<localhost>/phpicalendar/
-==============================================================
