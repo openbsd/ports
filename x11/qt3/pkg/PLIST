@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2004/10/30 09:12:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2004/11/09 21:58:12 espie Exp $
 @conflict qt3
 bin/assistant
 bin/assistant-mt
@@ -424,9 +424,9 @@ include/X11/qt3/qwizard.h
 include/X11/qt3/qwmatrix.h
 include/X11/qt3/qworkspace.h
 include/X11/qt3/qxml.h
-lib/libdesignercore.a
-lib/libeditor.a
-lib/libqassistantclient.a
+@comment lib/libdesignercore.a
+@comment lib/libeditor.a
+@comment lib/libqassistantclient.a
 lib/qt3/
 lib/qt3/.qmake.cache
 lib/qt3/bin/
