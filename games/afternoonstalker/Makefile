@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/21 21:02:58 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/25 02:35:15 naddy Exp $
 
 COMMENT=	"Night Stalker clone for X"
 
@@ -19,10 +19,6 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 LIB_DEPENDS=	gengameng.4.1::devel/gengameng \
 		SDL_mixer::devel/sdl-mixer
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
-MODGCC3_LANGS=	c++
 
 USE_X11=	Yes
 

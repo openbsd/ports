@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/18 19:44:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/25 02:35:17 naddy Exp $
 
 COMMENT=	"c++ compliant CGI applications libraries"
 
@@ -22,10 +22,5 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/example ${WRKSRC}/support
 
 FAKE_FLAGS=	${DESTDIRNAME}=${WRKINST} \
 		docdir=${DESTDIR}${PREFIX}/share/doc/cgicc
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2004/02/16 10:21:20 brad Exp $
+# $OpenBSD: Makefile,v 1.58 2004/02/25 02:35:17 naddy Exp $
 
 COMMENT=	"WWW and FTP proxy cache and accelerator"
 
@@ -58,10 +58,6 @@ SUBST_VARS=	SQUIDDIR
 
 FLAVORS=	transparent
 FLAVOR?=
-
-# Gcc 3
-MODULES+=	gcc3
-MODGCC3_ARCHES=	sparc64
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= autoconf

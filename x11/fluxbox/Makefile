@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/01/30 17:04:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/25 02:35:17 naddy Exp $
 
 COMMENT=	"window manager based on the original Blackbox code"
 
@@ -26,9 +26,6 @@ AUTOCONF_VERSION=	2.54
 CONFIGURE_ARGS=		--enable-kde --enable-xinerama
 USE_GMAKE=		Yes
 
-MODULES=		gcc3
-MODGCC3_ARCHES=		sparc64
-MODGCC3_LANGS+=		c++
 USE_X11=		Yes
 SUBST_VARS=		VERSION
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/09/26 11:35:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2004/02/25 02:35:15 naddy Exp $
 
 COMMENT=	"lossy/lossless audio coder"
 
@@ -15,10 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
-MODGCC3_LANGS=	C++
 
 MAKE_FLAGS=	CXX='${CXX}' CXXFLAGS='${CXXFLAGS}' LIBS=-lossaudio
 FAKE_FLAGS=	PREFIX='${WRKINST}${PREFIX}' INSTALL='${INSTALL_PROGRAM}'

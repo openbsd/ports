@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/01/04 17:54:07 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/25 02:35:15 naddy Exp $
 
 COMMENT=		"indenter and formatter of C/C++/Java source files"
 
@@ -16,11 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=astyle/}
 EXTRACT_SUFX=		.zip
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 

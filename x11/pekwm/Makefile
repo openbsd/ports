@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/05 08:20:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/25 02:35:18 naddy Exp $
 
 COMMENT=	"aewm++ based pretty themable window manager"
 
@@ -17,11 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}files/source/
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 USE_X11= 		Yes
 CONFIGURE_STYLE=	simple

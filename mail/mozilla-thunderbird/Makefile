@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/23 17:58:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/25 02:35:16 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/thunderbird/releases/${V
 DISTFILES=	thunderbird-${VER}-source.tar.bz2
 
 MODULES=	gcc3
-MODGCC3_ARCHES=	alpha sparc64
+MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig

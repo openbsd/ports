@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2004/02/06 22:44:06 sturm Exp $
+# $OpenBSD: Makefile,v 1.63 2004/02/25 02:35:16 naddy Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -26,11 +26,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-# gcc3
-MODULES+=               gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*

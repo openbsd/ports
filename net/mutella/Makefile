@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/20 17:46:13 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/25 02:35:16 naddy Exp $
 
 COMMENT=		"gnutella client with an easy to use interface"
 
@@ -16,10 +16,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mutella/}
-
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS=          c++
 
 SEPARATE_BUILD=		simple
 CONFIGURE_STYLE=	gnu	

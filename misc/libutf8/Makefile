@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/02/09 22:27:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/25 02:35:16 naddy Exp $
 
 COMMENT=	"provides UTF-8 locale support"
 
@@ -18,9 +18,5 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/autoconf
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
 
 .include <bsd.port.mk>

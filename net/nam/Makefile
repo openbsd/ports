@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/11/01 20:08:40 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/25 02:35:17 naddy Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Animator"
@@ -21,10 +21,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:tclcl->=1.0b13:devel/tclcl
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
-MODGCC3_LANGS=	c++
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
 

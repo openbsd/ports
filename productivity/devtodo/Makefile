@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/12/04 23:07:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2004/02/25 02:35:17 naddy Exp $
 
 COMMENT=		"reminder/task program aimed at developers"
 
@@ -17,10 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/11/18 20:53:11 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/02/25 02:35:18 naddy Exp $
 
 COMMENT=	"designer for qt2"
 
@@ -13,9 +13,6 @@ EXTRACT_ONLY=
 
 BUILD_DEPENDS=	::x11/qt2:configure
 RUN_DEPENDS=	::x11/qt2,-html
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
-MODGCC3_LANGS=	c++
 
 HOMEPAGE=	http://www.trolltech.com/qt/
 

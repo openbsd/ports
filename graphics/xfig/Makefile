@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/04/04 14:28:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/25 02:35:16 naddy Exp $
 
 COMMENT=	"CAD drawing program for X11"
 
@@ -23,9 +23,6 @@ LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		Xaw3d.6.1::x11/Xaw3d
 RUN_DEPENDS=	::print/transfig \
 		::textproc/xpdf
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
 
 MAKE_FLAGS=	XAPPLOADDIR="${PREFIX}/lib/X11/app-defaults" \
 		XFIGDOCDIR="${PREFIX}/share/doc/xfig" \

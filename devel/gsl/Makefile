@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/09 22:15:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.15 2004/02/25 02:35:15 naddy Exp $
 
 COMMENT=	"GNU Scientific Library"
 
@@ -15,10 +15,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 .include <bsd.port.mk>

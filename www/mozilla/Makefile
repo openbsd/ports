@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2004/02/15 19:44:01 wilfried Exp $
+# $OpenBSD: Makefile,v 1.67 2004/02/25 02:35:17 naddy Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64
 
@@ -37,7 +37,7 @@ SUBPACKAGE?=
 RUN_DEPENDS=	::www/mozilla
 .else
 MODULES=	gcc3
-MODGCC3_ARCHES=	alpha sparc64
+MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig

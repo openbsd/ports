@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/25 02:35:17 naddy Exp $
 
 COMMENT=	"convert Netscape bookmarks into a Yahoo-like website"
 
@@ -13,11 +13,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bk2site/}
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu

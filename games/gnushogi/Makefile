@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/02/09 21:52:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.21 2004/02/25 02:35:16 naddy Exp $
 #
 
 COMMENT=	"GNU version of Shogi"
@@ -21,11 +21,6 @@ WRKSRC=		${WRKDIST}/src
 NO_REGRESS=	Yes
 
 DOCFILES=	shogi.rules tutorial1.gam tutorial2.gam
-
-# gcc3
-MODULES=                gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gnushogi

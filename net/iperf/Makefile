@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/01/05 03:18:50 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/25 02:35:16 naddy Exp $
 
 COMMENT=	"tool for measuring maximum TCP and UDP bandwidth"
 
@@ -15,11 +15,6 @@ PERMIT_DISTFILES_CDROM=	"no fee license"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dast.nlanr.net/Projects/Iperf/
-
-# gcc3
-MODULES=		gcc3
-MODGCC3_ARCHES=         sparc64
-MODGCC3_LANGS+=         c++
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 

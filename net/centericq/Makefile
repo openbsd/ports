@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/02/03 08:37:55 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2004/02/25 02:35:16 naddy Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
@@ -18,9 +18,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MODULES=	gcc3 gettext
-MODGCC3_ARCHES=	sparc64
-MODGCC3_LANGS=	c++
+MODULES=	gettext
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/25 02:35:18 naddy Exp $
 
 COMMENT=	"cross-platform high-level application framework"
 
@@ -23,11 +23,6 @@ BUILD_DEPENDS=	:zip-*:archivers/zip
 LIB_DEPENDS=	SDL::devel/sdl \
 		SDL_ttf::devel/sdl-ttf \
 		SDL_image::devel/sdl-image 
-
-# gcc3
-MODULES=	gcc3
-MODGCC3_ARCHES= sparc64
-MODGCC3_LANGS+= c++
 
 USE_X11=	Yes
 USE_GMAKE=	Yes

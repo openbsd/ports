@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/11/01 20:05:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2004/02/25 02:35:17 naddy Exp $
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
@@ -21,10 +21,6 @@ HOMEPAGE=	http://www.isi.edu/nsnam/ns/
 
 LIB_DEPENDS=	otcl::lang/otcl \
 		tclcl::devel/tclcl
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc64
-MODGCC3_LANGS=	c++
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
