@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/09/25 09:02:25 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/07/06 00:13:51 rohee Exp $
 bin/formail
 bin/lockfile
 bin/mailstat
@@ -18,5 +18,7 @@ share/examples/procmail/3rmail
 share/examples/procmail/advanced
 share/examples/procmail/dirname
 share/examples/procmail/forward
+share/examples/procmail/local_procmail_lmtp.m4
 share/examples/procmail/mailstat
+share/examples/procmail/procmail-rpm.spec
 @dirrm share/examples/procmail

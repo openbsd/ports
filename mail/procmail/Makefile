@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/08 15:45:13 rohee Exp $
+# $OpenBSD: Makefile,v 1.21 2001/07/06 00:13:51 rohee Exp $
 
 COMMENT=	"filtering local mail delivery agent"
 
-DISTNAME=	procmail-3.15.1
+DISTNAME=	procmail-3.21
 CATEGORIES=	mail
 NEED_VERSION=	1.387
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
