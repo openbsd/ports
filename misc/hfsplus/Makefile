@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/03/31 02:26:04 drahn Exp $
+# $OpenBSD: Makefile,v 1.4 2002/08/07 18:17:49 brad Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
 
@@ -9,7 +9,6 @@ PKGNAME=	hfsplus-1.0.2
 DISTNAME=	hfsplus_1.0.2.orig
 WRKDIST=	${WRKDIR}/hfsplus
 CATEGORIES=	misc 
-NEED_VERSION=	1.402
 
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,6 +28,9 @@ MASTER_SITES=	http://ftp.penguinppc.org/projects/hfsplus/
 
 # actually uses automake/autoheader, but that is done in pre-configure now
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	LIBS="-lutf8" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 pre-configure:
