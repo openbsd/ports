@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.402 2001/04/19 01:56:53 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.403 2001/04/19 22:15:05 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2349,7 +2349,7 @@ _recurse-dir-depends:
 		${_flavor_fragment}; \
 		toset="$$toset self=\"$$self2\""; \
 		if cd ${PORTSDIR} && cd $$dir 2>/dev/null; then \
-			if ! eval $$toset ${MAKE} recurse-dir-depends ${_DEPEND_THRU}; then  \
+			if ! eval $$toset ${MAKE} _recurse-dir-depends ${_DEPEND_THRU}; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
 				exit 1; \
 			fi; \
