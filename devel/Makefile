@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2003/10/27 03:09:17 jolan Exp $
+# $OpenBSD: Makefile,v 1.192 2003/11/03 01:06:00 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -51,6 +51,7 @@
      SUBDIR += gmake
      SUBDIR += gmp
      SUBDIR += gperf
+     SUBDIR += gputils
      SUBDIR += gsl
      SUBDIR += guilib
      SUBDIR += haddock
