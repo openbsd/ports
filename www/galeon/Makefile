@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2003/08/18 14:24:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2003/12/04 15:02:51 wilfried Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
-V=			1.2.11
+V=			1.2.13
 DISTNAME=		galeon-${V}
 CATEGORIES=		www
-MOZ=			1.4
+MOZ=			1.6a
 
 HOMEPAGE=		http://galeon.sourceforge.net/
 
@@ -34,7 +34,8 @@ LIB_DEPENDS=		art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 #			gtkembedmoz,gtksuperwin,nspr4,plc4,plds4,xpcom::www/mozilla
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+			MOZILLA_CONFIG=/usr/local/mozilla/mozilla-config
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
