@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 1999/11/30 02:32:22 brad Exp $
+# $OpenBSD: Makefile,v 1.25 1999/12/20 01:15:21 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -14,7 +14,7 @@ LIB_DEPENDS=	MesaGL.3.0:${PORTSDIR}/graphics/Mesa \
 
 USE_GMAKE=	yes
 USE_X11=	yes
-MAKE_ENV+=	QTDIR=${WRKSRC} SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=	QTDIR="${WRKSRC}" SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}"
 
 EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	dragdrop drawdemo forever hello layout life menu movies pref \
@@ -44,15 +44,13 @@ do-install:
 	@echo -n "Installing tutorials:"
 .for n in 1 2 3 4 5 6 7 8 9 10 11 12 13 14
 	@echo -n " ${n}"
-	@${INSTALL_PROGRAM} ${WRKSRC}/tutorial/t${n}/t${n} \
-		${PREFIX}/lib/qt/tutorial
+	@${INSTALL_PROGRAM} ${WRKSRC}/tutorial/t${n}/t${n} ${PREFIX}/lib/qt/tutorial
 .endfor
 	@echo "."
 	@echo -n "Installing examples:"
 .for f in ${EXAMPLES}
 	@echo -n " ${f}"
-	@${INSTALL_PROGRAM} ${WRKSRC}/examples/${f}/${f} \
-	${PREFIX}/lib/qt/examples
+	@${INSTALL_PROGRAM} ${WRKSRC}/examples/${f}/${f} ${PREFIX}/lib/qt/examples
 .endfor
 	@echo "."
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${PREFIX}/lib/qt/examples
@@ -60,7 +58,7 @@ do-install:
 
 .include <bsd.port.mk>
 
-.if defined(NO_SHARED_LIBS)
+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:U} == YES
 USE_TARGET=	openbsd-g++-static
 .else
 USE_TARGET=	openbsd-g++-shared
