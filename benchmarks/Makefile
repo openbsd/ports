@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2003/07/25 00:47:18 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2003/07/25 22:24:31 naddy Exp $
 # $FreeBSD: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
 #
 
      SUBDIR += bonnie
+     SUBDIR += bonnie++
      SUBDIR += bytebench
      SUBDIR += iozone
      SUBDIR += lmbench
