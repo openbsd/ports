@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/07 22:48:59 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/12/10 14:38:56 brad Exp $
 
 DISTNAME=       zsh-3.1.6
 CATEGORIES=	shells
@@ -16,10 +16,10 @@ MAINTAINER=	ports@openbsd.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
 
-# invoke with -DSTATIC to build a static binary
-.if defined(STATIC)
+# invoke make with STATIC=yes to build a static binary
+.if defined(STATIC) && ${STATIC:U} == YES
 CONFIGURE_ENV+=	LDFLAGS=-static
-PKGNAME= ${DISTNAME}-static
+PKGNAME=	${DISTNAME}-static
 .endif
 
 post-install:
