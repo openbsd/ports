@@ -3,10 +3,10 @@
 # Date created:	18 Nov 1997
 # Whom:	mickey
 #
-# $OpenBSD: Makefile,v 1.5 1998/06/14 05:06:46 marc Exp $
+# $OpenBSD: Makefile,v 1.6 1999/01/10 23:02:11 jason Exp $
 #
 
-DISTNAME=	xntp3-5.93-export
+DISTNAME=	xntp3-5.93e-export
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/
 
