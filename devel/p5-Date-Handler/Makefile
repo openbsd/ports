@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/24 12:52:02 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/27 08:50:07 shell Exp $
 
 COMMENT=	"perl module for calculates time differences"
 
-VERSION=	0.11
+VERSION=	0.12
 DISTNAME=	Date-Handler-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+REGRESS_TARGET=	test
 
 .include <bsd.port.mk>
