@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/30 15:44:32 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 21:45:27 avsm Exp $
 bin/w3mir
 bin/w3mfix
-libdata/perl5/site_perl/${ARCH}-openbsd/auto/w3mir/.packlist
 libdata/perl5/site_perl/w3pdfuri.pm
 libdata/perl5/site_perl/htmlop.pm
 libdata/perl5/site_perl/w3http.pm
 man/man1/w3mir.1
 man/man1/w3mfix.1
-@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/w3mir
