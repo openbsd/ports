@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2005/01/19 14:49:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.82 2005/03/06 07:53:57 alek Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,7 +7,7 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}p0
+PKGNAME=	mozilla-${VER}p1
 DISTFILES=	mozilla-source-${VER}.tar.bz2
 
 CATEGORIES=	www
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xp Xrender Xt c fontconfig freetype \
-			iconv intl m pthread stdc++ z
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/src/ \
 		http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
@@ -30,7 +28,7 @@ MULTI_PACKAGES=	-devel
 VMEM_WARNING=yes
 
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	mozilla${i}-${VER}p0
+PKGNAME$i=	mozilla${i}-${VER}p1
 .endfor
 
 SUBPACKAGE?=
@@ -38,22 +36,28 @@ SUBPACKAGE?=
 FLAVORS=	gtk2
 FLAVOR?=
 
-.if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
-.  if ${FLAVOR:L:Mgtk2}
-RUN_DEPENDS=	::www/mozilla,gtk2
-.  else
-RUN_DEPENDS=	::www/mozilla
-.  endif
-.endif
-
-MODULES=	gcc3
+MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.3::graphics/png \
-		esd.2::audio/esound
+		png.3::graphics/png
+
+.if defined(PACKAGING) && ${SUBPACKAGE} == "-devel"
+LIB_DEPENDS=
+WANTLIB=	X11 Xt m Xext
+.  if ${FLAVOR:L:Mgtk2}
+RUN_DEPENDS=	::www/mozilla,gtk2
+WANTLIB+=	fontconfig freetype Xrender Xft
+.  else
+RUN_DEPENDS=	::www/mozilla
+.  endif
+.else
+RUN_DEPENDS=	:esound-0.2.*:audio/esound
+WANTLIB=	X11 Xext Xft Xp Xrender Xt c fontconfig freetype m pthread \
+		stdc++ z
+.endif
 
 .if ${FLAVOR:L:Mgtk2}
 BUILD_DEPENDS+=	:libIDL-*:devel/libIDL
