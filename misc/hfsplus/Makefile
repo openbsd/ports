@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/30 20:46:26 drahn Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/30 20:50:58 drahn Exp $
 
 COMMENT=	"hfsplus filesystem access tool"
+
+# this only makes sense on macintosh (powerpc) systems.
+ONLY_FOR_ARCHS= powerpc
 
 PKGNAME=	hfsplus-1.0.2
 DISTNAME=	hfsplus_1.0.2.orig
