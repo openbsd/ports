@@ -1,0 +1,11 @@
+--- configure.orig	Thu Dec 20 21:05:48 2001
++++ configure	Thu Dec 20 21:05:57 2001
+@@ -854,7 +854,7 @@
+ fi
+ 
+ 
+-PACKAGE=kstars-0.8
++PACKAGE=kstars
+ 
+ VERSION=2.0
+ 
