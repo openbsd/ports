@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/09/05 00:31:28 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/30 11:34:25 turan Exp $
+
+BROKEN=		lots and lots of compiler warnigs, considered too unsafe.
 
 DISTNAME=	vic-2.8ucl4
 CATEGORIES=	mbone
