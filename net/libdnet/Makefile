@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 21:14:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/01/27 17:07:51 naddy Exp $
 
 COMMENT=	"portable low-level networking library"
 
-DISTNAME=	libdnet-1.4
+DISTNAME=	libdnet-1.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libdnet/}
 

@@ -1,73 +1,123 @@
---- src/fw-pf.c.orig	Tue Jan 21 18:28:49 2003
-+++ src/fw-pf.c	Tue Jan 21 18:30:33 2003
-@@ -42,11 +42,11 @@
+$OpenBSD: patch-src_fw-pf_c,v 1.4 2003/01/27 17:07:51 naddy Exp $
+--- src/fw-pf.c.orig	Tue May 14 08:54:30 2002
++++ src/fw-pf.c	Mon Jan 27 17:40:39 2003
+@@ -26,9 +26,29 @@
+ 
+ #include "dnet.h"
+ 
+-#ifdef PF_RULE_LABEL_SIZE
+-/* XXX */
+-#define addr		addr.addr
++/*
++ * XXX - cope with moving pf API
++ *     $OpenBSD: patch-src_fw-pf_c,v 1.4 2003/01/27 17:07:51 naddy Exp $
++ *     $OpenBSD: patch-src_fw-pf_c,v 1.4 2003/01/27 17:07:51 naddy Exp $
++ *     $OpenBSD: patch-src_fw-pf_c,v 1.4 2003/01/27 17:07:51 naddy Exp $
++ */
++#if defined(DIOCRINABEGIN)
++# define PFRA_ADDR(ra)	(ra)->addr.v.a.addr.v4.s_addr
++# define PFRA_MASK(ra)	(ra)->addr.v.a.mask.v4.s_addr
++# define pfioc_changerule	pfioc_rule
++# define oldrule	rule
++# define newrule	rule
++#elif defined(DIOCBEGINADDRS)
++# define PFRA_ADDR(ra)	(ra)->addr.addr.v4.s_addr
++# define PFRA_MASK(ra)	(ra)->addr.mask.v4.s_addr
++#elif defined(PFRULE_FRAGMENT)
++/* OpenBSD 3.2 */
++# define PFRA_ADDR(ra)	(ra)->addr.addr.v4.s_addr
++# define PFRA_MASK(ra)	(ra)->mask.v4.s_addr
++#else
++/* OpenBSD 3.1 */
++# define PFRA_ADDR(ra)	(ra)->addr.v4.s_addr
++# define PFRA_MASK(ra)	(ra)->mask.v4.s_addr
+ #endif
+ 
+ struct fw_handle {
+@@ -47,11 +67,11 @@ fr_to_pr(const struct fw_rule *fr, struc
  	pr->proto = fr->fw_proto;
  
  	pr->af = AF_INET;
 -	pr->src.addr.v4.s_addr = fr->fw_src.addr_ip;
 -	addr_btom(fr->fw_src.addr_bits, &pr->src.mask.v4.s_addr, IP_ADDR_LEN);
-+	pr->src.addr.v.a.addr.v4.s_addr = fr->fw_src.addr_ip;
-+	addr_btom(fr->fw_src.addr_bits, &pr->src.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN);
++	PFRA_ADDR(&pr->src) = fr->fw_src.addr_ip;
++	addr_btom(fr->fw_src.addr_bits, &(PFRA_MASK(&pr->src)), IP_ADDR_LEN);
  	
 -	pr->dst.addr.v4.s_addr = fr->fw_dst.addr_ip;
 -	addr_btom(fr->fw_dst.addr_bits, &pr->dst.mask.v4.s_addr, IP_ADDR_LEN);
-+	pr->dst.addr.v.a.addr.v4.s_addr = fr->fw_dst.addr_ip;
-+	addr_btom(fr->fw_dst.addr_bits, &pr->dst.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN);
++	PFRA_ADDR(&pr->dst) = fr->fw_dst.addr_ip;
++	addr_btom(fr->fw_dst.addr_bits, &(PFRA_MASK(&pr->dst)), IP_ADDR_LEN);
  	
  	switch (fr->fw_proto) {
  	case IP_PROTO_ICMP:
-@@ -97,12 +97,12 @@
+@@ -102,12 +122,12 @@ pr_to_fr(const struct pf_rule *pr, struc
  		return (-1);
  	
  	fr->fw_src.addr_type = ADDR_TYPE_IP;
 -	addr_mtob(&pr->src.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_src.addr_bits);
 -	fr->fw_src.addr_ip = pr->src.addr.v4.s_addr;
-+	addr_mtob(&pr->src.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_src.addr_bits);
-+	fr->fw_src.addr_ip = pr->src.addr.v.a.addr.v4.s_addr;
++	addr_mtob(&(PFRA_MASK(&pr->src)), IP_ADDR_LEN, &fr->fw_src.addr_bits);
++	fr->fw_src.addr_ip = PFRA_ADDR(&pr->src);
  	
   	fr->fw_dst.addr_type = ADDR_TYPE_IP;
 -	addr_mtob(&pr->dst.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_dst.addr_bits);
 -	fr->fw_dst.addr_ip = pr->dst.addr.v4.s_addr;
-+	addr_mtob(&pr->dst.addr.v.a.mask.v4.s_addr, IP_ADDR_LEN, &fr->fw_dst.addr_bits);
-+	fr->fw_dst.addr_ip = pr->dst.addr.v.a.addr.v4.s_addr;
++	addr_mtob(&(PFRA_MASK(&pr->dst)), IP_ADDR_LEN, &fr->fw_dst.addr_bits);
++	fr->fw_dst.addr_ip = PFRA_ADDR(&pr->dst);
  	
  	switch (fr->fw_proto) {
  	case IP_PROTO_ICMP:
-@@ -147,11 +147,12 @@
- int
- fw_add(fw_t *fw, const struct fw_rule *rule)
- {
--	struct pfioc_changerule pcr;
-+	struct pfioc_rule pcr;
+@@ -155,9 +175,8 @@ fw_add(fw_t *fw, const struct fw_rule *r
+ 	struct pfioc_changerule pcr;
  	
  	assert(fw != NULL && rule != NULL);
- 
--	fr_to_pr(rule, &pcr.newrule);
+-
 +	memset(&pcr, 0, sizeof(pcr));
-+	fr_to_pr(rule, &pcr.rule);
- 	
+ 	fr_to_pr(rule, &pcr.newrule);
+-	
  	pcr.action = PF_CHANGE_ADD_TAIL;
  	
-@@ -161,11 +162,12 @@
- int
- fw_delete(fw_t *fw, const struct fw_rule *rule)
- {
--	struct pfioc_changerule pcr;
-+	struct pfioc_rule pcr;
+ 	return (ioctl(fw->fd, DIOCCHANGERULE, &pcr));
+@@ -169,9 +188,8 @@ fw_delete(fw_t *fw, const struct fw_rule
+ 	struct pfioc_changerule pcr;
  	
  	assert(fw != NULL && rule != NULL);
- 
--	fr_to_pr(rule, &pcr.oldrule);
+-
 +	memset(&pcr, 0, sizeof(pcr));
-+	fr_to_pr(rule, &pcr.rule);
- 	
+ 	fr_to_pr(rule, &pcr.oldrule);
+-	
  	pcr.action = PF_CHANGE_REMOVE;
  
-@@ -180,6 +182,7 @@
+ 	return (ioctl(fw->fd, DIOCCHANGERULE, &pcr));
+@@ -183,24 +201,23 @@ fw_loop(fw_t *fw, fw_handler callback, v
+ 	struct pfioc_rule pr;
+ 	struct fw_rule fr;
  	uint32_t n, max;
- 	int ret;
- 	
+-	int ret;
+-	
++	int ret = 0;
++
 +	memset(&pr, 0, sizeof(pr));
  	if (ioctl(fw->fd, DIOCGETRULES, &pr) < 0)
  		return (-1);
  	
+ 	for (n = 0, max = pr.nr; n < max; n++) {
+ 		pr.nr = n;
+ 		
+-		if (ioctl(fw->fd, DIOCGETRULE, &pr) < 0)
+-			return (-1);
+-		
++		if ((ret = ioctl(fw->fd, DIOCGETRULE, &pr)) < 0)
++			break;
+ 		if (pr_to_fr(&pr.rule, &fr) < 0)
+ 			continue;
+-		
+ 		if ((ret = callback(&fr, arg)) != 0)
+-			return (ret);
++			break;
+ 	}
+-	return (0);
++	return (ret);
+ }
+ 
+ fw_t *
