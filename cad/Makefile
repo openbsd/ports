@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/11 14:47:11 naddy Exp $
-#
+# $OpenBSD: Makefile,v 1.3 2002/06/14 10:16:31 jsyn Exp $
 
      SUBDIR += qcad
      SUBDIR += spice

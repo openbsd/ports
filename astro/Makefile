@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2002/04/27 20:10:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/06/14 10:16:31 jsyn Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
-#
 
      SUBDIR += dgpsip
 #    SUBDIR += ephem

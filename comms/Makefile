@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.19 2002/06/12 13:17:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/06/14 10:16:31 jsyn Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
-#
 
      SUBDIR += bottlerocket
      SUBDIR += bpl+
