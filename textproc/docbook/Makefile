@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/24 17:04:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2000/11/10 13:47:34 espie Exp $
 
 DISTNAME=	docbook-4.1
 CATEGORIES=	textproc
@@ -6,6 +6,7 @@ NEED_VERSION= 	1.340
 
 ROOT_SITE=	http://www.oasis-open.org/docbook/sgml
 MIRROR_SITE=	http://www.docbook.org/sgml
+HOMEPAGE=	http://www.oasis-open.org/docbook/
 
 MASTER_SITES0=	${ROOT_SITE}/2.4.1/ 
 MASTER_SITES1=	${ROOT_SITE}/3.0/
