@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/31 10:04:36 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/01 04:24:37 brad Exp $
 
+SUBDIR+= navigator-old
+SUBDIR+= communicator-old
 SUBDIR+= navigator
 SUBDIR+= communicator
 

@@ -1,5 +1,5 @@
---- communicator-v475.x86-bsdi-bsd2/ns-install.orig	Tue Aug 15 20:37:22 2000
-+++ communicator-v475.x86-bsdi-bsd2/ns-install	Thu Aug 31 20:08:41 2000
+--- navigator-v461.sparc-sun-sunos4.1.3_U1/ns-install.orig	Wed May  5 14:31:44 1999
++++ navigator-v461.sparc-sun-sunos4.1.3_U1/ns-install	Thu May 20 12:03:01 1999
 @@ -84,22 +84,10 @@
  	exit 1
  fi
@@ -201,7 +201,7 @@
  fi
  #
  echo ""
-@@ -356,13 +254,12 @@
+@@ -356,7 +254,6 @@
  	esac
  	${GZIP} -dc ${pkg} | (cd ${TARGET}; tar -x${TAR_OPTIONS}f -)
  	echo "${pkg},${BLDVERS},${TARGET}" >> ${REG_INFILE}
@@ -209,14 +209,7 @@
  done
  #
  #
- # Make sure libjsd.sl or libjsd.so can be found.
- #
--case `/bin/uname` in
-+case `/usr/bin/uname` in
-      HP-UX)
- 	 SUFFIX="sl"
- 	 ;;
-@@ -382,20 +279,7 @@
+@@ -374,20 +271,7 @@
  #
  # Install the vreg binary in the TARGET directory.
  #
@@ -238,7 +231,7 @@
  #
  #
  # Register the product so Automatic Software Download can work.
-@@ -421,7 +305,6 @@
+@@ -413,7 +297,6 @@
  	awk '{printf("\techo \"%s\" >>/tmp/infile\n", $0)}' ${REG_INFILE}
  	echo "	${TARGET}/vreg ${TARGET}/${VREGISTRY} /tmp/infile"
  	echo ""
@@ -246,7 +239,7 @@
  	exit 3
  fi
  #
-@@ -430,11 +313,6 @@
+@@ -422,11 +305,6 @@
  echo "The Netscape ${PRODUCT} software installation is complete."
  echo ""
  echo ""

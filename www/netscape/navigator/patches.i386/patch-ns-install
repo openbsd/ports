@@ -1,5 +1,5 @@
---- ns-install.orig	Tue Aug 15 19:40:40 2000
-+++ ns-install	Thu Aug 31 09:38:27 2000
+--- navigator-v475.x86-bsdi-bsd2/ns-install.orig	Tue Aug 15 20:40:40 2000
++++ navigator-v475.x86-bsdi-bsd2/ns-install	Thu Aug 31 20:11:52 2000
 @@ -84,22 +84,10 @@
  	exit 1
  fi
