@@ -1,4 +1,4 @@
-man/man1/zip.1.gz
+man/man1/zip.1
 bin/zip
 bin/zipnote
 bin/zipsplit
