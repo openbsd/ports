@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/12/04 15:36:36 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2004/12/04 15:45:41 robert Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -27,7 +27,7 @@ MAKE_FILE=	unix/Makefile
 
 ALL_TARGET=	generic
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
+WRKDIST=	${WRKDIR}/${PKGNAME:S/p0//}
 
 DOCS=	README WHERE
 
