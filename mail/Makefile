@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2002/06/09 05:32:01 jsyn Exp $
+# $OpenBSD: Makefile,v 1.92 2002/07/08 21:25:24 avsm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -9,8 +9,6 @@
      SUBDIR += c-client
      SUBDIR += cmail
      SUBDIR += courier-imap
-     SUBDIR += courier-imap,ldap
-     SUBDIR += courier-imap,mysql
      SUBDIR += cucipop
      SUBDIR += elm
      SUBDIR += evolution
