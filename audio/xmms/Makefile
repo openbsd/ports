@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/07/25 15:48:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/07/26 12:29:25 espie Exp $
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
@@ -8,8 +8,9 @@ COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 
 VERSION=		1.2.5
 DISTNAME=		xmms-${VERSION}
-PKGNAME-esd=		xmms-esd-${VERSION}
-PKGNAME-vorbis=		xmms-vorbis-${VERSION}
+FULLPKGNAME=		xmms-${VERSION}
+FULLPKGNAME-esd=	xmms-esd-${VERSION}
+FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}
 DISTDRIVER=		xmms_sun-${VERSION}-p1
 CATEGORIES=		audio
 NEED_VERSION=		1.402
@@ -34,14 +35,10 @@ MASTER_SITES0=		http://vedge.com.ar/hack/
 FLAVORS=		no_esd no_vorbis
 FLAVOR?=
 MULTI_PACKAGES=
-.if ${FLAVOR:L:Mno_esd}
-FLAVOR:=${FLAVOR:L:Nno_esd}
-.else
+.if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=	-esd
 .endif
-.if ${FLAVOR:L:Mno_vorbis}
-FLAVOR:=${FLAVOR:L:Nno_vorbis}
-.else
+.if !${FLAVOR:L:Mno_vorbis}
 MULTI_PACKAGES+=	-vorbis
 .endif
 
@@ -95,6 +92,7 @@ CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
 .  else
 CONFIGURE_ENV+=		OGG_LIBS=its-not-my-godamn-planet-understand-monkey-boy
+CONFIGURE_ENV+=		VORBIS_LIBS=its-not-my-godamn-planet-understand-monkey-boy
 .  endif
 .endif
 
