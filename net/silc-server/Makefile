@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/22 10:01:35 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2003/07/30 00:26:26 brad Exp $
 
 .if ${MACHINE_ARCH} == "powerpc"
 BROKEN= "config file parser bug on ${MACHINE_ARCH}"
@@ -36,7 +36,7 @@ PATCH_LIST=	gcc-* patch-*
 .endif
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.52
+AUTOCONF_VERSION= 2.54
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/silcmath/mpi
 CONFIGURE_ARGS=	\
 	--enable-ipv6 \

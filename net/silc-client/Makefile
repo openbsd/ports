@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/06/01 23:11:23 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2003/07/30 00:26:26 brad Exp $
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 
@@ -23,7 +23,7 @@ MASTER_SITES=	http://ftp.silcnet.org/client/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/
 
-LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib
+LIB_DEPENDS+=	glib.1.2,gmodule.1.2::devel/glib
 
 MODULES=	iconv
 
@@ -33,9 +33,9 @@ PATCH_LIST=	gcc-* patch-*
 .endif
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.52
+AUTOCONF_VERSION= 2.54
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/irssi ${WRKSRC}/lib/silcmath/mpi
-CONFIGURE_ARGS=	--enable-ipv6 \
+CONFIGURE_ARGS+=--enable-ipv6 \
 		--with-helpdir=${PREFIX}/share/silc/help \
 		--with-docdir=${PREFIX}/share/doc/silc \
 		--with-etcdir=${SYSCONFDIR}/silc \
