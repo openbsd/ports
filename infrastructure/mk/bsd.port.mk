@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.149 1999/12/01 22:35:54 ian Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.150 1999/12/01 22:39:44 ian Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1560,7 +1560,7 @@ package-links:
 
 .if !target(delete-package-links)
 delete-package-links:
-	cd ${PACKAGES} && ${FIND} . -type l -name ${PKGNAME}${PKG_SUFX}|xargs ${RM} -f
+	@cd ${PACKAGES} && ${FIND} . -type l -name ${PKGNAME}${PKG_SUFX}|xargs ${RM} -f
 .endif
 
 .if !target(delete-package)
