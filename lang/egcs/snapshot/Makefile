@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 1999/09/06 13:58:44 espie Exp $
+# $OpenBSD: Makefile,v 1.55 1999/09/07 15:04:02 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -6,6 +6,8 @@
 
 # it only works right with a recent bsd.port.mk.
 NEED_VERSION=1.73
+
+BROKEN="latest (990830) snapshot is broken, but cvs-current works"
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
@@ -31,12 +33,12 @@ MIRROR_DISTFILE=no
 # cygnus packaging scheme is now working, though it is weird.
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
-MAKE_TESTS=yes
-MAKE_GXX=yes
-MAKE_FORTRAN=yes
+#MAKE_TESTS=yes
+#MAKE_GXX=yes
+#MAKE_FORTRAN=yes
 #MAKE_CHILL=yes
-MAKE_OBJC=yes
-MAKE_JAVA=yes
+#MAKE_OBJC=yes
+#MAKE_JAVA=yes
 
 .if defined(MAKE_TESTS)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
@@ -249,11 +251,7 @@ post-patch:
 		# avoid packaging include copies along...
 	find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
-	cd ${WRKSRC}; \
-	for f in `cat ${FILESDIR}/fixdepend`; \
-	do \
-		[ -f $$f ] && touch $$f; \
-	done 
+	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
@@ -292,7 +290,7 @@ LANGS+=java
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
-#CFLAGS='-g -O2'
+CFLAGS=-g -O2
 CONFIGURE_ENV=LANGUAGES='${LANGS}'  
 
 
