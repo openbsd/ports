@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.643 2004/09/14 23:06:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.644 2004/09/14 23:07:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -459,7 +459,7 @@ PORTHOME?=		/${PKGNAME}_writes_to_HOME
 
 MAKE_ENV+=		PATH='${PORTPATH}' PREFIX='${PREFIX}' \
 	LOCALBASE='${LOCALBASE}' X11BASE='${X11BASE}' \
-	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS}' \
+	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS:C/ *$//}' \
 	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}='' \
 	HOME='${PORTHOME}'
 
