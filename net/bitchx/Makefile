@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/07/31 16:43:05 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/21 17:49:24 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	ircii-pana-75p3
@@ -6,6 +6,8 @@ PKGNAME=	bitchx-75p3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
+
+NEED_VERSION=	1.114
 
 MAINTAINER=	brad@openbsd.org
 
@@ -18,8 +20,8 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/BitchX
 
 post-extract:
-	@chmod u+x ${WRKSRC}/WinNT/include
-	@chmod u+x ${WRKSRC}/WinNT/source
+	@${CHMOD} u+x ${WRKSRC}/WinNT/include
+	@${CHMOD} u+x ${WRKSRC}/WinNT/source
 
 post-patch:
 	@${SED} -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/include/config.h > $(WRKSRC)/include/config.h.new
