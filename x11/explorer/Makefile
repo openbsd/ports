@@ -3,8 +3,10 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.2 1998/06/24 20:13:41 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/31 07:29:01 turan Exp $
 #
+
+BROKEN=		syntax errors in config_expl.cpp
 
 DISTNAME=	explorer-0.72
 CATEGORIES=	x11
