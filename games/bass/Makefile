@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2003/08/15 20:35:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/03 05:46:23 jolan Exp $
+
+PKG_ARCH=	*
 
 COMMENT=	"Beneath A Steel Sky"
 DISTNAME=	BASS-CD
@@ -26,7 +28,7 @@ WRKDIST=	${WRKDIR}/sky-cd
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bass
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bass
-	${INSTALL_DATA} ${WRKBUILD}/sky.{dnr,dsk} ${PREFIX}/share/bass
-	${INSTALL_DATA} ${WRKBUILD}/readme.txt ${PREFIX}/share/doc/bass
+	${INSTALL_DATA} ${WRKSRC}/sky.{dnr,dsk} ${PREFIX}/share/bass
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/bass
 
 .include <bsd.port.mk>
