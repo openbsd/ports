@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/06/14 18:32:43 brad Exp $
 bin/gif2epsn
 bin/gif2ps
 bin/gif2rgb
@@ -27,8 +28,7 @@ bin/gifrotat
 bin/gif2x11
 bin/gifcompose
 bin/gifburst
+include/gif_lib.h
 lib/libgif.a
 lib/libgif.la
-lib/libgif.so.4.1
-@exec /sbin/ldconfig -m %B
-include/gif_lib.h
+%%SHARED%%
