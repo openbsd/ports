@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/29 08:26:32 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/05 00:49:51 jsyn Exp $
 
 COMMENT=	"powerful webserver security scanner"
 
 DISTNAME=	arirang-1.6
 CATEGORIES= 	security
 
-MASTER_SITES=	http://www.monkey.org/~pilot/arirang/ \
-                http://search.iland.co.kr/twwwscan/ \
+MASTER_SITES=	http://monkey.org/~pilot/arirang/ \
 		${MASTER_SITE_PACKETSTORM:=UNIX/cgi-scanners/}
 
 HOMEPAGE=	http://www.monkey.org/~pilot
