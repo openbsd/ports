@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2003/01/16 05:15:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2003/05/17 22:58:16 fgsch Exp $
 
 COMMENT=	'full-screen easy to use Usenet reader'
 
-DISTNAME=	tin-1.4.6
+DISTNAME=	tin-1.4.7
 CATEGORIES=	news
 
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
