@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:41:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2003/03/31 14:11:50 sturm Exp $
 
 COMMENT=	"programming language with generators, X11 and more"
 COMMENT-no_x11=	"programming language with generators"
@@ -41,6 +41,7 @@ LIBDIR=${TRUEPREFIX}/lib/icon
 CONFIGURE_TARGET=Configure
 .else
 CONFIGURE_TARGET=X-Configure
+USE_X11=Yes
 .endif
 
 do-configure:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/27 14:12:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/03/31 14:11:50 sturm Exp $
 
 
 COMMENT=	"smalltalk system"
@@ -47,6 +47,7 @@ CONFIGURE_ENV=RANLIB=ranlib
 #ALL_TARGET=squeak plugins map
 ALL_TARGET=all squeak.1
 USE_GMAKE=yes
+USE_X11=yes
 
 MAKE_FLAGS=docdir=${TRUEPREFIX}/share/doc/squeak-$V
 .if ${MACHINE_ARCH} != "powerpc"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/27 14:10:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/03/31 14:11:50 sturm Exp $
 
 # XXX crashes & hangs on macppc, to be dealt with
 NOT_FOR_ARCHS=	powerpc
@@ -23,6 +23,8 @@ PERMIT_PACKAGE_CDROM= Yes
 WRKDIST=	${WRKDIR}
 
 LIB_DEPENDS=	gdbm.::databases/gdbm
+
+USE_X11=	Yes
 
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
