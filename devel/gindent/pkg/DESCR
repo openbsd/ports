@@ -1,4 +1,9 @@
-The `indent' program changes the appearance of a C program by
-inserting or deleting whitespace.
+GNU indent changes the appearance of a C program by inserting or
+deleting whitespace according to a plethora of options.  Some
+canned styles of formatting are supported as well.  GNU indent is
+a descendant of BSD indent.
+
+GNU indent does NOT work for C++, if it does for you then you're
+just lucky.  Don't ask for support for C++.
 
 WWW: ${HOMEPAGE}

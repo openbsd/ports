@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/08/20 19:18:57 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/01/08 20:18:50 avsm Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/indent.info
 bin/gindent
-man/man1/gindent.1
-@unexec install-info --delete %D/info/indent.info %D/info/dir
 info/indent.info
-@exec install-info %D/info/indent.info %D/info/dir
-
+man/man1/gindent.1
+@exec install-info --info-dir=%D/info %D/info/indent.info
