@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2002/07/11 09:31:09 shell Exp $
+# $OpenBSD: Makefile,v 1.83 2002/08/21 15:44:24 espie Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -75,6 +75,7 @@
      SUBDIR += spiff
      SUBDIR += texi2html
      SUBDIR += textutils
+     SUBDIR += unrtf
 #    SUBDIR += unroff
      SUBDIR += urlview
      SUBDIR += wdiff
