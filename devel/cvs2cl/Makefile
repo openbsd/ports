@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/01/02 16:30:02 avsm Exp $
+# $OpenBSD: Makefile,v 1.7 2001/02/05 22:52:57 avsm Exp $
 # $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
 
 DISTNAME=	cvs2cl-2.30
@@ -26,8 +26,8 @@ DIST_LOC=	${FULLDISTDIR}/${DISTFILES}
 FETCH_BEFORE_ARGS= -o ${DIST_LOC}
 
 do-extract:
-	${INSTALL_DATA_DIR} ${WRKSRC}
-	${INSTALL_SCRIPT} ${DIST_LOC} ${WRKSRC}/cvs2cl
+	@mkdir -p ${WRKSRC}
+	@cp ${DIST_LOC} ${WRKSRC}/cvs2cl
 
 do-install:
 	${INSTALL_SCRIPT} ${DIST_LOC} ${PREFIX}/bin/cvs2cl
