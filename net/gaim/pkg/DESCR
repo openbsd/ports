@@ -1,9 +1,21 @@
-GAIM is a GTK+-based AOL Instant Messenger (AIM) application using
-the tik/toc service from AOL.  It is actively being developed and
-supports many common AOL features and should have an interface
-familiar to anyone who has used AOL's AIM client before.  It also
-has multiple protocol support for such things as ICQ, IRC, Yahoo!,
-MSN Messenger, Jabber, and Napster.
+Gaim is a GTK+-based multi-protocol instant messaging client. It is
+compatible with AIM (Oscar and TOC protocols), ICQ, MSN Messenger,
+Yahoo, IRC, Jabber, Gadu-Gadu, and Zephyr networks.
+
+Gaim supports many features of the various networks, such as file
+transfer (coming soon), away messages, typing notification, and MSN
+window closing notification. It also goes beyond that and provides many
+unique features. A few popular features are Buddy Pounces, which give
+the ability to notify you, send a message, play a sound, or run a
+program when a specific buddy goes away, signs online, or returns from
+idle; and plugins, consisting of text replacement, a buddy ticker,
+extended message notification, iconify on away, and more.
+
+Gaim integrates well with GNOME 2 and KDE 3.1's system trays.  This
+allows you to work with gaim without requiring the buddy list window to
+be up at all times.
+
+Gaim is under constant development, and releases are usually frequent.
 
 Flavors:
 	audio - Build with audio support
