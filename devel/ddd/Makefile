@@ -1,9 +1,4 @@
-# OpenBSD makefile for:	DDD - Data Display Debugger
-# Version required:     2.2.3
-# Date created:		December 29, 1997
-# Whom:			Peter Reich
-#
-# $OpenBSD: Makefile,v 1.3 1998/06/30 23:52:32 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/10/08 18:26:40 marc Exp $
 #
 
 DISTNAME=       	ddd-3.0
@@ -15,15 +10,8 @@ MASTER_SITES=   	ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/ \
 			ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/
 
 # Library dependencies
-# Xpm is part of 2.3 and later
 #
 LIB_DEPENDS=		Xm\\.1\\.:${PORTSDIR}/x11/lesstif
-OS_RELEASE!=		uname -r
-OS_HAS_XPM=		2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS+=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
-
 USE_GMAKE=		yes
 USE_X11=		yes
 GNU_CONFIGURE=		yes
