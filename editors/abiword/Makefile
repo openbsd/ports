@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/11/24 11:08:02 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2004/12/25 21:51:00 alek Exp $
 
 COMMENT=		"open-source, cross-platform WYSIWYG word processor"
 
@@ -29,7 +29,7 @@ WANTLIB=		ICE SM X11 Xext Xft Xinerama Xrender \
 			atk-1.0.0.0 c fontconfig freetype glib-2.0.0.0 \
 			gmodule-2.0.0.0 gobject-2.0.0.0 m pango-1.0.0.0 \
 			pangox-1.0.0.0 pangoxft-1.0.0.0 png pthread \
-			stdc++ xml2.0.0 z
+			stdc++ xml2.0.0 z Xcursor
 
 MASTER_SITES=   	${MASTER_SITE_SOURCEFORGE:=abiword/}
 EXTRACT_SUFX=		.tar.bz2
