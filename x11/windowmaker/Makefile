@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/09/24 09:34:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.46 2001/09/28 14:37:06 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
-MASTER_SITE_SUBDIR=	beta/srcs
+MASTER_SITE_SUBDIR=	source/release
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		PropList.2::devel/libproplist \
