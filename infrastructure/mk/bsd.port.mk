@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.595 2004/01/04 09:07:19 sturm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.596 2004/01/06 15:02:57 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -60,6 +60,57 @@ ERRORS+= "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 # pre-patch `real distpatch' post-distpatch `real patch' post-patch
 #
 
+# User settings
+TRUST_PACKAGES?=No
+BIN_PACKAGES?=No
+CLEANDEPENDS?=No
+USE_SYSTRACE?=	No
+BULK?=No
+RECURSIVE_FETCH_LIST?=	Yes
+
+# special purpose user settings
+PATCH_CHECK_ONLY?=No
+REFETCH?=false
+
+# Constants used by the ports tree
+ARCH!=	uname -m
+OPSYS=	OpenBSD
+OPSYS_VER=	${OSREV}
+
+NO_SHARED_ARCHS=hppa m88k vax
+
+# Define NO_SHARED_LIBS for those machines that don't support shared libraries.
+.for _m in ${MACHINE_ARCH}
+.  if !empty(NO_SHARED_ARCHS:M${_m})
+NO_SHARED_LIBS=	Yes
+.  endif
+.endfor
+
+# Global path locations.
+PORTSDIR?=		/usr/ports
+LOCALBASE?=		/usr/local
+X11BASE?=		/usr/X11R6
+DISTDIR?=		${PORTSDIR}/distfiles
+BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
+TEMPLATES?=		${PORTSDIR}/infrastructure/templates
+
+PKGREPOSITORYBASE?=	${PORTSDIR}/packages/${MACHINE_ARCH}
+PKGREPOSITORY?=		${PKGREPOSITORYBASE}/all
+CDROM_PACKAGES?=	${PKGREPOSITORYBASE}/cdrom
+FTP_PACKAGES?=		${PKGREPOSITORYBASE}/ftp
+
+# Commands and command settings.
+PKG_DBDIR?=		/var/db/pkg
+
+FETCH_CMD?=		/usr/bin/ftp -V -m
+
+PKG_TMPDIR?=	/var/tmp
+PKG_CMD?=		/usr/sbin/pkg_create
+PKG_DELETE?=	/usr/sbin/pkg_delete
+
+# remount those mount points ro before fake.
+# XXX tends to panic the OS
+PROTECT_MOUNT_POINTS?=
 
 .if exists(${.CURDIR}/../Makefile.inc)
 .include "${.CURDIR}/../Makefile.inc"
@@ -92,29 +143,9 @@ show:
 .endif
 
 FAKE?=Yes
-TRUST_PACKAGES?=No
-BIN_PACKAGES?=No
 _LIBLIST=${WRKDIR}/.liblist-${ARCH}${_FLAVOR_EXT2}
 _BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${_FLAVOR_EXT2}
 
-
-# Get the architecture
-ARCH!=	uname -m
-
-# Get the operating system type and version
-OPSYS=	OpenBSD
-OPSYS_VER=	${OSREV}
-
-NO_SHARED_ARCHS=hppa m88k vax
-
-# Define NO_SHARED_LIBS for those machines that don't support shared libraries.
-.for _m in ${MACHINE_ARCH}
-.  if !empty(NO_SHARED_ARCHS:M${_m})
-NO_SHARED_LIBS=	Yes
-.  endif
-.endfor
-
-CLEANDEPENDS?=No
 
 # need to go through an extra var because clean is set in stone, 
 # on the cmdline.
@@ -147,23 +178,11 @@ NO_DEPENDS?= No
 NO_BUILD?= No
 NO_REGRESS?= No
 
-# These need to be absolute since we don't know how deep in the ports
-# tree we are and thus can't go relative.  They can, of course, be overridden
-# by individual Makefiles or local system make configuration.
-PORTSDIR?=		/usr/ports
-LOCALBASE?=		/usr/local
-X11BASE?=		/usr/X11R6
-DISTDIR?=		${PORTSDIR}/distfiles
 .if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 .else
 FULLDISTDIR?=	${DISTDIR}
 .endif
-PKGREPOSITORYBASE?=	${PORTSDIR}/packages/${MACHINE_ARCH}
-TEMPLATES?=		${PORTSDIR}/infrastructure/templates
-
-CDROM_PACKAGES?=	${PKGREPOSITORYBASE}/cdrom
-FTP_PACKAGES?=		${PKGREPOSITORYBASE}/ftp
 
 .if exists(${.CURDIR}/patches.${ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}
@@ -180,11 +199,11 @@ PATCH_LIST?=    patch-*
 .if exists(${.CURDIR}/scripts.${ARCH})
 SCRIPTDIR?=		${.CURDIR}/scripts.${ARCH}
 .else
-.if exists(${.CURDIR}/scripts.${MACHINE_ARCH})
+.  if exists(${.CURDIR}/scripts.${MACHINE_ARCH})
 SCRIPTDIR?=		${.CURDIR}/scripts.${MACHINE_ARCH}
-.else
+.  else
 SCRIPTDIR?=		${.CURDIR}/scripts
-.endif
+.  endif
 .endif
 
 .if exists(${.CURDIR}/files.${ARCH})
@@ -243,10 +262,6 @@ BUILD_DEPENDS+=		::devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
-.endif
-
-.if exists(${PORTSDIR}/../Makefile.inc)
-.include "${PORTSDIR}/../Makefile.inc"
 .endif
 
 SUBPACKAGE?=
@@ -330,9 +345,6 @@ ERRORS+=	"Fatal: no flavors for this port."
 .endif
 
 PKG_SUFX?=		.tgz
-PKGREPOSITORY?=		${PKGREPOSITORYBASE}/all
-PKG_DBDIR?=		/var/db/pkg
-BULK_COOKIES_DIR?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 
 PKGNAME?=${DISTNAME}
 FULLPKGNAME?=${PKGNAME}${FLAVOR_EXT}
@@ -429,8 +441,6 @@ MAKE_ENV+=		PATH='${PORTPATH}' PREFIX='${PREFIX}' \
 	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}='' \
 	HOME='${PORTHOME}'
 
-FETCH_CMD?=		/usr/bin/ftp -V -m
-
 DISTORIG?=	.bak.orig
 PATCH?=			/usr/bin/patch
 PATCHORIG?=	.orig
@@ -446,7 +456,6 @@ PATCH_ARGS?=	-d ${WRKDIST} -z ${PATCHORIG} --forward --quiet -E ${PATCH_STRIP}
 PATCH_DIST_ARGS?=	-z ${DISTORIG} -d ${WRKDIST} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
-PATCH_CHECK_ONLY?=No
 .if ${PATCH_CHECK_ONLY:L} == "yes"
 PATCH_ARGS+=	-C
 PATCH_DIST_ARGS+=	-C
@@ -582,7 +591,6 @@ MAKE_ENV+=	${_INSTALL_MACROS}
 SCRIPTS_ENV+=	${_INSTALL_MACROS}
 
 # setup systrace
-USE_SYSTRACE?=	No
 NO_SYSTRACE?=	No
 .if ${USE_SYSTRACE:L} == "yes" && ${NO_SYSTRACE:L} == "no"
 _SYSTRACE_CMD?=	/bin/systrace -i -a -f ${_SYSTRACE_COOKIE}
@@ -706,10 +714,6 @@ ${WRKPKG}/DESCR${SUBPACKAGE}: ${DESCR}
 
 ${WRKPKG}/mtree.spec: ${MTREE_FILE}
 	@${_SED_SUBST} ${MTREE_FILE}>$@.tmp && mv -f $@.tmp $@
-
-PKG_TMPDIR?=	/var/tmp
-PKG_CMD?=		/usr/sbin/pkg_create
-PKG_DELETE?=	/usr/sbin/pkg_delete
 
 # Fill out package command, and package dependencies
 _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}/COMMENT${SUBPACKAGE}
@@ -1276,11 +1280,6 @@ fetch:
 .  endif
 
 
-# Set to true to try to retrieve older distfiles from ftp.openbsd.org if
-# checksums no longer match.
-
-REFETCH?=false
-
 checksum: fetch
 .  if ! defined(NO_CHECKSUM)
 	@checksum_file=${CHECKSUM_FILE}; \
@@ -1352,7 +1351,6 @@ _refetch:
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
-BULK?=No
 _INSTALL_DEPS=${_INSTALL_COOKIE}
 _PACKAGE_DEPS=${_PACKAGE_COOKIES}
 .  if defined(ALWAYS_PACKAGE)
@@ -1633,8 +1631,6 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 
 _FAKE_SETUP=TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
-PROTECT_MOUNT_POINTS?=
-
 .if ${FAKE:L} == "yes"
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
@@ -1847,8 +1843,6 @@ clean:
 	rm -f ${_BULK_COOKIE}
 .  endif
 .endif
-
-RECURSIVE_FETCH_LIST?=	Yes
 
 # packing list utilities.  This generates a packing list from a recently
 # installed port.  Not perfect, but pretty close.  The generated file
