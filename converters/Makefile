@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/07/13 15:18:03 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2001/08/11 00:52:18 avsm Exp $
 #
 
     SUBDIR += base64
@@ -22,6 +22,7 @@
 #   SUBDIR += uudeview
 #   SUBDIR += uudx
 #   SUBDIR += uulib
+    SUBDIR += wv
 #   SUBDIR += xdeview
     SUBDIR += xlhtml
 
