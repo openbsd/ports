@@ -1,0 +1,12 @@
+--- libstdc++/config/openbsd.ml.orig	Sun Feb 28 23:12:57 1999
++++ libstdc++/config/openbsd.ml	Mon Mar  1 00:47:07 1999
+@@ -1,5 +1,6 @@
+-# Base shared lib for OpenBSD i386
+-
+-LIBS    = $(ARLIB) $(SHLIB) $(SHLINK) mshlink
++# Base shared lib for OpenBSD 
++MAJOR_OFFSET=27
++MSHLINK = libstdc++.so.`expr $(INTERFACE) + $(MAJOR_OFFSET)`.0
++LIBS    = $(ARLIB) $(ARLINK) $(SHLIB) $(SHLINK) mshlink
+ SHFLAGS = -nostdlib -Wl,-Bshareable,-Bforcearchive
+ SHDEPS  = -lm
