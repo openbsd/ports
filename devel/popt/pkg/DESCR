@@ -1,4 +1,4 @@
-This is the popt command line option parsing library. While it is similiar
+This is the popt command line option parsing library. While it is similar
 to getopt(3), it contains a number of enhancements, including:
 
         1) popt is fully reentrant

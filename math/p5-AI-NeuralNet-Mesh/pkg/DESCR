@@ -1,5 +1,5 @@
 AI::NeuralNet::Mesh is an optimized, accurate neural network Mesh.
-It was designed with accruacy and speed in mind. 
+It was designed with accuracy and speed in mind. 
 
 This network model is very flexable. It will allow for clasic binary
 operation or any range of integer or floating-point inputs you care
