@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/10 17:00:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/11 20:11:04 pvalchev Exp $
 
 COMMENT=	"graphically improved game of yore"
 
@@ -68,6 +68,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= --disable-optimizations \
+		 --disable-debug \
 		 --without-mikmod
 
 post-install:
