@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/04/26 02:19:04 brad Exp $
-include/png.h
-include/pngconf.h
+@comment $OpenBSD: PLIST,v 1.14 2002/07/17 22:39:03 brad Exp $
 include/libpng/png.h
 include/libpng/pngconf.h
 lib/libpng.a

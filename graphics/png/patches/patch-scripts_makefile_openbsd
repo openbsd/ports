@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.1 2002/04/26 02:19:04 brad Exp $
---- scripts/makefile.openbsd.orig	Mon Apr 15 10:25:46 2002
-+++ scripts/makefile.openbsd	Sun Apr 21 16:16:34 2002
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.2 2002/07/17 22:39:03 brad Exp $
+--- scripts/makefile.openbsd.orig	Wed May 22 21:35:26 2002
++++ scripts/makefile.openbsd	Wed May 22 21:41:41 2002
 @@ -1,13 +1,15 @@
 -# makefile for libpng
 +# makefile for libpng under OpenBSD
@@ -15,9 +15,9 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.1 2002/04/26 02:19:04 brad Exp $
 +DOCDIR=	${PREFIX}/share/doc/png
  
 -SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.2
+-SHLIB_MINOR=	1.2.4
 +SHLIB_MAJOR=	3
-+SHLIB_MINOR=	0
++SHLIB_MINOR=	1
  
  LIB=	png
  SRCS=	png.c pngerror.c pnggccrd.c pngget.c pngmem.c pngpread.c \
@@ -40,7 +40,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.1 2002/04/26 02:19:04 brad Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -52,19 +55,17 @@ beforeinstall:
+@@ -52,21 +55,17 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
@@ -60,6 +60,8 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.1 2002/04/26 02:19:04 brad Exp $
 -		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include/libpng
 +		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${INCDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
+-		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
+-	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${PREFIX}/share/doc/png
 +		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${DOCDIR}
  
