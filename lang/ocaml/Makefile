@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/12/04 03:35:53 angelos Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/10 10:03:19 espie Exp $
 
 DISTNAME=	ocaml-2.04
 CATEGORIES=	lang
@@ -14,7 +14,7 @@ ALL_TARGET=	world bootstrap opt
 DOCFILES=	${DISTNAME}-refman.html.tar.gz
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/ocaml/html
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/* ${PREFIX}/share/doc/ocaml/html
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 
