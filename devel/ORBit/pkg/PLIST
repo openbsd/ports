@@ -1,5 +1,3 @@
-@pkgdep glib-1.2.0
-@pkgdep indent-1.9.1
 bin/libIDL-config
 bin/orbit-idl
 bin/name-client

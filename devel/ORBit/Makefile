@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/23 19:24:31 rohee Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/29 18:32:16 rohee Exp $
 
-DISTNAME		=	ORBit-0.4.0
-CATEGORIES		=	devel gnome corba
+DISTNAME=		ORBit-0.4.0
+CATEGORIES=		devel
 
-NEED_VERSION		=	1.78
+NEED_VERSION=		1.78
 
-MAINTAINER		=	rohee@OpenBSD.ORG
+MAINTAINER=		rohee@OpenBSD.ORG
 
-MASTER_SITES		=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR	=	ORBit
+MASTER_SITES=		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	ORBit
 
-BUILD_DEPENDS		=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS		+=	glib\.1\.2:${PORTSDIR}/devel/glib
-RUN_DEPENDS		+=	gindent:${PORTSDIR}/devel/gindent
+BUILD_DEPENDS=		libtool:${PORTSDIR}/devel/libtool
+LIB_DEPENDS+=		glib\.1\.2:${PORTSDIR}/devel/glib
+RUN_DEPENDS+=		gindent:${PORTSDIR}/devel/gindent
 
-USE_GMAKE		=	yes
+USE_GMAKE=		yes
 
-GNU_CONFIGURE		=	yes
-CONFIGURE_ARGS		+=	${CONFIGURE_SHARED} # does not honour it
-CONFIGURE_ARGS		+=	--sysconfdir=/etc
-CONFIGURE_ARGS		+=	--disable-indent
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} # does not honour it
+CONFIGURE_ARGS+=	--sysconfdir=/etc
 
-CONFIGURE_ENV		+=	LIBTOOL=/usr/local/bin/libtool
+CONFIGURE_ENV+=		LIBTOOL=/usr/local/bin/libtool
 
 post-install:
 	test -f ${PREFIX}/info/dir || \
