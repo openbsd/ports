@@ -9,17 +9,15 @@
 ======================================================================
 
 This file is  mostly obsolete. You should refer to the corresponding
-man-pages: ports(7), packages(7), bsd.port.mk(5) instead.
+man-pages: ports(7), packages(7), mirroring-ports(7), packages-specs (7),
+and bsd.port.mk(5) instead.
 
 ======================================================================
 
 Contacts
 ========
-* individual ports list a 
-MAINTAINER=  
-line in their Makefile.  
-* specific issues related to the ports framework (e.g., bugs in
-bsd.port.mk)  should go to ports-admin@openbsd.org
+* individual ports have a MAINTAINER.
+Go to the port directory and use make show=MAINTAINER to see it.
 * ports without explicit maintainers, and other general issues should
 go to ports@openbsd.org
 
@@ -30,7 +28,8 @@ If nothing happens after a reasonable delay, start plaguing him,
 or go to the next step.
 
 Developers with a major investment in the ports tree include
-brad@cvs.openbsd.org, naddy@cvs.openbsd.org, espie@cvs.openbsd.org
+Brad Smith <brad@openbsd.org>, Christian Weisberger <naddy@openbsd.org>, 
+Marc Espie <espie@openbsd.org>.
 
 Those people can be contacted to put some pressure on a lazy maintainer.
 But we do read ports@openbsd.org, so...
@@ -47,7 +46,7 @@ discussion.
 The main Makefile, PORTSDIR/Makefile, can be used to obtain various
 information.
 
-* make search key=<keyword>
+* make key=<keyword> describe
 will locate ports that match the given keyword in the Index and print
 information about them.
 
@@ -56,7 +55,8 @@ can be used to rebuild that INDEX, normally useful after you update your
 ports dir through cvs.
 
 * make readmes
-will populate the ports tree with a set of html indices.
+will populate the ports tree with a set of html indices (currently somewhat
+broken).
 
 The script INFRA/build/out-of-date will find
 discrepancies between your installed packages and the INDEX. This might
@@ -88,49 +88,41 @@ from the available media into your repository
 * build the program
 
 `make install' will
-* install the software on your system
-* log the installation so that later pkg_info or pkg_delete can deal with
-the software.
+* install the software in a special playpen directory (the fake area)
+* create a binary package out of that fake-install
+* install the package on your system
 
-Some ports can have some options, or demand that you make some choice 
+Some ports can have some options (flavors), or demand that you make some choice 
 before building, e.g.,
-cd /usr/ports/security/ssh 
-make all install USA_RESIDENT=no
+cd /usr/ports/editors/vim/stable
+env FLAVOR=no_x11 make all install
 
-Some ports may prompt you for more choice, or give you important
-information about ports building.  Likewise, installing or uninstalling
-a port may give you useful information. READ IT.
+Some ports may give you some information about ways to build them.
+Likewise, installing or uninstalling
+a package may give you useful information. READ IT.
 
 You can also use
-* `make uninstall' to remove the installed software (same as pkg_delete)
-* `make package' to convert the installed software into a binary `package'
-(a tar ball that you can share with other machines with the same
-configuration, contribute to the ftp project, or that you can backup 
-separately). Packages normally end up in /usr/ports/packages, overridable
-with PACKAGE.
-* `make fetch-list' to build a small shell-script that should be able to
-retrieve the missing distfiles and distribution patches for the given port.
+* `make clean=install' to remove the installed software (calls pkg_delete)
+* `make package' to create a binary package without necessarily installing
+it.  Packages normally end up in /usr/ports/packages/${MACHINE_ARCH}, 
+overridable with PACKAGES.
+* `make clean=package' to remove a previously built package.
 * `make clean' to remove all scaffolding after the port is built and
 installed.
-* `make distclean' to also remove distfiles and distribution patches 
+* `make clean=dist' to also remove distfiles and distribution patches 
 from the repository
-* `make clean CLEANDEPENDS=Yes' will also remove sub ports that have been
+* `make clean=depends' will also remove sub ports that have been
 recursively built.
-* `make distclean CLEANDEPENDS=Yes', guess what this does.
+* `make clean="depends dist"', guess what this does.
 
 Please note that, in normal use, the OpenBSD ports tree will grow quite
-a lot.  Careful use of make clean and make distclean will help you. You
-can also redirect ports activity elsewhere by making use of WRKOBJDIR
-and DISTDIR.  `find /usr/ports -type d -name work\* -print' 
+a lot.  Starting with OpenBSD 3.0, working directories for packaged ports 
+can be cleaned out. See the bulk-packages target. 
+However, the distfiles and built
+packages still can take a lot of space (over 1 Gb).
+You can redirect ports activity elsewhere by making use of WRKOBJDIR, 
+DISTDIR and PACKAGES.  `find /usr/ports -type d -name w-\* -print' 
 can be useful to find out ports you forgot to clean out.
-
-There are a few kinks in the building of ports with options yet. Namely,
-all such ports should produce distinct package names if built with
-different options.  Also, there is no check for consistency between
-make and make install. Taking the ssh example again,
-make USA_RESIDENT=No
-make install USA_RESIDENT=Yes
-won't be flagged as an error...
 
 Where do the distfiles come from
 ================================
@@ -175,7 +167,6 @@ Each port uses its own set of sites, and there should also be backups of
 the distribution files on ftp.openbsd.org.  MASTER_SITE_BACKUP holds an
 overridable list of backup sites, normally
 ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/
-ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
 ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
 
 You can ask the fetch process to try to retrieve files from those sites first
@@ -210,34 +201,23 @@ MASTER_SITE_WINDOWMAKER		WindowMaker
 There is a backup copy of that file in
 INFRA/templates/network.conf.template.
 
-In case you don't have a permanent network connection, 
-`make fetch-list' should provide you with a shell script you can use to
-retrieve distfiles you're missing to build a given port.
-
-(TODO: improve and systematize fetch-all)
+In case you don't have a permanent network connection,  you should read
+mirroring-ports(7).
 
 Building several ports
 ======================
 Each category directory holds a Makefile that propagates commands to
-its sub ports, e.g., if you cd /usr/ports/audio && make, this should
-build all ports under /usr/ports/audio.
+its sub ports, e.g., if you cd /usr/ports/audio && make package, this should
+build packages for all ports under /usr/ports/audio.
 
 A more useful command is the
-INFRA/build/find-build-order script.
+INFRA/package/check-plist script.
 You normally prepare a list of the ports you want to build, in the same
-format as  INFRA/db/essentials, and pass it to find-build-order like
-this:
-cd /usr/ports/infrastructure
-cat db/essentials|build/find-build-order
+format as  INFRA/db/essentials, and pass it to that script.
 This yields a sorted list of the required ports.
-
-(Todo: provide for a script which builds everything we want)
 
 You can filter ports that require interaction out with
 make BATCH=yes
-
-Likewise, make FOR_CDROM=yes, make NO_RESTRICTED=yes 
-will yield only the ports with the required level of liberty.
 
 Files Summary
 =============
@@ -247,18 +227,14 @@ Files Summary
 	where to find a given port
 /usr/ports/INDEX:
 	all distfiles, rebuilt with make index
-/usr/ports/README.html
-/usr/ports/<category>/README.html
-/usr/ports/<category>/<portname>/README.html:
-	www indices produced by make readmes
 /usr/ports/distfiles (DISTFILES):
 	repository for distribution files and distribution patches
 /cdrom/distfiles (CDROM_SITE):
 	standard location for distfiles off a CD
-/usr/ports/packages (PACKAGES):
+/usr/ports/packages/${MACHINE_ARCH} (PACKAGES):
 	where binary packages are built (by category. Normally everything
 	ends up under All, with symlinks for each category)
-/usr/ports/<category>/<portname>/work:
+/usr/ports/<category>/<portname>/w-${PKGNAME}:
 	where the ports mechanism does the building. This is normally a
 	real directory, but you can set WRKOBJDIR to point to another
 	base which is not /usr/ports, and work/ will  be a link to
@@ -279,62 +255,39 @@ Files Summary
 	installed ports, see pkg_add(1).
 /usr/local (LOCALBASE):
 	where normal ports install themselves.
-/usr/X11R6 (X11BASE):
-	where ports with a large dependency on X11 install themselves.
 
 Other tweaks
 ============
-FORCE_PACKAGE: force package building.  Some ports can't be distributed
-as packages for legal reasons, but you may wish to build a package for
-your private consumption.
-HAVE_MOTIF: set in /etc/mk.conf if we own a copy of the real thing.
-MOTIF_STATIC: set in /etc/mk.conf to use a static version of the Motif
-library only.
-NO_MTREE: don't run mtree before installing a port. This is a dangerous
-option.
-NO_PKG_REGISTER: used for make install, don't register port under
-/var/db/pkg.   This is a dangerous option.
-FORCE_PACKAGE_REGISTER: override an existing port (the <pkgname> is already
-installed message). You will end up with several flavors of the same
-package.  This is a dangerous option, as this will probably erase the other
-port.
 NO_IGNORE: coerce fetch, build, install... into doing their job even though
 there might be a good reason not to. Good reasons include BROKEN,
-ONLY_FOR_ARCH, IS_INTERACTIVE in BATCH mode, NO_CDROM in FOR_CDROM... This
-is a dangerous option.
+ONLY_FOR_ARCH, IS_INTERACTIVE in BATCH mode. This is a dangerous option.
 
 Keeping up with the Jones, ports as a moving target
 ===================================================
 The OpenBSD ports tree is growing from release to release. It needs
 people to write and test new ports.
 Like for src, you can choose to live on the bleeding edge by updating 
-your ports dir thru cvs or ftp, and contribute bug-reports.
+your ports dir thru cvs or ftp, and contribute bug-reports. You must
+update both ports and src in synch.
 
 If you prefer to stay with a stable release, we try to make sure
 the distfiles for a given release stay on the OpenBSD site between
 releases.
 
 No matter how fast we update the tree it seems that we are always
-behind.  For this reason you will sometimes find a port that is
-marked as BROKEN.  If you try to build the port you will see a
-message something like:
+behind.   There are always new version of software out there, without
+an existing port. Very often, no-one had time to update the port yet,
+or it is very likely that the new version has not been tested enough
+yet to deem it reasonable to upgrade the port.
 
-   ===> xxx-1.0 is marked as broken: newer version available.
-
-This means we know there is a newer version of the application but
-have not yet had time to update the port.  If you get this message
-all may not be lost.  If the old sources are still available (and
-this is often the case) you can force a build using the old sources
-using the command:
-
-	make NO_IGNORE=yes
-	sudo make NO_IGNORE=yes install
-
-If you're feeling generous a better solution is to update the port
-to use the new sources and feed the changes back to the project.
-If you are interested in contributing (or creating a new port)
+You may wish to contribute, by updating ports or creating new ports.
 please visit
 
 	http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.10 2001/04/11 15:57:50 espie Exp $
+and always remember to communicate with OpenBSD project members on 
+ports@openbsd.org.  Why create a brand new shiny port to discover that
+someone was already working on it, and they committed their new version
+ten minutes before you announced yours ?
+
+$OpenBSD: README,v 1.11 2001/11/01 22:59:37 espie Exp $
