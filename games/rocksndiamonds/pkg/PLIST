@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/11 15:31:34 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/04/15 15:02:32 wilfried Exp $
 @group games
 @mode 2555
 bin/rocksndiamonds
 @group
 @mode
-@exec install -d -m 775 -o root -g games ${PREFIX}/share/rocksndiamonds/scores
-@unexec rm -rf ${PREFIX}/share/rocksndiamonds/scores
 share/rocksndiamonds/graphics/gfx_animal_kingdom/RocksHeroes.pcx
 share/rocksndiamonds/graphics/gfx_animal_kingdom/RocksMore.pcx
 share/rocksndiamonds/graphics/gfx_animal_kingdom/RocksScreen.pcx

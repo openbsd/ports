@@ -1,0 +1,33 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2003/04/15 15:02:32 wilfried Exp $
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+SCORE_DIR=/var/games/rocksndiamonds
+
+do_install()
+{
+    install -d -m 775 -o root -g games $SCORE_DIR
+}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+        : nothing to pre-install for this port
+        ;;
+    POST-INSTALL)
+        if [ ! -d $SCORE_DIR ]; then
+            do_install $1
+        fi
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2003/04/11 15:31:34 wilfried Exp $
+$OpenBSD: patch-Makefile,v 1.2 2003/04/15 15:02:32 wilfried Exp $
 --- Makefile.orig	Mon Aug 12 18:52:36 2002
 +++ Makefile	Thu Apr 10 05:44:04 2003
 @@ -9,22 +9,22 @@
@@ -25,7 +25,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2003/04/11 15:31:34 wilfried Exp $
  # specify directory for writable game data (like highscore files)
  # default is '.', so you can play without installing game data somewhere
 -# RW_GAME_DIR = /var/games
-+RW_GAME_DIR = ${PREFIX}/share/rocksndiamonds
++RW_GAME_DIR = /var/games/rocksndiamonds
  
  # uncomment this if your system has no joystick include file
  # JOYSTICK = -DNO_JOYSTICK
