@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_io_ogg123_c,v 1.1 2001/05/22 13:05:01 naddy Exp $
+--- src/io_ogg123.c.orig	Fri Feb 16 03:53:18 2001
++++ src/io_ogg123.c	Tue May 22 14:43:45 2001
+@@ -52,14 +52,13 @@ static int ogg123_pipe[2];
+ 
+ static const gchar *ogg123_output_devices[] =
+ {
+-	"oss",
++	"sun",
++	"arts",
+ 	"esd",
+-	"irix",
+-	"solaris",
+ 	"wav",
+ 	NULL
+ };
+-static gint ogg123_output_devices_count = 5;
++static gint ogg123_output_devices_count = 4;
+ 
+ const gchar *ogg123_get_device(gint device)
+ {

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/18 20:32:12 rohee Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/22 13:04:59 naddy Exp $
 
 COMMENT=		"mpg123 front-end with skin support"
 
@@ -22,16 +22,18 @@ MASTER_SITE_SUBDIR=	gqmpeg
 BUILD_DEPENDS=		mpg123::audio/mpg123
 RUN_DEPENDS=		mpg123::audio/mpg123
 LIB_DEPENDS=		gdk_pixbuf.2::graphics/gdk-pixbuf \
-			png.1::graphics/png
+			intl.1::devel/gettext
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		LIBPNG="-lpng -lz"
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 DOCS=			COPYING ChangeLog FAQ README SKIN-SPECS-V1 \
 			plugin/README.plugin
 
 pre-install:
-	cd ${WRKSRC} && (${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gqmpeg && \
-	     ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gqmpeg)
+	cd ${WRKSRC} && \
+	    ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gqmpeg && \
+	    ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gqmpeg
 
 .include <bsd.port.mk>

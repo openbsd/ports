@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_mixer_c,v 1.1 2001/05/22 13:05:01 naddy Exp $
+--- src/mixer.c.orig	Thu Jan  4 16:37:50 2001
++++ src/mixer.c	Sun May 20 16:45:19 2001
+@@ -275,7 +275,11 @@ void mixer_init(gint init_device_id)
+ 
+   mixer_device = getenv("MIXERDEVICE");
+   if (mixer_device == NULL)
++#ifdef __OpenBSD__
++    mixer_device = "/dev/mixer";
++#else
+     mixer_device = "/dev/mixer0";
++#endif
+ 
+   if ((fd = open(mixer_device, O_RDWR)) == -1) {
+     perror(mixer_device);
+@@ -352,7 +356,11 @@ static void mixer_set_vol(DeviceData *de
+ 
+   mixer_device = getenv("MIXERDEVICE");
+   if (mixer_device == NULL)
++#ifdef __OpenBSD__
++    mixer_device = "/dev/mixer";
++#else
+     mixer_device = "/dev/mixer0";
++#endif
+ 
+   if ((fd = open(mixer_device, O_RDWR)) == -1) {
+     perror(mixer_device);
+@@ -396,7 +404,11 @@ static gint mixer_get_vol(DeviceData *de
+ 
+   mixer_device = getenv("MIXERDEVICE");
+   if (mixer_device == NULL)
++#ifdef __OpenBSD__
++    mixer_device = "/dev/mixer";
++#else
+     mixer_device = "/dev/mixer0";
++#endif
+ 
+   if ((fd = open(mixer_device, O_RDWR)) == -1) {
+     perror(mixer_device);
