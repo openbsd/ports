@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2004/05/15 06:43:23 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2004/08/08 15:38:00 xsa Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -157,6 +157,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
 CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
 
+# THREAD_STACK_SIZE value might be changed by particular python release
+THREAD_STACK_SIZE?=    0x20000
+
 REGRESS_TARGET=	test
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
@@ -173,7 +176,7 @@ SED_PLIST+=-e '/%%mm%%/r${PKGDIR}/PFRAG.mm' -e '//d'
 NOSHARED=	\#
 CONFIGURE_ENV+=	OPT='${CFLAGS}' LDFLAGS='-L${WRKSRC}'
 .else
-CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=0x20000 -fPIC' \
+CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=${THREAD_STACK_SIZE} -fPIC' \
 		LDFLAGS='-L${WRKSRC}'
 MAKE_FLAGS+=	MAJOR=0 MINOR=0 LDLIBRARY=libpython${VERSION}.so.0.0 \
 		LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"

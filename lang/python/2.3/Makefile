@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/08/05 21:50:25 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/08 15:38:00 xsa Exp $
 
 VERSION=		2.3
 PATCHLEVEL=		.4
@@ -10,6 +10,9 @@ FULLPKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}${PKG_PATCHLEVEL}
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--enable-ipv6
+
+# needed for www/zope
+THREAD_STACK_SIZE=	0x100000
 
 AUTOCONF_VERSION=	2.57
 
