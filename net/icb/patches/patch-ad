@@ -1,6 +1,6 @@
---- tcl/tclCmdAH.c.orig	Sun Jan 16 01:41:46 2000
-+++ tcl/tclCmdAH.c	Sun Jan 16 01:41:22 2000
-@@ -38,9 +38,14 @@
+--- tcl/tclCmdAH.c.orig	Sun Jan 16 05:55:47 2000
++++ tcl/tclCmdAH.c	Sun Jan 16 06:01:42 2000
+@@ -38,9 +38,17 @@
  #include <sys/wait.h>
  #include "tclInt.h"
  
@@ -11,27 +11,42 @@
  extern int errno;
 +#if !(defined(BSD) && BSD >= 199306)
  extern long lseek();
--extern char *mktemp();
++#endif
++#ifndef BSD4_4
+ extern char *mktemp();
 +#endif
  
  /*
   *----------------------------------------------------------------------
-@@ -501,8 +506,7 @@
+@@ -430,7 +438,7 @@
+     int pid = -1;			/* -1 means child process doesn't
+ 					 * exist (yet).  Non-zero gives its
+ 					 * id (0 only in child). */
+-    union wait status;
++    int status;
+     char *cmdName, *execName;
+ 
+     /*
+@@ -501,8 +509,13 @@
      } else {
  	char tmp[sizeof(TMP_FILE_NAME) + 1];
  	strcpy(tmp, TMP_FILE_NAME);
--	mktemp(tmp);
--	stdIn[0] = open(tmp, O_RDWR|O_CREAT, 0);
++#ifdef BSD4_4
++	mkstemp(tmp);
 +	stdIn[0] = mkstemp(tmp);
++#else
+ 	mktemp(tmp);
+ 	stdIn[0] = open(tmp, O_RDWR|O_CREAT, 0);
++#endif
  	if (stdIn[0] < 0) {
  	    sprintf(interp->result,
  		    "couldn't create input file for \"%.50s\" command: %.50s",
-@@ -627,7 +631,7 @@
- 	while (1) {
- 	    int child;
- 
--	    child = wait(&status);
-+	    child = wait((int *)&status);
- 	    if (child == -1) {
- 		sprintf(interp->result,
- 			"child process disappeared mysteriously");
+@@ -642,7 +655,7 @@
+ 	    sprintf(interp->result, "command terminated abnormally");
+ 	    result = TCL_ERROR;
+ 	}
+-	result = status.w_retcode;
++	result = WEXITSTATUS(status);
+     }
+     if (stdIn[0] != -1) {
+ 	close(stdIn[0]);

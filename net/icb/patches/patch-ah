@@ -1,13 +1,15 @@
 --- icb/c_shell.c.orig	Fri Feb 24 16:20:19 1995
-+++ icb/c_shell.c	Sun Jan 16 01:48:38 2000
-@@ -60,13 +60,13 @@
- 	signal(SIGQUIT, SIG_IGN);
- 
- 	/* wait for the child(ren) to die */
--	while ((w = wait(&status)) != pid && w != -1);
-+	while ((w = wait((int *)&status)) != pid && w != -1);
- 
- 	/* restore the terminal */
++++ icb/c_shell.c	Sun Jan 16 05:08:31 2000
+@@ -14,7 +14,7 @@
+ 	static char *usage = "usage: c_shell [command]";
+ 	int w, pid;
+ 	int shellout = 0;
+-	union wait status;
++	int status;
+ 	char *shell, *getenv();
+ 	
+ 	/* disallow use if restricted mode set */
+@@ -66,7 +66,7 @@
  	icbterm();
  
  	/* restore signal processing */
