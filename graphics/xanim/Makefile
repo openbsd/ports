@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 1999/04/18 21:01:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 1999/09/26 21:26:45 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
+NEED_VERSION=1.121
 DISTNAME=xanim-2.80.1
 WRKSRC=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
@@ -9,24 +10,25 @@ CATEGORIES= graphics x11
 MAINTAINER=espie@openbsd.org
 
 
+DIST_SUBDIR=xanim
 MASTER_SITES=ftp://xanim.va.pubnix.com/
-MASTER_SITES+=ftp://xanim.va.pubnix.com/modules/
+MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
 
 BASEDISTFILE=xanim2801.tar.gz
 DISTFILES=${BASEDISTFILE}
 PATCH_LIST=patch-*
 
-SUP_i386 = xa1.0_cyuv_netbsd386.o.Z \
-xa2.0_cvid_netbsd386.o.Z \
-xa2.0_iv32_netbsd386.o.Z
+SUP_i386 = xa1.0_cyuv_netbsd386.o.Z:0 \
+xa2.0_cvid_netbsd386.o.Z:0 \
+xa2.0_iv32_netbsd386.o.Z:0
 
-SUP_m68k = xa1.0_cyuv_netbsd68k.o.Z \
-xa2.0_cvid_netbsd68k.o.Z \
-xa2.0_iv32_netbsd68k.o.Z
+SUP_m68k = xa1.0_cyuv_netbsd68k.o.Z:0 \
+xa2.0_cvid_netbsd68k.o.Z:0 \
+xa2.0_iv32_netbsd68k.o.Z:0
 
-SUP_sparc= xa1.0_cyuv_sparcAOUT.o.Z \
-xa2.0_cvid_sparcCOFF.o.Z \
-xa2.0_iv32_sparcCOFF.o.Z
+SUP_sparc= xa1.0_cyuv_sparcAOUT.o.Z:0 \
+xa2.0_cvid_sparcCOFF.o.Z:0 \
+xa2.0_iv32_sparcCOFF.o.Z:0
 
 # some architectures support more codecs
 .if (${MACHINE_ARCH} == i386)
