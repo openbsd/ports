@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/08/04 13:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/22 13:52:25 alek Exp $
 
 COMMENT-canna=		"X input method for Japanese, canna support"
 COMMENT-canna-wnn=	"X input method for Japanese, canna and wnn support"
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		Xpm Xmu Xaw X11 c Xt SM Xp Xext ICE
 
 MAINTAINER=	SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>
 

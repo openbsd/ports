@@ -1,5 +1,5 @@
 # very loosely based on FreeBSD 2.2.7
-# $OpenBSD: Makefile,v 1.13 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2005/02/22 13:52:25 alek Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 WRKDIST=${WRKDIR}
 WRKSRC=${WRKDIR}/NKF

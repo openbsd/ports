@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/27 00:52:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/22 13:52:25 alek Exp $
 
 COMMENT=	"display kanji files in large letters"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 ALL_TARGET=	kbanner
 
