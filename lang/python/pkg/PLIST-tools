@@ -1,3 +1,4 @@
+@pkgdep python-1.5.2-*
 lib/python1.5/Tools/README
 lib/python1.5/Tools/audiopy/README
 lib/python1.5/Tools/audiopy/audiopy

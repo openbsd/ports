@@ -60,7 +60,6 @@ include/python1.5/thread.h
 include/python1.5/token.h
 include/python1.5/traceback.h
 include/python1.5/tupleobject.h
-%%tools%%
 lib/python1.5/BaseHTTPServer.py
 lib/python1.5/BaseHTTPServer.pyc
 lib/python1.5/BaseHTTPServer.pyo

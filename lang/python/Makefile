@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/03 17:11:44 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/06/02 17:14:45 jasoni Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
-NEED_VERSION=	1.251
+NEED_VERSION=	1.270
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
+
+MULTI_PACKAGES=	-tools
+
+HOMEPAGE=	http://www.python.org/
 
 MAINTAINER=	jasoni@openbsd.org
 
@@ -16,10 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=tk tools mpz threads
-
-# Support for Tk is compiled in by default.
-FLAVOR?=tk tools threads
+FLAVORS=tk mpz threads
+FLAVOR?=threads mpz
 
 LIB_DEPENDS=
 
@@ -35,7 +37,6 @@ CONFIGURE_ARGS+= --prefix='$${DESTDIR}${PREFIX}'
 CONFIGURE_ARGS+= --with-fpectl 
 MAKE_FLAGS+=	OPT="${CFLAGS}"
 
-
 WRKDIST=	${WRKDIR}/Python-1.5.2
 
 # If libc_r exists, thread support is compiled in by default unless this
@@ -50,14 +51,9 @@ CONFIGURE_ARGS+= --with-thread
 .endif
 .endif
 
-# The mpz module will be built on machines with a full source tree.
+# The mpz module will be built when flavor is specified.
 .if ${FLAVOR:L:Mmpz}
-.  if exists(/usr/src/gnu/lib/libgmp/mpn/generic/gmp-mparam.h)
-BROKEN="Currently disabled"
 SETUP_LOCAL+=	Setup.gmp
-.  else
-BROKEN="Need a full source tree for that module"
-.  endif
 .endif
 
 .if ${MACHINE_ARCH} == "alpha"
@@ -78,11 +74,14 @@ post-configure:
 
 post-install:
 	@strip ${PREFIX}/bin/python
-.if ${FLAVOR:L:Mtools}
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python1.5; tar -xf -)
-.endif
 	
 .include <bsd.port.mk>
+
+# The tools package is not flavor dependent.
+.if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
+PKGNAME=python-tools-1.5.2
+.endif
 
 .if defined(NO64BIT)
 SED_PLIST+=-e '/%%mm%%/d'
@@ -102,4 +101,3 @@ finish-setup:
 	@sed -e 's,@NOSHARED@,${NOSHARED},g' \
 		${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
-
