@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.532 2002/07/06 09:24:06 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.533 2002/08/07 15:48:19 avsm Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -212,9 +212,9 @@ VARNAME=${show}
 FAKE?=Yes
 TRUST_PACKAGES?=No
 BIN_PACKAGES?=No
-WRKINST?=${WRKDIR}/fake-${ARCH}${FLAVOR_EXT}
-_LIBLIST=${WRKDIR}/.liblist-${ARCH}${FLAVOR_EXT}
-_BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${FLAVOR_EXT}
+WRKINST?=${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
+_LIBLIST=${WRKDIR}/.liblist-${ARCH}${_FLAVOR_EXT2}
+_BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${_FLAVOR_EXT2}
 
 
 # Get the architecture
@@ -372,6 +372,8 @@ MAKE_FLAGS+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 SUBPACKAGE?=
 FLAVOR?=
 FLAVORS?=
+PSEUDO_FLAVORS?=
+FLAVORS+=${PSEUDO_FLAVORS}
 
 .if !empty(FLAVORS:L:Mregress) && empty(FLAVOR:L:Mregress)
 NO_REGRESS= Yes
@@ -415,6 +417,9 @@ SED_PLIST?=
 
 # Build FLAVOR_EXT, checking that no flavors are misspelled
 FLAVOR_EXT:=
+# _FLAVOR_EXT2 is used internally for working directories.
+# It encodes flavors and pseudo-flavors.
+_FLAVOR_EXT2:=
 
 # Create the basic sed substitution pipeline for fragments
 # (applies only to PLIST for now)
@@ -423,7 +428,10 @@ FLAVOR_EXT:=
 .    if empty(FLAVOR:L:M${_i})
 SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
 .    else
+_FLAVOR_EXT2:=${_FLAVOR_EXT2}-${_i}
+.    if empty(PSEUDO_FLAVORS:L:M${_i})
 FLAVOR_EXT:=${FLAVOR_EXT}-${_i}
+.    endif
 SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' -e '//d'
 .    endif
 .  endfor
@@ -575,12 +583,12 @@ MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
 
 .if defined(OBJMACHINE)
-WRKDIR?=		${.CURDIR}/w-${PKGNAME}${FLAVOR_EXT}.${MACHINE_ARCH}
+WRKDIR?=		${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}.${MACHINE_ARCH}
 .else
 .  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
 WRKDIR?=		${.CURDIR}/w-${PKGNAME}
 .  else
-WRKDIR?=		${.CURDIR}/w-${PKGNAME}${FLAVOR_EXT}
+WRKDIR?=		${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}
 .  endif
 .endif
 
@@ -589,7 +597,7 @@ WRKDIST?=		${WRKDIR}/${DISTNAME}
 WRKSRC?=	   ${WRKDIST}
 
 .if defined(SEPARATE_BUILD)
-WRKBUILD?=		${WRKDIR}/build-${MACHINE_ARCH}${FLAVOR_EXT}
+WRKBUILD?=		${WRKDIR}/build-${MACHINE_ARCH}${_FLAVOR_EXT2}
 WRKPKG?=		${WRKBUILD}/pkg
 .else
 WRKBUILD?=		${WRKSRC}
@@ -655,9 +663,9 @@ PKGPATH=${_CURDIR:S,${_PORTSDIR}/,,}
 
 PKGDEPTH=${PKGPATH:C|[^./][^/]*|..|g}
 .if empty(SUBPACKAGE)
-FULLPKGPATH=${PKGPATH}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH=${PKGPATH}${_FLAVOR_EXT2:S/-/,/g}
 .else
-FULLPKGPATH=${PKGPATH},${SUBPACKAGE}${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH=${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 .endif
 
 # A few aliases for *-install targets
@@ -1546,13 +1554,13 @@ ${_BULK_COOKIE}: ${_PACKAGE_COOKIES}
 	@${_MAKE_COOKIE} $@
 
 _create_wrkobjdir =	\
-	rm -rf ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}; \
-	mkdir -p ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}; \
+	rm -rf ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}; \
+	mkdir -p ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}; \
 	if [ ! -L ${WRKDIR} ] || \
-	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT} ]; then \
-		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT}"; \
+	  [ X`readlink ${WRKDIR}` != X${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2} ]; then \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2}"; \
 		rm -f ${WRKDIR}; \
-		ln -sf ${WRKOBJDIR}/${PKGNAME}${FLAVOR_EXT} ${WRKDIR}; \
+		ln -sf ${WRKOBJDIR}/${PKGNAME}${_FLAVOR_EXT2} ${WRKDIR}; \
 	fi
 
 # The real targets. Note that some parts always get run, some parts can be
