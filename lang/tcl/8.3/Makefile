@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/12 08:56:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/04 07:08:16 kevlo Exp $
 
 COMMENT=	"Tool Command Language"
 
@@ -37,6 +37,8 @@ CONFIGURE_ARGS+= --disable-load
 CONFIGURE_ENV=	PORTSDIR="${PORTSDIR}"
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
+
+INSTALL_TARGET=	install-strip
 
 test:	build
 	@cd ${WRKSRC}; make test
