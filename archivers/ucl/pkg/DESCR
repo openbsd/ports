@@ -1,0 +1,16 @@
+UCL is a portable lossless data compression library. It implements a
+number of algorithms with the following features:
+
+ - Decompression is simple and *very* fast.
+ - Requires no memory for decompression.
+ - The decompressors can be squeezed into less than 200 bytes of code.
+ - Includes compression levels for generating pre-compressed
+   data which achieve an excellent compression ratio.
+ - Allows you to dial up extra compression at a speed cost in the
+   compressor. The speed of the decompressor is not reduced.
+ - Algorithm is thread safe.
+ - Algorithm is lossless.
+
+UCL supports in-place decompression.
+
+WWW: ${HOMEPAGE}
