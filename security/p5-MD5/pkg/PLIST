@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/11/05 10:49:29 shell Exp $
-@pkgcfl p5-Digest-MD5-*
+@comment $OpenBSD: PLIST,v 1.5 2002/03/27 01:58:53 shell Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/MD5.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MD5/autosplit.ix
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/MD5/MD5.bs
