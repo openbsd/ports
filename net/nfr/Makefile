@@ -3,7 +3,7 @@
 # Date created:		1998-Jul-4
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/09/14 17:44:21 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/16 20:12:11 marc Exp $
 #
 
 DISTNAME=		nfr-1.6.2-src
@@ -13,8 +13,9 @@ CATEGORIES=     	net
 MAINTAINER=		dugsong@openbsd.org
 
 NO_CDROM=		"LIC: redistribution not allowed"
+MIRROR_DISTFILE=	no
 
-MASTER_SITES=		see_pre-fetch_target
+MASTER_SITES=		see_do-fetch_target
 EXTRACT_SUFX=		.tar.Z
 
 IS_INTERACTIVE=		yes
