@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/30 03:01:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/30 08:13:33 kevlo Exp $
 
 COMMENT=	"X11-based presentation tool"
 
 DISTNAME=	magicpoint-1.07a
-# question is for localized (i.e. Japanese) version
-PKGNAME?=	magicpoint-1.07a
 CATEGORIES=	misc productivity
 NEED_VERSION=	1.378
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
