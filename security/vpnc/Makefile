@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/05/14 13:34:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/20 12:41:37 sturm Exp $
 
 COMMENT=		"client for Cisco 3000 VPN concentrators"
 
-DISTNAME=		vpnc-0.2-rm+zomb.1
+DISTNAME=		vpnc-0.3.1
 CATEGORIES=		security net
 
 HOMEPAGE=		http://www.unix-ag.uni-kl.de/~massar/vpnc/
@@ -25,7 +25,7 @@ NO_REGRESS=		Yes
 ALL_TARGET=		vpnc
 
 do-configure:
-	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/{README,vpnc.c,vpnc.8}
+	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKSRC}/{README,config.c}
 	@sed -e "s,%%PREFIX%%,${PREFIX},g" ${FILESDIR}/vpnc.sh > ${WRKBUILD}/vpnc.sh
 
 do-install:
