@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/30 17:18:37 sturm Exp $
+bin/etherape
+lib/locale/es/LC_MESSAGES/etherape.mo
+lib/locale/fr/LC_MESSAGES/etherape.mo
+lib/locale/nl/LC_MESSAGES/etherape.mo
+lib/locale/tr/LC_MESSAGES/etherape.mo
+man/man1/etherape.1
+share/etherape/glade/etherape.glade2
+share/etherape/glade/etherape.png
+share/etherape/glade/pause.xpm
+share/etherape/glade/play.xpm
+share/etherape/glade/stop.xpm
+share/gnome/apps/Applications/etherape.desktop
+share/pixmaps/etherape.png
+@comment @dirrm share/pixmaps
+@comment @dirrm share/gnome/apps/Applications
+@comment @dirrm share/gnome/apps
+@comment @dirrm share/gnome
+@dirrm share/etherape/glade
+@dirrm share/etherape
+@comment @dirrm lib/locale/tr/LC_MESSAGES
+@comment @dirrm lib/locale/tr
+@comment @dirrm lib/locale/nl/LC_MESSAGES
+@comment @dirrm lib/locale/nl
+@comment @dirrm lib/locale/fr/LC_MESSAGES
+@comment @dirrm lib/locale/fr
+@comment @dirrm lib/locale/es/LC_MESSAGES
+@comment @dirrm lib/locale/es
+@comment @dirrm lib/locale

@@ -1,0 +1,21 @@
+$OpenBSD: gcc-configure,v 1.1.1.1 2003/06/30 17:18:37 sturm Exp $
+--- configure.orig	Thu Jun 26 22:06:25 2003
++++ configure	Thu Jun 26 22:07:30 2003
+@@ -5819,6 +5819,8 @@ fi
+ 
+ done
+ 
++_SAVE_CFLAGS=$CFLAGS
++CFLAGS=-O0
+ echo "$as_me:$LINENO: checking for GNU libc compatible malloc" >&5
+ echo $ECHO_N "checking for GNU libc compatible malloc... $ECHO_C" >&6
+ if test "${ac_cv_func_malloc_0_nonnull+set}" = set; then
+@@ -5891,7 +5893,7 @@ cat >>confdefs.h <<\_ACEOF
+ _ACEOF
+ 
+ fi
+-
++CFLAGS=$_SAVE_CFLAGS
+ 
+ 
+ echo "$as_me:$LINENO: checking for working memcmp" >&5
