@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.25 2004/07/14 13:37:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2004/07/18 06:46:29 brad Exp $
+!%%no_x11%%
 bin/Magick++-config
 bin/Magick-config
 bin/Wand-config
-bin/animate
 bin/compare
 bin/composite
 bin/conjure
 bin/convert
-bin/display
 bin/identify
-bin/import
 bin/mogrify
 bin/montage
 @dir include/Magick++
@@ -124,14 +122,11 @@ man/man1/ImageMagick.1
 @comment man/man1/Magick++-config.1
 @comment man/man1/Magick-config.1
 @comment man/man1/Wand-config.1
-man/man1/animate.1
 man/man1/compare.1
 man/man1/composite.1
 man/man1/conjure.1
 man/man1/convert.1
-man/man1/display.1
 man/man1/identify.1
-man/man1/import.1
 man/man1/mogrify.1
 man/man1/montage.1
 man/man4/miff.4
