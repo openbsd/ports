@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/13 23:31:26 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/09/30 19:50:06 fgsch Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -9,6 +9,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cdrdao/}
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
 HOMEPAGE=	http://cdrdao.sourceforge.net/
+
+IGNORE=		"Project frozen because of License issues. See http://cdrdao.sourceforge.net/news.html for details"
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
