@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 21:25:57 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/05/03 16:20:19 brad Exp $
 
 COMMENT=	"GUI toolkit for X11"
 
-ONLY_FOR_ARCHS=	i386 sparc m68k hp300
+ONLY_FOR_ARCHS=	i386 sparc m68k
 
-.if (${MACHINE_ARCH} == "hp300")
-XFORMS_ARCH=	m68k
-.else
 XFORMS_ARCH=	${MACHINE_ARCH}
-.endif
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
 CATEGORIES=	x11
-NEED_VERSION=	1.515
+NEED_VERSION=	1.522
 MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/gui/xforms/%SUBDIR%/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/%SUBDIR%/
