@@ -3,9 +3,9 @@
 # Date created:	 24 Jul 98
 # Whom:			espie
 #
-# $OpenBSD: Makefile,v 1.2 1998/09/25 02:09:16 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/09/25 18:00:28 espie Exp $
 
-BROKEN=		"slash source no longer available"
+
 DISTNAME=	slash-e8
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
 
 DISTFILES= nethack-3.2.2${EXTRACT_SUFX}
 
-MASTER_SITES+=http://www.rz.tu.ilmenau.de/~wi019/Slash/
+MASTER_SITES+=http://www.rz.tu-ilmenau.de/~wi019/Slash/
 
 DISTFILES+= Slash-Unix${EXTRACT_SUFX}
 
