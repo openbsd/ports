@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/10 19:24:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/02/27 19:21:37 naddy Exp $
 
 COMMENT=		"active monitoring tool"
-V=			2.57
+V=			2.58
 DISTNAME=		symon-${V}
-CATEGORIES=		net sysutils
-
-MASTER_SITES=		http://www.xs4all.nl/~wpd/symon/
+CATEGORIES=		sysutils net
 
 HOMEPAGE=		http://www.xs4all.nl/~wpd/symon/
 MAINTAINER=		Willem Dijkstra <wpd@xs4all.nl>
@@ -15,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=		${HOMEPAGE}
 
 SUBPACKAGE?=
 
