@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/23 05:33:19 jason Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/23 22:46:13 jason Exp $
 
 COMMENT=	"text to speech utility"
 
@@ -24,5 +24,6 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
+VMEM_WARNING=	Yes
 
 .include <bsd.port.mk>
