@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/15 05:04:59 turan Exp $
+# $OpenBSD: Makefile,v 1.17 2000/03/04 01:59:27 espie Exp $
 
 DISTNAME=	rsync-2.4.1
 CATEGORIES=	net
@@ -8,6 +8,7 @@ NEED_VERSION=	1.60
 
 MAINTAINER=	espie@openbsd.org
 
+FAKE=Yes
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
