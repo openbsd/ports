@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/20 15:51:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/25 01:09:26 pvalchev Exp $
 
 COMMENT=	"graphical display for the current uvm status"
 
 # These are not converted to UVM yet.
-NOT_FOR_ARCHS=	hppa m68k mips mvme68k pmax sun3
+NOT_FOR_ARCHS=	hppa m68k mips mvme68k sun3
 
 PKGNAME=	xuvmstat-20010220
 DISTNAME=	${PKGNAME:S/-//}
