@@ -1,0 +1,4 @@
+The Coq Proof Assistant is designed to write formal specifications, programs
+and to verify that programs are correct with respect to their specification.
+
+WWW: ${HOMEPAGE}
