@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/01 08:20:46 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/06/09 06:57:59 kevlo Exp $
 
 DISTNAME=       chinese-fonts-taipei
 CATEGORIES=     chinese x11
@@ -27,7 +27,7 @@ FONTDIR=${PREFIX}/lib/X11/fonts/chinese
 
 post-extract:
 	@mkdir -p ${WRKDIST}
-	@cp ${FILESDIR}/Makefile ${FILESDIR}/taipei.alias ${FILESDIR}/fonts.dir ${WRKDIST}
+	@cp ${FILESDIR}/Imakefile ${FILESDIR}/taipei.alias ${FILESDIR}/fonts.dir ${WRKDIST}
 	@for i in ${FONTS} ; do cp $(FULLDISTDIR)/$$i ${WRKDIST}; done
 
 post-install:
