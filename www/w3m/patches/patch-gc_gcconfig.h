@@ -1,3 +1,4 @@
+$OpenBSD: patch-gc_gcconfig.h,v 1.2 2001/03/24 12:56:16 naddy Exp $
 --- gc/gcconfig.h.orig	Thu Jul  6 15:46:53 2000
 +++ gc/gcconfig.h	Thu Jul  6 15:49:15 2000
 @@ -22,6 +22,25 @@

@@ -1,43 +1,9 @@
-w3m is a lightweight text-mode pager that doubles as a WWW browser.
+w3m is a pager/text-based WWW browser.  It is similar to Lynx, but
+it has several features Lynx doesn't have:
 
-It's main features (over lynx) are:
-
-	* HTML tables
-	* HTML frames
-	* HTML from stdin
-	* horizontal scrolling
-
-While it may not be as strictly accurate as lynx, w3m seems to render
-HTML pages more intelligently and more compactly. 
-
-The following notes come from the README:
-------------------------------------------------------------
-
-     w3m is a pager with WWW capability. It IS a pager, but it can be
-used as a text-mode WWW browser.
-
-     The features of w3m are as follows:
-
-* When reading HTML document, you can follow links and view images
-  (using external image viewer).
-* It has 'internet message mode', which determines the type of document
-  from header. If the Content-Type: field of the document is text/html,
-  that document is displayed as HTML document.
-* You can change URL description like 'http://hogege.net' in plain text
-  into link to that URL.
-
-Current problems are: 
-
-* Resize behaviour is incomplete.
-* It can't show images inline. (It seems to be impossible as far as using
-  xterm)
-* It doesn't decode MIME-body of the document.
-* Online manuals are poor.
-
-Feel free to send your opinion to the author.
-
-        Akinori Ito
-        Faculty of Engineering, Yamagata University
-        aito@ei5sun.yz.yamagata-u.ac.jp
+* w3m can render tables
+* w3m can render frames (by converting frames into tables)
+* w3m can display documents from standard input
+* w3m is small
 
 WWW: ${HOMEPAGE}

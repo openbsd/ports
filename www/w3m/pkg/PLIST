@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/10 00:14:11 d Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/03/24 12:56:17 naddy Exp $
+%%kanji%%
+!%%kanji%%
 bin/w3m
 libexec/w3m/dirlist.cgi
 libexec/w3m/w3mbookmark
@@ -8,7 +10,6 @@ share/doc/w3m/FAQ.html
 share/doc/w3m/HISTORY
 share/doc/w3m/MANUAL.html
 share/doc/w3m/README
-share/doc/w3m/README.cygwin
 share/doc/w3m/README.dict
 share/doc/w3m/README.func
 share/doc/w3m/STORY.html

@@ -1,9 +1,7 @@
-this code is a total nightmare.
+This code is a total nightmare.
 
-a pain to read, and lots of strcpy/strcat/sprintf's which actually
+A pain to read, and lots of strcpy/strcat/sprintf's which actually
 turn out to be okay, after adding a die-when-out-of-memory callback
 for the boehm garbage collector.
 
-there are undoubtedly other issues with this code. caveat user.
-
--d.
+There are undoubtedly other issues with this code.  Caveat user.

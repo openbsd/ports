@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.kanji,v 1.1 2001/03/24 12:56:17 naddy Exp $
+@pkgcfl w3m-*
+share/doc/w3m/README.SSL
+share/doc/w3m/README.cookie
+share/doc/w3m/README.keymap
+share/doc/w3m/README.mailcap
+share/doc/w3m/README.menu
