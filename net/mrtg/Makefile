@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/22 15:53:26 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/04/27 19:25:27 brad Exp $
 
-DISTNAME=	mrtg-2.7.3b
+DISTNAME=	mrtg-2.7.4b
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
+HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 
 NEED_VERSION=	1.73
 
 MAINTAINER=	brad@openbsd.org
-HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
-
-USE_PERL5=	yes
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--with-gd-lib=${PREFIX}/lib --with-gd-inc=${PREFIX}/include/gd
@@ -33,19 +31,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run/BER.pm ${PREFIX}/lib/mrtg
 	${INSTALL_SCRIPT} ${WRKSRC}/run/SNMP_Session.pm ${PREFIX}/lib/mrtg
 	${INSTALL_SCRIPT} ${WRKSRC}/run/SNMP_util.pm ${PREFIX}/lib/mrtg
-	cp ${PREFIX}/lib/mrtg/BER.pm /usr/lib/perl5/site_perl
-	cp ${PREFIX}/lib/mrtg/SNMP_Session.pm /usr/lib/perl5/site_perl
-	cp ${PREFIX}/lib/mrtg/SNMP_util.pm /usr/lib/perl5/site_perl
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-mrtg.cfg ${PREFIX}/lib/mrtg/mrtg.cfg.sample
-	@${ECHO} ""
-	@${ECHO} "*** The latest sample config file"
-	@${ECHO} "*** can be found in ${PREFIX}/lib/mrtg"
-	@if [ -f /etc/mrtg.cfg ]; then \
-	  ${ECHO} "*** Your /etc/mrtg.cfg has NOT been changed"; \
-	 else \
-	  cp ${PREFIX}/lib/mrtg/mrtg.cfg.sample /etc/mrtg.cfg; \
-	  ${ECHO} "*** mrtg.cfg has been copied into /etc"; \
-	fi
-	@${ECHO} ""
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -3,13 +3,9 @@ bin/cfgmaker
 bin/indexmaker
 bin/mrtg
 lib/mrtg/BER.pm
-@exec cp %D/%F /usr/lib/perl5/site_perl
 lib/mrtg/SNMP_Session.pm
-@exec cp %D/%F /usr/lib/perl5/site_perl
 lib/mrtg/SNMP_util.pm
-@exec cp %D/%F /usr/lib/perl5/site_perl
 lib/mrtg/mrtg.cfg.sample
-@exec if [ ! -f /etc/mrtg.cfg ]; then cp %D/%F /etc/mrtg.cfg; fi
 share/doc/mrtg/config.html
 share/doc/mrtg/config.pod
 share/doc/mrtg/config.txt
@@ -31,6 +27,3 @@ share/mrtg/mrtg-ti.gif
 @dirrm lib/mrtg
 @dirrm share/mrtg
 @dirrm share/doc/mrtg
-@unexec rm -f /usr/lib/perl5/site_perl/BER.pm
-@unexec rm -f /usr/lib/perl5/site_perl/SNMP_Session.pm
-@unexec rm -f /usr/lib/perl5/site_perl/SNMP_util.pm

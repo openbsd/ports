@@ -1,0 +1,28 @@
+# $OpenBSD: DEINSTALL,v 1.1 1999/04/27 19:25:27 brad Exp $
+#
+# mrtg de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=/etc/mrtg.cfg
+
+rm -f /usr/lib/perl5/site_perl/BER.pm
+rm -f /usr/lib/perl5/site_perl/SNMP_Session.pm
+rm -f /usr/lib/perl5/site_perl/SNMP_util.pm
+
+if [ -f ${CONFIG_FILE} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -f ${CONFIG_FILE}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
