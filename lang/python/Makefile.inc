@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2004/09/15 19:16:08 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2004/11/04 22:16:07 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -25,7 +25,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.python.org/
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed

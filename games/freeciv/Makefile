@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2004/09/15 00:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2004/11/04 22:14:49 alek Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer; game server"
 COMMENT-client=	"Freeciv client"
@@ -12,7 +12,7 @@ PKGNAME-share=	freeciv-share-${VERSION}
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/08/06 08:15:42 xsa Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/04 22:14:11 alek Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
@@ -12,7 +12,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.

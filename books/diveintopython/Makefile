@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/29 12:15:05 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/04 22:15:26 alek Exp $
 
 COMMENT=	"book about Python for experienced programmers"
 
@@ -10,7 +10,7 @@ CATEGORIES=	books
 
 HOMEPAGE=	http://diveintopython.org/
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
+MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
 
 # FDL
 PERMIT_DISTFILES_CDROM=	Yes
