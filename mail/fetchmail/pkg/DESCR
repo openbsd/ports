@@ -13,6 +13,7 @@ Kerberos v4 or GSSAPI authentication or CRAM-MD5 authentication), and
 ESMTP ETRN.  Fetchmail also supports end-to-end encryption with OpenSSL.
 
 Flavors:
-	kerberos - build with support for Kerberos IV
+	kerberos4 - build with support for Kerberos IV
+	kerberos5 - build with support for Kerberos V
 
 WWW: ${HOMEPAGE}
