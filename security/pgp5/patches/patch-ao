@@ -1,0 +1,22 @@
+--- configure.in.orig	Sun Dec 12 16:51:44 1999
++++ configure.in	Sun Dec 12 16:54:49 1999
+@@ -170,15 +170,14 @@
+   AC_MSG_CHECKING(for lib/pgp/pubkey/pgpAltRSAGlu.c)
+   if test -f "lib/pgp/pubkey/pgpAltRSAGlu.c"; then
+     AC_MSG_RESULT(yes)
+-    AC_MSG_CHECKING(for RSAREF in ../rsaref/install/unix)
+-    if test -f "../rsaref/install/unix/rsaref.a"; then
++    AC_MSG_CHECKING(for RSAREF in ${prefix})
++    if test -f "${prefix}/lib/librsaref.a"; then
+       HAVE_RSAREF=1
+       AC_MSG_RESULT(yes)
+       AC_DEFINE(USE_RSAREF_FULL, 1)
+       RSAGLUE="pgpAltRSAGlu.o"
+-      RSALIB="\$(top_builddir)/../rsaref/install/unix/rsaref.a"
+-      RSAINCS="-I \$(top_builddir)/../rsaref/test"
+-      RSAINCS="$RSAINCS -I \$(top_builddir)/../rsaref/source"
++      RSALIB="${prefix}/lib/librsaref.a"
++      RSAINCS="-I${prefix}/include"
+       AC_MSG_CHECKING(for lib/pgp/pubkey/pgpRSAKeyGen.c)
+       if test -f "lib/pgp/pubkey/pgpRSAKeyGen.c"; then
+         AC_MSG_RESULT(yes)
