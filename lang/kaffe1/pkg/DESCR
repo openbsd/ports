@@ -1,0 +1,18 @@
+ =======================
+ KAFFE OpenVM 1.0 Beta 1
+ =======================
+
+This is the first release of "Kaffe OpenVM", a complete virtual machine
+and class library set which allows the execution of Java code without any
+code from Javasoft.  It comes with a virtual machine and a set of class
+libraries including beans, and the all important AWT graphics system.
+This is the first full JDK1.1 release of the runtime, and also includes
+a compiler (javac-compatible).
+
+This is beta software and, in particular, has numerous minor glitches.
+However it can run enough JDK1.1-compatible programs that I am
+releasing it into the Ports tree for others to experiment with.
+We are keeping it separate from the Kaffe-0.8.* which will be maintained
+in ports/lang/kaffe for people who need JDK-1.0 compatability.
+
+For more information see http://www.transvirtual.com/kaffe.html
