@@ -1,0 +1,13 @@
+The PDF functions in PHP can create PDF files using the PDFlib
+library created by Thomas Merz. PDFlib is available for download
+at http://www.pdflib.com/pdflib/index.html, but requires that you
+purchase a license for commercial use.
+
+All of the functions in PDFlib and the PHP module have identical
+function names and parameters. You will need to understand some of
+the basic concepts of PDF and PostScript to efficiently use this
+extension. All lengths and coordinates are measured in PostScript
+points. There are generally 72 PostScript points to an inch, but
+this depends on the output resolution. Please see the PDFlib
+documentation included with the source distribution of PDFlib for
+a more thorough explanation of the coordinate system used.

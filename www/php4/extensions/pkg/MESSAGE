@@ -1,0 +1,7 @@
++---------------
+| You must add a line to your ${PHP_CONFIG_FILE}/php.ini 
+| to enable this module:
+|
+|	extension=${MODULE_NAME}.so
++---------------
+

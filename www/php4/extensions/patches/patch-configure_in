@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
+--- configure.in.orig	Sun May 12 22:23:57 2002
++++ configure.in	Wed Jun 19 22:18:14 2002
+@@ -792,7 +792,7 @@ unset with_pic
+ 
+ case $php_build_target in
+ program|static)
+-    standard_libtool_flag='-prefer-non-pic -static'
++    standard_libtool_flag='-static'
+     if test "$lib_build_shared" != "yes"; then
+         enable_shared=no
+     fi
+@@ -801,7 +801,7 @@ program|static)
+ ;;
+ shared)
+     enable_static=no
+-    standard_libtool_flag=-prefer-pic
++    standard_libtool_flag=
+     EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version"
+ ;;
+ esac

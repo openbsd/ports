@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_pdf_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
+--- ext/pdf/config.m4.orig	Tue Dec  4 00:54:09 2001
++++ ext/pdf/config.m4	Wed Jun 19 13:22:18 2002
+@@ -4,6 +4,7 @@ dnl
+ 
+ PHP_ARG_WITH(pdflib,for PDFlib support,
+ [  --with-pdflib[=DIR]     Include PDFlib support.])
++remember_ext_shared=$ext_shared
+ 
+ if test "$PHP_PDFLIB" != "no"; then
+ 
+@@ -83,6 +84,7 @@ if test "$PHP_PDFLIB" != "no"; then
+   dnl # The main PDFlib configure
+   dnl #
+ 
++  ext_shared=$remember_ext_shared
+   case $PHP_PDFLIB in
+     yes)
+       AC_CHECK_LIB(pdf, PDF_show_boxed, [
+@@ -119,3 +121,4 @@ See config.log for more information.
+     ;;
+   esac
+ fi
++

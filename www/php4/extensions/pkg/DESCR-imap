@@ -1,0 +1,3 @@
+These PHP4 functions are not limited to the IMAP protocol, despite
+their name. The underlying c-client library also supports NNTP,
+POP3 and local mailbox access methods.

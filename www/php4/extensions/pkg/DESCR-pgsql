@@ -1,0 +1,13 @@
+Postgres, developed originally in the UC Berkeley Computer Science
+Department, pioneered many of the object-relational concepts now
+becoming available in some commercial databases. It provides
+SQL92/SQL99 language support, transaction integrity and type
+extensibility. PostgreSQL is an open source descendant of this
+original Berkeley code.
+
+PostgreSQL database is Open Source product and available without
+cost. To use PostgreSQL support, you need PostgreSQL 6.5 or later.
+PostgreSQL 7.0 or later to enable all PostgreSQL module feature.
+PostgreSQL supports many character encoding including multibyte
+character encoding. The current version and more information about
+PostgreSQL is available at http://www.postgresql.org/.

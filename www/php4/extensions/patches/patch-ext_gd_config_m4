@@ -1,0 +1,36 @@
+$OpenBSD: patch-ext_gd_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
+--- ext/gd/config.m4.orig	Wed Apr 24 01:18:06 2002
++++ ext/gd/config.m4	Wed Jun 19 12:39:19 2002
+@@ -209,6 +209,7 @@ PHP_ARG_WITH(gd, for GD support,
+ [  --with-gd[=DIR]         Include GD support (DIR is GD's install dir).])
+ 
+ if test "$PHP_GD" != "no"; then
++  remember_ext_shared=$ext_shared
+ 
+   PHP_EXTENSION(gd, $ext_shared)
+   PHP_SUBST(GD_SHARED_LIBADD)
+@@ -239,6 +240,7 @@ dnl Various checks for GD features
+     done
+   done
+ 
++  ext_shared=$remember_ext_shared
+   if test -n "$GD_INCLUDE" -a -n "$GD_LIB" ; then
+     PHP_ADD_LIBRARY_WITH_PATH(gd, $GD_LIB, GD_SHARED_LIBADD)
+     AC_DEFINE(HAVE_LIBGD,1,[ ])
+@@ -246,16 +248,6 @@ dnl Various checks for GD features
+   else
+     AC_MSG_ERROR([Unable to find libgd.(a|so) anywhere under $GD_SEARCH_PATHS])
+   fi 
+-
+-dnl NetBSD package structure
+-  if test -f /usr/pkg/include/gd/gd.h -a -z "$GD_INCLUDE" ; then
+-    GD_INCLUDE=/usr/pkg/include/gd
+-  fi
+-
+-dnl SuSE 6.x package structure
+-  if test -f /usr/include/gd/gd.h -a -z "$GD_INCLUDE" ; then
+-    GD_INCLUDE=/usr/include/gd
+-  fi
+ 
+   PHP_EXPAND_PATH($GD_INCLUDE, GD_INCLUDE)
+   PHP_ADD_INCLUDE($GD_INCLUDE)

@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
+--- Makefile.in.orig	Fri Jun 21 09:32:31 2002
++++ Makefile.in	Fri Jun 21 09:33:45 2002
+@@ -1,6 +1,6 @@
+ 
+ ZEND_DIR = $(srcdir)/Zend
+-SUBDIRS = Zend main ext sapi $(TSRM_DIR) $(REGEX_DIR) $(CLI_DIR) . $(PEAR_DIR)
++SUBDIRS = ext
+ 
+ LTLIBRARY_NAME = libphp4.la
+ LTLIBRARY_SOURCES = stub.c
+@@ -22,7 +22,7 @@ PROGRAM_LDADD        = libphp4.la $(EXT_
+ PROGRAM_LDFLAGS      = -export-dynamic	
+ PROGRAM_DEPENDENCIES = $(PROGRAM_LDADD)
+ 
+-targets = $(LTLIBRARY_NAME) $(PHP_PROGRAM)
++targets = 
+ 
+ install_targets = install-sapi install-modules
+ 
