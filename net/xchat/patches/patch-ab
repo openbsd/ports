@@ -1,0 +1,11 @@
+--- src/plugin.c.orig	Mon Aug  2 23:11:18 1999
++++ src/plugin.c	Mon Aug  2 23:11:27 1999
+@@ -196,7 +196,7 @@
+    int (*module_init) (int version, struct module * mod,
+                struct session * sess);
+ 
+-   handle = dlopen (name, RTLD_NOW);
++   handle = dlopen (name, RTLD_LAZY);
+ 
+    if (handle == NULL)
+ #ifdef HAVE_DLERROR
