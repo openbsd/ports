@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/05/17 16:58:35 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/05/18 05:39:10 wilfried Exp $
 bin/mozilla
 bin/mozilla-config
 bin/run-mozilla.sh
@@ -69,6 +69,7 @@ mozilla/components/chatzilla-service.js
 mozilla/components/chrome.xpt
 mozilla/components/commandhandler.xpt
 mozilla/components/composer.xpt
+mozilla/components/compreg.dat
 mozilla/components/content_base.xpt
 mozilla/components/content_html.xpt
 mozilla/components/content_htmldoc.xpt
@@ -208,6 +209,7 @@ mozilla/components/xpcom_threads.xpt
 mozilla/components/xpcom_xpti.xpt
 mozilla/components/xpconnect.xpt
 mozilla/components/xpinstall.xpt
+mozilla/components/xpti.dat
 mozilla/components/xremoteservice.xpt
 mozilla/components/xuldoc.xpt
 mozilla/components/xultmpl.xpt
