@@ -1,0 +1,59 @@
+--- stel/sub.c.orig	Fri Apr 26 12:29:26 1996
++++ stel/sub.c	Mon Nov 16 23:27:07 1998
+@@ -515,10 +515,10 @@
+ 	memcpy(sessionkeyhash, digest2, 8);
+ 
+ #ifdef DESCORE
+-	descore_ecb_encrypt(sessionkeyhash, sessionkeyhash, tmpsched, ENCRYPT);
++	descore_ecb_encrypt(sessionkeyhash, sessionkeyhash, tmpsched, DES_ENCRYPT);
+ #else
+ 	des_ecb_encrypt((des_cblock *)sessionkeyhash,
+-			(des_cblock *)sessionkeyhash, tmpsched, ENCRYPT);
++			(des_cblock *)sessionkeyhash, tmpsched, DES_ENCRYPT);
+ #endif
+ 	bzero(tmpsched, sizeof(tmpsched));
+ 
+@@ -984,17 +984,17 @@
+ 	/* build K_E(sessionkeyhash) */
+ 	memcpy(cookie, sessionkeyhash, 8);
+ #ifdef DESCORE
+-	descore_ecb_encrypt(cookie, cookie, authsched, ENCRYPT);
++	descore_ecb_encrypt(cookie, cookie, authsched, DES_ENCRYPT);
+ #else
+ 	des_ecb_encrypt((des_cblock *)cookie, (des_cblock *)cookie,
+-							authsched, ENCRYPT);
++							authsched, DES_ENCRYPT);
+ #endif
+ 	if (side == SERVER_SIDE) /* encrypt twice */
+ #ifdef DESCORE
+-		descore_ecb_encrypt(cookie, cookie, authsched, ENCRYPT);
++		descore_ecb_encrypt(cookie, cookie, authsched, DES_ENCRYPT);
+ #else
+ 		des_ecb_encrypt((des_cblock *)cookie, (des_cblock *)cookie,
+-							authsched, ENCRYPT);
++							authsched, DES_ENCRYPT);
+ #endif
+ 
+ 	if (logging) {
+@@ -1053,17 +1053,17 @@
+ 
+ 	if (side == CLIENT_SIDE) /* decrypt it once */
+ #ifdef DESCORE
+-		descore_ecb_encrypt(othercookie, othercookie, authsched, DECRYPT);
++		descore_ecb_encrypt(othercookie, othercookie, authsched, DES_DECRYPT);
+ #else
+ 		des_ecb_encrypt((des_cblock *)othercookie,
+-			(des_cblock *)othercookie, authsched, DECRYPT);
++			(des_cblock *)othercookie, authsched, DES_DECRYPT);
+ #endif
+ 	else if (side == SERVER_SIDE) /* encrypt once more */
+ #ifdef DESCORE
+-		descore_ecb_encrypt(othercookie, othercookie, authsched, ENCRYPT);
++		descore_ecb_encrypt(othercookie, othercookie, authsched, DES_ENCRYPT);
+ #else
+ 		des_ecb_encrypt((des_cblock *)othercookie,
+-			(des_cblock *)othercookie, authsched, ENCRYPT);
++			(des_cblock *)othercookie, authsched, DES_ENCRYPT);
+ #endif
+ 
+ 	if (logging) {

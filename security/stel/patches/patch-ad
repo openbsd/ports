@@ -1,0 +1,65 @@
+--- stel/makeio.c.orig	Fri Apr 26 12:29:27 1996
++++ stel/makeio.c	Wed Nov 18 02:36:56 1998
+@@ -21,7 +21,8 @@
+ #include <sys/time.h>
+ #include <netinet/in.h>
+ #include <pwd.h>
+-#include "regex.h"
++#include <time.h>
++#include <regex.h>
+ 
+ #ifdef HAS_SYS_PARAM_H
+ #include <sys/param.h>
+@@ -33,7 +34,7 @@
+ #endif
+ #endif
+ 
+-#include "skey.h"
++#include <skey.h>
+ #include "defs.h"
+ 
+ #define ESCAPE_CMD	"escape"
+@@ -74,7 +75,7 @@
+ #define CONTROL(x)	((x) & 0x1f)		/* CTRL(x) is not portable */
+ static int		escape = CONTROL(']');
+ static long		oldmask;
+-static long		start;
++static time_t		start;
+ static char		skeybuf[SKEYBUFSIZE];
+ static unsigned long	userstrokes, traffic, xfertraffic;
+ 
+@@ -364,7 +365,15 @@
+ 
+ 				p = (char *)strtok(line +
+ 						strlen(LOG_CMD), " \t");
+-				strcpy(logfilename, p ? p : tmpnam(NULL));
++				if (p) {
++					strcpy(logfilename, p);
++				} else {
++					strncpy(logfilename,"/tmp/stel.XXXXXXXXXX",256);
++					if (mkstemp(logfilename) == -1) {
++						perror(logfilename);
++						break;
++					}
++				}
+ 				if ((logfh = open(logfilename,
+ 					O_WRONLY | O_CREAT, 0600)) == -1) {
+ 					perror(logfilename);
+@@ -669,14 +678,14 @@
+ 	}
+ 
+ 	/* Crunch seed and password into starting key */
+-	if(desmode ? deskeycrunch(key, seed, passwd) :
+-		keycrunch(key,seed,passwd) != 0) {
++	/* OpenBSD does not have deskeycrunch */
++	if(keycrunch(key,seed,passwd) != 0) {
+ 		cprintf("key crunch failed\n");
+ 		return(NULL);
+ 	}
+ 
+ 	while(n-- != 0)
+-		fff(key);
++		f(key);
+ 	btoe(buf, key);
+ 	return(buf);
+ }

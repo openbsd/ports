@@ -1,0 +1,11 @@
+--- stel/defs.h.orig	Fri Apr 26 12:26:17 1996
++++ stel/defs.h	Mon Nov 16 23:04:58 1998
+@@ -162,7 +162,7 @@
+ #define ENCRYPT		DES_ENCRYPT
+ #define DECRYPT		DES_DECRYPT
+ #else
+-#include "des.h"
++#include <des.h>
+ #endif
+ 
+ #ifdef hpux

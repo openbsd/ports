@@ -1,0 +1,6 @@
+@cwd /usr/local
+@name stel
+bin/stel
+man/cat1/stel.0
+man/cat8/steld.0
+sbin/steld
