@@ -3,7 +3,7 @@
 # Date created:		16 March 1998	
 # Whom:			Thomas Graichen
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/03/16 12:33:25 graichen Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/18 22:46:28 marc Exp $
 #
 
 DISTNAME=	wm2-4
@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.netcomuk.co.uk/~cannam/
 
 MAINTAINER=	graichen@OpenBSD.ORG
 
+USE_X11=	yes
 ALL_TARGET=	wm2
 
 .include <bsd.port.mk>

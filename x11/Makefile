@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1998/01/25 22:43:14 angelos Exp $
+# $OpenBSD: Makefile,v 1.11 1998/03/18 22:46:25 marc Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -70,12 +70,12 @@
 #    SUBDIR += tycoon
 #    SUBDIR += viewfax
 #    SUBDIR += windowmaker
-#    SUBDIR += wm2
+     SUBDIR += wm2
 #    SUBDIR += x3270
 #    SUBDIR += xalarm
 #    SUBDIR += xaniroc
      SUBDIR += xantfarm
-#    SUBDIR += xautolock
+     SUBDIR += xautolock
 #    SUBDIR += xbuffy
      SUBDIR += xcb
      SUBDIR += xco
