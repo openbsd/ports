@@ -4,7 +4,7 @@ bzip2-1.0.1|archivers/bzip2||block-sorting file compressor, unencumbered|archive
 fastjar-0.90|archivers/fastjar||Sun JDK's `jar' command written entirely in C|archivers/fastjar/pkg/DESCR|Dan Harnett <danh@openbsd.org>|archivers|||any|y|y|y|y
 freeze-2.5|archivers/freeze||FREEZE / MELT compression program - often used in QNX|archivers/freeze/pkg/DESCR|ports@openbsd.org|archivers|||any|y|y|y|y
 sharutils-4.2.1|archivers/gshar+gunshar||packing and unpacking of shell archives|archivers/gshar+gunshar/pkg/DESCR|ports@openbsd.org|archivers|||any|y|y|y|y
-gtar-1.13.17|archivers/gtar||GNU version of the traditional tar archiver|archivers/gtar/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|archivers|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
+gtar-1.13.18|archivers/gtar||GNU version of the traditional tar archiver|archivers/gtar/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|archivers|gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
 ha-0.999b|archivers/ha||archive files using the HSC compression method|archivers/ha/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|archivers|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
 lha-1.14f|archivers/lha||archive files using LZW compression (.lzh files)|archivers/lha/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|archivers|||any|y|y|y|y
 lzo-1.07|archivers/lzo||portable speedy lossless data compression library|archivers/lzo/pkg/DESCR|Brad Smith <brad@openbsd.org>|archivers devel|||any|y|y|y|y
@@ -189,8 +189,8 @@ jed-0.99.11|editors/jed||text editor|editors/jed/pkg/DESCR|ports@openbsd.org|edi
 jed-0.99.11-no_x11|editors/jed,no_x11||text editor|editors/jed/pkg/DESCR|ports@openbsd.org|editors|libslang-1.4.2|libslang-1.4.2|any|y|y|y|y
 joe-2.8|editors/joe||Joe's own editor|editors/joe/pkg/DESCR|ports@openbsd.org|editors|||any|y|y|y|y
 jove-4.16|editors/jove||Jonathan's Own Version of Emacs|editors/jove/pkg/DESCR|ports@openbsd.org|editors|||any|n|y|n|y
-nano-0.9.23|editors/nano||small, easy to use editor|editors/nano/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|autoconf-2.13 gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
-nano-0.9.23-slang|editors/nano,slang||small, easy to use editor|editors/nano/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|autoconf-2.13 gettext-0.10.35 libslang-1.4.2|gettext-0.10.35 libslang-1.4.2|any|y|y|y|y
+nano-0.9.24|editors/nano||small, easy to use editor|editors/nano/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|autoconf-2.13 gettext-0.10.35|gettext-0.10.35|any|y|y|y|y
+nano-0.9.24-slang|editors/nano,slang||small, easy to use editor|editors/nano/pkg/DESCR|Christian Weisgerber <naddy@openbsd.org>|editors|autoconf-2.13 gettext-0.10.35 libslang-1.4.2|gettext-0.10.35 libslang-1.4.2|any|y|y|y|y
 nedit-5.1.1|editors/nedit||X11/Motif GUI text editor|editors/nedit/pkg/DESCR|Oleg Safiullin <form@openbsd.org>|editors x11|lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
 nvi-m17n-1.79.19991117|editors/nvi-m17n||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|Jun-ichiro itojun Hagino <itojun@itojun.org>|editors|||any|y|y|y|y
 nvi-m17n-1.79.19991117-canna|editors/nvi-m17n,canna||multilingual clone of vi/ex|editors/nvi-m17n/pkg/DESCR|Jun-ichiro itojun Hagino <itojun@itojun.org>|editors|ja-groff-1.10_0.99 cannalib-3.5b2p1|cannalib-3.5b2p1|any|y|y|y|y
@@ -573,6 +573,7 @@ pop3gwd-1.2|net/pop3gwd||app-level proxy for mail retrieval behind firewalls|net
 popa3d-0.4|net/popa3d||security first POP3 daemon|net/popa3d/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net mail|||any|y|y|y|y
 popa3d-0.4-apop|net/popa3d,apop||security first POP3 daemon|net/popa3d/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net mail|||any|y|y|y|y
 proxy-suite-1.7|net/proxy-suite||set of programs to enhance firewall security|net/proxy-suite/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net security|gettext-0.10.35 gmake-3.79.1||any|y|y|y|y
+pptp-1.0.2|net/pptp||PPTP client package for Microsoft VPN servers |net/pptp/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|net|||any|y|y|y|y
 publicfile-0.52|net/publicfile||read-only anonymous FTP and HTTP server|net/publicfile/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net||ucspi-tcp-0.88 daemontools-0.70|any|y|y|y|y
 publicfile-0.52-compat|net/publicfile,compat||read-only anonymous FTP and HTTP server|net/publicfile/pkg/DESCR|Camiel Dobbelaar <cd@sentia.nl>|net||ucspi-tcp-0.88 daemontools-0.70|any|n|n|y|y
 queso-980922|net/queso||determine remote OS using simple tcp packets|net/queso/pkg/DESCR|Brad Smith <brad@openbsd.org>|net|||any|y|y|y|y
@@ -619,6 +620,7 @@ plor-0.3.2|news/plor||alpha-release reader for reading SOUP and QWK packets|news
 slrn-0.9.6.2|news/slrn||SLang-based newsreader|news/slrn/pkg/DESCR|Christopher Turan <turan@openbsd.org>|news|libslang-1.4.2|libslang-1.4.2|any|y|y|y|y
 tin-1.4.4|news/tin||full-screen easy to use Usenet reader|news/tin/pkg/DESCR|ports@openbsd.org|news|||any|n|y|n|y
 tin-1.4.4-nntp_only|news/tin,nntp_only||full-screen easy to use Usenet reader|news/tin/pkg/DESCR|ports@openbsd.org|news|||any|n|y|n|y
+trn-4.0.74|news/trn||threaded newsreader|news/trn/pkg/DESCR|Marc Espie <espie@openbsd.org>|news|||any|n|y|y|y
 9menu-1.5|plan9/9menu||simple menu patterned after plan9|plan9/9menu/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|plan9|||any|y|y|y|y
 9wm-1.2pre|plan9/9wm||8 1/2-like Window Manager for X11|plan9/9wm/pkg/DESCR|Markus Friedl <markus@openbsd.org>|plan9|||any|y|y|y|y
 larswm-7.0.8|plan9/larswm||9wm with automatic window tiling and virtual desktops|plan9/larswm/pkg/DESCR|William Yodlowsky <unix@resentment.org>|plan9|||any|y|y|y|y
@@ -761,8 +763,8 @@ agrep-2.04|textproc/agrep||approximate grep (fast approximate pattern-matching t
 antiword-0.30|textproc/antiword||converts MSWord Documents to ASCII Text and PostScript|textproc/antiword/pkg/DESCR|Mark Grimes <obecian@openbsd.org>|textproc|||any|y|y|y|y
 c2html-0.9.2|textproc/c2html||C-language sources to HTML converter|textproc/c2html/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc www|||any|y|y|y|y
 catdoc-0.90b4|textproc/catdoc||MS Word ==> ASCII or TeX, Tk viewer included|textproc/catdoc/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc||tcl-8.0.5 tk-8.0.5|any|y|y|y|y
-docbook-4.1|textproc/docbook||technical documentation SGML definitions |textproc/docbook/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|textproc|unzip-5.41|docbook-modular-1.59 iso8879-1986|any|y|y|y|y
-docbook-modular-1.59|textproc/docbook-modular||modular DSSSL stylesheets for the DocBook DTD|textproc/docbook-modular/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|textproc print|unzip-5.41||any|y|y|y|y
+docbook-4.1|textproc/docbook||technical documentation SGML definitions |textproc/docbook/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|textproc|unzip-5.41|docbook-modular-1.60 iso8879-1986|any|y|y|y|y
+docbook-modular-1.60|textproc/docbook-modular||modular DSSSL stylesheets for the DocBook DTD|textproc/docbook-modular/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|textproc print|unzip-5.41||any|y|y|y|y
 expat-1.2|textproc/expat||XML 1.0 parser written in C|textproc/expat/pkg/DESCR|Dug Song <dugsong@monkey.org>|textproc|unzip-5.41||any|y|y|y|y
 glimpse-4.1|textproc/glimpse||text search engine|textproc/glimpse/pkg/DESCR|Tobias Weingartner <weingart@openbsd.org>|textproc databases|||any|n|y|n|y
 hevea-1.05|textproc/hevea||LaTeX to html translator|textproc/hevea/pkg/DESCR|Marc Espie <espie@openbsd.org>|textproc print|gettext-0.10.35 gmake-3.79.1 tcl-8.3.2 tk-8.3.2 ocaml-3.00||any|y|y|y|y
@@ -786,7 +788,7 @@ par-1.51|textproc/par||paragraph reflow for email|textproc/par/pkg/DESCR|Angelos
 pilot_makedoc-0.7|textproc/pilot_makedoc||convert text into the Doc format used by PalmPilots|textproc/pilot_makedoc/pkg/DESCR|Angelos D. Keromytis <angelos@openbsd.org>|textproc|||any|y|y|y|y
 rman-3.0.9|textproc/rman||reverse compile man pages from formatted form|textproc/rman/pkg/DESCR|ports@OpenBSD.ORG|textproc|||any|n|y|n|y
 rxp-1.2|textproc/rxp||a validating namespace-aware XML parser|textproc/rxp/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|textproc|||any|y|y|y|y
-sgmlformat-1.7|textproc/sgmlformat||generate groff/HTML from linuxdoc/docbook SGML documents|textproc/sgmlformat/pkg/DESCR|Matthieu Herrb <matthieu@openbsd.org>|textproc print||docbook-modular-1.59 iso8879-1986 docbook-4.1 linuxdoc-1.1 openjade-1.3|any|y|y|y|y
+sgmlformat-1.7|textproc/sgmlformat||generate groff/HTML from linuxdoc/docbook SGML documents|textproc/sgmlformat/pkg/DESCR|Matthieu Herrb <matthieu@openbsd.org>|textproc print||docbook-modular-1.60 iso8879-1986 docbook-4.1 linuxdoc-1.1 openjade-1.3|any|y|y|y|y
 sablotron-0.44|textproc/sablotron||fast, compact and portable XSL/XSLT processor|textproc/sablotron/pkg/DESCR|Anil Madhavapeddy <avsm@openbsd.org>|textproc|gettext-0.10.35 gmake-3.79.1 libtool-1.3.5||any|y|y|y|y
 sp-1.2.1|textproc/sp||OO toolkit for SGML parsing and entity management|textproc/sp/pkg/DESCR|ports@openbsd.org|textproc|||any|y|y|y|y
 spiff-1.0|textproc/spiff||very flexible diff-like program|textproc/spiff/pkg/DESCR|Ian Darwin <ian@openbsd.org>|textproc|||any|n|y|n|y
@@ -799,7 +801,7 @@ xpdf-0.91|textproc/xpdf||PDF viewer for X|textproc/xpdf/pkg/DESCR|eep@inconnect.
 amaya-3.2.1|www/amaya/browser||test-bed browser/authoring tool of the W3C|www/amaya/browser/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|www|gettext-0.10.35 gmake-3.79.1 lesstif-0.91.8|lesstif-0.91.8|any|y|y|y|y
 amaya-english-dict|www/amaya/english-dict||English dictionary for the Amaya browser/page composer|www/amaya/english-dict/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|www||lesstif-0.91.8 amaya-3.2.1|any|y|y|y|y
 amaya-french-dict|www/amaya/french-dict||French dictionary for the Amaya browser/page composer|www/amaya/french-dict/pkg/DESCR|Bruno Rohee <rohee@openbsd.org>|www||lesstif-0.91.8 amaya-3.2.1|any|y|y|y|y
-analog-4.11|www/analog||extremely fast program for analysing WWW logfiles|www/analog/pkg/DESCR|Oleg Safiullin <form@openbsd.org>|www|||any|y|y|y|y
+analog-4.13|www/analog||extremely fast program for analysing WWW logfiles|www/analog/pkg/DESCR|Oleg Safiullin <form@openbsd.org>|www|||any|y|y|y|y
 august-0.62b|www/august||html editor designed for the experienced web designer|www/august/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|www||jpeg-6b png-1.0.8 tiff-3.5.5 ghostscript-5.50 bzip2-1.0.1 jbigkit-1.2 mpeg_lib-1.3.1 netpbm-19940301 freetype-1.3 transfig-3.2.3c libxml-2.2.10 tcl-8.3.2 ImageMagick-5.2.5 weblint-1.020 tk-8.3.2|any|y|y|y|y
 bk2site-1.1.5|www/bk2site||convert Netscape bookmarks into a Yahoo-like website|www/bk2site/pkg/DESCR|Dug Song <dugsong@monkey.org>|www|||any|y|y|y|y
 bluefish-0.4|www/bluefish||HTML editor for experienced web designers|www/bluefish/pkg/DESCR|Sean Cavanaugh <seanc@cginfo.sk.ca>|www|gettext-0.10.35 jpeg-6b glib-1.2.8 gmake-3.79.1 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1|jpeg-6b gettext-0.10.35 glib-1.2.8 giflib-4.1.0 png-1.0.8 tiff-3.5.5 gtk+-1.2.8 imlib-1.9.8.1 weblint-1.020|any|y|y|y|y
