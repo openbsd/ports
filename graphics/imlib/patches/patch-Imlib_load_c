@@ -1,0 +1,15 @@
+$OpenBSD: patch-Imlib_load_c,v 1.1 2001/03/13 20:28:59 espie Exp $
+--- Imlib/load.c.orig	Tue Mar 13 19:54:26 2001
++++ Imlib/load.c	Tue Mar 13 19:54:44 2001
+@@ -628,9 +628,9 @@ _LoadBMP(ImlibData * id, FILE *file, int
+   planes = (int)word;
+   fread(&word, 2, 1, file);
+   bpp = (int)word;
+-  if (bpp != 1 && bpp != 4 && bpp != 8 && bpp && 16 && bpp != 24 && bpp != 32)
++  if (bpp != 1 && bpp != 4 && bpp != 8 && bpp != 16 && bpp != 24 && bpp != 32)
+     {
+-      fprintf(stderr, "IMLIB ERROR: unknown bitdepth in file\n");
++      fprintf(stderr, "IMLIB ERROR: unknown bitdepth %d in file\n", bpp);
+       return NULL;
+     }
+   fread(dbuf, 4, 4, file);
