@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.654 2004/10/26 06:16:53 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.655 2004/11/10 10:16:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -416,6 +416,7 @@ _REGRESS_COOKIE=	${WRKBUILD}/.regress_done
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
 _BUILD_COOKIE=		${WRKDIR}/.build_done
 _REGRESS_COOKIE=	${WRKDIR}/.regress_done
+_UPDATE_COOKIE=     ${WRKDIR}/.update_done
 .endif
 
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
@@ -423,7 +424,7 @@ ${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
 ${_SYSTRACE_COOKIE} ${_PACKAGE_COOKIES} \
 ${_DISTPATCH_COOKIE} ${_PREPATCH_COOKIE} ${_FAKE_COOKIE} \
 ${_WRKDIR_COOKIE} ${_DEPlib_COOKIES} ${_DEPbuild_COOKIES} \
-${_DEPrun_COOKIES} ${_DEPregress_COOKIES}
+${_DEPrun_COOKIES} ${_DEPregress_COOKIES} ${_UPDATE_COOKIE}
 
 _MAKE_COOKIE=touch -f
 
@@ -1363,6 +1364,7 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
 _internal-configure _internal-all _internal-build _internal-install \
 _internal-regress _internal-uninstall _internal-deinstall _internal-fake \
+_internal-update \
 _internal-package _internal-lib-depends-check _internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
@@ -1490,6 +1492,7 @@ _internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 _internal-install: ${_INSTALL_DEPS}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-package: ${_PACKAGE_DEPS}
+_internal-update: ${_UPDATE_COOKIE}
 
 
 .  if defined(_IGNORE_REGRESS)
@@ -1509,7 +1512,7 @@ _internal-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 
 _TOP_TARGETS=extract patch distpatch configure build all install fake package \
 fetch checksum regress depends lib-depends build-depends run-depends \
-regress-depends clean lib-depends-check manpages-check plist update-plist
+regress-depends clean lib-depends-check manpages-check plist update-plist update
 .if defined(_LOCK)
 .  for _t in ${_TOP_TARGETS}
 ${_t}:
@@ -1825,6 +1828,17 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 .  endif
 	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif
+
+${_UPDATE_COOKIE}: ${_WRKDIR_COOKIE} ${_PACKAGE_COOKIES}
+	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${SUBPACKAGE}}"
+	@a=`pkg_info -e ${FULLPKGPATH} 2>/dev/null || true`; \
+	case $$a in \
+		'') ;; \
+		'${FULLPKGNAME${SUBPACKAGE}}') ;; \
+		*) ${ECHO_MSG} "Upgrading from $$a"; \
+		   ${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} PKG_TMPDIR=${PKG_TMPDIR} pkg_add ${_PKGADD_AUTO} -r ${PKGFILE${SUBPACKAGE}};; \
+	esac
+	@${_MAKE_COOKIE} $@
 
 # The real package
 
@@ -2568,4 +2582,5 @@ uninstall deinstall:
 	_internal-depends _internal-lib-depends _internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
 	_internal-regress _internal-clean _internal-lib-depends-check \
-	_internal-manpages-check _internal-plist _internal-update-plist
+	_internal-manpages-check _internal-plist _internal-update-plist \
+	_internal-update update
