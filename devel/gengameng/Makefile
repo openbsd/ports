@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/07 05:04:23 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/02 03:48:06 pvalchev Exp $
 
 COMMENT=	"X11 game engine library"
 
@@ -7,7 +7,7 @@ DISTNAME=	gengameng-${VERSION}
 CATEGORIES=	devel x11
 NEED_VERSION=	1.433
 
-HOMEPAGE=	http://sites.netscape.net/sarrazip/
+HOMEPAGE=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
