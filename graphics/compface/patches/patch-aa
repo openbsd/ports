@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Dec 10 11:08:33 1999
-+++ Makefile	Fri Dec 10 11:16:26 1999
+--- Makefile.orig	Tue Mar 21 20:09:40 1995
++++ Makefile	Sun Apr  9 14:27:22 2000
 @@ -25,10 +25,10 @@
  # BINDIR, LIBDIR, and MANDIR are expected to be overridden by the
  # calling Makefile
@@ -15,7 +15,7 @@
  
  NAME		= compface
  UNNAME		= uncompface
-@@ -50,8 +50,8 @@
+@@ -50,8 +50,8 @@ OTHERS		= README $(NAME).1 $(NAME).3 Mak
  #CCOMP		= -XG -O5 -wucp -Xa
  #CFLAGS		= $(CDEFS) $(CCOMP)
  
@@ -26,7 +26,7 @@
  
  all:		$(NAME) $(UNNAME)
  
-@@ -72,22 +72,22 @@
+@@ -72,22 +72,20 @@ clean :
  		rm -f *.o *.a *.sh core a.out $(NAME) $(UNNAME)
  
  install :	$(NAME) $(UNNAME) $(LIBNAME)
@@ -48,20 +48,18 @@
 -		-ln $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
 +		@test -d $(BINDIR) || mkdir $(BINDIR)
 +		$(BSD_INSTALL_PROGRAM) $(NAME) $(EXECUTABLE)
-+		@strip $(EXECUTABLE)
 +		$(BSD_INSTALL_PROGRAM) $(UNNAME) $(UNEXECUTABLE)
-+		@strip $(UNEXECUTABLE)
 +		@test -d $(MAN1DIR) || mkdir $(MAN1DIR)
 +		$(BSD_INSTALL_MAN) $(NAME).1 $(MAN1DIR)
 +		@rm -f $(MAN1DIR)/$(UNNAME).1
-+		@ln -sf $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
++		@ln -sf $(NAME).1 $(MAN1DIR)/$(UNNAME).1
 +		$(BSD_INSTALL_DATA) $(LIBNAME) $(LIBRARY)
 +		@test -d $(INCDIR) || mkdir $(INCDIR)
 +		$(BSD_INSTALL_DATA) $(HEADERS) $(INCDIR)
 +		@test -d $(MAN3DIR) || mkdir $(MAN3DIR)
 +		$(BSD_INSTALL_MAN) $(NAME).3 $(MAN3DIR)
 +		@rm -f $(MAN3DIR)/$(UNNAME).3
-+		@ln -sf $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
++		@ln -sf $(NAME).3 $(MAN3DIR)/$(UNNAME).3
  
  shar :
  		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
