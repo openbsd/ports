@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 1999/02/23 22:12:43 brad Exp $
+# $OpenBSD: Makefile,v 1.32 1999/02/25 17:10:47 dugsong Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += dxpc
 #    SUBDIR += echoping
      SUBDIR += ethereal
+     SUBDIR += firewalk
 #    SUBDIR += fping
 #    SUBDIR += freewais-sf
 #    SUBDIR += fspclient
@@ -41,6 +42,7 @@
 #    SUBDIR += ldap
 #    SUBDIR += lftp
 #    SUBDIR += libsocket++
+     SUBDIR += libnet
      SUBDIR += licq
 #    SUBDIR += llnlxdir
 #    SUBDIR += llnlxftp
