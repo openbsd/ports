@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/02/18 12:59:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/10/08 16:44:43 naddy Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
@@ -41,6 +41,8 @@ do-configure:
 OBJ=	OBJ/${MACHINE}-openbsd-${CC}
 
 do-install:
+	perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' \
+		${WRKSRC}/star/star.1 ${WRKSRC}/rmt/rmt.1
 .for prog in star tartest
 	${INSTALL_PROGRAM} ${WRKBUILD}/${prog}/${OBJ}/${prog} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${prog}/${prog}.1 ${PREFIX}/man/man1
@@ -49,11 +51,10 @@ do-install:
 	cd ${PREFIX}/man/man1; ln -sf star.1 ustar.1
 	${INSTALL_PROGRAM} ${WRKBUILD}/mt/${OBJ}/smt ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/rmt/${OBJ}/rmt ${PREFIX}/libexec/srmt
-	perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},g' ${WRKSRC}/rmt/rmt.1
 	${INSTALL_MAN} ${WRKSRC}/rmt/rmt.1 ${PREFIX}/man/man8/srmt.8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/star
 	${INSTALL_DATA} ${WRKSRC}/rmt/rmt.dfl \
-		${PREFIX}/share/examples/star/srmt.conf.sample
+		${PREFIX}/share/examples/star/srmt.conf
 
 NO_REGRESS=	Yes
 
