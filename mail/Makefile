@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2001/08/14 22:05:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.75 2001/08/20 19:48:58 lebel Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -42,8 +42,6 @@
      SUBDIR += mixmaster
      SUBDIR += movemail
      SUBDIR += mutt
-     SUBDIR += mutt,slang
-     SUBDIR += mutt,slang,imap,pop
      SUBDIR += nmh
      SUBDIR += p5-Mail-Alias
      SUBDIR += p5-Mail-Box
