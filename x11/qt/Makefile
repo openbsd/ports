@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2000/05/24 00:16:03 brad Exp $
+# $OpenBSD: Makefile,v 1.40 2000/06/09 19:18:14 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
 CATEGORIES=	x11
-NEED_VERSION=	1.283
+NEED_VERSION=	1.295
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 # for the qt image extension
