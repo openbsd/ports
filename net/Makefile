@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2000/08/18 03:52:02 kevlo Exp $
+# $OpenBSD: Makefile,v 1.86 2000/08/23 17:24:38 jakob Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += bing
      SUBDIR += bitchx
      SUBDIR += bitchx:socks5
+     SUBDIR += cidr
      SUBDIR += clog
      SUBDIR += curl
 #    SUBDIR += cvsup
