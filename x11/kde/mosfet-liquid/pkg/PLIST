@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/21 16:25:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/11/13 14:10:06 espie Exp $
 lib/kde2/libkwinliquid.la
 lib/libkcm_transmenu.la
 lib/liquid.la
