@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/15 15:25:49 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/05/19 20:33:00 naddy Exp $
 bin/ectags
 man/man1/ectags.1
-share/doc/ectags/COPYING
-share/doc/ectags/EXTENDING.html
 share/doc/ectags/FAQ
 share/doc/ectags/NEWS
-share/doc/ectags/QUOTES
 share/doc/ectags/README
 @dirrm share/doc/ectags
