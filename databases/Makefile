@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2003/12/30 20:42:33 wilfried Exp $
+# $OpenBSD: Makefile,v 1.51 2004/02/18 21:05:14 djm Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR += MyCC
@@ -33,6 +33,7 @@
      SUBDIR += py-psycopg
      SUBDIR += py-psycopg,zope
      SUBDIR += py-sybase
+     SUBDIR += sqlite
      SUBDIR += sqsh
      SUBDIR += xmysql
      SUBDIR += xmysqladmin
