@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/13 05:06:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/15 11:12:28 turan Exp $
 # ATTENTION: It does not work in > 256 color modes, please fix
 # it if you can.
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 FAKE=		Yes
 USE_IMAKE=      Yes
 
-XFHELP= ${X11BASE}/lib/X11/xfedor # See patches too
-XCAT1= ${X11BASE}/man/cat1
+XFHELP= ${LOCALBASE}/lib/X11/xfedor # See patches too
+XCAT1= ${LOCALBASE}/man/cat1
 
 do-install:
 	cd ${WRKSRC}; \

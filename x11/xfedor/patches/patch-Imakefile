@@ -1,0 +1,17 @@
+--- Imakefile.orig	Thu May 26 10:56:29 1994
++++ Imakefile	Sat Apr 15 04:58:25 2000
+@@ -1,11 +1,8 @@
+-XCOMM Specify here your Xpm installation directories
+-        XPM_INCLUDEDIR = /project/motif/build/Xpm3.4/source/lib
+-        XPM_LIBDIR = /project/motif/build/Xpm3.4/sun/lib
+-
+-        EXTRA_INCLUDES = -I$(XPM_INCLUDEDIR)
++        DEFINES = -DDIRSOS=\"${X11BASE}/lib/X11/xfedor\"
++        EXTRA_INCLUDES = -I$(INCROOT)/X11 -I/usr/X11R6/include/X11
+ 
+         DEPLIBS = $(DEPXLIB)
+-LOCAL_LIBRARIES = $(XLIB) -L$(XPM_LIBDIR) -lXpm
++LOCAL_LIBRARIES = $(XLIB) -lXpm
+   SYS_LIBRARIES = -lm
+ 
+            SRCS = couchex.c myrast.c dialogue.c popup.c\
