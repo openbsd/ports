@@ -11,7 +11,7 @@ include/lzo2a.h
 include/lzoconf.h
 lib/liblzo.a
 lib/liblzo.la
-lib.liblzo.so.1.0
+lib/liblzo.so.1.0
 @exec /sbin/ldconfig -m %B
 share/doc/lzo/LZO.FAQ
 share/doc/lzo/LZO.TXT
