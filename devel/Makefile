@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2004/07/23 08:41:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.250 2004/10/23 12:38:34 xsa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -240,6 +240,7 @@
      SUBDIR += pygame
      SUBDIR += rats
      SUBDIR += ruby-ncurses
+     SUBDIR += scons
      SUBDIR += sdl
      SUBDIR += sdl,esd
      SUBDIR += sdl-gfx
