@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.24 2000/09/06 06:32:07 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2000/09/15 12:54:44 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
 .if ${MACHINE_ARCH} == "i386"
-DISTNAME=	rarbsd
+DISTFILES=	rarbsd.sfx
 PKGNAME=	rar-2.02
-SUPDISTFILES=	rarsparc.sfx
 .elif ${MACHINE_ARCH} == "sparc"
-DISTNAME=	rarsparc
+DISTFILES=	rarsparc.sfx
 PKGNAME=	rar-2.01
-SUPDISTFILES=	rarbsd.sfx
 .endif
-CATEGORIES=	archivers
-NEED_VERSION=	1.324
-MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/
-EXTRACT_SUFX=	.sfx
 
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+SUPDISTFILES=	rarsparc.sfx rarbsd.sfx
+
+CATEGORIES=	archivers
+NEED_VERSION=	1.330
+MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/
+
+EXTRACT_CASES=	*.sfx) chmod u+x ${FULLDISTDIR}/$$archive && \
+	${FULLDISTDIR}/$$archive;;
 
 HOMEPAGE=	http://www.rarsoft.com/
 
@@ -50,11 +49,7 @@ pre-fetch:
 .endif
 .endif
 
-pre-extract:
-	@chmod a+x ${DISTDIR}/${DISTFILES}
-
 post-extract:
-	@chmod a-x ${DISTDIR}/${DISTFILES}
 .if ${MACHINE_ARCH} == "sparc"
 	@cd ${WRKSRC} && \
 	mv RAR rar && mv UNRAR unrar && \
@@ -72,9 +67,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/RarFiles.Lst ${PREFIX}/share/rar/rarfiles.lst
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/share/rar
 	${INSTALL_DATA} ${WRKSRC}/Dos.SFX ${PREFIX}/share/rar/dos.sfx
-
-post-install:
-	@echo '*** Note that this software is shareware.'
-	@echo '*** You are required to register after 40 days of use.'
 
 .include <bsd.port.mk>
