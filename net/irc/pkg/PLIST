@@ -1,10 +1,11 @@
-@cwd /usr/local
-@name irc2.9.5
 bin/irc
+lib/ircd/users
+lib/ircd/opers
+lib/ircd/rejects
 lib/ircd/ircd.m4
 lib/ircd/example.conf
-man/man1/irc.1
-man/man8/ircd.8
 sbin/ircd
 sbin/chkconf
+sbin/iauth
+sbin/ircd-mkpasswd
 @dirrm lib/ircd
