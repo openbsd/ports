@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/09/27 11:01:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/25 13:59:07 naddy Exp $
 
 COMMENT=	"GNU versions of the diff utilities"
 
@@ -17,11 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
 
 MODULES=	gettext
-
-# work around optimizer bug in gcc 2.95
-.if ${MACHINE_ARCH} == "sparc64"
-PATCH_LIST=	gcc-patch-* patch-*
-.endif
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
