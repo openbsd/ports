@@ -3,7 +3,7 @@
 # Date created:		15 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/09 00:18:49 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2001/02/09 12:25:44 avsm Exp $
 
 PKGNAME=	figlet-2.2
 DISTNAME=	figlet22
@@ -26,11 +26,12 @@ MASTER_SITES0=	http://www.internexus.net/pub/figlet/fonts/ \
 		ftp://ftp.plig.org/pub/figlet/fonts/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} contributed${EXTRACT_SUFX}:0
-MAKE_FLAGS=	CFLAGS=${CFLAGS} DEFAULTFONTDIR=${PREFIX}/share/figlet
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
+		DEFAULTFONTDIR=${PREFIX}/share/figlet
 
 post-extract:
-	@(mv ${WRKDIR}/contributed/*.{flf,flc} ${WRKSRC}/fonts)
-	@(mv ${WRKDIR}/contributed/bdffonts/*.flf ${WRKSRC}/fonts)
+	@mv ${WRKDIR}/contributed/*.{flf,flc} ${WRKSRC}/fonts
+	@mv ${WRKDIR}/contributed/bdffonts/*.flf ${WRKSRC}/fonts
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/figlet ${PREFIX}/bin
