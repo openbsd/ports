@@ -1,57 +1,29 @@
-$OpenBSD: patch-abcde,v 1.4 2004/02/15 16:25:14 sturm Exp $
---- abcde.orig	2004-01-20 07:55:33.000000000 +0100
-+++ abcde	2004-02-13 20:26:39.000000000 +0100
-@@ -1098,7 +1098,7 @@ do_cddbedit ()
- 		EDITCDDB=n
- 	fi
- 	if [ "$EDITCDDB" = "y" ]; then
--		CDDBDATAMD5SUM=$(md5sum "$CDDBDATA" | cut -d " " -f 1);
-+		CDDBDATAMD5SUM=$($MD5SUM "$CDDBDATA" | cut -d " " -f 1);
- 		
- 		# Use the debian sensible-editor wrapper to pick the editor that the
- 		# user has requested via their $EDITOR environment variable
-@@ -1214,7 +1214,7 @@ do_cddbedit ()
- 	echo "variousartiststyle=$VARIOUSARTISTSTYLE" >> "$ABCDETEMPDIR/status"
- 
- 	if [ "$EDITCDDB" = "y" ] && [ "$UNINTENTIONALLY_ANGER_THE_FREEDB_PEOPLE" = "y" ]; then
--		if [ $CDDBDATAMD5SUM != "" ]  && [ $CDDBDATAMD5SUM != $(md5sum "$CDDBDATA" | cut -d " " -f 1) ]; then
-+		if [ $CDDBDATAMD5SUM != "" ]  && [ $CDDBDATAMD5SUM != $($MD5SUM "$CDDBDATA" | cut -d " " -f 1) ]; then
- 			# This works but does not have the necessary error checking
- 			# yet. If you are familiar with the CDDB spec
- 			# (see http://www.freedb.org/src/latest/DBFORMAT) 
-@@ -1338,7 +1338,7 @@ PLAYLISTDATAPREFIX=''
- VAPLAYLISTFORMAT='${ARTISTFILE}-${ALBUMFILE}.${OUTPUT}.m3u'
+$OpenBSD: patch-abcde,v 1.5 2004/04/13 21:07:48 brad Exp $
+--- abcde.orig	Fri Apr  9 20:12:15 2004
++++ abcde	Sun Apr 11 16:58:13 2004
+@@ -1574,7 +1574,7 @@
  VAPLAYLISTDATAPREFIX=''
+ DOSPLAYLIST=n
  COMMENT=''
 -ID3TAGV=2
 +ID3TAGV=1
  ENCNICE=10
  READNICE=10
  DISTMP3NICE=10
-@@ -1380,6 +1380,7 @@ CDDAFS=cp
- CDDISCID=cd-discid
- CDDBTOOL=cddb-tool
- EJECT=eject
-+MD5SUM=md5sum
- DISTMP3=distmp3
- VORBISCOMMENT=vorbiscomment
- METAFLAC=metaflac
-@@ -1436,6 +1437,9 @@ elif [ X$(uname) = "XDarwin" ] ; then
- 	OSFLAVOUR=OSX
+@@ -1683,7 +1683,7 @@
  	# We should have disktool in OSX, but let's be sure...
  	NEEDDISKTOOL=y
-+elif [ X$(uname) = "XOpenBSD" ] ; then
-+	HTTPGET=wget
-+	MD5SUM=md5
+ elif [ X$(uname) = "XOpenBSD" ] ; then
+-	HTTPGET=wget
++	HTTPGET=ftp
+ 	MD5SUM=md5
  else
  	HTTPGET=wget
+@@ -1719,6 +1719,7 @@
+ 		wget) HTTPGETOPTS="-q -O -";;
+ 		curl) HTTPGETOPTS="-f -s";;
+ 		fetch)HTTPGETOPTS="-q -o -";;
++		ftp)  HTTPGETOPTS="-V -o -";;
+ 		*) echo "abcde warning: HTTPGET in non-standard and HTTPGETOPTS are not defined." >&2 ;;
+ 	esac
  fi
-@@ -1709,7 +1713,7 @@ HTTPGET="$HTTPGET $HTTPGETOPTS"
- 
- # Export needed things so they can be read in this subshell
- export CDDBTOOL ABCDETEMPDIR TRACKQUEUE LOWDISK EJECTCD EJECT EJECTOPTS
--export CDROM CDDBDATA REMOTEHOSTS MAXPROCS HTTPGET
-+export CDROM CDDBDATA REMOTEHOSTS MAXPROCS HTTPGET MD5SUM
- 
- do_discid # Get ABCDETEMPDIR created and status file initialized
- 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/15 16:25:14 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/04/13 21:07:48 brad Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
-V=		2.1.14
+V=		2.1.19
 # cd-diskid version number
 V2=		0.9
 DISTNAME=	abcde_$V.orig
@@ -24,8 +24,7 @@ MASTER_SITES1=	http://lly.org/~rcw/id3/
 DISTFILES=	${DISTNAME}.tar.gz \
 		cd-discid_${V2}.orig.tar.gz:0
 
-RUN_DEPENDS=	:cdparanoia-*:audio/cdparanoia \
-		:wget-*:net/wget
+RUN_DEPENDS=	:cdparanoia-*:audio/cdparanoia
 
 FLAVORS=	lame
 FLAVOR?=	
