@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/09 01:30:00 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/21 02:34:07 msf Exp $
 
 COMMENT=	"Perl module for comparing arrays"
 
-DISTNAME=	Array-Compare-1.09
+DISTNAME=	Array-Compare-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
