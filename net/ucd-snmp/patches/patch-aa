@@ -1,24 +1,34 @@
---- configure.orig	Wed Jul 21 11:41:23 1999
-+++ configure	Wed Jul 21 11:51:00 1999
-@@ -3014,11 +3014,20 @@
- if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
--  cat > conftest.$ac_ext <<EOF
-+  if test "x$ac_hdr" = "xnetinet/in_pcb.h"  ;then
-+    cat > conftest.$ac_ext <<EOF
- #line 3019 "configure"
- #include "confdefs.h"
-+#include <netinet/in.h>
- #include <$ac_hdr>
- EOF
-+  else
-+    cat > conftest.$ac_ext <<EOF
-+#line 3019 "configure"
-+#include "confdefs.h"
-+#include <$ac_hdr>
-+EOF
-+  fi
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3024: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
- ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+--- configure.orig	Tue May 30 11:30:18 2000
++++ configure	Tue May 30 11:30:59 2000
+@@ -1978,21 +1978,21 @@ if test "x$prefix" = "xNONE"; then
+   prefix=/usr/local
+ fi
+ 
+-fch=`echo $prefix | cut -b1`
+-if test $fch != "/" ; then
+-   prefix=`pwd`/$prefix
+-   echo "adjusting prefix to $prefix"
+-fi
++# fch=`echo $prefix | cut -b1`
++# if test $fch != "/" ; then
++#    prefix=`pwd`/$prefix
++#    echo "adjusting prefix to $prefix"
++# fi
+ 
+ if test "x$exec_prefix" = "xNONE"; then
+   exec_prefix=$prefix
+ fi
+ 
+-fch=`echo $exec_prefix | cut -b1`
+-if test $fch != "/" ; then
+-   exec_prefix=`pwd`/$exec_prefix
+-   echo "adjusting exec_prefix to $exec_prefix"
+-fi
++#fch=`echo $exec_prefix | cut -b1`
++#if test $fch != "/" ; then
++#   exec_prefix=`pwd`/$exec_prefix
++#   echo "adjusting exec_prefix to $exec_prefix"
++#fi
+ 
+ 
+ SNMPLIBPATH=""
