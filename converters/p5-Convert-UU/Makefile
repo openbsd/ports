@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2000/10/22 14:03:03 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/05/05 23:11:38 lebel Exp $
+
+COMMENT=	"Perl5 module for uuencode and uudecode"
 
 DISTNAME=	Convert-UU-0.40
 PKGNAME=	p5-Convert-UU-0.40
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Convert
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/05 23:11:29 lebel Exp $
+
+COMMENT=	"external MIME packer/unpacker"
 
 DISTNAME=       mpack-1.5-src
 PKGNAME=        mpack-1.5
 CATEGORIES=     converters mail news
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/05 23:11:17 lebel Exp $
+
+COMMENT=	"encode/decode binary to printable ASCII"
 
 DISTNAME=	btoa-5.2
 PKGNAME=	btoa-5.2.1
 CATEGORIES=	converters
-NEED_VERSION=	1.210
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

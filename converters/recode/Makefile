@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/05 23:11:51 lebel Exp $
+
+COMMENT=	"convert files between character sets and usages"
 
 DISTNAME=	recode-3.5
 CATEGORIES=	converters textproc
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 03:34:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/05 23:11:48 lebel Exp $
+
+COMMENT=	"modules to handle various Unicode issues"
 
 DISTNAME=	Unicode-String-2.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

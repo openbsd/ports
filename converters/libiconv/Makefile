@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/21 11:47:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/05/05 23:11:23 lebel Exp $
+
+COMMENT=	"character set conversion library"
 
 DISTNAME=	libiconv-1.6.1
 CATEGORIES=	converters devel
-NEED_VERSION=	1.341
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://clisp.cons.org/~haible/packages-libiconv.html
 

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/02/09 17:58:34 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/05 23:11:20 lebel Exp $
+
+COMMENT=	"binary-to-text file converter"
 
 DISTNAME=	ish-1.11
 CATEGORIES=	converters
-NEED_VERSION=	1.210
+NEED_VERSION=	1.402
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 

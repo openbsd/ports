@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 03:29:42 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/05 23:11:35 lebel Exp $
+
+COMMENT=	"module to encode and decode objects"
 
 DISTNAME=	Convert-BER-1.31
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
