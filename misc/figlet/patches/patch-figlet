@@ -1,4 +1,4 @@
-$OpenBSD: patch-figlet,v 1.2 2002/08/26 23:38:15 avsm Exp $
+$OpenBSD: patch-figlet,v 1.3 2003/03/28 22:39:10 david Exp $
 --- figlet.6.orig	Sat Jul 13 10:57:21 2002
 +++ figlet.6	Tue Aug 27 00:02:24 2002
 @@ -54,7 +54,27 @@ FIGlet \- display large characters made 
@@ -46,7 +46,7 @@ $OpenBSD: patch-figlet,v 1.2 2002/08/26 23:38:15 avsm Exp $
 +lists all the available fonts and control files.
 +
 +.B showfigfonts
-+displays a sample of each avaiable font in 
++displays a sample of each available font in 
 +.I font_directory
 +using the name of the font as the sample text, unless
 +.I sample_word

@@ -1,4 +1,4 @@
-$OpenBSD: patch-stel_steld_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
+$OpenBSD: patch-stel_steld_c,v 1.2 2003/03/28 22:39:10 david Exp $
 --- stel/steld.c.orig	Fri Apr 26 18:29:24 1996
 +++ stel/steld.c	Sat Sep 29 22:55:22 2001
 @@ -664,6 +664,11 @@ int	usepty, authfh;
@@ -7,7 +7,7 @@ $OpenBSD: patch-stel_steld_c,v 1.1 2001/09/29 21:27:50 naddy Exp $
  unixauth:
 +/*
 + * Commented out since openbsd does not use this.  Refer the the
-+ * skeyaccess.c with is a seperate utility written by Wietse Venema.
++ * skeyaccess.c with is a separate utility written by Wietse Venema.
 + * It is not used in our distribution of skey.
 + *
  		if (!skeyaccess(username, line, fromhost, fromhost)) {

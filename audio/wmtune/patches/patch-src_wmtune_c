@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_wmtune_c,v 1.4 2002/10/01 06:36:31 pvalchev Exp $
+$OpenBSD: patch-src_wmtune_c,v 1.5 2003/03/28 22:39:10 david Exp $
 --- src/wmtune.c.orig	Sat Sep 11 11:49:24 1999
 +++ src/wmtune.c	Fri Sep 27 21:22:11 2002
 @@ -18,102 +18,74 @@
@@ -1784,7 +1784,7 @@ $OpenBSD: patch-src_wmtune_c,v 1.4 2002/10/01 06:36:31 pvalchev Exp $
 +	iomap[offset] ^= mask;
 +	ioperms.iomap = iomap;
 +	if (sysarch(I386_SET_IOPERM, (char *)&ioperms) < 0)
-+		err(1, "Unsufficient IO privledges");
++		err(1, "Unsufficient IO privileges");
 +
 +	gouser();
 +}
