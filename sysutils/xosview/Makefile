@@ -3,7 +3,7 @@
 # Date created:		7 May 1998
 # Whom:			form
 #
-# $OpenBSD: Makefile,v 1.3 1998/11/20 06:23:38 form Exp $
+# $OpenBSD: Makefile,v 1.4 1998/11/24 02:54:28 form Exp $
 # NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp
 #
 
@@ -19,5 +19,9 @@ MAN1=		xosview.1
 
 MAKE_ENV+=	UVM=${UVM}
 MAKE_FLAGS=	ARCH=${ARCH} -f
+
+.if (${MACHINE_ARCH} == "alpha")
+BROKEN=		"compilation errors"
+.endif
 
 .include <bsd.port.mk>
