@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/21 19:17:44 shell Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/17 15:48:20 espie Exp $
 
 COMMENT=		"Python bindings for Gtk"
 COMMENT-gnome=		"Python bindings for Gtk and Gnome"
@@ -11,7 +11,7 @@ V=			1.4.1		## For py-gtk, this really is 0.6.8
 PKGNAME=		py-Gtk-${V}
 DISTNAME=		gnome-python-${V}
 CATEGORIES=		x11 devel
-NEED_VERSION=		1.405
+NEED_VERSION=		1.474
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python
@@ -29,8 +29,9 @@ PERMIT_PACKAGE_FTP=	Yes
 FLAVORS=		gnome
 FLAVOR?=
 
-LIB_DEPENDS+=		Imlib.19::graphics/imlib \
-			gtkgl.1.2::x11/gtkglarea
+LIB_DEPENDS+=		Imlib.19,gdk_imlib::graphics/imlib \
+			gtkgl.1.2::x11/gtkglarea \
+			gdk_pixbuf::graphics/gdk-pixbuf
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -48,7 +49,10 @@ RUN_DEPENDS+=		python${PYTHON_VER}::lang/python
 BUILD_DEPENDS+=		${RUN_DEPENDS}
 
 .if ${FLAVOR:L:Mgnome}
-  LIB_DEPENDS+=		glade-gnome.4::devel/libglade,gnome
+  LIB_DEPENDS+=		glade-gnome.4,glade::devel/libglade,gnome \
+  			capplet::x11/gnome/controlcenter \
+			gnorba,gtkxmhtml,zvt::x11/gnome/libs \
+			panel_applet::x11/gnome/core
 .else
   PATCH_STRIP=		-p1
   PATCH_LIST=		patch-pygtk_configure patch-pygtk_gtkmodule_c
