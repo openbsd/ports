@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/17 15:18:33 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/30 00:38:41 espie Exp $
 
 
+BROKEN="Need to resolve various issues"
 COMMENT='front-end/embeddable kpart for mplayer'
 CATEGORIES=	x11	x11/kde
 DISTNAME=	kmplayer-0.6.4
