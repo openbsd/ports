@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-auto,v 1.1.1.1 2000/06/02 12:12:26 espie Exp $
+libdata/perl5/site_perl/Business/CreditCard.pm
+man/man3/Business::CreditCard.3p
+@dirrm libdata/perl5/site_perl/Business

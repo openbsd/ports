@@ -1,0 +1,6 @@
+The CreditCard module implements simple-minded checking routines to 
+validate credit card checksums, or to find out the type of a credit
+card.
+
+Not a substitute to an actual verification with a bank, but enough
+to catch typos.
