@@ -1,0 +1,12 @@
+$OpenBSD: patch-new_curse_c,v 1.1 2002/12/13 07:52:10 pvalchev Exp $
+--- new_curse.c.orig	Thu Dec 12 00:18:31 2002
++++ new_curse.c	Thu Dec 12 00:18:47 2002
+@@ -2324,7 +2324,7 @@ int first_char;				/* first character of
+ {
+ 	int in_char;
+ 	int Count;
+-	char string[128];
++	signed char string[128];
+ 	char *Gtemp;
+ 	int Found;
+ #ifdef SYS5

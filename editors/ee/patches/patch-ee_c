@@ -1,6 +1,24 @@
-$OpenBSD: patch-ee_c,v 1.1.1.1 2001/11/13 15:23:15 naddy Exp $
---- ee.c.orig	Mon Nov 12 01:46:12 2001
-+++ ee.c	Mon Nov 12 01:46:35 2001
+$OpenBSD: patch-ee_c,v 1.2 2002/12/13 07:52:10 pvalchev Exp $
+--- ee.c.orig	Fri Aug 17 17:14:49 2001
++++ ee.c	Thu Dec 12 00:22:09 2002
+@@ -929,7 +929,7 @@ int temp_int;
+ int 
+ out_char(window, character, column)	/* output non-printing character */
+ WINDOW *window;
+-char character;
++int character;
+ int column;
+ {
+ 	int i1, i2;
+@@ -977,7 +977,7 @@ int column;
+ 
+ int 
+ len_char(character, column)	/* return the length of the character	*/
+-char character;
++int character;
+ int column;	/* the column must be known to provide spacing for tabs	*/
+ {
+ 	int length;
 @@ -4069,7 +4069,7 @@ Format()	/* format the paragraph accordi
  }
  
