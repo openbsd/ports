@@ -1,0 +1,12 @@
+A Perl module which provides an easy to use interface to interactive
+network coding. This is an overview of it's functions:
+ 
+* communicate with another host or device via a telnet port and
+provides some specialized routines to help you login and do other
+interactive actions. 
+* a simple way to make client connections to TCP services you aren't
+familiar with socket.
+* able to specify your own time-out for connecting, reading and
+writing.
+* communicating with sockets or pipes and checking those for certain
+patterns.
