@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/05/24 01:40:38 jolan Exp $
+# $OpenBSD: Makefile,v 1.22 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"archive files using the HSC compression method"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 USE_GMAKE=	Yes
 

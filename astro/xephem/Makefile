@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/08/27 19:13:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2004/11/21 12:50:33 espie Exp $
 
 COMMENT=	"interactive astronomical ephemeris"
 DISTNAME=	xephem-3.2.3
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=   "no modifications, no fee"
 PERMIT_PACKAGE_FTP=     "no modifications"
 PERMIT_DISTFILES_CDROM= "no fee"
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		ICE SM X11 Xext Xp Xt c m
 
 USE_MOTIF=	any
 CONFIGURE_STYLE= imake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/04 19:09:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/21 12:50:33 espie Exp $
 
 COMMENT=	"display the moon's phase"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	"copyrighted"
 PERMIT_PACKAGE_FTP=	"copyrighted"
 PERMIT_DISTFILES_CDROM=	"copyrighted"
 PERMIT_DISTFILES_FTP=	"copyrighted"
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
 

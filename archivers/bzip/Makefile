@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/05/24 01:14:50 jolan Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"block-sorting file compressor, encumbered"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"patents"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fomit-frame-pointer -funroll-loops \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/10/08 16:44:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/21 12:50:33 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 COMMENT=	"unique standard tape archiver with many enhancements"
@@ -30,6 +30,8 @@ MAKE_ENV=	MAKEPROG="${MAKEPROG}" \
 
 .if ${FLAVOR:L:Mstatic}
 MAKE_ENV+=	LDOPTX=-static
+.else
+WANTLIB=		c
 .endif
 
 .if ${MACHINE} != "i386" || ${CC} != "cc"

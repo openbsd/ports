@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/05/06 23:07:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"archive files using LZW compression (.lzh files)"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	"requires advance notification"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"requires advance notification"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
 		ftp://ftp.win.ne.jp/pub/misc/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/06/04 22:16:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.24 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"create & extract files from DOS .ARC files"
 
@@ -7,6 +7,7 @@ PKGNAME=        arc-5.21e
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tar.Z
+WANTLIB=	c
 
 # Restrictive
 PERMIT_PACKAGE_CDROM=	"no modifications"

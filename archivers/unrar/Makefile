@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/11/17 19:13:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2004/11/21 12:50:33 espie Exp $
 
 COMMENT=	"extract, list, and test RAR archives"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	"may not modify"
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++
 
 MASTER_SITES=	${HOMEPAGE}rar/
 

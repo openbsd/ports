@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/03/31 12:35:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/21 12:50:33 espie Exp $
 
 COMMENT=	"real-time satellite tracking and orbit propagation program"
 DISTNAME=	sattrack-3.1.6
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=   "May not be bundled, according to copyright."
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= "May not be bundled, according to copyright."
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		ICE SM X11 Xt c m
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 

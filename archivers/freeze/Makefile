@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/08/02 01:41:43 jolan Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"FREEZE / MELT compression program - often used in QNX"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=	c
 
 CONFIGURE_STYLE= gnu dest
 

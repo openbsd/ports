@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/06/04 22:16:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"NuFX archiver"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	"no terms"
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" OPTIMIZE="${CFLAGS}"
 

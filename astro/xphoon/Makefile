@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/05/18 08:45:33 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/11/21 12:50:33 espie Exp $
 
 COMMENT=	"set the root window to the moon in its current phase"
 DISTNAME=	xphoon
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=   "Cannot sell."
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= "Cannot sell."
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext c m
 
 CONFIGURE_STYLE= imake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/05/24 01:05:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/21 12:50:32 espie Exp $
 # $FreeBSD: ports/archivers/fastjar/Makefile,v 1.4 2000/04/24 15:51:08 knu Exp $
 
 COMMENT=	"Sun JDK's jar command written entirely in C"
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
+WANTLIB=	c z
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

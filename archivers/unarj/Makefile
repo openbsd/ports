@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/21 12:50:33 espie Exp $
 # $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
 
 COMMENT=	"extract files from ARJ archives"
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
+WANTLIB=		c
 
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 

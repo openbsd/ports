@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/05/24 02:40:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.31 2004/11/21 12:50:33 espie Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 COMMENT=	"create/update ZIP files compatible with PKZip(tm)"
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -DUNIX"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"

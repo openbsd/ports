@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/08/03 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2004/11/21 12:50:32 espie Exp $
 
 COMMENT=	"GNU version of the traditional tar archiver"
 
@@ -36,6 +36,7 @@ FLAVOR?=
 LDSTATIC=	-static
 .else
 LDSTATIC=
+WANTLIB=	c
 .endif
 
 .include <bsd.port.mk>

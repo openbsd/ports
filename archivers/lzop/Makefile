@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/24 22:12:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/21 12:50:32 espie Exp $
 # $FreeBSD: ports/archivers/lzop/Makefile,v 1.3 2000/06/22 05:51:49 will Exp $
 
 COMMENT=	"fast file compressor similar to gzip"
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}download/
 
 LIB_DEPENDS=	lzo.1::archivers/lzo
+WANTLIB=	c
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
