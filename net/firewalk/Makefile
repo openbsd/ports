@@ -1,32 +1,24 @@
-# OpenBSD makefile for:	firewalk
-# Version required:	0.7
-# Date created:		1998-Jan-16
-# Whom:			dugsong@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.4 1999/03/27 12:24:00 niklas Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 00:24:49 brad Exp $
 
-PKGNAME=		firewalk-0.7c
-DISTNAME=		firewalk-final-0.7c
-CATEGORIES=     	net
-
-MIRROR_DISTFILE=	no
-
-# www.es2.net does not resolve
-#MASTER_SITES=		http://www.es2.net/research/firewalk/
-MASTER_SITES=		ftp://ftp.technotronic.com/unix/security-tools/
-
-MAINTAINER=		dugsong@monkey.org
-
+PKGNAME=	firewalk-0.7c
+DISTNAME=	firewalk-final-0.7c
+CATEGORIES=     net
+MASTER_SITES=	ftp://ftp.technotronic.com/unix/security-tools/
 # Due to 0.7c is named as .gz, but really was uncompressed!
-EXTRACT_ARGS=		-xf
+EXTRACT_ARGS=	-xf
 
-GNU_CONFIGURE=		yes
+MIRROR_DISTFILE=no
 
-WRKSRC=			${WRKDIR}/Firewalk
+MAINTAINER=	dugsong@monkey.org
 
-BUILD_DEPENDS=		${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
+WRKSRC=		${WRKDIR}/Firewalk
 
-ALL_TARGET=		firewalk
+BUILD_DEPENDS=	${PREFIX}/lib/libnet.a:${PORTSDIR}/net/libnet
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
+		LDFLAGS="-L/usr/local/include"
+
+ALL_TARGET=	firewalk
 
 .include <bsd.port.mk>
