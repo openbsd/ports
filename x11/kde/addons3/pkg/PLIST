@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/02/01 14:59:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/02/01 19:58:43 espie Exp $
 bin/atlantikdesigner
 bin/exif.py
 bin/fsview
@@ -20,6 +20,7 @@ ${KDE}/katetextfilterplugin.la
 ${KDE}/katexmlcheckplugin.la
 ${KDE}/katexmltoolsplugin.la
 ${KDE}/kbinaryclock_panelapplet.la
+${KDE}/kcm_kontactknt.la
 ${KDE}/kcm_kuick.la
 ${KDE}/kcm_vim.la
 ${KDE}/kfile_desktop.la
@@ -36,8 +37,10 @@ ${KDE}/libcrashesplugin.la
 ${KDE}/libdirfilterplugin.la
 ${KDE}/libdomtreeviewerplugin.la
 ${KDE}/libfsviewpart.la
+${KDE}/libkaddrbk_geo_xxport.la
 ${KDE}/libkhtmlsettingsplugin.la
 ${KDE}/libkimgallery.la
+${KDE}/libkontact_newstickerplugin.la
 ${KDE}/libkuickplugin.la
 ${KDE}/libminitoolsplugin.la
 ${KDE}/librenaudioplugin.la
@@ -83,6 +86,7 @@ share/applnk/.hidden/validatorsplugin.desktop
 share/applnk/.hidden/webarchiverplugin.desktop
 share/apps/atlantikdesigner/atlantikdesignerui.rc
 share/apps/fsview/fsview_part.rc
+share/apps/kaddressbook/geo_xxportui.rc
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefll/ui.rc
 share/apps/kate/plugins/katehtmltools/ui.rc
@@ -262,6 +266,7 @@ share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/locolor/32x32/apps/ktimemon.png
 share/mimelnk/application/x-webarchive.desktop
 share/services/fsview_part.desktop
+share/services/kaddressbook/geo_xxport.desktop
 share/services/katecppsymbolviewer.desktop
 share/services/katefll_initplugin.desktop
 share/services/katefll_plugin.desktop
@@ -273,16 +278,20 @@ share/services/katepybrowse.desktop
 share/services/katetextfilter.desktop
 share/services/katexmlcheck.desktop
 share/services/katexmltools.desktop
+share/services/kcmkontactknt.desktop
 share/services/kfile_desktop.desktop
 share/services/kfile_folder.desktop
 share/services/kfile_html.desktop
 share/services/kfile_txt.desktop
+share/services/kontact/newstickerplugin.desktop
 share/services/kuick_plugin.desktop
 share/services/renaudiodlg.desktop
 share/services/renimagedlg.desktop
 share/services/vimpart.desktop
 share/services/webarchivethumbnail.desktop
 %%SHARED%%
+@dirrm share/services/kontact
+@dirrm share/services/kaddressbook
 @dirrm share/icons/hicolor/22x22/apps
 @dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/konq-plugins/webarchiver
@@ -321,5 +330,6 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins/katefll
 @dirrm share/apps/kate/plugins/katecppsymbolviewer
+@dirrm share/apps/kaddressbook
 @dirrm share/apps/fsview
 @dirrm share/apps/atlantikdesigner
