@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/09 05:22:22 angelos Exp $
+# $OpenBSD: Makefile,v 1.5 2001/06/30 14:18:01 lebel Exp $
 
 COMMENT=	"banner-ad blocking proxy server"
 
@@ -27,5 +27,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.ini ${PREFIX}/share/examples/junkbuster/
 	${INSTALL_MAN} ${WRKSRC}/junkbuster.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/junkbuster
+	@perl -i -p -e 's/\r//;' ${PREFIX}/share/examples/junkbuster/*.ini
 
 .include <bsd.port.mk>
