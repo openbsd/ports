@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/06 21:16:02 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/07 06:38:12 brad Exp $
 
 COMMENT=		"Ftp daemon which aims to be secure"
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://vsftpd.beasts.org/users/cevans/
 
 ALL_TARGET=		vsftpd
+
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -Wall -W -Wshadow"
 
 SAMPLEDIR=		${PREFIX}/share/examples/vsftpd
 NO_REGRESS=		Yes
