@@ -1,0 +1,22 @@
+$OpenBSD: patch-TTFont_cpp,v 1.1 2001/01/19 04:13:41 jasoni Exp $
+--- TTFont.cpp.orig	Mon Nov  8 04:35:13 1999
++++ TTFont.cpp	Thu Jan 18 18:45:19 2001
+@@ -344,7 +344,7 @@ int TTFont::getXLFDbase( char* result)
+ 
+ 
+ 	// some fonts have only unicode names -> try to convert them to ascii
+-	convbuf = malloc(sizeof(char) * 256);
++	convbuf = (char*)malloc(sizeof(char) * 256);
+ 	int lenFamily;
+ 	char* strFamily = nameTable->getString( 1, 1, &lenFamily, convbuf);
+ 	if( !strFamily) {
+@@ -353,7 +353,7 @@ int TTFont::getXLFDbase( char* result)
+ 	}
+ 
+ 	if (strFamily == convbuf) 
+-		convbuf = malloc(sizeof(char) * 256);
++		convbuf = (char*)malloc(sizeof(char) * 256);
+ 	int lenSub;
+ 	char* strSubFamily = nameTable->getString( 1, 2, &lenSub, convbuf);
+ 	if( !strFamily) {
+
