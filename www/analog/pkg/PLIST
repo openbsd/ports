@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2002/05/15 02:14:19 form Exp $
+@comment $OpenBSD: PLIST,v 1.18 2002/06/26 04:07:16 form Exp $
 bin/analog
 share/analog/anlgform.html
 share/analog/anlgform.pl
@@ -182,7 +182,9 @@ share/analog/lang/fiadom.tab
 share/analog/lang/fidom.tab
 share/analog/lang/fr.lng
 share/analog/lang/fra.lng
+share/analog/lang/fradesc.txt
 share/analog/lang/fradom.tab
+share/analog/lang/frdesc.txt
 share/analog/lang/frdom.tab
 share/analog/lang/frform.html
 share/analog/lang/gr.lng
@@ -226,6 +228,7 @@ share/analog/lang/kr.lng
 share/analog/lang/lt.lng
 share/analog/lang/lv.lng
 share/analog/lang/nl.lng
+share/analog/lang/nla.lng
 share/analog/lang/nladesc.txt
 share/analog/lang/nladom.tab
 share/analog/lang/nldesc.txt
@@ -276,10 +279,12 @@ share/analog/lang/ua.lng
 share/analog/lang/uadesc.txt
 share/analog/lang/uk.lng
 share/analog/lang/uk12.lng
+share/analog/lang/uka.lng
 share/analog/lang/ukdesc.txt
 share/analog/lang/ukdom.tab
 share/analog/lang/us.lng
 share/analog/lang/us24.lng
+share/analog/lang/usa.lng
 share/analog/lang/usdesc.txt
 share/analog/lang/usdom.tab
 share/analog/lang/usform.html
