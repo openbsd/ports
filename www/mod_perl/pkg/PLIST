@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/08/13 02:57:14 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/03/26 02:53:38 brad Exp $
 lib/mod_perl.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Apache.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Apache/Connection.pm
@@ -103,5 +103,4 @@ share/doc/mod_perl/mod_perl.html
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Apache/include
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Apache/Symbol
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Apache/Leak
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Apache/Constants
