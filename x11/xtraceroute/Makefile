@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/24 23:28:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/03 22:09:36 espie Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
 
 DISTNAME=	xtraceroute-0.8.14
 CATEGORIES=	net x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}.tar.gz \
 		ndg_files.tar.gz
@@ -29,9 +29,10 @@ GNU_CONFIGURE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
+FAKE=		Yes
 
 post-install:
-	@mkdir -p ${PREFIX}/share/xtraceroute/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/xtraceroute/
 	${INSTALL_DATA} ${WRKDIR}/hosts.cache ${PREFIX}/share/xtraceroute/
 	${INSTALL_DATA} ${WRKDIR}/networks.cache ${PREFIX}/share/xtraceroute/
 
