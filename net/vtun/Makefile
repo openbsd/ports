@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/07 08:13:43 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/07 08:24:48 brad Exp $
 
 DISTNAME=	vtun-2.0
 CATEGORIES=	net
@@ -16,5 +16,8 @@ CONFIGURE_ARGS+=--localstatedir="/var" \
 		--with-lzo-lib="${LOCALBASE}/lib"
 
 ALL_TARGET=	vtund
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
