@@ -1,0 +1,168 @@
+$OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+--- loaders.c.orig	Fri Oct 30 22:58:47 1998
++++ loaders.c	Thu Apr 12 10:53:14 2001
+@@ -8,7 +8,7 @@ char *loaders_rcs = "$Id: loaders.c,v 1.
+ #include <stdlib.h>
+ #include <sys/types.h>
+ #include <string.h>
+-#include <malloc.h>
++/* #include <malloc.h> We dont need this */
+ #include <errno.h>
+ #include <sys/stat.h>
+ #include <ctype.h>
+@@ -213,7 +213,7 @@ load_blockfile(struct client_state *csp)
+ 	
+ 	p = url_encode(html_code_map, blockfile);
+ 
+-	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
+ 	freez(p);
+ 
+ 	fs->proxy_args = strsav(fs->proxy_args, buf);
+@@ -291,7 +291,7 @@ load_blockfile(struct client_state *csp)
+ 			int errcode;
+ 			char rebuf[BUFSIZ];
+ 
+-			sprintf(rebuf, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf)-1, "^(%s)", b->url->path);
+ 
+ 			errcode = regcomp(b->url->preg, rebuf,
+ 					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
+@@ -399,7 +399,7 @@ load_cookiefile(struct client_state *csp
+ 
+ 	p = url_encode(html_code_map, cookiefile);
+ 
+-	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
+ 
+ 	freez(p);
+ 
+@@ -500,7 +500,7 @@ load_cookiefile(struct client_state *csp
+ 			int errcode;
+ 			char rebuf[BUFSIZ];
+ 
+-			sprintf(rebuf, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf), "^(%s)", b->url->path);
+ 
+ 			errcode = regcomp(b->url->preg, rebuf,
+ 					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
+@@ -609,7 +609,7 @@ load_trustfile(struct client_state *csp)
+ 	
+ 	p = url_encode(html_code_map, trustfile);
+ 
+-	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
+ 
+ 	freez(p);
+ 
+@@ -696,7 +696,7 @@ load_trustfile(struct client_state *csp)
+ 			int errcode;
+ 			char rebuf[BUFSIZ];
+ 
+-			sprintf(rebuf, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf)-1, "^(%s)", b->url->path);
+ 
+ 			errcode = regcomp(b->url->preg, rebuf,
+ 					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
+@@ -816,7 +816,7 @@ load_forwardfile(struct client_state *cs
+ 	
+ 	p = url_encode(html_code_map, forwardfile);
+ 
+-	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
+ 
+ 	freez(p);
+ 
+@@ -855,7 +855,7 @@ load_forwardfile(struct client_state *cs
+ 			continue;
+ 		}
+ 
+-		strcpy(buf, vec[0]);
++		strncpy(buf, vec[0], sizeof(buf)-1);
+ 
+ 		reject = 1;
+ 
+@@ -906,7 +906,7 @@ load_forwardfile(struct client_state *cs
+ 			int errcode;
+ 			char rebuf[BUFSIZ];
+ 
+-			sprintf(rebuf, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf)-1, "^(%s)", b->url->path);
+ 
+ 			errcode = regcomp(b->url->preg, rebuf,
+ 					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
+@@ -1059,7 +1059,7 @@ strsav(char *old, char *text_to_append)
+ 		}
+ 	}
+ 
+-	strcpy(p + old_len, text_to_append);
++	strncpy(p + old_len, text_to_append, new_len-old_len-1);
+ 	return(p);
+ }
+ 
+@@ -1083,26 +1083,26 @@ savearg(char *c, char *o)
+ 
+ 	if(c && *c) {
+ 		if((c = url_encode(html_code_map, c))) {
+-			sprintf(buf, "<a " OPT "%s\">%s</a> ", c, c);
++			snprintf(buf, sizeof(buf)-1, "<a " OPT "%s\">%s</a> ", c, c);
+ 		}
+ 		freez(c);
+ 	}
+ 	if(o && *o) { 
+ 		if((o = url_encode(html_code_map, o))) {
+ 			if(strncmpic(o, "http://", 7) == 0) {
+-				strcat(buf, "<a href=\"");
+-				strcat(buf, o);
+-				strcat(buf, "\">");
+-				strcat(buf, o);
+-				strcat(buf, "</a>");
++				strncat(buf, "<a href=\"", sizeof(buf)-strlen(buf)-1);
++				strncat(buf, o, sizeof(buf)-strlen(buf)-1);
++				strncat(buf, "\">", sizeof(buf)-strlen(buf)-1);
++				strncat(buf, o, sizeof(buf)-strlen(buf)-1);
++				strncat(buf, "</a>", sizeof(buf)-strlen(buf)-1);
+ 			} else {
+-				strcat(buf, o);
++				strncat(buf, o, sizeof(buf)-strlen(buf)-1);
+ 			}
+ 		}
+ 		freez(o);
+ 	}
+ 
+-	strcat(buf, "<br>\n");
++	strncat(buf, "<br>\n", sizeof(buf)-strlen(buf)-1);
+ 
+ 	proxy_args->invocation = strsav(proxy_args->invocation, buf);
+ }
+@@ -1164,18 +1164,18 @@ end_proxy_args()
+ 
+ 	b = strsav(b, "<h2>Source versions:</h2>\n");
+ 	b = strsav(b, "<pre>");
+-	sprintf(buf, "%s\n", jcc_rcs       );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", parsers_rcs   );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", filters_rcs   );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", loaders_rcs   );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", conn_rcs      );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", bind_rcs      );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", encode_rcs    );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", socks4_rcs    );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", ssplit_rcs    );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", acl_rcs       );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", gnu_regex_rcs );	b = strsav(b, buf);
+-	sprintf(buf, "%s\n", win32_rcs     );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", jcc_rcs       );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", parsers_rcs   );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", filters_rcs   );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", loaders_rcs   );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", conn_rcs      );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", bind_rcs      );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", encode_rcs    );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", socks4_rcs    );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", ssplit_rcs    );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", acl_rcs       );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", gnu_regex_rcs );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf)-1, "%s\n", win32_rcs     );	b = strsav(b, buf);
+ 	b = strsav(b, "</pre>");
+ 
+ #ifdef REGEX

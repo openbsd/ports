@@ -1,0 +1,41 @@
+$OpenBSD: patch-encode_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+--- encode.c.orig	Sat Oct 31 03:58:47 1998
++++ encode.c	Fri Apr 13 20:54:40 2001
+@@ -43,17 +43,17 @@ url_encode(char **code_map, unsigned cha
+ 
+ 		cookie_code_map[' '] = "+";
+ 
+-		sprintf(tmp, "%%%02X", ',');
++		snprintf(tmp, sizeof(tmp)-1, "%%%02X", ',');
+ 		cookie_code_map[','] = strdup(tmp);
+ 
+-		sprintf(tmp, "%%%02X", ';');
++		snprintf(tmp, sizeof(tmp)-1, "%%%02X", ';');
+ 		cookie_code_map[';'] = strdup(tmp);
+ 
+ 		/* for url's, we do full URL encoding.		*/
+ 		/* non-alphanumerics get turned into hex ...	*/
+ 		for(i=0; i < 256; i++) {
+ 			if(isalnum(i) == 0) {
+-				sprintf(tmp, "%%%02X", i);
++				snprintf(tmp, sizeof(tmp)-1, "%%%02X", i);
+ 				url_code_map[i] = strdup(tmp);
+ 			}
+ 		}
+@@ -78,11 +78,14 @@ url_encode(char **code_map, unsigned cha
+ 	}
+ 
+ 	/* each input char can expand to at most 6 chars */
+-	buf = zalloc((strlen((char *) s) + 1) * 6);
++	if ((buf = zalloc((strlen((char *) s) + 1) * 6)) == NULL) {
++	   fprintf(stderr, "%s:%d malloc failed\n", __FILE__, __LINE__);
++	   exit(-1);
++	}
+ 
+ 	for(p = (unsigned char *) buf; (c = *s); s++) {
+ 		if((m = code_map[c])) {
+-			strcpy((char *) p, m);
++			strncpy((char *) p, m, sizeof(buf)-1);
+ 			p += strlen(m);
+ 		} else {
+ 			*p++ = c;

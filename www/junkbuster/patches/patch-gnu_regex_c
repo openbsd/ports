@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnu_regex_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+--- gnu_regex.c.orig	Fri Oct 30 22:58:47 1998
++++ gnu_regex.c	Thu Apr 12 10:53:14 2001
+@@ -4916,7 +4916,7 @@ regerror (errcode, preg, errbuf, errbuf_
+           errbuf[errbuf_size - 1] = 0;
+         }
+       else
+-        strcpy (errbuf, msg);
++        strncpy (errbuf, msg, sizeof(errbuf)-1);
+     }
+ 
+   return msg_size;

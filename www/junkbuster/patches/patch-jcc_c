@@ -1,0 +1,214 @@
+$OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+--- jcc.c.orig	Sat Oct 31 03:58:47 1998
++++ jcc.c	Sat Apr 14 19:12:41 2001
+@@ -226,7 +226,7 @@ chat(struct client_state *csp)
+ 	}
+ 
+ 	if(http->cmd == NULL) {
+-		strcpy(buf, CHEADER);
++		strncpy(buf, CHEADER, sizeof(buf)-1);
+ 		write_socket(csp->cfd, buf, strlen(buf));
+ 		return;
+ 	}
+@@ -369,12 +369,19 @@ chat(struct client_state *csp)
+ 		}
+ 
+ 		if(errno == EINVAL) {
+-			err = zalloc(strlen(CNXDOM) + strlen(http->host));
+-			sprintf(err, CNXDOM, http->host);
++			if ((err = zalloc(strlen(CNXDOM) + strlen(http->host))) == NULL) {
++			   fprintf(stderr, "%s:%d zalloc failed\n", __FILE__, __LINE__);
++			   exit(-1);
++			} 
++			   snprintf(err, (strlen(CNXDOM) + strlen(http->host)) - 1, CNXDOM, http->host);
++			
+ 		} else {
+ 			eno = safe_strerror(errno);
+-			err = zalloc(strlen(CFAIL) + strlen(http->hostport) + strlen(eno));
+-			sprintf(err, CFAIL, http->hostport, eno);
++			if ((err = zalloc(strlen(CFAIL) + strlen(http->hostport) + strlen(eno))) == NULL) {
++			   fprintf(stderr, "%s:%d zalloc failed\n", __FILE__, __LINE__);
++			   exit(-1);
++			}
++			snprintf(err, (strlen(CFAIL) + strlen(http->hostport)) - 1, CFAIL, http->hostport, eno);
+ 		}
+ 
+ 		write_socket(csp->cfd, err, strlen(err));
+@@ -406,8 +413,11 @@ chat(struct client_state *csp)
+ 			}
+ 
+ 			eno = safe_strerror(errno);
+-			err = zalloc(strlen(CFAIL) + strlen(http->hostport) + strlen(eno));
+-			sprintf(err, CFAIL, http->hostport, eno);
++			if ((err = zalloc(strlen(CFAIL) + strlen(http->hostport) + strlen(eno))) == NULL) {
++			   fprintf(stderr, "%s:%d zalloc failed\n", __FILE__, __LINE__);
++			   exit(-1);
++			}
++			snprintf(err,(strlen(CFAIL) + strlen(http->hostport)) - 1, CFAIL, http->hostport, eno);
+ 			write_socket(csp->cfd, err, strlen(err));
+ 
+ 			freez(err);
+@@ -488,7 +498,7 @@ chat(struct client_state *csp)
+ 				fperror(logfp, "");
+ 
+ 				eno = safe_strerror(errno);
+-				sprintf(buf, CFAIL, http->hostport, eno);
++				snprintf(buf, sizeof(buf) - 1, CFAIL, http->hostport, eno);
+ 				freez(eno);
+ 				write_socket(csp->cfd, buf, strlen(buf));
+ 				return;
+@@ -661,7 +671,7 @@ main(int argc, char *argv[])
+ 
+ 			line_num++;
+ 
+-			strcpy(tmp, buf);
++			strncpy(tmp, buf, sizeof(tmp)-1);
+ 
+ 			if((p = strpbrk(tmp, "#\r\n"))) *p = '\0';
+ 
+@@ -678,7 +688,7 @@ main(int argc, char *argv[])
+ 
+ 			while(*p && ((*p == ' ') || (*p == '\t'))) p++;
+ 
+-			strcpy(arg, p);
++			strncpy(arg, p, sizeof(arg)-1);
+ 
+ 			p = arg + strlen(arg) - 1;
+ 
+@@ -692,98 +702,98 @@ main(int argc, char *argv[])
+ 
+ 			savearg(cmd, arg);
+ 
+-			if(strcmp(cmd, "trustfile") == 0) {
++			if(strncmp(cmd, "trustfile", sizeof(cmd)-1) == 0) {
+ 				trustfile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "trust_info_url") == 0) {
++			if(strncmp(cmd, "trust_info_url", sizeof(cmd)-1) == 0) {
+ 				enlist(trust_info, arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "debug") == 0) {
++			if(strncmp(cmd, "debug", sizeof(cmd)-1) == 0) {
+ 				debug |= atoi(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "add-forwarded-header") == 0) {
++			if(strncmp(cmd, "add-forwarded-header", sizeof(cmd)-1) == 0) {
+ 				add_forwarded = 1;
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "single-threaded") == 0) {
++			if(strncmp(cmd, "single-threaded", sizeof(cmd)-1) == 0) {
+ 				multi_threaded = 0;
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "suppress-vanilla-wafer") == 0) {
++			if(strncmp(cmd, "suppress-vanilla-wafer", sizeof(cmd)-1) == 0) {
+ 				suppress_vanilla_wafer = 1;
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "wafer") == 0) {
++			if(strncmp(cmd, "wafer", sizeof(cmd)-1) == 0) {
+ 				enlist(wafer_list, arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "add-header") == 0) {
++			if(strncmp(cmd, "add-header", sizeof(cmd)-1) == 0) {
+ 				enlist(xtra_list,  arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "cookiefile") == 0) {
++			if(strncmp(cmd, "cookiefile", sizeof(cmd)-1) == 0) {
+ 				cookiefile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "logfile") == 0) {
++			if(strncmp(cmd, "logfile", sizeof(cmd)-1) == 0) {
+ 				logfile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "blockfile") == 0) {
++			if(strncmp(cmd, "blockfile", sizeof(cmd)-1) == 0) {
+ 				blockfile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "jarfile") == 0) {
++			if(strncmp(cmd, "jarfile", sizeof(cmd)-1) == 0) {
+ 				jarfile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "listen-address") == 0) {
++			if(strncmp(cmd, "listen-address", sizeof(cmd)-1) == 0) {
+ 				haddr = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "forwardfile") == 0) {
++			if(strncmp(cmd, "forwardfile", sizeof(cmd)-1) == 0) {
+ 				forwardfile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "aclfile") == 0) {
++			if(strncmp(cmd, "aclfile", sizeof(cmd)-1) == 0) {
+ 				aclfile = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "user-agent") == 0) {
++			if(strncmp(cmd, "user-agent", sizeof(cmd)-1) == 0) {
+ 				uagent = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if((strcmp(cmd, "referrer") == 0)
+-			|| (strcmp(cmd, "referer" ) == 0)) {
++			if((strncmp(cmd, "referrer", sizeof(cmd)-1) == 0)
++			|| (strncmp(cmd, "referer", sizeof(cmd)-1) == 0)) {
+ 				referrer = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "from") == 0) {
++			if(strncmp(cmd, "from", sizeof(cmd)-1) == 0) {
+ 				from = strdup(arg);
+ 				continue;
+ 			}
+ 
+-			if(strcmp(cmd, "hide-console") == 0) {
++			if(strncmp(cmd, "hide-console", sizeof(cmd)-1) == 0) {
+ 				hideConsole = 1;
+ 				continue;
+ 			}
+@@ -994,7 +1004,7 @@ main(int argc, char *argv[])
+ 				fprintf(logfp, "%s: can't fork: ", prog);
+ 				fperror(logfp, "");
+ 
+-				sprintf(buf , "%s: can't fork: errno = %d",
++				snprintf(buf , sizeof(buf) - 1,"%s: can't fork: errno = %d",
+ 					prog, errno);
+ 
+ 				write_socket(csp->cfd, buf, strlen(buf));
+@@ -1043,7 +1053,7 @@ safe_strerror(int err)
+ #endif /* NOSTRERROR */
+ 
+ 	if(s == NULL) {
+-		sprintf(buf, "(errno = %d)", err);
++		snprintf(buf, sizeof(buf) - 1,"(errno = %d)", err);
+ 		s = buf;
+ 	}
+ 

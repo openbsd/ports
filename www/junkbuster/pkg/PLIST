@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/19 15:46:33 lebel Exp $
+man/man1/junkbuster.1
+sbin/junkbuster
+share/doc/junkbuster/gpl.html
+share/doc/junkbuster/ijbfaq.html
+share/doc/junkbuster/ijbman.html
+share/examples/junkbuster/junkbstr.ini
+share/examples/junkbuster/saclfile.ini
+share/examples/junkbuster/sblock.ini
+share/examples/junkbuster/scookie.ini
+share/examples/junkbuster/sforward.ini
+share/examples/junkbuster/strust.ini
+@dirrm share/examples/junkbuster
+@dirrm share/doc/junkbuster
