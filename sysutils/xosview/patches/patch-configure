@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2002/03/18 06:51:24 form Exp $
---- configure.orig	Fri Mar 15 08:28:14 2002
-+++ configure	Fri Mar 15 08:32:59 2002
-@@ -1869,20 +1869,63 @@ EOF
+$OpenBSD: patch-configure,v 1.4 2002/06/13 02:54:58 form Exp $
+--- configure.orig	Mon Feb 25 05:05:05 2002
++++ configure	Thu Jun  6 13:39:14 2002
+@@ -1869,20 +1869,66 @@ EOF
  
  			host_dir=bsd
  	host_os=freebsd ;;
@@ -51,10 +51,13 @@ $OpenBSD: patch-configure,v 1.3 2002/03/18 06:51:24 form Exp $
          EXTRALIBS="-lkvm $XPMLIB"
          INSTALL_ARGS='-s -g kmem -m 02555'
  	NetMeter_Default_Setting=True
++	BTRYMETER=btrymeter.o
  	cat >> confdefs.h <<\EOF
  #define XOSVIEW_OPENBSD 1
 +#define HAVE_SWAPCTL 1
 +#define UVM 1
++#define HAVE_BATTERY_METER 1
++#define APM_BATT_ABSENT APM_BATTERY_ABSENT
  EOF
 -
 -
