@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_src_client_opencm_c,v 1.5 2003/05/23 13:22:14 todd Exp $
+$OpenBSD: patch-base_src_client_opencm_c,v 1.6 2003/10/15 13:12:04 todd Exp $
 --- base/src/client/opencm.c.orig	Sat Mar 29 16:15:30 2003
 +++ base/src/client/opencm.c	Tue Apr  1 07:28:01 2003
 @@ -48,6 +48,9 @@

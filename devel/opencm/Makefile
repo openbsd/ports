@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2003/06/12 21:33:36 todd Exp $
+# $OpenBSD: Makefile,v 1.15 2003/10/15 13:12:04 todd Exp $
 
 COMMENT=		"OpenCM change management system"
 COMMENT-docs=		"OpenCM Documentation"
 
-V=			0.1.2alpha5pl2
+V=			0.1.2alpha7pl1
 sV=			-1
 DISTNAME=		opencm-${V}${sV}-src
 PKGNAME=		opencm-${V}
@@ -28,7 +28,6 @@ EXTRACT_SUFX=		.tgz
 USE_GMAKE=		Yes
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--disable-shared --enable-static
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" \
 			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			vl_cv_lib_kerberos=1
@@ -40,7 +39,6 @@ MAKE_ENV= LDFLAGS="${LDFLAGS}"
 NO_REGRESS=	Yes
 
 PSEUDO_FLAVORS=	no_docs
-FLAVORS=	nogc
 FLAVOR?=
 
 MULTI_PACKAGES=
@@ -62,19 +60,11 @@ post-install:
 MAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"
 FAKE_FLAGS+= LIBZ=-lz USOURCE_SUBDIRS="libgdiff src"
 
-.if ${FLAVOR:L:Mnogc}
-
-PATCHDIR=	${.CURDIR}/patches.nogc
-
-.else
-
-LIBGC=-lgc
-
-MAKE_FLAGS+= LIBGC=${LIBGC}
-FAKE_FLAGS+= LIBGC=${LIBGC}
-LIB_DEPENDS+=		gc.1:boehm-gc->=6.1:devel/boehm-gc
-
-.endif
+MAKE_FLAGS+= LIBGC=
+FAKE_FLAGS+= LIBGC=
+LDFLAGS+= -L/usr/local/lib -lgc
+BUILD_DEPENDS=		gc.1:boehm-gc->=6.2:devel/boehm-gc
+LIB_DEPENDS=		gc.1::devel/boehm-gc
 
 PLIST=			${PKGDIR}/PLIST${SUBPACKAGE}
 
