@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/11/21 14:37:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/22 14:16:23 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module that embeds a Perl interpreter into Apache"
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/05/22 14:16:23 naddy Exp $
 
 COMMENT=	"transparently compress Apache output"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 VERSION=	1.3.19.1a
 DISTNAME=	mod_gzip.c

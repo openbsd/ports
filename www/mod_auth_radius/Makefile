@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2003/05/05 00:51:48 henning Exp $
+# $OpenBSD: Makefile,v 1.9 2003/05/22 14:16:23 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 VERSION=	1.5.2
 DISTNAME=	mod_auth_radius

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/22 14:16:23 naddy Exp $
 
 COMMENT=	"Apache MySQL authentication module"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-ONLY_FOR_ARCHS=	alpha i386 m68k powerpc sparc sparc64
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 VERSION=	3.2
 DISTNAME=	mod_auth_mysql-${VERSION}
