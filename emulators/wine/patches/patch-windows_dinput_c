@@ -1,0 +1,21 @@
+$OpenBSD: patch-windows_dinput_c,v 1.1 2003/12/31 04:21:45 espie Exp $
+--- windows/dinput.c.orig	2003-12-31 05:02:09.000000000 +0100
++++ windows/dinput.c	2003-12-31 05:02:35.000000000 +0100
+@@ -382,7 +382,7 @@ static HRESULT WINAPI SysKeyboardAImpl_S
+             ph->dwSize,ph->dwHeaderSize,ph->dwObj,ph->dwHow);
+ 	if (!HIWORD(rguid)) {
+ 		switch ((DWORD)rguid) {
+-		case DIPROP_BUFFERSIZE: {
++		case (DWORD)DIPROP_BUFFERSIZE: {
+ 			LPCDIPROPDWORD	pd = (LPCDIPROPDWORD)ph;
+ 
+ 			TRACE(dinput,"(buffersize=%ld)\n",pd->dwData);
+@@ -1068,7 +1068,7 @@ static HRESULT WINAPI SysMouseAImpl_SetP
+   
+   if (!HIWORD(rguid)) {
+     switch ((DWORD)rguid) {
+-    case DIPROP_BUFFERSIZE: {
++    case (DWORD)DIPROP_BUFFERSIZE: {
+       LPCDIPROPDWORD	pd = (LPCDIPROPDWORD)ph;
+       
+       TRACE(dinput,"buffersize = %ld\n",pd->dwData);

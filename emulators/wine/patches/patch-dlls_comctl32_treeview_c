@@ -1,0 +1,30 @@
+$OpenBSD: patch-dlls_comctl32_treeview_c,v 1.1 2003/12/31 04:21:45 espie Exp $
+--- dlls/comctl32/treeview.c.orig	2003-12-31 04:42:42.000000000 +0100
++++ dlls/comctl32/treeview.c	2003-12-31 04:43:02.000000000 +0100
+@@ -1127,7 +1127,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPA
+   if (listItems>1) {
+      prevsib=NULL;
+      switch ((INT32)ptdi->hInsertAfter) {
+-		case TVI_FIRST: 
++		case (INT32)TVI_FIRST: 
+ 			if (wineItem->parent) {
+ 				wineItem->sibling=parentItem->firstChild;
+ 				parentItem->firstChild=(HTREEITEM)iItem;
+@@ -1137,7 +1137,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPA
+ 			}
+ 			sibItem->upsibling=(HTREEITEM)iItem;
+ 			break;
+-		case TVI_LAST:  
++		case (INT32)TVI_LAST:  
+ 			if (sibItem==wineItem) break;
+ 			while (sibItem->sibling) {
+ 				prevsib=sibItem;
+@@ -1146,7 +1146,7 @@ TREEVIEW_InsertItem32A (WND *wndPtr, WPA
+ 			sibItem->sibling=(HTREEITEM)iItem;
+ 			wineItem->upsibling=sibItem->hItem;
+ 			break;
+-		case TVI_SORT:  
++		case (INT32)TVI_SORT:  
+ 			FIXME (treeview, "Sorted insert not implemented yet\n");
+ 			break;
+ 		default:

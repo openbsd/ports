@@ -1,0 +1,14 @@
+$OpenBSD: patch-ole_ole2nls_c,v 1.1 2003/12/31 04:21:45 espie Exp $
+--- ole/ole2nls.c.orig	2003-12-31 04:59:48.000000000 +0100
++++ ole/ole2nls.c	2003-12-31 04:59:54.000000000 +0100
+@@ -2661,8 +2661,8 @@ static INT32 OLE_GetFormatW(LCID locale,
+    int     datevars=0, timevars=0;
+ 
+    /* make a debug report */
+-   TRACE(ole, "args: 0x%lx, 0x%lx, 0x%lx, time(d=%d,h=%d,m=%d,s=%d), fmt:%s (at %p),
+-   	 %p with max len %d\n",
++   TRACE(ole, "args: 0x%lx, 0x%lx, 0x%lx, time(d=%d,h=%d,m=%d,s=%d), fmt:%s (at %p),\n"
++"   	 %p with max len %d\n",
+ 	 locale, flags, tflags,
+ 	 xtime->wDay, xtime->wHour, xtime->wMinute, xtime->wSecond,
+ 	 debugstr_w(format), format, output, outlen);

@@ -1,5 +1,5 @@
---- msdos/dpmi.c.orig	Thu Feb 25 14:32:56 1999
-+++ msdos/dpmi.c	Tue Nov  9 02:42:00 1999
+--- msdos/dpmi.c.orig	1999-02-25 18:32:56.000000000 +0100
++++ msdos/dpmi.c	2003-12-31 04:57:46.000000000 +0100
 @@ -20,6 +20,7 @@
  #include "process.h"
  #include "callback.h"
@@ -8,20 +8,34 @@
  
  #define DOS_GET_DRIVE(reg) ((reg) ? (reg) - 1 : DRIVE_GetCurrentDrive())
  
-@@ -212,6 +213,7 @@
+@@ -211,22 +212,24 @@ static void DPMI_CallRMCBProc( CONTEXT *
+          * real-mode call structure. */
          if (flag & 1) {
              /* 32-bit DPMI client */
-             __asm__ __volatile__("
-+                 pushl %%si
-                  pushl %%es
-                  pushl %%ds
-                  pushfl
-@@ -221,12 +223,13 @@
-                  popl %%ds
-                  movl %%es,%0
-                  popl %%es
-+                 popl %%si
-              "
+-            __asm__ __volatile__("
+-                 pushl %%es
+-                 pushl %%ds
+-                 pushfl
+-                 movl %4,%%es
+-                 movl %3,%%ds
+-                 lcall %2
+-                 popl %%ds
+-                 movl %%es,%0
+-                 popl %%es
+-             "
++            __asm__ __volatile__("\n"
++"                 pushl %%si\n"
++"                 pushl %%es\n"
++"                 pushl %%ds\n"
++"                 pushfl\n"
++"                 movl %4,%%es\n"
++"                 movl %3,%%ds\n"
++"                 lcall %2\n"
++"                 popl %%ds\n"
++"                 movl %%es,%0\n"
++"                 popl %%es\n"
++"                 popl %%si\n"
++"             "
               : "=g" (es), "=D" (edi)
               : "m" (rmcb->proc_ofs),
                 "g" (ss), "g" (rmcb->regs_sel),

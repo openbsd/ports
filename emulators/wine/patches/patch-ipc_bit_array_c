@@ -1,0 +1,29 @@
+$OpenBSD: patch-ipc_bit_array_c,v 1.1 2003/12/31 04:21:45 espie Exp $
+--- ipc/bit_array.c.orig	2003-12-31 04:53:17.000000000 +0100
++++ ipc/bit_array.c	2003-12-31 04:53:37.000000000 +0100
+@@ -143,9 +143,9 @@ static __inline__ int clear_bit(int bit,
+ {
+   int ret;
+ 
+-  __asm__("xor %1,%1
+-	   btrl %2,%0
+-	   adcl %1,%1"
++  __asm__("xor %1,%1\n"
++"	   btrl %2,%0\n"
++"	   adcl %1,%1"
+ 	  :"=m" (*mem), "=&r" (ret)
+ 	  :"r" (bit));
+   return (ret);
+@@ -154,9 +154,9 @@ static __inline__ int clear_bit(int bit,
+ static __inline__ int set_bit(int bit, int *mem)
+ {
+   int ret;
+-  __asm__("xor %1,%1
+-	   btsl %2,%0
+-	   adcl %1,%1"
++  __asm__("xor %1,%1\n"
++"	   btsl %2,%0\n"
++"	   adcl %1,%1"
+ 	  :"=m" (*mem), "=&r" (ret)
+ 	  :"r" (bit));
+   return (ret);
