@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1.1.1 2002/12/07 06:16:26 marcm Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/04/20 17:36:47 marcm Exp $
 #
 
 # exit on errors, use a sane path and install prefix
@@ -17,16 +17,16 @@ do_notice()
     echo "| After installing, you'll need to do one of the following:"
     echo "| "
     echo "| If you are the only user on the system who wants to use these"
-    echo "| fonts, create ~/.xftconfig with this line:"
+    echo "| fonts, create ~/.fonts.conf with this line:"
     echo "| "
-    echo "| 	dir \"${PREFIX}/${INST_DIR}\""
+    echo "| 	<dir>${PREFIX}/${INST_DIR}</dir>"
     echo "| "
     echo "| To enable the fonts systemwide, you have to edit"
-    echo "| /usr/X11R6/lib/X11/XftConfig and add:"
+    echo "| /etc/fonts/fonts.conf and add:"
     echo "| "
-    echo "| 	dir \"${PREFIX}/${INST_DIR}\""
+    echo "| 	<dir>${PREFIX}/${INST_DIR}</dir>"
     echo "| "
-    echo "| right after dir \"/usr/X11R6/lib/X11/fonts/Type1\". "
+    echo "| to the Font directory list section. "
     echo "| "
     echo "| See http://www.openbsd.org/faq/truetype.html for more details."
     echo "+---------------"
