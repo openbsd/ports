@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2001/09/27 05:45:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.55 2002/01/11 18:56:34 brad Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-clients="PostgreSQL RDBMS client libraries and utilities"
@@ -21,11 +21,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	\
-                ftp://ftp.postgresql.org/pub/v${VERSION}/ \
-		ftp://ftp.crimelabs.net/pub/postgresql/v${VERSION}/ \
 		ftp://download.sourceforge.net/pub/mirrors/postgresql/v${VERSION}/ \
 		ftp://ftp.digex.net/pub/packages/database/postgresql/v${VERSION}/ \
 		ftp://postgresql.readysetnet.com/pub/postgresql/v${VERSION}/ \
+		ftp://ftp.crimelabs.net/pub/postgresql/v${VERSION}/ \
 		ftp://www.ndesign.com.ua/pub/psql/v${VERSION}/ \
 		ftp://looking-glass.usask.ca/pub/postgresql/v${VERSION}/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/v${VERSION}/ \
