@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/08/14 18:40:11 grange Exp $
+# $OpenBSD: Makefile,v 1.32 2003/08/15 08:25:24 grange Exp $
 
 COMMENT=	"english-russian keyboard switcher for X11"
 
@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--with-motif --without-Xaw
 .else
 CONFIGURE_ARGS=	--without-motif --with-Xaw
 .endif
+
+post-patch:
+	@perl -i -pe 's!/usr/!${LOCALBASE}/!' \
+	    ${WRKSRC}/Xrus.{ad,wmaker}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xruskb
