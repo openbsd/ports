@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/06/13 16:12:49 todd Exp $
+# $OpenBSD: Makefile,v 1.22 2001/09/19 20:44:53 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--enable-vga \
 		--enable-fpu --enable-cdrom
 
@@ -25,6 +25,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+= --enable-debugger --enable-disasm --enable-x86-debugger
+CONFIGURE_ARGS+= --enable-readline
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
