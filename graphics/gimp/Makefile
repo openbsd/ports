@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/03/05 18:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2000/03/08 02:46:02 espie Exp $
 
 DISTNAME=	gimp-1.1.17
 CATEGORIES=	graphics
@@ -24,11 +24,12 @@ LIB_DEPENDS=	gtk.1.2:x11/gtk+ \
 
 USE_GMAKE=	Yes
 GNU_CONFIGURE=	Yes
+FAKE=		Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk-config"
+		GTK_CONFIG="${LOCALBASE}/bin/gtk-config"
 
 # People that installed an older version of gimp 1.1.x wound up with
 # shared libs with a major/minor of 1.3 or 1.4 ... these files
@@ -51,6 +52,5 @@ pre-extract:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${PREFIX}/share/aclocal
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
