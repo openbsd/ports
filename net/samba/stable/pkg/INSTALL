@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2001/12/04 00:41:46 dhartmei Exp $
+# $OpenBSD: INSTALL,v 1.1 2001/12/26 19:15:09 brad Exp $
 #
 # Pre/post-installation setup of samba
 

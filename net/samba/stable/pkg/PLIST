@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2001/10/24 15:33:57 dhartmei Exp $
+@comment $OpenBSD: PLIST,v 1.1 2001/12/26 19:15:09 brad Exp $
 bin/convert_smbpasswd
 bin/make_printerdef
 bin/make_smbcodepage
