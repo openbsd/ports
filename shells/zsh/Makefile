@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2000/03/06 17:57:23 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/03/31 16:31:08 espie Exp $
 
 DISTNAME=	zsh-3.0.7
 CATEGORIES=	shells
+NEED_VERSION=	1.240
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
@@ -24,14 +25,14 @@ HAS_CONFIGURE=		Yes
 CONFIGURE_ARGS= --prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 
-# invoke make with STATIC=yes to build a static binary
+FLAVORS=static
 .if defined(STATIC) && ${STATIC:U} == YES
-CONFIGURE_ENV+=	LDFLAGS=-static
-PKGNAME=	${DISTNAME}-static
+FLAVOR=static
 .endif
+FLAVOR?=
 
-post-install:
-	@install-info ${PREFIX}/info/zsh.info ${PREFIX}/info/dir
-#	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+.if ${FLAVOR:L} == "static"
+CONFIGURE_ENV+=	LDFLAGS=-static
+.endif
 
 .include <bsd.port.mk>

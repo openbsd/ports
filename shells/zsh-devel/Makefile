@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/26 02:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/31 16:31:08 espie Exp $
 
 DISTNAME=       zsh-3.1.6
 CATEGORIES=	shells
-NEED_VERSION=	1.233
+NEED_VERSION=	1.240
 MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
@@ -30,10 +30,14 @@ FAKE=		Yes
 post-configure:
 	@perl -pi.bak -e 's,/usr/local,\$${DESTDIR}/usr/local,' ${WRKBUILD}/Makefile
 
-# invoke make with STATIC=yes to build a static binary
+FLAVORS=static
 .if defined(STATIC) && ${STATIC:U} == YES
+FLAVOR=static
+.endif
+FLAVOR?=
+
+.if ${FLAVOR:L} == "static"
 CONFIGURE_ENV+=	LDFLAGS=-static
-PKGNAME=	${DISTNAME}-static
 .endif
 
 
