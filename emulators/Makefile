@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/05/06 13:42:52 form Exp $
+# $OpenBSD: Makefile,v 1.26 2002/12/16 14:34:27 grange Exp $
 
     SUBDIR += BasiliskII
     SUBDIR += bochs
@@ -6,6 +6,7 @@
     SUBDIR += freebsd_lib
     SUBDIR += frodo
     SUBDIR += fuse
+    SUBDIR += fuse-utils
     SUBDIR += ines
     SUBDIR += mastergear
     SUBDIR += redhat
