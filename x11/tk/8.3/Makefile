@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/03/13 15:48:54 sturm Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=    tcl83.1.3::lang/tcl/8.3
+LIB_DEPENDS=    tcl83.1.3:tcl-${VERSION}:lang/tcl/8.3
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	INSTALL="install -c" INSTALL_ROOT="${WRKINST}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/10/08 17:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/03/13 15:48:54 sturm Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_TCLTK:=tcl8_0/}
 
 HOMEPAGE=	http://dev.scriptics.com/software/tcltk/
 
-LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0
+LIB_DEPENDS=	tcl80.1.5:tcl-8.0.5:lang/tcl/8.0
 
 MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 

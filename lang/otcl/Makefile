@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/10/29 22:12:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/03/13 15:48:54 sturm Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	"MIT Object Tcl"
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 
-LIB_DEPENDS=    tk83.1::x11/tk/8.3
+LIB_DEPENDS=    tk83.1:tk->=8.3,<8.4:x11/tk/8.3
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.3/generic \
