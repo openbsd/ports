@@ -1,0 +1,15 @@
+*** source/server.c.orig	Fri Jan 16 03:30:28 1998
+--- source/server.c	Wed May  6 13:46:40 1998
+***************
+*** 54,59 ****
+--- 54,63 ----
+     independent way), please change this (L_cuserid is apparently not ANSI) */
+  #define MAXUSERNAMELEN 32
+  
++ #ifndef SYS_NMLN
++ #define SYS_NMLN 256
++ #endif
++ 
+  #if defined(VMS) || defined(linux)
+  #define MAXNODENAMELEN (MAXPATHLEN+2)
+  #elif defined(SUNOS)
