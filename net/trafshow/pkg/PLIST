@@ -1,2 +1,4 @@
 bin/trafshow
 man/man1/trafshow.1
+lib/trafshow/trafshow.sample
+@dirrm lib/trafshow

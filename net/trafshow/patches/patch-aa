@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Aug 24 00:54:16 1998
-+++ Makefile.in	Fri Aug 28 11:27:04 1998
+--- Makefile.in.orig	Mon Apr 24 07:23:00 2000
++++ Makefile.in	Mon Apr 24 07:23:24 2000
 @@ -55,6 +55,8 @@
  
  CLEANFILES = $(PROG) $(OBJ) $(GENSRC)
@@ -9,12 +9,3 @@
  $(PROG): $(OBJ) @V_PCAPDEP@
  	@rm -f $@
  	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJ) $(LIBS)
-@@ -70,7 +72,7 @@
- install: force
- 	./install-sh -c -s -m 550 -o bin -g @V_GROUP@ $(PROG) $(DESTDIR)$(BINDEST)/$(PROG)
- 	./install-sh -c -m 444 -o bin -g bin $(PROG).1 $(DESTDIR)$(MANDEST)/man1/$(PROG).1
--	./install-sh -c -o root -m 644 .trafshow /etc/$(PROG)
-+	./install-sh -c -o root -m 644 .trafshow /etc/$(PROG).sample
- 
- clean:
- 	rm -f $(CLEANFILES)

@@ -3,24 +3,29 @@
 # Date created:         28 Jan 1998
 # Whom:                 mickey
 #
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/23 15:35:38 kevlo Exp $
 #
 
 DISTNAME=	trafshow-3.1
 CATEGORIES=	net
-FAKE=No
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     mickey@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-GNU_CONFIGURE=YES
-MAN1=		trafshow.1
+GNU_CONFIGURE=	Yes
+FAKE=		Yes
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/trafshow
+	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/lib/trafshow/trafshow.sample
 
 .include <bsd.port.mk>

@@ -1,0 +1,68 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/04/23 15:35:48 kevlo Exp $
+#
+# Pre/post-installation setup of trafshow
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=/etc/trafshow.conf
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| The existing $1 configuration file, ${CONFIG_FILE},"
+    echo "| has NOT been changed.  You may want to compare it to the"
+    echo "| current sample file, ${PREFIX}/lib/trafshow/trafshow.sample,"
+    echo "| and update your configuration as needed."
+    echo "+---------------"
+    echo
+}
+
+# Function: install the system trafshow.conf from the sample
+#
+do_install()
+{
+    cp ${PREFIX}/lib/trafshow/trafshow.sample ${CONFIG_FILE}
+    echo
+    echo "+---------------"
+    echo "| The $1 configuration file, ${CONFIG_FILE},"
+    echo "| has been installed.  Please view this file and change"
+    echo "| the configuration to meet your needs"
+    echo "+---------------"
+    echo
+
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -f $CONFIG_FILE ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
