@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_command_c,v 1.1 2001/02/15 18:51:01 wilfried Exp $
+--- src/command.c.orig	Wed Jan 13 02:33:22 1999
++++ src/command.c	Thu Feb 15 18:45:53 2001
+@@ -1,4 +1,4 @@
+-#include <WINGs.h>
++#include <WINGs/WINGs.h>
+ #include <WMaker.h>
+ /*--------------------------------*-C-*---------------------------------*
+  * File:	command.c
