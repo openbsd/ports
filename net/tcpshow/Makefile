@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/14 13:23:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/18 23:35:41 avsm Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
+
+COMMENT=	"decode tcpdump(1) output"
 
 DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-NEED_VERSION=	1.330
-MASTER_SITES=	http://people.freebsd.org/~obrien/Distfiles/
+NEED_VERSION=	1.401
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
 DISTFILES=	tcpshow.c tcpshow.1
 
-EXTRACT_CASES=*)cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
+EXTRACT_CASES=	*)cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
 MAINTAINER=	ports@openbsd.org
 
