@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2002/03/11 16:20:00 brad Exp $
+--- Makefile.in.orig	Mon Mar 11 11:09:53 2002
++++ Makefile.in	Mon Mar 11 11:10:04 2002
+@@ -143,7 +143,6 @@ install:        all
+ 		$(LIBTOOL) --mode=install $(INSTALL) libpcre.la $(DESTDIR)/$(LIBDIR)/libpcre.la
+ 		echo "$(LIBTOOL) --mode=install $(INSTALL) libpcreposix.la $(DESTDIR)/$(LIBDIR)/libpcreposix.la"
+ 		$(LIBTOOL) --mode=install $(INSTALL) libpcreposix.la $(DESTDIR)/$(LIBDIR)/libpcreposix.la
+-		$(LIBTOOL) --finish $(DESTDIR)/$(LIBDIR)
+ 		$(mkinstalldirs) $(DESTDIR)/$(INCDIR)
+ 		$(INSTALL_DATA) pcre.h $(DESTDIR)/$(INCDIR)/pcre.h
+ 		$(INSTALL_DATA) $(top_srcdir)/pcreposix.h $(DESTDIR)/$(INCDIR)/pcreposix.h
