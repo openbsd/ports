@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.40 2002/03/08 23:51:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.41 2002/03/10 17:48:48 lebel Exp $
 
 COMMENT=	"vi clone, many additional features, snapshot version"
 COMMENT-lang=	"vi clone, NLS subpackage, snapshot version"
 
-DISTNAME=	vim-6.1
-REVISION=	38
-VERSION=	6.1a.${REVISION}
+DISTNAME=	vim-6.1b
+#REVISION=      00
+#VERSION=       6.1b.${REVISION}
+VERSION=	6.1b
 PKGNAME=	vim-${VERSION}
-DISTNAME=	vim-6.1a
+DISTNAME=	vim-6.1b
 DIR_VERSION=	${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 NEED_VERSION=	1.500
@@ -27,10 +28,10 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-_patches!=	jot -w%03d - 1 ${REVISION} 1
-.for p in ${_patches}
-PATCHFILES+=	6.1a.${p}:0
-.endfor
+#_patches!=	jot -w%03d - 1 ${REVISION} 1
+#.for p in ${_patches}
+#PATCHFILES+=	6.1b.${p}:0
+#.endfor
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")

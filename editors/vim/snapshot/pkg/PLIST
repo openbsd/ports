@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2002/02/24 22:15:12 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.27 2002/03/10 17:48:48 lebel Exp $
 @pkgcfl vim-*
 !%%no_x11%%
 bin/ex
@@ -36,7 +36,12 @@ share/vim/${DIR_VERSION}/colors/zellner.vim
 share/vim/${DIR_VERSION}/compiler/README.txt
 share/vim/${DIR_VERSION}/compiler/ant.vim
 share/vim/${DIR_VERSION}/compiler/bcc.vim
+share/vim/${DIR_VERSION}/compiler/irix5_c.vim
+share/vim/${DIR_VERSION}/compiler/irix5_cpp.vim
 share/vim/${DIR_VERSION}/compiler/jikes.vim
+share/vim/${DIR_VERSION}/compiler/mips_c.vim
+share/vim/${DIR_VERSION}/compiler/mipspro_c89.vim
+share/vim/${DIR_VERSION}/compiler/mipspro_cpp.vim
 share/vim/${DIR_VERSION}/compiler/msvc.vim
 share/vim/${DIR_VERSION}/compiler/splint.vim
 share/vim/${DIR_VERSION}/compiler/tex.vim
@@ -210,6 +215,7 @@ share/vim/${DIR_VERSION}/indent/matlab.vim
 share/vim/${DIR_VERSION}/indent/ocaml.vim
 share/vim/${DIR_VERSION}/indent/perl.vim
 share/vim/${DIR_VERSION}/indent/postscr.vim
+share/vim/${DIR_VERSION}/indent/prolog.vim
 share/vim/${DIR_VERSION}/indent/python.vim
 share/vim/${DIR_VERSION}/indent/readline.vim
 share/vim/${DIR_VERSION}/indent/ruby.vim
