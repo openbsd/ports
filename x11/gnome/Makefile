@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/06/22 03:28:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/07/25 00:32:57 marcm Exp $
 
      SUBDIR += applets2
      SUBDIR += bonobo
@@ -7,6 +7,7 @@
      SUBDIR += controlcenter2
      SUBDIR += desktop
      SUBDIR += eel
+     SUBDIR += eog
      SUBDIR += gail
      SUBDIR += gdm
      SUBDIR += icon-theme
