@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/24 19:30:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/09/11 23:16:48 avsm Exp $
 bin/pear
 bin/pearize
 bin/php-config
@@ -84,6 +84,7 @@ include/php/ext/standard/md5.h
 include/php/ext/standard/microtime.h
 include/php/ext/standard/pack.h
 include/php/ext/standard/pageinfo.h
+include/php/ext/standard/parsedate.h
 include/php/ext/standard/php_array.h
 include/php/ext/standard/php_assert.h
 include/php/ext/standard/php_browscap.h
@@ -184,6 +185,8 @@ lib/php/DB/storage.php
 lib/php/DB/sybase.php
 lib/php/Date/Calc.php
 lib/php/Date/Human.php
+lib/php/File.php
+lib/php/File/CSV.php
 lib/php/File/Find.php
 lib/php/File/Passwd.php
 lib/php/File/SearchReplace.php
@@ -208,8 +211,13 @@ lib/php/Log/sql.php
 lib/php/Log/syslog.php
 lib/php/Mail.php
 lib/php/Mail/RFC822.php
+lib/php/Mail/mime.php
+lib/php/Mail/mimeDecode.php
+lib/php/Mail/mimePart.php
 lib/php/Mail/sendmail.php
 lib/php/Mail/smtp.php
+lib/php/Mail/xmail.dtd
+lib/php/Mail/xmail.xsl
 lib/php/Net/Curl.php
 lib/php/Net/Dig.php
 lib/php/Net/SMTP.php

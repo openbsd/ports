@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-domxml,v 1.1 2002/09/11 23:16:48 avsm Exp $
+lib/php/modules/domxml.so

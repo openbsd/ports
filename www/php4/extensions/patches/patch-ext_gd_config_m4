@@ -1,7 +1,16 @@
-$OpenBSD: patch-ext_gd_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
---- ext/gd/config.m4.orig	Wed Apr 24 01:18:06 2002
-+++ ext/gd/config.m4	Wed Jun 19 12:39:19 2002
-@@ -209,6 +209,7 @@ PHP_ARG_WITH(gd, for GD support,
+$OpenBSD: patch-ext_gd_config_m4,v 1.2 2002/09/11 23:16:48 avsm Exp $
+--- ext/gd/config.m4.orig	Wed Apr 24 00:18:06 2002
++++ ext/gd/config.m4	Sun Sep  8 00:28:41 2002
+@@ -135,6 +135,8 @@ AC_DEFUN(PHP_GD_FREETYPE2,[
+     done
+     
+     if test -n "$FREETYPE2_DIR" ; then
++      PHP_ADD_LIBRARY_WITH_PATH(Xfont, $FREETYPE2_DIR/lib, GD_SHARED_LIBADD)
++      PHP_ADD_LIBRARY_WITH_PATH(fntstubs, $FREETYPE2_DIR/lib, GD_SHARED_LIBADD)
+       PHP_ADD_LIBRARY_WITH_PATH(freetype, $FREETYPE2_DIR/lib, GD_SHARED_LIBADD)
+       PHP_ADD_INCLUDE($FREETYPE2_INC_DIR)
+       AC_DEFINE(USE_GD_IMGSTRTTF, 1, [ ])
+@@ -209,6 +211,7 @@ PHP_ARG_WITH(gd, for GD support,
  [  --with-gd[=DIR]         Include GD support (DIR is GD's install dir).])
  
  if test "$PHP_GD" != "no"; then
@@ -9,7 +18,7 @@ $OpenBSD: patch-ext_gd_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
  
    PHP_EXTENSION(gd, $ext_shared)
    PHP_SUBST(GD_SHARED_LIBADD)
-@@ -239,6 +240,7 @@ dnl Various checks for GD features
+@@ -239,6 +242,7 @@ dnl Various checks for GD features
      done
    done
  
@@ -17,7 +26,7 @@ $OpenBSD: patch-ext_gd_config_m4,v 1.1.1.1 2002/06/24 19:27:48 avsm Exp $
    if test -n "$GD_INCLUDE" -a -n "$GD_LIB" ; then
      PHP_ADD_LIBRARY_WITH_PATH(gd, $GD_LIB, GD_SHARED_LIBADD)
      AC_DEFINE(HAVE_LIBGD,1,[ ])
-@@ -246,16 +248,6 @@ dnl Various checks for GD features
+@@ -246,16 +250,6 @@ dnl Various checks for GD features
    else
      AC_MSG_ERROR([Unable to find libgd.(a|so) anywhere under $GD_SEARCH_PATHS])
    fi 

@@ -1,0 +1,4 @@
+This PHP extension allows the parsing of XML formatted files using
+the DOM API.
+
+WWW: ${HOMEPAGE}

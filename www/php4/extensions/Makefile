@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/08/17 01:33:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.14 2002/09/11 23:16:48 avsm Exp $
 
 PKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -64,6 +64,17 @@ COMMENT-dbase=		"dBase database access extensions for php4"
 CONFIGURE_ARGS+=	--enable-dbase=shared
 .endif
 
+# domxml
+PSEUDO_FLAVORS+=	no_domxml
+.if ${FLAVOR:L:Mno_domxml}
+CONFIGURE_ARGS+=	--disable-dom
+.else
+MULTI_PACKAGES+=	-domxml
+COMMENT-domxml=		"manipulate XML via the DOM API in php4"
+CONFIGURE_ARGS+=	--with-dom=shared,${LOCALBASE}
+DOMXML_DEPENDS=		xml2.6::textproc/libxml
+.endif
+
 # filepro
 PSEUDO_FLAVORS+=	no_filepro
 .if ${FLAVOR:L:Mno_filepro}
@@ -82,13 +93,15 @@ CONFIGURE_ARGS+=	--without-gd --without-xpm-dir --without-ttf \
 .else
 MULTI_PACKAGES+=	-gd
 COMMENT-gd=		"image manipulation extensions for php4"
-GD_DEPENDS=		gd.18::graphics/gd ${GRAPHIC_DEPENDS}
-CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE} ${GRAPHIC_CONFIG}
+GD_DEPENDS=		gd.18::graphics/gd ${GRAPHIC_DEPENDS} \
+			ttf.1::print/freetype
+CONFIGURE_ARGS+=	--with-gd=shared,${LOCALBASE} ${GRAPHIC_CONFIG} \
+			--with-ttf=shared,${LOCALBASE} --without-freetype-dir
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		yes
-CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE} --with-ttf=shared,${LOCALBASE} --without-freetype-dir
+CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 .else
-CONFIGURE_ARGS+=	--without-xpm-dir --without-freetype-dir --without-ttf
+CONFIGURE_ARGS+=	--without-xpm-dir 
 .endif
 .endif
 
@@ -223,6 +236,18 @@ CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS+=		snmp.42::net/ucd-snmp
 .endif
 
+# pspell
+#PSEUDO_FLAVORS+=	no_pspell
+#.if ${FLAVOR:L:Mno_pspell}
+#CONFIGURE_ARGS+=	--without-pspell
+#.else
+#MULTI_PACKAGES+=	-pspell
+#COMMENT-pspell=		"spell checking extensions for php4"
+#CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
+#LIB_DEPENDS+=		pspell-modules::textproc/pspell \
+#			aspell.11::textproc/aspell
+#.endif
+
 # sybase-ct
 PSEUDO_FLAVORS+=	no_sybase_ct
 .if ${FLAVOR:L:Mno_sybase_ct}
@@ -255,7 +280,7 @@ MULTI_PACKAGES+=	-xslt
 COMMENT-xslt=		"xslt transformation extensions for php4"
 CONFIGURE_ARGS+=	--enable-xslt=shared --with-xslt-sablot=shared=${LOCALBASE} \
 			--with-expat-dir=shared,${LOCALBASE}
-XSLT_DEPENDS=		sablot.95::textproc/sablotron expat.2::textproc/expat
+XSLT_DEPENDS=		sablot.96::textproc/sablotron expat.2::textproc/expat
 .endif
 
 .for i in ${MULTI_PACKAGES}

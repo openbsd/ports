@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-recommended,v 1.5 2002/08/17 01:39:26 avsm Exp $
---- php.ini-recommended.orig	Wed Apr 24 02:51:50 2002
-+++ php.ini-recommended	Sat Aug 17 02:34:55 2002
+$OpenBSD: patch-php_ini-recommended,v 1.6 2002/09/11 23:16:48 avsm Exp $
+--- php.ini-recommended.orig	Wed Aug 14 23:35:36 2002
++++ php.ini-recommended	Sat Aug 24 12:54:49 2002
 @@ -361,9 +361,6 @@ default_mimetype = "text/html"
  ; UNIX: "/path1:/path2"  
  ;include_path = ".:/php/includes"
@@ -119,16 +119,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.5 2002/08/17 01:39:26 avsm Exp $
  
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ;sendmail_path =
-@@ -753,7 +671,7 @@ session.cache_limiter = nocache
- session.cache_expire = 180
- 
- ; use transient sid support if enabled by compiling with --enable-trans-sid.
--session.use_trans_sid = 1
-+session.use_trans_sid = 0
- 
- url_rewriter.tags = "a=href,area=href,frame=src,input=src,form=fakeentry"
- 
-@@ -884,6 +802,41 @@ sockets.use_system_read = On
+@@ -892,6 +810,41 @@ sockets.use_system_read = On
  ;fbsql.max_results = 128
  ;fbsql.batchSize = 1000
  

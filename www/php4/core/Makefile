@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/08/12 04:27:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/11 23:16:48 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 PKGNAME=	php4-core-${V}
@@ -56,4 +56,3 @@ CONFIGURE_ARGS+= --with-recode=${LOCALBASE}
 .endif
 
 .include <bsd.port.mk>
-
