@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/02 14:08:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/06 13:01:53 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
-NEED_VERSION=		1.305
-VERSION=		2.0.1
+NEED_VERSION=		1.451
+VERSION=		1.1
 DISTNAME=		koffice-${VERSION}
 DIST_SUBDIR=		kde
 
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
+MASTER_SITE_SUBDIR=	stable/koffice-${VERSION}/src/
 EXTRACT_SUFX=		.tar.bz2
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	zsh:zsh-*:shells/zsh/stable \
 				uic::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 
+MODULES=	qt2
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
-CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
+CONFIGURE_ARGS=		${MODQT_CONFIGURE_ARGS}
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-debug
@@ -30,8 +30,7 @@ CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
-CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
@@ -39,7 +38,7 @@ pre-build:
 	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
 
 # Ensure qt2 will always be at the front
-MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
