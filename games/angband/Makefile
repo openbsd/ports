@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/07 02:38:56 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/02/25 04:43:59 danh Exp $
 # Original from: Ben Harrison, Robert Ruehlmann
 
 DISTNAME=	angband-291-src
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://thangorodrim.angband.org/
 
-MAINTAINER=	ci2@gmx.net
+MAINTAINER=	Carsten Ilchmann <ci2@gmx.net>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 15:41:59 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/25 04:44:00 danh Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
@@ -8,7 +8,7 @@ CATEGORIES=     	games
 
 HOMEPAGE=		http://www.geocities.com/SiliconValley/Heights/3222/frotz.html
 
-MAINTAINER=		ci2@gmx.net
+MAINTAINER=		Carsten Ilchmann <ci2@gmx.net>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes

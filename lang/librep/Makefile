@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/21 17:56:26 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/25 04:44:00 danh Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 VERSION=	0.13.4
@@ -13,7 +13,7 @@ HOMEPAGE=	http://librep.sourceforge.net/
 LIB_DEPENDS=	gdbm.2::databases/gdbm \
 		intl.1::devel/gettext
 
-MAINTAINER=	robbie@g7.org
+MAINTAINER=	Robbie Gates <robbie@g7.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

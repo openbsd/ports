@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/23 14:09:13 danh Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/25 04:44:00 danh Exp $
 
 VERSION=	0.36
 DISTNAME=	sawfish-${VERSION}
@@ -16,7 +16,7 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		rep.10::lang/librep \
 		gdk_imlib.19::graphics/imlib
 
-MAINTAINER=	robbie@g7.org
+MAINTAINER=	Robbie Gates <robbie@g7.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

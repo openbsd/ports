@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/21 18:08:35 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/25 04:44:00 danh Exp $
 # Original from: John Harper <jsh@users.sourceforge.net>
 
 VERSION=	0.15
@@ -14,7 +14,7 @@ LIB_DEPENDS= 	gtk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
 		rep.10::lang/librep
 
-MAINTAINER=	robbie@g7.org
+MAINTAINER=	Robbie Gates <robbie@g7.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
