@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-demos,v 1.1 2001/01/03 00:02:58 matt Exp $
+@comment $OpenBSD: PLIST-demos,v 1.2 2003/03/05 22:09:44 naddy Exp $
 bin/DNDDemo
 bin/UTMXmText
 bin/aicon
@@ -31,7 +31,6 @@ bin/simple_drop
 bin/simpledrop
 bin/spin_box
 bin/tic_mark
-bin/todo
 bin/uilsymdump
 bin/xmanimate
 bin/xmapdef
@@ -47,7 +46,6 @@ lib/X11/app-defaults/XmdI18nInput
 lib/X11/app-defaults/XmdPeriodic
 lib/X11/app-defaults/XmdSampler2_0
 lib/X11/app-defaults/XmdSetDate
-lib/X11/app-defaults/XmdTodo
 lib/X11/help/aicon.help
 lib/X11/help/draw.help
 lib/X11/help/filemanager.help
@@ -55,7 +53,6 @@ lib/X11/help/getsubres.help
 lib/X11/help/helpOn.help
 lib/X11/help/i18ninput.help
 lib/X11/help/sampler2_0.help
-lib/X11/help/todo.help
 lib/X11/help/xmanimate.help
 lib/X11/motifshell/help
 lib/X11/motifshell/membership
@@ -103,7 +100,6 @@ man/man1/simpleDemo.1
 man/man1/simpledrop.1
 man/man1/spin_box.1
 man/man1/tic_mark.1
-man/man1/todo.1
 man/man1/xmanimate.1
 @dirrm lib/X11/help
 @dirrm lib/X11/motifshell
