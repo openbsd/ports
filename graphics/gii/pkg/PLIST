@@ -3,7 +3,9 @@ bin/xsendbut
 include/ggi/errors.h
 include/ggi/events.h
 include/ggi/gg.h
+include/ggi/gii-unix.h
 include/ggi/gii.h
+include/ggi/input/lin_kbd.h
 include/ggi/input/xwin.h
 include/ggi/internal/gii-dl.h
 include/ggi/internal/gii.h
@@ -16,6 +18,9 @@ lib/ggi/filter/mouse.so
 lib/ggi/filter/save.a
 lib/ggi/filter/save.la
 lib/ggi/filter/save.so
+lib/ggi/input/file.a
+lib/ggi/input/file.la
+lib/ggi/input/file.so
 lib/ggi/input/linux_mouse.a
 lib/ggi/input/linux_mouse.la
 lib/ggi/input/linux_mouse.so
@@ -39,10 +44,10 @@ lib/ggi/input/xwin.la
 lib/ggi/input/xwin.so
 lib/libgg.a
 lib/libgg.la
-lib/libgg.so.0.1
+lib/libgg.so.0.6
 lib/libgii.a
 lib/libgii.la
-lib/libgii.so.0.1
+lib/libgii.so.0.6
 @exec /sbin/ldconfig -m %B
 man/man1/mhub.1
 man/man3/giiAddEventMask.3gii
@@ -52,7 +57,6 @@ man/man3/giiEventRead.3gii
 man/man3/giiEventSend.3gii
 man/man3/giiExit.3gii
 man/man3/giiGetEventMask.3gii
-man/man3/giiGetSelectFdset.3gii
 man/man3/giiInit.3gii
 man/man3/giiJoinInputs.3gii
 man/man3/giiOpen.3gii

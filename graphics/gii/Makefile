@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2000/05/22 10:28:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2000/05/22 11:40:05 fgsch Exp $
 
-DISTNAME=       libgii-0.1
+DISTNAME=       libgii-0.6
 CATEGORIES=     graphics
 NEED_VERSION=	1.73
 
@@ -11,21 +11,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   ftp://sunsite.unc.edu/pub/ggi/ggi/2_0_beta_1/ \
-		ftp://synergy.caltech.edu/pub/ggi/ggi/2_0_beta_1/ \
-		ftp://www.us.ggi-project.org/pub/ggi/ggi/2_0_beta_1/ \
-		ftp://gd.tuwien.ac.at/graphics/libs/ggi/ggi/2_0_beta_1/ \
-		ftp://ftp.gts.cz/pub/linux/ggi/ggi/2_0_beta_1/ \
-		ftp://ftp.via.ecp.fr/pub/ggi/ggi/2_0_beta_1/ \
-		ftp://ftp.unina.it/pub/linux/ggi/ggi/2_0_beta_1/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/gui/ggi/ggi/2_0_beta_1/
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_2.1/
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_GMAKE=	Yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 
-FAKE=		yes
+FAKE=		Yes
 
 DOCDIR=		${PREFIX}/share/doc/gii
 
