@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/15 10:32:06 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/04/17 19:02:39 naddy Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.robertk.com/pub/Source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
-LIB_DEPENDS=		fltk::x11/fltk
+LIB_DEPENDS=		fltk.::x11/fltk
 BUILD_DEPENDS=		${LOCALBASE}/lib/libflvw.a::x11/flvw
 
 USE_X11=		Yes
