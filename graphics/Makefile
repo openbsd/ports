@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/03 03:05:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/03 03:51:17 angelos Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -40,7 +40,7 @@
 #    SUBDIR += photopc
 #    SUBDIR += pixmap
 #    SUBDIR += plotmtv
-#    SUBDIR += png
+     SUBDIR += png
 #    SUBDIR += povray
 #    SUBDIR += qvplay
 #    SUBDIR += sced
@@ -65,7 +65,7 @@
 #    SUBDIR += xmfract
 #    SUBDIR += xmorph
 #    SUBDIR += xmountains
-#    SUBDIR += xpaint
+     SUBDIR += xpaint
      SUBDIR += xpdf
      SUBDIR += xpm
 #    SUBDIR += xv
