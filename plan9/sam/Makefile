@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/18 05:02:09 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:12:38 rohee Exp $
 #
 
 DISTNAME=		sam-4.3-19980506
 CATEGORIES=             plan9
-MAINTAINER=		msfriedl@cs.fau.de
+MAINTAINER=		markus.friedl@informatik.uni-erlangen.de
 
 MASTER_SITES=		ftp://netlib.bell-labs.com/netlib/research/ \
 			http://netlib.bell-labs.com/netlib/research/
