@@ -1,46 +1,48 @@
-# $OpenBSD: Makefile,v 1.12 2001/11/30 09:18:42 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/02/15 19:17:54 nino Exp $
 
 COMMENT=		"GNOME control center"
-V=			1.4.0.1
-DISTNAME=		control-center-${V}
+
+DISTNAME=		control-center-1.4.0.4
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.498
-HOMEPAGE=		http://www.gnome.org
+NEED_VERSION=   	1.504
+HOMEPAGE=		http://www.gnome.org/
+
 MAINTAINER=		Nils Nordman <nino@nforced.com>
 
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/control-center
-
-PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-                        ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
-                        patch-*
+EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
 			gnome.36,gnorba,gtkxmhtml::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
+BUILD_DEPENDS=		:zsh-*:shells/zsh/stable
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
 			:gtk-engines->=0.12:x11/gtk-engines
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
+MAKE_FLAGS+=		LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--localstatedir=/var/gnome
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -loaf"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-extract:
-	@mv ${WRKSRC}/capplets/screensaver-properties/screensaver-desktops/Superquadrics.desktop.i \
-	    ${WRKSRC}/capplets/screensaver-properties/screensaver-desktops/Superquadrics.desktop.in;
+pre-build:
+	@ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh; \
+	cd ${WRKSRC}/control-center; ../xml-i18n-merge ../po gnomecc.desktop.in gnomecc.desktop -d -p
+
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/control-center; \
-	cp -pR ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/control-center/
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/control-center/
 
 .include <bsd.port.mk>

@@ -1,26 +1,14 @@
-$OpenBSD: patch-configure,v 1.4 2001/09/20 18:39:13 naddy Exp $
---- configure.orig	Wed Mar 28 21:46:14 2001
-+++ configure	Thu Sep 20 18:45:18 2001
-@@ -871,7 +871,10 @@ XML_I18N_MERGE_OAF_RULE='\%.oaf : \%.oaf
- XML_I18N_MERGE_KEYS_RULE='\%.keys : \%.keys.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
- 	$(top_builddir)/xml-i18n-merge -k $(top_srcdir)/po $< $*.keys'
- 
--XML_I18N_MERGE_DESKTOP_RULE='\%.desktop : \%.desktop.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
-+#XML_I18N_MERGE_DESKTOP_RULE='\%.desktop : \%.desktop.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
-+#	$(top_builddir)/xml-i18n-merge -d $(top_srcdir)/po $< $*.desktop'
-+XML_I18N_MERGE_DESKTOP_RULE='.SUFFIXES: .desktop .desktop.in\
-+.desktop.in.desktop: $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
- 	$(top_builddir)/xml-i18n-merge -d $(top_srcdir)/po $< $*.desktop'
- 
- XML_I18N_MERGE_DIRECTORY_RULE='\%.directory : \%.directory.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
-@@ -4380,6 +4383,10 @@ else
-   echo "$ac_t""no" 1>&6
+$OpenBSD: patch-configure,v 1.5 2002/02/15 19:17:54 nino Exp $
+--- configure.orig	Sun Feb  3 00:04:00 2002
++++ configure	Wed Feb  6 00:05:54 2002
+@@ -7945,6 +7945,10 @@ else
  fi
  
-+	   fi
-+
-+	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+	     LIBS="$LIBS -lintl";
  	   fi
++	
++       if test "$gt_cv_func_gettext_libintl" = "yes"; then
++           LIBS="$LIBS -lintl";
++       fi
  
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
+ 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then

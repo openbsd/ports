@@ -1,7 +1,7 @@
-$OpenBSD: patch-control-center_Makefile_in,v 1.1 2001/09/20 18:39:13 naddy Exp $
---- control-center/Makefile.in.orig	Thu Sep 20 18:32:49 2001
-+++ control-center/Makefile.in	Thu Sep 20 18:33:54 2001
-@@ -164,8 +164,7 @@ splash_DATA = ccsplash.png
+$OpenBSD: patch-control-center_Makefile_in,v 1.2 2002/02/15 19:17:54 nino Exp $
+--- control-center/Makefile.in.orig	Sun Feb  3 00:04:57 2002
++++ control-center/Makefile.in	Tue Feb  5 23:27:49 2002
+@@ -205,8 +205,7 @@ splash_DATA = ccsplash.png
  EXTRA_DIST = gnomecc.desktop.in cappletConf.sh.in $(appicon_DATA) $(splash_DATA)
  
  sysdir = $(datadir)/gnome/apps/Settings
