@@ -1,5 +1,5 @@
-WNNINC		= -I%X11BASE%/include/wnn
-WNNLIB		= -L%X11BASE%/lib -ljd
-WNN_RKPATH      = '"./rk:$$ONEW_WNN_ROMKAND:$$ONEW_ROMKAND:$$HOME/.rk:%LOCALBASE%/lib/wnn/ja_JP/rk:/tmp/onew_rktabs/wnn"'
+WNNINC		= -I%PREFIX%/include/wnn
+WNNLIB		= -L%PREFIX%/lib -ljd
+WNN_RKPATH      = '"./rk:$$ONEW_WNN_ROMKAND:$$ONEW_ROMKAND:$$HOME/.rk:%PREFIX%/lib/wnn/ja_JP/rk:/tmp/onew_rktabs/wnn"'
 RKKLIBS		= $(WNNLIB)
 RKKOBJS		= $(WNNOBJ)

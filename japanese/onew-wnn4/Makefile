@@ -1,89 +1,36 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/09 17:36:45 espie Exp $
-
-BROKEN=		depend wnn is broken.
+# $OpenBSD: Makefile,v 1.12 2000/04/28 23:19:54 espie Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
-PKGNAME?=	ja-onew-wnn4-2.2.10
+PKGNAME=	ja-onew-wnn4-2.2.10
 CATEGORIES=	japanese
-NEED_VERSION=	 1.230
-FAKE=No
+NEED_VERSION=	1.230
+FAKE=		Yes
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	espie@cvs.openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
-LIB_DEPENDS=	${LIB_INPUT_METHOD}
+BUILD_DEPENDS=	jserver::japanese/Wnn
 
-PATCHDIR=	${.CURDIR}/../onew-wnn4/patches
-FILESDIR=	${.CURDIR}/../onew-wnn4/files
-WRKDIST=		${WRKDIR}/onew
-# A value 'all' must not be set to TARGET.
+WRKDIST=	${WRKDIR}/onew
 ALL_TARGET=	
 
-.if !defined(CANNA) && !defined(WNN4) && !defined(WNN6)
-# For this port
-WNN4=			yes
-.endif
-# Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
-# LIB_DEPENDS, etc.
-.if defined(CANNA)
-INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna.1.::japanese/Canna
-JPLIB+=			-lcanna
-.endif
-.if defined(WNN4)
-INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver::japanese/Wnn
-JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd 
-.elif defined(WNN6)
-INPUT_METHOD+=		wnn6
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver::japanese/Wnn
-JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd 
-.endif
-#
-# Make a value of INPUT_METHOD
-.if defined(INPUT_METHOD)
-INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
-.endif
-#
-ONEW_CONF=	${FILESDIR}/ONEW_CONF-for${INPUT_METHOD}
-LIB_NAME=	libonew${INPUT_METHOD}.a
-PORT_DOCDIR=	${LOCALBASE}/share/doc/ja-onew${INPUT_METHOD}
+ONEW_CONF=	${FILESDIR}/ONEW_CONF-for-wnn4
+LIB_NAME=	libonew-wnn4.a
+PORT_DOCDIR=	${PREFIX}/share/doc/ja-onew-wnn4
 
 post-patch:
-	sed	-e 's,%LOCALBASE%,${LOCALBASE},g' \
-		-e 's,%X11BASE%,${X11BASE},g' \
+	sed	-e 's,%PREFIX%,${PREFIX},g' \
 		${ONEW_CONF} > ${WRKSRC}/ONEW_CONF
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libonew.a ${LOCALBASE}/lib/${LIB_NAME}
-.if !defined(NOPORTDOCS)
-.if defined(PORT_DOCDIR)
-	mkdir -p ${PORT_DOCDIR}
+	${INSTALL_DATA_DIR} ${PORT_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.ONEW ${PORT_DOCDIR}
-.endif
-.endif
-.if defined(WNN6)
-	mkdir -p ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6
-	for file in 1B_TOUPPER 1B_ZENHIRA 1B_ZENKATA 1B_newTOUPPER \
-			2A_CTRL 2B_DAKUTEN 2B_JIS 2B_ROMKANA 2_TCODE \
-			3B_HANKATA 3B_KATAKANA 3B_ZENKAKU autork \
-			mode mode.hankata mode.nohankata; do \
-		${INSTALL_DATA} ${LOCALBASE}/lib/wnn/ja_JP/rk/$${file} \
-			 ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6; \
-	done
-	@echo "############################################################"
-	@echo "We install all files in ${LOCALBASE}/lib/wnn/ja_JP/rk/"
-	@echo "  into new directory ${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/"
-	@echo "############################################################"
-.endif
 
 .include <bsd.port.mk>
