@@ -1,0 +1,4 @@
+@cwd /usr/X11R6
+@name x2x-1.27
+bin/x2x
+man/cat1/x2x.0
