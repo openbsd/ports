@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2001/08/29 07:03:48 jakob Exp $
+# $OpenBSD: Makefile,v 1.50 2001/09/16 20:48:15 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -199,7 +199,7 @@ RUN_DEPENDS=
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so.0.0 \
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp4.so \
 		${PREFIX}/lib/libphp4.so
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php4
 	${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/share/doc/php4
