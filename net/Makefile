@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2001/02/19 21:57:40 obecian Exp $
+# $OpenBSD: Makefile,v 1.123 2001/02/22 15:10:04 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -93,6 +93,7 @@
      SUBDIR += rsync
      SUBDIR += samba
      SUBDIR += sharity-light
+     SUBDIR += sing
      SUBDIR += slirp
      SUBDIR += sniffit
      SUBDIR += snort
