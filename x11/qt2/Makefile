@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/17 17:48:52 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/20 13:55:52 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 VERSION=	2.3
@@ -24,7 +24,8 @@ MAKE_ENV=	QTDIR="${WRKSRC}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \
 		LD_LIBRARY_PATH="${WRKSRC}/lib"
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	-gif -system-libpng -system-jpeg -system-zlib -no-thread -sm
+CONFIGURE_ARGS=	-gif -system-libmng -system-libpng -system-jpeg \
+		-system-zlib -no-thread -sm
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" MODULES="${MODULES}"
 
 MULTI_PACKAGES=	-examples -html
@@ -38,7 +39,7 @@ MODULES=	tools kernel widgets dialogs \
 EXTRA_SAMPLES=
 .if ${SUBPACKAGE} != "-html"
 LIB_DEPENDS=	png.1.::graphics/png \
-		jpeg.62.::graphics/jpeg
+		mng.1.::graphics/libmng
 .  if ${FLAVOR:L} == "gl"
 LIB_DEPENDS+= 	GL.3.2::graphics/Mesa
 MODULES+= opengl
