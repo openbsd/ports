@@ -1,6 +1,6 @@
-$OpenBSD: patch-Canna_conf,v 1.1.1.1 2000/04/22 11:50:37 espie Exp $
+$OpenBSD: patch-Canna_conf,v 1.2 2002/03/26 20:36:36 espie Exp $
 --- Canna.conf.orig	Thu Nov 28 11:27:01 1996
-+++ Canna.conf	Sat Apr 22 04:03:42 2000
++++ Canna.conf	Tue Mar 26 21:09:39 2002
 @@ -129,19 +129,19 @@
   */
  
@@ -131,3 +131,15 @@ $OpenBSD: patch-Canna_conf,v 1.1.1.1 2000/04/22 11:50:37 espie Exp $
 +	done
  #ifndef MakeDirectoriesLong
  #define MakeDirectoriesLong(step,dirs,owner,group)			@@\
+@@ -456,2 +483,11 @@ dst:: Canna.conf							@@\
+ 	 echo "#endif") > $@
+ #endif
++
++#ifdef LinkFileList
++#undef LinkFileList
++#endif
++#define LinkFileList(step,list,dir,sub)					@@\
++step:: list								@@\
++	@MakeFlagsToShellFlags(i,set +e); \				@@\
++	echo "	cd" dir; cd dir && \					@@\
++	for i in list; do (set -x; $(LN) -f sub/$$i .); done

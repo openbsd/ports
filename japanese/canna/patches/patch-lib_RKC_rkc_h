@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_RKC_rkc_h,v 1.1 2002/03/26 20:36:36 espie Exp $
+--- lib/RKC/rkc.h.orig	Tue Mar 26 21:12:48 2002
++++ lib/RKC/rkc.h	Tue Mar 26 21:13:15 2002
+@@ -46,10 +46,14 @@
+ #  include <memory.h>
+ # endif
+-# ifndef __EMX__
+-#  ifndef bzero
+-#   define bzero(buf, size) memset((char *)(buf), 0x00, (size))
+-#  endif
+-#  ifndef bcopy
+-#   define bcopy(src, dst, size) memcpy((char *)(dst), (char *)(src), (size))
++# ifdef __OpenBSD__
++#  include <string.h>
++# else
++#  ifndef __EMX__
++#   ifndef bzero
++#    define bzero(buf, size) memset((char *)(buf), 0x00, (size))
++#   endif
++#   ifndef bcopy
++#    define bcopy(src, dst, size) memcpy((char *)(dst), (char *)(src), (size))
++#   endif
+ #  endif
+ # endif
