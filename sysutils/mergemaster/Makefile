@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2003/05/12 21:54:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2003/07/23 19:12:18 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
 DISTNAME=	mergemaster-1.46
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	sysutils
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -15,12 +16,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://grappa.unix-ag.uni-kl.de/~naddy/
 
+# requires sdiff(1)
+RUN_DEPENDS=	::textproc/gdiff
+
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/mergemaster
 
 do-install:
-	@perl -pi -e 's:/etc(/mergemaster\.rc):${SYSCONFDIR}$$1:g' \
+	@perl -pi -e 's:\@SYSCONFDIR@:${SYSCONFDIR}:g;' \
+		-e 's:\@LOCALBASE@:${LOCALBASE}:g;' \
 		${WRKSRC}/mergemaster.sh ${WRKSRC}/mergemaster.8
 	${INSTALL_SCRIPT} ${WRKSRC}/mergemaster.sh ${PREFIX}/sbin/mergemaster
 	${INSTALL_MAN} ${WRKSRC}/mergemaster.8 ${PREFIX}/man/man8
