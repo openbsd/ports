@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2004/04/05 12:42:32 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/06/01 17:46:31 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"checks HTML documents for broken links"
 
-DISTNAME=	linkchecker-1.12.2
+DISTNAME=	linkchecker-1.12.3
 CATEGORIES=    	www
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/
@@ -29,5 +29,6 @@ NO_REGRESS=	Yes
 
 post-install:
 	@chmod ${MANMODE} ${PREFIX}/man/man1/linkchecker.1
+	@chmod ${SHAREMODE} ${PREFIX}/share/examples/linkchecker/*
 
 .include <bsd.port.mk>
