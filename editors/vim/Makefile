@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/22 19:32:07 espie Exp $
 
 DISTNAME=	vim-5.3
 CATEGORIES=	editors
@@ -17,11 +17,17 @@ DISTFILES=	vim-5.3-src.tar.gz vim-5.3-rt.tar.gz
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_FLAGS=	CONF_ARGS=--prefix=${PREFIX} -f
 
+.if !defined(LIGHT_VERSION)
 .if defined(HAVE_MOTIF)
 REQUIRES_MOTIF=	yes
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=motif" MOTIFHOME=${X11BASE} ${MAKE_FLAGS}
 .else
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=yes" ${MAKE_FLAGS}
+.endif
+.else
+MAKE_FLAGS:=	CONF_OPT_GUI='--enable-gui=no --without-x' ${MAKE_FLAGS}
+PKGNAME=${DISTNAME}-light
+PLIST=${PKGDIR}/PLIST-light
 .endif
 
 pre-build:
