@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/04 21:17:21 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/05 09:23:43 espie Exp $
 
 PKGNAME=	xview-clients-${XVIEW_VERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -21,7 +21,7 @@ post-extract:
 	lndir `cd ${PORTSDIR}/x11/xview/lib && make show VARNAME=WRKDIST` ${WRKDIST}
 
 do-configure:
-	cd ${WRKDIST} && make SUBDIRS=clients Makefiles
+	cd ${WRKDIST} && $(MAKE_ENV) make SUBDIRS=clients Makefiles
 	cd ${WRKDIST}  && make SUBDIRS=clients depend
 
 pre-install:
