@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/04/24 21:34:48 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/05/15 18:15:44 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
@@ -13,7 +13,6 @@ MASTER_SITES1=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
-MASTER_SITE_SUBDIR=     ghostscript
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} pdf_sec.ps:1
 
 SUBST_VARS=		OSREV	VERSION
