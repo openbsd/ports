@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 00:13:14 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/18 03:41:40 kevlo Exp $
 
 COMMENT=	"interface to compute differences between two objects"
 
-DISTNAME=	Algorithm-Diff-1.10
+DISTNAME=	Algorithm-Diff-1.11a
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 NEED_VERSION=	1.402
@@ -18,5 +18,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Algorithm
 
 CONFIGURE_STYLE= perl
+
+WRKDIST=	${WRKDIR}/${DISTNAME:S/a//}
 
 .include <bsd.port.mk>
