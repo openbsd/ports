@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Unix_configure_in,v 1.1.1.1 2002/05/06 13:41:32 form Exp $
---- src/Unix/configure.in.orig	Fri Mar 15 17:41:29 2002
-+++ src/Unix/configure.in	Fri Mar 15 18:00:30 2002
+$OpenBSD: patch-src_Unix_configure_in,v 1.2 2002/09/19 17:37:43 pvalchev Exp $
+--- src/Unix/configure.in.orig	Thu May 24 09:06:13 2001
++++ src/Unix/configure.in	Thu Sep 19 11:14:25 2002
 @@ -111,14 +111,23 @@ CXXFLAGS="$CXXFLAGS $X_CFLAGS"
  LIBS="$LIBS $X_PRE_LIBS $X_LIBS -lX11 -lXext $X_EXTRA_LIBS"
  
@@ -31,3 +31,43 @@ $OpenBSD: patch-src_Unix_configure_in,v 1.1.1.1 2002/05/06 13:41:32 form Exp $
  if [[ "x$HAVE_PTHREADS" = "xyes" ]]; then
    AC_DEFINE(HAVE_PTHREADS)
  fi
+@@ -389,22 +398,23 @@ AC_CACHE_CHECK("whether sigaction handle
+ AC_TRANSLATE_DEFINE(SIGACTION_NEED_REINSTALL, "$ac_cv_sigaction_need_reinstall")
+ 
+ dnl Check if extended signals are supported.
+-AC_CACHE_CHECK("whether your system supports extended signal handlers",
+-  ac_cv_have_extended_signals, [
+-  AC_LANG_SAVE
+-  AC_LANG_CPLUSPLUS
+-  AC_TRY_RUN([
+-    #define HAVE_SIGINFO_T 1
+-    #define CONFIGURE_TEST
+-    #include "sigsegv.cpp"
+-  ],
+-  [ac_cv_have_extended_signals=yes],
+-  [ac_cv_have_extended_signals=no]
+-  )
+-  AC_LANG_RESTORE
+-  ]
+-)
+-AC_TRANSLATE_DEFINE(HAVE_SIGINFO_T, "$ac_cv_have_extended_signals")
++dnl AC_CACHE_CHECK("whether your system supports extended signal handlers",
++dnl   ac_cv_have_extended_signals, [
++dnl   AC_LANG_SAVE
++dnl   AC_LANG_CPLUSPLUS
++dnl   AC_TRY_RUN([
++dnl     #define HAVE_SIGINFO_T 1
++dnl     #define CONFIGURE_TEST
++dnl     #include "sigsegv.cpp"
++dnl   ],
++dnl   [ac_cv_have_extended_signals=yes],
++dnl   [ac_cv_have_extended_signals=no]
++dnl   )
++dnl   AC_LANG_RESTORE
++dnl   ]
++dnl )
++dnl AC_TRANSLATE_DEFINE(HAVE_SIGINFO_T, "$ac_cv_have_extended_signals")
++ac_cv_have_extended_signals=no
+  
+ dnl Otherwise, check for subterfuges.
+ if [[ "x$ac_cv_have_extended_signals" = "xno" ]]; then
