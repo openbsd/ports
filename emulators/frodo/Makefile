@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/13 22:13:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2002/03/22 00:23:24 espie Exp $
 
 COMMENT=	"Commodore 64 emulator"
 
-DISTNAME=	FrodoV4_1a.Src
-PKGNAME=	frodo-4.1b
-DISTFILES=	FrodoV4_1a.Src${EXTRACT_SUFX} TkGui.tcl.gz
-EXTRACT_ONLY=	FrodoV4_1a.Src${EXTRACT_SUFX}
+DISTNAME=	FrodoV4_1b.Src
+PKGNAME=	frodo-4.1bp1
+DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
 NEED_VERSION=	1.496
@@ -24,6 +23,7 @@ CONFIGURE_STYLE=	gnu
 USE_X11=		Yes
 
 RUN_DEPENDS=	::x11/tk/8.3
+LIB_DEPENDS=	SDL:sdl-*-!no_x11:devel/sdl
 
 WISH=wish8.3
 FRODOLIBDIR=${PREFIX}/lib/frodo
@@ -36,11 +36,8 @@ MAKE_ENV=WISH=${WISH} FRODOLIBDIR=${FRODOLIBDIR}
 MASTER_SITES=	http://iphcip1.physik.uni-mainz.de/~cbauer/ \
  ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
 
-WRKDIST=${WRKDIR}/Frodo
+WRKDIST=${WRKDIR}/Frodo-4.1b
 WRKSRC=${WRKDIST}/Src
-
-post-extract:
-	zcat ${FULLDISTDIR}/TkGui.tcl.gz >${WRKDIST}/TkGui.tcl
 
 post-patch:
 	cp ${FILESDIR}/SID_openbsd.i	${WRKSRC}
