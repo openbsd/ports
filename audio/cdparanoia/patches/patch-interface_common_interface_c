@@ -1,6 +1,6 @@
-$OpenBSD: patch-interface_common_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie Exp $
---- interface/common_interface.c.orig	Tue Sep 19 16:18:59 2000
-+++ interface/common_interface.c	Tue Sep 19 16:16:35 2000
+$OpenBSD: patch-interface_common_interface_c,v 1.2 2001/08/25 11:19:25 espie Exp $
+--- interface/common_interface.c.orig	Tue Dec 14 05:28:00 1999
++++ interface/common_interface.c	Sat Aug 25 02:10:36 2001
 @@ -13,19 +13,29 @@
  #include "utils.h"
  #include "smallft.h"
@@ -16,7 +16,7 @@ $OpenBSD: patch-interface_common_interface_c,v 1.1.1.1 2000/09/21 16:07:20 espie
    if (ioctl(fd, CDROMVOLREAD, &volctl)) 
      return(1); /* failure */
 +#endif
-+#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
 +  struct ioc_vol volctl;
 +  if (ioctl(fd, CDIOCGETVOL, &volctl)) 
 +    return(1); /* failure */

@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_c,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
+$OpenBSD: patch-main_c,v 1.2 2001/08/25 11:19:25 espie Exp $
 --- main.c.orig	Tue Dec 14 09:18:44 1999
-+++ main.c	Tue Sep 19 16:45:23 2000
++++ main.c	Sat Aug 25 13:03:16 2001
 @@ -49,7 +49,9 @@
  #include <unistd.h>
  #include <string.h>
@@ -105,17 +105,3 @@ $OpenBSD: patch-main_c,v 1.1.1.1 2000/09/21 16:07:22 espie Exp $
      switch(c){
      case 'B':
        batch=1;
-@@ -797,6 +847,13 @@ int main(int argc,char *argv[]){
-   report(VERSION);
- 
-   /* Query the cdrom/disc; we may need to override some settings */
-+
-+#if defined(__NetBSD__) || defined(__OpenBSD__)	/* XXX */
-+  if (!force_generic_device)
-+    force_generic_device = copystring("/dev/cd0c");
-+  if (!force_cdrom_device)
-+    force_cdrom_device=copystring(force_generic_device);
-+#endif
- 
-   if(force_generic_device)
-     d=cdda_identify_scsi(force_generic_device,force_cdrom_device,verbose,NULL);
