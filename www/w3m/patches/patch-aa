@@ -1,31 +1,13 @@
---- XMakefile.orig	Thu Apr  6 11:13:54 2000
-+++ XMakefile	Sat Apr  8 09:03:41 2000
-@@ -64,17 +64,17 @@
- 	cd gc; make CC='$(CC) $(MYCFLAGS)'
- 
- install: $(TARGETS)
--	-$(MKDIR) $(DESTDIR)$(BIN_DIR)
--	-$(MKDIR) $(DESTDIR)$(HELP_DIR)
--	-$(MKDIR) $(DESTDIR)$(LIB_DIR)
--	$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(BIN_DIR)/$(TARGET)
--	$(INSTALL) -m 644 w3mhelp-w3m_en.html $(DESTDIR)$(HELP_DIR)/w3mhelp-w3m_en.html
--	$(INSTALL) -m 644 w3mhelp-w3m_ja.html $(DESTDIR)$(HELP_DIR)/w3mhelp-w3m_ja.html
--	$(INSTALL) -m 644 w3mhelp-lynx_en.html $(DESTDIR)$(HELP_DIR)/w3mhelp-lynx_en.html
--	$(INSTALL) -m 644 w3mhelp-lynx_ja.html $(DESTDIR)$(HELP_DIR)/w3mhelp-lynx_ja.html
--	$(INSTALL) -m 644 $(HELP_FILE) $(DESTDIR)$(HELP_DIR)/w3mhelp.html
--	for d in $(BOOKMARKER) $(HELPER); do $(INSTALL) -m 755 $$d $(DESTDIR)$(LIB_DIR)/$$d; done
--	(cd scripts; for i in *.cgi; do $(INSTALL) -m 755 $$i $(DESTDIR)$(LIB_DIR)/$$i; done)
-+	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(BIN_DIR)
-+	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HELP_DIR)
-+	$(BSD_INSTALL_PROGRAM_DIR) $(DESTDIR)$(LIB_DIR)
-+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(BIN_DIR)
-+	$(BSD_INSTALL_DATA) w3mhelp-w3m_en.html $(DESTDIR)$(HELP_DIR)
-+	$(BSD_INSTALL_DATA) w3mhelp-w3m_ja.html $(DESTDIR)$(HELP_DIR)
-+	$(BSD_INSTALL_DATA) w3mhelp-lynx_en.html $(DESTDIR)$(HELP_DIR)
-+	$(BSD_INSTALL_DATA) w3mhelp-lynx_ja.html $(DESTDIR)$(HELP_DIR)
-+	$(BSD_INSTALL_DATA) $(HELP_FILE) $(DESTDIR)$(HELP_DIR)
-+	for d in $(BOOKMARKER) $(HELPER); do $(BSD_INSTALL_PROGRAM) $$d $(DESTDIR)$(LIB_DIR); done
-+	(cd scripts; for i in *.cgi; do $(BSD_INSTALL_SCRIPT) $$i $(DESTDIR)$(LIB_DIR); done)
- 
- uninstall:
- 	-$(RM) $(BIN_DIR)/$(TARGET)
+--- display.c.orig	Thu Jul  6 15:43:29 2000
++++ display.c	Thu Jul  6 15:43:53 2000
+@@ -717,8 +717,10 @@
+     }
+     else {
+         buf->pos = l->len -1;
++#ifdef JP_CHARSET
+         if (CharType(p[buf->pos]) == PC_KANJI2)
+             buf->pos--;
++#endif                          /* JP_CHARSET */
+     }
+     cpos = COLPOS(l, buf->pos);
+     buf->visualpos = cpos - buf->currentColumn;

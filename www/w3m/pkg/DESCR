@@ -6,13 +6,14 @@ It's main features (over lynx) are:
 	* HTML tables
 	* HTML frames
 	* HTML from stdin
-	* HTTPS
+	* horizontal scrolling
 
 While it may not be as strictly accurate as lynx, w3m seems to render
 HTML pages more intelligently and more compactly. 
 
 The following notes come from the README:
 ------------------------------------------------------------
+
      w3m is a pager with WWW capability. It IS a pager, but it can be
 used as a text-mode WWW browser.
 
