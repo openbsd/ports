@@ -2,3 +2,4 @@ bin/xtar
 lib/X11/xtar/xtar.doc
 lib/X11/app-defaults/XTar
 man/cat1/xtar.0
+@dirrm lib/X11/xtar
