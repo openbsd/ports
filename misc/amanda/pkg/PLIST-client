@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-client,v 1.1 2001/05/12 16:41:10 naddy Exp $
+@comment $OpenBSD: PLIST-client,v 1.2 2001/10/11 19:25:21 espie Exp $
+@pkgcfl amanda-*
 libexec/amanda/amandad
 libexec/amanda/calcsize
 libexec/amanda/killpgrp
