@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/03 03:30:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/04 09:17:37 sturm Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -58,6 +58,7 @@ MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
 BUILD_DEPENDS+=		:jdk-linux->=1.3.1_10:devel/jdk/1.3-linux
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk1.3.1-linux"
+NO_SYSTRACE=		"see devel/jdk/1.3-linux"
 .endif
 
 .if !${FLAVOR:L:Mno_plugin}
