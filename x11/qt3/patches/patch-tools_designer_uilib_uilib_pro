@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_designer_uilib_uilib_pro,v 1.1 2003/02/09 19:17:32 espie Exp $
+--- tools/designer/uilib/uilib.pro.orig	Mon Dec  2 10:49:45 2002
++++ tools/designer/uilib/uilib.pro	Sun Feb  9 18:22:54 2003
+@@ -15,7 +15,9 @@ sql:HEADERS +=		  ../designer/database2.
+ DEFINES += QT_INTERNAL_XML
+ !win32-borland:DEFINES += Q_TEMPLATE_EXTERN=extern
+ include( ../../../src/qt_professional.pri )
+-TARGET		= qui
++!thread:TARGET		= qui
++thread:TARGET = qui-mt
++
+ INCLUDEPATH	+= ../shared
+ DESTDIR		= ../../../lib
+ VERSION		= 1.0.0

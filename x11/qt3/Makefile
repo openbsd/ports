@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/01/09 23:06:30 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2003/02/09 19:17:32 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -57,7 +57,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 MULTI_PACKAGES+=-base -html
 
 .if ${FLAVOR:L:Mmt}
-FULLPKGNAME=		qt3-mt-${VERSION}
+FULLPKGNAME=		qt3-mt-${VERSION}p0
 CONFIGURE_ARGS+=-thread
 ALL_TARGET=sub-src sub-tools
 .else
@@ -156,7 +156,7 @@ PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig
 
 .if ${FLAVOR:L:Mmt}
 MT_SUFX=-mt
-LIBRARIES=qt${MT_SUFX}.so.3.11
+LIBRARIES=qt${MT_SUFX}.so.3.11 qui${MT_SUFX}.so.1.0
 
 post-patch:
 	-rm -rf ${WRKSRC}/examples

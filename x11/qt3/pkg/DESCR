@@ -32,5 +32,3 @@ Warning: the qt3 library also appears under ${PREFIX}/lib, but you
 ${PREFIX}/lib may also contain a later incarnation of qt, in which case 
 the linker will pick up the most recent library.
 
-The qt packages currently do not include mt versions of qt, because of
-insufficient testing.

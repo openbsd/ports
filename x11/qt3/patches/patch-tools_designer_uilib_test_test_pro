@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_designer_uilib_test_test_pro,v 1.1 2003/02/09 19:17:32 espie Exp $
+--- tools/designer/uilib/test/test.pro.orig	Sun Feb  9 18:50:16 2003
++++ tools/designer/uilib/test/test.pro	Sun Feb  9 18:50:26 2003
+@@ -3,5 +3,6 @@ CONFIG		+= qt warn_on release
+ HEADERS		=
+ SOURCES		= main.cpp
+ TARGET		= test
+-unix:LIBS		+= -lqui -L$$QT_BUILD_TREE/lib
++unix:thread:LIBS		+= -lqui-mt -L$$QT_BUILD_TREE/lib
++unix:!thread:LIBS		+= -lqui -L$$QT_BUILD_TREE/lib
+ win32:LIBS	+= $$QT_BUILD_TREE/lib/qui.lib

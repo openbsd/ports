@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_designer_examples_receiver1_receiver_pro,v 1.1 2003/02/09 19:17:32 espie Exp $
+--- tools/designer/examples/receiver1/receiver.pro.orig	Sun Feb  9 18:50:40 2003
++++ tools/designer/examples/receiver1/receiver.pro	Sun Feb  9 18:50:51 2003
+@@ -6,6 +6,7 @@ TEMPLATE	=app
+ CONFIG	+= qt warn_on release
+ INCLUDEPATH	+= $$QT_SOURCE_TREE/tools/designer/uilib
+ win32:LIBS	+= $$QT_BUILD_TREE/lib/qui.lib
+-unix:LIBS	+= -lqui
++unix:thread:LIBS	+= -lqui-mt
++unix:!thread:LIBS	+= -lqui
+ DBFILE	= receiver.db
+ LANGUAGE	= C++

@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_designer_designer_designer_pro,v 1.1 2003/01/19 17:36:51 espie Exp $
+$OpenBSD: patch-tools_designer_designer_designer_pro,v 1.2 2003/02/09 19:17:32 espie Exp $
 --- tools/designer/designer/designer.pro.orig	Tue Nov 26 15:39:41 2002
-+++ tools/designer/designer/designer.pro	Sun Jan 19 16:00:29 2003
++++ tools/designer/designer/designer.pro	Sun Feb  9 18:49:53 2003
 @@ -16,6 +16,11 @@ DEFINES += QT_INTERNAL_ICONVIEW
  DEFINES += QT_INTERNAL_TABLE
  table:win32-msvc:DEFINES+=QM_TEMPLATE_EXTERN_TABLE=extern
@@ -13,3 +13,13 @@ $OpenBSD: patch-tools_designer_designer_designer_pro,v 1.1 2003/01/19 17:36:51 e
  include( ../../../src/qt_professional.pri )
  
  SOURCES	+= command.cpp \
+@@ -411,7 +416,8 @@ table {
+ 
+ INCLUDEPATH	+= ../shared ../uilib
+ win32:LIBS	+= $$QT_BUILD_TREE/lib/qui.lib $$QT_BUILD_TREE/lib/qassistantclient.lib
+-unix:LIBS		+= -L$$QT_BUILD_TREE/lib -lqui -lqassistantclient
++unix:thread:LIBS		+= -L$$QT_BUILD_TREE/lib -lqui-mt -lqassistantclient
++unix:!thread:LIBS		+= -L$$QT_BUILD_TREE/lib -lqui -lqassistantclient
+ 
+ TRANSLATIONS	= designer_de.ts designer_fr.ts
+ 

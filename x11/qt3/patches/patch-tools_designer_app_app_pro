@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_designer_app_app_pro,v 1.1 2003/02/09 19:17:32 espie Exp $
+--- tools/designer/app/app.pro.orig	Sun Feb  9 15:37:11 2003
++++ tools/designer/app/app.pro	Sun Feb  9 15:38:33 2003
+@@ -5,7 +5,10 @@ CONFIG 		-= moc
+ 
+ SOURCES		+= main.cpp
+ INCLUDEPATH	+= ../designer
+-unix:LIBS	+= -ldesigner -lqui -lqassistantclient -L$$QT_BUILD_TREE/lib
++
++unix:thread:LIBS	+= -ldesigner -lqui-mt -lqassistantclient -L$$QT_BUILD_TREE/lib
++unix:!thread:LIBS	+= -ldesigner -lqui -lqassistantclient -L$$QT_BUILD_TREE/lib
++
+ win32 {
+    RC_FILE	= designer.rc
+    LIBS 	+= $$QT_BUILD_TREE/lib/designerlib.lib
