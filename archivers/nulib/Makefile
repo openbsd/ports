@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/18 05:01:58 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/12/18 03:34:56 jasoni Exp $
 #
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
 CATEGORIES=	archivers
 
-#BROKEN=	"source file no longer available"
 NO_CDROM=	"NOFEE: Can not sell"
 
 MAINTAINER=     angelos@openbsd.org
 
-MASTER_SITES=	ftp://apple2.caltech.edu/Zocalo/pub/apple2/ARCHIVERS/
+MASTER_SITES=	http://www.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
 WRKSRC=		${WRKDIR}/nulib
