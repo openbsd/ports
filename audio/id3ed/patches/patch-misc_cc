@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_cc,v 1.1 2002/09/27 21:57:22 naddy Exp $
+--- misc.cc.orig	Fri Sep 27 23:58:04 2002
++++ misc.cc	Fri Sep 27 23:58:20 2002
+@@ -13,7 +13,7 @@ int doread(int handle,void * buf,ssize_t
+    }
+    return 0;
+ }
+-int dowrite(int handle, const void * buf, ssize_t len,const char *name,const char *name2=""){
++int dowrite(int handle, const void * buf, ssize_t len,const char *name,const char *name2){
+    ssize_t i;
+    if ((i=write(handle,buf,len))!=len){
+       fprintf(stderr,"Error writing %s %s (%i/%i): %s\n",name,name2,i,len,strerror(errno));
+@@ -21,7 +21,7 @@ int dowrite(int handle, const void * buf
+    }
+    else return 0;
+ }
+-int doopen(int &handle,const char * name,int access,int mode=0) {
++int doopen(int &handle,const char * name,int access,int mode) {
+    if ((handle=open(name,access,mode))==-1){
+       fprintf(stderr,"Error opening %s: %s\n",name,strerror(errno));
+       return -1;
