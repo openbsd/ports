@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2001/09/18 06:03:10 shell Exp $
+# $OpenBSD: Makefile,v 1.117 2001/10/14 15:42:23 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -47,6 +47,7 @@
      SUBDIR += fvwm2,i18n
      SUBDIR += fvwm95
      SUBDIR += fsv
+     SUBDIR += gatos-bin
      SUBDIR += gkrellweather
      SUBDIR += gnome
      SUBDIR += gtk-engines
@@ -67,6 +68,7 @@
      SUBDIR += mouseclock
      SUBDIR += mxconns
 #    SUBDIR += neXtaw
+     SUBDIR += ogle
      SUBDIR += olvwm
      SUBDIR += openmotif
 #    SUBDIR += p5-Tcl-Tk

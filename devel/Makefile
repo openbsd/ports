@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2001/09/29 21:25:24 avsm Exp $
+# $OpenBSD: Makefile,v 1.110 2001/10/14 15:42:23 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += lclint
      SUBDIR += libaudiofile
      SUBDIR += libavl
+     SUBDIR += libdvdread
      SUBDIR += libdockapp
      SUBDIR += libevent
      SUBDIR += libgtop

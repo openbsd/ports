@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2001/08/26 03:45:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.69 2001/10/14 15:42:22 espie Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += ksmp3play
      SUBDIR += lame
      SUBDIR += libao,
+     SUBDIR += liba52
      SUBDIR += libcdaudio
      SUBDIR += libogg
      SUBDIR += libvorbis
