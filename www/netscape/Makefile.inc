@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.2 2000/04/16 21:06:26 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2000/07/06 22:40:18 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
 
 CATEGORIES=     www
-NEED_VERSION=	1.258
+NEED_VERSION=	1.310
 DIST_SUBDIR=	netscape
 
 PERMIT_PACKAGE_CDROM=	No
@@ -37,8 +37,6 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${FORTIFY}.tar.gz:0
 
 MASTER_SITE_SUBDIR=communicator/english/${PROGRAM_V}/unix/unsupported/${LOCATION}
-
-FAKE=	Yes
 
 OBJMACHINE=	Yes
 NO_CONFIGURE=	Yes

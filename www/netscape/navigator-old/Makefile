@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/09 15:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/07/06 22:40:20 brad Exp $
 
-ONLY_FOR_ARCHS=sparc
+ONLY_FOR_ARCHS=	sparc
+NEED_VERSION=	1.310
 
-PROGRAM_V= 4.61
+PROGRAM_V=	4.61
 V2:=${PROGRAM_V:S/.//}
 
 DISTNAME=	navigator-v${V2}-export.sparc-sun-sunos4.1.3_U1

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/17 15:02:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/07/06 22:40:18 brad Exp $
 
 ONLY_FOR_ARCHS=	i386 
-NEED_VERSION=	1.121
-
+NEED_VERSION=	1.310
 
 PROGRAM_V=	4.72
 V2:=${PROGRAM_V:S/.//}

@@ -17,3 +17,4 @@ SPARC NOTICE
 ------------
 Use of this port requires a kernel compiled with 'option COMPAT_SUNOS'
 
+WWW: ${HOMEPAGE}
