@@ -1,6 +1,6 @@
 #!@@LOCALBASE@@/bin/python2.1
 #
-# $OpenBSD: zope-instance,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+# $OpenBSD: zope-instance,v 1.2 2001/10/17 03:10:35 matt Exp $
 #
 # Build a Zope INSTANCE_HOME in the specified directory.
 #
@@ -19,7 +19,7 @@ if len(sys.argv) != 2:
 	sys.exit(0)
 instancehome=sys.argv[1]
 
-for directory in ("imports", "var", "Extensions", "Products"):
+for directory in ("import", "var", "Extensions", "Products"):
 	os.mkdir(os.path.join(instancehome, directory))
 
 # Copy the initial Data.fs
