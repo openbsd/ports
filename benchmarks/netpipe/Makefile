@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:03 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/31 19:07:48 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 DISTNAME=	netpipe-2.3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/ \
-		http://www.freebsd.org/~jkoshy/PORTS/
+		http://people.freebsd.org/~jkoshy/PORTS/
 
 MAINTAINER=	brad@openbsd.org
 
-LICENSE_TYPE=		GPL
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 .include <bsd.port.mk>

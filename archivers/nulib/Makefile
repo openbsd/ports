@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/26 23:14:37 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/31 19:07:47 brad Exp $
 
 DISTNAME=	nulib325
 PKGNAME=	nulib-3.25
 CATEGORIES=	archivers
 NEED_VERSION=	1.218
-MASTER_SITES=	http://www.freebsd.org/~jseger/
+MASTER_SITES=	http://people.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     angelos@openbsd.org
@@ -20,7 +20,7 @@ NO_CONFIGURE=	Yes
 
 MAKE_FLAGS=	CC="${CC}" OPTIMIZE="${CFLAGS}"
 
-WRKDIST=		${WRKDIR}/nulib
+WRKDIST=	${WRKDIR}/nulib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nulib ${PREFIX}/bin/nulib
