@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2004/12/02 19:05:47 alek Exp $
 
 COMMENT=	"disassembler and other tools for palmos binaries"
 
@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		c m
 
 MASTER_SITES=	http://www.fh-wilhelmshaven.de/~akcaagaa/palmpower/files/
 

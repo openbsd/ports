@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/02 19:05:47 alek Exp $
 
 COMMENT=	"generate resources for PalmOS applications from text descr"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	http://www.hig.se/~ardiri/download/palm/
 
@@ -31,6 +32,7 @@ CONFIGURE_ARGS=	--disable-pilrcui
 USE_X11=	Yes
 LIB_DEPENDS=	gtk.1.2,gdk.1.2:gtk+-*:x11/gtk+
 CONFIGURE_ARGS= --enable-pilrcui
+WANTLIB+=	X11 Xext Xi glib gmodule iconv intl m
 .endif
 
 DOCDIR=		${PREFIX}/share/doc/pilrc
