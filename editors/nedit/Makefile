@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/16 22:32:35 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/19 17:27:35 espie Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 
 DISTNAME=	nedit-5.0.2
@@ -12,6 +12,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+
+BROKEN="Unacceptable policy for the distribution site. Need another site"
+
 MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
 		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/
 DISTFILES=	nedit_source.tar.gz nedit.app-defaults
@@ -23,6 +26,7 @@ LIB_DEPENDS=	Xm.1.:x11/lesstif
 USE_X11=	Yes
 
 ALL_TARGET=	openbsd_nedit
+FAKE=		Yes
 
 post-extract:
 	@cp ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad
