@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2000/07/11 01:07:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2000/08/29 19:57:17 naddy Exp $
 
 VER=		16.1
 DISTNAME=	cvsup-bin-${VER}
 CATEGORIES=    	net devel
-NEED_VERSION=	1.312
+NEED_VERSION=	1.319
 
 HOMEPAGE=	http://www.polstra.com/projects/freeware/CVSup/
 
@@ -26,10 +26,15 @@ GUI=
 
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/binaries
-DISTFILES=	cvsup${GUI}-freebsd-ix86-aout-${VER}.tar.gz
+MASTER_SITES0=	ftp://sites.inka.de/W3775/unix/distfiles/ \
+		http://www.unix-ag.uni-kl.de/~naddy/distfiles/
+
+DISTFILES=	cvsup${GUI}-freebsd-ix86-aout-${VER}.tar.gz \
+		cvsup-examples-1.0.tar.gz:0
 
 SUPDISTFILES=	cvsup-freebsd-ix86-aout-${VER}.tar.gz \
-		cvsup.nogui-freebsd-ix86-aout-${VER}.tar.gz
+		cvsup.nogui-freebsd-ix86-aout-${VER}.tar.gz \
+		cvsup-examples-1.0.tar.gz:0
 
 MANCOMPRESSED=	Yes
 MAN1=		cvpasswd.1 cvsup.1
@@ -53,5 +58,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsup ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/cvpasswd.1.gz ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cvsup.1.gz ${PREFIX}/man/man1
+	cd ${WRKDIR}/cvsup-examples-1.0 && ${MAKE} install
 
 .include <bsd.port.mk>

@@ -1,5 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/11 01:04:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/08/29 19:57:18 naddy Exp $
 bin/cvpasswd
 bin/cvsup
 man/cat1/cvpasswd.0
 man/cat1/cvsup.0
+share/examples/cvsup/cvs-supfile
+share/examples/cvsup/ports-supfile
+share/examples/cvsup/stable-supfile
+share/examples/cvsup/standard-supfile
+share/examples/cvsup/www-supfile
+share/examples/cvsup/x11-stable-supfile
+share/examples/cvsup/x11-supfile
+@dirrm share/examples/cvsup
