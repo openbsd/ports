@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.8 2004/11/16 02:31:28 pvalchev Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2004/11/22 16:59:29 espie Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 COMMENT-tcl=	"TCL bindings for Berkeley DB, revision ${REVISION}"
 
 DISTNAME=	db-${VERSION}
-PKGNAME-tcl=	db-tcl-${VERSION}
+PKGNAME-tcl=	db-tcl-${VERSION}p0
 CATEGORIES=	databases
 HOMEPAGE=	http://www.sleepycat.com/
 MASTER_SITES=	${HOMEPAGE}/update/snapshot/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/10/03 18:41:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.22 2004/11/22 16:59:29 espie Exp $
 
 V=		0.62.4
 DISTNAME=	freetds-$V
@@ -9,6 +9,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses readline
 
 COMMENT=	"project to document and implement the TDS protocol"
 HOMEPAGE=	http://www.freetds.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/07 00:10:17 djm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/22 16:59:30 espie Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses readline
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/05/27 21:05:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/22 16:59:29 espie Exp $
 
 REVISION=	4
 VERSION=	${REVISION}.2.52
@@ -11,5 +11,6 @@ PATCHFILES=	patch.${VERSION}.1:0 \
 CONFIGURE_STYLE=gnu
 
 DEST_SUBDIR=	${REVISION}
+WANTLIB=	c
 
 .include <bsd.port.mk>

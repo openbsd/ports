@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2004/10/20 07:38:50 brad Exp $
+# $OpenBSD: Makefile,v 1.102 2004/11/22 16:59:29 espie Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -27,6 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto m ncurses pthread readline ssl wrap z
 
 DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql

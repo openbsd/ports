@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/10/03 18:41:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.16 2004/11/22 16:59:29 espie Exp $
 
 DISTNAME=	sybperl-2.17
 PKGNAME=	p5-${DISTNAME}
@@ -8,8 +8,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=		Yes
 
 COMMENT=	"Sybase database access in Perl"
 HOMEPAGE=	http://www.mbay.net/~mpeppler/

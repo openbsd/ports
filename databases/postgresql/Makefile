@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2004/07/26 10:10:46 peter Exp $
+# $OpenBSD: Makefile,v 1.70 2004/11/22 16:59:29 espie Exp $
 
 COMMENT=	"PostgreSQL RDBMS (client)"
 COMMENT-server=	"PostgreSQL RDBMS (server)"
@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM=	"without fee clause"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"without fee clause"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto curses m perl readline ssl util z
 
 MASTER_SITES= ftp://ftp3.us.postgresql.org/pub/postgresql/source/v${VERSION}/ \
 	      ftp://ftp.postgresql.org/pub/source/v${VERSION}/

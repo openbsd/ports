@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/10/25 16:02:30 alek Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/22 16:59:29 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+WANTLIB=		crypto util
 
 PSEUDO_FLAVORS=	no_zope
 FLAVOR?=
