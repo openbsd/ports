@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2000/10/22 15:41:36 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2001/04/01 17:05:12 espie Exp $
 
 BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
 
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier::print/afm
-RUN_DEPENDS=	gs::print/ghostscript/gnu
+RUN_DEPENDS=	gs:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS=	tiff.35::graphics/tiff
 
 USE_GMAKE=	Yes
