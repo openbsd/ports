@@ -1,0 +1,32 @@
+$OpenBSD: patch-rfile_cpp,v 1.1.1.1 2001/08/11 14:45:26 naddy Exp $
+--- rfile.cpp.orig	Sun Mar 25 03:17:10 2001
++++ rfile.cpp	Thu Aug  9 03:34:06 2001
+@@ -275,6 +275,10 @@ fileGetFormatInfo(const QString& _file, 
+   return ret;
+ }
+ 
++/**
++ * Installation prefix
++ */
++QString instPrefix2 = PREFIX;
+ 
+ 
+ /**
+@@ -293,7 +297,7 @@ fileSearchFile(QString _subdir, QString 
+ 
+ #ifndef DEF_WINDOWS
+   // Test /usr/share/<proj>/...:
+-  ret = QString("/usr/share/")+DEF_APPNAME_L+subdir+"/"+_name;
++  ret = instPrefix2+"/share/"+DEF_APPNAME_L+subdir+"/"+_name;
+   RLOG("\nret2: "); RLOG(ret);
+   if(QFileInfo(ret).exists()) return ret;
+ 
+@@ -325,7 +329,7 @@ fileSearchSubdir(QString _subdir, int _p
+ #ifndef DEF_WINDOWS
+   if(_prior==0 || _prior==2) {
+     // Test /usr/share/<proj>/...:
+-    ret = QString("/usr/share/")+DEF_APPNAME_L+"/"+_subdir;
++    ret = instPrefix2+"/share/"+DEF_APPNAME_L+"/"+_subdir;
+     if(QFileInfo(ret).exists()) return ret;
+   }
+ 

@@ -1,0 +1,30 @@
+$OpenBSD: patch-rconfig_cpp,v 1.1.1.1 2001/08/11 14:45:26 naddy Exp $
+--- rconfig.cpp.orig	Sun Mar 25 03:17:10 2001
++++ rconfig.cpp	Thu Aug  9 03:32:20 2001
+@@ -29,6 +29,8 @@
+ #include "rinitialdialog.h"
+ #include "rlog.h"
+ 
++QString instPrefix = PREFIX;
++
+ /**
+  * \class RConfig
+  * Class RConfig provides access to global settings.
+@@ -176,7 +178,7 @@ RConfig::ini()
+   addSetting( "Print:PrintAdjustmentFactor", "1.0");
+ 
+   addSetting( "Paths:BrowserPath", (RUNNING_WINDOWS ? "C:\\Progra~1\\Intern~1\\Iexplore.exe" : "netscape"));
+-  addSetting( "Paths:LibraryPath1", "/usr/share/qcad/libraries" );
++  addSetting( "Paths:LibraryPath1", instPrefix+"/share/qcad/libraries" );
+ 
+   verbose=false;
+ }
+@@ -514,7 +516,7 @@ const
+ 
+   // Search in /usr/share/qcad/... dir:
+   if(!QFileInfo(path).exists()) {
+-    path = QString("/usr/share/")+DEF_APPNAME_L+"/"+_relPath;
++    path = instPrefix+"/share/"+DEF_APPNAME_L+"/"+_relPath;
+   }
+ #endif
+ 
