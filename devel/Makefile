@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1999/03/30 17:06:57 niklas Exp $
+# $OpenBSD: Makefile,v 1.19 1999/04/19 21:36:39 niklas Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -11,7 +11,7 @@
      SUBDIR += automake
 #    SUBDIR += bcc
      SUBDIR += bison
-#    SUBDIR += boehm-gc
+     SUBDIR += boehm-gc
 #    SUBDIR += cccc
 #    SUBDIR += cflow
 #    SUBDIR += crossgo32
