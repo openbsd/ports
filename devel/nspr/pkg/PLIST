@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/10 07:25:38 espie Exp $
 bin/nspr-config
+include/nspr/
+include/nspr/md/
 include/nspr/md/_aix.h
 include/nspr/md/_aix32.cfg
 include/nspr/md/_aix64.cfg
@@ -74,6 +76,7 @@ include/nspr/md/_winnt.h
 include/nspr/md/prosdep.h
 include/nspr/md/sunos4.h
 include/nspr/nspr.h
+include/nspr/obsolete/
 include/nspr/obsolete/pralarm.h
 include/nspr/obsolete/probslet.h
 include/nspr/obsolete/protypes.h
@@ -102,6 +105,7 @@ include/nspr/prinit.h
 include/nspr/prinrval.h
 include/nspr/prio.h
 include/nspr/pripcsem.h
+include/nspr/private/
 include/nspr/private/pprio.h
 include/nspr/private/pprthred.h
 include/nspr/private/prpriv.h
@@ -133,7 +137,3 @@ lib/libnspr4.a
 lib/libplc4.a
 lib/libplds4.a
 %%SHARED%%
-@dirrm include/nspr/private
-@dirrm include/nspr/obsolete
-@dirrm include/nspr/md
-@dirrm include/nspr

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/01/29 21:57:53 pvalchev Exp $
-lib/libnspr4.so.1.0
-lib/libplc4.so.1.0
-lib/libplds4.so.1.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/10 07:25:38 espie Exp $
+@lib lib/libnspr4.so.1.0
+@lib lib/libplc4.so.1.0
+@lib lib/libplds4.so.1.0
