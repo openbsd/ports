@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2003/02/11 12:03:20 couderc Exp $
+--- configure.orig	Tue Feb 11 12:52:20 2003
++++ configure	Tue Feb 11 12:52:53 2003
+@@ -8140,9 +8140,9 @@ else
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+ ac_cv_lib_pthread_pthread_create=no
++LIBS=$ac_check_lib_save_LIBS
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+ fi
+ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
