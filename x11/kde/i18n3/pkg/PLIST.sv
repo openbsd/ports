@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sv,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.sv,v 1.5 2002/09/15 00:33:16 naddy Exp $
 share/apps/ktuberling/sounds/sv/brosch.wav
 share/apps/ktuberling/sounds/sv/cigarr.wav
 share/apps/ktuberling/sounds/sv/fluga.wav
@@ -1224,8 +1224,6 @@ ${LOC}webarchiver.mo
 share/locale/sv/charset
 share/locale/sv/entry.desktop
 share/locale/sv/flag.png
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa

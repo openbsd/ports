@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.5 2002/09/15 00:33:15 naddy Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -1118,8 +1118,6 @@ ${LOC}webarchiver.mo
 share/locale/de/charset
 share/locale/de/entry.desktop
 share/locale/de/flag.png
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa

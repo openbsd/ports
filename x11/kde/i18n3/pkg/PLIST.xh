@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.xh,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.xh,v 1.5 2002/09/15 00:33:16 naddy Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -330,8 +330,6 @@ ${LOC}validatorsplugin.mo
 ${LOC}webarchiver.mo
 share/locale/xh/charset
 share/locale/xh/entry.desktop
-@dirrm share/locale/xh/LC_MESSAGES
-@dirrm share/locale/xh
 @dirrm ${DOC}kspell
 @dirrm ${DOC}konqueror
 @dirrm ${DOC}kmenuedit

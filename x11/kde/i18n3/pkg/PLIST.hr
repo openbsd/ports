@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.hr,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.hr,v 1.5 2002/09/15 00:33:15 naddy Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -275,7 +275,5 @@ ${LOC}webarchiver.mo
 share/locale/hr/charset
 share/locale/hr/entry.desktop
 share/locale/hr/flag.png
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/hr

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.da,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.da,v 1.5 2002/09/15 00:33:15 naddy Exp $
 share/apps/ktuberling/sounds/da/briller.wav
 share/apps/ktuberling/sounds/da/cigar.wav
 share/apps/ktuberling/sounds/da/haar.wav
@@ -1050,8 +1050,6 @@ share/locale/da/charset
 share/locale/da/da.compendium
 share/locale/da/entry.desktop
 share/locale/da/flag.png
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
 @dirrm ${DOC}noatun
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat

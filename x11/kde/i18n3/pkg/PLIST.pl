@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pl,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.pl,v 1.5 2002/09/15 00:33:16 naddy Exp $
 ${DOC}kdevelop/tip.database
 ${LOC}aktion.mo
 ${LOC}amor.mo
@@ -319,7 +319,5 @@ ${LOC}webarchiver.mo
 share/locale/pl/charset
 share/locale/pl/entry.desktop
 share/locale/pl/flag.png
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
 @dirrm ${DOC}kdevelop
 @dirrm share/doc/HTML/pl

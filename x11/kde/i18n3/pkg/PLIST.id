@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.id,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.id,v 1.5 2002/09/15 00:33:15 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -205,5 +205,3 @@ ${LOC}taskbarextension.mo
 ${LOC}twister.mo
 share/locale/id/charset
 share/locale/id/entry.desktop
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id

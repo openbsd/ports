@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fr,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.fr,v 1.5 2002/09/15 00:33:15 naddy Exp $
 share/apps/amor/tips${FLAVOR_EXT}
 share/apps/ktuberling/sounds/fr/bouche.wav
 share/apps/ktuberling/sounds/fr/boucle-d-oreille.wav
@@ -1182,8 +1182,6 @@ ${LOC}webarchiver.mo
 share/locale/fr/charset
 share/locale/fr/entry.desktop
 share/locale/fr/flag.png
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
 @dirrm ${DOC}noatun
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa

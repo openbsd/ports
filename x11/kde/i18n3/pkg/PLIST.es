@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.es,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.es,v 1.5 2002/09/15 00:33:15 naddy Exp $
 ${DOC}aktion/common
 ${DOC}aktion/${C}
 ${DOC}aktion/${I}
@@ -908,8 +908,6 @@ ${LOC}webarchiver.mo
 share/locale/es/charset
 share/locale/es/entry.desktop
 share/locale/es/flag.png
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
 @dirrm ${DOC}noatun
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock

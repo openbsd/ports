@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.vi,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.vi,v 1.5 2002/09/15 00:33:16 naddy Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}babelfish.mo
@@ -172,5 +172,3 @@ ${LOC}taskbarextension.mo
 share/locale/vi/charset
 share/locale/vi/entry.desktop
 share/locale/vi/flag.png
-@dirrm share/locale/vi/LC_MESSAGES
-@dirrm share/locale/vi

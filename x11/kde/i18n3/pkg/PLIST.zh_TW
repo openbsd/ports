@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zh_TW,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.zh_TW,v 1.5 2002/09/15 00:33:16 naddy Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -335,8 +335,6 @@ ${LOC}webarchiver.mo
 share/locale/zh_TW/charset
 share/locale/zh_TW/entry.desktop
 share/locale/zh_TW/flag.png
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/zh_TW

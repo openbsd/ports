@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sk,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.sk,v 1.5 2002/09/15 00:33:16 naddy Exp $
 share/apps/ktuberling/sounds/sk/cigara.wav
 share/apps/ktuberling/sounds/sk/fuzy.wav
 share/apps/ktuberling/sounds/sk/hodinky.wav
@@ -821,8 +821,6 @@ ${LOC}webarchiver.mo
 share/locale/sk/charset
 share/locale/sk/entry.desktop
 share/locale/sk/flag.png
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
 @dirrm ${DOC}lskat
 @dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
