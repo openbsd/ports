@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Aug 31 23:14:24 1998
-+++ Makefile	Sun Mar  7 03:59:05 1999
+--- Makefile.orig	Thu Mar 18 16:32:11 1999
++++ Makefile	Thu Mar 18 16:34:08 1999
 @@ -172,6 +172,7 @@
  	@echo "  make next-x86-x11         for NeXT on Intel x86 with X11"
  	@echo "  make next-x11             for NeXT with X11"
@@ -17,3 +17,14 @@
  solaris-x86 solaris-x86-gcc sunSolaris-CC \
  sunos4 sunos4-sl sunos4-gcc sunos4-gcc-sl sunos4-gcc-x11r6-sl \
  sunos5 sunos5-sl sunos5-ultra sunos5-ultra-sl sunos5-gcc sunos5-gcc-sl \
+@@ -234,10 +235,6 @@
+ 	cd src ; $(MAKE) $@
+ 	cd src-glu ; $(MAKE) $@
+ 	if [ -d src-glut ] ; then cd src-glut ; $(MAKE) $@ ; fi
+-	if [ -d demos ]    ; then cd demos    ; $(MAKE) $@ ; fi
+-	if [ -d xdemos ]   ; then cd xdemos   ; $(MAKE) $@ ; fi
+-	if [ -d samples ]  ; then cd samples  ; $(MAKE) $@ ; fi
+-	if [ -d book ]     ; then cd book     ; $(MAKE) $@ ; fi
+ 
+ 
+ irix6-n32 irix6-n32-dso irix6-gcc-n32-sl:
