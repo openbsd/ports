@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/09/14 23:47:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/20 08:15:15 nino Exp $
 
 COMMENT=		"configuration database system written for GNOME"
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/projects/gconf/
 MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/GConf/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/GConf/1.0/}
 EXTRACT_SUFX=           .tar.bz2
 
 LIB_DEPENDS=		oaf.::x11/gnome/oaf \

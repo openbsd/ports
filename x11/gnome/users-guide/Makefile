@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/20 08:15:16 nino Exp $
 
-V=			1.2
-DISTNAME=		users-guide-${V}
-PKGNAME=		gnome-${DISTNAME}
 COMMENT=		"official Users Guide for GNOME"
+
+DISTNAME=		users-guide-1.2
+PKGNAME=		gnome-${DISTNAME}
 CATEGORIES=		x11/gnome
-NEED_VERSION=   	1.455
 
 HOMEPAGE=		http://www.gnome.org
-MAINTAINER=		Nils Nordman <nino@nforced.com>
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/users-guide/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/users-guide/1.2/}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

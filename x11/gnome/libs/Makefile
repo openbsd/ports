@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2002/09/16 05:15:23 marcm Exp $
+# $OpenBSD: Makefile,v 1.19 2002/09/20 08:15:16 nino Exp $
 
 COMMENT=		"libraries for the GNOME project"
 
 DISTNAME=		gnome-libs-1.4.1.4
 CATEGORIES=		x11 x11/gnome
-HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Nils Nordman <nino@nforced.com>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-libs/}
+HOMEPAGE=		http://www.gnome.org/
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
+
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-libs/1.4/}
 
 PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 			${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \

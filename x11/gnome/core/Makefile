@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/07/18 16:11:24 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2002/09/20 08:15:16 nino Exp $
 
 COMMENT=		"core GNOME system"
 
@@ -6,9 +6,9 @@ DISTNAME=		gnome-core-1.4.0.6
 CATEGORIES=		x11 x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
-MAINTAINER=		Nils Nordman <nino@nforced.com>
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gnome-core/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome-core/1.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \

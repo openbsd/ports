@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2002/05/31 10:15:40 nino Exp $
+# $OpenBSD: Makefile,v 1.18 2002/09/20 08:15:16 nino Exp $
 
 COMMENT=		"GNOME control center"
 
 DISTNAME=		control-center-1.4.0.4
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.504
+
 HOMEPAGE=		http://www.gnome.org/
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MAINTAINER=		Nils Nordman <nino@nforced.com>
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/control-center/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/control-center/1.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gdk_pixbuf::graphics/gdk-pixbuf \

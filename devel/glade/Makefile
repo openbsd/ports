@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/13 18:50:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/20 08:15:15 nino Exp $
 
 COMMENT=		"free user interface builder for GTK+ and GNOME"
 
 DISTNAME=		glade-0.6.4
 CATEGORIES=		devel
-NEED_VERSION=   	1.504
+
 HOMEPAGE=		http://glade.gnome.org/
+MAINTAINER=		Nils Nordman <nino@openbsd.org>
 
-MAINTAINER=		Nils Nordman <nino@nforced.com>
-
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/glade/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glade/0.6/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+

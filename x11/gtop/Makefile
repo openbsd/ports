@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/15 18:05:19 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/09/20 08:15:16 nino Exp $
 
 COMMENT=		"GNOME version of top"
-V=			1.0.13
-DISTNAME=		gtop-${V}
-CATEGORIES=		x11
-NEED_VERSION=   	1.473
-MAINTAINER=		Nils Nordman <nino@nforced.com>
 
+DISTNAME=		gtop-1.0.13
+CATEGORIES=		x11
+
+MAINTAINER=		Nils Nordman <nino@nforced.com>
 HOMEPAGE=		http://www.gnome.org
-MASTER_SITES=		${MASTER_SITE_GNOME:=stable/sources/gtop/}
+
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gtop/1.0/}
 
 PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
                         ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
