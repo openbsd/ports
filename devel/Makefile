@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2003/07/20 03:56:34 avsm Exp $
+# $OpenBSD: Makefile,v 1.178 2003/07/22 21:43:07 brad Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -106,7 +106,6 @@
      SUBDIR += p5-Algorithm-Permute
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
-     SUBDIR += p5-Attribute-Handlers
      SUBDIR += p5-B-Graph
      SUBDIR += p5-BSD-Resource
      SUBDIR += p5-C-Scan
@@ -138,7 +137,6 @@
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-ShareLite
-     SUBDIR += p5-Locale-Maketext
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-Log-Agent
      SUBDIR += p5-MLDBM
@@ -149,18 +147,13 @@
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Scalar-List-Utils
-     SUBDIR += p5-Scalar-Utils
      SUBDIR += p5-Set-Scalar
-     SUBDIR += p5-Storable
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
-     SUBDIR += p5-Test-Harness
-     SUBDIR += p5-Test-Simple
-     SUBDIR += p5-Time-HiRes
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate

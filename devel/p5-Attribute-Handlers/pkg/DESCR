@@ -1,8 +1,0 @@
-This module, when inherited by a package, allows that package's
-class to define attribute handler subroutines for specific attributes.
-
-Variables and subroutines subsequently defined in that package, or
-in packages derived from that package may be given attributes with
-the same names as the attribute handler subroutines, which will
-then be called at the end of the compilation phase (i.e. in a `CHECK'
-block).

@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/18 14:24:59 shell Exp $
-${P5SITE}/Test/Builder.pm
-${P5SITE}/Test/More.pm
-${P5SITE}/Test/Simple.pm
-${P5SITE}/Test/Tutorial.pod
-man/man3p/Test::Builder.3p
-man/man3p/Test::More.3p
-man/man3p/Test::Simple.3p
-man/man3p/Test::Tutorial.3p
