@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2001/10/24 12:17:08 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2001/10/25 02:19:12 brad Exp $
 
 COMMENT=	"Civilization clone for X11; multiplayer"
 
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/
 FLAVORS=	gtk
 FLAVOR?=
 
-LIB_DEPENDS=	intl.1::devel/gettext
+MODULES=	gettext
 
 .if ${FLAVOR:L:Mgtk}
 LIB_DEPENDS+=	Imlib.19,gdk_imlib::graphics/imlib
