@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2001/12/10 21:29:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/02/25 18:39:41 brad Exp $
 
 COMMENT=	"replacement library for Imlib"
 
 PKGNAME=	${DISTNAME}p1
 DISTNAME=	gdk-pixbuf-0.10.1
 CATEGORIES=	graphics
-NEED_VERSION=	1.475
+NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= unstable/sources/gdk-pixbuf
 
 HOMEPAGE=	http://developer.gnome.org/arch/imaging/gdkpixbuf.html
 
-LIB_DEPENDS=	png.2::graphics/png \
+LIB_DEPENDS=	jpeg.62::graphics/jpeg \
+		png.2::graphics/png \
 		tiff.35.::graphics/tiff \
 		gtk.1.2,gdk.1.2::x11/gtk+
 
@@ -31,7 +32,9 @@ PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-static --disable-modules
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --enable-static \
+		 --disable-modules
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
