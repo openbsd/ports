@@ -1,0 +1,19 @@
+*** src/Makefile.template.orig	Sat Nov 23 16:41:26 1996
+--- src/Makefile.template	Sat Nov 23 16:41:35 1996
+***************
+*** 97,103 ****
+  $(SDR_UI_FILES): tcl2c
+  
+  parsed_plugins.tcl: ../src/plugin2tcl.tcl
+! 	tclsh7.6 ../src/plugin2tcl.tcl
+  
+  libs.tcl: $(TK_LIBRARY_FILES)
+  	cat $(TK_LIBRARY_FILES) | sed '/^[      ]*source[       ]/d' > libs.tcl
+--- 97,103 ----
+  $(SDR_UI_FILES): tcl2c
+  
+  parsed_plugins.tcl: ../src/plugin2tcl.tcl
+! 	tclsh8.0 ../src/plugin2tcl.tcl
+  
+  libs.tcl: $(TK_LIBRARY_FILES)
+  	cat $(TK_LIBRARY_FILES) | sed '/^[      ]*source[       ]/d' > libs.tcl

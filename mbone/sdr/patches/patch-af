@@ -1,0 +1,29 @@
+--- freebsd/Makefile.freebsd.orig	Thu May  8 15:25:52 1997
++++ freebsd/Makefile.freebsd	Tue Sep  9 15:25:54 1997
+@@ -1,11 +1,15 @@
+-CC=gcc
+-INCLUDES=-I/usr/local/include -I/usr/X11R6/include
+-LIB_DIR=/usr/local/lib
+-LIBS= $(LIB_DIR)/libtk41.a $(LIB_DIR)/libtcl75.a -lm -L/usr/X11R6/lib -lX11
+-CFLAGS=-ggdb $(INCLUDES) -DFREEBSD -Wall -DNORANDPROTO -DDEFINED_ERRLIST
+-LIBRARY_TCL = $(LIB_DIR)/tcl7.5
+-LIBRARY_TK = $(LIB_DIR)/tk4.1
+-all::	sdr
+-install:
+-	cp ./sdr /cs/research/mice/speedy/common/freebsd/bin/sdr
+-	chmod 755 /cs/research/mice/speedy/common/freebsd/bin/sdr
++CC=cc
++INCLUDES=-I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tcl8.0 -I${X11BASE}/include
++LIB_DIR=${LOCALBASE}/lib
++LIBS=-L${LIB_DIR} -ltk80 -ltcl80 -lm -L${X11BASE}/lib -lX11
++CFLAGS+=-ggdb $(INCLUDES) -DFREEBSD -DNORANDPROTO -DDEFINED_ERRLIST
++LIBRARY_TCL = ${LIB_DIR}/tcl8.0
++LIBRARY_TK = ${LIB_DIR}/tk8.0
++
++all:	sdr
++
++install:	sdr
++	install -c -s -m 555 -o bin -g bin sdr ${PREFIX}/bin
++
++clean:
++	rm *.o *.tcl *.ehtml tcl2c

@@ -1,0 +1,6 @@
+#
+# Makefile for ${WRKSRC}.  This just decends into the freebsd subdirectory
+# and builds.
+#
+all install clean:
+	cd freebsd; $(MAKE) $@
