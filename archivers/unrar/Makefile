@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/10 23:14:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/12 14:47:04 turan Exp $
 
 DISTNAME=	unrar-2.50
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 NEED_VERSION=	1.191
 
-NO_CDROM=	"NOFEE: can not sell"
-
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	"may not modify"
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 
