@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Mar  9 01:51:26 1999
-+++ Makefile.in	Wed Jan  5 21:55:00 2000
++++ Makefile.in	Wed Jan  5 22:45:47 2000
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -11,6 +11,15 @@
  
  # Top-level directory in which to install manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -86,7 +88,7 @@
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+ #CFLAGS = 		$(CFLAGS_OPTIMIZE)
+ #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS = 		$(@CFLAGS_DEFAULT@)
++#CFLAGS = 		$(@CFLAGS_DEFAULT@)
+ 
+ # To disable ANSI-C procedure prototypes reverse the comment characters
+ # on the following lines:
 @@ -146,7 +148,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
