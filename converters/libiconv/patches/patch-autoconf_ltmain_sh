@@ -1,7 +1,7 @@
-$OpenBSD: patch-autoconf_ltmain_sh,v 1.4 2001/08/31 20:44:08 brad Exp $
---- autoconf/ltmain.sh.orig	Sun Aug 26 23:27:18 2001
-+++ autoconf/ltmain.sh	Sun Aug 26 23:35:52 2001
-@@ -1031,12 +1031,28 @@ compiler."
+$OpenBSD: patch-autoconf_ltmain_sh,v 1.5 2001/09/23 03:08:50 brad Exp $
+--- autoconf/ltmain.sh.orig	Tue Apr 24 19:35:10 2001
++++ autoconf/ltmain.sh	Sat Sep 22 16:41:10 2001
+@@ -1031,12 +1031,34 @@ compiler."
  	    # These systems don't actually have a C library (as such)
  	    test "X$arg" = "X-lc" && continue
  	    ;;
@@ -10,8 +10,7 @@ $OpenBSD: patch-autoconf_ltmain_sh,v 1.4 2001/08/31 20:44:08 brad Exp $
 +	    test "X$arg" = "X-lc" && continue
 +	    ;;
 +	  esac
-+	fi
-+	if test "X$arg" = "X-lc_r"; then
++	elif test "X$arg" = "X-lc_r"; then
 +	  case $host in
 +	  *-*-openbsd*)
 +	    # Do not include libc_r directly, use -pthread flag.
@@ -23,14 +22,21 @@ $OpenBSD: patch-autoconf_ltmain_sh,v 1.4 2001/08/31 20:44:08 brad Exp $
  	continue
  	;;
  
-+      -?thread)
-+	deplibs="$deplibs $arg"
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
 +	;;
 +
        -module)
  	module=yes
  	continue
-@@ -2408,6 +2424,9 @@ compiler."
+@@ -2408,6 +2430,9 @@ compiler."
  	  *-*-netbsd*)
  	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
@@ -40,7 +46,7 @@ $OpenBSD: patch-autoconf_ltmain_sh,v 1.4 2001/08/31 20:44:08 brad Exp $
  	  *)
  	    # Add libc to deplibs on all other systems if necessary.
  	    if test $build_libtool_need_lc = "yes"; then
-@@ -4412,40 +4431,6 @@ relink_command=\"$relink_command\""
+@@ -4412,40 +4437,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
