@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/30 12:34:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/04/23 21:19:29 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -29,7 +29,7 @@ COMMENT-kwin4=		4 in a rows game for kde
 COMMENT-lskat=		card game for two players, based on Skat
 
 CATEGORIES=		x11 x11/kde games
-NEED_VERSION=		1.361
+NEED_VERSION=		1.404
 VERSION=		2.1.1
 DISTNAME=		kdegames-${VERSION}
 DIST_SUBDIR=		kde
@@ -38,10 +38,15 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${VERSION}/distribution/tar/generic/src/
 EXTRACT_SUFX=		.tar.bz2
 
+# Parts of kde want shared libraries to work, as some symbols are
+# duplicated over the place.
+NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
+
 LIB_DEPENDS=	kdecore.3.::x11/kde/libs2
 BUILD_DEPENDS=	uic::x11/qt2-designer
+BUILD_DEPENDS+=	zsh:zsh-*:shells/zsh
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
@@ -59,17 +64,29 @@ MULTI_PACKAGES+= -cards
 PKGNAME-cards=kdecardgames-${VERSION}
 SUBST_VARS=VERSION
 
+.if defined(PACKAGING)
+.  if (${SUBPACKAGE} == "-kpat" || ${SUBPACKAGE} == "-kpoker" || ${SUBPACKAGE} == "-lskat")
+RUN_DEPENDS+=	${LOCALBASE}/lib/libkdegames.la::x11/kde/games2,-cards
+.  endif
+.endif
+
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--disable-debug
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
 	RUN_KAPPFINDER=no KDEDIR=/usr/local
 MAKE_ENV=		${CONFIGURE_ENV}
 
+pre-build:
+	# Let zsh act as an sh replacement
+	ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh
+
 # Ensure qt2 will always be at the front
 MAKE_FLAGS=CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
+MAKE_FLAGS+=LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes
