@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/06/03 18:11:17 nino Exp $
 
 COMMENT=		"integrated email and PIM software for GNOME"
 
@@ -17,7 +17,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.ximian.com/pub/source/evolution/ \
-			ftp://ftp.song.fi/mirrors/ftp.ximian.com/pub/source/evolution/
+			ftp://ftp.song.fi/mirrors/ftp.ximian.com/pub/source/evolution/ \
+			ftp://rpmfind.net/linux/ximian/source/evolution/ \
+			ftp://planetmirror.com/pub/ximian/pub/ximian/source/evolution/ \
+			ftp://ftp.chg.ru/pub/X11/ximian/source/evolution/ \
+			ftp://tux.cprm.net/pub/ximian/source/evolution/ \
+			ftp://www.linux.org.ar/pub/ximian/source/evolution/ \
+			ftp://mirror.pa.msu.edu/ximian/source/evolution/
 
 MODULES=		gettext
 
