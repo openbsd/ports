@@ -1,0 +1,23 @@
+$OpenBSD: patch-earthapp_cpp,v 1.1 2000/05/19 19:12:11 espie Exp $
+--- earthapp.cpp.orig	Fri May 19 21:07:11 2000
++++ earthapp.cpp	Fri May 19 21:07:42 2000
+@@ -371,7 +371,7 @@ void EarthApplication::readPosition(int 
+   if(strncmp(argv()[i], "random", 6) == 0)
+   {
+     p_type = RANDOM;
+-    srand((int)time(NULL) + (int)getpid());
++    srandom((int)time(NULL) + (int)getpid());
+     return;
+   }
+   else if(strncmp(argv()[i], "fixed", 5) == 0)
+@@ -937,8 +937,8 @@ void EarthApplication::readOutFileName(i
+ 
+ void EarthApplication::randomPosition()
+ {
+-  view_lat = ((rand()%30001)/30000.)*180. - 90.;
+-  view_long = ((rand()%30001)/30000.)*360. - 180.;
++  view_lat = ((random()%30001)/30000.)*180. - 90.;
++  view_long = ((random()%30001)/30000.)*360. - 180.;
+ }
+ 
+ /* ------------------------------------------------------------------------*/
