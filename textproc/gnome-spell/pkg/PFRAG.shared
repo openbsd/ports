@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/12/11 06:19:52 marcm Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/12/31 12:48:52 espie Exp $
 lib/gnome-spell/libgnome-spell-component-0.3.so
-@comment NEWDYNLIBDIR(%D/lib/gnome-spell)
