@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/21 17:57:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/21 21:53:49 pvalchev Exp $
 
 COMMENT=	"PalmOS include files"
 
@@ -28,7 +28,7 @@ DISTSPECIAL=	${DISTNAME}${EXTRACT_SUFX} \
 
 DISTFILES=	${DISTSPECIAL} palmos-1-2-3.1-sdks-1${EXTRACT_SUFX}
 
-PALMDEV=	${PREFIX}/palmdev
+PALMDEV=	${PREFIX}/palm
 NO_BUILD=	Yes
 
 DOWNLOAD_URL=	http://www.palmos.com/dev/tech/tools/sdk35.cgi
