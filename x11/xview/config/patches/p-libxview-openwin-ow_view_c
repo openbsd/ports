@@ -1,5 +1,5 @@
---- ./lib/libxview/openwin/ow_view.c.orig	Tue Jun 29 07:16:43 1993
-+++ ./lib/libxview/openwin/ow_view.c	Sat Apr  1 18:25:26 2000
+--- lib/libxview/openwin/ow_view.c.orig	1993-06-29 07:16:43.000000000 +0200
++++ lib/libxview/openwin/ow_view.c	2003-12-30 01:31:13.000000000 +0100
 @@ -48,6 +48,7 @@ void            openwin_remove_split();
  static          openwin_init_view();
  static          openwin_free_view();

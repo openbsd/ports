@@ -1,5 +1,5 @@
---- ./clients/olwmslave/helpwin.c.orig	Tue Jun 29 07:12:11 1993
-+++ ./clients/olwmslave/helpwin.c	Sat Apr  1 18:26:06 2000
+--- clients/olwmslave/helpwin.c.orig	1993-06-29 07:12:11.000000000 +0200
++++ clients/olwmslave/helpwin.c	2003-12-30 01:31:16.000000000 +0100
 @@ -136,6 +136,7 @@ Bool		TextHelpWindow();
  Bool		ImageHelpWindow();
  void		MoreHelp();

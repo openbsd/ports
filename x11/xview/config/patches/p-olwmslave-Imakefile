@@ -1,5 +1,5 @@
---- ./clients/olwmslave/Imakefile.orig	Tue Jun 29 07:12:14 1993
-+++ ./clients/olwmslave/Imakefile	Sat Apr  1 18:26:06 2000
+--- clients/olwmslave/Imakefile.orig	1993-06-29 07:12:14.000000000 +0200
++++ clients/olwmslave/Imakefile	2003-12-30 01:31:16.000000000 +0100
 @@ -38,18 +38,18 @@ SRCS = 	\
          mem.c \
          olwmslave.c \

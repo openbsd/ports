@@ -1,5 +1,5 @@
---- ./clients/olwm/gettext.h.orig	Tue Jun 29 07:11:46 1993
-+++ ./clients/olwm/gettext.h	Sat Apr  1 18:26:06 2000
+--- clients/olwm/gettext.h.orig	1993-06-29 07:11:46.000000000 +0200
++++ clients/olwm/gettext.h	2003-12-30 01:31:15.000000000 +0100
 @@ -27,7 +27,11 @@
  #include <stdio.h>
  #include <sys/types.h>

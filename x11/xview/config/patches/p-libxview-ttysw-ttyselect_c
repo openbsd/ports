@@ -1,5 +1,5 @@
---- ./lib/libxview/ttysw/ttyselect.c.orig	Sun Jun 26 03:05:23 1994
-+++ ./lib/libxview/ttysw/ttyselect.c	Sat Apr  1 18:25:30 2000
+--- lib/libxview/ttysw/ttyselect.c.orig	1994-06-26 03:05:23.000000000 +0200
++++ lib/libxview/ttysw/ttyselect.c	2003-12-30 01:31:14.000000000 +0100
 @@ -75,6 +75,8 @@ static Seln_result ttysel_copy_in(),
  #endif
                  ttysel_reply();

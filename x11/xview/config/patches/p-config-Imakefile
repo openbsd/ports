@@ -1,5 +1,5 @@
---- ./config/Imakefile.orig	Tue Jun 29 07:13:19 1993
-+++ ./config/Imakefile	Sat Apr  1 18:23:44 2000
+--- config/Imakefile.orig	1993-06-29 07:13:19.000000000 +0200
++++ config/Imakefile	2003-12-30 01:31:11.000000000 +0100
 @@ -8,7 +8,7 @@
  /**/# config directory
  /**/# @(#)Imakefile	1.9 28 Jun 1993 SMI

@@ -1,5 +1,5 @@
---- ./lib/libxview/panel/p_gauge.c.orig	Tue Jun 29 07:17:04 1993
-+++ ./lib/libxview/panel/p_gauge.c	Sat Apr  1 18:25:26 2000
+--- lib/libxview/panel/p_gauge.c.orig	1993-06-29 07:17:04.000000000 +0200
++++ lib/libxview/panel/p_gauge.c	2003-12-30 01:31:13.000000000 +0100
 @@ -47,6 +47,7 @@ static void	gauge_layout();
  /* Local functions */
  static void     paint_gauge();

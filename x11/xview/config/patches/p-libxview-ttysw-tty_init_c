@@ -1,5 +1,5 @@
---- ./lib/libxview/ttysw/tty_init.c.orig	Tue Jun 29 07:17:19 1993
-+++ ./lib/libxview/ttysw/tty_init.c	Sat Apr  1 18:25:30 2000
+--- lib/libxview/ttysw/tty_init.c.orig	1993-06-29 07:17:19.000000000 +0200
++++ lib/libxview/ttysw/tty_init.c	2003-12-30 01:31:14.000000000 +0100
 @@ -14,6 +14,7 @@ static char     sccsid[] = "@(#)tty_init
   * Ttysw initialization, destruction and error procedures
   */

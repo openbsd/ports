@@ -1,5 +1,5 @@
---- ./clients/olwm/defaults.c.orig	Tue Jun 29 07:11:43 1993
-+++ ./clients/olwm/defaults.c	Sat Apr  1 18:26:06 2000
+--- clients/olwm/defaults.c.orig	1993-06-29 07:11:43.000000000 +0200
++++ clients/olwm/defaults.c	2003-12-30 01:31:15.000000000 +0100
 @@ -25,9 +25,9 @@
  #include <X11/Xutil.h>
  #include <X11/Xatom.h>

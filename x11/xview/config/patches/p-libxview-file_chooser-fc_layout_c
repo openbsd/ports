@@ -1,5 +1,5 @@
---- ./lib/libxview/file_chooser/fc_layout.c.orig	Tue Jun 29 07:17:55 1993
-+++ ./lib/libxview/file_chooser/fc_layout.c	Sat Apr  1 18:25:23 2000
+--- lib/libxview/file_chooser/fc_layout.c.orig	1993-06-29 07:17:55.000000000 +0200
++++ lib/libxview/file_chooser/fc_layout.c	2003-12-30 01:31:12.000000000 +0100
 @@ -464,8 +464,8 @@ file_chooser_position_objects( private )
  
  	new_height 

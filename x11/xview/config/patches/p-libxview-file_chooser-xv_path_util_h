@@ -1,5 +1,5 @@
---- ./lib/libxview/file_chooser/xv_path_util.h.orig	Sun Jun 26 03:05:20 1994
-+++ ./lib/libxview/file_chooser/xv_path_util.h	Sat Apr  1 18:25:23 2000
+--- lib/libxview/file_chooser/xv_path_util.h.orig	1994-06-26 03:05:20.000000000 +0200
++++ lib/libxview/file_chooser/xv_path_util.h	2003-12-30 01:31:12.000000000 +0100
 @@ -41,6 +41,7 @@
  
  

@@ -1,5 +1,5 @@
---- ./lib/libxview/sel/sel_agent.c.orig	Sun Jun 26 20:46:20 1994
-+++ ./lib/libxview/sel/sel_agent.c	Sat Apr  1 18:25:27 2000
+--- lib/libxview/sel/sel_agent.c.orig	1994-06-26 20:46:20.000000000 +0200
++++ lib/libxview/sel/sel_agent.c	2003-12-30 01:31:13.000000000 +0100
 @@ -63,7 +63,7 @@ static Seln_result seln_do_request_from_
  static void     selection_agent_do_function();
  static Atom 	get_atom();

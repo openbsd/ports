@@ -1,5 +1,5 @@
---- ./clients/olwm/olwm.c.orig	Tue Jun 29 07:11:52 1993
-+++ ./clients/olwm/olwm.c	Sat Apr  1 18:26:06 2000
+--- clients/olwm/olwm.c.orig	1993-06-29 07:11:52.000000000 +0200
++++ clients/olwm/olwm.c	2003-12-30 01:31:15.000000000 +0100
 @@ -23,6 +23,10 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
@@ -11,7 +11,7 @@
  #include <X11/Xos.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -622,13 +626,19 @@ handleChildSignal()
+@@ -622,14 +626,20 @@ handleChildSignal()
  void
  ReapChildren()
  {
@@ -28,7 +28,8 @@
  	int oldmask;
  	int pid;
  	union wait status;
-+#endif
  #endif
++#endif
  
  	if (!deadChildren)
+ 		return;

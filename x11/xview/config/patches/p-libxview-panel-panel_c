@@ -1,5 +1,5 @@
---- ./lib/libxview/panel/panel.c.orig	Tue Jun 29 07:16:57 1993
-+++ ./lib/libxview/panel/panel.c	Sat Apr  1 18:25:27 2000
+--- lib/libxview/panel/panel.c.orig	1993-06-29 07:16:57.000000000 +0200
++++ lib/libxview/panel/panel.c	2003-12-30 01:31:13.000000000 +0100
 @@ -27,6 +27,7 @@ Pkg_private int panel_view_init();
  Pkg_private int panel_destroy();
  

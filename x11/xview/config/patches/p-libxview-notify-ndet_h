@@ -1,5 +1,5 @@
---- ./lib/libxview/notify/ndet.h.orig	Tue Jun 29 07:18:12 1993
-+++ ./lib/libxview/notify/ndet.h	Sat Apr  1 18:25:25 2000
+--- lib/libxview/notify/ndet.h.orig	1993-06-29 07:18:12.000000000 +0200
++++ lib/libxview/notify/ndet.h	2003-12-30 01:31:12.000000000 +0100
 @@ -17,6 +17,11 @@
  #ifndef	NDET_DEFINED
  #define	NDET_DEFINED

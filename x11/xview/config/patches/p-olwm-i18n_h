@@ -1,5 +1,5 @@
---- ./clients/olwm/i18n.h.orig	Tue Jun 29 07:11:48 1993
-+++ ./clients/olwm/i18n.h	Sat Apr  1 18:26:06 2000
+--- clients/olwm/i18n.h.orig	1993-06-29 07:11:48.000000000 +0200
++++ clients/olwm/i18n.h	2003-12-30 01:31:15.000000000 +0100
 @@ -35,6 +35,10 @@ extern wchar_t  *mbstowcsdup();
  
  #endif /* OW_I18N_L4 */

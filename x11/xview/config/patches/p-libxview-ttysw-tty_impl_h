@@ -1,5 +1,5 @@
---- ./lib/libxview/ttysw/tty_impl.h.orig	Tue Jun 29 07:17:18 1993
-+++ ./lib/libxview/ttysw/tty_impl.h	Sat Apr  1 18:25:29 2000
+--- lib/libxview/ttysw/tty_impl.h.orig	1993-06-29 07:17:18.000000000 +0200
++++ lib/libxview/ttysw/tty_impl.h	2003-12-30 01:31:14.000000000 +0100
 @@ -14,6 +14,7 @@
   * terminal emulation for teletype based programs.
   */

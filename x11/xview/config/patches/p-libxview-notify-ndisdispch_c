@@ -1,5 +1,5 @@
---- ./lib/libxview/notify/ndisdispch.c.orig	Tue Jun 29 07:18:06 1993
-+++ ./lib/libxview/notify/ndisdispch.c	Sat Apr  1 18:25:41 2000
+--- lib/libxview/notify/ndisdispch.c.orig	1993-06-29 07:18:06.000000000 +0200
++++ lib/libxview/notify/ndisdispch.c	2003-12-30 01:31:13.000000000 +0100
 @@ -30,8 +30,9 @@ int             dtablesize_cache = 0;
  #define GETDTABLESIZE() \
  (dtablesize_cache?dtablesize_cache:(dtablesize_cache=(int)sysconf(_SC_OPEN_MAX)))

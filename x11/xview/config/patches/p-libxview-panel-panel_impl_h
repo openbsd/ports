@@ -1,5 +1,5 @@
---- ./lib/libxview/panel/panel_impl.h.orig	Tue Jun 29 07:16:50 1993
-+++ ./lib/libxview/panel/panel_impl.h	Sat Apr  1 18:25:27 2000
+--- lib/libxview/panel/panel_impl.h.orig	1993-06-29 07:16:50.000000000 +0200
++++ lib/libxview/panel/panel_impl.h	2003-12-30 01:31:13.000000000 +0100
 @@ -9,11 +9,16 @@
  #ifndef panel_impl_defined
  #define panel_impl_defined

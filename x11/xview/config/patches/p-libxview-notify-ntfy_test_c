@@ -1,5 +1,5 @@
---- ./lib/libxview/notify/ntfy_test.c.orig	Tue Jun 29 07:18:12 1993
-+++ ./lib/libxview/notify/ntfy_test.c	Sat Apr  1 18:25:26 2000
+--- lib/libxview/notify/ntfy_test.c.orig	1993-06-29 07:18:12.000000000 +0200
++++ lib/libxview/notify/ntfy_test.c	2003-12-30 01:31:13.000000000 +0100
 @@ -989,7 +989,7 @@ nt_try_send_event(client, cond)
  	    fprintf(stderr, "%s in unknown destroy status\n", arg1);
  	    goto Error;

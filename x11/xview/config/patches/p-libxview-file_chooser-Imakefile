@@ -1,5 +1,5 @@
---- ./lib/libxview/file_chooser/Imakefile.orig	Tue Jun 29 07:17:58 1993
-+++ ./lib/libxview/file_chooser/Imakefile	Sat Apr  1 18:25:23 2000
+--- lib/libxview/file_chooser/Imakefile.orig	1993-06-29 07:17:58.000000000 +0200
++++ lib/libxview/file_chooser/Imakefile	2003-12-30 01:31:12.000000000 +0100
 @@ -27,35 +27,35 @@ HDRSPRIVATE=	fchsr_impl.h flist_impl.h x
  		path_impl.h hist_impl.h
  

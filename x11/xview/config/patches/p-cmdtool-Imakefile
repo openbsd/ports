@@ -1,6 +1,6 @@
---- clients/cmdtool/Imakefile.orig	Sun Apr  2 20:49:52 2000
-+++ clients/cmdtool/Imakefile	Sun Apr  2 20:50:04 2000
-@@ -20,7 +20,7 @@
+--- clients/cmdtool/Imakefile.orig	1993-06-29 07:12:08.000000000 +0200
++++ clients/cmdtool/Imakefile	2003-12-30 01:31:11.000000000 +0100
+@@ -20,7 +20,7 @@ ALLFILES = ${HEADERS} ${INFOFILES} ${MAN
  
  ComplexProgramTarget(cmdtool)
  

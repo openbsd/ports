@@ -1,5 +1,5 @@
---- ./lib/libxview/frame/fm_impl.h.orig	Tue Jun 29 07:16:15 1993
-+++ ./lib/libxview/frame/fm_impl.h	Sat Apr  1 18:25:24 2000
+--- lib/libxview/frame/fm_impl.h.orig	1993-06-29 07:16:15.000000000 +0200
++++ lib/libxview/frame/fm_impl.h	2003-12-30 01:31:12.000000000 +0100
 @@ -17,11 +17,16 @@ static char     sccsid[] = "@(#)fm_impl.
  #define _frame_impl_h_already_included
  

@@ -1,5 +1,5 @@
---- ./lib/libxview/sel/seln_impl.h.orig	Tue Jun 29 07:15:25 1993
-+++ ./lib/libxview/sel/seln_impl.h	Sat Apr  1 18:25:27 2000
+--- lib/libxview/sel/seln_impl.h.orig	1993-06-29 07:15:25.000000000 +0200
++++ lib/libxview/sel/seln_impl.h	2003-12-30 01:31:13.000000000 +0100
 @@ -9,12 +9,17 @@
   *	file for terms of the license.
   */

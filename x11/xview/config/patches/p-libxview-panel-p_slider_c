@@ -1,5 +1,5 @@
---- ./lib/libxview/panel/p_slider.c.orig	Tue Jun 29 07:17:02 1993
-+++ ./lib/libxview/panel/p_slider.c	Sat Apr  1 18:25:27 2000
+--- lib/libxview/panel/p_slider.c.orig	1993-06-29 07:17:02.000000000 +0200
++++ lib/libxview/panel/p_slider.c	2003-12-30 01:31:13.000000000 +0100
 @@ -54,6 +54,8 @@ static void	check_endbox_entered();
  static Panel_setting get_value();
  static void     paint_slider();

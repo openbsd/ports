@@ -1,5 +1,5 @@
---- ./lib/libxview/base/base.h.orig	Tue Jun 29 07:14:42 1993
-+++ ./lib/libxview/base/base.h	Sat Apr  1 18:25:23 2000
+--- lib/libxview/base/base.h.orig	1993-06-29 07:14:42.000000000 +0200
++++ lib/libxview/base/base.h	2003-12-30 01:31:11.000000000 +0100
 @@ -6,10 +6,15 @@
   *	file for terms of the license.
   */

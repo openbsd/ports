@@ -1,5 +1,5 @@
---- ./lib/libxview/notify/ntfy.h.orig	Tue Jun 29 07:18:14 1993
-+++ ./lib/libxview/notify/ntfy.h	Sat Apr  1 18:25:25 2000
+--- lib/libxview/notify/ntfy.h.orig	1993-06-29 07:18:14.000000000 +0200
++++ lib/libxview/notify/ntfy.h	2003-12-30 01:31:13.000000000 +0100
 @@ -22,6 +22,10 @@
  #include <sys/rusage.h>
  #endif

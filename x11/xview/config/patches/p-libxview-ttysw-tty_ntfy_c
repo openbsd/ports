@@ -1,5 +1,5 @@
---- ./lib/libxview/ttysw/tty_ntfy.c.orig	Tue Jun 29 07:17:17 1993
-+++ ./lib/libxview/ttysw/tty_ntfy.c	Sat Apr  1 18:25:30 2000
+--- lib/libxview/ttysw/tty_ntfy.c.orig	1993-06-29 07:17:17.000000000 +0200
++++ lib/libxview/ttysw/tty_ntfy.c	2003-12-30 01:31:14.000000000 +0100
 @@ -171,10 +171,14 @@ ttysw_sigwinch(ttysw)
       * SIGWINCHes on resize.
       */

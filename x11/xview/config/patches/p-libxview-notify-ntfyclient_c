@@ -1,5 +1,5 @@
---- ./lib/libxview/notify/ntfyclient.c.orig	Tue Jun 29 07:18:11 1993
-+++ ./lib/libxview/notify/ntfyclient.c	Sat Apr  1 18:25:26 2000
+--- lib/libxview/notify/ntfyclient.c.orig	1993-06-29 07:18:11.000000000 +0200
++++ lib/libxview/notify/ntfyclient.c	2003-12-30 01:31:13.000000000 +0100
 @@ -18,7 +18,9 @@ static char     sccsid[] = "@(#)ntfyclie
  #include <xview_private/ntfy.h>
  #include <xview_private/ndis.h>	/* For ndis_default_prioritizer */

@@ -1,5 +1,5 @@
---- ./lib/libxview/misc/Imakefile.orig	Tue Jun 29 07:16:36 1993
-+++ ./lib/libxview/misc/Imakefile	Sat Apr  1 18:25:25 2000
+--- lib/libxview/misc/Imakefile.orig	1993-06-29 07:16:36.000000000 +0200
++++ lib/libxview/misc/Imakefile	2003-12-30 01:31:12.000000000 +0100
 @@ -29,8 +29,8 @@ CFILES.misc.4          = convdup.c     \
                            xv_i18n.c     \
                            xv_path.c

@@ -1,5 +1,5 @@
---- ./lib/libxview/textsw/txt_again.c.orig	Tue Jun 29 07:17:32 1993
-+++ ./lib/libxview/textsw/txt_again.c	Sat Apr  1 18:25:29 2000
+--- lib/libxview/textsw/txt_again.c.orig	1993-06-29 07:17:32.000000000 +0200
++++ lib/libxview/textsw/txt_again.c	2003-12-30 01:31:13.000000000 +0100
 @@ -28,6 +28,8 @@ Pkg_private CHAR    *STRNCPY();
  Pkg_private Es_index textsw_do_input();
  Pkg_private Es_index textsw_do_pending_delete();

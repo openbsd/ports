@@ -1,5 +1,5 @@
---- ./clients/olwm/mem.c.orig	Tue Jun 29 07:11:45 1993
-+++ ./clients/olwm/mem.c	Sat Apr  1 18:26:06 2000
+--- clients/olwm/mem.c.orig	1993-06-29 07:11:45.000000000 +0200
++++ clients/olwm/mem.c	2003-12-30 01:31:15.000000000 +0100
 @@ -14,8 +14,12 @@
   *
   */
