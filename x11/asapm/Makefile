@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/02/10 03:14:32 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/05 10:39:38 jcs Exp $
 
 COMMENT=	"Advanced Power Management monitor utility for X Windows"
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 NEED_VERSION=	1.503
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 macppc
 
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
 		ftp://rt.fm/pub/asapm/
