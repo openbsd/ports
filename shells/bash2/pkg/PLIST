@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/07/04 21:26:17 brad Exp $
 bin/bash
 bin/bashbug
 man/man1/bash.1
