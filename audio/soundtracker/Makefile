@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/30 09:08:28 wcobb Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/14 03:19:01 wcobb Exp $
 # Uses pthreads
 
 COMMENT=		"Music tracking tool for X11"
@@ -31,7 +31,7 @@ FLAVOR?=
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu autoconf
-CONFIGURE_ARGS+=	--with-audiofile-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=		--with-audiofile-prefix=${LOCALBASE} \
 			--disable-alsa \
 			--disable-sgi \
 			--disable-oss
@@ -39,9 +39,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
-LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs
+LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
+		gdk_pixbuf::graphics/gdk-pixbuf
+CONFIGURE_ARGS+=--with-gdk-pixbuf-prefix=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=--disable-gnome --disable-splash
 .endif
 
 .if ${FLAVOR:L:Mesd}
