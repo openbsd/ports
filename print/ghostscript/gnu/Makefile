@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/03/30 21:09:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/31 13:01:08 espie Exp $
 # Original from:	Andreas Klemm <andreas@klemm.gtn.com>
 
 DISTNAME=	ghostscript-5.50
@@ -36,7 +36,7 @@ BUILD_DEPENDS=	/nonexistent::${JPEGDIR}:patch \
 		/nonexistent::${PNGDIR}:patch \
 		unzip::archivers/unzip \
 
-LIB_DEPENDS=	png.1.3::${PNGDIR}
+LIB_DEPENDS=	png.1.6::${PNGDIR}
 
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKDIST=	${WRKDIR}/gs5.50
