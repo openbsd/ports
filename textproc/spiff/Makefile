@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/23 23:34:01 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/23 06:51:17 turan Exp $
 #
 
 PKGNAME=	spiff-1.0
@@ -6,9 +6,12 @@ DISTNAME=	spiff-1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
-NO_CDROM = "COPYRIGHT says \"...may not be sold for profit...\""
-
 MAINTAINER=	ian@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 MAN1=spiff.1
 

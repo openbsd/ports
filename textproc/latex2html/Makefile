@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/03/19 16:43:42 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.7 2000/03/23 06:51:15 turan Exp $
 
 DISTNAME=	latex2html-97.1
 CATEGORIES=	textproc www
@@ -7,8 +6,12 @@ NEED_VERSION=	1.223
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=	ftp://ftp.tex.ac.uk/ctan/tex-archive/support/latex2html/sources/
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm \
 		pnmtopng:graphics/netpbm \

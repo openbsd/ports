@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/11 01:10:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/23 06:51:16 turan Exp $
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
@@ -7,6 +7,11 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	angelos@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 USE_MOTIF=	yes
 USE_IMAKE=      yes
