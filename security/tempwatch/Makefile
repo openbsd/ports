@@ -3,13 +3,12 @@
 # Date created:		25 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/05 01:46:09 espie Exp $
 
 PKGNAME=	tempwatch-1.0
 
 CATEGORIES=	security
 NEED_VERSION=	1.191
-FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -25,8 +24,6 @@ EXTRACT_ONLY=	l0pht-watch${EXTRACT_SUFX}
 MASTER_SITES=	http://www.l0pht.com/advisories/
 
 WRKDIST=	${WRKDIR}/temp-watch
-
-NO_CONFIGURE=	yes
 
 ALL_TARGET=	OpenBSD
 
