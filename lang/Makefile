@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2003/05/29 16:39:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.58 2003/08/04 23:38:25 avsm Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -77,6 +77,7 @@
      SUBDIR += tcl
 #    SUBDIR += tclX75
 #    SUBDIR += tclplugin
+     SUBDIR += tendra
      SUBDIR += unicon
 #    SUBDIR += xpl
 #    SUBDIR += yorick
