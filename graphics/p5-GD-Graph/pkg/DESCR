@@ -1,1 +1,19 @@
-GD::Graph is a perl5 module to create charts using the GD module.
+GD::Graph is a Perl module to create charts using the GD module.
+The following classes for graphs with axes are defined:
+
+GD::Graph::lines -  Create a line chart.
+
+GD::Graph::bars - Create a bar chart.
+
+GD::Graph::points - Create an chart, displaying the data as points.
+
+GD::Graph::linespoints - Combination of lines and points.
+
+GD::Graph::area - Create a graph, representing the data as areas
+under a line.
+
+GD::Graph::mixed - Create a mixed type graph, any combination of
+the above. At the moment this is fairly limited. Some of the options
+that can be used with some of the individual graph types won't work
+very well. Multiple bar graphs in a mixed graph won't display very
+nicely.
