@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2004/04/06 12:43:46 brad Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2004/06/28 14:17:21 lebel Exp $
 
 DISTNAME=	mutt-${VERSION}i
 CATEGORIES=	mail
@@ -7,6 +7,7 @@ MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.gbnet.net/pub/mutt-international/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 MASTER_SITES0=	http://www.spinnaker.de/mutt/compressed/
+MASTER_SITES1=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/
 
 HOMEPAGE=	http://www.mutt.org/
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	slang mixmaster compressed
+FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
 
 CONFIGURE_STYLE= autoconf old
@@ -33,26 +34,36 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 
 .if ${FLAVOR:L:Mslang}
-LIB_DEPENDS+=	slang.14::devel/libslang
-CONFIGURE_ARGS+= --with-slang="${PREFIX}"
+LIB_DEPENDS+=		slang.14::devel/libslang
+CONFIGURE_ARGS+=	--with-slang="${PREFIX}"
 .else
-CONFIGURE_ARGS+= --with-curses
+CONFIGURE_ARGS+=	--with-curses
 .endif
 
 # compressed folder support provided by
 # http://www.spinnaker.de/mutt/compressed/
 .if ${FLAVOR:L:Mcompressed}
-PATCHFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
-PATCH_DIST_STRIP=-p1
-CONFIGURE_ARGS+= --enable-compressed
-CONFIGURE_STYLE+= automake
+PATCHFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
+PATCH_DIST_STRIP=	-p1
+CONFIGURE_ARGS+=	--enable-compressed
+CONFIGURE_STYLE+=	automake
 .else
-SUPDISTFILES+=	patch-${VERSION}.rr.compressed.1.gz:0
+SUPDISTFILES+=		patch-${VERSION}.rr.compressed.1.gz:0
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
-CONFIGURE_ARGS+=       --with-mixmaster="${LOCALBASE}/sbin/mixmaster"
-RUN_DEPENDS+=          ::mail/mixmaster
+CONFIGURE_ARGS+=	--with-mixmaster="${LOCALBASE}/sbin/mixmaster"
+RUN_DEPENDS+=		::mail/mixmaster
+.endif
+
+.if ${FLAVOR:L:Mhcache}
+PATCHFILES+=		mutt-cvs-maildir-header-cache.18:1
+PATCH_DIST_STRIP=	-p1
+AUTOCONF_VERSION=	2.52
+CONFIGURE_ARGS+=	--enable-hcache
+BUILD_DEPENDS+=		::databases/gdbm
+.else
+SUPDISTFILES+=		mutt-cvs-maildir-header-cache.18:1
 .endif
 
 .if defined(HOMESPOOL)
@@ -60,7 +71,7 @@ CONFIGURE_ARGS+= --with-homespool="${HOMESPOOL}"
 .endif
 
 .if defined(DOMAIN)
-CONFIGURE_ARGS+= --with-domain="${DOMAIN}"
+CONFIGURE_ARGS+=	--with-domain="${DOMAIN}"
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
