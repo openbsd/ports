@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/03 06:28:40 mark Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/30 08:12:18 pvalchev Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
@@ -26,7 +26,8 @@ USE_X11=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \

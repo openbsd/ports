@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/03 06:19:18 mark Exp $
+# $OpenBSD: Makefile,v 1.11 2002/11/30 08:12:18 pvalchev Exp $
 
 COMMENT=	"SDL image library"
 
@@ -28,7 +28,7 @@ USE_X11=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
