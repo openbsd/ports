@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.1 2003/08/02 09:53:27 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.2 2003/08/04 14:37:10 espie Exp $
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
 
@@ -54,6 +54,13 @@ _flavor_fragment= \
 		echo 1>&2 ">> Broken dependency: $$dir non existent"; \
 		exit 1; \
 	fi
+
+_depfile_fragment= \
+	case X$${_DEPENDS_FILE} in \
+		X) _DEPENDS_FILE=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
+		export _DEPENDS_FILE; \
+		trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15;; \
+	esac
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 

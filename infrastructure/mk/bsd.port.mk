@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.577 2003/08/04 14:00:46 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.578 2003/08/04 14:37:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1068,11 +1068,6 @@ addsum: fetch-all
 
 
 # Various dependency styles
-
-_depfile_fragment= \
-	: $${_DEPENDS_FILE:=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`}; \
-	export _DEPENDS_FILE; \
-	trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15
 
 _build_depends_fragment= \
 	if pkg dependencies check "$$pkg"; then \
@@ -2213,8 +2208,8 @@ _recurse-solve-package-depends:
 		default=`eval $$toset ${MAKE} _print-packagename`; \
 		: $${pkg:=$$default}; \
 		echo "@newdepend $$self:$$pkg:$$default" >>$${_depends_result}; \
-		if fgrep -q "|$$default|" ${_DEPENDS_FILE}; then : ; else \
-			echo "|$$default|" >>${_DEPENDS_FILE}; \
+		if fgrep -q "|$$default|" $${_DEPENDS_FILE}; then : ; else \
+			echo "|$$default|" >>$${_DEPENDS_FILE}; \
 			toset="$$toset self=\"$$default\""; \
 			if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
 				echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
@@ -2253,8 +2248,8 @@ _recurse-solve-package-depends:
 		X) ;;\
 		*) \
 			echo "@libdepend $$self:$$libspecs:$$pkg:$$default" >>$${_depends_result}; \
-			if ! fgrep -q "|$$default|" ${_DEPENDS_FILE}; then \
-				echo "lib|$$default|" >>${_DEPENDS_FILE}; \
+			if ! fgrep -q "|$$default|" $${_DEPENDS_FILE}; then \
+				echo "lib|$$default|" >>$${_DEPENDS_FILE}; \
 				toset="$$toset self=\"$$default\""; \
 				if ! eval $$toset ${MAKE} _recurse-solve-package-depends; then  \
 					echo 1>&2 "*** Problem checking deps in \"$$dir\"." ; \
@@ -2271,8 +2266,8 @@ _recurse-run-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_RUN_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if ! fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then \
-		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
+	if ! fgrep -q "|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "|${_dir}|" >> $${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
@@ -2286,8 +2281,10 @@ _recurse-run-dir-depends:
 run-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
-	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends
+	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
+		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends; \
+	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
@@ -2298,8 +2295,8 @@ _recurse-all-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP} ${_RUN_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if ! fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then \
-		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
+	if ! fgrep -q "|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "|${_dir}|" >> $${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
@@ -2315,8 +2312,8 @@ _build-dir-depends:
 .for _dir in ${_ALWAYS_DEP} ${_BUILD_DEP}
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo "$$self ${_dir}"; \
-	if ! fgrep -q "|${_dir}|" ${_DEPENDS_FILE}; then \
-		echo "|${_dir}|" >> ${_DEPENDS_FILE}; \
+	if ! fgrep -q "|${_dir}|" $${_DEPENDS_FILE}; then \
+		echo "|${_dir}|" >> $${_DEPENDS_FILE}; \
 		dir=${_dir}; \
 		${_flavor_fragment}; \
 		toset="$$toset self=\"${_dir}\""; \
@@ -2330,8 +2327,10 @@ _build-dir-depends:
 build-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@${_depfile_fragment}; \
-	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGPATH} ${MAKE} _build-dir-depends
+	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
+		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${FULLPKGPATH} ${MAKE} _build-dir-depends; \
+	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
@@ -2339,8 +2338,10 @@ build-dir-depends:
 all-dir-depends:
 .if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || !empty(_RUN_DEP)
 	@${_depfile_fragment}; \
-	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-	self=${FULLPKGPATH} ${MAKE} _recurse-all-dir-depends
+	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
+		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+		self=${FULLPKGPATH} ${MAKE} _recurse-all-dir-depends; \
+	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
 .endif
