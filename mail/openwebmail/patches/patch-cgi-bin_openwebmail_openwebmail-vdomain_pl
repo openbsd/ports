@@ -1,4 +1,4 @@
-$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-vdomain_pl,v 1.5 2005/01/27 06:01:17 kevlo Exp $
+$OpenBSD: patch-cgi-bin_openwebmail_openwebmail-vdomain_pl,v 1.6 2005/02/17 01:46:33 kevlo Exp $
 --- cgi-bin/openwebmail/openwebmail-vdomain.pl.orig	Wed Jan  5 18:26:24 2005
 +++ cgi-bin/openwebmail/openwebmail-vdomain.pl	Thu Jan 27 10:53:55 2005
 @@ -1,4 +1,4 @@
@@ -20,3 +20,12 @@ $OpenBSD: patch-cgi-bin_openwebmail_openwebmail-vdomain_pl,v 1.5 2005/01/27 06:0
  push (@INC, $SCRIPT_DIR);
  
  foreach (qw(ENV BASH_ENV CDPATH IFS TERM)) {delete $ENV{$_}}; $ENV{PATH}='/bin:/usr/bin'; # secure ENV
+@@ -643,7 +643,7 @@ sub change_vuser {
+       return;
+    }
+ 
+-   my $vgid=getgrnam('mail');	# for better compatibility with other mail progs
++   my $vgid=getgrnam('_mail');	# for better compatibility with other mail progs
+ 
+    if ( $new ) { # CREATE NEW USER
+       my $aliastxt='';
