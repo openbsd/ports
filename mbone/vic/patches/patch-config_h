@@ -1,5 +1,6 @@
---- config.h.orig	Mon Mar 22 09:44:40 1999
-+++ config.h	Tue Nov 30 16:56:44 1999
+$OpenBSD: patch-config_h,v 1.1 2002/10/06 22:28:49 naddy Exp $
+--- config.h.orig	Mon Mar 22 15:44:40 1999
++++ config.h	Sun Oct  6 23:05:29 2002
 @@ -36,7 +36,7 @@
  #ifndef vic_config_h
  #define vic_config_h
@@ -9,7 +10,7 @@
  # include <sys/types.h>
  #elif defined(sun)
  #include <sys/types.h>
-@@ -94,7 +94,7 @@
+@@ -94,7 +94,7 @@ extern "C" {
  #include <arpa/inet.h>
  int strcasecmp(const char *, const char *);
  clock_t clock(void);

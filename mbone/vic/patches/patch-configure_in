@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/10/06 22:28:49 naddy Exp $
+--- configure.in.orig	Fri Jun  4 13:39:32 1999
++++ configure.in	Sun Oct  6 23:07:08 2002
+@@ -230,6 +230,9 @@ sparc-sun-sunos*)
+ 	V_TARCMD="tar -h -c -f"
+ 	V_LIB="$V_LIB -L/usr/local/lib"
+ 	;;
++*-*-openbsd*)
++	V_DEFINE="$V_DEFINE -DSIGARGS=int"
++	;;
+ *-*-freebsd*)
+ 
+ 	;;

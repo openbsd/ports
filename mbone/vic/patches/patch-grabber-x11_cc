@@ -1,5 +1,6 @@
---- grabber-x11.cc.orig	Fri Jun 11 06:34:19 1999
-+++ grabber-x11.cc	Sat Oct 30 17:41:17 1999
+$OpenBSD: patch-grabber-x11_cc,v 1.1 2002/10/06 22:28:49 naddy Exp $
+--- grabber-x11.cc.orig	Fri Jun 11 12:34:19 1999
++++ grabber-x11.cc	Sun Oct  6 23:05:29 2002
 @@ -46,6 +46,11 @@
  #include <X11/Xutil.h>
  #include <X11/Xatom.h>
@@ -12,7 +13,7 @@
  #include <tk.h>
  /*** #include "sized_types.h" ***/
  
-@@ -194,12 +199,9 @@
+@@ -194,12 +199,9 @@ static X11Device find_x11_devices("x11")
  X11Device::X11Device(const char* nickname):
  			InputDevice(nickname), name_(nickname)
  {
@@ -26,7 +27,7 @@
  }
  
  extern "C" {
-@@ -454,7 +456,9 @@
+@@ -454,7 +456,9 @@ X11Grabber::X11Grab_RGB16(void)
      uint8 *vp= up + (framesize_ >> 2) ;
      uint16 *data=(uint16 *)ximage_->image->data, p0, p1, p2, p3;
  
@@ -36,7 +37,7 @@
  
      for (y=0; y<height_; y+=2) {
          for (x=0; x<width_; x += 2) {
-@@ -693,7 +697,7 @@
+@@ -693,7 +697,7 @@ X11Grabber::X11Grab_Initialize(Window rw
  	    VidUtil_DestroyXImage(dpy_, ximage_);
          ximage_ = VidUtil_AllocXImage(dpy_, root_vis, root_depth_, w, h, False);
      }
@@ -45,7 +46,7 @@
  }
  
  extern "C" {
-@@ -1049,7 +1053,7 @@
+@@ -1049,7 +1053,7 @@ X11Device::command(int argc, const char*
  
  X11Grabber::X11Grabber(const char* name, const char* format)
  {

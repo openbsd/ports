@@ -1,6 +1,7 @@
---- ntp-time.h.orig	Sat Oct 30 17:27:06 1999
-+++ ntp-time.h	Sat Oct 30 17:30:38 1999
-@@ -55,7 +55,7 @@
+$OpenBSD: patch-ntp-time_h,v 1.1 2002/10/06 22:28:49 naddy Exp $
+--- ntp-time.h.orig	Wed Feb 18 19:03:39 1998
++++ ntp-time.h	Sun Oct  6 23:05:29 2002
+@@ -55,7 +55,7 @@ inline u_int usec2ntp(u_int usec)
  /*
   * Number of seconds between 1-Jan-1900 and 1-Jan-1970
   */

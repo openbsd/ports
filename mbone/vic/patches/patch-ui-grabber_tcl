@@ -1,6 +1,7 @@
+$OpenBSD: patch-ui-grabber_tcl,v 1.1 2002/10/06 22:28:49 naddy Exp $
 --- ui-grabber.tcl.orig	Wed Jun  9 13:29:24 1999
-+++ ui-grabber.tcl	Wed Jul 28 14:42:30 1999
-@@ -454,6 +454,8 @@
++++ ui-grabber.tcl	Sun Oct  6 23:05:29 2002
+@@ -454,6 +454,8 @@ proc build.slicvideo w {
  #	pack  $w.f.cl.glabel $w.f.cl.label $w.f.cl.slabel \
  #			     -side left -fill x -expand 1
         

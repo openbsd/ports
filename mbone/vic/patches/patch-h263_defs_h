@@ -1,5 +1,6 @@
---- h263/defs.h.orig	Sat Oct 30 17:23:58 1999
-+++ h263/defs.h	Sat Oct 30 17:24:10 1999
+$OpenBSD: patch-h263_defs_h,v 1.1 2002/10/06 22:28:49 naddy Exp $
+--- h263/defs.h.orig	Thu Jun  3 17:53:34 1999
++++ h263/defs.h	Sun Oct  6 23:05:29 2002
 @@ -8,8 +8,10 @@
  
  #define NUM_LAYERS 4
