@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2004/05/11 14:56:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.42 2004/07/18 22:19:03 jakob Exp $
 
 COMMENT=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
-VERSION=		2004.350
-DISTNAME=		imap-2004
+VERSION=		2004.352
+DISTNAME=		imap-2004a
 
 PKGNAME=		imap-uw-${VERSION}
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
@@ -52,8 +52,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dmail/dmail ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/mailutil/mailutil ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tmail/tmail ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
-	${INSTALL_MAN} ${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+	${INSTALL_MAN} ${WRKSRC}/src/imapd/imapd.8 ${PREFIX}/man/man8/imapd.8
+	${INSTALL_MAN} ${WRKSRC}/src/ipopd/ipopd.8 ${PREFIX}/man/man8/ipopd.8
 	${INSTALL_MAN} ${WRKSRC}/src/dmail/dmail.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/mailutil/mailutil.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/src/tmail/tmail.1 ${PREFIX}/man/man1
