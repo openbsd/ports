@@ -1,0 +1,12 @@
+$OpenBSD: patch-aodv_aodv_rtable_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- aodv/aodv_rtable.h.orig	2003-02-26 17:07:15.000000000 -0500
++++ aodv/aodv_rtable.h	2003-08-22 07:45:17.000000000 -0400
+@@ -36,7 +36,7 @@ The AODV code developed by the CMU/MONAR
+ #include <assert.h>
+ #include <sys/types.h>
+ #include <config.h>
+-#include <lib/bsd-list.h>
++#include <sys/queue.h>
+ #include <scheduler.h>
+ 
+ #define CURRENT_TIME    Scheduler::instance().clock()

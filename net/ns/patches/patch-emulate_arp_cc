@@ -1,0 +1,24 @@
+$OpenBSD: patch-emulate_arp_cc,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- emulate/arp.cc.orig	2003-02-26 23:08:17.000000000 +0100
++++ emulate/arp.cc	2003-11-01 19:27:49.000000000 +0100
+@@ -47,7 +47,7 @@ static const char rcsid[] =
+ #include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <net/if.h>
+-#include <net/ethernet.h>
++#include <net/ethertypes.h>
+ #include <net/if_arp.h>
+ #include <netinet/if_ether.h>
+ #include <arpa/inet.h>
+@@ -60,11 +60,6 @@ static const char rcsid[] =
+ #include "emulate/internet.h"
+ 
+ // Very very very back hack. Should put this detection in autoconf.
+-#ifndef ether_aton
+-extern "C" {
+-ether_addr* ether_aton(const char *);
+-}
+-#endif
+ 
+ //
+ // arp.cc -- this object may be used within nse as

@@ -1,0 +1,12 @@
+$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_setdest_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- indep-utils/cmu-scen-gen/setdest/setdest.h.orig	2003-02-26 17:08:46.000000000 -0500
++++ indep-utils/cmu-scen-gen/setdest/setdest.h	2003-08-22 07:45:19.000000000 -0400
+@@ -3,7 +3,7 @@
+ 
+ /*#include <sys/queue.h>*/
+ #include "../../../config.h"
+-#include "../../../lib/bsd-list.h"
++#include <sys/queue.h> 
+ 
+ #ifndef LIST_FIRST
+ #define LIST_FIRST(head)	((head)->lh_first)

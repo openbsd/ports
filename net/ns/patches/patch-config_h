@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- config.h.orig	2003-11-01 16:55:26.000000000 +0100
++++ config.h	2003-11-01 16:55:43.000000000 +0100
+@@ -151,6 +151,7 @@ struct ns_addr_t {
+ #endif /* HAVE_TIME_H */
+ 
+ #ifdef HAVE_ARPA_INET_H
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif /* HAVE_ARPA_INET_H */
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-queue_priqueue_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- queue/priqueue.h.orig	2003-02-26 17:09:12.000000000 -0500
++++ queue/priqueue.h	2003-08-22 07:45:20.000000000 -0400
+@@ -45,7 +45,7 @@
+ #include "queue.h"
+ #include "drop-tail.h"
+ #include "packet.h"
+-#include "lib/bsd-list.h"
++#include <sys/queue.h>
+ 
+ class PriQueue;
+ typedef int (*PacketFilter)(Packet *, void *);

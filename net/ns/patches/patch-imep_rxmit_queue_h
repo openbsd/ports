@@ -1,12 +1,23 @@
-$OpenBSD: patch-imep_rxmit_queue_h,v 1.1 2002/09/29 14:32:45 naddy Exp $
---- imep/rxmit_queue.h.orig	Sun Sep 29 14:03:21 2002
-+++ imep/rxmit_queue.h	Sun Sep 29 14:03:32 2002
-@@ -58,7 +58,7 @@ LIST_HEAD(rexent_head, rexent);
- class ReXmitQ;
+$OpenBSD: patch-imep_rxmit_queue_h,v 1.2 2003/11/01 20:05:01 sturm Exp $
+--- imep/rxmit_queue.h.orig	2003-02-26 17:08:44.000000000 -0500
++++ imep/rxmit_queue.h	2003-08-22 07:45:19.000000000 -0400
+@@ -41,8 +41,8 @@
+ #ifndef imep_rexmit_queue_h
+ #define imep_rexmit_queue_h
  
- class ReXmitQIter {
--  friend ReXmitQ;
-+  friend class ReXmitQ;
-   
- public:
-   inline Packet * next() {
+-#include <packet.h>
+-#include "lib/bsd-list.h"
++#include "packet.h"
++#include <sys/queue.h>
+ 
+ typedef double Time;
+ 
+@@ -50,7 +50,7 @@ struct rexent {
+   double rexmit_at;
+   int rexmits_left;
+   Packet *p;
+-  LIST_ENTRY(struct rexent) next;
++  LIST_ENTRY(rexent) next;
+ };
+ 
+ LIST_HEAD(rexent_head, rexent);

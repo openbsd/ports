@@ -1,0 +1,12 @@
+$OpenBSD: patch-routing_rttable_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- routing/rttable.h.orig	2003-02-26 17:09:15.000000000 -0500
++++ routing/rttable.h	2003-08-22 07:45:21.000000000 -0400
+@@ -52,7 +52,7 @@ redistribute these changes without encum
+ 
+ #include "config.h"
+ #include "scheduler.h"
+-#include "lib/bsd-list.h"
++#include <sys/queue.h>
+ 
+ #define CURRENT_TIME    Scheduler::instance().clock()
+ #define INFINITY2        0xff

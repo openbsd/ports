@@ -1,0 +1,38 @@
+$OpenBSD: patch-emulate_ether_cc,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- emulate/ether.cc.orig	2003-02-26 17:08:40.000000000 -0500
++++ emulate/ether.cc	2003-08-22 08:26:57.000000000 -0400
+@@ -43,13 +43,33 @@ static const char rcsid[] =
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
+-#include <net/ethernet.h>
++#include <net/ethertypes.h>
+ 
+ #include "config.h"
+ #include "ether.h"
+ 
+ char Ethernet::hex[] = "0123456789abcdef";
+ 
++/*
++ * Structure of a 10Mb/s Ethernet header. [ported from ether.h]
++ */
++#ifndef HAVE_ETHER_HEADER_STRUCT
++struct  ether_header {
++        u_char  ether_dhost[ETHER_ADDR_LEN];
++        u_char  ether_shost[ETHER_ADDR_LEN];
++        u_short ether_type;
++};
++
++#endif
++/*
++ * Structure of a 48-bit Ethernet address. [ported from ether.h]
++ */
++#ifndef HAVE_ETHER_ADDRESS_STRUCT
++struct  ether_addr {
++        u_char octet[ETHER_ADDR_LEN];
++};
++#endif
++
+ void
+ Ethernet::ether_print(const u_char *bp)
+ {

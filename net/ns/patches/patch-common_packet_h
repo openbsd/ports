@@ -1,0 +1,16 @@
+$OpenBSD: patch-common_packet_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- common/packet.h.orig	2003-02-26 23:07:18.000000000 +0100
++++ common/packet.h	2003-11-01 19:38:00.000000000 +0100
+@@ -40,10 +40,11 @@
+ #include <string.h>
+ #include <assert.h>
+ 
++#include <sys/queue.h>
++
+ #include "config.h"
+ #include "scheduler.h"
+ #include "object.h"
+-#include "lib/bsd-list.h"
+ #include "packet-stamp.h"
+ #include "ns-process.h"
+ 

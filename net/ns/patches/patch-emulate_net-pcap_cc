@@ -1,0 +1,14 @@
+$OpenBSD: patch-emulate_net-pcap_cc,v 1.1 2003/11/01 20:05:01 sturm Exp $
+--- emulate/net-pcap.cc.orig	2003-02-26 23:08:18.000000000 +0100
++++ emulate/net-pcap.cc	2003-11-01 19:29:41.000000000 +0100
+@@ -341,7 +341,9 @@ PcapNetwork::phandler_callback(u_char* u
+ 	int s = inst->skiphdr();	// go to IP header
+ 	memcpy(p->accessdata(), pkt + s, ph->caplen - s);
+ 
+-	ps->callback(ps->clientdata, p, ph->ts);
++	{ struct timeval tv; tv.tv_sec = ph->ts.tv_sec;
++	tv.tv_usec = ph->ts.tv_usec;
++	ps->callback(ps->clientdata, p, tv);}
+ }
+ 
+ int

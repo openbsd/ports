@@ -1,6 +1,6 @@
-$OpenBSD: patch-indep-utils_webtrace-conv_dec_my-endian_cc,v 1.1 2000/11/09 11:43:34 espie Exp $
---- indep-utils/webtrace-conv/dec/my-endian.cc.orig	Sun Nov  5 19:05:22 2000
-+++ indep-utils/webtrace-conv/dec/my-endian.cc	Sun Nov  5 19:06:00 2000
+$OpenBSD: patch-indep-utils_webtrace-conv_dec_my-endian_cc,v 1.2 2003/11/01 20:05:01 sturm Exp $
+--- indep-utils/webtrace-conv/dec/my-endian.cc.orig	2003-02-26 17:08:50.000000000 -0500
++++ indep-utils/webtrace-conv/dec/my-endian.cc	2003-08-22 07:45:19.000000000 -0400
 @@ -39,14 +39,14 @@ void ToOtherEndian(TEntry *e) {
  	e -> tail.status = swap2(e -> tail.status);
  	
