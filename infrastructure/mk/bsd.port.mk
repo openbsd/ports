@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.533 2002/08/07 15:48:19 avsm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.534 2002/08/30 15:06:06 brad Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1494,8 +1494,8 @@ checksum: fetch
 
 refetch:
 .  for file cipher value in ${PROBLEMS}
-		@rm ${FULLDISTDIR}/${file}
-		@cd ${.CURDIR} && ${MAKE} ${FULLDISTDIR}/${file} \
+		@rm ${DISTDIR}/${file}
+		@cd ${.CURDIR} && ${MAKE} ${DISTDIR}/${file} \
 			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${cipher}/${value}/"
 .  endfor
 	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
