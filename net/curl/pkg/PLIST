@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/22 20:49:51 brad Exp $
 bin/curl
 man/man1/curl.1
 share/doc/curl/CHANGES
