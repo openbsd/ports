@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2000/04/09 17:38:40 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/09 20:21:41 espie Exp $
 
 DISTNAME=	squid-2.2.STABLE5
 PKGNAME=	squid-2.2
 CATEGORIES=	www
-NEED_VERSION=	1.218
-FAKE=No
+NEED_VERSION=	1.295
+HOMEPAGE=	http://squid.nlanr.net/Squid/
 MASTER_SITES=	http://www.squid-cache.org/Versions/v2/2.2/
 MASTER_SITES0=	http://www.squid-cache.org/Versions/v2/2.2/bugs/
 EXTRACT_SUFX=	-src.tar.gz
@@ -28,12 +28,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SYSCONFDIR=	/etc/squid
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir="/var/squid"
+STATEDIR=	/var/squid
+SUBST_VARS=SYSCONFDIR STATEDIR
+
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}'
+CONFIGURE_ARGS+=--sysconfdir='$${DESTDIR}${SYSCONFDIR}'
+CONFIGURE_ARGS+=	--localstatedir="${STATEDIR}"
 
 MAKE_FILE=	makefile
-
-post-install:
-	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>

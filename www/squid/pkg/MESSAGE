@@ -5,14 +5,14 @@ NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.2.RELEASE
 
 Documentation on Squid is available at http://squid.nlanr.net/
 The local (OpenBSD) differences are:
-- configuration files are in		/etc/squid
-- sample configuration files are in	/usr/local/lib/squid/conf
-- error message files are in		/usr/local/share/squid/errors
-- sample error message files are in	/usr/local/lib/squid/errors
-- icons are in 				/usr/local/share/squid/icons
-- sample icons are in			/usr/local/lib/squid/icons
-- the cache is in 			/var/squid/cache
-- logs are stored in 			/var/squid/logs
+- configuration files are in		${SYSCONFDIR}
+- sample configuration files are in	${PREFIX}/lib/squid/conf
+- error message files are in		${PREFIX}/share/squid/errors
+- sample error message files are in	${PREFIX}/lib/squid/errors
+- icons are in 				${PREFIX}/share/squid/icons
+- sample icons are in			${PREFIX}/lib/squid/icons
+- the cache is in 			${STATEDIR}/cache
+- logs are stored in 			${STATEDIR}/logs
 - the ugid squid runs as is		www:www
 
 Please remember to initialize the cache by running "squid -z" before
