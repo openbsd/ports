@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2003/08/08 07:20:21 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.292 2003/08/12 02:23:15 jose Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -205,6 +205,7 @@
      SUBDIR += ssldump
      SUBDIR += sslsniffer
      SUBDIR += tacacs+
+     SUBDIR += tclcurl
      SUBDIR += tcpcat
      SUBDIR += tcpdpriv
      SUBDIR += tcpflow
