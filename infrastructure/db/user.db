@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: user.db,v 1.2 1999/05/18 17:19:53 brad Exp $
+# $OpenBSD: user.db,v 1.3 1999/08/21 20:49:43 niklas Exp $
 
 # Used by install/createuser
 # fields for a user:
@@ -17,7 +17,7 @@
 	( pgsql => 
 		{ 	
 		fullname => 'PostgresQL pseudo user (created by postgresql port)',
-		uid      => 70,
+		uid      => 71,
 		home     => "$ENV{'PREFIX'}/pgsql",
 		shell    => '/bin/sh'
 		},
