@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/06/22 20:01:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/08/15 22:48:19 brad Exp $
 bin/BitchX
-bin/BitchX-1.0c16
+bin/BitchX-${VERSION}
 bin/scr-bx
 libexec/wserv-bitchx
 share/bitchx/BitchX.help
