@@ -1,0 +1,15 @@
+$OpenBSD: patch-scripts_mysqlbug_sh,v 1.1 2004/04/16 00:14:03 brad Exp $
+--- scripts/mysqlbug.sh.orig	Thu Apr 15 16:09:01 2004
++++ scripts/mysqlbug.sh	Thu Apr 15 16:09:31 2004
+@@ -254,9 +254,9 @@
+ if cmp -s $TEMP $TEMP.x
+ then
+   echo "File not changed, no bug report submitted."
+-  cp $TEMP /tmp/failed-mysql-bugreport
++  mv -f $TEMP /tmp/failed-mysql-bugreport
+   echo "The raw bug report exists in /tmp/failed-mysql-bugreport"
+-  echo "If you use this remember that the first lines of the report now is a lie.."
++  echo "If you use this remember that the first lines of the report are now a lie.."
+   exit 1
+ fi
+ 
