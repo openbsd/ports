@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/01/24 11:20:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2002/04/17 16:09:40 naddy Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=		interactive spelling checker
@@ -45,11 +45,16 @@ MULTI_PACKAGES=	-french -german -swedish -russian
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	ispell$i-${VERSION}
 .endfor
+SUBPACKAGE?=
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS=	::textproc/ispell
+.endif
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} 
 
