@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/25 17:36:20 couderc Exp $
+# $OpenBSD: Makefile,v 1.14 2004/09/23 20:05:43 sturm Exp $
 
 COMMENT=	"watch a tcpdump trace in real-time"
 
 DISTNAME=	parse
 PKGNAME=	parse-1.0
 CATEGORIES=	security
-
-MAINTAINER=	Francois Briere <fbriere@imaginatif.org>
 
 PERMIT_PACKAGE_CDROM=	"commercial. licensing restrictions."
 PERMIT_PACKAGE_FTP=	Yes

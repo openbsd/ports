@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/09/21 22:40:36 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/23 20:05:43 sturm Exp $
 
 COMMENT=	"image manipulation library"
 
@@ -6,8 +6,6 @@ DISTNAME=	imlib2-1.1.2
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.enlightenment.org/pages/imlib2.html
-
-MAINTAINER=	Francois Briere <fbriere@imaginatif.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
