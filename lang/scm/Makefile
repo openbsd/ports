@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/31 14:16:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/01/31 22:51:40 espie Exp $
 # losely based on the FreeBSD port
 
 CATEGORIES=	lang
@@ -24,19 +24,33 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SCM_DATA=	COPYING Iedline.scm Init5d3.scm Link.scm \
-		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm
+		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm \
+		disarm.scm build.scm split.scm
 
 FEATURES=arrays bignums cautious edit-line curses posix socket unix \
 dynamic-linking i/o-extensions inexact regex
 
+FLAVORS=no_x11
+
+FLAVOR?=
+.if ${FLAVOR:L:Mno_x11}
+.else
+FEATURES+=x
+OPTIONS+=--compiler-options=-I${X11BASE}/include
+OPTIONS+=--linker-options=-L${X11BASE}/lib
+SCM_DATA+=	x11.scm xevent.scm
+.endif
+
 post-build:
 	cd ${WRKSRC} && PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
 	    -F '${FEATURES}' \
+	    ${OPTIONS} \
 	    -h system \
 	    -o scm \
 	    -s "${PREFIX}/share/scm/"
 	cd ${WRKSRC} && PATH=${WRKSRC}:${PORTPATH} /bin/sh ./build \
 	    -F '${FEATURES} sicp' \
+	    ${OPTIONS} \
 	    -h system \
 	    -o scm-sicp \
 	    -s "${PREFIX}/share/scm/"
@@ -57,9 +71,14 @@ do-install:
 .for file in ${SCM_DATA}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/scm
 .endfor
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/scm/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/scm/slib
-	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/{ANNOUNCE,README,FAQ} ${PREFIX}/share/slib
+	${INSTALL_DATA} ${WRKSRC}/scm.info ${PREFIX}/info
 	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
+.if ${FLAVOR:L:Mno_x11}
+.else
+	${INSTALL_DATA} ${WRKSRC}/Xlibscm.info ${PREFIX}/info
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,53 @@
+$OpenBSD: patch-scm_dynl_c,v 1.1 2001/01/31 22:51:41 espie Exp $
+--- scm/dynl.c.orig	Tue Sep  7 15:14:00 1999
++++ scm/dynl.c	Wed Jan 31 23:01:47 2001
+@@ -419,7 +419,23 @@ SCM l_dyn_call(symb, shl)
+   ASSERT(NIMP(symb) && STRINGP(symb), symb, ARG1, s_call);
+   ASSERT(NIMP(shl) && CAR(shl)==tc16_shl, shl, ARG2, s_call);
+   DEFER_INTS;
+-  func = dlsym(SHL(shl), CHARS(symb));
++#ifdef __OpenBSD__
++# ifndef __ELF__
++  {
++  char *n;
++
++  n = malloc(LENGTH(symb)+2);
++  if (n) {
++  	*n = '_';
++	strcpy(n+1, CHARS(symb));
++	func = dlsym(SHL(shl), CHARS(symb));
++	free(n);
++  }
++  }
++# endif
++#endif
++  if (!func)
++        func = dlsym(SHL(shl), CHARS(symb));
+   if (!func) {
+     char *dlr = dlerror();
+     ALLOW_INTS;
+@@ -448,7 +464,23 @@ SCM l_dyn_main_call(symb, shl, args)
+   ASSERT(NIMP(symb) && STRINGP(symb), symb, ARG1, s_main_call);
+   ASSERT(NIMP(shl) && CAR(shl)==tc16_shl, shl, ARG2, s_main_call);
+   DEFER_INTS;
+-  func = dlsym(SHL(shl), CHARS(symb));
++#ifdef __OpenBSD__
++# ifndef __ELF__
++  {
++  char *n;
++
++  n = malloc(LENGTH(symb)+2);
++  if (n) {
++  	*n = '_';
++	strcpy(n+1, CHARS(symb));
++	func = dlsym(SHL(shl), CHARS(symb));
++	free(n);
++  }
++  }
++# endif
++#endif
++  if (!func)
++        func = dlsym(SHL(shl), CHARS(symb));
+   if (!func) {
+     char *dlr = dlerror();
+     ALLOW_INTS;

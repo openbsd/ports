@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2001/01/31 22:51:42 espie Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/Xlibscm.info
+info/Xlibscm.info
+share/scm/x11.scm
+share/scm/xevent.scm
+@exec install-info --info-dir=%D/info %D/info/Xlibscm.info
