@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.673 2004/12/29 14:30:53 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.674 2005/01/02 20:54:02 couderc Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -549,7 +549,7 @@ INSTALL_TARGET?=	install
 
 FAKE_TARGET ?= ${INSTALL_TARGET}
 
-.for _i in perl gnu imake
+.for _i in perl gnu imake pmk
 .  if ${CONFIGURE_STYLE:L:M${_i}}
 MODULES+=${_i}
 .  endif
