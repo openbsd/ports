@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.43 2002/06/09 05:08:37 jsyn Exp $
+# $OpenBSD: network.conf.template,v 1.44 2002/07/02 21:58:21 naddy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -140,29 +140,28 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.yggdrasil.com/mirrors/site/ftp.gnome.org/pub/GNOME/
 
 MASTER_SITE_PERL_CPAN+=	\
-	ftp://gatekeeper.dec.com/pub/plan/perl/CPAN/modules/by-module/ \
-	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
-	http://east.dl.sourceforge.net/mirrors/CPAN/modules/by-module/ \
-	http://west.dl.sourceforge.net/mirrors/CPAN/modules/by-module/ \
+	http://www.cpan.dk/CPAN/modules/by-module/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
-	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/ \
-	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/ \
+	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/ \
+	ftp://ftp.dnsbalance.ring.gr.jp/pub/lang/perl/CPAN/modules/by-module/ \
+	http://www.dnsbalance.ring.gr.jp/archives/lang/perl/CPAN/modules/by-module/ \
 	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/ \
 	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/ \
-	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
 	ftp://mirror.hiwaay.net/CPAN/modules/by-module/ \
-	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
 	ftp://ftp.bora.net/pub/CPAN/modules/by-module/ \
-	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
+	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/ \
+	ftp://csociety-ftp.ecn.purdue.edu/pub/CPAN/modules/by-module/ \
+	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/ \
+	ftp://ftp.isu.net.sa/pub/CPAN/modules/by-module/ \
 	ftp://ftp.ucr.ac.cr/pub/Unix/CPAN/modules/by-module/ \
-	http://www.cpan.dk/CPAN/modules/by-module/ \
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/ \
-	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/ \
-	ftp://ftp.mirror.ac.uk/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/ \
+	http://cpan.shellhung.org/modules/by-module/ \
 	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/ \
-	ftp://ftp.shellhung.org/pub/CPAN/modules/by-module/
+	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.funet.fi/pub/TeX/CTAN/ \
