@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/08/17 19:26:19 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2003/02/25 10:12:15 espie Exp $
 
 COMMENT=	"graphical disk usage utility for KDE"
 
@@ -19,25 +19,22 @@ EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdesu,kdeui,kio::x11/kde/libs3
 
-MODULES=	qt3
+MODULES=	kde
 
 # catch $HOME/.kde/share/config
-# that meinproc creates durring build.
+# that meinproc creates during build.
 PORTHOME=	${WRKDIR}
 
-MAKE_ENV=	KDEDIR="${LOCALBASE}"
-# Ensure Qt3 will always be at the front
-MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
+MAKE_ENV=	${MODKDE_CONFIGURE_ENV}
+MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --disable-debug --enable-final
-CONFIGURE_ARGS+= --disable-threading --disable-mt
-CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
-CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
-CONFIGURE_ARGS+= --with-xinerama
-CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION=	2.52
+MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
+CONFIGURE_ARGS=	 ${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
+MODKDE_VERSION=	3.1
 
 .include <bsd.port.mk>
