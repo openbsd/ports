@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2003/01/04 19:09:52 pvalchev Exp $
 
 COMMENT=		"grep wrapper with search highlighting"
 
@@ -7,7 +7,7 @@ CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.acme.com/software/hgrep/
 
-MAINTAINER=		Nick Nauwelaerts <nick@wanadoo.be>
+MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

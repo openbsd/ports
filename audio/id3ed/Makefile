@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 19:29:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2003/01/04 19:09:52 pvalchev Exp $
 
 COMMENT=		"interactive console id3 tag editor"
 
@@ -7,7 +7,7 @@ CATEGORIES=     	audio
 
 HOMEPAGE=		http://www.azstarnet.com/~donut/programs/id3ed.html
 
-MAINTAINER=		Nick Nauwelaerts <nick@wanadoo.be>
+MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

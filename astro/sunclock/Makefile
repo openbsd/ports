@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/18 14:50:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/04 19:09:52 pvalchev Exp $
 
 COMMENT=		"display the phase of the Sun on a map of the Earth"
 COMMENT-maps=		"additional maps of the Earth for sunclock"
@@ -10,7 +10,7 @@ CATEGORIES=		astro
 
 HOMEPAGE=		http://frmas.free.fr/li_1.htm
 
-MAINTAINER=		Nick Nauwelaerts <nick@wanadoo.be>
+MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
 
 MASTER_SITES=		ftp://ftp.ac-grenoble.fr/ge/geosciences/
 SUPDISTFILES=		sunclock_jpeg_medium_maps-1.0.tgz \

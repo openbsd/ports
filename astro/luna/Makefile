@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 15:11:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/01/04 19:09:52 pvalchev Exp $
 
 COMMENT=	"display the moon's phase"
 
@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.lzh
 
 EXTRACT_CASES=	*.lzh) lha xw=${WRKDIR}/${DISTNAME} ${FULLDISTDIR}/$$archive ;;
 
-MAINTAINER=	Nick Nauwelaerts <nick@wanadoo.be>
+MAINTAINER=	Nick Nauwelaerts <nick@nauwelaerts.net>
 
 PERMIT_PACKAGE_CDROM=	"copyrighted"
 PERMIT_PACKAGE_FTP=	"copyrighted"
