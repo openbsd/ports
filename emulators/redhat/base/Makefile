@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/12 23:01:54 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/15 23:43:36 naddy Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
-PKGNAME=	redhat_base-6.2p3
+PKGNAME=	redhat_base-6.2p4
 
 MAINTAINER=	Jason Ish <jasoni@openbsd.org>
 
@@ -20,7 +20,7 @@ RPMS=		ldconfig-1.9.5-16.i386.rpm \
 		libtermcap-2.0.8-20.i386.rpm \
 		bash-1.14.7-23.6x.i386.rpm:0 \
 		ncurses-5.0-12.i386.rpm:0 \
-		zlib-1.1.3-6.i386.rpm \
+		zlib-1.1.3-25.6.i386.rpm:0 \
 		fileutils-4.0-21.i386.rpm \
 		binutils-2.9.5.0.22-6.i386.rpm \
 		libstdc++-2.9.0-30.i386.rpm \
