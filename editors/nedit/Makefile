@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/01 16:44:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/29 10:07:05 form Exp $
 # $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
+
+COMMENT=	"X11/Motif GUI text editor"
 
 DISTNAME=	nedit-5.1.1
 CATEGORIES=	editors x11
