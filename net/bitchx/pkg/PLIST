@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/09/16 04:04:28 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2000/09/16 04:19:59 brad Exp $
 bin/BitchX
 bin/BitchX-${VERSION}
 bin/scr-bx
@@ -964,7 +964,6 @@ share/bitchx/translation/UNITED_KINGDOM_COM
 @dirrm share/bitchx/help/4_Misc/bind
 @dirrm share/bitchx/help/4_Misc/set
 @dirrm share/bitchx/help/4_Misc/window
-@dirrm share/bitchx/help/4_Misc/wset
 @dirrm share/bitchx/help/4_Misc
 @dirrm share/bitchx/help/5_Programming/on
 @dirrm share/bitchx/help/5_Programming
