@@ -1,0 +1,15 @@
+--- nls/C/Makefile.in.orig	Tue Aug  8 11:23:33 2000
++++ nls/C/Makefile.in	Tue Aug  8 10:55:05 2000
+@@ -184,9 +184,9 @@
+ all-local: blackbox.cat
+ install-data-local: blackbox.cat
+ 	@if test x$(NLSTEST) = "x-DNLS"; then \
+-		echo "Installing catalog in $(pkgdatadir)/nls/C"; \
+-		$(mkinstalldirs) $(pkgdatadir)/nls/C; \
+-		$(INSTALL_DATA) blackbox.cat $(pkgdatadir)/nls/C; \
++		echo "Installing catalog in $(DESTDIR)$(pkgdatadir)/nls/C"; \
++		$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/nls/C; \
++		$(INSTALL_DATA) blackbox.cat $(DESTDIR)$(pkgdatadir)/nls/C; \
+ 	fi
+ 
+ # note... when adding new catalogs... you do not need the

@@ -1,0 +1,15 @@
+--- nls/sv_SE/Makefile.in.orig	Tue Aug  8 11:31:42 2000
++++ nls/sv_SE/Makefile.in	Tue Aug  8 11:32:08 2000
+@@ -184,9 +184,9 @@
+ all-local: blackbox.cat
+ install-data-local: blackbox.cat
+ 	@if test x$(NLSTEST) = "x-DNLS"; then \
+-		echo "Installing catalog in $(pkgdatadir)/nls/sv_SE"; \
+-		$(mkinstalldirs) $(pkgdatadir)/nls/sv_SE; \
+-		$(INSTALL_DATA) blackbox.cat $(pkgdatadir)/nls/sv_SE; \
++		echo "Installing catalog in $(DESTDIR)$(pkgdatadir)/nls/sv_SE"; \
++		$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/nls/sv_SE; \
++		$(INSTALL_DATA) blackbox.cat $(DESTDIR)$(pkgdatadir)/nls/sv_SE; \
+ 	fi
+ 
+ Translation.m: $(MFILES)

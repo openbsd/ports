@@ -1,33 +1,28 @@
-# $OpenBSD: Makefile,v 1.22 2000/06/28 01:00:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.23 2000/08/11 03:45:03 brad Exp $
 
-DISTNAME=		blackbox-0.51.3.1
-CATEGORIES=		x11
-NEED_VERSION=		1.308
-MASTER_SITES=		ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
-			ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
+DISTNAME=	blackbox-0.60.3
+CATEGORIES=	x11
+NEED_VERSION=	1.310
+MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.6x.x/ \
+		ftp://ftp.dti.ad.jp/pub/X/blackbox/0.6x.x/
 
-MAINTAINER=		rohee@OpenBSD.ORG
+HOMEPAGE=	http://blackbox.alug.org/
 
-HOMEPAGE=		http://blackbox.alug.org/
+MAINTAINER=	rohee@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--disable-styled-frames
 
-FLAVORS=kde
-FLAVOR?=
-
-.if ${FLAVOR:L} == "kde"
-CONFIGURE_ARGS+= 	--enable-kde
-.endif
+DOCS=	AUTHORS ChangeLog ChangeLog-0.40.x ChangeLog-0.50.x \
+	ChangeLog-0.51.x README
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/blackbox
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS COPYING ChangeLog README \
-	    ${PREFIX}/share/doc/blackbox
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/blackbox
 
 .include <bsd.port.mk>

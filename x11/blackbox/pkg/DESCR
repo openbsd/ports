@@ -4,4 +4,6 @@ with C++, sharing no common code with any other window manager (even though
 the graphics implementation is similar to that of WindowMaker). It features
 small code size, a fast interface with simple menus, multiple workspaces,
 and decorated windows , built-in graphics code to render solids, gradients
-and bevels on the fly when needed, and more. 
+and bevels on the fly when needed, and more.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,15 @@
+--- nls/tr_TR/Makefile.in.orig	Tue Aug  8 11:32:17 2000
++++ nls/tr_TR/Makefile.in	Tue Aug  8 11:32:36 2000
+@@ -188,9 +188,9 @@
+ all-local: blackbox.cat
+ install-data-local: blackbox.cat
+ 	@if test x$(NLSTEST) = "x-DNLS"; then \
+-		echo "Installing catalog in $(pkgdatadir)/nls/tr_TR"; \
+-		$(mkinstalldirs) $(pkgdatadir)/nls/tr_TR; \
+-		$(INSTALL_DATA) blackbox.cat $(pkgdatadir)/nls/tr_TR; \
++		echo "Installing catalog in $(DESTDIR)$(pkgdatadir)/nls/tr_TR"; \
++		$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/nls/tr_TR; \
++		$(INSTALL_DATA) blackbox.cat $(DESTDIR)$(pkgdatadir)/nls/tr_TR; \
+ 	fi
+ 
+ Translation.m: $(MFILES)

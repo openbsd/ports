@@ -1,0 +1,13 @@
+--- data/Makefile.in.orig	Tue Aug  8 11:48:59 2000
++++ data/Makefile.in	Tue Aug  8 11:49:17 2000
+@@ -312,8 +312,8 @@
+ 
+ all-local: menu
+ 
+-menu: menu.in
+-	@regex_cmd@ -e "s,@pkgdatadir@,$(pkgdatadir)," menu.in > menu
++menu: $(srcdir)/menu.in
++	@regex_cmd@ -e "s,@pkgdatadir@,$(pkgdatadir)," $(srcdir)/menu.in > menu
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

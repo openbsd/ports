@@ -1,26 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.8 2000/06/11 08:42:38 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.9 2000/08/11 03:45:05 brad Exp $
 bin/blackbox
 bin/bsetroot
 share/Blackbox/menu
-share/Blackbox/styles/blackmagic
-share/Blackbox/styles/coldsteel
-share/Blackbox/styles/colorpurple
-share/Blackbox/styles/darkgreen
-share/Blackbox/styles/default
-share/Blackbox/styles/gnoid
-share/Blackbox/styles/green
-share/Blackbox/styles/onoid
-share/Blackbox/styles/pnoid
-share/Blackbox/styles/previous
-share/Blackbox/styles/results
-share/Blackbox/styles/slatebox
-share/Blackbox/styles/steelblue
-share/Blackbox/styles/steelbox
-share/Blackbox/styles/stylesmenu
+share/Blackbox/nls/POSIX
+share/Blackbox/nls/US_ASCII
+share/Blackbox/nls/en
+share/Blackbox/nls/en_US
+share/Blackbox/nls/es
+share/Blackbox/nls/C/blackbox.cat
+share/Blackbox/nls/es_ES/blackbox.cat
+share/Blackbox/nls/pt_BR/blackbox.cat
+share/Blackbox/nls/ru_RU/blackbox.cat
+share/Blackbox/nls/sv_SE/blackbox.cat
+share/Blackbox/nls/tr_TR/blackbox.cat
+share/Blackbox/styles/Artwiz
+share/Blackbox/styles/Flux
+share/Blackbox/styles/Minimal
+share/Blackbox/styles/Nyz
+share/Blackbox/styles/Operation
+share/Blackbox/styles/Outcomes
+share/Blackbox/styles/Rampage
+share/Blackbox/styles/Rancor
+share/Blackbox/styles/Results
+share/Blackbox/styles/Shade
+share/Blackbox/styles/Spiff
+share/Blackbox/styles/TDF
+share/Blackbox/styles/Twice
 share/doc/blackbox/AUTHORS
-share/doc/blackbox/COPYING
 share/doc/blackbox/ChangeLog
+share/doc/blackbox/ChangeLog-0.40.x
+share/doc/blackbox/ChangeLog-0.50.x
+share/doc/blackbox/ChangeLog-0.51.x
 share/doc/blackbox/README
-@dirrm share/doc/blackbox
+@dirrm share/Blackbox/nls/C
+@dirrm share/Blackbox/nls/es_ES
+@dirrm share/Blackbox/nls/pt_BR
+@dirrm share/Blackbox/nls/ru_RU
+@dirrm share/Blackbox/nls/sv_SE
+@dirrm share/Blackbox/nls/tr_TR
+@dirrm share/Blackbox/nls
 @dirrm share/Blackbox/styles
 @dirrm share/Blackbox
+@dirrm share/doc/blackbox
