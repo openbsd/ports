@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2001/03/15 17:15:04 brad Exp $
---- src/Makefile.in.orig	Sat Aug 14 11:42:37 1999
-+++ src/Makefile.in	Thu Mar 15 11:24:44 2001
-@@ -150,7 +150,7 @@ su_DEPENDENCIES = $(LDADD)
+$OpenBSD: patch-src_Makefile_am,v 1.1 2001/03/15 17:15:04 brad Exp $
+--- src/Makefile.am.orig	Thu Mar 15 11:19:32 2001
++++ src/Makefile.am	Thu Mar 15 11:22:45 2001
+@@ -58,7 +58,7 @@ SUFFIXES = .sh
  
- SUFFIXES = .sh
+ all-local: su
  
 -installed_su = $(bindir)/`echo su|sed '$(transform)'`
 +installed_su = $(DESTDIR)$(bindir)/`echo su|sed '$(transform)'`
  
  setuid_root_mode = a=rx,u+s
  
-@@ -893,7 +893,7 @@ install-root: su
+@@ -75,7 +75,7 @@ install-root: su
  	@$(INSTALL_SU)
  
  install-exec-local: su
@@ -18,4 +18,4 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2001/03/15 17:15:04 brad Exp $
 +	@TMPFILE=$(DESTDIR)$(bindir)/.su-$$$$; \
  	rm -f $$TMPFILE; \
  	echo > $$TMPFILE; \
- 	can_create_suid_root_executable=no; \
+ ## See if we can create a setuid root executable in $(bindir).
