@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/04/10 09:52:45 jsyn Exp $
+# $OpenBSD: Makefile,v 1.6 2004/05/04 11:31:48 naddy Exp $
 
 COMMENT=		"graphical representation of CVS repository"
 
@@ -6,7 +6,7 @@ DISTNAME=		cvsgraph-1.2.0
 CATEGORIES=		devel
 HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 
-MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@piestrak.waw.pl>
+MAINTAINER=	Aleksander Piotrowski <aleksander.piotrowski@nic.com.pl>
 
 # GPL 2
 PERMIT_PACKAGE_CDROM=	Yes
