@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1998/05/21 01:38:16 angelos Exp $
+# $OpenBSD: Makefile,v 1.10 1998/05/22 01:08:52 angelos Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -25,13 +25,13 @@
 #    SUBDIR += splay
 #    SUBDIR += timidity
      SUBDIR += tosha
-#    SUBDIR += tracker
+     SUBDIR += tracker
 #    SUBDIR += workman
      SUBDIR += xcd
-#    SUBDIR += xcdplayer
+     SUBDIR += xcdplayer
      SUBDIR += xmcd
-#    SUBDIR += xmix
-#    SUBDIR += xmmix
+     SUBDIR += xmix
+     SUBDIR += xmmix
 #    SUBDIR += xmpeg3
 
 .include <bsd.port.subdir.mk>
