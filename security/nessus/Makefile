@@ -1,16 +1,53 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/28 21:27:05 brad Exp $
+# Makefile for:         nessus
+# Version required:     0.2
+# Date created:         14 Mar 1999
+# Whom:                 dugsong@monkey.org
+#
+# $OpenBSD: Makefile,v 1.5 1999/10/26 13:39:19 dugsong Exp $
 
-DISTNAME=	nessus-990201
+PKGNAME=	nessus-${VERS}
+
 CATEGORIES=	security
-MASTER_SITES=	http://www.nessus.org/ \
-		http://www.worldnet.fr/~deraison/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/
-EXTRACT_SUFX=	.tgz
+
+VERS=		0.98.3
+
+DIST_SUBDIR=	${PKGNAME}
+
+DISTFILES=	nessus-libraries-${VERS}${EXTRACT_SUFX} \
+		libnasl-${VERS}${EXTRACT_SUFX} \
+		nessus-core-${VERS}${EXTRACT_SUFX} \
+		nessus-plugins-${VERS}${EXTRACT_SUFX}
+
+NESSUS_DIRS=	${DISTFILES:S/-${VERS}${EXTRACT_SUFX}//g}
+
+MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${VERS}/ \
+		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/ \
+		ftp://ftp.chg.ru/pub/security/nessus/nessus-${VERS}/ \
+		ftp://ftp.sekure.net/pub/nessus/nessus-${VERS}/ \
+		ftp://ftp.nectec.or.th/pub/mirrors/nessus/nessus-${VERS}/
 
 MAINTAINER=	dugsong@monkey.org
 
 LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+
 
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+= --sharedstatedir=${PREFIX}/share --localstatedir=${PREFIX}/share
+
+# GNU build environment gone horribly wrong. ugh.
+post-extract:
+	@sed "s%y0y0y0%${NESSUS_DIRS}%g" ${FILESDIR}/Makefile > ${WRKSRC}Makefile
+	@sed -e "s%y0y0y0%${NESSUS_DIRS}%g" -e "s%w00w00%${WRKSRC}%g" \
+		${FILESDIR}/configure > ${WRKSRC}configure
+	@sed "s%w00w00%${WRKSRC}%g" ${FILESDIR}/nessus-config > ${WRKSRC}nessus-config
+	@sed "s%w00w00%${WRKSRC}%g" ${FILESDIR}/nasl-config > ${WRKSRC}nasl-config
+	@chmod 755 ${WRKSRC}*
+	@(cd ${WRKSRC}nessus-libraries/include ; ln -s . nessus)
+	@(cd ${WRKSRC}nessus-libraries/cipher ; ln -s . peks)
+	@(cd ${WRKSRC}libnasl/include ; ln -s . nessus)
+
+pre-install:
+	mkdir -p -m 755 ${PREFIX}/include/nessus
 
 .include <bsd.port.mk>
