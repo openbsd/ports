@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_util_h,v 1.1 2004/10/06 01:08:17 naddy Exp $
+--- util/util.h.orig	Tue Sep 21 11:36:35 2004
++++ util/util.h	Tue Sep 21 11:37:02 2004
+@@ -35,6 +35,8 @@
+ # include <netinet/in.h>
+ #endif
+ 
++#include <sys/socket.h>
++
+ #if defined(HAVE_SYS_TIME_H)
+ # include <sys/time.h>
+ #elif defined(HAVE_SYS_TIMEB_H)
