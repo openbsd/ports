@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/12/28 09:29:40 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2002/01/07 02:19:28 pvalchev Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+= --enable-extras \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/fvwm
-	${INSTALL_DATA} ${WRKDIR}/*.xpm ${PREFIX}/share/pixmaps/fvwm/
+	${INSTALL_DATA} ${WRKDIR}/fvwm_icons/*.xpm ${PREFIX}/share/pixmaps/fvwm/
 	${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/share/fvwm
 	
 .include <bsd.port.mk>
