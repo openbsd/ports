@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/07 15:28:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/26 18:00:06 sturm Exp $
 COMMENT=		"aggregation-based network traffic profiler"
 
 DISTNAME=		aguri-0.7
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.csl.sony.co.jp/person/kjc/software.html
@@ -16,12 +17,18 @@ MASTER_SITES=		ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
+do-configure:
+	@perl -pi -e 's,/usr/local,${PREFIX},' ${WRKDIST}/scripts/*
+	@perl -pi -e 's,lib/aguri,bin,' ${WRKDIST}/scripts/*
+	@perl -pi -e 's,\.pl,,' ${WRKDIST}/scripts/*
+
 post-install:
-		${INSTALL_SCRIPT_DIR} ${PREFIX}/share/aguri/
-.for script in README agurify.pl density.pl makeplot.pl
-		${INSTALL_SCRIPT} ${WRKDIST}/scripts/${script} \
-			${PREFIX}/share/aguri
+.for script in agurify.pl density.pl makeplot.pl makeimages.pl
+	${INSTALL_SCRIPT} ${WRKDIST}/scripts/${script} \
+		${PREFIX}/bin/${script:R}
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/aguri
+	${INSTALL_DATA} ${WRKDIST}/scripts/README ${PREFIX}/share/doc/aguri
 
 NO_REGRESS=		Yes
 
