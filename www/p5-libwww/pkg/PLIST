@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/07/21 18:56:19 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/11/23 11:31:25 sturm Exp $
 bin/GET
 bin/HEAD
 bin/POST
@@ -58,8 +58,8 @@ ${P5SITE}/WWW/RobotRules.pm
 ${P5SITE}/WWW/RobotRules/AnyDBM_File.pm
 ${P5SITE}/lwpcook.pod
 ${P5SITE}/lwptut.pod
-${P5ARCH}/auto/libwww-perl/.packlist
-${P5ARCH}/perllocal.pod
+@comment ${P5ARCH}/auto/libwww-perl/.packlist
+@comment ${P5ARCH}/perllocal.pod
 man/man1/GET.1
 man/man1/HEAD.1
 man/man1/POST.1
