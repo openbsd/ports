@@ -1,0 +1,84 @@
+$OpenBSD: patch-wmphoto_wmphoto_c,v 1.1.1.1 2001/01/16 22:44:43 naddy Exp $
+--- wmphoto/wmphoto.c.orig	Sun Oct  3 07:11:37 1999
++++ wmphoto/wmphoto.c	Tue Jan 16 18:05:55 2001
+@@ -34,7 +34,6 @@ char current[1024];
+ 
+ char home[1024];
+ 
+-
+ int main(int argc, char **argv)
+   {
+ 	init_stuff(argc, argv);
+@@ -49,7 +48,7 @@ int main(int argc, char **argv)
+ void init_stuff(int argc, char **argv)
+   {
+ 	/* get the user's home */
+-	sprintf(home,"%s/.wmphoto",getenv("HOME"));
++	snprintf(home,sizeof(home),"%s/.wmphoto",getenv("HOME"));
+ 	
+ 	if (argc == 2)
+ 	  {	show_usage();  }
+@@ -194,7 +193,7 @@ void get_next_photo(char *current)
+ 
+ 
+ 
+-int myselect(const struct dirent *d)
++int myselect(struct dirent *d)
+   {	char *name = d->d_name;
+ 	static int lenght;
+ 	static char *defExt = ".xpm.gz";
+@@ -223,7 +222,7 @@ void load_photo(char *name)
+ 
+ 	mylenght = strlen(defExt);
+ 
+-	sprintf(current, "%s/%s", home, name);
++	snprintf(current, sizeof(current), "%s/%s", home, name);
+ 
+ 	lenght = strlen(current);
+ 	current[lenght - mylenght] = 0;
+@@ -252,7 +251,7 @@ void load_photo(char *name)
+ 
+ 	status = XpmReadFileToPixmap(display, wmgen.pixmap, current, &mypixmap,
+ 		0, &xpmAttributes);
+-	strcpy(current, name);
++	strlcpy(current, name, sizeof(current));
+ 	if (status != XpmSuccess)
+ 	  {	fprintf(stderr, "wmphoto (XpmError): %s\n",
+ 			XpmGetErrorString(status));
+@@ -298,7 +297,8 @@ void add_photo(char *filename)
+ 		  }
+ 		printf("good.\n\n");
+ 	  }
+-	closedir(mydir);
++	else
++	  closedir(mydir);
+ 
+ 	
+ 
+@@ -315,7 +315,7 @@ void add_photo(char *filename)
+ 	printf("Command to run for button2? (ex: xterm -e talk amartoq@cec.uchile.cl)\n");
+ 	fgets(command2, 1024, stdin);
+ 
+-	sprintf(current, "%s/%s", home, profile);
++	snprintf(current, sizeof(current), "%s/%s", home, profile);
+ 	printf("Creating %s... ", current);
+ 
+ 	myfile = fopen(current, "w");
+@@ -329,7 +329,7 @@ void add_photo(char *filename)
+ 	fclose(myfile);
+ 
+ 	printf("good.\nExecuting convert, this may take a while...\n");
+-	sprintf(current, "convert -colors 255 -dither -geometry 48x52! %s xpm:%s/%s.xpm.gz", filename, home, profile);
++	snprintf(current, sizeof(current), "convert -colors 255 -dither -geometry 48x52! %s xpm:%s/%s.xpm.gz", filename, home, profile);
+ 	printf("%s ", current);
+ 	fflush(stdout);
+ 
+@@ -345,7 +345,7 @@ void show_usage()
+   {
+ 	printf("[wmphoto %s] Copyright(C) 1999, by Aldrin Martoq A. (amartoq@cec.uchile.cl)\n", WMPHOTO_VERSION);
+ 
+-	printf("ussage:\nwmphoto\n\t Starts the wmphoto as dock app.\n\nwmphoto add <an_image_file>\n\t Add the photo <an_image_file> to your ~/.wmphoto directory interactivaly\n\t(Imagemagick's `convert` program needed).\n\n");
++	printf("usage:\nwmphoto\n\t Starts the wmphoto as dock app.\n\nwmphoto add <an_image_file>\n\t Add the photo <an_image_file> to your ~/.wmphoto directory interactivaly\n\t(Imagemagick's `convert` program needed).\n\n");
+ 
+ 	exit(0);
+   }

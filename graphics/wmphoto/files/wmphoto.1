@@ -1,0 +1,110 @@
+.\" $OpenBSD: wmphoto.1,v 1.1.1.1 2001/01/16 22:44:43 naddy Exp $
+.Dd Oct 3, 1999
+.Dt WMPHOTO 1
+.Os
+.Sh NAME
+.Nm wmphoto
+.Md show photo
+.Sh SYNOPSIS
+.Nm wmphoto
+.Op Ar add image-file
+.Sh Hints for wmphoto
+
+Once you successfully get your first image (as shown later), the
+mouse buttons are:
+.br
+1. exec 1st command for current photo.
+.br
+2. exec 2nd command for current photo.
+.br
+3. rescan ~/.wmphoto and get next photo.
+
+
+
+.Sh How this works
+
+wmphoto reads pictures and commands from the user directory ~/.wmphoto/.
+A so called "profile" is a file having the extension ".xpm.gz".
+
+Yes, this file is a xpm and gzipped picture that wmphoto displays
+for you.  This image MUST BE 48-width and 52-height sizes, and no more than
+256 colors!
+
+The commands for this photo are saved on a file with the name of
+the profile (wihout the .xpm.gz extension).  In this file, the first line
+is the 1st command, and the second line is the 2nd command.
+
+
+
+.Sh How to add a photo (the hard way)
+
+Ask a friend for a photo of him/her.  Once you have it, use a graphics
+program (ex: gimp) for:
+.br
+1. scale the photo to 48x52.
+.br
+2. save it as xpm, no more than 256 colors.
+.br
+3. gzip it
+
+Now copy your photo to the ~/.wmphoto/ directory, for example,
+~/.wmphoto/john.xpm.gz.  That's all!  Now run wmphoto and john's picture will
+appear.
+
+If you want add more photos, do the same and save it with other name
+(let's say ~/.wmphoto/sara.xpm.gz).  Not need to close wmphoto!  Just press
+the 3rd Button mouse, and wmphoto will rescan the ~/.wmphoto directory and
+show you the next photo.
+
+
+
+.Sh How to setup your commands (the hard way)
+
+Now you have both photos, create a file like this:
+.br
+~/.wmphoto/john
+.br
+xterm -e pine john@windowmaker.org
+.br
+xterm -e talk john@windowmaker.org
+
+The first line is the command executed whe you click on the john's
+picture.  You can do the same for sara's photo.
+
+Note that you must rescan ~/.wmphoto (just press 3rd button until
+reappear john's photo) for changes to take effect.
+
+
+
+.Sh How to make both things (the easy way, IMHO)
+
+If you have a image named john.jpg (no matter the size, colors or
+format), just do:
+
+% wmphoto add /path/to/john.jpg
+.br
+Wmphoto will ask you a couple of questions now...
+you *need* ImageMagick's `convert` program to do this!
+
+Enter a name for this profile: john
+.br
+Command to run for button1? (ex: xterm -e pine amartoq@dcc.uchile.cl)
+.br
+xterm -e pine john@windowmaker.org
+.br
+Command to run for button2? (ex: xterm -e talk amartoq@dcc.uchile.cl)
+.br
+xterm -e talk john@windowmaker.org
+
+Creating /your/home/directory/.wmphoto/john... good.
+.br
+Executing convert, this may take a while...
+.br
+convert -colors 255 -dither -geometry 48x52! /path/to/john.jpg xpm:/your/home/directory/.wmphoto/john.xpm.gz done.
+.br
+
+If you are already running wmphoto, just press the 3rd
+button over it until appear your new photo.
+To add a new photo, just run wmphoto this same way.
+
+As you see, you need ImageMagick for this to work.

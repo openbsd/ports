@@ -1,0 +1,4 @@
+It's a dock-app that can show you a photo and execute a command
+related to that photo.  You can have many photos.
+
+WWW: ${HOMEPAGE}

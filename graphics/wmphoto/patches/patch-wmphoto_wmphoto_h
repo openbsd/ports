@@ -1,0 +1,12 @@
+$OpenBSD: patch-wmphoto_wmphoto_h,v 1.1.1.1 2001/01/16 22:44:43 naddy Exp $
+--- wmphoto/wmphoto.h.orig	Sat Mar 13 08:05:18 1999
++++ wmphoto/wmphoto.h	Tue Jan 16 17:34:35 2001
+@@ -30,7 +30,7 @@ void poner_marco();
+ void default_image();
+ 
+ void get_next_photo();
+-int myselect(const struct dirent *d);
++int myselect(struct dirent *d);
+ void load_photo(char *name);
+ void myexecCommand(char *command);
+ void show_usage();
