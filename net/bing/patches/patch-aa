@@ -1,15 +1,10 @@
-*** Makefile.orig	Thu Jan  8 10:22:51 1998
---- Makefile	Thu Jan  8 10:23:10 1998
-***************
-*** 28,32 ****
-  	$(RM) -f bing bing.ps bing.0
-  
-  install: bing bing.8
-! 	$(INSTALL) -m 644 -o man -g man bing.8 $(MANDIR)/man8
-  	$(INSTALL) -m 4555 -o root -g staff bing $(BINDIR)
---- 28,32 ----
-  	$(RM) -f bing bing.ps bing.0
-  
-  install: bing bing.8
-! 	$(INSTALL) -m 644 -o root -g bin bing.8 $(MANDIR)/man8
-  	$(INSTALL) -m 4555 -o root -g staff bing $(BINDIR)
+--- Makefile.orig	Fri Jul 21 08:03:30 1995
++++ Makefile	Sat Apr 22 05:57:32 2000
+@@ -28,5 +28,5 @@
+ 	$(RM) -f bing bing.ps bing.0
+ 
+ install: bing bing.8
+-	$(INSTALL) -m 644 -o man -g man bing.8 $(MANDIR)/man8
+-	$(INSTALL) -m 4555 -o root -g staff bing $(BINDIR)
++	$(INSTALL) -m 644 -o root -g bin bing.8 $(DESTDIR)$(MANDIR)/man8
++	$(INSTALL) -m 4555 -o root -g staff bing $(DESTDIR)$(BINDIR)

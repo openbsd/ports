@@ -1,3 +1,4 @@
 bin/icmpinfo
 man/man1/icmpinfo.1
 share/doc/icmpinfo/README
+@dirrm share/doc/icmpinfo

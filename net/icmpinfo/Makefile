@@ -3,12 +3,11 @@
 # Date created:			  Mon June 23, 1997
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.4 2000/04/09 17:37:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/21 14:58:20 kevlo Exp $
 #
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutils
-FAKE=No
 MASTER_SITES=	ftp://hplyot.obspm.fr/net/
 
 MAINTAINER=     angelos@openbsd.org
@@ -19,7 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=
-MAN1=		icmpinfo.1
+MAN1=           icmpinfo.1
+FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
@@ -27,7 +27,7 @@ do-install:
 	/bin/chmod 4555 ${PREFIX}/bin/icmpinfo
 	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/${MAN1}
 .if !defined(NOPORTDOCS)
-	@mkdir -p ${PREFIX}/share/doc/icmpinfo
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/icmpinfo
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/icmpinfo
 .endif
 

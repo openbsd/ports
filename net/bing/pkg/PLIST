@@ -1,3 +1,4 @@
 bin/bing
 man/man8/bing.8
 share/doc/bing/README
+@dirrm share/doc/bing
