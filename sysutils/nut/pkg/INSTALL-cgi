@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL-cgi,v 1.1 2002/10/14 16:14:33 marcm Exp $
+# $OpenBSD: INSTALL-cgi,v 1.2 2003/01/17 06:23:43 marcm Exp $
 
 P_NAME=nut-cgi
 
@@ -9,8 +9,9 @@ DIRS='
 
 FILES='
 hosts.conf
-multimon.conf
 upsset.conf
+upsstats-single.html
+upsstats.html
 '
 
 set -e

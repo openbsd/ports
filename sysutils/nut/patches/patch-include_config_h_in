@@ -1,13 +1,13 @@
-$OpenBSD: patch-include_config_h_in,v 1.1 2002/10/14 16:14:33 marcm Exp $
---- include/config.h.in.orig	Mon May 27 07:18:43 2002
-+++ include/config.h.in	Mon Sep 30 11:02:00 2002
+$OpenBSD: patch-include_config_h_in,v 1.2 2003/01/17 06:23:43 marcm Exp $
+--- include/config.h.in.orig	Sun Nov 17 07:55:46 2002
++++ include/config.h.in	Sun Dec 29 11:46:26 2002
 @@ -9,6 +9,9 @@
- /* path where configuration files get installed by default */
- #define CONFPATH "/usr/local/ups/etc"
+ /* Default path for configuration files */
+ #undef CONFPATH
  
 +/* path where CGI configuration files are looked for by a chrooted Apache */
 +#define CGICONFPATH "/conf/nut"
 +
- /* state files created by the drivers go here */
- #define STATEPATH "/var/state/ups"
+ /* Default path for UPS drivers */
+ #undef DRVPATH
  

@@ -9,7 +9,7 @@
 |     echo -n ' nut'
 |     /usr/local/bin/upsdrvctl start > /dev/null
 |     /usr/local/sbin/upsd > /dev/null 2>&1
-|     /usr/local/sbin/upsmon > /dev/null
+|     /usr/local/sbin/upsmon > /dev/null 2>&1
 | fi
 |
 | You may also be interested in the "-i" flag to upsd, see upsd(8).
