@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/30 02:02:52 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/05 19:32:22 brad Exp $
 
 DISTNAME=	gtkglarea-1.2.1
 CATEGORIES=	x11 graphics
@@ -19,6 +19,7 @@ SEPARATE_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/share/doc/gtkglarea/
