@@ -3,4 +3,12 @@ of simultaneously playing channels of 16 bit stereo audio, plus a single
 channel of music, mixed by the popular MikMod MOD, Timidity MIDI and SMPEG MP3
 libraries.
 
+Packages can be built with additional flavors:
+  
+  vorbis:	Enable Ogg Vorbis music.
+  		This FLAVOR requires the vorbis package.
+
+  mikmod:	Enable MOD music via mikmod.
+  		This FLAVOR requires the libmikmod package.
+
 WWW: ${HOMEPAGE}
