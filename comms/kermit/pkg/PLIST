@@ -1,3 +1,4 @@
 bin/kermit
-man/man1/kermit.0
+man/cat1/kermit.0
 share/examples/kermit/dot.kermrc
+@dirrm share/examples/kermit

@@ -3,7 +3,7 @@
 # Date created:		Dec 31, 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1998/01/30 22:35:21 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/03/03 21:45:42 marc Exp $
 #
 
 DISTNAME=	cku192src
@@ -14,15 +14,13 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
 		ftp://ftp.std.com/customers2/src/telcom/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 RESTRICTED=	"'No redistribution' copyright"
 NO_WRKSUBDIR=	yes
-MAN1=		kermit.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/kermit
 	${INSTALL_DATA} ${FILESDIR}/dot.kermrc ${PREFIX}/share/examples/kermit
-	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>

@@ -1,16 +1,34 @@
-*** ckutio.c	Sun Nov 24 16:20:49 1996
---- ckutio.c	Thu Jan  1 08:59:12 1998
-***************
-*** 289,295 ****
---- 289,299 ----
-  #ifdef __NetBSD__
-  #define LOCK_DIR "/var/spool/lock";
-  #else
-+ #ifdef __OpenBSD__
-+ #define LOCK_DIR "/var/spool/lock";
-+ #else
-  #define LOCK_DIR "/var/spool/uucp";
-+ #endif /* __OpenBSD__ */
-  #endif /* __NetBSD__ */
-  #endif /* __FreeBSD__ */
-  #endif /* __386BSD__ */
+--- ckutio.c.orig	Sun Nov 24 16:20:49 1996
++++ ckutio.c	Tue Mar  3 10:23:55 1998
+@@ -289,7 +289,11 @@
+ #ifdef __NetBSD__
+ #define LOCK_DIR "/var/spool/lock";
+ #else
++#ifdef __OpenBSD__
++#define LOCK_DIR "/var/spool/lock";
++#else
+ #define LOCK_DIR "/var/spool/uucp";
++#endif /* __OpenBSD__ */
+ #endif /* __NetBSD__ */
+ #endif /* __FreeBSD__ */
+ #endif /* __386BSD__ */
+@@ -7162,6 +7166,11 @@
+ #define ZTIMEV7
+ #endif /* POSIX */
+ 
++#ifdef BSD44
++    time_t	secs = time( 0 );
++    *s = ctime( &secs );
++    debug(F110,"ztime: BSD44",*s,0);
++#else
+ #ifdef HPUX1020
+ /*
+   Prototypes are in <time.h>, included above.
+@@ -7233,6 +7242,7 @@
+ #endif /* PROVX1 */
+ #endif /* ATTSV */
+ #endif /* HPUX1020 */
++#endif /* BSD44 */
+ }
+ 
+ /*  C O N G M  --  Get console terminal modes.  */

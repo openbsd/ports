@@ -1,0 +1,23 @@
+--- ckufio.c.~1~	Sun Nov 24 16:20:49 1996
++++ ckufio.c	Tue Mar  3 09:59:28 1998
+@@ -2959,11 +2959,15 @@
+ 	    }
+ 	    tmx += n;
+ 	}
+-	time_stamp = localtime(&tmx);
+-	if (!time_stamp)
+-	  return(-1);
+-	if (localtime(&tmx)->tm_isdst)
+-	  tmx -= 60L * 60L;		/* Adjust for daylight savings time */
++	{
++	    time_t t = tmx;
++
++	    time_stamp = localtime(&t);
++	    if (!time_stamp)
++	      return(-1);
++	    if (localtime(&t)->tm_isdst)
++	      tmx -= 60L * 60L;		/* Adjust for daylight savings time */
++	}
+     }
+     return(tmx);
+ }
