@@ -1,0 +1,17 @@
+$OpenBSD: patch-globals_h,v 1.1 2004/10/25 13:49:22 brad Exp $
+--- globals.h.orig	Sat Sep 28 13:46:20 1991
++++ globals.h	Sun Oct 24 17:36:52 2004
+@@ -90,12 +90,8 @@ void	redraw_table();
+ void	button_press();
+ void	button_release();
+ void	do_expand();
+-#endif KITLESS
++#endif
+ 
+ #ifdef XAW
+ Bool	can_get_help_files();
+ #endif
+-
+-extern char	*malloc();
+-extern char	*calloc();
+-extern char	*realloc();

@@ -1,0 +1,12 @@
+$OpenBSD: patch-gfx_c,v 1.1 2004/10/25 13:49:22 brad Exp $
+--- gfx.c.orig	Sun Oct 24 17:37:02 2004
++++ gfx.c	Sun Oct 24 17:37:14 2004
+@@ -166,7 +166,7 @@ unsigned long	redpixel;
+ 	gcflags |= GCFont;
+ 
+ 	textgc = XCreateGC(dpy, RootWindow(dpy, screen), gcflags, &gcv);
+-#endif KITLESS
++#endif
+ 
+ 	tmpmap = XCreateBitmapFromData(dpy, RootWindow(dpy, screen),
+ 		logo_bits, logo_width, logo_height);

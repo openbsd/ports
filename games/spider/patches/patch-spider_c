@@ -1,0 +1,12 @@
+$OpenBSD: patch-spider_c,v 1.1 2004/10/25 13:49:22 brad Exp $
+--- spider.c.orig	Sun Oct 24 17:38:21 2004
++++ spider.c	Sun Oct 24 17:38:31 2004
+@@ -619,7 +619,7 @@ Type	type;
+ 
+ 	return (type_names[type]);
+ }
+-#endif DEBUG
++#endif
+ 
+ 
+ /*
