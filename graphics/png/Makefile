@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2002/02/07 04:50:55 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2002/04/26 02:19:04 brad Exp $
 
 COMMENT=	"library for manipulating PNG images"
 
-DISTNAME=	libpng-1.2.1
+DISTNAME=	libpng-1.2.2
 PKGNAME=	${DISTNAME:S/lib//}
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
+NEED_VERSION=	1.522
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libpng
 
@@ -25,7 +25,12 @@ MAKE_FILE=	scripts/makefile.openbsd
 
 REGRESS_TARGET=	test
 
-post-extract:
-	@cp -f ${FILESDIR}/makefile.openbsd ${WRKSRC}/scripts
+# short term compatibility sym-links
+# will be removed once all ports have been checked
+# for proper operation without the sym-links
+post-install:
+	@cd ${PREFIX}/include && \
+		ln -sf libpng/png.h png.h && \
+		ln -sf libpng/pngconf.h pngconf.h
 
 .include <bsd.port.mk>
