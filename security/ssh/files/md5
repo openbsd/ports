@@ -1,6 +1,0 @@
-MD5 (patch-ssh-1.2.27-bsd.tty.chown) = e4d7755994c2fa0d419a60723e8a9d53
-MD5 (ssh-1.2.27.tar.gz) = c22bc000bee0f7d6f4845eab72a81395
-RMD160 (patch-ssh-1.2.27-bsd.tty.chown) = 90dd710dc0ba69473eaad648720165914f921f4a
-RMD160 (ssh-1.2.27.tar.gz) = b2295e38551f8cc479e0a8e6081ae4312bf946fb
-SHA1 (patch-ssh-1.2.27-bsd.tty.chown) = 69692ec9b28ebfc552c5c7e2727eb1bc210bcfcf
-SHA1 (ssh-1.2.27.tar.gz) = 0e7d59c6a62b094bd51818599ae24f7de3462d14

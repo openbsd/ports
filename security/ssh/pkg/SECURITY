@@ -1,6 +1,0 @@
-
-patch-ai fixes the buffer overflow in RSAREF rsaglue code.
-patch-aj fixes a bug which allowed for unencrypted sessions.
-
-OpenSSH (integrated since OpenBSD 2.6) does not have these bugs.
-
