@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/07 07:58:42 obecian Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/22 23:53:22 obecian Exp $
 
 COMMENT=	visio-like technical drawing
 
@@ -24,15 +24,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-SEPARATE_BUILD=	concurrent
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-pre-build:
-	@chmod -R ugo-w ${WRKSRC}
 
 .include <bsd.port.mk>
