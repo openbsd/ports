@@ -1,91 +1,106 @@
-*** Makefile.orig	Fri Jan 15 22:57:47 1999
---- Makefile	Fri Jan 15 23:02:03 1999
-***************
-*** 21,28 ****
-  # option may speed up certain compression modes.  If you get a
-  # warning about -float being ignored in non -cckr compiles, it
-  # has no effect on your system.
-! CC = cc -signed
-! LFLAGS = -laudio -lcurses -lm
-  
-  # SunOS 4.1.x
-  #CC = cc -fsingle -DOLDCC
---- 21,28 ----
-  # option may speed up certain compression modes.  If you get a
-  # warning about -float being ignored in non -cckr compiles, it
-  # has no effect on your system.
-! #CC = cc -signed
-! #LFLAGS = -laudio -lcurses -lm
-  
-  # SunOS 4.1.x
-  #CC = cc -fsingle -DOLDCC
-***************
-*** 52,59 ****
-  #    Depending on how your driver handles non-blocking I/O,
-  #    you may also have to add -DAUDIO_BLOCKING to the
-  #    CCFLAGS line.
-! #CCFLAGS = -DM_LITTLE_ENDIAN
-! #LFLAGS = -lcurses -ltermcap -lcompat -lm
-  
-  # ** Linux users please note: many Linux audio drivers are
-  #    half-duplex, even through your sound card may actually
---- 52,60 ----
-  #    Depending on how your driver handles non-blocking I/O,
-  #    you may also have to add -DAUDIO_BLOCKING to the
-  #    CCFLAGS line.
-! PREFIX=/usr/local
-! CCFLAGS = -DM_LITTLE_ENDIAN
-! LFLAGS = -lcurses -ltermcap -lcompat -lm -lossaudio
-  
-  # ** Linux users please note: many Linux audio drivers are
-  #    half-duplex, even through your sound card may actually
-***************
-*** 98,107 ****
-  
-  # Where Perl is located on your system.  This is used to make
-  # a directly-executable version of sfvod.
-! PERL = /usr/local/bin/perl
-  
-  # If your audio hardware is half duplex, uncomment the next line
-! #DUPLEX = -DHALF_DUPLEX
-  
-  # If your getdomainname() does not return the DNS domainname, define:
-  #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
---- 99,108 ----
-  
-  # Where Perl is located on your system.  This is used to make
-  # a directly-executable version of sfvod.
-! PERL = /usr/bin/perl
-  
-  # If your audio hardware is half duplex, uncomment the next line
-! DUPLEX = -DHALF_DUPLEX
-  
-  # If your getdomainname() does not return the DNS domainname, define:
-  #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
-***************
-*** 127,138 ****
-  
-  CARGS = -DInternet_Port=$(INTERNET_PORT)
-  
-! DEBUG = -g -DHEXDUMP
-! #DEBUG = -O
-  
-  #   Compiler flags
-  
-! CFLAGS = $(DEBUG) -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
-  
-  PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfreflect sfvod
-  
---- 128,139 ----
-  
-  CARGS = -DInternet_Port=$(INTERNET_PORT)
-  
-! #DEBUG = -g -DHEXDUMP
-! DEBUG = -O
-  
-  #   Compiler flags
-  
-! CFLAGS = $(DEBUG) -I${PREFIX}/include -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
-  
-  PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfreflect sfvod
-  
+--- Makefile.orig	Sun May  2 10:38:44 1999
++++ Makefile	Sat Jun 19 22:55:17 1999
+@@ -3,8 +3,8 @@
+ 
+ # Debugging options
+ 
+-DEBUG = -g -DHEXDUMP
+-#DEBUG = -O
++#DEBUG = -g -DHEXDUMP
++DEBUG = 
+ 
+ #   Uncomment the appropriate LFLAGS statement below according
+ #   to your machine type.
+@@ -26,8 +26,8 @@
+ # option may speed up certain compression modes.  If you get a
+ # warning about -float being ignored in non -cckr compiles, it
+ # has no effect on your system.
+-CC = cc -signed
+-LFLAGS = -laudio -lcurses -lm
++#CC = cc -signed
++#LFLAGS = -laudio -lcurses -lm
+ 
+ # ** Linux users please note: many Linux audio drivers are
+ #    half-duplex, even through your sound card may actually
+@@ -108,12 +108,15 @@
+ #CCFLAGS = -DHEWLETT_PACKARD -DOLDCC
+ #LFLAGS = -lAlib -lcurses -ltermcap -lm
+ 
++# OpenBSD
++LFLAGS = -L${LOCALBASE}/lib -lcurses -ltermcap -lcompat -lm -lossaudio
++
+ # Where Perl is located on your system.  This is used to make
+ # a directly-executable version of sfvod.
+-PERL = /usr/local/bin/perl
++PERL = /usr/bin/perl
+ 
+ # If your audio hardware is half duplex, uncomment the next line
+-#DUPLEX = -DHALF_DUPLEX
++DUPLEX = -DHALF_DUPLEX
+ 
+ # If your getdomainname() does not return the DNS domainname, define:
+ #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
+@@ -141,7 +144,7 @@
+ 
+ #   Compiler flags
+ 
+-CFLAGS = $(DEBUG) -Iadpcm -Ilpc -Igsm/inc -Imd5 -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
++CFLAGS += $(DEBUG) -Iadpcm -Ilpc -Iidea -Imd5 -Iblowfish -I/usr/include -I${LOCALBASE}/include $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
+ 
+ PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfreflect sfvod
+ 
+@@ -150,12 +153,12 @@
+ SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o hp_audio.o
+ 
+ sfspeaker: $(SPKROBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o
+-	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.o md5/md5.o idea/idea.o lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
++	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a des/des.o md5/md5.o idea/idea.o lpc10/liblpc10.a -lgsm lpc/lpc.o xdsub.o -ldes $(LFLAGS) -o sfspeaker
+ 
+ MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o hp_audio.o
+ 
+ sfmike: $(MIKEOBJS) adpcmlib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
+-	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.o md5/md5.o idea/idea.o -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
++	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o des/des.o md5/md5.o idea/idea.o -lm blowfish/libblowfish.a lpc10/liblpc10.a -lgsm lpc/lpc.o -ldes $(LFLAGS) -o sfmike
+ 
+ LWLDOBJS = lwld.o html.o xdsub.o
+ 
+@@ -191,11 +194,11 @@
+ 	chmod 755 sfvod
+ 
+ adpcmlib.o:
+-	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC)" )
++	( echo "Building ADPCM library."; cd adpcm ; make CC="$(CC) $(CCFLAGS) $(DEBUG)" )
+ 	echo "ADPCM" >adpcmlib.o
+ 
+ deslib.o:
+-	( echo "Building DES library."; cd des ; make CC="$(CC) $(CCFLAGS)" )
++	( echo "Building DES library."; cd des ; make CC="$(CC) $(CCFLAGS) $(DEBUG)" )
+ 	echo "DES" >deslib.o
+ 
+ libblowfish.o:
+@@ -203,7 +206,6 @@
+ 	echo "BLOWFISH" >libblowfish.o
+ 
+ libdes.o:
+-	( echo "Building LIBDES library."; cd libdes ; make -f Makefile.sf CC="$(CC) $(CCFLAGS) $(DEBUG)" )
+ 	echo "LIBDES" >libdes.o
+ 
+ lpclib.o:
+@@ -215,15 +217,14 @@
+ 	echo "LPC" >lpc10lib.o
+ 
+ gsmlib.o:
+-	( echo "Building GSM library."; cd gsm ; make CC="$(CC)" )
+ 	echo "GSM" >gsmlib.o
+ 
+ md5lib.o:
+-	( echo "Building MD5 library."; cd md5 ; make CC="$(CC)" )
++	( echo "Building MD5 library."; cd md5 ; make CC="$(CC) $(CCFLAGS) $(DEBUG)" )
+ 	echo "MD5" >md5lib.o
+ 
+ idealib.o:
+-	( echo "Building IDEA library."; cd idea ; make CC="$(CC)" )
++	( echo "Building IDEA library."; cd idea ; make CC="$(CC) $(CCFLAGS) $(DEBUG)" )
+ 	echo "IDEA" >idealib.o
+ 
+ codecs.o:   codecs.c speakfree.h

@@ -1,14 +1,13 @@
-*** mike.c.orig	Fri Jan 15 23:10:04 1999
---- mike.c	Fri Jan 15 23:11:40 1999
-***************
-*** 748,753 ****
---- 748,756 ----
-  		    (sb->buffer.buffer_len > 16)) {
-  		    pktlen += sizeof(sb->sendinghost);
-  		}
-+                 /* must stay in network order for debugging output */
-+                 sb->compression = htonl(sb->compression);
-+                 sb->buffer.buffer_len = htonl(sb->buffer.buffer_len);
-  	    }
-  	}
-      }
+--- idea/Makefile.orig	Sat Jun 19 21:59:52 1999
++++ idea/Makefile	Sat Jun 19 22:00:06 1999
+@@ -6,8 +6,8 @@
+ 
+ #   Compiler flags
+ 
+-CC = cc
+-CFLAGS = -O
++#CC = cc
++#CFLAGS = -O
+ 
+ all:	idea.o
+ 

@@ -14,3 +14,4 @@ man/man1/sfmike.1
 man/man1/sfspeaker.1
 man/man1/sfvod.1
 man/man1/sfreflect.1
+@dirrm lib/speak_freely

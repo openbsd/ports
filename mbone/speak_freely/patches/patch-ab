@@ -1,15 +1,11 @@
-*** speakfree.h.orig	Fri Jan 15 23:12:44 1999
---- speakfree.h	Fri Jan 15 23:13:02 1999
-***************
-*** 14,19 ****
---- 14,23 ----
-  #define BSD_like
-  #endif
-  
-+ #ifdef __OpenBSD__
-+ #define BSD_like
-+ #endif
-+ 
-  #ifdef __FreeBSD__
-  #define BSD_like
-  #endif
+--- adpcm/Makefile.orig	Sat Jun 19 21:57:38 1999
++++ adpcm/Makefile	Sat Jun 19 21:58:13 1999
+@@ -1,7 +1,7 @@
+ #
+ # Makefile for adpcm and test programs
+ # -------------------
+-CFLAGS=-O -I..
++CFLAGS +=-I..
+ # May need this on a sun:
+ #CFLAGS=-O -I/usr/demo/SOUND
+ 

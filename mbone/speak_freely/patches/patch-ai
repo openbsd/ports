@@ -1,0 +1,18 @@
+--- mike.c.orig	Tue Apr  6 10:50:42 1999
++++ mike.c	Sat Jun 19 22:50:40 1999
+@@ -1,4 +1,4 @@
+-/*#define USE_CURSES*/
++#define USE_CURSES
+ #define BYTE_SWAP_DEBUG
+ /*
+ 
+@@ -845,6 +845,9 @@
+ 		    (sb->buffer.buffer_len > 16)) {
+ 		    pktlen += sizeof(sb->sendinghost);
+ 		}
++		  /* must stay in network order for debugging output */
++		  sb->compression = htonl(sb->compression);
++		  sb->buffer.buffer_len = htonl(sb->buffer.buffer_len);
+ 	    }
+ 	}
+     }
