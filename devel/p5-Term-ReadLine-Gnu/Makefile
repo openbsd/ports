@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/13 08:18:19 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2002/08/09 10:22:47 wilfried Exp $
 
 COMMENT=		'GNU Readline Library Wrapper Module'
 
-DISTNAME=		Term-ReadLine-Gnu-1.12
+DISTNAME=		Term-ReadLine-Gnu-1.13
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		devel perl5
-NEED_VERSION=		1.528
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -20,8 +19,14 @@ CONFIGURE_STYLE=	perl
 
 # This regression test wants an X11 display
 REGRESS_DEPENDS=	:p5-Tk-*:x11/p5-Tk
-REGRESS_FLAGS+=		DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_FLAGS+=		TERM=${TERM} DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 REGRESS_IS_INTERACTIVE=	Yes
 
+pre-regress:
+.for t in TERM DISPLAY XAUTHORITY
+.if !defined($t)
+	@echo "$t needs to be set to run regress"; exit 1
+.endif
+.endfor
 
 .include <bsd.port.mk>
