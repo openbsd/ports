@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tools_qgpluginmanager_cpp,v 1.1 2002/04/11 17:54:32 espie Exp $
+--- src/tools/qgpluginmanager.cpp.orig	Thu Apr 11 18:23:40 2002
++++ src/tools/qgpluginmanager.cpp	Thu Apr 11 18:32:45 2002
+@@ -365,6 +365,8 @@ void QGPluginManager::addLibraryPath( co
+     QString filter = "dll";
+ #elif defined(Q_OS_MACX)
+     QString filter = "dylib";
++#elif defined(__OpenBSD__)
++    QString filter = "so *.so.*";
+ #elif defined(Q_OS_UNIX)
+     QString filter = "so";
+ #endif
