@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/04 13:19:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/02 16:06:30 brad Exp $
+
+ONLY_FOR_ARCHS=	i386
 
 JDK_VERSION=	1.1.8
 DISTNAME=	Xerces-J-bin.1.2.3
@@ -17,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 
-RUN_DEPENDS=    ${PREFIX}/jdk${JDK_VERSION}/bin/java::devel/jdk
+RUN_DEPENDS=    ${LOCALBASE}/jdk${JDK_VERSION}/bin/java::devel/jdk
 
 NO_BUILD=	Yes
 
