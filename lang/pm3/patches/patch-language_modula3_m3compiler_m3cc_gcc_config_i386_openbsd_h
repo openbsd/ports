@@ -1,6 +1,6 @@
-$OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_i386_openbsd_h,v 1.1.1.1 2001/05/05 22:09:22 espie Exp $
---- language/modula3/m3compiler/m3cc/gcc/config/i386/openbsd.h.orig	Wed May  2 16:11:00 2001
-+++ language/modula3/m3compiler/m3cc/gcc/config/i386/openbsd.h	Wed May  2 16:12:52 2001
+$OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_i386_openbsd_h,v 1.2 2001/09/07 16:47:23 espie Exp $
+--- language/modula3/m3compiler/m3cc/gcc/config/i386/openbsd.h.orig	Fri Sep  7 15:10:40 2001
++++ language/modula3/m3compiler/m3cc/gcc/config/i386/openbsd.h	Fri Sep  7 15:11:58 2001
 @@ -0,0 +1,100 @@
 +/* Definitions of target machine for GNU compiler for Intel 80386
 +   running OpenBSD.
@@ -79,7 +79,7 @@ $OpenBSD: patch-language_modula3_m3compiler_m3cc_gcc_config_i386_openbsd_h,v 1.1
 +
 +#undef ASM_OUTPUT_ADDR_DIFF_ELT
 +#define ASM_OUTPUT_ADDR_DIFF_ELT(FILE, VALUE, REL) \
-+  fprintf (FILE, "\t.long _GLOBAL_OFFSET_TABLE_+[.-%s%d]\n", LPREFIX, VALUE)
++  fprintf (FILE, "\t.long __GLOBAL_OFFSET_TABLE_+[.-%s%d]\n", LPREFIX, VALUE)
 +
 +/* Indicate that jump tables go in the text section.  This is
 +   necessary when compiling PIC code.  */
