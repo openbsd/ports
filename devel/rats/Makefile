@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/01 09:12:30 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/07 09:00:43 camield Exp $
 
 COMMENT=		"c source code auditing tool"
 
-DISTNAME=		rats-0.9
+DISTNAME=		rats-1.0
 CATEGORIES=     	devel security
-NEED_VERSION=		1.413
+NEED_VERSION=		1.414
 
 HOMEPAGE=		http://www.securesw.com/rats/
 
