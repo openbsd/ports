@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/02/03 15:13:11 couderc Exp $
-!%%gnome%%
+@comment $OpenBSD: PLIST,v 1.9 2003/02/06 17:59:32 couderc Exp $
 %%gnome%%
 bin/AbiWord
 bin/AbiWord_d
