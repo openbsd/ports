@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/15 14:57:00 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/06/03 13:46:13 lebel Exp $
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -21,6 +21,8 @@ lib/python${PYTHON_VER}/TMDA/HMAC.py
 lib/python${PYTHON_VER}/TMDA/HMAC.pyc
 lib/python${PYTHON_VER}/TMDA/MTA.py
 lib/python${PYTHON_VER}/TMDA/MTA.pyc
+lib/python${PYTHON_VER}/TMDA/SMTP.py
+lib/python${PYTHON_VER}/TMDA/SMTP.pyc
 lib/python${PYTHON_VER}/TMDA/Util.py
 lib/python${PYTHON_VER}/TMDA/Util.pyc
 lib/python${PYTHON_VER}/TMDA/Version.py
