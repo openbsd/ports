@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/10 00:41:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/04 05:33:46 kevlo Exp $
 
 COMMENT=	"module to read a file starting at the end"
 
-DISTNAME=	File-ReadBackwards-0.97
+DISTNAME=	File-ReadBackwards-0.99
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=File/}
