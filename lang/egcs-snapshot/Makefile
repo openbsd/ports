@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 1999/05/25 19:55:21 espie Exp $
+# $OpenBSD: Makefile,v 1.47 1999/05/25 20:18:25 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -398,7 +398,7 @@ special: extract
 	
 pre-install:
 	${M4} ${M4FLAGS} -DARCH=`${WRKSRC}/config.guess` \
-	-DVERSION=`${SED} -e 's/.*\(egcs-[0-9.]*\) .*/\1/' <${WRKSRC}/gcc/version.c` \
+	-DVERSION=`${SED} -e 's/.*"\([a-z]*-[0-9.]*\) .*/\1/' <${WRKSRC}/gcc/version.c` \
 	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>
