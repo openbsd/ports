@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_utility_c,v 1.1 2001/03/06 06:52:42 fgsch Exp $
---- src/utility.c.orig	Wed Jul  5 16:52:40 2000
-+++ src/utility.c	Tue Mar  6 03:23:41 2001
+$OpenBSD: patch-src_utility_c,v 1.2 2003/04/15 18:49:56 avsm Exp $
+--- src/utility.c.orig	Wed Apr 10 23:37:34 2002
++++ src/utility.c	Tue Apr 15 19:34:51 2003
 @@ -102,7 +102,6 @@ int password_match(const char *crypted, 
  
  	return 0;
@@ -29,3 +29,12 @@ $OpenBSD: patch-src_utility_c,v 1.1 2001/03/06 06:52:42 fgsch Exp $
  	if (test_crypted == NULL) {
  		write_log(LOG_DEFAULT, "WARNING - crypt() failed, refusing access");
  		thread_mutex_unlock(&info.misc_mutex);
+@@ -1509,7 +1498,7 @@ next_mount_point ()
+ 			count++;
+ 	}
+ 	
+-	snprintf (apan, BUFSIZE, "icy_%d", count);
++	snprintf (apan, sizeof apan, "icy_%d", count);
+ 	
+ 	return &apan[0];
+ }
