@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/26 20:44:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/09/23 07:21:44 espie Exp $
 
 COMMENT=	"shooting game for X11"
 
@@ -17,5 +17,10 @@ MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 CONFIGURE_STYLE=	imake noman
 
 NO_REGRESS=	Yes
+
+# empty template for pkg install
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xsoldier
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xsoldier/xsoldier.scores
 
 .include <bsd.port.mk>

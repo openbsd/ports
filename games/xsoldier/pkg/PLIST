@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 00:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/23 07:21:44 espie Exp $
+@group games
+@mode 2755
 bin/xsoldier
+@mode
+@group
 lib/X11/xsoldier/
 lib/X11/xsoldier/Boss1.xpm
 lib/X11/xsoldier/Boss2.xpm
@@ -30,4 +34,8 @@ lib/X11/xsoldier/PlayerShot3.xpm
 lib/X11/xsoldier/Star1.xpm
 lib/X11/xsoldier/Star2.xpm
 lib/X11/xsoldier/Title.xpm
-@extra /var/games/xsoldier.scores
+share/examples/xsoldier/
+share/examples/xsoldier/xsoldier.scores
+@group games
+@mode 664
+@sample /var/games/xsoldier.scores
