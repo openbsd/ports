@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/02/01 22:40:52 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2004/02/03 00:16:43 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 CATEGORIES=		x11 x11/kde
@@ -8,12 +8,17 @@ MODKDE_VERSION?=	3.2
 
 NOT_FOR_ARCHS=
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
-		glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2 
+		glib-2.0.0.0,gmodule-2.0.0.0,gthread-2.0.0.0::devel/glib2 \
+		vorbis,vorbisfile::audio/libvorbis \
+		ogg::audio/libogg \
+		mad::audio/libmad \
+		esd::audio/esound
 
 SEPARATE_BUILD=flavored
 
 BUILD_DEPENDS=	::devel/pkgconfig
 
+CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
 		
 pre-build:

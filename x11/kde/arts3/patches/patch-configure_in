@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2004/02/03 00:16:43 espie Exp $
+--- configure.in.orig	2004-02-03 00:45:23.000000000 +0100
++++ configure.in	2004-02-03 00:45:35.000000000 +0100
+@@ -795,7 +795,7 @@ AC_DEFUN(AC_GSL_REQUIREMENTS,
+       [AC_CHECK_HEADER(ogg/ogg.h, ov_headers=`expr $ov_headers + 1`)]
+       [AC_CHECK_HEADER(vorbis/vorbisfile.h, ov_headers=`expr $ov_headers + 1`)]
+       ,
+-      ov_headers=0, -lvorbis -logg)
++      ov_headers=0, -lvorbis -logg -lm)
+     if test $ov_headers = 2 ; then
+       GSL_LIBS="$GSL_LIBS -lvorbisfile -lvorbis -logg"
+ 	  GSL_HAVE_OGGVORBIS=1
