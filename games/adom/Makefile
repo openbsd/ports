@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/11/23 14:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2003/10/18 15:46:53 sturm Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT=	"Ancient Domains of Mystery - roguelike"
@@ -36,7 +36,7 @@ pre-fetch:
 	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
 .endif
 
-RUN_DEPENDS=	:redhat-base-*:emulators/redhat/base
+RUN_DEPENDS=	:redhat_base-*:emulators/redhat/base
 
 do-install:
 	@${INSTALL_DATA_DIR} ${ADOM_DOC}
