@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2001/01/08 23:05:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/02/20 22:33:10 naddy Exp $
 
-DISTNAME=	nano-0.9.25
+DISTNAME=	nano-0.9.99pre3
 CATEGORIES=	editors
 NEED_VERSION=	1.338
 HOMEPAGE=	http://www.nano-editor.org
@@ -21,7 +21,7 @@ FLAVOR?=
 
 LIB_DEPENDS=	intl.1::devel/gettext
 .if ${FLAVOR:L:Mslang}
-LIB_DEPENDS+=	slang.14.2::devel/libslang
+LIB_DEPENDS+=	slang.14::devel/libslang
 .endif
 
 CONFIGURE_STYLE=	gnu autoconf
