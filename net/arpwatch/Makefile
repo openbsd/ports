@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/28 01:38:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2003/08/20 02:55:31 brad Exp $
 
 COMMENT=	"monitor arp & rarp requests"
 
@@ -6,8 +6,7 @@ DISTNAME=	arpwatch-2.1a11
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
-		ftp://ftp.ee.lbl.gov/ \
-		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
+		ftp://ftp.ee.lbl.gov/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
