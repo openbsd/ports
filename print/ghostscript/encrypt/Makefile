@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/22 22:06:40 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2001/04/02 14:51:10 espie Exp $
 
+COMMENT=	"encrypted pdf add-on for ghostscript"
 CATEGORIES=	print
-NEED_VERSION=	1.247
+NEED_VERSION=	1.363
 MASTER_SITES=	http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
 HOMEPAGE=	http://www.ozemail.com.au/%7Egeoffk/pdfencrypt/
 DISTFILES=	pdf_sec.ps
 DIST_SUBDIR=	gs
 EXTRACT_ONLY=
 
-LICENSE_TYPE=	CRYPTO
+# Crypto
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	No
 
 NO_BUILD=Yes
 
-DISTNAME=	ghostscript_encrypt
+DISTNAME=	ghostscript_encrypt-1.0
 FLAVORS=aladdin gnu
 
 .if defined(ALADDIN)
