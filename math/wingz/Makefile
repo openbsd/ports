@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:42:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/02/24 06:04:21 angelos Exp $
 #
 
 ONLY_FOR_ARCHS=	i386
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"shareware"
 PERMIT_PACKAGE_FTP=	"shareware"
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/Wingz/Wingz.Xdefs ${PREFIX}/lib/X11/app-defaults/Wingz
 	install -m 666 /dev/null ${PREFIX}/lib/X11/Wingz/.wingz
 	
-RUN_DEPENDS=    /emul/linux/lib/libc.so.5::emulators/linux_lib
+RUN_DEPENDS=    /emul/linux/lib/libc.so.6::emulators/redhat_base
 
 WRKDIST=	${WRKDIR}
 
