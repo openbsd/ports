@@ -1,11 +1,12 @@
---- configure.orig	Fri Mar 19 14:20:39 1999
-+++ configure	Fri Mar 19 14:23:25 1999
-@@ -4095,8 +4095,13 @@
+--- configure.orig	Tue Mar  9 01:51:26 1999
++++ configure	Wed Jan  5 21:54:00 2000
+@@ -4095,16 +4095,21 @@
  fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  
 -	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_LD="ld -Bshareable -x"
 +
 +	    case `machine` in
 +	    sparc)
@@ -13,10 +14,10 @@
 +	    *)
 +		SHLIB_CFLAGS="-fpic";;
 +	    esac
- 	    SHLIB_LD="ld -Bshareable -x"
++	    SHLIB_LD="ld -Bshareable -Bforcearchive -x"
  	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
-@@ -4104,7 +4109,7 @@
+ 	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
  	    LD_FLAGS=""
  	    LD_SEARCH_FLAGS=""
