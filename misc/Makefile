@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 1999/12/15 09:27:09 dugsong Exp $
+# $OpenBSD: Makefile,v 1.23 2000/02/03 02:18:41 kevlo Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -32,7 +32,7 @@
 #    SUBDIR += lile
 #    SUBDIR += logsurfer
      SUBDIR += magicpoint
-#    SUBDIR += mc
+     SUBDIR += mc
      SUBDIR += mmv
 #    SUBDIR += most
      SUBDIR += mshell
