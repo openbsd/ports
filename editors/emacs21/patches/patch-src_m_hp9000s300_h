@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_m_hp9000s300_h,v 1.1 2003/12/31 08:38:24 pvalchev Exp $
+--- src/m/hp9000s300.h.orig	2003-11-21 11:01:02.000000000 -0700
++++ src/m/hp9000s300.h	2003-11-21 17:22:02.000000000 -0700
+@@ -227,4 +227,6 @@ NOTE-END */
+ #define NEED_BSDTTY
+ #endif
+ 
++#define HAVE_TEXT_START
++
+ #endif /* not BSD4_3 */

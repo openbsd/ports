@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/10/13 17:02:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2003/12/31 08:38:24 pvalchev Exp $
+
+.if ${MACHINE_ARCH} == "hppa"
+BROKEN=			"hangs indefinitely until machine panics/hangs"
+.endif
 
 COMMENT=		"GNU editor: extensible, customizable, self documenting"
 COMMENT-el=		"elisp sources for those who want to read/modify them"
