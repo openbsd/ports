@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Sep 19 20:21:45 1999
-+++ Makefile.in	Mon Sep 20 17:09:37 1999
-@@ -10,7 +10,7 @@
+--- Makefile.in.orig	Fri Dec 31 06:13:50 1999
++++ Makefile.in	Mon Jan  3 10:10:08 2000
+@@ -11,7 +11,7 @@
  CC = @CC@
  CCOPT = 
  LIBPCAPDIR = @libpcapdir@
@@ -9,7 +9,7 @@
  DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
  CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
  # CFLAGS = -g -Wall $(DEFS) $(INCLS)
-@@ -35,7 +35,7 @@
+@@ -36,7 +36,7 @@
  
  all: $(TARGET)
  
@@ -18,14 +18,14 @@
  	@echo Compiling nmap
  	rm -f $@
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
-@@ -128,8 +128,8 @@
+@@ -130,8 +130,8 @@
  install: all
- 	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir) $(deskdir)
  	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
 -	@echo "If the next command failes -- you cannot use the X front end"
--	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap
+-	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap && $(INSTALL) -c -m 644 nmapfe.desktop $(deskdir)/nmapfe.desktop
 +#	@echo "If the next command failes -- you cannot use the X front end"
-+#	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap
++#	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap && $(INSTALL) -c -m 644 nmapfe.desktop $(deskdir)/nmapfe.desktop
  	$(INSTALL) -c -m 644 docs/$(TARGET).1 $(mandir)/man1/$(TARGET).1
  	$(INSTALL) -c -m 644 nmap-os-fingerprints  $(libdir)/nmap-os-fingerprints
  	$(INSTALL) -c -m 644 nmap-services  $(libdir)/nmap-services
