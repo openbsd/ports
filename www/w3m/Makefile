@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/09/29 14:57:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2001/10/06 18:33:50 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -28,7 +28,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		http://mi.med.tohoku.ac.jp/~satodai/w3m/src/ \
-		http://www.instinct.org/w3m/
+		http://www.instinct.org/w3m/ \
+		ftp://ftp.wiretapped.net/pub/w3m/
 MASTER_SITES0=	http://www2u.biglobe.ne.jp/~hsaka/w3m/patch/
 
 IMG_PATCH=	w3m-${V_BASE}-img-${V_IMG}.patch:0
