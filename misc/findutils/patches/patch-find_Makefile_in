@@ -1,0 +1,29 @@
+$OpenBSD: patch-find_Makefile_in,v 1.1.1.1 2001/03/14 21:52:15 wilfried Exp $
+--- find/Makefile.in.orig	Sat Nov  5 09:43:52 1994
++++ find/Makefile.in	Wed Mar 14 09:12:34 2001
+@@ -77,9 +77,9 @@ $(find_OBJECTS): ../config.h
+ install:: install-programs
+ 
+ install-programs: $(PROGRAMS) $(SCRIPTS)
+-	$(top_srcdir)/mkinstalldirs $(bindir)
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
+ 	for p in $(PROGRAMS) $(SCRIPTS); do \
+-	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+ uninstall:: uninstall-programs
+@@ -98,11 +98,11 @@ install-man:
+ 	for man in $(MANS); do \
+ 	  sect=`echo $$man|sed 's%.*\.\([0-9][a-z]*\)$$%\1%'`; \
+ 	  inst=`basename $$man $$sect|sed '$(transform)'`$$sect; \
+-	  mdir=$(mandir)/man$$sect; \
++	  mdir=$(DESTDIR)$(mandir)/man$$sect; \
+ 	  $(top_srcdir)/mkinstalldirs $$mdir; \
+ 	  echo installing $$man as $$mdir/$$inst; \
+ 	  $(INSTALL_DATA) $(srcdir)/$$man $$mdir/$$inst; \
+-	  cdir=$(mandir)/cat$$sect; \
++	  cdir=$(DESTDIR)$(mandir)/cat$$sect; \
+ 	  if test -d $$cdir; then \
+ 	    echo formatting $$man as $$cdir/$$inst; \
+ 	    $(NROFF) -man $(srcdir)/$$man > $$cdir/$$inst; \
