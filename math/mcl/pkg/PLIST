@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/08 10:55:20 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/10/17 19:22:07 naddy Exp $
 bin/clmdist
 bin/clmformat
 bin/clmimac
 bin/clminfo
+bin/clmmate
 bin/clmmeet
 bin/clmresidue
 bin/mcl
@@ -16,6 +17,7 @@ man/man1/clmdist.1
 man/man1/clmformat.1
 man/man1/clmimac.1
 man/man1/clminfo.1
+man/man1/clmmate.1
 man/man1/clmmeet.1
 man/man1/clmresidue.1
 man/man1/mcl.1
@@ -35,6 +37,8 @@ share/doc/mcl/clmimac.html
 share/doc/mcl/clmimac.ps
 share/doc/mcl/clminfo.html
 share/doc/mcl/clminfo.ps
+share/doc/mcl/clmmate.html
+share/doc/mcl/clmmate.ps
 share/doc/mcl/clmmeet.html
 share/doc/mcl/clmmeet.ps
 share/doc/mcl/clmresidue.html
