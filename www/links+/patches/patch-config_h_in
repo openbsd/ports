@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_h_in,v 1.1 2002/12/17 08:09:23 fgsch Exp $
+--- config.h.in.orig	Tue Dec 17 04:51:38 2002
++++ config.h.in	Tue Dec 17 04:56:29 2002
+@@ -95,6 +95,12 @@
+ /* Define if you have the nl_langinfo function.  */
+ #undef HAVE_NL_LANGINFO
+ 
++/* Define if you have the MD5Init function.  */
++#undef HAVE_MD5INIT
++
++/* Define if you have the MD5Data function.  */
++#undef HAVE_MD5DATA
++
+ /* Define if you have the png_set_rgb_to_gray function.  */
+ #undef HAVE_PNG_SET_RGB_TO_GRAY
+ 

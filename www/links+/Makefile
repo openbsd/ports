@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/17 05:50:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/17 08:09:23 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --enable-javascript --with-ssl
 
 .if !${FLAVOR:L:Mno_x11}
