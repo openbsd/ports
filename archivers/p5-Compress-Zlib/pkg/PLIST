@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/04/16 19:25:01 espie Exp $
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Compress/Zlib.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Compress/Zlib/Zlib.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Compress/Zlib/Zlib.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Compress/Zlib/autosplit.ix
+@comment $OpenBSD: PLIST,v 1.9 2002/11/21 00:57:37 naddy Exp $
+${P5ARCH}/Compress/Zlib.pm
+${P5ARCH}/auto/Compress/Zlib/Zlib.bs
+${P5ARCH}/auto/Compress/Zlib/Zlib.so
+${P5ARCH}/auto/Compress/Zlib/autosplit.ix
 man/man3p/Compress::Zlib.3p
 share/examples/p5-Compress-Zlib/filtdef
 share/examples/p5-Compress-Zlib/filtinf
@@ -10,4 +10,4 @@ share/examples/p5-Compress-Zlib/gzcat
 share/examples/p5-Compress-Zlib/gzgrep
 share/examples/p5-Compress-Zlib/gzstream
 @dirrm share/examples/p5-Compress-Zlib
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Compress/Zlib
+@dirrm ${P5ARCH}/auto/Compress/Zlib
