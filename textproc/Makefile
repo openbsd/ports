@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2001/07/01 07:20:13 shell Exp $
+# $OpenBSD: Makefile,v 1.63 2001/07/30 04:16:47 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -22,7 +22,6 @@
      SUBDIR += iso12083
      SUBDIR += iso8879
      SUBDIR += ispell
-     SUBDIR += java2html
      SUBDIR += latex2html
      SUBDIR += lgrind
      SUBDIR += libxml
@@ -59,6 +58,7 @@
      SUBDIR += rxp
      SUBDIR += sgmlformat
      SUBDIR += sablotron
+     SUBDIR += souce-highlight
      SUBDIR += sp
      SUBDIR += spiff
      SUBDIR += texi2html
