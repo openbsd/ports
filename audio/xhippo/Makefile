@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/12 15:38:23 naddy Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
 DISTNAME=	xhippo-3.2
 CATEGORIES=	audio
-NEED_VERSION=	1.475
 
 HOMEPAGE=	http://www.gnu.org/software/xhippo/
 
@@ -22,7 +21,7 @@ LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 
 USE_X11=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri May  4 21:06:37 2001
-+++ Makefile.in	Tue Jun  5 17:13:57 2001
-@@ -98,7 +98,7 @@
+$OpenBSD: patch-Makefile.in,v 1.2 2002/10/12 15:38:23 naddy Exp $
+--- Makefile.in.orig	Mon Jul 23 21:16:01 2001
++++ Makefile.in	Sat Oct 12 17:27:37 2002
+@@ -98,7 +98,7 @@ SUBDIRS = intl po
  # Enable this for debugging using gdb or similar
  CFLAGS = -g -Wall -Wmissing-prototypes -Wstrict-prototypes
  #CFLAGS = -Wall -Wmissing-prototypes -Wstrict-prototypes

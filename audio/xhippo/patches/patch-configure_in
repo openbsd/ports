@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/10/12 15:38:23 naddy Exp $
+--- configure.in.orig	Mon Jul 23 21:14:09 2001
++++ configure.in	Sat Oct 12 17:34:56 2002
+@@ -38,7 +38,9 @@ AC_CHECK_FUNCS(nftw, , AC_MSG_WARN(nftw 
+ AM_PATH_GTK(1.0.0,,AC_MSG_ERROR(No GTK found. Set the path right or install it.))
+ AC_CHECK_PROG(foundgnome, gnome-config, yes, no)
+ 
+-AC_CHECK_LIB(id3, ID3Tag_New, ID3LIBS="-lid3 -lz"; AC_DEFINE(HAVE_LIBID3), ID3LIBS="", -lz)
++dnl C++ library
++dnl AC_CHECK_LIB(id3, ID3Tag_New, ID3LIBS="-lid3 -lz"; AC_DEFINE(HAVE_LIBID3), ID3LIBS="", -lz)
++ID3LIBS=
+ AC_SUBST(ID3LIBS)
+ 
+ dnl This is *not* the right way to do this, but GNOME's native
