@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:51 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/06 18:20:13 brad Exp $
 
 DISTNAME=	mpegaudio
 PKGNAME=	mpegaudio-3.9
 CATEGORIES=	audio
-
-MAINTAINER=	angelos@openbsd.org
-
 MASTER_SITES=	ftp://ftp.iuma.com/audio_utils/converters/source/
 EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	angelos@openbsd.org
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mpeg_musicin.1 ${PREFIX}/man/man1

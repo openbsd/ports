@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:51 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/06 18:21:42 brad Exp $
 
 DISTNAME=	nspmod-0.1
 CATEGORIES=	audio
-
-MAINTAINER=	angelos@openbsd.org
-
 MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/ \
 		${MASTER_SITE_SUNSITE}/
-MASTER_SITE_SUBDIR=	apps/sound/players
+MASTER_SITE_SUBDIR= apps/sound/players
+
+MAINTAINER=	angelos@openbsd.org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nspmod ${PREFIX}/bin
