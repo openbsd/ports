@@ -54,7 +54,7 @@ our $MAKE = "/usr/bin/make";
 our $MAKEFLAGS = "BATCH=Yes BIN_PACKAGES=Yes BULK=Yes TRUST_PACKAGES=Yes";
 our $PORTSDIR = $ENV{'PORTSDIR'} || "/usr/ports";
 our $TMPDIR = $ENV{'PKG_TMPDIR'} || '/var/tmp';
-our $TIMEOUT = 10;
+our $TIMEOUT = 60;
 our @SSH = ("/usr/bin/ssh", "-n", "-o ConnectTimeout=$TIMEOUT");
 
 # -A <Arch>: specify architecture of build hosts
