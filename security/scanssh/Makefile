@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/12 19:52:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/20 14:01:29 brad Exp $
 
-DISTNAME=		scanssh-1.3a
-CATEGORIES=     	security
-NEED_VERSION=		1.352
+DISTNAME=	scanssh-1.4
+CATEGORIES=	security
+NEED_VERSION=	1.352
+MASTER_SITES=	http://www.monkey.org/~provos/
 
-HOMEPAGE=		http://www.monkey.org/~provos/scanssh/
+HOMEPAGE=	http://www.monkey.org/~provos/scanssh/
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.monkey.org/~provos/
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
 
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu
-WRKSRC=			${WRKDIR}/scanssh
+WRKDIST=	${WRKDIR}/scanssh
 
 .include <bsd.port.mk>
