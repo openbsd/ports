@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/28 11:51:02 espie Exp $
+share/mplayer/${FONT}/ISO-8859-1-a.raw
+share/mplayer/${FONT}/ISO-8859-1-b.raw
+share/mplayer/${FONT}/font.desc
+share/mplayer/${FONT}/osd-encoding-a.raw
+share/mplayer/${FONT}/osd-encoding-b.raw
+@exec cd %B && cd .. && ln -sf ${FONT} font
+@unexec cd %B && cd .. && rm -f font
+@dirrm share/mplayer/${FONT}
