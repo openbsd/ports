@@ -1,30 +1,25 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/28 13:05:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/20 12:47:55 naddy Exp $
 
-COMMENT=	"lightweight window manager with emphasis on usability"
+COMMENT=		"lightweight window manager with emphasis on usability"
 
-DISTNAME=	pwm-1.0
-CATEGORIES=	x11
-NEED_VERSION=	1.402
+DISTNAME=		pwm-20010309
+CATEGORIES=		x11
+NEED_VERSION=		1.500
 
-HOMEPAGE=	http://www.students.tut.fi/~tuomov/pwm/
+HOMEPAGE=		http://www.students.tut.fi/~tuomov/pwm/
+MASTER_SITES=		http://www.students.tut.fi/~tuomov/dl/
 
+MAINTAINER=             Andrey Smagin <andrey@smagin.com>
+
+# Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.students.tut.fi/~tuomov/dl/
+USE_X11=		Yes
+NO_REGRESS=		Yes
 
-USE_X11=	Yes
-USE_GMAKE=	Yes
-
-do-install:
-	mkdir -p ${PREFIX}/share/pwm
-	mkdir -p ${PREFIX}/share/doc/pwm
-	${INSTALL_PROGRAM} ${WRKSRC}/pwm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pwm.1x ${PREFIX}/man/man1/pwm.1
-	${INSTALL_DATA} ${WRKSRC}/etc/pwm/*.conf ${PREFIX}/share/pwm
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/pwm
-	${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/share/doc/pwm
+MAKE_ENV=		CC='${CC}' SYSCONFDIR='${SYSCONFDIR}'
 
 .include <bsd.port.mk>
