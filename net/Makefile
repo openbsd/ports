@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2002/05/27 12:44:55 espie Exp $
+# $OpenBSD: Makefile,v 1.220 2002/06/07 15:41:49 wilfried Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -189,6 +189,7 @@
      SUBDIR += vtun
      SUBDIR += wget
      SUBDIR += wide-dhcp
+     SUBDIR += wmifinfo
      SUBDIR += wmnet
      SUBDIR += wmwave
      SUBDIR += xarchie
