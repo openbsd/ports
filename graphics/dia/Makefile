@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/22 06:01:23 marcm Exp $
+# $OpenBSD: Makefile,v 1.29 2005/01/23 16:13:06 alek Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -20,9 +20,10 @@ WANTLIB=		X11 Xext Xft Xinerama Xrender atk-1.0.0.0 c \
 			fontconfig freetype glib-2.0.0.0 gmodule-2.0.0.0 \
 			gobject-2.0.0.0 iconv intl m pango-1.0.0.0 \
 			pangoft2-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0 \
-			png z
+			png z Xcursor xml2
 
-BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig \
+		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		art_lgpl_2.5::graphics/libart \
 		popt::devel/popt \
