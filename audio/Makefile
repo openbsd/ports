@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2004/12/19 08:00:47 jolan Exp $
+# $OpenBSD: Makefile,v 1.116 2004/12/22 06:19:23 marcm Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -80,6 +80,7 @@
      SUBDIR += py-ogg
      SUBDIR += py-xmms
 #    SUBDIR += radio
+     SUBDIR += rhythmbox
      SUBDIR += rio500
      SUBDIR += rioutil
 #    SUBDIR += rosegarden
