@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2001/11/18 17:18:52 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2002/03/24 17:46:42 pvalchev Exp $
+
+BROKEN=			"doesn't fake properly"
 
 COMMENT=		"send/receive faxes and share modems"
 DISTNAME=		hylafax-4.1
