@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.13 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/15 14:35:35 espie Exp $
 #
 
 COMMENT=	"UCB/LBNL Network Animator"
@@ -8,7 +8,7 @@ COMMENT=	"UCB/LBNL Network Animator"
 DISTNAME=	nam-src-1.0a8
 PKGNAME=	nam-1.0a8
 CATEGORIES=	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
 		ftp://ftp.isi.edu/nsnam/ \
 		http://www.isi.edu/nsnam/dist/
@@ -22,7 +22,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a::devel/tclcl
+BUILD_DEPENDS=	::devel/tclcl
+LIB_DEPENDS=	otcl::lang/otcl \
+		tcl83::lang/tcl/8.3 \
+		tk83::x11/tk/8.3
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 
