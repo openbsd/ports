@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/15 08:41:00 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/19 01:19:11 jcs Exp $
 
-DISTNAME=	reminder-0.2.5
+DISTNAME=	reminder-0.3.0
 PKGNAME=	gkrellm-${DISTNAME}
 CATEGORIES=	misc
-NEED_VERSION=	1.454
+NEED_VERSION=	1.457
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
