@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.3 2004/01/18 00:15:18 brad Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.4 2004/01/22 08:59:32 brad Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for gaim
@@ -249,11 +249,11 @@ static GaimSslOps ssl_ops =
 static gboolean plugin_load(GaimPlugin *plugin)
 {
 #ifdef HAVE_OPENSSL
-  if (!gaim_ssl_get_ops()) {                                                                                        
-    gaim_ssl_set_ops(&ssl_ops);                                                                               
+  if (!gaim_ssl_get_ops()) {
+    gaim_ssl_set_ops(&ssl_ops);
   }
 
-  /* Init OpenSSL now so others can use it even if sslconn never does */                                                 
+  /* Init OpenSSL now so others can use it even if sslconn never does */
   ssl_openssl_init_openssl();
 
   return TRUE;
@@ -265,8 +265,8 @@ static gboolean plugin_load(GaimPlugin *plugin)
 static gboolean plugin_unload(GaimPlugin *plugin)
 {
 #ifdef HAVE_OPENSSL
-  if (gaim_ssl_get_ops() == &ssl_ops) {                                                                             
-    gaim_ssl_set_ops(NULL);                                                                                   
+  if (gaim_ssl_get_ops() == &ssl_ops) {
+    gaim_ssl_set_ops(NULL);
   }
 #endif
 
