@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/11/30 04:51:38 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/01/02 03:37:19 marcm Exp $
 bin/background-properties-capplet
+bin/default-application-properties-capplet
 bin/file-types-capplet
-bin/gnome-edit-properties-capplet
 bin/gnomecc
 bin/keyboard-properties
 bin/mouse-properties-capplet
-bin/screensaver-properties-capplet
 bin/sound-properties
 bin/theme-selector-capplet
 bin/ui-properties
@@ -27,160 +26,14 @@ man/man1/theme-selector-capplet.1
 man/man1/ui-properties.1
 man/man1/url-properties.1
 man/man1/wm-properties-capplet.1
-share/control-center/.data/3d.desktop
-share/control-center/.data/3d.png
-share/control-center/.data/Ant.desktop
-share/control-center/.data/Atlantis.desktop
-share/control-center/.data/Attraction.desktop
-share/control-center/.data/Blitspin.desktop
-share/control-center/.data/Bouboule.desktop
-share/control-center/.data/Braid.desktop
-share/control-center/.data/Bsod.desktop
-share/control-center/.data/Bubble3d.desktop
-share/control-center/.data/Bubbles.desktop
-share/control-center/.data/Bumps.desktop
-share/control-center/.data/Cage.desktop
-share/control-center/.data/Compass.desktop
-share/control-center/.data/Coral.desktop
-share/control-center/.data/Critical.desktop
-share/control-center/.data/Crystal.desktop
-share/control-center/.data/Cynosure.desktop
-share/control-center/.data/Decayscreen.desktop
-share/control-center/.data/Deco.desktop
-share/control-center/.data/Deluxe.desktop
-share/control-center/.data/Demon.desktop
-share/control-center/.data/Discrete.desktop
-share/control-center/.data/Distort.desktop
-share/control-center/.data/Drift.desktop
-share/control-center/.data/Epicycle.desktop
-share/control-center/.data/Fadeplot.desktop
-share/control-center/.data/Flag.desktop
-share/control-center/.data/Flame.desktop
-share/control-center/.data/Flow.desktop
-share/control-center/.data/Forest.desktop
-share/control-center/.data/GLPlanet.desktop
-share/control-center/.data/Galaxy.desktop
-share/control-center/.data/Gears.desktop
-share/control-center/.data/Goop.desktop
-share/control-center/.data/Grav.desktop
-share/control-center/.data/Greynetic.desktop
-share/control-center/.data/Halo.desktop
-share/control-center/.data/Helix.desktop
-share/control-center/.data/Hopalong.desktop
-share/control-center/.data/Hypercube.desktop
-share/control-center/.data/Ifs.desktop
-share/control-center/.data/Imsmap.desktop
-share/control-center/.data/Interference.desktop
-share/control-center/.data/Jigsaw.desktop
-share/control-center/.data/Julia.desktop
-share/control-center/.data/Kaleidescope.desktop
-share/control-center/.data/Kumppa.desktop
-share/control-center/.data/Lament.desktop
-share/control-center/.data/Laser.desktop
-share/control-center/.data/Lightning.desktop
-share/control-center/.data/Lisa.desktop
-share/control-center/.data/Lissie.desktop
-share/control-center/.data/Lmorph.desktop
-share/control-center/.data/Loop.desktop
-share/control-center/.data/Maze.desktop
-share/control-center/.data/Moebius.desktop
-share/control-center/.data/Moire.desktop
-share/control-center/.data/Moire2.desktop
-share/control-center/.data/Morph3d.desktop
-share/control-center/.data/Mountain.desktop
-share/control-center/.data/Munch.desktop
-share/control-center/.data/Noseguy.desktop
-share/control-center/.data/Pedal.desktop
-share/control-center/.data/Penetrate.desktop
-share/control-center/.data/Penrose.desktop
-share/control-center/.data/Phosphor.desktop
-share/control-center/.data/Pipes.desktop
-share/control-center/.data/Pyro.desktop
-share/control-center/.data/Qix.desktop
-share/control-center/.data/Rd-bomb.desktop
-share/control-center/.data/Ripples.desktop
-share/control-center/.data/Rocks.desktop
-share/control-center/.data/Rorschach.desktop
-share/control-center/.data/Rotor.desktop
-share/control-center/.data/Rubik.desktop
-share/control-center/.data/Shadebobs.desktop
-share/control-center/.data/Sierpinski.desktop
-share/control-center/.data/Slidescreen.desktop
-share/control-center/.data/Slip.desktop
-share/control-center/.data/Sonar.desktop
-share/control-center/.data/Sphere.desktop
-share/control-center/.data/Spiral.desktop
-share/control-center/.data/Spotlight.desktop
-share/control-center/.data/Sproingies.desktop
-share/control-center/.data/Squiral.desktop
-share/control-center/.data/Stairs.desktop
-share/control-center/.data/Starfish.desktop
-share/control-center/.data/Strange.desktop
-share/control-center/.data/Superquadrics.desktop
-share/control-center/.data/Swirl.desktop
-share/control-center/.data/Triangle.desktop
-share/control-center/.data/Truchet.desktop
-share/control-center/.data/Vines.desktop
-share/control-center/.data/Worm.desktop
-share/control-center/.data/Xflame.desktop
-share/control-center/.data/Xjack.desktop
-share/control-center/.data/Xlyap.desktop
-share/control-center/.data/Xmatrix.desktop
-share/control-center/.data/Xroger.desktop
-share/control-center/.data/Xteevee.desktop
-share/control-center/.data/ant.png
-share/control-center/.data/attraction.png
-share/control-center/.data/blitspin.png
-share/control-center/.data/bouboule.png
-share/control-center/.data/braid.png
-share/control-center/.data/bsod.png
-share/control-center/.data/bubbles.png
-share/control-center/.data/coral.png
-share/control-center/.data/crystal.png
-share/control-center/.data/cynosure.png
-share/control-center/.data/decayscreen.png
-share/control-center/.data/deco.png
-share/control-center/.data/discrete.png
-share/control-center/.data/drift.png
-share/control-center/.data/epicycle.png
-share/control-center/.data/flag.png
-share/control-center/.data/flame.png
-share/control-center/.data/forest.png
-share/control-center/.data/goop.png
-share/control-center/.data/grav.png
-share/control-center/.data/greynetic.png
-share/control-center/.data/halo.png
-share/control-center/.data/helix.png
-share/control-center/.data/hopalong.png
-share/control-center/.data/hypercube.png
-share/control-center/.data/ifs.png
-share/control-center/.data/julia.png
-share/control-center/.data/kaleidescope.png
-share/control-center/.data/laser.png
-share/control-center/.data/lightning.png
-share/control-center/.data/lisa.png
-share/control-center/.data/lmorph.png
-share/control-center/.data/maze.png
-share/control-center/.data/moire.png
-share/control-center/.data/munch.png
-share/control-center/.data/pedal.png
-share/control-center/.data/qix.png
-share/control-center/.data/ripples.png
-share/control-center/.data/sierpinski.png
-share/control-center/.data/spiral.png
-share/control-center/.data/starfish.png
-share/control-center/.data/vines.png
-share/control-center/.data/xroger.png
-share/control-center/.data/xteevee.png
 share/control-center/.directory
 share/control-center/Desktop/.directory
 share/control-center/Desktop/background-properties.desktop
-share/control-center/Desktop/screensaver-properties.desktop
 share/control-center/Desktop/theme-selector.desktop
 share/control-center/Desktop/wm-properties.desktop
 share/control-center/Documents/.directory
+share/control-center/Documents/default-application-properties.desktop
 share/control-center/Documents/file-types-capplet.desktop
-share/control-center/Documents/gnome-edit-properties.desktop
 share/control-center/Documents/url-properties.desktop
 share/control-center/Multimedia/.directory
 share/control-center/Multimedia/sound-properties.desktop
@@ -195,11 +48,10 @@ share/control-center/UIOptions/mdi.desktop
 share/examples/control-center/CORBA/servers/gnomecc.gnorba
 share/gnome/apps/Settings/Desktop/.directory
 share/gnome/apps/Settings/Desktop/background-properties.desktop
-share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
 share/gnome/apps/Settings/Desktop/wm-properties.desktop
 share/gnome/apps/Settings/Documents/.directory
-share/gnome/apps/Settings/Documents/gnome-edit-properties.desktop
+share/gnome/apps/Settings/Documents/default-applicaiton-properties.desktop
 share/gnome/apps/Settings/Documents/url-properties.desktop
 share/gnome/apps/Settings/Multimedia/.directory
 share/gnome/apps/Settings/Multimedia/sound-properties.desktop
@@ -297,12 +149,98 @@ share/omf/control-center/control-center-C.omf
 share/pixmaps/ccsplash.png
 share/pixmaps/control-center.png
 %%SHARED%%
+@comment @dirrm share/pixmaps
 @dirrm share/omf/control-center
-@dirrm share/gnome/wm-properties
+@comment @dirrm share/locale/zh_TW/LC_MESSAGES
+@comment @dirrm share/locale/zh_TW
+@comment @dirrm share/locale/zh_CN/LC_MESSAGES
+@comment @dirrm share/locale/zh_CN
+@comment @dirrm share/locale/wa/LC_MESSAGES
+@comment @dirrm share/locale/wa
+@comment @dirrm share/locale/uk/LC_MESSAGES
+@comment @dirrm share/locale/uk
+@comment @dirrm share/locale/tr/LC_MESSAGES
+@comment @dirrm share/locale/tr
+@comment @dirrm share/locale/sv/LC_MESSAGES
+@comment @dirrm share/locale/sv
+@comment @dirrm share/locale/sl/LC_MESSAGES
+@comment @dirrm share/locale/sl
+@comment @dirrm share/locale/sk/LC_MESSAGES
+@comment @dirrm share/locale/sk
+@comment @dirrm share/locale/ru/LC_MESSAGES
+@comment @dirrm share/locale/ru
+@comment @dirrm share/locale/ro/LC_MESSAGES
+@comment @dirrm share/locale/ro
+@comment @dirrm share/locale/pt_BR/LC_MESSAGES
+@comment @dirrm share/locale/pt_BR
+@comment @dirrm share/locale/pt/LC_MESSAGES
+@comment @dirrm share/locale/pt
+@comment @dirrm share/locale/pl/LC_MESSAGES
+@comment @dirrm share/locale/pl
+@comment @dirrm share/locale/no/LC_MESSAGES
+@comment @dirrm share/locale/no
+@comment @dirrm share/locale/nn/LC_MESSAGES
+@comment @dirrm share/locale/nn
+@comment @dirrm share/locale/nl/LC_MESSAGES
+@comment @dirrm share/locale/nl
+@comment @dirrm share/locale/lt/LC_MESSAGES
+@comment @dirrm share/locale/lt
+@comment @dirrm share/locale/ko/LC_MESSAGES
+@comment @dirrm share/locale/ko
+@comment @dirrm share/locale/ja/LC_MESSAGES
+@comment @dirrm share/locale/ja
+@comment @dirrm share/locale/it/LC_MESSAGES
+@comment @dirrm share/locale/it
+@comment @dirrm share/locale/hu/LC_MESSAGES
+@comment @dirrm share/locale/hu
+@comment @dirrm share/locale/hr/LC_MESSAGES
+@comment @dirrm share/locale/hr
+@comment @dirrm share/locale/gl/LC_MESSAGES
+@comment @dirrm share/locale/gl
+@comment @dirrm share/locale/ga/LC_MESSAGES
+@comment @dirrm share/locale/ga
+@comment @dirrm share/locale/fr/LC_MESSAGES
+@comment @dirrm share/locale/fr
+@comment @dirrm share/locale/fi/LC_MESSAGES
+@comment @dirrm share/locale/fi
+@comment @dirrm share/locale/eu/LC_MESSAGES
+@comment @dirrm share/locale/eu
+@comment @dirrm share/locale/et/LC_MESSAGES
+@comment @dirrm share/locale/et
+@comment @dirrm share/locale/es/LC_MESSAGES
+@comment @dirrm share/locale/es
+@comment @dirrm share/locale/en_GB/LC_MESSAGES
+@comment @dirrm share/locale/en_GB
+@comment @dirrm share/locale/el/LC_MESSAGES
+@comment @dirrm share/locale/el
+@comment @dirrm share/locale/de/LC_MESSAGES
+@comment @dirrm share/locale/de
+@comment @dirrm share/locale/da/LC_MESSAGES
+@comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
+@comment @dirrm share/locale/ca/LC_MESSAGES
+@comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/az/LC_MESSAGES
+@comment @dirrm share/locale/az
+@comment @dirrm share/locale
+@comment @dirrm share/gnome/wm-properties
 @dirrm share/gnome/help/control-center/C/stylesheet-images
 @dirrm share/gnome/help/control-center/C/figures
 @dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
+@comment @dirrm share/gnome/help
+@comment @dirrm share/gnome/apps/Settings/UIOptions
+@comment @dirrm share/gnome/apps/Settings/Session
+@comment @dirrm share/gnome/apps/Settings/Peripherals
+@comment @dirrm share/gnome/apps/Settings/Multimedia
+@comment @dirrm share/gnome/apps/Settings/Documents
+@comment @dirrm share/gnome/apps/Settings/Desktop
+@comment @dirrm share/gnome/apps/Settings
+@comment @dirrm share/gnome/apps
+@comment @dirrm share/gnome
 @dirrm share/examples/control-center/CORBA/servers
 @dirrm share/examples/control-center/CORBA
 @dirrm share/examples/control-center
@@ -312,7 +250,6 @@ share/pixmaps/control-center.png
 @dirrm share/control-center/Multimedia
 @dirrm share/control-center/Documents
 @dirrm share/control-center/Desktop
-@dirrm share/control-center/.data
 @dirrm share/control-center
 @dirrm include/libcapplet1
 @exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q

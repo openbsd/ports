@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.19 2002/11/30 04:51:38 marcm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/01/02 03:37:19 marcm Exp $
 
 COMMENT=		"GNOME control center"
 
-DISTNAME=		control-center-1.4.0.4
+DISTNAME=		control-center-1.4.0.5
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/control-center/1.4/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		gdk_pixbuf::graphics/gdk-pixbuf \
-			gnomecanvaspixbuf::graphics/gdk-pixbuf,-gnome \
-			gnome.36,gnorba,gtkxmhtml::x11/gnome/libs \
+			gnorba,gtkxmhtml::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
 
 BUILD_DEPENDS=		:scrollkeeper->=0.3.11:textproc/scrollkeeper

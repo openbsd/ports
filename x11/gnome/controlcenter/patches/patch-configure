@@ -1,38 +1,77 @@
-$OpenBSD: patch-configure,v 1.6 2002/03/25 17:13:06 nino Exp $
---- configure.orig	Sun Feb 10 16:36:55 2002
-+++ configure	Sat Feb 16 15:39:19 2002
-@@ -4082,8 +4082,8 @@ else
+$OpenBSD: patch-configure,v 1.7 2003/01/02 03:37:19 marcm Exp $
+--- configure.orig	Sat Apr  6 07:40:28 2002
++++ configure	Sun Dec  1 13:09:47 2002
+@@ -2355,6 +2355,16 @@ newos6*)
+   lt_cv_file_magic_test_file=/usr/lib/libnls.so
+   ;;
+ 
++openbsd*)
++  lt_cv_file_magic_cmd=/usr/bin/file
++  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
++  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
++  else
++    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
++  fi
++  ;;
++
+ osf3* | osf4* | osf5*)
+   # this will be overridden with pass_all, but let us keep it just in case
+   lt_cv_deplibs_check_method='file_magic COFF format alpha shared library'
+@@ -3119,8 +3129,15 @@ old_postinstall_cmds='chmod 644 $oldlib'
+ old_postuninstall_cmds=
+ 
+ if test -n "$RANLIB"; then
++  case $host_os in
++  openbsd*)
++    old_postinstall_cmds="\$RANLIB -t \$oldlib~$old_postinstall_cmds"
++    ;;
++  *)
++    old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
++    ;;
++  esac
+   old_archive_cmds="$old_archive_cmds~\$RANLIB \$oldlib"
+-  old_postinstall_cmds="\$RANLIB \$oldlib~$old_postinstall_cmds"
+ fi
+ 
+ # Allow CC to be a program name with arguments.
+@@ -3617,7 +3634,9 @@ cygwin* | mingw* | pw32* )
+     with_gnu_ld=no
+   fi
+   ;;
+-
++openbsd*)
++  with_gnu_ld=no
++  ;;
+ esac
+ 
+ ld_shlibs=yes
+@@ -4021,8 +4040,8 @@ else
+     ;;
+ 
+   openbsd*)
+-    archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
+-    hardcode_libdir_flag_spec='-R$libdir'
++    archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
++    hardcode_libdir_flag_spec='${wl}-R$libdir'
      hardcode_direct=yes
      hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+      hardcode_libdir_flag_spec='${wl}-R$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-       case "$host_os" in
-@@ -4092,8 +4092,8 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+        hardcode_libdir_flag_spec='${wl}-R$libdir'
-         ;;
-       esac
-     fi
-@@ -4605,6 +4605,8 @@ openbsd*)
+     ;;
+@@ -4501,10 +4520,9 @@ newsos6)
+ 
+ openbsd*)
    version_type=sunos
-   need_lib_prefix=no
-   need_version=no
-+  sys_lib_search_path_spec="/usr/lib"
-+  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     case "$host_os" in
-     openbsd2.[89] | openbsd2.[89].*)
-@@ -7944,6 +7946,10 @@ else
+-  if test "$with_gnu_ld" = yes; then
+-    need_lib_prefix=no
+-    need_version=no
+-  fi
++  need_lib_prefix=no
++  need_version=no
++  shlibpath_overrides_runpath=yes
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
+@@ -7758,6 +7776,10 @@ else
    echo "$ac_t""no" 1>&6
  fi
  
