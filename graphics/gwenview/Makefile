@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2003/06/12 19:44:08 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2003/11/02 05:47:43 brad Exp $
 
 COMMENT=	"image viewer for KDE"
 
-DISTNAME=	gwenview-0.17.1a
+DISTNAME=	gwenview-1.0.0pre3
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
 EXTRACT_SUFX=	.tar.bz2

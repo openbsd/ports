@@ -1,7 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/06/12 19:44:08 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/11/02 05:47:43 brad Exp $
 bin/gwenview
 man/man1/gwenview.1
-share/applnk/Graphics/gwenview.desktop
+share/applications/kde/gwenview.desktop
+share/apps/gwenview/cursors/autozoom.png
+share/apps/gwenview/cursors/browse.png
+share/apps/gwenview/cursors/drag.png
+share/apps/gwenview/cursors/dragging.png
+share/apps/gwenview/cursors/zoom.png
+share/apps/gwenview/gwenviewui.rc
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd1.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd2.png
 share/apps/gwenview/icons/hicolor/16x16/actions/dnd3.png
@@ -41,6 +47,10 @@ share/apps/gwenview/icons/hicolor/32x32/actions/slideshow.png
 share/apps/gwenview/icons/hicolor/32x32/actions/smallthumbnails.png
 share/apps/gwenview/icons/hicolor/32x32/actions/zoomin.png
 share/apps/gwenview/icons/hicolor/32x32/actions/zoomout.png
+share/apps/gwenview/tools/gimp.desktop
+share/apps/gwenview/tools/konqueror.desktop
+share/apps/gwenview/tools/tiledwallpaper.desktop
+share/apps/gwenview/tools/wallpaper.desktop
 share/apps/konqueror/servicemenus/konqgwenview.desktop
 share/icons/hicolor/16x16/apps/gwenview.png
 share/icons/hicolor/32x32/apps/gwenview.png
@@ -140,6 +150,7 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @comment @dirrm share/locale
 @comment @dirrm share/icons/hicolor/16x16/apps
 @comment @dirrm share/icons/hicolor/16x16
+@dirrm share/apps/gwenview/tools
 @dirrm share/apps/gwenview/icons/hicolor/32x32/actions
 @dirrm share/apps/gwenview/icons/hicolor/32x32
 @dirrm share/apps/gwenview/icons/hicolor/22x22/actions
@@ -148,5 +159,8 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @dirrm share/apps/gwenview/icons/hicolor/16x16
 @dirrm share/apps/gwenview/icons/hicolor
 @dirrm share/apps/gwenview/icons
+@dirrm share/apps/gwenview/cursors
 @dirrm share/apps/gwenview
 @comment @dirrm share/apps
+@comment @dirrm share/applications/kde
+@comment @dirrm share/applications
