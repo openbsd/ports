@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2000/03/25 05:53:20 brad Exp $
+# $OpenBSD: Makefile,v 1.55 2000/03/25 06:04:36 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -11,6 +11,9 @@ MASTER_SITES0=	http://www.ssh.org/patches/ \
 		ftp://ftp2.inch.com/pub/FreeBSD/
 PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown:0
 PATCH_DIST_STRIP= -p1
+
+NO_CDROM=	"CRYPTO: Third party crypto not allowed."
+RESTRICTED=	"Crypto; export-controlled"
 
 MAINTAINER=	todd@openbsd.org
 
