@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2001/02/03 09:40:45 itojun Exp $
+# $OpenBSD: Makefile,v 1.19 2001/04/02 02:09:15 brad Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
+COMMENT=	"multi-threaded routing daemon"
+
 DISTNAME=	zebra-0.91a
 CATEGORIES=	net
-NEED_VERSION=	1.336
+NEED_VERSION=	1.378
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 HOMEPAGE=	http://www.zebra.org/
@@ -34,6 +36,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Msnmp}
 LIB_DEPENDS=	snmp.41::net/ucd-snmp
 CONFIGURE_ARGS+= --enable-snmp
+.else
+CONFIGURE_ARGS+= --disable-snmp
 .endif
 
 post-install:
