@@ -1,12 +1,10 @@
-*** c/cpy.c.orig	Tue Nov 25 16:47:16 1997
---- c/cpy.c	Tue Nov 25 16:47:26 1997
-***************
-*** 20,26 ****
-  ***********************************************************************/
-  
-  #include <stdio.h>
-- #include <malloc.h>
-  #include "ha.h"
-  #include "cpy.h"
-  #include "haio.h"
---- 20,25 ----
+--- c/cpy.c.orig	Thu Jan 12 01:51:30 1995
++++ c/cpy.c	Wed Dec 15 17:17:58 1999
+@@ -20,7 +20,6 @@
+ ***********************************************************************/
+ 
+ #include <stdio.h>
+-#include <malloc.h>
+ #include "ha.h"
+ #include "cpy.h"
+ #include "haio.h"

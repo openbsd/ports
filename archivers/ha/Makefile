@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/06 17:46:39 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/12/15 22:32:10 brad Exp $
 
-DISTNAME=       ha0999
-PKGNAME=        ha-0.999b
+DISTNAME=	ha0999
+PKGNAME=	ha-0.999b
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
-EXTRACT_SUFX=   .tgz
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     angelos@openbsd.org
+MAINTAINER=	angelos@openbsd.org
 
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 
-NO_WRKSUBDIR=   yes
-MAKEFILE=       makefile.nix
-MAKE_FLAGS=     CC=${CC} -f
-ALL_TARGET=     ha
+ALL_TARGET=	ha
+MAKEFILE=	makefile.nix
+NO_WRKSUBDIR=	yes
 
 do-install:
-	@cd ${WRKSRC}; ${INSTALL} ${INSTALL_COPY} ${INSTALL_STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ha ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ha ${PREFIX}/bin
 
 .include <bsd.port.mk>
