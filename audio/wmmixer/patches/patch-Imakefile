@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/06 11:54:55 wilfried Exp $
+$OpenBSD: patch-Imakefile,v 1.2 2002/09/27 22:51:58 naddy Exp $
 --- Imakefile.orig	Sat Sep  5 17:11:33 1998
-+++ Imakefile	Mon Feb  5 19:08:41 2001
++++ Imakefile	Sat Sep 28 00:52:35 2002
 @@ -1,5 +1,7 @@
  #ifdef NetBSDArchitecture
  OSSAUDIO = -lossaudio
@@ -9,9 +9,11 @@ $OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/06 11:54:55 wilfried Exp $
  #else
  OSSAUDIO =
  #endif
-@@ -10,4 +12,4 @@ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) $(OS
+@@ -10,4 +12,6 @@ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB) $(OS
  SRCS = wmmixer.cc
  OBJS = wmmixer.o
  
 -ComplexProgramTarget(wmmixer)
-+ComplexProgramTargetNoMan(wmmixer)
++wmmixer.man:
++
++ComplexCplusplusProgramTarget(wmmixer)

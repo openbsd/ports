@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/17 14:35:03 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/27 22:51:58 naddy Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
@@ -18,7 +18,7 @@ EXTRACT_SUFX=		.tgz
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
-CONFIGURE_STYLE=	imake
+CONFIGURE_STYLE=	imake noman
 
 WRKDIST=		${WRKDIR}/wmmixer
 
