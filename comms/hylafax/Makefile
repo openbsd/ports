@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/09/15 19:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=		"send/receive faxes and share modems"
 DISTNAME=		hylafax-4.1.5
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++ util z
 
 RUN_DEPENDS=		:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS=		tiff::graphics/tiff \

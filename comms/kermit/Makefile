@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/04/14 20:30:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=	"serial and network communications package"
 
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	"discriminatory license"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"discriminatory license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c curses m util
 
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/

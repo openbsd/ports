@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/25 11:34:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/21 22:29:51 espie Exp $
 
 COMMENT=	"receive/send files via ZMODEM protocol (unrestricted)"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 		${MASTER_SITE_LOCAL}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2004/08/10 08:12:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.42 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c ncurses
 
 WRKDIST=		${WRKDIR}/minicom-${VER}
 

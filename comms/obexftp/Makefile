@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/11/12 08:06:54 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=		"file copying over the OBEX protocol"
 DISTNAME=		obexftp-0.10.4
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openobex/}
 

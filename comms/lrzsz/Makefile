@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/02/16 21:24:52 margarida Exp $
+# $OpenBSD: Makefile,v 1.18 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=	"receive/send files via X/Y/ZMODEM protocol"
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	"possible copyright issue with rzsz"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"possible copyright issue with rzsz"
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/04/24 02:56:01 jason Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=	"x10 firecracker utility"
 
@@ -18,5 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 .include <bsd.port.mk>

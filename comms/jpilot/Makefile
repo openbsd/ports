@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/08/10 08:12:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.25 2004/11/21 22:29:50 espie Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		X11 Xext Xi c crypto glib gmodule m
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		patch-*
