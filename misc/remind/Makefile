@@ -1,13 +1,13 @@
 # Makefile for "remind" port.
 
-# $OpenBSD: Makefile,v 1.15 2001/11/13 22:13:24 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/27 20:55:51 naddy Exp $
 
 COMMENT=	"scripting language for reminders, with a Tk front end"
 
 DISTNAME=	remind-03.00.22
 PKGNAME=        remind-3.0.22
 CATEGORIES=	misc
-NEED_VERSION=	1.496
+
 MASTER_SITES = 	http://www.roaringpenguin.com/
 
 HOMEPAGE=	http://www.roaringpenguin.com/remind.html
@@ -23,5 +23,8 @@ PERMIT_DISTFILES_FTP=   Yes
 RUN_DEPENDS=	::x11/tk/8.3
 
 CONFIGURE_STYLE=	gnu dest
+
+do-regress:
+	cd ${WRKSRC}/tests; sh test-rem
 
 .include <bsd.port.mk>
