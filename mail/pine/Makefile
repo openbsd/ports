@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 1999/01/20 05:10:55 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/03/30 18:26:30 jakob Exp $
 #
 
-DISTNAME=       	pine4.05
-PKGNAME=        	pine-4.05
+DISTNAME=       	pine4.10
+PKGNAME=        	pine-4.10
 CATEGORIES=     	mail news
 
 MAINTAINER=		marc@OpenBSD.ORG
 
-MASTER_SITES=		ftp://ftp.cac.washington.edu/pine/
+MASTER_SITES=		ftp://ftp.cac.washington.edu/pine/ \
+			ftp://ftp.sunet.se/pub/unix/mail/pine/
 
 do-install:
 	@${INSTALL_PROGRAM} \
