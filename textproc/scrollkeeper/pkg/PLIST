@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/23 19:54:23 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/29 05:59:33 marcm Exp $
 bin/scrollkeeper-config
 bin/scrollkeeper-extract
 bin/scrollkeeper-gen-seriesid
@@ -185,4 +185,5 @@ share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd
 @unexec xmlcatalog --noout --del "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" /var/db/xmlcatalog
 @cwd ${SYSCONFDIR}
 @extra scrollkeeper.conf
-@extraunexec rm -rf /var/db/scrollkeeper
+@extraunexec rm -rf /var/db/scrollkeeper/
+@extraunexec rm -f /var/log/scrollkeeper.log*
