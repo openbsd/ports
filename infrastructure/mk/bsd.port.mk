@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.563 2003/07/25 02:17:51 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.564 2003/07/25 12:46:26 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -935,6 +935,20 @@ SCRIPTS_ENV+=	BATCH=yes
 .endif
 
 USE_X11?=No
+
+FETCH_MANUALLY?=No
+.if ${FETCH_MANUALLY:L} != "no"
+_ALLFILES_PRESENT=Yes
+.  for _F in ${ALLFILES:S@^@${FULLDISTDIR}@}
+.    if !exists(${_F})
+_ALLFILES_PRESENT=No
+.    endif
+.  endfor
+.  if ${_ALLFILES_PRESENT:L} == "no"
+IS_INTERACTIVE=Yes
+.  endif
+.endif
+
 ################################################################
 # Many ways to disable a port.
 #
@@ -1744,6 +1758,12 @@ fetch-all:
 
 .for _F in ${ALLFILES:S@^@${FULLDISTDIR}/@}
 ${_F}:
+.  if ${FETCH_MANUALLY:L} != "no"
+.    for _M in ${FETCH_MANUALLY}
+	@echo "*** ${_M}"
+.    endfor
+	@exit 1
+.  else
 	@mkdir -p ${_F:H}; \
 	cd ${_F:H}; \
 	select=${_EVERYTHING:M*${_F:S@^${FULLDISTDIR}/@@}\:[0-9]}; \
@@ -1757,6 +1777,7 @@ ${_F}:
 				exit 0; \
 		fi; \
 	done; exit 1
+.  endif
 .endfor
 
 # list the distribution and patch files used by a port.  Typical
