@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/23 08:54:55 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/05/26 03:38:34 kevlo Exp $
 ${P5SITE}/App/Info.pm
 ${P5SITE}/App/Info/HTTPD.pm
 ${P5SITE}/App/Info/HTTPD/Apache.pm
@@ -27,7 +27,6 @@ man/man3p/App::Info::RDBMS.3p
 man/man3p/App::Info::RDBMS::PostgreSQL.3p
 man/man3p/App::Info::Request.3p
 man/man3p/App::Info::Util.3p
-@dirrm ${P5ARCH}/auto/App/Info
 @dirrm ${P5SITE}/App/Info/RDBMS
 @dirrm ${P5SITE}/App/Info/Lib
 @dirrm ${P5SITE}/App/Info/Handler
