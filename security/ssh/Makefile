@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 1999/12/12 22:09:25 dugsong Exp $
+# $OpenBSD: Makefile,v 1.46 1999/12/13 01:49:33 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -20,14 +20,14 @@ RESTRICTED=	"Crypto; export-controlled"
 MAINTAINER=	todd@openbsd.org
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-BUILD_DEPENDS=	${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
-CONFIGURE_ARGS+= --with-rsaref=${PREFIX}/lib
-CFLAGS+=	 -I${PREFIX}/include
+LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
+CONFIGURE_ARGS+= --with-rsaref=${LOCALBASE}/lib
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-etcdir=${ETCDIR} \
-		--with-rsh=${RSHPROG} \
+CONFIGURE_ARGS+=--with-etcdir="${ETCDIR}" \
+		--with-rsh="${RSHPROG}" \
 		--with-libwrap
 
 IS_INTERACTIVE=	yes
@@ -49,7 +49,7 @@ CONFIGURE_ARGS= --without-x
 
 # Include SOCKS firewall support
 .if defined(USE_SOCKS) && ${USE_SOCKS:U} == YES
-CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
+CONFIGURE_ARGS+= --with-socks="-L${LOCALBASE}/lib -lsocks5" --with-socks5
 .endif
 
 # Include support for the SecureID card
@@ -103,6 +103,6 @@ post-install:
 	fi
 	@rm -f ${PREFIX}/man/man1/slogin.1
 	@ln -sf ssh.1 ${PREFIX}/man/man1/slogin.1
-	@sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
