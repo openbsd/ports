@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 1999/07/12 08:55:01 jasoni Exp $
+# $OpenBSD: Makefile,v 1.38 1999/11/08 14:19:25 dugsong Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -19,7 +19,7 @@
      SUBDIR += bricons
 #    SUBDIR += camltk41
      SUBDIR += ctwm
-#    SUBDIR += dclock
+     SUBDIR += dclock
      SUBDIR += emiclock
 #    SUBDIR += emu
      SUBDIR += enlightenment
@@ -69,7 +69,7 @@
 #    SUBDIR += tkdesk
 #    SUBDIR += tkgoodstuff
 #    SUBDIR += tkstep80
-#    SUBDIR += tvtwm
+     SUBDIR += tvtwm
 #    SUBDIR += tycoon
      SUBDIR += viewfax
      SUBDIR += windowmaker
