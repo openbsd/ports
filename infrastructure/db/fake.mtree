@@ -142,6 +142,8 @@
 		    ..
 		    de_DE.ISO_8859-1
 		    ..
+		    el_GR.ISO_8859-7
+       		    ..
 		    en_AU.ISO_8859-1
 		    ..
 		    en_CA.ISO_8859-1
@@ -190,9 +192,13 @@
 		    ..
 		    ru_SU.CP866
 		    ..
+		    ru_SU.ISO_8859-5
+		    ..
 		    ru_SU.KOI8-R
 		    ..
 		    sv_SE.ISO_8859-1
+       		    ..
+	    	    uk_UA.KOI8-U
 		    ..
 		..
 		skel
