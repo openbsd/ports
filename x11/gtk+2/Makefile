@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2003/07/26 23:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2003/08/15 21:07:05 marcm Exp $
+
+NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
@@ -40,8 +42,6 @@ OBSD_LIB_VERSION=		0:12
 USE_X11=			Yes
 USE_GMAKE=			Yes
 CONFIGURE_STYLE=		gnu
-CONFIGURE_ARGS+=		${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= 		--enable-static
 CONFIGURE_ARGS+= 		--disable-gtk-doc
 CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 				LDFLAGS="-L${LOCALBASE}/lib"
