@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.139 1999/11/22 20:40:53 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.140 1999/11/22 23:44:01 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -41,8 +41,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 			${_VERSION_NEEDED} -eq ${_VERSION} -a \
 				${_REVISION_NEEDED} -gt ${_REVISION} ]; \
 	then \
-		${ECHO} "Need version ${NEED_VERSION} of bsd.port.mk"; \
-		${FALSE}; \
+		echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
+		exit 1; \
     fi; 
 
 .endif
@@ -826,10 +826,10 @@ TR?=		/usr/bin/tr
 TRUE?=		/usr/bin/true
 
 # Used to print all the '===>' style prompts - override this to turn them off.
-ECHO_MSG?=		${ECHO}
+ECHO_MSG?=		echo
 
 # XXX
-_DEPEND_ECHO?=		${ECHO}
+_DEPEND_ECHO?=		echo
 
 # How to do nothing.  Override if you, for some strange reason, would rather
 # do something.
@@ -1021,8 +1021,8 @@ MAINTAINER?=	ports@openbsd.org
 
 .if !defined(CATEGORIES)
 .BEGIN:
-	@${ECHO_MSG} "CATEGORIES is mandatory."
-	@${FALSE}
+	@echo "CATEGORIES is mandatory."
+	@exit 1
 .endif
 
 PKGREPOSITORYSUBDIR?=	All
@@ -1292,12 +1292,12 @@ do-fetch:
 	@${MKDIR} ${FULLDISTDIR}
 	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${DISTFILES}; do \
-	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
+	 	file=`echo $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
-				${ECHO_MSG} ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
-				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-				${ECHO_MSG} ">> Please correct this problem and try again."; \
+				echo ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
+				echo ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
+				echo ">> Please correct this problem and try again."; \
 				exit 1; \
 			fi ; \
 			if [ ! -z ${CDROM_COPY} ]; then \
@@ -1329,20 +1329,20 @@ do-fetch:
 					continue 2; \
 				fi \
 			done; \
-			${ECHO_MSG} ">> Couldn't fetch it - please try to retrieve this";\
-			${ECHO_MSG} ">> port manually into ${FULLDISTDIR} and try again."; \
+			echo ">> Couldn't fetch it - please try to retrieve this";\
+			echo ">> port manually into ${FULLDISTDIR} and try again."; \
 			exit 1; \
 	    fi \
 	 done
 .if defined(PATCHFILES)
 	@cd ${FULLDISTDIR}; \
 	 for fullfile in ${PATCHFILES}; do \
-	 	file=`${ECHO} $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
+	 	file=`echo $$fullfile|${SED} -e 's,:[0-9]$$,,'`; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
-				${ECHO_MSG} ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
-				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
-				${ECHO_MSG} ">> Please correct this problem and try again."; \
+				echo ">> ${FULLDISTDIR}/$$file is a broken symlink."; \
+				echo ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
+				echo ">> Please correct this problem and try again."; \
 				exit 1; \
 			fi ; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
@@ -1365,8 +1365,8 @@ do-fetch:
 					continue 2; \
 				fi \
 			done; \
-			${ECHO_MSG} ">> Couldn't fetch it - please try to retrieve this";\
-			${ECHO_MSG} ">> port manually into ${FULLDISTDIR} and try again."; \
+			echo ">> Couldn't fetch it - please try to retrieve this";\
+			echo ">> port manually into ${FULLDISTDIR} and try again."; \
 			exit 1; \
 	    fi \
 	 done
@@ -1407,14 +1407,14 @@ obj:
 	@${MKDIR} -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
 	  [ X`${READLINK} ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
-		echo "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
 		${RM} -f ${WRKDIR}; \
 		${LN} -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
 .else
-	@${ECHO_MSG} ">>"
-	@${ECHO_MSG} ">> Please set the WRKOBJDIR variable before using 'make obj'"
-	@${ECHO_MSG} ">>"
+	@echo ">>"
+	@echo ">> Please set the WRKOBJDIR variable before using 'make obj'"
+	@echo ">>"
 	@exit 1;
 .endif
 .endif
@@ -1430,7 +1430,7 @@ do-extract:
 	@${MKDIR} -p ${WRKOBJDIR}/${PORTSUBDIR}
 	@if [ ! -L ${WRKDIR} ] || \
 	  [ X`${READLINK} ${WRKDIR}` != X${WRKOBJDIR}/${PORTSUBDIR} ]; then \
-		echo "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
+		${ECHO_MSG} "${WRKDIR} -> ${WRKOBJDIR}/${PORTSUBDIR}"; \
 		${RM} -f ${WRKDIR}; \
 		${LN} -sf ${WRKOBJDIR}/${PORTSUBDIR} ${WRKDIR}; \
 	fi
@@ -1485,10 +1485,11 @@ do-patch:
 							{ echo "***>   $$i did not apply cleanly"; \
 							error=1; }\
 					else \
-						${ECHO_MSG} "===>   Can't find patch matching $$i"; \
+						echo "===>   Can't find patch matching $$i"; \
 						if [ -d ${PATCHDIR}/CVS -a "$$i" = \
 							"${PATCHDIR}/patch-*" ]; then \
-								${ECHO_MSG} "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
+								echo "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
+								error=1; \
 						fi; \
 					fi; \
 					;; \
@@ -1545,7 +1546,7 @@ do-package:
 		if [ -d ${PACKAGES} ]; then \
 			if [ ! -d ${PKGREPOSITORY} ]; then \
 				if ! ${MKDIR} ${PKGREPOSITORY}; then \
-					${ECHO_MSG} ">> Can't create directory ${PKGREPOSITORY}."; \
+					echo ">> Can't create directory ${PKGREPOSITORY}."; \
 					exit 1; \
 				fi; \
 			fi; \
@@ -1569,7 +1570,7 @@ package-links:
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
-				${ECHO_MSG} ">> Can't create directory ${PACKAGES}/$$cat."; \
+				echo ">> Can't create directory ${PACKAGES}/$$cat."; \
 				exit 1; \
 			fi; \
 		fi; \
@@ -1597,12 +1598,12 @@ _PORT_USE: .USE
 .if make(real-install)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
-		${ECHO_MSG} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
-		${ECHO_MSG} "      If so, you may wish to \`\`make deinstall'' and install"; \
-		${ECHO_MSG} "      this port again by \`\`make reinstall'' to upgrade it properly."; \
-		${ECHO_MSG} "      If you really wish to overwrite the old port of ${PKGNAME}"; \
-		${ECHO_MSG} "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
-		${ECHO_MSG} "      in your environment or the \"make install\" command line."; \
+		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
+		echo "      If so, you may wish to \`\`make deinstall'' and install"; \
+		echo "      this port again by \`\`make reinstall'' to upgrade it properly."; \
+		echo "      If you really wish to overwrite the old port of ${PKGNAME}"; \
+		echo "      without deleting it first, set the variable \"FORCE_PKG_REGISTER\""; \
+		echo "      in your environment or the \"make install\" command line."; \
 		exit 1; \
 	fi
 .endif
@@ -1616,8 +1617,8 @@ _PORT_USE: .USE
 .if !defined(NO_MTREE)
 	@if [ `id -u` = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
-			${ECHO_MSG} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
-			${ECHO_MSG} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
+			echo "Error: mtree file \"${MTREE_FILE}\" is missing."; \
+			echo "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
 			exit 1; \
 		else \
 			if [ ! -d ${PREFIX} ]; then \
@@ -1955,7 +1956,7 @@ makesum: fetch-all
 		done; \
 	 done)
 	@for file in ${_IGNOREFILES}; do \
-		${ECHO} "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
+		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
 .endif
@@ -1971,14 +1972,14 @@ addsum: fetch-all
 		done; \
 	 done)
 	@for file in ${_IGNOREFILES}; do \
-		${ECHO} "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
+		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
 	@sort -u -o ${CHECKSUM_FILE} ${CHECKSUM_FILE} 
 	@if [ `${SED} -e 's/\=.*$$//' ${CHECKSUM_FILE} | uniq -d | wc -l` -ne 0 ]; then \
-		${ECHO} "Inconsistent checksum in ${CHECKSUM_FILE}"; \
-		${FALSE}; \
+		echo "Inconsistent checksum in ${CHECKSUM_FILE}"; \
+		exit 1; \
 	else \
-		${ECHO} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
+		${ECHO_MSG} "${CHECKSUM_FILE} updated okay, don't forget to remove cruft"; \
 	fi
 .endif
 
@@ -2003,15 +2004,15 @@ checksum: fetch
 				${ECHO_MSG} ">> No checksum recorded for $$file."; \
 				OK="false"; \
 			elif [ "$$CKSUM2" = "IGNORE" ]; then \
-				${ECHO_MSG} ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
-				${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
+				echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
+				echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
 			else \
 				CKSUM=`$$cipher < $$file`; \
 				if [ "$$CKSUM" = "$$CKSUM2" ]; then \
 					${ECHO_MSG} ">> Checksum OK for $$file. ($$sig)"; \
 				else \
-					${ECHO_MSG} ">> Checksum mismatch for $$file. ($$sig)"; \
+					echo ">> Checksum mismatch for $$file. ($$sig)"; \
 					OK="false"; \
 				fi; \
 			fi; \
@@ -2019,18 +2020,18 @@ checksum: fetch
 		  for file in ${_IGNOREFILES}; do \
 			CKSUM2=`${GREP} "($$file)" ${CHECKSUM_FILE} | ${AWK} '{print $$4}'`; \
 			if [ "$$CKSUM2" = "" ]; then \
-				${ECHO_MSG} ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
+				echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
 			elif [ "$$CKSUM2" != "IGNORE" ]; then \
-				${ECHO_MSG} ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
-				${ECHO_MSG} "   the file is in the "'$$'"{IGNOREFILES} list."; \
+				echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
+				echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
 			fi; \
 		  done; \
 		  if [ "$$OK" != "true" ]; then \
-			${ECHO_MSG} "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-			${ECHO_MSG} "are up to date.  If you want to override this check, type"; \
-			${ECHO_MSG} "\"make NO_CHECKSUM=Yes [other args]\"."; \
+			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+			echo "are up to date.  If you want to override this check, type"; \
+			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
 			exit 1; \
 		  fi) ; \
 	fi
@@ -2110,11 +2111,11 @@ ${_DEP}-depends:
 .if !defined(NO_DEPENDS)
 	@PATH=${PORTPATH}; \
 	for i in ${${_DEP:U}_DEPENDS}; do \
-		prog=`${ECHO} $$i | ${SED} -e 's/:.*//'`; \
-		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
+		prog=`echo $$i | ${SED} -e 's/:.*//'`; \
+		dir=`echo $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`echo $$dir | ${SED} -e 's/.*://'`; \
+			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
@@ -2137,11 +2138,13 @@ ${_DEP}-depends:
 		fi; \
 		if [ X"$$found" = Xnot ]; then \
 			${ECHO_MSG} "===>  Verifying $$target for $$prog in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} ">> No directory for $$prog.  Skipping.."; \
+			if cd $$dir && ${MAKE} $$target; then \
+				${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
 			else \
-				(cd $$dir; ${MAKE} $$target) ; \
-				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
+				if [ ! -d $$dir ]; then \
+					echo ">> No directory for $$prog ($$dir)"; \
+				fi; \
+				exit 1; \
 			fi; \
 		fi; \
 	done
@@ -2156,11 +2159,11 @@ lib-depends:
 .if !defined(NO_DEPENDS)
 .if defined(NO_SHARED_LIBS)
 	@for i in ${LIB_DEPENDS}; do \
-		lib=`${ECHO} $$i | ${SED} -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
+		lib=`echo $$i | ${SED} -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
+		dir=`echo $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`echo $$dir | ${SED} -e 's/.*://'`; \
+			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
@@ -2170,35 +2173,39 @@ lib-depends:
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$lib in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} ">> No directory for $$lib.  Skipping.."; \
-			else \
-				(cd $$dir; ${MAKE} $$target) ; \
+			if cd $$dir && ${MAKE} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
+			else \
+				if [ ! -d "$$dir" ]; then \
+					echo ">> No directory for $$lib ($$dir)"; \
+				fi; \
+				exit 1; \
 			fi; \
 		fi; \
 		${RM} -f $$tmp; \
 	done
 .else
 	@for i in ${LIB_DEPENDS}; do \
-		lib=`${ECHO} $$i | ${SED} -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-		dir=`${ECHO} $$i | ${SED} -e 's/[^:]*://'`; \
+		lib=`echo $$i | ${SED} -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
+		dir=`echo $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`echo $$dir | ${SED} -e 's/.*://'`; \
+			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
-		libname=`${ECHO} $$lib | ${SED} -e 's|\\\\||g'`; \
+		libname=`echo $$lib | ${SED} -e 's|\\\\||g'`; \
 		reallib=`${LDCONFIG} -r | ${GREP} -e "-l$$lib" | awk '{ print $$3 }'`; \
 		if [ "X$$reallib" = X"" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - not found"; \
 			${ECHO_MSG} "===>  Verifying $$target for $$libname in $$dir"; \
-			if [ ! -d "$$dir" ]; then \
-				${ECHO_MSG} ">> No directory for $$libname.  Skipping.."; \
-			else \
-				(cd $$dir; ${MAKE} $$target) ; \
+			if cd $$dir && ${MAKE} $$target; then \
 				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
+			else
+				if [ ! -d "$$dir" ]; then \
+					echo ">> No directory for $$libname ($$dir)"; \
+				fi; \
+				exit 1; \
 			fi; \
 		else \
 			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - $$reallib found"; \
@@ -2215,20 +2222,22 @@ misc-depends:
 .if !defined(NO_DEPENDS)
 	@for dir in ${DEPENDS}; do \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
+			target=`echo $$dir | ${SED} -e 's/.*://'`; \
+			dir=`echo $$dir | ${SED} -e 's/:.*//'`; \
 		else \
 			target=${DEPENDS_TARGET}; \
 		fi; \
 		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
-		if [ ! -d $$dir ]; then \
-			${ECHO_MSG} ">> No directory for $$dir.  Skipping.."; \
+		if cd $$dir && ${MAKE} $$target; then \
+			${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
 		else \
-			(cd $$dir; ${MAKE} $$target) ; \
+			if [ ! -d $$dir ]; then \
+				echo ">> No directory for $$dir."; \
+			fi; \
+				exit 1; \
 		fi \
 	done
-	@${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"
 .endif
 .else
 	@${DO_NADA}
@@ -2241,7 +2250,7 @@ clean-depends:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) \
 	|| defined(RUN_DEPENDS) || defined(DEPENDS)
 	@for dir in \
-	   `${ECHO} ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
+	   `echo ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
 	   ${BUILD_DEPENDS:C/^[^:]*://:C/:.*//} \
 	   ${LIB_DEPENDS:C/^[^:]*://:C/:.*//} \
 	   ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} \
@@ -2266,38 +2275,38 @@ clean-depends:
 #
 .if !target(describe)
 describe:
-	@${ECHO} -n "${PKGNAME}|${.CURDIR}|"; \
-	${ECHO} -n "${PREFIX}|"; \
+	@echo -n "${PKGNAME}|${.CURDIR}|"; \
+	echo -n "${PREFIX}|"; \
 	if [ -f ${COMMENT} ]; then \
-		${ECHO} -n "`${CAT} ${COMMENT}`|"; \
+		echo -n "`${CAT} ${COMMENT}`|"; \
 	else \
-		${ECHO} -n "** No Description|"; \
+		echo -n "** No Description|"; \
 	fi; \
 	if [ -f ${DESCR} ]; then \
-		${ECHO} -n "${DESCR}|"; \
+		echo -n "${DESCR}|"; \
 	else \
-		${ECHO} -n "/dev/null|"; \
+		echo -n "/dev/null|"; \
 	fi; \
-	${ECHO} -n "${MAINTAINER}|${CATEGORIES}|"
+	echo -n "${MAINTAINER}|${CATEGORIES}|"
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
    defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
-	@cd ${.CURDIR} && ${ECHO} -n `make depends-list|${SORT_DEPENDS}`
+	@cd ${.CURDIR} && echo -n `make depends-list|${SORT_DEPENDS}`
 .endif
-	@${ECHO} -n "|"
+	@echo -n "|"
 .if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS) || \
 	target(package-depends)
-	@cd ${.CURDIR} && ${ECHO} -n `make package-depends|${SORT_DEPENDS}`
+	@cd ${.CURDIR} && echo -n `make package-depends|${SORT_DEPENDS}`
 .endif
-	@${ECHO} -n "|"
+	@echo -n "|"
 	@if [ "${ONLY_FOR_ARCHS}" = "" ]; then \
-		${ECHO} "any"; \
+		echo "any"; \
 	else \
-		${ECHO} "${ONLY_FOR_ARCHS}"; \
+		echo "${ONLY_FOR_ARCHS}"; \
 	fi
 .endif
 
 README.html:
-	@${ECHO} ${PKGNAME} | ${HTMLIFY} > $@.tmp3
+	@echo ${PKGNAME} | ${HTMLIFY} > $@.tmp3
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
    defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
 	@${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${SORT_DEPENDS}>$@.tmp1
@@ -2335,9 +2344,9 @@ README.html:
 print-depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS) || target(depends-list)
-	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `make ${_DEPEND_THRU} depends-list | ${SORT_DEPENDS}`
-	@${ECHO} '" to build.'
+	@echo -n 'This port requires package(s) "'
+	@echo -n `make ${_DEPEND_THRU} depends-list | ${SORT_DEPENDS}`
+	@echo '" to build.'
 .endif
 .endif
 
@@ -2345,9 +2354,9 @@ print-depends-list:
 print-package-depends:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS) || \
    target(package-depends)
-	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `make ${_DEPEND_THRU} package-depends | ${SORT_DEPENDS}`
-	@${ECHO} '" to run.'
+	@echo -n 'This port requires package(s) "'
+	@echo -n `make ${_DEPEND_THRU} package-depends | ${SORT_DEPENDS}`
+	@echo '" to run.'
 .endif
 .endif
 
@@ -2472,9 +2481,9 @@ print-depends:
 
 .if !target(fake-pkg)
 fake-pkg:
-	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then ${ECHO} "** Missing package files for ${PKGNAME} - installation not recorded."; exit 1; fi
+	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then echo "** Missing package files for ${PKGNAME} - installation not recorded."; exit 1; fi
 	@if [ `/bin/ls -l ${COMMENT} | ${AWK} '{print $$5}'` -gt 60 ]; then \
-	    ${ECHO} "** ${COMMENT} too large - installation not recorded."; \
+	    echo "** ${COMMENT} too large - installation not recorded."; \
 	    exit 1; \
 	 fi
 	@if [ ! -d ${PKG_DBDIR} ]; then ${RM} -f ${PKG_DBDIR}; ${MKDIR} ${PKG_DBDIR}; fi
@@ -2503,7 +2512,7 @@ fake-pkg:
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
-					${ECHO} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
+					echo ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
 				fi; \
 			fi; \
 		done; \
