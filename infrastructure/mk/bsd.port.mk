@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.610 2004/02/07 22:34:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.611 2004/02/07 22:36:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -194,8 +194,9 @@ DEF_UMASK?=		022
 NO_DEPENDS?= No
 NO_BUILD?= No
 NO_REGRESS?= No
+DIST_SUBDIR?=
 
-.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.if !empty(DIST_SUBDIR)
 FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
 .else
 FULLDISTDIR?=	${DISTDIR}
@@ -799,7 +800,7 @@ __CKSUMFILES:=${__CKSUMFILES:N${_file}}
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
-.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.if !empty(DIST_SUBDIR)
 _CKSUMFILES=	${__CKSUMFILES:S/^/${DIST_SUBDIR}\//}
 _IGNOREFILES=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
 .else
@@ -1058,7 +1059,7 @@ _tmpvars += ${_v}='${${_v}}'
 .  endfor
 
 # mirroring utilities
-.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.if !empty(DIST_SUBDIR)
 _ALLFILES=${ALLFILES:S/^/${DIST_SUBDIR}\//}
 .else
 _ALLFILES=${ALLFILES}
@@ -1897,7 +1898,7 @@ clean:
 			rm -f ${_DISTFILES} ${_PATCHFILES}; \
 		fi \
 	fi
-.    if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.    if !empty(DIST_SUBDIR)
 	-@rmdir ${FULLDISTDIR}
 .    endif
 .  endif
@@ -2002,7 +2003,7 @@ _fetch-onefile:
 .for _F in ${_file}
 	@echo '${_F}: $$F'
 	@echo -n '\t@MAINTAINER="${MAINTAINER}" '
-.  if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.  if !empty(DIST_SUBDIR)
 	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
 .  endif
 	@echo '\\'
