@@ -7,8 +7,6 @@ Packages can be built with additional FLAVORs:
 
   sun:	SDL built with our native audio driver.
 
-  oss:	SDL built with sound support using OSS audio.
-
   esd:	SDL built with the esound package.
 	This FLAVOR requires the esound package.
 
