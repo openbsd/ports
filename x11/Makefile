@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2000/02/09 08:22:34 kevlo Exp $
+# $OpenBSD: Makefile,v 1.46 2000/02/28 12:21:22 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -38,7 +38,7 @@
      SUBDIR += gtk+
      SUBDIR += gtkglarea
 #    SUBDIR += gwm
-#    SUBDIR += icewm
+     SUBDIR += icewm
 #    SUBDIR += iv
 #    SUBDIR += kde
      SUBDIR += kdebase
