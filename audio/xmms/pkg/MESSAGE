@@ -1,8 +1,11 @@
-To use native audio, pick the Sun output plugin in the XMMS preferences
-window (ctrl-p).
 
-To go easier on resources, don't use the `scope' visualization mode, and
-increasing the buffer size in audio preferences significantly might help.
-If all else fails, use renice(8) on XMMS. Enabling the `XMMS uses mixer
-exclusively' option may be of some help on extremely slow systems.
+To use native audio, pick the Sun output plugin in the XMMS
+preferences window (ctrl-p).
+
+Depending on your audio hardware and driver, you may want to
+fine-tune the buffer size in audio preferences. Usually you
+should decrease the buffer size if your hardware can handle it.
+
+Please direct issues regarding the Sun output driver to the
+author, ${MAINTAINER}.
 

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared-esd,v 1.1 2001/07/25 12:52:24 espie Exp $
+@comment $Id: PFRAG.shared-esd,v 1.1 2001/07/25 12:52:24 espie Exp $
+lib/xmms/Output/libesdout.la
+lib/xmms/Output/libesdout.so.0.0

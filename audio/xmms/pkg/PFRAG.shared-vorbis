@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared-vorbis,v 1.1 2001/07/25 12:52:24 espie Exp $
+@comment $Id: PFRAG.shared-vorbis,v 1.1 2001/07/25 12:52:24 espie Exp $
+lib/xmms/Input/libvorbis.la
+lib/xmms/Input/libvorbis.so.0.0

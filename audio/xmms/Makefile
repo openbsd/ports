@@ -1,13 +1,22 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/20 14:26:16 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/25 12:52:24 espie Exp $
+# $Id: Makefile,v 1.2 2001/07/25 12:52:24 espie Exp $
 
-COMMENT=		"XMMS multimedia player"
-VER=			1.2.5
+NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-DISTNAME=		xmms-${VER}
-DISTDRIVER=		xmms_sun-${VER}
+COMMENT=		"Multimedia player for the X Window System"
+COMMENT-esd=		"Esound output plugin for XMMS"
+COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
+
+VERSION=		1.2.5
+DISTNAME=		xmms-${VERSION}
+PKGNAME-esd=		xmms-esd-${VERSION}
+PKGNAME-vorbis=		xmms-vorbis-${VERSION}
+DISTDRIVER=		xmms_sun-${VERSION}-p1
 CATEGORIES=		audio
 NEED_VERSION=		1.402
 HOMEPAGE=		http://www.xmms.org
+
+MAINTAINER=		Wilbern Cobb <cobb@vedge.com.ar>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,17 +30,25 @@ MASTER_SITES=		http://www.xmms.org/files/%SUBDIR%/ \
 			ftp://ftp.sunet.se/pub/multimedia/xmms/%SUBDIR%/ \
 			ftp://ftp.stealth.net/xmms/%SUBDIR%/
 
-MASTER_SITES0=		http://vedge.com.ar/hack/ 
+MASTER_SITES0=		http://vedge.com.ar/hack/
 
-FLAVORS=		esd vorbis
+FLAVORS=		no_esd no_vorbis
 FLAVOR?=
+MULTI_PACKAGES=
+.if ${FLAVOR:L:Nno_esd}
+MULTI_PACKAGES+=	-esd
+.endif
+.if ${FLAVOR:L:Nno_vorbis}
+MULTI_PACKAGES+=	-vorbis
+.endif
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+		\
-			iconv.2::converters/libiconv	\
-			intl.1::devel/gettext		\
-			xml.9::textproc/libxml1
+SUBPACKAGE?=
 
 RUN_DEPENDS=		unzip::archivers/unzip
+LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
+			iconv.2::converters/libiconv \
+			intl.1::devel/gettext \
+			xml.9::textproc/libxml1
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
@@ -40,37 +57,48 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
-			XML_CONFIG="${LOCALBASE}/bin/xml-config"
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			XML_CONFIG="${LOCALBASE}/bin/xml-config" \
+			LIBMIKMOD_CONFIG=/no
 
-DISTFILES=		${DISTNAME}.tar.gz			    \
+DISTFILES=		${DISTNAME}.tar.gz \
 			${DISTDRIVER}.tar.gz:0
 
-DOCS=			AUTHORS COPYING ChangeLog FAQ INSTALL NEWS  \
+DOCS=			AUTHORS COPYING ChangeLog FAQ INSTALL NEWS \
 			README TODO
 
-.if ${FLAVOR:L:Mesd}
-LIB_DEPENDS+=		esd.2::audio/esound
+SUBST_VARS=		MAINTAINER
+
+.if defined(PACKAGING) 
+
+.  if ${SUBPACKAGE} == "-esd"
+LIB_DEPENDS=		esd.::audio/esound
+RUN_DEPENDS=		xmms::audio/xmms
+.  endif
+.  if ${SUBPACKAGE} == "-vorbis"
+LIB_DEPENDS=		vorbis.::audio/libvorbis
+RUN_DEPENDS=		xmms::audio/xmms
+.  endif
 .else
+.  if ${MULTI_PACKAGES:M-esd}
+LIB_DEPENDS +=		esd.::audio/esound
+CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
+.  else
 CONFIGURE_ENV+=		ESD_CONFIG=/no
-.endif
+.  endif
 
-# Trip up configure
-CONFIGURE_ENV+=		LIBMIKMOD_CONFIG=/no
-
-.if ${FLAVOR:L:Mvorbis}
-LIB_DEPENDS+=		vorbis.0::audio/libvorbis
+.  if ${MULTI_PACKAGES:M-vorbis}
+LIB_DEPENDS +=		vorbis.::audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE}	\
 			--with-vorbis-prefix=${LOCALBASE}
-.else
-CONFIGURE_ENV+= 	OGG_LIBS=its-not-my-godamn-planet-understand-monkey-boy
+.  else
+CONFIGURE_ENV+=		OGG_LIBS=its-not-my-godamn-planet-understand-monkey-boy
+.  endif
 .endif
 
-SUBST_VARS=MAINTAINER
-
 post-extract:
-	@mv -f ${WRKDIR}/${DISTDRIVER}/Output/sun ${WRKSRC}/Output/sun; \
+	@mv -f ${WRKDIR}/${DISTDRIVER}/Output/sun ${WRKSRC}/Output/sun
 
 pre-build:
 	@ln -sf ${LOCALBASE}/include/libintl.h ${WRKSRC}/intl

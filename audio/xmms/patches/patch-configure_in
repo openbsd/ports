@@ -1,6 +1,17 @@
 --- configure.in.orig	Mon Jun 18 15:58:21 2001
-+++ configure.in	Wed Jul 11 11:02:52 2001
-@@ -43,10 +43,9 @@
++++ configure.in	Tue Jul 24 03:08:11 2001
+@@ -18,6 +18,10 @@
+ [  --disable-user-plugin-dir disable per-user plugin dir],,
+ 		enable_user_plugin_dir="yes")
+ 
++AC_ARG_WITH( gl-prefix,
++[  --with-gl-prefix Prefix where OpenGL is installed],,
++		gl_prefix="$withval", gl_prefix="$X11BASE")
++
+ AC_ARG_WITH(dev-dsp, 
+   [  --with-dev-dsp=path     Path to OSS DSP data pipe, default is /dev/dsp.],
+ 	dev_dsp="$withval", dev_dsp="/dev/dsp")
+@@ -43,10 +47,9 @@
  AC_PROG_LN_S
  AC_PROG_MAKE_SET
  
@@ -12,7 +23,7 @@
  AC_PATH_PROG(XMMS_PATH,xmms,no)
  
  LIBS_save=$LIBS
-@@ -73,7 +72,6 @@
+@@ -73,7 +76,6 @@
  LIBS=$LIBS_save
  AC_SUBST(VM_LIBS)
  
@@ -20,24 +31,30 @@
  AC_MSG_CHECKING(for old style FreeBSD -pthread flag)
  AC_EGREP_CPP(yes,
  	[#if defined(__FreeBSD_cc_version) && __FreeBSD_cc_version <= 500001
-@@ -100,7 +98,6 @@
+@@ -100,19 +102,18 @@
  if test "x$PTHREAD_LIBS" = xerror; then
  	AC_MSG_ERROR(*** Unable to locate working posix thread library ***)
  fi
 -AC_SUBST(PTHREAD_LIBS)
  
  LIBS_save=$LIBS
- LIBS="$LIBS $GTK_LIBS"
-@@ -112,7 +109,7 @@
+-LIBS="$LIBS $GTK_LIBS"
++LIBS="$LIBS $GTK_LIBS -L$gl_prefix/lib"
+ OPENGL_LIBS=error
+ AC_CHECK_LIB(GL, glBegin, OPENGL_LIBS="-lGL")
+ 
+ if test "x$OPENGL_LIBS" = xerror; then
+-	AC_CHECK_LIB(MesaGL, glBegin,OPENGL_LIBS="-lMesaGL")
++    AC_CHECK_LIB(MesaGL, glBegin,OPENGL_LIBS="-lMesaGL")
  fi
  
  CPPFLAGS_save=$CPPFLAGS
 -CPPFLAGS="$GTK_CFLAGS $CPPFLAGS"
-+CPPFLAGS="$GTK_CFLAGS $CPPFLAGS -I$X11BASE/include"
++CPPFLAGS="$GTK_CFLAGS $CPPFLAGS -I$gl_prefix/include"
  have_opengl_headers=yes
  AC_CHECK_HEADERS(GL/gl.h GL/glx.h,,have_opengl_headers=no)
  
-@@ -335,13 +332,9 @@
+@@ -335,13 +336,9 @@
  
  arch_type=other
  have_solaris=no
@@ -52,7 +69,7 @@
  	ppc-*-*)
  		arch_type=ppc
  	;;
-@@ -351,12 +344,29 @@
+@@ -351,12 +348,29 @@
  	*-sun-*)
  		have_solaris=yes
  	;;
@@ -82,7 +99,7 @@
  
  plugindir=$libdir/xmms
  AC_SUBST(plugindir)
-@@ -384,7 +394,7 @@
+@@ -384,7 +398,7 @@
  AC_SUBST(VISUALIZATION_PLUGIN_DIR)
  AC_SUBST(pluginsubs)
  
@@ -91,7 +108,7 @@
  
  if test "x$enable_user_plugin_dir" = "xno"; then
  	AC_DEFINE(DISABLE_USER_PLUGIN_DIR,, [Define to disable per user plugin directory])
-@@ -411,6 +421,7 @@
+@@ -411,6 +425,7 @@
  Output/esd/Makefile
  Output/disk_writer/Makefile
  Output/solaris/Makefile
@@ -99,7 +116,7 @@
  Input/Makefile
  Input/wav/Makefile
  Input/mpg123/Makefile
-@@ -454,6 +465,7 @@
+@@ -454,6 +469,7 @@
  echo "  Build mikmod plugin:        $have_mikmod"
  echo "  Build Ogg Vorbis plugin:    $have_oggvorbis"
  echo "  Build Solaris plugin:       $have_solaris"

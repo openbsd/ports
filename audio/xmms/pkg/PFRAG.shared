@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/07/20 14:26:16 espie Exp $
-%%esd%%
-%%vorbis%%
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/07/25 12:52:24 espie Exp $
+@comment $Id: PFRAG.shared,v 1.2 2001/07/25 12:52:24 espie Exp $
 lib/libxmms.la
 lib/libxmms.so.2.0
+DYNLIBDIR(%B)
 lib/xmms/Output/libsun.la
 lib/xmms/Output/libsun.so.0.0
 lib/xmms/Output/libdisk_writer.la

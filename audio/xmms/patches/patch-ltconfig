@@ -1,4 +1,4 @@
-$Id: patch-ltconfig,v 1.1.1.1 2001/07/20 14:26:16 espie Exp $
+$Id: patch-ltconfig,v 1.2 2001/07/25 12:52:24 espie Exp $
 vim:syn=diff
 
 --- ltconfig.orig	Wed Mar 21 10:22:22 2001
