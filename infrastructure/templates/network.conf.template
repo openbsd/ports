@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.40 2002/05/15 19:27:10 brad Exp $
+# $OpenBSD: network.conf.template,v 1.41 2002/05/16 16:31:05 brad Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!! ALWAYS COPY IT TO ../db FIRST.
@@ -119,8 +119,7 @@ MASTER_SITE_SUNSITE+=	\
 MASTER_SITE_SOURCEFORGE+=	\
 	http://us.dl.sourceforge.net/ \
 	http://eu.dl.sourceforge.net/ \
-	ftp://us.dl.sourceforge.net/ \
-	ftp://eu.dl.sourceforge.net/ \
+	ftp://us.dl.sourceforge.net/pub/sourceforge/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/ \
 	ftp://ftp.chg.ru/pub/sourceforge/
 
