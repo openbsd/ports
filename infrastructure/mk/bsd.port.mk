@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.374 2001/03/28 14:50:17 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.375 2001/03/28 15:01:01 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -37,6 +37,12 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 	@echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
 	exit 1;
 .  endif
+.endif
+
+.if ${.MAKEFLAGS:MFLAVOR=*}
+.BEGIN:
+	@echo "Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead"
+	@exit 1
 .endif
 
 # There is a transition in progress. When the dust settles, 
