@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.356 2001/02/13 12:09:07 wilfried Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.357 2001/02/24 22:02:08 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1853,166 +1853,102 @@ package-noinstall:
 ################################################################
 # Dependency checking
 ################################################################
+_fetch_depends_fragment= \
+	case $$dep in \
+	/*) \
+		if [ -e "$$dep" ]; then \
+			found=true; \
+		fi;; \
+	*) \
+		p=${PORTPATH}; IFS=:; for d in $$p; do \
+			if [ -x $$d/$$dep ]; then \
+				found=true; \
+				break; \
+			fi \
+		done; unset IFS;; \
+	esac
 
-.if !target(depends)
+_build_depends_fragment = ${_fetch_depends_fragment}
+_run_depends_fragment = ${_fetch_depends_fragment}; earlyexit=true
+
+.if defined(NO_SHARED_LIBS)
+_lib_depends_fragment = \
+	lib=`echo $$dep | sed -e 's|\([^\\]\)[\\\.].*|\1|'`; \
+	tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
+	if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
+		found=true; \
+	fi
+.else
+_lib_depends_fragment = \
+	lib=`echo $$dep | sed -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
+	check=`${LDCONFIG} -r | awk "/-l$$lib/"'{ print $$3 }'`; \
+	case "X$$check" in "X") ;; *) found=true;; esac 
+.endif
+
+_misc_depends_fragment = :
+
 depends: lib-depends misc-depends fetch-depends build-depends run-depends
 
-.  for _DEP in fetch build run
-${_DEP}-depends:
-.    if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
-	@PATH=${PORTPATH}; { unset DEPENDS_TARGET || true; }; \
-	for i in ${${_DEP:U}_DEPENDS:S,::,:,}; do \
-		cd ${PORTSDIR}; \
-		prog=`echo $$i | sed -e 's/:.*//'`; \
-		dir=`echo $$i | sed -e 's/[^:]*://'`; \
-		if expr "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | sed -e 's/.*://'`; \
-			dir=`echo $$dir | sed -e 's/:.*//'`; \
-		else \
-			target=${DEPENDS_TARGET}; \
-		fi; \
-		if [ ! -d $$dir ]; then \
-			echo ">> No directory for $$prog ($$dir)"; \
-		fi; \
-		if [ -L $$dir ]; then \
-			echo ">> Broken dependency: $$dir is a symbolic link"; \
-			exit 1; \
-		fi; \
-		found=false; \
-		if expr "$$prog" : \\/ >/dev/null; then \
-			if [ -e "$$prog" ]; then \
-				found=true; \
-			fi; \
-		else \
-			IFS=:; for d in $$PATH; do \
-				if [ -x $$d/$$prog ]; then \
-					found=true; \
-					break; \
-				fi \
-			done; unset IFS; \
-		fi; \
-		if $$found; then \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - found"; \
-		else \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on file: $$prog - not found"; \
-			${ECHO_MSG} "===>  Verifying $$target for $$prog in $$dir"; \
-			if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
-				${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
-			else \
-				exit 1; \
-			fi; \
-		fi; \
-	done
-.    endif
-.  endfor
-
-lib-depends:
-.  if defined(LIB_DEPENDS) && !defined(NO_DEPENDS)
-.    if defined(NO_SHARED_LIBS)
-	@{ unset DEPENDS_TARGET || true; }; \
-	for i in ${LIB_DEPENDS:S,::,:,}; do \
-		cd ${PORTSDIR}; \
-		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)[\\\.].*|\1|'`; \
-		dir=`echo $$i | sed -e 's/[^:]*://'`; \
-		if expr "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | sed -e 's/.*://'`; \
-			dir=`echo $$dir | sed -e 's/:.*//'`; \
-		else \
-			target=${DEPENDS_TARGET}; \
-		fi; \
-		if [ ! -d "$$dir" ]; then \
-			echo ">> No directory for $$lib ($$dir)"; \
-		fi; \
-		if [ -L $$dir ]; then \
-			echo ">> Broken dependency: $$dir is a symbolic link"; \
-			exit 1; \
-		fi; \
-		tmp=`mktemp /tmp/bpmXXXXXXXXXX`; \
-		if ${LD} -r -o $$tmp -L${LOCALBASE}/lib -L${X11BASE}/lib -l$$lib; then \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - found"; \
-		else \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on library: $$lib - not found"; \
-			${ECHO_MSG} "===>  Verifying $$target for $$lib in $$dir"; \
-			if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
-				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
-			else \
-				rm -f $$tmp; \
-				exit 1; \
-			fi; \
-		fi; \
-		rm -f $$tmp; \
-	done
-.    else
-	@{ unset DEPENDS_TARGET || true ; }; \
-	for i in ${LIB_DEPENDS:S,::,:,}; do \
-		cd ${PORTSDIR}; \
-		lib=`echo $$i | sed -e 's/:.*//' -e 's|\([^\\]\)\.|\1\\\\.|g'`; \
-		dir=`echo $$i | sed -e 's/[^:]*://'`; \
-		if expr "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | sed -e 's/.*://'`; \
-			dir=`echo $$dir | sed -e 's/:.*//'`; \
-		else \
-			target=${DEPENDS_TARGET}; \
-		fi; \
-		libname=`echo $$lib | sed -e 's|\\\\||g'`; \
-		if [ ! -d "$$dir" ]; then \
-			echo ">> No directory for $$libname ($$dir)"; \
-		fi; \
-		if [ -L $$dir ]; then \
-			echo ">> Broken dependency: $$dir is a symbolic link"; \
-			exit 1; \
-		fi; \
-		reallib=`${LDCONFIG} -r | grep -e "-l$$lib" | awk '{ print $$3 }'`; \
-		if [ "X$$reallib" = X"" ]; then \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - not found"; \
-			${ECHO_MSG} "===>  Verifying $$target for $$libname in $$dir"; \
-			if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
-				${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
-			else \
-				exit 1; \
-			fi; \
-		else \
-			${ECHO_MSG} "===>  ${PKGNAME} depends on shared library: $$libname - $$reallib found"; \
-		fi; \
-	done
-.    endif
-.  endif
-
-misc-depends:
-.  if defined(DEPENDS) && !defined(NO_DEPENDS)
-	@{ unset DEPENDS_TARGET || true; } ; \
-	for dir in ${DEPENDS:S,::,:,}; do \
-		cd ${PORTSDIR}; \
-		if expr "$$dir" : '.*:' > /dev/null; then \
-			target=`echo $$dir | sed -e 's/.*://'`; \
-			dir=`echo $$dir | sed -e 's/:.*//'`; \
-		else \
-			target=${DEPENDS_TARGET}; \
-		fi; \
-		if [ ! -d $$dir ]; then \
-			echo ">> No directory for $$dir."; \
-		fi; \
-		if [ -L $$dir ]; then \
-			echo ">> Broken dependency: $$dir is a symbolic link"; \
-			exit 1; \
-		fi; \
-		${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dir"; \
-		${ECHO_MSG} "===>  Verifying $$target for $$dir"; \
-		if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
-			${ECHO_MSG} "===>  Returning to build of ${PKGNAME}"; \
-		else \
-			exit 1; \
-		fi \
-	done
-.  endif
-
+# Let DEPENDS behave like the others
+.if defined(DEPENDS)
+MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 .endif
+
+.for _DEP in fetch build run lib misc
+${_DEP}-depends:
+.  if defined(${_DEP:U}_DEPENDS) && !defined(NO_DEPENDS)
+	@unset DEPENDS_TARGET || true; \
+	for i in ${${_DEP:U}_DEPENDS}; do \
+		echo $$i|{ \
+			IFS=:; read dep pkg dir target; \
+			case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+			case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
+				${MAKE} ${_DEPEND_THRU} show VARNAME=PKGNAME`;; esac; \
+			for abort in false false true; do \
+				if $$abort; then \
+					${ECHO_MSG} "Dependency check failed"; \
+					exit 1; \
+				fi; \
+				cd ${PORTSDIR}; \
+				if [ ! -d $$dir ]; then \
+					echo ">> No directory for $$dep ($$dir)"; \
+				fi; \
+				if [ -L $$dir ]; then \
+					echo ">> Broken dependency: $$dir is a symbolic link"; \
+					exit 1; \
+				fi; \
+				found=false; \
+				case "$$dep" in \
+				"/nonexistent") earlyexit=true;; \
+				*) earlyexit=false; \
+					${_${_DEP}_depends_fragment}; \
+					if $$found; then \
+						${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dep - found"; \
+						break; \
+					else \
+						${ECHO_MSG} "===>  ${PKGNAME} depends on: $$dep - not found"; \
+					fi;; \
+				esac; \
+				${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
+				if cd $$dir && PKGPATH="$$dir" ${MAKE} ${_DEPEND_THRU} $$target; then \
+					${ECHO_MSG} "===> Returning to build of ${PKGNAME}"; \
+				else \
+					exit 1; \
+				fi; \
+				if $$earlyexit; then \
+					break; \
+				fi; \
+			done; \
+		}; \
+	done
+.  endif
+.endfor
 
 # Internal variables, used by dependencies targets 
 
-.if defined(LIB_DEPENDS) || defined(DEPENDS)
+.if defined(LIB_DEPENDS) || defined(MISC_DEPENDS)
 _ALWAYS_DEP = ${LIB_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//} \
-	${DEPENDS:S,::,:,:C/:.*//} 
+	${MISC_DEPENDS:S,::,:,:C/^[^:]*://:C/:.*//}
 .endif
 
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS)
