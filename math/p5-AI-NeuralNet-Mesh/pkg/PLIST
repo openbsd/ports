@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/23 15:06:45 kevlo Exp $
+libdata/perl5/site_perl/AI/NeuralNet/Mesh.pm
+man/man3/AI::NeuralNet::Mesh.3p
+@dirrm libdata/perl5/site_perl/AI/NeuralNet
