@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/02/17 16:14:34 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.12 2003/02/25 23:48:38 pvalchev Exp $
 bin/couriertls
 bin/deliverquota
 bin/imapd
@@ -19,7 +19,9 @@ man/man1/maildirmake.1
 man/man7/authcram.7
 man/man7/authdaemon.7
 man/man7/authdaemond.7
+@mode 0444
 man/man7/authlib.7
+@mode
 man/man7/authpwd.7
 man/man7/authuserdb.7
 man/man8/deliverquota.8
