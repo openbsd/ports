@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.5 2000/06/20 20:29:49 jakob Exp $
 share/doc/php3/README
 share/doc/php3/appendixes.html
 share/doc/php3/calling-user-functions.html

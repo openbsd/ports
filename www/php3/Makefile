@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/06/05 09:16:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2000/06/20 20:29:49 jakob Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
@@ -20,9 +20,7 @@ PERMIT_DISTFILES_FTP=   Yes
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc mips
 
-GNU_CONFIGURE=	yes
-FAKE=		yes
-
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-pcre-regex \
 			--with-xml \
