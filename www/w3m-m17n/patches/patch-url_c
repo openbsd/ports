@@ -1,0 +1,39 @@
+$OpenBSD: patch-url_c,v 1.1.1.1 2001/11/17 02:46:02 naddy Exp $
+--- url.c.orig	Sat Sep 29 03:04:23 2001
++++ url.c	Sat Sep 29 03:07:39 2001
+@@ -949,7 +949,7 @@ parseURL2(char *url, ParsedURL * pu, Par
+ 	    pu->file = cleanupName(pu->file);
+ 	}
+ 	if (pu->scheme == SCM_LOCAL)
+-	    pu->real_file = file_unquote(pu->file);
++	    pu->real_file = cleanupName2(file_unquote(pu->file), FALSE);
+     }
+ }
+ 
+@@ -1247,7 +1247,7 @@ openURL(char *url, ParsedURL * pu, Parse
+ 	    Str tmp2 = Strnew_charp("#");
+ 	    Strcat_charp(tmp2, pu->label);
+ 	    pu->file = tmp2->ptr;
+-	    pu->real_file = file_unquote(pu->file);
++	    pu->real_file = cleanupName2(file_unquote(pu->file), FALSE);
+ 	    pu->label = NULL;
+ 	}
+ 	else {
+@@ -1284,7 +1284,7 @@ openURL(char *url, ParsedURL * pu, Parse
+ 	else if ((q = strchr(pu->file, '?')) != NULL) {
+ 	    /* local CGI: GET */
+ 	    p = Strnew_charp_n(pu->file, (int)(q - pu->file))->ptr;
+-	    pu->real_file = file_unquote(p);
++	    pu->real_file = cleanupName2(file_unquote(p), FALSE);
+ 	    uf.stream = newFileStream(localcgi_get(pu->real_file, q + 1, option->referer),
+ 				      (void (*)()) pclose);
+ 	    if (uf.stream != NULL) {
+@@ -1606,7 +1606,7 @@ add_index_file(ParsedURL * pu, URLFile *
+     }
+     p = Strnew_m_charp(pu->file, "/", file_quote(index_file), NULL)->ptr;
+     p = cleanupName(p);
+-    q = file_unquote(p);
++    q = cleanupName2(file_unquote(p), FALSE);
+     examineFile(q, uf);
+     if (uf->stream == NULL)
+ 	return;

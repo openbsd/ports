@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2001/11/17 02:46:02 naddy Exp $
+--- configure.orig	Sat Nov 17 02:55:46 2001
++++ configure	Sat Nov 17 02:56:34 2001
+@@ -1043,7 +1043,7 @@ echo "dldflags='$ldflags'" >> config.par
+ echo "Checking machine dependency."
+ 
+ ###### mime.types
+-MIME_TYPES=""
++if [ -z "$MIME_TYPES" ]; then
+ for d in /usr/lib /usr/local/lib /usr/local/lib/mosaic /usr/local/mosaic /usr/local/netscape /usr/local/lib/netscape
+ do
+   if [ -f $d/mime.types ]; then
+@@ -1053,6 +1053,7 @@ done
+ if [ -z "$MIME_TYPES" ]; then
+   echo "Global mime.types not found; Hope /usr/local/lib/mime.types works."
+   MIME_TYPES=/usr/local/lib/mime.types
++fi
+ fi
+ 
+ ####### ranlib
