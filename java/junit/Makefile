@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2003/07/18 05:20:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2005/01/07 19:06:52 kurt Exp $
 
 COMMENT=	"regression testing utility for use with the Java language"
-
-ONLY_FOR_ARCHS=	i386
 
 JDK_VERSION=	1.3.1-linux
 VERSION=	3.8.1
@@ -22,7 +20,7 @@ PERMIT_DISTFILES_FTP=  Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=junit/}
 EXTRACT_SUFX=	.zip 
 
-RUN_DEPENDS=	:jdk-linux->1.3:devel/jdk/1.3-linux
+RUN_DEPENDS=	:jdk*->1.3:devel/jdk/1.3-linux
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
