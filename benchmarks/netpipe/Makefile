@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/01 02:57:54 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/11/30 02:12:48 kevlo Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 DISTNAME=	netpipe-2.3
 CATEGORIES=	benchmarks net
-MASTER_SITES=	ftp://ftp.ameslab.gov/pub/netpipe/ \
+MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/ \
 		http://www.freebsd.org/~jkoshy/PORTS/
 
 MAINTAINER=	brad@openbsd.org
