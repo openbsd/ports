@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/01/11 22:47:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2001/01/11 23:24:31 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += ttyrec
 #    SUBDIR += unclutter
      SUBDIR += viz
+     SUBDIR += wmnetscapekiller
      SUBDIR += wmtimer
 #    SUBDIR += xcalendar
      SUBDIR += xd
