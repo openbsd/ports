@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-zhdict,v 1.5 2004/07/14 15:18:01 espie Exp $
-@dir zh_CN/sys
+@comment $OpenBSD: PLIST-zhdict,v 1.6 2004/07/24 12:43:16 espie Exp $
+zh_CN/sys/
 @comment no checksum
 zh_CN/sys/QianMa.dic
 @comment no checksum
@@ -18,7 +18,7 @@ zh_CN/sys/full.conR
 zh_CN/sys/level_1.dic
 @comment no checksum
 zh_CN/sys/level_2.dic
-@dir zh_TW/sys
+zh_TW/sys/
 @comment no checksum
 zh_TW/sys/cns_ch.dic
 @comment no checksum

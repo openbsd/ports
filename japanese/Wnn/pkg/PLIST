@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/07/14 15:18:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/07/24 12:43:16 espie Exp $
 bin/atod
 bin/atof
 bin/dtoa
@@ -14,7 +14,7 @@ bin/wdreg
 bin/wnnkill
 bin/wnnstat
 bin/wnntouch
-@dir include/wnn
+include/wnn/
 include/wnn/commonhd.h
 include/wnn/config.h
 include/wnn/cplib.h
@@ -30,8 +30,8 @@ lib/wnn/cvt_key_tbl.at
 lib/wnn/ja_JP/hinsi.data
 lib/wnn/ja_JP/jserverrc
 lib/wnn/ja_JP/libwnn.msg
-@dir lib/wnn/ja_JP/rk
-@dir lib/wnn/ja_JP/rk.vi
+lib/wnn/ja_JP/rk/
+lib/wnn/ja_JP/rk.vi/
 lib/wnn/ja_JP/rk.vi/1B_newTOUPPER
 lib/wnn/ja_JP/rk.vi/2A_CTRL
 lib/wnn/ja_JP/rk.vi/2B_KEISEN
@@ -77,7 +77,7 @@ lib/wnn/ja_JP/wnnenvrc_R
 lib/wnn/ja_JP/wnnenvrc_R.omr
 lib/wnn/ja_JP/wnnenvrc_R.rem
 lib/wnn/ja_JP/wnnstat.msg
-@dir lib/wnn/lt_LN/rk
+lib/wnn/lt_LN/rk/
 lib/wnn/lt_LN/rk/2A_CTRL
 lib/wnn/lt_LN/rk/2B_LATIN
 lib/wnn/lt_LN/rk/mode
@@ -269,14 +269,14 @@ man/ja_JP.EUC/cat4/uumrc.0
 man/ja_JP.EUC/cat4/wnnenvrc.0
 man/ja_JP.EUC/cat5/pubdic.0
 man/ja_JP.EUC/cat5/usr_dic.0
-@dir share/doc/ja-Wnn
-@dir share/doc/ja-Wnn/manual
-@dir share/doc/ja-Wnn/manual.en
-@dir share/doc/ja-Wnn/manual.en/0
-@dir share/doc/ja-Wnn/manual.en/1.intro
-@dir share/doc/ja-Wnn/manual.en/2.env
-@dir share/doc/ja-Wnn/manual.en/2.env/dic
-@dir share/doc/ja-Wnn/manual.en/2.env/wnn
+share/doc/ja-Wnn/
+share/doc/ja-Wnn/manual/
+share/doc/ja-Wnn/manual.en/
+share/doc/ja-Wnn/manual.en/0/
+share/doc/ja-Wnn/manual.en/1.intro/
+share/doc/ja-Wnn/manual.en/2.env/
+share/doc/ja-Wnn/manual.en/2.env/dic/
+share/doc/ja-Wnn/manual.en/2.env/wnn/
 share/doc/ja-Wnn/manual.en/2.env/wnn/2a_ctrl
 share/doc/ja-Wnn/manual.en/2.env/wnn/2b_romkana
 share/doc/ja-Wnn/manual.en/2.env/wnn/full.fzk
@@ -286,13 +286,13 @@ share/doc/ja-Wnn/manual.en/2.env/wnn/serverdefs
 share/doc/ja-Wnn/manual.en/2.env/wnn/uumkey
 share/doc/ja-Wnn/manual.en/2.env/wnn/uumrc
 share/doc/ja-Wnn/manual.en/2.env/wnn/wnnenvrc
-@dir share/doc/ja-Wnn/manual.en/3.libwnn
-@dir share/doc/ja-Wnn/manual.en/4.cmd
+share/doc/ja-Wnn/manual.en/3.libwnn/
+share/doc/ja-Wnn/manual.en/4.cmd/
 share/doc/ja-Wnn/manual.en/4.cmd/jserver
 share/doc/ja-Wnn/manual.en/4.cmd/uum
 share/doc/ja-Wnn/manual.en/4.cmd/wnnkill
 share/doc/ja-Wnn/manual.en/4.cmd/wnnstat
-@dir share/doc/ja-Wnn/manual.en/5.op
+share/doc/ja-Wnn/manual.en/5.op/
 share/doc/ja-Wnn/manual.en/5.op/README.en
 share/doc/ja-Wnn/manual.en/5.op/README.ja
 share/doc/ja-Wnn/manual.en/5.op/contents
@@ -324,26 +324,26 @@ share/doc/ja-Wnn/manual.en/5.op/op3.7
 share/doc/ja-Wnn/manual.en/5.op/op3.8
 share/doc/ja-Wnn/manual.en/5.op/op3.9
 share/doc/ja-Wnn/manual.en/5.op/table2.2.1.Z
-@dir share/doc/ja-Wnn/manual.en/6.jutil
+share/doc/ja-Wnn/manual.en/6.jutil/
 share/doc/ja-Wnn/manual.en/6.jutil/atod
 share/doc/ja-Wnn/manual.en/6.jutil/atof
 share/doc/ja-Wnn/manual.en/6.jutil/dtoa
 share/doc/ja-Wnn/manual.en/6.jutil/wddel
 share/doc/ja-Wnn/manual.en/6.jutil/wdreg
 share/doc/ja-Wnn/manual.en/6.jutil/wnntouch
-@dir share/doc/ja-Wnn/manual/0
+share/doc/ja-Wnn/manual/0/
 share/doc/ja-Wnn/manual/0/contents
-@dir share/doc/ja-Wnn/manual/1.intro
+share/doc/ja-Wnn/manual/1.intro/
 share/doc/ja-Wnn/manual/1.intro/Intro1
 share/doc/ja-Wnn/manual/1.intro/Intro2
 share/doc/ja-Wnn/manual/1.intro/Intro3
-@dir share/doc/ja-Wnn/manual/2.env
+share/doc/ja-Wnn/manual/2.env/
 share/doc/ja-Wnn/manual/2.env/Intro
-@dir share/doc/ja-Wnn/manual/2.env/dic
+share/doc/ja-Wnn/manual/2.env/dic/
 share/doc/ja-Wnn/manual/2.env/dic/pubdic
 share/doc/ja-Wnn/manual/2.env/dic/ujis_dic
 share/doc/ja-Wnn/manual/2.env/dic/usr_dic
-@dir share/doc/ja-Wnn/manual/2.env/wnn
+share/doc/ja-Wnn/manual/2.env/wnn/
 share/doc/ja-Wnn/manual/2.env/wnn/2a_ctrl
 share/doc/ja-Wnn/manual/2.env/wnn/2b_romkana
 share/doc/ja-Wnn/manual/2.env/wnn/cvt_key
@@ -356,11 +356,11 @@ share/doc/ja-Wnn/manual/2.env/wnn/serverdefs
 share/doc/ja-Wnn/manual/2.env/wnn/uumkey
 share/doc/ja-Wnn/manual/2.env/wnn/uumrc
 share/doc/ja-Wnn/manual/2.env/wnn/wnnenvrc
-@dir share/doc/ja-Wnn/manual/3.libwnn
+share/doc/ja-Wnn/manual/3.libwnn/
 share/doc/ja-Wnn/manual/3.libwnn/Intro
 share/doc/ja-Wnn/manual/3.libwnn/include
 share/doc/ja-Wnn/manual/3.libwnn/j_intro
-@dir share/doc/ja-Wnn/manual/3.libwnn/jl_lib
+share/doc/ja-Wnn/manual/3.libwnn/jl_lib/
 share/doc/ja-Wnn/manual/3.libwnn/jl_lib/TITLE.DOC
 share/doc/ja-Wnn/manual/3.libwnn/jl_lib/bun_suu
 share/doc/ja-Wnn/manual/3.libwnn/jl_lib/c_zenkouho
@@ -412,7 +412,7 @@ share/doc/ja-Wnn/manual/3.libwnn/jl_lib/zenkouho_bun
 share/doc/ja-Wnn/manual/3.libwnn/jl_lib/zenkouho_dai
 share/doc/ja-Wnn/manual/3.libwnn/jl_lib/zenkouho_daip
 share/doc/ja-Wnn/manual/3.libwnn/jl_lib/zenkouho_suu
-@dir share/doc/ja-Wnn/manual/3.libwnn/js_lib
+share/doc/ja-Wnn/manual/3.libwnn/js_lib/
 share/doc/ja-Wnn/manual/3.libwnn/js_lib/TITLE.DOC
 share/doc/ja-Wnn/manual/3.libwnn/js_lib/access
 share/doc/ja-Wnn/manual/3.libwnn/js_lib/close
@@ -473,11 +473,11 @@ share/doc/ja-Wnn/manual/3.libwnn/js_lib/word_comment_s
 share/doc/ja-Wnn/manual/3.libwnn/js_lib/word_delete
 share/doc/ja-Wnn/manual/3.libwnn/js_lib/word_info
 share/doc/ja-Wnn/manual/3.libwnn/js_lib/word_search
-@dir share/doc/ja-Wnn/manual/3.libwnn/misc_lib
+share/doc/ja-Wnn/manual/3.libwnn/misc_lib/
 share/doc/ja-Wnn/manual/3.libwnn/misc_lib/msg_close
 share/doc/ja-Wnn/manual/3.libwnn/misc_lib/msg_get
 share/doc/ja-Wnn/manual/3.libwnn/misc_lib/msg_open
-@dir share/doc/ja-Wnn/manual/3.libwnn/rk_lib
+share/doc/ja-Wnn/manual/3.libwnn/rk_lib/
 share/doc/ja-Wnn/manual/3.libwnn/rk_lib/Intro
 share/doc/ja-Wnn/manual/3.libwnn/rk_lib/romkan_clear
 share/doc/ja-Wnn/manual/3.libwnn/rk_lib/romkan_dispmod
@@ -485,12 +485,12 @@ share/doc/ja-Wnn/manual/3.libwnn/rk_lib/romkan_getc
 share/doc/ja-Wnn/manual/3.libwnn/rk_lib/romkan_init
 share/doc/ja-Wnn/manual/3.libwnn/rk_lib/romkan_next
 share/doc/ja-Wnn/manual/3.libwnn/rk_lib/romkan_ungetc
-@dir share/doc/ja-Wnn/manual/4.cmd
+share/doc/ja-Wnn/manual/4.cmd/
 share/doc/ja-Wnn/manual/4.cmd/jserver
 share/doc/ja-Wnn/manual/4.cmd/uum
 share/doc/ja-Wnn/manual/4.cmd/wnnkill
 share/doc/ja-Wnn/manual/4.cmd/wnnstat
-@dir share/doc/ja-Wnn/manual/5.op
+share/doc/ja-Wnn/manual/5.op/
 share/doc/ja-Wnn/manual/5.op/Intro
 share/doc/ja-Wnn/manual/5.op/op1.1
 share/doc/ja-Wnn/manual/5.op/op1.2
@@ -509,7 +509,7 @@ share/doc/ja-Wnn/manual/5.op/op3.83
 share/doc/ja-Wnn/manual/5.op/op3.85
 share/doc/ja-Wnn/manual/5.op/op3.87
 share/doc/ja-Wnn/manual/5.op/op3.88
-@dir share/doc/ja-Wnn/manual/6.jutil
+share/doc/ja-Wnn/manual/6.jutil/
 share/doc/ja-Wnn/manual/6.jutil/Intro
 share/doc/ja-Wnn/manual/6.jutil/atod
 share/doc/ja-Wnn/manual/6.jutil/atof
@@ -519,9 +519,9 @@ share/doc/ja-Wnn/manual/6.jutil/oldatonewa
 share/doc/ja-Wnn/manual/6.jutil/wddel
 share/doc/ja-Wnn/manual/6.jutil/wdreg
 share/doc/ja-Wnn/manual/6.jutil/wnntouch
-@dir share/doc/ja-Wnn/manual/7.Protocol
+share/doc/ja-Wnn/manual/7.Protocol/
 share/doc/ja-Wnn/manual/7.Protocol/KKTP
 share/doc/ja-Wnn/manual/intro
-@dir share/doc/ja-Wnn/manual/v3tov4
+share/doc/ja-Wnn/manual/v3tov4/
 share/doc/ja-Wnn/manual/v3tov4/v3tov4
 @exec ${WNNBASE}/lib/wnn/install-script

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh,v 1.7 2004/07/14 15:18:01 espie Exp $
+@comment $OpenBSD: PLIST-zh,v 1.8 2004/07/24 12:43:16 espie Exp $
 bin/catod
 bin/catof
 bin/cdtoa
@@ -14,7 +14,7 @@ bin/cwnnkill
 bin/cwnnstat
 bin/cwnntouch
 bin/tserver
-@dir include/cwnn
+include/cwnn/
 include/cwnn/commonhd.h
 include/cwnn/cplib.h
 include/cwnn/jllib.h
@@ -26,7 +26,7 @@ lib/libcwnn.a
 lib/wnn/zh_CN/cixing.data
 lib/wnn/zh_CN/cserverrc
 lib/wnn/zh_CN/libwnn.msg
-@dir lib/wnn/zh_CN/rk
+lib/wnn/zh_CN/rk/
 lib/wnn/zh_CN/rk/1B_BS
 lib/wnn/zh_CN/rk/1B_TOLOWER
 lib/wnn/zh_CN/rk/1B_TOUPPER
@@ -41,7 +41,7 @@ lib/wnn/zh_CN/rk/2Z_tail_ma
 lib/wnn/zh_CN/rk/2Z_tail_pin
 lib/wnn/zh_CN/rk/3B_quanjiao
 lib/wnn/zh_CN/rk/mode
-@dir lib/wnn/zh_CN/rk_p
+lib/wnn/zh_CN/rk_p/
 lib/wnn/zh_CN/rk_p/1B_BS
 lib/wnn/zh_CN/rk_p/1B_TOLOWER
 lib/wnn/zh_CN/rk_p/1B_TOUPPER
@@ -69,7 +69,7 @@ lib/wnn/zh_CN/rk_p/3B_quanjiao
 lib/wnn/zh_CN/rk_p/3P_ErPin
 lib/wnn/zh_CN/rk_p/3P_ErPin_P
 lib/wnn/zh_CN/rk_p/mode
-@dir lib/wnn/zh_CN/rk_z
+lib/wnn/zh_CN/rk_z/
 lib/wnn/zh_CN/rk_z/1B_TOUPPER
 lib/wnn/zh_CN/rk_z/1F_select
 lib/wnn/zh_CN/rk_z/1Z_ZhuYin
@@ -98,13 +98,13 @@ lib/wnn/zh_CN/wnnenvrc_WuR
 lib/wnn/zh_CN/wnnstat.msg
 lib/wnn/zh_TW/cixing.data
 lib/wnn/zh_TW/libwnn.msg
-@dir lib/wnn/zh_TW/rk
+lib/wnn/zh_TW/rk/
 lib/wnn/zh_TW/rk/2A_CTRL
 lib/wnn/zh_TW/rk/mode
-@dir lib/wnn/zh_TW/rk_p
+lib/wnn/zh_TW/rk_p/
 lib/wnn/zh_TW/rk_p/2A_CTRL
 lib/wnn/zh_TW/rk_p/mode
-@dir lib/wnn/zh_TW/rk_z
+lib/wnn/zh_TW/rk_z/
 lib/wnn/zh_TW/rk_z/2A_CTRL
 lib/wnn/zh_TW/rk_z/mode
 lib/wnn/zh_TW/tserverrc
@@ -132,9 +132,9 @@ man/ja_JP.EUC/cat4/cenv.0
 man/ja_JP.EUC/cat4/ckey.0
 man/ja_JP.EUC/cat4/cst_end.0
 man/ja_JP.EUC/cat4/cwnn.0
-@dir share/doc/zh-cWnn
-@dir share/doc/zh-cWnn/manual
-@dir share/doc/zh-cWnn/manual.en
+share/doc/zh-cWnn/
+share/doc/zh-cWnn/manual/
+share/doc/zh-cWnn/manual.en/
 share/doc/zh-cWnn/manual.en/README
 share/doc/zh-cWnn/manual.en/Table-a-2.1.Z
 share/doc/zh-cWnn/manual.en/Table-a-2.2.Z

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-dict,v 1.5 2004/07/14 15:18:01 espie Exp $
-@dir ja_JP/pubdic
+@comment $OpenBSD: PLIST-dict,v 1.6 2004/07/24 12:43:16 espie Exp $
+ja_JP/pubdic/
 @comment no checksum
 ja_JP/pubdic/bio.dic
 @comment no checksum
@@ -26,7 +26,7 @@ ja_JP/pubdic/std.fzk
 ja_JP/pubdic/symbol.dic
 @comment no checksum
 ja_JP/pubdic/tankan.dic
-@dir ja_JP/src
+ja_JP/src/
 ja_JP/src/fzk.attr
 ja_JP/src/fzk.con
 ja_JP/src/fzk.fzkattr
@@ -34,7 +34,7 @@ ja_JP/src/fzk.jirattr
 ja_JP/src/fzk.jircon
 ja_JP/src/fzk.master
 ja_JP/src/fzk.shuutan
-@dir ja_JP/wnncons
+ja_JP/wnncons/
 @comment no checksum
 ja_JP/wnncons/tankan2.dic
 @comment no checksum

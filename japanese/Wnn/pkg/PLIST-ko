@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.7 2004/07/14 15:18:01 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.8 2004/07/24 12:43:16 espie Exp $
 bin/katod
 bin/katof
 bin/kdtoa
@@ -13,7 +13,7 @@ bin/kwdreg
 bin/kwnnkill
 bin/kwnnstat
 bin/kwnntouch
-@dir include/kwnn
+include/kwnn/
 include/kwnn/commonhd.h
 include/kwnn/cplib.h
 include/kwnn/jllib.h
@@ -25,7 +25,7 @@ lib/libkwnn.a
 lib/wnn/ko_KR/hinsi.data
 lib/wnn/ko_KR/kserverrc
 lib/wnn/ko_KR/libwnn.msg
-@dir lib/wnn/ko_KR/rk
+lib/wnn/ko_KR/rk/
 lib/wnn/ko_KR/rk/1B_TOUPPER
 lib/wnn/ko_KR/rk/2A_CTRL
 lib/wnn/ko_KR/rk/2C_HANGUL.KEY
