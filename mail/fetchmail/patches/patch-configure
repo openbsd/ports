@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2002/09/10 10:14:24 fgsch Exp $
---- configure.orig	Wed Sep  4 10:43:37 2002
-+++ configure	Tue Sep 10 06:29:13 2002
-@@ -6982,7 +6982,7 @@ echo "configure:6981: checking kerberosI
+$OpenBSD: patch-configure,v 1.5 2002/12/13 08:53:56 fgsch Exp $
+--- configure.orig	Tue Nov 12 14:58:56 2002
++++ configure	Fri Dec 13 05:47:30 2002
+@@ -12655,7 +12655,7 @@ echo "$as_me: checking kerberosIV for \`
  #define KERBEROS_V4 1
- EOF
+ _ACEOF
  
 -  CEFLAGS="$CEFLAGS -I/usr/include/kerberosIV"
 +  CEFLAGS="$CEFLAGS -I/usr/include -I/usr/include/kerberosIV"
