@@ -1,0 +1,12 @@
+$OpenBSD: patch-LinkedList_hh,v 1.1 2002/10/08 13:47:08 naddy Exp $
+--- LinkedList.hh.orig	Tue Oct  8 15:29:28 2002
++++ LinkedList.hh	Tue Oct  8 15:29:37 2002
+@@ -63,7 +63,7 @@ private:
+   int elements;
+   __llist_node *_first, *_last;
+ 
+-  friend __llist_iterator;
++  friend class __llist_iterator;
+ 
+ 
+ protected:
