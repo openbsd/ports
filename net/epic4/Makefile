@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.46 2001/09/16 17:44:21 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2001/11/23 02:42:27 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 
 VERSION=	1.0.1
+HELP_DATE=	20011030
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.435
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 MASTER_SITES0=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/ \
 		http://zuntum.utech.lublin.pl/patches/
-DISTFILES=	epic4-${VERSION}.tar.gz epic4-help-current.tar.gz
+DISTFILES=	epic4-${VERSION}.tar.gz epic4-help-${HELP_DATE}.tar.gz
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
 PATCHFILES=	epic4-1.0.1-ipv6-20010418.patch.gz:0
@@ -43,6 +44,6 @@ post-install:
 	@cd ${PREFIX}/bin && ln -sf epic-EPIC4-${VERSION} epic
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/epic4
 	${INSTALL_MAN} ${WRKSRC}/doc/epic.1 ${PREFIX}/man/man1
-	@cd ${PREFIX}/share/epic && ${TAR} -zxf ${FULLDISTDIR}/epic4-help-current.tar.gz
+	@cd ${PREFIX}/share/epic && ${TAR} -zxf ${FULLDISTDIR}/epic4-help-${HELP_DATE}.tar.gz
 
 .include <bsd.port.mk>
