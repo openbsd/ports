@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2004/06/04 17:14:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.188 2004/06/22 03:23:00 marcm Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -72,6 +72,7 @@
      SUBDIR += gtkmm
      SUBDIR += gtop
 #    SUBDIR += gwm
+     SUBDIR += hicolor-icon-theme
      SUBDIR += icewm
      SUBDIR += ion
 #    SUBDIR += iv
