@@ -1,0 +1,44 @@
+*** src/auth.c.orig	Mon Apr 27 22:20:02 1998
+--- src/auth.c	Mon Apr 27 22:21:05 1998
+***************
+*** 43,48 ****
+--- 43,49 ----
+  	FILE *fp;
+  	t_bool builtinauth = FALSE;
+  	static int cookiefd = -1;
++         int fdfd;
+  #ifdef HAVE_PUTENV
+  	char *new_env;
+  	static char *old_env = 0;
+***************
+*** 64,77 ****
+  		char tempfile[BUFSIZ];
+  
+  		sprintf (tempfile, "%stin_AXXXXXX", TMPDIR);
+! 		if (!mktemp (tempfile)) {
+  			error_message (txt_cannot_create_uniq_name, "");
+  #ifdef DEBUG
+  			debug_nntp ("authorization", txt_cannot_create_uniq_name);
+  #endif
+  			return FALSE;
+  		} else {
+! 			fp = fopen (tempfile, "w+");
+  			if (!fp) {
+  				error_message (txt_cannot_open, tempfile);
+  				return FALSE;
+--- 65,79 ----
+  		char tempfile[BUFSIZ];
+  
+  		sprintf (tempfile, "%stin_AXXXXXX", TMPDIR);
+! 		fdfd = mkstemp(tempfile);
+! 		if (fdfd == -1) {
+  			error_message (txt_cannot_create_uniq_name, "");
+  #ifdef DEBUG
+  			debug_nntp ("authorization", txt_cannot_create_uniq_name);
+  #endif
+  			return FALSE;
+  		} else {
+! 			fp = fdopen (fdfd, "w+");
+  			if (!fp) {
+  				error_message (txt_cannot_open, tempfile);
+  				return FALSE;

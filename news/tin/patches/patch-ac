@@ -1,0 +1,34 @@
+*** src/open.c.orig	Mon Apr 27 22:20:08 1998
+--- src/open.c	Mon Apr 27 22:21:29 1998
+***************
+*** 1115,1128 ****
+  	char line[HEADER_LEN];
+  	FILE *fp;
+  	struct stat sb;
+  #ifdef SHOW_PROGRESS
+  	int count = 0;
+  #endif
+  
+  	sprintf (fnam, "%stin_nntpXXXXXX", TMPDIR);
+! 	mktemp (fnam);
+  
+! 	if ((fp = fopen (fnam, "w")) == (FILE *) 0) {
+  		perror_message (txt_stuff_nntp_cannot_open, fnam);
+  		return ((FILE *) 0);
+  	}
+--- 1115,1129 ----
+  	char line[HEADER_LEN];
+  	FILE *fp;
+  	struct stat sb;
++ 	int fdfd;
+  #ifdef SHOW_PROGRESS
+  	int count = 0;
+  #endif
+  
+  	sprintf (fnam, "%stin_nntpXXXXXX", TMPDIR);
+! 	fdfd = mkstemp (fnam);
+  
+! 	if ((fp = fdopen (fdfd, "w")) == (FILE *) 0) {
+  		perror_message (txt_stuff_nntp_cannot_open, fnam);
+  		return ((FILE *) 0);
+  	}
