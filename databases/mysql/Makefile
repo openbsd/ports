@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/01 00:27:02 marc Exp $
-# FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 03:06:51 brad Exp $
+# $ FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.22.19b
 PKGNAME=	mysql-3.22.19
@@ -76,6 +75,6 @@ post-install:
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 .endif
 
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/mysql
+	${LDCONFIG} -m ${PREFIX}/lib/mysql
 
 .include <bsd.port.mk>

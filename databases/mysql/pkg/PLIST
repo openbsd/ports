@@ -111,5 +111,4 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql
 @exec %D/bin/mysql_install_db
 @exec /usr/bin/killall mysqld
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/mysql
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %D/lib/mysql
