@@ -1,0 +1,20 @@
+$OpenBSD: patch-lock_maildrop_c,v 1.1.1.1 2004/11/08 21:57:05 naddy Exp $
+--- lock_maildrop.c.orig	Sun Aug 17 19:44:55 2003
++++ lock_maildrop.c	Fri Aug 27 01:45:07 2004
+@@ -49,13 +49,14 @@ int lock_maildrop(char * maildrop, uid_t
+   return 1;
+ }
+ 
+-void remove_lock(char * maildrop) {
++int remove_lock(char * maildrop) {
+   size_t lf_len = (size_t)strlen(maildrop)+strlen(".lock")+1;
+   char * lf = alloca(lf_len);
+   if (lf!=NULL) {
+     snprintf(lf,lf_len,"%s.lock",maildrop);
+-    unlink(lf);
++    return unlink(lf);
+   }
++  return -2;
+ }
+ 
+ int lock_fd(int fd) {
