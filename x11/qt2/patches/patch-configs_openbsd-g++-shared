@@ -44,7 +44,7 @@
  
  # Link flags for shared objects
 -SYSCONF_LFLAGS_SHOBJ	= -Bshareable
-+SYSCONF_LFLAGS_SHOBJ	= -shared
++SYSCONF_LFLAGS_SHOBJ	= -shared -fPIC
  
  # Flags for threading
 -SYSCONF_CFLAGS_THREAD	= 
