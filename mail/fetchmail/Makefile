@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 1999/06/12 23:07:44 brad Exp $
+# $OpenBSD: Makefile,v 1.17 1999/06/28 19:40:45 fgsch Exp $
 
-DISTNAME=       fetchmail-5.0.4
+DISTNAME=       fetchmail-5.0.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	fgsch@openbsd.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --disable-nls
