@@ -3,7 +3,9 @@
 # Date created:		Halloween 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.3 2000/01/22 07:01:12 dugsong Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/15 19:25:47 turan Exp $
+
+BROKEN=		checksum mismatch
 
 DISTNAME=	libnids-1.13
 
