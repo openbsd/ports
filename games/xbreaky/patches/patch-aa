@@ -1,0 +1,48 @@
+--- Makefile.orig	Thu May 11 15:53:15 2000
++++ Makefile	Mon Jul 10 17:41:09 2000
+@@ -4,8 +4,8 @@
+ CC=g++
+ GC=gcc
+ 
+-CFLAGS = -O2 -DPREFIX=\"${prefix}\"
+-LDFLAGS = -L/usr/X11R6/lib -I/usr/X11/include/X11 -lX11 -lXpm -lm
++CFLAGS = -O2 -I/usr/X11R6/include -DPREFIX=\"${prefix}\"
++LDFLAGS = -L/usr/X11R6/lib -lX11 -lXpm -lm
+ prefix = /usr/local
+ 
+ all: xbreaky xbreaky.snd
+@@ -15,22 +15,22 @@
+ 	$(CC) $(LDFLAGS) xbreaky.o -o xbreaky
+ 
+ xbreaky.snd:
+-	$(GC) $(CFLAGS) -lm -o xbreaky.snd xbreaky.snd.c
++	$(GC) $(CFLAGS) -lm -lossaudio -o xbreaky.snd xbreaky.snd.c
+ 
+ install:
+-	for d in $(prefix)/bin $(prefix)/share/pixmaps $(prefix)/man/man6 \
+-          $(prefix)/share/games/xbreaky $(prefix)/doc/xbreaky ; do \
++	for d in $(prefix)/bin $(DESTDIR)$(prefix)/share/xbreaky/pixmaps $(prefix)/man/man6 \
++          $(DESTDIR)$(prefix)/share/xbreaky $(DESTDIR)$(prefix)/share/xbreaky/doc ; do \
+           test -d $$d || install -d -m755 $$d ; \
+         done
+-	install -m6755 -s xbreaky      $(prefix)/bin
+-	install -m6755 -s xbreaky.snd  $(prefix)/bin
+-	install -m644     xbreaky.xpm  $(prefix)/share/pixmaps
+-	install -m644     *.dat        $(prefix)/share/games/xbreaky
+-	install -m644     *.raw        $(prefix)/share/games/xbreaky
+-	install -m644     README       $(prefix)/doc/xbreaky
+-	install -m644     COPYING      $(prefix)/doc/xbreaky
+-	install -m644     AUTHORS      $(prefix)/doc/xbreaky
+-	install -m644     xbreaky.6    $(prefix)/man/man6
++	install -m6755 -s xbreaky      $(DESTDIR)$(prefix)/bin
++	install -m6755 -s xbreaky.snd  $(DESTDIR)$(prefix)/bin
++	install -m644     xbreaky.xpm  $(DESTDIR)$(prefix)/share/xbreaky/pixmaps
++	install -m644     *.dat        $(DESTDIR)$(prefix)/share/xbreaky
++	install -m644     *.raw        $(DESTDIR)$(prefix)/share/xbreaky
++	install -m644     README       $(DESTDIR)$(prefix)/share/xbreaky/doc
++	install -m644     COPYING      $(DESTDIR)$(prefix)/share/xbreaky/doc
++	install -m644     AUTHORS      $(DESTDIR)$(prefix)/share/xbreaky/doc
++	install -m644     xbreaky.6    $(DESTDIR)$(prefix)/man/man6
+ 
+  clean:
+ 	rm -f xbreaky a.out core xbreaky.snd *.o

@@ -1,0 +1,11 @@
+--- xbreaky.cpp.orig	Mon Jul 10 17:45:09 2000
++++ xbreaky.cpp	Mon Jul 10 17:46:09 2000
+@@ -35,7 +35,7 @@
+ #include "font.cpp"
+ #include "xbreaky.xpm"
+ 
+-#define LEVELS PREFIX"/share/games/xbreaky/level"
++#define LEVELS "/usr/local/share/xbreaky/level"
+ #define NIL (0)      
+ #define COLORS 35
+ 

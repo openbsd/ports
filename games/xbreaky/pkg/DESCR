@@ -1,0 +1,13 @@
+Xbreaky is a version of the old Breakout/Arkanoid game, written for
+X Window syste.
+
+The objective of this arcade game is to break all the bricks with a ball
+that bounces off the walls and a paddle that you can move. You start by
+firing out the ball from your paddle, which can be moved left and right
+parallel to the wall below it. The ball will move and hit the bricks located
+above, and when it hits a brick it will fall apart (i.e. dissappear), but
+the ball will bounce back to hit other bricks, sidewalls or the highest
+wall. If it falls down not hitting the paddle, you lose one life and have
+to start over.
+
+WWW:	http://xbreaky.sourceforge.net

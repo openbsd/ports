@@ -1,0 +1,26 @@
+--- xbreaky.snd.c.orig	Mon Jul 10 17:16:06 2000
++++ xbreaky.snd.c	Mon Jul 10 17:16:57 2000
+@@ -20,20 +20,18 @@
+  */
+ 
+ #include <stdio.h>
+-#include <malloc.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+-#include <getopt.h>
+ #include <fcntl.h>
+ #include <string.h>
+ #include <strings.h>
+ #include <signal.h>
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ 
+ #define DEFAULT_DSP_SPEED 8000
+-#define AUDIO "/dev/dsp"
+-#define RAWFILESDIR PREFIX"/share/games/xbreaky"
++#define AUDIO "/dev/sound"
++#define RAWFILESDIR "/usr/local/share/xbreaky"
+ 
+ int timelimit = 0, dsp_speed = DEFAULT_DSP_SPEED, dsp_stereo = 0;
+ int samplesize = 8;
