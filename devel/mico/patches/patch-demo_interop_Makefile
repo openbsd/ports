@@ -1,0 +1,13 @@
+--- demo/interop/Makefile.orig	Thu Jun 28 02:50:23 2001
++++ demo/interop/Makefile	Thu Jun 28 02:50:47 2001
+@@ -30,7 +30,7 @@ clean:
+ 	for i in $(DIRS); do $(MAKE) -C $$i clean || exit 1; done
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/interop
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/interop
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/interop
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/interop
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/interop
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/interop
+ 	for i in $(DIRS); do $(MAKE) -C $$i install || exit 1; done

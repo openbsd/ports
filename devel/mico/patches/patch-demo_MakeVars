@@ -1,0 +1,20 @@
+--- demo/MakeVars.orig	Thu Jun 28 02:22:00 2001
++++ demo/MakeVars	Thu Jun 28 02:43:34 2001
+@@ -78,14 +78,14 @@ COS_DEPS     = $(DIR_PREFIX)../../coss/l
+ endif
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/$(INSTALL_DIR)
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/$(INSTALL_DIR)
+ 	test -z "$(INSTALL_SRCS)" || \
+ 	  eval 'for i in $(INSTALL_SRCS); do \
+-	    $(ISRCCMD) $$i $(INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
++	    $(ISRCCMD) $$i $(SHARED_INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
+ 	  done'
+ 	test -z "$(INSTALL_SCRIPTS)" || \
+ 	  eval 'for i in $(INSTALL_SCRIPTS); do \
+-	    $(ISCRIPTCMD) $$i $(INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
++	    $(ISCRIPTCMD) $$i $(SHARED_INSTDIR)/doc/mico/examples/$(INSTALL_DIR); \
+ 	  done'
+ 
+ ifeq (.depend, $(wildcard .depend))

@@ -1,0 +1,13 @@
+--- demo/services/Makefile.orig	Thu Jun 28 02:53:39 2001
++++ demo/services/Makefile	Thu Jun 28 02:53:57 2001
+@@ -13,7 +13,7 @@ clean:
+ 	rm -f *.o core *~ .depend
+ 
+ install:
+-	$(IDIRCMD) $(INSTDIR)/doc/mico/examples/services
+-	$(ISRCCMD) Makefile $(INSTDIR)/doc/mico/examples/services
+-	$(ISRCCMD) README $(INSTDIR)/doc/mico/examples/services
++	$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico/examples/services
++	$(ISRCCMD) Makefile $(SHARED_INSTDIR)/doc/mico/examples/services
++	$(ISRCCMD) README $(SHARED_INSTDIR)/doc/mico/examples/services
+ 	for i in $(DIRS) stream-sound; do $(MAKE) -C $$i install || exit 1; done

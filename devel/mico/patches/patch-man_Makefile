@@ -1,0 +1,14 @@
+--- man/Makefile.orig	Thu Jun 28 03:02:08 2001
++++ man/Makefile	Thu Jun 28 03:02:40 2001
+@@ -26,9 +26,9 @@ DIRS = man1 man5 man8
+ 
+ install:
+ 	for i in $(DIRS); do \
+-	  $(IDIRCMD) $(SHARED_INSTDIR)/man/$$i; \
++	  $(IDIRCMD) $(INSTDIR)/man/$$i; \
+ 	  for j in $$i/*.[1-9]; do $(IMANCMD) $$j \
+-		$(SHARED_INSTDIR)/man/$$i/; done; \
++		$(INSTDIR)/man/$$i/; done; \
+ 	done
+ 
+ install-cd: install
