@@ -2,6 +2,9 @@
 # Version required:	2.8
 # Date created:		05 November 97
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 19:04:05 joey Exp $
+#
 
 DISTNAME=	joe2.8
 PKGNAME=	joe-2.8
