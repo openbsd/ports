@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2001/02/14 00:55:40 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2001/03/12 00:10:26 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 DISTNAME=	mysql-3.23.33
@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
 MASTER_SITE_SUBDIR= MySQL-3.23
 
 HOMEPAGE=	http://www.mysql.com/
+
+LIB_DEPENDS=	pthread.13::devel/pth
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -34,19 +36,8 @@ CONFIGURE_ARGS+= --enable-static \
 		 --without-readline \
 		 --without-bench \
 		 --without-mit-threads
-
-FLAVORS=	pth
-FLAVOR?=
-
-.if ${FLAVOR:L} == "pth"
-LIB_DEPENDS=	pthread.13::devel/pth
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.else
-. if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
-. endif
-.endif
 
 DOCS=	manual.html manual.ps manual_toc.html manual.txt
 
