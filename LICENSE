@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.25 1999/09/25 13:15:23 turan Exp $
+$OpenBSD: LICENSE,v 1.26 1999/09/25 22:55:21 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -55,7 +55,7 @@ v	port name			distfile name			License
 
 N	archivers/arc			arc521e.pl8.tar.Z		NOFEE
 N	archivers/bzip			bzip-0.21.tar.gz		NOFEE
-N	archivers/bzip2			bzip2-0.9.5d.tar.gz		COPY
+Y	archivers/bzip2			bzip2-0.9.5d.tar.gz		BSD
 Y	archivers/freeze		freeze-2.5.tar.gz		NONE
 Y	archivers/gshar+gunshar		sharutils-4.2.tar.gz		GPL
 Y	archivers/gtar			tar-1.13.tar.gz			GPL
