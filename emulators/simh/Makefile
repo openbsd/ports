@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2003/02/03 08:20:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.36 2003/02/03 08:34:32 fgsch Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		"PDP, IBM 1401, Nova and other CPUs simulator"
@@ -35,7 +35,7 @@ pre-build:
 
 do-install:
 	@cd ${WRKBUILD}/BIN && for f in `echo *`; do \
-	    ${INSTALL_PROGRAM} ${WRKBUILD}/BIN/$${f} ${PREFIX}/bin/simh-$${f}; \
+	    ${INSTALL_PROGRAM} $${f} ${PREFIX}/bin/simh-$${f}; \
 	done;
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/simh/vax
 	${INSTALL_DATA} ${WRKDIST}/VAX/ka655.bin ${PREFIX}/lib/simh/vax
