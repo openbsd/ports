@@ -1,17 +1,13 @@
 # OpenBSD makefile for:	kdebase
-# Version required:	1.0
-# Date created:		1998-Sep-1
 # Whom:			Yannick Cote
 # 
-# $OpenBSD: Makefile,v 1.2 1999/06/10 15:55:13 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/14 23:48:04 espie Exp $
 #
 
 DISTNAME=		kdebase-1.0
 CATEGORIES=		x11
 
 MASTER_SITES=		ftp://ftp.kde.org/pub/kde/stable/1.0/distribution/tar/generic/source/
-
-MAINTAINER=		yanick@fries.net
 
 BROKEN=		"newer version available soon: kdebase-1.1.1"
 
