@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2000/07/20 03:48:38 jasoni Exp $
+# $OpenBSD: Makefile,v 1.15 2000/07/20 05:40:43 brad Exp $
 
 DISTNAME=	libPropList-0.10.1
 PKGNAME=	libproplist-0.10.1
 CATEGORIES=	devel
-NEED_VERSION=	1.223
+NEED_VERSION=	1.310
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR= libs
+
+HOMEPAGE=	http://www.windowmaker.org/
 
 MAINTAINER=	jasoni@openbsd.org
 

@@ -9,3 +9,5 @@ it. PL enables programs that use configuration or preference files to
 make these compatible with GNUstep/OPENSTEP's user defaults handling
 mechanism, without needing to use Objective-C or GNUstep/OPENSTEP
 themselves.
+
+WWW: ${HOMEPAGE}
