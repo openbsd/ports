@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/22 11:24:19 obecian Exp $
 
 COMMENT=	"PGP packet visualizer"
 
-DISTNAME=	pgpdump-0.11
+DISTNAME=	pgpdump-0.16
 CATEGORIES=    	security
-NEED_VERSION=	1.408
+NEED_VERSION=	1.500
 
 HOMEPAGE=	http://pgp.iijlab.net/pgpdump.html
 
