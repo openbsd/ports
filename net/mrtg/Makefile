@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2000/03/05 00:34:26 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/03/05 00:55:07 brad Exp $
 
 DISTNAME=	mrtg-2.8.12
 CATEGORIES=	net
-MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
+MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
+		ftp://ftp.sunet.se/pub/network/monitoring/mrtg/ \
+		http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
 HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 
