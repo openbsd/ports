@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/02 10:14:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/21 02:42:56 kevlo Exp $
 
 COMMENT=	"C/C++ and Java sources to HTML converter"
 
-DISTNAME=	source-highlight-1.1
+DISTNAME=	source-highlight-1.2.1
 CATEGORIES=	textproc
-NEED_VERSION=	1.427
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.gnu.org/software/src-highlite/source-highlight.html
 
@@ -19,5 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= source-highlight
 
 CONFIGURE_STYLE= gnu
+
+REGRESS_TARGET=	check
 
 .include <bsd.port.mk>
