@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/07/06 10:10:54 xsa Exp $
+# $OpenBSD: Makefile,v 1.26 2004/11/07 16:16:31 naddy Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
@@ -26,8 +26,7 @@ LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		unicode.0::devel/libunicode
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.57
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--disable-static --disable-gnome

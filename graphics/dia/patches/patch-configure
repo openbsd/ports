@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.7 2004/11/07 16:16:31 naddy Exp $
+--- configure.orig	Sun Nov  7 16:26:41 2004
++++ configure	Sun Nov  7 16:27:51 2004
+@@ -20120,7 +20120,8 @@ _ACEOF
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #if (FREETYPE_MAJOR*1000+FREETYPE_MINOR)*1000+FREETYPE_PATCH < 2000009
+ #error Freetype version too low.
+ #endif
