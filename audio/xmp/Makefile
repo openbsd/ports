@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:02 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/16 10:52:09 espie Exp $
 
 DISTNAME=	xmp-1.1.5
 CATEGORIES=	audio
@@ -23,7 +23,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xmp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/src/main/xxmp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/docs/xmp.1 ${MANPREFIX}/man/man1
-	@${LN} -sf ${MANPREFIX}/man/man1/xmp.1 ${MANPREFIX}/man/man1/xxmp.1
+	@ln -sf ${MANPREFIX}/man/man1/xmp.1 ${MANPREFIX}/man/man1/xxmp.1
 
 .include <bsd.port.mk>
 

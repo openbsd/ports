@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:16 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:10 espie Exp $
 
 DISTNAME=	xmake-1.01
 CATEGORIES=	devel
@@ -19,6 +19,6 @@ NEED_VERSION=	1.191
 WRKDIST=	${WRKDIR}/xmake
 
 pre-build:
-	@${RM} -rf ${WRKSRC}/obj
+	@rm -rf ${WRKSRC}/obj
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         22 Nov 1999
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/11 00:37:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:14 espie Exp $
 #
 
 DISTNAME=	upsd-2.0.1.6
@@ -19,8 +19,8 @@ MAINTAINER=	kevlo@openbsd.org
 WRKDIST=	${WRKDIR}/upsd-2.0
 
 pre-build:
-	@${MV} ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
-	@${SED} -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
+	@mv ${WRKSRC}/config.h ${WRKSRC}/conf.h.orig
+	@sed -e "s!@prefix@!${PREFIX}!g" ${WRKSRC}/conf.h.orig > ${WRKSRC}/conf.h
 
 post-install:
 	if [ ! -f /etc/upsd.conf ] ; then \

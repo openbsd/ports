@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:46 turan Exp $
+#   $OpenBSD: Makefile,v 1.9 2000/02/16 10:52:12 espie Exp $
 
 DISTNAME=	sdr-2.7e
 CATEGORIES=	mbone
@@ -26,10 +26,10 @@ HAS_CONFIGURE=	yes
 # Makefile.work and configure help to work with the sdr multi-platform
 # build structure.
 post-extract:
-	@${RM} -f ${WRKSRC}/src/libs.tcl
-	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/configure ${WRKSRC}
-	@${CP} ${FILESDIR}/image_directory.xbm ${WRKSRC}/sdr/src/
+	@rm -f ${WRKSRC}/src/libs.tcl
+	@cp ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
+	@cp ${FILESDIR}/configure ${WRKSRC}
+	@cp ${FILESDIR}/image_directory.xbm ${WRKSRC}/sdr/src/
 	@${CHMOD} 755 ${WRKSRC}/configure
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/11 00:37:27 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/16 10:52:10 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -56,7 +56,7 @@ JPLIB!=		echo ${JPLIB} | sed 's%^%-lonew${INPUT_METHOD} %'
 
 pre-build:
 	cd ${WRKSRC}/src; \
-	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
+	sed	-e 's,%LOCALBASE%,${LOCALBASE},g' \
 		-e 's,%X11BASE%,${X11BASE},g' \
 		-e 's,%MANLANG%,${MANLANG},g' \
 			./makefile.junx > Makefile; \

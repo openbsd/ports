@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:04:45 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:12 espie Exp $
 
 DISTNAME=       rat-3.0
 DISTFILES=	rat-3.0.33.tar.gz
@@ -18,7 +18,7 @@ LIB_DEPENDS=	tcl80:${PORTSDIR}/lang/tcl80 \
 		tk80:${PORTSDIR}/x11/tk80 \
 
 post-extract:
-	@${CP} ${FILESDIR}/buildcmd ${WRKSRC}/buildcmd
+	@cp ${FILESDIR}/buildcmd ${WRKSRC}/buildcmd
 	@${CHMOD} 755 ${WRKSRC}/buildcmd
 
 do-build:

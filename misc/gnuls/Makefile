@@ -1,5 +1,5 @@
 # original taken from FreeBSD
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:04:48 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:12 espie Exp $
 #
 
 DISTNAME=	fileutils-4.0
@@ -34,8 +34,8 @@ CONFIGURE_ARGS=--program-transform-name=s,ls,gnuls, ${NLS_CHOICE}
 
 post-install:
 	@for i in linuxls vdir dir; \
-		do cd ${PREFIX}/man/man1 && ${LN} -fs gnuls.1 $$i.1; \
-			cd ${PREFIX}/bin && ${LN} -f gnuls $$i; \
+		do cd ${PREFIX}/man/man1 && ln -fs gnuls.1 $$i.1; \
+			cd ${PREFIX}/bin && ln -f gnuls $$i; \
 		done
 
 .include <bsd.port.mk>

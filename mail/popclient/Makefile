@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:29 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:11 espie Exp $
 # Whom:           Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	popclient-3.0b6
@@ -16,6 +16,6 @@ WRKDIST=		${WRKDIR}/popclient-3.0b6
 ALL_TARGET=
 
 pre-install:
-	${CP} ${WRKSRC}/popclient.man ${WRKSRC}/popclient.1
+	cp ${WRKSRC}/popclient.man ${WRKSRC}/popclient.1
 
 .include <bsd.port.mk>

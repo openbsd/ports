@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/15 05:04:14 turan Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/16 10:52:09 espie Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 DISTNAME=		libtool-1.3.3
@@ -22,11 +22,11 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--enable-static
 
 pre-configure:
-	${RM} ${WRKSRC}/doc/libtool.info*
+	rm ${WRKSRC}/doc/libtool.info*
 
 post-install:
 	@if [ -d ${PREFIX}/info -a ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/08/02 04:38:26 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:12 espie Exp $
 
 DISTNAME=	afm
 PKGNAME=	afm-1.0
@@ -11,7 +11,7 @@ MAINTAINER=	d@openbsd.org
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 
 pre-patch:
-	@${RM} -rf ${WRKSRC}/RCS
+	@rm -rf ${WRKSRC}/RCS
 
 do-build:
 

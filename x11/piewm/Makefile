@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/02/21 00:26:24 marc Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:15 espie Exp $
 #
 
 DISTNAME=	piewm
@@ -16,7 +16,7 @@ USE_IMAKE=	yes
 # files plus an executable.  Get rid of them.
 # 
 pre-configure:
-	@${RM} -rf ${WRKDIR}/xpm
+	@rm -rf ${WRKDIR}/xpm
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} clean)

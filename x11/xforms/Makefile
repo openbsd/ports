@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:15 espie Exp $
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
@@ -28,8 +28,8 @@ NO_BUILD=	yes
 USE_X11=	yes
 
 post-patch:
-	${MV} ${WRKSRC}/mkconfig.h ${WRKSRC}/mkconfig.h.orig
-	${CP} ${FILESDIR}/mkconfig.h ${WRKSRC}
+	mv ${WRKSRC}/mkconfig.h ${WRKSRC}/mkconfig.h.orig
+	cp ${FILESDIR}/mkconfig.h ${WRKSRC}
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib

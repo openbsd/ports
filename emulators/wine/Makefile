@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/15 05:04:18 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/16 10:52:10 espie Exp $
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
@@ -29,6 +29,6 @@ post-configure:
 	cd ${WRKSRC} && make depend
 
 post-install:
-	[ -f /etc/wine.conf ] || ${CP} ${WRKSRC}/wine.ini /etc/wine.conf
+	[ -f /etc/wine.conf ] || cp ${WRKSRC}/wine.ini /etc/wine.conf
 
 .include <bsd.port.mk>

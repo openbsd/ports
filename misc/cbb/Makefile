@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:04:48 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/16 10:52:12 espie Exp $
 #
 
 DISTNAME=	cbb-0.73
@@ -23,8 +23,8 @@ RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80 \
 NO_BUILD=       yes
 
 pre-configure:
-	${MV} ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in
-	${SED} -e "s:/usr/local:${PREFIX}:"  -e "s:lib/cbb:share/cbb:" \
+	mv ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in
+	sed -e "s:/usr/local:${PREFIX}:"  -e "s:lib/cbb:share/cbb:" \
 		${WRKSRC}/install.pl.in > ${WRKSRC}/install.pl
 
 .include <bsd.port.mk>

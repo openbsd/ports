@@ -3,7 +3,7 @@
 # Date created:        May 19 1998
 # Whom:                Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:33 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:15 espie Exp $
 #
 
 DISTNAME=	xaniroc
@@ -24,6 +24,6 @@ PERMIT_DISTFILES_FTP=	YES
 USE_IMAKE=	yes
 
 post-extract:
-	${MV} ${WRKSRC}/manpage.1 ${WRKSRC}/xaniroc.man
+	mv ${WRKSRC}/manpage.1 ${WRKSRC}/xaniroc.man
 
 .include <bsd.port.mk>

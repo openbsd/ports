@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/02/15 05:04:11 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/02/16 10:52:09 espie Exp $
 
 DISTNAME=       bison-1.27
 CATEGORIES=	devel
@@ -22,6 +22,6 @@ INFO_FILES=bison.info
 # bison installs bison.info*... remove our patch original before installing
 #
 pre-install:
-	@${RM} -f ${WRKSRC}/bison.info.orig
+	@rm -f ${WRKSRC}/bison.info.orig
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/15 05:04:12 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/16 10:52:09 espie Exp $
 
 DISTNAME=	indent-2.2.2
 CATEGORIES=	devel
@@ -16,13 +16,13 @@ PERMIT_DISTFILES_FTP=	YES
 GNU_CONFIGURE=	yes
 
 post-extract:
-	@${RM} ${WRKSRC}/indent.info*
+	@rm ${WRKSRC}/indent.info*
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/indent ${PREFIX}/bin/gindent
 	@${INSTALL_MAN} ${WRKSRC}/indent.1 ${PREFIX}/man/man1/gindent.1
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	    sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	@${INSTALL_DATA} ${WRKSRC}/indent.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/indent.info ${PREFIX}/info/dir

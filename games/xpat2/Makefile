@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:29 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:10 espie Exp $
 
 DISTNAME=	xpat2-1.04
 CATEGORIES=	games
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	YES
 USE_X11=	yes
 
 post-install:
-	@${TOUCH} $(PREFIX)/lib/X11/xpat/xpat.log
+	@touch $(PREFIX)/lib/X11/xpat/xpat.log
 	@${CHOWN} root.games $(PREFIX)/lib/X11/xpat/xpat.log $(PREFIX)/bin/xpat2
 	@${CHMOD} 2555 $(PREFIX)/bin/xpat2
 	@${CHMOD} 664 $(PREFIX)/lib/X11/xpat/xpat.log

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/20 03:04:44 form Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/16 10:52:14 espie Exp $
 
 DISTNAME=	analog4.01
 PKGNAME=	analog-4.01
@@ -30,8 +30,8 @@ CFLAGS+=	-DANALOGDIR=\\\"${ANALOGDIR}/\\\" \
 		-DANALOG=\\\"${PREFIX}/bin/analog\\\"
 
 post-patch:
-	@${MV} ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
-	@${SED} -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
+	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
+	@sed -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
 		> ${WRKSRC}/anlgform.pl
 
 do-install:

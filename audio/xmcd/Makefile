@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/02/15 05:04:01 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/02/16 10:52:08 espie Exp $
 
 BROKEN=		spinlocks in a loop if stdin is null
 
@@ -21,6 +21,6 @@ IS_INTERACTIVE=	yes	# asks a lot of questions
 NO_PACKAGE=	interactive port
 
 post-install:
-	${CP} ${WRKSRC}/README ${PREFIX}/lib/X11/xmcd
+	cp ${WRKSRC}/README ${PREFIX}/lib/X11/xmcd
 
 .include <bsd.port.mk>

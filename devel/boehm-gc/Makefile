@@ -10,17 +10,17 @@ ONLY_FOR_ARCHS=	i386 m68k sparc
 
 NEED_VERSION=	1.191
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - || true
+EXTRACT_AFTER_ARGS=	| tar -xf - || true
 
 MAINTAINER=	niklas@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_ENV=	CP="${CP}" \
+MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
@@ -29,8 +29,8 @@ INSTALL_TARGET=	OpenBSD-pkg-install
 WRKDIST=		${WRKDIR}/gc
 
 post-patch:
-	@${MV} ${WRKSRC}/gc.man ${WRKSRC}/gc.man.in
-	@${SED} -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/gc.man.in > \
+	@mv ${WRKSRC}/gc.man ${WRKSRC}/gc.man.in
+	@sed -e "s,@PREFIX@,${PREFIX},g" ${WRKSRC}/gc.man.in > \
 		${WRKSRC}/gc.man
 
 .include <bsd.port.mk>

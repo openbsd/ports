@@ -3,7 +3,7 @@
 # Date created:         May 17 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/17 04:56:57 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/16 10:52:14 espie Exp $
 #
 
 DISTNAME=       Par150
@@ -17,7 +17,7 @@ ALL_TARGET=
 MAN1=		par.1
 
 do-configure:
-	(cd ${WRKSRC}; ${CP} protoMakefile Makefile)
+	(cd ${WRKSRC}; cp protoMakefile Makefile)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/par ${PREFIX}/bin

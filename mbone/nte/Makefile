@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/15 05:04:45 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/16 10:52:12 espie Exp $
 
 DISTNAME=       nte-1.7.0
 CATEGORIES=	mbone
@@ -24,8 +24,8 @@ HAS_CONFIGURE=	yes
 WRKDIST=		${WRKDIR}/nte
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/configure ${WRKSRC}
+	@cp ${FILESDIR}/Makefile.work ${WRKSRC}/Makefile
+	@cp ${FILESDIR}/configure ${WRKSRC}
 	@${CHMOD} 755 ${WRKSRC}/configure
 
 do-install:

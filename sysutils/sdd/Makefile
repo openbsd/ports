@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:17 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:13 espie Exp $
 
 DISTNAME=	sdd-1.22
 CATEGORIES=    	sysutils
@@ -17,11 +17,11 @@ MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}
 
 do-configure:
 	@cd ${WRKSRC}/RULES; \
-	${SED} -e s/freebsd/openbsd/ os-freebsd.id >os-openbsd.id; \
-	${CP} os-freebsd.def os-openbsd.def; \
-    	${CP} i386-freebsd-cc.rul ${MACHINE}-openbsd-${CC}.rul
+	sed -e s/freebsd/openbsd/ os-freebsd.id >os-openbsd.id; \
+	cp os-freebsd.def os-openbsd.def; \
+    	cp i386-freebsd-cc.rul ${MACHINE}-openbsd-${CC}.rul
 	@cd ${WRKSRC}/DEFAULTS; \
-	${CP} Defaults.freebsd Defaults.openbsd
+	cp Defaults.freebsd Defaults.openbsd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdd/OBJ/${MACHINE}-openbsd-${CC}/sdd \

@@ -3,7 +3,7 @@
 # Date created:		May 16 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:23 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:14 espie Exp $
 #
 
 DISTNAME=	wdiff-0.5
@@ -25,7 +25,7 @@ MAN1=		wdiff.1
 
 post-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@install-info ${PREFIX}/info/wdiff.info ${PREFIX}/info/dir
 

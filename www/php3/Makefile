@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/01 15:19:14 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:14 espie Exp $
 
 DISTNAME=	php-3.0.14
 PKGNAME=	php3-3.0.14
@@ -23,6 +23,6 @@ CONFIGURE_ARGS+=	--without-pcre-regex \
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/php3
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/php3
-	${CP} ${WRKSRC}/php3.ini-dist /var/www/conf/php3.ini
+	cp ${WRKSRC}/php3.ini-dist /var/www/conf/php3.ini
 
 .include <bsd.port.mk>

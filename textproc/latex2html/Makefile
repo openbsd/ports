@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/29 09:40:17 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:14 espie Exp $
 #
 
 DISTNAME=	latex2html-97.1
@@ -61,7 +61,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/install-test ${WRKSRC}/pstoimg ${WRKSRC}/makemap ${WRKSRC}/texexpand ${WRKSRC}/configure-pstoimg ${WRKSRC}/latex2html.config ${WRKSRC}/pstoimg_nopipes ${WRKSRC}/latex2html ${PREFIX}/lib/latex2html
 	(cd ${PREFIX}/lib/latex2html; PREFIX=${PREFIX} ./install-test)
 	${INSTALL_SCRIPT} ${PREFIX}/lib/latex2html/latex2html ${PREFIX}/bin
-	${RM} ${PREFIX}/lib/latex2html/*.bak
+	rm ${PREFIX}/lib/latex2html/*.bak
 
 .include <bsd.port.mk>
 

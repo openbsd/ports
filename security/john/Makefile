@@ -3,7 +3,7 @@
 # Date created:		1999-Apr-7
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:05:10 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:13 espie Exp $
 
 DISTNAME=	john-1.6
 
@@ -46,13 +46,13 @@ ALL_TARGET=	generic
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../run/john ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/../run/mailer ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/unshadow
-	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/unafs
-	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/unique
+	ln -sf ${PREFIX}/bin/john ${PREFIX}/bin/unshadow
+	ln -sf ${PREFIX}/bin/john ${PREFIX}/bin/unafs
+	ln -sf ${PREFIX}/bin/john ${PREFIX}/bin/unique
 	${INSTALL_DATA_DIR} ${PREFIX}/share/john
 	${INSTALL_DATA} ${WRKSRC}/../run/* ${PREFIX}/share/john
-	(cd ${PREFIX}/share/john && ${RM} -f un* john mailer)
-	${SED} "s%~/%${PREFIX}/share/john/%g" ${WRKSRC}/../run/john.ini > \
+	(cd ${PREFIX}/share/john && rm -f un* john mailer)
+	sed "s%~/%${PREFIX}/share/john/%g" ${WRKSRC}/../run/john.ini > \
 		${PREFIX}/share/john/john.ini
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/john

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:03:58 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/16 10:52:08 espie Exp $
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
@@ -26,9 +26,9 @@ INSTALL_TARGET= install.all
 post-install:
 	@cd ${PREFIX}/lib/timidity && \
 	${TAR} -zxf ${DISTDIR}/${TIINS} && \
-	${CP} goemon.cfg goemon.cfg.bak && \
-	${SED} 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
+	cp goemon.cfg goemon.cfg.bak && \
+	sed 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
 	   < goemon.cfg.bak > goemon.cfg && \
-	${RM} -f goemon.cfg.bak
+	rm -f goemon.cfg.bak
 
 .include <bsd.port.mk>

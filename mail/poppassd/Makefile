@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:42 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:11 espie Exp $
 
 DISTNAME=	pwserve-4
 PKGNAME=	poppassd-4.0
@@ -14,10 +14,10 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-EXTRACT_CMD=	${CAT}
+EXTRACT_CMD=	cat
 EXTRACT_SUFX=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS= | ${SED} -e '1,16d' | ${SH}
+EXTRACT_AFTER_ARGS= | sed -e '1,16d' | ${SH}
 
 WRKDIST=	${WRKDIR}/poppassd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/16 10:52:10 espie Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
@@ -26,8 +26,8 @@ WRKDIST=	${WRKDIR}/netpbm
 
 post-extract:
 	@(cd ${WRKSRC} && \
-	  ${MV} ../pnmtopng-2.37.3/* .. && \
-	  ${MV} ../*pcx*.? ppm && \
-	  ${MV} ../*rle*.? ../*png*.? pnm)
+	  mv ../pnmtopng-2.37.3/* .. && \
+	  mv ../*pcx*.? ppm && \
+	  mv ../*rle*.? ../*png*.? pnm)
 
 .include <bsd.port.mk>

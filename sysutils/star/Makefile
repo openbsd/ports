@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:18 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/16 10:52:14 espie Exp $
 # $FreeBSD: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
 
 DISTNAME=	star-1.2
@@ -20,8 +20,8 @@ MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}"
 
 do-configure:
 .if ${MACHINE} != "i386" || ${CC} != "cc"
-	@${RM} -f ${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
-	@${CP} ${WRKSRC}/RULES/i386-openbsd-cc.rul \
+	@rm -f ${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
+	@cp ${WRKSRC}/RULES/i386-openbsd-cc.rul \
 	 ${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
 .endif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/02/15 05:03:56 turan Exp $
+# $OpenBSD: Makefile,v 1.14 2000/02/16 10:52:08 espie Exp $
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	YES
 WRKDIST=         ${WRKDIR}/gsm-1.0-pl10
 
 post-install:
-	@${LN} -sf ${PREFIX}/man/man1/toast.1 ${PREFIX}/man/man1/untoast.1
-	@${LN} -sf ${PREFIX}/man/man1/toast.1 ${PREFIX}/man/man1/tcat.1
+	@ln -sf ${PREFIX}/man/man1/toast.1 ${PREFIX}/man/man1/untoast.1
+	@ln -sf ${PREFIX}/man/man1/toast.1 ${PREFIX}/man/man1/tcat.1
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/02/11 00:37:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/16 10:52:11 espie Exp $
 
 BROKEN=		bad packing lists
 
@@ -21,7 +21,7 @@ MAN3=		compface.3
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOMANCOMPRESS)
-	@${RM} ${PREFIX}/man/man1/uncompface.1 ${PREFIX}/man/man3/uncompface.3
+	@rm ${PREFIX}/man/man1/uncompface.1 ${PREFIX}/man/man3/uncompface.3
 	@ln -fs compface.1.gz ${PREFIX}/man/man1/uncompface.1.gz
 	@ln -fs compface.3.gz ${PREFIX}/man/man3/uncompface.3.gz
 .endif

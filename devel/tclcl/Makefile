@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:21 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/16 10:52:10 espie Exp $
 #
 
 DISTNAME=	tclcl-src-1.0b8
@@ -24,5 +24,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
-	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
+	@ln -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
 .include <bsd.port.mk>

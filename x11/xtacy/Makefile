@@ -3,7 +3,7 @@
 # Date created:         December 21, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:37 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/16 10:52:15 espie Exp $
 #
 
 DISTNAME=	Xtacy113
@@ -29,6 +29,6 @@ WRKDIST=	${WRKDIR}/Xtacy
 ALL_TARGET=	xtacy
 
 pre-install:
-	${CP} ${WRKSRC}/Xtacy.1 ${WRKSRC}/xtacy.1
+	cp ${WRKSRC}/Xtacy.1 ${WRKSRC}/xtacy.1
 
 .include <bsd.port.mk>

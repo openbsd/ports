@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/15 05:04:11 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/16 10:52:09 espie Exp $
 
 DISTNAME=       dejagnu-1.3
 CATEGORIES=	devel
@@ -29,7 +29,7 @@ post-build:
 post-install:
 	cd ${WRKSRC}; ${MAKE} install-info
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@install-info ${PREFIX}/info/dejagnu.info ${PREFIX}/info/dir
 

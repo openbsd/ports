@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2000/02/15 05:04:36 turan Exp $
+# $OpenBSD: Makefile,v 1.66 2000/02/16 10:52:11 espie Exp $
 
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -241,7 +241,7 @@ PATCH_LIST+=patch-java-*
 # get openbsd configuration files where they should be
 post-patch:
 		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs ${RM}
+	find ${WRKSRC} -name \*.orig|xargs rm
 	cp -R ${FILESDIR}/config/* ${WRKSRC}
 	cp -R ${FILESDIR}/include/* ${WRKSRC}/gcc/ginclude
 	cd ${WRKSRC} && contrib/gcc_update --touch

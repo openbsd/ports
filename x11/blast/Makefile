@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			don
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:27 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:15 espie Exp $
 #
 
 DISTNAME=	blast-1.0-ss-9.03
@@ -25,7 +25,7 @@ USE_X11=	yes
 MAN1=		blast.1
 
 pre-configure:
-	${MV} $(WRKDIR)/blast-1.0 $(WRKSRC)
+	mv $(WRKDIR)/blast-1.0 $(WRKSRC)
 
 do-build:
 	${CC} $(WRKSRC)/blast.c -I${X11BASE}/include -O2 -L$(PREFIX)/lib -lX11 -lXext -o $(WRKSRC)/blast

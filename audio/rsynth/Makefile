@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/15 05:03:58 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/02/16 10:52:08 espie Exp $
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 GNU_CONFIGURE=	yes
 
 pre-configure:
-	@${CP} ${FILESDIR}/openbsdplay.c ${WRKSRC}/config/openbsdplay.c
-	@${CP} ${FILESDIR}/config.guess ${WRKSRC}/config.guess
-	@${CP} ${FILESDIR}/config.sub ${WRKSRC}/config.sub
-	@${CP} ${FILESDIR}/configure ${WRKSRC}/configure
+	@cp ${FILESDIR}/openbsdplay.c ${WRKSRC}/config/openbsdplay.c
+	@cp ${FILESDIR}/config.guess ${WRKSRC}/config.guess
+	@cp ${FILESDIR}/config.sub ${WRKSRC}/config.sub
+	@cp ${FILESDIR}/configure ${WRKSRC}/configure
 
 .include <bsd.port.mk>
