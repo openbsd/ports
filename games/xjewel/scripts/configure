@@ -7,7 +7,7 @@ sed -e s/snf/pcf.gz/  <Imakefile.orig>Imakefile
 
 cat >> Imakefile <<END
 
-HSCORE_FILE = $PREFIX/lib/xjewel.scores
+HSCORE_FILE = /var/games/xjewel.scores
 USERDEFS = -DICON_WINDOW -DUSE_SELECT -DGETPWENT
 BINDIR = $PREFIX/bin
 MANDIR = $PREFIX/man/cat6
