@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2001/05/07 03:13:02 shell Exp $
+# $OpenBSD: Makefile,v 1.70 2001/05/16 15:30:13 jakob Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += gnupg
      SUBDIR += gpa
      SUBDIR += heimdal
+     SUBDIR += heimdal,no_x11
      SUBDIR += isic
      SUBDIR += its4
      SUBDIR += john
