@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/13 16:20:20 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/04 08:08:34 sturm Exp $
 
 COMMENT=	"abstraction layer for logging and tracing"
 
-DISTNAME=	Log-Agent-0.304
+DISTNAME=	Log-Agent-0.305
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Log/}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 16:51:05 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/01/04 08:08:34 sturm Exp $
 ${P5SITE}/Log/Agent.pm
 ${P5SITE}/Log/Agent/Channel.pm
 ${P5SITE}/Log/Agent/Channel/File.pm
@@ -50,7 +50,6 @@ ${P5SITE}/auto/Log/Agent/logxcarp.al
 ${P5SITE}/auto/Log/Agent/logxcroak.al
 ${P5SITE}/auto/Log/Agent/prio_tag.al
 @comment ${P5ARCH}/auto/Log/Agent/.packlist
-@comment ${P5ARCH}/perllocal.pod
 man/man3p/Log::Agent.3p
 man/man3p/Log::Agent::Channel.3p
 man/man3p/Log::Agent::Channel::File.3p
