@@ -1,4 +1,4 @@
-$OpenBSD: patch-links_h,v 1.8 2003/09/23 06:35:33 fgsch Exp $
+$OpenBSD: patch-links_h,v 1.9 2003/11/17 22:59:32 fgsch Exp $
 --- links.h.orig	2003-09-18 08:46:34.000000000 -0300
 +++ links.h	2003-09-23 02:55:15.000000000 -0300
 @@ -137,6 +137,8 @@ x #endif*/
@@ -10,59 +10,3 @@ $OpenBSD: patch-links_h,v 1.8 2003/09/23 06:35:33 fgsch Exp $
  #include <termios.h>
  
  #include "os_depx.h"
-@@ -1028,6 +1030,7 @@ static inline int end_of_dir(unsigned ch
- 
- int parse_url(unsigned char *, int *, unsigned char **, int *, unsigned char **, int *, unsigned char **, int *, unsigned char **, int *, unsigned char **, int *, unsigned char **);
- unsigned char *get_host_name(unsigned char *);
-+unsigned char *get_protocol_name(unsigned char *);
- unsigned char *get_host_and_pass(unsigned char *);
- unsigned char *get_user_name(unsigned char *);
- unsigned char *get_pass(unsigned char *);
-@@ -3008,7 +3011,8 @@ struct history {
- #define D_END		0
- #define D_CHECKBOX	1
- #define D_FIELD		2
--#define D_BUTTON	3
-+#define D_FIELD_PASS	3
-+#define D_BUTTON	4
- 
- #define B_ENTER		1
- #define B_ESC		2
-@@ -3872,6 +3876,7 @@ struct http_bugs {
- extern struct http_bugs http_bugs;
- 
- extern unsigned char default_anon_pass[];
-+extern int ftp_passive;
- 
- /* listedit.c */
- 
-@@ -3943,4 +3948,29 @@ void save_bookmarks(void);
- /* Launches bookmark manager */
- void menu_bookmark_manager(struct terminal *, void *, struct session *);
- 
-+/* auth.h */
-+
-+struct http_auth_basic {
-+        struct http_auth_basic *next;
-+        struct http_auth_basic *prev;
-+        int blocked;
-+        int valid;
-+        unsigned char *url;
-+        int url_len;
-+        unsigned char *realm;
-+        unsigned char *uid;
-+        unsigned char *passwd;
-+};
-+
-+void init_auth();
-+unsigned char *find_auth(unsigned char *);
-+int add_auth_entry(unsigned char *, unsigned char *);
-+void del_auth_entry(struct http_auth_basic *);
-+void free_auth();
-+unsigned char *base64_encode(unsigned char *);
-+unsigned char *get_http_header_param(unsigned char *e, unsigned char * name);
-+void do_auth_dialog(struct session *ses);
-+
-+int need_auth;
-+
- #endif /* #ifndef _LINKS_H */

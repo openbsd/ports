@@ -1,0 +1,30 @@
+$OpenBSD: patch-objreq_c,v 1.1 2003/11/17 22:59:32 fgsch Exp $
+--- objreq.c.orig	2003-10-09 05:23:48.000000000 -0300
++++ objreq.c	2003-11-17 19:15:44.000000000 -0300
+@@ -79,7 +79,7 @@ void auth_fn(struct dialog_data *dlg)
+ 
+ int auth_cancel(struct dialog_data *dlg, struct dialog_item_data *item)
+ {
+-	struct object_request *rq = find_rq((int)dlg->dlg->udata2);
++	struct object_request *rq = find_rq((intptr_t)dlg->dlg->udata2);
+ 	if (rq) {
+ 		rq->state = O_OK;
+ 		if (rq->timer != -1) kill_timer(rq->timer);
+@@ -92,7 +92,7 @@ int auth_cancel(struct dialog_data *dlg,
+ 
+ int auth_ok(struct dialog_data *dlg, struct dialog_item_data *item)
+ {
+-	struct object_request *rq = find_rq((int)dlg->dlg->udata2);
++	struct object_request *rq = find_rq((intptr_t)dlg->dlg->udata2);
+ 	if (rq) {
+ 		struct auth_dialog *a = dlg->dlg->udata;
+ 		struct session *ses;
+@@ -157,7 +157,7 @@ int auth_window(struct object_request *r
+ 	a->proxy = rq->stat.ce->http_code == 407;
+ 	a->realm = stracpy(realm);
+ 	d->udata = a;
+-	d->udata2 = (void *)rq->count;
++	d->udata2 = (void *)(intptr_t)rq->count;
+ 	if (rq->stat.ce->http_code == 401) d->title = TEXT(T_AUTHORIZATION_REQUIRED);
+ 	else d->title = TEXT(T_PROXY_AUTHORIZATION_REQUIRED);
+ 	d->fn = auth_fn;

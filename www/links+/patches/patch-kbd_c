@@ -1,7 +1,7 @@
-$OpenBSD: patch-kbd_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
---- kbd.c.orig	Sun Sep 15 09:46:19 2002
-+++ kbd.c	Sun Sep 15 09:46:37 2002
-@@ -384,10 +384,10 @@ void in_sock(struct itrm *itrm)
+$OpenBSD: patch-kbd_c,v 1.2 2003/11/17 22:59:32 fgsch Exp $
+--- kbd.c.orig	2003-10-10 02:52:57.000000000 -0300
++++ kbd.c	2003-11-17 19:09:11.000000000 -0300
+@@ -386,10 +386,10 @@ void in_sock(struct itrm *itrm)
  		}
  		mem_free(param);
  		if (fg == 1) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-terminal_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
---- terminal.c.orig	Sun Sep 15 09:39:28 2002
-+++ terminal.c	Sun Sep 15 09:42:14 2002
-@@ -1053,14 +1053,14 @@ void exec_thread(unsigned char *path, in
+$OpenBSD: patch-terminal_c,v 1.2 2003/11/17 22:59:32 fgsch Exp $
+--- terminal.c.orig	2003-10-10 02:52:57.000000000 -0300
++++ terminal.c	2003-11-17 19:09:12.000000000 -0300
+@@ -1056,14 +1056,14 @@ void exec_thread(unsigned char *path, in
  
  void close_handle(void *p)
  {
@@ -18,7 +18,7 @@ $OpenBSD: patch-terminal_c,v 1.1 2002/09/16 04:11:23 fgsch Exp $
  	term->blocked = -1;
  	if (!F) {
  		set_handlers(term->fdin, (void (*)(void *))in_term, NULL, (void (*)(void *))destroy_terminal, term);
-@@ -1121,7 +1121,7 @@ void exec_on_terminal(struct terminal *t
+@@ -1124,7 +1124,7 @@ void exec_on_terminal(struct terminal *t
  				if (!F) set_handlers(term->fdin, NULL, NULL, (void (*)(void *))destroy_terminal, term);
  				/*block_itrm(term->fdin);*/
  			} else {

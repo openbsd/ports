@@ -1,6 +1,6 @@
-$OpenBSD: patch-jsint_c,v 1.4 2003/09/23 06:35:33 fgsch Exp $
---- jsint.c.orig	2003-09-01 16:40:44.000000000 -0300
-+++ jsint.c	2003-09-23 02:55:15.000000000 -0300
+$OpenBSD: patch-jsint_c,v 1.5 2003/11/17 22:59:32 fgsch Exp $
+--- jsint.c.orig	2003-11-10 15:03:29.000000000 -0300
++++ jsint.c	2003-11-17 19:13:56.000000000 -0300
 @@ -2810,7 +2810,7 @@ static void __js_upcall_goto_history_ok_
  
  	if (a<jsid->n&&(fd->js)&&jsid->js_id==fd->js->ctx->js_id){js_downcall_vezmi_null(fd->js->ctx);return;}   /* call downcall */
@@ -10,3 +10,12 @@ $OpenBSD: patch-jsint_c,v 1.4 2003/09/23 06:35:33 fgsch Exp $
  }
  
  
+@@ -2918,7 +2918,7 @@ void js_upcall_goto_history(void * data)
+ 	{
+ 		js_mem_free(s);
+ 		mem_free(url);
+-		go_backwards(term,(void*)(history_num),fd->ses);
++		go_backwards(term,(void*)(intptr_t)(history_num),fd->ses);
+ 	}
+ 	return;
+ goto_history_failed:
