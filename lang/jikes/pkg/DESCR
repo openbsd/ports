@@ -1,0 +1,5 @@
+Jikes is a fast Java compiler for translating programs written as
+defined in The Java Language Specification into the bytecode format
+used for .class files.  This is an open source project maintained
+with help from IBM; see
+http://oss.software.ibm.com/developerworks/opensource/jikes/project/.
