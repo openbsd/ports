@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/10 00:40:26 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/10 00:57:27 espie Exp $
 
+COMMENT=	"manipulate dates in perl"
 DISTNAME=	DateManip-5.39
 PKGNAME=	p5-DateManip-5.39
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.310
+NEED_VERSION=	1.392
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Date
 
