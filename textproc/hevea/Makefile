@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/09/28 03:51:01 mark Exp $
+# $OpenBSD: Makefile,v 1.8 2002/09/30 15:48:27 naddy Exp $
 
 COMMENT=	"LaTeX to html translator"
 
@@ -24,9 +24,18 @@ HOMEPAGE=	http://para.inria.fr/%7Emaranget/hevea/
 MAKE_FLAGS=LIBDIR='${PREFIX}/lib/hevea' BINDIR='${PREFIX}/bin'
 FAKE_FLAGS=LIBDIR='${WRKINST}${PREFIX}/lib/hevea' BINDIR='${WRKINST}${PREFIX}/bin'
 
+.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc" && \
+	${MACHINE_ARCH} != "alpha"
+RUN_DEPENDS=	:ocaml-*:lang/ocaml
+MAKE_FLAGS+=	TARGET='byte'
+FAKE_FLAGS+=	TARGET='byte'
+.endif
+
 # Beware! this works only because the manual is flat
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}-manual/* ${PREFIX}/share/doc/hevea
+
+NO_REGRESS=	Yes
 	
 .include <bsd.port.mk>
