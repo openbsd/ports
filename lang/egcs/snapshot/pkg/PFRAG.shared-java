@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-java,v 1.1 2003/11/13 19:04:10 espie Exp $
-lib/lib-org-w3c-dom.so.0.0
-lib/lib-org-xml-sax.so.0.0
-lib/libffi-2.00-beta.so
-lib/libffi.so
-@comment lib/libgc.so.1.2
-lib/libgcj.so.4.0
-DYNLIBDIR(%D/lib)

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-objc,v 1.2 2003/11/13 19:04:10 espie Exp $
-lib/libobjc.so.1.0
-DYNLIBDIR(%D/lib)
