@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/05/14 20:59:20 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/15 13:12:24 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
@@ -28,6 +28,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@rm -f ${WRKSRC}/doc/gettext.info*
+
+pre-extract:
+	@if [ -f ${LOCALBASE}/lib/libintl.so.?.? ]; then \
+	   echo "+-------------------"; \
+	   echo "| ERROR: you MUST remove the existing gettext installation"; \
+	   echo "| before compiling this version. To fully remove run"; \
+	   echo "| these commands as user root"; \
+	   echo "|"; \
+	   echo "|      pkg_delete -f `pkg_info -e 'gettext-*'`"; \
+	   echo "|      ldconfig -R"; \
+	   echo "|"; \
+	   echo "+-------------------"; \
+	   exit 1; \
+	fi
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
