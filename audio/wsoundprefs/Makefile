@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/03/28 10:01:21 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/21 14:11:29 wilfried Exp $
 
 COMMENT=		'preferences program for wsoundserver'
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=		wsoundserver::audio/wsoundserver
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			wsound::audio/wsoundserver \
 			audiofile::devel/libaudiofile \
-			wraster.2::x11/windowmaker
+			wraster.4::x11/windowmaker
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake noman

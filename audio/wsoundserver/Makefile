@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/28 10:01:22 wilfried Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/21 14:11:29 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
@@ -21,7 +21,7 @@ MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		wmaker::x11/windowmaker
-LIB_DEPENDS=		wraster.2::x11/windowmaker \
+LIB_DEPENDS=		wraster.4::x11/windowmaker \
 			PropList.2::devel/libproplist \
 			audiofile::devel/libaudiofile \
 			dockapp::devel/libdockapp

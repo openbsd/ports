@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:04:27 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/21 14:11:30 wilfried Exp $
 
 COMMENT=		'wm-app; minesweeper'
 
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/mharo/ \
 			ftp://ftp.funet.fi/pub/FreeBSD/eurocrypt/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-LIB_DEPENDS=		wraster.2::x11/windowmaker \
+LIB_DEPENDS=		wraster.4::x11/windowmaker \
 			PropList.2::devel/libproplist
 
 USE_X11=		Yes

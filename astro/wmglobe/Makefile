@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/28 09:59:37 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/21 14:11:29 wilfried Exp $
 
 COMMENT=		'wm-dockapp; displays the earth on an icon'
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			tiff.35::graphics/tiff \
 			png.1::graphics/png \
 			gif.4::graphics/giflib \
-			wraster.2::x11/windowmaker
+			wraster.4::x11/windowmaker
 
 USE_X11=		Yes
 
