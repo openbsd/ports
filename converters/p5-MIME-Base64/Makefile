@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/02 11:56:23 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/06/28 11:53:45 espie Exp $
 
 DISTNAME=       MIME-Base64-2.11
 PKGNAME=        MIME-Base64-2.11
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.290
+NEED_VERSION=	1.302
 
 MAINTAINER=	angelos@openbsd.org
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/02 12:36:44 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/28 11:53:46 espie Exp $
 
 DISTNAME=	DateManip-5.37
 PKGNAME=	p5-DateManip-5.37
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.290
+NEED_VERSION=	1.302
 
 MAINTAINER=	espie@openbsd.org
 
