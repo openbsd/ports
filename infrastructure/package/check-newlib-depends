@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.6 2005/03/05 11:36:26 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.7 2005/03/06 12:05:11 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -128,7 +128,16 @@ package main;
 
 getopts('od:');
 
-my $done = {};
+my $dependencies = {};
+
+sub register_dependencies
+{
+	my $plist = shift;
+	my $pkgname = $plist->pkgname();
+	my $h = {};
+	$dependencies->{$pkgname} = $h;
+	$plist->visit('depwalk', $h);
+}
 
 sub get_plist
 {
@@ -144,6 +153,7 @@ sub get_plist
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	$true_package->close();
 	rmtree($dir);
+	register_dependencies($plist);
 	OpenBSD::SharedLibs::add_plist_libs($plist);
 }
 
@@ -162,14 +172,19 @@ sub report_lib_issue
 			return;
 		}
 	}
-#	my $h = {};
-#	$plist->visit('depwalk', $h);
-#
-#	for my $pname (keys %$h) {
-#		next if $done->{$pname};
-#		$h->{$pname} = get_plist($pname);
-#	}
 
+	for my $p (keys %{$dependencies->{$plist->pkgname()}}) {
+		next if defined $dependencies->{$p};
+		get_plist($p);
+	}
+
+	my @r = OpenBSD::SharedLibs::lookup_libspec('/usr/local', $libspec);
+	for my $p (@r) {
+		if (defined $dependencies->{$plist->pkgname()}->{$p}) {
+			print "Missing: $want from $p ($binary) (probably LIB_DEPENDS)\n";
+			return;
+		}
+	}
 	print "Missing: $want ($binary)\n";
 }
 
@@ -181,6 +196,10 @@ sub analyze
 	my $pkgname = $plist->pkgname();
 	my $t = { haslib => {}, needlib => {} };
 	$plist->visit('check_wantlibs', $t, $where, @l);
+	if (!defined $dependencies->{$pkgname}) {
+		register_dependencies($plist);
+		OpenBSD::SharedLibs::add_plist_libs($plist);
+	}
 	while (my ($lib, $fullname) = each %{$t->{needlib}}) {
 		if (!defined $t->{haslib}->{$lib}) {
 			report_lib_issue($plist, $lib, $fullname);
