@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/09/28 06:02:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2001/10/31 20:43:59 jasoni Exp $
 
 COMMENT=	"color, low memory usage, xterm replacement"
 
@@ -32,5 +32,7 @@ CONFIGURE_ARGS=		--enable-utmp \
 			--enable-xim \
 			--enable-rxvt-scroll \
 			--enable-mousewheel
+
+REGRESS_TARGET=		tests
 
 .include <bsd.port.mk>
