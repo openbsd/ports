@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2002/09/05 12:40:08 lebel Exp $
+# $OpenBSD: Makefile,v 1.47 2002/09/18 07:23:04 jsyn Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR += LPRng
@@ -31,6 +31,7 @@
      SUBDIR += socket
      SUBDIR += stat
      SUBDIR += sysgen
+     SUBDIR += task
      SUBDIR += tcplist
      SUBDIR += upsd
      SUBDIR += usbutil
