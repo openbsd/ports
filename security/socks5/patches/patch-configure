@@ -1,8 +1,6 @@
-# $OpenBSD: patch-configure,v 1.1 2000/03/27 23:02:47 form Exp $
-
---- configure.orig	Fri Mar 12 17:23:42 1999
-+++ configure	Fri Mar 12 17:26:20 1999
-@@ -4732,7 +4732,7 @@
+--- configure.orig	Mon Aug  2 11:01:03 1999
++++ configure	Wed Aug  2 19:22:08 2000
+@@ -4711,7 +4711,7 @@
  	UNIX_SV*|UNIX_System_V*)
  		SHLIB_LFLAGS="-G"
  		;;
@@ -11,7 +9,7 @@
  		SHLIB_LFLAGS="-Bshareable"
  		SHLIB_CFLAGS="-fpic"
  		PRELOADS="LD_PRELOAD"
-@@ -4783,7 +4783,7 @@
+@@ -4763,7 +4763,7 @@
  		UNIX_SV*|UNIX_System_V*)
  			SHLIB_CFLAGS=
  			;;
