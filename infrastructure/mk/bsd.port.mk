@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.511 2002/03/15 13:29:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.512 2002/03/16 00:54:37 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -353,6 +353,10 @@ MAKE_PROGRAM=		${GMAKE}
 MAKE_PROGRAM=		${MAKE}
 .endif
 AUTOCONF_NEW?=	No
+.if ${CONFIGURE_STYLE:L:Mautomake}
+CONFIGURE_STYLE+=gnu
+BUILD_DEPENDS+=		::devel/automake
+.endif
 .if ${CONFIGURE_STYLE:L:Mautoupdate}
 CONFIGURE_STYLE+=autoconf
 .endif
@@ -1699,6 +1703,10 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  endif
 .  if ${CONFIGURE_STYLE:L:Mautoconf}
 	@cd ${AUTOCONF_DIR} && exec ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+.  endif
+.  if !${CONFIGURE_STYLE:L:Mautomake}
+	@ln -s /usr/bin/false ${WRKDIR}/bin/automake
+	@ln -s /usr/bin/false ${WRKDIR}/bin/aclocal
 .  endif
 	@${_MAKE_COOKIE} $@
 .endif
