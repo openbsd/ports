@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2003/09/02 19:28:11 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.31 2003/11/07 04:26:28 pvalchev Exp $
 
 COMMENT=	"X11-based presentation tool"
 
@@ -27,6 +27,7 @@ USE_X11=	Yes
 CONFIGURE_STYLE=autoconf gnu imake
 CONFIGURE_ARGS=	--disable-vflib
 CONFIGURE_ARGS+= --enable-gif
+CONFIGURE_ARGS+= --enable-freetype-charset16
 
 NO_REGRESS=	Yes
 
