@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/09 08:41:53 wilfried Exp $
+bin/wmitime

@@ -1,0 +1,21 @@
+$OpenBSD: patch-wmitime_c,v 1.1.1.1 2001/03/09 08:41:53 wilfried Exp $
+--- wmitime.c.orig	Mon Mar 29 05:56:05 1999
++++ wmitime.c	Thu Mar  8 13:14:35 2001
+@@ -281,7 +281,7 @@ void DrawInetTime(void)
+ 
+     // Compute Inet Time
+     iTime=(clk->tm_hour*3600+clk->tm_min*60+clk->tm_sec);
+-    iTime=iTime+((timezone-1)+3600);
++    iTime=iTime+((1-clk->tm_gmtoff)+3600);
+     if (clk->tm_isdst)
+         iTime-=3600;
+     iTime=(iTime*1000)/86400;
+@@ -398,7 +398,7 @@ void DrawInetWheel(void)
+ 
+     // Calculate Wheel Position...
+     iTime=(clk->tm_hour*3600+clk->tm_min*60+clk->tm_sec);
+-    iTime=iTime+((timezone-1)+3600);
++    iTime=iTime+((1-clk->tm_gmtoff)+3600);
+     if (clk->tm_isdst)
+         iTime-=3600;
+     iTime=(iTime*1000)/8640;
