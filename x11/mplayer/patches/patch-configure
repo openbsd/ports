@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.20 2003/04/17 10:35:07 wilfried Exp $
---- configure.orig	Sat Mar 22 17:29:16 2003
-+++ configure	Mon Apr  7 09:29:04 2003
+$OpenBSD: patch-configure,v 1.21 2003/04/21 15:29:16 brad Exp $
+--- configure.orig	Sat Mar 22 11:29:16 2003
++++ configure	Mon Apr 14 20:13:45 2003
 @@ -3518,7 +3518,7 @@ echores "$_sgiaudio"
  
  
@@ -19,3 +19,13 @@ $OpenBSD: patch-configure,v 1.20 2003/04/17 10:35:07 wilfried Exp $
    _iconv_tmp='#include <iconv.h>'
  
    cat > $TMPC << EOF
+@@ -5400,6 +5400,9 @@ $_def_vcd
+ #define DEFAULT_DVD_DEVICE	"D:"
+ #elif defined(SYS_DARWIN)
+ #define DEFAULT_CDROM_DEVICE    "/dev/rdiskN"
++#define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
++#elif defined(__OpenBSD__)
++#define DEFAULT_CDROM_DEVICE	"/dev/rcd0a"
+ #define DEFAULT_DVD_DEVICE	DEFAULT_CDROM_DEVICE
+ #else
+ #define DEFAULT_CDROM_DEVICE    "/dev/cdrom"
