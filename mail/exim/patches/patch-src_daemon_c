@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_daemon_c,v 1.1 2002/12/07 16:34:57 brad Exp $
+--- src/daemon.c.orig Sat Dec  7 07:59:03 2002
++++ src/daemon.c Sat Dec  7 07:59:18 2002
+@@ -590,7 +590,7 @@ if (smtp_port < 0)
+   if (pid_file_path[0] == 0)
+     sprintf(buff, "%s/exim-daemon.pid", spool_directory);
+   else
+-    sprintf(buff, pid_file_path, "");
++    strcpy(buff, pid_file_path);
+   }
+ else
+   {
+@@ -598,9 +598,7 @@ else
+     sprintf(buff, "%s/exim-daemon.%d.pid", spool_directory, smtp_port);
+   else
+     {
+-    char dbuff[12];
+-    sprintf(dbuff, ".%d", smtp_port);
+-    sprintf(buff, pid_file_path, dbuff);
++    strcpy(buff, pid_file_path);
+     }
+   }
+
