@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/29 03:30:02 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/15 21:14:36 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -79,6 +79,10 @@ CONFIGURE_ARGS+= --with-domain="${DOMAIN}"
 .endif
 
 WRKDIST=	${WRKDIR}/${DISTNAME:S/i$//}
+
+post-configure:
+# make sure `missing' as the proper bits sets.
+	@chmod 755 ${WRKSRC}/missing
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
