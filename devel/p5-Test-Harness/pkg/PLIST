@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/27 09:03:11 shell Exp $
+libdata/perl5/site_perl/Test/Harness.pm
+man/man3/Test::Harness.3p
