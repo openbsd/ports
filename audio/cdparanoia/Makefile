@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/31 09:40:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/09 01:18:10 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/01/19 08:03:00 itohy Exp $
 
 COMMENT=	"CDDA reading utility with extra data verification features"
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_ENV=GCC=${CC}
 
 post-install:
-	${INSTALL_DATA} ${WRKBUILD}/FAQ.txt ${PREFIX}/share/cdparanoia-FAQ
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdparanoia
+	${INSTALL_DATA} ${WRKBUILD}/FAQ.txt ${PREFIX}/share/doc/cdparanoia
 
 .include <bsd.port.mk>
 

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/08/23 16:23:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/03/09 01:18:10 naddy Exp $
 bin/cdparanoia
 include/cdda_interface.h
 include/cdda_paranoia.h
 lib/libcdda_interface.a
 lib/libcdda_paranoia.a
 man/man1/cdparanoia.1
-share/cdparanoia-FAQ
+share/doc/cdparanoia/FAQ.txt
 %%SHARED%%
+@dirrm share/doc/cdparanoia
