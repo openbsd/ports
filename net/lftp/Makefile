@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2001/01/04 14:24:16 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/01/19 02:56:37 kevlo Exp $
 
-DISTNAME=	lftp-2.3.6
+DISTNAME=	lftp-2.3.7
 CATEGORIES=     net
 NEED_VERSION=	1.337
 MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-CONFIGURE_STYLE=	gnu 
+CONFIGURE_STYLE= gnu 
 
 FLAVORS=	ssl
 FLAVOR?=
@@ -27,6 +27,6 @@ CONFIGURE_ARGS=	--without-ssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lftp
-	${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/lib/lftp/lftp.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/lib/lftp/lftp.conf-sample
 
 .include <bsd.port.mk>
