@@ -1,6 +1,0 @@
-OTOP=../ocaml_stuff
-OPT=
-OLIBDIR=$(DESTDIR)@PREFIX@/lib/ocaml
-BINDIR=$(DESTDIR)@PREFIX@/bin
-LIBDIR=$(DESTDIR)@PREFIX@/lib/camlp4
-MANDIR=$(DESTDIR)@PREFIX@/man/man1
