@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/17 11:56:01 jakob Exp $
+bin/aggregate
+bin/aggregate-ios
+man/man1/aggregate.1
+man/man1/aggregate-ios.1
