@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/14 14:08:07 brad Exp $
+LessTif/Motif1.2/lib/libXm.so.1.2
+LessTif/Motif1.2/lib/libMrm.so.1.2
+lib/libXm.so.1.2
+lib/libMrm.so.1.2
+@exec /sbin/ldconfig -m %B

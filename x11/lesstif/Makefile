@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2000/04/16 21:33:02 brad Exp $
+# $OpenBSD: Makefile,v 1.38 2000/06/14 14:08:07 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1998/03/28 14:12:55 steve Exp $
 
 DISTNAME=	lesstif-0.89.9
 CATEGORIES=	x11
-NEED_VERSION=	1.234
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/obsolete/ \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/obsolete/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/obsolete/
@@ -15,11 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
-USE_X11=	Yes
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--enable-static --enable-production --enable-build-12 \
 		--disable-build-20 --disable-build-Xbae --disable-build-Xlt \
