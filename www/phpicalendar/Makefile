@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/22 10:12:18 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/05 16:27:14 xsa Exp $
 
 COMMENT=	"web-based iCal file parser"
 
-V=		1.1
+V=		2.0b
 DISTNAME=	phpicalendar-${V}
 CATEGORIES=	www
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phpicalendar/}
 EXTRACT_SUFX=	.tgz
 EXTRACT_ONLY=
 
-RUN_DEPENDS=	:php4-core-*:www/php4/core
+RUN_DEPENDS=	:php5-core-*:www/php5/core
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
