@@ -1,0 +1,106 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2001/02/05 19:11:57 danh Exp $
+#
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH="/bin:/usr/bin:/sbin:/usr/sbin"
+PREFIX="${PKG_PREFIX:-/usr/local}"
+CONFIG_DIR="${SYSCONFDIR}/raddb"
+SAMPLE_DIR="${PREFIX}/share/examples/radiusd-cistron"
+RADACCT_DIR="/var/log/radacct"
+
+do_notice()
+{
+    echo 
+    echo "+---------------"
+    echo "| The directory ${CONFIG_DIR} already exists on your system. The"
+    echo "| configuration files have NOT been updated.  Please look at the"
+    echo "| files located in ${SAMPLE_DIR} and"
+    echo "| add any desired (but missing) entries into your configuration"
+    echo "| files."
+}
+
+do_install()
+{
+    install -d -m 0755 -o root -g wheel ${CONFIG_DIR}
+    install -d -m 0700 -o root -g wheel ${RADACCT_DIR}
+    install -m 0600 -o root -g wheel ${SAMPLE_DIR}/clients \
+	${CONFIG_DIR}/clients
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary \
+	${CONFIG_DIR}/dictionary
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.ascend \
+	${CONFIG_DIR}/dictionary.ascend
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.cisco \
+	${CONFIG_DIR}/dictionary.cisco
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.compat \
+	${CONFIG_DIR}/dictionary.compat
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.livingston \
+	${CONFIG_DIR}/dictionary.livingston
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.shiva \
+	${CONFIG_DIR}/dictionary.shiva
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.tunnel \
+	${CONFIG_DIR}/dictionary.tunnel
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.usr \
+	${CONFIG_DIR}/dictionary.usr
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.versanet \
+	${CONFIG_DIR}/dictionary.versanet
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/hints ${CONFIG_DIR}/hints
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/huntgroups \
+	${CONFIG_DIR}/huntgroups
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/naslist \
+	${CONFIG_DIR}/naslist
+    install -m 0600 -o root -g wheel ${SAMPLE_DIR}/naspasswd \
+	${CONFIG_DIR}/naspasswd
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/realms ${CONFIG_DIR}/realms
+    install -m 0600 -o root -g wheel ${SAMPLE_DIR}/users ${CONFIG_DIR}/users
+    echo
+    echo "+---------------"
+    echo "| The RADIUS configuration files have been installed in"
+    echo "| ${CONFIG_DIR}.  By default, radiusd will log the accounting"
+    echo "| information to ${RADACCT_DIR}."
+}
+
+do_directions()
+{
+    echo "|"
+    echo "| You will need to edit /etc/rc.local as appropriate and add a"
+    echo "| section similiar to the following:"
+    echo "|"
+    echo "|     if [ -x ${PREFIX}/sbin/radiusd ]; then"
+    echo "|             ${PREFIX}/sbin/radiusd -y && echo -n ' radiusd'"
+    echo "|     fi"
+    echo "|"
+    echo "| See radiusd(8) for more available options."
+    echo "+---------------"
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# verify the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	if [ -d $CONFIG_DIR ]; then
+	    do_notice $1
+	else
+	    do_install $1
+	fi
+	do_directions $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
