@@ -1,0 +1,11 @@
+--- unix.mak.orig	Wed Jun  5 18:17:49 2002
++++ unix.mak	Wed Jun  5 18:20:56 2002
+@@ -1106,7 +1106,7 @@
+ PW_LIBDIR	= $(PWLIBDIR)/lib
+ 
+ # set name of the PT library
+-PTLIB_BASE	= pt_$(PLATFORM_TYPE)_$(OBJ_SUFFIX)
++PTLIB_BASE	= pt
+ PTLIB_FILE	= lib$(PTLIB_BASE)$(LIB_TYPE).$(LIB_SUFFIX)
+ PT_OBJBASE	= obj_$(PLATFORM_TYPE)_$(OBJDIR_SUFFIX)
+ PT_OBJDIR	= $(PW_LIBDIR)/$(PT_OBJBASE)

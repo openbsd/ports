@@ -1,0 +1,5 @@
+OpenH323 is a free, open-source (Mozilla Public License) library for the
+H.323 internet teleconferencing protocol (as used in NetMeeting, etc).
+A simple client is also provided for testing purposes.
+
+WWW: ${HOMEPAGE}

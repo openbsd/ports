@@ -1,0 +1,12 @@
+$OpenBSD: patch-openh323u_mak,v 1.1.1.1 2002/07/28 19:35:51 couderc Exp $
+--- openh323u.mak.orig	Wed Jun  5 16:44:43 2002
++++ openh323u.mak	Wed Jun  5 16:46:33 2002
+@@ -106,7 +106,7 @@ endif
+ 
+ 
+ 
+-OH323_BASE  = h323_$(PLATFORM_TYPE)_$(OH323_SUFFIX)$(LIB_TYPE)
++OH323_BASE  = h323$(LIB_TYPE)
+ OH323_FILE  = lib$(OH323_BASE).$(LIB_SUFFIX)
+ 
+ LDFLAGS	    += -L$(OH323_LIBDIR)

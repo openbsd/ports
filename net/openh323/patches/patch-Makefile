@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2002/07/28 19:35:51 couderc Exp $
+--- Makefile.orig	Tue Jun  4 17:11:35 2002
++++ Makefile	Tue Jun  4 17:16:22 2002
+@@ -195,7 +195,7 @@
+ # Revision 1.1  1999/01/16 10:32:26  robertj
+ # Initial revision
+ #
+-export INSTALL_DIR=/usr/local
++export INSTALL_DIR=$(PREFIX)
+ 
+ ifndef PWLIBDIR
+ export PWLIBDIR=$(HOME)/pwlib
+@@ -253,4 +253,4 @@ docs: 
+ 	doc++ --dir html --tables openh323.dxx
+ 
+ install:
+-	make -C src install
++	$(MAKE) -C src install
