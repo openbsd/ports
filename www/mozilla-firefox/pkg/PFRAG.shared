@@ -1,75 +1,73 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/02/15 19:37:14 wilfried Exp $
-mozilla-firefox/components/libaccessibility.so.1.0
-mozilla-firefox/components/libappcomps.so.1.0
-mozilla-firefox/components/libautoconfig.so.1.0
-mozilla-firefox/components/libbrowsercomps.so.1.0
-mozilla-firefox/components/libcaps.so.1.0
-mozilla-firefox/components/libchrome.so.1.0
-mozilla-firefox/components/libcomposer.so.1.0
-mozilla-firefox/components/libcookie.so.1.0
-mozilla-firefox/components/libdocshell.so.1.0
-mozilla-firefox/components/libeditor.so.1.0
-mozilla-firefox/components/libembedcomponents.so.1.0
-mozilla-firefox/components/libfileview.so.1.0
-mozilla-firefox/components/libgfx_gtk.so.1.0
-mozilla-firefox/components/libgfxps.so.1.0
-mozilla-firefox/components/libgfxxprint.so.1.0
-mozilla-firefox/components/libgklayout.so.1.0
-mozilla-firefox/components/libgkplugin.so.1.0
-mozilla-firefox/components/libhtmlpars.so.1.0
-mozilla-firefox/components/libi18n.so.1.0
-mozilla-firefox/components/libimglib2.so.1.0
-mozilla-firefox/components/libipcdc.so.1.0
-mozilla-firefox/components/libjar50.so.1.0
-mozilla-firefox/components/libjsd.so.1.0
-mozilla-firefox/components/libjsdom.so.1.0
-mozilla-firefox/components/libmork.so.1.0
-mozilla-firefox/components/libmozfind.so.1.0
-mozilla-firefox/components/libnecko.so.1.0
-mozilla-firefox/components/libnecko2.so.1.0
-mozilla-firefox/components/libnsappshell.so.1.0
-mozilla-firefox/components/libnsprefm.so.1.0
-mozilla-firefox/components/liboji.so.1.0
-mozilla-firefox/components/libp3p.so.1.0
-mozilla-firefox/components/libpipboot.so.1.0
-mozilla-firefox/components/libpipnss.so.1.0
-mozilla-firefox/components/libpippki.so.1.0
-mozilla-firefox/components/libpref.so.1.0
-mozilla-firefox/components/libprofile.so.1.0
-mozilla-firefox/components/librdf.so.1.0
-mozilla-firefox/components/libtoolkitcomps.so.1.0
-mozilla-firefox/components/libtransformiix.so.1.0
-mozilla-firefox/components/libtxmgr.so.1.0
-mozilla-firefox/components/libtypeaheadfind.so.1.0
-mozilla-firefox/components/libuconv.so.1.0
-mozilla-firefox/components/libucvmath.so.1.0
-mozilla-firefox/components/libuniversalchardet.so.1.0
-mozilla-firefox/components/libwebbrwsr.so.1.0
-mozilla-firefox/components/libwebsrvcs.so.1.0
-mozilla-firefox/components/libwidget_gtk.so.1.0
-mozilla-firefox/components/libxmlextras.so.1.0
-mozilla-firefox/components/libxpcom_compat_c.so.1.0
-mozilla-firefox/components/libxpconnect.so.1.0
-mozilla-firefox/components/libxpinstall.so.1.0
-mozilla-firefox/components/libxremote_client.so.1.0
-mozilla-firefox/components/libxremoteservice.so.1.0
-mozilla-firefox/libgkgfx.so.1.0
-mozilla-firefox/libgtkembedmoz.so.1.0
-mozilla-firefox/libgtksuperwin.so.1.0
-mozilla-firefox/libgtkxtbin.so.1.0
-mozilla-firefox/libjsj.so.1.0
-mozilla-firefox/libmozjs.so.1.0
-mozilla-firefox/libnspr4.so.1.0
-mozilla-firefox/libnss3.so.1.0
-mozilla-firefox/libnssckbi.so.1.0
-mozilla-firefox/libplc4.so.1.0
-mozilla-firefox/libplds4.so.1.0
-mozilla-firefox/libsmime3.so.1.0
-mozilla-firefox/libsoftokn3.so.1.0
-mozilla-firefox/libssl3.so.1.0
-mozilla-firefox/libxlibrgb.so.1.0
-mozilla-firefox/libxpcom.so.1.0
-mozilla-firefox/libxpcom_compat.so.1.0
-mozilla-firefox/libxpistub.so.1.0
-@comment NEWDYNLIBDIR(%D/mozilla-firefox)
-@comment NEWDYNLIBDIR(%D/mozilla-firefox/components)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/08/08 17:19:37 robert Exp $
+@lib mozilla-firefox/components/libaccessibility.so.1.0
+@lib mozilla-firefox/components/libappcomps.so.1.0
+@lib mozilla-firefox/components/libautoconfig.so.1.0
+@lib mozilla-firefox/components/libbrowsercomps.so.1.0
+@lib mozilla-firefox/components/libcaps.so.1.0
+@lib mozilla-firefox/components/libchrome.so.1.0
+@lib mozilla-firefox/components/libcomposer.so.1.0
+@lib mozilla-firefox/components/libcookie.so.1.0
+@lib mozilla-firefox/components/libdocshell.so.1.0
+@lib mozilla-firefox/components/libeditor.so.1.0
+@lib mozilla-firefox/components/libembedcomponents.so.1.0
+@lib mozilla-firefox/components/libfileview.so.1.0
+@lib mozilla-firefox/components/libgfx_gtk.so.1.0
+@lib mozilla-firefox/components/libgfxps.so.1.0
+@lib mozilla-firefox/components/libgfxxprint.so.1.0
+@lib mozilla-firefox/components/libgklayout.so.1.0
+@lib mozilla-firefox/components/libgkplugin.so.1.0
+@lib mozilla-firefox/components/libhtmlpars.so.1.0
+@lib mozilla-firefox/components/libi18n.so.1.0
+@lib mozilla-firefox/components/libimglib2.so.1.0
+@lib mozilla-firefox/components/libipcdc.so.1.0
+@lib mozilla-firefox/components/libjar50.so.1.0
+@lib mozilla-firefox/components/libjsd.so.1.0
+@lib mozilla-firefox/components/libjsdom.so.1.0
+@lib mozilla-firefox/components/libmork.so.1.0
+@lib mozilla-firefox/components/libmozfind.so.1.0
+@lib mozilla-firefox/components/libnecko.so.1.0
+@lib mozilla-firefox/components/libnecko2.so.1.0
+@lib mozilla-firefox/components/libnsappshell.so.1.0
+@lib mozilla-firefox/components/libnsprefm.so.1.0
+@lib mozilla-firefox/components/liboji.so.1.0
+@lib mozilla-firefox/components/libp3p.so.1.0
+@lib mozilla-firefox/components/libpipboot.so.1.0
+@lib mozilla-firefox/components/libpipnss.so.1.0
+@lib mozilla-firefox/components/libpippki.so.1.0
+@lib mozilla-firefox/components/libpref.so.1.0
+@lib mozilla-firefox/components/libprofile.so.1.0
+@lib mozilla-firefox/components/librdf.so.1.0
+@lib mozilla-firefox/components/libtoolkitcomps.so.1.0
+@lib mozilla-firefox/components/libtransformiix.so.1.0
+@lib mozilla-firefox/components/libtxmgr.so.1.0
+@lib mozilla-firefox/components/libtypeaheadfind.so.1.0
+@lib mozilla-firefox/components/libuconv.so.1.0
+@lib mozilla-firefox/components/libucvmath.so.1.0
+@lib mozilla-firefox/components/libuniversalchardet.so.1.0
+@lib mozilla-firefox/components/libwebbrwsr.so.1.0
+@lib mozilla-firefox/components/libwebsrvcs.so.1.0
+@lib mozilla-firefox/components/libwidget_gtk.so.1.0
+@lib mozilla-firefox/components/libxmlextras.so.1.0
+@lib mozilla-firefox/components/libxpcom_compat_c.so.1.0
+@lib mozilla-firefox/components/libxpconnect.so.1.0
+@lib mozilla-firefox/components/libxpinstall.so.1.0
+@lib mozilla-firefox/components/libxremote_client.so.1.0
+@lib mozilla-firefox/components/libxremoteservice.so.1.0
+@lib mozilla-firefox/libgkgfx.so.1.0
+@lib mozilla-firefox/libgtkembedmoz.so.1.0
+@lib mozilla-firefox/libgtksuperwin.so.1.0
+@lib mozilla-firefox/libgtkxtbin.so.1.0
+@lib mozilla-firefox/libjsj.so.1.0
+@lib mozilla-firefox/libmozjs.so.1.0
+@lib mozilla-firefox/libnspr4.so.1.0
+@lib mozilla-firefox/libnss3.so.1.0
+@lib mozilla-firefox/libnssckbi.so.1.0
+@lib mozilla-firefox/libplc4.so.1.0
+@lib mozilla-firefox/libplds4.so.1.0
+@lib mozilla-firefox/libsmime3.so.1.0
+@lib mozilla-firefox/libsoftokn3.so.1.0
+@lib mozilla-firefox/libssl3.so.1.0
+@lib mozilla-firefox/libxlibrgb.so.1.0
+@lib mozilla-firefox/libxpcom.so.1.0
+@lib mozilla-firefox/libxpcom_compat.so.1.0
+@lib mozilla-firefox/libxpistub.so.1.0
