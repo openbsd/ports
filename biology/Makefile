@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2004/05/07 08:59:37 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/21 01:41:51 pvalchev Exp $
 #
 
+     SUBDIR += nutdb
      SUBDIR += py-biopython
 
 .include <bsd.port.subdir.mk>
