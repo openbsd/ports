@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.592 2003/12/16 19:05:23 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.593 2003/12/24 00:08:48 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1928,7 +1928,7 @@ _fetch-makefile:
 .  for _F in ${_ALLFILES}
 	@if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
 		echo "|${_F}|" >>$${_DONE_FILES}; \
-		${MAKE} _fetch-onefile _F=${_F}; \
+		${MAKE} _fetch-onefile _file=${_F}; \
 	fi
 .  endfor
 .endif
@@ -1936,19 +1936,21 @@ _fetch-makefile:
 
 
 _fetch-onefile:
+# XXX loop so that M${_F} will work
+.for _F in ${_file}
 	@echo '${_F}: $$F'
 	@echo -n '\t@MAINTAINER="${MAINTAINER}" '
-.if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
+.  if defined(DIST_SUBDIR) && !empty(DIST_SUBDIR)
 	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
-.endif
+.  endif
 	@echo '\\'
 	@select='${_EVERYTHING:M*${_F:S@^${DIST_SUBDIR}/@@}\:[0-9]}'; \
 	${_SITE_SELECTOR}; \
 	echo "\t SITES=\"$$sites\" \\"
-.if ${FETCH_MANUALLY:L} != "no"
+.  if ${FETCH_MANUALLY:L} != "no"
 	@echo '\t FETCH_MANUALLY="Yes" \\'
-.endif
-.if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
+.  endif
+.  if !defined(NO_CHECKSUM) && !empty(_CKSUMFILES:M${_F})
 	@checksum_file=${CHECKSUM_FILE}; \
 	if [ ! -f $$checksum_file ]; then \
 	  echo >&2 'Missing checksum file: $$checksum_file'; \
@@ -1969,8 +1971,9 @@ _fetch-onefile:
 		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" \\";; \
 	  esac; \
 	fi
-.endif
+.  endif
 	@echo '\t $${EXEC} $${FETCH} "$$@"'
+.endfor
 
 
 # Internal variables, used by dependencies targets
