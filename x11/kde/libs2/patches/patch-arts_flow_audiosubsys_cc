@@ -1,6 +1,6 @@
-$OpenBSD: patch-arts_flow_audiosubsys_cc,v 1.1 2000/11/27 20:41:59 espie Exp $
---- arts/flow/audiosubsys.cc.orig	Sun Nov 26 16:53:50 2000
-+++ arts/flow/audiosubsys.cc	Sun Nov 26 16:57:02 2000
+$OpenBSD: patch-arts_flow_audiosubsys_cc,v 1.2 2000/12/29 22:53:53 espie Exp $
+--- arts/flow/audiosubsys.cc.orig	Sun Nov 26 17:35:31 2000
++++ arts/flow/audiosubsys.cc	Sun Dec 17 00:32:51 2000
 @@ -36,6 +36,10 @@
  #ifdef HAVE_SYS_SOUNDCARD_H
  #include <sys/soundcard.h>
@@ -31,7 +31,7 @@ $OpenBSD: patch-arts_flow_audiosubsys_cc,v 1.1 2000/11/27 20:41:59 espie Exp $
  	int mode;
  
  	if(_fullDuplex)
-@@ -376,6 +382,7 @@ int AudioSubSystem::open()
+@@ -386,6 +392,7 @@ int AudioSubSystem::open()
  	assert(fragment_buffer == 0);
  	fragment_buffer = new char[_fragmentSize];
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-arts_flow_audiosubsys_cc,v 1.1 2000/11/27 20:41:59 espie Exp $
  	/*
  	 * Workaround for broken kernel drivers: usually filling up the audio
  	 * buffer is _only_ required if _fullDuplex is true. However, there
-@@ -390,6 +397,7 @@ int AudioSubSystem::open()
+@@ -400,6 +407,7 @@ int AudioSubSystem::open()
  		assert(len == _fragmentSize);
  	}
  	free(zbuffer);
@@ -47,7 +47,7 @@ $OpenBSD: patch-arts_flow_audiosubsys_cc,v 1.1 2000/11/27 20:41:59 espie Exp $
  
  	/*
  	 * Triggering - the original aRts code did this for full duplex:
-@@ -450,7 +458,7 @@ bool AudioSubSystem::running()
+@@ -460,7 +468,7 @@ bool AudioSubSystem::running()
  
  void AudioSubSystem::handleIO(int type)
  {
