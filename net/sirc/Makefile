@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/09 23:26:35 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/25 01:02:41 pvalchev Exp $
 
 COMMENT=	"programmable small perl irc client"
 
 DISTNAME=	sirc-2.211
 CATEGORIES=	net
-NEED_VERSION=	1.363
+NEED_VERSION=	1.417
 MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES0=	${HOMEPAGE}scripts/
+
+PATCHFILES=	ssfe.diff:0
 
 HOMEPAGE=	http://www.iagora.com/~espel/sirc/
 
