@@ -1,5 +1,5 @@
-*** Makefile.orig	Thu Jan 29 06:46:41 1998
---- Makefile	Thu Jul 15 10:29:16 1999
+*** makefile.orig	Thu Jan 29 06:46:41 1998
+--- makefile	Thu Jul 15 10:29:16 1999
 ***************
 *** 3,14 ****
   

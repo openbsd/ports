@@ -1,0 +1,42 @@
+*** comms.c.orig	Fri Sep  3 12:27:47 1999
+--- comms.c	Fri Sep  3 12:35:34 1999
+***************
+*** 1260,1266 ****
+      struct action      *action  = NULL;
+      struct pk_draw_msg *message = NULL;
+      char arg[LEN];
+!     char filename[L_tmpnam] = "";
+      FILE *tmpfile;
+      int i, result;
+  
+--- 1260,1266 ----
+      struct action      *action  = NULL;
+      struct pk_draw_msg *message = NULL;
+      char arg[LEN];
+!     char filename[L_tmpnam] = "wbd.XXXXXXXX";
+      FILE *tmpfile;
+      int i, result;
+  
+***************
+*** 1287,1299 ****
+      }
+  
+      /* Dump the PostScript to a temp file. */
+! 	if (tmpnam (filename) == NULL)
+!     {
+!         printf ("Failed to create temp file.\n");
+!         return -1;
+!     }
+!     tmpfile = fopen (filename, "wb");
+!     if (tmpfile == NULL)
+      {
+          printf ("Failed to create temp file.\n");
+          return -1;
+--- 1287,1293 ----
+      }
+  
+      /* Dump the PostScript to a temp file. */
+!     if ((tmpfile = fdopen(mkstemp(filename), "wb")) == NULL)
+      {
+          printf ("Failed to create temp file.\n");
+          return -1;
