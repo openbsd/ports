@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_FbCommands_cc,v 1.3 2004/04/28 18:10:34 robert Exp $
+--- src/FbCommands.cc.orig	Sun Apr 18 13:51:59 2004
++++ src/FbCommands.cc	Sun Apr 18 13:53:17 2004
+@@ -65,7 +65,7 @@
+         displaystring += intbuff;
+         setsid();
+         putenv(const_cast<char *>(displaystring.c_str()));
+-        execl("/bin/sh", "/bin/sh", "-c", m_cmd.c_str(), 0);
++        execl("/bin/sh", "/bin/sh", "-c", m_cmd.c_str(), (void *)NULL);
+         exit(0);
+     }
+ #else //   __EMX__

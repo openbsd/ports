@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/08/26 19:46:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/04/28 18:10:34 robert Exp $
 @pkgcfl blackbox-*
 @pkgcfl openbox-*
-bin/bsetbg
 bin/bsetroot
 bin/fbrun
+bin/fbsetbg
 bin/fluxbox
 bin/fluxbox-generate_menu
+bin/startfluxbox
 man/man1/bsetroot.1
+man/man1/fbrun.1
+man/man1/fbsetbg.1
 man/man1/fluxbox.1
+man/man1/fluxstyle.1
+man/man1/startfluxbox.1
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
@@ -16,6 +21,7 @@ share/fluxbox/nls/POSIX
 share/fluxbox/nls/US_ASCII
 share/fluxbox/nls/bg_BG/fluxbox.cat
 share/fluxbox/nls/da_DK/fluxbox.cat
+share/fluxbox/nls/de_DE/fluxbox.cat
 share/fluxbox/nls/en
 share/fluxbox/nls/en_US
 share/fluxbox/nls/es
@@ -27,45 +33,95 @@ share/fluxbox/nls/it_IT/fluxbox.cat
 share/fluxbox/nls/ja_JP/fluxbox.cat
 share/fluxbox/nls/lv
 share/fluxbox/nls/lv_LV/fluxbox.cat
+share/fluxbox/nls/nl_NL/fluxbox.cat
+share/fluxbox/nls/pl_PL/fluxbox.cat
 share/fluxbox/nls/pt_BR/fluxbox.cat
 share/fluxbox/nls/pt_PT/fluxbox.cat
 share/fluxbox/nls/ru_RU/fluxbox.cat
+share/fluxbox/nls/sl_SI/fluxbox.cat
 share/fluxbox/nls/sv_SE/fluxbox.cat
 share/fluxbox/nls/tr_TR/fluxbox.cat
 share/fluxbox/styles/Artwiz
-share/fluxbox/styles/Blue
+share/fluxbox/styles/BlueFlux/pixmaps/button_close_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_close_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_max_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_max_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_max_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_min_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_min_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_min_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stick_active.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stick_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stick_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stuck.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_stuck_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_toolbar.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/button_toolbar_pressed.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/menu_frame.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/title_bar.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/title_bar_unfocus.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/toolbar.xpm
+share/fluxbox/styles/BlueFlux/pixmaps/toolbar_label.xpm
+share/fluxbox/styles/BlueFlux/theme.cfg
 share/fluxbox/styles/BlueNight
 share/fluxbox/styles/Carbondioxide
 share/fluxbox/styles/Clean
-share/fluxbox/styles/CleanColor
 share/fluxbox/styles/Cthulhain
+share/fluxbox/styles/Emerge/pixmaps/bullet.xpm
+share/fluxbox/styles/Emerge/pixmaps/close-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/close-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/close.xpm
+share/fluxbox/styles/Emerge/pixmaps/icon-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/icon-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/icon.xpm
+share/fluxbox/styles/Emerge/pixmaps/max-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/max-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/max.xpm
+share/fluxbox/styles/Emerge/pixmaps/selected.xpm
+share/fluxbox/styles/Emerge/pixmaps/stick-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/stick-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/stick.xpm
+share/fluxbox/styles/Emerge/pixmaps/stuck-pressed.xpm
+share/fluxbox/styles/Emerge/pixmaps/stuck-unfocus.xpm
+share/fluxbox/styles/Emerge/pixmaps/stuck.xpm
+share/fluxbox/styles/Emerge/pixmaps/unselected.xpm
+share/fluxbox/styles/Emerge/theme.cfg
 share/fluxbox/styles/Flux
 share/fluxbox/styles/LemonSpace
 share/fluxbox/styles/Makro
 share/fluxbox/styles/MerleyKay
+share/fluxbox/styles/Meta
 share/fluxbox/styles/Minimal
 share/fluxbox/styles/Nyz
 share/fluxbox/styles/Operation
 share/fluxbox/styles/Outcomes
 share/fluxbox/styles/Rampage
-share/fluxbox/styles/Rancor
 share/fluxbox/styles/Results
 share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
+@dirrm share/fluxbox/styles/Emerge/pixmaps
+@dirrm share/fluxbox/styles/Emerge
+@dirrm share/fluxbox/styles/BlueFlux/pixmaps
+@dirrm share/fluxbox/styles/BlueFlux
 @dirrm share/fluxbox/styles
 @dirrm share/fluxbox/nls/tr_TR
 @dirrm share/fluxbox/nls/sv_SE
+@dirrm share/fluxbox/nls/sl_SI
 @dirrm share/fluxbox/nls/ru_RU
 @dirrm share/fluxbox/nls/pt_PT
 @dirrm share/fluxbox/nls/pt_BR
+@dirrm share/fluxbox/nls/pl_PL
+@dirrm share/fluxbox/nls/nl_NL
 @dirrm share/fluxbox/nls/lv_LV
 @dirrm share/fluxbox/nls/ja_JP
 @dirrm share/fluxbox/nls/it_IT
 @dirrm share/fluxbox/nls/fr_FR
 @dirrm share/fluxbox/nls/et_EE
 @dirrm share/fluxbox/nls/es_ES
+@dirrm share/fluxbox/nls/de_DE
 @dirrm share/fluxbox/nls/da_DK
 @dirrm share/fluxbox/nls/bg_BG
 @dirrm share/fluxbox/nls/C
