@@ -1,7 +1,6 @@
-$OpenBSD: patch-database.c,v 1.1.1.1 2000/05/29 16:46:51 reinhard Exp $
-# ncurses.h->curses.h
---- database.c.orig	Wed May 17 11:10:05 2000
-+++ database.c	Mon May 29 15:54:15 2000
+$OpenBSD: patch-database.c,v 1.2 2000/06/22 13:10:22 reinhard Exp $
+--- database.c.orig	Wed Jun 14 17:32:21 2000
++++ database.c	Thu Jun 22 14:34:42 2000
 @@ -6,7 +6,7 @@
   * Copyright (C) Jaakko Heinonen
   */
