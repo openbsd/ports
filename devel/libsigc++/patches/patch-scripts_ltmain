@@ -1,38 +1,53 @@
-$OpenBSD: patch-scripts_ltmain,v 1.1 2001/06/20 11:14:17 shell Exp $
---- scripts/ltmain.sh.orig	Wed Jun 20 17:07:35 2001
-+++ scripts/ltmain.sh	Wed Jun 20 17:12:10 2001
-@@ -1079,6 +1079,9 @@
+$OpenBSD: patch-scripts_ltmain,v 1.2 2001/10/24 12:54:37 shell Exp $
+--- scripts/ltmain.sh.orig	Fri Jul 14 05:54:59 2000
++++ scripts/ltmain.sh	Wed Oct 24 18:25:51 2001
+@@ -1079,6 +1079,17 @@
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
 +	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
++	  esac
++	elif test "$arg" = "-lc_r"; then
++	  case "$host" in
++	  *-*-openbsd*)
++	    # Do not include libc_r directly, use -pthread flag.
 +	    continue
 +	    ;;
  	  esac
  	elif test "$arg" = "-lm"; then
  	  case "$host" in
-@@ -1103,6 +1106,10 @@
+@@ -1091,6 +1102,17 @@
+ 	deplibs="$deplibs $arg"
+ 	;;
  
-       -o) prev=output ;;
- 
-+      -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
++      -pthread)
++	case $host in
++	*-*-openbsd*)
++	  deplibs="$deplibs $arg"
++	  ;;
++	*)
++	  continue
++	  ;;
++	esac
++	;;
 +
-       -release)
- 	prev=release
+       -module)
+ 	module=yes
  	continue
-@@ -1799,6 +1806,9 @@
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
+@@ -1795,6 +1817,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
  	  ;;
 +	*-*-openbsd*)
-+	  # do not include libc due to us having libc/libc_r ?
++	  # Do not include libc due to us having libc/libc_r.
 +	  ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3567,40 +3577,6 @@
+         *-*-rhapsody*)
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+@@ -3571,40 +3596,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

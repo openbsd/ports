@@ -1,12 +1,12 @@
-$OpenBSD: patch-sigc++_Makefile_am,v 1.1 2001/07/20 20:59:33 shell Exp $
---- sigc++/Makefile.am.orig	Fri Jul 20 14:15:02 2001
-+++ sigc++/Makefile.am	Fri Jul 20 14:15:29 2001
-@@ -13,7 +13,7 @@ libsigc_la_SOURCES= \
-    basic_signal.cc adaptor.cc thread.cc
+$OpenBSD: patch-sigc++_Makefile_am,v 1.2 2001/10/24 12:54:37 shell Exp $
+--- sigc++/Makefile.am.orig	Wed Oct 24 18:32:01 2001
++++ sigc++/Makefile.am	Wed Oct 24 18:32:11 2001
+@@ -14,7 +14,7 @@
+ EXTRA_libsigc_la_SOURCES = sigc_res.rc
  
  libsigc_la_LDFLAGS = -version-info $(LIBSIGC_SO_VERSION) \
 -                     -release $(SIGC_RELEASE) -no-undefined
 +                     -no-undefined
- libsigcdir=$(prefix)/include/sigc++
  
  lib_LTLIBRARIES = libsigc.la
+ 

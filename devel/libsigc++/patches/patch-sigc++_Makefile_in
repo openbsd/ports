@@ -1,12 +1,12 @@
-$OpenBSD: patch-sigc++_Makefile_in,v 1.1 2001/07/20 20:59:33 shell Exp $
---- sigc++/Makefile.in.orig	Fri Jul 20 14:14:58 2001
-+++ sigc++/Makefile.in	Fri Jul 20 14:15:17 2001
-@@ -90,7 +90,7 @@ BUILT_SOURCES = slot.h object_slot.h fun
- libsigc_la_SOURCES =     object.cc   scope.cc   marshal.cc   slot.cc    basic_signal.cc adaptor.cc thread.cc
+$OpenBSD: patch-sigc++_Makefile_in,v 1.2 2001/10/24 12:54:37 shell Exp $
+--- sigc++/Makefile.in.orig	Wed Oct 24 18:32:52 2001
++++ sigc++/Makefile.in	Wed Oct 24 18:33:04 2001
+@@ -94,7 +94,7 @@
  
+ EXTRA_libsigc_la_SOURCES = sigc_res.rc
  
 -libsigc_la_LDFLAGS = -version-info $(LIBSIGC_SO_VERSION)                      -release $(SIGC_RELEASE) -no-undefined
 +libsigc_la_LDFLAGS = -version-info $(LIBSIGC_SO_VERSION) -no-undefined
  
- libsigcdir = $(prefix)/include/sigc++
  
+ lib_LTLIBRARIES = libsigc.la
