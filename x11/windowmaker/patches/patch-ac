@@ -1,0 +1,20 @@
+--- libPropList/filehandling.c.orig	Thu Dec  3 17:13:17 1998
++++ libPropList/filehandling.c	Thu Dec  3 17:23:01 1998
+@@ -361,9 +361,15 @@
+   
+   if (atomically)
+     {
++	  int tmpfd;
++	  char tmpfilename[] = "/var/tmp/tmp.XXXXXXXXXX";
++	  tmpfd = mkstemp(tmpfilename);
++	  strcpy(theFileName, tmpfilename);
++	  /*
+       theFileName = tmpnam(NULL);
+-      strcpy(tmp_fileName, theFileName);
+-
++      */
++	  strcpy(tmp_fileName, theFileName);
++	  close(tmpfd);
+       if((tmp_basename=strtok(tmp_fileName, "/")))
+ 	do
+ 	  basename=tmp_basename;

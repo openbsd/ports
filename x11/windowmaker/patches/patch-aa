@@ -1,0 +1,20 @@
+--- configure.orig	Thu Dec  3 15:49:24 1998
++++ configure	Thu Dec  3 15:49:53 1998
+@@ -3751,7 +3751,7 @@
+     if test "$my_libok" = yes; then
+ 	my_old_cppflags=$CPPFLAGS
+ 	CPPFLAGS="$CPPFLAGS $GFX_INC_PATH $XCFLAGS"
+-	ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
++	ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
+ echo "configure:3757: checking for gif_lib.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+@@ -3760,7 +3760,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 3762 "configure"
+ #include "confdefs.h"
+-#include <gif_lib.h>
++#include <giflib/gif_lib.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:3767: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
