@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/09/22 21:31:01 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/09/22 22:09:37 obecian Exp $
 bin/ettercap
 man/man8/ettercap.8
 share/doc/ettercap/AUTHORS
@@ -10,6 +10,10 @@ share/doc/ettercap/KNOWN-BUGS
 share/doc/ettercap/PORTINGS
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/README.PLUGINS.fr
+share/doc/ettercap/README.PLUGINS.it
+share/doc/ettercap/README.fr
+share/doc/ettercap/README.it
 share/doc/ettercap/THANKS
 share/doc/ettercap/TODO
 share/doc/ettercap/ettercap.fr.8.in

@@ -23,7 +23,7 @@
  	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
  	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 ./docs/[a-z]*/[^C]* $(DESTDIR)$(DOCDIR)
-+	$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
++	$(INSTALL) -m 644 ./docs/[a-z]*/[a-zA-Z]* $(DESTDIR)$(DOCDIR)
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -m 644 $(PROG).8 $(DESTDIR)$(MANDIR)/man8/$(PROG).8
  	@echo
