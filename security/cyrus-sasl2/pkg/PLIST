@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/11/03 10:33:32 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.12 2005/01/05 10:03:14 jakob Exp $
 @conflict cyrus-sasl-*
 include/sasl/
 include/sasl/hmac-md5.h
@@ -117,5 +117,7 @@ share/doc/sasl2/sysadmin.html
 share/doc/sasl2/testing.txt
 share/doc/sasl2/upgrading.html
 share/doc/sasl2/windows.html
-%%sql%%
+%%mysql%%
+%%pgsql%%
+%%sqlite%%
 %%SHARED%%

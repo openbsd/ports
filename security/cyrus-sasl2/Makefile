@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2004/12/27 16:12:33 alek Exp $
+# $OpenBSD: Makefile,v 1.24 2005/01/05 10:03:14 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
 DISTNAME=	cyrus-sasl-2.1.20
 PKGNAME=	${DISTNAME}p2
-CATEGORIES=     security
+CATEGORIES=	security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/OLD-VERSIONS/sasl/
@@ -23,41 +23,70 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS='${LDFLAGS}'
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
-CONFIGURE_ARGS+= --with-saslauthd="/var/sasl2" \
-		 --enable-gssapi="/usr" \
-		 --with-gss_impl="heimdal" \
-		 --enable-login \
-		 --enable-static \
-		 --disable-sample
+CONFIGURE_ARGS+=	--with-saslauthd="/var/sasl2" \
+			--enable-gssapi="/usr" \
+			--with-gss_impl="heimdal" \
+			--enable-login \
+			--enable-static \
+			--disable-sample
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 
-FLAVORS=	db4 sql ldap
+FLAVORS=	db4 ldap mysql pgsql sqlite
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdb4}
-CONFIGURE_ARGS+=        --with-dblib=berkeley \
-                        --with-bdb-libdir="${LOCALBASE}/lib/db4" \
-                        --with-bdb-incdir="${LOCALBASE}/include/db4"
-LIB_DEPENDS=            lib/db4/db.4::databases/db/v4
+CONFIGURE_ARGS+=	--with-dblib=berkeley \
+			--with-bdb-libdir="${LOCALBASE}/lib/db4" \
+			--with-bdb-incdir="${LOCALBASE}/include/db4"
+LIB_DEPENDS=		lib/db4/db.4::databases/db/v4
 .else
 CONFIGURE_ARGS+=	--with-dblib=ndbm \
-                        --without-bdb-libdir \
-                        --without-bdb-incdir
+			--without-bdb-libdir \
+			--without-bdb-incdir
 .endif
 
-.if ${FLAVOR:L:Msql}
-LIB_DEPENDS+=	lib/mysql/mysqlclient.10::databases/mysql
-CONFIGURE_ARGS+=        --with-mysql \
+.if ${FLAVOR:L:Mldap}
+LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
+CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-ldap
+.endif
+
+.if ${FLAVOR:L:Mmysql}
+.if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
+BROKEN=			choose either mysql or pgsql or sqlite
+.endif
+LIB_DEPENDS+=		lib/mysql/mysqlclient.10::databases/mysql
+CONFIGURE_ARGS+=	--enable-sql \
+			--with-mysql \
 			--without-pgsql \
+			--without-sqlite
+.endif
+
+.if ${FLAVOR:L:Mpgsql}
+.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite}
+BROKEN=			choose either mysql or pgsql or sqlite
+.endif
+LIB_DEPENDS+=		pq.3:postgresql-client-*:databases/postgresql
+CONFIGURE_ARGS+=	--enable-sql \
+			--without-mysql \
+			--with-pgsql \
+			--without-sqlite
+CFLAGS+=		-I${LOCALBASE}/include/postgresql
+.endif
+
+.if ${FLAVOR:L:Msqlite}
+.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
+BROKEN=			choose either mysql or pgsql or sqlite
+.endif
+LIB_DEPENDS=		sqlite.8.6::databases/sqlite
+CONFIGURE_ARGS+=	--enable-sql \
+			--with-sqlite
 			--without-sqlite \
 			--enable-sql
 .endif
  
-.if ${FLAVOR:L:Mldap}
-LIB_DEPENDS+=           ldap.2,lber:openldap-client-2.*:databases/openldap
-CONFIGURE_ARGS+=        --with-ldap=${LOCALBASE}
-.endif
 
 post-build:
 	(cd ${WRKBUILD}/saslauthd; \
