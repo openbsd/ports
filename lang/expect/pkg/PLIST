@@ -25,10 +25,10 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tclRegexp.h
-lib/expect5.28/pkgIndex.tcl
-lib/expect5.28/libexpect528.a
-lib/libexpect528.a
-lib/libexpect528.so.1.2
+lib/expect5.30/pkgIndex.tcl
+lib/expect5.30/libexpect530.a
+lib/libexpect530.a
+lib/libexpect530.so.1.2
 @exec /sbin/ldconfig -m %B
 man/man1/autoexpect.1
 man/man1/cryptdir.1
@@ -43,4 +43,4 @@ man/man1/tknewsbiff.1
 man/man1/unbuffer.1
 man/man1/xkibitz.1
 man/man3/libexpect.3
-@dirrm lib/expect5.28
+@dirrm lib/expect5.30
