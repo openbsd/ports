@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/19 13:08:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/25 17:02:01 lebel Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
-DISTNAME=	xxdiff-1.9.1
+DISTNAME=	xxdiff-1.10.0
 CATEGORIES=	textproc x11
-NEED_VERSION=	1.396
+NEED_VERSION=	1.413
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= xxdiff
 
 HOMEPAGE=	http://xxdiff.sourceforge.net/
-
-EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 
@@ -30,18 +28,15 @@ SEPARATE_BUILD= concurrent
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	QTDIR="${LOCALBASE}"  \
-		USER_LDFLAGS="-L${LOCALBASE}/lib/qt2 -L${LOCALBASE}/lib/X11" \
-		USER_INCLUDES="-I${LOCALBASE}/include/X11/qt2 -I${LOCALBASE}/include/X11 " \
+		USER_LDFLAGS="-L${LOCALBASE}/lib/qt2 -L${LOCALBASE}/lib/X11 -L${LOCALBASE}/lib" \
+		USER_INCLUDES="-I${LOCALBASE}/include/X11/qt2 -I${LOCALBASE}/include/X11 -I${LOCALBASE}/include" \
 		MOC="${LOCALBASE}/bin/moc2"
 MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=     CXXLD='${CXX} -L${LOCALBASE}/lib/qt2'
 
-WRKSRC= ${WRKDIST}/xxdiff
-
-post-extract:
-	@rm -r ${WRKSRC}/diffutils-2.7 
-	@rm -r ${WRKDIST}/doc
-	@rm -r ${WRKDIST}/src
-	@rm -r ${WRKDIST}/CVS
+post-patch:
+	@perl ${WRKSRC}/automoc -v
 
 .include <bsd.port.mk>
+
+

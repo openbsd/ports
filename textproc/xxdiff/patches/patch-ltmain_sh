@@ -1,6 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/03/20 14:29:34 wilfried Exp $
---- xxdiff/ltmain.sh.orig	Sun Mar 11 02:07:30 2001
-+++ xxdiff/ltmain.sh	Thu Mar 15 21:30:28 2001
+$OpenBSD: patch-ltmain_sh,v 1.2 2001/05/25 17:02:02 lebel Exp $
+
+--- ltmain.sh.orig	Thu May 24 14:20:27 2001
++++ ltmain.sh	Thu May 24 14:23:56 2001
 @@ -1079,7 +1079,18 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
@@ -35,9 +36,9 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/03/20 14:29:34 wilfried Exp $
  	  # rhapsody is a little odd...
  	  deplibs="$deplibs -framework System"
  	  ;;
-+	*-*-openbsd*)
-+	  # Do not include libc due to us having libc/libc_r.
-+	  ;;
++       *-*-openbsd*)
++         # Do not include libc due to us having libc/libc_r.
++         ;;
  	*)
  	  # Add libc to deplibs on all other systems.
  	  deplibs="$deplibs -lc"

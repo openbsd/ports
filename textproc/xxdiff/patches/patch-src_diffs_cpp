@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_diffs_cpp,v 1.1.1.1 2001/03/20 14:29:32 wilfried Exp $
+$OpenBSD: patch-src_diffs_cpp,v 1.2 2001/05/25 17:02:03 lebel Exp $
 
 fixes multiple strcpy and sprintf instances to potentially
 prevent buffer overruns
 
-
---- xxdiff/src/diffs.cpp.orig	Thu Mar 15 11:57:11 2001
-+++ xxdiff/src/diffs.cpp	Thu Mar 15 13:20:06 2001
-@@ -77,26 +77,26 @@ std::string buildTag( 
+--- src/diffs.cpp.orig	Thu May 24 00:40:20 2001
++++ src/diffs.cpp	Thu May 24 14:38:50 2001
+@@ -76,26 +76,26 @@ std::string buildTag( 
  {
     char buf[ 1024 ];
     char buf2[ 1024 ];
