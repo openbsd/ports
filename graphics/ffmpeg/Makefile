@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/12/06 13:38:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2003/12/06 13:43:08 espie Exp $
 
 COMMENT=	"audio/video converter and streamer"
 DISTNAME=	ffmpeg-0.4.8
+PKGNAME=	ffmpeg-0.4.8p0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg/}
 
