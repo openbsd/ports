@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2002/12/01 21:16:21 margarida Exp $
+# $OpenBSD: Makefile,v 1.147 2002/12/03 19:48:22 marcm Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -156,6 +156,7 @@
      SUBDIR += slib
      SUBDIR += smpeg
      SUBDIR += snit
+     SUBDIR += soup
      SUBDIR += splint
      SUBDIR += swig
      SUBDIR += t1lib
