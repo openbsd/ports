@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/31 01:11:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/16 08:46:37 avsm Exp $
 
 COMMENT=	"documentation tool for the functional language Haskell"
 
-V=		0.5
+V=		0.6
 DISTNAME=	haddock-${V}
 CATEGORIES=	devel
 
