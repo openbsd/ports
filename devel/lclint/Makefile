@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/24 14:13:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1999/12/08 17:02:56 espie Exp $
 
 NEED_VERSION=	1.116
 DISTNAME=	lclint-2.4b
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 DOCDIR=	${PREFIX}/share/doc/${DISTNAME}
 
 post-patch:
-	@cd ${WRKSRC}/src && ${MAKE_PROGRAM} up
+	@cd ${WRKSRC}/src && gmake up
 
 LIBSRC=${WRKSRC}/lib
 LCLINT=${WRKSRC}/bin/lclint
@@ -35,10 +35,10 @@ post-build:
 	cd ${LIBSRC} && $(LCLINT) -nolib ansi.h posix.h unix.h -dump unix
 	cd ${LIBSRC} && $(LCLINT) -DSTRICT -nolib ansi.h posix.h unix.h -dump unixstrict
 post-install:
-	@${MKDIR} ${DOCDIR}
-	@cd ${DOCDIR} && ${TAR} -zxf ${FULLDISTDIR}/${GUIDE}
+	@mkdir -p ${DOCDIR}
+	@cd ${DOCDIR} && tar zxf ${FULLDISTDIR}/${GUIDE}
 
-test: ${INSTALL_COOKIE}
-	@cd ${WRKSRC} && ${MAKE_PROGRAM} test
+test: install
+	@cd ${WRKSRC} && gmake test
 	
 .include <bsd.port.mk>
