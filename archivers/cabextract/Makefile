@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/07 06:12:58 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/08 20:34:41 jcs Exp $
 
 COMMENT=		"Extracts files from Microsoft CAB archives"
 
@@ -10,7 +10,7 @@ CATEGORIES=		archivers
 
 HOMEPAGE=		http://www.kyz.uklinux.net/cabextract.php3
 
-MAINTAINER=		steve.shockley@shockley.net
+MAINTAINER=		Steve Shockley <steve.shockley@shockley.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
