@@ -1,0 +1,30 @@
+$OpenBSD: patch-tcl_tcl_log_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_log.c.orig	2004-01-08 23:28:53.000000000 +0100
++++ tcl/tcl_log.c	2004-01-08 23:29:18.000000000 +0100
+@@ -57,7 +57,7 @@ tcl_LogArchive(interp, objc, objv, envp)
+ 	i = 2;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    archopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++		    (CONST84 char **)archopts, "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return(IS_HELP(objv[i]));
+ 		i++;
+ 		switch ((enum archopts)optindex) {
+@@ -272,7 +272,7 @@ tcl_LogGet(interp, objc, objv, envp)
+ 	i = 2;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    loggetopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++		    (CONST84 char **)loggetopts, "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return(IS_HELP(objv[i]));
+ 		i++;
+ 		switch ((enum loggetopts)optindex) {
+@@ -394,7 +394,7 @@ tcl_LogPut(interp, objc, objv, envp)
+ 	 */
+ 	if (objc == 4) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[2],
+-		    logputopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++		    (CONST84 char **)logputopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			return(IS_HELP(objv[2]));
+ 		}
+ 		switch ((enum logputopts)optindex) {

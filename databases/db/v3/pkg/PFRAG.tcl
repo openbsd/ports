@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.tcl,v 1.1.1.1 2003/12/08 17:37:57 sturm Exp $
+@comment $OpenBSD: PFRAG.tcl,v 1.2 2004/01/10 08:36:28 sturm Exp $
 lib/db/libdb_tcl.a
 lib/db/libdb_tcl.la
 lib/db/libdb_tcl.so.3.1
+lib/libdb_tcl.so.3.1
 share/doc/db/api_tcl/db_close.html
 share/doc/db/api_tcl/db_count.html
 share/doc/db/api_tcl/db_cursor.html

@@ -1,0 +1,39 @@
+$OpenBSD: patch-tcl_tcl_dbcursor_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_dbcursor.c.orig	2004-01-08 23:26:05.000000000 +0100
++++ tcl/tcl_dbcursor.c	2004-01-08 23:26:46.000000000 +0100
+@@ -83,7 +83,7 @@ dbc_Cmd(clientData, interp, objc, objv)
+ 	 * Get the command name index from the object based on the berkdbcmds
+ 	 * defined above.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[1], dbccmds, "command",
++	if (Tcl_GetIndexFromObj(interp, objv[1], (CONST84 char **)dbccmds, "command",
+ 	    TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 	switch ((enum dbccmds)cmdindex) {
+@@ -175,7 +175,7 @@ tcl_DbcPut(interp, objc, objv, dbc)
+ 	 */
+ 	i = 2;
+ 	while (i < (objc - 1)) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbcutopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcutopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * Reset the result so we don't get
+@@ -400,7 +400,7 @@ tcl_DbcGet(interp, objc, objv, dbc)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbcgetopts,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcgetopts,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * Reset the result so we don't get
+@@ -671,7 +671,7 @@ tcl_DbcDup(interp, objc, objv, dbc)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbcdupopts,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcdupopts,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * Reset the result so we don't get

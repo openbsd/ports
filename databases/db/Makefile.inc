@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2003/12/08 17:37:52 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2004/01/10 08:36:27 sturm Exp $
 
 COMMENT=	"Berkeley DB package, revision ${REVISION}"
 
@@ -34,8 +34,8 @@ FLAVOR?=
 .if ${FLAVOR:L:Mtcl}
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-TCL_VERSION=	8.3
-LIB_DEPENDS+=	tcl83.1.3::lang/tcl/${TCL_VERSION}
+TCL_VERSION=	8.4
+LIB_DEPENDS+=	tcl${TCL_VERSION:S/.//}::lang/tcl/${TCL_VERSION}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VERSION}
 CONFIGURE_ARGS+=--enable-tcl \
 		--with-tcl=${LOCALBASE}/lib/tcl${TCL_VERSION}

@@ -1,0 +1,48 @@
+$OpenBSD: patch-tcl_tcl_mp_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_mp.c.orig	2004-01-08 23:29:23.000000000 +0100
++++ tcl/tcl_mp.c	2004-01-08 23:29:58.000000000 +0100
+@@ -187,7 +187,7 @@ tcl_Mp(interp, objc, objv, envp, envip)
+ 	memset(newname, 0, MSG_SIZE);
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    mpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++		    (CONST84 char **)mpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * Reset the result so we don't get an errant
+ 			 * error message if there is another error.
+@@ -434,7 +434,7 @@ mp_Cmd(clientData, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], mpcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)mpcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -506,7 +506,7 @@ tcl_MpGet(interp, objc, objv, mp, mpip)
+ 	flag = 0;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    mpget, "option", TCL_EXACT, &optindex) != TCL_OK) {
++		    (CONST84 char **)mpget, "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * Reset the result so we don't get an errant
+ 			 * error message if there is another error.
+@@ -640,7 +640,7 @@ pg_Cmd(clientData, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], pgcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)pgcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -697,7 +697,7 @@ tcl_Pg(interp, objc, objv, page, mp, pgi
+ 	flag = 0;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    pgopt, "option", TCL_EXACT, &optindex) != TCL_OK)
++		    (CONST84 char **)pgopt, "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return (IS_HELP(objv[i]));
+ 		i++;
+ 		switch ((enum pgopt)optindex) {

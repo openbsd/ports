@@ -1,0 +1,39 @@
+$OpenBSD: patch-tcl_tcl_txn_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_txn.c.orig	2004-01-08 23:30:03.000000000 +0100
++++ tcl/tcl_txn.c	2004-01-08 23:30:50.000000000 +0100
+@@ -90,7 +90,7 @@ tcl_TxnCheckpoint(interp, objc, objv, en
+ 	i = 2;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    txnckpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++		    (CONST84 char **)txnckpopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			return (IS_HELP(objv[i]));
+ 		}
+ 		i++;
+@@ -163,7 +163,7 @@ tcl_Txn(interp, objc, objv, envp, envip)
+ 	i = 2;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    txnopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
++		    (CONST84 char **)txnopts, "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			return(IS_HELP(objv[i]));
+ 		}
+ 		i++;
+@@ -371,7 +371,7 @@ txn_Cmd(clientData, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], txncmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)txncmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -451,7 +451,7 @@ tcl_TxnCommit(interp, objc, objv, txnp, 
+ 		return (TCL_ERROR);
+ 	}
+ 	if (objc == 3) {
+-		if (Tcl_GetIndexFromObj(interp, objv[2], commitopt,
++		if (Tcl_GetIndexFromObj(interp, objv[2], (CONST84 char **)commitopt,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return (IS_HELP(objv[2]));
+ 		switch ((enum commitopt)optindex) {

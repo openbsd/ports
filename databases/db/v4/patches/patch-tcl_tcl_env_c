@@ -1,0 +1,75 @@
+$OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_env.c.orig	2002-08-07 17:23:10.000000000 +0200
++++ tcl/tcl_env.c	2004-01-08 13:20:59.000000000 +0100
+@@ -167,7 +167,7 @@ env_Cmd(clientData, interp, objc, objv)
+ 	 * Get the command name index from the object based on the berkdbcmds
+ 	 * defined above.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[1], envcmds, "command",
++	if (Tcl_GetIndexFromObj(interp, objv[1], (CONST84 char **)envcmds, "command",
+ 	    TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 	res = NULL;
+@@ -483,7 +483,7 @@ tcl_EnvRemove(interp, objc, objv, dbenv,
+ 
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], envremopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envremopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			goto error;
+@@ -755,7 +755,7 @@ tcl_EnvVerbose(interp, dbenv, which, ono
+ 	int on, optindex, ret;
+ 	u_int32_t wh;
+ 
+-	if (Tcl_GetIndexFromObj(interp, which, verbwhich, "option",
++	if (Tcl_GetIndexFromObj(interp, which, (CONST84 char **)verbwhich, "option",
+ 	    TCL_EXACT, &optindex) != TCL_OK)
+ 		return (IS_HELP(which));
+ 
+@@ -778,7 +778,7 @@ tcl_EnvVerbose(interp, dbenv, which, ono
+ 	default:
+ 		return (TCL_ERROR);
+ 	}
+-	if (Tcl_GetIndexFromObj(interp, onoff, verbonoff, "option",
++	if (Tcl_GetIndexFromObj(interp, onoff, (CONST84 char **)verbonoff, "option",
+ 	    TCL_EXACT, &optindex) != TCL_OK)
+ 		return (IS_HELP(onoff));
+ 	switch ((enum verbonoff)optindex) {
+@@ -950,7 +950,7 @@ tcl_EnvTest(interp, objc, objv, dbenv)
+ 	/*
+ 	 * This must be the "copy" or "abort" portion of the command.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[2], envtestcmd, "command",
++	if (Tcl_GetIndexFromObj(interp, objv[2], (CONST84 char **)envtestcmd, "command",
+ 	    TCL_EXACT, &optindex) != TCL_OK) {
+ 		result = IS_HELP(objv[2]);
+ 		return (result);
+@@ -970,7 +970,7 @@ tcl_EnvTest(interp, objc, objv, dbenv)
+ 	/*
+ 	 * This must be the location portion of the command.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[3], envtestat, "location",
++	if (Tcl_GetIndexFromObj(interp, objv[3], (CONST84 char **)envtestat, "location",
+ 	    TCL_EXACT, &optindex) != TCL_OK) {
+ 		result = IS_HELP(objv[3]);
+ 		return (result);
+@@ -1085,7 +1085,7 @@ env_DbRemove(interp, objc, objv, dbenv)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], envdbrem,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envdbrem,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -1214,7 +1214,7 @@ env_DbRename(interp, objc, objv, dbenv)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], envdbmv,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envdbmv,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {

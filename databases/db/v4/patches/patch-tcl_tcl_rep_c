@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcl_tcl_rep_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_rep.c.orig	2004-01-08 13:42:28.000000000 +0100
++++ tcl/tcl_rep.c	2004-01-08 13:42:38.000000000 +0100
+@@ -207,7 +207,7 @@ tcl_RepStart(interp, objc, objv, dbenv)
+ 
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], tclrpstrt,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)tclrpstrt,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-')

@@ -1,0 +1,57 @@
+$OpenBSD: patch-tcl_tcl_env_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_env.c.orig	2004-01-08 23:27:00.000000000 +0100
++++ tcl/tcl_env.c	2004-01-08 23:27:53.000000000 +0100
+@@ -127,7 +127,7 @@ env_Cmd(clientData, interp, objc, objv)
+ 	 * Get the command name index from the object based on the berkdbcmds
+ 	 * defined above.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[1], envcmds, "command",
++	if (Tcl_GetIndexFromObj(interp, objv[1], (CONST84 char **)envcmds, "command",
+ 	    TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 	res = NULL;
+@@ -309,7 +309,7 @@ tcl_EnvRemove(interp, objc, objv, envp, 
+ 
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], envremopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envremopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			goto error;
+@@ -525,7 +525,7 @@ tcl_EnvVerbose(interp, envp, which, onof
+ 	int on, optindex, ret;
+ 	u_int32_t wh;
+ 
+-	if (Tcl_GetIndexFromObj(interp, which, verbwhich, "option",
++	if (Tcl_GetIndexFromObj(interp, which, (CONST84 char **)verbwhich, "option",
+ 	    TCL_EXACT, &optindex) != TCL_OK)
+ 		return (IS_HELP(which));
+ 
+@@ -545,7 +545,7 @@ tcl_EnvVerbose(interp, envp, which, onof
+ 	default:
+ 		return(TCL_ERROR);
+ 	}
+-	if (Tcl_GetIndexFromObj(interp, onoff, verbonoff, "option",
++	if (Tcl_GetIndexFromObj(interp, onoff, (CONST84 char **)verbonoff, "option",
+ 	    TCL_EXACT, &optindex) != TCL_OK)
+ 		return (IS_HELP(onoff));
+ 	switch ((enum verbonoff)optindex) {
+@@ -617,7 +617,7 @@ tcl_EnvTest(interp, objc, objv, envp)
+ 	/*
+ 	 * This must be the "copy" or "abort" portion of the command.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[2], envtestcmd, "command",
++	if (Tcl_GetIndexFromObj(interp, objv[2], (CONST84 char **)envtestcmd, "command",
+ 	    TCL_EXACT, &optindex) != TCL_OK) {
+ 		result = IS_HELP(objv[2]);
+ 		return (result);
+@@ -637,7 +637,7 @@ tcl_EnvTest(interp, objc, objv, envp)
+ 	/*
+ 	 * This must be the location portion of the command.
+ 	 */
+-	if (Tcl_GetIndexFromObj(interp, objv[3], envtestat, "location",
++	if (Tcl_GetIndexFromObj(interp, objv[3], (CONST84 char **)envtestat, "location",
+ 	    TCL_EXACT, &optindex) != TCL_OK) {
+ 		result = IS_HELP(objv[3]);
+ 		return (result);

@@ -1,0 +1,84 @@
+$OpenBSD: patch-tcl_tcl_compat_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_compat.c.orig	2004-01-08 23:18:45.000000000 +0100
++++ tcl/tcl_compat.c	2004-01-08 23:21:06.000000000 +0100
+@@ -74,7 +74,7 @@ bdb_HCommand(interp, objc, objv)
+ 	 * in the 'berkdb' command.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], hcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)hcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -105,7 +105,7 @@ bdb_HCommand(interp, objc, objv)
+ 		item.key = Tcl_GetStringFromObj(objv[2], NULL);
+ 		item.data = Tcl_GetStringFromObj(objv[3], NULL);
+ 		action = 0;
+-		if (Tcl_GetIndexFromObj(interp, objv[4], srchacts,
++		if (Tcl_GetIndexFromObj(interp, objv[4], (CONST84 char **)srchacts,
+ 		    "action", TCL_EXACT, &actindex) != TCL_OK)
+ 			return (IS_HELP(objv[4]));
+ 		switch ((enum srchacts)actindex) {
+@@ -201,7 +201,7 @@ bdb_NdbmOpen(interp, objc, objv, dbpp)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], ndbopen, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)ndbopen, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -345,7 +345,7 @@ bdb_DbmCommand(interp, objc, objv, flag,
+ 	 * in the 'berkdb' command.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], dbmcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)dbmcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	switch ((enum dbmcmds)cmdindex) {
+@@ -433,7 +433,7 @@ bdb_DbmCommand(interp, objc, objv, flag,
+ 		if (flag == DBTCL_DBM)
+ 			ret = store(key, data);
+ 		else if (flag == DBTCL_NDBM) {
+-			if (Tcl_GetIndexFromObj(interp, objv[4], stflag,
++			if (Tcl_GetIndexFromObj(interp, objv[4], (CONST84 char **)stflag,
+ 			    "flag", TCL_EXACT, &stindex) != TCL_OK)
+ 				return (IS_HELP(objv[4]));
+ 			switch ((enum stflag)stindex) {
+@@ -606,7 +606,7 @@ ndbm_Cmd(clientData, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], ndbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)ndbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -675,7 +675,7 @@ ndbm_Cmd(clientData, interp, objc, objv)
+ 		_debug_check();
+ 		ret = dbm_error(dbp);
+ 		Tcl_SetErrno(ret);
+-		Tcl_SetResult(interp, Tcl_PosixError(interp), TCL_STATIC);
++		Tcl_SetResult(interp, (char *)Tcl_PosixError(interp), TCL_STATIC);
+ 		break;
+ 	case NDBRDONLY:
+ 		/*
+@@ -733,7 +733,7 @@ bdb_RandCommand(interp, objc, objv)
+ 	 * in the 'berkdb' command.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], rcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)rcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -965,7 +965,7 @@ mutex_Cmd(clientData, interp, objc, objv
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], mxcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)mxcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;

@@ -1,0 +1,102 @@
+$OpenBSD: patch-tcl_tcl_db_pkg_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_db_pkg.c.orig	2000-06-30 15:35:07.000000000 +0200
++++ tcl/tcl_db_pkg.c	2004-01-08 23:34:49.000000000 +0100
+@@ -162,7 +162,7 @@ berkdb_Cmd(notused, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], berkdbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)berkdbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 	res = NULL;
+ 	switch ((enum berkdbcmds)cmdindex) {
+@@ -421,7 +421,7 @@ bdb_EnvOpen(interp, objc, objv, ip, env)
+ 	server_to = client_to = 0;
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i++], envopen, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i++], (CONST84 char **)envopen, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			Tcl_ResetResult(interp);
+ 			continue;
+@@ -489,7 +489,7 @@ bdb_EnvOpen(interp, objc, objv, ip, env)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], envopen, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)envopen, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			goto error;
+@@ -813,7 +813,7 @@ bdb_EnvOpen(interp, objc, objv, ip, env)
+ 				result = TCL_ERROR;
+ 				break;
+ 			}
+-			result = Tcl_GetLongFromObj(interp, objv[i++], &time);
++			result = Tcl_GetLongFromObj(interp, objv[i++], (long *)&time);
+ 			if (result == TCL_OK) {
+ 				_debug_check();
+ 				ret = (*env)->set_tx_timestamp(*env, &time);
+@@ -1079,7 +1079,7 @@ bdb_DbOpen(interp, objc, objv, ip, dbp)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i++], bdbenvopen,
++		if (Tcl_GetIndexFromObj(interp, objv[i++], (CONST84 char **)bdbenvopen,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * Reset the result so we don't get
+@@ -1139,7 +1139,7 @@ bdb_DbOpen(interp, objc, objv, ip, dbp)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], bdbopen, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbopen, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -1596,7 +1596,7 @@ bdb_DbRemove(interp, objc, objv)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], bdbrem,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbrem,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -1721,7 +1721,7 @@ bdb_DbRename(interp, objc, objv)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], bdbmv,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbmv,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -1860,7 +1860,7 @@ bdb_DbVerify(interp, objc, objv)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], bdbverify,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbverify,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -1999,7 +1999,7 @@ bdb_Version(interp, objc, objv)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], bdbver,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbver,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {
+@@ -2108,7 +2108,7 @@ bdb_DbUpgrade(interp, objc, objv)
+ 
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], bdbupg,
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)bdbupg,
+ 		    "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			arg = Tcl_GetStringFromObj(objv[i], NULL);
+ 			if (arg[0] == '-') {

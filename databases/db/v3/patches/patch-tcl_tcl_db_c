@@ -1,0 +1,84 @@
+$OpenBSD: patch-tcl_tcl_db_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_db.c.orig	2004-01-08 23:21:17.000000000 +0100
++++ tcl/tcl_db.c	2004-01-08 23:22:34.000000000 +0100
+@@ -121,7 +121,7 @@ db_Cmd(clientData, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], dbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)dbcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	res = NULL;
+@@ -513,7 +513,7 @@ tcl_DbPut(interp, objc, objv, dbp)
+ 	if (type == DB_QUEUE || type == DB_RECNO) {
+ 		i = 2;
+ 		while (i < objc - 1) {
+-			if (Tcl_GetIndexFromObj(interp, objv[i++], dbputapp,
++			if (Tcl_GetIndexFromObj(interp, objv[i++], (CONST84 char **)dbputapp,
+ 			    "option", TCL_EXACT, &optindex) != TCL_OK)
+ 				continue;
+ 			switch ((enum dbputapp)optindex) {
+@@ -532,7 +532,7 @@ tcl_DbPut(interp, objc, objv, dbp)
+ 	i = 2;
+ 	while (i < end) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    dbputopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++		    (CONST84 char **)dbputopts, "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return(IS_HELP(objv[i]));
+ 		i++;
+ 		switch ((enum dbputopts)optindex) {
+@@ -712,7 +712,7 @@ tcl_DbGet(interp, objc, objv, dbp)
+ 	end = objc - 1;
+ 	type = dbp->get_type(dbp);
+ 	while (i < end) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbgetopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbgetopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			goto out;
+@@ -1071,7 +1071,7 @@ tcl_DbDelete(interp, objc, objv, dbp)
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbdelopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbdelopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			/*
+ 			 * If we don't have a -glob or -txn, then the
+@@ -1286,7 +1286,7 @@ tcl_DbCursor(interp, objc, objv, dbp, db
+ 	 */
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbcuropts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbcuropts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			goto out;
+@@ -1359,7 +1359,7 @@ tcl_DbJoin(interp, objc, objv, dbp, dbcp
+ 	i = 2;
+ 	adj = i;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbjopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbjopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			if (result == TCL_OK)
+@@ -1450,7 +1450,7 @@ tcl_DbGetjoin(interp, objc, objv, dbp)
+ 	i = 2;
+ 	adj = i;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbgetjopts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbgetjopts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			if (result == TCL_OK)
+@@ -1680,7 +1680,7 @@ tcl_DbKeyRange(interp, objc, objv, dbp)
+ 	txn = NULL;
+ 	i = 2;
+ 	while (i < objc) {
+-		if (Tcl_GetIndexFromObj(interp, objv[i], dbkeyropts, "option",
++		if (Tcl_GetIndexFromObj(interp, objv[i], (CONST84 char **)dbkeyropts, "option",
+ 		    TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(objv[i]);
+ 			if (result == TCL_OK)

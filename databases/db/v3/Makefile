@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/11 06:49:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/10 08:36:28 sturm Exp $
 
 REVISION=	3
 VERSION=	${REVISION}.1.17
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 
 DEST_SUBDIR=
 

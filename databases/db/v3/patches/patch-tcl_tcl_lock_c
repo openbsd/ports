@@ -1,0 +1,57 @@
+$OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
+--- tcl/tcl_lock.c.orig	2004-01-08 23:28:00.000000000 +0100
++++ tcl/tcl_lock.c	2004-01-08 23:28:47.000000000 +0100
+@@ -78,7 +78,7 @@ tcl_LockDetect(interp, objc, objv, envp)
+ 	i = 2;
+ 	while (i < objc) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[i],
+-		    ldopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++		    (CONST84 char **)ldopts, "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return(IS_HELP(objv[i]));
+ 		i++;
+ 		switch ((enum ldopts)optindex) {
+@@ -181,7 +181,7 @@ tcl_LockGet(interp, objc, objv, envp)
+ 	flag = 0;
+ 	if (objc == 6) {
+ 		if (Tcl_GetIndexFromObj(interp, objv[(objc - 4)],
+-		    lgopts, "option", TCL_EXACT, &optindex) != TCL_OK)
++		    (CONST84 char **)lgopts, "option", TCL_EXACT, &optindex) != TCL_OK)
+ 			return (IS_HELP(objv[(objc - 4)]));
+ 		switch ((enum lgopts)optindex) {
+ 		case LGNOWAIT:
+@@ -302,7 +302,7 @@ lock_Cmd(clientData, interp, objc, objv)
+ 	 * defined above.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp,
+-	    objv[1], lkcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
++	    objv[1], (CONST84 char **)lkcmds, "command", TCL_EXACT, &cmdindex) != TCL_OK)
+ 		return (IS_HELP(objv[1]));
+ 
+ 	switch ((enum lkcmds)cmdindex) {
+@@ -361,7 +361,7 @@ tcl_LockVec(interp, objc, objv, envp)
+ 	 * If -nowait is given, it MUST be first arg.
+ 	 */
+ 	if (Tcl_GetIndexFromObj(interp, objv[2],
+-	    lvopts, "option", TCL_EXACT, &optindex) == TCL_OK) {
++	    (CONST84 char **)lvopts, "option", TCL_EXACT, &optindex) == TCL_OK) {
+ 		switch ((enum lvopts)optindex) {
+ 		case LVNOWAIT:
+ 			flag |= DB_LOCK_NOWAIT;
+@@ -407,7 +407,7 @@ tcl_LockVec(interp, objc, objv, envp)
+ 		 * the return list.
+ 		 */
+ 		if (Tcl_GetIndexFromObj(interp, myobjv[0],
+-		    lkops, "option", TCL_EXACT, &optindex) != TCL_OK) {
++		    (CONST84 char **)lkops, "option", TCL_EXACT, &optindex) != TCL_OK) {
+ 			result = IS_HELP(myobjv[0]);
+ 			goto error;
+ 		}
+@@ -527,7 +527,7 @@ _LockMode(interp, obj, mode)
+ {
+ 	int optindex;
+ 
+-	if (Tcl_GetIndexFromObj(interp, obj, lkmode, "option",
++	if (Tcl_GetIndexFromObj(interp, obj, (CONST84 char **)lkmode, "option",
+ 	    TCL_EXACT, &optindex) != TCL_OK)
+ 		return (IS_HELP(obj));
+ 	switch ((enum lkmode)optindex) {

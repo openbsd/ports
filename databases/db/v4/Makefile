@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/12/11 06:49:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/10 08:36:28 sturm Exp $
 
 REVISION=	4
 VERSION=	${REVISION}.1.25
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 
 MASTER_SITES0=	${MASTER_SITES:S/snapshot/4.1.25/}                                                                                              
 PATCHFILES=	patch.${VERSION}.1:0
