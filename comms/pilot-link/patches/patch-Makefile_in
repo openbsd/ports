@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/06/03 23:58:36 brad Exp $
---- Makefile.in.orig	Fri May 14 02:55:33 1999
-+++ Makefile.in	Sun Jun  3 18:32:13 2001
+$OpenBSD: patch-Makefile_in,v 1.2 2001/10/17 11:19:59 naddy Exp $
+--- Makefile.in.orig	Fri May 14 08:55:33 1999
++++ Makefile.in	Wed Oct 17 00:48:06 2001
 @@ -15,11 +15,11 @@ PURELINK =
  PURIFY =
  
@@ -11,11 +11,11 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/06/03 23:58:36 brad Exp $
  # -DTCL if Tcl is available, and
  # -DTK if Tk is available.
 -TCLTK_FLAGS = @TCLTKFLAGS@
-+TCLTK_FLAGS = @TCLTKFLAGS@ -I/usr/X11R6/include
++TCLTK_FLAGS = @TCLTKFLAGS@ -I${X11BASE}/include
  
  # Libraries needed to link with GNU readline
  RLLIBS = @RLLIBS@
-@@ -109,29 +109,30 @@ libcc/libpicc.a: FORCE
+@@ -109,29 +109,29 @@ libcc/libpicc.a: FORCE
  	$(SUBMAKE_COMM_CC) libpicc.a
  
  installdirs:
@@ -34,7 +34,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/06/03 23:58:36 brad Exp $
 +	$(LIBTOOL) $(INSTALL_DATA) $(PICCLIB) ${DESTDIR}/$(libdir)/libpicc.la
  	for p in $(EXECS); do \
 -		$(INSTALL_PROGRAM) $$p $(bindir)/$$p; \
-+		$(INSTALL_PROGRAM) $$p ${DESTDIR}/$(bindir)/$$p; \
++		$(LIBTOOL) $(INSTALL_PROGRAM) $$p ${DESTDIR}/$(bindir)/$$p; \
  	done
  	for h in include/*.h $(srcdir)/include/*.h include/*.hxx $(srcdir)/include/*.hxx; do \
 -		$(INSTALL_DATA) $$h $(includedir)/`basename $$h`; \
@@ -53,7 +53,6 @@ $OpenBSD: patch-Makefile_in,v 1.1 2001/06/03 23:58:36 brad Exp $
 +		$(INSTALL_DATA) $$p ${DESTDIR}/$(pixdir)/`basename $$p`; \
  	done
 -	$(LIBTOOL) -n --finish $(libdir)
-+	$(LIBTOOL) -n --finish ${DESTDIR}/$(libdir)
  
  uninstall:
  	-for p in $(EXECS) $(PERLEXECS) $(CXXEXECS) $(TCLEXECS); do \
