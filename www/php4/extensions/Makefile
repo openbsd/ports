@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/06/26 22:16:40 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/02 01:09:50 kevlo Exp $
 
 PKGNAME=	php4-gd-${V}
 
@@ -20,8 +20,10 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 JPEG_DEPENDS=		jpeg.62::graphics/jpeg
 PNG_DEPENDS=		png.3::graphics/png 
 TIFF_DEPENDS=		tiff.35::graphics/tiff
+GD_DEPENDS=		gd.18::graphics/gd
 
-LIB_DEPENDS+=		${JPEG_DEPENDS} ${PNG_DEPENDS} ${TIFF_DEPENDS}
+LIB_DEPENDS+=		${GD_DEPENDS} ${JPEG_DEPENDS} ${PNG_DEPENDS} \
+			${TIFF_DEPENDS}
 
 .for i in ${MULTI_PACKAGES}
 FULLPKGNAME${i}=	php4${i}-${V}
@@ -59,7 +61,6 @@ CONFIGURE_ARGS+=	--with-xpm-dir=${X11BASE}
 .else
 CONFIGURE_ARGS+=	--without-xpm-dir
 .endif
-GD_DEPENDS=		gd.18::graphics/gd ${PNG_DEPENDS} ${JPEG_DEPENDS}
 
 # gmp
 COMMENT-gmp=		"gmp math library support for php4"
