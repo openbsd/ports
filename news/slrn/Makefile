@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 1999/06/23 05:24:10 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1999/11/03 01:20:47 turan Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+BROKEN=		sources moved
 
 DISTNAME=	slrn-0.9.5.6
 CATEGORIES=	news
 
-MAINTAINER=	ports@OpenBSD.ORG
+MAINTAINER=	turan@openbsd.org
 
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/

@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/18 05:02:09 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/11/03 01:20:47 turan Exp $
+
+BROKEN=		does not install cleanly, major fixups required.
 
 DISTNAME=	cnews
 PKGNAME=	cnews-cr.g
