@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 1999/11/24 02:57:56 brad Exp $
+# $OpenBSD: Makefile,v 1.42 1999/11/25 21:37:10 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
@@ -10,7 +10,8 @@ MASTER_SITES0=	http://the.wiretapped.net/security/cryptography/libs/rsa/ \
 		ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
 		ftp://ftp.it.net.au/mirrors/crypto/misc/
 
-PATCH_SITES=	http://www.ssh.fi/sshprotocols2/patches/
+PATCH_SITES=	http://www.ssh.org/patches/ \
+		ftp://ftp2.inch.com/pub/FreeBSD/
 PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
 PATCH_DIST_STRIP= -p1
 
