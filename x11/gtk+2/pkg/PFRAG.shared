@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/07/25 09:42:35 nino Exp $
-lib/libgdk-x11-2.0.so.0.5
-lib/libgdk_pixbuf-2.0.so.0.5
-lib/libgdk_pixbuf_xlib-2.0.so.0.5
-lib/libgtk-x11-2.0.so.0.5
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/12/23 04:59:48 marcm Exp $
+lib/libgdk-x11-2.0.so.0.9
+lib/libgdk_pixbuf-2.0.so.0.9
+lib/libgdk_pixbuf_xlib-2.0.so.0.9
+lib/libgtk-x11-2.0.so.0.9
 lib/gtk-2.0/2.0.0/immodules/im-am-et.so
 lib/gtk-2.0/2.0.0/immodules/im-cyrillic-translit.so
 lib/gtk-2.0/2.0.0/immodules/im-hangul.so

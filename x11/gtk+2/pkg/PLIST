@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/08/11 11:03:28 nino Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/12/23 04:59:48 marcm Exp $
 bin/gdk-pixbuf-csource
 bin/gtk-demo
 bin/gtk-query-immodules-2.0
@@ -271,8 +271,10 @@ share/gtk-2.0/demo/sizegroup.c
 share/gtk-2.0/demo/stock_browser.c
 share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/tree_store.c
+share/locale/am/LC_MESSAGES/gtk20.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20.mo
+share/locale/be/LC_MESSAGES/gtk20.mo
 share/locale/bg/LC_MESSAGES/gtk20.mo
 share/locale/ca/LC_MESSAGES/gtk20.mo
 share/locale/cs/LC_MESSAGES/gtk20.mo
@@ -291,6 +293,7 @@ share/locale/fr/LC_MESSAGES/gtk20.mo
 share/locale/ga/LC_MESSAGES/gtk20.mo
 share/locale/gl/LC_MESSAGES/gtk20.mo
 share/locale/he/LC_MESSAGES/gtk20.mo
+share/locale/hi/LC_MESSAGES/gtk20.mo
 share/locale/hr/LC_MESSAGES/gtk20.mo
 share/locale/hu/LC_MESSAGES/gtk20.mo
 share/locale/ia/LC_MESSAGES/gtk20.mo
@@ -369,6 +372,8 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @comment @dirrm share/locale/nl
 @comment @dirrm share/locale/ms/LC_MESSAGES
 @comment @dirrm share/locale/ms
+@comment @dirrm share/locale/lv/LC_MESSAGES
+@comment @dirrm share/locale/lv
 @comment @dirrm share/locale/lt/LC_MESSAGES
 @comment @dirrm share/locale/lt
 @comment @dirrm share/locale/ko/LC_MESSAGES
@@ -383,6 +388,8 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @comment @dirrm share/locale/hu
 @comment @dirrm share/locale/hr/LC_MESSAGES
 @comment @dirrm share/locale/hr
+@comment @dirrm share/locale/hi/LC_MESSAGES
+@comment @dirrm share/locale/hi
 @comment @dirrm share/locale/he/LC_MESSAGES
 @comment @dirrm share/locale/he
 @comment @dirrm share/locale/gl/LC_MESSAGES
@@ -403,8 +410,8 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @comment @dirrm share/locale/es
 @comment @dirrm share/locale/en_GB/LC_MESSAGES
 @comment @dirrm share/locale/en_GB
-@comment @dirrm share/locale/en@comment @IPA/LC_MESSAGES
-@comment @dirrm share/locale/en@comment @IPA
+@comment @dirrm share/locale/en@IPA/LC_MESSAGES
+@comment @dirrm share/locale/en@IPA
 @comment @dirrm share/locale/el/LC_MESSAGES
 @comment @dirrm share/locale/el
 @comment @dirrm share/locale/de/LC_MESSAGES
@@ -417,10 +424,16 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
+@comment @dirrm share/locale/bg/LC_MESSAGES
+@comment @dirrm share/locale/bg
+@comment @dirrm share/locale/be/LC_MESSAGES
+@comment @dirrm share/locale/be
 @comment @dirrm share/locale/az/LC_MESSAGES
 @comment @dirrm share/locale/az
 @comment @dirrm share/locale/ar/LC_MESSAGES
 @comment @dirrm share/locale/ar
+@comment @dirrm share/locale/am/LC_MESSAGES
+@comment @dirrm share/locale/am
 @comment @dirrm share/locale
 @dirrm share/gtk-2.0/demo
 @dirrm share/gtk-2.0

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2002/08/11 11:03:27 nino Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/23 04:59:47 marcm Exp $
 
 COMMENT=			"multi-platform graphical toolkit"
 COMMENT-docs=           	"gtk+-2 documentation"
 
-VERSION=			2.0.6
+VERSION=			2.0.9
 DISTNAME=			gtk+-${VERSION}
 PKGNAME=			gtk+2-${VERSION}
 PKGNAME-docs=			gtk+2-docs-${VERSION}
 CATEGORIES=			x11 devel
 
 HOMEPAGE=			http://www.gtk.org
-MAINTAINER=			Nils Nordman <nino@openbsd.org>
+MAINTAINER=			Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=		Yes
@@ -25,9 +25,9 @@ MULTI_PACKAGES=         	-docs
 SUBPACKAGE?=
 
 .if ${SUBPACKAGE} != "-docs"
-LIB_DEPENDS=			glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2 \
-				pango-1.0.=0,pangox-1.0.=0,pangoxft-1.0.=0::devel/pango \
-				atk-1.0.=0::devel/atk \
+LIB_DEPENDS=			glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
+				pango-1.0.0.0,pangox-1.0.0.0,pangoxft-1.0.0.0::devel/pango \
+				atk-1.0.0.0::devel/atk \
 				tiff.35::graphics/tiff \
 				png.3::graphics/png \
 				jpeg.62::graphics/tiff
@@ -35,10 +35,10 @@ BUILD_DEPENDS=          	:pkgconfig-*:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-LIBGDK_X11_VERSION=		0:5
-LIBGDK_PIXBUF_VERSION=		0:5
-LIBGDK_PIXBUF_XLIB_VERSION=	0:5
-LIBGTK_X11_VERSION=		0:5
+LIBGDK_X11_VERSION=		0:9
+LIBGDK_PIXBUF_VERSION=		0:9
+LIBGDK_PIXBUF_XLIB_VERSION=	0:9
+LIBGTK_X11_VERSION=		0:9
 
 USE_X11=			Yes
 USE_GMAKE=			Yes

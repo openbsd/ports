@@ -1,15 +1,15 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.1 2002/08/11 11:03:28 nino Exp $
---- gtk/Makefile.in.orig	Thu Aug  1 00:10:06 2002
-+++ gtk/Makefile.in	Sun Aug 11 12:15:31 2002
-@@ -213,7 +213,6 @@ gtarget = @gdktarget@
- # we use the general approach here
+$OpenBSD: patch-gtk_Makefile_in,v 1.2 2002/12/23 04:59:47 marcm Exp $
+--- gtk/Makefile.in.orig	Wed Nov 20 12:42:58 2002
++++ gtk/Makefile.in	Wed Dec  4 14:05:44 2002
+@@ -214,7 +214,6 @@ gtarget = @gdktarget@
  libgtkincludedir = $(includedir)/gtk-2.0/gtk
  LDFLAGS = @STRIP_BEGIN@ \
+ 	@LDFLAGS@								\
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)			\
  	-export-dynamic								\
  	-rpath $(libdir)							\
  	$(no_undefined)								\
-@@ -686,7 +685,7 @@ X_CFLAGS = @X_CFLAGS@
+@@ -687,7 +686,7 @@ X_CFLAGS = @X_CFLAGS@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
