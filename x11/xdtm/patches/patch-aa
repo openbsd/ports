@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Mar 14 13:02:00 1996
-+++ Imakefile	Fri Nov 19 12:17:53 1999
-@@ -241,10 +241,11 @@
+--- Imakefile.orig	Thu Mar 14 14:02:00 1996
++++ Imakefile	Mon Apr  3 23:21:23 2000
+@@ -241,27 +241,28 @@
  	sed -e 's^\"{icon dir}\"^\"$(XDTMDIR)/icons\"^' \
  	   xdtmrc.orig > xdtmrc
  	sed -e 's^iconfile^$(XDTMDIR)/new_xdtm.xbm^' Xdtm.ad.tmpl > Xdtm.ad
@@ -9,7 +9,32 @@
  XCOMM Install the xdtm execute script file, used to prevent xterms closing
  XCOMM when the inferier process dies.
 -InstallProgram(xdtm.sh, $(BINDIR))
-+InstallScript(xdtm.sh, $(BINDIR))
++InstallScript(xdtm.sh,$(BINDIR))
  
  XCOMM Install the helpfile, system xdtmrc, icon bitmaps and the default
  XCOMM application defaults.
+ 
+-MakeDirectories(install, $(XDTMDIR))
+-InstallNonExec(help, $(XDTMDIR))
+-InstallNonExec(perm.help, $(XDTMDIR))
+-InstallNonExec(xdtmrc, $(XDTMDIR))
+-InstallNonExec(bitmaps/new_xdtm.xbm, $(XDTMDIR))
+-MakeDirectories(install, $(XDTMDIR)/icons)
++MakeDirectories(install,$(XDTMDIR))
++InstallNonExec(help,$(XDTMDIR))
++InstallNonExec(perm.help,$(XDTMDIR))
++InstallNonExec(xdtmrc,$(XDTMDIR))
++InstallNonExec(bitmaps/new_xdtm.xbm,$(XDTMDIR))
++MakeDirectories(install,$(XDTMDIR)/icons)
+ InstallAppDefaults(Xdtm)
+ 
+ install::
+-	$(CP) icons$(PATHSEP)*$(PATHSEP)*.icon $(XDTMDIR)/icons
++	$(CP) icons$(PATHSEP)*$(PATHSEP)*.icon $(DESTDIR)$(XDTMDIR)/icons
+ 	$(RM) xdtmrc
+ 	$(MV) xdtmrc.orig xdtmrc
+-	chmod -R a+r $(XDTMDIR)
++	chmod -R a+r $(DESTDIR)$(XDTMDIR)
+ 
+ XCOMM Make the emacs TAGS file
+ 
