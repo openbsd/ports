@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2004/10/13 06:28:21 jolan Exp $
+# $OpenBSD: Makefile,v 1.159 2004/11/10 09:56:27 alek Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -123,6 +123,7 @@
      SUBDIR += php5
      SUBDIR += phpicalendar
      SUBDIR += phpmyadmin
+     SUBDIR += phppgadmin
      SUBDIR += plone
      SUBDIR += privoxy
      SUBDIR += rawdog
