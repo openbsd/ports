@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/09 16:28:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/16 17:01:44 espie Exp $
 
 COMMENT=		"GNOME control center"
 V=			1.4.0.1
@@ -16,8 +16,9 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfi
                         patch-*
 
 LIB_DEPENDS=		gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
-			gnome.36::x11/gnome/libs \
-			gnomevfs.::x11/gnome/vfs
+			gnome.36,gnorba,gtkxmhtml::x11/gnome/libs \
+			gnomevfs.::x11/gnome/vfs \
+			Imlib,gdk_pixbuf::graphics/imlib
 
 BUILD_DEPENDS=		::textproc/scrollkeeper
 RUN_DEPENDS=		::textproc/scrollkeeper \
