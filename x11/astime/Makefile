@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/26 22:21:44 wilfried Exp $
 
 COMMENT=		'wm-dockapp; Time/Date applet'
 
@@ -6,7 +6,7 @@ DISTNAME=		astime-2.8
 CATEGORIES=		x11 x11/windowmaker
 NEED_VERSION=		1.482
 
-HOMEPAGE=		http://www.tigr.net/afterstep/as-apps/
+HOMEPAGE=		http://www.tigr.net/afterstep/detail.pl?applet=astime
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
