@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/05/14 07:50:56 shell Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/07/06 10:21:40 shell Exp $
 ${P5ARCH}/XML/LibXML.pm
 ${P5ARCH}/XML/LibXML/Attr.pod
 ${P5ARCH}/XML/LibXML/Boolean.pm
@@ -14,6 +14,8 @@ ${P5ARCH}/XML/LibXML/Namespace.pod
 ${P5ARCH}/XML/LibXML/Node.pod
 ${P5ARCH}/XML/LibXML/NodeList.pm
 ${P5ARCH}/XML/LibXML/Number.pm
+${P5ARCH}/XML/LibXML/SAX.pm
+${P5ARCH}/XML/LibXML/SAX.pod
 ${P5ARCH}/XML/LibXML/SAX/Builder.pm
 ${P5ARCH}/XML/LibXML/SAX/Generator.pm
 ${P5ARCH}/XML/LibXML/SAX/Parser.pm
@@ -35,6 +37,7 @@ man/man3p/XML::LibXML::Namespace.3p
 man/man3p/XML::LibXML::Node.3p
 man/man3p/XML::LibXML::NodeList.3p
 man/man3p/XML::LibXML::Number.3p
+man/man3p/XML::LibXML::SAX.3p
 man/man3p/XML::LibXML::SAX::Builder.3p
 man/man3p/XML::LibXML::SAX::Generator.3p
 man/man3p/XML::LibXML::SAX::Parser.3p
