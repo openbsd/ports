@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/12/14 21:15:55 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2005/01/02 04:43:06 pvalchev Exp $
 
 .if ${MACHINE_ARCH} == "hppa"
 BROKEN=			"hangs indefinitely until machine panics/hangs"
@@ -42,6 +42,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="${ELF_TOOLCHAIN:L:S/yes/-Z/:S/no//} \
 				 -L${LOCALBASE}/lib"
+
+# Disable propolice on powerpc due to gcc3+propolice bug.
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fno-stack-protector"
+.endif
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"
 
