@@ -1,0 +1,46 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/12/11 17:17:08 marcm Exp $
+--- configure.in.orig	Thu Oct 10 14:17:08 2002
++++ configure.in	Fri Dec  6 10:27:37 2002
+@@ -6,6 +6,9 @@ AM_MAINTAINER_MODE
+ 
+ AM_CONFIG_HEADER(config.h)
+ 
++AC_ARG_WITH(installed-glib,
++  [  --with-installed-glib   Use an installed glib])
++
+ AC_MSG_CHECKING([for Win32])
+ case "$host" in
+   *-*-mingw*)
+@@ -14,11 +17,14 @@ case "$host" in
+   ;;
+   *)
+     native_win32=no
++    if test x$with_installed_glib = xyes; then
++      AC_DEFINE(USE_INSTALLED_GLIB, 1, [We are using an installed GLib])
++    fi
+   ;;
+ esac
+ AC_MSG_RESULT([$native_win32])
+ 
+-AM_CONDITIONAL(USE_INSTALLED_GLIB, test x$native_win32 = xyes)
++AM_CONDITIONAL(USE_INSTALLED_GLIB, test x$native_win32 = xyes || test x$with_installed_glib = xyes)
+ 
+ if test x$native_win32 = xyes; then
+   # On Win32, use the normal installed GLib.  Yes, this is a circular
+@@ -36,7 +42,15 @@ if test x$native_win32 = xyes; then
+ 
+   AC_CONFIG_AUX_DIR(.)
+ else
+-  AC_CONFIG_SUBDIRS(glib-1.2.8)
++  if test x$with_installed_glib = xyes; then
++    GLIB_CFLAGS="-I$includedir/glib-1.2"
++    GLIB_LIBS="-L$libdir -lglib -liconv -lintl -static"
++
++    AC_SUBST(GLIB_LIBS)
++    AC_SUBST(GLIB_CFLAGS)
++  else
++    AC_CONFIG_SUBDIRS(glib-1.2.8)
++  fi
+ fi # !native_win32
+ 
+ AM_PROG_LIBTOOL
