@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/05/24 02:28:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.41 2001/06/05 09:22:56 wilfried Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
+EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		PropList.2::devel/libproplist \
 			jpeg.62::graphics/jpeg \
@@ -27,7 +28,6 @@ LIB_DEPENDS=		PropList.2::devel/libproplist \
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
-USE_BZIP2=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
