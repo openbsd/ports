@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-newlib-depends,v 1.4 2005/01/31 10:09:42 espie Exp $
+# $OpenBSD: check-newlib-depends,v 1.5 2005/03/02 20:45:37 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -106,7 +106,7 @@ sub check_wantlibs
 		}
 	}
 	if ($fullname =~ m/^(.*\/)?lib(.*)\.so\.\d+\.\d+$/) {
-		$t->{haslib}->{$2} = 1;
+		$t->{haslib}->{$2} = 2;
 	}
 	unlink($where.$fullname);
 }
