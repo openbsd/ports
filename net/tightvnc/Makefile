@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/26 23:49:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2003/11/11 22:08:48 margarida Exp $
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
@@ -8,9 +8,7 @@ PKGNAME=        tightvnc-${VERSION}
 DISTNAME=       ${PKGNAME}_unixsrc
 CATEGORIES=	net
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=vnc-tight/}
-MASTER_SITES0=	http://www.uk.research.att.com/vnc/dist/
-DOCDIST=	vnc-latest_doc.tgz
-DISTFILES=	${DISTNAME}.tar.gz ${DOCDIST}:0
+DISTFILES=	${DISTNAME}.tar.gz
 
 HOMEPAGE=	http://www.tightvnc.org/
 MAINTAINER=	Rob Casey <rob@minauros.com>
@@ -25,7 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 WRKDIST=	${WRKDIR}/vnc_unixsrc
-IGNOREFILES=	${DOCDIST}
 
 MULTI_PACKAGES= -viewer
 SUBPACKAGE?=
@@ -50,10 +47,7 @@ post-install:
 		< ${WRKSRC}/vncserver \
 		> ${WRKSRC}/vncserver.local
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver.local ${PREFIX}/bin/vncserver
-# The documentation comes with bogus ownerships; this is a little leaky security-wise
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vnc
-	tar -C ${PREFIX}/share/doc/vnc -xzf ${FULLDISTDIR}/${DOCDIST}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/vnc
+
 # Go install Java classes
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vnc
 	cp -R ${WRKSRC}/classes ${PREFIX}/share/vnc
