@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2001/08/30 17:20:36 shell Exp $
+# $OpenBSD: Makefile,v 1.23 2001/08/31 08:13:39 shell Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
-COMMENT-doc=	"documents for FreeType"
+COMMENT-doc=	"documentation for FreeType"
 
 VERSION=	1.3.1
 DISTNAME=	freetype-${VERSION}
-
-FULLPKGNAME=	${DISTNAME}
 PKGNAME-doc=	freetype-doc-${VERSION}
-FULLPKGNAME-doc=freetype-doc-${VERSION}
 
 CATEGORIES=	print
 NEED_VERSION=	1.448
@@ -39,10 +36,8 @@ SFT_DOC=	${WRKSRC}/docs
 SRCTYPE=	*.txt *.htm *.lsm credits FAQ TODO
 
 post-install:
-	${INSTALL_DATA_DIR} ${FT_DOC}/image/
-	${INSTALL_DATA} ${SFT_DOC}/image/* ${FT_DOC}/image/
-.for i in ${SRCTYPE}
-	${INSTALL_DATA} ${SFT_DOC}/$i ${FT_DOC}/
-.endfor
+	${INSTALL_DATA_DIR} ${FT_DOC}/image
+	${INSTALL_DATA} ${SFT_DOC}/image/* ${FT_DOC}/image
+	cd ${SFT_DOC}; ${INSTALL_DATA} ${SRCTYPE} ${FT_DOC}
 
 .include <bsd.port.mk>

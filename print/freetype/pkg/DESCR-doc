@@ -1,6 +1,5 @@
 The FreeType engine is a free and portable TrueType font rendering
-engine. It  has been developed to  provide TT support to a great
+engine. It has been developed to provide TT support to a great
 variety of platforms and environments.
 
-This package is some related documetation for develop and using
-FreeType library.
+This package is documetation for FreeType.
