@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2001/03/09 10:03:21 reinhard Exp $
+# $OpenBSD: Makefile,v 1.128 2001/03/12 00:09:13 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += firewalk
      SUBDIR += flow-tools
      SUBDIR += fping
+     SUBDIR += ftpcopy
      SUBDIR += gaim
      SUBDIR += gated
      SUBDIR += hping
