@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gated_str_c,v 1.1 2002/11/19 08:05:38 pvalchev Exp $
+--- src/gated/str.c.orig	Wed Jan 12 15:26:48 2000
++++ src/gated/str.c	Tue Nov 19 00:56:32 2002
+@@ -191,7 +191,7 @@ static char sccsid[] = "@(#)doprnt.c	5.3
+ 
+ #define	ARG() \
+ 	_ulong = flags&LONGINT ? va_arg(ap, long) : \
+-	    flags&SHORTINT ? va_arg(ap, short) : va_arg(ap, int);
++	    va_arg(ap, int);
+ 
+ #define	todigit(c)	((c) - '0')
+ #define	tochar(n)	((n) + '0')
