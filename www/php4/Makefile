@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2001/10/15 00:56:53 avsm Exp $
+# $OpenBSD: Makefile,v 1.56 2001/10/24 12:38:46 espie Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -16,7 +16,7 @@ PKGNAME=	php4-${V}p1
 FULLPKGNAME-pear= php4-pear-${V}p1
 
 CATEGORIES=	www lang
-NEED_VERSION=	1.435
+NEED_VERSION=	1.474
 
 MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>
 
@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=	--without-imap
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
-LIB_DEPENDS+=		ldap.2:openldap-client-2.*:databases/openldap
+LIB_DEPENDS+=		ldap.2,lber:openldap-client-2.*:databases/openldap
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif

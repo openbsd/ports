@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2001/10/16 08:01:44 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2001/10/24 12:38:46 espie Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS=	i386 m68k sparc
 DISTNAME=	php-3.0.18
 PKGNAME=	php3-3.0.18
 CATEGORIES=	www lang
-NEED_VERSION=	1.435
+NEED_VERSION=	1.474
 
 HOMEPAGE=	http://www.php.net/
 
@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=	--without-imap
 .if ${FLAVOR:L:Mgd}
 CONFIGURE_ARGS+=	--with-gd  --with-jpegdir=${LOCALBASE}/lib
 LIB_DEPENDS+=		gd.18::graphics/gd
+LIB_DEPENDS+=		gdbm::databases/gdbm
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
 .else
 CONFIGURE_ARGS+=	--without-gd
