@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.37 2001/09/04 22:58:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.38 2002/10/05 19:09:26 fgsch Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 
-DATE=		20010819
+DATE=		20020203
 DISTNAME=	mtools-3.9.8
 PKGNAME=	mtools-3.9.8.${DATE}
 CATEGORIES=	sysutils
-NEED_VERSION=	1.406
-MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
+MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
+		${HOMEPAGE}
 
 PATCHFILES=	mtools-3.9.8-${DATE}.diff.gz
 
 MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
 
-HOMEPAGE=	http://alain.knaff.linux.lu/mtools/
+HOMEPAGE=	http://mtools.linux.lu/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

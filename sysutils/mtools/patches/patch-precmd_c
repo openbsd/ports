@@ -1,0 +1,12 @@
+$OpenBSD: patch-precmd_c,v 1.1 2002/10/05 19:09:26 fgsch Exp $
+--- precmd.c.orig	Sun May 20 15:18:13 2001
++++ precmd.c	Sat Oct  5 15:55:51 2002
+@@ -21,7 +21,7 @@ void precmd(struct device *dev)
+ 			exit(1);
+ 			break;
+ 		case 0: /* the son */
+-			execl("/bin/sh", "sh", "-c", dev->precmd, 0);
++			execl("/bin/sh", "sh", "-c", dev->precmd, (char *)NULL);
+ 			break;
+ 		default:
+ 			wait(&status);
