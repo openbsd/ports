@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/04/23 03:16:05 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/05/08 17:38:40 brad Exp $
 
-DISTNAME=	gnupg-0.9.5
+DISTNAME=	gnupg-0.9.6
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/
 
