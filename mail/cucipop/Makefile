@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/12/25 06:37:18 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2000/12/25 06:52:22 brad Exp $
 
 DISTNAME=	cucipop-1.31
 CATEGORIES=	mail
@@ -16,7 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	CFLAGS="${CFLAGS}" LDFLAGS=""
+MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS=""
+
+post-patch:
+.for f in cucipop.8 makevpopdb.8
+	@cd ${WRKSRC} && sed -e s#!!PREFIX!!#${PREFIX}#g ${f} > ${f}.new && \
+		mv ${f}.new ${f}
+.endfor
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} cucipop makevpopdb ${PREFIX}/libexec
