@@ -1,0 +1,12 @@
+$OpenBSD: patch-gst_cothreads_c,v 1.1.1.1 2004/12/22 06:06:56 marcm Exp $
+--- gst/cothreads.c.orig	2004-03-15 11:20:28.000000000 -0800
++++ gst/cothreads.c	2004-04-02 19:32:54.000000000 -0800
+@@ -52,7 +52,7 @@
+ #endif
+ #endif
+ 
+-#define STACK_SIZE 0x200000
++#define STACK_SIZE 0x100000
+ 
+ #define COTHREAD_MAGIC_NUMBER 0xabcdef
+ 
