@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2001/11/20 21:39:12 wilfried Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.6 2002/04/19 16:34:16 wilfried Exp $
 lib/libgdkmm.so.2.2
-lib/libgtkmm.so.2.4
+lib/libgtkmm.so.2.5
 DYNLIBDIR(%B)

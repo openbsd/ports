@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2001/11/20 21:39:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2002/04/19 16:34:16 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
 
-VERSION=		1.2.8
+VERSION=		1.2.9
 DISTNAME=		gtkmm-${VERSION}
 PKGNAME-docs=		gtkmm-docs-${VERSION}
 CATEGORIES=		devel x11
@@ -42,12 +42,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 
-post-patch:
-	@cd ${WRKSRC}/scripts; \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
-	${PATCH} --forward --quiet -E < \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
+post-extract:
+	@cp -f ${PORTSDIR}/infrastructure/db/config.guess ${WRKSRC}/scripts
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkmm/gdk
