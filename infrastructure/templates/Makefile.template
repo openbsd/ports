@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.24 2001/01/04 01:30:37 kevlo Exp $
+# $OpenBSD: Makefile.template,v 1.25 2001/01/05 16:58:08 brad Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -23,7 +23,6 @@ CATEGORIES=     	???
 #ONLY_FOR_ARCHS=	???
 #BROKEN=		"reason"
 #RESTRICTED=		"reason"
-#MIRROR_DISTFILE=	No
 
 # where to send bitches about this port
 #
