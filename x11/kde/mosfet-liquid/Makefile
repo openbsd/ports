@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/16 12:20:43 espie Exp $
-V=0.7
+# $OpenBSD: Makefile,v 1.14 2002/07/16 12:46:30 espie Exp $
+V=0.9.5
 CATEGORIES=		x11 x11/kde
 COMMENT=	"KDE style engine"
 
@@ -14,12 +14,14 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 BUILD_DEPENDS=	::devel/autoconf ::devel/automake
 
-VERSION=2
+VERSION=3
+PATCH_LIST=	patch-*
+
 LIB_DEPENDS= 	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		kdecore.3::x11/kde/libs2 \
-		kwin::x11/kde/base2
+		kdecore.4::x11/kde/libs3 \
+		kwin::x11/kde/base3
 
 # QPL
 PERMIT_DISTFILES_FTP=	Yes
@@ -28,11 +30,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_CDROM=	"Not without the source"
 
 
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV=		UIC_NOT_NEEDED=true
-
-pre-configure:
-	cd ${WRKDIST} && ${MAKE_PROGRAM} -f Makefile.cvs
+#CONFIGURE_STYLE=	gnu
+#
+#CONFIGURE_ENV=		UIC_NOT_NEEDED=true
+#
+#pre-configure:
+#	cd ${WRKDIST} && ${MAKE_PROGRAM} -f Makefile.cvs
 
 .include <bsd.port.mk>

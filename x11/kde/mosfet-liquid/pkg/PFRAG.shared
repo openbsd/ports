@@ -1,5 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2002/04/10 08:49:18 espie Exp $
-lib/kde2/libkwinliquid.so.0.0
-lib/libkcm_transmenu.so.0.0
-lib/libliquid.so.0.0
+@comment $OpenBSD: PFRAG.shared,v 1.5 2002/07/16 12:46:30 espie Exp $
+${KDE}/libkwinliquid.so.0.0
+${KDE}/libkwinliquidmack.so.0.0
+${KDE}/libkwinliquidold.so.0.0
+${KDE}/plugins/styles/libliquid.so.0.0
+lib/libkcm_liquid.so.0.0
 DYNLIBDIR(%D/lib)
