@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2003/06/10 15:43:20 brad Exp $
+# $OpenBSD: Makefile,v 1.94 2003/08/26 17:11:08 sturm Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
@@ -31,7 +31,8 @@ PKGNAME-java=	gcj-${FULLV}
 PKGNAME-objc=	gobjc-${FULLV}
 PKGNAME-ada=	gnat-${FULLV}
 
-BUILD_DEPENDS=	::devel/autoconf
+# use autoconf dependency framework
+#BUILD_DEPENDS=	::devel/autoconf
 
 # This can be patched out, apart from java that wants a pure parser.
 BUILD_DEPENDS+= :bison-*:devel/bison
