@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2004/01/17 18:44:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2004/02/11 17:46:02 sturm Exp $
 
 COMMENT=	"extract, list, and test RAR archives"
 
-DISTNAME=	unrarsrc-3.3.4
-PKGNAME=	unrar-3.30beta4
+DISTNAME=	unrarsrc-3.3.6
+PKGNAME=	unrar-3.30
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
