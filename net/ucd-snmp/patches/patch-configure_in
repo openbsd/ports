@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2000/08/05 09:39:21 danh Exp $
+$OpenBSD: patch-configure_in,v 1.2 2000/08/29 17:49:10 danh Exp $
 --- configure.in.orig	Fri May  5 12:46:26 2000
-+++ configure.in	Sat Aug  5 03:54:07 2000
++++ configure.in	Tue Aug 29 13:23:30 2000
 @@ -400,22 +400,10 @@ if test "x$prefix" = "xNONE"; then
    prefix=/usr/local
  fi
@@ -24,6 +24,24 @@ $OpenBSD: patch-configure_in,v 1.1 2000/08/05 09:39:21 danh Exp $
  dnl Set SNMPLIBPATH & SNMPSHAREPATH
  
  SNMPLIBPATH=""
+@@ -460,7 +448,7 @@ if test "x$with_shared" = "xyes"; then
+       SHLIB_CFLAGS="-KPIC"
+     fi
+     SHLIB_EXTENSION="so"
+-    SHLIB_VERSION=
++    SHLIB_VERSION=.41.2
+     SHLIB_LD_CMD="ld -r -o"
+     SHLIB_LDCONFIG_CMD=
+     SHLIB_LD_LIBS=
+@@ -498,7 +486,7 @@ yes
+ 		AC_MSG_RESULT([no])
+ 		SHLIB_LD_CMD="ld -Bshareable -o"
+ 		CC_RUNTIME_ARG="-R$libdir"
+-		SHLIB_LDCONFIG_CMD='PATH="$$PATH:/sbin" ldconfig -m $(libdir)'
++		SHLIB_LDCONFIG_CMD=
+ 	])
+ 	;;
+ 
 @@ -1256,29 +1244,17 @@ AC_CHECK_STRUCT_FOR([
  
  AC_CHECK_STRUCT_FOR([

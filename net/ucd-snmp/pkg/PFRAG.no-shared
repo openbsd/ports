@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.no-shared,v 1.1 2000/08/29 17:49:10 danh Exp $
+lib/libsnmp.a
+lib/libucdagent.a
+lib/libucdmibs.a
