@@ -1,0 +1,39 @@
+$OpenBSD: patch-config_install_pl,v 1.1 2005/04/04 17:12:43 sturm Exp $
+--- config/install.pl.orig	Sun Apr 28 07:15:01 2002
++++ config/install.pl	Sun Apr  3 23:49:01 2005
+@@ -219,9 +219,7 @@ my %Install_items = (
+   #'configure'         => 'lib',
+   #'configure.in'      => 'lib',
+   'cweb2html'         => 'lib,recurse',
+-  'docs'              => 'lib,recurse',
+   'dot.latex2html-init' => 'lib',
+-  'example'           => 'lib,recurse',
+   'foilhtml'          => 'lib,recurse',
+   # icons are teated specially below
+   # the local config is also installed
+@@ -371,12 +369,13 @@ foreach $item (sort keys %Install_items)
+ #-----------------------------------------------------------------------------
+ 
+ if($cfg{TEXPATH}) {
+-  print "\nNote: trying to install LaTeX2HTML style files in TeX directory tree\n     ($cfg{TEXPATH})\n";
+-  unless(mkpath($cfg{TEXPATH})) {
++  my $d = $ENV{'DESTDIR'} . $cfg{TEXPATH};
++  print "\nNote: trying to install LaTeX2HTML style files in TeX directory tree\n     ($d)\n";
++  unless(mkpath($d)) {
+   #my $testpath = $cfg{TEXPATH}; # to strip (latex2)html
+   #$testpath =~ s/[$dd$dd][^$dd$dd]*$//;
+   #if((-d $cfg{TEXPATH} && !-w _) || (-d $testpath && !-w _)) {
+-    print STDERR "\nError: Cannot install LaTeX2HTML style files in $cfg{TEXPATH}\n";
++    print STDERR "\nError: Cannot install LaTeX2HTML style files in $d\n";
+   } else {
+     my $dir = 'texinputs';
+     my $dest = $cfg{TEXPATH};
+@@ -396,7 +395,7 @@ if($cfg{TEXPATH}) {
+       closedir(DIR);
+       if($ok && $cfg{MKTEXLSR}) {
+         print "Info: Running $cfg{MKTEXLSR} to rebuild ls-R database...\n";
+-        system($cfg{MKTEXLSR});
++        #system($cfg{MKTEXLSR});
+       }
+     }
+   }
