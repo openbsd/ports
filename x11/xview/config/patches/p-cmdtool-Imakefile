@@ -1,0 +1,11 @@
+--- clients/cmdtool/Imakefile.orig	Sun Apr  2 20:49:52 2000
++++ clients/cmdtool/Imakefile	Sun Apr  2 20:50:04 2000
+@@ -20,7 +20,7 @@
+ 
+ ComplexProgramTarget(cmdtool)
+ 
+-LinkToFile(install,./cmdtool,shelltool,$(BINDIR))
++LinkToFile(install,./cmdtool,shelltool,$(DESTDIR)$(BINDIR))
+ 
+ InstallManPage(shelltool,$(MANDIR))
+ 
