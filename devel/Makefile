@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2003/10/26 00:17:55 jolan Exp $
+# $OpenBSD: Makefile,v 1.191 2003/10/27 03:09:17 jolan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -189,6 +189,7 @@
      SUBDIR += sdl-image
      SUBDIR += sdl-mixer
      SUBDIR += sdl-net
+     SUBDIR += sdl-sound
      SUBDIR += sdl-ttf
      SUBDIR += sdlmm
      SUBDIR += sfio
