@@ -1,20 +1,19 @@
---- gcc/f/g77.texi.orig	Thu Nov 26 23:32:00 1998
-+++ gcc/f/g77.texi	Thu Nov 26 23:32:33 1998
-@@ -12,7 +12,7 @@
- @end tex
- 
- @c %**start of header 
+--- gcc/f/g77.texi.orig	Mon Jun 21 13:58:54 1999
++++ gcc/f/g77.texi	Mon Sep  6 17:13:11 1999
+@@ -1,6 +1,6 @@
+ \input texinfo  @c -*-texinfo-*-
+ @c %**start of header
 -@setfilename g77.info
 +@setfilename eg77.info
  
- @set last-up-date 1998-09-01
- @set version-g77 0.5.24
-@@ -154,7 +154,7 @@
- 
+ @set last-update 1999-06-06
+ @set copyrights-g77 1995-1999
+@@ -73,7 +73,7 @@
+ @ifinfo
  @dircategory Programming
  @direntry
 -* g77: (g77).                  The GNU Fortran compiler.
 +* eg77: (eg77).                  The experimental GNU Fortran compiler.
  @end direntry
- @node Top, Copying,, (DIR)
- @top Introduction
+ @ifset INTERNALS
+ @ifset USING

@@ -1,13 +1,11 @@
---- libstdc++/config/openbsd.ml.orig	Thu Feb 25 02:26:26 1999
-+++ libstdc++/config/openbsd.ml	Thu Mar 25 22:20:36 1999
+--- libstdc++/config/openbsd.ml.orig	Mon Apr 26 03:30:37 1999
++++ libstdc++/config/openbsd.ml	Mon Sep  6 17:11:21 1999
 @@ -1,5 +1,8 @@
--# Base shared lib for OpenBSD i386
--
-+# Base shared lib for OpenBSD 
-+# This interface schmuck isn't present before after 1.1.2
+ # Base shared lib for OpenBSD i386
+ 
 +INTERFACE=2
 +MAJOR_OFFSET=28
 +MSHLINK = libstdc++.so.`expr $(INTERFACE) + $(MAJOR_OFFSET)`.0
- LIBS    = $(ARLIB) $(SHLIB) $(SHLINK) mshlink
+ LIBS    = $(ARLIB) $(ARLINK) $(SHLIB) $(SHLINK) mshlink
  SHFLAGS = -nostdlib -Wl,-Bshareable,-Bforcearchive
  SHDEPS  = -lm
