@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/11/18 10:29:49 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2001/02/11 10:44:00 jakob Exp $
 
 MULTI_PACKAGES=	-client
 SUBPACKAGE?=
@@ -55,7 +55,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-cyrus-sasl \
 			--enable-spasswd
 CONFIGURE_ENV+=		CPPFLAGS="-I${PREFIX}/include/sasl" \
-			LIBS="-L${PREFIX}/lib"
+			LIBS="-L${PREFIX}/lib -lkrb"
 LIB_DEPENDS+=		sasl::security/cyrus-sasl
 .else
 CONFIGURE_ARGS+=	--without-cyrus-sasl \
