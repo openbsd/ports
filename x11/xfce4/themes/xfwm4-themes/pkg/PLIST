@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/01/09 01:27:43 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:34 espie Exp $
+share/xfwm4/themes/adept/
 share/xfwm4/themes/adept/README
 share/xfwm4/themes/adept/bottom-active.xpm
 share/xfwm4/themes/adept/bottom-inactive.xpm
@@ -34,6 +35,7 @@ share/xfwm4/themes/adept/top-left-active.xpm
 share/xfwm4/themes/adept/top-left-inactive.xpm
 share/xfwm4/themes/adept/top-right-active.xpm
 share/xfwm4/themes/adept/top-right-inactive.xpm
+share/xfwm4/themes/agua/
 share/xfwm4/themes/agua/README
 share/xfwm4/themes/agua/bottom-active.xpm
 share/xfwm4/themes/agua/bottom-inactive.xpm
@@ -78,6 +80,7 @@ share/xfwm4/themes/agua/top-left-active.xpm
 share/xfwm4/themes/agua/top-left-inactive.xpm
 share/xfwm4/themes/agua/top-right-active.xpm
 share/xfwm4/themes/agua/top-right-inactive.xpm
+share/xfwm4/themes/agualemon/
 share/xfwm4/themes/agualemon/README
 share/xfwm4/themes/agualemon/bottom-active.xpm
 share/xfwm4/themes/agualemon/bottom-inactive.xpm
@@ -122,6 +125,7 @@ share/xfwm4/themes/agualemon/top-left-active.xpm
 share/xfwm4/themes/agualemon/top-left-inactive.xpm
 share/xfwm4/themes/agualemon/top-right-active.xpm
 share/xfwm4/themes/agualemon/top-right-inactive.xpm
+share/xfwm4/themes/alternate/
 share/xfwm4/themes/alternate/README
 share/xfwm4/themes/alternate/bottom-active.xpm
 share/xfwm4/themes/alternate/bottom-inactive.xpm
@@ -175,6 +179,7 @@ share/xfwm4/themes/alternate/top-left-active.xpm
 share/xfwm4/themes/alternate/top-left-inactive.xpm
 share/xfwm4/themes/alternate/top-right-active.xpm
 share/xfwm4/themes/alternate/top-right-inactive.xpm
+share/xfwm4/themes/atlanta/
 share/xfwm4/themes/atlanta/README
 share/xfwm4/themes/atlanta/bottom-active.xpm
 share/xfwm4/themes/atlanta/bottom-inactive.xpm
@@ -219,6 +224,7 @@ share/xfwm4/themes/atlanta/top-left-active.xpm
 share/xfwm4/themes/atlanta/top-left-inactive.xpm
 share/xfwm4/themes/atlanta/top-right-active.xpm
 share/xfwm4/themes/atlanta/top-right-inactive.xpm
+share/xfwm4/themes/atlanta2/
 share/xfwm4/themes/atlanta2/README
 share/xfwm4/themes/atlanta2/bottom-active.xpm
 share/xfwm4/themes/atlanta2/bottom-inactive.xpm
@@ -263,6 +269,7 @@ share/xfwm4/themes/atlanta2/top-left-active.xpm
 share/xfwm4/themes/atlanta2/top-left-inactive.xpm
 share/xfwm4/themes/atlanta2/top-right-active.xpm
 share/xfwm4/themes/atlanta2/top-right-inactive.xpm
+share/xfwm4/themes/b5/
 share/xfwm4/themes/b5/README
 share/xfwm4/themes/b5/bottom-active.xpm
 share/xfwm4/themes/b5/bottom-inactive.xpm
@@ -292,6 +299,7 @@ share/xfwm4/themes/b5/top-left-active.xpm
 share/xfwm4/themes/b5/top-left-inactive.xpm
 share/xfwm4/themes/b5/top-right-active.xpm
 share/xfwm4/themes/b5/top-right-inactive.xpm
+share/xfwm4/themes/b6/
 share/xfwm4/themes/b6/README
 share/xfwm4/themes/b6/bottom-active.xpm
 share/xfwm4/themes/b6/bottom-inactive.xpm
@@ -330,6 +338,7 @@ share/xfwm4/themes/b6/top-left-active.xpm
 share/xfwm4/themes/b6/top-left-inactive.xpm
 share/xfwm4/themes/b6/top-right-active.xpm
 share/xfwm4/themes/b6/top-right-inactive.xpm
+share/xfwm4/themes/beastie/
 share/xfwm4/themes/beastie/README
 share/xfwm4/themes/beastie/bottom-active.xpm
 share/xfwm4/themes/beastie/bottom-inactive.xpm
@@ -374,6 +383,7 @@ share/xfwm4/themes/beastie/top-left-active.xpm
 share/xfwm4/themes/beastie/top-left-inactive.xpm
 share/xfwm4/themes/beastie/top-right-active.xpm
 share/xfwm4/themes/beastie/top-right-inactive.xpm
+share/xfwm4/themes/biz/
 share/xfwm4/themes/biz/README
 share/xfwm4/themes/biz/bottom-active.xpm
 share/xfwm4/themes/biz/bottom-inactive.xpm
@@ -418,6 +428,7 @@ share/xfwm4/themes/biz/top-left-active.xpm
 share/xfwm4/themes/biz/top-left-inactive.xpm
 share/xfwm4/themes/biz/top-right-active.xpm
 share/xfwm4/themes/biz/top-right-inactive.xpm
+share/xfwm4/themes/buzz/
 share/xfwm4/themes/buzz/README
 share/xfwm4/themes/buzz/bottom-active.xpm
 share/xfwm4/themes/buzz/bottom-inactive.xpm
@@ -471,6 +482,7 @@ share/xfwm4/themes/buzz/top-left-active.xpm
 share/xfwm4/themes/buzz/top-left-inactive.xpm
 share/xfwm4/themes/buzz/top-right-active.xpm
 share/xfwm4/themes/buzz/top-right-inactive.xpm
+share/xfwm4/themes/coldsteel/
 share/xfwm4/themes/coldsteel/README
 share/xfwm4/themes/coldsteel/bottom-active.xpm
 share/xfwm4/themes/coldsteel/bottom-inactive.xpm
@@ -515,6 +527,7 @@ share/xfwm4/themes/coldsteel/top-left-active.xpm
 share/xfwm4/themes/coldsteel/top-left-inactive.xpm
 share/xfwm4/themes/coldsteel/top-right-active.xpm
 share/xfwm4/themes/coldsteel/top-right-inactive.xpm
+share/xfwm4/themes/coolclean/
 share/xfwm4/themes/coolclean/README
 share/xfwm4/themes/coolclean/bottom-active.xpm
 share/xfwm4/themes/coolclean/bottom-inactive.xpm
@@ -553,6 +566,7 @@ share/xfwm4/themes/coolclean/top-left-active.xpm
 share/xfwm4/themes/coolclean/top-left-inactive.xpm
 share/xfwm4/themes/coolclean/top-right-active.xpm
 share/xfwm4/themes/coolclean/top-right-inactive.xpm
+share/xfwm4/themes/crux/
 share/xfwm4/themes/crux/README
 share/xfwm4/themes/crux/bottom-active.xpm
 share/xfwm4/themes/crux/bottom-inactive.xpm
@@ -597,6 +611,7 @@ share/xfwm4/themes/crux/top-left-active.xpm
 share/xfwm4/themes/crux/top-left-inactive.xpm
 share/xfwm4/themes/crux/top-right-active.xpm
 share/xfwm4/themes/crux/top-right-inactive.xpm
+share/xfwm4/themes/cruxish/
 share/xfwm4/themes/cruxish/README
 share/xfwm4/themes/cruxish/bottom-active.xpm
 share/xfwm4/themes/cruxish/bottom-inactive.xpm
@@ -641,6 +656,7 @@ share/xfwm4/themes/cruxish/top-left-active.xpm
 share/xfwm4/themes/cruxish/top-left-inactive.xpm
 share/xfwm4/themes/cruxish/top-right-active.xpm
 share/xfwm4/themes/cruxish/top-right-inactive.xpm
+share/xfwm4/themes/defcon-IV/
 share/xfwm4/themes/defcon-IV/README
 share/xfwm4/themes/defcon-IV/bottom-active.xpm
 share/xfwm4/themes/defcon-IV/bottom-inactive.xpm
@@ -694,6 +710,7 @@ share/xfwm4/themes/defcon-IV/top-left-active.xpm
 share/xfwm4/themes/defcon-IV/top-left-inactive.xpm
 share/xfwm4/themes/defcon-IV/top-right-active.xpm
 share/xfwm4/themes/defcon-IV/top-right-inactive.xpm
+share/xfwm4/themes/eazel-blue/
 share/xfwm4/themes/eazel-blue/README
 share/xfwm4/themes/eazel-blue/bottom-active.xpm
 share/xfwm4/themes/eazel-blue/bottom-inactive.xpm
@@ -738,6 +755,7 @@ share/xfwm4/themes/eazel-blue/top-left-active.xpm
 share/xfwm4/themes/eazel-blue/top-left-inactive.xpm
 share/xfwm4/themes/eazel-blue/top-right-active.xpm
 share/xfwm4/themes/eazel-blue/top-right-inactive.xpm
+share/xfwm4/themes/elberg/
 share/xfwm4/themes/elberg/README
 share/xfwm4/themes/elberg/bottom-active.xpm
 share/xfwm4/themes/elberg/bottom-inactive.xpm
@@ -776,6 +794,7 @@ share/xfwm4/themes/elberg/top-left-active.xpm
 share/xfwm4/themes/elberg/top-left-inactive.xpm
 share/xfwm4/themes/elberg/top-right-active.xpm
 share/xfwm4/themes/elberg/top-right-inactive.xpm
+share/xfwm4/themes/fbx/
 share/xfwm4/themes/fbx/README
 share/xfwm4/themes/fbx/bottom-active.xpm
 share/xfwm4/themes/fbx/bottom-inactive.xpm
@@ -820,6 +839,7 @@ share/xfwm4/themes/fbx/top-left-active.xpm
 share/xfwm4/themes/fbx/top-left-inactive.xpm
 share/xfwm4/themes/fbx/top-right-active.xpm
 share/xfwm4/themes/fbx/top-right-inactive.xpm
+share/xfwm4/themes/g2/
 share/xfwm4/themes/g2/README
 share/xfwm4/themes/g2/bottom-active.xpm
 share/xfwm4/themes/g2/bottom-inactive.xpm
@@ -864,6 +884,7 @@ share/xfwm4/themes/g2/top-left-active.xpm
 share/xfwm4/themes/g2/top-left-inactive.xpm
 share/xfwm4/themes/g2/top-right-active.xpm
 share/xfwm4/themes/g2/top-right-inactive.xpm
+share/xfwm4/themes/galaxy/
 share/xfwm4/themes/galaxy/README
 share/xfwm4/themes/galaxy/bottom-active.xpm
 share/xfwm4/themes/galaxy/bottom-inactive.xpm
@@ -902,6 +923,7 @@ share/xfwm4/themes/galaxy/top-left-active.xpm
 share/xfwm4/themes/galaxy/top-left-inactive.xpm
 share/xfwm4/themes/galaxy/top-right-active.xpm
 share/xfwm4/themes/galaxy/top-right-inactive.xpm
+share/xfwm4/themes/gaudy/
 share/xfwm4/themes/gaudy/README
 share/xfwm4/themes/gaudy/bottom-active.xpm
 share/xfwm4/themes/gaudy/bottom-inactive.xpm
@@ -946,6 +968,7 @@ share/xfwm4/themes/gaudy/top-left-active.xpm
 share/xfwm4/themes/gaudy/top-left-inactive.xpm
 share/xfwm4/themes/gaudy/top-right-active.xpm
 share/xfwm4/themes/gaudy/top-right-inactive.xpm
+share/xfwm4/themes/gnububble/
 share/xfwm4/themes/gnububble/README
 share/xfwm4/themes/gnububble/bottom-active.xpm
 share/xfwm4/themes/gnububble/bottom-inactive.xpm
@@ -990,6 +1013,7 @@ share/xfwm4/themes/gnububble/top-left-active.xpm
 share/xfwm4/themes/gnububble/top-left-inactive.xpm
 share/xfwm4/themes/gnububble/top-right-active.xpm
 share/xfwm4/themes/gnububble/top-right-inactive.xpm
+share/xfwm4/themes/gorilla/
 share/xfwm4/themes/gorilla/README
 share/xfwm4/themes/gorilla/bottom-active.xpm
 share/xfwm4/themes/gorilla/bottom-inactive.xpm
@@ -1034,6 +1058,7 @@ share/xfwm4/themes/gorilla/top-left-active.xpm
 share/xfwm4/themes/gorilla/top-left-inactive.xpm
 share/xfwm4/themes/gorilla/top-right-active.xpm
 share/xfwm4/themes/gorilla/top-right-inactive.xpm
+share/xfwm4/themes/gtk/
 share/xfwm4/themes/gtk/README
 share/xfwm4/themes/gtk/bottom-active.xpm
 share/xfwm4/themes/gtk/bottom-inactive.xpm
@@ -1087,6 +1112,7 @@ share/xfwm4/themes/gtk/top-left-active.xpm
 share/xfwm4/themes/gtk/top-left-inactive.xpm
 share/xfwm4/themes/gtk/top-right-active.xpm
 share/xfwm4/themes/gtk/top-right-inactive.xpm
+share/xfwm4/themes/iceg/
 share/xfwm4/themes/iceg/README
 share/xfwm4/themes/iceg/bottom-active.xpm
 share/xfwm4/themes/iceg/bottom-inactive.xpm
@@ -1131,6 +1157,7 @@ share/xfwm4/themes/iceg/top-left-active.xpm
 share/xfwm4/themes/iceg/top-left-inactive.xpm
 share/xfwm4/themes/iceg/top-right-active.xpm
 share/xfwm4/themes/iceg/top-right-inactive.xpm
+share/xfwm4/themes/kde/
 share/xfwm4/themes/kde/README
 share/xfwm4/themes/kde/bottom-active.xpm
 share/xfwm4/themes/kde/bottom-inactive.xpm
@@ -1175,6 +1202,7 @@ share/xfwm4/themes/kde/top-left-active.xpm
 share/xfwm4/themes/kde/top-left-inactive.xpm
 share/xfwm4/themes/kde/top-right-active.xpm
 share/xfwm4/themes/kde/top-right-inactive.xpm
+share/xfwm4/themes/kde1/
 share/xfwm4/themes/kde1/README
 share/xfwm4/themes/kde1/bottom-active.xpm
 share/xfwm4/themes/kde1/bottom-inactive.xpm
@@ -1222,6 +1250,7 @@ share/xfwm4/themes/kde1/top-left-active.xpm
 share/xfwm4/themes/kde1/top-left-inactive.xpm
 share/xfwm4/themes/kde1/top-right-active.xpm
 share/xfwm4/themes/kde1/top-right-inactive.xpm
+share/xfwm4/themes/keramik/
 share/xfwm4/themes/keramik/README
 share/xfwm4/themes/keramik/bottom-active.xpm
 share/xfwm4/themes/keramik/bottom-inactive.xpm
@@ -1266,6 +1295,7 @@ share/xfwm4/themes/keramik/top-left-active.xpm
 share/xfwm4/themes/keramik/top-left-inactive.xpm
 share/xfwm4/themes/keramik/top-right-active.xpm
 share/xfwm4/themes/keramik/top-right-inactive.xpm
+share/xfwm4/themes/kindaker/
 share/xfwm4/themes/kindaker/README
 share/xfwm4/themes/kindaker/bottom-active.xpm
 share/xfwm4/themes/kindaker/bottom-inactive.xpm
@@ -1310,6 +1340,7 @@ share/xfwm4/themes/kindaker/top-left-active.xpm
 share/xfwm4/themes/kindaker/top-left-inactive.xpm
 share/xfwm4/themes/kindaker/top-right-active.xpm
 share/xfwm4/themes/kindaker/top-right-inactive.xpm
+share/xfwm4/themes/kleanux/
 share/xfwm4/themes/kleanux/README
 share/xfwm4/themes/kleanux/bottom-active.xpm
 share/xfwm4/themes/kleanux/bottom-inactive.xpm
@@ -1349,6 +1380,7 @@ share/xfwm4/themes/kleanux/top-left-active.xpm
 share/xfwm4/themes/kleanux/top-left-inactive.xpm
 share/xfwm4/themes/kleanux/top-right-active.xpm
 share/xfwm4/themes/kleanux/top-right-inactive.xpm
+share/xfwm4/themes/koynacity/
 share/xfwm4/themes/koynacity/README
 share/xfwm4/themes/koynacity/bottom-active.xpm
 share/xfwm4/themes/koynacity/bottom-inactive.xpm
@@ -1387,6 +1419,7 @@ share/xfwm4/themes/koynacity/top-left-active.xpm
 share/xfwm4/themes/koynacity/top-left-inactive.xpm
 share/xfwm4/themes/koynacity/top-right-active.xpm
 share/xfwm4/themes/koynacity/top-right-inactive.xpm
+share/xfwm4/themes/linea/
 share/xfwm4/themes/linea/README
 share/xfwm4/themes/linea/bottom-active.xpm
 share/xfwm4/themes/linea/bottom-inactive.xpm
@@ -1431,6 +1464,7 @@ share/xfwm4/themes/linea/top-left-active.xpm
 share/xfwm4/themes/linea/top-left-inactive.xpm
 share/xfwm4/themes/linea/top-right-active.xpm
 share/xfwm4/themes/linea/top-right-inactive.xpm
+share/xfwm4/themes/metabox/
 share/xfwm4/themes/metabox/README
 share/xfwm4/themes/metabox/bottom-active.xpm
 share/xfwm4/themes/metabox/bottom-inactive.xpm
@@ -1469,6 +1503,7 @@ share/xfwm4/themes/metabox/top-left-active.xpm
 share/xfwm4/themes/metabox/top-left-inactive.xpm
 share/xfwm4/themes/metabox/top-right-active.xpm
 share/xfwm4/themes/metabox/top-right-inactive.xpm
+share/xfwm4/themes/microgui/
 share/xfwm4/themes/microgui/README
 share/xfwm4/themes/microgui/bottom-active.xpm
 share/xfwm4/themes/microgui/bottom-inactive.xpm
@@ -1507,6 +1542,7 @@ share/xfwm4/themes/microgui/top-left-active.xpm
 share/xfwm4/themes/microgui/top-left-inactive.xpm
 share/xfwm4/themes/microgui/top-right-active.xpm
 share/xfwm4/themes/microgui/top-right-inactive.xpm
+share/xfwm4/themes/mofit/
 share/xfwm4/themes/mofit/README
 share/xfwm4/themes/mofit/bottom-active.xpm
 share/xfwm4/themes/mofit/bottom-inactive.xpm
@@ -1554,6 +1590,7 @@ share/xfwm4/themes/mofit/top-left-active.xpm
 share/xfwm4/themes/mofit/top-left-inactive.xpm
 share/xfwm4/themes/mofit/top-right-active.xpm
 share/xfwm4/themes/mofit/top-right-inactive.xpm
+share/xfwm4/themes/next/
 share/xfwm4/themes/next/README
 share/xfwm4/themes/next/bottom-active.xpm
 share/xfwm4/themes/next/bottom-inactive.xpm
@@ -1598,6 +1635,7 @@ share/xfwm4/themes/next/top-left-active.xpm
 share/xfwm4/themes/next/top-left-inactive.xpm
 share/xfwm4/themes/next/top-right-active.xpm
 share/xfwm4/themes/next/top-right-inactive.xpm
+share/xfwm4/themes/ops/
 share/xfwm4/themes/ops/README
 share/xfwm4/themes/ops/bottom-active.xpm
 share/xfwm4/themes/ops/bottom-inactive.xpm
@@ -1642,6 +1680,7 @@ share/xfwm4/themes/ops/top-left-active.xpm
 share/xfwm4/themes/ops/top-left-inactive.xpm
 share/xfwm4/themes/ops/top-right-active.xpm
 share/xfwm4/themes/ops/top-right-inactive.xpm
+share/xfwm4/themes/oroborus/
 share/xfwm4/themes/oroborus/README
 share/xfwm4/themes/oroborus/bottom-active.xpm
 share/xfwm4/themes/oroborus/bottom-inactive.xpm
@@ -1686,6 +1725,7 @@ share/xfwm4/themes/oroborus/top-left-active.xpm
 share/xfwm4/themes/oroborus/top-left-inactive.xpm
 share/xfwm4/themes/oroborus/top-right-active.xpm
 share/xfwm4/themes/oroborus/top-right-inactive.xpm
+share/xfwm4/themes/perl/
 share/xfwm4/themes/perl/README
 share/xfwm4/themes/perl/bottom-active.xpm
 share/xfwm4/themes/perl/bottom-inactive.xpm
@@ -1730,6 +1770,7 @@ share/xfwm4/themes/perl/top-left-active.xpm
 share/xfwm4/themes/perl/top-left-inactive.xpm
 share/xfwm4/themes/perl/top-right-active.xpm
 share/xfwm4/themes/perl/top-right-inactive.xpm
+share/xfwm4/themes/pills/
 share/xfwm4/themes/pills/README
 share/xfwm4/themes/pills/bottom-active.xpm
 share/xfwm4/themes/pills/bottom-inactive.xpm
@@ -1774,6 +1815,7 @@ share/xfwm4/themes/pills/top-left-active.xpm
 share/xfwm4/themes/pills/top-left-inactive.xpm
 share/xfwm4/themes/pills/top-right-active.xpm
 share/xfwm4/themes/pills/top-right-inactive.xpm
+share/xfwm4/themes/piranha/
 share/xfwm4/themes/piranha/README
 share/xfwm4/themes/piranha/bottom-active.xpm
 share/xfwm4/themes/piranha/bottom-inactive.xpm
@@ -1818,6 +1860,7 @@ share/xfwm4/themes/piranha/top-left-active.xpm
 share/xfwm4/themes/piranha/top-left-inactive.xpm
 share/xfwm4/themes/piranha/top-right-active.xpm
 share/xfwm4/themes/piranha/top-right-inactive.xpm
+share/xfwm4/themes/platinum/
 share/xfwm4/themes/platinum/README
 share/xfwm4/themes/platinum/bottom-active.xpm
 share/xfwm4/themes/platinum/bottom-inactive.xpm
@@ -1862,6 +1905,7 @@ share/xfwm4/themes/platinum/top-left-active.xpm
 share/xfwm4/themes/platinum/top-left-inactive.xpm
 share/xfwm4/themes/platinum/top-right-active.xpm
 share/xfwm4/themes/platinum/top-right-inactive.xpm
+share/xfwm4/themes/quiet-purple/
 share/xfwm4/themes/quiet-purple/README
 share/xfwm4/themes/quiet-purple/bottom-active.xpm
 share/xfwm4/themes/quiet-purple/bottom-inactive.xpm
@@ -1906,6 +1950,7 @@ share/xfwm4/themes/quiet-purple/top-left-active.xpm
 share/xfwm4/themes/quiet-purple/top-left-inactive.xpm
 share/xfwm4/themes/quiet-purple/top-right-active.xpm
 share/xfwm4/themes/quiet-purple/top-right-inactive.xpm
+share/xfwm4/themes/quinx/
 share/xfwm4/themes/quinx/README
 share/xfwm4/themes/quinx/bottom-active.xpm
 share/xfwm4/themes/quinx/bottom-inactive.xpm
@@ -1947,6 +1992,7 @@ share/xfwm4/themes/quinx/top-left-active.xpm
 share/xfwm4/themes/quinx/top-left-inactive.xpm
 share/xfwm4/themes/quinx/top-right-active.xpm
 share/xfwm4/themes/quinx/top-right-inactive.xpm
+share/xfwm4/themes/r9x/
 share/xfwm4/themes/r9x/README
 share/xfwm4/themes/r9x/bottom-active.xpm
 share/xfwm4/themes/r9x/bottom-inactive.xpm
@@ -1991,6 +2037,7 @@ share/xfwm4/themes/r9x/top-left-active.xpm
 share/xfwm4/themes/r9x/top-left-inactive.xpm
 share/xfwm4/themes/r9x/top-right-active.xpm
 share/xfwm4/themes/r9x/top-right-inactive.xpm
+share/xfwm4/themes/redmond/
 share/xfwm4/themes/redmond/README
 share/xfwm4/themes/redmond/bottom-active.xpm
 share/xfwm4/themes/redmond/bottom-inactive.xpm
@@ -2038,6 +2085,7 @@ share/xfwm4/themes/redmond/top-left-active.xpm
 share/xfwm4/themes/redmond/top-left-inactive.xpm
 share/xfwm4/themes/redmond/top-right-active.xpm
 share/xfwm4/themes/redmond/top-right-inactive.xpm
+share/xfwm4/themes/redmondxp/
 share/xfwm4/themes/redmondxp/README
 share/xfwm4/themes/redmondxp/bottom-active.xpm
 share/xfwm4/themes/redmondxp/bottom-inactive.xpm
@@ -2085,6 +2133,7 @@ share/xfwm4/themes/redmondxp/top-left-active.xpm
 share/xfwm4/themes/redmondxp/top-left-inactive.xpm
 share/xfwm4/themes/redmondxp/top-right-active.xpm
 share/xfwm4/themes/redmondxp/top-right-inactive.xpm
+share/xfwm4/themes/retro/
 share/xfwm4/themes/retro/README
 share/xfwm4/themes/retro/bottom-active.xpm
 share/xfwm4/themes/retro/bottom-inactive.xpm
@@ -2129,6 +2178,7 @@ share/xfwm4/themes/retro/top-left-active.xpm
 share/xfwm4/themes/retro/top-left-inactive.xpm
 share/xfwm4/themes/retro/top-right-active.xpm
 share/xfwm4/themes/retro/top-right-inactive.xpm
+share/xfwm4/themes/silverado/
 share/xfwm4/themes/silverado/README
 share/xfwm4/themes/silverado/bottom-active.xpm
 share/xfwm4/themes/silverado/bottom-inactive.xpm
@@ -2167,6 +2217,7 @@ share/xfwm4/themes/silverado/top-left-active.xpm
 share/xfwm4/themes/silverado/top-left-inactive.xpm
 share/xfwm4/themes/silverado/top-right-active.xpm
 share/xfwm4/themes/silverado/top-right-inactive.xpm
+share/xfwm4/themes/slick/
 share/xfwm4/themes/slick/README
 share/xfwm4/themes/slick/bottom-active.xpm
 share/xfwm4/themes/slick/bottom-inactive.xpm
@@ -2211,6 +2262,7 @@ share/xfwm4/themes/slick/top-left-active.xpm
 share/xfwm4/themes/slick/top-left-inactive.xpm
 share/xfwm4/themes/slick/top-right-active.xpm
 share/xfwm4/themes/slick/top-right-inactive.xpm
+share/xfwm4/themes/slimline/
 share/xfwm4/themes/slimline/README
 share/xfwm4/themes/slimline/bottom-active.xpm
 share/xfwm4/themes/slimline/bottom-inactive.xpm
@@ -2255,6 +2307,7 @@ share/xfwm4/themes/slimline/top-left-active.xpm
 share/xfwm4/themes/slimline/top-left-inactive.xpm
 share/xfwm4/themes/slimline/top-right-active.xpm
 share/xfwm4/themes/slimline/top-right-inactive.xpm
+share/xfwm4/themes/smallscreen/
 share/xfwm4/themes/smallscreen/README
 share/xfwm4/themes/smallscreen/bottom-active.xpm
 share/xfwm4/themes/smallscreen/bottom-inactive.xpm
@@ -2299,6 +2352,7 @@ share/xfwm4/themes/smallscreen/top-left-active.xpm
 share/xfwm4/themes/smallscreen/top-left-inactive.xpm
 share/xfwm4/themes/smallscreen/top-right-active.xpm
 share/xfwm4/themes/smallscreen/top-right-inactive.xpm
+share/xfwm4/themes/tabs/
 share/xfwm4/themes/tabs/README
 share/xfwm4/themes/tabs/bottom-active.xpm
 share/xfwm4/themes/tabs/bottom-inactive.xpm
@@ -2343,6 +2397,7 @@ share/xfwm4/themes/tabs/top-left-active.xpm
 share/xfwm4/themes/tabs/top-left-inactive.xpm
 share/xfwm4/themes/tabs/top-right-active.xpm
 share/xfwm4/themes/tabs/top-right-inactive.xpm
+share/xfwm4/themes/today/
 share/xfwm4/themes/today/README
 share/xfwm4/themes/today/bottom-active.xpm
 share/xfwm4/themes/today/bottom-inactive.xpm
@@ -2384,6 +2439,7 @@ share/xfwm4/themes/today/top-left-active.xpm
 share/xfwm4/themes/today/top-left-inactive.xpm
 share/xfwm4/themes/today/top-right-active.xpm
 share/xfwm4/themes/today/top-right-inactive.xpm
+share/xfwm4/themes/totem/
 share/xfwm4/themes/totem/README
 share/xfwm4/themes/totem/bottom-active.xpm
 share/xfwm4/themes/totem/bottom-inactive.xpm
@@ -2428,6 +2484,7 @@ share/xfwm4/themes/totem/top-left-active.xpm
 share/xfwm4/themes/totem/top-left-inactive.xpm
 share/xfwm4/themes/totem/top-right-active.xpm
 share/xfwm4/themes/totem/top-right-inactive.xpm
+share/xfwm4/themes/trench/
 share/xfwm4/themes/trench/README
 share/xfwm4/themes/trench/bottom-active.xpm
 share/xfwm4/themes/trench/bottom-inactive.xpm
@@ -2472,6 +2529,7 @@ share/xfwm4/themes/trench/top-left-active.xpm
 share/xfwm4/themes/trench/top-left-inactive.xpm
 share/xfwm4/themes/trench/top-right-active.xpm
 share/xfwm4/themes/trench/top-right-inactive.xpm
+share/xfwm4/themes/triviality/
 share/xfwm4/themes/triviality/README
 share/xfwm4/themes/triviality/bottom-active.xpm
 share/xfwm4/themes/triviality/bottom-inactive.xpm
@@ -2525,6 +2583,7 @@ share/xfwm4/themes/triviality/top-left-active.xpm
 share/xfwm4/themes/triviality/top-left-inactive.xpm
 share/xfwm4/themes/triviality/top-right-active.xpm
 share/xfwm4/themes/triviality/top-right-inactive.xpm
+share/xfwm4/themes/tux/
 share/xfwm4/themes/tux/README
 share/xfwm4/themes/tux/bottom-active.xpm
 share/xfwm4/themes/tux/bottom-inactive.xpm
@@ -2569,6 +2628,7 @@ share/xfwm4/themes/tux/top-left-active.xpm
 share/xfwm4/themes/tux/top-left-inactive.xpm
 share/xfwm4/themes/tux/top-right-active.xpm
 share/xfwm4/themes/tux/top-right-inactive.xpm
+share/xfwm4/themes/variation/
 share/xfwm4/themes/variation/README
 share/xfwm4/themes/variation/bottom-active.xpm
 share/xfwm4/themes/variation/bottom-inactive.xpm
@@ -2613,6 +2673,7 @@ share/xfwm4/themes/variation/top-left-active.xpm
 share/xfwm4/themes/variation/top-left-inactive.xpm
 share/xfwm4/themes/variation/top-right-active.xpm
 share/xfwm4/themes/variation/top-right-inactive.xpm
+share/xfwm4/themes/xfce/
 share/xfwm4/themes/xfce/README
 share/xfwm4/themes/xfce/bottom-active.xpm
 share/xfwm4/themes/xfce/bottom-inactive.xpm
@@ -2657,64 +2718,3 @@ share/xfwm4/themes/xfce/top-left-active.xpm
 share/xfwm4/themes/xfce/top-left-inactive.xpm
 share/xfwm4/themes/xfce/top-right-active.xpm
 share/xfwm4/themes/xfce/top-right-inactive.xpm
-@dirrm share/xfwm4/themes/xfce
-@dirrm share/xfwm4/themes/variation
-@dirrm share/xfwm4/themes/tux
-@dirrm share/xfwm4/themes/triviality
-@dirrm share/xfwm4/themes/trench
-@dirrm share/xfwm4/themes/totem
-@dirrm share/xfwm4/themes/today
-@dirrm share/xfwm4/themes/tabs
-@dirrm share/xfwm4/themes/smallscreen
-@dirrm share/xfwm4/themes/slimline
-@dirrm share/xfwm4/themes/slick
-@dirrm share/xfwm4/themes/silverado
-@dirrm share/xfwm4/themes/retro
-@dirrm share/xfwm4/themes/redmondxp
-@dirrm share/xfwm4/themes/redmond
-@dirrm share/xfwm4/themes/r9x
-@dirrm share/xfwm4/themes/quinx
-@dirrm share/xfwm4/themes/quiet-purple
-@dirrm share/xfwm4/themes/platinum
-@dirrm share/xfwm4/themes/piranha
-@dirrm share/xfwm4/themes/pills
-@dirrm share/xfwm4/themes/perl
-@dirrm share/xfwm4/themes/oroborus
-@dirrm share/xfwm4/themes/ops
-@dirrm share/xfwm4/themes/next
-@dirrm share/xfwm4/themes/mofit
-@dirrm share/xfwm4/themes/microgui
-@dirrm share/xfwm4/themes/metabox
-@dirrm share/xfwm4/themes/linea
-@dirrm share/xfwm4/themes/koynacity
-@dirrm share/xfwm4/themes/kleanux
-@dirrm share/xfwm4/themes/kindaker
-@dirrm share/xfwm4/themes/keramik
-@dirrm share/xfwm4/themes/kde1
-@dirrm share/xfwm4/themes/kde
-@dirrm share/xfwm4/themes/iceg
-@dirrm share/xfwm4/themes/gtk
-@dirrm share/xfwm4/themes/gorilla
-@dirrm share/xfwm4/themes/gnububble
-@dirrm share/xfwm4/themes/gaudy
-@dirrm share/xfwm4/themes/galaxy
-@dirrm share/xfwm4/themes/g2
-@dirrm share/xfwm4/themes/fbx
-@dirrm share/xfwm4/themes/elberg
-@dirrm share/xfwm4/themes/eazel-blue
-@dirrm share/xfwm4/themes/defcon-IV
-@dirrm share/xfwm4/themes/cruxish
-@dirrm share/xfwm4/themes/crux
-@dirrm share/xfwm4/themes/coolclean
-@dirrm share/xfwm4/themes/coldsteel
-@dirrm share/xfwm4/themes/buzz
-@dirrm share/xfwm4/themes/biz
-@dirrm share/xfwm4/themes/beastie
-@dirrm share/xfwm4/themes/b6
-@dirrm share/xfwm4/themes/b5
-@dirrm share/xfwm4/themes/atlanta2
-@dirrm share/xfwm4/themes/atlanta
-@dirrm share/xfwm4/themes/alternate
-@dirrm share/xfwm4/themes/agualemon
-@dirrm share/xfwm4/themes/agua
-@dirrm share/xfwm4/themes/adept

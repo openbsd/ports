@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/20 20:01:41 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:33 espie Exp $
 bin/xdu
 lib/X11/app-defaults/XDu
-man/cat1/xdu.0
+@man man/cat1/xdu.0

@@ -1,21 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/18 06:01:58 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:31 espie Exp $
 bin/pygtk-codegen-1.2
+include/pygtk/
 include/pygtk/pygdkimlib.h
 include/pygtk/pygdkpixbuf.h
 include/pygtk/pygtk.h
-%%gnome%%
-lib/python${PYTHON_VER}/site-packages/pyglade/__init__.py
-lib/python${PYTHON_VER}/site-packages/pyglade/__init__.pyc
-lib/python${PYTHON_VER}/site-packages/pyglade/__init__.pyo
-lib/python${PYTHON_VER}/site-packages/pyglade/build.py
-lib/python${PYTHON_VER}/site-packages/pyglade/build.pyc
-lib/python${PYTHON_VER}/site-packages/pyglade/build.pyo
-lib/python${PYTHON_VER}/site-packages/pyglade/style.py
-lib/python${PYTHON_VER}/site-packages/pyglade/style.pyc
-lib/python${PYTHON_VER}/site-packages/pyglade/style.pyo
-lib/python${PYTHON_VER}/site-packages/pyglade/xmlparse.py
-lib/python${PYTHON_VER}/site-packages/pyglade/xmlparse.pyc
-lib/python${PYTHON_VER}/site-packages/pyglade/xmlparse.pyo
 lib/python${PYTHON_VER}/site-packages/GDK.py
 lib/python${PYTHON_VER}/site-packages/GDK.pyc
 lib/python${PYTHON_VER}/site-packages/GDK.pyo
@@ -47,13 +35,29 @@ lib/python${PYTHON_VER}/site-packages/gtkgl.pyo
 lib/python${PYTHON_VER}/site-packages/libglade.py
 lib/python${PYTHON_VER}/site-packages/libglade.pyc
 lib/python${PYTHON_VER}/site-packages/libglade.pyo
-%%SHARED%%
+lib/python${PYTHON_VER}/site-packages/pyglade/
+lib/python${PYTHON_VER}/site-packages/pyglade/__init__.py
+lib/python${PYTHON_VER}/site-packages/pyglade/__init__.pyc
+lib/python${PYTHON_VER}/site-packages/pyglade/__init__.pyo
+lib/python${PYTHON_VER}/site-packages/pyglade/build.py
+lib/python${PYTHON_VER}/site-packages/pyglade/build.pyc
+lib/python${PYTHON_VER}/site-packages/pyglade/build.pyo
+lib/python${PYTHON_VER}/site-packages/pyglade/style.py
+lib/python${PYTHON_VER}/site-packages/pyglade/style.pyc
+lib/python${PYTHON_VER}/site-packages/pyglade/style.pyo
+lib/python${PYTHON_VER}/site-packages/pyglade/xmlparse.py
+lib/python${PYTHON_VER}/site-packages/pyglade/xmlparse.pyc
+lib/python${PYTHON_VER}/site-packages/pyglade/xmlparse.pyo
+share/pygtk/
+share/pygtk/1.2/
+share/pygtk/1.2/codegen/
 share/pygtk/1.2/codegen/generate.py
 share/pygtk/1.2/codegen/generate.pyc
 share/pygtk/1.2/codegen/generate.pyo
 share/pygtk/1.2/codegen/scmexpr.py
 share/pygtk/1.2/codegen/scmexpr.pyc
 share/pygtk/1.2/codegen/scmexpr.pyo
+share/pygtk/1.2/defs/
 share/pygtk/1.2/defs/gtk.defs
 share/pygtk/1.2/defs/gtkbase.defs
 share/pygtk/1.2/defs/gtkcontainers.defs
@@ -67,9 +71,5 @@ share/pygtk/1.2/defs/gtkmenus.defs
 share/pygtk/1.2/defs/gtkmisc.defs
 share/pygtk/1.2/defs/gtkranges.defs
 share/pygtk/1.2/defs/libglade.defs
-@dirrm include/pygtk
-@dirrm lib/python${PYTHON_VER}/site-packages/pyglade
-@dirrm share/pygtk/1.2/codegen
-@dirrm share/pygtk/1.2/defs
-@dirrm share/pygtk/1.2
-@dirrm share/pygtk
+%%gnome%%
+%%SHARED%%

@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/14 21:55:54 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:30 espie Exp $
 bin/pekwm
+share/doc/pekwm/
 share/doc/pekwm/README
+share/pekwm/
 share/pekwm/autoprops
 share/pekwm/config
 share/pekwm/keys
 share/pekwm/menu
 share/pekwm/start
+share/pekwm/themes/
+share/pekwm/themes/default/
 share/pekwm/themes/default/border.xpm
 share/pekwm/themes/default/bottom.xpm
 share/pekwm/themes/default/btn-close-fo.xpm
@@ -29,7 +33,3 @@ share/pekwm/themes/default/top.xpm
 share/pekwm/themes/default/win-focus.xpm
 share/pekwm/themes/default/win-select.xpm
 share/pekwm/themes/default/win-unfocus.xpm
-@dirrm share/pekwm/themes/default
-@dirrm share/pekwm/themes
-@dirrm share/pekwm
-@dirrm share/doc/pekwm

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/02/12 16:15:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:34 espie Exp $
 bin/xfedor
+lib/X11/xfedor/
 lib/X11/xfedor/BEZIERS.sos
 lib/X11/xfedor/CIRCLE.sos
 lib/X11/xfedor/CUTAP.sos
@@ -18,5 +19,4 @@ lib/X11/xfedor/SOS.sos
 lib/X11/xfedor/TRANSLATE.sos
 lib/X11/xfedor/WRITE.sos
 lib/X11/xfedor/default.sos
-man/cat1/xfedor.0
-@dirrm lib/X11/xfedor
+@man man/cat1/xfedor.0

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/01 13:31:12 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:29 espie Exp $
+include/gnome--/
 include/gnome--.h
 include/gnome--/about.h
 include/gnome--/affinetrans.h
@@ -58,6 +59,7 @@ include/gnome--/pixmap-entry.h
 include/gnome--/pixmap.h
 include/gnome--/pixmapmenuitem.h
 include/gnome--/point.h
+include/gnome--/private/
 include/gnome--/private/about_p.h
 include/gnome--/private/animator_p.h
 include/gnome--/private/app_p.h
@@ -119,7 +121,6 @@ include/gnome--/types.h
 lib/gnomemmConf.sh
 lib/libgnomemm.a
 lib/libgnomemm.la
-%%SHARED%%
+share/aclocal/
 share/aclocal/gnome--.m4
-@dirrm include/gnome--/private
-@dirrm include/gnome--
+%%SHARED%%

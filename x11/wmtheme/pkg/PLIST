@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/22 14:40:09 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:32 espie Exp $
 bin/apply-gtk-theme
 bin/astheme
 bin/bbtheme
@@ -11,6 +11,7 @@ bin/sftheme
 bin/wminstallfonts
 bin/wmtheme
 bin/xmtheme
+lib/wmtheme/
 lib/wmtheme/afterstep.pl
 lib/wmtheme/blackbox.pl
 lib/wmtheme/conf.default
@@ -25,14 +26,13 @@ lib/wmtheme/wm_data.pl
 lib/wmtheme/wm_fonts.pl
 lib/wmtheme/wmaker.pl
 lib/wmtheme/xmms.pl
-man/man1/astheme.1.gz
-man/man1/bbtheme.1.gz
-man/man1/etheme.1.gz
-man/man1/gotheme.1.gz
-man/man1/gtktheme.1.gz
-man/man1/itheme.1.gz
-man/man1/ortheme.1.gz
-man/man1/sftheme.1.gz
-man/man1/wmtheme.1.gz
-man/man1/xmtheme.1.gz
-@dirrm lib/wmtheme
+@man man/man1/astheme.1.gz
+@man man/man1/bbtheme.1.gz
+@man man/man1/etheme.1.gz
+@man man/man1/gotheme.1.gz
+@man man/man1/gtktheme.1.gz
+@man man/man1/itheme.1.gz
+@man man/man1/ortheme.1.gz
+@man man/man1/sftheme.1.gz
+@man man/man1/wmtheme.1.gz
+@man man/man1/xmtheme.1.gz

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/12/26 01:58:39 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:26:34 espie Exp $
 bin/fd2ps
 bin/fdesign
 include/X11/flimage.h
@@ -7,6 +7,6 @@ include/X11/glcanvas.h
 lib/libflimage.a
 lib/libforms.a
 lib/libformsGL.a
-man/cat1/fd2ps.0
-man/cat1/fdesign.0
+@man man/cat1/fd2ps.0
+@man man/cat1/fdesign.0
 %%SHARED%%

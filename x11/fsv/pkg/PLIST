@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/27 06:44:20 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:28 espie Exp $
 bin/fsv
+share/fsv/
 share/fsv/about.html
 share/fsv/back.png
 share/fsv/beyeview.png
@@ -17,4 +18,3 @@ share/fsv/treev.png
 share/fsv/viewport.png
 share/fsv/window.html
 share/fsv/window.png
-@dirrm share/fsv

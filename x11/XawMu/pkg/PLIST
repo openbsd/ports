@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/03 03:19:37 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:27 espie Exp $
+include/X11/XawM/
 include/X11/XawM/AllWidgets.h
 include/X11/XawM/AsciiSink.h
 include/X11/XawM/AsciiSinkP.h
@@ -80,4 +81,3 @@ include/X11/XawM/xutil.h
 lib/libXawM.a
 lib/libXawM.la
 %%SHARED%%
-@dirrm include/X11/XawM

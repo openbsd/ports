@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/07 15:47:06 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:27 espie Exp $
 bin/files
+include/bitmaps/
 include/bitmaps/MASK.xbm
 include/bitmaps/application.xbm
 include/bitmaps/autocad.xbm
@@ -184,6 +185,7 @@ include/bitmaps/xfm_zoo.xbm
 include/bitmaps/xman.xbm
 include/bitmaps/zip.xbm
 include/bitmaps/zoo.xbm
+include/pixmaps/
 include/pixmaps/C++.xpm
 include/pixmaps/C.xpm
 include/pixmaps/CrashCartoon.xpm
@@ -222,10 +224,8 @@ include/pixmaps/WWW.xpm
 include/pixmaps/Workshop.xpm
 include/pixmaps/interface.xpm
 lib/X11/app-defaults/Files
-man/man1/files.1
-man/man3/regexp.3
+@man man/man1/files.1
+@man man/man3/regexp.3
+share/OffiX/
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
-@dirrm share/OffiX
-@dirrm include/pixmaps
-@dirrm include/bitmaps

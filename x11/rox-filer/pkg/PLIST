@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/02/07 17:47:50 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 19:26:31 espie Exp $
 bin/rox
-man/man1/ROX-Filer.1
-man/man1/rox.1
+@man man/man1/ROX-Filer.1
+@man man/man1/rox.1
+rox/
+rox/ROX-Filer/
 rox/ROX-Filer/.DirIcon
 rox/ROX-Filer/Action-it.png
 rox/ROX-Filer/Action.png
 rox/ROX-Filer/AppInfo.xml
 rox/ROX-Filer/AppRun
 rox/ROX-Filer/AppRun.orig
+rox/ROX-Filer/Help/
 rox/ROX-Filer/Help/COPYING
 rox/ROX-Filer/Help/Changes
 rox/ROX-Filer/Help/Manual-fr.html
@@ -16,6 +19,7 @@ rox/ROX-Filer/Help/Manual.html
 rox/ROX-Filer/Help/README
 rox/ROX-Filer/Help/README-es
 rox/ROX-Filer/Help/TODO
+rox/ROX-Filer/Messages/
 rox/ROX-Filer/Messages/README
 rox/ROX-Filer/Messages/cs.gmo
 rox/ROX-Filer/Messages/da.gmo
@@ -32,8 +36,11 @@ rox/ROX-Filer/Messages/ru.gmo
 rox/ROX-Filer/Messages/sv.gmo
 rox/ROX-Filer/Messages/zh_CN.gmo
 rox/ROX-Filer/Messages/zh_TW.gmo
+rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/
 rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}/ROX-Filer
 rox/ROX-Filer/Options.xml
+rox/ROX-Filer/ROX/
+rox/ROX-Filer/ROX/MIME/
 rox/ROX-Filer/ROX/MIME/mime-application.png
 rox/ROX-Filer/ROX/MIME/mime-application:pdf.png
 rox/ROX-Filer/ROX/MIME/mime-application:pgp.png
@@ -122,6 +129,7 @@ rox/ROX-Filer/ROX/MIME/mime-video.png
 rox/ROX-Filer/ROX/MIME/mime-video:mpeg.png
 rox/ROX-Filer/ROX/MIME/mime-video:quicktime.png
 rox/ROX-Filer/ROX/index.theme
+rox/ROX-Filer/images/
 rox/ROX-Filer/images/application.png
 rox/ROX-Filer/images/dirs.png
 rox/ROX-Filer/images/iconified.png
@@ -131,6 +139,8 @@ rox/ROX-Filer/images/rox-select.png
 rox/ROX-Filer/images/rox-show-details.png
 rox/ROX-Filer/images/rox-show-hidden.png
 rox/ROX-Filer/images/symlink.png
+rox/ROX-Filer/src/
+rox/ROX-Filer/src/Docs/
 rox/ROX-Filer/src/Docs/Makefile
 rox/ROX-Filer/src/Docs/Manual-fr.xml
 rox/ROX-Filer/src/Docs/Manual-it.xml
@@ -215,6 +225,7 @@ rox/ROX-Filer/src/pinboard.c
 rox/ROX-Filer/src/pinboard.h
 rox/ROX-Filer/src/pixmaps.c
 rox/ROX-Filer/src/pixmaps.h
+rox/ROX-Filer/src/po/
 rox/ROX-Filer/src/po/cs.po
 rox/ROX-Filer/src/po/da.po
 rox/ROX-Filer/src/po/de.po
@@ -267,20 +278,9 @@ rox/ROX-Filer/src/xml.h
 rox/ROX-Filer/src/xtypes.c
 rox/ROX-Filer/src/xtypes.h
 rox/ROX-Filer/style.css
+share/rox/
+share/rox/Choices/
+share/rox/Choices/MIME-types/
 share/rox/Choices/MIME-types/application_postscript
 share/rox/Choices/MIME-types/text
 share/rox/Choices/MIME-types/text_html
-@dirrm share/rox/Choices/MIME-types
-@dirrm share/rox/Choices
-@dirrm share/rox
-@dirrm rox/ROX-Filer/src/po
-@dirrm rox/ROX-Filer/src/Docs
-@dirrm rox/ROX-Filer/src
-@dirrm rox/ROX-Filer/images
-@dirrm rox/ROX-Filer/ROX/MIME
-@dirrm rox/ROX-Filer/ROX
-@dirrm rox/ROX-Filer/OpenBSD-${MACHINE_ARCH}
-@dirrm rox/ROX-Filer/Messages
-@dirrm rox/ROX-Filer/Help
-@dirrm rox/ROX-Filer
-@dirrm rox

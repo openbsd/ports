@@ -1,28 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/11 23:33:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:33 espie Exp $
 bin/xfwm4
+lib/xfce4/
+lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/margins_plugin.a
 lib/xfce4/mcs-plugins/margins_plugin.la
 lib/xfce4/mcs-plugins/xfwm4_plugin.a
 lib/xfce4/mcs-plugins/xfwm4_plugin.la
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfwm4.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/bg/LC_MESSAGES/xfwm4.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xfwm4.mo
 share/locale/cs/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
 share/locale/es/LC_MESSAGES/xfwm4.mo
 share/locale/es_MX/LC_MESSAGES/xfwm4.mo
 share/locale/et/LC_MESSAGES/xfwm4.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfwm4.mo
 share/locale/fa_IR/LC_MESSAGES/xfwm4.mo
 share/locale/fi/LC_MESSAGES/xfwm4.mo
 share/locale/fr/LC_MESSAGES/xfwm4.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
 share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfwm4.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xfwm4.mo
 share/locale/nl/LC_MESSAGES/xfwm4.mo
 share/locale/no/LC_MESSAGES/xfwm4.mo
@@ -31,12 +47,17 @@ share/locale/pt_BR/LC_MESSAGES/xfwm4.mo
 share/locale/pt_PT/LC_MESSAGES/xfwm4.mo
 share/locale/ru/LC_MESSAGES/xfwm4.mo
 share/locale/sv/LC_MESSAGES/xfwm4.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfwm4.mo
 share/locale/tr/LC_MESSAGES/xfwm4.mo
 share/locale/uk/LC_MESSAGES/xfwm4.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xfwm4.mo
 share/locale/zh_CN/LC_MESSAGES/xfwm4.mo
 share/locale/zh_TW/LC_MESSAGES/xfwm4.mo
+share/xfce4/
 share/xfce4/doc/C/images/decoration_style.png
 share/xfce4/doc/C/images/keyboard_and_focus.png
 share/xfce4/doc/C/images/misc_wm_prefs.png
@@ -49,7 +70,10 @@ share/xfce4/doc/fr/images/misc_wm_prefs.png
 share/xfce4/doc/fr/images/titlebar.png
 share/xfce4/doc/fr/images/workspace_margins.png
 share/xfce4/doc/fr/xfwm4.html
+share/xfwm4/
 share/xfwm4/defaults
+share/xfwm4/themes/
+share/xfwm4/themes/bbs/
 share/xfwm4/themes/bbs/README
 share/xfwm4/themes/bbs/bottom-active.xpm
 share/xfwm4/themes/bbs/bottom-inactive.xpm
@@ -94,6 +118,7 @@ share/xfwm4/themes/bbs/top-left-active.xpm
 share/xfwm4/themes/bbs/top-left-inactive.xpm
 share/xfwm4/themes/bbs/top-right-active.xpm
 share/xfwm4/themes/bbs/top-right-inactive.xpm
+share/xfwm4/themes/curve/
 share/xfwm4/themes/curve/README
 share/xfwm4/themes/curve/bottom-active.xpm
 share/xfwm4/themes/curve/bottom-inactive.xpm
@@ -138,6 +163,8 @@ share/xfwm4/themes/curve/top-left-active.xpm
 share/xfwm4/themes/curve/top-left-inactive.xpm
 share/xfwm4/themes/curve/top-right-active.xpm
 share/xfwm4/themes/curve/top-right-inactive.xpm
+share/xfwm4/themes/default/
+share/xfwm4/themes/default.keys/
 share/xfwm4/themes/default.keys/keythemerc
 share/xfwm4/themes/default/README
 share/xfwm4/themes/default/bottom-active.xpm
@@ -192,6 +219,7 @@ share/xfwm4/themes/default/top-left-active.xpm
 share/xfwm4/themes/default/top-left-inactive.xpm
 share/xfwm4/themes/default/top-right-active.xpm
 share/xfwm4/themes/default/top-right-inactive.xpm
+share/xfwm4/themes/exocet/
 share/xfwm4/themes/exocet/README
 share/xfwm4/themes/exocet/bottom-active.xpm
 share/xfwm4/themes/exocet/bottom-inactive.xpm
@@ -236,6 +264,7 @@ share/xfwm4/themes/exocet/top-left-active.xpm
 share/xfwm4/themes/exocet/top-left-inactive.xpm
 share/xfwm4/themes/exocet/top-right-active.xpm
 share/xfwm4/themes/exocet/top-right-inactive.xpm
+share/xfwm4/themes/meenee/
 share/xfwm4/themes/meenee/README
 share/xfwm4/themes/meenee/bottom-active.xpm
 share/xfwm4/themes/meenee/bottom-inactive.xpm
@@ -280,6 +309,7 @@ share/xfwm4/themes/meenee/top-left-active.xpm
 share/xfwm4/themes/meenee/top-left-inactive.xpm
 share/xfwm4/themes/meenee/top-right-active.xpm
 share/xfwm4/themes/meenee/top-right-inactive.xpm
+share/xfwm4/themes/microcurve/
 share/xfwm4/themes/microcurve/README
 share/xfwm4/themes/microcurve/bottom-active.xpm
 share/xfwm4/themes/microcurve/bottom-inactive.xpm
@@ -324,6 +354,7 @@ share/xfwm4/themes/microcurve/top-left-active.xpm
 share/xfwm4/themes/microcurve/top-left-inactive.xpm
 share/xfwm4/themes/microcurve/top-right-active.xpm
 share/xfwm4/themes/microcurve/top-right-inactive.xpm
+share/xfwm4/themes/microdeck/
 share/xfwm4/themes/microdeck/README
 share/xfwm4/themes/microdeck/bottom-active.xpm
 share/xfwm4/themes/microdeck/bottom-inactive.xpm
@@ -377,6 +408,7 @@ share/xfwm4/themes/microdeck/top-left-active.xpm
 share/xfwm4/themes/microdeck/top-left-inactive.xpm
 share/xfwm4/themes/microdeck/top-right-active.xpm
 share/xfwm4/themes/microdeck/top-right-inactive.xpm
+share/xfwm4/themes/microdeck2/
 share/xfwm4/themes/microdeck2/README
 share/xfwm4/themes/microdeck2/bottom-active.xpm
 share/xfwm4/themes/microdeck2/bottom-inactive.xpm
@@ -421,6 +453,7 @@ share/xfwm4/themes/microdeck2/top-left-active.xpm
 share/xfwm4/themes/microdeck2/top-left-inactive.xpm
 share/xfwm4/themes/microdeck2/top-right-active.xpm
 share/xfwm4/themes/microdeck2/top-right-inactive.xpm
+share/xfwm4/themes/microdeck3/
 share/xfwm4/themes/microdeck3/README
 share/xfwm4/themes/microdeck3/bottom-active.xpm
 share/xfwm4/themes/microdeck3/bottom-inactive.xpm
@@ -465,6 +498,8 @@ share/xfwm4/themes/microdeck3/top-left-active.xpm
 share/xfwm4/themes/microdeck3/top-left-inactive.xpm
 share/xfwm4/themes/microdeck3/top-right-active.xpm
 share/xfwm4/themes/microdeck3/top-right-inactive.xpm
+share/xfwm4/themes/tgc/
+share/xfwm4/themes/tgc-large/
 share/xfwm4/themes/tgc-large/README
 share/xfwm4/themes/tgc-large/bottom-active.xpm
 share/xfwm4/themes/tgc-large/bottom-inactive.xpm
@@ -563,19 +598,3 @@ share/xfwm4/themes/tgc/top-left-inactive.xpm
 share/xfwm4/themes/tgc/top-right-active.xpm
 share/xfwm4/themes/tgc/top-right-inactive.xpm
 %%SHARED%%
-@dirrm share/xfwm4/themes/tgc-large
-@dirrm share/xfwm4/themes/tgc
-@dirrm share/xfwm4/themes/microdeck3
-@dirrm share/xfwm4/themes/microdeck2
-@dirrm share/xfwm4/themes/microdeck
-@dirrm share/xfwm4/themes/microcurve
-@dirrm share/xfwm4/themes/meenee
-@dirrm share/xfwm4/themes/exocet
-@dirrm share/xfwm4/themes/default.keys
-@dirrm share/xfwm4/themes/default
-@dirrm share/xfwm4/themes/curve
-@dirrm share/xfwm4/themes/bbs
-@dirrm share/xfwm4/themes
-@dirrm share/xfwm4
-@dirrm lib/xfce4/mcs-plugins
-@dirrm lib/xfce4

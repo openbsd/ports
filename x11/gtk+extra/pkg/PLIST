@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/22 17:10:59 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:29 espie Exp $
 bin/gtkextra-config
+include/gtkextra/
 include/gtkextra/gtkbordercombo.h
 include/gtkextra/gtkcharsel.h
 include/gtkextra/gtkcheckitem.h
@@ -35,6 +36,6 @@ include/gtkextra/gtksheet.h
 include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
 lib/libgtkextra.la
+share/aclocal/
 share/aclocal/gtkextra.m4
 %%SHARED%%
-@dirrm include/gtkextra

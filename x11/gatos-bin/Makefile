@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/09/15 19:26:29 espie Exp $
 
 ONLY_FOR_ARCHS=	i386
+SHARED_ONLY=	Yes
 
 COMMENT=	'ATI drivers with full xvideo support'
 

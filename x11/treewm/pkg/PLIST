@@ -1,13 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/02/08 01:13:21 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:32 espie Exp $
 bin/treewm
 bin/xkill-treewm
 bin/xprop-treewm
+share/doc/treewm/
 share/doc/treewm/ChangeLog
 share/doc/treewm/PROBLEMS
 share/doc/treewm/README
 share/doc/treewm/README.tiling
+share/examples/treewm/
 share/examples/treewm/default.cfg
 share/examples/treewm/sample.cfg
+share/treewm/
+share/treewm/pixmaps/
 share/treewm/pixmaps/close.xpm
 share/treewm/pixmaps/icon.xpm
 share/treewm/pixmaps/max1.xpm
@@ -16,7 +20,3 @@ share/treewm/pixmaps/move.xpm
 share/treewm/pixmaps/none1.xpm
 share/treewm/pixmaps/none2.xpm
 share/treewm/pixmaps/resize.xpm
-@dirrm share/treewm/pixmaps
-@dirrm share/treewm
-@dirrm share/examples/treewm
-@dirrm share/doc/treewm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/08/14 12:53:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/09/15 19:26:30 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -54,19 +54,16 @@ FLAVOR?=
 .if ${FLAVOR:L:Mgtkglarea}
 LIB_DEPENDS+=	gtkgl.1.2::x11/gtkglarea
 CONFIGURE_ARGS+= --with-gtkglarea-force
-SED_PLIST+=     |sed -e '/^!%%gtkglarea%%/r${PKGDIR}/PFRAG.gtkglarea' -e '//d'
 .else
 CONFIGURE_ARGS+= --without-gtkglarea
-SED_PLIST+=     |sed -e '/^!%%gtkglarea%%/d'
 .endif
 
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=	zvt.5::x11/gnome/libs
 CONFIGURE_ARGS+= --with-gnome
-SED_PLIST+=     |sed -e '/^!%%gnome%%/r${PKGDIR}/PFRAG.gnome' -e '//d'
+LIB_DEPENDS+=zvt::x11/gnome/libs
 .else
 CONFIGURE_ARGS+= --without-gnome
-SED_PLIST+=     |sed -e '/^!%%gnome%%/d'
 .endif
 
 .include <bsd.port.mk>

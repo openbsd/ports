@@ -1,22 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/06/26 23:09:15 jcs Exp $
-!%%gtkglarea%%
-!%%gnome%%
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:26:30 espie Exp $
+${P5ARCH}/Gtk/
 ${P5ARCH}/Gtk.pm
 ${P5ARCH}/Gtk/Atoms.pm
 ${P5ARCH}/Gtk/CListModel.pm
 ${P5ARCH}/Gtk/ColorSelectButton.pm
+${P5ARCH}/Gtk/Gdk/
 ${P5ARCH}/Gtk/Gdk.pm
+${P5ARCH}/Gtk/Gdk/ImlibImage/
 ${P5ARCH}/Gtk/Gdk/ImlibImage.pm
+${P5ARCH}/Gtk/Gdk/ImlibImage/Install/
 ${P5ARCH}/Gtk/Gdk/ImlibImage/Install/Files.pm
 ${P5ARCH}/Gtk/Gdk/ImlibImage/Install/GdkImlibTypes.h
 ${P5ARCH}/Gtk/Gdk/ImlibImage/Install/pkg.typemap
+${P5ARCH}/Gtk/Gdk/Pixbuf/
 ${P5ARCH}/Gtk/Gdk/Pixbuf.pm
+${P5ARCH}/Gtk/Gdk/Pixbuf/Install/
 ${P5ARCH}/Gtk/Gdk/Pixbuf/Install/Files.pm
 ${P5ARCH}/Gtk/Gdk/Pixbuf/Install/GdkPixbufDefs.h
 ${P5ARCH}/Gtk/Gdk/Pixbuf/Install/GdkPixbufTypemap
 ${P5ARCH}/Gtk/Gdk/Pixbuf/Install/PerlGdkPixbufInt.h
 ${P5ARCH}/Gtk/Gdk/Pixbuf/Install/pkg.typemap
 ${P5ARCH}/Gtk/Gdk/Pixbuf/Types.pm
+${P5ARCH}/Gtk/Install/
 ${P5ARCH}/Gtk/Install/Files.pm
 ${P5ARCH}/Gtk/Install/GdkTypes.h
 ${P5ARCH}/Gtk/Install/GtkDefs.h
@@ -41,6 +46,7 @@ ${P5ARCH}/Gtk/Install/gtk-1.2.defs
 ${P5ARCH}/Gtk/Install/gtk-1.2.typemap
 ${P5ARCH}/Gtk/Install/ppport.h
 ${P5ARCH}/Gtk/Keysyms.pm
+${P5ARCH}/Gtk/LWP/
 ${P5ARCH}/Gtk/LWP.pm
 ${P5ARCH}/Gtk/LWP/http.pm
 ${P5ARCH}/Gtk/LogHandler.pm
@@ -48,34 +54,24 @@ ${P5ARCH}/Gtk/Types.pm
 ${P5ARCH}/Gtk/TypesLazy.pm
 ${P5ARCH}/Gtk/io.pm
 ${P5ARCH}/Gtk/lazy.pm
-@comment ${P5ARCH}/perllocal.pod
-@comment ${P5ARCH}/auto/Gtk/Gdk/ImlibImage/.packlist
+${P5ARCH}/auto/Gtk/
+${P5ARCH}/auto/Gtk/Gdk/
+${P5ARCH}/auto/Gtk/Gdk/ImlibImage/
 ${P5ARCH}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
 ${P5ARCH}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
-@comment ${P5ARCH}/auto/Gtk/Gdk/Pixbuf/.packlist
+${P5ARCH}/auto/Gtk/Gdk/Pixbuf/
 ${P5ARCH}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
 ${P5ARCH}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
 ${P5ARCH}/auto/Gtk/Gdk/autosplit.ix
 ${P5ARCH}/auto/Gtk/Gtk.bs
 ${P5ARCH}/auto/Gtk/Gtk.so
 ${P5ARCH}/auto/Gtk/autosplit.ix
-@comment ${P5ARCH}/auto/Gtk/base/.packlist
-man/man3p/Gtk.3p
-man/man3p/Gtk::CListModel.3p
-man/man3p/Gtk::Gdk::ImlibImage::reference.3p
-man/man3p/Gtk::Gdk::Pixbuf::reference.3p
-man/man3p/Gtk::cookbook.3p
-man/man3p/Gtk::objects.3p
-man/man3p/Gtk::reference.3p
-@dirrm ${P5ARCH}/auto/Gtk/Gdk/Pixbuf
-@dirrm ${P5ARCH}/auto/Gtk/Gdk/ImlibImage
-@dirrm ${P5ARCH}/auto/Gtk/Gdk
-@dirrm ${P5ARCH}/auto/Gtk
-@dirrm ${P5ARCH}/Gtk/LWP
-@dirrm ${P5ARCH}/Gtk/Install
-@dirrm ${P5ARCH}/Gtk/Gdk/Pixbuf/Install
-@dirrm ${P5ARCH}/Gtk/Gdk/Pixbuf
-@dirrm ${P5ARCH}/Gtk/Gdk/ImlibImage/Install
-@dirrm ${P5ARCH}/Gtk/Gdk/ImlibImage
-@dirrm ${P5ARCH}/Gtk/Gdk
-@dirrm ${P5ARCH}/Gtk
+@man man/man3p/Gtk.3p
+@man man/man3p/Gtk::CListModel.3p
+@man man/man3p/Gtk::Gdk::ImlibImage::reference.3p
+@man man/man3p/Gtk::Gdk::Pixbuf::reference.3p
+@man man/man3p/Gtk::cookbook.3p
+@man man/man3p/Gtk::objects.3p
+@man man/man3p/Gtk::reference.3p
+%%gtkglarea%%
+%%gnome%%

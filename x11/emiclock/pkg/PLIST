@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:28 espie Exp $
 bin/emiclock
-lib/X11/app-defaults/EmiClock
-lib/X11/ja_JP.EUC/app-defaults/EmiClock
-lib/X11/EmiClock/myu.au
+lib/X11/EmiClock/
 lib/X11/EmiClock/COPYRIGHT
 lib/X11/EmiClock/COPYRIGHT.en
-man/cat1/emiclock.0
+lib/X11/EmiClock/myu.au
+lib/X11/app-defaults/EmiClock
+lib/X11/ja_JP.EUC/
+lib/X11/ja_JP.EUC/app-defaults/
+lib/X11/ja_JP.EUC/app-defaults/EmiClock
+@man man/cat1/emiclock.0

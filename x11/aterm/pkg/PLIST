@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/07/05 01:02:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:27 espie Exp $
 @mode 4755
 bin/aterm
 @mode
-man/man1/aterm.1
+@man man/man1/aterm.1

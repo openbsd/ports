@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/11/13 18:48:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:30 espie Exp $
+lib/ogle/
 lib/ogle/ogle_gui
 share/locale/da/LC_MESSAGES/ogle_gui.mo
 share/locale/de/LC_MESSAGES/ogle_gui.mo
@@ -6,6 +7,7 @@ share/locale/fr/LC_MESSAGES/ogle_gui.mo
 share/locale/nl/LC_MESSAGES/ogle_gui.mo
 share/locale/pt/LC_MESSAGES/ogle_gui.mo
 share/locale/sv/LC_MESSAGES/ogle_gui.mo
+share/ogle_gui/
 share/ogle_gui/angle.xpm
 share/ogle_gui/enter.xpm
 share/ogle_gui/fastforward.xpm
@@ -29,4 +31,3 @@ share/ogle_gui/stock_timer_stopped.xpm
 share/ogle_gui/stock_up_arrow.xpm
 share/ogle_gui/stock_volume.xpm
 share/ogle_gui/subpicture.xpm
-@dirrm share/ogle_gui

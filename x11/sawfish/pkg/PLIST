@@ -1,22 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/06/25 00:16:36 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/sawfish.info
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:31 espie Exp $
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
-info/sawfish.info
-info/sawfish.info-1
-info/sawfish.info-2
-info/sawfish.info-3
-info/sawfish.info-4
-info/sawfish.info-5
+@info info/sawfish.info
+libexec/rep/
+libexec/rep/${GNU_ARCH}/
+libexec/rep/${GNU_ARCH}/sawfish/
 libexec/rep/${GNU_ARCH}/sawfish/client.a
 libexec/rep/${GNU_ARCH}/sawfish/client.la
+libexec/sawfish/
+libexec/sawfish/${VERSION}/
+libexec/sawfish/${VERSION}/${GNU_ARCH}/
 libexec/sawfish/${VERSION}/${GNU_ARCH}/DOC
 libexec/sawfish/${VERSION}/${GNU_ARCH}/gradient.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/gradient.la
 libexec/sawfish/${VERSION}/${GNU_ARCH}/gtk-style
+libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish-about
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish-menu
+libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/
+libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/flippers.la
 libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util/gradient.a
@@ -31,8 +34,15 @@ libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/selection.la
 libexec/sawfish/${VERSION}/${GNU_ARCH}/x.a
 libexec/sawfish/${VERSION}/${GNU_ARCH}/x.la
+share/locale/
+share/locale/no/
+share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/sawfish.mo
+share/pixmaps/
 share/pixmaps/sawfish.png
+share/sawfish/
+share/sawfish/${VERSION}/
+share/sawfish/${VERSION}/lisp/
 share/sawfish/${VERSION}/lisp/anim-outline.jl
 share/sawfish/${VERSION}/lisp/anim-outline.jlc
 share/sawfish/${VERSION}/lisp/audio-events.jl
@@ -93,6 +103,8 @@ share/sawfish/${VERSION}/lisp/prompt.jl
 share/sawfish/${VERSION}/lisp/prompt.jlc
 share/sawfish/${VERSION}/lisp/rects.jl
 share/sawfish/${VERSION}/lisp/rects.jlc
+share/sawfish/${VERSION}/lisp/sawfish/
+share/sawfish/${VERSION}/lisp/sawfish/gtk/
 share/sawfish/${VERSION}/lisp/sawfish/gtk/color-preview.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/color-preview.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/stock.jl
@@ -103,6 +115,7 @@ share/sawfish/${VERSION}/lisp/sawfish/gtk/widget-test.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widget-test.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widget.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widget.jlc
+share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/alist.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/alist.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/color.jl
@@ -117,6 +130,7 @@ share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/pair.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/pair.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/program.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/program.jlc
+share/sawfish/${VERSION}/lisp/sawfish/ui/
 share/sawfish/${VERSION}/lisp/sawfish/ui/apply.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/apply.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/config.jl
@@ -127,6 +141,7 @@ share/sawfish/${VERSION}/lisp/sawfish/ui/i18n.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/i18n.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/layout.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/layout.jlc
+share/sawfish/${VERSION}/lisp/sawfish/ui/layouts/
 share/sawfish/${VERSION}/lisp/sawfish/ui/layouts/keymaps.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/layouts/keymaps.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/main.jl
@@ -137,6 +152,7 @@ share/sawfish/${VERSION}/lisp/sawfish/ui/slot.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/slot.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/user-level.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/user-level.jlc
+share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/command.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/command.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/event.jl
@@ -155,11 +171,14 @@ share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/workspace-geometry.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/widgets/workspace-geometry.jlc
 share/sawfish/${VERSION}/lisp/sawfish/ui/wm.jl
 share/sawfish/${VERSION}/lisp/sawfish/ui/wm.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/
 share/sawfish/${VERSION}/lisp/sawfish/wm.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/animation/
 share/sawfish/${VERSION}/lisp/sawfish/wm/animation/outline.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/animation/outline.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/autoload.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/commands/
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/commands/cycle.jl
@@ -202,6 +221,7 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/customize.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/customize.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/defaults.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/defaults.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/ext/
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/3d-hack.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/3d-hack.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/audio-events.jl
@@ -232,6 +252,7 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/frames.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/frames.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/gaol.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/gaol.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/gnome/
 share/sawfish/${VERSION}/lisp/sawfish/wm/gnome/integration.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/gnome/integration.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/gnome/match-window.jl
@@ -244,6 +265,7 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/menus.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/menus.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/misc.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/misc.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/placement/
 share/sawfish/${VERSION}/lisp/sawfish/wm/placement.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/placement.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/placement/off-center.jl
@@ -256,6 +278,7 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/placement/top-left.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/placement/top-left.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/server.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/server.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/session/
 share/sawfish/${VERSION}/lisp/sawfish/wm/session/init.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/session/init.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/session/load.jl
@@ -264,6 +287,7 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/session/save.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/session/save.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/stacking.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/stacking.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/state/
 share/sawfish/${VERSION}/lisp/sawfish/wm/state/configure.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/state/configure.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/state/gnome.jl
@@ -286,12 +310,14 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/state/wm-spec.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/state/wm-spec.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/swapper.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/swapper.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/theming/
 share/sawfish/${VERSION}/lisp/sawfish/wm/theming/make-theme-preview.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/theming/make-theme-preview.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/theming/make-theme.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/theming/make-theme.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/user.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/user.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/util/
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/compat.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/compat.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/util/decode-events.jl
@@ -361,11 +387,14 @@ share/sawfish/${VERSION}/lisp/with-output.jlc
 share/sawfish/${VERSION}/lisp/x-cycle.jl
 share/sawfish/${VERSION}/lisp/x-cycle.jlc
 share/sawfish/${VERSION}/monitor.png
+share/sawfish/${VERSION}/sounds/
 share/sawfish/${VERSION}/sounds/activate.wav
 share/sawfish/${VERSION}/sounds/clicked.wav
 share/sawfish/${VERSION}/sounds/gameover.wav
 share/sawfish/${VERSION}/sounds/slide.wav
 share/sawfish/${VERSION}/sounds/toggled.wav
+share/sawfish/${VERSION}/themes/
+share/sawfish/${VERSION}/themes/Crux/
 share/sawfish/${VERSION}/themes/Crux/README
 share/sawfish/${VERSION}/themes/Crux/active:bottom-left-border.png
 share/sawfish/${VERSION}/themes/Crux/active:bottom-left-corner.png
@@ -422,6 +451,7 @@ share/sawfish/${VERSION}/themes/Crux/inactive:top-center-right.png
 share/sawfish/${VERSION}/themes/Crux/inactive:top-left-border.png
 share/sawfish/${VERSION}/themes/Crux/inactive:top-right-border.png
 share/sawfish/${VERSION}/themes/Crux/theme.jl
+share/sawfish/${VERSION}/themes/absolute-e/
 share/sawfish/${VERSION}/themes/absolute-e/README
 share/sawfish/${VERSION}/themes/absolute-e/README.gl
 share/sawfish/${VERSION}/themes/absolute-e/README.it
@@ -432,6 +462,7 @@ share/sawfish/${VERSION}/themes/absolute-e/bar_hilited_active.png
 share/sawfish/${VERSION}/themes/absolute-e/bar_normal.png
 share/sawfish/${VERSION}/themes/absolute-e/bar_normal_active.png
 share/sawfish/${VERSION}/themes/absolute-e/theme.jl
+share/sawfish/${VERSION}/themes/brushed-metal/
 share/sawfish/${VERSION}/themes/brushed-metal/README
 share/sawfish/${VERSION}/themes/brushed-metal/README.gl
 share/sawfish/${VERSION}/themes/brushed-metal/README.it
@@ -470,6 +501,7 @@ share/sawfish/${VERSION}/themes/brushed-metal/t5-b.png
 share/sawfish/${VERSION}/themes/brushed-metal/t5.png
 share/sawfish/${VERSION}/themes/brushed-metal/t5b.png
 share/sawfish/${VERSION}/themes/brushed-metal/theme.jl
+share/sawfish/${VERSION}/themes/gradient/
 share/sawfish/${VERSION}/themes/gradient/README
 share/sawfish/${VERSION}/themes/gradient/README.gl
 share/sawfish/${VERSION}/themes/gradient/README.it
@@ -480,6 +512,7 @@ share/sawfish/${VERSION}/themes/gradient/as_close.png
 share/sawfish/${VERSION}/themes/gradient/as_min-b.png
 share/sawfish/${VERSION}/themes/gradient/as_min.png
 share/sawfish/${VERSION}/themes/gradient/theme.jl
+share/sawfish/${VERSION}/themes/gtk/
 share/sawfish/${VERSION}/themes/gtk/README
 share/sawfish/${VERSION}/themes/gtk/README.gl
 share/sawfish/${VERSION}/themes/gtk/README.it
@@ -490,6 +523,7 @@ share/sawfish/${VERSION}/themes/gtk/as_close.png
 share/sawfish/${VERSION}/themes/gtk/as_min-b.png
 share/sawfish/${VERSION}/themes/gtk/as_min.png
 share/sawfish/${VERSION}/themes/gtk/theme.jl
+share/sawfish/${VERSION}/themes/microGUI/
 share/sawfish/${VERSION}/themes/microGUI/README
 share/sawfish/${VERSION}/themes/microGUI/README.gl
 share/sawfish/${VERSION}/themes/microGUI/README.it
@@ -536,6 +570,7 @@ share/sawfish/${VERSION}/themes/microGUI/top_left_inactive_s.png
 share/sawfish/${VERSION}/themes/microGUI/top_left_s.png
 share/sawfish/${VERSION}/themes/microGUI/top_right.png
 share/sawfish/${VERSION}/themes/microGUI/top_right_s.png
+share/sawfish/${VERSION}/themes/mono/
 share/sawfish/${VERSION}/themes/mono/README
 share/sawfish/${VERSION}/themes/mono/README.gl
 share/sawfish/${VERSION}/themes/mono/README.it
@@ -552,6 +587,7 @@ share/sawfish/${VERSION}/themes/mono/min.png
 share/sawfish/${VERSION}/themes/mono/restore-c.png
 share/sawfish/${VERSION}/themes/mono/restore.png
 share/sawfish/${VERSION}/themes/mono/theme.jl
+share/sawfish/${VERSION}/themes/simple/
 share/sawfish/${VERSION}/themes/simple/README
 share/sawfish/${VERSION}/themes/simple/README.gl
 share/sawfish/${VERSION}/themes/simple/README.it
@@ -562,6 +598,7 @@ share/sawfish/${VERSION}/themes/simple/as_close.png
 share/sawfish/${VERSION}/themes/simple/as_min-b.png
 share/sawfish/${VERSION}/themes/simple/as_min.png
 share/sawfish/${VERSION}/themes/simple/theme.jl
+share/sawfish/${VERSION}/themes/smaker/
 share/sawfish/${VERSION}/themes/smaker/README
 share/sawfish/${VERSION}/themes/smaker/README.gl
 share/sawfish/${VERSION}/themes/smaker/README.it
@@ -576,47 +613,6 @@ share/sawfish/${VERSION}/themes/smaker/close_inv.png
 share/sawfish/${VERSION}/themes/smaker/min.png
 share/sawfish/${VERSION}/themes/smaker/min_inv.png
 share/sawfish/${VERSION}/themes/smaker/theme.jl
+share/sawfish/sounds/
+share/sawfish/themes/
 %%SHARED%%
-@exec mkdir -p %D/share/sawfish/themes
-@dirrm share/sawfish/themes
-@exec mkdir -p %D/share/sawfish/sounds
-@dirrm share/sawfish/sounds
-@dirrm share/sawfish/${VERSION}/themes/smaker
-@dirrm share/sawfish/${VERSION}/themes/simple
-@dirrm share/sawfish/${VERSION}/themes/mono
-@dirrm share/sawfish/${VERSION}/themes/microGUI
-@dirrm share/sawfish/${VERSION}/themes/gtk
-@dirrm share/sawfish/${VERSION}/themes/gradient
-@dirrm share/sawfish/${VERSION}/themes/brushed-metal
-@dirrm share/sawfish/${VERSION}/themes/absolute-e
-@dirrm share/sawfish/${VERSION}/themes/Crux
-@dirrm share/sawfish/${VERSION}/themes
-@dirrm share/sawfish/${VERSION}/sounds
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/util
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/theming
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/state
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/session
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/placement
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/gnome
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/ext
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/commands
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm/animation
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/wm
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/ui/widgets
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/ui/layouts
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/ui
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets
-@dirrm share/sawfish/${VERSION}/lisp/sawfish/gtk
-@dirrm share/sawfish/${VERSION}/lisp/sawfish
-@dirrm share/sawfish/${VERSION}/lisp
-@dirrm share/sawfish/${VERSION}
-@dirrm share/sawfish
-@dirrm share/pixmaps
-@dirrm libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm/util
-@dirrm libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish/wm
-@dirrm libexec/sawfish/${VERSION}/${GNU_ARCH}/sawfish
-@dirrm libexec/sawfish/${VERSION}/${GNU_ARCH}
-@dirrm libexec/sawfish/${VERSION}
-@dirrm libexec/sawfish
-@dirrm libexec/rep/${GNU_ARCH}/sawfish
-@exec install-info --info-dir=%D/info %D/info/sawfish.info

@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/10/18 02:05:19 mark Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:32 espie Exp $
 bin/waimea
-man/man1/waimea.1
+@man man/man1/waimea.1
+share/waimea/
+share/waimea/actions/
 share/waimea/actions/action
 share/waimea/actions/action.click-to-focus
 share/waimea/actions/action.no-mouse
 share/waimea/actions/action.non-opaque
 share/waimea/actions/action.sloppy-focus
+share/waimea/backgrounds/
 share/waimea/backgrounds/waimea.png
 share/waimea/config
 share/waimea/menu
+share/waimea/scripts/
 share/waimea/scripts/filelist.pl
 share/waimea/scripts/procinfo.pl
 share/waimea/scripts/stylesdir.pl
+share/waimea/styles/
 share/waimea/styles/Default.style
-@dirrm share/waimea/styles
-@dirrm share/waimea/scripts
-@dirrm share/waimea/backgrounds
-@dirrm share/waimea/actions
-@dirrm share/waimea

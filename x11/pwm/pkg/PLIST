@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/04/14 08:07:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:31 espie Exp $
 bin/pwm
-man/man1/pwm.1
+@man man/man1/pwm.1
+share/doc/pwm/
 share/doc/pwm/LICENSE
 share/doc/pwm/config.txt
+share/examples/pwm/
 share/examples/pwm/buttons-default.conf
 share/examples/pwm/keys-default.conf
 share/examples/pwm/look-beoslike.conf
 share/examples/pwm/look-brownsteel.conf
 share/examples/pwm/menus-default.conf
 share/examples/pwm/pwm.conf
-@dirrm share/examples/pwm
-@dirrm share/doc/pwm
 @extraunexec rm -rf ${SYSCONFDIR}/pwm

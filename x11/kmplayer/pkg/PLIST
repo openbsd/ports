@@ -1,21 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/03/02 14:27:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:29 espie Exp $
 bin/kmplayer
+${KDE}/
 ${KDE}/kparts_kmplayer.la
 lib/kdeinit_kmplayer.la
+share/applnk/
+share/applnk/Multimedia/
+share/applnk/Multimedia/More/
 share/applnk/Multimedia/More/kmplayer.desktop
 share/applnk/Multimedia/kmplayer.desktop
+share/apps/
+share/apps/kmplayer/
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
+share/config/
 share/config/kmplayerrc
+share/doc/HTML/
+share/doc/HTML/en/
+share/doc/HTML/en/kmplayer/
 share/doc/HTML/en/kmplayer/common
 share/doc/HTML/en/kmplayer/index.cache.bz2
 share/doc/HTML/en/kmplayer/index.docbook
+share/locale/
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
+share/locale/hu/LC_MESSAGES/kmplayer.mo
+share/mimelnk/
+share/mimelnk/application/
 share/mimelnk/application/x-applix.desktop
 share/mimelnk/application/x-mplayer2.desktop
+share/mimelnk/video/
 share/mimelnk/video/x-ms-asf.desktop
 share/mimelnk/video/x-ms-wmv.desktop
+share/services/
 share/services/kmplayer_component.desktop
-%%SHARED%%
-@dirrm share/doc/HTML/en/kmplayer
 @exec echo "This port may require careful setup. See pkg_info kmplayer"
-@dirrm share/apps/kmplayer
+%%SHARED%%

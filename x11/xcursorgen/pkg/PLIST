@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1 2003/04/24 21:42:38 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:33 espie Exp $
 bin/xcursorgen
+lib/X11/icons/
+lib/X11/icons/default/
 lib/X11/icons/default/index.theme
+lib/X11/icons/handhelds/
+lib/X11/icons/handhelds/cursors/
 lib/X11/icons/handhelds/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
 lib/X11/icons/handhelds/cursors/X_cursor
 lib/X11/icons/handhelds/cursors/arrow
@@ -47,6 +51,8 @@ lib/X11/icons/handhelds/cursors/top_side
 lib/X11/icons/handhelds/cursors/top_tee
 lib/X11/icons/handhelds/cursors/watch
 lib/X11/icons/handhelds/cursors/xterm
+lib/X11/icons/redglass/
+lib/X11/icons/redglass/cursors/
 lib/X11/icons/redglass/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
 lib/X11/icons/redglass/cursors/X_cursor
 lib/X11/icons/redglass/cursors/arrow
@@ -93,6 +99,8 @@ lib/X11/icons/redglass/cursors/top_side
 lib/X11/icons/redglass/cursors/top_tee
 lib/X11/icons/redglass/cursors/watch
 lib/X11/icons/redglass/cursors/xterm
+lib/X11/icons/whiteglass/
+lib/X11/icons/whiteglass/cursors/
 lib/X11/icons/whiteglass/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
 lib/X11/icons/whiteglass/cursors/X_cursor
 lib/X11/icons/whiteglass/cursors/arrow
@@ -153,12 +161,4 @@ lib/X11/icons/whiteglass/cursors/ul_angle
 lib/X11/icons/whiteglass/cursors/ur_angle
 lib/X11/icons/whiteglass/cursors/watch
 lib/X11/icons/whiteglass/cursors/xterm
-man/cat1/xcursorgen.0
-@dirrm lib/X11/icons/whiteglass/cursors
-@dirrm lib/X11/icons/whiteglass
-@dirrm lib/X11/icons/redglass/cursors
-@dirrm lib/X11/icons/redglass
-@dirrm lib/X11/icons/handhelds/cursors
-@dirrm lib/X11/icons/handhelds
-@dirrm lib/X11/icons/default
-@dirrm lib/X11/icons
+@man man/cat1/xcursorgen.0

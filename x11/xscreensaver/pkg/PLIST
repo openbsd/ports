@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/07/07 14:31:21 sturm Exp $
-!%%no_gle%%
-%%gtk2%%
+@comment $OpenBSD: PLIST,v 1.14 2004/09/15 19:26:35 espie Exp $
 @comment bin/screensaver-properties-capplet
 bin/xscreensaver
 bin/xscreensaver-command
@@ -9,6 +7,8 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
+lib/xscreensaver/
+lib/xscreensaver/config/
 lib/xscreensaver/config/README
 lib/xscreensaver/config/anemone.xml
 lib/xscreensaver/config/ant.xml
@@ -205,6 +205,7 @@ lib/xscreensaver/config/xsnow.xml
 lib/xscreensaver/config/xspirograph.xml
 lib/xscreensaver/config/xteevee.xml
 lib/xscreensaver/config/zoom.xml
+libexec/xscreensaver/
 libexec/xscreensaver/anemone
 libexec/xscreensaver/ant
 libexec/xscreensaver/antinspect
@@ -390,199 +391,206 @@ libexec/xscreensaver/xspirograph
 libexec/xscreensaver/xsublim
 libexec/xscreensaver/xteevee
 libexec/xscreensaver/zoom
-man/man1/anemone.1
-man/man1/ant.1
-man/man1/antinspect.1
-man/man1/antspotlight.1
-man/man1/apollonian.1
-man/man1/apple2.1
-man/man1/atlantis.1
-man/man1/attraction.1
-man/man1/atunnel.1
-man/man1/barcode.1
-man/man1/blaster.1
-man/man1/blinkbox.1
-man/man1/blitspin.1
-man/man1/blocktube.1
-man/man1/bouboule.1
-man/man1/bouncingcow.1
-man/man1/boxed.1
-man/man1/braid.1
-man/man1/bsod.1
-man/man1/bubble3d.1
-man/man1/bubbles.1
-man/man1/bumps.1
-man/man1/cage.1
-man/man1/ccurve.1
-man/man1/circuit.1
-man/man1/cloudlife.1
-man/man1/compass.1
-man/man1/coral.1
-man/man1/critical.1
-man/man1/crystal.1
-man/man1/cubenetic.1
-man/man1/cubestorm.1
-man/man1/cynosure.1
-man/man1/dangerball.1
-man/man1/decayscreen.1
-man/man1/deluxe.1
-man/man1/demon.1
-man/man1/discrete.1
-man/man1/distort.1
-man/man1/drift.1
-man/man1/endgame.1
-man/man1/engine.1
-man/man1/epicycle.1
-man/man1/eruption.1
-man/man1/euler2d.1
-man/man1/fadeplot.1
-man/man1/flag.1
-man/man1/flame.1
-man/man1/flipflop.1
-man/man1/flipscreen3d.1
-man/man1/flow.1
-man/man1/fluidballs.1
-man/man1/flurry.1
-man/man1/flyingtoasters.1
-man/man1/fontglide.1
-man/man1/forest.1
-man/man1/fuzzyflakes.1
-man/man1/galaxy.1
-man/man1/gears.1
-man/man1/gflux.1
-man/man1/glblur.1
-man/man1/gleidescope.1
-man/man1/glforestfire.1
-man/man1/glknots.1
-man/man1/glmatrix.1
-man/man1/glplanet.1
-man/man1/glslideshow.1
-man/man1/glsnake.1
-man/man1/gltext.1
-man/man1/goop.1
-man/man1/grav.1
-man/man1/greynetic.1
-man/man1/halftone.1
-man/man1/halo.1
-man/man1/helix.1
-man/man1/hopalong.1
-man/man1/hyperball.1
-man/man1/hypercube.1
-man/man1/hypertorus.1
-man/man1/ifs.1
-man/man1/imsmap.1
-man/man1/interference.1
-man/man1/jigglypuff.1
-man/man1/jigsaw.1
-man/man1/juggle.1
-man/man1/julia.1
-man/man1/kaleidescope.1
-man/man1/klein.1
-man/man1/kumppa.1
-man/man1/lament.1
-man/man1/laser.1
-man/man1/lavalite.1
-man/man1/lightning.1
-man/man1/lisa.1
-man/man1/lissie.1
-man/man1/ljlatest.1
-man/man1/lmorph.1
-man/man1/loop.1
-man/man1/maze.1
-man/man1/menger.1
-man/man1/metaballs.1
-man/man1/mirrorblob.1
-man/man1/mismunch.1
-man/man1/moebius.1
-man/man1/moire.1
-man/man1/moire2.1
-man/man1/molecule.1
-man/man1/morph3d.1
-man/man1/mountain.1
-man/man1/munch.1
-man/man1/nerverot.1
-man/man1/noof.1
-man/man1/noseguy.1
-man/man1/pacman.1
-man/man1/pedal.1
-man/man1/penetrate.1
-man/man1/penrose.1
-man/man1/petri.1
-man/man1/phosphor.1
-man/man1/piecewise.1
-man/man1/pipes.1
-man/man1/polyhedra.1
-man/man1/polyominoes.1
-man/man1/polytopes.1
-man/man1/pong.1
-man/man1/providence.1
-man/man1/pulsar.1
-man/man1/pyro.1
-man/man1/qix.1
-man/man1/queens.1
-man/man1/rd-bomb.1
-man/man1/ripples.1
-man/man1/rocks.1
-man/man1/rorschach.1
-man/man1/rotor.1
-man/man1/rotzoomer.1
-man/man1/rubik.1
-man/man1/sballs.1
-man/man1/shadebobs.1
-man/man1/sierpinski.1
-man/man1/sierpinski3d.1
-man/man1/slidescreen.1
-man/man1/slip.1
-man/man1/sonar.1
-man/man1/speedmine.1
-man/man1/sphere.1
-man/man1/spheremonics.1
-man/man1/spiral.1
-man/man1/spotlight.1
-man/man1/sproingies.1
-man/man1/squiral.1
-man/man1/stairs.1
-man/man1/starfish.1
-man/man1/starwars.1
-man/man1/stonerview.1
-man/man1/strange.1
-man/man1/superquadrics.1
-man/man1/swirl.1
-man/man1/t3d.1
-man/man1/thornbird.1
-man/man1/triangle.1
-man/man1/truchet.1
-man/man1/twang.1
-man/man1/vermiculate.1
-man/man1/vidwhacker.1
-man/man1/vines.1
-man/man1/wander.1
-man/man1/webcollage.1
-man/man1/whirlwindwarp.1
-man/man1/whirlygig.1
-man/man1/worm.1
-man/man1/wormhole.1
-man/man1/xanalogtv.1
-man/man1/xdeco.1
-man/man1/xflame.1
-man/man1/xjack.1
-man/man1/xlyap.1
-man/man1/xmatrix.1
-man/man1/xrayswarm.1
-man/man1/xscreensaver-command.1
-man/man1/xscreensaver-demo.1
-man/man1/xscreensaver-getimage-file.1
-man/man1/xscreensaver-getimage-video.1
-man/man1/xscreensaver-getimage.1
-man/man1/xscreensaver-gl-helper.1
-man/man1/xscreensaver.1
-man/man1/xspirograph.1
-man/man1/xsublim.1
-man/man1/xteevee.1
-man/man1/zoom.1
-@comment share/applications/screensaver-properties.desktop
+@man man/man1/anemone.1
+@man man/man1/ant.1
+@man man/man1/antinspect.1
+@man man/man1/antspotlight.1
+@man man/man1/apollonian.1
+@man man/man1/apple2.1
+@man man/man1/atlantis.1
+@man man/man1/attraction.1
+@man man/man1/atunnel.1
+@man man/man1/barcode.1
+@man man/man1/blaster.1
+@man man/man1/blinkbox.1
+@man man/man1/blitspin.1
+@man man/man1/blocktube.1
+@man man/man1/bouboule.1
+@man man/man1/bouncingcow.1
+@man man/man1/boxed.1
+@man man/man1/braid.1
+@man man/man1/bsod.1
+@man man/man1/bubble3d.1
+@man man/man1/bubbles.1
+@man man/man1/bumps.1
+@man man/man1/cage.1
+@man man/man1/ccurve.1
+@man man/man1/circuit.1
+@man man/man1/cloudlife.1
+@man man/man1/compass.1
+@man man/man1/coral.1
+@man man/man1/critical.1
+@man man/man1/crystal.1
+@man man/man1/cubenetic.1
+@man man/man1/cubestorm.1
+@man man/man1/cynosure.1
+@man man/man1/dangerball.1
+@man man/man1/decayscreen.1
+@man man/man1/deluxe.1
+@man man/man1/demon.1
+@man man/man1/discrete.1
+@man man/man1/distort.1
+@man man/man1/drift.1
+@man man/man1/endgame.1
+@man man/man1/engine.1
+@man man/man1/epicycle.1
+@man man/man1/eruption.1
+@man man/man1/euler2d.1
+@man man/man1/fadeplot.1
+@man man/man1/flag.1
+@man man/man1/flame.1
+@man man/man1/flipflop.1
+@man man/man1/flipscreen3d.1
+@man man/man1/flow.1
+@man man/man1/fluidballs.1
+@man man/man1/flurry.1
+@man man/man1/flyingtoasters.1
+@man man/man1/fontglide.1
+@man man/man1/forest.1
+@man man/man1/fuzzyflakes.1
+@man man/man1/galaxy.1
+@man man/man1/gears.1
+@man man/man1/gflux.1
+@man man/man1/glblur.1
+@man man/man1/gleidescope.1
+@man man/man1/glforestfire.1
+@man man/man1/glknots.1
+@man man/man1/glmatrix.1
+@man man/man1/glplanet.1
+@man man/man1/glslideshow.1
+@man man/man1/glsnake.1
+@man man/man1/gltext.1
+@man man/man1/goop.1
+@man man/man1/grav.1
+@man man/man1/greynetic.1
+@man man/man1/halftone.1
+@man man/man1/halo.1
+@man man/man1/helix.1
+@man man/man1/hopalong.1
+@man man/man1/hyperball.1
+@man man/man1/hypercube.1
+@man man/man1/hypertorus.1
+@man man/man1/ifs.1
+@man man/man1/imsmap.1
+@man man/man1/interference.1
+@man man/man1/jigglypuff.1
+@man man/man1/jigsaw.1
+@man man/man1/juggle.1
+@man man/man1/julia.1
+@man man/man1/kaleidescope.1
+@man man/man1/klein.1
+@man man/man1/kumppa.1
+@man man/man1/lament.1
+@man man/man1/laser.1
+@man man/man1/lavalite.1
+@man man/man1/lightning.1
+@man man/man1/lisa.1
+@man man/man1/lissie.1
+@man man/man1/ljlatest.1
+@man man/man1/lmorph.1
+@man man/man1/loop.1
+@man man/man1/maze.1
+@man man/man1/menger.1
+@man man/man1/metaballs.1
+@man man/man1/mirrorblob.1
+@man man/man1/mismunch.1
+@man man/man1/moebius.1
+@man man/man1/moire.1
+@man man/man1/moire2.1
+@man man/man1/molecule.1
+@man man/man1/morph3d.1
+@man man/man1/mountain.1
+@man man/man1/munch.1
+@man man/man1/nerverot.1
+@man man/man1/noof.1
+@man man/man1/noseguy.1
+@man man/man1/pacman.1
+@man man/man1/pedal.1
+@man man/man1/penetrate.1
+@man man/man1/penrose.1
+@man man/man1/petri.1
+@man man/man1/phosphor.1
+@man man/man1/piecewise.1
+@man man/man1/pipes.1
+@man man/man1/polyhedra.1
+@man man/man1/polyominoes.1
+@man man/man1/polytopes.1
+@man man/man1/pong.1
+@man man/man1/providence.1
+@man man/man1/pulsar.1
+@man man/man1/pyro.1
+@man man/man1/qix.1
+@man man/man1/queens.1
+@man man/man1/rd-bomb.1
+@man man/man1/ripples.1
+@man man/man1/rocks.1
+@man man/man1/rorschach.1
+@man man/man1/rotor.1
+@man man/man1/rotzoomer.1
+@man man/man1/rubik.1
+@man man/man1/sballs.1
+@man man/man1/shadebobs.1
+@man man/man1/sierpinski.1
+@man man/man1/sierpinski3d.1
+@man man/man1/slidescreen.1
+@man man/man1/slip.1
+@man man/man1/sonar.1
+@man man/man1/speedmine.1
+@man man/man1/sphere.1
+@man man/man1/spheremonics.1
+@man man/man1/spiral.1
+@man man/man1/spotlight.1
+@man man/man1/sproingies.1
+@man man/man1/squiral.1
+@man man/man1/stairs.1
+@man man/man1/starfish.1
+@man man/man1/starwars.1
+@man man/man1/stonerview.1
+@man man/man1/strange.1
+@man man/man1/superquadrics.1
+@man man/man1/swirl.1
+@man man/man1/t3d.1
+@man man/man1/thornbird.1
+@man man/man1/triangle.1
+@man man/man1/truchet.1
+@man man/man1/twang.1
+@man man/man1/vermiculate.1
+@man man/man1/vidwhacker.1
+@man man/man1/vines.1
+@man man/man1/wander.1
+@man man/man1/webcollage.1
+@man man/man1/whirlwindwarp.1
+@man man/man1/whirlygig.1
+@man man/man1/worm.1
+@man man/man1/wormhole.1
+@man man/man1/xanalogtv.1
+@man man/man1/xdeco.1
+@man man/man1/xflame.1
+@man man/man1/xjack.1
+@man man/man1/xlyap.1
+@man man/man1/xmatrix.1
+@man man/man1/xrayswarm.1
+@man man/man1/xscreensaver-command.1
+@man man/man1/xscreensaver-demo.1
+@man man/man1/xscreensaver-getimage-file.1
+@man man/man1/xscreensaver-getimage-video.1
+@man man/man1/xscreensaver-getimage.1
+@man man/man1/xscreensaver-gl-helper.1
+@man man/man1/xscreensaver.1
+@man man/man1/xspirograph.1
+@man man/man1/xsublim.1
+@man man/man1/xteevee.1
+@man man/man1/zoom.1
+share/control-center/
+share/control-center/Desktop/
 share/control-center/Desktop/screensaver-properties.desktop
+@comment share/control-center/capplets/
 @comment share/control-center/capplets/screensaver-properties.desktop
+@comment share/gnome/
+@comment share/gnome/apps/
+@comment share/gnome/apps/Settings/
+@comment share/gnome/apps/Settings/Desktop/
+@comment share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/locale/da/LC_MESSAGES/xscreensaver.mo
 share/locale/de/LC_MESSAGES/xscreensaver.mo
 share/locale/es/LC_MESSAGES/xscreensaver.mo
@@ -598,11 +606,17 @@ share/locale/pt/LC_MESSAGES/xscreensaver.mo
 share/locale/ru/LC_MESSAGES/xscreensaver.mo
 share/locale/sk/LC_MESSAGES/xscreensaver.mo
 share/locale/sv/LC_MESSAGES/xscreensaver.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xscreensaver.mo
+share/locale/wa/
+share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/xscreensaver.mo
 share/locale/zh_CN/LC_MESSAGES/xscreensaver.mo
 share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
+share/pixmaps/
 share/pixmaps/xscreensaver.xpm
+share/xscreensaver/
 share/xscreensaver/screensaver-cmndln.png
 share/xscreensaver/screensaver-colorselector.png
 share/xscreensaver/screensaver-diagnostic.png
@@ -610,12 +624,5 @@ share/xscreensaver/screensaver-locking.png
 share/xscreensaver/screensaver-power.png
 share/xscreensaver/screensaver-snap.png
 share/xscreensaver/xscreensaver-demo.glade2
-@dirrm share/xscreensaver
-@dirrm share/pixmaps
-@comment @dirrm share/control-center/capplets
-@dirrm share/control-center/Desktop
-@dirrm share/control-center
-@dirrm share/applications
-@dirrm libexec/xscreensaver
-@dirrm lib/xscreensaver/config
-@dirrm lib/xscreensaver
+!%%no_gle%%
+%%gtk2%%

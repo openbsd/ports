@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-debuglibs,v 1.1 2001/01/03 00:02:58 matt Exp $
-lib/libXm_d.a
+@comment $OpenBSD: PLIST-debuglibs,v 1.2 2004/09/15 19:26:30 espie Exp $
 lib/libMrm_d.a
 lib/libUil_d.a
+lib/libXm_d.a

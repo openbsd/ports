@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/15 06:11:51 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:34 espie Exp $
+share/xffm/pixmaps/Crystal/
+share/xffm/pixmaps/Crystal/apps/
 share/xffm/pixmaps/Crystal/apps/Hardware.png
 share/xffm/pixmaps/Crystal/apps/Network.png
 share/xffm/pixmaps/Crystal/apps/access.png
@@ -127,6 +129,7 @@ share/xffm/pixmaps/Crystal/apps/xmag.png
 share/xffm/pixmaps/Crystal/apps/xmms2.png
 share/xffm/pixmaps/Crystal/apps/xmms_classic.png
 share/xffm/pixmaps/Crystal/apps/xpaint.png
+share/xffm/pixmaps/Crystal/devices/
 share/xffm/pixmaps/Crystal/devices/3floppy2_mount.png
 share/xffm/pixmaps/Crystal/devices/3floppy2_unmount.png
 share/xffm/pixmaps/Crystal/devices/3floppy3_mount.png
@@ -167,6 +170,7 @@ share/xffm/pixmaps/Crystal/devices/scanner.png
 share/xffm/pixmaps/Crystal/devices/tablet.png
 share/xffm/pixmaps/Crystal/devices/zip_mount.png
 share/xffm/pixmaps/Crystal/devices/zip_unmount.png
+share/xffm/pixmaps/Crystal/filesystems/
 share/xffm/pixmaps/Crystal/filesystems/Recycle_Bin_Empty3.png
 share/xffm/pixmaps/Crystal/filesystems/Recycle_Bin_Full3.png
 share/xffm/pixmaps/Crystal/filesystems/blockdevice.png
@@ -232,6 +236,7 @@ share/xffm/pixmaps/Crystal/filesystems/trashcan_full.png
 share/xffm/pixmaps/Crystal/filesystems/www.png
 share/xffm/pixmaps/Crystal/filesystems/zip.png
 share/xffm/pixmaps/Crystal/mime.xml
+share/xffm/pixmaps/Crystal/mimetypes/
 share/xffm/pixmaps/Crystal/mimetypes/002_text_document.png
 share/xffm/pixmaps/Crystal/mimetypes/004_spreadsheet_document.png
 share/xffm/pixmaps/Crystal/mimetypes/006_drawing_document.png
@@ -319,6 +324,8 @@ share/xffm/pixmaps/Crystal/mimetypes/video2.png
 share/xffm/pixmaps/Crystal/mimetypes/widget_doc.png
 share/xffm/pixmaps/Crystal/mimetypes/wordprocessing.png
 share/xffm/pixmaps/Crystal/mimetypes/zip.png
+share/xffm/pixmaps/FreeIcons/
+share/xffm/pixmaps/FreeIcons/apps/
 share/xffm/pixmaps/FreeIcons/apps/blender.png
 share/xffm/pixmaps/FreeIcons/apps/book.png
 share/xffm/pixmaps/FreeIcons/apps/box-closed.png
@@ -357,6 +364,7 @@ share/xffm/pixmaps/FreeIcons/apps/tux1.png
 share/xffm/pixmaps/FreeIcons/apps/tux2.png
 share/xffm/pixmaps/FreeIcons/apps/tux_config.png
 share/xffm/pixmaps/FreeIcons/apps/windows.png
+share/xffm/pixmaps/FreeIcons/devices/
 share/xffm/pixmaps/FreeIcons/devices/3floppy_mount.png
 share/xffm/pixmaps/FreeIcons/devices/3floppy_unmount.png
 share/xffm/pixmaps/FreeIcons/devices/RAID.png
@@ -395,6 +403,7 @@ share/xffm/pixmaps/FreeIcons/devices/tablet.png
 share/xffm/pixmaps/FreeIcons/devices/ups.png
 share/xffm/pixmaps/FreeIcons/devices/zip_mount.png
 share/xffm/pixmaps/FreeIcons/devices/zip_unmount.png
+share/xffm/pixmaps/FreeIcons/filesystems/
 share/xffm/pixmaps/FreeIcons/filesystems/blockdevice.png
 share/xffm/pixmaps/FreeIcons/filesystems/camera.png
 share/xffm/pixmaps/FreeIcons/filesystems/chardevice.png
@@ -446,6 +455,7 @@ share/xffm/pixmaps/FreeIcons/filesystems/trashcan_empty.png
 share/xffm/pixmaps/FreeIcons/filesystems/trashcan_full.png
 share/xffm/pixmaps/FreeIcons/filesystems/www.png
 share/xffm/pixmaps/FreeIcons/mime.xml
+share/xffm/pixmaps/FreeIcons/mimetypes/
 share/xffm/pixmaps/FreeIcons/mimetypes/binary.png
 share/xffm/pixmaps/FreeIcons/mimetypes/cdtrack.png
 share/xffm/pixmaps/FreeIcons/mimetypes/colorscm.png
@@ -472,6 +482,7 @@ share/xffm/pixmaps/FreeIcons/mimetypes/source_c.png
 share/xffm/pixmaps/FreeIcons/mimetypes/source_cpp.png
 share/xffm/pixmaps/FreeIcons/mimetypes/source_f.png
 share/xffm/pixmaps/FreeIcons/mimetypes/txt.png
+share/xffm/pixmaps/gnome/
 share/xffm/pixmaps/gnome/a-directory-accept-36.png
 share/xffm/pixmaps/gnome/a-directory-accept-lnk-36.png
 share/xffm/pixmaps/gnome/a-directory-accept-lnk-ro-36.png
@@ -678,6 +689,8 @@ share/xffm/pixmaps/gnome/i-spreadsheet.png
 share/xffm/pixmaps/gnome/i-symlink-36.png
 share/xffm/pixmaps/gnome/i-zipdisk.png
 share/xffm/pixmaps/gnome/mime.xml
+share/xffm/pixmaps/noia/
+share/xffm/pixmaps/noia/actions/
 share/xffm/pixmaps/noia/actions/1downarrow.png
 share/xffm/pixmaps/noia/actions/1leftarrow.png
 share/xffm/pixmaps/noia/actions/1rightarrow.png
@@ -839,6 +852,7 @@ share/xffm/pixmaps/noia/actions/window_fullscreen.png
 share/xffm/pixmaps/noia/actions/window_new.png
 share/xffm/pixmaps/noia/actions/window_nofullscreen.png
 share/xffm/pixmaps/noia/actions/wizard.png
+share/xffm/pixmaps/noia/apps/
 share/xffm/pixmaps/noia/apps/access.png
 share/xffm/pixmaps/noia/apps/agent.png
 share/xffm/pixmaps/noia/apps/ark.png
@@ -997,6 +1011,7 @@ share/xffm/pixmaps/noia/apps/xemacs.png
 share/xffm/pixmaps/noia/apps/xkill.png
 share/xffm/pixmaps/noia/apps/xmag.png
 share/xffm/pixmaps/noia/apps/xmms.png
+share/xffm/pixmaps/noia/devices/
 share/xffm/pixmaps/noia/devices/3floppy_mount.png
 share/xffm/pixmaps/noia/devices/3floppy_unmount.png
 share/xffm/pixmaps/noia/devices/5floppy_mount.png
@@ -1027,6 +1042,7 @@ share/xffm/pixmaps/noia/devices/scanner.png
 share/xffm/pixmaps/noia/devices/tablet.png
 share/xffm/pixmaps/noia/devices/zip_mount.png
 share/xffm/pixmaps/noia/devices/zip_unmount.png
+share/xffm/pixmaps/noia/filesystems/
 share/xffm/pixmaps/noia/filesystems/blockdevice.png
 share/xffm/pixmaps/noia/filesystems/chardevice.png
 share/xffm/pixmaps/noia/filesystems/desktop.png
@@ -1079,6 +1095,7 @@ share/xffm/pixmaps/noia/filesystems/trashcan_full.png
 share/xffm/pixmaps/noia/filesystems/www.png
 share/xffm/pixmaps/noia/filesystems/zip.png
 share/xffm/pixmaps/noia/mime.xml
+share/xffm/pixmaps/noia/mimetypes/
 share/xffm/pixmaps/noia/mimetypes/applix.png
 share/xffm/pixmaps/noia/mimetypes/binary.png
 share/xffm/pixmaps/noia/mimetypes/binary2.png
@@ -1148,6 +1165,7 @@ share/xffm/pixmaps/noia/mimetypes/vectorgfx.png
 share/xffm/pixmaps/noia/mimetypes/video.png
 share/xffm/pixmaps/noia/mimetypes/widget_doc.png
 share/xffm/pixmaps/noia/mimetypes/wordprocessing.png
+share/xffm/pixmaps/xfce/
 share/xffm/pixmaps/xfce/Fpstyle.png
 share/xffm/pixmaps/xfce/Fptrsh4.png
 share/xffm/pixmaps/xfce/Fptrsh6.png
@@ -1314,21 +1332,3 @@ share/xffm/pixmaps/xfce/question.png
 share/xffm/pixmaps/xfce/tapedevice.png
 share/xffm/pixmaps/xfce/warning.png
 share/xffm/pixmaps/xfce/xjoin.png
-@dirrm share/xffm/pixmaps/xfce
-@dirrm share/xffm/pixmaps/noia/mimetypes
-@dirrm share/xffm/pixmaps/noia/filesystems
-@dirrm share/xffm/pixmaps/noia/devices
-@dirrm share/xffm/pixmaps/noia/apps
-@dirrm share/xffm/pixmaps/noia/actions
-@dirrm share/xffm/pixmaps/noia
-@dirrm share/xffm/pixmaps/gnome
-@dirrm share/xffm/pixmaps/FreeIcons/mimetypes
-@dirrm share/xffm/pixmaps/FreeIcons/filesystems
-@dirrm share/xffm/pixmaps/FreeIcons/devices
-@dirrm share/xffm/pixmaps/FreeIcons/apps
-@dirrm share/xffm/pixmaps/FreeIcons
-@dirrm share/xffm/pixmaps/Crystal/mimetypes
-@dirrm share/xffm/pixmaps/Crystal/filesystems
-@dirrm share/xffm/pixmaps/Crystal/devices
-@dirrm share/xffm/pixmaps/Crystal/apps
-@dirrm share/xffm/pixmaps/Crystal

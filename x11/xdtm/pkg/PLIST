@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/10/05 22:08:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:33 espie Exp $
 bin/xdtm
 bin/xdtm.sh
 lib/X11/app-defaults/Xdtm
+lib/X11/xdtm/
 lib/X11/xdtm/help
-lib/X11/xdtm/new_xdtm.xbm
-lib/X11/xdtm/perm.help
-lib/X11/xdtm/xdtmrc
+lib/X11/xdtm/icons/
 lib/X11/xdtm/icons/alien.icon
 lib/X11/xdtm/icons/bat.icon
 lib/X11/xdtm/icons/bear.icon
@@ -54,6 +53,7 @@ lib/X11/xdtm/icons/x.icon
 lib/X11/xdtm/icons/xdtm.icon
 lib/X11/xdtm/icons/ycode.icon
 lib/X11/xdtm/icons/z.icon
-man/cat1/xdtm.0
-@dirrm lib/X11/xdtm/icons
-@dirrm lib/X11/xdtm
+lib/X11/xdtm/new_xdtm.xbm
+lib/X11/xdtm/perm.help
+lib/X11/xdtm/xdtmrc
+@man man/cat1/xdtm.0

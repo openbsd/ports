@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/07 01:54:53 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:28 espie Exp $
+bin/explorer
+lib/X11/explorer/
+lib/X11/explorer/icons/
 lib/X11/explorer/icons/about.bmp
 lib/X11/explorer/icons/expl_01.bmp
 lib/X11/explorer/icons/expl_02.bmp
@@ -34,9 +37,6 @@ lib/X11/explorer/icons/nd_nl1.bmp
 lib/X11/explorer/icons/nd_nl2.bmp
 lib/X11/explorer/icons/nd_nul.bmp
 lib/X11/explorer/icons/nd_pls.bmp
+lib/X11/explorer/types/
 lib/X11/explorer/types/types.cfg
 lib/X11/explorer/types/types.cfg.example
-bin/explorer
-@dirrm lib/X11/explorer/types
-@dirrm lib/X11/explorer/icons
-@dirrm lib/X11/explorer

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/28 04:47:36 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:29 espie Exp $
 include/gtksourceview-1.0/
 include/gtksourceview-1.0/gtksourceview/
 include/gtksourceview-1.0/gtksourceview/gtksourcebuffer.h
@@ -14,7 +14,10 @@ include/gtksourceview-1.0/gtksourceview/gtksourcetagtable.h
 include/gtksourceview-1.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-1.0/gtksourceview/gtksourceview.h
 lib/libgtksourceview-1.0.la
+lib/pkgconfig/
 lib/pkgconfig/gtksourceview-1.0.pc
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/gtksourceview/
 share/gtk-doc/html/gtksourceview/GtkSourceBuffer.html
 share/gtk-doc/html/gtksourceview/GtkSourceLanguage.html

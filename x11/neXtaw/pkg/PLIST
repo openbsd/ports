@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/03 03:23:52 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:30 espie Exp $
+include/X11/neXtaw/
 include/X11/neXtaw/AllWidgets.h
 include/X11/neXtaw/AsciiSink.h
 include/X11/neXtaw/AsciiSinkP.h
@@ -80,4 +81,3 @@ include/X11/neXtaw/laygram.h
 lib/libneXtaw.a
 lib/libneXtaw.la
 %%SHARED%%
-@dirrm include/X11/neXtaw

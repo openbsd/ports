@@ -1,17 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/20 15:40:16 naddy Exp $
-lib/libolgx.a
-lib/libxview.a
-%%SHARED%%
-lib/.text_extras_menu
-lib/.textswrc
-lib/.ttyswrc
-lib/text_extras_menu
-lib/textswrc
-lib/ttyswrc
-lib/help/textsw.info
-lib/help/ttysw.info
-lib/help/xview.info
-man/cat7/xview.0
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:35 espie Exp $
+include/bitmaps/
 include/bitmaps/1x1
 include/bitmaps/2x2
 include/bitmaps/black
@@ -88,6 +76,7 @@ include/bitmaps/xlogo11
 include/bitmaps/xlogo16
 include/bitmaps/xlogo32
 include/bitmaps/xlogo64
+include/images/
 include/images/bg1.xbm
 include/images/bg2.xbm
 include/images/bg3.xbm
@@ -105,10 +94,13 @@ include/images/square_17.pr
 include/images/square_25.pr
 include/images/square_75.pr
 include/images/text_move_cursor.pr
+include/olgx/
 include/olgx/olgx.h
+include/olgx_private/
 include/olgx_private/busy.h
 include/olgx_private/grey.h
 include/olgx_private/olgx_impl.h
+include/pixrect/
 include/pixrect/bw2var.h
 include/pixrect/cg12_var.h
 include/pixrect/cg2reg.h
@@ -137,6 +129,7 @@ include/pixrect/pr_util.h
 include/pixrect/rasterfile.h
 include/pixrect/traprop.h
 include/pixrect/tv1var.h
+include/xview/
 include/xview/alert.h
 include/xview/attr.h
 include/xview/attrol.h
@@ -207,6 +200,7 @@ include/xview/xv_version.h
 include/xview/xv_xrect.h
 include/xview/xview.h
 include/xview/xview_xvin.h
+include/xview_private/
 include/xview_private/attr_impl.h
 include/xview_private/bitmask.h
 include/xview_private/charimage.h
@@ -278,11 +272,22 @@ include/xview_private/xv_color.h
 include/xview_private/xv_debug.h
 include/xview_private/xv_list.h
 include/xview_private/xv_path_util.h
-@dirrm lib/help
-@dirrm include/bitmaps
-@dirrm include/images
-@dirrm include/olgx
-@dirrm include/olgx_private
-@dirrm include/pixrect
-@dirrm include/xview
-@dirrm include/xview_private
+lib/.text_extras_menu
+lib/.textswrc
+lib/.ttyswrc
+lib/help/
+lib/help/clock.info
+lib/help/olwm.info
+lib/help/props.info
+lib/help/textedit.info
+lib/help/textsw.info
+lib/help/ttysw.info
+lib/help/xview.info
+lib/libolgx.a
+lib/libxview.a
+lib/libxview.sa.3.2
+lib/text_extras_menu
+lib/textswrc
+lib/ttyswrc
+@man man/cat7/xview.0
+%%SHARED%%

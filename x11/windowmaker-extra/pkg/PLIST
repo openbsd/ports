@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/15 18:02:15 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:32 espie Exp $
 share/WindowMaker/Icons/Ant.xpm
 share/WindowMaker/Icons/Antennae.xpm
 share/WindowMaker/Icons/Bee48x48.xpm
@@ -60,8 +60,10 @@ share/WindowMaker/Icons/tile.black.xpm
 share/WindowMaker/Icons/tile.snow.xpm
 share/WindowMaker/Icons/tile.xpm
 share/WindowMaker/Icons/tile2.xpm
+share/WindowMaker/Themes/Checker.themed/
 share/WindowMaker/Themes/Checker.themed/checker.xpm
 share/WindowMaker/Themes/Checker.themed/style
+share/WindowMaker/Themes/LeetWM.themed/
 share/WindowMaker/Themes/LeetWM.themed/LeetWM.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb1.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMMenutb2.jpg
@@ -69,11 +71,9 @@ share/WindowMaker/Themes/LeetWM.themed/LeetWMTile1.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMtb1.jpg
 share/WindowMaker/Themes/LeetWM.themed/LeetWMtb2.jpg
 share/WindowMaker/Themes/LeetWM.themed/style
+share/WindowMaker/Themes/Night.themed/
 share/WindowMaker/Themes/Night.themed/SeaNight.jpeg
 share/WindowMaker/Themes/Night.themed/style
+share/WindowMaker/Themes/STEP2000.themed/
 share/WindowMaker/Themes/STEP2000.themed/BlueImage2.jpeg
 share/WindowMaker/Themes/STEP2000.themed/style
-@dirrm share/WindowMaker/Themes/STEP2000.themed
-@dirrm share/WindowMaker/Themes/Night.themed
-@dirrm share/WindowMaker/Themes/LeetWM.themed
-@dirrm share/WindowMaker/Themes/Checker.themed

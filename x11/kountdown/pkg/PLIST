@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/03/06 11:41:42 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:30 espie Exp $
 bin/kountdown
+share/applnk/
+share/applnk/System/
+share/applnk/System/ScreenSavers/
 share/applnk/System/ScreenSavers/kountdown.desktop

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/09 17:06:57 espie Exp $
-bin/xglobe
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:34 espie Exp $
 bin/getcloudmap
-!%%no_map%%
-lib/xglobe/xglobe-markers
+bin/xglobe
+lib/xglobe/
 lib/xglobe/OpenBSD-markers
+lib/xglobe/xglobe-markers
+share/doc/xglobe/
 share/doc/xglobe/README
 share/doc/xglobe/README.maps
-@dirrm share/doc/xglobe
-@dirrm lib/xglobe
+!%%no_map%%

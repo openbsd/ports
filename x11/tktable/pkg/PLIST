@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/07/04 21:55:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:32 espie Exp $
+lib/Tktable2.8/
 lib/Tktable2.8/README.txt
+lib/Tktable2.8/html/
 lib/Tktable2.8/html/tkTable.html
 lib/Tktable2.8/license.txt
 lib/Tktable2.8/pkgIndex.tcl
 lib/Tktable2.8/tkTable.tcl
+share/examples/Tktable/
 share/examples/Tktable/basic.tcl
 share/examples/Tktable/buttons.tcl
 share/examples/Tktable/command.tcl
@@ -16,6 +19,3 @@ share/examples/Tktable/tcllogo.gif
 share/examples/Tktable/tktable.py
 share/examples/Tktable/valid.tcl
 %%SHARED%%
-@dirrm share/examples/Tktable
-@dirrm lib/Tktable2.8/html
-@dirrm lib/Tktable2.8

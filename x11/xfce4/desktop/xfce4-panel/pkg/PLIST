@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/07/11 23:33:38 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 19:26:33 espie Exp $
 bin/xfce4-panel
+include/xfce4/
+include/xfce4/panel/
 include/xfce4/panel/controls.h
 include/xfce4/panel/global.h
 include/xfce4/panel/icons.h
@@ -10,9 +12,13 @@ include/xfce4/panel/panel.h
 include/xfce4/panel/plugins.h
 include/xfce4/panel/xfce.h
 include/xfce4/panel/xfce_support.h
+lib/pkgconfig/
 lib/pkgconfig/xfce4-panel-1.0.pc
+lib/xfce4/
+lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/libxfce4settings.a
 lib/xfce4/mcs-plugins/libxfce4settings.la
+lib/xfce4/panel-plugins/
 lib/xfce4/panel-plugins/libclock.a
 lib/xfce4/panel-plugins/libclock.la
 lib/xfce4/panel-plugins/libmailcheck.a
@@ -25,7 +31,10 @@ lib/xfce4/panel-plugins/libswitcher.a
 lib/xfce4/panel-plugins/libswitcher.la
 lib/xfce4/panel-plugins/libsystembuttons.a
 lib/xfce4/panel-plugins/libsystembuttons.la
+share/examples/xfce4-panel/
+@sample ${SYSCONFDIR}/xfce4/
 share/examples/xfce4-panel/xfce4rc
+@sample ${SYSCONFDIR}/xfce4/xfce4rc
 share/examples/xfce4-panel/xfce4rc.ar
 share/examples/xfce4-panel/xfce4rc.az
 share/examples/xfce4-panel/xfce4rc.ca
@@ -34,25 +43,39 @@ share/examples/xfce4-panel/xfce4rc.hu
 share/examples/xfce4-panel/xfce4rc.it
 share/examples/xfce4-panel/xfce4rc.nl
 share/examples/xfce4-panel/xfce4rc.vi
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-panel.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfce4-panel.mo
 share/locale/bg/LC_MESSAGES/xfce4-panel.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xfce4-panel.mo
 share/locale/cs/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
 share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
 share/locale/et/LC_MESSAGES/xfce4-panel.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-panel.mo
 share/locale/fa_IR/LC_MESSAGES/xfce4-panel.mo
 share/locale/fi/LC_MESSAGES/xfce4-panel.mo
 share/locale/fr/LC_MESSAGES/xfce4-panel.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xfce4-panel.mo
 share/locale/hu/LC_MESSAGES/xfce4-panel.mo
 share/locale/it/LC_MESSAGES/xfce4-panel.mo
 share/locale/ja/LC_MESSAGES/xfce4-panel.mo
 share/locale/ko/LC_MESSAGES/xfce4-panel.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce4-panel.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xfce4-panel.mo
 share/locale/nl/LC_MESSAGES/xfce4-panel.mo
 share/locale/no/LC_MESSAGES/xfce4-panel.mo
@@ -61,12 +84,17 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-panel.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-panel.mo
 share/locale/ru/LC_MESSAGES/xfce4-panel.mo
 share/locale/sv/LC_MESSAGES/xfce4-panel.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfce4-panel.mo
 share/locale/tr/LC_MESSAGES/xfce4-panel.mo
 share/locale/uk/LC_MESSAGES/xfce4-panel.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
+share/xfce4/
 share/xfce4/doc/C/images/clock-properties.png
 share/xfce4/doc/C/images/default_panel.png
 share/xfce4/doc/C/images/handle-popup.png
@@ -89,6 +117,8 @@ share/xfce4/doc/fr/images/nooptions-properties.png
 share/xfce4/doc/fr/images/panel-settings.png
 share/xfce4/doc/fr/images/systembuttons-properties.png
 share/xfce4/doc/fr/xfce4-panel.html
+share/xfce4/themes/
+share/xfce4/themes/Crystal/
 share/xfce4/themes/Crystal/README
 share/xfce4/themes/Crystal/edit.png
 share/xfce4/themes/Crystal/file1.png
@@ -112,6 +142,7 @@ share/xfce4/themes/Crystal/terminal.png
 share/xfce4/themes/Crystal/trash_empty.png
 share/xfce4/themes/Crystal/trash_full.png
 share/xfce4/themes/Crystal/unknown.png
+share/xfce4/themes/Curve/
 share/xfce4/themes/Curve/README
 share/xfce4/themes/Curve/edit.png
 share/xfce4/themes/Curve/file1.png
@@ -135,6 +166,7 @@ share/xfce4/themes/Curve/terminal.png
 share/xfce4/themes/Curve/trash_empty.png
 share/xfce4/themes/Curve/trash_full.png
 share/xfce4/themes/Curve/unknown.png
+share/xfce4/themes/FreeIcons/
 share/xfce4/themes/FreeIcons/README
 share/xfce4/themes/FreeIcons/edit.png
 share/xfce4/themes/FreeIcons/file1.png
@@ -156,6 +188,7 @@ share/xfce4/themes/FreeIcons/schedule.png
 share/xfce4/themes/FreeIcons/sound.png
 share/xfce4/themes/FreeIcons/terminal.png
 share/xfce4/themes/FreeIcons/unknown.png
+share/xfce4/themes/Gnome/
 share/xfce4/themes/Gnome/edit.png
 share/xfce4/themes/Gnome/file1.png
 share/xfce4/themes/Gnome/file2.png
@@ -175,6 +208,7 @@ share/xfce4/themes/Gnome/terminal.png
 share/xfce4/themes/Gnome/trash_empty.png
 share/xfce4/themes/Gnome/trash_full.png
 share/xfce4/themes/Gnome/unknown.png
+share/xfce4/themes/Noia/
 share/xfce4/themes/Noia/README
 share/xfce4/themes/Noia/edit.png
 share/xfce4/themes/Noia/file1.png
@@ -198,6 +232,7 @@ share/xfce4/themes/Noia/terminal.png
 share/xfce4/themes/Noia/trash_empty.png
 share/xfce4/themes/Noia/trash_full.png
 share/xfce4/themes/Noia/unknown.png
+share/xfce4/themes/XFce/
 share/xfce4/themes/XFce/edit.xpm
 share/xfce4/themes/XFce/file1.xpm
 share/xfce4/themes/XFce/file2.xpm
@@ -221,18 +256,3 @@ share/xfce4/themes/XFce/trash_empty.xpm
 share/xfce4/themes/XFce/trash_full.xpm
 share/xfce4/themes/XFce/unknown.xpm
 %%SHARED%%
-@dirrm share/xfce4/themes/XFce
-@dirrm share/xfce4/themes/Noia
-@dirrm share/xfce4/themes/Gnome
-@dirrm share/xfce4/themes/FreeIcons
-@dirrm share/xfce4/themes/Curve
-@dirrm share/xfce4/themes/Crystal
-@dirrm share/xfce4/themes
-@dirrm share/examples/xfce4-panel
-@dirrm lib/xfce4/panel-plugins
-@dirrm lib/xfce4/mcs-plugins
-@dirrm lib/xfce4
-@dirrm include/xfce4/panel
-@cwd ${SYSCONFDIR}
-@extra xfce4/xfce4rc
-@extra xfce4/

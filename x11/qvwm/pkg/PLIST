@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/07/02 23:25:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:31 espie Exp $
 bin/qvwm
-man/man1/qvwm.1x
+@man man/man1/qvwm.1x
+share/qvwm/
 share/qvwm/clouds.qvwm-theme
 share/qvwm/default.qvwm-theme
 share/qvwm/french.qvwmrc
+share/qvwm/images/
 share/qvwm/images/clouds.xpm
 share/qvwm/images/clouds2.xpm
 share/qvwm/images/def16.ani
@@ -37,9 +39,7 @@ share/qvwm/images/xv32.xpm
 share/qvwm/kanji.qvwmrc
 share/qvwm/korean.qvwmrc
 share/qvwm/light.qvwmrc
+share/qvwm/sounds/
 share/qvwm/sounds/chimes.wav
 share/qvwm/space.qvwm-theme
 share/qvwm/system.qvwmrc
-@dirrm share/qvwm/sounds
-@dirrm share/qvwm/images
-@dirrm share/qvwm

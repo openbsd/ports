@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/28 03:06:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:27 espie Exp $
 bin/bbkeys
 bin/bbkeysconf.pl
-man/man1/bbkeys.1
-man/man5/bbkeys.bb.5
-man/man5/bbkeysrc.5
+doc/
+doc/bbkeys/
+doc/bbkeys/AUTHORS
+doc/bbkeys/BUGS
+doc/bbkeys/ChangeLog
+doc/bbkeys/NEWS
+doc/bbkeys/README
+@man man/man1/bbkeys.1
+@man man/man5/bbkeys.bb.5
+@man man/man5/bbkeysrc.5
+share/bbtools/
 share/bbtools/bbkeys.bb
 share/bbtools/bbkeys.nobb
-@dirrm share/bbtools

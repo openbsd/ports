@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/04 16:39:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/09/15 19:26:30 espie Exp $
 
 NOT_FOR_ARCHS=	vax
 
@@ -20,7 +20,7 @@ PATCHFILES=	${DISTNAME}pl1.tar.gz
 
 USE_X11=	Yes
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS=	gtk.1.2,gdk::x11/gtk+
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-anti-alias --enable-utmp

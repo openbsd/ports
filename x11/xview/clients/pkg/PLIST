@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:54 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:35 espie Exp $
 bin/clock
 bin/cmdtool
 bin/olwm
 bin/olwmslave
 bin/shelltool
+lib/help/
 lib/help/clock.info
 lib/help/olwm.info
 lib/help/workspace.info
 lib/openwin-menu
-man/cat1/clock.0
-man/cat1/cmdtool.0
-man/cat1/olwm.0
-man/cat1/olwmslave.0
-man/cat1/shelltool.0
+@man man/cat1/clock.0
+@man man/cat1/cmdtool.0
+@man man/cat1/olwm.0
+@man man/cat1/olwmslave.0
+@man man/cat1/shelltool.0
+share/src/
+share/src/xview/

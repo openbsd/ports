@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2002/01/11 00:51:05 naddy Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/09/15 19:26:29 espie Exp $
+lib/golem/
+lib/golem/plugins/
 lib/golem/plugins/animations.so
 lib/golem/plugins/box_iconify.so
 lib/golem/plugins/gnome.so
@@ -9,30 +11,28 @@ lib/golem/plugins/setroot.so
 lib/golem/plugins/simple_menus.so
 lib/golem/plugins/start_slide.so
 lib/golem/plugins/wmclass_defs.so
+share/golem/plugins/
+share/golem/plugins/animations/
 share/golem/plugins/animations/rc
+share/golem/plugins/box_iconify/
 share/golem/plugins/box_iconify/rc
 share/golem/plugins/box_iconify/tile.xpm
+share/golem/plugins/gnome/
 share/golem/plugins/gnome/rc
+share/golem/plugins/mwm_hints/
 share/golem/plugins/mwm_hints/rc
+share/golem/plugins/pager/
 share/golem/plugins/pager/rc
+share/golem/plugins/pier/
 share/golem/plugins/pier/daemon.xpm
 share/golem/plugins/pier/netscape.xpm
 share/golem/plugins/pier/rc
+share/golem/plugins/setroot/
 share/golem/plugins/setroot/rc
+share/golem/plugins/simple_menus/
 share/golem/plugins/simple_menus/rc
+share/golem/plugins/start_slide/
 share/golem/plugins/start_slide/README
 share/golem/plugins/start_slide/rc
+share/golem/plugins/wmclass_defs/
 share/golem/plugins/wmclass_defs/rc
-@dirrm share/golem/plugins/wmclass_defs
-@dirrm share/golem/plugins/start_slide
-@dirrm share/golem/plugins/simple_menus
-@dirrm share/golem/plugins/setroot
-@dirrm share/golem/plugins/pier
-@dirrm share/golem/plugins/pager
-@dirrm share/golem/plugins/mwm_hints
-@dirrm share/golem/plugins/gnome
-@dirrm share/golem/plugins/box_iconify
-@dirrm share/golem/plugins/animations
-@dirrm share/golem/plugins
-@dirrm lib/golem/plugins
-@dirrm lib/golem

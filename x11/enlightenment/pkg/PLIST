@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/07/14 14:59:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 19:26:28 espie Exp $
 bin/dox
 bin/eesh
 bin/enlightenment
 bin/epp
-man/man1/enlightenment.1
-@dir share/enlightenment
-@dir share/enlightenment/E-docs
+@man man/man1/enlightenment.1
+share/enlightenment/
+share/enlightenment/E-docs/
 share/enlightenment/E-docs/E_app_menu.png
 share/enlightenment/E-docs/E_app_rightmouse_menu.png
 share/enlightenment/E-docs/E_area_settings.png
@@ -58,11 +58,11 @@ share/enlightenment/E-docs/MAIN.pl
 share/enlightenment/E-docs/Verah___.ttf
 share/enlightenment/E-docs/aircut3.ttf
 share/enlightenment/E-docs/rothwell.ttf
-@dir share/enlightenment/config
+share/enlightenment/config/
 share/enlightenment/config/actionclasses.cfg
 share/enlightenment/config/actionclasses.cfg.ja
 share/enlightenment/config/actionclasses.cfg.pl
-@dir share/enlightenment/config/backup
+share/enlightenment/config/backup/
 share/enlightenment/config/backup-borders.cfg
 share/enlightenment/config/backup-colormodifiers.cfg
 share/enlightenment/config/backup-cursors.cfg
@@ -83,7 +83,7 @@ share/enlightenment/config/keybindings.rh.cfg.pl
 share/enlightenment/config/menus.cfg
 share/enlightenment/config/menus.cfg.ja
 share/enlightenment/config/menus.cfg.pl
-@dir share/enlightenment/config/pix
+share/enlightenment/config/pix/
 share/enlightenment/config/pix/about.png
 share/enlightenment/config/pix/apple.png
 share/enlightenment/config/pix/areas.png
@@ -137,7 +137,7 @@ share/enlightenment/config/pix/wait7.png
 share/enlightenment/config/pix/wait8.png
 share/enlightenment/config/pix/wait9.png
 share/enlightenment/config/pix/world.png
-@dir share/enlightenment/scripts
+share/enlightenment/scripts/
 share/enlightenment/scripts/e_cache_clean
 share/enlightenment/scripts/e_cache_clean.pl
 share/enlightenment/scripts/e_cache_query
@@ -148,16 +148,16 @@ share/enlightenment/scripts/e_gen_menu
 share/enlightenment/scripts/e_gen_menu.e16_5
 share/enlightenment/scripts/e_gen_menu.pl
 share/enlightenment/scripts/enlightenment.install
-@dir share/enlightenment/themes
-@dir share/enlightenment/themes/BlueSteel
-@dir share/enlightenment/themes/BlueSteel/ABOUT
+share/enlightenment/themes/
+share/enlightenment/themes/BlueSteel/
+share/enlightenment/themes/BlueSteel/ABOUT/
 share/enlightenment/themes/BlueSteel/ABOUT/MAIN
 share/enlightenment/themes/BlueSteel/ABOUT/bg.png
 share/enlightenment/themes/BlueSteel/ABOUT/logo.png
 share/enlightenment/themes/BlueSteel/ABOUT/vixar.ttf
-@dir share/enlightenment/themes/BlueSteel/Eterm
+share/enlightenment/themes/BlueSteel/Eterm/
 share/enlightenment/themes/BlueSteel/Eterm/Eterm.cfg
-@dir share/enlightenment/themes/BlueSteel/Eterm/images
+share/enlightenment/themes/BlueSteel/Eterm/images/
 share/enlightenment/themes/BlueSteel/Eterm/images/anchor_fg.png
 share/enlightenment/themes/BlueSteel/Eterm/images/anchor_hl.png
 share/enlightenment/themes/BlueSteel/Eterm/images/bg.png
@@ -179,33 +179,33 @@ share/enlightenment/themes/BlueSteel/Eterm/images/uparrow_cl.png
 share/enlightenment/themes/BlueSteel/Eterm/images/uparrow_fg.png
 share/enlightenment/themes/BlueSteel/Eterm/images/uparrow_hl.png
 share/enlightenment/themes/BlueSteel/README
-@dir share/enlightenment/themes/BlueSteel/backgrounds
+share/enlightenment/themes/BlueSteel/backgrounds/
 share/enlightenment/themes/BlueSteel/backgrounds/backgrounds.cfg
-@dir share/enlightenment/themes/BlueSteel/backgrounds/images
+share/enlightenment/themes/BlueSteel/backgrounds/images/
 share/enlightenment/themes/BlueSteel/backgrounds/images/All-Good-People-4.jpg
 share/enlightenment/themes/BlueSteel/backgrounds/images/Enigmas-Oven-2.jpg
-@dir share/enlightenment/themes/BlueSteel/borders
+share/enlightenment/themes/BlueSteel/borders/
 share/enlightenment/themes/BlueSteel/borders.cfg
 share/enlightenment/themes/BlueSteel/borders.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/borders/BORDERLESS
+share/enlightenment/themes/BlueSteel/borders/BORDERLESS/
 share/enlightenment/themes/BlueSteel/borders/BORDERLESS/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/BORDERLESS/images
-@dir share/enlightenment/themes/BlueSteel/borders/DEFAULT
+share/enlightenment/themes/BlueSteel/borders/BORDERLESS/images/
+share/enlightenment/themes/BlueSteel/borders/DEFAULT/
 share/enlightenment/themes/BlueSteel/borders/DEFAULT/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/DEFAULT/images
+share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/
 share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/maximize_bg.png
 share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/maximize_cl.png
 share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/maximize_fg.png
-@dir share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE
+share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE/
 share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE/images
-@dir share/enlightenment/themes/BlueSteel/borders/ICONBOX
+share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE/images/
+share/enlightenment/themes/BlueSteel/borders/ICONBOX/
 share/enlightenment/themes/BlueSteel/borders/ICONBOX/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/ICONBOX/images
-@dir share/enlightenment/themes/BlueSteel/borders/LEFTPAGER
+share/enlightenment/themes/BlueSteel/borders/ICONBOX/images/
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/border.cfg
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/border.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/resize_bg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/resize_cl.png
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/resize_fg.png
@@ -223,9 +223,9 @@ share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/toptrim_fg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/unshade_bg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/unshade_cl.png
 share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/unshade_fg.png
-@dir share/enlightenment/themes/BlueSteel/borders/LEFTSIDE
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottom_bg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottom_fg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottomresize_bg.png
@@ -266,9 +266,9 @@ share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/top_bg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/top_fg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/toptrim_bg.png
 share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/toptrim_fg.png
-@dir share/enlightenment/themes/BlueSteel/borders/PAGER
+share/enlightenment/themes/BlueSteel/borders/PAGER/
 share/enlightenment/themes/BlueSteel/borders/PAGER/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/PAGER/images
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/
 share/enlightenment/themes/BlueSteel/borders/PAGER/images/left_bg.png
 share/enlightenment/themes/BlueSteel/borders/PAGER/images/left_fg.png
 share/enlightenment/themes/BlueSteel/borders/PAGER/images/resize_bg.png
@@ -280,35 +280,35 @@ share/enlightenment/themes/BlueSteel/borders/PAGER/images/shade_fg.png
 share/enlightenment/themes/BlueSteel/borders/PAGER/images/unshade_bg.png
 share/enlightenment/themes/BlueSteel/borders/PAGER/images/unshade_cl.png
 share/enlightenment/themes/BlueSteel/borders/PAGER/images/unshade_fg.png
-@dir share/enlightenment/themes/BlueSteel/borders/SMALL
+share/enlightenment/themes/BlueSteel/borders/SMALL/
 share/enlightenment/themes/BlueSteel/borders/SMALL/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/SMALL/images
-@dir share/enlightenment/themes/BlueSteel/borders/SMALLFIXED
+share/enlightenment/themes/BlueSteel/borders/SMALL/images/
+share/enlightenment/themes/BlueSteel/borders/SMALLFIXED/
 share/enlightenment/themes/BlueSteel/borders/SMALLFIXED/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/SMALLFIXED/images
-@dir share/enlightenment/themes/BlueSteel/borders/TRANSIENT
+share/enlightenment/themes/BlueSteel/borders/SMALLFIXED/images/
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/
 share/enlightenment/themes/BlueSteel/borders/TRANSIENT/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/
 share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/top_sh_bg.png
 share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/top_sh_fg.png
 share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/topright_bg.png
 share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/topright_fg.png
-@dir share/enlightenment/themes/BlueSteel/borders/VERYSMALL
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/
 share/enlightenment/themes/BlueSteel/borders/VERYSMALL/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/
 share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/leftresize_bg.png
 share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/leftresize_fg.png
 share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/rightresize_bg.png
 share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/rightresize_fg.png
-@dir share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED
+share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED/
 share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED/border.cfg
-@dir share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED/images
+share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED/images/
 share/enlightenment/themes/BlueSteel/borders/borders.cfg
 share/enlightenment/themes/BlueSteel/borders/borders.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/borders/common
+share/enlightenment/themes/BlueSteel/borders/common/
 share/enlightenment/themes/BlueSteel/borders/common/border.cfg
 share/enlightenment/themes/BlueSteel/borders/common/border.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/borders/common/images
+share/enlightenment/themes/BlueSteel/borders/common/images/
 share/enlightenment/themes/BlueSteel/borders/common/images/bottomresize_bg.png
 share/enlightenment/themes/BlueSteel/borders/common/images/bottomresize_fg.png
 share/enlightenment/themes/BlueSteel/borders/common/images/close_bg.png
@@ -364,24 +364,24 @@ share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_bg.png
 share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_fg.png
 share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_sh_bg.png
 share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_sh_fg.png
-@dir share/enlightenment/themes/BlueSteel/buttons
+share/enlightenment/themes/BlueSteel/buttons/
 share/enlightenment/themes/BlueSteel/buttons.cfg
 share/enlightenment/themes/BlueSteel/buttons/buttons.cfg
-@dir share/enlightenment/themes/BlueSteel/buttons/images
+share/enlightenment/themes/BlueSteel/buttons/images/
 share/enlightenment/themes/BlueSteel/colormodifiers.cfg
-@dir share/enlightenment/themes/BlueSteel/common
-@dir share/enlightenment/themes/BlueSteel/common/images
+share/enlightenment/themes/BlueSteel/common/
+share/enlightenment/themes/BlueSteel/common/images/
 share/enlightenment/themes/BlueSteel/common/images/bg.png
 share/enlightenment/themes/BlueSteel/common/images/blank.png
 share/enlightenment/themes/BlueSteel/common/images/dragbar_horiz.png
 share/enlightenment/themes/BlueSteel/common/images/selected.png
-@dir share/enlightenment/themes/BlueSteel/coords
+share/enlightenment/themes/BlueSteel/coords/
 share/enlightenment/themes/BlueSteel/coords/coords.cfg
 share/enlightenment/themes/BlueSteel/coords/coords.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/coords/images
-@dir share/enlightenment/themes/BlueSteel/cursors
+share/enlightenment/themes/BlueSteel/coords/images/
+share/enlightenment/themes/BlueSteel/cursors/
 share/enlightenment/themes/BlueSteel/cursors.cfg
-@dir share/enlightenment/themes/BlueSteel/cursors/bw_images
+share/enlightenment/themes/BlueSteel/cursors/bw_images/
 share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_left.xbm
 share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_left.xbm.mask
 share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_right.xbm
@@ -408,10 +408,10 @@ share/enlightenment/themes/BlueSteel/cursors/bw_images/stick.xbm
 share/enlightenment/themes/BlueSteel/cursors/bw_images/stick.xbm.mask
 share/enlightenment/themes/BlueSteel/cursors/cursors.cfg
 share/enlightenment/themes/BlueSteel/desktops.cfg
-@dir share/enlightenment/themes/BlueSteel/dialogs
+share/enlightenment/themes/BlueSteel/dialogs/
 share/enlightenment/themes/BlueSteel/dialogs/dialogs.cfg
 share/enlightenment/themes/BlueSteel/dialogs/dialogs.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/dialogs/images
+share/enlightenment/themes/BlueSteel/dialogs/images/
 share/enlightenment/themes/BlueSteel/dialogs/images/button_down.png
 share/enlightenment/themes/BlueSteel/dialogs/images/button_up.png
 share/enlightenment/themes/BlueSteel/dialogs/images/check_off.png
@@ -424,13 +424,13 @@ share/enlightenment/themes/BlueSteel/dialogs/images/separator.png
 share/enlightenment/themes/BlueSteel/dialogs/images/slider_horiz.png
 share/enlightenment/themes/BlueSteel/dialogs/images/slider_vert.png
 share/enlightenment/themes/BlueSteel/dialogs/images/window.png
-@dir share/enlightenment/themes/BlueSteel/dock
+share/enlightenment/themes/BlueSteel/dock/
 share/enlightenment/themes/BlueSteel/dock/dock.cfg
-@dir share/enlightenment/themes/BlueSteel/dock/images
+share/enlightenment/themes/BlueSteel/dock/images/
 share/enlightenment/themes/BlueSteel/dock/images/icon.png
-@dir share/enlightenment/themes/BlueSteel/dragbar
+share/enlightenment/themes/BlueSteel/dragbar/
 share/enlightenment/themes/BlueSteel/dragbar/dragbar.cfg
-@dir share/enlightenment/themes/BlueSteel/dragbar/images
+share/enlightenment/themes/BlueSteel/dragbar/images/
 share/enlightenment/themes/BlueSteel/dragbar/images/downarrow.png
 share/enlightenment/themes/BlueSteel/dragbar/images/downarrow_cl.png
 share/enlightenment/themes/BlueSteel/dragbar/images/dragbar_vert.png
@@ -440,10 +440,10 @@ share/enlightenment/themes/BlueSteel/dragbar/images/rightarrow.png
 share/enlightenment/themes/BlueSteel/dragbar/images/rightarrow_cl.png
 share/enlightenment/themes/BlueSteel/dragbar/images/uparrow.png
 share/enlightenment/themes/BlueSteel/dragbar/images/uparrow_cl.png
-@dir share/enlightenment/themes/BlueSteel/epplets
+share/enlightenment/themes/BlueSteel/epplets/
 share/enlightenment/themes/BlueSteel/epplets/epplets.cfg
 share/enlightenment/themes/BlueSteel/epplets/epplets.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/epplets/images
+share/enlightenment/themes/BlueSteel/epplets/images/
 share/enlightenment/themes/BlueSteel/epplets/images/arrow_down_cl.png
 share/enlightenment/themes/BlueSteel/epplets/images/arrow_down_fg.png
 share/enlightenment/themes/BlueSteel/epplets/images/arrow_left_cl.png
@@ -490,16 +490,16 @@ share/enlightenment/themes/BlueSteel/epplets/images/stop_cl.png
 share/enlightenment/themes/BlueSteel/epplets/images/stop_fg.png
 share/enlightenment/themes/BlueSteel/epplets/images/togglebutton_down.png
 share/enlightenment/themes/BlueSteel/epplets/images/togglebutton_up.png
-@dir share/enlightenment/themes/BlueSteel/focuslist
+share/enlightenment/themes/BlueSteel/focuslist/
 share/enlightenment/themes/BlueSteel/focuslist/focuslist.cfg
 share/enlightenment/themes/BlueSteel/focuslist/focuslist.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/focuslist/images
+share/enlightenment/themes/BlueSteel/focuslist/images/
 share/enlightenment/themes/BlueSteel/focuslist/images/lightbg.png
 share/enlightenment/themes/BlueSteel/focuslist/images/lightbg_hl.png
-@dir share/enlightenment/themes/BlueSteel/iconbox
+share/enlightenment/themes/BlueSteel/iconbox/
 share/enlightenment/themes/BlueSteel/iconbox/iconbox.cfg
 share/enlightenment/themes/BlueSteel/iconbox/iconbox.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/iconbox/images
+share/enlightenment/themes/BlueSteel/iconbox/images/
 share/enlightenment/themes/BlueSteel/iconbox/images/arrow_down.png
 share/enlightenment/themes/BlueSteel/iconbox/images/arrow_down_cl.png
 share/enlightenment/themes/BlueSteel/iconbox/images/arrow_left.png
@@ -521,58 +521,58 @@ share/enlightenment/themes/BlueSteel/iconbox/images/knob_h.png
 share/enlightenment/themes/BlueSteel/iconbox/images/knob_v.png
 share/enlightenment/themes/BlueSteel/imageclasses.cfg
 share/enlightenment/themes/BlueSteel/imageclasses.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/init
+share/enlightenment/themes/BlueSteel/init/
 share/enlightenment/themes/BlueSteel/init.cfg
 share/enlightenment/themes/BlueSteel/init.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/init/images
+share/enlightenment/themes/BlueSteel/init/images/
 share/enlightenment/themes/BlueSteel/init/images/bar.png
 share/enlightenment/themes/BlueSteel/init/images/bg.jpg
 share/enlightenment/themes/BlueSteel/init/images/logo.png
 share/enlightenment/themes/BlueSteel/init/init.cfg
 share/enlightenment/themes/BlueSteel/init/init.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/menustyles
+share/enlightenment/themes/BlueSteel/menustyles/
 share/enlightenment/themes/BlueSteel/menustyles.cfg
 share/enlightenment/themes/BlueSteel/menustyles.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/menustyles/images
+share/enlightenment/themes/BlueSteel/menustyles/images/
 share/enlightenment/themes/BlueSteel/menustyles/images/submenu.png
 share/enlightenment/themes/BlueSteel/menustyles/images/submenu_selected.png
 share/enlightenment/themes/BlueSteel/menustyles/menustyles.cfg
 share/enlightenment/themes/BlueSteel/menustyles/menustyles.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/pager
-@dir share/enlightenment/themes/BlueSteel/pager/images
+share/enlightenment/themes/BlueSteel/pager/
+share/enlightenment/themes/BlueSteel/pager/images/
 share/enlightenment/themes/BlueSteel/pager/images/selected.png
 share/enlightenment/themes/BlueSteel/pager/images/window.png
 share/enlightenment/themes/BlueSteel/pager/pager.cfg
 share/enlightenment/themes/BlueSteel/pager/pager.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/slideouts
+share/enlightenment/themes/BlueSteel/slideouts/
 share/enlightenment/themes/BlueSteel/slideouts.cfg
-@dir share/enlightenment/themes/BlueSteel/slideouts/images
+share/enlightenment/themes/BlueSteel/slideouts/images/
 share/enlightenment/themes/BlueSteel/slideouts/slideouts.cfg
-@dir share/enlightenment/themes/BlueSteel/sound
+share/enlightenment/themes/BlueSteel/sound/
 share/enlightenment/themes/BlueSteel/sound.cfg
-@dir share/enlightenment/themes/BlueSteel/sound/samples
+share/enlightenment/themes/BlueSteel/sound/samples/
 share/enlightenment/themes/BlueSteel/sound/sound.cfg
-@dir share/enlightenment/themes/BlueSteel/tooltips
+share/enlightenment/themes/BlueSteel/tooltips/
 share/enlightenment/themes/BlueSteel/tooltips.cfg
 share/enlightenment/themes/BlueSteel/tooltips.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/tooltips/images
+share/enlightenment/themes/BlueSteel/tooltips/images/
 share/enlightenment/themes/BlueSteel/tooltips/images/cloud_large.png
 share/enlightenment/themes/BlueSteel/tooltips/images/cloud_small.png
 share/enlightenment/themes/BlueSteel/tooltips/tooltips.cfg
 share/enlightenment/themes/BlueSteel/tooltips/tooltips.cfg.ja
-@dir share/enlightenment/themes/BlueSteel/ttfonts
+share/enlightenment/themes/BlueSteel/ttfonts/
 share/enlightenment/themes/BlueSteel/ttfonts/vixar.ttf
 share/enlightenment/themes/BlueSteel/windowmatches.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert
-@dir share/enlightenment/themes/BrushedMetal-Tigert/ABOUT
+share/enlightenment/themes/BrushedMetal-Tigert/
+share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/
 share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/Edoc_bg.png
 share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/MAIN
 share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/aircut3.ttf
 share/enlightenment/themes/BrushedMetal-Tigert/ABOUT/title.png
 share/enlightenment/themes/BrushedMetal-Tigert/README
-@dir share/enlightenment/themes/BrushedMetal-Tigert/backgrounds
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/backgrounds.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images
+share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/dark_brushed.png
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/dark_vertical_gradient_brushed.png
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/light_brushed.png
@@ -584,34 +584,34 @@ share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_leat
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_tiles.jpg
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_treemoon.jpg
 share/enlightenment/themes/BrushedMetal-Tigert/backgrounds/images/turquoise_wrinkles.jpg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders
+share/enlightenment/themes/BrushedMetal-Tigert/borders/
 share/enlightenment/themes/BrushedMetal-Tigert/borders.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/borders.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/borders.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS
+share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY
+share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDERLESS/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT
+share/enlightenment/themes/BrushedMetal-Tigert/borders/BORDER_ONLY/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE
+share/enlightenment/themes/BrushedMetal-Tigert/borders/DEFAULT/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX
+share/enlightenment/themes/BrushedMetal-Tigert/borders/FIXED_SIZE/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU
+share/enlightenment/themes/BrushedMetal-Tigert/borders/ICONBOX/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY
+share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER
+share/enlightenment/themes/BrushedMetal-Tigert/borders/MENU_BORDER_ONLY/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images
+share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb1.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb2.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb3.png
@@ -620,9 +620,9 @@ share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb5.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb6.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb8.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/PAGER/images/pb9.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images
+share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb1.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb2.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb3.png
@@ -631,20 +631,20 @@ share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb5.pn
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb6.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb8.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/RIGHT_PAGER/images/pb9.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED
+share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED/images
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT
+share/enlightenment/themes/BrushedMetal-Tigert/borders/SHAPED/images/
+share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT/border.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT/images
+share/enlightenment/themes/BrushedMetal-Tigert/borders/TRANSIENT/images/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/borders.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/borders/borders.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/borders/borders.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/common
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/border.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/border.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/border.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images
+share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b0-.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b0.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/b1-.png
@@ -713,24 +713,24 @@ share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5-.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5-b.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5.png
 share/enlightenment/themes/BrushedMetal-Tigert/borders/common/images/tt5b.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/buttons
+share/enlightenment/themes/BrushedMetal-Tigert/buttons/
 share/enlightenment/themes/BrushedMetal-Tigert/buttons.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/buttons/buttons.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/buttons/images
+share/enlightenment/themes/BrushedMetal-Tigert/buttons/images/
 share/enlightenment/themes/BrushedMetal-Tigert/colormodifiers.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/common
-@dir share/enlightenment/themes/BrushedMetal-Tigert/common/images
+share/enlightenment/themes/BrushedMetal-Tigert/common/
+share/enlightenment/themes/BrushedMetal-Tigert/common/images/
 share/enlightenment/themes/BrushedMetal-Tigert/common/images/blank.png
 share/enlightenment/themes/BrushedMetal-Tigert/common/images/light_brushed.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/coords
+share/enlightenment/themes/BrushedMetal-Tigert/coords/
 share/enlightenment/themes/BrushedMetal-Tigert/coords/coords.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/coords/coords.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/coords/coords.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/coords/images
+share/enlightenment/themes/BrushedMetal-Tigert/coords/images/
 share/enlightenment/themes/BrushedMetal-Tigert/coords/images/coord.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/cursors
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/
 share/enlightenment/themes/BrushedMetal-Tigert/cursors.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/
 share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/cursor.xbm
 share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/cursor.xbm.mask
 share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/iconify.xbm
@@ -748,13 +748,13 @@ share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_tr.xbm.m
 share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_v.xbm
 share/enlightenment/themes/BrushedMetal-Tigert/cursors/bw_images/resize_v.xbm.mask
 share/enlightenment/themes/BrushedMetal-Tigert/cursors/cursors.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/cursors/images
+share/enlightenment/themes/BrushedMetal-Tigert/cursors/images/
 share/enlightenment/themes/BrushedMetal-Tigert/desktops.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/dialogs
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/dialogs.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/dialogs.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/dialogs.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images
+share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/bg.png
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/bt1.png
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/bt2.png
@@ -774,25 +774,25 @@ share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w0-.png
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w0.png
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w1-.png
 share/enlightenment/themes/BrushedMetal-Tigert/dialogs/images/w1.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/dock
+share/enlightenment/themes/BrushedMetal-Tigert/dock/
 share/enlightenment/themes/BrushedMetal-Tigert/dock/dock.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/dock/images
+share/enlightenment/themes/BrushedMetal-Tigert/dock/images/
 share/enlightenment/themes/BrushedMetal-Tigert/dock/images/bt1.png
 share/enlightenment/themes/BrushedMetal-Tigert/dock/images/bt2.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/dragbar
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/dragbar.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images
+share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a1.png
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a1b.png
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a2.png
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/a2b.png
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/bt1.png
 share/enlightenment/themes/BrushedMetal-Tigert/dragbar/images/bt2.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/epplets
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/epplets.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/epplets.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/epplets.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/epplets/images
+share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_d1.png
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_d2.png
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/ar_d3.png
@@ -858,9 +858,9 @@ share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/skip3.png
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/stop1.png
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/stop2.png
 share/enlightenment/themes/BrushedMetal-Tigert/epplets/images/stop3.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/eterm
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/eterm.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/eterm/images
+share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_d_1.png
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_d_2.png
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/a_l_1.png
@@ -876,18 +876,18 @@ share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/mb3.png
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/sb1.png
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/sb2.png
 share/enlightenment/themes/BrushedMetal-Tigert/eterm/images/t.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/focuslist
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/
 share/enlightenment/themes/BrushedMetal-Tigert/focuslist/focuslist.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/focuslist/focuslist.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/focuslist/focuslist.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images
+share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images/
 share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images/mb1.png
 share/enlightenment/themes/BrushedMetal-Tigert/focuslist/images/mb2.png
-@dir share/enlightenment/themes/BrushedMetal-Tigert/iconbox
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/
 share/enlightenment/themes/BrushedMetal-Tigert/iconbox/iconbox.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/iconbox/iconbox.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/iconbox/iconbox.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images
+share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/
 share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_d1.png
 share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_d2.png
 share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/ar_l1.png
@@ -909,11 +909,11 @@ share/enlightenment/themes/BrushedMetal-Tigert/iconbox/images/slv.png
 share/enlightenment/themes/BrushedMetal-Tigert/imageclasses.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/imageclasses.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/imageclasses.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/init
+share/enlightenment/themes/BrushedMetal-Tigert/init/
 share/enlightenment/themes/BrushedMetal-Tigert/init.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/init.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/init.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/init/images
+share/enlightenment/themes/BrushedMetal-Tigert/init/images/
 share/enlightenment/themes/BrushedMetal-Tigert/init/images/bt1.png
 share/enlightenment/themes/BrushedMetal-Tigert/init/images/light_vetical_gradient_brushed.png
 share/enlightenment/themes/BrushedMetal-Tigert/init/images/progress_bar.png
@@ -922,19 +922,19 @@ share/enlightenment/themes/BrushedMetal-Tigert/init/images/turquoise_brushed.png
 share/enlightenment/themes/BrushedMetal-Tigert/init/init.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/init/init.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/init/init.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/menustyles
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images
+share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/mb1.png
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/mb2.png
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles/images/mb3.png
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles/menustyles.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles/menustyles.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/menustyles/menustyles.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/pager
-@dir share/enlightenment/themes/BrushedMetal-Tigert/pager/images
+share/enlightenment/themes/BrushedMetal-Tigert/pager/
+share/enlightenment/themes/BrushedMetal-Tigert/pager/images/
 share/enlightenment/themes/BrushedMetal-Tigert/pager/images/mb1.png
 share/enlightenment/themes/BrushedMetal-Tigert/pager/images/p_bg.png
 share/enlightenment/themes/BrushedMetal-Tigert/pager/images/p_sel.png
@@ -942,13 +942,13 @@ share/enlightenment/themes/BrushedMetal-Tigert/pager/images/p_win.png
 share/enlightenment/themes/BrushedMetal-Tigert/pager/pager.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/pager/pager.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/pager/pager.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/slideouts
+share/enlightenment/themes/BrushedMetal-Tigert/slideouts/
 share/enlightenment/themes/BrushedMetal-Tigert/slideouts.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/slideouts/images
+share/enlightenment/themes/BrushedMetal-Tigert/slideouts/images/
 share/enlightenment/themes/BrushedMetal-Tigert/slideouts/slideouts.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/sound
+share/enlightenment/themes/BrushedMetal-Tigert/sound/
 share/enlightenment/themes/BrushedMetal-Tigert/sound.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/sound/samples
+share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/
 share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_already_active.wav
 share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_error_ipc.wav
 share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/E_goodbye.wav
@@ -985,23 +985,23 @@ share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_SLIDE.
 share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_STICK.wav
 share/enlightenment/themes/BrushedMetal-Tigert/sound/samples/SOUND_WINDOW_UNSTICK.wav
 share/enlightenment/themes/BrushedMetal-Tigert/sound/sound.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/tooltips
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips.cfg.pl
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/imageclasses.cfg
-@dir share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images
+share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud1.png
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud2.png
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/images/cloud_logo.png
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg.ja
 share/enlightenment/themes/BrushedMetal-Tigert/tooltips/tooltips.cfg.pl
-@dir share/enlightenment/themes/BrushedMetal-Tigert/ttfonts
+share/enlightenment/themes/BrushedMetal-Tigert/ttfonts/
 share/enlightenment/themes/BrushedMetal-Tigert/windowmatches.cfg
 share/enlightenment/themes/DEFAULT
-@dir share/enlightenment/themes/Ganymede
-@dir share/enlightenment/themes/Ganymede/ABOUT
+share/enlightenment/themes/Ganymede/
+share/enlightenment/themes/Ganymede/ABOUT/
 share/enlightenment/themes/Ganymede/ABOUT/MAIN
 share/enlightenment/themes/Ganymede/ABOUT/background.png
 share/enlightenment/themes/Ganymede/ABOUT/bullet.gif
@@ -1012,9 +1012,9 @@ share/enlightenment/themes/Ganymede/ABOUT/pulldowns.png
 share/enlightenment/themes/Ganymede/ACTIVATE_BUTTONS
 share/enlightenment/themes/Ganymede/BUTTON_CONFIG_HOWTO
 share/enlightenment/themes/Ganymede/ChangeLog
-@dir share/enlightenment/themes/Ganymede/Eterm
+share/enlightenment/themes/Ganymede/Eterm/
 share/enlightenment/themes/Ganymede/Eterm/imageclasses.cfg
-@dir share/enlightenment/themes/Ganymede/Ganymede
+share/enlightenment/themes/Ganymede/Ganymede/
 share/enlightenment/themes/Ganymede/Ganymede/MAIN
 share/enlightenment/themes/Ganymede/Ganymede/arrow_down1.png
 share/enlightenment/themes/Ganymede/Ganymede/arrow_down2.png
@@ -1029,7 +1029,7 @@ share/enlightenment/themes/Ganymede/Ganymede/green.ppm
 share/enlightenment/themes/Ganymede/Ganymede/red.ppm
 share/enlightenment/themes/Ganymede/Ganymede/scrollbar_vert.png
 share/enlightenment/themes/Ganymede/Ganymede/theme.cfg
-@dir share/enlightenment/themes/Ganymede/Ganymede_gkrellm
+share/enlightenment/themes/Ganymede/Ganymede_gkrellm/
 share/enlightenment/themes/Ganymede/Ganymede_gkrellm/bg_bordered.xpm
 share/enlightenment/themes/Ganymede/Ganymede_gkrellm/bg_chart.xpm
 share/enlightenment/themes/Ganymede/Ganymede_gkrellm/bg_panel.xpm
@@ -1048,7 +1048,7 @@ share/enlightenment/themes/Ganymede/Ganymede_gkrellm/net_leds.xpm
 share/enlightenment/themes/Ganymede/Ganymede_gkrellm/numbers.xpm
 share/enlightenment/themes/Ganymede/Ganymede_gkrellm/ppp_button.xpm
 share/enlightenment/themes/Ganymede/Makefile
-@dir share/enlightenment/themes/Ganymede/Pulldowns
+share/enlightenment/themes/Ganymede/Pulldowns/
 share/enlightenment/themes/Ganymede/Pulldowns/ganymede.editors.menu
 share/enlightenment/themes/Ganymede/Pulldowns/ganymede.graphics.menu
 share/enlightenment/themes/Ganymede/Pulldowns/ganymede.mailers.menu
@@ -1056,23 +1056,23 @@ share/enlightenment/themes/Ganymede/Pulldowns/ganymede.net.menu
 share/enlightenment/themes/Ganymede/Pulldowns/ganymede.other.menu
 share/enlightenment/themes/Ganymede/Pulldowns/ganymede.terminals.menu
 share/enlightenment/themes/Ganymede/README
-@dir share/enlightenment/themes/Ganymede/backgrounds
+share/enlightenment/themes/Ganymede/backgrounds/
 share/enlightenment/themes/Ganymede/backgrounds/backgrounds.cfg
-@dir share/enlightenment/themes/Ganymede/backgrounds/images
+share/enlightenment/themes/Ganymede/backgrounds/images/
 share/enlightenment/themes/Ganymede/backgrounds/images/French-Products-for-Ganymede.png
 share/enlightenment/themes/Ganymede/backgrounds/images/enlightenment.png
 share/enlightenment/themes/Ganymede/backgrounds/images/logo_small.png
 share/enlightenment/themes/Ganymede/backgrounds/images/logo_tiny.png
-@dir share/enlightenment/themes/Ganymede/borders
+share/enlightenment/themes/Ganymede/borders/
 share/enlightenment/themes/Ganymede/borders.cfg
 share/enlightenment/themes/Ganymede/borders.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/BORDERLESS
+share/enlightenment/themes/Ganymede/borders/BORDERLESS/
 share/enlightenment/themes/Ganymede/borders/BORDERLESS/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/BORDERLESS/images
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT
+share/enlightenment/themes/Ganymede/borders/BORDERLESS/images/
+share/enlightenment/themes/Ganymede/borders/DEFAULT/
 share/enlightenment/themes/Ganymede/borders/DEFAULT/border.cfg
 share/enlightenment/themes/Ganymede/borders/DEFAULT/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT/images
+share/enlightenment/themes/Ganymede/borders/DEFAULT/images/
 share/enlightenment/themes/Ganymede/borders/DEFAULT/images/bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT/images/bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT/images/bottom_s.png
@@ -1161,9 +1161,9 @@ share/enlightenment/themes/Ganymede/borders/DEFAULT/images/topright_left_s.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT/images/topright_left_u.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT/images/topright_s.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT/images/topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE
+share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images
+share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/bottom_s.png
@@ -1252,16 +1252,16 @@ share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/topright_left_s.
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/topright_left_u.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/topright_s.png
 share/enlightenment/themes/Ganymede/borders/DEFAULT_BLUE/images/topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD
+share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD/
 share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD/images
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD_BLUE
+share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD/images/
+share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD_BLUE/
 share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD_BLUE/images
-@dir share/enlightenment/themes/Ganymede/borders/GREEN
+share/enlightenment/themes/Ganymede/borders/DEFAULT_SHADE_DOWNWARD_BLUE/images/
+share/enlightenment/themes/Ganymede/borders/GREEN/
 share/enlightenment/themes/Ganymede/borders/GREEN/border.cfg
 share/enlightenment/themes/Ganymede/borders/GREEN/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/GREEN/images
+share/enlightenment/themes/Ganymede/borders/GREEN/images/
 share/enlightenment/themes/Ganymede/borders/GREEN/images/bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/GREEN/images/bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/GREEN/images/bottom_s.png
@@ -1350,12 +1350,12 @@ share/enlightenment/themes/Ganymede/borders/GREEN/images/topright_left_s.png
 share/enlightenment/themes/Ganymede/borders/GREEN/images/topright_left_u.png
 share/enlightenment/themes/Ganymede/borders/GREEN/images/topright_s.png
 share/enlightenment/themes/Ganymede/borders/GREEN/images/topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/ICONBOX
+share/enlightenment/themes/Ganymede/borders/ICONBOX/
 share/enlightenment/themes/Ganymede/borders/ICONBOX/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/MENU_BORDER
+share/enlightenment/themes/Ganymede/borders/MENU_BORDER/
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/border.cfg
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images
+share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/bottom_s.png
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/bottom_u.png
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/left_s.png
@@ -1366,13 +1366,13 @@ share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/top_flat_s.png
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/top_flat_u.png
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/top_s.png
 share/enlightenment/themes/Ganymede/borders/MENU_BORDER/images/top_u.png
-@dir share/enlightenment/themes/Ganymede/borders/MENU_NOTITLE
+share/enlightenment/themes/Ganymede/borders/MENU_NOTITLE/
 share/enlightenment/themes/Ganymede/borders/MENU_NOTITLE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/MENU_NOTITLE/images
-@dir share/enlightenment/themes/Ganymede/borders/PAGER
+share/enlightenment/themes/Ganymede/borders/MENU_NOTITLE/images/
+share/enlightenment/themes/Ganymede/borders/PAGER/
 share/enlightenment/themes/Ganymede/borders/PAGER/border.cfg
 share/enlightenment/themes/Ganymede/borders/PAGER/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/PAGER/images
+share/enlightenment/themes/Ganymede/borders/PAGER/images/
 share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_b_bottom_c.png
 share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_b_bottom_s.png
 share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_b_bottom_u.png
@@ -1401,9 +1401,9 @@ share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_topleft_s.png
 share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_topleft_u.png
 share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_topright_s.png
 share/enlightenment/themes/Ganymede/borders/PAGER/images/pager_topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_BLUE
+share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images
+share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_b_bottom_c.png
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_b_bottom_s.png
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_b_bottom_u.png
@@ -1432,30 +1432,30 @@ share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_topleft_s.pn
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_topleft_u.png
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_topright_s.png
 share/enlightenment/themes/Ganymede/borders/PAGER_BLUE/images/pager_topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM
+share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM/
 share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM/images
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM_BLUE
+share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM/images/
+share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM_BLUE/
 share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM_BLUE/images
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_LEFT
+share/enlightenment/themes/Ganymede/borders/PAGER_BOTTOM_BLUE/images/
+share/enlightenment/themes/Ganymede/borders/PAGER_LEFT/
 share/enlightenment/themes/Ganymede/borders/PAGER_LEFT/border.cfg
 share/enlightenment/themes/Ganymede/borders/PAGER_LEFT/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_LEFT/images
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_LEFT_BLUE
+share/enlightenment/themes/Ganymede/borders/PAGER_LEFT/images/
+share/enlightenment/themes/Ganymede/borders/PAGER_LEFT_BLUE/
 share/enlightenment/themes/Ganymede/borders/PAGER_LEFT_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_LEFT_BLUE/images
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT
+share/enlightenment/themes/Ganymede/borders/PAGER_LEFT_BLUE/images/
+share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT/
 share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT/border.cfg
 share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT/images
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT_BLUE
+share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT/images/
+share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT_BLUE/
 share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT_BLUE/images
-@dir share/enlightenment/themes/Ganymede/borders/RED
+share/enlightenment/themes/Ganymede/borders/PAGER_RIGHT_BLUE/images/
+share/enlightenment/themes/Ganymede/borders/RED/
 share/enlightenment/themes/Ganymede/borders/RED/border.cfg
 share/enlightenment/themes/Ganymede/borders/RED/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/RED/images
+share/enlightenment/themes/Ganymede/borders/RED/images/
 share/enlightenment/themes/Ganymede/borders/RED/images/bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/RED/images/bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/RED/images/bottom_s.png
@@ -1544,10 +1544,10 @@ share/enlightenment/themes/Ganymede/borders/RED/images/topright_left_s.png
 share/enlightenment/themes/Ganymede/borders/RED/images/topright_left_u.png
 share/enlightenment/themes/Ganymede/borders/RED/images/topright_s.png
 share/enlightenment/themes/Ganymede/borders/RED/images/topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/ROTATED
+share/enlightenment/themes/Ganymede/borders/ROTATED/
 share/enlightenment/themes/Ganymede/borders/ROTATED/border.cfg
 share/enlightenment/themes/Ganymede/borders/ROTATED/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/ROTATED/images
+share/enlightenment/themes/Ganymede/borders/ROTATED/images/
 share/enlightenment/themes/Ganymede/borders/ROTATED/images/bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/ROTATED/images/bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/ROTATED/images/bottom_s.png
@@ -1644,9 +1644,9 @@ share/enlightenment/themes/Ganymede/borders/ROTATED/images/topright_left_s.png
 share/enlightenment/themes/Ganymede/borders/ROTATED/images/topright_left_u.png
 share/enlightenment/themes/Ganymede/borders/ROTATED/images/topright_s.png
 share/enlightenment/themes/Ganymede/borders/ROTATED/images/topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE
+share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images
+share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/bottom_s.png
@@ -1743,9 +1743,9 @@ share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/topright_left_s.
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/topright_left_u.png
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/topright_s.png
 share/enlightenment/themes/Ganymede/borders/ROTATED_BLUE/images/topright_u.png
-@dir share/enlightenment/themes/Ganymede/borders/TRANSIENT
+share/enlightenment/themes/Ganymede/borders/TRANSIENT/
 share/enlightenment/themes/Ganymede/borders/TRANSIENT/border.cfg
-@dir share/enlightenment/themes/Ganymede/borders/TRANSIENT/images
+share/enlightenment/themes/Ganymede/borders/TRANSIENT/images/
 share/enlightenment/themes/Ganymede/borders/TRANSIENT/images/dialog_bottleft_s.png
 share/enlightenment/themes/Ganymede/borders/TRANSIENT/images/dialog_bottleft_u.png
 share/enlightenment/themes/Ganymede/borders/TRANSIENT/images/dialog_bottom_s.png
@@ -1784,13 +1784,13 @@ share/enlightenment/themes/Ganymede/borders/TRANSIENT/images/dialog_topright_s.p
 share/enlightenment/themes/Ganymede/borders/TRANSIENT/images/dialog_topright_u.png
 share/enlightenment/themes/Ganymede/borders/borders.cfg
 share/enlightenment/themes/Ganymede/borders/borders.cfg.ja
-@dir share/enlightenment/themes/Ganymede/borders/common
+share/enlightenment/themes/Ganymede/borders/common/
 share/enlightenment/themes/Ganymede/borders/common/border.cfg
 share/enlightenment/themes/Ganymede/borders/common/border.cfg.ja
-@dir share/enlightenment/themes/Ganymede/buttons
+share/enlightenment/themes/Ganymede/buttons/
 share/enlightenment/themes/Ganymede/buttons/buttons.cfg
 share/enlightenment/themes/Ganymede/buttons/buttons.cfg.ja
-@dir share/enlightenment/themes/Ganymede/buttons/images
+share/enlightenment/themes/Ganymede/buttons/images/
 share/enlightenment/themes/Ganymede/buttons/images/btn_action_cleanup_normal.png
 share/enlightenment/themes/Ganymede/buttons/images/btn_action_deskray_normal.png
 share/enlightenment/themes/Ganymede/buttons/images/btn_action_exit_normal.png
@@ -1814,7 +1814,7 @@ share/enlightenment/themes/Ganymede/buttons/images/tab_template_clicked.png
 share/enlightenment/themes/Ganymede/buttons/images/tab_template_sel.png
 share/enlightenment/themes/Ganymede/buttons/images/tab_template_unsel.png
 share/enlightenment/themes/Ganymede/colormodifiers.cfg
-@dir share/enlightenment/themes/Ganymede/common
+share/enlightenment/themes/Ganymede/common/
 share/enlightenment/themes/Ganymede/common/button_c.png
 share/enlightenment/themes/Ganymede/common/button_f.png
 share/enlightenment/themes/Ganymede/common/button_s.png
@@ -1823,12 +1823,12 @@ share/enlightenment/themes/Ganymede/common/dock_c.png
 share/enlightenment/themes/Ganymede/common/dock_s.png
 share/enlightenment/themes/Ganymede/common/dock_u.png
 share/enlightenment/themes/Ganymede/common/empty.png
-@dir share/enlightenment/themes/Ganymede/coords
+share/enlightenment/themes/Ganymede/coords/
 share/enlightenment/themes/Ganymede/coords/coords.cfg
 share/enlightenment/themes/Ganymede/coords/coords.cfg.ja
-@dir share/enlightenment/themes/Ganymede/cursors
+share/enlightenment/themes/Ganymede/cursors/
 share/enlightenment/themes/Ganymede/cursors.cfg
-@dir share/enlightenment/themes/Ganymede/cursors/bw_images
+share/enlightenment/themes/Ganymede/cursors/bw_images/
 share/enlightenment/themes/Ganymede/cursors/bw_images/cursor.xbm
 share/enlightenment/themes/Ganymede/cursors/bw_images/cursor.xbm.mask
 share/enlightenment/themes/Ganymede/cursors/bw_images/iconify.xbm
@@ -1855,12 +1855,12 @@ share/enlightenment/themes/Ganymede/cursors/bw_images/slideout_rotated.xbm.mask
 share/enlightenment/themes/Ganymede/cursors/bw_images/sticky.xbm
 share/enlightenment/themes/Ganymede/cursors/bw_images/sticky.xbm.mask
 share/enlightenment/themes/Ganymede/cursors/cursors.cfg
-@dir share/enlightenment/themes/Ganymede/cursors/images
+share/enlightenment/themes/Ganymede/cursors/images/
 share/enlightenment/themes/Ganymede/desktops.cfg
-@dir share/enlightenment/themes/Ganymede/dialogs
+share/enlightenment/themes/Ganymede/dialogs/
 share/enlightenment/themes/Ganymede/dialogs/dialogs.cfg
 share/enlightenment/themes/Ganymede/dialogs/dialogs.cfg.ja
-@dir share/enlightenment/themes/Ganymede/dialogs/images
+share/enlightenment/themes/Ganymede/dialogs/images/
 share/enlightenment/themes/Ganymede/dialogs/images/checkbox_f.png
 share/enlightenment/themes/Ganymede/dialogs/images/checkbox_s.png
 share/enlightenment/themes/Ganymede/dialogs/images/checkbox_u.png
@@ -1872,11 +1872,11 @@ share/enlightenment/themes/Ganymede/dialogs/images/radio_unsel.png
 share/enlightenment/themes/Ganymede/dialogs/images/separator.png
 share/enlightenment/themes/Ganymede/dialogs/images/slider_back_horiz.png
 share/enlightenment/themes/Ganymede/dialogs/images/slider_back_vert.png
-@dir share/enlightenment/themes/Ganymede/dock
+share/enlightenment/themes/Ganymede/dock/
 share/enlightenment/themes/Ganymede/dock/dock.cfg
-@dir share/enlightenment/themes/Ganymede/dragbar
+share/enlightenment/themes/Ganymede/dragbar/
 share/enlightenment/themes/Ganymede/dragbar/dragbar.cfg
-@dir share/enlightenment/themes/Ganymede/dragbar/images
+share/enlightenment/themes/Ganymede/dragbar/images/
 share/enlightenment/themes/Ganymede/dragbar/images/dragbar_clicked.png
 share/enlightenment/themes/Ganymede/dragbar/images/dragbar_deskray_clicked.png
 share/enlightenment/themes/Ganymede/dragbar/images/dragbar_deskray_hilited.png
@@ -1895,10 +1895,10 @@ share/enlightenment/themes/Ganymede/dragbar/images/dragbar_raise_normal.png
 share/enlightenment/themes/Ganymede/dragbar/images/dragbar_vert_clicked.png
 share/enlightenment/themes/Ganymede/dragbar/images/dragbar_vert_hilited.png
 share/enlightenment/themes/Ganymede/dragbar/images/dragbar_vert_normal.png
-@dir share/enlightenment/themes/Ganymede/epplets
+share/enlightenment/themes/Ganymede/epplets/
 share/enlightenment/themes/Ganymede/epplets/epplets.cfg
 share/enlightenment/themes/Ganymede/epplets/epplets.cfg.ja
-@dir share/enlightenment/themes/Ganymede/epplets/images
+share/enlightenment/themes/Ganymede/epplets/images/
 share/enlightenment/themes/Ganymede/epplets/images/arrow_down_c.png
 share/enlightenment/themes/Ganymede/epplets/images/arrow_down_s.png
 share/enlightenment/themes/Ganymede/epplets/images/arrow_down_u.png
@@ -1957,11 +1957,11 @@ share/enlightenment/themes/Ganymede/epplets/images/stop_c.png
 share/enlightenment/themes/Ganymede/epplets/images/stop_s.png
 share/enlightenment/themes/Ganymede/epplets/images/stop_u.png
 share/enlightenment/themes/Ganymede/epplets/images/vslider_normal.png
-@dir share/enlightenment/themes/Ganymede/focuslist
-@dir share/enlightenment/themes/Ganymede/iconbox
+share/enlightenment/themes/Ganymede/focuslist/
+share/enlightenment/themes/Ganymede/iconbox/
 share/enlightenment/themes/Ganymede/iconbox/iconbox.cfg
 share/enlightenment/themes/Ganymede/iconbox/iconbox.cfg.ja
-@dir share/enlightenment/themes/Ganymede/iconbox/images
+share/enlightenment/themes/Ganymede/iconbox/images/
 share/enlightenment/themes/Ganymede/iconbox/images/arrow_down1.png
 share/enlightenment/themes/Ganymede/iconbox/images/arrow_down2.png
 share/enlightenment/themes/Ganymede/iconbox/images/arrow_down3.png
@@ -1982,10 +1982,10 @@ share/enlightenment/themes/Ganymede/iconbox/images/scrollbar_horiz.png
 share/enlightenment/themes/Ganymede/iconbox/images/scrollbar_vert.png
 share/enlightenment/themes/Ganymede/imageclasses.cfg
 share/enlightenment/themes/Ganymede/imageclasses.cfg.ja
-@dir share/enlightenment/themes/Ganymede/init
+share/enlightenment/themes/Ganymede/init/
 share/enlightenment/themes/Ganymede/init.cfg
 share/enlightenment/themes/Ganymede/init.cfg.ja
-@dir share/enlightenment/themes/Ganymede/init/images
+share/enlightenment/themes/Ganymede/init/images/
 share/enlightenment/themes/Ganymede/init/images/background_left.png
 share/enlightenment/themes/Ganymede/init/images/background_left_rot.png
 share/enlightenment/themes/Ganymede/init/images/background_right.png
@@ -1994,10 +1994,10 @@ share/enlightenment/themes/Ganymede/init/images/ganymede.png
 share/enlightenment/themes/Ganymede/init/images/progressbar.png
 share/enlightenment/themes/Ganymede/init/init.cfg
 share/enlightenment/themes/Ganymede/init/init.cfg.ja
-@dir share/enlightenment/themes/Ganymede/menustyles
+share/enlightenment/themes/Ganymede/menustyles/
 share/enlightenment/themes/Ganymede/menustyles.cfg
 share/enlightenment/themes/Ganymede/menustyles.cfg.ja
-@dir share/enlightenment/themes/Ganymede/menustyles/images
+share/enlightenment/themes/Ganymede/menustyles/images/
 share/enlightenment/themes/Ganymede/menustyles/images/back.png
 share/enlightenment/themes/Ganymede/menustyles/images/clicked_more.png
 share/enlightenment/themes/Ganymede/menustyles/images/editor.png
@@ -2014,17 +2014,17 @@ share/enlightenment/themes/Ganymede/menustyles/images/terminal.png
 share/enlightenment/themes/Ganymede/menustyles/images/tool.png
 share/enlightenment/themes/Ganymede/menustyles/menustyles.cfg
 share/enlightenment/themes/Ganymede/menustyles/menustyles.cfg.ja
-@dir share/enlightenment/themes/Ganymede/pager
-@dir share/enlightenment/themes/Ganymede/pager/images
+share/enlightenment/themes/Ganymede/pager/
+share/enlightenment/themes/Ganymede/pager/images/
 share/enlightenment/themes/Ganymede/pager/images/pager_current.png
 share/enlightenment/themes/Ganymede/pager/images/pager_current_blue.png
 share/enlightenment/themes/Ganymede/pager/pager.cfg
 share/enlightenment/themes/Ganymede/pager/pager.cfg.ja
-@dir share/enlightenment/themes/Ganymede/slideouts
+share/enlightenment/themes/Ganymede/slideouts/
 share/enlightenment/themes/Ganymede/slideouts.cfg
 share/enlightenment/themes/Ganymede/slideouts.cfg.ja
-@dir share/enlightenment/themes/Ganymede/slideouts/images
-@dir share/enlightenment/themes/Ganymede/slideouts/images/BLUE
+share/enlightenment/themes/Ganymede/slideouts/images/
+share/enlightenment/themes/Ganymede/slideouts/images/BLUE/
 share/enlightenment/themes/Ganymede/slideouts/images/BLUE/iconify_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/BLUE/iconify_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/BLUE/iconify_s.png
@@ -2044,7 +2044,7 @@ share/enlightenment/themes/Ganymede/slideouts/images/BLUE/stick_u.png
 share/enlightenment/themes/Ganymede/slideouts/images/BLUE/template_button_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/BLUE/template_button_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/BLUE/template_button_s.png
-@dir share/enlightenment/themes/Ganymede/slideouts/images/GREEN
+share/enlightenment/themes/Ganymede/slideouts/images/GREEN/
 share/enlightenment/themes/Ganymede/slideouts/images/GREEN/iconify_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/GREEN/iconify_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/GREEN/iconify_s.png
@@ -2064,7 +2064,7 @@ share/enlightenment/themes/Ganymede/slideouts/images/GREEN/stick_u.png
 share/enlightenment/themes/Ganymede/slideouts/images/GREEN/template_button_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/GREEN/template_button_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/GREEN/template_button_s.png
-@dir share/enlightenment/themes/Ganymede/slideouts/images/RED
+share/enlightenment/themes/Ganymede/slideouts/images/RED/
 share/enlightenment/themes/Ganymede/slideouts/images/RED/iconify_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/RED/iconify_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/RED/iconify_s.png
@@ -2096,8 +2096,8 @@ share/enlightenment/themes/Ganymede/slideouts/images/raise_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/raise_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/raise_s.png
 share/enlightenment/themes/Ganymede/slideouts/images/raise_u.png
-@dir share/enlightenment/themes/Ganymede/slideouts/images/rotated
-@dir share/enlightenment/themes/Ganymede/slideouts/images/rotated/BLUE
+share/enlightenment/themes/Ganymede/slideouts/images/rotated/
+share/enlightenment/themes/Ganymede/slideouts/images/rotated/BLUE/
 share/enlightenment/themes/Ganymede/slideouts/images/rotated/BLUE/iconify_c.png
 share/enlightenment/themes/Ganymede/slideouts/images/rotated/BLUE/iconify_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/rotated/BLUE/iconify_s.png
@@ -2139,66 +2139,66 @@ share/enlightenment/themes/Ganymede/slideouts/images/template_button_f.png
 share/enlightenment/themes/Ganymede/slideouts/images/template_button_s.png
 share/enlightenment/themes/Ganymede/slideouts/slideouts.cfg
 share/enlightenment/themes/Ganymede/slideouts/slideouts.cfg.ja
-@dir share/enlightenment/themes/Ganymede/sound
+share/enlightenment/themes/Ganymede/sound/
 share/enlightenment/themes/Ganymede/sound.cfg
-@dir share/enlightenment/themes/Ganymede/sound/samples
+share/enlightenment/themes/Ganymede/sound/samples/
 share/enlightenment/themes/Ganymede/sound/samples/conlink.wav
 share/enlightenment/themes/Ganymede/sound/samples/missile.wav
 share/enlightenment/themes/Ganymede/sound/samples/service.wav
 share/enlightenment/themes/Ganymede/sound/samples/whoosh.wav
 share/enlightenment/themes/Ganymede/sound/sound.cfg
-@dir share/enlightenment/themes/Ganymede/tooltips
+share/enlightenment/themes/Ganymede/tooltips/
 share/enlightenment/themes/Ganymede/tooltips.cfg
-@dir share/enlightenment/themes/Ganymede/tooltips/images
+share/enlightenment/themes/Ganymede/tooltips/images/
 share/enlightenment/themes/Ganymede/tooltips/images/bubble_large.png
 share/enlightenment/themes/Ganymede/tooltips/images/bubble_small.png
 share/enlightenment/themes/Ganymede/tooltips/tooltips.cfg
-@dir share/enlightenment/themes/Ganymede/ttfonts
+share/enlightenment/themes/Ganymede/ttfonts/
 share/enlightenment/themes/Ganymede/ttfonts/ganymede.ttf
 share/enlightenment/themes/Ganymede/ttfonts/ganymede_italic.ttf
 share/enlightenment/themes/Ganymede/windowmatches.cfg
-@dir share/enlightenment/themes/ShinyMetal
-@dir share/enlightenment/themes/ShinyMetal/ABOUT
+share/enlightenment/themes/ShinyMetal/
+share/enlightenment/themes/ShinyMetal/ABOUT/
 share/enlightenment/themes/ShinyMetal/ABOUT/Edoc_bg.png
 share/enlightenment/themes/ShinyMetal/ABOUT/MAIN
 share/enlightenment/themes/ShinyMetal/ABOUT/aircut3.ttf
 share/enlightenment/themes/ShinyMetal/README
-@dir share/enlightenment/themes/ShinyMetal/backgrounds
+share/enlightenment/themes/ShinyMetal/backgrounds/
 share/enlightenment/themes/ShinyMetal/backgrounds/backgrounds.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders
+share/enlightenment/themes/ShinyMetal/borders/
 share/enlightenment/themes/ShinyMetal/borders.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/BORDERLESS
+share/enlightenment/themes/ShinyMetal/borders/BORDERLESS/
 share/enlightenment/themes/ShinyMetal/borders/BORDERLESS/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/BOTTOM
+share/enlightenment/themes/ShinyMetal/borders/BOTTOM/
 share/enlightenment/themes/ShinyMetal/borders/BOTTOM/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/DEFAULT
+share/enlightenment/themes/ShinyMetal/borders/DEFAULT/
 share/enlightenment/themes/ShinyMetal/borders/DEFAULT/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/FIXEDSIZE
+share/enlightenment/themes/ShinyMetal/borders/FIXEDSIZE/
 share/enlightenment/themes/ShinyMetal/borders/FIXEDSIZE/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/ICONBOX
+share/enlightenment/themes/ShinyMetal/borders/ICONBOX/
 share/enlightenment/themes/ShinyMetal/borders/ICONBOX/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/MENU_BORDER
+share/enlightenment/themes/ShinyMetal/borders/MENU_BORDER/
 share/enlightenment/themes/ShinyMetal/borders/MENU_BORDER/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/PAGER
+share/enlightenment/themes/ShinyMetal/borders/PAGER/
 share/enlightenment/themes/ShinyMetal/borders/PAGER/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/SHAPED
+share/enlightenment/themes/ShinyMetal/borders/SHAPED/
 share/enlightenment/themes/ShinyMetal/borders/SHAPED/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/SIDE
+share/enlightenment/themes/ShinyMetal/borders/SIDE/
 share/enlightenment/themes/ShinyMetal/borders/SIDE/border.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/TRANSIENT
+share/enlightenment/themes/ShinyMetal/borders/TRANSIENT/
 share/enlightenment/themes/ShinyMetal/borders/TRANSIENT/border.cfg
 share/enlightenment/themes/ShinyMetal/borders/borders.cfg
-@dir share/enlightenment/themes/ShinyMetal/borders/images
+share/enlightenment/themes/ShinyMetal/borders/images/
 share/enlightenment/themes/ShinyMetal/borders/images.cfg
 share/enlightenment/themes/ShinyMetal/borders/slideouts.cfg
-@dir share/enlightenment/themes/ShinyMetal/coords
+share/enlightenment/themes/ShinyMetal/coords/
 share/enlightenment/themes/ShinyMetal/coords/coord.cfg.pl
 share/enlightenment/themes/ShinyMetal/coords/coords.cfg
 share/enlightenment/themes/ShinyMetal/coords/coords.cfg.ja
-@dir share/enlightenment/themes/ShinyMetal/cursors
+share/enlightenment/themes/ShinyMetal/cursors/
 share/enlightenment/themes/ShinyMetal/cursors.cfg
 share/enlightenment/themes/ShinyMetal/cursors/cursors.cfg
-@dir share/enlightenment/themes/ShinyMetal/cursors/images
+share/enlightenment/themes/ShinyMetal/cursors/images/
 share/enlightenment/themes/ShinyMetal/cursors/images/cursor.xbm
 share/enlightenment/themes/ShinyMetal/cursors/images/cursor.xbm.mask
 share/enlightenment/themes/ShinyMetal/cursors/images/iconify.xbm
@@ -2216,11 +2216,11 @@ share/enlightenment/themes/ShinyMetal/cursors/images/resize_tr.xbm.mask
 share/enlightenment/themes/ShinyMetal/cursors/images/resize_v.xbm
 share/enlightenment/themes/ShinyMetal/cursors/images/resize_v.xbm.mask
 share/enlightenment/themes/ShinyMetal/desktops.cfg
-@dir share/enlightenment/themes/ShinyMetal/dialogs
+share/enlightenment/themes/ShinyMetal/dialogs/
 share/enlightenment/themes/ShinyMetal/dialogs/dialogs.cfg
 share/enlightenment/themes/ShinyMetal/dialogs/dialogs.cfg.ja
 share/enlightenment/themes/ShinyMetal/dialogs/dialogs.cfg.pl
-@dir share/enlightenment/themes/ShinyMetal/dialogs/images
+share/enlightenment/themes/ShinyMetal/dialogs/images/
 share/enlightenment/themes/ShinyMetal/dialogs/images/bg.png
 share/enlightenment/themes/ShinyMetal/dialogs/images/bt1.png
 share/enlightenment/themes/ShinyMetal/dialogs/images/bt2.png
@@ -2239,11 +2239,11 @@ share/enlightenment/themes/ShinyMetal/dialogs/images/w0-.png
 share/enlightenment/themes/ShinyMetal/dialogs/images/w0.png
 share/enlightenment/themes/ShinyMetal/dialogs/images/w1-.png
 share/enlightenment/themes/ShinyMetal/dialogs/images/w1.png
-@dir share/enlightenment/themes/ShinyMetal/dock
+share/enlightenment/themes/ShinyMetal/dock/
 share/enlightenment/themes/ShinyMetal/dock/dock.cfg
-@dir share/enlightenment/themes/ShinyMetal/dragbar
+share/enlightenment/themes/ShinyMetal/dragbar/
 share/enlightenment/themes/ShinyMetal/dragbar/dragbar.cfg
-@dir share/enlightenment/themes/ShinyMetal/dragbar/images
+share/enlightenment/themes/ShinyMetal/dragbar/images/
 share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_clicked.png
 share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_clicked.png
 share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_hilited.png
@@ -2263,12 +2263,12 @@ share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_raise_normal.png
 share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_vert_clicked.png
 share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_vert_hilited.png
 share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_vert_normal.png
-@dir share/enlightenment/themes/ShinyMetal/epplets
+share/enlightenment/themes/ShinyMetal/epplets/
 share/enlightenment/themes/ShinyMetal/epplets/epplets.cfg
 share/enlightenment/themes/ShinyMetal/epplets/epplets.cfg.ja
 share/enlightenment/themes/ShinyMetal/epplets/epplets.cfg.pl
-@dir share/enlightenment/themes/ShinyMetal/epplets/images
-@dir share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics
+share/enlightenment/themes/ShinyMetal/epplets/images/
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/
 share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_d1.png
 share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_d2.png
 share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_d3.png
@@ -2399,12 +2399,12 @@ share/enlightenment/themes/ShinyMetal/epplets/images/skip3.png
 share/enlightenment/themes/ShinyMetal/epplets/images/stop1.png
 share/enlightenment/themes/ShinyMetal/epplets/images/stop2.png
 share/enlightenment/themes/ShinyMetal/epplets/images/stop3.png
-@dir share/enlightenment/themes/ShinyMetal/epplets/images/tmp
+share/enlightenment/themes/ShinyMetal/epplets/images/tmp/
 share/enlightenment/themes/ShinyMetal/epplets/images/tmp/bg_h.png
 share/enlightenment/themes/ShinyMetal/epplets/images/tmp/bg_v.png
-@dir share/enlightenment/themes/ShinyMetal/eterm
+share/enlightenment/themes/ShinyMetal/eterm/
 share/enlightenment/themes/ShinyMetal/eterm/eterm.cfg
-@dir share/enlightenment/themes/ShinyMetal/eterm/images
+share/enlightenment/themes/ShinyMetal/eterm/images/
 share/enlightenment/themes/ShinyMetal/eterm/images/a_d_1.png
 share/enlightenment/themes/ShinyMetal/eterm/images/a_d_2.png
 share/enlightenment/themes/ShinyMetal/eterm/images/a_l_1.png
@@ -2418,16 +2418,16 @@ share/enlightenment/themes/ShinyMetal/eterm/images/bt.png
 share/enlightenment/themes/ShinyMetal/eterm/images/mb2.png
 share/enlightenment/themes/ShinyMetal/eterm/images/mb3.png
 share/enlightenment/themes/ShinyMetal/eterm/images/sb1.png
-@dir share/enlightenment/themes/ShinyMetal/focuslist
+share/enlightenment/themes/ShinyMetal/focuslist/
 share/enlightenment/themes/ShinyMetal/focuslist/focuslist.cfg
 share/enlightenment/themes/ShinyMetal/focuslist/focuslist.cfg.ja
-@dir share/enlightenment/themes/ShinyMetal/iconbox
+share/enlightenment/themes/ShinyMetal/iconbox/
 share/enlightenment/themes/ShinyMetal/iconbox/iconbox.cfg
 share/enlightenment/themes/ShinyMetal/iconbox/iconbox.cfg.ja
 share/enlightenment/themes/ShinyMetal/imageclasses.cfg
 share/enlightenment/themes/ShinyMetal/imageclasses.cfg.ja
 share/enlightenment/themes/ShinyMetal/imageclasses.cfg.pl
-@dir share/enlightenment/themes/ShinyMetal/images
+share/enlightenment/themes/ShinyMetal/images/
 share/enlightenment/themes/ShinyMetal/images/bar_amber_horizontal_1.png
 share/enlightenment/themes/ShinyMetal/images/bar_amber_horizontal_2.png
 share/enlightenment/themes/ShinyMetal/images/bar_amber_horizontal_3.png
@@ -2488,10 +2488,10 @@ share/enlightenment/themes/ShinyMetal/images/dock1.png
 share/enlightenment/themes/ShinyMetal/images/dock2.png
 share/enlightenment/themes/ShinyMetal/images/dock3.png
 share/enlightenment/themes/ShinyMetal/images/icon.png
-@dir share/enlightenment/themes/ShinyMetal/init
+share/enlightenment/themes/ShinyMetal/init/
 share/enlightenment/themes/ShinyMetal/init.cfg
 share/enlightenment/themes/ShinyMetal/init.cfg.ja
-@dir share/enlightenment/themes/ShinyMetal/init/images
+share/enlightenment/themes/ShinyMetal/init/images/
 share/enlightenment/themes/ShinyMetal/init/images/progress_bar.png
 share/enlightenment/themes/ShinyMetal/init/images/progress_bar_number.png
 share/enlightenment/themes/ShinyMetal/init/images/progress_bar_text.png
@@ -2499,23 +2499,23 @@ share/enlightenment/themes/ShinyMetal/init/images/startup_background.jpg
 share/enlightenment/themes/ShinyMetal/init/images/startup_logo.png
 share/enlightenment/themes/ShinyMetal/init/init.cfg
 share/enlightenment/themes/ShinyMetal/init/init.cfg.ja
-@dir share/enlightenment/themes/ShinyMetal/menustyles
+share/enlightenment/themes/ShinyMetal/menustyles/
 share/enlightenment/themes/ShinyMetal/menustyles.cfg
-@dir share/enlightenment/themes/ShinyMetal/menustyles/images
+share/enlightenment/themes/ShinyMetal/menustyles/images/
 share/enlightenment/themes/ShinyMetal/menustyles/images/menu1.png
 share/enlightenment/themes/ShinyMetal/menustyles/images/menu2.png
 share/enlightenment/themes/ShinyMetal/menustyles/images/menu3.png
 share/enlightenment/themes/ShinyMetal/menustyles/menustyles.cfg
-@dir share/enlightenment/themes/ShinyMetal/pager
-@dir share/enlightenment/themes/ShinyMetal/pager/images
+share/enlightenment/themes/ShinyMetal/pager/
+share/enlightenment/themes/ShinyMetal/pager/images/
 share/enlightenment/themes/ShinyMetal/pager/images/p_sel.png
 share/enlightenment/themes/ShinyMetal/pager/pager.cfg
 share/enlightenment/themes/ShinyMetal/pager/pager.cfg.ja
-@dir share/enlightenment/themes/ShinyMetal/slideouts
+share/enlightenment/themes/ShinyMetal/slideouts/
 share/enlightenment/themes/ShinyMetal/slideouts.cfg
-@dir share/enlightenment/themes/ShinyMetal/sound
+share/enlightenment/themes/ShinyMetal/sound/
 share/enlightenment/themes/ShinyMetal/sound.cfg
-@dir share/enlightenment/themes/ShinyMetal/sound/samples
+share/enlightenment/themes/ShinyMetal/sound/samples/
 share/enlightenment/themes/ShinyMetal/sound/samples/Beep.wav
 share/enlightenment/themes/ShinyMetal/sound/samples/Boing.wav
 share/enlightenment/themes/ShinyMetal/sound/samples/Boom.wav
@@ -2540,38 +2540,67 @@ share/enlightenment/themes/ShinyMetal/sound/sound.cfg
 share/enlightenment/themes/ShinyMetal/textclasses.cfg
 share/enlightenment/themes/ShinyMetal/textclasses.cfg.ja
 share/enlightenment/themes/ShinyMetal/textclasses.cfg.pl
-@dir share/enlightenment/themes/ShinyMetal/tooltips
+share/enlightenment/themes/ShinyMetal/tooltips/
 share/enlightenment/themes/ShinyMetal/tooltips.cfg
 share/enlightenment/themes/ShinyMetal/tooltips.cfg.ja
 share/enlightenment/themes/ShinyMetal/tooltips.cfg.pl
-@dir share/enlightenment/themes/ShinyMetal/tooltips/images
+share/enlightenment/themes/ShinyMetal/tooltips/images/
 share/enlightenment/themes/ShinyMetal/tooltips/images/ttip_cloud_big.png
 share/enlightenment/themes/ShinyMetal/tooltips/images/ttip_cloud_small.png
 share/enlightenment/themes/ShinyMetal/tooltips/images/ttip_help.png
 share/enlightenment/themes/ShinyMetal/tooltips/tooltips.cfg
 share/enlightenment/themes/ShinyMetal/tooltips/tooltips.cfg.ja
 share/enlightenment/themes/ShinyMetal/tooltips/tooltips.cfg.pl
-@dir share/enlightenment/themes/ShinyMetal/ttfonts
+share/enlightenment/themes/ShinyMetal/ttfonts/
 share/enlightenment/themes/ShinyMetal/ttfonts/rothwell.ttf
 share/enlightenment/themes/ShinyMetal/ttfonts/zirkle.ttf
 share/enlightenment/themes/ShinyMetal/windowmatches.cfg
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/enlightenment.mo
-@dir share/locale/dk
-@dir share/locale/dk/LC_MESSAGES
+share/locale/dk/
+share/locale/dk/LC_MESSAGES/
 share/locale/dk/LC_MESSAGES/enlightenment.mo
-@dir share/locale/en_US
-@dir share/locale/en_US/LC_MESSAGES
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
 share/locale/en_US/LC_MESSAGES/enlightenment.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/enlightenment.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/enlightenment.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/enlightenment.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/enlightenment.mo
+share/locale/ko/
+share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/enlightenment.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/enlightenment.mo
+share/locale/no/
+share/locale/no/LC_MESSAGES/
 share/locale/no/LC_MESSAGES/enlightenment.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/enlightenment.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/enlightenment.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/enlightenment.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/enlightenment.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/enlightenment.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/enlightenment.mo

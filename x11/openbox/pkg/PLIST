@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/12/25 23:08:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 19:26:30 espie Exp $
 bin/gnome-panel-control
 bin/kdetrayproxy
 bin/openbox
+include/openbox/
+include/openbox/3.0/
+include/openbox/3.0/openbox/
 include/openbox/3.0/openbox/parse.h
 include/openbox/3.0/openbox/render.h
 include/openbox/3.0/openbox/theme.h
@@ -10,23 +13,38 @@ lib/libobparser.a
 lib/libobparser.la
 lib/libobrender.a
 lib/libobrender.la
-%%SHARED%%
+lib/pkgconfig/
 lib/pkgconfig/obparser-3.0.pc
 lib/pkgconfig/obrender-3.0.pc
+share/gnome/
+share/gnome/wm-properties/
 share/gnome/wm-properties/openbox.desktop
 share/locale/en@boldquot/LC_MESSAGES/openbox.mo
 share/locale/en@quot/LC_MESSAGES/openbox.mo
+share/locale/es/LC_MESSAGES/openbox.mo
 share/locale/ja/LC_MESSAGES/openbox.mo
+share/locale/sv/LC_MESSAGES/openbox.mo
+share/openbox/
 share/openbox/menu.xml
 share/openbox/menu.xsd
 share/openbox/rc.xml
 share/openbox/rc.xsd
 share/openbox/themeupdate.py
+share/pixmaps/
 share/pixmaps/openbox.png
+share/themes/
+share/themes/Allegro/
+share/themes/Allegro/openbox-3/
 share/themes/Allegro/openbox-3/bullet.xbm
 share/themes/Allegro/openbox-3/themerc
+share/themes/Artwiz/
+share/themes/Artwiz/openbox-3/
 share/themes/Artwiz/openbox-3/themerc
+share/themes/Blah41/
+share/themes/Blah41/openbox-3/
 share/themes/Blah41/openbox-3/themerc
+share/themes/Om4Ob/
+share/themes/Om4Ob/openbox-3/
 share/themes/Om4Ob/openbox-3/close.xbm
 share/themes/Om4Ob/openbox-3/close_hover.xbm
 share/themes/Om4Ob/openbox-3/desk.xbm
@@ -45,30 +63,7 @@ share/themes/Om4Ob/openbox-3/shade_disabled.xbm
 share/themes/Om4Ob/openbox-3/shade_hover.xbm
 share/themes/Om4Ob/openbox-3/shade_toggled.xbm
 share/themes/Om4Ob/openbox-3/themerc
+share/themes/TheBear/
+share/themes/TheBear/openbox-3/
 share/themes/TheBear/openbox-3/themerc
-@dirrm share/themes/TheBear/openbox-3
-@dirrm share/themes/TheBear
-@dirrm share/themes/Om4Ob/openbox-3
-@dirrm share/themes/Om4Ob
-@dirrm share/themes/Blah41/openbox-3
-@dirrm share/themes/Blah41
-@dirrm share/themes/Artwiz/openbox-3
-@dirrm share/themes/Artwiz
-@dirrm share/themes/Allegro/openbox-3
-@dirrm share/themes/Allegro
-@dirrm share/themes
-@dirrm share/pixmaps
-@dirrm share/openbox
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/en@quot/LC_MESSAGES
-@dirrm share/locale/en@quot
-@dirrm share/locale/en@boldquot/LC_MESSAGES
-@dirrm share/locale/en@boldquot
-@dirrm share/locale
-@dirrm share/gnome/wm-properties
-@dirrm share/gnome
-@dirrm lib/pkgconfig
-@dirrm include/openbox/3.0/openbox
-@dirrm include/openbox/3.0
-@dirrm include/openbox
+%%SHARED%%

@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/04/17 14:57:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:28 espie Exp $
 bin/bricons
-man/cat1/bricons.0
-lib/X11/app-defaults/Xbricons
+include/X11/bitmaps/
 include/X11/bitmaps/calander.xbm
 include/X11/bitmaps/help.xbm
 include/X11/bitmaps/letters.xbm
 include/X11/bitmaps/load.xbm
+include/X11/pixmaps/
 include/X11/pixmaps/clock.xpm
 include/X11/pixmaps/editor.xpm
 include/X11/pixmaps/mail.xpm
 include/X11/pixmaps/news.xpm
+lib/X11/app-defaults/Xbricons
+@man man/cat1/bricons.0
+share/examples/bricons/
 share/examples/bricons/dot.briconsrc
-@dirrm share/examples/bricons

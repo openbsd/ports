@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/07/20 05:25:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:29 espie Exp $
+include/gtkgl/
 include/gtkgl/gdkgl.h
 include/gtkgl/gtkglarea.h
 lib/libgtkgl.a
 lib/libgtkgl.la
-%%SHARED%%
+share/aclocal/
 share/aclocal/gtkgl.m4
+share/doc/gtkglarea/
 share/doc/gtkglarea/HOWTO.txt
 share/doc/gtkglarea/gdkgl.txt
 share/doc/gtkglarea/gtkglarea.txt
-@dirrm include/gtkgl
-@dirrm share/doc/gtkglarea
+%%SHARED%%

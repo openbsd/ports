@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/04/28 18:10:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/09/15 19:26:28 espie Exp $
 @pkgcfl blackbox-*
 @pkgcfl openbox-*
 bin/bsetroot
@@ -7,41 +7,64 @@ bin/fbsetbg
 bin/fluxbox
 bin/fluxbox-generate_menu
 bin/startfluxbox
-man/man1/bsetroot.1
-man/man1/fbrun.1
-man/man1/fbsetbg.1
-man/man1/fluxbox.1
-man/man1/fluxstyle.1
-man/man1/startfluxbox.1
+@man man/man1/bsetroot.1
+@man man/man1/fbrun.1
+@man man/man1/fbsetbg.1
+@man man/man1/fluxbox.1
+@man man/man1/fluxstyle.1
+@man man/man1/startfluxbox.1
+share/fluxbox/
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
+share/fluxbox/nls/
+share/fluxbox/nls/C/
 share/fluxbox/nls/C/fluxbox.cat
 share/fluxbox/nls/POSIX
 share/fluxbox/nls/US_ASCII
+share/fluxbox/nls/bg_BG/
 share/fluxbox/nls/bg_BG/fluxbox.cat
+share/fluxbox/nls/da_DK/
 share/fluxbox/nls/da_DK/fluxbox.cat
+share/fluxbox/nls/de_DE/
 share/fluxbox/nls/de_DE/fluxbox.cat
 share/fluxbox/nls/en
 share/fluxbox/nls/en_US
 share/fluxbox/nls/es
+share/fluxbox/nls/es_ES/
 share/fluxbox/nls/es_ES/fluxbox.cat
+share/fluxbox/nls/et_EE/
 share/fluxbox/nls/et_EE/fluxbox.cat
 share/fluxbox/nls/fr
+share/fluxbox/nls/fr_FR/
 share/fluxbox/nls/fr_FR/fluxbox.cat
+share/fluxbox/nls/it_IT/
 share/fluxbox/nls/it_IT/fluxbox.cat
+share/fluxbox/nls/ja_JP/
 share/fluxbox/nls/ja_JP/fluxbox.cat
 share/fluxbox/nls/lv
+share/fluxbox/nls/lv_LV/
 share/fluxbox/nls/lv_LV/fluxbox.cat
+share/fluxbox/nls/nl_NL/
 share/fluxbox/nls/nl_NL/fluxbox.cat
+share/fluxbox/nls/pl_PL/
 share/fluxbox/nls/pl_PL/fluxbox.cat
+share/fluxbox/nls/pt_BR/
 share/fluxbox/nls/pt_BR/fluxbox.cat
+share/fluxbox/nls/pt_PT/
 share/fluxbox/nls/pt_PT/fluxbox.cat
+share/fluxbox/nls/ru_RU/
 share/fluxbox/nls/ru_RU/fluxbox.cat
+share/fluxbox/nls/sl_SI/
 share/fluxbox/nls/sl_SI/fluxbox.cat
+share/fluxbox/nls/sv_SE/
 share/fluxbox/nls/sv_SE/fluxbox.cat
+share/fluxbox/nls/tr_TR/
 share/fluxbox/nls/tr_TR/fluxbox.cat
+share/fluxbox/styles/
 share/fluxbox/styles/Artwiz
+share/fluxbox/styles/BlueFlux/
+share/fluxbox/styles/BlueFlux/pixmaps/
 share/fluxbox/styles/BlueFlux/pixmaps/button_close_active.xpm
 share/fluxbox/styles/BlueFlux/pixmaps/button_close_pressed.xpm
 share/fluxbox/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
@@ -68,6 +91,8 @@ share/fluxbox/styles/BlueNight
 share/fluxbox/styles/Carbondioxide
 share/fluxbox/styles/Clean
 share/fluxbox/styles/Cthulhain
+share/fluxbox/styles/Emerge/
+share/fluxbox/styles/Emerge/pixmaps/
 share/fluxbox/styles/Emerge/pixmaps/bullet.xpm
 share/fluxbox/styles/Emerge/pixmaps/close-pressed.xpm
 share/fluxbox/styles/Emerge/pixmaps/close-unfocus.xpm
@@ -102,28 +127,3 @@ share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
-@dirrm share/fluxbox/styles/Emerge/pixmaps
-@dirrm share/fluxbox/styles/Emerge
-@dirrm share/fluxbox/styles/BlueFlux/pixmaps
-@dirrm share/fluxbox/styles/BlueFlux
-@dirrm share/fluxbox/styles
-@dirrm share/fluxbox/nls/tr_TR
-@dirrm share/fluxbox/nls/sv_SE
-@dirrm share/fluxbox/nls/sl_SI
-@dirrm share/fluxbox/nls/ru_RU
-@dirrm share/fluxbox/nls/pt_PT
-@dirrm share/fluxbox/nls/pt_BR
-@dirrm share/fluxbox/nls/pl_PL
-@dirrm share/fluxbox/nls/nl_NL
-@dirrm share/fluxbox/nls/lv_LV
-@dirrm share/fluxbox/nls/ja_JP
-@dirrm share/fluxbox/nls/it_IT
-@dirrm share/fluxbox/nls/fr_FR
-@dirrm share/fluxbox/nls/et_EE
-@dirrm share/fluxbox/nls/es_ES
-@dirrm share/fluxbox/nls/de_DE
-@dirrm share/fluxbox/nls/da_DK
-@dirrm share/fluxbox/nls/bg_BG
-@dirrm share/fluxbox/nls/C
-@dirrm share/fluxbox/nls
-@dirrm share/fluxbox

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/24 05:26:01 form Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:29 espie Exp $
 bin/fvwm95
+bin/xpmroot
+icons/
 icons/Mosaic.xpm
 icons/Xfm.xpm
 icons/arrdown2.xpm
@@ -216,6 +218,7 @@ icons/xterm-sun.xpm
 icons/xterm.xpm
 icons/xv.xpm
 icons/xview.xpm
+lib/X11/fvwm95/
 lib/X11/fvwm95/FvwmAudio
 lib/X11/fvwm95/FvwmAuto
 lib/X11/fvwm95/FvwmBacker
@@ -240,6 +243,4 @@ lib/X11/fvwm95/fvwmrc_convert
 lib/X11/fvwm95/quantize_pixmaps
 lib/X11/fvwm95/system.fvwm95rc
 lib/libfvwm95.a
-man/man1/fvwm95.1
-@dirrm lib/X11/fvwm95
-@dirrm icons
+@man man/man1/fvwm95.1

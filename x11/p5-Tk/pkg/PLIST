@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/01/18 00:20:32 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 19:26:30 espie Exp $
 bin/ptked
 bin/ptksh
+${P5ARCH}/Tie/
 ${P5ARCH}/Tie/Watch.pm
+${P5ARCH}/Tk/
 ${P5ARCH}/Tk.pm
 ${P5ARCH}/Tk.pod
 ${P5ARCH}/Tk/Adjuster.pm
@@ -46,6 +48,7 @@ ${P5ARCH}/Tk/DialogBox.pod
 ${P5ARCH}/Tk/DirTree.pm
 ${P5ARCH}/Tk/DirTree.pod
 ${P5ARCH}/Tk/Dirlist.pm
+${P5ARCH}/Tk/DragDrop/
 ${P5ARCH}/Tk/DragDrop.pm
 ${P5ARCH}/Tk/DragDrop/Common.pm
 ${P5ARCH}/Tk/DragDrop/KDEDrop.pm
@@ -64,6 +67,7 @@ ${P5ARCH}/Tk/Entry.pm
 ${P5ARCH}/Tk/Entry.pod
 ${P5ARCH}/Tk/Error.pod
 ${P5ARCH}/Tk/ErrorDialog.pm
+${P5ARCH}/Tk/Event/
 ${P5ARCH}/Tk/Event.pm
 ${P5ARCH}/Tk/Event/IO.pm
 ${P5ARCH}/Tk/Eventloop.pod
@@ -100,6 +104,7 @@ ${P5ARCH}/Tk/MMutil.pm
 ${P5ARCH}/Tk/MainWindow.pm
 ${P5ARCH}/Tk/MainWindow.pod
 ${P5ARCH}/Tk/MakeDepend.pm
+${P5ARCH}/Tk/Menu/
 ${P5ARCH}/Tk/Menu.pm
 ${P5ARCH}/Tk/Menu.pod
 ${P5ARCH}/Tk/Menu/Item.pm
@@ -145,6 +150,7 @@ ${P5ARCH}/Tk/TList.pod
 ${P5ARCH}/Tk/Table.pm
 ${P5ARCH}/Tk/Table.pod
 ${P5ARCH}/Tk/Tcl-perl.pod
+${P5ARCH}/Tk/Text/
 ${P5ARCH}/Tk/Text.pm
 ${P5ARCH}/Tk/Text.pod
 ${P5ARCH}/Tk/Text/Tag.pm
@@ -212,6 +218,7 @@ ${P5ARCH}/Tk/openfolder.xpm
 ${P5ARCH}/Tk/option.pod
 ${P5ARCH}/Tk/options.pod
 ${P5ARCH}/Tk/overview.pod
+${P5ARCH}/Tk/pTk/
 ${P5ARCH}/Tk/pTk.pod
 ${P5ARCH}/Tk/pTk/Lang.h
 ${P5ARCH}/Tk/pTk/Lang.m
@@ -223,6 +230,7 @@ ${P5ARCH}/Tk/pTk/Xlib.h
 ${P5ARCH}/Tk/pTk/Xlib.m
 ${P5ARCH}/Tk/pTk/Xlib.t
 ${P5ARCH}/Tk/pTk/Xlib_f.h
+${P5ARCH}/Tk/pTk/compat/
 ${P5ARCH}/Tk/pTk/compat/limits.h
 ${P5ARCH}/Tk/pTk/compat/stdlib.h
 ${P5ARCH}/Tk/pTk/compat/unistd.h
@@ -328,25 +336,32 @@ ${P5ARCH}/Tk/widgets.pod
 ${P5ARCH}/Tk/win.xbm
 ${P5ARCH}/Tk/winfolder.xpm
 ${P5ARCH}/Tk/wintext.xpm
-@comment ${P5ARCH}/auto/Tk/.packlist
+${P5ARCH}/auto/Tk/
+${P5ARCH}/auto/Tk/Bitmap/
 ${P5ARCH}/auto/Tk/Bitmap/Bitmap.bs
 ${P5ARCH}/auto/Tk/Bitmap/Bitmap.so
 ${P5ARCH}/auto/Tk/CancelRepeat.al
+${P5ARCH}/auto/Tk/Canvas/
 ${P5ARCH}/auto/Tk/Canvas/Canvas.bs
 ${P5ARCH}/auto/Tk/Canvas/Canvas.so
+${P5ARCH}/auto/Tk/Clipboard/
 ${P5ARCH}/auto/Tk/Clipboard/autosplit.ix
 ${P5ARCH}/auto/Tk/Clipboard/getSelected.al
+${P5ARCH}/auto/Tk/Compound/
 ${P5ARCH}/auto/Tk/Compound/Compound.bs
 ${P5ARCH}/auto/Tk/Compound/Compound.so
 ${P5ARCH}/auto/Tk/EnterFocus.al
+${P5ARCH}/auto/Tk/Entry/
 ${P5ARCH}/auto/Tk/Entry/Entry.bs
 ${P5ARCH}/auto/Tk/Entry/Entry.so
 ${P5ARCH}/auto/Tk/Error.al
+${P5ARCH}/auto/Tk/Event/
 ${P5ARCH}/auto/Tk/Event/Event.bs
 ${P5ARCH}/auto/Tk/Event/Event.so
 ${P5ARCH}/auto/Tk/FirstMenu.al
 ${P5ARCH}/auto/Tk/FocusChildren.al
 ${P5ARCH}/auto/Tk/FocusOK.al
+${P5ARCH}/auto/Tk/Frame/
 ${P5ARCH}/auto/Tk/Frame/AddScrollbars.al
 ${P5ARCH}/auto/Tk/Frame/FindMenu.al
 ${P5ARCH}/auto/Tk/Frame/autosplit.ix
@@ -358,14 +373,18 @@ ${P5ARCH}/auto/Tk/Frame/packscrollbars.al
 ${P5ARCH}/auto/Tk/Frame/queuePack.al
 ${P5ARCH}/auto/Tk/Frame/sbset.al
 ${P5ARCH}/auto/Tk/Frame/scrollbars.al
+${P5ARCH}/auto/Tk/HList/
 ${P5ARCH}/auto/Tk/HList/HList.bs
 ${P5ARCH}/auto/Tk/HList/HList.so
+${P5ARCH}/auto/Tk/IO/
 ${P5ARCH}/auto/Tk/IO/IO.bs
 ${P5ARCH}/auto/Tk/IO/IO.so
 ${P5ARCH}/auto/Tk/ImageNames.al
 ${P5ARCH}/auto/Tk/ImageTypes.al
+${P5ARCH}/auto/Tk/InputO/
 ${P5ARCH}/auto/Tk/InputO/InputO.bs
 ${P5ARCH}/auto/Tk/InputO/InputO.so
+${P5ARCH}/auto/Tk/Listbox/
 ${P5ARCH}/auto/Tk/Listbox/AutoScan.al
 ${P5ARCH}/auto/Tk/Listbox/BeginExtend.al
 ${P5ARCH}/auto/Tk/Listbox/BeginSelect.al
@@ -388,18 +407,24 @@ ${P5ARCH}/auto/Tk/Listbox/clipboardPaste.al
 ${P5ARCH}/auto/Tk/Listbox/deleteSelected.al
 ${P5ARCH}/auto/Tk/Listbox/getSelected.al
 ${P5ARCH}/auto/Tk/Listbox/xyIndex.al
+${P5ARCH}/auto/Tk/Menubutton/
 ${P5ARCH}/auto/Tk/Menubutton/Menubutton.bs
 ${P5ARCH}/auto/Tk/Menubutton/Menubutton.so
+${P5ARCH}/auto/Tk/Mwm/
 ${P5ARCH}/auto/Tk/Mwm/Mwm.bs
 ${P5ARCH}/auto/Tk/Mwm/Mwm.so
+${P5ARCH}/auto/Tk/NBFrame/
 ${P5ARCH}/auto/Tk/NBFrame/NBFrame.bs
 ${P5ARCH}/auto/Tk/NBFrame/NBFrame.so
+${P5ARCH}/auto/Tk/Photo/
 ${P5ARCH}/auto/Tk/Photo/Photo.bs
 ${P5ARCH}/auto/Tk/Photo/Photo.so
+${P5ARCH}/auto/Tk/Pixmap/
 ${P5ARCH}/auto/Tk/Pixmap/Pixmap.bs
 ${P5ARCH}/auto/Tk/Pixmap/Pixmap.so
 ${P5ARCH}/auto/Tk/Receive.al
 ${P5ARCH}/auto/Tk/RepeatId.al
+${P5ARCH}/auto/Tk/Scale/
 ${P5ARCH}/auto/Tk/Scale/Activate.al
 ${P5ARCH}/auto/Tk/Scale/ButtonDown.al
 ${P5ARCH}/auto/Tk/Scale/ButtonUp.al
@@ -412,6 +437,7 @@ ${P5ARCH}/auto/Tk/Scale/Leave.al
 ${P5ARCH}/auto/Tk/Scale/Scale.bs
 ${P5ARCH}/auto/Tk/Scale/Scale.so
 ${P5ARCH}/auto/Tk/Scale/autosplit.ix
+${P5ARCH}/auto/Tk/Scrollbar/
 ${P5ARCH}/auto/Tk/Scrollbar/ButtonDown.al
 ${P5ARCH}/auto/Tk/Scrollbar/ButtonUp.al
 ${P5ARCH}/auto/Tk/Scrollbar/Drag.al
@@ -429,23 +455,30 @@ ${P5ARCH}/auto/Tk/Scrollbar/Select.al
 ${P5ARCH}/auto/Tk/Scrollbar/StartDrag.al
 ${P5ARCH}/auto/Tk/Scrollbar/autosplit.ix
 ${P5ARCH}/auto/Tk/Selection.al
+${P5ARCH}/auto/Tk/TList/
 ${P5ARCH}/auto/Tk/TList/TList.bs
 ${P5ARCH}/auto/Tk/TList/TList.so
+${P5ARCH}/auto/Tk/Table/
 ${P5ARCH}/auto/Tk/Table/Create.al
 ${P5ARCH}/auto/Tk/Table/Posn.al
 ${P5ARCH}/auto/Tk/Table/autosplit.ix
 ${P5ARCH}/auto/Tk/Table/see.al
 ${P5ARCH}/auto/Tk/Table/totalColumns.al
 ${P5ARCH}/auto/Tk/Table/totalRows.al
+${P5ARCH}/auto/Tk/Text/
 ${P5ARCH}/auto/Tk/Text/Text.bs
 ${P5ARCH}/auto/Tk/Text/Text.so
 ${P5ARCH}/auto/Tk/Text/autosplit.ix
+${P5ARCH}/auto/Tk/TextEdit/
 ${P5ARCH}/auto/Tk/TextEdit/autosplit.ix
+${P5ARCH}/auto/Tk/TextUndo/
 ${P5ARCH}/auto/Tk/TextUndo/autosplit.ix
+${P5ARCH}/auto/Tk/TixGrid/
 ${P5ARCH}/auto/Tk/TixGrid/TixGrid.bs
 ${P5ARCH}/auto/Tk/TixGrid/TixGrid.so
 ${P5ARCH}/auto/Tk/Tk.bs
 ${P5ARCH}/auto/Tk/Tk.so
+${P5ARCH}/auto/Tk/Toplevel/
 ${P5ARCH}/auto/Tk/Toplevel/FG_BindIn.al
 ${P5ARCH}/auto/Tk/Toplevel/FG_BindOut.al
 ${P5ARCH}/auto/Tk/Toplevel/FG_Create.al
@@ -454,21 +487,26 @@ ${P5ARCH}/auto/Tk/Toplevel/FG_In.al
 ${P5ARCH}/auto/Tk/Toplevel/FG_Out.al
 ${P5ARCH}/auto/Tk/Toplevel/autosplit.ix
 ${P5ARCH}/auto/Tk/TraverseToMenu.al
+${P5ARCH}/auto/Tk/Widget/
 ${P5ARCH}/auto/Tk/Widget/ASkludge.al
 ${P5ARCH}/auto/Tk/Widget/autosplit.ix
 ${P5ARCH}/auto/Tk/Widget/clipboardKeysyms.al
 ${P5ARCH}/auto/Tk/Widget/pathname.al
+${P5ARCH}/auto/Tk/WinPhoto/
 ${P5ARCH}/auto/Tk/WinPhoto/WinPhoto.bs
 ${P5ARCH}/auto/Tk/WinPhoto/WinPhoto.so
+${P5ARCH}/auto/Tk/Wm/
 ${P5ARCH}/auto/Tk/Wm/AnchorAdjust.al
 ${P5ARCH}/auto/Tk/Wm/FullScreen.al
 ${P5ARCH}/auto/Tk/Wm/Popup.al
 ${P5ARCH}/auto/Tk/Wm/Post.al
 ${P5ARCH}/auto/Tk/Wm/autosplit.ix
 ${P5ARCH}/auto/Tk/Wm/iconposition.al
+${P5ARCH}/auto/Tk/X/
 ${P5ARCH}/auto/Tk/X/X.bs
 ${P5ARCH}/auto/Tk/X/X.so
 ${P5ARCH}/auto/Tk/X/autosplit.ix
+${P5ARCH}/auto/Tk/Xlib/
 ${P5ARCH}/auto/Tk/Xlib/Xlib.bs
 ${P5ARCH}/auto/Tk/Xlib/Xlib.so
 ${P5ARCH}/auto/Tk/autosplit.ix
@@ -478,149 +516,110 @@ ${P5ARCH}/auto/Tk/focusNext.al
 ${P5ARCH}/auto/Tk/focusPrev.al
 ${P5ARCH}/auto/Tk/interps.al
 ${P5ARCH}/auto/Tk/lsearch.al
+${P5ARCH}/auto/Tk/pTk/
 ${P5ARCH}/auto/Tk/pTk/extralibs.ld
 ${P5ARCH}/auto/Tk/tabFocus.al
 ${P5ARCH}/auto/Tk/updateWidgets.al
 ${P5ARCH}/fix_4_os2.pl
-man/man1/ptked.1
-man/man1/ptksh.1
-man/man3p/Tie::Watch.3p
-man/man3p/Tk.3p
-man/man3p/Tk::Adjuster.3p
-man/man3p/Tk::Animation.3p
-man/man3p/Tk::Balloon.3p
-man/man3p/Tk::Bitmap.3p
-man/man3p/Tk::BrowseEntry.3p
-man/man3p/Tk::Button.3p
-man/man3p/Tk::Canvas.3p
-man/man3p/Tk::Checkbutton.3p
-man/man3p/Tk::Clipboard.3p
-man/man3p/Tk::CmdLine.3p
-man/man3p/Tk::ColorEditor.3p
-man/man3p/Tk::Common.3p
-man/man3p/Tk::Compound.3p
-man/man3p/Tk::ConfigSpecs.3p
-man/man3p/Tk::DItem.3p
-man/man3p/Tk::Derived.3p
-man/man3p/Tk::Dialog.3p
-man/man3p/Tk::DialogBox.3p
-man/man3p/Tk::DirTree.3p
-man/man3p/Tk::DropSite.3p
-man/man3p/Tk::Entry.3p
-man/man3p/Tk::Error.3p
-man/man3p/Tk::Eventloop.3p
-man/man3p/Tk::FileSelect.3p
-man/man3p/Tk::Font.3p
-man/man3p/Tk::Frame.3p
-man/man3p/Tk::HList.3p
-man/man3p/Tk::IO.3p
-man/man3p/Tk::Image.3p
-man/man3p/Tk::InputO.3p
-man/man3p/Tk::Internals.3p
-man/man3p/Tk::Item.3p
-man/man3p/Tk::LabFrame.3p
-man/man3p/Tk::Label.3p
-man/man3p/Tk::Listbox.3p
-man/man3p/Tk::MainWindow.3p
-man/man3p/Tk::Menu.3p
-man/man3p/Tk::Menubutton.3p
-man/man3p/Tk::Message.3p
-man/man3p/Tk::Mwm.3p
-man/man3p/Tk::NoteBook.3p
-man/man3p/Tk::Optionmenu.3p
-man/man3p/Tk::Pane.3p
-man/man3p/Tk::Photo.3p
-man/man3p/Tk::Pixmap.3p
-man/man3p/Tk::ProgressBar.3p
-man/man3p/Tk::ROText.3p
-man/man3p/Tk::Radiobutton.3p
-man/man3p/Tk::Reindex.3p
-man/man3p/Tk::Scale.3p
-man/man3p/Tk::Scrollbar.3p
-man/man3p/Tk::Scrolled.3p
-man/man3p/Tk::Submethods.3p
-man/man3p/Tk::SunConst.3p
-man/man3p/Tk::TList.3p
-man/man3p/Tk::Table.3p
-man/man3p/Tk::Tcl-perl.3p
-man/man3p/Tk::Text.3p
-man/man3p/Tk::TextUndo.3p
-man/man3p/Tk::Tiler.3p
-man/man3p/Tk::TixGrid.3p
-man/man3p/Tk::Toplevel.3p
-man/man3p/Tk::Trace.3p
-man/man3p/Tk::Tree.3p
-man/man3p/Tk::UserGuide.3p
-man/man3p/Tk::WinPhoto.3p
-man/man3p/Tk::Wm.3p
-man/man3p/Tk::X.3p
-man/man3p/Tk::X11Font.3p
-man/man3p/Tk::Xrm.3p
-man/man3p/Tk::after.3p
-man/man3p/Tk::bind.3p
-man/man3p/Tk::bindtags.3p
-man/man3p/Tk::callbacks.3p
-man/man3p/Tk::chooseColor.3p
-man/man3p/Tk::composite.3p
-man/man3p/Tk::event.3p
-man/man3p/Tk::exit.3p
-man/man3p/Tk::fileevent.3p
-man/man3p/Tk::focus.3p
-man/man3p/Tk::form.3p
-man/man3p/Tk::getOpenFile.3p
-man/man3p/Tk::grab.3p
-man/man3p/Tk::grid.3p
-man/man3p/Tk::mega.3p
-man/man3p/Tk::messageBox.3p
-man/man3p/Tk::option.3p
-man/man3p/Tk::options.3p
-man/man3p/Tk::overview.3p
-man/man3p/Tk::pTk.3p
-man/man3p/Tk::pack.3p
-man/man3p/Tk::palette.3p
-man/man3p/Tk::place.3p
-man/man3p/Tk::selection.3p
-man/man3p/Tk::send.3p
-man/man3p/Tk::tixWm.3p
-man/man3p/Tk::tkvars.3p
-man/man3p/Tk::widgets.3p
-@dirrm ${P5ARCH}/auto/Tk/pTk
-@dirrm ${P5ARCH}/auto/Tk/Xlib
-@dirrm ${P5ARCH}/auto/Tk/X
-@dirrm ${P5ARCH}/auto/Tk/Wm
-@dirrm ${P5ARCH}/auto/Tk/WinPhoto
-@dirrm ${P5ARCH}/auto/Tk/Widget
-@dirrm ${P5ARCH}/auto/Tk/Toplevel
-@dirrm ${P5ARCH}/auto/Tk/TixGrid
-@dirrm ${P5ARCH}/auto/Tk/TextUndo
-@dirrm ${P5ARCH}/auto/Tk/TextEdit
-@dirrm ${P5ARCH}/auto/Tk/Text
-@dirrm ${P5ARCH}/auto/Tk/Table
-@dirrm ${P5ARCH}/auto/Tk/TList
-@dirrm ${P5ARCH}/auto/Tk/Scrollbar
-@dirrm ${P5ARCH}/auto/Tk/Scale
-@dirrm ${P5ARCH}/auto/Tk/Pixmap
-@dirrm ${P5ARCH}/auto/Tk/Photo
-@dirrm ${P5ARCH}/auto/Tk/NBFrame
-@dirrm ${P5ARCH}/auto/Tk/Mwm
-@dirrm ${P5ARCH}/auto/Tk/Menubutton
-@dirrm ${P5ARCH}/auto/Tk/Listbox
-@dirrm ${P5ARCH}/auto/Tk/InputO
-@dirrm ${P5ARCH}/auto/Tk/IO
-@dirrm ${P5ARCH}/auto/Tk/HList
-@dirrm ${P5ARCH}/auto/Tk/Frame
-@dirrm ${P5ARCH}/auto/Tk/Event
-@dirrm ${P5ARCH}/auto/Tk/Entry
-@dirrm ${P5ARCH}/auto/Tk/Compound
-@dirrm ${P5ARCH}/auto/Tk/Clipboard
-@dirrm ${P5ARCH}/auto/Tk/Canvas
-@dirrm ${P5ARCH}/auto/Tk/Bitmap
-@dirrm ${P5ARCH}/auto/Tk
-@dirrm ${P5ARCH}/Tk/pTk/compat
-@dirrm ${P5ARCH}/Tk/pTk
-@dirrm ${P5ARCH}/Tk/Text
-@dirrm ${P5ARCH}/Tk/Menu
-@dirrm ${P5ARCH}/Tk/Event
-@dirrm ${P5ARCH}/Tk/DragDrop
-@dirrm ${P5ARCH}/Tk
-@dirrm ${P5ARCH}/Tie
+@man man/man1/ptked.1
+@man man/man1/ptksh.1
+@man man/man3p/Tie::Watch.3p
+@man man/man3p/Tk.3p
+@man man/man3p/Tk::Adjuster.3p
+@man man/man3p/Tk::Animation.3p
+@man man/man3p/Tk::Balloon.3p
+@man man/man3p/Tk::Bitmap.3p
+@man man/man3p/Tk::BrowseEntry.3p
+@man man/man3p/Tk::Button.3p
+@man man/man3p/Tk::Canvas.3p
+@man man/man3p/Tk::Checkbutton.3p
+@man man/man3p/Tk::Clipboard.3p
+@man man/man3p/Tk::CmdLine.3p
+@man man/man3p/Tk::ColorEditor.3p
+@man man/man3p/Tk::Common.3p
+@man man/man3p/Tk::Compound.3p
+@man man/man3p/Tk::ConfigSpecs.3p
+@man man/man3p/Tk::DItem.3p
+@man man/man3p/Tk::Derived.3p
+@man man/man3p/Tk::Dialog.3p
+@man man/man3p/Tk::DialogBox.3p
+@man man/man3p/Tk::DirTree.3p
+@man man/man3p/Tk::DropSite.3p
+@man man/man3p/Tk::Entry.3p
+@man man/man3p/Tk::Error.3p
+@man man/man3p/Tk::Eventloop.3p
+@man man/man3p/Tk::FileSelect.3p
+@man man/man3p/Tk::Font.3p
+@man man/man3p/Tk::Frame.3p
+@man man/man3p/Tk::HList.3p
+@man man/man3p/Tk::IO.3p
+@man man/man3p/Tk::Image.3p
+@man man/man3p/Tk::InputO.3p
+@man man/man3p/Tk::Internals.3p
+@man man/man3p/Tk::Item.3p
+@man man/man3p/Tk::LabFrame.3p
+@man man/man3p/Tk::Label.3p
+@man man/man3p/Tk::Listbox.3p
+@man man/man3p/Tk::MainWindow.3p
+@man man/man3p/Tk::Menu.3p
+@man man/man3p/Tk::Menubutton.3p
+@man man/man3p/Tk::Message.3p
+@man man/man3p/Tk::Mwm.3p
+@man man/man3p/Tk::NoteBook.3p
+@man man/man3p/Tk::Optionmenu.3p
+@man man/man3p/Tk::Pane.3p
+@man man/man3p/Tk::Photo.3p
+@man man/man3p/Tk::Pixmap.3p
+@man man/man3p/Tk::ProgressBar.3p
+@man man/man3p/Tk::ROText.3p
+@man man/man3p/Tk::Radiobutton.3p
+@man man/man3p/Tk::Reindex.3p
+@man man/man3p/Tk::Scale.3p
+@man man/man3p/Tk::Scrollbar.3p
+@man man/man3p/Tk::Scrolled.3p
+@man man/man3p/Tk::Submethods.3p
+@man man/man3p/Tk::SunConst.3p
+@man man/man3p/Tk::TList.3p
+@man man/man3p/Tk::Table.3p
+@man man/man3p/Tk::Tcl-perl.3p
+@man man/man3p/Tk::Text.3p
+@man man/man3p/Tk::TextUndo.3p
+@man man/man3p/Tk::Tiler.3p
+@man man/man3p/Tk::TixGrid.3p
+@man man/man3p/Tk::Toplevel.3p
+@man man/man3p/Tk::Trace.3p
+@man man/man3p/Tk::Tree.3p
+@man man/man3p/Tk::UserGuide.3p
+@man man/man3p/Tk::WinPhoto.3p
+@man man/man3p/Tk::Wm.3p
+@man man/man3p/Tk::X.3p
+@man man/man3p/Tk::X11Font.3p
+@man man/man3p/Tk::Xrm.3p
+@man man/man3p/Tk::after.3p
+@man man/man3p/Tk::bind.3p
+@man man/man3p/Tk::bindtags.3p
+@man man/man3p/Tk::callbacks.3p
+@man man/man3p/Tk::chooseColor.3p
+@man man/man3p/Tk::composite.3p
+@man man/man3p/Tk::event.3p
+@man man/man3p/Tk::exit.3p
+@man man/man3p/Tk::fileevent.3p
+@man man/man3p/Tk::focus.3p
+@man man/man3p/Tk::form.3p
+@man man/man3p/Tk::getOpenFile.3p
+@man man/man3p/Tk::grab.3p
+@man man/man3p/Tk::grid.3p
+@man man/man3p/Tk::mega.3p
+@man man/man3p/Tk::messageBox.3p
+@man man/man3p/Tk::option.3p
+@man man/man3p/Tk::options.3p
+@man man/man3p/Tk::overview.3p
+@man man/man3p/Tk::pTk.3p
+@man man/man3p/Tk::pack.3p
+@man man/man3p/Tk::palette.3p
+@man man/man3p/Tk::place.3p
+@man man/man3p/Tk::selection.3p
+@man man/man3p/Tk::send.3p
+@man man/man3p/Tk::tixWm.3p
+@man man/man3p/Tk::tkvars.3p
+@man man/man3p/Tk::widgets.3p

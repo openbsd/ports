@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.24 2001/01/22 02:43:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.25 2004/09/15 19:26:30 espie Exp $
 @pkgcfl openmotif-*
+LessTif/
+LessTif/Motif1.2/
+LessTif/Motif1.2/bin/
 LessTif/Motif1.2/bin/mwm
 LessTif/Motif1.2/bin/uil
 LessTif/Motif1.2/bin/xmbind
+LessTif/Motif1.2/include/
+LessTif/Motif1.2/include/Mrm/
 LessTif/Motif1.2/include/Mrm/MrmAppl.h
 LessTif/Motif1.2/include/Mrm/MrmDecls.h
 LessTif/Motif1.2/include/Mrm/MrmPrivate.h
 LessTif/Motif1.2/include/Mrm/MrmPublic.h
+LessTif/Motif1.2/include/Xm/
 LessTif/Motif1.2/include/Xm/ArrowB.h
 LessTif/Motif1.2/include/Xm/ArrowBG.h
 LessTif/Motif1.2/include/Xm/ArrowBGP.h
@@ -126,17 +132,23 @@ LessTif/Motif1.2/include/Xm/XmAll.h
 LessTif/Motif1.2/include/Xm/XmP.h
 LessTif/Motif1.2/include/Xm/XmStrDefs.h
 LessTif/Motif1.2/include/Xm/XmosP.h
+LessTif/Motif1.2/include/uil/
 LessTif/Motif1.2/include/uil/Uil.h
 LessTif/Motif1.2/include/uil/UilDBDef.h
 LessTif/Motif1.2/include/uil/UilDef.h
 LessTif/Motif1.2/include/uil/UilSymDef.h
 LessTif/Motif1.2/include/uil/UilSymGl.h
+LessTif/Motif1.2/lib/
 LessTif/Motif1.2/lib/libMrm.a
 LessTif/Motif1.2/lib/libMrm.la
 LessTif/Motif1.2/lib/libUil.a
 LessTif/Motif1.2/lib/libUil.la
 LessTif/Motif1.2/lib/libXm.a
 LessTif/Motif1.2/lib/libXm.la
+LessTif/Motif2.0/
+LessTif/Motif2.0/bin/
+LessTif/Motif2.1/
+LessTif/Motif2.1/bin/
 bin/mwm
 bin/mxmkmf
 bin/uil
@@ -144,80 +156,86 @@ bin/xmbind
 include/Mrm
 include/Xm
 include/uil
+lib/X11/app-defaults/Mwm
+lib/X11/config/
 lib/X11/config/LessTif.rules
 lib/X11/config/LessTif.tmpl
 lib/X11/config/host.def
+lib/X11/mwm/
 lib/X11/mwm/README
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc
 lib/libMrm.a
 lib/libMrm.la
+@comment lib/libMrm.so
 lib/libUil.a
 lib/libUil.la
+@comment lib/libUil.so
 lib/libXm.a
 lib/libXm.la
-%%SHARED%%
-man/man1/lesstif.1
-man/man1/mwm.1
-man/man1/uil.1
-man/man1/xmbind.1
-man/man3/LessTifInternals.3
-man/man3/XmArrowButton.3
-man/man3/XmArrowButtonGadget.3
-man/man3/XmBulletinBoard.3
-man/man3/XmCascadeButton.3
-man/man3/XmCascadeButtonGadget.3
-man/man3/XmClipboard.3
-man/man3/XmComboBox.3
-man/man3/XmCommand.3
-man/man3/XmDesktop.3
-man/man3/XmDialogShell.3
-man/man3/XmDialogShellExt.3
-man/man3/XmDisplay.3
-man/man3/XmDragContext.3
-man/man3/XmDragIcon.3
-man/man3/XmDragOverShell.3
-man/man3/XmDrawingArea.3
-man/man3/XmDrawnButton.3
-man/man3/XmDropSiteManager.3
-man/man3/XmDropTransfer.3
-man/man3/XmFileSelectionBox.3
-man/man3/XmForm.3
-man/man3/XmFrame.3
-man/man3/XmGadget.3
-man/man3/XmGrabShell.3
-man/man3/XmIconGadget.3
-man/man3/XmLabel.3
-man/man3/XmLabelGadget.3
-man/man3/XmList.3
-man/man3/XmMainWindow.3
-man/man3/XmManager.3
-man/man3/XmMenuShell.3
-man/man3/XmMessageBox.3
-man/man3/XmNotebook.3
-man/man3/XmPanedWindow.3
-man/man3/XmPrimitive.3
-man/man3/XmProtocol.3
-man/man3/XmPushButton.3
-man/man3/XmPushButtonGadget.3
-man/man3/XmRowColumn.3
-man/man3/XmSash.3
-man/man3/XmScale.3
-man/man3/XmScreen.3
-man/man3/XmScrollBar.3
-man/man3/XmScrolledWindow.3
-man/man3/XmSelectionBox.3
-man/man3/XmSeparator.3
-man/man3/XmSeparatorGadget.3
-man/man3/XmSpinBox.3
-man/man3/XmTearOffButton.3
-man/man3/XmText.3
-man/man3/XmTextField.3
-man/man3/XmToggleButton.3
-man/man3/XmToggleButtonGadget.3
-man/man3/XmVendorShell.3
-man/man3/XmWorld.3
-man/man5/mwmrc.5
+@comment lib/libXm.so
+@man man/man1/lesstif.1
+@man man/man1/mwm.1
+@man man/man1/uil.1
+@man man/man1/xmbind.1
+@man man/man3/LessTifInternals.3
+@man man/man3/XmArrowButton.3
+@man man/man3/XmArrowButtonGadget.3
+@man man/man3/XmBulletinBoard.3
+@man man/man3/XmCascadeButton.3
+@man man/man3/XmCascadeButtonGadget.3
+@man man/man3/XmClipboard.3
+@man man/man3/XmComboBox.3
+@man man/man3/XmCommand.3
+@man man/man3/XmDesktop.3
+@man man/man3/XmDialogShell.3
+@man man/man3/XmDialogShellExt.3
+@man man/man3/XmDisplay.3
+@man man/man3/XmDragContext.3
+@man man/man3/XmDragIcon.3
+@man man/man3/XmDragOverShell.3
+@man man/man3/XmDrawingArea.3
+@man man/man3/XmDrawnButton.3
+@man man/man3/XmDropSiteManager.3
+@man man/man3/XmDropTransfer.3
+@man man/man3/XmFileSelectionBox.3
+@man man/man3/XmForm.3
+@man man/man3/XmFrame.3
+@man man/man3/XmGadget.3
+@man man/man3/XmGrabShell.3
+@man man/man3/XmIconGadget.3
+@man man/man3/XmLabel.3
+@man man/man3/XmLabelGadget.3
+@man man/man3/XmList.3
+@man man/man3/XmMainWindow.3
+@man man/man3/XmManager.3
+@man man/man3/XmMenuShell.3
+@man man/man3/XmMessageBox.3
+@man man/man3/XmNotebook.3
+@man man/man3/XmPanedWindow.3
+@man man/man3/XmPrimitive.3
+@man man/man3/XmProtocol.3
+@man man/man3/XmPushButton.3
+@man man/man3/XmPushButtonGadget.3
+@man man/man3/XmRowColumn.3
+@man man/man3/XmSash.3
+@man man/man3/XmScale.3
+@man man/man3/XmScreen.3
+@man man/man3/XmScrollBar.3
+@man man/man3/XmScrolledWindow.3
+@man man/man3/XmSelectionBox.3
+@man man/man3/XmSeparator.3
+@man man/man3/XmSeparatorGadget.3
+@man man/man3/XmSpinBox.3
+@man man/man3/XmTearOffButton.3
+@man man/man3/XmText.3
+@man man/man3/XmTextField.3
+@man man/man3/XmToggleButton.3
+@man man/man3/XmToggleButtonGadget.3
+@man man/man3/XmVendorShell.3
+@man man/man3/XmWorld.3
+@man man/man5/mwmrc.5
+share/LessTif/
 share/LessTif/AUTHORS
 share/LessTif/BUG-REPORTING
 share/LessTif/COPYING
@@ -228,6 +246,8 @@ share/LessTif/Install
 share/LessTif/KNOWN_BUGS
 share/LessTif/README
 share/LessTif/RELEASE-POLICY
+share/LessTif/doc/
+share/LessTif/doc/html/
 share/LessTif/doc/html/Advocacy.html
 share/LessTif/doc/html/All.html
 share/LessTif/doc/html/COPYING.LIB.html
@@ -308,6 +328,7 @@ share/LessTif/doc/html/cvs.html
 share/LessTif/doc/html/download.html
 share/LessTif/doc/html/feedback.html
 share/LessTif/doc/html/help.html
+share/LessTif/doc/html/images/
 share/LessTif/doc/html/images/hungry.png
 share/LessTif/doc/html/images/lesstif-realsmall.png
 share/LessTif/doc/html/images/lesstif-small.png
@@ -341,16 +362,4 @@ share/LessTif/doc/html/xbae.html
 share/LessTif/doc/html/xlt.html
 share/LessTif/doc/html/xmbind.html
 share/LessTif/release-notes.txt
-@dirrm LessTif/Motif1.2/bin
-@dirrm LessTif/Motif1.2/include/Mrm
-@dirrm LessTif/Motif1.2/include/Xm
-@dirrm LessTif/Motif1.2/include/uil
-@dirrm LessTif/Motif1.2/include
-@dirrm LessTif/Motif1.2/lib
-@dirrm LessTif/Motif1.2
-@dirrm LessTif
-@dirrm lib/X11/mwm
-@dirrm share/LessTif/doc/html/images
-@dirrm share/LessTif/doc/html
-@dirrm share/LessTif/doc
-@dirrm share/LessTif
+%%SHARED%%

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/08/08 17:14:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/09/15 19:26:29 espie Exp $
 bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
@@ -219,7 +219,6 @@ include/gtk-2.0/gtk/gtkwidget.h
 include/gtk-2.0/gtk/gtkwindow.h
 lib/gtk-2.0/
 lib/gtk-2.0/2.4.0/
-lib/gtk-2.0/2.4.0/engines/
 lib/gtk-2.0/2.4.0/immodules/
 lib/gtk-2.0/2.4.0/immodules/im-am-et.la
 lib/gtk-2.0/2.4.0/immodules/im-cedilla.la
@@ -248,7 +247,6 @@ lib/gtk-2.0/2.4.0/loaders/libpixbufloader-xbm.la
 lib/gtk-2.0/2.4.0/loaders/libpixbufloader-xpm.la
 lib/gtk-2.0/include/
 lib/gtk-2.0/include/gdkconfig.h
-lib/gtk-2.0/modules/
 lib/libgdk-x11-2.0.la
 lib/libgdk_pixbuf-2.0.la
 lib/libgdk_pixbuf_xlib-2.0.la

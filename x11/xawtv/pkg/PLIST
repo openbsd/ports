@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/05/15 23:27:26 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:33 espie Exp $
 bin/dump-mixers
 bin/ntsc-cc
 @comment bin/pia
@@ -14,6 +14,7 @@ bin/webcam
 bin/xawtv
 bin/xawtv-remote
 lib/X11/app-defaults/Xawtv
+lib/xawtv/
 lib/xawtv/bilinear.so
 lib/xawtv/conv-mjpeg.so
 lib/xawtv/cubic.so
@@ -27,41 +28,48 @@ lib/xawtv/linedoubler.so
 lib/xawtv/read-avi.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
-@comment man/es/man1/fbtv.1
-man/es/man1/rootv.1
-@comment man/es/man1/scantv.1
-man/es/man1/streamer.1
-man/es/man1/subtitles.1
-@comment man/es/man1/ttv.1
-@comment man/es/man1/v4lctl.1
-man/es/man1/xawtv-remote.1
-man/es/man1/xawtv.1
-man/es/man5/xawtvrc.5
-@comment man/es/man8/v4l-conf.8
-man/fr/man1/xawtv.1
-@comment man/man1/alevtd.1
-man/man1/dump-mixers.1
-@comment man/man1/fbtv.1
-@comment man/man1/motv.1
-@comment man/man1/mtt.1
-man/man1/ntsc-cc.1
-@comment man/man1/pia.1
-man/man1/propwatch.1
-@comment man/man1/radio.1
-@comment man/man1/record.1
-man/man1/rootv.1
-@comment man/man1/scantv.1
-man/man1/showriff.1
-man/man1/streamer.1
-man/man1/subtitles.1
-@comment man/man1/ttv.1
-@comment man/man1/v4l-info.1
-@comment man/man1/v4lctl.1
-man/man1/webcam.1
-man/man1/xawtv-remote.1
-man/man1/xawtv.1
-man/man5/xawtvrc.5
-@comment man/man8/v4l-conf.8
+man/es/
+man/es/man1/
+@comment @man man/es/man1/fbtv.1
+@man man/es/man1/rootv.1
+@comment @man man/es/man1/scantv.1
+@man man/es/man1/streamer.1
+@man man/es/man1/subtitles.1
+@comment @man man/es/man1/ttv.1
+@comment @man man/es/man1/v4lctl.1
+@man man/es/man1/xawtv-remote.1
+@man man/es/man1/xawtv.1
+man/es/man5/
+@man man/es/man5/xawtvrc.5
+@comment man/es/man8/
+@comment @man man/es/man8/v4l-conf.8
+man/fr/
+man/fr/man1/
+@man man/fr/man1/xawtv.1
+@comment @man man/man1/alevtd.1
+@man man/man1/dump-mixers.1
+@comment @man man/man1/fbtv.1
+@comment @man man/man1/motv.1
+@comment @man man/man1/mtt.1
+@man man/man1/ntsc-cc.1
+@comment @man man/man1/pia.1
+@man man/man1/propwatch.1
+@comment @man man/man1/radio.1
+@comment @man man/man1/record.1
+@man man/man1/rootv.1
+@comment @man man/man1/scantv.1
+@man man/man1/showriff.1
+@man man/man1/streamer.1
+@man man/man1/subtitles.1
+@comment @man man/man1/ttv.1
+@comment @man man/man1/v4l-info.1
+@comment @man man/man1/v4lctl.1
+@man man/man1/webcam.1
+@man man/man1/xawtv-remote.1
+@man man/man1/xawtv.1
+@man man/man5/xawtvrc.5
+@comment @man man/man8/v4l-conf.8
+share/xawtv/
 share/xawtv/Index.map
 share/xawtv/argentina.list
 share/xawtv/ccir-h.list
@@ -88,13 +96,5 @@ share/xawtv/pal-newzealand.list
 share/xawtv/secam-france.list
 share/xawtv/secam-russia.list
 share/xawtv/uhf.list
-@dirrm share/xawtv
-@dirrm man/fr/man1
-@dirrm man/fr
-@comment @dirrm man/es/man8
-@dirrm man/es/man5
-@dirrm man/es/man1
-@dirrm man/es
-@dirrm lib/xawtv
 @cwd ${SYSCONFDIR}
 @extra xawtvrc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/11 23:33:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:33 espie Exp $
 bin/fgr
 bin/scramble
 bin/xfapps
@@ -31,27 +31,44 @@ lib/libxffm_tubo.a
 lib/libxffm_tubo.la
 lib/libxffmsmb.a
 lib/libxffmsmb.la
+lib/pkgconfig/
 lib/pkgconfig/xffm-1.0.pc
+lib/xfce4/
+lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/libxffmsettings.a
 lib/xfce4/mcs-plugins/libxffmsettings.la
-man/man1/fgr.1
+@man man/man1/fgr.1
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xffm.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xffm.mo
 share/locale/bg/LC_MESSAGES/xffm.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xffm.mo
 share/locale/cs/LC_MESSAGES/xffm.mo
 share/locale/de/LC_MESSAGES/xffm.mo
 share/locale/es/LC_MESSAGES/xffm.mo
 share/locale/es_MX/LC_MESSAGES/xffm.mo
 share/locale/et/LC_MESSAGES/xffm.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xffm.mo
 share/locale/fa_IR/LC_MESSAGES/xffm.mo
 share/locale/fr/LC_MESSAGES/xffm.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xffm.mo
 share/locale/hu/LC_MESSAGES/xffm.mo
 share/locale/it/LC_MESSAGES/xffm.mo
 share/locale/ja/LC_MESSAGES/xffm.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xffm.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xffm.mo
 share/locale/nl/LC_MESSAGES/xffm.mo
 share/locale/no/LC_MESSAGES/xffm.mo
@@ -59,23 +76,32 @@ share/locale/pl/LC_MESSAGES/xffm.mo
 share/locale/pt_BR/LC_MESSAGES/xffm.mo
 share/locale/pt_PT/LC_MESSAGES/xffm.mo
 share/locale/sv/LC_MESSAGES/xffm.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xffm.mo
 share/locale/tr/LC_MESSAGES/xffm.mo
 share/locale/uk/LC_MESSAGES/xffm.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xffm.mo
 share/locale/zh_CN/LC_MESSAGES/xffm.mo
 share/locale/zh_TW/LC_MESSAGES/xffm.mo
+share/xfce4/
 share/xfce4/doc/C/xffm.html
 share/xfce4/doc/fr/xffm.html
+share/xffm/
 share/xffm/AUTHORS
 share/xffm/applications.xml
+share/xffm/pixmaps/
 share/xffm/pixmaps/comp1.xpm
 share/xffm/pixmaps/empty.xpm
 share/xffm/pixmaps/network-36.png
 share/xffm/pixmaps/network-8.png
 share/xffm/pixmaps/network.png
 share/xffm/pixmaps/new_win.xpm
+share/xffm/pixmaps/no_icons/
 share/xffm/pixmaps/no_icons/mime.xml
+share/xffm/pixmaps/plain/
 share/xffm/pixmaps/plain/3floppy_mount.png
 share/xffm/pixmaps/plain/3floppy_unmount.png
 share/xffm/pixmaps/plain/Jrecycle.png
@@ -166,9 +192,3 @@ share/xffm/pixmaps/xffm_icon-36.png
 share/xffm/pixmaps/xffm_icon.png
 share/xffm/pixmaps/xffm_icon.xpm
 %%SHARED%%
-@dirrm share/xffm/pixmaps/plain
-@dirrm share/xffm/pixmaps/no_icons
-@dirrm share/xffm/pixmaps
-@dirrm share/xffm
-@dirrm lib/xfce4/mcs-plugins
-@dirrm lib/xfce4

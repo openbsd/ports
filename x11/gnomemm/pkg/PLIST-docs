@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2001/11/01 13:31:13 wilfried Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2004/09/15 19:26:29 espie Exp $
+share/doc/gnomemm/
 share/doc/gnomemm/Gdk_Imlib.html
 share/doc/gnomemm/Gdk_Imlib:.html
 share/doc/gnomemm/Gdk_Imlib::Border.html
@@ -42,4 +43,3 @@ share/doc/gnomemm/class_index.html
 share/doc/gnomemm/cross_index.html
 share/doc/gnomemm/global.html
 share/doc/gnomemm/name_index.html
-@dirrm share/doc/gnomemm

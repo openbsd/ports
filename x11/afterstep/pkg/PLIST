@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/06/06 10:12:44 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:27 espie Exp $
 bin/ASSound
 bin/Animate
 bin/Audio
@@ -23,30 +23,32 @@ bin/asetroot
 bin/importasmenu
 bin/installastheme.pl
 bin/makeastheme.pl
-man/man1/Animate.1x
-man/man1/Audio.1x
-man/man1/Banner.1x
-man/man1/Cascade.1x
-man/man1/Clean.1x
-man/man1/Form.1x
-man/man1/Gnome.1x
-man/man1/Ident.1x
-man/man1/Pager.1x
-man/man1/Save.1x
-man/man1/Script.1x
-man/man1/Scroll.1x
-man/man1/Tile.1x
-man/man1/Wharf.1x
-man/man1/WinList.1x
-man/man1/Zharf.1x
-man/man1/afterstep.1x
-man/man1/asetroot.1x
+@man man/man1/Animate.1x
+@man man/man1/Audio.1x
+@man man/man1/Banner.1x
+@man man/man1/Cascade.1x
+@man man/man1/Clean.1x
+@man man/man1/Form.1x
+@man man/man1/Gnome.1x
+@man man/man1/Ident.1x
+@man man/man1/Pager.1x
+@man man/man1/Save.1x
+@man man/man1/Script.1x
+@man man/man1/Scroll.1x
+@man man/man1/Tile.1x
+@man man/man1/Wharf.1x
+@man man/man1/WinList.1x
+@man man/man1/Zharf.1x
+@man man/man1/afterstep.1x
+@man man/man1/asetroot.1x
+share/afterstep/
 share/afterstep/.workspace_state
 share/afterstep/Gnome
 share/afterstep/animate
 share/afterstep/asetroot
 share/afterstep/audio
 share/afterstep/autoexec
+share/afterstep/backgrounds/
 share/afterstep/backgrounds/Back.xpm
 share/afterstep/backgrounds/BlueStone.xpm
 share/afterstep/backgrounds/aquamarine.xpm
@@ -65,6 +67,8 @@ share/afterstep/base.8bpp
 share/afterstep/clean
 share/afterstep/compatibility
 share/afterstep/database
+share/afterstep/desktop/
+share/afterstep/desktop/buttons/
 share/afterstep/desktop/buttons/1.xpm
 share/afterstep/desktop/buttons/1p.xpm
 share/afterstep/desktop/buttons/2.xpm
@@ -117,6 +121,7 @@ share/afterstep/desktop/buttons/fuf-windowmenu-pressed.xpm
 share/afterstep/desktop/buttons/fuf-windowmenu.xpm
 share/afterstep/desktop/buttons/g_iconize.xpm
 share/afterstep/desktop/buttons/g_shut.xpm
+share/afterstep/desktop/cursors/
 share/afterstep/desktop/cursors/cursor.xbm
 share/afterstep/desktop/cursors/cursor.xbm.mask
 share/afterstep/desktop/cursors/iconify.xbm
@@ -135,6 +140,8 @@ share/afterstep/desktop/cursors/resize_v.xbm
 share/afterstep/desktop/cursors/resize_v.xbm.mask
 share/afterstep/desktop/cursors/xm_hour32
 share/afterstep/desktop/cursors/xm_hour32m
+share/afterstep/desktop/icons/
+share/afterstep/desktop/icons/16bpp/
 share/afterstep/desktop/icons/16bpp/3dpaint.xpm
 share/afterstep/desktop/icons/16bpp/ASBBlockBlue.xpm
 share/afterstep/desktop/icons/16bpp/ASBBlockClear.xpm
@@ -202,6 +209,7 @@ share/afterstep/desktop/icons/16bpp/wharf.xpm
 share/afterstep/desktop/icons/16bpp/widget.xpm
 share/afterstep/desktop/icons/16bpp/workshop.xpm
 share/afterstep/desktop/icons/16bpp/writeletter.xpm
+share/afterstep/desktop/icons/8bpp/
 share/afterstep/desktop/icons/8bpp/3dpaint.xpm
 share/afterstep/desktop/icons/8bpp/ASBBlockBlue.xpm
 share/afterstep/desktop/icons/8bpp/ASBBlockClear.xpm
@@ -269,6 +277,7 @@ share/afterstep/desktop/icons/8bpp/wharf.xpm
 share/afterstep/desktop/icons/8bpp/widget.xpm
 share/afterstep/desktop/icons/8bpp/workshop.xpm
 share/afterstep/desktop/icons/8bpp/writeletter.xpm
+share/afterstep/desktop/icons/common/
 share/afterstep/desktop/icons/common/3_dots.xpm
 share/afterstep/desktop/icons/common/arrow-dots.xpm
 share/afterstep/desktop/icons/common/arrow.xpm
@@ -292,6 +301,7 @@ share/afterstep/desktop/icons/common/south.xpm
 share/afterstep/desktop/icons/common/southeast.xpm
 share/afterstep/desktop/icons/common/southwest.xpm
 share/afterstep/desktop/icons/common/west.xpm
+share/afterstep/desktop/sounds/
 share/afterstep/desktop/sounds/bong.au
 share/afterstep/desktop/sounds/clink.au
 share/afterstep/desktop/sounds/cowbell.au
@@ -300,6 +310,7 @@ share/afterstep/desktop/sounds/drip.au
 share/afterstep/desktop/sounds/gong.au
 share/afterstep/desktop/sounds/meepmeep.au
 share/afterstep/desktop/sounds/train.au
+share/afterstep/doc/
 share/afterstep/doc/afterstep-1.html
 share/afterstep/doc/afterstep-10.html
 share/afterstep/doc/afterstep-2.html
@@ -311,6 +322,7 @@ share/afterstep/doc/afterstep-7.html
 share/afterstep/doc/afterstep-8.html
 share/afterstep/doc/afterstep-9.html
 share/afterstep/doc/afterstep.html
+share/afterstep/feels/
 share/afterstep/feels/feel.AutoRaise
 share/afterstep/feels/feel.ClickToFocus
 share/afterstep/feels/feel.DEFAULT
@@ -322,6 +334,7 @@ share/afterstep/feels/feel.Windowish
 share/afterstep/feels/feel.cursors
 share/afterstep/forms
 share/afterstep/ident
+share/afterstep/looks/
 share/afterstep/looks/look.AfterStep
 share/afterstep/looks/look.DEFAULT
 share/afterstep/looks/look.Frames
@@ -333,6 +346,7 @@ share/afterstep/looks/look.Ostx
 share/afterstep/looks/look.PureNext
 share/afterstep/looks/look.Transparent.rev
 share/afterstep/looks/look.purple
+share/afterstep/non-configurable/
 share/afterstep/non-configurable/0_background
 share/afterstep/non-configurable/0_feel.15bpp
 share/afterstep/non-configurable/0_feel.16bpp
@@ -378,6 +392,7 @@ share/afterstep/non-configurable/3_look.24bpp
 share/afterstep/non-configurable/3_look.32bpp
 share/afterstep/non-configurable/3_look.8bpp
 share/afterstep/pager
+share/afterstep/scripts/
 share/afterstep/scripts/Animate
 share/afterstep/scripts/BellSetup
 share/afterstep/scripts/Date
@@ -390,17 +405,22 @@ share/afterstep/scripts/ScreenDump
 share/afterstep/scripts/ScreenSetup
 share/afterstep/scripts/ScreenSetup2
 share/afterstep/scroll
+share/afterstep/start/
 share/afterstep/start/.include
+share/afterstep/start/Applications/
+share/afterstep/start/Applications/Accessories/
 share/afterstep/start/Applications/Accessories/1_calc
 share/afterstep/start/Applications/Accessories/2_clock
 share/afterstep/start/Applications/Accessories/3_colors
 share/afterstep/start/Applications/Accessories/4_help
 share/afterstep/start/Applications/Accessories/5_notepad
 share/afterstep/start/Applications/Accessories/6_scrnmag
+share/afterstep/start/Applications/Editors/
 share/afterstep/start/Applications/Editors/1_emacs
 share/afterstep/start/Applications/Editors/2_vi
 share/afterstep/start/Applications/Editors/3_nedit
 share/afterstep/start/Applications/Editors/4_xjed
+share/afterstep/start/Applications/Emulators/
 share/afterstep/start/Applications/Emulators/0_dos
 share/afterstep/start/Applications/Emulators/1_mac
 share/afterstep/start/Applications/Emulators/2_amiga
@@ -408,12 +428,14 @@ share/afterstep/start/Applications/Emulators/3_amigasnd
 share/afterstep/start/Applications/Emulators/4_hp48
 share/afterstep/start/Applications/Emulators/5_appleII
 share/afterstep/start/Applications/Emulators/6_x48
+share/afterstep/start/Applications/Multimedia/
 share/afterstep/start/Applications/Multimedia/0_cd
 share/afterstep/start/Applications/Multimedia/1_mp3
 share/afterstep/start/Applications/Multimedia/2_mixer
 share/afterstep/start/Applications/Multimedia/3_pict
 share/afterstep/start/Applications/Multimedia/4_gimp
 share/afterstep/start/Applications/Multimedia/5_imagick
+share/afterstep/start/Applications/Network/
 share/afterstep/start/Applications/Network/0_minicom
 share/afterstep/start/Applications/Network/1_ftp
 share/afterstep/start/Applications/Network/2_ncftp
@@ -423,6 +445,7 @@ share/afterstep/start/Applications/Network/5_irc
 share/afterstep/start/Applications/Network/6_netscape
 share/afterstep/start/Applications/Network/7_news
 share/afterstep/start/Applications/Network/8_telnet
+share/afterstep/start/Applications/Office/
 share/afterstep/start/Applications/Office/10_tkdesk
 share/afterstep/start/Applications/Office/1_applix
 share/afterstep/start/Applications/Office/2_so
@@ -432,6 +455,7 @@ share/afterstep/start/Applications/Office/6_lyx
 share/afterstep/start/Applications/Office/7_dviview
 share/afterstep/start/Applications/Office/8_psview
 share/afterstep/start/Applications/Office/9_pdf
+share/afterstep/start/Applications/System/
 share/afterstep/start/Applications/System/0_sysinfo
 share/afterstep/start/Applications/System/1_sysload
 share/afterstep/start/Applications/System/2_changedefs
@@ -447,6 +471,9 @@ share/afterstep/start/Applications/c_xiterm
 share/afterstep/start/Applications/d_xterm
 share/afterstep/start/Applications/e_rxvt
 share/afterstep/start/Applications/f_Eterm
+share/afterstep/start/Desktop/
+share/afterstep/start/Desktop/Animations/
+share/afterstep/start/Desktop/Animations/Animations-1/
 share/afterstep/start/Desktop/Animations/Animations-1/0_ant
 share/afterstep/start/Desktop/Animations/Animations-1/10_daisy
 share/afterstep/start/Desktop/Animations/Animations-1/11_dlock
@@ -467,6 +494,7 @@ share/afterstep/start/Desktop/Animations/Animations-1/6_bug
 share/afterstep/start/Desktop/Animations/Animations-1/7_cartoon
 share/afterstep/start/Desktop/Animations/Animations-1/8_clock
 share/afterstep/start/Desktop/Animations/Animations-1/9_crystal
+share/afterstep/start/Desktop/Animations/Animations-2/
 share/afterstep/start/Desktop/Animations/Animations-2/0_geometry
 share/afterstep/start/Desktop/Animations/Animations-2/10_life
 share/afterstep/start/Desktop/Animations/Animations-2/11_life1d
@@ -487,6 +515,7 @@ share/afterstep/start/Desktop/Animations/Animations-2/6_ifs
 share/afterstep/start/Desktop/Animations/Animations-2/7_julia
 share/afterstep/start/Desktop/Animations/Animations-2/8_kaleid
 share/afterstep/start/Desktop/Animations/Animations-2/9_laser
+share/afterstep/start/Desktop/Animations/Animations-3/
 share/afterstep/start/Desktop/Animations/Animations-3/0_nose
 share/afterstep/start/Desktop/Animations/Animations-3/10_sier
 share/afterstep/start/Desktop/Animations/Animations-3/11_slip
@@ -517,8 +546,11 @@ share/afterstep/start/Desktop/Animations/Animations-3/8_rotor
 share/afterstep/start/Desktop/Animations/Animations-3/9_shape
 share/afterstep/start/Desktop/Animations/a_random
 share/afterstep/start/Desktop/Animations/b_stop
+share/afterstep/start/Desktop/Feel/
 share/afterstep/start/Desktop/Feel/.include
+share/afterstep/start/Desktop/Look/
 share/afterstep/start/Desktop/Look/.include
+share/afterstep/start/Desktop/Mouse/
 share/afterstep/start/Desktop/Mouse/0_fast
 share/afterstep/start/Desktop/Mouse/1_faster
 share/afterstep/start/Desktop/Mouse/2_fastest
@@ -530,7 +562,9 @@ share/afterstep/start/Desktop/Mouse/7_nop
 share/afterstep/start/Desktop/Mouse/8_normal
 share/afterstep/start/Desktop/Mouse/9_noaccel
 share/afterstep/start/Desktop/Mouse/9_slow
+share/afterstep/start/Desktop/Pictures/
 share/afterstep/start/Desktop/Pictures/.include
+share/afterstep/start/Desktop/Theme/
 share/afterstep/start/Desktop/Theme/.include
 share/afterstep/start/Desktop/Theme/0_asthemecreate
 share/afterstep/start/Desktop/Theme/1_nop
@@ -540,11 +574,13 @@ share/afterstep/start/Desktop/c_snow
 share/afterstep/start/Desktop/d_nop
 share/afterstep/start/Desktop/e_updatestart
 share/afterstep/start/Desktop/f_updateall
+share/afterstep/start/Modules/
 share/afterstep/start/Modules/Animate
 share/afterstep/start/Modules/Audio
 share/afterstep/start/Modules/Banner
 share/afterstep/start/Modules/Cascade
 share/afterstep/start/Modules/Clean
+share/afterstep/start/Modules/Forms/
 share/afterstep/start/Modules/Forms/1_ftp
 share/afterstep/start/Modules/Forms/2_find
 share/afterstep/start/Modules/Forms/3_help
@@ -556,12 +592,14 @@ share/afterstep/start/Modules/Forms/8_xlock
 share/afterstep/start/Modules/Gnome
 share/afterstep/start/Modules/Ident
 share/afterstep/start/Modules/Pager
+share/afterstep/start/Modules/Scripts/
 share/afterstep/start/Modules/Scripts/0_animate
 share/afterstep/start/Modules/Scripts/1_bellsetup
 share/afterstep/start/Modules/Scripts/2_desksetup
 share/afterstep/start/Modules/Scripts/3_quit
 share/afterstep/start/Modules/Scripts/4_screendump
 share/afterstep/start/Modules/Scroll
+share/afterstep/start/Modules/Stop/
 share/afterstep/start/Modules/Stop/Animate_Stop
 share/afterstep/start/Modules/Stop/Audio_Stop
 share/afterstep/start/Modules/Stop/Banner_Stop
@@ -581,12 +619,15 @@ share/afterstep/start/Modules/Wharf
 share/afterstep/start/Modules/WinList
 share/afterstep/start/Modules/Zharf
 share/afterstep/start/Modules/asetroot
+share/afterstep/start/Quit/
 share/afterstep/start/Quit/0_close
 share/afterstep/start/Quit/1_exit
 share/afterstep/start/Quit/2_nop
 share/afterstep/start/Quit/3_restartsession
 share/afterstep/start/Quit/4_restarttwm
 share/afterstep/start/Quit/5_restartwm
+share/afterstep/start/Screen_savers/
+share/afterstep/start/Screen_savers/With_password/
 share/afterstep/start/Screen_savers/With_password/0_firework
 share/afterstep/start/Screen_savers/With_password/1_firework
 share/afterstep/start/Screen_savers/With_password/2_laser
@@ -597,6 +638,7 @@ share/afterstep/start/Screen_savers/With_password/6_sperm
 share/afterstep/start/Screen_savers/With_password/7_spline
 share/afterstep/start/Screen_savers/With_password/8_startrek
 share/afterstep/start/Screen_savers/With_password/9_stars
+share/afterstep/start/Screen_savers/Without_password/
 share/afterstep/start/Screen_savers/Without_password/0_firework
 share/afterstep/start/Screen_savers/Without_password/1_firework
 share/afterstep/start/Screen_savers/Without_password/2_laser
@@ -607,6 +649,7 @@ share/afterstep/start/Screen_savers/Without_password/6_sperm
 share/afterstep/start/Screen_savers/Without_password/7_spline
 share/afterstep/start/Screen_savers/Without_password/8_startrek
 share/afterstep/start/Screen_savers/Without_password/9_stars
+share/afterstep/start/Windows/
 share/afterstep/start/Windows/0_move
 share/afterstep/start/Windows/1_iconify
 share/afterstep/start/Windows/1_resize
@@ -618,51 +661,8 @@ share/afterstep/start/Windows/5_destroy
 share/afterstep/start/Windows/6_winprop
 share/afterstep/start/a_nop
 share/afterstep/start/b_afterstepdoc
+share/afterstep/themes/
 share/afterstep/themes/DEFAULT.tar.gz
 share/afterstep/wharf
 share/afterstep/winlist
 share/afterstep/zharf
-@dirrm share/afterstep/themes
-@dirrm share/afterstep/start/Windows
-@dirrm share/afterstep/start/Screen_savers/Without_password
-@dirrm share/afterstep/start/Screen_savers/With_password
-@dirrm share/afterstep/start/Screen_savers
-@dirrm share/afterstep/start/Quit
-@dirrm share/afterstep/start/Modules/Stop
-@dirrm share/afterstep/start/Modules/Scripts
-@dirrm share/afterstep/start/Modules/Forms
-@dirrm share/afterstep/start/Modules
-@dirrm share/afterstep/start/Desktop/Theme
-@dirrm share/afterstep/start/Desktop/Pictures
-@dirrm share/afterstep/start/Desktop/Mouse
-@dirrm share/afterstep/start/Desktop/Look
-@dirrm share/afterstep/start/Desktop/Feel
-@dirrm share/afterstep/start/Desktop/Animations/Animations-3
-@dirrm share/afterstep/start/Desktop/Animations/Animations-2
-@dirrm share/afterstep/start/Desktop/Animations/Animations-1
-@dirrm share/afterstep/start/Desktop/Animations
-@dirrm share/afterstep/start/Desktop
-@dirrm share/afterstep/start/Applications/System
-@dirrm share/afterstep/start/Applications/Office
-@dirrm share/afterstep/start/Applications/Network
-@dirrm share/afterstep/start/Applications/Multimedia
-@dirrm share/afterstep/start/Applications/Emulators
-@dirrm share/afterstep/start/Applications/Editors
-@dirrm share/afterstep/start/Applications/Accessories
-@dirrm share/afterstep/start/Applications
-@dirrm share/afterstep/start
-@dirrm share/afterstep/scripts
-@dirrm share/afterstep/non-configurable
-@dirrm share/afterstep/looks
-@dirrm share/afterstep/feels
-@dirrm share/afterstep/doc
-@dirrm share/afterstep/desktop/sounds
-@dirrm share/afterstep/desktop/icons/common
-@dirrm share/afterstep/desktop/icons/8bpp
-@dirrm share/afterstep/desktop/icons/16bpp
-@dirrm share/afterstep/desktop/icons
-@dirrm share/afterstep/desktop/cursors
-@dirrm share/afterstep/desktop/buttons
-@dirrm share/afterstep/desktop
-@dirrm share/afterstep/backgrounds
-@dirrm share/afterstep

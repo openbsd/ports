@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/11 23:33:38 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:33 espie Exp $
 bin/startxfce4
 bin/xfce4-about
 bin/xfhelp4
@@ -7,28 +7,45 @@ bin/xfmountdev4
 bin/xfrun4
 bin/xftaskbar4
 bin/xfterm4
+lib/xfce4/
+lib/xfce4/mcs-plugins/
 lib/xfce4/mcs-plugins/xftaskbar_plugin.a
 lib/xfce4/mcs-plugins/xftaskbar_plugin.la
+share/examples/xfce-utils/
 share/examples/xfce-utils/xinitrc
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfce-utils.mo
 share/locale/bg/LC_MESSAGES/xfce-utils.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xfce-utils.mo
 share/locale/cs/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
 share/locale/es/LC_MESSAGES/xfce-utils.mo
 share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
 share/locale/et/LC_MESSAGES/xfce-utils.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce-utils.mo
 share/locale/fa_IR/LC_MESSAGES/xfce-utils.mo
 share/locale/fi/LC_MESSAGES/xfce-utils.mo
 share/locale/fr/LC_MESSAGES/xfce-utils.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xfce-utils.mo
 share/locale/hu/LC_MESSAGES/xfce-utils.mo
 share/locale/it/LC_MESSAGES/xfce-utils.mo
 share/locale/ja/LC_MESSAGES/xfce-utils.mo
 share/locale/ko/LC_MESSAGES/xfce-utils.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce-utils.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xfce-utils.mo
 share/locale/nl/LC_MESSAGES/xfce-utils.mo
 share/locale/no/LC_MESSAGES/xfce-utils.mo
@@ -37,12 +54,17 @@ share/locale/pt_BR/LC_MESSAGES/xfce-utils.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-utils.mo
 share/locale/ru/LC_MESSAGES/xfce-utils.mo
 share/locale/sv/LC_MESSAGES/xfce-utils.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfce-utils.mo
 share/locale/tr/LC_MESSAGES/xfce-utils.mo
 share/locale/uk/LC_MESSAGES/xfce-utils.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xfce-utils.mo
 share/locale/zh_CN/LC_MESSAGES/xfce-utils.mo
 share/locale/zh_TW/LC_MESSAGES/xfce-utils.mo
+share/xfce4/
 share/xfce4/AUTHORS
 share/xfce4/AUTHORS.az
 share/xfce4/AUTHORS.ca
@@ -109,6 +131,3 @@ share/xfce4/doc/fr/xfce4-use.html
 share/xfce4/doc/fr/xfce4-user-guide.html
 share/xfce4/doc/xfce.css
 %%SHARED%%
-@dirrm share/examples/xfce-utils
-@dirrm lib/xfce4/mcs-plugins
-@dirrm lib/xfce4

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST-html,v 1.11 2004/02/25 22:03:52 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.12 2004/09/15 19:26:31 espie Exp $
+lib/qt2/
+share/doc/qt2/
+share/doc/qt2/html/
 share/doc/qt2/html/HOWTO-framebuffer.html
 share/doc/qt2/html/aboutqt.html
 share/doc/qt2/html/abstractwidgets.html
@@ -43,8 +46,10 @@ share/doc/qt2/html/datastreamformat.html
 share/doc/qt2/html/dclock-main-cpp.html
 share/doc/qt2/html/debug.html
 share/doc/qt2/html/design.html
+share/doc/qt2/html/designer/
 share/doc/qt2/html/designer.html
 share/doc/qt2/html/designer.png
+share/doc/qt2/html/designer/arrows/
 share/doc/qt2/html/designer/arrows/home.png
 share/doc/qt2/html/designer/arrows/left.png
 share/doc/qt2/html/designer/arrows/right.png
@@ -100,6 +105,7 @@ share/doc/qt2/html/designer/chap9_5.html
 share/doc/qt2/html/designer/chap9_6.html
 share/doc/qt2/html/designer/colophon.html
 share/doc/qt2/html/designer/feedback.html
+share/doc/qt2/html/designer/figures/
 share/doc/qt2/html/designer/figures/aboutdialog.png
 share/doc/qt2/html/designer/figures/adjustsize.png
 share/doc/qt2/html/designer/figures/breaklayout.png
@@ -1422,10 +1428,3 @@ share/doc/qt2/html/y2k.html
 @exec mkdir -p %D/lib/qt2/doc
 @exec ln -s %D/share/doc/qt2/html %D/lib/qt2/doc/html
 @unexec rm %D/lib/qt2/doc/html
-@dirrm share/doc/qt2/html/designer/figures
-@dirrm share/doc/qt2/html/designer/arrows
-@dirrm share/doc/qt2/html/designer
-@dirrm share/doc/qt2/html
-@dirrm share/doc/qt2
-@dirrm lib/qt2/doc
-@dirrm lib/qt2

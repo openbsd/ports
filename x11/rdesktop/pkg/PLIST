@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/30 16:58:44 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:31 espie Exp $
 bin/rdesktop
-man/man1/rdesktop.1
+@man man/man1/rdesktop.1
+share/rdesktop/
+share/rdesktop/keymaps/
 share/rdesktop/keymaps/ar
 share/rdesktop/keymaps/common
 share/rdesktop/keymaps/da
@@ -32,5 +34,3 @@ share/rdesktop/keymaps/sl
 share/rdesktop/keymaps/sv
 share/rdesktop/keymaps/th
 share/rdesktop/keymaps/tr
-@dirrm share/rdesktop/keymaps
-@dirrm share/rdesktop

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.gnome,v 1.2 2001/10/26 00:39:48 shell Exp $
+@comment $OpenBSD: PFRAG.gnome,v 1.3 2004/09/15 19:26:31 espie Exp $
+lib/python${PYTHON_VER}/site-packages/gnome/
 lib/python${PYTHON_VER}/site-packages/gnome/__init__.py
 lib/python${PYTHON_VER}/site-packages/gnome/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/gnome/__init__.pyo
@@ -85,4 +86,3 @@ share/pygtk/1.2/defs/gnomeui.defs
 share/pygtk/1.2/defs/gtkhtml.defs
 share/pygtk/1.2/defs/xmhtml.defs
 share/pygtk/1.2/defs/zvt.defs
-@dirrm lib/python${PYTHON_VER}/site-packages/gnome

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2003/01/22 17:10:59 margarida Exp $
-lib/libgtkextra.so.17.0
-DYNLIBDIR(%D/lib)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 19:26:29 espie Exp $
+@lib lib/libgtkextra.so.17.0

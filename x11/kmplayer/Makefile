@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/10 11:16:43 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/15 19:26:29 espie Exp $
 
 
 COMMENT='front-end/embeddable kpart for mplayer'
@@ -32,7 +32,7 @@ PERMIT_PACKAGE_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 
-LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts::x11/kde/libs3
+LIB_DEPENDS=kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kmediaplayer,kparts,artskde::x11/kde/libs3
 
 RUN_DEPENDS=:mplayer-*:x11/mplayer
 

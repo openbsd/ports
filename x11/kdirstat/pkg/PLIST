@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/02 08:06:09 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:29 espie Exp $
 bin/kdirstat
 share/applnk/
 share/applnk/Utilities/
 share/applnk/Utilities/kdirstat.desktop
+share/apps/
 share/apps/kdirstat/
 share/apps/kdirstat/icons/
 share/apps/kdirstat/icons/hicolor/
@@ -20,6 +21,8 @@ share/apps/kdirstat/icons/locolor/16x16/
 share/apps/kdirstat/icons/locolor/16x16/actions/
 share/apps/kdirstat/icons/locolor/16x16/actions/symlink.png
 share/apps/kdirstat/kdirstatui.rc
+share/doc/HTML/
+share/doc/HTML/en/
 share/doc/HTML/en/kdirstat/
 share/doc/HTML/en/kdirstat/common
 share/doc/HTML/en/kdirstat/feedback-mail.png
@@ -28,6 +31,8 @@ share/doc/HTML/en/kdirstat/index.docbook
 share/doc/HTML/en/kdirstat/kdirstat-config-cleanups.png
 share/doc/HTML/en/kdirstat/kdirstat-config-tree-colors.png
 share/doc/HTML/en/kdirstat/kdirstat-main.png
+share/icons/
+share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kdirstat.png
@@ -41,6 +46,13 @@ share/icons/locolor/16x16/apps/kdirstat.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kdirstat.png
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/kdirstat.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/kdirstat.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/kdirstat.mo

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-docs,v 1.1 2001/11/01 12:53:44 wilfried Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2004/09/15 19:26:29 espie Exp $
+share/doc/gtkmm/
+share/doc/gtkmm/gdk/
 share/doc/gtkmm/gdk/Gdk.html
 share/doc/gtkmm/gdk/Gdk_Bitmap.html
 share/doc/gtkmm/gdk/Gdk_Color.html
@@ -31,6 +33,7 @@ share/doc/gtkmm/gdk/class_index.html
 share/doc/gtkmm/gdk/cross_index.html
 share/doc/gtkmm/gdk/global.html
 share/doc/gtkmm/gdk/name_index.html
+share/doc/gtkmm/gtk/
 share/doc/gtkmm/gtk/G_ListImpl.html
 share/doc/gtkmm/gtk/G_ListWrap.html
 share/doc/gtkmm/gtk/Gtk.html
@@ -223,6 +226,3 @@ share/doc/gtkmm/gtk/class_index.html
 share/doc/gtkmm/gtk/cross_index.html
 share/doc/gtkmm/gtk/global.html
 share/doc/gtkmm/gtk/name_index.html
-@dirrm share/doc/gtkmm/gtk
-@dirrm share/doc/gtkmm/gdk
-@dirrm share/doc/gtkmm

@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-demo,v 1.5 2004/01/18 00:20:32 naddy Exp $
+@comment $OpenBSD: PLIST-demo,v 1.6 2004/09/15 19:26:30 espie Exp $
 bin/widget
 ${P5ARCH}/Tk/WidgetDemo.pod
+${P5ARCH}/Tk/demos/
 ${P5ARCH}/Tk/demos/LabEnLabRad.pm
+${P5ARCH}/Tk/demos/images/
 ${P5ARCH}/Tk/demos/images/QuitPB.xpm
 ${P5ARCH}/Tk/demos/images/QuitPBa.xpm
 ${P5ARCH}/Tk/demos/images/c.icon
@@ -24,6 +26,7 @@ ${P5ARCH}/Tk/demos/images/page.icon
 ${P5ARCH}/Tk/demos/images/page.mask
 ${P5ARCH}/Tk/demos/images/pattern
 ${P5ARCH}/Tk/demos/images/teapot.ppm
+${P5ARCH}/Tk/demos/widget_lib/
 ${P5ARCH}/Tk/demos/widget_lib/Ball.pm
 ${P5ARCH}/Tk/demos/widget_lib/Plot.pm
 ${P5ARCH}/Tk/demos/widget_lib/WidgetDemo.pm
@@ -94,6 +97,7 @@ ${P5ARCH}/Tk/demos/widget_lib/texts.pl
 ${P5ARCH}/Tk/demos/widget_lib/transtile.pl
 ${P5ARCH}/Tk/demos/widget_lib/twind.pl
 ${P5ARCH}/Tk/demos/widget_lib/vscale.pl
+${P5ARCH}/Tk/demos/widtrib/
 ${P5ARCH}/Tk/demos/widtrib/Gedi.pl
 ${P5ARCH}/Tk/demos/widtrib/HList.pl
 ${P5ARCH}/Tk/demos/widtrib/HList2.pl
@@ -105,17 +109,13 @@ ${P5ARCH}/Tk/demos/widtrib/browseentry2.pl
 ${P5ARCH}/Tk/demos/widtrib/dirtree.pl
 ${P5ARCH}/Tk/demos/widtrib/form_mgr.pl
 ${P5ARCH}/Tk/demos/widtrib/labframe.pl
+${P5ARCH}/Tk/demos/widtrib/lib/
+${P5ARCH}/Tk/demos/widtrib/lib/npuz/
 ${P5ARCH}/Tk/demos/widtrib/lib/npuz/Xcamel.npuz
 ${P5ARCH}/Tk/demos/widtrib/notebook.pl
 ${P5ARCH}/Tk/demos/widtrib/npuz.pl
 ${P5ARCH}/Tk/demos/widtrib/plop.pl
 ${P5ARCH}/Tk/demos/widtrib/progress.pl
-man/man1/widget.1
-man/man3p/Tk::Widget.3p
-man/man3p/Tk::WidgetDemo.3p
-@dirrm ${P5ARCH}/Tk/demos/widtrib/lib/npuz
-@dirrm ${P5ARCH}/Tk/demos/widtrib/lib
-@dirrm ${P5ARCH}/Tk/demos/widtrib
-@dirrm ${P5ARCH}/Tk/demos/widget_lib
-@dirrm ${P5ARCH}/Tk/demos/images
-@dirrm ${P5ARCH}/Tk/demos
+@man man/man1/widget.1
+@man man/man3p/Tk::Widget.3p
+@man man/man3p/Tk::WidgetDemo.3p

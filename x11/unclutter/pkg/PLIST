@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/18 12:43:28 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:32 espie Exp $
 bin/unclutter
-man/cat1/unclutter.0
+@man man/cat1/unclutter.0

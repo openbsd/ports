@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 16:58:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:29 espie Exp $
 bin/ion
 bin/pwm
 lib/ion/
+lib/ion/de.a
 lib/ion/de.la
+lib/ion/dock.a
 lib/ion/dock.la
+lib/ion/floatws.a
 lib/ion/floatws.la
 lib/ion/ion-completefile
+lib/ion/ionws.a
 lib/ion/ionws.la
 lib/ion/lc/
 lib/ion/lc/ioncore-efbb.lc
@@ -13,7 +17,9 @@ lib/ion/lc/ioncorelib-mplexfns.lc
 lib/ion/lc/ioncorelib.lc
 lib/ion/lc/menulib.lc
 lib/ion/lc/querylib.lc
+lib/ion/menu.a
 lib/ion/menu.la
+lib/ion/query.a
 lib/ion/query.la
 @man man/man1/ion.1
 @man man/man1/pwm.1

@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.26 2003/12/20 13:21:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.27 2004/09/15 19:26:32 espie Exp $
+GNUstep/
+GNUstep/Apps/
+GNUstep/Apps/WPrefs.app/
 GNUstep/Apps/WPrefs.app/WPrefs
 GNUstep/Apps/WPrefs.app/WPrefs.tiff
 GNUstep/Apps/WPrefs.app/WPrefs.xpm
+GNUstep/Apps/WPrefs.app/tiff/
 GNUstep/Apps/WPrefs.app/tiff/advancetonewworkspace.tiff
 GNUstep/Apps/WPrefs.app/tiff/animations.tiff
 GNUstep/Apps/WPrefs.app/tiff/appearance.tiff
@@ -66,6 +70,7 @@ GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspace.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspacename.tiff
 GNUstep/Apps/WPrefs.app/tiff/xis.tiff
+GNUstep/Apps/WPrefs.app/xpm/
 bin/get-wings-flags
 bin/get-wraster-flags
 bin/get-wutil-flags
@@ -88,6 +93,7 @@ bin/wpaste
 bin/wsetfont
 bin/wxcopy
 bin/wxpaste
+include/WINGs/
 include/WINGs/WINGs.h
 include/WINGs/WINGsP.h
 include/WINGs/WUtil.h
@@ -102,29 +108,47 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.la
-%%SHARED%%
-man/man1/geticonset.1x
-man/man1/getstyle.1x
-man/man1/seticons.1x
-man/man1/setstyle.1x
-man/man1/wcopy.1x
-man/man1/wdwrite.1x
-man/man1/wmaker.1x
-man/man1/wmsetbg.1x
-man/man1/wsetfont.1x
-man/man1/wxcopy.1x
-man/man1/wxpaste.1x
+@man man/man1/geticonset.1x
+@man man/man1/getstyle.1x
+@man man/man1/seticons.1x
+@man man/man1/setstyle.1x
+@man man/man1/wcopy.1x
+@man man/man1/wdwrite.1x
+@man man/man1/wmaker.1x
+@man man/man1/wmsetbg.1x
+@man man/man1/wsetfont.1x
+@man man/man1/wxcopy.1x
+@man man/man1/wxpaste.1x
+man/sk/
+man/sk/man1/
+@man man/sk/man1/geticonset.1x
+@man man/sk/man1/getstyle.1x
+@man man/sk/man1/seticons.1x
+@man man/sk/man1/setstyle.1x
+@man man/sk/man1/wdwrite.1x
+@man man/sk/man1/wmaker.1x
+@man man/sk/man1/wmsetbg.1x
+@man man/sk/man1/wsetfont.1x
+@man man/sk/man1/wxcopy.1x
+@man man/sk/man1/wxpaste.1x
+share/WINGs/
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
 share/WINGs/defaultIcon.xpm
+share/WindowMaker/
+share/WindowMaker/Backgrounds/
 share/WindowMaker/Backgrounds/BlueImage.jpeg
+share/WindowMaker/Defaults/
+share/WindowMaker/Defaults/WindowMaker/
 share/WindowMaker/Defaults/WindowMaker/WMGLOBAL
 share/WindowMaker/Defaults/WindowMaker/WMRootMenu
 share/WindowMaker/Defaults/WindowMaker/WMState
 share/WindowMaker/Defaults/WindowMaker/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker/WindowMaker
+share/WindowMaker/IconSets/
 share/WindowMaker/IconSets/Default.iconset
+share/WindowMaker/Icons/
 share/WindowMaker/Icons/BitchX.tiff
 share/WindowMaker/Icons/BitchX.xpm
 share/WindowMaker/Icons/DefaultAppIcon.tiff
@@ -190,10 +214,13 @@ share/WindowMaker/Icons/xdvi.tiff
 share/WindowMaker/Icons/xdvi.xpm
 share/WindowMaker/Icons/xv.tiff
 share/WindowMaker/Icons/xv.xpm
+share/WindowMaker/Pixmaps/
 share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/README
 share/WindowMaker/README.themes
+share/WindowMaker/Sounds/
+share/WindowMaker/Styles/
 share/WindowMaker/Styles/Autumn.style
 share/WindowMaker/Styles/Black.style
 share/WindowMaker/Styles/BlackTexture.style
@@ -229,6 +256,7 @@ share/WindowMaker/Styles/Spring.style
 share/WindowMaker/Styles/Summer.style
 share/WindowMaker/Styles/Traditional.style
 share/WindowMaker/Styles/VioletBlue.style
+share/WindowMaker/Themes/
 share/WindowMaker/Themes/Default.style
 share/WindowMaker/Themes/OpenStep.style
 share/WindowMaker/Themes/Pastel.style
@@ -239,22 +267,4 @@ share/WindowMaker/menu
 share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
-@dirrm share/WindowMaker/Themes
-@dirrm share/WindowMaker/Styles
-@exec mkdir -p %D/share/WindowMaker/Sounds
-@dirrm share/WindowMaker/Sounds
-@dirrm share/WindowMaker/Pixmaps
-@dirrm share/WindowMaker/Icons
-@dirrm share/WindowMaker/IconSets
-@dirrm share/WindowMaker/Defaults/WindowMaker
-@dirrm share/WindowMaker/Defaults
-@dirrm share/WindowMaker/Backgrounds
-@dirrm share/WindowMaker
-@dirrm share/WINGs
-@dirrm include/WINGs
-@exec mkdir -p %D/GNUstep/Apps/WPrefs.app/xpm
-@dirrm GNUstep/Apps/WPrefs.app/xpm
-@dirrm GNUstep/Apps/WPrefs.app/tiff
-@dirrm GNUstep/Apps/WPrefs.app
-@dirrm GNUstep/Apps
-@dirrm GNUstep
+%%SHARED%%

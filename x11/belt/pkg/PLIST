@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/11/11 14:11:30 heko Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:28 espie Exp $
 bin/belt
-man/man1/belt.1
+@man man/man1/belt.1
+share/belt/
+share/belt/icons/
 share/belt/icons/DH.gif
 share/belt/icons/DS.gif
 share/belt/icons/LH.gif
@@ -10,7 +12,5 @@ share/belt/icons/RS.gif
 share/belt/icons/UH.gif
 share/belt/icons/US.gif
 share/belt/icons/noicon.gif
+share/examples/belt/
 share/examples/belt/menu.conf.EXAMPLE
-@dirrm share/examples/belt
-@dirrm share/belt/icons
-@dirrm share/belt

@@ -1,23 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/07/12 04:54:01 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:34 espie Exp $
 bin/xfce4-tips
 lib/xfce4/panel-plugins/libeyes.a
 lib/xfce4/panel-plugins/libeyes.la
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-toys.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfce4-toys.mo
 share/locale/bg/LC_MESSAGES/xfce4-toys.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/xfce4-toys.mo
 share/locale/cs/LC_MESSAGES/xfce4-toys.mo
 share/locale/de/LC_MESSAGES/xfce4-toys.mo
 share/locale/es/LC_MESSAGES/xfce4-toys.mo
 share/locale/et/LC_MESSAGES/xfce4-toys.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/xfce4-toys.mo
 share/locale/fa_IR/LC_MESSAGES/xfce4-toys.mo
 share/locale/fr/LC_MESSAGES/xfce4-toys.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xfce4-toys.mo
 share/locale/hu/LC_MESSAGES/xfce4-toys.mo
 share/locale/it/LC_MESSAGES/xfce4-toys.mo
 share/locale/ko/LC_MESSAGES/xfce4-toys.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce4-toys.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/xfce4-toys.mo
 share/locale/nl/LC_MESSAGES/xfce4-toys.mo
 share/locale/no/LC_MESSAGES/xfce4-toys.mo
@@ -26,35 +40,40 @@ share/locale/pt_BR/LC_MESSAGES/xfce4-toys.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-toys.mo
 share/locale/ru/LC_MESSAGES/xfce4-toys.mo
 share/locale/sv/LC_MESSAGES/xfce4-toys.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfce4-toys.mo
 share/locale/tr/LC_MESSAGES/xfce4-toys.mo
 share/locale/uk/LC_MESSAGES/xfce4-toys.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/xfce4-toys.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-toys.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-toys.mo
+share/xfce4/
+share/xfce4/eyes/
+share/xfce4/eyes/themes/
+share/xfce4/eyes/themes/Bizarre/
 share/xfce4/eyes/themes/Bizarre/Bizarre-eye.png
 share/xfce4/eyes/themes/Bizarre/Bizarre-pupil.png
 share/xfce4/eyes/themes/Bizarre/config
+share/xfce4/eyes/themes/Bloodshot/
 share/xfce4/eyes/themes/Bloodshot/Bloodshot-eye.png
 share/xfce4/eyes/themes/Bloodshot/Bloodshot-pupil.png
 share/xfce4/eyes/themes/Bloodshot/config
+share/xfce4/eyes/themes/Default/
+share/xfce4/eyes/themes/Default-tiny/
 share/xfce4/eyes/themes/Default-tiny/Default-tiny-eye.png
 share/xfce4/eyes/themes/Default-tiny/Default-tiny-pupil.png
 share/xfce4/eyes/themes/Default-tiny/config
 share/xfce4/eyes/themes/Default/Default-eye.png
 share/xfce4/eyes/themes/Default/Default-pupil.png
 share/xfce4/eyes/themes/Default/config
+share/xfce4/eyes/themes/Horrid/
 share/xfce4/eyes/themes/Horrid/Horrid-eye.png
 share/xfce4/eyes/themes/Horrid/Horrid-pupil.png
 share/xfce4/eyes/themes/Horrid/config
+share/xfce4/tips/
 share/xfce4/tips/tips
 share/xfce4/tips/tips.dat
 %%SHARED%%
-@dirrm share/xfce4/tips
-@dirrm share/xfce4/eyes/themes/Horrid
-@dirrm share/xfce4/eyes/themes/Default-tiny
-@dirrm share/xfce4/eyes/themes/Default
-@dirrm share/xfce4/eyes/themes/Bloodshot
-@dirrm share/xfce4/eyes/themes/Bizarre
-@dirrm share/xfce4/eyes/themes
-@dirrm share/xfce4/eyes

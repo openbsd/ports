@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/10 03:04:18 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:27 espie Exp $
 bin/aemenu
 bin/aemenu-gtk
 bin/aemenu-xaw
@@ -8,14 +8,14 @@ bin/aepanel-xaw
 bin/aesession
 bin/aewm
 bin/set-gnome-pda
-man/man1/aeclients.1x
-man/man1/aemenu-gtk.1x
-man/man1/aemenu-xaw.1x
-man/man1/aepanel-gtk.1x
-man/man1/aepanel-xaw.1x
-man/man1/aesession.1x
-man/man1/aewm.1x
-man/man1/set-gnome-pda.1x
+@man man/man1/aeclients.1x
+@man man/man1/aemenu-gtk.1x
+@man man/man1/aemenu-xaw.1x
+@man man/man1/aepanel-gtk.1x
+@man man/man1/aepanel-xaw.1x
+@man man/man1/aesession.1x
+@man man/man1/aewm.1x
+@man man/man1/set-gnome-pda.1x
+share/examples/aewm/
 share/examples/aewm/aewmrc
 share/examples/aewm/clientsrc
-@dirrm share/examples/aewm

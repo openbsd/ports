@@ -1,139 +1,95 @@
-@comment $OpenBSD: PLIST-lang,v 1.2 2003/12/20 13:21:43 naddy Exp $
-@comment Bulgarian
+@comment $OpenBSD: PLIST-lang,v 1.3 2004/09/15 19:26:32 espie Exp $
 share/WindowMaker/menu.bg
+share/WindowMaker/menu.ca
+share/WindowMaker/menu.cs
+share/WindowMaker/menu.da
+share/WindowMaker/menu.de
+share/WindowMaker/menu.el
+share/WindowMaker/menu.es
+share/WindowMaker/menu.fi
+share/WindowMaker/menu.fr
+share/WindowMaker/menu.gl
+share/WindowMaker/menu.he
+share/WindowMaker/menu.hr
+share/WindowMaker/menu.hu
+share/WindowMaker/menu.it
+share/WindowMaker/menu.ja
+share/WindowMaker/menu.ko
+share/WindowMaker/menu.nl
+share/WindowMaker/menu.no
+share/WindowMaker/menu.pl
+share/WindowMaker/menu.pt
+share/WindowMaker/menu.ro
+share/WindowMaker/menu.ru
+share/WindowMaker/menu.sk
+share/WindowMaker/menu.sl
+share/WindowMaker/menu.sv
+share/WindowMaker/menu.tr
+share/WindowMaker/menu.zh_CN
+share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu.bg
+share/WindowMaker/plmenu.da
+share/WindowMaker/plmenu.de
+share/WindowMaker/plmenu.es
+share/WindowMaker/plmenu.fi
+share/WindowMaker/plmenu.fr
+share/WindowMaker/plmenu.hr
+share/WindowMaker/plmenu.it
+share/WindowMaker/plmenu.ja
+share/WindowMaker/plmenu.ko
+share/WindowMaker/plmenu.pl
+share/WindowMaker/plmenu.ro
+share/WindowMaker/plmenu.sk
+share/WindowMaker/plmenu.zh_CN
+share/WindowMaker/plmenu.zh_TW.Big5
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@comment Catalan
-share/WindowMaker/menu.ca
-@comment Czech
-share/WindowMaker/menu.cs
 share/locale/cs/LC_MESSAGES/WINGs.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WindowMaker.mo
-@comment Danish
-share/WindowMaker/menu.da
-share/WindowMaker/plmenu.da
 share/locale/da/LC_MESSAGES/WindowMaker.mo
-@comment German
-share/WindowMaker/menu.de
-share/WindowMaker/plmenu.de
 share/locale/de/LC_MESSAGES/WINGs.mo
 share/locale/de/LC_MESSAGES/WPrefs.mo
 share/locale/de/LC_MESSAGES/WindowMaker.mo
-@comment Greek
-share/WindowMaker/menu.el
 share/locale/el/LC_MESSAGES/WindowMaker.mo
-@comment Spanish
-share/WindowMaker/menu.es
-share/WindowMaker/plmenu.es
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
-@comment Estonian
 share/locale/et/LC_MESSAGES/WPrefs.mo
 share/locale/et/LC_MESSAGES/WindowMaker.mo
-@comment Finnish
-share/WindowMaker/menu.fi
-share/WindowMaker/plmenu.fi
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@comment French
-share/WindowMaker/menu.fr
-share/WindowMaker/plmenu.fr
 share/locale/fr/LC_MESSAGES/WPrefs.mo
 share/locale/fr/LC_MESSAGES/WindowMaker.mo
-@comment Galician
-share/WindowMaker/menu.gl
 share/locale/gl/LC_MESSAGES/WindowMaker.mo
-@comment Hebrew
-share/WindowMaker/menu.he
-@comment Croatian
-share/WindowMaker/menu.hr
-share/WindowMaker/plmenu.hr
 share/locale/hr/LC_MESSAGES/WPrefs.mo
 share/locale/hr/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@comment Hungarian
-share/WindowMaker/menu.hu
 share/locale/hu/LC_MESSAGES/WPrefs.mo
 share/locale/hu/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@comment Italian
-share/WindowMaker/menu.it
-share/WindowMaker/plmenu.it
 share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
-@comment Japanese
-share/WindowMaker/menu.ja
-share/WindowMaker/plmenu.ja
 share/locale/ja/LC_MESSAGES/WPrefs.mo
 share/locale/ja/LC_MESSAGES/WindowMaker.mo
-@comment Korean
-share/WindowMaker/menu.ko
-share/WindowMaker/plmenu.ko
 share/locale/ko/LC_MESSAGES/WPrefs.mo
 share/locale/ko/LC_MESSAGES/WindowMaker.mo
-@comment Malay
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ms
-@comment Dutch
-share/WindowMaker/menu.nl
 share/locale/nl/LC_MESSAGES/WindowMaker.mo
-@comment Norwegian
-share/WindowMaker/menu.no
 share/locale/no/LC_MESSAGES/WindowMaker.mo
-@comment Polish
-share/WindowMaker/menu.pl
-share/WindowMaker/plmenu.pl
 share/locale/pl/LC_MESSAGES/WindowMaker.mo
-@comment Portuguese
-share/WindowMaker/menu.pt
 share/locale/pt/LC_MESSAGES/WPrefs.mo
 share/locale/pt/LC_MESSAGES/WindowMaker.mo
-@comment Romanian
-share/WindowMaker/menu.ro
-share/WindowMaker/plmenu.ro
 share/locale/ro/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@comment Russian
-share/WindowMaker/menu.ru
 share/locale/ru/LC_MESSAGES/WPrefs.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
-@comment Slovak
-share/WindowMaker/menu.sk
-share/WindowMaker/plmenu.sk
 share/locale/sk/LC_MESSAGES/WINGs.mo
 share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@comment Slovene
-share/WindowMaker/menu.sl
-@comment Swedish
-share/WindowMaker/menu.sv
 share/locale/sv/LC_MESSAGES/WindowMaker.mo
-@comment Turkish
-share/WindowMaker/menu.tr
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
-@comment Chinese
-share/WindowMaker/menu.zh_CN
-share/WindowMaker/plmenu.zh_CN
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@comment Chinese
-share/WindowMaker/menu.zh_TW.Big5
-share/WindowMaker/plmenu.zh_TW.Big5
+share/locale/zh_TW.Big5/
+share/locale/zh_TW.Big5/LC_MESSAGES/
 share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5

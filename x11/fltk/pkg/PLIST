@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/04/02 12:58:43 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/09/15 19:26:28 espie Exp $
 bin/fltk-config
 bin/fluid
+include/FL/
 include/FL/Enumerations.H
 include/FL/Enumerations.h
 include/FL/Fl.H
@@ -245,13 +246,13 @@ lib/libfltk.a
 lib/libfltk_forms.a
 lib/libfltk_gl.a
 lib/libfltk_images.a
-%%SHARED%%
-@comment man/cat1/fltk-config.0
-@comment man/cat1/fluid.0
-@comment man/cat3/fltk.0
-man/man1/fltk-config.1
-man/man1/fluid.1
-man/man3/fltk.3
+@comment @man man/cat1/fltk-config.0
+@comment @man man/cat1/fluid.0
+@comment @man man/cat3/fltk.0
+@man man/man1/fltk-config.1
+@man man/man1/fluid.1
+@man man/man3/fltk.3
+share/doc/fltk/
 share/doc/fltk/FL.gif
 share/doc/fltk/Fl.html
 share/doc/fltk/Fl_Adjuster.html
@@ -413,5 +414,4 @@ share/doc/fltk/text.gif
 share/doc/fltk/valuators.gif
 share/doc/fltk/value_slider.gif
 share/doc/fltk/widgets.html
-@dirrm share/doc/fltk
-@dirrm include/FL
+%%SHARED%%
