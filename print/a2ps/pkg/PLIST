@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2000/06/11 02:17:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/08/10 16:31:26 pvalchev Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
 @unexec install-info --delete --info-dir=%D/info %D/info/regex.info
@@ -285,41 +285,6 @@ share/ogonkify/ptmri-o.ps
 @dirrm share/ogonkify/fonts
 @dirrm share/ogonkify/afm
 @dirrm share/ogonkify
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale
 @dirrm share/a2ps/sheets
 @dirrm share/a2ps/ps
 @dirrm share/a2ps/ppd
