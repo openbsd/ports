@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/12/29 16:13:28 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/12/31 02:09:51 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -57,7 +57,7 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 FULLPKGNAME=		qt3-mt-${VERSION}
 CONFIGURE_ARGS+=-thread
 FLAVOR+=no_mysql no_postgresql
-ALL_TARGET=sub-src
+ALL_TARGET=sub-src sub-tools
 .else
 CONFIGURE_ARGS+=-no-thread
 MULTI_PACKAGES=	-examples -html
@@ -144,6 +144,8 @@ DOCS=	FAQ LICENSE.GPL README README.QT \
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes
 
+PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
+PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
 .if ${FLAVOR:L:Mmt}
 post-patch:
@@ -154,6 +156,16 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
 	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.11 ${PREFIX}/lib/qt3
 	ln -sf qt3/libqt-mt.so.3.11 ${PREFIX}/lib
+	${INSTALL_DATA_DIR} ${QT_LIBDIR}/bin-mt
+.  for p in ${PROGRAMS3}
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_LIBDIR}/bin-mt/$p
+	@ln -sf ${TRUEPREFIX}/lib/qt3/bin-mt/$p ${PREFIX}/bin/$p3-mt
+.  endfor
+.  for p in ${PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_LIBDIR}/bin-mt/$p
+	@ln -sf ${TRUEPREFIX}/lib/qt3/bin-mt/$p ${PREFIX}/bin/$p-mt
+.  endfor
+
 .else
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
@@ -166,8 +178,6 @@ post-configure:
 	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
 
 LIBRARIES=qt.so.3.11 editor.so.1.0 qui.so.1.0
-PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
-PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
 do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
