@@ -1,0 +1,5 @@
+The Ur-Quan Masters is an SDL-based port of the 3DO version of the
+popular game Star Control 2.  This is the content package which
+contains the graphics and sounds for the games/uqm port.
+
+WWW: ${HOMEPAGE}
