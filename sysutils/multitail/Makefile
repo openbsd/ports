@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/11/02 16:55:02 margarida Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/02 01:45:44 naddy Exp $
 
 COMMENT=	"multi-window tail(1) utility"
 
-DISTNAME=	multitail-3.0.0
+DISTNAME=	multitail-3.0.6
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/	
