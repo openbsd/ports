@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/06/23 03:26:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/07/07 14:32:10 sturm Exp $
 
 COMMENT=		"the base GNOME icon theme"
 
@@ -18,7 +18,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		:gettext->=0.10.38:devel/gettext \
-			:hicolor-icon-theme-*:x11/hicolor-icon-theme
+			:hicolor-icon-theme-*:x11/hicolor-icon-theme \
+			::textproc/p5-XML-Parser
 RUN_DEPENDS=		:hicolor-icon-theme-*:x11/hicolor-icon-theme
 
 USE_X11=		Yes
