@@ -1,8 +1,9 @@
-$OpenBSD: patch-nedit_doc,v 1.1 2000/06/09 20:10:32 form Exp $
---- nedit.doc.orig	Sat Jun 10 02:13:41 2000
-+++ nedit.doc	Sat Jun 10 02:13:51 2000
-@@ -1,5 +1,9 @@
-                     NEdit Version 5.1.1, March 17, 2000
+$OpenBSD: patch-doc_nedit_doc,v 1.1 2001/10/31 08:03:19 form Exp $
+--- doc/nedit.doc.orig	Wed Oct 31 13:30:28 2001
++++ doc/nedit.doc	Wed Oct 31 13:30:43 2001
+@@ -2,6 +2,10 @@
+ 
+ $Id: patch-doc_nedit_doc,v 1.1 2001/10/31 08:03:19 form Exp $
  
 +    NOTE: Due to conflict with the program nc - Arbitrary tcp and udp
 +    connections and listens - the NEdit Client program, called nc in this
