@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2004/08/04 20:22:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.11 2004/10/04 14:16:22 xsa Exp $
 
 COMMENT=	"Wiki engine for Zope"
 
-DISTNAME=	ZWiki-0.33.0
+DISTNAME=	ZWiki-0.35.0
 PKGNAME=	zope-${DISTNAME:L}
 CATEGORIES=	www
 
@@ -20,6 +20,8 @@ MASTER_SITES=	${HOMEPAGE}releases/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	www/zope
+
+RUN_DEPENDS=	::www/zope-formulator
 
 WRKDIST=	${WRKDIR}/ZWiki
 
