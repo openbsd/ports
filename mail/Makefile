@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1998/12/16 18:32:04 dugsong Exp $
+# $OpenBSD: Makefile,v 1.20 1999/02/27 15:44:09 rohee Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -9,7 +9,7 @@
 #    SUBDIR += cyrus
      SUBDIR += elm
      SUBDIR += exim
-#    SUBDIR += exmh
+     SUBDIR += exmh
      SUBDIR += exmh2
      SUBDIR += faces
      SUBDIR += fetchmail
@@ -33,7 +33,7 @@
      SUBDIR += popclient
      SUBDIR += poppassd
 #    SUBDIR += popper
-#    SUBDIR += postfix
+     SUBDIR += postfix
 #    SUBDIR += premail
      SUBDIR += procmail
 #    SUBDIR += qpopper
