@@ -1,4 +1,4 @@
-# $OpenBSD: powerpc,v 1.13 2004/11/24 00:05:08 pvalchev Exp $
+# $OpenBSD: powerpc,v 1.14 2005/03/12 04:19:32 pvalchev Exp $
 # This is the master list of subdirs used to choose powerpc packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -63,6 +63,5 @@ security/stunnel
 #graphics/xfig
 x11/xautolock
 devel/gmake
-sysutils/proctools
 security/dsniff
 #security/gnupg
