@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/04/19 19:21:20 obecian Exp $
+--- Makefile.in.orig	Sun Apr  1 00:23:34 2001
++++ Makefile.in	Sun Apr  1 00:24:14 2001
+@@ -105,7 +105,7 @@ libsmpegincludedir = $(includedir)/smpeg
+ libsmpeginclude_HEADERS =  	MPEG.h				MPEGaction.h			MPEGaudio.h			MPEGerror.h			MPEGfilter.h			MPEGring.h			MPEGlist.h			MPEGstream.h			MPEGsystem.h			MPEGvideo.h			smpeg.h
+ 
+ 
+-libsmpeg_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libsmpeg_la_LDFLAGS =          -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
+ libsmpeg_la_LIBADD =  	audio/libaudio.la		video/libvideo.la

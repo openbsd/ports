@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/19 19:21:20 obecian Exp $
+bin/gtv
+bin/plaympeg
+bin/smpeg-config
+include/smpeg/MPEG.h
+include/smpeg/MPEGaction.h
+include/smpeg/MPEGaudio.h
+include/smpeg/MPEGerror.h
+include/smpeg/MPEGfilter.h
+include/smpeg/MPEGlist.h
+include/smpeg/MPEGring.h
+include/smpeg/MPEGstream.h
+include/smpeg/MPEGsystem.h
+include/smpeg/MPEGvideo.h
+include/smpeg/smpeg.h
+lib/libsmpeg.a
+lib/libsmpeg.la
+%%SHARED%%
+man/man1/gtv.1
+man/man1/plaympeg.1
+share/aclocal/smpeg.m4
+@dirrm include/smpeg
