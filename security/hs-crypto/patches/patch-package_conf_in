@@ -1,4 +1,4 @@
-$OpenBSD: patch-package_conf_in,v 1.1.1.1 2004/05/03 07:36:32 dons Exp $
+$OpenBSD: patch-package_conf_in,v 1.2 2004/05/07 01:37:50 dons Exp $
 
 let hs-crypto work with the ghc package system, and with the regress
 suite
@@ -9,7 +9,7 @@ suite
 +Package
 +    {name = "crypto",
 +#ifndef INPLACE
-+     import_dirs = ["${PREFIX}/lib/hs-crypto/imports"],
++     import_dirs = ["${PREFIX}/lib/hs-crypto/imports/HScrypto"],
 +#else
 +     import_dirs = ["${WRKDIST}"],
 +#endif
