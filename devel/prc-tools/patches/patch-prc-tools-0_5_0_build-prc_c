@@ -1,6 +1,6 @@
-$OpenBSD: patch-prc-tools-0_5_0_build-prc_c,v 1.1 2001/08/22 18:30:59 pvalchev Exp $
---- prc-tools-0.5.0/build-prc.c.orig	Fri Jun 27 10:59:32 1997
-+++ prc-tools-0.5.0/build-prc.c	Wed Aug 22 12:23:06 2001
+$OpenBSD: patch-prc-tools-0_5_0_build-prc_c,v 1.2 2001/08/30 22:16:42 pvalchev Exp $
+--- ../prc-tools-0.5.0/build-prc.c.orig	Fri Jun 27 10:59:32 1997
++++ ../prc-tools-0.5.0/build-prc.c	Wed Aug 22 12:23:06 2001
 @@ -9,6 +9,7 @@
  #include <stdio.h>
  #include <fcntl.h>

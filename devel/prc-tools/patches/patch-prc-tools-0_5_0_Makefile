@@ -1,17 +1,16 @@
-$OpenBSD: patch-prc-tools-0_5_0_Makefile,v 1.1 2001/08/22 18:30:59 pvalchev Exp $
---- prc-tools-0.5.0/Makefile.orig	Thu Jul 10 05:14:12 1997
-+++ prc-tools-0.5.0/Makefile	Wed Aug 22 12:23:05 2001
-@@ -2,8 +2,7 @@ CC = gcc
+--- Makefile.orig	Thu Jul 10 05:14:12 1997
++++ Makefile	Thu Aug 23 19:48:54 2001
+@@ -2,8 +2,7 @@
  CFLAGS = -O2 -g
  # -g -DDEBUG
  
 -PREFIX = /usr/local/gnu
 -HOST = i386-slackware-linux
-+PREFIX = /usr/local/pilot
++#PREFIX = /usr/local/pilot
  TARGET-NAME = m68k-palmos-coff
  
  EXEEXT = 
-@@ -15,15 +14,15 @@ BINUTILSDIR = ../binutils-2.7
+@@ -15,15 +14,15 @@
  GCCDIR = ../gcc-2.7.2.2
  GDBDIR = ../gdb-4.16
  
@@ -30,39 +29,87 @@ $OpenBSD: patch-prc-tools-0_5_0_Makefile,v 1.1 2001/08/22 18:30:59 pvalchev Exp 
  
  LIBCDIR = libc.0.1.2
  LIBMDIR = libmf.0.1.2
-@@ -70,9 +69,9 @@ install: all dummy install-man
- 	cp -f build-prc$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
- 	cp -f stubgen $(PREFIX)/$(TARGET-NAME)/bin
- 	cp -f exportlist $(PREFIX)/$(TARGET-NAME)/bin
+@@ -34,6 +33,8 @@
+ # export doesn't work on make in gnuwin32 b18...
+ MAKEEXPORTS = PREFIX=$(PREFIX) TOOLDIR=$(TOOLDIR) \
+ 	LIBCDIR=$(LIBCDIR) LIBMDIR=$(LIBMDIR) LIBGLIBDIR=$(LIBGLIBDIR)
++IEXPORTS = PREFIX=$(DPREFIX) TOOLDIR=$(TOOLDIR) \
++	LIBCDIR=$(LIBCDIR) LIBMDIR=$(LIBMDIR) LIBGLIBDIR=$(LIBGLIBDIR)
+ 
+ all: gdbpanel/gdbpanel.prc example/pilrctst.prc
+ 
+@@ -61,27 +62,27 @@
+ 	make install
+ 
+ install: all dummy install-man
+-	cd $(LIBCDIR) ; make $(MAKEEXPORTS) install
+-	cd $(LIBMDIR) ; make $(MAKEEXPORTS) install
+-	cd $(LIBGLIBDIR) ; make $(MAKEEXPORTS) install
+-	cp -f pilrc$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
+-	cp -f txt2bitm$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
+-	cp -f obj-res$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
+-	cp -f build-prc$(EXEEXT) $(PREFIX)/$(TARGET-NAME)/bin
+-	cp -f stubgen $(PREFIX)/$(TARGET-NAME)/bin
+-	cp -f exportlist $(PREFIX)/$(TARGET-NAME)/bin
 -	-cp -raf PalmOS1 $(PREFIX)/$(TARGET-NAME)/include
 -	-cp -raf PalmOS2 $(PREFIX)/$(TARGET-NAME)/include
 -	ln -snf $(PREFIX)/$(TARGET-NAME)/include/PalmOS2 $(PREFIX)/$(TARGET-NAME)/include/PalmOS
-+	-cp -rf PalmOS1 $(PREFIX)/$(TARGET-NAME)/include
-+	-cp -rf PalmOS2 $(PREFIX)/$(TARGET-NAME)/include
-+	ln -sf $(PREFIX)/$(TARGET-NAME)/include/PalmOS2 $(PREFIX)/$(TARGET-NAME)/include/PalmOS
- 	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/pilrc$(EXEEXT) $(PREFIX)/bin/pilrc$(EXEEXT)
- 	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/txt2bitm$(EXEEXT) $(PREFIX)/bin/txt2bitm$(EXEEXT)
- 	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/obj-res$(EXEEXT) $(PREFIX)/bin/$(TARGET-NAME)-obj-res$(EXEEXT)
-@@ -156,19 +155,19 @@ stamp.winpatch:
+-	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/pilrc$(EXEEXT) $(PREFIX)/bin/pilrc$(EXEEXT)
+-	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/txt2bitm$(EXEEXT) $(PREFIX)/bin/txt2bitm$(EXEEXT)
+-	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/obj-res$(EXEEXT) $(PREFIX)/bin/$(TARGET-NAME)-obj-res$(EXEEXT)
+-	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/exportlist $(PREFIX)/bin/$(TARGET-NAME)-exportlist
+-	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/build-prc$(EXEEXT) $(PREFIX)/bin/build-prc$(EXEEXT)
+-	ln -sf $(PREFIX)/$(TARGET-NAME)/bin/stubgen $(PREFIX)/bin/$(TARGET-NAME)-stubgen
++	cd $(LIBCDIR) ; make $(IEXPORTS) install
++	cd $(LIBMDIR) ; make $(IEXPORTS) install
++	cd $(LIBGLIBDIR) ; make $(IEXPORTS) install
++	cp -f pilrc$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
++	cp -f txt2bitm$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
++	cp -f obj-res$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
++	cp -f build-prc$(EXEEXT) $(DPREFIX)/$(TARGET-NAME)/bin
++	cp -f stubgen $(DPREFIX)/$(TARGET-NAME)/bin
++	cp -f exportlist $(DPREFIX)/$(TARGET-NAME)/bin
++	-cp -rf PalmOS1 $(DPREFIX)/$(TARGET-NAME)/include
++	-cp -rf PalmOS2 $(DPREFIX)/$(TARGET-NAME)/include
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/include/PalmOS2 $(PREFIX)/$(TARGET-NAME)/include/PalmOS
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/pilrc$(EXEEXT) $(PREFIX)/bin/pilrc$(EXEEXT)
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/txt2bitm$(EXEEXT) $(PREFIX)/bin/txt2bitm$(EXEEXT)
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/obj-res$(EXEEXT) $(PREFIX)/bin/$(TARGET-NAME)-obj-res$(EXEEXT)
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/exportlist $(PREFIX)/bin/$(TARGET-NAME)-exportlist
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/build-prc$(EXEEXT) $(PREFIX)/bin/build-prc$(EXEEXT)
++	ln -sf $(DPREFIX)/$(TARGET-NAME)/bin/stubgen $(PREFIX)/bin/$(TARGET-NAME)-stubgen
+ 
+ install-man: dummy
+-	cp man/* $(PREFIX)/man/man1
++	cp man/* $(DPREFIX)/man/man1
+ 
+ send: all
+ 	echo Hit the HotSync button on the Pilot connected to $(TTY)
+@@ -156,21 +157,21 @@
  gnutools: stamp.binutils stamp.gcc stamp.gdb
  
  stamp.binutils:
 -	cd $(BINUTILSDIR) ; ./configure --host=$(HOST) --prefix=$(PREFIX) --target=$(TARGET-NAME)
 +	cd $(BINUTILSDIR) ; ./configure --prefix=$(PREFIX) --target=$(TARGET-NAME) -host=$(MACHINE_ARCH)-unknown-freebsd
  	cd $(BINUTILSDIR) ; make
- 	cd $(BINUTILSDIR) ; make install
+-	cd $(BINUTILSDIR) ; make install
++	cd $(BINUTILSDIR) ; PREFIX=$(DPREFIX) make install
  	touch $@
  
  stamp.gcc:
 -	cd $(GCCDIR) ; ./configure --host=$(HOST) --prefix=$(PREFIX) --target=$(TARGET-NAME)
 +	cd $(GCCDIR) ; ./configure --prefix=$(PREFIX) --target=$(TARGET-NAME) --host=$(MACHINE_ARCH)-unknown-freebsd
  	cd $(GCCDIR) ; make LANGUAGES=c
- 	cd $(GCCDIR) ; make LANGUAGES=c install
+-	cd $(GCCDIR) ; make LANGUAGES=c install
++	cd $(GCCDIR) ; PREFIX=$(DPREFIX) make LANGUAGES=c install
  	touch $@
  
  stamp.gdb:
 -	cd $(GDBDIR) ; ./configure --host=$(HOST) --prefix=$(PREFIX) --target=$(TARGET-NAME)
 +	cd $(GDBDIR) ; ./configure --prefix=$(PREFIX) --target=$(TARGET-NAME) --host=$(MACHINE_ARCH)-unknown-freebsd
  	cd $(GDBDIR) ; make
- 	cd $(GDBDIR) ; make install
+-	cd $(GDBDIR) ; make install
++	cd $(GDBDIR) ; PREFIX=$(DPREFIX) make install
  	touch $@
+ 
+ dummy:
