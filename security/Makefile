@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2001/05/24 19:23:36 jakob Exp $
+# $OpenBSD: Makefile,v 1.73 2001/06/06 07:58:27 obecian Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -6,6 +6,7 @@
      SUBDIR += ADMsmb
      SUBDIR += ADMsnmp
      SUBDIR += antisniff
+     SUBDIR += arirang
      SUBDIR += bfbtester
      SUBDIR += bounix
      SUBDIR += cfs
