@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/10/16 16:55:11 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/20 15:17:04 naddy Exp $
 bin/gnome-font-install
 include/gnome-1.0/libgnomeprint/gnome-font-dialog.h
 include/gnome-1.0/libgnomeprint/gnome-font-face-private.h
@@ -75,13 +75,13 @@ share/gnome-print/profiles/pdf.profile
 share/gnome/fonts/adobe-urw.font
 share/gnome/fonts/defaults.fontmap
 %%SHARED%%
-@comment @dirrm share/gnome/fonts
 @dirrm share/gnome-print/profiles
 @dirrm share/gnome-print
-@comment @dirrm share/gnome
-@comment @dirrm share/fonts/afms/adobe
-@comment @dirrm share/fonts/afms
-@comment @dirrm share/fonts
+@dirrm share/gnome/fonts
+@dirrm share/gnome
+@dirrm share/fonts/afms/adobe
+@dirrm share/fonts/afms
+@dirrm share/fonts
 @dirrm include/gnome-1.0/libgnomeprint
 @exec %D/bin/gnome-font-install --smart
 @cwd /var/db
