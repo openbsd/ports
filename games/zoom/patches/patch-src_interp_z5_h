@@ -1,0 +1,133 @@
+$OpenBSD: patch-src_interp_z5_h,v 1.1 2004/01/02 18:56:37 espie Exp $
+--- src/interp_z5.h.orig	2004-01-02 19:48:55.000000000 +0100
++++ src/interp_z5.h	2004-01-02 19:51:11.000000000 +0100
+@@ -1557,8 +1557,7 @@ printf("check_argcount\n");
+         {
+         case 0x0: /* save */
+ #ifdef DEBUG
+-printf("ExtOp: save
+-");
++printf("ExtOp: save\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1568,8 +1567,7 @@ printf("ExtOp: save
+ 
+         case 0x1: /* restore */
+ #ifdef DEBUG
+-printf("ExtOp: restore
+-");
++printf("ExtOp: restore\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1579,8 +1577,7 @@ printf("ExtOp: restore
+ 
+         case 0x2: /* log_shift */
+ #ifdef DEBUG
+-printf("ExtOp: log_shift
+-");
++printf("ExtOp: log_shift\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1590,8 +1587,7 @@ printf("ExtOp: log_shift
+ 
+         case 0x3: /* art_shift */
+ #ifdef DEBUG
+-printf("ExtOp: art_shift
+-");
++printf("ExtOp: art_shift\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1601,8 +1597,7 @@ printf("ExtOp: art_shift
+ 
+         case 0x4: /* set_font */
+ #ifdef DEBUG
+-printf("ExtOp: set_font
+-");
++printf("ExtOp: set_font\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1612,8 +1607,7 @@ printf("ExtOp: set_font
+ 
+         case 0x9: /* save_undo */
+ #ifdef DEBUG
+-printf("ExtOp: save_undo
+-");
++printf("ExtOp: save_undo\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1623,8 +1617,7 @@ printf("ExtOp: save_undo
+ 
+         case 0xa: /* restore_undo */
+ #ifdef DEBUG
+-printf("ExtOp: restore_undo
+-");
++printf("ExtOp: restore_undo\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1634,8 +1627,7 @@ printf("ExtOp: restore_undo
+ 
+         case 0xb: /* print_unicode */
+ #ifdef DEBUG
+-printf("ExtOp: print_unicode
+-");
++printf("ExtOp: print_unicode\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_print_unicode_578(stack, &argblock);
+@@ -1644,8 +1636,7 @@ printf("ExtOp: print_unicode
+ 
+         case 0xc: /* check_unicode */
+ #ifdef DEBUG
+-printf("ExtOp: check_unicode
+-");
++printf("ExtOp: check_unicode\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1655,8 +1646,7 @@ printf("ExtOp: check_unicode
+ 
+         case 0x80: /* start_timer */
+ #ifdef DEBUG
+-printf("ExtOp: start_timer
+-");
++printf("ExtOp: start_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_start_timer_45678(stack, &argblock);
+@@ -1665,8 +1655,7 @@ printf("ExtOp: start_timer
+ 
+         case 0x81: /* stop_timer */
+ #ifdef DEBUG
+-printf("ExtOp: stop_timer
+-");
++printf("ExtOp: stop_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_stop_timer_45678(stack, &argblock);
+@@ -1675,8 +1664,7 @@ printf("ExtOp: stop_timer
+ 
+         case 0x82: /* read_timer */
+ #ifdef DEBUG
+-printf("ExtOp: read_timer
+-");
++printf("ExtOp: read_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1686,8 +1674,7 @@ printf("ExtOp: read_timer
+ 
+         case 0x83: /* print_timer */
+ #ifdef DEBUG
+-printf("ExtOp: print_timer
+-");
++printf("ExtOp: print_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_print_timer_45678(stack, &argblock);

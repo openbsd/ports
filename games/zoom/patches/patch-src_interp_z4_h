@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_interp_z4_h,v 1.1 2004/01/02 18:56:37 espie Exp $
+--- src/interp_z4.h.orig	2004-01-02 19:48:15.000000000 +0100
++++ src/interp_z4.h	2004-01-02 19:48:48.000000000 +0100
+@@ -1332,8 +1332,7 @@ printf("scan_table\n");
+         {
+         case 0x80: /* start_timer */
+ #ifdef DEBUG
+-printf("ExtOp: start_timer
+-");
++printf("ExtOp: start_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_start_timer_45678(stack, &argblock);
+@@ -1342,8 +1341,7 @@ printf("ExtOp: start_timer
+ 
+         case 0x81: /* stop_timer */
+ #ifdef DEBUG
+-printf("ExtOp: stop_timer
+-");
++printf("ExtOp: stop_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_stop_timer_45678(stack, &argblock);
+@@ -1352,8 +1350,7 @@ printf("ExtOp: stop_timer
+ 
+         case 0x82: /* read_timer */
+ #ifdef DEBUG
+-printf("ExtOp: read_timer
+-");
++printf("ExtOp: read_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+           store = GetCode(pc+3+padding);
+@@ -1363,8 +1360,7 @@ printf("ExtOp: read_timer
+ 
+         case 0x83: /* print_timer */
+ #ifdef DEBUG
+-printf("ExtOp: print_timer
+-");
++printf("ExtOp: print_timer\n");
+ #endif
+           padding = zmachine_decode_varop(stack, &GetCode(pc+2), &argblock);
+       zcode_op_print_timer_45678(stack, &argblock);
