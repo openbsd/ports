@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2001/03/04 06:21:38 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2001/03/18 02:07:45 brad Exp $
 
 DISTNAME=	libpng-1.0.9
 PKGNAME=	png-1.0.9
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= libpng
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-L. -lpng -lz -lm"
-FAKE_FLAGS+=	${MAKE_FLAGS}
+FAKE_FLAGS+=	${MAKE_FLAGS} prefix="${PREFIX}"
 
 MAKE_FILE=	scripts/makefile.std
 
