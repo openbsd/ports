@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/20 14:12:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/21 00:43:01 pvalchev Exp $
 
 COMMENT=	"gtk-based icq 2000 client"
 
-DISTNAME=	ickle-0.1.2
+DISTNAME=	ickle-0.2.0
 CATEGORIES=	net
-NEED_VERSION=	1.480
+NEED_VERSION=	1.502
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ickle
 
 HOMEPAGE=	http://ickle.sourceforge.net
 
-MAINTAINER=	Federico Schwindt <fgsch@openbsd.org>
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 LIB_DEPENDS=	gdkmm.2,gtkmm.2::x11/gtkmm
 
@@ -22,9 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=		Yes
 
 CONFIGURE_STYLE= 	gnu
-
-post-patch:
-	@mv ${WRKSRC}/icons ${WRKSRC}/icons.old; \
-	mv ${WRKSRC}/icons.icq ${WRKSRC}/icons
+CONFIGURE_ENV=	LDFLAGS="-L${WRKBUILD}/src/.libs -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
