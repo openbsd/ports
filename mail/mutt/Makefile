@@ -1,30 +1,28 @@
-# $OpenBSD: Makefile,v 1.13 1999/04/02 00:37:50 turan Exp $
+# $OpenBSD: Makefile,v 1.14 1999/04/28 23:50:02 brad Exp $
 
-DISTNAME=		mutt-0.95.4i
-CATEGORIES=     	mail
-WRKSRC=			${WRKDIR}/mutt-0.95.4
+DISTNAME=	mutt-0.95.4i
+CATEGORIES=     mail
+WRKSRC=		${WRKDIR}/mutt-0.95.4
 
-#MIRROR_DISTFILE=	no
+MAINTAINER=	turan@openbsd.org
 
-MAINTAINER=		turan@cvs.openbsd.org
+MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
+		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
+		ftp://ftp.gbnet.net/pub/mutt-international/ \
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
+		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ 
 
-MASTER_SITES=		ftp://ftp.guug.de/pub/mutt/ \
-			ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
-			ftp://ftp.gbnet.net/pub/mutt-international/ \
-			ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-			ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ 
+GNU_CONFIGURE=	yes
+SYSCONFDIR=	${PREFIX}/share/mutt
+CONFIGURE_ARGS=	--prefix=/usr/local \
+		--with-slang=/usr/local \
+		--with-docdir=/usr/local/share/doc/mutt \
+		--with-sharedir=/usr/local/share/mutt
 
-GNU_CONFIGURE=		yes
-SYSCONFDIR=		${PREFIX}/share/mutt
-CONFIGURE_ARGS=		--prefix=/usr/local \
-			--with-slang=/usr/local \
-			--with-docdir=/usr/local/share/doc/mutt \
-			--with-sharedir=/usr/local/share/mutt
+LIB_DEPENDS=	slang.1.22:${PORTSDIR}/devel/libslang
 
-LIB_DEPENDS=    slang.1.22:${PORTSDIR}/devel/libslang
-
-.if !defined(NO_WARNINGS)
 pre-fetch:
+.if !defined(NO_WARNINGS)
 	@${ECHO}
 	@${ECHO} '**********************************************************'
 	@${ECHO} '* This software contains cryptographic enabling code.    *'
