@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/06 00:02:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/06 16:36:56 pvalchev Exp $
 
 COMMENT=	"organic fireworks demo"
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	SDL.0.1:sdl-*-!no_x11:devel/sdl
 
 USE_X11=	Yes
 
+SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 
 post-install:
