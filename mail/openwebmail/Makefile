@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/11/27 06:49:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/29 05:43:17 pvalchev Exp $
 
 COMMENT=	"highly configurable webmail client"
 
@@ -20,8 +20,7 @@ MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/ \
 EXTRACT_SUFX=	.tgz
 EXTRACT_CASES=  *.tgz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xpf -;;
 
-RUN_DEPENDS=	::www/p5-CGI \
-		::databases/p5-ldap \
+RUN_DEPENDS=	::databases/p5-ldap \
 		::textproc/ispell
 
 NO_BUILD=	Yes
