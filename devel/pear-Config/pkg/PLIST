@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/24 18:47:18 avsm Exp $
+pear/doc/Config/docs/Apache.php
+pear/doc/Config/docs/IniCommented.php
+pear/doc/Config/docs/IniFromScratch.php
+pear/lib/.registry/Config.reg
+pear/lib/Config.php
+pear/lib/Config/Container.php
+pear/lib/Config/Container/Apache.php
+pear/lib/Config/Container/GenericConf.php
+pear/lib/Config/Container/IniCommented.php
+pear/lib/Config/Container/IniFile.php
+pear/lib/Config/Container/PHPArray.php
+pear/lib/Config/Container/XML.php
+@dirrm pear/lib/Config/Container
+@dirrm pear/lib/Config
+@dirrm pear/doc/Config/docs
+@dirrm pear/doc/Config
