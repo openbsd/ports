@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2001/09/16 17:03:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2002/01/23 20:53:48 fgsch Exp $
 
+    SUBDIR += uae
     SUBDIR += bochs
     SUBDIR += bochs:debug
     SUBDIR += frodo
