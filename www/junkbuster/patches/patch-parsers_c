@@ -1,12 +1,12 @@
-$OpenBSD: patch-parsers_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+$OpenBSD: patch-parsers_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
 --- parsers.c.orig	Fri Oct 30 22:58:47 1998
-+++ parsers.c	Thu Apr 12 10:53:14 2001
++++ parsers.c	Fri Jun  8 22:17:08 2001
 @@ -244,7 +244,7 @@ list_to_text(struct list *h)
  
  	for(p = h->next; p ; p = p->next) {
  		if(p->str) {
 -			strcpy(s, p->str);
-+			strncpy(s, p->str, size-1);
++			strlcpy(s, p->str, size + 1 - strlen(s));
  			s += strlen(s);
  			*s++ = '\r'; *s++ = '\n';
  		}

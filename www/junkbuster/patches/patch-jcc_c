@@ -1,12 +1,12 @@
-$OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
---- jcc.c.orig	Sat Oct 31 03:58:47 1998
-+++ jcc.c	Sat Apr 14 19:12:41 2001
+$OpenBSD: patch-jcc_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
+--- jcc.c.orig	Fri Oct 30 22:58:47 1998
++++ jcc.c	Fri Jun  8 22:24:37 2001
 @@ -226,7 +226,7 @@ chat(struct client_state *csp)
  	}
  
  	if(http->cmd == NULL) {
 -		strcpy(buf, CHEADER);
-+		strncpy(buf, CHEADER, sizeof(buf)-1);
++		strlcpy(buf, CHEADER, sizeof(buf));
  		write_socket(csp->cfd, buf, strlen(buf));
  		return;
  	}
@@ -20,7 +20,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
 +			   fprintf(stderr, "%s:%d zalloc failed\n", __FILE__, __LINE__);
 +			   exit(-1);
 +			} 
-+			   snprintf(err, (strlen(CNXDOM) + strlen(http->host)) - 1, CNXDOM, http->host);
++			   snprintf(err, (strlen(CNXDOM) + strlen(http->host)), CNXDOM, http->host);
 +			
  		} else {
  			eno = safe_strerror(errno);
@@ -30,7 +30,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
 +			   fprintf(stderr, "%s:%d zalloc failed\n", __FILE__, __LINE__);
 +			   exit(-1);
 +			}
-+			snprintf(err, (strlen(CFAIL) + strlen(http->hostport)) - 1, CFAIL, http->hostport, eno);
++			snprintf(err, (strlen(CFAIL) + strlen(http->hostport)), CFAIL, http->hostport, eno);
  		}
  
  		write_socket(csp->cfd, err, strlen(err));
@@ -44,7 +44,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
 +			   fprintf(stderr, "%s:%d zalloc failed\n", __FILE__, __LINE__);
 +			   exit(-1);
 +			}
-+			snprintf(err,(strlen(CFAIL) + strlen(http->hostport)) - 1, CFAIL, http->hostport, eno);
++			snprintf(err,(strlen(CFAIL) + strlen(http->hostport)), CFAIL, http->hostport, eno);
  			write_socket(csp->cfd, err, strlen(err));
  
  			freez(err);
@@ -53,7 +53,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  
  				eno = safe_strerror(errno);
 -				sprintf(buf, CFAIL, http->hostport, eno);
-+				snprintf(buf, sizeof(buf) - 1, CFAIL, http->hostport, eno);
++				snprintf(buf, sizeof(buf), CFAIL, http->hostport, eno);
  				freez(eno);
  				write_socket(csp->cfd, buf, strlen(buf));
  				return;
@@ -62,7 +62,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  			line_num++;
  
 -			strcpy(tmp, buf);
-+			strncpy(tmp, buf, sizeof(tmp)-1);
++			strlcpy(tmp, buf, sizeof(tmp));
  
  			if((p = strpbrk(tmp, "#\r\n"))) *p = '\0';
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  			while(*p && ((*p == ' ') || (*p == '\t'))) p++;
  
 -			strcpy(arg, p);
-+			strncpy(arg, p, sizeof(arg)-1);
++			strlcpy(arg, p, sizeof(arg));
  
  			p = arg + strlen(arg) - 1;
  
@@ -199,7 +199,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  				fperror(logfp, "");
  
 -				sprintf(buf , "%s: can't fork: errno = %d",
-+				snprintf(buf , sizeof(buf) - 1,"%s: can't fork: errno = %d",
++				snprintf(buf , sizeof(buf),"%s: can't fork: errno = %d",
  					prog, errno);
  
  				write_socket(csp->cfd, buf, strlen(buf));
@@ -208,7 +208,7 @@ $OpenBSD: patch-jcc_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  
  	if(s == NULL) {
 -		sprintf(buf, "(errno = %d)", err);
-+		snprintf(buf, sizeof(buf) - 1,"(errno = %d)", err);
++		snprintf(buf, sizeof(buf),"(errno = %d)", err);
  		s = buf;
  	}
  

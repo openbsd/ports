@@ -1,6 +1,6 @@
-$OpenBSD: patch-ssplit_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
---- ssplit.c.orig	Sat Oct 31 03:58:47 1998
-+++ ssplit.c	Sat Apr 14 19:14:06 2001
+$OpenBSD: patch-ssplit_c,v 1.2 2001/06/09 02:36:49 angelos Exp $
+--- ssplit.c.orig	Fri Oct 30 22:58:47 1998
++++ ssplit.c	Fri Jun  8 22:04:40 2001
 @@ -18,6 +18,7 @@ char *ssplit_rcs = "$Id: ssplit.c,v 1.6 
   *      l = flag indicating whether to ignore leading field separators
   */

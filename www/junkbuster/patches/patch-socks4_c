@@ -1,12 +1,12 @@
-$OpenBSD: patch-socks4_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+$OpenBSD: patch-socks4_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
 --- socks4.c.orig	Fri Oct 30 22:58:47 1998
-+++ socks4.c	Thu Apr 12 10:53:14 2001
++++ socks4.c	Fri Jun  8 22:19:00 2001
 @@ -88,7 +88,7 @@ socks4_connect(struct gateway *gw, struc
  
  	/* build a socks request for connection to the web server */
  
 -	strcpy((char *)&(c->userid), socks_userid);
-+	strncpy((char *)&(c->userid), socks_userid, sizeof(cbuf)-1);
++	strlcpy((char *)&(c->userid), socks_userid, sizeof(cbuf));
  
  	csiz = sizeof(*c) + sizeof(socks_userid) - 1;
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-socks4_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  			return(-1);
  		}
 -		strcpy(((char *)cbuf) + csiz, http->host);
-+		strncpy(((char *)cbuf) + csiz, http->host, sizeof(cbuf)-1);
++		strlcpy(((char *)cbuf) + csiz, http->host, sizeof(cbuf));
  		csiz = n;
  		break;
  	}
@@ -24,7 +24,7 @@ $OpenBSD: patch-socks4_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  		errstr = (char *) cbuf;
  		errno = ENOENT;
 -		sprintf(errstr,
-+		snprintf(errstr, BUFSIZ-1,
++		snprintf(errstr, sizeof(cbuf),
  			"SOCKS request rejected for reason code %d\n", s->cd);
  	}
  

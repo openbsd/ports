@@ -1,6 +1,6 @@
-$OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+$OpenBSD: patch-loaders_c,v 1.2 2001/06/09 02:36:48 angelos Exp $
 --- loaders.c.orig	Fri Oct 30 22:58:47 1998
-+++ loaders.c	Thu Apr 12 10:53:14 2001
++++ loaders.c	Fri Jun  8 22:32:55 2001
 @@ -8,7 +8,7 @@ char *loaders_rcs = "$Id: loaders.c,v 1.
  #include <stdlib.h>
  #include <sys/types.h>
@@ -15,7 +15,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  	p = url_encode(html_code_map, blockfile);
  
 -	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
-+	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf), "<h2>The file `%s' contains the following patterns</h2>\n", p);
  	freez(p);
  
  	fs->proxy_args = strsav(fs->proxy_args, buf);
@@ -24,7 +24,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  			char rebuf[BUFSIZ];
  
 -			sprintf(rebuf, "^(%s)", b->url->path);
-+			snprintf(rebuf, sizeof(rebuf)-1, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf), "^(%s)", b->url->path);
  
  			errcode = regcomp(b->url->preg, rebuf,
  					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
@@ -33,7 +33,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  	p = url_encode(html_code_map, cookiefile);
  
 -	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
-+	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf), "<h2>The file `%s' contains the following patterns</h2>\n", p);
  
  	freez(p);
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  	p = url_encode(html_code_map, trustfile);
  
 -	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
-+	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf), "<h2>The file `%s' contains the following patterns</h2>\n", p);
  
  	freez(p);
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  			char rebuf[BUFSIZ];
  
 -			sprintf(rebuf, "^(%s)", b->url->path);
-+			snprintf(rebuf, sizeof(rebuf)-1, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf), "^(%s)", b->url->path);
  
  			errcode = regcomp(b->url->preg, rebuf,
  					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
@@ -69,7 +69,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  	p = url_encode(html_code_map, forwardfile);
  
 -	sprintf(buf, "<h2>The file `%s' contains the following patterns</h2>\n", p);
-+	snprintf(buf, sizeof(buf)-1, "<h2>The file `%s' contains the following patterns</h2>\n", p);
++	snprintf(buf, sizeof(buf), "<h2>The file `%s' contains the following patterns</h2>\n", p);
  
  	freez(p);
  
@@ -78,7 +78,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  		}
  
 -		strcpy(buf, vec[0]);
-+		strncpy(buf, vec[0], sizeof(buf)-1);
++		strlcpy(buf, vec[0], sizeof(buf));
  
  		reject = 1;
  
@@ -87,7 +87,7 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  			char rebuf[BUFSIZ];
  
 -			sprintf(rebuf, "^(%s)", b->url->path);
-+			snprintf(rebuf, sizeof(rebuf)-1, "^(%s)", b->url->path);
++			snprintf(rebuf, sizeof(rebuf), "^(%s)", b->url->path);
  
  			errcode = regcomp(b->url->preg, rebuf,
  					(REG_EXTENDED|REG_NOSUB|REG_ICASE));
@@ -96,16 +96,16 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
  	}
  
 -	strcpy(p + old_len, text_to_append);
-+	strncpy(p + old_len, text_to_append, new_len-old_len-1);
++	strlcpy(p + old_len, text_to_append, new_len-old_len);
  	return(p);
  }
  
-@@ -1083,26 +1083,26 @@ savearg(char *c, char *o)
+@@ -1083,26 +1083,28 @@ savearg(char *c, char *o)
  
  	if(c && *c) {
  		if((c = url_encode(html_code_map, c))) {
 -			sprintf(buf, "<a " OPT "%s\">%s</a> ", c, c);
-+			snprintf(buf, sizeof(buf)-1, "<a " OPT "%s\">%s</a> ", c, c);
++			snprintf(buf, sizeof(buf), "<a " OPT "%s\">%s</a> ", c, c);
  		}
  		freez(c);
  	}
@@ -117,25 +117,27 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
 -				strcat(buf, "\">");
 -				strcat(buf, o);
 -				strcat(buf, "</a>");
-+				strncat(buf, "<a href=\"", sizeof(buf)-strlen(buf)-1);
-+				strncat(buf, o, sizeof(buf)-strlen(buf)-1);
-+				strncat(buf, "\">", sizeof(buf)-strlen(buf)-1);
-+				strncat(buf, o, sizeof(buf)-strlen(buf)-1);
-+				strncat(buf, "</a>", sizeof(buf)-strlen(buf)-1);
++				int l = strlen(buf);
++
++				l += strlcat(buf, "<a href=\"", sizeof(buf)-l);
++				l += strlcat(buf, o, sizeof(buf)-l);
++				l += strlcat(buf, "\">", sizeof(buf)-l);
++				l += strlcat(buf, o, sizeof(buf)-l);
++				l += strlcat(buf, "</a>", sizeof(buf)-l);
  			} else {
 -				strcat(buf, o);
-+				strncat(buf, o, sizeof(buf)-strlen(buf)-1);
++				strlcat(buf, o, sizeof(buf)-strlen(buf));
  			}
  		}
  		freez(o);
  	}
  
 -	strcat(buf, "<br>\n");
-+	strncat(buf, "<br>\n", sizeof(buf)-strlen(buf)-1);
++	strlcat(buf, "<br>\n", sizeof(buf)-strlen(buf));
  
  	proxy_args->invocation = strsav(proxy_args->invocation, buf);
  }
-@@ -1164,18 +1164,18 @@ end_proxy_args()
+@@ -1164,18 +1166,18 @@ end_proxy_args()
  
  	b = strsav(b, "<h2>Source versions:</h2>\n");
  	b = strsav(b, "<pre>");
@@ -151,18 +153,18 @@ $OpenBSD: patch-loaders_c,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
 -	sprintf(buf, "%s\n", acl_rcs       );	b = strsav(b, buf);
 -	sprintf(buf, "%s\n", gnu_regex_rcs );	b = strsav(b, buf);
 -	sprintf(buf, "%s\n", win32_rcs     );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", jcc_rcs       );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", parsers_rcs   );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", filters_rcs   );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", loaders_rcs   );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", conn_rcs      );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", bind_rcs      );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", encode_rcs    );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", socks4_rcs    );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", ssplit_rcs    );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", acl_rcs       );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", gnu_regex_rcs );	b = strsav(b, buf);
-+	snprintf(buf, sizeof(buf)-1, "%s\n", win32_rcs     );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", jcc_rcs       );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", parsers_rcs   );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", filters_rcs   );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", loaders_rcs   );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", conn_rcs      );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", bind_rcs      );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", encode_rcs    );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", socks4_rcs    );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", ssplit_rcs    );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", acl_rcs       );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", gnu_regex_rcs );	b = strsav(b, buf);
++	snprintf(buf, sizeof(buf), "%s\n", win32_rcs     );	b = strsav(b, buf);
  	b = strsav(b, "</pre>");
  
  #ifdef REGEX

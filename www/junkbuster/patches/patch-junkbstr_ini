@@ -1,6 +1,6 @@
-$OpenBSD: patch-junkbstr_ini,v 1.1.1.1 2001/04/19 15:46:34 lebel Exp $
+$OpenBSD: patch-junkbstr_ini,v 1.2 2001/06/09 02:36:48 angelos Exp $
 --- junkbstr.ini.orig	Fri Oct 30 22:58:47 1998
-+++ junkbstr.ini	Thu Apr 12 10:53:14 2001
++++ junkbstr.ini	Fri Jun  8 22:04:40 2001
 @@ -16,31 +16,31 @@
  # Many example lines are provided here commented out
  
