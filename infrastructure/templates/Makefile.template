@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.12 2000/02/13 07:14:13 turan Exp $
+# $OpenBSD: Makefile.template,v 1.13 2000/02/13 08:13:46 turan Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -49,8 +49,10 @@ MAINTAINER=		ports@openbsd.org
 # NOFEE:      Can not charge for distribution
 #             The software may be `free', but the copyright states 
 #             `may not charge for distribution' or words to that effect.
-# NONE:       No license/copyright found in source code or 
-#             related documentation.
+# NONE:       No license/copyright found in source code or related 
+#             documentation.  Assume no rights in these cases except for
+#             cases that are obviously meant to be distributed e.g.
+#             patch files, some documentation, etc.
 # PAT:        Patent or Patent Pending
 # PD:         Explicitly stated to be in the Public Domain.
 # RESTRICT:   Restrictive license
@@ -70,8 +72,7 @@ MAINTAINER=		ports@openbsd.org
 # Every distfile can have a different license.  The PERMIT_* values are
 # determined by the most restrictive license.  If you have two licenses
 # that are in conflict, set LICENSE_TYPE="lic1 lic2" and set the appropriate
-# PERMIT_* values to no.  NONE licenses can be ignored if the licenses 
-# differ.  Make SURE you get these values right.
+# PERMIT_* values to no.  Make SURE you get these values right.
 
 LICENSE_TYPE=		"License type"
 PERMIT_PKG_CDROM=	"YES|'Reason if NO'"
