@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/10/15 11:21:33 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/11 19:11:42 wilfried Exp $
 
 COMMENT=	"implements DSA using OpenSSL"
 
-VERSION=	0.10
+VERSION=	0.11
 DISTNAME=	Crypt-OpenSSL-DSA-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
+HOMEPAGE=	http://perl-openssl.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
 MAINTAINER=	Wesley Griffin <wgriffin@jtan.com>
