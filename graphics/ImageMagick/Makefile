@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2000/06/20 23:32:46 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2000/06/25 22:22:25 brad Exp $
 
 DISTNAME=	ImageMagick-5.2.0
 CATEGORIES=     graphics
@@ -12,11 +12,11 @@ MASTER_SITES=	ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 
 HOMEPAGE=	http://www.wizards.dupont.com/cristy/ImageMagick.html
 
-LIB_DEPENDS=	bz2.10.0::archivers/bzip2 \
+LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		jbig.1.2::graphics/jbigkit \
 		jpeg.62::graphics/jpeg \
 		mpeg.13::graphics/mpeg-lib \
-		png.1.6::graphics/png \
+		png.1::graphics/png \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype
 BUILD_DEPENDS=	fig2dev::print/transfig \
