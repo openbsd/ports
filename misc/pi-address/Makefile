@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/27 21:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/06/19 20:47:33 jakob Exp $
 
 COMMENT=	"PalmPilot address database editor"
 
@@ -6,8 +6,6 @@ DISTNAME=	pi-address-0.4.0
 CATEGORIES=	misc x11 palm
 
 HOMEPAGE=	http://me.in-berlin.de/~miwie/pia/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
