@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_prefix_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_prefix_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/prefix.c.orig	Tue Sep 14 08:49:46 2004
 +++ gcc/prefix.c	Tue Sep 14 08:50:06 2004
 @@ -99,7 +99,7 @@ get_key_value (char *key)

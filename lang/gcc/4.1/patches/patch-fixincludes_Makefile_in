@@ -1,4 +1,4 @@
-$OpenBSD: patch-fixincludes_Makefile_in,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-fixincludes_Makefile_in,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- fixincludes/Makefile.in.orig	Fri Jan  7 04:10:08 2005
 +++ fixincludes/Makefile.in	Fri Jan  7 04:10:14 2005
 @@ -163,8 +163,8 @@ $(srcdir)/aclocal.m4: @MAINT@ $(srcdir)/

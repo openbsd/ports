@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_host,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_config_host,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/config.host.orig	Mon Jan 31 14:52:55 2005
 +++ gcc/config.host	Mon Jan 31 14:53:22 2005
 @@ -178,6 +178,10 @@ case ${host} in

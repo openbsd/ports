@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/07 16:30:06 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
 V=4.1.0
-FULL_VERSION=4.1-20050227
+FULL_VERSION=4.1-20050306
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -22,7 +22,6 @@ MAKE_JAVA?=No
 MAKE_ADA?=No
 
 
-BUILD_DEPENDS=	::devel/autoconf/2.13
 BUILD_DEPENDS+= ::devel/autoconf/2.59
 BUILD_DEPENDS+=	::devel/metaauto
 SUBPACKAGE?=

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_ada_adaint_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/ada/adaint.c.orig	Thu Feb 10 14:51:58 2005
 +++ gcc/ada/adaint.c	Tue Feb 22 19:38:40 2005
 @@ -716,7 +716,7 @@ __gnat_open_new_temp (char *path, int fm

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_coverage_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_coverage_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/coverage.c.orig	Tue Sep 14 08:58:02 2004
 +++ gcc/coverage.c	Tue Sep 14 08:58:09 2004
 @@ -812,7 +812,7 @@ build_gcov_info (void)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_cp_parser_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_cp_parser_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/cp/parser.c.orig	Thu Feb 24 22:55:15 2005
 +++ gcc/cp/parser.c	Sun Feb 27 19:09:06 2005
 @@ -15589,7 +15589,7 @@ cp_parser_require (cp_parser* parser,

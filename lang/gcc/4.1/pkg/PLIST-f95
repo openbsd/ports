@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-f95,v 1.1.1.1 2005/02/28 15:12:46 espie Exp $
+@comment $OpenBSD: PLIST-f95,v 1.2 2005/03/07 16:30:06 espie Exp $
 bin/egfortran
 @info info/gfortran.info
 lib/libgfortran.a

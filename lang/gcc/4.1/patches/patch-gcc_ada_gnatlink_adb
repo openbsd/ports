@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_ada_gnatlink_adb,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_ada_gnatlink_adb,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/ada/gnatlink.adb.orig	Fri Jan  7 04:27:56 2005
 +++ gcc/ada/gnatlink.adb	Fri Jan  7 04:28:03 2005
 @@ -123,7 +123,7 @@ procedure Gnatlink is

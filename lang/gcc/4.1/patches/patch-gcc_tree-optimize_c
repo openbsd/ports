@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_tree-optimize_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_tree-optimize_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/tree-optimize.c.orig	Thu Feb 17 17:19:41 2005
 +++ gcc/tree-optimize.c	Tue Feb 22 19:44:27 2005
 @@ -221,18 +221,18 @@ register_one_dump_file (struct tree_opt_

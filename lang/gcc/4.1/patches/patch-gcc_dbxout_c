@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_dbxout_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_dbxout_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/dbxout.c.orig	Wed Feb 16 20:01:29 2005
 +++ gcc/dbxout.c	Tue Feb 22 19:38:42 2005
 @@ -999,7 +999,7 @@ dbxout_init (const char *input_file_name

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2005/02/28 15:12:46 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2005/03/07 16:30:06 espie Exp $
 bin/ec++
 bin/eg++
 bin/${CONFIG}-ec++
@@ -231,6 +231,8 @@ include/c++/${V}/tr1/functional
 include/c++/${V}/tr1/functional_iterate.h
 include/c++/${V}/tr1/hashtable
 include/c++/${V}/tr1/memory
+include/c++/${V}/tr1/ref_wrap_iterate.h
+include/c++/${V}/tr1/repeat.h
 include/c++/${V}/tr1/tuple
 include/c++/${V}/tr1/type_traits
 include/c++/${V}/tr1/type_traits_fwd.h

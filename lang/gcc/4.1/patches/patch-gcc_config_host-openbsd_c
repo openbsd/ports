@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_host-openbsd_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_config_host-openbsd_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/config/host-openbsd.c.orig	Mon Jan 31 15:01:58 2005
 +++ gcc/config/host-openbsd.c	Mon Jan 31 16:12:04 2005
 @@ -0,0 +1,41 @@

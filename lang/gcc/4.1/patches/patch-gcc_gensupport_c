@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_gensupport_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
---- gcc/gensupport.c.orig	Thu Dec 16 18:31:58 2004
-+++ gcc/gensupport.c	Mon Jan  3 15:47:20 2005
+$OpenBSD: patch-gcc_gensupport_c,v 1.2 2005/03/07 16:30:06 espie Exp $
+--- gcc/gensupport.c.orig	Sat Mar  5 15:01:01 2005
++++ gcc/gensupport.c	Mon Mar  7 15:31:39 2005
 @@ -219,7 +219,7 @@ process_include (rtx desc, int lineno)
  	{
  	  static const char sep[2] = { DIR_SEPARATOR, '\0' };
@@ -19,21 +19,3 @@ $OpenBSD: patch-gcc_gensupport_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
    else
      pathname = xstrdup (filename);
    input_file = fopen (pathname, "r");
-@@ -317,7 +317,7 @@ process_rtx (rtx desc, int lineno)
- 	   insn condition to create the new split condition.  */
- 	split_cond = XSTR (desc, 4);
- 	if (split_cond[0] == '&' && split_cond[1] == '&')
--	  split_cond = concat (XSTR (desc, 2), split_cond, NULL);
-+	  split_cond = concat (XSTR (desc, 2), split_cond, (void *)0);
- 	XSTR (split, 1) = split_cond;
- 	XVEC (split, 2) = XVEC (desc, 5);
- 	XSTR (split, 3) = XSTR (desc, 6);
-@@ -672,7 +672,7 @@ alter_test_for_insn (struct queue_elem *
-   if (!insn_test || *insn_test == '\0')
-     return ce_test;
- 
--  return concat ("(", ce_test, ") && (", insn_test, ")", NULL);
-+  return concat ("(", ce_test, ") && (", insn_test, ")", (void *)0);
- }
- 
- /* Adjust all of the operand numbers in SRC to match the shift they'll

@@ -1,4 +1,4 @@
-$OpenBSD: patch-libtool_m4,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-libtool_m4,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- libtool.m4.orig	Tue Nov 30 00:45:17 2004
 +++ libtool.m4	Mon Jan  3 15:47:20 2005
 @@ -696,6 +696,10 @@ newsos6)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_tree-mudflap_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_tree-mudflap_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/tree-mudflap.c.orig	Tue Sep 14 08:50:49 2004
 +++ gcc/tree-mudflap.c	Tue Sep 14 08:51:00 2004
 @@ -232,7 +232,7 @@ mf_file_function_line_tree (location_t l

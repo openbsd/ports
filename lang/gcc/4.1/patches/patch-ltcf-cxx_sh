@@ -1,4 +1,4 @@
-$OpenBSD: patch-ltcf-cxx_sh,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-ltcf-cxx_sh,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- ltcf-cxx.sh.orig	Tue Aug  3 02:52:06 2004
 +++ ltcf-cxx.sh	Tue Sep 14 01:24:15 2004
 @@ -452,6 +452,19 @@ case $host_os in

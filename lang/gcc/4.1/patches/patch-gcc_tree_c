@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_tree_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_tree_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/tree.c.orig	Tue Feb 22 21:13:48 2005
 +++ gcc/tree.c	Tue Feb 22 21:14:02 2005
 @@ -5936,11 +5936,11 @@ build_common_builtin_nodes (void)

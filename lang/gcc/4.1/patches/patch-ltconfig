@@ -1,4 +1,4 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-ltconfig,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- ltconfig.orig	Sat Oct  2 18:33:06 2004
 +++ ltconfig	Sun Feb 27 19:13:08 2005
 @@ -625,7 +625,12 @@ old_postuninstall_cmds=

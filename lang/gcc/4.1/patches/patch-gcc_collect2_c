@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_collect2_c,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_collect2_c,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/collect2.c.orig	Mon Jan 17 16:23:51 2005
 +++ gcc/collect2.c	Mon Jan 17 16:24:43 2005
 @@ -779,19 +779,19 @@ main (int argc, char **argv)

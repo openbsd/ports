@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_x-openbsd,v 1.1.1.1 2005/02/28 15:12:45 espie Exp $
+$OpenBSD: patch-gcc_config_x-openbsd,v 1.2 2005/03/07 16:30:06 espie Exp $
 --- gcc/config/x-openbsd.orig	Mon Jan 31 14:50:47 2005
 +++ gcc/config/x-openbsd	Mon Jan 31 14:51:13 2005
 @@ -0,0 +1,4 @@
