@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_screen_1,v 1.1 2002/08/21 20:12:02 brad Exp $
---- doc/screen.1.orig	Wed Aug 21 15:41:38 2002
-+++ doc/screen.1	Wed Aug 21 15:56:18 2002
+$OpenBSD: patch-doc_screen_1,v 1.2 2002/09/18 13:25:13 brad Exp $
+--- doc/screen.1.orig	Thu Sep  5 08:08:06 2002
++++ doc/screen.1	Tue Sep 17 23:16:48 2002
 @@ -99,7 +99,7 @@ create the new window.
  The above example would start the emacs editor (editing prog.c) and switch
  to its window.
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_screen_1,v 1.1 2002/08/21 20:12:02 brad Exp $
  \*Q.screenrc\*U in the user's home directory. These are the \*Qprogrammer's
  defaults\*U that can be overridden in the following ways: for the
  global screenrc file 
-@@ -1601,7 +1601,7 @@ and then compile the entry with 
+@@ -1610,7 +1610,7 @@ and then compile the entry with 
  The echo command may be used to annoy 
  .I screen
  users with a 'message of the
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_screen_1,v 1.1 2002/08/21 20:12:02 brad Exp $
  The option \*Q-n\*U may be used to suppress the line feed.
  See also \*Qsleep\*U.
  Echo is also useful for online checking of environment variables.
-@@ -4271,12 +4271,12 @@ Examples in the 
+@@ -4298,12 +4298,12 @@ Examples in the 
  .I screen
  distribution package for private and global initialization files.
  .IP $SYSSCREENRC 
@@ -52,7 +52,7 @@ $OpenBSD: patch-doc_screen_1,v 1.1 2002/08/21 20:12:02 brad Exp $
  .IP $SCREENDIR/S-<login>
  .IP /local/screens/S-<login>
  Socket directories (default)
-@@ -4297,7 +4297,7 @@ Output log files created by the log func
+@@ -4324,7 +4324,7 @@ Output log files created by the log func
  or
  .IP /etc/termcap
  Terminal capability databases
@@ -61,7 +61,7 @@ $OpenBSD: patch-doc_screen_1,v 1.1 2002/08/21 20:12:02 brad Exp $
  Login records
  .IP $LOCKPRG
  Program that locks a terminal.
-@@ -4410,9 +4410,9 @@ does not make use of hardware tabs.
+@@ -4437,9 +4437,9 @@ does not make use of hardware tabs.
  must be installed as set-uid with owner root on most systems in order
  to be able to correctly change the owner of the tty device file for
  each window.
