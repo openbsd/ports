@@ -1,7 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.4 2000/08/06 11:51:41 brad Exp $
+bin/uufilter
 bin/xloadimage
-bin/xview
 bin/xsetbg
-lib/X11/app-defaults/Xloadimage
-man/cat1/xloadimage.0
-man/cat1/xview.0
-man/cat1/xsetbg.0
+bin/xview
+man/man1/uufilter.1
+man/man1/xloadimage.1
+man/man1/xsetbg.1
+man/man1/xview.1
+share/examples/xloadimagerc-sample

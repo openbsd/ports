@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun Aug  6 06:12:41 2000
++++ Makefile.in	Sun Aug  6 06:16:15 2000
+@@ -4,7 +4,7 @@
+ 
+ CC = @CC@
+ DEFS = @DEFS@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @X_CFLAGS@ @CPPFLAGS@
+ XLIB = @X_LIBS@ @X_PRE_LIBS@ -lX11 @X_EXTRA_LIBS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+@@ -24,7 +24,7 @@
+ $(PROG): $(OBJS)
+ 	./build-info
+ 	$(CC) $(CFLAGS) -c $(DEFS) build.c 
+-	$(CC) -o $@ $(OBJS) build.o$(LDFLAGS) $(XLIB) $(LIBS)
++	$(CC) -o $@ $(OBJS) build.o $(LDFLAGS) $(XLIB) $(LIBS)
+ 
+ uufilter: uufilter.c
+ 	$(CC) $(CFLAGS) $(DEFS) uufilter.c -o $@
