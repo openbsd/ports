@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2003/06/23 19:11:11 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2003/08/16 06:57:50 pvalchev Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -84,6 +84,7 @@ post-patch:
 	cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
 	cd ${WRKDIST} && patch -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
 	mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
+	rm ${WRKDIST}/conf/master.cf.orig
 	cd ${WRKDIST} && patch -p0 < ${FILESDIR}/patch-tls-master.cf
 	rm ${WRKDIST}/conf/*.orig
 
