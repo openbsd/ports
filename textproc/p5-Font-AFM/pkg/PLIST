@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/07/11 09:30:09 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/31 18:44:46 naddy Exp $
 ${P5SITE}/Font/AFM.pm
 ${P5SITE}/Font/Metrics/Courier.pm
 ${P5SITE}/Font/Metrics/CourierBold.pm
@@ -12,5 +12,12 @@ ${P5SITE}/Font/Metrics/TimesBold.pm
 ${P5SITE}/Font/Metrics/TimesBoldItalic.pm
 ${P5SITE}/Font/Metrics/TimesItalic.pm
 ${P5SITE}/Font/Metrics/TimesRoman.pm
+@comment ${P5ARCH}/auto/Font/AFM/.packlist
 man/man3p/Font::AFM.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Font/AFM
+@comment @dirrm ${P5ARCH}/auto/Font
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
 @dirrm ${P5SITE}/Font/Metrics
+@dirrm ${P5SITE}/Font
