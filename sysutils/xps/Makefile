@@ -3,7 +3,7 @@
 # Date created:         28 April 2001
 # Whom:                 Angelos D. Keromytis (angelos@openbsd.org)
 #
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 05:38:33 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/07 06:32:33 angelos Exp $
 #
 
 DISTNAME=       xps-3.21
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=		--x-includes=/usr/local/include \
 			--with-motif-libs=/usr/local/lib
 
 USE_X11=		Yes
-NEED_MOTIF=		Yes
+NEED_MOTIF=		any
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xps ${PREFIX}/bin
