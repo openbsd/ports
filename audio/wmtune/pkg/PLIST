@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/16 15:30:47 wilfried Exp $
+bin/wmtune
+man/man1/wmtune.1
+share/examples/wmtune/sample.wmtunerc
+@dirrm share/examples/wmtune

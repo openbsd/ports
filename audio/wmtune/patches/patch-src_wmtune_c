@@ -1,0 +1,336 @@
+$OpenBSD: patch-src_wmtune_c,v 1.1.1.1 2001/03/16 15:30:48 wilfried Exp $
+--- src/wmtune.c.orig	Sat Sep 11 11:49:24 1999
++++ src/wmtune.c	Tue Jan 30 22:19:45 2001
+@@ -18,27 +18,24 @@
+  ****************************************************************
+  */
+ 
+-#if !defined Linux
+-#	if (defined NetBSD || defined OpenBSD)
+-#		warning Compiling for NetBSD/OpenBSD using /dev/io style IO.
+-#		include <i386/pio.h>
+-#	else
+-#		if defined FreeBSD
+-#			warning Compiling for FreeBSD using /dev/io style IO.
+-#			include <machine/cpufunc.h>
+-#		endif
+-#	endif
+-#else
+-#	warning Compiling for Linux using ioperm/iopl style IO.
+-#	include <asm/io.h>
+-#endif
+-
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <errno.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ 
++#ifdef linux
++#warning Compiling for Linux using ioperm/iopl style IO.
++#include <asm/io.h>
++#elif (defined __NetBSD__ || defined __OpenBSD__)
++#include <machine/pio.h>
++#include <machine/sysarch.h>
++#elif defined __FreeBSD__
++#warning Compiling for FreeBSD using /dev/io style IO.
++#include <machine/cpufunc.h>
++#endif
++
+ #include <X11/xpm.h>
+ 
+ #include <time.h>
+@@ -55,7 +52,10 @@
+ #define OFF 0
+ #define TRUE 1
+ #define FALSE 0
++
++#ifdef RADIOTRACK
+ #define FCODE(f)    ((int)(((float)(f)-88.0)*40)+0xf6c)
++#endif
+ 
+ /* #define RADIOTRACK */
+ /* #define KERNEL     */
+@@ -68,17 +68,19 @@
+ 	#include <linux/ioctl.h>
+ #endif
+ 
+-#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
+-	#define OUTW(word,port)  outw(port,word)
+-	#define OUTB(byte,port)  outb(port,byte)
+-#else
++#ifdef linux 
+ 	#define OUTW(word,port)  outw(word,port)
+ 	#define OUTB(byte,port)  outb(byte,port)
++#else
++	#define OUTW(word,port)  outw(port,word)
++	#define OUTB(byte,port)  outb(port,byte)
+ #endif
+ 
+ // Data Types
+-#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
++#if (defined __FreeBSD__ || defined __NetBSD__)
+ 	int fpiopl;
++#elif defined __OpenBSD__
++	unsigned long iomap[32];
+ #endif
+ 
+ 	unsigned int max_presets;
+@@ -127,7 +129,6 @@ void VolumeUp(void);
+ void VolumeDown(void);
+ void TuneUp(void);
+ void TuneDown(void);
+-void RadioOut(int, int);
+ void PresetHandler(int);
+ void ScanUp(void);
+ void ScanDown(void);
+@@ -139,10 +140,16 @@ int TestTune(void);
+ void TestFreq(void);
+ #ifdef ZOLTRIX
+ void tuneFreq(double freq,int fast);
++#elif defined RADIOTRACK
++void RadioOut(int, int);
++#elif defined AZTECH
++void Change_Frequency(unsigned long);
++void send_zero(void);
++void send_one(void);
+ #endif
+ 
+ // Main
+-void main(int argc,char *argv[])
++int main(int argc,char *argv[])
+ {
+ 	myname = argv[0];
+ 	ParseCMDLine(argc,argv);
+@@ -214,13 +221,18 @@ while (1)
+ 			break;
+ 			case DestroyNotify:
+ 				XCloseDisplay(display);
+-				#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
++				#if (defined __FreeBSD__ || defined __NetBSD__)
+ 				close(fpiopl);
++				#elif defined __OpenBSD__
++				memset(iomap, 0xFFFF, sizeof(iomap));
++				i386_set_ioperm(iomap);
+ 				#else
+ 					#ifdef RADIOTRACK
+ 					ioperm(rport,2,0);
+ 					#elif defined ZOLTRIX
+ 					ioperm(rport,4,0);
++					#elif defined AZTECH
++					ioperm(rport,1,0);
+ 					#endif
+ 				#endif
+ 				exit(0);
+@@ -434,8 +446,8 @@ while (1)
+ 	usleep(5000);
+ 	if (alarm_state == ON)
+ 	{
+-		current_time = time(0);
+-		time_struct = localtime(&current_time);
++		current_time = time(NULL);
++		time_struct = localtime((time_t *)&current_time);
+ 		if(hour == time_struct->tm_hour);
+ 		{
+ 			if (minute == time_struct->tm_min)
+@@ -455,11 +467,14 @@ while (1)
+ 		}		
+ 	}
+ } // while
++
++return 0;
+ } // main
+ 
+ void RadioOn(void)
+ {
+ 	radio_status = ON;
++	if ( volume == 0 ) volume = 1;
+ 	copyXPMArea(93, 90, 13, 5, 44, 9); 
+ 	RedrawWindowXYWH(44, 9, 13, 5); 	// Mhz/Khz
+ 	copyXPMArea(96, 79, 11, 7, 45, 22);
+@@ -503,6 +518,8 @@ void FastFreqUpdate(void)
+ 	unsigned long xl_freq = (unsigned long)(freqf*100*get_freq_fact(fd));
+ 	ioctl (fd, VIDIOCSFREQ, &xl_freq);
+ 	close (fd);
++#elif defined AZTECH
++	Change_Frequency(freqf*100);
+ #endif
+ }
+ 
+@@ -683,23 +700,35 @@ void ScanDown(void)
+ 
+ void CheckIOPerms(void)
+ {
+-	#if (defined FreeBSD || defined NetBSD || defined OpenBSD)
++#if (defined __FreeBSD__ || defined __NetBSD__) /* Platform dependent */
+ 	if ((fpiopl = open( "/dev/io", O_RDONLY ) < 0) )
+-	{
+-		fprintf(stderr, "Failed to gain IO privledges.  Am I setuid root?  Is /dev/io accessable by me?\n");
+-		exit(1);
+-	}
+-	#else
+-#ifdef RADIOTRACK
++#elif defined linux
++#ifdef RADIOTRACK /* Card dependent for linux */
+ 	if (ioperm(rport,2,1) < 0)
+ #elif defined ZOLTRIX
+ 	if (ioperm(rport,4,0xFFFF) < 0)
+-#endif
++#elif defined AZTECH
++	if (ioperm(rport,1,1) < 0)
++#endif /* Card dependent for linux */
++#elif defined __OpenBSD__
++	int offset;
++	unsigned long mask;
++	offset = rport/32;
++#ifdef RADIOTRACK /* Card dependent for OpenBSD */
++	mask = 0x03 << rport%32;
++#elif defined ZOLTRIX
++	mask = 0x0F << rport%32;
++#elif defined AZTECH
++	mask = 0x01 << rport%32;
++#endif /* Card dependent for OpenBSD */
++	memset(iomap, 0xFFFF, sizeof(iomap));
++	iomap[offset] ^= mask;
++	if ( i386_set_ioperm(iomap) < 0 )
++#endif /* Platform dependent */
+ 	{
+-		fprintf(stderr, "Failed to gain IO privledges.  Am I setuid root?\n");
++		fprintf(stderr, "wmtune: Failed to gain IO privledges: %s\n", strerror(errno));
+ 		exit(1);
+ 	}
+-	#endif
+ }
+ 
+ void ParseCMDLine(int argc,char *argv[])
+@@ -827,6 +856,8 @@ void RadioOff(void)
+ 	cardWrite(0);
+ 	cardWrite(0);
+ 	cardRead(3);
++#elif defined AZTECH
++	 OUTB(0, rport);
+ #elif defined KERNEL
+ 	struct video_audio va;
+ 	int fd = open ("/dev/radio", O_RDONLY);
+@@ -854,6 +885,8 @@ void TuneRadio(void)
+ 	OUTB(0xc8,rport);
+ #elif defined ZOLTRIX
+ 	tuneFreq(freqf,0);
++#elif defined AZTECH
++	Change_Frequency(freqf*100);
+ #elif defined KERNEL
+ 	int fd = open ("/dev/radio", O_RDONLY);
+ 	unsigned long xl_freq = (unsigned long)(freqf*100*get_freq_fact(fd));
+@@ -862,6 +895,7 @@ void TuneRadio(void)
+ #endif
+ }
+ 
++#ifdef RADIOTRACK
+ void RadioOut(int v,int n)
+ {
+     while (n--) 
+@@ -883,6 +917,7 @@ void RadioOut(int v,int n)
+ 	v>>=1;
+ 	}
+ }
++#endif /* RADIOTRACK */
+ 
+ void ButtonDown(int button)
+ {
+@@ -1016,6 +1051,15 @@ void VolumeUp(void)
+ 	cardWrite(volume);
+ 	usleep(10000);
+ 	cardRead(2);
++#elif defined AZTECH
++	if (volume < 5) {
++		switch (volume) {
++			case 0: volume = 1; break;
++			case 1: volume = 4; break;
++			case 4: volume = 5; break;
++		}
++		OUTB(volume, rport);
++	}
+ #elif defined KERNEL
+ 	if (volume < 10) {
+ 	   struct video_audio va;
+@@ -1041,6 +1085,15 @@ void VolumeDown(void)
+ 	cardWrite(volume);
+ 	usleep(10000);
+ 	cardRead(2);
++#elif defined AZTECH
++	if (volume > 0) {
++		switch (volume) {
++			case 5: volume = 4; break;
++			case 4: volume = 1; break;
++			case 1: volume = 0; break;
++		}
++		OUTB(volume, rport);
++	}
+ #elif defined KERNEL
+ 	if (volume > 0) {
+ 	   struct video_audio va;
+@@ -1144,6 +1197,13 @@ int TestTune(void)
+ 	if ((x1 == x2) && (x1 == 0xdf)) 
+ 	   return 1;
+ 	else return 0;
++#elif defined AZTECH
++	int res = inb(rport) & 3;
++	switch ( res ) {
++		case 2:
++		case 1: return 2;
++		case 0: return 1;
++	}
+ #elif defined KERNEL
+ 	struct video_tuner v;
+ 	int fd = open ("/dev/radio", O_RDONLY);
+@@ -1213,3 +1273,49 @@ int ParseRCFile(char *filename)
+ 	fclose(fp);
+ 	return 0;
+ }
++
++#ifdef AZTECH
++void
++Change_Frequency(unsigned long frequency) {
++	int i;
++
++	frequency += 1070;
++	frequency /= 5;
++
++	send_zero();
++
++	for ( i = 0; i < 16; i++ )
++		if ( frequency & (1 << i) )
++			send_one();
++		else
++			send_zero();
++
++	send_one();
++	send_one();
++	send_zero();
++	send_zero();
++	send_one();
++	send_zero();
++	send_one();
++
++	OUTB(0x80+0x40+volume, rport);
++	OUTB(0x80+0x40+volume, rport);
++}
++
++void
++send_zero(void) {
++	OUTB(0x02+volume, rport);
++	OUTB(0x02+volume, rport);
++	OUTB(0x40+0x02+volume, rport);
++	OUTB(0x40+0x02+volume, rport);
++}
++
++void
++send_one(void) {
++	OUTB(0x80+0x02+volume, rport);
++	OUTB(0x80+0x02+volume, rport);
++	OUTB(0x80+0x40+0x02+volume, rport);
++	OUTB(0x80+0x40+0x02+volume, rport);
++}
++
++#endif /* AZTECH */

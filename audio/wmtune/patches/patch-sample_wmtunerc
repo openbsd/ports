@@ -1,0 +1,11 @@
+$OpenBSD: patch-sample_wmtunerc,v 1.1.1.1 2001/03/16 15:30:48 wilfried Exp $
+--- sample.wmtunerc.orig	Wed Feb  2 18:05:36 2000
++++ sample.wmtunerc	Wed Feb  2 18:07:14 2000
+@@ -3,6 +3,7 @@
+ 
+ 0x20c		# hex IO address of your radio card, most likely 0x30f or 0x20f
+ 		# for zoltrix card 0x20c or 0x30c
++		# for aztech card 0x350 or 0x358
+ 
+ # note: presets can be as long as 000.000 and will still be used; yet display
+ # up to the 100th will be trucated.

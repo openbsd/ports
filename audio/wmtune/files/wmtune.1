@@ -1,0 +1,63 @@
+.\" $OpenBSD: wmtune.1,v 1.1.1.1 2001/03/16 15:30:47 wilfried Exp $
+.\"
+.TH WMTune 1 "28 January 2001"
+.SH NAME
+.PP
+\fBwmtune\fP \- premier dockable radio tuner
+.SH SYNOPSIS
+.PP
+.B wmtune
+[\fB-n\fP] [\fB-t\fP \fI<##:##>\fP] [\fB-p\fP \fI<##>\fP] [\fB-d\fP \fIdisplay\fP] [\fB-h\fP]
+.br
+.SH DESCRIPTION
+.PP
+\fBWMTune\fP is a WindowMaker dock.app that controls AIMS Lab Radio-Track, Zoltrix and Aztech/PackardBell FM radio tuner cards.
+.PP
+The + and - buttons are for FINE tuning.
+.PP
+The 2 buttons to the right of the FINE tuning buttons are the SCAN buttons.
+.PP
+The 2 SCAN buttons also double as VOLUME UP/DOWN when using the RIGHT mouse button.
+.PP
+In the bottom left there is a small two digit box in which the currently selected preset will be shown.  The < and > arrow buttons to the left of the box allow to switch between presets easily and quickly.
+.PP
+To the right of the above described things there is yet another button with a miniature ON/OFF logo.  This is used to turn your radio card on/off.
+.PP
+The button with the inscribed letter "A" allows you to control the internal alarm clock/delay timer. Upon pressing the "A" button you will be allowed to set the timer/delay to a time you wish the radio to turn on / off (depending on the current state of
+ the radio) automatically.
+.PP
+After pressing the "A" button the first time you may set the now displayed clock type panel to the desired setting using the SCAN buttons to set your timer in the 24hour format. (be aware in this state other buttons cease to work)  You must press the A 
+button again at which point the indicator light will turn on and the alarm will be set.  Lastly, pressing the "A" button once more, will disengance the timer.
+.SH OPTIONS
+.B
+.IP "\-n"
+Turn radio on initially on startup.
+.B
+.IP "\-t \fI<##:##>\fP"
+Set timer on startup, military time.
+.B
+.IP "-p \fI<##>\fP"
+Set startup preset # listed in wmtunerc file.
+.B
+.IP "\-d \fIdisplay\fP"
+Selects target display.
+.B
+.IP "\-h"
+Display help screen.
+.SH EXAMPLES
+.PP
+wmtune -n -p 5
+.br
+wmtune -p 2 -t 14:35
+.br
+wmtune -n -t 00:00
+.SH FILES
+.PP
+/etc/wmtunerc		global configuration file
+.br
+~/.wmtunerc
+.SH AUTHORS
+.PP
+WMTune written by soren <soren@leiden.org>
+.br
+The manpage written by Vladimir Popov <pva48@mail.ru>
