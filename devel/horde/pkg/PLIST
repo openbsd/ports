@@ -1,0 +1,337 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/01/26 18:42:05 avsm Exp $
+horde/COPYING
+horde/README
+horde/admin/css/find.php
+horde/admin/css/graphics/color_picker.gif
+horde/admin/css/index.php
+horde/admin/css/templates/colorpicker/behavior.js
+horde/admin/css/templates/colorpicker/blue.gif
+horde/admin/css/templates/colorpicker/boxbevel.gif
+horde/admin/css/templates/colorpicker/colorspace.js
+horde/admin/css/templates/colorpicker/colorthumb.gif
+horde/admin/css/templates/colorpicker/getcolor.js
+horde/admin/css/templates/colorpicker/green.gif
+horde/admin/css/templates/colorpicker/grey3.gif
+horde/admin/css/templates/colorpicker/grey4.gif
+horde/admin/css/templates/colorpicker/grey5.gif
+horde/admin/css/templates/colorpicker/hls.jpg
+horde/admin/css/templates/colorpicker/hls_sat.jpg
+horde/admin/css/templates/colorpicker/openit.js
+horde/admin/css/templates/colorpicker/picker_two.html
+horde/admin/css/templates/colorpicker/red.gif
+horde/admin/css/templates/colorpicker/rgb.gif
+horde/admin/css/templates/colorpicker/spectrum.gif
+horde/admin/css/templates/colorpicker/spectrum.jpg
+horde/admin/css/templates/colorpicker/tabHLS.gif
+horde/admin/css/templates/colorpicker/tabHSB.gif
+horde/admin/css/templates/colorpicker/tabRGB.gif
+horde/admin/css/templates/colorpicker/thumb.gif
+horde/admin/css/templates/colorpicker/thumbB.gif
+horde/admin/css/templates/colorpicker/thumbC.gif
+horde/admin/css/templates/colorpicker/thumbG.gif
+horde/admin/css/templates/colorpicker/thumbL.gif
+horde/admin/css/templates/colorpicker/thumbR.gif
+horde/admin/css/templates/colorpicker/thumbS.gif
+horde/admin/css/templates/colorpicker/thumbT.gif
+horde/admin/user.php
+horde/config/.htaccess
+horde/config/horde.php.dist
+horde/config/html.php.dist
+horde/config/lang.php.dist
+horde/config/mime_drivers.php.dist
+horde/config/mime_mapping.php.dist
+horde/config/motd.php.dist
+horde/config/registry.php.dist
+horde/css.php
+horde/docs/CHANGES
+horde/docs/CODING_STANDARDS
+horde/docs/CONTRIBUTING
+horde/docs/CREDITS
+horde/docs/HACKING
+horde/docs/INSTALL
+horde/graphics/administration.gif
+horde/graphics/alerts/error.gif
+horde/graphics/alerts/message.gif
+horde/graphics/alerts/success.gif
+horde/graphics/alerts/warning.gif
+horde/graphics/data.gif
+horde/graphics/help.gif
+horde/graphics/home.gif
+horde/graphics/keyboard.gif
+horde/graphics/login.gif
+horde/graphics/logout.gif
+horde/graphics/mime/audio.gif
+horde/graphics/mime/binary.gif
+horde/graphics/mime/compressed.gif
+horde/graphics/mime/csv.gif
+horde/graphics/mime/deb.gif
+horde/graphics/mime/encryption.gif
+horde/graphics/mime/executable.gif
+horde/graphics/mime/html.gif
+horde/graphics/mime/image.gif
+horde/graphics/mime/inf.gif
+horde/graphics/mime/mail.gif
+horde/graphics/mime/makefile.gif
+horde/graphics/mime/msexcel.gif
+horde/graphics/mime/msi.gif
+horde/graphics/mime/msp.gif
+horde/graphics/mime/mspowerpoint.gif
+horde/graphics/mime/msword.gif
+horde/graphics/mime/pdf.gif
+horde/graphics/mime/php.gif
+horde/graphics/mime/readme.gif
+horde/graphics/mime/rpm.gif
+horde/graphics/mime/script-asa.gif
+horde/graphics/mime/script-asp.gif
+horde/graphics/mime/setup.gif
+horde/graphics/mime/signed.gif
+horde/graphics/mime/source-c.gif
+horde/graphics/mime/source-h.gif
+horde/graphics/mime/source-java.gif
+horde/graphics/mime/text.gif
+horde/graphics/mime/unknown.gif
+horde/graphics/mime/vcard.gif
+horde/graphics/mime/xml.gif
+horde/graphics/prefs.gif
+horde/graphics/problem.gif
+horde/help.php
+horde/index.php
+horde/javascript.php
+horde/lib/.htaccess
+horde/lib/Auth.php
+horde/lib/Auth/ftp.php
+horde/lib/Auth/imap.php
+horde/lib/Auth/ldap.php
+horde/lib/Auth/mcal.php
+horde/lib/Auth/sql.php
+horde/lib/Browser.php
+horde/lib/Cache.php
+horde/lib/Cache/file.php
+horde/lib/Category.php
+horde/lib/Category/sql.php
+horde/lib/Data.php
+horde/lib/Group.php
+horde/lib/Help.php
+horde/lib/Horde.php
+horde/lib/Identity.php
+horde/lib/Lang.php
+horde/lib/MIME.php
+horde/lib/MIME/Magic.php
+horde/lib/MIME/Message.php
+horde/lib/MIME/Part.php
+horde/lib/MIME/Structure.php
+horde/lib/MIME/Viewer.php
+horde/lib/MIME/Viewer/deb.php
+horde/lib/MIME/Viewer/default.php
+horde/lib/MIME/Viewer/enscript.php
+horde/lib/MIME/Viewer/msexcel.php
+horde/lib/MIME/Viewer/mspowerpoint.php
+horde/lib/MIME/Viewer/msword.php
+horde/lib/MIME/Viewer/php.php
+horde/lib/MIME/Viewer/rar.php
+horde/lib/MIME/Viewer/rpm.php
+horde/lib/MIME/Viewer/tgz.php
+horde/lib/MIME/Viewer/vcard.php
+horde/lib/MIME/Viewer/zip.php
+horde/lib/Maintenance.php
+horde/lib/Menu.php
+horde/lib/Perms.php
+horde/lib/Perms/sql.php
+horde/lib/Prefs.php
+horde/lib/Prefs/ldap.php
+horde/lib/Prefs/session.php
+horde/lib/Prefs/sql.php
+horde/lib/Registry.php
+horde/lib/Secret.php
+horde/lib/Serialize.php
+horde/lib/SessionCache.php
+horde/lib/Text.php
+horde/lib/Token.php
+horde/lib/Token/file.php
+horde/lib/Token/sql.php
+horde/lib/base.php
+horde/lib/version.php
+horde/locale/.htaccess
+horde/locale/cs_CZ/LC_MESSAGES/horde.mo
+horde/locale/de_DE/LC_MESSAGES/horde.mo
+horde/locale/el_GR/LC_MESSAGES/horde.mo
+horde/locale/en_US/help.xml
+horde/locale/es_ES/LC_MESSAGES/horde.mo
+horde/locale/fi_FI/LC_MESSAGES/horde.mo
+horde/locale/fr_FR/LC_MESSAGES/horde.mo
+horde/locale/it_IT/LC_MESSAGES/horde.mo
+horde/locale/ko_KR/LC_MESSAGES/horde.mo
+horde/locale/nl_NL/LC_MESSAGES/horde.mo
+horde/locale/no_BOK/LC_MESSAGES/horde.mo
+horde/locale/pl_PL/LC_MESSAGES/horde.mo
+horde/locale/pt_BR/LC_MESSAGES/horde.mo
+horde/locale/ru_koi/LC_MESSAGES/horde.mo
+horde/locale/ru_win/LC_MESSAGES/horde.mo
+horde/locale/sv_SE/LC_MESSAGES/horde.mo
+horde/locale/zh_CN/LC_MESSAGES/horde.mo
+horde/locale/zh_TW/LC_MESSAGES/horde.mo
+horde/login.php
+horde/maintenance.php
+horde/menu.php
+horde/po/.htaccess
+horde/po/Makefile
+horde/po/README
+horde/po/README.WinToKoi
+horde/po/WinToKoi.pl
+horde/po/cs_CZ.po
+horde/po/de_DE.po
+horde/po/el_GR.po
+horde/po/es_ES.po
+horde/po/extract.pl
+horde/po/fi_FI.po
+horde/po/fr_FR.po
+horde/po/it_IT.po
+horde/po/ko_KR.po
+horde/po/nl_NL.po
+horde/po/no_BOK.po
+horde/po/pl_PL.po
+horde/po/pt_BR.po
+horde/po/ru_koi.po
+horde/po/ru_win.po
+horde/po/shtool
+horde/po/sv_SE.po
+horde/po/xgettext.sh
+horde/po/zh_CN.po
+horde/po/zh_TW.po
+horde/problem.php
+horde/scripts/.htaccess
+horde/scripts/SCRIPTS
+horde/scripts/db/README
+horde/scripts/db/auth.sql
+horde/scripts/db/category.sql
+horde/scripts/db/mysql_create.sql
+horde/scripts/db/mysql_drop.sql
+horde/scripts/db/pgsql_create.sql
+horde/scripts/db/pgsql_drop.sql
+horde/scripts/db/prefs.sql
+horde/scripts/horde-rsync.sh
+horde/scripts/mime_mapping/Makefile
+horde/scripts/mime_mapping/convert.pl
+horde/scripts/mime_mapping/mime.types
+horde/scripts/set_perms.sh
+horde/status.php
+horde/templates/.htaccess
+horde/templates/admin/user/add.inc
+horde/templates/admin/user/list.inc
+horde/templates/admin/user/noadd.inc
+horde/templates/admin/user/nolist.inc
+horde/templates/common-footer.inc
+horde/templates/common-header.inc
+horde/templates/data/csvmap.inc
+horde/templates/data/datemap.inc
+horde/templates/help/footer.inc
+horde/templates/help/header.inc
+horde/templates/help/index.inc
+horde/templates/help/menu.inc
+horde/templates/horde/modules.inc
+horde/templates/index/css.inc
+horde/templates/index/floating_index.inc
+horde/templates/index/frames_index.inc
+horde/templates/index/notconfigured.inc
+horde/templates/index/wap.inc
+horde/templates/javascript/open_help_win.js
+horde/templates/login/login.inc
+horde/templates/login/user.inc
+horde/templates/maintenance/confirm_bottom.inc
+horde/templates/maintenance/confirm_middle.inc
+horde/templates/maintenance/confirm_top.inc
+horde/templates/maintenance/javascript.inc
+horde/templates/prefs/begin.inc
+horde/templates/prefs/checkbox.inc
+horde/templates/prefs/end.inc
+horde/templates/prefs/enum.inc
+horde/templates/prefs/link.inc
+horde/templates/prefs/number.inc
+horde/templates/prefs/overview.inc
+horde/templates/prefs/select.inc
+horde/templates/prefs/text.inc
+horde/templates/prefs/textarea.inc
+horde/templates/problem/javascript.inc
+horde/templates/problem/problem.inc
+horde/templates/wml/common-footer.inc
+horde/templates/wml/common-header.inc
+horde/templates/wml/doctype.inc
+horde/templates/wml/login/login.inc
+horde/templates/wml/login/user.inc
+horde/test.php
+horde/util/special_characters.php
+@dirrm horde/util
+@dirrm horde/templates/wml/login
+@dirrm horde/templates/wml
+@dirrm horde/templates/problem
+@dirrm horde/templates/prefs
+@dirrm horde/templates/maintenance
+@dirrm horde/templates/login
+@dirrm horde/templates/javascript
+@dirrm horde/templates/index
+@dirrm horde/templates/horde
+@dirrm horde/templates/help
+@dirrm horde/templates/data
+@dirrm horde/templates/admin/user
+@dirrm horde/templates/admin
+@dirrm horde/templates
+@dirrm horde/scripts/mime_mapping
+@dirrm horde/scripts/db
+@dirrm horde/scripts
+@dirrm horde/po
+@dirrm horde/locale/zh_TW/LC_MESSAGES
+@dirrm horde/locale/zh_TW
+@dirrm horde/locale/zh_CN/LC_MESSAGES
+@dirrm horde/locale/zh_CN
+@dirrm horde/locale/sv_SE/LC_MESSAGES
+@dirrm horde/locale/sv_SE
+@dirrm horde/locale/ru_win/LC_MESSAGES
+@dirrm horde/locale/ru_win
+@dirrm horde/locale/ru_koi/LC_MESSAGES
+@dirrm horde/locale/ru_koi
+@dirrm horde/locale/pt_BR/LC_MESSAGES
+@dirrm horde/locale/pt_BR
+@dirrm horde/locale/pl_PL/LC_MESSAGES
+@dirrm horde/locale/pl_PL
+@dirrm horde/locale/no_BOK/LC_MESSAGES
+@dirrm horde/locale/no_BOK
+@dirrm horde/locale/nl_NL/LC_MESSAGES
+@dirrm horde/locale/nl_NL
+@dirrm horde/locale/ko_KR/LC_MESSAGES
+@dirrm horde/locale/ko_KR
+@dirrm horde/locale/it_IT/LC_MESSAGES
+@dirrm horde/locale/it_IT
+@dirrm horde/locale/fr_FR/LC_MESSAGES
+@dirrm horde/locale/fr_FR
+@dirrm horde/locale/fi_FI/LC_MESSAGES
+@dirrm horde/locale/fi_FI
+@dirrm horde/locale/es_ES/LC_MESSAGES
+@dirrm horde/locale/es_ES
+@dirrm horde/locale/en_US
+@dirrm horde/locale/el_GR/LC_MESSAGES
+@dirrm horde/locale/el_GR
+@dirrm horde/locale/de_DE/LC_MESSAGES
+@dirrm horde/locale/de_DE
+@dirrm horde/locale/cs_CZ/LC_MESSAGES
+@dirrm horde/locale/cs_CZ
+@dirrm horde/locale
+@dirrm horde/lib/Token
+@dirrm horde/lib/Prefs
+@dirrm horde/lib/Perms
+@dirrm horde/lib/MIME/Viewer
+@dirrm horde/lib/MIME
+@dirrm horde/lib/Category
+@dirrm horde/lib/Cache
+@dirrm horde/lib/Auth
+@dirrm horde/lib
+@dirrm horde/graphics/mime
+@dirrm horde/graphics/alerts
+@dirrm horde/graphics
+@dirrm horde/docs
+@dirrm horde/config
+@dirrm horde/admin/css/templates/colorpicker
+@dirrm horde/admin/css/templates
+@dirrm horde/admin/css/graphics
+@dirrm horde/admin/css
+@dirrm horde/admin
+@dirrm horde

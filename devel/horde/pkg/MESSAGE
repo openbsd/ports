@@ -1,0 +1,14 @@
+==============================================================
+The Horde Application Framework has been installed into
+${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+ln -s ${INSTDIR} /var/www/htdocs/
+
+and proceed to complete the installation by reading:
+${INSTDIR}/docs/INSTALL
+
+You can ensure you have a working install by accessing:
+http://<localhost>/horde/test.php
+
+==============================================================
