@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 1999/11/22 22:08:32 angelos Exp $
+# $OpenBSD: Makefile,v 1.6 1999/12/04 03:35:53 angelos Exp $
 
-DISTNAME=	ocaml-2.03
+DISTNAME=	ocaml-2.04
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/ \
-		ftp://ftp.inria.fr/lang/caml-light/
+MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 MAINTAINER=	angelos@openbsd.org
