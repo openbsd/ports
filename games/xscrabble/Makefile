@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 1998/11/09 01:50:01 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/09/27 14:54:29 brad Exp $
 
 DISTNAME=	xscrabble
 PKGNAME=	xscrabble-1.0
 CATEGORIES=	games
+MASTER_SITES=	http://www.freebsd.org/~mph/distfiles/
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/
-
-USE_IMAKE=		yes
+USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:
