@@ -1,3 +1,5 @@
+# $OpenBSD: Makefile,v 1.2 2000/04/05 13:19:05 kevlo Exp $
+
 DISTNAME=		kdbg-1.0.2
 CATEGORIES=     	devel
 NEED_VERSION=		1.230	
@@ -22,10 +24,10 @@ SEPARATE_BUILD=	concurrent
 USE_GMAKE=		Yes
 GNU_CONFIGURE=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-qt-libraries=/usr/local/lib \
-			--with-qt-includes=/usr/local/include/X11/qt \
-			--with-extra-includes=/usr/local/include \
-			--with-extra-libs=/usr/local/lib
+			--with-qt-libraries="${LOCALBASE}/lib" \
+			--with-qt-includes="${LOCALBASE}/include/X11/qt" \
+			--with-extra-includes="${LOCALBASE}/include" \
+			--with-extra-libs="${LOCALBASE}/lib"
 
 FAKE=			Yes
 
