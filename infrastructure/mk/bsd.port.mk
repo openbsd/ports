@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.226 2000/03/10 18:09:23 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.227 2000/03/18 17:01:34 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -482,11 +482,7 @@ PKGDIR?=		${.CURDIR}/pkg.${ARCH}
 PKGDIR?=		${.CURDIR}/pkg
 .endif
 
-.if defined(USE_IMAKE) || defined(USE_X11)
-PREFIX?=		${X11BASE}
-.else
 PREFIX?=		${LOCALBASE}
-.endif
 
 # where configuration files should go
 SYSCONFDIR?=	/etc
@@ -550,6 +546,7 @@ _MAKE_COOKIE=touch -f
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
 XMKMF?=			xmkmf -a
+XMKMF+=			-DPorts
 
 
 # Compatibility game
@@ -1470,6 +1467,11 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 	@cd ${.CURDIR} && make run-depends lib-depends
 	@${ECHO_MSG} "===>  Installing ${PKGNAME} from ${PKGFILE}"
+# Kludge
+.if defined(USE_IMAKE)
+	@mkdir -p /usr/local/lib/X11
+	@-ln -s /var/X11/app-defaults /usr/local/lib/X11/app-defaults
+.endif
 	pkg_add ${PKGFILE}
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
@@ -1483,6 +1485,11 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	@cd ${.CURDIR} && make run-depends lib-depends 
 .  if !defined(NO_INSTALL)
 	@${ECHO_MSG} "===>  Installing for ${PKGNAME}"
+# Kludge
+.    if defined(USE_IMAKE)
+	@mkdir -p /usr/local/lib/X11
+	@-ln -s /var/X11/app-defaults /usr/local/lib/X11/app-defaults
+.    endif
 .    if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} -o "X$$(ls -d ${PKG_DBDIR}/${PKGNAME:C/-[0-9].*//g}-* 2> /dev/null)" != "X" ]; then \
 		echo "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
@@ -2089,7 +2096,7 @@ _BUILD_DEP = ${FETCH_DEPENDS:C/^[^:]*://:C/:.*//} \
 .endif
 
 .if defined(RUN_DEPENDS)
-_RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//} 
+_RUN_DEP = ${RUN_DEPENDS:C/^[^:]*://:C/:.*//}
 .endif
 
 .if !target(clean-depends)
