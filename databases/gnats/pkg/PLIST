@@ -1,0 +1,97 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/12 17:14:51 dugsong Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/gnats.info
+@unexec install-info --delete --info-dir=%D/info %D/info/send-pr.info
+@unexec install-info --delete --info-dir=%D/info %D/info/standards.info
+bin/edit-pr
+bin/getclose
+bin/install-sid
+bin/nedit-pr
+bin/nquery-pr
+bin/query-pr
+bin/send-pr
+bin/sub-type
+info/gnats.info
+info/gnats.info-1
+info/gnats.info-2
+info/gnats.info-3
+info/gnats.info-4
+info/send-pr.info
+info/standards.info
+info/standards.info-1
+info/standards.info-2
+info/standards.info-3
+%%www%%
+libexec/gnats/at-pr
+libexec/gnats/check-db
+libexec/gnats/delete-pr
+libexec/gnats/file-pr
+libexec/gnats/gen-index
+libexec/gnats/gnats-edit-pr
+libexec/gnats/gnatsd
+libexec/gnats/mail-query
+libexec/gnats/mkcat
+libexec/gnats/mkdist
+libexec/gnats/npr-addr
+libexec/gnats/npr-edit
+libexec/gnats/pr-addr
+libexec/gnats/pr-age
+libexec/gnats/pr-edit
+libexec/gnats/pr-mail
+libexec/gnats/queue-pr
+libexec/gnats/rmcat
+@exec chown gnats %D/libexec/gnats/gen-index %D/libexec/gnats/pr-edit %D/libexec/gnats/queue-pr
+@exec chmod 4555 %D/libexec/gnats/gen-index %D/libexec/gnats/pr-edit %D/libexec/gnats/queue-pr
+man/man1/edit-pr.1
+man/man1/query-pr.1
+man/man1/send-pr.1
+man/man7/gnats.7
+man/man8/file-pr.8
+man/man8/gen-index.8
+man/man8/mkcat.8
+man/man8/mkdist.8
+man/man8/queue-pr.8
+man/man8/rmcat.8
+share/doc/gnats/README.OpenBSD
+share/examples/gnats/gnats-db.conf
+share/gnats/cygnus
+share/gnats/dist/COPYING
+share/gnats/dist/INSTALL
+share/gnats/dist/MANIFEST
+share/gnats/dist/README
+share/gnats/dist/categ.texi
+share/gnats/dist/fields.texi
+share/gnats/dist/install-sid.sh
+share/gnats/dist/s-usage.texi
+share/gnats/dist/send-pr-el.in
+share/gnats/dist/send-pr.1
+share/gnats/dist/send-pr.info
+share/gnats/dist/send-pr.sh
+share/gnats/dist/send-pr.texi
+share/gnats/dist/states.texi
+share/gnats/dist/texinfo.tex
+share/gnats/dist/version.texi
+share/gnats/gnats-db/gnats-adm/addresses
+share/gnats/gnats-db/gnats-adm/categories
+share/gnats/gnats-db/gnats-adm/classes
+share/gnats/gnats-db/gnats-adm/config
+share/gnats/gnats-db/gnats-adm/gnatsd.access
+share/gnats/gnats-db/gnats-adm/gnatsd.conf
+share/gnats/gnats-db/gnats-adm/responsible
+share/gnats/gnats-db/gnats-adm/states
+share/gnats/gnats-db/gnats-adm/submitters
+@exec mkdir -p %D/share/gnats/gnats-db/pending
+@exec mkdir -p %D/share/gnats/gnats-db/gnats-queue
+@exec mkdir -p %D/share/gnats/gnats-db/gnats-adm/locks
+@exec chown -R gnats %D/share/gnats
+@dirrm share/gnats/gnats-db/pending
+@dirrm share/gnats/gnats-db/gnats-queue
+@dirrm share/gnats/gnats-db/gnats-adm/locks
+@dirrm share/gnats/gnats-db/gnats-adm
+@dirrm share/gnats/gnats-db
+@dirrm share/gnats/dist
+@dirrm share/gnats
+@dirrm share/doc/gnats
+@dirrm libexec/gnats
+@exec install-info --info-dir=%D/info %D/info/gnats.info
+@exec install-info --info-dir=%D/info %D/info/send-pr.info
+@exec install-info --info-dir=%D/info %D/info/standards.info

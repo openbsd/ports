@@ -1,0 +1,150 @@
+--- gnats/Makefile.in.orig	Wed Jan 10 15:30:59 2001
++++ gnats/Makefile.in	Wed Jan 10 16:00:52 2001
+@@ -256,7 +256,7 @@
+ 
+ all-tools: libgnats.a query-pr nquery-pr pr-addr npr-addr pr-age pr-edit \
+ 	npr-edit pr-mail sub-type gnats-edit-pr edit-pr nedit-pr getclose \
+-        gnats.elc config-send-pr tools-man-pages
++        config-send-pr tools-man-pages
+ 
+ libgnats.a: $(LIBOBJS)
+ 	-rm -f tmplibgnats.a libgnats.a
+@@ -489,14 +489,12 @@
+ # Create $(datadir)/gnats so that mkcat can find it
+ install-tools-arch-indep: all-tools
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats
+-	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
++	@if false; then \
+ 	  echo "chown $(GNATS_USER) $(datadir)/gnats" ; \
+ 	  chown $(GNATS_USER) $(datadir)/gnats ; \
+         else \
+ 	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
+ 	fi
+-	$(INSTALL_DATA) gnats.el $(lispdir)/gnats.el
+-	test -f gnats.elc && $(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
+ 
+ install-tools-bin: all-tools
+ 	$(INSTALL_PROGRAM) query-pr $(bindir)/query-pr
+@@ -512,13 +510,14 @@
+ 	$(INSTALL_PROGRAM) npr-edit $(libexecdir)/gnats/npr-edit
+ 	$(INSTALL_PROGRAM) pr-mail $(libexecdir)/gnats/pr-mail
+ 	$(INSTALL_PROGRAM) sub-type $(bindir)/sub-type
+-	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
++	@if false; then \
+ 	  echo "chown $(GNATS_USER) $(libexecdir)/gnats/pr-edit" ; \
+ 	  echo "chmod 4555 $(libexecdir)/gnats/pr-edit" ; \
+ 	  chown $(GNATS_USER) $(libexecdir)/gnats/pr-edit ; \
+ 	  chmod 4555 $(libexecdir)/gnats/pr-edit ; \
+         else \
+ 	  echo "*** Warning: Must make pr-edit suid $(GNATS_USER)" ; \
++	  chmod 555 $(libexecdir)/gnats/pr-edit ; \
+ 	fi
+ 
+ EXTRA_INSTALL =
+@@ -533,7 +532,7 @@
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(GNATS_ROOT)/gnats-adm/locks
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(GNATS_ROOT)/gnats-queue
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(GNATS_ROOT)/pending
+-	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
++	@if false; then \
+ 	  echo "chown $(GNATS_USER) $(GNATS_ROOT) $(GNATS_ROOT)/gnats-adm $(GNATS_ROOT)/pending"; \
+ 	  echo "chown $(GNATS_USER) $(GNATS_ROOT)/gnats-adm/locks $(GNATS_ROOT)/gnats-queue" ; \
+ 	  chown $(GNATS_USER) $(GNATS_ROOT) $(GNATS_ROOT)/gnats-adm $(GNATS_ROOT)/pending ; \
+@@ -545,33 +544,34 @@
+ 	   echo "Not putting categories file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/categories \
++	   $(INSTALL_DATA) $(srcdir)/categories \
+ 		$(GNATS_ROOT)/gnats-adm/categories ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/responsible ]; then \
+ 	   echo "Not putting responsible file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/responsible \
++	   $(INSTALL_DATA) $(srcdir)/responsible \
+ 		$(GNATS_ROOT)/gnats-adm/responsible ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/submitters ]; then \
+ 	   echo "Not putting submitters file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/submitters \
++	   $(INSTALL_DATA) $(srcdir)/submitters \
+ 		$(GNATS_ROOT)/gnats-adm/submitters ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/gnatsd.access ]; then \
+ 	   echo "Not putting gnatsd.access file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/gnatsd.access \
++	   $(INSTALL_DATA) $(srcdir)/gnatsd.access \
+ 		$(GNATS_ROOT)/gnats-adm/gnatsd.access ; \
+ 	fi
+-	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
++	@if false; then \
+ 	  echo "chown $(GNATS_USER) $(GNATS_ROOT)/gnats-adm/gnatsd.access" ; \
+ 	  chown $(GNATS_USER) $(GNATS_ROOT)/gnats-adm/gnatsd.access ; \
++	else \
+ 	  echo "chmod 600 $(GNATS_ROOT)/gnats-adm/gnatsd.access" ; \
+ 	  chmod 600 $(GNATS_ROOT)/gnats-adm/gnatsd.access ; \
+ 	fi
+@@ -579,35 +579,35 @@
+ 	   echo "Not putting gnatsd.conf file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/gnatsd.conf \
++	   $(INSTALL_DATA) $(srcdir)/gnatsd.conf \
+ 		$(GNATS_ROOT)/gnats-adm/gnatsd.conf ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/addresses ]; then \
+ 	   echo "Not putting addresses file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/addresses \
++	   $(INSTALL_DATA) $(srcdir)/addresses \
+ 		$(GNATS_ROOT)/gnats-adm/addresses ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/config ]; then \
+ 	   echo "Not putting config file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/config \
++	   $(INSTALL_DATA) $(srcdir)/config \
+                 $(GNATS_ROOT)/gnats-adm/config ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/states ]; then \
+ 	   echo "Not putting states file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/states \
++	   $(INSTALL_DATA) $(srcdir)/states \
+                 $(GNATS_ROOT)/gnats-adm/states ; \
+ 	fi
+ 	@if [ -f $(GNATS_ROOT)/gnats-adm/classes ]; then \
+ 	   echo "Not putting classes file in gnats-adm, it's already there." ; \
+ 	   true ; \
+ 	else \
+-	   $(INSTALL_DATA) -o $(GNATS_USER) $(srcdir)/classes \
++	   $(INSTALL_DATA) $(srcdir)/classes \
+                 $(GNATS_ROOT)/gnats-adm/classes ; \
+ 	fi
+ 	@echo "*** Don't forget to run $(libexecdir)/gnats/mkcat as $(GNATS_USER)."
+@@ -625,7 +625,7 @@
+ 	$(INSTALL_PROGRAM) queue-pr $(libexecdir)/gnats/queue-pr
+ 	$(INSTALL_PROGRAM) gen-index $(libexecdir)/gnats/gen-index
+ 	$(INSTALL_SCRIPT) mail-query $(libexecdir)/gnats/mail-query
+-	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
++	@if false; then \
+ 	  echo "chown $(GNATS_USER) $(libexecdir)/gnats/queue-pr $(libexecdir)/gnats/file-pr $(libexecdir)/gnats/gen-index" ; \
+ 	  echo "chmod 4555 $(libexecdir)/gnats/queue-pr $(libexecdir)/gnats/file-pr $(libexecdir)/gnats/gen-index" ; \
+ 	  echo "chown $(GNATS_USER) $(libexecdir)/gnats/gnatsd" ; \
+@@ -636,6 +636,7 @@
+ 	  chmod 555 $(libexecdir)/gnats/gnatsd ; \
+ 	else \
+ 	  echo "*** Warning: must make queue-pr and gen-index suid gnats." ; \
++	  chmod 555 $(libexecdir)/gnats/queue-pr $(libexecdir)/gnats/gen-index $(libexecdir)/gnats/gnatsd ; \
+ 	fi
+ 
+ install-info: gnats.info

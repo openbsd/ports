@@ -1,0 +1,55 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/01/12 17:14:51 dugsong Exp $
+#
+# De-installation setup of gnats
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# Function: remove gnats user account.
+#
+do_accts()
+{
+    echo ""
+    echo "+---------------"
+    echo "| Delete the 'gnats' user account for a full de-installation."
+    echo "| To do this: execute 'user del gnats' as root."
+    echo "| You can also remove any crontab entries for 'gnats' by"
+    echo "| executing 'crontab -u gnats -r' as root."
+    echo "+---------------"
+    echo ""
+}
+
+do_configs()
+{
+    echo ""
+    echo "+---------------"
+    echo "| The existing /etc/gnats-db.conf configuration file"
+    echo "| has NOT been deleted. To do this: execute"
+    echo "| 'rm /etc/gnats-db.conf' as root."
+    echo "+---------------"
+    echo ""
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    DEINSTALL)
+	do_accts
+	do_configs
+	rm -f /var/www/cgi-bin/gnatsweb
+	;;
+    *)
+	echo "Usage: `basename $0` distname DEINSTALL" >&2
+	exit 1
+	;;
+esac
+
+exit 0

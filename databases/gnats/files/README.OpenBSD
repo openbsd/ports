@@ -1,0 +1,51 @@
+
+Post-installation
+-----------------
+
+1. Add the following to /etc/services:
+
+support         1529/tcp                # GNATS
+
+2. Add the following to /etc/inetd.conf and HUP inetd:
+
+support         stream  tcp     nowait  gnats	y0y0y0/libexec/gnats/gnatsd	gnatsd
+
+3. Edit the config files in y0y0y0/share/gnats/gnats-db/gnats-adm
+   (see the GNATS info documentation, HTML'ized at
+    http://sunsite.ualberta.ca/Documentation/Gnu/gnats-3.113/)
+   to your liking, then run (as root):
+
+	su -m gnats -c 'GNATS_ROOT=y0y0y0/share/gnats/gnats-db y0y0y0/libexec/gnats/mkcat'
+
+4. As root, do
+
+	su -m gnats -c 'crontab -e'
+
+   and add the following entry:
+
+0,10,20,30,40,50 * * * * y0y0y0/libexec/gnats/queue-pr --run
+
+5. Add the following lines to /etc/aliases and run 'newaliases':
+
+# GNATS support
+gnats-admin: root
+bugs:   "|y0y0y0/libexec/gnats/queue-pr -q"
+monkey-gnats: bugs
+
+   where 'monkey' is replaced with the configured value of GNATS_SITE in
+   y0y0y0/share/gnats/gnats-db/config.
+
+6. If you built with FLAVOR=www, and want to run gnatsweb, add
+
+127.0.0.1:view:
+
+to y0y0y0/share/gnats/gnats-db/gnats-adm/gnatsd.access. You may
+increase priveleges for all users of gnatsweb by changing 'view' to
+'edit', or for individual users by adding rules to
+y0y0y0/share/gnats/gnats-db/gnats-adm/gnatsd.access.
+
+Post-deinstallation
+-------------------
+
+Reverse all of the above! :-)
+

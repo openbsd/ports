@@ -1,0 +1,16 @@
+
+GNATS is a bug-tracking tool designed for use at a central support
+site.  Software users who experience problems use electronic mail to
+communicate these problems to the the maintainers of that software;
+GNATS partially automates the tracking of these problems by:
+
+- organizing problem reports into a database and notifying responsible
+  parties of suspected bugs;
+
+- allowing support personnel and their managers to edit, query and
+  report on accumulated bugs; and
+
+- providing a reliable archive of problems with a given program and a
+  history of the life of the program by preserving its reported
+  problems and their subsequent solutions.
+

@@ -1,0 +1,80 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/01/12 17:14:51 dugsong Exp $
+#
+# Pre/post-installation setup of gnats
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+# Function: set up gnats user account.
+#
+do_accts()
+{
+    userinfo -e gnats
+    if [ $? -eq 0 ]; then
+	echo "===>  Using account 'gnats' for gnats"
+    else
+	echo "===>  Creating gnats user"
+	useradd \
+	    -g daemon \
+	    -c "GNATS database owner" \
+	    -d $PREFIX/share/gnats \
+	    -s /sbin/nologin \
+	    -p \* \
+	    gnats
+    fi
+}
+
+# Function: install the gnats configuration file from the samples
+#
+do_configs()
+{
+    if [ -f /etc/gnats-db.conf ]; then
+	echo ""
+	echo "+---------------"
+	echo "| The existing /etc/gnats-db.conf configuration file"
+	echo "| has NOT been changed.  You may want to compare it to the"
+	echo "| current sample file, ${PREFIX}/share/examples/gnats/gnats-db.conf"
+	echo "| and update your configuration as needed."
+    	echo "+---------------"
+	echo ""
+    else
+	# Install config files.
+	install -o root -g wheel -m 644 ${PREFIX}/share/examples/gnats/gnats-db.conf /etc/gnats-db.conf
+
+	echo ""
+	echo "+---------------"
+	echo "| The /etc/gnats-db.conf configuration file has been"
+	echo "| installed.  Please view this file and change"
+	echo "| the configuration to meet your needs."
+	echo "+---------------"
+	echo ""
+    fi
+}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	do_accts
+	;;
+    POST-INSTALL)
+	do_configs
+	echo "===>  See ${PREFIX}/share/doc/gnats/README.OpenBSD for further configuration"
+	test -f ${PREFIX}/lib/gnatsweb && \
+	    install -c -m 555 ${PREFIX}/lib/gnatsweb /var/www/cgi-bin
+	;;
+    *)
+	echo "Usage: `basename $0` distname <PRE-INSTALL|POST-INSTALL>" >&2
+	exit 1
+	;;
+esac
+
+exit 0

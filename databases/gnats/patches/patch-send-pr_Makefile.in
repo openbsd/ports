@@ -1,0 +1,23 @@
+--- send-pr/Makefile.in.orig	Sun Nov  7 23:18:19 1999
++++ send-pr/Makefile.in	Thu Jan 11 10:34:35 2001
+@@ -174,10 +174,7 @@
+ install-norm all-gnats: install-norm-arch-indep install-norm-arch-dep
+ 
+ install-norm-arch-indep:
+-	$(INSTALL_DATA) send-pr.el $(lispdir)/send-pr.el
+-	if [ -f send-pr.elc ]; then \
+-	  $(INSTALL_DATA) send-pr.elc $(lispdir)/send-pr.elc; \
+-	else true; fi
++	true
+ 
+ install-norm-arch-dep:
+ 	$(INSTALL_SCRIPT) send-pr $(bindir)/send-pr
+@@ -190,7 +187,7 @@
+ 
+ install-gnats-dist:
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats/dist
+-	@if [ `whoami` = root -o `whoami` = $(GNATS_USER) ] ; then \
++	@if false; then \
+ 	  echo "chown $(GNATS_USER) $(datadir)/gnats/dist" ; \
+ 	  chown $(GNATS_USER) $(datadir)/gnats/dist ; \
+         else \
