@@ -1,0 +1,115 @@
+@comment $OpenBSD: PLIST-auto,v 1.1.1.1 2001/03/14 21:53:41 wilfried Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/sh-utils.info
+bin/gbasename
+bin/gchroot
+bin/gdate
+bin/gdirname
+bin/gecho
+bin/genv
+bin/gexpr
+bin/gfactor
+bin/gfalse
+bin/ggroups
+bin/ghostid
+bin/ghostname
+bin/gid
+bin/glogname
+bin/gnice
+bin/gnohup
+bin/gpathchk
+bin/gpinky
+bin/gprintenv
+bin/gprintf
+bin/gpwd
+bin/gseq
+bin/gsleep
+bin/gstty
+bin/gtee
+bin/gtest
+bin/gtrue
+bin/gtty
+bin/guname
+bin/gusers
+bin/gwho
+bin/gwhoami
+bin/gyes
+info/sh-utils.info
+man/man1/gbasename.1
+man/man1/gchroot.1
+man/man1/gdate.1
+man/man1/gdirname.1
+man/man1/gecho.1
+man/man1/genv.1
+man/man1/gexpr.1
+man/man1/gfalse.1
+man/man1/ggroups.1
+man/man1/ghostid.1
+man/man1/ghostname.1
+man/man1/gid.1
+man/man1/glogname.1
+man/man1/gnice.1
+man/man1/gnohup.1
+man/man1/gpathchk.1
+man/man1/gpinky.1
+man/man1/gprintenv.1
+man/man1/gprintf.1
+man/man1/gpwd.1
+man/man1/gsleep.1
+man/man1/gstty.1
+man/man1/gsu.1
+man/man1/gtee.1
+man/man1/gtest.1
+man/man1/gtrue.1
+man/man1/gtty.1
+man/man1/guname.1
+man/man1/gusers.1
+man/man1/gwho.1
+man/man1/gwhoami.1
+man/man1/gyes.1
+share/locale/cs/LC_MESSAGES/sh-utils.mo
+share/locale/de/LC_MESSAGES/sh-utils.mo
+share/locale/el/LC_MESSAGES/sh-utils.mo
+share/locale/es/LC_MESSAGES/sh-utils.mo
+share/locale/fr/LC_MESSAGES/sh-utils.mo
+share/locale/it/LC_MESSAGES/sh-utils.mo
+share/locale/nl/LC_MESSAGES/sh-utils.mo
+share/locale/no/LC_MESSAGES/sh-utils.mo
+share/locale/pl/LC_MESSAGES/sh-utils.mo
+share/locale/pt/LC_MESSAGES/sh-utils.mo
+share/locale/pt_BR/LC_MESSAGES/sh-utils.mo
+share/locale/ru/LC_MESSAGES/sh-utils.mo
+share/locale/sk/LC_MESSAGES/sh-utils.mo
+share/locale/sv/LC_MESSAGES/sh-utils.mo
+share/locale/zh/LC_MESSAGES/sh-utils.mo
+@dirrm share/locale/zh/LC_MESSAGES
+@dirrm share/locale/zh
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
+@exec install-info --info-dir=%D/info %D/info/sh-utils.info
