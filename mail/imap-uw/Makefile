@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2003/04/17 08:06:29 jakob Exp $
+# $OpenBSD: Makefile,v 1.39 2003/06/25 21:20:13 jakob Exp $
 
 COMMENT=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
 
-VERSION=		2002.337
-DISTNAME=		imap-2002c
+VERSION=		2002.338
+DISTNAME=		imap-2002d
 PKGNAME=		imap-uw-${VERSION}
 PKGNAME-mailutil=	mailutil-uw-${VERSION}
 CATEGORIES=		mail
