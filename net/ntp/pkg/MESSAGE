@@ -1,0 +1,13 @@
+
++---------------
+| Several example configuration files can be found in 
+| ${PREFIX}/share/examples/ntp.
+|
+| 1) create/update the file ${SYSCONFDIR}/ntp.conf
+| 2) restart your system
+|
+| The system restart is necessary as tickadj is run from
+| /etc/rc.securelevel before the system securelevel is
+| changed.
++---------------
+
