@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/08/05 01:14:29 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2002/08/26 22:15:10 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
 COMMENT=	"XML 1.0 parser written in C"
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
