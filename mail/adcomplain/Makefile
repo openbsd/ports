@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 1999/02/19 05:55:46 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/10/29 10:42:32 turan Exp $
+
+BROKEN=		checksum mismatch
 
 DISTNAME=       adcomplain-3.49
 CATEGORIES=     mail news
