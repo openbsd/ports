@@ -1,3 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.4 2001/03/05 16:02:34 brad Exp $
 lib/libpcre.so.0.1
 lib/libpcreposix.so.0.0
-DYNLIBDIR(%D/lib)
+DYNLIBDIR(%B)

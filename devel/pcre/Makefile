@@ -1,18 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/01 19:08:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/05 16:02:33 brad Exp $
 
-DISTNAME=		pcre-3.4
-CATEGORIES=     	devel
-NEED_VERSION=		1.310
+DISTNAME=	pcre-3.4
+CATEGORIES=	devel
+NEED_VERSION=	1.336
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= pcre
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+HOMEPAGE=	http://www.pcre.org/
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.cus.cam.ac.uk/pub/software/programs/pcre/
-
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
