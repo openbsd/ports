@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: mod_gzip-enable,v 1.1 2001/08/13 03:27:09 brad Exp $
+# $OpenBSD: mod_gzip-enable,v 1.2 2001/08/13 17:16:00 brad Exp $
 
 MODULE=!!PREFIX!!/lib/mod_gzip.so
 
@@ -10,7 +10,7 @@ if [ `id -u` -ne 0 ]; then
 fi
 
 if [ ! -f ${MODULE} ]; then
-    echo "Can not find mod_gzip module (${MODULE})"
+    echo "Cannot find mod_gzip module (${MODULE})"
     exit 1
 else
     echo "Enabling GZip module..."
