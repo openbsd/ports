@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-devel,v 1.4 2004/10/17 22:25:52 espie Exp $
+@comment $OpenBSD: PFRAG.shared-devel,v 1.5 2005/01/11 04:26:45 kurt Exp $
 @comment @lib mozilla/lib/components/libaccessibility.so.1.0
 @comment @lib mozilla/lib/components/libaddrbook.so.1.0
 @comment @lib mozilla/lib/components/libappcomps.so.1.0
@@ -66,7 +66,6 @@
 @comment @lib mozilla/lib/components/libwalletviewers.so.1.0
 @comment @lib mozilla/lib/components/libwebbrwsr.so.1.0
 @comment @lib mozilla/lib/components/libwebsrvcs.so.1.0
-@comment @lib mozilla/lib/components/libwidget_gtk.so.1.0
 @comment @lib mozilla/lib/components/libxmlextras.so.1.0
 @comment @lib mozilla/lib/components/libxpcom_compat_c.so.1.0
 @comment @lib mozilla/lib/components/libxpconnect.so.1.0
@@ -76,7 +75,6 @@
 @lib mozilla/lib/libfort.so.1.0
 @lib mozilla/lib/libgkgfx.so.1.0
 @lib mozilla/lib/libgtkembedmoz.so.1.0
-@lib mozilla/lib/libgtksuperwin.so.1.0
 @lib mozilla/lib/libgtkxtbin.so.1.0
 @lib mozilla/lib/libjsj.so.1.0
 @lib mozilla/lib/libmozjs.so.1.0

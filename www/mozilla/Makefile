@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2005/01/04 21:27:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.79 2005/01/11 04:26:45 kurt Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64 amd64 powerpc
 
@@ -7,7 +7,7 @@ COMMENT-devel=	"devel files for Gecko"
 
 VER=		1.6
 DISTNAME=	mozilla
-PKGNAME=	mozilla-${VER}
+PKGNAME=	mozilla-${VER}p0
 DISTFILES=	mozilla-source-${VER}.tar.bz2
 
 CATEGORIES=	www
@@ -19,8 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 Xext Xft Xi Xp Xrender Xt c fontconfig freetype \
-			glib gmodule iconv intl m pthread stdc++ z
+WANTLIB=		X11 Xext Xft Xp Xrender Xt c fontconfig freetype \
+			iconv intl m pthread stdc++ z
 
 MASTER_SITES=	http://ftp.eu.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${VER}/src/ \
 		http://ftp.mozilla.org/pub/mozilla/releases/mozilla${VER}/src/
@@ -35,6 +35,9 @@ PKGNAME$i=	mozilla${i}-${VER}
 
 SUBPACKAGE?=
 
+FLAVORS=	gtk2
+FLAVOR?=
+
 .if ${SUBPACKAGE} == "-devel"
 RUN_DEPENDS=	::www/mozilla
 .else
@@ -43,11 +46,20 @@ MODGCC3_ARCHES=	alpha
 MODGCC3_LANGS=	C++
 BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
 		:pkgconfig-*:devel/pkgconfig
-LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
-		IDL.4::devel/ORBit \
-		jpeg.62::graphics/jpeg \
+LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.3::graphics/png \
 		esd.2::audio/esound
+
+.  if ${FLAVOR:L:Mgtk2}
+BUILD_DEPENDS+=	:libIDL-*:devel/libIDL
+LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
+WANTLIB+=	Xcursor Xinerama atk-1.0.0.0 glib-2.0.0.0 gmodule-2.0.0.0 \
+		gobject-2.0.0.0 pango-1.0.0.0 pangox-1.0.0.0 pangoxft-1.0.0.0
+.  else
+BUILD_DEPENDS+=	:ORBit-*:devel/ORBit
+LIB_DEPENDS+=	gtk.1,gdk.1::x11/gtk+
+WANTLIB+=	Xi glib gmodule
+.  endif
 .endif
 
 USE_X11=	Yes
@@ -67,6 +79,7 @@ CONFIGURE_ARGS=					\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
+		--without-system-nspr		\
 		--enable-xft			\
 		--enable-optimize=-Os		\
 		--enable-crypto			\
@@ -75,6 +88,10 @@ CONFIGURE_ARGS=					\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-ldap
+
+.if ${FLAVOR:L:Mgtk2}
+CONFIGURE_ARGS+=--enable-default-toolkit=gtk2
+.endif
 
 CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin"

@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-devel,v 1.8 2004/10/17 22:25:52 espie Exp $
+@comment $OpenBSD: PLIST-devel,v 1.9 2005/01/11 04:26:45 kurt Exp $
 %%SHARED%%
+%%gtk2%%
+!%%gtk2%%
 lib/pkgconfig/
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
@@ -1735,10 +1737,6 @@ mozilla/include/plugin/nsPluginsCID.h
 mozilla/include/plugin/nsplugin.h
 mozilla/include/plugin/nsplugindefs.h
 mozilla/include/plugin/nspluginroot.h
-mozilla/include/png/
-mozilla/include/png/mozpngconf.h
-mozilla/include/png/png.h
-mozilla/include/png/pngconf.h
 mozilla/include/pref/
 mozilla/include/pref/nsIPref.h
 mozilla/include/pref/nsIPrefBranch.h
@@ -1998,9 +1996,6 @@ mozilla/include/websrvcs/nsIWSPInterfaceInfoService.h
 mozilla/include/websrvcs/nsIWebScriptsAccessService.h
 mozilla/include/websrvcs/nsIWebServiceProxy.h
 mozilla/include/widget/
-mozilla/include/widget/gdksuperwin.h
-mozilla/include/widget/gtkmozarea.h
-mozilla/include/widget/gtkmozbox.h
 mozilla/include/widget/nsEvent.h
 mozilla/include/widget/nsGUIEvent.h
 mozilla/include/widget/nsIAppShell.h
@@ -2395,7 +2390,6 @@ mozilla/lib/libmime_s.a
 mozilla/lib/libmimecthglue_s.a
 mozilla/lib/libmozbrwsr_s.a
 mozilla/lib/libmozdbm_s.a
-mozilla/lib/libmozpng.a
 mozilla/lib/libmozreg_s.a
 mozilla/lib/libmozregsa_s.a
 mozilla/lib/libmozutil_s.a
