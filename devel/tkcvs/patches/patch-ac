@@ -1,0 +1,11 @@
+--- tkcvs/cvs.tcl.orig	Thu Dec 17 22:03:52 1998
++++ tkcvs/cvs.tcl	Thu Dec 17 22:04:05 1998
+@@ -285,7 +285,7 @@
+       # -sj
+       set errstr "You must select files to be committed with CVS version"
+       set errstr "$errstr $cvscfg(cvsver)."
+-      set errstr "$errstr\n\nEither select a list of files or upgrade
++      set errstr "$errstr\n\nEither select a list of files or upgrade"
+       set errstr "$errstr your CVS to version 1.3"
+       cvserror "$errstr"
+       return
