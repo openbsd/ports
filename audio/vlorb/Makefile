@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/14 23:37:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/03 01:07:40 naddy Exp $
 
-COMMENT=		"cd2ogg with vorbisgain support"
-DISTNAME=		vlorb-1.1
+COMMENT=		"audio CD to audio file encoder"
+DISTNAME=		vlorb-1.2
 CATEGORIES=		audio
 
 HOMEPAGE=		http://jk.yazzy.org/projects/vlorb/
-
-MAINTAINER=		Han Boetes <han@linux-mandrake.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,13 +15,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/releases/
 
 RUN_DEPENDS=		:cdparanoia-*:audio/cdparanoia \
+			:flac-*:audio/flac \
 			:vorbis-tools-*:audio/vorbis-tools \
 			:vorbisgain-*:audio/vorbisgain \
 			:p5-CDDB-*:audio/p5-cddb
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-FAKE_FLAGS=		mandir=${DESTDIR}${TRUEPREFIX}/man
 
 pre-install:
 	@perl -i -pe 's:/etc/vlorbrc:${SYSCONFDIR}/vlorbrc:g' \
