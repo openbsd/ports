@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/06/09 07:43:52 downsj Exp $
+# $OpenBSD: Makefile,v 1.5 1998/06/09 07:49:47 downsj Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -8,7 +8,6 @@
 #    SUBDIR += bpatch
 #    SUBDIR += e93
      SUBDIR += emacs
-#    SUBDIR += gvim
 #    SUBDIR += jed
      SUBDIR += joe
      SUBDIR += jove
@@ -21,8 +20,7 @@
 #    SUBDIR += uemacs
 #    SUBDIR += uzap
 #    SUBDIR += vile
-#    SUBDIR += vim
-#    SUBDIR += vim5beta
+     SUBDIR += vim
 #    SUBDIR += xcoral
 #    SUBDIR += xed
 #    SUBDIR += xemacs
