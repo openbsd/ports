@@ -2,12 +2,15 @@
 # Version required:	20.2
 # Date created:		14 Nov 1997
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 18:56:43 joey Exp $
+#
 
 DISTNAME=	emacs-20.2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
-MAINTAINER=	ejovi@OpenBSD.ORG
+MAINTAINER=	joey@OpenBSD.ORG
 
 WRKSRC=		${WRKDIR}/emacs-20.2
 GNU_CONFIGURE=	yes

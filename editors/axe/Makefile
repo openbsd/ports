@@ -2,6 +2,9 @@
 # Version required:	6.1.2
 # Date created:		05 November 97
 # Whom:			ejovi
+#
+# $OpenBSD: Makefile,v 1.2 1997/11/17 18:53:37 joey Exp $
+#
 
 DISTNAME=	aXe-6.1.2
 CATEGORIES=	editors
