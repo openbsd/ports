@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/09/22 15:02:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2000/09/22 20:50:20 espie Exp $
 bin/designer
 bin/findtr
 bin/moc2
@@ -284,6 +284,7 @@ include/X11/qt2/qxml.h
 include/X11/qt2/qxt.h
 %%SHARED%%
 lib/qt2/bin/moc
+lib/qt2/bin/designer
 lib/qt2/man/man3/QAccel.3
 lib/qt2/man/man3/QAction.3
 lib/qt2/man/man3/QActionGroup.3
@@ -942,6 +943,10 @@ lib/qt2/man/man3/qxmlreader.3
 lib/qt2/man/man3/qxmlsimplereader.3
 lib/qt2/man/man3/qxtapplication.3
 lib/qt2/man/man3/qxtwidget.3
+lib/qt2/tools/designer/templates/Configuration_Dialog.ui
+lib/qt2/tools/designer/templates/Dialog_with_Buttons_(Bottom).ui
+lib/qt2/tools/designer/templates/Dialog_with_Buttons_(Right).ui
+lib/qt2/tools/designer/templates/Tab-Dialog.ui
 share/doc/qt2/ANNOUNCE
 share/doc/qt2/FAQ
 share/doc/qt2/LICENSE.GPL
@@ -950,6 +955,9 @@ share/doc/qt2/README.QT
 share/doc/qt2/changes-2.2.0
 @unexec echo "Please remove %D/lib/qt2/man from /etc/man.conf manually if needed"
 @dirrm include/X11/qt2
+@dirrm lib/qt2/tools/designer/templates
+@dirrm lib/qt2/tools/designer
+@dirrm lib/qt2/tools
 @dirrm lib/qt2/bin
 @dirrm lib/qt2/man/man3
 @dirrm lib/qt2/man

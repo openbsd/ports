@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/09/22 15:02:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/09/22 20:50:19 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-2.2.0
@@ -45,6 +45,7 @@ EXTRA_SAMPLES+=box gear glpixmap overlay overlay_x11 sharedbox
 .endif
 
 QT_INCDIR=	${PREFIX}/include/X11/qt2
+TRUEDIR=	${TRUEPREFIX}/lib/qt2
 QT_LIBDIR=	${PREFIX}/lib/qt2
 QT_MANDIR=	${QT_LIBDIR}/man
 QT_EXAMPLES=	${QT_LIBDIR}/examples
@@ -80,6 +81,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${QT_INCDIR}
 	${INSTALL_DATA_DIR} ${QT_MANDIR}/man3
 	${INSTALL_DATA_DIR} ${QT_LIBDIR}/bin
+	${INSTALL_DATA_DIR} ${QT_LIBDIR}/tools/designer/templates
 	${INSTALL_DATA_DIR} ${QT_EXAMPLES}
 	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
@@ -99,7 +101,13 @@ do-install:
 	fi
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/moc ${QT_LIBDIR}/bin
 	@ln -sf ${TRUEPREFIX}/lib/qt2/bin/moc ${PREFIX}/bin/moc2
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/designer ${PREFIX}/bin
+	echo "#! /bin/sh" >${WRKBUILD}/designer
+	echo "QTDIR=${TRUEDIR} exec ${TRUEDIR}/bin/designer" \
+	    >>${WRKBUILD}/designer
+	${INSTALL_DATA} ${WRKBUILD}/tools/designer/templates/* \
+		${QT_LIBDIR}/tools/designer/templates
+	${INSTALL_SCRIPT} ${WRKBUILD}/designer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/designer ${QT_LIBDIR}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/uic ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/findtr ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKBUILD}/bin/qt20fix ${PREFIX}/bin
@@ -117,6 +125,10 @@ do-install:
 	if [ -x $$i/$$i ]; then \
 	    ${INSTALL_PROGRAM} $$i/$$i ${QT_EXAMPLES}/$$i; \
 	fi; done
+	@if [ -x ${WRKSRC}/examples/overlay_x11/overlayrubber ]; then \
+	    ${INSTALL_PROGRAM} ${WRKSRC}/examples/overlay_x11/overlayrubber \
+	    	${QT_EXAMPLES}/overlay_x11/overlayrubber; \
+	fi
 	cp -R ${WRKSRC}/tutorial-src/* ${QT_TUTORIAL}
 	@cd ${WRKSRC}/tutorial; for i in *; do \
 	if [ -x $$i/$$i ]; then \
@@ -128,7 +140,11 @@ do-install:
 .include <bsd.port.mk>
 
 .if ${SUBPACKAGE} == "-examples"
+.  if ${FLAVOR:L} == "gl"
+PKGNAME:=qt2-examples-2.0-gl
+.  else
 PKGNAME:=qt2-examples-2.0
+.  endif
 .elif ${SUBPACKAGE} == "-html"
 PKGNAME:=qt2-html-2.0
 .endif
