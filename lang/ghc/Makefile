@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/08/14 21:38:36 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2003/08/21 19:51:23 espie Exp $
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
 #
@@ -66,6 +66,9 @@ STAGE0=		${WRKDIR}/ghc-${BOOTVER}
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	--with-ghc=${STAGE0}/ghc/driver/ghc-inplace
+
+# XXX fiddle with this if the 4.08 compiler burps for you
+MAKE_FLAGS=	TWEAKED_SIZE=80M
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
