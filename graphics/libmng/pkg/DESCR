@@ -1,0 +1,6 @@
+The libmng library supports decoding, displaying, encoding, and various
+other manipulations of Multiple-image Network Graphics (MNG) image files.
+It uses the zlib compression library, and optionally the JPEG library
+and/or lcms (little CMS), a color-management library.
+
+WWW: ${HOMEPAGE}
