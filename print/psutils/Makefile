@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/02/21 01:20:09 pvalchev Exp $
 
 COMMENT=	"manipulating PostScript documents"
 
@@ -7,7 +7,7 @@ CATEGORIES=	print
 
 MASTER_SITES=   ftp://ftp.tardis.ed.ac.uk/users/ajcd/
 
-HOMEPAGE=	http://www.tardis.ed.ac.uk/~ajcd/psutils/
+HOMEPAGE=	http://gershwin.ens.fr/vdaniel/Doc-Locale/Outils-Gnu-Linux/PsUtils/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
