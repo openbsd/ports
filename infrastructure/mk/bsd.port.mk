@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.170 2000/01/27 00:09:44 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.171 2000/01/27 15:32:15 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -782,7 +782,11 @@ INSTALL_TARGET+=	install.man
 
 # basic master sites configuration
 
+.if exists(${PORTSDIR}/infrastructure/db/network.conf)
 .include "${PORTSDIR}/infrastructure/db/network.conf"
+.else
+.include "${PORTSDIR}/infrastructure/templates/network.conf.template"
+.endif
 # Where to put distfiles that don't have any other master site
 # ;;; This is referenced in a few Makefiles -- I'd like to get rid of it
 #
