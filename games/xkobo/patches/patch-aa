@@ -1,6 +1,6 @@
 --- Imakefile.orig	Fri Jan 10 03:29:36 1997
-+++ Imakefile	Tue Mar 23 13:48:15 1999
-@@ -6,7 +6,7 @@
++++ Imakefile	Sun Mar  5 16:06:52 2000
+@@ -6,7 +6,7 @@ WAIT_MSEC   = 30
  SHIPS       = 5
  
  /*  RECORDS  */
@@ -9,7 +9,7 @@
  
  /*  C++ COMPILER  */
  /*  CXX         = g++  */
-@@ -69,11 +69,11 @@
+@@ -69,15 +69,15 @@ xkp256.c: # xkp256.tif
  
  #ifdef SECURE_SCOREFILES
  install::
@@ -18,11 +18,17 @@
 -	chown $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
 -	chown -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
 -	chmod 4755 $(BINDIR)/xkobo
-+	if [ -d $(HSCORE_DIR) ]; then chmod 575 $(HSCORE_DIR); \
-+	else mkdirhier $(HSCORE_DIR); chmod 575 $(HSCORE_DIR); fi
-+	chgrp $(XKOBO_ADMINISTER) $(BINDIR)/xkobo
-+	chgrp -R $(XKOBO_ADMINISTER) $(HSCORE_DIR)
-+	chmod 2755 $(BINDIR)/xkobo
++	if [ -d $(DESTDIR)$(HSCORE_DIR) ]; then chmod 575 $(DESTDIR)$(HSCORE_DIR); \
++	else mkdirhier $(DESTDIR)$(HSCORE_DIR); chmod 575 $(DESTDIR)$(HSCORE_DIR); fi
++	chgrp $(XKOBO_ADMINISTER) $(DESTDIR)$(BINDIR)/xkobo
++	chgrp -R $(XKOBO_ADMINISTER) $(DESTDIR)$(HSCORE_DIR)
++	chmod 2755 $(DESTDIR)$(BINDIR)/xkobo
  #else /* SECURE_SCOREFILES */
  install::
- 	if [ -d $(HSCORE_DIR) ]; then chmod 777 $(HSCORE_DIR); \
+-	if [ -d $(HSCORE_DIR) ]; then chmod 777 $(HSCORE_DIR); \
+-	else mkdirhier $(HSCORE_DIR); chmod 777 $(HSCORE_DIR); fi
++	if [ -d $(DESTDIR)$(HSCORE_DIR) ]; then chmod 777 $(DESTDIR)$(HSCORE_DIR); \
++	else mkdirhier $(DESTDIR)$(HSCORE_DIR); chmod 777 $(DESTDIR)$(HSCORE_DIR); fi
+ #endif /* SECURE_SCOREFILES */
+ 
+ clean::
