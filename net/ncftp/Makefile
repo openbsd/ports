@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2004/01/15 08:47:30 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2004/04/28 12:29:02 naddy Exp $
 
 COMMENT=		"ftp replacement with advanced user interface"
 
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
 DISTFILES=		${DISTNAME}-src.tar.gz
 
-PATCHFILES=		ncftp-317-v6-20040108b.diff.gz:0
+PATCHFILES=		ncftp-317-v6-20040119.diff.gz:0
 PATCH_DIST_STRIP=	-p1
 FAKE_FLAGS=		DESTDIR=${WRKINST} mandir=${WRKINST}${TRUEPREFIX}/man
 
