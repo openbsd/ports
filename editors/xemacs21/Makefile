@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/24 04:43:46 jasoni Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/04 13:16:33 espie Exp $
 # Supported FLAVORS : mule | compface | no_x11 | clashdetect
 # TODO : add flavours for Wnn, Canna, XFontSet and maybe kerberos
 # Tested on : i386 sparc (thanks to Free&ALter Soft for the sparc)
@@ -31,6 +31,12 @@ CONFIGURE_ARGS=	--with-gnu-make \
 		--site-prefixes='${LOCALBASE}:/usr' \
 		--gung-ho \
 		--with-ncurses \
+		--with-database=berkdb \
+		--without-ldap \
+		--with-menubars=lucid \
+		--with-scrollbars=lucid \
+		--with-dialogs=athena \
+		--without-tiff \
 		--infodir='$${DESTDIR}${PREFIX}/info' \
 		--infopath='${LOCALBASE}/info:/usr/share/info'
 
