@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/17 07:36:55 sturm Exp $
+bin/wmi
+bin/wmiremote
+@man man/man1/wmi.1
+@man man/man1/wmiremote.1
+@man man/man5/actions.conf.5
+@man man/man5/common.conf.5
+@man man/man5/session.conf.5
+@man man/man5/theme.conf.5

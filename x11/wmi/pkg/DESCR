@@ -1,0 +1,34 @@
+WMI is a new lightweight window manager for X11, which attempts to
+combine the best features of LarsWM, Ion , evilwm and ratpoison
+into one window manager.
+
+WMI is new: it is developed from scratch with C++ without any ancient
+code and design dependencies to antiquated window managers.
+
+WMI is lightweight: it has no build- or runtime dependencies except the
+C++ Standard Template Library (STL) and the X11 Library (XLib).
+
+WMI is highly customizable: it is designed with keyboard users in mind.
+Each action (e.g. resizing the frame, creating a new workspace,
+launching an app, note that WMI provides hundreds of actions) can be
+bound to a shortcut. So say good-bye to the rodent :)
+
+WMI is the vim among the window managers: its main user interaction is
+oriented on the two modes of the famous vi editor - command mode and
+normal mode. In WMI the command mode is called input mode and supports
+the context-sensitive execution of actions. Outside this mode, only
+actions which are bound to a shortcut can be invoked.
+
+WMI is flexible: it is able to arrange multiple clients in one frame in
+a maximized way, like Ion does, or to arrange them floating within
+groups of the workspace. The track behavior of larswm can be emulated
+through using two or more frames in a neighbor arrangement.
+
+WMI is evil: The snap to border behavior of evilwm and its fast window
+moving through mouse grabbing can be emulated with floating clients too
+(just try Alt + mouse move over floating clients).
+
+WMI is simple to customize: there's no need to learn Lua for
+customization of the WMI, like Ion or TrsWM does. Only simple property
+files, which are maintainable without the knowledge of yet another
+Turing-complete scripting language.
