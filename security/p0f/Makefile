@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/30 00:31:32 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2001/12/08 20:13:53 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
-COMMENT=		passive OS fingerprinting tool
+COMMENT=		"passive OS fingerprinting tool"
 
-DISTNAME=		p0f
-PKGNAME=		p0f-1.7
+DISTNAME=		p0f-1.8
 CATEGORIES=     	security
-NEED_VERSION=   	1.363
+NEED_VERSION=   	1.500
 
 HOMEPAGE=		http://lcamtuf.coredump.cx/
 
@@ -18,9 +17,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://lcamtuf.coredump.cx/soft/
-EXTRACT_SUFX=		.tgz
+DISTFILES=		${DISTNAME:C/-.*//}.tgz
+DIST_SUBDIR=		${DISTNAME}
 
-MAKE_FLAGS=		CFLAGS='${CFLAGS} -DSYSCONFDIR="\"${SYSCONFDIR}\""'
+MAKE_FLAGS=		CC='${CC}' \
+			CFLAGS='${CFLAGS} -DSYSCONFDIR="\"${SYSCONFDIR}\""'
 NO_REGRESS=		Yes
 
 do-install:

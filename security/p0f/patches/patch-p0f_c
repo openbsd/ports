@@ -1,12 +1,12 @@
-$OpenBSD: patch-p0f_c,v 1.1.1.1 2001/10/29 03:20:38 jcs Exp $
---- p0f.c.orig	Thu Aug  9 18:54:07 2001
-+++ p0f.c	Thu Aug  9 18:54:19 2001
-@@ -260,7 +260,7 @@
- 
-   /* set a reasonable default fingerprint file */
-   if (!filename || !*filename)
--    filename = "/etc/p0f.fp";
-+    filename = SYSCONFDIR "/p0f.fp";
- 
-   /* anything left after getopt'ing is a rule */
-   if (argv[optind] && *(argv[optind]))
+$OpenBSD: patch-p0f_c,v 1.2 2001/12/08 20:13:53 naddy Exp $
+--- p0f.c.orig	Sat Nov 24 03:10:28 2001
++++ p0f.c	Sat Dec  8 21:13:33 2001
+@@ -259,7 +259,7 @@ void load_fprints(char *filename) {
+   int i=0;
+   char *p;
+   x=fopen(filename, "r");
+-  if (!x) x=fopen("p0f.fp", "r");
++  if (!x) x=fopen(SYSCONFDIR "p0f.fp", "r");
+   if (!x) {
+     fprintf(stderr, "No OS fingerprint database (%s) found. Dumb mode on.\n", 
+       filename);
