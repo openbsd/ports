@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/03/13 22:46:33 mickey Exp $
+# $OpenBSD: Makefile,v 1.7 1998/03/18 19:49:42 mickey Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -82,7 +82,7 @@
 #    SUBDIR += xpipeman
 #    SUBDIR += xpuyo
 #    SUBDIR += xpuzzletama
-#    SUBDIR += xripple
+     SUBDIR += xripple
 #    SUBDIR += xrisk
      SUBDIR += xroach
 #    SUBDIR += xrobots
