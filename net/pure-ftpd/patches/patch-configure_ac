@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2003/10/25 22:50:24 brad Exp $
+--- configure.ac.orig	2003-10-13 15:23:01.000000000 -0400
++++ configure.ac	2003-10-25 18:40:42.000000000 -0400
+@@ -56,7 +56,13 @@ AC_CHECK_HEADERS(unistd.h string.h strin
+ AC_CHECK_HEADERS(sys/vfs.h sys/statvfs.h sys/sendfile.h sys/uio.h sys/fsuid.h)
+ AC_CHECK_HEADERS(sys/time.h sys/resource.h sys/capability.h)
+ AC_CHECK_HEADERS(shadow.h getopt.h stddef.h)
+-AC_CHECK_HEADERS(netinet/in_systm.h netinet/in.h sys/mount.h sys/pstat.h)
++AC_CHECK_HEADERS(netinet/in_systm.h netinet/in.h sys/pstat.h)
++
++AC_CHECK_HEADER(sys/mount.h, [], [],
++[#ifdef HAVE_SYS_PARAM_H
++# include <sys/param.h>
++#endif])
++
+ AC_CHECK_HEADERS(fcntl.h sys/fcntl.h sys/loadavg.h sys/ptrace.h)
+ AC_CHECK_HEADERS(security/pam_appl.h security/pam_misc.h security/pam_filter.h)
+ AC_CHECK_HEADERS(sgtty.h termio.h)
