@@ -1,0 +1,3 @@
+SASL is a generic mechanism for authentication used by several
+network protocols.  Authen::SASL provides a Perl implementation
+framework that all protocols should be able to share.
