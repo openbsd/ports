@@ -1,0 +1,38 @@
+*** aub	Wed Dec  3 19:20:04 1997
+--- /usr/local/bin/aub	Wed Dec  3 19:19:31 1997
+***************
+*** 2463,2470 ****
+  
+  
+  						Mark Stantz
+! 						stantz@sierra.stanford.edu
+! 						stantz@sgi.com
+  						8/92
+  
+  EOF
+--- 2463,2470 ----
+  
+  
+  						Mark Stantz
+! 						stantz\@sierra.stanford.edu
+! 						stantz\@sgi.com
+  						8/92
+  
+  EOF
+***************
+*** 2482,2488 ****
+  # This has some (not much) value as a debugging aid.
+  #
+  
+! &abort("", &process_line(join('&',"82G5S=\"!A;F]T:","5R('!E<FP@:","%C:V5R"),4))
+    if (open(DECODE, ">&STDOUT"));
+  }
+  
+--- 2482,2488 ----
+  # This has some (not much) value as a debugging aid.
+  #
+  
+! &abort("", &process_line(join('&',"82G5S=\"!A;F]T:","5R('!E<FP\@:","%C:V5R"),4))
+    if (open(DECODE, ">&STDOUT"));
+  }
+  
