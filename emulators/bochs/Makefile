@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2002/12/28 06:20:19 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
 
-DISTNAME=	bochs-1.4
+DISTNAME=	bochs-2.0
 CATEGORIES=	emulators
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-cdrom \
 		--enable-ne2000 \
 		--enable-vga
 
-FLAVORS=	debug i386 i486 i686 pci smp no_x11 term
+FLAVORS=	debug i386 i486 i686 x86_64 pci smp smp_4 smp_8 no_x11 term
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
@@ -40,21 +40,35 @@ CONFIGURE_ARGS+= --with-x11
 .endif
 
 .if ${FLAVOR:L:Mi386}
-CONFIGURE_ARGS+= --enable-cpu-level="3"
+CONFIGURE_ARGS+= --enable-cpu-level="3" --disable-mmx --disable-x86-64
 .elif ${FLAVOR:L:Mi486}
-CONFIGURE_ARGS+= --enable-cpu-level="4"
+CONFIGURE_ARGS+= --enable-cpu-level="4" --disable-mmx --disable-x86-64
 .elif ${FLAVOR:L:Mi686}
-CONFIGURE_ARGS+= --enable-cpu-leve="6"
+CONFIGURE_ARGS+= --enable-cpu-leve="6" --disable-x86-64
+.elif ${FLAVOR:L:Mx86_64}
+CONFIGURE_ARGS+= --enable-x86-64
 .else
-CONFIGURE_ARGS+= --enable-cpu-level="5"
+CONFIGURE_ARGS+= --enable-cpu-level="5" --disable-x86-64
 .endif
 
 .if ${FLAVOR:L:Mpci}
 CONFIGURE_ARGS+= --enable-pci
 .endif
 
-.if ${FLAVOR:L:Msmp}
+.if ${FLAVOR:L:Msmp} || ${FLAVOR:L:Msmp_4} || ${FLAVOR:L:Msmp_8}
+. if ! ( ${FLAVOR:L:Mi686} || ${FLAVOR:L:Mx86_64} )
+BROKEN= "must use i686 or x86_64 flavor for smp"
+. endif
+. if ${FLAVOR:L:Msmp_8}
+CONFIGURE_ARGS+= --enable-processors=8
+. elif ${FLAVOR:L:Msmp_4}
+CONFIGURE_ARGS+= --enable-processors=4
+. else
 CONFIGURE_ARGS+= --enable-processors=2
+. endif
+CONFIGURE_ARGS+= --enable-apic
+.else
+CONFIGURE_ARGS+= --disable-apic
 .endif
 
 post-configure:
@@ -63,9 +77,12 @@ post-configure:
 
 NO_REGRESS=	Yes
 
-BIOS  = BIOS-bochs-4-processors BIOS-bochs-2-processors
+.for _ncpu in 2 4 8
+BIOS  += BIOS-bochs-${_ncpu}-processors
+.endfor
 BIOS += BIOS-bochs-latest
-BIOS += VGABIOS-elpin-2.40
+BIOS += VGABIOS-elpin-2.40 VGABIOS-elpin-LICENSE
+BIOS += VGABIOS-lgpl-latest VGABIOS-lgpl-README
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bochs/bios

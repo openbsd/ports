@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/06/09 16:24:57 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2002/12/28 06:20:20 todd Exp $
 bin/bochs
 bin/bximage
 man/man1/bochs-dlx.1
 man/man1/bochs.1
-man/man1/bochsrc.1
 man/man1/bximage.1
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
+share/bochs/bios/BIOS-bochs-8-processors
 share/bochs/bios/BIOS-bochs-latest
 share/bochs/bios/VGABIOS-elpin-2.40
+share/bochs/bios/VGABIOS-elpin-LICENSE
+share/bochs/bios/VGABIOS-lgpl-latest
+share/bochs/bios/VGABIOS-lgpl-README
 share/bochs/bochsrc
 share/bochs/fonts/fonts.dir
 share/bochs/fonts/hercules.bdf
@@ -25,7 +28,6 @@ share/doc/bochs/configure.html
 share/doc/bochs/construction.html
 share/doc/bochs/cosimulation.html
 share/doc/bochs/cvs-status.html
-share/doc/bochs/debugger.html
 share/doc/bochs/developers.html
 share/doc/bochs/faq.html
 share/doc/bochs/features.html
