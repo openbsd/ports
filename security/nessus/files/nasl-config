@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# Nessus libraries configuration script
+#   NASL configuration script
 #
-# braindeath from the gtk world. ugh.
+#   Original by dug song <dugsong@monkey.org>
+#   Enhanced by Matt Behrens <matt@openbsd.org>
 #
-# fake the funk. dugsong@monkey.org
 
-PREFIX=w00w00libnasl
+PREFIX=@@WRKSRC@@/libnasl
 LIBDIR=$PREFIX/nasl/.libs
 INCLUDEDIR=$PREFIX/include
 VERSION=0.98.3

@@ -1,5 +1,8 @@
-/* Replace the configure-generated nmap.h so that we can convince
- * nmap_wrapper.nes to build regardless of nmap's presence.
+/*
+ *  Replace the configure-generated nmap.h so that we can convince
+ *  nmap_wrapper.nes to build regardless of nmap's presence.
+ *
+ *  Matt Behrens <matt@openbsd.org>
  */
 
 #ifndef NMAP_H__

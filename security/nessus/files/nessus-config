@@ -1,15 +1,15 @@
 #!/bin/sh
 #
-# Nessus libraries configuration script
+#   Nessus libraries configuration script
 #
-# braindeath from the gtk world. ugh.
+#   Original by dug song <dugsong@monkey.org>
+#   Enhanced by Matt Behrens <matt@openbsd.org>
 #
-# fake the funk. dugsong@monkey.org
 
 VERSION=@@VERS@@
-LIBDIR=w00w00nessus-libraries
-COREDIR=w00w00nessus-core
-CIPHER="-L$LIBDIR/libpeks/.libs -lpeks -lgmp -lz"
+LIBDIR=@@WRKSRC@@/nessus-libraries
+COREDIR=@@WRKSRC@@/nessus-core
+CIPHER="-L$LIBDIR/libpeks/.libs -L@@PREFIX@@/lib -lpeks -lgmp -lz"
 CIPHER_CFLAGS="-DENABLE_CRYPTO_LAYER -I$LIBDIR/libpeks"
 EXTRA="-lresolv  "
 

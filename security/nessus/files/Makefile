@@ -1,16 +1,18 @@
 #
-# Makefile wrapper for nessus.
+#   Makefile wrapper for nessus
 #
-# dugsong@monkey.org
+#   Original by dug song <dugsong@monkey.org>
+#   Enhanced by Matt Behrens <matt@openbsd.org>
+#
 
 all:
-	@for dir in y0y0y0 ; do \
+	@for dir in @@NESSUS_DIRS@@ ; do \
 	   echo "===>   Building $$dir" ; \
 	   (cd $$dir ; make $@) ; \
 	done
 
 install:
-	@for dir in y0y0y0 ; do \
+	@for dir in @@NESSUS_DIRS@@ ; do \
 	   echo "===>   Installing $$dir" ; \
 	   (cd $$dir ; \
 	    make prefix=${PREFIX} \

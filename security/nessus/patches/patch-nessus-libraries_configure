@@ -1,7 +1,7 @@
-$OpenBSD: patch-nessus-libraries_configure,v 1.1 2000/10/01 00:35:53 matt Exp $
---- nessus-libraries/configure.orig	Thu Aug 31 10:52:56 2000
-+++ nessus-libraries/configure	Tue Sep 26 13:48:04 2000
-@@ -3863,7 +3863,7 @@ INSTALL_DIR="$INSTALL -d"
+$OpenBSD: patch-nessus-libraries_configure,v 1.2 2000/12/28 16:07:06 matt Exp $
+--- nessus-libraries/configure.orig	Thu Sep 28 08:34:25 2000
++++ nessus-libraries/configure	Sat Nov 25 19:24:30 2000
+@@ -3936,7 +3936,7 @@ INSTALL_DIR="$INSTALL -d"
  
  EXTRA=$LIBS
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-nessus-libraries_configure,v 1.1 2000/10/01 00:35:53 matt Exp $
  
  
  
-@@ -4305,7 +4305,7 @@ if test "$no_recursion" != yes; then
+@@ -4378,7 +4378,7 @@ if test "$no_recursion" != yes; then
      esac
    done
  

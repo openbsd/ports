@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# configure wrapper for nessus
+#   configure wrapper script for nessus
 #
-# why are people aping the stupidity of gtk-config? @#$!$
+#   Original by dug song <dugsong@monkey.org>
+#   Enhanced by Matt Behrens <matt@openbsd.org>
 #
-# dugsong@monkey.org
 
-for dir in y0y0y0 ; do
+for dir in @@NESSUS_DIRS@@  ; do
     echo "===>   Configuring $dir"
-    (cd $dir ; PATH=w00w00:$PATH ./configure $*)
+    (cd $dir ; PATH=@@WRKSRC@@:$PATH ./configure $*)
 done
 

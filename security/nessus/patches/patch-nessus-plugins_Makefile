@@ -1,12 +1,12 @@
-$OpenBSD: patch-nessus-plugins_Makefile,v 1.1 2000/10/01 00:35:53 matt Exp $
---- nessus-plugins/Makefile.orig	Sun Apr 30 09:03:02 2000
-+++ nessus-plugins/Makefile	Tue Sep 26 13:48:05 2000
+$OpenBSD: patch-nessus-plugins_Makefile,v 1.2 2000/12/28 16:07:06 matt Exp $
+--- nessus-plugins/Makefile.orig	Fri Sep 29 06:03:42 2000
++++ nessus-plugins/Makefile	Sat Nov 25 19:25:18 2000
 @@ -23,7 +23,7 @@ install : all $(INSTALL_UPDATER)
  	$(INSTALL) -o root -m 444 $$scripts ${libdir}/nessus/plugins; \
  	done
  	
 -	for plugins in bin/*.nes; do \
 +	-for plugins in bin/*.nes; do \
- 	$(INSTALL) -o root -m 444 $$plugins ${libdir}/nessus/plugins; \
+ 	$(INSTALL) -o root -m 555 $$plugins ${libdir}/nessus/plugins; \
  	done
  	

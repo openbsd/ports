@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2000/10/01 00:41:45 matt Exp $
+# $OpenBSD: Makefile,v 1.17 2000/12/28 16:07:05 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
 CATEGORIES=	security
 NEED_VERSION=	1.316
 
-VERS=		1.0.5
+VERS=		1.0.6
 
 DIST_SUBDIR=	nessus
 
@@ -38,20 +38,24 @@ FLAVOR?=
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--localstatedir=/var
 
+LIB_DEPENDS=	gmp.4.1::devel/gmp
+
 .if empty(FLAVOR:L:Mno_x11)
-LIB_DEPENDS=	gtk.1.2::x11/gtk+
+LIB_DEPENDS+=	gtk.1.2::x11/gtk+
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 post-extract:
-	@sed "s%y0y0y0%${NESSUS_DIRS}%g" \
+	@sed 's%@@NESSUS_DIRS@@%${NESSUS_DIRS}%g' \
 		${FILESDIR}/Makefile > ${WRKSRC}Makefile
-	@sed -e "s%y0y0y0%${NESSUS_DIRS}%g" -e "s%w00w00%${WRKSRC}%g" \
+	@sed -e 's%@@NESSUS_DIRS@@%${NESSUS_DIRS}%g' \
+		-e 's%@@WRKSRC@@%${WRKSRC}%g' \
 		${FILESDIR}/configure > ${WRKSRC}configure
-	@sed -e "s%w00w00%${WRKSRC}%g" -e "s%@@VERS@@%${VERS}%g" \
+	@sed -e 's%@@WRKSRC@@%${WRKSRC}%g' -e 's%@@VERS@@%${VERS}%g' \
+		-e 's%@@PREFIX@@%${PREFIX}%g' \
 		${FILESDIR}/nessus-config > ${WRKSRC}nessus-config
-	@sed "s%w00w00%${WRKSRC}%g" \
+	@sed 's%@@WRKSRC@@%${WRKSRC}%g' \
 		${FILESDIR}/nasl-config > ${WRKSRC}nasl-config
 	@chmod 755 ${WRKSRC}*
 	@(cd ${WRKSRC}nessus-libraries/include ; ln -s . nessus)
