@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/05/16 13:52:06 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/05/16 19:11:30 wilfried Exp $
 bin/mozilla
 bin/mozilla-config
 bin/run-mozilla.sh
@@ -53,6 +53,8 @@ mozilla/chrome/inspector.jar
 mozilla/chrome/installed-chrome.txt
 mozilla/chrome/messenger.jar
 mozilla/chrome/modern.jar
+mozilla/chrome/pipnss.jar
+mozilla/chrome/pippki.jar
 mozilla/chrome/toolkit.jar
 mozilla/chrome/venkman.jar
 mozilla/components/accessibility.xpt
@@ -126,6 +128,7 @@ mozilla/components/msgimap.xpt
 mozilla/components/msglocal.xpt
 mozilla/components/msgnews.xpt
 mozilla/components/msgsearch.xpt
+mozilla/components/msgsmime.xpt
 mozilla/components/necko.xpt
 mozilla/components/necko_about.xpt
 mozilla/components/necko_cache.xpt
@@ -155,6 +158,9 @@ mozilla/components/nsUpdateNotifier.js
 mozilla/components/nsXmlRpcClient.js
 mozilla/components/oji.xpt
 mozilla/components/p3p.xpt
+mozilla/components/pipboot.xpt
+mozilla/components/pipnss.xpt
+mozilla/components/pippki.xpt
 mozilla/components/plugin.xpt
 mozilla/components/pref.xpt
 mozilla/components/prefetch.xpt
@@ -168,6 +174,7 @@ mozilla/components/search.xpt
 mozilla/components/shistory.xpt
 mozilla/components/sidebar.xpt
 mozilla/components/signonviewer.xpt
+mozilla/components/smime-service.js
 mozilla/components/timebomb.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
@@ -217,6 +224,7 @@ mozilla/defaults/pref/inspector.js
 mozilla/defaults/pref/mailnews.js
 mozilla/defaults/pref/mdn.js
 mozilla/defaults/pref/security-prefs.js
+mozilla/defaults/pref/smime.js
 mozilla/defaults/pref/unix.js
 mozilla/defaults/pref/xpinstall.js
 mozilla/defaults/profile/US/bookmarks.html
@@ -462,12 +470,16 @@ mozilla/components/libmsgdb.so.1.0
 mozilla/components/libmsgimap.so.1.0
 mozilla/components/libmsgmdn.so.1.0
 mozilla/components/libmsgnews.so.1.0
+mozilla/components/libmsgsmime.so.1.0
 mozilla/components/libnecko.so.1.0
 mozilla/components/libnecko2.so.1.0
 mozilla/components/libnsappshell.so.1.0
 mozilla/components/libnsprefm.so.1.0
 mozilla/components/liboji.so.1.0
 mozilla/components/libp3p.so.1.0
+mozilla/components/libpipboot.so.1.0
+mozilla/components/libpipnss.so.1.0
+mozilla/components/libpippki.so.1.0
 mozilla/components/libpref.so.1.0
 mozilla/components/libprofile.so.1.0
 mozilla/components/librdf.so.1.0
@@ -496,8 +508,13 @@ mozilla/libjsj.so.1.0
 mozilla/libmozjs.so.1.0
 mozilla/libmsgbaseutil.so.1.0
 mozilla/libnspr4.so.1.0
+mozilla/libnss3.so.1.0
+mozilla/libnssckbi.so.1.0
 mozilla/libplc4.so.1.0
 mozilla/libplds4.so.1.0
+mozilla/libsmime3.so.1.0
+mozilla/libsoftokn3.so.1.0
+mozilla/libssl3.so.1.0
 mozilla/libxlibrgb.so.1.0
 mozilla/libxpcom.so.1.0
 mozilla/libxpcom_compat.so.1.0
@@ -551,6 +568,14 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/toolkit/content/global
 @dirrm mozilla/chrome/toolkit/content
 @dirrm mozilla/chrome/toolkit
+@exec mkdir -p %D/mozilla/chrome/pippki/content/pippki
+@dirrm mozilla/chrome/pippki/content/pippki
+@dirrm mozilla/chrome/pippki/content
+@dirrm mozilla/chrome/pippki
+@exec mkdir -p %D/mozilla/chrome/pipnss/content/pipnss
+@dirrm mozilla/chrome/pipnss/content/pipnss
+@dirrm mozilla/chrome/pipnss/content
+@dirrm mozilla/chrome/pipnss
 @exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/toolbar
 @dirrm mozilla/chrome/modern/skin/modern/navigator/toolbar
 @exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/icons
@@ -640,6 +665,8 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/messenger/content/messenger/addressbook
 @exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-views
 @dirrm mozilla/chrome/messenger/content/messenger-views
+@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-smime
+@dirrm mozilla/chrome/messenger/content/messenger-smime
 @exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-region
 @dirrm mozilla/chrome/messenger/content/messenger-region
 @exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-mdn
@@ -764,6 +791,10 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/en-mac
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/wallet
 @dirrm mozilla/chrome/en-US/locale/en-US/wallet
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/pippki
+@dirrm mozilla/chrome/en-US/locale/en-US/pippki
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/pipnss
+@dirrm mozilla/chrome/en-US/locale/en-US/pipnss
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/p3p
 @dirrm mozilla/chrome/en-US/locale/en-US/p3p
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/necko
@@ -774,6 +805,8 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/en-US/locale/en-US/messenger/messengercompose
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger/addressbook
 @dirrm mozilla/chrome/en-US/locale/en-US/messenger/addressbook
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger-smime
+@dirrm mozilla/chrome/en-US/locale/en-US/messenger-smime
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger-mdn
 @dirrm mozilla/chrome/en-US/locale/en-US/messenger-mdn
 @dirrm mozilla/chrome/en-US/locale/en-US/messenger
