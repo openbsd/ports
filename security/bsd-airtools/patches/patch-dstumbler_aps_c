@@ -1,0 +1,36 @@
+$OpenBSD: patch-dstumbler_aps_c,v 1.1 2003/01/14 23:52:40 pvalchev Exp $
+--- dstumbler/aps.c.orig	Tue Feb 26 04:01:31 2002
++++ dstumbler/aps.c	Sat Nov 23 11:43:42 2002
+@@ -101,8 +101,7 @@ parse_ap(const char *iface)
+       redraw_aps();
+ 
+       if(audiomode)
+-        audio_play((!new.weped || new.weped == 2) ?
+-         SPKR_AP_PLAY_NOWEP : SPKR_AP_PLAY_WEP);
++        audio_play();
+ 
+       if(aps_new == 0 || autosel)
+         redraw_apinfo();
+@@ -320,9 +319,9 @@ redraw_apinfo(void)
+   if(then != now || apnew || apchange)
+   {
+     if(apnew || apchange || !then)
+-      gmtime_r((time_t *)&ptr->firstseen.tv_sec, &firsttm);
++      localtime_r((time_t *)&ptr->firstseen.tv_sec, &firsttm);
+ 
+-    gmtime_r((time_t *)&ptr->lastseen.tv_sec, &lasttm);
++    localtime_r((time_t *)&ptr->lastseen.tv_sec, &lasttm);
+     then = now;
+   }
+ 
+@@ -353,8 +352,8 @@ redraw_apinfo(void)
+    " %s\n"
+    " Channel: %-2d   %s\n"
+    " Signal/Noise: %d/%d/%d\n"
+-   " First Seen: %d:%d:%d\n"
+-   " Last Seen:  %d:%d:%d\n",
++   " First Seen: %02d:%02d:%02d\n"
++   " Last Seen:  %02d:%02d:%02d\n",
+    ptr->ssid, ptr->bssid[0], ptr->bssid[1], ptr->bssid[2], ptr->bssid[3],
+    ptr->bssid[4], ptr->bssid[5], mfg_buf, ptr->chan, mon_buf, ptr->quality[0],
+    ptr->quality[1], ptr->quality[2], firsttm.tm_hour, firsttm.tm_min,

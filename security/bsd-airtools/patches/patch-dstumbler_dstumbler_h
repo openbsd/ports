@@ -1,0 +1,12 @@
+$OpenBSD: patch-dstumbler_dstumbler_h,v 1.1 2003/01/14 23:52:40 pvalchev Exp $
+--- dstumbler/dstumbler.h.orig	Sat Nov 23 11:42:14 2002
++++ dstumbler/dstumbler.h	Sat Nov 23 11:42:23 2002
+@@ -450,7 +450,7 @@ void mon_stop(void);
+  * audio.c
+  */
+ void audio_graph(int);
+-void audio_play(char *);
++void audio_play(void);
+ 
+ /*
+  * log.c
