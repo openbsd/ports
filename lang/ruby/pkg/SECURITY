@@ -1,6 +1,3 @@
-$OpenBSD: SECURITY,v 1.1.1.1 2000/03/28 13:16:02 espie Exp $
+$OpenBSD: SECURITY,v 1.2 2000/09/05 13:56:25 espie Exp $
 
-One use of mktemp replaced with mkstemp.
-
-Would need a thorough audit to be trusted. Seems to have
-a tainting mechanism similar to perl.
+Use of mktemp is now safe, since it goes thru open(..., O_EXCL) later.

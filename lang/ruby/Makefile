@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/16 18:54:48 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/09/05 13:56:24 espie Exp $
 
-DISTNAME=ruby-1.4.4
+VERSION=1.4.6
+DISTNAME=ruby-${VERSION}
 CATEGORIES = lang
 NEED_VERSION=	1.310
 MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
@@ -11,12 +12,12 @@ MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
 MASTER_SITES0=${MASTER_SITES:C,$,doc/,}
 
 BINARCH=${DISTNAME}.tar.gz
-MANARCH=ruby-man-1.4.4.tar.gz
+MANARCH=ruby-man-${VERSION}.tar.gz
 DISTFILES=${BINARCH} ${MANARCH}:0
 EXTRACT_ONLY=${BINARCH}
 
 HOMEPAGE=http://www.netlab.co.jp/ruby/
-MAINTAINER=espie@cvs.openbsd.org
+MAINTAINER=	espie@cvs.openbsd.org
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
