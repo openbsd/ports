@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/24 23:28:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/04/01 02:24:55 espie Exp $
 
 DISTNAME=	flwm-0.25
 PKGNAME=	flwm-0.25
 CATEGORIES=	x11
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://www.cinenet.net/users/spitzak/flwm/
 MAINTAINER=	jason@OpenBSD.ORG
 
 EXTRACT_SUFX=	.tgz
-GNU_CONFIGURE=	Yes
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
 CONFIGURE_ENV=	CXXFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 NO_SHARED_LIBS=	Yes
 LIB_DEPENDS=	fltk::x11/fltk
+FAKE=		Yes
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
