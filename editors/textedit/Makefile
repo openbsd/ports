@@ -1,22 +1,17 @@
-# New ports collection makefile for: textedit
-# Version required:	1.0
-# Date created:		15 Sept 1998
-# Whom:			Ian Darwin <ian@darwinsys.com>
-#
-# $Id: Makefile,v 1.1.1.1 1998/09/16 15:02:03 ian Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/08 23:18:35 marc Exp $
 #
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
 CATEGORIES=	editors
-MASTER_SITES=	http://www.darwinsys.com/freeware/
-
-LIB_DEPENDS=    xview\\.3\\.:${PORTSDIR}/x11/xview-lib
 
 MAINTAINER=	ian@OpenBSD.ORG
 
+MASTER_SITES=	http://www.darwinsys.com/freeware/
+
+LIB_DEPENDS=    xview.3.:${PORTSDIR}/x11/xview-lib
+
 USE_IMAKE=	yes
-MAN1=		textedit.1
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/textedit $(PREFIX)/bin/textedit
