@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-swedish,v 1.1 2001/07/09 17:34:13 jakob Exp $
+@pkgdep ispell-3.1.20
+lib/ispell/svenska.aff
+lib/ispell/svenska.hash
+@exec echo 'invoking %D/bin/ispell-config'
+@exec %D/bin/ispell-config

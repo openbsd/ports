@@ -1,31 +1,39 @@
-# $OpenBSD: Makefile,v 1.21 2001/05/05 20:26:47 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/07/09 17:34:11 jakob Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-COMMENT=	interactive spelling checker
-COMMENT-french=	ispell dictionary for French
-COMMENT-german=	ispell dictionary for German
+COMMENT=		interactive spelling checker
+COMMENT-french=		ispell dictionary for French
+COMMENT-german=		ispell dictionary for German
+COMMENT-swedish=	ispell dictionary for Swedish
 
-V=		3.1.20
-DISTNAME=	ispell-$V
+VERSION=	3.1.20
+DISTNAME=	ispell-${VERSION}
 CATEGORIES=	textproc
 NEED_VERSION=	1.361
+
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+
+HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
+
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
 MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 MASTER_SITES2=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
+MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
+
+DIST_SUBDIR=	ispell
+
 FRENCH_DICT=	francais-IREQ-1.4
 GERMAN_DICT=	hk2-deutsch
-DISTFILES=	${DISTNAME}.tar.gz ${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1
-EXTRACT_ONLY=	${DISTNAME}.tar.gz ${GERMAN_DICT}.tar.gz
-HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
+SWEDISH_DICT=	iswedish-1.2.1
 
+DISTFILES=	${DISTNAME}.tar.gz ${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1 ${SWEDISH_DICT}.tar.gz:3
+EXTRACT_ONLY=	${DISTNAME}.tar.gz ${SWEDISH_DICT}.tar.gz
 PATCHFILES=	ispell-html-mode.patch:2
 
-MAINTAINER=	ports@openbsd.org
-
-MULTI_PACKAGES=	-french -german
+MULTI_PACKAGES=	-french -german -swedish
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=	ispell$i-$V
+PKGNAME$i=	ispell$i-${VERSION}
 .endfor
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,8 +45,13 @@ WRKDIST=	${WRKDIR}/ispell-3.1
 MAKE_FLAGS=	TMPDIR=${WRKDIR} 
 
 post-extract:
-	@mkdir ${WRKDIST}/languages/francais-IREQ
-	@(cd ${WRKDIST}/languages/francais-IREQ; tar zxf ${DISTDIR}/${FRENCH_DICT}.tar.gz)
+	@mkdir -p ${WRKDIR}/french
+	@(cd ${WRKDIR}/french; \
+	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${FRENCH_DICT}.tar.gz)
+
+	@mkdir -p ${WRKDIR}/german
+	@(cd ${WRKDIR}/german; \
+	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${GERMAN_DICT}.tar.gz)
 
 post-configure:
 	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
@@ -46,6 +59,16 @@ post-configure:
 post-build:
 	@sed "s%/usr/local%${PREFIX}%g" ${SCRIPTDIR}/ispell-config > \
 		${WRKDIST}/ispell-config
+
+	@(cd ${WRKDIR}/french; \
+	$(MAKE) RM='rm -f' HASH=${WRKDIST}/buildhash)
+
+	@(cd ${WRKDIR}/german; \
+	sort -u *.txt | ./tex2iso >all.words; \
+	${WRKDIST}/buildhash all.words deutsch.aff deutsch.hash)
+
+	@(cd ${WRKDIR}/${SWEDISH_DICT}; \
+	${WRKDIST}/buildhash svenska.datalista svenska.aff svenska.hash)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/ispell ${PREFIX}/bin/ispell
@@ -81,15 +104,15 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/languages/british/britishxlg.hash \
 		${PREFIX}/lib/ispell/britishxlg.hash
 	ln -s britishxlg.hash ${PREFIX}/lib/ispell/british.hash
-	${INSTALL_DATA} ${WRKDIST}/languages/deutsch/deutsch.aff \
-		${PREFIX}/lib/ispell/deutsch.aff
-	${INSTALL_DATA} ${WRKDIST}/languages/deutsch/deutsch.hash \
-		${PREFIX}/lib/ispell/deutsch.hash
-	${INSTALL_DATA} ${WRKDIST}//languages/francais-IREQ/francais.aff \
-		${PREFIX}/lib/ispell/francais.aff
-	${INSTALL_DATA} ${WRKDIST}/languages/francais-IREQ/francais.hash \
-		${PREFIX}/lib/ispell/francais.hash
+
 	ln -s american.aff ${PREFIX}/lib/ispell/default.aff
 	ln -s american.hash ${PREFIX}/lib/ispell/default.hash
-	
+
+	${INSTALL_DATA} ${WRKDIR}/german/deutsch.{aff,hash} \
+		${PREFIX}/lib/ispell
+	${INSTALL_DATA} ${WRKDIR}/french/francais.{aff,hash} \
+		${PREFIX}/lib/ispell
+	${INSTALL_DATA} ${WRKDIR}/${SWEDISH_DICT}/svenska.{aff,hash} \
+		${PREFIX}/lib/ispell
+
 .include <bsd.port.mk>
