@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.32 1999/10/02 18:22:52 brad Exp $
+$OpenBSD: LICENSE,v 1.33 1999/10/02 18:33:21 brad Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -511,8 +511,9 @@ Y	shells/bash2			bash-2.03.tar.gz		GPL
 Y	shells/bash2			bash-doc-2.03.tar.gz		GPL
 Y	shells/es			es-0.9-alpha1.tar.gz		PD
 N	shells/scsh			scsh-0.5.1.tar.gz		LIC
-Y	shells/tcsh			tcsh-6.08.tar.gz		BSD
-Y	shells/zsh			zsh-3.0.5.tar.gz		BSD
+Y	shells/tcsh			tcsh-6.09.tar.gz		BSD
+Y	shells/zsh			zsh-3.0.6.tar.gz		BSD
+Y	shells/zsh-devel		zsh-3.1.6.tar.gz		BSD
 N	sysutils/LPRng			LPRng-3.5.1.tgz			MANY!
 Y	sysutils/cfengine		cfengine-1.4.12.tar.gz		GPL
 Y	sysutils/contool		contool-3.3a.tar.gz		BSD
@@ -566,11 +567,15 @@ N	textproc/xpdf			xpdf-0.80-decrypt.patch		CRYPTO
 Y	www/analog			analog3.11.tar.gz		COPY
 N	www/apache			-none-				INC
 Y	www/cgiparse			cgiparse-0.8e.tar.gz		BSD
+Y	www/communicator	netscape/communicator-v461-export.sparc-sun-sunos4.1.3_U1.tar.gz	COPY
+Y	www/communicator	netscape/communicator-v461-export.x86-bsdi-bsd2.tar.gz	COPY
+Y	www/communicator	netscape/Fortify-1.4.4-unix-src.tar.gz	COPY
 N	www/lynx			-none-				INC
 Y	www/mozilla			mozilla-19980728.tar.gz		COPY
-Y	www/navigator	navigator-4.06-fortified/navigator-v45-export.x86-bsdi-bsd2.tar.gz	COPY
-Y	www/navigator	navigator-4.06-fortified/Fortify-1.3.0-unix-x86.tar.gz	COPY
-Y	www/squid			squid-1.1.22-src.tar.gz		GPL
+Y	www/navigator	netscape/navigator-v461-export.sparc-sun-sunos4.1.3_U1.tar.gz	COPY
+Y	www/navigator	netscape/navigator-v461-export.x86-bsdi-bsd2.tar.gz	COPY
+Y	www/navigator	netscape/Fortify-1.4.4-unix-src.tar.gz		COPY
+Y	www/squid			squid-2.2.STABLE5-src.tar.gz	GPL
 Y	www/transproxy			transproxy-0.4.tgz		GPL
 Y	www/wwwcount			wwwcount2.4.tar.gz		BSD
 Y	x11/Xaw3d			Xaw3d-1.5.tar.gz		X
