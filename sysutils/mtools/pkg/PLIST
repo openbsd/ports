@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/07/09 00:37:41 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/09/04 22:58:21 fgsch Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/mtools.info
 bin/floppyd
 bin/floppyd_installtest
