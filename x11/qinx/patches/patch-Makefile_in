@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/12/24 05:03:14 brad Exp $
+--- Makefile.in.orig	2003-12-23 23:48:15.000000000 -0500
++++ Makefile.in	2003-12-23 23:49:41.000000000 -0500
+@@ -287,9 +287,9 @@ Makefile:  $(srcdir)/Makefile.in  $(top_
+ 	  CONFIG_FILES=$@ $(SHELL) ./config.status
+ 
+ $(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+-	$(SHELL) ./config.status --recheck
++	# autoconf shiz.
+ $(srcdir)/configure:  $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
++	# autoconf shiz.
+ 
+ $(ACLOCAL_M4):  configure.in acinclude.m4
+ 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+@@ -313,7 +313,7 @@ $(srcdir)/config.h.in:  $(srcdir)/./stam
+ $(srcdir)/./stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+ 	@rm -f $(srcdir)/./stamp-h.in $(srcdir)/./stamp-h.inT
+ 	@echo timestamp > $(srcdir)/./stamp-h.inT 2> /dev/null
+-	cd $(top_srcdir) && $(AUTOHEADER)
++	# autoconf shiz.
+ 	@mv $(srcdir)/./stamp-h.inT $(srcdir)/./stamp-h.in
+ 
+ distclean-hdr:

@@ -1,0 +1,41 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2003/12/24 05:03:14 brad Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+
+COMMENT=	"QNX Photon inspired theme for KDE"
+
+DISTNAME=	qinx-0.6
+CATEGORIES=	x11 x11/kde
+MASTER_SITES=	http://www.usermode.org/code/
+
+HOMEPAGE=	http://www.usermode.org/code.html
+
+MAINTAINER=	Brad Smith <brad@openbsd.org>
+
+# BSD
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
+PERMIT_DISTFILES_FTP=	No
+
+LIB_DEPENDS=	art_lgpl_2::graphics/libart \
+		kdecore.4,DCOP,kdefx,kdeui::x11/kde/libs3 \
+		kwin::x11/kde/base3
+
+AUTOCONF_VERSION= 2.54
+MODKDE_VERSION= 3.1
+MODULES=	kde
+
+PORTHOME=	${WRKDIR}
+
+MAKE_ENV=	KDEDIR="${LOCALBASE}"
+MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
+
+USE_X11=	Yes
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= autoconf
+MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
+CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
+
+.include <bsd.port.mk>
