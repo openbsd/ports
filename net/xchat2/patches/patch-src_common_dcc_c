@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_common_dcc_c,v 1.1 2003/12/14 21:25:38 margarida Exp $
+--- src/common/dcc.c.orig	2003-11-28 03:06:57.000000000 +0000
++++ src/common/dcc.c	2003-12-14 20:33:44.000000000 +0000
+@@ -1659,9 +1659,15 @@ handle_dcc (struct session *sess, char *
+ 			 * sending file.
+ 			 */
+ 			dcc = find_dcc_from_id (pasvid, TYPE_SEND);
+-			dcc->addr = addr;
+-			dcc->port = port;
+-			dcc_connect(dcc);
++			if (dcc)
++			{
++				dcc->addr = addr;
++				dcc->port = port;
++				dcc_connect (dcc);
++			} else
++			{
++				dcc_malformed (sess, nick, word_eol[4] + 2);
++			}
+ 			return;
+ 		}
+ 
