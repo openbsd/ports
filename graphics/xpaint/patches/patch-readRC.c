@@ -1,5 +1,5 @@
---- readRC.c.orig	Wed Jun 13 12:00:10 2001
-+++ readRC.c	Wed Jun 13 12:01:58 2001
+--- readRC.c.orig	Sat Sep  2 16:07:09 2000
++++ readRC.c	Wed Feb 20 15:49:55 2002
 @@ -30,12 +30,6 @@
  #include <unistd.h>
  #endif
@@ -13,7 +13,7 @@
  #define RC_FILENAME	".XPaintrc"
  
  static String defaultRC[] =
-@@ -66,17 +60,18 @@
+@@ -66,17 +60,18 @@ openTemp(char **np)
  {
      char *n;
      char xx[256];
