@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2000/03/24 22:11:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/03/26 21:28:47 brad Exp $
 
 DISTNAME=	bzip-0.21
 CATEGORIES=	archivers
 NEED_VERSION=	1.218
 MASTER_SITES=	${MASTER_SITE_BACKUP}
-
 
 MAINTAINER=	ports@openbsd.org
 
