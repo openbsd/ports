@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2002/09/10 01:02:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/12/02 21:26:27 sturm Exp $
 # $FreeBSD: ports/net/mudix/Makefile,v 1.6 2001/06/22 19:39:12 dwcjr Exp $
 
 COMMENT=	"ncurses-based MUD client with triggers, aliases, colors"
 
-DISTNAME=	mudix-4.2
+DISTNAME=	mudix-4.3
 CATEGORIES=	net games
 HOMEPAGE=	http://dw.nl.eu.org/mudix.html
 
