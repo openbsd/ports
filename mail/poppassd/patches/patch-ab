@@ -1,5 +1,5 @@
---- poppassd.c.orig	Mon Mar 31 16:00:34 1997
-+++ poppassd.c	Mon Mar 31 16:03:16 1997
+--- poppassd.c.orig	Mon Jun  5 02:32:38 2000
++++ poppassd.c	Mon Jun  5 02:32:38 2000
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -43,7 +43,7 @@
      "Changing password for *\n*'s Old password:",
      ""};
  
-@@ -165,7 +166,9 @@
+@@ -165,7 +166,9 @@ static char *P3[] =
      
  static char *P4[] =
     {"\n",
@@ -53,7 +53,7 @@
      ""};
  
  
-@@ -186,11 +189,7 @@
+@@ -186,11 +189,7 @@ char *argv[];
       
       *user = *oldpass = *newpass = 0;
       
@@ -66,7 +66,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -218,6 +217,7 @@
+@@ -218,6 +217,7 @@ char *argv[];
  
       if (chkPass (user, oldpass, pw) == FAILURE)
       {
@@ -74,7 +74,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +264,28 @@
+@@ -264,28 +264,28 @@ char *argv[];
  
  	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
  	  {
@@ -107,7 +107,7 @@
  	       WriteToClient ("500 Server error (abnormal exit), get help!");
  	       exit (1);
  	  }
-@@ -304,17 +304,19 @@
+@@ -304,17 +304,19 @@ char *argv[];
       }
       else      /* Child */
       {
@@ -138,7 +138,7 @@
  	  setuid (pw->pw_uid);
  	  setgid (pw->pw_gid);
  	  dochild (master, slavedev, user);
-@@ -324,7 +326,7 @@
+@@ -324,7 +326,7 @@ char *argv[];
  /*
   * dochild
   *
@@ -147,7 +147,7 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -338,13 +340,6 @@
+@@ -338,13 +340,6 @@ char *slavedev, *user;
     int slave;
     struct termios stermios;
  
@@ -161,7 +161,7 @@
     /* Open slave pty and acquire as new controlling terminal. */
  
     if ((slave = open(slavedev, O_RDWR)) < 0) {
-@@ -387,10 +382,10 @@
+@@ -387,10 +382,10 @@ char *slavedev, *user;
        return(0);
     }
  
@@ -175,7 +175,7 @@
        return(0);
     }
  }
-@@ -408,15 +403,20 @@
+@@ -408,15 +403,20 @@ char *slavedev, *user;
   *
   * Modified by Norstad to remove assumptions about number of pty's allocated
   * on this UNIX box.
@@ -197,7 +197,7 @@
     dirp = opendir("/dev");
     while ((dp = readdir(dirp)) != NULL) {
        if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,9 +485,11 @@
+@@ -485,9 +485,11 @@ char *user, *oldpass, *newpass, *emess;
       }
  
       writestring(master, pswd);
@@ -210,7 +210,7 @@
       return SUCCESS;
  }
  
-@@ -566,6 +568,7 @@
+@@ -566,6 +568,7 @@ char *buf;
  	}
  	n += m;
  	buf[n] = 0;
