@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/10/31 15:17:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/11/20 02:21:05 brad Exp $
 bin/silc
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
 @comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/TextUI.pm
@@ -78,6 +78,7 @@ share/silc/help/lastlog
 share/silc/help/layout
 share/silc/help/levels
 share/silc/help/list
+share/silc/help/listkeys
 share/silc/help/load
 share/silc/help/log
 share/silc/help/me
