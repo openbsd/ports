@@ -1,16 +1,26 @@
 --- Imakefile.orig	Thu Jun 30 09:34:55 1994
-+++ Imakefile	Tue Jun  9 20:59:42 1998
-@@ -90,7 +90,13 @@
++++ Imakefile	Sat Apr  1 00:16:02 2000
+@@ -90,8 +90,14 @@
  /* FreeBSD */
  #if defined(i386BsdArchitecture) && (defined(i386FreeBsd) || defined(FreeBSDArchitecture))
  #define	StartupSound	myu.au
 +EXTRA_LIBRARIES = -lxpg4
  #endif	/* i386BsdArchitecture && (i386FreeBsd || FreeBSDArchitecture) */
-+
+ 
 +/* OpenBSD */
 +#ifdef OpenBSDArchitecture
 +#define	StartupSound	myu.au
 +#endif	/* OpenBSDArchitecture */
- 
++
  #else	/* USE_NETAUDIO */
  
+ /* netaudio (NCDaudio) */
+@@ -218,6 +224,6 @@
+ 
+ #ifdef	USE_SOUND
+ install:: sounds/StartupSound
+-	MakeDir(EmiClockLib)
+-	$(INSTALL) -c $(INSTAPPFLAGS) sounds/StartupSound EmiClockLib/StartupSound
++	MakeDir($(DESTDIR)EmiClockLib)
++	$(INSTALL) -c $(INSTAPPFLAGS) sounds/StartupSound $(DESTDIR)EmiClockLib/StartupSound
+ #endif	/* USE_SOUND */
