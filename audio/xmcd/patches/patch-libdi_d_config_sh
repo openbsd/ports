@@ -1,0 +1,112 @@
+$OpenBSD: patch-libdi_d_config_sh,v 1.1 2000/12/03 20:50:50 espie Exp $
+--- libdi_d/config.sh.orig	Sun Dec  3 20:58:50 2000
++++ libdi_d/config.sh	Sun Dec  3 21:32:17 2000
+@@ -25,20 +25,23 @@
+ #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ #
+ 
+-PATH=/bin:/usr/bin:/sbin:/usr/sbin:/etc:/usr/local/bin:/usr/ucb
++PATH=/bin:/usr/bin:/sbin:/usr/sbin:/etc:/usr/local/bin
+ export PATH
+ 
+ VER=2.3
+ 
+ # Change the following directory to fit your local configuration
+-BINDIR=/usr/bin/X11
+-LIBDIR=/usr/lib/X11
+-XMCDLIB=/usr/lib/X11/xmcd
+-APPDEFAULTSDIR=/usr/lib/X11/app-defaults
++BINDIR=/usr/local/bin
++LIBDIR=/usr/local/lib/X11
++XMCDLIB=/usr/local/lib/X11/xmcd
++APPDEFAULTSDIR=/usr/local/lib/X11/app-defaults
+ 
+ ERRFILE=/tmp/xmcd.err
+-TMPFILE=/tmp/.xmcdcfg.$$
+-TMPSITES=/tmp/.sites.$$
++# Catch some signals
++trap "rm -f $TMPFILE $TMPSITES; exit 1" 1 2 3 5 15
++
++TMPFILE=`mktemp /tmp/.xmcdcfg.XXXXXXXXXX`
++TMPSITES=`mktemp /tmp/.sites.XXXXXXXXXX`
+ 
+ CFGDIR=$XMCDLIB/config
+ SCRDIR=$XMCDLIB/scripts
+@@ -1642,9 +1645,6 @@ browser_config()
+ # Main starts here
+ #
+ 
+-# Catch some signals
+-trap "rm -f $TMPFILE $TMPSITES; exit 1" 1 2 3 5 15
+-
+ # Get platform information
+ OS_SYS=`(uname -s) 2>/dev/null`
+ OS_VER=`(uname -r) 2>/dev/null`
+@@ -1811,14 +1811,7 @@ elif [ "$OS_SYS" = OpenBSD ]
+ then
+ 	# OpenBSD
+ 	DEVPREF=/dev/rcd
+-	case "`uname -m`" in
+-	*86)
+-		DEVSUFF=d
+-		;;
+-	*)
+-		DEVSUFF=c
+-		;;
+-	esac
++	DEVSUFF=c
+ 	FIRST=0
+ 	MAILCMD="Mail -s '%S' %A <%F >/dev/null 2>&1"
+ elif [ "$OS_SYS" = OSF1 ]
+@@ -2057,49 +2050,9 @@ do
+ 
+ 	if [ $DRVNO -eq 0 ]
+ 	then
+-		#
+-		# Configure app-defaults/XMcd file
+-		#
+-		chmod 644 $APPDEFAULTSDIR/XMcd 2>/dev/null
+-		if [ -w $APPDEFAULTSDIR/XMcd ]
+-		then
+-			$AWK '
+-			/^XMcd\.libdir:/ {
+-				printf("XMcd.libdir:\t\t\t%s\n", xmcdlib)
+-				next
+-			}
+-			/^XMcd\.cddbMailCmd:/ {
+-				printf("XMcd.cddbMailCmd:\t\t%s\n", mailcmd)
+-				next
+-			}
+-			{
+-				print $0
+-			}' xmcdlib="$XMCDLIB" mailcmd="$MAILCMD" \
+-				$APPDEFAULTSDIR/XMcd > /tmp/xmcd.$$
+-
+-			cp /tmp/xmcd.$$ $APPDEFAULTSDIR/XMcd
+-			rm -f /tmp/xmcd.$$
+-
+-			if [ $LIBDIR != "/usr/lib/X11" -a \
+-			     -d /usr/lib/X11/app-defaults ]
+-			then
+-				rm -f /usr/lib/X11/app-defaults/._trash_
+-				>$APPDEFAULTSDIR/._trash_
+-
+-				if [ ! -f /usr/lib/X11/app-defaults/._trash_ ]
+-				then
+-					rm -f /usr/lib/X11/app-defaults/XMcd
+-					dolink $APPDEFAULTSDIR/XMcd \
+-						/usr/lib/X11/app-defaults/XMcd
+-				fi
+-
+-				rm -f $APPDEFAULTSDIR/._trash_
+-			fi
+-		else
+-			logerr -p "Cannot configure $APPDEFAULTSDIR/XMcd"
+-			EXITSTAT=1
+-		fi
+ 
++		test -f $CFGDIR/common.cfg || \
++			cp $CFGDIR/common.cfg.base $CFGDIR/common.cfg
+ 		#
+ 		# Configure common.cfg file
+ 		#
