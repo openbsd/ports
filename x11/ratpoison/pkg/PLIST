@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/15 22:04:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/02/27 17:01:53 jcs Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/ratpoison.info
 bin/ratpoison
+bin/rpws
 info/ratpoison.info
 man/man1/ratpoison.1
 @comment share/doc/ratpoison/AUTHORS
@@ -8,8 +9,12 @@ man/man1/ratpoison.1
 @comment share/doc/ratpoison/ChangeLog
 share/doc/ratpoison/NEWS
 @comment share/doc/ratpoison/README
+share/ratpoison/allwindows.sh
+share/ratpoison/clickframe.pl
 share/ratpoison/genrpbindings
 share/ratpoison/ratpoison.el
+share/ratpoison/rpshowall.sh
+share/ratpoison/rpws
 share/ratpoison/split.sh
 @dirrm share/ratpoison
 @dirrm share/doc/ratpoison

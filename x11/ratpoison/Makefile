@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2003/07/02 06:29:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/27 17:01:53 jcs Exp $
 
 COMMENT=	"minimal wm based on GNU screen"
 
-DISTNAME=	ratpoison-1.2.2
+DISTNAME=	ratpoison-1.3.0-rc1
+PKGNAME=	ratpoison-1.3.0rc1
 CATEGORIES=	x11
 HOMEPAGE=	http://ratpoison.sourceforge.net/
 
@@ -21,6 +22,6 @@ USE_X11=		Yes
 
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+=	--with-xterm=${X11BASE}/bin/xterm
+CONFIGURE_ARGS+=	--with-xterm=${X11BASE}/bin/xterm --disable-history
 
 .include <bsd.port.mk>
