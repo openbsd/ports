@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/10/22 15:41:54 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/23 21:45:30 naddy Exp $
 
 # use flavors for mule and compface support
 # e.g., make FLAVOR=mule
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/${DISTNAME}/ \
 		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} 
 
-MAINTAINER=	hgweigand@wiesbaden.netsurf.de
+MAINTAINER=	Hans-Guenter Weigand <hgw@d1906.inka.de>
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
