@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.632 2004/08/03 19:30:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.633 2004/08/03 21:18:24 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2513,7 +2513,7 @@ uninstall deinstall:
 .if defined(ERRORS)
 .BEGIN:
 .  for _m in ${ERRORS}
-	@echo 1>&2 ${_m}
+	@echo 1>&2 ${_m} "(in ${PKGPATH})"
 .  endfor
 .  if !empty(ERRORS:M"Fatal\:*") || !empty(ERRORS:M'Fatal\:*')
 	@exit 1
