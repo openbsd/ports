@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 1999/02/18 21:29:42 marc Exp $
+# $OpenBSD: Makefile,v 1.31 1999/02/23 22:12:43 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -48,7 +48,7 @@
      SUBDIR += mirror
 #    SUBDIR += moxftp
 #    SUBDIR += mpd
-#    SUBDIR += mrtg
+     SUBDIR += mrtg
      SUBDIR += mtr
      SUBDIR += ncftp
 #    SUBDIR += ncftp2
