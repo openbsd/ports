@@ -1,18 +1,12 @@
-$OpenBSD: patch-pen_c,v 1.1.1.1 2002/04/29 03:18:20 wcobb Exp $
---- pen.c.orig	Thu Sep 13 12:47:33 2001
-+++ pen.c	Thu Sep 13 12:55:37 2001
-@@ -641,12 +641,12 @@ static int open_listener(char *a)
- 	serv_addr.sin_family = AF_INET;
- 	p = strchr(a, ':');
- 	if (p) {
--		strcpy(b, a);
-+		strlcpy(b, a, sizeof(b));
- 		p = strchr(b, ':');
+$OpenBSD: patch-pen_c,v 1.2 2002/06/30 00:08:04 wcobb Exp $
+--- pen.c.orig	Sat Jun 29 13:57:59 2002
++++ pen.c	Sat Jun 29 14:01:55 2002
+@@ -1054,7 +1054,7 @@
  		*p = '\0';
  		port = getport(p+1);
  		setipaddress(&serv_addr.sin_addr, b);
 -		sprintf(b, inet_ntoa(serv_addr.sin_addr));
-+		snprintf(b, (sizeof(b) - 1), inet_ntoa(serv_addr.sin_addr));
++		snprintf(b, (sizeof(b) - 1), "%s", inet_ntoa(serv_addr.sin_addr));
  	} else {
  		port = getport(a);
  		serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);

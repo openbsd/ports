@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/11 00:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/30 00:08:04 wcobb Exp $
 
 COMMENT=		"load balancer for simple TCP-based protocols"
 
-VERSION=		0.6.2
+VERSION=		0.9.2
 DISTNAME=		pen-${VERSION}
 CATEGORIES=		net
 NEED_VERSION=		1.525

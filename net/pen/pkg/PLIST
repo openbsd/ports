@@ -1,5 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/04/29 03:18:20 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/06/30 00:08:04 wcobb Exp $
 bin/mergelogs
 bin/pen
+bin/penctl
+bin/penlog
+bin/penlogd
 man/man1/mergelogs.1
 man/man1/pen.1
+man/man1/penctl.1
+man/man1/penlog.1
+man/man1/penlogd.1
