@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1999/09/06 18:17:27 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/01/03 05:45:07 fgsch Exp $
 
 DISTNAME=	mp3info-0.2.16
 CATEGORIES=	audio
@@ -14,9 +14,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}"
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3info ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mp3info.1 ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/doc/mp3info
-.for file in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mp3info
-.endfor
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mp3info
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README \
+	    ${PREFIX}/share/doc/mp3info
 
 .include <bsd.port.mk>
