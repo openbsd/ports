@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2002/06/29 07:24:10 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2002/06/29 11:36:07 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -99,21 +99,17 @@ CONFIGURE_ARGS+=--disable-iconv
 .endif
 
 .if ${FLAVOR:L:Mwin32}
-pre-fetch:
-.if ${MACHINE_ARCH} != i386
-	@echo
-	@echo "Sorry, this CPU does not support Win32 codec DLLs,"
-	@echo "and you cannot use the win32 flavor.
-	@echo
-	@exit 1
-.else
+ONLY_FOR_ARCHS=i386
+
 .if !defined(NO_WARNINGS)
+pre-fetch:
 	@echo
 	@echo "  WARNING: This application requires a kernel compiled with"
 	@echo "           'option USER_LDT' for proper operation. The GENERIC"
 	@echo "           kernel does not have this option enabled by default."
 	@echo
 .endif
+
 RUN_DEPENDS+=	win32/divx.dll:win32-codecs-*:graphics/win32-codecs
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
