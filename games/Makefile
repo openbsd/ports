@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2004/06/02 22:26:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.112 2004/06/18 13:54:19 sturm Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -119,6 +119,7 @@
      SUBDIR += wanderer
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
+     SUBDIR += wtf
      SUBDIR += xasteroids
      SUBDIR += xbat
      SUBDIR += xbattle
