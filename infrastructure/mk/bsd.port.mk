@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.570 2003/08/01 08:07:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.571 2003/08/01 08:20:43 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1833,8 +1833,8 @@ _CLEANDEPENDS?=Yes
 
 clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
-	@unset FLAVOR SUBPACKAGE || true; \
-	${MAKE} all-dir-depends|tsort -r|while read dir; do \
+	@${MAKE} all-dir-depends|tsort -r|while read dir; do \
+		unset FLAVOR SUBPACKAGE || true; \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
@@ -2168,8 +2168,8 @@ print-run-depends:
 
 .for _i in build all run
 full-${_i}-depends:
-	@unset FLAVOR SUBPACKAGE || true; \
-	${MAKE} ${_i}-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
+	@${MAKE} ${_i}-dir-depends|tsort -r|sed -e '$$d'|while read dir; do \
+		unset FLAVOR SUBPACKAGE || true; \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _print-packagename ; \
 	done
