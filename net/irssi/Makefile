@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/02/21 16:19:54 reinhard Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/23 10:29:55 reinhard Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
@@ -14,7 +14,7 @@ MASTER_SITES=	${HOMEPAGE}/files/ \
 		http://de.irssi.org/files/ \
 		http://uk.irssi.org/files/ \
 		http://pl.irssi.org/files/ \
-		http://us.irssi.org/files/ 
+		http://us.irssi.org/files/
 
 HOMEPAGE=	http://www.irssi.org
 
@@ -25,23 +25,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		gettext
-SEPARATE_BUILD=		Concurrent
+CONFIGURE_STYLE=	gnu
 
-CONFIGURE_STYLE=	autoconf
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --datadir=${PREFIX}/share/doc \
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc \
 	--enable-ipv6 --with-bot --with-proxy \
-	--with-textui --enable-curses-windows \
-	--enable-perl=yes --with-gettext \
+	--enable-perl=yes --with-included-gettext \
 	--with-perl-lib=${DESTDIR}${PREFIX}/libdata/perl5/site_perl
 
-USE_LIBTOOL=	Yes
+FLAVORS=	socks
+FLAVOR?=
+
+.if ${FLAVOR:L:Msocks}
+CONFIGURE_ARGS+=	--with-socks
+BUILD_DEPENDS=		socks.1::security/dante
+.endif
 
 SAMPLE=		default.theme colorless.theme
 
 pre-configure:
 	@perl -pi -e 's,doc/irssi,irssi,g' ${WRKSRC}/docs/Makefile.in
+	@perl -pi -e 's,lcrypt,lc_r,g' ${WRKSRC}/src/irc/bot/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi

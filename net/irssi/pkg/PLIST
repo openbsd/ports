@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/02/21 16:19:54 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/02/23 10:29:55 reinhard Exp $
 bin/botti
 bin/irssi
 lib/irssi/modules/libirc_bot.a
@@ -168,8 +168,6 @@ share/examples/irssi/default.theme
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
