@@ -1,6 +1,7 @@
---- libnasl/configure.orig	Sun May  5 16:52:40 2002
-+++ libnasl/configure	Sun May  5 16:53:10 2002
-@@ -5340,7 +5340,7 @@
+$OpenBSD: patch-libnasl_configure,v 1.2 2002/07/04 15:37:03 reinhard Exp $
+--- libnasl/configure.orig	Mon May 27 03:59:05 2002
++++ libnasl/configure	Mon Jun 24 18:16:07 2002
+@@ -6846,7 +6846,7 @@ fi
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
  # Always use our own libtool.

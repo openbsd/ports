@@ -1,0 +1,11 @@
+$OpenBSD: patch-nessus-libraries_libhosts_gatherer_Makefile,v 1.1 2002/07/04 15:37:03 reinhard Exp $
+--- nessus-libraries/libhosts_gatherer/Makefile.orig	Thu Nov 15 08:13:22 2001
++++ nessus-libraries/libhosts_gatherer/Makefile	Mon Jun 24 18:18:24 2002
+@@ -19,7 +19,6 @@ test : libhosts_gatherer.la 
+ install : libhosts_gatherer.la
+ 	test -d ${libdir} || $(INSTALL_DIR) -m 755 ${libdir}
+ 	$(LIBTOOL) --mode install $(INSTALL) libhosts_gatherer.la ${libdir} 
+-	$(LIBTOOL) --finish ${libdir}
+ 	
+ libhosts_gatherer.la : $(OBJS)
+ 	$(LIBTOOL) $(CC) -o libhosts_gatherer.la $(LO_OBJS) -rpath ${libdir} \

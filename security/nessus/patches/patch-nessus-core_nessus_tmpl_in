@@ -1,3 +1,4 @@
+$OpenBSD: patch-nessus-core_nessus_tmpl_in,v 1.4 2002/07/04 15:37:03 reinhard Exp $
 --- nessus-core/nessus.tmpl.in.orig	Sun May  5 17:23:52 2002
 +++ nessus-core/nessus.tmpl.in	Sun May  5 17:24:55 2002
 @@ -37,7 +37,7 @@

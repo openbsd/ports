@@ -1,5 +1,5 @@
 #
-# $OpenBSD: Makefile,v 1.6 2002/05/25 10:38:58 reinhard Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/04 15:37:03 reinhard Exp $
 #
 #   Makefile wrapper for nessus
 #
@@ -18,9 +18,9 @@ install:
 	   echo ">> Installing $$dir" ; \
 	   (cd $$dir ; \
 	    make prefix=${PREFIX} \
-		localstatedir=${DESTDIR}/var/nessus \
+		localstatedir=${DESTDIR}/var \
 		sysconfdir=${PREFIX}/share/examples \
-		sharedstatedir=${PREFIX}/var/nessus \
+		sharedstatedir=${DESTDIR}/var \
 		$@) ; \
 	done
 

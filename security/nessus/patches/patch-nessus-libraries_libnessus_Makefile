@@ -1,0 +1,11 @@
+$OpenBSD: patch-nessus-libraries_libnessus_Makefile,v 1.1 2002/07/04 15:37:03 reinhard Exp $
+--- nessus-libraries/libnessus/Makefile.orig	Mon Feb 25 18:27:34 2002
++++ nessus-libraries/libnessus/Makefile	Mon Jun 24 18:20:10 2002
+@@ -71,7 +71,6 @@ libnessus.la: $(OBJS)
+ install : libnessus.la
+ 	test -d ${libdir} || $(INSTALL_DIR) -m 755 ${libdir}
+ 	$(LIBTOOL) --mode install $(INSTALL) libnessus.la ${libdir}/libnessus.la
+-	$(LIBTOOL) --finish ${libdir}
+ 
+ distclean : clean
+ 

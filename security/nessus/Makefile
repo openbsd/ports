@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2002/05/25 10:38:58 reinhard Exp $
+# $OpenBSD: Makefile,v 1.28 2002/07/04 15:37:03 reinhard Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
-NEED_VERSION=	1.527
+NEED_VERSION=	1.531
 
-VERS=		1.2.0
+VERS=		1.2.3
 
 DIST_SUBDIR=	nessus
 
@@ -73,15 +73,6 @@ post-extract:
 	@${CHMOD} 755 ${WRKSRC}*
 	@(cd ${WRKSRC}nessus-libraries/include ; ln -s . nessus)
 	@(cd ${WRKSRC}libnasl/include ; ln -s . nessus)
-
-# Convince nmap_wrapper.nes to build regardless of nmap's presence.
-post-configure:
-	@sed 's%@@PREFIX@@%${TRUEPREFIX}%g' ${FILESDIR}/nmap.h \
-		>${WRKSRC}nessus-plugins/plugins/nmap_wrapper/nmap.h
-	@touch ${WRKSRC}nessus-plugins/plugins/nmap_wrapper/nmap_installed
-
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/nessus
 
 post-install:
 	@${STRIP} ${PREFIX}/bin/{nasl,nessus,nessus-mkrand} ${PREFIX}/sbin/nessusd

@@ -1,0 +1,14 @@
+$OpenBSD: patch-nessus-plugins_pf_Makefile,v 1.1 2002/07/04 15:37:03 reinhard Exp $
+--- nessus-plugins/pf/Makefile.orig	Sun Sep  5 09:28:21 1999
++++ nessus-plugins/pf/Makefile	Mon Jun 24 17:09:42 2002
+@@ -5,8 +5,8 @@ PLUGNAME=plugin
+ 
+ all : $(PLUGNAME).nes
+ $(PLUGNAME).nes : $(PLUGNAME).c
+-	$(SHELL) libtool $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
+-	$(SHELL) libtool $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
++	$(SHELL) $(LIBTOOL) $(CC) $(DEFS) $(include) -c  $(PLUGNAME).c
++	$(SHELL) $(LIBTOOL) $(CC) $(DEFS) -o lib$(PLUGNAME).la $(PLUGNAME).lo $(LIBS) \
+ 	-rpath $(prefix)/plugins/
+ 	
+ clean :
