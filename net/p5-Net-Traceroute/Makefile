@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/08 18:24:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 21:14:11 fgsch Exp $
 
 COMMENT=		"traceroute(1) functionality in perl"
 
 DISTNAME=		Net-Traceroute-1.05
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net
-NEED_VERSION=		1.515
 
 HOMEPAGE=		http://www.linnaean.org/~hag/perl/traceroute/traceroute.html
 

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/04/15 06:04:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 21:14:11 fgsch Exp $
 
 COMMENT=	"chat program that combines AIM, ICQ, and Yahoo! Chat"
 
 DISTNAME=	everybuddy-0.2.1beta6
 CATEGORIES=	net
-NEED_VERSION=	1.474
 MASTER_SITES=	http://www.everybuddy.com/files/
 
 HOMEPAGE=	http://www.everybuddy.com/

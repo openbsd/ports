@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/12 14:52:11 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 21:14:10 fgsch Exp $
 
 DISTNAME=	dnstracer-1.5
 CATEGORIES=	net
-NEED_VERSION=	1.531
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

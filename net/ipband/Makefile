@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2002/07/04 20:21:23 miod Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 21:14:11 fgsch Exp $
 BROKEN=		"bogus code"
 
 COMMENT=	"pcap based IP traffic monitor"
 
 DISTNAME=	ipband-0.7.2
 CATEGORIES=	net
-NEED_VERSION=	1.518
 
 HOMEPAGE=	http://ipband.sourceforge.net/
 

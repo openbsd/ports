@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/27 12:43:47 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 21:14:11 fgsch Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,6 @@ COMMENT=		"gui for edonkey"
 DISTNAME=		ed2k_linux_gui_0.1alpha
 PKGNAME=		edonkey-gui-0.1
 CATEGORIES=		net x11
-NEED_VERSION=		1.529
 
 HOMEPAGE=		http://users.aber.ac.uk/tpm01/guihome.html
 

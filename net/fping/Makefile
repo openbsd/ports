@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/01 18:49:01 mpech Exp $
+# $OpenBSD: Makefile,v 1.12 2002/12/29 21:14:11 fgsch Exp $
 # $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
 
 COMMENT=		"quickly ping N hosts w/o flooding the network"
 
 DISTNAME=		fping-2.2b1
 CATEGORIES=		net
-NEED_VERSION=		1.500
 MASTER_SITES=		ftp://ftp.stanford.edu/dept/networking/pub/fping/
 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/29 21:14:10 fgsch Exp $
 
 COMMENT=		"tcp proxy with load balancing and failover mechanisms"
 
 VERSION=		2.33
 DISTNAME=		balance-${VERSION}
 CATEGORIES=    		net
-NEED_VERSION=		1.498
 
 HOMEPAGE=		http://balance.sourceforge.net/
 

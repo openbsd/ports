@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/24 01:59:24 jsyn Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/29 21:14:10 fgsch Exp $
 
 COMMENT=		"Dynamic DNS service update client"
 
 DISTNAME=		ddclient-3.6.2
 CATEGORIES=		net
-NEED_VERSION=		1.515
 
 HOMEPAGE=       	http://burry.ca:4141/ddclient/
 

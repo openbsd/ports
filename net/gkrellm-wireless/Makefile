@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/06/09 05:37:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2002/12/29 21:14:11 fgsch Exp $
 
 DISTNAME=	gkrellmwireless-0.2.2
 PKGNAME=	gkrellm-wireless-0.2.2
 CATEGORIES=	net x11
-NEED_VERSION=	1.522
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

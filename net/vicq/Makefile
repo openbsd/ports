@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/06/09 05:31:55 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2002/12/29 21:14:12 fgsch Exp $
 
 COMMENT=	"text-based ICQ implementation"
 
 DISTNAME=	vicq-0.4.1
 CATEGORIES=     net
-NEED_VERSION=	1.524
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://gonzo.kiev.ua/projects/vicq/

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/06/08 18:24:13 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 21:14:11 fgsch Exp $
 
 COMMENT=		"alternative Perl interface to ping(1)"
 
 DISTNAME=		Net-Ping-External-0.06
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		net
-NEED_VERSION=		1.515
 
 MAINTAINER=		Heikki Korpela <heko@openbsd.org>
 

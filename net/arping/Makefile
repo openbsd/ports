@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2002/06/23 23:58:05 jcs Exp $
+# $OpenBSD: Makefile,v 1.15 2002/12/29 21:14:10 fgsch Exp $
 
 DISTNAME=	arping-1.04
 CATEGORIES=	net
-NEED_VERSION=	1.515
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

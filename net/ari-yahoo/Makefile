@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/29 21:14:10 fgsch Exp $
 
 COMMENT=	"console Yahoo! messenger client"
 
 DISTNAME=	ari-yahoo-1.7
 CATEGORIES= 	net
-NEED_VERSION=	1.402
 HOMEPAGE=	http://lusis.org/~ari/yahoo/
 
 MAINTAINER= 	Arthur H. Johnson II <arthur@linuxbox.nu>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2002/12/29 21:14:11 fgsch Exp $
 
 COMMENT=	"ICQ clone for UNIX"
 
@@ -6,7 +6,6 @@ IGNORE=		"port has to be upgraded"
 
 DISTNAME=	licq-0.61
 CATEGORIES=	net
-NEED_VERSION=	1.487
 
 HOMEPAGE=	http://www.licq.org/
 

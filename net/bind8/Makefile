@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/12/12 14:57:59 jakob Exp $
+# $OpenBSD: Makefile,v 1.28 2002/12/29 21:14:10 fgsch Exp $
 
 BROKEN=		"Insecure, use net/bind9 instead"
 
@@ -7,7 +7,6 @@ COMMENT=	Berkeley Internet Name Daemon
 DISTNAME=	bind-openbsd-8.2.5-20011006
 PKGNAME=	bind-8.2.5
 CATEGORIES=	net
-NEED_VERSION=	1.515
 
 MASTER_SITES=	ftp://ftp.gsnig.org/pub/openbsd-bind/ \
 		ftp://ftp.sekure.net/pub/gsnig/openbsd-bind/

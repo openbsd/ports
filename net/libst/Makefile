@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/15 17:42:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/12/29 21:14:11 fgsch Exp $
 
 ONLY_FOR_ARCHS=		alpha i386
 
@@ -7,7 +7,6 @@ COMMENT=		"threaded library for writing Internet applications"
 DISTNAME=		st-1.3
 PKGNAME=		lib${DISTNAME}
 CATEGORIES=		net devel
-NEED_VERSION=		1.504
 HOMEPAGE=		http://state-threads.sourceforge.net/
 
 MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
