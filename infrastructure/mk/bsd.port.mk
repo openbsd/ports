@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.683 2005/03/09 15:21:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.684 2005/03/09 15:40:37 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1366,7 +1366,8 @@ _internal-${_DEP}-depends: ${_DEP${_DEP}_COOKIES}
 _internal-fetch _internal-checksum _internal-extract _internal-patch \
 _internal-configure _internal-all _internal-build _internal-install \
 _internal-regress _internal-uninstall _internal-deinstall _internal-fake \
-_internal-update _internal-newlib-depends-check \
+_internal-update _internal-newlib-depends-check _internal-plist \
+_internal-update-plist update-patches \
 _internal-package _internal-lib-depends-check _internal-manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
@@ -1500,6 +1501,57 @@ _internal-regress:
 .  else
 _internal-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 .  endif
+
+# packing list utilities.  This generates a packing list from a recently
+# installed port.  Not perfect, but pretty close.  The generated file
+# will have to have some tweaks done by hand.
+# Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
+# when port is installed or package created.
+#
+.if ${FAKE:L} != "no"
+.  if ${SHARED_ONLY:L} == "yes"
+_do_libs_too=
+.  else
+_do_libs_too=NO_SHARED_LIBS=Yes
+.  endif
+
+_extra_prefixes=
+.if defined(MULTI_PACKAGES)
+.  for _s in ${MULTI_PACKAGES}
+_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} ${MAKE} show=PREFIX`
+.  endfor
+.endif
+
+_internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
+	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
+	@mkdir -p ${PKGDIR}
+	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} \
+	TRUEPREFIX=${TRUEPREFIX} \
+	MTREE_FILE=${WRKPKG}/mtree.spec \
+	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
+	DEPS="`${MAKE} full-run-depends ${_do_libs_too}`" \
+	PKGREPOSITORY=${PKGREPOSITORY} \
+	PLIST=${PLIST} \
+	PFRAG=${PKGDIR}/PFRAG \
+	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
+	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
+	SHARED_ONLY="${SHARED_ONLY}" \
+	OWNER=`id -u` \
+	GROUP=`id -g` \
+	${SUDO} perl ${PORTSDIR}/infrastructure/install/make-plist \
+	${_extra_prefixes} ${_tmpvars}
+.endif
+
+update-patches:
+	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
+		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
+		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
+		/bin/sh ${PORTSDIR}/infrastructure/build/update-patches`; \
+	case $$toedit in "");; \
+	*) read i?'edit patches: '; \
+	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
+
+
 
 .endif # IGNORECMD
 
@@ -2012,57 +2064,6 @@ _internal-clean:
 	rm -f ${_BULK_COOKIE}
 .  endif
 .endif
-
-# packing list utilities.  This generates a packing list from a recently
-# installed port.  Not perfect, but pretty close.  The generated file
-# will have to have some tweaks done by hand.
-# Note: add @comment PACKAGE(arch=${MACHINE_ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
-# when port is installed or package created.
-#
-.if ${FAKE:L} != "no"
-.  if ${SHARED_ONLY:L} == "yes"
-_do_libs_too=
-.  else
-_do_libs_too=NO_SHARED_LIBS=Yes
-.  endif
-
-_extra_prefixes=
-.if defined(MULTI_PACKAGES)
-.  for _s in ${MULTI_PACKAGES}
-_extra_prefixes+=PREFIX${_s}=`cd ${.CURDIR} && SUBPACKAGE=${_s} PACKAGING=${_s} ${MAKE} show=PREFIX`
-.  endfor
-.endif
-
-_internal-plist _internal-update-plist: _internal-fake ${_DEPrun_COOKIES}
-	@${ECHO_MSG} "===>  Updating plist for ${FULLPKGNAME}${_MASTER}"
-	@mkdir -p ${PKGDIR}
-	@DESTDIR=${WRKINST} PREFIX=${WRKINST}${PREFIX} \
-	TRUEPREFIX=${TRUEPREFIX} \
-	MTREE_FILE=${WRKPKG}/mtree.spec \
-	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
-	DEPS="`${MAKE} full-run-depends ${_do_libs_too}`" \
-	PKGREPOSITORY=${PKGREPOSITORY} \
-	PLIST=${PLIST} \
-	PFRAG=${PKGDIR}/PFRAG \
-	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
-	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE}' \
-	SHARED_ONLY="${SHARED_ONLY}" \
-	OWNER=`id -u` \
-	GROUP=`id -g` \
-	${SUDO} perl ${PORTSDIR}/infrastructure/install/make-plist \
-	${_extra_prefixes} ${_tmpvars}
-.endif
-
-update-patches:
-	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
-		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
-		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
-		/bin/sh ${PORTSDIR}/infrastructure/build/update-patches`; \
-	case $$toedit in "");; \
-	*) read i?'edit patches: '; \
-	cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit;; esac
-
-
 
 # mirroring utilities
 fetch-makefile:
