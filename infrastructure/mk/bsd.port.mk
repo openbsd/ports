@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.468 2001/10/03 08:53:18 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.469 2001/10/04 22:20:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -627,7 +627,7 @@ ERRORS+="Missing support for modules ${_m}."
 .  endif
 .endfor
 
-_REGRESS_TARGET ?= regress
+REGRESS_TARGET ?= regress
 
 .if ${FAKE:L} == "yes"
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
