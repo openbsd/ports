@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/09/01 12:31:12 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/09/30 16:01:19 kevlo Exp $
 
 DISTNAME=	xcin-2.3.04-3
 PKGNAME=	zh-xcin-2.3.04
@@ -8,7 +8,9 @@ MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/old/ \
 		ftp://ftp.ncu.edu.tw/OS/Linux/Chinese/xcin/xcin/ \
 		ftp://linux.cis.nctu.edu.tw/packages/chinese/X/xcin/xcin/
 
-MAINTAINER=	kevlo@openbsd.org
+HOMEPAGE=	http://xcin.linux.org.tw/
+
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
