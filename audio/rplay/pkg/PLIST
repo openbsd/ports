@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/02/06 01:32:12 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/09/30 10:36:36 naddy Exp $
 bin/rplay
 bin/rptp
 include/rplay.h
@@ -24,3 +24,9 @@ man/man5/rplay.hosts.5
 man/man5/rplay.servers.5
 man/man8/rplayd.8
 sbin/rplayd
+@cwd ${SYSCONFDIR}
+@extra rplay/rplay.conf
+@extra rplay/rplay.helpers
+@extra rplay/rplay.hosts
+@extra rplay/rplay.servers
+@extra rplay/
