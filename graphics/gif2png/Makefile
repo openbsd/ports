@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/12/06 01:11:49 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/12/25 06:46:51 brad Exp $
 
-DISTNAME=	gif2png-2.2.4
+DISTNAME=	gif2png-2.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
 		ftp://ftp.ccil.org/pub/esr/
@@ -13,16 +13,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
 
-DOCS=	COPYING README
-
 pre-patch: extract
 	@sed -e "s|@PREFIX@|${LOCALBASE}|" ${FILESDIR}/web2png > ${WRKDIR}/web2png
 
 post-install:
 	@mkdir -p ${PREFIX}/share/doc/gif2png
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/gif2png
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} COPYING README \
+	 ${PREFIX}/share/doc/gif2png
 	${INSTALL_SCRIPT} ${WRKDIR}/web2png ${PREFIX}/bin
 
 .include <bsd.port.mk>
