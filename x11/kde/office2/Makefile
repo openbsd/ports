@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/17 12:59:12 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
-NEED_VERSION=		1.458
+NEED_VERSION=		1.474
 VERSION=		1.1
 DISTNAME=		koffice-${VERSION}
 DIST_SUBDIR=		kde
@@ -14,7 +14,8 @@ EXTRACT_SUFX=		.tar.bz2
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
 BUILD_DEPENDS=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
-LIB_DEPENDS=	kdecore.3::x11/kde/libs2
+LIB_DEPENDS= kdecore.3,DCOP,kdeprint,kdesu,kdeui,kfile,kio,kparts,kspell,kssl,ksycoca::x11/kde/libs2 \
+		python2.1::lang/python
 
 MODULES=	qt2
 CONFIGURE_STYLE=	autoconf
@@ -24,6 +25,7 @@ CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-debug
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
+PATCH_LIST=${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static
@@ -31,6 +33,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV+=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
+CONFIGURE_ENV+=		ac_aux_files=''
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
