@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 1999/11/25 22:11:35 brad Exp $
+# $OpenBSD: Makefile,v 1.15 1999/12/10 14:34:22 brad Exp $
 
 DISTNAME=	tcsh-6.09
+.if defined(STATIC) && ${STATIC:U} == YES
+PKGNAME=	tcsh-6.09.00-static
+.else
 PKGNAME=	tcsh-6.09.00
+.endif
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 
@@ -9,10 +13,9 @@ MAINTAINER=	brad@openbsd.org
 
 GNU_CONFIGURE=	yes
 
-# invoke with -DSTATIC to build a static binary
-.if defined(STATIC)
+# invoke make with STATIC=yes to build a static binary
+.if defined(STATIC) && ${STATIC:U} == YES
 CONFIGURE_ENV+=	LDFLAGS=-static
-PKGNAME=	${DISTNAME}-static
 .endif
 
 ALL_TARGET=	all catalogs
