@@ -1,0 +1,15 @@
+--- scsilib/libscg/scsi-bsd.c.orig	Mon Sep 13 16:41:38 1999
++++ scsilib/libscg/scsi-bsd.c	Mon Jun 12 18:19:26 2000
+@@ -59,7 +59,12 @@
+ #define	SADDR_TARGET(a)	(SADDR_ISSCSI(a)?(a).addr.scsi.target:(a).addr.atapi.atbus*2+(a).addr.atapi.drive)
+ #define	SADDR_LUN(a)	(SADDR_ISSCSI(a)?(a).addr.scsi.lun:0)
+ #else
++#if	defined(__OpenBSD__) && defined(TYPE_ATAPI)
++#define	MAYBE_ATAPI
++#define	SADDR_ISSCSI(a)	((a).type == TYPE_SCSI)
++#else
+ #define	SADDR_ISSCSI(a)	(1)
++#endif
+ 
+ #define	SADDR_BUS(a)	(a).scbus
+ #define	SADDR_TARGET(a)	(a).target

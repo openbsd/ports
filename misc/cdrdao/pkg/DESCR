@@ -1,0 +1,36 @@
+What does it?
+
+ Cdrdao records audio or data CD-Rs in disk-at-once (DAO) mode based
+ on a textual description of the CD contents (toc-file).
+ 
+Why DAO?
+
+ Recording in disk-at-once mode writes the complete disc,
+ i.e. lead-in, one or more tracks and lead-out, in a single step.
+ The commonly used track-at-once (TAO) mode writes each track
+ independently which requires link blocks between two tracks. Older
+ CD-recorder models forced a two second pause (pre-gap) between two
+ tracks whereas newer models allow adjusting of the pause length in
+ TAO mode reducing the number of link blocks to a minimal amount.
+ However, with TAO it is generally not possible to define the data
+ that is written in pre-gaps. But exactly this feature makes audio
+ CD recording interesting, e.g. by creating hidden bonus tracks or
+ track intros in pre-gaps like it is common habit on commercial CDs.
+ Finally, DAO recording is the only way to write data to the unused
+ R-W sub-channels for e.g.  CD-G or CD-TEXT.
+ 
+Features
+
+ * Full control over length and contents of pre-gaps (pause areas
+   between tracks). Pre-gaps may be completely omitted, e.g. for
+   dividing live recordings into tracks.
+ * Control over sub-channel data like:
+      + catalog number
+      + copy, pre-emphasis, 2-/4-channel flags
+      + ISRC code
+      + index marks
+ * Support for exact audio or data CD copying.
+ * Tracks may be composed of different audio files supporting non
+   destructive cut.
+ * Accepts WAVE and raw audio files.
+ * CD-TEXT reading and writing with drives that support it.

@@ -1,0 +1,11 @@
+--- scsilib/include/btorder.h.orig	Thu Apr 29 06:02:27 1999
++++ scsilib/include/btorder.h	Mon Jun 12 17:52:46 2000
+@@ -57,7 +57,7 @@
+ #		define _BIT_FIELDS_HTOL
+ #	endif
+ 
+-#	if defined(__i386) || defined(i386) || \
++#	if defined(__i386) || defined(i386) || defined(__i386__) || \
+ 	   defined(__alpha) || defined(alpha) || \
+ 	   defined(__arm) || defined(arm)
+ #		define _BIT_FIELDS_LTOH
