@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2004/12/29 05:17:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.82 2005/02/10 18:39:06 sturm Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -60,6 +60,7 @@
 #    SUBDIR += p5-Array-PrintCols
      SUBDIR += p5-CreditCard
 #    SUBDIR += p5-Business-CreditCard
+     SUBDIR += p5-File-MMagic
      SUBDIR += p5-Finance-Quote
      SUBDIR += p5-Finance-QuoteHist
      SUBDIR += p5-I18N-Charset
