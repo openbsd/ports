@@ -10,8 +10,8 @@
 -	else :; \
 -	fi
 -	$(INSTALL_DATA) enscript.cfg $(sysconfdir)/enscript.cfg
-+	$(top_srcdir)/mkinstalldirs $(libdir)
-+	$(INSTALL_DATA) enscript.cfg $(libdir)/enscript.cfg-sample
++	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/examples/enscript
++	$(INSTALL_DATA) enscript.cfg $(DESTDIR)$(datadir)/examples/enscript/enscript.cfg-sample
  
  uninstall-local:
  	rm -f $(sysconfdir)/enscript.cfg

@@ -31,3 +31,5 @@ Enscript supports following character sets:
   - koi8		Adobe Standard Cyrillic Font KOI8 charset
   - ps			PostScript font's default encoding
   - pslatin1		PostScript interpreter's `ISOLatin1Encoding'
+
+WWW: http://people.ssh.fi/mtr/genscript/
