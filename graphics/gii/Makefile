@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 14:03:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2000/10/31 15:06:42 espie Exp $
 
 DISTNAME=	libgii-0.6
 CATEGORIES=	graphics
@@ -24,7 +24,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gii
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gii
 	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/gii
-	${INSTALL_DATA} ${WRKSRC}/libgii.conf
+	${INSTALL_DATA} ${WRKSRC}/libgii.conf \
 		${PREFIX}/share/examples/gii/libgii.conf.example
 
 .include <bsd.port.mk>
