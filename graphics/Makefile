@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2002/08/28 20:53:15 brad Exp $
+# $OpenBSD: Makefile,v 1.99 2002/09/04 01:48:09 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += netpbm
      SUBDIR += p5-GD
      SUBDIR += p5-GD,no_x11
+     SUBDIR += p5-GD-Barcode
      SUBDIR += p5-GD-Graph
      SUBDIR += p5-GD-Graph3d
      SUBDIR += p5-GD-TextUtil
