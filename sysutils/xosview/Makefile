@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/15 05:35:42 form Exp $
+# $OpenBSD: Makefile,v 1.17 2000/07/17 16:24:46 form Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
-DISTNAME=	xosview-1.7.3
+DISTNAME=	xosview-1.7.4
 CATEGORIES=	sysutils
 NEED_VERSION=	1.301
 MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/
@@ -17,8 +17,8 @@ USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
 
-MAKE_ENV+=	UVM=${UVM}
-MAKE_FLAGS=	ARCH=${ARCH}
+#MAKE_ENV+=	UVM=${UVM}
+#MAKE_FLAGS=	ARCH=${ARCH}
 
 .if (${MACHINE_ARCH} == "alpha")
 BROKEN=		"compilation errors"

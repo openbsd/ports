@@ -1,33 +1,36 @@
---- configure.orig	Wed Nov 17 13:16:57 1999
-+++ configure	Sat Dec  4 23:54:58 1999
-@@ -1635,6 +1635,19 @@
+$OpenBSD: patch-configure,v 1.1 2000/07/17 16:24:47 form Exp $
+--- configure.orig	Mon Jul 17 23:02:37 2000
++++ configure	Mon Jul 17 23:09:45 2000
+@@ -1676,6 +1676,18 @@ fi
    
  	  host_dir=linux
            host_os=linux ;;
 +
 +##  Check for OpenBSD 2.0-2.5
 +openbsd2.[012345]*)
-+        EXTRALIBS="-lkvm $XPMLIB"
-+        INSTALL_ARGS='-s -g kmem -m 02555'
++	EXTRALIBS="-lkvm $XPMLIB"
++	INSTALL_ARGS='-s -g kmem -m 02555'
 +	cat >> confdefs.h <<\EOF
 +#define XOSVIEW_OPENBSD 1
 +EOF
 +
-+
-+			host_dir=bsd
++	host_dir=bsd
 +	host_os=openbsd ;;
 +
  ##  Check for known versions of NetBSD...
  netbsd1.[012345]*)  
- 	host_os=netbsd
-@@ -1747,16 +1760,35 @@
+ 	host_os_full=$host_os
+@@ -1805,16 +1817,34 @@ EOF
  
  			host_dir=bsd
  	host_os=freebsd ;;
 -openbsd*) 
+-        EXTRALIBS="-lkvm $XPMLIB"
+-        INSTALL_ARGS='-s -g kmem -m 02555'
 +openbsd*)
-         EXTRALIBS="-lkvm $XPMLIB"
-         INSTALL_ARGS='-s -g kmem -m 02555'
++	EXTRALIBS="-lkvm $XPMLIB"
++	INSTALL_ARGS='-s -g kmem -m 02555'
+ 	NetMeter_Default_Setting=True
  	cat >> confdefs.h <<\EOF
  #define XOSVIEW_OPENBSD 1
 +#define HAVE_SWAPCTL 1
@@ -52,10 +55,7 @@
 +	fi
  
 -			host_dir=bsd
--	host_os=openbsd ;;
 +	host_dir=bsd
-+	host_os=openbsd
-+;;
+ 	host_os=openbsd ;;
  bsdi*) 
  	EXTRALIBS="-lkvm $XPMLIB"
- 	INSTALL_ARGS='-s -g kmem -m 02555'

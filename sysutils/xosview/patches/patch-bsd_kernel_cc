@@ -1,20 +1,16 @@
-# $OpenBSD: patch-aa,v 1.7 1999/07/09 15:39:54 form Exp $
-
---- bsd/kernel.cc.orig	Fri Jul  9 22:17:49 1999
-+++ bsd/kernel.cc	Fri Jul  9 22:21:52 1999
-@@ -67,7 +67,11 @@
+$OpenBSD: patch-bsd_kernel_cc,v 1.1 2000/07/17 16:24:47 form Exp $
+--- bsd/kernel.cc.orig	Mon Jul 17 22:56:11 2000
++++ bsd/kernel.cc	Mon Jul 17 23:01:09 2000
+@@ -72,7 +72,7 @@ int DevStat_Get();
  
  #ifdef HAVE_SWAPCTL
  #include <unistd.h>		/*  For swapctl proto.  */
-+#ifdef XOSVIEW_OPENBSD
-+#include <sys/swap.h>
-+#else
- #include <vm/vm_swap.h>		/*  For swapent, SWAP_*.  */
-+#endif
- #include <stdlib.h>		/*  For malloc(), free().  */
- #endif
- 
-@@ -153,9 +157,9 @@
+-#if defined(XOSVIEW_NETBSD) && defined(__NetBSD_Version__) && __NetBSD_Version__ >= 104000000
++#if defined(XOSVIEW_OPENBSD) || (defined(XOSVIEW_NETBSD) && defined(__NetBSD_Version__) && __NetBSD_Version__ >= 104000000)
+ #include <sys/swap.h>		/*  For swapent, SWAP_*.  */
+ #else
+ #include <vm/vm_swap.h>		/* swapent, SWAP_*. */
+@@ -162,9 +162,9 @@ static struct nlist nlst[] =
  { "_eintrcnt" },
  #define EINTRCNT_SYM_INDEX 	8
  
@@ -26,7 +22,7 @@
  { "_intrhand" },
  #define INTRHAND_SYM_INDEX    9
  { "_intrstray" },
-@@ -750,7 +754,7 @@
+@@ -781,7 +781,7 @@ BSDGetDiskXFerBytes (unsigned long long 
  }
  
  /*  ---------------------- Interrupt Meter stuff  -----------------  */
@@ -35,7 +31,7 @@
  static unsigned long kvm_intrcnt[128];// guess at space needed
  #endif
  
-@@ -770,9 +774,9 @@
+@@ -801,9 +801,9 @@ int
  BSDIntrInit() {
      OpenKDIfNeeded();
  
@@ -47,7 +43,7 @@
      return ValidSymbol(IVP_SYM_INDEX);
  #elif defined (XOSVIEW_BSDI)
  #if _BSDI_VERSION >= 199802 /* BSD/OS 4.x */
-@@ -785,7 +789,7 @@
+@@ -816,7 +816,7 @@ BSDIntrInit() {
  #endif
  }
  
@@ -56,7 +52,7 @@
  int
  BSDNumInts() {
    int nintr;
-@@ -846,8 +850,8 @@
+@@ -877,8 +877,8 @@ BSDGetIntrStats (unsigned long intrCount
    //  counts.  We'll just use the intrcnt array here.  If anyone
    //  has problems, please mail me.  bgrayson
    {
@@ -67,33 +63,12 @@
    struct intrhand *intrhand[16], *ihp, ih;
    int intrstray[16];
  
-@@ -868,8 +872,8 @@
-       ihp = ih.ih_next;
-     }
-   }
--# endif /* i386 */
--# ifdef pc532
-+# endif /* __i386__ */
-+# ifdef __pc532__
-   struct iv ivt[32], *ivp = ivt;
- 
-   safe_kvm_read(nlst[IVP_SYM_INDEX].n_value, ivp, sizeof(ivt));
-@@ -879,15 +883,15 @@
-     else
+@@ -911,7 +911,7 @@ BSDGetIntrStats (unsigned long intrCount
        intrCount[i] = 0;
    }
--# endif /* pc532 */
+ # endif /* pc532 */
 -#else /* XOSVIEW_OPENBSD && (pc532 || i386) */
-+# endif /* __pc532__ */
 +#else /* XOSVIEW_OPENBSD && (__pc532__ || __i386__) */
      int nintr = BSDNumInts();
      safe_kvm_read(nlst[INTRCNT_SYM_INDEX].n_value, kvm_intrcnt,
        sizeof(long)*nintr);
-     for (int i=0;i<nintr;i++) {
-       intrCount[i] = kvm_intrcnt[i];
-     }
--#endif /* XOSVIEW_OPENBSD && (pc532 || i386) */
-+#endif /* XOSVIEW_OPENBSD && (__pc532__ || __i386__) */
-   }
-   return;
- #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xosview_1,v 1.1 2000/07/17 16:24:47 form Exp $
+--- xosview.1.orig	Mon Jul 17 23:10:20 2000
++++ xosview.1	Mon Jul 17 23:10:35 2000
+@@ -843,7 +843,7 @@ David W. Talmage (talmage@jefferson.cmf.
+ Added battery-meter support to NetBSD.
+ .RE
+ 
+-Oleg Safiullin (form@vs.itam.nsc.ru)
++Oleg Safiullin (form@openbsd.ru)
+ .RS
+ OpenBSD interrupt-meter support.
+ .RE
