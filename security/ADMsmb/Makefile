@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/13 07:54:09 jsyn Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/13 08:36:33 jsyn Exp $
 
 COMMENT=		"Samba security scanner"
 
 DISTNAME=       	ADMsmb-v0.2
 PKGNAME=        	ADMsmb-0.2
 CATEGORIES=		security
-NEED_VERSION=		1.515
+NEED_VERSION=		1.528
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2002/05/13 07:54:10 jsyn Exp $
+# $OpenBSD: Makefile,v 1.12 2002/05/13 08:36:33 jsyn Exp $
 
 COMMENT=		"temporary file auditing tool"
 
 PKGNAME=		tempwatch-1.0
 CATEGORIES=		security
-NEED_VERSION=		1.515
+NEED_VERSION=		1.528
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
