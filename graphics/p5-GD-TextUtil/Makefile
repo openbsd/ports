@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2004/06/26 07:35:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/15 01:49:28 kevlo Exp $
 
 COMMENT=	"text utilities for use with GD drawing package"
 
-VERSION=	0.83
+VERSION=	0.86
 DISTNAME=	GDTextUtil-${VERSION}
 PKGNAME=	p5-GD-TextUtil-${VERSION}
 CATEGORIES=	graphics perl5
