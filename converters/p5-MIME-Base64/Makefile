@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2000/09/28 21:36:32 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2001/02/24 09:15:43 avsm Exp $
 
-DISTNAME=	MIME-Base64-2.11
+DISTNAME=	MIME-Base64-2.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
 NEED_VERSION=	1.336
