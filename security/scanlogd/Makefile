@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/22 21:12:23 naddy Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.6 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	scanlogd-2.2
 CATEGORIES=	security

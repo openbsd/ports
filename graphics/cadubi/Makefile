@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/28 23:22:00 naddy Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	cadubi_1.1b1
 PKGNAME=	${DISTNAME:S/_/-/g}

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/29 16:10:22 jcs Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.3 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	sybperl-2.13
 PKGNAME=	p5-${DISTNAME}

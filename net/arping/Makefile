@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/11 01:54:58 jcs Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.9 2001/09/15 23:26:38 jcs Exp $
 
 COMMENT=	"ARP level ping utility"
 

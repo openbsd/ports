@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/26 21:51:51 naddy Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	gkrellstock-0.2
 CATEGORIES=	misc

@@ -1,5 +1,4 @@
-# vim:ts=8
-# $OpenBSD: Makefile,v 1.2 2001/08/01 10:06:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	rain-1.2.8
 CATEGORIES=	net security

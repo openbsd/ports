@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/09 17:56:59 naddy Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.4 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	aewm-1.1.2
 CATEGORIES=	x11

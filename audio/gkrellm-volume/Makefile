@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/07 00:13:20 naddy Exp $
-# vim:ts=8
+# $OpenBSD: Makefile,v 1.2 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	volume-0.8
 PKGNAME=	gkrellm-${DISTNAME}

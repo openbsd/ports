@@ -1,5 +1,4 @@
-# vim:ts=8
-# $OpenBSD: Makefile,v 1.8 2001/09/09 17:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/09/15 23:26:38 jcs Exp $
 
 DISTNAME=	gkrellm-1.2.2
 HOMEPAGE=	http://www.gkrellm.net/
