@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/12 17:34:56 wilfried Exp $
+--- Makefile.orig	Thu Jun 23 18:00:00 1994
++++ Makefile	Mon Mar 12 18:33:21 2001
+@@ -23,12 +23,12 @@ COBJECTS	= gofc.o cbuiltin.o cmachine.o 
+ # as you use to build the file runtime.o (as specified by the CC macro
+ # below).
+ 
+-CC		= cc
++#CC		= cc
+ #CFLAGS		= -DUSE_READLINE=1
+-CFLAGS		=
++#CFLAGS		=
+ LDFLAGS    	= -lm
+-OPTFLAGS	= -O
+-OPT1		=
++#OPTFLAGS	= -O
++#OPT1		=
+ #OPT1		= -O1
+ 
+ all		: gofer gofc runtime.o
