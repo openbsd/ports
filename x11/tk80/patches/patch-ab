@@ -41,7 +41,7 @@
 +libtk80.a: ${OBJS}
 +	rm -f libtk80.a
 +	ar cr libtk80.a ${OBJS}
-+	$(RANLIB) libtk80.a
++	ranlib libtk80.a
 +
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
@@ -61,7 +61,7 @@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@echo "Installing libtk80.a"
 +	@$(INSTALL_DATA) libtk80.a $(LIB_INSTALL_DIR)/libtk80.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk80.a)
++	@(cd $(LIB_INSTALL_DIR); ranlib libtk80.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk80.a
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
