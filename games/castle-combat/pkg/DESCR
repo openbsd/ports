@@ -1,0 +1,7 @@
+Castle-Combat is a clone of the arcade classic, Rampart. This version 
+currently supports 2 to 4 players on local or remote servers. Players
+build castle walls, place cannons inside these walls, and shoot at the 
+walls of their enemy(s). If a player can't build a complete wall around 
+one of his castles, he loses. The last surviving player wins.
+
+WWW:${HOMEPAGE}
