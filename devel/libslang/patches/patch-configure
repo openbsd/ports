@@ -17,7 +17,7 @@
 +    esac
 +    ELF_LINK="$CC -shared $ELF_CFLAGS"
 +    ELF_LINK_CMD="\$(ELF_LINK)"
-+    ELF_DEP_LIBS="\$(DL_LIB) -lm"
++    ELF_DEP_LIBS="\$(DL_LIB) -lm -lcurses"
 +    CC_SHARED="$CC -shared $ELF_CFLAGS"
 +    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
 +      DYNAMIC_LINK_FLAGS="-Wl,-E"
