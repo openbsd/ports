@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.7 1998/06/17 06:27:17 form Exp $
+# $OpenBSD: Makefile,v 1.8 1998/06/27 22:18:34 marc Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 
 MAINTAINER=	form@vs.itam.nsc.ru
 
+# openbsd yacc fails with: /usr/bin/yacc: f - maximum table size exceeded
+# so use bison
+#
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 .if defined(USE_TCL)
@@ -57,7 +60,9 @@ MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 
 MANPREFIX=	${PREFIX}/pgsql
 
-pre-build:
+# Spit this message out right away.
+#
+pre-fetch:
 .if !defined(USE_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
 	@${ECHO_MSG} "    make USE_TCL=yes"
