@@ -33,6 +33,8 @@ syn match	pfIPv4		/\<\d\{1,3}\.\d\{1,3}\.\d\{1,3}\.\d\{1,3}\>/
 syn match	pfIPv6		/\<[a-fA-F0-9:]\+:[a-fA-F0-9:.]\+\>/
 syn match	pfNetmask	/\/\d\+\>/
 syn match	pfNum		/\<\d\+\>/
+syn match	pfTodo		/\<TODO:/me=e-1 contained
+syn match	pfTodo		/\<XXX:/me=e-1 contained
 syn match	pfVar		/\<$[a-zA-Z][a-zA-Z0-9_]*\>/
 syn match	pfVarAssign	/^\s*[a-zA-Z][a-zA-Z0-9_]*\s*=/me=e-1
 syn region	pfList		start=/{/ms=s+1 end=/}/ transparent contains=ALLBUT,pfComment,pfErrClose,pfList,pfTodo,pfVarAssign
