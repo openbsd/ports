@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/01 19:01:38 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/04/14 02:26:49 brad Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 COMMENT=	"toolkit for converting images between different formats"
@@ -6,7 +6,7 @@ COMMENT=	"toolkit for converting images between different formats"
 DISTNAME=	netpbm-1mar1994
 PKGNAME=	netpbm-19940301
 CATEGORIES=	graphics
-NEED_VERSION=	1.378
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/
 MASTER_SITES0=	ftp://ftp.informatik.uni-oldenburg.de/pub/netpbm/ \
 		ftp://ftp.x.org/contrib/utilities/
