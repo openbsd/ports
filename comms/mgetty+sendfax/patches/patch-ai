@@ -1,6 +1,6 @@
---- mgetty.h.orig	Thu Jul  2 02:47:37 1998
-+++ mgetty.h	Thu Aug 27 21:10:05 1998
-@@ -61,7 +61,7 @@
+--- mgetty.h.orig	Mon May 24 09:35:06 1999
++++ mgetty.h	Sat Aug 28 13:30:19 1999
+@@ -62,7 +62,7 @@
  
  /* bsd stuff */
  #if defined(__BSD_NET2__) || defined(__386BSD__) || \
