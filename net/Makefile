@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2002/05/10 16:07:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.213 2002/05/11 06:58:20 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += dnstracer
      SUBDIR += doc
      SUBDIR += dxpc
+     SUBDIR += edonkey
      SUBDIR += epic4
      SUBDIR += ethereal
      SUBDIR += ethereal,no_x11
