@@ -7,6 +7,5 @@ Thunerbird looks for plugins in ~/.mozilla/plugins
 ${LOCALBASE}/mozilla-thunderbird/plugins
 and ${LOCALBASE}/lib/mozilla-plugins.
 
-To make it look good you probably want some nice anti-aliased fonts,
-like ${PORTSDIR}/x11/bitstream-vera-fonts.
-To disable xft altogether set GDK_USE_XFT=0 in the environment.
+To disable anti-aliasing (xft) altogether set GDK_USE_XFT=0 in the
+environment.
