@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/22 15:43:41 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2000/10/29 20:37:13 jakob Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
 CATEGORIES=	www lang
-NEED_VERSION=	1.305
+NEED_VERSION=	1.319
 
 HOMEPAGE=	http://www.php.net/
 
@@ -26,23 +26,29 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-pcre-regex \
 			--with-xml \
-			--with-imap=${PREFIX} \
 			--with-config-file-path=/var/www/conf
 
-BUILD_DEPENDS+=		${PREFIX}/lib/libexpat.a::textproc/expat \
-			${PREFIX}/lib/libc-client.a::mail/c-client
+BUILD_DEPENDS+=		${PREFIX}/lib/libexpat.a::textproc/expat
 
-FLAVORS=	mysql postgresql
+FLAVORS=	imap mysql postgresql
 
 FLAVOR?=
-.if ${FLAVOR:L} == "mysql"
+
+.if ${FLAVOR:L:Mimap}
+CONFIGURE_ARGS+=	--with-imap=${PREFIX}
+BUILD_DEPENDS+=		${PREFIX}/lib/libc-client.a::mail/c-client
+.else
+CONFIGURE_ARGS+=	--without-imap
+.endif
+
+.if ${FLAVOR:L:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql 
 BUILD_DEPENDS+=		${PREFIX}/lib/mysql/libmysqlclient.a::databases/mysql
 .else
 CONFIGURE_ARGS+=	--without-mysql 
 .endif
 
-.if ${FLAVOR:L} == "postgresql"
+.if ${FLAVOR:L:Mpostgresql}
 CONFIGURE_ARGS+=	--with-pgsql
 BUILD_DEPENDS+=		${PREFIX}/pgsql/lib/libpq.a::databases/postgresql
 .else
