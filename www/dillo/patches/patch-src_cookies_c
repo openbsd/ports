@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_cookies_c,v 1.1 2003/02/18 15:53:18 couderc Exp $
+--- src/cookies.c.orig	Tue Feb 18 17:26:24 2003
++++ src/cookies.c	Tue Feb 18 17:26:45 2003
+@@ -31,7 +31,6 @@
+ #include "list.h"
+ #include "cookies.h"
+ 
+-#define DEBUG_LEVEL 8
+ #include "debug.h"
+ 
+ /* The maximum length of a line in the cookie file */

@@ -1,20 +1,21 @@
-$OpenBSD: patch-src_bookmark_c,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
---- src/bookmark.c.orig	Wed Jan 16 12:51:55 2002
-+++ src/bookmark.c	Thu Mar 14 16:07:17 2002
-@@ -32,6 +32,7 @@
- #include "misc.h"
- #include "history.h"
+$OpenBSD: patch-src_bookmark_c,v 1.2 2003/02/18 15:53:18 couderc Exp $
+--- src/bookmark.c.orig	Tue Feb 18 15:54:29 2003
++++ src/bookmark.c	Tue Feb 18 15:55:17 2003
+@@ -19,7 +19,7 @@
  #include "menu.h"
+ #include "capi.h"
+ #include "nav.h"
+-
 +#include "debug.h"
  
- #define LOAD_BOOKMARKS 1
- #define SAVE_BOOKMARK 2
-@@ -268,7 +269,7 @@ static void Bookmarks_load_to_menu(FILE 
  
-    rewind(fp);
+ /*
+@@ -43,7 +43,7 @@ void a_Bookmarks_chat_add(BrowserWindow 
+    static BrowserWindow *bw = NULL;
+    static gchar *cmd4 = NULL;
  
--   g_print("Loading bookmarks...\n");
-+   DEBUG_MSG(3, "Loading bookmarks...\n");
-    while (1) {
-       /* Read a whole line from the file */
-       if ((fgets(buf, 4096, fp)) == NULL)
+-   g_print("a_Bookmarks_chat_add\n answer=%s\n", answer);
++   DEBUG_MSG(3, "a_Bookmarks_chat_add\n answer=%s\n", answer);
+ 
+    if (Bw)
+       bw = Bw;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_nav_c,v 1.2 2002/05/02 19:16:25 couderc Exp $
---- src/nav.c.orig	Wed Apr 10 03:10:16 2002
-+++ src/nav.c	Wed May  1 14:58:16 2002
-@@ -154,7 +154,7 @@ static void Nav_open_url(BrowserWindow *
+$OpenBSD: patch-src_nav_c,v 1.3 2003/02/18 15:53:18 couderc Exp $
+--- src/nav.c.orig	Tue Feb 18 17:27:20 2003
++++ src/nav.c	Tue Feb 18 17:28:08 2003
+@@ -155,7 +155,7 @@ static void Nav_open_url(BrowserWindow *
     DilloWeb *Web;
     gboolean ForceReload = (URL_FLAGS(url) & URL_E2EReload);
  
