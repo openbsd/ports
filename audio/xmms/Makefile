@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.20 2002/02/19 00:17:23 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2002/03/11 17:38:05 naddy Exp $
 # Uses pthreads
 
 COMMENT=		"Multimedia player for the X Window System"
-COMMENT-diskwriter=	"Disk writer output plugin for XMMS"
+COMMENT-gnome=		"GNOME applet for XMMS"
 COMMENT-esd=		"Esound output plugin for XMMS"
 COMMENT-vorbis=		"Ogg Vorbis input plugin for XMMS"
 COMMENT-mikmod=		"Mikmod input plugin for XMMS"
 
-VERSION=		1.2.6
+VERSION=		1.2.7
 DISTNAME=		xmms-${VERSION}
 FULLPKGNAME=		xmms-${VERSION}
-FULLPKGNAME-diskwriter=	xmms-diskwriter-${VERSION}
+FULLPKGNAME-gnome=	xmms-gnome-${VERSION}
 FULLPKGNAME-esd=	xmms-esd-${VERSION}
 FULLPKGNAME-vorbis=	xmms-vorbis-${VERSION}
 FULLPKGNAME-mikmod=	xmms-mikmod-${VERSION}
 SUNDRIVER=		xmms_sun-${VERSION}
 CATEGORIES=		audio
-NEED_VERSION=		1.504
+NEED_VERSION=		1.507
 HOMEPAGE=		http://www.xmms.org
 
 MAINTAINER=		Wilbern Cobb <vedge@csoft.org>
@@ -37,9 +37,12 @@ MASTER_SITES0=		http://vedge.com.ar/hack/ \
 			ftp://vedge.com.ar/pub/xmms/ \
 			http://mirror.csoft.org/xmms/
 
-FLAVORS=		no_esd no_vorbis no_mikmod
+FLAVORS=		no_gnome no_esd no_vorbis no_mikmod
 FLAVOR?=
-MULTI_PACKAGES=		-diskwriter
+MULTI_PACKAGES=
+.if !${FLAVOR:L:Mno_gnome}
+MULTI_PACKAGES+=	-gnome
+.endif
 .if !${FLAVOR:L:Mno_esd}
 MULTI_PACKAGES+=	-esd
 .endif
@@ -56,10 +59,11 @@ RUN_DEPENDS=		:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			xml.9::textproc/libxml1
 
+USE_LIBTOOL=		Yes
 USE_X11=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -70,26 +74,40 @@ DISTFILES=		${DISTNAME}.tar.gz \
 			${SUNDRIVER}.tar.gz:0
 
 DOCS=			README NEWS
-SUBST_VARS=		PKGNAME-diskwriter PKGNAME-vorbis PKGNAME-esd \
-			PKGNAME-mikmod
+SUBST_VARS=		PKGNAME-gnome PKGNAME-vorbis PKGNAME-esd PKGNAME-mikmod
 
-.if defined(PACKAGING) 
-. if ${SUBPACKAGE} == "-diskwriter"
-RUN_DEPENDS=		::audio/xmms
+
+.if defined(PACKAGING)
+. if ${SUBPACKAGE} == "-gnome"
+#RUN_DEPENDS=		::audio/xmms
+RUN_DEPENDS=		::/home/naddy/xmms
+LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
+		panel_applet.0::x11/gnome/core
 . endif
 . if ${SUBPACKAGE} == "-esd"
 LIB_DEPENDS=		esd.2::audio/esound
-RUN_DEPENDS=		::audio/xmms
+#RUN_DEPENDS=		::audio/xmms
+RUN_DEPENDS=		::/home/naddy/xmms
 . endif
 . if ${SUBPACKAGE} == "-vorbis"
 LIB_DEPENDS=		vorbis.0,vorbisfile.1::audio/libvorbis
-RUN_DEPENDS=		::audio/xmms
+#RUN_DEPENDS=		::audio/xmms
+RUN_DEPENDS=		::/home/naddy/xmms
 . endif
 . if ${SUBPACKAGE} == "-mikmod"
 LIB_DEPENDS=		mikmod.0::audio/libmikmod
-RUN_DEPENDS=		::audio/xmms
+#RUN_DEPENDS=		::audio/xmms
+RUN_DEPENDS=		::/home/naddy/xmms
 . endif
 .else
+. if ${MULTI_PACKAGES:M-gnome}
+LIB_DEPENDS+=	gnome.36,gnomesupport.0,gnomeui.46,art_lgpl.4::x11/gnome/libs \
+		panel_applet.0::x11/gnome/core
+CONFIGURE_ARGS+=	--with-gnome=${LOCALBASE}
+CONFIGURE_ENV+=		CPP_FLAGS="-I${LOCALBASE}/include"
+. else
+CONFIGURE_ARGS+=	--without-gnome
+. endif
 . if ${MULTI_PACKAGES:M-esd}
 LIB_DEPENDS+=		esd.2::audio/esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}
@@ -120,5 +138,10 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/xmms
+.if ${MULTI_PACKAGES:M-gnome}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xmms-gnome
+	cp -Rp ${WRKINST}/${SYSCONFDIR}/* ${PREFIX}/share/examples/xmms-gnome
+.endif
+
 
 .include <bsd.port.mk>

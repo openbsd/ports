@@ -1,29 +1,6 @@
-$OpenBSD: patch-xmms_main_c,v 1.3 2002/02/05 04:07:57 pvalchev Exp $
+$OpenBSD: patch-xmms_main_c,v 1.4 2002/03/11 17:38:05 naddy Exp $
 --- xmms/main.c.orig	Fri Dec 28 08:32:28 2001
 +++ xmms/main.c	Fri Jan 18 07:39:27 2002
-@@ -3235,20 +3235,14 @@
- 		xmms_remote_stop(opt->session);
- 	if (opt->fwd)
- 		xmms_remote_playlist_next(opt->session);
-+#if 0
- 	if (opt->play_pause)
- 		xmms_remote_play_pause(opt->session);
-+#endif
- 	if (opt->mainwin)
- 		xmms_remote_main_win_toggle(opt->session, TRUE);
- }
- 
--void segfault_handler(int sig)
--{
--	printf(_("\nSegmentation fault\n\n"
--		 "You've probably found a bug in XMMS, please visit\n"
--		 "http://bugs.xmms.org and fill out a bug report.\n\n"));
--	exit(1);
--}
--
- static gboolean pposition_configure(GtkWidget *w, GdkEventConfigure *event, gpointer data)
- {
- 	gint x,y;
 @@ -3379,7 +3373,8 @@
  #endif
  

@@ -1,18 +1,6 @@
-$OpenBSD: patch-libxmms_configure_in,v 1.3 2002/02/05 04:07:57 pvalchev Exp $
+$OpenBSD: patch-libxmms_configure_in,v 1.4 2002/03/11 17:38:05 naddy Exp $
 --- libxmms/configure.in.orig	Wed Dec  5 16:33:25 2001
 +++ libxmms/configure.in	Mon Jan 21 10:29:48 2002
-@@ -5,9 +5,9 @@
- AM_CONFIG_HEADER(config.h)
- 
- dnl libtool version:
--LIBXMMS_MAJOR_VERSION=3
-+LIBXMMS_MAJOR_VERSION=2
- LIBXMMS_MINOR_VERSION=0
--LIBXMMS_MICRO_VERSION=2
-+LIBXMMS_MICRO_VERSION=2
- LIBXMMS_VERSION=$LIBXMMS_MAJOR_VERSION.$LIBXMMS_MINOR_VERSION.$LIBXMMS_MICRO_VERSION
- 
- AM_INIT_AUTOMAKE(libxmms, $LIBXMMS_VERSION)
 @@ -30,7 +30,7 @@
  XMMS_FUNC_POSIX(sched_setscheduler nanosleep)
  

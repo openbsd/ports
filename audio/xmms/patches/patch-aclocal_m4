@@ -1,7 +1,15 @@
-$OpenBSD: patch-aclocal_m4,v 1.2 2002/02/10 07:47:42 pvalchev Exp $
---- aclocal.m4.orig	Tue Jan  8 09:14:00 2002
-+++ aclocal.m4	Thu Feb  7 13:40:31 2002
-@@ -3211,9 +3211,14 @@ openbsd*)
+--- aclocal.m4.orig	Mon Mar  4 17:56:49 2002
++++ aclocal.m4	Thu Mar  7 01:23:56 2002
+@@ -1082,7 +1082,7 @@
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++
+ AC_SUBST(LIBTOOL)dnl
+ 
+ # Prevent multiple expansion
+@@ -3211,9 +3211,14 @@
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -17,7 +25,7 @@ $OpenBSD: patch-aclocal_m4,v 1.2 2002/02/10 07:47:42 pvalchev Exp $
        shlibpath_overrides_runpath=no
        ;;
      *)
-@@ -3221,6 +3226,7 @@ openbsd*)
+@@ -3221,6 +3226,7 @@
        ;;
      esac
    else
@@ -25,7 +33,7 @@ $OpenBSD: patch-aclocal_m4,v 1.2 2002/02/10 07:47:42 pvalchev Exp $
      shlibpath_overrides_runpath=yes
    fi
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-@@ -5131,10 +5137,9 @@ AC_DEFUN(AM_WITH_NLS,
+@@ -5131,10 +5137,9 @@
  
  	   if test "$gt_cv_func_gettext_libc" != "yes"; then
  	     AC_CHECK_LIB(intl, bindtextdomain,
