@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2003/01/01 13:11:23 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2003/01/06 11:30:16 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -31,10 +31,7 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-FLAVORS+=	pcre sasl sasl2 ldap mysql
-.if defined(TLSVERSION)
-FLAVORS+=	tls
-.endif
+FLAVORS+=	pcre sasl sasl2 ldap mysql tls
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpcre}
@@ -68,6 +65,7 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mtls}
+.if defined(TLSVERSION)
 PKGNAME:=	${PKGNAME}.tls${TLSVERSION}
 
 MASTER_SITES0=	ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
@@ -91,6 +89,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
 	${INSTALL_DATA} ${WRKDIR}/${TLSDISTNAME}/doc/* \
 		${PREFIX}/share/doc/postfix/tls
+.else
+BROKEN=         "TLS patches not yet availible for this version"
+.endif
 .else
 post-patch:
 	rm ${WRKDIST}/conf/*.orig
