@@ -1,0 +1,12 @@
+$OpenBSD: patch-soundserver_artsd_cc,v 1.1 2002/08/16 22:33:21 brad Exp $
+--- soundserver/artsd.cc.orig	Wed Aug 14 22:03:18 2002
++++ soundserver/artsd.cc	Wed Aug 14 22:06:15 2002
+@@ -277,7 +277,7 @@ int main(int argc, char **argv)
+ 	{
+ 		string msg = "Error while initializing the sound driver:\n";
+ 		msg += AudioSubSystem::the()->error();
+-		arts_fatal(msg.c_str());
++		arts_fatal("%s", msg.c_str());
+ 		exit(1);
+ 	}
+ 
