@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/26 07:35:08 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	Net-SNMP-4.0.3
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net devel
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 # perl artistic license
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/09/28 01:10:35 jcs Exp $
+# $OpenBSD: Makefile,v 1.15 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	sybperl-2.17
 PKGNAME=	p5-${DISTNAME}
@@ -15,7 +15,7 @@ COMMENT=	"Sybase database access in Perl"
 HOMEPAGE=	http://www.mbay.net/~mpeppler/
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Sybase/}
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	tds.3,sybdb.4,ct.2::databases/freetds

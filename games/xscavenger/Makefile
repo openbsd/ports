@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	xscavenger-143
 EXTRACT_SUFX=	.tgz
@@ -14,7 +14,7 @@ COMMENT=	"Lode Runner clone"
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 USE_X11=	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/08/10 10:26:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	sqsh-2.1
 PKGNAME=	${DISTNAME}p0
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.sqsh.org/
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	tds.3,ct.2::databases/freetds

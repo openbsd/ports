@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2003/05/04 17:53:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.18 2004/10/03 18:41:36 jcs Exp $
 
-DISTNAME=	arping-1.07
+DISTNAME=	arping-2.04
 CATEGORIES=	net
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +13,7 @@ HOMEPAGE=	"http://www.habets.pp.se/synscan/programs.php?prog=ARPing"
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 		ftp://rt.fm/pub/arping/
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 LIB_DEPENDS=	net::net/libnet
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/22 22:34:57 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/03 18:41:36 jcs Exp $
 
 COMMENT=	"graphical MIB browser"
 
@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.kill-9.org/mbrowse/
 
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

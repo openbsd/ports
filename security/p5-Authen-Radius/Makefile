@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/06/26 07:35:09 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	RadiusPerl-0.05
 PKGNAME=	p5-Authen-Radius-0.05
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	Yes
 COMMENT=	"Perl module to authenticate against a RADIUS server"
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 RUN_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5
 BUILD_DEPENDS=	${RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/28 06:38:35 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	ratmen-2.2.2
 CATEGORIES=	x11
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP=	yes
 COMMENT=	"launch commands with your keyboard"
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 NO_REGRESS=	yes
 

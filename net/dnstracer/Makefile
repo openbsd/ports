@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2003/05/04 17:54:31 jcs Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/03 18:41:36 jcs Exp $
 
-DISTNAME=	dnstracer-1.7
+DISTNAME=	dnstracer-1.8
 CATEGORIES=	net
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,7 +12,7 @@ COMMENT=	"domain name system resolution tracer"
 HOMEPAGE=	http://www.mavetju.org/unix/dnstracer.php
 MASTER_SITES=	http://www.mavetju.org/download/
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 CONFIGURE_STYLE= gnu
 

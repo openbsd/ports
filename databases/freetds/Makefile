@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/08/10 10:26:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.21 2004/10/03 18:41:36 jcs Exp $
 
 V=		0.62.4
 DISTNAME=	freetds-$V
@@ -14,7 +14,7 @@ COMMENT=	"project to document and implement the TDS protocol"
 HOMEPAGE=	http://www.freetds.org/
 MASTER_SITES=	http://ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

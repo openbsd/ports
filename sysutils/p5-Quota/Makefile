@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/14 09:59:32 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/10/03 18:41:36 jcs Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME=	Quota-1.4.10
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	sysutils perl5
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/06/26 16:55:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/10/03 18:41:36 jcs Exp $
 
 DISTNAME=	grepmail-4.80
 CATEGORIES=	mail perl5
@@ -13,7 +13,7 @@ COMMENT=	"search mailboxes for a particular email"
 HOMEPAGE=	http://grepmail.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grepmail/}
 
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+MAINTAINER=	Joshua Stein <jcs@openbsd.org>
 
 RUN_DEPENDS=	:p5-Time-TimeDate-*:devel/p5-Time-TimeDate \
 		:p5-DateManip-*:converters/p5-DateManip \
