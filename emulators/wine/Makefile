@@ -1,28 +1,22 @@
-# New ports collection makefile for:    wine
-# Version required:     971116
-# Date created:         17 Nov 1997
-# Whom:			todd@OpenBSD.org
+# $OpenBSD: Makefile,v 1.4 1998/10/15 04:52:45 marc Exp $
 #
 
 DATE=		980628
 DISTNAME=	Wine-${DATE}
 PKGNAME=	wine-98.06.28
 CATEGORIES=	emulators x11
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/wine/development
+
+BROKEN=		"newer version available"
 ONLY_FOR_ARCHS= i386
 
 MAINTAINER=	todd@OpenBSD.ORG
 
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	ALPHA/wine/development
+
+GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/wine-${DATE}
-GNU_CONFIGURE=	yes
-MAN1=		wine.1
 
 pre-configure:
 	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
