@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/06/20 01:43:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2001/08/08 13:32:42 heko Exp $
 
 COMMENT=	"powerful programming editor"
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 ALL_TARGET=	xwpe
 
 CONFIGURE_STYLE=gnu
-MAKE_FLAGS=	CFLAGS='${CFLAGS} -I/usr/X11R6/include'
+MAKE_FLAGS=	CFLAGS='${CFLAGS} -I${X11BASE}/include'
 FAKE_FLAGS=	${MAKE_FLAGS} prefix=${WRKINST}${PREFIX}
 #SEPARATE_BUILD=	simple
 
