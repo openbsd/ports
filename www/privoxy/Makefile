@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/10/08 08:22:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/10/19 14:17:44 xsa Exp $
 
 COMMENT=	"web proxy with advanced filtering capabilities"
 
@@ -7,6 +7,8 @@ PKGNAME=	${DISTNAME:S/-2-stable//}
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.privoxy.org/
+
+MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
