@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2002/03/10 17:48:48 lebel Exp $
+# $OpenBSD: Makefile,v 1.42 2002/03/17 23:33:29 lebel Exp $
 
 COMMENT=	"vi clone, many additional features, snapshot version"
 COMMENT-lang=	"vi clone, NLS subpackage, snapshot version"
 
 DISTNAME=	vim-6.1b
-#REVISION=      00
-#VERSION=       6.1b.${REVISION}
-VERSION=	6.1b
+REVISION=       23
+VERSION=        6.1b.${REVISION}
 PKGNAME=	vim-${VERSION}
 DISTNAME=	vim-6.1b
 DIR_VERSION=	${DISTNAME:C/[-\.]//g}
@@ -28,10 +27,10 @@ HOMEPAGE=	http://www.vim.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
 
-#_patches!=	jot -w%03d - 1 ${REVISION} 1
-#.for p in ${_patches}
-#PATCHFILES+=	6.1b.${p}:0
-#.endfor
+_patches!=	jot -w%03d - 1 ${REVISION} 1
+.for p in ${_patches}
+PATCHFILES+=	6.1b.${p}:0
+.endfor
 
 # allow vim to build on m68k and vax
 .if (${MACHINE_ARCH} == "m68k")
@@ -68,11 +67,11 @@ CONFIGURE_ARGS+=--enable-perlinterp
 .endif
 
 .if ${FLAVOR:L:Mpython}
-PYTHON_VER=     2.1
+PYTHON_VER=     2.2
+CONFIGURE_ENV+=	vi_cv_path_python=${LOCALBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config
-RUN_DEPENDS+=   :python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 .endif
 
 .if ${FLAVOR:L:Mno_x11} && \
