@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.gtk,v 1.1 2002/12/03 13:17:07 espie Exp $
+bin/gsx
+bin/gsc
+lib/libgs.so.${VERSION}
+DYNLIBDIR(%D/lib)

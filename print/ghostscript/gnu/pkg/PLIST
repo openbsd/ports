@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/07/03 15:38:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/12/03 13:17:07 espie Exp $
+%%gtk%%
 bin/bdftops
 bin/dvipdf
 bin/eps2eps
@@ -24,12 +25,33 @@ bin/ps2epsi
 bin/ps2pdf
 bin/ps2pdf12
 bin/ps2pdf13
+bin/ps2pdf14
 bin/ps2pdfwr
 bin/ps2ps
 bin/pv.sh
 bin/sysvlp.sh
 bin/unix-lpr.sh
 bin/wftopfa
+man/de/man1/ansi2knr.1
+man/de/man1/dvipdf.1
+man/de/man1/eps2eps.1
+man/de/man1/font2c.1
+man/de/man1/gsbj.1
+man/de/man1/gsdj.1
+man/de/man1/gsdj500.1
+man/de/man1/gslj.1
+man/de/man1/gsnd.1
+man/de/man1/pdf2dsc.1
+man/de/man1/pdf2ps.1
+man/de/man1/pdfopt.1
+man/de/man1/printafm.1
+man/de/man1/ps2ascii.1
+man/de/man1/ps2pdf.1
+man/de/man1/ps2pdf12.1
+man/de/man1/ps2pdf13.1
+man/de/man1/ps2ps.1
+man/de/man1/wftopfa.1
+man/man1/ansi2knr.1
 man/man1/dvipdf.1
 man/man1/eps2eps.1
 man/man1/font2c.1
@@ -54,14 +76,18 @@ man/man1/ps2pdf13.1
 man/man1/ps2pdfwr.1
 man/man1/ps2ps.1
 man/man1/wftopfa.1
+share/ghostscript/${VERSION}/doc/API.htm
 share/ghostscript/${VERSION}/doc/Bug-form.htm
 share/ghostscript/${VERSION}/doc/Bug-info.htm
 share/ghostscript/${VERSION}/doc/C-style.htm
+share/ghostscript/${VERSION}/doc/CJK.htm
+share/ghostscript/${VERSION}/doc/CJKTTCID.htm
 share/ghostscript/${VERSION}/doc/Changes.htm
 share/ghostscript/${VERSION}/doc/Commprod.htm
 share/ghostscript/${VERSION}/doc/Copying.htm
 share/ghostscript/${VERSION}/doc/Current.htm
 share/ghostscript/${VERSION}/doc/DLL.htm
+share/ghostscript/${VERSION}/doc/Develop.htm
 share/ghostscript/${VERSION}/doc/Devices.htm
 share/ghostscript/${VERSION}/doc/Drivers.htm
 share/ghostscript/${VERSION}/doc/Fonts.htm
@@ -73,16 +99,19 @@ share/ghostscript/${VERSION}/doc/History3.htm
 share/ghostscript/${VERSION}/doc/History4.htm
 share/ghostscript/${VERSION}/doc/History5.htm
 share/ghostscript/${VERSION}/doc/History6.htm
+share/ghostscript/${VERSION}/doc/History7.htm
 share/ghostscript/${VERSION}/doc/Htmstyle.htm
 share/ghostscript/${VERSION}/doc/Humor.htm
 share/ghostscript/${VERSION}/doc/Install.htm
+share/ghostscript/${VERSION}/doc/Issues.htm
 share/ghostscript/${VERSION}/doc/Language.htm
 share/ghostscript/${VERSION}/doc/Lib.htm
+share/ghostscript/${VERSION}/doc/Maintain.htm
 share/ghostscript/${VERSION}/doc/Make.htm
 share/ghostscript/${VERSION}/doc/New-user.htm
 share/ghostscript/${VERSION}/doc/News.htm
-share/ghostscript/${VERSION}/doc/PUBLIC
 share/ghostscript/${VERSION}/doc/Projects.htm
+share/ghostscript/${VERSION}/doc/Ps-style.htm
 share/ghostscript/${VERSION}/doc/Ps2epsi.htm
 share/ghostscript/${VERSION}/doc/Ps2pdf.htm
 share/ghostscript/${VERSION}/doc/Psfiles.htm
@@ -95,9 +124,19 @@ share/ghostscript/${VERSION}/doc/Tester.htm
 share/ghostscript/${VERSION}/doc/Unix-lpr.htm
 share/ghostscript/${VERSION}/doc/Use.htm
 share/ghostscript/${VERSION}/doc/Xfonts.htm
+share/ghostscript/${VERSION}/doc/gs.css
+share/ghostscript/${VERSION}/doc/index.html
 share/ghostscript/${VERSION}/examples/alphabet.ps
-share/ghostscript/${VERSION}/examples/cheq.ps
-share/ghostscript/${VERSION}/examples/chess.ps
+share/ghostscript/${VERSION}/examples/cjk/all_ac1.ps
+share/ghostscript/${VERSION}/examples/cjk/all_ag1.ps
+share/ghostscript/${VERSION}/examples/cjk/all_aj1.ps
+share/ghostscript/${VERSION}/examples/cjk/all_aj2.ps
+share/ghostscript/${VERSION}/examples/cjk/all_ak1.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_ac.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_ag.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_aj.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_ak.ps
+share/ghostscript/${VERSION}/examples/cjk/iso2022.ps
 share/ghostscript/${VERSION}/examples/colorcir.ps
 share/ghostscript/${VERSION}/examples/doretree.ps
 share/ghostscript/${VERSION}/examples/escher.ps
@@ -108,6 +147,18 @@ share/ghostscript/${VERSION}/examples/snowflak.ps
 share/ghostscript/${VERSION}/examples/tiger.ps
 share/ghostscript/${VERSION}/examples/vasarely.ps
 share/ghostscript/${VERSION}/examples/waterfal.ps
+share/ghostscript/${VERSION}/lib/CIDFnmap
+share/ghostscript/${VERSION}/lib/CIDFnmap.ARP
+share/ghostscript/${VERSION}/lib/CIDFnmap.Bae
+share/ghostscript/${VERSION}/lib/CIDFnmap.CJK
+share/ghostscript/${VERSION}/lib/CIDFnmap.Koc
+share/ghostscript/${VERSION}/lib/CIDFnmap.Ore
+share/ghostscript/${VERSION}/lib/CIDFnmap.Sol
+share/ghostscript/${VERSION}/lib/CIDFnmap.Win
+share/ghostscript/${VERSION}/lib/CIDFnmap.b5
+share/ghostscript/${VERSION}/lib/CIDFnmap.gb
+share/ghostscript/${VERSION}/lib/CIDFnmap.ksx
+share/ghostscript/${VERSION}/lib/CIDFnmap.sj
 share/ghostscript/${VERSION}/lib/Fontmap
 share/ghostscript/${VERSION}/lib/Fontmap.GS
 share/ghostscript/${VERSION}/lib/acctest.ps
@@ -172,6 +223,7 @@ share/ghostscript/${VERSION}/lib/gs_epsf.ps
 share/ghostscript/${VERSION}/lib/gs_fform.ps
 share/ghostscript/${VERSION}/lib/gs_fonts.ps
 share/ghostscript/${VERSION}/lib/gs_frsd.ps
+share/ghostscript/${VERSION}/lib/gs_icc.ps
 share/ghostscript/${VERSION}/lib/gs_il1_e.ps
 share/ghostscript/${VERSION}/lib/gs_il2_e.ps
 share/ghostscript/${VERSION}/lib/gs_init.ps
@@ -269,6 +321,9 @@ share/ghostscript/${VERSION}/lib/stc2.upp
 share/ghostscript/${VERSION}/lib/stc200_h.upp
 share/ghostscript/${VERSION}/lib/stc2_h.upp
 share/ghostscript/${VERSION}/lib/stc2s_h.upp
+share/ghostscript/${VERSION}/lib/stc300.upp
+share/ghostscript/${VERSION}/lib/stc300bl.upp
+share/ghostscript/${VERSION}/lib/stc300bm.upp
 share/ghostscript/${VERSION}/lib/stc500p.upp
 share/ghostscript/${VERSION}/lib/stc500ph.upp
 share/ghostscript/${VERSION}/lib/stc600ih.upp
@@ -411,7 +466,10 @@ share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/fonts
 @dirrm share/ghostscript/${VERSION}/lib
+@dirrm share/ghostscript/${VERSION}/examples/cjk
 @dirrm share/ghostscript/${VERSION}/examples
 @dirrm share/ghostscript/${VERSION}/doc
 @dirrm share/ghostscript/${VERSION}
 @dirrm share/ghostscript
+@dirrm man/de/man1
+@dirrm man/de
