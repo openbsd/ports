@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/04/24 02:00:40 david Exp $
+# $OpenBSD: Makefile,v 1.12 2003/05/02 18:17:02 sturm Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
@@ -7,8 +7,6 @@ CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 
 HOMEPAGE=	http://www.gnu.org/software/gnats/
-
-MAINTAINER=	Jolan Luff <jolan@cryptonomicon.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

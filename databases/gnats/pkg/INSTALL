@@ -1,10 +1,11 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2001/01/12 17:14:51 dugsong Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/05/02 18:17:02 sturm Exp $
 #
 # Pre/post-installation setup of gnats
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_FILE=${SYSCONFDIR}/gnats-db.conf
 
 # Function: set up gnats user account.
 #
@@ -29,10 +30,10 @@ do_accts()
 #
 do_configs()
 {
-    if [ -f /etc/gnats-db.conf ]; then
+    if [ -f ${CONFIG_FILE} ]; then
 	echo ""
 	echo "+---------------"
-	echo "| The existing /etc/gnats-db.conf configuration file"
+	echo "| The existing ${CONFIG_FILE} configuration file"
 	echo "| has NOT been changed.  You may want to compare it to the"
 	echo "| current sample file, ${PREFIX}/share/examples/gnats/gnats-db.conf"
 	echo "| and update your configuration as needed."
@@ -40,11 +41,11 @@ do_configs()
 	echo ""
     else
 	# Install config files.
-	install -o root -g wheel -m 644 ${PREFIX}/share/examples/gnats/gnats-db.conf /etc/gnats-db.conf
+	install -o root -g wheel -m 644 ${PREFIX}/share/examples/gnats/gnats-db.conf ${CONFIG_FILE}
 
 	echo ""
 	echo "+---------------"
-	echo "| The /etc/gnats-db.conf configuration file has been"
+	echo "| The ${CONFIG_FILE} configuration file has been"
 	echo "| installed.  Please view this file and change"
 	echo "| the configuration to meet your needs."
 	echo "+---------------"

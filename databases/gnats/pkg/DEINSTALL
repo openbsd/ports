@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/01/12 17:14:51 dugsong Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/05/02 18:17:02 sturm Exp $
 #
 # De-installation setup of gnats
 
@@ -24,9 +24,9 @@ do_configs()
 {
     echo ""
     echo "+---------------"
-    echo "| The existing /etc/gnats-db.conf configuration file"
+    echo "| The existing ${SYSCONFDIR}/gnats-db.conf configuration file"
     echo "| has NOT been deleted. To do this: execute"
-    echo "| 'rm /etc/gnats-db.conf' as root."
+    echo "| 'rm ${SYSCONFDIR}/gnats-db.conf' as root."
     echo "+---------------"
     echo ""
 }
