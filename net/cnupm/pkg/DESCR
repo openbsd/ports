@@ -1,0 +1,11 @@
+cnupm is an IPv4/IPv6 traffic collector daemon; it listens on a network
+interface for IPv4/IPv6 packets that match the boolean expression (see
+tcpdump(8) for more information) and collects the following statistics:
+
+     o   address family (INET/INET6)
+     o   IPv4/IPv6 protocol number
+     o   source IPv4/IPv6 address
+     o   source TCP/UDP port
+     o   destination IPv4/IPv6 address
+     o   destination TCP/UDP port
+     o   total number of bytes transferred
