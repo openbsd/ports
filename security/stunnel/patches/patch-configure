@@ -1,0 +1,61 @@
+$OpenBSD: patch-configure,v 1.1 2001/08/13 07:28:32 jakob Exp $
+--- configure.orig	Fri Aug 10 12:30:48 2001
++++ configure	Mon Aug 13 09:58:52 2001
+@@ -959,20 +959,20 @@ EOF
+ # Check whether --with-pem-dir or --without-pem-dir was given.
+ if test "${with_pem_dir+set}" = set; then
+   withval="$with_pem_dir"
+-   PEM_DIR="$withval" 
+-
++else
++  withval="/etc/ssl"
+ fi
++PEM_DIR="$withval" 
+ 
+ if test -n "$PEM_DIR" ; then
+ 	cat >> confdefs.h <<EOF
+ #define PEM_DIR "$PEM_DIR"
+ EOF
+-
+-fi
+-
+-cat >> confdefs.h <<EOF
+-#define PEM_DIR "$PEM_DIR"
++else
++	cat >> confdefs.h <<EOF
++#define PEM_DIR "/etc/ssl"
+ EOF
++fi
+ 
+ 
+ # Check whether --with-cert-file or --without-cert-file was given.
+@@ -1024,16 +1024,16 @@ if test "${with_random+set}" = set; then
+ else
+   
+                 
+-ac_safe=`echo ""/dev/urandom"" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for "/dev/urandom"""... $ac_c" 1>&6
+-echo "configure:1030: checking for "/dev/urandom"" >&5
++ac_safe=`echo ""/dev/arandom"" | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for "/dev/arandom"""... $ac_c" 1>&6
++echo "configure:1030: checking for "/dev/arandom"" >&5
+ if eval "test \"`echo '$''{'ac_cv_file_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   if test "$cross_compiling" = yes; then
+     { echo "configure: error: Cannot check for file existence when cross compiling" 1>&2; exit 1; }
+ else
+-  if test -r "/dev/urandom"; then
++  if test -r "/dev/arandom"; then
+     eval "ac_cv_file_$ac_safe=yes"
+   else
+     eval "ac_cv_file_$ac_safe=no"
+@@ -1043,7 +1043,7 @@ fi
+ if eval "test \"`echo '$ac_cv_file_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-                RANDOM_FILE="/dev/urandom";
++                RANDOM_FILE="/dev/arandom";
+             
+         
+ else
