@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat Mar 17 12:33:13 2001
++++ Makefile	Sat Mar 17 12:33:38 2001
+@@ -1,6 +1,6 @@
+ VERSION = $(shell cat VERSION)
+ CC = gcc
+-CFLAGS = -Wall -g `gtk-config --cflags`
++CFLAGS += -Wall -g `gtk-config --cflags`
+ LIBS  = `gtk-config --libs`
+ OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
+ DISTFILES = *.c *.h Makefile Makefile.mingw README BUGS VERSION \
