@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/21 20:57:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/04/20 04:59:03 fgsch Exp $
 
 COMMENT=	"eboard extra piece sets and sounds"
 
@@ -23,10 +23,10 @@ NO_BUILD=	Yes
 do-install:
 	$(INSTALL_DATA_DIR) $(PREFIX)/share/eboard
 	$(INSTALL_DATA_DIR) $(PREFIX)/share/doc/eboard
-	cd ${WRKSRC} && ( \
-	  $(INSTALL_DATA) *.png *.wav $(PREFIX)/share/eboard; \
-	  $(INSTALL_DATA) extras1.conf \
-	    $(PREFIX)/share/eboard/themeconf.extras1; \
-	  $(INSTALL_DATA) CREDITS $(PREFIX)/share/doc/eboard )
+	cd ${WRKSRC} && {					\
+	  $(INSTALL_DATA) *.png *.wav $(PREFIX)/share/eboard;	\
+	  $(INSTALL_DATA) extras1.conf				\
+	    $(PREFIX)/share/eboard/themeconf.extras1;		\
+	  $(INSTALL_DATA) CREDITS $(PREFIX)/share/doc/eboard; }
 
 .include <bsd.port.mk>
