@@ -11,10 +11,6 @@ port like "sox" to convert your file types. I use the "nas" port to
 record and edit all of my audio files but so long as you have a valid
 AIFF file it shouldn't matter what you use.
 
-Although the source code includes a decoder I have decided not to port
-it because we already have a couple of top class mpeg decoders in the 
-ports collection.
-
 HINTS & TIPS 
 ============ 
 Physcoacoustic model 2 is the only supported model in layer III
@@ -31,8 +27,3 @@ MISC
 ====
 If anyone finds any bugs in this software please let me know and
 include patches to fix them.
-
-Share and enjoy,
-
-Joel...
-jsutton@webnet.com.au

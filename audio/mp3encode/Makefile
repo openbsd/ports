@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/09/06 18:13:21 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/01/27 14:04:54 brad Exp $
 
 DISTNAME=	dist10
 PKGNAME=	mp3encode-1.10
@@ -10,8 +10,7 @@ MAINTAINER=	angelos@openbsd.org
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder
-ALL_TARGET=	encode
+WRKSRC=	${WRKDIR}/${DISTNAME}/lsf/encoder
 
 # Directories and extra files
 TABLE_LIB=	${PREFIX}/lib/mp3encode
@@ -22,19 +21,12 @@ TABLE_FILES=	1cb0 1cb1 1cb2 1cb4 1cb5 1cb6 1th0 1th1 1th2 1th4 1th5 1th6 \
 		alloc_4 dewindow enwindow huffcode huffdec psy_data
 
 post-patch:
-	@${ECHO} "===>  Specifing table path"
-	@${RM} -f ${WRKSRC}/common.h.sed
-	@${SED} "s/ZAP/${TABLE_LIB_SED}/g" < ${WRKSRC}/common.h > ${WRKSRC}/common.h.sed
-	@${RM} -f ${WRKSRC}/common.h
-	@${CP} -f ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
+	@sed -e s,ZAP,${TABLE_LIB_SED}, ${WRKSRC}/common.h > ${WRKSRC}/common.h.sed
+	@mv ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
 
 do-install:
-	@${ECHO} "===>  Installing binaries"
+	${INSTALL_DATA_DIR} ${TABLE_LIB}
 	${INSTALL_PROGRAM} ${WRKSRC}/encode ${PREFIX}/bin/mp3encode
-	@${ECHO} "===>  Installing table files"
-	-${MKDIR} ${TABLE_LIB}
-	@for file in ${TABLE_FILES} ; do \
-		${INSTALL_DATA} ${WRKSRC}/tables/$$file ${TABLE_LIB}/ ;\
-	done
+	cd ${WRKSRC}/tables; ${INSTALL_DATA} ${TABLE_FILES} ${TABLE_LIB}
 
 .include <bsd.port.mk>

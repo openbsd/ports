@@ -1,19 +1,36 @@
-*** Makefile.in.orig	Wed May 20 22:00:23 1998
---- Makefile.in	Wed May 20 22:07:53 1998
-***************
-*** 40,46 ****
-  
-  NINT_SWITCH = @NINTSW@
-  
-! CC_SWITCHES = -g -O -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
-  
-  PGM = encode
-  
---- 40,46 ----
-  
-  NINT_SWITCH = @NINTSW@
-  
-! CC_SWITCHES = -g -O3 -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
-  
-  PGM = encode
-  
+--- Makefile.in.orig	Wed Jan 22 04:43:12 1997
++++ Makefile.in	Thu Jan 27 00:49:39 2000
+@@ -16,7 +16,7 @@
+ ## Received from Mike Coleman
+ ############################################################################
+ 
+-CC = gcc
++CC = @CC@
+ 
+ c_sources = \
+ 	common.c \
+@@ -40,7 +40,8 @@
+ 
+ NINT_SWITCH = @NINTSW@
+ 
+-CC_SWITCHES = -g -O -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
++CC_SWITCHES = -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
++CFLAGS += $(CC_SWITCHES)
+ 
+ PGM = encode
+ 
+@@ -48,11 +49,12 @@
+ 
+ 
+ %.o: %.c 
+-	$(CC) $(CC_SWITCHES) -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ %.d: %.c
+-	$(SHELL) -ec '$(CC) -M $(CC_SWITCHES) $< | sed '\''s/$*.o/& $@/g'\'' > $@'
++	$(SHELL) -ec '$(CC) -M $(CFLAGS) $< | sed '\''s/$*.o/& $@/g'\'' > $@'
+ 
++all: $(PGM)
+ 
+ $(PGM):	$(OBJ) Makefile
+ 	$(CC) -o $(PGM) $(OBJ) $(LIBS)
