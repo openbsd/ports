@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2004/12/20 16:25:56 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2004/12/20 16:28:57 robert Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -33,7 +33,7 @@ CONFIGURE_ARGS+= --with-apxs=/usr/sbin/apxs \
 
 MODULES=	devel/gettext
 
-WANTLIB=	c crypto des m ssl z 
+WANTLIB=	c crypto des m ssl stdc++ z 
 
 # some variables to substitute 
 SUBST_VARS=	PHP_CONFIG_FILE
