@@ -28,8 +28,6 @@ include/tk8.2/unix/tkUnixDefault.h
 include/tk8.2/unix/tkUnixInt.h
 include/tk8.2/unix/tkUnixPort.h
 lib/libtk82.a
-lib/libtk82.so.1.3
-@exec /sbin/ldconfig -m %B
 lib/libtkstub82.a
 lib/tk8.2/bgerror.tcl
 lib/tk8.2/button.tcl
