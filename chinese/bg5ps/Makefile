@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/26 03:56:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/18 02:59:18 kevlo Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf::chinese/arphicttf \
 		python2.0::lang/python
+LIB_DEPENDS=	ttf.1::print/freetype
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/bg5ps
