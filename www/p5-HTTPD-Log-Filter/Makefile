@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/05/12 06:12:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2004/06/26 07:35:10 xsa Exp $
 
 COMMENT=	"httpd log filter library"
 
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:p5-IO-Zlib->1.00:archivers/p5-IO-Zlib
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-IO-Zlib->1.00:archivers/p5-IO-Zlib
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
 

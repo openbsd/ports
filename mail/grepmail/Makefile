@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/11/01 02:57:55 jcs Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/26 07:35:07 xsa Exp $
 
 DISTNAME=	grepmail-4.80
 CATEGORIES=	mail perl5
@@ -15,10 +15,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grepmail/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
+RUN_DEPENDS=	:p5-Time-TimeDate-*:devel/p5-Time-TimeDate \
+		:p5-DateManip-*:converters/p5-DateManip
+		:bzip2-*:archivers/bzip2
 BUILD_DEPENDS=	:p5-Time-TimeDate-*:devel/p5-Time-TimeDate \
 		:p5-DateManip-*:converters/p5-DateManip
-RUN_DEPENDS=	${BUILD_DEPENDS} \
-		:bzip2-*:archivers/bzip2
 		
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	FASTREADER=0

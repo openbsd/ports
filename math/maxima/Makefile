@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/12/27 23:31:39 jose Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/26 07:35:07 xsa Exp $
 
 COMMENT=		"GPL computer algebra system based on DOE Macsyma"
 
@@ -18,8 +18,8 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
 
 CONFIGURE_STYLE=	gnu
 
-BUILD_DEPENDS=		:clisp-*:lang/clisp 
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		:clisp-*:lang/clisp 
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 SUBST_VARS=		VERSION
 

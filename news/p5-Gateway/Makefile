@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/30 04:13:36 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/26 07:35:08 xsa Exp $
 
 COMMENT=	"perl module to gateway between news and mail"
 
@@ -9,9 +9,9 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-BUILD_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign \
+RUN_DEPENDS=	:p5-PGP-Sign-*:security/p5-PGP-Sign \
 		:p5-News-Article->=1.07:news/p5-News-Article
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

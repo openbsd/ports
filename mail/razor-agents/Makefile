@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/04/24 08:10:22 peter Exp $
+# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:07 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
 
-BUILD_DEPENDS=		:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
+RUN_DEPENDS=		:p5-Digest-SHA1->=1.0:security/p5-Digest-SHA1 \
 			:p5-Net-DNS->=0.23:net/p5-Net-DNS \
 			:p5-URI->=1.19:www/p5-URI
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 FAKE_FLAGS=		${DESTDIRNAME}=${WRKINST} PERL5LIB=${WRKINST}/${PREFIX}/${P5ARCH}
 

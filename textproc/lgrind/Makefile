@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/04/11 19:12:24 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:09 xsa Exp $
 
 COMMENT=	"LaTeX vgrind(1) look-alike"
 
@@ -33,8 +33,8 @@ MAKE_FLAGS=	BASEDIR=${PREFIX} \
 		CC='${CC}' CFLAGS='${CFLAGS}'
 FAKE_FLAGS=	BASEDIR=${WRKINST}${PREFIX}
 
-BUILD_DEPENDS=	:teTeX_base-*:print/teTeX/base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:teTeX_base-*:print/teTeX/base
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 TEXMF=		${PREFIX}/share/texmf-local
 

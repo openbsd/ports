@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.7 2002/12/29 21:14:11 fgsch Exp $
+#   $OpenBSD: Makefile,v 1.8 2004/06/26 07:35:08 xsa Exp $
 
 COMMENT=	"merge and extract portions of binary pcap files"
 
@@ -8,8 +8,8 @@ MASTER_SITES=	http://indev.insu.com/sources/
 
 HOMEPAGE=	http://indev.insu.com/Fwctl/pcapmerge.html
 
-BUILD_DEPENDS=	:p5-Net-Pcap->=0.03:net/p5-Net-Pcap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Net-Pcap->=0.03:net/p5-Net-Pcap
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAINTAINER=	Brian Caswell <bmc@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/06/23 03:26:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/06/26 07:35:11 xsa Exp $
 
 COMMENT=		"General GNOME User Documentation"
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gnome2-user-docs/2.6/}
 EXTRACT_SUFX=		.tar.bz2
 
-BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 

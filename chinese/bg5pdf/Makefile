@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/02/12 15:07:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/26 07:35:06 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=     Yes
 MASTER_SITES=	${HOMEPAGE}
 
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		::chinese/taipeifonts
 LIB_DEPENDS=	pdf.2::print/pdflib
 

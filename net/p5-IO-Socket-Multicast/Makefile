@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/26 07:35:08 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=IO/}
 
-BUILD_DEPENDS=	:p5-IO-Interface->=0.97:net/p5-IO-Interface
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-IO-Interface->=0.97:net/p5-IO-Interface
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

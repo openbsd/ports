@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/01/17 15:58:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:11 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -29,9 +29,9 @@ USE_X11=	Yes
 LIB_DEPENDS=	gtk.1.2,glib.1.2::x11/gtk+ \
 		gdk_pixbuf.2::graphics/gdk-pixbuf \
 		gdk_imlib.19::graphics/imlib
-BUILD_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
+RUN_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 		:p5-XML-Writer-*:textproc/p5-XML-Writer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	--without-gtkhtml --without-gtkxmhtml --without-gnome \

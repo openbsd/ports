@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/10/30 04:46:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2004/06/26 07:35:09 xsa Exp $
 
 COMMENT=	"interface to HMAC Message-Digest Algorithms"
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Digest/}
 
-BUILD_DEPENDS=	:p5-Digest-SHA1->=1:security/p5-Digest-SHA1
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Digest-SHA1->=1:security/p5-Digest-SHA1
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

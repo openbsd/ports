@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/04/13 14:03:44 peter Exp $
+# $OpenBSD: Makefile,v 1.35 2004/06/26 07:35:06 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -11,8 +11,8 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=DBD/}
 
 LIB_DEPENDS=	pq.2::databases/postgresql
-BUILD_DEPENDS=	::databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::databases/p5-DBI
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 FLAVOR?=
 FLAVORS=	regress

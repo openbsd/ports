@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/01 20:37:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/06/26 07:35:09 xsa Exp $
 
 COMMENT=	"Remote SMTP Server Detection"
 
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://www.greyhats.org/outils/smtpscan/ \
 		${MASTER_SITE_PACKETSTORM:=UNIX/scanners/}
 
-BUILD_DEPENDS=	:p5-Net-DNS-*:net/p5-Net-DNS
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Net-DNS-*:net/p5-Net-DNS
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2004/05/01 14:29:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.24 2004/06/26 07:35:06 xsa Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -12,8 +12,8 @@ CATEGORIES=	devel java
 HOMEPAGE=	http://java.sun.com/j2se/
 MAINTAINER=	Christian Edward Gruber <cgruber@israfil.net>
 
-BUILD_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
+BUILD_DEPENDS=	${RUN_DEPENDS}
 DISTFILES=	j2sdk-${VERSION:S/./_/g}-linux-i586.bin
 EXTRACT_CASES+=	*.bin) \
 		    tail `sed -n -e '/^tail/p' -e '/^tail/q' ${FULLDISTDIR}/$$archive|awk '{print $$2}'` ${FULLDISTDIR}/$$archive > ${WRKDIR}/$$archive && \

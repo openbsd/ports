@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2004/01/17 15:58:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:06 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:p5-Bit-Vector->=6.2:math/p5-Bit-Vector
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Bit-Vector->=6.2:math/p5-Bit-Vector
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/10/18 19:44:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/26 07:35:10 xsa Exp $
 
 COMMENT=	"HTML text formating class"
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
-BUILD_DEPENDS=  :p5-HTML-Tree-*:www/p5-HTML-Tree
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-HTML-Tree-*:www/p5-HTML-Tree
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/17 15:58:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/06/26 07:35:09 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=	"No license"
 PERMIT_DISTFILES_CDROM=	"No license"
 PERMIT_DISTFILES_FTP=	"No license"
 
-BUILD_DEPENDS=		:p5-Crypt-OpenSSL-Random->=0.03:security/p5-Crypt-OpenSSL-Random
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-Crypt-OpenSSL-Random->=0.03:security/p5-Crypt-OpenSSL-Random
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
 

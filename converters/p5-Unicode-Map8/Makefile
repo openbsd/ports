@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/17 15:58:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/26 07:35:06 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Unicode/}
 
-BUILD_DEPENDS=	::converters/p5-Unicode-String
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	::converters/p5-Unicode-String
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

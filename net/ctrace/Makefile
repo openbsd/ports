@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/02 17:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/06/26 07:35:08 xsa Exp $
 
 COMMENT=	"multiprotocol traceroute tool"
 
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 
-BUILD_DEPENDS=	::net/p5-Net-RawIP \
+RUN_DEPENDS=	::net/p5-Net-RawIP \
 		::www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

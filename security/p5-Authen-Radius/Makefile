@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/10/28 16:30:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/06/26 07:35:09 xsa Exp $
 
 DISTNAME=	RadiusPerl-0.05
 PKGNAME=	p5-Authen-Radius-0.05
@@ -14,8 +14,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-BUILD_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

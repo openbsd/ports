@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/10/18 19:44:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/06/26 07:35:10 xsa Exp $
 
 COMMENT=	"module to extract text contained within HTML tables"
 
@@ -10,8 +10,8 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
-BUILD_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

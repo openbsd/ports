@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/29 17:13:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.11 2004/06/26 07:35:09 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,8 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pow/}
 
 MODULES=	python
-
-NO_REGRESS=	Yes
 
 pre-build:
 	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py

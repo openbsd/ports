@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/11/13 00:12:24 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/26 07:35:08 xsa Exp $
 
 DISTNAME=	Net-SNMP-4.0.3
 PKGNAME=	p5-${DISTNAME}
@@ -15,10 +15,10 @@ PERMIT_DISTFILES_FTP=	Yes
 COMMENT=	"Perl modules to access SNMP"
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
-BUILD_DEPENDS=	:p5-Crypt-DES->=2.03:security/p5-Crypt-DES \
+RUN_DEPENDS=	:p5-Crypt-DES->=2.03:security/p5-Crypt-DES \
 		:p5-Digest-HMAC->=1:security/p5-Digest-HMAC \
 		:p5-Digest-SHA1->=1.02:security/p5-Digest-SHA1
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/10/26 23:49:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/06/26 07:35:06 xsa Exp $
 
 ONLY_FOR_ARCHS=	i386
 BROKEN=		"unusable, only eats cpu; probably thread emulation problem"
@@ -25,8 +25,8 @@ EXTRACT_CASES+=	*.bin) \
 		    chmod u+x ${WRKDIR}/$$archive && \
 		    ${WRKDIR}/$$archive -q ;; \
 
-BUILD_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:redhat_base->=6.2:emulators/redhat/base
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

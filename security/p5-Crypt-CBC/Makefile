@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/06/01 13:50:18 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2004/06/26 07:35:09 xsa Exp $
 
 COMMENT=	"cryptographic cipher block chaining mode"
 
@@ -8,9 +8,9 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Crypt/}
 
-BUILD_DEPENDS=	:p5-Crypt-DES-*:security/p5-Crypt-DES \
+RUN_DEPENDS=	:p5-Crypt-DES-*:security/p5-Crypt-DES \
 		:p5-Crypt-Blowfish-*:security/p5-Crypt-Blowfish
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAINTAINER=	Dan Harnett <danh@openbsd.org>
 

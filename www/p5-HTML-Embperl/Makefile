@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/01/17 15:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2004/06/26 07:35:10 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,8 +18,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	:mod_perl->=1.22:www/mod_perl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:mod_perl->=1.22:www/mod_perl
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 CONFIGURE_ENV=	EPHTTPD="/usr/sbin/httpd" APACHE_SRC="/usr/lib/apache"

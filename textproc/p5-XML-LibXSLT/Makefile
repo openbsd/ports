@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/01/17 15:58:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/06/26 07:35:10 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -15,8 +15,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=XML/}
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-BUILD_DEPENDS=	:p5-XML-LibXML->=0.94:textproc/p5-XML-LibXML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-XML-LibXML->=0.94:textproc/p5-XML-LibXML
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	xml2.6::textproc/libxml \
 		xslt.1,exslt.7::textproc/libxslt
 

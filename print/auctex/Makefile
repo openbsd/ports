@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/21 01:41:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/26 07:35:08 xsa Exp $
 
 COMMENT=	"extensible emacs interface for TeX"
 
@@ -19,8 +19,8 @@ MASTER_SITES=	${MASTER_SITE_GNU:=auctex/11.14/}
 
 FAKE_FLAGS=	lispdir=${DESTDIR}/${PREFIX}/share/emacs/site-lisp
 
-BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	:emacs-21.*:editors/emacs21
 		:teTeX_base-*:print/teTeX/base
+BUILD_DEPENDS=	:emacs-21.*:editors/emacs21
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/12/08 04:05:28 margarida Exp $
+# $OpenBSD: Makefile,v 1.19 2004/06/26 07:35:09 xsa Exp $
 
 COMMENT=	"simple WATCHdog log filtering program"
 
@@ -11,10 +11,10 @@ HOMEPAGE=	http://swatch.sourceforge.net/
 
 MAINTAINER=	Jason Peel <jsyn@openbsd.org>
 
-BUILD_DEPENDS=	:p5-Date-Calc-*:devel/p5-Date-Calc \
+RUN_DEPENDS=	:p5-Date-Calc-*:devel/p5-Date-Calc \
 		:p5-File-Tail-*:devel/p5-File-Tail \
 		:p5-Time-TimeDate-*:devel/p5-Time-TimeDate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

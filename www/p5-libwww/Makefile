@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/10/18 19:44:57 sturm Exp $
+# $OpenBSD: Makefile,v 1.21 2004/06/26 07:35:10 xsa Exp $
 
 COMMENT=	"library for WWW access in Perl"
 
@@ -7,11 +7,11 @@ PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=LWP/}
 
-BUILD_DEPENDS=  :p5-URI->1.10:www/p5-URI \
+RUN_DEPENDS=	:p5-URI->1.10:www/p5-URI \
 		:p5-HTML-Parser->=2.20:www/p5-HTML-Parser \
 		:p5-Crypt-SSLeay-*:security/p5-Crypt-SSLeay \
 		:p5-HTTP-GHTTP-*:www/p5-HTTP-GHTTP
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

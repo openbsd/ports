@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/06/26 07:35:08 xsa Exp $
 
 COMMENT=		"module to interact with a Cisco router"
 
@@ -20,9 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	perl
 
-BUILD_DEPENDS=		:p5-Net-Telnet->=3.02:net/p5-Net-Telnet \
+RUN_DEPENDS=		:p5-Net-Telnet->=3.02:net/p5-Net-Telnet \
 			:p5-Term-ReadKey->=2.14:devel/p5-Term-ReadKey
 
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

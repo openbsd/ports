@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/30 05:01:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:07 xsa Exp $
 
 COMMENT=		"perl module to manage mail folders"
 
@@ -13,14 +13,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Mail/}
 
-BUILD_DEPENDS=		:p5-Time-TimeDate-*:devel/p5-Time-TimeDate	\
+RUN_DEPENDS=		:p5-Time-TimeDate-*:devel/p5-Time-TimeDate	\
 			:p5-MIME-tools-*:mail/p5-MIME-tools		\
 			:p5-MIME-Types-*:mail/p5-MIME-Types		\
 			:p5-Object-Realize-*:devel/p5-Object-Realize	\
 			:p5-HTML-Format-*:www/p5-HTML-Format		\
 			:p5-Text-Autoformat-*:textproc/p5-Text-Autoformat	\
 			:p5-Font-AFM-*:textproc/p5-Font-AFM
-RUN_DEPENDS=		${BUILD_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/11/27 06:49:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2004/06/26 07:35:07 xsa Exp $
 
 COMMENT=		"modules for parsing (and creating!) MIME entities"
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=MIME/}
 
-BUILD_DEPENDS=	:p5-Mail-Tools-*:mail/p5-Mail-Tools  \
+RUN_DEPENDS=	:p5-Mail-Tools-*:mail/p5-Mail-Tools  \
 		:p5-IO-stringy->=1.211:devel/p5-IO-stringy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= 	perl
 WRKSRC=		${WRKDIR}/${DISTNAME:S/a//}

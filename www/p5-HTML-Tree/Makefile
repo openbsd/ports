@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/11/03 01:07:13 margarida Exp $
+# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:10 xsa Exp $
 
 COMMENT=	"perl parser that builds an HTML tree"
 
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=  :p5-HTML-Parser->=2.19:www/p5-HTML-Parser \
+RUN_DEPENDS=	:p5-HTML-Parser->=2.19:www/p5-HTML-Parser \
 		:p5-HTML-Tagset->=3.02:www/p5-HTML-Tagset
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2004/04/24 16:13:50 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/26 07:35:09 xsa Exp $
 
 COMMENT=		"Find RFC 822 email addresses in plain text"
 
@@ -11,8 +11,8 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Email/}
 
 MAINTAINER=		Peter Galbavy <peter.galbavy@knowtion.net>
 
-BUILD_DEPENDS=		::mail/p5-Mail-Tools ::mail/p5-Email-Valid
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS=		::mail/p5-Mail-Tools ::mail/p5-Email-Valid
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

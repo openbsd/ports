@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/02/02 00:31:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2004/06/26 07:35:11 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -24,8 +24,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 MULTI_PACKAGES=	-demo
 SUBPACKAGE?=
 
-BUILD_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-HTML-Parser-*:www/p5-HTML-Parser
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_X11=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/09/04 01:32:46 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2004/06/26 07:35:07 xsa Exp $
 
 COMMENT=	"create barcode image with GD"
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=GD/}
 
-BUILD_DEPENDS=	:p5-GD->=1.18:graphics/p5-GD 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	:p5-GD->=1.18:graphics/p5-GD 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl
 
