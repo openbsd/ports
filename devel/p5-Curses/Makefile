@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/10 19:20:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/09 11:04:19 avsm Exp $
 
 COMMENT=	"terminal screen handling and optimisation"
 
-DISTNAME=	Curses-1.05
+DISTNAME=	Curses-1.06
 PKGNAME=	p5-${DISTNAME}
 
 CATEGORIES=	devel perl5
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
+CONFIGURE_ARGS=	PANELS MENUS FORMS
 
 .include <bsd.port.mk>
