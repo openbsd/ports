@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2002/02/06 01:17:08 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/22 07:18:44 jasoni Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
 VERSION=		21.1.14
 DISTNAME=		xemacs-${VERSION}
 CATEGORIES=     	editors
-NEED_VERSION=		1.500
+NEED_VERSION=		1.513
 
 HOMEPAGE=		http://www.xemacs.org/
 
@@ -57,8 +57,8 @@ CONFIGURE_STYLE=	autoconf old dest
 
 CONFIGURE_ARGS+=	--with-gnu-make \
 			--gung-ho \
-			--infodir='$${DESTDIR}${PREFIX}/info' \
-			--infopath='${LOCALBASE}/info:/usr/share/info' \
+			--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
+			--infopath='${LOCALBASE}/info/${DISTNAME}:${LOCALBASE}/info:usr/share/info' \
 			--site-prefixes='${LOCALBASE}:/usr' \
 			--without-ldap \
 			--without-cde \
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--with-gnu-make \
 # XEmacs does not work with OpenLDAP 2.0.7 (linking problem)
 
 FAKE_FLAGS=	prefix='$${WRKINST}$${DESTDIR}${PREFIX}' \
-		infodir='$${WRKINST}$${DESTDIR}${PREFIX}/info'
+		infodir='$${WRKINST}$${DESTDIR}${PREFIX}/info/${DISTNAME}'
 
 ####
 
@@ -245,7 +245,7 @@ STRIP_PROGS+=   ${DISTNAME}
 .endif
 STRIP_EXECS=    cvtmail digest-doc fakemail gnuserv hexl make-docfile \
 		make-path mmencode movemail profile sorted-doc wakeup yow
-STRIP_PROGS=	gnuclient b2m ctags etags ootags
+STRIP_PROGS=	gnuclient xemacs-b2m xemacs-ctags xemacs-etags ootags
 
 post-install:
 # Stripping

@@ -1,143 +1,148 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/10/11 19:32:32 espie Exp $
-@pkgcfl emacs-*
-@unexec install-info --delete --info-dir=%D/info %D/info/cl.info
-@unexec install-info --delete --info-dir=%D/info %D/info/custom.info
-@unexec install-info --delete --info-dir=%D/info %D/info/external-widget.info
-@unexec install-info --delete --info-dir=%D/info %D/info/info.info
-@unexec install-info --delete --info-dir=%D/info %D/info/internals.info
-@unexec install-info --delete --info-dir=%D/info %D/info/lispref.info
-@unexec install-info --delete --info-dir=%D/info %D/info/new-users-guide.info
-@unexec install-info --delete --info-dir=%D/info %D/info/term.info
-@unexec install-info --delete --info-dir=%D/info %D/info/termcap.info
-@unexec install-info --delete --info-dir=%D/info %D/info/texinfo.info
-@unexec install-info --delete --info-dir=%D/info %D/info/widget.info
-@unexec install-info --delete --info-dir=%D/info %D/info/xemacs-faq.info
-@unexec install-info --delete --info-dir=%D/info %D/info/xemacs.info
-bin/b2m
-bin/ctags
-bin/etags
+@comment $OpenBSD: PLIST,v 1.7 2002/03/22 07:18:44 jasoni Exp $
+%%mule%%
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/cl.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/custom.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/external-widget.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/info.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/internals.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/lispref.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/new-users-guide.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/standards.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/term.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/termcap.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/texinfo.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/widget.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/xemacs-faq.info
+@unexec install-info --delete --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/xemacs.info
 bin/gnuattach
 bin/gnuclient
 bin/gnudoit
 bin/ootags
-bin/rcs-checkin
 bin/xemacs
 bin/xemacs-21.1.14
-info/cl.info
-info/cl.info-1
-info/cl.info-2
-info/cl.info-3
-info/cl.info-4
-info/cl.info-5
-info/cl.info-6
-info/custom.info
-info/external-widget.info
-info/info.info
-info/internals.info
-info/internals.info-1
-info/internals.info-2
-info/internals.info-3
-info/internals.info-4
-info/internals.info-5
-info/internals.info-6
-info/internals.info-7
-info/internals.info-8
-info/lispref.info
-info/lispref.info-1
-info/lispref.info-10
-info/lispref.info-11
-info/lispref.info-12
-info/lispref.info-13
-info/lispref.info-14
-info/lispref.info-15
-info/lispref.info-16
-info/lispref.info-17
-info/lispref.info-18
-info/lispref.info-19
-info/lispref.info-2
-info/lispref.info-20
-info/lispref.info-21
-info/lispref.info-22
-info/lispref.info-23
-info/lispref.info-24
-info/lispref.info-25
-info/lispref.info-26
-info/lispref.info-27
-info/lispref.info-28
-info/lispref.info-29
-info/lispref.info-3
-info/lispref.info-30
-info/lispref.info-31
-info/lispref.info-32
-info/lispref.info-33
-info/lispref.info-34
-info/lispref.info-35
-info/lispref.info-36
-info/lispref.info-37
-info/lispref.info-38
-info/lispref.info-39
-info/lispref.info-4
-info/lispref.info-40
-info/lispref.info-41
-info/lispref.info-42
-info/lispref.info-43
-info/lispref.info-44
-info/lispref.info-5
-info/lispref.info-6
-info/lispref.info-7
-info/lispref.info-8
-info/lispref.info-9
-info/new-users-guide.info
-info/new-users-guide.info-1
-info/new-users-guide.info-2
-info/new-users-guide.info-3
-info/term.info
-info/termcap.info
-info/termcap.info-1
-info/termcap.info-2
-info/termcap.info-3
-info/texinfo.info
-info/texinfo.info-1
-info/texinfo.info-10
-info/texinfo.info-11
-info/texinfo.info-12
-info/texinfo.info-2
-info/texinfo.info-3
-info/texinfo.info-4
-info/texinfo.info-5
-info/texinfo.info-6
-info/texinfo.info-7
-info/texinfo.info-8
-info/texinfo.info-9
-info/widget.info
-info/xemacs-faq.info
-info/xemacs-faq.info-1
-info/xemacs-faq.info-2
-info/xemacs-faq.info-3
-info/xemacs-faq.info-4
-info/xemacs-faq.info-5
-info/xemacs.info
-info/xemacs.info-1
-info/xemacs.info-10
-info/xemacs.info-11
-info/xemacs.info-12
-info/xemacs.info-13
-info/xemacs.info-14
-info/xemacs.info-15
-info/xemacs.info-16
-info/xemacs.info-17
-info/xemacs.info-18
-info/xemacs.info-19
-info/xemacs.info-2
-info/xemacs.info-20
-info/xemacs.info-21
-info/xemacs.info-3
-info/xemacs.info-4
-info/xemacs.info-5
-info/xemacs.info-6
-info/xemacs.info-7
-info/xemacs.info-8
-info/xemacs.info-9
+bin/xemacs-b2m
+bin/xemacs-ctags
+bin/xemacs-etags
+bin/xemacs-rcs-checkin
+info/xemacs-21.1.14/cl.info
+info/xemacs-21.1.14/cl.info-1
+info/xemacs-21.1.14/cl.info-2
+info/xemacs-21.1.14/cl.info-3
+info/xemacs-21.1.14/cl.info-4
+info/xemacs-21.1.14/cl.info-5
+info/xemacs-21.1.14/cl.info-6
+info/xemacs-21.1.14/custom.info
+info/xemacs-21.1.14/external-widget.info
+info/xemacs-21.1.14/info.info
+info/xemacs-21.1.14/internals.info
+info/xemacs-21.1.14/internals.info-1
+info/xemacs-21.1.14/internals.info-2
+info/xemacs-21.1.14/internals.info-3
+info/xemacs-21.1.14/internals.info-4
+info/xemacs-21.1.14/internals.info-5
+info/xemacs-21.1.14/internals.info-6
+info/xemacs-21.1.14/internals.info-7
+info/xemacs-21.1.14/internals.info-8
+info/xemacs-21.1.14/lispref.info
+info/xemacs-21.1.14/lispref.info-1
+info/xemacs-21.1.14/lispref.info-10
+info/xemacs-21.1.14/lispref.info-11
+info/xemacs-21.1.14/lispref.info-12
+info/xemacs-21.1.14/lispref.info-13
+info/xemacs-21.1.14/lispref.info-14
+info/xemacs-21.1.14/lispref.info-15
+info/xemacs-21.1.14/lispref.info-16
+info/xemacs-21.1.14/lispref.info-17
+info/xemacs-21.1.14/lispref.info-18
+info/xemacs-21.1.14/lispref.info-19
+info/xemacs-21.1.14/lispref.info-2
+info/xemacs-21.1.14/lispref.info-20
+info/xemacs-21.1.14/lispref.info-21
+info/xemacs-21.1.14/lispref.info-22
+info/xemacs-21.1.14/lispref.info-23
+info/xemacs-21.1.14/lispref.info-24
+info/xemacs-21.1.14/lispref.info-25
+info/xemacs-21.1.14/lispref.info-26
+info/xemacs-21.1.14/lispref.info-27
+info/xemacs-21.1.14/lispref.info-28
+info/xemacs-21.1.14/lispref.info-29
+info/xemacs-21.1.14/lispref.info-3
+info/xemacs-21.1.14/lispref.info-30
+info/xemacs-21.1.14/lispref.info-31
+info/xemacs-21.1.14/lispref.info-32
+info/xemacs-21.1.14/lispref.info-33
+info/xemacs-21.1.14/lispref.info-34
+info/xemacs-21.1.14/lispref.info-35
+info/xemacs-21.1.14/lispref.info-36
+info/xemacs-21.1.14/lispref.info-37
+info/xemacs-21.1.14/lispref.info-38
+info/xemacs-21.1.14/lispref.info-39
+info/xemacs-21.1.14/lispref.info-4
+info/xemacs-21.1.14/lispref.info-40
+info/xemacs-21.1.14/lispref.info-41
+info/xemacs-21.1.14/lispref.info-42
+info/xemacs-21.1.14/lispref.info-43
+info/xemacs-21.1.14/lispref.info-44
+info/xemacs-21.1.14/lispref.info-5
+info/xemacs-21.1.14/lispref.info-6
+info/xemacs-21.1.14/lispref.info-7
+info/xemacs-21.1.14/lispref.info-8
+info/xemacs-21.1.14/lispref.info-9
+info/xemacs-21.1.14/new-users-guide.info
+info/xemacs-21.1.14/new-users-guide.info-1
+info/xemacs-21.1.14/new-users-guide.info-2
+info/xemacs-21.1.14/new-users-guide.info-3
+info/xemacs-21.1.14/standards.info
+info/xemacs-21.1.14/standards.info-1
+info/xemacs-21.1.14/standards.info-2
+info/xemacs-21.1.14/standards.info-3
+info/xemacs-21.1.14/term.info
+info/xemacs-21.1.14/termcap.info
+info/xemacs-21.1.14/termcap.info-1
+info/xemacs-21.1.14/termcap.info-2
+info/xemacs-21.1.14/termcap.info-3
+info/xemacs-21.1.14/texinfo.info
+info/xemacs-21.1.14/texinfo.info-1
+info/xemacs-21.1.14/texinfo.info-10
+info/xemacs-21.1.14/texinfo.info-11
+info/xemacs-21.1.14/texinfo.info-12
+info/xemacs-21.1.14/texinfo.info-2
+info/xemacs-21.1.14/texinfo.info-3
+info/xemacs-21.1.14/texinfo.info-4
+info/xemacs-21.1.14/texinfo.info-5
+info/xemacs-21.1.14/texinfo.info-6
+info/xemacs-21.1.14/texinfo.info-7
+info/xemacs-21.1.14/texinfo.info-8
+info/xemacs-21.1.14/texinfo.info-9
+info/xemacs-21.1.14/widget.info
+info/xemacs-21.1.14/xemacs-faq.info
+info/xemacs-21.1.14/xemacs-faq.info-1
+info/xemacs-21.1.14/xemacs-faq.info-2
+info/xemacs-21.1.14/xemacs-faq.info-3
+info/xemacs-21.1.14/xemacs-faq.info-4
+info/xemacs-21.1.14/xemacs-faq.info-5
+info/xemacs-21.1.14/xemacs.info
+info/xemacs-21.1.14/xemacs.info-1
+info/xemacs-21.1.14/xemacs.info-10
+info/xemacs-21.1.14/xemacs.info-11
+info/xemacs-21.1.14/xemacs.info-12
+info/xemacs-21.1.14/xemacs.info-13
+info/xemacs-21.1.14/xemacs.info-14
+info/xemacs-21.1.14/xemacs.info-15
+info/xemacs-21.1.14/xemacs.info-16
+info/xemacs-21.1.14/xemacs.info-17
+info/xemacs-21.1.14/xemacs.info-18
+info/xemacs-21.1.14/xemacs.info-19
+info/xemacs-21.1.14/xemacs.info-2
+info/xemacs-21.1.14/xemacs.info-20
+info/xemacs-21.1.14/xemacs.info-21
+info/xemacs-21.1.14/xemacs.info-3
+info/xemacs-21.1.14/xemacs.info-4
+info/xemacs-21.1.14/xemacs.info-5
+info/xemacs-21.1.14/xemacs.info-6
+info/xemacs-21.1.14/xemacs.info-7
+info/xemacs-21.1.14/xemacs.info-8
+info/xemacs-21.1.14/xemacs.info-9
 lib/xemacs-21.1.14/etc/BETA
 lib/xemacs-21.1.14/etc/CHARSETS
 lib/xemacs-21.1.14/etc/CODING-STANDARDS
@@ -924,13 +929,12 @@ lib/xemacs-21.1.14/lisp/x-win-xfree86.el
 lib/xemacs-21.1.14/lisp/x-win-xfree86.elc
 lib/xemacs-21.1.14/lisp/xpm-button.el
 lib/xemacs-21.1.14/lisp/xpm-button.elc
-%%mule%%
-man/man1/ctags.1
-man/man1/etags.1
 man/man1/gnuattach.1
 man/man1/gnuclient.1
 man/man1/gnudoit.1
 man/man1/gnuserv.1
+man/man1/xemacs-ctags.1
+man/man1/xemacs-etags.1
 man/man1/xemacs.1
 @dirrm lib/xemacs-21.1.14/lisp/term
 @dirrm lib/xemacs-21.1.14/lisp/mule
@@ -946,16 +950,19 @@ man/man1/xemacs.1
 @dirrm lib/xemacs-21.1.14/etc/custom
 @dirrm lib/xemacs-21.1.14/etc
 @dirrm lib/xemacs-21.1.14
-@exec install-info --info-dir=%D/info %D/info/cl.info
-@exec install-info --info-dir=%D/info %D/info/custom.info
-@exec install-info --info-dir=%D/info %D/info/external-widget.info
-@exec install-info --info-dir=%D/info %D/info/info.info
-@exec install-info --info-dir=%D/info %D/info/internals.info
-@exec install-info --info-dir=%D/info %D/info/lispref.info
-@exec install-info --info-dir=%D/info %D/info/new-users-guide.info
-@exec install-info --info-dir=%D/info %D/info/term.info
-@exec install-info --info-dir=%D/info %D/info/termcap.info
-@exec install-info --info-dir=%D/info %D/info/texinfo.info
-@exec install-info --info-dir=%D/info %D/info/widget.info
-@exec install-info --info-dir=%D/info %D/info/xemacs-faq.info
-@exec install-info --info-dir=%D/info %D/info/xemacs.info
+@unexec rm %D/info/xemacs-21.1.14/dir
+@dirrm info/xemacs-21.1.14
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/cl.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/custom.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/external-widget.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/info.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/internals.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/lispref.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/new-users-guide.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/standards.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/term.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/termcap.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/texinfo.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/widget.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/xemacs-faq.info
+@exec install-info --info-dir=%D/info/xemacs-21.1.14 %D/info/xemacs-21.1.14/xemacs.info
