@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_glut_glutWarpPointer_man,v 1.1 2002/12/08 20:21:04 pvalchev Exp $
+--- man/glut/glutWarpPointer.man.orig	Sun Dec  8 15:05:45 2002
++++ man/glut/glutWarpPointer.man	Sun Dec  8 15:06:32 2002
+@@ -3,7 +3,7 @@
+ .\"
+ .TH glutWarpPointer 3 "3.7" "GLUT" "GLUT"
+ .SH NAME
+-glutWarpPointer warps the pointer's location.
++glutWarpPointer - warps the pointer's location.
+ .SH SYNTAX
+ .nf
+ .LP
