@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/02/03 21:21:00 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/03/03 22:05:41 brad Exp $
 bin/snort
 man/man8/snort.8
 share/examples/snort/attack-responses.rules
@@ -28,6 +28,7 @@ share/examples/snort/oracle.rules
 share/examples/snort/other-ids.rules
 share/examples/snort/p2p.rules
 share/examples/snort/policy.rules
+share/examples/snort/pop2.rules
 share/examples/snort/pop3.rules
 share/examples/snort/porn.rules
 share/examples/snort/reference.config
