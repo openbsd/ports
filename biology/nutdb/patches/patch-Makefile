@@ -1,0 +1,26 @@
+--- Makefile.orig	Tue Oct 19 11:28:46 2004
++++ Makefile	Tue Oct 19 11:32:01 2004
+@@ -1,15 +1,18 @@
+ objects := $(patsubst %.c,%.o,$(wildcard *.c))
+ 
+-CFLAGS= -O3 -Wall -pedantic -ansi -DNUTDIR=\".nutdb\" -DFOODDIR=\"/usr/local/lib/nut\"
++CFLAGS+= -Wall -pedantic -ansi -DNUTDIR=\".nutdb\" -DFOODDIR=\"$(PREFIX)/lib/nutdb\"
+ 
+ nut:	$(objects)
+-	gcc ${CFLAGS} -lm -o nut $(objects)
+-	strip nut
+-
++	${CC} ${CFLAGS} -lm -o nut $(objects)
++	# strip nut
+ deps:
+ 	makedepend *.c
+ 
+ clean:
+ 	rm -f *.o nut preprocess/*.o preprocess/dbjw
+ 
+-# DO NOT DELETE
++install:
++	mkdir $(PREFIX)/lib/nutdb/
++	install -m 755 nut $(PREFIX)/bin/nutdb
++	install -m 644 nut.1 $(PREFIX)/man/man1/nutdb.1
++	mv raw.data/* $(PREFIX)/lib/nutdb/

@@ -1,0 +1,83 @@
+--- nut.1.orig	Tue Oct 19 07:49:42 2004
++++ nut.1	Tue Oct 19 07:51:53 2004
+@@ -1,16 +1,16 @@
+-.\" manual page [] for nut
++.\" manual page [] for nutdb
+ .\" SH section heading
+ .\" SS subsection heading
+ .\" LP paragraph
+ .\" IP indented paragraph
+ .\" TP hanging label
+-.TH NUT 1 "NUT - 2004.10.15"
++.TH NUTDB 1 "NUTDB - 2004.10.15"
+ .SH NAME
+ .SH SYNOPSIS
+-.B nut [dbname]
++.B nutdb [dbname]
+ .SH DESCRIPTION
+ .LP
+-.B NUT
++.B NUTDB
+ allows you to record what you eat and analyze your meals for nutrient
+ composition.  The database included is the 
+ USDA Nutrient Database for Standard Reference, Release 17, which contains
+@@ -39,7 +39,7 @@
+ by creating them from the foods in the database.
+ You can also add foods from the information on commercial food labels. The program is completely menu-driven and there are no commands to learn.
+ 
+-.B NUT
++.B NUTDB
+ can be called with an optional argument to specify a database subdirectory.
+ For example, if a user tracks meals for other family members, each person
+ can have his own database, and each database is entirely separate.
+@@ -124,8 +124,8 @@
+ 
+ To add a labeled food
+ with an ordered list of ingredients and a nutrition statement, 
+-NUT allows you to find the ingredients and fill in the nutrient information from the label.
+-NUT will then construct a recipe to fit the criteria the best it can.
++NUTDB allows you to find the ingredients and fill in the nutrient information from the label.
++NUTDB will then construct a recipe to fit the criteria the best it can.
+ The new food will have  additional nutrients that
+ were not on the nutrition statement, but that the database says are in the food.
+ First, the labeled food is named.
+@@ -141,18 +141,18 @@
+ select a different set of nutrients.  The "DV" percentages for this part of
+ the program are the USA standard 2000-calorie Daily Values, and not any
+ customized options--but users can always set the label's nutrient information in grams.
+-NUT then constructs an approximate recipe for the food to fill
++NUTDB then constructs an approximate recipe for the food to fill
+ in nutrient values that were not expressed on the food label.
+ After the recipe is displayed there is an additional opportunity to 
+ edit the
+ nutrient values.
+ Perhaps the food was so heavily fortified with vitamins
+ that the user waited until
+-after NUT constructed a recipe to specify the
++after NUTDB constructed a recipe to specify the
+ additional vitamin amounts.
+ Whatever the rationale for additional editing, the user has total control
+ over the nutritional information, no matter what
+-NUT's approximate recipe suggested.  The new food record is saved in the database
++NUTDB's approximate recipe suggested.  The new food record is saved in the database
+ in the same manner as a recipe.
+ 
+ To modify the serving size of an existing food, the food is selected
+@@ -225,7 +225,7 @@
+ 
+ .B Record 'The Usual'--Customary Meals:
+ When 
+-.B NUT 
++.B NUTDB 
+ asks what you are having, you can answer "the usual."  Specifically,
+ this function allows you to record a customary meal, 
+ and give it a name.  Later, when
+@@ -256,7 +256,7 @@
+ meal.db         Meal database
+ theusual.db     Customary Meals database
+ OPTIONS.txt     Personal Options records
+-version         NUT software version number
++version         NUTDB software version number
+ menus.txt       ASCII print file of meal database
+ .fi
+ .SH AUTHOR
