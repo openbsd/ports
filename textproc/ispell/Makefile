@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2001/07/09 17:34:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.23 2001/07/11 12:34:28 jakob Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=		interactive spelling checker
 COMMENT-french=		ispell dictionary for French
 COMMENT-german=		ispell dictionary for German
 COMMENT-swedish=	ispell dictionary for Swedish
+COMMENT-russian=	ispell dictionary for Russian
 
 VERSION=	3.1.20
 DISTNAME=	ispell-${VERSION}
@@ -20,18 +21,21 @@ MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
 MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 MASTER_SITES2=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
 MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
+MASTER_SITES4=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
+		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
 
 DIST_SUBDIR=	ispell
 
 FRENCH_DICT=	francais-IREQ-1.4
 GERMAN_DICT=	hk2-deutsch
 SWEDISH_DICT=	iswedish-1.2.1
+RUSSIAN_DICT=	rus-ispell-0.99e1
 
-DISTFILES=	${DISTNAME}.tar.gz ${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1 ${SWEDISH_DICT}.tar.gz:3
+DISTFILES=	${DISTNAME}.tar.gz ${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1 ${SWEDISH_DICT}.tar.gz:3 ${RUSSIAN_DICT}.tar.gz:4
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${SWEDISH_DICT}.tar.gz
 PATCHFILES=	ispell-html-mode.patch:2
 
-MULTI_PACKAGES=	-french -german -swedish
+MULTI_PACKAGES=	-french -german -swedish -russian
 .for i in ${MULTI_PACKAGES}
 PKGNAME$i=	ispell$i-${VERSION}
 .endfor
@@ -53,6 +57,10 @@ post-extract:
 	@(cd ${WRKDIR}/german; \
 	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${GERMAN_DICT}.tar.gz)
 
+	@mkdir -p ${WRKDIR}/russian
+	@(cd ${WRKDIR}/russian; \
+	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${RUSSIAN_DICT}.tar.gz)
+
 post-configure:
 	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
 
@@ -69,6 +77,12 @@ post-build:
 
 	@(cd ${WRKDIR}/${SWEDISH_DICT}; \
 	${WRKDIST}/buildhash svenska.datalista svenska.aff svenska.hash)
+
+	@(cd ${WRKDIR}/russian; \
+	cat base.koi computer.koi geography.koi science.koi >russian.sml; \
+	cat russian.aff.koi | sed -e "s/^\#y//;s/^\#koi/wordchars/" \
+		> russian.aff; \
+	${WRKDIST}/buildhash russian.sml russian.aff russian.hash)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/ispell ${PREFIX}/bin/ispell
@@ -113,6 +127,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/french/francais.{aff,hash} \
 		${PREFIX}/lib/ispell
 	${INSTALL_DATA} ${WRKDIR}/${SWEDISH_DICT}/svenska.{aff,hash} \
+		${PREFIX}/lib/ispell
+	${INSTALL_DATA} ${WRKDIR}/russian/russian.{aff,hash} \
 		${PREFIX}/lib/ispell
 
 .include <bsd.port.mk>

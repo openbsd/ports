@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-russian,v 1.1 2001/07/11 12:34:33 jakob Exp $
+@pkgdep ispell-3.1.20
+lib/ispell/russian.aff
+lib/ispell/russian.hash
+@exec echo 'invoking %D/bin/ispell-config'
+@exec %D/bin/ispell-config
