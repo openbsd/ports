@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/07/10 11:56:35 matt Exp $
+# $OpenBSD: Makefile,v 1.19 2003/01/21 17:12:30 avsm Exp $
 
 COMMENT=		"convert ASCII files to PostScript"
 
@@ -16,8 +16,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://people.ssh.fi/mtr/genscript/ \
 			${MASTER_SITE_GNU:=enscript/}
 
+FLAVORS=		a4
+FLAVOR?=		
+
 CONFIGURE_STYLE=	gnu automake
+
+.if !${FLAVOR:L:Ma4}
 CONFIGURE_ARGS+=	--with-media=Letter
+.endif
 
 .include <bsd.port.mk>
 
