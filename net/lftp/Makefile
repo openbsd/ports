@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2001/08/11 15:46:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/29 05:27:40 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp client"
 
-DISTNAME=	lftp-2.4.1
+DISTNAME=	lftp-2.4.2
 CATEGORIES=     net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.448
 MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
 
 HOMEPAGE=	http://lftp.yar.ru/
@@ -16,8 +16,12 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
+LIB_DEPENDS=	intl.1::devel/gettext
+
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--with-ssl
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/lftp
