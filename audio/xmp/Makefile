@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/05 19:31:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/09 02:23:53 pvalchev Exp $
 
 COMMENT=	"extended Module Player; many formats plus an X11 display"
 DISTNAME=	xmp-1.1.5
@@ -16,6 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PATCH_DIST_STRIP= -p1
 
 CONFIGURE_STYLE=gnu
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/scripts
 USE_GMAKE=	Yes
 
 do-install:

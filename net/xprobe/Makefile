@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/12/24 07:51:06 mark Exp $
+# $OpenBSD: Makefile,v 1.4 2002/03/09 02:23:53 pvalchev Exp $
 
 COMMENT=		"ICMP active OS fingerprint scanner"
 
@@ -18,5 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.sys-security.com/archive/tools/X/
 
 CONFIGURE_STYLE=	gnu
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfg-scripts
 
 .include <bsd.port.mk>
