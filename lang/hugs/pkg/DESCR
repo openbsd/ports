@@ -1,0 +1,18 @@
+Hugs 98 is a functional programming system which provides an almost
+complete implementation of Haskell 98.
+
+  o Lazy evaluation, higher order functions, and pattern matching.
+  o A wide range of built-in types, from characters to bignums, and lists
+    to functions, with comprehensive facilities for defining new datatypes
+    and type synonyms.
+  o A polymorphic type system with type and constructor class overloading.
+  o All of the features of the Haskell 98 expression and pattern syntax.
+  o An implementation of the main Haskell 98 primitives for monadic I/O,
+    with support for simple interactive programs, access to text files,
+    handle-based I/O, and exception handling.
+  o An almost complete implementation of the Haskell module system.
+    Hugs 98 also supports a number of experimental extensions including
+    multi-parameter classes, extensible records, rank-2 polymorphism,
+    existentials, scoped type variables, and restricted type synonyms. 
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_unix_configure_in,v 1.1.1.1 2002/04/27 06:16:18 wcobb Exp $
+--- src/unix/configure.in.orig	Sat Apr 27 02:45:24 2002
++++ src/unix/configure.in	Sat Apr 27 02:48:25 2002
+@@ -363,9 +363,6 @@ GCC_LINT_FLAGS="-Wall \
+   -Wno-parentheses \
+   "
+ 
+-CFLAGS="-g"
+-OPTFLAGS="-O2"
+-
+ dnl  The following patch avoids the outburst of (benign) error messages during 
+ dnl  compilation of machine.c under MacOS X/Darwin, as well as some linker 
+ dnl  warnings caused by the default two-level namespace introduced in version 10.1
+
