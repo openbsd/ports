@@ -1,53 +1,30 @@
-# $OpenBSD: Makefile,v 1.5 1999/04/01 06:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/06/23 04:27:29 marc Exp $
 
-DISTNAME=       jed0.98-7
-PKGNAME=        jed-0.98.7
+DISTNAME=       jed-B0.99-7
+PKGNAME=        jed-0.99.7
 CATEGORIES=	editors
 
 MAINTAINER=     ports@OpenBSD.ORG
 
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/
+MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.99/
 
-LIB_DEPENDS=	slang.1.22:${PORTSDIR}/devel/libslang
+BUILD_DEPENDS=	${PREFIX}/lib/libslang.a:${PORTSDIR}/devel/libslang
 
 # comment out the next line if you don't want the X version of JED.
 XJED=		xjed
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JED_ROOT=${PREFIX}/lib/jed
-ALL_TARGET=     all getmail ${XJED}
-INSTALL_TARGET= install
-WRKSRC=         ${WRKDIR}/jed
 
-pre-install:
-	ln -sf ${WRKSRC}/autoconf/mkinsdir.sh  ${WRKSRC}/
+ALL_TARGET=     all getmail ${XJED}
 
 post-install:
-	strip ${PREFIX}/bin/jed
-	strip ${PREFIX}/bin/rgrep
-	strip ${PREFIX}/lib/jed/bin/getmail
-.if defined(XJED)
-	strip ${PREFIX}/bin/xjed
-.endif
-	${INSTALL_DATA} ${WRKSRC}/lib/*.sl ${PREFIX}/lib/jed/lib 
-	${INSTALL_DATA} ${WRKSRC}/lib/*.hlp ${PREFIX}/lib/jed/lib 
-	${INSTALL_DATA} ${WRKSRC}/lib/*.com ${PREFIX}/lib/jed/lib 
-	${INSTALL_DATA} ${WRKSRC}/lib/jed.rc ${PREFIX}/lib/jed/lib 
-	${MKDIR} ${PREFIX}/lib/jed/lib/tm
-	${INSTALL_DATA} ${WRKSRC}/lib/tm/* ${PREFIX}/lib/jed/lib/tm 
-	${INSTALL_DATA} ${WRKSRC}/info/jed.* ${PREFIX}/info
-	rmdir ${PREFIX}/lib/jed/info
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jed
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/*.txt \
-		${PREFIX}/share/doc/jed
-	rmdir ${PREFIX}/lib/jed/doc
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
-	install-info --section="Editors" \
+	@jed -batch -n -l preparse.sl
+	@${MV} ${PREFIX}/lib/jed/doc ${PREFIX}/share/doc/jed
+	@${MV} ${PREFIX}/lib/jed/info/jed.* ${PREFIX}/info
+	@install-info --section="Editors" \
 		--entry="* JED: (jed). 		JED editor documentation." \
 		${PREFIX}/info/jed.info ${PREFIX}/info/dir
-.endif
+	@${RM} -rf ${PREFIX}/lib/jed/info
 
 .include <bsd.port.mk>
