@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.4 2003/04/26 14:55:32 sturm Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/11/27 19:53:24 sturm Exp $
 #
 # Post-installation script for nessus port
 #
@@ -14,20 +14,17 @@ umask 022
 
 if [ x$2 = xPOST-INSTALL ]
 then
-	# See if ${CONFIGDIR} exists; if it doesn't, create and populate.
+	# See if ${CONFIGDIR} exists; if it doesn't, create it.
 	if [ -d ${CONFIGDIR} ]
 	then
 		cat <<EOT
 
 +---------------
-| Example configuration files have been copied to
-| $PREFIX/share/examples/nessus.  Your existing ${CONFIGDIR} has
-| been left untouched.
+| Your existing ${CONFIGDIR} has been left untouched.
 +---------------
 EOT
 	else
 		mkdir -p ${CONFIGDIR}
-		cp -R $PREFIX/share/examples/nessus/* ${CONFIGDIR}
 	fi
 
 	# Make /var/nessus directory for logs and pidfile and etc.

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2003/02/08 13:21:19 reinhard Exp $
+# $OpenBSD: Makefile,v 1.34 2003/11/27 19:53:24 sturm Exp $
 
 COMMENT=	"network security scanner"
 
 PKGNAME=	nessus-${VERS}
 CATEGORIES=	security
 
-VERS=		1.2.7
+VERS=		2.0.9
 
 DIST_SUBDIR=	nessus
 
@@ -50,9 +50,11 @@ FLAVOR?=
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nessus-core \
     ${WRKSRC}/nessus-plugins ${WRKSRC}/libnasl ${WRKSRC}/nessus-libraries
-CONFIGURE_ARGS+=--localstatedir=/var --disable-nessuspcap --sharedstatedir=/var
+CONFIGURE_ARGS+=--localstatedir=/var --disable-nessuspcap \
+		--sharedstatedir=/var --enable-shared --enable-bpf-sharing
 
 LIB_DEPENDS=	net::net/libnet
+BUILD_DEPENDS=	::devel/bison
 
 .if empty(FLAVOR:L:Mno_x11)
 LIB_DEPENDS+=	gtk.1.2,gdk.1.2::x11/gtk+

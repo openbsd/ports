@@ -1,11 +1,11 @@
-$OpenBSD: patch-libnasl_nasl_Makefile,v 1.1 2002/07/04 15:37:03 reinhard Exp $
---- libnasl/nasl/Makefile.orig	Mon Oct 15 12:58:07 2001
-+++ libnasl/nasl/Makefile	Mon Jun 24 18:20:33 2002
-@@ -42,7 +42,6 @@ libnasl.la : cflags $(OBJS)
+$OpenBSD: patch-libnasl_nasl_Makefile,v 1.2 2003/11/27 19:53:24 sturm Exp $
+--- libnasl/nasl/Makefile.orig	2003-04-02 04:46:24.000000000 -0600
++++ libnasl/nasl/Makefile	2003-09-29 14:22:22.000000000 -0500
+@@ -103,7 +103,6 @@ libnasl.la : cflags $(OBJS)
  install : libnasl.la nasl
- 	test -d ${libdir} || $(INSTALL_DIR) -m 755 ${libdir}
- 	$(LIBTOOL) --mode install $(INSTALL) libnasl.la ${libdir}/libnasl.la
--	$(LIBTOOL) --finish ${libdir}
- 	$(INSTALL) nasl ${bindir}/
- nessus_extensions.o : cflags nessus_extensions.c
- 	$(COMPILE) -c nessus_extensions.c 
+ 	test -d $(DESTDIR)${libdir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${libdir}
+ 	$(LIBTOOL) --mode install $(INSTALL) libnasl.la $(DESTDIR)${libdir}/libnasl.la
+-	$(LIBTOOL) --finish $(DESTDIR)${libdir}
+ 	test -d $(DESTDIR)${bindir} || $(INSTALL_DIR) -m 755 $(DESTDIR)${bindir}
+ 	$(INSTALL) nasl $(DESTDIR)${bindir}/
+ 

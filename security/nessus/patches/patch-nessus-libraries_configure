@@ -1,7 +1,7 @@
-$OpenBSD: patch-nessus-libraries_configure,v 1.6 2002/10/12 13:04:22 reinhard Exp $
---- nessus-libraries/configure.orig	Thu Sep 26 23:43:53 2002
-+++ nessus-libraries/configure	Sat Oct 12 09:27:00 2002
-@@ -5363,7 +5363,7 @@ fi
+$OpenBSD: patch-nessus-libraries_configure,v 1.7 2003/11/27 19:53:24 sturm Exp $
+--- nessus-libraries/configure.orig	2003-04-16 12:58:28.000000000 -0500
++++ nessus-libraries/configure	2003-09-29 13:05:52.000000000 -0500
+@@ -5364,7 +5364,7 @@ fi
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
  
  # Always use our own libtool.
