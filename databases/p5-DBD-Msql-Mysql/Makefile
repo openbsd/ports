@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 12:29:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'mysql drivers for the perl DBI'
 
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 
-BUILD_DEPENDS=		::databases/p5-DBI
-RUN_DEPENDS=		::databases/p5-DBI
+BUILD_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
+RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 
 LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
 REGRESS_DEPENDS=	:mysql-server-3.23.*:databases/mysql,-server
@@ -35,9 +35,9 @@ FLAVORS=		dbimon
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdbimon}
-RUN_DEPENDS+=		::devel/p5-Data-ShowTable \
-			::devel/p5-Term-ReadKey \
-			::devel/p5-Term-ReadLine-Gnu
+RUN_DEPENDS+=		:p5-Data-ShowTable->=3.3:devel/p5-Data-ShowTable \
+			:p5-Term-ReadKey-*:devel/p5-Term-ReadKey \
+			:p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu
 .endif
 
 pre-regress:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; WWW image monitor'
 
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/
 
-RUN_DEPENDS=		::graphics/ImageMagick \
-			::graphics/xv \
-			::net/wget
+RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick \
+			:xv-*:graphics/xv \
+			:wget-*:net/wget
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

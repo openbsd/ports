@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2001/10/31 11:59:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.16 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
@@ -23,7 +23,7 @@ PATCH_LIST=		${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltconfig \
 			${PORTSDIR}/infrastructure/patches/patch-lt1.3.0-ltmain_sh \
 			patch-*
 
-RUN_DEPENDS=		::x11/windowmaker
+RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
 LIB_DEPENDS=		wraster.4::x11/windowmaker \
 			PropList.2::devel/libproplist \
 			audiofile::devel/libaudiofile \

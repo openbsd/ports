@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; front end for mpg123'
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE} \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-RUN_DEPENDS=		::audio/mpg123
+RUN_DEPENDS=		:mpg123-*:audio/mpg123
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes

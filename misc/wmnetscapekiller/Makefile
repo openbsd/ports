@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; for killing Netscape when it freezes'
 
@@ -20,7 +20,7 @@ MASTER_SITES=		${HOMEPAGE}wmNetscapeKiller-0.3/ \
 			ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dock/ \
 			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
 
-RUN_DEPENDS=		::sysutils/skill
+RUN_DEPENDS=		:skill-*:sysutils/skill
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

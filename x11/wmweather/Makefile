@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; weather monitor'
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-RUN_DEPENDS=		::net/wget
+RUN_DEPENDS=		:wget-*:net/wget
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

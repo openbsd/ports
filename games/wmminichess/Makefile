@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; chess game'
 
@@ -20,7 +20,7 @@ MASTER_SITES=		${HOMEPAGE} \
 			ftp://ftp.funet.fi/pub/FreeBSD/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-RUN_DEPENDS=		::games/gnuchess
+RUN_DEPENDS=		:gnuchess-*:games/gnuchess
 
 USE_X11=		Yes
 NO_REGRESS=		Tes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; mail notifier'
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.eecg.utoronto.ca/~chanb/WMMail.app/
 
-RUN_DEPENDS=		::x11/windowmaker
+RUN_DEPENDS=		:windowmaker-*:x11/windowmaker
 LIB_DEPENDS=		PropList.2::devel/libproplist
 
 SEPARATE_BUILD=		concurrent

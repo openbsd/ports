@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.20 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'color vt102 terminal emulator with transparency support'
 
@@ -16,8 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.kddlabs.co.jp/X11/acontrib/wterm/ \
 			ftp://ftp.riken.go.jp/pub/X11/acontrib/wterm/
 
-BUILD_DEPENDS=		::x11/windowmaker
-RUN_DEPENDS=		::x11/windowmaker
+BUILD_DEPENDS=		:windowmaker->=0.50.0:x11/windowmaker
+RUN_DEPENDS=		${BUILD_DEPENDS}
 
 USE_X11=		Yes
 NO_REGRESS=		Yes

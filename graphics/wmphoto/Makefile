@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/14 13:58:34 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows photos and execute commands on that photo'
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		::graphics/ImageMagick
+RUN_DEPENDS=		:ImageMagick-*:graphics/ImageMagick
 
 USE_X11=		Yes
 NO_REGRESS=		Yes
