@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/10/02 13:47:56 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2001/10/06 18:41:57 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 
 COMMENT=	"generic shared library support script"
@@ -23,6 +23,10 @@ SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 pre-configure:
 	@rm -f ${WRKSRC}/doc/libtool.info*
