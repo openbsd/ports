@@ -3,7 +3,8 @@ The Horde Application Framework has been installed into
 ${INSTDIR}
 
 You should point this to the DocumentRoot of your web-server:
-ln -s ${INSTDIR} /var/www/htdocs/
+   # ln -s ../horde /var/www/htdocs/horde
+(make sure you use a relative symlink since Apache is chrooted)
 
 and proceed to complete the installation by reading:
 ${INSTDIR}/docs/INSTALL
