@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/05/12 01:55:59 wcobb Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/12 22:39:27 jolan Exp $
 
 COMMENT= 	"Pac-Man clone"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://mirror.csoft.org/glutton/
 
 LIB_DEPENDS= 	SDL::devel/sdl \
-	 	SDL_mixer::devel/sdl-mixer,mikmod
+	 	SDL_mixer::devel/sdl-mixer
 
 WRKDIST=	${WRKDIR}/glutton
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/04/04 01:37:25 margarida Exp $
+# $OpenBSD: Makefile,v 1.8 2003/05/12 22:39:27 jolan Exp $
 
 COMMENT=	"Rampart arcade game clone for X11" 
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	SDL::devel/sdl \
-		SDL_mixer::devel/sdl-mixer,mikmod \
+		SDL_mixer::devel/sdl-mixer \
 		SDL_net::devel/sdl-net \
 		png.2::graphics/png
 
