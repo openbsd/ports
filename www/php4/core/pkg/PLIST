@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/05/02 22:10:22 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/05/30 23:46:16 avsm Exp $
 bin/pear
 bin/php
 bin/php-config
 bin/phpextdist
 bin/phpize
 lib/php/libphp4.so
+man/man1/php.1
 sbin/phpxs
 share/doc/php4/php.ini-dist
 share/doc/php4/php.ini-recommended

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/05/27 22:10:59 avsm Exp $
+# $OpenBSD: Makefile,v 1.13 2003/05/30 23:46:16 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -72,5 +72,6 @@ post-install:
 	@sed ${PHPXS_SUBST} <${FILESDIR}/phpxs >${PREFIX}/sbin/phpxs
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/sbin/phpxs
 	@chmod ${BINMODE} ${PREFIX}/sbin/phpxs
+	${INSTALL_MAN} ${WRKSRC}/sapi/cli/php.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
