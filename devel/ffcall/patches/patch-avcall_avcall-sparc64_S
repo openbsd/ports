@@ -1,7 +1,15 @@
-$OpenBSD: patch-avcall_avcall-sparc64_S,v 1.1 2003/07/02 21:28:07 pvalchev Exp $
---- avcall/avcall-sparc64.S.orig	Fri Nov 26 13:28:33 1999
-+++ avcall/avcall-sparc64.S	Wed Jul  2 15:08:35 2003
-@@ -24,98 +24,98 @@ __builtin_avcall:
+$OpenBSD: patch-avcall_avcall-sparc64_S,v 1.2 2004/01/15 07:43:01 pvalchev Exp $
+--- avcall/avcall-sparc64.S.orig	1999-11-26 13:28:33.000000000 -0700
++++ avcall/avcall-sparc64.S	2004-01-15 00:25:33.000000000 -0700
+@@ -3,6 +3,7 @@
+ 	.version	"01.01"
+ .section	".text"
+ 	.align 4
++	.register %g3, #scratch
+ 	.global __builtin_avcall
+ 	DECLARE_FUNCTION(__builtin_avcall)
+ 	.type	 __builtin_avcall,$function
+@@ -24,98 +25,98 @@ __builtin_avcall:
  	cmp	%g3, 0
  	be,pn	%icc, .LL161
  	and	%o7, 2, %g3
@@ -116,7 +124,7 @@ $OpenBSD: patch-avcall_avcall-sparc64_S,v 1.1 2003/07/02 21:28:07 pvalchev Exp $
  .LL3:
  	ld	[%i0+64], %g3
  .LL176:
-@@ -126,97 +126,97 @@ __builtin_avcall:
+@@ -126,97 +127,97 @@ __builtin_avcall:
  	cmp	%g3, 0
  	be,pn	%icc, .LL177
  	and	%o7, 2, %g3
