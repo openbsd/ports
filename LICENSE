@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.12 1999/04/08 21:56:39 marc Exp $
+$OpenBSD: LICENSE,v 1.13 1999/09/16 08:31:04 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -139,8 +139,8 @@ Y	databases/p5-DBD-Pg		DBD-Pg-0.69.tar.gz		GPL/PERL
 Y	databases/p5-DBI		DBI-0.93.tar.gz			GPL/PERL
 Y	databases/pgaccess		pgaccess-0.88.tar.gz		BSD
 Y	databases/postgresql		postgresql-6.3.2.tar.gz		BSD
--	devel/ElectricFence		ElectricFence-2.0.5.tar.gz
--	devel/ORBit			ORBit-0.4.0.tar.gz
+Y	devel/ElectricFence		ElectricFence-2.0.5.tar.gz	GPL
+Y	devel/ORBit			ORBit-0.4.94.tar.gz		GPL
 Y	devel/autoconf			autoconf-2.13.tar.gz		GPL
 Y	devel/automake			automake-1.4.tar.gz		GPL
 Y	devel/bison			bison-1.25.tar.gz		GPL
@@ -327,7 +327,7 @@ Y	mail/metamail			mm2.7.tar.Z			BSD
 Y	mail/mh				mh-6.8.3.tar.Z			PD
 Y	mail/mh				MH.6.8.4.Z			PD
 Y	mail/movemail			movemail-1.0.tar.gz		GPL
--	mail/mutt			mutt-0.95.4i.tar.gz
+Y	mail/mutt			mutt-0.95.7i.tar.gz		GPL
 Y	mail/nmh			nmh-1.0.tar.gz			BSD
 Y	mail/p5-Mail-POP3Client		POP3Client-1_15.tar.gz		PERL
 Y	mail/pgpsendmail		PGPsendmail-v1.4.5.tar.gz	GPL
@@ -404,11 +404,9 @@ Y	net/ncftp			ncftp-2.4.3.tar.gz		GPL
 -	net/netatalk			netatalk-1.4b2.tar.gz
 Y	net/netpipe			netpipes-4.1.1-export.tar.gz	GPL
 N	net/nfr				-none-				LIC
--	net/nmap			nmap-2.08.tgz
--	net/ntop			libpcap-0.4.tar.Z
-Y	net/ntop			ntop-1.1cr6.tar.gz		GPL
+Y	net/nmap			nmap-2.3BETA5.tar.gz		GPL
+Y	net/ntop			ntop-1.1-src.tar.gz		GPL
 Y	net/proftpd			proftpd-1.2.0pre3.tar.gz	GPL
--	net/queso			libpcap-0.4.tar.Z
 -	net/queso			queso-980922.tar.gz
 -	net/rsync			rsync-2.3.0.tar.gz
 Y	net/samba			samba-2.0.3.tar.gz		GPL
@@ -462,6 +460,7 @@ Y	print/teTeX			teTeX/teTeX-lib-0.4pl8.tar.gz	GPL
 Y	print/transfig			transfig.3.2.1.tar.gz		X
 Y	russian/xcyrillic		xcyrillic-1.1.tar.gz		COPY
 Y	russian/xruskb			xruskb-1.5.3.tar.gz		GPL
+Y	security/ADMsnmp		ADMsnmp.0.1.tar.gz		
 N	security/SSLeay			SSLeay-0.9.0b.tar.gz		CRYPTO
 -	security/bounix			bo121unix.tar.gz
 N	security/cfs			cfs-1.3.3.tar.gz		CRYPTO
@@ -475,6 +474,7 @@ N	security/pgp			pgp263i.patch			CRYPTO
 N	security/pgp			rsaref2.tar.gz			CRYPTO
 -	security/pgp5			pgp50i-unix-src.tar.gz
 N	security/pgplib			PGPlib-1.1.tar.gz		CRYPTO
+Y	security/portscanner		PortScanner-1.0.tar.gz		COPY
 N	security/rsaref			rsaref20.1996.tar.Z		CRYPTO
 N	security/socks5			socks5-v1.0r9.tar.gz		LIC
 N	security/ssh			ssh-1.2.26.tar.gz		CRYPTO
