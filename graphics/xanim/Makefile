@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/22 17:34:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/18 21:01:45 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
@@ -13,31 +13,38 @@ MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES+=ftp://xanim.va.pubnix.com/modules/
 
 BASEDISTFILE=xanim2801.tar.gz
-SUPFILES=
 DISTFILES=${BASEDISTFILE}
 PATCH_LIST=patch-*
 
-# some architectures support more codecs
-.if (${MACHINE_ARCH} == i386)
-SUPFILES= xa1.0_cyuv_netbsd386.o.Z \
+SUP_i386 = xa1.0_cyuv_netbsd386.o.Z \
 xa2.0_cvid_netbsd386.o.Z \
 xa2.0_iv32_netbsd386.o.Z
+
+SUP_m68k = xa1.0_cyuv_netbsd68k.o.Z \
+xa2.0_cvid_netbsd68k.o.Z \
+xa2.0_iv32_netbsd68k.o.Z
+
+SUP_sparc= xa1.0_cyuv_sparcAOUT.o.Z \
+xa2.0_cvid_sparcCOFF.o.Z \
+xa2.0_iv32_sparcCOFF.o.Z
+
+# some architectures support more codecs
+.if (${MACHINE_ARCH} == i386)
+SUPFILES= ${SUP_i386}
 PATCH_LIST+=i386-patch
 .endif
 
 .if (${MACHINE_ARCH} == m68k)
-SUPFILES= xa1.0_cyuv_netbsd68k.o.Z \
-xa2.0_cvid_netbsd68k.o.Z \
-xa2.0_iv32_netbsd68k.o.Z
+SUPFILES= ${SUP_m68k}
 PATCH_LIST+=m68k-patch
 .endif
 
 .if (${MACHINE_ARCH} == sparc)
-SUPFILES= xa1.0_cyuv_sparcAOUT.o.Z \
-xa2.0_cvid_sparcCOFF.o.Z \
-xa2.0_iv32_sparcCOFF.o.Z
+SUPFILES=${SUP_sparc}
 PATCH_LIST+=sparc-patch
 .endif
+
+SUPDISTFILES=${SUP_i386} ${SUP_m68k} ${SUP_sparc}
 
 .if defined(SUPFILES)
 DISTFILES   += ${SUPFILES}
