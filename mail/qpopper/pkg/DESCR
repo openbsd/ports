@@ -1,8 +1,0 @@
-Qpopper supports the widely used POP3 protocol for downloading Internet
-e-mail used by many popular e-mail clients. Qopper does not include a
-message transfer agent or SMTP support and normally works with standard
-UNIX mail transfer agents such as sendmail or smail.
-
-Qpopper supports APOP, an alternate authentication method.  It is able
-to authenticate without passing the password in cleartext over the wire.
-
