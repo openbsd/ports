@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/10 14:21:38 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/10 15:16:59 brad Exp $
 
 DISTNAME=	bash-1.14.7
 CATEGORIES=	shells
@@ -15,11 +15,6 @@ PKGNAME=        ${DISTNAME}-static
 
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
-	@echo "Finished installing $(DISTNAME)"
-	@echo "To complete the install, you should notify the system"
-	@echo "that $(PREFIX)/bin/bash is a valid shell by adding it to"
-	@echo "/etc/shells."
-	@echo "If you are unfamiliar with this file, consult the shells(5)"
-	@echo "manual page."
+	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
