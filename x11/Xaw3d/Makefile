@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/06 22:46:26 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/10 17:28:15 espie Exp $
 
 DISTNAME=	Xaw3d-1.5
 CATEGORIES=	x11
@@ -11,15 +11,15 @@ MAINTAINER=	angelos@openbsd.org
 
 USE_IMAKE=	yes
 
-WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
+WRKDIST=		${WRKDIR}/xc/lib/Xaw3d
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/X11/Xaw3d
-	@cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
+	@mkdir -p ${WRKSRC}/X11/Xaw3d
+	@cd ${WRKSRC}/X11/Xaw3d; ln -sf ../../*.h .
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/Xaw3d
-	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/Xaw3d
+	cp ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
