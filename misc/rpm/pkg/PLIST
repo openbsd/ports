@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/06/12 18:49:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/10/22 19:33:27 espie Exp $
 @pkgcfl rpm2cpio-*
 bin/gendiff
 bin/rpm
 bin/rpm2cpio
-include/popt.h
 include/rpm/dbindex.h
 include/rpm/header.h
 include/rpm/misc.h
@@ -14,8 +13,6 @@ include/rpm/rpmmacro.h
 include/rpm/rpmspec.h
 include/rpm/rpmurl.h
 include/rpm/stringbuf.h
-lib/libpopt.a
-lib/libpopt.la
 lib/librpm.a
 lib/librpm.la
 lib/librpmbuild.a
@@ -59,7 +56,6 @@ lib/rpm/vpkg-provides2.sh
 lib/rpmpopt
 lib/rpmrc
 man/man1/gendiff.1
-man/man3/popt.3
 man/man8/rpm.8
 man/man8/rpm2cpio.8
 share/locale/cs/LC_MESSAGES/rpm.mo
@@ -69,9 +65,7 @@ share/locale/fr/LC_MESSAGES/rpm.mo
 share/locale/ja/LC_MESSAGES/rpm.mo
 share/locale/pl/LC_MESSAGES/rpm.mo
 share/locale/pt_BR/LC_MESSAGES/rpm.mo
-share/locale/ro/LC_MESSAGES/popt.mo
 share/locale/ru/LC_MESSAGES/rpm.mo
-share/locale/sk/LC_MESSAGES/popt.mo
 share/locale/sk/LC_MESSAGES/rpm.mo
 share/locale/sl/LC_MESSAGES/rpm.mo
 share/locale/sr/LC_MESSAGES/rpm.mo
