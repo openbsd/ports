@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2001/10/04 20:44:45 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2001/12/20 06:14:15 danh Exp $
 
-COMMENT=	network time protocol implementation
-COMMENT-doc=	network time protocol documentation
+COMMENT=	"network time protocol implementation"
+COMMENT-doc=	"network time protocol documentation"
 
 VERSION=	4.1.71
 DISTNAME=	ntp-${VERSION}
-PKGNAME=	ntp-${VERSION}
+PKGNAME=	ntp-${VERSION}p1
 PKGNAME-doc=	ntp-doc-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.434
