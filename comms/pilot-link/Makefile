@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/02/18 21:37:41 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2002/02/19 00:42:24 pvalchev Exp $
 
 COMMENT=	"PalmPilot communication utilities"
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 HOMEPAGE=	http://www.pilot-link.org
 
