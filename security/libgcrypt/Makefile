@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/01 17:12:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/12 02:08:14 brad Exp $
 
 COMMENT=		"crypto library based on code used in GnuPG"
 
 VERSION=		1.1.12
 DISTNAME=		libgcrypt-${VERSION}
+PKGNAME=		${DISTNAME}p1
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.gnu.org/directory/security/libgcrypt.html
@@ -22,7 +23,9 @@ MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/libgcrypt/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/libgcrypt/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} --enable-static --disable-asm
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-static \
+			--disable-asm
 CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split"
 
 # XXX: workaround sparc64 gcc optimization bug
