@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2004/11/23 18:17:34 espie Exp $
-@lib lib/libestdc++.so.6.4
-@lib lib/libobjc.so.1.0
+@comment $OpenBSD: PFRAG.shared,v 1.3 2005/01/06 19:36:28 espie Exp $
+@lib lib/libmudflap.so.0.0
+@lib lib/libmudflapth.so.0.0
