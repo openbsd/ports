@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/06/07 15:58:48 brad Exp $
+# $OpenBSD: Makefile,v 1.22 1999/06/13 03:44:49 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.44
@@ -26,10 +26,10 @@ post-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${USE_TARGET}
 
 do-install:
-	if [ -f ${WRKSRC}/lib/libqt.a ]; then \
+	@if [ -f ${WRKSRC}/lib/libqt.a ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.a ${X11BASE}/lib; \
 	fi
-	if [ -f ${WRKSRC}/lib/libqt.so.1.44 ]; then \
+	@if [ -f ${WRKSRC}/lib/libqt.so.1.44 ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.44 ${X11BASE}/lib; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${X11BASE}/bin
