@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/19 02:27:30 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2003/02/11 05:37:18 brad Exp $
 
 COMMENT=	"graphical debugger for KDE"
 
@@ -14,15 +14,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kdbg/}
 
-MODULES=	qt3
-MODQT_MT=	Yes
+MODULES=	kde
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
-		--with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include" \
-		--with-extra-libs="${LOCALBASE}/lib" \
-		--with-kde-version=3
+CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ARGS+= --with-kde-version=3
 
 .include <bsd.port.mk>

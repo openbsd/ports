@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/01/19 03:40:32 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2003/02/11 05:37:18 brad Exp $
 
 COMMENT=	"classical hangman game for KDE"
 
@@ -19,24 +19,21 @@ MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdeui,kdefx::x11/kde/libs3
 
-MODULES=	qt3
-MODQT_MT=	Yes
+MODKDE_VERSION=	3.1
+MODULES=	kde
 
 PORTHOME=	${WRKDIR}
 
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
-# Ensure Qt3 will always be at the front
-MAKE_FLAGS=	CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
+MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	 ${MODQT_CONFIGURE_ARGS}
-CONFIGURE_ARGS+= --disable-debug --enable-final
-CONFIGURE_ARGS+= --with-extra-libs="${LOCALBASE}/lib"
-CONFIGURE_ARGS+= --with-extra-includes="${LOCALBASE}/include/libpng:${LOCALBASE}/include"
-CONFIGURE_ARGS+= --with-xinerama
-CONFIGURE_ENV=	KDEDIR="${LOCALBASE}"
+CONFIGURE_STYLE= autoconf
+AUTOCONF_NEW=	Yes
+MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
+CONFIGURE_ARGS=	 ${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applnk/Applications
