@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/10 23:45:38 matt Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/11 23:59:35 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -11,6 +11,7 @@ NEED_VERSION=	1.499
 HOMEPAGE=	http://www.freebsd.org/java/
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
+# Sun Binary Code License
 PERMIT_PACKAGE_CDROM=	"Redistribution not permitted"
 PERMIT_PACKAGE_FTP=	"Redistribution not permitted"
 PERMIT_DISTFILES_CDROM=	"Redistribution not permitted"

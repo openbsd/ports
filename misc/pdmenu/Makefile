@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/10 13:11:44 matt Exp $
+# $OpenBSD: Makefile,v 1.7 2002/05/11 23:59:35 matt Exp $
 
 COMMENT=		"simple slang-based menu program"
 
@@ -10,6 +10,7 @@ NEED_VERSION=		1.405
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
 MAINTAINER=		Matt Behrens <matt@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

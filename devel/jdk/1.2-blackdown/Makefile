@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/02/10 18:00:35 matt Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/11 23:59:35 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -11,6 +11,7 @@ NEED_VERSION=	1.499
 HOMEPAGE=	http://www.blackdown.org/
 MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
+# Sun Binary Code License
 PERMIT_PACKAGE_CDROM=	"Redistribution not permitted"
 PERMIT_PACKAGE_FTP=	"Redistribution not permitted"
 PERMIT_DISTFILES_CDROM=	"Redistribution not permitted"
