@@ -16,30 +16,30 @@ required:
 	# pgwrap initdb
 
 If you are upgrading PostgreSQL you don't need these steps. Read
-/usr/local/share/doc/pgsql/INSTALL for more information on how to
+!!PREFIX!!/share/doc/pgsql/INSTALL for more information on how to
 upgrade your existing databases. See also `Special notes for OpenBSD
 port' below.
 
 If you wish to start PostgreSQL automatically during system startup,
 add the following lines to /etc/rc.local:
 
-if [ -x /usr/local/bin/pgwrap -a -x /usr/local/bin/postmaster ]; \
+if [ -x !!PREFIX!!/bin/pgwrap -a -x !!PREFIX!!/bin/postmaster ]; \
 	then
-	/usr/local/bin/pgwrap -o /var/pgsql/log \
+	!!PREFIX!!/bin/pgwrap -o /var/pgsql/log \
 		pg_ctl -w -o "-i -S -o -F" start
 	echo -n ' pgsql'
 fi
 
-Don't forget to add /usr/local/lib/pgsql directory to shared libraries path in
+Don't forget to add !!PREFIX!!/lib/pgsql directory to shared libraries path in
 /etc/rc.conf (if your architecture supports shared libraries):
 
-shlib_dirs="/usr/local/lib/pgsql"
+shlib_dirs="!!PREFIX!!/lib/pgsql"
 
 Be shure to update your /etc/man.conf to read SQL functions manual pages:
 
 	#PostgreSQL man pages
 	_build		.l	/usr/bin/nroff -man %s
-	l		/usr/local/pgsql/man/manl
+	l		!!PREFIX!!/pgsql/man/manl
 
 
 Please note that OpenBSD port of PostgreSQL requires a kernel compiled
@@ -71,7 +71,7 @@ pgwrap [-n] [-o file] cmd [arg ...]
 
 System variables (these variables are always set to the following values):
 
-	PATH=/usr/local/bin:/bin:/usr/bin
+	PATH=!!PREFIX!!/bin:/bin:/usr/bin
 	USER=pgsql
 	LOGNAME=pgsql
 	SHELL=/bin/sh
@@ -80,7 +80,7 @@ System variables (these variables are always set to the following values):
 PostgreSQL variables (these variables are set to the following values,
 unless already set):
 
-	PGLIB=/usr/local/lib/pgsql
+	PGLIB=!!PREFIX!!/lib/pgsql
 	PGDATA=/var/pgsql/data
 
 You must have root privilegies to run `pgwrap'.

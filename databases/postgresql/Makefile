@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2001/03/10 16:56:54 brad Exp $
+# $OpenBSD: Makefile,v 1.45 2001/03/10 19:27:15 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 VERSION=	7.0.3
@@ -144,7 +144,10 @@ post-install:
 	@cd ${DOCDIR} && ${MAKE_PROGRAM} POSTGRESDIR="${PREFIX}" man
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgsql
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pgsql
-	${INSTALL_DATA} ${FILESDIR}/README.OpenBSD ${PREFIX}/share/doc/pgsql
+	@rm -f ${WRKBUILD}/README.OpenBSD
+	@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g ${FILESDIR}/README.OpenBSD > \
+		${WRKBUILD}/README.OpenBSD
+	${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD ${PREFIX}/share/doc/pgsql
 	@cd ${DOCDIR} && ${MAKE_PROGRAM} PGDOCS="${PREFIX}/share/doc/pgsql" all
 	${INSTALL_DATA} ${DOCDIR}/*.ps* ${PREFIX}/share/doc/pgsql
 
