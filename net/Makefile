@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2002/05/11 06:58:20 espie Exp $
+# $OpenBSD: Makefile,v 1.214 2002/05/11 21:21:07 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -124,6 +124,7 @@
      SUBDIR += p5-Net-Traceroute
      SUBDIR += p5-Net-Whois
      SUBDIR += p5-PlRPC
+     SUBDIR += p5-SNMP_Session
      SUBDIR += p5-libnet
      SUBDIR += pcapmerge
      SUBDIR += pchar
