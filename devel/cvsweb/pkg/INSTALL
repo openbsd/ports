@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1.1.1 2000/10/01 19:18:53 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/01/03 00:51:41 naddy Exp $
 #
 # Pre/post-installation setup of cvsweb
 
@@ -8,8 +8,9 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/var/www}
-CONFIG_FILE=${SYSCONFDIR}/cvsweb.conf
-SAMPLE_CONFIG_FILE=${CONFIG_FILE}-dist
+CONFIG_DIR=${SYSCONFDIR}/cvsweb
+CONFIG_FILE=$CONFIG_DIR/cvsweb.conf
+SAMPLE_CONFIG_FILE=$CONFIG_FILE.dist
 
 # Function: tell the user what they need to do to use the port just installed
 #
@@ -17,9 +18,11 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration file, ${CONFIG_FILE},"
-    echo "| has NOT been changed.  You may want to compare it to the"
-    echo "| current sample file ${SAMPLE_CONFIG_FILE}"
+    echo "| The existing $1 configuration file,"
+    echo "| $CONFIG_FILE,"
+    echo "| has NOT been changed.  You may want to"
+    echo "| compare it to the current sample file"
+    echo "| $SAMPLE_CONFIG_FILE"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
@@ -29,12 +32,14 @@ do_notice()
 #
 do_install()
 {
-    install -o root -g wheel ${SAMPLE_CONFIG_FILE} ${CONFIG_FILE}
+    install -o root -g wheel -d $CONFIG_DIR
+    install -o root -g wheel $SAMPLE_CONFIG_FILE $CONFIG_FILE
     echo
     echo "+---------------"
-    echo "| The $1 configuration file, ${CONFIG_FILE},"
-    echo "| has been installed.  Please view this file and change"
-    echo "| the configuration to meet your needs"
+    echo "| The $1 configuration file,"
+    echo "| $CONFIG_FILE,"
+    echo "| has been installed.  Please view this file and"
+    echo "| change the configuration to meet your needs"
     echo "+---------------"
     echo
 }

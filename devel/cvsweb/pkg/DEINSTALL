@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2000/10/01 19:18:53 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/01/03 00:51:41 naddy Exp $
 #
 # De-installation setup of cvsweb
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/var/www}
-CONFIG_FILE=${SYSCONFDIR}/cvsweb.conf
+CONFIG_DIR=${SYSCONFDIR}/cvsweb
 
 # Function: tell the user what they need to do to delete the port completely
 #
@@ -16,13 +16,13 @@ do_notice()
 {
     echo
     echo "+---------------"
-    echo "| To completely deinstall the $1 package you need to perform"
-    echo "| these steps as root:"
+    echo "| To completely deinstall the $1 package"
+    echo "| you need to perform these steps as root:"
     echo "|"
-    echo "|       rm -f ${CONFIG_FILE}"
+    echo "|       rm -rf ${CONFIG_DIR}"
     echo "|"
-    echo "| Do not do this if you plan on re-installing $1"
-    echo "| at some future time."
+    echo "| Do not do this if you plan on re-installing"
+    echo "| $1 at some future time."
     echo "+---------------"
     echo
 }
@@ -38,7 +38,7 @@ fi
 #
 case $2 in
     DEINSTALL)
-	if [ -f ${CONFIG_FILE} ]; then
+	if [ -e ${CONFIG_DIR} ]; then
 	    do_notice "$1"
 	fi
 	;;
