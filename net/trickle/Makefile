@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/13 08:07:50 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/23 20:38:15 pvalchev Exp $
 
 COMMENT=	"lightweight userspace bandwidth shaper"
-DISTNAME=	trickle-1.04
+DISTNAME=	trickle-1.05
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}
 
