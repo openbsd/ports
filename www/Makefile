@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2004/10/02 12:40:05 robert Exp $
+# $OpenBSD: Makefile,v 1.156 2004/10/06 08:53:04 xsa Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
 #    SUBDIR += Mosaic         # requires Motif
@@ -168,6 +168,7 @@
      SUBDIR += zope-groupuserfolder
      SUBDIR += zope-jtracker
      SUBDIR += zope-logger
+     SUBDIR += zope-placelesstranslationservice
      SUBDIR += zope-rdfsummary
      SUBDIR += zope-zippy
      SUBDIR += zope-zwiki
