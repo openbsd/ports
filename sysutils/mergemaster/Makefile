@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/01/22 23:19:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/12 16:22:04 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
-PKGNAME=	${DISTNAME}p1
-DISTNAME=	mergemaster-1.25
+DISTNAME=	mergemaster-1.26
 CATEGORIES=	sysutils
-NEED_VERSION=	1.402
+NEED_VERSION=	1.504
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -20,7 +19,7 @@ MASTER_SITES=	http://sites.inka.de/mips/unix/distfiles/ \
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-WRKDIST=	${WRKDIR}/mergemaster
+WRKDIST=	${WRKDIR}/${DISTNAME:C/-.*//}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mergemaster.sh ${PREFIX}/sbin/mergemaster
