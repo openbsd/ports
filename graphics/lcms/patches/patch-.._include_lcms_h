@@ -1,0 +1,12 @@
+--- ../include/lcms.h.orig	Sun Dec  2 22:59:00 2001
++++ ../include/lcms.h	Sun Dec  2 23:05:26 2001
+@@ -112,6 +112,9 @@
+ 
+ #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__)
+ #  include <sys/types.h>
++#  if BYTE_ORDER == BIG_ENDIAN
++#    define USE_BIG_ENDIAN    1
++#  endif
+ #  define USE_INT64           1
+ #  undef  LONGLONG
+ #  define LONGLONG            u_int64_t

@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/12/03 16:35:47 brad Exp $
+lib/liblcms.so.1.8
+DYNLIBDIR(%B)

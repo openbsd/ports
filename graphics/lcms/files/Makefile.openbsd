@@ -1,0 +1,35 @@
+# $OpenBSD: Makefile.openbsd,v 1.1.1.1 2001/12/03 16:35:47 brad Exp $
+# Makefile for lcms
+
+PREFIX?= /usr/local
+LIBDIR=	${PREFIX}/lib
+
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	8
+
+LIB=	lcms
+SRCS!=	${MAKE} -f ${.CURDIR}/Makefile -V SRCS
+
+HDRS=	lcms.h icc34.h
+
+CFLAGS+= -Wall
+CPPFLAGS+= -I${.CURDIR}/../include
+
+NOPROFILE= Yes
+DEBUGLIBS= No
+
+beforeinstall:
+	if [ ! -d ${DESTDIR}${PREFIX}/include ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${PREFIX}/include; \
+	fi
+	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
+	fi
+
+afterinstall:
+	@rm -f ${DESTDIR}${LIBDIR}/liblcms_pic.a
+	cd ${.CURDIR}/../include; ${INSTALL} ${INSTALL_COPY} -o \
+		${SHAREOWN} -g ${SHAREGRP} -m ${NONBINMODE} ${HDRS} \
+			${DESTDIR}${PREFIX}/include
+
+.include <bsd.lib.mk>
