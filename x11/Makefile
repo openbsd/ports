@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2000/01/28 14:22:00 kevlo Exp $
+# $OpenBSD: Makefile,v 1.45 2000/02/09 08:22:34 kevlo Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -23,7 +23,7 @@
      SUBDIR += emiclock
 #    SUBDIR += emu
      SUBDIR += enlightenment
-#    SUBDIR += eterm
+     SUBDIR += eterm
 #    SUBDIR += etlfonts
      SUBDIR += explorer
 #    SUBDIR += fbsd-icons
