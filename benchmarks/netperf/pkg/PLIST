@@ -1,0 +1,11 @@
+bin/netperf
+bin/netserver
+man/man1/netperf.1
+man/man1/netserver.1
+share/netperf/tcp_range_script
+share/netperf/tcp_stream_script
+share/netperf/tcp_rr_script
+share/netperf/udp_stream_script
+share/netperf/udp_rr_script
+share/netperf/snapshot_script
+@dirrm share/netperf

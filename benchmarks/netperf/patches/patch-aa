@@ -1,0 +1,19 @@
+*** netserver.c.orig	Wed Apr  9 20:02:13 1997
+--- netserver.c	Thu Jul  8 20:56:56 1999
+***************
+*** 409,415 ****
+        fclose(stdin);
+        fclose(stderr);
+   /* can I just use setsid on all systems? raj 4/96 */
+! #if defined(__NetBSD__) || defined(__bsdi__) || defined(sun) || defined(__FREEBSD__)
+        setsid();
+  #else
+        setpgrp();
+--- 409,415 ----
+        fclose(stdin);
+        fclose(stderr);
+   /* can I just use setsid on all systems? raj 4/96 */
+! #if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(sun) || defined(__FREEBSD__)
+        setsid();
+  #else
+        setpgrp();
