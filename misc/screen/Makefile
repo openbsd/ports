@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/07/04 19:33:08 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2000/08/04 18:25:24 brad Exp $
 
 DISTNAME=	screen-3.9.5
 PKGNAME=	screen-3.9.5p1
@@ -19,8 +19,10 @@ CONFIGURE_STYLE= gnu dest
 
 post-install:
 	@cd ${PREFIX}/bin && ln -sf screen-3.9.5 screen
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/screen
-	${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/lib/screen/screenrc
-	${INSTALL_DATA} ${WRKSRC}/terminfo/screencap ${PREFIX}/lib/screen
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/screen
+	${INSTALL_DATA} ${WRKSRC}/etc/etcscreenrc \
+	 ${PREFIX}/share/examples/screen/screenrc-sample
+	${INSTALL_DATA} ${WRKSRC}/terminfo/screencap \
+	 ${PREFIX}/share/examples/screen/screencap
 
 .include <bsd.port.mk>

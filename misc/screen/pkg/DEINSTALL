@@ -1,20 +1,20 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 1999/09/26 20:51:22 espie Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2000/08/04 18:25:24 brad Exp $
 #
 # screen de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-SCREENRC=/etc/screenrc
+CONFIG_FILE=/etc/screenrc
 
-if [ -e ${SCREENRC} ]; then
+if [ -e $CONFIG_FILE ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|           rm -f ${SCREENRC}"
+    echo "|           rm -f $CONFIG_FILE"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."
