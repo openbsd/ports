@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2001/02/08 09:39:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/05/06 00:34:40 lebel Exp $
+
+COMMENT=	"Commodore 64 emulator"
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1a
 
 CATEGORIES=	emulators games
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

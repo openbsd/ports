@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/26 15:58:19 todd Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 00:34:43 lebel Exp $
 #
+
+COMMENT=		"HP48sx emulator"
 
 DISTNAME=		x48-0.4.0
 CATEGORIES=		emulators
-NEED_VERSION=		1.364
+NEED_VERSION=		1.402
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 

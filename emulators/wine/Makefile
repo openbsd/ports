@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/31 05:06:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.21 2001/05/06 00:34:42 lebel Exp $
+
+COMMENT=	"MS-Windows 3.1/95/NT emulator for Unix (Alpha release)"
 
 DATE= 		990225
 DISTNAME= 	Wine-${DATE}
 PKGNAME=	wine-${DATE}
 CATEGORIES=	emulators x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 FAKE=No
 
 ONLY_FOR_ARCHS= i386
