@@ -9,12 +9,3 @@
  @SET_MAKE@
  VERSION=stunnel-@VERSION@
  CC=@CC@
-@@ -21,7 +21,7 @@
- 
- # standard external rules
- 
--all: stunnel stunnel.so
-+all: stunnel
- 
- install: installdirs $(DESTFILES)
- 
