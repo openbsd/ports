@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2004/09/15 18:44:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2004/10/02 17:59:52 naddy Exp $
 bin/xslt-config
 bin/xsltproc
 include/libexslt/
@@ -57,13 +57,7 @@ share/doc/libxslt/html/APIfiles.html
 share/doc/libxslt/html/APIfunctions.html
 share/doc/libxslt/html/APIsymbols.html
 @comment share/doc/libxslt/html/EXSLT/
-@comment share/doc/libxslt/html/EXSLT/bugs.html
-@comment share/doc/libxslt/html/EXSLT/docs.html
-@comment share/doc/libxslt/html/EXSLT/downloads.html
 @comment share/doc/libxslt/html/EXSLT/exslt.html
-@comment share/doc/libxslt/html/EXSLT/help.html
-@comment share/doc/libxslt/html/EXSLT/index.html
-@comment share/doc/libxslt/html/EXSLT/intro.html
 share/doc/libxslt/html/FAQ.html
 share/doc/libxslt/html/Libxslt-Logo-180x168.gif
 share/doc/libxslt/html/Libxslt-Logo-90x34.gif
