@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2001/06/06 07:58:27 obecian Exp $
+# $OpenBSD: Makefile,v 1.74 2001/06/07 14:27:40 lebel Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
      SUBDIR += ADMfzap
      SUBDIR += ADMsmb
      SUBDIR += ADMsnmp
+     SUBDIR += aide
      SUBDIR += antisniff
      SUBDIR += arirang
      SUBDIR += bfbtester
