@@ -1,22 +1,25 @@
-$OpenBSD: patch-aa,v 1.1.1.1 1999/09/18 19:44:18 rohee Exp $
-
-Actually a FreeBSD related patch :-)
-
-From an email from Marc van Kempen <marc@bowtie.nl>
-
---- cpu_perc.c.orig	Sat Jul  3 13:39:08 1999
-+++ cpu_perc.c	Sat Aug 21 18:52:36 1999
-@@ -70,7 +70,13 @@
- 	  fs_count = getmntinfo(&mntbufp, MNT_WAIT);
- 	  
- 	  while(fs_count--)               
-+#ifdef __FreeBSD__ /* FreeBSD prior to 3.0 doesn't have f_fstypename and
-+                      f_mntfromname happens to be set to procfs, but
-+	              it's a kludge */
-+	    if(!strcmp(mntbufp[fs_count].f_mntfromname, "procfs") &&
-+#else
- 	    if(!strcmp(mntbufp[fs_count].f_fstypename, "procfs") &&
-+#endif
- 	       (procfs_found = 1))
- 	      sprintf(procfs_mountpoint, mntbufp[fs_count].f_mntonname);
- 	  
+--- Makefile.orig	Mon Dec  6 08:30:43 1999
++++ Makefile	Mon Dec  6 08:31:26 1999
+@@ -1,12 +1,9 @@
+-
+-PREFIX=/usr/local
+-
+ GTK_INCLUDE = `gtk-config --cflags`
+ GTK_LIB = `gtk-config --libs`
+ IMLIB_INCLUDE = `imlib-config --cflags-gdk`
+ IMLIB_LIB = `imlib-config --libs-gdk`
+ 
+-CFLAGS += $(GTK_INCLUDE) $(IMLIB_INCLUDE)
++CFLAGS += -Wall $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+ LDFLAGS = $(GTK_LIB) $(IMLIB_LIB)
+ 
+ #The following commented out lines are for replacing the stock defines on
+@@ -15,7 +12,7 @@
+ #for IRIX
+ #LDFLAGS = $(GTK_LIB) $(IMLIB_LIB) -laudio
+ 
+-CC = gcc -Wall
++#CC = gcc -Wall
+ 
+ GNOME_PREFIX = `gnome-config --prefix`
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/10/29 01:41:04 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/12/06 13:47:34 brad Exp $
 # Original from: Bruno Rohée
 
 DISTNAME=	gqmpeg-0.6.3.src
@@ -16,20 +16,19 @@ LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-
 NO_CONFIGURE=	yes
 
 ALL_TARGET=	gqmpeg
 WRKSRC=	${WRKDIR}/${PKGNAME}
 
+DOCS=	COPYING FAQ README SKIN-SPECS ChangeLog
+
 do-install:
-	@${MKDIR} ${PREFIX}/share/doc/gqmpeg
+	@mkdir -p ${PREFIX}/share/doc/gqmpeg
 	${INSTALL_PROGRAM} ${WRKSRC}/gqmpeg ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/plugin/gqmpeg-shoutcast-plugin.sh ${PREFIX}/bin
-	${INSTALL_DATA}	${WRKSRC}/ChangeLog ${PREFIX}/share/doc/gqmpeg
-	${INSTALL_DATA}	${WRKSRC}/COPYING ${PREFIX}/share/doc/gqmpeg
-	${INSTALL_DATA}	${WRKSRC}/FAQ ${PREFIX}/share/doc/gqmpeg
-	${INSTALL_DATA}	${WRKSRC}/README ${PREFIX}/share/doc/gqmpeg
-	${INSTALL_DATA}	${WRKSRC}/SKIN-SPECS ${PREFIX}/share/doc/gqmpeg
+.for f in ${DOCS}
+	${INSTALL_DATA}	${WRKSRC}/${f} ${PREFIX}/share/doc/gqmpeg
+.endfor
 
 .include <bsd.port.mk>

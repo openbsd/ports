@@ -1,7 +1,3 @@
-$OpenBSD: patch-ab,v 1.1.1.1 1999/09/18 19:44:18 rohee Exp $
-
-We've exactly the same sound API than NetBSD
-
 --- mixer.c.orig	Sat Aug 21 18:56:16 1999
 +++ mixer.c	Sat Aug 21 18:57:30 1999
 @@ -24,7 +24,7 @@
