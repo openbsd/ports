@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/25 22:34:50 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/29 09:27:42 wilfried Exp $
 
 COMMENT=		'wm-dockapp; display CPU and memory load'
 
 DISTNAME=		bubblemon-dockapp-1.4
 CATEGORIES=     	sysutils x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.487
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}software/
 
-LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+
+MODULES=		gtk
 
 USE_X11=		Yes
 USE_GMAKE=		Yes

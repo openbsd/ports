@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/26 22:21:44 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/29 09:27:42 wilfried Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
 
 COMMENT=		'neat theme manager for Window Maker'
 
 DISTNAME=		wmthemeinstall-0.62
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.482
+NEED_VERSION=		1.487
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -18,7 +18,7 @@ MASTER_SITES=		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 RUN_DEPENDS=		::x11/windowmaker
-LIB_DEPENDS=		gtk.1,gdk.1::x11/gtk+
+MODULES=		gtk
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
