@@ -1,13 +1,7 @@
---- configure.orig	Wed Apr  5 01:32:58 2000
-+++ configure	Tue Jul 18 23:39:15 2000
-@@ -5133,14 +5133,14 @@
- 			withval=/usr/local
- 		elif test -f /usr/include/mail.h; then
- 			withval=/usr
--		elif test -f /usr/include/imap/mail.h; then
-+		elif test -f /usr/include/c-client/mail.h; then
- 			withval=/usr
- 		fi
+$OpenBSD: patch-configure,v 1.2 2001/10/15 23:45:45 avsm Exp $
+--- configure.orig	Fri Oct 20 19:05:17 2000
++++ configure	Mon Oct 15 01:11:36 2001
+@@ -5157,8 +5157,8 @@
      fi
  	if test "$withval" != "no" && test "$withval" != "yes"; then
  		IMAP_DIR=$withval
@@ -18,3 +12,58 @@
  		else
  			IMAP_INC_DIR=$withval/include
  		fi
+@@ -5329,6 +5329,54 @@
+ 
+   fi
+ 
++	
++  
++  unique=`echo $ac_n "gssapi$ac_c" | tr -c -d a-zA-Z0-9`
++  cmd="echo $ac_n \"\$LIBRARY$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBRARY$unique=set"
++    
++    EXTRA_LIBS="$EXTRA_LIBS -lgssapi"
++  
++  fi
++
++
++	
++  
++  unique=`echo $ac_n "asn1$ac_c" | tr -c -d a-zA-Z0-9`
++  cmd="echo $ac_n \"\$LIBRARY$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBRARY$unique=set"
++    
++    EXTRA_LIBS="$EXTRA_LIBS -lasn1"
++  
++  fi
++
++
++	
++  
++  unique=`echo $ac_n "krb5$ac_c" | tr -c -d a-zA-Z0-9`
++  cmd="echo $ac_n \"\$LIBRARY$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBRARY$unique=set"
++    
++    EXTRA_LIBS="$EXTRA_LIBS -lkrb5"
++  
++  fi
++
++
++	
++  
++  unique=`echo $ac_n "com_err$ac_c" | tr -c -d a-zA-Z0-9`
++  cmd="echo $ac_n \"\$LIBRARY$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBRARY$unique=set"
++    
++    EXTRA_LIBS="$EXTRA_LIBS -lcom_err"
++  
++  fi
++
++
+         cat >> confdefs.h <<\EOF
+ #define HAVE_IMAP 1
+ EOF

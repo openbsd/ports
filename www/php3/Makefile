@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2001/08/17 19:34:51 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2001/10/15 23:45:45 avsm Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -37,8 +37,8 @@ FLAVORS=	imap gd mysql postgresql
 FLAVOR?= 
 
 .if ${FLAVOR:L:Mimap}
-CONFIGURE_ARGS+=	--with-imap=${PREFIX}
-LIB_DEPENDS+=		c-client.2::mail/c-client
+CONFIGURE_ARGS+=	--with-imap=${LOCALBASE}
+LIB_DEPENDS+=		c-client.3::mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif
