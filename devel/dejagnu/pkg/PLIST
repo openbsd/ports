@@ -1,0 +1,24 @@
+bin/runtest
+@unexec install-info --delete %D/info/dejagnu.info %D/info/dir
+info/dejagnu.info
+info/dejagnu.info-1
+info/dejagnu.info-2
+info/dejagnu.info-3
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/dejagnu.info %D/info/dir
+lib/dejagnu/bug.exp
+lib/dejagnu/config.guess
+lib/dejagnu/debugger.exp
+lib/dejagnu/dg.exp
+lib/dejagnu/framework.exp
+lib/dejagnu/libgloss.exp
+lib/dejagnu/remote.exp
+lib/dejagnu/runtest.exp
+lib/dejagnu/target.exp
+lib/dejagnu/udi.exp
+lib/dejagnu/util-defs.exp
+lib/dejagnu/utils.exp
+lib/dejagnu/vrtx.exp
+lib/dejagnu/vxworks.exp
+man/man1/runtest.1
+@dirrm lib/dejagnu
