@@ -1,0 +1,8 @@
+vlorb is a console frontend for cdparanoia and CDDB. It rips and encodes
+tracks from an audio CD to Ogg Vorbis files. The aim of vlorb is to
+create high-quality Ogg Vorbis audio files in a simple way, while
+providing a comfortable feature set.
+
+vlorb uses CDDB to get CD information for tagging and file naming.
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,12 @@
+$OpenBSD: patch-vlorb,v 1.1.1.1 2003/04/15 15:49:08 espie Exp $
+--- vlorb.orig	Tue Apr  8 14:10:01 2003
++++ vlorb	Tue Apr  8 14:10:47 2003
+@@ -36,7 +36,7 @@ use warnings;
+ my %config;
+ 
+ # Path to device name of CD-ROM to use.
+-$config{device} = '/dev/cdrom';
++$config{device} = '/dev/cd0c';
+ 
+ # 1 = Use bitrate mode, 0 = use quality mode for ogg encoding.
+ $config{use_bitrate} = 0;
