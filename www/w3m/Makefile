@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/08/02 14:59:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2001/09/22 14:27:48 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -44,7 +44,8 @@ PATCH_LIST=	patch-*
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= -nonstop -prefix="${PREFIX}" -cflags="${CFLAGS}" \
 		-model=monster
-CONFIGURE_ENV=	use_nntp=y dmail=mail ded=vi dbrowser=lynx dcc="${CC}" \
+CONFIGURE_ENV=	use_nntp=y use_ssl_verify=y \
+		dmail=mail ded=vi dbrowser=lynx dcc="${CC}" \
 		dtermlib="${TERMLIB}" def_helpdir="${PREFIX}/share/w3m" \
 		def_libdir="${PREFIX}/libexec/w3m"
 
