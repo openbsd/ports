@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1999/04/23 03:17:28 brad Exp $
+# $OpenBSD: Makefile,v 1.18 1999/05/14 15:29:54 dugsong Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -9,6 +9,7 @@
      SUBDIR += cops
      SUBDIR += crack
 #    SUBDIR += donkey
+     SUBDIR += fragrouter
 #    SUBDIR += fwtk
      SUBDIR += gnupg
 #    SUBDIR += john
