@@ -1,0 +1,164 @@
+--- pnm/pnmhisteq.1.orig	Sun Jan 10 23:48:41 1999
++++ pnm/pnmhisteq.1	Sun Jan 10 23:48:41 1999
+@@ -0,0 +1,161 @@
++.TH pnmhisteq 1 "19 March 1995"
++.IX "pnmhisteq command"
++.IX histogram
++.SH NAME
++pnmhisteq \- histogram equalise a portable anymap
++.SH SYNOPSIS
++.na
++.B pnmhisteq
++'ti 15
++.RB [ \-gray ]
++.RB [ \-rmap
++.IR pgmfile ]
++.RB [ \-wmap
++.IR pgmfile ]
++.RB [ \-verbose ]
++.RI [ pnmfile ]
++.ad
++.SH DESCRIPTION
++.B pnmhisteq
++increases the contrast of a portable graymap or pixmap through the
++technique of
++.IR "histogram equalisation" [1].
++A histogram of the luminance of pixels in the map is computed, from
++which a transfer function is calculated which spreads out intensity levels
++around histogram peaks and compresses them at troughs.  This has the
++effect of using the available levels of intensity more efficiently and
++thereby increases the detail visible in the image.
++.PP
++Mathematically, if
++.I N[i]
++is the number of pixels of luminosity
++.I i
++in the image and
++.I T
++is the total number of pixels, luminosity
++.I j
++is replaced by:
++.PP
++.NF
++.vs 9p
++         j
++        ---
++        \\
++         \>   N[i] / T
++        \/
++        ---
++        i=0
++.vs
++.FI
++.PP
++If you're processing a related set of images, for example frames of an
++animation, it's generally best to apply the same intensity map to
++every frame, since otherwise you'll get distracting frame-to-frame
++changes in the brightness of objects.
++.BR pnmhisteq 's
++.B \-wmap
++option
++allows you to save, as a portable graymap, the luminosity map computed
++from an image (usually a composite of the images you intend
++to process created with
++.BR pnmcat ).
++Then, you can subsequently process each of the individual images using
++the luminosity map saved in the file, supplied with the
++.B \-rmap
++option.
++.SH OPTIONS
++.TP 10
++.B \-gray
++When processing a pixmap, only gray pixels (those with identical red,
++green, and blue values) are included in the histogram and modified
++in the output image.  This is a special purpose option intended
++for images where the actual data are gray scale, with
++colour annotations you don't want modified.  Weather
++satellite images that show continent outlines in colour are best
++processed using this option.  The option has no effect when the input
++is a graymap.
++.TP
++.BI \-rmap " mapfile"
++Process the image using the luminosity map specified by the portable
++graymap
++.I mapfile.
++The graymap, usually created by an earlier run of
++.B pnmhisteq
++with the 
++.B \-wmap
++option, contains a single row with number of columns equal to
++the
++.I maxval
++(greatest intensity) of the image.  Each pixel in the image is
++transformed by looking up its luminosity in the corresponding
++column in the map file and changing it to the value
++given by that column.
++.TP
++.BI \-wmap " mapfile"
++Creates a portable graymap,
++.I mapfile,
++containing the luminosity map computed from the histogram of the
++input image.  This map file can be read on subsequent runs of
++.B pnmhisteq
++with the
++.B \-rmap
++option, allowing a group of images to be processed with
++an identical map.
++.TP
++.B \-verbose
++Prints the histogram and luminosity map on standard error.
++.PP
++All flags can be abbreviated to their shortest unique prefix.
++.SH BUGS
++Histogram equalisation is effective for increasing the visible detail
++in scientific imagery and in some continuous-tone pictures.  It is
++often too drastic, however, for scanned halftone images, where it
++does an excellent job of making halftone artifacts apparent.  You
++might want to experiment with
++.BR pgnnorm ,
++.BR ppmnorm ,
++and
++.B pnmgamma
++for more subtle contrast enhancement.
++.PP
++The luminosity map file supplied by the
++.B \-rmap
++option must have the same
++.I maxval
++as the input image.  This is always the case when the
++map file was created by the
++.B \-wmap
++option of 
++.BR pnmhisteq .
++If this restriction causes a problem, simply adjust the
++.I maxval
++of the map with
++.B pnmdepth
++to agree with the input image.
++.PP
++If the input is a PBM file (on which histogram equalisation is an
++identity operation), the only effect of passing the file through
++.B pnmhisteq
++will be the passage of time.
++.SH "SEE ALSO"
++.PD
++.BR pgmnorm (1),
++.BR pnm (5),
++.BR pnmcat (1),
++.BR pnmdepth (1),
++.BR pnmgamma (1),
++.BR pnmnorm (1)
++.TP 5
++[1]
++Russ, John C.  The Image Processing Handbook.
++Boca Raton: CRC Press, 1992.  Pages 105-110.
++.ne 10
++.SH AUTHOR
++.ce 2
++Copyright (C) 1995 by John Walker (kelvin@fourmilab.ch).
++WWW home page: http://www.fourmilab.ch/
++.PP
++Permission to use, copy, modify, and distribute this software and its
++documentation for any purpose and without fee is hereby granted,
++without any conditions or restrictions.  This software is provided ``as
++is'' without express or implied warranty.

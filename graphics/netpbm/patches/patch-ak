@@ -1,0 +1,50 @@
+--- pnm/anytopnm.orig	Mon Oct  4 10:11:29 1993
++++ pnm/anytopnm	Sun Jan 10 23:48:40 1999
+@@ -53,7 +53,7 @@
+ 	;;
+ 
+ 	*GIF* )
+-	giftoppm "$file"
++	giftopnm "$file"
+ 	break
+ 	;;
+ 
+@@ -82,6 +82,15 @@
+ 	break
+ 	;;
+ 
++        *JPEG* | *JFIF* )
++        djpeg "$file"
++        ;;
++
++        *PNG* )
++        pngtopnm "$file"
++        break
++        ;;
++
+ 	* )
+ 	# Can't figure out the file type from the magic number,
+ 	# try the extension.
+@@ -130,7 +139,7 @@
+ 	    fitstopgm "$file"
+ 	    ;;
+ 	    *.gif | *.gif.* )
+-	    giftoppm "$file"
++	    giftopnm "$file"
+ 	    ;;
+ 	    *.iff | *.iff.* | *.ilbm | *.ilbm.* )
+ 	    ilbmtoppm "$file"
+@@ -168,6 +177,13 @@
+ 	    *.ybm | *.ybm.* | *.face | *.face.* )
+ 	    ybmtopbm "$file"
+ 	    ;;
++            *.JPEG | *.jpeg | *.jpg | *.JPG )
++            djpeg "$file"
++            ;;
++            *.png | *.PNG )
++            pngtopnm "$file"
++            break
++            ;;
+ 	    * )
+ 	    echo "$0: unknown file type" 1>&2
+ 	    exit 1

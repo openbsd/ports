@@ -1,0 +1,11 @@
+--- ppm/ppmtoicr.1.orig	Mon Oct  4 10:12:38 1993
++++ ppm/ppmtoicr.1	Sun Jan 10 23:48:41 1999
+@@ -83,7 +83,7 @@
+ the displayed image by a factor of 2, and
+ run-length encode the data:
+ .nf
+-    giftoppm giffile | ppmtoicr -w giffile -r -e 2
++    giftopnm giffile | ppmtoicr -w giffile -r -e 2
+ .fi
+ .SH BUGS
+ .PP

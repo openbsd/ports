@@ -1,0 +1,113 @@
+--- pnm/tifftopnm.c.orig	Mon Oct  4 10:12:01 1993
++++ pnm/tifftopnm.c	Sun Jan 10 23:48:40 1999
+@@ -54,7 +54,7 @@
+     int headerdump;
+     register u_char sample;
+     register int bitsleft;
+-    unsigned short bps, spp, photomet;
++    unsigned short bps, spp, photomet, planarconfig;
+     unsigned short* redcolormap;
+     unsigned short* greencolormap;
+     unsigned short* bluecolormap;
+@@ -101,6 +101,13 @@
+ 	spp = 1;
+     if ( ! TIFFGetField( tif, TIFFTAG_PHOTOMETRIC, &photomet ) )
+ 	pm_error( "error getting photometric" );
++    if( spp > 1 ){
++	if ( ! TIFFGetField( tif, TIFFTAG_PLANARCONFIG, &planarconfig ) )
++	    pm_error( "error getting planarconfig" );
++    }else{
++	planarconfig = PLANARCONFIG_CONTIG;
++    }
++
+ 
+     switch ( spp )
+ 	{
+@@ -114,6 +121,18 @@
+ 	    "can only handle 1-channel gray scale or 1- or 3-channel color" );
+ 	}
+ 
++    switch( planarconfig )
++	{
++	case PLANARCONFIG_CONTIG:
++	    break;
++	case PLANARCONFIG_SEPARATE:
++	    if( photomet != PHOTOMETRIC_RGB )
++		pm_error( "can only handle separate planes with RGB data" );
++	    break;
++	default:
++	    pm_error("Unrecongnized PLANARCONFIG tag!\n");
++	}
++
+     (void) TIFFGetField( tif, TIFFTAG_IMAGEWIDTH, &cols );
+     (void) TIFFGetField( tif, TIFFTAG_IMAGELENGTH, &rows );
+ 
+@@ -259,20 +278,54 @@
+ 	    break;
+ 
+ 	    case PHOTOMETRIC_RGB:
+-	    for ( col = 0; col < cols; ++col, ++xP )
+-		{
+-		register xelval r, g, b;
+-
+-		NEXTSAMPLE
+-		r = sample;
+-		NEXTSAMPLE
+-		g = sample;
+-		NEXTSAMPLE
+-		b = sample;
+-		if ( spp == 4 )
+-		    NEXTSAMPLE		/* skip alpha channel */
+-		PPM_ASSIGN( *xP, r, g, b );
+-		}
++	    if( planarconfig == PLANARCONFIG_CONTIG ){
++		for ( col = 0; col < cols; ++col, ++xP )
++		    {
++		    register xelval r, g, b;
++
++		    NEXTSAMPLE
++		    r = sample;
++		    NEXTSAMPLE
++		    g = sample;
++		    NEXTSAMPLE
++		    b = sample;
++		    if ( spp == 4 )
++		        NEXTSAMPLE /* skip alpha channel */
++		    PPM_ASSIGN( *xP, r, g, b );
++		    }
++	    }else{
++		/* First clear the value and assign the reds */
++		for ( col = 0; col < cols; ++col, ++xP )
++		    {
++			NEXTSAMPLE
++			PPM_ASSIGN( *xP, 0, 0, 0 );
++			PPM_PUTR( *xP, sample );
++		    }
++
++		/* Next the greens */
++		if ( TIFFReadScanline( tif, buf, row, 1 ) < 0 )
++		    pm_error( "bad data read on green line %d", row );
++		xP = xelrow;
++		inP = buf;
++		bitsleft = 8;
++		for ( col = 0; col < cols; ++col, ++xP )
++		    {
++			NEXTSAMPLE
++			PPM_PUTG( *xP, sample );
++		    }
++
++		/* And finally the blues */
++		if ( TIFFReadScanline( tif, buf, row, 2 ) < 0 )
++		    pm_error( "bad data read on green line %d", row );
++		xP = xelrow;
++		inP = buf;
++		bitsleft = 8;
++		for ( col = 0; col < cols; ++col, ++xP )
++		    {
++			NEXTSAMPLE
++			PPM_PUTB( *xP, sample );
++		    }
++	    }		
+ 	    break;
+ 
+ 	    default:

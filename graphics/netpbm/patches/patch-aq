@@ -1,0 +1,29 @@
+--- pnm/pnmmerge.c.orig	Mon Jan 31 12:31:47 1994
++++ pnm/pnmmerge.c	Sun Jan 10 23:48:40 1999
+@@ -30,6 +30,10 @@
+ 	{
+ 	++argv;
+ 	--argc;
++	if(!*argv)	{
++		fprintf(stderr, "Usage: pnmmerge pnm_program_name [args ...]\n");
++		exit(1);
++		}
+ 	goto again;
+ 	}
+ 
+@@ -51,6 +55,7 @@
+     TRY("pnmgamma", pnmgamma_main);
+     TRY("pnminvert", pnminvert_main);
+     TRY("pnmhistmap", pnmhistmap_main);
++    TRY("pnmhisteq", pnmhisteq_main);
+     TRY("pnmnlfilt", pnmnlfilt_main);
+     TRY("pnmnoraw", pnmnoraw_main);
+     TRY("pnmpaste", pnmpaste_main);
+@@ -76,6 +81,7 @@
+ #endif /*LIBTIFF*/
+     TRY("xwdtopnm", xwdtopnm_main);
+     TRY("zeisstopnm", zeisstopnm_main);
++    TRY("pnmsmooth", pnmsmooth_main);
+ 
+     (void) fprintf(
+ 	stderr, "pnmmerge: \"%s\" is an unknown PNM program!\n", cp );

@@ -1,0 +1,24 @@
+--- pnm/pnmsmooth.README.orig	Sun Jan 10 23:48:41 1999
++++ pnm/pnmsmooth.README	Sun Jan 10 23:48:41 1999
+@@ -0,0 +1,21 @@
++README for pnmsmooth.c 2.0
++
++This is a replacement for the pnmsmooth script that is distributed with
++pbmplus/netpbm.  This version of pnmsmooth is written as a C program rather
++than a shell script.  It accepts command line arguments to specify a size 
++other than 3x3 for the convolution matrix and an argument for dumping the 
++resultant convolution matrix as a PGM file.  By default it uses the same 3x3
++matrix size as the pnmsmooth script and can be used as a direct replacement.
++
++Also included are an updated man page and a patch file to update the Imakefile
++in the pnm directory.  You may want to apply the patches by hand if you have
++already modified the Imakefile to add other new programs.   You will then
++have to remake the Makefiles and then type 'make all' in the pnm directory.
++
++- Mike
++
++----------------------------------------------------------------------------
++Mike Burns                                              System Administrator
++burns@chem.psu.edu                                   Department of Chemistry
++(814) 863-2123                             The Pennsylvania State University
++

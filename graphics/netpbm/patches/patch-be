@@ -1,0 +1,51 @@
+--- ppm/xpmtoppm.c.orig	Mon Jan 31 08:42:05 1994
++++ ppm/xpmtoppm.c	Sun Jan 10 23:48:41 1999
+@@ -30,9 +30,8 @@
+ 
+ #include "ppm.h"
+ 
+-static void ReadXPMFile ARGS((FILE *stream, int *widthP, int *heightP,
+-    int *ncolorsP, int *chars_per_pixelP, pixel **colorsP, int **dataP));
+-static void getline ARGS((char *line, int size, FILE *stream));
++void ReadXPMFile();
++static void getline();
+ 
+ /* number of xpmColorKeys */
+ #define NKEYS 5
+@@ -46,7 +45,27 @@
+  "c",					/* key #5: color visual */
+ };
+ 
+-int
++#ifdef NEED_STRSTR
++/* for systems which do not provide it */
++static char *
++strstr(s1, s2)
++    char *s1, *s2;
++{
++    int ls2 = strlen(s2);
++
++    if (ls2 == 0)
++	return (s1);
++    while (strlen(s1) >= ls2) {
++	if (strncmp(s1, s2, ls2) == 0)
++	    return (s1);
++	s1++;
++    }
++    return (0);
++}
++
++#endif
++
++void
+ main(argc, argv)
+     int argc;
+     char *argv[];
+@@ -89,7 +108,6 @@
+ 
+ #define MAX_LINE 2048
+ 
+-static
+ void
+ ReadXPMFile(stream, widthP, heightP, ncolorsP,
+ 	    chars_per_pixelP, colorsP, dataP)

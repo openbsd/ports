@@ -1,0 +1,23 @@
+--- pnm/pnmsmooth.orig.orig	Sun Jan 10 23:48:41 1999
++++ pnm/pnmsmooth.orig	Sun Jan 10 23:48:41 1999
+@@ -0,0 +1,20 @@
++#!/bin/sh
++#
++# pnmsmooth - smooth out an image by replacing each xel with the
++#             average of its nine immediate neighbors
++
++tmp=/tmp/psm.$$
++rm -f $tmp
++
++cat > $tmp << MOO
++P2
++3 3
++18
++10 10 10
++10 10 10
++10 10 10
++MOO
++
++pnmconvol $tmp ${1+"$@"}
++
++rm -f $tmp

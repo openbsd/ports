@@ -1,0 +1,52 @@
+--- pnm/pnmsmooth.1.orig	Mon Oct  4 10:11:56 1993
++++ pnm/pnmsmooth.1	Sun Jan 10 23:48:40 1999
+@@ -1,25 +1,42 @@
+-.TH pnmsmooth 1 "13 January 1991"
++.TH pnmsmooth 1 "4 December 1994"
+ .IX pnmsmooth
+ .SH NAME
+ pnmsmooth - smooth out an image
+ .SH SYNOPSIS
+ .B pnmsmooth
++.RB [ -size
++.IR width
++.IR height ]
++.RB [ -dump
++.IR dumpfile ]
+ .RI [ pnmfile ]
+ .SH DESCRIPTION
+ Smooths out an image by replacing each pixel with the
+-average of its nine immediate neighbors.
++average of its width X height neighbors.
+ .IX smoothing
+ .IX anti-aliasing
+-It is implemented as a simple script using
++It is implemented as a C progam that generates a PGM convolution matrix
++and then invokes
+ .IR pnmconvol .
+ .IX pnmconvol
++.SH OPTIONS
++.TP
++.B -size width height
++Specifies the size of the convolution matrix.  
++Default size is a 3x3 matrix.
++Width and height sizes must be odd.  
++Maximum size of convolution matrix is limited by the maximum value for a 
++pixel such that (width * height * 2) must not exceed the maximum pixel value.
++.TP
++.B -dump dumpfile
++Generates and saves the convolution file only.
++Use of this option does not invoke pnmconvol.
+ .SH "SEE ALSO"
+ pnmconvol(1), pnm(5)
+-.SH BUGS
+-It's a script.
+-Scripts are not portable to non-Unix environments.
+-.SH AUTHOR
++.SH AUTHORS
+ Copyright (C) 1989, 1991 by Jef Poskanzer.
++.br
++Converted from script to C program December 1994 by Mike Burns (burns@chem.psu.edu).
+ .\" Permission to use, copy, modify, and distribute this software and its
+ .\" documentation for any purpose and without fee is hereby granted, provided
+ .\" that the above copyright notice appear in all copies and that both that

@@ -1,23 +1,25 @@
---- pgm/Makefile.orig	Fri Jan 28 11:14:02 1994
-+++ pgm/Makefile	Sat Dec 20 22:51:17 1997
-@@ -39,10 +39,10 @@
- LIBPGM =	libpgm.a
+--- pbmplus.h.orig	Tue Mar  1 10:46:36 1994
++++ pbmplus.h	Mon Jan 11 00:33:32 1999
+@@ -119,10 +119,12 @@
+ #ifndef VMS
+ #include <unistd.h>
+ #endif
++#ifndef __OpenBSD__
+ extern int atoi();
+ extern void exit();
+ extern long time();
+ extern int write();
++#endif /* NetBSD */
+ #endif
  
- PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
--		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist pgmkernel \
-+		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
- 		pgmnoise pgmnorm pgmoil pgmramp pgmtofs pgmtolispm \
- 		pgmtopbm psidtopgm spottopgm
--MATHBINARIES =	pgmcrater pgmedge pgmtexture rawtopgm
-+MATHBINARIES =	pgmcrater pgmedge pgmtexture rawtopgm pgmkernel
- BINARIES =	$(PORTBINARIES) $(MATHBINARIES)
+ /* CONFIGURE: On most BSD systems, malloc() gets declared in stdlib.h, on
+@@ -275,5 +277,9 @@
+ int vfprintf ARGS(( FILE* stream, char* format, va_list args ));
+ #endif /*NEED_VFPRINTF*/
  
- OBJECTS =	asciitopgm.o bioradtopgm.o fstopgm.o hipstopgm.o \
-@@ -134,7 +134,6 @@
- pgmedge pgmedge.o:		pgmedge.c
- pgmenhance pgmenhance.o:	pgmenhance.c
- pgmhist pgmhist.o:		pgmhist.c
--pgmkernel pgmkernel.o:		pgmkernel.c
- pgmnoise pgmnoise.o:		pgmnoise.c
- pgmnorm pgmnorm.o:		pgmnorm.c
- pgmoil pgmoil.o:		pgmoil.c
++#ifdef __OpenBSD__
++#include <errno.h>
++#define A_STRERROR
++#endif
+ 
+ #endif /*_PBMPLUS_H_*/

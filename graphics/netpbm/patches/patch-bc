@@ -1,0 +1,27 @@
+--- ppm/ppmtoxpm.1.orig	Mon Jan 31 12:49:48 1994
++++ ppm/ppmtoxpm.1	Sun Jan 10 23:48:41 1999
+@@ -8,20 +8,20 @@
+ Produces X11 pixmap  (version 3) as output which
+ can be loaded directly by the XPM library.
+ .PP
+-The \fB-name\fP option allows one to specify the prefix string which is printed
++The \fB-name\f option allows one to specify the prefix string which is printed
+ in the resulting XPM output.  If not specified, will default to the
+ filename (without extension) of the <ppmfile> argument.
+-If \fB-name\fP is not specified and <ppmfile>
++If \fB-name\f is not specified and <ppmfile>
+ is not specified (i.e. piped input), the prefix string will default to
+ the string "noname".
+ .PP
+-The \fB-rgb\fP option allows one to specify an X11 rgb text file for the
++The \fB-rgb\f option allows one to specify an X11 rgb text file for the
+ lookup of color name mnemonics.  This rgb text file is typically the
+ /usr/lib/X11/rgb.txt of the MIT X11 distribution, but any file using the
+ same format may be used.  When specified and
+ a RGB value from the ppm input matches a RGB value from the <rgb-textfile>,
+ then the corresponding color name mnemonic is printed in the XPM's colormap.
+-If \fB-rgb\fP is not specified, or if the RGB values don't match, then the color
++If \fB-rgb\f is not specified, or if the RGB values don't match, then the color
+ will be printed with the #RGB, #RRGGBB, #RRRGGGBBB, or #RRRRGGGGBBBB
+ hexadecimal format.
+ .PP

@@ -1,0 +1,11 @@
+--- ppm/ppm.5.orig	Mon Oct  4 10:12:19 1993
++++ ppm/ppm.5	Sun Jan 10 23:48:41 1999
+@@ -73,7 +73,7 @@
+ it will automatically fall back on the slower but more general plain
+ format.
+ .SH "SEE ALSO"
+-giftoppm(1), gouldtoppm(1), ilbmtoppm(1), imgtoppm(1), mtvtoppm(1),
++giftopnm(1), gouldtoppm(1), ilbmtoppm(1), imgtoppm(1), mtvtoppm(1),
+ pcxtoppm(1), pgmtoppm(1), pi1toppm(1), picttoppm(1), pjtoppm(1), qrttoppm(1),
+ rawtoppm(1), rgb3toppm(1), sldtoppm(1), spctoppm(1), sputoppm(1), tgatoppm(1),
+ ximtoppm(1), xpmtoppm(1), yuvtoppm(1),

@@ -1,0 +1,11 @@
+--- pnm/pnmarith.1.orig	Mon Oct  4 10:11:34 1993
++++ pnm/pnmarith.1	Sun Jan 10 23:48:40 1999
+@@ -4,7 +4,7 @@
+ pnmarith - perform arithmetic on two portable anymaps
+ .SH SYNOPSIS
+ .B pnmarith
+-.BR -add | -subtract | -multiply | -difference
++.BR -add | -subtract | -multiply | -difference | -minimum | -maximum.
+ .I pnmfile1 pnmfile2
+ .SH DESCRIPTION
+ Reads two portable anymaps as input.

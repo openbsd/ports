@@ -1,0 +1,211 @@
+--- ppm/ppmtoxpm.c.orig	Mon Jan 31 08:44:41 1994
++++ ppm/ppmtoxpm.c	Sun Jan 10 23:48:41 1999
+@@ -27,11 +27,25 @@
+ **    
+ **  - lowercase conversion of RGB names def'ed out,
+ **    considered harmful.
++**
++** Michael Pall (pall@rz.uni-karlsruhe.de) - 29 Nov 93:
++**  - Use the algorithm from xpm-lib for pixel encoding
++**    (base 93 not base 28 -> saves a lot of space for colorful xpms)
+ */
+ 
++#include <stdio.h>
++#include <ctype.h>
+ #include "ppm.h"
+ #include "ppmcmap.h"
+ 
++#if defined(SYSV) || defined(SVR4)
++#include <string.h>
++#ifndef index
++#define index strchr
++#endif
++#else					/* SYSV */
++#include <strings.h>
++#endif					/* SYSV */
+ 
+ /* Max number of colors allowed in ppm input. */
+ #define MAXCOLORS    256
+@@ -39,15 +53,19 @@
+ /* Max number of rgb mnemonics allowed in rgb text file. */
+ #define MAX_RGBNAMES 1024
+ 
+-/* Lower bound and upper bound of character-pixels printed in XPM output.
+-   Be careful, don't want the character '"' in this range. */
+-/*#define LOW_CHAR  '#'  <-- minimum ascii character allowed */
+-/*#define HIGH_CHAR '~'  <-- maximum ascii character allowed */
+-#define LOW_CHAR  '`'
+-#define HIGH_CHAR 'z'
++#define MAXPRINTABLE 92			/* number of printable ascii chars
++					 * minus \ and " for string compat
++					 * and ? to avoid ANSI trigraphs. */
++
++static char *printable =
++" .XoO+@#$%&*=-;:>,<1234567890qwertyuipasdfghjklzxcvbnmMNBVCZ\
++ASDFGHJKLPIUYTREWQ!~^/()_`'][{}|";
++
+ 
+ #define max(a,b) ((a) > (b) ? (a) : (b))
+ 
++void read_rgb_names();			/* forward reference */
++void gen_cmap();			/* forward reference */
+ 
+ typedef struct {			/* rgb values and ascii names (from
+ 					 * rgb text file) */
+@@ -62,17 +80,8 @@
+ 					 * mnemonic or #rgb value */
+ }      cixel_map;
+ 
+-
+-/* prototypes/forward reference */
+-static void   read_rgb_names ARGS((char *, rgb_names *, int *));
+-static char * gen_numstr ARGS((int, int, int));
+-static void   gen_cmap ARGS((colorhist_vector, int, pixval, int, rgb_names *, int, cixel_map *, int *));
+-
+-
+ pixel **pixels;
+ 
+-
+-int
+ main(argc, argv)
+     int argc;
+     char *argv[];
+@@ -88,11 +97,11 @@
+ 
+     /* Used for rgb value -> rgb mnemonic mapping */
+     int map_rgb_names = 0;
+-    rgb_names *rgbn;    /* rgb_names rgbn[MAX_RGBNAMES]; */
++    rgb_names rgbn[MAX_RGBNAMES];
+     int rgbn_max;
+ 
+     /* Used for rgb value -> character-pixel string mapping */
+-    cixel_map *cmap;    /* cixel_map cmap[MAXCOLORS]; */
++    cixel_map cmap[MAXCOLORS];
+     int charspp;			/* chars per pixel */
+ 
+     char out_name[100], rgb_fname[100], *cp;
+@@ -188,17 +197,9 @@
+      * If a rgb text file was specified, read in the rgb mnemonics. Does not
+      * return if fatal error occurs. 
+      */
+-    rgbn = (rgb_names *) malloc(MAX_RGBNAMES * sizeof(rgb_names));
+-    if (rgbn == (rgb_names *) NULL)
+-	pm_error("out of memory");
+-
+     if (map_rgb_names)
+ 	read_rgb_names(rgb_fname, rgbn, &rgbn_max);
+ 
+-    cmap = (cixel_map *)malloc(ncolors * sizeof(cixel_map));
+-    if (cmap == (cixel_map *) NULL)
+-	pm_error("out of memory");
+- 
+     /* Now generate the character-pixel colormap table. */
+     gen_cmap(chv, ncolors, maxval, map_rgb_names, rgbn, rgbn_max,
+ 	     cmap, &charspp);
+@@ -231,12 +232,12 @@
+ /* This routine reads a rgb text file.  It stores the rgb values (0->65535)
+    and the rgb mnemonics (malloc'ed) into the "rgbn" array.  Returns the
+    number of entries stored in "rgbn_max". */
+-static
+ void
+ read_rgb_names(rgb_fname, rgbn, rgbn_max)
+     char *rgb_fname;
+-    rgb_names *rgbn;
+-    int *rgbn_max;
++    rgb_names rgbn[MAX_RGBNAMES];
++int *rgbn_max;
++
+ {
+     FILE *rgbf;
+     int i, items, red, green, blue;
+@@ -303,16 +304,16 @@
+ }					/* read_rgb_names */
+ 
+ /*---------------------------------------------------------------------------*/
+-/* Given a number and a base, (base == HIGH_CHAR-LOW_CHAR+1), this routine
++/* Given a number and a base (MAXPRINTABLE), this routine
+    prints the number into a malloc'ed string and returns it.  The length of
+    the string is specified by "digits".  The ascii characters of the printed
+-   number range from LOW_CHAR to HIGH_CHAR.  The string is LOW_CHAR filled,
+-   (e.g. if LOW_CHAR==0, HIGH_CHAR==1, digits==5, i=3, routine would return
+-   the malloc'ed string "00011"). */
+-static
++   number range from printable[0] to printable[MAXPRINTABLE].  The string is
++   printable[0] filled, (e.g. if printable[0]==0, printable[1]==1,
++   MAXPRINTABLE==2, digits==5, i=3, routine would return the malloc'ed
++   string "00011"). */
+ char *
+-gen_numstr(i, base, digits)
+-    int i, base, digits;
++gen_numstr(i, digits)
++    int i, digits;
+ {
+     char *str, *p;
+     int d;
+@@ -325,9 +326,9 @@
+     p = str + digits;
+     *p-- = '\0';			/* nul terminate string */
+     while (p >= str) {
+-	d = i % base;
+-	i /= base;
+-	*p-- = (char) ((int) LOW_CHAR + d);
++	d = i % MAXPRINTABLE;
++	i /= MAXPRINTABLE;
++	*p-- = printable[d];
+     }
+ 
+     return str;
+@@ -336,7 +337,6 @@
+ 
+ /*---------------------------------------------------------------------------*/
+ /* This routine generates the character-pixel colormap table. */
+-static
+ void
+ gen_cmap(chv, ncolors, maxval, map_rgb_names, rgbn, rgbn_max,
+ 	 cmap, charspp)
+@@ -348,16 +348,16 @@
+ 					 * == unsigned short) */
+     int map_rgb_names;			/* == 1 if mapping rgb values to rgb
+ 					 * mnemonics */
+-    rgb_names *rgbn;                    /* rgb mnemonics from rgb text file */
++    rgb_names rgbn[MAX_RGBNAMES];	/* rgb mnemonics from rgb text file */
+ int rgbn_max;				/* number of rgb mnemonics in table */
+ 
+ /* output: */
+-cixel_map *cmap;                        /* pixel strings and ascii rgb
++cixel_map cmap[MAXCOLORS];		/* pixel strings and ascii rgb
+ 					 * colors */
+ int *charspp;				/* characters per pixel */
+ 
+ {
+-    int i, j, base, cpp, mval, red, green, blue, r, g, b, matched;
++    int i, j, cpp, mval, red, green, blue, r, g, b, matched;
+     char *str;
+ 
+     /*
+@@ -365,9 +365,8 @@
+      * to be forced to link with libm.a, so using a division loop rather
+      * than a log function. 
+      */
+-    base = (int) HIGH_CHAR - (int) LOW_CHAR + 1;
+     for (cpp = 0, j = ncolors; j; cpp++)
+-	j /= base;
++	j /= MAXPRINTABLE;
+     *charspp = cpp;
+ 
+     /*
+@@ -392,10 +391,11 @@
+ 
+ 	/*
+ 	 * The character-pixel string is simply a printed number in base
+-	 * "base" where the digits of the number range from LOW_CHAR to
+-	 * HIGH_CHAR and the printed length of the number is "cpp". 
++	 * MAXPRINTABLE where the digits of the number range from
++	 * printable[0] .. printable[MAXPRINTABLE-1] and the printed length
++	 * of the number is "cpp". 
+ 	 */
+-	cmap[i].cixel = gen_numstr(i, base, cpp);
++	cmap[i].cixel = gen_numstr(i, cpp);
+ 
+ 	/* Fetch the rgb value of the current colormap entry. */
+ 	red = PPM_GETR(chv[i].color);

@@ -1,0 +1,168 @@
+--- pnm/Makefile.orig	Mon Jan 31 17:47:32 1994
++++ pnm/Makefile	Mon Jan 11 00:18:48 1999
+@@ -10,27 +10,29 @@
+ # implied warranty.
+ 
+ # Default values, usually overridden by top-level Makefile.
+-#CC =		cc
+-CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
++CC =		gcc
++#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
+ #CFLAGS =	-O
+-CFLAGS =	-g
++CFLAGS =	-O2
+ #CFLAGS =	-g -O
+ TIFFDEF =	-DLIBTIFF
+-TIFFINC =       -I../libtiff
+-TIFFLIB =       ../libtiff/libtiff.a
++TIFFINC =       -I$(PREFIX)/include
++TIFFLIB =       -L$(PREFIX)/lib -ltiff -ljpeg
+ TIFFBINARIES =  tifftopnm pnmtotiff
+ TIFFOBJECTS =   tifftopnm.o pnmtotiff.o
+-#LDFLAGS =	-s
+-LDFLAGS =	
+-INSTALLBINARIES =	/usr/new/pbm
++LDFLAGS =	-s
++#LDFLAGS =	
++INSTALLBINARIES =	$(PREFIX)/bin
+ INSTALLSCRIPTS =	$(INSTALLBINARIES)
+-INSTALLMANUALS1 =	/usr/man/man1
++INSTALLMANUALS1 =	$(PREFIX)/man/man1
+ SUFFIXMANUALS1 =	1
+-INSTALLMANUALS3 =	/usr/man/man3
++INSTALLMANUALS3 =	$(PREFIX)/man/man3
+ SUFFIXMANUALS3 =	3
+-INSTALLMANUALS5 =	/usr/man/man5
++INSTALLMANUALS5 =	$(PREFIX)/man/man5
+ SUFFIXMANUALS5 =	5
+-MANCP =			cp
++MANCP =			install -c -m 0644
++INSTALLLIBS =		$(PREFIX)/lib
++INSTALLDEFS =		$(PREFIX)/include
+ 
+ PPMDIR =	../ppm
+ INCLUDEPPM =	-I$(PPMDIR)
+@@ -54,48 +56,52 @@
+ INCLUDE =	-I.. $(INCLUDEPPM) $(INCLUDEPGM) $(INCLUDEPBM)
+ ALLCFLAGS =	$(CFLAGS) $(INCLUDE) $(TIFFDEF) $(TIFFINC)
+ LIBPNM =	libpnm.a
++DEFPNM =	pnm.h
+ 
+ PORTBINARIES =	fitstopnm giftopnm \
+ 		pnmalias pnmarith pnmcat pnmcomp pnmconvol pnmcrop \
+ 		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhistmap \
+ 		pnminvert pnmnoraw pnmpad pnmpaste \
+ 		pnmtile pnmtoddif pnmtofits pnmtops pnmtorast \
+-		pnmtosgi pnmtosir pnmtoxwd \
+-		rasttopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
++		pnmtorle pnmtosgi pnmtosir pnmtoxwd \
++		rasttopnm rletopnm sgitopnm sirtopnm xwdtopnm zeisstopnm \
++		pnmsmooth pnmhisteq
+ MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
+-BINARIES =      $(PORTBINARIES) $(MATHBINARIES) $(TIFFBINARIES)
+-SCRIPTS =	anytopnm pnmindex pnmmargin pnmsmooth pstopnm
++PNGBINARIES =	pngtopnm pnmtopng
++BINARIES =      $(PORTBINARIES) $(MATHBINARIES) $(PNGBINARIES) $(TIFFBINARIES)
++SCRIPTS =	anytopnm pnmindex pnmmargin pstopnm
+ 
+ PORTOBJECTS =	fitstopnm.o giftopnm.o \
+ 		pnmalias.o pnmarith.o pnmcat.o pnmcomp.o pnmconvol.o pnmcrop.o \
+ 		pnmcut.o pnmdepth.o pnmenlarge.o pnmfile.o pnmflip.o pnmhistmap.o \
+-		pnminvert.o pnmnoraw.o pnmpad.o pnmpaste.o \
++		pnmhisteq.o pnminvert.o pnmnoraw.o pnmpad.o pnmpaste.o\
+ 		pnmtile.o pnmtoddif.o pnmtofits.o pnmtops.o pnmtorast.o \
+ 		pnmtosgi.o pnmtosir.o pnmtoxwd.o \
+ 		rasttopnm.o sgitopnm.o sirtopnm.o xwdtopnm.o zeisstopnm.o \
++		pnmsmooth.o pnmhisteq.o \
+ 		pnmgamma.o pnmnlfilt.o pnmrotate.o pnmscale.o pnmshear.o
+-OBJECTS =	$(PORTOBJECTS) $(TIFFOBJECTS)
++OBJECTS =	$(PORTOBJECTS)
+ 
+ MANUALS1 =	$(BINARIES) $(SCRIPTS)
+ MANUALS3 =	libpnm
+ MANUALS5 =	pnm
+ 
+ 
+-#all:		binaries
+-all:		merge
+-#install:	install.bin
+-install:	install.merge
++all:		binaries
++#all:		merge
++install:	install.bin
++#install:	install.merge
+ 
+ 
+ binaries:	$(BINARIES)
+ 
+ install.bin:	binaries $(SCRIPTS)
+ 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
+-	cp $(BINARIES) $(INSTALLBINARIES)
++	install -c -s -m 0755 $(BINARIES) $(INSTALLBINARIES)
+ 	cd $(INSTALLSCRIPTS) ; rm -f $(SCRIPTS)
+-	cp $(SCRIPTS) $(INSTALLSCRIPTS)
+-	cd $(INSTALLSCRIPTS) ; chmod +x $(SCRIPTS)
+-
++	install -c -m 0755 $(SCRIPTS) $(INSTALLSCRIPTS)
++	install -c -m 0644 $(LIBPNM) $(INSTALLLIBS)
++	install -c -m 0644 $(DEFPNM) $(INSTALLDEFS)
+ 
+ merge:		pnmmerge
+ pnmmerge:	pnmmerge.c $(OBJECTS) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+@@ -128,16 +134,22 @@
+ 
+ 
+ # Rules for plain programs.
+-$(PORTBINARIES) $(TIFFBINARIES):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
+-	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB)
++$(PORTBINARIES):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++
++$(PNGBINARIES):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) -L${LOCALBASE}/lib -lpng -lz -lm
++
++$(TIFFBINARIES):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM) $(TIFFLIB) -lm -lz
+ 
+ # Rule for math-dependent programs.
+-$(MATHBINARIES):        pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) \
++$(MATHBINARIES):        $(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPNM) \
+ 			$(LIBPPM) $(LIBPGM) $(LIBPBM)
+ 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c -lm $(LIBPNM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+ 
+ # Rule for objects.
+-$(OBJECTS):	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM)
++$(OBJECTS):	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM)
+ 	$(CC) $(ALLCFLAGS) "-Dmain=$*_main" -c $*.c
+ 
+ # And libraries.
+@@ -153,15 +165,15 @@
+ 	ar rc $(LIBPNM) libpnm1.o libpnm2.o libpnm3.o libpnm4.o
+ 	-ranlib $(LIBPNM)
+ 
+-libpnm1.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm1.c
++libpnm1.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm1.c
+ 	$(CC) $(ALLCFLAGS) -c libpnm1.c
+-libpnm2.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm2.c $(DEFLIBPPM) \
++libpnm2.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm2.c $(DEFLIBPPM) \
+ 		$(DEFLIBPGM) $(DEFLIBPBM)
+ 	$(CC) $(ALLCFLAGS) -c libpnm2.c
+-libpnm3.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm3.c $(DEFLIBPPM) \
++libpnm3.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) libpnm3.c $(DEFLIBPPM) \
+ 		$(DEFLIBPGM) $(DEFLIBPBM)
+ 	$(CC) $(ALLCFLAGS) -c libpnm3.c
+-libpnm4.o:	pnm.h $(DEFPPM) $(DEFPGM) $(DEFPBM) rast.h libpnm4.c
++libpnm4.o:	$(DEFPNM) $(DEFPPM) $(DEFPGM) $(DEFPBM) rast.h libpnm4.c
+ 	$(CC) $(ALLCFLAGS) -c libpnm4.c
+ 
+ # Other dependencies.
+@@ -202,6 +214,8 @@
+ tifftopnm tifftopnm.o:		tifftopnm.c
+ xwdtopnm xwdtopnm.o:		xwdtopnm.c x10wd.h x11wd.h
+ zeisstopnm zeisstopnm.o:	zeisstopnm.c
++pnmhisteq pnmhisteq.o:		pnmhisteq.c
++pnmsmooth pnmsmooth.o:          pnmsmooth.c
+ 
+ clean:
+-	-rm -f *.o *.a *.cat *~ core $(BINARIES) pnmmerge
++	-rm -f *.o *.a *.cat *~ core *.core $(BINARIES) pnmmerge

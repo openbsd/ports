@@ -1,0 +1,122 @@
+--- ppm/Makefile.orig	Mon Jan 31 17:44:34 1994
++++ ppm/Makefile	Mon Jan 11 00:18:52 1999
+@@ -10,22 +10,24 @@
+ # implied warranty.
+ 
+ # Default values, usually overridden by top-level Makefile.
+-#CC =		cc
+-CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
++CC =		gcc
++#CC =		gcc -ansi -pedantic -fcombine-regs -fpcc-struct-return
+ #CFLAGS =	-O
+-CFLAGS =	-g
++CFLAGS =	-O2
+ #CFLAGS =	-g -O
+-#LDFLAGS =	-s
+-LDFLAGS =	
+-INSTALLBINARIES =	/usr/new/pbm
++LDFLAGS =	-s
++#LDFLAGS =	
++INSTALLBINARIES =	$(PREFIX)/bin
+ INSTALLSCRIPTS =	$(INSTALLBINARIES)
+-INSTALLMANUALS1 =	/usr/man/mann
++INSTALLMANUALS1 =	$(PREFIX)/man/man1
+ SUFFIXMANUALS1 =	1
+-INSTALLMANUALS3 =	/usr/man/mann
++INSTALLMANUALS3 =	$(PREFIX)/man/man3
+ SUFFIXMANUALS3 =	3
+-INSTALLMANUALS5 =	/usr/man/mann
++INSTALLMANUALS5 =	$(PREFIX)/man/man5
+ SUFFIXMANUALS5 =	5
+-MANCP =			cp
++MANCP =			install -c -m 0644
++INSTALLLIBS =		$(PREFIX)/lib
++INSTALLDEFS =		$(PREFIX)/include
+ 
+ PGMDIR =	../pgm
+ INCLUDEPGM =	-I$(PGMDIR)
+@@ -43,6 +45,7 @@
+ INCLUDE =	-I.. $(INCLUDEPGM) $(INCLUDEPBM)
+ ALLCFLAGS =	$(CFLAGS) $(INCLUDE)
+ LIBPPM =	libppm.a
++DEFPPM =	ppm.h
+ 
+ PORTBINARIES =	bmptoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
+ 		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
+@@ -85,21 +88,21 @@
+ MANUALS5 =	ppm
+ 
+ 
+-#all:		binaries
+-all:		merge
+-#install:	install.bin
+-install:	install.merge
++all:		binaries
++#all:		merge
++install:	install.bin
++#install:	install.merge
+ 
+ 
+ binaries:	$(BINARIES)
+ 
+ install.bin:	binaries $(SCRIPTS)
+ 	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
+-	cp $(BINARIES) $(INSTALLBINARIES)
++	install -c -s -m 0755 $(BINARIES) $(INSTALLBINARIES)
+ 	cd $(INSTALLSCRIPTS) ; rm -f $(SCRIPTS)
+-	cp $(SCRIPTS) $(INSTALLSCRIPTS)
+-	cd $(INSTALLSCRIPTS) ; chmod +x $(SCRIPTS)
+-
++	install -c -m 0755 $(SCRIPTS) $(INSTALLSCRIPTS)
++	install -c -m 0644 $(LIBPPM) $(INSTALLLIBS)
++	install -c -m 0644 $(DEFPPM) $(INSTALLDEFS)
+ 
+ merge:		ppmmerge
+ ppmmerge:	ppmmerge.c $(OBJECTS) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+@@ -132,15 +135,15 @@
+ 
+ 
+ # Rule for plain programs.
+-$(PORTBINARIES):	ppm.h $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++$(PORTBINARIES):	$(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+ 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c $(LIBPPM) $(LIBPGM) $(LIBPBM)
+ 
+ # Rule for math-dependent programs.
+-$(MATHBINARIES):	ppm.h $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
++$(MATHBINARIES):	$(DEFPPM) $(DEFPGM) $(DEFPBM) $(LIBPPM) $(LIBPGM) $(LIBPBM)
+ 	$(CC) $(ALLCFLAGS) $(LDFLAGS) -o $@ $@.c -lm $(LIBPPM) $(LIBPGM) $(LIBPBM)
+ 
+ # Rule for objects.
+-$(OBJECTS):	ppm.h $(DEFPGM) $(DEFPBM)
++$(OBJECTS):	$(DEFPPM) $(DEFPGM) $(DEFPBM)
+ 	$(CC) $(ALLCFLAGS) "-Dmain=$*_main" -c $*.c
+ 
+ # And libraries.
+@@ -155,16 +158,16 @@
+ 	libppm5.o bitio.o
+ 	-ranlib $(LIBPPM)
+ 
+-libppm1.o:	ppm.h $(DEFPGM) $(DEFPBM) libppm.h libppm1.c
++libppm1.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) libppm.h libppm1.c
+ 	$(CC) $(ALLCFLAGS) -c libppm1.c
+-libppm2.o:	ppm.h $(DEFPGM) $(DEFPBM) libppm.h libppm2.c $(DEFLIBPGM) \
++libppm2.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) libppm.h libppm2.c $(DEFLIBPGM) \
+ 		$(DEFLIBPBM)
+ 	$(CC) $(ALLCFLAGS) -c libppm2.c
+-libppm3.o:	ppm.h $(DEFPGM) $(DEFPBM) ppmcmap.h libppm.h libppm3.c
++libppm3.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) ppmcmap.h libppm.h libppm3.c
+ 	$(CC) $(ALLCFLAGS) -c libppm3.c
+-libppm4.o:	ppm.h $(DEFPGM) $(DEFPBM) libppm4.c
++libppm4.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) libppm4.c
+ 	$(CC) $(ALLCFLAGS) -c libppm4.c
+-libppm5.o:	ppm.h $(DEFPGM) $(DEFPBM) ppmdraw.h libppm5.c
++libppm5.o:	$(DEFPPM) $(DEFPGM) $(DEFPBM) ppmdraw.h libppm5.c
+ 	$(CC) $(ALLCFLAGS) -c libppm5.c
+ bitio.o:	../pbmplus.h bitio.c
+ 	$(CC) $(ALLCFLAGS) -c bitio.c
+@@ -235,4 +238,4 @@
+ yuvsplittoppm yuvsplittoppm.o:	yuvsplittoppm.c
+ 
+ clean:
+-	-rm -f *.o *.a *.cat *~ core $(BINARIES) ppmmerge
++	-rm -f *.o *.a *.cat *~ core *.core $(BINARIES) ppmmerge
