@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2001/01/03 22:35:35 danh Exp $
+# $OpenBSD: Makefile,v 1.54 2001/01/04 02:10:00 kevlo Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -35,6 +35,7 @@
      SUBDIR += parse
      SUBDIR += p5-Crypt-SSLeay
      SUBDIR += p5-Digest-MD5
+     SUBDIR += p5-MD5
      SUBDIR += pgp
      SUBDIR += pgp5
      SUBDIR += pgplib
