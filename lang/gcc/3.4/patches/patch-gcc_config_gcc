@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
---- gcc/config.gcc.orig	Mon Sep 13 14:27:59 2004
-+++ gcc/config.gcc	Mon Sep 13 14:31:26 2004
+$OpenBSD: patch-gcc_config_gcc,v 1.2 2005/02/27 12:15:00 espie Exp $
+--- gcc/config.gcc.orig	Wed Sep  8 17:16:10 2004
++++ gcc/config.gcc	Sun Feb 27 13:04:14 2005
 @@ -961,11 +961,11 @@ x86_64-*-netbsd*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h netbsd.h netbsd-elf.h i386/x86-64.h i386/netbsd64.h"
  	;;
@@ -18,3 +18,13 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2004/09/23 22:13:31 espie Exp $
  	;;
  i[34567]86-*-coff*)
  	tm_file="${tm_file} i386/unix.h i386/bsd.h i386/gas.h dbxcoff.h i386/i386-coff.h"
+@@ -1995,7 +1995,8 @@ sparc-*-netbsdelf*)
+ 	;;
+ sparc-*-openbsd*)
+ 	tm_defines=OBSD_OLD_GAS
+-	tm_file="sparc/sparc.h openbsd.h sparc/openbsd.h"
++	tm_file="sparc/sparc.h elfos.h svr4.h sparc/sysv4.h ${tm_file}"
++	tm_file="${tm_file} exec-stack.h"
+ 	# needed to unconfuse gdb
+ 	tmake_file="t-libc-ok t-openbsd sparc/t-openbsd"
+ 	# we need collect2 until our bug is fixed...
