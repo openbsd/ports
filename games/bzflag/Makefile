@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/25 02:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2004/10/21 05:39:35 jolan Exp $
 
-BROKEN=		"doesn't respect CXXFLAGS, problems loading data files"
+BROKEN=		"doesn't respect LDFLAGS, problems loading data files"
 
 COMMENT=	"graphical multiplayer 3-d tank war game"
-DISTNAME=	bzflag-1.10.4.20040125
-PKGNAME=	bzflag-1.10.4
+DISTNAME=	bzflag-1.10.8.20041007
+PKGNAME=	bzflag-1.10.8
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${LOCALBASE}/include"
 
 post-extract:
 	@sed -e 's|@LINUX_TRUE@||g ; s|@LINUX_FALSE@|#|g' \
