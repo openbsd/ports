@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/29 19:49:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2003/02/25 20:32:49 pvalchev Exp $
 
 COMMENT=	"free Norton Commander Clone with many useful features"
 
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE=	gnu
 
-BROKEN=			"final auditing. comming soon"
+BROKEN=			"final auditing on the way"
 
 .include <bsd.port.mk>
