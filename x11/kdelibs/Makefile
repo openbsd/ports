@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/06/02 01:27:26 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/06/10 15:02:47 brad Exp $
 
 DISTNAME=	kdelibs-1.1.1
 CATEGORIES=	x11
@@ -15,6 +15,10 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		png.1.3:${PORTSDIR}/graphics/png \
 		tiff.3.4:${PORTSDIR}/graphics/tiff34
+
+.if ${MACHINE_ARCH} == "i386"
+BROKEN=		"Currently doesn't build on i386 due to gas bug"
+.endif
 
 # Internal Compiler errors
 .if ${MACHINE_ARCH} == "sparc"
