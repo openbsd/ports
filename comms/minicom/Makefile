@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2002/05/13 02:36:24 form Exp $
+# $OpenBSD: Makefile,v 1.36 2002/06/13 03:26:44 form Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -6,9 +6,10 @@ DISTNAME=		${PKGNAME}.src
 PKGNAME=		minicom-2.00.0
 CATEGORIES=		comms
 NEED_VERSION=		1.528
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=apps/serialcomm/dialout/}
+MASTER_SITES=		${MASTER_SITE_BACKUP} \
+			${MASTER_SITE_SUNSITE:=apps/serialcomm/dialout/}
 
-HOMEPAGE=		http://www.pp.clinet.fi/~walker/minicom.html
+HOMEPAGE=		http://www.netsonic.fi/~walker/minicom.html
 
 MODULES=		gettext
 RUN_DEPENDS=		::comms/kermit \
