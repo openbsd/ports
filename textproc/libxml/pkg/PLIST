@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/08/08 18:55:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/09/29 18:34:53 brad Exp $
 bin/xml-config
 bin/xmllint
 include/libxml/HTMLparser.h
@@ -24,9 +24,12 @@ lib/libxml.a
 lib/libxml.la
 %%SHARED%%
 lib/xmlConf.sh
+man/man1/xmllint.1
+man/man4/libxml.4
 share/gnome-xml/html/gnome-xml/DOM.gif
 share/gnome-xml/html/gnome-xml/FAQ.html
 share/gnome-xml/html/gnome-xml/book1.html
+share/gnome-xml/html/gnome-xml/encoding.html
 share/gnome-xml/html/gnome-xml/gnome-xml-debugxml.html
 share/gnome-xml/html/gnome-xml/gnome-xml-encoding.html
 share/gnome-xml/html/gnome-xml/gnome-xml-entities.html
@@ -53,4 +56,4 @@ share/gnome-xml/html/gnome-xml/xml.html
 @dirrm share/gnome-xml/html/gnome-xml
 @dirrm share/gnome-xml/html
 @dirrm share/gnome-xml
-@dirrm include/gnome-xml
+@dirrm include/libxml
