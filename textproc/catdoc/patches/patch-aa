@@ -1,0 +1,20 @@
+--- src/catdoc.h.orig	Fri Sep 11 07:32:23 1998
++++ src/catdoc.h	Sun Oct 31 04:34:19 1999
+@@ -6,7 +6,7 @@
+  * User customization
+  *
+  */
+-#ifdef __unix
++#ifdef __unix__
+ #ifndef USERC
+ #define USERRC ".catdocrc"
+ #endif
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ #define CHARSET_EXT ".txt"
+-#ifdef __unix
++#ifdef __unix__
+ #ifndef TARGET_CHARSET
+ #define TARGET_CHARSET "koi8-r"
+ #endif
