@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/07/24 23:27:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2000/08/15 13:20:14 naddy Exp $
 
-DISTNAME=	xterm-140
+DISTNAME=	xterm-141
 CATEGORIES=	x11
 NEED_VERSION=	1.312
 
