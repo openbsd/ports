@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.4 2002/05/27 16:58:29 espie Exp $
+$OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.5 2002/08/30 08:33:14 espie Exp $
 --- gcc/config/i386/openbsd.h.orig	Wed Oct 17 03:39:47 2001
-+++ gcc/config/i386/openbsd.h	Fri May 17 02:23:03 2002
-@@ -95,26 +95,11 @@ Boston, MA 02111-1307, USA.  */
++++ gcc/config/i386/openbsd.h	Thu Aug 29 20:40:53 2002
+@@ -95,26 +95,32 @@ Boston, MA 02111-1307, USA.  */
  
  #undef ASM_PREFERRED_EH_DATA_FORMAT
  
@@ -30,3 +30,24 @@ $OpenBSD: patch-gcc_config_i386_openbsd_h,v 1.4 2002/05/27 16:58:29 espie Exp $
  
 +/* OpenBSD gas currently does not support quad, so do not use it.  */
 +#undef ASM_QUAD
++
++#undef FINALIZE_TRAMPOLINE
++#define FINALIZE_TRAMPOLINE(TRAMP) \
++  emit_library_call(gen_rtx_SYMBOL_REF (Pmode, "__enable_execute_stack"), \
++		    0, VOIDmode, 1, memory_address (SImode, (TRAMP)), Pmode)
++
++#define TRANSFER_FROM_TRAMPOLINE					\
++extern void __enable_execute_stack (void *);				\
++void									\
++__enable_execute_stack (addr)						\
++     void *addr;							\
++{									\
++  long size = getpagesize ();						\
++  long mask = ~(size-1);						\
++  char *page = (char *) (((long) addr) & mask); 			\
++  char *end  = (char *) ((((long) (addr + TRAMPOLINE_SIZE)) & mask) + size); \
++								      \
++  /* 7 is PROT_READ | PROT_WRITE | PROT_EXEC */ 			\
++  if (mprotect (page, end - page, 7) < 0)				\
++    perror ("mprotect of trampoline code");				\
++}

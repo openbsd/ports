@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_config_cpu_m68k_bits_atomicity_h,v 1.2 2002/06/09 00:35:38 espie Exp $
+$OpenBSD: patch-libstdc++-v3_config_cpu_m68k_bits_atomicity_h,v 1.3 2002/08/30 08:33:14 espie Exp $
 --- libstdc++-v3/config/cpu/m68k/bits/atomicity.h.orig	Thu Feb 14 19:57:38 2002
-+++ libstdc++-v3/config/cpu/m68k/bits/atomicity.h	Sat Jun  8 14:43:40 2002
++++ libstdc++-v3/config/cpu/m68k/bits/atomicity.h	Thu Aug 29 20:55:10 2002
 @@ -45,7 +45,7 @@ __exchange_and_add (volatile _Atomic_wor
    __asm__ __volatile__ ("1: move%.l %0,%1\n\t"
  			"add%.l %2,%1\n\t"
