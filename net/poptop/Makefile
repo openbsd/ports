@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2004/11/11 18:15:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/11/14 21:33:22 espie Exp $
 
 COMMENT=		"PPTP Server"
 
-VERSION=		1.1.4-b4
-PKGNAME=		poptop-${VERSION:S/-b/.b/}p1
-DISTNAME=		pptpd-${VERSION}
+PKGNAME=		poptop-1.1.4.b4p1
+DISTNAME=		pptpd-1.1.4-b4
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.poptop.org/
@@ -22,7 +21,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=poptop/}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-bsdppp --with-pppd-ip-alloc
 
-WRKDIST=		${WRKDIR}/${PKGNAME:C/\.b.$//}
+WRKDIST=		${WRKDIR}/poptop-1.1.4
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/poptop
