@@ -1,10 +1,30 @@
---- environ.c.orig	Sun Nov 16 12:19:05 1997
-+++ environ.c	Sun Nov 16 12:21:17 1997
-@@ -436,7 +436,6 @@
- #endif
- 
- extern struct tm *localtime();
--extern time_t time();
- extern char   *strcpy();
- extern voidp  *malloc();
- 
+*** environ.c.orig	Tue Nov 25 15:13:34 1997
+--- environ.c	Tue Nov 25 15:19:24 1997
+***************
+*** 431,442 ****
+  
+  #include <time.h>
+  
+  #ifndef time_t
+  #define time_t long
+  #endif
+  
+  extern struct tm *localtime();
+- extern time_t time();
+  extern char   *strcpy();
+  extern voidp  *malloc();
+  
+--- 431,443 ----
+  
+  #include <time.h>
+  
++ #if !(defined(__OpenBSD__))
+  #ifndef time_t
+  #define time_t long
+  #endif
++ #endif
+  
+  extern struct tm *localtime();
+  extern char   *strcpy();
+  extern voidp  *malloc();
+  
