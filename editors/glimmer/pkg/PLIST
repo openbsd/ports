@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/06/13 12:37:07 nino Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:00:13 naddy Exp $
 bin/glimmer
 bin/glimmerout
 @comment share/glimmer/docs/AUTHORS
@@ -66,22 +66,22 @@ share/locale/sv/LC_MESSAGES/glimmer.mo
 share/pixmaps/glimmer-icon.png
 share/pixmaps/glimmer-splash.png
 share/pixmaps/glimmer-title.png
-@comment @dirrm share/pixmaps
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale
+@dirrm share/pixmaps
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale
 @dirrm share/gnome/help/glimmer/C
 @dirrm share/gnome/help/glimmer
-@comment @dirrm share/gnome/help
-@comment @dirrm share/gnome/apps/Development
-@comment @dirrm share/gnome/apps
-@comment @dirrm share/gnome
+@dirrm share/gnome/help
+@dirrm share/gnome/apps/Development
+@dirrm share/gnome/apps
+@dirrm share/gnome
 @dirrm share/glimmer/scripts
 @dirrm share/glimmer/languages
 @comment @dirrm share/glimmer/docs

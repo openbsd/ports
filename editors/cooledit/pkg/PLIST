@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/08/01 19:13:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/15 17:00:13 naddy Exp $
 bin/coolbrowse
 bin/cooledit
 bin/cooledit-gdb
@@ -89,7 +89,39 @@ share/locale/ru/LC_MESSAGES/cooledit.mo
 share/locale/sl/LC_MESSAGES/cooledit.mo
 share/locale/sv/LC_MESSAGES/cooledit.mo
 %%SHARED%%
-@comment @dirrm share/locale
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
 @dirrm share/coolicon
 @dirrm share/cooledit/syntax
 @dirrm share/cooledit

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/03 20:51:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 17:01:42 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gtypist.info
 bin/gtypist
 bin/typefortune
@@ -36,20 +36,20 @@ share/locale/fi/LC_MESSAGES/gtypist.mo
 share/locale/fr/LC_MESSAGES/gtypist.mo
 share/locale/ru/LC_MESSAGES/gtypist.mo
 share/locale/zh_TW/LC_MESSAGES/gtypist.mo
-@comment @dirrm share/locale/zh_TW/LC_MESSAGES
-@comment @dirrm share/locale/zh_TW
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/fi
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/cs
-@comment @dirrm share/locale
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
 @dirrm share/gtypist
 @exec install-info --info-dir=%D/info %D/info/gtypist.info
