@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2002/04/15 06:39:41 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2002/04/19 00:13:56 espie Exp $
 NEED_VERSION+=	1.504
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
@@ -14,8 +14,6 @@ MODULES?=	qt2
 PATCH_LIST?=	${PORTSDIR}/x11/kde/libs2/patches/p-* patch-*
 KDE=lib/kde2
 .elif ${VERSION:M3*}
-# our linker is insane, at least on some arches
-VMEM_WARNING?=Yes
 MODULES?=	qt3
 PATCH_LIST?=	${PORTSDIR}/x11/kde/arts3/patches/p-* patch-*
 KDE=lib/kde3
