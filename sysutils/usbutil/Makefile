@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/28 19:53:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2004/06/19 21:20:10 jakob Exp $
 
 COMMENT=	"USB developer utilities"
 
@@ -6,8 +6,6 @@ DISTNAME=	usbutil-0.5
 CATEGORIES=	sysutils
 
 MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
