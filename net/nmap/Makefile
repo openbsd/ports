@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2004/05/16 08:38:12 jolan Exp $
+# $OpenBSD: Makefile,v 1.50 2004/06/20 01:25:42 jolan Exp $
 
 COMMENT=	"scan ports and fingerprint stack of network hosts"
 
@@ -22,11 +22,6 @@ CONFIGURE_ARGS=		--with-libpcap=/usr --with-libpcre=${LOCALBASE}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/nbase \
 				${WRKSRC}/nsock/src \
 				${WRKSRC}/libpcap-possiblymodified
-
-# XXX workaround linking issue on hppa
-.if ${MACHINE_ARCH:Mhppa}
-PATCH_LIST=	patch-* hppa-*
-.endif
 
 FLAVORS=	no_x11
 FLAVOR?=	
