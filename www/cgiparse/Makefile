@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/29 01:30:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2003/07/07 20:46:59 pvalchev Exp $
 
 COMMENT=	"C library to parse CGI Forms"
 
@@ -26,3 +26,8 @@ PLIST=${PKGDIR}/PLIST.mips
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
+
+.if ${NO_SHARED_LIBS:L:Myes}
+ALL_TARGET=	allstatic
+INSTALL_TARGET=	installstatic
+.endif
