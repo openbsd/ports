@@ -3,7 +3,7 @@
 # Date created:         24 Nov 1997
 # Whom:                 angelos
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/24 19:49:51 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1997/11/27 22:22:03 angelos Exp $
 #
 
 DISTNAME=       unzip-5.3.1
@@ -15,7 +15,7 @@ MAINTAINER=     angelos@openbsd.org
 
 NO_WRKSUBDIR=   YES
 MAKEFILE=       unix/Makefile
-ALL_TARGET=     openbsd
+ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
 MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
