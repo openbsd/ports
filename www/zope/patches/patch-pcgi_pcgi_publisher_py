@@ -1,0 +1,18 @@
+$OpenBSD: patch-pcgi_pcgi_publisher_py,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+
+	This patch corrects lax permissions on PCGI's socket.
+
+	It has been submitted to the Zope Collector:
+	http://classic.zope.org:8080/Collector/2407/view
+
+--- pcgi/pcgi_publisher.py.orig	Thu Sep  7 12:40:07 2000
++++ pcgi/pcgi_publisher.py	Sun Jul 15 19:23:52 2001
+@@ -209,7 +209,7 @@ class PCGIPublisher:
+                 self.sock.bind(self.socketFile)
+             except socket.error:
+                 return self.fatalError("error binding to socket: %s" % self.socketFile)
+-            try: os.chmod(self.socketFile, 0777)
++            try: os.chmod(self.socketFile, 0600)
+             except os.error: pass
+ 
+     def initPrincipia(self):

@@ -1,0 +1,17 @@
+$OpenBSD: patch-w_pcgi_py,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+
+        We don't need to make a resource file; that's handled by
+        zope-instance.
+
+--- w_pcgi.py.orig	Thu Jul 22 18:00:17 1999
++++ w_pcgi.py	Sat Jul 28 07:14:47 2001
+@@ -102,9 +102,6 @@ def main(me):
+     home=setup(me)
+     
+     import build_pcgi
+-    user=group=''
+-    pcgi=os.path.join(home, 'Zope.cgi')
+-    import make_resource; make_resource.main(home, pcgi, user, group)
+     os.chdir(home) # Just making sure
+     import wo_pcgi; wo_pcgi.main(me)
+ 

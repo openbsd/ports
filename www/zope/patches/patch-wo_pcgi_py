@@ -1,0 +1,20 @@
+$OpenBSD: patch-wo_pcgi_py,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+
+        We don't need to build Data.fs, start/stop, or inituser;
+        these are handled by zope-instance.
+
+--- wo_pcgi.py.orig	Thu Apr 12 12:56:19 2001
++++ wo_pcgi.py	Sat Jul 28 07:15:03 2001
+@@ -103,12 +103,6 @@ def main(me):
+     walkandscrub.walkandscrub(home)
+     import compilezpy
+     import build_extensions
+-    user=group=''
+-    import default_content; default_content.main(home, user, group)
+-    
+-    pcgi=os.path.join(home, 'Zope.cgi')
+-    import make_start; make_start.sh(home, user, group)
+-    import zpasswd; zpasswd.write_inituser(home, user, group)
+ 
+     print '-'*78
+     print

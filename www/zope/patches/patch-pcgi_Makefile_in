@@ -1,0 +1,19 @@
+$OpenBSD: patch-pcgi_Makefile_in,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+
+	This patch makes the PCGI build respect CFLAGS.
+
+	It has been submitted to the Zope Collector:
+	http://classic.zope.org:8080/Collector/2406/view
+
+	It will be fixed in 2.4.1.
+
+--- pcgi/Makefile.in.orig	Mon Oct 19 16:04:37 1998
++++ pcgi/Makefile.in	Sun Jul 15 14:58:24 2001
+@@ -13,6 +13,7 @@ VERSION=	@VERSION@
+ MACHDEP=	@MACHDEP@
+ 
+ CC = @CC@
++CFLAGS = @CFLAGS@
+ 
+ DEFS= @DEFS@ -DUNIX -DOPT_NO_STDERR -DCLOSE_FDS
+ 

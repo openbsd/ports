@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_WEBSERVER_txt,v 1.1.1.1 2001/08/05 20:44:41 matt Exp $
+--- doc/WEBSERVER.txt.orig	Wed Jan 10 14:10:33 2001
++++ doc/WEBSERVER.txt	Sun Jul 15 19:43:10 2001
+@@ -68,6 +68,11 @@ Using Zope in multi-threaded mode with Z
+ 
+   The installation process should create a 'Zope.cgi' PCGI file. Copy
+   the 'Zope.cgi' file to your web server's 'cgi-bin' directory.
++  Since the socket file that PCGI uses is readable and writable
++  only by the owner of your Zope installation, you will need to
++  make Zope.cgi executable only by the Zope installation owner and
++  the group the webserver runs under, and setuid to the owner of
++  the Zope installation.
+   
+   On Unix you can also create a symbolic link to 'Zope.cgi' from your
+   cgi-bin directory. For example::
