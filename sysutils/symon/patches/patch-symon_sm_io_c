@@ -1,0 +1,12 @@
+$OpenBSD: patch-symon_sm_io_c,v 1.1 2003/03/23 19:05:22 henning Exp $
+--- symon/sm_io.c.orig	Sun Mar 23 19:52:11 2003
++++ symon/sm_io.c	Sun Mar 23 19:52:52 2003
+@@ -55,7 +55,7 @@ static struct diskstats *io_dkstats = NU
+ static char **io_dknames = NULL;
+ static int io_dks = 0;
+ static int io_maxdks = 0;
+-static int io_maxstr = 0;
++static size_t io_maxstr = 0;
+ 
+ void 
+ gets_io()
