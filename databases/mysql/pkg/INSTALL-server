@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL-server,v 1.8 2003/08/27 00:14:49 brad Exp $
+# $OpenBSD: INSTALL-server,v 1.9 2004/06/23 04:04:05 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -51,8 +51,6 @@ do_database_install()
   $PREFIX/bin/mysql_install_db
 }
 
-# Verify/process the command
-#
 case $2 in 
     PRE-INSTALL)
 	if [ -d $DB_DIR ]; then
