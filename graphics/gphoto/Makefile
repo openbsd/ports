@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:50 pvalchev Exp $
 
 COMMENT=	"universal digital camera picture control tool"
 
@@ -10,8 +10,6 @@ HOMEPAGE=	http://www.gphoto.org/
 
 LIB_DEPENDS=	Imlib.19,gdk_imlib::graphics/imlib \
 		Magick.5::graphics/ImageMagick
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/28 17:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"Back Orifice Unix client by the cDc"
 
@@ -9,8 +9,6 @@ CATEGORIES=     security
 
 MASTER_SITES=	http://orifice.rotten.com/cDc/ \
 		http://www.cultdeadcow.com/tools/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"NFS auditing tool"
 
@@ -9,8 +9,6 @@ CATEGORIES=	security
 WRKDIST=	${WRKDIR}/nfs
 
 MASTER_SITES=	ftp://ftp.cs.vu.nl/pub/leendert/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes

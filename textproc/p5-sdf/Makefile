@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"simple document format"
 
@@ -9,8 +9,6 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
 
 HOMEPAGE=	http://www.mincom.com/mtr/sdf/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/03/01 03:38:07 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"Microsoft LANMAN & NT password sniffer/cracker"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 DISTFILES=	lcsrc.zip readsmb.c
 EXTRACT_ONLY=	lcsrc.zip
 DIST_SUBDIR=	l0phtcrack
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

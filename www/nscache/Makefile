@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/12/29 15:03:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"Netscape cache browser"
 
@@ -6,8 +6,6 @@ DISTNAME=	nscache-0.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nscache/ }
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	yes

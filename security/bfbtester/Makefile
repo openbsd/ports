@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"brute force binary tester"
 
@@ -7,8 +7,6 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bfbtester/}
 
 HOMEPAGE=	http://bfbtester.sourceforge.net/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

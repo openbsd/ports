@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/02/03 06:38:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"IP stack integrity checker"
 
@@ -12,8 +12,6 @@ HOMEPAGE=	http://www.packetfactory.net/projects/ISIC/
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	net::net/libnet
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 19:37:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2004/01/25 21:10:50 pvalchev Exp $
 
 COMMENT=	"ODBC 2.x driver manager"
 
@@ -8,8 +8,6 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/dist/
 
 HOMEPAGE=	http://www.iodbc.org/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	yes

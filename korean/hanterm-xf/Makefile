@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/03/31 13:57:49 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/25 21:10:50 pvalchev Exp $
 
 COMMENT=	"XFree86-based xterm with Korean language support"
 
@@ -7,8 +7,6 @@ CATEGORIES=	korean x11
 
 MASTER_SITES=	http://www.hanterm.org/download/hanterm-xf/
 HOMEPAGE=	http://www.hanterm.org/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes

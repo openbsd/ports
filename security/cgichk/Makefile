@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/29 20:31:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"scans webservers for vulnerable CGI programs"
 
@@ -10,8 +10,6 @@ EXTRACT_SUFX=	.tgz
 CATEGORIES=	security
 
 MASTER_SITES=	${MASTER_SITE_BACKUP}
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

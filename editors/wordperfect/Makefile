@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/10/26 23:49:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2004/01/25 21:10:50 pvalchev Exp $
 
 COMMENT=	"graphical word processor ported from Windows"
 
@@ -8,8 +8,6 @@ FAKE=		No
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 BROKEN=		"Home page does not exist anymore.  Alternate 400mb iso exists."
 

@@ -1,13 +1,11 @@
 # $FreeBSD: ports/x11-wm/tvtwm/Makefile,v 1.17 1999/08/31 06:53:15 mharo Exp $
-# $OpenBSD: Makefile,v 1.16 2003/10/08 17:13:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2004/01/25 21:10:52 pvalchev Exp $
 
 COMMENT=	"twm with a virtual desktop"
 
 DISTNAME=	tvtwm.pl11
 PKGNAME=	tvtwm-0pl11
 CATEGORIES=	x11
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 # BSD-like/badly worded
 PERMIT_PACKAGE_CDROM=	Yes

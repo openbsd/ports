@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"NetBus client"
 
 DISTNAME=       linux-netbus-client-v0.4
 PKGNAME=	lxnb-0.4
 CATEGORIES=	security
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"no obvious license"
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/28 17:35:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2004/01/25 21:10:51 pvalchev Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
@@ -9,8 +9,6 @@ MASTER_SITES=	http://www.securitysoftwaretech.com/antisniff/dist/
 HOMEPAGE=	http://www.securitysoftwaretech.com/antisniff/
 
 DISTNAME=	anti_sniff_researchv1-1-2
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"commercial software"
 PERMIT_PACKAGE_FTP=	"commercial software"

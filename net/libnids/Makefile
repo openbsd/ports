@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/10/30 00:46:47 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2004/01/25 21:10:50 pvalchev Exp $
 
 COMMENT=	"network monitoring library with TCP/IP reassembly"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.packetfactory.net/projects/libnids/dist/
 HOMEPAGE=	http://www.packetfactory.net/projects/libnids/
 
 LIB_DEPENDS=	net::net/libnet
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

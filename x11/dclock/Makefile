@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/10/08 17:13:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/25 21:10:51 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.9 1999/08/31 06:52:30 mharo Exp $
 
 COMMENT=	"digital clock with optional military time and alarm"
@@ -9,8 +9,6 @@ DISTNAME=	dclock
 EXTRACT_SUFX=	.shar.Z
 
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-
-MAINTAINER=	Dug Song <dugsong@monkey.org>
 
 PERMIT_PACKAGE_CDROM=	"no license"
 PERMIT_PACKAGE_FTP=	"no license"
