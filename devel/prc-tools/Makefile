@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/06 00:13:30 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/17 14:00:18 pvalchev Exp $
 
 COMMENT=	"PalmPilot(tm) development environment"
 
@@ -61,7 +61,7 @@ pre-build:
 
 # after we apply freebsd patches, apply prc-tool's patches to gcc/gdb/...
 post-patch:
-		(cd ${WRKSRC} ; make patch)
+		(cd ${WRKSRC} ; ${MAKE_PROGRAM} patch)
 
 # the info files are redundant
 post-install:
