@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_autoconf_altoptions_m4,v 1.1 2003/05/20 13:52:05 wilfried Exp $
+--- build/autoconf/altoptions.m4.orig	Mon Oct 29 23:59:28 2001
++++ build/autoconf/altoptions.m4	Tue May 20 15:35:53 2003
+@@ -127,14 +127,3 @@ echo "
+         [$3]
+     fi
+ ])
+-
+-dnl MOZ_READ_MYCONFIG() - Read in 'myconfig.sh' file
+-AC_DEFUN(MOZ_READ_MOZCONFIG,
+-[AC_REQUIRE([AC_INIT_BINSH])dnl
+-# Read in '.mozconfig' script to set the initial options.
+-# See the mozconfig2configure script for more details.
+-_AUTOCONF_TOOLS_DIR=`dirname [$]0`/[$1]/build/autoconf
+-. $_AUTOCONF_TOOLS_DIR/mozconfig2configure])
+-
+-dnl This gets inserted at the top of the configure script
+-MOZ_READ_MOZCONFIG(MOZ_TOPSRCDIR)
