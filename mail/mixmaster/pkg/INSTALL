@@ -1,0 +1,126 @@
+#!/bin/sh
+
+# $OpenBSD: INSTALL,v 1.1.1.1 2001/07/04 15:22:34 lebel Exp $
+#
+#      Mixmaster installation script, using many ideas from
+#      Adam Shostack's Install-Mix.
+
+# use a sane path and install prefix
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+MIXMASTER_BIN=${PREFIX}/sbin/mixmaster
+MIXDIR=${PREFIX}/share/examples/mixmaster
+MIXDEST=${SYSCONFDIR}
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Function: set up mixmaster user account.
+#
+do_accts()
+{
+    groupinfo -e mixmaster
+    if [ $? -eq 0 ]; then
+        echo "===>  Using existing group 'mixmaster'"
+    else
+        echo "===>  Creating group 'mixmaster'"
+        groupadd mixmaster
+    fi
+
+    userinfo -e mixmaster
+    if [ $? -eq 0 ]; then
+        echo "===>  Using existing account 'mixmaster'"
+    else
+        echo "===>  Creating user 'mixmaster'"
+        useradd \
+            -g mixmaster \
+            -c "Anonymous Remailer" \
+            -d $MIXDEST \
+            -s /sbin/nologin \
+            -p \* \
+            mixmaster
+    fi
+}
+
+last_message() 
+{
+
+echo "|"
+echo "| Installation of mixmaster client complete."
+echo "|"
+echo "| Consider updating the files"
+echo "|"
+echo "|   $MIXDEST/mix.list"
+echo "|   $MIXDEST/type2.list"
+echo "|   $MIXDEST/pubring.mix"
+echo "|"
+echo "| periodically with a script like"
+echo "|"
+echo "|   $MIXDIR/getlist"
+echo "|"
+echo "| or you might loose mail by using remailers, that are out of order now."
+echo "|"
+echo "| The binary is suid 'mixmaster' and can only be executed by members of"
+echo "| the group 'mixmaster'. Add all users to that group, that are allowed"
+echo "| sending anonymous mail via the mixmaster network."
+echo "+---------------"
+echo ""
+
+exit 0
+}
+
+# install client config files
+do_install()
+{
+if [ ! -d $MIXDEST ]
+then
+  install -d -o mixmaster -g mixmaster -m 0710 $MIXDEST
+  echo ""
+  echo "+---------------"
+else
+  echo ""
+  echo "+---------------"
+  echo "| $MIXDEST does already exist. It will not be updated by this"
+  echo "| script. If this is not your intention, please deinstall mixmaster,"
+  echo "| delete $MIXDEST and reinstall."
+  last_message
+fi
+
+if [ ! -d $MIXDEST ]
+then
+  echo "Cannot create $MIXDEST"
+  exit 1
+fi
+
+cd $MIXDIR
+for i in "mixmaster.conf type2.list pubring.mix mix.list urls"
+do
+  install -o mixmaster -g mixmaster -m 0640 $i $MIXDEST
+done
+
+last_message
+}
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+        do_accts
+        exit 0
+        ;;
+    POST-INSTALL)
+        : install config files, see below
+        chown mixmaster.mixmaster $MIXMASTER_BIN
+        chmod 4550 $MIXMASTER_BIN
+        do_install
+        exit 0
+        ;;
+    *)
+        echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+        exit 1
+        ;;
+esac

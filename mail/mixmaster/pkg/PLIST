@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/04 15:22:34 lebel Exp $
+sbin/mixmaster
+man/man1/mixmaster.1
+share/examples/mixmaster/destination.block
+share/examples/mixmaster/getlist
+share/examples/mixmaster/headers.del
+share/examples/mixmaster/keyinfo.txt.in
+share/examples/mixmaster/mix.help
+share/examples/mixmaster/mix.help.in
+share/examples/mixmaster/mix.list
+share/examples/mixmaster/mixmaster.conf
+share/examples/mixmaster/mixmaster.conf.in
+share/examples/mixmaster/pubring.mix
+share/examples/mixmaster/source.block
+share/examples/mixmaster/type2.list
+share/examples/mixmaster/urls
+@dirrm share/examples/mixmaster
