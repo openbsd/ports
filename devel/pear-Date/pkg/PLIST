@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/10 08:36:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2005/02/28 12:16:09 mbalmer Exp $
 lib/
 lib/php/
 pear/doc/Date/
 pear/doc/Date/TODO
-@comment pear/lib/.filemap
-@comment pear/lib/.lock
 pear/lib/.registry/date.reg
 pear/lib/Date/
 pear/lib/Date.php
@@ -12,6 +10,7 @@ pear/lib/Date/Calc.php
 pear/lib/Date/Human.php
 pear/lib/Date/Span.php
 pear/lib/Date/TimeZone.php
+pear/tests/
 pear/tests/Date/
 pear/tests/Date/tests/
 pear/tests/Date/tests/bug674.php
@@ -19,6 +18,7 @@ pear/tests/Date/tests/bug727_1.php
 pear/tests/Date/tests/bug727_2.php
 pear/tests/Date/tests/bug727_3.php
 pear/tests/Date/tests/bug727_4.php
+pear/tests/Date/tests/bug967.php
 pear/tests/Date/tests/test_calc.php
 pear/tests/Date/tests/test_date_methods_span.php
 pear/tests/Date/tests/testunit.php
