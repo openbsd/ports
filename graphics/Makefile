@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2001/06/13 03:03:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.67 2001/06/15 09:11:55 reinhard Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -7,6 +7,7 @@
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
 #    SUBDIR += aero
+     SUBDIR += blender
 #    SUBDIR += camediaplay
      SUBDIR += compface
      SUBDIR += cqcam
