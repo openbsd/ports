@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/05/10 22:29:05 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2002/02/11 00:51:27 avsm Exp $
 bin/couriertls
 bin/imapd
 libexec/authlib/authdaemon
@@ -10,14 +10,14 @@ libexec/imapd-ssl.rc
 libexec/imapd.rc
 libexec/logger
 libexec/makedatprog
-man/man8/authcram.8
-man/man8/authdaemon.8
-man/man8/authdaemond.8
-man/man8/authlib.8
-man/man8/authpwd.8
-man/man8/authshadow.8
-man/man8/authuserdb.8
-man/man8/couriertcpd.8
+man/man1/couriertcpd.1
+man/man7/authcram.7
+man/man7/authdaemon.7
+man/man7/authdaemond.7
+man/man7/authlib.7
+man/man7/authpwd.7
+man/man7/authshadow.7
+man/man7/authuserdb.7
 man/man8/deliverquota.8
 man/man8/imapd.8
 man/man8/makeuserdb.8

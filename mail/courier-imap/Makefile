@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2001/11/11 13:48:16 espie Exp $ 
+# $OpenBSD: Makefile,v 1.25 2002/02/11 00:51:27 avsm Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
 
-COURIERVER=	1.3.11
+COURIERVER=	1.4.2
 DISTNAME=	courier-imap-${COURIERVER}
 PKGNAME-pop3=	courier-pop3-${COURIERVER}
 
 CATEGORIES=	mail
-NEED_VERSION=	1.474
+NEED_VERSION=	1.503
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
