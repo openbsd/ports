@@ -1,0 +1,19 @@
+$OpenBSD: patch-MyCC_pro_in,v 1.1.1.1 2002/03/19 13:58:12 wilfried Exp $
+--- MyCC.pro.in.orig	Wed Mar  6 18:49:17 2002
++++ MyCC.pro.in	Mon Mar 11 15:02:46 2002
+@@ -1,5 +1,5 @@
+ TEMPLATE	= app
+-CONFIG		= qt warn_on debug thread
++CONFIG		= qt release
+ DEFINES 	+= QT_DLL
+ TARGET		= MyCC 
+ LANGUAGE	= C++
+@@ -15,7 +15,7 @@ win32 {
+ }
+ 
+ unix {
+-	LIBS		+= @MYSQL_LIB@ 
++	LIBS		+= @MYSQL_LIB@ -lz
+ 	INCLUDEPATH	+= @MYSQL_INCLUDE@
+ 	CONFIG		+= x11 
+         OBJECTS_DIR	= tmp

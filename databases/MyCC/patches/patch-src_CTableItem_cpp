@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_CTableItem_cpp,v 1.1.1.1 2002/03/19 13:58:12 wilfried Exp $
+--- src/CTableItem.cpp.orig	Thu Feb 28 01:35:37 2002
++++ src/CTableItem.cpp	Mon Mar 11 15:04:41 2002
+@@ -77,7 +77,7 @@ void CTableItem::doubleClicked()
+   CTableSpecific::processMenu(m_pMySQLDatabase, SQL_ALL_ROWS, text(0), serverID);  
+ }
+ 
+-inline int f_processMenu(int res, CDatabaseTreeItem *p, QWidgetStack *w, CMySQLConnection *m, const QString &txt, int serverid)
++int f_processMenu(int res, CDatabaseTreeItem *p, QWidgetStack *w, CMySQLConnection *m, const QString &txt, int serverid)
+ {  
+   int r = 0;
+   if (CTableTools::inRange(res))
+@@ -130,7 +130,7 @@ void CTableItem::processMenu(int res)
+   }
+ }
+ 
+-inline int f_displayMenu(const QPoint &pos, CMySQLConnection *mysql, bool disable)
++int f_displayMenu(const QPoint &pos, CMySQLConnection *mysql, bool disable)
+ {
+   QPopupMenu *p_itemMenu = new QPopupMenu();
+   Q_CHECK_PTR(p_itemMenu);

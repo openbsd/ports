@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_CSqlTable_cpp,v 1.1.1.1 2002/03/19 13:58:12 wilfried Exp $
+--- src/CSqlTable.cpp.orig	Sat Mar  2 08:56:51 2002
++++ src/CSqlTable.cpp	Mon Mar 11 16:52:19 2002
+@@ -493,13 +493,17 @@ void CSqlTable::save()
+ 
+ void CSqlTable::headerPressed(int)
+ {
++#ifdef DEBUG
+   qDebug("headerPressed()");
++#endif
+   isExecuting = true;
+ }
+ 
+ void CSqlTable::headerReleased(int)
+ {
++#ifdef DEBUG
+   qDebug("headerReleased()");
++#endif
+   isExecuting = false;
+ }
+ 
