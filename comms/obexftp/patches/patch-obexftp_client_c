@@ -1,0 +1,45 @@
+$OpenBSD: patch-obexftp_client_c,v 1.1.1.1 2004/11/12 08:06:54 grange Exp $
+--- obexftp/client.c.orig	Thu Apr 29 23:44:07 2004
++++ obexftp/client.c	Mon Nov  8 23:13:21 2004
+@@ -78,6 +78,7 @@
+ #endif
+ #endif
+ 
++#include <limits.h>
+ 
+ typedef struct { /* fixed to 6 bytes for now */
+ 	uint8_t code;
+@@ -427,10 +428,10 @@ int obexftp_cli_connect(obexftp_client_t
+ 
+ 	}
+ #endif
+-	if (ret == -1 /* -ESOCKTNOSUPPORT */)
++	if (ret < 0 /* -ESOCKTNOSUPPORT */)
+ 		ret = IrOBEX_TransportConnect(cli->obexhandle, "OBEX");
+ 	DEBUG(3, "%s() IR %d\n", __func__, ret);
+-	if (ret == -1 /* -ESOCKTNOSUPPORT */)
++	if (ret < 0 /* -ESOCKTNOSUPPORT */)
+ 		ret = OBEX_TransportConnect(cli->obexhandle, NULL, 0);
+ 	DEBUG(3, "%s() TC %d\n", __func__, ret);
+ #endif
+@@ -899,6 +900,9 @@ static time_t atotime (const char *date)
+ 
+ DIR *obexftp_opendir(obexftp_client_t *cli, const char *name)
+ {
++	struct dirstream *stream;
++	int res;
++
+ 	/* purge stat buffer */
+ 	while (statbuf != NULL) {
+ 		STATENTRY *p = statbuf->next;
+@@ -908,8 +912,8 @@ DIR *obexftp_opendir(obexftp_client_t *c
+ 	statbuf = NULL;
+ 
+ 	/* read dir */
+-	struct dirstream *stream = malloc(sizeof(struct dirstream));
+-	int res = 0;
++	stream = malloc(sizeof(struct dirstream));
++	res = 0;
+ 
+ 	/* List folder */
+ 	res = obexftp_list(cli, NULL, name);

@@ -1,0 +1,11 @@
+$OpenBSD: patch-obexftp_obexftp_io_c,v 1.1.1.1 2004/11/12 08:06:54 grange Exp $
+--- obexftp/obexftp_io.c.orig	Wed Oct 20 22:10:20 2004
++++ obexftp/obexftp_io.c	Wed Oct 20 22:10:53 2004
+@@ -26,6 +26,7 @@
+ #include <sys/stat.h>
+ 
+ #include <fcntl.h>
++#include <limits.h>
+ #include <string.h>
+ #include <time.h>
+ 

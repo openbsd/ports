@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/12 08:06:54 grange Exp $
+%%SHARED%%
+bin/obexftp
+bin/obexftpd
+include/bfb/
+include/bfb/bfb.h
+include/bfb/bfb_io.h
+include/cobexbfb/
+include/cobexbfb/cobex_bfb.h
+include/obexftp/
+include/obexftp/client.h
+include/obexftp/obexftp.h
+include/obexftp/object.h
+lib/libbfb.a
+lib/libbfb.la
+lib/libcobexbfb.a
+lib/libcobexbfb.la
+lib/libobexftp.a
+lib/libobexftp.la
+@man man/man1/obexftp.1

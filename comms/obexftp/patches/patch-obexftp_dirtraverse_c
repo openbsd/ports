@@ -1,0 +1,11 @@
+$OpenBSD: patch-obexftp_dirtraverse_c,v 1.1.1.1 2004/11/12 08:06:54 grange Exp $
+--- obexftp/dirtraverse.c.orig	Wed Oct 20 22:11:21 2004
++++ obexftp/dirtraverse.c	Wed Oct 20 22:11:36 2004
+@@ -29,6 +29,7 @@
+ #define _POSIX_PATH_MAX MAX_PATH
+ #endif /* _WIN32 */
+ #include <dirent.h>
++#include <limits.h>
+ 
+ #include "dirtraverse.h"
+ #include <common.h>
