@@ -1,8 +1,18 @@
-*** server/database.c.orig	Tue Aug 19 14:00:36 1997
---- server/database.c	Fri Jul 17 18:34:25 1998
+*** server/database.c.orig	Fri Feb 20 20:48:53 1998
+--- server/database.c	Mon Aug 17 18:08:17 1998
+***************
+*** 55,61 ****
+  #include "hash.h"
+  #include "database.h"
+  
+- 
+  void
+  dump_bind_db()
+  {
+--- 55,60 ----
 ***************
 *** 124,129 ****
---- 124,130 ----
+--- 123,129 ----
   {
     struct hash_member *resptr = NULL;
   
@@ -19,7 +29,7 @@
     if (isset(rp->active, S_ROUTER)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_ROUTER)) print_ips("rout", rp->router);
     if (isset(rp->active, S_TIME_SERVER)) fprintf(dump_fp, "!");
---- 251,257 ----
+--- 250,256 ----
     if (isset(rp->valid, S_SUBNET_MASK)) print_ip("snmk", rp->subnet_mask);
     if (isset(rp->active, S_TIME_OFFSET)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_TIME_OFFSET))
@@ -36,7 +46,7 @@
     if (isset(rp->active, S_MTU_PLATEAU_TABLE)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_MTU_PLATEAU_TABLE)) {
       fprintf(dump_fp, "mtpt=");
---- 300,306 ----
+--- 299,305 ----
         fprintf(dump_fp, "ditl=%u:", rp->default_ip_ttl);
     if (isset(rp->active, S_MTU_AGING_TIMEOUT)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_MTU_AGING_TIMEOUT))
@@ -53,7 +63,7 @@
     if (isset(rp->active, S_ETHER_ENCAP)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_ETHER_ENCAP)) print_bool("encp", rp->ether_encap);
     if (isset(rp->active, S_DEFAULT_TCP_TTL)) fprintf(dump_fp, "!");
---- 330,336 ----
+--- 329,335 ----
     if (isset(rp->valid, S_TRAILER)) print_bool("tril", rp->trailer);
     if (isset(rp->active, S_ARP_CACHE_TIMEOUT)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_ARP_CACHE_TIMEOUT))
@@ -70,7 +80,7 @@
     if (isset(rp->active, S_KEEPALIVE_GARBA)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_KEEPALIVE_GARBA)) print_bool("kagb", rp->keepalive_garba);
     if (isset(rp->active, S_NIS_DOMAIN)) fprintf(dump_fp, "!");
---- 338,344 ----
+--- 337,343 ----
         fprintf(dump_fp, "dttl=%u:", rp->default_tcp_ttl);
     if (isset(rp->active, S_KEEPALIVE_INTER)) fprintf(dump_fp, "!");
     if (isset(rp->valid, S_KEEPALIVE_INTER))

@@ -1,77 +1,82 @@
-*** server/dhcps.c.orig	Tue Aug 19 14:14:39 1997
---- server/dhcps.c	Fri Jul 17 18:33:37 1998
+*** server/dhcps.c.orig	Sun Jul 19 09:16:53 1998
+--- server/dhcps.c	Mon Aug 17 17:57:24 1998
 ***************
-*** 126,132 ****
-  
-  char **argv_orig;
+*** 136,142 ****
+  int  nmacaddr;
+  #endif
   
 ! void
   main(argc, argv)
     int argc;
     char **argv;
---- 126,132 ----
-  
-  char **argv_orig;
+--- 136,142 ----
+  int  nmacaddr;
+  #endif
   
 ! int
   main(argc, argv)
     int argc;
     char **argv;
 ***************
-*** 211,219 ****
+*** 146,152 ****
+    struct if_info *ifp = NULL;          /* pointer to interface */
+    char *option = NULL;                 /* command line option */
+    char msgtype;                        /* DHCP message type */
+!   struct sockaddr_in my_addr, any_addr;
+    struct ifreq ifreq;
+  
+    bzero(&ifreq, sizeof(ifreq));
+--- 146,152 ----
+    struct if_info *ifp = NULL;          /* pointer to interface */
+    char *option = NULL;                 /* command line option */
+    char msgtype;                        /* DHCP message type */
+!   struct sockaddr_in my_addr;
+    struct ifreq ifreq;
+  
+    bzero(&ifreq, sizeof(ifreq));
+***************
+*** 228,236 ****
+--- 228,246 ----
   #define LOG_PERROR	0	/* Don't bother if not defined... */
   #endif
     if (debug == 1) {
-!     openlog("dhcps", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL0);
++ #ifndef __OpenBSD__
+      openlog("dhcps", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL0);
++ #else
++     /* Using LOG_LOCAL1 to avoid OpenBSD ipmon log conflict */
++     openlog("dhcps", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL1);
++ #endif
     } else {
-!     openlog("dhcps", LOG_PID | LOG_CONS, LOG_LOCAL0);
-    }
-  
-    init_db();               /* initialize databases */
---- 211,219 ----
-  #define LOG_PERROR	0	/* Don't bother if not defined... */
-  #endif
-    if (debug == 1) {
-!     openlog("dhcps", LOG_PID | LOG_CONS | LOG_PERROR, LOG_LOCAL1);
-    } else {
-!     openlog("dhcps", LOG_PID | LOG_CONS, LOG_LOCAL1);
++ #ifndef __OpenBSD__
+      openlog("dhcps", LOG_PID | LOG_CONS, LOG_LOCAL0);
++ #else
++     /* Using LOG_LOCAL1 to avoid OpenBSD ipmon log conflict */
++     openlog("dhcps", LOG_PID | LOG_CONS, LOG_LOCAL1);
++ #endif
     }
   
     init_db();               /* initialize databases */
 ***************
-*** 526,531 ****
---- 526,532 ----
-      syslog(LOG_ERR, "Cannot open the binding database \"%s\"", binding_db);
-      exit(1);
-    }
-+   unlink(ADDRPOOL_DUMP);
-    if ((dump_fp = fopen(ADDRPOOL_DUMP, "w+")) == NULL) {
-      syslog(LOG_ERR, "Cannot open the resource dump file \"%s\"",ADDRPOOL_DUMP);
-      exit(1);
-***************
-*** 1832,1838 ****
+*** 1921,1927 ****
+--- 1931,1941 ----
       snd.dhcp->options[off_options] = END;
     } else if (off_extopt > 0 && off_extopt < maxoptlen - DFLTOPTLEN &&
   	     sbufvec[1].iov_base != NULL) {
-!     sbufvec[1].iov_base[off_extopt++] = END;
-    }
-  
-    if (off_extopt < sbufvec[1].iov_len) {
---- 1833,1839 ----
-      snd.dhcp->options[off_options] = END;
-    } else if (off_extopt > 0 && off_extopt < maxoptlen - DFLTOPTLEN &&
-  	     sbufvec[1].iov_base != NULL) {
-!     *((char *)sbufvec[1].iov_base + off_extopt++) = END;
++ #ifndef __OpenBSD__
+      sbufvec[1].iov_base[off_extopt++] = END;
++ #else
++     *((char *)sbufvec[1].iov_base + off_extopt++) = END;
++ #endif
     }
   
     if (off_extopt < sbufvec[1].iov_len) {
 ***************
-*** 2290,2296 ****
---- 2291,2301 ----
+*** 2378,2384 ****
+--- 2392,2402 ----
     char *inserted;
     char flag;
   {
-+ #if defined(__OpenBSD__)
++ #ifdef __OpenBSD__
 +   u_int32_t *addr = 0;
 + #else
     u_Long *addr = 0;
@@ -80,36 +85,33 @@
     int symbol = 0;
     int retval = 0;
 ***************
-*** 2851,2857 ****
+*** 2939,2945 ****
+--- 2957,2967 ----
         len -= done;
         off_options += done; /* invalid offset, So, to access
   					    here will cause fatal error */
-!       bcopy(&opt[done], &sbufvec[1].iov_base[off_extopt], len);
-        off_extopt += len;
-        return(0);
-      }
---- 2856,2862 ----
-        len -= done;
-        off_options += done; /* invalid offset, So, to access
-  					    here will cause fatal error */
-!       bcopy(&opt[done], (char *)sbufvec[1].iov_base + off_extopt, len);
++ #ifndef __OpenBSD__
+        bcopy(&opt[done], &sbufvec[1].iov_base[off_extopt], len);
++ #else
++       bcopy(&opt[done], (char *)sbufvec[1].iov_base + off_extopt, len);
++ #endif
         off_extopt += len;
         return(0);
       }
 ***************
-*** 2927,2933 ****
+*** 3016,3022 ****
       return(GOOD);
     }
   
-! #if defined(__bsdi__) || defined(__FreeBSD__)
+! #if defined(__bsdi__) || (__FreeBSD__ >= 2)
     delarp(ip);
   #else
     delarp(ip, sockfd);
---- 2932,2938 ----
+--- 3038,3044 ----
       return(GOOD);
     }
   
-! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+! #if defined(__bsdi__) || (__FreeBSD__ >= 2) || defined(__OpenBSD__)
     delarp(ip);
   #else
     delarp(ip, sockfd);

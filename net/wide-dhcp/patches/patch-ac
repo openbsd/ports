@@ -1,19 +1,27 @@
-*** client/config.h.orig	Wed Apr 29 15:32:36 1998
---- client/config.h	Wed Apr 29 15:32:58 1998
+*** client/dhcpc.h.orig	Thu Nov 13 23:21:26 1997
+--- client/dhcpc.h	Mon Aug 17 16:54:33 1998
 ***************
-*** 38,44 ****
-   */
-  
-  #ifndef DHCP_CACHE
-! #define DHCP_CACHE  "/etc/dhcp_cache"
+*** 47,57 ****
   #endif
+  #endif /*sony_news*/
   
-  #define FIRSTTIMER          4
---- 38,44 ----
-   */
-  
-  #ifndef DHCP_CACHE
-! #define DHCP_CACHE  "/var/db/dhcp_cache"
+! #if defined(__bsdi__) || defined(__FreeBSD__)
+  #ifndef PATH_CACHE_PREFIX
+  #define PATH_CACHE_PREFIX	"/var/db/dhcpc_cache"
   #endif
+! #else /* not BSD/OS nor FreeBSD */
+  #ifndef PATH_CACHE_PREFIX
+  #define PATH_CACHE_PREFIX	"/etc/dhcpc_cache"
+  #endif
+--- 47,57 ----
+  #endif
+  #endif /*sony_news*/
   
-  #define FIRSTTIMER          4
+! #if defined(__bsdi__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  #ifndef PATH_CACHE_PREFIX
+  #define PATH_CACHE_PREFIX	"/var/db/dhcpc_cache"
+  #endif
+! #else /* not BSD/OS not FreeBSD nor OpenBSD */
+  #ifndef PATH_CACHE_PREFIX
+  #define PATH_CACHE_PREFIX	"/etc/dhcpc_cache"
+  #endif

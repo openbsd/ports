@@ -1,5 +1,5 @@
-*** server/dhcps.h.orig	Thu Jun 19 09:04:09 1997
---- server/dhcps.h	Wed Apr 29 15:32:21 1998
+*** server/dhcps.h.orig	Sat Feb 21 11:41:56 1998
+--- server/dhcps.h	Mon Aug 17 18:08:34 1998
 ***************
 *** 37,51 ****
    * WIDE project has the rights to redistribute these changes.

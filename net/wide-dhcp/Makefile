@@ -3,14 +3,14 @@
 # Date created:         29 April 1998
 # Whom:                 Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/03 00:49:49 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/08/17 11:43:23 form Exp $
 #
 
-DISTNAME=       dhcp-1.4.0p1
-PKGNAME=        wide-dhcp-1.4.0.1
+DISTNAME=       dhcp-1.4.0p2
+PKGNAME=        wide-dhcp-1.4.0.2
 CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
-DISTFILES=	dhcp-1.4.0p1.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=     form@vs.itam.nsc.ru
 
@@ -18,8 +18,6 @@ MAKE_ENV=	OSTYPE=`uname`
 
 MAN5=	dhcpdb.server.5 dhcpdb.pool.5 dhcpdb.relay.5
 MAN8=	dhcpc.8 dhcps.8 relay.8 dhcpm.8
-
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/wide-dhcps.sh.sample
 
 post-install:
 .if !defined(NOPORTDOCS)
