@@ -1,0 +1,11 @@
+$OpenBSD: patch-scripts_man2html_c,v 1.1 2005/03/15 20:37:39 alek Exp $
+--- scripts/man2html.c.orig	Thu Dec 21 13:12:21 2000
++++ scripts/man2html.c	Mon Mar 14 08:02:45 2005
+@@ -689,6 +689,7 @@ static char 
+       for (upto = 1; 
+ 	   (len = fread(man_buf + upto, 1, LARGE_STR_MAX, stdin)) > 0;
+ 	   upto += len) { 
++	man_buf[upto+len] = '\0';
+ 	man_buf = strgrow(man_buf, LARGE_STR_MAX);
+       }      
+       man_buf[upto] = '\n';
