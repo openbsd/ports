@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2001/03/04 14:41:32 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/04/16 03:40:42 brad Exp $
 bin/xml2-config
 bin/xmllint
 include/libxml/HTMLparser.h
@@ -52,7 +52,7 @@ share/libxml2/html/libxml-parserinternals.html
 share/libxml2/html/libxml-sax.html
 share/libxml2/html/libxml-tree.html
 share/libxml2/html/libxml-uri.html
-share/libxml2/html/libxml-valid.html                
+share/libxml2/html/libxml-valid.html
 share/libxml2/html/libxml-xinclude.html
 share/libxml2/html/libxml-xmlio.html
 share/libxml2/html/libxml-xmlmemory.html
@@ -60,7 +60,7 @@ share/libxml2/html/libxml-xpath.html
 share/libxml2/html/libxml-xpathinternals.html
 share/libxml2/html/libxml-xpointer.html
 share/libxml2/html/structure.gif
-share/libxml2/html/xml.html             
+share/libxml2/html/xml.html
 @dirrm share/libxml2/html
 @dirrm share/libxml2
 @dirrm include/libxml
