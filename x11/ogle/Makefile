@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/16 17:00:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/24 12:54:33 espie Exp $
 CATEGORIES=	x11
 NEED_VERSION=	1.474
 
@@ -26,7 +26,10 @@ LIB_DEPENDS=	dvdread::devel/libdvdread \
 
 
 .if ${MACHINE_ARCH} == "i386"
-
+.  if exists(/usr/bin/as-static)
+pre-build:
+	ln -sf /usr/bin/as-static ${WRKDIR}/as
+.  else
 # i386 gas is currently ancient... but we can trick binutils into
 # building a gas with only static binary support that will be enough
 # for our purposes
@@ -53,6 +56,7 @@ post-configure:
 pre-build:
 	@cd ${BINOBJ} && SUBDIRS='opcodes bfd gas' make ALL_MODULES='all-opcodes all-bfd all-gas' ALL_X11_MODULES='' 
 	@ln -sf ${BINOBJ}/gas/as-new  ${WRKDIR}/as
+.  endif
 .endif
 
 MAKE_ENV=WRKDIR=${WRKDIR}
