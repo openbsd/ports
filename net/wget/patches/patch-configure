@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2001/10/02 03:15:03 brad Exp $
+--- configure.orig	Mon Oct  1 22:48:30 2001
++++ configure	Mon Oct  1 22:51:47 2001
+@@ -3512,7 +3512,7 @@ else
+   cat conftest.$ac_ext >&5
+ fi
+ rm -f conftest*
+-      LDFLAGS=$ODL_LDFLAGS
++      LDFLAGS=$OLD_LDFLAGS
+       test -n "$dash_r" && break
+     done ;;
+ esac
+@@ -3798,7 +3798,7 @@ EOF
+   done
+ 
+   if test x"$ssl_linked" = xno; then
+-    LD_FLAGS=$OLD_LDFLAGS
++    LDFLAGS=$OLD_LDFLAGS
+     LIBS=$OLD_LIBS
+             echo
+     echo "WARNING: Failed to link with OpenSSL libraries in $ssl_root/lib."
+@@ -3807,7 +3807,7 @@ EOF
+   fi
+ fi
+ 
+-ALL_LINGUAS=`(cd ${srcdir}/po && ls *.po | sed -e 's/\.po$//')`
++ALL_LINGUAS="cs da de el es et fr gl hr it ja nl no pl pt_BR ru sk sl sv tr zh_TW"
+ 
+ 
+ echo $ac_n "checking whether NLS is requested""... $ac_c" 1>&6

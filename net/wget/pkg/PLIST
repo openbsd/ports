@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.13 2001/01/11 14:45:35 brad Exp $
+@comment $OpenBSD: PLIST,v 1.14 2001/10/02 03:15:03 brad Exp $
 bin/wget
-@unexec install-info --delete %D/info/wget.info %D/info/dir
+@unexec install-info --delete --info-dir=%D/info %D/info/wget.info
 info/wget.info
-@exec install-info %D/info/wget.info %D/info/dir
+@exec install-info --info-dir=%D/info %D/info/wget.info
+man/man1/wget.1
 share/examples/wget/sample.wgetrc
 share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
 share/locale/el/LC_MESSAGES/wget.mo
+share/locale/es/LC_MESSAGES/wget.mo
 share/locale/et/LC_MESSAGES/wget.mo
 share/locale/fr/LC_MESSAGES/wget.mo
 share/locale/gl/LC_MESSAGES/wget.mo
@@ -22,5 +24,6 @@ share/locale/ru/LC_MESSAGES/wget.mo
 share/locale/sk/LC_MESSAGES/wget.mo
 share/locale/sl/LC_MESSAGES/wget.mo
 share/locale/sv/LC_MESSAGES/wget.mo
-share/locale/zh/LC_MESSAGES/wget.mo
+share/locale/tr/LC_MESSAGES/wget.mo
+share/locale/zh_TW/LC_MESSAGES/wget.mo
 @dirrm share/examples/wget
