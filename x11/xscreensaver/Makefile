@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/01/09 21:14:44 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2002/01/26 23:59:49 lebel Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
-VERSION=		3.34
+VERSION=		4.00
 DISTNAME=		xscreensaver-${VERSION}
 CATEGORIES=     	x11
 NEED_VERSION=		1.487
@@ -21,14 +21,12 @@ MASTER_SITES=		http://www.jwz.org/xscreensaver/
 NO_REGRESS=		Yes
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-subdir="${PREFIX}/libexec/xscreensaver"
+CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver"
 CONFIGURE_ARGS+=	--with-gl
 CONFIGURE_ARGS+=	--with-xpm
 CONFIGURE_ARGS+=	--without-gnome
 CONFIGURE_ARGS+=	--with-zippy=/usr/games/fortune
 CONFIGURE_ARGS+=	--without-kerberos
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 FLAVORS=		gtk motif no_gle
 FLAVOR?=		gtk
@@ -42,13 +40,19 @@ CONFIGURE_ARGS+=	--without-gle
 
 .if ${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mmotif}
 CONFIGURE_ARGS+=	--with-gtk --without-motif
-LIB_DEPENDS+=		gtk.1.2,gdk::x11/gtk+
+LIB_DEPENDS+=		gtk.1.2,gdk::x11/gtk+ xml.9::textproc/libxml1
+CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/gnome-xml"
+CONFIGURE_ENV+=CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/gnome-xml"
 .elif ${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk}
 CONFIGURE_ENV+= 	MOTIFHOME=${X11BASE}
 CONFIGURE_ARGS+=	--with-motif --without-gtk
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
 USE_MOTIF=		any
 .else
 ERRORS+=		"Fatal: Please choose either the gtk or motif flavor"
 .endif
+
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+MAKE_ENV+=		${CONFIGURE_ENV}
 
 .include <bsd.port.mk>
