@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/01 21:45:42 msf Exp $
+${P5SITE}/Time/
+${P5SITE}/Time/CTime.pm
+${P5SITE}/Time/DaysInMonth.pm
+${P5SITE}/Time/JulianDay.pm
+${P5SITE}/Time/ParseDate.pm
+${P5SITE}/Time/Timezone.pm
+@man man/man3p/Time::CTime.3p
+@man man/man3p/Time::DaysInMonth.3p
+@man man/man3p/Time::JulianDay.3p
+@man man/man3p/Time::ParseDate.3p
+@man man/man3p/Time::Timezone.3p
