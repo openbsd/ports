@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/02/24 01:42:47 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/12 11:54:13 alek Exp $
 
 COMMENT=	"g-wrap"
 DISTNAME=	g-wrap-1.3.4
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		m
 
 LIB_DEPENDS=		guile.9::lang/guile \
-			gthread.1.2::devel/glib
+			glib.1.2::devel/glib
 BUILD_DEPENDS=		slib::devel/slib
 
 USE_GMAKE=	Yes
