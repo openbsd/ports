@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/05/13 18:50:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/28 22:04:09 naddy Exp $
 #
 
 COMMENT=	"side-view, fast-action, kill everything type of game"
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}
 
 ALL_TARGET=	freebsd
+MAKE_ENV=	CXX="${CXX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xevil $(PREFIX)/bin
