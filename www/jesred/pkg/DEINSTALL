@@ -1,4 +1,5 @@
 #!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.2 2003/02/04 22:59:48 naddy Exp $
 #
 # De-installation setup of jesred
 
