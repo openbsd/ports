@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/04/13 02:10:10 aaron Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/27 21:11:19 aaron Exp $
 
     SUBDIR += bochs
     SUBDIR += bochs:debug
@@ -8,6 +8,7 @@
     SUBDIR += mastergear
     SUBDIR += redhat_base
     SUBDIR += simh
+    SUBDIR += snes9x
     SUBDIR += vgb
     SUBDIR += wine
     SUBDIR += x48
