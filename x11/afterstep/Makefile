@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/10/29 19:48:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2003/05/13 02:16:52 pvalchev Exp $
 
 COMMENT=	"Window manager, continuation of the Bowman NeXTSTEP clone"
 
@@ -31,6 +31,10 @@ CONFIGURE_ARGS+= --with-png-includes=${LOCALBASE}/include/libpng
 CONFIGURE_ARGS+= --with-png-library=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV+=	CFLAGS=-fsigned-char
+.endif
 
 NO_REGRESS=	Yes
 		
