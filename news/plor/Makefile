@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/02/20 20:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2002/04/08 20:09:24 naddy Exp $
 
 COMMENT=	"alpha-release readers for reading SOUP and QWK packets"
 
@@ -14,12 +14,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://linux.psy.unipd.it/pub/pluto/developers/utils/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu dest
 
 DOCFILES=	plor.html plor-1.html plor-2.html plor.txt
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/plor ${PREFIX}/bin  
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/plor
 .for f in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/plor
