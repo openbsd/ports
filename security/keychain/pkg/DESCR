@@ -1,0 +1,8 @@
+The keychain shell script makes handling RSA and DSA keys both
+convenient and secure. It acts as a front-end to ssh-agent, allowing
+you to easily have one long-running ssh-agent process per system,
+rather than per login session. This dramatically reduces the number
+of times you need to enter your passphrase from once per new login
+session to once every time your local machine is rebooted.
+
+WWW: ${HOMEPAGE}
