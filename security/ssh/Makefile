@@ -3,7 +3,7 @@
 # Date created:		16 Nov 1997
 # Whom:			todd@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 1997/11/23 03:48:50 todd Exp $
+# $OpenBSD: Makefile,v 1.5 1997/11/25 23:44:28 angelos Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -99,7 +99,7 @@ post-install:
 	fi
 .if !defined(NOMANCOMPRESS)
 	rm -f ${PREFIX}/man/man1/slogin.1
-	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
+	ln -sf ssh.1 ${PREFIX}/man/man1/slogin.1
 .endif
 
 .include <bsd.port.mk>
