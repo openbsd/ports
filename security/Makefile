@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2001/08/09 19:36:26 jsyn Exp $
+# $OpenBSD: Makefile,v 1.84 2001/08/22 05:21:16 shell Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += portscanner
      SUBDIR += portsentry
      SUBDIR += ppgen
+     SUBDIR += py-gnupg
      SUBDIR += radiusniff
      SUBDIR += rdp
      SUBDIR += scanlogd
