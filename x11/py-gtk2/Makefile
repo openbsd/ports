@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/16 21:12:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/02 01:27:45 djm Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"gtk+2 Python bindings"
 
-V=		2.0.0
+V=		2.2.0
 DISTNAME=	pygtk-${V}
 PKGNAME=	py-gtk2-${V}
 CATEGORIES=	x11
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/2.0/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/pygtk/2.2/}
 
 MODULES=	iconv python
 

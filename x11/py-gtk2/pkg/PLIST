@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/16 21:12:50 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/02 01:27:45 djm Exp $
 bin/pygtk-codegen-2.0
 include/pygtk-2.0/pygobject.h
 include/pygtk-2.0/pygtk/pygtk.h
@@ -20,10 +20,6 @@ lib/python${MODPY_VERSION}/site-packages/pygtk.pth
 lib/python${MODPY_VERSION}/site-packages/pygtk.py
 lib/python${MODPY_VERSION}/site-packages/pygtk.pyc
 share/examples/py-gtk2/atk/atk-demo.py
-share/examples/py-gtk2/gl/README
-share/examples/py-gtk2/gl/cone.py
-share/examples/py-gtk2/gl/dots.py
-share/examples/py-gtk2/gl/gears.py
 share/examples/py-gtk2/glade/README
 share/examples/py-gtk2/glade/glade-demo.py
 share/examples/py-gtk2/glade/test.glade
@@ -72,6 +68,7 @@ share/examples/py-gtk2/pygtk-demo/demos/sizegroup.py
 share/examples/py-gtk2/pygtk-demo/demos/stock_browser.py
 share/examples/py-gtk2/pygtk-demo/demos/toolbar.py
 share/examples/py-gtk2/pygtk-demo/demos/treemodel.py
+share/examples/py-gtk2/pygtk-demo/gtk-logo-rgb.gif
 share/examples/py-gtk2/pygtk-demo/pygtk-demo.py
 share/examples/py-gtk2/simple/README
 share/examples/py-gtk2/simple/dnd.py
@@ -114,7 +111,6 @@ share/pygtk/2.0/defs/pango.defs
 @dirrm share/examples/py-gtk2/ide
 @dirrm share/examples/py-gtk2/gobject
 @dirrm share/examples/py-gtk2/glade
-@dirrm share/examples/py-gtk2/gl
 @dirrm share/examples/py-gtk2/atk
 @dirrm share/examples/py-gtk2
 @dirrm lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk
