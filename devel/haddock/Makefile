@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/16 08:46:37 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/04/23 02:40:16 dons Exp $
 
 COMMENT=	"documentation tool for the functional language Haskell"
 
@@ -7,7 +7,7 @@ DISTNAME=	haddock-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.haskell.org/haddock/
-MAINTAINER=	Don Stewart <dons@cse.unsw.edu.au>
+MAINTAINER=	Don Stewart <dons@openbsd.org>
 
 MODULES=	ghc
 
