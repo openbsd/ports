@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2005/01/15 14:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2005/01/15 14:44:10 espie Exp $
 
 COMMENT=	"original Arch source control management CLI written in C"
 
 DISTNAME=	tla-1.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnuarch.org/
