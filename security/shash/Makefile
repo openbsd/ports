@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/04 21:16:18 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/22 12:45:36 espie Exp $
 
 DISTNAME=		shash-0.2.3
 CATEGORIES=     	security
@@ -22,10 +22,10 @@ FLAVORS=		static
 FLAVOR?=
 
 .if ${FLAVOR:L:Mstatic}
-BUILD_DEPENDS+=		${PREFIX}/lib/libmhash.a::devel/mhash
+BUILD_DEPENDS+=		${PREFIX}/lib/libmhash.a::security/mhash
 CONFIGURE_ARGS+=	--enable-static-link
 .else
-LIB_DEPENDS+=		mhash.2::devel/mhash
+LIB_DEPENDS+=		mhash.2::security/mhash
 .endif
 
 .include <bsd.port.mk>
