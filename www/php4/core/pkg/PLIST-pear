@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.11 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST-pear,v 1.12 2004/12/20 16:25:56 robert Exp $
 pear/
 pear/build/
 pear/build/Makefile.global
@@ -21,6 +21,11 @@ pear/doc/DB/doc/IDEAS
 pear/doc/DB/doc/MAINTAINERS
 pear/doc/DB/doc/STATUS
 pear/doc/DB/doc/TESTERS
+pear/doc/Net_SMTP/
+pear/doc/Net_SMTP/docs/
+pear/doc/Net_SMTP/docs/examples/
+pear/doc/Net_SMTP/docs/examples/basic.php
+pear/doc/Net_SMTP/docs/guide.txt
 pear/include/
 pear/include/TSRM/
 pear/include/TSRM/TSRM.h
@@ -73,6 +78,7 @@ pear/include/Zend/zend_ptr_stack.h
 pear/include/Zend/zend_qsort.h
 pear/include/Zend/zend_stack.h
 pear/include/Zend/zend_static_allocator.h
+pear/include/Zend/zend_strtod.h
 pear/include/Zend/zend_types.h
 pear/include/Zend/zend_variables.h
 pear/include/acconfig.h
@@ -344,6 +350,11 @@ pear/tests/DB/tests/sequences.inc
 pear/tests/DB/tests/simplequery.inc
 pear/tests/DB/tests/skipif.inc
 pear/tests/DB/tests/transactions.inc
+pear/tests/Net_SMTP/
+pear/tests/Net_SMTP/tests/
+pear/tests/Net_SMTP/tests/auth.phpt
+pear/tests/Net_SMTP/tests/basic.phpt
+pear/tests/Net_SMTP/tests/config.php.dist
 pear/tests/XML_Parser/
 pear/tests/XML_Parser/tests/
 pear/tests/XML_Parser/tests/001.phpt
