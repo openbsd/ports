@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2001/12/12 20:56:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.183 2001/12/14 16:39:20 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -113,10 +113,9 @@
      SUBDIR += pchar
      SUBDIR += pdnsd
      SUBDIR += pop3gwd
-     SUBDIR += popa3d,
-     SUBDIR += popa3d,apop
      SUBDIR += proxy-suite
      SUBDIR += pptp
+     SUBDIR += pure-ftpd
      SUBDIR += py-libpcap
      SUBDIR += queso
      SUBDIR += quirc
