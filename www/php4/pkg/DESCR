@@ -8,6 +8,7 @@ raw network sockets and interact using other protocols.
 
 PHP has a number of extra flavors available:
 
+ - curl     Client URL library functions (gopher, dict, ldap, etc)
  - gettext  GNU gettext support for internationalisation
  - ftp      Functions to retrieve files via FTP
  - imap     Mail and message access functions (IMAP, POP3, NTTP)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/01/05 22:47:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.21 2001/01/06 14:17:33 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -35,9 +35,16 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-zlib
 
 FLAVORS+=	gdbm gettext ftp imap ldap mhash mm recode snmp
-FLAVORS+=	gd no_x11 pdflib mcrypt
+FLAVORS+=	gd no_x11 pdflib mcrypt curl
 FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
 FLAVOR?= 
+
+.if ${FLAVOR:L:Mcurl}
+CONFIGURE_ARGS+=	--with-curl
+LIB_DEPENDS+=		curl.1::net/curl
+.else
+CONFIGURE_ARGS+=	--without-curl
+.endif
 
 .if ${FLAVOR:L:Mgdbm}
 CONFIGURE_ARGS+=	--with-gdbm
