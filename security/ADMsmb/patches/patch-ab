@@ -1,0 +1,11 @@
+--- client.c-orig	Mon May 31 12:54:36 1999
++++ client.c	Mon May 31 12:54:43 1999
+@@ -74,8 +74,6 @@
+ #include "includes.h"
+ #include "ADMsmb.c"
+ 
+-#include <getopt.h>
+-
+ #ifndef REGISTER
+ #define REGISTER 0
+ #endif

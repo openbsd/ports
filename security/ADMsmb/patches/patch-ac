@@ -1,0 +1,12 @@
+--- includes.h-orig	Mon May 31 12:59:37 1999
++++ includes.h	Mon May 31 13:00:13 1999
+@@ -565,6 +565,9 @@
+ #include <netinet/tcp.h>
+ #define NO_GETSPNAM
+ #define SIGNAL_CAST (void (*)())
++#ifndef QSORT_CAST
++#define QSORT_CAST (int (*)(const void *, const void *))
++#endif /* QSORT_CAST */
+ #define USE_DIRECT
+ #define REPLACE_INNETGR
+ #define HAVE_BZERO
