@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2001/07/12 00:54:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.109 2001/08/01 06:49:03 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -68,6 +68,7 @@
 #    SUBDIR += p5-Tcl-Tk
      SUBDIR += p5-Gtk
      SUBDIR += p5-Tk
+     SUBDIR += paragui
      SUBDIR += piewm
 #    SUBDIR += pythonqt
      SUBDIR += pwm
