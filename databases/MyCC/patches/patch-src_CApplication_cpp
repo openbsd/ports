@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_CApplication_cpp,v 1.1 2002/11/05 15:55:49 wilfried Exp $
+--- src/CApplication.cpp.orig	Sat Nov  2 14:47:25 2002
++++ src/CApplication.cpp	Mon Nov  4 19:03:22 2002
+@@ -122,7 +122,7 @@ void CApplication::initGlobals(bool star
+   QString mydir = QDir::currentDirPath() + "/";
+   
+   //Translations path
+-  translations_path = cfg->readStringEntry("Translations Path", mydir + "translations/");
++  translations_path = cfg->readStringEntry("Translations Path", LOCALBASE "/share/mysqlcc/" "translations/");
+ 
+   //Current Language
+   current_language = cfg->readStringEntry("Language File", "English");  
+@@ -141,12 +141,12 @@ void CApplication::initGlobals(bool star
+   CHistoryView::setHistorySize(history_size);
+ 
+   //Syntax File
+-  syntax_file = cfg->readStringEntry("Syntax File", mydir + "syntax.txt");
++  syntax_file = cfg->readStringEntry("Syntax File", LOCALBASE "/share/mysqlcc/" "syntax.txt");
+ 
+   //Audio files
+-  error_sound_file = cfg->readStringEntry("Error Sound", mydir + "error.wav");
+-  warning_sound_file = cfg->readStringEntry("Warning Sound", mydir + "warning.wav");
+-  information_sound_file = cfg->readStringEntry("Information Sound", mydir + "information.wav");
++  error_sound_file = cfg->readStringEntry("Error Sound", LOCALBASE "/share/mysqlcc/" "error.wav");
++  warning_sound_file = cfg->readStringEntry("Warning Sound", LOCALBASE "/share/mysqlcc/" "warning.wav");
++  information_sound_file = cfg->readStringEntry("Information Sound", LOCALBASE "/share/mysqlcc/" "information.wav");
+ 
+   //Query Syntax Highlighting
+   syntax_highlight = strtobool(cfg->readStringEntry("Syntax Highlighting", "true"));

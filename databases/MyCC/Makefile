@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2002/09/17 15:22:26 wilfried Exp $
-
-BROKEN=			"waiting for a version that supports QT >= 3.0.5"
+# $OpenBSD: Makefile,v 1.5 2002/11/05 15:55:48 wilfried Exp $
 
 COMMENT=		"GUI client for MySQL"
 
-VERSION=		0.8.2
-DISTNAME=		mycc-${VERSION}-alpha-src
-PKGNAME=		MyCC-${VERSION}
+VERSION=		0.8.6
+DISTNAME=		mysqlcc-${VERSION}-src
+PKGNAME=		mysqlcc-${VERSION}
 CATEGORIES=		databases
 
 HOMEPAGE=		http://mysql.com/products/mycc/index.html
@@ -20,7 +18,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyCC/ \
-			ftp://ftp.mysql.com/MyCC/
+			ftp://sunsite.dk/mirrors/mysql/Downloads/MyCC/ \
+			ftp://gd.tuwien.ac.at/db/mysql/Downloads/MyCC/ \
+			ftp://mysql.secsup.org/pub/software/mysql/Downloads/MyCC \
+			http://www.mysql.com/Downloads/MyCC/
 
 MODULES=		qt3
 LIB_DEPENDS=		lib/mysql/mysqlclient.10:mysql-client-3.23.*:databases/mysql
@@ -39,13 +40,10 @@ CONFIGURE_ENV=		QTDIR=${LOCALBASE} \
 
 NO_REGRESS=		Yes
 
-post-patch:
-	@rm ${WRKSRC}/include/CSqlEditor/qrichtext_p.h
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/MyCC ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/MyCC/translations
-	${INSTALL_DATA} ${WRKSRC}/warning.wav ${WRKSRC}/error.wav ${WRKSRC}/syntax.txt ${PREFIX}/share/MyCC
-	${INSTALL_DATA} ${WRKSRC}/translations/* ${PREFIX}/share/MyCC/translations
+	${INSTALL_PROGRAM} ${WRKBUILD}/mysqlcc ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mysqlcc/translations
+	${INSTALL_DATA} ${WRKSRC}/warning.wav ${WRKSRC}/error.wav ${WRKSRC}/syntax.txt ${PREFIX}/share/mysqlcc
+	${INSTALL_DATA} ${WRKSRC}/translations/* ${PREFIX}/share/mysqlcc/translations
 
 .include <bsd.port.mk>

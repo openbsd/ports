@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_CHotKeyEditorDialog_cpp,v 1.1 2002/11/05 15:55:49 wilfried Exp $
+--- src/CHotKeyEditorDialog.cpp.orig	Sat Nov  2 14:47:25 2002
++++ src/CHotKeyEditorDialog.cpp	Tue Nov  5 16:39:57 2002
+@@ -91,6 +91,7 @@ This class takes care of displaying the 
+ CHotKeyEditorMenu::CHotKeyEditorMenu(QWidget * parent, QMenuBar *menuBar, const char * name)
+ :QPopupMenu(parent, name)
+ {
++#if CRASH_HERE
+ #ifdef DEBUG
+   qDebug("CHotKeyEditorMenu::CHotKeyEditorMenu()");
+ #endif
+@@ -100,6 +101,7 @@ CHotKeyEditorMenu::CHotKeyEditorMenu(QWi
+   connect(hotKeyEditorAction, SIGNAL(activated()), this, SLOT(openHotKeyEditor()));
+   hotKeyEditorAction->addTo(this);
+   menuBar->insertItem(tr("Hot&Keys"), this);
++#endif
+ }
+ 
+ /*

@@ -1,0 +1,65 @@
+$OpenBSD: patch-src_CMySQLQuery_cpp,v 1.1 2002/11/05 15:55:49 wilfried Exp $
+--- src/CMySQLQuery.cpp.orig	Sat Nov  2 14:47:25 2002
++++ src/CMySQLQuery.cpp	Mon Nov  4 18:53:33 2002
+@@ -33,6 +33,7 @@
+ 
+ #define PROCESS_EVENT 35
+ 
++#if defined(QT_THREAD_SUPPORT)
+ CMySQLQuery::QueryThread::QueryThread(MYSQL *m, const char *q, ulong l)
+ : QThread(), m_mysql(m), qry((char *) q), len(l)
+ {
+@@ -51,6 +52,7 @@ void CMySQLQuery::QueryThread::run()
+   
+   res = (mysql_real_query(m_mysql, qry, len) == 0);
+ }
++#endif
+ 
+ CMySQLQuery::CMySQLQuery(CMySQL *m)
+ : QObject(0, "CMySQLQuery")
+@@ -149,6 +151,7 @@ bool CMySQLQuery::execRealStaticQuery(co
+   }  
+   QTime tm;
+   tm.start();
++#if defined(QT_THREAD_SUPPORT)
+   QueryThread queryThread(m_mysql->mysql, qry, len);
+   queryThread.start();
+   queryThread.wait();
+@@ -159,6 +162,14 @@ bool CMySQLQuery::execRealStaticQuery(co
+       m_mysql->emitError();
+     return false;
+   }
++#else
++  if (mysql_real_query(m_mysql->mysql, qry, len) != 0)
++  {
++    if (emiterror)
++      m_mysql->emitError();
++    return false;
++  }
++#endif
+   mysql_res = NULL;
+   num_fields = 0;
+   last_query = qry;
+@@ -205,6 +216,7 @@ bool CMySQLQuery::execRealQuery(const ch
+   QTime tm;
+   tm.start();
+ 
++#if defined(QT_THREAD_SUPPORT)
+   QueryThread queryThread(m_mysql->mysql, qry, len);
+   queryThread.start();
+   queryThread.wait();
+@@ -215,6 +227,14 @@ bool CMySQLQuery::execRealQuery(const ch
+       m_mysql->emitError();
+     return false;
+   }
++#else
++  if (mysql_real_query(m_mysql->mysql, qry, len) != 0)
++  {
++    if (emiterror)
++      m_mysql->emitError();
++    return false;
++  }
++#endif
+ 
+   if (!(mysql_res=mysql_store_result(m_mysql->mysql)))
+   {

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_CMySQL_cpp,v 1.1 2002/11/05 15:55:49 wilfried Exp $
+--- src/CMySQL.cpp.orig	Sat Nov  2 14:47:25 2002
++++ src/CMySQL.cpp	Mon Nov  4 18:39:52 2002
+@@ -472,7 +472,7 @@ QString CMySQL::mysqlInfo() const
+   qDebug("CMySQL::mysqlInfo()");
+ #endif
+   
+-  return (isConnected() ? mysql_info(mysql) : QString::null);
++  return (isConnected() ? QString(mysql_info(mysql)) : QString::null);
+ }
+ 
+ /*
+@@ -497,7 +497,7 @@ QString CMySQL::mysqlGetHostInfo() const
+   qDebug("CMySQL::mysqlGetHostInfo()");
+ #endif
+   
+-  return (isConnected() ? mysql_get_host_info(mysql) : QString::null);
++  return (isConnected() ? QString(mysql_get_host_info(mysql)) : QString::null);
+ }
+ 
+ /*
+@@ -522,7 +522,7 @@ QString CMySQL::mysqlGetServerInfo() con
+   qDebug("CMySQL::mysqlGetServerInfo()");
+ #endif
+   
+-  return (isConnected() ? mysql_get_server_info(mysql) : QString::null);
++  return (isConnected() ? QString(mysql_get_server_info(mysql)) : QString::null);
+ }
+ 
+ 

@@ -1,30 +1,30 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/03/19 13:58:12 wilfried Exp $
---- configure.orig	Wed Mar  6 18:49:17 2002
-+++ configure	Mon Mar 11 16:58:02 2002
-@@ -1041,7 +1041,7 @@ fi
+$OpenBSD: patch-configure,v 1.2 2002/11/05 15:55:49 wilfried Exp $
+--- configure.orig	Sat Nov  2 14:47:25 2002
++++ configure	Mon Nov  4 18:13:33 2002
+@@ -2121,7 +2121,7 @@ fi
                  if test "x$mysql_found" = "xyes"
                  then
                      LIBS="-L$dir $SAVE_LIBS $LIBZ_LIB"
 -                    MYSQL_LIB="$dir/libmysqlclient.a $LIBZ_LIB"
 +                    MYSQL_LIB="-lmysqlclient $LIBZ_LIB"
-                     
-                     echo $ac_n "checking for mysql_connect in -lmysqlclient""... $ac_c" 1>&6
- echo "configure:1048: checking for mysql_connect in -lmysqlclient" >&5
-@@ -1272,7 +1272,7 @@ fi
  
- echo $ac_n "checking "if Qt Version in $QTDIR is >= 3.0.0"""... $ac_c" 1>&6
- echo "configure:1275: checking "if Qt Version in $QTDIR is >= 3.0.0"" >&5
+                     echo "$as_me:2126: checking for mysql_real_connect in -lmysqlclient" >&5
+ echo $ECHO_N "checking for mysql_real_connect in -lmysqlclient... $ECHO_C" >&6
+@@ -2497,7 +2497,7 @@ fi
+ 
+ echo "$as_me:2498: checking \"if Qt Version in $QTDIR is >= 3.0.2\"" >&5
+ echo $ECHO_N "checking \"if Qt Version in $QTDIR is >= 3.0.2\"... $ECHO_C" >&6
 -CPPFLAGS="$CPPFLAGS -I$QTDIR/include"
 +CPPFLAGS="$CPPFLAGS -I$LOCALBASE/include/X11/qt3"
- cat > conftest.$ac_ext <<EOF
- #line 1278 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 2502 "configure"
  #include "confdefs.h"
-@@ -1589,7 +1589,7 @@ test "$no_create" = yes || ${CONFIG_SHEL
+@@ -3184,7 +3184,7 @@ fi
  
  QMAKESPEC=$QTDIR/mkspecs/$host_os
  echo "Creating Makefile with qmake"
--QMAKESPEC=$QMAKESPECE QTDIR=$QTDIR $QTDIR/bin/qmake MyCC.pro
-+QMAKESPEC=$FILESDIR QTDIR=$QTDIR $QTDIR/bin/qmake MyCC.pro
+-QMAKESPEC=$QMAKESPECE QTDIR=$QTDIR $QTDIR/bin/qmake mysqlcc.pro
++QMAKESPEC=$FILESDIR QTDIR=$QTDIR $QTDIR/bin/qmake mysqlcc.pro
  if test ! $? = 0 ; then
   echo "qmake failed, aborting"
   exit 1
