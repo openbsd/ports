@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 19:00:09 naddy Exp $
 
 COMMENT=	"extensible shell, derived from plan9's rc"
 
 DISTNAME=	es-0.9-beta1
 PKGNAME=	es-0.9b1
 CATEGORIES=	shells
-NEED_VERSION=	1.402
+
 MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,6 +27,8 @@ ALL_TARGET=	es
 
 post-extract:
 	@cp ${FILESDIR}/{config.guess,config.sub} ${WRKSRC}
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/es ${PREFIX}/bin

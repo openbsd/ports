@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2002/07/24 01:12:31 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2002/10/28 19:00:09 naddy Exp $
 
 COMMENT=	"extended C-shell with many useful features"
 
@@ -23,6 +23,7 @@ CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
 ALL_TARGET=	all catalogs
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh

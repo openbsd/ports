@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/09/28 20:28:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/28 19:00:09 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
@@ -29,6 +29,8 @@ WRKDIST=	${WRKDIR}
 
 do-build:
 	cd ${WRKBUILD} && env -i ${MAKE_ENV} /bin/sh bin/package make
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
