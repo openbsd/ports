@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2000/07/27 00:23:34 matt Exp $
-lib/libhosts_gatherer.so.1.3
-lib/libnasl.so.1.3
-lib/libnessus.so.1.3
+@comment $OpenBSD: PFRAG.shared,v 1.4 2000/08/05 01:25:32 matt Exp $
+lib/libhosts_gatherer.so.1.4
+lib/libnasl.so.1.4
+lib/libnessus.so.1.4
 lib/libpeks.so.8.13
 lib/nessus/plugins/accounts.nes
 lib/nessus/plugins/bind_bof.nes
