@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/16 22:17:14 naddy Exp $
+${P5SITE}/Apache/Test.pm
+${P5SITE}/Apache/Test5005compat.pm
+${P5SITE}/Apache/TestBuild.pm
+${P5SITE}/Apache/TestClient.pm
+${P5SITE}/Apache/TestCommon.pm
+${P5SITE}/Apache/TestCommonPost.pm
+${P5SITE}/Apache/TestConfig.pm
+${P5SITE}/Apache/TestConfigC.pm
+${P5SITE}/Apache/TestConfigData.pm
+${P5SITE}/Apache/TestConfigParse.pm
+${P5SITE}/Apache/TestConfigPerl.pm
+${P5SITE}/Apache/TestHandler.pm
+${P5SITE}/Apache/TestHarness.pm
+${P5SITE}/Apache/TestMM.pm
+${P5SITE}/Apache/TestPerlDB.pm
+${P5SITE}/Apache/TestReport.pm
+${P5SITE}/Apache/TestReportPerl.pm
+${P5SITE}/Apache/TestRequest.pm
+${P5SITE}/Apache/TestRun.pm
+${P5SITE}/Apache/TestRunPerl.pm
+${P5SITE}/Apache/TestSSLCA.pm
+${P5SITE}/Apache/TestServer.pm
+${P5SITE}/Apache/TestSmoke.pm
+${P5SITE}/Apache/TestSmokePerl.pm
+${P5SITE}/Apache/TestSort.pm
+${P5SITE}/Apache/TestTrace.pm
+${P5SITE}/Apache/TestUtil.pm
+${P5SITE}/Bundle/ApacheTest.pm
+@comment ${P5ARCH}/auto/Apache/Test/.packlist
+man/man3p/Apache::Test.3p
+man/man3p/Apache::TestConfig.3p
+man/man3p/Apache::TestConfigData.3p
+man/man3p/Apache::TestMM.3p
+man/man3p/Apache::TestReport.3p
+man/man3p/Apache::TestRequest.3p
+man/man3p/Apache::TestRun.3p
+man/man3p/Apache::TestSmoke.3p
+man/man3p/Apache::TestTrace.3p
+man/man3p/Apache::TestUtil.3p
+man/man3p/Bundle::ApacheTest.3p
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Apache/Test
+@comment @dirrm ${P5ARCH}/auto/Apache
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Bundle
+@dirrm ${P5SITE}/Apache

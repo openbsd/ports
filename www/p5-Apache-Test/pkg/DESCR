@@ -1,0 +1,2 @@
+Apache::Test is a wrapper around the standard Test.pm
+with helpers for testing an Apache server.
