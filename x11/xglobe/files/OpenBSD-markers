@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.21 2002/02/10 17:43:02 naddy Exp $
+# $OpenBSD: OpenBSD-markers,v 1.22 2002/02/10 22:17:38 nino Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -27.48		153.20		"Leonard"	# David
@@ -48,5 +48,6 @@
 57.717		11.967		"Hallqvist"	# Niklas
 59.33		18.08		"Grabowski"	# Art
 59.43		17.81		"Jansson"	# Mats O
+59.52		17.38		"Nordman"	# Nils
 60.10		24.57		"Korpela"	# Heikki
 60.12399	24.52438	"Virtanen"	# Jukka
