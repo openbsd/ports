@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.298 2003/12/11 19:03:50 david Exp $
+# $OpenBSD: Makefile,v 1.299 2003/12/29 14:10:17 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -164,8 +164,9 @@
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pdnsd
-     SUBDIR += pfflowd
+     SUBDIR += pebrot
      SUBDIR += pen
+     SUBDIR += pfflowd
      SUBDIR += pfstat
      SUBDIR += pktstat
      SUBDIR += plushs
