@@ -1,0 +1,6 @@
+This is Comfortable FTP, a full screen ftp client.
+Supported are FTP both with active and passive data connections,
+IPv4 and IPv6, and SFTP (a file transfer protocol using SSH for
+authorization and connection encryption).
+
+WWW: ${HOMEPAGE}

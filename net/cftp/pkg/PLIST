@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/21 22:57:41 naddy Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/cftp.info
+bin/cftp
+info/cftp.info
+@exec install-info --info-dir=%D/info %D/info/cftp.info
