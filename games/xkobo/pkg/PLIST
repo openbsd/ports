@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/08/22 17:58:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/16 13:44:37 naddy Exp $
 man/man1/xkobo.1
 @group games
 @mode 2755
 bin/xkobo
-@exec install -d -g games -m 575 /var/games/xkobo.scores 
+@exec install -d -g games -m 575 /var/games/xkobo.scores
 @extraunexec rm -rf /var/games/xkobo.scores

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pear,v 1.3 2003/11/15 18:11:35 avsm Exp $
+@comment $OpenBSD: PLIST-pear,v 1.4 2003/12/16 13:44:37 naddy Exp $
 pear/build/Makefile.global
 pear/build/acinclude.m4
 pear/build/mkdep.awk
@@ -293,11 +293,11 @@ pear/tests/XML_Parser/tests/test3.xml
 @dirrm pear/build
 @dirrm pear/include/regex
 @dirrm pear/include/main
-@dirrm pear/include/ext/pgsql 
+@dirrm pear/include/ext/pgsql
 @dirrm pear/include/ext/mbstring
 @dirrm pear/include/ext/xml/expat
-@dirrm pear/include/ext/xml  
-@dirrm pear/include/ext/session   
+@dirrm pear/include/ext/xml
+@dirrm pear/include/ext/session
 @dirrm pear/include/ext/standard
 @dirrm pear/include/ext
 @dirrm pear/include/TSRM
@@ -311,10 +311,10 @@ pear/tests/XML_Parser/tests/test3.xml
 @dirrm pear/tests
 @dirrm pear/data/PEAR
 @dirrm pear/data
-@dirrm pear/doc/DB/doc   
+@dirrm pear/doc/DB/doc
 @dirrm pear/doc/DB
-@dirrm pear/doc/Archive_Tar/docs  
-@dirrm pear/doc/Archive_Tar   
+@dirrm pear/doc/Archive_Tar/docs
+@dirrm pear/doc/Archive_Tar
 @dirrm pear/doc
 @dirrm pear/lib/Mail
 @dirrm pear/lib/DB
