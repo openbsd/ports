@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/02 14:15:29 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/04 08:19:00 kevlo Exp $
 
-BROKEN=		"Unlicenced version, expired"
 DISTNAME=	mtv-1.0.6.0
 CATEGORIES=	graphics
 NEED_VERSION=	1.322
@@ -13,7 +12,7 @@ MAINTAINER=	kevlo@openbsd.org
 PERMIT_PACKAGE_CDROM=   Commercial
 PERMIT_PACKAGE_FTP=     Commercial
 PERMIT_DISTFILES_CDROM= Commercial
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_DISTFILES_FTP=   Commercial
 
 ONLY_FOR_ARCHS= i386
 EXTRACT_SUFX=	.tgz
