@@ -1,6 +1,15 @@
---- src/Makefile.in.orig	Fri Jan 22 14:07:01 1999
-+++ src/Makefile.in	Sun May  9 12:49:53 1999
-@@ -38,8 +38,8 @@
+--- src/Makefile.in.orig	Tue Oct 19 17:28:35 1999
++++ src/Makefile.in	Tue Jun 27 23:46:35 2000
+@@ -27,6 +27,8 @@
+ PINGER_EXE	= pinger$(exec_suffix)
+ CACHEMGR_EXE	= cachemgr$(cgi_suffix)
+ 
++DESTDIR = 
++
+ DEFAULT_PREFIX		= $(prefix)
+ DEFAULT_CONFIG_FILE     = $(sysconfdir)/squid.conf
+ DEFAULT_MIME_TABLE	= $(sysconfdir)/mime.conf
+@@ -38,8 +40,8 @@
  DEFAULT_SWAP_DIR        = $(localstatedir)/cache
  DEFAULT_PINGER		= $(libexecdir)/$(PINGER_EXE)
  DEFAULT_UNLINKD		= $(libexecdir)/$(UNLINKD_EXE)
@@ -11,8 +20,118 @@
  DEFAULT_MIB_PATH	= $(sysconfdir)/mib.txt
  
  CC		= @CC@
-@@ -325,22 +325,10 @@
- 			$(RM) -f $(libexecdir)/-$$f; \
+@@ -262,102 +264,86 @@
+ 	< $(srcdir)/cf.data.pre >$@
+ 
+ install-mkdirs:
+-	-@if test ! -d $(prefix); then \
+-		echo "mkdir $(prefix)"; \
+-		mkdir $(prefix); \
+-	fi
+-	-@if test ! -d $(exec_prefix); then \
+-		echo "mkdir $(exec_prefix)"; \
+-		mkdir $(exec_prefix); \
++	-@if test ! -d $(DESTDIR)$(exec_prefix); then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(exec_prefix)"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(exec_prefix); \
+ 	fi
+-	-@if test ! -d $(bindir); then \
+-		echo "mkdir $(bindir)"; \
+-		mkdir $(bindir); \
++	-@if test ! -d $(DESTDIR)$(bindir); then \
++		echo "${BSD_INSTALL_PROGRAM_DIR} $(DESTDIR)$(bindir)"; \
++		${BSD_INSTALL_PROGRAM_DIR} $(DESTDIR)$(bindir); \
+ 	fi
+-	-@if test ! -d $(libexecdir); then \
+-		echo "mkdir $(libexecdir)"; \
+-		mkdir $(libexecdir); \
++	-@if test ! -d $(DESTDIR)$(libexecdir); then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(libexecdir)"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(libexecdir); \
+ 	fi
+-	-@if test ! -d $(sysconfdir); then \
+-		echo "mkdir $(sysconfdir)"; \
+-		mkdir $(sysconfdir); \
++	-@if test ! -d $(DESTDIR)$(sysconfdir); then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(sysconfdir)"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(sysconfdir); \
+ 	fi
+-	-@if test ! -d $(localstatedir); then \
+-		echo "mkdir $(localstatedir)"; \
+-		mkdir $(localstatedir); \
++	-@if test ! -d $(DESTDIR)$(localstatedir); then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(localstatedir)"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(localstatedir); \
+ 	fi
+-	-@if test ! -d $(localstatedir)/logs; then \
+-		echo "mkdir $(localstatedir)/logs"; \
+-		mkdir $(localstatedir)/logs; \
++	-@if test ! -d $(DESTDIR)$(localstatedir)/logs; then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(localstatedir)/logs"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(localstatedir)/logs; \
+ 	fi
+ 
+ # Michael Lupp <mike@nemesis.saar.de> wants to know about additions
+ # to the install target.
+ install: all install-mkdirs
+ 	@for f in $(PROGS); do \
+-		if test -f $(bindir)/$$f; then \
+-			echo $(MV) $(bindir)/$$f $(bindir)/-$$f; \
+-			$(MV) $(bindir)/$$f $(bindir)/-$$f; \
++		if test -f $(DESTDIR)$(bindir)/$$f; then \
++			echo $(MV) $(DESTDIR)$(bindir)/$$f $(DESTDIR)$(bindir)/-$$f; \
++			$(MV) $(DESTDIR)$(bindir)/$$f $(DESTDIR)$(bindir)/-$$f; \
+ 		fi; \
+-		echo $(INSTALL_BIN) $$f $(bindir); \
+-		$(INSTALL_BIN) $$f $(bindir); \
+-		if test -f $(bindir)/-$$f; then \
+-			echo $(RM) -f $(bindir)/-$$f; \
+-			$(RM) -f $(bindir)/-$$f; \
++		echo $(INSTALL_BIN) $$f $(DESTDIR)$(bindir); \
++		$(INSTALL_BIN) $$f $(DESTDIR)$(bindir); \
++		if test -f $(DESTDIR)$(bindir)/-$$f; then \
++			echo $(RM) -f $(DESTDIR)$(bindir)/-$$f; \
++			$(RM) -f $(DESTDIR)$(bindir)/-$$f; \
+ 		fi; \
+ 	done
+ 	@for f in $(UTILS); do \
+-		if test -f $(libexecdir)/$$f; then \
+-			echo $(MV) $(libexecdir)/$$f $(libexecdir)/-$$f; \
+-			$(MV) $(libexecdir)/$$f $(libexecdir)/-$$f; \
++		if test -f $(DESTDIR)$(libexecdir)/$$f; then \
++			echo $(MV) $(DESTDIR)$(libexecdir)/$$f $(DESTDIR)$(libexecdir)/-$$f; \
++			$(MV) $(DESTDIR)$(libexecdir)/$$f $(DESTDIR)$(libexecdir)/-$$f; \
+ 		fi; \
+-		echo $(INSTALL_BIN) $$f $(libexecdir); \
+-		$(INSTALL_BIN) $$f $(libexecdir); \
+-		if test -f $(libexecdir)/-$$f; then \
+-			echo $(RM) -f $(libexecdir)/-$$f; \
+-			$(RM) -f $(libexecdir)/-$$f; \
++		echo $(INSTALL_BIN) $$f $(DESTDIR)$(libexecdir); \
++		$(INSTALL_BIN) $$f $(DESTDIR)$(libexecdir); \
++		if test -f $(DESTDIR)$(libexecdir)/-$$f; then \
++			echo $(RM) -f $(DESTDIR)$(libexecdir)/-$$f; \
++			$(RM) -f $(DESTDIR)$(libexecdir)/-$$f; \
+ 		fi; \
+ 	done
+ 	@for f in $(CGIPROGS); do \
+-		if test -f $(libexecdir)/$$f; then \
+-			echo $(MV) $(libexecdir)/$$f $(libexecdir)/-$$f; \
+-			$(MV) $(libexecdir)/$$f $(libexecdir)/-$$f; \
++		if test -f $(DESTDIR)$(libexecdir)/$$f; then \
++			echo $(MV) $(DESTDIR)$(libexecdir)/$$f $(DESTDIR)$(libexecdir)/-$$f; \
++			$(MV) $(DESTDIR)$(libexecdir)/$$f $(DESTDIR)$(libexecdir)/-$$f; \
+ 		fi; \
+-		echo $(INSTALL_BIN) $$f $(libexecdir); \
+-		$(INSTALL_BIN) $$f $(libexecdir); \
+-		if test -f $(libexecdir)/-$$f; then \
+-			echo $(RM) -f $(libexecdir)/-$$f; \
+-			$(RM) -f $(libexecdir)/-$$f; \
++		echo $(INSTALL_BIN) $$f $(DESTDIR)$(libexecdir); \
++		$(INSTALL_BIN) $$f $(DESTDIR)$(libexecdir); \
++		if test -f $(DESTDIR)$(libexecdir)/-$$f; then \
++			echo $(RM) -f $(DESTDIR)$(libexecdir)/-$$f; \
++			$(RM) -f $(DESTDIR)$(libexecdir)/-$$f; \
  		fi; \
  	done
 -	$(INSTALL_FILE) $(srcdir)/mib.txt $(DEFAULT_MIB_PATH)
@@ -31,10 +150,30 @@
 -		echo "$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir)"; \
 -		$(INSTALL_FILE) $(srcdir)/mime.conf $(sysconfdir); \
 -	fi
-+	${BSD_INSTALL_DATA_DIR} $(prefix)/lib/squid/conf
-+	$(INSTALL_FILE) $(srcdir)/mib.txt $(prefix)/lib/squid/conf/mib.txt.sample
-+	$(INSTALL_FILE) squid.conf $(prefix)/lib/squid/conf/squid.conf.sample
-+	$(INSTALL_FILE) $(srcdir)/mime.conf $(prefix)/lib/squid/conf/mime.conf.sample
++	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib/squid/conf
++	$(INSTALL_FILE) $(srcdir)/mib.txt $(DESTDIR)$(prefix)/lib/squid/conf/mib.txt.sample
++	$(INSTALL_FILE) squid.conf $(DESTDIR)$(prefix)/lib/squid/conf/squid.conf.sample
++	$(INSTALL_FILE) $(srcdir)/mime.conf $(DESTDIR)$(prefix)/lib/squid/conf/mime.conf.sample
  
  install-pinger:
  	@f=pinger; \
+-	if test -f $(libexecdir)/$$f; then \
+-		echo $(MV) $(libexecdir)/$$f $(libexecdir)/-$$f; \
+-		$(MV) $(libexecdir)/$$f $(libexecdir)/-$$f; \
++	if test -f $(DESTDIR)$(libexecdir)/$$f; then \
++		echo $(MV) $(DESTDIR)$(libexecdir)/$$f $(DESTDIR)$(libexecdir)/-$$f; \
++		$(MV) $(DESTDIR)$(libexecdir)/$$f $(DESTDIR)$(libexecdir)/-$$f; \
+ 	fi; \
+-	echo $(INSTALL_SUID) $$f $(libexecdir); \
+-	$(INSTALL_SUID) $$f $(libexecdir) || exit 1; \
+-	if test -f $(libexecdir)/-$$f; then \
+-		echo $(RM) -f $(libexecdir)/-$$f; \
+-		$(RM) -f $(libexecdir)/-$$f; \
++	echo $(INSTALL_SUID) $$f $(DESTDIR)$(libexecdir); \
++	$(INSTALL_SUID) $$f $(DESTDIR)$(libexecdir) || exit 1; \
++	if test -f $(DESTDIR)$(libexecdir)/-$$f; then \
++		echo $(RM) -f $(DESTDIR)$(libexecdir)/-$$f; \
++		$(RM) -f $(DESTDIR)$(libexecdir)/-$$f; \
+ 	fi
+ 
+ clean: 

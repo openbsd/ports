@@ -1,6 +1,6 @@
---- src/cf.data.pre.orig	Fri Apr 23 12:47:40 1999
-+++ src/cf.data.pre	Fri Apr 23 12:48:33 1999
-@@ -1629,13 +1629,13 @@
+--- src/cf.data.pre.orig	Wed Mar 29 17:56:56 2000
++++ src/cf.data.pre	Tue Jun 27 22:31:31 2000
+@@ -1856,13 +1856,13 @@
  
  NAME: cache_effective_user
  TYPE: string
@@ -16,7 +16,7 @@
  LOC: Config.effectiveGroup
  DOC_START
  
-@@ -1647,8 +1647,8 @@
+@@ -1874,8 +1874,8 @@
  	current UID/GID.  Note that if Squid is not started as root then
  	you cannot set http_port to a value lower than 1024.
  

@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr 20 23:36:03 1999
-+++ configure	Fri Apr 23 12:53:10 1999
-@@ -644,11 +644,11 @@
+--- configure.orig	Fri Apr 28 16:17:12 2000
++++ configure	Wed Jun 28 00:52:33 2000
+@@ -673,12 +673,6 @@
  REGEXLIB=''	# -lregex
  LIBREGEX=''	# libregex.a
  
@@ -9,11 +9,26 @@
 -	localstatedir='${prefix}'
 -
 -fi
-+#if test "$libexecdir" = '${exec_prefix}/libexec'; then
-+#	libexecdir='${bindir}'
-+#	localstatedir='${prefix}'
-+#
-+#fi
- 
+-
  case "$host_os" in
  cygwin32|os2)
+ 	exec_suffix=".exe"
+@@ -4063,18 +4057,6 @@
+ 
+ 		;;
+ esac
+-
+-# Remove optimization for GCC 2.95.[12]
+-# gcc -O[2] on *BSD and Linux (x86) causes pointers to magically become NULL
+-if test "$GCC" = "yes"; then
+-	GCCVER=`$CC -v 2>&1 | awk '$2 ==  "version" {print $3}'`
+-	case "$GCCVER" in
+-	2.95.[12])
+-		echo "Removing -O for gcc on $host with GCC $GCCVER"
+-		CFLAGS="`echo $CFLAGS | sed -e 's/-O[0-9]*//'`"
+-		;;
+-	esac
+-fi
+ 
+ # Recommended by Balint Nagy Endre <bne@CareNet.hu>
+ case "$host" in

@@ -1,5 +1,5 @@
-SQUID Internet Object Cache:  ${HOMEPAGE}
---------------------------------------------------------
+                SQUID Internet Object Cache
+  -------------------------------------------------------
 
   Squid is the result of efforts by numerous individuals from the
   Internet community.  Development is led by Duane Wessels of the
@@ -29,3 +29,5 @@ Please use our mailing lists for questions, feedback and bug fixes
         squid-users@ircache.net	# general questions, pubilc forum
         squid-bugs@ircache.net	# bugs and fixes
         squid@ircache.net	# other feedback
+
+WWW: ${HOMEPAGE}

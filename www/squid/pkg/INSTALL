@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/05/09 20:01:57 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/06/28 07:08:32 brad Exp $
 #
 # Pre/post-installation setup of squid
 
@@ -7,16 +7,15 @@
 #
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=/etc/squid/squid.conf
+CONFIG_FILE=${SYSCONFDIR}/squid.conf
 
-mkdir -p /etc/squid
-mkdir -p /usr/local/share/squid/icons
-mkdir -p /usr/local/share/squid/errors
-install -d -o www -g www /var/squid
-install -d -o www -g www /var/squid/logs
-install -d -o www -g www /var/squid/cache
-ln -sf /var/squid/logs/squid.pid /var/run/squid.pid
+install -d -o root -g wheel ${SYSCONFDIR}
+install -d -o root -g wheel ${PREFIX}/share/squid/icons
+install -d -o root -g wheel ${PREFIX}/share/squid/errors
+install -d -o www -g www ${STATEDIR}
+install -d -o www -g www ${STATEDIR}/logs
+install -d -o www -g www ${STATEDIR}/cache
+ln -sf ${STATEDIR}/logs/squid.pid /var/run/squid.pid
 
 # Function: tell the user what s/he needs to do to use the port just installed
 #
@@ -35,11 +34,11 @@ do_notice_conf()
 #
 do_install_conf()
 {
-    cp ${PREFIX}/lib/squid/conf/squid.conf.sample /etc/squid/squid.conf
-    cp ${PREFIX}/lib/squid/conf/mime.conf.sample /etc/squid/mime.conf
-    cp ${PREFIX}/lib/squid/conf/mib.txt.sample /etc/squid/mib.txt
-    cp -R ${PREFIX}/lib/squid/errors/* /usr/local/share/squid/errors
-    cp -R ${PREFIX}/lib/squid/icons/* /usr/local/share/squid/icons
+    install -o root -g wheel ${PREFIX}/lib/squid/conf/squid.conf.sample /etc/squid/squid.conf
+    install -o root -g wheel ${PREFIX}/lib/squid/conf/mime.conf.sample /etc/squid/mime.conf
+    install -o root -g wheel ${PREFIX}/lib/squid/conf/mib.txt.sample /etc/squid/mib.txt
+    cp -R ${PREFIX}/lib/squid/errors/* ${PREFIX}/share/squid/errors
+    cp -R ${PREFIX}/lib/squid/icons/* ${PREFIX}/share/squid/icons
     echo
     echo "+---------------"
     echo "| The $1 configuration files have been installed in /etc/squid."

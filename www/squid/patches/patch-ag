@@ -1,26 +1,29 @@
---- icons/Makefile.in.orig	Sun Apr 18 21:24:10 1999
-+++ icons/Makefile.in	Sun May  9 14:00:47 1999
-@@ -15,7 +15,7 @@
+--- icons/Makefile.in.orig	Tue Jun 27 23:09:05 2000
++++ icons/Makefile.in	Tue Jun 27 23:12:00 2000
+@@ -15,7 +15,10 @@
  
  INSTALL         	= @INSTALL@
  INSTALL_FILE    	= @INSTALL_DATA@
 -DEFAULT_ICON_DIR        = $(sysconfdir)/icons
++
++DESTDIR = 
++
 +DEFAULT_ICON_DIR        = $(prefix)/share/squid/icons
  
  ICONS		= anthony-binhex.gif \
  		  anthony-bomb.gif \
-@@ -52,26 +52,18 @@
+@@ -52,26 +55,18 @@
  
  install: install-mkdirs anthony-xpm.gif
  	@for f in $(ICONS); do \
 -		if test -f $(DEFAULT_ICON_DIR)/$$f ; then \
-+		if test -f $(prefix)/lib/squid/icons/$$f ; then \
++		if test -f $(DESTDIR)$(prefix)/lib/squid/icons/$$f ; then \
  			:; \
  		else \
 -			echo "$(INSTALL_FILE) $$f $(DEFAULT_ICON_DIR)"; \
 -			$(INSTALL_FILE) $$f $(DEFAULT_ICON_DIR); \
-+			echo "$(INSTALL_FILE) $$f $(prefix)/lib/squid/icons"; \
-+			$(INSTALL_FILE) $$f $(prefix)/lib/squid/icons; \
++			echo "$(INSTALL_FILE) $$f $(DESTDIR)$(prefix)/lib/squid/icons"; \
++			$(INSTALL_FILE) $$f $(DESTDIR)$(prefix)/lib/squid/icons; \
  		fi; \
  	done
  
@@ -36,9 +39,9 @@
 -	-@if test ! -d $(DEFAULT_ICON_DIR); then \
 -		echo "mkdir $(DEFAULT_ICON_DIR)"; \
 -		mkdir $(DEFAULT_ICON_DIR); \
-+	-@if test ! -d $(prefix)/lib/squid/icons; then \
-+		echo "mkdir $(prefix)/lib/squid/icons"; \
-+		${BSD_INSTALL_DATA_DIR} $(prefix)/lib/squid/icons; \
++	-@if test ! -d $(DESTDIR)$(prefix)/lib/squid/icons; then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib/squid/icons"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib/squid/icons; \
  	fi
  
  clean:

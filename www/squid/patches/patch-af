@@ -1,26 +1,29 @@
---- errors/Makefile.in.orig	Fri Apr 24 01:26:39 1998
-+++ errors/Makefile.in	Sun May  9 14:05:51 1999
-@@ -15,7 +15,7 @@
+--- errors/Makefile.in.orig	Tue Jun 27 22:48:21 2000
++++ errors/Makefile.in	Tue Jun 27 23:06:11 2000
+@@ -15,7 +15,10 @@
  
  INSTALL         	= @INSTALL@
  INSTALL_FILE    	= @INSTALL_DATA@
 -DEFAULT_ERROR_DIR	= $(sysconfdir)/errors
++
++DESTDIR = 
++
 +DEFAULT_ERROR_DIR	= $(prefix)/share/squid/errors
  
  LANGUAGE		= @ERR_LANGUAGE@
  
-@@ -23,26 +23,18 @@
+@@ -23,26 +26,18 @@
  
  install: install-mkdirs
  	@for f in $(srcdir)/$(LANGUAGE)/ERR_*; do \
 -		if test -f $(DEFAULT_ERROR_DIR)/$$f ; then \
-+		if test -f $(prefix)/lib/squid/errors/$$f ; then \
++		if test -f $(DESTDIR)$(prefix)/lib/squid/errors/$$f ; then \
  			:; \
  		else \
 -			echo "$(INSTALL_FILE) $$f $(DEFAULT_ERROR_DIR)"; \
 -			$(INSTALL_FILE) $$f $(DEFAULT_ERROR_DIR); \
-+			echo "$(INSTALL_FILE) $$f $(prefix)/lib/squid/errors"; \
-+			$(INSTALL_FILE) $$f $(prefix)/lib/squid/errors; \
++			echo "$(INSTALL_FILE) $$f $(DESTDIR)$(prefix)/lib/squid/errors"; \
++			$(INSTALL_FILE) $$f $(DESTDIR)$(prefix)/lib/squid/errors; \
  		fi; \
  	done
  
@@ -36,9 +39,9 @@
 -	-@if test ! -d $(DEFAULT_ERROR_DIR); then \
 -		echo "mkdir $(DEFAULT_ERROR_DIR)"; \
 -		mkdir $(DEFAULT_ERROR_DIR); \
-+	-@if test ! -d $(prefix)/lib/squid/errors; then \
-+		echo "mkdir $(prefix)/lib/squid/errors"; \
-+		${BSD_INSTALL_DATA_DIR} $(prefix)/lib/squid/errors; \
++	-@if test ! -d $(DESTDIR)$(prefix)/lib/squid/errors; then \
++		echo "${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib/squid/errors"; \
++		${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(prefix)/lib/squid/errors; \
  	fi
  
- clean:
+ # undocumented hack.  You can use this target to create multi-lingual

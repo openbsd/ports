@@ -1,0 +1,12 @@
+--- lib/Makefile.in.orig	Wed Jun 28 01:35:09 2000
++++ lib/Makefile.in	Wed Jun 28 01:35:26 2000
+@@ -48,6 +48,9 @@
+ 
+ all: $(LIBS)
+ 
++rfc1035.o: rfc1035.c
++	$(CC) $(CFLAGS) -O0 -c $<
++
+ $(UTILOBJS): $(top_srcdir)/include/version.h
+ 
+ libmiscutil.a: $(UTILOBJS)

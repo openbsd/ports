@@ -1,6 +1,6 @@
---- src/tools.c.orig	Fri Apr 16 13:07:58 1999
-+++ src/tools.c	Fri Apr 16 13:13:18 1999
-@@ -83,19 +83,15 @@
+--- src/tools.c.orig	Fri Mar 24 15:55:31 2000
++++ src/tools.c	Tue Jun 27 23:14:45 2000
+@@ -82,19 +82,15 @@
  mail_warranty(void)
  {
      FILE *fp = NULL;
