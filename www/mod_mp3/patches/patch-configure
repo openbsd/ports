@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/20 01:57:18 naddy Exp $
---- configure.orig	Mon May 19 19:13:38 2003
-+++ configure	Mon May 19 19:19:56 2003
+$OpenBSD: patch-configure,v 1.2 2004/06/13 03:25:17 pvalchev Exp $
+--- configure.orig	2002-09-19 00:13:21.000000000 -0600
++++ configure	2004-06-12 21:24:18.000000000 -0600
 @@ -198,15 +198,17 @@ sub with_pgsql {
  	print "checking for pgsql... ";
  	
@@ -38,3 +38,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2003/05/20 01:57:18 naddy Exp $
  			print "Error! $value/lib/libmysqlclient.so not found\n";
  			exit 1;
  		}
+@@ -567,7 +571,7 @@ PREOP = @$(NOOP)
+ POSTOP = @$(NOOP)
+ TO_UNIX = @$(NOOP)
+ 
+-AINCLUDEDIR=-I`$(APXS) -q INCLUDEDIR` `$(APXS) -q CFLAGS`
++AINCLUDEDIR=-I`$(APXS) -q INCLUDEDIR` `$(APXS) -q CFLAGS CFLAGS_SHLIB`
+ ACFLAGS=-I`$(APXS) -q INCLUDEDIR`
+ LD_SHLIB=`$(APXS) -q LDFLAGS_SHLIB`
+ CC=`$(APXS) -q CC`
