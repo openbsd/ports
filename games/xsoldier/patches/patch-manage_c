@@ -1,3 +1,4 @@
+$OpenBSD: patch-manage_c,v 1.2 2003/09/28 01:08:49 naddy Exp $
 --- manage.c.orig	Mon Jun  9 19:41:29 1997
 +++ manage.c	Mon Jun  9 19:41:41 1997
 @@ -9,7 +9,6 @@

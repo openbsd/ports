@@ -1,0 +1,11 @@
+$OpenBSD: patch-game_c,v 1.1 2003/09/28 01:08:49 naddy Exp $
+--- game.c.orig	2003-09-28 02:59:52.000000000 +0200
++++ game.c	2003-09-28 03:00:04.000000000 +0200
+@@ -8,6 +8,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <X11/keysym.h>
