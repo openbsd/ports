@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2001/11/21 01:29:48 matt Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/24 21:40:12 matt Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
+
+IGNORE=		"superseded by tightvnc"
 
 COMMENT=	"cross-platform remote desktop access"
 COMMENT-viewer=	"client for cross-platform remote desktop access"
