@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.264 2003/05/04 19:02:02 margarida Exp $
+# $OpenBSD: Makefile,v 1.265 2003/05/05 03:21:31 margarida Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
+     SUBDIR += adns
      SUBDIR += aggregate
      SUBDIR += aguri
      SUBDIR += angst
