@@ -1,0 +1,59 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2002/08/27 20:49:58 lebel Exp $
+--- Makefile.in.orig	Sun Mar 15 16:28:46 1998
++++ Makefile.in	Mon Aug 26 09:37:13 2002
+@@ -13,6 +13,7 @@ LIBS = @X_LIBS@ @X_PRE_LIBS@ -Llibami -l
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir = $(exec_prefix)/bin
++sharedir = $(exec_prefix)/share
+ libdir = $(exec_prefix)/lib
+ mandir = $(prefix)/man
+ INSTALL = @INSTALL@
+@@ -23,7 +24,7 @@ DT_DIR = /etc/dt
+ 
+ PROGS = amiwm requestchoice executecmd ppmtoinfo
+ 
+-MODULES = Background Keyboard
++MODULES = 
+ 
+ OBJS  = main.o screen.o client.o frame.o icc.o \
+ 		icon.o menu.o diskobject.o gram.o lex.o rc.o \
+@@ -42,7 +43,7 @@ DISTFILES = README README.modules INSTAL
+ 
+ PACKAGENAME = amiwm
+ 
+-AMIWM_HOME = $(libdir)/amiwm
++AMIWM_HOME = $(sharedir)/amiwm
+ 
+ all : $(PROGS) $(MODULES)
+ 
+@@ -82,13 +83,11 @@ kbdlexer.c : kbdlexer.l
+ 
+ install : $(PROGS) $(MODULES) Xsession Xsession2 Xinitrc amiwm-init
+ 	-mkdir -p $(AMIWM_HOME)
+-	$(INSTALL) -s requestchoice $(AMIWM_HOME)/requestchoice
+-	$(INSTALL) -s executecmd $(AMIWM_HOME)/executecmd
+ 	for module in $(MODULES); do \
+ 	  if [ "$$module" = "Background" ]; then \
+ 	    $(INSTALL) $$module $(AMIWM_HOME)/$$module; \
+ 	  else \
+-	    $(INSTALL) -s $$module $(AMIWM_HOME)/$$module; \
++	    $(INSTALL) -s $$module $(bindir)/$$module; \
+ 	  fi \
+ 	done
+ 	$(INSTALL) -m 644 system.amiwmrc $(AMIWM_HOME)/system.amiwmrc
+@@ -102,11 +101,10 @@ install : $(PROGS) $(MODULES) Xsession X
+ 	$(INSTALL) -m 755 amiwm-init $(AMIWM_HOME)/amiwm-init
+ 	$(INSTALL) -s amiwm $(bindir)/amiwm
+ 	$(INSTALL) -s ppmtoinfo $(bindir)/ppmtoinfo
+-	$(RM) $(bindir)/requestchoice
+-	$(LN_S) $(AMIWM_HOME)/requestchoice $(bindir)/requestchoice
+-	-mkdir -p $(mandir)/man1
++	$(INSTALL) -s requestchoice $(bindir)/requestchoice
++	$(INSTALL) -s executecmd $(bindir)/executecmd
+ 	$(INSTALL) -m 644 amiwm.1 $(mandir)/man1/amiwm.1
+-
++	
+ cde-install : Xresources.amiwm Amilogo.bm Amilogo.pm
+ 	-mkdir -p $(DT_DIR)/config/C/Xresources.d
+ 	$(INSTALL) -m 644 Xresources.amiwm $(DT_DIR)/config/C/Xresources.d/Xresources.amiwm
