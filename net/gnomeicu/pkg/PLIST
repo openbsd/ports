@@ -1,0 +1,102 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:47:16 todd Exp $
+bin/gnomeicu
+bin/gnomeicu-client
+share/applets/Network/GnomeICU.desktop
+share/gnome/apps/Internet/GnomeICU.desktop
+share/gnome/help/gnomeicu/C/topic.dat
+share/gnomeicu/icons/Default/gnomeicu-animation.png
+share/gnomeicu/icons/Default/gnomeicu-auth.png
+share/gnomeicu/icons/Default/gnomeicu-away.png
+share/gnomeicu/icons/Default/gnomeicu-blank.png
+share/gnomeicu/icons/Default/gnomeicu-cancel.png
+share/gnomeicu/icons/Default/gnomeicu-chat.png
+share/gnomeicu/icons/Default/gnomeicu-contact.png
+share/gnomeicu/icons/Default/gnomeicu-dnd.png
+share/gnomeicu/icons/Default/gnomeicu-ffc.png
+share/gnomeicu/icons/Default/gnomeicu-file.png
+share/gnomeicu/icons/Default/gnomeicu-hist.png
+share/gnomeicu/icons/Default/gnomeicu-info
+share/gnomeicu/icons/Default/gnomeicu-info.png
+share/gnomeicu/icons/Default/gnomeicu-inv.png
+share/gnomeicu/icons/Default/gnomeicu-message.png
+share/gnomeicu/icons/Default/gnomeicu-na.png
+share/gnomeicu/icons/Default/gnomeicu-occ.png
+share/gnomeicu/icons/Default/gnomeicu-offline.png
+share/gnomeicu/icons/Default/gnomeicu-ok.png
+share/gnomeicu/icons/Default/gnomeicu-online.png
+share/gnomeicu/icons/Default/gnomeicu-rename.png
+share/gnomeicu/icons/Default/gnomeicu-still.png
+share/gnomeicu/icons/Default/gnomeicu-url.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-animation.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-auth.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-away.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-blank.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-cancel.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-chat.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-contact.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-dnd.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-ffc.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-file.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-hist.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-info
+share/gnomeicu/icons/Eyeballs/gnomeicu-info.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-inv.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-message.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-na.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-occ.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-offline.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-ok.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-online.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-rename.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-still.png
+share/gnomeicu/icons/Eyeballs/gnomeicu-url.png
+share/gnomeicu/icons/Gradients/gnomeicu-animation.png
+share/gnomeicu/icons/Gradients/gnomeicu-away.png
+share/gnomeicu/icons/Gradients/gnomeicu-dnd.png
+share/gnomeicu/icons/Gradients/gnomeicu-ffc.png
+share/gnomeicu/icons/Gradients/gnomeicu-info
+share/gnomeicu/icons/Gradients/gnomeicu-inv.png
+share/gnomeicu/icons/Gradients/gnomeicu-na.png
+share/gnomeicu/icons/Gradients/gnomeicu-occ.png
+share/gnomeicu/icons/Gradients/gnomeicu-offline.png
+share/gnomeicu/icons/Gradients/gnomeicu-online.png
+share/gnomeicu/icons/reDubbed/gnomeicu-animation.png
+share/gnomeicu/icons/reDubbed/gnomeicu-auth.png
+share/gnomeicu/icons/reDubbed/gnomeicu-away.png
+share/gnomeicu/icons/reDubbed/gnomeicu-blank.png
+share/gnomeicu/icons/reDubbed/gnomeicu-cancel.png
+share/gnomeicu/icons/reDubbed/gnomeicu-chat.png
+share/gnomeicu/icons/reDubbed/gnomeicu-contact.png
+share/gnomeicu/icons/reDubbed/gnomeicu-dnd.png
+share/gnomeicu/icons/reDubbed/gnomeicu-ffc.png
+share/gnomeicu/icons/reDubbed/gnomeicu-file.png
+share/gnomeicu/icons/reDubbed/gnomeicu-hist.png
+share/gnomeicu/icons/reDubbed/gnomeicu-info
+share/gnomeicu/icons/reDubbed/gnomeicu-info.png
+share/gnomeicu/icons/reDubbed/gnomeicu-inv.png
+share/gnomeicu/icons/reDubbed/gnomeicu-message.png
+share/gnomeicu/icons/reDubbed/gnomeicu-na.png
+share/gnomeicu/icons/reDubbed/gnomeicu-occ.png
+share/gnomeicu/icons/reDubbed/gnomeicu-offline.png
+share/gnomeicu/icons/reDubbed/gnomeicu-ok.png
+share/gnomeicu/icons/reDubbed/gnomeicu-online.png
+share/gnomeicu/icons/reDubbed/gnomeicu-rename.png
+share/gnomeicu/icons/reDubbed/gnomeicu-still.png
+share/gnomeicu/icons/reDubbed/gnomeicu-url.png
+share/gnomeicu/sound/events/GnomeICU.soundlist
+share/gnomeicu/CORBA/servers/GnomeICU.gnorba
+share/pixmaps/gnome-gnomeicu.xpm
+share/sounds/gnomeicu/message.wav
+@dirrm share/sounds/gnomeicu
+@dirrm share/gnomeicu/icons/reDubbed
+@dirrm share/gnomeicu/icons/Gradients
+@dirrm share/gnomeicu/icons/Eyeballs
+@dirrm share/gnomeicu/icons/Default
+@dirrm share/gnomeicu/icons
+@dirrm share/gnomeicu/sound/events
+@dirrm share/gnomeicu/sound/
+@dirrm share/gnomeicu/CORBA/servers
+@dirrm share/gnomeicu/CORBA
+@dirrm share/gnomeicu
+@dirrm share/gnome/help/gnomeicu/C
+@dirrm share/gnome/help/gnomeicu
