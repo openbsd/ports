@@ -1,15 +1,6 @@
-$OpenBSD: patch-ext_openssl_openssl_c,v 1.1 2001/01/07 21:08:12 avsm Exp $
+$OpenBSD: patch-ext_openssl_openssl_c,v 1.2 2001/01/11 08:10:41 avsm Exp $
 --- ext/openssl/openssl.c.orig	Fri Nov 17 19:49:12 2000
 +++ ext/openssl/openssl.c	Sun Jan  7 18:33:35 2001
-@@ -16,7 +16,7 @@
-    +----------------------------------------------------------------------+
-  */
-  
--/* $Id: patch-ext_openssl_openssl_c,v 1.1 2001/01/07 21:08:12 avsm Exp $ */
-+/* $Id: patch-ext_openssl_openssl_c,v 1.1 2001/01/07 21:08:12 avsm Exp $ */
- 
- #include "php.h"
- #include "php_openssl.h"
 @@ -403,6 +403,7 @@ PHP_FUNCTION(openssl_seal)
  		i++;
  	}
