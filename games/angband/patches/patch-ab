@@ -1,0 +1,19 @@
+$OpenBSD: patch-ab,v 1.1.1.1 2000/04/16 21:03:15 espie Exp $
+--- src/util.c.orig	Sat Apr 15 19:36:48 2000
++++ src/util.c	Sat Apr 15 19:42:19 2000
+@@ -274,6 +274,7 @@ errr path_parse(char *buf, int max, cptr
+ #endif /* SET_UID */
+ 
+ 
++#if 0
+ /*
+  * Hack -- acquire a "temporary" file name if possible
+  *
+@@ -295,6 +296,7 @@ errr path_temp(char *buf, int max)
+ 	/* Success */
+ 	return (0);
+ }
++#endif
+ 
+ 
+ /*

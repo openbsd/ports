@@ -1,0 +1,67 @@
+@group games
+@mode 2755
+bin/angband
+@mode
+share/angband/edit/a_info.txt
+share/angband/edit/e_info.txt
+share/angband/edit/f_info.txt
+share/angband/edit/k_info.txt
+share/angband/edit/r_info.txt
+share/angband/edit/v_info.txt
+share/angband/file/dead.txt
+share/angband/file/news.txt
+share/angband/help/attack.txt
+share/angband/help/birth.txt
+share/angband/help/command.txt
+share/angband/help/dungeon.txt
+share/angband/help/general.txt
+share/angband/help/help.hlp
+share/angband/help/option.txt
+share/angband/help/playing.txt
+share/angband/help/version.txt
+share/angband/user/font-ami.prf
+share/angband/user/font-dos.prf
+share/angband/user/font-ibm.prf
+share/angband/user/font-mac.prf
+share/angband/user/font-win.prf
+share/angband/user/font-x11.prf
+share/angband/user/font-xxx.prf
+share/angband/user/font.prf
+share/angband/user/graf-ami.prf
+share/angband/user/graf-ibm.prf
+share/angband/user/graf-mac.prf
+share/angband/user/graf-win.prf
+share/angband/user/graf-x11.prf
+share/angband/user/graf-xxx.prf
+share/angband/user/graf.prf
+share/angband/user/pref-acn.prf
+share/angband/user/pref-ami.prf
+share/angband/user/pref-emx.prf
+share/angband/user/pref-gcu.prf
+share/angband/user/pref-mac.prf
+share/angband/user/pref-win.prf
+share/angband/user/pref-x11.prf
+share/angband/user/pref.prf
+share/angband/user/user-mac.prf
+share/angband/user/user.prf
+share/angband/xtra/tiles.raw
+@exec mkdir -m 0775 %D/share/angband/apex
+@exec mkdir -m 0755 %D/share/angband/bone
+@exec mkdir -m 0775 %D/share/angband/data
+@exec mkdir -m 0755 %D/share/angband/info
+@exec mkdir -m 0775 %D/share/angband/save
+@exec chmod 0775 %D/share/angband/user
+@unexec rm -f %D/share/angband/apex/*
+@unexec rm -f %D/share/angband/data/*
+@unexec rm -f %D/share/angband/save/*
+@dirrm share/angband/xtra
+@dirrm share/angband/user
+@dirrm share/angband/save
+@dirrm share/angband/info
+@dirrm share/angband/help
+@dirrm share/angband/file
+@dirrm share/angband/edit
+@dirrm share/angband/data
+@dirrm share/angband/bone
+@dirrm share/angband/apex
+@dirrm share/angband
