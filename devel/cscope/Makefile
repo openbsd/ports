@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/10/07 15:18:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2002/01/07 10:53:10 espie Exp $
 
 COMMENT=		"code browsing program"
 
@@ -20,5 +20,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cscope
 
 CONFIGURE_STYLE=	autoconf
+NEW_AUTOCONF=		Yes
 
 .include <bsd.port.mk>
