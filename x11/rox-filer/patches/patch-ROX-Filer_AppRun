@@ -1,6 +1,6 @@
-$OpenBSD: patch-ROX-Filer_AppRun,v 1.1.1.1 2001/11/17 00:11:40 pvalchev Exp $
---- ROX-Filer/AppRun.orig	Tue Aug 28 09:40:50 2001
-+++ ROX-Filer/AppRun	Fri Nov 16 16:39:03 2001
+$OpenBSD: patch-ROX-Filer_AppRun,v 1.2 2002/11/19 18:51:30 couderc Exp $
+--- ROX-Filer/AppRun.orig	Wed Aug 21 14:21:29 2002
++++ ROX-Filer/AppRun	Thu Nov 14 20:03:03 2002
 @@ -5,10 +5,7 @@ PROG=ROX-Filer
  APP_DIR=`dirname $0`
  APP_DIR=`cd "$APP_DIR";pwd`; export APP_DIR
@@ -13,7 +13,7 @@ $OpenBSD: patch-ROX-Filer_AppRun,v 1.1.1.1 2001/11/17 00:11:40 pvalchev Exp $
  
  PLATFORM=`uname -s`-$ARCH
  
-@@ -34,8 +31,6 @@ case $1 in
+@@ -35,8 +32,6 @@ case $1 in
  					"$@" \
  			&& make clean && make && echo Done >&2 && exit 0
  		echo Compile failed >&2

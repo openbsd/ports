@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/19 18:51:30 couderc Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
-VERSION=		1.2.2
+VERSION=		1.3.4
 DISTNAME=		rox-${VERSION}
 PKGNAME=		rox-filer-${VERSION}
-ROXBASE=		rox-base-1.0.2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://rox.sourceforge.net/
@@ -19,41 +18,34 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rox/}
 
-DISTFILES=		${DISTNAME}.tgz ${ROXBASE}.tgz
+DISTFILES=		${DISTNAME}.tgz
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		gdk_pixbuf::graphics/gdk-pixbuf \
+LIB_DEPENDS=	gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 \
 		xml2::textproc/libxml
+RUN_DEPENDS=	::misc/shared-mime-info
 
-FILE_TO_PATCH=	${WRKDIR}/${DISTNAME}/ROX-Filer/src/choices.c
+FILE_TO_PATCH=  ${WRKSRC}/ROX-Filer/src/choices.c
+
+NO_REGRESS=	Yes
 
 post-patch:
 	@sed -e s:/usr/local/share/Choices:${PREFIX}/share/rox/Choices: \
 		${FILE_TO_PATCH} > ${FILE_TO_PATCH}.tmp && \
 		mv ${FILE_TO_PATCH}.tmp ${FILE_TO_PATCH}
-	@rm -r ${WRKDIR}/${ROXBASE}/Choices/MIME-icons/CVS
-	@rm -r ${WRKDIR}/${ROXBASE}/Choices/MIME-info/CVS
-	@rm -r ${WRKDIR}/${ROXBASE}/Choices/MIME-types/CVS
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
 		ROX-Filer/AppRun --compile
 
-NO_REGRESS=	Yes
-
 do-install:
-# base install
-	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-icons
-	${INSTALL_DATA} ${WRKDIR}/${ROXBASE}/Choices/MIME-icons/* ${PREFIX}/share/rox/Choices/MIME-icons
-	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-info
-	${INSTALL_DATA} ${WRKDIR}/${ROXBASE}/Choices/MIME-info/* ${PREFIX}/share/rox/Choices/MIME-info
-	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-types
-	${INSTALL_SCRIPT} ${WRKDIR}/${ROXBASE}/Choices/MIME-types/* ${PREFIX}/share/rox/Choices/MIME-types
-# rox-filer install
 	@rm -f ${WRKSRC}/ROX-Filer/src/*.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/rox
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/ROX-Filer.1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-icons
+	${INSTALL_DATA} ${WRKSRC}/Choices/MIME-icons/* ${PREFIX}/share/rox/Choices/MIME-icons
+	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-types
+	${INSTALL_SCRIPT} ${WRKSRC}/Choices/MIME-types/* ${PREFIX}/share/rox/Choices/MIME-types
 	@(cd ${WRKSRC}/ROX-Filer/src && make clean)
 	@cp -R ${WRKSRC}/ROX-Filer ${PREFIX}/rox
 	@echo '#!/bin/sh' > ${PREFIX}/bin/rox
