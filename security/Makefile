@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2001/07/29 18:28:00 shell Exp $
+# $OpenBSD: Makefile,v 1.83 2001/08/09 19:36:26 jsyn Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += aescrypt
      SUBDIR += aide
      SUBDIR += antisniff
+     SUBDIR += apg
      SUBDIR += arirang
      SUBDIR += bfbtester
      SUBDIR += bounix
