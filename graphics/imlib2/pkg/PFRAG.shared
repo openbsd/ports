@@ -1,0 +1,16 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/04/18 02:01:25 jolan Exp $
+lib/loaders/filter/bump_map.so
+lib/loaders/filter/colormod.so
+lib/loaders/filter/testfilter.so
+lib/loaders/image/argb.so
+lib/loaders/image/bmp.so
+lib/loaders/image/gif.so
+lib/loaders/image/gzbz2.so
+lib/loaders/image/jpeg.so
+lib/loaders/image/png.so
+lib/loaders/image/pnm.so
+lib/loaders/image/tga.so
+lib/loaders/image/tiff.so
+lib/loaders/image/xpm.so
+lib/libImlib2.so.2.0
+DYNLIBDIR(%D/lib)

@@ -1,0 +1,7 @@
+Imlib2, which is the successor to Imlib, is an image manipulation
+library.  It is not a newer version, it is a completely new library.
+Imlib2 can be installed alongside Imlib1.x without any problems since
+they are effectively different libraries, they do have very similar
+functionality however.  Imlib2 does all of its tasks faster than other
+libraries due to smart subsystems and a high degree of code
+optimizations.

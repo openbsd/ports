@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/18 02:01:25 jolan Exp $
+bin/imlib2-config
+include/Imlib2.h
+lib/libImlib2.a
+lib/libImlib2.la
+lib/loaders/filter/bump_map.a
+lib/loaders/filter/bump_map.la
+lib/loaders/filter/colormod.a
+lib/loaders/filter/colormod.la
+lib/loaders/filter/testfilter.a
+lib/loaders/filter/testfilter.la
+lib/loaders/image/argb.a
+lib/loaders/image/argb.la
+lib/loaders/image/bmp.a
+lib/loaders/image/bmp.la
+lib/loaders/image/gif.a
+lib/loaders/image/gif.la
+lib/loaders/image/gzbz2.a
+lib/loaders/image/gzbz2.la
+lib/loaders/image/jpeg.a
+lib/loaders/image/jpeg.la
+lib/loaders/image/png.a
+lib/loaders/image/png.la
+lib/loaders/image/pnm.a
+lib/loaders/image/pnm.la
+lib/loaders/image/tga.a
+lib/loaders/image/tga.la
+lib/loaders/image/tiff.a
+lib/loaders/image/tiff.la
+lib/loaders/image/xpm.a
+lib/loaders/image/xpm.la
+lib/pkgconfig/imlib2.pc
+%%SHARED%%
+@dirrm lib/pkgconfig
+@dirrm lib/loaders/image
+@dirrm lib/loaders/filter
+@dirrm lib/loaders

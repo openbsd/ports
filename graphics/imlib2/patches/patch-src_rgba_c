@@ -1,0 +1,327 @@
+$OpenBSD: patch-src_rgba_c,v 1.1.1.1 2004/04/18 02:01:25 jolan Exp $
+--- src/rgba.c.orig	Sat Jan 24 02:08:45 2004
++++ src/rgba.c	Sat Jan 24 02:12:02 2004
+@@ -2856,7 +2856,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -2926,7 +2926,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -2998,7 +2998,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -3068,7 +3068,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -3140,7 +3140,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -3210,7 +3210,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -3282,7 +3282,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -3352,7 +3352,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_2(width))
+           {
+@@ -3423,7 +3423,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3467,7 +3467,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB332(src, dest);
+                }
+@@ -3520,7 +3520,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3565,7 +3565,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB332_DITHER(src, dest);
+                }
+@@ -3599,7 +3599,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3643,7 +3643,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB666(src, dest);
+                }
+@@ -3696,7 +3696,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3741,7 +3741,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB666_DITHER(src, dest);
+                }
+@@ -3775,7 +3775,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3819,7 +3819,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB232(src, dest);
+                }
+@@ -3872,7 +3872,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3917,7 +3917,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB232_DITHER(src, dest);
+                }
+@@ -3951,7 +3951,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -3995,7 +3995,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB222(src, dest);
+                }
+@@ -4048,7 +4048,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4093,7 +4093,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB222_DITHER(src, dest);
+                }
+@@ -4127,7 +4127,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4171,7 +4171,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB221(src, dest);
+                }
+@@ -4224,7 +4224,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4269,7 +4269,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB221_DITHER(src, dest);
+                }
+@@ -4303,7 +4303,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4347,7 +4347,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB121(src, dest);
+                }
+@@ -4400,7 +4400,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4445,7 +4445,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB121_DITHER(src, dest);
+                }
+@@ -4479,7 +4479,7 @@
+    w = width;
+    h = height;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4523,7 +4523,7 @@
+      {
+         for (y = 0; y < h; y++)
+           {
+-             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = 0; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB111(src, dest);
+                }
+@@ -4576,7 +4576,7 @@
+    w = width + dx;
+    h = height + dy;
+ 
+-   if (IS_ALIGNED_32((int)dest))
++   if (IS_ALIGNED_32((long)dest))
+      {
+         if (IS_MULTIPLE_4(width))
+           {
+@@ -4621,7 +4621,7 @@
+         for (y = dy; y < h; y++)
+           {
+              w = width + dx;
+-             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((int)dest)))); x++)
++             for (x = dx; ((x < w) && (!(IS_ALIGNED_32((long)dest)))); x++)
+                {
+                   WRITE1_RGBA_RGB111_DITHER(src, dest);
+                }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/04/18 02:01:25 jolan Exp $
+--- src/Makefile.in.orig	Wed Jan 14 14:22:29 2004
++++ src/Makefile.in	Wed Jan 14 14:22:47 2004
+@@ -99,7 +99,7 @@
+ # A list of all the files in the current directory which can be regenerated
+ MAINTAINERCLEANFILES = Makefile.in loaderpath.h
+ 
+-LDFLAGS = -L/usr/X11R6/lib
++LDFLAGS = @LDFLAGS@
+ INCLUDES = -I. -I$(top_srcdir) -I$(top_srcdir)/src \
+                        -I$(top_srcdir)/loaders -I$(top_srcdir)/libltdl \
+                        $(freetype_cflags) -I/usr/X11R6/include $(X_CFLAGS) \
