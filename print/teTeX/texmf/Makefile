@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2003/02/18 16:04:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2003/02/19 12:14:45 sturm Exp $
 
 COMMENT=	"TeX distribution, common support files"
 
 DISTNAME=	tetex-texmf-2.0.1
+PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}
 CATEGORIES=	print
 
 WRKDIST=	${WRKDIR}

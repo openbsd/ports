@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2003/02/18 16:04:49 sturm Exp $
-
-PKGNAME=	${DISTNAME:S/tetex-/teTeX_/}
+# $OpenBSD: Makefile.inc,v 1.2 2003/02/19 12:14:45 sturm Exp $
 
 HOMEPAGE=	http://www.tug.org/tetex/
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
