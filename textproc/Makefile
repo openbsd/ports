@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2003/10/08 01:29:19 marcm Exp $
+# $OpenBSD: Makefile,v 1.105 2003/11/08 22:16:33 sturm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -104,5 +104,6 @@
      SUBDIR += xml2rfc,no_x11
      SUBDIR += xpdf
      SUBDIR += xxdiff
+     SUBDIR += zoem
 
 .include <bsd.port.subdir.mk>
