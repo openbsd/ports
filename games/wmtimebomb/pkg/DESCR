@@ -1,0 +1,13 @@
+Mine Sweeper-like game for Window Maker.
+
+The "8bpp" flavor provides a low color version.
+
+Setting up:
+mkdir ~/.wmtimebomb
+cp ${SAMPLE_DIR}/example.modefile ~/.wmtimebomb/modefile
+
+Usage: wmtimebomb -t <time> -b <bombs> -x <width> -y <height> -s -c -h
+-s will start timebomb with clock in its title
+-c will start timebomb with counter in its title
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,272 @@
+$OpenBSD: patch-timebomb_c,v 1.1.1.1 2001/02/09 13:06:25 wilfried Exp $
+--- timebomb.c.orig	Mon Nov 16 15:42:54 1998
++++ timebomb.c	Wed Feb  7 13:21:09 2001
+@@ -94,7 +94,7 @@ XpmIcon countbar;
+ XpmIcon rbuttonb;
+ XpmIcon id;
+ XpmIcon timebombicon;
+-XpmIcon clock;
++XpmIcon clockicon;
+ XpmIcon title;
+ XpmIcon about;
+ int abouttick;
+@@ -184,7 +184,7 @@ int main(int argc, char** argv){
+ 	if(CheckArg(argc, argv, "-h")){print_help();exit(0);}
+ 	if(CheckArg(argc, argv, "-?")){print_help();exit(0);}
+ 
+-	sprintf(stringbuffer[0],"xxxxxxxxxxxxxxxxxxxxxxxxxx");
++	snprintf(stringbuffer[0],sizeof(stringbuffer[0]),"xxxxxxxxxxxxxxxxxxxxxxxxxx");
+ 	string[0]=stringbuffer[0];
+ 	string[1]=NULL;
+ 	XStringListToTextProperty(string,1,&xtp);
+@@ -202,7 +202,7 @@ int main(int argc, char** argv){
+ 	x= 150;
+ 	y= 64;
+ 	/****************************/
+-	homedir=malloc(strlen(getenv("HOME"))+strlen(MODEFILE));
++	homedir=malloc(strlen(getenv("HOME"))+strlen(MODEFILE)+1);
+ 	sprintf(homedir,"%s%s",getenv("HOME"),MODEFILE);
+ 	modefile=fopen(homedir, "r");
+ 	if(!modefile){
+@@ -307,7 +307,7 @@ int main(int argc, char** argv){
+ 	WMMenuAddSubmenu(menu, "Mode",menu_pref);
+ 	i=0;
+ 	while(i<maxmode){
+-		sprintf(defaultstring,"%dx%d, mines x%d %d seconds",tbtable[i]->x,tbtable[i]->y,tbtable[i]->bs,tbtable[i]->clock);
++		snprintf(defaultstring,sizeof(defaultstring),"%dx%d, mines x%d %d seconds",tbtable[i]->x,tbtable[i]->y,tbtable[i]->bs,tbtable[i]->clock);
+ 		WMMenuAddItem(menu_pref, defaultstring, (WMMenuAction)call_mode,tbtable[i],NULL,NULL);
+ 		i++;
+ 	}
+@@ -563,8 +563,8 @@ int main(int argc, char** argv){
+ 			char winstring[100];
+ 			char buffer[100];
+ 			iconswitch[SW_CHECKNAME]=1;
+-			sprintf(filename,"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
+-			homedir=malloc(strlen(getenv("HOME"))+strlen(filename));
++			snprintf(filename,sizeof(filename),"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
++			homedir=malloc(strlen(getenv("HOME"))+strlen(filename)+1);
+ 			sprintf(homedir,"%s%s",getenv("HOME"),filename);
+ 			historyfile=fopen(homedir, "a+");
+ 			free(homedir);
+@@ -576,7 +576,7 @@ int main(int argc, char** argv){
+ 			}
+ 			nrecord=elem;
+ 			fclose(historyfile);
+-			sprintf(winstring,"a %d",clockn);
++			snprintf(winstring,sizeof(winstring),"a %d",clockn);
+ 			if(elem<MAXRECORD)
+ 				getname();
+ 			else if(elem && history_tcomparestr(history_table[elem-1],winstring)>0) getname();
+@@ -598,7 +598,7 @@ static void call_setbs(void *foo, int it
+ 	if(!iconswitch[SW_GETNAME])
+ 	if(!iconswitch[SW_SETBOMB]){
+ 		iconswitch[SW_SETBOMB]=1;
+-		sprintf(stringbuffer[2],"%d",tb.bs);
++		snprintf(stringbuffer[2],sizeof(stringbuffer[2]),"%d",tb.bs);
+ 		panel[0] = WMCreateInputPanel(scr,NULL, "Set bombs",
+ 				"how many bomb you want?",
+ 				stringbuffer[2], "OK", "Cancel");
+@@ -610,7 +610,7 @@ static void call_setclock(void *foo, int
+ 	if(!iconswitch[SW_GETNAME])
+ 	if(!iconswitch[SW_SETTIME]){
+ 		iconswitch[SW_SETTIME]=1;
+-		sprintf(stringbuffer[2],"%d",tb.clock);
++		snprintf(stringbuffer[2],sizeof(stringbuffer[2]),"%d",tb.clock);
+ 		panel[1] = WMCreateInputPanel(scr, NULL,"Set time",
+ 				"how long you need?",
+ 				stringbuffer[2], "OK", "Cancel");
+@@ -621,7 +621,7 @@ static void call_setclock(void *foo, int
+ static void getname(){
+ 	if(!iconswitch[SW_GETNAME]){
+ 		iconswitch[SW_GETNAME]=1;
+-		sprintf(stringbuffer[2],"anonymous");
++		snprintf(stringbuffer[2],sizeof(stringbuffer[2]),"anonymous");
+ 		panel[2] = WMCreateInputPanel(scr,NULL, "Enter your name",
+ 				"What's your name?",
+ 				stringbuffer[2], "OK", "Cancel");
+@@ -633,7 +633,7 @@ static void call_setsize(void *foo, int 
+ 	if(!iconswitch[SW_GETNAME])
+ 	if(!iconswitch[SW_SETSIZE]){
+ 		iconswitch[SW_SETSIZE]=1;
+-		sprintf(stringbuffer[2],"%dx%d",tb.x,tb.y);
++		snprintf(stringbuffer[2],sizeof(stringbuffer[2]),"%dx%d",tb.x,tb.y);
+ 		panel[3] = WMCreateInputPanel(scr,NULL, "Enter size",
+ 				"WIDTHxHEIGHT",
+ 				stringbuffer[2], "OK", "Cancel");
+@@ -698,8 +698,8 @@ static void history_tload(){
+ 	FILE *historyfile;
+ 	char filename[MAXPATH];
+ 	char buffer[200];
+-	sprintf(filename,"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
+-	homedir=malloc(strlen(getenv("HOME"))+strlen(filename));
++	snprintf(filename,sizeof(filename),"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
++	homedir=malloc(strlen(getenv("HOME"))+strlen(filename)+1);
+ 	sprintf(homedir,"%s%s",getenv("HOME"),filename);
+ 	historyfile=fopen(homedir, "a+");
+ 	free(homedir);
+@@ -721,8 +721,8 @@ static void history_add(char *name,int t
+ 	FILE *historyfile;
+ 	char filename[MAXPATH];
+ 	char buffer[200];
+-	sprintf(filename,"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
+-	homedir=malloc(strlen(getenv("HOME"))+strlen(filename));
++	snprintf(filename,sizeof(filename),"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
++	homedir=malloc(strlen(getenv("HOME"))+strlen(filename)+1);
+ 	sprintf(homedir,"%s%s",getenv("HOME"),filename);
+ 	historyfile=fopen(homedir, "r");
+ 	rewind(historyfile);
+@@ -733,7 +733,7 @@ static void history_add(char *name,int t
+ 		elem++;
+ 	}
+ 	fclose(historyfile);
+-	sprintf(buffer,"%s %d\n",name,time);
++	snprintf(buffer,sizeof(buffer),"%s %d\n",name,time);
+ 	history_table[elem]=strdup(buffer);
+ 	nrecord=elem+1;
+ 	if(iconswitch[SW_HISTORY]){
+@@ -777,8 +777,8 @@ static void history_renew(WMList *tlist)
+ 	}
+ 	nrecord=elem;
+ 
+-	sprintf(filename,"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
+-	homedir=malloc(strlen(getenv("HOME"))+strlen(filename));
++	snprintf(filename,sizeof(filename),"/.wmtimebomb/%dx%dx%dx%d",tb.x,tb.y,tb.bs,tb.clock);
++	homedir=malloc(strlen(getenv("HOME"))+strlen(filename)+1);
+ 	sprintf(homedir,"%s%s",getenv("HOME"),filename);
+ 	historyfile=fopen(homedir, "w");
+ 	free(homedir);
+@@ -814,7 +814,7 @@ static void history_treinit(){
+ 	int elem;
+ 	char buffer[200];
+ 	if(iconswitch[SW_HISTORY]){
+-		sprintf(buffer,"width:%d height%d time:%d bomb:%d",tb.x,tb.y,tb.clock,tb.bs);
++		snprintf(buffer,sizeof(buffer),"width:%d height%d time:%d bomb:%d",tb.x,tb.y,tb.clock,tb.bs);
+ 		WMSetLabelText(historylist->label,buffer);
+ 		WMClearList(historylist->historyList);
+ 		history_tload();
+@@ -933,7 +933,7 @@ static void call_history(void *foo, int 
+ 		WMRealizeWidget(historylist->win);
+ 		WMMapSubwidgets(historylist->win);
+ 		WMMapWidget(historylist->win);
+-		sprintf(buffer,"width:%d height%d time:%d bomb:%d",tb.x,tb.y,tb.clock,tb.bs);
++		snprintf(buffer,sizeof(buffer),"width:%d height%d time:%d bomb:%d",tb.x,tb.y,tb.clock,tb.bs);
+ 		WMSetLabelText(historylist->label,buffer);
+ 		elem=WMGetListNumberOfRows(historylist->historyList);
+ 		if(elem)WMSelectListItem(historylist->historyList,0);
+@@ -1049,9 +1049,9 @@ void init_pixmap(){
+ 	about.attributes.width=256;
+ 	about.attributes.height=256;
+ 	about.attributes.valuemask=(XpmSize);
+-	clock.attributes.width=200;
+-	clock.attributes.height=BS;
+-	clock.attributes.valuemask=XpmSize;
++	clockicon.attributes.width=200;
++	clockicon.attributes.height=BS;
++	clockicon.attributes.valuemask=XpmSize;
+ 	countbar.attributes.width=160;
+ 	countbar.attributes.height=BS;
+ 	countbar.attributes.valuemask=XpmSize;
+@@ -1081,7 +1081,7 @@ void init_pixmap(){
+ 	XpmCreatePixmapFromData(display,window, rbuttonb_xpm,
+ 			&rbuttonb.pixmap, &rbuttonb.mask, &rbuttonb.attributes);
+ 	XpmCreatePixmapFromData(display,window, clock_xpm,
+-			&clock.pixmap, &clock.mask, &clock.attributes);
++			&clockicon.pixmap, &clockicon.mask, &clockicon.attributes);
+ 	XpmCreatePixmapFromData(display,window, countbar_xpm,
+ 			&countbar.pixmap, &countbar.mask, &countbar.attributes);
+ 
+@@ -1175,27 +1175,27 @@ void show_hint(){
+ }
+ 
+ void redraw_iconwin(){
+-	XCopyArea(display,clock.pixmap,iconwin,igc,clockn/100*BS,0,BS,BS,0,BS);
+-	XCopyArea(display,clock.pixmap,iconwin,igc,(clockn%100)/10*BS,0,BS,BS,BS,BS);
+-	XCopyArea(display,clock.pixmap,iconwin,igc,clockn%10*BS,0,BS,BS,BSx2,BS);
++	XCopyArea(display,clockicon.pixmap,iconwin,igc,clockn/100*BS,0,BS,BS,0,BS);
++	XCopyArea(display,clockicon.pixmap,iconwin,igc,(clockn%100)/10*BS,0,BS,BS,BS,BS);
++	XCopyArea(display,clockicon.pixmap,iconwin,igc,clockn%10*BS,0,BS,BS,BSx2,BS);
+ 	if(windowswitch[0]){
+ 		XCopyArea(display,title.pixmap,window,gc,(tb.x-4)*BS,BS,BSx3,BS,(tb.x-4)*BS,BS);
+ 		if(clockn/1000){
+-			XCopyArea(display,clock.pixmap,window,igc,clockn/1000*BS,0,BS,BS,(tb.x-4)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,clockn/1000*BS,0,BS,BS,(tb.x-4)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 		}
+ 		else if((clockn%1000)/100){
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,(clockn%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 		}
+ 		else if((clockn%100)/10){
+-			XCopyArea(display,clock.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
+-			XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,(clockn%100)/10*BS,0,BS,BS,(tb.x-2)*BS,BS);
++			XCopyArea(display,clockicon.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 		}
+-		else XCopyArea(display,clock.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
++		else XCopyArea(display,clockicon.pixmap,window,igc,clockn%10*BS,0,BS,BS,(tb.x-1)*BS,BS);
+ 	}
+ 	if(!(iconswitch[SW_RESTART]||iconswitch[SW_RESETTIME]||iconswitch[SW_CHEAT])){
+ 	XCopyArea(display,sbutton.pixmap,iconwin,igc,0,0,BS,BS,0,0);
+@@ -1210,21 +1210,21 @@ void redraw_counter(){
+ 	if(windowswitch[1]){
+ 		XCopyArea(display,title.pixmap,window,gc,(tb.x-4)*BS,0,BSx3,BS,(tb.x-4)*BS,0);
+ 		if(bombcount/1000){
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount/1000*BS,0,BS,BS,(tb.x-4)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,bombcount/1000*BS,0,BS,BS,(tb.x-4)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 		}
+ 		else if((bombcount%1000)/100){
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,(bombcount%1000)/100*BS,0,BS,BS,(tb.x-3)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 		}
+ 		else if((bombcount%100)/10){
+-			XCopyArea(display,clock.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
+-			XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,(bombcount%100)/10*BS,0,BS,BS,(tb.x-2)*BS,0);
++			XCopyArea(display,clockicon.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 		}
+-		else XCopyArea(display,clock.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
++		else XCopyArea(display,clockicon.pixmap,window,igc,bombcount%10*BS,0,BS,BS,(tb.x-1)*BS,0);
+ 	}
+ 	redraw_iconwin();
+ }
+@@ -1296,17 +1296,17 @@ void redraw_clock(){
+ 			stringbuffer[1][0]=0;
+ 			break;
+ 			case 1:
+-			sprintf(stringbuffer[1]," Game Over");
++			snprintf(stringbuffer[1],sizeof(stringbuffer[1])," Game Over");
+ 			break;
+ 			case 2:
+-			sprintf(stringbuffer[1]," Congratulations");
++			snprintf(stringbuffer[1],sizeof(stringbuffer[1])," Congratulations");
+ 			break;
+ 			}
+-			sprintf(stringbuffer[0],"%d%s",clockn,stringbuffer[1]);
++			snprintf(stringbuffer[0],sizeof(stringbuffer[0]),"%d%s",clockn,stringbuffer[1]);
+ 			string[0]=stringbuffer[0];
+ 		}
+ 		else {
+-			sprintf(stringbuffer[0],"Time Bomb");
++			snprintf(stringbuffer[0],sizeof(stringbuffer[0]),"Time Bomb");
+ 		}
+ 		XSetWMName(display,window,&xtp);
+ 		redraw_iconwin();
