@@ -3,7 +3,7 @@
 # Date created:	 	December 18, 1997	
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/11 01:01:44 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/05/06 02:49:32 marc Exp $
 #
 
 # NOTE:
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	don@OpenBSD.ORG
 
-LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=    jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/tiff-v3.4
 HAS_CONFIGURE=	yes

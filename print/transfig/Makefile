@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/03 04:15:28 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/06 02:52:02 marc Exp $
 #
 
 DISTNAME=	transfig.3.2
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/transfig
 MAINTAINER=	angelos@openbsd.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
+		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 

@@ -3,7 +3,7 @@
 # Date created:		December 2, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/03 04:17:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/06 02:52:57 marc Exp $
 #
 
 DISTNAME=	xfig.3.2
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 MAINTAINER=	angelos@openbsd.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
 		Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
