@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/03/04 01:48:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/17 19:33:09 espie Exp $
 
 CATEGORIES=	math devel graphics
 
@@ -34,12 +34,14 @@ USE_GMAKE=	Yes
 .include <bsd.own.mk>
 
 ACCEPT_GRAPHVIZ_LICENSE?=No
-.if ${ACCEPT_GRAPHVIZ_LICENSE:L} == "no"
 post-extract:
+.if ${ACCEPT_GRAPHVIZ_LICENSE:L} == "no"
 	@echo "You must read ${WRKDIST}/COPYING first"
 	@echo "To accept the license, restart the build with"
 	@echo "ACCEPT_GRAPHVIZ_LICENSE=Yes"
 	@exit 1
+.else
+	@cat ${LOCALBASE}/share/aclocal/libtool.m4 >>${WRKSRC}/aclocal.m4
 .endif
 
 LIB_DEPENDS=	tcl84.::lang/tcl/8.4 \
@@ -47,7 +49,7 @@ LIB_DEPENDS=	tcl84.::lang/tcl/8.4 \
 		jpeg.62::graphics/jpeg \
 		png.2::graphics/png
 
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION=	2.59
 BUILD_DEPENDS=	::devel/autoconf/${AUTOCONF_VERSION} \
 		::devel/metaauto \
 		::devel/automake
