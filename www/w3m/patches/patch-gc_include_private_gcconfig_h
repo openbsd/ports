@@ -1,7 +1,7 @@
-$OpenBSD: patch-gc_include_private_gcconfig_h,v 1.1 2002/03/10 07:44:44 brad Exp $
---- gc/include/private/gcconfig.h.orig	Sun Mar 10 01:52:20 2002
-+++ gc/include/private/gcconfig.h	Sun Mar 10 01:58:59 2002
-@@ -49,10 +49,14 @@
+$OpenBSD: patch-gc_include_private_gcconfig_h,v 1.2 2002/07/20 12:03:18 naddy Exp $
+--- gc/include/private/gcconfig.h.orig	Wed Jul 10 16:21:17 2002
++++ gc/include/private/gcconfig.h	Wed Jul 17 18:12:52 2002
+@@ -61,10 +61,14 @@
  #    define HP
  #    define mach_type_known
  # endif
@@ -17,7 +17,7 @@ $OpenBSD: patch-gc_include_private_gcconfig_h,v 1.1 2002/03/10 07:44:44 brad Exp
  # if defined(OPENBSD) && defined(__sparc__)
  #    define SPARC
  #    define mach_type_known
-@@ -673,6 +677,14 @@
+@@ -710,6 +714,14 @@
  #   ifdef NETBSD
  #     define ALIGNMENT 4
  #     define OS_TYPE "NETBSD"
@@ -30,5 +30,5 @@ $OpenBSD: patch-gc_include_private_gcconfig_h,v 1.1 2002/03/10 07:44:44 brad Exp
 +#     define ALIGNMENT 4
 +#     define OS_TYPE "OPENBSD"
  #     define HEURISTIC2
-       extern char etext;
+       extern char etext[];
  #     define DATASTART GC_data_start
