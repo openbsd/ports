@@ -68,7 +68,7 @@
  		tools/qregexp.h \
  		kernel/qapplication.h \
  		kernel/qtimer.h
-+	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o widgets/qmultilinedit.o widgets/multilinedit.cpp
++	$(CXX) -c $(CXXFLAGS) -O0 $(INCPATH) -o widgets/qmultilinedit.o widgets/qmultilinedit.cpp
  
  widgets/qpopupmenu.o: widgets/qpopupmenu.cpp \
  		widgets/qpopupmenu.h \
