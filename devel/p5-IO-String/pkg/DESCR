@@ -1,0 +1,7 @@
+The module provide the IO::File interface for in-core strings.  An
+object can be attached to a string, and will make it possible to use
+the normal file operations for reading or writing data, as well as
+seeking to various locations of the string. The main reason you might
+want to do this, is if you have some other library module that only
+provide an interface to file handles, and you want to keep all the
+stuff in memory.
