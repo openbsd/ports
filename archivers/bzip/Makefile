@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/08/13 06:09:32 brad Exp $
+# $OpenBSD: Makefile,v 1.7 1999/09/24 13:44:36 brad Exp $
 
 DISTNAME=       bzip-0.21
 CATEGORIES=	archivers
-NO_CDROM=       "NOFEE: can not sell"
 MASTER_SITES=   ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
+
+NO_CDROM=       "NOFEE: can not sell"
 
 MAINTAINER=     ports@openbsd.org
 
