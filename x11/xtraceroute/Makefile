@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/31 08:35:33 turan Exp $
+# $OpenBSD: Makefile,v 1.7 1999/10/31 23:54:38 brad Exp $
 # $NetBSD: Makefile,v 1.4 1999/03/04 08:58:42 tron Exp $
-
-BROKEN=		bad packing lists, share/locale/es/LC_MESSAGES/xtraceroute.mo share/locale/ja/LC_MESSAGES/xtraceroute.mo share/locale/fr/LC_MESSAGES/xtraceroute.mo
 
 DISTNAME=	xtraceroute-0.8.14
 CATEGORIES=	net x11
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}.tar.gz \
 		ndg_files.tar.gz
-
-MAINTAINER=	brad@openbsd.org
 
 HOMEPAGE=	http://www.dtek.chalmers.se/~d3august/xt/index.html
 
-LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/Mesa \
-		MesaGLU:${PORTSDIR}/graphics/Mesa \
-		gtkgl:${PORTSDIR}/x11/gtkglarea \
-		intl:${PORTSDIR}/devel/gettext \
-		tiff:${PORTSDIR}/graphics/tiff34
+MAINTAINER=	brad@openbsd.org
+
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
+		MesaGL.3:${PORTSDIR}/graphics/Mesa \
+		MesaGLU.3:${PORTSDIR}/graphics/Mesa \
+		gtkgl.1.2:${PORTSDIR}/x11/gtkglarea \
+		tiff.35:${PORTSDIR}/graphics/tiff
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
@@ -26,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk-config"
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/xtraceroute/
+	@mkdir -p ${PREFIX}/share/xtraceroute/
 	${INSTALL_DATA} ${WRKDIR}/hosts.cache ${PREFIX}/share/xtraceroute/
 	${INSTALL_DATA} ${WRKDIR}/networks.cache ${PREFIX}/share/xtraceroute/
 
