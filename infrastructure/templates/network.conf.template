@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.12 2001/01/18 15:48:04 brad Exp $
+# $OpenBSD: network.conf.template,v 1.13 2001/03/05 16:49:46 reinhard Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -105,14 +105,13 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/GNOME/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/GNOME/%SUBDIR%/ \
-	ftp://ftp.cybertrails.com/pub/gnome/%SUBDIR%/ \
 	ftp://ftp2.sinica.edu.tw/pub5/gnome/%SUBDIR%/ \
 	ftp://gnomeftp.blue-labs.org/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/%SUBDIR%/ \
-	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/X11/gnome/%SUBDIR%/ \
 	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
-
+	ftp://gnome.eazel.com/pub/gnome/%SUBDIR%/ \
+	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ 
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
