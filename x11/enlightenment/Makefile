@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2001/07/26 13:07:55 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2001/11/09 17:05:15 lebel Exp $
 
-COMMENT=	""themed" window manager"
+COMMENT=	"themed window manager"
 
 DISTNAME=	enlightenment-0.16.5
 CATEGORIES=	x11
