@@ -1,0 +1,22 @@
+--- Makefile.orig	Mon Mar  8 08:20:38 1999
++++ Makefile	Sun Jul 16 04:26:32 2000
+@@ -18,7 +18,7 @@
+   $(FILEMAP_OBJ)
+ EXE=
+ 
+-all: xmlwf/xmlwf$(EXE)
++all: xmlwf/xmlwf$(EXE) libexpat.a
+ 
+ xmlwf/xmlwf$(EXE): $(OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(OBJS)
+@@ -34,6 +34,10 @@
+ 	$(CC) $(CFLAGS) -o $@ gennmtab/gennmtab.c
+ 
+ xmltok/xmltok.o: xmltok/nametab.h
++
++libexpat.a: $(OBJS)
++	ar -rc $@ $(OBJS)
++	ranlib $@
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c -o $@ $<

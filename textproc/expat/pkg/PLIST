@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/07/16 08:46:20 brad Exp $
 bin/xmlwf
 include/xml/xmlparse.h
 include/xml/xmltok.h
