@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2003/07/18 18:45:18 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2003/09/24 00:52:55 jolan Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.2.0
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lopster/}
 
