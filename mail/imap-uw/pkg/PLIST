@@ -1,10 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.3 2000/07/18 21:58:50 jakob Exp $
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
 man/man8/imapd.8
 man/man8/ipopd.8
-include/imap/linkage.h
-include/imap/mail.h
-include/imap/rfc822.h
-@dirrm include/imap
-lib/libimap.a
