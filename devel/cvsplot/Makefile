@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/06 21:11:50 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/04/16 12:48:29 sturm Exp $
 
 COMMENT=		"CVS-managed project analyzer"
 
-DISTNAME=		cvsplot-1.6.2
+DISTNAME=		cvsplot-1.6.4
 CATEGORIES=		devel
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cvsplot/}
