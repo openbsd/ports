@@ -1,7 +1,7 @@
-$OpenBSD: patch-kjsembed_Makefile_in,v 1.1 2003/02/09 19:18:05 espie Exp $
---- kjsembed/Makefile.in.orig	Sun Feb  9 19:57:48 2003
-+++ kjsembed/Makefile.in	Sun Feb  9 19:57:59 2003
-@@ -294,7 +294,7 @@ kjsembedinclude_HEADERS = dialogfactory.
+$OpenBSD: patch-kjsembed_Makefile_in,v 1.2 2003/06/12 19:16:15 espie Exp $
+--- kjsembed/Makefile.in.orig	Mon May 12 17:16:43 2003
++++ kjsembed/Makefile.in	Wed Jun 11 11:26:40 2003
+@@ -331,7 +331,7 @@ kjsembedinclude_HEADERS = dialogfactory.
  libkjsembed_la_LDFLAGS = -version-info 1:0 -no-undefined \
  			 $(all_libraries) $(KDE_RPATH)
  

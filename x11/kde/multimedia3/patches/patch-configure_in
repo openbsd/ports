@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.8 2003/04/05 14:53:39 espie Exp $
---- configure.in.orig	Tue Mar 11 06:53:03 2003
-+++ configure.in	Mon Mar 31 16:42:56 2003
-@@ -1573,7 +1573,7 @@ dnl    else
+$OpenBSD: patch-configure_in,v 1.9 2003/06/12 19:16:16 espie Exp $
+--- configure.in.orig	Wed May  7 14:04:39 2003
++++ configure.in	Tue Jun 10 10:58:31 2003
+@@ -1580,7 +1580,7 @@ dnl    else
  dnl      lib_xaw_opt=-lXaw
  dnl    fi
      EXTRATDEFS="$EXTRATDEFS -DIA_XAW"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.8 2003/04/05 14:53:39 espie Exp $
  dnl    if test "x$have_xext" = xyes; then
  dnl      a_so_libs="-lXext -lX11"
  dnl    else
-@@ -1918,6 +1918,9 @@ case "$OS_TYPE" in
+@@ -1927,6 +1927,9 @@ case "$OS_TYPE" in
    NetBSD)
      kde_mpeglib_compiles=yes
      ;;
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure_in,v 1.8 2003/04/05 14:53:39 espie Exp $
    Linux)
      kde_mpeglib_compiles=yes
      ;;
-@@ -1947,6 +1950,12 @@ case "$OS_TYPE" in
+@@ -1956,6 +1959,12 @@ case "$OS_TYPE" in
      AC_DEFINE(OS_Linux,1,[Define if you have linux pthread])
      ;;
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure_in,v 1.8 2003/04/05 14:53:39 espie Exp $
    FreeBSD)
      OS_TYPE="BSD"
      AC_CHECK_LIB(c_r, pthread_create, [LIBPTHREAD="-lc_r"]) dnl name of pthread lib in FreeBSD
-@@ -1993,7 +2002,7 @@ KDE_MPEGLIB_COMPILES
+@@ -2002,7 +2011,7 @@ KDE_MPEGLIB_COMPILES
  
  THIS_LIB_LIBS="-lX11 -lXext -lm -lstdc++ ${XVLIBS} ${DGALIBS} "
  THIS_LIB_LIBS="${THIS_LIB_LIBS} ${XVIDMODELIBS} ${SDLLIB} ${CDDALIBS} "

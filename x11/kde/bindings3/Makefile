@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/05 14:53:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2003/06/12 19:16:15 espie Exp $
 
 COMMENT= 		"X11 toolkit, extra language support"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.1.1
+VERSION=		3.1.2
 DISTNAME=		kdebindings-${VERSION}
 
 LIB_DEPENDS=kdecore.4,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmid,kparts,kscript,kspell,kutils,DCOP::x11/kde/libs3 \

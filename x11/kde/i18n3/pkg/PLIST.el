@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.el,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.el,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}appletproxy.mo
@@ -181,6 +181,7 @@ ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
 ${LOC}kfontviewpart.mo
+${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
@@ -243,6 +244,7 @@ ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}krdb.mo
 ${LOC}kreadconfig.mo
+${LOC}krec.mo
 ${LOC}kreversi.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
@@ -271,6 +273,7 @@ ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo
+${LOC}kviewbrowserplugin.mo
 ${LOC}kviewpresenterplugin.mo
 ${LOC}kviewscannerplugin.mo
 ${LOC}kviewtemplateplugin.mo

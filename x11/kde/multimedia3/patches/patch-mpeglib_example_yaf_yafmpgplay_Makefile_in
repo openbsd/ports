@@ -1,7 +1,12 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafmpgplay_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- mpeglib/example/yaf/yafmpgplay/Makefile.in.orig	Tue Mar 11 06:53:43 2003
-+++ mpeglib/example/yaf/yafmpgplay/Makefile.in	Mon Mar 31 16:42:57 2003
-@@ -340,7 +340,7 @@ yaf_mpgplay_LDFLAGS = $(all_libraries) 
+$OpenBSD: patch-mpeglib_example_yaf_yafmpgplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
+--- mpeglib/example/yaf/yafmpgplay/Makefile.in.orig	Wed May  7 14:05:28 2003
++++ mpeglib/example/yaf/yafmpgplay/Makefile.in	Wed Jun 11 09:35:26 2003
+@@ -388,11 +388,11 @@ yaf_mpgplay_SOURCES = mpg_control.cpp
+ 
+ noinst_HEADERS = 
+ 
+-yaf_mpgplay_LDFLAGS = $(all_libraries) 
++yaf_mpgplay_LDFLAGS = -pthread $(all_libraries) 
  
  yaf_mpgplay_LDADD = ../yafcore/libyafcore.la \
  				../yafxplayer/libyafxplayer.la \
@@ -10,12 +15,12 @@ $OpenBSD: patch-mpeglib_example_yaf_yafmpgplay_Makefile_in,v 1.4 2003/04/05 14:5
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/yaf/yafmpgplay
-@@ -355,7 +355,7 @@ am_yaf_mpgplay_OBJECTS = mpg_control.$(O
+@@ -407,7 +407,7 @@ am_yaf_mpgplay_OBJECTS = mpg_control.$(O
  #>+ 1
  yaf_mpgplay_OBJECTS = mpg_control.$(OBJEXT)
  yaf_mpgplay_DEPENDENCIES = ../yafcore/libyafcore.la \
 -	../yafxplayer/libyafxplayer.la ../../../lib/libmpeg.la
 +	../yafxplayer/libyafxplayer.la ../../../lib/libkmpeg.la
  
- DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp

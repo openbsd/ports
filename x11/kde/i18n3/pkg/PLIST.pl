@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pl,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.pl,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -7,6 +7,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
 ${LOC}babelfish.mo
@@ -38,10 +39,12 @@ ${LOC}dub.mo
 ${LOC}extensionproxy.mo
 ${LOC}ffrs.mo
 ${LOC}filetypes.mo
+${LOC}flashkard.mo
 ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
+${LOC}jefferson.mo
 ${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_ldap.mo
@@ -53,6 +56,7 @@ ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
 ${LOC}kalarmdgui.mo
+${LOC}kalzium.mo
 ${LOC}kandy.mo
 ${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
@@ -238,6 +242,7 @@ ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kio_smtp.mo
 ${LOC}kit.mo
+${LOC}kiten.mo
 ${LOC}kjobviewer.mo
 ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
@@ -251,6 +256,7 @@ ${LOC}klock.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
+${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
@@ -260,9 +266,11 @@ ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
+${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
+${LOC}knorskverbs.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kodo.mo
@@ -339,6 +347,7 @@ ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
 ${LOC}kuser.mo
+${LOC}kverbos.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo
 ${LOC}kviewbrowserplugin.mo
@@ -385,17 +394,20 @@ ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
 ${LOC}lockout.mo
 ${LOC}lskat.mo
+${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
 ${LOC}megami.mo
 ${LOC}naughtyapplet.mo
 ${LOC}noatun.mo
 ${LOC}nsplugin.mo
 ${LOC}passwords.mo
+${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
+${LOC}synaescope.mo
 ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}tippecanoe.mo

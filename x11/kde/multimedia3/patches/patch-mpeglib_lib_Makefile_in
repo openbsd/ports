@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- mpeglib/lib/Makefile.in.orig	Tue Mar 11 06:53:43 2003
-+++ mpeglib/lib/Makefile.in	Mon Mar 31 16:42:57 2003
-@@ -347,16 +347,16 @@ THIS_EXTRALIBS = mpgplayer/libmpgplayer.
+$OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
+--- mpeglib/lib/Makefile.in.orig	Wed May  7 14:05:28 2003
++++ mpeglib/lib/Makefile.in	Tue Jun 10 11:00:44 2003
+@@ -399,16 +399,16 @@ THIS_EXTRALIBS = mpgplayer/libmpgplayer.
  			yuv/libyuvPlugin.la
  
  
@@ -22,7 +22,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/lib
-@@ -365,15 +365,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -417,15 +417,15 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -40,19 +40,19 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
 -libmpeg_la_OBJECTS = dummy.lo
 +libkmpeg_la_OBJECTS = dummy.lo
  
- DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
-@@ -404,7 +404,7 @@ CXXLD = $(CXX)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+@@ -452,7 +452,7 @@ CXXLD = $(CXX)
+ #>+ 2
  CXXLINK = $(LIBTOOL) --mode=link --tag=CXX $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
- CXXFLAGS = @CXXFLAGS@
 -DIST_SOURCES = $(libmpeg_la_SOURCES)
 +DIST_SOURCES = $(libkmpeg_la_SOURCES)
  
- RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
- 	uninstall-info-recursive all-recursive install-data-recursive \
-@@ -412,7 +412,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
- 	uninstall-recursive check-recursive installcheck-recursive
+ RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
+ 	ps-recursive install-info-recursive uninstall-info-recursive \
+@@ -461,7 +461,7 @@ RECURSIVE_TARGETS = info-recursive dvi-r
+ 	check-recursive installcheck-recursive
  DIST_COMMON = README Makefile.am Makefile.in
  DIST_SUBDIRS = $(SUBDIRS)
 -SOURCES = $(libmpeg_la_SOURCES)
@@ -60,7 +60,7 @@ $OpenBSD: patch-mpeglib_lib_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
  
  #>- all: all-recursive
  #>+ 1
-@@ -457,8 +457,8 @@ clean-libLTLIBRARIES:
+@@ -506,8 +506,8 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

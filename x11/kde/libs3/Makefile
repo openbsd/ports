@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2003/04/12 15:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2003/06/12 19:16:16 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.1a
+VERSION=		3.1.2
 DISTNAME=		kdelibs-${VERSION}
 
 LIB_DEPENDS= 	png.2::graphics/png \

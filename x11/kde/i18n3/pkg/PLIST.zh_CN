@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.zh_CN,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.zh_CN,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -89,7 +89,6 @@ ${LOC}ffrs.mo
 ${LOC}filetypes.mo
 ${LOC}flashkard.mo
 ${LOC}fontinst.mo
-${LOC}gideon.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
@@ -241,6 +240,7 @@ ${LOC}kfile_font.mo
 ${LOC}kfile_gif.mo
 ${LOC}kfile_html.mo
 ${LOC}kfile_ico.mo
+${LOC}kfile_jpeg.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_ogg.mo
@@ -251,6 +251,7 @@ ${LOC}kfile_ps.mo
 ${LOC}kfile_rfc822.mo
 ${LOC}kfile_rpm.mo
 ${LOC}kfile_tga.mo
+${LOC}kfile_tiff.mo
 ${LOC}kfile_txt.mo
 ${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
@@ -321,6 +322,7 @@ ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
 ${LOC}kmplot.mo
+${LOC}kmrml.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
 ${LOC}knorskverbs.mo

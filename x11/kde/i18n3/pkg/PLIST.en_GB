@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.en_GB,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.en_GB,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
@@ -252,6 +252,13 @@ ${DOC}klipper/${I}
 ${DOC}kmenuedit/common
 ${DOC}kmenuedit/${C}
 ${DOC}kmenuedit/${I}
+${DOC}konqueror/bookmarks.docbook
+${DOC}konqueror/commands.docbook
+${DOC}konqueror/credits.docbook
+${DOC}konqueror/faq.docbook
+${DOC}konqueror/introduction.docbook
+${DOC}konqueror/path-complete.docbook
+${DOC}konqueror/save-settings.docbook
 ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
@@ -696,6 +703,7 @@ share/locale/en_GB/flag.png
 @dirrm ${DOC}kspell
 @dirrm ${DOC}kpager
 @dirrm ${DOC}konsole
+@dirrm ${DOC}konqueror
 @dirrm ${DOC}kmenuedit
 @dirrm ${DOC}klipper
 @dirrm ${DOC}kioslave

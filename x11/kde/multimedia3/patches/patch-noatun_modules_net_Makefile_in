@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_net_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- noatun/modules/net/Makefile.in.orig	Tue Mar 11 06:53:44 2003
-+++ noatun/modules/net/Makefile.in	Mon Mar 31 16:42:57 2003
-@@ -329,7 +329,7 @@ kde_module_LTLIBRARIES = noatun_net.la
+$OpenBSD: patch-noatun_modules_net_Makefile_in,v 1.5 2003/06/12 19:16:17 espie Exp $
+--- noatun/modules/net/Makefile.in.orig	Wed May  7 14:05:29 2003
++++ noatun/modules/net/Makefile.in	Tue Jun 10 10:58:32 2003
+@@ -381,7 +381,7 @@ kde_module_LTLIBRARIES = noatun_net.la
  noatun_net_la_SOURCES = net.cpp
  
  noatun_net_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_net_Makefile_in,v 1.4 2003/04/05 14:53:39 espie E
  
  #>- noatun_net_la_METASOURCES = AUTO
  
-@@ -342,7 +342,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -394,7 +394,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  

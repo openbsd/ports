@@ -1,21 +1,24 @@
-$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- mpeglib/example/tplay/Makefile.in.orig	Tue Mar 11 06:53:43 2003
-+++ mpeglib/example/tplay/Makefile.in	Mon Mar 31 16:42:56 2003
-@@ -338,7 +338,7 @@ noinst_HEADERS = 
+$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
+--- mpeglib/example/tplay/Makefile.in.orig	Wed May  7 14:05:28 2003
++++ mpeglib/example/tplay/Makefile.in	Wed Jun 11 09:32:09 2003
+@@ -388,9 +388,9 @@ tplay_SOURCES = tplay.cpp
  
- tplay_LDFLAGS = $(all_libraries) 
+ noinst_HEADERS = 
+ 
+-tplay_LDFLAGS = $(all_libraries) 
++tplay_LDFLAGS = -pthread $(all_libraries) 
  
 -tplay_LDADD = ../../lib/libmpeg.la \
 +tplay_LDADD = ../../lib/libkmpeg.la \
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/tplay
-@@ -352,7 +352,7 @@ am_tplay_OBJECTS = tplay.$(OBJEXT)
+@@ -404,7 +404,7 @@ am_tplay_OBJECTS = tplay.$(OBJEXT)
  #>- tplay_OBJECTS = $(am_tplay_OBJECTS)
  #>+ 1
  tplay_OBJECTS = tplay.$(OBJEXT)
 -tplay_DEPENDENCIES = ../../lib/libmpeg.la
 +tplay_DEPENDENCIES = ../../lib/libkmpeg.la
  
- DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp

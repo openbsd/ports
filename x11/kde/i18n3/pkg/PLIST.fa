@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fa,v 1.2 2003/02/27 02:43:26 naddy Exp $
+@comment $OpenBSD: PLIST.fa,v 1.3 2003/06/12 19:16:16 espie Exp $
 share/locale/fa/COPYING
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
@@ -6,6 +6,7 @@ ${LOC}clockapplet.mo
 ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdebase.mo
 ${LOC}desktop_kdelibs.mo
+${LOC}dockbarextension.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo

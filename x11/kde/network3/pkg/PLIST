@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/04/05 14:53:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/06/12 19:16:17 espie Exp $
 bin/dsirc
 bin/kdict
 bin/kget

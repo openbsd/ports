@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uk,v 1.8 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.9 2003/06/12 19:16:16 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -47,6 +47,7 @@ ${DOC}common/xml.dcl
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kdebase/kate_plugins.po
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -115,6 +116,7 @@ ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantikdesigner.mo
 ${LOC}babelfish.mo
+${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
@@ -135,6 +137,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -181,6 +184,7 @@ ${LOC}kaudiocreator.mo
 ${LOC}kbattleship.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
+${LOC}kbugbuster.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
@@ -305,6 +309,7 @@ ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
 ${LOC}kfontviewpart.mo
+${LOC}kfouleggs.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgpgcertmanager.mo
@@ -357,6 +362,7 @@ ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kodo.mo
 ${LOC}kolourpicker.mo
+${LOC}kompare.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -369,6 +375,7 @@ ${LOC}kpager.mo
 ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
+${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
@@ -496,6 +503,7 @@ share/locale/uk/flag.png
 @dirrm ${DOC}kinfocenter/protocols
 @dirrm ${DOC}kinfocenter
 @dirrm ${DOC}khelpcenter
+@dirrm ${DOC}kdebase
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}common
 @dirrm share/doc/HTML/uk

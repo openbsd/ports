@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.it,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.it,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/it/baffi.wav
 share/apps/ktuberling/sounds/it/bocca.wav
 share/apps/ktuberling/sounds/it/capelli.wav
@@ -77,6 +77,9 @@ ${DOC}common/xml.dcl
 ${DOC}flashkard/common
 ${DOC}flashkard/${C}
 ${DOC}flashkard/${I}
+${DOC}kaddressbook/common
+${DOC}kaddressbook/${C}
+${DOC}kaddressbook/${I}
 ${DOC}kalzium/common
 ${DOC}kalzium/${C}
 ${DOC}kalzium/${I}
@@ -104,6 +107,9 @@ ${DOC}kblackbox/${I}
 ${DOC}kbounce/common
 ${DOC}kbounce/${C}
 ${DOC}kbounce/${I}
+${DOC}kbounce/jezball_corridor1.png
+${DOC}kbounce/jezball_corridor2.png
+${DOC}kbounce/jezball_newWall.png
 ${DOC}kcalc/common
 ${DOC}kcalc/${C}
 ${DOC}kcalc/${I}
@@ -113,6 +119,30 @@ ${DOC}kcharselect/${I}
 ${DOC}kcoloredit/common
 ${DOC}kcoloredit/${C}
 ${DOC}kcoloredit/${I}
+${DOC}kcontrol/cache/common
+${DOC}kcontrol/cache/${C}
+${DOC}kcontrol/cache/${I}
+${DOC}kcontrol/colors/common
+${DOC}kcontrol/colors/${C}
+${DOC}kcontrol/colors/${I}
+${DOC}kcontrol/common
+${DOC}kcontrol/cookies/common
+${DOC}kcontrol/cookies/${C}
+${DOC}kcontrol/cookies/${I}
+${DOC}kcontrol/crypto/common
+${DOC}kcontrol/crypto/${C}
+${DOC}kcontrol/crypto/${I}
+${DOC}kcontrol/desktop/common
+${DOC}kcontrol/desktop/${C}
+${DOC}kcontrol/desktop/${I}
+${DOC}kcontrol/ebrowsing/common
+${DOC}kcontrol/ebrowsing/${C}
+${DOC}kcontrol/ebrowsing/${I}
+${DOC}kcontrol/email/common
+${DOC}kcontrol/email/${C}
+${DOC}kcontrol/email/${I}
+${DOC}kcontrol/${C}
+${DOC}kcontrol/${I}
 ${DOC}kcontrol/kcmktalkd/common
 ${DOC}kcontrol/kcmktalkd/${C}
 ${DOC}kcontrol/kcmktalkd/${I}
@@ -122,6 +152,34 @@ ${DOC}kcontrol/kcmlowbatcrit/${I}
 ${DOC}kcontrol/lanbrowser/common
 ${DOC}kcontrol/lanbrowser/${C}
 ${DOC}kcontrol/lanbrowser/${I}
+${DOC}kcontrol/netpref/common
+${DOC}kcontrol/netpref/${C}
+${DOC}kcontrol/netpref/${I}
+${DOC}kcontrol/passwords/common
+${DOC}kcontrol/passwords/${C}
+${DOC}kcontrol/passwords/${I}
+${DOC}kcontrol/powerctrl/common
+${DOC}kcontrol/powerctrl/${C}
+${DOC}kcontrol/powerctrl/${I}
+${DOC}kcontrol/proxy/common
+${DOC}kcontrol/proxy/${C}
+${DOC}kcontrol/proxy/${I}
+${DOC}kcontrol/proxy/socks.docbook
+${DOC}kcontrol/smb/common
+${DOC}kcontrol/smb/${C}
+${DOC}kcontrol/smb/${I}
+${DOC}kcontrol/spellchecking/common
+${DOC}kcontrol/spellchecking/${C}
+${DOC}kcontrol/spellchecking/${I}
+${DOC}kcontrol/useragent/common
+${DOC}kcontrol/useragent/${C}
+${DOC}kcontrol/useragent/${I}
+${DOC}kcron/common
+${DOC}kcron/${C}
+${DOC}kcron/${I}
+${DOC}kdat/common
+${DOC}kdat/${C}
+${DOC}kdat/${I}
 ${DOC}kdf/common
 ${DOC}kdf/${C}
 ${DOC}kdf/${I}
@@ -135,6 +193,9 @@ ${DOC}keduca/screenshot.png
 ${DOC}kenolaba/common
 ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
+${DOC}kfind/common
+${DOC}kfind/${C}
+${DOC}kfind/${I}
 ${DOC}kfloppy/common
 ${DOC}kfloppy/${C}
 ${DOC}kfloppy/${I}
@@ -147,9 +208,13 @@ ${DOC}kgeo/${I}
 ${DOC}kghostview/common
 ${DOC}kghostview/${C}
 ${DOC}kghostview/${I}
+${DOC}kgpgcertmanager/common
+${DOC}kgpgcertmanager/${C}
+${DOC}kgpgcertmanager/${I}
 ${DOC}khangman/common
 ${DOC}khangman/${C}
 ${DOC}khangman/${I}
+${DOC}khangman/khangman1.png
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -164,16 +229,68 @@ ${DOC}kicker-applets/${C}
 ${DOC}kicker-applets/${I}
 ${DOC}kicker-applets/kolourpicker.docbook
 ${DOC}kicker-applets/ktimemon.docbook
+${DOC}kicker/common
+${DOC}kicker/${C}
+${DOC}kicker/${I}
 ${DOC}kiconedit/common
 ${DOC}kiconedit/${C}
 ${DOC}kiconedit/${I}
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/common
+${DOC}kinfocenter/devices/common
+${DOC}kinfocenter/devices/${C}
+${DOC}kinfocenter/devices/${I}
+${DOC}kinfocenter/dma/common
+${DOC}kinfocenter/dma/${C}
+${DOC}kinfocenter/dma/${I}
+${DOC}kinfocenter/${C}
+${DOC}kinfocenter/${I}
+${DOC}kinfocenter/interrupts/common
+${DOC}kinfocenter/interrupts/${C}
+${DOC}kinfocenter/interrupts/${I}
+${DOC}kinfocenter/ioports/common
+${DOC}kinfocenter/ioports/${C}
+${DOC}kinfocenter/ioports/${I}
+${DOC}kinfocenter/memory/common
+${DOC}kinfocenter/memory/${C}
+${DOC}kinfocenter/memory/${I}
+${DOC}kinfocenter/nics/common
+${DOC}kinfocenter/nics/${C}
+${DOC}kinfocenter/nics/${I}
+${DOC}kinfocenter/partitions/common
+${DOC}kinfocenter/partitions/${C}
+${DOC}kinfocenter/partitions/${I}
+${DOC}kinfocenter/pci/common
+${DOC}kinfocenter/pci/${C}
+${DOC}kinfocenter/pci/${I}
+${DOC}kinfocenter/pcmcia/common
+${DOC}kinfocenter/pcmcia/${C}
+${DOC}kinfocenter/pcmcia/${I}
+${DOC}kinfocenter/processor/common
+${DOC}kinfocenter/processor/${C}
+${DOC}kinfocenter/processor/${I}
+${DOC}kinfocenter/protocols/common
+${DOC}kinfocenter/protocols/${C}
+${DOC}kinfocenter/protocols/${I}
+${DOC}kinfocenter/scsi/common
+${DOC}kinfocenter/scsi/${C}
+${DOC}kinfocenter/scsi/${I}
+${DOC}kinfocenter/sound/common
+${DOC}kinfocenter/sound/${C}
+${DOC}kinfocenter/sound/${I}
+${DOC}kinfocenter/usb/common
+${DOC}kinfocenter/usb/${C}
+${DOC}kinfocenter/usb/${I}
+${DOC}kinfocenter/xserver/common
+${DOC}kinfocenter/xserver/${C}
+${DOC}kinfocenter/xserver/${I}
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
 ${DOC}kioslave/bzip2.docbook
 ${DOC}kioslave/cgi.docbook
+${DOC}kioslave/common
 ${DOC}kioslave/file.docbook
 ${DOC}kioslave/finger.docbook
 ${DOC}kioslave/fish.docbook
@@ -186,6 +303,8 @@ ${DOC}kioslave/http.docbook
 ${DOC}kioslave/https.docbook
 ${DOC}kioslave/imap.docbook
 ${DOC}kioslave/imaps.docbook
+${DOC}kioslave/${C}
+${DOC}kioslave/${I}
 ${DOC}kioslave/info.docbook
 ${DOC}kioslave/lan.docbook
 ${DOC}kioslave/ldap.docbook
@@ -219,7 +338,9 @@ ${DOC}klettres/common
 ${DOC}klettres/${C}
 ${DOC}klettres/${I}
 ${DOC}klettres/klettres1.png
+${DOC}klettres/klettres2.png
 ${DOC}klettres/klettres3.png
+${DOC}klettres/klettres4.png
 ${DOC}klickety/common
 ${DOC}klickety/${C}
 ${DOC}klickety/${I}
@@ -227,8 +348,16 @@ ${DOC}klines/common
 ${DOC}klines/${C}
 ${DOC}klines/${I}
 ${DOC}kmail/common
+${DOC}kmail/configure.docbook
+${DOC}kmail/credits-and-licenses.docbook
+${DOC}kmail/faq.docbook
+${DOC}kmail/getting-started.docbook
+${DOC}kmail/importing.docbook
 ${DOC}kmail/${C}
 ${DOC}kmail/${I}
+${DOC}kmail/intro.docbook
+${DOC}kmail/menus.docbook
+${DOC}kmail/using-kmail.docbook
 ${DOC}kmathtool/common
 ${DOC}kmathtool/${C}
 ${DOC}kmathtool/${I}
@@ -245,6 +374,8 @@ ${DOC}kmessedwords/kmw4.png
 ${DOC}kmines/common
 ${DOC}kmines/${C}
 ${DOC}kmines/${I}
+${DOC}kmines/kmines1.png
+${DOC}kmines/kmines2.png
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
 ${DOC}kmoon/${I}
@@ -256,14 +387,29 @@ ${DOC}kmplot/${C}
 ${DOC}kmplot/${I}
 ${DOC}kmplot/install.docbook
 ${DOC}kmplot/introduction.docbook
+${DOC}kmplot/main.png
 ${DOC}kmplot/menu.docbook
+${DOC}kmplot/namesdlg.png
 ${DOC}kmplot/using.docbook
+${DOC}knode/using-firststart.docbook
+${DOC}knotes/common
+${DOC}knotes/${C}
+${DOC}knotes/${I}
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
 ${DOC}konq-plugins/common
 ${DOC}konq-plugins/${C}
 ${DOC}konq-plugins/${I}
+${DOC}konqueror/bookmarks.docbook
+${DOC}konqueror/commands.docbook
+${DOC}konqueror/config.docbook
+${DOC}konqueror/credits.docbook
+${DOC}konqueror/faq.docbook
+${DOC}konqueror/introduction.docbook
+${DOC}konqueror/path-complete.docbook
+${DOC}konqueror/save-settings.docbook
+${DOC}konqueror/sidebar.docbook
 ${DOC}konquest/common
 ${DOC}konquest/${C}
 ${DOC}konquest/${I}
@@ -279,6 +425,9 @@ ${DOC}kooka/shortcut1.png
 ${DOC}kooka/toolbar.png
 ${DOC}kooka/toolbar1.png
 ${DOC}kooka/toolbar2.png
+${DOC}korn/common
+${DOC}korn/${C}
+${DOC}korn/${I}
 ${DOC}kpackage/common
 ${DOC}kpackage/${C}
 ${DOC}kpackage/${I}
@@ -286,22 +435,29 @@ ${DOC}kpat/common
 ${DOC}kpat/${C}
 ${DOC}kpat/${I}
 ${DOC}kpat/man.docbook
+${DOC}kpercentage/answer.png
 ${DOC}kpercentage/commands.docbook
 ${DOC}kpercentage/common
 ${DOC}kpercentage/credits.docbook
 ${DOC}kpercentage/devel.docbook
 ${DOC}kpercentage/faq.docbook
+${DOC}kpercentage/help.png
 ${DOC}kpercentage/${C}
 ${DOC}kpercentage/${I}
 ${DOC}kpercentage/install.docbook
 ${DOC}kpercentage/introduction.docbook
+${DOC}kpercentage/main.png
 ${DOC}kpercentage/using.docbook
+${DOC}kpercentage/welcome.png
 ${DOC}kpoker/common
 ${DOC}kpoker/${C}
 ${DOC}kpoker/${I}
+${DOC}kpoker/kpoker1.png
+${DOC}kpoker/kpoker2.png
 ${DOC}kreversi/common
 ${DOC}kreversi/${C}
 ${DOC}kreversi/${I}
+${DOC}kreversi/kreversi1.png
 ${DOC}kruler/common
 ${DOC}kruler/${C}
 ${DOC}kruler/${I}
@@ -397,9 +553,30 @@ ${DOC}ktuberling/technical-reference.docbook
 ${DOC}kuickshow/common
 ${DOC}kuickshow/${C}
 ${DOC}kuickshow/${I}
+${DOC}kverbos/anterior.png
+${DOC}kverbos/borrar.png
+${DOC}kverbos/cancelar.png
+${DOC}kverbos/cerrar.png
 ${DOC}kverbos/common
+${DOC}kverbos/continuar.png
+${DOC}kverbos/corregir.png
+${DOC}kverbos/editar.png
 ${DOC}kverbos/${C}
 ${DOC}kverbos/${I}
+${DOC}kverbos/input.png
+${DOC}kverbos/letters.png
+${DOC}kverbos/limpiar.png
+${DOC}kverbos/limpiarpagina.png
+${DOC}kverbos/mainscreen1.png
+${DOC}kverbos/mainscreen_leer.png
+${DOC}kverbos/newverb.png
+${DOC}kverbos/options.png
+${DOC}kverbos/siguiente.png
+${DOC}kverbos/solucion.png
+${DOC}kverbos/times.png
+${DOC}kverbos/type.png
+${DOC}kverbos/username.png
+${DOC}kverbos/verblist.png
 ${DOC}kvoctrain/art-query-dlg.png
 ${DOC}kvoctrain/common
 ${DOC}kvoctrain/comp-query-dlg.png
@@ -412,6 +589,7 @@ ${DOC}kvoctrain/entry3-dlg.png
 ${DOC}kvoctrain/entry4-dlg.png
 ${DOC}kvoctrain/entry5-dlg.png
 ${DOC}kvoctrain/entry6-dlg.png
+${DOC}kvoctrain/foto21.png
 ${DOC}kvoctrain/${C}
 ${DOC}kvoctrain/${I}
 ${DOC}kvoctrain/lang1-dlg.png
@@ -444,6 +622,9 @@ ${DOC}kworldclock/${I}
 ${DOC}kwuftpd/common
 ${DOC}kwuftpd/${C}
 ${DOC}kwuftpd/${I}
+${DOC}kxconfig/common
+${DOC}kxconfig/${C}
+${DOC}kxconfig/${I}
 ${DOC}lisa/common
 ${DOC}lisa/${C}
 ${DOC}lisa/${I}
@@ -453,9 +634,6 @@ ${DOC}lskat/${I}
 ${DOC}megami/common
 ${DOC}megami/${C}
 ${DOC}megami/${I}
-${DOC}powerctrl/common
-${DOC}powerctrl/${C}
-${DOC}powerctrl/${I}
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -898,10 +1076,10 @@ share/locale/it/flag.png
 @comment @dirrm share/locale/it/LC_MESSAGES
 @comment @dirrm share/locale/it
 @comment @dirrm share/locale
-@dirrm ${DOC}powerctrl
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
+@dirrm ${DOC}kxconfig
 @dirrm ${DOC}kwuftpd
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
@@ -930,10 +1108,14 @@ share/locale/it/flag.png
 @dirrm ${DOC}kpercentage
 @dirrm ${DOC}kpat
 @dirrm ${DOC}kpackage
+@dirrm ${DOC}korn
 @dirrm ${DOC}kooka
 @dirrm ${DOC}konquest
+@dirrm ${DOC}konqueror
 @dirrm ${DOC}konq-plugins
 @dirrm ${DOC}kodo
+@dirrm ${DOC}knotes
+@dirrm ${DOC}knode
 @dirrm ${DOC}kmplot
 @dirrm ${DOC}kmoon
 @dirrm ${DOC}kmines
@@ -947,23 +1129,57 @@ share/locale/it/flag.png
 @dirrm ${DOC}kjumpingcube
 @dirrm ${DOC}kiten
 @dirrm ${DOC}kioslave
+@dirrm ${DOC}kinfocenter/xserver
+@dirrm ${DOC}kinfocenter/usb
+@dirrm ${DOC}kinfocenter/sound
+@dirrm ${DOC}kinfocenter/scsi
+@dirrm ${DOC}kinfocenter/protocols
+@dirrm ${DOC}kinfocenter/processor
+@dirrm ${DOC}kinfocenter/pcmcia
+@dirrm ${DOC}kinfocenter/pci
+@dirrm ${DOC}kinfocenter/partitions
+@dirrm ${DOC}kinfocenter/nics
+@dirrm ${DOC}kinfocenter/memory
+@dirrm ${DOC}kinfocenter/ioports
+@dirrm ${DOC}kinfocenter/interrupts
+@dirrm ${DOC}kinfocenter/dma
+@dirrm ${DOC}kinfocenter/devices
 @dirrm ${DOC}kinfocenter/blockdevices
 @dirrm ${DOC}kinfocenter
 @dirrm ${DOC}kiconedit
 @dirrm ${DOC}kicker-applets
+@dirrm ${DOC}kicker
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}khangman
+@dirrm ${DOC}kgpgcertmanager
 @dirrm ${DOC}kghostview
 @dirrm ${DOC}kgeo
 @dirrm ${DOC}kfouleggs
 @dirrm ${DOC}kfloppy
+@dirrm ${DOC}kfind
 @dirrm ${DOC}kenolaba
 @dirrm ${DOC}keduca
 @dirrm ${DOC}kdvi
 @dirrm ${DOC}kdf
+@dirrm ${DOC}kdat
+@dirrm ${DOC}kcron
+@dirrm ${DOC}kcontrol/useragent
+@dirrm ${DOC}kcontrol/spellchecking
+@dirrm ${DOC}kcontrol/smb
+@dirrm ${DOC}kcontrol/proxy
+@dirrm ${DOC}kcontrol/powerctrl
+@dirrm ${DOC}kcontrol/passwords
+@dirrm ${DOC}kcontrol/netpref
 @dirrm ${DOC}kcontrol/lanbrowser
 @dirrm ${DOC}kcontrol/kcmlowbatcrit
 @dirrm ${DOC}kcontrol/kcmktalkd
+@dirrm ${DOC}kcontrol/email
+@dirrm ${DOC}kcontrol/ebrowsing
+@dirrm ${DOC}kcontrol/desktop
+@dirrm ${DOC}kcontrol/crypto
+@dirrm ${DOC}kcontrol/cookies
+@dirrm ${DOC}kcontrol/colors
+@dirrm ${DOC}kcontrol/cache
 @dirrm ${DOC}kcontrol
 @dirrm ${DOC}kcoloredit
 @dirrm ${DOC}kcharselect
@@ -977,6 +1193,7 @@ share/locale/it/flag.png
 @dirrm ${DOC}kaphorism
 @dirrm ${DOC}kamera
 @dirrm ${DOC}kalzium
+@dirrm ${DOC}kaddressbook
 @dirrm ${DOC}flashkard
 @dirrm ${DOC}common
 @dirrm ${DOC}atlantik

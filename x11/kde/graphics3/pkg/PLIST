@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/04/22 11:16:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/06/12 19:16:16 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -137,9 +137,6 @@ share/apps/kviewviewer/kpartplugins/kviewbrowser.rc
 share/apps/kviewviewer/kviewpopup.rc
 share/apps/kviewviewer/kviewviewer.rc
 share/apps/kviewviewer/kviewviewer_ro.rc
-share/doc/HTML/en/kamera/common
-share/doc/HTML/en/kamera/index.cache.bz2
-share/doc/HTML/en/kamera/index.docbook
 share/doc/HTML/en/kcoloredit/common
 share/doc/HTML/en/kcoloredit/index.cache.bz2
 share/doc/HTML/en/kcoloredit/index.docbook
@@ -175,58 +172,6 @@ share/doc/HTML/en/kooka/toolbar2.png
 share/doc/HTML/en/kpaint/common
 share/doc/HTML/en/kpaint/index.cache.bz2
 share/doc/HTML/en/kpaint/index.docbook
-share/doc/HTML/en/kpovmodeler/cameraview.png
-share/doc/HTML/en/kpovmodeler/common
-share/doc/HTML/en/kpovmodeler/controlpoints.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmcamera.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmcolorlist.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmfinish.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pminterior.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmlight.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmpigment.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmplane.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmrender.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmsolidcolor.png
-share/doc/HTML/en/kpovmodeler/cr22-action-pmsphere.png
-share/doc/HTML/en/kpovmodeler/defaultviewlayout.png
-share/doc/HTML/en/kpovmodeler/dockwidget.png
-share/doc/HTML/en/kpovmodeler/dockwidgettab.png
-share/doc/HTML/en/kpovmodeler/index.cache.bz2
-share/doc/HTML/en/kpovmodeler/index.docbook
-share/doc/HTML/en/kpovmodeler/insertaspopup.png
-share/doc/HTML/en/kpovmodeler/objectpropertiesview.png
-share/doc/HTML/en/kpovmodeler/objecttree.png
-share/doc/HTML/en/kpovmodeler/rendericon.png
-share/doc/HTML/en/kpovmodeler/rendermodeoutput.png
-share/doc/HTML/en/kpovmodeler/rendermodequality.png
-share/doc/HTML/en/kpovmodeler/rendermodesize.png
-share/doc/HTML/en/kpovmodeler/rendermodesselection.png
-share/doc/HTML/en/kpovmodeler/rendermodestoolbar.png
-share/doc/HTML/en/kpovmodeler/rendersettingsicon.png
-share/doc/HTML/en/kpovmodeler/renderwindow.png
-share/doc/HTML/en/kpovmodeler/texturepreview.png
-share/doc/HTML/en/kpovmodeler/topview.png
-share/doc/HTML/en/kpovmodeler/tutorial01-camera-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-camera-graphic.png
-share/doc/HTML/en/kpovmodeler/tutorial01-final-render.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-color-list.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-pigment.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-render.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-solid-color-1.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-solid-color-2.png
-share/doc/HTML/en/kpovmodeler/tutorial01-ground-wrong-colors-render.png
-share/doc/HTML/en/kpovmodeler/tutorial01-light-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-light-graphic.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-graphic.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-tree-expanded.png
-share/doc/HTML/en/kpovmodeler/tutorial01-plane-tree-translate.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-finish-dialog.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-finish.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-nocolor.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-solidcolor.png
-share/doc/HTML/en/kpovmodeler/tutorial01-sphere-solid-color.png
 share/doc/HTML/en/kruler/common
 share/doc/HTML/en/kruler/index.cache.bz2
 share/doc/HTML/en/kruler/index.docbook
@@ -310,14 +255,12 @@ share/servicetypes/kimageviewercanvas.desktop
 @dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ksnapshot
 @dirrm share/doc/HTML/en/kruler
-@dirrm share/doc/HTML/en/kpovmodeler
 @dirrm share/doc/HTML/en/kpaint
 @dirrm share/doc/HTML/en/kooka
 @dirrm share/doc/HTML/en/kiconedit
 @dirrm share/doc/HTML/en/kghostview
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en/kcoloredit
-@dirrm share/doc/HTML/en/kamera
 @comment @dirrm share/doc/HTML
 @dirrm share/apps/kviewviewer/kpartplugins
 @dirrm share/apps/kviewviewer
@@ -342,4 +285,3 @@ share/servicetypes/kimageviewercanvas.desktop
 @dirrm share/apps/kdvi
 @dirrm share/apps/kcoloredit
 @comment @dirrm share/apps
-@dirrm share/applnk/Settings/Peripherals

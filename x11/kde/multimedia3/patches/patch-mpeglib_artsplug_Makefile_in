@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- mpeglib_artsplug/Makefile.in.orig	Tue Mar 11 06:53:44 2003
-+++ mpeglib_artsplug/Makefile.in	Mon Mar 31 16:42:56 2003
-@@ -396,7 +396,7 @@ libarts_mpeglib_la_LDFLAGS = $(all_libra
+$OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
+--- mpeglib_artsplug/Makefile.in.orig	Wed May  7 14:05:29 2003
++++ mpeglib_artsplug/Makefile.in	Tue Jun 10 10:58:31 2003
+@@ -448,7 +448,7 @@ libarts_mpeglib_la_LDFLAGS = $(all_libra
  					-release $(MPEGLIB_ARTS_VERSION) \
  					-version-info $(MPEGLIB_ARTS_MAJOR_VERSION):$(MPEGLIB_ARTS_MINOR_VERSION):$(MPEGLIB_ARTS_MICRO_VERSION)
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp
  
  libarts_splay_la_SOURCES = splayPlayObject.cc \
  					splayPlayObject_impl.cpp
-@@ -405,7 +405,7 @@ libarts_splay_la_SOURCES = splayPlayObje
+@@ -457,7 +457,7 @@ libarts_splay_la_SOURCES = splayPlayObje
  libarts_splay_la_LDFLAGS = $(all_libraries) \
  					-module
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp
  
  bin_PROGRAMS = mpeglibartsplay
  
-@@ -424,7 +424,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -476,7 +476,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-mpeglib_artsplug_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp
  am_libarts_mpeglib_la_OBJECTS = decoderBaseObject.lo splayPlayObject.lo \
  	decoderBaseObject_impl.lo oggPlayObject_impl.lo \
  	mpgPlayObject_impl.lo wavPlayObject_impl.lo \
-@@ -440,7 +440,7 @@ libarts_mpeglib_la_nofinal_OBJECTS = dec
+@@ -492,7 +492,7 @@ libarts_mpeglib_la_nofinal_OBJECTS = dec
  	vcdPlayObject_impl.lo nullPlayObject_impl.lo
  @KDE_USE_FINAL_FALSE@libarts_mpeglib_la_OBJECTS = $(libarts_mpeglib_la_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@libarts_mpeglib_la_OBJECTS = $(libarts_mpeglib_la_final_OBJECTS)

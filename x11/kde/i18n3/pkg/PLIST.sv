@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sv,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.sv,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/sv/brosch.wav
 share/apps/ktuberling/sounds/sv/cigarr.wav
 share/apps/ktuberling/sounds/sv/fluga.wav
@@ -467,9 +467,6 @@ ${DOC}kdvi/${C}
 ${DOC}kdvi/${I}
 ${DOC}kdvi/optionrequester1.png
 ${DOC}kdvi/optionrequester2.png
-${DOC}kedit/common
-${DOC}kedit/${C}
-${DOC}kedit/${I}
 ${DOC}keduca/common
 ${DOC}keduca/${C}
 ${DOC}keduca/${I}
@@ -671,9 +668,6 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
-${DOC}kit/common
-${DOC}kit/${C}
-${DOC}kit/${I}
 ${DOC}kiten/common
 ${DOC}kiten/${C}
 ${DOC}kiten/${I}
@@ -700,8 +694,16 @@ ${DOC}klipper/common
 ${DOC}klipper/${C}
 ${DOC}klipper/${I}
 ${DOC}kmail/common
+${DOC}kmail/configure.docbook
+${DOC}kmail/credits-and-licenses.docbook
+${DOC}kmail/faq.docbook
+${DOC}kmail/getting-started.docbook
+${DOC}kmail/importing.docbook
 ${DOC}kmail/${C}
 ${DOC}kmail/${I}
+${DOC}kmail/intro.docbook
+${DOC}kmail/menus.docbook
+${DOC}kmail/using-kmail.docbook
 ${DOC}kmathtool/common
 ${DOC}kmathtool/${C}
 ${DOC}kmathtool/${I}
@@ -840,17 +842,28 @@ ${DOC}konq-plugins/validators/${I}
 ${DOC}konq-plugins/webarchiver/common
 ${DOC}konq-plugins/webarchiver/${C}
 ${DOC}konq-plugins/webarchiver/${I}
+${DOC}konqueror/basics.docbook
+${DOC}konqueror/bookmarks.docbook
+${DOC}konqueror/browser.docbook
 ${DOC}konqueror/cmndline.png
+${DOC}konqueror/commands.docbook
 ${DOC}konqueror/common
+${DOC}konqueror/config.docbook
+${DOC}konqueror/credits.docbook
 ${DOC}konqueror/dirtree.png
 ${DOC}konqueror/dragdrop.png
+${DOC}konqueror/faq.docbook
 ${DOC}konqueror/filetype1.png
 ${DOC}konqueror/filetype3.png
 ${DOC}konqueror/filetype4.png
 ${DOC}konqueror/${C}
 ${DOC}konqueror/${I}
+${DOC}konqueror/introduction.docbook
 ${DOC}konqueror/konqorg.png
 ${DOC}konqueror/parts.png
+${DOC}konqueror/path-complete.docbook
+${DOC}konqueror/plugins.docbook
+${DOC}konqueror/save-settings.docbook
 ${DOC}konqueror/shortcut1.png
 ${DOC}konqueror/shortcut2.png
 ${DOC}konquest/common
@@ -1296,6 +1309,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -1781,7 +1795,6 @@ share/locale/sv/flag.png
 @dirrm ${DOC}kjumpingcube
 @dirrm ${DOC}kjots
 @dirrm ${DOC}kiten
-@dirrm ${DOC}kit
 @dirrm ${DOC}kioslave
 @dirrm ${DOC}kinfocenter/xserver
 @dirrm ${DOC}kinfocenter/usb
@@ -1820,7 +1833,6 @@ share/locale/sv/flag.png
 @dirrm ${DOC}kfind
 @dirrm ${DOC}kenolaba
 @dirrm ${DOC}keduca
-@dirrm ${DOC}kedit
 @dirrm ${DOC}kdvi
 @dirrm ${DOC}kdm
 @dirrm ${DOC}kdict

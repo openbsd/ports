@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fr,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.fr,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/amor/tips${FLAVOR_EXT}
 share/apps/ktuberling/sounds/fr/bouche.wav
 share/apps/ktuberling/sounds/fr/boucle-d-oreille.wav
@@ -93,6 +93,9 @@ ${DOC}artsbuilder/modules.docbook
 ${DOC}artsbuilder/porting.docbook
 ${DOC}artsbuilder/references.docbook
 ${DOC}artsbuilder/tools.docbook
+${DOC}atlantik/common
+${DOC}atlantik/${C}
+${DOC}atlantik/${I}
 ${DOC}cervisia/common
 ${DOC}cervisia/${C}
 ${DOC}cervisia/${I}
@@ -144,15 +147,24 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
-${DOC}helpindex/common
-${DOC}helpindex/${C}
-${DOC}helpindex/${I}
 ${DOC}kaboodle/common
 ${DOC}kaboodle/${C}
 ${DOC}kaboodle/${I}
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kalarm/alarmmessage.png
+${DOC}kalarm/common
+${DOC}kalarm/editwindow.png
+${DOC}kalarm/${C}
+${DOC}kalarm/${I}
+${DOC}kalarm/mainwindow.png
+${DOC}kalzium/common
+${DOC}kalzium/${C}
+${DOC}kalzium/${I}
+${DOC}kalzium/screenshot1.png
+${DOC}kalzium/screenshot3.png
+${DOC}kalzium/screenshot4.png
 ${DOC}kamera/common
 ${DOC}kamera/${C}
 ${DOC}kamera/${I}
@@ -282,6 +294,9 @@ ${DOC}kcontrol/filetypes/${I}
 ${DOC}kcontrol/fonts/common
 ${DOC}kcontrol/fonts/${C}
 ${DOC}kcontrol/fonts/${I}
+${DOC}kcontrol/helpindex/common
+${DOC}kcontrol/helpindex/${C}
+${DOC}kcontrol/helpindex/${I}
 ${DOC}kcontrol/icons/common
 ${DOC}kcontrol/icons/${C}
 ${DOC}kcontrol/icons/${I}
@@ -412,7 +427,17 @@ ${DOC}kdebugdialog/${I}
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
 ${DOC}kdeprint/cups-config.docbook
+${DOC}kdeprint/cupsaddprinterwizard1.png
+${DOC}kdeprint/cupsaddprinterwizard2_backendselection.png
+${DOC}kdeprint/cupsaddprinterwizard4_networkscan_config.png
 ${DOC}kdeprint/cupsoptions.docbook
+${DOC}kdeprint/cupsserverconfiguration10_browsinggeneral.png
+${DOC}kdeprint/cupsserverconfiguration1_welcome.png
+${DOC}kdeprint/cupsserverconfiguration2_general.png
+${DOC}kdeprint/cupsserverconfiguration3_logging.png
+${DOC}kdeprint/cupsserverconfiguration4_directories.png
+${DOC}kdeprint/cupsserverconfiguration6_encryption.png
+${DOC}kdeprint/cupsserverconfiguration8_networkgeneral.png
 ${DOC}kdeprint/extensions.docbook
 ${DOC}kdeprint/external-command.docbook
 ${DOC}kdeprint/final-word.docbook
@@ -420,6 +445,10 @@ ${DOC}kdeprint/getting-started.docbook
 ${DOC}kdeprint/highlights.docbook
 ${DOC}kdeprint/${C}
 ${DOC}kdeprint/${I}
+${DOC}kdeprint/kcron_to_be_printed.png
+${DOC}kdeprint/kprinter.png
+${DOC}kdeprint/kprinter_called_from_run_command.png
+${DOC}kdeprint/kprinter_with_kcron_developer_special.png
 ${DOC}kdeprint/lpd.docbook
 ${DOC}kdeprint/lpr-bsd.docbook
 ${DOC}kdeprint/lprng.docbook
@@ -686,6 +715,9 @@ ${DOC}kjots/${I}
 ${DOC}kjumpingcube/common
 ${DOC}kjumpingcube/${C}
 ${DOC}kjumpingcube/${I}
+${DOC}klettres/common
+${DOC}klettres/${C}
+${DOC}klettres/${I}
 ${DOC}klickety/common
 ${DOC}klickety/${C}
 ${DOC}klickety/${I}
@@ -755,11 +787,18 @@ ${DOC}knewsticker/${C}
 ${DOC}knewsticker/${I}
 ${DOC}knewsticker/kcmnewsticker-general.png
 ${DOC}knewsticker/kcmnewsticker-newssources.png
+${DOC}knode/commands.docbook
 ${DOC}knode/common
 ${DOC}knode/credits.docbook
+${DOC}knode/faq.docbook
+${DOC}knode/gloss.docbook
 ${DOC}knode/${C}
 ${DOC}knode/${I}
+${DOC}knode/install.docbook
+${DOC}knode/introduction.docbook
+${DOC}knode/journey.docbook
 ${DOC}knode/knode-cleanup.png
+${DOC}knode/knode-colors-fonts.png
 ${DOC}knode/knode-colors.png
 ${DOC}knode/knode-composer-attachments.png
 ${DOC}knode/knode-composer-settings.png
@@ -782,6 +821,10 @@ ${DOC}knode/knode-search.png
 ${DOC}knode/knode-start.png
 ${DOC}knode/knode-subscribe.png
 ${DOC}knode/knode-views.png
+${DOC}knode/more.docbook
+${DOC}knode/using-firststart.docbook
+${DOC}knode/using-morefeatures.docbook
+${DOC}knode/using-subscribing.docbook
 ${DOC}knotes/common
 ${DOC}knotes/${C}
 ${DOC}knotes/${I}
@@ -1115,6 +1158,7 @@ ${DOC}kuickshow/screenshot.png
 ${DOC}kuser/common
 ${DOC}kuser/${C}
 ${DOC}kuser/${I}
+${DOC}kuser/kuser.png
 ${DOC}kview/common
 ${DOC}kview/${C}
 ${DOC}kview/${I}
@@ -1196,6 +1240,9 @@ ${DOC}lisa/${I}
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
+${DOC}megami/common
+${DOC}megami/${C}
+${DOC}megami/${I}
 ${DOC}noatun/common
 ${DOC}noatun/${C}
 ${DOC}noatun/${I}
@@ -1233,6 +1280,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -1456,7 +1504,6 @@ ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
 ${LOC}klegacyimport.mo
-${LOC}kless.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
@@ -1639,6 +1686,7 @@ share/locale/fr/flag.png
 @comment @dirrm share/locale/fr
 @comment @dirrm share/locale
 @dirrm ${DOC}noatun
+@dirrm ${DOC}megami
 @dirrm ${DOC}lskat
 @dirrm ${DOC}lisa
 @dirrm ${DOC}kxconfig
@@ -1721,6 +1769,7 @@ share/locale/fr/flag.png
 @dirrm ${DOC}klipper
 @dirrm ${DOC}klines
 @dirrm ${DOC}klickety
+@dirrm ${DOC}klettres
 @dirrm ${DOC}kjumpingcube
 @dirrm ${DOC}kjots
 @dirrm ${DOC}kit
@@ -1806,6 +1855,7 @@ share/locale/fr/flag.png
 @dirrm ${DOC}kcontrol/kcmaccess
 @dirrm ${DOC}kcontrol/kalarmd
 @dirrm ${DOC}kcontrol/icons
+@dirrm ${DOC}kcontrol/helpindex
 @dirrm ${DOC}kcontrol/fonts
 @dirrm ${DOC}kcontrol/filetypes
 @dirrm ${DOC}kcontrol/filemanager
@@ -1839,11 +1889,13 @@ share/locale/fr/flag.png
 @dirrm ${DOC}kaphorism
 @dirrm ${DOC}kandy
 @dirrm ${DOC}kamera
+@dirrm ${DOC}kalzium
+@dirrm ${DOC}kalarm
 @dirrm ${DOC}kaddressbook
 @dirrm ${DOC}kaboodle
-@dirrm ${DOC}helpindex
 @dirrm ${DOC}common
 @dirrm ${DOC}cervisia
+@dirrm ${DOC}atlantik
 @dirrm ${DOC}artsbuilder/images
 @dirrm ${DOC}artsbuilder
 @dirrm ${DOC}ark

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sk,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.sk,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/sk/cigara.wav
 share/apps/ktuberling/sounds/sk/fuzy.wav
 share/apps/ktuberling/sounds/sk/hodinky.wav
@@ -136,6 +136,9 @@ ${DOC}kcalc/${I}
 ${DOC}kcharselect/common
 ${DOC}kcharselect/${C}
 ${DOC}kcharselect/${I}
+${DOC}kcoloredit/common
+${DOC}kcoloredit/${C}
+${DOC}kcoloredit/${I}
 ${DOC}kcontrol/arts/common
 ${DOC}kcontrol/arts/${C}
 ${DOC}kcontrol/arts/${I}
@@ -570,6 +573,7 @@ ${DOC}klines/${I}
 ${DOC}klipper/common
 ${DOC}klipper/${C}
 ${DOC}klipper/${I}
+${DOC}kmail/credits-and-licenses.docbook
 ${DOC}kmathtool/common
 ${DOC}kmathtool/${C}
 ${DOC}kmathtool/${I}
@@ -598,6 +602,9 @@ ${DOC}kmplot/install.docbook
 ${DOC}kmplot/introduction.docbook
 ${DOC}kmplot/menu.docbook
 ${DOC}kmplot/using.docbook
+${DOC}knode/credits.docbook
+${DOC}knode/install.docbook
+${DOC}knode/introduction.docbook
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
@@ -637,9 +644,6 @@ ${DOC}konqueror/sidebar.docbook
 ${DOC}konquest/common
 ${DOC}konquest/${C}
 ${DOC}konquest/${I}
-${DOC}konsole/common
-${DOC}konsole/${C}
-${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
 ${DOC}kooka/common
 ${DOC}kooka/${C}
@@ -755,9 +759,6 @@ ${DOC}kwin4/${I}
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
-${DOC}kwrite/common
-${DOC}kwrite/${C}
-${DOC}kwrite/${I}
 ${DOC}lskat/common
 ${DOC}lskat/${C}
 ${DOC}lskat/${I}
@@ -1197,7 +1198,6 @@ share/locale/sk/flag.png
 @dirrm ${DOC}noatun
 @dirrm ${DOC}megami
 @dirrm ${DOC}lskat
-@dirrm ${DOC}kwrite
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kwin4
 @dirrm ${DOC}kweather
@@ -1235,6 +1235,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kompare
 @dirrm ${DOC}kolf
 @dirrm ${DOC}kodo
+@dirrm ${DOC}knode
 @dirrm ${DOC}kmplot
 @dirrm ${DOC}kmoon
 @dirrm ${DOC}kmix
@@ -1242,6 +1243,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kmessedwords
 @dirrm ${DOC}kmenuedit
 @dirrm ${DOC}kmathtool
+@dirrm ${DOC}kmail
 @dirrm ${DOC}klipper
 @dirrm ${DOC}klines
 @dirrm ${DOC}klickety
@@ -1343,6 +1345,7 @@ share/locale/sk/flag.png
 @dirrm ${DOC}kcontrol/background
 @dirrm ${DOC}kcontrol/arts
 @dirrm ${DOC}kcontrol
+@dirrm ${DOC}kcoloredit
 @dirrm ${DOC}kcharselect
 @dirrm ${DOC}kcalc
 @dirrm ${DOC}kbugbuster

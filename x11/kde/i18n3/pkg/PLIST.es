@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.es,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.es,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/es/anteojos.wav
 share/apps/ktuberling/sounds/es/bigote.wav
 share/apps/ktuberling/sounds/es/boca.wav
@@ -155,6 +155,17 @@ ${DOC}kate/regular-expressions.docbook
 ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
+${DOC}kbabel/catman.docbook
+${DOC}kbabel/common
+${DOC}kbabel/dictionaries.docbook
+${DOC}kbabel/faq.docbook
+${DOC}kbabel/glossary.docbook
+${DOC}kbabel/${C}
+${DOC}kbabel/${I}
+${DOC}kbabel/kbabeldict.docbook
+${DOC}kbabel/menu.docbook
+${DOC}kbabel/preferences.docbook
+${DOC}kbabel/using.docbook
 ${DOC}kbackgammon/common
 ${DOC}kbackgammon/${C}
 ${DOC}kbackgammon/${I}
@@ -978,6 +989,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -1545,6 +1557,7 @@ share/locale/es/flag.png
 @dirrm ${DOC}kblackbox
 @dirrm ${DOC}kbattleship
 @dirrm ${DOC}kbackgammon
+@dirrm ${DOC}kbabel
 @dirrm ${DOC}katomic
 @dirrm ${DOC}kate-plugins
 @dirrm ${DOC}kate

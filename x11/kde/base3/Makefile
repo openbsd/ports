@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2003/04/12 15:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2003/06/12 19:16:15 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.1.1a
+VERSION=		3.1.2
 DISTNAME=		kdebase-${VERSION}
 
 LIB_DEPENDS= kdecore.4,DCOP,artskde,kabc,katepartinterfaces,kdefakes,kdefx,kdeprint,kdeprint_management,kdesasl,kdesu,kdeui,khtml,kio,kmid,kparts,kscreensaver,kscript,kspell,ktexteditor,kutils,vcard::x11/kde/libs3 \

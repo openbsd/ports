@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.th,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.th,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${LOC}aktion.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -40,13 +40,14 @@ ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}jefferson.mo
-${LOC}kab3.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_ldap.mo
+${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
 ${LOC}kabcformat_binary.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
 ${LOC}kasbarextension.mo
@@ -72,12 +73,14 @@ ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
+${LOC}kcm_krfb.mo
 ${LOC}kcmaccess.mo
 ${LOC}kcmarts.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
 ${LOC}kcmcgi.mo
 ${LOC}kcmcolors.mo
+${LOC}kcmcomponentchooser.mo
 ${LOC}kcmcrypto.mo
 ${LOC}kcmcss.mo
 ${LOC}kcmemail.mo
@@ -180,7 +183,9 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
+${LOC}kfontviewpart.mo
 ${LOC}kfouleggs.mo
+${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -188,10 +193,13 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
+${LOC}kinetd.mo
+${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
+${LOC}kio_mac.mo
 ${LOC}kio_man.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
@@ -236,21 +244,26 @@ ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpersonalizer.mo
+${LOC}kpf.mo
 ${LOC}kpixmap2bitmap.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}krdb.mo
+${LOC}krdc.mo
 ${LOC}kreadconfig.mo
+${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
 ${LOC}kscoreapplet.mo
+${LOC}kscreensaver.mo
 ${LOC}ksirtet.mo
 ${LOC}ksmiletris.mo
 ${LOC}ksmserver.mo
 ${LOC}ksnake.mo
 ${LOC}ksnapshot.mo
+${LOC}ksokoban.mo
 ${LOC}ksplash.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.da,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.da,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/da/briller.wav
 share/apps/ktuberling/sounds/da/cigar.wav
 share/apps/ktuberling/sounds/da/haar.wav
@@ -620,6 +620,7 @@ ${DOC}klipper/common
 ${DOC}klipper/${C}
 ${DOC}klipper/${I}
 ${DOC}kmail/common
+${DOC}kmail/credits-and-licenses.docbook
 ${DOC}kmail/${C}
 ${DOC}kmail/${I}
 ${DOC}kmenuedit/common
@@ -672,17 +673,27 @@ ${DOC}kolf/${I}
 ${DOC}konq-plugins/common
 ${DOC}konq-plugins/${C}
 ${DOC}konq-plugins/${I}
+${DOC}konqueror/basics.docbook
+${DOC}konqueror/bookmarks.docbook
+${DOC}konqueror/browser.docbook
 ${DOC}konqueror/cmndline.png
+${DOC}konqueror/commands.docbook
 ${DOC}konqueror/common
+${DOC}konqueror/config.docbook
+${DOC}konqueror/credits.docbook
 ${DOC}konqueror/dirtree.png
 ${DOC}konqueror/dragdrop.png
+${DOC}konqueror/faq.docbook
 ${DOC}konqueror/filetype1.png
 ${DOC}konqueror/filetype3.png
 ${DOC}konqueror/filetype4.png
 ${DOC}konqueror/${C}
 ${DOC}konqueror/${I}
+${DOC}konqueror/introduction.docbook
 ${DOC}konqueror/konqorg.png
 ${DOC}konqueror/parts.png
+${DOC}konqueror/path-complete.docbook
+${DOC}konqueror/save-settings.docbook
 ${DOC}konqueror/shortcut1.png
 ${DOC}konqueror/shortcut2.png
 ${DOC}konquest/common

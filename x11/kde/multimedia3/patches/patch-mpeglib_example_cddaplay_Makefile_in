@@ -1,21 +1,24 @@
-$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- mpeglib/example/cddaplay/Makefile.in.orig	Tue Mar 11 06:53:43 2003
-+++ mpeglib/example/cddaplay/Makefile.in	Mon Mar 31 16:42:56 2003
-@@ -338,7 +338,7 @@ noinst_HEADERS = 
+$OpenBSD: patch-mpeglib_example_cddaplay_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
+--- mpeglib/example/cddaplay/Makefile.in.orig	Wed May  7 14:05:28 2003
++++ mpeglib/example/cddaplay/Makefile.in	Wed Jun 11 09:33:05 2003
+@@ -388,9 +388,9 @@ cddaplay_SOURCES = cddaplay.cpp
  
- cddaplay_LDFLAGS = $(all_libraries) 
+ noinst_HEADERS = 
+ 
+-cddaplay_LDFLAGS = $(all_libraries) 
++cddaplay_LDFLAGS = -pthread $(all_libraries) 
  
 -cddaplay_LDADD = ../../lib/libmpeg.la \
 +cddaplay_LDADD = ../../lib/libkmpeg.la \
  				$(THIS_LIB_LIBS)
  
  subdir = mpeglib/example/cddaplay
-@@ -352,7 +352,7 @@ am_cddaplay_OBJECTS = cddaplay.$(OBJEXT)
+@@ -404,7 +404,7 @@ am_cddaplay_OBJECTS = cddaplay.$(OBJEXT)
  #>- cddaplay_OBJECTS = $(am_cddaplay_OBJECTS)
  #>+ 1
  cddaplay_OBJECTS = cddaplay.$(OBJEXT)
 -cddaplay_DEPENDENCIES = ../../lib/libmpeg.la
 +cddaplay_DEPENDENCIES = ../../lib/libkmpeg.la
  
- DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp

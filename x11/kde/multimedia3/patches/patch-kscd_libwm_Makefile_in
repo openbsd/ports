@@ -1,7 +1,7 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- kscd/libwm/Makefile.in.orig	Tue Mar 11 06:53:43 2003
-+++ kscd/libwm/Makefile.in	Mon Mar 31 16:42:56 2003
-@@ -333,11 +333,11 @@ subdirs = include
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.5 2003/06/12 19:16:16 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Wed May  7 14:05:28 2003
++++ kscd/libwm/Makefile.in	Tue Jun 10 10:59:35 2003
+@@ -385,11 +385,11 @@ subdirs = include
  
  INCLUDES = $(all_includes) 
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
  database.c index.c scsi.c \
  plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
  plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -350,24 +350,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
+@@ -402,24 +402,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(lib_LTLIBRARIES)
  
@@ -46,12 +46,12 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
 +@KDE_USE_FINAL_FALSE@libkworkman_la_OBJECTS = $(libkworkman_la_nofinal_OBJECTS)
 +@KDE_USE_FINAL_TRUE@libkworkman_la_OBJECTS = $(libkworkman_la_final_OBJECTS)
  
- DEFS = @DEFS@
  DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
-@@ -417,9 +417,9 @@ CCLD = $(CC)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+@@ -465,9 +465,9 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
- CFLAGS = @CFLAGS@
 -DIST_SOURCES = $(libworkman_la_SOURCES)
 +DIST_SOURCES = $(libkworkman_la_SOURCES)
  DIST_COMMON = README Makefile.am Makefile.in
@@ -60,7 +60,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
  
  #>- all: all-am
  #>+ 1
-@@ -464,8 +464,8 @@ clean-libLTLIBRARIES:
+@@ -512,8 +512,8 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -71,7 +71,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT) core *.core
-@@ -695,16 +695,16 @@ force-reedit:
+@@ -790,16 +790,16 @@ force-reedit:
  
  #>+ 2
  final:

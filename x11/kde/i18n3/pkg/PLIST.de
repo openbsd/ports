@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.de,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.de,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/de/abzeichen.wav
 share/apps/ktuberling/sounds/de/auge.wav
 share/apps/ktuberling/sounds/de/augenbraue.wav
@@ -1121,6 +1121,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
 ${LOC}babelfish.mo
@@ -1146,6 +1147,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo

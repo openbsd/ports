@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.lt,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.lt,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -19,6 +19,7 @@ ${LOC}artscontrol.mo
 ${LOC}babelfish.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
+${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdeaddons.mo
@@ -33,6 +34,7 @@ ${LOC}desktop_kdepim.mo
 ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -60,6 +62,7 @@ ${LOC}kateinsertcommand.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
 ${LOC}kateprojectmanager.mo
+${LOC}katespell.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmltools.mo
 ${LOC}kbabel.mo
@@ -150,6 +153,7 @@ ${LOC}kdmgreet.mo
 ${LOC}kedit.mo
 ${LOC}keduca.mo
 ${LOC}kfax.mo
+${LOC}kfile_avi.mo
 ${LOC}kfile_deb.mo
 ${LOC}kfile_font.mo
 ${LOC}kfile_m3u.mo
@@ -291,6 +295,7 @@ ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 ${LOC}uachangerplugin.mo
 ${LOC}validatorsplugin.mo
+${LOC}wakeup.mo
 ${LOC}webarchiver.mo
 share/locale/lt/charset
 share/locale/lt/entry.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.he,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.he,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -63,9 +63,11 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
 ${LOC}babelfish.mo
+${LOC}cervisia.mo
 ${LOC}charlatanui.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
@@ -87,12 +89,14 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
 ${LOC}extensionproxy.mo
 ${LOC}ffrs.mo
 ${LOC}filetypes.mo
+${LOC}flashkard.mo
 ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
@@ -131,6 +135,7 @@ ${LOC}katetextfilter.mo
 ${LOC}katexmlcheck.mo
 ${LOC}katexmltools.mo
 ${LOC}katomic.mo
+${LOC}kaudiocreator.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
 ${LOC}kblackbox.mo
@@ -443,6 +448,7 @@ ${LOC}nsplugin.mo
 ${LOC}passwords.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
+${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}synaescope.mo

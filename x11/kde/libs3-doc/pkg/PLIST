@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/01/27 20:26:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/06/12 19:16:16 espie Exp $
 share/doc/html/kdelibs/dcop/DCOPArg.html
 share/doc/html/kdelibs/dcop/DCOPClient.html
 share/doc/html/kdelibs/dcop/DCOPConnection.html
@@ -701,9 +701,14 @@ share/doc/html/kdelibs/kdefx/kpixmap_h.html
 share/doc/html/kdelibs/kdefx/kpixmapeffect_h.html
 share/doc/html/kdelibs/kdefx/kpixmapsplitter_h.html
 share/doc/html/kdelibs/kdefx/kstyle_h.html
+share/doc/html/kdelibs/kdejava/AppletParameterDialog.html
 share/doc/html/kdelibs/kdejava/KJavaApplet.html
 share/doc/html/kdelibs/kdejava/KJavaAppletContext.html
 share/doc/html/kdelibs/kdejava/KJavaAppletServer.html
+share/doc/html/kdelibs/kdejava/KJavaAppletViewer.html
+share/doc/html/kdelibs/kdejava/KJavaAppletViewerBrowserExtension.html
+share/doc/html/kdelibs/kdejava/KJavaAppletViewerFactory.html
+share/doc/html/kdelibs/kdejava/KJavaAppletViewerWidget.html
 share/doc/html/kdelibs/kdejava/KJavaAppletWidget.html
 share/doc/html/kdelibs/kdejava/KJavaDownloader.html
 share/doc/html/kdelibs/kdejava/KJavaEmbed.html
@@ -712,9 +717,14 @@ share/doc/html/kdelibs/kdejava/KJavaProcess.html
 share/doc/html/kdelibs/kdejava/KQEventUtil.html
 share/doc/html/kdelibs/kdejava/KXEventUtil.html
 share/doc/html/kdelibs/kdejava/all-globals.html
+share/doc/html/kdelibs/kdejava/full-list-AppletParameterDialog.html
 share/doc/html/kdelibs/kdejava/full-list-KJavaApplet.html
 share/doc/html/kdelibs/kdejava/full-list-KJavaAppletContext.html
 share/doc/html/kdelibs/kdejava/full-list-KJavaAppletServer.html
+share/doc/html/kdelibs/kdejava/full-list-KJavaAppletViewer.html
+share/doc/html/kdelibs/kdejava/full-list-KJavaAppletViewerBrowserExtension.html
+share/doc/html/kdelibs/kdejava/full-list-KJavaAppletViewerFactory.html
+share/doc/html/kdelibs/kdejava/full-list-KJavaAppletViewerWidget.html
 share/doc/html/kdelibs/kdejava/full-list-KJavaAppletWidget.html
 share/doc/html/kdelibs/kdejava/full-list-KJavaDownloader.html
 share/doc/html/kdelibs/kdejava/full-list-KJavaEmbed.html
@@ -730,6 +740,7 @@ share/doc/html/kdelibs/kdejava/javaembed_h.html
 share/doc/html/kdelibs/kdejava/kjavaapplet_h.html
 share/doc/html/kdelibs/kdejava/kjavaappletcontext_h.html
 share/doc/html/kdelibs/kdejava/kjavaappletserver_h.html
+share/doc/html/kdelibs/kdejava/kjavaappletviewer_h.html
 share/doc/html/kdelibs/kdejava/kjavaappletwidget_h.html
 share/doc/html/kdelibs/kdejava/kjavadownloader_h.html
 share/doc/html/kdelibs/kdejava/kjavaprocess_h.html
@@ -901,6 +912,9 @@ share/doc/html/kdelibs/kdeui/KSeparator.html
 share/doc/html/kdelibs/kdeui/KSharedPixmap.html
 share/doc/html/kdelibs/kdeui/KShortcutBox.html
 share/doc/html/kdelibs/kdeui/KShortcutDialog.html
+share/doc/html/kdelibs/kdeui/KSpell.html
+share/doc/html/kdelibs/kdeui/KSpellConfig.html
+share/doc/html/kdelibs/kdeui/KSpellDlg.html
 share/doc/html/kdelibs/kdeui/KSqueezedTextLabel.html
 share/doc/html/kdelibs/kdeui/KStatusBar.html
 share/doc/html/kdelibs/kdeui/KStatusBarLabel.html
@@ -1096,6 +1110,9 @@ share/doc/html/kdelibs/kdeui/full-list-KSeparator.html
 share/doc/html/kdelibs/kdeui/full-list-KSharedPixmap.html
 share/doc/html/kdelibs/kdeui/full-list-KShortcutBox.html
 share/doc/html/kdelibs/kdeui/full-list-KShortcutDialog.html
+share/doc/html/kdelibs/kdeui/full-list-KSpell.html
+share/doc/html/kdelibs/kdeui/full-list-KSpellConfig.html
+share/doc/html/kdelibs/kdeui/full-list-KSpellDlg.html
 share/doc/html/kdelibs/kdeui/full-list-KSqueezedTextLabel.html
 share/doc/html/kdelibs/kdeui/full-list-KStatusBar.html
 share/doc/html/kdelibs/kdeui/full-list-KStatusBarLabel.html
@@ -1223,10 +1240,13 @@ share/doc/html/kdelibs/kdeui/kpushbutton_h.html
 share/doc/html/kdelibs/kdeui/krestrictedline_h.html
 share/doc/html/kdelibs/kdeui/krootpixmap_h.html
 share/doc/html/kdelibs/kdeui/kruler_h.html
+share/doc/html/kdelibs/kdeui/ksconfig_h.html
 share/doc/html/kdelibs/kdeui/kselect_h.html
 share/doc/html/kdelibs/kdeui/kseparator_h.html
 share/doc/html/kdelibs/kdeui/ksharedpixmap_h.html
 share/doc/html/kdelibs/kdeui/kshortcutdialog_h.html
+share/doc/html/kdelibs/kdeui/kspell_h.html
+share/doc/html/kdelibs/kdeui/kspelldlg_h.html
 share/doc/html/kdelibs/kdeui/ksqueezedtextlabel_h.html
 share/doc/html/kdelibs/kdeui/kstatusbar_h.html
 share/doc/html/kdelibs/kdeui/kstdaction_h.html
@@ -1569,7 +1589,7 @@ share/doc/html/kdelibs/khtml/KHTMLRun.html
 share/doc/html/kdelibs/khtml/KHTMLSettings.html
 share/doc/html/kdelibs/khtml/KHTMLView.html
 share/doc/html/kdelibs/khtml/KHTMLZoomFactorAction.html
-share/doc/html/kdelibs/khtml/PageLoader.html
+share/doc/html/kdelibs/khtml/PartMonitor.html
 share/doc/html/kdelibs/khtml/RegTestFunction.html
 share/doc/html/kdelibs/khtml/RegTestObject.html
 share/doc/html/kdelibs/khtml/RegressionTest.html
@@ -1746,7 +1766,7 @@ share/doc/html/kdelibs/khtml/full-list-KHTMLRun.html
 share/doc/html/kdelibs/khtml/full-list-KHTMLSettings.html
 share/doc/html/kdelibs/khtml/full-list-KHTMLView.html
 share/doc/html/kdelibs/khtml/full-list-KHTMLZoomFactorAction.html
-share/doc/html/kdelibs/khtml/full-list-PageLoader.html
+share/doc/html/kdelibs/khtml/full-list-PartMonitor.html
 share/doc/html/kdelibs/khtml/full-list-RegTestFunction.html
 share/doc/html/kdelibs/khtml/full-list-RegTestObject.html
 share/doc/html/kdelibs/khtml/full-list-RegressionTest.html
@@ -2305,13 +2325,7 @@ share/doc/html/kdelibs/kparts/mainwindow_h.html
 share/doc/html/kdelibs/kparts/part_h.html
 share/doc/html/kdelibs/kparts/partmanager_h.html
 share/doc/html/kdelibs/kparts/plugin_h.html
-share/doc/html/kdelibs/kspell/KSpell.html
-share/doc/html/kdelibs/kspell/KSpellConfig.html
-share/doc/html/kdelibs/kspell/KSpellDlg.html
 share/doc/html/kdelibs/kspell/all-globals.html
-share/doc/html/kdelibs/kspell/full-list-KSpell.html
-share/doc/html/kdelibs/kspell/full-list-KSpellConfig.html
-share/doc/html/kdelibs/kspell/full-list-KSpellDlg.html
 share/doc/html/kdelibs/kspell/header-list.html
 share/doc/html/kdelibs/kspell/hier.html
 share/doc/html/kdelibs/kspell/index-long.html

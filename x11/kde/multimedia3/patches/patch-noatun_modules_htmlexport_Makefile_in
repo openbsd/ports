@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_htmlexport_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- noatun/modules/htmlexport/Makefile.in.orig	Tue Mar 11 06:53:44 2003
-+++ noatun/modules/htmlexport/Makefile.in	Mon Mar 31 16:42:57 2003
-@@ -331,7 +331,7 @@ noatun_htmlexport_la_SOURCES = htmlexpor
+$OpenBSD: patch-noatun_modules_htmlexport_Makefile_in,v 1.5 2003/06/12 19:16:17 espie Exp $
+--- noatun/modules/htmlexport/Makefile.in.orig	Wed May  7 14:05:29 2003
++++ noatun/modules/htmlexport/Makefile.in	Tue Jun 10 10:58:32 2003
+@@ -383,7 +383,7 @@ noatun_htmlexport_la_SOURCES = htmlexpor
  noinst_HEADERS = htmlexport.h
  
  noatun_htmlexport_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_htmlexport_Makefile_in,v 1.4 2003/04/05 14:53:39 
                          -lqtmcop -lkmedia2_idl -lsoundserver_idl
  
  
-@@ -345,7 +345,7 @@ CONFIG_CLEAN_FILES =
+@@ -397,7 +397,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_htmlexport_la_DEPENDENCIES = \

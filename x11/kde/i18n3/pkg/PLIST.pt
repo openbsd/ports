@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.pt,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/pt/bigode.wav
 share/apps/ktuberling/sounds/pt/boca.wav
 share/apps/ktuberling/sounds/pt/brincos.wav
@@ -536,6 +536,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.eu,v 1.2 2003/02/27 02:43:26 naddy Exp $
+@comment $OpenBSD: PLIST.eu,v 1.3 2003/06/12 19:16:16 espie Exp $
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}childpanelextension.mo
@@ -17,8 +17,10 @@ ${LOC}desktop_kdeutils.mo
 ${LOC}drkonqi.mo
 ${LOC}extensionproxy.mo
 ${LOC}filetypes.mo
+${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}kabc_dir.mo
+${LOC}kabc_file.mo
 ${LOC}kabc_ldap.mo
 ${LOC}kabc_net.mo
 ${LOC}kabc_sql.mo
@@ -28,15 +30,19 @@ ${LOC}kappfinder.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
+${LOC}katedefaultproject.mo
 ${LOC}katepart.mo
 ${LOC}katomic.mo
+${LOC}kbabel.mo
 ${LOC}kblackbox.mo
 ${LOC}kcmaccess.mo
+${LOC}kcmaccessibility.mo
 ${LOC}kcmarts.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
 ${LOC}kcmcgi.mo
 ${LOC}kcmcolors.mo
+${LOC}kcmcomponentchooser.mo
 ${LOC}kcmcrypto.mo
 ${LOC}kcmcss.mo
 ${LOC}kcmemail.mo
@@ -49,6 +55,7 @@ ${LOC}kcminfo.mo
 ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
 ${LOC}kcmkclock.mo
+${LOC}kcmkded.mo
 ${LOC}kcmkeys.mo
 ${LOC}kcmkicker.mo
 ${LOC}kcmkmix.mo
@@ -61,6 +68,7 @@ ${LOC}kcmlaunch.mo
 ${LOC}kcmlayout.mo
 ${LOC}kcmlocale.mo
 ${LOC}kcmmidi.mo
+${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
 ${LOC}kcmprintmgr.mo
 ${LOC}kcmsamba.mo
@@ -75,10 +83,12 @@ ${LOC}kdcop.mo
 ${LOC}kdebugdialog.mo
 ${LOC}kdelibs.mo
 ${LOC}kdepasswd.mo
+${LOC}kdeprint_part.mo
 ${LOC}kdeprintfax.mo
 ${LOC}kdesktop.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdialog.mo
 ${LOC}kdmchooser.mo
 ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
@@ -86,10 +96,12 @@ ${LOC}kedit.mo
 ${LOC}kenolaba.mo
 ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
+${LOC}kfmexec.mo
 ${LOC}kfontviewpart.mo
 ${LOC}khelpcenter.mo
 ${LOC}khotkeys.mo
 ${LOC}kicker.mo
+${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_floppy.mo
 ${LOC}kio_mac.mo
@@ -113,6 +125,7 @@ ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
 ${LOC}kpager.mo
+${LOC}kpartapp.mo
 ${LOC}kpat.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpoker.mo
@@ -133,6 +146,7 @@ ${LOC}ksplash.mo
 ${LOC}kstart.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
+${LOC}ksystraycmd.mo
 ${LOC}ksysv.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}ktexteditor_insertfile.mo
@@ -143,6 +157,8 @@ ${LOC}ktuberling.mo
 ${LOC}kuser.mo
 ${LOC}kwin.mo
 ${LOC}kwin_b2_config.mo
+${LOC}kwin_default_config.mo
+${LOC}kwin_keramik_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
 ${LOC}kxkb.mo

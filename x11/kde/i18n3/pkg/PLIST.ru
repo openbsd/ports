@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST.ru,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.ru,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
 ${DOC}aktion/common
 ${DOC}aktion/${C}
 ${DOC}aktion/${I}
+${DOC}ark/common
+${DOC}ark/${C}
+${DOC}ark/${I}
 ${DOC}artsbuilder/apis.docbook
 ${DOC}artsbuilder/artsbuilder.docbook
 ${DOC}artsbuilder/common
@@ -27,9 +30,6 @@ ${DOC}artsbuilder/tools.docbook
 ${DOC}atlantik/common
 ${DOC}atlantik/${C}
 ${DOC}atlantik/${I}
-${DOC}clock/common
-${DOC}clock/${C}
-${DOC}clock/${I}
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -90,6 +90,7 @@ ${DOC}kate-plugins/projectmanager.docbook
 ${DOC}kate-plugins/textfilter.docbook
 ${DOC}kate-plugins/xmlcheck.docbook
 ${DOC}kate-plugins/xmltools.docbook
+${DOC}kate/fundamentals.docbook
 ${DOC}kbabel/catman.docbook
 ${DOC}kbabel/common
 ${DOC}kbabel/dictionaries.docbook
@@ -104,19 +105,25 @@ ${DOC}kbabel/using.docbook
 ${DOC}kbattleship/common
 ${DOC}kbattleship/${C}
 ${DOC}kbattleship/${I}
-${DOC}kcmlaunch/common
-${DOC}kcmlaunch/${C}
-${DOC}kcmlaunch/${I}
 ${DOC}kcontrol/arts/common
 ${DOC}kcontrol/arts/${C}
 ${DOC}kcontrol/arts/${I}
 ${DOC}kcontrol/arts/midi.docbook
+${DOC}kcontrol/clock/common
+${DOC}kcontrol/clock/${C}
+${DOC}kcontrol/clock/${I}
 ${DOC}kcontrol/common
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
+${DOC}kcontrol/kcmlaunch/common
+${DOC}kcontrol/kcmlaunch/${C}
+${DOC}kcontrol/kcmlaunch/${I}
 ${DOC}kcontrol/keyboard/common
 ${DOC}kcontrol/keyboard/${C}
 ${DOC}kcontrol/keyboard/${I}
+${DOC}kcontrol/kmixcfg/common
+${DOC}kcontrol/kmixcfg/${C}
+${DOC}kcontrol/kmixcfg/${I}
 ${DOC}kcontrol/mouse/common
 ${DOC}kcontrol/mouse/${C}
 ${DOC}kcontrol/mouse/${I}
@@ -126,6 +133,7 @@ ${DOC}kcontrol/useragent/${I}
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
+${DOC}kdeprint/cupsoptions.docbook
 ${DOC}kenolaba/common
 ${DOC}kenolaba/${C}
 ${DOC}kenolaba/${I}
@@ -241,18 +249,25 @@ ${DOC}kmines/${I}
 ${DOC}kmix/common
 ${DOC}kmix/${C}
 ${DOC}kmix/${I}
-${DOC}kmixcfg/common
-${DOC}kmixcfg/${C}
-${DOC}kmixcfg/${I}
 ${DOC}kodo/common
 ${DOC}kodo/${C}
 ${DOC}kodo/${I}
 ${DOC}kolf/common
 ${DOC}kolf/${C}
 ${DOC}kolf/${I}
+${DOC}konqueror/basics.docbook
+${DOC}konqueror/bookmarks.docbook
+${DOC}konqueror/browser.docbook
+${DOC}konqueror/commands.docbook
 ${DOC}konqueror/common
+${DOC}konqueror/config.docbook
+${DOC}konqueror/credits.docbook
+${DOC}konqueror/faq.docbook
 ${DOC}konqueror/${C}
 ${DOC}konqueror/${I}
+${DOC}konqueror/introduction.docbook
+${DOC}konqueror/path-complete.docbook
+${DOC}konqueror/save-settings.docbook
 ${DOC}kpager/common
 ${DOC}kpager/${C}
 ${DOC}kpager/${I}
@@ -404,7 +419,9 @@ ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kalarm.mo
 ${LOC}kalarmdgui.mo
+${LOC}kalzium.mo
 ${LOC}kandy.mo
 ${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
@@ -437,6 +454,7 @@ ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
 ${LOC}kcharselectapplet.mo
+${LOC}kcm_krfb.mo
 ${LOC}kcmaccess.mo
 ${LOC}kcmarts.mo
 ${LOC}kcmaudiocd.mo
@@ -603,8 +621,10 @@ ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
+${LOC}kmrml.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
+${LOC}knorskverbs.mo
 ${LOC}knotes.mo
 ${LOC}knotify.mo
 ${LOC}kodo.mo
@@ -633,10 +653,12 @@ ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
 ${LOC}krdb.mo
+${LOC}krdc.mo
 ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kregexpeditor.mo
 ${LOC}kreversi.mo
+${LOC}krfb.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
 ${LOC}ksame.mo
@@ -644,6 +666,7 @@ ${LOC}kscd.mo
 ${LOC}kscoreapplet.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
+${LOC}ksim.mo
 ${LOC}ksirc.mo
 ${LOC}ksirtet.mo
 ${LOC}ksmiletris.mo
@@ -684,6 +707,7 @@ ${LOC}kviewpresenterplugin.mo
 ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
+${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
@@ -769,7 +793,6 @@ share/locale/ru/flag.png
 @dirrm ${DOC}konqueror
 @dirrm ${DOC}kolf
 @dirrm ${DOC}kodo
-@dirrm ${DOC}kmixcfg
 @dirrm ${DOC}kmix
 @dirrm ${DOC}kmines
 @dirrm ${DOC}klines
@@ -791,21 +814,25 @@ share/locale/ru/flag.png
 @dirrm ${DOC}kgpgcertmanager
 @dirrm ${DOC}kfloppy
 @dirrm ${DOC}kenolaba
+@dirrm ${DOC}kdeprint
 @dirrm ${DOC}kdebugdialog
 @dirrm ${DOC}kcontrol/useragent
 @dirrm ${DOC}kcontrol/mouse
+@dirrm ${DOC}kcontrol/kmixcfg
 @dirrm ${DOC}kcontrol/keyboard
+@dirrm ${DOC}kcontrol/kcmlaunch
+@dirrm ${DOC}kcontrol/clock
 @dirrm ${DOC}kcontrol/arts
 @dirrm ${DOC}kcontrol
-@dirrm ${DOC}kcmlaunch
 @dirrm ${DOC}kbattleship
 @dirrm ${DOC}kbabel
 @dirrm ${DOC}kate-plugins
+@dirrm ${DOC}kate
 @dirrm ${DOC}kandy
 @dirrm ${DOC}common
-@dirrm ${DOC}clock
 @dirrm ${DOC}atlantik
 @dirrm ${DOC}artsbuilder
+@dirrm ${DOC}ark
 @dirrm ${DOC}aktion
 @dirrm ${DOC}KRegExpEditor
 @dirrm share/doc/HTML/ru

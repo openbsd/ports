@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.hu,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.hu,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}KRegExpEditor/common
 ${DOC}KRegExpEditor/${C}
 ${DOC}KRegExpEditor/${I}
@@ -509,9 +509,6 @@ ${DOC}ktron/${I}
 ${DOC}ktuberling/common
 ${DOC}ktuberling/${C}
 ${DOC}ktuberling/${I}
-${DOC}kuickshow/common
-${DOC}kuickshow/${C}
-${DOC}kuickshow/${I}
 ${DOC}kuser/common
 ${DOC}kuser/${C}
 ${DOC}kuser/${I}
@@ -979,7 +976,6 @@ share/locale/hu/flag.png
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kview
 @dirrm ${DOC}kuser
-@dirrm ${DOC}kuickshow
 @dirrm ${DOC}ktuberling
 @dirrm ${DOC}ktron
 @dirrm ${DOC}ktouch

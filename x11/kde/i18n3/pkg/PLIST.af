@@ -1,9 +1,5 @@
-@comment $OpenBSD: PLIST.af,v 1.7 2003/01/27 20:18:16 espie Exp $
-${DOC}kicker-applets/common
-${DOC}kicker-applets/${C}
-${DOC}kicker-applets/${I}
+@comment $OpenBSD: PLIST.af,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}kicker-applets/kolourpicker.docbook
-${DOC}kicker-applets/ktimemon.docbook
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo

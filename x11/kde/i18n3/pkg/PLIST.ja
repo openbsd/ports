@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ja,v 1.8 2003/02/27 02:43:26 naddy Exp $
+@comment $OpenBSD: PLIST.ja,v 1.9 2003/06/12 19:16:16 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -257,12 +257,14 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
 ${LOC}extensionproxy.mo
 ${LOC}ffrs.mo
 ${LOC}filetypes.mo
+${LOC}flashkard.mo
 ${LOC}fontinst.mo
 ${LOC}gideon.mo
 ${LOC}htmlsearch.mo
@@ -482,6 +484,7 @@ ${LOC}klock.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
+${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
@@ -491,6 +494,7 @@ ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmoon.mo
+${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knewsticker.mo
 ${LOC}knode.mo
@@ -515,10 +519,12 @@ ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpartsaver.mo
 ${LOC}kpat.mo
+${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpoker.mo
+${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
@@ -570,6 +576,7 @@ ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
 ${LOC}kuickshow.mo
 ${LOC}kuser.mo
+${LOC}kverbos.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo
 ${LOC}kviewbrowserplugin.mo
@@ -627,6 +634,7 @@ ${LOC}passwords.mo
 ${LOC}pitchablespeed.mo
 ${LOC}ppdtranslations.mo
 ${LOC}qeditor.mo
+${LOC}quanta.mo
 ${LOC}quicklauncher.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo

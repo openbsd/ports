@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/04/05 14:53:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/06/12 19:16:15 espie Exp $
 @pkgcfl klettres-*
 @pkgcfl kmessedwords-*
 @pkgcfl kstars-*
@@ -683,6 +683,7 @@ share/apps/kstars/venus.R3.vsop
 share/apps/kstars/venus.R4.vsop
 share/apps/kstars/venus.R5.vsop
 share/apps/kstars/venus.png
+share/apps/ktouch/danish-2.ktouch
 share/apps/ktouch/danish.ktouch
 share/apps/ktouch/de-ch.keyboard
 share/apps/ktouch/de.keyboard
@@ -695,9 +696,12 @@ share/apps/ktouch/english.ktouch
 share/apps/ktouch/es.keyboard
 share/apps/ktouch/fi.keyboard
 share/apps/ktouch/fr.keyboard
+share/apps/ktouch/fr_ch.keyboard
 share/apps/ktouch/french-2.ktouch
 share/apps/ktouch/french.ktouch
+share/apps/ktouch/german-2.ktouch
 share/apps/ktouch/german.ktouch
+share/apps/ktouch/he.keyboard
 share/apps/ktouch/it.keyboard
 share/apps/ktouch/ktouchui.rc
 share/apps/ktouch/la.keyboard
@@ -705,8 +709,10 @@ share/apps/ktouch/no.keyboard
 share/apps/ktouch/norwegian.ktouch
 share/apps/ktouch/number.keyboard
 share/apps/ktouch/number.ktouch
+share/apps/ktouch/portuguese.ktouch
 share/apps/ktouch/pt.keyboard
 share/apps/ktouch/se.keyboard
+share/apps/ktouch/spanish.ktouch
 share/apps/ktouch/splash.png
 share/apps/ktouch/up.wav
 share/apps/kverbos/kverbosui.rc

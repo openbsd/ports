@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2003/02/08 12:37:50 espie Exp $
---- aclocal.m4.orig	Thu Jan 16 20:42:23 2003
-+++ aclocal.m4	Tue Jan 28 14:57:46 2003
-@@ -6695,8 +6695,8 @@ nto-qnx)
+$OpenBSD: patch-aclocal_m4,v 1.2 2003/06/12 19:16:17 espie Exp $
+--- aclocal.m4.orig	Mon May 12 17:16:11 2003
++++ aclocal.m4	Thu Jun 12 02:48:06 2003
+@@ -6711,8 +6711,8 @@ nto-qnx)
  
  openbsd*)
    version_type=sunos
@@ -12,7 +12,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/02/08 12:37:50 espie Exp $
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
-@@ -7369,6 +7369,7 @@ openbsd*)
+@@ -7385,6 +7385,7 @@ openbsd*)
    else
      lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
    fi
@@ -20,7 +20,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/02/08 12:37:50 espie Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -8122,6 +8123,16 @@ case $host_os in
+@@ -8138,6 +8139,16 @@ case $host_os in
    netbsd*)
      # NetBSD uses g++ - do we need to do anything?
      ;;
@@ -37,7 +37,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/02/08 12:37:50 espie Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -8436,15 +8447,24 @@ if AC_TRY_EVAL(ac_compile); then
+@@ -8452,15 +8463,24 @@ if AC_TRY_EVAL(ac_compile); then
  	   else
  	     _LT_AC_TAGVAR(compiler_lib_search_path, $1)="${_LT_AC_TAGVAR(compiler_lib_search_path, $1)} ${prev}${p}"
  	   fi
@@ -64,7 +64,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/02/08 12:37:50 espie Exp $
  	 fi
         fi
         ;;
-@@ -10234,22 +10254,9 @@ EOF
+@@ -10250,22 +10270,9 @@ EOF
        _LT_AC_TAGVAR(hardcode_direct, $1)=yes
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
  
@@ -84,13 +84,13 @@ $OpenBSD: patch-aclocal_m4,v 1.1 2003/02/08 12:37:50 espie Exp $
 -	   ;;
 -       esac
 -      fi
-+      _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
++      _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
 +      _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
 +      _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-R$libdir'
        ;;
  
      os2*)
-@@ -10258,6 +10265,7 @@ EOF
+@@ -10274,6 +10281,7 @@ EOF
        _LT_AC_TAGVAR(allow_undefined_flag, $1)=unsupported
        _LT_AC_TAGVAR(archive_cmds, $1)='$echo "LIBRARY $libname INITINSTANCE" > $output_objdir/$libname.def~$echo "DESCRIPTION \"$libname\"" >> $output_objdir/$libname.def~$echo DATA >> $output_objdir/$libname.def~$echo " SINGLE NONSHARED" >> $output_objdir/$libname.def~$echo EXPORTS >> $output_objdir/$libname.def~emxexp $libobjs >> $output_objdir/$libname.def~$CC -Zdll -Zcrtdll -o $lib $libobjs $deplibs $compiler_flags $output_objdir/$libname.def'
        _LT_AC_TAGVAR(old_archive_From_new_cmds, $1)='emximp -o $output_objdir/$libname.a $output_objdir/$libname.def'

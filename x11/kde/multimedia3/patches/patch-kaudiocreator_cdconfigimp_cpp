@@ -1,21 +1,27 @@
-$OpenBSD: patch-kaudiocreator_cdconfigimp_cpp,v 1.1 2003/01/27 19:53:58 espie Exp $
---- kaudiocreator/cdconfigimp.cpp.orig	Sun Oct 27 00:20:12 2002
-+++ kaudiocreator/cdconfigimp.cpp	Sat Jan  4 18:34:53 2003
-@@ -59,8 +59,13 @@ extern "C"
- 
+$OpenBSD: patch-kaudiocreator_cdconfigimp_cpp,v 1.2 2003/06/12 19:16:16 espie Exp $
+--- kaudiocreator/cdconfigimp.cpp.orig	Wed May  7 13:46:47 2003
++++ kaudiocreator/cdconfigimp.cpp	Wed Jun 11 09:17:09 2003
+@@ -75,12 +75,19 @@ extern "C"
+ {
  /* This is in support for the Mega Hack, if cdparanoia ever is fixed, or we
     use another ripping library we can remove this.  */
 +#ifdef __linux__
  #include <linux/cdrom.h>
 +#endif
  #include <sys/ioctl.h>
+ 
+ }
+ #endif
+ 
 +#if defined(__NetBSD__) || defined(__OpenBSD__)
++#include <sys/ioctl.h>
 +#include <sys/cdio.h>
 +#endif
- 
- #if HAVE_LAME
- #include <lame/lame.h>
-@@ -114,14 +119,24 @@ int FixupTOC(cdrom_drive *d, int tracks)
++
+ #include <kdebug.h>
+ #include <kurl.h>
+ #include <kprotocolmanager.h>
+@@ -138,14 +145,24 @@ int FixupTOC(cdrom_drive *d, int tracks)
    start_of_first_data_as_in_toc = -1;
    hack_track = -1;
    if (d->ioctl_fd != -1) {
@@ -42,7 +48,7 @@ $OpenBSD: patch-kaudiocreator_cdconfigimp_cpp,v 1.1 2003/01/27 19:53:58 espie Ex
              /* The next two code lines are the purpose of duplicating this
               * function, all others are an exact copy of paranoias FixupTOC().
               * The gory details: CD-Extra consist of N audio-tracks in the
-@@ -142,7 +157,7 @@ int FixupTOC(cdrom_drive *d, int tracks)
+@@ -166,7 +183,7 @@ int FixupTOC(cdrom_drive *d, int tracks)
               * length is only implicitely given.  Bloody sh*.  */
              start_of_first_data_as_in_toc = d->disc_toc[j].dwStartSector;
              hack_track = j + 1;

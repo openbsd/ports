@@ -1,7 +1,7 @@
-$OpenBSD: patch-noatun_modules_liszt_Makefile_in,v 1.4 2003/04/05 14:53:39 espie Exp $
---- noatun/modules/liszt/Makefile.in.orig	Tue Mar 11 06:53:44 2003
-+++ noatun/modules/liszt/Makefile.in	Mon Mar 31 16:42:57 2003
-@@ -343,7 +343,7 @@ Liszt.cpp
+$OpenBSD: patch-noatun_modules_liszt_Makefile_in,v 1.5 2003/06/12 19:16:17 espie Exp $
+--- noatun/modules/liszt/Makefile.in.orig	Wed May  7 14:05:29 2003
++++ noatun/modules/liszt/Makefile.in	Tue Jun 10 10:58:32 2003
+@@ -395,7 +395,7 @@ Liszt.cpp
  
  noatun_liszt_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
  noatun_liszt_la_LIBADD = \
@@ -10,7 +10,7 @@ $OpenBSD: patch-noatun_modules_liszt_Makefile_in,v 1.4 2003/04/05 14:53:39 espie
    $(LIB_KFILE) -lqtmcop -lkmedia2_idl -lsoundserver_idl
  
  
-@@ -373,7 +373,7 @@ CONFIG_CLEAN_FILES =
+@@ -425,7 +425,7 @@ CONFIG_CLEAN_FILES =
  LTLIBRARIES = $(kde_module_LTLIBRARIES)
  
  noatun_liszt_la_DEPENDENCIES = \

@@ -1,7 +1,13 @@
-$OpenBSD: patch-mpeglib_example_yaf_yafmpgplay_Makefile_am,v 1.1.1.1 2002/04/20 17:08:42 espie Exp $
---- mpeglib/example/yaf/yafmpgplay/Makefile.am.orig	Sat Apr 20 06:54:30 2002
-+++ mpeglib/example/yaf/yafmpgplay/Makefile.am	Sat Apr 20 06:54:33 2002
-@@ -16,7 +16,7 @@ yaf_mpgplay_LDFLAGS	=	$(all_libraries) 
+$OpenBSD: patch-mpeglib_example_yaf_yafmpgplay_Makefile_am,v 1.2 2003/06/12 19:16:16 espie Exp $
+--- mpeglib/example/yaf/yafmpgplay/Makefile.am.orig	Wed May  9 15:53:07 2001
++++ mpeglib/example/yaf/yafmpgplay/Makefile.am	Wed Jun 11 09:35:22 2003
+@@ -11,12 +11,12 @@ yaf_mpgplay_SOURCES	=	mpg_control.cpp
+ noinst_HEADERS		=	
+ 
+ 
+-yaf_mpgplay_LDFLAGS	=	$(all_libraries) 
++yaf_mpgplay_LDFLAGS	=	-pthread $(all_libraries) 
+ 
  
  yaf_mpgplay_LDADD	=	../yafcore/libyafcore.la \
  				../yafxplayer/libyafxplayer.la \

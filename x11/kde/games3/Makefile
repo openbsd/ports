@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2003/04/10 18:08:57 jsyn Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/12 19:16:15 espie Exp $
 
 COMMENT=		"games for KDE"
 
 CATEGORIES=		x11 x11/kde games
-VERSION=		3.1.1
+VERSION=		3.1.2
 DISTNAME=		kdegames-${VERSION}
 
 LIB_DEPENDS= kdecore.4,artskde,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3

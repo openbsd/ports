@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/02/27 02:43:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/12 19:16:17 espie Exp $
 bin/umbrello
 lib/libcodegenerator.la
 share/applnk/Development/umbrello.desktop
@@ -180,30 +180,18 @@ share/locale/de/LC_MESSAGES/umbrello.mo
 share/locale/sk/LC_MESSAGES/umbrello.mo
 share/mimelnk/application/x-uml.desktop
 %%SHARED%%
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @comment @dirrm share/locale/sk/LC_MESSAGES
 @comment @dirrm share/locale/sk
 @comment @dirrm share/locale/de/LC_MESSAGES
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/sk/umbrello/pics
 @dirrm share/doc/HTML/sk/umbrello
 @dirrm share/doc/HTML/sk
 @dirrm share/doc/HTML/en/umbrello/pics
 @dirrm share/doc/HTML/en/umbrello
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/umbrello/pics
 @dirrm share/doc/HTML/de/umbrello
 @dirrm share/doc/HTML/de
@@ -214,4 +202,3 @@ share/mimelnk/application/x-uml.desktop
 @dirrm share/apps/umbrello
 @dirrm share/apps
 @dirrm share/applnk/Development
-@dirrm share/applnk

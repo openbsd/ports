@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST.ca,v 1.7 2003/01/27 20:18:16 espie Exp $
-${DOC}glossary/common
-${DOC}glossary/${C}
-${DOC}glossary/${I}
-${DOC}glossary/kdeprintingglossary.docbook
+@comment $OpenBSD: PLIST.ca,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}kcontrol/common
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
@@ -29,6 +25,10 @@ ${DOC}khelpcenter/faq/notrelated.docbook
 ${DOC}khelpcenter/faq/panel.docbook
 ${DOC}khelpcenter/faq/tips.docbook
 ${DOC}khelpcenter/faq/winmng.docbook
+${DOC}khelpcenter/glossary/common
+${DOC}khelpcenter/glossary/${C}
+${DOC}khelpcenter/glossary/${I}
+${DOC}khelpcenter/glossary/kdeprintingglossary.docbook
 ${DOC}khelpcenter/help.docbook
 ${DOC}khelpcenter/${C}
 ${DOC}khelpcenter/${I}
@@ -39,6 +39,9 @@ ${DOC}khelpcenter/lines.png
 ${DOC}khelpcenter/lines2.png
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/pointers.png
+${DOC}khelpcenter/quickstart/common
+${DOC}khelpcenter/quickstart/${C}
+${DOC}khelpcenter/quickstart/${I}
 ${DOC}khelpcenter/shadow1.png
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/userguide/about-desktop.docbook
@@ -65,6 +68,9 @@ ${DOC}khelpcenter/userguide/more-help.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
 ${DOC}khelpcenter/userguide/staff.docbook
 ${DOC}khelpcenter/userguide/ug-faq.docbook
+${DOC}khelpcenter/visualdict/common
+${DOC}khelpcenter/visualdict/${C}
+${DOC}khelpcenter/visualdict/${I}
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
 ${DOC}kioslave/audiocd.docbook
@@ -110,6 +116,7 @@ ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
 ${LOC}aktion.mo
+${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -130,6 +137,7 @@ ${LOC}desktop_kde-i18n.mo
 ${LOC}desktop_kdeaddons.mo
 ${LOC}desktop_kdeadmin.mo
 ${LOC}desktop_kdebase.mo
+${LOC}desktop_kdeedu.mo
 ${LOC}desktop_kdegames.mo
 ${LOC}desktop_kdegraphics.mo
 ${LOC}desktop_kdelibs.mo
@@ -140,6 +148,7 @@ ${LOC}desktop_kdesdk.mo
 ${LOC}desktop_kdetoys.mo
 ${LOC}desktop_kdeutils.mo
 ${LOC}dirfilterplugin.mo
+${LOC}dockbarextension.mo
 ${LOC}domtreeviewer.mo
 ${LOC}drkonqi.mo
 ${LOC}dub.mo
@@ -152,6 +161,7 @@ ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
 ${LOC}jefferson.mo
+${LOC}kabc2mutt.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_ldap.mo
 ${LOC}kabc_net.mo
@@ -160,6 +170,10 @@ ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kalarm.mo
+${LOC}kalarmdgui.mo
+${LOC}kalzium.mo
+${LOC}kandy.mo
 ${LOC}kaphorism.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -276,6 +290,7 @@ ${LOC}kdmconfig.mo
 ${LOC}kdmgreet.mo
 ${LOC}kdvi.mo
 ${LOC}kedit.mo
+${LOC}keduca.mo
 ${LOC}kenolaba.mo
 ${LOC}kfax.mo
 ${LOC}kfifteenapplet.mo
@@ -304,6 +319,7 @@ ${LOC}kfile_rpm.mo
 ${LOC}kfile_tga.mo
 ${LOC}kfile_tiff.mo
 ${LOC}kfile_txt.mo
+${LOC}kfile_vcf.mo
 ${LOC}kfile_wav.mo
 ${LOC}kfile_xbm.mo
 ${LOC}kfind.mo
@@ -313,9 +329,11 @@ ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
 ${LOC}kfontviewpart.mo
 ${LOC}kfouleggs.mo
+${LOC}kgantt.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgpgcertmanager.mo
+${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
 ${LOC}khotkeys.mo
@@ -375,6 +393,7 @@ ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
+${LOC}konsolekalendar.mo
 ${LOC}kooka.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo
@@ -383,6 +402,7 @@ ${LOC}kpager.mo
 ${LOC}kpaint.mo
 ${LOC}kpartapp.mo
 ${LOC}kpat.mo
+${LOC}kpercentage.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
@@ -416,6 +436,7 @@ ${LOC}ksnapshot.mo
 ${LOC}ksokoban.mo
 ${LOC}kspaceduel.mo
 ${LOC}ksplash.mo
+${LOC}kstars.mo
 ${LOC}kstart.mo
 ${LOC}kstartperf.mo
 ${LOC}ksysctrl.mo
@@ -432,6 +453,7 @@ ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
@@ -508,10 +530,12 @@ share/locale/ca/flag.png
 @comment @dirrm share/locale/ca
 @comment @dirrm share/locale
 @dirrm ${DOC}kioslave
+@dirrm ${DOC}khelpcenter/visualdict
 @dirrm ${DOC}khelpcenter/userguide
+@dirrm ${DOC}khelpcenter/quickstart
+@dirrm ${DOC}khelpcenter/glossary
 @dirrm ${DOC}khelpcenter/faq
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}kcontrol
-@dirrm ${DOC}glossary
 @dirrm share/doc/HTML/ca
 @dirrm share/doc/HTML

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.xh,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.xh,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}amor/common
 ${DOC}amor/${C}
 ${DOC}amor/${I}
@@ -9,6 +9,9 @@ ${DOC}kate-plugins/htmltools.docbook
 ${DOC}kate-plugins/openheader.docbook
 ${DOC}kate-plugins/projectmanager.docbook
 ${DOC}kate-plugins/textfilter.docbook
+${DOC}kdeprint/extensions.docbook
+${DOC}kdeprint/lpr-bsd.docbook
+${DOC}kdeprint/lprng.docbook
 ${DOC}kdeprint/rlpr.docbook
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook

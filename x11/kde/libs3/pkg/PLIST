@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/04/12 15:37:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/06/12 19:16:16 espie Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -100,6 +100,7 @@ include/kabc/distributionlistdialog.h
 include/kabc/distributionlisteditor.h
 include/kabc/errorhandler.h
 include/kabc/field.h
+include/kabc/format.h
 include/kabc/formatfactory.h
 include/kabc/formatplugin.h
 include/kabc/geo.h
@@ -2010,7 +2011,7 @@ share/doc/HTML/en/common/web-docbottom.png
 share/doc/HTML/en/common/web-doctop.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
-share/doc/HTML/en/kdelibs-apidocs/common
+@comment share/doc/HTML/en/kdelibs-apidocs/common
 share/doc/HTML/en/kspell/common
 share/doc/HTML/en/kspell/index.cache.bz2
 share/doc/HTML/en/kspell/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nl,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.8 2003/06/12 19:16:16 espie Exp $
 share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
@@ -369,9 +369,6 @@ ${DOC}kmoon/${I}
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
-${DOC}konsole/common
-${DOC}konsole/${C}
-${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
 ${DOC}kpager/common
 ${DOC}kpager/${C}
@@ -396,6 +393,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
 ${LOC}babelfish.mo

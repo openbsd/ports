@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt_BR,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.pt_BR,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}kate-plugins/common
 ${DOC}kate-plugins/htmltools.docbook
 ${DOC}kate-plugins/${C}
@@ -168,6 +168,7 @@ ${DOC}kcontrol/useragent/${I}
 ${DOC}kcontrol/windowmanagement/common
 ${DOC}kcontrol/windowmanagement/${C}
 ${DOC}kcontrol/windowmanagement/${I}
+${DOC}kdeprint/getting-started.docbook
 ${DOC}keduca/common
 ${DOC}keduca/${C}
 ${DOC}keduca/${I}
@@ -749,6 +750,7 @@ share/locale/pt_BR/flag.png
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}kgeo
 @dirrm ${DOC}keduca
+@dirrm ${DOC}kdeprint
 @dirrm ${DOC}kcontrol/windowmanagement
 @dirrm ${DOC}kcontrol/useragent
 @dirrm ${DOC}kcontrol/spellchecking

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.cs,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.cs,v 1.8 2003/06/12 19:16:16 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -503,6 +503,7 @@ ${LOC}kviewpresenterplugin.mo
 ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
+${LOC}kwifimanager.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
