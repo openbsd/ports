@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2003/11/15 15:12:55 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/06/19 21:00:45 jakob Exp $
 
 COMMENT=	"validating namespace-aware XML parser"
 
-DISTNAME=	rxp-1.2.3
+DISTNAME=	rxp-1.3.0
 CATEGORIES=	textproc
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
