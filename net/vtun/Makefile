@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2000/04/23 03:37:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2000/05/20 16:10:15 kevlo Exp $
 
-DISTNAME=	vtun-2.1
+DISTNAME=	vtun-2.2
 CATEGORIES=	net
-NEED_VERSION=	 1.230
-MASTER_SITES=	http://vtun.netpedia.net/ \
-		http://vtun.saol.com/
+NEED_VERSION=	1.230
+MASTER_SITES=	http://vtun.sourceforge.net/
 
 
 MAINTAINER=	kevlo@openbsd.org
@@ -32,6 +31,7 @@ ALL_TARGET=	vtund
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/vtun
 	${INSTALL_PROGRAM} ${WRKSRC}/vtund ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/README.Setup ${PREFIX}/lib/vtun
 	${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/lib/vtun/vtund.conf-sample
 	${INSTALL_MAN}	${WRKSRC}/vtund.8 ${PREFIX}/man/man8
 	cd ${PREFIX}/man/man8; ln -fs vtund.8 vtun.8
