@@ -1,4 +1,4 @@
-/* $OpenBSD: openbsd.h,v 1.5 1999/01/12 00:19:49 espie Exp $	*/
+/* $OpenBSD: openbsd.h,v 1.6 1999/01/12 11:27:40 espie Exp $	*/
 /* vi:ts=8: 
  */
 
@@ -103,53 +103,6 @@
       else fprintf ((FILE), "\t.p2align %d,,%d\n", (LOG), (MAX_SKIP));	\
   } while (0)
 #endif
-
-
-/* taken from unix.h */
-/* Output code to add DELTA to the first argument, and then jump to FUNCTION.
-   Used for C++ multiple inheritance.  */
-/* egcs comes with a MI version of this code, but it is generally more
- * efficient to code a MD version */
-#define ASM_OUTPUT_MI_THUNK(FILE, THUNK_FNDECL, DELTA, FUNCTION)	      \
-do {									      \
-  tree parm;								      \
-									      \
-  if (i386_regparm > 0)							      \
-    parm = TYPE_ARG_TYPES (TREE_TYPE (function));			      \
-  else									      \
-    parm = NULL_TREE;							      \
-  for (; parm; parm = TREE_CHAIN (parm))				      \
-    if (TREE_VALUE (parm) == void_type_node)				      \
-      break;								      \
-  fprintf (FILE, "\taddl $%d,%s\n", DELTA,				      \
-	   parm ? "%eax"						      \
-	   : aggregate_value_p (TREE_TYPE (TREE_TYPE (FUNCTION))) ? "8(%esp)" \
-	   : "4(%esp)");						      \
-									      \
-  if (flag_pic)								      \
-    {									      \
-      rtx xops[2];							      \
-      xops[0] = pic_offset_table_rtx;					      \
-      xops[1] = (rtx) gen_label_rtx ();					      \
-									      \
-      if (i386_regparm > 2)						      \
-	abort ();							      \
-      output_asm_insn ("push%L0 %0", xops);				      \
-      output_asm_insn (AS1 (call,%P1), xops);				      \
-      ASM_OUTPUT_INTERNAL_LABEL (FILE, "L", CODE_LABEL_NUMBER (xops[1]));     \
-      output_asm_insn (AS1 (pop%L0,%0), xops);				      \
-      output_asm_insn ("addl $_GLOBAL_OFFSET_TABLE_+[.-%P1],%0", xops);	      \
-      fprintf (FILE, "\tmovl ");					      \
-      assemble_name (FILE, XSTR (XEXP (DECL_RTL (FUNCTION), 0), 0));	      \
-      fprintf (FILE, "@GOT(%%ebx),%%ecx\n\tpopl %%ebx\n\tjmp *%%ecx\n");      \
-    }									      \
-  else									      \
-    {									      \
-      fprintf (FILE, "\tjmp ");						      \
-      assemble_name (FILE, XSTR (XEXP (DECL_RTL (FUNCTION), 0), 0));	      \
-      fprintf (FILE, "\n");						      \
-    }									      \
-} while (0)
 
 
 /* We pick up ASM_OUTPUT_MI_THUNK from unix.h */

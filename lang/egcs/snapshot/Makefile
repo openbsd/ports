@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.15 1999/01/12 00:19:49 espie Exp $
+# $OpenBSD: Makefile,v 1.16 1999/01/12 11:27:39 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -19,7 +19,9 @@ CATEGORIES=	lang
 MAINTAINER=	Marc.Espie@openbsd.org
 MIRROR_DISTFILE=no
 
-# with some help from Jason L. Wright for sparc...
+# with some help from Jason L.Wright & Marco S.Hyman for sparc,
+# from Michael Shalayeff for hppa,
+# from Wim Van Den Putte for alpha.
 ONLY_FOR_ARCHS = i386 sparc m68k alpha pa
 
 # user configuration section
@@ -33,7 +35,7 @@ ONLY_FOR_ARCHS = i386 sparc m68k alpha pa
 MAKE_TESTS=yes
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
-MAKE_CHILL=yes
+#MAKE_CHILL=yes
 MAKE_OBJC=yes
 MAKE_JAVA=yes
 
@@ -279,10 +281,11 @@ CONFIGURE_ARGS+=--enable-shared
 .endif
 
 
-# rebuild configure file after patching, then move source around !!!
+# rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
 pre-configure:
-	cd ${WRKSRC}/gcc && autoconf
+	cd ${WRKSRC}/gcc && autoreconf
+	cd ${WRKSRC}/libiberty && autoreconf
 	-${MV} ${WRKSRC} ${WRKDIR}/source
 	${MKDIR} ${WRKSRC}
 
@@ -306,7 +309,7 @@ do-build:
 	@(cd ${WRKSRC}; \
 	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} 2>warnings) || \
 	(echo "Make bootstrap failed."; \
-	echo "Don't forget to look at ${WRKSRC}/warnings")
+	echo "Don't forget to look at ${WRKSRC}/warnings"; ${FALSE})
 
 
 ####

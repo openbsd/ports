@@ -1,0 +1,56 @@
+--- libiberty/mkstemp.c.orig	Tue Jan 12 11:43:52 1999
++++ libiberty/mkstemp.c	Tue Jan 12 11:44:48 1999
+@@ -37,6 +37,7 @@
+ #endif
+ #include "ansidecl.h"
+ 
++#ifndef HAVE_MKSTEMPS
+ /* We need to provide a type for gcc_uint64_t.  */
+ #ifdef __GNUC__
+ typedef unsigned long long gcc_uint64_t;
+@@ -126,3 +127,4 @@
+   template[0] = '\0';
+   return -1;
+ }
++#endif
+--- libiberty/Makefile.in.orig	Tue Jan 12 11:44:02 1999
++++ libiberty/Makefile.in	Tue Jan 12 11:45:05 1999
+@@ -125,7 +125,7 @@
+ # These are always included in the library.
+ REQUIRED_OFILES = argv.o choose-temp.o concat.o cplus-dem.o \
+   fdmatch.o fnmatch.o getopt.o getopt1.o getruntime.o hex.o \
+-  floatformat.o mkstemp.o objalloc.o obstack.o pexecute.o spaces.o \
++  floatformat.o objalloc.o obstack.o pexecute.o spaces.o \
+   splay-tree.o strerror.o strsignal.o xatexit.o xexit.o xmalloc.o \
+   xstrdup.o xstrerror.o
+ 
+--- libiberty/configure.in.orig	Tue Jan 12 11:44:09 1999
++++ libiberty/configure.in	Tue Jan 12 11:45:51 1999
+@@ -129,6 +129,7 @@
+ funcs="$funcs memcpy"
+ funcs="$funcs memmove"
+ funcs="$funcs memset"
++funcs="$funcs mkstemps"
+ funcs="$funcs random"
+ funcs="$funcs rename"
+ funcs="$funcs rindex"
+@@ -159,7 +160,7 @@
+ # autoheader happy without adding a bunch of text to acconfig.h.
+ if test "x" = "y"; then
+   AC_CHECK_FUNCS(asprintf atexit basename bcmp bcopy bzero calloc clock getcwd)
+-  AC_CHECK_FUNCS(getpagesize index insque memchr memcmp memcpy memmove)
++  AC_CHECK_FUNCS(getpagesize index insque mkstemps memchr memcmp memcpy memmove)
+   AC_CHECK_FUNCS(memset random rename rindex sigsetmask strcasecmp)
+   AC_CHECK_FUNCS(strchr strdup strncasecmp strrchr strstr strtod strtol)
+   AC_CHECK_FUNCS(strtoul tmpnam vasprintf vfprintf vprintf vsprintf waitpid)
+--- gcc/configure.in.orig	Wed Dec 30 23:05:07 1998
++++ gcc/configure.in	Tue Jan 12 11:43:41 1999
+@@ -370,7 +370,7 @@
+ fi
+ 
+ AC_CHECK_FUNCS(strtoul bsearch strerror putenv popen bcopy bzero bcmp \
+-	index rindex strchr strrchr kill getrlimit setrlimit atoll atoq \
++	index mkstemps rindex strchr strrchr kill getrlimit setrlimit atoll atoq \
+ 	sysconf isascii gettimeofday strsignal putc_unlocked fputc_unlocked \
+ 	fputs_unlocked)
+ 

@@ -1,8 +1,8 @@
-/*	$OpenBSD: openbsd.h,v 1.4 1999/01/11 14:11:22 espie Exp $	*/
+/*	$OpenBSD: openbsd.h,v 1.5 1999/01/12 11:27:40 espie Exp $	*/
 /* vi:ts=8: 
  */
 
-/* common OpenBSD configuration */
+/* common OpenBSD configuration. */
 
 /* OPENBSD_NATIVE is defined only when gcc is configured as part of
    the OpenBSD source tree, specifically through Makefile.bsd-wrapper.
@@ -49,15 +49,15 @@
 
 #ifdef OBSD_OLD_GAS
 /* ASM_SPEC appropriate for OpenBSD.  For some architectures, OpenBSD 
-still uses a special flavor of gas that needs to be told when generating pic 
-code. */
+   still uses a special flavor of gas that needs to be told when generating 
+   pic code. */
 #undef ASM_SPEC
 #define ASM_SPEC " %| %{fpic:-k} %{fPIC:-k -K}"
 #endif
 
 
 /* LINK_SPEC appropriate for OpenBSD.  Support for GCC options 
- -static, -assert, and -nostdlib.  */
+   -static, -assert, and -nostdlib.  */
 #undef LINK_SPEC
 #ifdef OBSD_NO_DYNAMIC_LIBRARIES
 #define LINK_SPEC \
@@ -69,14 +69,13 @@ code. */
 
 /* LIB_SPEC appropriate for OpenBSD.  Select the appropriate libc, 
    depending on profiling and threads.
-	Basically, -lc(_r)?(_p)?, select _r for threads, and _p for p or pg
+   Basically, -lc(_r)?(_p)?, select _r for threads, and _p for p or pg
  */
 #undef LIB_SPEC
 #define LIB_SPEC "-lc%{pthread:_r}%{p:_p}%{!p:%{pg:_p}}"
 
 /* Runtime target specification 
- * ----------------------------
- */
+ * ---------------------------- */
 
 /* You must redefine CPP_PREDEFINES in any arch specific file */
 #undef CPP_PREDEFINES
@@ -99,15 +98,19 @@ code. */
  * use DBX don't support it. */
 #define DBX_NO_XREFS
 
-/* Support of shared libraries, mostly imported from svr4.h thru netbsd
- * XXX these macros are needed for correct pic code generation, but they
- * should not break anything even if that specific system does not yet handle
- * dynamic libraries
+/* Support of shared libraries, mostly imported from svr4.h through netbsd. */
+/* Two differences from svr4.h:
+   - we use .-_func instead of a local label,
+   - we put a space after commas in expressions such as 
+     .type _func, @function
+     This is more readable, for a human being as well as for the C++ demangler.
  */
+/* These macros are needed for correct pic code generation, but they
+   should not break anything even if that specific system does not yet handle
+   dynamic libraries.  */
 
 /* Assembler format: output and generation of labels
- * -------------------------------------------------
- */
+ * ------------------------------------------------- */
 /* Define the strings used for the .type and .size directives.
    These strings generally do not vary from one system running OpenBSD
    to another, but if a given system needs to use different pseudo-op
@@ -115,7 +118,7 @@ code. */
 
 /* OpenBSD assembler is hacked to have .type & .size support even in a.out
    format object files.  Functions size are supported but not activated 
-   yet. */
+   yet (look for GRACE_PERIOD_EXPIRED in gas/config/obj-aout.c). */
 
 #undef TYPE_ASM_OP
 #undef SIZE_ASM_OP
@@ -136,7 +139,7 @@ code. */
 
 /* These macros generate the special .type and .size directives which
    are used to set the corresponding fields of the linker symbol table
-   entries under OpenBSD.  These macros also havet to output the starting 
+   entries under OpenBSD.  These macros also have to output the starting 
    labels for the relevant functions/objects.  */
 
 /* Extra assembler code needed to declare a function properly.
@@ -147,7 +150,7 @@ code. */
   do {									\
     fprintf (FILE, "\t%s\t ", TYPE_ASM_OP);				\
     assemble_name (FILE, NAME);						\
-    putc (',', FILE);							\
+    fputs (", ", FILE);							\
     fprintf (FILE, TYPE_OPERAND_FMT, "function");			\
     putc ('\n', FILE);							\
     ASM_DECLARE_RESULT (FILE, DECL_RESULT (DECL));			\
@@ -162,7 +165,7 @@ code. */
       {									\
 	fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);				\
 	assemble_name (FILE, (FNAME));					\
-	fputs(",.-", FILE);						\
+	fputs(", .-", FILE);						\
 	assemble_name (FILE, (FNAME));					\
 	putc ('\n', FILE);						\
       }									\
@@ -174,7 +177,7 @@ code. */
   do {									\
     fprintf (FILE, "\t%s\t ", TYPE_ASM_OP);				\
     assemble_name (FILE, NAME);						\
-    putc (',', FILE);							\
+    fputs (", ", FILE);							\
     fprintf (FILE, TYPE_OPERAND_FMT, "object");				\
     putc ('\n', FILE);							\
     size_directive_output = 0;						\
@@ -205,14 +208,13 @@ do {									 \
 	 size_directive_output = 1;					 \
 	 fprintf (FILE, "\t%s\t ", SIZE_ASM_OP);			 \
 	 assemble_name (FILE, name);					 \
-	 fprintf (FILE, ",%d\n",  int_size_in_bytes (TREE_TYPE (DECL))); \
+	 fprintf (FILE, ", %d\n",  int_size_in_bytes (TREE_TYPE (DECL))); \
        }								 \
    } while (0)
 
 /* Tell the assembler that a symbol is weak.  */
-/* XXX binutils assembler should make weak labels global itself.
- * if you need to emit a .globl here, it's likely your assembler is broken
- */
+/* XXX binutils assembler should make weak labels global itself.  If you 
+   need to emit a .globl here, it's likely your assembler is broken.  */
 #undef ASM_WEAKEN_LABEL
 #define ASM_WEAKEN_LABEL(FILE,NAME) \
   do { fputs ("\t.weak\t", FILE); assemble_name (FILE, NAME); \
