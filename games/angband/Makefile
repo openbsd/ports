@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/08/08 23:39:12 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.10 2001/08/11 17:18:50 lebel Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		"rogue-like game with X11 support"
@@ -12,9 +12,9 @@ HOMEPAGE=		http://thangorodrim.angband.org/
 
 MAINTAINER=		Carsten Ilchmann <ci2@gmx.net>
 
-PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_CDROM=	"unclear license"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= No
+PERMIT_DISTFILES_CDROM= "unclear license"
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://clockwork.dementia.org/angband/Source/ \
@@ -22,6 +22,7 @@ MASTER_SITES=		ftp://clockwork.dementia.org/angband/Source/ \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-setgid=games
+CONFIGURE_ENV=          TRUEPREFIX="${TRUEPREFIX}"
 
 FLAVORS=		no_x11
 FLAVOR?=
@@ -32,5 +33,15 @@ CONFIGURE_ARGS+=	--without-x
 USE_X11=		Yes
 CONFIGURE_ARGS+=	--with-x
 .endif
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/angband
+	(cd ${WRKDIST}/lib && tar -cf - * ) | \
+	   (cd ${PREFIX}/share/angband && tar -xf - )
+	@chown -R ${SHAREOWN}:games ${PREFIX}/share/angband
+	@find ${PREFIX} \( -name Makefile\* -o -name delete.me \) \
+           -exec rm "{}" \;
+	${INSTALL} -s -o ${BINOWN} -g games -m 2555 ${WRKSRC}/src/angband \
+	   ${PREFIX}/bin
 
 .include <bsd.port.mk>
