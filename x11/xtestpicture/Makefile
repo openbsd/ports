@@ -3,14 +3,14 @@
 # Date created:		11 March 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:38 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/22 20:27:37 turan Exp $
 #
 
 DISTNAME=	xtestpicture-1.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

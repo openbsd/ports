@@ -3,7 +3,7 @@
 # Date created:         December 17, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:35 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/22 20:27:35 turan Exp $
 #
 
 DISTNAME=	xloadimage
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/X11-contrib/
 DISTFILES=	xloadimage.3.03.tar.Z
 NEED_VERSION=	1.195
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

@@ -3,7 +3,7 @@
 # Date created:        December 21, 1997
 # Whom:                Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:36 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/22 20:27:35 turan Exp $
 #
 
 DISTNAME=	xmold
@@ -11,7 +11,7 @@ PKGNAME=        xmold-1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	YES

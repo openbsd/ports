@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.4 2000/02/15 05:05:36 turan Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/22 20:27:36 turan Exp $
 #
 
 DISTNAME=	xpostit3.3.1
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.hrz.th-darmstadt.de/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 NEED_VERSION=	1.191
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

@@ -3,7 +3,7 @@
 # Date created:         December 21, 1997
 # Whom:                 Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/16 10:52:15 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/22 20:27:36 turan Exp $
 #
 
 DISTNAME=	Xtacy113
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://sidehack.gweep.net/pub/gweep_progs/ \
 MASTER_SITE_SUBDIR=	X11/toys
 NEED_VERSION=	1.191
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES

@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/02/15 05:05:33 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/02/22 20:27:35 turan Exp $
 #
 
 DISTNAME=	xantfarm
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kuis.kyoto-u.ac.jp/Linux/JG/other-sources/
 DISTFILES=	xantfarm23oct91.tar.gz
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES

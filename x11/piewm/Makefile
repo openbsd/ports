@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/16 10:52:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/22 20:27:35 turan Exp $
 #
 
 DISTNAME=	piewm
 PKGNAME=	piewm-1.0
 CATEGORIES=	x11
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z

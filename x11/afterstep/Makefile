@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/18 03:05:52 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/22 20:27:33 turan Exp $
 
 DISTNAME=	AfterStep-1.8.0
 PKGNAME=	afterstep-1.8.0
 CATEGORIES=     x11
 MASTER_SITES=   ftp://ftp.afterstep.org/stable/
 
-MAINTAINER=	don@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=           GPL
 PERMIT_PACKAGE_CDROM=   YES

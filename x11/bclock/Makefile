@@ -3,14 +3,14 @@
 # Date created:		8 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/23 05:56:27 don Exp $
+# $OpenBSD: Makefile,v 1.2 2000/02/22 20:27:34 turan Exp $
 #
 
 DISTNAME=	bclock-1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://dutian.twi.tudelft.nl/~vgeel/bclock/
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 USE_IMAKE=	yes
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/04 01:21:14 marc Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/22 20:27:35 turan Exp $
 #
 
 DISTNAME=	sliderule
 PKGNAME=	sliderule-1.0
 CATEGORIES=	x11
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 

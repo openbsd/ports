@@ -3,7 +3,7 @@
 # Date created:		21 December, 1997
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.5 2000/02/15 05:05:34 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/02/22 20:27:35 turan Exp $
 #
 
 DISTNAME=	xdaliclock-2.11
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	don@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	YES
