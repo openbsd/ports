@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/04/22 13:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/22 15:17:47 espie Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -28,7 +28,7 @@
 #    SUBDIR += uzap
 #    SUBDIR += vile
      SUBDIR += vim
-     SUBDIR += vim:light
+     SUBDIR += vim:no_x11
      SUBDIR += wordperfect
 #    SUBDIR += xcoral
 #    SUBDIR += xed
