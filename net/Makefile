@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2001/01/17 02:26:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.117 2001/01/19 03:08:34 kevlo Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -66,7 +66,10 @@
      SUBDIR += nsping
      SUBDIR += ntop
      SUBDIR += p5-Net-DNS
+     SUBDIR += p5-Net-Daemon
+     SUBDIR += p5-Net-IRC
      SUBDIR += p5-Net-Pcap
+     SUBDIR += p5-PlRPC
      SUBDIR += p5-libnet
      SUBDIR += pcapmerge
      SUBDIR += pchar
@@ -78,6 +81,7 @@
      SUBDIR += publicfile
      SUBDIR += publicfile:compat
      SUBDIR += queso
+     SUBDIR += quirc
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
      SUBDIR += rrdtool
