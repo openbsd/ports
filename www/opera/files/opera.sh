@@ -1,8 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: opera.sh,v 1.2 2001/09/16 17:10:29 naddy Exp $
+# $OpenBSD: opera.sh,v 1.3 2001/09/23 15:16:32 naddy Exp $
 
 PLUGIN_PATH=@PREFIX@/lib/opera/plugins
+PLUGIN_PATH=${PLUGIN_PATH}:@LOCALBASE@/lib/ns-plugins
 PLUGIN_PATH=${PLUGIN_PATH}:${HOME}/.netscape/plugins
 PLUGIN_PATH=${PLUGIN_PATH}:@LOCALBASE@/netscape/plugins
 
