@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/09/23 06:34:17 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2004/03/01 20:10:52 fgsch Exp $
 
 COMMENT=	'threaded NNTP and spool based UseNet newsreader'
 
@@ -29,10 +29,13 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-pgpk \
 			--with-gpg=${LOCALBASE}/bin/gpg \
 			--with-screen=ncurses \
+			--with-pcre=${LOCALBASE} \
 			--enable-break-long-lines \
 			--enable-ipv6
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+LIB_DEPENDS+=	pcre::devel/pcre
 
 FLAVORS=	nntp_only
 FLAVOR?=
