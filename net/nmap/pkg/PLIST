@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/10/31 18:06:14 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2005/02/08 19:06:42 sturm Exp $
 bin/nmap
 @man man/man1/nmap.1
 share/nmap/
@@ -9,3 +9,5 @@ share/nmap/nmap-rpc
 share/nmap/nmap-service-probes
 share/nmap/nmap-services
 !%%no_x11%%
+share/nmap/nmap.dtd
+share/nmap/nmap.xsl
