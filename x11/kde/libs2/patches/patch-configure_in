@@ -1,27 +1,27 @@
-$OpenBSD: patch-configure_in,v 1.1 2000/11/27 20:41:59 espie Exp $
---- configure.in.orig	Sun Nov 26 16:58:29 2000
-+++ configure.in	Sun Nov 26 17:03:29 2000
+$OpenBSD: patch-configure_in,v 1.2 2001/03/12 16:15:20 espie Exp $
+--- configure.in.orig	Sat Mar 10 15:13:18 2001
++++ configure.in	Sat Mar 10 15:14:58 2001
 @@ -40,7 +40,7 @@ dnl Checks for header files.
  KDE_CHECK_STL
  AC_HEADER_DIRENT
  AC_HEADER_STDC
--AC_CHECK_HEADERS(sys/mman.h sys/time.h sys/cdefs.h fnmatch.h sysent.h strings.h sys/stat.h sys/select.h sys/socket.h linux/socket.h socketbits.h sigaction.h paths.h malloc.h monetary.h limits.h sys/mnttab.h mntent.h fstab.h sys/soundcard.h)
-+AC_CHECK_HEADERS(sys/mman.h sys/time.h sys/cdefs.h fnmatch.h sysent.h strings.h sys/stat.h sys/select.h sys/socket.h linux/socket.h socketbits.h soundcard.h sigaction.h paths.h malloc.h monetary.h limits.h sys/mnttab.h mntent.h fstab.h sys/soundcard.h)
+-AC_CHECK_HEADERS(sys/param.h sys/mman.h sys/time.h sys/cdefs.h fnmatch.h sysent.h strings.h sys/stat.h sys/select.h sys/socket.h linux/socket.h socketbits.h sigaction.h paths.h malloc.h monetary.h limits.h sys/soundcard.h)
++AC_CHECK_HEADERS(sys/param.h sys/mman.h sys/time.h sys/cdefs.h fnmatch.h sysent.h strings.h sys/stat.h sys/select.h sys/socket.h linux/socket.h socketbits.h sigaction.h soundcard.h paths.h malloc.h monetary.h limits.h sys/soundcard.h)
  
- dnl Checks for libraries.
- AC_BASE_PATH_KDE([don't test]) dnl kdelibs is a special case
-@@ -48,6 +48,7 @@ AC_CREATE_KFSSTND(default)
+ DCOPIDL2CPP="compiled"
+ DCOPIDL="compiled"
+@@ -55,6 +55,7 @@ AC_CREATE_KFSSTND(default)
  AC_SUBST_KFSSTND
  AC_CHECK_LIB(compat, main, [LIBCOMPAT="-lcompat"]) dnl for FreeBSD
  AC_CHECK_LIB(util, main, [LIBUTIL="-lutil"]) dnl for FreeBSD
 +AC_CHECK_LIB(ossaudio, _oss_ioctl, [LIBOSSAUDIO="-lossaudio"]) dnl for OpenBSD
+ AC_CHECK_FUNC(res_init, ,
+   AC_CHECK_LIB(resolv, res_init, [LIBRESOLV="-lresolv"], , $LIBSOCKET)) dnl for Sun
  
- dnl Image libraries
- KDE_CREATE_LIBS_ALIASES
-@@ -146,6 +147,7 @@ AC_SUBST(x_libraries)
- AC_SUBST(LIBSOCKET)
+@@ -156,6 +157,7 @@ AC_SUBST(LIBSOCKET)
  AC_SUBST(LIBCOMPAT)
  AC_SUBST(LIBUTIL)
+ AC_SUBST(LIBRESOLV)
 +AC_SUBST(LIBOSSAUDIO)
  AC_SUBST(LIBICE)
  

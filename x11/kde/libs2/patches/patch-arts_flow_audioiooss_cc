@@ -1,0 +1,46 @@
+$OpenBSD: patch-arts_flow_audioiooss_cc,v 1.1 2001/03/12 16:15:20 espie Exp $
+--- arts/flow/audioiooss.cc.orig	Mon Mar 12 15:17:39 2001
++++ arts/flow/audioiooss.cc	Mon Mar 12 15:27:20 2001
+@@ -26,10 +26,21 @@
+ 
+ /**
+  * only compile 'oss' AudioIO class if sys/soundcard.h is present
++ * soundcard.h does it as well...
+  */
+ #ifdef HAVE_SYS_SOUNDCARD_H
+ 
+ #include <sys/soundcard.h>
++#define IS_OK	1
++#define AUDIO_NAME "/dev/dsp"
++#endif
++#ifdef HAVE_SOUNDCARD_H
++#include <soundcard.h>
++#define IS_OK   1
++#define AUDIO_NAME "/dev/audio"
++#endif
++
++#ifdef IS_OK
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+@@ -83,9 +94,9 @@ AudioIOOSS::AudioIOOSS()
+ 	 * default parameters
+ 	 */
+ 	param(samplingRate) = 44100;
+-	paramStr(deviceName) = "/dev/dsp";
++	paramStr(deviceName) = AUDIO_NAME;
+ 	/* check for devfs-only installation: */
+-	if(access("/dev/dsp",F_OK) != 0 && access("/dev/sound/dsp0",F_OK) == 0)
++	if(access(AUDIO_NAME,F_OK) != 0 && access("/dev/sound/dsp0",F_OK) == 0)
+ 		paramStr(deviceName) = "/dev/sound/dsp0";
+ 	requestedFragmentSize = param(fragmentSize) = 1024;
+ 	requestedFragmentCount = param(fragmentCount) = 7;
+@@ -320,7 +331,7 @@ bool AudioIOOSS::open()
+ 	for(int fill = 0; fill < _fragmentCount; fill++)
+ 	{
+ 		int len = ::write(audio_fd,zbuffer,_fragmentSize);
+-		assert(len == _fragmentSize);
++//		assert(len == _fragmentSize);
+ 	}
+ 	free(zbuffer);
+ 

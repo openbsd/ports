@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.1 2000/11/27 20:41:59 espie Exp $
---- config.h.in.orig	Sun Nov 26 16:57:24 2000
-+++ config.h.in	Sun Nov 26 16:57:55 2000
-@@ -242,6 +242,9 @@
+$OpenBSD: patch-config_h_in,v 1.2 2001/03/12 16:15:20 espie Exp $
+--- config.h.in.orig	Sat Mar 10 15:12:36 2001
++++ config.h.in	Sat Mar 10 15:13:10 2001
+@@ -254,6 +254,9 @@
  /* Define if you have the <socketbits.h> header file.  */
  #undef HAVE_SOCKETBITS_H
  

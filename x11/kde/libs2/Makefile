@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/11 16:13:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/12 16:15:19 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
-VERSION=		2.0.1
+VERSION=		2.1
 DISTNAME=		kdelibs-${VERSION}
 DIST_SUBDIR=		kde
 

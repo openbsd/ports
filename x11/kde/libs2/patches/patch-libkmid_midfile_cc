@@ -1,34 +1,25 @@
---- libkmid/midfile.cc.orig	Fri Sep 29 14:30:15 2000
-+++ libkmid/midfile.cc	Fri Sep 29 14:33:05 2000
-@@ -59,6 +59,23 @@ int uncompressFile(const char *gzname, c
+$OpenBSD: patch-libkmid_midfile_cc,v 1.2 2001/03/12 16:15:20 espie Exp $
+--- libkmid/midfile.cc.orig	Thu Jul 27 03:10:56 2000
++++ libkmid/midfile.cc	Sat Mar 10 15:48:54 2001
+@@ -59,16 +59,16 @@ int uncompressFile(const char *gzname, c
    {
      fprintf(stderr,"ERROR : popen failed : %s\n",cmd);
    }
-+#ifdef HAVE_MKSTEMP
+-  char *tmp=tempnam(NULL,"KMid");
+-  if (tmp==NULL) 
 +  strcpy(tmpname, "/tmp/KMid.XXXXXXXXXX");
 +  int fd = mkstemp(tmpname);
 +  if (fd == -1)
-+  {
-+    pclose(infile);
-+    delete cmd;
-+    return 1;
-+  }
-+  FILE *outfile = fdopen(fd, "wb");
-+  if (outfile == NULL)
-+  {
-+    pclose(infile);
-+    delete cmd;
-+    return 1;
-+  }
-+#else
-   char *tmp=tempnam(NULL,"KMid");
-   if (tmp==NULL) 
    {
-@@ -74,6 +91,7 @@ int uncompressFile(const char *gzname, c
+     pclose(infile);
      delete cmd;
      return 1;
    }
-+#endif
-   int n=getc(infile);
-   if (n==EOF) 
+-  strcpy(tmpname,tmp);
+-  FILE *outfile= fopen(tmpname,"wb");
+-  if (outfile==NULL)
++  FILE *outfile = fdopen(fd, "wb");
++  if (outfile == NULL)
    {
+     pclose(infile);
+     delete cmd;
