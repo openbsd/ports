@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2001/01/04 13:19:08 kevlo Exp $
 
 JDK_VERSION=	1.1.8
 DISTNAME=	Xerces-J-bin.1.2.3

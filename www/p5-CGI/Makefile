@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.2 2001/01/04 13:17:21 kevlo Exp $
 
 VERSION=	2.76
 DISTNAME=	CGI-modules-${VERSION}
