@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/11/21 22:29:50 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2005/01/06 19:51:44 alek Exp $
 
 COMMENT=		"MS-DOS Telix-like serial communication program"
 
@@ -24,6 +24,8 @@ WRKDIST=		${WRKDIR}/minicom-${VER}
 
 COPTS+=			-DHAS_EUID
 CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=		--enable-cfg-dir=${SYSCONFDIR}/minicom \
 			--enable-lock-dir=/var/spool/lock
 
