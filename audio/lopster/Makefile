@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2003/06/22 02:45:31 jolan Exp $
+# $OpenBSD: Makefile,v 1.22 2003/07/18 18:45:18 jolan Exp $
 
 COMMENT=	"full featured GTK Napster client"
 DISTNAME=	lopster-1.2.0
-PKGNAME=	lopster-1.2.0p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lopster/}
 
@@ -25,7 +25,7 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--with-pthread --with-zlib
+CONFIGURE_ARGS+=--with-zlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
