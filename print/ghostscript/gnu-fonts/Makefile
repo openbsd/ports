@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/29 19:08:42 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/01 20:40:45 sturm Exp $
 
 COMMENT=		"35 standard PostScript fonts with Adobe name aliases"
 
@@ -21,6 +21,7 @@ WRKDIST=	${WRKDIR}
 USE_X11=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 FONTDIR=	${PREFIX}/share/ghostscript
 X11FONTDIR=	${PREFIX}/lib/X11/fonts
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/09/23 15:29:41 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/02/01 20:40:46 sturm Exp $
 
 COMMENT=	"LaTeX class to produce high quality slides"
 
@@ -24,6 +24,7 @@ EXAMPLES_DIR=	${PREFIX}/share/examples/prosper
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
+PKG_ARCH=	*
 
 do-install:
 		${INSTALL_DATA_DIR} ${CLS_DIR} ${CLS_DIR}/img ${DOC_DIR}

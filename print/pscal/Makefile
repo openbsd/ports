@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/04 06:37:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/01 20:40:46 sturm Exp $
 
 COMMENT=	"utility for generating PostScript calendars"
 
@@ -18,6 +18,7 @@ MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pscal

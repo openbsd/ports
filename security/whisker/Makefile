@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/02/02 22:24:07 margarida Exp $
+# $OpenBSD: Makefile,v 1.14 2004/02/01 20:37:15 sturm Exp $
 
 COMMENT=	"stealthy webserver vulnerability scanner"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 NO_REGRESS=	Yes
 NO_BUILD=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/whisker

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2004/02/01 20:40:46 sturm Exp $
 
 COMMENT=	"English PK fonts (300dpi) for ghostscript, xdvi, etc."
 
@@ -32,6 +32,7 @@ COMMENT-dpi${dpi}=	${COMMENT:S/300dpi/${dpi}dpi/}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/fonts

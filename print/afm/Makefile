@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/12/10 15:46:10 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/01 20:40:45 sturm Exp $
 
 COMMENT=	"Adobe Font Metrics"
 
@@ -20,5 +20,6 @@ pre-patch:
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 .include <bsd.port.mk>

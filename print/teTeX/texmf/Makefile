@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/09/23 17:45:28 sturm Exp $
+# $OpenBSD: Makefile,v 1.19 2004/02/01 20:40:46 sturm Exp $
 
 COMMENT=	"TeX distribution, common support files"
 
@@ -16,6 +16,7 @@ WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 
 do-install:
 	@${INSTALL_DATA_DIR} ${TEXMF_DIR}

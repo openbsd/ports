@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/06 08:51:14 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/02/01 20:37:15 sturm Exp $
 
 COMMENT=	"Remote SMTP Server Detection"
 
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+PKG_ARCH=	*
 WRKDIST=	${WRKDIR}/smtpscan
 
 do-install:

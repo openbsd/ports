@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/20 19:48:45 grange Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/01 20:38:36 sturm Exp $
 
 COMMENT=		"cyrillic PostScript Type1 fonts to use with TeX"
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=		:teTeX_base->=2.0:print/teTeX/base
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
+PKG_ARCH=		*
 
 TEXMF_DIR=		${PREFIX}/share/texmf-local
 
