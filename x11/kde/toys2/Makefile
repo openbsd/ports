@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/06 04:41:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/08/02 14:08:58 espie Exp $
 
 COMMENT=	"some useless kde applications"
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=/usr/local
+	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 # Ensure qt2 will always be at the front

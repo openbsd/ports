@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/05/10 19:44:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/02 14:08:58 espie Exp $
 
 COMMENT=		"office applications for kde"
 CATEGORIES=		x11 x11/kde productivity
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=/usr/local
+	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:

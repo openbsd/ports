@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/05/10 19:44:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/02 14:08:58 espie Exp $
 
 COMMENT=		games for KDE
 COMMENT-cards=		faces for kde card games
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--disable-debug
 
 USE_GMAKE=		Yes
 CONFIGURE_ENV=		MOC=${LOCALBASE}/bin/moc2 \
-	RUN_KAPPFINDER=no KDEDIR=/usr/local
+	RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MAKE_ENV=		${CONFIGURE_ENV}
 
 pre-build:
