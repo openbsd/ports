@@ -1,5 +1,6 @@
---- libframe/Makefile.dist	Thu Sep  3 19:20:34 1998
-+++ libframe/Makefile	Thu Sep  3 22:20:25 1998
+$OpenBSD: patch-ac,v 1.2 2000/06/07 00:52:09 espie Exp $
+--- libframe/Makefile.orig	Wed Jun  7 02:38:21 2000
++++ libframe/Makefile	Wed Jun  7 02:38:26 2000
 @@ -8,14 +8,14 @@
  #	
  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified

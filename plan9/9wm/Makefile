@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:37:46 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/07 00:52:08 espie Exp $
 
 DISTNAME=	9wm-1.1
 CATEGORIES=	plan9
 NEED_VERSION=	1.191
-FAKE=No
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz
 
@@ -18,6 +17,6 @@ WRKDIST=	${WRKDIR}
 EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | ${SH}
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
---- samterm/Makefile.dist	Thu Sep  3 19:20:34 1998
-+++ samterm/Makefile	Thu Sep  3 22:27:39 1998
+$OpenBSD: patch-af,v 1.2 2000/06/07 00:52:09 espie Exp $
+--- samterm/Makefile.orig	Wed Jun  7 02:38:21 2000
++++ samterm/Makefile	Wed Jun  7 02:42:31 2000
 @@ -8,7 +8,7 @@
  #	
  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
@@ -9,7 +10,7 @@
  
  #	add -Iincludedir for any include directories that need to be searched
  #	for posix header files (for UMIPS, add -I/usr/include/posix)
-@@ -16,11 +16,11 @@
+@@ -16,11 +16,11 @@ INCS=-I../include
  
  #	SAMTERM contains the name of the file containing the samterm
  #	executable.
@@ -23,3 +24,11 @@
  
  CFLAGS=$(OS) $(INCS) -D_LIBXG_EXTENSION
  
+@@ -41,6 +41,6 @@ nuke:	clean
+ 	rm -f samterm
+ 
+ install:	samterm
+-	cp samterm $(SAMTERM)
++	cp samterm $(DESTDIR)$(SAMTERM)
+ 
+ $(OBJ):	samterm.h flayer.h ../include/frame.h ../include/libg.h ../include/u.h ../include/libc.h ../sam/mesg.h

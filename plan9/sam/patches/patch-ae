@@ -1,6 +1,7 @@
---- sam/unix.c.dist	Thu Sep  3 19:23:37 1998
-+++ sam/unix.c	Thu Sep  3 19:24:32 1998
-@@ -147,18 +147,18 @@
+$OpenBSD: patch-ae,v 1.2 2000/06/07 00:52:09 espie Exp $
+--- sam/unix.c.orig	Wed Jun  7 02:38:23 2000
++++ sam/unix.c	Wed Jun  7 02:38:26 2000
+@@ -147,18 +147,18 @@ notifyf(void *a, char *b)	/* never calle
  int
  newtmp(int i)
  {

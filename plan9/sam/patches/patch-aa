@@ -1,5 +1,6 @@
---- doc/sam.1-old	Thu Sep  3 19:55:50 1998
-+++ doc/sam.1	Thu Sep  3 20:10:53 1998
+$OpenBSD: patch-aa,v 1.2 2000/06/07 00:52:08 espie Exp $
+--- doc/sam.1.orig	Wed Jun  7 02:38:18 2000
++++ doc/sam.1	Wed Jun  7 02:38:25 2000
 @@ -1,34 +1,3 @@
 -.de F
 -.B

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/09 17:37:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/06/07 00:52:08 espie Exp $
 
-WITH_EDITLINE=	yes
+#WITH_EDITLINE=	yes
 DISTNAME=	rc-1.6
 CATEGORIES=	plan9 shells
 NEED_VERSION=	1.121
-FAKE=No
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.toronto.edu/pub/rc/
 MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
@@ -13,40 +12,38 @@ MASTER_SITES0=	http://www.star.le.ac.uk/~tjg/rc/misc/
 MAINTAINER=	markus@openbsd.org
 
 LICENSE_TYPE=		BSD
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= --with-history
 
+FLAVORS=readline editline
+FLAVOR?=
+
 .if defined(WITH_READLINE) && ${WITH_READLINE:U} == YES
-CONFIGURE_ARGS+= --with-readline
+FLAVOR+=readline
 .elif defined(WITH_EDITLINE) && ${WITH_EDITLINE:U} == YES
+FLAVOR+=editline
+.endif
+
+.if ${FLAVOR:L} == "readline"
+CONFIGURE_ARGS+= --with-readline
+.elif ${FLAVOR:L} == "editline"
 DISTFILES=	${DISTNAME}.tar.gz editline-1.5.tar.gz:0
 EDITLINE=	${WRKSRC}/../editline
 CONFIGURE_ARGS+= --with-editline
 CONFIGURE_ENV+=	LIBS="-L${EDITLINE}"
 .endif
 
-pre-fetch:
-.if !defined(NO_WARNINGS)
-.if !defined(WITH_READLINE) && !defined(WITH_EDITLINE)
-	@echo '*******************************************************' 
-	@echo '* Note that you can build rc using the readline or    *'
-	@echo '* editline library (emacs style command line editing) *'
-	@echo '* by setting the shell variable WITH_READLINE or      *'
-	@echo '* WITH_EDITLINE to yes                                *'
-	@echo '*******************************************************' 
-.endif
-.endif
 
 pre-configure:
-.if defined(WITH_EDITLINE) && ${WITH_EDITLINE:U} == YES
+.if ${FLAVOR:L} == "editline"
 	@echo "===>  Compiling editline"
-	(cd ${EDITLINE} && make)
+	cd ${EDITLINE} && make
 .endif
 
 .include <bsd.port.mk>
