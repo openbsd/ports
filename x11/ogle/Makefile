@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2002/06/15 23:09:34 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/06/22 11:47:12 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP=Yes
 BUILD_DEPENDS=	::audio/liba52 
 
 LIB_DEPENDS=	dvdread::devel/libdvdread \
-		xml2::textproc/libxml \
+		xml2.6.19:libxml>=2.4.19:textproc/libxml \
 		jpeg.62::graphics/jpeg
 
 FLAVORS=	altivec
