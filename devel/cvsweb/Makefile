@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2002/05/22 18:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2002/07/07 12:31:09 naddy Exp $
 # $FreeBSD: ports/devel/cvsweb/Makefile,v 1.28 2000/09/23 20:48:45 knu Exp $
 
 COMMENT=	"WWW CGI script to browse CVS repository trees"
 
-DISTNAME=	cvsweb-2.0.3
+DISTNAME=	cvsweb-2.0.4
 CATEGORIES=	devel www
-NEED_VERSION=	1.515
-HOMEPAGE=	http://cvsweb.freebsd.org/projects/cvsweb/
+HOMEPAGE=	http://www.freebsd.org/projects/cvsweb.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -16,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_FREEBSD_LOCAL:=knu/} \
-			http://www.iDaemons.org/distfiles/
+MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=scop/} \
+		http://people.FreeBSD.org/~scop/cvsweb/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
