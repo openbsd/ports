@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/08/31 09:32:44 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2000/09/04 06:23:01 matthieu Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -18,11 +18,11 @@
      SUBDIR += iso12083
      SUBDIR += iso8879
      SUBDIR += ispell
-     SUBDIR += jade
      SUBDIR += latex2html
      SUBDIR += libxml
      SUBDIR += linuxdoc
      SUBDIR += mgdiff
+     SUBDIR += openjade
      SUBDIR += par
      SUBDIR += pilot_makedoc
      SUBDIR += rman
