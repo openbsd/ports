@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/08/11 20:22:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/21 22:55:41 shell Exp $
 
 COMMENT=	"Date and Time types for Python"
 
@@ -6,7 +6,7 @@ VERSION=	2.0.2
 DISTNAME=	egenix-mx-base-${VERSION}
 PKGNAME=	py-mxDateTime-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.427
+NEED_VERSION=	1.441
 
 MASTER_SITES=	http://www.lemburg.com/files/python/
 
@@ -19,21 +19,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-FLAVORS=	python1
-FLAVOR?=	
-
-.if ${FLAVOR:L:Mpython1}
-PYTHON_VER=	1.5
-PYTHON_EXT=	15
-PYTHON_PATH=	${LOCALBASE}/lib/python${PYTHON_VER}
-RUN_DEPENDS=	${PYTHON_PATH}/site-packages/distutils::devel/py-Distutils
-.else
 PYTHON_VER=	2.1
-PYTHON_EXT=
-.endif
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python${PYTHON_EXT}
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
 
