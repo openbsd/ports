@@ -3,16 +3,17 @@
 # Date created:         17 Dec 1997
 # Whom:                 joey
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/17 23:11:45 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/11 20:19:28 marc Exp $
 #
 
 DISTNAME=       buffer-1.17
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.sun.ac.za/pub/unix/misc/
+MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
+		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	naddy@unix-ag.uni-kl.de
 
 NO_WRKSUBDIR=	yes
-MANL=		buffer.l
+MAN1=		buffer.1
 
 .include <bsd.port.mk>
