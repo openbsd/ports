@@ -1,0 +1,4 @@
+#!/bin/sh
+# $OpenBSD: ppower4,v 1.1.1.1 2003/05/11 17:14:51 sturm Exp $
+
+%%PREFIX%%/jdk1.3.1-linux/bin/java -jar %%PREFIX%%/share/java/pp4p.jar "$@"
