@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/20 02:09:42 pvalchev Exp $
+bin/icebreaker
+share/icebreaker/crash.wav
+share/icebreaker/icebreaker_48.bmp
+share/icebreaker/ouch.wav
+share/icebreaker/penguin.bmp
+@dirrm share/icebreaker
