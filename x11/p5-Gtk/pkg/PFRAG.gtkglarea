@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.gtkglarea,v 1.1 2001/08/07 16:20:54 shell Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Constants.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Glut.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Install/Files.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Install/GtkGLAreaDefs.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Install/GtkGLAreaTypemap
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Install/PerlGtkGLAreaInt.h
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Install/pkg.typemap
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Types.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/GLArea/Constants/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/GLArea/GLArea.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Gtk/GLArea/GLArea.so
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea/Install
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Gtk/GLArea
