@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_mn_h,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
+--- src/mn.h.orig	Sat Jan 30 16:09:01 1999
++++ src/mn.h	Wed Jan  3 15:17:44 2001
+@@ -2,11 +2,12 @@
+ #define _MN_H_
+ 
+ /////////////////////////////////
+-#include <stdio.h>
+-#include <stdarg.h>
+-#include <netinet/in.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <stdio.h>
++#include <stdarg.h>
+ 
+ 
+ /////////////////////////////////

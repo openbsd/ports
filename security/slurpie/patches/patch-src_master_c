@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_master_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
+--- src/master.c.orig	Wed Jan  3 15:24:09 2001
++++ src/master.c	Wed Jan  3 15:25:01 2001
+@@ -56,7 +56,7 @@ int init( void )
+       strcpy( global.node[id]->ipstr, str );
+       global.node[id]->addr.sin_addr.s_addr = inet_addr(str);
+       fscanf(fp,"%s\n", str );
+-      global.node[id]->addr.sin_port = atoi(str);
++      global.node[id]->addr.sin_port = htons(atoi(str));
+       global.node[id]->addr.sin_family = AF_INET;
+       global.node[id]->socket = socket( AF_INET, SOCK_STREAM, 0 );
+    }
+@@ -147,7 +147,7 @@ int main( int argc, u_char **argv )
+    {
+       print_handler("connecting to: %s %d: ",
+          global.node[id]->ipstr,
+-         global.node[id]->addr.sin_port );
++         ntohs(global.node[id]->addr.sin_port) );
+       if(!connect_node(id))
+          print_handler("connect failed.\n");
+       else
+@@ -187,7 +187,7 @@ int main( int argc, u_char **argv )
+                {
+                   print("closing connection: %s %d.\n",
+                      global.node[id]->ipstr,
+-                     global.node[id]->addr.sin_port );
++                     ntohs(global.node[id]->addr.sin_port) );
+                   disconnect_node(id);
+                }
+             }

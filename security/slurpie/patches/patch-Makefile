@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
+--- Makefile.orig	Sat Jan 30 16:14:03 1999
++++ Makefile	Wed Jan  3 15:17:44 2001
+@@ -1,7 +1,6 @@
+-CC = gcc
+ all: slurpie slurp
+ slurpie: src/slurpie.c src/shared.c src/master.c src/shared.h src/mn.h
+-	$(CC) -O3 src/slurpie.c src/shared.c src/master.c -o slurpie
++	$(CC) ${CFLAGS} src/slurpie.c src/shared.c src/master.c -o slurpie
+ slurp: src/slurp.c src/shared.c src/node.c src/shared.h src/mn.h
+-	$(CC) -O3 -lcrypt src/slurp.c src/shared.c src/node.c -o slurp
++	$(CC) ${CFLAGS} src/slurp.c src/shared.c src/node.c -o slurp
+ 

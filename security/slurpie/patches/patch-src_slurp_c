@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_slurp_c,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
+--- src/slurp.c.orig	Wed Jan  3 15:26:35 2001
++++ src/slurp.c	Wed Jan  3 15:26:54 2001
+@@ -239,7 +239,7 @@ int cl_proc( int argc, u_char **argv )
+    
+    if(argc>1)
+    {
+-      if( !(*node_port=atoi(argv[--argc])) )
++      if( !(*node_port=htons(atoi(argv[--argc]))) )
+          goto jCOMM_HELP;
+          
+       for( i=1; i<argc; i++ )

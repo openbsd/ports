@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/03 22:34:09 danh Exp $
+sbin/slurp
+sbin/slurpie
+share/doc/slurpie/README
+share/examples/slurpie/hosts.dat
+@dirrm share/examples/slurpie
+@dirrm share/doc/slurpie
