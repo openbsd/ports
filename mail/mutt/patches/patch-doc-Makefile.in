@@ -1,11 +1,12 @@
---- doc/Makefile.in.orig	Thu Feb 11 06:34:52 1999
-+++ doc/Makefile.in	Fri Apr 14 02:40:47 2000
-@@ -43,7 +43,7 @@
- DOCFILES = manual.txt
+$OpenBSD: patch-doc-Makefile.in,v 1.2 2000/06/29 23:18:11 fgsch Exp $
+--- doc/Makefile.in.orig	Wed Mar 29 06:42:49 2000
++++ doc/Makefile.in	Wed Jun 28 19:53:15 2000
+@@ -58,7 +58,7 @@
+ topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
+ 	README NEWS TODO README.SECURITY README.SSL README.UPGRADE
  
+-all: muttrc.man try-html try-txt
++all: muttrc.man
  
--all: mutt.man dotlock.man try-html try-txt
-+all: mutt.man dotlock.man
- 
- complete: all html
- 
+ try-html: ../makedoc
+ 	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./

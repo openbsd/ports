@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2000/06/28 22:28:20 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2000/06/29 23:18:10 fgsch Exp $
 
-DISTNAME=	mutt-1.0.1i
+DISTNAME=	mutt-1.2.2i
 CATEGORIES=     mail
-NEED_VERSION=	1.308
-MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
-		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
+NEED_VERSION=	1.309
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
                 ftp://ftp.gbnet.net/pub/mutt-international/ \
                 ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-                ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
+                ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
+		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
 
 MAINTAINER=	turan@openbsd.org
 
@@ -17,18 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=slang curses imap pop
-
-.if defined(TTY_LIB)
-FLAVOR?=
-FLAVOR+=${TTY_LIB}
-.endif
 FLAVOR?=slang
-.if defined(WITH_IMAP)
-FLAVOR+=imap
-.endif
-.if defined(WITH_POP)
-FLAVOR+=pop
-.endif
 
 LIB_DEPENDS=	intl.1::devel/gettext 
 
@@ -41,12 +30,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 .if ${FLAVOR:L:Mslang}
 LIB_DEPENDS+=	slang.14::devel/libslang
 CONFIGURE_ARGS+=--with-slang=${PREFIX}
-
 .elif ${FLAVOR:L:Mcurses}
 CONFIGURE_ARGS+=--with-curses
 .else
 .BEGIN:
-	@echo "Bad choice FLAVOR=${FLAVOR}"; exit 1
+	echo "Bad choice FLAVOR=${FLAVOR}"; exit 1
 .endif
 
 .if defined(HOMESPOOL)
