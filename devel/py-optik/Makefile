@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/11/24 11:58:24 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/29 05:57:15 shell Exp $
 
 
 COMMENT=	"command line parsing library for Python"
 
-VERSION=	1.1
+VERSION=	1.1.1
 DISTNAME=	Optik-${VERSION}
 PKGNAME=	py-optik-${VERSION}
 CATEGORIES=    	devel
