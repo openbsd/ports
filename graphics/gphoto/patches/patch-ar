@@ -1,0 +1,11 @@
+--- ./src/Makefile.in.orig	Wed Nov 10 19:11:17 1999
++++ ./src/Makefile.in	Wed Nov 10 19:12:10 1999
+@@ -105,7 +105,7 @@
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I..
++DEFS = @DEFS@ -I. -I$(srcdir) -I.. -I${prefix}/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@

@@ -1,0 +1,11 @@
+--- ./philips/Makefile.in.orig	Wed Nov 10 18:53:59 1999
++++ ./philips/Makefile.in	Wed Nov 10 18:54:27 1999
+@@ -102,7 +102,7 @@
+ LTLIBRARIES =  $(drivers_LTLIBRARIES)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I..
++DEFS = @DEFS@ -I. -I$(srcdir) -I.. -I${prefix}/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@

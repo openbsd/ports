@@ -1,0 +1,89 @@
+bin/gphoto
+bin/gphoto-exifdump
+bin/qm100
+bin/qmxxx
+bin/rsony
+lib/gphoto/drivers/libgphoto_canon.a
+lib/gphoto/drivers/libgphoto_canon.la
+lib/gphoto/drivers/libgphoto_canon.so.0.0
+lib/gphoto/drivers/libgphoto_casio_qv.a
+lib/gphoto/drivers/libgphoto_casio_qv.la
+lib/gphoto/drivers/libgphoto_casio_qv.so.0.0
+lib/gphoto/drivers/libgphoto_coolpix600.a
+lib/gphoto/drivers/libgphoto_coolpix600.la
+lib/gphoto/drivers/libgphoto_coolpix600.so.0.0
+lib/gphoto/drivers/libgphoto_dimage_v.a
+lib/gphoto/drivers/libgphoto_dimage_v.la
+lib/gphoto/drivers/libgphoto_dimage_v.so.0.0
+lib/gphoto/drivers/libgphoto_dir.a
+lib/gphoto/drivers/libgphoto_dir.la
+lib/gphoto/drivers/libgphoto_dir.so.0.0
+lib/gphoto/drivers/libgphoto_fuji.a
+lib/gphoto/drivers/libgphoto_fuji.la
+lib/gphoto/drivers/libgphoto_fuji.so.0.0
+lib/gphoto/drivers/libgphoto_kodak_dc2x.a
+lib/gphoto/drivers/libgphoto_kodak_dc2x.la
+lib/gphoto/drivers/libgphoto_kodak_dc2x.so.0.0
+lib/gphoto/drivers/libgphoto_kodak_generic.a
+lib/gphoto/drivers/libgphoto_kodak_generic.la
+lib/gphoto/drivers/libgphoto_kodak_generic.so.0.0
+lib/gphoto/drivers/libgphoto_konica_qm100.a
+lib/gphoto/drivers/libgphoto_konica_qm100.la
+lib/gphoto/drivers/libgphoto_konica_qm100.so.0.0
+lib/gphoto/drivers/libgphoto_konica_qmxxx.a
+lib/gphoto/drivers/libgphoto_konica_qmxxx.la
+lib/gphoto/drivers/libgphoto_konica_qmxxx.so.0.0
+lib/gphoto/drivers/libgphoto_mustek_mdc800.a
+lib/gphoto/drivers/libgphoto_mustek_mdc800.la
+lib/gphoto/drivers/libgphoto_mustek_mdc800.so.1.0
+lib/gphoto/drivers/libgphoto_philips.a
+lib/gphoto/drivers/libgphoto_philips.la
+lib/gphoto/drivers/libgphoto_philips.so.0.5
+lib/gphoto/drivers/libgphoto_photopc.a
+lib/gphoto/drivers/libgphoto_photopc.la
+lib/gphoto/drivers/libgphoto_photopc.so.0.0
+lib/gphoto/drivers/libgphoto_ricoh300z.a
+lib/gphoto/drivers/libgphoto_ricoh300z.la
+lib/gphoto/drivers/libgphoto_ricoh300z.so.0.0
+lib/gphoto/drivers/libgphoto_sony_dscf1.a
+lib/gphoto/drivers/libgphoto_sony_dscf1.la
+lib/gphoto/drivers/libgphoto_sony_dscf1.so.0.0
+lib/gphoto/drivers/libgphoto_sony_dscf55.a
+lib/gphoto/drivers/libgphoto_sony_dscf55.la
+lib/gphoto/drivers/libgphoto_sony_dscf55.so.0.0
+man/man1/gphoto.1
+share/doc/gphoto/AUTHORS
+share/doc/gphoto/MANUAL
+share/gphoto/gallery/CSStheme/gphotobutton.png
+share/gphoto/gallery/CSStheme/index_bottom.html
+share/gphoto/gallery/CSStheme/index_top.html
+share/gphoto/gallery/CSStheme/mwcos.png
+share/gphoto/gallery/CSStheme/picture.html
+share/gphoto/gallery/CSStheme/styles.css
+share/gphoto/gallery/CSStheme/thumbnail.html
+share/gphoto/gallery/CSStheme/vh40.png
+share/gphoto/gallery/Default/banner.gif
+share/gphoto/gallery/Default/index.gif
+share/gphoto/gallery/Default/index_bottom.html
+share/gphoto/gallery/Default/index_top.html
+share/gphoto/gallery/Default/next.gif
+share/gphoto/gallery/Default/picture.html
+share/gphoto/gallery/Default/previous.gif
+share/gphoto/gallery/Default/thumbnail.html
+share/gphoto/gallery/RedNGray/backgrnd.gif
+share/gphoto/gallery/RedNGray/banner.gif
+share/gphoto/gallery/RedNGray/index.gif
+share/gphoto/gallery/RedNGray/index_bottom.html
+share/gphoto/gallery/RedNGray/index_top.html
+share/gphoto/gallery/RedNGray/next.gif
+share/gphoto/gallery/RedNGray/picture.html
+share/gphoto/gallery/RedNGray/previous.gif
+share/gphoto/gallery/RedNGray/thumbnail.html
+@dirrm share/gphoto/gallery/RedNGray
+@dirrm share/gphoto/gallery/Default
+@dirrm share/gphoto/gallery/CSStheme
+@dirrm share/gphoto/gallery
+@dirrm share/gphoto
+@dirrm share/doc/gphoto
+@dirrm lib/gphoto/drivers
+@dirrm lib/gphoto

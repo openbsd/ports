@@ -1,0 +1,11 @@
+--- ./Makefile.am.orig	Wed Nov 10 19:26:53 1999
++++ ./Makefile.am	Wed Nov 10 19:27:10 1999
+@@ -9,7 +9,7 @@
+ 	directory \
+ 	src gallery man
+ 
+-gphotodocdir = $(datadir)/gphoto/doc
++gphotodocdir = $(datadir)/doc/gphoto
+ 
+ gphotodoc_DATA = AUTHORS MANUAL
+ 

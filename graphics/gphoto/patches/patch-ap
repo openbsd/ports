@@ -1,0 +1,11 @@
+--- ./ricoh/Makefile.in.orig	Wed Nov 10 19:09:31 1999
++++ ./ricoh/Makefile.in	Wed Nov 10 19:09:46 1999
+@@ -103,7 +103,7 @@
+ LTLIBRARIES =  $(drivers_LTLIBRARIES)
+ 
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) -I..
++DEFS = @DEFS@ -I. -I$(srcdir) -I.. -I${prefix}/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@

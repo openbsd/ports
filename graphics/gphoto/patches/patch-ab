@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	Wed Nov 10 18:58:36 1999
++++ ./Makefile.in	Wed Nov 10 19:19:57 1999
+@@ -91,7 +91,7 @@
+ SUBDIRS = canon casio fuji kodak kodak_generic 	konica minolta mustek philips 	konica_qmxxx 	photopc ricoh 	sony 	nikon 	directory 	src gallery man
+ 
+ 
+-gphotodocdir = $(datadir)/gphoto/doc
++gphotodocdir = $(datadir)/doc/gphoto
+ 
+ gphotodoc_DATA = AUTHORS MANUAL
+ 
