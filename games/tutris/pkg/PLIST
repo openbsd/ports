@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/16 19:47:44 sturm Exp $
+bin/tutris
+share/doc/tutris/README
+share/tutris/background.png
+share/tutris/blocks.png
+share/tutris/font.png
+@dirrm share/tutris
+@dirrm share/doc/tutris
