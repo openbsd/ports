@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/05/21 12:38:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/25 22:50:17 brad Exp $
 
 # use flavors for mule and compface support
 # e.g., make FLAVOR=mule
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--with-mule
 SUPDISTFILES=${DISTNAME}-mule${EXTRACT_SUFX}
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1.6::graphics/png
+		png.1::graphics/png
 
 USE_GMAKE=	Yes
 HAS_CONFIGURE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/06/12 10:05:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/25 22:50:18 brad Exp $
 
 VERS=		0.7.9
 PKGNAME=	abiword-${VERS}
@@ -22,7 +22,7 @@ DISTFILES=	abi-${VERS}${EXTRACT_SUFX} \
 
 BUILD_DEPENDS=	${PREFIX}/lib/libexpat.a::textproc/expat
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		png.1.6::graphics/png
+		png.1::graphics/png
 RUN_DEPENDS=	ispell::textproc/ispell
 
 WRKDIST=	${WRKDIR}/abi-${VERS}
