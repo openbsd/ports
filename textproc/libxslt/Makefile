@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2001/11/01 11:40:05 shell Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/13 18:02:26 shell Exp $
 
 COMMENT=	"XSLT C Library for GNOME"
 
-DISTNAME=	libxslt-1.0.6
+DISTNAME=	libxslt-1.0.5
 CATEGORIES=	textproc
 NEED_VERSION=	1.484
 HOMEPAGE=	http://xmlsoft.org/XSLT/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-LIB_DEPENDS=	xml2.6::textproc/libxml
+LIB_DEPENDS=	xml2::textproc/libxml
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -25,5 +25,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --with-libxml-include-prefix='${LOCALBASE}/include/'
+
+REGRESS_TARGET=	tests
 
 .include <bsd.port.mk>
