@@ -1,6 +1,6 @@
-$OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2001/07/05 17:22:13 lebel Exp $
---- Completion/Unix/Command/_find.orig	Thu Jul  5 13:17:08 2001
-+++ Completion/Unix/Command/_find	Thu Jul  5 13:17:18 2001
+$OpenBSD: patch-Completion_Unix_Command__find,v 1.3 2003/07/03 12:56:52 lebel Exp $
+--- Completion/Unix/Command/_find.orig	Tue Dec 11 10:46:22 2001
++++ Completion/Unix/Command/_find	Mon Jul  1 10:05:34 2002
 @@ -1,59 +1,39 @@
 -#compdef find
 +#compdef find (OpenBSD)
@@ -33,7 +33,7 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2001/07/05 17:22:13 lebel Ex
 +  '*-ctime:inode change time (minutes)' \
    '*-empty' \
 -  '*-false' \
--  '*-fstype:filesystem type:(ufs 4.2 4.3 nfs tmp mfs S51K S52K)' \
+-  '*-fstype:file system type:_file_systems' \
 -  '*-gid:numeric group ID:' \
 +  '*-exec:program: _command_names -e:*\;::program arguments: _normal' \
 +  '*-execdir:program: _command_names -e:*\;::program arguments: _normal' \

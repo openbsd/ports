@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2003/05/23 15:28:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.23 2003/07/03 12:56:51 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
 
-VERSION=	4.0.6
+VERSION=	4.1.1
+PKGNAME=	zsh-${VERSION:C/-//g}
 DISTNAME=	zsh-${VERSION}
 CATEGORIES=	shells
-MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
-		ftp://ftp.zsh.org/zsh/ \
+MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		http://www.zsh.org/pub/ \
 		ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/zsh/ \
@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		ftp://mrrl.lut.ac.uk/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
-EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.zsh.org/
 
@@ -28,16 +27,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	static
 
-.if ${MACHINE_ARCH:Malpha}
+.if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Mvax}
 # for the time being, force static on alpha
-FLAVOR?=	static
+FLAVOR?=        static
 .else
 FLAVOR?=
 .endif
 
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
-		--enable-maildir-support
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-maildir-support
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
@@ -47,10 +45,10 @@ CONFIGURE_ARGS+=--disable-dynamic
 MULTI_PACKAGES=	-zftp
 SUBPACKAGE?=
 .  for i in ${MULTI_PACKAGES}
-PKGNAME$i=	zsh$i-${VERSION}
+PKGNAME$i=	zsh$i-${VERSION:C/-//g}
 .  endfor
 .  if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=	::shells/zsh/stable
+RUN_DEPENDS=	::shells/zsh/snapshot
 .  endif
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
 .endif

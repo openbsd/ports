@@ -1,6 +1,6 @@
-$OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
---- Doc/zsh.texi.orig	Wed May  9 05:52:45 2001
-+++ Doc/zsh.texi	Mon May 14 09:56:09 2001
+$OpenBSD: patch-Doc_zsh_texi,v 1.3 2003/07/03 12:56:52 lebel Exp $
+--- Doc/zsh.texi.orig	Tue May  6 11:50:40 2003
++++ Doc/zsh.texi	Thu May 22 10:01:06 2003
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
@@ -12,24 +12,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @c %**end of header
  
  @ifinfo
-@@ -1271,14 +1275,14 @@ entirely quoted.  A literal `@t{'}' char
- string by using the `@t{\'}' escape.
- 
- @noindent
--All characters enclosed between a pair of single quotes (@t{@value{dsq}}) that
-+All characters enclosed between a pair of single quotes (@t{'}@t{'}) that
- is not preceded by a `@t{$}' are quoted.  A single quote cannot appear
- within single quotes unless the option @t{RC_QUOTES} is set, in which case
- a pair of single quotes are turned into a single quote.  For example,
- 
- @noindent
- @example
--print @value{dsq}@value{dsq}
-+print @t{'}@t{'}@t{'}@t{'}
- @end example
- 
- @noindent
-@@ -2780,7 +2784,7 @@ that is to be assigned to the @emph{next
+@@ -2959,7 +2963,7 @@ you may see in your prompt (see
  A history expansion begins with the first character of the @t{histchars}
  parameter, which is `@t{!}' by default, and may occur anywhere on the
  command line; history expansions do not nest.  The `@t{!}' can be escaped
@@ -38,7 +21,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  to suppress its special meaning.  Double quotes will @emph{not} work for
  this.  Following this history character is an optional event designator
  (@ref{Event Designators}) and then an optional word
-@@ -6670,7 +6674,7 @@ For example,
+@@ -7076,7 +7080,7 @@ For example,
  @example
  unsetopt localtraps
  trap - INT
@@ -47,7 +30,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @end example
  
  @noindent
-@@ -6899,7 +6903,8 @@ Array expansions of the form
+@@ -7316,7 +7320,8 @@ Array expansions of the form
  @cindex rc, quoting style
  @cindex quoting style, rc
  @item @t{RC_QUOTES}
@@ -57,7 +40,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  within singly quoted strings.  Note this does not apply in quoted strings
  using the format @t{$'}@var{...}@t{'}, where a backslashed single quote can
  be used.
-@@ -10456,7 +10461,7 @@ An interrupt character will not be inser
+@@ -11219,7 +11224,7 @@ An interrupt character will not be inser
  @item @t{quote-line} (ESC-') (unbound) (unbound)
  Quote the current line; that is, put a `@t{'}' character at the
  beginning and the end, and convert all `@t{'}' characters
@@ -66,7 +49,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  
  @tindex quote-region
  @item @t{quote-region} (ESC-") (unbound) (unbound)
-@@ -13473,7 +13478,7 @@ different types of matches displayed sep
+@@ -14515,7 +14520,7 @@ different types of matches displayed sep
  
  @noindent
  @example
@@ -75,16 +58,16 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @end example
  
  @noindent
-@@ -13740,7 +13745,7 @@ zstyle ':completion:*:default' list-colo
+@@ -14783,7 +14788,7 @@ zstyle ':completion:*:default' list-colo
  
  @noindent
  The default colors are the same as for the GNU @t{ls} command and can be
 -obtained by setting the style to an empty string (i.e. @t{@value{dsq}}).
 +obtained by setting the style to an empty string (i.e. @t{'}@t{'}).
  
- @kindex list-packed, completion style
- @item @t{list-packed}
-@@ -13825,7 +13830,7 @@ completion one would do:
+ @kindex list-grouped, completion style
+ @item @t{list-grouped}
+@@ -14903,7 +14908,7 @@ generates no matches, case-insensitive c
  
  @noindent
  @example
@@ -93,7 +76,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @end example
  
  @noindent
-@@ -13850,7 +13855,7 @@ the @t{_complete} completer, one would d
+@@ -14927,7 +14932,7 @@ case-insensitive completion with @t{_com
  @example
  zstyle ':completion:*' completer _complete _prefix
  zstyle ':completion:*:complete:*' matcher-list \ 
@@ -102,7 +85,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @end example
  
  @noindent
-@@ -13868,7 +13873,7 @@ match specifications for each occurrence
+@@ -14942,7 +14947,7 @@ partial-word completion:
  @example
  zstyle ':completion:*' completer _complete _correct _complete:foo
  zstyle ':completion:*:complete:*' matcher-list \ 
@@ -111,7 +94,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  zstyle ':completion:*:foo:*' matcher-list \ 
      'm:@{a-zA-Z@}=@{A-Za-z@} r:|[-_./]=* r:|=*'
  @end example
-@@ -16799,7 +16804,7 @@ generates at least one match. E.g.:
+@@ -18055,7 +18060,7 @@ generates at least one match. E.g.:
  
  @noindent
  @example
@@ -120,7 +103,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @end example
  
  @noindent
-@@ -17011,7 +17016,7 @@ use is
+@@ -18267,7 +18272,7 @@ use is
  
  @noindent
  @example
@@ -129,7 +112,7 @@ $OpenBSD: patch-Doc_zsh_texi,v 1.2 2001/06/03 01:01:37 lebel Exp $
  @end example
  
  @noindent
-@@ -17099,7 +17104,7 @@ performed on the first word in the range
+@@ -18355,7 +18360,7 @@ performed on the first word in the range
  
  @noindent
  @example
