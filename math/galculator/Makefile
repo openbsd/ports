@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/05/27 20:10:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2004/10/08 20:59:22 sturm Exp $
 
 COMMENT=	"GTK2-based scientific calculator"
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=galculator/}
 
 LIB_DEPENDS=	glade-2.0.=0::devel/libglade2
-BUILD_DEPENDS=	::textproc/intltool
+BUILD_DEPENDS=	::textproc/intltool \
+		:pkgconfig-*:devel/pkgconfig
 
 SEPARATE_BUILD=	simple
 USE_GMAKE=	Yes
