@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2000/11/18 13:32:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/05 15:37:45 naddy Exp $
 
-DISTNAME=	root-tail-0.0.9
+DISTNAME=	root-tail-0.0.10
 CATEGORIES=	x11
-NEED_VERSION=	1.340
+NEED_VERSION=	1.358
 
-HOMEPAGE=	http://goof.com/pcg/marc/root-tail.html
+HOMEPAGE=	http://root-tail.plan9.de
 
-MAINTAINER=	Cameron Lerch <opcode@skylab.2y.net>
+MAINTAINER=	Cameron Lerch <opcode@skylab.saturn5.yi.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
