@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/08/16 20:01:54 lebel Exp $
+# $OpenBSD: Makefile,v 1.18 2002/08/16 20:18:01 lebel Exp $
 
 COMMENT=	"Z shell, Bourne shell-compatible, release flavor"
 COMMENT-zftp=	"Z shell embedded ftp client"
@@ -31,7 +31,8 @@ FLAVORS=	static
 FLAVOR?=
 
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free \
+		--enable-maildir-support
 
 .if ${FLAVOR:L} == "static"
 CONFIGURE_ENV=	LDFLAGS="-static"
