@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_man1_idl_1,v 1.1 2003/03/31 00:53:58 margarida Exp $
+--- man/man1/idl.1.orig	Wed Mar 12 03:34:51 2003
++++ man/man1/idl.1	Wed Mar 12 03:35:45 2003
+@@ -224,8 +224,8 @@ operations and attributes inherited from
+ .SH FILES
+ ~/.micorc
+ .SH "SEE ALSO"
+-.IR "MICO Reference Manual" ", " rsh(1) ", " micod(8) ", " imr(1) ", "
+-.IR ird(8) ", " micorc(5)
++.IR "MICO Reference Manual" ", " rsh(1) ", " micod(1) ", " imr(1) ", "
++.IR ird(1) ", " micorc(5)
+ .SH COPYRIGHT
+ Copyright (C) 1997, Kay Roemer & Arno Puder
+ .SH AUTHOR

@@ -1,0 +1,21 @@
+$OpenBSD: patch-man_man8_ird_8,v 1.1 2003/03/31 00:53:58 margarida Exp $
+--- man/man8/ird.8.orig	Wed Mar 12 03:40:07 2003
++++ man/man8/ird.8	Wed Mar 12 03:41:19 2003
+@@ -19,7 +19,7 @@
+ .\" Send comments and/or bug reports to:
+ .\"                mico@informatik.uni-frankfurt.de
+ .\"
+-.TH IRD 8 "April 8 1997"
++.TH IRD 1 "April 8 1997"
+ .SH NAME
+ ird \- MICO interface repository server
+ .SH SYNOPSIS
+@@ -62,7 +62,7 @@ is used as ior-file, the IOR is written 
+ .SH FILES
+ ~/.micorc
+ .SH "SEE ALSO"
+-.IR "MICO Reference Manual" ", " rsh(1) ", " micod(8) ", " imr(1) ", "
++.IR "MICO Reference Manual" ", " rsh(1) ", " micod(1) ", " imr(1) ", "
+ .IR micorc(5) ", " idl(1)
+ .SH COPYRIGHT
+ Copyright (C) 1997, Kay Roemer & Arno Puder

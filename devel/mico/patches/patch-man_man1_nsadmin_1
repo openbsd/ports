@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_man1_nsadmin_1,v 1.1 2003/03/31 00:53:58 margarida Exp $
+--- man/man1/nsadmin.1.orig	Wed Mar 12 03:37:44 2003
++++ man/man1/nsadmin.1	Wed Mar 12 03:38:10 2003
+@@ -78,8 +78,8 @@ Quit
+ .SH FILES
+ ~/.micorc
+ .SH "SEE ALSO"
+-.IR "MICO Reference Manual" ", " rsh(1) ", " micod(8) ", " imr(1) ", "
+-.IR ird(8) ", " micorc(5) ", " idl(1) ", " nsd(8)
++.IR "MICO Reference Manual" ", " rsh(1) ", " micod(1) ", " imr(1) ", "
++.IR ird(1) ", " micorc(5) ", " idl(1) ", " nsd(1)
+ .SH COPYRIGHT
+ Copyright (C) 1997, Kai-Uwe Sattler
+ .SH AUTHOR

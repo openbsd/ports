@@ -1,0 +1,21 @@
+$OpenBSD: patch-man_man8_nsd_8,v 1.1 2003/03/31 00:53:58 margarida Exp $
+--- man/man8/nsd.8.orig	Wed Mar 12 03:42:18 2003
++++ man/man8/nsd.8	Wed Mar 12 03:42:42 2003
+@@ -19,7 +19,7 @@
+ .\" Send comments and/or bug reports to:
+ .\"                mico@informatik.uni-frankfurt.de
+ .\"
+-.TH NSD 8 "April 8 1997"
++.TH NSD 1 "April 8 1997"
+ .SH NAME
+ nsd \- MICO name service server
+ .SH SYNOPSIS
+@@ -41,7 +41,7 @@ Only standard ORB options.
+ .SH FILES
+ ~/.micorc
+ .SH "SEE ALSO"
+-.IR "MICO Reference Manual" ", " rsh(1) ", " micod(8) ", " imr(1) ", "
++.IR "MICO Reference Manual" ", " rsh(1) ", " micod(1) ", " imr(1) ", "
+ .IR micorc(5) ", " idl(1) ", " nsadmin(1)
+ .SH COPYRIGHT
+ Copyright (C) 1997, Kai-Uwe Sattler

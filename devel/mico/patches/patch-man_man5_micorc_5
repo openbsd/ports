@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_man5_micorc_5,v 1.1 2003/03/31 00:53:58 margarida Exp $
+--- man/man5/micorc.5.orig	Wed Mar 12 03:38:59 2003
++++ man/man5/micorc.5	Wed Mar 12 03:39:39 2003
+@@ -162,7 +162,7 @@ This option tells an object implementati
+ You should use this option only when starting persistent servers that
+ should register with the BOA daemon.
+ .SH "SEE ALSO"
+-.IR "MICO Reference Manual" ", " rsh(1) ", " micod(8) ", " imr(1) ", "
++.IR "MICO Reference Manual" ", " rsh(1) ", " micod(1) ", " imr(1) ", "
+ .IR imr(1) ", " micorc(5) ", " idl(1)
+ .SH COPYRIGHT
+ Copyright (C) 1997, Kay Roemer & Arno Puder

@@ -1,14 +1,22 @@
---- man/Makefile.orig	Thu Jun 28 03:02:08 2001
-+++ man/Makefile	Thu Jun 28 03:02:40 2001
-@@ -26,9 +26,9 @@ DIRS = man1 man5 man8
+$OpenBSD: patch-man_Makefile,v 1.2 2003/03/31 00:53:58 margarida Exp $
+--- man/Makefile.orig	Wed Aug 26 16:25:45 1998
++++ man/Makefile	Wed Mar 12 03:23:54 2003
+@@ -26,10 +26,15 @@ DIRS = man1 man5 man8
  
  install:
  	for i in $(DIRS); do \
 -	  $(IDIRCMD) $(SHARED_INSTDIR)/man/$$i; \
-+	  $(IDIRCMD) $(INSTDIR)/man/$$i; \
- 	  for j in $$i/*.[1-9]; do $(IMANCMD) $$j \
+-	  for j in $$i/*.[1-9]; do $(IMANCMD) $$j \
 -		$(SHARED_INSTDIR)/man/$$i/; done; \
-+		$(INSTDIR)/man/$$i/; done; \
++	  if [ "$$i" != "man8" ]; then $(IDIRCMD) $(INSTDIR)/man/$$i; fi; \
++	    for j in $$i/*.[1-9]; \
++	  do if [ "$$i" = "man8" ]; \
++	    then k="`echo $$j | sed -e 's/\\.8$$/.1/g; s/man8/man1/g'`"; \
++	    else k=$$j; fi; \
++	    $(IMANCMD) $$j \
++	      $(INSTDIR)/man/$$k; done; \
  	done
++
  
  install-cd: install
+ 

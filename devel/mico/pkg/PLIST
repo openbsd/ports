@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/11/10 16:56:33 shell Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/03/31 00:53:58 margarida Exp $
 bin/containmentd
 bin/eventd
 bin/idl
@@ -243,11 +243,11 @@ lib/mico-setup.csh
 lib/mico-setup.sh
 man/man1/idl.1
 man/man1/imr.1
+man/man1/ird.1
+man/man1/micod.1
 man/man1/nsadmin.1
+man/man1/nsd.1
 man/man5/micorc.5
-man/man8/ird.8
-man/man8/micod.8
-man/man8/nsd.8
 share/doc/mico/examples/MakeVars
 share/doc/mico/examples/README
 share/doc/mico/examples/bench/Makefile
