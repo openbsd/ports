@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/01/28 14:39:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.27 2001/01/28 14:54:59 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -31,11 +31,12 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--enable-trans-sid \
 			--with-yp \
 			--with-pcre-regex \
+			--enable-ftp \
 			--with-xml \
 			--with-openssl \
 			--with-zlib
 
-FLAVORS+=	gdbm gettext ftp imap ldap mhash mm recode snmp
+FLAVORS+=	gdbm gettext imap ldap mhash mm recode snmp
 FLAVORS+=	gd no_x11 pdflib mcrypt curl
 FLAVORS+=	dbase filepro mysql mysql_bundled postgresql iodbc
 FLAVOR?= 
@@ -59,12 +60,6 @@ CONFIGURE_ARGS+=	--with-gettext
 LIB_DEPENDS+=		intl.1::devel/gettext
 .else
 CONFIGURE_ARGS+=	--without-gettext
-.endif
-
-.if ${FLAVOR:L:Mftp}
-CONFIGURE_ARGS+=	--enable-ftp
-.else
-CONFIGURE_ARGS+=	--disable-ftp
 .endif
 
 .if ${FLAVOR:L:Mimap}

@@ -10,7 +10,6 @@ PHP has a number of extra flavors available:
 
  - curl     Client URL library functions (gopher, dict, ldap, etc)
  - gettext  GNU gettext support for internationalisation
- - ftp      Functions to retrieve files via FTP
  - imap     Mail and message access functions (IMAP, POP3, NTTP)
  - ldap     Access to LDAP-compliant Directory Services
  - mhash    Hashing functions such as MD5, SHA1, etc
