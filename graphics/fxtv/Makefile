@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2002/06/09 05:36:43 wilfried Exp $
+# $OpenBSD: Makefile,v 1.27 2002/09/13 12:28:07 wcobb Exp $
+
+ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Display and capture for Brooktree-based cards"
 DISTNAME=	fxtv-1.03
 
 CATEGORIES=	graphics
-NEED_VERSION=	1.500
 HOMEPAGE=	http://people.freebsd.org/~rhh/fxtv/
 EXTRACT_SUFX=	.tgz
 
