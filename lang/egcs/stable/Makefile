@@ -1,26 +1,40 @@
-# $OpenBSD: Makefile,v 1.37 2001/05/06 01:27:55 lebel Exp $
+# $OpenBSD: Makefile,v 1.38 2001/07/04 15:07:28 espie Exp $
 
-COMMENT=	"experimental GNU C, C++, f77..., release flavor"
+# This is a configuration file for egcs, snapshot flavor
 
-# This is a configuration file for egcs, stable release.
+COM=		'GNU compiler collection (experimental)'
+COMMENT=	${COM}: core C compiler
+COMMENT-c++ =	${COM}: C++ compiler
+COMMENT-chill=	${COM}: Chill compiler
+COMMENT-g77=	${COM}: f77 compiler
+COMMENT-java=	${COM}: java compiler
+COMMENT-objc=	${COM}: obj C compiler
+
+PKGNAME=	${DISTNAME}-core
+PKGNAME-c++ =	${DISTNAME}-c++
+PKGNAME-chill=	${DISTNAME}-chill
+PKGNAME-g77=	${DISTNAME}-g77
+PKGNAME-java=	${DISTNAME}-java
+PKGNAME-objc=	${DISTNAME}-objc
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
 BUILD_DEPENDS=	autoconf::devel/autoconf
 
-CATEGORIES=	lang 
-NEED_VERSION=	1.402
-FAKE=No
-EXTRACT_SUFX=	.tar.bz2
+# This should be patched out later.
+BUILD_DEPENDS+= bison:bison-*:devel/bison
 
+CATEGORIES=	lang 
+NEED_VERSION=	1.361
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-#	GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-COMES_WITH= 2.6
+
+# experimental port, changes once a week, don't bother remirroring distfiles.
+
+PERMIT_PACKAGE_FTP=Yes
+PERMIT_DISTFILES_FTP=Yes
+PERMIT_PACKAGE_CDROM=Yes
+PERMIT_DISTFILES_CDROM=Yes
 
 # Testers for the new configurations:
 # Jason L.Wright & Marco S.Hyman for sparc,
@@ -39,175 +53,182 @@ COMES_WITH= 2.6
 # namely, testsuite holds all the tests. g++-tests no longer exists,
 # and g77-tests only holds duplicates from the main testsuite archive.
 #MAKE_TESTS=yes
-MAKE_GXX=yes
-MAKE_FORTRAN=yes
-MAKE_CHILL=yes
-MAKE_OBJC=yes
-MAKE_JAVA=yes
+MAKE_GXX=Yes
+#MAKE_FORTRAN=Yes
+# we don't care about chill
+#MAKE_CHILL=yes
+#MAKE_OBJC=Yes
+#MAKE_JAVA=Yes
 
-.if defined(MAKE_TESTS)
-BUILD_DEPENDS+=	runtest::devel/dejagnu
+MULTI_PACKAGES=
+# No sub packages description
+DESCR=${PKGDIR}/DESCR
+
+.if defined(MAKE_TESTS) && ${MAKE_TESTS:L} == "yes"
+BUILD_DEPENDS+=	runtest::lang/egcs/dejagnu
 .endif
 
-# if you want/need to use the mammoth archive. 
-ONE_ARCHIVE=yes
+# No way around it, java wants a pure parser
+.if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
+BUILD_DEPENDS+=bison:bison-*:devel/bison
+.endif
 
 #### fetch section
-VERSION= 2.95.1
 
-DIRECTORY=egcs/releases/%SUBDIR%/
+LATEST=3.0
+DIRECTORY=release/%DATE%/
+DISTNAME=   gcc-${LATEST}
 
 # getting the right archives where they should be
-MASTER_SITE_SUBDIR=gcc-2.95.1
-DISTNAME= gcc-${VERSION}
+MASTER_SITE_SUBDIR=${LATEST_DATE}
 
 DIST_SUBDIR=egcs
 
-.if defined(ONE_ARCHIVE)
-DISTFILES= gcc-${VERSION}${EXTRACT_SUFX}
-.else
+DISTFILES=  gcc-${LATEST}${EXTRACT_SUFX}
 
-DISTFILES=	gcc-core-${VERSION}${EXTRACT_SUFX}
-.if defined(MAKE_GXX)
-DISTFILES+=     gcc-g++-${VERSION}${EXTRACT_SUFX}
-.endif
-#.if defined(MAKE_TESTS)
-#DISTFILES+=gcc-tests-${VERSION}${EXTRACT_SUFX}
-#.endif
-.if defined(MAKE_FORTRAN)
-DISTFILES+=gcc-g77-${VERSION}${EXTRACT_SUFX}
-.endif
-.if defined(MAKE_JAVA)
-DISTFILES+=gcc-java-${VERSION}${EXTRACT_SUFX}
-.endif
-.if defined(MAKE_OBJC)
-DISTFILES+=gcc-objc-${VERSION}${EXTRACT_SUFX}
-.endif
-.if defined(MAKE_CHILL)
-DISTFILES+=gcc-chill-${VERSION}${EXTRACT_SUFX}
-.endif
-.endif
+SITES=	
 
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
-MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
-MASTER_SITES+=	ftp://mirror.aarnet.edu.au/pub/${DIRECTORY}
-MASTER_SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
-MASTER_SITES+= ftp://cambridge.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.ninemoons.com/pub/mirrors/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.fu-berlin.de/unix/languages/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.crc.ca/pub/packages/egcs/%SUBDIR%/
-MASTER_SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
+SITES+= ftp://ftp.uvsq.fr/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.grolier.fr/pub/egcs/${DIRECTORY}
+SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}
+SITES+= ftp://chardonnay.elis.rug.ac.be/pub/mirrors/gcc.cygnus.com/pub/gcc/${DIRECTORY}
+SITES+= ftp://gd.tuwien.ac.at/gnu/gcc/${DIRECTORY}
+SITES+=	ftp://egcs.cygnus.com/pub/egcs/${DIRECTORY} 
+SITES+= ftp://ftp.goof.com/pub/pcg/egcs/${DIRECTORY}
+SITES+= ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/${DIRECTORY}
+SITES+= ftp://cambridge.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/egcs/${DIRECTORY}
 
-# couldn't contact those, maybe they work ?
-MASTER_SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
-MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
-MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
+SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://sunsite.auc.dk/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.fu-berlin.de/unix/languages/egcs/egcs/${DIRECTORY}
+SITES+= ftp://ftp.gwdg.de/pub/cygnus/egcs/${DIRECTORY}
+SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/egcs/${DIRECTORY}
+SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/egcs/${DIRECTORY}
+SITES+= ftp://ftp.sunet.se/pub/gnu/egcs/${DIRECTORY}
+SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/egcs/${DIRECTORY}
+SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.ntua.gr/pub/gnu/egcs/${DIRECTORY}
+SITES+= ftp://ftp.nluug.nl/pub/languages/egcs/${DIRECTORY}
+SITES+= ftp://ftp.dti.ad.jp/pub/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.win.or.jp/pub/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.lab.kdd.co.jp/lang/egcs/${DIRECTORY}
+SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.crc.ca/pub/packages/egcs/${DIRECTORY}
+SITES+= ftp://ftp.nc.orc.ru/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/egcs/${DIRECTORY}
+SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/egcs/${DIRECTORY}
+SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/egcs/${DIRECTORY}
 
-# Misc bug sections
-pre-fetch:
-.if (${MACHINE_ARCH} == "i386")
-	@(cd /tmp && /usr/bin/as -k ${FILESDIR}/gas-bug/test-i386-gas.s) || \
-	(echo "Your gas has a bug, see ${FILESDIR}/gas-bug for details"; exit 1)
-.endif
+# Can't contact those, maybe they work ?
+SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/egcs/${DIRECTORY}
+SITES+= ftp://sunsite.icm.edu.pl/pub/programming/egcs/${DIRECTORY}
+SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/egcs/${DIRECTORY}
+SITES+= ftp://ftp.lca.uevora.pt/pub/egcs/${DIRECTORY}
+SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/egcs/${DIRECTORY}
+SITES+= ftp://linux.ihep.su/pub/cygnus/egcs/${DIRECTORY}
+SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/egcs/${DIRECTORY}
+SITES+= ftp://ftp.ninemoons.com/pub/mirrors/egcs/${DIRECTORY}
+
+# Bad mirrors (no snapshot)
+# ftp.lip6.fr, ftp.ilog.fr, ftp.irisa.fr
+# No route to host
+# mirrors.aarnet.edu.au
+#SITES+=	ftp://ftp.lip6.fr/pub/egcs/${DIRECTORY}
+#SITES+= ftp://ftp.ilog.fr/pub/Mirrors/egcs/${DIRECTORY}
+#SITES+= ftp://ftp.irisa.fr/pub/mirrors/egcs.cygwin.com/gcc/${DIRECTORY}
+MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
+
+# add a possible next snapshot
 
 #### 
 # Patch section
 
-PATCH_LIST=patch-core-*
-.if defined(MAKE_GXX)
-PATCH_LIST+=patch-g++-*
-.endif
-.if defined(MAKE_OBJC)
-PATCH_LIST+=patch-objc-*
-.endif
-.if defined(MAKE_CHILL)
-PATCH_LIST+=patch-chill-*
-.endif
-.if defined(MAKE_FORTRAN)
-PATCH_LIST+=patch-g77-*
-.endif
-.if defined(MAKE_JAVA)
-PATCH_LIST+=patch-java-*
-.endif
-
 # get openbsd configuration files where they should be
 post-patch:
-		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs rm
-	cp -R ${FILESDIR}/config/* ${WRKSRC}
-	rm -rf ${WRKSRC}/texinfo 
+#	cp -R ${FILESDIR}/config/* ${WRKSRC}
+#	cp -R ${FILESDIR}/include/* ${WRKSRC}/gcc/ginclude
+	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoreconf
-	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoreconf
+	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoheader
+	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/fastjar && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC} && rm -rf texinfo
+	cd ${WRKSRC} && rm -rf zlib
+
+
+
 
 ####
 # configure section
 #
+# define AS_PATH/LD_PATH is you don't want to use the default as/ld.
+# This should not be used for regular releases, but if you're using this
+# snapshot, you know what you're doing, don't you ?
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=	gnu dest
+
+#CONFIGURE_SCRIPT=../source/configure
 
 LANGS=c
 .if defined(MAKE_GXX)
-LANGS+=c++
+LANGS:=${LANGS},c++
+MULTI_PACKAGES+=-c++
 .endif
 .if defined(MAKE_FORTRAN)
-LANGS+=f77
+LANGS:=${LANGS},f77
 .endif
 .if defined(MAKE_CHILL)
-LANGS+=CHILL
+LANGS.=${LANGS},CHILL
 .endif
 .if defined(MAKE_OBJC)
-LANGS+=objc
+LANGS:=${LANGS},objc
 .endif
 .if defined(MAKE_JAVA)
-LANGS+=java
+LANGS:=${LANGS},java
 .endif
 
-CONFIGURE_ENV=LANGUAGES='${LANGS}'  
+# Note: the configure target passes CFLAGS to the configure script anyways.
 
-CONFIGURE_ARGS=--verbose --with-gnu-ld --with-gnu-as \
---program-transform-name=s,^,e, \
---disable-subdir-texinfo \
---disable-nls
+CFLAGS=-O2 -g
+
+
+CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
+--disable-nls 
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
 CONFIGURE_ARGS+=--enable-cpp
+CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
-# Not really stable yet
-# CONFIGURE_ARGS+= --enable-threads=yes
+# if you wish to try your luck
+#CONFIGURE_ARGS+= --enable-threads=yes
+
+.if defined(AS_PATH)
+CONFIGURE_ARGS += --with-as=${AS_PATH}
+.else
+CONFIGURE_ARGS += --with-gnu-as 
+.endif
+
+.if defined(LD_PATH)
+CONFIGURE_ARGS += --with-ld=${LD_PATH}
+.else
+CONFIGURE_ARGS += --with-gnu-ld 
+.endif
+
+CONFIGURE_ARGS += ${CONFIGURE_SHARED}
+
 SEPARATE_BUILD=concurrent
+#WRKBUILD=${WRKDIR}/build-${MACHINE_ARCH}
+
+
 
 ####
 # build section
@@ -215,68 +236,53 @@ SEPARATE_BUILD=concurrent
 # reported to MAINTAINER.
 #USE_GMAKE= yes
 
-# desactivate the fixincludes mechanism by supplying a script which does
-# nothing
-pre-build:
-	echo "#!/bin/sh" >${WRKBUILD}/gcc/fixinc.sh
-
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET=bootstrap
+#ALL_TARGET=bootstrap3
 # ALL_TARGET=bootstrap-lean
-# XXX we need to override do-build to get the warnings from within make
-do-build:
-	@(cd ${WRKBUILD}; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f Makefile ${ALL_TARGET} 2>warnings) || \
-	(echo "*** Make bootstrap failed."; \
-	echo "*** Look at ${WRKBUILD}/warnings for errors"; exit 1)
+
+FAKE_FLAGS=DESTDIR=${WRKINST}
+
+# desactivate the fixincludes mechanism by supplying a script which does
+# nothing
+pre-build:
+	sed -e s,@WRKBUILD@,${WRKBUILD}, -e s,@FILESDIR@,${FILESDIR}, \
+	${FILESDIR}/fixinc.sh.m4 >${WRKSRC}/gcc/fixinc/openbsd-special
+	chmod a+x ${WRKSRC}/gcc/fixinc/openbsd-special
+	echo "cp ${WRKSRC}/gcc/fixinc/openbsd-special ${WRKBUILD}/gcc/fixinc.sh" >${WRKSRC}/gcc/fixinc/mkfixinc.sh
 
 ####
 # Install & tests section 
 
-# Tests no longer need to be performed at the end of install, this
-# was a bug in libstdc++/openbsd.ml
+post-build:
+		# avoid packaging include copies along...
+	find ${WRKBUILD} -name \*.orig|xargs rm
+	mkdir -p ${WRKBUILD}/gcc/include/machine
+	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
+
+# Tests still need to be performed at the end of install, I don't know why.
 .if defined(MAKE_TESTS)
 TEST_RESULT=${WRKBUILD}/test.result
 
-post-build:
+post-install:
 	@(cd ${WRKBUILD}; ulimit -c 0; \
-	${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} -f Makefile check && \
+	${MAKE_ENV} make -f ${MAKE_FILE} check && \
 	${WRKSRC}/contrib/test_summary >${TEST_RESULT})
-	@echo "Please send the tests results to the egcs project"
+	@echo "Please send the tests results to the gcc project"
 	@echo "By invoking make send-results"
 
 send-results: 
 	[ -f ${TEST_RESULT} ] && sh ${TEST_RESULT}
+.else
 .endif
 
-PLIST=${WRKBUILD}/PLIST
-
-M4FLAGS=-Uinclude -DDISTNAME=${DISTNAME}
-.if defined(MAKE_GXX)
-M4FLAGS+= -DGXX
-.endif
-.if defined(MAKE_FORTRAN)
-M4FLAGS+= -DFORTRAN
-.endif
-.if defined(MAKE_CHILL)
-M4FLAGS+= -DCHILL
-.endif
-.if defined(MAKE_OBJC)
-M4FLAGS+= -DOBJC
-.endif
-.if defined(MAKE_JAVA)
-M4FLAGS+= -DJAVA
-.endif
+#USE_GMAKE=Yes
+SED_PLIST=|sed -e s/@GCCARCH@/`${GCC_NAME} -dumpmachine`/ \
+	-e s/@VERSION@/`${GCC_NAME} -dumpversion`/ \
+	-e 's/@COREPKG@/${DISTNAME}-core/'
 
 GCC_NAME=${WRKBUILD}/gcc/xgcc
-pre-install:
-	${M4} ${M4FLAGS} -DARCH=`${GCC_NAME} -dumpmachine` \
-	-DVERSION=`${GCC_NAME} -dumpversion` \
-	<${FILESDIR}/PLIST.template >${PLIST}
 
 .include <bsd.port.mk>
 
-.if !defined(NO_SHARED_LIBS)
-M4FLAGS+= -DDYNAMIC
-.endif

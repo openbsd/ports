@@ -1,0 +1,13 @@
+$OpenBSD: patch-libstdc++-v3_libmath_mathconf_h,v 1.1 2001/07/04 15:07:32 espie Exp $
+--- libstdc++-v3/libmath/mathconf.h.orig	Sun Feb 25 10:25:42 2001
++++ libstdc++-v3/libmath/mathconf.h	Wed Jul  4 14:25:37 2001
+@@ -34,6 +34,9 @@
+ # include <endian.h>
+ #else
+ # ifdef _GLIBCPP_HAVE_MACHINE_ENDIAN_H
++#  ifdef _GLIBCPP_HAVE_SYS_TYPES_H
++#   include <sys/types.h>
++#  endif
+ #  include <machine/endian.h>
+ # else
+ #  ifdef _GLIBCPP_HAVE_SYS_MACHINE_H
