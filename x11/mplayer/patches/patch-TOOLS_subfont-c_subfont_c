@@ -1,0 +1,22 @@
+$OpenBSD: patch-TOOLS_subfont-c_subfont_c,v 1.1 2002/10/22 21:41:43 espie Exp $
+--- TOOLS/subfont-c/subfont.c.orig	Tue Oct 22 23:32:07 2002
++++ TOOLS/subfont-c/subfont.c	Tue Oct 22 23:35:35 2002
+@@ -834,6 +834,18 @@ unsigned gmatrix(unsigned *m, int r, int
+ }
+ 
+ 
++// Returns current time in microseconds
++
++#include <sys/time.h>
++
++unsigned int GetTimer(){
++  struct timeval tv;
++  struct timezone tz;
++//  float s;
++  gettimeofday(&tv,&tz);
++//  s=tv.tv_usec;s*=0.000001;s+=tv.tv_sec;
++  return (tv.tv_sec*1000000+tv.tv_usec);
++}  
+ void alpha() {
+     unsigned int ttime;
+     int const g_r = ceil(radius);
