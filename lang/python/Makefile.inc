@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2005/02/24 13:20:41 alek Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2005/03/03 23:20:47 alek Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -42,11 +42,14 @@ SUBPACKAGE?=
 
 # All subpackages depend on the main python package.
 
-.if defined(PACKAGING) && !empty(SUBPACKAGE)
-RUN_DEPENDS=		::lang/python/${VERSION}
-.else
+.if defined(PACKAGING)
+.  if !empty(SUBPACKAGE)
+RUN_DEPENDS=	::lang/python/${VERSION}
+LIB_DEPENDS=
+.  else
 WANTLIB=	ssl curses termcap panel m crypto c util z readline pthread \
 		${WANTLIB-extra}
+.  endif 
 .endif
 
 # On architectures with shared libs, no_xxx flavors are a convenient
@@ -66,7 +69,7 @@ LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-bsddb"
-LIB_DEPENDS+=		lib/db4/db.=4:db-4.*:databases/db/v4
+LIB_DEPENDS=		lib/db4/db.=4:db-4.*:databases/db/v4
 .endif
 
 .if empty(FLAVOR:L:Mno_gdbm)
@@ -80,7 +83,7 @@ LIB_DEPENDS+=		gdbm.3::databases/gdbm
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-gdbm"
-LIB_DEPENDS+=		gdbm.3::databases/gdbm
+LIB_DEPENDS=		gdbm.3::databases/gdbm
 .endif
 
 .if empty(FLAVOR:L:Mno_idle) && empty(FLAVOR:L:Mno_tkinter)
@@ -107,7 +110,7 @@ PKG_ARGS+=-Dtkinter=0
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-tkinter"
-LIB_DEPENDS+=		tk84:tk-8.4.*:x11/tk/8.4
+LIB_DEPENDS=		tk84:tk-8.4.*:x11/tk/8.4
 WANTLIB=		tcl84 X11
 .endif
 
@@ -122,7 +125,7 @@ LIB_DEPENDS+=		gmp::devel/gmp
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-mpz"
-LIB_DEPENDS+=		gmp::devel/gmp
+LIB_DEPENDS=		gmp::devel/gmp
 .endif
 
 .if empty(FLAVOR:L:Mno_expat)
@@ -136,7 +139,7 @@ LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-expat"
-LIB_DEPENDS+=		expat.4.0:expat->=1.95.6:textproc/expat
+LIB_DEPENDS=		expat.4.0:expat->=1.95.6:textproc/expat
 .endif
 
 # Strip off no_xxx flavors from the package name if we are not
