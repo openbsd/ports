@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/28 20:15:07 naddy Exp $
+bin/grepmail
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Mail/Folder/FastReader.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Mail/Folder/FastReader/FastReader.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Mail/Folder/FastReader/FastReader.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Mail/Folder/FastReader/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/grepmail/.packlist
+man/man1/grepmail.1
+man/man3/Mail::Folder::FastReader.3p
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/grepmail
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Mail/Folder/FastReader
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Mail/Folder
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Mail/Folder
