@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/07 06:33:19 shell Exp $
+sbin/pcscd
+include/atrhandler.h
+include/configfile.h
+include/debuglog.h
+include/dyn_generic.h
+include/eventhandler.h
+include/hotplug.h
+include/ifdhandler.h
+include/ifdwrapper.h
+include/pcsclite.h
+include/prothandler.h
+include/readerfactory.h
+include/sys_generic.h
+include/thread_generic.h
+include/winscard.h
+include/winscard_msg.h
+include/winscard_svc.h
+include/wintypes.h
+lib/libpcsclite-core.a
+lib/libpcsclite-core.la
+lib/libpcsclite.a
+lib/libpcsclite.la
+share/examples/pcscd/reader.conf.sample
+%%SHARED%%
+@dirrm share/examples/pcscd

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/12/07 06:33:19 shell Exp $
+lib/libpcsclite-core.so.0.2
+lib/libpcsclite.so.0.1
+DYNLIBDIR(%B)

@@ -1,0 +1,24 @@
+# Configuration file for pcsc-lite
+# David Corcoran <corcoran@linuxnet.com>
+#
+# In this file, you can have more than one
+# reader information.
+#
+# FRIENDLYNAME		Give any name to your reader
+# DEVICENAME		Give any name to your reader
+# LIBPATH		The path of your reader's driver
+# CHANNELID :
+#	0x0103F8	COM1
+#	0x0102F8	COM2
+#	0x0103E8	COM3
+#	0x0102E8	COM4
+#
+# $OpenBSD: reader.conf.sample,v 1.1.1.1 2001/12/07 06:33:19 shell Exp $
+
+FRIENDLYNAME     "Generic Reader"
+DEVICENAME       GEN_SMART_RDR
+LIBPATH          /usr/lib/readers/libgen_ifd.so
+CHANNELID        0x0103F8
+
+
+# End of file
