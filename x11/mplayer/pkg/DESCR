@@ -18,6 +18,11 @@ antialiased shaded subtitles (9 supported types!!!) with european/ISO
 8859-1,2 (hungarian, english, czech, etc), cyrillic, korean fonts, and
 OSD?
 
+MPlayer might fail due to lack of shared memory, eg when using gui mode under
+KDE.  You can use config to change the shared memory limits without needing to
+recompile the kernel, e.g., "config -e -o bsd2 bsd".  On i386 it should be
+sufficient to add 8 to shmseg and 2048 to shmmaxpgs. 
+
 Flavors:
 
   sdl: enables sdl, requires devel/sdl
@@ -32,5 +37,10 @@ Flavors:
 
   win32: enables win32 codecs (i386-only)  To use this flavor, your
          kernel must be rebuilt with option USER_LDT
+
+  vorbis: enables vorbis, requires audio/libvorbis. There is a hack
+          that allows AVI files to contain an Ogg Vorbis audio stream,
+          but makes them incompatible with standard AVI. You need this
+          to play those AVIs
 
 WWW: ${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2002/06/29 11:51:22 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2002/08/15 19:00:40 mark Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
@@ -45,7 +45,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as \
 		--disable-alsa \
-		--disable-vorbis \
 		--disable-aa \
 		--disable-ossaudio \
 		--disable-arts \
@@ -58,7 +57,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv no_x11
+FLAVORS=	sdl ggi debug mad vorbis win32 iconv no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -101,6 +100,13 @@ CONFIGURE_ARGS+=--enable-mad
 LIB_DEPENDS+=	mad::audio/mad
 .else
 CONFIGURE_ARGS+=--disable-mad
+.endif
+
+.if ${FLAVOR:L:Mvorbis}
+CONFIGURE_ARGS+=--enable-vorbis
+LIB_DEPENDS+=	vorbis.0,vorbisfile.1::audio/libvorbis
+.else
+CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .if ${FLAVOR:L:Miconv}
