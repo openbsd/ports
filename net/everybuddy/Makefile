@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/12/03 21:10:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2002/04/15 06:04:38 pvalchev Exp $
 
 COMMENT=	"chat program that combines AIM, ICQ, and Yahoo! Chat"
 
@@ -29,7 +29,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-esd
 .else
 CONFIGURE_ARGS+=	--with-esd
-LIB_DEPENDS=		esd::audio/esound
+LIB_DEPENDS+=		esd::audio/esound
 .endif
 
 .include <bsd.port.mk>
