@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2001/05/24 02:28:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2001/07/17 01:23:50 espie Exp $
 
 COMMENT=	designer for qt2
 
-VERSION=	3.0
+VERSION=	3.1
 DISTNAME=	qt-designer-2.${VERSION}
 CATEGORIES=	x11 devel
 NEED_VERSION=	1.361
