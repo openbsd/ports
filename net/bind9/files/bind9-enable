@@ -1,0 +1,118 @@
+#!/bin/sh
+#
+#	$OpenBSD: bind9-enable,v 1.3 2001/01/18 09:32:22 jakob Exp $
+#
+#	this script replaces OpenBSD named files with the corresponding
+#	files from BIND v9.
+#
+
+PREFIX=y0y0y0
+BINDIR=/usr/sbin
+
+
+if [ `id -u` -ne 0 ]; then
+    echo "You must be root to run this script."
+    exit
+fi
+
+echo "This script will replace the OpenBSD named with BIND v9"
+echo ""
+echo -n "Are you sure you want to to this (y/[n])? "
+
+read answer
+echo ""
+
+if [ X$answer != Xy ]; then
+    echo "exit"
+    exit
+fi
+
+######################################################################
+echo "Removing obsolete files:"
+
+for file in \
+    /usr/sbin/addr \
+    /usr/sbin/dig \
+    /usr/sbin/dnsquery \
+    /usr/sbin/host \
+    /usr/sbin/named \
+    /usr/sbin/named.reload \
+    /usr/sbin/named.restart \
+    /usr/sbin/ndc \
+    /usr/sbin/nslookup \
+    /usr/share/man/cat1/dig.0 \
+    /usr/share/man/cat1/dnsquery.0 \
+    /usr/share/man/cat1/host.0 \
+    /usr/share/man/cat8/named-xfer.0 \
+    /usr/share/man/cat8/named.0 \
+    /usr/share/man/cat8/named.reload.0 \
+    /usr/share/man/cat8/named.restart.0 \
+    /usr/share/man/cat8/ndc.0 \
+    /usr/share/man/cat8/nslookup.0 \
+    /usr/share/misc/nslookup.help \
+    /var/named/named-xfer
+do
+    echo " $file"
+    rm -f $file
+done
+
+echo ""
+echo done.
+
+######################################################################
+echo "Creating soft links for binaries:"
+
+for file in \
+    dig host nslookup nsupdate
+do
+    echo " $BINDIR/$file -> $PREFIX/bin/$file"
+    rm -f $BINDIR/$file
+    ln -s $PREFIX/bin/$file $BINDIR/$file
+done
+
+for file in \
+    named rndc lwresd \
+    dnssec-keygen dnssec-makekeyset dnssec-signkey dnssec-signzone
+do
+    echo " $BINDIR/$file -> $PREFIX/sbin/$file"
+    rm -f $BINDIR/$file
+    ln -s $PREFIX/sbin/$file $BINDIR/$file
+done
+
+echo ""
+echo done.
+
+######################################################################
+echo -n "Setup directory structure:"
+
+if [ ! -d /var/named/var ]; then
+    echo " /var/named/var"
+    install -d -o root  -g wheel -m 775 /var/named/var
+fi
+
+if [ ! -d /var/named/var/run ]; then
+    echo " /var/named/var/run"
+    install -d -o named -g wheel -m 775 /var/named/var/run
+fi
+
+if [ ! -d /var/named/var/tmp ]; then
+    echo " /var/named/var/tmp"
+    install -d -o named -g wheel -m 775 /var/named/var/tmp
+fi
+
+echo ""
+echo done.
+
+######################################################################
+config=/var/named/etc/named.conf
+echo -n "Symlink $config:"
+
+if [ ! -L $config -a ! -e $config ]; then
+    echo -n " $config->../named.conf"
+    ln -s ../named.conf $config
+else
+    echo -n " not needed"
+fi
+
+echo ""
+echo done.
