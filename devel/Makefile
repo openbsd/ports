@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2004/12/09 05:17:10 kevlo Exp $
+# $OpenBSD: Makefile,v 1.270 2004/12/09 06:30:50 kevlo Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -179,6 +179,7 @@
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
+     SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-Locale-PGettext
      SUBDIR += p5-Locale-Maketext-Fuzzy
