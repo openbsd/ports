@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 1999/09/26 21:26:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1999/10/29 10:10:36 turan Exp $
+
+BROKEN=		problems with i386 obj file, xa1.0_cyuv_netbsd386.o.Z
 
 CDROM=        "NOFEE: can not sell"
 
