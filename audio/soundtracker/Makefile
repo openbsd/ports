@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/02/05 18:04:10 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2002/04/15 20:04:44 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=		"Music tracking tool for X11"
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	v0.6
 MASTER_SITES=		http://www.soundtracker.org/dl/%SUBDIR%/ \
 			ftp://vedge.com.ar/pub/mirror/soundtracker/%SUBDIR%/
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
+LIB_DEPENDS=		gtk.1.2,gdk.1.2::x11/gtk+ \
 			intl.1::devel/gettext \
 			iconv.2::converters/libiconv \
 			audiofile::devel/libaudiofile
@@ -47,7 +47,9 @@ CONFIGURE_ARGS+=	--disable-gnome
 CONFIGURE_ARGS+=	--disable-sun
 .endif
 
-.if empty(FLAVOR:L:Mesd)
+.if ${FLAVOR:L:Mesd}
+LIB_DEPENDS+=		esd.2::audio/esound
+.else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
 
