@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/03/31 04:33:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2003/12/27 23:31:39 jose Exp $
 
 COMMENT=		"GPL computer algebra system based on DOE Macsyma"
 
@@ -29,9 +29,9 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-clisp 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=		Yes
-LIB_DEPENDS+= 		tcl83.1.3::lang/tcl/8.3 \
-			tk83.1.3::x11/tk/8.3 
-CONFIGURE_ARGS+=	--with-wish=${LOCALBASE}/bin/wish8.3
+LIB_DEPENDS+= 		tcl84::lang/tcl/8.4 \
+			tk84::x11/tk/8.4 
+CONFIGURE_ARGS+=	--with-wish=${LOCALBASE}/bin/wish8.4
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/11/15 15:12:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2003/12/27 23:33:12 jose Exp $
 
 COMMENT=	"pure-Tcl implementation of XML parser"
 
@@ -15,12 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	:tcl-8.3.*:lang/tcl/8.3
+RUN_DEPENDS=	:tcl-8.4.*:lang/tcl/8.4
 
 NO_BUILD=       Yes
 NO_REGRESS=	Yes
 
-INSTDIR=	${PREFIX}/lib/tcl8.3/TclXML
+INSTDIR=	${PREFIX}/lib/tcl8.4/TclXML
 DOCDIR=		${PREFIX}/share/doc/TclXML
 
 do-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/10/26 19:13:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.22 2003/12/27 23:30:05 jose Exp $
 
 COMMENT=		"Tcl/Tk interface to the MH mail system"
 
@@ -16,11 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_TCLTK:=exmh/}
 
-BUILD_DEPENDS=		:tcl-8.3.*:lang/tcl/8.3
+BUILD_DEPENDS=		:tcl-8.4.*:lang/tcl/8.4
 RUN_DEPENDS=		:expect-*:lang/expect\
 			:nmh-*:mail/nmh\
 			:metamail-*:mail/metamail\
-			:tk-8.3.*:x11/tk/8.3
+			:tk-8.4.*:x11/tk/8.4
 USE_X11=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/exmh
 	cp -r ${WRKSRC}/lib/. ${PREFIX}/share/exmh
 	cd ${PREFIX}/share && echo 'auto_mkindex exmh'\
-		| ${LOCALBASE}/bin/tclsh8.3
+		| ${LOCALBASE}/bin/tclsh8.4
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/exmh
 	find ${PREFIX}/share/exmh -type d -print0 | xargs -0 chmod ${DIRMODE}
 	find ${PREFIX}/share/exmh -type f -print0 | xargs -0 chmod ${SHAREMODE}
