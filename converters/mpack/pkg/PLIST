@@ -1,0 +1,4 @@
+bin/mpack
+bin/munpack
+man/man1/mpack.1
+man/man1/munpack.1
