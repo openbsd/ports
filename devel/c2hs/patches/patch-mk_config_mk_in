@@ -1,0 +1,21 @@
+$OpenBSD: patch-mk_config_mk_in,v 1.1.1.1 2004/05/08 07:21:03 dons Exp $
+
+Canonical install directory
+
+--- mk/config.mk.in.orig	2004-05-08 13:27:43.000000000 +1000
++++ mk/config.mk.in	2004-05-08 13:28:09.000000000 +1000
+@@ -72,10 +72,10 @@ DESTDIR =
+ # the $(PACKAGE) variable is set by the toplevel Makefile in each compiler
+ # package
+ #
+-pkgdatadir    = $(datadir)/$(PACKAGE)-$(PCKVERSION)
+-pkgdocdir     = $(docdir)/$(PACKAGE)-$(PCKVERSION)
+-pkglibdir     = $(libdir)/$(PACKAGE)-$(PCKVERSION)/$(SYS)
+-pkgimportdir  = $(pkglibdir)/import
++pkgdatadir    = $(datadir)/$(PACKAGE)
++pkgdocdir     = $(docdir)/$(PACKAGE)
++pkglibdir     = $(libdir)/$(PACKAGE)
++pkgimportdir  = $(pkglibdir)/imports
+ 
+ 
+ # Haskell compiler: for details in the supported systems check 
