@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.377 2001/03/28 15:07:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.378 2001/03/29 19:01:05 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -978,137 +978,6 @@ IGNORE= "-- ${FULLPKGNAME:C/-[0-9].*//g} comes with ${OPSYS} as of release ${COM
 
 .endif		# NO_IGNORE
 
-.if defined(IGNORE) && !defined(NO_IGNORE)
-fetch checksum extract patch configure all build install \
-uninstall deinstall package:
-.  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME} ${IGNORE}."
-.  endif
-
-.else 
-
-
-# Most standard port targets create a cookie to avoid being re-run.
-#
-# fetch is an exception, as it uses the files it fetches as `cookies',
-# and it's run by checksum, so in essence it's a sub-goal of extract,
-# in normal use.
-# 
-# Besides, fetch can't create cookies, as it does not have WRKDIR available
-# in the first place.
-#
-# IMPORTANT: pre-fetch/do-fetch/post-fetch MUST be designed so that they
-# can be run several times in a row.
-
-fetch: fetch-depends
-# You need to define PERMIT_* to make the warning go away.
-# See ports/infrastructure/templates/Makefile.template
-	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}"
-.  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-    !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
-	@echo >&2 "*** The licensing info for this port is incomplete."
-	@echo >&2 "*** Please notify the OpenBSD port maintainer: ${MAINTAINER}"
-.  endif
-.  if target(pre-fetch)
-	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
-.  endif
-.  if target(do-fetch)
-	@cd ${.CURDIR} && exec ${MAKE} do-fetch
-.  else
-# What FETCH normally does:
-.    if !empty(ALLFILES)
-	@cd ${.CURDIR} && exec ${MAKE} ${ALLFILES:S@^@${FULLDISTDIR}/@}
-.    endif
-# End of FETCH
-.  endif
-.  if target(post-fetch)
-	@cd ${.CURDIR} && exec ${MAKE} post-fetch
-.  endif
-
-
-# Set to true to try to retrieve older distfiles from ftp.openbsd.org if
-# checksums no longer match.
-
-REFETCH?=false
-
-checksum: fetch
-.  if ! defined(NO_CHECKSUM)
-	@if [ ! -f ${CHECKSUM_FILE} ]; then \
-	  ${ECHO_MSG} ">> No checksum file."; \
-	else \
-	  cd ${DISTDIR}; OK=true; list=''; \
-		for file in ${_CKSUMFILES}; do \
-		  for cipher in ${PREFERRED_CIPHERS}; do \
-			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
-			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
-		  done; \
-		  case "$$4" in \
-			"") \
-			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
-			  OK=false;; \
-			"IGNORE") \
-			  echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
-			  echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
-			  OK=false;; \
-			*) \
-			  CKSUM=`$$cipher < $$file`; \
-			  case "$$CKSUM" in \
-			  	"$$4") \
-				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
-				*) \
-				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-				  list="$$list $$file $$cipher $$4"; \
-				  OK=false;; \
-			  esac;; \
-		  esac; \
-		done; \
-		set --; \
-		for file in ${_IGNOREFILES}; do \
-		  set -- `grep "($$file)" ${CHECKSUM_FILE}` || \
-			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
-			  OK=false; } ; \
-		  case "$$4" in \
-		  	"IGNORE") : ;; \
-			*) \
-			  echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
-			  echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
-			  OK=false;; \
-		  esac; \
-		done; \
-		if ! $$OK; then \
-		  if ${REFETCH}; then \
-		  	cd ${.CURDIR} && ${MAKE} refetch PROBLEMS="$$list"; \
-		  else \
-			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-			echo "are up to date.  If you want to override this check, type"; \
-			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
-			exit 1; \
-		  fi; \
-		fi ; \
-  fi
-.  endif
-
-refetch:
-	@set -- ${PROBLEMS}; \
-	 while [ $$# -gt 0 ]; do \
-		file=$$1; \
-		cipher=$$2; \
-		value=$$3; \
-		shift; shift; shift; \
-		rm ${FULLDISTDIR}/$$file; \
-		cd ${.CURDIR} && ${MAKE} ${FULLDISTDIR}/$$file \
-			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/$$cipher/$$value/"; \
-	done;
-	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
-
-
-
-uninstall deinstall:
-	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
-	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE} ${_SUBPACKAGE_COOKIES}
-
-.endif # IGNORECMD
 
 .if !defined(DEPENDS_TARGET)
 .  if make(reinstall)
@@ -1274,6 +1143,136 @@ ${_DEP}-depends:
 .endfor
 
 
+.if defined(IGNORE) && !defined(NO_IGNORE)
+fetch checksum extract patch configure all build install \
+uninstall deinstall fake package:
+.  if !defined(IGNORE_SILENT)
+	@${ECHO_MSG} "===>  ${FULLPKGNAME} ${IGNORE}."
+.  endif
+
+.else 
+
+
+# Most standard port targets create a cookie to avoid being re-run.
+#
+# fetch is an exception, as it uses the files it fetches as `cookies',
+# and it's run by checksum, so in essence it's a sub-goal of extract,
+# in normal use.
+# 
+# Besides, fetch can't create cookies, as it does not have WRKDIR available
+# in the first place.
+#
+# IMPORTANT: pre-fetch/do-fetch/post-fetch MUST be designed so that they
+# can be run several times in a row.
+
+fetch: fetch-depends
+# You need to define PERMIT_* to make the warning go away.
+# See ports/infrastructure/templates/Makefile.template
+	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}"
+.  if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
+    !defined(PERMIT_DISTFILES_CDROM) || !defined(PERMIT_DISTFILES_FTP)
+	@echo >&2 "*** The licensing info for this port is incomplete."
+	@echo >&2 "*** Please notify the OpenBSD port maintainer: ${MAINTAINER}"
+.  endif
+.  if target(pre-fetch)
+	@cd ${.CURDIR} && exec ${MAKE} pre-fetch
+.  endif
+.  if target(do-fetch)
+	@cd ${.CURDIR} && exec ${MAKE} do-fetch
+.  else
+# What FETCH normally does:
+.    if !empty(ALLFILES)
+	@cd ${.CURDIR} && exec ${MAKE} ${ALLFILES:S@^@${FULLDISTDIR}/@}
+.    endif
+# End of FETCH
+.  endif
+.  if target(post-fetch)
+	@cd ${.CURDIR} && exec ${MAKE} post-fetch
+.  endif
+
+
+# Set to true to try to retrieve older distfiles from ftp.openbsd.org if
+# checksums no longer match.
+
+REFETCH?=false
+
+checksum: fetch
+.  if ! defined(NO_CHECKSUM)
+	@if [ ! -f ${CHECKSUM_FILE} ]; then \
+	  ${ECHO_MSG} ">> No checksum file."; \
+	else \
+	  cd ${DISTDIR}; OK=true; list=''; \
+		for file in ${_CKSUMFILES}; do \
+		  for cipher in ${PREFERRED_CIPHERS}; do \
+			set -- `grep -i "^$$cipher ($$file)" ${CHECKSUM_FILE}` && break || \
+			  ${ECHO_MSG} ">> No $$cipher checksum recorded for $$file."; \
+		  done; \
+		  case "$$4" in \
+			"") \
+			  ${ECHO_MSG} ">> No checksum recorded for $$file."; \
+			  OK=false;; \
+			"IGNORE") \
+			  echo ">> Checksum for $$file is set to IGNORE in md5 file even though"; \
+			  echo "   the file is not in the "'$$'"{IGNOREFILES} list."; \
+			  OK=false;; \
+			*) \
+			  CKSUM=`$$cipher < $$file`; \
+			  case "$$CKSUM" in \
+			  	"$$4") \
+				  ${ECHO_MSG} ">> Checksum OK for $$file. ($$cipher)";; \
+				*) \
+				  echo ">> Checksum mismatch for $$file. ($$cipher)"; \
+				  list="$$list $$file $$cipher $$4"; \
+				  OK=false;; \
+			  esac;; \
+		  esac; \
+		done; \
+		set --; \
+		for file in ${_IGNOREFILES}; do \
+		  set -- `grep "($$file)" ${CHECKSUM_FILE}` || \
+			  { echo ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list." && \
+			  OK=false; } ; \
+		  case "$$4" in \
+		  	"IGNORE") : ;; \
+			*) \
+			  echo ">> Checksum for $$file is not set to IGNORE in md5 file even though"; \
+			  echo "   the file is in the "'$$'"{IGNOREFILES} list."; \
+			  OK=false;; \
+		  esac; \
+		done; \
+		if ! $$OK; then \
+		  if ${REFETCH}; then \
+		  	cd ${.CURDIR} && ${MAKE} refetch PROBLEMS="$$list"; \
+		  else \
+			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
+			echo "are up to date.  If you want to override this check, type"; \
+			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
+			exit 1; \
+		  fi; \
+		fi ; \
+  fi
+.  endif
+
+refetch:
+	@set -- ${PROBLEMS}; \
+	 while [ $$# -gt 0 ]; do \
+		file=$$1; \
+		cipher=$$2; \
+		value=$$3; \
+		shift; shift; shift; \
+		rm ${FULLDISTDIR}/$$file; \
+		cd ${.CURDIR} && ${MAKE} ${FULLDISTDIR}/$$file \
+			MASTER_SITE_OVERRIDE="ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/$$cipher/$$value/"; \
+	done;
+	cd ${.CURDIR} && exec ${MAKE} checksum REFETCH=false
+
+
+
+uninstall deinstall:
+	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
+	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
+	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIE} ${_SUBPACKAGE_COOKIES}
+
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
@@ -1291,6 +1290,8 @@ install: ${_INSTALL_COOKIE}
 .endif
 fake: ${_FAKE_COOKIE}
 package: ${_PACKAGE_COOKIE}
+
+.endif # IGNORECMD
 
 # The real targets. Note that some parts always get run, some parts can be
 # disabled, and there are hooks to override behavior.
