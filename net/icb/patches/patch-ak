@@ -1,5 +1,5 @@
---- icb/serverlist.c.~1~	Fri Feb 24 13:20:29 1995
-+++ icb/serverlist.c	Wed Jul 15 15:09:58 1998
+--- icb/serverlist.c.orig	Fri Feb 24 16:20:29 1995
++++ icb/serverlist.c	Sun Jan 16 01:56:24 2000
 @@ -1,4 +1,5 @@
  #include <stdio.h>
 +#include <stdlib.h>
@@ -12,7 +12,7 @@
  	char command[256];
 -	char pwd[256];
 +	char pwd[MAXPATHLEN];
-+	char * home;
++	char *home;
  	FILE *ret;
  
  #ifdef sgi
@@ -27,10 +27,10 @@
  #define SYSV
  #endif
 -	chdir(getenv("HOME"));
-+	home = getenv( "HOME" );
-+	if ( ! home )
-+		errx( 1, "can't get home directory from env" );
-+	chdir( home );
++	home = getenv("HOME");
++	if (!home)
++		errx(1, "can't get home directory from env");
++	chdir(home);
  	if (!stat(PERSONALSL,&statbuf))
  	{
 -		sprintf(command,"/bin/cat %s %s\n", PERSONALSL, SERVERLIST);

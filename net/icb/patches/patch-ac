@@ -1,19 +1,11 @@
-*** murgil/serverserve.c.orig	Wed May  6 18:47:32 1998
---- murgil/serverserve.c	Wed May  6 18:47:48 1998
-***************
-*** 33,39 ****
-  	if (port_fd > highestfd)
-  		highestfd = port_fd;
-  
-! 	signal(SIGALRM, gotalarm);
-  	timeisup = 0;
-  
-  	for (;;) {
---- 33,39 ----
-  	if (port_fd > highestfd)
-  		highestfd = port_fd;
-  
-! 	signal(SIGALRM, (void *)gotalarm);
-  	timeisup = 0;
-  
-  	for (;;) {
+--- murgil/serverserve.c.orig	Fri Feb 24 16:19:44 1995
++++ murgil/serverserve.c	Sun Jan 16 01:35:02 2000
+@@ -33,7 +33,7 @@
+ 	if (port_fd > highestfd)
+ 		highestfd = port_fd;
+ 
+-	signal(SIGALRM, gotalarm);
++	signal(SIGALRM, (void *)gotalarm);
+ 	timeisup = 0;
+ 
+ 	for (;;) {

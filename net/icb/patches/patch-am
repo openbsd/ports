@@ -1,308 +1,199 @@
-*** icb/unix.c.orig	Sat Feb 25 03:20:31 1995
---- icb/unix.c	Thu Oct 22 12:47:12 1998
-***************
-*** 9,19 ****
-  #include "externs.h"
-  #include <pwd.h>
-  #include <sys/dir.h>
-  
-  #undef stty
-  #undef gtty
-  
-! #ifndef SYSV
-  
-  #ifdef linux
-  #include <bsd/sgtty.h>
---- 9,43 ----
-  #include "externs.h"
-  #include <pwd.h>
-  #include <sys/dir.h>
-+ #include <sys/types.h>
-+ #include <sys/stat.h>
-+ #include <unistd.h>
-  
-  #undef stty
-  #undef gtty
-  
-! #ifdef SYSV
-! 
-! #define USE_TERMIO
-! #include <termio.h>
-! #define TTYSTRUCT termio
-! #define stty(fd,buf) ioctl((fd),TCSETA,(buf))
-! #define gtty(fd,buf) ioctl((fd),TCGETA,(buf))
-! 
-! #else /* SYSV */
-! 
-! # ifdef BSD4_4
-! # define USE_TERMIO
-! # include <termios.h>
-! # define TTYSTRUCT termios
-! # define stty(fd,buf) ioctl((fd),TIOCSETA,(buf))
-! # define gtty(fd,buf) ioctl((fd),TIOCGETA,(buf))
-! 
-! # endif /* BSD4_4 */
-! 
-! #endif /* SYSV */
-! 
-! #ifndef USE_TERMIO /* neither case above (SYSV or BSD4_4) */
-  
-  #ifdef linux
-  #include <bsd/sgtty.h>
-***************
-*** 22,39 ****
-  #endif
-  
-  #define TTYSTRUCT sgttyb
-! #define stty(fd,buf) ioctl((fd),TIOCSETN,(buf))
-  #define gtty(fd,buf) ioctl((fd),TIOCGETP,(buf))
-! #else /* SYSV */
-! #include <termio.h>
-! #define TTYSTRUCT termio
-! #define stty(fd,buf) ioctl((fd),TCSETA,(buf))
-! #define gtty(fd,buf) ioctl((fd),TCGETA,(buf))
-! #endif /* SYSV */
-  
-  char *getlogin();
-  
-  struct TTYSTRUCT origtty;	/* holds the user's original term settings */
-  
-  int badttyinfo = 0;	/* used when running under some weird modes */
-  
---- 46,60 ----
-  #endif
-  
-  #define TTYSTRUCT sgttyb
-! #define stty(fd,buf) ioctl((fd),TIOCSETP,(buf))
-  #define gtty(fd,buf) ioctl((fd),TIOCGETP,(buf))
-! #endif
-  
-  char *getlogin();
-  
-  struct TTYSTRUCT origtty;	/* holds the user's original term settings */
-+ struct stat origtty_stats;	/* holds termainal stats */
-+ char *mytty = NULL;		/* holds terminal name */
-  
-  int badttyinfo = 0;	/* used when running under some weird modes */
-  
-***************
-*** 79,91 ****
-  pushback(c)
-  char c;
-  {
-! #ifndef SYSV
-  	if (ioctl(0, TIOCSTI, &c) < 0)
-  		perror("TIOCSTI ioctl failed");
-! #else /* SYSV */
-  	if (ungetc(c,stdin) == EOF)
-  		perror("ungetc() failed");
-! #endif /* SYSV */
-  }
-  
-  
---- 100,112 ----
-  pushback(c)
-  char c;
-  {
-! #ifndef USE_TERMIO
-  	if (ioctl(0, TIOCSTI, &c) < 0)
-  		perror("TIOCSTI ioctl failed");
-! #else /* USE_TERMIO */
-  	if (ungetc(c,stdin) == EOF)
-  		perror("ungetc() failed");
-! #endif /* USE_TERMIO */
-  }
-  
-  
-***************
-*** 94,118 ****
-  
-  getterm()
-  {
-! #ifndef SYSV
-  	struct ltchars lt;
-! #endif /* SYSV */
-  	/* get tty settings */
-  	if (gtty(0,&origtty) < 0) {
-  		badttyinfo++;
-  		ttyinfo.erase = '\b';	/* ^H */
-  		ttyinfo.kill = '\025';	/* ^U */
-  	} else {
-! #ifndef SYSV
-  		ttyinfo.erase = origtty.sg_erase;
-  		ttyinfo.kill = origtty.sg_kill;
-! #else /* SYSV */
-  		ttyinfo.erase = origtty.c_cc[VERASE];
-  		ttyinfo.kill = origtty.c_cc[VKILL];
-! #endif /* SYSV */
-  	}
-  
-! #ifndef SYSV
-  	/* get local special chars */
-   	if (ioctl(0, TIOCGLTC, &lt) < 0) {
-  		ttyinfo.redraw = '\022'; /* ^R */
---- 115,144 ----
-  
-  getterm()
-  {
-! 	/* get terminal stats */
-! 	if ((mytty = ttyname(STDERR_FILENO))) {
-! 		if (stat(mytty, &origtty_stats)) mytty = NULL;
-! 	}
-! 
-! #ifndef USE_TERMIO
-  	struct ltchars lt;
-! #endif /* USE_TERMIO */
-  	/* get tty settings */
-  	if (gtty(0,&origtty) < 0) {
-  		badttyinfo++;
-  		ttyinfo.erase = '\b';	/* ^H */
-  		ttyinfo.kill = '\025';	/* ^U */
-  	} else {
-! #ifndef USE_TERMIO
-  		ttyinfo.erase = origtty.sg_erase;
-  		ttyinfo.kill = origtty.sg_kill;
-! #else /* USE_TERMIO */
-  		ttyinfo.erase = origtty.c_cc[VERASE];
-  		ttyinfo.kill = origtty.c_cc[VKILL];
-! #endif /* USE_TERMIO */
-  	}
-  
-! #ifndef USE_TERMIO
-  	/* get local special chars */
-   	if (ioctl(0, TIOCGLTC, &lt) < 0) {
-  		ttyinfo.redraw = '\022'; /* ^R */
-***************
-*** 121,130 ****
-  		ttyinfo.redraw = lt.t_rprntc;
-  		ttyinfo.werase = lt.t_werasc;
-  	}
-! #else /* SYSV */
-  	ttyinfo.redraw = '\022'; /* ^R */
-  	ttyinfo.werase = '\027'; /* ^W */
-! #endif /* SYSV */
-  
-  	/* get the current window size */
-  	getwinsize();
---- 147,156 ----
-  		ttyinfo.redraw = lt.t_rprntc;
-  		ttyinfo.werase = lt.t_werasc;
-  	}
-! #else /* USE_TERMIO */
-  	ttyinfo.redraw = '\022'; /* ^R */
-  	ttyinfo.werase = '\027'; /* ^W */
-! #endif /* USE_TERMIO */
-  
-  	/* get the current window size */
-  	getwinsize();
-***************
-*** 138,158 ****
-  {
-  	struct TTYSTRUCT tty;
-  
-  	if (badttyinfo)
-  		return;
-  
-- 
-  	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
-  
-  	/* turn on cbreak - turn off echo */
-! #ifndef SYSV
-  	tty.sg_flags |= CBREAK;
-  	tty.sg_flags &= ~ECHO;
-! #else /* SYSV */
-  	tty.c_lflag  &= ~ICANON;
-  	tty.c_cc[VEOF] = 1;
-  	tty.c_lflag &= ~ECHO;
-! #endif /* SYSV */
-  
-  	echomode = 0;
-  	/* set the new flags */
---- 164,187 ----
-  {
-  	struct TTYSTRUCT tty;
-  
-+ 	/* disable biff/mesg */
-+ 	if (mytty)
-+ 		chmod(mytty, origtty_stats.st_mode & ~(S_IXUSR | S_IWGRP));
-+ 
-  	if (badttyinfo)
-  		return;
-  
-  	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
-  
-  	/* turn on cbreak - turn off echo */
-! #ifndef USE_TERMIO
-  	tty.sg_flags |= CBREAK;
-  	tty.sg_flags &= ~ECHO;
-! #else /* USE_TERMIO */
-  	tty.c_lflag  &= ~ICANON;
-  	tty.c_cc[VEOF] = 1;
-  	tty.c_lflag &= ~ECHO;
-! #endif /* USE_TERMIO */
-  
-  	echomode = 0;
-  	/* set the new flags */
-***************
-*** 167,172 ****
---- 196,205 ----
-  
-  restoreterm()
-  {
-+ 	/* restore terminal stats */
-+ 	if (mytty)
-+ 		chmod(mytty, origtty_stats.st_mode);
-+ 
-  	if (badttyinfo)
-  		return;
-  
-***************
-*** 258,268 ****
-  	}
-  
-  	/* turn on echo */
-! #ifndef SYSV
-  	tty.sg_flags |= ECHO;
-! #else /* SYSV */
-  	tty.c_lflag  |= ECHO;
-! #endif /* SYSV */
-  
-  	echomode = 1;
-  
---- 291,301 ----
-  	}
-  
-  	/* turn on echo */
-! #ifndef USE_TERMIO
-  	tty.sg_flags |= ECHO;
-! #else /* USE_TERMIO */
-  	tty.c_lflag  |= ECHO;
-! #endif /* USE_TERMIO */
-  
-  	echomode = 1;
-  
-***************
-*** 287,297 ****
-  	}
-  
-  	/* turn off echo */
-! #ifndef SYSV
-  	tty.sg_flags &= ~ECHO;
-! #else /* SYSV */
-  	tty.c_lflag  &= ~ECHO;
-! #endif /* SYSV */
-  
-  	echomode = 0;
-  
---- 320,330 ----
-  	}
-  
-  	/* turn off echo */
-! #ifndef USE_TERMIO
-  	tty.sg_flags &= ~ECHO;
-! #else /* USE_TERMIO */
-  	tty.c_lflag  &= ~ECHO;
-! #endif /* USE_TERMIO */
-  
-  	echomode = 0;
-  
+--- icb/unix.c.orig	Fri Feb 24 16:20:31 1995
++++ icb/unix.c	Sun Jan 16 01:58:40 2000
+@@ -9,11 +9,35 @@
+ #include "externs.h"
+ #include <pwd.h>
+ #include <sys/dir.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <unistd.h>
+ 
+ #undef stty
+ #undef gtty
+ 
+-#ifndef SYSV
++#ifdef SYSV
++
++#define USE_TERMIO
++#include <termio.h>
++#define TTYSTRUCT termio
++#define stty(fd,buf) ioctl((fd),TCSETA,(buf))
++#define gtty(fd,buf) ioctl((fd),TCGETA,(buf))
++
++#else /* SYSV */
++
++# ifdef BSD4_4
++# define USE_TERMIO
++# include <termios.h>
++# define TTYSTRUCT termios
++# define stty(fd,buf) ioctl((fd),TIOCSETA,(buf))
++# define gtty(fd,buf) ioctl((fd),TIOCGETA,(buf))
++
++# endif /* BSD4_4 */
++
++#endif /* SYSV */
++
++#ifndef USE_TERMIO /* neither case above (SYSV or BSD4_4) */
+ 
+ #ifdef linux
+ #include <bsd/sgtty.h>
+@@ -22,18 +46,15 @@
+ #endif
+ 
+ #define TTYSTRUCT sgttyb
+-#define stty(fd,buf) ioctl((fd),TIOCSETN,(buf))
++#define stty(fd,buf) ioctl((fd),TIOCSETP,(buf))
+ #define gtty(fd,buf) ioctl((fd),TIOCGETP,(buf))
+-#else /* SYSV */
+-#include <termio.h>
+-#define TTYSTRUCT termio
+-#define stty(fd,buf) ioctl((fd),TCSETA,(buf))
+-#define gtty(fd,buf) ioctl((fd),TCGETA,(buf))
+-#endif /* SYSV */
++#endif
+ 
+ char *getlogin();
+ 
+ struct TTYSTRUCT origtty;	/* holds the user's original term settings */
++struct stat origtty_stats;	/* holds termainal stats */
++char *mytty = NULL;		/* holds terminal name */
+ 
+ int badttyinfo = 0;	/* used when running under some weird modes */
+ 
+@@ -79,13 +100,13 @@
+ pushback(c)
+ char c;
+ {
+-#ifndef SYSV
++#ifndef USE_TERMIO
+ 	if (ioctl(0, TIOCSTI, &c) < 0)
+ 		perror("TIOCSTI ioctl failed");
+-#else /* SYSV */
++#else /* USE_TERMIO */
+ 	if (ungetc(c,stdin) == EOF)
+ 		perror("ungetc() failed");
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ }
+ 
+ 
+@@ -94,25 +115,30 @@
+ 
+ getterm()
+ {
+-#ifndef SYSV
++	/* get terminal stats */
++	if ((mytty = ttyname(STDERR_FILENO))) {
++		if (stat(mytty, &origtty_stats)) mytty = NULL;
++	}
++
++#ifndef USE_TERMIO
+ 	struct ltchars lt;
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ 	/* get tty settings */
+ 	if (gtty(0,&origtty) < 0) {
+ 		badttyinfo++;
+ 		ttyinfo.erase = '\b';	/* ^H */
+ 		ttyinfo.kill = '\025';	/* ^U */
+ 	} else {
+-#ifndef SYSV
++#ifndef USE_TERMIO
+ 		ttyinfo.erase = origtty.sg_erase;
+ 		ttyinfo.kill = origtty.sg_kill;
+-#else /* SYSV */
++#else /* USE_TERMIO */
+ 		ttyinfo.erase = origtty.c_cc[VERASE];
+ 		ttyinfo.kill = origtty.c_cc[VKILL];
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ 	}
+ 
+-#ifndef SYSV
++#ifndef USE_TERMIO
+ 	/* get local special chars */
+  	if (ioctl(0, TIOCGLTC, &lt) < 0) {
+ 		ttyinfo.redraw = '\022'; /* ^R */
+@@ -121,10 +147,10 @@
+ 		ttyinfo.redraw = lt.t_rprntc;
+ 		ttyinfo.werase = lt.t_werasc;
+ 	}
+-#else /* SYSV */
++#else /* USE_TERMIO */
+ 	ttyinfo.redraw = '\022'; /* ^R */
+ 	ttyinfo.werase = '\027'; /* ^W */
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ 
+ 	/* get the current window size */
+ 	getwinsize();
+@@ -138,21 +164,24 @@
+ {
+ 	struct TTYSTRUCT tty;
+ 
++	/* disable biff/mesg */
++	if (mytty)
++		chmod(mytty, origtty_stats.st_mode & ~(S_IXUSR | S_IWGRP));
++
+ 	if (badttyinfo)
+ 		return;
+ 
+-
+ 	bcopy((char *)&origtty, (char *)&tty, (unsigned)sizeof(struct TTYSTRUCT));
+ 
+ 	/* turn on cbreak - turn off echo */
+-#ifndef SYSV
++#ifndef USE_TERMIO
+ 	tty.sg_flags |= CBREAK;
+ 	tty.sg_flags &= ~ECHO;
+-#else /* SYSV */
++#else /* USE_TERMIO */
+ 	tty.c_lflag  &= ~ICANON;
+ 	tty.c_cc[VEOF] = 1;
+ 	tty.c_lflag &= ~ECHO;
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ 
+ 	echomode = 0;
+ 	/* set the new flags */
+@@ -167,6 +196,10 @@
+ 
+ restoreterm()
+ {
++	/* restore terminal stats */
++	if (mytty)
++		chmod(mytty, origtty_stats.st_mode);
++
+ 	if (badttyinfo)
+ 		return;
+ 
+@@ -258,11 +291,11 @@
+ 	}
+ 
+ 	/* turn on echo */
+-#ifndef SYSV
++#ifndef USE_TERMIO
+ 	tty.sg_flags |= ECHO;
+-#else /* SYSV */
++#else /* USE_TERMIO */
+ 	tty.c_lflag  |= ECHO;
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ 
+ 	echomode = 1;
+ 
+@@ -287,11 +320,11 @@
+ 	}
+ 
+ 	/* turn off echo */
+-#ifndef SYSV
++#ifndef USE_TERMIO
+ 	tty.sg_flags &= ~ECHO;
+-#else /* SYSV */
++#else /* USE_TERMIO */
+ 	tty.c_lflag  &= ~ECHO;
+-#endif /* SYSV */
++#endif /* USE_TERMIO */
+ 
+ 	echomode = 0;
+ 
