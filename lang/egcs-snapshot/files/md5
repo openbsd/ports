@@ -1,3 +1,4 @@
-MD5 (egcs/egcs-19981122-19981130.diff.gz) = fca80bb7ec5eabf8c76fbb7579dc301f
-MD5 (egcs/egcs-19981122.tar.gz) = 4eac67b9fe16cf962611843bbf294791
-MD5 (egcs/egcs-19981130.tar.gz) = 580e4e1edb501b4c87d9e94079895fad 
+MD5 (egcs/egcs-19981130.tar.gz) = 580e4e1edb501b4c87d9e94079895fad
+MD5 (egcs/egcs-19981130-19981206.diff.gz) = ea51d3b845dca737550a01e61ccbb39e
+MD5 (egcs/egcs-19981206-19981213.diff.gz) = e83a44452b6057765eb8f22bb8582a8d
+MD5 (egcs/egcs-19981206.tar.gz) = 5f55ba0a5a719dbff577f89e01233eda

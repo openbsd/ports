@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.7 1998/12/05 23:25:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 1998/12/16 17:52:29 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -23,8 +23,6 @@ MAINTAINER=	Marc.Espie@openbsd.org
 
 # this will improve over time as more and more architectures are handled
 # with some help from Jason L. Wright for sparc...
-
-# 981130 builds for m68k, thanks to Andreas Schwab patch !
 ONLY_FOR_ARCHS = i386 sparc m68k
 
 # user configuration section
@@ -49,15 +47,16 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1998-11-30
+LATEST_DATE=1998-12-06
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
 # define NEXT_DATE to the next snapshot... you lose the ability to check
 # md5 sums, though.
+
 # You also may have to remove/add some patches, as these things ARE
 # usually passed along to the egcs ml.
-#NEXT_DATE=1998-11-30
+NEXT_DATE=1998-12-13
 #PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
@@ -190,30 +189,8 @@ post-patch:
 	find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
-.if !defined(MAKE_CHILL)
-	-${RM} -rf ${WRKSRC}/gcc/ch ${WRKSRC}/libchill
-.endif
 	cd ${WRKSRC}; \
-	for f in gcc/c-parse.y \
-		 gcc/cstamp-h.in \
-		 gcc/c-gperf.h \
-		 gcc/c-parse.c \
-		 gcc/c-parse.h \
-		 gcc/cexp.c \
-		 gcc/cp/parse.c \
-		 gcc/cp/parse.h \
-		 gcc/objc/objc-parse.c \
-		 gcc/objc/objc-parse.y \
-		 gcc/java/parse.h \
-		 gcc/java/parse.c \
-		 gcc/java/parse-scan.c \
-		 libf2c/libU77/stamp-h.in \
-		 contrib/fixinc/fixincl.x \
-		 contrib/fixinc/inclhack.sh \
-		 contrib/fixinc/fixincl.sh \
-		 gcc/fixinc/fixincl.x \
-		 gcc/fixinc/inclhack.sh \
-		 gcc/fixinc/fixincl.sh; \
+	for f in `cat ${FILESDIR}/fixdepend`;
 	do \
 		[ -f $$f ] && touch $$f; \
 	done 
@@ -232,9 +209,26 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_SCRIPT=../source/configure
 
-CONFIGURE_ENV=CFLAGS=-O2
+LANGS=c
+.if defined(MAKE_GXX)
+LANGS+=c++
+.endif
+.if defined(MAKE_FORTRAN)
+LANGS+=f77
+.endif
+.if defined(MAKE_CHILL)
+LANGS+=CHILL
+.endif
+.if defined(MAKE_OBJC)
+LANGS+=objc
+.endif
+.if defined(MAKE_JAVA)
+LANGS+=java
+.endif
+
+CONFIGURE_ENV=CFLAGS=-O2 LANGUAGES='${LANGS}'
 CONFIGURE_ARGS= --prefix=${PREFIX} \
---verbose --program-transform-name=s,^,e,
+--verbose --program-transform-name=s,^,e, 
 
 
 .if defined(AS_PATH)
@@ -252,6 +246,7 @@ CONFIGURE_ARGS += --with-gnu-ld
 .if (${MACHINE_ARCH} != "alpha")
 CONFIGURE_ARGS+=--enable-shared
 .endif
+
 
 # rebuild configure file after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
