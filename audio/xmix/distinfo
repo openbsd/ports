@@ -4,3 +4,5 @@ RMD160 (xmix-2.1.mixers.patch) = bbbc4b44ed603e54044fc1c71fa20f4373cae81a
 RMD160 (xmix-2.1.tar.gz) = 0f1bc15b89bfc657ade9b12cb9decb248d780925
 SHA1 (xmix-2.1.mixers.patch) = 86b423774a6afcd56a8f8931108823d702db1ea5
 SHA1 (xmix-2.1.tar.gz) = 390096a541a41ffb47c9b57ee6029211d31393d3
+SIZE (xmix-2.1.mixers.patch) = 1684
+SIZE (xmix-2.1.tar.gz) = 34835

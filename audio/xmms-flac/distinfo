@@ -4,3 +4,5 @@ RMD160 (flac-1.1.0.tar.gz) = 55151dcaebb6323539c2206c7dc3fa3d2550fd5b
 RMD160 (flac_1.1.0-11.diff.gz) = 8e9cbc9aba0cbd5cbd04b09ff362d3baa93f4939
 SHA1 (flac-1.1.0.tar.gz) = 80334c1ebc693fb92e01f5a55ed332fbe9809592
 SHA1 (flac_1.1.0-11.diff.gz) = 47cf1d9d13e0d8e5c6b058d6353d80ae2993445f
+SIZE (flac-1.1.0.tar.gz) = 1201861
+SIZE (flac_1.1.0-11.diff.gz) = 51614

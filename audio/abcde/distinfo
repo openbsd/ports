@@ -7,3 +7,6 @@ RMD160 (id3_0.12.orig.tar.gz) = 04bbb9077e606d4768e93a13b8f92cb9202a8f5c
 SHA1 (abcde_2.2.0.orig.tar.gz) = b94ebc7837f06b15f892bd083f7d91c2e0138c46
 SHA1 (cd-discid_0.9.orig.tar.gz) = 389c3b5bbfb96b113f85a8d206f9d0d7052146a4
 SHA1 (id3_0.12.orig.tar.gz) = 6e74313f56214a73ef8b54edabd698444e07080f
+SIZE (abcde_2.2.0.orig.tar.gz) = 62550
+SIZE (cd-discid_0.9.orig.tar.gz) = 11217
+SIZE (id3_0.12.orig.tar.gz) = 12492

@@ -7,3 +7,6 @@ RMD160 (festival/speech_tools-1.2.95-beta.tar.gz) = 874b9e6d35bf8a59aeacd3d5b149
 SHA1 (festival/OGIresLPC-2.0.9.tar.gz) = e54b7d3f7ed1696a6eeca0fe1695a099d2ed3712
 SHA1 (festival/festival-1.95-beta.tar.gz) = 7bbf841b07a09cfe1ab17db23c2ebc12ea3d854b
 SHA1 (festival/speech_tools-1.2.95-beta.tar.gz) = 5f0533a1b06c56f06e382d752b920ee62a5e8312
+SIZE (festival/OGIresLPC-2.0.9.tar.gz) = 140306
+SIZE (festival/festival-1.95-beta.tar.gz) = 707573
+SIZE (festival/speech_tools-1.2.95-beta.tar.gz) = 1281274

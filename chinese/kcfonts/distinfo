@@ -10,3 +10,7 @@ SHA1 (zh-kcfonts/kc12x24.pcf.gz) = ced67f42244294d4c5631b3b358a6e7f722e1872
 SHA1 (zh-kcfonts/kc15f.pcf.gz) = 3ce08998f6ae1d171072270bfd464c60b7289e80
 SHA1 (zh-kcfonts/kc24f.pcf.gz) = 86cc5a260d2e237ce1d00777828ae9ce6434c03e
 SHA1 (zh-kcfonts/kc8x15.pcf.gz) = 578c5e9ccac5b8f00a8dd87a7b4d1c6cc7cc8511
+SIZE (zh-kcfonts/kc12x24.pcf.gz) = 6353
+SIZE (zh-kcfonts/kc15f.pcf.gz) = 452363
+SIZE (zh-kcfonts/kc24f.pcf.gz) = 821419
+SIZE (zh-kcfonts/kc8x15.pcf.gz) = 5131

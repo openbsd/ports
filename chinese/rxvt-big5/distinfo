@@ -7,3 +7,6 @@ RMD160 (rpm/utempter-0.5.2-10.i386.rpm) = aa523f93d24a3a28a76c48dee1f3679e5017f8
 SHA1 (rpm/rxvt-2.7.8-4.i386.rpm) = 7c911d1bed48d15d6693e4dc1d96dadc92797f00
 SHA1 (rpm/shadow-utils-20000902-12.8.i386.rpm) = ab05dfa1c7c5bbd14fa24b75564211eef9b5df74
 SHA1 (rpm/utempter-0.5.2-10.i386.rpm) = 7eeec1b914d335f9d755a1b5af72d98450dc3a89
+SIZE (rpm/rxvt-2.7.8-4.i386.rpm) = 277923
+SIZE (rpm/shadow-utils-20000902-12.8.i386.rpm) = 286993
+SIZE (rpm/utempter-0.5.2-10.i386.rpm) = 22777
