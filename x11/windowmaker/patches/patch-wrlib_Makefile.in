@@ -1,6 +1,6 @@
---- wrlib/Makefile.in.orig	Sun Apr  2 16:29:40 2000
-+++ wrlib/Makefile.in	Sun Apr  2 16:30:10 2000
-@@ -105,7 +105,7 @@
+--- wrlib/Makefile.in.orig	Sat Jan  6 17:22:01 2001
++++ wrlib/Makefile.in	Thu Jan 18 20:39:05 2001
+@@ -106,7 +106,7 @@
  EXTRA_DIST = test.png tile.xpm ballot_box.xpm 
  include_HEADERS = wraster.h
  
@@ -9,7 +9,7 @@
  
  
  LTCOMPILE2 = `echo $(LTCOMPILE) | sed -e s/-fomit-frame-pointer//`
-@@ -148,7 +148,7 @@
+@@ -149,7 +149,7 @@
  libwraster_la_DEPENDENCIES =  @ALLOCA@
  libwraster_la_OBJECTS =  LookupCmap.lo StdCmap.lo CrCmap.lo DelCmap.lo \
  CmapAlloc.lo raster.lo draw.lo color.lo load.lo save.lo gradient.lo \
@@ -18,7 +18,7 @@
  rotate.lo convolve.lo nxpm.lo xpm.lo xutil.lo ppm.lo png.lo jpeg.lo \
  tiff.lo gif.lo
  PROGRAMS =  $(noinst_PROGRAMS)
-@@ -449,11 +449,11 @@
+@@ -450,11 +450,11 @@
  
  
  # cant compile asm stuff with optimizations

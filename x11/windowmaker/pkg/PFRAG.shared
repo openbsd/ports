@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2000/07/20 06:02:05 brad Exp $
-lib/libwraster.so.2.0
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/01/19 03:44:51 jasoni Exp $
+lib/libwraster.so.2.1
+DYNLIBDIR(%D/lib)
