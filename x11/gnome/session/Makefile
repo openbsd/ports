@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/02/22 05:33:54 marcm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/26 07:01:01 david Exp $
 
 COMMENT=		"GNOME session"
 
@@ -29,7 +29,7 @@ RUN_DEPENDS+=		:gnome-applets2-*:x11/gnome/applets2
 RUN_DEPENDS+=		:gnome-terminal-*:x11/gnome/terminal
 RUN_DEPENDS+=		:gnome-themes-*:x11/gnome/themes
 #RUN_DEPENDS+=		:yelp-*:x11/gnome/yelp
-RUN_DEPENDS+=		:xscreensaver-*:x11/xscreensaver,gtk2
+RUN_DEPENDS+=		:xscreensaver-*:x11/xscreensaver,gtk2,no_gle
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
