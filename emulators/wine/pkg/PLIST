@@ -1,9 +1,9 @@
-@cwd /usr/X11R6
-@name wine-990131
 bin/wine
 bin/dosmod
 include/wine/windows.h
+include/wine/wingdi.h
 include/wine/wintypes.h
+include/wine/winuser.h
 lib/libwine.a
 lib/wine.sym
 man/man1/wine.1

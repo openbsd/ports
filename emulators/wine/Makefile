@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 1999/02/12 18:29:06 rohee Exp $
+# $OpenBSD: Makefile,v 1.7 1999/02/27 15:28:35 rohee Exp $
 #
 
-DATE			= 	990131
+DATE			= 	990225
 DISTNAME		= 	Wine-${DATE}
 PKGNAME			=	wine-${DATE}
 CATEGORIES		=	emulators x11
