@@ -3,7 +3,7 @@ configurable but very easy to use and setup. It tries to combine
 the best of the features of most of the "other" biff programs out
 there.
 
-KBiff supports all major mailbox formats: mbox (Berkely style),
+KBiff supports all major mailbox formats: mbox (Berkeley style),
 maildir, mh, POP3, IMAP4, and NNTP.
 
 KBiff is also part of the KDE project. Among other things, this

@@ -14,7 +14,7 @@ OPTIONS:
 
 	-help			Show usage message.
 
-	You can use the head 1 charactor of an option instead.
+	You can use the head 1 character of an option instead.
 
 PLAY:
 	% xsolder

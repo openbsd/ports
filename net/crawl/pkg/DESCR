@@ -12,7 +12,7 @@ easy to debug and customize.
 Features
 
 + Saves encountered JPEG images 
-+ Image selection based on regular expressions and size contraints 
++ Image selection based on regular expressions and size constraints 
 + Resume previous crawl after graceful termination 
 + Persistent database of visited URLs 
 + Very small and efficient code 

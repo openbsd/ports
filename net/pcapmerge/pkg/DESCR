@@ -1,4 +1,4 @@
-Program to merge and extract part of binary capture files implimented
+Program to merge and extract part of binary capture files implemented
 in perl with the help of Net::Pcap
 
 WWW: ${HOMEPAGE}

@@ -14,7 +14,7 @@ ADMsnmp is an snmpd audit scanner.
 Any of you know how weak and funny snmp is?
 You can obtain a great deal of usefull info  like  admin name's, 
 you can play with the interface of the router, reboot the machine
-get the password file of the router (Ascend), or execute commands remoteley,
+get the password file of the router (Ascend), or execute commands remotely,
 anyway snmp is a BIG hole.
 
 ADMsnmp can brute force the snmp community name (with a wordfile) or

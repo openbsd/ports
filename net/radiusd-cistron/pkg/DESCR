@@ -1,5 +1,5 @@
 The server is mostly compatible with livingston radiusd-2.01
-(no menus or s/key support though) but with more  feautures,
+(no menus or s/key support though) but with more features,
 such as:
 
  o Limit max. number of simultaneous logins.

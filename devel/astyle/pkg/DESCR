@@ -14,7 +14,7 @@ character in the source code changes between editors (until the
 user sets up the number to his liking...), one of the standard
 problems facing programmers when moving from one source code editor
 to another is that code containing both spaces and tabs that was
-up to now perfectly indented, suddently becomes a mess to look at
+up to now perfectly indented, suddenly becomes a mess to look at
 when changing to another editor. Even if you as a programmer take
 care to ONLY use spaces or tabs, looking at other peoples source
 code can still be problematic.

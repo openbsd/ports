@@ -1,6 +1,6 @@
 linc is a library that eases the task of writing networked servers and
-clients. It takes care of connection initiation and maintainance, and
-the details of varioustransports. It is used by the new ORBit to
+clients. It takes care of connection initiation and maintenance, and
+the details of various transports. It is used by the new ORBit to
 handle message transmission/receipt.
 
 WWW: ${HOMEPAGE}

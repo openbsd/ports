@@ -1,6 +1,6 @@
-$OpenBSD: DESCR,v 1.1.1.1 2003/01/22 17:10:59 margarida Exp $
+$OpenBSD: DESCR,v 1.2 2003/03/02 05:39:07 david Exp $
 
-This library is GTK+extra vesion 0.99.17. It is a useful widget set 
+This library is GTK+extra version 0.99.17. It is a useful widget set 
 complementary to GTK+ for creating graphical interfaces for the X
 Window System. It is written in C and requires GTK+ version 1.2.x.
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2003/01/13 15:44:36 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2003/03/02 05:37:24 david Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -92,7 +92,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${TLSDISTNAME}/doc/* \
 		${PREFIX}/share/doc/postfix/tls
 .else
-BROKEN=         "TLS patches not yet availible for this version"
+BROKEN=         "TLS patches not yet available for this version"
 .endif
 .else
 post-patch:

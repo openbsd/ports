@@ -8,4 +8,4 @@ usbgen
 	Dump descriptors of a generic device.
 	usbgen -f ugenN -v -D
 usbstats
-	Gives statistics for a USB host contrller.
+	Gives statistics for a USB host controller.

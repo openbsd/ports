@@ -10,6 +10,6 @@ layer is inserted between the protocol and the connection.
 WWW: ${HOMEPAGE}
 
 
-Availible flavors:
+Available flavors:
 
   db - use the berkeley db library from databases/db

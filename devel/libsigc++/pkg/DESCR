@@ -16,7 +16,7 @@ Provides following features:
 
   * provides headers for up to 7 arguments and 2 callback data
   * M4 Macros for building templates with various numbers 
-    of arguements and callback data
+    of arguments and callback data
   * Easily build support for templates with number of arguments
     and callback data not defined in library headers
 

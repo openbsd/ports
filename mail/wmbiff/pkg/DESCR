@@ -1,6 +1,6 @@
 WMbiff displays the status of up to five mailboxes. It gives information
 about new mail, if any, or total number of messages. It also has mail retrieval
-capabilies, and can be configured to do this automatically. At the moment,
+capabilities, and can be configured to do this automatically. At the moment,
 UNIX-style, POP3 and IMAP4 mailboxes are supported. WMbiff also supports Licq
 history files, displaying the number of new messages in your running Licq
 session, as if they were mail.

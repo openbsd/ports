@@ -1,7 +1,7 @@
 ipv6calc is a small utility in C to manipulate IPv6 addresses. The intentions
 were to convert a given IPv6 address into compressed format, convert a given
 IPv6 address into the same format like shown in Linux' /proc/net/if_inet6 and
-(because it was not difficulty) migrate ip6_int into. Now only one utiltity is
+(because it was not difficulty) migrate ip6_int into. Now only one utility is
 needed to do a lot (perhaps the features grow on demand in the future).
 
 WWW: ${HOMEPAGE}

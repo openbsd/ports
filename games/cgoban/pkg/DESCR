@@ -10,7 +10,7 @@ for Unix and X11. A list of the functions that it provides:
   * Edit and view SGF files. CGoban provides full functionality for
     editing and viewing SGF files.
   * Connect to a go server over the internet. CGoban can connect to
-    NNGS or IGS and gives a convienent graphical user interface to the
+    NNGS or IGS and gives a convenient graphical user interface to the
     server.
   * Act as a bridge to go modem protocol. Go modem protocol has become
     a standard way for computer go programs to communicate. CGoban can

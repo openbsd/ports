@@ -3,7 +3,7 @@ from readme.txt:
 L0phtCrack 1.5 is a tool for turning Microsoft LANMAN and NT password
 hashes back into the original clear text passwords.  The program
 does this using dictionary cracking and also brute force.  L0phtCrack
-1.5 returns not just the LANMAN passord but the NT password up to 14
+1.5 returns not just the LANMAN password but the NT password up to 14
 characters in length.
 
 this port also includes readsmb, which will sniff the hashes for you.

@@ -7,7 +7,7 @@ a CDROM.
 
 w3mir's goal is to be able to make useful mirrors of any reasonable
 WWW site. It specifically preserves link integrity within the
-mirrored documents as well as the integrety of links outside the
+mirrored documents as well as the integrity of links outside the
 mirror, following redirects as needed. If you want it to. w3mir has
 a powerful ``multi-scope'' mechanism enabling the user to make
 mirrors of several related sites and have links between them refer

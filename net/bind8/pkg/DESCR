@@ -5,4 +5,4 @@ updates and some support for DNSSEC (for a more complete DNSSEC, use
 the BIND 9.x). This port also includes the dnssigner utility from
 TISLabs.
 
-More information on BIND is availible at http://www.isc.org/.
+More information on BIND is available at http://www.isc.org/.

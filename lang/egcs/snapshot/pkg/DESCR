@@ -2,7 +2,7 @@ egcs is an experimental spin-off of gcc that started when people got
 fed up waiting for gcc 2.8. As the C++ standard finally emerged,
 egcs people strove trying to implement as much of it as possible.
 
-Egcs proved to be a succesful project, to the extent that it now is
+Egcs proved to be a successful project, to the extent that it now is
 the official gnu compiler, relabelled gcc 2.95 for its first release.
 
 OpenBSD 2.7 ships with gcc 2.95.2, which should be adequate for most
