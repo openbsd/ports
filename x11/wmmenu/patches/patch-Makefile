@@ -1,10 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
---- Makefile.orig	Sat Dec 30 23:13:43 2000
-+++ Makefile	Sun Apr  1 17:00:33 2001
-@@ -1,26 +1,22 @@
+$OpenBSD: patch-Makefile,v 1.2 2001/10/29 10:57:27 wilfried Exp $
+--- Makefile.orig	Sun Oct 21 09:19:36 2001
++++ Makefile	Mon Oct 29 11:39:14 2001
+@@ -1,27 +1,23 @@
 -prefix = /usr/local
 +prefix = ${PREFIX}
  BINDIR = $(prefix)/bin
+ MANDIR = $(prefix)/man
 -ETCDIR = $(prefix)/etc
 +ETCDIR = $(prefix)/share/wmmenu
  
@@ -38,7 +39,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2001/04/01 15:17:53 wilfried Exp $
  LIBDIRS = -L$(DAROOT)/lib -L$(XROOT)/lib $(PIXBUF_LIB)
  LDLIBS = -ldockapp -lXpm -lXext -lX11 -lm
  
-@@ -49,4 +45,3 @@ clean :
+@@ -58,4 +54,3 @@ clean :
  	$(RM) *.o *.d core tags $(PRGS)
  
  # dependencies -- do not change lines below
