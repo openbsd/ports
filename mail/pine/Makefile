@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2001/08/12 19:15:39 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2001/08/14 19:21:00 brad Exp $
 
-COMMENT=	"Program for Internet E-mail and News, with editor"
+COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
-COMMENT-pine=	"Program for Internet E-mail and News, without editor"
+COMMENT-pine=	"Program for Internet E-mail and News, without pico"
 
 VERSION=	4.33
 DISTNAME=	pine${VERSION}
