@@ -2,13 +2,16 @@ LyX is a wordprocessor frontend to LaTeX, which gives both the
 ease-of-use of a wordprocessor, and the flexibility and power
 of LaTeX.
 
-Quasi-WYSIWYG interface, many LaTeX styles and layouts automatically
-generated. Speeds up learning LaTeX and makes complicated layouts
-easy and intuitive. 
-New features include spell-checking, international character support,
-WYSIWYG graphics, tables, and equations.
+LyX produces high quality, professional output -- using LaTeX, an
+industrial strength typesetting engine, in the background; LyX is
+far more than a front-end to LaTeX, however. No knowledge of LaTeX
+is necessary to use LyX, although it will give a user more power.
 
-Author:		ettrich@informatik.uni-tuebingen.de (Matthias Ettrich)
-Maintained-by:	dlj0@lehigh.edu (David L. Johnson)
+
+LyX is stable and fully featured. It has been used for documents 
+as large as a thesis, or as small as a business letter. 
+Despite its simple GUI interface (available in many languages), 
+it suports tables, figures, and hyperlinked cross-references, and
+best-of-breed math editor.
 
 WWW: ${HOMEPAGE}
