@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2002/02/18 19:35:49 pvalchev Exp $
---- src/Makefile.in.orig	Thu Dec 13 03:25:43 2001
-+++ src/Makefile.in	Mon Feb 18 12:23:22 2002
+$OpenBSD: patch-src_Makefile_in,v 1.2 2002/03/15 00:35:04 pvalchev Exp $
+--- src/Makefile.in.orig	Fri Feb 15 06:28:44 2002
++++ src/Makefile.in	Thu Mar 14 17:26:09 2002
 @@ -138,11 +138,11 @@ maintainer-clean-binPROGRAMS:
  
  install-binPROGRAMS: $(bin_PROGRAMS)
@@ -11,8 +11,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.1 2002/02/18 19:35:49 pvalchev Exp $
  	  if test -f $$p; then \
 -	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
 -	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
-+	    echo "  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
-+	     $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
++	    echo "  $(INSTALL_PROGRAM) -g games -m 2755 $$p $(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`"; \
++	     $(INSTALL_PROGRAM) -g games -m 2755 $$p $(bindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
  	  else :; fi; \
  	done
  
