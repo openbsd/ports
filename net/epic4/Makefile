@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.35 2000/12/04 15:29:35 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2000/12/12 23:06:05 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
-VERSION=	0.9.13
+VERSION=	0.9.14
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.336
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.magenet.com/pub/epic/EPIC4-BETA/ \
 DISTFILES=	epic4-${VERSION}.tar.gz epic4pre2-help.tar.gz
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
-PATCH_FILES=	epic4-0.9.13-patch1
+PATCH_FILES=	epic4-0.9.14-patch1
 
 HOMEPAGE=	http://www.epicsol.org/
 
