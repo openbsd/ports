@@ -21,4 +21,7 @@ KDEDIR=/usr/local exec ssh-agent /usr/local/bin/startkde
 - as a user, you should run kappfinder from time to time to make sure you
 have up-to-date menus.
 
+- when upgrading from an old version of kde, it's usually best to start
+over on your .kde files.  Managing legacy config files is quite buggy yet.
+
 WWW: ${HOMEPAGE}
