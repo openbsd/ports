@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/07/27 14:39:31 danh Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/10/12 15:07:09 danh Exp $
 sbin/ntp-keygen
 sbin/ntp-wait
 sbin/ntpd
@@ -16,3 +16,4 @@ share/examples/ntp/grundoon.conf
 share/examples/ntp/malarky.conf
 share/examples/ntp/pogo.conf
 share/examples/ntp/rackety.conf
+@extra ${SYSCONFDIR}/ntp.conf
