@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2001/03/24 17:31:23 danh Exp $
+--- configure.orig	Sat Mar 24 12:03:37 2001
++++ configure	Sat Mar 24 12:04:36 2001
+@@ -2540,7 +2540,7 @@ if test "${ac_cv_lib_readline_readline+s
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lreadline  $LIBS"
++LIBS="-lreadline -ltermcap $LIBS"
+ cat >conftest.$ac_ext <<EOF
+ #line 2546 "configure"
+ #include "confdefs.h"
+@@ -2576,7 +2576,7 @@ if test $ac_cv_lib_readline_readline = y
+ #define HAVE_LIBREADLINE 1
+ EOF
+ 
+-  LIBS="-lreadline $LIBS"
++  LIBS="-lreadline -ltermcap $LIBS"
+ 
+ fi
+ 
