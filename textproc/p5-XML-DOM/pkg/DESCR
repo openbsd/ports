@@ -1,0 +1,10 @@
+This is a Perl extension to XML::Parser. It adds a new 'Style' to
+XML::Parser, called 'Dom', that allows XML::Parser to build an
+Object Oriented datastructure with a DOM Level 1 compliant interface.
+For a description of the DOM (Document Object Model), see
+http://www.w3.org/DOM/
+
+This is a beta version and although there will not be any major API
+changes, minor changes may occur as feedback is obtained from the
+people on the perl-xml mailing list.  You can subscribe to this
+list by sending a message to subscribe-perl-xml@lyris.activestate.com.

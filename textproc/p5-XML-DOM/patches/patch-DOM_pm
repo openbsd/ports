@@ -1,0 +1,12 @@
+$OpenBSD: patch-DOM_pm,v 1.1.1.1 2001/01/25 00:11:52 avsm Exp $
+--- DOM.pm.orig	Thu Jan 25 00:05:49 2001
++++ DOM.pm	Thu Jan 25 00:06:06 2001
+@@ -133,7 +133,7 @@ $ChNameChar	= "(?:[-._:]|$ChLetter|$ChDi
+ $ReName		= "(?:(?:[:_]|$ChLetter)$ChNameChar*)";
+ $ReNmToken	= "(?:$ChNameChar)+";
+ $ReEntityRef	= "(?:\&$ReName;)";
+-$ReCharRef	= "(?:\&#(?:\d+|x[0-9a-fA-F]+);)";
++$ReCharRef	= '(?:\&#(?:\d+|x[0-9a-fA-F]+);)';
+ $ReReference	= "(?:$ReEntityRef|$ReCharRef)";
+ 
+ #?? what if it contains entity references?
