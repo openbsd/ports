@@ -1,13 +1,13 @@
 # $RuOBSD: Makefile,v 1.3 2002/04/10 05:14:52 form Exp $
-# $OpenBSD: Makefile,v 1.29 2002/09/01 18:49:00 mpech Exp $
+# $OpenBSD: Makefile,v 1.30 2002/09/26 23:00:08 brad Exp $
 
 COMMENT=		"joe's own editor"
 
-DISTNAME=		joe-2.9.8-pre1
-PKGNAME=		joe-2.9.8pre1
+VERSION=		2.9.8
+DISTNAME=		joe-${VERSION}-pre1
+PKGNAME=		joe-${VERSION}pre1p1
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		editors
-NEED_VERSION=		1.528
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=joe-editor/}
 
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ufile_c,v 1.2 2002/09/26 23:00:08 brad Exp $
+--- ufile.c.orig	Thu Sep 26 18:51:37 2002
++++ ufile.c	Thu Sep 26 18:53:10 2002
+@@ -151,7 +151,7 @@ static int cp(char *from, char *to)
+ 	if (fstat(f, &sbuf) < 0) {
+ 		return -1;
+ 	}
+-	g = creat(to, sbuf.st_mode);
++	g = creat(to, sbuf.st_mode & ~(S_ISUID | S_ISGID));
+ 	if (g < 0) {
+ 		close(f);
+ 		return -1;
