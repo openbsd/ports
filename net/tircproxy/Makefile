@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/07/15 23:15:56 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2001/02/25 05:29:34 danh Exp $
 
 DISTNAME=	tircproxy-0.4.5
 CATEGORIES=     net
@@ -7,7 +7,7 @@ MASTER_SITES=	http://bre.klaki.net/programs/tircproxy/
 
 HOMEPAGE=	http://bre.klaki.net/programs/tircproxy/
 
-MAINTAINER=	garath@ntplx.net
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
