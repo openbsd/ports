@@ -1,0 +1,18 @@
+@comment $NetBSD$
+sbin/bgpd
+sbin/client
+sbin/ospfd
+sbin/ospf6d
+sbin/ripd
+sbin/ripngd
+sbin/zebra
+@comment etc/zebra/bgpd.conf.sample
+@comment etc/zebra/ripd.conf.sample
+@comment etc/zebra/ripngd.conf.sample
+@comment etc/zebra/zebra.conf.sample
+@comment etc/zebra/ospfd.conf.sample
+@comment etc/zebra/ospf6d.conf.sample
+@unexec install-info --delete %D/info/zebra.info %D/info/dir
+info/zebra.info
+@exec   install-info          %D/info/zebra.info %D/info/dir
+@comment @dirrm etc/zebra

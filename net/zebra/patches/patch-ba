@@ -1,0 +1,26 @@
+--- configure.in-	Fri Oct  8 08:48:31 1999
++++ configure.in	Fri Oct  8 08:48:53 1999
+@@ -249,10 +249,10 @@
+   AC_MSG_RESULT(netlink)
+   IF_METHOD=if_netlink.o
+ else
+-  if test "$opsys" = "openbsd";then
+-    AC_MSG_RESULT(ioctl)
+-    IF_METHOD=if_ioctl.o
+-  else
++#  if test "$opsys" = "openbsd";then
++#    AC_MSG_RESULT(ioctl)
++#    IF_METHOD=if_ioctl.o
++#  else
+     if grep NET_RT_IFLIST /usr/include/sys/socket.h >/dev/null 2>&1; then
+       AC_MSG_RESULT(sysctl)
+       IF_METHOD=if_sysctl.o
+@@ -260,7 +260,7 @@
+       AC_MSG_RESULT(ioctl)
+       IF_METHOD=if_ioctl.o
+     fi
+-  fi
++#  fi
+ fi
+ AC_SUBST(IF_METHOD)
+ 

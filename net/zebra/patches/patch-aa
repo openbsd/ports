@@ -1,0 +1,86 @@
+$NetBSD$
+
+Index: ospf6d/ospf6_network.c
+===================================================================
+RCS file: /cvsroot/zebra/ospf6d/ospf6_network.c,v
+retrieving revision 1.40
+diff -c -r1.40 ospf6_network.c
+*** ospf6d/ospf6_network.c	1999/09/10 22:36:00	1.40
+--- ospf6d/ospf6_network.c	1999/09/13 16:20:01
+***************
+*** 347,366 ****
+      zlog_warn ("*** can't leave AllDRouters6 on ifindex %d", ifindex);
+  }
+  
+- #ifndef s6_addr32
+- #define s6_addr32 u6_addr.u6_addr32
+- #define s6_addr16 u6_addr.u6_addr16
+- #define s6_addr8  u6_addr.u6_addr8
+- #define s6_addr   u6_addr.u6_addr8
+- #endif
+- 
+  void
+  ospf6_ipv4_encode_ipv6 (struct in_addr *in4, struct in6_addr *in6)
+  {
+    /* IPv4 address to IPv4 Mapped Address */
+    memset (in6, 0, sizeof (struct in6_addr));
+!   in6->s6_addr16[5] = 0xffff;
+!   in6->s6_addr32[3] = in4->s_addr;
+  }
+  
+  void
+--- 347,360 ----
+      zlog_warn ("*** can't leave AllDRouters6 on ifindex %d", ifindex);
+  }
+  
+  void
+  ospf6_ipv4_encode_ipv6 (struct in_addr *in4, struct in6_addr *in6)
+  {
+    /* IPv4 address to IPv4 Mapped Address */
+    memset (in6, 0, sizeof (struct in6_addr));
+!   in6->s6_addr[10] = 0xff;
+!   in6->s6_addr[11] = 0xff;
+!   memcpy(&in6->s6_addr[12], in4, sizeof(*in4));
+  }
+  
+  void
+***************
+*** 371,377 ****
+  
+    /* IPv4 Mapped Address to IPv4 address*/
+!   memset (in4, 0, sizeof (struct in_addr));
+!   in4->s_addr = in6->s6_addr32[3];
+  }
+  
+  int
+--- 365,371 ----
+  
+    /* IPv4 Mapped Address to IPv4 address*/
+!   memset (in6, 0, sizeof (struct in6_addr));
+!   memcpy(&in6->s6_addr[12], in4, sizeof(*in4));
+  }
+  
+  int
+Index: ospf6d/ospf6d.h
+===================================================================
+RCS file: /cvsroot/zebra/ospf6d/ospf6d.h,v
+retrieving revision 1.36
+diff -c -r1.36 ospf6d.h
+*** ospf6d/ospf6d.h	1999/09/08 08:58:59	1.36
+--- ospf6d/ospf6d.h	1999/09/13 16:20:01
+***************
+*** 116,128 ****
+  #endif
+  
+  
+- #ifndef s6_addr32
+- #define s6_addr32 u6_addr.u6_addr32
+- #define s6_addr16 u6_addr.u6_addr16
+- #define s6_addr8  u6_addr.u6_addr8
+- #define s6_addr   u6_addr.u6_addr8
+- #endif
+- 
+  /* Command Description */
+  #define V4NOTATION_STR     "specify by IPv4 address notation(e.g. 0.0.0.0)\n"
+  #define OSPF6_NUMBER_STR    "Specify by number\n"
+--- 116,121 ----

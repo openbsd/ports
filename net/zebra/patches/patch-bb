@@ -1,0 +1,26 @@
+--- configure-	Fri Oct  8 08:48:23 1999
++++ configure	Fri Oct  8 08:49:05 1999
+@@ -2283,10 +2283,10 @@
+   echo "$ac_t""netlink" 1>&6
+   IF_METHOD=if_netlink.o
+ else
+-  if test "$opsys" = "openbsd";then
+-    echo "$ac_t""ioctl" 1>&6
+-    IF_METHOD=if_ioctl.o
+-  else
++#  if test "$opsys" = "openbsd";then
++#    echo "$ac_t""ioctl" 1>&6
++#    IF_METHOD=if_ioctl.o
++#  else
+     if grep NET_RT_IFLIST /usr/include/sys/socket.h >/dev/null 2>&1; then
+       echo "$ac_t""sysctl" 1>&6
+       IF_METHOD=if_sysctl.o
+@@ -2294,7 +2294,7 @@
+       echo "$ac_t""ioctl" 1>&6
+       IF_METHOD=if_ioctl.o
+     fi
+-  fi
++#  fi
+ fi
+ 
+ 
