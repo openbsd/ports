@@ -1,0 +1,7 @@
+Collection of DTDs, includes W3C HTML and XHTML DTDs as well as DTDs for
+ISO-HTML, WML and MathML.
+
+Also includes a custom.dcl SGML declaration that's suitable for use with
+most custom DTDs.
+
+WWW: ${HOMEPAGE}
