@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/09/23 18:38:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/04 08:34:26 sturm Exp $
 
 COMMENT=	"module to obtain historical financial quotes from exchanges"
 
@@ -8,7 +8,7 @@ CATEGORIES=	misc perl5
 
 HOMEPAGE=	http://www.mojotoad.com/sisk/projects/Finance-QuoteHist/
 
-MAINTAINER=	Andrew Dalgleish <openbsd@andrewdalgleish.dyndns.org>
+MAINTAINER=	Andrew Dalgleish <openbsd@ajd.net.au>
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Finance/} \
 		${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/13 16:32:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/04 08:34:26 sturm Exp $
 
 COMMENT=	"parses long function arguments"
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Getargs/}
 
-MAINTAINER=	Andrew Dalgleish <openbsd@andrewdalgleish.dyndns.org>
+MAINTAINER=	Andrew Dalgleish <openbsd@ajd.net.au>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
