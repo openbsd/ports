@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/29 22:25:47 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2000/07/02 06:21:18 fgsch Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
 CATEGORIES=	security
-NEED_VERSION=	1.308
+NEED_VERSION=	1.311
 MASTER_SITES=	ftp://ftp.no.pgpi.com/pub/pgp/5.0/unix/ \
 		ftp://ftp.at.pgpi.com/pub/pgpi/5.0/unix/ \
 		ftp://ftp.cz.pgpi.com/pub/pgpi/5.0/unix/ \
@@ -63,7 +63,9 @@ post-patch:
 post-configure:
 	@find ${WRKSRC} -name Makefile|xargs perl -pi.bak -e 's,MFLAGS,AM_MAKEFLAGS,'
 
-pre-install:
+post-install:
+	strip ${PREFIX}/bin/pgp5
+	strip ${PREFIX}/bin/pgpk
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pgp5
 	${INSTALL_DATA} ${WRKSRC}/language50.txt ${PREFIX}/lib/pgp5
 
