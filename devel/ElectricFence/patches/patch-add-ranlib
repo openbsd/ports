@@ -1,0 +1,18 @@
+--- Makefile.orig	Fri Jan 20 06:33:04 1995
++++ Makefile	Tue Mar 30 13:10:15 1999
+@@ -7,6 +7,7 @@
+ CFLAGS= -g
+ LIB_INSTALL_DIR= /usr/lib
+ MAN_INSTALL_DIR= /usr/man/man3
++RANLIB = ranlib
+ 
+ PACKAGE_SOURCE= README libefence.3 Makefile efence.h \
+ 	efence.c page.c print.c eftest.c tstheap.c CHANGES
+@@ -60,6 +61,7 @@
+ libefence.a: $(OBJECTS)
+ 	- rm -f libefence.a
+ 	$(AR) crv libefence.a $(OBJECTS)
++	$(RANLIB) libefence.a
+ 
+ tstheap: libefence.a tstheap.o
+ 	- rm -f tstheap
