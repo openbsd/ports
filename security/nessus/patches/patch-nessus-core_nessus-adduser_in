@@ -1,0 +1,63 @@
+$OpenBSD: patch-nessus-core_nessus-adduser_in,v 1.1 2004/08/13 06:14:57 brad Exp $
+--- nessus-core/nessus-adduser.in.orig	Wed May 29 05:17:54 2002
++++ nessus-core/nessus-adduser.in	Thu Aug 12 21:48:15 2004
+@@ -202,14 +202,16 @@ echo "Enter the rules for this user, and
+ 
+ # we do not leave any temporary files, hanging around
+ # so we trap the exit
+-trap "rm -f $TMPDIR/rules.$$;
++trap "rm -f $TMPDIR/nessus-adduser.$$;
+       echo; echo INTERRUPT; echo;
+       trap 0;
+       exit 0" 0
+ 
+ echo "(the user can have an empty rules set)"
+-cat > $TMPDIR/rules.$$ || {
+-  	echo "Error - could not write $TMPDIR/rules.$$"
++mkdir -m 0700 $TMPDIR/nessus-adduser.$$/ || { echo "Error - could not create $TMPDIR/nessus-adduser.$$" ; exit 1; }
++
++cat > $TMPDIR/nessus-adduser.$$/rules.$$ || {
++  	echo "Error - could not write $TMPDIR/nessus-adduser.$$/rules.$$"
+ 	exit 1
+ }
+ 
+@@ -220,20 +222,20 @@ echo "$sayPasswd"         $password
+ echo "DN                : $dn"
+ echo "Rules             : "
+ 
+-cat $TMPDIR/rules.$$
++cat $TMPDIR/nessus-adduser.$$/rules.$$
+ 
+ echo
+ echo
+ echo $Xn "Is that ok ? (y/n) [y] $Xc"
+ 
+ else
+-	cp /dev/null $TMPDIR/rules.$$
++	cp /dev/null $TMPDIR/nessus-adduser.$$/rules.$$
+ fi
+ read ok
+ 
+ # check for answer, default is Yes, abort on other reply
+ case $ok in ''|[Yy]*);; *) 
+-    rm -f $TMPDIR/rules.$$
++    rm -rf $TMPDIR/nessus-adduser.$$
+     trap 0
+     echo Aborted
+     exit 0
+@@ -291,13 +293,13 @@ fi
+ 
+ 
+ 
+-cp $TMPDIR/rules.$$ "$localstatedir/nessus/users/$login/auth/rules"
++cp $TMPDIR/nessus-adduser.$$/rules.$$ "$localstatedir/nessus/users/$login/auth/rules"
+ 
+ 
+ # reset trap, clean up
+ trap 0
+ 
+-rm $TMPDIR/rules.$$
++rm -rf $TMPDIR/nessus-adduser.$$
+ 
+ 
+ 
