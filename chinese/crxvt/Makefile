@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/09/01 12:31:09 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/05 09:35:24 kevlo Exp $
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-${DISTNAME}
@@ -6,7 +6,7 @@ CATEGORIES=     chinese
 NEED_VERSION=	1.307
 MASTER_SITES=   ftp://ftp.linux.org.tw/pub/xcin/crxvt/old/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

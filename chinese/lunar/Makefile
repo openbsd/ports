@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/26 01:59:17 kevlo Exp $
+# $OpenBSD: Makefile,v 1.13 2000/10/05 09:35:26 kevlo Exp $
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
 CATEGORIES=	chinese
 NEED_VERSION=   1.307
+MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"non-commercial use only"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"non-commercial use only"
 PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 ALL_TARGET=
 

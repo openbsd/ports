@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.6 2000/06/26 01:43:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2000/10/05 09:35:21 kevlo Exp $
 #
 
 DISTNAME=       cless-290
@@ -13,7 +13,7 @@ NEED_VERSION=	1.307
 MASTER_SITES=   ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ \
                 ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

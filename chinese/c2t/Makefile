@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/26 01:37:30 kevlo Exp $	
+# $OpenBSD: Makefile,v 1.13 2000/10/05 09:35:18 kevlo Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
 NEED_VERSION=	1.307
 
-MAINTAINER=     kevlo@openbsd.org
+MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
