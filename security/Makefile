@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2001/06/17 09:47:15 reinhard Exp $
+# $OpenBSD: Makefile,v 1.78 2001/06/23 15:15:42 lebel Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -13,6 +13,7 @@
      SUBDIR += cfs
      SUBDIR += cgichk
      SUBDIR += cops
+     SUBDIR += corkscrew
      SUBDIR += crack
      SUBDIR += crank
      SUBDIR += cyrus-sasl
