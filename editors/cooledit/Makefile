@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/06/09 20:27:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/08/09 21:05:28 naddy Exp $
 
 COMMENT=	"easy to use, graphical editor"
 
@@ -14,7 +14,7 @@ FLAVORS=	python	python2
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpython} && ${FLAVOR:L:Mpython2}
-IGNORE="Bad flavor choice"
+ERRORS+=	"Fatal: flavors 'python' and 'python2' conflict."
 .endif
 .if ${FLAVOR:L:Mpython}
 BUILD_DEPENDS+=	python1.5:python-1.5.2-!threads:lang/python15,
@@ -22,7 +22,8 @@ RUN_DEPENDS+=	python1.5:python-1.5.2-!threads:lang/python15,
 .elif ${FLAVOR:L:Mpython2}
 BUILD_DEPENDS+=	python2.1:python-2.1-!threads:lang/python,
 RUN_DEPENDS+=	python2.1:python-2.1-!threads:lang/python,
-CONFIGURE_ENV+=NOPYTHON=Yes
+.else
+CONFIGURE_ENV+=	NOPYTHON=Yes
 .endif
 
 CONFIGURE_STYLE=	gnu
