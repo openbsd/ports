@@ -1,0 +1,15 @@
+$OpenBSD: patch-sql_gen_lex_hash_cc,v 1.1 2001/10/18 07:14:54 wilfried Exp $
+--- sql/gen_lex_hash.cc.orig	Sat Sep  8 13:08:14 2001
++++ sql/gen_lex_hash.cc	Wed Oct 17 02:38:15 2001
+@@ -472,7 +472,11 @@ int main(int argc,char **argv)
+   int error;
+ 
+   MY_INIT(argv[0]);
++#ifdef __sparc64__
++  start_value=7314299L; best_t1=2823134L;  best_t2=3019933L;  best_type=3; /* mode=7229  add=8  type: 0 */
++#else
+   start_value=6130115L; best_t1=3632784L;  best_t2=86437L;  best_type=3; /* mode=4229  add=2  type: 0 */
++#endif
+   if (get_options(argc,(char **) argv))
+     exit(1);
+ 
