@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2001/06/05 10:06:42 reinhard Exp $
+# $OpenBSD: Makefile,v 1.9 2001/06/14 11:41:12 lebel Exp $
 
 COMMENT=		"Napster client for KDE 2"
-VERSION=		0.2
+VERSION=		0.3
 DISTNAME=		knapster2-${VERSION}
 CATEGORIES=     	audio
 
