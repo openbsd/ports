@@ -1,0 +1,19 @@
+--- Makefile.orig	Fri Sep 10 04:13:21 1999
++++ Makefile	Tue Sep 12 18:18:12 2000
+@@ -8,11 +8,11 @@
+ # definitions.  You will need to have already built OpenSSL, available at
+ # http://www.openssl.org/  Make sure the SSL_INCDIR and SSL_LIBDIR
+ # definitions point to your OpenSSL installation.
+-#SSL_INCDIR =	/usr/local/include
+-#SSL_LIBDIR =	/usr/local/lib
+-#SSL_DEFS =	-DUSE_SSL
+-#SSL_INC =	-I$(SSL_INCDIR)
+-#SSL_LIBS =	-L$(SSL_LIBDIR) -lssl -lcrypto -lRSAglue -lrsaref
++SSL_INCDIR =	/usr/include/ssl
++SSL_LIBDIR =	/usr/lib
++SSL_DEFS =	-DUSE_SSL
++SSL_INC =	-I$(SSL_INCDIR)
++SSL_LIBS =	-L$(SSL_LIBDIR) -lssl -lcrypto
+ 
+ BINDIR =	/usr/local/bin
+ MANDIR =	/usr/local/man/man1
