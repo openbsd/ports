@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/08/31 10:12:15 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/08/31 14:44:42 todd Exp $
 
 ONLY_FOR_ARCHS=	i386
 NEED_VERSION=	1.322
@@ -10,5 +10,7 @@ DISTNAME=	communicator-v${V2}-us.x86-bsdi-bsd2
 PKGNAME=	communicator-${PROGRAM_V}
 LOCATION=	bsdi21/complete_install
 DIRNAME=	communicator-v${V2}.x86-bsdi-bsd2
+
+NO_BUILD=	Yes
 
 .include <bsd.port.mk>
