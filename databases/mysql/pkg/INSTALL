@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2000/02/06 23:32:38 brad Exp $
+# $OpenBSD: INSTALL,v 1.4 2000/04/07 19:07:21 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -11,10 +11,29 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 DB_DIR=${PKG_DB_DIR:-/var/mysql}
 MYSQLGID=40
 MYSQLUID=40
-PASS=`dd if=/dev/urandom count=1 bs=12 2> /dev/null | encrypt -b 6`
 
-# Function: install the mysql user account and group
-#	    and create the MySQL database directory
+# Function: tell the user that an existing database directory was
+#	    found on their system
+do_notice_pre_install()
+{
+    echo
+    echo "+---------------"
+    echo "| You appear to already have a MySQL database directory in ${DB_DIR}"
+    echo "|"
+    echo "| In order to preserve your existing data, you should:"
+    echo "|          - dump all your databases"
+    echo "|          - kill MySQL if it's running"
+    echo "|          - delete the ${DB_DIR} directory"
+    echo "|          - install MySQL"
+    echo "|          - start up MySQL"
+    echo "|          - re-create all of your database"
+    echo "|          - re-load your data"
+    echo "+---------------"
+    echo
+    exit 1
+}
+
+# Function: install the MySQL user account and group
 #
 do_pre_install()
 {
@@ -27,37 +46,40 @@ fi
 # Add user 'mysql' in /etc/passwd
 if [ "`egrep '^mysql:' /etc/passwd`" = "" ]; then
         echo "===> Creating mysql user, uid $MYSQLUID"
-	adduser -batch mysql mysql "MySQL Account,,," ${PASS} > /dev/null 2>&1 /dev/null
+	adduser -batch mysql mysql "MySQL Account" "" > /dev/null 2>&1 /dev/null
 	if [ $? -eq 0 ]; then
 		echo "===> Using account mysql for MySQL, uid $MYSQLUID, gid $MYSQLGID"
-		echo "===> Account setup with random password. Use 'passwd mysql' to set a password."
 	else
 		echo "===> Problem creating account mysql"
 		exit 1
 	fi
 fi
-
-# Create Database Directory mode 775
-mkdir -p -m 775 ${DB_DIR}
-chown mysql.mysql ${DB_DIR}
-echo "===> Created ${DB_DIR} directory to store db files and mysql.sock"	
 }
 
-# Function: create inital database
+# Function: create database directory and the initial database
 #
 do_post_install()
 {
+install -d -o mysql -g mysql -m 775 ${DB_DIR}
+
+# The shell is switched back to /bin/sh to ensure that the database
+# creation can proceed successfully
+chpass -s /bin/sh mysql
 su mysql -c ${PREFIX}/bin/mysql_install_db
+chpass -s /sbin/nologin mysql
 }
 
 # Verify/process the command
 #
 case $2 in 
     PRE-INSTALL)
-	do_pre_install $1
+	if [ -d $DB_DIR ]; then
+	    do_notice_pre_install $1
+	fi
+	do_pre_install
 	;;
     POST-INSTALL)
-	do_post_install $1
+	do_post_install
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
