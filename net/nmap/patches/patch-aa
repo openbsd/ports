@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Mon Jul 26 22:28:22 1999
++++ Makefile.in	Mon Jul 26 22:29:17 1999
+@@ -5,12 +5,12 @@
+ sbindir = @sbindir@
+ mandir = @mandir@
+ srcdir = @srcdir@
+-libdir = @libdir@/nmap
++libdir = @libdir@
+ 
+ CC = @CC@
+ CCOPT = 
+ LIBPCAPDIR = @libpcapdir@
+-INCLS = -I. -I$(LIBPCAPDIR)
++INCLS = -I. # -I$(LIBPCAPDIR)
+ DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
+ CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+@@ -32,7 +32,7 @@
+ 
+ all: $(TARGET)
+ 
+-$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
++$(TARGET): $(DEPS) $(OBJS) # @PCAP_DEPENDS@
+ 	@echo Compiling nmap
+ 	rm -f $@
+ 	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
