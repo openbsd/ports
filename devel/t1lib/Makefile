@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/07/21 07:02:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2003/07/22 22:44:45 naddy Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
@@ -13,6 +13,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+# work around optimizer bug in gcc 2.95/3.2
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	gcc-patch-* patch-*
+.endif
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
