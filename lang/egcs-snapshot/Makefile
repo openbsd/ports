@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.21 1999/01/24 21:36:11 espie Exp $
+# $OpenBSD: Makefile,v 1.22 1999/01/31 23:20:41 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -45,10 +45,10 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive
-#ONE_ARCHIVE=yes
+ONE_ARCHIVE=yes
 
 
-LATEST_DATE=1999-01-24
+LATEST_DATE=1999-01-31
 
 #### fetch section
 # configuration is built so that you can test the next snapshot easily,
@@ -223,6 +223,7 @@ post-patch:
 	#find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
+	${MV} ${WRKSRC}/libiberty/mkstemp.c ${WRKSRC}/libiberty/mkstemps.c
 	cd ${WRKSRC}; \
 	for f in `cat ${FILESDIR}/fixdepend`; \
 	do \
@@ -260,7 +261,7 @@ LANGS+=objc
 LANGS+=java
 .endif
 
-CONFIGURE_ENV=CFLAGS='-O2 -g' LANGUAGES='${LANGS}'
+CONFIGURE_ENV=CFLAGS='-O2' LANGUAGES='${LANGS}'
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --program-transform-name=s,^,e, 
 
