@@ -5,9 +5,7 @@
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.12 2000/03/03 12:03:02 turan Exp $
-
-BROKEN=		installs files automatically in /etc
+# $OpenBSD: Makefile,v 1.13 2000/03/03 12:41:00 turan Exp $
 
 NEED_VERSION=	1.210
 DISTNAME=	Wnn4.2
