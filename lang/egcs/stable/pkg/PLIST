@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/07/04 15:07:33 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/07/09 10:26:22 espie Exp $
+@option no-default-conflict
+@pkgcfl egcs-*-core
+@pkgcfl gcc-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/cpp.info
 @unexec install-info --delete --info-dir=%D/info %D/info/cppinternals.info
 @unexec install-info --delete --info-dir=%D/info %D/info/gcc.info
 bin/ecpp
+bin/eg++
 bin/egcc
 bin/egccbug
 bin/egcov
@@ -52,16 +56,21 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
+lib/fpic/libiberty.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/cc1
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/collect2
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/cpp0
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/fpic/libg2c.a
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/fpic/libgcc.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/README
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/float.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/g2c.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/limits.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/machine/ansi.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/stdarg.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/syslimits.h
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/varargs.h
+lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/libg2c.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/libgcc.a
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/specs
 lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/tradcpp0
@@ -69,11 +78,12 @@ lib/libiberty.a
 man/man1/cpp.1
 man/man1/egcc.1
 man/man1/gcov.1
+%%SHARED%%
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include/machine
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/include
+@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0/fpic
 @dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9/3.0
-@dirrm lib/gcc-lib/${MACHINE_ARCH}-unknown-openbsd2.9
-@dirrm lib/gcc-lib
+@dirrm lib/fpic
 @exec install-info --info-dir=%D/info %D/info/cpp.info
 @exec install-info --info-dir=%D/info %D/info/cppinternals.info
 @exec install-info --info-dir=%D/info %D/info/gcc.info

@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_libsupc++_Makefile_in,v 1.1 2001/07/04 15:07:32 espie Exp $
---- libstdc++-v3/libsupc++/Makefile.in.orig	Wed Jul  4 15:25:50 2001
-+++ libstdc++-v3/libsupc++/Makefile.in	Wed Jul  4 15:26:51 2001
+$OpenBSD: patch-libstdc++-v3_libsupc++_Makefile_in,v 1.2 2001/07/09 10:26:21 espie Exp $
+--- libstdc++-v3/libsupc++/Makefile.in.orig	Mon Jun  4 04:29:37 2001
++++ libstdc++-v3/libsupc++/Makefile.in	Mon Jul  9 08:43:44 2001
 @@ -32,7 +32,7 @@ mandir = @mandir@
  includedir = @includedir@
  oldincludedir = /usr/include

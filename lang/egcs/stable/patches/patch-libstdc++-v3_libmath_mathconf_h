@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_libmath_mathconf_h,v 1.1 2001/07/04 15:07:32 espie Exp $
+$OpenBSD: patch-libstdc++-v3_libmath_mathconf_h,v 1.2 2001/07/09 10:26:21 espie Exp $
 --- libstdc++-v3/libmath/mathconf.h.orig	Sun Feb 25 10:25:42 2001
-+++ libstdc++-v3/libmath/mathconf.h	Wed Jul  4 14:25:37 2001
++++ libstdc++-v3/libmath/mathconf.h	Mon Jul  9 08:43:44 2001
 @@ -34,6 +34,9 @@
  # include <endian.h>
  #else

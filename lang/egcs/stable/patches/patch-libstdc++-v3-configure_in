@@ -10,7 +10,7 @@ first.
 	machine/endian.h if available.
 
 --- libstdc++-v3/configure.in.orig	Thu Jun 14 10:47:35 2001
-+++ libstdc++-v3/configure.in	Wed Jul  4 14:25:37 2001
++++ libstdc++-v3/configure.in	Mon Jul  9 08:43:44 2001
 @@ -204,7 +204,7 @@ else
  
    # Check for available headers.

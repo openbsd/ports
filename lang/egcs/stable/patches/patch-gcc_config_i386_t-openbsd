@@ -1,0 +1,10 @@
+$OpenBSD: patch-gcc_config_i386_t-openbsd,v 1.1 2001/07/09 10:26:20 espie Exp $
+--- gcc/config/i386/t-openbsd.orig	Fri Jul  6 10:47:23 2001
++++ gcc/config/i386/t-openbsd	Fri Jul  6 10:47:57 2001
+@@ -0,0 +1,6 @@
++# gdb gets confused if pic code is linked with non pic
++# We cope by building variants of libgcc.
++MULTILIB_OPTIONS = fpic
++MULTILIB_MATCHES=fpic=fPIC
++LIBGCC = stmp-multilib
++INSTALL_LIBGCC = install-multilib

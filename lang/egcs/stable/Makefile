@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2001/07/04 18:24:46 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2001/07/09 10:26:18 espie Exp $
 
-# This is a configuration file for egcs, snapshot flavor
+# This is a configuration file for egcs
 
 COM=		'GNU compiler collection (experimental)'
 COMMENT=	${COM}: core C compiler
@@ -54,10 +54,10 @@ PERMIT_DISTFILES_CDROM=Yes
 # and g77-tests only holds duplicates from the main testsuite archive.
 #MAKE_TESTS=yes
 MAKE_GXX=Yes
-#MAKE_FORTRAN=Yes
+MAKE_FORTRAN=Yes
 # we don't care about chill
 #MAKE_CHILL=yes
-#MAKE_OBJC=Yes
+MAKE_OBJC=Yes
 #MAKE_JAVA=Yes
 
 MULTI_PACKAGES=
@@ -158,6 +158,7 @@ post-patch:
 	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoheader
 	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
+	cd ${WRKSRC}/libffi && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/fastjar && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC} && rm -rf texinfo
 	cd ${WRKSRC} && rm -rf zlib
@@ -183,12 +184,14 @@ MULTI_PACKAGES+=-c++
 .endif
 .if defined(MAKE_FORTRAN)
 LANGS:=${LANGS},f77
+MULTI_PACKAGES+=-g77
 .endif
 .if defined(MAKE_CHILL)
 LANGS.=${LANGS},CHILL
 .endif
 .if defined(MAKE_OBJC)
 LANGS:=${LANGS},objc
+MULTI_PACKAGES+=-objc
 .endif
 .if defined(MAKE_JAVA)
 LANGS:=${LANGS},java
@@ -206,6 +209,10 @@ CONFIGURE_ARGS= --verbose --program-transform-name=s,^,e, \
 # visible beast
 CONFIGURE_ARGS+=--enable-cpp
 CONFIGURE_ARGS+=--enable-languages=${LANGS}
+
+.if defined(MAKE_JAVA)
+CONFIGURE_ARGS+=--enable-sjlj-exceptions
+.endif
 
 
 # if you wish to try your luck
@@ -234,7 +241,7 @@ SEPARATE_BUILD=concurrent
 # build section
 # should work without gmake. If it turns out to be needed, this must be 
 # reported to MAINTAINER.
-#USE_GMAKE= yes
+USE_GMAKE= yes
 
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
@@ -278,11 +285,15 @@ send-results:
 .endif
 
 #USE_GMAKE=Yes
-SED_PLIST=|sed -e s/@GCCARCH@/`${GCC_NAME} -dumpmachine`/ \
-	-e s/@VERSION@/`${GCC_NAME} -dumpversion`/ \
-	-e 's/@COREPKG@/${DISTNAME}-core/'
+#SED_PLIST=|sed -e s/@GCCARCH@/`${GCC_NAME} -dumpmachine`/ \
+#	-e s/@VERSION@/`${GCC_NAME} -dumpversion`/ \
+#	-e 's/@COREPKG@/${DISTNAME}-core/'
 
 GCC_NAME=${WRKBUILD}/gcc/xgcc
+
+.if defined(PACKAGING) && !empty(SUBPACKAGE)
+RUN_DEPENDS+=egcc::lang/egcs/stable
+.endif
 
 .include <bsd.port.mk>
 

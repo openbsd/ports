@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2001/07/09 10:26:19 espie Exp $
+--- configure.in.orig	Fri Jul  6 11:44:32 2001
++++ configure.in	Fri Jul  6 11:45:36 2001
+@@ -983,6 +983,8 @@ case "${target}" in
+     configdirs="$configdirs grez"
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;    
++  *-*-openbsd*)
++    ;;
+   *-*-*)
+     noconfigdirs="$noconfigdirs ${libgcj}"
+     ;;
