@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/10/30 11:10:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2002/10/31 18:02:36 jakob Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -34,8 +34,8 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKBUILD}/doc/stunnel.8 ${PREFIX}/man/man8
-	${INSTALL_DATA_DIR} ${PREFIX}/examples/stunnel
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stunnel
 	${INSTALL_DATA} ${WRKBUILD}/tools/stunnel.conf-sample \
-		${PREFIX}/examples/stunnel
+		${PREFIX}/share/examples/stunnel
 
 .include <bsd.port.mk>
