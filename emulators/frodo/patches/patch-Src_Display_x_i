@@ -1,5 +1,6 @@
---- Src/Display_x.i.bak.orig	Wed Aug  6 20:56:26 1997
-+++ Src/Display_x.i	Thu Jan 11 02:58:27 2001
+$OpenBSD: patch-Src_Display_x_i,v 1.2 2001/02/06 22:40:17 espie Exp $
+--- Src/Display_x.i.orig	Wed Aug  6 20:56:26 1997
++++ Src/Display_x.i	Sun Jan 14 02:20:07 2001
 @@ -4,6 +4,7 @@
   *
   *  Frodo (C) 1994-1997 Christian Bauer
