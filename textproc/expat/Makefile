@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2000/11/01 19:13:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/14 16:02:58 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/08/31 02:09:14 peter Exp $
 
-DISTNAME=	expat1_1
-PKGNAME=	expat-1.1
+DISTNAME=	expat1_2
+PKGNAME=	expat-1.2
 CATEGORIES=	textproc
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 EXTRACT_SUFX=	.zip

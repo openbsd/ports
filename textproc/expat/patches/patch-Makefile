@@ -1,52 +1,50 @@
---- Makefile.orig	Mon Mar  8 08:20:38 1999
-+++ Makefile	Wed Oct 18 09:47:00 2000
-@@ -10,21 +10,28 @@
- #FILEMAP_OBJ=xmlwf/readfilemap.o
- OBJS=xmltok/xmltok.o \
+--- Makefile.orig	Tue May  9 23:21:56 2000
++++ Makefile	Thu Dec 14 10:47:28 2000
+@@ -13,25 +13,36 @@
+ LIBOBJS=xmltok/xmltok.o \
    xmltok/xmlrole.o \
--  xmlwf/xmlwf.o \
--  xmlwf/xmlfile.o \
--  xmlwf/codepage.o \
-   xmlparse/xmlparse.o \
-   xmlparse/hashtable.o \
-   $(FILEMAP_OBJ)
-+SHOBJS=$(OBJS:.o=.so)
-+XOBJS=xmlwf/xmlwf.o \
-+  xmlwf/xmlfile.o \
-+  xmlwf/codepage.o
- EXE=
+   xmlparse/xmlparse.o
++SHLIBOBJS=$(LIBOBJS:.o=.so)
  
--all: xmlwf/xmlwf$(EXE)
+ OBJS=xmlwf/xmlwf.o \
+   xmlwf/xmlfile.o \
+   xmlwf/codepage.o \
+   $(FILEMAP_OBJ)
+-LIB=xmlparse/libexpat.a
++LIB=libexpat.a
+ EXE=
+ XMLWF=xmlwf/xmlwf$(EXE)
+ 
+-all: $(XMLWF)
 +PICFLAG= -fpic
  
--xmlwf/xmlwf$(EXE): $(OBJS)
--	$(CC) $(CFLAGS) -o $@ $(OBJS)
 +.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-+all: xmlwf/xmlwf$(EXE) libexpat.a
-+xmlwf/xmlwf$(EXE): $(XOBJS) libexpat.a
++all: $(XMLWF)
+ $(XMLWF): $(OBJS) $(LIB)
+-	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LIB)
 +.else
-+all: xmlwf/xmlwf$(EXE) libexpat.a $(SHLIB)
-+xmlwf/xmlwf$(EXE): $(XOBJS) libexpat.a $(SHLIB)
++all: $(XMLWF) $(SHLIB)
++$(XMLWF): $(OBJS) $(LIB) $(SHLIB)
 +.endif
-+	$(CC) $(CFLAGS) -o $@ $(XOBJS) -L. -lexpat
++	$(CC) $(CFLAGS) -o $@ $(OBJS) -L. -lexpat
+ 
+ $(LIB): $(LIBOBJS)
+ 	$(AR) rc $(LIB) $(LIBOBJS)
++	@ranlib $(LIB)
++
++$(SHLIB): $(SHLIBOBJS)
++	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHLIBOBJS)
  
  clean:
--	rm -f $(OBJS) xmlwf/xmlwf$(EXE)
-+	rm -f $(OBJS) $(SHOBJS) $(XOBJS) xmlwf/xmlwf$(EXE)
+-	rm -f $(OBJS) $(LIBOBJS) $(LIB) $(XMLWF)
++	rm -f $(OBJS) $(LIBOBJS) $(LIB) $(SHLIB) $(XMLWF)
  
  xmltok/nametab.h: gennmtab/gennmtab$(EXE)
  	rm -f $@
-@@ -35,5 +42,17 @@
+@@ -42,5 +53,10 @@
  
  xmltok/xmltok.o: xmltok/nametab.h
  
-+libexpat.a: $(OBJS)
-+	ar -rc $@ $(OBJS)
-+	ranlib $@
-+
-+$(SHLIB): $(SHOBJS)
-+	$(CC) -shared $(PICFLAG) -o $(SHLIB) $(SHOBJS)
-+
 +.SUFFIXES: .o .so
 +
  .c.o:
