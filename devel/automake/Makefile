@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2002/08/17 19:41:02 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2002/11/16 05:33:51 brad Exp $
 
 COMMENT=	"GNU Standards-compliant Makefile generator"
 
 DISTNAME=	automake-1.4-p6
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=automake/}
 
@@ -16,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
+
 MAKE_FLAGS=	MAKEINFO="makeinfo --no-split"
 FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}="${WRKINST}"
 
