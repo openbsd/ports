@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/06/10 15:41:04 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2003/12/27 23:41:41 jose Exp $
 
 COMMENT=	"framework to test programs"
 
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
 HOMEPAGE=	http://www.gnu.org/software/dejagnu/
 
-LIB_DEPENDS=	tk83.1.3::x11/tk/8.3
+LIB_DEPENDS=	tk84::x11/tk/8.4
 RUN_DEPENDS=	::lang/expect
 
 # GPL
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-tclinclude="${PREFIX}/include/tcl8.3/generic" \
-		--with-tkinclude="${PREFIX}/include/tk8.3/generic"
-CONFIGURE_ENV=	ac_cv_path_tclsh=${PREFIX}/bin/tclsh8.3
+CONFIGURE_ARGS=	--with-tclinclude="${PREFIX}/include/tcl8.4/generic" \
+		--with-tkinclude="${PREFIX}/include/tk8.4/generic"
+CONFIGURE_ENV=	ac_cv_path_tclsh=${PREFIX}/bin/tclsh8.4
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
