@@ -1,0 +1,12 @@
+$OpenBSD: patch-tcpip_h,v 1.1 2003/12/09 18:42:37 brad Exp $
+--- tcpip.h.orig	2003-10-10 14:02:14.000000000 -0700
++++ tcpip.h	2003-10-10 14:00:52.000000000 -0700
+@@ -239,7 +239,7 @@ extern "C" {
+ #endif
+ 
+ #ifndef BSDFIX
+-#if FREEBSD || BSDI || NETBSD || DEC
++#if FREEBSD || OPENBSD || BSDI || NETBSD || DEC
+ #define BSDFIX(x) x
+ #define BSDUFIX(x) x
+ #else

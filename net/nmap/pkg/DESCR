@@ -28,5 +28,3 @@ parallel pings. Nmap also offers flexible target and port
 specification, decoy scanning, determination of TCP sequence
 predictability characteristics, and output to machine parseable or
 human readable log files.
-
-WWW: ${HOMEPAGE}

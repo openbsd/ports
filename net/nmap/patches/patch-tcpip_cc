@@ -1,0 +1,13 @@
+$OpenBSD: patch-tcpip_cc,v 1.1 2003/12/09 18:42:37 brad Exp $
+--- tcpip.cc.orig	2003-09-20 02:03:00.000000000 -0700
++++ tcpip.cc	2003-10-10 13:51:44.000000000 -0700
+@@ -1524,7 +1524,8 @@ if (!pd) fatal("NULL packet device passe
+    gettimeofday(&tv_end, NULL);
+    *rcvdtime = tv_end;
+ #else
+-   *rcvdtime = head.ts;
++   rcvdtime->tv_sec = head.ts.tv_sec;
++   rcvdtime->tv_usec = head.ts.tv_usec;
+    assert(head.ts.tv_sec);
+ #endif
+  }

@@ -1,0 +1,13 @@
+$OpenBSD: patch-nbase_configure_ac,v 1.1 2003/12/09 18:42:37 brad Exp $
+--- nbase/configure.ac.orig	2003-10-10 12:35:59.000000000 -0700
++++ nbase/configure.ac	2003-10-10 12:36:16.000000000 -0700
+@@ -141,6 +141,9 @@ AC_CHECK_HEADERS([netinet/if_ether.h],[]
+ [#if HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ # endif
++#if HAVE_NETINET_IN_H
++# include <netinet/in.h>
++#endif
+ #if HAVE_SYS_SOCKET_H
+ # include <sys/socket.h>
+ # endif

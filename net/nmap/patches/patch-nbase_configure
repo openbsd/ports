@@ -1,0 +1,13 @@
+$OpenBSD: patch-nbase_configure,v 1.3 2003/12/09 18:42:37 brad Exp $
+--- nbase/configure.orig	2003-10-10 12:36:03.000000000 -0700
++++ nbase/configure	2003-10-10 12:36:45.000000000 -0700
+@@ -3192,6 +3192,9 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #if HAVE_SYS_TYPES_H
+ # include <sys/types.h>
+ # endif
++#if HAVE_NETINET_IN_H
++# include <netinet/in.h>
++#endif
+ #if HAVE_SYS_SOCKET_H
+ # include <sys/socket.h>
+ # endif
