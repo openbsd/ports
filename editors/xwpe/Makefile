@@ -3,12 +3,12 @@
 # Date created:		August 31, 1998
 # Whom:			Yannick Cote
 #
-# $OpenBSD: Makefile,v 1.1 1998/09/01 04:09:43 smurph Exp $
+# $OpenBSD: Makefile,v 1.2 1998/09/06 01:29:21 smurph Exp $
 #
 
 DISTNAME=		xwpe-1.5.9a
 EXTRACT_SUFX=		.tgz
-CATEGORIES=		devel
+CATEGORIES=		editors
 
 MAINTAINER=		yanick@fries.net
 
