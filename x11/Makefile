@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2001/04/04 20:30:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2001/04/05 12:15:59 espie Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -9,14 +9,14 @@
      SUBDIR += afterstep
 #    SUBDIR += amiwm
      SUBDIR += asapm
-     SUBDIR += asclock:classic,english
+     SUBDIR += asclock,classic,english
      SUBDIR += asfiles
      SUBDIR += astime
      SUBDIR += aterm
 #    SUBDIR += auis
      SUBDIR += bbdate
      SUBDIR += bbkeys
-     SUBDIR += bbkeys:qt
+     SUBDIR += bbkeys,qt
      SUBDIR += bbpager
      SUBDIR += bclock
      SUBDIR += blackbox
@@ -30,7 +30,7 @@
 #    SUBDIR += emu
      SUBDIR += enlightenment
      SUBDIR += eterm
-     SUBDIR += eterm:kanji
+     SUBDIR += eterm,kanji
 #    SUBDIR += etlfonts
      SUBDIR += explorer
 #    SUBDIR += fbsd-icons
@@ -63,18 +63,19 @@
      SUBDIR += olvwm
      SUBDIR += openmotif
 #    SUBDIR += p5-Tcl-Tk
-#    SUBDIR += p5-Tk
+     SUBDIR += p5-Tk
      SUBDIR += piewm
 #    SUBDIR += pythonqt
+     SUBDIR += pwm
      SUBDIR += qlwm
      SUBDIR += qt
      SUBDIR += qt2
-     SUBDIR += qt2:gl
+     SUBDIR += qt2,gl
      SUBDIR += qt2-designer
      SUBDIR += qvwm
-     SUBDIR += qvwm:esound
-     SUBDIR += qvwm:esound,imlib
-     SUBDIR += qvwm:imlib
+     SUBDIR += qvwm,esound
+     SUBDIR += qvwm,esound,imlib
+     SUBDIR += qvwm,imlib
      SUBDIR += rclock
      SUBDIR += rep-gtk
      SUBDIR += root-tail
@@ -105,7 +106,7 @@
      SUBDIR += wminfo
      SUBDIR += wmitime
      SUBDIR += wmmenu
-     SUBDIR += wmmenu:gdk_pixbuf
+     SUBDIR += wmmenu,gdk_pixbuf
      SUBDIR += wmpinboard
      SUBDIR += wmthemeinstall
      SUBDIR += wmtime
