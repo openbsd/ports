@@ -1,0 +1,4 @@
+nylon is a proxy server which currently supports SOCKS version 4 and 5 as 
+well as a mirror mode which allows nylon to mirror services.
+
+WWW: ${HOMEPAGE}
