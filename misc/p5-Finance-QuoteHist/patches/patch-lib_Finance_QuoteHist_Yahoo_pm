@@ -1,0 +1,54 @@
+$OpenBSD: patch-lib_Finance_QuoteHist_Yahoo_pm,v 1.1.1.1 2003/04/13 19:31:33 sturm Exp $
+--- lib/Finance/QuoteHist/Yahoo.pm.orig	Thu Mar 27 14:42:18 2003
++++ lib/Finance/QuoteHist/Yahoo.pm	Thu Mar 27 14:42:41 2003
+@@ -21,8 +21,10 @@ use Date::Manip;
+ #
+ # Note that Yahoo implements month numbering with Jan=0 and Dec=11.
+ #
+-# For CSV output, date ranges are unlimited; the output is adjusted
+-# and does not include any split or dividend notices.
++# For CSV output, the output is adjusted and does not include any
++# split or dividend notices.
++# Date ranges are unlimited for some exchanges,
++# ASX (foo.AX) = 200 day blocks
+ #
+ # For HTML output, Yahoo takes arbitrary date ranges, but returns
+ # results in batches of 200, so we use 200 day blocks. Output is
+@@ -97,7 +99,7 @@ sub quote_labels {
+   # in CSV since everything is pre-adjusted.
+   my $self = shift;
+   my @normal_labels = $self->SUPER::quote_labels();
+-  if (!$self->adjusted || $self->source_type eq 'html') {
++  if (!$self->adjusted || ($self->source_type && $self->source_type eq 'html')) {
+     return (@normal_labels, 'Adj');
+   }
+   @normal_labels;
+@@ -159,10 +161,25 @@ sub _urls {
+   $self->source_type($source_mode);
+ 
+   if ($source_mode ne 'html') {
+-    # Single date block for CSV retrievals; Yahoo does not limit the
+-    # query range for CSV results.
+     $self->parse_mode('csv');
+-    $date_pairs{$start_date} = $end_date;
++    # Yahoo limits the query range for CSV results for certain symbols.
++    # ASX (foo.AX) = 200 day blocks
++    if ($ticker =~ /\.AX$/i) {
++      # Split the query range into 200-day blocks
++      my($low_date, $high_date);
++      $low_date = $start_date;
++      while (1) {
++        $high_date = DateCalc($low_date,  '+ 200 days');
++        last if Date_Cmp($high_date, $end_date) == 1;
++        $date_pairs{$low_date} = $high_date;
++        $low_date = DateCalc($high_date, '+ 1 day');
++      }
++      # Last query block only needs to extend to end_date
++      $date_pairs{$low_date} = $end_date;
++    } else {
++      # All other symbols are unlimited - use a single query range.
++      $date_pairs{$start_date} = $end_date;
++    }
+     # hack for munged CSV on Yahoo...see csv_parser() below
+     ++$self->{_yahoo_div_fix} if $mode eq 'dividend';
+   }

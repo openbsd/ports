@@ -1,0 +1,51 @@
+$OpenBSD: patch-lib_Finance_QuoteHist_Generic_pm,v 1.1.1.1 2003/04/13 19:31:33 sturm Exp $
+--- lib/Finance/QuoteHist/Generic.pm.orig	Thu Mar 27 14:41:49 2003
++++ lib/Finance/QuoteHist/Generic.pm	Thu Mar 27 14:42:35 2003
+@@ -24,6 +24,7 @@ my @Scalar_Flags = qw(
+ 		      ratio_precision
+ 		      attempts
+ 		      reverse
++		      reverse_fetch
+ 		      adjusted
+ 		      has_non_adjusted
+                       env_proxy
+@@ -298,7 +299,13 @@ sub target_get {
+   my(@rows, %empty_fetch, %saw_good_rows);
+ 
+   foreach my $s ($self->symbols) {
+-    foreach ($self->$urlmaker($s)) {
++    my @urllist;
++    if ($self->{reverse_fetch}) {
++      @urllist = reverse ($self->$urlmaker($s));
++    } else {
++      @urllist = ($self->$urlmaker($s));
++    }
++    foreach (@urllist) {
+       if ($empty_fetch{$s}) {
+ 	print STDERR ref $self,
+ 	   " passing on $s ($target) for now, empty fetch\n"
+@@ -1190,6 +1197,24 @@ of your rows is important you might want
+ flag. If the overall order is not that important, then ignore this
+ flag. Typically, site-specific sub classes of this module will take
+ care of setting this appropriately. The default is 0.
++
++=item reverse_fetch
++
++(The default value is 0.)
++
++If true, Twe fetch each batch of rows in the reverse order to that
++provided by C<quote_urls()>.
++
++Note that the order of rows within blocks is not affected,
++so you might get orders like 7,8,9, 4,5,6, 1,2,3.
++
++Background: I was trying to use Finance::QuoteHist to 'backfill'
++data for current ASX symbols from 1990 to today. When I asked for a
++start date too early the Yahoo server returned a header with no data
++blocks. After more than C<attempts> failures the fetch was aborted.
++By requesting the blocks in the reverse order I get all the data.
++I assume this would not work for any symbols without quotes within
++the most recent requested block (ie defunct symbols).
+ 
+ =item attempts
+ 
