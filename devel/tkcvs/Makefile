@@ -3,16 +3,15 @@
 # Date created:		15 June 1998
 # Whom:			todd@OpenBSD.org
 #
-# $OpenBSD: Makefile,v 1.2 1998/01/01 00:28:39 marc Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 1998/06/15 05:35:00 todd Exp $
 #
 
-BROKEN=		"code moved and newer version available"
 NO_BUILD=	yes
 NO_CONFIGURE=	yes
 
 DISTNAME=	tkcvs-6.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/code/
 
 MAINTAINER=	todd@OpenBSD.org
 

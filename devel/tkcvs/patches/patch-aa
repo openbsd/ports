@@ -1,0 +1,62 @@
+--- tkcvs/doinstall.orig	Tue Jan  9 22:17:52 1996
++++ tkcvs/doinstall	Sun Apr 26 19:03:11 1998
+@@ -2,10 +2,10 @@
+ #
+ # $Id: patch-aa,v 1.1.1.1 1998/06/15 05:35:00 todd Exp $
+ #
+-
++PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin
+ # Some rational and reasonable defaults.
+ 
+-INSTALLDIR=/usr/local/lib
++INSTALLDIR=/usr/local/libdata
+ BINDIR=/usr/local/bin
+ MANDIR=/usr/local/man/mann
+ 
+@@ -14,22 +14,32 @@
+ # This must be an X based editor -- do NOT use vi except via an xterm
+ # or shelltool.
+ 
+-EDITOR=nedit
++EDITOR=xedit
+ 
+ # Find a Tk interpreter.
+  
+-WISH=`which wish4.0`
+-if [ ! -f $WISH ]; then
++WISH=`which wish8.0`
++if [ ! -f ${WISH} ]
++then
++  WISH=`which wish4.2`
++fi
++if [ ! -f ${WISH} ]
++then
+   WISH=`which wish4.1`
+ fi
+-if [ ! -f $WISH ]; then
++if [ ! -f ${WISH} ]
++then
++  WISH=`which wish4.0`
++fi
++if [ ! -f ${WISH} ]
++then
+   echo "I cant find a Tk interpreter on your system"
+   exit 1
+ fi
+ 
+ # Find where the global bitmaps are.
+ 
+-for GDIR in /usr/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
++for GDIR in /usr/include/X11/bitmaps /usr/openwin/include/X11/bitmaps /usr/X11/include/bitmaps /usr/X11R6/include/bitmaps /usr/include/bitmaps /usr/local/include/bitmaps
+ do
+   if [ -d "$GDIR" ]; then
+     break
+@@ -62,7 +72,7 @@
+ 
+ # Some directories we have to create.
+ 
+-LDIR=${INSTALLDIR}/bitmaps
++LDIR=${INSTALLDIR}/tkcvs/bitmaps
+ TCDIR=${INSTALLDIR}/tkcvs
+ mkdir -p $LDIR $TCDIR
+ for dir in $LDIR $TCDIR
