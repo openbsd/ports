@@ -1,0 +1,4 @@
+imlib is an advanced graphics library meant to replace existing librarys
+like libXpm, and provides many more features with much greater flexibility
+and speed.
+
