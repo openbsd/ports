@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/07/18 22:19:03 jakob Exp $
+# $OpenBSD: Makefile,v 1.43 2005/01/02 10:53:41 alek Exp $
 
 COMMENT=		"University of Washington IMAP4rev1/POP2/POP3 mail servers"
 COMMENT-mailutil=	"University of Washington IMAP4rev1/POP2/POP3 mail utility"
@@ -23,6 +23,7 @@ PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		asn1 c com_err crypto des gssapi kafs krb5 ssl
 
 ALL_TARGET=	bso
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6
