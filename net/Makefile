@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2004/10/13 02:06:11 danh Exp $
+# $OpenBSD: Makefile,v 1.334 2004/11/01 11:14:33 xsa Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -149,6 +149,7 @@
      SUBDIR += p5-IO-Socket-Multicast
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
+     SUBDIR += p5-Net-CIDR
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-DNS-SEC
      SUBDIR += p5-Net-Daemon
