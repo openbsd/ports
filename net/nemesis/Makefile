@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/28 08:21:51 obecian Exp $
+# $OpenBSD: Makefile,v 1.11 2001/06/02 03:33:59 obecian Exp $
 
 COMMENT=	"Command line arbitrary packet builder"
 
-DISTNAME=	nemesis-1.2
+DISTNAME=	nemesis-1.3
 CATEGORIES=	net security
 NEED_VERSION=	1.364
 MASTER_SITES=	http://www.packetninja.net/nemesis/ \
