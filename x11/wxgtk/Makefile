@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2003/02/10 00:28:45 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2003/03/06 01:33:18 pvalchev Exp $
 
 COMMENT=	"C++ cross-platform GUI toolkit"
 
@@ -14,6 +14,9 @@ HOMEPAGE=	http://wesley.informatik.uni-freiburg.de/~wxxt/
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
+LIB_DEPENDS=	gdk.,gtk.::x11/gtk+ \
+		glib.,gmodule.,gthread.::devel/glib
+
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -25,7 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 # gcc3
-MODULES=                gcc3
+MODULES=                gettext gcc3
 MODGCC3_ARCHES=         sparc64
 MODGCC3_LANGS+=         c++
 
