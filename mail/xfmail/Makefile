@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/12 15:54:35 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/09/13 08:43:40 brad Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k hp300
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--without-nas-sound
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/X11" \
 		LDFLAGS="-L${LOCALBASE}/lib/X11"
 
@@ -30,13 +31,12 @@ FLAVORS=	threads
 FLAVOR?=
 
 .if ${FLAVOR:L} == "threads"
-CONFIGURE_ARGS=	--with-threads
+. if ${MACHINE_ARCH} == "sparc"
+BROKEN=		"pthreads are currently not working on the SPARC architecture"
+. endif
 .else
-CONFIGURE_ARGS=	--without-threads
-.endif	
-
-pre-configure:
-	@cp -f ${FILESDIR}/config.cache ${WRKSRC}
+CONFIGURE_ARGS+= --without-threads
+.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xfmail
