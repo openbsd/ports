@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.27 2000/09/24 07:04:06 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2000/11/21 20:59:55 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
 CATEGORIES=	graphics
-NEED_VERSION=	1.330
+NEED_VERSION=	1.336
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
 HOMEPAGE=	http://www.boutell.com/gd/
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1::graphics/png
+		png.1::graphics/png \
+		ttf.1.3:print/freetype
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -26,13 +27,12 @@ FLAVORS=	no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L} == "no_x11"
-MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG" \
+MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_JPEG -DHAVE_LIBTTF" \
 		INCLUDEDIRS="-I. -I${LOCALBASE}/include" \
-		LIBS="-lgd -lm -lpng -ljpeg -lz" \
+		LIBS="-lgd -lm -lpng -lz -ljpeg -lttf" \
 		LIBDIRS="-L. -L${LOCALBASE}/lib"
 FAKE_FLAGS+=	${MAKE_FLAGS}
 .else
-LIB_DEPENDS+=	ttf.1.3::print/freetype
 USE_X11=	Yes
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF" \
 		INCLUDEDIRS="-I. -I${LOCALBASE}/include -I${X11BASE}/include -I${X11BASE}/include/X11" \
