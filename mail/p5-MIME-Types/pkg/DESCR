@@ -1,0 +1,7 @@
+A start for a more detailed data-structure to keep knowledge about
+various data types are defined by MIME.  Some basic treatments with
+mime types are implemented.
+
+The first special data item is whether a data type is binary or
+ascii.  This is required for correctly encoding e-mail attachments,
+and implemented for the Mail::Box v2.01 module.
