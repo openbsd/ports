@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2001/12/07 13:52:36 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2002/02/17 07:13:40 brad Exp $
 
 COMMENT=	"multi-screen window manager"
 
-VERSION=	3.9.10
+VERSION=	3.9.11
 DISTNAME=	screen-${VERSION}
 CATEGORIES=	misc
 NEED_VERSION=	1.500
@@ -30,6 +30,9 @@ CONFIGURE_ENV=	LDFLAGS="-static"
 .endif
 
 ALL_TARGET=	screen screen.info
+
+post-extract:
+	@rm -f ${WRKSRC}/doc/screen.info*
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/screen-${VERSION}
