@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/20 20:27:31 pvalchev Exp $
 
 COMMENT=	"B Plus file transfer protocol"
 
@@ -8,9 +8,9 @@ CATEGORIES=	comms
 NEED_VERSION=	1.406
 
 PERMIT_PACKAGE_CDROM=	"no license"
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_FTP=	"no license"
 PERMIT_DISTFILES_CDROM=	"no license"
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_FTP=	"no license"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${PREFIX}/bin
