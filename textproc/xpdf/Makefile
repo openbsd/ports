@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2002/10/28 22:43:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2002/12/29 23:45:20 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
 DISTNAME=	xpdf-1.01
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
@@ -13,6 +14,7 @@ LIB_DEPENDS=	t1x.3,t1.3::devel/t1lib
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

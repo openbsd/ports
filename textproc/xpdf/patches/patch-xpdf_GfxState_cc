@@ -1,0 +1,23 @@
+$OpenBSD: patch-xpdf_GfxState_cc,v 1.1 2002/12/29 23:45:20 brad Exp $
+--- xpdf/GfxState.cc.orig	Thu Dec 26 23:05:20 2002
++++ xpdf/GfxState.cc	Thu Dec 26 23:22:59 2002
+@@ -788,9 +788,19 @@ GfxColorSpace *GfxIndexedColorSpace::par
+   obj1.free();
+   if (!arr->get(2, &obj1)->isInt()) {
+     error(-1, "Bad Indexed color space (hival)");
++    delete baseA;
+     goto err2;
+   }
+   indexHighA = obj1.getInt();
++  if (indexHighA < 0 || indexHighA > 255) {
++    // the PDF spec requires indexHigh to be in [0,255] -- allowing
++    // values larger than 255 creates a security hole: if nComps *
++    // indexHigh is greater than 2^31, the loop below may overwrite
++    // past the end of the array
++    error(-1, "Bad Indexed color space (invalid indexHigh value)");
++    delete baseA;
++    goto err2;
++  }
+   obj1.free();
+   cs = new GfxIndexedColorSpace(baseA, indexHighA);
+   arr->get(3, &obj1);
