@@ -1,0 +1,11 @@
+--- pdflib/Makefile.in.orig	Tue Aug 22 03:02:00 2000
++++ pdflib/Makefile.in	Thu Sep 28 16:58:10 2000
+@@ -17,7 +17,7 @@
+ LIBTOOL		= ../libtool
+ 
+ # installation directories
+-prefix = @prefix@
++prefix = $(DESTDIR)/@prefix@
+ exec_prefix = @exec_prefix@
+ 
+ # directories for the final library and include files for PDFlib users
