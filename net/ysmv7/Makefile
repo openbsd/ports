@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/11/22 02:37:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.4 2002/11/24 00:24:40 margarida Exp $
 
 COMMENT=		"ICQ console client with encryption support"
 
-DISTNAME=		ysmv7_2_8_0
+DISTNAME=		ysmv7_2_8_1
 PKGNAME=		${DISTNAME:S/_/-/:S/_/./g}
 CATEGORIES=		net
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tgz
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 NO_REGRESS=		Yes
 

@@ -1,13 +1,13 @@
 YSM (You Sick Me) is an ICQ console client for the ICQ protocol v7,
 supporting features like:
 
-*Crypto between YSM clients using a rijndael algorithm implementation
-[AES in CBC mode].
-*Downloading server-side stored ICQ contacts.
-*Uploading/Saving in the ICQ servers local ICQ contacts.
-*ICQ Clients Fingerprinting, makes possible the recognition of
-remote ICQ clients.
-*Quick and easy to compile code, leaving aside -must have- library
-requirements.
+* Crypto between YSM clients using a rijndael algorithm implementation
+  [AES in CBC mode].
+* Downloading server-side stored ICQ contacts.
+* Uploading/Saving in the ICQ servers local ICQ contacts.
+* ICQ Clients Fingerprinting, makes possible the recognition of
+  remote ICQ clients.
+* Quick and easy to compile code, leaving aside -must have- library
+  requirements.
 
 WWW: ${HOMEPAGE}
