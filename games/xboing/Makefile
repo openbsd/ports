@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2003/06/18 21:43:40 pvalchev Exp $
 
-COMMENT=	"X11 arcade"
+COMMENT=	"blockout style game for X11"
 
 DISTNAME=	xboing2.4
 PKGNAME=	xboing-2.4

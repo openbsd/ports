@@ -1,5 +1,5 @@
 Xbreaky is a version of the old Breakout/Arkanoid game, written for
-X Window syste.
+the X Window System.
 
 The objective of this arcade game is to break all the bricks with a ball
 that bounces off the walls and a paddle that you can move. You start by
