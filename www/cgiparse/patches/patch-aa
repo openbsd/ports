@@ -1,0 +1,12 @@
+*** Makefile.orig	Thu Apr 30 14:40:39 1998
+--- Makefile	Thu Apr 30 14:40:45 1998
+***************
+*** 16,22 ****
+  MAN3 = cgigetvalue.3 cgiclose.3 cginewquerystr.3
+  MANDIR = ${INST_DIR}/man/man
+  
+- DPADD = ${INST_DIR}/lib/libcgiparse.a
+  NOPROFILE = 
+  
+  afterinstall: cgi.h
+--- 16,21 ----
