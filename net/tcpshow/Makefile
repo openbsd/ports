@@ -3,11 +3,11 @@
 # Date created:			  17 Jul 1998
 # Whom:				  Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.1.1.2 1998/07/17 09:52:58 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/07/20 04:50:00 form Exp $
 # FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp
 #
 
-DISTNAME=	tcpshow-1.0
+DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
 MASTER_SITES=	http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
