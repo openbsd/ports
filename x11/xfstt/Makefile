@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/15 05:05:35 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/22 22:44:27 jasoni Exp $
 # $FreeBSD Id: Makefile,v 1.2 1999/06/28 02:22:43 billf Exp $
 #
 
-DISTNAME=	xfstt-1.0
+DISTNAME=	xfstt-1.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= X11/fonts
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-USE_X11=	yes
+USE_X11=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xfstt ${PREFIX}/bin
