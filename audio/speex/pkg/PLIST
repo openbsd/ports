@@ -1,15 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/12 00:52:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/27 19:35:20 naddy Exp $
 bin/speexdec
 bin/speexenc
+include/speex/
 include/speex.h
+include/speex/speex.h
+include/speex/speex_bits.h
+include/speex/speex_callbacks.h
+include/speex/speex_header.h
+include/speex/speex_stereo.h
 include/speex_bits.h
 include/speex_callbacks.h
 include/speex_header.h
 include/speex_stereo.h
 lib/libspeex.a
 lib/libspeex.la
+lib/pkgconfig/speex.pc
 man/man1/speexdec.1
 man/man1/speexenc.1
+share/aclocal/speex.m4
+share/doc/speex/
 share/doc/speex/manual.pdf
 %%SHARED%%
-@dirrm share/doc/speex
