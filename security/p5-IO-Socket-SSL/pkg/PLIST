@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:36:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2005/01/27 03:28:05 kevlo Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Socket/
 ${P5SITE}/IO/Socket/SSL.pm
 @man man/man3p/IO::Socket::SSL.3p
 share/examples/p5-IO-Socket-SSL/
-share/examples/p5-IO-Socket-SSL/daemon.pl
 share/examples/p5-IO-Socket-SSL/ssl_client.pl
 share/examples/p5-IO-Socket-SSL/ssl_server.pl
