@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/11/12 22:07:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/13 12:37:37 naddy Exp $
 
 COMMENT=	"xml editor for KDE"
 
 DISTNAME=	kxmleditor-0.7.1
 CATEGORIES=	editors
-NEED_VERSION=	1.484
+NEED_VERSION=	1.528
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= kxmleditor
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
 BUILD_DEPENDS=	::x11/qt2-designer
 LIB_DEPENDS=	kdecore.3,DCOP,kfile,kdeui,kparts,ksycoca,kio,kdesu,kssl::x11/kde/libs2

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/15 21:43:42 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2002/05/13 12:37:36 naddy Exp $
 
 COMMENT=	"GNU editor"
 
 VER=		20.7
 DISTNAME=	emacs-${VER}
 CATEGORIES=	editors
-NEED_VERSION=	1.435
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= emacs
+NEED_VERSION=	1.528
+MASTER_SITES=	${MASTER_SITE_GNU:=emacs/}
 
 MAINTAINER=	Matthew Economou <xenophon@irtnog.org>
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/27 05:19:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.5 2002/05/13 12:37:37 naddy Exp $
 
 COMMENT=	"hierarchical notebook"
 
 DISTNAME=	hnb-1.8.1
 CATEGORIES=	editors
-NEED_VERSION=	1.419
+NEED_VERSION=	1.528
 
 HOMEPAGE=	http://hnb.sourceforge.net/
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= hnb
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hnb/}
 
 LIB_DEPENDS=	xml2.6::textproc/libxml
 
