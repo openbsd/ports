@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2003/02/16 14:24:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2005/02/13 18:07:31 alek Exp $
 
 COMMENT=	"Ericsson's high-level functional programming language"
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c termcap m pthread
 
 MASTER_SITES=		http://erlang.stacken.kth.se/download/ \
 			http://www.erlang.org/download/
