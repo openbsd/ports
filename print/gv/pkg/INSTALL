@@ -1,12 +1,12 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2003/02/04 22:59:48 naddy Exp $
+# $OpenBSD: INSTALL,v 1.5 2003/02/06 19:44:20 avsm Exp $
 if [ "$2" != "POST-INSTALL" ]; then
   exit 0
 fi
 
 if [ `gs -v|sed -e 's/.*Ghostscript *\([0-9]\).*/\1/' -e q` -ge 7 ]; then
-    echo "Ghostscript version >=7.00 include an x11 display with aa"
-    echo "Set -sDISPLAY=x11 -dNOPLATFONTS -dTextAlphaBits=4 -dGraphicsAlphaBits=4"
-    echo "To use it"
-    echo "It has better rendering than x11alpha, but is significantly slower"
+    echo "Ghostscript version >=7.00 includes an X11 display with anti-aliasing. Set:\n"
+    echo "  -sDISPLAY=x11 -dNOPLATFONTS -dTextAlphaBits=4 -dGraphicsAlphaBits=4.\n"
+    echo "to use it; this option has better rendering than x11alpha, but is slower."
+
 fi
