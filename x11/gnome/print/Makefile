@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/22 15:37:35 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/01/21 03:56:12 brad Exp $
 
 COMMENT=		"printing framework for GNOME"
 
@@ -32,5 +32,6 @@ SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
