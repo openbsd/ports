@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/03/30 08:41:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 11:57:54 espie Exp $
+@fontdir lib/X11/fonts/ja/
 lib/X11/fonts/ja/a18rk.pcf.gz
 lib/X11/fonts/ja/a18rkb.pcf.gz
 lib/X11/fonts/ja/a18rki.pcf.gz
@@ -13,9 +14,3 @@ lib/X11/fonts/ja/j90-16.pcf.gz
 lib/X11/fonts/ja/jksp16.pcf.gz
 lib/X11/fonts/ja/jksp24.pcf.gz
 lib/X11/fonts/ja/jksp40.pcf.gz
-@exec cat %B/fonts.alias-* >%B/fonts.alias
-@exec echo "Remember to add %B to your font path."
-@exec /usr/X11R6/bin/mkfontdir %B || true
-@unexec cat %B/fonts.alias-* >%B/fonts.alias
-@unexec /usr/X11R6/bin/mkfontdir %B || true
-@exec echo "Remove %B manually if it's now empty"
