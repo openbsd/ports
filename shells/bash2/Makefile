@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/08 15:37:27 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.9 1999/08/21 17:20:46 brad Exp $
 
-DISTNAME=		bash-2.03
-CATEGORIES=		shells
+DISTNAME=	bash-2.03
+CATEGORIES=	shells
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= bash
 
-MAINTAINER=		marc@OpenBSD.ORG
+MAINTAINER=	marc@openbsd.org
 
-MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	bash
-DOCNAME=		${DISTNAME:S/-/-doc-/}
-DISTFILES=      	${DISTNAME}${EXTRACT_SUFX} ${DOCNAME}${EXTRACT_SUFX}
+DOCNAME=	${DISTNAME:S/-/-doc-/}
+DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} ${DOCNAME}${EXTRACT_SUFX}
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
 pre-install:
-	if [ ! -s ${PREFIX}/info/dir ]; then \
+	@if [ ! -s ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/bash
+	@${MKDIR} ${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
 		${WRKDIR}/doc/article.ps  \
 		${WRKDIR}/doc/article.txt  \
