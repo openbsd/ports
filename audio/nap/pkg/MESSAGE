@@ -1,3 +1,0 @@
-By default the configuration file .napconf must be in your
-home directory.  The program does not create this file.  For
-an example see: ${PREFIX}/share/examples/nap/nap.conf.dist
