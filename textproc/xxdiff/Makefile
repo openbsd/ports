@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/25 17:02:01 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2001/06/08 23:45:50 naddy Exp $
 
 COMMENT=	"graphical file comparator and merge tool"
 
@@ -35,7 +35,7 @@ MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=     CXXLD='${CXX} -L${LOCALBASE}/lib/qt2'
 
 post-patch:
-	@perl ${WRKSRC}/automoc -v
+	@cd ${WRKSRC} && perl automoc -v
 
 .include <bsd.port.mk>
 
