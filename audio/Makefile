@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2005/01/21 06:50:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.118 2005/03/08 15:14:07 niallo Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR += abcde
@@ -64,6 +64,7 @@
      SUBDIR += nap
 #    SUBDIR += nas
      SUBDIR += normalize
+     SUBDIR += nosefart
      SUBDIR += nspmod
      SUBDIR += oggtag
      SUBDIR += openal
