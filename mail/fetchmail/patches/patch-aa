@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Fri Apr 21 04:46:38 2000
++++ Makefile.in	Tue Apr 25 12:18:28 2000
+@@ -53,7 +53,7 @@ EXTRAOBJ = @EXTRAOBJ@
+ # EXTRAOBJ = strcasecmp.o getopt.o getopt1.o alloca.o
+ 
+ # Common prefix for machine-independent installed files.
+-prefix = @prefix@
++prefix = $(DESTDIR)@prefix@
+ # Common prefix for machine-dependent installed files.
+ exec_prefix = @exec_prefix@
+ 
+@@ -156,7 +156,7 @@ install:
+ 	@echo "Installing manual page..."
+ 	$(INSTALL_DATA) $(srcdir)/fetchmail.man $(mandir)/fetchmail.$(manext)
+ 	rm -f $(mandir)/fetchmailconf.$(manext)
+-	ln -s $(mandir)/fetchmail.$(manext) $(mandir)/fetchmailconf.$(manext)
++	cd $(mandir) && ln -s fetchmail.$(manext) fetchmailconf.$(manext)
+ 	@echo "Installing language catalogs..."
+ 	@POMAKE@ install
+ 

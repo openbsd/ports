@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.39 2000/04/09 17:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2000/04/26 18:43:53 fgsch Exp $
 
-DISTNAME=       fetchmail-5.2.5
+DISTNAME=       fetchmail-5.3.8
 CATEGORIES=	mail
-FAKE=No
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ 
-
 MAINTAINER=	fgsch@openbsd.org
+
+FAKE=			YES
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	YES
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	YES
 PERMIT_DISTFILES_CDROM=	YES
 PERMIT_DISTFILES_FTP=	YES
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		YES
 CONFIGURE_ARGS+= --disable-nls
 .if defined(WITH_KERBEROS) && ${WITH_KERBEROS:U} == YES
 CONFIGURE_ARGS+= --with-kerberos
