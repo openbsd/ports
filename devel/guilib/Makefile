@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/07 04:04:36 obecian Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/05 17:44:07 obecian Exp $
 
 COMMENT=	"SDL C++ GUI widget library"
 
-VER=	1.1.0
-PROJ=	GUIlib
+VER=		1.1.0
+PROJ=		GUIlib
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	guilib-${VER}
 CATEGORIES=	devel graphics
@@ -27,7 +27,5 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-
-CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
