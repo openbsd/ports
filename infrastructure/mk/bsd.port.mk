@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.100 1999/07/27 22:12:26 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.101 1999/07/28 00:25:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2057,6 +2057,8 @@ plist: install
 FULL_PACKAGE_NAME=NO
 .endif 
 
+# Make variables to pass along on recursive depends computations
+_DEPEND_THRU=FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} 
 
 # Nobody should want to override this unless PKGNAME is simply bogus.
 
@@ -2078,11 +2080,15 @@ package-path:
 
 .if !target(package-depends)
 package-depends:
-	@for dir in `${ECHO} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		if [ -d $$dir ]; then \
-			${MAKE} ECHO='${ECHO} -n' package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}; \
-			${ECHO} -n " "; \
-			(cd $$dir ; ${MAKE} package-name package-depends FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}); \
+	@pname=x; \
+	for dir in `${ECHO} ${LIB_DEPENDS} ${RUN_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+		case $$pname in \
+			x) \
+			 pname=`${MAKE} ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
+		esac; \
+		if cd $$dir 2>/dev/null; then \
+			${ECHO} -n "$$pname "; \
+			${MAKE} package-name package-depends ${_DEPEND_THRU}; \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent -- @pkgdep registration incomplete" >&2; \
 		fi; \
@@ -2283,15 +2289,19 @@ clean-depends:
 
 .if !target(depends-list)
 depends-list:
-	@for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
-		if [ -d $$dir ]; then \
-			${MAKE} ECHO='${ECHO} -n' package-name FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}; \
-			${ECHO} -n " "; \
-			(cd $$dir ; ${MAKE} package-name depends-list FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME}); \
+	@pname=x; \
+	for dir in `${ECHO} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+		 case $$pname in \
+			 x) \
+				 pname=`${MAKE} ECHO='${ECHO} -n' package-name ${_DEPEND_THRU}`;; \
+			esac; \
+		if cd $$dir 2>/dev/null; then \
+			${ECHO} -n "$$pname "; \
+			${MAKE} package-name depends-list ${_DEPEND_THRU};  \
 		else \
 			${ECHO_MSG} "Warning: \"$$dir\" non-existent" >&2; \
 		fi; \
-	done
+	done 
 .endif
 
 ################################################################
@@ -2390,7 +2400,7 @@ print-depends-list:
 .if defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `make FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} depends-list | ${SORT_DEPENDS}`
+	@${ECHO} -n `make ${_DEPEND_THRU} depends-list | ${SORT_DEPENDS}`
 	@${ECHO} '" to build.'
 .endif
 .endif
@@ -2399,7 +2409,7 @@ print-depends-list:
 print-package-depends:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO} -n 'This port requires package(s) "'
-	@${ECHO} -n `make FULL_PACKAGE_NAME=${FULL_PACKAGE_NAME} package-depends | ${SORT_DEPENDS}`
+	@${ECHO} -n `make ${_DEPEND_THRU} package-depends | ${SORT_DEPENDS}`
 	@${ECHO} '" to run.'
 .endif
 .endif
