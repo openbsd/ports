@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2003/10/26 23:49:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2004/10/08 20:41:19 sturm Exp $
 
 COMMENT=	"Unix menuing shell"
 
@@ -6,7 +6,7 @@ DISTNAME=	mshell
 PKGNAME=	mshell-1.0
 CATEGORIES=	misc
 
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
+MASTER_SITES=	${MASTER_SITES_BACKUP}
 DISTFILES=	7432.Z
 WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	
