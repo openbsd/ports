@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/23 18:18:03 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1999/10/11 17:13:22 espie Exp $
 #
 
 DISTNAME=	latex2html-97.1
@@ -23,6 +23,13 @@ DOCS=		userman.tex manual.tex manual.gls manual.dvi manual.bbl \
 		hypextra.tex overview.tex htmllist.sty support.tex \
 		licence.tex url.sty l2hidx.ist features.tex html.sty \
 		l2hglo.ist problems.tex l2hman.sty appendix.tex manual.index
+
+pre-patch:
+	cd ${WRKSRC}; \
+	for file in configure-pstoimg install-test texexpand pstoimg latex2html; do\
+		mv $$file $$file.orig; \
+		sed -e 1s,/usr/local/bin/perl,/usr/bin/perl, <$$file.orig >$$file; \
+	done
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/latex2html/styles
