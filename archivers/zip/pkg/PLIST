@@ -3,3 +3,6 @@ bin/zip
 bin/zipnote
 bin/zipsplit
 bin/zipcloak
+share/doc/zip/README
+share/doc/zip/Where
+@dirrm share/doc/zip

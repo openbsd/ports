@@ -5,7 +5,7 @@
 # Date created:         17 Nov 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/12/20 17:41:14 todd Exp $
+# $OpenBSD: Makefile,v 1.3 1998/02/25 21:08:06 marc Exp $
 #
 
 DISTNAME=       zip21
@@ -31,5 +31,8 @@ do-install:
 	    ${INSTALL_PROGRAM} zip zipnote zipsplit zipcloak ${PREFIX}/bin
 	cd ${WRKSRC}/man && \
 	    ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	install -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/zip
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} README Where ${PREFIX}/share/doc/zip
 
 .include <bsd.port.mk>
