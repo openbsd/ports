@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 15:10:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/02/15 14:28:25 espie Exp $
 
 COMMENT=	"Zangband (Zelazny Angband) with color, X11 support"
 
@@ -16,7 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://www.zangband.org/
 
-BUILD_DEPENDS=  	::devel/autoconf \
+AUTOCONF_VERSION=	2.13
+BUILD_DEPENDS=  	::devel/autoconf/${AUTOCONF_VERSION} \
+			::devel/metaauto \
 	                ::devel/automake
 
 USE_GMAKE=		Yes
@@ -37,7 +39,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 pre-configure:
-	@cd ${WRKSRC}; ${WRKSRC}/bootstrap
+	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} ${WRKSRC}/bootstrap
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zangband

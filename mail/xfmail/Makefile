@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2002/12/29 15:12:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.30 2003/02/15 14:30:00 espie Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 # $RuOBSD: Makefile,v 1.4 2002/05/18 04:21:36 form Exp $
 
@@ -12,8 +12,10 @@ EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.xfmail.org/
 
-BUILD_DEPENDS=		autoconf::devel/autoconf \
-			automake::devel/automake
+AUTOCONF_VERSION=	2.13
+BUILD_DEPENDS=		::devel/autoconf/${AUTOCONF_VERSION} \
+			::devel/metaauto \
+			::devel/automake
 
 LIB_DEPENDS=		forms::x11/xforms \
 			jpeg.62::graphics/jpeg \
@@ -44,6 +46,6 @@ CONFIGURE_ARGS+=	--without-esd-sound
 .endif
 
 pre-configure:
-	@cd ${WRKSRC} && sh autogen.sh
+	@cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} sh autogen.sh
 
 .include <bsd.port.mk>
