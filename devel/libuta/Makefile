@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/27 02:50:14 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2002/11/29 05:27:57 pvalchev Exp $
 
 COMMENT=	"graphical user interface library for C++"
 
@@ -32,7 +32,7 @@ USE_X11=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 VMEM_WARNING=	Yes
