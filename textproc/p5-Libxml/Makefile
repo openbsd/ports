@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2005/01/27 05:45:44 kevlo Exp $
 
 COMMENT=	"perl module collection for working with XML"
 
-VERSION=	0.07
+VERSION=	0.08
 DISTNAME=	libxml-perl-${VERSION}
 PKGNAME=	p5-Libxml-${VERSION}
 CATEGORIES=	textproc perl5
