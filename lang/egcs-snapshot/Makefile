@@ -1,28 +1,24 @@
 # OpenBSD makefile for:	egcs
-# Version required:	snapshot 1998-11-22
+# Version required:	recent enough snapshot, check below
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.12 1998/12/21 21:13:01 espie Exp $
+# $OpenBSD: Makefile,v 1.13 1999/01/09 16:55:27 espie Exp $
 #
-# This is a configuration file for egcs, recent snapshot
+# This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
 # for experimentations and testing.
-# Right now, we can only configure i386. Bound to change in the future
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
 
-# we HAVE to provide configure NOW, since the autoconf people have not 
-# released autoconf 2.12.1, BUT egcs uses that ANYWAY. Fuck !!!
-#BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
 MIRROR_DISTFILE=no
 
-# this will improve over time as more and more architectures are handled
 # with some help from Jason L. Wright for sparc...
 ONLY_FOR_ARCHS = i386 sparc m68k
 
@@ -266,7 +262,7 @@ LANGS+=objc
 LANGS+=java
 .endif
 
-CONFIGURE_ENV=CFLAGS=-O2 LANGUAGES='${LANGS}'
+CONFIGURE_ENV=CFLAGS='-O2 -g' LANGUAGES='${LANGS}'
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 --verbose --program-transform-name=s,^,e, 
 
@@ -290,9 +286,8 @@ CONFIGURE_ARGS+=--enable-shared
 
 # rebuild configure file after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-# DON'T invoke autoconf unless you have autoconf >= 2.12.1
 pre-configure:
-#	cd ${WRKSRC}/gcc && autoconf
+	cd ${WRKSRC}/gcc && autoconf
 	-${MV} ${WRKSRC} ${WRKDIR}/source
 	${MKDIR} ${WRKSRC}
 
