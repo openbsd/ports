@@ -9,6 +9,7 @@ include/gck/gckmath.h
 include/gck/gcktypes.h
 include/gck/gckui.h
 include/gck/gckvector.h
+include/libgimp/color_display.h
 include/libgimp/color_selector.h
 include/libgimp/gimp.h
 include/libgimp/gimpchainbutton.h
@@ -17,6 +18,7 @@ include/libgimp/gimpenv.h
 include/libgimp/gimpfeatures.h
 include/libgimp/gimpfileselection.h
 include/libgimp/gimppatheditor.h
+include/libgimp/gimpmath.h
 include/libgimp/gimpmatrix.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpmodule.h
@@ -27,8 +29,12 @@ include/libgimp/gimpunitmenu.h
 include/libgimp/gimpintl.h
 include/libgimp/gserialize.h
 include/libgimp/parasite.h
+include/libgimp/parasiteio.h
 include/libgimp/parasiteF.h
 include/libgimp/parasiteP.h
+include/libgimp/gimplimits.h
+include/libgimp/stdplugins-intl.h
+lib/gimp/1.1/plug-ins/curve_bend
 lib/gimp/1.1/plug-ins/dbbrowser
 lib/gimp/1.1/plug-ins/script-fu
 lib/gimp/1.1/plug-ins/aa
@@ -40,6 +46,7 @@ lib/gimp/1.1/plug-ins/webbrowser
 lib/gimp/1.1/plug-ins/xjt
 lib/gimp/1.1/plug-ins/xpm
 lib/gimp/1.1/plug-ins/AlienMap
+lib/gimp/1.1/plug-ins/AlienMap2
 lib/gimp/1.1/plug-ins/CEL
 lib/gimp/1.1/plug-ins/CML_explorer
 lib/gimp/1.1/plug-ins/FractalExplorer
@@ -57,11 +64,13 @@ lib/gimp/1.1/plug-ins/bmp
 lib/gimp/1.1/plug-ins/borderaverage
 lib/gimp/1.1/plug-ins/bumpmap
 lib/gimp/1.1/plug-ins/bz2
+lib/gimp/1.1/plug-ins/color_enhance
 lib/gimp/1.1/plug-ins/compose
 lib/gimp/1.1/plug-ins/c_astretch
 lib/gimp/1.1/plug-ins/checkerboard
 lib/gimp/1.1/plug-ins/colorify
 lib/gimp/1.1/plug-ins/convmatrix
+lib/gimp/1.1/plug-ins/csource
 lib/gimp/1.1/plug-ins/cubism
 lib/gimp/1.1/plug-ins/decompose
 lib/gimp/1.1/plug-ins/deinterlace
@@ -90,10 +99,13 @@ lib/gimp/1.1/plug-ins/gdyntext
 lib/gimp/1.1/plug-ins/gee
 lib/gimp/1.1/plug-ins/gfig
 lib/gimp/1.1/plug-ins/gfli
+lib/gimp/1.1/plug-ins/gflare
 lib/gimp/1.1/plug-ins/gicon
 lib/gimp/1.1/plug-ins/gif
 lib/gimp/1.1/plug-ins/gifload
+lib/gimp/1.1/plug-ins/gimpressionist
 lib/gimp/1.1/plug-ins/glasstile
+lib/gimp/1.1/plug-ins/gpb
 lib/gimp/1.1/plug-ins/gqbist
 lib/gimp/1.1/plug-ins/gradmap
 lib/gimp/1.1/plug-ins/grid
@@ -105,6 +117,7 @@ lib/gimp/1.1/plug-ins/hot
 lib/gimp/1.1/plug-ins/hrz
 lib/gimp/1.1/plug-ins/ifscompose
 lib/gimp/1.1/plug-ins/illusion
+lib/gimp/1.1/plug-ins/imagemap
 lib/gimp/1.1/plug-ins/iwarp
 lib/gimp/1.1/plug-ins/jigsaw
 lib/gimp/1.1/plug-ins/laplace
@@ -123,7 +136,6 @@ lib/gimp/1.1/plug-ins/nova
 lib/gimp/1.1/plug-ins/oilify
 lib/gimp/1.1/plug-ins/pat
 lib/gimp/1.1/plug-ins/pagecurl
-lib/gimp/1.1/plug-ins/palette
 lib/gimp/1.1/plug-ins/papertile
 lib/gimp/1.1/plug-ins/pcx
 lib/gimp/1.1/plug-ins/pix
@@ -135,13 +147,17 @@ lib/gimp/1.1/plug-ins/polar
 lib/gimp/1.1/plug-ins/print
 lib/gimp/1.1/plug-ins/ps
 lib/gimp/1.1/plug-ins/psd
+lib/gimp/1.1/plug-ins/psp
 lib/gimp/1.1/plug-ins/randomize
 lib/gimp/1.1/plug-ins/rcm
 lib/gimp/1.1/plug-ins/ripple
 lib/gimp/1.1/plug-ins/rotate
 lib/gimp/1.1/plug-ins/rotators
+lib/gimp/1.1/plug-ins/sample_colorize
 lib/gimp/1.1/plug-ins/scatter_hsv
 lib/gimp/1.1/plug-ins/screenshot
+lib/gimp/1.1/plug-ins/sel_gauss
+lib/gimp/1.1/plug-ins/sel2path
 lib/gimp/1.1/plug-ins/semiflatten
 lib/gimp/1.1/plug-ins/sgi
 lib/gimp/1.1/plug-ins/sharpen
@@ -151,6 +167,7 @@ lib/gimp/1.1/plug-ins/smooth_palette
 lib/gimp/1.1/plug-ins/snoise
 lib/gimp/1.1/plug-ins/sobel
 lib/gimp/1.1/plug-ins/sparkle
+lib/gimp/1.1/plug-ins/spheredesigner
 lib/gimp/1.1/plug-ins/spread
 lib/gimp/1.1/plug-ins/tga
 lib/gimp/1.1/plug-ins/struc
@@ -159,11 +176,12 @@ lib/gimp/1.1/plug-ins/threshold_alpha
 lib/gimp/1.1/plug-ins/tile
 lib/gimp/1.1/plug-ins/tileit
 lib/gimp/1.1/plug-ins/tiler
+lib/gimp/1.1/plug-ins/unsharp
 lib/gimp/1.1/plug-ins/url
 lib/gimp/1.1/plug-ins/video
 lib/gimp/1.1/plug-ins/vinvert
 lib/gimp/1.1/plug-ins/vpropagate
-lib/gimp/1.1/plug-ins/waterselect
+lib/gimp/1.1/plug-ins/warp
 lib/gimp/1.1/plug-ins/waves
 lib/gimp/1.1/plug-ins/whirlpinch
 lib/gimp/1.1/plug-ins/wind
@@ -175,6 +193,8 @@ lib/gimp/1.1/modules/libcolorsel_gtk.la
 lib/gimp/1.1/modules/libcolorsel_gtk.a
 lib/gimp/1.1/modules/libcolorsel_triangle.la
 lib/gimp/1.1/modules/libcolorsel_triangle.a
+lib/gimp/1.1/modules/libcolorsel_water.la
+lib/gimp/1.1/modules/libcolorsel_water.a
 lib/libgimp.so.1.1
 lib/libgimp.la
 lib/libgimp.a
@@ -187,22 +207,137 @@ lib/libgck.a
 lib/libmegawidget.a
 lib/libgpc.a
 @exec /sbin/ldconfig -m %B
-lib/locale/ko/LC_MESSAGES/gimp.mo
-lib/locale/de/LC_MESSAGES/gimp.mo
-lib/locale/fr/LC_MESSAGES/gimp.mo
-lib/locale/hu/LC_MESSAGES/gimp.mo
-lib/locale/it/LC_MESSAGES/gimp.mo
-lib/locale/ja/LC_MESSAGES/gimp.mo
-lib/locale/nl/LC_MESSAGES/gimp.mo
-lib/locale/pl/LC_MESSAGES/gimp.mo
-lib/locale/ru/LC_MESSAGES/gimp.mo
-lib/locale/sv/LC_MESSAGES/gimp.mo
-lib/locale/fi/LC_MESSAGES/gimp.mo
 man/man1/gimp.1
 man/man1/gimptool.1
 man/man3/gpc.3
 man/man5/gimprc.5
+share/locale/cs/LC_MESSAGES/gimp.mo
+share/locale/da/LC_MESSAGES/gimp.mo
+share/locale/ko/LC_MESSAGES/gimp.mo
+share/locale/de/LC_MESSAGES/gimp.mo
+share/locale/fr/LC_MESSAGES/gimp.mo
+share/locale/hu/LC_MESSAGES/gimp.mo
+share/locale/it/LC_MESSAGES/gimp.mo
+share/locale/ja/LC_MESSAGES/gimp.mo
+share/locale/nl/LC_MESSAGES/gimp.mo
+share/locale/pl/LC_MESSAGES/gimp.mo
+share/locale/ru/LC_MESSAGES/gimp.mo
+share/locale/sv/LC_MESSAGES/gimp.mo
+share/locale/fi/LC_MESSAGES/gimp.mo
+share/locale/no/LC_MESSAGES/gimp.mo
+share/locale/cs/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/da/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/de/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/fr/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/hu/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/it/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/ja/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/ko/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/nl/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/no/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/pl/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/ru/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/sv/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/fi/LC_MESSAGES/gimp-std-plugins.mo
 share/aclocal/gimp.m4
+share/gimp/gflare/Bright_Star
+share/gimp/gflare/Classic
+share/gimp/gflare/Default
+share/gimp/gflare/Distant_Sun
+share/gimp/gflare/GFlare_101
+share/gimp/gflare/GFlare_102
+share/gimp/gflare/Hidden_Planet
+share/gimp/gimpressionist/Brushes/arrow01.pgm
+share/gimp/gimpressionist/Brushes/ball.ppm
+share/gimp/gimpressionist/Brushes/blob.ppm
+share/gimp/gimpressionist/Brushes/box.ppm
+share/gimp/gimpressionist/Brushes/chalk01.pgm
+share/gimp/gimpressionist/Brushes/cone.ppm
+share/gimp/gimpressionist/Brushes/crayon01.pgm
+share/gimp/gimpressionist/Brushes/crayon02.pgm
+share/gimp/gimpressionist/Brushes/crayon03.pgm
+share/gimp/gimpressionist/Brushes/crayon04.pgm
+share/gimp/gimpressionist/Brushes/crayon05.pgm
+share/gimp/gimpressionist/Brushes/crayon06.pgm
+share/gimp/gimpressionist/Brushes/crayon07.pgm
+share/gimp/gimpressionist/Brushes/crayon08.pgm
+share/gimp/gimpressionist/Brushes/defaultbrush.pgm
+share/gimp/gimpressionist/Brushes/dribble.pgm
+share/gimp/gimpressionist/Brushes/fabric.pgm
+share/gimp/gimpressionist/Brushes/fabric01.pgm
+share/gimp/gimpressionist/Brushes/fabric02.pgm
+share/gimp/gimpressionist/Brushes/fabric03.pgm
+share/gimp/gimpressionist/Brushes/flower01.pgm
+share/gimp/gimpressionist/Brushes/flower02.pgm
+share/gimp/gimpressionist/Brushes/flower03.pgm
+share/gimp/gimpressionist/Brushes/flower04.pgm
+share/gimp/gimpressionist/Brushes/grad01.pgm
+share/gimp/gimpressionist/Brushes/grad02.pgm
+share/gimp/gimpressionist/Brushes/grad03.pgm
+share/gimp/gimpressionist/Brushes/heart.ppm
+share/gimp/gimpressionist/Brushes/leaf01.pgm
+share/gimp/gimpressionist/Brushes/paintbrush.pgm
+share/gimp/gimpressionist/Brushes/paintbrush01.pgm
+share/gimp/gimpressionist/Brushes/paintbrush02.pgm
+share/gimp/gimpressionist/Brushes/paintbrush03.pgm
+share/gimp/gimpressionist/Brushes/paintbrush04.pgm
+share/gimp/gimpressionist/Brushes/paper01.pgm
+share/gimp/gimpressionist/Brushes/paper02.pgm
+share/gimp/gimpressionist/Brushes/paper03.pgm
+share/gimp/gimpressionist/Brushes/paper04.pgm
+share/gimp/gimpressionist/Brushes/pentagram.pgm
+share/gimp/gimpressionist/Brushes/scribble.pgm
+share/gimp/gimpressionist/Brushes/shape01.pgm
+share/gimp/gimpressionist/Brushes/shape02.pgm
+share/gimp/gimpressionist/Brushes/shape03.pgm
+share/gimp/gimpressionist/Brushes/shape04.pgm
+share/gimp/gimpressionist/Brushes/sphere.ppm
+share/gimp/gimpressionist/Brushes/splat1.pgm
+share/gimp/gimpressionist/Brushes/splat2.pgm
+share/gimp/gimpressionist/Brushes/splat3.pgm
+share/gimp/gimpressionist/Brushes/spunge01.pgm
+share/gimp/gimpressionist/Brushes/spunge02.pgm
+share/gimp/gimpressionist/Brushes/spunge03.pgm
+share/gimp/gimpressionist/Brushes/spunge04.pgm
+share/gimp/gimpressionist/Brushes/spunge05.pgm
+share/gimp/gimpressionist/Brushes/strange01.pgm
+share/gimp/gimpressionist/Brushes/thegimp.pgm
+share/gimp/gimpressionist/Brushes/torus.ppm
+share/gimp/gimpressionist/Brushes/wavy.pgm
+share/gimp/gimpressionist/Brushes/weave.pgm
+share/gimp/gimpressionist/Brushes/worm.pgm
+share/gimp/gimpressionist/Paper/bricks.pgm
+share/gimp/gimpressionist/Paper/bricks2.pgm
+share/gimp/gimpressionist/Paper/burlap.pgm
+share/gimp/gimpressionist/Paper/canvas2.pgm
+share/gimp/gimpressionist/Paper/defaultpaper.pgm
+share/gimp/gimpressionist/Paper/marble.pgm
+share/gimp/gimpressionist/Paper/marble2.pgm
+share/gimp/gimpressionist/Paper/stone.pgm
+share/gimp/gimpressionist/Presets/Ballpark
+share/gimp/gimpressionist/Presets/Canvas
+share/gimp/gimpressionist/Presets/Crosshatch
+share/gimp/gimpressionist/Presets/Cubism
+share/gimp/gimpressionist/Presets/Dotify
+share/gimp/gimpressionist/Presets/Embroidery
+share/gimp/gimpressionist/Presets/Feathers
+share/gimp/gimpressionist/Presets/Felt-marker
+share/gimp/gimpressionist/Presets/Flowerbed
+share/gimp/gimpressionist/Presets/Furry
+share/gimp/gimpressionist/Presets/Line-art
+share/gimp/gimpressionist/Presets/Line-art-2
+share/gimp/gimpressionist/Presets/Maggot-invasion
+share/gimp/gimpressionist/Presets/MarbleMadness
+share/gimp/gimpressionist/Presets/Mossy
+share/gimp/gimpressionist/Presets/Painted_Rock
+share/gimp/gimpressionist/Presets/Parquette
+share/gimp/gimpressionist/Presets/Patchwork
+share/gimp/gimpressionist/Presets/Ringworks
+share/gimp/gimpressionist/Presets/Sample
+share/gimp/gimpressionist/Presets/Smash
+share/gimp/gimpressionist/Presets/Straws
+share/gimp/gimpressionist/Presets/Weave
+share/gimp/gimpressionist/Presets/Wormcan
 share/gimp/scripts/3d-outline.scm
 share/gimp/scripts/3dTruchet.scm
 share/gimp/scripts/add-bevel.scm
@@ -348,9 +483,10 @@ share/gimp/brushes/dunes.gbr
 share/gimp/brushes/galaxy.gbr
 share/gimp/brushes/galaxy_big.gbr
 share/gimp/brushes/galaxy_small.gbr
+share/gimp/brushes/pepper.gpb
 share/gimp/brushes/pixel.gbr
-share/gimp/brushes/round1.vbr
 share/gimp/brushes/thegimp.gbr
+share/gimp/brushes/vine.gih
 share/gimp/brushes/xcf.gbr
 share/gimp/gradients/Abstract_1
 share/gimp/gradients/Abstract_2
@@ -430,6 +566,11 @@ share/gimp/gradients/Wood_1
 share/gimp/gradients/Wood_2
 share/gimp/gradients/Yellow_Contrast
 share/gimp/gradients/Yellow_Orange
+share/gimp/help/contents.html
+share/gimp/help/eek.png
+share/gimp/help/index.html
+share/gimp/help/welcome.html
+share/gimp/help/wilber.png
 share/gimp/palettes/Bears
 share/gimp/palettes/Bgold
 share/gimp/palettes/Blues
@@ -464,6 +605,8 @@ share/gimp/palettes/Reds
 share/gimp/palettes/Reds_And_Purples
 share/gimp/palettes/Royal
 share/gimp/palettes/Topographic
+share/gimp/palettes/Visibone
+share/gimp/palettes/Visibone2
 share/gimp/palettes/Volcano
 share/gimp/palettes/Warm_Colors
 share/gimp/palettes/Web
@@ -523,6 +666,12 @@ share/gimp/patterns/wood2.pat
 share/gimp/patterns/wood3.pat
 share/gimp/patterns/wood4.pat
 share/gimp/patterns/wood5.pat
+share/gimp/tips/gimp_conseils.fr.txt
+share/gimp/tips/gimp_tips.de.txt
+share/gimp/tips/gimp_tips.it.txt
+share/gimp/tips/gimp_tips.ja.txt
+share/gimp/tips/gimp_tips.ru.txt
+share/gimp/tips/gimp_tips.txt
 share/gimp/fractalexplorer/Asteroid_Field
 share/gimp/fractalexplorer/Bar_Code_Label
 share/gimp/fractalexplorer/Beauty_of_Nature
@@ -559,7 +708,6 @@ share/gimp/fractalexplorer/Zooming_Circle
 share/gimp/gimp_logo.ppm
 share/gimp/gimp_splash.ppm
 share/gimp/gimp1_1_splash.ppm
-share/gimp/gimp_tips.txt
 share/gimp/gimprc
 share/gimp/gimprc_user
 share/gimp/gtkrc
@@ -573,11 +721,18 @@ share/gimp/user_install
 @dirrm lib/gimp/1.1/plug-ins
 @dirrm lib/gimp/1.1
 @dirrm lib/gimp
+@dirrm share/gimp/gimpressionist/Brushes
+@dirrm share/gimp/gimpressionist/Paper
+@dirrm share/gimp/gimpressionist/Presets
+@dirrm share/gimp/gimpressionist
+@dirrm share/gimp/gflare
 @dirrm share/gimp/fractalexplorer
+@dirrm share/gimp/tips
 @dirrm share/gimp/scripts
 @dirrm share/gimp/patterns
 @dirrm share/gimp/palettes
 @dirrm share/gimp/gradients
+@dirrm share/gimp/help
 @dirrm share/gimp/brushes
 @dirrm share/gimp/gfig
 @dirrm share/gimp
