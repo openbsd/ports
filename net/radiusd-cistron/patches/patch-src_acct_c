@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_acct_c,v 1.1 2000/07/13 00:25:52 danh Exp $
---- src/acct.c.orig	Thu Mar  2 08:24:45 2000
-+++ src/acct.c	Wed Jul 12 01:28:45 2000
-@@ -598,7 +598,7 @@ int rad_accounting_orig(AUTH_REQ *authre
- 	VALUE_PAIR	*pair;
+$OpenBSD: patch-src_acct_c,v 1.2 2000/09/06 19:05:25 danh Exp $
+--- src/acct.c.orig	Fri Aug 18 16:40:30 2000
++++ src/acct.c	Wed Sep  6 14:54:22 2000
+@@ -596,7 +596,7 @@ int rad_accounting_orig(AUTH_REQ *authre
  	UINT4		nas;
  	NAS		*cl;
+ 	int		flat = 0;
 -	long		curtime;
 +	time_t		curtime;
  	int		ret = 0;
  	struct stat	st;
  
-@@ -670,7 +670,7 @@ int rad_accounting_orig(AUTH_REQ *authre
+@@ -686,7 +686,7 @@ int rad_accounting_orig(AUTH_REQ *authre
  		/*
  		 *	Add non-protocol attibutes.
  		 */
