@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/10/12 15:38:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2003/06/06 06:06:18 kevlo Exp $
 
 COMMENT=	"generic playlist manager for UNIX"
 
-DISTNAME=	xhippo-3.2
+DISTNAME=	xhippo-3.3
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.gnu.org/software/xhippo/
@@ -16,19 +16,19 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=xhippo/}
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
-
-MAKE_FLAGS=	CFLAGS="${CFLAGS}"
+LIB_DEPENDS=	gdk_pixbuf_xlib-2.0.0.0::x11/gtk+2 \
+		id3tag.1::audio/mad
 
 USE_X11=	Yes
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-gtk2
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	gettext
 
 DOCS=	ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
-	xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz
+	xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz xhippo_toc.html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xhippo
@@ -36,6 +36,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/xhippo.config ${PREFIX}/share/examples/xhippo/xhippo.config-sample
 	${INSTALL_DATA} ${WRKSRC}/xhippo.gtkrc ${PREFIX}/share/examples/xhippo
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/xhippo 
-	${INSTALL_MAN} ${WRKSRC}/doc/xhippo.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
