@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2004/07/09 04:45:36 brad Exp $
+# $OpenBSD: Makefile,v 1.68 2004/07/09 19:40:36 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-# 
+# http://www.imagemagick.org/www/Copyright.html 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
