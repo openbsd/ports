@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_scoreboard_c,v 1.1 2002/02/18 19:35:49 pvalchev Exp $
---- src/scoreboard.c.orig	Tue Oct 23 03:02:21 2001
-+++ src/scoreboard.c	Mon Feb 18 12:14:19 2002
-@@ -47,7 +47,7 @@ gint write_score(struct score_board *b) 
+$OpenBSD: patch-src_scoreboard_c,v 1.2 2002/02/19 04:39:27 pvalchev Exp $
+--- src/scoreboard.c.orig	Thu Feb 14 09:16:07 2002
++++ src/scoreboard.c	Mon Feb 18 21:32:22 2002
+@@ -96,7 +96,7 @@ gint write_score(struct score_board *b, 
    	sigaddset(&sset, SIGTERM);
    	sigprocmask(SIG_BLOCK, &sset, NULL);
-   
--  	if((fd=open(LOCALSTATEDIR "/gtkballs-scores", O_WRONLY))<0) {
-+  	if((fd=open("/var/games/gtkballs-scores", O_WRONLY))<0) {
+ 
+-  	if((fd=open(LOCALSTATEDIR "/gtkballs-scores", O_WRONLY | O_TRUNC)) == -1) {
++  	if((fd=open("/var/games/gtkballs-scores", O_WRONLY | O_TRUNC)) == -1) {
      		/* unable to save score */
      		return FALSE;
          }
-@@ -88,7 +88,7 @@ gint read_score(struct score_board *b) {
-   	gchar **str_val;
-         gint  i=0,j;
-   
+@@ -161,7 +161,7 @@ gint read_score(struct score_board *b, s
+                 *bf=NULL;
+         }
+ 
 -  	if(!(fp=fopen(LOCALSTATEDIR "/gtkballs-scores", "r"))) {
 +  	if(!(fp=fopen("/var/games/gtkballs-scores", "r"))) {
  		return FALSE;
          }
-       	while(i<10 && fgets(buffer, BUFFER_SIZE, fp)) {
+ 
