@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_test-value-parse_c,v 1.1 2004/01/03 05:51:32 marcm Exp $
+--- tests/test-value-parse.c.orig	2004-01-02 21:37:33.000000000 -0800
++++ tests/test-value-parse.c	2004-01-02 21:37:50.000000000 -0800
+@@ -7,8 +7,7 @@ int
+ main(int argc, char **argv)
+ {
+     if (!gtk_init_check(&argc, &argv)) {
+-	g_message("Could not init gtk.  Skipping test");
+-	return 77; /* magic value to ignore test */
++	g_message("Could not init gtk.");
+     }
+ 
+     g_print ("Testing string to enum... ");

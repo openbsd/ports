@@ -1,0 +1,12 @@
+$OpenBSD: patch-glade_glade-xml_c,v 1.1 2004/01/03 05:51:32 marcm Exp $
+--- glade/glade-xml.c.orig	2003-12-14 21:13:34.000000000 -0800
++++ glade/glade-xml.c	2003-12-14 21:14:27.000000000 -0800
+@@ -991,7 +991,7 @@ default_custom_handler(GladeXML *xml, gc
+     allsymbols = g_module_open(NULL, 0);
+     if (g_module_symbol(allsymbols, func_name, (gpointer)&func))
+ 	return (* func)(name, string1, string2, int1, int2);
+-    g_warning("could not find widget creation function");
++    g_warning("could not find widget creation function: %s", func_name);
+     return NULL;
+ }
+ 
