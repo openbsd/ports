@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.28 2004/09/15 09:09:44 espie Exp $
-@pkgcfl postfix-*
+@comment $OpenBSD: PLIST,v 1.29 2004/09/18 12:54:10 espie Exp $
+@conflict postfix-*
 libexec/postfix/
 libexec/postfix/anvil
 libexec/postfix/bounce

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2004/09/15 09:09:41 espie Exp $
-@pkgcfl imap-uw-*
+@comment $OpenBSD: PLIST,v 1.18 2004/09/18 12:54:10 espie Exp $
+@conflict imap-uw-*
 bin/couriertls
 @comment bin/deliverquota
 bin/imapd

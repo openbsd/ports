@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 09:09:42 espie Exp $
-@pkgcfl compface-*
+@comment $OpenBSD: PLIST,v 1.9 2004/09/18 12:54:10 espie Exp $
+@conflict compface-*
 bin/addxface
 bin/compface
 bin/face_update

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:42 espie Exp $
-@pkgcfl imaputils-uw-*
-@pkgcfl mailutil-uw-*
-@pkgcfl courier-imap-*
-@pkgcfl courier-pop3-*
+@comment $OpenBSD: PLIST,v 1.8 2004/09/18 12:54:10 espie Exp $
+@conflict imaputils-uw-*
+@conflict mailutil-uw-*
+@conflict courier-imap-*
+@conflict courier-pop3-*
 bin/dmail
 bin/tmail
 libexec/imapd
