@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2003/12/16 19:36:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/04/14 10:44:13 xsa Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
 @unexec install-info --delete --info-dir=%D/info %D/info/regex.info
@@ -298,3 +298,6 @@ share/ogonkify/ptmri-o.ps
 @exec install-info --info-dir=%D/info %D/info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/ogonkify.info
 @exec install-info --info-dir=%D/info %D/info/regex.info
+@cwd ${SYSCONFDIR}
+@extra a2ps.cfg
+@extra a2ps-site.cfg

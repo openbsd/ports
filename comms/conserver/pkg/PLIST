@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/05/26 20:20:53 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/04/14 10:44:13 xsa Exp $
 bin/console
 man/man1/console.1
 man/man5/conserver.cf.5
@@ -9,3 +9,7 @@ share/examples/conserver/README.OpenBSD
 share/examples/conserver/conserver.cf
 share/examples/conserver/conserver.passwd
 @dirrm share/examples/conserver
+@cwd ${SYSCONFDIR}
+@extra conserver.cf
+@extra conserver.passwd
+@extraunexec rm -rf /var/consoles

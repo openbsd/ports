@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/08/14 18:40:11 grange Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/04/14 10:44:13 xsa Exp $
 bin/xrus
 bin/xrusmodmap
 man/man1/xrus.1
@@ -48,3 +48,5 @@ share/xruskb/yawerty-iso5.xmm
 share/xruskb/yawerty-koi8.xmm
 @dirrm share/xruskb
 @dirrm share/doc/xruskb
+@cwd /etc/X11/app-defaults
+@extra Xrus

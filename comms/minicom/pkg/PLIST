@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/12/16 16:42:31 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2004/04/14 10:44:13 xsa Exp $
 bin/ascii-xfr
 @mode 555
 bin/minicom
@@ -91,3 +91,4 @@ share/locale/ru/LC_MESSAGES/minicom.mo
 @dirrm share/examples/minicom/extras
 @dirrm share/examples/minicom
 @dirrm share/doc/minicom
+@extraunexec rm -rf ${SYSCONFDIR}/minicom

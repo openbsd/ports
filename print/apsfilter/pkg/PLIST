@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/29 11:09:46 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/14 10:44:13 xsa Exp $
 bin/aps2file
 bin/apsfilter-bug
 bin/apspreview
@@ -338,3 +338,4 @@ share/doc/apsfilter/paper
 @dirrm share/apsfilter/driver
 @dirrm share/apsfilter/bin
 @dirrm share/apsfilter
+@extraunexec rm -rf ${SYSCONFDIR}/apsfilter
