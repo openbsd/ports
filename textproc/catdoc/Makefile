@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/09/23 16:21:02 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.2 1999/10/31 06:17:07 turan Exp $
+
+BROKEN=		lots of compilier errors.  redefinitions, and linker errors.
 
 DISTNAME=	catdoc-0.90b4
 CATEGORIES=	textproc
