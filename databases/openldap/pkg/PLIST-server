@@ -1,30 +1,31 @@
-@comment $OpenBSD: PLIST-server,v 1.4 2003/12/26 10:44:10 jakob Exp $
+@comment $OpenBSD: PLIST-server,v 1.5 2004/08/08 16:34:32 espie Exp $
 libexec/slapd
 libexec/slurpd
-man/man5/slapd-bdb.5
-man/man5/slapd-dnssrv.5
-man/man5/slapd-ldap.5
-man/man5/slapd-ldbm.5
-man/man5/slapd-meta.5
-man/man5/slapd-null.5
-man/man5/slapd-passwd.5
-man/man5/slapd-perl.5
-man/man5/slapd-shell.5
-man/man5/slapd-sql.5
-man/man5/slapd-tcl.5
-man/man5/slapd.access.5
-man/man5/slapd.conf.5
-man/man5/slapd.replog.5
-man/man8/slapadd.8
-man/man8/slapcat.8
-man/man8/slapd.8
-man/man8/slapindex.8
-man/man8/slappasswd.8
-man/man8/slurpd.8
+@man man/man5/slapd-bdb.5
+@man man/man5/slapd-dnssrv.5
+@man man/man5/slapd-ldap.5
+@man man/man5/slapd-ldbm.5
+@man man/man5/slapd-meta.5
+@man man/man5/slapd-null.5
+@man man/man5/slapd-passwd.5
+@man man/man5/slapd-perl.5
+@man man/man5/slapd-shell.5
+@man man/man5/slapd-sql.5
+@man man/man5/slapd-tcl.5
+@man man/man5/slapd.access.5
+@man man/man5/slapd.conf.5
+@man man/man5/slapd.replog.5
+@man man/man8/slapadd.8
+@man man/man8/slapcat.8
+@man man/man8/slapd.8
+@man man/man8/slapindex.8
+@man man/man8/slappasswd.8
+@man man/man8/slurpd.8
 sbin/slapadd
 sbin/slapcat
 sbin/slapindex
 sbin/slappasswd
+share/examples/openldap/schema/
 share/examples/openldap/schema/corba.schema
 share/examples/openldap/schema/core.schema
 share/examples/openldap/schema/cosine.schema
@@ -34,6 +35,8 @@ share/examples/openldap/schema/misc.schema
 share/examples/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 share/examples/openldap/slapd.conf
+share/openldap/
+share/openldap/ucdata/
 share/openldap/ucdata/case.dat
 share/openldap/ucdata/cmbcl.dat
 share/openldap/ucdata/comp.dat
@@ -41,6 +44,3 @@ share/openldap/ucdata/ctype.dat
 share/openldap/ucdata/decomp.dat
 share/openldap/ucdata/kdecomp.dat
 share/openldap/ucdata/num.dat
-@dirrm share/openldap/ucdata
-@dirrm share/openldap
-@dirrm share/examples/openldap/schema
