@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/02/15 19:17:54 nino Exp $
+# $OpenBSD: Makefile,v 1.14 2002/03/02 15:45:50 nino Exp $
 
 COMMENT=		"GNOME control center"
 
@@ -16,7 +16,6 @@ EXTRACT_SUFX=		.tar.bz2
 LIB_DEPENDS=		gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
 			gnome.36,gnorba,gtkxmhtml::x11/gnome/libs \
 			gnomevfs.::x11/gnome/vfs
-BUILD_DEPENDS=		:zsh-*:shells/zsh/stable
 
 BUILD_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper
 RUN_DEPENDS=		:scrollkeeper-*:textproc/scrollkeeper \
@@ -29,7 +28,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-MAKE_FLAGS+=		LIBTOOL='$(WRKBUILD)/sh $(WRKBUILD)/libtool'
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--localstatedir=/var/gnome
@@ -37,9 +35,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
-	@ln -sf $(LOCALBASE)/bin/zsh ${WRKBUILD}/sh; \
-	cd ${WRKSRC}/control-center; ../xml-i18n-merge ../po gnomecc.desktop.in gnomecc.desktop -d -p
-
+	@cd ${WRKSRC}/control-center; ../xml-i18n-merge ../po gnomecc.desktop.in gnomecc.desktop -d -p
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/control-center; \

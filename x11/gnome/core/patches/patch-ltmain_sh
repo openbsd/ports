@@ -1,4 +1,4 @@
-$OpenBSD: patch-ltmain_sh,v 1.1 2002/02/15 19:18:52 nino Exp $
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/03/02 15:45:50 nino Exp $
 --- ltmain.sh.orig	Fri Jan 25 01:45:33 2002
 +++ ltmain.sh	Tue Feb 12 21:02:54 2002
 @@ -1060,6 +1060,17 @@ compiler."
@@ -19,25 +19,6 @@ $OpenBSD: patch-ltmain_sh,v 1.1 2002/02/15 19:18:52 nino Exp $
        -module)
  	module=yes
  	continue
-@@ -2060,6 +2071,10 @@ compiler."
- 	  eval tmp_libs=\"\$$var\"
- 	  new_libs=
- 	  for deplib in $tmp_libs; do
-+          # work around bug in our ksh (segfault)
-+            case " $new_libs " in
-+            *" $deplib "*);;
-+            *)
- 	    case $deplib in
- 	    -L*) new_libs="$deplib $new_libs" ;;
- 	    *)
-@@ -2074,6 +2089,7 @@ compiler."
- 	      esac
- 	      ;;
- 	    esac
-+            esac
- 	  done
- 	  tmp_libs=
- 	  for deplib in $new_libs; do
 @@ -4457,40 +4473,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
