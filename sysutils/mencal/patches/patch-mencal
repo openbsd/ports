@@ -1,14 +1,16 @@
-$OpenBSD: patch-mencal,v 1.2 2003/06/10 06:33:05 kevlo Exp $
---- mencal.orig	Tue Jun 10 14:24:55 2003
-+++ mencal	Tue Jun 10 14:25:26 2003
-@@ -276,12 +276,6 @@ package Main;
+$OpenBSD: patch-mencal,v 1.3 2004/11/30 03:16:47 kevlo Exp $
+--- mencal.orig	Tue Nov 30 02:26:43 2004
++++ mencal	Tue Nov 30 02:33:10 2004
+@@ -276,14 +276,6 @@ package Main;
      }
    }
    
 -  my @locales=split("\n", `locale -c LC_TIME`);
 -  if(($#locales>=1) && length($locales[1])) {
 -    $config{'topline'}='';
--    foreach my $day (split(';', $locales[1])) { $day=~s/^(..).+$/$1/; $config{'topline'}.=$day.' '; }
+-    foreach my $day (split(';', $locales[1])) { 
+-      $config{'topline'}.=sprintf("% 2s ", substr($day, 0, 2));
+-    }
 -    $config{'topline'}=~s/ +$//;
 -  }
    $config{'topline'}=~s/;/ /g;

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/01 20:34:21 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/30 03:16:45 kevlo Exp $
 
 COMMENT=	"cal that can use color to display calendar"
 
-DISTNAME=	mencal-2.2
+DISTNAME=	mencal-2.3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://mencal.kyberdigi.cz/english.html
