@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/04/15 03:01:26 todd Exp $
+# $OpenBSD: Makefile,v 1.18 2001/08/10 17:05:41 pvalchev Exp $
 
 COMMENT=	"General Input Library (used by libggi)"
 DISTNAME=	libgii-0.7
@@ -17,6 +17,7 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 EXTRACT_SUFX=		.tar.bz2
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV+=	CFLAGS=-pthread
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-mutexes="int"
 
