@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/11 23:01:14 matt Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/10 11:56:35 matt Exp $
 
 COMMENT=	"secure passphrase generator"
 
 DISTNAME=	ppgen-1.0
 CATEGORIES=	security
-NEED_VERSION=	1.361
-
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=   Yes

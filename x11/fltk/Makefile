@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/05/11 23:59:35 matt Exp $
+# $OpenBSD: Makefile,v 1.20 2002/07/10 11:56:35 matt Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
 
@@ -6,11 +6,8 @@ VER=		1.0.11
 DISTNAME=	fltk-${VER}
 
 CATEGORIES=	x11
-NEED_VERSION=	1.498
 
 HOMEPAGE=	http://www.fltk.org/
-
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

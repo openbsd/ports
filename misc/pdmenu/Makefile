@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/11 23:59:35 matt Exp $
+# $OpenBSD: Makefile,v 1.8 2002/07/10 11:56:35 matt Exp $
 
 COMMENT=		"simple slang-based menu program"
 
 DISTNAME=		pdmenu_1.2.69
 PKGNAME=		pdmenu-1.2.69
 CATEGORIES=     	misc
-NEED_VERSION=		1.405
 
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
-MAINTAINER=		Matt Behrens <matt@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

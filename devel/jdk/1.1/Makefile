@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/11 23:59:35 matt Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/10 11:56:35 matt Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -6,10 +6,8 @@ COMMENT=	"Java Development Kit for Java 1.1 platform"
 
 DISTNAME=	jdk-1.1.8
 CATEGORIES=	devel
-NEED_VERSION=	1.499
 
 HOMEPAGE=	http://www.freebsd.org/java/
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
 
 # Sun Binary Code License
 PERMIT_PACKAGE_CDROM=	"Redistribution not permitted"
