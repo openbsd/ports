@@ -1,0 +1,25 @@
+$OpenBSD: patch-kdesu_kdesu_sudlg_cpp,v 1.1 2003/01/07 00:19:34 espie Exp $
+--- kdesu/kdesu/sudlg.cpp.orig	Tue Jan  7 01:11:18 2003
++++ kdesu/kdesu/sudlg.cpp	Tue Jan  7 01:13:21 2003
+@@ -14,10 +14,12 @@
+ #include "sudlg.h"
+ 
+ 
+-KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep)
++KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep,
++    bool useSudo)
+     : KPasswordDialog(Password, "", enableKeep, User1)
+ {
+     m_User = auth_user;
++    m_Sudo = useSudo;
+     setCaption(i18n("Run as %1").arg(user));
+ 
+     QString prompt;
+@@ -43,6 +45,7 @@ bool KDEsuDialog::checkPassword(const ch
+ {
+     SuProcess proc;
+     proc.setUser(m_User);
++    proc.setUseSudo(m_Sudo);
+     int status = proc.checkInstall(password);
+     switch (status)
+     {

@@ -1,0 +1,20 @@
+$OpenBSD: patch-kdesu_kdesu_sudlg_h,v 1.1 2003/01/07 00:19:34 espie Exp $
+--- kdesu/kdesu/sudlg.h.orig	Tue Jan  7 01:11:03 2003
++++ kdesu/kdesu/sudlg.h	Tue Jan  7 01:12:09 2003
+@@ -17,7 +17,7 @@ class KDEsuDialog
+     Q_OBJECT
+ 
+ public:
+-    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep);
++    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, bool useSudo);
+     ~KDEsuDialog();
+ 
+     enum ResultCodes { AsUser = 10 };
+@@ -28,6 +28,7 @@ protected:
+     
+ private:
+     QCString m_User;
++    bool m_Sudo;
+ };
+     
+ 
