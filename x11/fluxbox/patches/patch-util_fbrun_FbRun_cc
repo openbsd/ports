@@ -1,0 +1,11 @@
+$OpenBSD: patch-util_fbrun_FbRun_cc,v 1.1 2004/01/29 17:52:43 naddy Exp $
+--- util/fbrun/FbRun.cc.orig	2004-01-29 18:27:18.000000000 +0100
++++ util/fbrun/FbRun.cc	2004-01-29 18:27:33.000000000 +0100
+@@ -34,6 +34,7 @@
+ 
+ #include <iostream>
+ #include <fstream>
++#include <cassert>
+ 
+ using namespace std;
+ FbRun::FbRun(int x, int y, size_t width):

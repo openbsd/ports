@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2003/10/08 17:13:16 sturm Exp $
+# $OpenBSD: Makefile,v 1.25 2004/01/29 17:52:43 naddy Exp $
 
 COMMENT=	"window manager based on the original Blackbox code"
 
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.54
 CONFIGURE_ARGS=		--enable-kde --enable-xinerama
 USE_GMAKE=		Yes
 
@@ -31,6 +32,10 @@ MODGCC3_ARCHES=		sparc64
 MODGCC3_LANGS+=		c++
 USE_X11=		Yes
 SUBST_VARS=		VERSION
+
+# prevent cascading autotools rebuild
+post-patch:
+	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/menu ${PREFIX}/share/fluxbox

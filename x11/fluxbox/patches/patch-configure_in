@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_in,v 1.3 2004/01/29 17:52:43 naddy Exp $
+--- configure.in.orig	2004-01-29 18:00:33.000000000 +0100
++++ configure.in	2004-01-29 18:01:17.000000000 +0100
+@@ -31,7 +31,30 @@ AC_HEADER_TIME
+ 
+ dnl Check for existance of basename(), setlocale() and strftime()
+ AC_CHECK_FUNCS(basename, , AC_CHECK_LIB(gen, basename, LIBS="$LIBS -lgen"))
+-AC_CHECK_FUNCS(getpid setlocale sigaction strftime strcasestr snprintf vsnprintf catopen catgets catclose)
++AC_CHECK_FUNCS(getpid setlocale sigaction strcasestr snprintf vsnprintf catopen catgets catclose)
++dnl The autoconf test for strftime is broken now (due to gcc 3.3 bug?):
++dnl Gcc 3.3 testprog = ``extern "C" char strftime;'', build with g++ test.cc
++dnl breaks with:
++dnl   test.cc:1: error: nonnull argument with out-of-range operand number 
++dnl   (arg 1, operand 3)
++
++
++AC_MSG_CHECKING(for strftime)
++
++AC_COMPILE_IFELSE(
++[AC_LANG_PROGRAM([#include <time.h>],
++[[
++char * s;
++time_t t = time(NULL);
++size_t x = strftime(s, 5, "%a", localtime(&t));
++]]
++)],
++[
++	AC_DEFINE(HAVE_STRFTIME, 1, [Define to 1 if you have the 'strftime' function.])
++	AC_MSG_RESULT(yes)
++],
++[AC_MSG_RESULT(no)])
++
+ AC_CHECK_LIB(nsl, t_open, LIBS="$LIBS -lnsl")
+ AC_CHECK_LIB(socket, socket, LIBS="$LIBS -lsocket")
+ 
