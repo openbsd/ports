@@ -56,9 +56,9 @@ beforeinstall:
 
 afterinstall:
 	@rm -f ${DESTDIR}${LIBDIR}/libpng_pic.a
-	${INSTALL} ${INSTALL_COPY} -o root -g wheel -m 644 ${HDRS} \
-		${DESTDIR}${PREFIX}/include
-	${INSTALL} ${INSTALL_COPY} -o root -g wheel -m 644 ${DOCS} \
-		${DESTDIR}${PREFIX}/share/doc/png
+	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
+	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${PREFIX}/share/doc/png
 
 .include <bsd.lib.mk>
