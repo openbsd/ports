@@ -1,6 +1,15 @@
-$OpenBSD: patch-socket_c,v 1.1 2000/06/05 00:31:34 espie Exp $
---- socket.c.orig	Mon Aug 14 20:36:48 1995
-+++ socket.c	Mon Jun  5 02:15:42 2000
+$OpenBSD: patch-socket_c,v 1.2 2004/01/05 00:08:35 espie Exp $
+--- socket.c.orig	1995-08-14 20:36:48.000000000 +0200
++++ socket.c	2004-01-05 01:06:02.000000000 +0100
+@@ -71,7 +71,7 @@
+ #include <unistd.h>
+ #endif
+ #include <stdlib.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ #include "bzero.h"
+ #include "socket.h"
 @@ -102,7 +102,7 @@ int clientPort;
      {
          hp = gethostbyname(host);
@@ -10,3 +19,22 @@ $OpenBSD: patch-socket_c,v 1.1 2000/06/05 00:31:34 espie Exp $
          memcpy(&ad.sin_addr, hp->h_addr, hp->h_length);
      }
      ad.sin_port = htons(clientPort);
+@@ -225,15 +225,13 @@ int len;
+ }
+ 
+ 
+-int SockPrintf(socket,format,va_alist)
+-int socket;
+-char *format;
+-va_dcl {
++int SockPrintf(int socket,char *format, ...)
++{
+ 
+     va_list ap;
+     char buf[8192];
+     
+-    va_start(ap);
++    va_start(ap, format);
+     vsprintf(buf, format, ap);
+     va_end(ap);
+     return SockWrite(socket, buf, strlen(buf));
