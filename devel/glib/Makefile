@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/25 23:48:37 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/03/26 01:53:44 marc Exp $
 
 DISTNAME=	glib-1.2.0
 CATEGORIES=	devel
@@ -25,11 +25,14 @@ pre-extract:
 	@if [ -f ${X11BASE}/lib/libglib.a ]; then \
 	   echo "+-------------------"; \
 	   echo "| ERROR: you MUST remove the existing glib installation"; \
-	   echo "| before installing this version.  Use the command"; \
+	   echo "| before installing this version.  Glib was installed as"; \
+	   echo "| part of an older version of gtk+.  To fully remove run"; \
+	   echo "| these commands as user root"; \
 	   echo "|"; \
-	   echo "|	rm -rf ${X11BASE}/lib/libglib*"; \
+	   echo "|	pkg_delete -f `pkg_info -e 'gtk+-*'`"; \
+	   echo "|	ldconfig ${X11BASE}"; \
+	   echo "|	ldconfig -m ${LOCALBASE}"; \
 	   echo "|"; \
-	   echo "| then retry this installation"; \
 	   echo "+-------------------"; \
 	   exit 1; \
 	fi
