@@ -1,10 +1,10 @@
-$OpenBSD: patch-beav_1,v 1.1 2002/08/02 03:45:19 kevlo Exp $
---- beav.1.orig	Sun Aug 20 18:05:22 1995
-+++ beav.1	Thu Aug  1 15:26:10 2002
+$OpenBSD: patch-beav_1,v 1.2 2002/09/13 11:22:30 naddy Exp $
+--- beav.1.orig	Sun Aug 20 20:05:22 1995
++++ beav.1	Fri Sep 13 02:51:05 2002
 @@ -59,5 +59,5 @@ The \fIquit-no-save\fR command,\fB Ctl-X
  If there is any data that has not been saved you will be warned.
  .PP
  .SH FILES
 -/usr/doc/beav/beav.txt
-+/usr/local/share/doc/beav/beav.txt
++%%PREFIX%%/share/doc/beav/beav.txt
  

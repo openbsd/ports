@@ -1,0 +1,11 @@
+$OpenBSD: patch-def_h,v 1.1 2002/09/13 11:22:30 naddy Exp $
+--- def.h.orig	Fri Sep 13 02:58:58 2002
++++ def.h	Fri Sep 13 02:59:18 2002
+@@ -13,6 +13,7 @@
+ #define DEF_DEF
+ #define LINT_ARGS   1		/* enable lint type checking */
+ #include        "stdio.h"
++#include        "string.h"
+ 
+ #ifdef UNIX
+ #include        "sys/types.h"
