@@ -1,14 +1,17 @@
 #
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/11/24 22:48:28 angelos Exp $
 #
 
 DISTNAME=	nam-src-1.0a8
 PKGNAME=	nam-1.0a8
 CATEGORIES=	net
 NEED_VERSION=	1.314
-MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/mash.cs.berkeley.edu/dist/vint/ \
-		http://www-mash.cs.berkeley.edu/dist/vint/
+MASTER_SITES= 	ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
+		ftp://ftp.isi.edu/nsnam/ \
+		http://www.isi.edu/nsnam/dist/
+
+HOMEPAGE=	http://www.isi.edu/nsnam/nam/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
