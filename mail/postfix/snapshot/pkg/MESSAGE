@@ -1,7 +1,7 @@
 +---------------
-| The Postfix SMTP server will reject mail for unknown local users. If the
-| SMTP server is running chrooted, which is default in OpenBSD, you need 
-| to keep /etc/passwd in sync with /var/spool/postfix/etc/passwd or
+| The Postfix SMTP server will reject mail for unknown local users. If the SMTP
+| server is running chrooted, which is default in OpenBSD, you need to keep
+| /etc/{passwd,pwd.db} in sync with /var/spool/postfix/etc/{passwd,pwd.db} or
 | adjust the setting of the local_recipient_maps parameter in main.cf.
 |
 | For more information, read ${PREFIX}/share/examples/postfix/main.cf
