@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/04 21:54:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/02/02 13:04:29 jakob Exp $
 #
 
 DISTNAME=	xml2rfc
 CATEGORIES=	textproc
 NEED_VERSION=	1.230
-MASTER_SITES=	http://memory.palace.org/authoring/
+MASTER_SITES=	http://xml.resource.org/authoring/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	wish8.3::x11/tk/8.3 \
 		${PREFIX}/lib/tcl8.3/TclXML::textproc/TclXML \
 
 NO_BUILD=       Yes
+WRKDIST=	${WRKDIR}
 
 DOCS=		README.xml README.txt \
 		rfc2629-author.xml rfc2629-author.txt \
