@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/01/23 20:51:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2002/02/20 22:26:33 fgsch Exp $
 
 COMMENT=	"UAE amiga emulator"
-DISTNAME=	uae-0.8.20
+DISTNAME=	uae-0.8.21
 CATEGORIES=	emulators x11
-NEED_VERSION=	1.480
+NEED_VERSION=	1.504
 
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
 
