@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/06/12 19:29:56 marcm Exp $
+%%SHARED%%
+lib/gtk-2.0/2.2.0/engines/libthinice.la
+lib/pkgconfig/gtk-thinice-engine-2.pc
+share/themes/ThinIce/ICON.png
+share/themes/ThinIce/README.html
+share/themes/ThinIce/gtk-2.0/gtkrc
+@dirrm share/themes/ThinIce/gtk-2.0
+@comment (owned by thinice1) @dirrm share/themes/ThinIce
+@comment @dirrm share/themes
+@comment @dirrm lib/pkgconfig
+@comment @dirrm lib/gtk-2.0/2.2.0/engines
+@comment @dirrm lib/gtk-2.0/2.2.0
