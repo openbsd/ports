@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/12/16 07:25:25 alek Exp $
+# $OpenBSD: Makefile,v 1.43 2004/12/30 15:55:14 espie Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -11,24 +11,31 @@ MODKDE_VERSION=		3.3.0
 FLAVORS=debug
 SEPARATE_BUILD=flavored
 MULTI_PACKAGES=-kpov -kamera
-FULLPKGNAME-kamera=kamera-${VERSION}
-FULLPKGNAME-kpov=kpovmodeller-${VERSION}
+PKGNAME=${DISTNAME}p0
+FULLPKGNAME-kamera=kamera-${VERSION}p0
+FULLPKGNAME-kpov=kpovmodeller-${VERSION}p0
 SUBPACKAGE?=
 
 LIB_DEPENDS= \
 	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kjs,kio,kparts,kutils,kwalletclient::x11/kde/libs3 \
 	fribidi::devel/fribidi \
 	t1.5::devel/t1lib
+WANTLIB=	X11 art_lgpl_2 pthread ICE png util jpeg z SM Xext m
 
 .if defined(PACKAGING)
 .  if ${SUBPACKAGE} == "-kamera"
 LIB_DEPENDS+=	gphoto2,gphoto2_port::graphics/libgphoto2
+WANTLIB+=	iconv exif Xrender intl
 .  elif ${SUBPACKAGE} == "-kpov"
 RUN_DEPENDS+=	::graphics/povray
+WANTLIB+=	GL stdc++ freetype Xrender Xmu GLU c Xi
 .  elif ${SUBPACKAGE} == ""
 RUN_DEPENDS+=	:ghostscript-*:print/ghostscript/gnu
 LIB_DEPENDS+=	Imlib::graphics/imlib \
 		ungif::graphics/libungif
+WANTLIB+=	tiff fontconfig lcms Xrender ICE c \
+		freetype stdc++ pcreposix pcre Xxf86vm SM Xext \
+		
 .  endif
 .else
 LIB_DEPENDS+=Imlib::graphics/imlib \
@@ -47,9 +54,5 @@ post-patch:
 .if ${MACHINE_ARCH} == "sparc64"
 SUP_PATCH_LIST=	gcc-*
 .endif
-
-WANTLIB=	GL GLU ICE SM X11 Xext Xi Xmu Xrender Xxf86vm art_lgpl_2 c \
-		exif fontconfig freetype iconv intl jpeg lcms m pcre pcreposix \
-		png pthread stdc++ tiff util z
 
 .include <bsd.port.mk>
