@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/06/20 05:24:31 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/07/04 21:55:59 naddy Exp $
 lib/Tktable2.8/README.txt
 lib/Tktable2.8/html/tkTable.html
-lib/Tktable2.8/libTktable28.so
 lib/Tktable2.8/license.txt
 lib/Tktable2.8/pkgIndex.tcl
 lib/Tktable2.8/tkTable.tcl
