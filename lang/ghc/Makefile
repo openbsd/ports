@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/05/07 11:11:02 dons Exp $
+# $OpenBSD: Makefile,v 1.17 2004/05/20 00:08:22 dons Exp $
 # 
 # Based on Simon Marlow's port script for FreeBSD:
 # $FreeBSD: ports/lang/ghc/Makefile,v 1.13 2002/08/22 12:53:38 obraun Exp $
@@ -59,6 +59,9 @@ DISTFILES=	ghc-${V}-src.tar.bz2 \
 SUPDISTFILES=	ghc-${V}-i386-unknown-openbsd-hc.tar.bz2:2  \
 		ghc-${V}-sparc-unknown-openbsd-hc.tar.bz2:2 \
 		ghc-${V}-amd64-unknown-openbsd-hc.tar.bz2:2
+
+# datasize around 130M on amd64
+VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
