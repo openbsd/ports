@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/02 22:47:16 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/04 15:10:37 espie Exp $
 
 DISTNAME=	textedit
 PKGNAME=	textedit-1.0
@@ -15,11 +15,12 @@ PERMIT_DISTFILES_FTP=	"No license information"
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 LIB_DEPENDS=    xview.3::x11/xview/lib
-BUILD_DEPENDS=	${X11BASE}/lib/X11/config/Xview.cf::x11/xview/config
+BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/Xview.cf::x11/xview/config
 
 USE_IMAKE=	Yes
 FAKE=		Yes
 
+MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/textedit $(PREFIX)/bin/textedit
 	$(INSTALL_MAN) $(WRKSRC)/textedit.man $(PREFIX)/man/man1/textedit.1

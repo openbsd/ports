@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2000/04/02 23:54:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/04/04 15:10:38 espie Exp $
 
 PKGNAME=	xview-lib-${XVIEW_VERSION}
 EXTRACT_ONLY=	
 CATEGORIES=	x11
 NEED_VERSION=	1.230
 
-BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config \
+BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config \
 		/nonexistent::x11/xview/config:build
 
 post-extract:
@@ -15,5 +15,6 @@ post-extract:
 PREFIX=	${X11BASE}
 USE_IMAKE=	Yes
 FAKE=		Yes
+MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/02 23:00:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/04 15:10:37 espie Exp $
 
 DISTNAME=	WorkMan-1.3a
 PKGNAME=	${DISTNAME:L}
@@ -17,10 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 PREFIX=		${X11BASE}
 LIB_DEPENDS=	xview.3.2::x11/xview/lib
-BUILD_DEPENDS=	${X11BASE}/lib/X11/config/XView.cf::x11/xview/config
+BUILD_DEPENDS=	${LOCALBASE}/lib/X11/config/XView.cf::x11/xview/config
 FAKE=		Yes
 
 USE_IMAKE=	Yes
+MAKE_ENV=	IMAKEINCLUDE=-I${LOCALBASE}/lib/X11/config
 
 WRKDIST=	${WRKDIR}/workman
 

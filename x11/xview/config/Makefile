@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/04/02 15:25:14 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2000/04/04 15:10:38 espie Exp $
 
 PKGNAME=	xview-config-${XVIEW_VERSION}
 CATEGORIES=	x11
@@ -9,11 +9,10 @@ NO_BUILD=	Yes
 FAKE=		Yes
 
 PATCH_LIST=	p-*
-PREFIX=		${X11BASE}
-#FAKE_FLAGS=	CONFIGDIR=/usr/local/lib/X11/config
+FAKE_FLAGS=	CONFIGDIR=/usr/local/lib/X11/config
 
-#pre-fake:
-#	mkdir -p ${PREFIX}/lib/X11/config
+pre-fake:
+	mkdir -p ${PREFIX}/lib/X11/config
 
 post-extract:
 	@chmod -R a+rX ${WRKDIST}
