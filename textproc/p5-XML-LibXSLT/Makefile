@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/04/19 09:43:09 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/05 23:51:59 shell Exp $
 
 COMMENT=	'fast XSLT module for perl'
 
-VERSION=	0.99_01
+VERSION=	0.99_02
 DISTNAME=	XML-LibXSLT-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 NEED_VERSION=	1.402
 
-HOMEPAGE=	http://www.xmlsoft.org/XSLT/
+HOMEPAGE=	http://www.axkit.org/
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR= XML
+MASTER_SITES=	http://www.axkit.org/download/
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/19 09:43:09 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/05 23:52:01 shell Exp $
 libdata/perl5/site_perl/${ARCH}-openbsd/XML/LibXML.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/XML/LibXSLT.pm
 libdata/perl5/site_perl/${ARCH}-openbsd/XML/benchmark.pl
