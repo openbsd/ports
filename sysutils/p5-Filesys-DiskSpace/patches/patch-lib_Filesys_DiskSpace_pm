@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Filesys_DiskSpace_pm,v 1.1 2005/01/04 11:51:00 sturm Exp $
+--- lib/Filesys/DiskSpace.pm.orig	Tue Jan  4 12:48:16 2005
++++ lib/Filesys/DiskSpace.pm	Tue Jan  4 12:48:36 2005
+@@ -89,7 +89,7 @@ sub df ($) {
+     $res = syscall (&main::SYS_statfs, $dir, $fmt);
+     # statfs...
+ 
+-    if ($^O eq 'freebsd') {
++    if ($^O eq 'freebsd' or $^O eq 'openbsd') {
+       # only tested with FreeBSD 3.0. Should also work with 4.0.
+       my ($f1, $f2);
+       ($f1, $bsize, $f2, $blocks, $bfree, $bavail, $files, $ffree) =
