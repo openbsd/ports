@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2000/06/11 01:53:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/07/03 16:37:21 espie Exp $
 
 DISTNAME=	Canna35b2
-PKGNAME=	cannalib-3.5b2
+PKGNAME=	cannalib-3.5b2p1
 NEED_VERSION=	1.300
 
 CATEGORIES=	japanese
