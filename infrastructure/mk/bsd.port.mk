@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.278 2000/05/16 18:14:29 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.279 2000/05/17 00:22:39 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1501,7 +1501,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${SUDO} mtree -U -e -d -n -p ${WRKINST} \
 		-f ${PORTSDIR}/infrastructure/db/fake.mtree  >/dev/null
 .  if target(pre-fake)
-	@cd ${.CURDIR} && ${MAKE} pre-fake ${_FAKE_SETUP}
+	@cd ${.CURDIR} && ${SUDO} ${MAKE} pre-fake ${_FAKE_SETUP}
 .  endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
