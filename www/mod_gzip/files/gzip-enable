@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: gzip-enable,v 1.1.1.1 2001/07/15 22:52:45 avsm Exp $
+
+MODULE=y0y0y0/lib/mod_gzip.so
+
+if [ ! -f ${MODULE} ]; then
+    echo "can't find GZip module (${MODULE})"
+    exit 1
+else
+    echo "enabling gzip module..."
+    /usr/sbin/apxs -i -a -n gzip ${MODULE}
+fi
