@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2002/10/24 22:20:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2003/05/18 23:41:55 naddy Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
@@ -10,10 +10,10 @@ TIINS=	goemon.tgz
 DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	"copyrighted patches"
+PERMIT_PACKAGE_FTP=	"copyrighted patches"
+PERMIT_DISTFILES_CDROM=	"copyrighted patches"
+PERMIT_DISTFILES_FTP=	"copyrighted patches"
 
 
 FLAVORS=motif curses slang
