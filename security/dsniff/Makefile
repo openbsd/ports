@@ -3,13 +3,11 @@
 # Date created:		17 Dec 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.9 2000/04/18 10:08:23 turan Exp $
+# $OpenBSD: Makefile,v 1.10 2000/05/17 16:32:08 dugsong Exp $
 
-DISTNAME=	dsniff-1.5
+DISTNAME=	dsniff-2.0
 
 CATEGORIES=	security
-NEED_VERSION=	 1.230
-FAKE=No
 
 MAINTAINER=	dugsong@monkey.org
 
@@ -26,5 +24,8 @@ BUILD_DEPENDS=	${PREFIX}/lib/libnet.a::net/libnet \
 GNU_CONFIGURE=	Yes
 
 NO_PATCH=	Yes
+
+FAKE=		Yes
+FAKE_FLAGS=	install_prefix=${WRKINST}
 
 .include <bsd.port.mk>
