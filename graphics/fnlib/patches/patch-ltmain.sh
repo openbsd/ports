@@ -1,46 +1,6 @@
---- ltmain.sh.orig	Mon Oct 18 20:27:23 1999
-+++ ltmain.sh	Tue Feb 20 16:59:28 2001
-@@ -1073,7 +1073,18 @@ compiler."
- 	    # These systems don't actually have c library (as such)
- 	    continue
- 	    ;;
-+          *-*-openbsd*)
-+            # Do not include libc due to us having libc/libc_r.
-+            continue
-+            ;;
- 	  esac
-+        elif test "$arg" = "-lc_r"; then
-+          case "$host" in
-+          *-*-openbsd*)
-+            # Do not include libc_r directly, use -pthread flag.
-+            continue
-+            ;;
-+          esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
- 	  *-*-cygwin* | *-*-beos*)
-@@ -1085,6 +1096,10 @@ compiler."
- 	deplibs="$deplibs $arg"
- 	;;
- 
-+      -?thread)
-+        deplibs="$deplibs $arg"
-+        ;;
-+
-       -module)
- 	module=yes
- 	continue
-@@ -1789,6 +1804,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
- 	  ;;
-+        *-*-openbsd*)
-+          # Do not include libc due to us having libc/libc_r.
-+          ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3522,40 +3540,6 @@ libdir='$install_libdir'\
+--- ltmain.sh.orig	Sun Dec 12 17:24:41 2004
++++ ltmain.sh	Sun Dec 12 17:29:06 2004
+@@ -4450,40 +4450,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
@@ -52,7 +12,7 @@
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
