@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/23 22:36:36 danh Exp $
+# $OpenBSD: Makefile,v 1.12 2003/05/12 19:39:34 fgsch Exp $
 
 COMMENT=	"Microsoft FrontPage Server extensions for Apache"
 
@@ -35,7 +35,7 @@ DEF2=	-DFP_HTTPD_USER=\"www\" -DFP_UID_MIN=1000 -DFP_GID_MIN=1000 \
 	-DFP_DOC_ROOT=\"/var/www/htdocs\" \
 	-DFP_SAFE_PATH=\"/usr/bin:/bin:/usr/local/bin\" \
 	-DFPDIR=\"/usr/local/frontpage/version5.0/exes\" \
-	-DFPBASE=\"/usr/local/frontpage/version5.0/exes\" \
+	-DFPBASE=\"/usr/local/frontpage/version5.0\" \
 	-DFP_USER=\"bin\" -DFP_GROUP=\"bin\" \
 	-DFP_HTACCESS=\".htaccess\" -DFP_UMASK=022
 
@@ -43,7 +43,7 @@ INC=	-I/usr/lib/apache/include
 
 do-build:
 	cd ${WRKBUILD} && \
-	    ${APXS} -Wall -c ${DEF} ${INC} \
+	    ${APXS} -Wall -c ${DEF} ${DEF2} ${INC} \
 	       -o ${WRKBUILD}/mod_frontpage.so ${WRKSRC}/mod_frontpage.c
 	${CC} ${CFLAGS} ${DEF2} ${INC} -o ${WRKBUILD}/fpexec ${WRKSRC}/fpexec.c
 	${CC} ${CFLAGS} ${DEF2} ${INC} \
