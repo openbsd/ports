@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.7 2004/02/06 08:37:22 xsa Exp $
+# $OpenBSD: python.port.mk,v 1.8 2004/05/15 09:24:12 xsa Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -13,8 +13,9 @@ BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}
+MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}
 MODPY_LIBDIR=		${LOCALBASE}/lib/python${MODPY_VERSION}
-MODPY_SITEPKG=		${PREFIX}/lib/python${MODPY_VERSION}/site-packages
+MODPY_SITEPKG=		${MODPY_LIBDIR}/site-packages
 
 # usually setup.py but Setup.py can be found too
 MODPY_SETUP?=		setup.py
