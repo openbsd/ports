@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/21 00:46:00 matt Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/05 02:55:14 fgsch Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
+# Uses threads
 
 COMMENT=        "interpreted object-oriented programming language"
 COMMENT-tools=  "extra tools for python"
