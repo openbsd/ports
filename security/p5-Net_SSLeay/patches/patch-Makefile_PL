@@ -1,0 +1,21 @@
+--- Makefile.PL.orig	Thu Apr 19 22:55:07 2001
++++ Makefile.PL	Thu Apr 19 23:00:38 2001
+@@ -20,16 +20,8 @@
+ $make_it = shift if $ARGV[0] eq '-m';
+ $test_it = shift if $ARGV[0] eq '-t';
+ $debug = $test_it = shift if $ARGV[0] eq '-d';
+-if (@ARGV) {
+-    $openssl_path = shift;
+-} else {
+-    # It seems at least Redhat installs OpenSSL in /usr ...
+-    $openssl_path = '/usr' if -x '/usr/bin/openssl' || -x '/usr/sbin/openssl';
+-    $openssl_path = '/opt/ssl' if -x '/opt/ssl/bin/openssl'
+-	|| -x '/opt/ssl/sbin/openssl';
+-    $openssl_path = '/usr/local/ssl' if -x '/usr/local/ssl/bin/openssl';
+-}
+-
++# Define the path here, ${PREFIX} confused the Makefile.PL
++$openssl_path = '/usr';
+ $openssl_vers = '0.9.6a';
+ 
+ print "Checking for OpenSSL-$openssl_vers or newer...\n";

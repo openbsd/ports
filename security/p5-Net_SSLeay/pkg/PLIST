@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 02:51:51 shell Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Net/SSLeay.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/SSLeay.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/SSLeay.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/autosplit.ix
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/do_https.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/dump_peer_certificate.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/get_https.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/https_cat.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/make_form.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/make_headers.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/open_tcp_connection.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/post_https.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/randomize.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/set_server_cert_and_key.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/ssl_read_CRLF.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/ssl_read_all.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/ssl_read_until.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/ssl_write_CRLF.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/ssl_write_all.al
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay/sslcat.al
+man/man3/Net::SSLeay.3p
+share/examples/p5-Net-SSLeay/req.conf
+share/examples/p5-Net-SSLeay/bulk.pl
+share/examples/p5-Net-SSLeay/callback.pl
+share/examples/p5-Net-SSLeay/get_authenticated_page.pl
+share/examples/p5-Net-SSLeay/get_page.pl
+share/examples/p5-Net-SSLeay/https-proxy-snif.pl
+share/examples/p5-Net-SSLeay/makecert.pl
+share/examples/p5-Net-SSLeay/minicli.pl
+share/examples/p5-Net-SSLeay/ssl-inetd-serv.pl
+share/examples/p5-Net-SSLeay/ssl_diff.pl
+share/examples/p5-Net-SSLeay/sslcat.pl
+share/examples/p5-Net-SSLeay/sslecho.pl
+share/examples/p5-Net-SSLeay/stdio_bulk.pl
+@dirrm share/examples/p5-Net-SSLeay
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/SSLeay
