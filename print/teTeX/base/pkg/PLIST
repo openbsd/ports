@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2003/10/18 15:07:10 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2003/11/23 11:38:53 sturm Exp $
 @pkgcfl dvipdfm-*
 !%%no_x11%%
 @unexec install-info --delete --info-dir=%D/info %D/info/dvips.info
@@ -425,6 +425,7 @@ share/texmf/web2c/texmf.cnf
 @exec install-info --info-dir=%D/info %D/info/latex.info
 @exec install-info --info-dir=%D/info %D/info/web2c.info
 @exec TEXMFMAIN=%D/share/texmf %D/bin/mktexlsr
-@extra ${SYSCONFDIR}/tetex.cfg
-@extra share/texmf/web2c/texmf.cnf.dist
-@extra share/texmf/web2c/texmf.cnf.old
+@extraunexec rm -f %D/share/texmf/web2c/texmf.cnf.dist
+@extraunexec rm -f %D/share/texmf/web2c/texmf.cnf.old
+@cwd ${SYSCONFDIR}
+@extra tetex.cfg
