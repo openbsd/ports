@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
+man/man5/anacrontab.5
+man/man8/anacron.8
+sbin/anacron
+@cwd /var/spool
+@extraunexec rm -fr /var/spool/anacron/*
+@extra anacron/
+@cwd ${SYSCONFDIR}
+@extra anacrontab

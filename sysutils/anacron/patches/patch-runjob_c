@@ -1,0 +1,46 @@
+$OpenBSD: patch-runjob_c,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
+--- runjob.c.orig	2000-06-21 01:11:56.000000000 +0200
++++ runjob.c	2003-08-13 20:27:20.000000000 +0200
+@@ -34,11 +34,34 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include "global.h"
++#include <limits.h>
+ 
+ static int
+ temp_file()
+ /* Open a temporary file and return its file descriptor */
+ {
++    char template[PATH_MAX];
++    char *tmpdir = getenv("TMPDIR");
++
++    int fd = -1;
++
++    if (tmpdir == NULL) {
++       tmpdir = "/tmp";
++    }
++    if (strlcpy(template, tmpdir, sizeof template) >=
++	sizeof template) {
++	die_e("TMPDIR too long.");
++    }
++    if (strlcat(template, "/anacronXXXXXXXX", sizeof template) >=
++	sizeof template) {
++	die_e("Temporary filename too long.");
++    }
++    if ((fd = mkstemp(template)) == -1) { 
++	return (NULL);
++    }
++    return fd;
++
++#if 0
+     const int max_retries = 50;
+     char *name;
+     int fd, i;
+@@ -61,6 +84,7 @@ temp_file()
+     free(name);
+     fcntl(fd, F_SETFD, 1);    /* set close-on-exec flag */
+     return fd;
++#endif
+ }
+ 
+ static off_t

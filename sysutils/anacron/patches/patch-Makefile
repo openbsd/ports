@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
+--- Makefile.orig	2000-06-23 00:25:49.000000000 +0200
++++ Makefile	2003-08-09 17:56:35.000000000 +0200
+@@ -19,16 +19,14 @@
+ #   `COPYING' that comes with the Anacron source distribution.
+ 
+ 
+-PREFIX = 
+-BINDIR = $(PREFIX)/usr/sbin
+-MANDIR = $(PREFIX)/usr/man
+-CFLAGS = -Wall -pedantic -O2
++BINDIR = $(PREFIX)/sbin
++MANDIR = $(PREFIX)/man
++CFLAGS += -Wall -pedantic -I.
+ #CFLAGS = -Wall -O2 -g -DDEBUG
+ 
+ # If you change these, please update the man-pages too
+ # Only absolute paths here, please
+ SPOOLDIR = /var/spool/anacron
+-ANACRONTAB = /etc/anacrontab
+ 
+ RELEASE = 2.3
+ package_name = anacron-$(RELEASE)

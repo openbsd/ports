@@ -1,0 +1,18 @@
+What it is:
+    Anacron is a periodic command scheduler.  It executes
+    commands at intervals specified in days.  Unlike cron, it
+    does not assume that the system is running continuously.
+    It can therefore be used to control the execution of
+    daily, weekly and monthly jobs (or anything with a period
+    of n days), on systems that don't run 24 hours a day.
+    When installed and configured properly, Anacron will make
+    sure that the commands are run at the specified intervals
+    as closely as machine-uptime permits.
+
+What it is not:
+    Anacron is not an attempt to make cron redundant.  It cannot
+    be used to schedule commands at intervals smaller than
+    days.  It also does not guarantee that the commands will be
+    executed at any specific day or hour.  It isn't a full-time
+    daemon. It has to be executed from boot scripts, from
+    cron-jobs, or explicitly.

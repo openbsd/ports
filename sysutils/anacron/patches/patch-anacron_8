@@ -1,0 +1,30 @@
+$OpenBSD: patch-anacron_8,v 1.1.1.1 2003/08/23 19:24:50 sturm Exp $
+--- anacron.8.orig	2003-08-13 20:35:38.000000000 +0200
++++ anacron.8	2003-08-13 20:36:12.000000000 +0200
+@@ -18,7 +18,7 @@ to control daily, weekly, and monthly jo
+ usually controlled by \fBcron\fR.
+ .PP
+ When executed, Anacron reads a list of jobs from a configuration file, normally
+-.I /etc/anacrontab
++.I %%SYSCONFDIR%%/anacrontab
+ (see \fBanacrontab(5)\fR).  This file
+ contains the list of jobs that Anacron controls.  Each
+ job entry specifies a period in days, 
+@@ -84,7 +84,7 @@ previous one finished.
+ .TP
+ .B -n
+ Run jobs now.  Ignore the delay specifications in the
+-.I /etc/anacrontab
++.I %%SYSCONFDIR%%/anacrontab
+ file.  This options implies \fB-s\fR.
+ .TP
+ .B -d
+@@ -117,7 +117,7 @@ file.  See
+ for more information.
+ .SH FILES
+ .TP
+-.I /etc/anacrontab
++.I %%SYSCONFDIR%%/anacrontab
+ Contains specifications of jobs.  See \fBanacrontab(5)\fR for a complete
+ description.
+ .TP
