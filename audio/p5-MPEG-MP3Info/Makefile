@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/08/21 01:15:17 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2000/08/21 01:17:50 brad Exp $
 
 DISTNAME=	MPEG-MP3Info-0.71
 PKGNAME=	p5-MPEG-MP3Info-0.71
