@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 15:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/12/19 15:24:53 espie Exp $
 
 DISTNAME=       trans120
 PKGNAME=        trans-1.20
@@ -20,7 +20,7 @@ do-install:
 	cd ${WRKSRC}/src && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin
 	cd ${WRKSRC}/src && \
 	for i in $(ALL); do \
-		$(INSTALL_MAN) $$i.man ${PREFIX}/man/cat1/$$i.1; \
+		$(INSTALL_MAN) $$i.man ${PREFIX}/man/cat1/$$i.0; \
 	done
 	install -d -o ${BINOWN} -g ${BINGRP} -m 755 \
 		${LIBDIR}/cedf ${LIBDIR}/xlt ${LIBDIR}/doc ${LIBDIR}/bin \
