@@ -1,7 +1,31 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/04/09 22:29:15 espie Exp $
---- configure.in.orig	Tue Apr  9 03:16:46 2002
-+++ configure.in	Tue Apr  9 03:16:59 2002
-@@ -906,6 +906,7 @@ AC_MSG_RESULT($kde_cv_have_struct_ucred)
+$OpenBSD: patch-configure_in,v 1.2 2002/04/15 06:45:43 espie Exp $
+--- configure.in.orig	Tue Mar 26 01:59:17 2002
++++ configure.in	Sat Apr 13 21:47:15 2002
+@@ -14,7 +14,7 @@ AC_CANONICAL_SYSTEM
+ AC_ARG_PROGRAM
+ 
+ dnl Automake doc recommends to do this only here. (Janos)
+-AM_INIT_AUTOMAKE(kdelibs, "3.0") dnl searches for some needed programs
++AM_INIT_AUTOMAKE(kdelibs-3.0, "3.0") dnl searches for some needed programs
+ 
+ AC_PROG_INSTALL
+ 
+@@ -856,6 +856,14 @@ else
+     AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
+ fi
+ 
++dnl Check for sudo
++AC_PATH_PROG(path_sudo, "sudo", "no")
++if test "$path_sudo" = "no"; then
++    AC_MSG_WARN(sudo was not found)
++else
++    AC_DEFINE_UNQUOTED(__PATH_SUDO, "$path_sudo", [path to sudo])
++fi
++
+ dnl Check for POSIX.1b scheduling
+ AC_MSG_CHECKING([POSIX.1b scheduling])
+ AC_TRY_LINK([
+@@ -906,6 +914,7 @@ AC_MSG_RESULT($kde_cv_have_struct_ucred)
  if test "$kde_cv_have_struct_ucred" = yes; then
     AC_DEFINE(HAVE_STRUCT_UCRED,1, [Define if struct ucred is present from sys/socket.h])
  fi

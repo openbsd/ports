@@ -1,7 +1,21 @@
-$OpenBSD: patch-kdesu_configure_in_in,v 1.1 2002/04/09 22:29:15 espie Exp $
---- kdesu/configure.in.in.orig	Tue Apr  9 03:16:18 2002
-+++ kdesu/configure.in.in	Tue Apr  9 03:16:39 2002
-@@ -56,3 +56,4 @@ AC_MSG_RESULT($kde_cv_have_struct_ucred)
+$OpenBSD: patch-kdesu_configure_in_in,v 1.2 2002/04/15 06:45:43 espie Exp $
+--- kdesu/configure.in.in.orig	Mon Aug 27 20:52:21 2001
++++ kdesu/configure.in.in	Sat Apr 13 21:46:27 2002
+@@ -5,6 +5,13 @@ if test "$path_su" = "no"; then
+ else
+     AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
+ fi
++dnl Check for sudo
++AC_PATH_PROG(path_sudo, "sudo", "no")
++if test "$path_sudo" = "no"; then
++    AC_MSG_WARN(sudo was not found)
++else
++    AC_DEFINE_UNQUOTED(__PATH_SUDO, "$path_sudo", [path to sudo])
++fi
+ 
+ dnl Check for POSIX.1b scheduling
+ AC_MSG_CHECKING([POSIX.1b scheduling])
+@@ -56,3 +63,4 @@ AC_MSG_RESULT($kde_cv_have_struct_ucred)
  if test "$kde_cv_have_struct_ucred" = yes; then
     AC_DEFINE(HAVE_STRUCT_UCRED,1, [Define if struct ucred is present from sys/socket.h])
  fi
