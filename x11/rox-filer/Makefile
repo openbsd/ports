@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2003/10/08 17:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/01/10 22:14:35 couderc Exp $
 
 COMMENT=		"gtk file manager with desktop features"
 
-VERSION=		2.0.1
+VERSION=		2.1.0
 DISTNAME=		rox-${VERSION}
 PKGNAME=		rox-filer-${VERSION}
 CATEGORIES=		x11
@@ -43,8 +43,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/rox
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1/ROX-Filer.1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-icons
-	${INSTALL_DATA} ${WRKSRC}/Choices/MIME-icons/* ${PREFIX}/share/rox/Choices/MIME-icons
 	${INSTALL_DATA_DIR} ${PREFIX}/share/rox/Choices/MIME-types
 	${INSTALL_SCRIPT} ${WRKSRC}/Choices/MIME-types/* ${PREFIX}/share/rox/Choices/MIME-types
 	@(cd ${WRKSRC}/ROX-Filer/src && make clean)
