@@ -1,5 +1,5 @@
-*** zipcloak.c.orig	Tue Nov 25 16:22:20 1997
---- zipcloak.c	Tue Nov 25 16:24:56 1997
+*** zipcloak.c.orig	Mon Apr  1 12:10:50 1996
+--- zipcloak.c	Tue Nov 25 17:20:11 1997
 ***************
 *** 342,350 ****
       attr = getfileattr(zipfile);
@@ -15,7 +15,7 @@
       attr = getfileattr(zipfile);
   
       /* Open output zip file for writing */
-!     tempzip = tempname(zipfile, outzip);
+!     tempzip = tempname(zipfile, &outzip);
 !     tempzf = outzip;
 ! 
 !     if ((tempzip == NULL) || (outzip == NULL))

@@ -1,5 +1,5 @@
 *** zipnote.c.orig	Mon Apr  1 12:10:51 1996
---- zipnote.c	Tue Nov 25 16:28:00 1997
+--- zipnote.c	Tue Nov 25 17:19:01 1997
 ***************
 *** 403,409 ****
   
@@ -95,7 +95,7 @@
     }
   
     /* Open output zip file for writing */
-!   tempzip = tempname(zipfile, y);
+!   tempzip = tempname(zipfile, &y);
 !   tempzf = y;
 ! 
 !   if ((tempzf == NULL) || (tempzip == NULL))

@@ -1,5 +1,5 @@
-*** zip.c.orig	Tue Nov 25 16:22:01 1997
---- zip.c	Tue Nov 25 16:23:08 1997
+*** zip.c.orig	Sat Apr 27 08:32:56 1996
+--- zip.c	Tue Nov 25 17:17:26 1997
 ***************
 *** 1519,1531 ****
         return 0;
@@ -19,7 +19,7 @@
         return 0;
   #endif
       }
-!     if ((tempzip = tempname(zipfile, y)) == NULL) {
+!     if ((tempzip = tempname(zipfile, &y)) == NULL) {
         ziperr(ZE_MEM, "allocating temp filename");
   #ifdef WIZZIPDLL
         return 0;
