@@ -1,10 +1,5 @@
-# OpenBSD makefile for:    ispell
-# Version required:     3.1.20
-# Date created:         17 Nov 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.4 1998/12/16 20:16:44 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/06 19:34:19 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	ispell-3.1
 PKGNAME=	ispell-3.1.20
@@ -12,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 DISTFILES=	ispell-3.1.20.tar.gz
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
 MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \

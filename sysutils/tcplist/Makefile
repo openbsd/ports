@@ -1,17 +1,12 @@
-# OpenBSD makefile for:  tcplist
-# Version required:     	  2.1
-# Date created:			  06 Nov 1997
-# Whom:				  ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:46 joey Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:39:01 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=	tcplist-2.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=     joey@openbsd.org
+MAINTAINER=     ports@OpenBSD.ORG
 
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 

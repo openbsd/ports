@@ -1,16 +1,11 @@
-# OpenBSD makefile for: socket
-# Version required:     1.1
-# Date created:         8 Nov 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:44 joey Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:39:00 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       socket-1.1
 CATEGORIES=	sysutils net
 MASTER_SITES=   http://www.freebsd.org/~wosch/src/
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@OpenBSD.ORG
 
 MAN1=		socket.1
 

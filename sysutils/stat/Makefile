@@ -1,15 +1,10 @@
-# OpenBSD makefile for:    stat
-# Version required:     1.3
-# Date created:         06 Nov 1997
-# Whom:                 ejovi
-#
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:45 joey Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/06 19:39:01 rohee Exp $
+# Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 DISTNAME=       stat-1.3
 CATEGORIES=	sysutils
 MASTER_SITES=   http://www.freebsd.org/~wosch/src/
 
-MAINTAINER=     joey@openbsd.org
+MAINTAINER=     ports@OpenBSD.ORG
 
 .include <bsd.port.mk>
