@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/04/14 18:41:15 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/08 21:01:21 sturm Exp $
 
 COMMENT=	'digital camera command-line interface'
 CATEGORIES=	graphics
@@ -24,6 +24,7 @@ AUTOCONF_VERSION=	2.57
 SEPARATE_BUILD=		simple
 CONFIGURE_ARGS=		--disable-nls --without-aalib --without-cdk
 
+BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gphoto2,gphoto2_port::graphics/libgphoto2 \
 		jpeg::graphics/jpeg \
 		popt::devel/popt
