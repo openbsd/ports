@@ -28,12 +28,12 @@ Using nut package in OpenBSD environment:
        echo -n ' upsmon'
        /usr/local/sbin/upsmon $nut_upshost
    fi
-   if [ X"${nut_upslog}" = X"YES" -a -x /usr/local/sbin/upslog ]; then
+   if [ X"${nut_upslog}" = X"YES" -a -x /usr/local/bin/upslog ]; then
        echo -n ' upslog'
-       /usr/local/sbin/upslog $nut_upshost $nut_log $nut_loginterval
+       /usr/local/bin/upslog $nut_upshost $nut_log $nut_loginterval
    fi
    ...
    echo '.'
 
 
-$OpenBSD: README.OpenBSD,v 1.1.1.1 2001/02/06 22:24:03 nate Exp $
+$OpenBSD: README.OpenBSD,v 1.2 2001/05/22 18:13:15 nate Exp $
