@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: make-plist,v 1.27 2003/06/30 11:53:37 espie Exp $
+# $OpenBSD: make-plist,v 1.28 2003/06/30 12:07:56 espie Exp $
 
 #  Copyright (c) 1999 Marc Espie
 # 
@@ -60,6 +60,7 @@ sub add {
 
 my $annotated = new Annotation;
 my $annotated_dir = new Annotation;
+my $info_file = new Annotation;
 
 sub annotate
 {
@@ -121,6 +122,9 @@ sub annotate
 		} else {
 			$annotated->add($_, [ $name, $newfh ]);
 		}
+		if (m/\.info$/) {
+			$info_file->add($_, [ $name, $newfh ]);
+		}
 	}
 	print $newfh "\@comment \$OpenBSD\$\n" unless $comment_printed;
 }
@@ -177,12 +181,19 @@ sub strip
 
 sub add_info 
 {
-	my ($header, $infodir) = @_;
-	for my $d (sort (keys %$infodir) ) {
-		for my $f (sort @{$infodir->{$d}}) {
-			my $d2 = strip($d);
-			$out{$plist}->print("$header --info-dir=\%D/$d2 \%D/$d2/$f\n");
+	my ($header, $info_dir) = @_;
+	for my $d (sort (keys %$info_dir) ) {
+	    for my $f (sort @{$info_dir->{$d}}) {
+		my $d2 = strip($d);
+		my $f2 = "$d2/$f";
+		if (defined $info_file->{$f2}) {
+		    for my $l (@{$info_file->{$f2}}) {
+			$l->[1]->print("$header --info-dir=\%D/$d2 \%D/$f2\n");
+		    }
+		} else {
+		    $out{$plist}->print("$header --info-dir=\%D/$d2 \%D/$f2\n");
 		}
+	    }
 	}
 }
 
@@ -274,7 +285,7 @@ sub may_annotate_and_move
 }
 
 
-my (%newdir, %occupied, %ldconfig, %has_stuff, %infodir, @files, @libfiles);
+my (%newdir, %occupied, %ldconfig, %has_stuff, %info_dir, @files, @libfiles);
 die "Update bsd.port.mk" if @ARGV == 0;
 my $plistdir = shift;
 die "Update bsd.port.mk" if -f $plistdir;
@@ -347,8 +358,8 @@ find(
 					push(@files, $File::Find::name);
 					if (/\.info$/) {
 						my $d = $File::Find::dir;
-						$infodir{$d} = [] unless defined $infodir{$d};
-						push(@{$infodir{$d}}, $_);
+						$info_dir{$d} = [] unless defined $info_dir{$d};
+						push(@{$info_dir{$d}}, $_);
 					}
 				}
 			}
@@ -372,14 +383,14 @@ for my $d (keys %$mtree) {
 	undef $newdir{$d}
 }
 
-add_info('@unexec install-info --delete', \%infodir);
+add_info('@unexec install-info --delete', \%info_dir);
 
 unless (defined $out{$plist}) {
 	$out{$plist} = new IO::File ">$plist";
 	$out{$plist}->print("\@comment \$OpenBSD\$\n");
 }
 for my $f (sort @files) {
-	handle_file($f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $infodir{$`});
+	handle_file($f, $out{$plist}) unless ($f =~ m|/dir$|) && (defined $info_dir{$`});
 }
 
 for my $fh (@has_shared) {
@@ -429,7 +440,7 @@ for my $d (sort { $b cmp $a } (grep { $newdir{$_} } (keys %newdir) ) ) {
 	}
 }
 	
-add_info('@exec install-info', \%infodir);
+add_info('@exec install-info', \%info_dir);
 
 if ($manual) {
 	print STDERR "make plist: subst/frag/exec/unexec spotted in original file\n";
