@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/04/02 15:49:43 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2001/04/18 15:04:50 espie Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -29,6 +29,7 @@
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n:canna
 #    SUBDIR += staroffice
+     SUBDIR += ted
      SUBDIR += textedit
 #    SUBDIR += thoteditor
      SUBDIR += uemacs
