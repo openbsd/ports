@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2005/02/11 02:47:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.21 2005/02/17 03:32:24 brad Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 bin/RunAccel
@@ -920,6 +920,8 @@ share/examples/squid/errors/Korean/ERR_FTP_UNAVAILABLE
 @sample share/squid/errors/Korean/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Korean/ERR_INVALID_REQ
 @sample share/squid/errors/Korean/ERR_INVALID_REQ
+share/examples/squid/errors/Korean/ERR_INVALID_RESP
+@sample share/squid/errors/Korean/ERR_INVALID_RESP
 share/examples/squid/errors/Korean/ERR_INVALID_URL
 @sample share/squid/errors/Korean/ERR_INVALID_URL
 share/examples/squid/errors/Korean/ERR_LIFETIME_EXP
@@ -980,6 +982,8 @@ share/examples/squid/errors/Lithuanian/ERR_FTP_UNAVAILABLE
 @sample share/squid/errors/Lithuanian/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Lithuanian/ERR_INVALID_REQ
 @sample share/squid/errors/Lithuanian/ERR_INVALID_REQ
+share/examples/squid/errors/Lithuanian/ERR_INVALID_RESP
+@sample share/squid/errors/Lithuanian/ERR_INVALID_RESP
 share/examples/squid/errors/Lithuanian/ERR_INVALID_URL
 @sample share/squid/errors/Lithuanian/ERR_INVALID_URL
 share/examples/squid/errors/Lithuanian/ERR_LIFETIME_EXP
@@ -1040,6 +1044,8 @@ share/examples/squid/errors/Polish/ERR_FTP_UNAVAILABLE
 @sample share/squid/errors/Polish/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Polish/ERR_INVALID_REQ
 @sample share/squid/errors/Polish/ERR_INVALID_REQ
+share/examples/squid/errors/Polish/ERR_INVALID_RESP
+@sample share/squid/errors/Polish/ERR_INVALID_RESP
 share/examples/squid/errors/Polish/ERR_INVALID_URL
 @sample share/squid/errors/Polish/ERR_INVALID_URL
 share/examples/squid/errors/Polish/ERR_LIFETIME_EXP
@@ -1100,6 +1106,8 @@ share/examples/squid/errors/Portuguese/ERR_FTP_UNAVAILABLE
 @sample share/squid/errors/Portuguese/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Portuguese/ERR_INVALID_REQ
 @sample share/squid/errors/Portuguese/ERR_INVALID_REQ
+share/examples/squid/errors/Portuguese/ERR_INVALID_RESP
+@sample share/squid/errors/Portuguese/ERR_INVALID_RESP
 share/examples/squid/errors/Portuguese/ERR_INVALID_URL
 @sample share/squid/errors/Portuguese/ERR_INVALID_URL
 share/examples/squid/errors/Portuguese/ERR_LIFETIME_EXP
@@ -1160,6 +1168,8 @@ share/examples/squid/errors/Romanian/ERR_FTP_UNAVAILABLE
 @sample share/squid/errors/Romanian/ERR_FTP_UNAVAILABLE
 share/examples/squid/errors/Romanian/ERR_INVALID_REQ
 @sample share/squid/errors/Romanian/ERR_INVALID_REQ
+share/examples/squid/errors/Romanian/ERR_INVALID_RESP
+@sample share/squid/errors/Romanian/ERR_INVALID_RESP
 share/examples/squid/errors/Romanian/ERR_INVALID_URL
 @sample share/squid/errors/Romanian/ERR_INVALID_URL
 share/examples/squid/errors/Romanian/ERR_LIFETIME_EXP
