@@ -1,4 +1,0 @@
-Usage: circuit [-6] [-t] width height
-
-Click on circles to connect lines. Shift-click or middle-button click to
-lock or unlock a circle.
