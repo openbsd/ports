@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 1999/09/16 18:51:00 fgsch Exp $
+# $OpenBSD: Makefile,v 1.26 2000/03/23 05:06:02 kevlo Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -22,6 +22,7 @@
 #    SUBDIR += empire
 #    SUBDIR += flying
      SUBDIR += freeciv
+     SUBDIR += frotz
 #    SUBDIR += galaxis
      SUBDIR += gnuchess
      SUBDIR += gnugo
