@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 1999/04/10 02:50:54 marc Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/03/25 06:57:48 brad Exp $
 #
 # Pre/post-installation setup of wget
 
@@ -28,7 +28,7 @@ do_notice()
 #
 do_install()
 {
-    cp ${PREFIX}/lib/wget/sample.wgetrc ${CONFIG_FILE}
+    install -o root -g wheel -m 644 ${PREFIX}/lib/wget/sample.wgetrc ${CONFIG_FILE}
     echo
     echo "+---------------"
     echo "| The $1 configuration file, ${CONFIG_FILE},"
