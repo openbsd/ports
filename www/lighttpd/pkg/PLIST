@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/11/05 00:14:52 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2005/01/31 03:42:30 brad Exp $
 bin/spawn-fcgi
 lib/lighttpd/
 @comment lib/lighttpd/mod_access.la
@@ -19,6 +19,8 @@ lib/lighttpd/mod_evhost.so
 lib/lighttpd/mod_expire.so
 @comment lib/lighttpd/mod_fastcgi.la
 lib/lighttpd/mod_fastcgi.so
+@comment lib/lighttpd/mod_mysql_vhost.la
+lib/lighttpd/mod_mysql_vhost.so
 @comment lib/lighttpd/mod_proxy.la
 lib/lighttpd/mod_proxy.so
 @comment lib/lighttpd/mod_redirect.la
@@ -29,6 +31,8 @@ lib/lighttpd/mod_rewrite.so
 lib/lighttpd/mod_rrdtool.so
 @comment lib/lighttpd/mod_secdownload.la
 lib/lighttpd/mod_secdownload.so
+@comment lib/lighttpd/mod_setenv.la
+lib/lighttpd/mod_setenv.so
 @comment lib/lighttpd/mod_simple_vhost.la
 lib/lighttpd/mod_simple_vhost.so
 @comment lib/lighttpd/mod_ssi.la
