@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 04:10:08 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/17 22:16:13 obecian Exp $
 include/SDL/SDL_net.h
 lib/libSDL_net.a
 lib/libSDL_net.la
 %%SHARED%%
-@dirrm include/SDL

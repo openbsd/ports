@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/07 04:08:40 obecian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/05/17 22:16:11 obecian Exp $
 bin/showimage
 include/SDL/SDL_image.h
 lib/libSDL_image.a
 lib/libSDL_image.la
 %%SHARED%%
-@dirrm include/SDL
