@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.155 1999/12/03 17:30:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.156 1999/12/03 17:37:33 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -35,16 +35,12 @@ _REVISION=${_VERSION_REVISION:C/.*\.//}
 
 _VERSION_NEEDED=${NEED_VERSION:C/\..*//}
 _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
-
+.if ${_VERSION_NEEDED} > ${_VERSION} || \
+   (${_VERSION_NEEDED} == ${_VERSION} && ${_REVISION_NEEDED} > ${_REVISION})
 .BEGIN:
-	@if [ ${_VERSION_NEEDED} -gt ${_VERSION} -o \
-			${_VERSION_NEEDED} -eq ${_VERSION} -a \
-				${_REVISION_NEEDED} -gt ${_REVISION} ]; \
-	then \
-		echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
-		exit 1; \
-    fi; 
-
+	echo "Need version ${NEED_VERSION} of bsd.port.mk"; \
+	exit 1;
+.endif
 .endif
 
 # Supported Variables and their behaviors:
@@ -922,32 +918,20 @@ _PATCHFILES=	${PATCHFILES:C/:[0-9]$//}
 .endif
 ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
 
-.if defined(IGNOREFILES)
-CKSUMFILES!=	\
-	for file in ${ALLFILES}; do \
-		ignore=0; \
-		for tmp in ${IGNOREFILES}; do \
-			if [ "$$file" = "$$tmp" ]; then \
-				ignore=1; \
-			fi; \
-		done; \
-		if [ "$$ignore" = 0 ]; then \
-			echo "$$file"; \
-		else \
-			echo ""; \
-		fi; \
-	done
-.else
 CKSUMFILES=		${ALLFILES}
+.if defined(IGNOREFILES)
+.for __TMP in ${IGNOREFILES}
+CKSUMFILES:=${CKSUMFILES:N${__TMP}}
+.endfor
 .endif
 
 # List of all files, with ${DIST_SUBDIR} in front.  Used for checksum.
 .if defined(DIST_SUBDIR)
-_CKSUMFILES?=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
-_IGNOREFILES?=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
+_CKSUMFILES=	${CKSUMFILES:S/^/${DIST_SUBDIR}\//}
+_IGNOREFILES=	${IGNOREFILES:S/^/${DIST_SUBDIR}\//}
 .else
-_CKSUMFILES?=	${CKSUMFILES}
-_IGNOREFILES?=	${IGNOREFILES}
+_CKSUMFILES=	${CKSUMFILES}
+_IGNOREFILES=	${IGNOREFILES}
 .endif
 
 # This is what is actually going to be extracted, and is overridable
@@ -1072,12 +1056,12 @@ IGNORE=	"uses X11, but ${X11BASE} not found"
 .elif defined(BROKEN)
 IGNORE=	"is marked as broken: ${BROKEN}"
 .elif defined(ONLY_FOR_ARCHS)
-.for __ARCH in ${ONLY_FOR_ARCHS}
-.if (${MACHINE_ARCH} == "${__ARCH}") || (${ARCH} == "${__ARCH}")
-__ARCH_OK=	1
+.for __ARCH in ${MACHINE_ARCH} ${ARCH}
+.if !empty(ONLY_FOR_ARCHS:M${__ARCH})
+_ARCH_OK=1
 .endif
 .endfor
-.if !defined(__ARCH_OK)
+.if !defined(_ARCH_OK)
 .if ${MACHINE_ARCH} == "${ARCH}"
 IGNORE= "is only for ${ONLY_FOR_ARCHS}, not ${MACHINE_ARCH}"
 .else
