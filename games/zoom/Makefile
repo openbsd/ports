@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/02/14 22:40:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/11/24 03:24:21 brad Exp $
 
 # dumps core
 NOT_FOR_ARCHS=		sparc64
@@ -7,7 +7,6 @@ COMMENT=		"Z-code interpreter for X11"
 
 DISTNAME=		zoom-0.9.99beta3
 CATEGORIES=     	games
-NEED_VERSION=		1.484
 HOMEPAGE=		http://www.dcs.warwick.ac.uk/~esvce/zoom/
 
 MAINTAINER=		Jose Nazario <jose@crimelabs.net>
@@ -22,6 +21,8 @@ MASTER_SITES=		${HOMEPAGE}
 
 USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
+
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zoom
