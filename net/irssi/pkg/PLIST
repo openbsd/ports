@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2002/03/20 22:19:49 lebel Exp $
-bin/botti
+@comment $OpenBSD: PLIST,v 1.10 2003/01/02 11:03:44 reinhard Exp $
 bin/irssi
-lib/irssi/modules/libirc_bot.a
-lib/irssi/modules/libirc_bot.so
 lib/irssi/modules/libirc_proxy.a
 lib/irssi/modules/libirc_proxy.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
@@ -17,6 +14,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
+man/man1/irssi.1
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
 share/doc/irssi/faq.html
@@ -33,6 +31,7 @@ share/doc/irssi/help/cat
 share/doc/irssi/help/cd
 share/doc/irssi/help/channel
 share/doc/irssi/help/clear
+share/doc/irssi/help/completion
 share/doc/irssi/help/connect
 share/doc/irssi/help/ctcp
 share/doc/irssi/help/cycle
@@ -100,6 +99,7 @@ share/doc/irssi/help/rping
 share/doc/irssi/help/save
 share/doc/irssi/help/say
 share/doc/irssi/help/sconnect
+share/doc/irssi/help/script
 share/doc/irssi/help/scrollback
 share/doc/irssi/help/server
 share/doc/irssi/help/servlist
@@ -151,12 +151,12 @@ share/doc/irssi/scripts/mlock.pl
 share/doc/irssi/scripts/msg-event.pl
 share/doc/irssi/scripts/quitmsg.pl
 share/doc/irssi/scripts/redirect.pl
+share/doc/irssi/scripts/scriptassist.pl
 share/doc/irssi/scripts/splitlong.pl
 share/doc/irssi/scripts/usercount.pl
 share/doc/irssi/signals.txt
 share/doc/irssi/special_vars.txt
 share/doc/irssi/startup-HOWTO.html
-share/doc/irssi/startup-HOWTO.txt
 share/doc/irssi/themes/colorless.theme
 share/doc/irssi/themes/default.theme
 share/examples/irssi/colorless.theme
