@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2002/12/23 02:36:24 naddy Exp $
+--- configure.orig	Sun Dec 22 01:49:18 2002
++++ configure	Sun Dec 22 01:49:50 2002
+@@ -798,8 +798,6 @@ fi
+ # Checks for programs.
+ 
+ 
+-	CXXFLAGS="-g -Wall"  # default compilation options
+-
+ 	# Check whether --with-cxx or --without-cxx was given.
+ if test "${with_cxx+set}" = set; then
+   withval="$with_cxx"
+@@ -975,8 +973,6 @@ ac_compile='${CXX-g++} -c $CXXFLAGS $CPP
+ ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ cross_compiling=$ac_cv_prog_cxx_cross
+ 
+-
+-CXXFLAGS="-g -Wall"
+ 
+ 
+ # Checks for libraries.
