@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.41 2004/10/18 06:48:31 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.42 2004/11/24 07:40:54 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -15,7 +15,10 @@ MASTER_SITES0=	http://www.ipnet6.org/postfix/download/
 
 DIST_SUBDIR=	postfix
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+.if defined(IPV6VERSION) && defined(IPV6POSTFIX)
 PATCHFILES+=	tls+ipv6-${IPV6VERSION}-pf-${IPV6POSTFIX}.patch.gz:0
+.endif
 
 HOMEPAGE=	http://www.postfix.org/
 
