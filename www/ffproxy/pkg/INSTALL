@@ -1,0 +1,44 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2003/07/25 04:52:45 jolan Exp $
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+FFPROXYUSER=_ffproxy
+FFPROXYGROUP=_ffproxy
+ID=523
+
+do_usergroup_install()
+{
+  if groupinfo -e $FFPROXYGROUP; then
+    echo "===> Using $FFPROXYGROUP group for ffproxy"
+  else
+    echo "===> Creating $FFPROXYGROUP group for ffproxy"
+    groupadd -g $ID $FFPROXYGROUP
+  fi
+  if userinfo -e $FFPROXYUSER; then
+    echo "===> Using $FFPROXYUSER user for ffproxy"
+  else
+    echo "===> Creating $FFPROXYUSER user for ffproxy"
+    useradd -g $FFPROXYGROUP -d /nonexistent -L daemon -c 'ffproxy Account' -s /sbin/nologin -u $ID $FFPROXYUSER
+  fi
+}
+
+# verify proper execution
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# verify/process the command
+case $2 in
+    PRE-INSTALL)
+	do_usergroup_install
+	;;
+    POST-INSTALL)
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/25 04:52:45 jolan Exp $
+bin/ffproxy
+man/man8/ffproxy.8
+share/doc/ffproxy/README
+share/examples/ffproxy/db/access.dyndns
+share/examples/ffproxy/db/access.host
+share/examples/ffproxy/db/access.ip
+share/examples/ffproxy/db/filter.header.add
+share/examples/ffproxy/db/filter.header.drop
+share/examples/ffproxy/db/filter.header.entry
+share/examples/ffproxy/db/filter.header.match
+share/examples/ffproxy/db/filter.host.match
+share/examples/ffproxy/db/filter.rheader.drop
+share/examples/ffproxy/db/filter.rheader.entry
+share/examples/ffproxy/db/filter.rheader.match
+share/examples/ffproxy/db/filter.url.match
+share/examples/ffproxy/ffproxy.conf
+share/examples/ffproxy/html/connect
+share/examples/ffproxy/html/filtered
+share/examples/ffproxy/html/invalid
+share/examples/ffproxy/html/notcached
+share/examples/ffproxy/html/post
+share/examples/ffproxy/html/resolve
+@dirrm share/examples/ffproxy/html
+@dirrm share/examples/ffproxy/db
+@dirrm share/examples/ffproxy
+@dirrm share/doc/ffproxy

@@ -1,0 +1,15 @@
+
+Configuring ffproxy for use on OpenBSD
+--------------------------------------
+
+The locations to the ffproxy configuration file and data directory must
+be specified via the -f and -D options, respectively.  See the
+ffproxy(8) manpage for more information.
+
+Some helpful files have been installed:
+
+- author's README	${PREFIX}/share/doc/ffproxy/README
+- sample configuration	${PREFIX}/share/examples/ffproxy/ffproxy.conf
+- sample db files	${PREFIX}/share/examples/ffproxy/db/*
+- sample html files	${PREFIX}/share/examples/ffproxy/html/*
+

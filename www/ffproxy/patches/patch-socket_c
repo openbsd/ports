@@ -1,0 +1,11 @@
+$OpenBSD: patch-socket_c,v 1.1.1.1 2003/07/25 04:52:45 jolan Exp $
+--- socket.c.orig	Sun Jul 20 06:25:05 2003
++++ socket.c	Thu Jul 24 20:51:04 2003
+@@ -30,6 +30,7 @@
+ #endif
+ 
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ 
+ #include "req.h"
