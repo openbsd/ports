@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.419 2001/07/03 12:06:13 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.420 2001/07/11 12:57:20 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -429,7 +429,9 @@ PORTPATH?= /usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
 # Add any COPTS to CFLAGS.  Note: programs that use imake do not
 # use CFLAGS!  Also, many (most?) ports hard code CFLAGS, ignoring
 # what we pass in.
+.if defined(COPTS)
 CFLAGS+=		${COPTS}
+.endif
 
 MAKE_FLAGS?=	
 .if !defined(FAKE_FLAGS)
