@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2004/12/15 13:57:57 alek Exp $
+# $OpenBSD: Makefile,v 1.13 2005/03/10 11:21:14 alek Exp $
 
 COMMENT=		"Boring window manager for the adult in you."
 
 DISTNAME=		metacity-2.8.8
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11 x11/gnome
 
 HOMEPAGE=		http://www.gnome.org/softwaremap/projects/Metacity
@@ -29,7 +30,6 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
 			:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		gconf-2::devel/gconf2 \
-			glade-2.0.0.0::devel/libglade2 \
 			startup-notification-1::devel/startup-notification
 
 SEPARATE_BUILD=		concurrent
