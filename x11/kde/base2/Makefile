@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/10/22 15:43:48 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/10/24 16:09:19 espie Exp $
 
 CATEGORIES=		x11 x11/kde
 NEED_VERSION=		1.305
@@ -18,6 +18,7 @@ CONFIGURE_ARGS=		--with-qt-includes=${LOCALBASE}/include/X11/qt2
 CONFIGURE_ARGS+=	--with-qt-libraries=${LOCALBASE}/lib/qt2
 CONFIGURE_ARGS+=	--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--without-motif
 
 # Not yet, too much time to compile
 #CONFIGURE_ARGS+=	--enable-static

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/10/20 20:59:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/10/24 16:09:20 espie Exp $
 @owner root
 @mode u+s
 bin/kcheckpass
@@ -67,8 +67,6 @@ bin/kxkb
 bin/kxmlrpcd
 bin/kxsconfig
 bin/kxsrun
-bin/nspluginscan
-bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -159,7 +157,6 @@ lib/libkcm_kwinoptions.la
 lib/libkcm_layout.la
 lib/libkcm_locale.la
 lib/libkcm_midi.la
-lib/libkcm_nsplugin.la
 lib/libkcm_passwords.la
 lib/libkcm_samba.la
 lib/libkcm_screensaver.la
@@ -189,7 +186,6 @@ lib/libkwinmodernsys.la
 lib/libkwinriscos.la
 lib/libkwinsystem.la
 lib/libkwritepart.la
-lib/libnsplugin.la
 lib/libquicklauncher.la
 lib/libsmb++.la
 share/applnk/.directory
@@ -271,7 +267,6 @@ share/applnk/Settings/WebBrowsing/.directory
 share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
-share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop
 share/applnk/System/.directory
@@ -1574,7 +1569,6 @@ share/icons/locolor/16x16/apps/mouse.png
 share/icons/locolor/16x16/apps/multimedia.png
 share/icons/locolor/16x16/apps/nedit.png
 share/icons/locolor/16x16/apps/netscape.png
-share/icons/locolor/16x16/apps/nsplugin.png
 share/icons/locolor/16x16/apps/package.png
 share/icons/locolor/16x16/apps/package_applications.png
 share/icons/locolor/16x16/apps/package_editors.png
@@ -1716,7 +1710,6 @@ share/icons/locolor/32x32/apps/nedit.png
 share/icons/locolor/32x32/apps/netscape.png
 share/icons/locolor/32x32/apps/network.png
 share/icons/locolor/32x32/apps/nogo.png
-share/icons/locolor/32x32/apps/nsplugin.png
 share/icons/locolor/32x32/apps/package.png
 share/icons/locolor/32x32/apps/package_applications.png
 share/icons/locolor/32x32/apps/package_editors.png
