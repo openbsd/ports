@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/09/13 20:33:28 todd Exp $
+lib/libfish_applet.so.0.0
+lib/libgen_util_applet.so.0.0
+lib/libpanel_applet.so.0.1
+lib/libpanel_status.so.0.0
+DYNLIBDIR(%D/lib)

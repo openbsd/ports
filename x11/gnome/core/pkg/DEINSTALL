@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/09/13 20:33:28 todd Exp $
+#
+
+    # scrollkeeper
+    echo "*"
+    echo "* Running scrollkeeper-update..."
+    /usr/local/bin/scrollkeeper-update -p $(/usr/local/bin/scrollkeeper-config --pkglocalstatedir)
+    echo "*"
+
+    echo
+    echo "*=================[ $1"
+    echo "* To really remove $1 from your system you should also"
+    echo "* remove the configuration files from the /etc directory."
+    echo "* If you are planning on installing $1 again in the future"
+    echo "* you can leave it as it is."
+    echo "*"
+    echo "* FYI, the following configuration files belongs to this package:"
+    echo "*"
+    for f in \
+	CORBA/servers/deskguide_applet.gnorba \
+	CORBA/servers/fish_applet.gnorba \
+	CORBA/servers/gen_util.gnorba \
+	CORBA/servers/gnome-terminal.gnorba \
+	CORBA/servers/help-browser.gnorba \
+	CORBA/servers/panel.gnorba \
+	CORBA/servers/tasklist_applet.gnorba \
+	sound/events/mailcheck.soundlist \
+	sound/events/panel.soundlist
+    do
+	echo "* /etc/$f"
+    done
+    echo "*================= $1 ]"
+    echo
+
+exit 0
