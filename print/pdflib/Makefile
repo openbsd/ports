@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/07/16 09:43:54 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/11 13:54:35 jakob Exp $
 
 COMMENT=		"C library to produce PDF files"
 
-DISTNAME=		pdflib-3.03
+DISTNAME=		pdflib-4.0.1
 CATEGORIES=     	print
-NEED_VERSION=		1.402
+NEED_VERSION=		1.454
 
 HOMEPAGE=		http://www.pdflib.com/pdflib/
 
@@ -21,18 +21,21 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			png.2::graphics/png \
 			tiff.35::graphics/tiff
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-tifflib=${PREFIX} \
-			--with-pnglib=${PREFIX} \
+CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--with-tifflib \
+			--with-pnglib \
+			--with-zlib \
 			--without-perl \
 			--without-java \
 			--without-py \
 			--without-tcl
 
-do-install:
-	${INSTALL_DATA} ${WRKBUILD}/pdflib/pdflib.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/pdflib/.libs/libpdf.al ${PREFIX}/lib/libpdf.a
-	${INSTALL_SCRIPT} ${WRKBUILD}/pdflib-config ${PREFIX}/bin
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+MAKE_ENV=		${CONFIGURE_ENV}
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pdflib
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/pdflib
 
