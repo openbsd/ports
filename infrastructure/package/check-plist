@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# $OpenBSD: check-plist,v 1.1 2001/04/19 16:47:34 espie Exp $
+# Copyright (c) 2001
+# Marc Espie.  All rights reserved.
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Neither the name of OpenBSD nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY ITS AUTHOR AND THE OpenBSD project ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# starting from an initial list, check package dependencies, and build
+# derived updated lists.
+# list.depends: all package dependencies
+# list.dirs: corresponding extended directories
+# list.pkgs: corresponding package names
+
+if [ $# -ne 1 ]; then
+	echo "This script takes exactly one parameter"
+	exit 1
+fi
+initial=$1
+case "$initial" in 
+    "/*");; 
+    *)initial=`pwd`"/$initial";;
+esac
+depends="$initial.depends"
+list="$initial.dirs"
+packages="$initial.pkgs"
+trimmed="$initial.trimmed"
+
+: ${PORTSDIR:=/usr/ports}
+cd ${PORTSDIR} 
+
+make ECHO_MSG='echo >&2' SUBDIRLIST=$initial package-dir-depends >$depends
+sed -e 's,[ 	]*\#.*,,' -e '/^[ 	]*$/d' $initial >$trimmed
+tsort -h $trimmed -r $depends >$list
+make ECHO_MSG='echo >&2' show=FULLPKGNAME SUBDIRLIST=$list|sed -e 's,$,.tgz,' >$packages
+echo "Packages with distribution problems:"
+echo "------------------------------------"
+make ECHO_MSG='echo -n' show=PERMIT_PACKAGE_CDROM SUBDIRLIST=$list|\
+grep -v -i 'Yes$'
