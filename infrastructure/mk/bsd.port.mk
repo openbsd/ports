@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.395 2001/04/12 20:35:59 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.396 2001/04/14 16:49:53 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -221,12 +221,14 @@ ARCH!=	uname -m
 OPSYS=	OpenBSD
 OPSYS_VER=	${OSREV}
 
+NO_SHARED_ARCHS=alpha hppa vax
 
 # Define NO_SHARED_LIBS for those machines that don't support shared libraries.
-.if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "hppa") || \
-    (${MACHINE_ARCH} == "vax")
+.for _m in ${MACHINE_ARCH}
+.  if !empty(NO_SHARED_ARCHS:M${_m})
 NO_SHARED_LIBS=	Yes
-.endif
+.  endif
+.endfor
 
 # Compatibility kludge for old scripts
 .if defined(NOCLEANDEPENDS)
