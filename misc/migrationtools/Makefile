@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/02 17:45:22 sturm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/12 06:49:43 kevlo Exp $
 
 COMMENT=	"perl scripts for migrating system information to LDAP"
 
 DISTNAME=	MigrationTools
-PKGNAME=	migrationtools-44
+PKGNAME=	migrationtools-45
 CATEGORIES=	misc
 
-MASTER_SITES=	http://www.padl.com/download/
+MASTER_SITES=	http://www.padl.com/downloa/
 HOMEPAGE=	http://www.padl.com/OSS/MigrationTools.html
 
 # BSD license, included with the source files
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 SUBST_VARS=	PKGNAME
-WRKDIST=	${WRKDIR}/${DISTNAME}-44
+WRKDIST=	${WRKDIR}/${DISTNAME}-45
 MTSDIR=		${PREFIX}/share/${PKGNAME}/
 
 do-install:
