@@ -3,7 +3,7 @@
 # Date created:		December 4, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.5 1998/02/12 20:21:07 niklas Exp $
+# $OpenBSD: Makefile,v 1.6 1998/02/26 20:34:31 marc Exp $
 #
 
 DISTNAME=       gsm-1.0.10
@@ -17,6 +17,10 @@ MAN1=		toast.1
 MAN3=		gsm.3 gsm_explode.3 gsm_option.3 gsm_print.3
 
 post-install:
+.if !defined(NO_INSTALL_MANPAGES)
+	${LN} -sf ${PREFIX}/man/man1/toast.1 ${PREFIX}/man/man1/untoast.1
+	${LN} -sf ${PREFIX}/man/man1/toast.1 ${PREFIX}/man/man1/tcat.1
+.endif
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

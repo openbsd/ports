@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jul  2 16:36:06 1996
-+++ Makefile	Wed Feb 11 21:43:14 1998
+--- Makefile.orig	Tue Jul  2 07:36:06 1996
++++ Makefile	Thu Feb 26 12:11:00 1998
 @@ -7,11 +7,13 @@
  SASR	= -DSASR
  ######### Define SASR if >> is a signed arithmetic shift (-1 >> 1 == -1)
@@ -77,12 +77,12 @@
  
  LIBGSM	= $(LIB)/libgsm.a
 -
-+.if ${MACHINE} == "alpha"
++.if (${MACHINE_ARCH} == "alpha")
 +LIBGSMSO =
-+INTALLED_LIBGSMSO =
++INSTALLED_LIBGSMSO =
 +.else
 +LIBGSMSO = $(LIB)/libgsm.so.1.0
-+INTALLED_LIBGSMSO = $(GSM_INSTALL_LIB)/$(LIBGSMSO)
++INSTALLED_LIBGSMSO = $(GSM_INSTALL_LIB)/libgsm.so.1.0
 +.endif
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
