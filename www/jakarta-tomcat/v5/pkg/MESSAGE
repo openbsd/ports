@@ -1,0 +1,16 @@
+For detailed instructions on how to run Tomcat see:
+${SAMPLEDIR}/webapps/tomcat-docs/index.html
+
+For more information on application development with Tomcat, see
+${SAMPLEDIR}/webapps/tomcat-docs/appdev/index.html
+
+Note that Tomcat may be started with the following command:
+$ sudo -u _tomcat ${PREFIX}/${PKGNAME}/bin/startup.sh
+
+Configuration files are in `${SYSCONFDIR}/tomcat' (use tomcat.rc
+for setting environment variables like JAVA_HOME/JAVA_OPTS/...)
+
+`$CATALINA_BASE' is `/var/tomcat'.
+
+See also ${PREFIX}/${PKGNAME}/README.OpenBSD for information
+on running Jakarta Tomcat on OpenBSD.

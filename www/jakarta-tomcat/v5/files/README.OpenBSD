@@ -1,0 +1,18 @@
+$OpenBSD: README.OpenBSD,v 1.1.1.1 2004/11/04 21:46:04 naddy Exp $
+
+Jakarta Tomcat on OpenBSD uses `%%SYSCONFDIR%%/tomcat' for its configuration files.
+
+With the following command tomcat is started as user `_tomcat':
+$ sudo -u _tomcat %%PREFIX%%/%%PKGNAME%%/bin/startup.sh
+
+As `sudo' doesn't pass environment variables, you should define
+environment variables in `%%SYSCONFDIR%%/tomcat/tomcat.rc'.
+
+If you want Jakarta Tomcat to serve on privileged ports (e.g. 80),
+then either edit `%%SYSCONFDIR%%/tomcat/server.xml' and change the Connector port
+to 80, or even more secure: redirect all tcp traffic to port 80
+to tomcat's default listener port 8080 using a pf.conf(5) rule like:
+
+   rdr on $NIC proto tcp from any to any port 80 -> 127.0.0.1 port 8080
+
+`$CATALINA_BASE' (formerly `$TOMCAT_HOME') is `/var/tomcat'.
