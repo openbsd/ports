@@ -2,5 +2,5 @@ bin/xterm
 bin/resize
 lib/X11/app-defaults/XTerm
 lib/X11/app-defaults/XTerm-color
-man/cat1/xterm.0
-man/cat1/resize.0
+man/man1/xterm.1
+man/man1/resize.1
