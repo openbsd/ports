@@ -1,15 +1,15 @@
 # OpenBSD makefile for:	magicpoint
-# Version required:	1.05a
+# Version required:	1.07a
 # Date created:		July 13 1999
 # Whom:			Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.10 2000/04/20 12:49:29 kevlo Exp $
-# $OpenBSD: Makefile,v 1.10 2000/04/20 12:49:29 kevlo Exp $
+# $Id: Makefile,v 1.11 2000/06/26 03:35:39 jason Exp $
+# $OpenBSD: Makefile,v 1.11 2000/06/26 03:35:39 jason Exp $
 #
 
-DISTNAME=	magicpoint-1.05a
+DISTNAME=	magicpoint-1.07a
 # question is for localized (i.e. Japanese) version
-PKGNAME?=	magicpoint-1.05a
+PKGNAME?=	magicpoint-1.07a
 CATEGORIES=	misc
 NEED_VERSION=	 1.230
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
@@ -40,17 +40,17 @@ MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
 DOCS=	COPYRIGHT COPYRIGHT.jp README README.fonts README.fonts.jp \
 	SYNTAX TODO.jp USAGE USAGE.jp
-SAMPLES=	README README.jp ascii.mgp cloud.gif dad.eps dad.gif dns.mgp \
-		default.mgp gradation.mgp mgp-old1.gif mgp-old2.gif \
-		mgp-old3.gif mgp1.gif mgp2.gif mgp3.gif sample.mgp \
-		tutorial.mgp v6.mgp v6header.eps v6header.gif
-SAMPLES=	README README.jp cloud.gif dad.eps dad.gif default.mgp \
+SAMPLES=	README README.jp ascii.mgp cloud.jpg dad.eps dad.jpg dns.mgp \
+		default.mgp gradation.mgp mgp-old1.jpg mgp-old2.jpg \
+		mgp-old3.jpg mgp1.jpg mgp2.jpg mgp3.jpg sample.mgp \
+		tutorial.mgp v6.mgp v6header.eps v6header.jpg
+SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		dns-jp.mgp embed-jp.mgp embed.mgp gradation-jp.mgp \
-		gradation.mgp mgp-old1.gif mgp-old2.gif mgp-old3.gif \
-		mgp1.gif mgp2.gif mgp3.gif mgp3.xbm mgprc-sample \
+		gradation.mgp mgp-old1.jpg mgp-old2.jpg mgp-old3.jpg \
+		mgp1.jpg mgp2.jpg mgp3.jpg mgp3.xbm mgprc-sample \
 		multilingual.mgp sample-fr.mgp sample-jp.mgp sample.mgp \
 		sendmail6-jp.mgp sendmail6.mgp tutorial-jp.mgp tutorial.mgp \
-		v6-jp.mgp v6.mgp v6header.eps v6header.gif
+		v6-jp.mgp v6.mgp v6header.eps v6header.jpg
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
