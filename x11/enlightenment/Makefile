@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2001/11/09 17:05:15 lebel Exp $
+# $OpenBSD: Makefile,v 1.28 2001/11/21 02:37:23 brad Exp $
 
 COMMENT=	"themed window manager"
 
 DISTNAME=	enlightenment-0.16.5
 CATEGORIES=	x11
-NEED_VERSION=	1.413
-MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/enlightenment/ \
+NEED_VERSION=	1.489
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.squish.org/pub/enlightenment/enlightenment/ \
-		ftp://ftp.shellhung.org/pub/Mirror/enlightenment/enlightenment/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
-		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
-		ftp://beaver.its.vu.edu.au/pub/enlightenment/
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ 
+MASTER_SITE_SUBDIR= enlightenment
 
 HOMEPAGE=	http://www.enlightenment.org/
 
