@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/22 22:50:53 espie Exp $
 bin/zangband
 share/zangband/
 share/zangband/apex/
@@ -158,4 +158,11 @@ share/zangband/xtra/help/
 share/zangband/xtra/music/
 share/zangband/xtra/sound/
 share/zangband/xtra/sound/sound.cfg
-@extraunexec rm -rf /var/games/zangband
+@mode 775
+@group games
+@sample /var/games/zangband/
+@sample /var/games/zangband/apex/
+@sample /var/games/zangband/save/
+@sample /var/games/zangband/data/
+@sample /var/games/zangband/bone/
+@extraunexec rm /var/games/zangband/*/* 2>/dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/22 22:47:09 espie Exp $
 @mode 2555
 @group games
 bin/tornado
@@ -27,6 +27,11 @@ share/doc/tornado/
 share/doc/tornado/README
 share/examples/tornado/
 share/examples/tornado/tornado.scores
+@mode 660
+@group games
+@sample /var/games/tornado.scores
+@mode
+@group
 share/locale/de/LC_MESSAGES/tornado.mo
 share/locale/es/LC_MESSAGES/tornado.mo
 share/locale/fr/LC_MESSAGES/tornado.mo
@@ -35,5 +40,3 @@ share/locale/nl/LC_MESSAGES/tornado.mo
 share/locale/no/LC_MESSAGES/tornado.mo
 share/locale/pt/LC_MESSAGES/tornado.mo
 share/locale/ru/LC_MESSAGES/tornado.mo
-@cwd /var/games
-@extra tornado.scores
