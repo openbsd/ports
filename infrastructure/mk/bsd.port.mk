@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.427 2001/07/20 13:13:47 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.428 2001/07/30 14:13:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -77,6 +77,8 @@ ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 # NO_PKG_REGISTER - Don't register a port install as a package.
 # BROKEN		- Port is broken.  Set this string to the reason why.
 # RESTRICTED	- Port is restricted.  Set this string to the reason why.
+#
+# PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 #
 # USE_X11		- Port uses X11.
 #
@@ -201,6 +203,7 @@ ERRORS+= "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
 
 FAKE?=Yes
 TRUST_PACKAGES?=No
+BIN_PACKAGES?=No
 WRKINST?=${WRKDIR}/fake-${ARCH}${FLAVOR_EXT}
 
 # Get the architecture
@@ -402,25 +405,45 @@ ERRORS+=	"Fatal: no flavors for this port."
 .  endif
 .endif
 
-.if ${SUBPACKAGE} != "" 
-.  if defined(FULLPKGNAME${SUBPACKAGE})
-FULLPKGNAME:=	${FULLPKGNAME${SUBPACKAGE}}
-.  elif defined(PKGNAME${SUBPACKAGE})
-PKGNAME:=		${PKGNAME${SUBPACKAGE}}
-.  endif
-.endif
-PKGNAME?=		${DISTNAME}${SUBPACKAGE}
-FULLPKGNAME?=	${PKGNAME}${FLAVOR_EXT}
-
 PKGREPOSITORYSUBDIR?=	All
 PKG_SUFX?=		.tgz
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
+PKG_DBDIR?=		/var/db/pkg
+
+
+.if defined(FULLPKGNAME)
+_FULLPKGNAME=${FULLPKGNAME}
+.elif defined(PKGNAME)
+_FULLPKGNAME=${PKGNAME}${FLAVOR_EXT}
+.else
+_FULLPKGNAME=${DISTNAME}${FLAVOR_EXT}
+.endif
+_PKGFILE=${PKGREPOSITORY}/${_FULLPKGNAME}${PKG_SUFX}
+
+.if defined(MULTI_PACKAGES)
+.  for _s in ${MULTI_PACKAGES}
+.    if defined(FULLPKGNAME${_s})
+_FULLPKGNAME${_s} = ${FULLPKGNAME${_s}}
+.    elif defined(PKGNAME${_s})
+_FULLPKGNAME${_s} = ${PKGNAME${_s}}${FLAVOR_EXT}
+.    else
+_FULLPKGNAME${_s} = ${DISTNAME}${_s}${FLAVOR_EXT}
+.    endif
+_PKGFILE${_s} = ${PKGREPOSITORY}/${_FULLPKGNAME${_s}}${PKG_SUFX}
+.  endfor
+.endif
+
+# Backward compatibility, for now
+FULLPKGNAME?=${_FULLPKGNAME${SUBPACKAGE}}
+PKGNAME?=		${DISTNAME}${SUBPACKAGE}
+
 PKGFILE?=		${PKGREPOSITORY}/${FULLPKGNAME}${PKG_SUFX}
 
 _EXTRACT_COOKIE=	${WRKDIR}/.extract_done
 _PATCH_COOKIE=		${WRKDIR}/.patch_done
 _DISTPATCH_COOKIE=	${WRKDIR}/.distpatch_done
 _PREPATCH_COOKIE=	${WRKDIR}/.prepatch_done
+_INSTALL_COOKIE=	${PKG_DBDIR}/${FULLPKGNAME}/+CONTENTS
 .if ${FAKE:L} == "yes"
 _FAKE_COOKIE=		${WRKINST}/.fake_done
 _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
@@ -430,16 +453,13 @@ _INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
 _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
 _FAKE_COOKIE=		${WRKDIR}/.fake_done
 .endif
+_PACKAGE_COOKIE=	${_PKGFILE}
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
-_INSTALL_COOKIE=	${WRKBUILD}/.install_done${SUBPACKAGE}
 _BUILD_COOKIE=		${WRKBUILD}/.build_done
-_PACKAGE_COOKIE=	${WRKBUILD}/.package_done
 .else
 _CONFIGURE_COOKIE=	${WRKDIR}/.configure_done
-_INSTALL_COOKIE=	${WRKDIR}/.install_done${SUBPACKAGE}
 _BUILD_COOKIE=		${WRKDIR}/.build_done
-_PACKAGE_COOKIE=	${WRKDIR}/.package_done
 .endif
 
 _ALL_COOKIES=${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
@@ -552,30 +572,37 @@ WRKBUILD?=		${WRKSRC}
 
 WRKPKG?=		${WRKBUILD}/pkg
 
+.if ${FAKE:L} == "yes"
+_PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
+.else
+_PACKAGE_COOKIE_DEPS=${_INSTALL_COOKIE}
+.endif
+
 _PACKAGE_COOKIES= ${_PACKAGE_COOKIE}
-.  if ${FAKE:L} == "yes"
-${_PACKAGE_COOKIE}: ${_FAKE_COOKIE}
-.  else
-${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE}
-.  endif
+.if ${BIN_PACKAGES:L} == "yes"
+${_PACKAGE_COOKIE}:
+	@${MAKE} ${_PACKAGE_COOKIE_DEPS}
+.else
+${_PACKAGE_COOKIE}: ${_PACKAGE_COOKIE_DEPS}
+.endif
 	@cd ${.CURDIR} && SUBPACKAGE='' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
 .if !defined(PACKAGE_NOINSTALL)
 	@${_MAKE_COOKIE} $@
 .endif
 
-.for _sub in ${MULTI_PACKAGES}
-_PACKAGE_COOKIE${_sub} = ${_PACKAGE_COOKIE}${_sub}
-_PACKAGE_COOKIES+=  ${_PACKAGE_COOKIE${_sub}}
-.  if ${FAKE:L} == "yes"
-${_PACKAGE_COOKIE${_sub}}: ${_FAKE_COOKIE}
+.for _s in ${MULTI_PACKAGES}
+_PACKAGE_COOKIE${_s} = ${_PKGFILE${_s}}
+_PACKAGE_COOKIES += ${_PACKAGE_COOKIE${_s}}
+.  if ${BIN_PACKAGES:L} == "yes"
+${_PACKAGE_COOKIE${_s}}:
+	@${MAKE} ${_PACKAGE_COOKIE_DEPS}
 .  else
-${_PACKAGE_COOKIE${_sub}}: ${_INSTALL_COOKIE}
+${_PACKAGE_COOKIE${_s}}: ${_PACKAGE_COOKIE_DEPS}
 .  endif
-	@cd ${.CURDIR} && SUBPACKAGE='${_sub}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
-.  if !defined(PACKAGE_NOINSTALL)
-	@${_MAKE_COOKIE} $@
-.  endif
+	@cd ${.CURDIR} && SUBPACKAGE='${_s}' FLAVOR='${FLAVOR}' PACKAGING=true exec ${MAKE} _package
 .endfor
+
+.PRECIOUS: ${_PACKAGE_COOKIES} ${_INSTALL_COOKIE}
 
 .if !defined(PKGPATH)
 _PORTSDIR!=	cd ${PORTSDIR} && pwd -P
@@ -1401,11 +1428,6 @@ refetch:
 
 
 
-uninstall deinstall:
-	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
-	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
-	@rm -f ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
-
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
@@ -1712,7 +1734,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	@cd ${.CURDIR} && DEPENDS_TARGET=package _EARLY_EXIT=true exec ${MAKE} run-depends lib-depends
-	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME} from ${PKGFILE}"
+	@${ECHO_MSG} "===>  Installing ${_FULLPKGNAME${SUBPACKAGE}} from ${_PKGFILE${SUBPACKAGE}}"
 # Kludge
 .  if ${CONFIGURE_STYLE:Mimake}
 	@${SUDO} mkdir -p /usr/local/lib/X11
@@ -1721,15 +1743,15 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
 	fi
 .  endif
 .  if ${TRUST_PACKAGES:L} == "yes"
-	@if pkg dependencies check ${FULLPKGNAME}; then \
-		echo "Package ${FULLPKGNAME} is already installed"; \
+	@if pkg dependencies check ${_FULLPKGNAME${SUBPACKAGE}}; then \
+		echo "Package ${_FULLPKGNAME${SUBPACKAGE}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}; \
+		${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${_PKGFILE${SUBPACKAGE}}; \
 	fi
 .  else
-	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
+	@${SUDO} ${SETENV} PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${_PKGFILE${SUBPACKAGE}}
 .  endif
-	@${SUDO} ${_MAKE_COOKIE} $@
+	@-${SUDO} ${_MAKE_COOKIE} $@
 .endif 
 
 # The real package
@@ -1743,7 +1765,7 @@ _package: ${_PKG_PREREQ}
 	@cd ${.CURDIR} && exec ${MAKE} do-package
 .  else
 # What PACKAGE normally does:
-	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME}"
+	@${ECHO_MSG} "===>  Building package for ${_FULLPKGNAME${SUBPACKAGE}}"
 	@if [ ! -d ${PKGREPOSITORY} ]; then \
 	   if ! mkdir -p ${PKGREPOSITORY}; then \
 	      echo ">> Can't create directory ${PKGREPOSITORY}."; \
@@ -1758,8 +1780,8 @@ _package: ${_PKG_PREREQ}
 		*) echo "\n*** WARNING *** Duplicates in PLIST:\n$$duplicates\n";; \
 	esac
 	@cd ${.CURDIR} && \
-	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
-	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${PKGFILE}; \
+	  if ${SUDO} ${PKG_CMD} ${PKG_ARGS} ${_PKGFILE${SUBPACKAGE}}; then \
+	    mode=`id -u`:`id -g`; ${SUDO} ${CHOWN} $${mode} ${_PKGFILE${SUBPACKAGE}}; \
 	    ${MAKE} package-links; \
 	  else \
 	    ${MAKE} delete-package; \
@@ -1772,7 +1794,7 @@ _package: ${_PKG_PREREQ}
 .  endif
 .else
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME} may not be packaged: ${NO_PACKAGE}."
+	@${ECHO_MSG} "===>  ${_FULLPKGNAME${SUBPACKAGE}} may not be packaged: ${NO_PACKAGE}."
 .  endif
 .endif
 
@@ -1799,6 +1821,9 @@ ${_F}:
 		fi; \
 	done; exit 1
 .endfor
+
+bulk-packages:
+	@${MAKE} package BATCH=Yes && exec ${SUDO} ${MAKE} clean CLEANDEPENDS=Yes
 
 all-packages: ${PKGFILE}
 .if defined(MULTI_PACKAGES) && empty(SUBPACKAGE)
@@ -1911,7 +1936,7 @@ delete-package-links:
 .if !target(delete-package)
 delete-package:
 	@cd ${.CURDIR} && exec ${MAKE} delete-package-links
-	@rm -f ${PKGFILE}
+	@rm -f ${_PKGFILE${SUBPACKAGE}}
 .endif
 
 # Checkpatch
@@ -1927,11 +1952,9 @@ checkpatch:
 #
 # Special target to re-run install
 
-.if !target(reinstall)
 reinstall:
-	@${SUDO} rm -f ${_INSTALL_PRE_COOKIE} ${_INSTALL_COOKIE} ${_PACKAGE_COOKIES}
+	@${SUDO} ${PKG_DELETE} -f ${FULLPKGNAME}
 	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
-.endif
 
 # Rebuild
 #
@@ -1944,12 +1967,9 @@ rebuild:
 #
 # Special target to remove installation
 
-.if !target(deinstall)
 uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME}"
 	@${PKG_DELETE} -f ${FULLPKGNAME}
-	@rm -f ${_INSTALL_COOKIE}
-.endif
 
 
 ################################################################
@@ -2112,15 +2132,6 @@ repackage: pre-repackage package
 
 pre-repackage:
 	@rm -f ${_PACKAGE_COOKIES}
-.endif
-
-# Build a package but don't rely on cookie for installation, also don't
-# install package cookie
-
-.if !target(package-noinstall)
-package-noinstall:
-	@rm -f ${_PACKAGE_COOKIES}
-	@cd ${.CURDIR} && exec ${MAKE} PACKAGE_NOINSTALL=Yes ${_PACKAGE_COOKIES}
 .endif
 
 # Internal variables, used by dependencies targets 

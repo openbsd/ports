@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.7 2001/06/07 14:43:01 espie Exp $
+# $OpenBSD: old-install.mk,v 1.8 2001/07/30 14:13:17 espie Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -8,13 +8,8 @@
 # deinstall		- Remove the installation.  Alias: uninstall
 # package		- Create a package from an _installed_ port.
 
-# Corresponding obsolescent variables
-# PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${FULLPKGNAME}.
-
-# where pkg_add records its dirty deeds.
-PKG_DBDIR?=		/var/db/pkg
 
 
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
