@@ -8,6 +8,3 @@ Included are backwards-compatible (almost) POP2 and POP3 servers.
 Flavors
 
 	plaintext	Enable unencrypted plaintext passwords
-
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ format for representing scientific data. Together, the interface,
 library, and format support the creation, access, and sharing of
 scientific data. The netCDF software was developed at the Unidata
 Program Center in Boulder, Colorado.
-
-WWW: ${HOMEPAGE}

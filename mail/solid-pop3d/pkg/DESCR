@@ -22,5 +22,3 @@ as for now. All operations on files are done with user priv-
 ileges. There is no SUID APOP  secrets  database  management
 program  (as  in  QPOP). Each user can specify his secret in
 his own home directory.
-
-WWW: ${HOMEPAGE}

@@ -7,5 +7,3 @@ but can be configured as a standalone POP3 server.
 Features include an extremely small memory footprint, abstract
 authentication modules (e.g. /etc/passwd, LDAP, PAM), virtual mailbox
 support, resource controls, SSL/TLS, and IPv6 support.
-
-WWW: ${HOMEPAGE}

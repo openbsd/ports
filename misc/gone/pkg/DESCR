@@ -7,5 +7,3 @@ can be run.  Gone will also disallow messages by  removing
 permissions  on  the parent tty.  After the timeout period
 (10 minutes by default), gone will automatically  log  the
 user out.
-
-WWW: ${HOMEPAGE}

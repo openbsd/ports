@@ -5,5 +5,3 @@ octal, or decimal modes.
 
 This program most resembles a multi-radix version of hoc(1)
 (ports/math/hoc).
-
-WWW: ${HOMEPAGE}

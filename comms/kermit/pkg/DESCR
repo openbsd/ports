@@ -3,5 +3,3 @@ package offering a consistent, medium-independent, cross-platform
 approach to connection establishment, terminal sessions, file
 transfer, character-set translation, numeric and alphanumeric paging,
 and automation of communication tasks.
-
-WWW: ${HOMEPAGE}

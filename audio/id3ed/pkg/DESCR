@@ -1,4 +1,2 @@
 id3ed is an interactive console interface for editing the id3 tags
 found in mp3 files. It can also remove or just view tags.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ list of supported cameras).
 
 It uses abstractions to handle the communication port (serial/usb 
 protocols) and the camera model separately.
-
-WWW: ${HOMEPAGE}

@@ -17,5 +17,3 @@ This port can be built with the following flavors:
 * ldap		- support ldap (OpenLDAP) queries for lookups
 
 All these flavors are independent of each other.
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 wmglobe is a Window Maker dock app that displays the earth on an
 icon.  It's an adaptation of XGlobe to WMaker environment.  wmglobe
 uses a map which is rendered on a sphere by ray-tracing.
-
-WWW: ${HOMEPAGE}

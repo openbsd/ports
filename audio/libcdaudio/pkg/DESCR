@@ -3,5 +3,3 @@ works with NetBSD, Linux, FreeBSD, OpenBSD, Solaris, and Irix. It
 includes a basic command set for controlling the operation of the
 CD-ROM drive as well as functions for accessing both the CDDB, CD
 Index, and Cover Art Index.
-
-WWW: ${HOMEPAGE}

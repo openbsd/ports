@@ -7,5 +7,3 @@ do not have X11 installed.  It links programs statically with the
 Modula-3 libraries but dynamically with the system libraries, so that
 programs built with Ezm3 can run on systems which do not have
 Modula-3 installed on them.
-
-WWW: ${HOMEPAGE}

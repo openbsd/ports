@@ -5,5 +5,3 @@ are more images available than will fit on one page with the specified
 number of rows and columns, indexpage.pl will generate more than one
 page, each with a navigator to easily reach the other pages. The pages
 will be called "index.html", "2.html", "3.html", and so on.
-
-WWW: ${HOMEPAGE}

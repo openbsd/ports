@@ -11,5 +11,3 @@ This is a work in progress. Only 16 bit colour depth is
 supported.  The player will dynamically conver to other
 colour depths, but playback will be much faster if your
 display is already set to 16 bit colour depth.
-
-WWW: ${HOMEPAGE}

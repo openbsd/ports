@@ -24,5 +24,3 @@ should feel at home with Zile. Zile features
       better reading.
     * Auto fill (word wrap). Zile automatically breaks the lines when
       they become too wide (if the Auto Fill Mode is enabled).
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ the other way.
 The program does minimal error checking and does not understand the
 text it's converting.  It just tries to find matches from its syntax
 database.
-
-WWW: ${HOMEPAGE}

@@ -7,5 +7,3 @@ with vendor-tuned libraries.  (See our web page for extensive
 benchmarks.) To achieve this performance, FFTW uses novel code-generation
 and runtime self-optimization techniques (along with many other
 tricks).
-
-WWW: ${HOMEPAGE}

@@ -15,5 +15,3 @@ Some of the features in MySQL Control Center are:
 - flush Host/Logs/Privileges/Tables 
 - do table-diagnostics (check, optimize, repair, analyze) 
 - and much more... 
-
-WWW: ${HOMEPAGE}

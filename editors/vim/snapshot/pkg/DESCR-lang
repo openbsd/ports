@@ -1,4 +1,2 @@
 This subpackage contains the NLS files that allow Vim to display its messages
 in various non-English languages.
- 
-WWW: ${HOMEPAGE}

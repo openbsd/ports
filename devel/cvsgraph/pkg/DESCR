@@ -1,4 +1,2 @@
 CvsGraph creates a graphic representation of the revisions and branches in a
 cvs/rcs repository. CvsGraph is inspired on the 'graph'-option from WinCVS.
-
-WWW: ${HOMEPAGE}

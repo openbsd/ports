@@ -14,5 +14,3 @@ The S-Lang library includes the following:
   searches.
 - An embedded stack-based language interpreter with a C-like syntax.
 - A malloc debugging package.
-
-WWW: ${HOMEPAGE}

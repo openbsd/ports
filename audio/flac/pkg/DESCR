@@ -19,5 +19,3 @@ What FLAC is:
 - FLAC is suitable for streaming.
 - FLAC supports fast sample-accurate seeking.
 - FLAC has an extendable metadata system.
-
-WWW: ${HOMEPAGE}

@@ -10,5 +10,3 @@ KBiff is also part of the KDE project. Among other things, this
 means that it has support for session management (it "remembers"
 the last state it was in before you logged off) and can be docked
 into the panel.
-
-WWW: ${HOMEPAGE}

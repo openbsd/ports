@@ -15,5 +15,3 @@ Flavors:
 	smp_8  - build with support for SMP (8 CPUs)
 	no_x11 - do not build with X support
 	term   - build with support for textmode terminal environment
-
-WWW: ${HOMEPAGE}

@@ -3,5 +3,3 @@ It allows programs to send requests and receive replies from other
 programs, regardless of the locations of the two programs.
 
 Example programs: ftp://opera.u-strasbg.fr/pub/ORBit/orbit-docs.tar.gz
-
-WWW: ${HOMEPAGE}

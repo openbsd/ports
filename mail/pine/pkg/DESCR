@@ -19,6 +19,3 @@ and pgpsign.
 Flavors:
 
 	ldap		build with support for LDAP
-
-
-WWW: ${HOMEPAGE}

@@ -15,5 +15,3 @@ Features:
    - File info dialog (shows information like current frame,
      fps when the info button is pressed while playing)
    - Preferences dialog
-
-WWW: ${HOMEPAGE}

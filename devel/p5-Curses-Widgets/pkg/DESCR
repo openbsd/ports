@@ -14,5 +14,3 @@ Current widgets include:
 Extra functions include:
 
         select_colour line_split grab_key init_scr
-
-WWW: ${HOMEPAGE}

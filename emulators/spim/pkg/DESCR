@@ -3,5 +3,3 @@ for the MIPS R2000/R3000 RISC computers.  It can read and immediately
 run files containing assembly language statements. It is a self-contained
 system for running these programs and contains a debugger and interface to
 the operating system.
-
-WWW: ${HOMEPAGE}

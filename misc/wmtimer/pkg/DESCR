@@ -17,5 +17,3 @@ left arrow button.
 Time entered via the command line must be in the form of x:x:x You
 dont need to have 2 digits for each number but you must have at
 least zeros as place holders for hrs, mins and secs.
-
-WWW: ${HOMEPAGE}

@@ -12,5 +12,3 @@ graphs.
 
 Supports output directly to your screen, in PostScript and
 binary CGM format.
-
-WWW: ${HOMEPAGE}

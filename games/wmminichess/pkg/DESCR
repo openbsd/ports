@@ -3,5 +3,3 @@ game of chess against the computer from the Window Maker dock.
 
 The README in ${PREFIX}/share/doc/wmminichess/
 should explain how to play.
-
-WWW: ${HOMEPAGE}

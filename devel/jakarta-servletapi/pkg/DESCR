@@ -3,5 +3,3 @@ by the Apache Foundation's Jakarta Project.  This package provides
 the servlet.jar archive, providing standard API implementations used
 for building JSP and servlet-based applications, including Tomcat
 itself (the jakarta-tomcat package).
-
-WWW: ${HOMEPAGE}

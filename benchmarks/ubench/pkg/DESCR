@@ -12,5 +12,3 @@ the system. This ensures all available raw CPU horsepower is used.
 Ubench is executing rather senseless memory allocation and memory to
 memory copying operations for another 3 mins concurrently using several
 processes, and the result is Ubench MEM benchmark.
-
-WWW: ${HOMEPAGE}

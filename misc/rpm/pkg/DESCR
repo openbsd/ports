@@ -8,5 +8,3 @@ the Linux world.
 
 The package database is set to /var/db/rpm by default, to conform
 with hier(7).
-
-WWW: ${HOMEPAGE}

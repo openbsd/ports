@@ -27,5 +27,3 @@ Here is a list of bundled XEmacs' packages : (note that some are MULE-only)
            vhdl	   view-process	          viper             vm
              w3	    xemacs-base	   xemacs-devel         xslide
    xslt-process	         zenirc
-
-WWW: ${HOMEPAGE}

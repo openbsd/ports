@@ -15,5 +15,3 @@ Flavors:
  * gtk - build UI using GTK widgets
  * sdl - sound support using SDL library
  * esd - sound support using ESD library
-
-WWW: ${HOMEPAGE}

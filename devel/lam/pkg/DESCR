@@ -7,5 +7,3 @@ LAM features extensive debugging support in the application development cycle
 and peak performance for production applications. LAM features a full implemen-
 tation of the MPI communication standard (with the exception that canceling sent
 messages is not supported). 
-
-WWW: ${HOMEPAGE}

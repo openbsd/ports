@@ -12,5 +12,3 @@ number of algorithms with the following features:
  - Algorithm is lossless.
 
 UCL supports in-place decompression.
-
-WWW: ${HOMEPAGE}

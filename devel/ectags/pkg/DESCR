@@ -8,5 +8,3 @@ PHP, Python, REXX, Ruby, S-Lang, Scheme, Tcl, and Vim is present;
 in particular, the C/C++ parser is far less easily fooled by pre-
 processor conditional constructs than many other ctags(1) imple-
 mentations.
-
-WWW: ${HOMEPAGE}

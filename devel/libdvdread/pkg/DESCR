@@ -14,6 +14,3 @@ features of the DVD format.
 libdvdread currently uses libdl to dynamically probe for libdvdcss at
 runtime.  If libdvdcss is found, then it will be used to decrypt the
 encrypted sections of a DVD.
-
-
-WWW: ${HOMEPAGE}

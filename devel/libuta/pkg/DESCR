@@ -4,5 +4,3 @@ together portable graphical applications easily.  libuta has a range
 of already implemented widgets and uses libsigc++ as a signal
 dispatching system.  It also performs resource management and has a
 sound system.
-
-WWW: ${HOMEPAGE}

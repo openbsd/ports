@@ -19,5 +19,3 @@ Notes On The OV511+
 -------------------
 Josh Elsasser <jre@vineyard.net> has added support for OV511+ cameras.
 Older Creative WebCam 3's use the OV511 but newer ones use the OV511+
-
-WWW: ${HOMEPAGE}

@@ -8,5 +8,3 @@ Available flavors:
 	gnome: Build with gnome support
 
 For more information about glade, visit:
-
-WWW: ${HOMEPAGE}

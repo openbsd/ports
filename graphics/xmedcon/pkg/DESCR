@@ -12,5 +12,3 @@ compression, to print pixel values or to extract/reorder specified
 images. It is possible to retrieve the raw binary/ascii image arrays or
 to write animated GIFs for desktop applications. The library could be
 used as a framework for your own image formats. 
-
-WWW: ${HOMEPAGE}

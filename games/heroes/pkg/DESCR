@@ -8,5 +8,3 @@ Flavors:
 		and SDL_mixer for the sound interface
 	ggi	- build with the Generic Graphics Library
 		no sound support
-
-WWW: ${HOMEPAGE}

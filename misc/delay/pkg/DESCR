@@ -17,5 +17,3 @@ delay 15s -- top
 
 It allows for short, long, and customized messages for the display of 
 the time remaining.
-
-WWW: ${HOMEPAGE}

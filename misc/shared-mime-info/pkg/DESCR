@@ -17,5 +17,3 @@ In addition, freedesktop.org provides a shared database in this format
 to avoid inconsistencies between desktops. This database has been
 created by converting the existing KDE and GNOME databases to the new
 format and merging them together.
-
-WWW: ${HOMEPAGE}

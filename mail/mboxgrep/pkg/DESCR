@@ -2,5 +2,3 @@ Mboxgrep is a small utility that scans a mailbox for messages matching
 a regular expression. Found messages can be either displayed on standard
 output, counted, deleted, piped to a shell command or written to another 
 mailbox. 
-
-WWW: ${HOMEPAGE}

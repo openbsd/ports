@@ -9,5 +9,3 @@ is distributed under a Perl-style "Artistic License".
 
 This is the server portion of OpenLDAP, it provides the server as well as
 various administrative binaries.
-
-WWW: ${HOMEPAGE}

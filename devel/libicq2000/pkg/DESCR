@@ -3,5 +3,3 @@ the icq2000/2001 protocol. It is easy for developers to use as the
 backbone for their clients' connection to the ICQ network - all the
 protocol work is abstracted away in one nice object-orientated
 interface.
-
-WWW: ${HOMEPAGE}

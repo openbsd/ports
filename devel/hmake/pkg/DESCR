@@ -11,5 +11,3 @@ and feels a lot like the Hugs interpreter. The difference is that
 you get real compiled code, compiled by your favorite compiler -
 you can even change compiler on the fly, to check your code's
 portability!
-
-WWW: ${HOMEPAGE}

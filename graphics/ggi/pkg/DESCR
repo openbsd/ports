@@ -11,5 +11,3 @@ dynamic drivers. The library then loads the necessary "drivers" for the
 requested mode, taking hints from the graphics device if necessary. LibGGI
 can also load extension libraries, e.g. to provide enhanced 2D and 3D
 functions.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ CD, published by Activision.  The version presented here is known to
 work with version 3, 5, 7 and 8 story files. Version 4 should be ready
 soon, but version 6 will take a bit more work.  It is designed to run
 under the X Window System.
-
-WWW: ${HOMEPAGE}

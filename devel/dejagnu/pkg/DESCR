@@ -18,5 +18,3 @@ several advantages for testing:
           (Tool command language).  The framework comprises two parts:
           the testing framework and the testsuites themselves. Tests
           are usually written in expect using Tcl.
-
-WWW: ${HOMEPAGE}

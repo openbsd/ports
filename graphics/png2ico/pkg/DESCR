@@ -1,4 +1,2 @@
 Converts PNG images to Windows icon resource files (.ico), useful for
 creating favicon.ico icons containing 16x16 or 32x32 web page logos.
-
-WWW: ${HOMEPAGE}

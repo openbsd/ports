@@ -4,5 +4,3 @@ coding research and evaluating codecs. It could theoretically
 be used as a portion of a DVD playback system for unix systems. 
 There are issues with DVD encryption and licensing that need to be
 resolved however.
-
-WWW: ${HOMEPAGE}

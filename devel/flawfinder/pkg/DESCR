@@ -6,5 +6,3 @@ under the GPL license).
 Flawfinder will miss some security problems, and point out issues
 that aren't really security problems, but nevertheless it can help
 track down security problems in code so that the code can be fixed.
-
-WWW: ${HOMEPAGE}

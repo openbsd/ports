@@ -2,5 +2,3 @@ cmail is a simple mail counting tool written in perl. It reads in a
 config fileXand returns which mailfiles contain mail, how much mail, and
 how many new messages. This may be useful if you split your mail into
 multiple files using something like procmail.
-
-WWW: ${HOMEPAGE}

@@ -7,5 +7,3 @@ a file's extension; the defaults are set in a config file. It uses textual
 playlist files, which are easily generated with the ``find'' or ``locate''
 utilities. xhippo's interface is very loosely modelled on the ``HippoPlayer''
 player for the Amiga. 
-
-WWW: ${HOMEPAGE}

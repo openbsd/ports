@@ -13,5 +13,3 @@ is not necessary or desirable for gd to become a kitchen-sink graphics
 package, but version 1.6.2 incorporates most of the commonly requested
 features for an 8-bit 2D package. Support for scalable fonts, and
 truecolor images, JPEG and truecolor PNG is planned for version 2.0.
-
-WWW: ${HOMEPAGE}

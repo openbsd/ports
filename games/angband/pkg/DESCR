@@ -6,5 +6,3 @@ ${PREFIX}/share/games/angband/lib/help
 
 Flavors:
         no_x11  - build without X11 support
-
-WWW: ${HOMEPAGE}

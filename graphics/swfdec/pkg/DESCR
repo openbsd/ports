@@ -4,5 +4,3 @@ FLAVORs:
 	plugin	- Build a Mozilla plugin.  Currently, the plugin isn't
 		especially useful or reliable, causing Mozilla to crash.
 		Use at your own risk.
-
-WWW: ${HOMEPAGE}

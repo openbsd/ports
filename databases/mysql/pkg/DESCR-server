@@ -6,5 +6,3 @@ as various administrative binaries.
 
 Flavors:
 	bdb - Build with transaction support using BerkeleyDB
-
-WWW: ${HOMEPAGE}

@@ -14,5 +14,3 @@ IRIX, Ultrix and HPUX with OpenGL or Mesa. GLE is also known to run
 on IBM OS/2 Warp, Apple Macintosh OS9, and Microsoft Windows NT and
 has been used to develop screen-savers for some of these popular
 PC operating systems.
-
-WWW: ${HOMEPAGE}

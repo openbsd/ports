@@ -22,5 +22,3 @@ file plug-ins, allowing additional file formats to be added
 without modification to the core.  File formats supported in version
 1.1 include the popular GIF and JPEG standards, as well as PNG, TIFF,
 XPM, SGI, PCX, and Windows BMP.
-
-WWW: ${HOMEPAGE}

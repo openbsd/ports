@@ -6,5 +6,3 @@ your procmail command in your .forward or .qmail file.
 Mail::Audit provides the functionality for extracting mail headers,
 bouncing, accepting, rejecting, forwarding, and filtering incoming
 mail.
-
-WWW: ${HOMEPAGE}

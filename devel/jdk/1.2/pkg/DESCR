@@ -6,5 +6,3 @@ testing programs written in the Java programming language and
 running on the Java platform.  These tools are designed to be 
 used from the command line.  Except for the appletviewer, these
 tools do not provide a graphical user interface.
-
-WWW: ${HOMEPAGE}

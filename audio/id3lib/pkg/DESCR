@@ -3,5 +3,3 @@ for reading, writing, and manipulating ID3v1and ID3v2 tags. It is an
 on-going project whose primary goals are full compliance with the ID3v2
 standard, portability across several platforms, and providing a powerful
 and feature-rich API with a highly stable and efficient implementation.
-
-WWW: ${HOMEPAGE}

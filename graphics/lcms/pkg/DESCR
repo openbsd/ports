@@ -4,5 +4,3 @@ LCMS is the Little Color Management System, a Color Matching Method
 Color management refers to techniques that ensure consistent color
 as images are transferred from scanners or cameras to monitors and
 printers.
-
-WWW: ${HOMEPAGE}

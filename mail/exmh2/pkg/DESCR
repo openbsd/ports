@@ -19,5 +19,3 @@ In addition, exmh supports various implementations of pgp. There are
 packages available for:
     gnupg
     pgp5
-
-WWW: ${HOMEPAGE}

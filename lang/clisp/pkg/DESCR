@@ -17,5 +17,3 @@ compiled with CLISP, see file COPYRIGHT in the CLISP distribution.
 
 The user interface comes in German, English, French, Spanish
 and Dutch, and can be changed at run time.
-
-WWW: ${HOMEPAGE}

@@ -18,5 +18,3 @@ up to now perfectly indented, suddenly becomes a mess to look at
 when changing to another editor. Even if you as a programmer take
 care to ONLY use spaces or tabs, looking at other peoples source
 code can still be problematic.
-
-WWW: ${HOMEPAGE}

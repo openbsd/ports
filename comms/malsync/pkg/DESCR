@@ -5,5 +5,3 @@ two companies committing to producing servers which speak this protocol.
 This utility will allow a user to sync with multiple servers,
 simultaneously or separately. The AvantGo.com service (www.avantgo.com)  
 is the first such server.
-
-WWW: ${HOMEPAGE}

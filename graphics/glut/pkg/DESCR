@@ -6,5 +6,3 @@ well-suited to learning OpenGL and developing simple OpenGL
 applications, GLUT is not a full-featured toolkit so large applications
 requiring sophisticated user interfaces are better off using native
 window system toolkits like Motif.
-
-WWW: ${HOMEPAGE}

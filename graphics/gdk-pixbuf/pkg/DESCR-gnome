@@ -5,5 +5,3 @@ arbitrary data buffers, and convenience functions to transform pixbufs
 and render them to drawables. 
 
 The GNOME Canvas Pixbuf library.
-
-WWW: ${HOMEPAGE}

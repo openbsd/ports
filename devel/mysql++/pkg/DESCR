@@ -1,5 +1,3 @@
 MySQL++ is a C++ API for MySQL (and other SQL Databases Soon).  The
 goal of this API is to make working with queries as easy as working
 with other STL Containers.
-
-WWW: ${HOMEPAGE}

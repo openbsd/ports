@@ -5,5 +5,3 @@ a program on incoming mail and/or on mouse double-clicks, and can
 provide a count of emails in the user's mailbox.  It currently
 supports UNIX mbox files, MH and MailDir mail folders, and IMAP4
 remote mailboxes.
-
-WWW: ${HOMEPAGE}

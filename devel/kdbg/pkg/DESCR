@@ -25,5 +25,3 @@ expressions. Everything you need to debug a program, eh!
 Debugging of core dumps, attaching to running processes is possible.
 
 Conditional breakpoints.
-
-WWW: ${HOMEPAGE}

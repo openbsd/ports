@@ -11,5 +11,3 @@ Packages can be built with additional FLAVORs:
 
   sdl:  built with SDL support.
         This FLAVOR requires the sdl package.
-
-WWW: ${HOMEPAGE}

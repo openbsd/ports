@@ -14,5 +14,3 @@ complete implementation of Haskell 98.
     Hugs 98 also supports a number of experimental extensions including
     multi-parameter classes, extensible records, rank-2 polymorphism,
     existentials, scoped type variables, and restricted type synonyms. 
-
-WWW: ${HOMEPAGE}

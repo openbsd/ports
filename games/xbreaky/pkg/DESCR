@@ -9,5 +9,3 @@ above, and when it hits a brick it will fall apart (i.e. disappear), but
 the ball will bounce back to hit other bricks, sidewalls or the highest
 wall. If it falls down not hitting the paddle, you lose one life and have
 to start over.
-
-WWW: ${HOMEPAGE}

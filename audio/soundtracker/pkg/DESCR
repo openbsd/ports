@@ -7,5 +7,3 @@ Packages can be built with additional FLAVORs:
          by the graphical volume/panning envelope editors.
 
   esd:   SoundTracker built with the esound package.
-
-WWW: ${HOMEPAGE}

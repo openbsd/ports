@@ -8,5 +8,3 @@ other means, like spamd(8) and pf(4).
 
 relaydb reads a single mail from stdin, analyzes the Received: header
 lines and updates blacklist and whitelist counters for each IP address.
-
-WWW: ${HOMEPAGE}

@@ -4,5 +4,3 @@ thing, it has more options.
 
 Flavors:
 	no_x11 - Build without X support (excludes gifview).
-
-WWW: ${HOMEPAGE}

@@ -19,5 +19,3 @@ Flavors:
 	compressed - build with compressed folder support 
 		     (see: http://www.spinnaker.de/mutt/compressed/)
 	mixmaster  - build with anonymous remailing support.
-
-WWW: ${HOMEPAGE}

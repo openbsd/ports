@@ -1,4 +1,2 @@
 FastJar is a version of JDK's `jar' utility written entirely in C, and
 therefore quite a bit faster.
-
-WWW: ${HOMEPAGE}

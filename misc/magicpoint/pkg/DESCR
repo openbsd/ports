@@ -10,5 +10,3 @@ For more information, see ${PREFIX}/share/doc/mgp/*.
 Sample files are located in ${PREFIX}/share/doc/mgp/sample.
 It's a good idea to preview a sample file before installation.
 	% ./mgp tutorial.mgp
-
-WWW: ${HOMEPAGE}

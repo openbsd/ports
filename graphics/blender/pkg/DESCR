@@ -7,5 +7,3 @@ graphics, to do some morphing, or design user interfaces. You can
 easy build and manage complex environments. The renderer is versatile
 and extremely fast.  All basic animation principles (curves & keys)
 are well implemented.
-
-WWW: ${HOMEPAGE}

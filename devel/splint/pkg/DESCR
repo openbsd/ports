@@ -9,5 +9,3 @@ of warnings unless tuned for the current project.
 
 It is the successor of LCLint, an earlier effort, with more checks 
 with respect to buffer sizes calculations.
-
-WWW: ${HOMEPAGE}

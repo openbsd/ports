@@ -13,5 +13,3 @@ of your system, such as sound redirection over the network. And
 due to its modular nature, the library can be extended to support
 more sound or module formats, as well as new hardware or other
 sound output capabilities, as they appear.
-
-WWW: ${HOMEPAGE}

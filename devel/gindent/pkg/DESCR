@@ -5,5 +5,3 @@ a descendant of BSD indent.
 
 GNU indent does NOT work for C++, if it does for you then you're
 just lucky.  Don't ask for support for C++.
-
-WWW: ${HOMEPAGE}

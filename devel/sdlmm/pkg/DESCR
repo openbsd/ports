@@ -7,5 +7,3 @@ SDLmm aims to stay as close as possible to the C API while
 taking advantage of native C++ features like object
 orientation.  It also aims at being platform independent
 as much as possible.
-
-WWW: ${HOMEPAGE}

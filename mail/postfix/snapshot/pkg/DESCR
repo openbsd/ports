@@ -84,4 +84,3 @@ pgsql	Include support for doing table lookups using PostgreSQL
 
 
 WWW: ${HOMEPAGE}
-WWW: ${TLSHOMEPAGE}

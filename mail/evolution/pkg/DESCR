@@ -21,5 +21,3 @@ setting the XF86BIGFONT_DISABLE environment variable.
 
 The shared memory limits can, of course, be globally set in the
 kernel via the config(8) command as well.
-
-WWW: ${HOMEPAGE}

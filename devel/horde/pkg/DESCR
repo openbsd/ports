@@ -6,5 +6,3 @@ The Horde Application Framework is written in PHP, and provides the
 common tools a Web application requires: classes for dealing with
 preferences, compression, browser detection, connection tracking,
 MIME, and more.
-
-WWW: ${HOMEPAGE}

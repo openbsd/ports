@@ -6,5 +6,3 @@ This implementation is not 100% compatible with the JavaScript
 language, found from the Netscape's WWW browsers and servers.  To
 achieve the design goals, some shortcuts have been taken in the 
 implementation, as compared to the Netscape's implementation.
-
-WWW: ${HOMEPAGE}

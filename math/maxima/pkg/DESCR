@@ -7,5 +7,3 @@ Mathematica. Maxima itself is reasonably feature complete at this
 stage, with abilities such as symbolic integration, 3D plotting, and
 an ODE solver, but there is a lot of work yet to be done in terms of
 bug fixing, cleanup, and documentation.
-
-WWW: ${HOMEPAGE}

@@ -4,5 +4,3 @@ object APIs, a sample site walk-through, recipes, and details on
 Mason's advanced features and how to use them.
 
 You can find HTML::Mason in /usr/ports/www/p5-HTML-Mason.
-
-WWW: ${HOMEPAGE}

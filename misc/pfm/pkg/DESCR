@@ -4,5 +4,3 @@ a single-file and multiple-file mode, support for executing
 user-defined commands (including wildcards) with only two 
 keystrokes, and use of the ReadLine library for friendly
 commandline editing
-
-WWW: ${HOMEPAGE}

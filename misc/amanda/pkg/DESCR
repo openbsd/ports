@@ -28,5 +28,3 @@ Other features include:
     fail.
   * can compress dumps before sending or after sending over the net, with
     either compress or gzip.
-
-WWW: ${HOMEPAGE}

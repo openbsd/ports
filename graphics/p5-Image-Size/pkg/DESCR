@@ -5,5 +5,3 @@ pair, and included wrappers to pre-format that output into either HTML or a
 set of attribute pairs suitable for the CGI.pm library by Lincoln Stein.
 Currently, Image::Size can size images in XPM, XBM, GIF, JPEG and PNG
 formats.
-
-WWW: ${HOMEPAGE}

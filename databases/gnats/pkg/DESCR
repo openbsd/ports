@@ -12,5 +12,3 @@ GNATS partially automates the tracking of these problems by:
 - providing a reliable archive of problems with a given program and a
   history of the life of the program by preserving its reported
   problems and their subsequent solutions.
-
-WWW: ${HOMEPAGE}

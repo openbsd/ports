@@ -8,5 +8,3 @@ Libart is also highly tuned for incremental rendering. It contains data
 structures and algorithms suited to rapid, precise computation of Region
 of Interest, as well as a two-phase rendering pipeline optimized for
 interactive display.
-
-WWW: ${HOMEPAGE}

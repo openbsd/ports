@@ -11,5 +11,3 @@ The standard method of starting it up under Window Maker is
 'wmeyes -w -s &'.
 
 'wmeyes -h' gives you usage info.
-
-WWW: ${HOMEPAGE}

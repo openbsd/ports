@@ -19,5 +19,3 @@ in archive support for TAR, TARGZ, TRABZ2, GZIP, BZIP2, ARJ,
 ZIP, RAR, RPM, DEB, LHA; Hot keys, colors, sizes, fonts and
 panels layout easy customization with XNCSetup make XNC a
 very useful tool.
-
-WWW: ${HOMEPAGE}

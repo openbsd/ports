@@ -13,5 +13,3 @@ Features include:
  * Supports LDAP syntaxes and special attributes by presenting them in a custom
    way. Currently there are custom "displaytypes" for jpegPhoto, userPassword
    and X509 certificates and CRLs.
-
-WWW: ${HOMEPAGE}

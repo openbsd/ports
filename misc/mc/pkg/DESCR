@@ -16,5 +16,3 @@ It is feature packed:
 	Midnight Commander are F9 and F10 respectively.  Since OpenBSD
 	uses these keys to swap VT's, you must hit 'Esc' + 9 and 
 	'Esc' + 0 to use the menu's and to exit
-
-WWW: ${HOMEPAGE}

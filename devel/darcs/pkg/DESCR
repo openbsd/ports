@@ -8,5 +8,3 @@ Darcs has two particularly distinctive features which differ from
 other revision control systems: 1) each copy of the source is a
 fully functional branch, and 2) underlying darcs is a consistent
 and powerful theory of patches.
-
-WWW: ${HOMEPAGE}

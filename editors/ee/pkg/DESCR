@@ -1,5 +1,3 @@
 An easy to use text editor.  Intended to be usable with little or
 no instruction.  Provides a terminal (curses-based) interface.
 Features pop-up menus.
-
-WWW: ${HOMEPAGE}

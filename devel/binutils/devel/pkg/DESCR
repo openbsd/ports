@@ -22,5 +22,3 @@ But they also include:
 Most of these programs use BFD, the Binary File Descriptor library, to
 do low-level manipulation. Many of them also use the opcodes library
 to assemble and disassemble machine instructions.
-
-WWW: ${HOMEPAGE}

@@ -8,5 +8,3 @@ such as variables, redirection, pipes, back-grounding, job
 control, history, command completion, and dynamic
 configuration.  Also, as a by-product of the design, it is
 remarkably easy to extend and add functionality. 
-
-WWW: ${HOMEPAGE}

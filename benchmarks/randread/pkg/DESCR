@@ -2,5 +2,3 @@ Randread is a small, simple benchmark program that reads or writes
 randomly chosen blocks or lengths of blocks from a file or raw disk
 partition. This can be used to test both random and sequential read and
 write performance.
-
-WWW: ${HOMEPAGE}

@@ -1,5 +1,3 @@
 ZSNES is a complete, featureful and highly optimized Super Nintendo
 emulator written mostly in x86 assembler. It requires a CPU which
 understands MMX instructions.
-
-WWW: ${HOMEPAGE}

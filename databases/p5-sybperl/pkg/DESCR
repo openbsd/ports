@@ -12,5 +12,3 @@ Sybperl implements three Sybase extension modules to Perl:
      for Sybperl 1.0xx.  Using both the Sybase::Sybperl and
      Sybase::DBlib modules explicitly in a single script is
      not guaranteed to work correctly.
-
-WWW: ${HOMEPAGE}

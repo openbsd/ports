@@ -5,5 +5,3 @@ to view and print the output file.  This wrapper does not provide any
 formatting function except simple line wrapping.  If you need
 sophisticated formatting, you should try CJK-LaTex or other equivalent
 tools.
-
-WWW: ${HOMEPAGE}

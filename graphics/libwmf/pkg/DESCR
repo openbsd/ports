@@ -4,5 +4,3 @@ other formats.  Currently, there exist drivers for PNG, EPS, SVG
 is actively under development as part of the wvWare project, to
 convert WMF graphics embedded in Microsoft file formats into a form
 viewable from a web-browser.
-
-WWW: ${HOMEPAGE}

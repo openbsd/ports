@@ -2,5 +2,3 @@ DocBook: The Definitive Guide, written by Norman Walsh and Leonard
 Muellner and published by O'Reilly & Associates, Inc., is the
 official documentation for the DocBook technical documentation
 framework.
-
-WWW: ${HOMEPAGE}

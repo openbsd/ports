@@ -4,5 +4,3 @@ and score a recorded game. GNU Go is compliant with Go modem
 protocol, load and save games in the Smart Go format.
 GNU Go default is a simple alpha-numeric board display, but you
 can use a client such as CGoban.
-
-WWW: ${HOMEPAGE}

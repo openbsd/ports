@@ -12,5 +12,3 @@ The four packages are:
     callback - closures with variable arguments as first-class C
                functions (a reentrant combination of vacall and 
 	       trampoline)
-
-WWW: ${HOMEPAGE}

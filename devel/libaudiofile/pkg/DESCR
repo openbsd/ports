@@ -7,5 +7,3 @@ functionality to be useful for general tasks.
 
 This library allows the processing of audio data to and from audio files of
 many common formats (currently AIFF, AIFC, WAVE, and NeXT/Sun).
-
-WWW: ${HOMEPAGE}

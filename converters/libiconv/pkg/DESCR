@@ -11,5 +11,3 @@ activated when "//TRANSLIT" is appended to the target encoding name.
 
 libiconv is for you if your application needs to support multiple character
 encodings, but that support lacks from your system.
-
-WWW: ${HOMEPAGE}

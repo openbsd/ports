@@ -5,5 +5,3 @@ ${HOMEPAGE}best.html
 Flavors:
 	libs  - build with t1, freetype, png, jpeg, tiff
 		graphic libraries
-
-WWW: ${HOMEPAGE}

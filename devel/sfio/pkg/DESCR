@@ -11,5 +11,3 @@ o Streams can be pooled for automatic stream synchronization as I/O
   operations are switched from stream to stream.
 o Support for zero-copy stream I/O.
 o Support for reading lines and records of any length from any stream.
-
-WWW: ${HOMEPAGE}

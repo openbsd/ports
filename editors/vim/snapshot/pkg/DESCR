@@ -34,5 +34,3 @@ Flavors:
 	python	   - build with Python support;
 	ruby	   - build with Ruby support;
 	huge	   - build with --with-features=huge.
- 
-WWW: ${HOMEPAGE}

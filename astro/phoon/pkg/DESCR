@@ -1,5 +1,3 @@
 Program to display the PHase of the mOON. Unlike other such programs,
 which just tell you how long since first quarter or something like that,
 phoon shows you the phase with a little picture.
-
-WWW: ${HOMEPAGE}

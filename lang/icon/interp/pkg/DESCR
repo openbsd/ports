@@ -20,5 +20,3 @@ mainly) that is crying to be adapted... and which has been integrated into
 unicon (which is still beta at the moment).
 
 There is a no_x11 flavor, that does not require X11 to run.
-
-WWW: ${HOMEPAGE}

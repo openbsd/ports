@@ -1,5 +1,3 @@
 This unofficial version of lha is based on version 1.00.  This
 version supports extraction and archiving using the -lh5-, -lh6-,
 and -lh7- algorithms.
-
-WWW: ${HOMEPAGE}

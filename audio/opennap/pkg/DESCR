@@ -4,5 +4,3 @@ server provides the ability to search for particular files and initiate a
 direct transfer between the clients. In addition, chat forums similar to
 IRC are available. OpenNap extends the Napster protocol to allow sharing
 of any media type, and the ability to link servers together.
-
-WWW: ${HOMEPAGE}

@@ -7,5 +7,3 @@ determine if the target drive is CDDA capable.
 In addition to simple reading, cdparanoia adds extra-robust
 data verification, synchronization, error handling and scratch
 reconstruction capability.
-
-WWW: ${HOMEPAGE}

@@ -21,5 +21,3 @@ Flavors:
         mixmaster  - build with anonymous remailing support.
 
 This is the development version of mutt.
-
-WWW: ${HOMEPAGE}

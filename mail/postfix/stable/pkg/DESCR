@@ -83,4 +83,3 @@ mysql	Include support for doing table lookups using MySQL
 
 
 WWW: ${HOMEPAGE}
-WWW: ${TLSHOMEPAGE}

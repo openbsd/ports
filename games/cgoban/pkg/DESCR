@@ -18,5 +18,3 @@ for Unix and X11. A list of the functions that it provides:
     protocol, act as a graphical board for programs that speak go
     modem protocol out of stdin/stdout, or connect programs to one of
     the internet go servers.
-
-WWW: ${HOMEPAGE}

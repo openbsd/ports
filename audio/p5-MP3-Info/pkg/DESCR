@@ -1,4 +1,2 @@
 MP3::Info is a perl module to fetch information from or manipulate information
 in MP3 audio files.
-
-WWW: ${HOMEPAGE}

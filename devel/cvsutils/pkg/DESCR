@@ -3,5 +3,3 @@ that allow you to manage the files in the CVS working directory.
 You can tell which files are under version control and which are
 not without even being online. You can erase or move away all derived
 files in seconds.
-
-WWW: ${HOMEPAGE}

@@ -5,5 +5,3 @@ graphics primitives, and emit the drawings as PNG files.  Other
 useful operations include flood fills, bitmap image brushes, line
 styling, transparency/interlacing support and horizontal and vertical
 text rendering.
-
-WWW: ${HOMEPAGE}

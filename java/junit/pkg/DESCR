@@ -2,5 +2,3 @@ JUnit is a simple framework to write repeatable tests.
 It is an instance of the xUnit architecture for unit testing frameworks.
 It will help you measure your progress, spot unintended side effects,
 and focus your development efforts.
-
-WWW: ${HOMEPAGE}

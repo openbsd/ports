@@ -1,5 +1,3 @@
 This is an almost complete reimplementation of the old game known as
 Tower Toppler or Nebulus. This game was available for PC, Atari, C64.
 This port is a reimplementation in SDL, with updated graphics and sound.
-
-WWW: ${HOMEPAGE}

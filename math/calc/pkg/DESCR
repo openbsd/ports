@@ -9,5 +9,3 @@ The calc language is a C-like language. The language includes
 commands such as variable declarations, expressions, tests, labels,
 loops, file operations, function calls. These commands are very
 similar to their counterparts in C.
-
-WWW: ${HOMEPAGE}

@@ -3,5 +3,3 @@ to mSQL.
 
 This is the tests portion of MySQL, it provides a regression test suite
 for MySQL.
-
-WWW: ${HOMEPAGE}

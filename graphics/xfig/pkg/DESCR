@@ -7,5 +7,3 @@ allow inclusion in LaTeX documents).
 
 To enjoy the beautiful colors, specify "*customization: -color" in your 
 .Xdefaults or .Xresources file.
-
-WWW: ${HOMEPAGE}

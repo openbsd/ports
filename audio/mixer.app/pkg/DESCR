@@ -2,5 +2,3 @@ A dockapp that controls the mixer for three volumes by default:
 	* Master
 	* CD
 	* PCM
-
-WWW: ${HOMEPAGE}

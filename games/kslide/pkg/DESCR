@@ -3,5 +3,3 @@ The playing principle of KSlide is very simple. From a square set of tiles,
 one is removed, allowing at least two adjacent tiles to be shifted. 
 This way, the puzzle is scrambled by the program, and the player's goal
 is to restore the original order.
-
-WWW: ${HOMEPAGE}

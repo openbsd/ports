@@ -5,5 +5,3 @@ and to chess engines like GNU Chess, Sjeng and Crafty.
 eboard is currently under development, and its primary purpose is
 serving as interface to FICS.  About 95% of FICS support is in place,
 and it is expected to be complete in the next release.
-
-WWW: ${HOMEPAGE}

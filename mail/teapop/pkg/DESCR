@@ -5,5 +5,3 @@ authenticate users in several different ways, for example
 PostgreSQL-databases and Apache htpasswd files, lets Teapop adapt itself 
 to Your	setup, rather than the other way around as with traditional 
 POP3-servers. 
-
-WWW: ${HOMEPAGE}
