@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2003/05/14 22:08:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/02/15 16:25:14 sturm Exp $
 
 COMMENT=	"command-line utility to rip and encode audio cds"
 
-V=		2.0.3
+V=		2.1.14
+# cd-diskid version number
+V2=		0.9
 DISTNAME=	abcde_$V.orig
 PKGNAME=	abcde-$V
 CATEGORIES=	audio
 
-HOMEPAGE=	http://frantica.lly.org/~rcw/abcde/page/
+HOMEPAGE=	http://www.hispalinux.es/~data/abcde.php
 
 # Artistic and GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,12 +17,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MS=		http://frantica.lly.org/~rcw/
-MASTER_SITES=	${MS}abcde/
-MASTER_SITES0=	${MS}cd-discid/old/
-MASTER_SITES1=	${MS}id3/
+MS=		http://www.hispalinux.es/~data/files/
+MASTER_SITES=	${MS}
+MASTER_SITES0=	${MS}cd-discid/
+MASTER_SITES1=	http://lly.org/~rcw/id3/
 DISTFILES=	${DISTNAME}.tar.gz \
-		cd-discid_0.7.orig.tar.gz:0
+		cd-discid_${V2}.orig.tar.gz:0
 
 RUN_DEPENDS=	:cdparanoia-*:audio/cdparanoia \
 		:wget-*:net/wget
@@ -44,7 +46,7 @@ post-patch:
 .endif
 
 do-build:
-	cd ${WRKDIR}/cd-discid-0.7 && \
+	cd ${WRKDIR}/cd-discid-${V2} && \
 		${CC} ${CFLAGS} -o cd-discid cd-discid.c
 .if ${FLAVOR:L:Mlame}
 	cd ${WRKDIR}/id3-0.12 && \
@@ -55,10 +57,10 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/cddb-tool ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/cd-discid-0.7/cd-discid ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/cd-discid-${V2}/cd-discid ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/abcde.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cddb-tool.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/cd-discid-0.7/cd-discid.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/cd-discid-${V2}/cd-discid.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abcde
 	${INSTALL_DATA} ${WRKSRC}/abcde.conf ${PREFIX}/share/examples/abcde
 .if ${FLAVOR:L:Mlame}

@@ -1,123 +1,57 @@
-$OpenBSD: patch-abcde,v 1.3 2003/05/13 16:40:00 wilfried Exp $
---- abcde.orig	Sun Jan 27 22:44:02 2002
-+++ abcde	Tue May 13 07:11:24 2003
-@@ -574,7 +574,7 @@ do_cddbread ()
- 			fi
- 			# List out disc title/author and contents
- 			echo ---- "$(cut '-d ' -f4- "$ABCDETEMPDIR/cddbquery")" ---- >> "$ABCDETEMPDIR/cddbchoices"
--			for TRACK in $(seq 1 $TRACKS)
-+			for TRACK in $(jot $TRACKS)
- 			do
- 				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
- 			done
-@@ -590,7 +590,7 @@ do_cddbread ()
- 			$CDDBTOOL template $(cat "$ABCDETEMPDIR/discid") > "$ABCDETEMPDIR/cddbread.1"
- 			# List out disc title/author and contents of template
- 			echo ---- Unknown Artist / Unknown Album ---- >> "$ABCDETEMPDIR/cddbchoices"
--			for TRACK in $(seq 1 $TRACKS)
-+			for TRACK in $(jot $TRACKS)
- 			do
- 				echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.1" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
- 			done
-@@ -620,7 +620,7 @@ do_cddbread ()
- 				fi
- 				# List out disc title/author and contents
- 				echo \#$X: ---- "$DISCINFO" ---- >> "$ABCDETEMPDIR/cddbchoices"
--				for TRACK in $(seq 1 $TRACKS)
-+				for TRACK in $(jot $TRACKS)
- 				do
- 					echo $TRACK: "$(grep ^TTITLE$(expr $TRACK - 1)= "$ABCDETEMPDIR/cddbread.$X" | cut -f2- -d= | tr -d \\r\\n)" >> "$ABCDETEMPDIR/cddbchoices"
- 				done
-@@ -717,20 +717,16 @@ do_cddbedit ()
+$OpenBSD: patch-abcde,v 1.4 2004/02/15 16:25:14 sturm Exp $
+--- abcde.orig	2004-01-20 07:55:33.000000000 +0100
++++ abcde	2004-02-13 20:26:39.000000000 +0100
+@@ -1098,7 +1098,7 @@ do_cddbedit ()
  		EDITCDDB=n
  	fi
  	if [ "$EDITCDDB" = "y" ]; then
--		# Use the debian sensible-editor wrapper to pick the editor that the
--		# user has requested via their $EDITOR environment variable
--		if [ -x "/usr/bin/sensible-editor" ]; then
--			/usr/bin/sensible-editor "$CDDBDATA"
--		elif [ -x "$EDITOR" ]; then
--			# That failed, try to load the preferred editor, starting
-+		if [ -x `which $EDITOR` ]; then
-+			# Try to load the preferred editor, starting
- 			# with their EDITOR variable
- 			$EDITOR "$CDDBDATA"
- 		# If that fails, check for a vi
- 		elif [ -x /usr/bin/vi ]; then
- 			/usr/bin/vi "$CDDBDATA"
--		# ae should be on all debian systems
--		elif [ -x /bin/ae ]; then
--			/bin/ae "$CDDBDATA"
-+		# mg should be on all OpenBSD systems
-+		elif [ -x /usr/bin/mg ]; then
-+			/usr/bin/mg "$CDDBDATA"
- 		# bomb out
- 		else
- 			echo "No editor available. Check your EDITOR environment variable." >&2
-@@ -889,12 +885,12 @@ INTERACTIVE=y
- CDROMREADERSYNTAX=cdparanoia
- OUTPUTTYPE=ogg
- ENCODERSYNTAX=default
--OUTPUTFORMAT='${ARTISTFILE}/${TRACKFILE}.$OUTPUTTYPE'
-+OUTPUTFORMAT='${ARTISTFILE}/${TRACKNUM}-${TRACKFILE}.${OUTPUTTYPE}'
- VAOUTPUTFORMAT=${OUTPUTFORMAT}
- PLAYLISTFORMAT='${ARTISTFILE}_-_${ALBUMFILE}.m3u'
- PLAYLISTDATAPREFIX=''
+-		CDDBDATAMD5SUM=$(md5sum "$CDDBDATA" | cut -d " " -f 1);
++		CDDBDATAMD5SUM=$($MD5SUM "$CDDBDATA" | cut -d " " -f 1);
+ 		
+ 		# Use the debian sensible-editor wrapper to pick the editor that the
+ 		# user has requested via their $EDITOR environment variable
+@@ -1214,7 +1214,7 @@ do_cddbedit ()
+ 	echo "variousartiststyle=$VARIOUSARTISTSTYLE" >> "$ABCDETEMPDIR/status"
+ 
+ 	if [ "$EDITCDDB" = "y" ] && [ "$UNINTENTIONALLY_ANGER_THE_FREEDB_PEOPLE" = "y" ]; then
+-		if [ $CDDBDATAMD5SUM != "" ]  && [ $CDDBDATAMD5SUM != $(md5sum "$CDDBDATA" | cut -d " " -f 1) ]; then
++		if [ $CDDBDATAMD5SUM != "" ]  && [ $CDDBDATAMD5SUM != $($MD5SUM "$CDDBDATA" | cut -d " " -f 1) ]; then
+ 			# This works but does not have the necessary error checking
+ 			# yet. If you are familiar with the CDDB spec
+ 			# (see http://www.freedb.org/src/latest/DBFORMAT) 
+@@ -1338,7 +1338,7 @@ PLAYLISTDATAPREFIX=''
+ VAPLAYLISTFORMAT='${ARTISTFILE}-${ALBUMFILE}.${OUTPUT}.m3u'
+ VAPLAYLISTDATAPREFIX=''
  COMMENT=''
 -ID3TAGV=2
 +ID3TAGV=1
  ENCNICE=10
  READNICE=10
- VARIOUSARTISTS=n
-@@ -964,13 +960,7 @@ if [ -z "$WAVOUTPUTDIR" ]; then
- 	WAVOUTPUTDIR="$OUTPUTDIR"
+ DISTMP3NICE=10
+@@ -1380,6 +1380,7 @@ CDDAFS=cp
+ CDDISCID=cd-discid
+ CDDBTOOL=cddb-tool
+ EJECT=eject
++MD5SUM=md5sum
+ DISTMP3=distmp3
+ VORBISCOMMENT=vorbiscomment
+ METAFLAC=metaflac
+@@ -1436,6 +1437,9 @@ elif [ X$(uname) = "XDarwin" ] ; then
+ 	OSFLAVOUR=OSX
+ 	# We should have disktool in OSX, but let's be sure...
+ 	NEEDDISKTOOL=y
++elif [ X$(uname) = "XOpenBSD" ] ; then
++	HTTPGET=wget
++	MD5SUM=md5
+ else
+ 	HTTPGET=wget
  fi
+@@ -1709,7 +1713,7 @@ HTTPGET="$HTTPGET $HTTPGETOPTS"
  
--# If this is a devfs system, default to /dev/cdroms/cdrom0
--# instead of /dev/cdrom
--if [ -e /dev/cdroms/cdrom0 ]; then
--	CDROM=/dev/cdroms/cdrom0
--else
--	CDROM=/dev/cdrom
--fi
-+CDROM=/dev/cd0c
+ # Export needed things so they can be read in this subshell
+ export CDDBTOOL ABCDETEMPDIR TRACKQUEUE LOWDISK EJECTCD EJECT EJECTOPTS
+-export CDROM CDDBDATA REMOTEHOSTS MAXPROCS HTTPGET
++export CDROM CDDBDATA REMOTEHOSTS MAXPROCS HTTPGET MD5SUM
  
- # Load system defaults
- if [ -r /etc/abcde.conf ]; then
-@@ -1010,7 +1000,7 @@ while [ $# -gt 0 ]; do
- 	if [ "$RSTART" = "$REND" ]; then 
- 		NEWTRACKS="$RSTART"
- 	else
--		NEWTRACKS=$(seq -s ' ' $RSTART $REND)
-+		NEWTRACKS=$(jot -s ' ' $(expr $REND - $RSTART + 1) $RSTART)
- 	fi
- 	TRACKQUEUE=$(echo "$TRACKQUEUE" "$NEWTRACKS")
+ do_discid # Get ABCDETEMPDIR created and status file initialized
  
-@@ -1101,15 +1091,12 @@ if [ "$OUTPUTTYPE" = "ogg" ]; then NEEDC
- 
- # Make sure a buncha things exist
- for X in $CDROMREADER $CDDISCID ${NEEDTAGGER+$TAGGER} $ENCODER $WGET \
--	${NEEDDISTMP3+$DISTMP3} ${NEEDCOMMENTER+$VORBISCOMMENT} seq
-+	${NEEDDISTMP3+$DISTMP3} ${NEEDCOMMENTER+$VORBISCOMMENT}
- do
- 	# Cut off the command-line options we just added in
- 	X=$(echo $X | cut -d' ' -f2)
--	if [ "$(which $X)" = "" ]; then
--		echo "abcde error: $X is not in your path." >&2
--		exit 1
--	elif [ ! -x $(which $X) ]; then
--		echo "abcde error: $X is not executable." >&2
-+	if [ ! -x "$(which $X)" ]; then
-+		echo "abcde error: Can't find $X." >&2
- 		exit 1
- 	fi 
- done
-@@ -1191,7 +1178,7 @@ fi
- # Figure out where each track is going to be encoded
- ENCODELOCATIONS="$(echo $REMOTEHOSTS | tr , ' ')"
- if [ "$MAXPROCS" != "0" ]; then
--	for NUM in $(seq 1 "$MAXPROCS")
-+	for NUM in $(jot "$MAXPROCS")
- 	do
- 		ENCODELOCATIONS="$ENCODELOCATIONS %local$NUM%"
- 	done
