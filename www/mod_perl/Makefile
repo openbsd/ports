@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/18 23:08:29 avsm Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/22 10:41:57 peter Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
@@ -13,7 +13,7 @@ MASTER_SITES=	http://perl.apache.org/dist/ \
 MASTER_SITE_SUBDIR= Apache
 
 HOMEPAGE=	http://perl.apache.org/
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
