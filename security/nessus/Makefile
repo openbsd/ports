@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/06 14:38:33 matt Exp $
+# $OpenBSD: Makefile,v 1.23 2001/06/17 09:40:10 reinhard Exp $
 
 COMMENT=	"network security scanner"
 
@@ -32,7 +32,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${VERS}/src/ \
 		ftp://ftp.linux.org.tr/pub/nessus/nessus-${VERS}/src/ \
 		ftp://cvs.nessus.org/pub/nessus/nessus-${VERS}/src/ 
 
-MAINTAINER=	Matt Behrens <matt@openbsd.org>
+MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
 HOMEPAGE=	http://www.nessus.org/
 
@@ -41,7 +41,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=no_x11
+FLAVORS=no_x11 experimental
 FLAVOR?=
 
 # Can't do CONFIGURE_STYLE=autoconf because of configure wrapper
@@ -56,6 +56,10 @@ LIB_DEPENDS=	gmp.4.1::devel/gmp
 LIB_DEPENDS+=	gtk.1.2::x11/gtk+
 .else
 CONFIGURE_ARGS+=--disable-gtk
+.endif
+
+.if ${FLAVOR:L:Mexperimental}
+CONFIGURE_ARGS+=--enable-save-sessions --enable-save-kb
 .endif
 
 post-extract:
