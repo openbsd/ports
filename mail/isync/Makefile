@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/04/24 17:43:34 danh Exp $
+# $OpenBSD: Makefile,v 1.6 2002/05/25 06:19:07 danh Exp $
 
 COMMENT= 	"synchronize IMAP4 and maildir mailboxes"
 
@@ -19,5 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/isync
+	${INSTALL_DATA} ${WRKSRC}/sample.isyncrc ${PREFIX}/share/examples/isync
 
 .include <bsd.port.mk>
