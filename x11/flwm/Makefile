@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/07/09 17:11:05 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/10 20:13:20 wilfried Exp $
 
 COMMENT=	"fast-light window manager"
 
 DISTNAME=	flwm-1.00
 PKGNAME=	flwm-1.0.0
 CATEGORIES=	x11
-NEED_VERSION=	1.402
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://flwm.sourceforge.net/
@@ -14,13 +13,13 @@ MAINTAINER=	Jason Wright <jason@openbsd.org>
 
 EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 USE_X11=	Yes
 
 NO_SHARED_LIBS= Yes
-LIB_DEPENDS=	fltk::x11/fltk
+LIB_DEPENDS=	fltk.1::x11/fltk
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
