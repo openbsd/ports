@@ -1,0 +1,12 @@
+$OpenBSD: patch-libaudiofile_Makefile_in,v 1.1 2004/06/20 21:15:08 naddy Exp $
+--- libaudiofile/Makefile.in.orig	Sun Jun 20 12:54:03 2004
++++ libaudiofile/Makefile.in	Sun Jun 20 12:54:42 2004
+@@ -115,7 +115,7 @@ libaudiofile_la_SOURCES = \
+ libaudiofile_la_LIBADD = modules/libmodules.la
+ 
+ libaudiofile_la_LDFLAGS = -version-info 0:2:0 -no-undefined \
+-	-export-symbols audiofile.exports
++	-export-symbols $(srcdir)/audiofile.exports
+ 
+ 
+ include_HEADERS = audiofile.h aupvlist.h af_vfs.h
