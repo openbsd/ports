@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_background_Makefile_in,v 1.1.1.1 2001/07/26 19:11:51 pvalchev Exp $
+--- data/background/Makefile.in.orig	Thu Jun 21 17:09:27 2001
++++ data/background/Makefile.in	Thu Jul 26 12:17:03 2001
+@@ -69,7 +69,7 @@ inst_flag = @inst_flag@
+ sdir = @sdir@
+ sound_flag = @sound_flag@
+ 
+-pkgdatadir = $(DESTDIR)/$(sdir)/data/background
++pkgdatadir = $(sdir)/data/background
+ 
+ pkgdata_DATA = back_1.png  back_10.png  back_2.png  back_3.png 				back_4.png  back_5.png back_6.png  back_7.png 				back_8.png  back_9.png  carre.png
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_menu_opt_Makefile_in,v 1.1.1.1 2001/07/26 19:11:51 pvalchev Exp $
+--- data/menu_opt/Makefile.in.orig	Thu Jun 21 17:09:30 2001
++++ data/menu_opt/Makefile.in	Thu Jul 26 12:17:30 2001
+@@ -69,7 +69,7 @@ inst_flag = @inst_flag@
+ sdir = @sdir@
+ sound_flag = @sound_flag@
+ 
+-pkgdatadir = $(DESTDIR)/$(sdir)/data/menu_opt
++pkgdatadir = $(sdir)/data/menu_opt
+ 
+ pkgdata_DATA = fullscreen.png fullscreen_s.png  hig_sound.png 			hig_sound_s.png level.png level_s.png low_sound.png 			low_sound_s.png map_ov.png map_ov_s.png map_trans.png 			map_trans_s.png map_und.png map_und_s.png med_sound.png 			med_sound_s.png no_map.png no_map_s.png no_sound.png 			no_sound_s.png quit.png quit_s.png window.png window_s.png
+ 

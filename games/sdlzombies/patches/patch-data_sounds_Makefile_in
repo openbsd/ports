@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_sounds_Makefile_in,v 1.1.1.1 2001/07/26 19:11:51 pvalchev Exp $
+--- data/sounds/Makefile.in.orig	Thu Jun 21 17:09:28 2001
++++ data/sounds/Makefile.in	Thu Jul 26 12:17:47 2001
+@@ -69,7 +69,7 @@ inst_flag = @inst_flag@
+ sdir = @sdir@
+ sound_flag = @sound_flag@
+ 
+-pkgdatadir = $(DESTDIR)/$(sdir)/data/sounds
++pkgdatadir = $(sdir)/data/sounds
+ 
+ pkgdata_DATA = eat.wav evil.wav  fall.wav	final.wav 				intro.wav  menu.wav	menu_val.wav arise.wav
+ 
