@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/10/29 08:20:28 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/11/10 09:34:59 jakob Exp $
 bin/linkchecker
 lib/python${PYTHON_VER}/site-packages/_linkchecker_configdata.py
 lib/python${PYTHON_VER}/site-packages/linkcheck/CSV.py
@@ -47,7 +47,7 @@ share/linkchecker/linkcheckerrc
 share/locale/de/LC_MESSAGES/linkcheck.mo
 share/locale/fr/LC_MESSAGES/linkcheck.mo
 share/locale/nl/LC_MESSAGES/linkcheck.mo
-share/man/man1/linkchecker.1
+man/man1/linkchecker.1
 @dirrm share/linkchecker/examples
 @dirrm share/linkchecker
 @dirrm lib/python${PYTHON_VER}/site-packages/linkcheck/log

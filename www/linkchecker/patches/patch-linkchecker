@@ -1,9 +1,0 @@
-$OpenBSD: patch-linkchecker,v 1.1.1.1 2001/12/05 21:53:31 jakob Exp $
---- linkchecker.orig	Wed Oct 24 22:27:13 2001
-+++ linkchecker	Wed Oct 24 22:27:23 2001
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python2
-+#!/usr/bin/env python
- """check HTML pages for broken links"""
- # Copyright (C) 2000,2001  Bastian Kleineidam
- #

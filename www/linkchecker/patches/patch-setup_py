@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1 2002/11/10 09:34:59 jakob Exp $
+--- setup.py.orig	Sun Oct 13 23:56:05 2002
++++ setup.py	Sun Nov 10 10:32:42 2002
+@@ -171,6 +171,6 @@ o a (Fast)CGI web interface (requires HT
+              ['lconline/leer.html',
+               'lconline/index.html', 'lconline/lc_cgi.html',
+               'lc.cgi','lc.fcgi','lc.sz_fcgi','linkchecker.bat']),
+-         ('share/man/man1', ['linkchecker.1']),
++         ('man/man1', ['linkchecker.1']),
+       ],
+ )
