@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2005/01/24 20:16:06 naddy Exp $
 bin/ike-scan
+bin/psk-crack
 @man man/man1/ike-scan.1
+@man man/man1/psk-crack.1
 share/doc/ike-scan/
 share/doc/ike-scan/README
 share/doc/ike-scan/udp-backoff-fingerprinting-paper.txt
 share/ike-scan/
 share/ike-scan/ike-backoff-patterns
 share/ike-scan/ike-vendor-ids
+share/ike-scan/psk-crack-dictionary

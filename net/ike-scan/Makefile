@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2004/12/16 00:31:22 alek Exp $
+# $OpenBSD: Makefile,v 1.7 2005/01/24 20:16:06 naddy Exp $
 
 COMMENT=	"VPN scanner and identifier"
-DISTNAME=	ike-scan-1.6
+DISTNAME=	ike-scan-1.7
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}download/ \
 		http://berlin.ccc.de/~cryx/ike-scan/
@@ -15,9 +15,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c
+WANTLIB=		c crypto
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=--with-openssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ike-scan
