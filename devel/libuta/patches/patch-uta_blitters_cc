@@ -1,0 +1,15 @@
+$OpenBSD: patch-uta_blitters_cc,v 1.1.1.1 2001/07/28 07:16:23 pvalchev Exp $
+--- uta/blitters.cc.orig	Tue Apr 10 01:46:28 2001
++++ uta/blitters.cc	Mon Jul 23 12:44:54 2001
+@@ -1,9 +1,9 @@
+ #include "blitters.h"
+-#include <uta/painter.h>
++#include <painter.h>
+ 
+ namespace uta {
+ 
+-#ifndef X86_ASSEMBLER
++#if !defined(X86_ASSEMBLER) || (defined(__OpenBSD__) && defined(__i386__))
+ 
+ /** Apply const gamma value.
+     Blit just copies alpha value of the source to the destination surface.

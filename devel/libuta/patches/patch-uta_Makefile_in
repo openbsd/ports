@@ -1,0 +1,12 @@
+$OpenBSD: patch-uta_Makefile_in,v 1.1.1.1 2001/07/28 07:16:23 pvalchev Exp $
+--- uta/Makefile.in.orig	Mon Jul 23 13:25:33 2001
++++ uta/Makefile.in	Mon Jul 23 13:25:46 2001
+@@ -106,7 +106,7 @@ libutainclude_HEADERS =  	debug.h color.
+ 
+ noinst_HEADERS = blitter_macros.h
+ 
+-libuta_la_LDFLAGS =      -release $(LT_RELEASE)          -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libuta_la_LDFLAGS =      -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
+ EXTRA_DIST = foot.html libuta.logo.gif programmer.doc font.h.in
