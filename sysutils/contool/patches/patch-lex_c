@@ -1,0 +1,13 @@
+$OpenBSD: patch-lex_c,v 1.1 2002/12/11 23:31:20 pvalchev Exp $
+--- lex.c.orig	Wed Dec 11 13:30:45 2002
++++ lex.c	Wed Dec 11 13:31:11 2002
+@@ -126,7 +126,8 @@ char	*s;
+ /************************************************************************/
+ PRIVATE	int	yylex()
+ 
+-{	register	char	c, c1, *p;
++{	register	signed char c, c1;
++	register	char *p;
+ 	register	int	i, j, val;
+ 	double			atof();
+ 

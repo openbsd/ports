@@ -1,0 +1,12 @@
+$OpenBSD: patch-parse_y,v 1.1 2002/12/11 23:31:20 pvalchev Exp $
+--- parse.y.orig	Wed Dec 11 13:27:40 2002
++++ parse.y	Wed Dec 11 13:27:51 2002
+@@ -37,7 +37,7 @@ PRIVATE	char	*get_last_token();
+ PRIVATE	Filter	*curr;
+ PRIVATE	char	*curr_file;
+ PRIVATE	int	line_count = 1;
+-PRIVATE	char	lastc = -1;
++PRIVATE	signed char lastc = -1;
+ 
+ %}
+ 
