@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/13 02:57:14 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2001/09/07 22:37:59 peter Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR= Apache
 
 HOMEPAGE=	http://perl.apache.org/
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SUBST_VARS=	PKGNAME
 
 CONFIGURE_STYLE= perl
-CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" \
+CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" PERL_DEBUG=1 \
 		WITH_APXS="/usr/sbin/apxs" PERL_USELARGEFILES="0"
 
 INSTALL_TARGET=	pure_install doc_install
