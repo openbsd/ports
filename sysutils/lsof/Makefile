@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2003/04/01 18:50:16 jsyn Exp $
+# $OpenBSD: Makefile,v 1.49 2003/05/13 03:30:39 naddy Exp $
 
 COMMENT=	"list information about open files"
 
@@ -39,6 +39,15 @@ post-extract:
 	    exit 1 ; \
 	fi ; \
 	tar -xf ${SRCBALL_NAME}.tar)
+
+pre-configure:
+	@if [ ! -d /sys ]; then \
+	    echo ""; \
+	    echo "*** Error: Building this package requires the" ; \
+	    echo "*** kernel sources to be available under /sys" ; \
+	    echo ""; \
+	    exit 1; \
+	fi
 
 NO_REGRESS=	Yes
 
