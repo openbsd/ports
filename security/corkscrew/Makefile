@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/02 11:12:17 obecian Exp $
+# $OpenBSD: Makefile,v 1.5 2001/09/14 15:38:50 brad Exp $
 
-COMMENT=		"http tunneling utility for ssh"
+COMMENT=		"HTTP tunneling utility for SSH"
 
 DISTNAME=		corkscrew-2.0
 CATEGORIES=    		security net
-NEED_VERSION=		1.425
+NEED_VERSION=		1.435
 
 HOMEPAGE=		http://www.agroman.net/corkscrew/
 
@@ -19,9 +19,11 @@ MASTER_SITES=		http://www.agroman.net/corkscrew/
 
 CONFIGURE_STYLE=	gnu 
 
+DOCS=	README ChangeLog
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/corkscrew
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/corkscrew
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/corkscrew
+	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} \
+		${PREFIX}/share/doc/corkscrew
 
 .include <bsd.port.mk>
