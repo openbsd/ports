@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/01 20:24:12 naddy Exp $
-share/texmf.local/doc/latex/foiltex/foiltex.dtx
-share/texmf.local/doc/latex/foiltex/foiltex.dvi
-share/texmf.local/doc/latex/foiltex/sampfoil.tex
-share/texmf.local/tex/latex/foiltex/fltfonts.def
-share/texmf.local/tex/latex/foiltex/foil17.clo
-share/texmf.local/tex/latex/foiltex/foil20.clo
-share/texmf.local/tex/latex/foiltex/foil25.clo
-share/texmf.local/tex/latex/foiltex/foil30.clo
-share/texmf.local/tex/latex/foiltex/foils.cls
-share/texmf.local/tex/latex/foiltex/foils.sty
-share/texmf.local/tex/latex/foiltex/foilshrt.clo
-@dirrm share/texmf.local/tex/latex/foiltex
-@dirrm share/texmf.local/doc/latex/foiltex
+@comment $OpenBSD: PLIST,v 1.2 2003/02/18 16:15:59 sturm Exp $
+share/texmf-local/doc/latex/foiltex/foiltex.dtx
+share/texmf-local/doc/latex/foiltex/foiltex.dvi
+share/texmf-local/doc/latex/foiltex/sampfoil.tex
+share/texmf-local/tex/latex/foiltex/fltfonts.def
+share/texmf-local/tex/latex/foiltex/foil17.clo
+share/texmf-local/tex/latex/foiltex/foil20.clo
+share/texmf-local/tex/latex/foiltex/foil25.clo
+share/texmf-local/tex/latex/foiltex/foil30.clo
+share/texmf-local/tex/latex/foiltex/foils.cls
+share/texmf-local/tex/latex/foiltex/foils.sty
+share/texmf-local/tex/latex/foiltex/foilshrt.clo
+@dirrm share/texmf-local/tex/latex/foiltex
+@dirrm share/texmf-local/doc/latex/foiltex
 @exec texhash
 @unexec texhash
