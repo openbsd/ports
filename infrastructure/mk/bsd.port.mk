@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.475 2001/10/11 00:01:27 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.476 2001/10/24 11:43:06 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1015,7 +1015,7 @@ PATCH_CASES+= *.Z|*.gz) ${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 PATCH_CASES+= *) ${PATCH} ${PATCH_DIST_ARGS} < $$patchfile;;
 
 # Documentation
-MAINTAINER?=	ports@openbsd.org
+MAINTAINER?=	The OpenBSD ports mailing-list <ports@openbsd.org>
 
 .if !defined(CATEGORIES)
 ERRORS+=	"Fatal: CATEGORIES is mandatory."
