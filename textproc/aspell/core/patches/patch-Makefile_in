@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/01/16 20:46:44 naddy Exp $
---- Makefile.in.orig	2004-01-16 21:39:00.000000000 +0100
-+++ Makefile.in	2004-01-16 21:39:10.000000000 +0100
-@@ -139,7 +139,7 @@ target_alias = @target_alias@
- 
+$OpenBSD: patch-Makefile_in,v 1.2 2004/04/08 05:16:41 jolan Exp $
+--- Makefile.in.orig	2004-02-10 19:05:49.000000000 -0600
++++ Makefile.in	2004-04-07 22:21:02.000000000 -0500
+@@ -171,7 +171,7 @@ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign
- 
 -SUBDIRS = auto common modules lib examples prog data scripts interfaces manual
 +SUBDIRS = auto common modules lib prog data scripts interfaces manual
+ EXTRA_DIST = README suncc/* win32/*
+ all: all-recursive
  
- EXTRA_DIST = README
- subdir = .

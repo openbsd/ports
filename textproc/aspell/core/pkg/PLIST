@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/11/21 03:41:35 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/04/08 05:16:41 jolan Exp $
 bin/aspell
 bin/aspell-import
 bin/pspell-config
@@ -29,6 +29,15 @@ lib/libaspell.la
 lib/libpspell.a
 lib/libpspell.la
 share/aspell/ASCII.dat
+share/aspell/cp1250.dat
+share/aspell/cp1251.dat
+share/aspell/cp1252.dat
+share/aspell/cp1253.dat
+share/aspell/cp1254.dat
+share/aspell/cp1255.dat
+share/aspell/cp1256.dat
+share/aspell/cp1257.dat
+share/aspell/cp1258.dat
 share/aspell/dvorak.kbd
 share/aspell/en.dat
 share/aspell/en_phonet.dat
@@ -50,12 +59,11 @@ share/aspell/koi8-f.dat
 share/aspell/koi8-r.dat
 share/aspell/koi8-u.dat
 share/aspell/spell
+share/aspell/split.kbd
 share/aspell/standard.kbd
 share/aspell/viscii.dat
 share/doc/aspell/dev-html/devel.css
 share/doc/aspell/dev-html/devel.html
-share/doc/aspell/dev-html/img1.png
-share/doc/aspell/dev-html/img2.png
 share/doc/aspell/dev-html/index.html
 share/doc/aspell/dev-html/nx_grp_g.png
 share/doc/aspell/dev-html/prev_g.png

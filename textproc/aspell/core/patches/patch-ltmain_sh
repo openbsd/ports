@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/11/21 03:41:35 jolan Exp $
---- ltmain.sh.orig	2003-05-23 06:03:59.000000000 -0500
-+++ ltmain.sh	2003-11-20 16:42:40.000000000 -0600
-@@ -1287,6 +1287,17 @@ EOF
+$OpenBSD: patch-ltmain_sh,v 1.2 2004/04/08 05:16:41 jolan Exp $
+--- ltmain.sh.orig	2004-01-25 13:55:02.000000000 -0600
++++ ltmain.sh	2004-04-07 22:19:59.000000000 -0500
+@@ -1361,6 +1361,17 @@ EOF
  	continue
  	;;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/11/21 03:41:35 jolan Exp $
        -module)
  	module=yes
  	continue
-@@ -1958,6 +1969,19 @@ EOF
+@@ -2011,6 +2022,19 @@ EOF
  	  fi
  	  continue
  	  ;;
@@ -39,7 +39,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/11/21 03:41:35 jolan Exp $
  	%DEPLIBS%)
  	  alldeplibs=yes
  	  continue
-@@ -2206,10 +2230,6 @@ EOF
+@@ -2259,10 +2283,6 @@ EOF
  	link_static=no # Whether the deplib will be linked statically
  	if test -n "$library_names" &&
  	   { test "$prefer_static_libs" = no || test -z "$old_library"; }; then
@@ -50,7 +50,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2003/11/21 03:41:35 jolan Exp $
  	  # This is a shared library
  	
        # Warn about portability, can't link against -module's on some systems (darwin)
-@@ -5696,40 +5716,6 @@ relink_command=\"$relink_command\""
+@@ -5801,40 +5821,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  
