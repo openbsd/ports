@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cmd_ksh93_sh_1,v 1.1.1.1 2001/07/12 19:17:24 naddy Exp $
---- src/cmd/ksh93/sh.1.orig	Thu Apr 27 20:42:50 2000
-+++ src/cmd/ksh93/sh.1	Sun Feb 18 03:36:06 2001
+$OpenBSD: patch-src_cmd_ksh93_sh_1,v 1.2 2002/04/02 03:12:39 espie Exp $
+--- src/cmd/ksh93/sh.1.orig	Tue Oct 16 20:50:52 2001
++++ src/cmd/ksh93/sh.1	Tue Apr  2 05:05:55 2002
 @@ -4,7 +4,7 @@
  .\"
  .\" @(#)sh.1 (research!dgk) 12/28/93
@@ -10,3 +10,16 @@ $OpenBSD: patch-src_cmd_ksh93_sh_1,v 1.1.1.1 2001/07/12 19:17:24 naddy Exp $
  .nr Y 0 \" set to 1 for R&D UNIX
  .if \nY=1 .nr Z 1
  .ds OK [\|
+@@ -12,10 +12,10 @@
+ .ds ' \s+4\v@.3m@\'\v@-.3m@\s-4
+ .ds ` \s+4\v@.3m@\`\v@-.3m@\s-4
+ .if \nZ=0 .TH SH 1
+-.if \nZ=1 .TH KSH 1 "User Environment Utilities" "RDS Standard"
++.TH KSH 1 "User Environment Utilities" "RDS Standard"
+ .SH NAME
+ .if \nZ=0 sh, rsh \- shell, the
+-.if \nZ=1 ksh, rksh \- KornShell, a
++ksh, rksh \- KornShell, a
+ standard/restricted command and programming language
+ .SH SYNOPSIS
+ .if \nZ=0 .B sh
