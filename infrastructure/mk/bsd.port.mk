@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.214 2000/03/03 20:41:11 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.215 2000/03/03 20:59:16 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -147,11 +147,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
-# NO_MTREE		- If set, will not invoke mtree from bsd.port.mk from
-#				  the "install" target.
-# MTREE_FILE	- The name of the mtree file (default: /etc/mtree/BSD.x11.dist
-#				  if USE_IMAKE or USE_X11 is set, /etc/mtree/BSD.local.dist
-#				  otherwise.)
+# MTREE_FILE	- The name of the mtree file to use for make plist, set only
+#				  if port does not install in a standard place.
 # COMES_WITH	- The first version that a port was made part of the
 #				  standard OpenBSD distribution.  If the current OpenBSD
 #				  version is >= this version then a notice will be
@@ -603,17 +600,6 @@ EXTRACT_SUFX?=		.tar.gz
 
 .endif
 
-# Figure out where the local mtree file is
-.if !defined(MTREE_FILE)
-.  if defined(USE_IMAKE) || defined(USE_X11)
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.  else
-MTREE_FILE=	/etc/mtree/BSD.local.dist
-.  endif
-.endif
-MTREE_CMD?=	/usr/sbin/mtree
-MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -q -p
-
 .include <bsd.own.mk>
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
@@ -709,9 +695,6 @@ PKG_ARGS+=		-r ${PKGDIR}/REQ
 .  endif
 .  if exists(${PKGDIR}/MESSAGE)
 PKG_ARGS+=		-D ${PKGDIR}/MESSAGE
-.  endif
-.  if !defined(NO_MTREE)
-PKG_ARGS+=		-m ${MTREE_FILE}
 .  endif
 .endif
 PKG_SUFX?=		.tgz
@@ -1402,23 +1385,6 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
 		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
 	fi
-.  if !defined(NO_MTREE)
-	@if [ `id -u` = 0 ]; then \
-		if [ ! -f ${MTREE_FILE} ]; then \
-			echo "Error: mtree file \"${MTREE_FILE}\" is missing."; \
-			echo "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
-			exit 1; \
-		else \
-			if [ ! -d ${PREFIX} ]; then \
-				mkdir -p ${PREFIX}; \
-			fi; \
-			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/; \
-		fi; \
-	else \
-		${ECHO_MSG} "Warning: not superuser, can't run mtree."; \
-		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
-	fi
-.  endif
 	@${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .  if target(pre-install)
 	@cd ${.CURDIR} && make pre-install
@@ -1719,6 +1685,15 @@ fetch-list-one-pkg:
 # Note: add @comment PACKAGE(arch=${ARCH}, opsys=${OPSYS}, vers=${OPSYS_VER})
 # when port is installed or package created.
 #
+
+# Figure out where the local mtree file is
+.if !defined(MTREE_FILE)
+.  if ${PREFIX} == "/usr/local"
+MTREE_FILE=	/etc/mtree/BSD.local.dist
+.  else
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.  endif
+.endif
 plist: install
 	@PREFIX=${PREFIX} LDCONFIG="${LDCONFIG}" MTREE_FILE=${MTREE_FILE} \
 	INSTALL_PRE_COOKIE=${_INSTALL_PRE_COOKIE} \
