@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2004/03/04 17:49:26 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2004/03/12 18:03:17 pvalchev Exp $
 
 COMMENT=		"screen saver and locker for the X Window System"
 
@@ -42,7 +42,7 @@ CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=		no_gle gtk2
-FLAVOR?=		
+FLAVOR?=		no_gle
 
 .if !${FLAVOR:L:Mno_gle}
 LIB_DEPENDS+=		gle.3::graphics/gle
