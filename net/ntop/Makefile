@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/05/06 05:00:17 lebel Exp $
+# $OpenBSD: Makefile,v 1.23 2002/05/12 17:04:08 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
 COMMENT=	"network usage, interface similar to top(1)"
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
 HOMEPAGE=	http://www.ntop.org/
-
-MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
