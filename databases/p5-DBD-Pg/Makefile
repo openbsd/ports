@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2001/05/10 19:20:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2001/06/23 22:04:18 peter Exp $
 
 COMMENT=	"access to PostgreSQL databases through the DBI"
 
-COMMENT=	"access to PostgreSQL databases through the DBI"
-
-DISTNAME=	DBD-Pg-0.95
-PKGNAME=	p5-DBD-Pg-0.95
+DISTNAME=	DBD-Pg-1.00
+PKGNAME=	p5-DBD-Pg-1.00
 CATEGORIES=	databases perl5
 NEED_VERSION=	1.407
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -22,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ENV+=	POSTGRES_HOME="${LOCALBASE}" \
-		POSTGRES_LIB="${LOCALBASE}/libl" \
+		POSTGRES_LIB="${LOCALBASE}/lib" \
 		POSTGRES_INCLUDE="${LOCALBASE}/include/postgresql"
 
 CONFIGURE_STYLE= perl
