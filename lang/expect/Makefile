@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2003/09/23 23:08:44 jolan Exp $
+# $OpenBSD: Makefile,v 1.41 2003/12/27 23:24:26 jose Exp $
 
 COMMENT=	"sophisticated scripter based on Tcl/Tk"
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS+=	tcl83.1::lang/tcl/8.3
+LIB_DEPENDS+=	tcl84::lang/tcl/8.4
 
 FLAVORS=	no_tk
 FLAVOR?=
@@ -24,13 +24,13 @@ FLAVOR?=
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.3" \
-		--with-tclinclude="${LOCALBASE}/include/tcl8.3"
+CONFIGURE_ARGS+=--with-tclconfig="${LOCALBASE}/lib/tcl8.4"\
+		--with-tclinclude="${LOCALBASE}/include/tcl8.4"
 
 .if !${FLAVOR:L:Mno_tk}
-LIB_DEPENDS+=	tk83.1.3::x11/tk/8.3
-CONFIGURE_ARGS+=--with-tkconfig="${LOCALBASE}/lib/tk8.3" \
-		--with-tkinclude="${LOCALBASE}/include/tk8.3"
+LIB_DEPENDS+=	tk84::x11/tk/8.4
+CONFIGURE_ARGS+=--with-tkconfig="${LOCALBASE}/lib/tk8.4" \
+		--with-tkinclude="${LOCALBASE}/include/tk8.4"
 .endif
 
 REGRESS_TARGET=	test
