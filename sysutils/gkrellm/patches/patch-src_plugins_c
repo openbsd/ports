@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_plugins_c,v 1.1 2001/04/02 02:04:40 naddy Exp $
+--- src/plugins.c.orig	Wed Jan 24 06:47:39 2001
++++ src/plugins.c	Mon Apr  2 03:43:42 2001
+@@ -602,6 +602,9 @@ install_plugin(gchar *plugin_name)
+ 		plugin_log(buf, NULL);
+ 		return NULL;
+ 		}
++#ifndef __ELF__
++#define dlsym(h,s) dlsym(h, "_" s)
++#endif
+ 	init_plugin = dlsym(handle, "init_plugin");
+ 	if ((error = dlerror()) != NULL)
+ 		{
