@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/04/03 10:27:22 avsm Exp $
+# $OpenBSD: Makefile,v 1.19 2003/04/03 14:04:25 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -68,6 +68,16 @@ CONFIGURE_ARGS+=	--disable-dbase
 MULTI_PACKAGES+=	-dbase
 COMMENT-dbase=		"dBase database access extensions for php4"
 CONFIGURE_ARGS+=	--enable-dbase=shared
+.endif
+
+# dbx
+PSEUDO_FLAVORS+=	no_dbx
+.if ${FLAVOR:L:Mno_dbx}
+CONFIGURE_ARGS+=	--disable-dbx
+.else
+MULTI_PACKAGES+=	-dbx
+COMMENT-dbx=		"dbx database abstraction interface for php4"
+CONFIGURE_ARGS+=	--enable-dbx=shared 
 .endif
 
 # domxml
