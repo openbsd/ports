@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/09/28 22:25:05 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2000/09/29 10:03:16 avsm Exp $
 
 DISTNAME=		http_load_17sep00
 PKGNAME=		http_load-17sep00
@@ -15,6 +15,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.acme.com/software/http_load/
 WRKDIST=		${WRKDIR}/http_load
+
+MAKE_FLAGS=		CC="${CC}" \
+			CFLAGS='${CFLAGS} $$(SRANDOM_DEFS) $$(SSL_DEFS) $$(SSL_INC)'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/http_load   ${PREFIX}/bin
