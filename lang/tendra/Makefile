@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2003/08/04 23:41:08 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/06 14:01:23 avsm Exp $
 
 COMMENT=	"TeNDRA: advanced BSD-licensed C compiler"
 
 V=		20030803
 DISTNAME=	tendra-${V}
+PKGNAME=	tendra-${V}p0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.tendra.org/
