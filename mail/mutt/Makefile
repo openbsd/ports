@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 1998/12/16 20:08:42 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/16 21:51:29 marc Exp $
 #
 
 # What port/package will be created
 #
 DISTNAME=		mutt-0.93.2i
 CATEGORIES=     	mail
+
+BROKEN=			"new version available"
+MIRROR_DISTFILE=	no
 
 # where to send bitches about this port
 #
