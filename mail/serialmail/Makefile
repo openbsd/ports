@@ -17,10 +17,9 @@ QMAILDIR=	/var/qmail
 NO_CONFIGURE=	yes
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check
-NO_MTREE=	yes
 
 RUN_DEPENDS=	tcpclient:${PORTSDIR}/net/ucspi-tcp
-RUN_DEPENDS+=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail/qmail
+RUN_DEPENDS+=	${QMAILDIR}/bin/qmail-local:${PORTSDIR}/mail/qmail
 
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
