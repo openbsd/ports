@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.2 2002/08/15 18:41:36 wcobb Exp $
---- makefile.orig	Tue Dec  5 00:36:20 2000
-+++ makefile	Tue Aug 13 13:54:35 2002
+$OpenBSD: patch-makefile,v 1.3 2004/06/14 18:14:46 naddy Exp $
+--- makefile.orig	2000-12-05 05:36:20.000000000 +0100
++++ makefile	2004-06-14 20:11:33.000000000 +0200
 @@ -6,12 +6,13 @@
  # Set these for your systems locations.
  # xmmsdir=/usr/local/share/xmms
@@ -10,7 +10,7 @@ $OpenBSD: patch-makefile,v 1.2 2002/08/15 18:41:36 wcobb Exp $
  xmmsvislib=`xmms-config --visualization-plugin-dir`
  
 -CFLAGS=-O2 -Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags`
-+CFLAGS+=-Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags`
++CFLAGS+=-Wall -DHAVE_LIBPNG -DXMMS_DIR=\"$(xmmsdir)\" -DKJSKIN=\"$(xmmsdir)/kjofol/default.zip\" -I. `xmms-config --cflags` -fPIC
  LPNG = -lpng -lz
 -LDFLAGS=-O2
 +LDFLAGS?=
