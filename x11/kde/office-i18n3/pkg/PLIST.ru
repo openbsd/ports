@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ru,v 1.3 2003/02/27 02:43:26 naddy Exp $
+@comment $OpenBSD: PLIST.ru,v 1.4 2003/12/15 20:56:40 naddy Exp $
 ${DOC}koshell/common
 ${DOC}koshell/${C}
 ${DOC}koshell/${I}
@@ -98,9 +98,9 @@ ${LOC}olefilterswinword97filter.mo
 ${LOC}thesaurus_tool.mo
 ${LOC}xsltexportfilter.mo
 ${LOC}xsltimportfilter.mo
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale
 @dirrm ${DOC}thesaurus
 @dirrm ${DOC}kword
 @dirrm ${DOC}kugar

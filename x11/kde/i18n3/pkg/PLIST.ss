@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ss,v 1.1 2003/12/08 01:59:28 brad Exp $
+@comment $OpenBSD: PLIST.ss,v 1.2 2003/12/15 20:56:39 naddy Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
@@ -176,6 +176,6 @@ ${LOC}taskbarextension.mo
 ${LOC}timezones.mo
 share/locale/ss/charset
 share/locale/ss/entry.desktop
-@comment @dirrm share/locale/ss/LC_MESSAGES
-@comment @dirrm share/locale/ss
-@comment @dirrm share/locale
+@dirrm share/locale/ss/LC_MESSAGES
+@dirrm share/locale/ss
+@dirrm share/locale

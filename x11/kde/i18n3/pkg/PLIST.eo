@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.eo,v 1.7 2003/01/27 20:18:16 espie Exp $
+@comment $OpenBSD: PLIST.eo,v 1.8 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -280,6 +280,6 @@ ${LOC}webarchiver.mo
 share/locale/eo/charset
 share/locale/eo/entry.desktop
 share/locale/eo/flag.png
-@comment @dirrm share/locale/eo/LC_MESSAGES
-@comment @dirrm share/locale/eo
-@comment @dirrm share/locale
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
+@dirrm share/locale

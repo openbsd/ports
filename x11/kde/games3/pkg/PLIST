@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/06/12 19:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/12/15 20:56:39 naddy Exp $
 bin/atlantik
 bin/kasteroids
 bin/katomic
@@ -2089,9 +2089,9 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/atlantik
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/config/magic
-@comment @dirrm share/config
+@dirrm share/config
 @dirrm share/apps/megami
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
@@ -2209,7 +2209,7 @@ share/services/atlantik.protocol
 @dirrm share/apps/atlantik/icons/crystalsvg
 @dirrm share/apps/atlantik/icons
 @dirrm share/apps/atlantik
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm include/kolf
 @dirrm include/kgame
 @dirrm include/atlantik/ui

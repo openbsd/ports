@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2003/06/12 19:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2003/12/15 20:56:38 naddy Exp $
 bin/atlantikdesigner
 bin/noatunsynaescope.bin
 bin/noatuntippecanoe.bin
@@ -247,7 +247,7 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/apps/mediacontrol/default
 @dirrm share/apps/mediacontrol/blueish
 @dirrm share/apps/mediacontrol
@@ -266,4 +266,4 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/kate/plugins/katefll
 @dirrm share/apps/kate/plugins
 @dirrm share/apps/atlantikdesigner
-@comment @dirrm share/apps
+@dirrm share/apps

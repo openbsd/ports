@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.se,v 1.1 2003/12/08 01:59:28 brad Exp $
+@comment $OpenBSD: PLIST.se,v 1.2 2003/12/15 20:56:39 naddy Exp $
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
@@ -153,6 +153,6 @@ ${LOC}timezones.mo
 share/locale/se/charset
 share/locale/se/entry.desktop
 share/locale/se/flag.png
-@comment @dirrm share/locale/se/LC_MESSAGES
-@comment @dirrm share/locale/se
-@comment @dirrm share/locale
+@dirrm share/locale/se/LC_MESSAGES
+@dirrm share/locale/se
+@dirrm share/locale

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/04/05 14:53:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/15 20:56:40 naddy Exp $
 bin/amor
 bin/kaphorism
 bin/kmoon
@@ -560,7 +560,7 @@ share/services/kweatherservice.desktop
 @dirrm share/doc/HTML/en/kmoon
 @dirrm share/doc/HTML/en/kaphorism
 @dirrm share/doc/HTML/en/amor
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/apps/kworldclock/pics
 @dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
@@ -582,4 +582,4 @@ share/services/kweatherservice.desktop
 @dirrm share/apps/amor/blob
 @dirrm share/apps/amor/b
 @dirrm share/apps/amor
-@comment @dirrm share/apps
+@dirrm share/apps

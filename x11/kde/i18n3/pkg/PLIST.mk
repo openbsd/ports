@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.mk,v 1.1 2003/12/08 01:59:28 brad Exp $
+@comment $OpenBSD: PLIST.mk,v 1.2 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -283,6 +283,6 @@ ${LOC}timezones.mo
 share/locale/mk/charset
 share/locale/mk/entry.desktop
 share/locale/mk/flag.png
-@comment @dirrm share/locale/mk/LC_MESSAGES
-@comment @dirrm share/locale/mk
-@comment @dirrm share/locale
+@dirrm share/locale/mk/LC_MESSAGES
+@dirrm share/locale/mk
+@dirrm share/locale

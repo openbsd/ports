@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/06/12 19:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/12/15 20:56:39 naddy Exp $
 @pkgcfl klettres-*
 @pkgcfl kmessedwords-*
 @pkgcfl kstars-*
@@ -1062,7 +1062,7 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/doc/HTML/en/keduca
 @dirrm share/doc/HTML/en/kalzium
 @dirrm share/doc/HTML/en/flashkard
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/apps/kvoctrain/examples
 @dirrm share/apps/kvoctrain
 @dirrm share/apps/kverbos/pics
@@ -1126,7 +1126,7 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/apps/flashkard/icons/crystalsvg
 @dirrm share/apps/flashkard/icons
 @dirrm share/apps/flashkard
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm share/applnk/Edutainment/Tools
 @dirrm share/applnk/Edutainment/Science
 @dirrm share/applnk/Edutainment/Miscellanous

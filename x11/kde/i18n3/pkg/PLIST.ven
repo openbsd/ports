@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ven,v 1.7 2003/01/27 20:18:17 espie Exp $
+@comment $OpenBSD: PLIST.ven,v 1.8 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -421,6 +421,6 @@ ${LOC}wavecapture.mo
 ${LOC}webarchiver.mo
 share/locale/ven/charset
 share/locale/ven/entry.desktop
-@comment @dirrm share/locale/ven/LC_MESSAGES
-@comment @dirrm share/locale/ven
-@comment @dirrm share/locale
+@dirrm share/locale/ven/LC_MESSAGES
+@dirrm share/locale/ven
+@dirrm share/locale

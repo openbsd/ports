@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/15 20:56:40 naddy Exp $
 bin/ical2vcal
 bin/kabc2mutt
 bin/kaddressbook
@@ -428,8 +428,8 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/kandy
 @dirrm share/doc/HTML/en/kalarm
 @dirrm share/doc/HTML/en/kaddressbook
-@comment @dirrm share/doc/HTML
-@comment @dirrm share/config
+@dirrm share/doc/HTML
+@dirrm share/config
 @dirrm share/apps/ksync
 @dirrm share/apps/korganizer/sounds
 @dirrm share/apps/korganizer/plugins
@@ -483,9 +483,9 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kaddressbook/icons
 @dirrm share/apps/kaddressbook/csv-templates
 @dirrm share/apps/kaddressbook
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm share/applnk/Utilities/More
-@comment @dirrm share/applnk/Applications
+@dirrm share/applnk/Applications
 @dirrm share/applnk/.hidden
 @dirrm include/korganizer
 @dirrm include/kgantt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2003/12/15 20:56:40 naddy Exp $
 bin/artsmessage
 bin/checkXML
 bin/dcop
@@ -3781,7 +3781,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk/all
 @dirrm share/mimelnk
-@comment @dirrm share/locale
+@dirrm share/locale
 @exec mkdir -p %D/share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
@@ -3888,10 +3888,10 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/doc/HTML/en/kdelibs-apidocs
 @dirrm share/doc/HTML/en/common
 @dirrm share/doc/HTML/en
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/config/ui
 @dirrm share/config/colors
-@comment @dirrm share/config
+@dirrm share/config
 @dirrm share/autostart
 @exec mkdir -p %D/share/apps/kworldclock/maps/depths
 @dirrm share/apps/kworldclock/maps/depths
@@ -4054,7 +4054,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/kabc/formats
 @dirrm share/apps/kabc
 @dirrm share/apps/LICENSES
-@comment @dirrm share/apps
+@dirrm share/apps
 @exec mkdir -p %D/share/applnk/Utilities
 @dirrm share/applnk/Utilities
 @exec mkdir -p %D/share/applnk/Toys

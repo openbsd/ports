@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/01/27 20:28:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/15 20:56:40 naddy Exp $
 bin/karbon
 bin/kchart
 bin/kformula
@@ -1786,7 +1786,7 @@ share/templates/TextDocument.desktop
 @dirrm share/doc/HTML/en/koffice
 @dirrm share/doc/HTML/en/kformula
 @dirrm share/doc/HTML/en/kchart
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/apps/xsltfilter/export/kword/xslfo
 @dirrm share/apps/xsltfilter/export/kword
 @dirrm share/apps/xsltfilter/export
@@ -1939,4 +1939,4 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/karbon/icons/hicolor
 @dirrm share/apps/karbon/icons
 @dirrm share/apps/karbon
-@comment @dirrm share/apps
+@dirrm share/apps

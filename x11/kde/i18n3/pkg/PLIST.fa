@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.fa,v 1.4 2003/07/30 12:59:22 espie Exp $
+@comment $OpenBSD: PLIST.fa,v 1.5 2003/12/15 20:56:39 naddy Exp $
 share/locale/fa/COPYING
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
@@ -165,6 +165,6 @@ ${LOC}timezones.mo
 share/locale/fa/charset
 share/locale/fa/entry.desktop
 share/locale/fa/flag.png
-@comment @dirrm share/locale/fa/LC_MESSAGES
-@comment @dirrm share/locale/fa
-@comment @dirrm share/locale
+@dirrm share/locale/fa/LC_MESSAGES
+@dirrm share/locale/fa
+@dirrm share/locale

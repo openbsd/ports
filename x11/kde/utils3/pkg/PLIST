@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/12/07 20:19:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/12/15 20:56:40 naddy Exp $
 bin/ark
 bin/kcalc
 bin/kcharselect
@@ -281,7 +281,7 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/doc/HTML/en/kcalc
 @dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/en/KRegExpEditor
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/config
 @dirrm share/apps/ksim/themes/ksim/net
 @dirrm share/apps/ksim/themes/ksim/mail
@@ -319,7 +319,7 @@ share/services/kregexpeditorgui.desktop
 @dirrm share/apps/ark/icons/crystalsvg
 @dirrm share/apps/ark/icons
 @dirrm share/apps/ark
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm share/applnk/Utilities/More
 @dirrm share/applnk/System/More
 @dirrm share/applnk/Settingsmenu

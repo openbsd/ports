@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pl,v 1.9 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.pl,v 1.10 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -426,6 +426,6 @@ share/services/searchproviders/onet.desktop
 share/services/searchproviders/wirtualna_polska.desktop
 @dirrm share/services/searchproviders
 @dirrm share/services
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale

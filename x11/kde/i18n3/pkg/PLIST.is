@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.is,v 1.9 2003/12/14 10:50:26 sturm Exp $
+@comment $OpenBSD: PLIST.is,v 1.10 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -418,6 +418,6 @@ ${LOC}webarchiver.mo
 share/locale/is/charset
 share/locale/is/entry.desktop
 share/locale/is/flag.png
-@comment @dirrm share/locale/is/LC_MESSAGES
-@comment @dirrm share/locale/is
-@comment @dirrm share/locale
+@dirrm share/locale/is/LC_MESSAGES
+@dirrm share/locale/is
+@dirrm share/locale

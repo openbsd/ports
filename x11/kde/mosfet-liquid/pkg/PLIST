@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/01/06 13:40:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 20:56:40 naddy Exp $
 ${KDE}/libkwinliquid.la
 ${KDE}/libkwinliquidmack.la
 ${KDE}/libkwinliquidold.la
@@ -15,4 +15,4 @@ share/apps/kwin/liquid.desktop
 share/apps/kwin/liquidmack.desktop
 share/apps/kwin/liquidold.desktop
 %%SHARED%%
-@comment @dirrm share/apps
+@dirrm share/apps

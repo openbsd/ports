@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.vi,v 1.9 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.vi,v 1.10 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alsaplayerui.mo
 ${LOC}appletproxy.mo
@@ -273,6 +273,6 @@ ${LOC}webarchiver.mo
 share/locale/vi/charset
 share/locale/vi/entry.desktop
 share/locale/vi/flag.png
-@comment @dirrm share/locale/vi/LC_MESSAGES
-@comment @dirrm share/locale/vi
-@comment @dirrm share/locale
+@dirrm share/locale/vi/LC_MESSAGES
+@dirrm share/locale/vi
+@dirrm share/locale

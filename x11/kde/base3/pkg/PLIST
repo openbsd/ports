@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2003/06/12 19:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.22 2003/12/15 20:56:39 naddy Exp $
 bin/appletproxy
 bin/chooser
 bin/drkonqi
@@ -2855,7 +2855,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/locale/l10n/C
 @dirrm share/locale/l10n
 @dirrm share/locale/en_US
-@comment @dirrm share/locale
+@dirrm share/locale
 @dirrm share/icons/crystalsvg/48x48/apps/mozilla
 @dirrm share/icons/crystalsvg/48x48/apps/gnome
 @dirrm share/icons/crystalsvg/32x32/apps/mozilla
@@ -2864,7 +2864,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/icons/crystalsvg/16x16/apps/mozilla
 @dirrm share/icons/crystalsvg/16x16/apps/gnome
 @dirrm share/fonts/override
-@comment @dirrm share/fonts
+@dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/ksysguard
 @dirrm share/doc/HTML/en/kpager
@@ -2951,8 +2951,8 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kcontrol/arts
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/kate
-@comment @dirrm share/doc/HTML
-@comment @dirrm share/config
+@dirrm share/doc/HTML
+@dirrm share/config
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite
@@ -3100,7 +3100,7 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/drkonqi
 @dirrm share/apps/clockapplet/pics
 @dirrm share/apps/clockapplet
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm share/applnk/Utilities/XUtilities
 @dirrm share/applnk/Utilities/More
 @dirrm share/applnk/System/Terminal

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.bg,v 1.8 2003/07/30 12:59:22 espie Exp $
+@comment $OpenBSD: PLIST.bg,v 1.9 2003/12/15 20:56:39 naddy Exp $
 ${DOC}kcalc/common
 ${DOC}kcalc/${C}
 ${DOC}kcalc/${I}
@@ -331,9 +331,9 @@ ${LOC}webarchiver.mo
 share/locale/bg/charset
 share/locale/bg/entry.desktop
 share/locale/bg/flag.png
-@comment @dirrm share/locale/bg/LC_MESSAGES
-@comment @dirrm share/locale/bg
-@comment @dirrm share/locale
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg
+@dirrm share/locale
 @dirrm ${DOC}kcalc
 @dirrm share/doc/HTML/bg
 @dirrm share/doc/HTML

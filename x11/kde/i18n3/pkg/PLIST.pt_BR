@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.pt_BR,v 1.9 2003/12/07 20:19:14 espie Exp $
+@comment $OpenBSD: PLIST.pt_BR,v 1.10 2003/12/15 20:56:39 naddy Exp $
 ${DOC}kate-plugins/common
 ${DOC}kate-plugins/htmltools.docbook
 ${DOC}kate-plugins/${I}
@@ -643,9 +643,9 @@ ${LOC}webarchiver.mo
 share/locale/pt_BR/charset
 share/locale/pt_BR/entry.desktop
 share/locale/pt_BR/flag.png
-@comment @dirrm share/locale/pt_BR/LC_MESSAGES
-@comment @dirrm share/locale/pt_BR
-@comment @dirrm share/locale
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale
 @dirrm ${DOC}quanta
 @dirrm ${DOC}kstars
 @dirrm ${DOC}kppp
@@ -727,4 +727,4 @@ share/locale/pt_BR/flag.png
 @dirrm ${DOC}katomic
 @dirrm ${DOC}kate-plugins
 @dirrm share/doc/HTML/pt_BR
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/12/15 20:56:40 naddy Exp $
 bin/aktion
 bin/artsbuilder
 bin/artscontrol
@@ -938,8 +938,8 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/doc/HTML/en/aktion
-@comment @dirrm share/doc/HTML
-@comment @dirrm share/config
+@dirrm share/doc/HTML
+@dirrm share/config
 @dirrm share/apps/noatun/skins/winamp/Winamp
 @dirrm share/apps/noatun/skins/winamp
 @dirrm share/apps/noatun/skins/kjofol/vibrocentric
@@ -1010,7 +1010,7 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/artsbuilder
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Multimedia/More
 @dirrm share/applnk/Multimedia

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.ca,v 1.9 2003/07/30 12:59:22 espie Exp $
+@comment $OpenBSD: PLIST.ca,v 1.10 2003/12/15 20:56:39 naddy Exp $
 ${DOC}kbugbuster/common
 ${DOC}kbugbuster/${C}
 ${DOC}kbugbuster/${I}
@@ -619,9 +619,9 @@ ${LOC}webarchiver.mo
 share/locale/ca/charset
 share/locale/ca/entry.desktop
 share/locale/ca/flag.png
-@comment @dirrm share/locale/ca/LC_MESSAGES
-@comment @dirrm share/locale/ca
-@comment @dirrm share/locale
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale
 @dirrm ${DOC}kworldclock
 @dirrm ${DOC}kweather
 @dirrm ${DOC}kspell

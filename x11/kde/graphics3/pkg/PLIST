@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/12/07 20:19:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/12/15 20:56:39 naddy Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -259,7 +259,7 @@ share/servicetypes/kimageviewercanvas.desktop
 @dirrm share/doc/HTML/en/kghostview
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en/kcoloredit
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/apps/kviewviewer/kpartplugins
 @dirrm share/apps/kviewviewer
 @dirrm share/apps/kviewshell
@@ -282,4 +282,4 @@ share/servicetypes/kimageviewercanvas.desktop
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
 @dirrm share/apps/kcoloredit
-@comment @dirrm share/apps
+@dirrm share/apps

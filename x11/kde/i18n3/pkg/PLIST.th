@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.th,v 1.8 2003/06/12 19:16:16 espie Exp $
+@comment $OpenBSD: PLIST.th,v 1.9 2003/12/15 20:56:39 naddy Exp $
 ${LOC}aktion.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -340,6 +340,6 @@ ${LOC}webarchiver.mo
 share/locale/th/charset
 share/locale/th/entry.desktop
 share/locale/th/flag.png
-@comment @dirrm share/locale/th/LC_MESSAGES
-@comment @dirrm share/locale/th
-@comment @dirrm share/locale
+@dirrm share/locale/th/LC_MESSAGES
+@dirrm share/locale/th
+@dirrm share/locale

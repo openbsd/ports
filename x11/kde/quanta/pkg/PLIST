@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/12 19:16:17 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/15 20:56:40 naddy Exp $
 bin/kmdr-editor
 bin/kmdr-executor
 bin/quanta
@@ -573,7 +573,7 @@ share/icons/locolor/32x32/apps/kmdr/executor.png
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/quanta
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML
 @dirrm share/apps/quanta/toolbars/xml
 @dirrm share/apps/quanta/toolbars/wml-1-2
 @dirrm share/apps/quanta/toolbars/tagxml
@@ -611,7 +611,7 @@ share/icons/locolor/32x32/apps/kmdr/executor.png
 @dirrm share/apps/quanta/tags
 @dirrm share/apps/quanta/doc
 @dirrm share/apps/quanta
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm lib/quanta/plugins

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nb,v 1.8 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.nb,v 1.9 2003/12/15 20:56:39 naddy Exp $
 ${DOC}kcontrol/common
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
@@ -441,9 +441,9 @@ share/locale/nb/README
 share/locale/nb/charset
 share/locale/nb/entry.desktop
 share/locale/nb/flag.png
-@comment @dirrm share/locale/nb/LC_MESSAGES
-@comment @dirrm share/locale/nb
-@comment @dirrm share/locale
+@dirrm share/locale/nb/LC_MESSAGES
+@dirrm share/locale/nb
+@dirrm share/locale
 @dirrm ${DOC}khelpcenter
 @dirrm ${DOC}kcontrol
 @dirrm share/doc/HTML/nb

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.nn,v 1.10 2003/12/07 20:19:14 espie Exp $
+@comment $OpenBSD: PLIST.nn,v 1.11 2003/12/15 20:56:39 naddy Exp $
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${I}
 ${DOC}kcontrol/common
@@ -430,9 +430,9 @@ ${LOC}webarchiver.mo
 share/locale/nn/charset
 share/locale/nn/entry.desktop
 share/locale/nn/flag.png
-@comment @dirrm share/locale/nn/LC_MESSAGES
-@comment @dirrm share/locale/nn
-@comment @dirrm share/locale
+@dirrm share/locale/nn/LC_MESSAGES
+@dirrm share/locale/nn
+@dirrm share/locale
 @dirrm ${DOC}kmail
 @dirrm ${DOC}klipper
 @dirrm ${DOC}kinfocenter
@@ -440,4 +440,4 @@ share/locale/nn/flag.png
 @dirrm ${DOC}kcontrol
 @dirrm ${DOC}kaddressbook
 @dirrm share/doc/HTML/nn
-@comment @dirrm share/doc/HTML
+@dirrm share/doc/HTML

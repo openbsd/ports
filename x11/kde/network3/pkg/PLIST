@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/12/07 20:19:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/12/15 20:56:40 naddy Exp $
 @pkgcfl sirc-*
 bin/dsirc
 bin/kdict
@@ -1035,8 +1035,8 @@ share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/kcontrol/lanbrowser
 @dirrm share/doc/HTML/en/kcontrol/kxmlrpcd
 @dirrm share/doc/HTML/en/kcontrol/kcmtalkd
-@comment @dirrm share/doc/HTML
-@comment @dirrm share/config
+@dirrm share/doc/HTML
+@dirrm share/config
 @dirrm share/apps/lisa
 @dirrm share/apps/ksirc/pics/emoticons
 @dirrm share/apps/ksirc/pics
@@ -1154,5 +1154,5 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons/crystalsvg
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
-@comment @dirrm share/apps
+@dirrm share/apps
 @dirrm include/mimelib

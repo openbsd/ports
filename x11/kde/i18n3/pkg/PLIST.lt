@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.lt,v 1.9 2003/07/30 12:59:23 espie Exp $
+@comment $OpenBSD: PLIST.lt,v 1.10 2003/12/15 20:56:39 naddy Exp $
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -304,9 +304,9 @@ ${LOC}webarchiver.mo
 share/locale/lt/charset
 share/locale/lt/entry.desktop
 share/locale/lt/flag.png
-@comment @dirrm share/locale/lt/LC_MESSAGES
-@comment @dirrm share/locale/lt
-@comment @dirrm share/locale
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale
 @dirrm ${DOC}khelpcenter/visualdict
 @dirrm ${DOC}khelpcenter
 @dirrm share/doc/HTML/lt
