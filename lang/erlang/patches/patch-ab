@@ -1,0 +1,11 @@
+--- erts-47.4.0/autoconf/config.sub.~1~	Wed Dec  9 12:50:54 1998
++++ erts-47.4.0/autoconf/config.sub	Wed Dec  9 12:53:47 1998
+@@ -641,7 +641,7 @@
+ 	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+ 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+-	      | -udi* | -eabi* | -lites* )
++	      | -udi* | -eabi* | -lites* | -openbsd* )
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-sunos5*)
