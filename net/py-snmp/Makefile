@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/22 15:31:26 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"SNMP framework for Python"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pysnmp/}
 
-MODULES=	python
+MODULES=	lang/python
 
 DOCSDIR=	${PREFIX}/share/doc/py-snmp
 EXAMPLESDIR=	${PREFIX}/share/examples/py-snmp

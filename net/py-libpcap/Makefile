@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/02/18 08:31:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.12 2004/08/04 19:14:30 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
-MODULES=	python
+MODULES=	lang/python
 
 BUILD_DEPENDS=	:swig-*:devel/swig
 

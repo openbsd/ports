@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"Python DNS library"
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

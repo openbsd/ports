@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/15 03:41:14 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
 DISTNAME=	BitTorrent-3.4.2
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 post-configure:
 	@perl -pi -e \

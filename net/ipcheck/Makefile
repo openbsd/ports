@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/02/08 20:47:55 xsa Exp $
+# $OpenBSD: Makefile,v 1.17 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=		"fully compliant DynDNS.org client"
 
@@ -22,7 +22,7 @@ MASTER_SITES=		${HOMEPAGE}releases/
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MODULES=		python
+MODULES=		lang/python
 
 NO_REGRESS=		Yes
 NO_BUILD=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"Python module to handle IPv4 and IPv6 address"
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	python
+MODULES=	lang/python
 
 MODPY_DISTUTILS_INSTALLARGS=	-O2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/01/30 08:39:49 xsa Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"implementation of the MSN messaging protocol in Python"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=msnp/}
 
-MODULES=	python
+MODULES=	lang/python
 
 DOCDIR=		${PREFIX}/share/doc/py-msnp
 

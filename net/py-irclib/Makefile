@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/12 08:41:22 xsa Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"Internet Relay Chat (IRC) protocol client library for Python"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python-irclib/}
 
-MODULES=	python
+MODULES=	lang/python
 
 NO_REGRESS=	Yes
 

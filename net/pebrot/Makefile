@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/04/27 13:14:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"text-based MSN messenger client"
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pebrot/}
 
 NO_REGRESS=	Yes
 
-MODULES=	python
+MODULES=	lang/python
 
 FLAVORS=	cjk
 FLAVOR?=

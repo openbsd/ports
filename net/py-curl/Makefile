@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/07/26 21:04:24 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/04 19:14:30 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}download/ \
 		${HOMEPAGE}download/00-OLD-VERSIONS/
 
-MODULES=	python
+MODULES=	lang/python
 
 LIB_DEPENDS=	curl.2.2::net/curl
 

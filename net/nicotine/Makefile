@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/07/04 23:40:05 mjc Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/04 19:14:30 xsa Exp $
 
 COMMENT=	"gtk soulseek client written in Python"
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	python
+MODULES=	lang/python
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	:py-gtk2-*:x11/py-gtk2
