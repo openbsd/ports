@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2001/07/26 12:33:11 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2001/08/07 00:15:13 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -13,6 +13,7 @@
 #    SUBDIR += cdplay
      SUBDIR += esound
      SUBDIR += flac
+     SUBDIR += gkrellm-volume
 #    SUBDIR += gmod
      SUBDIR += gogo
      SUBDIR += gom
