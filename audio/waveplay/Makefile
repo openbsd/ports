@@ -1,16 +1,15 @@
 # $OpenBSD
 # $FreeBSD: ports/audio/waveplay/Makefile,v 1.2 1999/08/25 04:36:16 obrien Exp $
 
+COMMENT=	"simple wav audio player"
 DISTNAME=	waveplay-19990123
 PKGNAME=	waveplay-1.0
 CATEGORIES=	audio
-NEED_VERSION=	1.114
+NEED_VERSION=	1.364
 MASTER_SITES=	http://dontaku.csce.kyushu-u.ac.jp/~ysonoda/archives/program/FreeBSD/
-
 
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		NONE
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

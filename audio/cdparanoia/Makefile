@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/09/21 16:07:20 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/04/13 03:24:01 obecian Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/01/19 08:03:00 itohy Exp $
 
+COMMENT=	"CDDA reading utility with extra data verification features"
 DISTNAME=	cdparanoia-III-alpha9.7
 PKGNAME=	cdparanoia-3.a9.7
 CATEGORIES=	audio
-NEED_VERSION=	1.317
+NEED_VERSION=	1.364
 MASTER_SITES=	http://www.xiph.org/paranoia/download/
 EXTRACT_SUFX=	.src.tgz
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2001/03/14 15:04:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2001/04/13 03:24:23 obecian Exp $
 
+COMMENT=	"read CD digital audio data through the SCSI bus"
 DISTNAME=	tosha-0.6
 CATEGORIES=	audio
-NEED_VERSION=	1.311
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/audio/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>

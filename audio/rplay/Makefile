@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2001/02/06 01:32:04 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2001/04/13 03:24:18 obecian Exp $
 
+COMMENT=	"network audio player"
 DISTNAME=	rplay-3.3.2
 CATEGORIES=	audio
-NEED_VERSION=	1.353
+NEED_VERSION=	1.364
 
 HOMEPAGE=	http://rplay.doit.org/
 
@@ -13,9 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   ${HOMEPAGE}/dist/
+MASTER_SITES=	${HOMEPAGE}/dist/
 
-LIB_DEPENDS=    gsm.1.0::audio/gsm
+LIB_DEPENDS=	gsm.1.0::audio/gsm
  
 SYSCONFDIR=	/etc/rplay
 CONFIGURE_STYLE= gnu dest

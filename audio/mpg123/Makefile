@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/22 14:02:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/04/13 03:24:12 obecian Exp $
 
+COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
 DISTNAME=	mpg123-0.59r
 CATEGORIES=	audio
-NEED_VERSION=	1.300
+NEED_VERSION=	1.364
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/13 03:24:17 obecian Exp $
 
-DISTNAME=		rio500-0.7
-CATEGORIES=     	audio
-NEED_VERSION=		1.305
+COMMENT=	"Diamond Rio 500 utilities"
+DISTNAME=	rio500-0.7
+CATEGORIES=	audio
+NEED_VERSION=	1.364
 
-MASTER_SITES=		http://download.sourceforge.net/rio500/
+MASTER_SITES=	http://download.sourceforge.net/rio500/
 
-HOMEPAGE=		http://sourceforge.net/projects/rio500/
+HOMEPAGE=	http://sourceforge.net/projects/rio500/
 
-MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

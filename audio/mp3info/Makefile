@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 15:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/13 03:24:10 obecian Exp $
 
+COMMENT=	"MP3 information tool"
 DISTNAME=	mp3info-0.2.16
 CATEGORIES=	audio
-NEED_VERSION=	1.305
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://bimbo.hive.no/pub/mp3info/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= apps/sound/editors
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
