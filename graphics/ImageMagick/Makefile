@@ -3,27 +3,27 @@
 # Date created:		1998-Apr-21
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.4 1998/06/14 08:10:25 marc Exp $
+# $OpenBSD: Makefile,v 1.5 1998/11/24 00:07:10 marc Exp $
 #
 
-DISTNAME=		ImageMagick-4.0.6
+DISTNAME=		ImageMagick-4.1.4
 CATEGORIES=     	graphics x11
 
 MAINTAINER=		marc@openbsd.org
 
 MASTER_SITES=		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 			ftp://ftp.fifi.org/pub/ImageMagick \
-			ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick
+			ftp://gd.tuwien.ac.at/graphics/ImageMagick
 
 # Future: add FreeType, FlashPix, NCSA HDF, JBIG, scanimage, etc.
 #
 RUN_DEPENDS=		fig2dev:${PORTSDIR}/print/transfig \
 			gs:${PORTSDIR}/print/ghostscript5 \
 
-LIB_DEPENDS=    	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-			mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
-			png\\.1\\.:${PORTSDIR}/graphics/png \
-			tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34
+LIB_DEPENDS=		jpeg.62.:${PORTSDIR}/graphics/jpeg \
+			mpeg.1.:${PORTSDIR}/graphics/mpeg-lib \
+			png.1.:${PORTSDIR}/graphics/png \
+			tiff.3.4:${PORTSDIR}/graphics/tiff34
 
 USE_X11=		yes
 GNU_CONFIGURE=		yes
@@ -31,7 +31,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-shared
 .endif
 CONFIGURE_ARGS+=	--enable-static
-CONFIGURE_ENV=		${SETENV} CPPFLAGS=-I/usr/local/include \
+CONFIGURE_ENV=		CPPFLAGS=-I/usr/local/include \
 			LDFLAGS=-L/usr/local/lib
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+bin/Magick-config
 bin/xtp
 bin/animate
 bin/combine
@@ -7,7 +8,7 @@ bin/identify
 bin/import
 bin/mogrify
 bin/montage
-lib/libMagick.so.4.6
+lib/libMagick.so.4.14
 @exec /sbin/ldconfig -m %B
 lib/libMagick.la
 lib/libMagick.a
@@ -27,12 +28,16 @@ include/magick/PreRvIcccm.h
 include/magick/X.h
 include/magick/compress.h
 include/magick/config.h
+include/magick/delegates.h
 include/magick/error.h
 include/magick/gems.h
 include/magick/image.h
 include/magick/magick.h
+include/magick/memory.h
 include/magick/monitor.h
-include/magick/plug-ins.h
 include/magick/utility.h
+include/magick/version.h
 include/magick/widget.h
 @dirrm include/magick
+share/ImageMagick/delegates.mgk
+@dirrm share/ImageMagick
