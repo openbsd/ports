@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-mux,v 1.8 2004/09/18 09:15:22 espie Exp $
+@comment $OpenBSD: PLIST-mux,v 1.9 2004/09/24 09:02:41 espie Exp $
 @conflict symon-*
 libexec/symux
 @man man/cat8/symux.0
 share/examples/symon/
 share/examples/symon/symux.conf
+@sample ${SYSCONFDIR}/symux.conf
 share/symon/
 share/symon/c_smrrds.sh
 share/symon/client/
 share/symon/client/SymuxClient.0
 share/symon/client/SymuxClient.pm
 share/symon/client/getsymonitem.pl
-@extraunexec rm -f ${SYSCONFDIR}/symux.conf
