@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2004/04/18 06:41:11 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2004/11/24 20:32:23 robert Exp $
 
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
 COMMENT=		'SQLite drivers for the Perl DBI'
 
-DISTNAME=		DBD-SQLite-0.31
+DISTNAME=		DBD-SQLite-1.07
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
 
@@ -23,5 +23,7 @@ RUN_DEPENDS=		:p5-DBI->=1.08:databases/p5-DBI
 REGRESS_DEPENDS=	:sqlite->=2.8.12:databases/sqlite
 
 CONFIGURE_STYLE=	perl
+MAKE_FLAGS=		CC='${CC}' \
+			LD='${CC}'
 
 .include <bsd.port.mk>
