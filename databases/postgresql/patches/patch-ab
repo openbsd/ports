@@ -1,10 +1,7 @@
---- bin/initdb/initdb.sh.orig	Wed Apr  2 07:09:13 1997
-+++ bin/initdb/initdb.sh	Wed Apr  2 07:09:33 1997
-@@ -344,6 +344,5 @@
+--- bin/initdb/initdb.sh.~1~	Wed Feb 25 05:09:02 1998
++++ bin/initdb/initdb.sh	Mon Mar  9 14:33:43 1998
+@@ -386,3 +386,4 @@
+ echo "vacuum analyze" | postgres -F -Q -D$PGDATA template1 2>&1 > /dev/null |\
+ 	grep -v "^DEBUG:"
  
- if [ $debug -eq 0 ]; then
-     echo "vacuuming template1"
--    echo "vacuum" | postgres -F -Q -D$PGDATA template1 2>&1 > /dev/null |\
--	 grep -v "^DEBUG:"
-+    echo "vacuum" | postgres -o /dev/null -F -Q -D$PGDATA template1 > /dev/null 
- fi
++exit 0

@@ -34,6 +34,7 @@ print "pgsql user using gid $pgGID\n";
 
 print( "/usr/bin/chpass -a \"pgsql:*:$pgUID\:$pgGID\:\:\:\:PostgreSQL pseudo-user:$ENV{'PREFIX'}/pgsql:/bin/sh\"" );
 system( "/usr/bin/chpass -a \"pgsql:*\:$pgUID\:$pgGID\:\:\:\:PostgreSQL pseudo-user\:$ENV{'PREFIX'}/pgsql\:/bin/sh\"" );
+print( "\n" );
 
 sub append_file {
 	local($file,@list) = @_;
