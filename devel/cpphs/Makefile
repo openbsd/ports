@@ -1,0 +1,39 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2005/02/19 04:49:00 dons Exp $
+
+COMMENT=	"liberalised reimplementation of cpp in Haskell"
+
+V=		0.8
+DISTNAME=	cpphs-${V}
+CATEGORIES=	devel
+MAINTAINER=	Don Stewart <dons@openbsd.org>
+HOMEPAGE=	http://www.cs.york.ac.uk/fp/cpphs/
+MASTER_SITES=	${HOMEPAGE}
+
+# Pure Haskell 98. Could also interpret via Hugs
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+MODULES=	ghc
+HC=		ghc
+HC_OPTS=	-O -o cpphs --make
+.else
+BUILD_DEPENDS+=	bin/hmake::lang/nhc98
+HC=		hmake 
+HC_OPTS=	-package base
+.endif
+
+do-build:
+	( cd ${WRKSRC} && ${HC} ${HC_OPTS} cpphs )
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cpphs        ${PREFIX}/bin
+	${INSTALL_MAN}     ${WRKSRC}/docs/cpphs.1 ${PREFIX}/man/man1
+
+do-regress:
+	( cd ${WRKSRC}/tests && ./runtests )
+
+# LGPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+.include <bsd.port.mk>
