@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2002/04/19 17:48:18 shell Exp $
+@comment $OpenBSD: PLIST,v 1.14 2002/05/27 05:01:02 shell Exp $
 bin/dbiproxy
 bin/dbish
 ${P5ARCH}/Bundle/DBI.pm
@@ -8,10 +8,14 @@ ${P5ARCH}/DBD/Proxy.pm
 ${P5ARCH}/DBD/Sponge.pm
 ${P5ARCH}/DBI.pm
 ${P5ARCH}/DBI/Changes.pm
+${P5ARCH}/DBI/Const/GetInfo.pm
+${P5ARCH}/DBI/Const/GetInfo/ANSI.pm
+${P5ARCH}/DBI/Const/GetInfo/ODBC.pm
 ${P5ARCH}/DBI/DBD.pm
 ${P5ARCH}/DBI/FAQ.pm
 ${P5ARCH}/DBI/Format.pm
 ${P5ARCH}/DBI/ProxyServer.pm
+${P5ARCH}/DBI/PurePerl.pm
 ${P5ARCH}/DBI/Shell.pm
 ${P5ARCH}/DBI/W32ODBC.pm
 ${P5ARCH}/Win32/DBIODBC.pm
@@ -27,10 +31,16 @@ man/man1/dbish.1
 man/man3p/Bundle::DBI.3p
 man/man3p/DBD::Proxy.3p
 man/man3p/DBI.3p
+man/man3p/DBI::Const::GetInfo.3p
+man/man3p/DBI::Const::GetInfo::ANSI.3p
+man/man3p/DBI::Const::GetInfo::ODBC.3p
 man/man3p/DBI::DBD.3p
 man/man3p/DBI::FAQ.3p
 man/man3p/DBI::Format.3p
 man/man3p/DBI::ProxyServer.3p
+man/man3p/DBI::PurePerl.3p
 man/man3p/DBI::Shell.3p
 man/man3p/DBI::W32ODBC.3p
 man/man3p/Win32::DBIODBC.3p
+@dirrm ${P5ARCH}/DBI/Const/GetInfo
+@dirrm ${P5ARCH}/DBI/Const
