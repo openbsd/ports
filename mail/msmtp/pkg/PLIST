@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/30 22:04:44 alek Exp $
+bin/msmtp
+@info info/msmtp.info
+@man man/man1/msmtp.1
+share/doc/msmtp/
+share/doc/msmtp/Mutt+msmtp.txt
+share/doc/msmtp/msmtp.html
+share/examples/msmtp/
+share/examples/msmtp/msmtprc-system.example
+share/examples/msmtp/msmtprc-user.example

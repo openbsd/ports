@@ -1,0 +1,12 @@
+msmtp is an SMTP client. In the default mode, msmtp transmits a mail to
+an SMTP server which does the delivery.
+
+Features include:
+o SMTP authentication methods PLAIN, LOGIN and CRAM-MD5
+o TLS encrypted connections
+o DSN (Delivery Status Notification) support
+o RMQS (Remote Message Queue Starting) support (ETRN keyword)
+o PIPELINING support for increased transmission speed
+o IPv6 support
+o support for multiple accounts
+o sendmail compatible interface (command line options and exit codes)
