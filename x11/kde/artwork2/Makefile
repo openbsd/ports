@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/09/28 06:02:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/18 14:02:40 pvalchev Exp $
 
 COMMENT= 		"X11 toolkit, additional artwork"
 CATEGORIES=		x11 x11/kde
@@ -20,7 +20,7 @@ MODULES=qt2
 
 LIB_DEPENDS=	kdecore.3::x11/kde/libs2
 
-BUILD_DEPENDS+=	:zsh-*:shells/zsh/stable
+BUILD_DEPENDS+=	:zsh-*:shells/zsh/stable ::x11/qt2-designer
 
 CONFIGURE_STYLE=	autoconf
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/admin
