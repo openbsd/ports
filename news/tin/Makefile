@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2000/07/02 11:05:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/05 00:26:42 fgsch Exp $
 
-DISTNAME=	tin-1.4.3
+DISTNAME=	tin-1.4.4
 CATEGORIES=	news
 NEED_VERSION=	1.311
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
