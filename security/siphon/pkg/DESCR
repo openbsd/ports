@@ -10,5 +10,3 @@ intrusion detection systems. In fact, we send out no packets at
 all.  Whereas nmap crashes some machines and network hardware when
 performing its active OS detection tests, Siphon would never crash
 remote machines.  Siphon is available for UNIX and Win32.
-
-WWW: ${HOMEPAGE}

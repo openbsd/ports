@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.3 2001/07/05 23:24:18 jsyn Exp $
+# $OpenBSD: INSTALL,v 1.4 2002/03/25 06:30:38 jsyn Exp $
 #
 # Pre/post-installation setup of siphon
 
@@ -9,15 +9,15 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/osprints.conf
-SAMPLE_CONFIG_DIR=$PREFIX/share/examples/siphon
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/siphon
 
 do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration file in $CONFIG_FILE,"
+    echo "| The existing $1 configuration file in ${CONFIG_FILE},"
     echo "| has NOT been changed. You may want to compare it to the"
-    echo "| current sample file in $SAMPLE_CONFIG_DIR,"
+    echo "| current sample file in ${SAMPLE_CONFIG_DIR},"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
@@ -25,12 +25,12 @@ do_notice()
 
 do_install()
 {
-    install -o root -g wheel -m 644 $SAMPLE_CONFIG_DIR/osprints.conf \
-   				    $CONFIG_FILE
+    install -o root -g wheel -m 644 ${SAMPLE_CONFIG_DIR}/osprints.conf \
+   				    ${CONFIG_FILE}
     echo
     echo "+---------------"
     echo "| The $1 configuration file has been installed at"
-    echo "| $CONFIG_FILE. Please view this file and change the configuration"
+    echo "| ${CONFIG_FILE}. Please view this file and change the configuration"
     echo "| to meet your needs."
     echo "+---------------"
     echo
@@ -50,7 +50,7 @@ case $2 in
 	: nothing to pre-install for this port
 	;;
     POST-INSTALL)
-	if [ ! -f $CONFIG_FILE ]; then
+	if [ ! -f ${CONFIG_FILE} ]; then
 	    do_install $1
 	else
 	    do_notice $1

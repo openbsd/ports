@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/24 06:48:03 jsyn Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/25 06:30:38 jsyn Exp $
 			
 COMMENT=		"passive network mapping tool"
 
 DISTNAME=		siphon-v.666
 PKGNAME=		siphon-0.666
 CATEGORIES=    		security net
-NEED_VERSION=		1.504
-
-HOMEPAGE=		http://www.gravitino.net/projects/siphon/
+NEED_VERSION=		1.515
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
@@ -16,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.gravitino.net/projects/siphon/ \
-			http://siphon.datanerds.net/ \
+MASTER_SITES=		http://siphon.datanerds.net/ \
 			${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/utilities
 
