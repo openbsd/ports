@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/11 17:14:51 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/19 08:11:29 sturm Exp $
 
 COMMENT=	"PDF presentation post processor"
 
 DISTNAME=	ppower4-0.9.4
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	print
 
 HOMEPAGE=	http://www-sp.iti.informatik.tu-darmstadt.de/software/ppower4/
@@ -33,7 +34,8 @@ DOCDIR=			${PREFIX}/share/texmf-local/doc/latex/ppower4
 JARDIR=			${PREFIX}/share/java
 STYDIR=			${PREFIX}/share/texmf-local/tex/latex/ppower4
 STYFILES=		${WRKDIR}/background.sty ${WRKDIR}/mpmulti.sty \
-			${WRKDIR}/pause.sty ${WRKDIR}/pp4link.sty
+			${WRKDIR}/pause.sty ${WRKDIR}/pp4link.sty \
+			${WRKDIR}/pp4slide.sty
 EXFILES=		${WRKDIR}/leveldemo.tex
 .for i in 1 2 3 4 5 6 7
 EXFILES+=		${WRKDIR}/example.${i}

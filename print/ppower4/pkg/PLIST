@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/11 17:14:51 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/07/19 08:11:30 sturm Exp $
 bin/ppower4
 share/java/pp4p.jar
 share/texmf-local/doc/latex/ppower4/example.1
@@ -14,6 +14,7 @@ share/texmf-local/tex/latex/ppower4/background.sty
 share/texmf-local/tex/latex/ppower4/mpmulti.sty
 share/texmf-local/tex/latex/ppower4/pause.sty
 share/texmf-local/tex/latex/ppower4/pp4link.sty
+share/texmf-local/tex/latex/ppower4/pp4slide.sty
 @dirrm share/texmf-local/tex/latex/ppower4
 @comment @dirrm share/texmf-local/tex/latex
 @comment @dirrm share/texmf-local/tex
