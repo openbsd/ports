@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/09 14:28:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/09 16:04:47 wilfried Exp $
 
 DISTNAME=		wmtz-0.6
 CATEGORIES=     	x11 x11/windowmaker
 NEED_VERSION=		1.359
 
-HOMEPAGE=		http://www.algonet.se/~jlin/wmtz/
+HOMEPAGE=		http://www.geocities.com/jl1n/wmtz/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
