@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/07/11 17:15:03 shell Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/12/25 12:57:29 naddy Exp $
 ${P5ARCH}/Crypt/SSLeay.pm
 ${P5ARCH}/Crypt/SSLeay/CTX.pm
 ${P5ARCH}/Crypt/SSLeay/Conn.pm
@@ -6,8 +6,15 @@ ${P5ARCH}/Crypt/SSLeay/Err.pm
 ${P5ARCH}/Crypt/SSLeay/MainContext.pm
 ${P5ARCH}/Crypt/SSLeay/X509.pm
 ${P5ARCH}/Net/SSL.pm
+@comment ${P5ARCH}/auto/Crypt/SSLeay/.packlist
 ${P5ARCH}/auto/Crypt/SSLeay/SSLeay.bs
 ${P5ARCH}/auto/Crypt/SSLeay/SSLeay.so
 man/man3p/Crypt::SSLeay.3p
+@dirrm man/man3p
 @dirrm ${P5ARCH}/auto/Crypt/SSLeay
+@dirrm ${P5ARCH}/auto/Crypt
+@dirrm ${P5ARCH}/auto
+@dirrm ${P5ARCH}/Net
 @dirrm ${P5ARCH}/Crypt/SSLeay
+@dirrm ${P5ARCH}/Crypt
+@dirrm ${P5ARCH}
