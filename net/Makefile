@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2003/02/20 20:39:55 couderc Exp $
+# $OpenBSD: Makefile,v 1.253 2003/02/21 13:04:43 sturm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -150,6 +150,7 @@
      SUBDIR += pfstat
      SUBDIR += plushs
      SUBDIR += pop3gwd
+     SUBDIR += pork
      SUBDIR += pptp
      SUBDIR += proxy-suite
      SUBDIR += pure-ftpd
