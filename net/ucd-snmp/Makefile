@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/01/05 09:19:44 danh Exp $
+# $OpenBSD: Makefile,v 1.24 2001/01/28 02:08:53 brad Exp $
 
 DISTNAME=	ucd-snmp-4.2
 CATEGORIES=     net
@@ -16,14 +16,14 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 
 CONFIGURE_STYLE= autoconf dest
-CONFIGURE_ENV+=	VERSION_INFO='42:0:0'
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		 --with-defaults --with-logfile='/var/log/snmpd' \
+CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS+= --with-defaults --with-logfile='/var/log/snmpd' \
 		 --with-persistent-directory='/var/ucd-snmp' \
 		 --with-libwrap='/usr' --with-openssl --with-zlib
+CONFIGURE_ENV=	VERSION_INFO='42:0:0'
 
 post-install:
-	-${STRIP} ${PREFIX}/bin/* ${PREFIX}/sbin/*
+	@strip ${PREFIX}/bin/* ${PREFIX}/sbin/*
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ucd-snmp
 	${INSTALL_DATA} ${WRKSRC}/README.snmpv3 ${PREFIX}/share/doc/ucd-snmp
