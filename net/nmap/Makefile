@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2001/06/02 16:24:27 bmc Exp $
+# $OpenBSD: Makefile,v 1.37 2001/06/05 11:27:56 bmc Exp $
 
 COMMENT=	"port scanning large networks"
 
-DISTNAME=	nmap-2.54BETA24
-PKGNAME=	nmap-2.54b24
+DISTNAME=	nmap-2.54BETA25
+PKGNAME=	nmap-2.54b25
 CATEGORIES=	net security
 NEED_VERSION=	1.413
 MASTER_SITES=	${HOMEPAGE}dist/
