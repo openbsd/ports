@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/06/22 02:04:32 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/11/19 12:34:12 kevlo Exp $
 bin/mgp
 bin/mgp2ps
 bin/mgpembed
@@ -13,8 +13,15 @@ lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.jpg
 lib/X11/mgp/mgp2.jpg
 lib/X11/mgp/mgp3.jpg
+man/cat1/mgp.0
+man/cat1/mgp2ps.0
+man/cat1/mgpembed.0
+man/cat1/mgpnet.0
+man/cat1/xwintoppm.0 
+man/man1/xmindpath.1
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
+share/doc/mgp/FAQ
 share/doc/mgp/README
 share/doc/mgp/README.fonts
 share/doc/mgp/README.fonts.jp
@@ -59,14 +66,8 @@ share/mgp/emacs/mgp.el
 share/mgp/emacs/mgp.sty
 share/mgp/emacs/sample.tex
 share/mgp/emacs/mgp-mode.el
-man/cat1/mgp.0
-man/cat1/mgp2ps.0
-man/cat1/mgpembed.0
-man/cat1/mgpnet.0
-man/cat1/xwintoppm.0 
-man/man1/xmindpath.1
-@dirrm lib/X11/mgp
-@dirrm share/doc/mgp/sample
-@dirrm share/doc/mgp
 @dirrm share/mgp/emacs
 @dirrm share/mgp
+@dirrm share/doc/mgp/sample
+@dirrm share/doc/mgp
+@dirrm lib/X11/mgp

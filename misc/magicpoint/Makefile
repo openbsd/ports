@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2001/10/15 11:36:01 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2001/11/19 12:34:07 kevlo Exp $
 
 COMMENT=	"X11-based presentation tool"
 
-DISTNAME=	magicpoint-1.08a
+DISTNAME=	magicpoint-1.09a
 CATEGORIES=	misc productivity
-NEED_VERSION=	1.474
+NEED_VERSION=	1.499
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 HOMEPAGE=	http://www.mew.org/mgp/
@@ -23,8 +23,19 @@ LIB_DEPENDS+=	ttf.1::print/freetype \
 
 MODULES=	gettext
 
+USE_X11=	Yes
 CONFIGURE_STYLE=gnu imake
 CONFIGURE_ARGS=	--disable-vflib
+
+FLAVORS=	gif
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgif}
+LIB_DEPENDS=	ungif.5::graphics/libungif
+CONFIGURE_ARGS+= --enable-gif
+.endif
+
+NO_REGRESS=	Yes
 
 post-configure:
 	@cd ${WRKSRC}/contrib/xmindpath && \
@@ -36,7 +47,7 @@ post-build:
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
-DOCS=	COPYRIGHT COPYRIGHT.jp README README.fonts README.fonts.jp \
+DOCS=	COPYRIGHT COPYRIGHT.jp FAQ README README.fonts README.fonts.jp \
 	README.lang SYNTAX TODO.jp USAGE USAGE.jp
 SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 		embed-jp.mgp embed.mgp gradation-jp.mgp \
@@ -71,5 +82,4 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/tex2eps.sh \
 		${PREFIX}/bin/tex2eps
 	
-
 .include <bsd.port.mk>
