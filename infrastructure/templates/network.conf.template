@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.6 2000/06/20 17:02:58 brad Exp $
+# $OpenBSD: network.conf.template,v 1.7 2000/06/21 14:02:06 naddy Exp $
 
 #
 #
@@ -11,20 +11,27 @@ _MASTER_SITE_OPENBSD?=	\
 	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/${DIST_SUBDIR}/ \
 	ftp://ftp.openbsd.org/pub/OpenBSD/licensed/${DIST_SUBDIR}/
 
-
 # Default FreeBSD backup site
 _MASTER_SITE_FREEBSD?=  \
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
 
+# Default NetBSD backup site
+_MASTER_SITE_NETBSD?=	\
+	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/${DIST_SUBDIR}/
+
 # Uncomment to retrieve from the OpenBSD sites only
 # MASTER_SITE_OPENBSD=Yes
 # Uncomment to retrieve from the FreeBSD sites only
-# MASTER_SITE_OPENBSD=Yes
+# MASTER_SITE_FREEBSD=Yes
+# Uncomment to retrieve from the NetBSD sites only
+# MASTER_SITE_NETBSD= Yes
 
 .if defined(MASTER_SITE_OPENBSD)
 MASTER_SITE_BACKUP= ${_MASTER_SITE_OPENBSD}
 .elsif defined(MASTER_SITE_FREEBSD)
 MASTER_SITE_BACKUP= ${_MASTER_SITE_FREEBSD}
+.elsif defined(MASTER_SITE_NETBSD)
+MASTER_SITE_BACKUP= ${_MASTER_SITE_NETBSD}
 .endif
 
 # default backup master site
@@ -83,6 +90,11 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
 	ftp://uiarchive.cso.uiuc.edu/pub/systems/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/
+
+MASTER_SITE_SOURCEFORGE+=	\
+	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	http://download.sourceforge.net/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
