@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2001/03/18 20:12:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2001/03/27 09:43:16 kevlo Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += wsoundserver:esd
      SUBDIR += xcd
      SUBDIR += xcdplayer
+     SBUDIR += xhippo
      SUBDIR += xmcd
      SUBDIR += xmix
      SUBDIR += xmmix
