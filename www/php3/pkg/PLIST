@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/06/20 20:29:49 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.6 2000/10/22 22:43:24 jakob Exp $
+@pkgcfl php4-*
 share/doc/php3/README
 share/doc/php3/appendixes.html
 share/doc/php3/calling-user-functions.html

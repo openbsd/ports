@@ -1,3 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/10/22 22:43:24 jakob Exp $
+@pkgcfl php3-*
 lib/libphp4.so
 sbin/php4-enable
 share/doc/php4/php.ini-dist
