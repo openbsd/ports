@@ -7,9 +7,9 @@ bin/findaffix
 bin/munchlist
 bin/icombine
 bin/unsq
-@unexec install-info --delete %D/info/ispell %D/info/dir
+@unexec install-info --delete %D/info/ispell.info %D/info/dir
 info/ispell.info
-@exec install-info %D/%F %D/info/dir
+@exec install-info %D/info/ispell.info %D/info/dir
 lib/americanmed+.hash
 lib/english.aff
 lib/american.hash
