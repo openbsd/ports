@@ -1,0 +1,210 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/27 18:01:50 alek Exp $
+@newgroup _cyrus:543
+@newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/var/empty:/sbin/nologin
+bin/imtest
+bin/lmtptest
+bin/mupdatetest
+bin/nntptest
+bin/pop3test
+bin/sivtest
+bin/smtptest
+include/cyrus/
+include/cyrus/acl.h
+include/cyrus/assert.h
+include/cyrus/auth.h
+include/cyrus/bsearch.h
+include/cyrus/charset.h
+include/cyrus/cyrusdb.h
+include/cyrus/glob.h
+include/cyrus/gmtoff.h
+include/cyrus/hash.h
+include/cyrus/imapopts.h
+include/cyrus/imapurl.h
+include/cyrus/imclient.h
+include/cyrus/imparse.h
+include/cyrus/iptostring.h
+include/cyrus/libconfig.h
+include/cyrus/libcyr_cfg.h
+include/cyrus/lock.h
+include/cyrus/lsort.h
+include/cyrus/map.h
+include/cyrus/mkgmtime.h
+include/cyrus/mpool.h
+include/cyrus/nonblock.h
+include/cyrus/parseaddr.h
+include/cyrus/prot.h
+include/cyrus/retry.h
+include/cyrus/rfc822date.h
+include/cyrus/strhash.h
+include/cyrus/strhash.o
+include/cyrus/stristr.h
+include/cyrus/sysexits.h
+include/cyrus/util.h
+include/cyrus/xmalloc.h
+lib/libcyrus.a
+lib/libcyrus_min.a
+libexec/cyrus-imapd/
+libexec/cyrus-imapd/arbitron
+libexec/cyrus-imapd/chk_cyrus
+libexec/cyrus-imapd/ctl_cyrusdb
+libexec/cyrus-imapd/ctl_deliver
+libexec/cyrus-imapd/ctl_mboxlist
+libexec/cyrus-imapd/cvt_cyrusdb
+libexec/cyrus-imapd/cyr_expire
+libexec/cyrus-imapd/cyrdump
+libexec/cyrus-imapd/deliver
+libexec/cyrus-imapd/fetchnews
+libexec/cyrus-imapd/fud
+libexec/cyrus-imapd/idled
+libexec/cyrus-imapd/imapd
+libexec/cyrus-imapd/ipurge
+libexec/cyrus-imapd/lmtpd
+libexec/cyrus-imapd/lmtpproxyd
+libexec/cyrus-imapd/master
+libexec/cyrus-imapd/mbexamine
+libexec/cyrus-imapd/mbpath
+libexec/cyrus-imapd/mupdate
+libexec/cyrus-imapd/nntpd
+libexec/cyrus-imapd/notifyd
+libexec/cyrus-imapd/pop3d
+libexec/cyrus-imapd/pop3proxyd
+libexec/cyrus-imapd/proxyd
+libexec/cyrus-imapd/quota
+libexec/cyrus-imapd/reconstruct
+libexec/cyrus-imapd/sievec
+libexec/cyrus-imapd/smmapd
+libexec/cyrus-imapd/squatter
+libexec/cyrus-imapd/timsieved
+libexec/cyrus-imapd/tls_prune
+@man man/man1/imtest.1
+@man man/man1/lmtptest.1
+@man man/man1/mupdatetest.1
+@man man/man1/nntptest.1
+@man man/man1/pop3test.1
+@man man/man1/sivtest.1
+@man man/man1/smtptest.1
+@man man/man3/imclient.3
+@man man/man5/cyrus.conf.5
+@man man/man5/imapd.conf.5
+@man man/man5/krb.equiv.5
+@man man/man8/arbitron.8
+@man man/man8/chk_cyrus.8
+@man man/man8/ctl_cyrusdb.8
+@man man/man8/ctl_deliver.8
+@man man/man8/ctl_mboxlist.8
+@man man/man8/cvt_cyrusdb.8
+@man man/man8/cyr_expire.8
+@man man/man8/cyrus-fetchnews.8
+@man man/man8/cyrus-idled.8
+@man man/man8/cyrus-imapd.8
+@man man/man8/cyrus-master.8
+@man man/man8/deliver.8
+@comment man man/man8/fetchnews.8
+@man man/man8/fud.8
+@comment man man/man8/idled.8
+@comment man man/man8/imapd.8
+@man man/man8/ipurge.8
+@man man/man8/lmtpd.8
+@comment man man/man8/master.8
+@man man/man8/mbexamine.8
+@man man/man8/mbpath.8
+@man man/man8/nntpd.8
+@man man/man8/notifyd.8
+@man man/man8/pop3d.8
+@man man/man8/quota.8
+@man man/man8/reconstruct.8
+@man man/man8/rmnews.8
+@man man/man8/smmapd.8
+@man man/man8/squatter.8
+@man man/man8/syncnews.8
+@man man/man8/timsieved.8
+@man man/man8/tls_prune.8
+share/doc/cyrus-imapd/
+share/doc/cyrus-imapd/COPYRIGHT
+share/doc/cyrus-imapd/text/
+@comment share/doc/cyrus-imapd/text/.cvsignore
+@comment share/doc/cyrus-imapd/text/CVS/
+@comment share/doc/cyrus-imapd/text/CVS/Entries
+@comment share/doc/cyrus-imapd/text/CVS/Repository
+@comment share/doc/cyrus-imapd/text/CVS/Root
+@comment share/doc/cyrus-imapd/text/Makefile
+share/doc/cyrus-imapd/text/altnamespace
+share/doc/cyrus-imapd/text/anoncvs
+share/doc/cyrus-imapd/text/bugs
+share/doc/cyrus-imapd/text/changes
+share/doc/cyrus-imapd/text/faq
+share/doc/cyrus-imapd/text/feedback
+@comment share/doc/cyrus-imapd/text/htmlstrip.c
+share/doc/cyrus-imapd/text/index
+share/doc/cyrus-imapd/text/install
+share/doc/cyrus-imapd/text/install-admin-mb
+share/doc/cyrus-imapd/text/install-auth
+share/doc/cyrus-imapd/text/install-compile
+share/doc/cyrus-imapd/text/install-configure
+share/doc/cyrus-imapd/text/install-murder
+share/doc/cyrus-imapd/text/install-netnews
+share/doc/cyrus-imapd/text/install-perf
+share/doc/cyrus-imapd/text/install-prereq
+share/doc/cyrus-imapd/text/install-sieve
+share/doc/cyrus-imapd/text/install-snmpmon
+share/doc/cyrus-imapd/text/install-testing
+share/doc/cyrus-imapd/text/install-upgrade
+share/doc/cyrus-imapd/text/install-virtdomains
+share/doc/cyrus-imapd/text/mailing-list
+share/doc/cyrus-imapd/text/man
+share/doc/cyrus-imapd/text/notes
+share/doc/cyrus-imapd/text/os
+share/doc/cyrus-imapd/text/overview
+share/doc/cyrus-imapd/text/questions
+share/doc/cyrus-imapd/text/readme
+share/doc/cyrus-imapd/text/sieve
+share/doc/cyrus-imapd/text/sieve-protocol
+share/doc/cyrus-imapd/text/specs
+share/examples/cyrus-imapd/
+share/examples/cyrus-imapd/cmu-backend.conf
+share/examples/cyrus-imapd/cmu-frontend.conf
+share/examples/cyrus-imapd/imapd.conf
+@sample ${SYSCONFDIR}/imapd.conf
+share/examples/cyrus-imapd/normal.conf
+@sample ${SYSCONFDIR}/cyrus.conf
+share/examples/cyrus-imapd/prefork.conf
+share/examples/cyrus-imapd/small.conf
+share/examples/cyrus-imapd/tools/
+@comment share/examples/cyrus-imapd/tools/CVS/
+@comment share/examples/cyrus-imapd/tools/CVS/Entries
+@comment share/examples/cyrus-imapd/tools/CVS/Repository
+@comment share/examples/cyrus-imapd/tools/CVS/Root
+@comment share/examples/cyrus-imapd/tools/arbitronsort.pl
+@comment share/examples/cyrus-imapd/tools/config2header
+@comment share/examples/cyrus-imapd/tools/config2man
+share/examples/cyrus-imapd/tools/convert-sieve.pl
+share/examples/cyrus-imapd/tools/dohash
+share/examples/cyrus-imapd/tools/masssievec
+share/examples/cyrus-imapd/tools/mkimap
+share/examples/cyrus-imapd/tools/mknewsgroups
+@comment share/examples/cyrus-imapd/tools/mupdate-loadgen.pl
+@comment share/examples/cyrus-imapd/tools/not-mkdep
+share/examples/cyrus-imapd/tools/rehash
+share/examples/cyrus-imapd/tools/translatesieve
+share/examples/cyrus-imapd/tools/undohash
+share/examples/cyrus-imapd/tools/upgradesieve
+@mode 750
+@owner _cyrus
+@group _cyrus
+@sample /var/imap/
+@mode 755
+@sample /var/imap/proc/
+@sample /var/imap/db/
+@sample /var/imap/socket/
+@sample /var/imap/log/
+@sample /var/imap/msg/
+@sample /var/imap/ptclient/
+@mode 750
+@sample /var/spool/imap/
+@mode 755
+@sample /var/spool/imap/stage./
+@mode 750
+@sample /var/sieve/
+@extraunexec rm -rf /var/imap/*
+@extraunexec rm -rf /var/spool/imap/*
+@extraunexec rm -rf /var/sieve/*

@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST-perl,v 1.1.1.1 2005/03/27 18:01:50 alek Exp $
+bin/cyradm
+bin/installsieve
+bin/sieveshell
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.8.6/perllocal.pod
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/Admin.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/IMSP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/Shell.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/SIEVE/managesieve.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/IMAP/IMAP.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
+@man man/man1/cyradm.1
+@man man/man1/installsieve.1
+@man man/man1/sieveshell.1
+@man man/man3p/Cyrus::IMAP.3p
+@man man/man3p/Cyrus::IMAP::Admin.3p
+@man man/man3p/Cyrus::IMAP::IMSP.3p
+@man man/man3p/Cyrus::IMAP::Shell.3p
+@man man/man3p/Cyrus::SIEVE::managesieve.3p

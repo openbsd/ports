@@ -1,0 +1,22 @@
+--- imap/Makefile.in.old	Sun May 23 19:27:09 2004
++++ imap/Makefile.in	Sun May 23 19:28:04 2004
+@@ -61,7 +61,7 @@
+ CYRUS_USER=@cyrus_user@
+ CYRUS_GROUP=@cyrus_group@
+ 
+-DEFS = @DEFS@ @LOCALDEFS@
++DEFS = @DEFS@ @LOCALDEFS@ -DDRAC_AUTH
+ CPPFLAGS = -I.. -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @SIEVE_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
+ IMAP_LIBS = @IMAP_LIBS@ @LIB_RT@
+ SIEVE_OBJS = @SIEVE_OBJS@
+@@ -68,8 +68,8 @@
+ SIEVE_LIBS = @SIEVE_LIBS@
+ IMAP_COM_ERR_LIBS = @IMAP_COM_ERR_LIBS@
+ LIB_WRAP = @LIB_WRAP@
+-DRAC_LIBS = @DRACLIBS@
+-LIBS = $(IMAP_LIBS) $(IMAP_COM_ERR_LIBS)
++DRAC_LIBS = -L${LOCALBASE}/lib
++LIBS = $(IMAP_LIBS) $(IMAP_COM_ERR_LIBS) -ldrac
+ DEPLIBS = ../lib/libcyrus.a ../lib/libcyrus_min.a @DEPLIBS@
+ 
+ CFLAGS = @CFLAGS@

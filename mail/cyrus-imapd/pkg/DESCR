@@ -1,0 +1,28 @@
+The Cyrus IMAP server differs from other IMAP server implementations in
+that it is generally intended to be run on sealed servers, where normal
+users are not permitted to log in. The mailbox database is stored in
+parts of the filesystem that are private to the Cyrus IMAP system. All
+user access to mail is through the IMAP, POP3, or KPOP protocols.
+
+The private mailbox database design gives the server large advantages in
+efficiency, scalability, and administratability. Multiple concurrent
+read/write connections to the same mailbox are permitted. The server
+supports access control lists on mailboxes and storage quotas on mailbox
+hierarchies.
+
+Because of cyrus-imapd+OpenBSD mmap uncompatibility, the server runs in
+compat mode incuring a performance penalty under high load.
+
+Following man pages have been renamed to avoid conflicts with other
+packages:
+    fetchnews(8) -> cyrus-fetchnews(8) # conflict with news/leafnode
+    idled(8)     -> cyrus-idled(8)     # conflict with sysutils/idled
+    master(8)    -> cyrus-master(8)    # conflict with mail/postfix
+    imapd(8)     -> cyrus-imapd(8)     # conflict with mail/courier-imap
+
+Cyrus-imapd uses the LOG_LOCAL6 syslog facility for logging. This port
+of cyrus-imapd uses idled for IMAP IDLE.
+
+Available flavors:
+    drac     - Build drac support (for roaming users relay)
+    kerberos - Build support for KerberosV authentication
