@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2003/12/04 15:01:38 wilfried Exp $
+# $OpenBSD: Makefile,v 1.63 2004/01/18 10:48:38 wilfried Exp $
 
 ONLY_FOR_ARCHS= alpha i386 sparc sparc64
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
 
-VER=		1.6a
+VER=		1.6
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2
@@ -38,7 +38,8 @@ RUN_DEPENDS=	::www/mozilla
 MODULES=	gcc3
 MODGCC3_ARCHES=	alpha sparc64 powerpc
 MODGCC3_LANGS=	C++
-BUILD_DEPENDS=	:zip->=2.3:archivers/zip
+BUILD_DEPENDS=	:zip->=2.3:archivers/zip \
+		:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
@@ -57,6 +58,8 @@ CONFIGURE_ARGS=					\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
+		--enable-xft			\
+		--enable-optimize=-O2		\
 		--enable-crypto			\
 		--enable-extensions=default	\
 		--disable-pedantic		\
@@ -65,6 +68,7 @@ CONFIGURE_ARGS=					\
 		--disable-ldap
 
 CFLAGS+=	-fno-stack-protector
+CONFIGURE_ENV=	PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin"
 
 MOB=		${WRKSRC}/dist

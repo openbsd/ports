@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.4 2003/12/15 19:46:16 naddy Exp $
+@comment $OpenBSD: PLIST-devel,v 1.5 2004/01/18 10:48:38 wilfried Exp $
 lib/pkgconfig/mozilla-gtkmozembed.pc
 lib/pkgconfig/mozilla-js.pc
 lib/pkgconfig/mozilla-nspr.pc
@@ -581,7 +581,6 @@ mozilla/include/gfx/gfxtypes.h
 mozilla/include/gfx/nsColor.h
 mozilla/include/gfx/nsColorNameList.h
 mozilla/include/gfx/nsColorNames.h
-mozilla/include/gfx/nsCompressedCharMap.h
 mozilla/include/gfx/nsCoord.h
 mozilla/include/gfx/nsDeviceContext.h
 mozilla/include/gfx/nsFont.h
@@ -948,7 +947,6 @@ mozilla/include/msgbase/msgCore.h
 mozilla/include/msgbase/nsCopyMessageStreamListener.h
 mozilla/include/msgbase/nsICopyMessageListener.h
 mozilla/include/msgbase/nsICopyMsgStreamListener.h
-mozilla/include/msgbase/nsIFolder.h
 mozilla/include/msgbase/nsIFolderListener.h
 mozilla/include/msgbase/nsIIncomingServerListener.h
 mozilla/include/msgbase/nsIMessenger.h
@@ -1047,7 +1045,6 @@ mozilla/include/msgbase/nsUrlListenerManager.h
 mozilla/include/msgbaseutil/nsAdapterEnumerator.h
 mozilla/include/msgbaseutil/nsLocalFolderSummarySpec.h
 mozilla/include/msgbaseutil/nsMsgDBFolder.h
-mozilla/include/msgbaseutil/nsMsgFolder.h
 mozilla/include/msgbaseutil/nsMsgGroupRecord.h
 mozilla/include/msgbaseutil/nsMsgI18N.h
 mozilla/include/msgbaseutil/nsMsgIdentity.h
@@ -1168,6 +1165,7 @@ mozilla/include/msglocal/nsIMsgParseMailMsgState.h
 mozilla/include/msglocal/nsINoIncomingServer.h
 mozilla/include/msglocal/nsINoneService.h
 mozilla/include/msglocal/nsIPop3IncomingServer.h
+mozilla/include/msglocal/nsIPop3Protocol.h
 mozilla/include/msglocal/nsIPop3Service.h
 mozilla/include/msglocal/nsIPop3Sink.h
 mozilla/include/msglocal/nsIPop3URL.h
@@ -1223,11 +1221,11 @@ mozilla/include/necko/ftpCore.h
 mozilla/include/necko/mozITXTToHTMLConv.h
 mozilla/include/necko/necko-config.h
 mozilla/include/necko/netCore.h
-mozilla/include/necko/nsCCookieManager.h
 mozilla/include/necko/nsCPasswordManager.h
 mozilla/include/necko/nsCPasswordManagerInternal.h
 mozilla/include/necko/nsIAboutModule.h
 mozilla/include/necko/nsIAsyncStreamCopier.h
+mozilla/include/necko/nsIAuthModule.h
 mozilla/include/necko/nsIAuthPrompt.h
 mozilla/include/necko/nsIBufferedStreams.h
 mozilla/include/necko/nsIByteRangeRequest.h
@@ -1296,6 +1294,7 @@ mozilla/include/necko/nsISSLSocketProvider.h
 mozilla/include/necko/nsISecretDecoderRing.h
 mozilla/include/necko/nsISecureBrowserUI.h
 mozilla/include/necko/nsISecurityEventSink.h
+mozilla/include/necko/nsIServerSocket.h
 mozilla/include/necko/nsISimpleStreamListener.h
 mozilla/include/necko/nsISocketProvider.h
 mozilla/include/necko/nsISocketProviderService.h
@@ -1586,6 +1585,7 @@ mozilla/include/profile/nsIProfile.h
 mozilla/include/profile/nsIProfileChangeStatus.h
 mozilla/include/profile/nsIProfileInternal.h
 mozilla/include/profile/nsIProfileStartupListener.h
+mozilla/include/profile/nsISessionRoaming.h
 mozilla/include/profilesharingsetup/nsIProfileSharingSetup.h
 mozilla/include/progressDlg/nsIProgressDialog.h
 mozilla/include/rdf/nsILocalStore.h
@@ -1693,6 +1693,7 @@ mozilla/include/ucvlatin/nsUCvLatinCID.h
 mozilla/include/ucvmath/nsUCvMathCID.h
 mozilla/include/ucvtw/nsUCvTWCID.h
 mozilla/include/ucvtw2/nsUCvTW2CID.h
+mozilla/include/unicharutil/nsCompressedCharMap.h
 mozilla/include/unicharutil/nsHankakuToZenkakuCID.h
 mozilla/include/unicharutil/nsICaseConversion.h
 mozilla/include/unicharutil/nsIEntityConverter.h
@@ -1726,9 +1727,7 @@ mozilla/include/view/nsIViewManager.h
 mozilla/include/view/nsIViewObserver.h
 mozilla/include/view/nsViewsCID.h
 mozilla/include/wallet/nsCPassword.h
-mozilla/include/wallet/nsIKeyedStreamGenerator.h
 mozilla/include/wallet/nsIPassword.h
-mozilla/include/wallet/nsIPasswordSink.h
 mozilla/include/wallet/nsIWalletService.h
 mozilla/include/walletviewers/nsISignonViewer.h
 mozilla/include/walletviewers/nsIWalletEditor.h
@@ -1808,6 +1807,7 @@ mozilla/include/widget/nsIDragService.h
 mozilla/include/widget/nsIDragSession.h
 mozilla/include/widget/nsIDragSessionGTK.h
 mozilla/include/widget/nsIDragSessionMac.h
+mozilla/include/widget/nsIDragSessionOS2.h
 mozilla/include/widget/nsIDragSessionXlib.h
 mozilla/include/widget/nsIEventListener.h
 mozilla/include/widget/nsIFilePicker.h
@@ -2238,8 +2238,8 @@ mozilla/lib/libstring_obsolete_s.a
 mozilla/lib/libstring_s.a
 mozilla/lib/libstrres_s.a
 mozilla/lib/libswfci.a
-mozilla/lib/libtransmngr_s.a
-mozilla/lib/libtransmngrcom_s.a
+mozilla/lib/libtransmgr_s.a
+mozilla/lib/libtransmgrcom_s.a
 mozilla/lib/libtxtsvc_s.a
 mozilla/lib/libucharucomp_s.a
 mozilla/lib/libucnative_s.a

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2003/12/15 19:46:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.25 2004/01/18 10:48:38 wilfried Exp $
 bin/mozilla
 mozilla/LICENSE
 mozilla/chrome/US.jar
@@ -276,6 +276,7 @@ mozilla/res/entityTables/html40Symbols.properties
 mozilla/res/entityTables/htmlEntityVersions.properties
 mozilla/res/entityTables/mathml20.properties
 mozilla/res/entityTables/transliterate.properties
+mozilla/res/fonts/fontEncoding.properties
 mozilla/res/fonts/mathfont.properties
 mozilla/res/fonts/mathfontCMEX10.properties
 mozilla/res/fonts/mathfontCMSY10.properties
@@ -434,14 +435,14 @@ mozilla/res/unixcharset.properties
 mozilla/res/viewer.properties
 mozilla/res/viewsource.css
 mozilla/run-mozilla.sh
-mozilla/searchplugins/NetscapeSearch.gif
-mozilla/searchplugins/NetscapeSearch.src
 mozilla/searchplugins/bugzilla.gif
 mozilla/searchplugins/bugzilla.src
 mozilla/searchplugins/dmoz.gif
 mozilla/searchplugins/dmoz.src
 mozilla/searchplugins/google.gif
 mozilla/searchplugins/google.src
+mozilla/searchplugins/jeeves.gif
+mozilla/searchplugins/jeeves.src
 mozilla/searchplugins/lxrmozilla.gif
 mozilla/searchplugins/lxrmozilla.src
 mozilla/searchplugins/mozilla.gif
