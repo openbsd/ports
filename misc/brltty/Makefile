@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/06/21 18:21:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/02 16:08:24 naddy Exp $
 
 COMMENT=	"access software for a blind person using a braille terminal"
 
@@ -21,6 +21,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
 		--with-data-directory=${LOCALBASE}/share/brltty \
 		--without-flite
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
 NO_REGRESS=	Yes
 SEPARATE_BUILD=	simple

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/04/18 06:41:11 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2004/08/02 16:08:24 naddy Exp $
 
 COMMENT=		"free Norton Commander clone with many useful features"
 
@@ -25,5 +25,6 @@ RUN_DEPENDS=		:unzip-*:archivers/unzip \
 CONFIGURE_STYLE=	gnu	
 CONFIGURE_ARGS=		--with-vfs --without-mcfs --enable-charset
 CONFIGURE_ENV=		LOCALBASE=${LOCALBASE}
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 .include <bsd.port.mk>

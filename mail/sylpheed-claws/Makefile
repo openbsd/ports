@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/04 07:39:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/08/02 16:08:24 naddy Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"Dillo plugin for sylpheed-claws"
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=		--enable-ipv6 --enable-openssl \
 			--enable-dillo-viewer-plugin
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 FLAVORS=		compface gpgme jpilot ldap pixbuf
 FLAVOR?=

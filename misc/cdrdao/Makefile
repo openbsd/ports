@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/11/08 15:35:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2004/08/02 16:08:24 naddy Exp $
 
 COMMENT=	"write audio/data CD-Rs in disk-at-once mode"
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu dest
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/paranoia ${WRKSRC}/scsilib/conf
 CONFIGURE_ARGS+=	--with-posix-threads=no --without-lame \
 			--with-gtkmm-prefix=/nonexistent
 MAKE_ENV=		CCOM="${CC}"

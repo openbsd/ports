@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/05/06 14:39:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.11 2004/08/02 16:08:23 naddy Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64 amd64
 
@@ -40,6 +40,10 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS=	Yes
+
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build/autoconf \
+				${WRKSRC}/nsprpub/build/autoconf \
+				${WRKSRC}/directory/c-sdk/config/autoconf
 
 AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf no-autoheader
