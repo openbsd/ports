@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/11/01 08:27:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/01/01 21:53:49 pvalchev Exp $
 
 COMMENT=	"usb access library"
 
-VERSION=	0.1.3b
+VERSION=	0.1.4
 DISTNAME=	libusb-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.475
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://libusb.sourceforge.net/
 

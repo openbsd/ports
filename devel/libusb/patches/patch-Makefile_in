@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2001/08/20 06:23:00 pvalchev Exp $
---- Makefile.in.orig	Sat Jan 13 13:18:06 2001
-+++ Makefile.in	Sun Aug 19 23:46:10 2001
-@@ -108,7 +108,7 @@ libusb_la_SOURCES = usb.c usbi.h error.c
+$OpenBSD: patch-Makefile_in,v 1.2 2002/01/01 21:53:49 pvalchev Exp $
+--- Makefile.in.orig	Mon Oct 29 09:41:50 2001
++++ Makefile.in	Mon Dec 31 18:00:18 2001
+@@ -112,7 +112,7 @@ libusb_la_SOURCES = usb.c usbi.h error.c
  
  include_HEADERS = usb.h
  
