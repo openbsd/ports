@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_reload1_c,v 1.1 2002/06/09 00:34:37 espie Exp $
+--- gcc/reload1.c.orig	Mon Apr 29 23:22:47 2002
++++ gcc/reload1.c	Sat Jun  8 18:08:09 2002
+@@ -7160,8 +7160,7 @@ emit_reload_insns (chain)
+ 		    for (k = 1; k < nnr; k++)
+ 		      reg_last_reload_reg[nregno + k]
+ 			= (nr == nnr
+-			   ? gen_rtx_REG (reg_raw_mode[REGNO (rld[r].reg_rtx) + k],
+-					  REGNO (rld[r].reg_rtx) + k)
++			   ? regno_reg_rtx[REGNO (rld[r].reg_rtx) + k]
+ 			   : 0);
+ 
+ 		  /* Now do the inverse operation.  */
+@@ -7210,8 +7209,7 @@ emit_reload_insns (chain)
+ 		    for (k = 1; k < nnr; k++)
+ 		      reg_last_reload_reg[nregno + k]
+ 			= (nr == nnr
+-			   ? gen_rtx_REG (reg_raw_mode[REGNO (rld[r].reg_rtx) + k],
+-					  REGNO (rld[r].reg_rtx) + k)
++			   ? regno_reg_rtx[REGNO (rld[r].reg_rtx) + k]
+ 			   : 0);
+ 
+ 		  /* Unless we inherited this reload, show we haven't

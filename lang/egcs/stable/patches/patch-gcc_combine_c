@@ -1,0 +1,30 @@
+$OpenBSD: patch-gcc_combine_c,v 1.1 2002/06/09 00:34:37 espie Exp $
+--- gcc/combine.c.orig	Tue Apr 30 02:42:48 2002
++++ gcc/combine.c	Sat Jun  8 18:09:17 2002
+@@ -11927,7 +11927,7 @@ move_deaths (x, maybe_kill_insn, from_cu
+ 		if (i < regno || i >= ourend)
+ 		  REG_NOTES (where_dead)
+ 		    = gen_rtx_EXPR_LIST (REG_DEAD,
+-					 gen_rtx_REG (reg_raw_mode[i], i),
++					 regno_reg_rtx[i],
+ 					 REG_NOTES (where_dead));
+ 	    }
+ 
+@@ -11954,7 +11954,7 @@ move_deaths (x, maybe_kill_insn, from_cu
+ 		offset = 1;
+ 
+ 	      for (i = regno + offset; i < ourend; i++)
+-		move_deaths (gen_rtx_REG (reg_raw_mode[i], i),
++		move_deaths (regno_reg_rtx[i],
+ 			     maybe_kill_insn, from_cuid, to_insn, &oldnotes);
+ 	    }
+ 
+@@ -12576,7 +12576,7 @@ distribute_notes (notes, from_insn, i3, 
+ 		      for (i = regno; i < endregno;
+ 			   i += HARD_REGNO_NREGS (i, reg_raw_mode[i]))
+ 			{
+-			  rtx piece = gen_rtx_REG (reg_raw_mode[i], i);
++			  rtx piece = regno_reg_rtx[i];
+ 			  basic_block bb = BASIC_BLOCK (this_basic_block);
+ 
+ 			  if (! dead_or_set_p (place, piece)
