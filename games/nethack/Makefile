@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/30 14:28:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/04/09 10:59:40 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-NHDIR=	${DESTDIR}${PREFIX}/lib/nethackdir
+NHDIR=	${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
 FLAVORS=no_x11 qt
@@ -42,7 +42,7 @@ NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
 .endif
 
-RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt::games/hackdata
+RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt:hackdata-*:games/hackdata
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/03/22 22:06:37 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/04/09 10:59:41 espie Exp $
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-NHDIR=	${DESTDIR}${PREFIX}/lib/slashdir
+NHDIR=	${PREFIX}/lib/slashdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
 FLAVORS=no_x11
@@ -39,7 +39,7 @@ NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
 .endif
 
-RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt::games/hackdata
+RUN_DEPENDS=${LOCALBASE}/share/doc/nethack/Guidebook.txt:hackdata-*:games/hackdata
 
 post-extract:
 	@cd ${WRKDIR} && mv nethack-3.2.2 ${DISTNAME}
