@@ -22,7 +22,7 @@ info/exim_filter.info
 @exec install-info --section="Exim" --entry "* Overview: (exim_overview).    Overview of the Exim system" %D/info/exim_overview.info %D/info/dir
 @exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/info/exim.info %D/info/dir
 @exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
-@exec [ -d /etc/exim ] || install -d /etc/exim
+@exec [ -d /etc/exim ] || mkdir /etc/exim
 @cwd /etc/exim
 configure.sample
 @exec [ -f %D/configure ] || install -m 644 %D/configure.sample %D/configure

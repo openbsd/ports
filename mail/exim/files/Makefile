@@ -293,6 +293,15 @@ EXIM_PERL=perl.o
 # EXIM_GID above, then that uid and gid must be able to create files in the
 # directory you have specified.
 
+# You can also configure Exim to use syslog, instead of or as well as log
+# files, by settings such as these
+
+# LOG_FILE_PATH=syslog
+# LOG_FILE_PATH=syslog:/var/log/exim_%slog
+
+# Do not include white space in such a setting as it messes up the building
+# process.
+
 # You do not have to define the log file path here; an option in the runtime
 # configuration file can also set it, and that overrides any setting here.
 # However, it is recommended that you set it here if it is a fixed path, so
@@ -331,15 +340,16 @@ LOOKUP_CDB=yes
 # LOOKUP_MYSQL=yes
 LOOKUP_NIS=yes
 # LOOKUP_NISPLUS=yes
+# LOOKUP_PGSQL=yes
 
 # Additional libraries and include directories may be required for some
-# lookup styles, e.g. LDAP or MYSQL. LOOKUP_LIBS is included only on the
-# command for linking Exim itself, not on any auxiliary programs. You
+# lookup styles, e.g. LDAP, MYSQL or PGSQL. LOOKUP_LIBS is included only on
+# the command for linking Exim itself, not on any auxiliary programs. You
 # don't need to set LOOKUP_INCLUDE if the relevant directories are already
 # specified in INCLUDE.
 
-# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include
-# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient
+# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
+# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq
 
 # If you have set LDAP=yes, you should set LDAP_LIB_TYPE to indicate which LDAP
 # library you have. Unfortunately, though most of their functions are the

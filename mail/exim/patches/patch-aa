@@ -1,0 +1,19 @@
+--- src/transports/appendfile.c.orig	Sat Apr 22 12:20:32 2000
++++ src/transports/appendfile.c	Sat Apr 22 13:20:23 2000
+@@ -2330,9 +2330,16 @@
+ #ifdef SUPPORT_MBX
+ if (yield == OK && ob->mbx_format)
+   {
++#if OpenBSD
++  char tempbuf[] = "/tmp/exim.XXXXXXXXXX";
++
++  tempname = tempbuf;
++  if ((temp_fd = mkstemp(tempname)) == -1 || unlink(tempname) < 0)
++#else
+   tempname = tmpnam(NULL);
+   if ((temp_fd = open(tempname, (O_RDWR|O_CREAT|O_TRUNC), 0600)) < 0 ||
+       unlink(tempname) < 0)
++#endif
+     {
+     addr->basic_errno = errno;
+     addr->message = string_sprintf("while setting up temporary file %s",
