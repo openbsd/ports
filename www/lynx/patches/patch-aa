@@ -12,7 +12,7 @@
   	@echo "ptx        -- for Sequent's DYNIX/ptx, version 4, (current version)"
 ***************
 *** 987,992 ****
---- 988,1002 ----
+--- 988,1001 ----
   		LIBS="-L/usr/local/lib -lncurses \
   		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
   		WWWLIB="../WWW/Library/next/libwww.a"
@@ -20,8 +20,7 @@
 + openbsd:
 + 	cd WWW/Library/netbsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
 + 	cd src; $(MAKE) all CC="cc" MCFLAGS="-O -DFANCY_CURSES -DNCURSES \
-+ 		-DUNIX -DNO_CUSERID -I../$(WWWINC) $(SITE_DEFS) \
-+ 		-I/usr/include/ncurses" \
++ 		-DNCURSESHEADER -DUNIX -DNO_CUSERID -I../$(WWWINC) $(SITE_DEFS)" \
 + 		LIBS="-lcurses -ltermlib -lcompat \
 + 		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
 + 		WWWLIB="../WWW/Library/netbsd/libwww.a"
