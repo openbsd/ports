@@ -1,6 +1,6 @@
---- capture.c.orig	Thu Aug  5 12:15:47 1999
-+++ capture.c	Thu Aug  5 19:40:35 1999
-@@ -671,6 +671,8 @@
+--- capture.c.orig	Tue Aug 10 16:13:21 1999
++++ capture.c	Thu Aug 12 20:41:55 1999
+@@ -669,6 +669,8 @@
      case DLT_PPP :
        capture_ppp(pd, phdr->caplen, &ld->counts);
        break;

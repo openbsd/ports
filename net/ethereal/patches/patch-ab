@@ -1,20 +1,20 @@
---- ethereal.c.orig	Thu Aug  5 19:06:46 1999
-+++ ethereal.c	Thu Aug  5 19:08:23 1999
-@@ -230,8 +230,21 @@
+--- ethereal.c.orig	Tue Aug 10 16:05:38 1999
++++ ethereal.c	Thu Aug 12 21:15:23 1999
+@@ -234,8 +234,21 @@
  	    gtk_entry_set_text(GTK_ENTRY(filter_te), cf.dfilter);
      /* Run the display filter so it goes in effect. Also we set
         data_out_file which tells the tcp code to output the data */
 +#if defined(__OpenBSD__)
-+    {
-+      int tmp_fd;
++     {
++       int tmp_fd;
 +
-+      snprintf( "%sXXXXXXXXXX", sizeof filename1, P_tmpdir );
-+      tmp_fd = mkstemp( filename1 );
-+      if ( tmp_fd == -1 ) {
-+       err( 1, "can't create temp file %s", filename1 );
-+      }
-+      data_out_file = fdopen( tmp_fd, "a" );
-+    }
++       snprintf( "%sXXXXXXXXXX", sizeof filename1, P_tmpdir );
++       tmp_fd = mkstemp( filename1 );
++       if ( tmp_fd == -1 ) {
++	err( 1, "can't create temp file %s", filename1 );
++       }
++       data_out_file = fdopen( tmp_fd, "a" );
++     }
 +#else
      strcpy( filename1, tmpnam(NULL) );
      data_out_file = fopen( filename1, "a" );

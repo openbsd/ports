@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Aug 12 12:52:11 1999
++++ Makefile.in	Thu Aug 12 12:52:51 1999
+@@ -667,7 +667,7 @@
+ 	make ../ethereal.1 )
+ 
+ dfilter-scanner.c : dfilter-scanner.l
+-	$(LEX) -Pdfilter_ -t dfilter-scanner.l > dfilter-scanner.c
++	$(LEX) -Pdfilter_ -t $(srcdir)/dfilter-scanner.l > dfilter-scanner.c
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

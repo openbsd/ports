@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 1999/08/05 23:43:51 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/08/13 02:12:28 brad Exp $
 
-DISTNAME=	ethereal-0.7.1
+DISTNAME=	ethereal-0.7.2
 CATEGORIES=	net x11
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/ \
@@ -14,6 +14,7 @@ LIB_DEPENDS=	glib.1.2:${PORTSDIR}/devel/glib \
 
 USE_X11=	yes
 SYSCONFDIR=	${PREFIX}/share/ethereal
+SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config"
