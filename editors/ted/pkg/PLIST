@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/18 15:02:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/07/13 13:28:28 espie Exp $
 bin/Ted
 lib/X11/app-defaults/Ted
 share/Ted/afm/Courier-Bold.afm
@@ -19,3 +19,4 @@ share/doc/Ted/TedDocument.rtf
 @exec mkdir -p %D/share/Ted/ind
 @dirrm share/Ted/ind
 @dirrm share/Ted/afm
+@dirrm share/Ted
