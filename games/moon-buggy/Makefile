@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/21 01:18:07 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/11/14 10:31:08 alek Exp $
 
 COMMENT=	"drive some car across the moon"
 
 DISTNAME=	moon-buggy-0.5.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=    	games	
 HOMEPAGE=	http://hangout.de/moon-buggy/
 
