@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/02/28 21:40:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/04/10 14:01:20 espie Exp $
 
 DISTNAME=	stel
 CATEGORIES=	security
@@ -6,8 +6,6 @@ NEED_VERSION=	1.210
 MASTER_SITES=	ftp://ftp.ox.ac.uk/pub/crypto/misc/ \
 		ftp://ftp.mupad.de/pub/crypto/misc/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/stel/
-
-MAINTAINER=	Christopher Turan <turan@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
