@@ -1,5 +1,5 @@
 --- tools/Makefile.in.orig	Mon Dec 20 18:46:11 1999
-+++ tools/Makefile.in	Sat Jan  1 16:15:04 2000
++++ tools/Makefile.in	Sun Jan 23 16:02:08 2000
 @@ -43,17 +43,16 @@
  INSTALL	= @INSTALL@
  #
@@ -28,7 +28,7 @@
 -	${INSTALL} -idb nostrip tiff.sw.tools -m 755 -dir @DIR_BIN@
 -	${INSTALL} -idb nostrip tiff.sw.tools -m 755 -F @DIR_BIN@ -O ${TARGETS}
 +	${INSTALL} -idb tiff.sw.tools -m 755 -dir @DIR_BIN@
-+	${INSTALL} -idb nostrip tiff.sw.tools.nostrip -m 755 -F @DIR_BIN@ -O ${TARGETS}
++	${INSTALL} -idb tiff.sw.tools -m 755 -F @DIR_BIN@ -O ${TARGETS}
  	@if [ "@LIBIMAGE@" = yes ]; then \
  	    ${INSTALL} -idb tiff.sw.tools -m 755 -F @DIR_BIN@ -O sgi2tiff; \
  	else \
