@@ -1,16 +1,16 @@
-$OpenBSD: patch-install_sh,v 1.5 2002/07/03 20:37:37 naddy Exp $
---- install.sh.orig	Wed Jul  3 21:16:45 2002
-+++ install.sh	Wed Jul  3 21:18:32 2002
-@@ -938,7 +938,7 @@ run_install()
- 	ln $lns $lnf libnpp.so.$plugin_version_major.$plugin_version_minor.$plugin_version_release $plugin_dir/libnpp.so
+$OpenBSD: patch-install_sh,v 1.6 2003/04/27 16:27:51 naddy Exp $
+--- install.sh.orig	Sat Apr 26 13:40:48 2003
++++ install.sh	Sat Apr 26 13:42:13 2003
+@@ -1101,7 +1101,7 @@ run_install()
  
       # System wide configuration files
--	if can_write_to "/etc"; then
-+	if false can_write_to "/etc"; then
+ 	config_dir="/etc"
+-	if can_write_to "$config_dir"; then
++	if false can_write_to "$config_dir"; then
  	    echo
  	    echo "System wide configuration files:"
- 	    echo "  /etc/opera6rc"
-@@ -975,10 +975,10 @@ run_install()
+ 	    echo "  $config_dir/opera6rc"
+@@ -1138,10 +1138,10 @@ run_install()
  	fi
  
       # Shorcuts and Icons
@@ -18,10 +18,10 @@ $OpenBSD: patch-install_sh,v 1.5 2002/07/03 20:37:37 naddy Exp $
 -	gnome
 -	kde2
 -	kde
-+	: icons
-+	: gnome
-+	: kde2
-+	: kde
++#	icons
++#	gnome
++#	kde2
++#	kde
  
  # Add uninstallation here
  

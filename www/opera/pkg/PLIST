@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/07/03 20:37:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/04/27 16:27:51 naddy Exp $
 bin/opera
 lib/opera/plugins/libnpp.so
 lib/opera/plugins/libnpp.so.0
 lib/opera/plugins/libnpp.so.0.1
 lib/opera/plugins/libnpp.so.0.1.8
 lib/opera/plugins/operamotifwrapper
+lib/opera/plugins/operaplugincleaner
 libexec/opera
 share/doc/opera/LICENSE
 share/doc/opera/help
@@ -12,7 +13,6 @@ share/examples/opera/opera6rc
 share/examples/opera/opera6rc.fixed
 share/opera/buttons/DefSmall
 share/opera/buttons/Default
-share/opera/buttons/ReadMe.txt
 share/opera/buttons/default/abc.gif
 share/opera/buttons/default/buttons.ini
 share/opera/buttons/default/cascade.gif
@@ -154,6 +154,7 @@ share/opera/buttons/examples/example_big.ini
 share/opera/buttons/examples/example_small.ini
 share/opera/buttons/examples/opera_22x22.png
 share/opera/buttons/examples/opera_32x32.png
+share/opera/buttons/readme.txt
 share/opera/buttons/standard/addressbar_high_security.png
 share/opera/buttons/standard/addressbar_html.png
 share/opera/buttons/standard/addressbar_html_alt2.png
@@ -360,7 +361,11 @@ share/opera/images/shared.gif
 share/opera/images/splash.png
 share/opera/images/startup1.png
 share/opera/images/startup2.png
+share/opera/java/lc.jar
+share/opera/java/opera.jar
+share/opera/java/opera.policy
 share/opera/opera6.adr
+share/opera/search.ini
 share/opera/skin/foreground.png
 share/opera/styles/OPF.css
 share/opera/styles/about.css
@@ -376,9 +381,11 @@ share/opera/styles/mimehead.css
 share/opera/styles/opf.css
 share/opera/styles/plugins.css
 share/opera/styles/wml.css
-share/opera/unicode.dat
 @dirrm share/opera/styles
 @dirrm share/opera/skin
+@exec mkdir -p %D/share/opera/locale
+@dirrm share/opera/locale
+@dirrm share/opera/java
 @dirrm share/opera/images
 @dirrm share/opera/help
 @dirrm share/opera/config
