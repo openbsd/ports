@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/24 12:18:50 jakob Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/gmp.info
+@comment $OpenBSD: PLIST,v 1.2 2000/12/25 03:53:37 brad Exp $
 include/gmp.h
+@unexec install-info --delete --info-dir=%D/info %D/info/gmp.info
 info/gmp.info
-info/gmp.info-1
-info/gmp.info-2
-info/gmp.info-3
-info/gmp.info-4
+@exec install-info --info-dir=%D/info %D/info/gmp.info
 lib/libgmp.a
 lib/libgmp.la
 %%SHARED%%
-@exec install-info --info-dir=%D/info %D/info/gmp.info

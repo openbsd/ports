@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Dec 24 20:59:48 2000
++++ Makefile.in	Sun Dec 24 20:59:56 2000
+@@ -83,7 +83,7 @@
+ LN_S = @LN_S@
+ M4 = @M4@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ OBJDUMP = @OBJDUMP@
+ OBJEXT = @OBJEXT@
+ PACKAGE = @PACKAGE@
