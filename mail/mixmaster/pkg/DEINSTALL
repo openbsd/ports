@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.2 2002/09/14 15:21:14 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.3 2003/06/22 10:05:29 sturm Exp $
 #
 # mixmaster de-installation
 
@@ -15,7 +15,7 @@ if [ -d $CONFIG_DIR ]; then
     echo "| these steps as root:"
     echo "|"
     echo "|   rm -fr /var/spool/mixmaster"
-    echo "|   rmuser mixmaster" 
+    echo "|   rmuser _mixmaster" 
     echo "+---------------"
     echo ""
 fi

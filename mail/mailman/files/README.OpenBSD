@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.5 2003/05/12 05:11:44 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.6 2003/06/22 10:05:28 sturm Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -74,7 +74,7 @@ OpenBSD specific comments added. It's a good time to become root, now.
   crontab entry by executing these commands:
 
   % cd $mailmandir/cron
-  % crontab -u mailman crontab.in
+  % crontab -u _mailman crontab.in
 
 - Start the Mailman qrunner daemon, by executing the following
   from the $mailmandir directory:

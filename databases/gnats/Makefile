@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2003/05/02 18:17:02 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2003/06/22 10:05:28 sturm Exp $
 
 COMMENT=	"GNU Problem Report Management System"
 
 DISTNAME=	gnats-3.113.1
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ARGS+=--with-full-gnats --with-release-based
+CONFIGURE_ARGS+=--with-full-gnats --with-release-based --with-gnats-user=_gnats
 CONFIGURE_ENV+=	SEND_PR=/usr/bin/false
 
 INSTALL_TARGET=	install-gnats install-send-pr install-info

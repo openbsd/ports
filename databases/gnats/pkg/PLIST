@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/05/09 16:16:02 millert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/06/22 10:05:28 sturm Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gnats.info
 @unexec install-info --delete --info-dir=%D/info %D/info/send-pr.info
 @unexec install-info --delete --info-dir=%D/info %D/info/standards.info
@@ -39,7 +39,7 @@ libexec/gnats/pr-edit
 libexec/gnats/pr-mail
 libexec/gnats/queue-pr
 libexec/gnats/rmcat
-@exec chown gnats %D/libexec/gnats/gen-index %D/libexec/gnats/pr-edit %D/libexec/gnats/queue-pr
+@exec chown _gnats %D/libexec/gnats/gen-index %D/libexec/gnats/pr-edit %D/libexec/gnats/queue-pr
 @exec chmod 4555 %D/libexec/gnats/gen-index %D/libexec/gnats/pr-edit %D/libexec/gnats/queue-pr
 man/man1/edit-pr.1
 man/man1/query-pr.1
@@ -81,7 +81,7 @@ share/gnats/gnats-db/gnats-adm/submitters
 @exec mkdir -p %D/share/gnats/gnats-db/pending
 @exec mkdir -p %D/share/gnats/gnats-db/gnats-queue
 @exec mkdir -p %D/share/gnats/gnats-db/gnats-adm/locks
-@exec chown -R gnats %D/share/gnats
+@exec chown -R _gnats %D/share/gnats
 @dirrm share/gnats/gnats-db/pending
 @dirrm share/gnats/gnats-db/gnats-queue
 @dirrm share/gnats/gnats-db/gnats-adm/locks

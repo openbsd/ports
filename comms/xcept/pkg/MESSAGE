@@ -7,10 +7,10 @@ You must also add
 
 xcept		20005/tcp #XCEPT
 
-to /etc/services, add a 'xcept' user in your system
+to /etc/services, add an '_xcept' user in your system with uid 522
 and put the user in group 'dialer', then put the line
 
-xcept	stream	tcp	nowait	xcept	${PREFIX}/libexec/ceptd ceptd
+xcept	stream	tcp	nowait	_xcept	${PREFIX}/libexec/ceptd ceptd
 
 in /etc/inetd.conf on your server host, and restart inetd.
 

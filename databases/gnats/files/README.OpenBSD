@@ -8,18 +8,18 @@ support         1529/tcp                # GNATS
 
 2. Add the following to /etc/inetd.conf and HUP inetd:
 
-support         stream  tcp     nowait  gnats	y0y0y0/libexec/gnats/gnatsd	gnatsd
+support         stream  tcp     nowait  _gnats	y0y0y0/libexec/gnats/gnatsd	gnatsd
 
 3. Edit the config files in y0y0y0/share/gnats/gnats-db/gnats-adm
    (see the GNATS info documentation, HTML'ized at
     http://sunsite.ualberta.ca/Documentation/Gnu/gnats-3.113/)
    to your liking, then run (as root):
 
-	su -m gnats -c 'GNATS_ROOT=y0y0y0/share/gnats/gnats-db y0y0y0/libexec/gnats/mkcat'
+	su -m _gnats -c 'GNATS_ROOT=y0y0y0/share/gnats/gnats-db y0y0y0/libexec/gnats/mkcat'
 
 4. As root, do
 
-	su -m gnats -c 'crontab -e'
+	su -m _gnats -c 'crontab -e'
 
    and add the following entry:
 

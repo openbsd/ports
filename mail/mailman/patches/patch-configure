@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.3 2003/05/01 16:11:53 sturm Exp $
+$OpenBSD: patch-configure,v 1.4 2003/06/22 10:05:29 sturm Exp $
 --- configure.orig	Tue Apr 22 05:34:49 2003
 +++ configure	Thu May  1 12:23:55 2003
 @@ -1206,52 +1206,7 @@ fi
@@ -51,7 +51,7 @@ $OpenBSD: patch-configure,v 1.3 2003/05/01 16:11:53 sturm Exp $
 -fi
 -echo "$ac_t""okay" 1>&6
 -
-+MAILMAN_USER=mailman
++MAILMAN_USER=_mailman
  
  # Check for some other gid to use than `mailman'
  echo $ac_n "checking for --with-groupname""... $ac_c" 1>&6
@@ -160,7 +160,7 @@ $OpenBSD: patch-configure,v 1.3 2003/05/01 16:11:53 sturm Exp $
 -fi
 -echo "$ac_t""$status" 1>&6
 -
-+MAILMAN_GROUP=mailman
++MAILMAN_GROUP=_mailman
  
  # Now find the UIDs and GIDs
  # Support --with-mail-gid and --with-cgi-gid

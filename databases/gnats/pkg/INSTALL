@@ -1,19 +1,21 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2003/05/02 18:17:02 sturm Exp $
+# $OpenBSD: INSTALL,v 1.3 2003/06/22 10:05:28 sturm Exp $
 #
 # Pre/post-installation setup of gnats
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/gnats-db.conf
+USER=_gnats
+ID=501
 
 # Function: set up gnats user account.
 #
 do_accts()
 {
-    userinfo -e gnats
+    userinfo -e $USER
     if [ $? -eq 0 ]; then
-	echo "===>  Using account 'gnats' for gnats"
+	echo "===>  Using account '$USER' for gnats"
     else
 	echo "===>  Creating gnats user"
 	useradd \
@@ -21,8 +23,7 @@ do_accts()
 	    -c "GNATS database owner" \
 	    -d $PREFIX/share/gnats \
 	    -s /sbin/nologin \
-	    -p \* \
-	    gnats
+	    -u $ID $USER
     fi
 }
 
@@ -38,7 +39,6 @@ do_configs()
 	echo "| current sample file, ${PREFIX}/share/examples/gnats/gnats-db.conf"
 	echo "| and update your configuration as needed."
     	echo "+---------------"
-	echo ""
     else
 	# Install config files.
 	install -o root -g wheel -m 644 ${PREFIX}/share/examples/gnats/gnats-db.conf ${CONFIG_FILE}
@@ -49,8 +49,13 @@ do_configs()
 	echo "| installed.  Please view this file and change"
 	echo "| the configuration to meet your needs."
 	echo "+---------------"
-	echo ""
     fi
+	echo "| WARNING!"
+	echo "|"
+	echo "| This port has changed its user from 'gnats' to '_gnats'. If you"
+	echo "| installed this port before, ensure all permissions are set"
+	echo "| correctly and then \"rmuser gnats\"."
+	echo "+---------------"
 }
 
 # verify proper execution

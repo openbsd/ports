@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1.1.1 2001/08/29 02:13:06 shell Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2003/06/22 10:05:29 sturm Exp $
 #
 # mailman de-installation
 
@@ -16,13 +16,13 @@ if [ -d $MMHOME ]; then
     echo "| not been deleted. To completely deinstall the $1"
     echo "| package you need to perform these steps as root:"
     echo "|"
-    echo "|   rmuser mailman" 
+    echo "|   rmuser _mailman" 
     echo "|   rm -fr $MMSPOOL"
     echo "|"
-    echo "| If you don't delete user mailman, make sure to remove his crontab"
+    echo "| If you don't delete user _mailman, make sure to remove his crontab"
     echo "| entries with:"
     echo "|"
-    echo "|   crontab -u mailman -r"
+    echo "|   crontab -u _mailman -r"
     echo "|"
     echo "| Finally reverse the configuration changes to your webserver"
     echo "| and mailserver."

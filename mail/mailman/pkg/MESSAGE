@@ -7,3 +7,9 @@
 | ${PREFIX}/share/doc/mailman/UPGRADING and run 
 | ${PREFIX}/lib/mailman/bin/update as root.
 +---------------
+| WARNING!
+|
+| This port has changed its user/group from 'mailman' to '_mailman'. If you
+| installed this port before, ensure all permissions are set correctly and
+| then "rmuser mailman".
++---------------
