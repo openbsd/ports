@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 21:31:06 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/28 14:54:05 xsa Exp $
 
 COMMENT=	"Python module that implements the SSH2 protocol"
 
 V=		0.9
-DISTNAME=	paramiko-${V}-horsea
+DISTNAME=	paramiko-${V}-ivysaur
 PKGNAME=	py-paramiko-${V}
 CATEGORIES=	security
 
