@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/17 16:42:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/03 13:50:23 robert Exp $
 bin/uuid
 bin/uuid-config
 include/uuid.h
 lib/libuuid.a
 lib/libuuid.la
-man/man1/uuid-config.1
-man/man1/uuid.1
-man/man3/uuid.3
+@man man/man1/uuid-config.1
+@man man/man1/uuid.1
+@man man/man3/uuid.3
 %%SHARED%%
