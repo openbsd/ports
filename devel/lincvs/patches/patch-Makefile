@@ -12,15 +12,15 @@
 -LINK	=	g++
 +#CC	=	gcc
 +#CXX	=	g++
-+CFLAGS+=	-DLINCVS_APP
-+CXXFLAGS=	${CFLAGS}
++CFLAGS+=	-Wall -W -O2 -D_REENTRANT -DLINCVS_APP -DNO_DEBUG
++CXXFLAGS=	-Wall -W -D_REENTRANT -DLINCVS_APP -DNO_DEBUG
 +INCPATH	=	-I./include -I./res -I./themes/include -I./themes/res -I${PREFIX}/include/X11/qt2
 +LINK	=	$(CXX)
  LFLAGS	=	
 -LIBS	=	-L$(QTDIR)/lib -lqt -L/usr/X11R6/lib -lXext -lX11 -lm
 -MOC	=	moc
-+LIBS	=	-L${PREFIX}/lib/qt2 -L${PREFIX}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
-+MOC	=	${PREFIX}/bin/moc2
++LIBS	=	-L$(PREFIX)/lib/qt2 -L${PREFIX}/lib -L${X11BASE}/lib -lqt -lXext -lX11 -lm
++MOC	=	$(PREFIX)/bin/moc2
  
  TAR	=	tar -cf
  GZIP	=	gzip -9f

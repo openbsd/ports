@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/10 13:15:23 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/09 16:41:12 reinhard Exp $
 
 DISTNAME=	lincvs_0.2.3
-PKGNAME=	lincvs-0.2.3
+PKGNAME=	${DISTNAME:S/_/-/}
 CATEGORIES=	devel
-NEED_VERSION=	1.340
+NEED_VERSION=	1.353
 MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/
 
 HOMEPAGE=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/lincvsen.html
@@ -22,12 +22,8 @@ LIB_DEPENDS=	qt.2.::x11/qt2
 WRKDIST=	${WRKDIR}/LinCVS-0.2.3
 
 do-install:
-		@mv ${WRKSRC}/LinCVS ${WRKSRC}/lincvs
-		${INSTALL_DATA} -m 0755 -g 0 ${WRKSRC}/lincvs ${PREFIX}/bin
+		${INSTALL_DATA} -m 0755 -g 0 ${WRKSRC}/LinCVS ${PREFIX}/bin/lincvs
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lincvs
-		${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/lincvs
-		${INSTALL_DATA} ${WRKSRC}/INSTALL.TXT ${PREFIX}/share/doc/lincvs
 		${INSTALL_DATA} ${WRKSRC}/README.TXT ${PREFIX}/share/doc/lincvs
-		${INSTALL_DATA} ${WRKSRC}/VERSION.TXT ${PREFIX}/share/doc/lincvs
 
 .include <bsd.port.mk>
