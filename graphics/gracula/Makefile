@@ -3,7 +3,7 @@
 # Date created:				28 Oct 1999
 # Whom:					Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1999/10/29 08:01:36 turan Exp $
+# $OpenBSD: Makefile,v 1.1.1.2 1999/10/29 08:33:04 kevlo Exp $
 #
 
 DISTNAME=	gracula-3.0
