@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:47:16 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/09/18 22:33:02 naddy Exp $
 bin/gnomeicu
 bin/gnomeicu-client
 share/applets/Network/GnomeICU.desktop
+share/examples/gnomeicu/sound/events/GnomeICU.soundlist
+share/examples/gnomeicu/CORBA/servers/GnomeICU.gnorba
 share/gnome/apps/Internet/GnomeICU.desktop
 share/gnome/help/gnomeicu/C/topic.dat
 share/gnomeicu/icons/Default/gnomeicu-animation.png
@@ -83,8 +85,6 @@ share/gnomeicu/icons/reDubbed/gnomeicu-online.png
 share/gnomeicu/icons/reDubbed/gnomeicu-rename.png
 share/gnomeicu/icons/reDubbed/gnomeicu-still.png
 share/gnomeicu/icons/reDubbed/gnomeicu-url.png
-share/gnomeicu/sound/events/GnomeICU.soundlist
-share/gnomeicu/CORBA/servers/GnomeICU.gnorba
 share/pixmaps/gnome-gnomeicu.xpm
 share/sounds/gnomeicu/message.wav
 @dirrm share/sounds/gnomeicu
@@ -93,10 +93,11 @@ share/sounds/gnomeicu/message.wav
 @dirrm share/gnomeicu/icons/Eyeballs
 @dirrm share/gnomeicu/icons/Default
 @dirrm share/gnomeicu/icons
-@dirrm share/gnomeicu/sound/events
-@dirrm share/gnomeicu/sound/
-@dirrm share/gnomeicu/CORBA/servers
-@dirrm share/gnomeicu/CORBA
 @dirrm share/gnomeicu
 @dirrm share/gnome/help/gnomeicu/C
 @dirrm share/gnome/help/gnomeicu
+@dirrm share/examples/gnomeicu/sound/events
+@dirrm share/examples/gnomeicu/sound
+@dirrm share/examples/gnomeicu/CORBA/servers
+@dirrm share/examples/gnomeicu/CORBA
+@dirrm share/examples/gnomeicu

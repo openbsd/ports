@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/14 14:41:30 todd Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/18 22:33:02 naddy Exp $
 
 COMMENT=		"GNOME icq client"
 V=			0.96.1
@@ -11,8 +11,8 @@ MAINTAINER=		Nils Nordman <nino@nforced.com>
 MASTER_SITES=		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= 	stable/sources/gnomeicu
 
-LIB_DEPENDS=		panel_applet::x11/gnome/core
-
+LIB_DEPENDS=		panel_applet::x11/gnome/core \
+			gdbm.::databases/gdbm
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,6 +26,7 @@ CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 post-install:
-	@cp -r ${PREFIX}/../../etc/* ${PREFIX}/share/gnomeicu/
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnomeicu; \
+	cp -rp ${PREFIX}/../../etc/* ${PREFIX}/share/examples/gnomeicu/
 
 .include <bsd.port.mk>
