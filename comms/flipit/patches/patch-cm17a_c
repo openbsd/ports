@@ -1,0 +1,11 @@
+$OpenBSD: patch-cm17a_c,v 1.1.1.1 2002/06/04 18:30:27 jason Exp $
+--- cm17a.c.orig	Tue Jun  4 14:00:37 2002
++++ cm17a.c	Tue Jun  4 14:01:02 2002
+@@ -35,6 +35,7 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <assert.h>
++#include <string.h>
+ 
+ #if HAVE_FCNTL_H
+ #include <fcntl.h>
