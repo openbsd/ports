@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2001/06/04 11:52:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/07 15:18:36 naddy Exp $
 
 COMMENT=		"code browsing program"
 
-DISTNAME=		cscope-15.1
+DISTNAME=		cscope-15.3
 CATEGORIES=     	devel
-NEED_VERSION=		1.402
+NEED_VERSION=		1.468
 
 HOMEPAGE=		http://cscope.sourceforge.net/
 
 MAINTAINER=		Matthew Kolb <muk@msu.edu>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

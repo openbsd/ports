@@ -1,18 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2000/11/18 13:49:20 naddy Exp $
---- configure.in.orig	Fri May  5 23:09:35 2000
-+++ configure.in	Mon Oct 23 19:25:03 2000
-@@ -111,8 +111,8 @@ dnl      AC_LINK_IFELSE([`cat $LEX_OUTPU
-     dnl
-     if test $ac_cv_prog_lex_yytext_pointer = yes; then
-       AC_DEFINE(YYTEXT_POINTER, 1,
--            [Define if `lex' declares `yytext' as a `char *' by default,
--             not a `char[]'.])
-+            [Define if 'lex' declares 'yytext' as a 'char *' by default,
-+             not a 'char[]'.])
-     fi
- ])# AC_DECL_YYTEXT1
- 
-@@ -382,6 +382,7 @@ AC_DEFUN(AC_NCURSES, [
+--- configure.in.orig	Fri Oct  5 14:04:04 2001
++++ configure.in	Fri Oct  5 14:02:22 2001
+@@ -383,6 +383,7 @@
  AC_DEFUN(AC_SEARCH_NCURSES, [
      AC_CHECKING("location of ncurses.h file")
  
