@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/11/14 14:52:49 avsm Exp $
+# $OpenBSD: Makefile,v 1.26 2003/11/21 04:54:20 jolan Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -260,7 +260,7 @@ CONFIGURE_ARGS+=	--without-pspell
 MULTI_PACKAGES+=	-pspell
 COMMENT-pspell=		"spell checking extensions for php4"
 CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
-LIB_DEPENDS+=		aspell.15::textproc/aspell
+LIB_DEPENDS+=		aspell.15::textproc/aspell/core
 .endif
 
 # sybase-ct

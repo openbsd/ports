@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2003/10/18 19:44:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.28 2003/11/21 04:54:20 jolan Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 LIB_DEPENDS=	gtk-x11-2.0.=0,gdk-x11-2.0.=0::x11/gtk+2 \
 		pcre::devel/pcre \
-		aspell::textproc/aspell
+		aspell::textproc/aspell/core
 
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=	--with-icon-path='$${DESTDIR}${PREFIX}/share/pixmaps/'
