@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/28 01:38:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2003/09/22 22:53:37 pvalchev Exp $
 
 COMMENT=	"mirror packages on remote sites"
 
@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
 
 HOMEPAGE=	http://sunsite.org.uk/packages/mirror/
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"may not modify"
+PERMIT_PACKAGE_FTP=	"may not modify"
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 

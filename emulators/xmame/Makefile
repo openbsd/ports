@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/04/17 07:47:22 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2003/09/22 22:53:37 pvalchev Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -27,10 +27,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${HISCORE_FILE}:0 ${HISTORY_FILE}:1 \
 # Need to know endianness
 ONLY_FOR_ARCHS=	alpha hppa i386 m68k powerpc sparc
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"may not sell"
+PERMIT_PACKAGE_FTP=	"may not sell"
+PERMIT_DISTFILES_CDROM=	"may not sell"
+PERMIT_DISTFILES_FTP=	"may not sell"
 
 EXTRACT_SUFX=	.tar.bz2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2003/08/12 19:43:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.24 2003/09/22 22:53:37 pvalchev Exp $
 
 COMMENT=	"full color 320x200 arcade quality platform shooter"
 
@@ -13,10 +13,10 @@ HOMEPAGE=	http://www.crack.com/games/abuse/
 
 MAINTAINER=	Bruno Rohee <rohee@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"unclear"
+PERMIT_PACKAGE_FTP=	"unclear"
+PERMIT_DISTFILES_CDROM=	"unclear"
+PERMIT_DISTFILES_FTP=	"unclear"
 
 .if ${MACHINE_ARCH} == "sparc"
 BROKEN=		"Does not work on SPARC"

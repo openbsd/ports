@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/09/22 22:53:37 pvalchev Exp $
 
 COMMENT=		"OpenGL Extrusion library"
 
@@ -12,8 +12,9 @@ MAINTAINER=		David Lebel <lebel@openbsd.org>
 
 LIB_DEPENDS=		glut.3::graphics/glut
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
+# Artistic/custom
+PERMIT_PACKAGE_CDROM=	"unclear"
+PERMIT_PACKAGE_FTP=	"unclear"
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 

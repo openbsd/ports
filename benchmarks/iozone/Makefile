@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2003/07/07 01:11:21 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2003/09/22 22:53:36 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"performance test of sequential file I/O"
@@ -13,10 +13,10 @@ HOMEPAGE=	http://www.iozone.org/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	"incomplete/bad license"
+PERMIT_PACKAGE_FTP=	"incomplete/bad license"
+PERMIT_DISTFILES_CDROM=	"incomplete/bad license"
+PERMIT_DISTFILES_FTP=	"incomplete/bad license"
 
 MAKE_ENV=	CC="${CC}"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.28 2003/09/22 22:53:36 pvalchev Exp $
 
 COMMENT=	"u-law to gsm encoding audio converter and library"
 
@@ -6,10 +6,11 @@ DISTNAME=	gsm-1.0.10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/local/kbs/tubmik/gsm/
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# Missing redistribution terms in license
+PERMIT_PACKAGE_CDROM=	"no redistribution"
+PERMIT_PACKAGE_FTP=	"no redistribution"
+PERMIT_DISTFILES_CDROM=	"no redistribution"
+PERMIT_DISTFILES_FTP=	"no redistribution"
 
 MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)'
 FAKE_FLAGS=	${MAKE_FLAGS} INSTALL_ROOT="${WRKINST}${PREFIX}"
