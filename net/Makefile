@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2002/03/30 13:19:30 matt Exp $
+# $OpenBSD: Makefile,v 1.205 2002/04/17 15:37:43 jcs Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -113,6 +113,7 @@
      SUBDIR += p5-Net-Pcap
      SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-RawIP
+     SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-Telnet
      SUBDIR += p5-Net-Traceroute
      SUBDIR += p5-Net-Whois
