@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/04/21 11:39:19 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/04/21 13:04:32 reinhard Exp $
 
 COMMENT=	"graphical debugger for kde"
 DISTNAME=	kdbg-1.2.0
@@ -19,6 +19,7 @@ LIB_DEPENDS=	qt.2.::x11/qt2 \
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes
+CONFIGURE_ENV+=		MOC=${LOCALBASE}/bin/moc2
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-qt-libraries="${LOCALBASE}/lib/qt2" \
 			--with-qt-includes="${LOCALBASE}/include/X11/qt2" \
@@ -30,5 +31,4 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 #			--disable-nls \
 #			--enable-lots-a-trace --with-transcript=transcript
 
-MAKE_FLAGS=MOC=moc2
 .include <bsd.port.mk>
