@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 1998/09/13 19:51:00 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1998/10/08 23:00:30 marc Exp $
 #
 
 VER=		20.3
 DISTNAME=	emacs-${VER}
 CATEGORIES=	editors
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	ports@OpenBSD.ORG
+
+MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
