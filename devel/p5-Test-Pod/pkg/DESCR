@@ -1,0 +1,2 @@
+Test::Pod lets you check the validity of a POD file, and report its
+results in standard Test::Simple fashion.

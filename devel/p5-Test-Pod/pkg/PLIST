@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/06/10 01:33:45 msf Exp $
+${P5SITE}/Test/Pod.pm
+@comment ${P5ARCH}/auto/Test/Pod/.packlist
+man/man3p/Test::Pod.3p
+@comment @dirrm ${P5ARCH}/auto/Test/Pod
+@comment @dirrm ${P5ARCH}/auto/Test
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/Test
