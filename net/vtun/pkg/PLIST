@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/02/24 04:24:50 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/09/28 17:45:36 naddy Exp $
 man/man5/vtund.conf.5
 man/man8/vtun.8
 man/man8/vtund.8
@@ -10,3 +10,6 @@ share/doc/vtun/README.Shaper
 share/examples/vtun/vtund.conf-sample
 @dirrm share/examples/vtun
 @dirrm share/doc/vtun
+@cwd ${SYSCONFDIR}
+@extra vtund.conf
+@extraunexec rm -rf ${LOG_DIR}/log/vtund
