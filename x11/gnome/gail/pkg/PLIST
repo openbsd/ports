@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/01 04:13:06 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/15 20:35:19 naddy Exp $
 include/gail-1.0/libgail-util/gail-util.h
 include/gail-1.0/libgail-util/gailmisc.h
 include/gail-1.0/libgail-util/gailtextutil.h
@@ -13,8 +13,8 @@ share/gtk-doc/html/gail-libgail-util/index.sgml
 share/gtk-doc/html/gail-libgail-util/libgail-util-main.html
 %%SHARED%%
 @dirrm share/gtk-doc/html/gail-libgail-util
-@comment @dirrm share/gtk-doc/html
-@comment @dirrm share/gtk-doc
-@comment @dirrm lib/pkgconfig
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc
+@dirrm lib/pkgconfig
 @dirrm include/gail-1.0/libgail-util
 @dirrm include/gail-1.0

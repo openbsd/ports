@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:56:47 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/12/15 20:35:20 naddy Exp $
 include/gtkhtml-2.0/libgtkhtml/css/cssmatcher.h
 include/gtkhtml-2.0/libgtkhtml/css/cssparser.h
 include/gtkhtml-2.0/libgtkhtml/css/cssstylesheet.h
@@ -72,7 +72,7 @@ lib/libgtkhtml-2.a
 lib/libgtkhtml-2.la
 lib/pkgconfig/libgtkhtml-2.0.pc
 %%SHARED%%
-@comment @dirrm lib/pkgconfig
+@dirrm lib/pkgconfig
 @dirrm include/gtkhtml-2.0/libgtkhtml/view
 @dirrm include/gtkhtml-2.0/libgtkhtml/util
 @dirrm include/gtkhtml-2.0/libgtkhtml/layout/html

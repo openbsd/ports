@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/11 02:38:58 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/15 20:35:19 naddy Exp $
 share/icons/gnome/12x12/emblems/emblem-symbolic-link.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory.png
@@ -1892,4 +1892,4 @@ share/icons/gnome/scalable/emblems/emblem-urgent.svg
 @dirrm share/icons/gnome/12x12/devices
 @dirrm share/icons/gnome/12x12
 @dirrm share/icons/gnome
-@comment @dirrm share/icons
+@dirrm share/icons

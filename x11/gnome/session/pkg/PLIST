@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/07 05:48:56 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/15 20:35:20 naddy Exp $
 bin/gnome-session
 bin/gnome-session-properties
 bin/gnome-session-remove
@@ -78,127 +78,127 @@ share/pixmaps/splash/gnome-splash.png
 share/schemas/gnome-session/gnome-session.schemas
 @dirrm share/schemas/gnome-session
 @dirrm share/pixmaps/splash
-@comment @dirrm share/pixmaps
-@comment @dirrm share/locale/zh_TW/LC_MESSAGES
-@comment @dirrm share/locale/zh_TW
-@comment @dirrm share/locale/zh_CN/LC_MESSAGES
-@comment @dirrm share/locale/zh_CN
-@comment @dirrm share/locale/wa/LC_MESSAGES
-@comment @dirrm share/locale/wa
-@comment @dirrm share/locale/vi/LC_MESSAGES
-@comment @dirrm share/locale/vi
-@comment @dirrm share/locale/uk/LC_MESSAGES
-@comment @dirrm share/locale/uk
-@comment @dirrm share/locale/tr/LC_MESSAGES
-@comment @dirrm share/locale/tr
-@comment @dirrm share/locale/th/LC_MESSAGES
-@comment @dirrm share/locale/th
-@comment @dirrm share/locale/ta/LC_MESSAGES
-@comment @dirrm share/locale/ta
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sv
-@comment @dirrm share/locale/sr@Latn/LC_MESSAGES
-@comment @dirrm share/locale/sr@Latn
-@comment @dirrm share/locale/sr/LC_MESSAGES
-@comment @dirrm share/locale/sr
-@comment @dirrm share/locale/sq/LC_MESSAGES
-@comment @dirrm share/locale/sq
-@comment @dirrm share/locale/sl/LC_MESSAGES
-@comment @dirrm share/locale/sl
-@comment @dirrm share/locale/sk/LC_MESSAGES
-@comment @dirrm share/locale/sk
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ru
-@comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/ro
-@comment @dirrm share/locale/pt_BR/LC_MESSAGES
-@comment @dirrm share/locale/pt_BR
-@comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pt
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/pl
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/no
-@comment @dirrm share/locale/nn/LC_MESSAGES
-@comment @dirrm share/locale/nn
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/nl
-@comment @dirrm share/locale/ms/LC_MESSAGES
-@comment @dirrm share/locale/ms
-@comment @dirrm share/locale/mn/LC_MESSAGES
-@comment @dirrm share/locale/mn
-@comment @dirrm share/locale/ml/LC_MESSAGES
-@comment @dirrm share/locale/ml
-@comment @dirrm share/locale/mk/LC_MESSAGES
-@comment @dirrm share/locale/mk
-@comment @dirrm share/locale/lv/LC_MESSAGES
-@comment @dirrm share/locale/lv
-@comment @dirrm share/locale/lt/LC_MESSAGES
-@comment @dirrm share/locale/lt
-@comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/ko
-@comment @dirrm share/locale/kn/LC_MESSAGES
-@comment @dirrm share/locale/kn
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/ja
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/it
-@comment @dirrm share/locale/is/LC_MESSAGES
-@comment @dirrm share/locale/is
-@comment @dirrm share/locale/id/LC_MESSAGES
-@comment @dirrm share/locale/id
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hu
-@comment @dirrm share/locale/hi/LC_MESSAGES
-@comment @dirrm share/locale/hi
-@comment @dirrm share/locale/he/LC_MESSAGES
-@comment @dirrm share/locale/he
-@comment @dirrm share/locale/gl/LC_MESSAGES
-@comment @dirrm share/locale/gl
-@comment @dirrm share/locale/ga/LC_MESSAGES
-@comment @dirrm share/locale/ga
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fr
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/fi
-@comment @dirrm share/locale/fa/LC_MESSAGES
-@comment @dirrm share/locale/fa
-@comment @dirrm share/locale/eu/LC_MESSAGES
-@comment @dirrm share/locale/eu
-@comment @dirrm share/locale/et/LC_MESSAGES
-@comment @dirrm share/locale/et
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/es
-@comment @dirrm share/locale/eo/LC_MESSAGES
-@comment @dirrm share/locale/eo
-@comment @dirrm share/locale/en_GB/LC_MESSAGES
-@comment @dirrm share/locale/en_GB
-@comment @dirrm share/locale/el/LC_MESSAGES
-@comment @dirrm share/locale/el
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/de
-@comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/da
-@comment @dirrm share/locale/cy/LC_MESSAGES
-@comment @dirrm share/locale/cy
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/cs
-@comment @dirrm share/locale/ca/LC_MESSAGES
-@comment @dirrm share/locale/ca
-@comment @dirrm share/locale/bs/LC_MESSAGES
-@comment @dirrm share/locale/bs
-@comment @dirrm share/locale/bn/LC_MESSAGES
-@comment @dirrm share/locale/bn
-@comment @dirrm share/locale/bg/LC_MESSAGES
-@comment @dirrm share/locale/bg
-@comment @dirrm share/locale/be/LC_MESSAGES
-@comment @dirrm share/locale/be
-@comment @dirrm share/locale/az/LC_MESSAGES
-@comment @dirrm share/locale/az
-@comment @dirrm share/locale/ar/LC_MESSAGES
-@comment @dirrm share/locale/ar
-@comment @dirrm share/locale/am/LC_MESSAGES
-@comment @dirrm share/locale/am
-@comment @dirrm share/locale
-@comment @dirrm share/gnome
+@dirrm share/pixmaps
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_TW
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/wa/LC_MESSAGES
+@dirrm share/locale/wa
+@dirrm share/locale/vi/LC_MESSAGES
+@dirrm share/locale/vi
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/th/LC_MESSAGES
+@dirrm share/locale/th
+@dirrm share/locale/ta/LC_MESSAGES
+@dirrm share/locale/ta
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sr@Latn/LC_MESSAGES
+@dirrm share/locale/sr@Latn
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sr
+@dirrm share/locale/sq/LC_MESSAGES
+@dirrm share/locale/sq
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nn/LC_MESSAGES
+@dirrm share/locale/nn
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ms/LC_MESSAGES
+@dirrm share/locale/ms
+@dirrm share/locale/mn/LC_MESSAGES
+@dirrm share/locale/mn
+@dirrm share/locale/ml/LC_MESSAGES
+@dirrm share/locale/ml
+@dirrm share/locale/mk/LC_MESSAGES
+@dirrm share/locale/mk
+@dirrm share/locale/lv/LC_MESSAGES
+@dirrm share/locale/lv
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/kn/LC_MESSAGES
+@dirrm share/locale/kn
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/is/LC_MESSAGES
+@dirrm share/locale/is
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/id
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hi/LC_MESSAGES
+@dirrm share/locale/hi
+@dirrm share/locale/he/LC_MESSAGES
+@dirrm share/locale/he
+@dirrm share/locale/gl/LC_MESSAGES
+@dirrm share/locale/gl
+@dirrm share/locale/ga/LC_MESSAGES
+@dirrm share/locale/ga
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/fa/LC_MESSAGES
+@dirrm share/locale/fa
+@dirrm share/locale/eu/LC_MESSAGES
+@dirrm share/locale/eu
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/en_GB
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cy/LC_MESSAGES
+@dirrm share/locale/cy
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/bs/LC_MESSAGES
+@dirrm share/locale/bs
+@dirrm share/locale/bn/LC_MESSAGES
+@dirrm share/locale/bn
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg
+@dirrm share/locale/be/LC_MESSAGES
+@dirrm share/locale/be
+@dirrm share/locale/az/LC_MESSAGES
+@dirrm share/locale/az
+@dirrm share/locale/ar/LC_MESSAGES
+@dirrm share/locale/ar
+@dirrm share/locale/am/LC_MESSAGES
+@dirrm share/locale/am
+@dirrm share/locale
+@dirrm share/gnome
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnome-session/*.schemas > /dev/null

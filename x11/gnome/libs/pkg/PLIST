@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/10/16 16:55:10 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/12/15 20:35:20 naddy Exp $
 @pkgcfl libgtop-*
 bin/dns-helper
 bin/gconfigger
@@ -564,65 +564,65 @@ share/type-convert/type.convert
 @comment @dirrm var/games
 @comment @dirrm var
 @dirrm share/type-convert
-@comment @dirrm share/pixmaps
-@comment @dirrm share/mime-info
-@comment @dirrm share/locale/zh_TW/LC_MESSAGES
-@comment @dirrm share/locale/zh_CN/LC_MESSAGES
-@comment @dirrm share/locale/wa/LC_MESSAGES
-@comment @dirrm share/locale/vi/LC_MESSAGES
-@comment @dirrm share/locale/uk/LC_MESSAGES
-@comment @dirrm share/locale/tr/LC_MESSAGES
-@comment @dirrm share/locale/ta/LC_MESSAGES
-@comment @dirrm share/locale/sv/LC_MESSAGES
-@comment @dirrm share/locale/sr/LC_MESSAGES
-@comment @dirrm share/locale/sp/LC_MESSAGES
-@comment @dirrm share/locale/sl/LC_MESSAGES
-@comment @dirrm share/locale/sk/LC_MESSAGES
-@comment @dirrm share/locale/ru/LC_MESSAGES
-@comment @dirrm share/locale/ro/LC_MESSAGES
-@comment @dirrm share/locale/pt_BR/LC_MESSAGES
-@comment @dirrm share/locale/pt/LC_MESSAGES
-@comment @dirrm share/locale/pl/LC_MESSAGES
-@comment @dirrm share/locale/no/LC_MESSAGES
-@comment @dirrm share/locale/nn/LC_MESSAGES
-@comment @dirrm share/locale/nl/LC_MESSAGES
-@comment @dirrm share/locale/ms/LC_MESSAGES
-@comment @dirrm share/locale/lv/LC_MESSAGES
-@comment @dirrm share/locale/lt/LC_MESSAGES
-@comment @dirrm share/locale/ko/LC_MESSAGES
-@comment @dirrm share/locale/ja/LC_MESSAGES
-@comment @dirrm share/locale/it/LC_MESSAGES
-@comment @dirrm share/locale/hu/LC_MESSAGES
-@comment @dirrm share/locale/hr/LC_MESSAGES
-@comment @dirrm share/locale/gl/LC_MESSAGES
-@comment @dirrm share/locale/ga/LC_MESSAGES
-@comment @dirrm share/locale/fr/LC_MESSAGES
-@comment @dirrm share/locale/fi/LC_MESSAGES
-@comment @dirrm share/locale/eu/LC_MESSAGES
-@comment @dirrm share/locale/et/LC_MESSAGES
-@comment @dirrm share/locale/es/LC_MESSAGES
-@comment @dirrm share/locale/en_GB/LC_MESSAGES
-@comment @dirrm share/locale/el/LC_MESSAGES
-@comment @dirrm share/locale/de/LC_MESSAGES
-@comment @dirrm share/locale/da/LC_MESSAGES
-@comment @dirrm share/locale/cs/LC_MESSAGES
-@comment @dirrm share/locale/ca/LC_MESSAGES
-@comment @dirrm share/locale/az/LC_MESSAGES
+@dirrm share/pixmaps
+@dirrm share/mime-info
+@dirrm share/locale/zh_TW/LC_MESSAGES
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/wa/LC_MESSAGES
+@dirrm share/locale/vi/LC_MESSAGES
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/ta/LC_MESSAGES
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sp/LC_MESSAGES
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/nn/LC_MESSAGES
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/ms/LC_MESSAGES
+@dirrm share/locale/lv/LC_MESSAGES
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/gl/LC_MESSAGES
+@dirrm share/locale/ga/LC_MESSAGES
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/eu/LC_MESSAGES
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/az/LC_MESSAGES
 @dirrm share/gtk-doc/html/libart
 @dirrm share/gnome/html/zvt
 @dirrm share/gnome/html/gnorba
 @dirrm share/gnome/html/gnomeui
 @dirrm share/gnome/html/gnome
-@comment @dirrm share/gnome/html
+@dirrm share/gnome/html
 @dirrm share/gnome/help/gnome-dev-info/C
 @dirrm share/gnome/help/gnome-dev-info
-@comment @dirrm share/gnome/help
-@comment @dirrm share/gnome
+@dirrm share/gnome/help
+@dirrm share/gnome
 @dirrm share/examples/gnome-libs/sound/events
 @dirrm share/examples/gnome-libs/sound
 @dirrm share/examples/gnome-libs
 @dirrm share/doc/gnome-libs
-@comment @dirrm share/aclocal
+@dirrm share/aclocal
 @dirrm lib/gnome-libs/include
 @dirrm lib/gnome-libs
 @dirrm include/gnome-1.0/zvt
