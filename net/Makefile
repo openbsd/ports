@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2000/08/16 07:44:52 camield Exp $
+# $OpenBSD: Makefile,v 1.84 2000/08/18 01:23:55 danh Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += publicfile
      SUBDIR += queso
      SUBDIR += radiusd-cistron
+     SUBDIR += radiusd-lucent
      SUBDIR += rrdtool
      SUBDIR += rsync
      SUBDIR += samba
