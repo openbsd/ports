@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/05 23:00:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/20 22:42:57 jakob Exp $
 
-DISTNAME=	logsurfer-1.41
+DISTNAME=	logsurfer-1.5
 CATEGORIES=	security
 
 MAINTAINER=     jakob@openbsd.org
@@ -14,5 +14,6 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/logsurfer/ \
 		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/
 
 GNU_CONFIGURE=	yes
+FAKE=		yes
 
 .include <bsd.port.mk>

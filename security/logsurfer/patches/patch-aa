@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Dec  5 22:35:33 1999
-+++ Makefile.in	Sun Dec  5 22:37:01 1999
-@@ -7,12 +7,12 @@
+--- Makefile.in.orig	Mon Nov 22 13:01:52 1999
++++ Makefile.in	Mon Mar 20 23:41:17 2000
+@@ -8,12 +8,12 @@
  
  # Where is the default configuration file
  #
@@ -10,17 +10,23 @@
  
  # Where should we dump or status (default location)
  #
--DEF_DUMPFILE = /var/tmp/logsurfer.dump
+-DEF_DUMPFILE = /dev/null
 +DEF_DUMPFILE = /var/run/logsurfer.dump
  
  # 
  # You can define CPPFLAGS on the command line.  Aside from system-specific
-@@ -43,7 +43,7 @@
+@@ -44,11 +44,11 @@
+ LIBS = @LIBS@
+ 
  # Where to install the logsurfer executable
- prefix = @prefix@
+-prefix = @prefix@
++prefix = $(PREFIX)
  exec_prefix = @exec_prefix@
 -bindir = @bindir@
-+bindir = @prefix@/sbin
++bindir = $(PREFIX)/sbin
  # Where to install manual pages
- mandir = @mandir@
+-mandir = @mandir@
++mandir = $(PREFIX)/man
  
+ # Use cp if you don't have install.
+ INSTALL = @INSTALL@
