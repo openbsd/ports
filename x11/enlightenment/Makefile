@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/03/31 18:42:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/04/01 18:54:49 espie Exp $
 
 DISTNAME=	enlightenment-0.16.3
 CATEGORIES=     x11
@@ -7,6 +7,7 @@ MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 		ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/
 
 MAINTAINER=	op21@squish.org
+HOMEPAGE=	http://www.enlightenment.org/
 
 LICENSE_TYPE=		BSD
 PERMIT_PACKAGE_CDROM=	Yes
