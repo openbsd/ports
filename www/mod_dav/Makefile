@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2004/05/24 09:34:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2005/02/08 12:39:57 alek Exp $
 
 COMMENT=	"class 1 and 2 DAV server for the Apache webserver"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
-PKGNAME=	mod_dav-1.0.3
+PKGNAME=	mod_dav-1.0.3p0
 DISTNAME=	mod_dav-1.0.3-1.3.6
 CATEGORIES=	www
 
