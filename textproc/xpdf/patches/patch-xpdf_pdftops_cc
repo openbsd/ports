@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_pdftops_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
---- xpdf/pdftops.cc.orig	2003-10-23 22:55:51.000000000 -0700
-+++ xpdf/pdftops.cc	2003-10-23 22:56:02.000000000 -0700
-@@ -242,13 +242,6 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-xpdf_pdftops_cc,v 1.2 2004/01/25 06:02:40 brad Exp $
+--- xpdf/pdftops.cc.orig	2004-01-21 20:26:45.000000000 -0500
++++ xpdf/pdftops.cc	2004-01-24 23:34:15.000000000 -0500
+@@ -266,13 +266,6 @@ int main(int argc, char *argv[]) {
      goto err1;
    }
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
---- xpdf/XPDFCore.cc.orig	2003-10-23 22:54:49.000000000 -0700
-+++ xpdf/XPDFCore.cc	2003-10-23 22:56:34.000000000 -0700
-@@ -970,9 +970,6 @@ void XPDFCore::moveSelection(int mx, int
+$OpenBSD: patch-xpdf_XPDFCore_cc,v 1.2 2004/01/25 06:02:40 brad Exp $
+--- xpdf/XPDFCore.cc.orig	2004-01-21 20:26:45.000000000 -0500
++++ xpdf/XPDFCore.cc	2004-01-24 23:34:15.000000000 -0500
+@@ -940,9 +940,6 @@ void XPDFCore::moveSelection(int mx, int
  // global variables (currentSelection and currentSelectionOwner).
  
  void XPDFCore::copySelection() {
@@ -11,7 +11,7 @@ $OpenBSD: patch-xpdf_XPDFCore_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
    if (currentSelection) {
      delete currentSelection;
    }
-@@ -1027,9 +1024,6 @@ GBool XPDFCore::getSelection(int *xMin, 
+@@ -997,9 +994,6 @@ GBool XPDFCore::getSelection(int *xMin, 
  }
  
  GString *XPDFCore::extractText(int xMin, int yMin, int xMax, int yMax) {
@@ -21,7 +21,7 @@ $OpenBSD: patch-xpdf_XPDFCore_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
    return out->getText(xMin, yMin, xMax, yMax);
  }
  
-@@ -1038,9 +1032,6 @@ GString *XPDFCore::extractText(int pageN
+@@ -1008,9 +1002,6 @@ GString *XPDFCore::extractText(int pageN
    TextOutputDev *textOut;
    GString *s;
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-xpdf_XPDFCore_cc,v 1.1 2003/10/24 19:31:57 brad Exp $
    textOut = new TextOutputDev(NULL, gTrue, gFalse, gFalse);
    if (!textOut->isOk()) {
      delete textOut;
-@@ -1680,11 +1671,7 @@ void XPDFCore::inputCbk(Widget widget, X
+@@ -1649,11 +1640,7 @@ void XPDFCore::inputCbk(Widget widget, X
  #ifndef NO_TEXT_SELECT
  	  if (core->selectXMin != core->selectXMax &&
  	      core->selectYMin != core->selectYMax) {

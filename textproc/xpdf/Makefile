@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2003/10/24 19:31:57 brad Exp $
+# $OpenBSD: Makefile,v 1.36 2004/01/25 06:02:40 brad Exp $
 
 COMMENT=	"PDF viewer for X"
 
-DISTNAME=	xpdf-2.02pl1
-PKGNAME=	${DISTNAME}p1
+DISTNAME=	xpdf-3.00
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
@@ -24,7 +23,8 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_MOTIF=	openmotif
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-gzip
+CONFIGURE_ARGS+= --enable-multithreaded \
+		 --with-gzip
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
@@ -32,6 +32,6 @@ NO_REGRESS=	Yes
 
 post-install:
 	@cd ${PREFIX}/bin && \
-	  strip pdffonts pdfimages pdfinfo pdftopbm pdftops pdftotext xpdf
+	  strip pdffonts pdfimages pdfinfo pdftoppm pdftops pdftotext xpdf
 
 .include <bsd.port.mk>

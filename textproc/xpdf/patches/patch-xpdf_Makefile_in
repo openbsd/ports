@@ -1,12 +1,21 @@
-$OpenBSD: patch-xpdf_Makefile_in,v 1.4 2003/05/20 00:37:10 brad Exp $
---- xpdf/Makefile.in.orig	Sun May 18 21:29:29 2003
-+++ xpdf/Makefile.in	Sun May 18 21:29:43 2003
-@@ -15,7 +15,7 @@ VPATH = @srcdir@
- GOOSRCDIR = $(srcdir)/../goo
- GOOLIBDIR = ../goo
+$OpenBSD: patch-xpdf_Makefile_in,v 1.5 2004/01/25 06:02:40 brad Exp $
+--- xpdf/Makefile.in.orig	2004-01-21 20:26:45.000000000 -0500
++++ xpdf/Makefile.in	2004-01-24 23:55:40.000000000 -0500
+@@ -19,7 +19,7 @@ FOFILIBDIR = ../fofi
+ SPLASHSRCDIR = $(srcdir)/../splash
+ SPLASHLIBDIR = ../splash
  
--CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(srcdir) @freetype_CFLAGS@ @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @libpaper_CFLAGS@ @X_CFLAGS@
-+CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(srcdir) @freetype_CFLAGS@ @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @libpaper_CFLAGS@ @X_CFLAGS@
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @libpaper_CFLAGS@ @X_CFLAGS@
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @t1_CFLAGS@ @libpaper_CFLAGS@ @X_CFLAGS@
  
  LDFLAGS = @LDFLAGS@
+ 
+@@ -32,7 +32,7 @@ SPLASHLIBS = -L$(SPLASHLIBDIR) -lsplash
+ 
+ OTHERLIBS = @LIBS@ @libpaper_LIBS@ \
+ 	-L$(FOFILIBDIR) -lfofi \
+-	-L$(GOOLIBDIR) -lGoo
++	-L$(GOOLIBDIR) -lGoo -pthread
+ 
+ CXX = @CXX@
  
