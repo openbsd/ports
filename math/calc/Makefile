@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2003/01/18 12:38:23 wcobb Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/22 00:36:35 wcobb Exp $
 #
 
 COMMENT=	"C-style arbitrary precision calculator"
 
-DISTNAME=	calc-2.11.6.2
+DISTNAME=	calc-2.11.7
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.uu.net/pub/calc/ \
-		ftp://reality.sgi.com/chongo/src/calc/ \
-		${MASTER_SITE_SOURCEFORGE:=calc/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=calc/} \
+		ftp://ftp.uu.net/pub/calc/ \
+		ftp://reality.sgi.com/chongo/src/calc/
 
 # LGPL
 PERMIT_PACKAGE_FTP=	Yes
