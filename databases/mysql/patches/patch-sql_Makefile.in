@@ -1,6 +1,6 @@
---- sql/Makefile.in.orig	Mon Jan 22 08:44:15 2001
-+++ sql/Makefile.in	Mon Jan 22 16:17:03 2001
-@@ -1771,8 +1771,7 @@
+--- sql/Makefile.in.orig	Thu Feb  8 21:18:59 2001
++++ sql/Makefile.in	Tue Feb 13 11:45:27 2001
+@@ -1825,8 +1825,7 @@
  
  sql_yacc.o:	sql_yacc.cc sql_yacc.h
  		@echo "Note: The following compile may take a long time."

@@ -1,16 +1,27 @@
---- ltmain.sh.orig	Wed Jan 17 04:39:53 2001
-+++ ltmain.sh	Fri Jan 19 12:01:17 2001
-@@ -1799,6 +1799,9 @@
- 	  # rhapsody is a little odd...
- 	  deplibs="$deplibs -framework System"
+--- ltmain.sh.orig	Tue Feb 13 11:47:41 2001
++++ ltmain.sh	Tue Feb 13 11:47:49 2001
+@@ -1081,6 +1081,10 @@
+ 	    # These systems don't actually have c library (as such)
+ 	    continue
+ 	    ;;
++	  *-*-openbsd*)
++	    # Do not include libc due to us having libc/libc_r.
++	    continue
++	    ;;
+ 	  esac
+ 	elif test "$arg" = "-lm"; then
+ 	  case "$host" in
+@@ -1798,6 +1802,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
  	  ;;
 +	*-*-openbsd*)
-+	  # do not include libc due to us having libc/libc_r.
++	  # Do not include libc due to us having libc/libc_r.
 +	  ;;
- 	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3567,40 +3570,6 @@
+         *-*-rhapsody*)
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+@@ -3570,40 +3577,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = : && exit 0
  

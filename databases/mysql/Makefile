@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2001/01/23 00:48:45 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2001/02/13 21:03:42 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
-DISTNAME=	mysql-3.23.32
+DISTNAME=	mysql-3.23.33
 CATEGORIES=	databases
 NEED_VERSION=	1.336
-MASTER_SITES=	http://www.mysql.net/Downloads/MySQL-3.23/ \
-		http://www.gina.net/mysql/Downloads/MySQL-3.23/ \
-		http://mysql.pingzero.net/Downloads/MySQL-3.23/ \
-		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.23/
+MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
+		http://www.mysql.net/Downloads/%SUBDIR%/ \
+		http://mysql.he.net/Downloads/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR= MySQL-3.23
 
 HOMEPAGE=	http://www.mysql.com/
 
@@ -43,7 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .else
 . if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
-BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
+#BROKEN=		"pthreads are currently not working on the ${MACHINE_ARCH} architecture"
 . endif
 .endif
 
