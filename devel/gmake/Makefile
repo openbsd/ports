@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2002/01/30 19:26:25 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.25 2002/02/01 02:10:31 pvalchev Exp $
 
 COMMENT=	"GNU make"
 DISTNAME=	make-3.79.1
@@ -25,7 +25,8 @@ CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# XXX workaround sparc64 gcc optimization bug
+# XXX workaround sparc64 gcc optimization bug where gmake built
+# with optimization level > 0 would get random sig11's.
 .if ${MACHINE_ARCH:Msparc64}
 CFLAGS+=	-O0
 .endif
