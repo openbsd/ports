@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2000/04/16 21:34:57 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2000/04/18 23:59:11 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += agm
      SUBDIR += an
      SUBDIR += angband
+     SUBDIR += angband:no_x11
 #    SUBDIR += block
 #    SUBDIR += blue
      SUBDIR += bnetd
