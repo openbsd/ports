@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/13 20:19:10 peter Exp $
+# $OpenBSD: Makefile,v 1.3 2001/09/07 22:27:33 peter Exp $
 
 COMMENT=	"perl5 interface to GnuPG using scalars"
 
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= ../../authors/id/M/MI/MILES
 BUILD_DEPENDS=	${LOCALBASE}/bin/gpg:gnupg-*:security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowtion.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
