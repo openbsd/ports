@@ -1,6 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/17 01:13:58 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/07/21 07:01:32 kevlo Exp $
 pear/lib/.registry/html_select.reg
 pear/lib/HTML/Select.php
-@dirrm pear/lib/HTML
-@dirrm lib/php
-@dirrm lib
