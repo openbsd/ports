@@ -1,0 +1,137 @@
+--- config/cf/host.def.orig	Mon Nov 20 21:11:53 2000
++++ config/cf/host.def	Mon Nov 20 20:53:56 2000
+@@ -1,17 +1,129 @@
+ #ifdef BeforeVendorCF
+ 
+ #define TopLevelProject         Motif
+-#define ProjectRoot             /usr/X11R6
++#define ProjectRoot             %%PREFIX%%
+ #define X11ProjectRoot          /usr/X11R6
+-#define VirtualBindingsPath     $(LIBDIR)/bindings
++#define VirtualBindingsPath     %%PREFIX%%/lib/X11/bindings
+ #define ImportX11               YES
+-#define USE_BYACC               YES
+ #define NoMessageCatalog        YES
+ #define ForceNormalLib          YES
+-#define HasVarDirectory         NO
+ #define DebugLibXm              YES
+ #define DebugLibMrm             YES
+ #define DebugLibUil             YES
+-#define LexLib                  -lfl
+ 
++#define DependCmd /usr/X11R6/bin/makedepend
++#define ExtraLoadOptions -L$(BUILDLIBDIR)
++
++/*
++ * install man page after processing through eqn and tbl
++ */
++#define InstallMotifManPage(file,section)				@@\
++all:: file.section.new							@@\
++									@@\
++file.section.new:: file.section						@@\
++	@if [ -f file.section ]; then \					@@\
++		cat file.section | $(NEQN) | $(TBL) > file.section.new; \	@@\
++	fi								@@\
++									@@\
++install.man::								@@\
++	MakeDir($(DESTDIR)$(MANDIR))					@@\
++	-@if [ -f file.section.new ]; then \				@@\
++	$(INSTALL) -c $(INSTMANFLAGS) file.section.new $(DESTDIR)$(MANDIR)/file.$(MANSUFFIX); \		@@\
++	fi								@@\
++									@@\
++clean::									@@\
++	RemoveFile(file.section.new)
++
++/*
++ * install unformated man page
++ */
++#define InstallManPage(file,destdir)					@@\
++InstallNamedTarget(install.man,file.man,$(INSTMANFLAGS),destdir,file.$(MANSUFFIX))
++
++/*
++ * don't make it dependent on 'bootstrap' imake.  we already have our own.
++ */
++#define MakeMakeSubdirs(dirs,target)					@@\
++$(ONESUBDIR)/Makefile:							@@\
++	@MakeFlagsToShellFlags(n,executeit="no"); \			@@\
++	cd $(ONESUBDIR) && \						@@\
++	if [ "$$executeit" != "no" ]; then \				@@\
++		$(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES) -DTOPDIR=$(IMAKETOP) -DCURDIR=$(ONECURDIR)$(ONESUBDIR); \ @@\
++	fi;								@@\
++									@@\
++target::								@@\
++	-@MakeFlagsToShellFlags(ik,set +e); \				@@\
++	MakeFlagsToShellFlags(n,executeit="no"); \			@@\
++	for i in dirs ;\						@@\
++	do \								@@\
++		case "$(CURRENT_DIR)" in \				@@\
++		.) curdir= ;; \						@@\
++		*) curdir=$(CURRENT_DIR)/ ;; \				@@\
++		esac; \							@@\
++		echo "making Makefiles in $$curdir$$i..."; \		@@\
++		itmp=`echo $$i | sed -e 's;^\./;;g' -e 's;/\./;/;g'`; \	@@\
++		curtmp="$(CURRENT_DIR)" \				@@\
++		toptmp=""; \						@@\
++		case "$$itmp" in \					@@\
++		    ../?*) \ 						@@\
++			while echo "$$itmp" | grep '^\.\./' > /dev/null;\	@@\
++			  do \						@@\
++			     toptmp="/`basename $$curtmp`$$toptmp"; \	@@\
++			     curtmp="`dirname $$curtmp`"; \		@@\
++			     itmp="`echo $$itmp | sed 's;\.\./;;'`"; \	@@\
++			  done \					@@\
++		    ;; \						@@\
++		esac; \							@@\
++		case "$$itmp" in \					@@\
++		*/?*/?*/?*/?*)	newtop=../../../../..;; \		@@\
++		*/?*/?*/?*)	newtop=../../../..;; \			@@\
++		*/?*/?*)	newtop=../../..;; \			@@\
++		*/?*)		newtop=../..;; \			@@\
++		*)		newtop=..;; \				@@\
++		esac; \							@@\
++		newtop="$$newtop$$toptmp"; \				@@\
++		case "$(TOP)" in \					@@\
++		/?*) imaketop=$(TOP) \					@@\
++		     imakeprefix= ;; \					@@\
++		.) imaketop=$$newtop \					@@\
++		   imakeprefix=$$newtop/ ;; \				@@\
++		*) imaketop=$$newtop/$(TOP) \				@@\
++		   imakeprefix=$$newtop/ ;; \				@@\
++		esac; \							@@\
++		RemoveFile($$i/Makefile.bak); \				@@\
++		if [ -f $$i/Makefile ]; then \				@@\
++			echo "	$(MV) Makefile Makefile.bak"; \		@@\
++			if [ "$$executeit" != "no" ]; then \		@@\
++				$(MV) $$i/Makefile $$i/Makefile.bak; \	@@\
++			fi; \						@@\
++		fi; \							@@\
++		$(MAKE) $(MFLAGS) $(MAKE_OPTS) ONESUBDIR=$$i ONECURDIR=$$curdir IMAKETOP=$$imaketop IMAKEPREFIX=$$imakeprefix $$i/Makefile; \	@@\
++		if [ -d $$i ] ; then \					@@\
++			cd $$i; \					@@\
++			$(MAKE) $(MFLAGS) Makefiles; \			@@\
++			cd $$newtop; \					@@\
++		else \							@@\
++			exit 1; \					@@\
++		fi; \							@@\
++	done
+ #endif /* BeforeVendorCF */
++
++#ifdef AfterVendorCF
++#ifndef ImakeCmd
++/*
++ * This should not happen.  But in case it really happens, we need this 
++ * definition otherwise we are forced to build 'bootstrp' imake.
++ */
++# define ImakeCmd /usr/X11R6/bin/imake -DPorts
++#endif
++
++/*
++ * Do we install preformatted man page?
++ */
++#undef ManSourcePath
++#define ManSourcePath $(MANPATH)/man
++
++#undef ConfigDir
++#define ConfigDir /usr/local/lib/X11/config
++
++#endif /* AfterVendorCF */

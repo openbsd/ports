@@ -1,12 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/07/11 17:26:19 form Exp $
+@comment $OpenBSD: PLIST,v 1.5 2001/01/03 00:02:58 matt Exp $
 @pkgcfl lesstif-*
-@comment bin/imake
-@comment bin/lndir
-@comment bin/makedepend
-@comment bin/makeg
-@comment bin/mkdirhier
-@comment bin/xmkmf
-@comment bin/mergelib
 bin/mwm
 bin/uil
 bin/xmbind
@@ -186,134 +179,60 @@ include/Xm/XmStrDefs.h
 include/Xm/Xmfuncs.h
 include/Xm/XmosP.h
 include/Xm/XpmP.h
-include/bitmaps/xm_error
-include/bitmaps/xm_hour16
-include/bitmaps/xm_hour16m
-include/bitmaps/xm_hour32
-include/bitmaps/xm_hour32m
-include/bitmaps/xm_information
-include/bitmaps/xm_noenter16
-include/bitmaps/xm_noenter16m
-include/bitmaps/xm_noenter32
-include/bitmaps/xm_noenter32m
-include/bitmaps/xm_question
-include/bitmaps/xm_warning
-include/bitmaps/xm_working
+include/X11/bitmaps/xm_error
+include/X11/bitmaps/xm_hour16
+include/X11/bitmaps/xm_hour16m
+include/X11/bitmaps/xm_hour32
+include/X11/bitmaps/xm_hour32m
+include/X11/bitmaps/xm_information
+include/X11/bitmaps/xm_noenter16
+include/X11/bitmaps/xm_noenter16m
+include/X11/bitmaps/xm_noenter32
+include/X11/bitmaps/xm_noenter32m
+include/X11/bitmaps/xm_question
+include/X11/bitmaps/xm_warning
+include/X11/bitmaps/xm_working
 include/uil/Uil.h
 include/uil/UilDBDef.h
 include/uil/UilDef.h
 include/uil/UilSymDef.h
 include/uil/UilSymGl.h
 include/uil/XmAppl.uil
-lib/X11/config/Amoeba.cf
-lib/X11/config/DGUX.cf
-lib/X11/config/FreeBSD.cf
-lib/X11/config/Imake.cf
-lib/X11/config/Imake.rules
-lib/X11/config/Imake.tmpl
-lib/X11/config/Library.tmpl
-lib/X11/config/Mips.cf
+@unexec [ -f /usr/X11R6/lib/X11/config/Motif.rules.orig ] && mv -f /usr/X11R6/lib/X11/config/Motif.rules.orig /usr/X11R6/lib/X11/config/Motif.rules
 lib/X11/config/Motif.rules
+@exec [ -f /usr/X11R6/lib/X11/config/Motif.rules ] && (mv -f /usr/X11R6/lib/X11/config/Motif.rules /usr/X11R6/lib/X11/config/Motif.rules.orig && cp -p %D/%F /usr/X11R6/lib/X11/config)
+@unexec [ -f /usr/X11R6/lib/X11/config/Motif.tmpl.orig ] && mv -f /usr/X11R6/lib/X11/config/Motif.tmpl.orig /usr/X11R6/lib/X11/config/Motif.tmpl
 lib/X11/config/Motif.tmpl
-lib/X11/config/NetBSD.cf
-lib/X11/config/Oki.cf
-lib/X11/config/Server.tmpl
-lib/X11/config/Threads.tmpl
-lib/X11/config/Win32.cf
-lib/X11/config/Win32.rules
-lib/X11/config/WinLib.tmpl
-lib/X11/config/X11.rules
-lib/X11/config/X11.tmpl
-lib/X11/config/apollo.cf
-lib/X11/config/bsd.cf
-lib/X11/config/bsdLib.rules
-lib/X11/config/bsdLib.tmpl
-lib/X11/config/bsdi.cf
-lib/X11/config/cde.rules
-lib/X11/config/cde.tmpl
-lib/X11/config/convex.cf
-lib/X11/config/cray.cf
-lib/X11/config/fujitsu.cf
-lib/X11/config/generic.cf
-lib/X11/config/host.def
-lib/X11/config/hp.cf
-lib/X11/config/hpLib.rules
-lib/X11/config/hpLib.tmpl
-lib/X11/config/ibm.cf
-lib/X11/config/ibmLib.rules
-lib/X11/config/ibmLib.tmpl
-lib/X11/config/isc.cf
-lib/X11/config/linux.cf
-lib/X11/config/lnxLib.rules
-lib/X11/config/lnxLib.tmpl
-lib/X11/config/luna.cf
-lib/X11/config/macII.cf
-lib/X11/config/mach.cf
-lib/X11/config/minix.cf
-lib/X11/config/moto.cf
-lib/X11/config/ncr.cf
-lib/X11/config/nec.cf
-lib/X11/config/necLib.rules
-lib/X11/config/necLib.tmpl
-lib/X11/config/noop.rules
-lib/X11/config/oldlib.rules
-lib/X11/config/os2.cf
-lib/X11/config/os2Lib.rules
-lib/X11/config/os2Lib.tmpl
-lib/X11/config/osf1.cf
-lib/X11/config/osfLib.rules
-lib/X11/config/osfLib.tmpl
-lib/X11/config/pegasus.cf
-lib/X11/config/sco.cf
-lib/X11/config/scoLib.rules
-lib/X11/config/sequent.cf
-lib/X11/config/sgi.cf
-lib/X11/config/sgiLib.rules
-lib/X11/config/sgiLib.tmpl
-lib/X11/config/site.def
-lib/X11/config/sony.cf
-lib/X11/config/sun.cf
-lib/X11/config/sunLib.rules
-lib/X11/config/sunLib.tmpl
-lib/X11/config/sv3Lib.rules
-lib/X11/config/sv3Lib.tmpl
-lib/X11/config/sv4Lib.rules
-lib/X11/config/sv4Lib.tmpl
-lib/X11/config/svr3.cf
-lib/X11/config/svr4.cf
-lib/X11/config/ultrix.cf
-lib/X11/config/usl.cf
-lib/X11/config/x386.cf
-lib/X11/config/xf86.rules
-lib/X11/config/xf86.tmpl
-lib/X11/config/xfree86.cf
+@exec [ -f /usr/X11R6/lib/X11/config/Motif.tmpl ] && (mv -f /usr/X11R6/lib/X11/config/Motif.tmpl /usr/X11R6/lib/X11/config/Motif.tmpl.orig && cp -p %D/%F /usr/X11R6/lib/X11/config)
 lib/X11/system.mwmrc
-lib/Xm/bindings/acorn
-lib/Xm/bindings/apollo
-lib/Xm/bindings/dec
-lib/Xm/bindings/dg_AViiON
-lib/Xm/bindings/doubleclick
-lib/Xm/bindings/hal
-lib/Xm/bindings/hitachi
-lib/Xm/bindings/hp
-lib/Xm/bindings/ibm
-lib/Xm/bindings/intergraph
-lib/Xm/bindings/intergraph17
-lib/Xm/bindings/megatek
-lib/Xm/bindings/motorola
-lib/Xm/bindings/ncr_at
-lib/Xm/bindings/ncr_vt
-lib/Xm/bindings/pc
-lib/Xm/bindings/sgi
-lib/Xm/bindings/siemens_9733
-lib/Xm/bindings/siemens_wx200
-lib/Xm/bindings/sni
-lib/Xm/bindings/sni_97801
-lib/Xm/bindings/sony
-lib/Xm/bindings/sun
-lib/Xm/bindings/sun_at
-lib/Xm/bindings/tek
-lib/Xm/bindings/xmbind.alias
+lib/X11/app-defaults/Mwm
+lib/X11/bindings/CDE
+lib/X11/bindings/acorn
+lib/X11/bindings/apollo
+lib/X11/bindings/dec
+lib/X11/bindings/dg_AViiON
+lib/X11/bindings/doubleclick
+lib/X11/bindings/hal
+lib/X11/bindings/hitachi
+lib/X11/bindings/hp
+lib/X11/bindings/ibm
+lib/X11/bindings/intergraph
+lib/X11/bindings/intergraph17
+lib/X11/bindings/megatek
+lib/X11/bindings/motorola
+lib/X11/bindings/ncr_at
+lib/X11/bindings/ncr_vt
+lib/X11/bindings/pc
+lib/X11/bindings/sgi
+lib/X11/bindings/siemens_9733
+lib/X11/bindings/siemens_wx200
+lib/X11/bindings/sni
+lib/X11/bindings/sni_97801
+lib/X11/bindings/sony
+lib/X11/bindings/sun
+lib/X11/bindings/sun_at
+lib/X11/bindings/tek
+lib/X11/bindings/xmbind.alias
 lib/libMrm.a
 lib/libUil.a
 lib/libXm.a
@@ -874,10 +793,9 @@ man/man5/UIL.5
 man/man5/WML.5
 man/man5/mwmrc.5
 %%SHARED%%
-@dirrm lib/Xm/bindings
-@dirrm lib/Xm
+@dirrm lib/X11/bindings
 @dirrm lib/X11/config
 @dirrm include/uil
-@dirrm include/bitmaps
+@dirrm include/X11/bitmaps
 @dirrm include/Xm
 @dirrm include/Mrm

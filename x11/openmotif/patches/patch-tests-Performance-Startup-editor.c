@@ -1,5 +1,5 @@
---- tests/Performance/Startup/editor.c.orig	Wed May  3 05:12:48 2000
-+++ tests/Performance/Startup/editor.c	Wed Aug  9 19:29:43 2000
+--- tests/Performance/Startup/editor.c.orig	Wed May  3 02:12:48 2000
++++ tests/Performance/Startup/editor.c	Mon Nov 20 19:08:40 2000
 @@ -238,7 +238,7 @@
  
      strcpy(tempname, "/tmp/xmeditXXXXXX");

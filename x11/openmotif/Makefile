@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/23 16:08:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2001/01/03 00:02:55 matt Exp $
 
 DISTNAME=	motif
-PKGNAME=	openmotif-2.1.30
-
+VERSION=	2.1.30
+PATCHLEVEL=	5
+PKGNAME=	openmotif-${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11
-NEED_VERSION=	1.310
+NEED_VERSION=	1.340
 
 HOMEPAGE=	http://www.opengroup.org/openmotif/
 
@@ -15,13 +16,30 @@ PERMIT_DISTFILES_CDROM=	Unclear
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/tars/ \
-		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/tars/ \
-		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/tars
-DISTFILES=	openmotif2.1.30.tar.gz
+MASTER_SITES=	ftp://ftp.opengroup.org/pub/openmotif/R${VERSION}/tars/ \
+		ftp://openmotif.opengroup.org/pub/openmotif/R${VERSION}/tars/ \
+		ftp://ftp.kddlabs.co.jp/X11/openmotif/R${VERSION}/tars/
+MASTER_SITES0=	ftp://ftp.opengroup.org/pub/openmotif/R${VERSION}/fixes/ \
+		ftp://openmotif.opengroup.org/pub/openmotif/R${VERSION}/fixes/ \
+		ftp://ftp.kddlabs.co.jp/X11/openmotif/R${VERSION}/fixes/
+
+DISTFILES=	openmotif${VERSION}.tar.gz
+PATCHFILES=	patch1:0 patch2:0 patch3:0 patch4:0 patch5:0
+PATCH_DIST_STRIP=-p1
+DIST_SUBDIR=	openmotif
+
+MULTI_PACKAGES=	-demos -debuglibs
+
+.if defined(SUBPACKAGE)
+PKGNAME=	openmotif${SUBPACKAGE}-${VERSION}.${PATCHLEVEL}
+.if ${SUBPACKAGE} == "-demos" || ${SUBPACKAGE} == "-debuglibs"
+RUN_DEPENDS=	Xm.2::x11/openmotif
+.endif
+.endif
 
 USE_X11=	yes
 ALL_TARGET=	World
+INSTALL_TARGET=	install install.man
 
 # This dialog has been copied off from lesstif port.
 .if defined(HAVE_MOTIF)
@@ -50,40 +68,17 @@ post-patch:
 	@cd ${WRKSRC}/doc/man/man1 && perl -pi -e "s|user cmd|1|" *.1
 	@cd ${WRKSRC}/doc/man/man3 && perl -pi -e "s|library call|3|" *.3
 # mwmrc is not a kernel interface!!
-	@cd ${WRKSRC}/doc/man/man4 && perl -pi -e "s|special file|5|" *.4 \
-	    && mv mwmrc.4 ../man5/mwmrc.5
+	@cd ${WRKSRC}/doc/man/man4 && perl -pi -e "s|special file|5|" *.4
 	@cd ${WRKSRC}/doc/man/man5 && perl -pi -e "s|file formats|5|" *.5
+
 	@cd ${WRKSRC}/config/cf && \
-	    sed -e "s|%%PREFIX%%|${PREFIX}|g" < site.def > site.def.new && \
-	    mv -f site.def.new site.def && \
-	    sed -e "s|%%PREFIX%%|${PREFIX}|g" < Motif.tmpl > Motif.tmpl.new && \
-	    mv -f Motif.tmpl.new Motif.tmpl
+	    perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" host.def Motif.tmpl
 # Import from our current X installation.
-	@cp -f `ls /usr/X11R6/lib/X11/config/* | grep -v '\(Motif\|cde\|\/site.def\)'` ${WRKDIR}/motif/config/cf
+	@cp -f `ls /usr/X11R6/lib/X11/config/* | grep -v '\(Motif\|cde\|\/site.def\|host.def\)'` ${WRKDIR}/motif/config/cf
 	@mkdir -p ${WRKSRC}/imports/x11
 	@cd ${WRKSRC}/imports/x11 && for i in bin include lib ; do \
 	    if [ -f $$i ] ; then rm $$i; fi; \
 	    ln -s ${X11BASE}/$$i $$i; \
-	done
-
-post-build:
-# tblize the manpages.
-	@for i in man1 man3 man5 ; do cd ${WRKSRC}/doc/man/$$i; \
-	    echo "building in doc/man/$$i"; \
-	    for m in *; do \
-		tbl $$m > $$m.new && \
-		mv -f $$m.new $$m; \
-	    done; \
-	done
-
-# Install the manpages.
-post-install:
-	@for i in man1 man3 man5 ; do cd ${WRKSRC}/doc/man/$$i; \
-	    echo "installing in doc/man/$$i"; \
-	    for m in *; do \
-		mkdir -p ${PREFIX}/man/$$i; \
-		$(INSTALL_MAN) $$m ${PREFIX}/man/$$i; \
-	    done; \
 	done
 
 .include <bsd.port.mk>

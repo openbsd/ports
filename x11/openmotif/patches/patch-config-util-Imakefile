@@ -1,0 +1,69 @@
+--- config/util/Imakefile.orig	Fri Apr 28 08:04:07 2000
++++ config/util/Imakefile	Mon Nov 20 19:53:03 2000
+@@ -1,65 +1,9 @@
+ XCOMM $XConsortium: Imakefile /main/16 1996/11/13 14:43:28 lehors $
+-#if UseCCMakeDepend
+-MDEP_PROG = makedepend
+-#endif
+ 
+-#ifdef ExportListGenSource
+-EXPORTLISTGEN = exportlistgen
+-#endif
+-
+-#ifdef Win32Architecture
+-CMKDIRHIER = mkdirhier.exe
+-#endif
+-
+-PROGRAMS = xmkmf $(MDEP_PROG) mergelib ProgramTargetName(makestrs) $(EXPORTLISTGEN) $(CMKDIRHIER)
+-DEPLIBS =
+-#ifndef Win32Architecture
+-  EXTRA_LIBRARIES =
+-#endif
+-
+-XCOMM Some compilers generate fatal errors if an -L directory does
+-XCOMM not exist.  Since BUILDLIBDIR may not exist yet suppress its use.
+-         LDPRELIB =
+-        LDPRELIBS =
++PROGRAMS = ProgramTargetName(makestrs)
+ 
+ all:: $(PROGRAMS)
+ 
+ includes:: ProgramTargetName(makestrs)
+ 
+-#ifdef ExportListGenSource
+-CppScriptTarget(exportlistgen,ExportListGenSource,-DCXXFILT=$(CXXFILT),)
+-InstallNamedProg(exportlistgen,exportlistgen,$(BINDIR))
+-#endif
+-
+-CppScriptTarget(xmkmf,xmkmf.cpp,-DCONFIGDIRSPEC='"'"-I$(CONFIGDIR)"'"',$(ICONFIGFILES))
+-CppScriptTarget(makedepend,mdepend.cpp,-DPREPROC='"'"$(PREPROCESSCMD)"'"',$(ICONFIGFILES))
+-CppScriptTarget(mergelib,mergelib.cpp,"-DARCMD=$(AR)" "-DRANLIB=$(RANLIB)",$(ICONFIGFILES))
+-
+-#if HasSymLinks
+-#if CrossCompiling
+-SimpleHostProgramTarget(lndir)
+-#else
+-SimpleProgramTarget(lndir)
+-#endif
+-#endif
+-
+-#ifdef Win32Architecture
+-SimpleProgramTarget(mkdirhier)
+-#endif
+-
+ NormalProgramTarget(makestrs,makestrs.o,,,)
+-
+-InstallNamedProg(xmkmf,xmkmf,$(BINDIR))
+-InstallManPage(xmkmf,$(MANDIR))
+-InstallNamedProg(mkdirhier.sh,mkdirhier,$(BINDIR))
+-InstallManPage(mkdirhier,$(MANDIR))
+-#if UseCCMakeDepend
+-InstallNamedProg(makedepend,makedepend,$(BINDIR))
+-#endif
+-#if SystemV || SystemV4
+-InstallNamedProg(bsdinst.sh,bsdinst,$(BINDIR))
+-#endif
+-InstallNamedProg(mergelib,mergelib,$(BINDIR))
+-
+-InstallNamedProg(makeg.sh,makeg,$(BINDIR))
+-InstallManPage(makeg,$(MANDIR))

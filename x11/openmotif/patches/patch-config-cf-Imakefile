@@ -1,0 +1,20 @@
+--- config/cf/Imakefile.orig	Mon Nov 20 13:43:31 2000
++++ config/cf/Imakefile	Mon Nov 20 21:00:58 2000
+@@ -121,15 +121,13 @@
+ QNX.cf \
+ xfree86.cf
+ 
+-INSTFILES = $(RULEFILES) $(TMPLFILES) $(DEFFILES) $(CFFILES) $(LOCALFILES)
++/* We only need to install Motif.tmpl, and Motif.rules. */
++INSTFILES = Motif.tmpl Motif.rules
+ 
+ all::
+ 
+ InstallMultipleDestFlags(install,$(INSTFILES),$(CONFIGDIR),$(INSTDATFLAGS))
+ InstallLinkKitMultipleDestFlags($(INSTFILES),$(LINKKITDIR)/config/cf,$(INSTDATFLAGS))
+-
+-InstallNamedNonExec(Motif.rules,Motif.rules.openmotif,$(CONFIGDIR))
+-InstallNamedNonExec(Motif.tmpl,Motif.tmpl.openmotif,$(CONFIGDIR))
+ 
+ #ifdef InstallEmptyHostDef
+ install::

@@ -1,20 +1,11 @@
---- config/cf/Motif.tmpl.orig	Tue May  2 11:53:43 2000
-+++ config/cf/Motif.tmpl	Wed Aug  9 19:29:41 2000
+--- config/cf/Motif.tmpl.orig	Mon Nov 20 13:42:47 2000
++++ config/cf/Motif.tmpl	Mon Nov 20 21:04:01 2000
 @@ -396,7 +396,7 @@
  /* hardcoded default path.  Contrary to the original duplicate of USRLIBDIR
     in the Imakefiles. */
  #ifndef VirtualBindingsPath
--# define VirtualBindingsPath /usr/lib/Xm/bindings
-+# define VirtualBindingsPath %%PREFIX%%/lib/Xm/bindings
+-# define VirtualBindingsPath $(USRLIBDIR)/Xm/bindings
++# define VirtualBindingsPath %%PREFIX%%/lib/X11/bindings
  #endif
  
                MTOP = MTop
-@@ -458,7 +458,7 @@
-   AUTOCREATESRC = $(AUTOSRCLIB)/Create
-   AUTOVISUALSRC = $(AUTOSRCLIB)/Visual
-     AUTOUTILSRC = $(AUTOSRCLIB)/Util
--  AUTOEXTRALIBS = -ll -ly -lm
-+  AUTOEXTRALIBS = $(LEXLIB) -lm
- #else
-      TESTCOMSRC = $(MANUALSRCLIB)/Common
- #endif

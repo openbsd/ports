@@ -1,23 +1,6 @@
---- Imakefile.orig	Thu May  4 08:30:42 2000
-+++ Imakefile	Wed Aug  9 19:29:42 2000
-@@ -57,7 +57,7 @@
- ImakeDependency(xmakefile)
- xmakefile:: Imakefile
- 	RMoveToBakFile(xmakefile)
--	$(IMAKE_CMD) -s xmakefile -DTOPDIR=$(TOP) -DCURDIR=$(CURRENT_DIR)
-+	$(IMAKE) -s xmakefile -DTOPDIR=$(TOP) -DCURDIR=$(CURRENT_DIR)
- 
- 
- VerifyOS::
-@@ -67,6 +67,7 @@
- 
- includes::
- 	MakeDir($(BUILDINCDIR))
-+	MakeDir($(BUILDLIBDIR))
- 	MakeDir($(BUILDDOCDIR))
- 	MakeDir($(BUILDLOCDIR))
- 
-@@ -89,7 +90,7 @@
+--- Imakefile.orig	Mon Nov 20 13:42:49 2000
++++ Imakefile	Mon Nov 20 20:35:18 2000
+@@ -90,7 +90,7 @@
  #ifdef UseInstalled
  TESTS_IMAKE = $(IMAKE) -DUseInstalled
  #else

@@ -1,0 +1,122 @@
+@comment $OpenBSD: PLIST-demos,v 1.1 2001/01/03 00:02:58 matt Exp $
+bin/DNDDemo
+bin/UTMXmText
+bin/aicon
+bin/airport
+bin/autopopups
+bin/combo_box
+bin/container
+bin/dainput
+bin/dogs
+bin/draw
+bin/earth
+bin/exm_in_c
+bin/exm_in_uil
+bin/filemanager
+bin/fileview
+bin/getsubres
+bin/helloint
+bin/hellomotif
+bin/i18ninput
+bin/motifshell
+bin/notebook
+bin/onHelp
+bin/periodic
+bin/piano
+bin/sampler2_0
+bin/setDate
+bin/simpleDemo
+bin/simple_drag
+bin/simple_drop
+bin/simpledrop
+bin/spin_box
+bin/tic_mark
+bin/todo
+bin/uilsymdump
+bin/xmanimate
+bin/xmapdef
+bin/xmfonts
+bin/xmforc
+bin/xmform
+lib/X11/app-defaults/Fileview
+lib/X11/app-defaults/XmdAirport
+lib/X11/app-defaults/XmdAnimate
+lib/X11/app-defaults/XmdDraw
+lib/X11/app-defaults/XmdFilemanager
+lib/X11/app-defaults/XmdI18nInput
+lib/X11/app-defaults/XmdPeriodic
+lib/X11/app-defaults/XmdSampler2_0
+lib/X11/app-defaults/XmdSetDate
+lib/X11/app-defaults/XmdTodo
+lib/X11/help/aicon.help
+lib/X11/help/draw.help
+lib/X11/help/filemanager.help
+lib/X11/help/getsubres.help
+lib/X11/help/helpOn.help
+lib/X11/help/i18ninput.help
+lib/X11/help/sampler2_0.help
+lib/X11/help/todo.help
+lib/X11/help/xmanimate.help
+lib/X11/motifshell/help
+lib/X11/motifshell/membership
+lib/X11/motifshell/motif
+lib/X11/motifshell/motifshell.c
+lib/X11/motifshell/principles
+lib/X11/motifshell/research
+lib/X11/motifshell/welcome
+lib/X11/uid/C/uid/l_strings.uid
+lib/X11/uid/English.uid
+lib/X11/uid/French.uid
+lib/X11/uid/German.uid
+lib/X11/uid/dog.uid
+lib/X11/uid/dogs.uid
+lib/X11/uid/english/uid/l_strings.uid
+lib/X11/uid/exm_in_uil.uid
+lib/X11/uid/french/uid/l_strings.uid
+lib/X11/uid/hebrew/uid/l_strings.uid
+lib/X11/uid/helloint.uid
+lib/X11/uid/hellomotif.uid
+lib/X11/uid/japanese/uid/l_strings.uid
+lib/X11/uid/periodic.uid
+lib/X11/uid/plane.uid
+lib/X11/uid/superman.uid
+lib/X11/uid/swedish/uid/l_strings.uid
+lib/X11/uid/xmanimate.uid
+man/man1/DNDDemo.1
+man/man1/autopopups.1
+man/man1/combo_box.1
+man/man1/container.1
+man/man1/draw.1
+man/man1/earth.1
+man/man1/exm_in_c.1
+man/man1/exm_in_uil.1
+man/man1/filemanager.1
+man/man1/getsubres.1
+man/man1/helloint.1
+man/man1/i18ninput.1
+man/man1/notebook.1
+man/man1/periodic.1
+man/man1/piano.1
+man/man1/sampler2_0.1
+man/man1/setDate.1
+man/man1/simpleDemo.1
+man/man1/simpledrop.1
+man/man1/spin_box.1
+man/man1/tic_mark.1
+man/man1/todo.1
+man/man1/xmanimate.1
+@dirrm lib/X11/help
+@dirrm lib/X11/motifshell
+@dirrm lib/X11/uid/C/uid
+@dirrm lib/X11/uid/C
+@dirrm lib/X11/uid/french/uid
+@dirrm lib/X11/uid/french
+@dirrm lib/X11/uid/english/uid
+@dirrm lib/X11/uid/english
+@dirrm lib/X11/uid/hebrew/uid
+@dirrm lib/X11/uid/hebrew
+@dirrm lib/X11/uid/japanese/uid
+@dirrm lib/X11/uid/japanese
+@dirrm lib/X11/uid/swedish/uid
+@dirrm lib/X11/uid/swedish
+@dirrm lib/X11/uid

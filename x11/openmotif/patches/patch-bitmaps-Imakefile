@@ -1,0 +1,8 @@
+--- bitmaps/Imakefile.orig	Mon Nov 20 23:49:48 2000
++++ bitmaps/Imakefile	Tue Nov 21 00:39:02 2000
+@@ -56,4 +56,4 @@
+ 
+ all::
+ 
+-InstallMultipleFlags($(HEADERS),$(XPROJECTROOT)/include/X11/bitmaps/,$(INSTINCFLAGS))
++InstallMultipleFlags($(HEADERS),$(PROJECTROOT)/include/X11/bitmaps/,$(INSTINCFLAGS))
