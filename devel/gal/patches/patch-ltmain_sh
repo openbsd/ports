@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltmain_sh,v 1.2 2002/11/14 20:56:46 marcm Exp $
---- ltmain.sh.orig	Mon Oct  7 08:47:52 2002
-+++ ltmain.sh	Tue Oct 15 10:40:27 2002
+$OpenBSD: patch-ltmain_sh,v 1.3 2003/04/10 15:52:33 marcm Exp $
+--- ltmain.sh.orig	Mon Feb  3 09:18:01 2003
++++ ltmain.sh	Fri Feb  7 16:14:13 2003
 @@ -1073,6 +1073,17 @@ compiler."
  	continue
  	;;
@@ -21,7 +21,7 @@ $OpenBSD: patch-ltmain_sh,v 1.2 2002/11/14 20:56:46 marcm Exp $
  	continue
 @@ -4526,40 +4537,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+     test "$show" = : && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"

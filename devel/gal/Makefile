@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/01/03 21:39:28 marcm Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/10 15:52:33 marcm Exp $
 
 COMMENT=		"GNOME Application Libs"
 
-DISTNAME=		gal-0.22
+DISTNAME=		gal-0.24
 CATEGORIES=    		devel x11/gnome
 HOMEPAGE=		http://www.gnome.org/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/0.22/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/gal/0.24/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		gettext

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.3 2003/01/03 21:39:28 marcm Exp $
---- configure.orig	Thu Dec  5 09:12:52 2002
-+++ configure	Sat Dec 14 21:19:48 2002
-@@ -5560,8 +5560,8 @@ else
+$OpenBSD: patch-configure,v 1.4 2003/04/10 15:52:33 marcm Exp $
+--- configure.orig	Fri Mar 14 09:42:34 2003
++++ configure	Wed Apr  9 08:11:46 2003
+@@ -6150,8 +6150,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.3 2003/01/03 21:39:28 marcm Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -5570,8 +5570,8 @@ else
+@@ -6160,8 +6160,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.3 2003/01/03 21:39:28 marcm Exp $
          ;;
        esac
      fi
-@@ -6087,6 +6087,8 @@ openbsd*)
+@@ -6677,6 +6677,8 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.3 2003/01/03 21:39:28 marcm Exp $
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
-@@ -10317,6 +10319,10 @@ fi
+@@ -11431,6 +11433,10 @@ fi
  
  	   fi
  
@@ -42,13 +42,22 @@ $OpenBSD: patch-configure,v 1.3 2003/01/03 21:39:28 marcm Exp $
 +
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
  	      || test "$gt_cv_func_gettext_libintl" = "yes"; then
- 	      cat >>confdefs.h <<\EOF
-@@ -11606,7 +11612,7 @@ s/^[^=]*=[ 	]*$//;
+ 	      cat >>confdefs.h <<\_ACEOF
+@@ -12121,8 +12127,6 @@ fi
+ 
+                sed -e '/^#/d' $srcdir/intl/$msgformat-msg.sed > intl/po2msg.sed
+    fi
+-      sed -e '/^#.*[^\\]$/d' -e '/^#$/d' \
+-     $srcdir/intl/po2tbl.sed.in > intl/po2tbl.sed
+ 
+             if test "$PACKAGE" = "gettext"; then
+      GT_NO="#NO#"
+@@ -12885,7 +12889,7 @@ s/^[^=]*=[ 	]*$//;
  }'
  fi
  
 -DEFS=-DHAVE_CONFIG_H
 +DEFS="-DHAVE_CONFIG_H -I\$(top_srcdir)"
  
-         mv -f po/POTFILES po/POTFILES.tmp
-         sed -e 's/\[.*\] *//' < po/POTFILES.tmp > po/POTFILES
+ 
+ 
