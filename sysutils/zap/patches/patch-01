@@ -1,6 +1,0 @@
---- Makefile.orig	Sun May 30 15:47:24 1999
-+++ Makefile	Sun May 30 15:47:24 1999
-@@ -0,0 +1,3 @@
-+PROG = zap
-+
-+.include <bsd.prog.mk>
