@@ -11,17 +11,16 @@ MASTER_SITES=	http://dontaku.csce.kyushu-u.ac.jp/~ysonoda/archives/program/FreeB
 MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		NONE
-PERMIT_PACKAGE_CDROM=	YES
-PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM=	YES
-PERMIT_DISTFILES_FTP=	YES
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+MAKE_FLAGS=		CFLAGS='${CFLAGS}' LIBS=-lossaudio
+FAKE=			Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/waveplay ${PREFIX}/bin/waveplay
-
-post-install:
-	@mkdir -p ${PREFIX}/share/doc/waveplay
-	@${STRIP} ${PREFIX}/bin/waveplay
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/waveplay
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/waveplay/
 	${INSTALL_DATA} ${WRKSRC}/README.jp ${PREFIX}/share/doc/waveplay/
 
