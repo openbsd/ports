@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.28 2001/11/21 02:42:09 brad Exp $
+# $OpenBSD: network.conf.template,v 1.29 2001/11/23 12:44:12 brad Exp $
 
 #
 # NEVER EDIT THAT FILE DIRECTLY !!!! ALWAYS COPY IT TO ../db FIRST.
@@ -208,7 +208,7 @@ MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/%SUBDIR%/
 
 MASTER_SITE_WINDOWMAKER+=	\
-	ftp://ftp.windowmaker.org/%SUBDIR%/ \
+	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
 	ftp://ftp.ziobudda.net/pub/Mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/mirror/ftp.windowmaker.org/pub/%SUBDIR%/ \
