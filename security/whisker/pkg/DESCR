@@ -1,8 +1,4 @@
-hacked up whisker.txt, sorry rfp...
-
 ---------[ Whisker: next-generation CGI scanner
-
---[ by rain.forest.puppy / ADM / wiretrip  	(rfp@wiretrip.net)
 								
 Wait...CGI scanning isn't that complex, is it?  Well, to do it right,
 yes.  Why?  Hmmm...I can think of a few reasons:
@@ -58,4 +54,4 @@ Point of the point: being able to spoof IDSs would be a nice feature
 Well, that's enough wishes, don't you think?  Now, do they come
 true....
 
-----[ Whisker has all that, plus a bonus feature or two :)
+WWW: ${HOMEPAGE}
