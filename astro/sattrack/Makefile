@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/11 00:37:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/07 04:44:09 angelos Exp $
 
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
@@ -6,6 +6,12 @@ MASTER_SITES=   ${MASTER_SITE_LOCAL}
 NEED_VERSION=	1.191
 
 NO_CDROM=	"COPY: may not be bundled"
+
+LICENSE_TYPE=   NOFEE REST
+PERMIT_PACKAGE_CDROM=   "May not be bundled, according to copyright."
+PERMIT_PACKAGE_FTP=     Yes
+PERMIT_DISTFILES_CDROM= "May not be bundled, according to copyright."
+PERMIT_DISTFILES_FTP=   Yes
 
 MAINTAINER=	angelos@openbsd.org
 
