@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/09/19 17:02:42 mickey Exp $
+libdata/perl5/site_perl/GD/Graph.pm
+libdata/perl5/site_perl/GD/Graph/Data.pm
+libdata/perl5/site_perl/GD/Graph/Error.pm
+libdata/perl5/site_perl/GD/Graph/FAQ.pod
+libdata/perl5/site_perl/GD/Graph/area.pm
+libdata/perl5/site_perl/GD/Graph/axestype.pm
+libdata/perl5/site_perl/GD/Graph/bars.pm
+libdata/perl5/site_perl/GD/Graph/colour.pm
+libdata/perl5/site_perl/GD/Graph/lines.pm
+libdata/perl5/site_perl/GD/Graph/linespoints.pm
+libdata/perl5/site_perl/GD/Graph/mixed.pm
+libdata/perl5/site_perl/GD/Graph/pie.pm
+libdata/perl5/site_perl/GD/Graph/points.pm
+libdata/perl5/site_perl/GD/Graph/utils.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/Graph/.packlist
+man/man3/GD::Graph.3p
+man/man3/GD::Graph::Data.3p
+man/man3/GD::Graph::Error.3p
+man/man3/GD::Graph::FAQ.3p
+man/man3/GD::Graph::colour.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/GD/Graph
