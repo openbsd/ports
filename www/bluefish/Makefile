@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/02/22 22:55:07 jasoni Exp $
+# $OpenBSD: Makefile,v 1.8 2000/02/28 12:12:12 kevlo Exp $
 
-DISTNAME=	bluefish-0.3.5
+DISTNAME=	bluefish-0.3.6
 CATEGORIES=	www 
 MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
 		http://student.wau.nl/~olivier/bluefish/download/ \
@@ -29,7 +29,7 @@ CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include"
 do-install:
-	@mkdir -p ${PREFIX}/lib/bluefish
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/bluefish
 	${INSTALL_PROGRAM} ${WRKSRC}/src/bluefish ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/data/php3_functions ${PREFIX}/lib/bluefish
 	${INSTALL_DATA} ${WRKSRC}/data/rxml_functions ${PREFIX}/lib/bluefish
