@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/03/26 15:58:21 todd Exp $
 #
 
-# 
-# What port/package will be created
-#
+COMMENT=		"one keyboard/mouse to multiple X displays"
 DISTNAME=		x2x-1.27
 CATEGORIES=     	x11
-NEED_VERSION=		1.305
+NEED_VERSION=		1.364
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
-LICENSE_TYPE=		BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

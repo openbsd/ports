@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/22 14:03:06 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2001/03/26 15:58:17 todd Exp $
 
+COMMENT=	"GNU make"
 DISTNAME=	make-3.79.1
 PKGNAME=	gmake-3.79.1
 CATEGORIES=	devel
-NEED_VERSION=	1.310
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= make
 

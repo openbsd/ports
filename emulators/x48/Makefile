@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2001/03/22 22:06:36 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2001/03/26 15:58:19 todd Exp $
 #
 
 DISTNAME=		x48-0.4.0
 CATEGORIES=		emulators
-NEED_VERSION=		1.305
+NEED_VERSION=		1.364
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/02 14:51:35 todd Exp $
+# $OpenBSD: Makefile,v 1.19 2001/03/26 15:58:18 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
+COMMENT=	"x86 CPU emulator"
 DISTNAME=	bochs-2000_0325a
 CATEGORIES=	emulators
-NEED_VERSION=	1.310
+NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.bochs.com/bochs/
 
 HOMEPAGE=	http://www.bochs.com/
