@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 1999/07/05 19:35:58 form Exp $
+# $OpenBSD: DEINSTALL,v 1.2 1999/12/13 17:26:55 form Exp $
 #
 # analog deinstallation
 
@@ -20,7 +20,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
 for img in ${IMAGES}; do rm -f /var/www/htdocs/analog-images/${img}; done
 rmdir /var/www/htdocs/analog-images
-rm -f /var/www/cgi-bin/anlgform.cgi
+rm -f /var/www/cgi-bin/anlgform.pl
 if [ -f /etc/analog.cfg ]; then
 	echo ""
 	echo "+---------------"

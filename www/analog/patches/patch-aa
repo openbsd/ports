@@ -1,9 +1,9 @@
-# $OpenBSD: patch-aa,v 1.3 1999/07/05 19:35:58 form Exp $
+# $OpenBSD: patch-aa,v 1.4 1999/12/13 17:26:55 form Exp $
 
---- Makefile.orig	Sat Jun 19 18:19:18 1999
-+++ Makefile	Tue Jul  6 00:29:54 1999
+--- Makefile.orig	Mon Dec 13 22:46:44 1999
++++ Makefile	Mon Dec 13 22:49:42 1999
 @@ -1,8 +1,8 @@
- # Makefile for analog 3.31
+ # Makefile for analog 4.0
  # Please read docs/Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
 -CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
 +#CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
@@ -12,27 +12,19 @@
 +#CEXTRAFLAGS = -O2  # options, e.g. for optimisation or ANSI compilation.
  #                    HP/UX cc requires CEXTRAFLAGS = -Aa (HP/UX 9) or ...
  #                    -Ae (HP/UX 10);       BS2000/OSD requires -XLLML -XLLMK
- DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DEBCDIC ...
-@@ -25,76 +25,78 @@
- 	macinput.o macstuff.o output.o output2.o process.o settings.o \
+ DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT -DNOOPEN -DNOREGEX ...
+@@ -25,7 +25,9 @@
+ 	input.o macinput.o macstuff.o output.o output2.o process.o settings.o \
  	sort.o tree.o utils.o win32.o
- HEADERS = analhead.h analhea2.h macdir.h
+ HEADERS = anlghead.h anlghea2.h anlghea3.h anlghea4.h macdir.h
 -CFLAGS = $(CEXTRAFLAGS) $(DEFS) -D$(OS)
 +CFLAGS += $(CEXTRAFLAGS) $(DEFS) -D$(OS)
- 
- # Form interface options:
- FORMPROG = anlgform.cgi     # The program that processes the data from the form
- FORMSRC = anlgform.c        # The source code for that program
- 
--$(PROGRAM): $(OBJS) $(HEADERS) Makefile
--	$(CC) $(CEXTRAFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
-+all:	$(PROGRAM) $(FORMPROG)
 +
-+$(PROGRAM): $(OBJS) $(HEADERS)
-+	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
- 	@echo '***'
- 	@echo '***IMPORTANT: You must read the licence before using analog'
- 	@echo '***'
++all:	$(PROGRAM)
+ 
+ $(PROGRAM): $(OBJS) $(HEADERS) Makefile
+ 	$(CC) $(CEXTRAFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
+@@ -35,61 +37,61 @@
  
  # There doesn't seem to be a good way to write all these rules in a generic
  # form that works for all "make" programs
@@ -51,6 +43,10 @@
 -dates.o: dates.c $(HEADERS) Makefile
 +dates.o: dates.c $(HEADERS)
  	$(CC) $(CFLAGS) -c dates.c
+ 
+-globals.o: globals.c $(HEADERS) Makefile
++globals.o: globals.c $(HEADERS)
+ 	$(CC) $(CFLAGS) -c globals.c
  
 -hash.o: hash.c $(HEADERS) Makefile
 +hash.o: hash.c $(HEADERS)
@@ -108,10 +104,4 @@
 +win32.o: win32.c $(HEADERS)
  	$(CC) $(CFLAGS) -c win32.c
  
--$(FORMPROG): $(FORMSRC) Makefile
--	$(CC) $(CEXTRAFLAGS) $(FORMSRC) -o $(FORMPROG)
-+$(FORMPROG): $(FORMSRC)
-+	$(CC) $(CFLAGS) $(FORMSRC) -o $(FORMPROG)
- 
- form: $(FORMPROG)
- 
+ force:

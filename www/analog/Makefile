@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/16 14:09:25 form Exp $
+# $OpenBSD: Makefile,v 1.8 1999/12/13 17:26:55 form Exp $
 
-DISTNAME=	analog3.32
-PKGNAME=	analog-3.32
+DISTNAME=	analog4.0
+PKGNAME=	analog-4.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
@@ -29,6 +29,11 @@ CFLAGS+=	-DANALOGDIR=\\\"${ANALOGDIR}/\\\" \
 		-DIMAGEDIR=\\\"${IMAGEDIR}/\\\" \
 		-DANALOG=\\\"${PREFIX}/bin/analog\\\"
 
+post-patch:
+	@${MV} ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
+	@${SED} -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
+		> ${WRKSRC}/anlgform.pl
+
 do-install:
 	@${INSTALL_DATA_DIR} ${DOCDIR}
 	@${INSTALL_DATA_DIR} ${ANALOGDIR}/lang
@@ -40,7 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${ANALOGDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${ANALOGDIR}
-	${INSTALL_DATA} ${WRKSRC}/anlgform.cgi ${ANALOGDIR}
+	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${ANALOGDIR}
 
 post-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
