@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/02/23 10:55:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2000/02/23 11:08:42 itojun Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
@@ -15,6 +15,11 @@ NEED_VERSION=	1.210
 
 MAINTAINER=	itojun@itojun.org
 
+LICENSE_TYPE=		BSD
+PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE_FTP=	yes
+PERMIT_DISTFILES_CDROM=	yes
+PERMIT_DISTFILES_FTP=	yes
 
 # NetBSD stuff, no support in Open yet.
 #CONFLICTS=	vigor-*
