@@ -3,7 +3,7 @@
 # Date created:		11 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.7 2001/05/06 04:41:41 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/06/07 08:41:42 kevlo Exp $
 #
 
 COMMENT=	"display a dialog box and prompt user for text"
@@ -11,9 +11,9 @@ COMMENT=	"display a dialog box and prompt user for text"
 DISTNAME=	xprompt-1.4
 CATEGORIES=	x11
 NEED_VERSION=	1.402
-MASTER_SITES=   ftp://ftp.nsg.bc.ca/pub/nsg/src/xprompt/
+MASTER_SITES= 	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	ports@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
