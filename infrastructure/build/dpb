@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $OpenBSD: dpb,v 1.11 2005/01/30 10:07:36 sturm Exp $
+# $OpenBSD: dpb,v 1.12 2005/01/30 12:37:32 sturm Exp $
 # Copyright (c) 2004 Nikolay Sturm <sturm@openbsd.org>.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -84,7 +84,6 @@ our $NODES = {};
 our $HOSTS = {};
 
 our $FREE_NODES = {};
-our @DOWN_HOSTS = ();
 
 our $CHECK_HOSTS;
 our $check_host_ctr = 0;
@@ -154,7 +153,6 @@ sub mark_host_down($)
 	warn "*** lost $host\n";
 
 	$HOSTS->{$host}{down} = 1;
-	push(@DOWN_HOSTS, $host);
 
 	foreach my $node (@{$HOSTS->{$host}{nodes}}) {
 		my $nodepid = $NODES->{$node}{pid};
@@ -222,6 +220,27 @@ sub start_ssh_master($)
 			    "$host");
 		my_exec(\@args, "/dev/null");
 	}
+}
+
+sub clear_lock($)
+{
+	my $fullport = shift;
+	my ($port, $t) = split /,/, $fullport;
+
+	my $flavor = "";
+	if (defined $t and not $t =~ /^-/) {
+		$flavor = "FLAVOR=$t";
+	}
+
+	my $lockdir = `cd ${PORTSDIR}/$port && $flavor make show=LOCKDIR`;
+	chomp $lockdir;
+	return if $lockdir eq "";
+
+	my $lockname = `cd ${PORTSDIR}/$port && $flavor make show=_LOCKNAME`;
+	chomp $lockname;
+	return if $lockname eq "";
+
+	system("/bin/rm -f $lockdir/$lockname.lock");
 }
 
 sub clear_packages($)
@@ -323,14 +342,16 @@ sub update_after_slave($)
 		update_prereqs_of($port);
 		delete $prereqs_of{$port};
 	} elsif ($retval == 1) {
-		print "<== failure building $port\n";
+		warn "*** failure building $port\n";
 
 		remove_port($port);
 	} elsif ($retval == 255) {
-		warn "*** $node died with signal, retrying $port later.\n";
+		warn "*** build was killed, retrying $port later\n";
+
+		clear_lock($port);
 	} else {
-		warn "*** Unexpected return code $retval from $node "
-		    . "for $port.\n";
+		warn "*** unexpected return code $retval from $node "
+		    . "for $port\n";
 
 		remove_port($port);
 	}
@@ -470,11 +491,11 @@ sub parse_hosts_file()
 		}
 
 		if (not defined $ncpu or $ncpu eq "") {
-			warn "*** Host $host does not answer, not using it.\n";
+			warn "*** host $host does not answer, not using it\n";
 			next;
 		} elsif ($ncpu > 1 and defined $opt_c) {
 			$ncpu = 1;
-			warn "*** Only using one node on $host due to '-c'\n";
+			warn "*** only using one node on $host due to '-c'\n";
 		}
 
 		$HOSTS->{$host}{nodes} = ();
@@ -532,7 +553,9 @@ sub build_package($$$$)
 		} else {
 			my $arg = "cd $PORTSDIR/$port && ";
 			$arg .= "FLAVOR=\"$flavor\" " if defined $flavor;
-			$arg .= "$MAKE $MAKEFLAGS package";
+			# if we lost contact to the node, a build of this
+			# port might still be running; cleaning kills it
+			$arg .= "$MAKE $MAKEFLAGS clean package";
 			my @args = (@{$NODES->{$node}{shell}}, $arg);
 			
 			start_logger($node);
@@ -599,8 +622,14 @@ sub clean_up($)
 	unlink($opt_T) if ref $opt_T;
 
 	foreach my $node (keys %{$NODES}) {
+		my $pid = $NODES->{$node}{pid};
+		my $port = $SLAVES->{$pid}{port};
+
 		kill_ssh_master($NODES->{$node}{host});
 		unlink($NODES->{$node}{fifo}) if -p $NODES->{$node}{fifo};
+
+		local $SIG{CHLD} = "DEFAULT";
+		clear_lock($port);
 	}
 
 	exit(shift);
