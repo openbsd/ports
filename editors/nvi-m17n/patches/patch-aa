@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Thu Mar  6 13:19:46 1997
---- Makefile.in	Thu Mar  6 13:23:40 1997
+*** build/Makefile.in.orig	Thu Mar  6 13:19:46 1997
+--- build/Makefile.in	Thu Mar  6 13:23:40 1997
 ***************
 *** 87,95 ****
   	cd $(bindir) && $(chmod) $(emode) `echo vi | sed '$(transform)'`

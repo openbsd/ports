@@ -1,26 +1,28 @@
-# $OpenBSD: Makefile,v 1.2 2000/02/23 04:52:54 itojun Exp $
+# $OpenBSD: Makefile,v 1.3 2000/02/23 10:46:16 espie Exp $
 # NetBSD: Makefile,v 1.6 2000/01/19 12:28:44 hubertf Exp
 # FreeBSD Id: Makefile,v 1.11 1999/04/17 10:51:03 itojun Exp
 
 DISTNAME=	nvi-1.79
 PKGNAME=	nvi-m17n-1.79.19991117
 CATEGORIES=	editors
+MASTER_SITES0=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
+
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
-		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCHFILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+		${MASTER_SITES0}
 
 PATCHFILES=	nvi-1.79.m17n-19991117.diff.gz
 
 MAINTAINER=	itojun@itojun.org
 
-CONFLICTS=	vigor-*
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/build
-GNU_CONFIGURE=	YES
-PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p1 -f
-CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
-CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=i386--openbsd
+# NetBSD stuff, no support in Open yet.
+#CONFLICTS=	vigor-*
+
+PATCH_DIST_STRIP=-p1
+WRKSRC=	${WRKDIR}/${DISTNAME}/build
+GNU_CONFIGURE=	Yes
+CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"/etc/vi.exrc\"' 
+CONFIGURE_ARGS+=--enable-multibyte --program-prefix=n --host=${ARCH}-unknown-netbsd
 
 PATCH_FUZZ_FACTOR=	-F1
 
@@ -30,9 +32,6 @@ PATCH_FUZZ_FACTOR=	-F1
 #.endif
 
 PLIST=	${WRKDIR}/PLIST
-
-REQ_TMP=	${PKGDIR}/REQ
-REQ_FILE=	${WRKDIR}/REQ
 
 CANNA_OPT.euc-jp=canna cannactrl cannakey=
 CANNA_OPT.sjis=${CANNA_OPT.euc-jp}
@@ -56,24 +55,25 @@ ENCODING+=	iso-2022-cn iso-2022-jp iso-2022-kr
 ENCODING+=	euc-jp euc-cn euc-kr sjis big5 euc-tw hz
 
 post-build:
-	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@cp ${FILESDIR}/PLIST ${PLIST}
 .for encoding in ${ENCODING}
-	@${SED} -e 's|$${CANNA_OPT}|${CANNA_OPT.${encoding}}|'		\
+	@sed -e 's|$${CANNA_OPT}|${CANNA_OPT.${encoding}}|'		\
 		-e 's|$${AUTODETECT}|${AUTODETECT.${encoding}}|'	\
 		-e 's|$${ENCODING}|${encoding}|g'			\
 		-e 's|$${PREFIX}|${PREFIX}|'				\
 		${FILESDIR}/nvi-m17n > ${WRKDIR}/nvi-${encoding}
-	@${ECHO} "bin/nvi-${encoding}" >> ${PLIST}
+	@echo "bin/nvi-${encoding}" >> ${PLIST}
 .endfor
-	@${SED} -e 's|$${PREFIX}|${PREFIX}|' ${REQ_TMP} > ${REQ_FILE}
+	@echo "Read ${PREFIX}/share/vi/README.* for" >${WRKDIR}/MESSAGE
+	@echo "using multilingual facilities." >>${WRKDIR}/MESSAGE
 
 post-install:
 .for encoding in ${ENCODING}
 	@${INSTALL_SCRIPT} ${WRKDIR}/nvi-${encoding} ${PREFIX}/bin
 .endfor
-	@${CP} ${WRKSRC}/../docs.m17n/README.english \
+	@${INSTALL_DATA} ${WRKSRC}/../docs.m17n/README.english \
 		${PREFIX}/share/vi/
-	@${CP} ${WRKSRC}/../docs.m17n/README.japanese \
+	@${INSTALL_DATA} ${WRKSRC}/../docs.m17n/README.japanese \
 		${PREFIX}/share/vi/
 
 .include <bsd.port.mk>
