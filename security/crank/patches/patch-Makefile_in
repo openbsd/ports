@@ -1,0 +1,14 @@
+--- Makefile.in~	Mon Oct 28 14:22:51 2002
++++ Makefile.in	Mon Oct 28 14:23:10 2002
+@@ -7,9 +7,9 @@
+ prefix=@prefix@
+ exec_prefix = @exec_prefix@
+ VERSION = $(shell cat VERSION)
+-CC = gcc
++CC = @CC@
+ PLUGIN-INSTALL = @libdir@/crank/plugins
+-CFLAGS = -O2 -Wall @GTK_CFLAGS@ -DPLUGIN_DIR=\"$(PLUGIN-INSTALL)\"
++CFLAGS += -Wall @GTK_CFLAGS@ -DPLUGIN_DIR=\"$(PLUGIN-INSTALL)\"
+ LIBS  = @GTK_LIBS@
+ OBJFILES = $(patsubst %.c,%.o,$(wildcard *.c))
+ PLUGIN-INSTALL = @libdir@/crank/plugins

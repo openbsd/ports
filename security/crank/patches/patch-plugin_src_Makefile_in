@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugin_src_Makefile_in,v 1.1 2002/10/28 22:34:35 mark Exp $
+--- plugin-src/Makefile.in~	Mon Oct 28 14:28:44 2002
++++ plugin-src/Makefile.in	Mon Oct 28 14:28:57 2002
+@@ -8,8 +8,8 @@ prefix=@prefix@
+ CRANK_DIR = ..
+ INSTALL_DIR = ..
+ DATA_DIR = @datadir@/crank
+-CC = gcc
+-CFLAGS = -O2 -Wall -fPIC @GTK_CFLAGS@ -I$(CRANK_DIR) -DDATA_DIR=\"$(DATA_DIR)\"
++CC = @CC@
++CFLAGS += -Wall -fPIC @GTK_CFLAGS@ -I$(CRANK_DIR) -DDATA_DIR=\"$(DATA_DIR)\"
+ 
+ all: monoalphabetic.key-controls.so \
+      statistics.n-grams.so \
