@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/02/19 20:49:51 alek Exp $
+--- Makefile.in.orig	Thu Mar 11 22:18:02 2004
++++ Makefile.in	Sun Oct 24 23:02:02 2004
+@@ -117,9 +117,9 @@ install_sh = @install_sh@
+ AUTOMAKE_OPTIONS = foreign 1.6 dist-bzip2
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-SUBDIRS = debian src conf doc
++SUBDIRS = src conf doc
+ 
+-EXTRA_DIST = README AUTHORS COPYING TODO m4/shout.m4 m4/vorbis.m4 m4/ogg.m4 m4/xiph_compiler.m4 m4/xiph_xml2.m4
++EXTRA_DIST = AUTHORS TODO m4/shout.m4 m4/vorbis.m4 m4/ogg.m4 m4/xiph_compiler.m4 m4/xiph_xml2.m4
+ 
+ # SCCS Definitions (for BitKeeper)
+ GET = true

@@ -1,0 +1,3 @@
+Ices2 is a source client for streaming Ogg Vorbis audio to an Icecast v2
+server. It supports streaming of .ogg files in playlist mode as well as
+encoding and streaming live input.
