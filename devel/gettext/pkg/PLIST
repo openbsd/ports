@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2001/04/04 19:51:41 brad Exp $
+@comment $OpenBSD: PLIST,v 1.10 2001/05/07 22:41:42 brad Exp $
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -12,7 +12,6 @@ include/libintl.h
 @unexec install-info --delete --info-dir=%D/info %D/info/gettext.info
 info/gettext.info
 @exec install-info --info-dir=%D/info %D/info/gettext.info
-lib/charset.alias
 lib/libintl.a
 lib/libintl.la
 %%SHARED%%

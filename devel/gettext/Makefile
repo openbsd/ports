@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2001/04/04 19:51:40 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2001/05/07 22:41:42 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR= gettext
 
 HOMEPAGE=	http://www.gnu.org/software/gettext/
 
+LIB_DEPENDS=	iconv.2::converters/libiconv
+
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,6 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@rm -f ${WRKSRC}/doc/gettext.info*
