@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/09/28 06:02:13 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/29 15:16:14 brad Exp $
 
 COMMENT=	"Type 1 rasterizer library for UNIX/X11"
 
-VERSION=	1.2
+VERSION=	1.3.1
 DISTNAME=	t1lib-${VERSION}
 CATEGORIES=	devel textproc
-NEED_VERSION=	1.435
+NEED_VERSION=	1.489
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= libs/graphics
 
@@ -21,12 +21,20 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/ac-tools
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
+
+NO_REGRESS=	Yes
 
 ALL_TARGET=	without_doc
 
-WRKDIST=	${WRKDIR}/T1Lib-${VERSION}
+post-patch:
+	@cd ${WRKSRC}/ac-tools; \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig && \
+	${PATCH} --forward --quiet -E < \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh
 
 .include <bsd.port.mk>
+
