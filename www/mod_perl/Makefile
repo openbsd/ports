@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.4 2001/02/09 19:19:39 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/04/18 23:08:29 avsm Exp $
 
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
+COMMENT=	"module that embeds a Perl interpreter into Apache"
+
 DISTNAME=	mod_perl-1.25
 CATEGORIES=	www perl5
-NEED_VERSION=	1.337
+NEED_VERSION=	1.401
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Apache
 
 HOMEPAGE=	http://perl.apache.org/
-
-MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
+MAINTAINER=	ports@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -20,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= perl
-CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="/usr/sbin/apxs"
+CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="/usr/sbin/apxs" PERL_USELARGEFILES="0"
 
 INSTALL_TARGET=	pure_install doc_install
 
