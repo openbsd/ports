@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/07/23 19:13:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2002/12/04 08:35:12 sturm Exp $
 
 COMMENT=		"enhanced, MIME capable Berkeley Mail"
 
-DISTNAME=		nail-9.31
+DISTNAME=		nail-10.3
 CATEGORIES=		mail
 HOMEPAGE=		http://omnibus.ruf.uni-freiburg.de/~gritter/
 
@@ -15,13 +15,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/ \
-		http://jneitzel.freeshell.org/nail/
+		http://home.bluemarble.net/~jneitzel/nail/
 
 MODULES=		iconv
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--with-rcfile="${SYSCONFDIR}/nail.rc"
+CONFIGURE_ARGS=		--with-rcfile="${SYSCONFDIR}/nail.rc" --with-openssl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-liconv"
