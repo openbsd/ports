@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug  9 14:46:30 1997
-+++ Makefile	Mon Jan  5 10:10:28 1998
+--- Makefile.orig	Sat Aug  9 23:46:30 1997
++++ Makefile	Fri Mar 16 20:53:11 2001
 @@ -8,8 +8,8 @@
  #         Important note:  Use sun4 for SunOS 4.1.x, sun5 for SunOS 5.x
  #         (Solaris)
@@ -11,7 +11,7 @@
  #BIN_DIR = $(HOME)/Misc/Nevot/bin/$(OSTYPE)
  
  # Where to temporary object files; by default below this directory
-@@ -18,17 +18,17 @@
+@@ -18,17 +18,17 @@ OBJ_DIR = $(ARCH)
  
  # Where dynamically loadable versions of libtcl*, etc. are to be found.
  # LIB_DIR = -L$(HOME)/$(ARCH)/lib -R$(HOME)/$(ARCH)/lib
@@ -33,3 +33,12 @@
  
  # System-specific definitions:
  include Makefile.$(ARCH)
+@@ -40,7 +40,7 @@ TCL2C  = ./tcl2c
+ V      = 1.9
+ CO     = /bin/true
+ LDLIBS = $(SYSLIBS)
+-CFLAGS = $(OPT) $(WFLAGS) $(SYSFLAGS) -D$(ARCH) -I. -I$(ARCH)
++CFLAGS += $(WFLAGS) $(SYSFLAGS) -D$(ARCH) -I. -I$(ARCH)
+ FTP    = /import/ftp/pub/schulzrinne/rtptools/
+ WWW    = $(HOME)/html/rtptools
+ 
