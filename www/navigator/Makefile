@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 1999/10/07 19:08:29 brad Exp $
+# $OpenBSD: Makefile,v 1.22 1999/10/07 19:40:44 brad Exp $
 #
 # Relevant URLs:	http://www.bsdi.com/netscape/
 #			http://www.fortify.net/
@@ -34,8 +34,8 @@ SUPDIR=		bsdi21/navigator_standalone
 SUPDISTFILES=	${NS_I386}
 .endif
 
-SUBMAIN=pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${MAINDIR}
-SUBSUP=	pub/communicator/english/${NAVIGATOR_V}/unix/unsupported/${SUPDIR}
+SUBMAIN=communicator/english/${NAVIGATOR_V}/unix/unsupported/${MAINDIR}
+SUBSUP=	communicator/english/${NAVIGATOR_V}/unix/unsupported/${SUPDIR}
 
 PKGNAME=	navigator-${NAVIGATOR_V}
 CATEGORIES=     www
@@ -44,18 +44,28 @@ DIST_SUBDIR=	netscape
 NO_CDROM=       "NOFEE: see http://www.fortify.net/copyright.txt"
 
 MASTER_SITES= \
-	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
-	ftp://ftp.netscape.com/${SUBSUP}/ \
-	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBSUP}/ \
-	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBSUP}/
+	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBSUP}/ \
+	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://uiarchive.uiuc.edu/pub/www/netscape/${SUBSUP}/ \
+	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://sunsite.doc.ic.ac.uk/packages/netscape/pub/${SUBSUP}/ \
+	ftp://ftp-de.netscape.com/pub/${SUBSUP}/ \
+	ftp://ftp.heanet.ie/pub/netscape/${SUBSUP}/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBSUP}/ \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBSUP}/
 
 MASTER_SITES0= \
-	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
-	ftp://ftp.netscape.com/${SUBMAIN}/ \
-	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
-	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/${SUBMAIN}/ \
-	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/${SUBMAIN}/
+	http://wuarchive.wustl.edu/packages/www/Netscape/${SUBMAIN}/ \
+	ftp://netscape.Mirror.McGill.CA/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
+	ftp://ftp.netscape.com/pub/${SUBMAIN}/ \
+	ftp://uiarchive.uiuc.edu/pub/www/netscape/${SUBMAIN}/ \
+	ftp://ftp.the.net/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
+	ftp://sunsite.doc.ic.ac.uk/packages/netscape/pub/${SUBMAIN}/ \
+	ftp://ftp-de.netscape.com/pub/${SUBMAIN}/ \
+	ftp://ftp.heanet.ie/pub/netscape/${SUBMAIN}/ \
+	ftp://nic.funet.fi/pub/mirrors/ftp.netscape.com/pub/${SUBMAIN}/ \
+	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/${SUBMAIN}/
 
 MASTER_SITES1=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/Fortify/ \
