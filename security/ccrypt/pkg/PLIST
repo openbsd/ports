@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/01 12:52:26 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/01/30 05:11:52 kevlo Exp $
 bin/ccat
 bin/ccdecrypt
 bin/ccencrypt
@@ -8,4 +8,5 @@ man/man1/ccdecrypt.1
 man/man1/ccencrypt.1
 man/man1/ccrypt.1
 share/doc/ccrypt/ccrypt.html
+%%emacs21%%
 @dirrm share/doc/ccrypt
