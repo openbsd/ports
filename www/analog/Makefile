@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/16 03:32:24 form Exp $
+# $OpenBSD: Makefile,v 1.20 2000/10/09 06:50:25 form Exp $
 
 DISTNAME=	analog-4.11
 CATEGORIES=	www
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 
 HOMEPAGE=	http://www.analog.cx/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

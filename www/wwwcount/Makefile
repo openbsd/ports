@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/15 05:40:12 form Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/09 06:50:26 form Exp $
 
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	src/wwwcount2.5
 # http://www.digitmania.holowww.com/
 HOMEPAGE=	http://www.muquit.com/muquit/software/Count/Count.html
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
