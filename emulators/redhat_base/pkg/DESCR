@@ -1,6 +1,0 @@
-The redhat_base package is created from selected RedHat
-RPM's to create an environment suitable to run many Linux
-applications.
-
-The kernel option 'COMPAT_LINUX' is required to run Linux
-binaries.
