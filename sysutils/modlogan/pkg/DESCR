@@ -1,0 +1,7 @@
+ModLogAn is a modular logfile analyzer which is able to analyze
+15 logfiles from different servers.
+Its template engine generates XHTML based on usersupplied themes
+which makes it possible to provide different look and feel.
+It's written in C and provides a plugin system.
+
+WWW: ${HOMEPAGE}

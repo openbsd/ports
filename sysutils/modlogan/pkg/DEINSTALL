@@ -1,0 +1,24 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1.1.1 2003/05/02 02:53:05 margarida Exp $
+#
+# modlogan de-installation
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}/modlogan
+
+if [ -d $CONFIG_DIR ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you"
+    echo "| need to perform this step as root:"
+    echo "|"
+    echo "|           rm -rf $CONFIG_DIR"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing"
+    echo "| $1 at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
