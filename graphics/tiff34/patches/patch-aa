@@ -1,0 +1,289 @@
+*** libtiff/Makefile.in.orig	Mon Apr 29 17:16:21 1996
+--- libtiff/Makefile.in	Sat Nov 22 16:55:39 1997
+***************
+*** 62,68 ****
+  #
+  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
+  COPTS	= @GCOPTS@
+! OPTIMIZER=-O
+  CFLAGS	= @ENVOPTS@ @LIBCOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} ${CONF_LIBRARY}
+  #
+  SRCS	= \
+--- 62,68 ----
+  #
+  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
+  COPTS	= @GCOPTS@
+! #OPTIMIZER=-O
+  CFLAGS	= @ENVOPTS@ @LIBCOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} ${CONF_LIBRARY}
+  #
+  SRCS	= \
+***************
+*** 133,139 ****
+  	tif_write.o \
+  	tif_zip.o \
+  	${NULL}
+! TARGETS	= libtiff.a
+  
+  all:	${TARGETS}
+  	if [ @DSO@dso != nodso ]; then \
+--- 133,139 ----
+  	tif_write.o \
+  	tif_zip.o \
+  	${NULL}
+! TARGETS	= libtiff34.a
+  
+  all:	${TARGETS}
+  	if [ @DSO@dso != nodso ]; then \
+***************
+*** 142,150 ****
+  	    true; \
+  	fi
+  
+! libtiff.a: ${OBJS}
+! 	${AR} ${AROPTS} libtiff.a $?
+! 	${RANLIB} libtiff.a
+  
+  #
+  # NB: The configure script verifies that the configured
+--- 142,150 ----
+  	    true; \
+  	fi
+  
+! libtiff34.a: ${OBJS}
+! 	${AR} ${AROPTS} libtiff34.a $?
+! 	${RANLIB} libtiff34.a
+  
+  #
+  # NB: The configure script verifies that the configured
+***************
+*** 159,205 ****
+  
+  # default IRIX DSO building rule
+  IRIXdso: ${OBJS}
+! 	${CC} -o libtiff.@DSOSUF@ -shared -rdata_shared \
+  	    -check_registry ${SRCDIR}/../port/irix/so_locations \
+  	    -quickstart_info \
+  	    ${OBJS} @LIBJPEG@ @LIBGZ@
+  	touch $@
+  # special rule for IRIX 5.2
+  IRIX52dso: ${OBJS}
+! 	${LD} -elf -o libtiff.@DSOSUF@ -shared -no_unresolved -all ${OBJS} \
+  	    @LIBJPEG@ @LIBGZ@ -lc -lm
+  	touch $@
+  # Solaris 2.4
+  SOLARISdso: ${OBJS}
+! 	${LD} -L@DIR_LIB@ -G -o libtiff.@DSOSUF@ ${OBJS}
+  	touch $@
+  # HP-UX A.09.03
+  HPUXdso: ${OBJS}
+! 	${LD} +b@DIR_LIB@ -b -o libtiff.@DSOSUF@ ${OBJS}
+  	touch $@
+  # AIX 2.3.5 and 4.1.1
+  AIXdso: ${OBJS}
+! 	rm -f libtiff.syms shr.o
+! 	echo "#!" > libtiff.syms
+! 	/bin/dump -g libtiff.a | sed -n -e \
+  	      's/^[ 	]*[0-9][0-9]*[	 ]*\([^	 .][^ 	]*\)$$/\1/p' \
+! 	      >> libtiff.syms
+! 	${LD} -o shr.o libtiff.a -H512 -T512 -bM\:SRE \
+! 	    -bE\:libtiff.syms @LIBJPEG@ @LIBGZ@ -lc -lm -L@DIR_LIB@
+! 	rm -f libtiff.syms libtiff.@DSOSUF@
+! 	${AR} ${AROPTS} libtiff.@DSOSUF@ shr.o
+  	rm -f shr.o
+  	touch $@
+  # linux ELF shared lib rule
+  LINUXdso:  ${OBJS}
+! 	${CC} -shared -Wl,-soname,libtiff.@DSOSUF@ \
+! 	    -o libtiff.@DSOSUF_VERSION@  ${OBJS} @LIBJPEG@ @LIBGZ@ 
+! 	@LN@ @LN_S@ libtiff.@DSOSUF_VERSION@ libtiff.@DSOSUF@
+  	touch $@
+  # OSF/1 3.2 shared lib rule
+  OSFdso: ${OBJS}
+! 	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
+! 
+  
+  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
+  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
+--- 159,208 ----
+  
+  # default IRIX DSO building rule
+  IRIXdso: ${OBJS}
+! 	${CC} -o libtiff34.@DSOSUF@ -shared -rdata_shared \
+  	    -check_registry ${SRCDIR}/../port/irix/so_locations \
+  	    -quickstart_info \
+  	    ${OBJS} @LIBJPEG@ @LIBGZ@
+  	touch $@
+  # special rule for IRIX 5.2
+  IRIX52dso: ${OBJS}
+! 	${LD} -elf -o libtiff34.@DSOSUF@ -shared -no_unresolved -all ${OBJS} \
+  	    @LIBJPEG@ @LIBGZ@ -lc -lm
+  	touch $@
+  # Solaris 2.4
+  SOLARISdso: ${OBJS}
+! 	${LD} -L@DIR_LIB@ -G -o libtiff34.@DSOSUF@ ${OBJS}
+  	touch $@
+  # HP-UX A.09.03
+  HPUXdso: ${OBJS}
+! 	${LD} +b@DIR_LIB@ -b -o libtiff34.@DSOSUF@ ${OBJS}
+  	touch $@
+  # AIX 2.3.5 and 4.1.1
+  AIXdso: ${OBJS}
+! 	rm -f libtiff34.syms shr.o
+! 	echo "#!" > libtiff34.syms
+! 	/bin/dump -g libtiff34.a | sed -n -e \
+  	      's/^[ 	]*[0-9][0-9]*[	 ]*\([^	 .][^ 	]*\)$$/\1/p' \
+! 	      >> libtiff34.syms
+! 	${LD} -o shr.o libtiff34.a -H512 -T512 -bM\:SRE \
+! 	    -bE\:libtiff34.syms @LIBJPEG@ @LIBGZ@ -lc -lm -L@DIR_LIB@
+! 	rm -f libtiff34.syms libtiff34.@DSOSUF@
+! 	${AR} ${AROPTS} libtiff34.@DSOSUF@ shr.o
+  	rm -f shr.o
+  	touch $@
+  # linux ELF shared lib rule
+  LINUXdso:  ${OBJS}
+! 	${CC} -shared -Wl,-soname,libtiff34.@DSOSUF@ \
+! 	    -o libtiff34.@DSOSUF_VERSION@  ${OBJS} @LIBJPEG@ @LIBGZ@ 
+! 	@LN@ @LN_S@ libtiff34.@DSOSUF_VERSION@ libtiff34.@DSOSUF@
+  	touch $@
+  # OSF/1 3.2 shared lib rule
+  OSFdso: ${OBJS}
+! 	${LD} -o libtiff34.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
+! FREEBSDdso: ${OBJS}
+! 	${LD} -Bshareable -x /usr/lib/c++rt0.o -o libtiff34.@DSOSUF_VERSION@ \
+! 		${OBJS} @LIBJPEG@ @LIBGZ@
+! 	touch $@
+  
+  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
+  ${OBJS}: ${SRCDIR}/tiffcomp.h ${SRCDIR}/tiffiop.h ${SRCDIR}/tiffconf.h
+***************
+*** 300,322 ****
+  installHdrs: ${INCS}
+  	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_INC@
+  	for i in ${INCS}; do						\
+! 	    f=`basename $$i`;						\
+  	    ${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_INC@		\
+  		-src $$i -O $$f;					\
+  	done
+  installDSO: @DSO@dso
+  	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
+  	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+! 		-O libtiff.@DSOSUF_VERSION@;				\
+  	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
+! 		-ln libtiff.@DSOSUF_VERSION@ -O libtiff.@DSOSUF@;	\
+  	else								\
+  	    ${INSTALL} -idb tiff.sw.tools -m 444 -F @DIR_LIB@		\
+! 		-O libtiff.@DSOSUF@;					\
+  	fi
+  install: all installHdrs
+  	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_LIB@
+! 	${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_LIB@ -O libtiff.a
+  	if [ @DSO@dso != nodso ]; then					\
+  	    ${MAKE} installDSO;						\
+  	else								\
+--- 303,325 ----
+  installHdrs: ${INCS}
+  	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_INC@
+  	for i in ${INCS}; do						\
+! 	    f=`basename $$i | sed -e 's/\.h/34.h/'`;			\
+  	    ${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_INC@		\
+  		-src $$i -O $$f;					\
+  	done
+  installDSO: @DSO@dso
+  	if [ @DSOSUF_VERSION@ != @DSOSUF@ ]; then			\
+  	    ${INSTALL} -idb tiff.sw.tools -m 555 -F @DIR_LIB@		\
+! 		-O libtiff34.@DSOSUF_VERSION@;				\
+  	    ${INSTALL} -idb tiff.sw.tools -F @DIR_LIB@			\
+! 		-lns libtiff34.@DSOSUF_VERSION@ -O libtiff34.@DSOSUF@;	\
+  	else								\
+  	    ${INSTALL} -idb tiff.sw.tools -m 444 -F @DIR_LIB@		\
+! 		-O libtiff34.@DSOSUF@;					\
+  	fi
+  install: all installHdrs
+  	${INSTALL} -idb tiff.sw.dev -m 755 -dir @DIR_LIB@
+! 	${INSTALL} -idb tiff.sw.dev -m 444 -F @DIR_LIB@ -O libtiff34.a
+  	if [ @DSO@dso != nodso ]; then					\
+  	    ${MAKE} installDSO;						\
+  	else								\
+***************
+*** 327,330 ****
+  	rm -f ${TARGETS} ${OBJS} core a.out \
+  	    mkg3states tif_fax3sm.c \
+  	    mkversion version.h \
+! 	    libtiff.a libtiff.@DSOSUF@ libtiff.@DSOSUF_VERSION@ *dso
+--- 330,333 ----
+  	rm -f ${TARGETS} ${OBJS} core a.out \
+  	    mkg3states tif_fax3sm.c \
+  	    mkversion version.h \
+! 	    libtiff34.a libtiff34.@DSOSUF@ libtiff34.@DSOSUF_VERSION@ *dso
+*** tools/Makefile.in.orig	Mon Apr 29 17:16:37 1996
+--- tools/Makefile.in	Sat Nov 22 16:55:39 1997
+***************
+*** 43,56 ****
+  INSTALL	= @INSTALL@
+  #
+  COPTS	= @GCOPTS@
+! OPTIMIZER=-O
+  IPATH	= -I. -I${SRCDIR} -I${LIBDIR}
+! CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH}
+  #
+! LIBTIFF	= ${DEPTH}/libtiff/libtiff.@DSOSUF@
+  LIBJPEG	= @LIBJPEG@
+  LIBGZ	= @LIBGZ@
+! LIBS	= ${LIBTIFF} ${LIBJPEG} ${LIBGZ} @LIBPORT@ @MACHDEPLIBS@
+  #
+  OBJS=	\
+  	fax2tiff.o \
+--- 43,56 ----
+  INSTALL	= @INSTALL@
+  #
+  COPTS	= @GCOPTS@
+! #OPTIMIZER=-O
+  IPATH	= -I. -I${SRCDIR} -I${LIBDIR}
+! CFLAGS	= @ENVOPTS@ ${COPTS} ${OPTIMIZER} ${IPATH} -L../libtiff
+  #
+! LIBTIFF	= ${DEPTH}/libtiff/libtiff34.@DSOSUF_VERSION@
+  LIBJPEG	= @LIBJPEG@
+  LIBGZ	= @LIBGZ@
+! LIBS	= ${LIBJPEG} ${LIBGZ} @LIBPORT@ @MACHDEPLIBS@ -ltiff34
+  #
+  OBJS=	\
+  	fax2tiff.o \
+*** configure.orig	Mon Apr 29 17:16:17 1996
+--- configure	Sat Nov 22 17:01:15 1997
+***************
+*** 1140,1145 ****
+--- 1140,1159 ----
+  	DSOOPTS='-shared'
+  	DSO=OSF
+  	;;
++     *-freebsd*)
++ 	DSOSUF=so
++ 	DSOSUF_VERSION=${DSOSUF}.1.0
++ 	LIBCOPTS='-fpic -DPIC'
++ 	DSOOPTS='-Bshareable'
++ 	DSO=FREEBSD
++ 	;;
++     *-openbsd*)
++ 	DSOSUF=so
++ 	DSOSUF_VERSION=${DSOSUF}.1.0
++ 	LIBCOPTS='-fpic -DPIC'
++ 	DSOOPTS='-Bshareable'
++ 	DSO=FREEBSD
++ 	;;
+      *)  DSO=no;;
+      esac
+      test -z "$DSOSUF_VERSION" && DSOSUF_VERSION=${DSOSUF}
+*** config.guess.orig	Sat Nov 22 17:02:00 1997
+--- config.guess	Sat Nov 22 17:03:06 1997
+***************
+*** 276,281 ****
+--- 276,284 ----
+      *:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+  	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++ 	exit 0 ;;
+      *:GNU:*:*)
+  	echo `echo ${UNAME_MACHINE}|sed -e 's,/.*$,,'`-unknown-gnu`echo ${UNAME_RELEASE}|sed -e 's,/.*$,,'`
+  	exit 0 ;;
