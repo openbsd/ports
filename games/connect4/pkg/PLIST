@@ -1,3 +1,4 @@
 bin/connect4
 man/man6/connect4.6
-lib/connect4/scores
+@exec touch %D/lib/connect4/scores && chmod 666 %D/lib/connect4/scores
+@unexec echo "To remove this package completely, rm %D/lib/connect4/scores"
