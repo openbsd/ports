@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2000/03/23 22:14:38 turan Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/24 01:00:40 turan Exp $
+
+BROKEN=		fake problems.  bad links.
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88

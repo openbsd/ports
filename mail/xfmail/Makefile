@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/17 20:14:02 turan Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/24 01:00:39 turan Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
-#
+
+BROKEN=		depend xforms is broken
 
 DISTNAME=       xfmail-1.3
 CATEGORIES=     mail x11
