@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/11/13 09:24:56 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2002/01/22 15:34:59 naddy Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 V=			1.4.0.4
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=		Yes
-CONFIGURE_STYLE= 	gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

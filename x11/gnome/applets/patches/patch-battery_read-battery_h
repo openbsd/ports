@@ -1,12 +1,12 @@
-$OpenBSD: patch-battery_read-battery_h,v 1.1.1.1 2001/09/13 21:23:08 todd Exp $
---- battery/read-battery.h.orig	Mon Feb 12 23:48:12 2001
-+++ battery/read-battery.h	Tue Aug 28 14:14:17 2001
+$OpenBSD: patch-battery_read-battery_h,v 1.2 2002/01/22 15:34:59 naddy Exp $
+--- battery/read-battery.h.orig	Thu Aug 23 11:10:07 2001
++++ battery/read-battery.h	Mon Jan 21 20:30:13 2002
 @@ -18,7 +18,7 @@ typedef struct apm_info {
  #include <fcntl.h>
  #include <machine/apm_bios.h>
  #define APMDEV "/dev/apm"
 -#elif __NetBSD__ && defined(NETBSD_APM)
-+#elif (__NetBSD__ && defined(NETBSD_APM)) || defined(__OpenBSD__)
++#elif (__NetBSD__ && defined(NETBSD_APM)) || (defined(__OpenBSD__) && defined(OPENBSD_APM))
  #include <fcntl.h>
  #include <sys/ioctl.h>
  #include <machine/apmvar.h>
