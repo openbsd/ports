@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-#	$OpenBSD: bsd.port.mk,v 1.93 1999/05/25 20:38:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.94 1999/06/02 15:44:50 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -27,7 +27,7 @@ OpenBSD_MAINTAINER= ports-admin@openbsd.org
 # NEED_VERSION: we need at least this version of bsd.port.mk for this 
 # port  to build
 
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.93 1999/05/25 20:38:33 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.94 1999/06/02 15:44:50 espie Exp $$
 .if defined(NEED_VERSION)
 _VERSION_REVISION=${FULL_REVISION:M[0-9]*.*}
 
@@ -1488,9 +1488,6 @@ do-patch:
 
 .if !target(do-configure)
 do-configure: ${WRKBUILD}
-.if defined(USE_AUTOCONF)
-	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-.endif
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
@@ -1669,6 +1666,9 @@ _PORT_USE: .USE
 	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
 .endif
 .if make(real-patch) && !defined(PATCH_CHECK_ONLY)
+.if defined(USE_AUTOCONF)
+	@cd ${AUTOCONF_DIR} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
+.endif
 	@${TOUCH} ${TOUCH_FLAGS} ${PATCH_COOKIE}
 .endif
 .if make(real-configure)
