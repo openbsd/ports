@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-package-dependencies,v 1.1 2000/04/19 14:31:18 espie Exp $
+# $OpenBSD: check-package-dependencies,v 1.2 2003/02/26 15:45:44 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -28,18 +28,34 @@
 # including Broken: for apparently missing packages.
 # Used to hunt ftp-packages/cdrom-packages problems.
 
+use strict;
+
 sub analyze {
 	my $fh = shift;
-	my $main = shift;
+	my $main;
 	local $_;
 	while (<$fh>) {
 		chomp;
-		if (m/^\@pkgdep\s+(\S*)\s*$/) {
+		if (m/^\@name\s+(\S+)\s*$/) {
+			$main=$1;
+		}
+		elsif (m/^\@pkgdep\s+(\S*)\s*$/) {
 			my $pkgname = $1;
 			if (-e "$pkgname.tgz") {
 				print "$main -> $pkgname\n";
 			} else {
 				print "Broken: $main -> $pkgname\n";
+			}
+		}
+		elsif (m/^\@newdepend\s+(\S+?)\:\S+?\:(\S+)\s*$/ ||
+			m/^\@libdepend\s+(\S+?)\:\S+?\:\S+?\:(\S+)\s*$/) {
+			if ($1 eq $main) {
+				my $pkgname = $2;
+				if (-e "$pkgname.tgz") {
+					print "$main -> $pkgname\n";
+				} else {
+					print "Broken: $main -> $pkgname\n";
+				}
 			}
 		}
 	}
@@ -50,7 +66,7 @@ for my $pkgname (<*.tgz>) {
 	print STDERR "$pkgname\n";
 	system "tar zxqf $pkgname +CONTENTS";
 	if (open(my $fh, '<+CONTENTS')) {
-	    analyze($fh, $pkgname);
+	    analyze($fh);
 	    unlink("+CONTENTS");
 	} else {
 	    warn "Problem with $pkgname";
