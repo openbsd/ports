@@ -1,0 +1,36 @@
+$OpenBSD: patch-main_c,v 1.1 2000/06/18 00:04:08 espie Exp $
+--- main.c.orig	Sat Jun 10 21:17:09 2000
++++ main.c	Sun Jun 18 01:49:46 2000
+@@ -1302,7 +1302,7 @@ main (int argc, char *argv[])
+ 	Widget form_top, menu_top;
+ 	register TScreen *screen;
+ 	int mode;
+-	char *app_name = "XTerm";
++	char *class_name = "XTerm";  /* DO NOT CHANGE */
+ 
+ 	/* Do these first, since we may not be able to open the display */
+ 	ProgramName = argv[0];
+@@ -1312,11 +1312,13 @@ main (int argc, char *argv[])
+ 			Version();
+ 		if (abbrev(argv[1], "-help"))
+ 			Help();
++#if 0 /* This is _wrong_: -name is read by X toolkit already! */
+ 		for (n = 1; n < argc - 1; n++) {
+ 			if (abbrev(argv[n], "-name")) {
+-				app_name = argv[n+1];
++				class_name = argv[n+1];
+ 			}
+ 		}
++#endif
+ 	}
+ 
+ 	/* This dumps core on HP-UX 9.05 with X11R5 */
+@@ -1625,7 +1627,7 @@ main (int argc, char *argv[])
+ #endif
+ 
+ 	    XtSetErrorHandler(xt_error);
+-	    toplevel = XtAppInitialize (&app_con, app_name,
++	    toplevel = XtAppInitialize (&app_con, class_name,
+ 					optionDescList,
+ 					XtNumber(optionDescList),
+ 					&argc, argv, fallback_resources,
