@@ -1,0 +1,100 @@
+$OpenBSD: patch-wmtictactoe_wmtictactoe_c,v 1.1.1.1 2001/02/09 13:02:38 wilfried Exp $
+--- wmtictactoe/wmtictactoe.c.orig	Mon Aug 30 16:25:10 1999
++++ wmtictactoe/wmtictactoe.c	Fri Feb  9 13:46:24 2001
+@@ -123,7 +123,7 @@ int     wmtictactoe_mask_height = 64;
+ // ----------------------------------------------------------
+ // declaracao das funcoes do sistema
+ 
+-void    main (int argc, char *argv[]);
++int     main (int argc, char *argv[]);
+ void    usage (void);
+ void    printversion (void);
+ void    readfile (void);
+@@ -168,7 +168,7 @@ void    game_over (void);
+ //        in: argc - numero de argumentos passados por linha d comando
+ //            argv - vetor com os argumentos
+ //       out: nada
+-void main (int argc, char *argv[])
++int main (int argc, char *argv[])
+ {
+ 	int     i;
+      
+@@ -456,7 +456,7 @@ piscaVencedor ()
+ 	int     mostra = 0;
+ 	int     i;
+ 	int     seq = verificaSequencia ();
+-	int     jogador = tabuleiro[sequencias[seq][0]];
++	int     jogador;
+ 	XEvent  Event;
+ 
+ 	// incrementa o score do vencedor
+@@ -465,7 +465,8 @@ piscaVencedor ()
+ 		        (score_deuce_offensive > 98) ? score_deuce_offensive = 1 : score_deuce_offensive++;
+                 else
+ 	                (score_deuce_defensive > 98) ? score_deuce_defensive = 1 : score_deuce_defensive++;
+-	} else
++	} else {
++		jogador = tabuleiro[sequencias[seq][0]];
+                 if (jogador == LEGENDA_X) {
+                         if (game_mode == JOGO_OFENSIVO)
+ 		                (score_X_offensive > 98) ? score_X_offensive = 1 : score_X_offensive++;
+@@ -477,6 +478,7 @@ piscaVencedor ()
+                         else
+                                 (score_user_defensive > 98) ? score_user_defensive = 1 : score_user_defensive++;
+ 		}
++	}
+ 
+ 	if (!isDeadmatch)
+ 		writefile ();
+@@ -544,12 +546,12 @@ escreve_placar ()
+         int coluna_xpm = 65;
+ 	int coluna_score[6] = 
+ 	{8, 15, 26, 33, 43, 50 };
+-        char placar[6];
++        char placar[8];
+ 
+   	if (isDeadmatch){
+     		copyXPMArea(97, 74, 13, 9, 43, 88);
+ 		if (!mute_mode)
+-		  sprintf(placar, 
++		  snprintf(placar, sizeof(placar),
+ 			  "%.2d%.2d%.2d", 
+ 			  game_mode == JOGO_OFENSIVO ? score_user_offensive : score_user_defensive, 
+ 			  game_mode == JOGO_OFENSIVO ? score_deuce_offensive : score_deuce_defensive,
+@@ -560,11 +562,11 @@ escreve_placar ()
+ 		if (game_mode == JOGO_OFENSIVO) {
+ 		        copyXPMArea (110, 4, 13, 8, 43, 88);
+                 	if (!mute_mode)
+-		        	sprintf(placar, "%.2d%.2d%.2d", score_user_offensive, score_deuce_offensive, score_X_offensive);
++		        	snprintf(placar, sizeof(placar), "%.2d%.2d%.2d", score_user_offensive, score_deuce_offensive, score_X_offensive);
+ 	        } else {
+         	        copyXPMArea (96, 4, 13, 8, 43, 88);
+ 			if (!mute_mode)
+-	                	sprintf(placar, "%.2d%.2d%.2d", score_user_defensive, score_deuce_defensive, score_X_defensive);
++	                	snprintf(placar, sizeof(placar), "%.2d%.2d%.2d", score_user_defensive, score_deuce_defensive, score_X_defensive);
+ 		}
+ 	
+ 	for (i = 0; i < 6; i++)
+@@ -1052,11 +1054,11 @@ readfile (void)
+ 	char buf[256];
+ 	int done;
+ 
+-	sprintf(rcfilen, "%s/.wmtictactoe", getenv("HOME"));
++	snprintf(rcfilen, sizeof(rcfilen), "%s/.wmtictactoe", getenv("HOME"));
+ 
+ 	if ((rcfile=fopen(rcfilen, "r")) != NULL){
+ 	        do {
+-		        fgets(buf, 250, rcfile);
++		        fgets(buf, sizeof(buf), rcfile);
+ 			if((done = feof(rcfile)) == 0){
+ 			        buf[strlen(buf)-1]=0;
+ 				if(strncmp(buf, "score_user_offensive ", strlen("score_user "))==0)
+@@ -1089,7 +1091,7 @@ writefile (void)
+         FILE *rcfile;
+ 	char rcfilen[256];
+ 
+-	sprintf(rcfilen, "%s/.wmtictactoe", getenv("HOME"));
++	snprintf(rcfilen, sizeof(rcfilen), "%s/.wmtictactoe", getenv("HOME"));
+ 
+ 	if ((rcfile=fopen(rcfilen, "w")) != NULL){
+                 fprintf(rcfile, "score_user_offensive %d\nscore_deuce_offensive %d\nscore_X_offensive %d\n", score_user_offensive, score_deuce_offensive, score_X_offensive);
