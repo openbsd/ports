@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc,v 1.1.1.1 2001/07/25 08:40:57 jakob Exp $
+$OpenBSD: patch-doc,v 1.2 2001/07/25 11:03:10 jakob Exp $
 
 --- doc.orig	Wed Jul 25 10:20:59 2001
 +++ doc	Wed Jul 25 10:21:14 2001
@@ -6,7 +6,7 @@ $OpenBSD: patch-doc,v 1.1.1.1 2001/07/25 08:40:57 jakob Exp $
  ## Note: Make *sure* you keep the trailing slash on the directory
  ##  name, otherwise doc won't work right.
  ##
--#set auxd=/users/brad/bin/doc-2.2.2/
+-#set auxd=/users/brad/bin/doc-2.2.3/
 +set auxd=y0y0y0
  
  ######## where are log files written?

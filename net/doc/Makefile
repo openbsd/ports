@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/25 08:40:57 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/07/25 11:03:09 jakob Exp $
 
 COMMENT=	automated domain testing tool
 
-DISTNAME=	doc-2.2.2
+DISTNAME=	doc-2.2.3
 CATEGORIES=    	net
 NEED_VERSION=	1.413
 
