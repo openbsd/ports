@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/03/23 16:32:15 reinhard Exp $
+# $OpenBSD: Makefile,v 1.28 2001/04/17 20:53:04 reinhard Exp $
 
 COMMENT=	'GNU privacy guard - a free PGP replacement'
 
@@ -42,7 +42,7 @@ PERMIT_PACKAGE_FTP=	"a patented algorithm"
 PERMIT_DISTFILES_CDROM=	"a patented algorithm"
 PERMIT_DISTFILES_FTP=	"a patented algorithm"
 # NB: idea.c is found in ${MASTER_SITES0}
-DISTFILES+=	idea.c
+DISTFILES+=	idea.c:0
 PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_am 
 PATCH_LIST+=	${FILESDIR}/patch-cipher_Makefile_in
 SED_PLIST+=	-e 's,^!%%idea%%,lib/gnupg/idea,'
