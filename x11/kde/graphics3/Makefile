@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/03/21 19:43:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.33 2004/03/23 22:14:59 pvalchev Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 COMMENT-kamera=		"kde interface to digital cameras"
@@ -35,6 +35,9 @@ LIB_DEPENDS+=Imlib::graphics/imlib \
 	gphoto2,gphoto2_port::graphics/libgphoto2
 .endif
 BUILD_DEPENDS+=::print/teTeX/base
+
+post-patch:
+	@cp ${FILESDIR}/part_init.cpp ${WRKSRC}/kghostview
 
 .if ${MACHINE_ARCH} == "sparc64"
 PATCH_LIST=	patch-* gcc-*
