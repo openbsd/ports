@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/08/31 14:55:52 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2001/08/31 15:03:25 brad Exp $
 # Uses pthreads
 
 ONLY_FOR_ARCHS=	i386
@@ -46,13 +46,12 @@ MULTI_PACKAGES+=	-vorbis
 
 SUBPACKAGE?=
 
-RUN_DEPENDS=		unzip::archivers/unzip
+RUN_DEPENDS=		unzip:unzip-*:archivers/unzip
 LIB_DEPENDS=		gtk.1.2::x11/gtk+ \
 			xml.9::textproc/libxml1
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
-
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} --without-gnome
 
@@ -68,7 +67,7 @@ DISTFILES=		${DISTNAME}.tar.gz \
 DOCS=			AUTHORS COPYING ChangeLog FAQ INSTALL NEWS \
 			README TODO
 
-SUBST_VARS=		MAINTAINER	PKGNAME-vorbis PKGNAME-esd
+SUBST_VARS=		MAINTAINER PKGNAME-vorbis PKGNAME-esd
 
 .if defined(PACKAGING) 
 
