@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
---- ltmain.sh.orig	Wed Oct 10 18:23:40 2001
-+++ ltmain.sh	Wed Oct 10 18:25:37 2001
-@@ -757,6 +757,7 @@
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/02/19 05:04:55 shell Exp $
+--- ltmain.sh.orig	Tue Feb 19 12:52:28 2002
++++ ltmain.sh	Tue Feb 19 12:58:48 2002
+@@ -745,6 +745,7 @@
      linker_flags=
      dllsearchpath=
      lib_search_path=`pwd`
@@ -9,7 +9,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
  
      avoid_version=no
      dlfiles=
-@@ -887,6 +888,11 @@
+@@ -875,6 +876,11 @@
  	  prev=
  	  continue
  	  ;;
@@ -21,18 +21,19 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
  	release)
  	  release="-$arg"
  	  prev=
-@@ -987,6 +993,10 @@
- 	fi
+@@ -976,6 +982,11 @@
  	continue
  	;;
+ 
 +      -inst-prefix-dir)
 +	prev=inst_prefix
 +	continue
 +	;;
- 
++
        # The native IRIX linker understands -LANG:*, -LIST:* and -LNO:*
        # so, if we see these flags be careful not to treat them like -L
-@@ -1091,6 +1101,17 @@
+       -L[A-Z][A-Z]*:*)
+@@ -1068,6 +1079,17 @@
  
        -o) prev=output ;;
  
@@ -50,27 +51,27 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
        -release)
  	prev=release
  	continue
-@@ -1868,6 +1889,7 @@
+@@ -1845,6 +1867,7 @@
  
- 	  if test $linkmode = prog || test "$mode" = relink; then
+ 	  if test "$linkmode" = prog || test "$mode" = relink; then
  	    add_shlibpath=
 +	    add_prefix_dir=
  	    add_dir=
  	    add=
  	    # Finalize command for both is simple: just hardcode it.
-@@ -1888,10 +1910,20 @@
+@@ -1865,10 +1888,20 @@
  	      add="-l$name"
  	    fi
  
 +	    if test -n "$inst_prefix_dir"; then
 +	      case "$libdir" in
 +	      [\\/]*)
-+	        add_prefix_dir="-L$inst_prefix_dir$libdir"
++		add_prefix_dir="-L$inst_prefix_dir$libdir"
 +	      ;;
 +	      esac
 +	    fi
 +
- 	    if test $linkmode = prog; then
+ 	    if test "$linkmode" = prog; then
 +	      test -n "$add_prefix_dir" && finalize_deplibs="$finalize_deplibs $add_prefix_dir"
  	      test -n "$add_dir" && finalize_deplibs="$add_dir $finalize_deplibs"
  	      test -n "$add" && finalize_deplibs="$add $finalize_deplibs"
@@ -79,7 +80,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
  	      test -n "$add_dir" && deplibs="$add_dir $deplibs"
  	      test -n "$add" && deplibs="$add $deplibs"
  	    fi
-@@ -3858,7 +3890,7 @@
+@@ -3823,7 +3856,7 @@
  	fi
        done
        # Quote the link command for shipping.
@@ -88,7 +89,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
        relink_command=`$echo "X$relink_command" | $Xsed -e "$sed_quote_subst"`
  
        # Only create the output if not a dry run.
-@@ -4159,6 +4191,23 @@
+@@ -4124,6 +4157,23 @@
  	dir="$dir$objdir"
  
  	if test -n "$relink_command"; then
@@ -112,7 +113,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2001/10/24 17:08:38 shell Exp $
  	  $echo "$modename: warning: relinking \`$file'" 1>&2
  	  $show "$relink_command"
  	  if $run eval "$relink_command"; then :
-@@ -4446,40 +4495,6 @@
+@@ -4412,40 +4462,6 @@
      # Exit here if they wanted silent mode.
      test "$show" = ":" && exit 0
  
