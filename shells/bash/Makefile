@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2001/01/26 20:37:08 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/04/10 15:30:08 naddy Exp $
+
+COMMENT=	"GNU Bourne Again Shell"
 
 DISTNAME=	bash-1.14.7
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	shells
-NEED_VERSION=	1.336
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= bash
 
