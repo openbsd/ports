@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/11/20 20:32:41 dhartmei Exp $
+# $OpenBSD: Makefile,v 1.13 2002/11/22 00:53:26 brad Exp $
 
 COMMENT=	"SMB and CIFS client and server for UNIX"
 
@@ -26,8 +26,10 @@ MAKE_FLAGS=	PASSWD_PROGRAM="/usr/bin/passwd"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}" \
 		BASEDIR="${WRKINST}${PREFIX}" \
 		LIBDIR="${WRKINST}${PREFIX}/lib/samba" \
+		PIDDIR="${WRKINST}/var/run" \
 		SWATDIR="${WRKINST}${PREFIX}/share/swat" \
-		SBINDIR="${WRKINST}${PREFIX}/libexec"
+		SBINDIR="${WRKINST}${PREFIX}/libexec" \
+		VARDIR="${WRKINST}/var"
 
 SYSCONFDIR=	/etc/samba
 SAMBA_SPOOL=	/var/spool/samba
