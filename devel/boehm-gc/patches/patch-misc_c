@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_c,v 1.3 2003/01/17 21:00:45 drahn Exp $
---- misc.c.orig	Mon Aug  5 19:13:44 2002
-+++ misc.c	Thu Jan  9 16:12:10 2003
-@@ -591,7 +591,10 @@ void GC_init_inner()
+$OpenBSD: patch-misc_c,v 1.4 2003/10/15 12:58:11 todd Exp $
+--- misc.c.orig	2003-05-30 01:50:10.000000000 +1000
++++ misc.c	2003-10-15 13:40:09.000000000 +1000
+@@ -635,7 +635,10 @@ void GC_init_inner()
  #   if defined(SEARCH_FOR_DATA_START)
  	GC_init_linux_data_start();
  #   endif

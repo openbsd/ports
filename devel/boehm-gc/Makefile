@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2003/06/12 20:33:12 todd Exp $
+# $OpenBSD: Makefile,v 1.25 2003/10/15 12:58:11 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
 
-BROKEN=		"even regress fails with 'Memory fault' immediately."
-
-VERSION=	6.1
+VERSION=	6.2
 DISTNAME=	gc${VERSION}
-PKGNAME=	boehm-gc-${VERSION}p1
+PKGNAME=	boehm-gc-${VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}gc_source/
 
@@ -25,9 +23,12 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
+CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-full-debug
 
-WRKDIST=	${WRKDIR}/gc6.1
+# XXX the below causes failures still
+#	--enable-redirect-malloc 
+
+WRKDIST=	${WRKDIR}/gc${VERSION}
 
 post-patch:
 	@mv ${WRKSRC}/doc/gc.man ${WRKSRC}/doc/gc.man.in
@@ -37,7 +38,7 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/gc.man ${PREFIX}/man/man3/gc.3
 	${INSTALL_DATA_DIR} ${PREFIX}/include/private
-	${INSTALL_DATA} ${WRKSRC}/include/gc{,_{cpp,backptr,gcj,mark}}.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/gc{,_{cpp,backptr,gcj,mark,typed}}.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/private/gc{config,_{hdrs,locks,priv,pmark}}.h ${PREFIX}/include/private
 
 REGRESS_TARGET=	check-TESTS
