@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2004/04/18 20:43:48 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2004/07/16 09:14:16 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		'MySQL drivers for the Perl DBI'
 
-DISTNAME=		DBD-mysql-2.9003
+DISTNAME=		DBD-mysql-2.9004
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		databases perl5
 
