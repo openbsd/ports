@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2001/06/15 15:30:26 lebel Exp $
+# $OpenBSD: Makefile,v 1.83 2001/06/17 12:24:50 reinhard Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -33,6 +33,8 @@
      SUBDIR += guilib
      SUBDIR += id-utils
      SUBDIR += jad
+     SUBDIR += jakarta-ant
+     SUBDIR += jakarta-servletapi
      SUBDIR += jdk
      SUBDIR += jfc
      SUBDIR += kdbg
