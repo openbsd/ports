@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 1999/10/29 09:46:41 turan Exp $
+# $OpenBSD: Makefile,v 1.8 1999/11/05 06:36:08 kevlo Exp $
 
-BROKEN=		sources moved
-
-DISTNAME=	xwpe-1.5.17a
+DISTNAME=	xwpe-1.5.20a
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.rpi.edu/~payned/xwpe/ \
+		http://www.identicalsoftware.com/xwpe/ \
 		ftp://identical.stu.rpi.edu/pub/linux/xwpe/
 MASTER_SITE_SUBDIR= apps/editors/X
 
