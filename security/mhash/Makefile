@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/02/01 02:03:24 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/03/17 10:30:59 avsm Exp $
 
 COMMENT=	strong hash library
 
-DISTNAME=	mhash-0.8.9
+DISTNAME=	mhash-0.8.13
 CATEGORIES=	security
 NEED_VERSION=	1.475
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
 		patch-*
 
 # XXX workaround sparc64 gcc optimization bug
