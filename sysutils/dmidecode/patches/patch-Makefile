@@ -1,0 +1,70 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2005/03/25 07:23:37 jolan Exp $
+--- Makefile.orig	Mon Feb 28 14:43:00 2005
++++ Makefile	Fri Mar 25 01:16:27 2005
+@@ -8,23 +8,23 @@
+ #	Licensed under the GNU Public License.
+ #
+ 
+-CC      = gcc
+-CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
++#CC      = gcc
++CFLAGS  += -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
+           -Wcast-align -Wwrite-strings -Wmissing-prototypes
+ #CFLAGS += -DBIGENDIAN
+ #CFLAGS += -DALIGNMENT_WORKAROUND
+ 
+ # When debugging, disable -O2 and enable -g.
+-CFLAGS += -O2
++#CFLAGS += -O2
+ #CFLAGS += -g
+ 
+ # Pass linker flags here
+-LDFLAGS =
++LDFLAGS +=
+ 
+-DESTDIR =
+-prefix  = /usr/local
+-sbindir = $(prefix)/sbin
+-mandir  = $(prefix)/man
++#DESTDIR =
++#prefix  = /usr/local
++sbindir = $(PREFIX)/sbin
++mandir  = $(PREFIX)/man
+ man8dir = $(mandir)/man8
+ 
+ all : dmidecode biosdecode ownership vpddecode
+@@ -72,21 +72,21 @@ strip : all
+ 	strip dmidecode biosdecode ownership vpddecode
+ 
+ install : all
+-	install -d $(DESTDIR)$(sbindir) $(DESTDIR)$(man8dir)
+-	install -m 755 dmidecode $(DESTDIR)$(sbindir)
+-	install -m 755 biosdecode $(DESTDIR)$(sbindir)
+-	install -m 755 ownership $(DESTDIR)$(sbindir)
+-	install -m 755 vpddecode $(DESTDIR)$(sbindir)
+-	install -m 644 man/dmidecode.8 $(DESTDIR)$(man8dir)
+-	install -m 644 man/biosdecode.8 $(DESTDIR)$(man8dir)
+-	install -m 644 man/ownership.8 $(DESTDIR)$(man8dir)
+-	install -m 644 man/vpddecode.8 $(DESTDIR)$(man8dir)
++	install -d $(sbindir) $(man8dir)
++	install -m 755 dmidecode $(sbindir)
++	install -m 755 biosdecode $(sbindir)
++	install -m 755 ownership $(sbindir)
++	install -m 755 vpddecode $(sbindir)
++	install -m 644 man/dmidecode.8 $(man8dir)
++	install -m 644 man/biosdecode.8 $(man8dir)
++	install -m 644 man/ownership.8 $(man8dir)
++	install -m 644 man/vpddecode.8 $(man8dir)
+ 
+ uninstall :
+-	rm -f $(DESTDIR)$(sbindir)/dmidecode $(DESTDIR)$(man8dir)/dmidecode.8
+-	rm -f $(DESTDIR)$(sbindir)/biosdecode $(DESTDIR)$(man8dir)/biosdecode.8
+-	rm -f $(DESTDIR)$(sbindir)/ownership $(DESTDIR)$(man8dir)/ownership.8
+-	rm -f $(DESTDIR)$(sbindir)/vpddecode $(DESTDIR)$(man8dir)/vpddecode.8
++	rm -f $(sbindir)/dmidecode $(man8dir)/dmidecode.8
++	rm -f $(sbindir)/biosdecode $(man8dir)/biosdecode.8
++	rm -f $(sbindir)/ownership $(man8dir)/ownership.8
++	rm -f $(sbindir)/vpddecode $(man8dir)/vpddecode.8
+ 
+ clean :
+ 	rm -f *.o dmidecode biosdecode ownership vpddecode core
