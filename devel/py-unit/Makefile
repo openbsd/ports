@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/07/31 19:12:00 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/25 16:46:30 sturm Exp $
 
 
 COMMENT=		"unit testing framework for python"
@@ -24,8 +24,6 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 MODULES=	python
-
-MODPY_VERSION=	2.1
 
 .if !${FLAVOR:L:Mno_x11}
 BUILD_DEPENDS=	${RUN_DEPENDS}

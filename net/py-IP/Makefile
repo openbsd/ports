@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/01/02 13:06:52 sturm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/25 16:46:30 sturm Exp $
 
 COMMENT=	"python module to handle IPv4 and IPv6 address"
 
@@ -21,7 +21,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	python
 
-MODPY_VERSION=	2.1
 MODPY_DISTUTILS_INSTALLARGS=	-O2
 
 do-regress:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/12 17:58:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/25 16:46:30 sturm Exp $
 
 COMMENT=	"pure Python Expect-like module"
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pexpect/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	python
-MODPY_VERSION=	2.3
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-pexpect
 
