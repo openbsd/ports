@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 1999/12/05 16:12:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/02/03 01:58:08 kevlo Exp $
 
-DISTNAME=	xfig.3.2.2
-PKGNAME=	xfig-3.2.2
+DISTNAME=	xfig.3.2.3a
+PKGNAME=	xfig-3.2.3a
 CATEGORIES=	graphics x11
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	ftp://www-epb.lbl.gov/xfig/
 MASTER_SITE_SUBDIR= applications/drawing_tools/xfig
 
 MAINTAINER=	angelos@openbsd.org
@@ -17,5 +17,8 @@ USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
 		XFIGLIBDIR=${PREFIX}/lib/X11/xfig  -f
+
+post-patch:
+	perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

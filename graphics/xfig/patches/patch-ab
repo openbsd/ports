@@ -1,11 +1,11 @@
---- Fig.ad.~1~	Wed Jul  1 17:10:28 1998
-+++ Fig.ad	Fri Jul  3 23:32:44 1998
-@@ -14,7 +14,7 @@
+--- Fig.ad.orig	Wed Jan 19 13:48:58 2000
++++ Fig.ad	Wed Feb  2 01:48:27 2000
+@@ -16,7 +16,7 @@
  
  ! pdfviewer - put your favorite pdf viewer here.  
  !		This is for viewing the xfig how-to guide and man pages
--Fig.pdfviewer:			acroread
-+Fig.pdfviewer:			gv
+-Fig.pdfviewer:			acroread %f
++Fig.pdfviewer:			gv %f
  
- ! Spacing between buttons
- Fig.internalborderwidth:	2
+ ! Spell check program - put your favorite spelling check program here.
+ !		It must write the misspelled words to standard output.
