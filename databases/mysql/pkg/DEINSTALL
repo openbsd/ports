@@ -1,4 +1,4 @@
-# $OpenBSD: DEINSTALL,v 1.3 2000/08/15 13:24:01 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2000/09/06 21:06:20 brad Exp $
 #
 # MySQL de-installation
 
@@ -11,8 +11,8 @@ echo "+---------------"
 echo "| To completely deinstall the $1 package you need to perform"
 echo "| these steps as root:"
 echo "|"
-echo "|           user del mysql"
-echo "|           group del mysql"
+echo "|           userdel mysql"
+echo "|           groupdel mysql"
 echo "|           rm -rf $DB_DIR"
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"
