@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/27 23:35:33 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 1998/12/07 14:27:24 rohee Exp $
 #
 
-DISTNAME=		blackbox-0.50.0
+DISTNAME=		blackbox-0.50.1
 CATEGORIES=		x11
 
-MAINTAINER=             br@spooky.net
+MAINTAINER=             rohee@OpenBSD.Org
 
 MASTER_SITES=		ftp://balance.wiw.org/pub/blackbox/
 
