@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/10/30 04:23:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/11/15 06:14:06 pvalchev Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
@@ -22,6 +22,7 @@ MAKE_FLAGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="-lossaudio"
 
 USE_X11=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtkpool

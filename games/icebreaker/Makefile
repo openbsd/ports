@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/15 17:18:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/11/15 06:14:06 pvalchev Exp $
 
 COMMENT=	"jezzball-style, penguin puzzle game"
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	SDL_mixer.0.0:sdl-mixer-*:devel/sdl-mixer \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 MAKE_ENV=	prefix="${PREFIX}" \
 		highscoredir="/var/games/icebreaker"
 

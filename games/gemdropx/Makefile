@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/02 05:01:53 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/15 06:14:06 pvalchev Exp $
 
 COMMENT=	"one-player puzzle game for x11"
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	SDL.0.3:sdl-*-!no_x11:devel/sdl \
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 MAKE_ENV=	JOY=NO
 
 do-install:

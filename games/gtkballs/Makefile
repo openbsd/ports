@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/24 12:17:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/11/15 06:14:06 pvalchev Exp $
 
 COMMENT=	"gtk+ clone of the lines ball logic game"
 
@@ -22,6 +22,7 @@ MAKE_ENV=	CC="${CC}"
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+
 
+NO_REGRESS=	Yes
 USE_X11=	Yes
 
 post-install:
