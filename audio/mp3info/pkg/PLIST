@@ -1,4 +1,5 @@
 bin/mp3info
 share/doc/mp3info/ChangeLog
 share/doc/mp3info/README
+man/man1/mp3info.1
 @dirrm share/doc/mp3info

@@ -1,10 +1,10 @@
 # OpenBSD Makefile for:			mp3info
 # Version required:			0.2.15
-# Date created:				19 June 1998
+# Date created:				May 22, 1999
 # Whom:					Angelos D. Keromytis
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/23 01:45:17 angelos Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 1999/05/23 01:45:17 angelos Exp $
+# $Id: Makefile,v 1.2 1999/05/23 01:48:35 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/05/23 01:48:35 angelos Exp $
 #
 
 DISTNAME=		mp3info-0.2.16
