@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2004/09/15 18:17:47 espie Exp $
-@lib lib/libsnmp.so.42.6
-@lib lib/libucdagent.so.42.6
-@lib lib/libucdmibs.so.42.6
