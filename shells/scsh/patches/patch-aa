@@ -1,7 +1,7 @@
-*** Makefile.in.original	Tue Nov 26 14:44:19 1996
---- Makefile.in	Thu Nov 28 15:29:24 1996
+*** Makefile.in.orig	Sun Jun  8 20:46:05 1997
+--- Makefile.in	Sun Dec 14 23:06:18 1997
 ***************
-*** 137,143 ****
+*** 139,145 ****
   
   # The following is the first rule and therefore the "make" command's
   # default target.
@@ -9,7 +9,7 @@
   
   # The developers are curious to know.  Don't be concerned if this fails.
   # You may comment these lines out if you wish to be discourteous.
---- 137,143 ----
+--- 139,145 ----
   
   # The following is the first rule and therefore the "make" command's
   # default target.
@@ -18,8 +18,8 @@
   # The developers are curious to know.  Don't be concerned if this fails.
   # You may comment these lines out if you wish to be discourteous.
 ***************
-*** 250,255 ****
---- 250,256 ----
+*** 252,257 ****
+--- 252,258 ----
   	$(RM) -r $(LIB).old
   	if [ -d $(LIB) ] ; then mv $(LIB) $(LIB).old ; fi
   	mkdir $(LIB)
@@ -28,8 +28,27 @@
   	mkdir $(LIB)/cig
   	mkdir $(LIB)/doc
 ***************
-*** 286,291 ****
---- 287,293 ----
+*** 279,286 ****
+  	$(INSTALL_DATA) $(srcdir)/scheme48.h $(incdir)/
+  
+  install-cig: cig
+! 	$(INSTALL_PROGRAM) $(srcdir)/$(CIG) $(LIB)/cig
+! 	$(INSTALL_PROGRAM) $(srcdir)/$(CIG).image $(LIB)/cig
+  	$(INSTALL_DATA) $(srcdir)/$(LIBCIG) $(LIB)/cig
+  	$(INSTALL_DATA) $(srcdir)/cig/libcig.h $(LIB)/cig
+  
+--- 280,287 ----
+  	$(INSTALL_DATA) $(srcdir)/scheme48.h $(incdir)/
+  
+  install-cig: cig
+! 	$(INSTALL_DATA) $(srcdir)/$(CIG) $(LIB)/cig
+! 	$(INSTALL_DATA) $(srcdir)/$(CIG).image $(LIB)/cig
+  	$(INSTALL_DATA) $(srcdir)/$(LIBCIG) $(LIB)/cig
+  	$(INSTALL_DATA) $(srcdir)/cig/libcig.h $(LIB)/cig
+  
+***************
+*** 288,293 ****
+--- 289,295 ----
   	      $(LIB)/misc $(LIB)/link $(LIB)/vm $(LIB)/doc
   	for f in $(srcdir)/rts/*num.scm; \
   	    do $(INSTALL_DATA) $$f $(LIB)/rts/; done
@@ -37,3 +56,22 @@
   	for f in $(srcdir)/env/*.scm; do $(INSTALL_DATA) $$f $(LIB)/env/; done
   	for f in $(srcdir)/big/*.scm; do $(INSTALL_DATA) $$f $(LIB)/big/; done
   	for f in $(srcdir)/opt/*.scm; do $(INSTALL_DATA) $$f $(LIB)/opt/; done
+***************
+*** 676,683 ****
+  install-scsh: scsh
+  	$(RM) $(bindir)/$(RUNNABLE)
+  	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh $(bindir)/$(RUNNABLE)
+! 	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh.image $(LIB)/scsh.image
+! 	$(INSTALL_PROGRAM) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
+  	$(RANLIB) $(libdir)/$(LIBSCSH)
+  	for f in $(srcdir)/scsh/*.scm; \
+  	    do $(INSTALL_DATA) $$f $(LIB)/scsh/; done
+--- 678,685 ----
+  install-scsh: scsh
+  	$(RM) $(bindir)/$(RUNNABLE)
+  	$(INSTALL_PROGRAM) $(srcdir)/scsh/scsh $(bindir)/$(RUNNABLE)
+! 	$(INSTALL_DATA) $(srcdir)/scsh/scsh.image $(LIB)/scsh.image
+! 	$(INSTALL_DATA) $(srcdir)/$(LIBSCSH) $(libdir)/$(LIBSCSH)
+  	$(RANLIB) $(libdir)/$(LIBSCSH)
+  	for f in $(srcdir)/scsh/*.scm; \
+  	    do $(INSTALL_DATA) $$f $(LIB)/scsh/; done
