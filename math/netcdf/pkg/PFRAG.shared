@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2004/02/01 12:22:06 sturm Exp $
+lib/libnetcdf.so.1.0
+lib/libnetcdf_c++.so.1.0
+DYNLIBDIR(%D/lib)

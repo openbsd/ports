@@ -1,32 +1,33 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/16 19:24:25 naddy Exp $ 
+# $OpenBSD: Makefile,v 1.5 2004/02/01 12:22:05 sturm Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 #
 
 COMMENT=	"library for machine-independent, array-oriented data access"
 
-DISTNAME=	netcdf-3.5b3
+DISTNAME=	netcdf-3.5.0
 CATEGORIES=	math
-DISTFILES=	netcdf-3.5-beta3.tar.Z
-
-MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
 
 HOMEPAGE=	http://www.unidata.ucar.edu/packages/netcdf/
 
 MAINTAINER=	Tom Knienieder <tom@knienieder.com>
 
+# BSD-like
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WRKSRC=			${WRKDIR}/netcdf-3.5-beta3/src
+MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
+EXTRACT_SUFX=	.tar.Z
 
-INSTALLS_SHLIB=		yes
+WRKSRC=			${WRKDIST}/src
+
 CONFIGURE_STYLE= 	gnu dest
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
-FAKE_FLAGS=     	DESTDIR="${WRKINST}"
 MAKE_FLAGS=     	CPPFLAGS="-fPIC -DPIC -Df2cFortran -I${WRKSRC}/libsrc"
 
+REGRESS_DEPENDS=	::math/netcdf
 
 post-build:
 	@(cd ${WRKSRC}/libsrc && \
@@ -35,9 +36,9 @@ post-build:
 		${SETENV} ${MAKE_ENV} ${MAKE} linux_shared_library)
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/libsrc/libnetcdf.so ${PREFIX}/lib/libnetcdf.so.1.0
-	ln -sf libnetcdf.so.1.0 ${PREFIX}/lib/libnetcdf.so
-	${INSTALL_DATA} ${WRKSRC}/cxx/libnetcdf_c++.so ${PREFIX}/lib/libnetcdf_c++.so.1.0
-	ln -sf libnetcdf_c++.so.1.0 ${PREFIX}/lib/libnetcdf_c++.so
+	test -f ${WRKSRC}/libsrc/libnetcdf.so && ${INSTALL_DATA} \
+		${WRKSRC}/libsrc/libnetcdf.so ${PREFIX}/lib/libnetcdf.so.1.0
+	test -f ${WRKSRC}/cxx/libnetcdf_c++.so && ${INSTALL_DATA} \
+		${WRKSRC}/cxx/libnetcdf_c++.so ${PREFIX}/lib/libnetcdf_c++.so.1.0
 
 .include <bsd.port.mk>

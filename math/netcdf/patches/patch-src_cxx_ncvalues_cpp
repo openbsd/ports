@@ -1,0 +1,106 @@
+$OpenBSD: patch-src_cxx_ncvalues_cpp,v 1.1 2004/02/01 12:22:05 sturm Exp $
+--- src/cxx/ncvalues.cpp.orig	1998-12-22 19:21:49.000000000 +0100
++++ src/cxx/ncvalues.cpp	2004-02-01 11:54:51.000000000 +0100
+@@ -7,7 +7,7 @@
+  *   $Header: /home/cvs/ports/math/netcdf/patches/Attic/patch-src_cxx_ncvalues_cpp,v 1.1 2004/02/01 12:22:05 sturm Exp $
+  *********************************************************************/
+ 
+-#include <iostream.h>		// for debugging
++#include <iostream>		// for debugging
+ #include "ncvalues.h"
+ 
+ NcValues::NcValues( void ) : the_number(0), the_type(ncNoType)
+@@ -25,7 +25,7 @@ long NcValues::num( void )
+     return the_number;
+ }    
+ 
+-ostream& operator<< (ostream& os, const NcValues& vals)
++std::ostream& operator<< (std::ostream& os, const NcValues& vals)
+ {
+     return vals.print(os);
+ }
+@@ -244,7 +244,7 @@ inline char* NcValues_char::as_string( l
+     return s;
+ }
+ 
+-ostream& NcValues_short::print(ostream& os) const
++std::ostream& NcValues_short::print(std::ostream& os) const
+ {
+     for(int i = 0; i < the_number - 1; i++)
+       os << the_values[i] << ", ";
+@@ -253,7 +253,7 @@ ostream& NcValues_short::print(ostream& 
+     return os;
+ }
+ 
+-ostream& NcValues_int::print(ostream& os) const
++std::ostream& NcValues_int::print(std::ostream& os) const
+ {
+     for(int i = 0; i < the_number - 1; i++)
+       os << the_values[i] << ", ";
+@@ -262,7 +262,7 @@ ostream& NcValues_int::print(ostream& os
+     return os;
+ }
+ 
+-ostream& NcValues_nclong::print(ostream& os) const
++std::ostream& NcValues_nclong::print(std::ostream& os) const
+ {
+     for(int i = 0; i < the_number - 1; i++)
+       os << the_values[i] << ", ";
+@@ -271,7 +271,7 @@ ostream& NcValues_nclong::print(ostream&
+     return os;
+ }
+ 
+-ostream& NcValues_long::print(ostream& os) const
++std::ostream& NcValues_long::print(std::ostream& os) const
+ {
+     for(int i = 0; i < the_number - 1; i++)
+       os << the_values[i] << ", ";
+@@ -280,7 +280,7 @@ ostream& NcValues_long::print(ostream& o
+     return os;
+ }
+ 
+-ostream& NcValues_ncbyte::print(ostream& os) const
++std::ostream& NcValues_ncbyte::print(std::ostream& os) const
+ {
+     for(int i = 0; i < the_number - 1; i++)
+       os << the_values[i] << ", ";
+@@ -289,7 +289,7 @@ ostream& NcValues_ncbyte::print(ostream&
+     return os;
+ }
+ 
+-ostream& NcValues_char::print(ostream& os) const
++std::ostream& NcValues_char::print(std::ostream& os) const
+ {
+     os << '"';
+     long len = the_number;
+@@ -302,7 +302,7 @@ ostream& NcValues_char::print(ostream& o
+     return os;
+ }
+ 
+-ostream& NcValues_float::print(ostream& os) const
++std::ostream& NcValues_float::print(std::ostream& os) const
+ {
+     long save=os.flags();
+     os.precision(7);
+@@ -310,11 +310,11 @@ ostream& NcValues_float::print(ostream& 
+       os << the_values[i] << ", ";
+     if (the_number > 0)
+       os << the_values[the_number-1] ;
+-    os.flags(save);
++    os.precision(save);
+     return os;
+ }
+ 
+-ostream& NcValues_double::print(ostream& os) const
++std::ostream& NcValues_double::print(std::ostream& os) const
+ {
+     long save=os.flags();
+     os.precision(15);
+@@ -322,6 +322,6 @@ ostream& NcValues_double::print(ostream&
+       os << the_values[i] << ", ";
+     if (the_number > 0)
+       os << the_values[the_number-1];
+-    os.flags(save);
++    os.precision(save);
+     return os;
+ }
