@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/19 14:26:01 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2003/01/02 19:35:14 brad Exp $
 
 COMMENT=	"make pretty graphs from Analog logfiles"
 
-DISTNAME=	rmagic-2.13
-PKGNAME=	${DISTNAME}p1
+VERSION=	2.13
+DISTNAME=	rmagic-${VERSION}
+PKGNAME=	reportmagic-${VERSION}p1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.reportmagic.org/
