@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_t-stream_c,v 1.1.1.1 2003/05/02 04:01:25 margarida Exp $
---- tests/t-stream.c.orig	Wed Apr 30 18:27:42 2003
-+++ tests/t-stream.c	Wed Apr 30 18:34:09 2003
+$OpenBSD: patch-tests_t-stream_c,v 1.2 2004/05/08 06:42:59 sturm Exp $
+--- tests/t-stream.c.orig	2003-10-31 08:11:49.000000000 +0100
++++ tests/t-stream.c	2004-04-25 08:57:39.000000000 +0200
 @@ -20,6 +20,7 @@
  
  #include <stdio.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-tests_t-stream_c,v 1.1.1.1 2003/05/02 04:01:25 margarida Exp $
  #include <string.h>
  #include <errno.h>
  #include <time.h>
-@@ -288,7 +289,7 @@ get_sig_time (unsigned long timestamp)
+@@ -289,7 +290,7 @@ get_sig_time (unsigned long timestamp)
    static char buf[128];
    struct tm * tmbuf;
    

@@ -1,28 +1,27 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2003/05/02 04:01:25 margarida Exp $
---- configure.orig	Wed Apr 30 20:40:54 2003
-+++ configure	Wed Apr 30 20:42:33 2003
-@@ -5790,12 +5790,12 @@ else
-     else
-       case "$host_os" in
-       openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
--	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
-+	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+        hardcode_libdir_flag_spec='${wl}-R$libdir'
-         ;;
-       esac
-     fi
-@@ -6314,6 +6314,8 @@ openbsd*)
-   version_type=sunos
-   need_lib_prefix=no
-   need_version=no
+$OpenBSD: patch-configure,v 1.2 2004/05/08 06:42:59 sturm Exp $
+--- configure.orig	2004-04-25 08:52:01.000000000 +0200
++++ configure	2004-04-25 08:54:16.000000000 +0200
+@@ -7329,12 +7329,12 @@ if test -z "$aix_libpath"; then aix_libp
+       else
+        case $host_os in
+ 	 openbsd[01].* | openbsd2.[0-7] | openbsd2.[0-7].*)
+-	   archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'
++	   archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $compiler_flags'
+ 	   hardcode_libdir_flag_spec='-R$libdir'
+ 	   ;;
+ 	 *)
+ 	   archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	   hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	   hardcode_libdir_flag_spec='${wl}-R$libdir'
+ 	   ;;
+        esac
+       fi
+@@ -8003,6 +8003,8 @@ openbsd*)
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
 +  sys_lib_search_path_spec="/usr/lib"
-+  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
++  sys_lib_dlsearch_path_spec="/usr/lib $PREFIX/lib"
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     case "$host_os" in
-     openbsd2.[89] | openbsd2.[89].*)
+     case $host_os in
+       openbsd2.[89] | openbsd2.[89].*)

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2003/10/12 02:13:41 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/05/08 06:42:59 sturm Exp $
 
 COMMENT=		"Open Crypto Development Kit"
 
-VERSION=		0.4.5
+VERSION=		0.5.4
 DISTNAME=		opencdk-${VERSION}
 CATEGORIES=		security
 
@@ -17,18 +17,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/opencdk/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/opencdk/ \
-		http://ftp.planetmirror.com/pub/gnupg/alpha/gnutls/opencdk/ \
 		http://sunsite.dk/pub/security/gcrypt/alpha/gnutls/opencdk/ \
 		http://ftp.linux.it/pub/mirrors/gnupg/alpha/gnutls/opencdk/
 
-LIB_DEPENDS=		gcrypt.6::security/libgcrypt
+LIB_DEPENDS=	gcrypt.12::security/libgcrypt
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-static \
-			--with-libgcrypt-prefix=${LOCALBASE}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-static \
+		--with-libgcrypt-prefix=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/opencdk
