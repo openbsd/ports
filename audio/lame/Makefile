@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/08/23 17:19:33 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/09/13 06:10:42 jakob Exp $
 
 DISTNAME=		lame3.86beta
 PKGNAME=		lame-3.86beta
 CATEGORIES=     	audio
-NEED_VERSION=		1.302
+NEED_VERSION=		1.326
 
 MASTER_SITES=		http://www.sulaco.org/mp3/download/beta/ \
 			http://lame.sourceforge.net/download/beta/
@@ -17,15 +17,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	MP3 patent, http://mp3licensing.com/royalty/swenc.html
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=		gtk.1.2::x11/gtk+
-
 WRKDIST=		${WRKDIR}/lame3.86
 USE_GMAKE=		Yes
+
+FLAVORS=		no_x11
+FLAVOR?=
+
+.if ${FLAVOR:L} == "no_x11"
+ALL_TARGET=		lame
+MAKE_FLAGS+=		GTK= GTKLIBS=
+.else
 ALL_TARGET=		lame mp3x
+LIB_DEPENDS=		gtk.1.2::x11/gtk+
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/lame ${PREFIX}/bin
+.if ${FLAVOR:L} != "no_x11"
 	${INSTALL_PROGRAM} ${WRKBUILD}/mp3x ${PREFIX}/bin
+.endif
 	${INSTALL_MAN} ${WRKBUILD}/doc/man/lame.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lame
 	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/lame
