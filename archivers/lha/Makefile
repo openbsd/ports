@@ -1,37 +1,34 @@
-# $OpenBSD: Makefile,v 1.17 2002/02/04 19:53:52 angelos Exp $
-## updated to lha-1.14i supporting -lh7- algorithm
-## -- yozo.  Sun Jan 13 14:36:49 JST 2002
+# $OpenBSD: Makefile,v 1.18 2002/02/04 22:16:17 naddy Exp $
 
-COMMENT=	"archive files using LZW compression (.LZH files)"
+COMMENT=	"archive files using LZW compression (.lzh files)"
 
-DISTNAME=	lha-114i
-PKGNAME=	lha-1.14i
-NEED_VERSION=	1.504
+VERSION=	1.14i
+DISTNAME=	lha-${VERSION:S/.//}
+PKGNAME=	lha-${VERSION}
 CATEGORIES=	archivers
-MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
-		ftp://ftp.win.ne.jp/pub/misc/
+NEED_VERSION=	1.504
+
 HOMEPAGE=       http://www2m.biglobe.ne.jp/~dolphin/lha/lha.htm
 
-MAINTAINER=	ports@openbsd.org
-
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	"requires advance notification"
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_CDROM=	"requires advance notification"
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE_FLAGS=	BINDIR='$${PREFIX}/bin' MANDIR='$${PREFIX}/man/ja_JP.EUC' \
-		MANSECT="1" INSTALL="" INSTALLBIN="${INSTALL_PROGRAM}" \
+MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/ \
+		ftp://ftp.win.ne.jp/pub/misc/
+
+MAKE_FLAGS=	CC="${CC}" OPTIMIZE="${CFLAGS}" \
+		MACHINE="-DSYSTIME_HAS_NO_TM -DSYSV_SYSTEM_DIR -DMKTIME \
+			 -DUSESTRCASECMP" \
+		SWITCHES="-DNEED_INCREMENTAL_INDICATOR -DEUC -DSUPPORT_LH7"
+
+FAKE_FLAGS=	BINDIR="${WRKINST}${PREFIX}/bin" \
+		MANDIR="${WRKINST}${PREFIX}/man/ja_JP.EUC" MANSECT="1" \
+		INSTALL="" INSTALLBIN="${INSTALL_PROGRAM}" \
 		INSTALLMAN="${INSTALL_MAN}"
 
 MANLANG=	ja_JP.EUC
 NO_REGRESS=	Yes
-
-DOCS= CHANGES.euc MACHINES.euc MACHINES2.euc PROBLEMS.euc README.euc \
-      change-114e.txt change-114g.txt change-114h.txt change-114i.txt \
-      config.eng config.jpn.euc header.doc.euc
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lha
-	cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/lha
 
 .include <bsd.port.mk>

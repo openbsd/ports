@@ -1,15 +1,16 @@
---- src/lharc.c.orig	Sat Sep  4 18:08:21 1999
-+++ src/lharc.c	Sat Sep  4 18:09:48 1999
-@@ -865,6 +865,7 @@
+$OpenBSD: patch-src_lharc_c,v 1.1 2002/02/04 22:16:17 naddy Exp $
+--- src/lharc.c.orig	Thu Oct  5 19:33:34 2000
++++ src/lharc.c	Mon Feb  4 17:52:03 2002
+@@ -894,6 +894,7 @@ free_files(filec, filev)
  /*																			*/
  /* ------------------------------------------------------------------------ */
  /* Build temporary file name and store to TEMPORARY_NAME */
-+#if !defined(__OpenBSD__)
++#if !defined(__NetBSD__) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
  void
  build_temporary_name()
  {
-@@ -888,7 +889,7 @@
- 	mktemp(temporary_name);
+@@ -925,7 +926,7 @@ build_temporary_name()
+ #endif
  #endif
  }
 -
