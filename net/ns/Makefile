@@ -1,6 +1,6 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.17 2001/09/09 18:14:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/15 15:20:09 espie Exp $
 #
 
 COMMENT=	"UCB/LBNL Network Simulator Version 2"
@@ -11,7 +11,7 @@ DISTNAME=	ns-2.1b6
 DISTFILES=	ns-src-2.1b6.tar.gz
 PKGNAME=	ns-2.1b6
 CATEGORIES=	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES= ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
 ftp://ftp.isi.edu/nsnam/ \
 http://www.isi.edu/nsnam/dist/
@@ -26,8 +26,11 @@ HOMEPAGE=	http://www.isi.edu/nsnam/ns/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
-BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a::devel/tclcl
-RUN_DEPENDS=	${PREFIX}/bin/tclsh8.3::lang/tcl/8.3
+BUILD_DEPENDS=	::devel/tclcl
+RUN_DEPENDS=	::lang/tcl/8.3
+LIB_DEPENDS=	otcl::lang/otcl \
+		tcl83::lang/tcl/8.3 \
+		tk83::x11/tk/8.3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3

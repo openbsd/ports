@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/07/18 20:30:43 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/15 15:20:09 espie Exp $
 
 COMMENT=	"local network discovery tool"
 
 DISTNAME=	thcrut-0.1
 CATEGORIES=	net
-NEED_VERSION=	1.402
+NEED_VERSION=	1.474
 MASTER_SITES=	http://www.thehackerschoice.com/releases/
 
 HOMEPAGE=	http://www.thehackerschoice.com/
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a::net/libnet
+LIB_DEPENDS=	net::net/libnet
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
