@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2000/06/25 07:32:43 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2000/06/25 22:20:24 brad Exp $
 
 DISTNAME=	gimp-1.1.23
 CATEGORIES=	graphics
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.gimp.org/
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		aa.1.3::graphics/aalib \
 		mpeg.13::graphics/mpeg-lib \
-		png.1.6::graphics/png \
+		png.1::graphics/png \
 		tiff.35::graphics/tiff
 
 MAINTAINER=	brad@openbsd.org

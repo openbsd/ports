@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/15 19:08:11 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/06/25 22:21:05 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 DISTNAME=	imlib-1.9.8
@@ -12,7 +12,7 @@ LIB_DEPENDS=	intl::devel/gettext \
 		gtk.1.2::x11/gtk+ \
 		gif.4.1::graphics/giflib \
 		jpeg.62::graphics/jpeg \
-		png.1.6::graphics/png \
+		png.1::graphics/png \
 		tiff.35::graphics/tiff
 BUILD_DEPENDS=	convert::graphics/ImageMagick \
 		giftopnm::graphics/netpbm
