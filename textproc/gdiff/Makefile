@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/22 17:44:39 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/23 21:58:28 naddy Exp $
 
 COMMENT=	"GNU versions of the diff utilities"
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
 
-USE_GMAKE=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
