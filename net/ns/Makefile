@@ -1,7 +1,9 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.14 2000/11/25 02:14:31 angelos Exp $
+# $OpenBSD: Makefile,v 1.15 2001/05/06 05:00:14 lebel Exp $
 #
+
+COMMENT=	"The UCB/LBNL Network Simulator Version 2"
 
 #BROKEN=		tclcl API for delay_bind_dispatch changed
 
@@ -9,7 +11,7 @@ DISTNAME=	ns-2.1b6
 DISTFILES=	ns-src-2.1b6.tar.gz
 PKGNAME=	ns-2.1b6
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES= ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/ftp.isi.edu/nsnam/ \
 ftp://ftp.isi.edu/nsnam/ \
 http://www.isi.edu/nsnam/dist/

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/03/03 19:26:12 danh Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 05:00:28 lebel Exp $
 #
+
+COMMENT=	"SLIP/CSLIP emulator for users with shell accounts"
 
 DISTNAME=	slirp-1.0c
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 		ftp://freedom.wit.com/misc4/danjo/SLiRP/
 

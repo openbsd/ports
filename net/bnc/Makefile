@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/27 17:29:46 brad Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 04:59:57 lebel Exp $
+
+COMMENT=	"simple IRC relay proxy with support for virtual hosting"
 
 DISTNAME=	bnc2.8.4
 PKGNAME=	bnc-2.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://gotbnc.com/files/
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://gotbnc.com/
 

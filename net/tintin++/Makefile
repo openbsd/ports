@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/18 10:18:32 kevlo Exp $ 
+# $OpenBSD: Makefile,v 1.10 2001/05/06 05:00:33 lebel Exp $ 
 # Id: Makefile,v 1.7 1996/11/18 11:36:43 asami Exp $
 #
+
+COMMENT=	"client program to help playing muds"
 
 DISTNAME=       tintin++v1.5pl6
 PKGNAME=	tintin-1.5.6
 CATEGORIES=     net games
-NEED_VERSION=	1.317
+NEED_VERSION=	1.402
 
 MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/
 EXTRACT_SUFX=   .tar.Z

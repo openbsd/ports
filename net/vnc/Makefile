@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2000/10/22 15:43:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 05:00:40 lebel Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
+
+COMMENT=	"display X & Win32 desktops on remote X/Win32/Java displays"
 
 DISTNAME=       vnc-3.3.2r3_unixsrc
 PKGNAME=        vnc-3.3.2r3
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=   http://www.uk.research.att.com/vnc/dist/
 DISTFILES=	vnc-3.3.2r3_unixsrc.tgz vnc-3.3.2_doc.tgz
 

@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/22 12:07:51 camield Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 04:59:59 lebel Exp $
+
+COMMENT=	"collection of Domain Name System tools"
 
 DISTNAME=	djbdns-1.05
 HOMEPAGE=	http://cr.yp.to/djbdns.html
 CATEGORIES=	net
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
+NEED_VERSION=	1.402
 
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/30 05:00:20 dugsong Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:09 lebel Exp $
+
+COMMENT=	"NetBIOS name network scanner"
 
 DISTNAME=	nbtscan-1.0.2
-
 CATEGORIES=	net
-
 MASTER_SITES=	http://www.abb.aha.ru/software/
+NEED_VERSION=	1.402
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 

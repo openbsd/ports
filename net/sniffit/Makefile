@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2000/08/30 23:50:29 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2001/05/06 05:00:29 lebel Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
+
+COMMENT=	"packet sniffer program; for educational use"
 
 DISTNAME=	sniffit.0.3.7.beta
 PKGNAME=	sniffit-0.3.7b
 CATEGORIES=	net security
-NEED_VERSION=	1.320
+NEED_VERSION=	1.402
 MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/
 MASTER_SITES0=	http://ftp.debian.org/debian/dists/stable/main/source/net/
 

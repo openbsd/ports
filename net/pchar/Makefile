@@ -3,13 +3,15 @@
 # Date created:			  Thu Dec 16, 1999
 # Whom:				  Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.11 2001/04/13 16:56:59 angelos Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:20 lebel Exp $
 # $FreeBSD: ports/net/pchar/Makefile,v 1.1.1.1 1999/11/04 08:33:26 obrien Exp $
 #
 
+COMMENT=	"Sandia Internet path characterization tool"
+
 DISTNAME=	pchar-1.3.2
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
 MAINTAINER=     Angelos D. Keromytis <angelos@openbsd.org>

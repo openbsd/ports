@@ -3,12 +3,14 @@
 # Date created:		12 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.8 2000/10/22 14:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 05:00:16 lebel Exp $
+
+COMMENT=	"DNS "ping""
 
 PKGNAME=	nsping-0.8
 
 CATEGORIES=	net
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 DISTNAME=	nsping
 

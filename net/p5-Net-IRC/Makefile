@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/01/19 02:59:03 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:18 lebel Exp $
+
+COMMENT=	"modules to implement the irc protocol"
 
 DISTNAME=	Net-IRC-0.70
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-NEED_VERSION=	1.351
+NEED_VERSION=	1.402
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2000/09/20 22:42:11 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:33 lebel Exp $
 # $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
+
+COMMENT=	"programmable MUD client, with macro support and more"
 
 DISTNAME=	tf-40s1
 PKGNAME=	tinyfugue-4.0s1
 CATEGORIES=	net games
-NEED_VERSION=	1.333
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://ftp.demon.co.uk/pub/games/mud/
 

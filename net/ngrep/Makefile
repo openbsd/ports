@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/22 14:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/05/06 05:00:12 lebel Exp $
+
+COMMENT=	"network grep"
 
 DISTNAME=	ngrep-1.38
 CATEGORIES=     net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.packetfactory.net/Projects/ngrep/
 
 HOMEPAGE=	http://www.packetfactory.net/Projects/ngrep/

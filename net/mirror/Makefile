@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 15:43:03 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 05:00:06 lebel Exp $
+
+COMMENT=	"mirror packages on remote sites"
 
 DISTNAME=	mirror-2.9
 CATEGORIES=	net
-NEED_VERSION=	1.210
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/ \
 		ftp://ftp.nmt.edu/ \
 		ftp://ftp.plig.net/pub/OpenBSD/distfiles/

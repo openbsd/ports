@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/16 08:36:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:37 lebel Exp $
+
+COMMENT=	"ircII internet relay chat client"
 
 DISTNAME=	tkirc2.43
 CATEGORIES=	net
-NEED_VERSION=	1.343
+NEED_VERSION=	1.402
 
 HOMEPAGE=	http://netsplit.de/tkirc2/
 

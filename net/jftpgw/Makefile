@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2001/02/27 14:05:07 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 05:00:02 lebel Exp $
+
+COMMENT=	"FTP proxy"
 
 DISTNAME=	jftpgw-0.0.11f
 CATEGORIES=	net
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.mcknight.de/jftpgw/
 
 HOMEPAGE=	http://www.mcknight.de/jftpgw/

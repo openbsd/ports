@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/22 23:03:23 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/05/06 05:00:11 lebel Exp $
+
+COMMENT=	"shell utilities to connect programs to sockets"
 
 DISTNAME=		netpipes-4.2-export
 CATEGORIES=		net
-NEED_VERSION=		1.362
+NEED_VERSION=	1.402
 
 MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
 

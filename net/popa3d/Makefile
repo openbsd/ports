@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/25 07:40:14 camield Exp $
+# $OpenBSD: Makefile,v 1.17 2001/05/06 05:00:22 lebel Exp $
+
+COMMENT=	"security first POP3 daemon"
 
 DISTNAME=	popa3d-0.4
 HOMEPAGE=	http://www.openwall.com/popa3d
 CATEGORIES=	net mail
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
+NEED_VERSION=	1.402
 
 MASTER_SITES=   http://www.openwall.com/popa3d/ \
                 ftp://ftp.openwall.com/popa3d/ \

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/02 08:09:22 kevlo Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/06 05:00:41 lebel Exp $
+
+COMMENT=	"virtual tunnels over TCP/IP networks with traffic shaping"
 
 DISTNAME=	vtun-2.4
 CATEGORIES=	net
-NEED_VERSION=	1.320
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 	http://vtun.sourceforce.net/
 MASTER_SITE_SUBDIR= vtun

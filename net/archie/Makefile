@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:42:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 04:59:54 lebel Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
+
+COMMENT=	"Prospero client for the archie service"
 
 DISTNAME=	c-archie-1.4.1-FIXED
 PKGNAME=	archie-1.4.1
 CATEGORIES=	net
-NEED_VERSION=	1.191
+NEED_VERSION=	1.402
 
 MASTER_SITES=	ftp://ftp.uu.net/networking/info-service/archie/clients/
 EXTRACT_SUFX=	.tar.Z

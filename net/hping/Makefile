@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 14:03:33 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 05:00:00 lebel Exp $
+
+COMMENT=	"TCP/UDP ping/traceroute tool"
 
 DISTNAME=	hping2-beta54
 PKGNAME=	hping-2.0b54
 CATEGORIES=	net
-NEED_VERSION=	1.310
+NEED_VERSION=	1.402
 MASTER_SITES=	http://www.kyuzz.org/antirez/hping2-src/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 16:17:39 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2001/05/06 05:00:10 lebel Exp $
+
+COMMENT=	"curses-based ftp program"
 
 DISTNAME=       	ncftp-3.0.1-src
 PKGNAME=		ncftp-3.0.1
 CATEGORIES=		net
-NEED_VERSION=		1.307
+NEED_VERSION=	1.402
 MASTER_SITES=		ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=		Eric Jackson <shinobi@monkey.org>

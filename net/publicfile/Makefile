@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2001/04/22 12:07:52 camield Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 05:00:25 lebel Exp $
+
+COMMENT=	"read-only anonymous FTP and HTTP server"
 
 DISTNAME=	publicfile-0.52
 HOMEPAGE=	http://cr.yp.to/publicfile.html
 CATEGORIES=	net
-NEED_VERSION=	1.230
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES=	http://cr.yp.to/publicfile/ \

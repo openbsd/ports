@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2000/10/22 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/05/06 05:00:32 lebel Exp $
+
+COMMENT=	"TCP dump file analysis tool"
 
 DISTNAME=	tcptrace.5.2.1
 PKGNAME=	tcptrace-5.2.1
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	http://jarok.cs.ohiou.edu/software/tcptrace/files/5.2.1/
 
 MAINTAINER=	Jeremy Jethro <jethro@dqc.org>

@@ -1,9 +1,11 @@
-#   $OpenBSD: Makefile,v 1.6 2000/10/10 00:40:53 espie Exp $
+#   $OpenBSD: Makefile,v 1.7 2001/05/06 05:00:19 lebel Exp $
+
+COMMENT=	"modules for net-based applications"
 
 DISTNAME=	libnet-1.0703
 PKGNAME=	p5-libnet-1.0703
 CATEGORIES=	net perl5
-NEED_VERSION=	1.336
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= Net
 

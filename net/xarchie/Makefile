@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2000/10/22 15:43:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 05:00:43 lebel Exp $
 # $FreeBSD: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
+
+COMMENT=	"X11 front-end program for the archie network search service"
 
 DISTNAME=	xarchie-2.0.10
 CATEGORIES=	net
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

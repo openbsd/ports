@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2000/10/22 15:43:07 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2001/05/06 05:00:23 lebel Exp $
+
+COMMENT=	"set of programs to enhance firewall security"
 
 DISTNAME=	proxy-suite-1.7
 HOMEPAGE=	http://proxy-suite.suse.de
 CATEGORIES=    	net security
-NEED_VERSION=	1.305
+NEED_VERSION=	1.402
 MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES= \

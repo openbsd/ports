@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/22 15:43:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/06 05:00:26 lebel Exp $
+
+COMMENT=	"determine remote OS using simple tcp packets"
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>

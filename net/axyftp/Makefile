@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/05 21:32:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2001/05/06 04:59:56 lebel Exp $
+
+COMMENT=	"ftp client for X window system"
 
 DISTNAME=	axyftp-0.5.1
 CATEGORIES=	net
-NEED_VERSION=   1.400
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/0.5.1/
 
 HOMEPAGE=	http://www.wxftp.seul.org/

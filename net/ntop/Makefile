@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2000/09/24 07:04:12 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2001/05/06 05:00:17 lebel Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
+
+COMMENT=	"network usage, interface similar to top(1)"
 
 DISTNAME=	ntop-1.1-src
 PKGNAME=	ntop-1.1
 CATEGORIES=	net
-NEED_VERSION=	1.330
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
