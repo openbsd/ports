@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/01/10 22:58:31 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/24 23:57:20 marcm Exp $
 
 COMMENT=		"Shared mime database for desktops"
 
-VERSION=		0.12
+VERSION=		0.14
 DISTNAME=		shared-mime-info-${VERSION}
 CATEGORIES=		misc
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}releases/
+MASTER_SITES=		${HOMEPAGE}
 
-LIB_DEPENDS=		glib-2.0.=0,gmodule-2.0.=0,gobject-2.0.=0::devel/glib2 \
+LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 			xml2::textproc/libxml
 
 CONFIGURE_STYLE=	gnu
