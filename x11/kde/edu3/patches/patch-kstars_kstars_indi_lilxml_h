@@ -1,4 +1,4 @@
-$OpenBSD: patch-kstars_kstars_indi_lilxml_h,v 1.1 2005/02/27 09:09:14 brad Exp $
+$OpenBSD: patch-kstars_kstars_indi_lilxml_h,v 1.2 2005/02/27 15:09:36 espie Exp $
 --- kstars/kstars/indi/lilxml.h.orig	Fri Jun 25 05:10:04 2004
 +++ kstars/kstars/indi/lilxml.h	Sun Feb 27 03:48:43 2005
 @@ -189,7 +189,7 @@ extern int nXMLAtt (XMLEle *ep);
@@ -10,12 +10,3 @@ $OpenBSD: patch-kstars_kstars_indi_lilxml_h,v 1.1 2005/02/27 09:09:14 brad Exp $
  
  /** \brief Handy wrapper to read one xml file.
      \param fp pointer to FILE to read.
-@@ -242,7 +242,7 @@ extern void prXMLEle (FILE *fp, XMLEle *
-  */
- 
- /* For RCS Only -- Do Not Edit
-- * @(#) $RCSfile: patch-kstars_kstars_indi_lilxml_h,v $ $Date: 2005/02/27 09:09:14 $ $Revision: 1.1 $ $Name:  $
-+ * @(#) $RCSfile: patch-kstars_kstars_indi_lilxml_h,v $ $Date: 2005/02/27 09:09:14 $ $Revision: 1.1 $ $Name:  $
-  */
- 
- #endif	/* LILXML_H */
