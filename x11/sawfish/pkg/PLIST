@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/05/15 04:39:16 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/16 21:01:38 naddy Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/sawfish.info
 bin/sawfish
 bin/sawfish-client
 bin/sawfish-ui
-@unexec install-info --delete --info-dir=%D/info %D/info/sawfish.info
 info/sawfish.info
 info/sawfish.info-1
 info/sawfish.info-2
 info/sawfish.info-3
 info/sawfish.info-4
 info/sawfish.info-5
-@exec install-info --info-dir=%D/info %D/info/sawfish.info
 libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.a
 libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/client.la
 libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/DOC
@@ -612,6 +611,7 @@ share/sawfish/${VERSION}/themes/smaker/theme.jl
 @dirrm share/sawfish/${VERSION}/lisp
 @dirrm share/sawfish/${VERSION}
 @dirrm share/sawfish
+@dirrm share/pixmaps
 @dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm/util
 @dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish/wm
 @dirrm libexec/sawfish/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish
@@ -619,3 +619,4 @@ share/sawfish/${VERSION}/themes/smaker/theme.jl
 @dirrm libexec/sawfish/${VERSION}
 @dirrm libexec/sawfish
 @dirrm libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sawfish
+@exec install-info --info-dir=%D/info %D/info/sawfish.info

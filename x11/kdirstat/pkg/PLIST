@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/06/20 09:37:56 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/16 21:01:38 naddy Exp $
 bin/kdirstat
 share/applnk/Utilities/kdirstat.desktop
 share/apps/kdirstat/icons/hicolor/16x16/actions/symlink.png
@@ -19,6 +19,12 @@ share/icons/locolor/16x16/apps/kdirstat.png
 share/icons/locolor/32x32/apps/kdirstat.png
 share/locale/fr/LC_MESSAGES/kdirstat.mo
 share/locale/ja/LC_MESSAGES/kdirstat.mo
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/kdirstat
 @dirrm share/apps/kdirstat/icons/locolor/16x16/actions
 @dirrm share/apps/kdirstat/icons/locolor/16x16

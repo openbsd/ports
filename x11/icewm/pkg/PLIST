@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/01/20 19:54:13 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/16 21:01:38 naddy Exp $
 bin/genpref
 bin/icehelp
 bin/icesh
@@ -295,6 +295,22 @@ share/locale/pt_BR/LC_MESSAGES/icewm.mo
 share/locale/ro/LC_MESSAGES/icewm.mo
 share/locale/ru/LC_MESSAGES/icewm.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/en/LC_MESSAGES
+@dirrm share/locale/en
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
 @dirrm share/icewm/themes/win95
 @dirrm share/icewm/themes/warp4
 @dirrm share/icewm/themes/warp3

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.27 2003/12/15 21:08:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.28 2003/12/16 21:01:38 naddy Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/gdk.info
+@unexec install-info --delete --info-dir=%D/info %D/info/gtk.info
 bin/gtk-config
 include/gtk-1.2/gdk/gdk.h
 include/gtk-1.2/gdk/gdkcursors.h
@@ -120,17 +122,12 @@ include/gtk-1.2/gtk/gtkvscrollbar.h
 include/gtk-1.2/gtk/gtkvseparator.h
 include/gtk-1.2/gtk/gtkwidget.h
 include/gtk-1.2/gtk/gtkwindow.h
-@unexec install-info --delete %D/info/gdk.info %D/info/dir
-@unexec install-info --delete %D/info/gtk.info %D/info/dir
 info/gdk.info
 info/gtk.info
-@exec install-info %D/info/gdk.info %D/info/dir
-@exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk.a
 lib/libgdk.la
 lib/libgtk.a
 lib/libgtk.la
-%%SHARED%%
 man/man1/gtk-config.1
 share/aclocal/gtk.m4
 share/locale/az/LC_MESSAGES/gtk+.mo
@@ -223,9 +220,46 @@ share/themes/Default/gtk/gtkrc.vi_VN.viscii111
 share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.big5
-@dirrm include/gtk-1.2/gdk
-@dirrm include/gtk-1.2/gtk
-@dirrm include/gtk-1.2
+%%SHARED%%
 @dirrm share/themes/Default/gtk
-@unexec rmdir %D/share/themes/Default 2>/dev/null || true
+@dirrm share/themes/Default
 @dirrm share/themes
+@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm share/locale/zh_TW.Big5
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/wa/LC_MESSAGES
+@dirrm share/locale/wa
+@dirrm share/locale/vi/LC_MESSAGES
+@dirrm share/locale/vi
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/sr/LC_MESSAGES
+@dirrm share/locale/sr
+@dirrm share/locale/sp/LC_MESSAGES
+@dirrm share/locale/sp
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
+@dirrm share/locale/ga/LC_MESSAGES
+@dirrm share/locale/ga
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/eu/LC_MESSAGES
+@dirrm share/locale/eu
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/az/LC_MESSAGES
+@dirrm share/locale/az
+@dirrm include/gtk-1.2/gtk
+@dirrm include/gtk-1.2/gdk
+@dirrm include/gtk-1.2
+@exec install-info --info-dir=%D/info %D/info/gdk.info
+@exec install-info --info-dir=%D/info %D/info/gtk.info

@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/10/25 16:00:11 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/16 21:01:38 naddy Exp $
 bin/xtraceroute
 man/man1/xtraceroute.1
+share/locale/es/LC_MESSAGES/xtraceroute.mo
+share/locale/fr/LC_MESSAGES/xtraceroute.mo
+share/locale/ja/LC_MESSAGES/xtraceroute.mo
+share/locale/sv/LC_MESSAGES/xtraceroute.mo
 share/xtraceroute/earth.png
 share/xtraceroute/hosts.cache
 share/xtraceroute/networks.cache
-share/locale/es/LC_MESSAGES/xtraceroute.mo
-share/locale/ja/LC_MESSAGES/xtraceroute.mo
-share/locale/fr/LC_MESSAGES/xtraceroute.mo
 @dirrm share/xtraceroute
