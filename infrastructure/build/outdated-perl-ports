@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+
+my $CPAN_packages_details="ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/02packages.details.txt.gz";  
+	# packages list. Change to a different mirror if you want.
+
+#/*
+# * Copyright (c) 2003 Sam Smith <S@mSmith.net>
+# *
+# * Permission to use, copy, modify, and distribute this software for any
+# * purpose with or without fee is hereby granted, provided that the above
+# * copyright notice and this permission notice appear in all copies.
+# *
+# * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+# */
+
+use strict;
+use warnings;
+
+
+my $PORTSDIR= $ENV{PORTSDIR} || "/usr/ports"; # location of ports directory
+my %Modules; # What CPAN thinks is up to date
+my $line; # lines we process
+my @line; # $line run through split
+
+{
+	open(MODULES, "ftp -V -o - $CPAN_packages_details 2>/dev/null | gzip -cd |") 
+		|| die "can't open $CPAN_packages_details: $!";
+	while (<MODULES>) {
+		next if (1 .. /^\s*$/); # ignore gunk before first blank line
+
+		#example match: /Class-Autouse-0.8.tar.gz
+		m#/([\w\-]+)\-([\d\.]+)(?:\_\w+\d+)?\.tar\.gz$#;
+
+		if (defined $ENV{DEBUG}){print STDERR "$_" unless $2;}
+		next unless ($2); # some things don't follow conventions
+
+		unless ((defined $Modules{$1}) and $Modules{$1} ge $2) {
+			$Modules{$1}=$2 ;
+			#print STDERR "$1 maps to $2\n";
+		}
+	}
+
+	open (PORTS, "< ${PORTSDIR}/INDEX") || die "can't open ${PORTSDIR}/INDEX: $!";
+	while ($line=<PORTS>) {
+		@line= split /\|/, $line;
+		next unless ($line =~ /^(p5\-(.+?)\-([\d\.]+)(?:p\d)?)\|/);
+		# $1 has full package name in
+		# $2 is the name of the perl module (the stem minus the p5- prefix)
+		# $3 is the version number
+
+		if (defined $ENV{DEBUG}){print STDERR "$1\t$2\t$3\n";}
+
+		if ((defined $Modules{$2}) and ($Modules{$2} gt $3)) {
+			print STDOUT "Out of date: $1 vs $Modules{$2}. $line[5] \n";
+		}
+	}	
+	
+}
