@@ -1,6 +1,7 @@
---- cfs_des.c.orig	Wed Mar 20 14:57:56 1996
-+++ cfs_des.c	Sun Oct 31 16:15:22 1999
-@@ -140,7 +140,10 @@
+$OpenBSD: patch-cfs_des_c,v 1.1 2001/03/17 15:46:39 wilfried Exp $
+--- cfs_des.c.orig	Wed Mar 20 18:57:56 1996
++++ cfs_des.c	Fri Mar 16 20:23:02 2001
+@@ -140,7 +140,10 @@ int decrypting;
  	register key_offset;
  	int j,k;
  	static int lk= -1;

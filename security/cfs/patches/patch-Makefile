@@ -1,0 +1,39 @@
+$OpenBSD: patch-Makefile,v 1.1 2001/03/17 15:46:37 wilfried Exp $
+--- Makefile.orig	Fri Mar 16 20:07:55 2001
++++ Makefile	Fri Mar 16 20:08:42 2001
+@@ -71,8 +71,8 @@
+ #CC=cc
+ #COPT=-O -DNOT_ANSI_C -DPROTOTYPES=0
+ # for gcc, use
+-CC=gcc
+-COPT=-O2 -DPROTOTYPES=1
++#CC=gcc
++COPT=-DPROTOTYPES=1
+ 
+ #1B: paths:
+ BINDIR=/usr/local/bin
+@@ -184,6 +184,15 @@ RINCLUDES=/usr/mab/rsaref/source
+ #COMPAT=-lcompat
+ #RPCOPTS=
+ 
++##use these for OpenBSD i386 2.0 (Niels Provos)
++# for mounting, you need to use a command like:
++#	mount -o port=3049,nfsv2,intr localhost:/null /crypt
++# use -DSHORTLINKS to support the BSD 4.4 symbolic links (Dave Carrel)
++CFLAGS=$(COPT) -DBSD44 -DANYPORT -DSHORTLINKS -I$(RINCLUDES)
++LIBS=
++COMPAT=-lcompat
++RPCOPTS=
++
+ ##use these for NetBSD i386 1.0 (John Kohl)
+ # for mounting, you need to use a command like:
+ #	mount -o -P,-c localhost:/null /crypt
+@@ -207,7 +216,7 @@ RINCLUDES=/usr/mab/rsaref/source
+ # (3/3) CONFIGURE: one last thing
+ #==========================================================================
+ # finally, comment out the next line:
+-CC=you_forgot_to_edit_the_makefile
++#CC=you_forgot_to_edit_the_makefile
+ 
+ # now you're done with local configuration.
+ 

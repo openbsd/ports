@@ -1,0 +1,38 @@
+$OpenBSD: patch-cfs_c,v 1.1 2001/03/17 15:46:39 wilfried Exp $
+--- cfs.c.orig	Wed Mar 20 18:57:56 1996
++++ cfs.c	Fri Mar 16 20:23:02 2001
+@@ -42,7 +42,7 @@
+ 
+ struct in_addr validhost;
+ 
+-#if defined(SOLARIS2X) || defined(__NetBSD__)
++#if defined(SOLARIS2X) || defined(__OpenBSD__) || defined(__NetBSD__)
+ void nfs_program_2();
+ void adm_program_2();
+ #include <string.h>
+@@ -50,8 +50,9 @@ void adm_program_2();
+ int nfs_program_2();
+ int adm_program_2();
+ #endif
+-#ifdef __NetBSD__
++#if defined(__OpenBSD__) || defined(__NetBSD__)
+ int _rpcsvcdirty;
++int _rpcpmstart;
+ #endif
+ 
+ void grimreap();
+@@ -233,12 +234,12 @@ initstuff()
+  	setuid(0);
+ 	umask(0);
+ 
+-#if defined(__NetBSD__)
++#if defined(__OpenBSD__) || defined(__NetBSD__)
+ #ifndef DEBUG
+ 	/* detach from terminal */
+ 	daemon(0,0);
+ #endif /* DEBUG */
+-#endif /* __NetBSD__ */
++#endif /* __*BSD__ */
+ 
+ #ifndef NORLIMITS
+ 	/* make sure we don't spill a corefile */

@@ -1,0 +1,22 @@
+$OpenBSD: patch-make_with_bad_rpcgen,v 1.1 2001/03/17 15:46:40 wilfried Exp $
+--- make_with_bad_rpcgen.orig	Wed Mar 20 18:57:56 1996
++++ make_with_bad_rpcgen	Fri Mar 16 20:15:08 2001
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ # this will make CFS for linux (and other) systems with the
+ # wrong version of rpcgen
+-make CC="cc -traditional -Dd_fileno=d_ino  \
++make CC="${CCTMP} ${CFLAGS} -traditional -DDd_fileno=d_ino  \
+         -Dnfsproc_null_2_svc=nfsproc_null_2     \
+         -Dnfsproc_getattr_2_svc=nfsproc_getattr_2       \
+         -Dnfsproc_setattr_2_svc=nfsproc_setattr_2       \
+@@ -23,6 +23,9 @@ make CC="cc -traditional -Dd_fileno=d_in
+         -Dadmproc_null_1_svc=admproc_null_1     \
+         -Dadmproc_attach_1_svc=admproc_attach_1 \
+         -Dadmproc_detach_1_svc=admproc_detach_1 \
++        -Dadmproc_null_2_svc=admproc_null_2     \
++        -Dadmproc_attach_2_svc=admproc_attach_2 \
++        -Dadmproc_detach_2_svc=admproc_detach_2 \
+         -Dadmproc_ls_1_svc=admproc_ls_1 \
+                 " $*
+ 

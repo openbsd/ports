@@ -1,6 +1,7 @@
---- cfs_fh.c.orig	Sun Oct 31 16:07:18 1999
-+++ cfs_fh.c	Sun Oct 31 16:06:29 1999
-@@ -363,7 +363,7 @@
+$OpenBSD: patch-cfs_fh_c,v 1.1 2001/03/17 15:46:39 wilfried Exp $
+--- cfs_fh.c.orig	Fri Mar 16 20:23:02 2001
++++ cfs_fh.c	Fri Mar 16 20:23:02 2001
+@@ -363,7 +363,7 @@ isbndry(d)
  
  
  static fh_u roothandle;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2001/01/05 16:35:59 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2001/03/17 15:46:36 wilfried Exp $
 
 DISTNAME=	cfs-1.3.3
 CATEGORIES=	security
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 ALL_TARGET=	cfs
 
 do-build:
-	@cd ${WRKSRC} && sh make_with_bad_rpcgen cfs
+	@cd ${WRKSRC} && env CCTMP="${CC}" CFLAGS="${CFLAGS}" sh make_with_bad_rpcgen cfs
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cfs

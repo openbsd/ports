@@ -1,6 +1,7 @@
---- cfsd.8-	Sat Jan  1 04:35:00 1994
-+++ cfsd.8	Thu Apr 27 19:02:40 2000
-@@ -25,7 +25,7 @@
+$OpenBSD: patch-cfsd_8,v 1.1 2001/03/17 15:46:39 wilfried Exp $
+--- cfsd.8.orig	Sat Jan  1 13:35:00 1994
++++ cfsd.8	Fri Mar 16 20:23:02 2001
+@@ -25,7 +25,7 @@ port=3049.
  /usr/local/etc/cfsd
  invokes cfs (in /etc/rc)
  .TP
