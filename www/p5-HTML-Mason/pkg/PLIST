@@ -1,48 +1,64 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:07 espie Exp $
-libdata/perl5/site_perl/Apache/Mason.pm
-libdata/perl5/site_perl/Bundle/HTML/Mason.pm
-libdata/perl5/site_perl/HTML/Mason.pm
-libdata/perl5/site_perl/HTML/Mason.pod
-libdata/perl5/site_perl/HTML/Mason/Admin.pod
-libdata/perl5/site_perl/HTML/Mason/ApacheHandler.pm
-libdata/perl5/site_perl/HTML/Mason/ApacheHandler.pod
-libdata/perl5/site_perl/HTML/Mason/Commands.pm
-libdata/perl5/site_perl/HTML/Mason/Commands.pod
-libdata/perl5/site_perl/HTML/Mason/Component.pm
-libdata/perl5/site_perl/HTML/Mason/Component.pod
-libdata/perl5/site_perl/HTML/Mason/Component/FileBased.pm
-libdata/perl5/site_perl/HTML/Mason/Component/Subcomponent.pm
-libdata/perl5/site_perl/HTML/Mason/Components.pod
-libdata/perl5/site_perl/HTML/Mason/Config.pm
-libdata/perl5/site_perl/HTML/Mason/Devel.pod
-libdata/perl5/site_perl/HTML/Mason/Error.pm
-libdata/perl5/site_perl/HTML/Mason/FakeApache.pm
-libdata/perl5/site_perl/HTML/Mason/Interp.pm
-libdata/perl5/site_perl/HTML/Mason/Interp.pod
-libdata/perl5/site_perl/HTML/Mason/MethodMaker.pm
-libdata/perl5/site_perl/HTML/Mason/Parser.pm
-libdata/perl5/site_perl/HTML/Mason/Parser.pod
-libdata/perl5/site_perl/HTML/Mason/Preview.pm
-libdata/perl5/site_perl/HTML/Mason/Request.pm
-libdata/perl5/site_perl/HTML/Mason/Request.pod
-libdata/perl5/site_perl/HTML/Mason/Resolver.pm
-libdata/perl5/site_perl/HTML/Mason/Resolver/File.pm
-libdata/perl5/site_perl/HTML/Mason/Tests.pm
-libdata/perl5/site_perl/HTML/Mason/Tools.pm
-libdata/perl5/site_perl/HTML/Mason/Utils.pm
+@comment $OpenBSD: PLIST,v 1.4 2002/10/16 13:18:19 wilfried Exp $
+${P5SITE}/Apache/Mason.pm
+${P5SITE}/Bundle/HTML/Mason.pm
+${P5SITE}/HTML/Mason.pm
+${P5SITE}/HTML/Mason/Admin.pod
+${P5SITE}/HTML/Mason/ApacheHandler.pm
+${P5SITE}/HTML/Mason/Buffer.pm
+${P5SITE}/HTML/Mason/CGIHandler.pm
+${P5SITE}/HTML/Mason/Cache/BaseCache.pm
+${P5SITE}/HTML/Mason/Compiler.pm
+${P5SITE}/HTML/Mason/Compiler/ToObject.pm
+${P5SITE}/HTML/Mason/Component.pm
+${P5SITE}/HTML/Mason/Component/FileBased.pm
+${P5SITE}/HTML/Mason/Component/Subcomponent.pm
+${P5SITE}/HTML/Mason/ComponentSource.pm
+${P5SITE}/HTML/Mason/Devel.pod
+${P5SITE}/HTML/Mason/Escapes.pm
+${P5SITE}/HTML/Mason/Exceptions.pm
+${P5SITE}/HTML/Mason/Interp.pm
+${P5SITE}/HTML/Mason/Lexer.pm
+${P5SITE}/HTML/Mason/MethodMaker.pm
+${P5SITE}/HTML/Mason/Params.pod
+${P5SITE}/HTML/Mason/Parser.pm
+${P5SITE}/HTML/Mason/Request.pm
+${P5SITE}/HTML/Mason/Resolver.pm
+${P5SITE}/HTML/Mason/Resolver/File.pm
+${P5SITE}/HTML/Mason/Resolver/Null.pm
+${P5SITE}/HTML/Mason/Subclassing.pod
+${P5SITE}/HTML/Mason/Tests.pm
+${P5SITE}/HTML/Mason/Tools.pm
+${P5SITE}/HTML/Mason/Utils.pm
 man/man3p/Bundle::HTML::Mason.3p
 man/man3p/HTML::Mason.3p
 man/man3p/HTML::Mason::Admin.3p
 man/man3p/HTML::Mason::ApacheHandler.3p
-man/man3p/HTML::Mason::Commands.3p
+man/man3p/HTML::Mason::Buffer.3p
+man/man3p/HTML::Mason::CGIHandler.3p
+man/man3p/HTML::Mason::Cache::BaseCache.3p
+man/man3p/HTML::Mason::Compiler.3p
+man/man3p/HTML::Mason::Compiler::ToObject.3p
 man/man3p/HTML::Mason::Component.3p
-man/man3p/HTML::Mason::Components.3p
+man/man3p/HTML::Mason::Component::Subcomponent.3p
+man/man3p/HTML::Mason::ComponentSource.3p
 man/man3p/HTML::Mason::Devel.3p
+man/man3p/HTML::Mason::Escapes.3p
+man/man3p/HTML::Mason::Exceptions.3p
 man/man3p/HTML::Mason::Interp.3p
+man/man3p/HTML::Mason::Lexer.3p
 man/man3p/HTML::Mason::MethodMaker.3p
+man/man3p/HTML::Mason::Params.3p
 man/man3p/HTML::Mason::Parser.3p
 man/man3p/HTML::Mason::Request.3p
+man/man3p/HTML::Mason::Resolver.3p
+man/man3p/HTML::Mason::Resolver::File.3p
+man/man3p/HTML::Mason::Resolver::Null.3p
+man/man3p/HTML::Mason::Subclassing.3p
 man/man3p/HTML::Mason::Tests.3p
-@dirrm libdata/perl5/site_perl/HTML/Mason/Resolver
-@dirrm libdata/perl5/site_perl/HTML/Mason/Component
-@dirrm libdata/perl5/site_perl/HTML/Mason
+man/man3p/HTML::Mason::Tools.3p
+man/man3p/HTML::Mason::Utils.3p
+@dirrm ${P5SITE}/HTML/Mason/Resolver
+@dirrm ${P5SITE}/HTML/Mason/Component
+@dirrm ${P5SITE}/HTML/Mason/Compiler
+@dirrm ${P5SITE}/HTML/Mason/Cache
+@dirrm ${P5SITE}/HTML/Mason
