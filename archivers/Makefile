@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/08 12:17:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/11/27 15:16:16 reinhard Exp $
 # $FreeBSD: Makefile,v 1.19 1997/11/20 08:21:26 tg Exp $
 #
 
@@ -16,6 +16,7 @@
      SUBDIR += lha
      SUBDIR += lzo
      SUBDIR += lzop
+     SUBDIR += makeself
      SUBDIR += nulib
      SUBDIR += p5-Compress-LZO
      SUBDIR += p5-Compress-Zlib
