@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 1999/10/27 12:18:58 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/12/01 03:20:03 brad Exp $
 
-DISTNAME=	pine4.20
-PKGNAME=	pine-4.20
+DISTNAME=	pine4.21
+PKGNAME=	pine-4.21
 CATEGORIES=	mail news
-
-MAINTAINER=	ports@openbsd.org
-
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
+MAINTAINER=	ports@openbsd.org
+
 do-install:
+	@mkdir -p ${PREFIX}/share/doc/pine
 	@${INSTALL_PROGRAM} \
 		${WRKSRC}/bin/pico \
 		${WRKSRC}/bin/pilot \
@@ -25,7 +25,6 @@ do-install:
 		${WRKSRC}/doc/pilot.1 \
 		${WRKSRC}/doc/pine.1 \
 			${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/share/doc/pine
 	@${INSTALL_DATA} \
 		${WRKSRC}/doc/tech-notes.txt \
 		${FILESDIR}/dot.pinerc.pgp.sample \

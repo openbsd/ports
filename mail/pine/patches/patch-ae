@@ -1,6 +1,6 @@
---- imap/src/osdep/unix/env_unix.c.orig	Sat Oct 23 01:12:43 1999
-+++ imap/src/osdep/unix/env_unix.c	Sat Oct 23 01:14:55 1999
-@@ -825,7 +825,8 @@
+--- imap/src/osdep/unix/env_unix.c.orig	Mon Nov  1 16:08:55 1999
++++ imap/src/osdep/unix/env_unix.c	Thu Nov 18 14:45:32 1999
+@@ -839,7 +839,8 @@
  	    }
  	    close (pi[0]); close (pi[1]);
  	  }

@@ -1,5 +1,5 @@
---- doc/tech-notes.txt.orig	Fri Oct 22 20:01:56 1999
-+++ doc/tech-notes.txt	Fri Oct 22 20:09:14 1999
+--- doc/tech-notes.txt.orig	Thu Nov 18 14:53:47 1999
++++ doc/tech-notes.txt	Thu Nov 18 14:53:58 1999
 @@ -324,14 +324,14 @@
            sendmail-path, smtp-server, and compile-time options. The
            first MTA specified in the following list is used:
@@ -118,7 +118,7 @@
     pine/osdep/os-xxx.h are set to.) Both _Pine_ and _PC-Pine_ also use
     personal (user-based) configuration files. On UNIX machines, the
     personal configuration file is the file ~/.pinerc. For _PC-Pine_
-@@ -5635,8 +5634,8 @@
+@@ -5638,8 +5637,8 @@
       * A program that implements the SMTP or ESMTP protocol via stdio.
       * An entry in /etc/services for the alternate service.
       * An entry in /etc/inetd.conf for the alternate service.
@@ -129,7 +129,7 @@
       _________________________________________________________________
     
  MIME.Types file
-@@ -6788,7 +6787,7 @@
+@@ -6792,7 +6791,7 @@
     
     The second selection is the standard UNIX print command. The default
     is _lpr_, but it can be changed on a system basis to anything so
@@ -138,7 +138,7 @@
     
     The third selection is the user's personal choice for a UNIX print
     command. The text to be printed is piped into the command. _Enscript_
-@@ -7242,9 +7241,9 @@
+@@ -7246,9 +7245,9 @@
            Error messages for incorrect terminal types (try "foo" and
            "vt52")
     ___
