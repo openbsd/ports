@@ -1,14 +1,13 @@
-*** config.guess.orig	Wed Jul 14 15:29:09 1999
---- config.guess	Wed Jul 14 15:29:26 1999
-***************
-*** 309,314 ****
---- 309,317 ----
-      *:FreeBSD:*:*)
-  	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
-  	exit 0 ;;
-+     *:OpenBSD:*:*)
-+ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
-+ 	exit 0 ;;
-      *:NetBSD:*:*)
-  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
-  	exit 0 ;;
+$OpenBSD: patch-aa,v 1.2 2000/05/17 01:25:54 espie Exp $
+--- config.guess.orig	Tue Jan  5 04:30:48 1999
++++ config.guess	Mon May  8 14:19:13 2000
+@@ -309,6 +309,9 @@ EOF
+     *:FreeBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+ 	exit 0 ;;
++    *:OpenBSD:*:*)
++	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++	exit 0 ;;
+     *:NetBSD:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+ 	exit 0 ;;
