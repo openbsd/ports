@@ -1,25 +1,22 @@
-*** makefile.cfg.orig	Tue Jul 25 03:07:32 1995
---- makefile.cfg	Wed Oct  4 05:50:21 1995
+*** makefile.cfg.orig	Wed Feb  7 19:09:39 1996
+--- makefile.cfg	Fri Feb  6 19:15:52 1998
 ***************
-*** 115,121 ****
+*** 116,122 ****
+--- 116,126 ----
   TROBJECTS= jpegtran.o rdswitch.o cdjpeg.o
   
   
-! all: @ANSI2KNR@ libjpeg.a cjpeg djpeg jpegtran rdjpgcom wrjpgcom
-  
-  # This rule causes ansi2knr to be invoked.
-  @ISANSICOM@.c.o:
---- 115,121 ----
-  TROBJECTS= jpegtran.o rdswitch.o cdjpeg.o
-  
-  
-! all: @ANSI2KNR@ libjpeg.a libjpeg.so.7.0 cjpeg djpeg jpegtran rdjpgcom wrjpgcom
++ .if (${MACHINE_ARCH} != "alpha")
++ all: @ANSI2KNR@ libjpeg.a libjpeg.so.7.0 cjpeg djpeg jpegtran rdjpgcom wrjpgcom
++ .else
+  all: @ANSI2KNR@ libjpeg.a cjpeg djpeg jpegtran rdjpgcom wrjpgcom
++ .endif
   
   # This rule causes ansi2knr to be invoked.
   @ISANSICOM@.c.o:
 ***************
-*** 124,129 ****
---- 124,134 ----
+*** 125,130 ****
+--- 129,139 ----
   @ISANSICOM@	$(RM) T$*.c $*.o
   @ISANSICOM@	$(MV) T$*.o $*.o
   
@@ -32,7 +29,7 @@
   	$(CC) $(CFLAGS) $(ANSI2KNRFLAGS) -o ansi2knr ansi2knr.c
   
 ***************
-*** 132,145 ****
+*** 133,146 ****
   	$(AR) libjpeg.a  $(LIBOBJECTS)
   	$(AR2) libjpeg.a
   
@@ -47,7 +44,7 @@
   
   rdjpgcom: rdjpgcom.o
   	$(LN) $(LDFLAGS) -o rdjpgcom rdjpgcom.o $(LDLIBS)
---- 137,153 ----
+--- 142,158 ----
   	$(AR) libjpeg.a  $(LIBOBJECTS)
   	$(AR2) libjpeg.a
   
@@ -66,7 +63,7 @@
   rdjpgcom: rdjpgcom.o
   	$(LN) $(LDFLAGS) -o rdjpgcom rdjpgcom.o $(LDLIBS)
 ***************
-*** 164,171 ****
+*** 165,172 ****
   	$(INSTALL_DATA) $(srcdir)/rdjpgcom.1 $(mandir)/$(manprefix)rdjpgcom.$(manext)
   	$(INSTALL_DATA) $(srcdir)/wrjpgcom.1 $(mandir)/$(manprefix)wrjpgcom.$(manext)
   
@@ -75,7 +72,7 @@
   
   install-headers: jconfig.h
   	$(INSTALL_DATA) jconfig.h $(includedir)/jconfig.h
---- 172,181 ----
+--- 177,186 ----
   	$(INSTALL_DATA) $(srcdir)/rdjpgcom.1 $(mandir)/$(manprefix)rdjpgcom.$(manext)
   	$(INSTALL_DATA) $(srcdir)/wrjpgcom.1 $(mandir)/$(manprefix)wrjpgcom.$(manext)
   
@@ -87,8 +84,8 @@
   install-headers: jconfig.h
   	$(INSTALL_DATA) jconfig.h $(includedir)/jconfig.h
 ***************
-*** 202,207 ****
---- 212,266 ----
+*** 203,208 ****
+--- 217,271 ----
   # GNU Make likes to know which target names are not really files to be made:
   .PHONY: all install install-lib install-headers clean distribute test check
   
