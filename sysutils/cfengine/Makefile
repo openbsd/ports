@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2001/06/20 01:43:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.11 2001/10/01 13:07:45 heko Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/19 11:28:23 jseger Exp $
 #
 
@@ -16,10 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=   ${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= cfengine
+MASTER_SITES=       ftp://ftp.gnu.org/old-gnu/cfengine/
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	autoconf dest
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .include <bsd.port.mk>
