@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Mar  9 01:53:50 1999
-+++ Makefile.in	Wed Jan  5 23:13:40 2000
++++ Makefile.in	Thu Jan 13 21:11:54 2000
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -38,19 +38,28 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -311,6 +313,11 @@
- 	@MAKE_LIB@
- 	$(RANLIB) ${TK_LIB_FILE}
+@@ -302,14 +304,18 @@
  
+ DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
+ 
+-all: wish
++all: ${TK_LIB_FILE} libtk80.a wish
+ 
+ # The following target is configured by autoconf to generate either
+ # a shared library or non-shared library for Tk.
+ ${TK_LIB_FILE}: ${OBJS}
+ 	rm -f ${TK_LIB_FILE}
+ 	@MAKE_LIB@
+-	$(RANLIB) ${TK_LIB_FILE}
++
 +libtk80.a: ${OBJS}
 +	rm -f libtk80.a
 +	ar cr libtk80.a ${OBJS}
 +	$(RANLIB) libtk80.a
-+
+ 
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
- # extensions.  used for the Tcl Plugin.  -- dl
-@@ -365,7 +372,7 @@
+@@ -365,7 +371,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -59,13 +68,14 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -379,13 +386,19 @@
+@@ -377,15 +383,19 @@
+ 	    done;
+ 	@echo "Installing $(TK_LIB_FILE)"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
- 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
+-	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@echo "Installing libtk80.a"
 +	@$(INSTALL_DATA) libtk80.a $(LIB_INSTALL_DIR)/libtk80.a
-+	@(cd $(LIB_INSTALL_DIR); ranlib libtk80.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk80.a
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
@@ -80,7 +90,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -395,8 +408,18 @@
+@@ -395,8 +405,18 @@
  		else true; \
  		fi; \
  	    done;
