@@ -1,9 +1,0 @@
---- Imakefile.orig	Sun Dec 26 06:41:21 1999
-+++ Imakefile	Sun Dec 26 06:41:57 1999
-@@ -3,5 +3,6 @@
- DEPLIBS = $(DEPXLIB)
- SRCS = xsnow.c snowmap.h vroot.h
- OBJS = xsnow.o
-+MANDIR=/usr/local/man/cat6
- 
- ComplexProgramTarget(xsnow)

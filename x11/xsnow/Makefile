@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.12 2003/10/08 17:13:19 sturm Exp $
+# $OpenBSD: Makefile,v 1.13 2004/07/07 14:38:23 naddy Exp $
 
-COMMENT=	"snowy and Santa-y desktop"
+COMMENT=		"snowy and Santa-y desktop"
 
-DISTNAME=	xsnow-1.40
-CATEGORIES=	x11
+DISTNAME=		xsnow-1.42
+CATEGORIES=		x11
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
-EXTRACT_SUFX=	.tar.Z
+HOMEPAGE=		http://www.euronet.nl/~rja/Xsnow/
+
+MAINTAINER=		Victor Sahlstedt <cvss@home.se>
 
 PERMIT_PACKAGE_CDROM=	"vague license"
 PERMIT_PACKAGE_FTP=	"vague license"
 PERMIT_DISTFILES_CDROM=	"vague license"
 PERMIT_DISTFILES_FTP=	Yes
 
+MASTER_SITES=		${HOMEPAGE}
+
 USE_X11=		Yes
 CONFIGURE_STYLE=	imake
 
-NO_REGRESS=	Yes
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
