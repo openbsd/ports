@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2000/08/29 03:42:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.88 2000/09/06 04:53:39 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -25,7 +25,6 @@
      SUBDIR += fping
      SUBDIR += gaim
      SUBDIR += gated
-     SUBDIR += gicq
      SUBDIR += hping
      SUBDIR += httptunnel
      SUBDIR += icb
