@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1999/12/29 23:58:11 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2000/03/04 19:12:51 espie Exp $
 
 DISTNAME=	slang-1.3.10
 PKGNAME=	libslang-1.3.10
@@ -6,14 +6,23 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.3/ \
 		http://gd.tuwien.ac.at/editors/davis/slang/v1.3/
 
-NEED_VERSION=	1.73
+NEED_VERSION=	1.218
 
 MAINTAINER=	todd@openbsd.org
 
-GNU_CONFIGURE=  yes
+LICENSE_TYPE=	Artistic GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+FAKE=		Yes
+GNU_CONFIGURE=  Yes
 
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
+do-install:
+	@cd ${WRKDIST}/src && make prefix=${PREFIX} ${INSTALL_TARGET}
+	@if [ ${INSTALL_TARGET} == "install-elf" ]; then \
+	cd ${WRKDIST}/src && make prefix=${PREFIX} install-links; \
+	fi
 
 test:	build
 	@cd ${WRKSRC} && make runtests
