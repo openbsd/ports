@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2000/03/24 23:28:26 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2000/03/30 22:59:58 brad Exp $
 
 DISTNAME=	mrtg-2.8.12
 CATEGORIES=	net
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.234
 MASTER_SITES=	ftp://ftp.ou.edu/mirrors/mrtg/ \
 		ftp://ftp.sunet.se/pub/network/monitoring/mrtg/ \
 		http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
-
 
 HOMEPAGE=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/mrtg.html
 
@@ -26,6 +25,7 @@ CONFIGURE_ARGS=	--with-gd-inc="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib" \
 		--with-png-inc="${LOCALBASE}/include" \
 		--with-png-lib="${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -ljpeg"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/mrtg
