@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2001/04/13 16:35:29 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/13 16:44:26 espie Exp $
 
 COMMENT="AFPL PostScript interpreter"
 
 VERSION=	6.50
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-NEED_VERSION=	1.241
+NEED_VERSION=	1.395
 
 DIR=		aladdin/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES}
@@ -56,6 +56,8 @@ BASE_FLAGS=	INSTALL_PROGRAM='${INSTALL_SCRIPT}' \
 		PSOBJDIR=./objects \
 		PSGENDIR=./objects \
 		STDLIBS='-lc_r -lm' 
+
+PDFDIR=${PREFIX}/share/ghostscript/${VERSION}/lib
 
 BASE_FLAGS+=	DEVICE_DEVS='\
 $$(DD)x11.dev $$(DD)x11alpha.dev $$(DD)x11cmyk.dev $$(DD)x11cmyk2.dev \
