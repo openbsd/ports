@@ -1,0 +1,6 @@
+This is a Perl module to parse XSL Transformational sheets. For a
+description of the XSLT, see http://www.w3.org/TR/xslt.  Other
+useful resources can be found at http://www.xslt.com
+
+Currently, it uses XML::Parser and XML::DOM, but an effort is being
+made to use XML::XPath.
