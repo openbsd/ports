@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/04/11 11:55:39 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/07/01 23:21:45 robert Exp $
 
 COMMENT=	"Manipulate simple date objects"
 
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
 
-DISTNAME=	Date-Simple-3.00
+DISTNAME=	Date-Simple-3.01
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Date/}
