@@ -1,0 +1,17 @@
+$OpenBSD: patch-gprogs_colrname_icn,v 1.1 2000/08/03 00:53:42 espie Exp $
+--- gprogs/colrname.icn.orig	Thu Aug  3 02:45:43 2000
++++ gprogs/colrname.icn	Thu Aug  3 02:45:51 2000
+@@ -31,11 +31,11 @@
+ #
+ ############################################################################
+ #
+-#  Links: isort, wopen
++#  Links: sort, wopen
+ #
+ ############################################################################
+ 
+-link isort
++link sort
+ link wopen
+ 
+ global w, L, startcols, rows, theBackGround

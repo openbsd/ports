@@ -1,0 +1,17 @@
+$OpenBSD: patch-progs_ilnkxref_icn,v 1.1 2000/08/03 00:53:43 espie Exp $
+--- progs/ilnkxref.icn.orig	Thu Aug  3 02:46:23 2000
++++ progs/ilnkxref.icn	Thu Aug  3 02:46:41 2000
+@@ -30,11 +30,11 @@
+ #
+ ############################################################################
+ #
+-#  Links: wrap, options, isort
++#  Links: wrap, options, sort
+ #
+ ############################################################################
+ 
+-link wrap,options,isort
++link wrap,options,sort
+ 
+ procedure main(arg)
+ local comma, f, fill, fn, head, heads, i, libname, line, linesize, maxfile,

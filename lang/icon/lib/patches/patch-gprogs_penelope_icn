@@ -1,0 +1,17 @@
+$OpenBSD: patch-gprogs_penelope_icn,v 1.1 2000/08/03 00:53:43 espie Exp $
+--- gprogs/penelope.icn.orig	Thu Aug  3 02:45:44 2000
++++ gprogs/penelope.icn	Thu Aug  3 02:45:56 2000
+@@ -24,11 +24,11 @@
+ #
+ ############################################################################
+ #
+-#  Links: isort, patxform, vdialog, vsetup, dialog, wopen, xcompat
++#  Links: sort, patxform, vdialog, vsetup, dialog, wopen, xcompat
+ #
+ ############################################################################
+ 
+-link isort
++link sort
+ link patxform
+ link vdialog
+ link vsetup

@@ -1,0 +1,17 @@
+$OpenBSD: patch-progs_itags_icn,v 1.1 2000/08/03 00:53:43 espie Exp $
+--- progs/itags.icn.orig	Thu Aug  3 02:46:23 2000
++++ progs/itags.icn	Thu Aug  3 02:46:37 2000
+@@ -47,11 +47,11 @@
+ #
+ ############################################################################
+ #
+-#  Links:  isort, io, options
++#  Links:  sort, io, options
+ #
+ ############################################################################
+ 
+-link isort, io, options
++link sort, io, options
+ 
+ global patChar
+ 
