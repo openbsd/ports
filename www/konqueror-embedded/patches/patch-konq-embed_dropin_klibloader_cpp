@@ -1,5 +1,5 @@
---- konq-embed/dropin/klibloader.cpp.orig	Wed May 14 03:07:54 2003
-+++ konq-embed/dropin/klibloader.cpp	Fri May 16 20:50:38 2003
+--- konq-embed/dropin/klibloader.cpp.orig	Thu Jun 12 15:03:24 2003
++++ konq-embed/dropin/klibloader.cpp	Sat Jul  5 15:12:20 2003
 @@ -27,6 +27,8 @@
  #include "kglobal.h"
  #include <kstddirs.h>
@@ -9,7 +9,7 @@
  #include <assert.h>
  
  #if defined(HAVE_DLFCN)
-@@ -86,7 +88,19 @@ KDLOpenLibrary::~KDLOpenLibrary()
+@@ -96,7 +98,19 @@ KDLOpenLibrary::~KDLOpenLibrary()
  
  void *KDLOpenLibrary::symbol( const char *name )
  {
@@ -30,7 +30,7 @@
  }
  #endif
  
-@@ -141,6 +155,9 @@ KLibrary *KLibLoader::library( const cha
+@@ -152,6 +166,9 @@ KLibrary *KLibLoader::library( const cha
  
  KLibrary *KLibLoader::globalLibrary( const char *name )
  {
