@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/06/26 07:35:07 xsa Exp $
+# $OpenBSD: Makefile,v 1.31 2004/12/18 14:11:40 espie Exp $
 
 COMMENT=	"shared drawing (whiteboard) tool using multicast"
 
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	:ghostscript-*:print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	tcl80::lang/tcl/8.0 \
-		tk80::x11/tk/8.0
+LIB_DEPENDS=	tcl80:tcl-8.0.*:lang/tcl/8.0 \
+		tk80:tk-8.0.*:x11/tk/8.0
 
 MAKE_FILE=	makefile
 WRKDIST=	${WRKDIR}/wbd

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.27 2004/12/18 14:11:40 espie Exp $
 
 COMMENT=	"MBONE video tool"
 
@@ -13,8 +13,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl4/
 
-LIB_DEPENDS=	tcl80.1.5::lang/tcl/8.0 \
-		tk80.1.5::x11/tk/8.0
+LIB_DEPENDS=	tcl80.1.5:tcl-8.0.*:lang/tcl/8.0 \
+		tk80.1.5:tk-8.0.*:x11/tk/8.0
 
 USE_X11=	Yes
 CONFIGURE_STYLE= autoconf
