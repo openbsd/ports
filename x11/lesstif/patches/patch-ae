@@ -30,7 +30,7 @@
  install-data-hook:
 -#	if [ ! -h $(exec_prefix)/LessTif/doc/Lessdox ]; then ln -s $(htmldir) $(exec_prefix)/LessTif/doc/Lessdox; fi
 -	if [ ! -h $(prefix)/LessTif/doc/Lessdox ]; then mkdir -p $(prefix)/LessTif/doc && cd $(prefix)/LessTif/doc && $(LN_S) html Lessdox; fi
-+	if [ ! -h $(exec_prefix)/LessTif ]; then ln -s $(pkgdatadir) $(exec_prefix)/LessTif; fi
++	if [ ! -h $(exec_prefix)/LessTif ]; then ln -fs $(pkgdatadir) $(exec_prefix)/LessTif; fi
 +#	if [ ! -h $(prefix)/LessTif/doc/Lessdox ]; then mkdir -p $(prefix)/LessTif/doc && cd $(prefix)/LessTif/doc && $(LN_S) html Lessdox; fi
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.

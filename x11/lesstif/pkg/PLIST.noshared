@@ -72,6 +72,10 @@ man/man3/XmToggleButton.3
 man/man3/XmToggleButtonGadget.3
 man/man3/XmVendorShellExt.3
 man/man3/XmWorld.3
+man/man3/XtConfigureObject.3
+man/man3/XtDestroyWidget.3
+man/man3/XtManageChild.3
+man/man3/XtUnmanageChild.3
 man/man3/ApplicationShell.3
 man/man3/Composite.3
 man/man3/Object.3
@@ -359,10 +363,6 @@ LessTif/Motif2.0/include/Mrm/MrmDecls.h
 LessTif/Motif2.0/include/Mrm/MrmPrivate.h
 LessTif/Motif2.0/include/Mrm/MrmPublic.h
 LessTif/LessTif
-LessTif/doc/man/man3/XtConfigureObject.3
-LessTif/doc/man/man3/XtDestroyWidget.3
-LessTif/doc/man/man3/XtManageChild.3
-LessTif/doc/man/man3/XtUnmanageChild.3
 share/LessTif/doc/html/images/hungry.gif
 share/LessTif/doc/html/images/lesstif-realsmall.gif
 share/LessTif/doc/html/images/lesstif-small.gif
@@ -413,12 +413,6 @@ share/LessTif/TODO
 @dirrm LessTif/Motif2.0/include/Mrm
 @dirrm LessTif/Motif2.0/include
 @dirrm LessTif/Motif2.0
-@dirrm LessTif/doc/man/man1
-@dirrm LessTif/doc/man/man3
-@dirrm LessTif/doc/man/man5
-@dirrm LessTif/doc/man
-@dirrm LessTif/doc/html
-@dirrm LessTif/doc
 @dirrm LessTif
 @dirrm share/LessTif/doc/html/imgs
 @dirrm share/LessTif/doc/html/images
@@ -427,8 +421,6 @@ share/LessTif/TODO
 @dirrm share/LessTif
 @dirrm lib/X11/mwm
 @dirrm lib/X11/lesstif
-@exec /sbin/ldconfig -m %B
-
 
 
 
