@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/06/06 07:26:06 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/06/06 12:50:37 wilfried Exp $
 bin/mozilla-firebird
 mozilla-firebird/MozillaFirebird-bin
 mozilla-firebird/chrome/US.jar
@@ -186,6 +186,7 @@ mozilla-firebird/defaults/wallet/StateSchema.tbl
 mozilla-firebird/defaults/wallet/VcardSchema.tbl
 mozilla-firebird/icons/mozicon16.xpm
 mozilla-firebird/icons/mozicon50.xpm
+mozilla-firebird/mozilla-config
 mozilla-firebird/regxpcom
 mozilla-firebird/res/arrow.gif
 mozilla-firebird/res/arrowd.gif

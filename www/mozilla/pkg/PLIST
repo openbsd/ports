@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2003/05/23 10:09:17 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.19 2003/06/06 12:50:30 wilfried Exp $
 bin/mozilla
 mozilla/LICENSE
 mozilla/chrome/US.jar
@@ -250,6 +250,7 @@ mozilla/defaults/wallet/VcardSchema.tbl
 mozilla/icons/mozicon16.xpm
 mozilla/icons/mozicon50.xpm
 mozilla/mozilla-bin
+mozilla/mozilla-config
 mozilla/regxpcom
 mozilla/res/EditorOverride.css
 mozilla/res/arrow.gif

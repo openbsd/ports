@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/06/06 07:26:06 wilfried Exp $
+# $OpenBSD: Makefile,v 1.10 2003/06/06 12:50:37 wilfried Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -70,7 +70,7 @@ do-install:
 	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/MozillaFirebird ${PREFIX}/bin/mozilla-firebird
-	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
+	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOB}/mozilla-config ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/MozillaFirebird-bin ${MOZ}
 
 .include <bsd.port.mk>

@@ -1,7 +1,14 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.4 2003/05/26 11:06:48 wilfried Exp $
+$OpenBSD: patch-config_autoconf_mk_in,v 1.5 2003/06/06 12:50:30 wilfried Exp $
 --- config/autoconf.mk.in.orig	Fri May  2 23:38:10 2003
-+++ config/autoconf.mk.in	Thu May 22 13:23:06 2003
-@@ -35,7 +35,7 @@ datadir		= @datadir@
++++ config/autoconf.mk.in	Fri Jun  6 09:00:04 2003
+@@ -29,13 +29,13 @@ MOZILLA_VERSION = @MOZILLA_VERSION@
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+-includedir	= @includedir@/mozilla-$(MOZILLA_VERSION)
++includedir	= $(prefix)/mozilla/include
+ libdir		= @libdir@
+ datadir		= @datadir@
  mandir		= @mandir@
  idldir		= @datadir@/idl/mozilla-$(MOZILLA_VERSION)
  
