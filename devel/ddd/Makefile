@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2000/01/01 00:15:50 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/02/11 03:01:54 turan Exp $
+
+BROKEN=		sources moved
 
 DISTNAME=	ddd-3.1.90
 CATEGORIES=	devel
