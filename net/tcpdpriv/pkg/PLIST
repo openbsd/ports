@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+bin/tcpdpriv
+man/cat1/tcpdpriv.0
+share/doc/tcpdpriv/attack50.ps
+@dirrm share/doc/tcpdpriv

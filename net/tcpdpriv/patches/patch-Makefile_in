@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+--- Makefile.in.orig	Sun Apr 13 11:38:47 2003
++++ Makefile.in	Sun Apr 13 11:39:03 2003
+@@ -15,7 +15,6 @@
+ # version for distribution...
+ VERS=`cat VERSION`
+ 
+-LIBPATH = -L/usr/local/lib
+ 
+ INCLUDES = -I/usr/local/include -I${HOME}/usr/include
+ 

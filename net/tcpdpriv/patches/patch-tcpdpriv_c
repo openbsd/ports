@@ -1,0 +1,945 @@
+$OpenBSD: patch-tcpdpriv_c,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+--- tcpdpriv.c.orig	Thu Aug 28 02:07:55 1997
++++ tcpdpriv.c	Sun Mar 23 08:45:53 2003
+@@ -93,7 +93,7 @@ static char rcsid[] =
+ #if	!defined(osf1)
+ #include <net/slip.h>
+ #endif	/* !defined(osf1) */
+-#include <netinet/if_fddi.h>
++#include <net/if_fddi.h>
+ #include <net/if_llc.h>
+ #endif	/* !defined(sun) */
+ 
+@@ -108,6 +108,10 @@ static char rcsid[] =
+ #include <signal.h>
+ 
+ #include <pcap.h>
++#include <net/if_pflog.h>
++#include <netinet/ip_icmp.h>
++#include <netinet/ip6.h>
++#include <netinet/icmp6.h>
+ 
+ /*
+  * deal with systems in which bpf_int32 and bpf_u_int32 are not defined
+@@ -205,6 +209,10 @@ typedef u_int bpf_u_int32;
+ #endif	/* (BYTE_ORDER == LITTLE_ENDIAN) */
+ #endif	/* !defined(NTOHL) */
+ 
++
++/* a macro to handle v6 address in 32-bit fields */
++#define IN6ADDR32(a, i) (*(u_int32_t *)(&(a)->s6_addr[(i)<<2]))
++
+ /*
+  * function prototypes
+  */
+@@ -244,6 +252,10 @@ int	statfs __P((const char *, struct sta
+ #if	defined(sun)		/* why not defined in Solaris? */
+ int	gettimeofday __P((struct timeval *, struct timezone *));
+ #endif	/* defined(sun) */
++
++static u_char *dumpip(u_char *p, int caplen, int length);
++static u_char *dumpip6(u_char *p, int caplen, int length);
++
+ 
+ /*
+  * typedefs...
+@@ -274,6 +286,32 @@ struct nodehdr {
+ 
+ #define	NH_FL_RANDOM_PROPAGATE	1	/* propagate random number down */
+ #define	NH_FL_COUNTER		2	/* bump a counter */
++
++/* 128 bit version for IPv6 addresses */
++typedef struct node6 node6_t, *node6_p;        /* type of a tree node */
++
++struct node6 {
++    struct in6_addr
++	input,          /* input value */
++	output;         /* output value */
++    node6_p
++	down[2];        /* children */
++};
++
++typedef struct node6hdr node6hdr_t, *node6hdr_p;       /* type of a tree */
++
++struct node6hdr {
++    u_long
++	flags,          /* see below */
++	addr_mask,      /* for ipv6, mask is used to preserve high oder bits */
++	counter,        /* for NH_FL_COUNTER */
++	bump;           /* amount by which to bump counter */
++    struct in6_addr
++	cur_input;      /* what address is currently being masked */
++    node6_p
++	head;
++};
++
+ 
+ /*
+  * globally scoped variables
+@@ -299,6 +337,12 @@ nodehdr_t
+ 	    addr_byte_2 = { NH_FL_COUNTER, 0x0000ff00, 0 },
+ 	    addr_byte_3 = { NH_FL_COUNTER, 0x000000ff, 0 };
+ 
++/* trees for IPv6 addresses */
++/* currently, we preserve first 16 bits of original addresses */
++node6hdr_t
++    addr6_propagate = { NH_FL_RANDOM_PROPAGATE, 0xffff0000, 0 },
++    addr6_whole = { NH_FL_COUNTER, 0xffff0000, 0 };
++
+     /* trees for tcp ports */
+ nodehdr_t
+     tcpport_whole,
+@@ -575,6 +619,77 @@ bi_ffs(u_long value)
+     return add+bvals[value&0xf];
+ }
+ 
++int
++is_normal_ipaddr(u_long addr)
++{
++    if (addr == INADDR_ANY || addr == INADDR_BROADCAST)
++	return (0);
++
++    /*
++     * check private address range
++     *  10.0.0.0 - 10.255.255.255
++     *  172.16.0.0 - 172.31.255.255
++     *  192.168.0.0 - 192.168.255.255
++     */
++    if ((addr & 0xff000000) == 0x0a000000 ||
++	(addr & 0xfff00000) == 0xac100000 ||
++	(addr & 0xffff0000) == 0xc0a80000)
++	return (0);
++
++    /* check localloop */
++    if ((addr & 0xff000000) == 0x7f000000)
++	return (0);
++    
++    /* check multicast */
++    if (opt_mcastaddr >= 99 && IN_MULTICAST(addr))
++	return (0);
++
++    return (1);
++}
++
++int
++bi_ffs6(struct in6_addr *addr)
++{
++    int value, i;
++
++    for (i = 0; i < 4; i++) {
++           value = bi_ffs(ntohl(IN6ADDR32(addr, i)));
++           if (value != 0)
++               return (i*32 + value);
++    }
++    return (0);
++}
++
++int
++extract_bit6(struct in6_addr *addr, int bitno)
++{
++    int value, bit, i;
++
++    for (i = 0, bit = bitno; i < 4; i++, bit -= 32)
++       if (bit <= 32) {
++           value = ntohl(IN6ADDR32(addr, i));
++           return ((value >> (32 - bit)) & 1);
++       }
++    return (0);
++}
++
++int
++is_normal_ip6addr(struct in6_addr *addr)
++{
++    if (IN6_IS_ADDR_UNSPECIFIED(addr))
++       return (0);
++
++    /* check localloop */
++    if (IN6_IS_ADDR_LOOPBACK(addr))
++       return (0);
++    
++    /* check multicast */
++    if (opt_mcastaddr >= 99 && IN6_IS_ADDR_MULTICAST(addr))
++       return (0);
++
++    return (1);
++}
++
+ /*
+  * Subtract a quantity from a standard IP checksum (network order)
+  *
+@@ -711,6 +826,36 @@ freetree(node_p node)
+ 	node = next;
+     }
+ }
++
++static node6_p
++newnode6(void)
++{
++    node6_p node;
++
++    node = (node6_p) malloc(sizeof *node);
++
++    if (node == 0) {
++	fprintf(stderr, "malloc failed %s:%d\n", __FILE__, __LINE__);
++	exit(2);
++    }
++    return node;
++}
++
++static void
++freetree6(node6_p node)
++{
++    node6_p next;
++
++    while (node) {
++	next = node->down[0];
++	if (node->down[1]){
++	   freetree6(node->down[1]);
++	}
++	free(node);
++	node = next;
++    }
++}
++
+ 
+ /*
+  *    M   A   S   K   I   N   G
+@@ -740,11 +885,17 @@ make_output(u_long value, int flip, node
+ 			 * bit  flip:		flip bit (XOR with 1) in value
+ 			 * bits (flip+1)-32:	random
+ 			 */
+-	if (flip == 32) {
+-	    return value^1;
+-	} else {		/* get left AND flipped bit */
+-	    return ((((value>>(32-flip))^1)<<(32-flip)) |
+-			((rand32()&0x7fffffff)>>flip)); /* and get right part */
++	int retry = 0;
++	while (1) {
++	    if (flip == 32) {
++		return value^1;
++	    } else {		/* get left AND flipped bit */
++		value = ((((value>>(32-flip))^1)<<(32-flip)) |
++			((rand32()&0x7fffffff)>>flip));
++		if (retry > 10 || is_normal_ipaddr(value))
++		    return (value);
++	    }
++	    retry++;
+ 	}
+     } else if (hdr->flags&NH_FL_COUNTER) {
+ 	hdr->counter += hdr->bump;
+@@ -809,6 +960,127 @@ make_peer(u_long input, node_p old, node
+ 
+     return down[bitvalue];
+ }
++
++/*
++ * 128 bit version of make_output()
++ * note: ipv6 addresses are in network byte order.
++ */
++static void
++make_output6(struct in6_addr *old, int flip, node6hdr_p hdr,
++    struct in6_addr *new)
++{
++    u_int32_t value;
++    int i, swivel;
++
++    if (hdr->flags&NH_FL_RANDOM_PROPAGATE) {
++	int retry = 0;
++                       /*
++                        * the output is:
++                        * bits 1-(flip-1):     copied from value
++                        * bit  flip:           flip bit (XOR with 1) in value
++                        * bits (flip+1)-128:   random
++                        */
++	while (1) {
++	    for (i = 0, swivel = flip; i < 4; i++, swivel -= 32) {
++		if (swivel > 32) {
++                   /*
++                    * flip bit is below this 32 bits.
++                    * just copy the original value.
++                    */
++		    IN6ADDR32(new, i) = IN6ADDR32(old, i);
++		} else if (swivel < 0) {
++                   /*
++                    * flip bit is above this 32 bits.
++                    * scramble the entire 32 bits.
++                    */
++		    IN6ADDR32(new, i) = rand32();
++		} else {
++                   /* flip bit is in this 32 bits */
++		    value = ntohl(IN6ADDR32(old, i));
++		    if (swivel == 32) {
++			value = value ^ 1;
++		    } else {            /* get left AND flipped bit */
++			value = (((value >> (32-swivel)) ^ 1) << (32-swivel)) |
++			    ((rand32() & 0x7fffffff) >> swivel);
++		    }
++		    IN6ADDR32(new, i) = htonl(value);
++		}
++	    }
++	    if (retry > 10 || is_normal_ip6addr(new))
++		return;
++	    retry++;
++	}
++    } else if (hdr->flags&NH_FL_COUNTER) {
++	/* we support only Level 0 (interger) mapping */
++	hdr->counter += hdr->bump;
++	IN6ADDR32(new, 0) = IN6ADDR32(new, 1) = IN6ADDR32(new, 2) = 0;
++	IN6ADDR32(new, 3) = htonl(hdr->counter);
++    } else {
++	fprintf(stderr, "unknown flags field %s:%d\n", __FILE__, __LINE__);
++	exit(2);
++    }
++}
++
++static node6_p
++make_peer6(struct in6_addr *input, node6_p old, node6hdr_p hdr)
++{
++    node6_p down[2];
++    int swivel, bitvalue, i;
++    struct in6_addr tmp;
++
++    /*
++     * become a peer
++     * algo: create two nodes, the two peers.  leave orig node as
++     * the parent of the two new ones.
++     */
++
++    down[0] = newnode6();
++    down[1] = newnode6();
++
++    for (i = 0; i < 4; i++)
++	IN6ADDR32(&tmp, i) = IN6ADDR32(input, i) ^ IN6ADDR32(&old->input, i);
++    swivel = bi_ffs6(&tmp);
++    bitvalue = extract_bit6(input, swivel);
++
++    down[bitvalue]->input = *input;
++    down[bitvalue]->down[0] = down[bitvalue]->down[1] = 0;
++    make_output6(&old->output, swivel, hdr, &down[bitvalue]->output);
++
++    /*
++     * heuristics for ipv6 address readability:
++     * 1. copy the high order bits from the original
++     *    (16 bits are specified at the initialization of the tree head)
++     * 2. when address is randamized, preserve 0x00 and 0xff octet
++     *    in the original address
++     */
++    if (hdr->addr_mask) {
++	IN6ADDR32(&down[bitvalue]->output, 0) =
++	    (IN6ADDR32(input, 0) & htonl(hdr->addr_mask)) |
++	    (IN6ADDR32(&down[bitvalue]->output, 0) & ~htonl(hdr->addr_mask));
++    }
++    if (hdr->flags & NH_FL_RANDOM_PROPAGATE) {
++	int i, bit;
++
++	for (i = 0, bit = swivel; i < 16; i++, bit -= 8)
++	    if (bit < 0) {
++	    /* this octet is below the flip bit and randamized */
++		if (input->s6_addr[i] == 0x00)
++		    down[bitvalue]->output.s6_addr[i] = 0x00;
++		else if (input->s6_addr[i] == 0xff)
++		    down[bitvalue]->output.s6_addr[i] = 0xff;
++	    }
++    }
++
++    *down[1-bitvalue] = *old;      /* copy orig node down one level */
++
++    old->input = down[1]->input;    /* NB: 1s to the right (0s to the left) */
++    old->output = down[1]->output;
++    old->down[0] = down[0];        /* point to children */
++    old->down[1] = down[1];
++
++    return down[bitvalue];
++}
++
+ 
+ /*
+  *   L   O   O   K   U   P
+@@ -945,6 +1217,86 @@ dumptable(node_p node, int level)
+     }
+ }
+ #endif	/* DEBUG */
++
++static void
++lookup_init6(node6hdr_p hdr)
++{
++    node6_p node;
++
++    if (hdr->head) {
++	freetree6(hdr->head);
++	hdr->head = 0;
++    }
++
++    hdr->head = newnode6();
++    node = hdr->head;
++    memset(&node->input, 0, sizeof(struct in6_addr));
++
++    hdr->bump = 1;     /* level 0 counter only */
++    if (hdr->flags == NH_FL_COUNTER) {
++	IN6ADDR32(&node->output, 0) = 0;
++	IN6ADDR32(&node->output, 1) = 0;
++	IN6ADDR32(&node->output, 2) = 0;
++	IN6ADDR32(&node->output, 3) = hdr->bump;
++    } else {
++	IN6ADDR32(&node->output, 0) = rand32();
++	IN6ADDR32(&node->output, 1) = rand32();
++	IN6ADDR32(&node->output, 2) = rand32();
++	IN6ADDR32(&node->output, 3) = rand32();
++    }
++    if (opt_class) {
++	IN6ADDR32(&node->input, 0) = htonl(hdr->addr_mask);
++	IN6ADDR32(&node->output, 0) |= htonl(hdr->addr_mask);
++    } else {
++	hdr->addr_mask = 0;
++    }
++    node->down[0] = node->down[1] = 0;
++}
++
++void
++lookup6(struct in6_addr *input, node6hdr_p hdr, struct in6_addr *output)
++{
++    node6_p node;
++    int swivel, i;
++    struct in6_addr tmp;
++
++    node = hdr->head;  /* non-zero, 'cause lookup_init() already called */
++    if (hdr->head == 0) {      /* (but...) */
++	fprintf(stderr, "unexpected zero head %s:%d\n", __FILE__, __LINE__);
++    }
++
++    while (node) {
++	if (IN6_ARE_ADDR_EQUAL(input, &node->input)) {
++            /* we found our node! */
++	    *output = node->output;
++	    return;
++	}
++	if (node->down[0] == 0) {       /* need to descend, but can't */
++	    node = make_peer6(input, node, hdr);        /* create a peer */
++	} else {
++	    /* swivel is the first bit the left and right children differ in */
++	    for (i = 0; i < 4; i++)
++		IN6ADDR32(&tmp, i) = IN6ADDR32(&node->down[0]->input, i)
++		    ^ IN6ADDR32(&node->down[1]->input, i);
++	    swivel = bi_ffs6(&tmp);
++	    for (i = 0; i < 4; i++)
++		IN6ADDR32(&tmp, i) = IN6ADDR32(input, i)
++		    ^ IN6ADDR32(&node->input, i);
++	    if (bi_ffs6(&tmp) < swivel) {/* input differs earlier */
++		node = make_peer6(input, node, hdr);  /* make a peer */
++	    } else if (extract_bit6(input, swivel)) {
++		node = node->down[1];       /* NB: 1s to the right */
++	    } else {
++		node = node->down[0];       /* NB: 0s to the left */
++	    }
++	}
++    }
++
++    /* ??? should not occur! */
++    fprintf(stderr, "unexpected loop termination %s:%d\n", __FILE__, __LINE__);
++    exit(1);
++}
++
+ 
+ /*
+  *   H   I   D   I   N   G
+@@ -960,6 +1312,9 @@ hide_addr(u_long addr, u_int ttl)
+ 	return addr;
+     }
+ 
++    if (!is_normal_ipaddr(addr))
++	return (addr);
++    
+     switch (opt_ipaddr) {
+     case 0:
+ 	addr_whole.cur_input = addr;
+@@ -1028,6 +1383,62 @@ hide_udpport(u_short udpport)
+     return hide_port(udpport,
+ 	    &udpport_whole, &udpport_byte_0, &udpport_byte_1, opt_udpports);
+ }
++
++void
++hide_addr6(struct in6_addr *inaddr, struct in6_addr *outaddr, u_int hlimit)
++{
++
++    if (!is_normal_ip6addr(inaddr)) {
++	/* no conversion */
++	*outaddr = *inaddr;
++
++	/*
++	 * special case for solicited-node multicast address that is
++	 * formed by taking the low-order 24 bits of the address
++	 * (unicast or anycast) and appending those bits to the prefix
++	 * FF02:0:0:0:0:1:FF00::/104
++	 *
++	 * we just clear the low-order 24 bits for now.
++	 */
++	if (opt_mcastaddr >= 99 && IN6_IS_ADDR_MULTICAST(outaddr) &&
++	    outaddr->s6_addr[1] == 0x02 &&
++	    outaddr->s6_addr[2] == 0 && outaddr->s6_addr[3] == 0 &&
++	    outaddr->s6_addr[4] == 0 && outaddr->s6_addr[5] == 0 &&
++	    outaddr->s6_addr[6] == 0 && outaddr->s6_addr[7] == 0 &&
++	    outaddr->s6_addr[8] == 0 && outaddr->s6_addr[9] == 0 &&
++	    outaddr->s6_addr[10] == 0 && outaddr->s6_addr[11] == 0x01 &&
++	    outaddr->s6_addr[12] == 0xff) {
++		outaddr->s6_addr[13] = outaddr->s6_addr[14] =
++		    outaddr->s6_addr[15] = 0;
++	}
++
++	return;
++    }
++
++    switch (opt_ipaddr) {
++    case 0:
++	addr6_whole.cur_input = *inaddr;
++	lookup6(inaddr, &addr6_whole, outaddr);
++	break;
++    case 1:
++    case 2:
++	fprintf(stderr, "we don't support -A1 and -A2 for IPv6\n");
++	exit(1);
++    case 50:
++	addr6_propagate.cur_input = *inaddr;
++	lookup6(inaddr, &addr6_propagate, outaddr);
++	break;
++    case 99:
++	*outaddr = *inaddr;
++	break;
++    default:
++	fprintf(stderr, "unknown opt_ipaddr %s:%d\n", __FILE__, __LINE__);
++	exit(1);
++    }
++
++    return;
++}
++
+ 
+ /*
+  *   T   C   P
+@@ -1163,6 +1574,7 @@ dumpudp(u_char *p, int caplen, int lengt
+ {
+     u_short inport, outport;
+     struct udphdr *udp = (struct udphdr *)p;
++    u_short sport = 0, dport = 0;
+ 
+     /* source port */
+     if (caplen < 2) {
+@@ -1174,7 +1586,10 @@ dumpudp(u_char *p, int caplen, int lengt
+ 	phoffset = cksum_subtract(phoffset, udp->uh_sport);
+ 	udp->uh_sport = htons(outport);
+ 	phoffset = cksum_add(phoffset, udp->uh_sport);
++    } else {
++	sport = inport;
+     }
++    
+     caplen -= 2; length -= 2; p += 2;
+ 
+     /* destination port */
+@@ -1187,7 +1602,10 @@ dumpudp(u_char *p, int caplen, int lengt
+ 	phoffset = cksum_subtract(phoffset, udp->uh_dport);
+ 	udp->uh_dport = htons(outport);
+ 	phoffset = cksum_add(phoffset, udp->uh_dport);
++    } else {
++	dport = inport;
+     }
++    
+     caplen -= 2; length -= 2; p += 2;
+ 
+     /* length */
+@@ -1207,11 +1625,187 @@ dumpudp(u_char *p, int caplen, int lengt
+     }
+     caplen -= 2; length -= 2; p += 2;
+ 
++    if (caplen < 2)
++	return p+caplen;
++
+     /* don't return any UDP data */
+     return p;
+ }
+ 
+ /*
++ *    I   C   M   P
++ */
++
++
++/* 
++ * dump an icmp packet.
++ *
++ * Input:
++ *     p               location of first byte of ICMP header
++ *     caplen          bytes (from p) captured
++ *     length          bytes (from p) in current datagram (may not be captured)
++ *     phoffset        how much pseudo header checksum changed during
++ *                     IP munging
++ *
++ * Output:
++ *     pointer to byte *past* last byte munged
++ */
++
++static u_char *
++dumpicmp(u_char *p, int caplen, int length, u_long phoffset)
++{
++    struct icmp *dp = (struct icmp *)p;
++    int len = 4;
++
++    if (caplen < 4) {
++	return p+caplen;
++    }
++
++    switch (dp->icmp_type) {
++    case ICMP_REDIRECT:
++    case ICMP_UNREACH:
++    case ICMP_TIMXCEED:
++	if (dp->icmp_type == ICMP_REDIRECT && caplen >= 8) {
++	    /* hide gateway address */
++	    u_long inaddr, outaddr;
++	    u_short offset = 0;
++
++	    inaddr = ntohl(dp->icmp_gwaddr.s_addr);
++	    outaddr = hide_addr(dp->icmp_gwaddr.s_addr, 255);
++	    if (inaddr != outaddr) {
++		offset = cksum_subtract(offset, dp->icmp_gwaddr.s_addr);
++		dp->icmp_gwaddr.s_addr = htonl(outaddr);
++		offset = cksum_add(offset, dp->icmp_gwaddr.s_addr);
++		if (offset)
++		    dp->icmp_cksum = cksum_adjust(dp->icmp_cksum, offset);
++	    }
++	}
++	if (caplen <= 8) {
++	    len = caplen;
++	    break;
++	}
++	/*
++	 * recursively call dumpip
++	 * todo: we have to update icmp checksum.
++	 */
++	if (caplen >= 8 + sizeof(struct ip)) {
++	    u_char *np;
++	    np = dumpip(p + 8, caplen - 8, length - 8);
++	    len = np - p;
++	}
++	break;
++    case ICMP_ECHO:
++    case ICMP_ECHOREPLY:
++	len = 8;
++	break;
++    case ICMP_MASKREPLY:
++	len = 12;
++	break;
++    case ICMP_TSTAMP:
++    case ICMP_TSTAMPREPLY:
++	len = 20;
++    default:
++	len = 4;
++    }
++
++    len = MIN(caplen, len);
++    caplen -= len; length -= len; p += len;
++
++    /* don't return any ICMP data */
++    return p;
++}
++
++static u_char *
++dumpicmp6(u_char *p, int caplen, int length, u_long phoffset)
++{
++    struct icmp6_hdr *dp = (struct icmp6_hdr *)p;
++    int i, len = 4;
++    struct in6_addr inaddr, outaddr, *addrp;
++
++    if (caplen < 4) {
++	return p+caplen;
++    }
++
++    switch (dp->icmp6_type) {
++    case ICMP6_DST_UNREACH:
++    case ICMP6_PACKET_TOO_BIG:
++    case ICMP6_TIME_EXCEEDED:
++    case ICMP6_PARAM_PROB:
++	if (caplen <= 8) {
++	    len = caplen;
++	    break;
++	}
++	/*
++	 * recursively call dumpip6
++	 * todo: we have to update icmp6 checksum.
++	 */
++	if (caplen >= 8 + sizeof(struct ip6_hdr)) {
++	    u_char *np;
++	    np = dumpip6(p + 8, caplen - 8, length - 8);
++	    len = np - p;
++	}
++	break;
++    case ICMP6_ECHO_REQUEST:
++    case ICMP6_ECHO_REPLY:
++	len = 8;
++	break;
++    case ICMP6_MEMBERSHIP_QUERY:
++    case ICMP6_MEMBERSHIP_REPORT:
++    case ICMP6_MEMBERSHIP_REDUCTION:
++	len = 24;
++	break;
++    case ND_ROUTER_SOLICIT:
++    case ND_ROUTER_ADVERT:
++	len = 8;
++	break;
++    case ND_NEIGHBOR_SOLICIT:
++    case ND_NEIGHBOR_ADVERT:
++    case ND_REDIRECT:
++	/*
++	 * neighbor sol and adv has 1 ipv6 address below the icmp6 header.
++	 * redirect has 2 addresses.
++	 */
++	len = 8;
++	addrp = (struct in6_addr *)(dp + 1);
++    again:
++	if (addrp + 1 > (struct in6_addr *)(p + caplen))
++	    break;
++	inaddr = *addrp;
++	hide_addr6(&inaddr, &outaddr, 255);
++	if (!IN6_ARE_ADDR_EQUAL(&inaddr, &outaddr)) {
++	    /* need to redo checksum */
++	    for (i = 0; i < 4; i++)
++		phoffset = cksum_subtract(phoffset, IN6ADDR32(&inaddr, i));
++	    *addrp = outaddr;
++	    for (i = 0; i < 4; i++)
++		phoffset = cksum_add(phoffset, IN6ADDR32(&outaddr, i));
++	}
++	len += sizeof(*addrp);
++	if (dp->icmp6_type == ND_REDIRECT && len == 8 + sizeof(*addrp)) {
++	    addrp++;
++	    goto again;
++	}
++	break;
++    default:
++	len = 4;
++    }
++
++    /*
++     * icm6 checksum includes ipv6 pseudo header (it's a different policy
++     * from icmp4).
++     */
++    if (phoffset)
++	dp->icmp6_cksum = cksum_adjust(dp->icmp6_cksum, phoffset);
++
++    len = MIN(caplen, len);
++    caplen -= len; length -= len; p += len;
++
++    /* don't return any ICMP6 data */
++    return p;
++}
++
++
++/*
+  *   I   P
+  */
+ 
+@@ -1320,7 +1914,15 @@ dumpip(u_char *p, int caplen, int length
+ #define IPPROTO_IPIP 4
+ #endif	/* ndef IPPROTO_IPIP */
+ 	case IPPROTO_IPIP:
+-	    p = dumpip(p, caplen, length);
++	    if (caplen >= sizeof(struct ip))		
++		p = dumpip(p, caplen, length);
++	    break;
++	case IPPROTO_ICMP:
++	    p = dumpicmp(p, caplen, length, phoffset);
++	    break;
++	case IPPROTO_IPV6:
++	    if (caplen >= sizeof(struct ip6_hdr))
++		p = dumpip6(p, caplen, length);
+ 	    break;
+ 	default:
+ 	    break;
+@@ -1329,6 +1931,109 @@ dumpip(u_char *p, int caplen, int length
+ 
+     return p;
+ }
++
++/*
++ * this is an IPv6 packet --- output it securely.
++ *
++ * Input:
++ *     p               location of first byte of IPv6 header
++ *     caplen          bytes (from p) captured
++ *     length          bytes (from p) in current datagram (may not be captured)
++ *
++ * Output:
++ *     pointer to byte *past* last byte munged (so, first byte of
++ *         IPv6 payload not munged by dumpip6() or any of its "children")
++ */
++static u_char *
++dumpip6(u_char *p, int caplen, int length)
++{
++    struct ip6_hdr *ip6;
++    struct in6_addr inaddr, outaddr;
++    u_short phoffset = 0;
++    u_int8_t nxt;
++    int i, len;
++    /* structure for ipsec and ipv6 option header template */
++    struct _opt6 {
++	u_int8_t        opt6_nxt;       /* next header */
++	u_int8_t        opt6_hlen;      /* header extension length */
++	u_int16_t       _pad;
++	u_int32_t       ah_spi;         /* security parameter index
++                                          for authentication header */
++    } *opt6;
++
++    if (caplen < sizeof (struct ip6_hdr)) {
++	tooshort++;
++	return p;
++    }
++
++    ip6 = (struct ip6_hdr *)p;
++
++    inaddr = ip6->ip6_src;
++    hide_addr6(&inaddr, &outaddr, ip6->ip6_hlim);
++    if (!IN6_ARE_ADDR_EQUAL(&inaddr, &outaddr)) {
++	/* need to redo checksum for TCP and UDP */
++	for (i = 0; i < 4; i++)
++	    phoffset = cksum_subtract(phoffset, IN6ADDR32(&ip6->ip6_src, i));
++	ip6->ip6_src = outaddr;
++	for (i = 0; i < 4; i++)
++	    phoffset = cksum_add(phoffset, IN6ADDR32(&ip6->ip6_src, i));
++    }
++
++    inaddr = ip6->ip6_dst;
++    hide_addr6(&inaddr, &outaddr, ip6->ip6_hlim);
++    if (!IN6_ARE_ADDR_EQUAL(&inaddr, &outaddr)) {
++	/* need to redo checksum for TCP and UDP */
++	for (i = 0; i < 4; i++)
++	    phoffset = cksum_subtract(phoffset, IN6ADDR32(&ip6->ip6_dst, i));
++	ip6->ip6_dst = outaddr;
++	for (i = 0; i < 4; i++)
++	    phoffset = cksum_add(phoffset, IN6ADDR32(&ip6->ip6_dst, i));
++    }
++
++    caplen -= sizeof *ip6;
++    length -= sizeof *ip6;
++    p += sizeof *ip6;
++
++    nxt = ip6->ip6_nxt;
++    while (caplen > 0) {
++	switch (ip6->ip6_nxt) {
++	case IPPROTO_TCP:
++	    p = dumptcp(p, caplen, length, phoffset);
++	    return (p);
++	case IPPROTO_UDP:
++	    p = dumpudp(p, caplen, length, phoffset);
++	    return (p);
++	case IPPROTO_ICMPV6:
++	    p = dumpicmp6(p, caplen, length, phoffset);
++	    return (p);
++	case IPPROTO_IPV4:  /* ipv4 over ipv6 */
++	    if (caplen >= sizeof(struct ip))
++		p = dumpip(p, caplen, length);
++	    return (p);
++	case IPPROTO_HOPOPTS:
++	case IPPROTO_ROUTING:
++	case IPPROTO_DSTOPTS:
++	    /* get next header and header length */
++	    opt6 = (struct _opt6 *)p;
++	    nxt = opt6->opt6_nxt;
++	    len = (opt6->opt6_hlen + 1) * 8;
++	    /* clear the option contents */
++	    memset(opt6 + 1, 0, len - sizeof(*opt6));
++
++	    /* goto the next header */
++	    caplen -= len;
++	    length -= len;
++	    p += len;
++	    break;
++	default:
++	    /* unknown option header.  stop dumping */
++	    return (p);
++	}
++    }
++
++    return p;
++}
++
+ 
+ /*
+  *   D   U   M   P   E   R
+@@ -1390,6 +2095,8 @@ dumper(u_char *user, const struct pcap_p
+ 	ether_type = ntohs(ep->ether_type);
+ 	if (ether_type == 0x800) {	/* oh, good! */
+ 	    p = dumpip(p, caplen, length);
++	} else if (ether_type == ETHERTYPE_IPV6) {
++	    p = dumpip6(p, caplen, length);
+ 	} else {
+ 	    uncoded++;
+ 	    return;
+@@ -1431,6 +2138,11 @@ dumper(u_char *user, const struct pcap_p
+ 		    length -= (sizeof SNAPHDR+2);
+ 		    p += (sizeof SNAPHDR+2);
+ 		    p = dumpip(p, caplen, length);
++		} else if (ether_type == ETHERTYPE_IPV6) {
++		    caplen -= (sizeof SNAPHDR+2);
++		    length -= (sizeof SNAPHDR+2);
++		    p += (sizeof SNAPHDR+2);
++		    p = dumpip6(p, caplen, length);
+ 		} else {
+ 		    uncoded++;
+ 		    return;
+@@ -1454,6 +2166,39 @@ dumper(u_char *user, const struct pcap_p
+ 	caplen -= NULL_HDRLEN;
+ 	p = dumpip(p, caplen, length);
+ 	break;
++    case DLT_PFLOG:
++	if (caplen < PFLOG_HDRLEN) {
++	    tooshort++;
++	    return;
++	}
++	length -= PFLOG_HDRLEN;
++	p += PFLOG_HDRLEN;
++	caplen -= PFLOG_HDRLEN;
++	p = dumpip(p, caplen, length);
++	break;
++    case DLT_ATM_RFC1483:
++	if (caplen < 8) {
++	    tooshort++;
++            return;
++        }
++	if (p[0] != 0xaa || p[1] != 0xaa || p[2] != 0x03) {
++	    /* unknown format! */
++	    uncoded++;
++	    return;
++	}
++	ether_type = p[6] << 8 | p[7];
++	length -= 8;
++	caplen -= 8;
++	p += 8;
++	if (ether_type == ETHERTYPE_IP) {
++	    p = dumpip(p, caplen, length);
++	} else if (ether_type == ETHERTYPE_IPV6) {
++	    p = dumpip6(p, caplen, length);
++	} else {
++	    uncoded++;
++	    return;
++	}
++        break;
+     default:
+ 	fprintf(stderr, "unknown DLT %d\n", pcap_dlt);
+ 	exit(1);
+@@ -1492,6 +2237,10 @@ dlt_hdrlen(int dlt)
+ #endif	/* defined(FDDI_HDRLEN) */
+     case DLT_NULL:
+ 	return NULL_HDRLEN;
++    case DLT_PFLOG:
++	return PFLOG_HDRLEN;
++    case DLT_ATM_RFC1483:
++	return 8;	    
+     default:
+ 	fprintf(stderr, "unknown DLT %d\n", dlt);
+ 	exit(1);
+@@ -1515,6 +2264,10 @@ verify_and_print_args(char *cmd)
+     lookup_init(&addr_byte_2);
+     lookup_init(&addr_byte_3);
+ 
++    lookup_init6(&addr6_propagate);
++
++    lookup_init6(&addr6_whole);
++    
+     tcpport_whole.flags = NH_FL_COUNTER;
+     lookup_init(&tcpport_whole);
+ 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-tcpdpriv_0,v 1.1.1.1 2003/04/13 10:00:42 sturm Exp $
+--- tcpdpriv.0.orig	Wed Jun 25 01:12:20 1997
++++ tcpdpriv.0	Thu Feb 20 14:55:32 2003
+@@ -210,9 +210,6 @@ BBUUGGSS
+      TTccppddpprriivv supports only SLIP, PPP, Ethernet, FDDI, and the NULL data
+      links.
+ 
+-     FDDI is only supported on systems that have the include file
+-     <netinet/if_fddi.h>.
+-
+      There should be some way to allow the various pre-defined multicast ad-
+      dresses (such as "all-nodes", etc.) to be passed through unchanged.
+ 
