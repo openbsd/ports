@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2003/04/04 04:34:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.95 2003/05/20 01:55:59 fgsch Exp $
 
 COMMENT=	"mail retrieval utility for POP2, POP3, KPOP, IMAP and more"
 
@@ -21,7 +21,7 @@ MODULES=	gettext
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-nls --enable-inet6 --with-ssl \
-		--with-kerberos --with-kerberos5 --enable-NTLM
+		--with-kerberos5 --enable-NTLM
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
