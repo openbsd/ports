@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2002/11/24 14:33:45 margarida Exp $
+# $OpenBSD: Makefile,v 1.145 2002/11/28 16:16:42 margarida Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -115,6 +115,7 @@
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Object-Realize
+     SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
      SUBDIR += p5-Scalar-List-Utils
