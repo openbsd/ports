@@ -1,7 +1,7 @@
-$OpenBSD: patch-liba52_bitstream_c,v 1.1 2002/03/29 13:54:56 espie Exp $
---- liba52/bitstream.c.orig	Fri Mar 29 14:46:51 2002
-+++ liba52/bitstream.c	Fri Mar 29 14:47:22 2002
-@@ -21,6 +21,7 @@
+$OpenBSD: patch-liba52_bitstream_c,v 1.2 2002/03/29 14:43:47 espie Exp $
+--- liba52/bitstream.c.orig	Mon Jan 28 06:37:54 2002
++++ liba52/bitstream.c	Fri Mar 29 15:03:12 2002
+@@ -23,6 +23,7 @@
  
  #include "config.h"
  
@@ -9,15 +9,15 @@ $OpenBSD: patch-liba52_bitstream_c,v 1.1 2002/03/29 13:54:56 espie Exp $
  #include <inttypes.h>
  
  #include "a52.h"
-@@ -36,9 +37,9 @@ uint32_t current_word;
+@@ -38,9 +39,9 @@ uint32_t a52_current_word;
  
- void bitstream_set_ptr (uint8_t * buf)
+ void a52_bitstream_set_ptr (uint8_t * buf)
  {
 -    int align;
 +    ptrdiff_t align;
  
--    align = (int)buf & 3;
+-    align = (long)buf & 3;
 +    align = (ptrdiff_t)buf & 3;
      buffer_start = (uint32_t *) (buf - align);
-     bits_left = 0;
+     a52_bits_left = 0;
      bitstream_get (align * 8);

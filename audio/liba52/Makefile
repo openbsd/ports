@@ -1,11 +1,11 @@
-#$OpenBSD: Makefile,v 1.1.1.1 2001/10/14 15:17:16 espie Exp $
+#$OpenBSD: Makefile,v 1.2 2002/03/29 14:43:46 espie Exp $
 
 CATEGORIES=	audio
 NEED_VERSION=	1.474
 
 COMMENT=	'AC-3 decoding library'
-DISTNAME=	a52dec-0.7.1b
-PKGNAME=	liba52-0.7.1b
+DISTNAME=	a52dec-0.7.3
+PKGNAME=	liba52-0.7.3
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 HOMEPAGE=	http://liba52.sourceforge.net/
 

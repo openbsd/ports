@@ -1,7 +1,7 @@
-$OpenBSD: patch-libao_audio_out_oss_c,v 1.1 2001/10/14 17:25:40 espie Exp $
---- libao/audio_out_oss.c.orig	Sun Oct 14 19:04:25 2001
-+++ libao/audio_out_oss.c	Sun Oct 14 19:04:40 2001
-@@ -262,9 +262,9 @@ ao_instance_t * oss_open (int flags)
+$OpenBSD: patch-libao_audio_out_oss_c,v 1.2 2002/03/29 14:43:47 espie Exp $
+--- libao/audio_out_oss.c.orig	Sun Feb 17 09:58:54 2002
++++ libao/audio_out_oss.c	Fri Mar 29 15:02:47 2002
+@@ -153,9 +153,9 @@ ao_instance_t * oss_open (int flags)
      instance->set_params = 1;
      instance->flags = flags;
  
