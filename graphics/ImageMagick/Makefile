@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.51 2001/05/24 02:27:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.52 2001/07/01 15:33:56 brad Exp $
 
 COMMENT=	"display and manipulate images under X11"
 
 DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
-NEED_VERSION=	1.384
-MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
+NEED_VERSION=	1.413
+MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/ \
+		ftp://ftp.dqc.org/pub/brad/source/
 
 HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 
