@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/07/29 18:43:27 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2002/01/24 11:20:17 jakob Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=		interactive spelling checker
@@ -7,21 +7,21 @@ COMMENT-german=		ispell dictionary for German
 COMMENT-swedish=	ispell dictionary for Swedish
 COMMENT-russian=	ispell dictionary for Russian
 
-VERSION=	3.1.20
+VERSION=	3.2.06
 DISTNAME=	ispell-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.361
+NEED_VERSION=	1.504
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
 
-MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
+MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
+		ftp://ftp.netsw.org/dict/tools/
 MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
 MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
-MASTER_SITES2=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
-MASTER_SITES4=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
+MASTER_SITES2=	http://www.sslug.dk/locale/ispell/iswedish/
+MASTER_SITES3=	ftp://mch5.chem.msu.su/pub/russian/ispell/ \
 		ftp://ftp.afti.nsu.ru/pub/mirrors/russian-ispell/
 
 DIST_SUBDIR=	ispell
@@ -29,11 +29,17 @@ DIST_SUBDIR=	ispell
 FRENCH_DICT=	francais-IREQ-1.4
 GERMAN_DICT=	hk2-deutsch
 SWEDISH_DICT=	iswedish-1.2.1
-RUSSIAN_DICT=	rus-ispell-0.99e1
+RUSSIAN_DICT=	rus-ispell-0.99e7
 
-DISTFILES=	${DISTNAME}.tar.gz ${FRENCH_DICT}.tar.gz:0 ${GERMAN_DICT}.tar.gz:1 ${SWEDISH_DICT}.tar.gz:3 ${RUSSIAN_DICT}.tar.gz:4
+DISTFILES=	${DISTNAME}.tar.gz \
+		${FRENCH_DICT}.tar.gz:0 \
+		${GERMAN_DICT}.tar.gz:1 \
+		${SWEDISH_DICT}.tar.gz:2 \
+		${RUSSIAN_DICT}.tar.gz:3
+
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${SWEDISH_DICT}.tar.gz
-PATCHFILES=	ispell-html-mode.patch:2
+
+SUBST_VARS+=	VERSION
 
 MULTI_PACKAGES=	-french -german -swedish -russian
 .for i in ${MULTI_PACKAGES}
@@ -45,7 +51,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WRKDIST=	${WRKDIR}/ispell-3.1
 MAKE_FLAGS=	TMPDIR=${WRKDIR} 
 
 post-extract:
@@ -61,12 +66,14 @@ post-extract:
 	@(cd ${WRKDIR}/russian; \
 	tar xzf ${DISTDIR}/${DIST_SUBDIR}/${RUSSIAN_DICT}.tar.gz)
 
-post-configure:
+post-patch:
+	@sed "s%/usr/local%${PREFIX}%g" ${WRKSRC}/local.h.samp > \
+		${WRKSRC}/local.h
 	@echo "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
 	@echo "#define CC \"${CC}\"" >> ${WRKSRC}/local.h
 
 post-build:
-	@sed "s%/usr/local%${PREFIX}%g" ${SCRIPTDIR}/ispell-config > \
+	@sed "s%/usr/local%${PREFIX}%g" ${FILESDIR}/ispell-config > \
 		${WRKDIST}/ispell-config
 
 	@(cd ${WRKDIR}/french; \
@@ -80,31 +87,25 @@ post-build:
 	${WRKDIST}/buildhash svenska.datalista svenska.aff svenska.hash)
 
 	@(cd ${WRKDIR}/russian; \
-	cat base.koi computer.koi geography.koi science.koi >russian.sml; \
-	cat russian.aff.koi | sed -e "s/^\#y//;s/^\#koi/wordchars/" \
-		> russian.aff; \
-	${WRKDIST}/buildhash russian.sml russian.aff russian.hash)
+	sort -u base.koi computer.koi geography.koi science.koi >all.words; \
+	sed -e "s/^\#y//;s/^\#koi/wordchars/" < russian.aff.koi > russian.aff; \
+	${WRKDIST}/buildhash all.words russian.aff russian.hash)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/ispell ${PREFIX}/bin/ispell
 	${INSTALL_PROGRAM} ${WRKDIST}/buildhash ${PREFIX}/bin/buildhash
-	${INSTALL_PROGRAM} ${WRKDIST}/sq ${PREFIX}/bin/sq
 	${INSTALL_PROGRAM} ${WRKDIST}/tryaffix ${PREFIX}/bin/tryaffix
 	${INSTALL_PROGRAM} ${WRKDIST}/ijoin ${PREFIX}/bin/ijoin
 	${INSTALL_PROGRAM} ${WRKDIST}/findaffix ${PREFIX}/bin/findaffix
 	${INSTALL_PROGRAM} ${WRKDIST}/munchlist ${PREFIX}/bin/munchlist
 	${INSTALL_PROGRAM} ${WRKDIST}/icombine ${PREFIX}/bin/icombine
-	${INSTALL_PROGRAM} ${WRKDIST}/unsq ${PREFIX}/bin/unsq
 	${INSTALL_SCRIPT} ${WRKDIST}/ispell-config ${PREFIX}/bin/ispell-config
-	${INSTALL_DATA} ${WRKDIST}/ispell.info ${PREFIX}/info/ispell.info
 
 	${INSTALL_MAN} ${WRKDIST}/ispell.1 ${PREFIX}/man/man1/ispell.1
-	ln -s ispell.1 ${PREFIX}/man/man1/sq.1
 	ln -s ispell.1 ${PREFIX}/man/man1/buildhash.1
 	ln -s ispell.1 ${PREFIX}/man/man1/munchlist.1
 	ln -s ispell.1 ${PREFIX}/man/man1/findaffix.1
 	ln -s ispell.1 ${PREFIX}/man/man1/tryaffix.1
-	ln -s ispell.1 ${PREFIX}/man/man1/unsq.1
 	${INSTALL_MAN} ${WRKDIST}/ispell.4 ${PREFIX}/man/man4/ispell.4
 	ln -s ispell.4 ${PREFIX}/man/man4/english.4
 

@@ -1,24 +1,31 @@
---- local.h.samp.orig	Mon Jan 23 20:28:27 1995
-+++ local.h.samp	Sat Jul  7 07:04:21 2001
-@@ -80,14 +80,13 @@
+--- local.h.samp.orig	Mon Jan 21 11:54:21 2002
++++ local.h.samp	Mon Jan 21 13:27:15 2002
+@@ -105,7 +105,7 @@
   */
  
  #define MINIMENU	/* Display a mini-menu at the bottom of the screen */
 -#define NO8BIT		/* Remove this if you use ISO character sets */
- #undef USG		/* Define this on System V */
- 
- /*
++#undef NO8BIT		/* Remove this if you use ISO character sets */
+ #undef USG		/* Define on System V or if term.c won't compile */
+ #undef NO_FCNTL_H	/* Define if you get compile errors on fcntl.h */
+ #undef NO_MKSTEMP	/* Define if you get compile or link errors */
+@@ -114,10 +114,18 @@
   * Important directory paths
   */
  #define BINDIR	"/usr/local/bin"
 -#define LIBDIR	"/usr/local/lib"
 +#define LIBDIR	"/usr/local/lib/ispell"
- #define ELISPDIR "/usr/local/lib/emacs/site-lisp"
- #define TEXINFODIR "/usr/local/info"
  #define MAN1DIR	"/usr/local/man/man1"
-@@ -96,3 +95,5 @@
+ #define MAN4DIR	"/usr/local/man/man4"
+ 
  /*
   * Place any locally-required #include statements here
   */
++#define WORDS   "/usr/share/dict/words"
++
++#define LANGUAGES "{british,MASTERDICTS=british.xlg,HASHFILES=britishxlg.hash,EXTRADICT=} {american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}"
++
++#define MASTERHASH "britishxlg.hash"
++
 +#define DEFHASH "default.hash"
 +#define DEFLANG "default.aff"
