@@ -1,6 +1,6 @@
-$OpenBSD: patch-ltconfig,v 1.4 2001/08/21 02:41:15 brad Exp $
+$OpenBSD: patch-ltconfig,v 1.5 2001/08/27 02:42:12 brad Exp $
 --- ltconfig.orig	Sat May 27 07:15:00 2000
-+++ ltconfig	Mon Aug 20 22:11:09 2001
++++ ltconfig	Sun Aug 26 22:31:14 2001
 @@ -501,7 +501,14 @@ fi
  
  if test -n "$RANLIB"; then
@@ -17,17 +17,18 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/08/21 02:41:15 brad Exp $
  fi
  
  # Set sane defaults for `DLLTOOL', `OBJDUMP', and `AS', used on cygwin.
-@@ -1105,6 +1112,9 @@ cygwin* | mingw*)
+@@ -1105,7 +1112,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
+-
 +openbsd*)
 +  with_gnu_ld=no
 +  ;;
- 
  esac
  
-@@ -1402,10 +1412,21 @@ else
+ ld_shlibs=yes
+@@ -1402,10 +1411,21 @@ else
      ;;
  
    openbsd*)
@@ -43,7 +44,7 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/08/21 02:41:15 brad Exp $
 +      *)
 +	archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linkopts'
 +	hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++	if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +	  export_dynamic_flag_spec='${wl}-E'
 +	fi
 +      ;;
@@ -51,7 +52,7 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/08/21 02:41:15 brad Exp $
      ;;
  
    os2*)
-@@ -2021,9 +2042,23 @@ netbsd*)
+@@ -2021,9 +2041,23 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
@@ -62,7 +63,7 @@ $OpenBSD: patch-ltconfig,v 1.4 2001/08/21 02:41:15 brad Exp $
 +  need_version=no
 +  file_magic_cmd=/usr/bin/file
 +  file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" -o "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
++  if test "`echo __ELF__ | $CC -E - | grep __ELF__`" = "" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
 +    deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
 +    case "$host_os" in
 +    openbsd2.[89] | openbsd2.[89].*)
