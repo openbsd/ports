@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/cfenvgraph.c.orig	Fri May  7 11:44:59 2004
-+++ src/cfenvgraph.c	Mon Aug  2 13:30:33 2004
+$OpenBSD: patch-src_cfenvgraph_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
+--- src/cfenvgraph.c.orig	Wed Aug 11 22:47:25 2004
++++ src/cfenvgraph.c	Fri Oct  1 23:14:46 2004
 @@ -171,7 +171,7 @@ fgets(line,CF_BUFSIZE,pp); 
  fgets(line,CF_BUFSIZE,pp); 
  line[0] = '\0'; 
@@ -162,7 +162,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
      
      if ((fp = fopen(FLNAME,"r")) == NULL)
         {
-@@ -1074,31 +1074,31 @@ for (i = 0; i < 7; i++)
+@@ -1070,31 +1070,31 @@ for (i = 0; i < 7; i++)
            }
         }
      
@@ -199,7 +199,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
      if ((FPLOAD = fopen(FLNAME,"w")) == NULL)
         {
         perror("fopen");
-@@ -1107,14 +1107,14 @@ for (i = 0; i < 7; i++)
+@@ -1103,14 +1103,14 @@ for (i = 0; i < 7; i++)
      
      for (i = 0; i < ATTR; i++)
         {
@@ -216,7 +216,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
         if ((FPOUT[i] = fopen(FLNAME,"w")) == NULL)
            {
            perror("fopen");
-@@ -1124,13 +1124,13 @@ for (i = 0; i < 7; i++)
+@@ -1120,13 +1120,13 @@ for (i = 0; i < 7; i++)
      
         for (i = 0; i < CF_NETATTR; i++)
            {
@@ -232,7 +232,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  
            if ((FPNETOUT[i] = fopen(FLNAME,"w")) == NULL)
               {
-@@ -1146,7 +1146,7 @@ for (i = 0; i < 7; i++)
+@@ -1142,7 +1142,7 @@ for (i = 0; i < 7; i++)
            continue;
            }
         
@@ -241,7 +241,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
         if ((FPPH[i] = fopen(FLNAME,"w")) == NULL)
            {
            perror("fopen");
-@@ -1378,7 +1378,7 @@ for (dirp = readdir(dirh); dirp != NULL;
+@@ -1374,7 +1374,7 @@ for (dirp = readdir(dirh); dirp != NULL;
           memset(&key,0,sizeof(key));       
           memset(&value,0,sizeof(value));
           
@@ -250,7 +250,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
           
           key.data = TIMEKEY;
           key.size = strlen(TIMEKEY)+1;
-@@ -1481,7 +1481,7 @@ while ((c=getopt_long(argc,argv,"Thtf:rs
+@@ -1477,7 +1477,7 @@ while ((c=getopt_long(argc,argv,"Thtf:rs
        case 't': TITLES = true;
                  break;
  
@@ -259,7 +259,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
           break;
  
        case 'T': TIMESTAMPS = true;
-@@ -1535,7 +1535,7 @@ char *CanonifyName(char *str)
+@@ -1531,7 +1531,7 @@ char *CanonifyName(char *str)
    char *sp;
  
  memset(buffer,0,CF_BUFSIZE);
@@ -268,7 +268,7 @@ $OpenBSD: patch-src_cfenvgraph_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  
  for (sp = buffer; *sp != '\0'; sp++)
      {
-@@ -1607,7 +1607,7 @@ for (NOW = CF_MONDAY_MORNING; NOW < CF_M
+@@ -1603,7 +1603,7 @@ for (NOW = CF_MONDAY_MORNING; NOW < CF_M
     memset(&value,0,sizeof(value));
     memset(&ENTRY,0,sizeof(ENTRY));
  

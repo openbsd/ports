@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_package_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/package.c.orig	2004-06-10 23:27:18.000000000 -0400
-+++ src/package.c	2004-06-10 23:21:39.000000000 -0400
-@@ -339,11 +339,11 @@ int DPKGPackageCheck(char *package,char 
+$OpenBSD: patch-src_package_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
+--- src/package.c.orig	Wed Aug 11 23:02:06 2004
++++ src/package.c	Fri Oct  1 23:14:49 2004
+@@ -338,11 +338,11 @@ int DPKGPackageCheck(char *package,char 
       treat "" as "no version" */
    
    if (strncmp (evrstart, "(none)", strlen ("(none)")) == 0) {

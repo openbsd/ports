@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/varstring.c.orig	Fri Jun 11 05:50:17 2004
-+++ src/varstring.c	Mon Aug  2 13:42:04 2004
-@@ -356,7 +356,7 @@ for (sp = string; /* No exit */ ; sp++) 
+$OpenBSD: patch-src_varstring_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
+--- src/varstring.c.orig	Wed Aug 11 23:07:05 2004
++++ src/varstring.c	Fri Oct  1 23:14:50 2004
+@@ -353,7 +353,7 @@ for (sp = string; /* No exit */ ; sp++) 
        FatalError("Can't expand varstring");
        }
     
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
     sp += strlen(currentitem);
  
     if (*sp == '$')
-@@ -370,7 +370,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -367,7 +367,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     varstring = '}';
                     break;
           default: 
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                     continue;
           }
        sp++;
-@@ -408,7 +408,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -405,7 +405,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  	     break;
               
           case cffaculty:
-@@ -422,7 +422,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -419,7 +419,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
               
-@@ -433,7 +433,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -430,7 +430,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     {
                     FatalError("Can't expand varstring");
                     }
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               else
                  {
-@@ -441,7 +441,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -438,7 +438,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     {
                     FatalError("Can't expand varstring");
                     }
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
               
-@@ -450,7 +450,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -447,7 +447,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfnetmask:
-@@ -458,7 +458,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -455,7 +455,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -73,7 +73,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
               
-@@ -467,7 +467,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -464,7 +464,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -82,7 +82,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfbinserver:
-@@ -481,7 +481,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -478,7 +478,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -91,7 +91,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfsysadm:
-@@ -494,7 +494,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -491,7 +491,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -100,7 +100,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfdomain:
-@@ -507,7 +507,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -504,7 +504,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -109,7 +109,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfnfstype:
-@@ -515,7 +515,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -512,7 +512,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -118,7 +118,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cftimezone:
-@@ -528,7 +528,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -525,7 +525,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -127,7 +127,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfclass:
-@@ -536,7 +536,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -533,7 +533,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -136,7 +136,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfarch:
-@@ -544,7 +544,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -541,7 +541,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -145,7 +145,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfarch2:
-@@ -552,7 +552,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -549,7 +549,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -154,7 +154,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
               
-@@ -570,7 +570,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -567,7 +567,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  }
               else
                  {
@@ -163,7 +163,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  Chop(buffer);
                  }
               
-@@ -583,7 +583,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -580,7 +580,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  }
               else
                  {
@@ -172,7 +172,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
               
-@@ -594,7 +594,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -591,7 +591,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  }
               else
                  {
@@ -181,7 +181,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
               
-@@ -605,7 +605,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -602,7 +602,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  }
               else
                  {
@@ -190,7 +190,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
           case cfhr:
-@@ -615,7 +615,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -612,7 +612,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  }
               else
                  {
@@ -199,7 +199,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
               
-@@ -626,7 +626,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -623,7 +623,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  }
               else
                  {
@@ -208,7 +208,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
               
-@@ -634,14 +634,14 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -631,14 +631,14 @@ for (sp = string; /* No exit */ ; sp++) 
               if (strlen(ALLCLASSBUFFER) == 0)
                  {
                  snprintf(name,CF_MAXVARSIZE,"$(%s)",currentitem);
@@ -225,7 +225,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfspc:
-@@ -649,7 +649,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -646,7 +646,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -234,7 +234,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cftab:
-@@ -657,7 +657,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -654,7 +654,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -243,7 +243,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cflf:
-@@ -665,7 +665,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -662,7 +662,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expandvarstring");
                  }
@@ -252,7 +252,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfcr:
-@@ -673,7 +673,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -670,7 +670,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  { 
                  FatalError("Can't expandvarstring");
                  }
@@ -261,7 +261,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfn:
-@@ -681,7 +681,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -678,7 +678,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  { 
                  FatalError("Can't expandvarstring");
                  }
@@ -270,7 +270,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfdblquote:
-@@ -689,14 +689,14 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -686,14 +686,14 @@ for (sp = string; /* No exit */ ; sp++) 
                  { 
                  FatalError("Can't expandvarstring");
                  }
@@ -287,7 +287,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
               
           case cfdollar:
-@@ -707,7 +707,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -704,7 +704,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     { 
                     FatalError("Can't expandvarstring");
                     }
@@ -296,7 +296,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               else
                  {
-@@ -715,7 +715,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -712,7 +712,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     { 
                     FatalError("Can't expandvarstring");
                     }
@@ -305,7 +305,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  }
               break;
               
-@@ -748,7 +748,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -745,7 +745,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     {
                     FatalError("Can't expandvarstring");
                     }
@@ -314,7 +314,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                  Debug("Expansion gave (%s)\n",buffer);             
  
                  break;
-@@ -764,7 +764,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -761,7 +761,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  snprintf(name,CF_MAXVARSIZE,"$(%s)",currentitem);
                  }
@@ -323,7 +323,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
           }
        
        sp += strlen(currentitem);
-@@ -798,7 +798,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -795,7 +795,7 @@ for (sp = string; /* No exit */ ; sp++) 
  
     sscanf(sp,"%[^$]",currentitem);
  
@@ -332,7 +332,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
     sp += strlen(currentitem);
  
     if (*sp == '$')
-@@ -812,7 +812,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -809,7 +809,7 @@ for (sp = string; /* No exit */ ; sp++) 
                     varstring = '}';
                     break;
           default: 
@@ -341,7 +341,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
                     continue;
           }
        sp++;
-@@ -826,7 +826,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -823,7 +823,7 @@ for (sp = string; /* No exit */ ; sp++) 
        }
     else
        {
@@ -350,7 +350,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
        sscanf(++sp,scanstr,currentitem);               /* reduce item */
        
        switch (ScanVariable(currentitem))
-@@ -836,7 +836,7 @@ for (sp = string; /* No exit */ ; sp++) 
+@@ -833,7 +833,7 @@ for (sp = string; /* No exit */ ; sp++) 
                  {
                  FatalError("Can't expand varstring");
                  }
@@ -359,7 +359,7 @@ $OpenBSD: patch-src_varstring_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
               break;
           }
        
-@@ -897,7 +897,7 @@ if (!IsVarString(varstring))
+@@ -894,7 +894,7 @@ if (!IsVarString(varstring))
     return liststart;   
     }
  

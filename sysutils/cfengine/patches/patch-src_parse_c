@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/parse.c.orig	Wed Jun  9 03:16:34 2004
-+++ src/parse.c	Mon Aug  2 13:30:36 2004
-@@ -245,7 +245,7 @@ SetStrategies(); 
+$OpenBSD: patch-src_parse_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
+--- src/parse.c.orig	Wed Aug 11 00:51:38 2004
++++ src/parse.c	Fri Oct  1 23:14:49 2004
+@@ -256,7 +256,7 @@ SetStrategies(); 
  Debug1("\n\n==============================BEGIN NEW ACTION %s=============\n\n",ACTIONTEXT[action]);
  
  ACTION = action;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  
  switch (ACTION)
     {
-@@ -271,7 +271,7 @@ switch (ACTION)
+@@ -282,7 +282,7 @@ switch (ACTION)
     }
  
  Debug1("\nResetting CLASS to ANY\n\n"); 
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  }
  
  /*******************************************************************/
-@@ -287,7 +287,7 @@ Debug1("HandleLVALUE(%s) in action %s\n"
+@@ -298,7 +298,7 @@ Debug1("HandleLVALUE(%s) in action %s\n"
          
          if ((CONTROLVAR = ScanVariable(id)) != nonexistentvar)
             {
@@ -28,7 +28,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
             return;
             }
          else
-@@ -328,7 +328,7 @@ Debug1("HandleLVALUE(%s) in action %s\n"
+@@ -339,7 +339,7 @@ Debug1("HandleLVALUE(%s) in action %s\n"
             yyerror("Reserved class name (choose a different name)");
             }
          
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
          }
          
      break;
-@@ -347,14 +347,14 @@ Debug1("HandleBraceObjectID(%s) in actio
+@@ -358,14 +358,14 @@ Debug1("HandleBraceObjectID(%s) in actio
  switch (ACTION)
     {
     case acls:
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
            InstallStrategy(id,CLASSBUFF);
            }
         else
-@@ -366,7 +366,7 @@ switch (ACTION)
+@@ -377,7 +377,7 @@ switch (ACTION)
     case editfiles:
         if (strlen(CURRENTOBJECT) == 0)
            {
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
            EDITGROUPLEVEL = 0;
            FOREACHLEVEL = 0;
            SEARCHREPLACELEVEL = 0;
-@@ -380,7 +380,7 @@ switch (ACTION)
+@@ -391,7 +391,7 @@ switch (ACTION)
     case filters:
         if (strlen(FILTERNAME)==0)
            {
@@ -72,7 +72,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
            InstallFilter(id);
            }
         else
-@@ -406,7 +406,7 @@ switch (ACTION)
+@@ -417,7 +417,7 @@ switch (ACTION)
  
     case filters:
     case strategies:
@@ -81,7 +81,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
     break;
  
     case editfiles:
-@@ -420,7 +420,7 @@ switch (ACTION)
+@@ -431,7 +431,7 @@ switch (ACTION)
                          HandleEdit(CURRENTOBJECT,id,NULL);
                          }
  
@@ -90,7 +90,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
         break;
     }
  }
-@@ -456,7 +456,7 @@ else
+@@ -467,7 +467,7 @@ else
     Debug1("Simple class = (%s)\n",id);
     }
  
@@ -99,7 +99,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  }
  
  /*******************************************************************/
-@@ -473,13 +473,13 @@ switch (ACTION)
+@@ -484,13 +484,13 @@ switch (ACTION)
          break;
          
      case filters:
@@ -115,7 +115,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
          ACTIONPENDING = true;
          InstallPending(ACTION); 
          break;
-@@ -493,7 +493,7 @@ switch (ACTION)
+@@ -504,7 +504,7 @@ switch (ACTION)
                {
                yyerror("Processes syntax error");
                }
@@ -124,7 +124,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
             ACTIONPENDING = true;
             InstallPending(ACTION);
             
-@@ -517,7 +517,7 @@ switch (ACTION)
+@@ -528,7 +528,7 @@ switch (ACTION)
                yyerror("Missing process search expression");
                }
             Debug1("Installing expression %s\n",qstring);
@@ -133,7 +133,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
             HAVE_RESTART = false;
             }
          else if (HAVE_RESTART)
-@@ -612,7 +612,7 @@ if (ACTION == methods)
+@@ -633,7 +633,7 @@ if (ACTION == methods)
  if (IsBuiltinFunction(fn))
     {
     local[0] = '\0';
@@ -142,7 +142,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
     
     switch (ACTION)
        {
-@@ -819,8 +819,8 @@ switch (ACTION)
+@@ -840,8 +840,8 @@ switch (ACTION)
            InstallPending(ACTION);
            InitializeAction();
            Debug1("\nFound SetOptionString\n");
@@ -153,7 +153,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
            }
         else if (HAVE_RESTART)
            {
-@@ -865,7 +865,7 @@ Debug("HandleServerRule(%s=%s)\n",object
+@@ -886,7 +886,7 @@ Debug("HandleServerRule(%s=%s)\n",object
   if (*buffer == '/')
      {
      Debug("\n\nNew admit/deny object=%s\n",buffer);
@@ -162,7 +162,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
      }
   else
      {
-@@ -1005,7 +1005,7 @@ if ((yyin = fopen(filename,"r")) == NULL
+@@ -1026,7 +1026,7 @@ if ((yyin = fopen(filename,"r")) == NULL
     exit (1);
     }
   
@@ -171,7 +171,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  
  Debug("\n##########################################################################\n"); 
  Debug("# BEGIN PARSING %s\n",VCURRENTFILE);
-@@ -1086,7 +1086,7 @@ void RecordMacroId(char *name)
+@@ -1107,7 +1107,7 @@ void RecordMacroId(char *name)
  
  {
  Debug("RecordMacroId(%s)\n",name);
@@ -180,7 +180,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  
  if (strcmp(name,"this") == 0)
     {
-@@ -1116,7 +1116,7 @@ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
+@@ -1137,7 +1137,7 @@ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
     {
     if (!IsAbsoluteFileName(filename))     /* Don't prepend to absolute names */
        { 
@@ -189,7 +189,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
        
        if (! IsAbsoluteFileName(result))
           {
-@@ -1131,13 +1131,13 @@ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
+@@ -1152,13 +1152,13 @@ if ((sp=getenv(CF_INPUTSVAR)) != NULL)
      {
      if (!IsAbsoluteFileName(filename))     /* Don't prepend to absolute names */
         { 
@@ -206,7 +206,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
  return result;
  }
  
-@@ -1161,8 +1161,8 @@ void InitializeAction()                 
+@@ -1182,8 +1182,8 @@ void InitializeAction()                 
   HAVE_RESTART = false;
   VAGE = 99999;
   strncpy(FINDERTYPE,"*",CF_BUFSIZE);
@@ -217,8 +217,8 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
   HAVE_RESTART = 0;
   FILEACTION=warnall;
   PIFELAPSED=-1;
-@@ -1184,7 +1184,7 @@ void InitializeAction()                 
-  METHODREPLYTO[0] = '\0';
+@@ -1204,7 +1204,7 @@ void InitializeAction()                 
+  PARSEMETHODRETURNCLASSES[0] = '\0';
   METHODFORCE[0] = '\0';
   CHROOT[0] = '\0';
 - strcpy(VIFNAME,"");
@@ -226,7 +226,7 @@ $OpenBSD: patch-src_parse_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
   PTRAVLINKS = (short) '?';
   IMAGEBACKUP = 'y';
   ENCRYPT = 'n';
-@@ -1226,7 +1226,7 @@ void InitializeAction()                 
+@@ -1246,7 +1246,7 @@ void InitializeAction()                 
   memset(ALLCLASSBUFFER,0,CF_BUFSIZE);
   memset(ELSECLASSBUFFER,0,CF_BUFSIZE);
   

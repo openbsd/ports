@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2004/06/17 11:21:42 sturm Exp $
---- configure.orig	2004-05-05 11:20:34.000000000 -0400
-+++ configure	2004-05-12 11:59:56.000000000 -0400
-@@ -9126,6 +9126,7 @@ cat confdefs.h >>conftest.$ac_ext
+$OpenBSD: patch-configure,v 1.2 2004/10/01 21:22:15 sturm Exp $
+--- configure.orig	Thu Aug 12 00:52:34 2004
++++ configure	Fri Oct  1 23:14:46 2004
+@@ -9128,6 +9128,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default

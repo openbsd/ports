@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
---- src/cfrun.c.orig	2004-04-17 10:11:04.000000000 -0400
-+++ src/cfrun.c	2004-06-10 22:32:35.000000000 -0400
-@@ -242,23 +242,23 @@ if (uname(&VSYSNAME) == -1)
+$OpenBSD: patch-src_cfrun_c,v 1.2 2004/10/01 21:22:15 sturm Exp $
+--- src/cfrun.c.orig	Mon Aug  2 21:46:03 2004
++++ src/cfrun.c	Fri Oct  1 23:17:38 2004
+@@ -245,23 +245,23 @@ if (uname(&VSYSNAME) == -1)
  
  if ((strlen(VDOMAIN) > 0) && !strchr(VSYSNAME.nodename,'.'))
     {
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     }   
  */
   
-  Debug("FQNAME = %s\n",VFQNAME);
+ Debug("FQNAME = %s\n",VFQNAME);
   
 -sprintf(VPREFIX,"cfrun:%s",VFQNAME);
 +(void)snprintf(VPREFIX,40,"cfrun:%s",VFQNAME);
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  OpenSSL_add_all_algorithms();
  ERR_load_crypto_strings();
-@@ -292,7 +292,7 @@ CONN = NewAgentConn();
+@@ -294,7 +294,7 @@ CONN = NewAgentConn();
  
  if (storeinfile)
     {
@@ -39,7 +39,7 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
     if ((fp = fopen(filebuffer, "w")) == NULL)
        {
        return false;
-@@ -562,10 +562,10 @@ if (!strchr(VCFRUNHOSTS, '/'))
+@@ -564,10 +564,10 @@ if (!strchr(VCFRUNHOSTS, '/'))
     {
     if ((sp=getenv(CF_INPUTSVAR)) != NULL)
        {
@@ -52,7 +52,7 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
           }
        }
     else
-@@ -574,7 +574,7 @@ if (!strchr(VCFRUNHOSTS, '/'))
+@@ -576,7 +576,7 @@ if (!strchr(VCFRUNHOSTS, '/'))
        }
     }
   
@@ -61,7 +61,16 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
  if ((fp = fopen(filename,"r")) == NULL)      /* Open root file */
     {
-@@ -687,8 +687,8 @@ while (!feof(fp))
+@@ -601,7 +601,7 @@ while (!feof(fp))
+ 
+    if (strncmp(line,"hostnamekeys",6) == 0)
+       {
+-      char buf[16];
++      char buf[296];
+       buf[0] = '\0';
+       sscanf(line,"hostnamekeys = %295[^# \n]",buf);
+       Verbose("Hostname keys\n");
+@@ -703,8 +703,8 @@ while (!feof(fp))
  
     if ((!strstr(buffer,".")) && (strlen(VDOMAIN) > 0))
        {
@@ -72,7 +81,7 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
        }
        
     if (!IsItemIn(VCFRUNHOSTLIST,buffer))
-@@ -746,8 +746,8 @@ for (ip = VCFRUNCLASSES; ip != NULL; ip 
+@@ -762,8 +762,8 @@ for (ip = VCFRUNCLASSES; ip != NULL; ip 
        memset(sendbuffer,0,CF_BUFSIZE);
        }
     
@@ -83,7 +92,7 @@ $OpenBSD: patch-src_cfrun_c,v 1.1 2004/06/17 11:21:43 sturm Exp $
  
     sp += strlen(ip->name)+1;
     used += strlen(ip->name)+1;
-@@ -766,7 +766,7 @@ if (used + strlen(CFD_TERMINATOR) +2 > C
+@@ -782,7 +782,7 @@ if (used + strlen(CFD_TERMINATOR) +2 > C
     memset(sendbuffer,0,CF_BUFSIZE);
     }
     

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_misc_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/misc.c.orig	Fri Jun 25 11:16:01 2004
-+++ src/misc.c	Mon Aug  2 15:38:54 2004
+$OpenBSD: patch-src_misc_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
+--- src/misc.c.orig	Fri Jul 30 15:06:17 2004
++++ src/misc.c	Fri Oct  1 23:14:49 2004
 @@ -556,17 +556,17 @@ char *ChecksumPrint(char type,unsigned c
  
  switch(type)
@@ -92,7 +92,7 @@ $OpenBSD: patch-src_misc_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
         AddClassToHeap(classbuf);
         }
      }
-@@ -1152,19 +1152,19 @@ FILE *fp;
+@@ -1175,19 +1175,19 @@ FILE *fp;
      {
      release += strlen(SUSE_RELEASE_FLAG);
      sscanf(release, "%d.%d", &major, &minor);
@@ -119,7 +119,7 @@ $OpenBSD: patch-src_misc_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
      AddClassToHeap(classbuf);
      }
   
-@@ -1277,8 +1277,8 @@ char strminor[CF_MAXVARSIZE];
+@@ -1300,8 +1300,8 @@ char strminor[CF_MAXVARSIZE];
      release += strlen(RELEASE_FLAG);
      if (sscanf(release, "%d.%d", &major, &minor) == 2)
         {
@@ -130,7 +130,7 @@ $OpenBSD: patch-src_misc_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
         }
      else
         {
-@@ -1290,15 +1290,15 @@ char strminor[CF_MAXVARSIZE];
+@@ -1313,15 +1313,15 @@ char strminor[CF_MAXVARSIZE];
   if (major != -1 && minor != -1 && vendor != "")
      {
      classbuf[0] = '\0';

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_nameinfo_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
---- src/nameinfo.c.orig	Wed Jun 23 17:55:31 2004
-+++ src/nameinfo.c	Mon Aug  2 13:30:36 2004
+$OpenBSD: patch-src_nameinfo_c,v 1.3 2004/10/01 21:22:15 sturm Exp $
+--- src/nameinfo.c.orig	Tue Aug 17 08:54:14 2004
++++ src/nameinfo.c	Fri Oct  1 23:14:49 2004
 @@ -59,6 +59,7 @@ void GetNameInfo()
    time_t tloc;
    struct hostent *hp;
@@ -54,27 +54,27 @@ $OpenBSD: patch-src_nameinfo_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
     
     for (i=0; hp->h_aliases[i]!= NULL; i++)
        {
-@@ -382,7 +384,7 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
-                   }
-                
-                /* Old style compat */
--               strcpy(ip,inet_ntoa(sin->sin_addr));
-+               (void)strlcpy(ip,inet_ntoa(sin->sin_addr),sizeof(ip));
-                AppendItem(&IPADDRESSES,ip,"");
-                
-                for (sp = ip+strlen(ip)-1; *sp != '.'; sp--)
-@@ -393,8 +395,8 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
-                
-                
-                /* New style */
--               strcpy(ip,"ipv4_");
--               strcat(ip,inet_ntoa(sin->sin_addr));
-+               (void)strlcpy(ip,"ipv4_",sizeof(ip));
-+               (void)strlcat(ip,inet_ntoa(sin->sin_addr),sizeof(ip));
-                AddClassToHeap(CanonifyName(ip));
-                snprintf(name,CF_MAXVARSIZE-1,"ipv4[%s]",CanonifyName(ifp->ifr_name));
-                AddMacroValue(CONTEXTID,name,inet_ntoa(sin->sin_addr));
-@@ -503,9 +505,9 @@ void AddNetworkClass(char *netmask) /* F
+@@ -385,7 +387,7 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
+             }
+          
+          /* Old style compat */
+-         strcpy(ip,inet_ntoa(sin->sin_addr));
++         (void)strlcpy(ip,inet_ntoa(sin->sin_addr),sizeof(ip));
+          AppendItem(&IPADDRESSES,ip,"");
+          
+          for (sp = ip+strlen(ip)-1; *sp != '.'; sp--)
+@@ -396,8 +398,8 @@ for (j = 0,len = 0,ifp = list.ifc_req; l
+          
+             
+          /* New style */
+-         strcpy(ip,"ipv4_");
+-         strcat(ip,inet_ntoa(sin->sin_addr));
++         (void)strlcpy(ip,"ipv4_",sizeof(ip));
++         (void)strlcat(ip,inet_ntoa(sin->sin_addr),sizeof(ip));
+          AddClassToHeap(CanonifyName(ip));
+          snprintf(name,CF_MAXVARSIZE-1,"ipv4[%s]",CanonifyName(ifp->ifr_name));
+          AddMacroValue(CONTEXTID,name,inet_ntoa(sin->sin_addr));
+@@ -505,9 +507,9 @@ void AddNetworkClass(char *netmask) /* F
    if ((nm.s_addr = inet_addr(netmask)) != -1 && (ip.s_addr = inet_addr(VIPADDRESS)) != -1)
       {
       ip.s_addr &= nm.s_addr; /* Will not work with IPv6 */
@@ -86,7 +86,7 @@ $OpenBSD: patch-src_nameinfo_c,v 1.2 2004/08/08 14:02:11 sturm Exp $
       
       while( (sp = strrchr(nmbuf,'.')) && strcmp(sp,".0") == 0 )
          {
-@@ -528,22 +530,22 @@ void SetDomainName(char *sp)           /
+@@ -530,22 +532,22 @@ void SetDomainName(char *sp)           /
  
  if (gethostname(fqn, sizeof(fqn)) != -1)
     {
