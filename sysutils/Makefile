@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2001/03/04 17:38:08 danh Exp $
+# $OpenBSD: Makefile,v 1.28 2001/03/20 15:31:11 jakob Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -33,7 +33,6 @@
      SUBDIR += wmcube
      SUBDIR += wmmon
      SUBDIR += xbatt
-     SUBDIR += xntpd
      SUBDIR += xosview
      SUBDIR += zap
 
