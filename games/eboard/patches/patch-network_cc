@@ -1,0 +1,12 @@
+$OpenBSD: patch-network_cc,v 1.1 2002/09/28 20:26:49 naddy Exp $
+--- network.cc.orig	Sat Sep 28 21:09:51 2002
++++ network.cc	Sat Sep 28 21:10:03 2002
+@@ -135,7 +135,7 @@ int BufferedConnection::bufferMatch(char
+   return(strstr(dump,match)!=0);
+ }
+ 
+-int BufferedConnection::consume(int handle, int amount=128) {
++int BufferedConnection::consume(int handle, int amount) {
+   int i,j;
+   char sm[2048];
+   if (amount>2048) amount=2048;

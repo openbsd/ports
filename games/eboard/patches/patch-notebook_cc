@@ -1,0 +1,39 @@
+$OpenBSD: patch-notebook_cc,v 1.1 2002/09/28 20:26:49 naddy Exp $
+--- notebook.cc.orig	Sat Sep 28 21:11:27 2002
++++ notebook.cc	Sat Sep 28 22:00:23 2002
+@@ -48,7 +48,7 @@ Page::Page() {
+   gtk_widget_show(label);
+ }
+ 
+-Page::Page(int _number,GtkWidget *_content, char *_title, bool _removable=false) {
++Page::Page(int _number,GtkWidget *_content, char *_title, bool _removable) {
+   
+   GtkWidget *b,*p;
+ 
+@@ -166,7 +166,7 @@ Notebook::Notebook() {
+ 		     (gpointer)this);
+ }
+ 
+-void Notebook::addPage(GtkWidget *what,char *title,int id,bool removable=false) {
++void Notebook::addPage(GtkWidget *what,char *title,int id,bool removable) {
+   Page *pg;
+   global.debug("Notebook","addPage",title);
+   pg=new Page(id,what,title,removable);
+@@ -205,7 +205,7 @@ int Notebook::getCurrentPageId() {
+   return( pages[i]->number );
+ }
+ 
+-void Notebook::setTabColor(int pageid,int color,Importance imp=IM_TOP) {
++void Notebook::setTabColor(int pageid,int color,Importance imp) {
+   vector<Page *>::iterator pi;
+   int i;
+   global.debug("Notebook","setTabColor","1");
+@@ -217,7 +217,7 @@ void Notebook::setTabColor(int pageid,in
+ }
+ 
+ void Notebook::setTabColor(int page_num,int color,int poly,
+-			   Importance imp=IM_TOP) {
++			   Importance imp) {
+   vector<Page *>::iterator pi;
+   GdkColor nc;
+   GtkStyle *style;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-board_cc,v 1.1 2002/09/28 20:26:48 naddy Exp $
+--- board.cc.orig	Sat Sep 28 20:58:34 2002
++++ board.cc	Sat Sep 28 20:59:15 2002
+@@ -626,7 +626,7 @@ void Board::setInfo(int idx,string &s) {
+   queueRepaint();
+ }
+ 
+-void Board::update(bool sndflag=false) {
++void Board::update(bool sndflag) {
+   int i,j,k,rate;
+   AnimatedPiece *ap;  
+   Position rpv;
+@@ -2005,7 +2005,7 @@ gboolean board_animate(gpointer data) {
+ 
+ // ------------- targets
+ 
+-DropSource::DropSource(piece p, int x1,int y1,int w,int h,bool d=true) {
++DropSource::DropSource(piece p, int x1,int y1,int w,int h,bool d) {
+   X=x1; Y=y1;
+   X2=X+w; Y2=Y+h;
+   P=p;

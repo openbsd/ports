@@ -1,0 +1,12 @@
+$OpenBSD: patch-pieces_cc,v 1.1 2002/09/28 20:26:49 naddy Exp $
+--- pieces.cc.orig	Sat Sep 28 22:00:48 2002
++++ pieces.cc	Sat Sep 28 22:01:07 2002
+@@ -1198,7 +1198,7 @@ VectorPieces::~VectorPieces() {
+   global.destroy("VectorPieces");
+ }
+ 
+-void VectorPieces::drawSquares(GdkPixmap *dest,GdkGC *gc,int sqside, int dx=0, int dy=0) {
++void VectorPieces::drawSquares(GdkPixmap *dest,GdkGC *gc,int sqside, int dx, int dy) {
+   int i,j;
+   for(i=0;i<8;i++)
+     for(j=0;j<8;j++) {      
