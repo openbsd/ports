@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2004/04/28 08:34:32 xsa Exp $
+# $OpenBSD: Makefile,v 1.221 2004/05/06 23:18:26 pvalchev Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -169,7 +169,6 @@
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Params-Validate
      SUBDIR += p5-Parse-RecDescent
-     SUBDIR += p5-Scalar-List-Utils
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Scanf
