@@ -1,6 +1,6 @@
-$OpenBSD: patch-autoconf_ltconfig,v 1.1.1.1 2001/03/12 01:32:05 naddy Exp $
---- autoconf/ltconfig.orig	Mon Feb 26 13:52:17 2001
-+++ autoconf/ltconfig	Mon Mar 12 01:39:20 2001
+$OpenBSD: patch-autoconf_ltconfig,v 1.2 2001/03/15 16:12:37 naddy Exp $
+--- autoconf/ltconfig.orig	Mon Feb 26 17:52:17 2001
++++ autoconf/ltconfig	Thu Mar 15 15:25:22 2001
 @@ -1099,6 +1099,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi

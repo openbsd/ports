@@ -1,6 +1,6 @@
-$OpenBSD: patch-libcharset_autoconf_ltconfig,v 1.1.1.1 2001/03/12 01:32:05 naddy Exp $
---- libcharset/autoconf/ltconfig.orig	Mon Feb 26 13:49:31 2001
-+++ libcharset/autoconf/ltconfig	Mon Mar 12 01:54:37 2001
+$OpenBSD: patch-libcharset_autoconf_ltconfig,v 1.2 2001/03/15 16:12:37 naddy Exp $
+--- libcharset/autoconf/ltconfig.orig	Mon Feb 26 17:49:31 2001
++++ libcharset/autoconf/ltconfig	Thu Mar 15 15:25:22 2001
 @@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi

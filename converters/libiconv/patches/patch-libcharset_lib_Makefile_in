@@ -1,7 +1,7 @@
-$OpenBSD: patch-libcharset_lib_Makefile_in,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
---- libcharset/lib/Makefile.in.orig	Wed Feb 21 00:42:12 2001
-+++ libcharset/lib/Makefile.in	Wed Mar  7 15:14:43 2001
-@@ -24,6 +24,7 @@ LIBTOOL_UNINSTALL = $(LIBTOOL) --mode=un
+$OpenBSD: patch-libcharset_lib_Makefile_in,v 1.2 2001/03/15 16:12:37 naddy Exp $
+--- libcharset/lib/Makefile.in.orig	Sun Mar 11 19:37:53 2001
++++ libcharset/lib/Makefile.in	Thu Mar 15 15:25:22 2001
+@@ -25,6 +25,7 @@ RM = rm -f
  # Programs used by "make install":
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
@@ -9,7 +9,7 @@ $OpenBSD: patch-libcharset_lib_Makefile_in,v 1.1.1.1 2001/03/12 01:32:04 naddy E
  MKINSTALLDIRS = $(SHELL) $(srcdir)/../autoconf/mkinstalldirs
  
  #### End of system configuration section. ####
-@@ -68,11 +69,11 @@ ref-del.sed : $(srcdir)/ref-del.sin
+@@ -69,11 +70,11 @@ ref-del.sed : $(srcdir)/ref-del.sin
  # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
  install-lib : all force
  	$(MKINSTALLDIRS) $(libdir)

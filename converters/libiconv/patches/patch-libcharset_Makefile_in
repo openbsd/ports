@@ -1,6 +1,6 @@
-$OpenBSD: patch-libcharset_Makefile_in,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+$OpenBSD: patch-libcharset_Makefile_in,v 1.2 2001/03/15 16:12:37 naddy Exp $
 --- libcharset/Makefile.in.orig	Wed Feb 21 00:42:12 2001
-+++ libcharset/Makefile.in	Wed Mar  7 15:14:43 2001
++++ libcharset/Makefile.in	Thu Mar 15 15:25:22 2001
 @@ -38,7 +38,7 @@ all : force
  install-lib : all force
  	cd lib && $(MAKE) install-lib libdir='$(libdir)' includedir='$(includedir)'

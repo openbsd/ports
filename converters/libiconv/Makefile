@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/12 01:32:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/15 16:12:36 naddy Exp $
 
-DISTNAME=	libiconv-1.6
+DISTNAME=	libiconv-1.6.1
 CATEGORIES=	converters devel
 NEED_VERSION=	1.341
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 
-SEPARATE_BUILD=	Yes
+SEPARATE_BUILD=	concurrent
 
 .include <bsd.port.mk>

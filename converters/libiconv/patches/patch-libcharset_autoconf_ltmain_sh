@@ -1,6 +1,6 @@
-$OpenBSD: patch-libcharset_autoconf_ltmain_sh,v 1.1.1.1 2001/03/12 01:32:05 naddy Exp $
---- libcharset/autoconf/ltmain.sh.orig	Wed Feb 21 15:09:19 2001
-+++ libcharset/autoconf/ltmain.sh	Mon Mar 12 01:54:43 2001
+$OpenBSD: patch-libcharset_autoconf_ltmain_sh,v 1.2 2001/03/15 16:12:37 naddy Exp $
+--- libcharset/autoconf/ltmain.sh.orig	Wed Feb 21 19:09:19 2001
++++ libcharset/autoconf/ltmain.sh	Thu Mar 15 15:25:22 2001
 @@ -1079,7 +1079,18 @@ compiler."
  	    # These systems don't actually have c library (as such)
  	    continue
