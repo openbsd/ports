@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.660 2004/11/16 02:08:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.661 2004/11/17 10:38:37 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1076,12 +1076,14 @@ _DEP${_DEP}_COOKIES+=${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}
 
 _INSTALL_DEPS=${_INSTALL_COOKIE}
 _PACKAGE_DEPS=${_PACKAGE_COOKIES}
+_UPDATE_DEPS=${_UPDATE_COOKIE}
 .if defined(ALWAYS_PACKAGE)
 _INSTALL_DEPS+=${_PACKAGE_COOKIES}
 .endif
 .if ${BULK_${PKGPATH}:L} == "yes"
 _INSTALL_DEPS+=${_BULK_COOKIE}
 _PACKAGE_DEPS+=${_BULK_COOKIE}
+_UPDATE_DEPS+=${_BULK_COOKIE}
 .endif
 
 MODSIMPLE_configure= \
@@ -1513,7 +1515,7 @@ _internal-build _internal-all: ${_DEPbuild_COOKIES} ${_DEPlib_COOKIES} \
 _internal-install: ${_INSTALL_DEPS}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-package: ${_PACKAGE_DEPS}
-_internal-update: ${_UPDATE_COOKIE}
+_internal-update: ${_UPDATE_DEPS}
 
 
 .  if defined(_IGNORE_REGRESS)
