@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/04/17 06:37:34 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/05/23 17:02:42 shell Exp $
 
 COMMENT=	"emacs interface to PGP and GnuPG"
 
-DISTNAME=	mailcrypt-3.5.5
+DISTNAME=	mailcrypt-3.5.6
 CATEGORIES=     mail
-NEED_VERSION=	1.364
+NEED_VERSION=	1.413
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mailcrypt
 
