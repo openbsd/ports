@@ -1,5 +1,3 @@
-@cwd /usr/local
-@name guile-1.3
 info/data-rep.info
 lib/libguile.so.4.0
 lib/libguile.la
@@ -119,4 +117,4 @@ include/guile/gh.h
 @dirrm share/guile/1.3/ice-9
 @dirrm share/guile/1.3
 @dirrm share/guile
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
+@exec /sbin/ldconfig -m %B
