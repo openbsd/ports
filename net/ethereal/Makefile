@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2001/07/13 20:31:38 jakob Exp $
+# $OpenBSD: Makefile,v 1.49 2001/07/16 14:56:54 jakob Exp $
 
 COMMENT=	network protocol analyzer
 
@@ -48,10 +48,5 @@ pre-build:
 .if defined(SEPARATE_BUILD)
 	cp -p ${WRKSRC}/packet-ncp2222.c ${WRKBUILD}
 .endif
-
-post-install:
-	${INSTALL_MAN} ${WRKBUILD}/editcap.1   ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKBUILD}/ethereal.1  ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKBUILD}/tethereal.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
