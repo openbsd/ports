@@ -1,0 +1,33 @@
+Well, I was going to wait until 2.50 release, but it seems to be taking and
+this likely affects only few installations. Besides, it's been in their
+public bugzilla for over a month. So:
+
+Attacker may be able to execute arbitrary code by sending a specially
+crafted e-mail to a system using SpamAssassin's spamc program in BSMTP mode
+(-B option). Versions from 2.40 to 2.43 are affected.
+
+Exim users especially should check if they're affected, the -B option is
+used in several Exim+SpamAssassin HOWTOs.
+
+The problem is with escaping '.' characters at the beginning of lines.
+Off-by-one bounds checking error allows writing '.' character past a
+buffer, overwriting the stack frame address. Depending on system this may
+be exploitable. Pre-built Debian unstable/x86 package wasn't vulnerable, my
+self compiled was.
+
+Patch:
+
+diff -ru spamassassin-2.43-old/spamd/libspamc.c spamassassin-2.43/spamd/libspamc.c
+--- spamd/libspamc.c.orig	2002-10-15 18:22:49.000000000 +0300
++++ spamd/libspamc.c	2002-12-27 20:19:36.000000000 +0200
+@@ -309,7 +309,7 @@
+       case MESSAGE_BSMTP:
+         total=full_write(fd, m->pre, m->pre_len);
+         for(i=0; i<m->out_len; ){
+-            for(j=0; i<m->out_len && j<sizeof(buffer)/sizeof(*buffer)-1; ){
++            for(j=0; i<m->out_len && j<sizeof(buffer)/sizeof(*buffer)-2; ){
+                 if(i+1<m->out_len && m->out[i]=='\n' && m->out[i+1]=='.'){
+                     buffer[j++]=m->out[i++];
+                     buffer[j++]=m->out[i++];
+
+
