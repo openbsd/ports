@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/06/17 19:55:13 marcm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/07/12 17:59:48 danh Exp $
 
 COMMENT=		"Bitstream Vera TrueType fonts"
 
@@ -31,7 +31,7 @@ do-install:
 	${X11BASE}/bin/mkfontdir ${FONTSDIR};
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bitstream-vera-fonts/; \
 	${INSTALL_DATA} ${WRKSRC}/local.conf ${PREFIX}/share/examples/bitstream-vera-fonts/
-	${INSTALL_DATA_DIR} ${PREFIX}/doc/bitstream-vera-fonts/; \
-	${INSTALL_DATA} ${WRKSRC}/*.TXT ${PREFIX}/doc/bitstream-vera-fonts/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bitstream-vera-fonts/; \
+	${INSTALL_DATA} ${WRKSRC}/*.TXT ${PREFIX}/share/doc/bitstream-vera-fonts/
 
 .include <bsd.port.mk>
