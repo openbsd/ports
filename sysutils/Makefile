@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/05/05 21:28:14 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/05/07 05:41:25 angelos Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -34,6 +34,7 @@
      SUBDIR += wmmon
      SUBDIR += xbatt
      SUBDIR += xosview
+     SUBDIR += xps
      SUBDIR += zap
 
 .include <bsd.port.subdir.mk>
