@@ -1,0 +1,42 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/01/10 16:54:49 naddy Exp $
+--- wmSpaceWeather/Makefile.orig	Mon Jan  4 22:20:45 1999
++++ wmSpaceWeather/Makefile	Wed Jan 10 14:10:06 2001
+@@ -1,8 +1,5 @@
+-CC     = gcc
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11
+-DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++CFLAGS += -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext
+ # for Solaris
+@@ -12,14 +9,14 @@ OBJS   = wmSpaceWeather.o \
+ 
+ 
+ .c.o:
+-	$(CC) $(COPTS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CC) $(CFLAGS) -c $< -o $*.o $(INCDIR)
+ 
+ 
+ all:	wmSpaceWeather.o wmSpaceWeather
+ 
+ wmSpaceWeather.o: wmSpaceWeather_master.xpm wmSpaceWeather_mask.xbm
+ wmSpaceWeather:	$(OBJS) 
+-	$(CC) $(COPTS) $(SYSTEM) -o wmSpaceWeather $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CC) $(COPTS) $(SYSTEM) -o wmSpaceWeather $(OBJS) $(INCDIR) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
+@@ -28,7 +25,6 @@ clean:
+ 	rm -f wmSpaceWeather
+ 
+ install:: wmSpaceWeather
+-	install -s -m 0755 wmSpaceWeather $(DESTDIR)/bin
+-	install    -m 0755 GetKp $(DESTDIR)/bin
+-	install    -m 0644 wmSpaceWeather.1 $(DESTDIR)/man/man1 
+-
++	$(BSD_INSTALL_PROGRAM) wmSpaceWeather $(PREFIX)/bin
++	$(BSD_INSTALL_SCRIPT) GetKp $(PREFIX)/bin
++	$(BSD_INSTALL_MAN) wmSpaceWeather.1 $(PREFIX)/man/man1 

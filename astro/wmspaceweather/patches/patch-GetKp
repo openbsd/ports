@@ -1,0 +1,76 @@
+$OpenBSD: patch-GetKp,v 1.1.1.1 2001/01/10 16:54:49 naddy Exp $
+--- wmSpaceWeather/GetKp.orig	Fri Feb 12 06:42:01 1999
++++ wmSpaceWeather/GetKp	Wed Jan 10 14:37:37 2001
+@@ -7,19 +7,31 @@
+ 
+     require "ctime.pl";
+ 
++    #
++    #  Change to users home directory. We used to dump into /tmp
++    #  but using home dir instead avoids multiple users interfering
++    #  with one another. (Yeah, we could "unique-ize" the filenames, but
++    #  this is easier for now...)
++    #
++    $home = (getpwuid($<))[7];
++    $ok = chdir() || chdir($home);
+ 
+-    ($Year, $Month, $Day) = &year_month_day();
+-    
+-    if (-e "/tmp/DGD.txt"){
+-	unlink("/tmp/DGD.txt");
++    #
++    #  Check to see if .wmSpaceWeatherReports exists.
++    #  If not, make it and move to it.
++    #
++    if ( !(-e ".wmSpaceWeatherReports") ){
++        mkdir(".wmSpaceWeatherReports", 0775);
+     }
++    chdir(".wmSpaceWeatherReports");
++    unlink("DGD.txt");
++    unlink("curind.txt");
+ 
+-    if (-e "/tmp/curind.txt"){
+-	unlink("/tmp/curind.txt");
+-    }
++
++    ($Year, $Month, $Day) = &year_month_day();
+ 
+ 
+-    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
++    $grabcmd = "wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
+     system "$grabcmd";
+ 
+ 
+@@ -37,7 +49,7 @@
+     $Kp{190001018} = 999;
+ 
+ 
+-    open(TmpFile, "/tmp/DGD.txt");
++    open(TmpFile, "DGD.txt");
+     while (<TmpFile>){
+         chop;
+ 	if ($_ =~ /^\d{4} \d{2} \d{2}\s*\d*/ ){
+@@ -68,12 +80,12 @@
+     #
+     # Add in very latest stuff
+     #
+-    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/latest/curind.txt";
++    $grabcmd = "wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/latest/curind.txt";
+     system "$grabcmd";
+     %lmonstr = ( "Jan", 1, "Feb", 2, "Mar", 3, "Apr", 4, "May", 5, "Jun", 6, "Jul", 7, "Aug", 8, "Sep", 9, "Oct", 10, "Nov", 11, "Dec", 12);
+ 
+ @lval = ($lyear, $lmonstr{$lmon}, $ldom);
+-    open(TmpFile, "/tmp/curind.txt");
++    open(TmpFile, "curind.txt");
+     while (<TmpFile>){
+         chop;
+ 	if ($_ =~ /^:Geomagnetic_Values: (\d{4}) (.*) (\d{1,2})/){
+@@ -133,7 +145,7 @@
+ 	}
+     }
+ 
+-    open(TmpFile, ">/tmp/LatestKp.txt");
++    open(TmpFile, ">LatestKp.txt");
+     foreach $key  (sort keys %Result ) {
+ 	if ($Result{$key} > 10) { $Result{$key} = -1; }
+ 	printf TmpFile "$key $Result{$key}\n";

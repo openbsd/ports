@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/10 16:54:50 naddy Exp $
+bin/GetKp
+bin/wmSpaceWeather
+man/man1/wmSpaceWeather.1
