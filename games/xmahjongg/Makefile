@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2003/03/31 13:07:46 sturm Exp $
+# $OpenBSD: Makefile,v 1.16 2003/04/10 09:57:09 jsyn Exp $
 
-COMMENT=	Colorful solitaire Mah Jongg game for X11
+COMMENT=	"colorful solitaire Mah Jongg game for X11"
 
 DISTNAME=	xmahjongg-3.6.1
 CATEGORIES=	games x11
