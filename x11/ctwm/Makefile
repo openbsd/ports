@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/23 20:14:20 turan Exp $
+# $OpenBSD: Makefile,v 1.6 2000/03/31 21:35:49 espie Exp $
 
 DISTNAME=	ctwm-3.5
 CATEGORIES=	x11
@@ -11,6 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		8 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.3 2000/03/23 20:14:19 turan Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/31 21:35:49 espie Exp $
 #
 
 DISTNAME=	bclock-1.0
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
