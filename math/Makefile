@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2001/03/22 03:30:14 ian Exp $
+# $OpenBSD: Makefile,v 1.24 2001/05/05 21:28:09 espie Exp $
 #
 
      SUBDIR += R
@@ -17,7 +17,7 @@
 #    SUBDIR += fudgit
      SUBDIR += geg
      SUBDIR += gnuplot
-     SUBDIR += gnuplot:no_x11
+     SUBDIR += gnuplot,no_x11
      SUBDIR += grpn
      SUBDIR += hexcalc
      SUBDIR += hoc

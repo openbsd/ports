@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2001/04/14 10:26:17 peter Exp $
+# $OpenBSD: Makefile,v 1.67 2001/05/05 21:28:13 espie Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -23,7 +23,7 @@
      SUBDIR += isic
      SUBDIR += its4
      SUBDIR += john
-     SUBDIR += john:k6
+     SUBDIR += john,k6
      SUBDIR += klaxon
      SUBDIR += l0phtcrack
      SUBDIR += libident
@@ -48,8 +48,8 @@
      SUBDIR += p5-GPG
      SUBDIR += p5-MD5
      SUBDIR += p5-PGP-Sign
-     SUBDIR += p5-PGP-Sign:pgp
-     SUBDIR += p5-PGP-Sign:pgp5
+     SUBDIR += p5-PGP-Sign,pgp
+     SUBDIR += p5-PGP-Sign,pgp5
      SUBDIR += pgp
      SUBDIR += pgp5
      SUBDIR += pgplib
@@ -62,7 +62,7 @@
      SUBDIR += scanssh
      SUBDIR += sftp
      SUBDIR += shash
-     SUBDIR += shash:static
+     SUBDIR += shash,static
      SUBDIR += slurpie
      SUBDIR += smbsniff
      SUBDIR += smurflog

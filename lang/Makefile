@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/03/27 01:59:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.43 2001/05/05 21:28:07 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -55,20 +55,20 @@
 #    SUBDIR += perl5
 #    SUBDIR += pgcc
 #    SUBDIR += pgcc-current
-     SUBDIR += python:
-     SUBDIR += python:threads
-     SUBDIR += python:tk,threads,no_tools
-     SUBDIR += python:tk,no_tools
-     SUBDIR += python15:
-     SUBDIR += python15:threads
-     SUBDIR += python15:tk,threads,no_tools
-     SUBDIR += python15:tk,no_tools
+     SUBDIR += python,
+     SUBDIR += python,threads
+     SUBDIR += python,tk,threads,no_tools
+     SUBDIR += python,tk,no_tools
+     SUBDIR += python15,
+     SUBDIR += python15,threads
+     SUBDIR += python15,tk,threads,no_tools
+     SUBDIR += python15,tk,no_tools
 #    SUBDIR += rexx-imc
      SUBDIR += ruby
 #    SUBDIR += scheme48
 #    SUBDIR += schemetoc
      SUBDIR += scm
-     SUBDIR += scm:no_x11
+     SUBDIR += scm,no_x11
      SUBDIR += scheme-report
 #    SUBDIR += smalltalk
      SUBDIR += squeak

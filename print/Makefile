@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.25 2001/02/21 23:32:51 avsm Exp $
+#	$OpenBSD: Makefile,v 1.26 2001/05/05 21:28:11 espie Exp $
 #
 
-    SUBDIR += a2ps:a4
-    SUBDIR += a2ps:letter
+    SUBDIR += a2ps,a4
+    SUBDIR += a2ps,letter
 #   SUBDIR += a2ps43
     SUBDIR += acroread
     SUBDIR += afm
@@ -35,9 +35,9 @@
     SUBDIR += lyx
 #   SUBDIR += makeindex
 #   SUBDIR += mp
-    SUBDIR += mpage:us_letter
-    SUBDIR += mpage:legal
-    SUBDIR += mpage:a4
+    SUBDIR += mpage,us_letter
+    SUBDIR += mpage,legal
+    SUBDIR += mpage,a4
 #   SUBDIR += musixtex
     SUBDIR += pdflib
     SUBDIR += pkfonts

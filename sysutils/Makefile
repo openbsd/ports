@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2001/03/20 15:31:11 jakob Exp $
+# $OpenBSD: Makefile,v 1.29 2001/05/05 21:28:14 espie Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -15,7 +15,7 @@
      SUBDIR += mkhybrid
      SUBDIR += mtools
      SUBDIR += nut
-     SUBDIR += nut:cgi
+     SUBDIR += nut,cgi
      SUBDIR += radiusreport
      SUBDIR += rtty
      SUBDIR += safecat

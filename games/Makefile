@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2001/03/18 20:09:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2001/05/05 21:28:06 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -8,7 +8,7 @@
      SUBDIR += agm
      SUBDIR += an
      SUBDIR += angband
-     SUBDIR += angband:no_x11
+     SUBDIR += angband,no_x11
 #    SUBDIR += block
 #    SUBDIR += blue
      SUBDIR += bnetd
@@ -23,7 +23,7 @@
 #    SUBDIR += empire
 #    SUBDIR += flying
      SUBDIR += freeciv
-     SUBDIR += freeciv:gtk
+     SUBDIR += freeciv,gtk
      SUBDIR += frotz
 #    SUBDIR += galaxis
      SUBDIR += gnuchess
@@ -40,10 +40,10 @@
      SUBDIR += hackdata
      SUBDIR += moon-buggy
      SUBDIR += nethack
-     SUBDIR += nethack:no_x11
-     SUBDIR += nethack:qt
+     SUBDIR += nethack,no_x11
+     SUBDIR += nethack,qt
      SUBDIR += slash
-     SUBDIR += slash:no_x11
+     SUBDIR += slash,no_x11
      SUBDIR += netris
 #    SUBDIR += oneko
 #    SUBDIR += oonsoo
@@ -84,7 +84,7 @@
      SUBDIR += xjewel
      SUBDIR += xjig
      SUBDIR += xkobo
-     SUBDIR += xkobo:harder
+     SUBDIR += xkobo,harder
      SUBDIR += xlife
      SUBDIR += xmahjongg
 #    SUBDIR += xmame

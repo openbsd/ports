@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2001/04/17 15:29:32 kevlo Exp $
+# $OpenBSD: Makefile,v 1.137 2001/05/05 21:28:10 espie Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -20,12 +20,12 @@
      SUBDIR += clog
      SUBDIR += courtney
      SUBDIR += curl
-     SUBDIR += curl:kerberos
+     SUBDIR += curl,kerberos
 #    SUBDIR += cvsup
      SUBDIR += cvsup-bin
-     SUBDIR += cvsup-bin:no_x11
+     SUBDIR += cvsup-bin,no_x11
      SUBDIR += cvsup-bin-old
-     SUBDIR += cvsup-bin-old:no_x11
+     SUBDIR += cvsup-bin-old,no_x11
 #    SUBDIR += cvsup-mirror
      SUBDIR += djbdns
      SUBDIR += dxpc
@@ -70,11 +70,11 @@
      SUBDIR += netpipes
      SUBDIR += ngrep
      SUBDIR += nmap
-     SUBDIR += nmap:no_x11
+     SUBDIR += nmap,no_x11
      SUBDIR += ns
      SUBDIR += nsping
      SUBDIR += nslint
-     SUBDIR += nslint:static
+     SUBDIR += nslint,static
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += p5-Net-DNS
@@ -89,19 +89,19 @@
      SUBDIR += pcapmerge
      SUBDIR += pchar
      SUBDIR += pop3gwd
-     SUBDIR += popa3d:
-     SUBDIR += popa3d:apop
+     SUBDIR += popa3d,
+     SUBDIR += popa3d,apop
      SUBDIR += proxy-suite
      SUBDIR += pptp
      SUBDIR += publicfile
-     SUBDIR += publicfile:compat
+     SUBDIR += publicfile,compat
      SUBDIR += queso
      SUBDIR += quirc
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
      SUBDIR += roxirc
      SUBDIR += rrdtool
-     SUBDIR += rrdtool:tcl
+     SUBDIR += rrdtool,tcl
      SUBDIR += rsync
      SUBDIR += samba
      SUBDIR += sharity-light
