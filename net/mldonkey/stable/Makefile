@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/08/03 18:24:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT='e-donkey client'
 CATEGORIES=net
@@ -23,7 +23,7 @@ DISTFILES=mldonkey-2.5-4.tar.gz
 WRKDIST=${WRKDIR}/mldonkey-2.5-4
 
 USE_GMAKE=Yes
-MODULES=ocaml
+MODULES=lang/ocaml
 BUILD_DEPENDS=::x11/lablgtk
 LIB_DEPENDS=gdk.1,gtk.1::x11/gtk+
 FAKE_FLAGS=prefix=${DESTDIR}${PREFIX} MODOCAML_NATIVE=${MODOCAML_NATIVE}

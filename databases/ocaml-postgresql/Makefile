@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/07/26 10:23:07 peter Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT=	"Objective Caml bindings for PostgreSQL"
 CATEGORIES=	databases
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-MODULES=	ocaml
+MODULES=	lang/ocaml
 NO_REGRESS= 	Yes
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
 USE_GMAKE=	Yes

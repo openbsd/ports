@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/07/11 12:18:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
@@ -36,7 +36,7 @@ FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
 
 USE_GMAKE=		Yes
 
-MODULES=		ocaml
+MODULES=		lang/ocaml
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		-prefix ${PREFIX} \

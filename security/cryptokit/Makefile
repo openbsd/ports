@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/07/22 20:11:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT=	"cryptographic framework for the Objective-ML language"
 CATEGORIES=	security
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MODULES=	ocaml
+MODULES=	lang/ocaml
 
 OCAML_LIBDIR=	${PREFIX}/lib/ocaml
 DOC_DIR=	${PREFIX}/share/doc/cryptokit

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/27 22:13:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.3 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT=	"multi-platform file synchronization tool"
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${HOMEPAGE}/download/stable/${DISTNAME}/
 DISTFILES=	src.tar.gz
 DIST_SUBDIR=	${DISTNAME}
 
-MODULES=	ocaml
+MODULES=	lang/ocaml
 
 USE_GMAKE=	Yes
 

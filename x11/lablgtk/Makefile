@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/02/13 11:37:44 sturm Exp $
+# $OpenBSD: Makefile,v 1.5 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT=	"OCaml interface to GTK+"
 
@@ -24,7 +24,7 @@ FAKE_FLAGS=	BINDIR=${WRKINST}${PREFIX}/bin \
 		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk
 
 USE_GMAKE=	Yes
-MODULES=	ocaml
+MODULES=	lang/ocaml
 
 CONFIGURE_ARGS=	USE_CC=1 ${MODOCAML_NATIVE:S/Yes/USE_DOTOPT=1/:S/No//}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/22 20:57:25 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/08/10 20:41:47 xsa Exp $
 
 # until tested on others, even though bytecode is produced
 ONLY_FOR_ARCHS=	i386 amd64 macppc
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	ocaml
+MODULES=	lang/ocaml
 WRKDIST=	${WRKDIR}/cil
 
 CONFIGURE_STYLE= autoconf

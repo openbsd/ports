@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/07/05 21:48:52 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/10 20:41:47 xsa Exp $
 
 COMMENT=	"image manipulation functions for Objective Caml"
 CATEGORIES=	graphics
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MODULES=	ocaml
+MODULES=	lang/ocaml
 
 NO_REGRESS=	Yes 	# exists but needs manual run
 CONFIGURE_STYLE= gnu
