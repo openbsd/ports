@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2001/02/28 20:35:16 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/29 17:23:46 avsm Exp $
+
+COMMENT=	"emacs interface to PGP and GnuPG"
 
 DISTNAME=	mailcrypt-3.5.5
 CATEGORIES=     mail
-NEED_VERSION=	1.356
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= mailcrypt
 
 HOMEPAGE=	http://mailcrypt.sourceforge.net/
-
 MAINTAINER=	Shell Hung <i@shellhung.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
