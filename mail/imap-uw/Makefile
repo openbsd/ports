@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2000/03/05 23:00:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/07 08:18:30 jakob Exp $
 
-DISTNAME=	imap-4.7a
-PKGNAME=	imap-uw-4.7a
+DISTNAME=	imap-4.7b
+PKGNAME=	imap-uw-4.7b
 CATEGORIES=	mail
 
 MAINTAINER=     jakob@openbsd.org
