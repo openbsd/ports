@@ -1,0 +1,15 @@
+--- mp3cddbtag.orig	Sat Mar 10 17:12:38 2001
++++ mp3cddbtag	Wed May 30 19:45:01 2001
+@@ -50,10 +50,10 @@
+ 
+     if [ "`echo $genre | cut -b1`" = '%' ]; then
+ 	mp3info -y "$year" -g "`echo $genre | cut -b2-`" -a "$artist" -l "$album" -t "$title" \
+-	        -n 0 -c "$comment" "$file" 
++	        -c "$comment" "$file" 
+     else
+ 	mp3info -y "$year" -g "$genre" -a "$artist" -l "$album" -t "$title" -c "$comment"   \
+-	        -n 0 "$file" | grep -v 'G : '
++	        "$file" | grep -v 'G : '
+     fi
+ 
+     if [ $i -le 9 ]; then 
