@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2003/02/03 13:36:24 jakob Exp $
+# $OpenBSD: Makefile,v 1.41 2003/02/03 13:37:46 jakob Exp $
 
 COMMENT=	ISC BIND 9 libraries
 COMMENT-server=	ISC BIND 9 server
@@ -27,6 +27,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=	-fno-stack-protector
+.endif
+
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-libtool ${CONFIGURE_SHARED} \
@@ -47,7 +51,7 @@ FLAVORS=		static threads
 FLAVOR?=
 
 .if ${SUBPACKAGE} == "-server" && ${FLAVOR} != "static"
-RUN_DEPENDS=		:bind-lib-*:net/bind9
+RUN_DEPENDS=		:bind-lib-${VERSION}:net/bind9
 .endif
 
 .if ${FLAVOR:L:Mstatic}
