@@ -1,0 +1,19 @@
+*** memory/selector.c.orig	Thu Jan  2 01:19:12 1997
+--- memory/selector.c	Thu Jan  2 01:40:25 1997
+***************
+*** 14,18 ****
+--- 14,27 ----
+  
+  
++ #ifdef __FreeBSD__
++ #include <osreldate.h>
++ #if __FreeBSD_version < 220000
++ #define FIRST_LDT_ENTRY_TO_ALLOC  17
++ #else
+  #define FIRST_LDT_ENTRY_TO_ALLOC  17
++ #endif
++ #else
++ #define FIRST_LDT_ENTRY_TO_ALLOC  6
++ #endif
+  
+  

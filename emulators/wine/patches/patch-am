@@ -1,0 +1,36 @@
+*** debugger/stabs.c~	Sun Dec 22 21:42:50 1996
+--- debugger/stabs.c	Mon Dec 23 01:29:26 1996
+***************
+*** 5,8 ****
+--- 5,9 ----
+   */
+  
++ #include <sys/types.h>
+  #include <sys/mman.h>
+  #include <fcntl.h>
+*** windows/dialog.c~	Mon Jan 20 23:59:13 1997
+--- windows/dialog.c	Mon Jan 20 23:59:42 1997
+***************
+*** 10,13 ****
+--- 10,16 ----
+  #include <stdio.h>
+  #include <string.h>
++ #if defined(__FreeBSD__) || defined(__OpenBSD__)
++ #include <sys/errno.h>
++ #endif
+  #include "windows.h"
+  #include "dialog.h"
+*** multimedia/midi.c~	Mon May 26 14:13:17 1997
+--- multimedia/midi.c	Mon May 26 14:11:25 1997
+***************
+*** 9,13 ****
+--- 9,17 ----
+  #include <unistd.h>
+  #include <fcntl.h>
++ #if defined(__FreeBSD__) || defined(__OpenBSD__)
++ #include <string.h>
++ #include <sys/errno.h>
++ #endif
+  #include <sys/ioctl.h>
+  #include "windows.h"
+  #include "ldt.h"
