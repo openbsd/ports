@@ -1,18 +1,13 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2002/04/26 03:35:34 pvalchev Exp $
+# $OpenBSD: INSTALL,v 1.7 2004/01/25 19:27:26 brad Exp $
 #
 # Pre/post-installation setup of mrtg
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/mrtg.cfg
-SAMPLE_CONFIG_FILE=$PREFIX/share/examples/mrtg/mrtg.cfg.sample
+SAMPLE_CONFIG_FILE=$PREFIX/share/examples/mrtg/mrtg.cfg
 
-# Function: tell the user what s/he needs to do to use the port just installed
-#
 do_notice()
 {
     echo
@@ -25,8 +20,6 @@ do_notice()
     echo
 }
 
-# Function: install the system mrtg.cfg from the sample
-#
 do_install()
 {
     install -o root -g wheel -m 644 $SAMPLE_CONFIG_FILE $CONFIG_FILE
@@ -40,15 +33,11 @@ do_install()
 
 }
 
-# verify proper execution
-#
 if [ $# -ne 2 ]; then
     echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
     exit 1
 fi
 
-# Verify/process the command
-#
 case $2 in
     PRE-INSTALL)
 	: nothing to pre-install for this port
