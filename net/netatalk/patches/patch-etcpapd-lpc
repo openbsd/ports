@@ -1,5 +1,6 @@
+$OpenBSD: patch-etcpapd-lpc,v 1.2 2000/06/12 17:27:33 espie Exp $
 --- etc/papd/lp.c.orig	Sun Aug 17 09:20:25 1997
-+++ etc/papd/lp.c	Wed Nov 24 12:43:33 1999
++++ etc/papd/lp.c	Fri May 19 11:09:43 2000
 @@ -44,6 +44,8 @@
  #include <sys/time.h>
  #include <sys/socket.h>
@@ -81,7 +82,7 @@
  lp_job( job )
      char	*job;
  {
-@@ -164,8 +180,10 @@
+@@ -164,12 +180,14 @@
  	}
      }
      *q = '\0';
@@ -92,7 +93,44 @@
  lp_init( out )
      struct papfile	*out;
  {
-@@ -250,7 +268,7 @@
+-    int		fd, n, len;
++    int		fd, n, len, lfd;
+     char	*cp, buf[ BUFSIZ ];
+     struct stat	st;
+ #ifdef ABS_PRINT
+@@ -209,12 +227,27 @@
+     lp.lp_letter = 'A';
+ 
+     if ( printer->p_flags & P_SPOOLED ) {
+-	/* check if queuing is enabled: mode & 010 on lock file */
++	/* check if queuing is enabled: mode & 010 on lock file.
++	   if lock file doesn't exist create it and close it.
++	   So far I can't see papd actually using the lock file.
++	   it seems to pass this on to the default host print system.
++		ianm@cit.nepean.uws.edu.au */
++
+ 	if ( stat( printer->p_lock, &st ) < 0 ) {
+-	    syslog( LOG_ERR, "lp_init: %s: %m", printer->p_lock );
+-	    spoolerror( out, NULL );
+-	    return( -1 );
++	    if ( lfd = open( printer->p_lock, O_CREAT, 0644) < 0 ) {
++	   	syslog( LOG_ERR, "lp_init: %s: %m", printer->p_lock );
++	    	spoolerror( out, NULL );
++	    	return( -1 );
++		}
++		close(lfd);
+ 	}
++	
++	if ( stat( printer->p_lock, &st ) < 0 ) {
++		syslog( LOG_ERR, "lp_init: %s: %m", printer->p_lock );
++		spoolerror ( out, NULL );
++		return ( -1 );
++	}
++
+ 	if ( st.st_mode & 010 ) {
+ 	    syslog( LOG_INFO, "lp_init: queuing is disabled" );
+ 	    spoolerror( out, "Queuing is disabled." );
+@@ -250,7 +283,7 @@
  	lp.lp_seq = n;
  
  	n = ( n + 1 ) % 1000;
@@ -101,7 +139,7 @@
  	lseek( fd, 0L, 0 );
  	write( fd, buf, strlen( buf ));
  	close( fd );
-@@ -263,6 +281,7 @@
+@@ -263,6 +296,7 @@
      return( 0 );
  }
  
@@ -109,7 +147,7 @@
  lp_open( out )
      struct papfile	*out;
  {
-@@ -285,7 +304,7 @@
+@@ -285,7 +319,7 @@
  	    return( -1 );
  	}
      } else {
@@ -118,7 +156,7 @@
  
  	if (( fd = open( name, O_WRONLY|O_CREAT|O_EXCL, 0660 )) < 0 ) {
  	    syslog( LOG_ERR, "lp_open %s: %m", name );
-@@ -303,17 +322,19 @@
+@@ -303,17 +337,19 @@
      return( 0 );
  }
  
@@ -140,7 +178,7 @@
  lp_write( buf, len )
      char	*buf;
      int		len;
-@@ -329,13 +350,14 @@
+@@ -329,13 +365,14 @@
      return( 0 );
  }
  
@@ -156,7 +194,7 @@
      }
  
      if ( lp.lp_flags & LP_OPEN ) {
-@@ -343,13 +365,13 @@
+@@ -343,13 +380,13 @@
      }
  
      for ( letter = 'A'; letter < lp.lp_letter; letter++ ) {
@@ -172,7 +210,7 @@
  }
  
  /*
-@@ -358,6 +380,7 @@
+@@ -358,6 +395,7 @@
   *
   * XXX piped?
   */
@@ -180,7 +218,7 @@
  lp_print()
  {
      char		buf[ MAXPATHLEN ];
-@@ -368,19 +391,19 @@
+@@ -368,19 +406,19 @@
      FILE		*cfile;
  
      if (( lp.lp_flags & LP_INIT ) == 0 || lp.lp_letter == 'A' ) {
@@ -204,7 +242,7 @@
  	}
  	fprintf( cfile, "H%s\n", hostname );	/* XXX lp_host? */
  
-@@ -418,58 +441,62 @@
+@@ -418,60 +456,63 @@
  	}
  	fclose( cfile );
  
@@ -272,12 +310,14 @@
 +    memset( &saun, 0,sizeof( struct sockaddr_un ));
      saun.sun_family = AF_UNIX;
 -    strcpy( saun.sun_path, _PATH_DEVPRINTER );
-+	len = strlen( saun.sun_path );
-+    (void)strlcpy( saun.sun_path, _PATH_DEVPRINTER, len );
++    (void)strlcpy( saun.sun_path, _PATH_DEVPRINTER, sizeof(saun.sun_path) );
      if ( connect( s, (struct sockaddr *)&saun,
- 	    strlen( saun.sun_path ) + 2 ) < 0 ) {
+-	    strlen( saun.sun_path ) + 2 ) < 0 ) {
++	    (strlen( saun.sun_path ) + 2)  ) < 0 ) {
  	syslog( LOG_ERR, "lp_conn_unix connect %s: %m", saun.sun_path );
-@@ -480,11 +507,13 @@
+ 	close( s );
+ 	return( -1 );
+@@ -480,11 +521,13 @@
      return( s );
  }
  
@@ -291,7 +331,7 @@
  lp_conn_inet()
  {
      int			privfd, port = IPPORT_RESERVED - 1;
-@@ -513,10 +542,10 @@
+@@ -513,10 +556,10 @@
  	return( -1 );
      }
  
@@ -304,7 +344,7 @@
      sin.sin_port = sp->s_port;
  
      if ( connect( privfd, (struct sockaddr *)&sin,
-@@ -529,6 +558,7 @@
+@@ -529,6 +572,7 @@
      return( privfd );
  }
  
@@ -312,7 +352,7 @@
  lp_rmjob( job )
      int		job;
  {
-@@ -544,7 +574,7 @@
+@@ -544,7 +588,7 @@
  	return( -1 );
      }
  
@@ -321,7 +361,7 @@
      n = strlen( buf );
      if ( write( s, buf, n ) != n ) {
  	syslog( LOG_ERR, "lp_rmjob write: %m" );
-@@ -569,6 +599,7 @@
+@@ -569,6 +613,7 @@
  char	*tag_size = "size: ";
  char	*tag_status = "status: ";
  
@@ -329,7 +369,7 @@
  lp_queue( out )
      struct papfile	*out;
  {
-@@ -581,7 +612,7 @@
+@@ -581,7 +626,7 @@
  	return( -1 );
      }
  
