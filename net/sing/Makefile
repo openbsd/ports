@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/15 17:42:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/12 15:38:58 danh Exp $
 
 COMMENT=	"send ICMP nasty garbage"
 
 DISTNAME=	SING-1.1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	net security
-NEED_VERSION=	1.409
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz
+
+HOMEPAGE=	http://sourceforge.net/projects/sing
 
 LIB_DEPENDS=	net::net/libnet
 
