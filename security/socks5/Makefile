@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/02/17 05:25:13 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/02/25 21:28:48 turan Exp $
 
 DISTNAME=	socks5-v1.0r10
 PKGNAME=	socks5-1.0.10
@@ -7,6 +7,12 @@ CATEGORIES=	security
 NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
+
+LICENSE_TYPE=		COMM
+PERMIT_PACKAGE_CDROM=	commercial
+PERMIT_PACKAGE_FTP=	commercial
+PERMIT_DISTFILES_CDROM=	commercial
+PERMIT_DISTFILES_FTP=	commercial
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
