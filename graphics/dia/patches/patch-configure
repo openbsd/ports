@@ -1,13 +1,12 @@
-$OpenBSD: patch-configure,v 1.7 2004/11/07 16:16:31 naddy Exp $
---- configure.orig	Sun Nov  7 16:26:41 2004
-+++ configure	Sun Nov  7 16:27:51 2004
-@@ -20120,7 +20120,8 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
--#include <freetype/freetype.h>
-+#include <ft2build.h>
-+#include FT_FREETYPE_H
- #if (FREETYPE_MAJOR*1000+FREETYPE_MINOR)*1000+FREETYPE_PATCH < 2000009
- #error Freetype version too low.
- #endif
+$OpenBSD: patch-configure,v 1.8 2004/12/22 06:01:23 marcm Exp $
+--- configure.orig	Tue Nov  9 20:12:16 2004
++++ configure	Tue Nov  9 20:12:46 2004
+@@ -7998,7 +7998,7 @@ nto-qnx*)
+ openbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+-  need_version=yes
++  need_version=no
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2003/12/08 01:09:15 margarida Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2004/12/22 06:01:23 marcm Exp $
 lib/dia/libbondgraph_objects.so
+lib/dia/libcairo_filter.so
 lib/dia/libcgm_filter.so
 lib/dia/libchronogram_objects.so
 lib/dia/libcustom_objects.so
@@ -10,6 +11,9 @@ lib/dia/libflowchart_objects.so
 lib/dia/libfs_objects.so
 lib/dia/libgrafcet_objects.so
 lib/dia/libhpgl_filter.so
+lib/dia/libistar_objects.so
+lib/dia/libjackson_objects.so
+lib/dia/libkaos_objects.so
 lib/dia/libmetapost_filter.so
 lib/dia/libmisc_objects.so
 lib/dia/libnetwork_objects.so

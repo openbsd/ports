@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2004/11/30 01:06:33 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2004/12/22 06:01:23 marcm Exp $
 
 COMMENT=	"technical diagrams drawing tool"
 
-DISTNAME=	dia-0.92.2
+DISTNAME=	dia-0.94
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.gnome.org/projects/dia/
 
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.92/}
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/dia/0.94/}
 
 MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
@@ -26,17 +26,23 @@ BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
 LIB_DEPENDS=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
 		art_lgpl_2.5::graphics/libart \
 		popt::devel/popt \
-		xslt.1::textproc/libxslt \
-		xml2.6::textproc/libxml \
-		unicode.0::devel/libunicode
+		xslt.1::textproc/libxslt
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--disable-static --disable-gnome
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FLAVORS=		gnome
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgnome}
+CONFIGURE_ARGS+=	--enable-gnome
+LIB_DEPENDS+=		gnomeui-2::x11/gnome/libgnomeui
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+.endif
 
 .include <bsd.port.mk>
