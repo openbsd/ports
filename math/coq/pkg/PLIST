@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/11/04 21:10:44 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/12/18 09:40:07 sturm Exp $
+%%native%%
 bin/coq-interface
 bin/coq-tex
 bin/coq_makefile

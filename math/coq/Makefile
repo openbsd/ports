@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/11/04 21:10:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/12/18 09:40:07 sturm Exp $
 
 COMMENT=		"proof assistant based on a typed lambda calculus"
 
@@ -31,19 +31,16 @@ EXTRACT_ONLY=		${DISTNAME}.tar.gz \
 			doc-html.tar.gz \
 			library.tar.gz  \
 
-BUILD_DEPENDS=		::lang/ocaml
-
 FAKE_FLAGS=		COQINSTALLPREFIX=${WRKINST}
 
 USE_GMAKE=		Yes
 
+MODULES=		ocaml
+
 CONFIGURE_STYLE=	simple
-## ## add -opt option if there is ocamlc.opt.
-## CONFIGURE_ARGS=		-prefix ${PREFIX} \
-## 			-emacslib ${PREFIX}/share/emacs/site-lisp ## -opt
-## -byteonly for architectures without Ocaml native-code compiler.
 CONFIGURE_ARGS=		-prefix ${PREFIX} \
-			-emacslib ${PREFIX}/share/emacs/site-lisp -byteonly
+			-emacslib ${PREFIX}/share/emacs/site-lisp \
+			${MODOCAML_NATIVE:S/Yes/-opt/:S/No/-byteonly/}
 
 ALL_TARGET=		world
 REGRESS_TARGET=		check

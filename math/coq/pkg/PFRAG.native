@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.native,v 1.1 2002/12/18 09:41:07 sturm Exp $
+bin/coqtop.opt
