@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2000/04/11 06:09:57 turan Exp $
+# $OpenBSD: Makefile,v 1.21 2000/04/22 12:12:07 turan Exp $
 
 BROKEN=		sources missing
 
@@ -36,6 +36,17 @@ NO_PACKAGE=		interactive port
 MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter or A4
 GNU_CONFIGURE=	Yes
 
+FLAVORS=	a4 letter letterdj
+
+.if defined(FLAVOR)
+.if ${FLAVOR} == "a4"
+PAPERSIZE=	A4
+.elif ${FLAVOR} == "letterdj"
+PAPERSIZE=	Letterdj
+.elif ${FLAVOR} == "letter"
+PAPERSIZE=	Letter
+.endif
+.endif
 
 PAPERSIZE?=
 STRIP=

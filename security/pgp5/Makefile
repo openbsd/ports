@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/04/18 09:48:01 turan Exp $
+# $OpenBSD: Makefile,v 1.15 2000/04/22 12:12:07 turan Exp $
 
 DISTNAME=	pgp50i-unix-src
 PKGNAME=	pgp-5.0i
@@ -26,6 +26,16 @@ PERMIT_PACKAGE_CDROM=	"no commercial use"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no commercial use"
 PERMIT_DISTFILES_FTP=	Yes
+
+FLAVORS=	usa intl
+
+.if defined(FLAVOR)
+.if ${FLAVOR} == "usa"
+USA_RESIDENT=	yes
+.elif ${FLAVOR} == "intl"
+USA_RESIDENT=	no
+.endif
+.endif
 
 USE_AUTOCONF=	Yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"

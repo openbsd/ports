@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/04/18 09:48:00 turan Exp $
+# $OpenBSD: Makefile,v 1.20 2000/04/22 12:12:07 turan Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -19,6 +19,16 @@ IS_INTERACTIVE=	Yes
 WRKDIST=	${WRKDIR}/src
 
 FAKE=		Yes
+
+FLAVORS=	usa intl
+
+.if defined(FLAVOR)
+.if ${FLAVOR} == "usa"
+USA_RESIDENT=	yes
+.elif ${FLAVOR} == "intl"
+USA_RESIDENT=	no
+.endif
+.endif
 
 # common C flags
 CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \

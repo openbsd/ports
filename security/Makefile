@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/04/21 18:45:12 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2000/04/22 12:12:07 turan Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -34,8 +34,10 @@
 #    SUBDIR += p5-MD5
 #    SUBDIR += p5-PGP
      SUBDIR += parse
-     SUBDIR += pgp
-     SUBDIR += pgp5
+     SUBDIR += pgp:usa
+     SUBDIR += pgp:intl
+     SUBDIR += pgp5:usa
+     SUBDIR += pgp5:intl
      SUBDIR += pgplib
 #    SUBDIR += pidentd
      SUBDIR += portscanner
