@@ -1,0 +1,20 @@
+$OpenBSD: patch-wmmultipop3_wmmultipop3_c,v 1.3 2003/03/31 02:23:45 margarida Exp $
+--- wmmultipop3/wmmultipop3.c.orig	Sun Dec  1 16:58:40 2002
++++ wmmultipop3/wmmultipop3.c	Wed Mar 26 13:46:58 2003
+@@ -254,14 +254,14 @@ void wmCheckMail_routine(int argc, char 
+ 	if (conf.c[tempPopCnt]->popserver[0] == '/') {
+ 	  snprintf( command, 1024, "%s%s%s", "exit `grep \"^From \" ",
+ 	            conf.c[tempPopCnt]->popserver, " | wc -l`" );
+-	  num_msgs = WEXITSTATUS(system(command));
++	  num_msgs = system(command);
+ 	  if (num_msgs < 0) {
+ 	    num_msgs = 0;
+ 	  }
+ 	  conf.c[tempPopCnt]->nMsgs = num_msgs;
+ 	  snprintf( command, 1024, "%s%s%s", "exit `grep \"^Status: R\" ",
+ 	            conf.c[tempPopCnt]->popserver, " | wc -l`" );
+-	  read_msgs = WEXITSTATUS(system(command));
++	  read_msgs = system(command);
+ 	  if (read_msgs < 0) { 
+ 	    read_msgs = 0;
+ 	  }
