@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/23 21:51:53 danh Exp $
+@unexec install-info --delete --info-dir=%D/info %D/info/cronolog.info
+info/cronolog.info
+man/man1/cronolog.1m
+man/man1/cronosplit.1m
+sbin/cronolog
+sbin/cronosplit
+@exec install-info --info-dir=%D/info %D/info/cronolog.info
