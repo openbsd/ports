@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/09/30 22:35:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/10/02 23:07:01 naddy Exp $
 
 COMMENT=		"daemontools alike replacement for init"
 
@@ -39,6 +39,9 @@ pre-build:
 
 do-build:
 	cd ${WRKDIST} && package/compile
+
+do-regress:
+	cd ${WRKDIST}/compile && make check
 
 do-install:
 .for pgm in ${SBINPROGRAMS}
