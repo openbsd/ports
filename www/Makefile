@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.82 2002/05/30 20:28:47 nino Exp $
+# $OpenBSD: Makefile,v 1.83 2002/06/14 09:29:46 jsyn Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
-#
 
 #    SUBDIR += Mosaic         # requires Motif
      SUBDIR += amaya          # requires Motif (lesstif works)
@@ -24,10 +23,10 @@
      SUBDIR += gtkhtml
 #    SUBDIR += gwstat
 #    SUBDIR += harvest
+     SUBDIR += hotjava
 #    SUBDIR += http-analyze
      SUBDIR += http_load
      SUBDIR += http_ping
-     SUBDIR += hotjava
      SUBDIR += jakarta-tomcat
      SUBDIR += jesred
      SUBDIR += jserv
@@ -62,8 +61,8 @@
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Embperl
-     SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Format
+     SUBDIR += p5-HTML-FromText
      SUBDIR += p5-HTML-Mason
      SUBDIR += p5-HTML-Parser
 #    SUBDIR += p5-HTML-QuickCheck
@@ -88,6 +87,7 @@
      SUBDIR += php3,postgresql,imap
      SUBDIR += php4
      SUBDIR += php4,gd
+     SUBDIR += php4,gd,pdflib
      SUBDIR += php4,gettext
      SUBDIR += php4,gettext,imap,mcrypt,mhash,mysql,no_x11
      SUBDIR += php4,gettext,imap,mcrypt,mhash,postgresql,no_x11
@@ -100,7 +100,6 @@
      SUBDIR += php4,mysql,imap,ldap,no_x11
      SUBDIR += php4,mysql,imap,no_x11
      SUBDIR += php4,no_x11
-     SUBDIR += php4,gd,pdflib
      SUBDIR += php4,postgresql
      SUBDIR += php4,postgresql,imap
      SUBDIR += php4,postgresql,imap,ldap
