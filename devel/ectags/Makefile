@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/15 15:25:49 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/15 15:54:19 lebel Exp $
 
 COMMENT=		"multilanguage implementation of ctags"
 
 DISTNAME=		ctags-5.0.1
-PKGNAME=		ectags-5.0.1
+PKGNAME=		e${DISTNAME}
 CATEGORIES=		devel
 NEED_VERSION=		1.402
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
