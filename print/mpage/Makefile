@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2002/11/13 17:15:48 naddy Exp $
 
 COMMENT=	"print multiple pages per sheet on PostScript printer"
 
-DISTNAME=	mpage-2.5.2
+DISTNAME=	mpage-2.5.3
 CATEGORIES=	print
 
 MAINTAINER=	Ian McWilliam <i.mcwilliam@uws.edu.au>
@@ -22,11 +22,11 @@ ALL_TARGET=	default
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} $${DEFS}' PREFIX='${PREFIX}'
 
 .if   ${FLAVOR:L} == "letter"
-MAKE_FLAGS+=	PAGESIZE=PAGE_LETTER
+MAKE_FLAGS+=	PAGESIZE=Letter
 .elif ${FLAVOR:L} == "legal"
-MAKE_FLAGS+=	PAGESIZE=PAGE_LEGAL
+MAKE_FLAGS+=	PAGESIZE=Legal
 .elif ${FLAVOR:L} == "a4"
-MAKE_FLAGS+=	PAGESIZE=PAGE_A4
+MAKE_FLAGS+=	PAGESIZE=A4
 .else
 ERRORS+=	"Fatal: You must set exactly ONE flavor: ${FLAVORS}"
 .endif
