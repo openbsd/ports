@@ -37,7 +37,7 @@ Flavors:
 
   debug: enables debugging information
 
-  mad: enables mad, requires audio/mad
+  mad: enables mad, requires audio/libmad
 
   no_x11: disables gui and most video output.
 
