@@ -1,0 +1,12 @@
+$OpenBSD: patch-ogg123_Makefile_in,v 1.5 2003/09/30 00:21:42 naddy Exp $
+--- ogg123/Makefile.in.orig	2003-09-30 02:13:45.000000000 +0200
++++ ogg123/Makefile.in	2003-09-30 02:14:39.000000000 +0200
+@@ -122,7 +122,7 @@ ogg123sources = audio.c buffer.c callbac
+ 
+ @BUILD_OGG123_TRUE@datadir = @datadir@
+ @BUILD_OGG123_TRUE@localedir = $(datadir)/locale
+-@BUILD_OGG123_TRUE@DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
++@BUILD_OGG123_TRUE@DEFS = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ 
+ @BUILD_OGG123_TRUE@bin_PROGRAMS = ogg123
+ @BUILD_OGG123_TRUE@docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)

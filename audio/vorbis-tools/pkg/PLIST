@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/07/20 00:52:45 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/30 00:21:42 naddy Exp $
 bin/ogg123
 bin/oggdec
 bin/oggenc
@@ -17,3 +17,5 @@ share/locale/fr/LC_MESSAGES/vorbis-tools.mo
 share/locale/nl/LC_MESSAGES/vorbis-tools.mo
 share/locale/sv/LC_MESSAGES/vorbis-tools.mo
 @dirrm share/examples/vorbis-tools
+@cwd ${SYSCONFDIR}
+@extra ogg123rc
