@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2004/09/15 00:06:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.49 2004/09/22 00:38:18 jolan Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.3
-REVISION=	13
+REVISION=	28
 VERSION=	6.3.${REVISION}
 PKGNAME=	vim-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
@@ -20,6 +20,7 @@ DISTFILES=	${DISTNAME}.tar.bz2 \
 DIST_SUBDIR=	vim6
 
 HOMEPAGE=	http://www.vim.org/
+MAINTAINER=	Chris Kuethe <chris.kuethe@gmail.com>
 
 PATCHFILES=	#
 _patches!=	jot -w%03d - 1 ${REVISION} 1
@@ -60,6 +61,8 @@ FLAVORS=	huge gtk gtk2 athena motif no_x11 perl python ruby
 FLAVOR?=	gtk
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte
 
 .if ${FLAVOR:L:Mhuge}
