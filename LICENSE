@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.42 1999/11/14 22:45:40 jakob Exp $
+$OpenBSD: LICENSE,v 1.43 1999/12/05 18:35:07 jakob Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -304,7 +304,7 @@ N	graphics/netpbm			pcxtoppm.tar.gz			COPY
 N	graphics/netpbm			rletopnm.tar.gz			COPY
 N	graphics/netpbm			pnmtopng-2.37.3.tar.gz		COPY
 Y	graphics/png			libpng-1.0.3.tar.gz		BSD
-N	graphics/tgif			tgif-4.1.20.tar.gz		NOFEE
+N	graphics/tgif			tgif-4.1.25.tar.gz		NOFEE
 Y	graphics/tiff			tiff-v3.5.2.tar.gz		BSD
 Y	graphics/tiff34			tiff-v3.4beta037.tar.gz		BSD
 N	graphics/xanim			xanim/xanim2801.tar.gz		NOFEE
@@ -401,7 +401,7 @@ Y	mail/pgpsendmail		PGPsendmail-v1.4.5.tar.gz	GPL
 Y	mail/pine			pine4.20.tar.gz			BSD
 Y	mail/popclient			popclient-3.0b6.tar.gz		COPY
 Y	mail/poppassd			pwserve-4			NONE
-Y	mail/postfix			postfix-19990906-pl05.tar.gz	COPY
+Y	mail/postfix			postfix-19990906-pl08.tar.gz	COPY
 Y	mail/procmail			procmail-3.13.1.tar.gz		GPL
 Y	mail/vrfy			vrfy_990522.tar.Z		BSD
 Y	mail/xfaces			xfaces-3.3.tar.Z		BSD
@@ -465,7 +465,7 @@ Y	net/curl			curl-6.2.tar.gz			COPY
 Y	net/dxpc			dxpc-3.7.0.tar.gz		BSD
 Y	net/epic4			epic4pre2.004-19991021.tar.gz	COPY
 Y	net/epic4			epic4pre2-help.tar.gz		COPY
-Y	net/ethereal			ethereal-0.7.5.tar.gz		GPL
+Y	net/ethereal			ethereal-0.7.9.tar.gz		GPL
 Y	net/firewalk			firewalk-0.8.tar.gz		BSD
 N	net/gated			gated-3-5-11.tar.gz		LIC
 Y	net/gicq			gicq-0.33.tar.gz		GPL
@@ -499,6 +499,7 @@ Y	net/samba			samba-2.0.5a.tar.gz		GPL
 Y	net/sharity-light		Sharity-Light.1.2.tar.gz	GPL
 Y	net/slirp			slirp-1.0c.tar.gz		BSD
 Y	net/sniffit			sniffit.0.3.5.tar.gz		COPY
+Y	net/stunnel			stunnel-3.4a.tar.gz		GPL
 Y	net/tcpreplay			tcpreplay-1.0.1.tar.gz		BSD
 Y	net/tcpshow			tcpshow.1			COPY
 Y	net/tcpshow			tcpshow.c			COPY
