@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/04/29 05:24:09 angelos Exp $
+# $OpenBSD: Makefile,v 1.8 1998/05/07 07:36:06 form Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -10,6 +10,7 @@
 #    SUBDIR += fwtk
 #    SUBDIR += john
      SUBDIR += libident
+     SUBDIR += nbaudit
 #    SUBDIR += p5-Authen-Radius
 #    SUBDIR += p5-Crypt-DES
 #    SUBDIR += p5-Crypt-IDEA
