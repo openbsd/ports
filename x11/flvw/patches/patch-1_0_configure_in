@@ -1,0 +1,12 @@
+$OpenBSD: patch-1_0_configure_in,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+--- 1.0/configure.in.orig	Sat Jan 22 14:18:28 2000
++++ 1.0/configure.in	Wed Mar 21 17:18:12 2001
+@@ -18,7 +18,7 @@ AC_PATH_PROG(AR,ar)
+ AC_PATH_PROG(RM,rm)
+ 
+ dnl Check for libraries...
+-LDFLAGS="$CXXFLAGS"
++#LDFLAGS="$CXXFLAGS"
+ AC_SUBST(LDFLAGS)
+ 
+ AC_PATH_X

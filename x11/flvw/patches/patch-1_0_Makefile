@@ -1,0 +1,29 @@
+$OpenBSD: patch-1_0_Makefile,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+--- 1.0/Makefile.orig	Sat Jan 22 14:16:06 2000
++++ 1.0/Makefile	Sat Feb 10 15:52:45 2001
+@@ -26,7 +26,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-DIRS	=	src test
++DIRS	=	src
+ 
+ all: makeinclude
+ 	@for dir in $(DIRS); do\
+@@ -36,16 +36,6 @@ all: makeinclude
+ 		fi;\
+ 		(cd $$dir;$(MAKE));\
+ 	done
+-	@echo ""
+-	@echo ""
+-	@echo "libflvw.a has been built successfully."
+-	@echo "  For further information see the example"
+-	@echo "  programs in the test directory and the"
+-	@echo "  documentation in documentation/html."
+-	@echo ""
+-	@echo "Enjoy :)"
+-	@echo ""
+-	@echo ""
+ 
+ install: makeinclude
+ 	@for dir in $(DIRS); do\

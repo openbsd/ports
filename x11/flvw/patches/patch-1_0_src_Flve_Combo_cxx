@@ -1,0 +1,20 @@
+$OpenBSD: patch-1_0_src_Flve_Combo_cxx,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+--- 1.0/src/Flve_Combo.cxx.orig	Thu Jan 27 13:32:00 2000
++++ 1.0/src/Flve_Combo.cxx	Sat Feb 10 19:45:26 2001
+@@ -590,11 +590,12 @@ void Flv_Combo_Items::sort(void)								
+ void Flv_Combo_Items::clear(void)									//	Clear list
+ {
+ 	int t;
+-	for (t=0;	t<vcount;	t++ )
+-		if (list[t])
+-			delete list[t];
+-	if (list)
++	if (list) {
++		for (t=0;	t<vcount;	t++ )
++			if (list[t])
++				delete list[t];
+ 		delete []list;
++	}
+ 	list = 0;
+ 	vallocated = 0;
+ 	vcount = 0;

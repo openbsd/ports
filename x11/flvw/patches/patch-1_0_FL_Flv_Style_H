@@ -1,0 +1,11 @@
+$OpenBSD: patch-1_0_FL_Flv_Style_H,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+--- 1.0/FL/Flv_Style.H.orig	Sun Jan 30 13:38:46 2000
++++ 1.0/FL/Flv_Style.H	Sat Feb 10 18:49:06 2001
+@@ -79,6 +79,7 @@ class Flv_Style_List
+ {
+ public:
+ 	Flv_Style_List();
++	~Flv_Style_List();
+ 
+ 	void clear(void);									//	Undefine all styles in list
+   void compact(void);								//	Release any unused style memory

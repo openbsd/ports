@@ -1,0 +1,57 @@
+$OpenBSD: patch-1_0_makeinclude_in,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
+--- 1.0/makeinclude.in.orig	Sat Jan 22 14:18:28 2000
++++ 1.0/makeinclude.in	Wed Mar 21 17:21:25 2001
+@@ -30,27 +30,27 @@ CXX	=	@CXX@
+ RANLIB	=	@RANLIB@
+ RM	=	@RM@ -f
+ SHELL	=	/bin/sh
+-LIBDIR	=       /usr/local/lib
++LIBDIR	=       @prefix@/lib
+ 
+ #
+ # Version options
+ #
+ 
+-ifdef V1
+-DEFVER = 
+-else
+-DEFVER = -DFLTK_2
+-endif
++#ifdef V1
++#DEFVER = 
++#else
++#DEFVER = -DFLTK_2
++#endif
+ 
+ #
+ # Program options...
+ #
+ 
+-ARFLAGS	=	crvs
+-CFLAGS	=	@CFLAGS@ -I.. $(DEFVER)
+-CXXFLAGS =	@CXXFLAGS@ -I.. $(DEFVER) 
+-LIBS	=	-lflvw @LIBS@ -lX11 -lXext -rdynamic -lm -ldl
+-LDFLAGS	=	@LDFLAGS@ -L../lib
++ARFLAGS	=	r
++CFLAGS	=	@CFLAGS@ $(DEFVER)
++CXXFLAGS =	@CXXFLAGS@ $(DEFVER) 
++LIBS	=	-lflvw @LIBS@ -lX11 -lXext -lm
++LDFLAGS	=	@LDFLAGS@
+ 
+ #
+ # Rules...
+@@ -59,12 +59,10 @@ LDFLAGS	=	@LDFLAGS@ -L../lib
+ .SUFFIXES:	.c .cxx .h .o
+ 
+ .c.o:
+-	@echo Compiling $<...
+-	@$(CC) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ .cxx.o:
+-	@echo Compiling $<...
+-	@$(CXX) $(CXXFLAGS) -I. -c $<
++	$(CXX) $(CXXFLAGS) -I.. -c $<
+ 
+ #
+ # End of makeinclude
