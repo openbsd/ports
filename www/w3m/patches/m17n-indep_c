@@ -1,0 +1,20 @@
+$OpenBSD: m17n-indep_c,v 1.1 2001/09/29 11:41:03 naddy Exp $
+--- indep.c.orig	Sat Sep 29 03:02:38 2001
++++ indep.c	Sat Sep 29 03:03:32 2001
+@@ -74,14 +74,14 @@ currentdir()
+ #endif				/* __EMX__ */
+ 
+ char *
+-cleanupName(char *name)
++cleanupName2(char *name, int flag)
+ {
+     char *buf, *p, *q;
+ 
+     buf = allocStr(name, 0);
+     p = buf;
+     q = name;
+-    while (*q != '\0' && *q != '?') {
++    while (*q != '\0' && (*q != '?' || ! flag)) {
+ 	if (strncmp(p, "/../", 4) == 0) {	/* foo/bar/../FOO */
+ 	    if (p - 2 == buf && strncmp(p - 2, "..", 2) == 0) {
+ 		/* ../../       */

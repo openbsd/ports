@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2001/09/22 14:27:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2001/09/29 11:41:03 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k
 
@@ -68,11 +68,12 @@ LIB_DEPENDS+=	Imlib.19::graphics/imlib
 
 .elif ${FLAVOR:L:Mm17n}
 
-PKGNAME=	${DISTNAME}.${V_M17N}
+PKGNAME=	${DISTNAME}.${V_M17N}p1
 PATCHFILES=	${M17N_PATCH}
 HOMEPAGE=	http://www2u.biglobe.ne.jp/~hsaka/w3m/
 CONFIGURE_ARGS+= -suffix="" -charset=UTF-8
 DOCS+=		README.m17n
+PATCH_LIST+=	m17n-*
 
 .else
 
