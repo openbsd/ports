@@ -1,15 +1,22 @@
-# $OpenBSD: Makefile,v 1.45 2001/03/10 19:27:15 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2001/04/13 07:00:44 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
+
+COMMENT=	"PostgreSQL RDBMS"
+COMMENT-clients="PostgreSQL RDBMS clients"
+COMMENT-docs=	"PostgreSQL RDBMS documentation"
 
 VERSION=	7.0.3
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	pgsql-${VERSION}
+PKGNAME-clients=pgsql-clients-${VERSION}
+PKGNAME-docs=	pgsql-docs-${VERSION}
 CATEGORIES=	databases
-NEED_VERSION=	1.356
+NEED_VERSION=	1.384
 
 HOMEPAGE=	http://www.postgresql.org/
 
-MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
+#MAINTAINER=	Pavel Korovin <pvk@openbsd.ru>
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -73,7 +80,7 @@ MULTI_PACKAGES=	-clients -docs
 SUBPACKAGE?=
 
 ## build dependencies
-USE_GMAKE=	Yes
+USE_GMAKE= Yes
 .if ${FLAVOR:L:Mtcl}
 LIB_DEPENDS=	tk83::x11/tk/8.3
 .endif
@@ -152,12 +159,6 @@ post-install:
 	${INSTALL_DATA} ${DOCDIR}/*.ps* ${PREFIX}/share/doc/pgsql
 
 .include <bsd.port.mk>
-
-.if ${SUBPACKAGE} == "-clients"
-PKGNAME:=	pgsql-clients-${VERSION}
-.elif ${SUBPACKAGE} == "-docs"
-PKGNAME:=	pgsql-docs-${VERSION}
-.endif
 
 .if ${FLAVOR:L:Mtcl} && !defined(NO_SHARED_LIBS)
 SED_PLIST+=-e '/%%SHARED-tcl%%/r${PKGDIR}/PFRAG.tcl.shared' -e '//d'

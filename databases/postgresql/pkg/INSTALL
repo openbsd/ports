@@ -1,7 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1 1999/11/11 02:13:43 kevlo Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/04/13 07:00:46 brad Exp $
 #
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
 # Pre/post-installation setup of postgresql
 
 # Function: tell the user what s/he needs to do to use the port just installed
@@ -11,17 +18,11 @@ do_notice()
 	echo
 	echo "+---------------"
 	echo "| The $1 package installation completed."
-	echo "| See ${PREFIX}/share/doc/pgsql/README.OpenBSD for"
+	echo "| See $PREFIX/share/doc/pgsql/README.OpenBSD for"
 	echo "| information on using PostgreSQL package in OpenBSD environment."
 	echo "+---------------"
 	echo
 }
-
-# exit on errors, use a sane path and install prefix
-#
-set -e
-PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/local}
 
 # verify proper execution
 #

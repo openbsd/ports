@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.1 1999/11/11 02:13:42 kevlo Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2001/04/13 07:00:46 brad Exp $
 #
 # postgresql de-installation
 
@@ -14,7 +14,7 @@ echo "+---------------"
 echo "| To completely deinstall the $1 package you need to perform"
 echo "| these steps as root:"
 echo "|"
-echo "|           rm -rf ${PGPREFIX}"
+echo "|           rm -rf $PGPREFIX"
 echo "|           rmuser pgsql"
 echo "|"
 echo "| Do not do this if you plan on re-installing postgresql package"
