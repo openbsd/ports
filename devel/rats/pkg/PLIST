@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/01 09:12:30 camield Exp $
+bin/rats
+lib/rats.xml
+share/doc/rats/README
+@dirrm share/doc/rats
