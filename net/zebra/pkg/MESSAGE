@@ -1,0 +1,5 @@
+Current sample configuration files are in 
+${PREFIX}/share/examples/zebra
+
+You will need to compare, copy and customize these into 
+actual configuration files under ${CONFDIR}
