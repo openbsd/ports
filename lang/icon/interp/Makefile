@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/03 13:13:02 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/07 14:20:13 espie Exp $
 
 COMMENT=	"programming language with generators, X11 and more"
 COMMENT-no_x11=	"programming language with generators"
@@ -84,4 +84,8 @@ do-install:
 	    ${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/libcfunc.so ${PREFIX}/lib; \
 	fi
 
+REGRESS_FLAGS=	HOME=/
+
+# Iconc does not pass quite a few tests currently...
+REGRESS_TARGET=	Test-icont #Test-iconc
 .include <bsd.port.mk>

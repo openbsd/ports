@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/06 01:28:02 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/07 14:20:13 espie Exp $
 
 COMMENT=	"revised^5 report on scheme"
 
@@ -19,6 +19,8 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/r5rs.info ${PREFIX}/info
+
+NO_REGRESS=	Yes
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

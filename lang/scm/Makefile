@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/05/06 01:28:03 lebel Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/07 14:20:13 espie Exp $
 # losely based on the FreeBSD port
 
 COMMENT=	"scheme r5 interpreter"
@@ -83,5 +83,7 @@ do-install:
 .else
 	${INSTALL_DATA} ${WRKSRC}/Xlibscm.info ${PREFIX}/info
 .endif
+
+REGRESS_TARGET=	check
 
 .include <bsd.port.mk>
