@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jun  3 15:26:12 2000
-+++ Makefile	Thu Jun 22 05:26:45 2000
++++ Makefile	Sat Jun 24 22:23:50 2000
 @@ -51,13 +51,13 @@
  LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
  
@@ -82,15 +82,15 @@
 -		gdfontt.o gdfonts.o gdfontmb.o gdfontl.o gdfontg.o \
 -		gdtables.o gdttf.o gdcache.o gdkanji.o wbmp.o gd_wbmp.o
 -	-ranlib libgd.a
-+	libtool $(BSD_INSTALL_DATA) libgd.la $(DESTDIR)$(INSTALL_LIB)
-+	libtool $(BSD_INSTALL_PROGRAM) pngtogd $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) pngtogd2 $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gdtopng $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gd2topng $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gd2copypal $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gdparttopng $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) webpng $(DESTDIR)$(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) bdftogd $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_DATA) libgd.la $(DESTDIR)$(INSTALL_LIB)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) pngtogd $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) pngtogd2 $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) gdtopng $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) gd2topng $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) gd2copypal $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) gdparttopng $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) webpng $(DESTDIR)$(INSTALL_BIN)
++	libtool --mode=install $(BSD_INSTALL_PROGRAM) bdftogd $(DESTDIR)$(INSTALL_BIN)
 +	$(BSD_INSTALL_DATA) gd.h $(DESTDIR)$(INSTALL_INCLUDE)
 +	$(BSD_INSTALL_DATA) gdcache.h $(DESTDIR)$(INSTALL_INCLUDE)
 +	$(BSD_INSTALL_DATA) gd_io.h $(DESTDIR)$(INSTALL_INCLUDE)
@@ -101,43 +101,43 @@
 +	$(BSD_INSTALL_DATA) gdfontt.h $(DESTDIR)$(INSTALL_INCLUDE)
 +
 +gddemo: gddemo.lo libgd.a
-+	libtool $(CC) gddemo.lo -o gddemo $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gddemo.lo -o gddemo $(LIBDIRS) $(LIBS)
 +
 +pngtogd: pngtogd.lo libgd.a
-+	libtool $(CC) pngtogd.lo -o pngtogd $(LIBDIRS) $(LIBS) 
++	libtool --mode=link $(CC) pngtogd.lo -o pngtogd $(LIBDIRS) $(LIBS) 
 +
 +webpng: webpng.lo libgd.a
-+	libtool $(CC) webpng.lo -o webpng $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) webpng.lo -o webpng $(LIBDIRS) $(LIBS)
 +
 +pngtogd2: pngtogd2.lo libgd.a
-+	libtool $(CC) pngtogd2.lo -o pngtogd2 $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) pngtogd2.lo -o pngtogd2 $(LIBDIRS) $(LIBS)
 +
 +gdtopng: gdtopng.lo libgd.a
-+	libtool $(CC) gdtopng.lo -o gdtopng $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gdtopng.lo -o gdtopng $(LIBDIRS) $(LIBS)
 +
 +gd2topng: gd2topng.lo libgd.a
-+	libtool $(CC) gd2topng.lo -o gd2topng $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gd2topng.lo -o gd2topng $(LIBDIRS) $(LIBS)
 +
 +gd2copypal: gd2copypal.lo libgd.a
-+	libtool $(CC) gd2copypal.lo -o gd2copypal $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gd2copypal.lo -o gd2copypal $(LIBDIRS) $(LIBS)
 +
 +gdparttopng: gdparttopng.lo libgd.a
-+	libtool $(CC) gdparttopng.lo -o gdparttopng $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gdparttopng.lo -o gdparttopng $(LIBDIRS) $(LIBS)
 +
 +gdtest: gdtest.lo libgd.a
-+	libtool $(CC) gdtest.lo -o gdtest $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gdtest.lo -o gdtest $(LIBDIRS) $(LIBS)
 +
 +gd2time: gd2time.lo libgd.a
-+	libtool $(CC) gd2time.lo -o gd2time $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gd2time.lo -o gd2time $(LIBDIRS) $(LIBS)
 +
 +gdtestttf: gdtestttf.lo libgd.a
-+	libtool $(CC) gdtestttf.lo -o gdtestttf $(LIBDIRS) $(LIBS)
++	libtool --mode=link $(CC) gdtestttf.lo -o gdtestttf $(LIBDIRS) $(LIBS)
 +
 +libgd.a: gd.lo gd_gd.lo gd_gd2.lo gd_io.lo gd_io_dp.lo gd_io_file.lo gd_ss.lo \
 +	gd_io_ss.lo gd_png.lo gd_jpeg.lo gdxpm.lo gdfontt.lo gdfonts.lo \
 +	gdfontmb.lo gdfontl.lo gdfontg.lo gdtables.lo gdttf.lo gdcache.lo \
 +	gdkanji.lo wbmp.lo gd_wbmp.lo
-+	libtool $(CC) $(CFLAGS) -o libgd.la $(.ALLSRC) \
++	libtool --mode=link $(CC) $(CFLAGS) -o libgd.la $(.ALLSRC) \
 +	 -version-info 18:3:0 -rpath $(INSTALL_LIB)
  
  clean:
@@ -147,4 +147,4 @@
 +.SUFFIXES: .c .lo
 +
 +.c.lo:
-+	libtool $(CC) $(CFLAGS) -c $(.IMPSRC)
++	libtool --mode=compile $(CC) $(CFLAGS) -c $(.IMPSRC)
