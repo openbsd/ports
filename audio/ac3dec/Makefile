@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/02/27 12:12:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/03/16 16:51:53 espie Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/07 04:20:49 hubertf Exp $
+
+COMMENT=	ac3 audio (as used on DVDs) decoding tools
 
 DISTNAME=	ac3dec-0.6.1
 CATEGORIES=	audio
-NEED_VERSION=	1.357
+NEED_VERSION=	1.361
 MASTER_SITES=	http://gusnet.cx/aaron/codecs/tarballs/
 
 HOMEPAGE=	http://gusnet.cx/aaron/codecs/ac3dec.php
