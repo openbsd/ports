@@ -20,3 +20,8 @@ Thomas Merz has written a Ghostscript manual in PDF format:
 
 The manual is also available in German language, see:
 	http://www.muc.de/~tm/free/free.html
+
+Flavors:
+       a4 - Build with support for A4 page size
+      gtk - Build with Gtk+ support
+   no_x11 - Build without X support
