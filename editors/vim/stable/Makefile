@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2002/12/02 23:13:04 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.64 2002/12/13 14:54:37 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
 
 DISTNAME=	vim-6.1
-REVISION=	247
+REVISION=	263
 VERSION=	6.1.${REVISION}
 PKGNAME=	vim-${VERSION}
 CATEGORIES=	editors
@@ -57,7 +57,7 @@ RUN_DEPENDS=::editors/vim/stable${_flavor}
 PKGNAME$i=      vim$i-${VERSION}
 .endfor
 
-FLAVORS=	huge gtk athena motif no_x11 perl python
+FLAVORS=	huge gtk athena motif no_x11 perl python ruby
 FLAVOR?=	gtk
 
 CONFIGURE_STYLE= gnu
@@ -77,6 +77,12 @@ CONFIGURE_ENV+=	vi_cv_path_python=${LOCALBASE}/bin/python${PYTHON_VER}
 CONFIGURE_ARGS+=--enable-pythoninterp \
 	--with-python-config-dir=${LOCALBASE}/lib/python${PYTHON_VER}/config
 LIB_DEPENDS+=	python${PYTHON_VER}.0.0:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
+.endif
+
+.if ${FLAVOR:L:Mruby}
+CONFIGURE_ARGS+=--enable-rubyinterp
+MAKE_ENV+=	RUBY="${LOCABASE}/bin/ruby"
+LIB_DEPENDS+=	ruby::lang/ruby
 .endif
 
 .if ${FLAVOR:L:Mno_x11} && \
