@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/12 16:15:57 reinhard Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/04 12:50:49 reinhard Exp $
 
 DISTNAME=	irssi-0.7.97.2
 CATEGORIES=	net
-NEED_VERSION=	1.349
+NEED_VERSION=	1.358
 
 MAINTAINER=	Reinhard J. Sammer <reinhard@openbsd.org>
 
@@ -27,15 +27,16 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--with-proxy --with-socks 
 CONFIGURE_ARGS+=	--with-textui --enable-curses-windows
 CONFIGURE_ARGS+=	--enable-perl=no
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 
 FLAVORS+=		gettext 
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgettext}
-CONFIGURE_ARGS+=	--with-gettext --with-included-gettext
+CONFIGURE_ARGS+=	--with-gettext 
 LIB_DEPENDS+=		intl.1::devel/gettext
 .else
-CONFIGURE_ARGS+=	--without-gettext
+CONFIGURE_ARGS+=	--with-included-gettext
 .endif
 
 WRKDIST=		${WRKDIR}/irssi-0.7.97
