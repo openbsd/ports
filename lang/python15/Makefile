@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/05 02:55:14 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/12 13:40:14 wilfried Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 # Uses threads
@@ -24,7 +24,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 FLAVORS=	tk threads no_tools
+.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
+FLAVOR?=
+.else
 FLAVOR?=	threads
+.endif
 
 # don't package tools if not needed
 .if empty(FLAVOR:L:Mno_tools)
@@ -52,7 +56,7 @@ WRKDIST=	${WRKDIR}/Python-1.5.2
 # If libc_r exists, thread support is compiled in by default unless this
 # is a SPARC system where threads are currently non functional.
 .if ${FLAVOR:L:Mthreads}
-.if (${MACHINE_ARCH} == "sparc") 
+.if (${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64")
 BROKEN="Support for ${MACHINE_ARCH} threads is currently broken"
 .elif !exists(/usr/lib/libc_r.a) 
 BROKEN="No thread support on this machine"
