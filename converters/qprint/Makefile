@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/09/29 21:31:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/09/30 19:41:09 naddy Exp $
 
 COMMENT=	"converter to/from quoted-printable encoding"
 
@@ -14,7 +14,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=	2.13
+CONFIGURE_STYLE=	autoconf
+
 ALL_TARGET=	prog
 REGRESS_TARGET=	wringer
 

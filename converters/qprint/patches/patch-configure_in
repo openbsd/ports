@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1 2003/09/30 19:41:10 naddy Exp $
+--- configure.in.orig	2003-09-30 21:35:58.000000000 +0200
++++ configure.in	2003-09-30 21:36:05.000000000 +0200
+@@ -24,7 +24,4 @@ dnl Checks for typedefs, structures, and
+ AC_CHECK_SIZEOF(unsigned long long)
+ AC_CHECK_SIZEOF(unsigned long)
+ 
+-dnl Checks for library functions.
+-AC_CHECK_FUNCS(getopt)
+-
+ AC_OUTPUT(Makefile)
