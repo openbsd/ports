@@ -2,3 +2,4 @@ bin/starlanes
 man/man6/starlanes.6
 share/doc/starlanes/COPYING
 share/doc/starlanes/README
+@dirrm share/doc/starlanes
