@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2001/04/03 23:52:52 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2001/04/18 16:03:36 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
 
-VERSION=	1.0
+VERSION=	1.0.1
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
 NEED_VERSION=	1.384
@@ -15,7 +15,7 @@ MASTER_SITES1=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/ \
 DISTFILES=	epic4-${VERSION}.tar.gz epic4pre2-help.tar.gz:0
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
-PATCHFILES=	epic4-0.10.1-ipv6-20010331.patch.gz:1
+PATCHFILES=	epic4-1.0.1-ipv6-20010418.patch.gz:1
 PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://www.epicsol.org/
