@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/08/10 00:52:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 19:07:48 espie Exp $
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/
 ${TARGET_ARCH}-unknown-openbsd${OSREV}/bin/addr2line
@@ -28,4 +28,12 @@ ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/
 @man ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/size.1
 @man ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/strings.1
 @man ${TARGET_ARCH}-unknown-openbsd${OSREV}/man/man1/strip.1
-%%arch%%
+%%alpha%%
+%%amd64%%
+%%arm%%
+%%armeb%%
+%%hppa%%
+%%i386%%
+%%powerpc%%
+%%sparc%%
+%%sparc64%%

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PFRAG.armeb,v 1.1 2004/09/15 19:07:48 espie Exp $
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.x
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xbn
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xc
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xn
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xr
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xs
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xsc
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xu
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelf_obsd.xz
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.x
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xbn
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xc
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xn
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xr
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xs
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xsc
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xu
+${TARGET_ARCH}-unknown-openbsd${OSREV}/lib/ldscripts/armelfb_obsd.xz

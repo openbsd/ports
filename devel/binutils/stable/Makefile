@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2004/05/20 23:11:58 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2004/09/15 19:07:48 espie Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -50,19 +50,6 @@ TARGET_DIR=		$${PREFIX}/${TARGET_ARCH}-unknown-openbsd${OSREV}
 
 REGRESS_TARGET=		check
 REGRESS_DEPENDS=	::devel/dejagnu
-
-PLIST_ARCH?=
-.if !empty(FLAVOR:L)
-. if ${FLAVOR:L} == "armeb"
-    PLIST_ARCH=	arm
-. else
-    PLIST_ARCH= ${FLAVOR:L}
-. endif
-.else
- PLIST_ARCH= ${MACHINE_ARCH}
-.endif
-
-SED_PLIST+=		|sed -e '/^%%arch%%$$/r${PKGDIR}/PFRAG.${PLIST_ARCH}' -e '//d'
 
 FILES=			addr2line ar nm-new objdump objcopy ranlib readelf size strings strip-new 
 
