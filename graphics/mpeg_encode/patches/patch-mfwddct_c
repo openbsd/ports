@@ -1,0 +1,12 @@
+$OpenBSD: patch-mfwddct_c,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+--- mfwddct.c.orig	Sun Jun 10 01:24:55 2001
++++ mfwddct.c	Sun Jun 10 01:28:21 2001
+@@ -371,7 +371,7 @@ Block block, dest;
+         s += trans_coef[i][k] * tmp[8*k+j];
+ 
+       if (collect_quant) {
+-	fprintf(collect_quant_fp, "%d %lf\n", 8*i+j, s);
++	fprintf(collect_quant_fp, "%d %f\n", 8*i+j, s);
+       } 
+       if (DoLaplace) {
+ 	L1[LaplaceCnum][i*8+j] += s*s;

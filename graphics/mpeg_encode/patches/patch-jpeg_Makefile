@@ -1,0 +1,16 @@
+$OpenBSD: patch-jpeg_Makefile,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+--- jpeg/Makefile.orig	Fri Aug  4 19:27:00 1995
++++ jpeg/Makefile	Sun Jun 10 01:30:05 2001
+@@ -21,10 +21,10 @@ manprefix =
+ manext = 1
+ 
+ # The name of your C compiler:
+-CC= gcc
++CC?= gcc
+ 
+ # You may need to adjust these cc options:
+-CFLAGS= -O -I$(srcdir)
++CFLAGS+= -I$(srcdir)
+ # Generally, we recommend defining any configuration symbols in jconfig.h,
+ # NOT via -D switches here.
+ # However, any special defines for ansi2knr.c may be included here:

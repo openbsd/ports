@@ -1,0 +1,37 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+--- Makefile.orig	Wed Aug 16 18:16:56 1995
++++ Makefile	Sun Jun 10 01:36:36 2001
+@@ -36,9 +36,12 @@ PROFLAG =
+ ##############
+ # JPEG STUFF #
+ ##############
+-JPEG_LIB = jpeg/libjpeg.a
+-JPEG_DIR = -Ijpeg
+-JPEG_LIB_DIR = -Ljpeg
++#JPEG_LIB = jpeg/libjpeg.a
++#JPEG_DIR = -Ijpeg
++#JPEG_LIB_DIR = -Ljpeg
++JPEG_LIB = -ljpeg
++JPEG_DIR = -I${LOCALBASE}/include
++JPEG_LIB_DIR = -L${LOCALBASE}/lib
+ MP_JPEG_OBJS = jpeg.o
+ MP_JPEG_SRCS = jpeg.c
+ 
+@@ -68,7 +71,7 @@ LIBDIRS = $(JPEG_LIB_DIR)
+ #####################################################################
+ # COMPILER # specify compiler; should be ANSI-compliant if possible #
+ #####################################################################
+-CC = gcc
++CC ?= gcc
+ 
+ ################################################
+ # MAKE # command to use for the "make" command #
+@@ -96,7 +99,7 @@ MAKE = make
+ # 
+ 
+ #	gcc
+-CFLAGS	      =  $(INCLUDEDIR) $(DEBUGFLAG) -Wall -Wmissing-prototypes $(PROFLAG) $(PROTOFLAG)
++CFLAGS	      +=  $(INCLUDEDIR) $(PROFLAG) $(PROTOFLAG)
+ 
+ #	gcc-strict
+ #CFLAGS	      =  $(INCLUDEDIR) $(DEBUGFLAG) -pedantic -Wall -Waggregate-return -Wtraditional -Wshadow -Wpointer-arith -Wno-parentheses -Wwrite-strings -Wconversion -Wcast-qual -Wcast-align -Wnested-externs -Wuninitialized -Wmissing-prototypes $(PROFLAG) $(PROTOFLAG)

@@ -1,0 +1,21 @@
+$OpenBSD: patch-combine_c,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+--- combine.c.orig	Sun Jun 10 01:32:33 2001
++++ combine.c	Sun Jun 10 01:32:58 2001
+@@ -133,7 +133,7 @@ GOPStoMPEG(numGOPS, outputFileName, outp
+     BitBucket *bb;
+     char    fileName[1024];
+     char    inputFileName[1024];
+-    FILE *inputFile;
++    FILE *inputFile=NULL;
+     int q;
+ 
+     {
+@@ -235,7 +235,7 @@ FramesToMPEG(numFrames, outputFileName, 
+     BitBucket *bb;
+     char    fileName[1024];
+     char    inputFileName[1024];
+-    FILE *inputFile;
++    FILE *inputFile=NULL;
+     int	pastRefNum = -1;
+     int	futureRefNum = -1;
+     int q;

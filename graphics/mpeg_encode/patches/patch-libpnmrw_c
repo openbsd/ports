@@ -1,0 +1,22 @@
+$OpenBSD: patch-libpnmrw_c,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+--- libpnmrw.c.orig	Wed Aug 16 18:24:26 1995
++++ libpnmrw.c	Sun Jun 10 01:33:48 2001
+@@ -126,7 +126,9 @@ static void
+   pm_perror( reason )
+ char* reason;
+ {
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+   extern char* sys_errlist[];
++#endif
+   extern int errno;
+   char* e;
+ 
+@@ -361,7 +363,7 @@ bit* bitrow;
+ int cols, format;
+ {
+   register int col, bitshift, b;
+-  register int item;
++  register int item = 0;
+   register bit* bP;
+ 
+   switch ( format )

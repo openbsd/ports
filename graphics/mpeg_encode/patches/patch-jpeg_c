@@ -1,0 +1,20 @@
+$OpenBSD: patch-jpeg_c,v 1.1.1.1 2001/06/19 03:22:33 angelos Exp $
+--- jpeg.c.orig	Fri Aug  4 19:35:07 1995
++++ jpeg.c	Sun Jun 10 01:42:22 2001
+@@ -65,6 +65,7 @@
+  *==============*/
+ 
+ #include <stdio.h>
++#include <unistd.h>
+ #include "all.h"
+ #include "mtypes.h"
+ #include "frames.h"
+@@ -77,7 +78,7 @@
+ 
+ /* make it happier.... */
+ #undef DCTSIZE2
+-#include "jpeg/jpeglib.h"
++#include "jpeglib.h"
+ 
+ 
+ #define HEADER_SIZE 607   /*JFIF header size used on output images*/
