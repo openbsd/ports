@@ -1,0 +1,12 @@
+$OpenBSD: patch-tarfile_c,v 1.1 2003/08/30 17:46:26 avsm Exp $
+--- tarfile.c.orig	2003-08-29 11:18:44.000000000 -0400
++++ tarfile.c	2003-08-29 11:23:28.000000000 -0400
+@@ -143,7 +143,7 @@ tar_addent(struct tar_file *tfile, char 
+ 		}
+ 	}
+ 	tp->name = tn->buf + tn->use;
+-	strlcpy(tp->name, fname, sizeof(tp->name));
++	strlcpy(tp->name, fname, sizeof(tn->buf) - tn->use);
+ 	tn->use += fnamelen + 1;
+ 	return 0;
+ }
