@@ -1,5 +1,5 @@
-*** makefile.orig	Fri May 16 10:53:30 1997
---- makefile	Tue Jun 24 16:53:47 1997
+*** makefile.orig	Fri May 16 01:53:30 1997
+--- makefile	Tue Feb  3 20:22:33 1998
 ***************
 *** 5,33 ****
   # Where the zlib library and include files are located
@@ -31,7 +31,7 @@
   pngtest: pngtest.o libpng.a
   	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
   
---- 5,42 ----
+--- 5,48 ----
   # Where the zlib library and include files are located
   #ZLIBLIB=/usr/local/lib
   #ZLIBINC=/usr/local/include
@@ -58,14 +58,20 @@
 ! .c.so:
 ! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
 ! 
+! .if (${MACHINE_ARCH} != "alpha")
 ! all: libpng.a libpng.so.${VER}
+! .else
+! all: libpng.a
+! .endif
   
   libpng.a: $(OBJS)
   	ar rc $@  $(OBJS)
   	$(RANLIB) $@
   
++ .if (${MACHINE_ARCH} != "alpha")
 + libpng.so.${VER}: $(OBJS:S/o$/so/g)
 + 	ld -Bshareable -x -assert pure-text -o $@ $(OBJS:S/o$/so/g) -lz
++ .endif
 + 
   pngtest: pngtest.o libpng.a
   	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
@@ -84,13 +90,21 @@
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
---- 46,54 ----
+--- 52,68 ----
   install: libpng.a
   	-@mkdir $(prefix)/include
   	-@mkdir $(prefix)/lib
 ! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
 ! 	${INSTALL} -c -m 644 -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${VER} $(prefix)/lib
 ! 	ranlib $(prefix)/lib/libpng.a
+! .if(${MACHINE_ARCH} != "alpha")
+! .if(${MACHINE_ARCH} == "mips")
+! 	${LDCONFIG} -n ${PREFIX}/lib
+! .else
+! 	${LDCONFIG} -m ${PREFIX}/lib
+! .endif
+! .endif
+! 
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
