@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2004/09/26 15:32:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/10/07 18:30:26 sturm Exp $
+
+NOT_FOR_ARCHS=		sparc64
 
 COMMENT=		Prolog compiler
 
