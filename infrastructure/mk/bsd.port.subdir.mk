@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.43 2001/10/24 11:57:34 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.44 2002/03/13 13:51:59 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -151,7 +151,8 @@ ${SUBDIR}::
 		 show obj fetch-makefile all-packages cdrom-packages \
 		 dir-depends package-dir-depends bulk-packages \
 		 ftp-packages packageinstall link-categories \
-		 unlink-categories regress bulk-do lib-depends-check
+		 unlink-categories regress bulk-do lib-depends-check \
+		 homepage-links
 
 .if !target(${__target})
 ${__target}: _SUBDIRUSE
@@ -216,4 +217,4 @@ README.html:
 	beforeinstall afterinstall install realinstall fake \
 	all-packages cdrom-packages ftp-packages packageinstall \
 	link-categories unlink-categories dir-depends package-dir-depends \
-	regress lib-depends-check
+	regress lib-depends-check homepage-links

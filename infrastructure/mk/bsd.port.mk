@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.509 2002/03/10 06:02:16 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.510 2002/03/13 13:51:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2757,6 +2757,13 @@ unlink-categories:
 	fi
 .endfor
     
+homepage-links:
+.if defined(HOMEPAGE)
+	@echo '<li><A HREF="${HOMEPAGE}">${PKGNAME}</A>'
+.else
+	@echo '<li>${PKGNAME}'
+.endif
+
 .if ${FAKE:L} == "no"
 .  include "${PORTSDIR}/infrastructure/mk/old-install.mk"
 .endif
@@ -2792,4 +2799,5 @@ unlink-categories:
    link-categories unlink-categories _package _solve-package-depends \
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
-   bulk-packages bulk-do _recurse-lib-depends lib-depends-check
+   bulk-packages bulk-do _recurse-lib-depends lib-depends-check \
+   homepage-links

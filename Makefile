@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2001/11/22 16:06:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2002/03/13 13:51:59 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -103,6 +103,11 @@ mirror-maker:
 	@${MAKE} fetch-makefile \
 		ECHO_MSG='echo >&2' \
 		>>${MIRROR_MK}
+
+homepages.html:
+	@echo '<html><ul>' >$@
+	@${MAKE} homepage-links ECHO_MSG='echo >&2' >>$@
+	@echo '</ul></html>' >>$@
 
 DISTFILES_DB?=${.CURDIR}/infrastructure/db/locate.database
 
