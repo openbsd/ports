@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2003/09/28 19:15:52 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2003/10/18 02:44:45 jolan Exp $
 
 # 64-bit issues, unaligned memory access
-ONLY_FOR_ARCHS=	i386 macppc
+ONLY_FOR_ARCHS=	i386 powerpc
 
 COMMENT=		"ur-quan masters: sdl port of star control 2"
 COMMENT-3domusic=	"ur-quan masters: 3DO music content"
@@ -73,7 +73,7 @@ do-configure:
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|undef|g" \
 		${FILESDIR}/config.h > ${WRKSRC}/src/config.h
 .else
-	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN|define|g" \
+	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|define|g" \
 		${FILESDIR}/config.h > ${WRKSRC}/src/config.h
 .endif
 	@sed -e "s|@CC@|${CC}|g ; s|@CFLAGS@|${CFLAGS}|g ; \
