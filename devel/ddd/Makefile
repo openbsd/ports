@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 1999/09/18 10:44:12 turan Exp $
-
-BROKEN=		"patches do not apply"
+# $OpenBSD: Makefile,v 1.12 1999/09/21 16:34:09 brad Exp $
 
 DISTNAME=	ddd-3.1.6
 CATEGORIES=	devel
@@ -31,10 +29,6 @@ pre-build:
 	@echo ""
 
 check:	build
-.if defined(USE_GMAKE)
-	@cd ${WRKSRC} && ${GMAKE} check
-.else
-	@cd ${WRKSRC} && ${MAKE} check
-.endif
+	@cd ${WRKSRC}; ${GMAKE} check
 
 .include <bsd.port.mk>
