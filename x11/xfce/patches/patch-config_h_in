@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_h_in,v 1.1 2002/03/24 01:20:39 brad Exp $
+--- config.h.in.orig	Thu Jan 17 17:32:03 2002
++++ config.h.in	Sat Mar 23 20:11:55 2002
+@@ -13,6 +13,7 @@
+ #undef DEBUG
+ #undef HAVE_X11_EXTENSIONS_XINERAMA_H
+ #undef HAVE_X11_XFT_XFT_H
++#undef HAVE_SOUNDCARD_H
+ #undef HAVE_SYS_SOUNDCARD_H
+ #undef HAVE_LINUX_SOUNDCARD_H
+ #undef HAVE_MACHINE_SOUNDCARD_H

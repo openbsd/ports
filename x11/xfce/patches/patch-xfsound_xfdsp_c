@@ -1,21 +1,59 @@
---- xfsound/xfdsp.c.orig	Wed Nov 29 09:43:22 2000
-+++ xfsound/xfdsp.c	Wed Nov 29 09:46:38 2000
-@@ -48,6 +48,9 @@
- #if defined(linux)
- #include <sys/soundcard.h>	/* guess :) */
- #endif
-+#if defined(__OpenBSD__)
+$OpenBSD: patch-xfsound_xfdsp_c,v 1.2 2002/03/24 01:20:39 brad Exp $
+--- xfsound/xfdsp.c.orig	Wed Nov 21 01:36:39 2001
++++ xfsound/xfdsp.c	Sat Mar 23 20:11:56 2002
+@@ -66,6 +66,9 @@
+ #if defined(HAVE_ARTS)
+ #include <artsc.h>
+ #else
++#if defined(HAVE_SOUNDCARD_H)
 +#include <soundcard.h>
++#else
+ #if defined(HAVE_SYS_SOUNDCARD_H)
+ #include <sys/soundcard.h>
+ #else
+@@ -78,6 +81,7 @@
+ #endif
+ #endif
+ #endif
 +#endif
  
  #include "xfdsp.h"
  
-@@ -62,7 +65,7 @@
+@@ -89,6 +93,20 @@
+ #  include "dmalloc.h"
+ #endif
  
++#ifdef __OpenBSD__
++static char *dsp[] = {
++	"/dev/sound",
++	"/dev/sound0",
++	"/dev/sound1",
++	"/dev/sound2",
++	"/dev/sound3",
++	"/dev/sound4",
++	"/dev/sound5",
++	"/dev/sound6",
++	"/dev/sound7",
++	NULL
++};
++#else
+ static char *dsp[] = {
+ 	"/dev/dsp",
+ 	"/dev/dsp0",
+@@ -101,6 +119,7 @@ static char *dsp[] = {
+ 	"/dev/dsp7",
+ 	NULL
+ };
++#endif
+ 
+ void
+ sound_init (void)
+@@ -119,7 +138,7 @@ sound_init (void)
+ #endif
+ }
+ 
+-#if defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_LINUX_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H) || defined(HAVE_ARTS)
++#if defined(HAVE_SOUNDCARD_H) || defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_LINUX_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H) || defined(HAVE_ARTS)
+ 
+ #if !defined(HAVE_ARTS)
  int masterfd;
- 
--#if defined(linux)
-+#if defined(linux) || defined(__OpenBSD__)
- int
- i_play (char *soundfile)
- {

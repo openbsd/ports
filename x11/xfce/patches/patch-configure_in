@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/03/24 01:20:39 brad Exp $
+--- configure.in.orig	Sun Jan 20 09:35:07 2002
++++ configure.in	Sat Mar 23 20:11:55 2002
+@@ -63,7 +63,7 @@ AC_LINK_FILES($nls_cv_header_libgt, $nls
+ AC_CHECK_HEADERS(ctype.h)
+ AC_CHECK_HEADERS(unistd.h string.h getopt.h)
+ AC_CHECK_HEADERS(fcntl.h)
+-AC_CHECK_HEADERS(sys/soundcard.h linux/soundcard.h machine/soundcard.h)
++AC_CHECK_HEADERS(soundcard.h sys/soundcard.h linux/soundcard.h machine/soundcard.h)
+ AC_HEADER_STAT
+ AC_HEADER_DIRENT
+ AC_C_CONST
+@@ -109,6 +109,12 @@ AC_ARG_WITH(xpm,
+ 
+ AC_CHECK_LIB(Xpm, XpmReadFileToXpmImage, , 
+              AC_MSG_ERROR(libXpm not found), $X_PRE_LIBS -lX11 $X_LIBS $X_EXTRA_LIBS)
++
++save_LIBS="$LIBS"
++LIBS=""
++AC_CHECK_LIB(ossaudio, _oss_ioctl, OSSAUDIO_LIBS="-lossaudio")
++AC_SUBST(OSSAUDIO_LIBS)
++LIBS="$save_LIBS"
+ 
+ AC_CHECK_HEADER(X11/xpm.h, ,
+                 AC_MSG_ERROR(X11/xpm.h not found))

@@ -1,0 +1,10 @@
+$OpenBSD: patch-scripts_xflock,v 1.1 2002/03/24 01:20:39 brad Exp $
+--- scripts/xflock.orig	Thu Jul 12 17:45:22 2001
++++ scripts/xflock	Sat Mar 23 20:11:56 2002
+@@ -19,5 +19,5 @@
+ #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ #
+ 
+-xscreensaver-command -lock || xlock $*
++xlock $*
+ exit 0

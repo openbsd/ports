@@ -1,11 +1,12 @@
---- xfsound/Makefile.in.orig	Wed Nov 29 11:35:17 2000
-+++ xfsound/Makefile.in	Wed Nov 29 11:37:07 2000
-@@ -122,7 +122,7 @@
- xfsound_SOURCES =  	xfsound_cb.c xfsound_cb.h 	xfsound.c xfsound.h 	xfdsp.c xfdsp.h
- 
- 
--xfsound_LDADD = ../libs/libxfcecore.la ../libs/libxfwmcore.la @DMALLOC_LIB@ @GTK_LIBS@ @GDK_IMLIB_LIBS@ @GDK_PIXBUF_LIBS@ @INTLLIBS@ @LIBS@ ../libs/libxfwmcore.la ${X_LIBS} ${X_PRE_LIBS} -lXpm
-+xfsound_LDADD = ../libs/libxfcecore.la ../libs/libxfwmcore.la @DMALLOC_LIB@ @GTK_LIBS@ @GDK_IMLIB_LIBS@ @GDK_PIXBUF_LIBS@ @INTLLIBS@ @LIBS@ ../libs/libxfwmcore.la ${X_LIBS} ${X_PRE_LIBS} -lXpm -lossaudio
+$OpenBSD: patch-xfsound_Makefile_in,v 1.2 2002/03/24 01:20:39 brad Exp $
+--- xfsound/Makefile.in.orig	Sun Jan 20 14:16:57 2002
++++ xfsound/Makefile.in	Sat Mar 23 20:11:56 2002
+@@ -152,7 +152,7 @@ xfsound_SOURCES = \
+ xfsound_LDADD = ../libs/libxfcecore.la ../libs/libxfwmcore.la \
+  @DMALLOC_LIB@ @GTK_LIBS@ @GDK_IMLIB_LIBS@ @GDK_PIXBUF_LIBS@ \
+  @AUDIOFILE_LIBS@ @ARTS_LIBS@ @INTLLIBS@ @LIBS@ ../libs/libxfwmcore.la \
+- ${X_LIBS} ${X_PRE_LIBS} -lXpm @XFT_LIBS@
++ ${X_LIBS} ${X_PRE_LIBS} -lXpm @XFT_LIBS@ @OSSAUDIO_LIBS@
  
  
  xfsound_DEPENDENCIES = ../libs/libxfcecore.la ../libs/libxfwmcore.la
