@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/04/03 16:32:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/04/03 16:38:21 espie Exp $
 bin/filter_wrapper
 bin/kchart
 bin/kformula
@@ -1470,8 +1470,6 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 %%SHARED%%
-@dirrm share/templates/.source
-@dirrm share/templates
 @dirrm share/icons/locolor/22x22/apps
 @dirrm share/icons/locolor/22x22
 @dirrm share/icons/hicolor/22x22/mimetypes

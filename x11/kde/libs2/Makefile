@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2002/04/03 02:25:06 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2002/04/03 16:38:21 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -109,7 +109,8 @@ EXTRA_DIRECTORIES= \
 	share/icons/hicolor/48x48/apps \
 	share/icons/locolor/16x16/apps \
 	share/icons/locolor/32x32/apps \
-	share/sounds
+	share/sounds \
+	share/templates/.source
 
 post-install:
 .for i in ${EXTRA_DIRECTORIES}
