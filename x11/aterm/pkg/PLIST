@@ -1,2 +1,3 @@
 bin/aterm
+@exec chmod 4755 %D/bin/aterm
 man/man1/aterm.1

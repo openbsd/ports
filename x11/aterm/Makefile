@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/08/30 14:14:02 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/10/31 18:52:41 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 DISTNAME=	aterm-0.3.6
@@ -13,12 +13,12 @@ LIB_DEPENDS=	jpeg.62:${PORTSDIR}/graphics/jpeg \
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --enable-xgetdefault --enable-transparency \
-		--enable-background-image --with-jpeg --with-png
+CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
+		--with-xpm --enable-transparency \
+		--enable-xgetdefault --enable-background-image \
+		--enable-fading --with-jpeg --with-png
 
-# Various compile time options you may want to configure.
-#CONFIGURE_ARGS+= --enable-utmp \
-#		--enable-wtmp \
-#		--enable-menubar
+post-install:
+	@chmod 4755 ${PREFIX}/bin/aterm
 
 .include <bsd.port.mk>
