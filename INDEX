@@ -725,7 +725,7 @@ xzip-1.8.2|games/xzip||z-code interpreter for X11 (Infocom game format)|games/xz
 zangband-2.6.2|games/zangband||Zangband (Zelazny Angband) with color, X11 support|games/zangband/pkg/DESCR|David Lebel <lebel@openbsd.org>|games||:devel/autoconf/2.13 :devel/automake :devel/gmake :devel/metaauto||any|y|y|y|y
 zangband-2.6.2-no_x11|games/zangband,no_x11||Zangband (Zelazny Angband) with color, X11 support|games/zangband/pkg/DESCR|David Lebel <lebel@openbsd.org>|games||:devel/autoconf/2.13 :devel/automake :devel/gmake :devel/metaauto||any|y|y|y|y
 zoom-0.9.99beta3|games/zoom||Z-code interpreter for X11|games/zoom/pkg/DESCR|Jose Nazario <jose@crimelabs.net>|games||||!sparc64|y|y|y|y
-ImageMagick-5.2.9p0|graphics/ImageMagick||display and manipulate images under X11|graphics/ImageMagick/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|bz2.10::archivers/bzip2 jbig.1.2::graphics/jbigkit mpeg.13::graphics/mpeg-lib png.2::graphics/png tiff.35::graphics/tiff ttf.1.3::print/freetype xml2.6::textproc/libxml|netpbm-*:graphics/netpbm transfig-*:print/transfig|netpbm-*:graphics/netpbm transfig-*:print/transfig|any|n|y|y|y
+ImageMagick-5.2.9p0|graphics/ImageMagick||display and manipulate images under X11|graphics/ImageMagick/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics|bz2.10::archivers/bzip2 jbig.1.2::graphics/jbigkit mpeg.13::graphics/mpeg-lib png.2::graphics/png tiff.35::graphics/tiff ttf.1.3::print/freetype xml2.6::textproc/libxml|netpbm-*:graphics/netpbm transfig-*:print/transfig|netpbm-*:graphics/netpbm transfig-*:print/transfig|any|y|y|y|y
 aalib-1.2|graphics/aalib||ascii art library|graphics/aalib/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics||||any|y|y|y|y
 aalib-1.2-no_x11|graphics/aalib,no_x11||ascii art library|graphics/aalib/pkg/DESCR|Brad Smith <brad@openbsd.org>|graphics||||any|y|y|y|y
 blender-2.23|graphics/blender||3D creation software|graphics/blender/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|graphics|||redhat_base-*:emulators/redhat/base|i386|n|n|n|n
@@ -1647,7 +1647,7 @@ swatch-3.0.1|security/swatch||Simple WATCHdog log filtering program|security/swa
 tempwatch-1.0|security/tempwatch||temporary file auditing tool|security/tempwatch/pkg/DESCR|Jason Peel <jsyn@openbsd.org>|security||||any|y|y|y|y
 towitoko-2.0.7|security/towitoko||library and utilities for towitoko card readers|security/towitoko/pkg/DESCR|Michael Coulter <mjc@bitz.ca>|security||||any|y|y|y|y
 uvscan-4.16.0|security/uvscan||evaluation version of a DOS/Windows file virus scanner|security/uvscan/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security|||redhat_base-*:emulators/redhat/base uvscan_dat-*:security/uvscan_dat|i386|n|n|n|n
-uvscan_dat-4288|security/uvscan_dat||AntiVirus DAT file for uvscan|security/uvscan_dat/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security||||i386|n|n|n|n
+uvscan_dat-4291|security/uvscan_dat||AntiVirus DAT file for uvscan|security/uvscan_dat/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|security||||i386|n|n|n|n
 vomit-0.2|security/vomit||voice over misconfigured internet telephones|security/vomit/pkg/DESCR|Jason Peel <jsyn@openbsd.org>|security|net::net/libnet|||any|y|y|y|y
 whisker-2.1|security/whisker||stealthy webserver vulnerability scanner|security/whisker/pkg/DESCR|Srebrenko Sehic <haver@insecure.dk>|security||||any|y|y|y|y
 xmlsec-1.0.1p1|security/xmlsec||XML security library|security/xmlsec/pkg/DESCR|Jim Geovedi <jim@corebsd.or.id>|security|gnutls.8::security/gnutls iconv.2::converters/libiconv xslt.1::textproc/libxslt||libiconv-*:converters/libiconv|any|y|y|y|y
