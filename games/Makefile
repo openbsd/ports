@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2001/02/09 13:08:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.39 2001/02/10 19:02:24 reinhard Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -95,7 +95,7 @@
      SUBDIR += xneko
      SUBDIR += xonix
      SUBDIR += xpat2
-#    SUBDIR += xpilot
+     SUBDIR += xpilot
 #    SUBDIR += xpipeman
 #    SUBDIR += xpuyo
 #    SUBDIR += xpuzzletama
