@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/02/05 15:27:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/22 06:38:35 fgsch Exp $
 
 COMMENT=	"emulates arcade machines and old home computers"
 COMMENT-mame=	"emulates a massive variety of arcade machines"
@@ -34,6 +34,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=	.tar.bz2
+
+VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 USE_X11=	Yes
