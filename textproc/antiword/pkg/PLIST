@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/01/21 01:48:34 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/05/12 04:28:52 margarida Exp $
 bin/antiword
-bin/antiword-kde-dnd.sh
 man/man1/antiword.1
 share/antiword/8859-1.txt
 share/antiword/8859-10.txt
@@ -29,19 +28,12 @@ share/antiword/cp850.txt
 share/antiword/cp852.txt
 share/antiword/fontnames
 share/antiword/fontnames.russian
-share/antiword/hi32-app-antiword.png
-share/antiword/hi48-app-antiword.png
-share/antiword/kde/Antiword.desktop.eu
-share/antiword/kde/Antiword.desktop.us
 share/antiword/koi8-r.txt
 share/antiword/koi8-u.txt
-share/antiword/lo16-app-antiword.png
-share/antiword/lo32-app-antiword.png
 share/antiword/roman.txt
 share/doc/antiword/FAQ
 share/doc/antiword/Netscape
 share/doc/antiword/QandA
 share/doc/antiword/ReadMe
 @dirrm share/doc/antiword
-@dirrm share/antiword/kde
 @dirrm share/antiword
