@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/12/26 23:29:26 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/01/31 22:43:44 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -24,7 +24,6 @@ NHDIR=	${DESTDIR}${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
 FLAVORS=no_x11 qt
-# Old text interface
 FLAVOR?=
 
 .if ${FLAVOR:L} == "no_x11"
@@ -50,7 +49,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/util/recover ${PREFIX}/bin
 	@cd ${WRKSRC}/doc && \
 	    ${INSTALL_MAN} nethack.6 recover.6 ${PREFIX}/man/man6
-.if ${FLAVOR:U} == "X11"
+.if ${FLAVOR:L} == ""
 	@mkdir -p ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && cp NetHack.ad NetHack && \
 	    ${INSTALL_DATA} NetHack ${PREFIX}/lib/X11/app-defaults

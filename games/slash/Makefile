@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/12/26 23:29:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2001/01/31 22:43:44 espie Exp $
 
 DISTNAME=	slash-e8
 PKGNAME=	slash-3.2.2-e8
@@ -30,7 +30,6 @@ NHDIR=	${DESTDIR}${PREFIX}/lib/slashdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
 FLAVORS=no_x11
-# Old text interface
 FLAVOR?=
 
 .if ${FLAVOR:L} == "no_x11"
@@ -65,7 +64,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/util/srecover ${PREFIX}/bin
 	@cd ${WRKSRC}/doc && \
 	    ${INSTALL_MAN} slash.6 srecover.6 ${PREFIX}/man/man6
-.if ${FLAVOR:U} == "X11"
+.if ${FLAVOR:L} == ""
 	@mkdir -p ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
 	sed -e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad > Slash && \
