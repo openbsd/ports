@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2000/07/14 22:05:57 matt Exp $
+# $OpenBSD: Makefile,v 1.29 2000/08/16 03:16:32 kevlo Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -32,6 +32,7 @@
 #    SUBDIR += lcc
      SUBDIR += libgcj
 #    SUBDIR += logo
+     SUBDIR += lua
      SUBDIR += mawk
 #    SUBDIR += mit-scheme
 #    SUBDIR += mixal
