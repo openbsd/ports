@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2000/08/02 00:52:23 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2000/08/19 03:21:41 brad Exp $
 
-DISTNAME=	nmap-2.54BETA2
-PKGNAME=	nmap-2.54b2
+DISTNAME=	nmap-2.54BETA3
+PKGNAME=	nmap-2.54b3
 CATEGORIES=	net security
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.insecure.org/nmap/dist/
