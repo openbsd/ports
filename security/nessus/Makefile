@@ -1,14 +1,9 @@
-# Makefile for:         nessus
-# Version required:     0.2
-# Date created:         14 Mar 1999
-# Whom:                 dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.12 2000/07/03 01:34:10 matt Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/07 21:25:10 matt Exp $
 
 PKGNAME=	nessus-${VERS}
 
 CATEGORIES=	security
-NEED_VERSION=	1.270
+NEED_VERSION=	1.310
 FAKE=		Yes
 
 VERS=		1.0.0
@@ -41,7 +36,6 @@ LIB_DEPENDS=	gtk.1.2::x11/gtk+
 
 GNU_CONFIGURE=	Yes
 
-# GNU build environment gone horribly wrong. ugh.
 post-extract:
 	@sed "s%y0y0y0%${NESSUS_DIRS}%g" \
 		${FILESDIR}/Makefile > ${WRKSRC}Makefile
