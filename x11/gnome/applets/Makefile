@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/07 20:55:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 12:50:10 espie Exp $
 
 COMMENT=		"applets for use with the GNOME panel"
 V=			1.4.0.1
@@ -17,7 +17,7 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfi
                         patch-*
 
 LIB_DEPENDS=		panel_applet::x11/gnome/core \
-			gtop::devel/libgtop,gnome
+			gtop,gtop_common,gtop_sysdeps::devel/libgtop,gnome
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/07 20:55:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 12:50:10 espie Exp $
 
 COMMENT=		"Object Activation Framework for GNOME"
 V=			0.6.5
@@ -15,7 +15,7 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfi
                         ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
                         patch-*
 
-LIB_DEPENDS=		ORBit.5::devel/ORBit \
+LIB_DEPENDS=		ORBit.5,IIOP,ORBitCosNaming,ORBitutil::devel/ORBit \
 			xml.9::textproc/libxml1 \
 			popt::devel/popt
 

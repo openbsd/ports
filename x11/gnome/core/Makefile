@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2001/10/07 20:55:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/24 12:50:10 espie Exp $
 
 COMMENT=		"core GNOME system"
 V=			1.4.0.4
@@ -16,10 +16,10 @@ PATCH_LIST=             ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfi
                         ${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
                         patch-*
 
-LIB_DEPENDS=		glade.4::devel/libglade,gnome \
-			gnome.36::x11/gnome/libs \
+LIB_DEPENDS=		glade.4,glade-gnome::devel/libglade,gnome \
+			gnome.36,gnorba,zvt::x11/gnome/libs \
 			ghttp.1::www/libghttp \
-			gnomecanvaspixbuf.::graphics/gdk-pixbuf,gnome \
+			gnomecanvaspixbuf,gdk_pixbuf::graphics/gdk-pixbuf,gnome \
 			capplet::x11/gnome/controlcenter
 
 BUILD_DEPENDS=		scrollkeeper-config::textproc/scrollkeeper

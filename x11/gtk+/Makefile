@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.49 2001/10/08 00:28:26 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2001/10/24 12:50:10 espie Exp $
 
 COMMENT=	"General Toolkit for X11 GUI"
 
 DISTNAME=	gtk+-1.2.10
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.460
+NEED_VERSION=	1.475
 MASTER_SITES=   ${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/gtk+
 
 HOMEPAGE=	http://www.gtk.org/
 
 MODULES=	gettext
-LIB_DEPENDS=	glib.1.2::devel/glib
+LIB_DEPENDS=	glib.1.2,gmodule.1.2::devel/glib
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
