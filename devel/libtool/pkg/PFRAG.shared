@@ -1,2 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.2 2000/06/10 18:13:36 brad Exp $
 lib/libltdl.so.1.2
 @exec /sbin/ldconfig -m %B

@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.7 2000/06/10 18:13:36 brad Exp $
 bin/libtool
 bin/libtoolize
 @unexec install-info --delete %D/info/libtool.info %D/info/dir
