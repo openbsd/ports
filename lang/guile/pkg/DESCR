@@ -1,3 +1,5 @@
 Guile is a portable, embeddable Scheme implementation written in C. Guile
 provides a machine independent execution platform that can be linked in as
 a library when building extensible programs.
+
+WWW: ${HOMEPAGE}
