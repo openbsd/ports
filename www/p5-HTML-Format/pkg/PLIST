@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/26 23:23:25 marc Exp $
+libdata/perl5/site_perl/HTML/FormatPS.pm
+libdata/perl5/site_perl/HTML/FormatText.pm
+libdata/perl5/site_perl/HTML/Formatter.pm
+man/man3/HTML::FormatPS.3p
+man/man3/HTML::FormatText.3p
+man/man3/HTML::Formatter.3p

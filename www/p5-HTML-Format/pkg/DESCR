@@ -1,0 +1,4 @@
+HTML formatters are able to format a HTML syntax tree into various
+printable formats.  Different formatters produce output for different
+output media.  Common for all formatters are that they will return the
+formatted output when the format() method is called.
