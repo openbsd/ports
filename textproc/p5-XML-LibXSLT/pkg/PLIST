@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/04/19 09:43:09 shell Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/LibXML.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/LibXSLT.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/XML/benchmark.pl
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/LibXML/LibXML.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/LibXML/LibXML.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/LibXSLT/LibXSLT.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/LibXSLT/LibXSLT.so
+man/man3/XML::LibXML.3p
+man/man3/XML::LibXSLT.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/LibXSLT
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/XML/LibXML
