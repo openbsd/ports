@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2001/11/20 18:54:55 danh Exp $
+# $OpenBSD: Makefile,v 1.14 2001/12/17 20:47:47 danh Exp $
 
 COMMENT=	"Cistron RADIUS server"
 
-VERSION=	1.6.4
+VERSION=	1.6.5
 DISTNAME=	radiusd-cistron-${VERSION}
-PKGNAME=	radiusd-cistron-${VERSION}p1
 CATEGORIES=	net
 NEED_VERSION=	1.496
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/ \
@@ -25,15 +24,11 @@ MAKE_FILE=	Makefile.BSD
 MAKE_FLAGS+=	CC="${CC}" CFLAGS="${CFLAGS} -DNOSHADOW -DNDBM" LCRYPT="" 
 FAKE_FLAGS+=	BINDIR='${WRKINST}${PREFIX}/bin' \
 		SBINDIR='${WRKINST}${PREFIX}/sbin' \
+		MANDIR='${WRKINST}${PREFIX}/man' \
 		RADIUS_DIR='${WRKINST}${PREFIX}/share/examples/radiusd-cistron'
 NO_REGRESS=	Yes
 
 post-install:
-	${INSTALL_MAN} ${WRKDIST}/doc/naslist.5rad ${PREFIX}/man/man5/naslist.5
-	${INSTALL_MAN} ${WRKDIST}/doc/clients.5rad ${PREFIX}/man/man5/clients.5
-	${INSTALL_MAN} ${WRKDIST}/doc/builddbm.8rad \
-		${PREFIX}/man/man8/builddbm.8
-	${INSTALL_MAN} ${WRKDIST}/doc/radiusd.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/radiusd-cistron
 	@for file in ${WRKDIST}/doc/README* ; do \
 		${INSTALL_DATA} $$file ${PREFIX}/share/doc/radiusd-cistron; \

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/02/05 19:11:57 danh Exp $
+# $OpenBSD: INSTALL,v 1.2 2001/12/17 20:47:47 danh Exp $
 #
 
 # exit on errors, use a sane path and install prefix
@@ -32,12 +32,20 @@ do_install()
 	${CONFIG_DIR}/dictionary
     install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.ascend \
 	${CONFIG_DIR}/dictionary.ascend
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.bay \
+	${CONFIG_DIR}/dictionary.bay
     install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.cisco \
 	${CONFIG_DIR}/dictionary.cisco
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.cistron \
+	${CONFIG_DIR}/dictionary.cistron
     install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.compat \
 	${CONFIG_DIR}/dictionary.compat
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.erx \
+	${CONFIG_DIR}/dictionary.erx
     install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.livingston \
 	${CONFIG_DIR}/dictionary.livingston
+    install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.redback \
+	${CONFIG_DIR}/dictionary.redback
     install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.shiva \
 	${CONFIG_DIR}/dictionary.shiva
     install -m 0644 -o root -g wheel ${SAMPLE_DIR}/dictionary.tunnel \

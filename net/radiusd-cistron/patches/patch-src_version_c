@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_version_c,v 1.1 2000/07/13 00:25:52 danh Exp $
---- src/version.c.orig	Sun Apr  2 11:58:14 2000
-+++ src/version.c	Wed Jul 12 01:28:45 2000
-@@ -90,6 +90,9 @@ void version(void)
+$OpenBSD: patch-src_version_c,v 1.2 2001/12/17 20:47:47 danh Exp $
+--- src/version.c.orig	Mon Dec 17 15:01:33 2001
++++ src/version.c	Mon Dec 17 15:02:28 2001
+@@ -93,6 +93,9 @@ void version(void)
  #if defined(bsdi)
  	fprintf(stderr," bsdi");
  #endif
