@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/03/02 04:41:09 marc Exp $
+# $OpenBSD: Makefile,v 1.7 1999/07/01 12:04:01 form Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
@@ -34,10 +34,10 @@ do-install:
 		${INSTALL_DATA} info.txt rsaref.txt \
 			${PREFIX}/share/doc/rsaref
 
-.include <bsd.port.mk>
-
-.if !defined(NO_SHARED_LIBS)
 post-install:
-	cd ${WRKSRC} && ${INSTALL_DATA} librsaref.so.2.0 ${PREFIX}/lib
-	${LDCONFIG} -m ${PREFIX}/lib
-.endif
+	@if [ x"${NO_SHARED_LIBS}" = "x" ]; then \
+		${INSTALL_DATA} ${WRKSRC}/librsaref.so.2.0 ${PREFIX}/lib; \
+		${LDCONFIG} -m ${PREFIX}/lib; \
+	fi
+
+.include <bsd.port.mk>
