@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/09/14 15:37:13 lebel Exp $
+# $OpenBSD: Makefile,v 1.44 2001/09/14 16:13:05 lebel Exp $
 
 COMMENT=		'window manager that emulates NEXTSTEP(tm)'
 
@@ -32,16 +32,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-pixmapdir="${PREFIX}/share/WindowMaker/Pixmaps" \
-			--with-nlsdir="${LOCALBASE}/share/locale"
+			--with-nlsdir="${LOCALBASE}/share/locale" \
+			--enable-gnome
 
-FLAVORS=		i18n gnome
+FLAVORS=		i18n
 FLAVOR?=
-
-.if ${FLAVOR:L:Mgnome}
-CONFIGURE_ARGS+=	--enable-gnome
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-.endif
 
 .if ${FLAVOR:L:Mi18n}
 LIB_DEPENDS+=		intl::devel/gettext
