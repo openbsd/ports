@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.266 2000/04/17 20:14:33 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.267 2000/04/17 21:53:38 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -530,6 +530,7 @@ _INSTALL_PRE_COOKIE=${WRKINST}/.install_started
 _INSTALL_PRE_COOKIE=${WRKBUILD}/.install_started
 .else
 _INSTALL_PRE_COOKIE=${WRKDIR}/.install_started
+_FAKE_COOKIE=		${WRKDIR}/.fake_done
 .endif
 .if defined(SEPARATE_BUILD)
 _CONFIGURE_COOKIE=	${WRKBUILD}/.configure_done
