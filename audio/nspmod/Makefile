@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2000/04/08 15:07:00 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/04/09 11:53:19 espie Exp $
 
 DISTNAME=	nspmod-0.1
 CATEGORIES=	audio
+NEED_VERSION=	1.255
 MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/ \
 		${MASTER_SITE_SUNSITE}/
 MASTER_SITE_SUBDIR= apps/sound/players
