@@ -78,7 +78,7 @@
         printf ("cant resolve hostname!\n");
         exit (-1);
       }
-!   opz.wordfile = strdup ("/usr/local/etc/ADMsnmp.passwd");
+!   opz.wordfile = strdup ("/usr/local/lib/ADMsnmp/snmp.passwd");
     opz.outputfile = NULL;
     opz.guess = -1;
     opz.manysend = 2;

@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 1999/03/23 02:54:06 dugsong Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/02 02:12:34 dugsong Exp $
 
 PKGNAME=	ADMsnmp-0.1
 DISTNAME=	ADMsnmp.0.1
@@ -25,7 +25,7 @@ do-build:
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/ADMsnmp ${PREFIX}/bin
-		${INSTALL_DATA} ${WRKSRC}/snmp.passwd ${PREFIX}/etc
-		mv ${PREFIX}/etc/snmp.passwd ${PREFIX}/etc/ADMsnmp.passwd
+		${INSTALL_DATA_DIR} ${PREFIX}/lib/ADMsnmp
+		${INSTALL_DATA} ${WRKSRC}/snmp.passwd ${PREFIX}/lib/ADMsnmp
 
 .include <bsd.port.mk>

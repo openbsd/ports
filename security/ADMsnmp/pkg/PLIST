@@ -1,2 +1,3 @@
 bin/ADMsnmp
-etc/ADMsnmp.passwd
+lib/ADMsnmp/snmp.passwd
+@dirrm lib/ADMsnmp
