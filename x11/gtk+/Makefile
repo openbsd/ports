@@ -3,7 +3,7 @@
 # Date created:		1998-June-02
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.3 1998/08/17 03:55:26 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/12/16 07:37:33 marc Exp $
 #
 
 # What port/package will be created
@@ -18,7 +18,7 @@ MAINTAINER=		marc@openbsd.org
 # where the source files and patches can be fetched
 #
 MASTER_SITES=		ftp://ftp.gimp.org/pub/gtk/v1.0/ \
-		ftp://ftp.ameth.org:/pub/mirrors/ftp.gimp.org/pub/gtk/v1.0/
+		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/pub/gtk/v1.0/
 
 # build/configuration variables
 #
