@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/04 08:02:32 camield Exp $
+# $OpenBSD: Makefile,v 1.10 2000/04/04 15:37:10 camield Exp $
 
 DISTNAME=	dot-forward-0.71
 HOMEPAGE=	http://cr.yp.to/dot-forward.html
@@ -33,15 +33,5 @@ RUN_DEPENDS=	${PREFIX}/bin/qmail-local::mail/qmail
 pre-build:
 	@echo ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@echo ${PREFIX} > ${WRKSRC}/conf-qmail
-
-# Hack to work around a bug in pkg_create: it wants PREFIX to exists
-# even when the srcdir is set to the fake PREFIX.
-# Don't bail out early if directory already exists or is not empty.
-
-pre-package:
-	@mkdir ${PREFIX} || true
-
-post-package:
-	@rmdir ${PREFIX} || true
 
 .include <bsd.port.mk>
