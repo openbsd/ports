@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2000/10/22 15:43:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2001/03/29 09:56:41 form Exp $
+
+COMMENT=	"access counter, clock and date for WWW pages"
 
 DISTNAME=	wwwcount2.5
 PKGNAME=	wwwcount-2.5

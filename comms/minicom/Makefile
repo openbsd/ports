@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.29 2000/10/22 14:03:00 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2001/03/29 09:56:43 form Exp $
+
+COMMENT=	"MS-DOS Telix-like serial communication program"
 
 DISTNAME=	${PKGNAME}.src
 PKGNAME=	minicom-1.83.1
