@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 1999/04/28 23:50:02 brad Exp $
+# $OpenBSD: Makefile,v 1.15 1999/05/07 05:31:56 turan Exp $
 
-DISTNAME=	mutt-0.95.4i
+DISTNAME=	mutt-0.95.5i
 CATEGORIES=     mail
-WRKSRC=		${WRKDIR}/mutt-0.95.4
+WRKSRC=		${WRKDIR}/mutt-0.95.5
 
 MAINTAINER=	turan@openbsd.org
 
