@@ -1,4 +1,4 @@
-$OpenBSD: LICENSE,v 1.23 1999/09/24 14:38:44 jakob Exp $
+$OpenBSD: LICENSE,v 1.24 1999/09/25 13:12:42 turan Exp $
 
 This file matches the type of license (see below) to each application
 in the OpenBSD ports tree.  Those ports with restrictive licenses will
@@ -357,8 +357,8 @@ Y	mail/pine			pine4.10.tar.gz			BSD
 Y	mail/popclient			popclient-3.0b6.tar.gz		COPY
 Y	mail/poppassd			pwserve-4			NONE
 -	mail/postfix			postfix-beta-19990122.tar.gz
-N	mail/procmail			procmail-3.12.tar.gz		NOFEE
--	mail/vrfy			vrfy_980820.tar.Z
+Y	mail/procmail			procmail-3.13.1.tar.gz		GPL
+Y	mail/vrfy			vrfy_990522.tar.Z		BSD
 Y	mail/xfaces			xfaces-3.3.tar.Z		BSD
 Y	mail/xfaces			xfaces-sounds.tar.gz		NONE
 N	mail/xfmail			xfmail-1.3.tar.gz		COPY
@@ -577,7 +577,7 @@ Y	x11/afterstep			AfterStep-1.0.tar.gz		X
 Y	x11/asclock			asclock.tgz			COPY
 Y	x11/aterm			aterm-0.3.4.tar.gz		GPL
 Y	x11/bclock			bclock-1.0.tar.gz		X
--	x11/blackbox			
+Y	x11/blackbox			blackbox-0.51.3.1.tar.gz	GPL
 Y	x11/blast			blast-1.0-ss-9.03.tar.gz	GPL
 Y	x11/bricons			bricons-athena-3.0.tar.gz	NONE
 Y	x11/ctwm			ctwm-3.5.tar.gz			X
@@ -614,26 +614,26 @@ Y	x11/xaniroc			xaniroc.src.tar.Z		NONE
 Y	x11/xantfarm			xantfarm23oct91.tar.gz		BSD
 N	x11/xautolock			-none-				INC
 Y	x11/xcb				xcb-2.3.tar.gz			BSD
-Y	x11/xco				xco.tar.gz
-Y	x11/xcoloredit			xcoloredit.tar.Z
-Y	x11/xcolors			xcolors.tar.gz
-Y	x11/xdaliclock			xdaliclock-2.11.tar.gz
+Y	x11/xco				xco.tar.gz			BSD
+Y	x11/xcoloredit			xcoloredit.tar.Z		BSD
+Y	x11/xcolors			xcolors.tar.gz			BSD
+Y	x11/xdaliclock			xdaliclock-2.11.tar.gz		BSD
 Y	x11/xdtm			xdtm-2.5.5.tar.gz		COPY
 -	x11/xfed			-				BSD
 Y	x11/xfedor			xfedor.tar.gz			BSD
 Y	x11/xfishtank			xfishtank-2.2.tar.gz		COPY
 Y	x11/xfm				xfm-1.3.2.tar.gz		COPY
--	x11/xforms		xforms/openBSD-i386/bxform-088.tgz
--	x11/xforms		xforms/openBSD-m68k/bxform-088.tgz	
--	x11/xforms		xforms/openBSD-sparc/bxform-088.tgz
--	x11/xfstt			Xfstt-0.9.10.tgz
-Y	x11/xgrab			xgrabsc.2_41.tar.Z
-Y	x11/xloadimage			xloadimage.3.03.tar.Z
--	x11/xlockmore			xlockmore-4.08.2.tar.gz
--	x11/xlogout			xlogout-1.1.tar.Z
+N	x11/xforms		xforms/openBSD-i386/bxform-088.tgz	COPY
+N	x11/xforms		xforms/openBSD-m68k/bxform-088.tgz	COPY
+N	x11/xforms		xforms/openBSD-sparc/bxform-088.tgz	COPY
+Y	x11/xfstt			Xfstt-0.9.10.tgz		GPL
+Y	x11/xgrab			xgrabsc.2_41.tar.Z		BSD
+Y	x11/xloadimage			xloadimage.3.03.tar.Z		BSD
+-	x11/xlockmore			xlockmore-4.08.2.tar.gz	
+Y	x11/xlogout			xlogout-1.1.tar.Z		BSD
 Y	x11/xmascot			xmascot2.5p2.tar.gz		COPY
 Y	x11/xmbdfed			xmbdfed-2.7.tar.gz		COPY
-Y	x11/xmold			xmold.tar.gz
+Y	x11/xmold			xmold.tar.gz			NONE
 Y	x11/xpostit			xpostit3.3.1.tar.Z		BSD
 Y	x11/xpostitPlus			XPostitPlus-2.3.tar.gz		BSD
 Y	x11/xprompt			xprompt-1.4.tar.gz		BSD
@@ -642,8 +642,8 @@ Y	x11/xtacy			Xtacy113.tar.gz			GPL
 Y	x11/xtattr			xtattr-1.0.tar.gz		NONE
 Y	x11/xtestpicture		xtestpicture-1.1.tar.gz		BSD
 Y	x11/xtoolwait			xtoolwait-1.1.tar.gz		GPL
--	x11/xtraceroute			xtraceroute-0.8.14.tar.gz
--	x11/xtraceroute			ndg_files.tar.gz
+Y	x11/xtraceroute			xtraceroute-0.8.14.tar.gz	GPL
+Y	x11/xtraceroute			ndg_files.tar.gz		NONE
 N	x11/xview-clients		xview-clients.tar.gz
 N	x11/xview-config		xview3.2p1-X11R6.tar.gz
 N	x11/xview-lib			xview-lib.tar.gz
