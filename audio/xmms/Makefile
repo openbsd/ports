@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/04/06 00:48:23 wcobb Exp $
+# $OpenBSD: Makefile,v 1.29 2003/10/20 08:43:35 sturm Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -116,7 +116,7 @@ post-extract:
 	@mv -f ${WRKDIR}/${SUNDRIVER} ${WRKSRC}/Output/sun
 
 pre-configure:
-	@cd ${WRKSRC}/libxmms && autoconf
+	@cd ${WRKSRC}/libxmms && ${LOCALBASE}/bin/autoconf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmms
