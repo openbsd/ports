@@ -1,10 +1,10 @@
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/24 09:27:55 form Exp $
+# $OpenBSD: Makefile,v 1.2 2000/06/14 16:57:40 form Exp $
 
 DISTNAME= 	hypermail-2b29
 CATEGORIES=     mail www
-FAKE=		Yes
+NEED_VERSION=	1.301
 MASTER_SITES=   ftp://ftp.landfield.com/hypermail/ \
 		ftp://ftp.faqs.org/hypermail/
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MAINTAINER=	form@openbsd.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
-GNU_CONFIGURE=  Yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail
 
 pre-install:
