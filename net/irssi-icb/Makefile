@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2003/01/03 15:13:31 lebel Exp $
+# $OpenBSD: Makefile,v 1.9 2004/01/04 00:49:38 jolan Exp $
 
 NOT_FOR_ARCHS=  ${NO_SHARED_ARCHS}
 
@@ -19,6 +19,8 @@ MAINTAINER=	David Lebel <lebel@openbsd.org>
 
 BUILD_DEPENDS=  ::net/irssi:configure
 RUN_DEPENDS=  	:irssi-*:net/irssi
+
+LIB_DEPENDS=	glib.1.2,gmodule.1.2,gthread.1.2::devel/glib
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
