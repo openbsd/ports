@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2001/09/29 14:41:35 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2001/10/05 23:25:12 naddy Exp $
 # Uses threads
 
 COMMENT= 	"interpreted object-oriented programming language"
@@ -113,7 +113,7 @@ NOSHARED=	\#
 CONFIGURE_ENV+=	OPT='${CFLAGS}' LDSHARED="cc -shared -fPIC" \
     LDFLAGS='-L${WRKSRC}'
 .else
-CONFIGURE_ENV+= OPT='${CFLAGS} -fpic' LDSHARED='cc -shared -fPIC' \
+CONFIGURE_ENV+= OPT='${CFLAGS} -fPIC' LDSHARED='cc -shared -fPIC' \
 	LDFLAGS='-L${WRKSRC}'
 MAKE_FLAGS+= MAJOR=0 MINOR=0 LDLIBRARY=libpython2.1.so.0.0 \
 	LD_LIBRARY_PATH=${WRKSRC}
