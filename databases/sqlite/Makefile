@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2005/02/16 02:27:16 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2005/02/20 03:14:52 jolan Exp $
 
 COMMENT=	"Embedded SQL implementation"
 
@@ -20,7 +20,8 @@ CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.59
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		tcl84::lang/tcl/8.4
+BUILD_DEPENDS=		:pkgconfig-*:devel/pkgconfig \
+			tcl84::lang/tcl/8.4
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		config_TARGET_TCL_LIBS="-L${LOCALBASE}/lib -ltcl84 -lm"
