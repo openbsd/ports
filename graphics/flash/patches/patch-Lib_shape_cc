@@ -1,0 +1,11 @@
+$OpenBSD: patch-Lib_shape_cc,v 1.1 2002/09/28 22:19:40 naddy Exp $
+--- Lib/shape.cc.orig	Sun Sep 29 00:12:12 2002
++++ Lib/shape.cc	Sun Sep 29 00:12:24 2002
+@@ -21,6 +21,7 @@
+ //
+ 
+ #include "swf.h"
++#include <math.h>
+ 
+ #ifdef RCSID
+ static char *rcsid = "$Id: patch-Lib_shape_cc,v 1.1 2002/09/28 22:19:40 naddy Exp $";

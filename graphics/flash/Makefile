@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/03/21 20:57:08 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/09/28 22:19:40 naddy Exp $
 
 COMMENT=	"open source standalone flash(tm) player"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 
 USE_X11=	Yes
