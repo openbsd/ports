@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/12 08:41:07 turan Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/12 09:31:15 turan Exp $
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
@@ -13,7 +13,7 @@ NEED_VERSION=	1.91
 
 MAINTAINER=     ports@openbsd.org
 
-LICENSE_TYPE=		GPL/NONE
+LICENSE_TYPE=		GPL
 PERMIT_PKG_CDROM=	YES
 PERMIT_PKG_FTP=		YES
 PERMIT_DISTF_CDROM=	YES
