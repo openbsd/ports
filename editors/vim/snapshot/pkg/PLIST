@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2001/07/13 19:28:28 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.16 2001/07/23 14:09:30 lebel Exp $
 bin/ex
 bin/rview
 bin/rvim
@@ -19,10 +19,16 @@ man/man1/xxd.1
 share/vim/vim60${V}/bugreport.vim
 share/vim/vim60${V}/colors/README.txt
 share/vim/vim60${V}/colors/default.vim
+share/vim/vim60${V}/colors/elflord.vim
 share/vim/vim60${V}/colors/evening.vim
+share/vim/vim60${V}/colors/koehler.vim
 share/vim/vim60${V}/colors/morning.vim
+share/vim/vim60${V}/colors/murphy.vim
+share/vim/vim60${V}/colors/pablo.vim
 share/vim/vim60${V}/colors/peachpuff.vim
+share/vim/vim60${V}/colors/ron.vim
 share/vim/vim60${V}/colors/shine.vim
+share/vim/vim60${V}/colors/zellner.vim
 share/vim/vim60${V}/compiler/README.txt
 share/vim/vim60${V}/compiler/msvc.vim
 share/vim/vim60${V}/compiler/tidy.vim
@@ -95,6 +101,7 @@ share/vim/vim60${V}/doc/tagsearch.txt
 share/vim/vim60${V}/doc/term.txt
 share/vim/vim60${V}/doc/tips.txt
 share/vim/vim60${V}/doc/todo.txt
+share/vim/vim60${V}/doc/uganda.nsis.txt
 share/vim/vim60${V}/doc/uganda.txt
 share/vim/vim60${V}/doc/undo.txt
 share/vim/vim60${V}/doc/usr_01.txt
@@ -158,6 +165,7 @@ share/vim/vim60${V}/ftplugin/spec.vim
 share/vim/vim60${V}/ftplugin/vim.vim
 share/vim/vim60${V}/ftplugin/xs.vim
 share/vim/vim60${V}/ftplugof.vim
+share/vim/vim60${V}/gvimrc_example.vim
 share/vim/vim60${V}/indent.vim
 share/vim/vim60${V}/indent/ada.vim
 share/vim/vim60${V}/indent/c.vim
@@ -190,6 +198,8 @@ share/vim/vim60${V}/macros/less.sh
 share/vim/vim60${V}/macros/less.vim
 share/vim/vim60${V}/macros/life/click.me
 share/vim/vim60${V}/macros/life/life.vim
+share/vim/vim60${V}/macros/matchit.txt
+share/vim/vim60${V}/macros/matchit.vim
 share/vim/vim60${V}/macros/maze/Makefile
 share/vim/vim60${V}/macros/maze/README.txt
 share/vim/vim60${V}/macros/maze/maze.c
@@ -325,6 +335,7 @@ share/vim/vim60${V}/syntax/ia64.vim
 share/vim/vim60${V}/syntax/icon.vim
 share/vim/vim60${V}/syntax/idl.vim
 share/vim/vim60${V}/syntax/idlang.vim
+share/vim/vim60${V}/syntax/indent.vim
 share/vim/vim60${V}/syntax/inform.vim
 share/vim/vim60${V}/syntax/inittab.vim
 share/vim/vim60${V}/syntax/ishd.vim
@@ -399,6 +410,7 @@ share/vim/vim60${V}/syntax/php.vim
 share/vim/vim60${V}/syntax/phtml.vim
 share/vim/vim60${V}/syntax/pic.vim
 share/vim/vim60${V}/syntax/pike.vim
+share/vim/vim60${V}/syntax/pilrc.vim
 share/vim/vim60${V}/syntax/pine.vim
 share/vim/vim60${V}/syntax/plm.vim
 share/vim/vim60${V}/syntax/plsql.vim
@@ -441,7 +453,7 @@ share/vim/vim60${V}/syntax/sicad.vim
 share/vim/vim60${V}/syntax/simula.vim
 share/vim/vim60${V}/syntax/sinda.vim
 share/vim/vim60${V}/syntax/sindacmp.vim
-share/vim/vim60${V}/syntax/sindaout.vim
+share/vim/vim60${V}/syntax/sind${V}ut.vim
 share/vim/vim60${V}/syntax/skill.vim
 share/vim/vim60${V}/syntax/sl.vim
 share/vim/vim60${V}/syntax/slang.vim
@@ -531,6 +543,7 @@ share/vim/vim60${V}/tools/shtags.1
 share/vim/vim60${V}/tools/shtags.pl
 share/vim/vim60${V}/tools/tcltags
 share/vim/vim60${V}/tools/vim132
+share/vim/vim60${V}/tools/vimclient
 share/vim/vim60${V}/tools/vimm
 share/vim/vim60${V}/tools/vimspell.sh
 share/vim/vim60${V}/tools/vimspell.txt
