@@ -1,0 +1,53 @@
+*** configure.orig	Thu Dec 18 17:55:19 1997
+--- configure	Fri Jan  9 16:49:28 1998
+***************
+*** 598,604 ****
+  			   tr -d '/ ' | tr '[A-Z]' '[a-z]'`
+  	ac_md_release=`echo $ac_sys_release |
+  			   tr -d '/ ' | sed 's/\..*//'`
+! 	MACHDEP="$ac_md_system$ac_md_release"
+  
+  	case $MACHDEP in
+  	'')	MACHDEP="unknown";;
+--- 598,604 ----
+  			   tr -d '/ ' | tr '[A-Z]' '[a-z]'`
+  	ac_md_release=`echo $ac_sys_release |
+  			   tr -d '/ ' | sed 's/\..*//'`
+! 	MACHDEP="$ac_md_system"
+  
+  	case $MACHDEP in
+  	'')	MACHDEP="unknown";;
+***************
+*** 1843,1849 ****
+  	next/*) LDSHARED='$(CC) $(CFLAGS) -nostdlib -r';;
+  	Linux*) LDSHARED="gcc -shared";;
+  	dgux*) LDSHARED="ld -G";;
+! 	FreeBSD*|NetBSD*) LDSHARED="ld -Bshareable";;
+  	SCO_SV*) LDSHARED="cc -G -KPIC -Ki486 -belf -Wl,-Bexport";;
+  	*)	LDSHARED="ld";;
+  	esac
+--- 1843,1849 ----
+  	next/*) LDSHARED='$(CC) $(CFLAGS) -nostdlib -r';;
+  	Linux*) LDSHARED="gcc -shared";;
+  	dgux*) LDSHARED="ld -G";;
+! 	FreeBSD*|NetBSD*|OpenBSD*) LDSHARED="ld -Bshareable";;
+  	SCO_SV*) LDSHARED="cc -G -KPIC -Ki486 -belf -Wl,-Bexport";;
+  	*)	LDSHARED="ld";;
+  	esac
+***************
+*** 1861,1867 ****
+  		 else CCSHARED="+z";
+  		 fi;;
+  	Linux*) CCSHARED="-fpic";;
+! 	FreeBSD*|NetBSD*) CCSHARED="-fpic";;
+  	SCO_SV*) CCSHARED="-KPIC -dy -Bdynamic";;
+  	IRIX*/6*) CCSHARED="-all";;
+  	esac
+--- 1861,1867 ----
+  		 else CCSHARED="+z";
+  		 fi;;
+  	Linux*) CCSHARED="-fpic";;
+! 	FreeBSD*|NetBSD*|OpenBSD*) CCSHARED="-fpic";;
+  	SCO_SV*) CCSHARED="-KPIC -dy -Bdynamic";;
+  	IRIX*/6*) CCSHARED="-all";;
+  	esac
