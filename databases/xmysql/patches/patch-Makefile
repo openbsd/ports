@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.5 2002/12/29 18:28:25 margarida Exp $
+$OpenBSD: patch-Makefile,v 1.6 2003/02/02 22:22:38 margarida Exp $
 --- Makefile.orig	Wed Nov 18 04:19:06 1998
-+++ Makefile	Wed Dec 25 10:53:17 2002
++++ Makefile	Sun Feb  2 22:08:06 2003
 @@ -31,24 +31,23 @@
  PROGRAM = 	xmysql
  
@@ -62,7 +62,7 @@ $OpenBSD: patch-Makefile,v 1.5 2002/12/29 18:28:25 margarida Exp $
 -	install --mode=744 mysql.xpm $(XMYSQL_XPMPATH)
 -	install --mode=744 sqlhelp.txt $(XMYSQL_HELPPATH) 
 +	install -s -m ${BINMODE} $(PROGRAM) $(INSTALLPATH)
-+	install -m 444 mysql.xpm $(XMYSQL_XPMPATH)
++	install -m 444 mysql.xpm $(XMYSQL_XPMPATH)/Mysql.xpm
 +	install -d -m 755 $(XMYSQL_HELPPATH) 
 +	install -m 444 sqlhelp.txt $(XMYSQL_HELPPATH) 
  

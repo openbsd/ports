@@ -1,0 +1,12 @@
+$OpenBSD: patch-Xmysql_c,v 1.1 2003/02/02 22:22:38 margarida Exp $
+--- Xmysql.c.orig	Sun Feb  2 22:12:45 2003
++++ Xmysql.c	Sun Feb  2 22:13:05 2003
+@@ -78,7 +78,7 @@ create_form_Xmysql_main (void)
+ 
+ 	fdui->image = obj = fl_add_pixmap (FL_NORMAL_PIXMAP, 700, 20, 80, 40, "");
+ 	/* pixmap */
+-	sprintf (pixmapName, "%s/%s", CURRENT_RD, "mysql.xpm");
++	sprintf (pixmapName, "%s/%s", CURRENT_RD, "Mysql.xpm");
+ 	fl_set_pixmap_file (obj, pixmapName);
+ 
+ 	fdui->xmysql_main_status = obj = fl_add_input (FL_NORMAL_INPUT, 10, 280, 780, 30, "Status");
