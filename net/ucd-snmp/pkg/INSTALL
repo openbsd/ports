@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.1 2000/06/02 15:45:06 hugh Exp $
+# $OpenBSD: INSTALL,v 1.2 2000/06/29 21:20:06 jakob Exp $
 #
 # post-installation setup of ucd-snmp
 
@@ -32,3 +32,4 @@ case $2 in
 	exit 1
 	;;
 esac
+exit 0

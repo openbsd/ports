@@ -1,6 +1,4 @@
-# 
-# $OpenBSD: Makefile,v 1.12 2000/06/27 06:36:10 jakob Exp $
-# 
+# $OpenBSD: Makefile,v 1.13 2000/06/29 21:20:03 jakob Exp $
 
 DISTNAME=		ucd-snmp-4.1.2
 CATEGORIES=     	net

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mibs_Makefile_in,v 1.1 2000/06/29 21:20:05 jakob Exp $
+--- mibs/Makefile.in.orig	Mon Jun 26 21:16:08 2000
++++ mibs/Makefile.in	Mon Jun 26 21:16:24 2000
+@@ -26,7 +26,7 @@ MIBS	= $(V1MIBS) $(V2MIBS) $(V2PMIBS) $(
+ all:
+ 
+ install: installdirs
+-	@for i in $(MIBS) ; do $(INSTALL) $(srcdir)/$$i $(mibdir) ; echo "install: installed $$i in $(mibdir)" ; done
++	@for i in $(MIBS) ; do $(INSTALL_DATA) $(srcdir)/$$i $(mibdir) ; echo "install: installed $$i in $(mibdir)" ; done
+ 
+ installdirs:
+ 	@$(SHELL) $(srcdir)/../mkinstalldirs $(mibdir)

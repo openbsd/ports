@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_top,v 1.1 2000/06/29 21:20:04 jakob Exp $
+--- Makefile.top.orig	Mon Apr 17 17:46:49 2000
++++ Makefile.top	Tue Jun 27 13:20:39 2000
+@@ -31,6 +31,7 @@ persistentdir	= @PERSISTENT_DIRECTORY@
+ # Programs
+ #
+ INSTALL		= @INSTALL@
++INSTALL_DATA	= @INSTALL_DATA@
+ SED		= @SED@
+ RANLIB		= @RANLIB@
+ LN_S		= @LN_S@

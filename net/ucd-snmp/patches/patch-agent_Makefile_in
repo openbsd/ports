@@ -1,5 +1,6 @@
---- agent/Makefile.in.orig	Tue May 30 12:20:36 2000
-+++ agent/Makefile.in	Tue May 30 12:20:43 2000
+$OpenBSD: patch-agent_Makefile_in,v 1.1 2000/06/29 21:20:05 jakob Exp $
+--- agent/Makefile.in.orig	Fri Feb  4 16:15:08 2000
++++ agent/Makefile.in	Mon Jun 26 20:57:26 2000
 @@ -72,7 +72,7 @@ install:  installdirs
  
  installdirs:

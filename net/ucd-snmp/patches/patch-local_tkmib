@@ -1,0 +1,9 @@
+$OpenBSD: patch-local_tkmib,v 1.1 2000/06/29 21:20:05 jakob Exp $
+--- local/tkmib.orig	Mon Mar 13 16:27:45 2000
++++ local/tkmib	Mon Jun 26 20:57:26 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl55 -w
++#!/usr/bin/perl -w
+ 
+ require 5;
+ 
