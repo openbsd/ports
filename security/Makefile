@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/02 14:26:29 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1998/01/05 14:40:50 joey Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
 #    SUBDIR += SSLeay
-    SUBDIR += cfs
-    SUBDIR += cops
-    SUBDIR += crack
+     SUBDIR += cfs
+     SUBDIR += cops
+     SUBDIR += crack
 #    SUBDIR += donkey
 #    SUBDIR += fwtk
 #    SUBDIR += john
@@ -17,11 +17,11 @@
 #    SUBDIR += p5-PGP
 #    SUBDIR += pgp
 #    SUBDIR += pidentd
-    SUBDIR += rsaref
-    SUBDIR += ssh
+     SUBDIR += rsaref
+     SUBDIR += ssh
 #    SUBDIR += sudo
 #    SUBDIR += super
-    SUBDIR += swatch
+     SUBDIR += swatch
 #    SUBDIR += tcp_wrapper
 #    SUBDIR += tripwire
 #    SUBDIR += vscan

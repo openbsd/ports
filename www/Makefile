@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:49 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/05 14:40:53 joey Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
 #    SUBDIR += Mosaic         # requires Motif
 #    SUBDIR += analog
-    SUBDIR += apache
+     SUBDIR += apache
 #    SUBDIR += apache-current
 #    SUBDIR += apache-php
 #    SUBDIR += apache-ssl
@@ -23,7 +23,7 @@
 #    SUBDIR += libwww
 #    SUBDIR += linemode
 #    SUBDIR += linux-netscape4
-    SUBDIR += lynx
+     SUBDIR += lynx
 #    SUBDIR += mapedit
 #    SUBDIR += mhonarc
 #    SUBDIR += mmm
@@ -50,7 +50,7 @@
 #    SUBDIR += webstone
 #    SUBDIR += wml
 #    SUBDIR += wn
-    SUBDIR += wwwcount
+     SUBDIR += wwwcount
 #    SUBDIR += wwwstat
 
 .include <bsd.port.subdir.mk>

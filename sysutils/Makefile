@@ -1,34 +1,34 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:48 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/05 14:40:51 joey Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
-    SUBDIR += LPRng
+     SUBDIR += LPRng
 #    SUBDIR += afio
 #    SUBDIR += asrpages
 #    SUBDIR += cdrecord
 #    SUBDIR += cd-write
 #    SUBDIR += contool
-    SUBDIR += idled
-    SUBDIR += lsof
+     SUBDIR += idled
+     SUBDIR += lsof
 #    SUBDIR += manck
 #    SUBDIR += mei
 #    SUBDIR += mkisofs
 #    SUBDIR += pib
-    SUBDIR += rtty
-    SUBDIR += setquota
+     SUBDIR += rtty
+     SUBDIR += setquota
 #    SUBDIR += skill
-    SUBDIR += socket
+     SUBDIR += socket
 #    SUBDIR += star
-    SUBDIR += stat
+     SUBDIR += stat
 #    SUBDIR += su2
-    SUBDIR += tcplist
+     SUBDIR += tcplist
 #    SUBDIR += top
 #    SUBDIR += tua
 #    SUBDIR += xbatt
 #    SUBDIR += xcpustate
 #    SUBDIR += xdu
 #    SUBDIR += xloadface
-    SUBDIR += xntpd
+     SUBDIR += xntpd
 #    SUBDIR += xosview
 #    SUBDIR += xperfmon
 #    SUBDIR += xsysinfo

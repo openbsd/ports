@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1997/12/02 12:53:38 niklas Exp $
+# $OpenBSD: Makefile,v 1.4 1998/01/05 14:40:43 joey Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -6,8 +6,8 @@
 #    SUBDIR += SWIG
 #    SUBDIR += SpecTcl
 #    SUBDIR += asl
-    SUBDIR += autoconf
-    SUBDIR += automake
+     SUBDIR += autoconf
+     SUBDIR += automake
 #    SUBDIR += bcc
 #    SUBDIR += boehm-gc
 #    SUBDIR += cccc
@@ -26,18 +26,18 @@
 #    SUBDIR += gcc11
 #    SUBDIR += gdb
 #    SUBDIR += gdbtk
-    SUBDIR += gindent
-    SUBDIR += gmake
-    SUBDIR += id-utils
+     SUBDIR += gindent
+     SUBDIR += gmake
+     SUBDIR += id-utils
 #    SUBDIR += ilu
 #    SUBDIR += lclint
 #    SUBDIR += libdlmalloc
 #    SUBDIR += libmalloc
-    SUBDIR += libslang
+     SUBDIR += libslang
 #    SUBDIR += linux_devel
 #    SUBDIR += linuxgdb
-    SUBDIR += m4
-    SUBDIR += makedepend
+     SUBDIR += m4
+     SUBDIR += makedepend
 #    SUBDIR += mkmf
 #    SUBDIR += mprof
 #    SUBDIR += nana
@@ -85,13 +85,13 @@
 #    SUBDIR += sawt
 #    SUBDIR += scogdb
 #    SUBDIR += sfio
-    SUBDIR += swig
+     SUBDIR += swig
 #    SUBDIR += tclcheck
 #    SUBDIR += tkcvs
 #    SUBDIR += tkref
 #    SUBDIR += tvision
 #    SUBDIR += vtcl
-    SUBDIR += xmake
+     SUBDIR += xmake
 #    SUBDIR += xwpe
 #    SUBDIR += xxgdb
 

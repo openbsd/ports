@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.1 1997/11/27 23:44:40 niklas Exp $
+# $OpenBSD: Makefile,v 1.2 1998/01/05 14:40:45 joey Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
 #    SUBDIR += asedit
-    SUBDIR += axe
-    SUBDIR += beav
+     SUBDIR += axe
+     SUBDIR += beav
 #    SUBDIR += bpatch
 #    SUBDIR += e93
-    SUBDIR += emacs
+     SUBDIR += emacs
 #    SUBDIR += gvim
-    SUBDIR += jed
-    SUBDIR += joe
-    SUBDIR += jove
+     SUBDIR += jed
+     SUBDIR += joe
+     SUBDIR += jove
 #    SUBDIR += mule
 #    SUBDIR += mule-common
 #    SUBDIR += nedit
