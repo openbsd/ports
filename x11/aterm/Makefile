@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/04/17 03:40:57 kevlo Exp $
+# $OpenBSD: Makefile,v 1.22 2001/04/22 22:27:11 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
 
 COMMENT=	"color vt102 terminal emulator with transparency support"
@@ -22,14 +22,27 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
+CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 		--with-xpm --enable-transparency \
 		--enable-xgetdefault --enable-ttygid \
 		--enable-background-image --enable-fading \
-		--with-jpeg --with-png --enable-big5
+		--with-jpeg --with-png
+
+FLAVORS=	big5
+FLAVOR?=
+
+.if ${FLAVOR:L:Mbig5}
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/chinese/taipei16.pcf.gz::chinese/taipeifonts
+PATCH_LIST=	patch-src_Makefile_in \
+		patch-src_command_c
+
+CONFIGURE_ARGS+= --enable-big5
 
 post-patch:
-	cd ${FILESDIR}; cp -f {cli_xcin.c,protocol.h,state.h} \
+	@cd ${FILESDIR}; cp -f {cli_xcin.c,protocol.h,state.h} \
 		${WRKSRC}/src
+.else
+PATCH_LIST=
+.endif
 
 .include <bsd.port.mk>

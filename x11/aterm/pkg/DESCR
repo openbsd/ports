@@ -4,4 +4,7 @@ additions for fast transparency.
 It was created with AfterStep users in mind, but is not tied to any
 libraries, and can be used anywhere.
 
+Flavors:
+	big5 - Build with support for Chinese text input.
+
 WWW: ${HOMEPAGE}
