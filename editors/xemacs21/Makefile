@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2004/03/03 09:58:21 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2004/05/03 06:27:00 espie Exp $
 
 COMMENT=		"heavily customizable and extensible editor"
 
@@ -53,7 +53,7 @@ MODULES=	gettext
 # 'configure.in' modified to generate a 'configure'
 # that knows about curses really being ncurses
 
-CONFIGURE_STYLE=	autoconf old dest
+CONFIGURE_STYLE=	autoconf old dest no-autoheader
 CONFIGURE_ARGS+=	--infodir='$${DESTDIR}${PREFIX}/info/${DISTNAME}' \
 			--infopath='${LOCALBASE}/info/${DISTNAME}:${LOCALBASE}/info:/usr/share/info' \
 			--site-prefixes='${LOCALBASE}:/usr' \
