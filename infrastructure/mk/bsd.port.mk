@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.394 2001/04/11 16:06:07 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.395 2001/04/12 20:35:59 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -651,7 +651,7 @@ _PKG_PREREQ= ${WRKPKG}/PLIST${SUBPACKAGE} ${WRKPKG}/DESCR${SUBPACKAGE} ${WRKPKG}
 .if !defined(PKG_ARGS)
 PKG_ARGS= -v -c '${WRKPKG}/COMMENT${SUBPACKAGE}' -d ${WRKPKG}/DESCR${SUBPACKAGE}
 PKG_ARGS+=-f ${WRKPKG}/PLIST${SUBPACKAGE} -p ${PREFIX} 
-.if ${NEW_DEPENDS} != "yes"
+.if ${NEW_DEPENDS:L} != "yes"
 PKG_ARGS+=-P "`cd ${.CURDIR} && SUBPACKAGE='${SUBPACKAGE}' ${MAKE} package-depends|${_SORT_DEPENDS}`"
 .endif
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
@@ -1151,51 +1151,51 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 .for _DEP in fetch build run lib misc
 ${_DEP}-depends:
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
+.    for _i in ${${_DEP:U}_DEPENDS}
 	@unset DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
-	for i in ${${_DEP:U}_DEPENDS}; do \
-		echo $$i|{ \
-			IFS=:; read dep pkg dir target; \
-			case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
-			${_flavor_fragment}; \
-			case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
-				eval $$toset ${MAKE} show VARNAME=FULLPKGNAME`;; esac; \
-			for abort in false false true; do \
-				if $$abort; then \
-					${ECHO_MSG} "Dependency check failed"; \
-					exit 1; \
-				fi; \
-				cd ${PORTSDIR}; \
-				if [ ! -d $$dir ]; then \
-					echo ">> No directory for $$dep ($$dir)"; \
-				fi; \
-				if [ -L $$dir ]; then \
-					echo ">> Broken dependency: $$dir is a symbolic link"; \
-					exit 1; \
-				fi; \
-				found=false; \
-				case "$$dep" in \
-				"/nonexistent") earlyexit=true;; \
-				*) earlyexit=false; \
-					${_${_DEP}_depends_fragment}; \
-					if $$found; then \
-						${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - found"; \
-						break; \
-					else \
-						${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - not found"; \
-					fi;; \
-				esac; \
-				${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
-				if cd $$dir && eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
-					${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME}"; \
-				else \
-					exit 1; \
-				fi; \
-				if $$earlyexit; then \
+	echo '${_i}'|{ \
+		IFS=:; read dep pkg dir target; \
+		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+		${_flavor_fragment}; \
+		case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
+			eval $$toset ${MAKE} show VARNAME=FULLPKGNAME`;; esac; \
+		for abort in false false true; do \
+			if $$abort; then \
+				${ECHO_MSG} "Dependency check failed"; \
+				exit 1; \
+			fi; \
+			cd ${PORTSDIR}; \
+			if [ ! -d $$dir ]; then \
+				echo ">> No directory for $$dep ($$dir)"; \
+			fi; \
+			if [ -L $$dir ]; then \
+				echo ">> Broken dependency: $$dir is a symbolic link"; \
+				exit 1; \
+			fi; \
+			found=false; \
+			case "$$dep" in \
+			"/nonexistent") earlyexit=true;; \
+			*) earlyexit=false; \
+				${_${_DEP}_depends_fragment}; \
+				if $$found; then \
+					${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - found"; \
 					break; \
-				fi; \
-			done; \
-		}; \
-	done
+				else \
+					${ECHO_MSG} "===>  ${FULLPKGNAME} depends on: $$dep - not found"; \
+				fi;; \
+			esac; \
+			${ECHO_MSG} "===>  Verifying $$target for $$dep in $$dir"; \
+			if cd $$dir && eval $$toset ${MAKE} ${_DEPEND_THRU} $$target; then \
+				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME}"; \
+			else \
+				exit 1; \
+			fi; \
+			if $$earlyexit; then \
+				break; \
+			fi; \
+		done; \
+	}
+.    endfor
 .  endif
 .endfor
 
