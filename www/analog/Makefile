@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/15 05:37:11 form Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/16 03:32:24 form Exp $
 
 DISTNAME=	analog-4.11
 CATEGORIES=	www
-MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
+MASTER_SITES=	http://www.analog.cx/ \
+		http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
 		http://brendanr.simplenet.com/analog/ \
 		http://analog.gsp.com/ \
@@ -12,6 +13,8 @@ MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://analog.technomancer.com/ \
 		http://analog.wizard.net/ \
 		ftp://ftp.netcasting.net/pub/packages/analog/
+
+HOMEPAGE=	http://www.analog.cx/
 
 MAINTAINER=	form@OpenBSD.ORG
 
@@ -27,11 +30,11 @@ DOCDIR=		${PREFIX}/share/doc/analog
 HTTPDIR=	/var/www
 IMAGEDIR=	/analog-images
 
-CFLAGS+=	-DANALOGDIR=\\\"${ANALOGDIR}/\\\" \
-		-DDEFAULTCONFIGFILE=\\\"${CONFIGFILE}\\\" \
-		-DHTTPDIR=\\\"${HTTPDIR}/\\\" \
-		-DIMAGEDIR=\\\"${IMAGEDIR}/\\\" \
-		-DANALOG=\\\"${PREFIX}/bin/analog\\\"
+CFLAGS+=	-DANALOGDIR=\"${ANALOGDIR}/\" \
+		-DDEFAULTCONFIGFILE=\"${CONFIGFILE}\" \
+		-DHTTPDIR=\"${HTTPDIR}/\" \
+		-DIMAGEDIR=\"${IMAGEDIR}/\" \
+		-DANALOG=\"${PREFIX}/bin/analog\"
 
 ALL_TARGET=	analog
 
