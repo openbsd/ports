@@ -1,14 +1,15 @@
-$OpenBSD: patch-configure,v 1.5 2002/12/16 16:58:12 wilfried Exp $
---- configure.orig	Mon Nov 25 18:38:38 2002
-+++ configure	Mon Dec 16 16:51:42 2002
+$OpenBSD: patch-configure,v 1.6 2003/04/02 12:58:43 wilfried Exp $
+--- configure.orig	Thu Feb 13 22:48:00 2003
++++ configure	Wed Apr  2 14:36:54 2003
 @@ -1208,9 +1208,9 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
 -FL_MAJOR_VERSION=1
-+FL_MAJOR_VERSION=2
- FL_MINOR_VERSION=1
--FL_PATCH_VERSION=2
+-FL_MINOR_VERSION=1
+-FL_PATCH_VERSION=3
++FL_MAJOR_VERSION=3
++FL_MINOR_VERSION=0
 +FL_PATCH_VERSION=0
  FL_RELEASE_VERSION=
  FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}

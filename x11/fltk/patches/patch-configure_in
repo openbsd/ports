@@ -1,14 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.6 2002/12/16 16:58:12 wilfried Exp $
---- configure.in.orig	Thu Nov 14 14:57:39 2002
-+++ configure.in	Mon Dec 16 16:51:49 2002
+$OpenBSD: patch-configure_in,v 1.7 2003/04/02 12:58:43 wilfried Exp $
+--- configure.in.orig	Thu Jan 30 22:38:18 2003
++++ configure.in	Wed Apr  2 14:36:56 2003
 @@ -32,9 +32,9 @@ dnl Required file in package...
  AC_INIT(src/Fl.cxx)
  
  dnl FLTK library versions...
 -FL_MAJOR_VERSION=1
-+FL_MAJOR_VERSION=2
- FL_MINOR_VERSION=1
--FL_PATCH_VERSION=2
+-FL_MINOR_VERSION=1
+-FL_PATCH_VERSION=3
++FL_MAJOR_VERSION=3
++FL_MINOR_VERSION=0
 +FL_PATCH_VERSION=0
  FL_RELEASE_VERSION=
  FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}

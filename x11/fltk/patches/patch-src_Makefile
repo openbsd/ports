@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2002/12/16 16:58:12 wilfried Exp $
---- src/Makefile.orig	Mon Sep 16 03:35:34 2002
-+++ src/Makefile	Mon Dec 16 17:09:00 2002
+$OpenBSD: patch-src_Makefile,v 1.5 2003/04/02 12:58:43 wilfried Exp $
+--- src/Makefile.orig	Thu Jan 30 22:43:17 2003
++++ src/Makefile	Wed Apr  2 14:36:42 2003
 @@ -198,11 +198,9 @@ $(LIBNAME): $(OBJECTS)
  	$(LIBCOMMAND) $@ $(OBJECTS)
  	$(RANLIB) $@
  
 -libfltk.so.1.1: $(OBJECTS)
-+libfltk.so.2.1: $(OBJECTS)
++libfltk.so.3.0: $(OBJECTS)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(OBJECTS) $(IMAGELIBS)
 -	-$(RM) libfltk.so
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile,v 1.4 2002/12/16 16:58:12 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk_forms.so.1.1: $(FLOBJECTS)
-+libfltk_forms.so.2.1: $(FLOBJECTS)
++libfltk_forms.so.3.0: $(FLOBJECTS)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(FLOBJECTS)
 -	-$(RM) libfltk_forms.so
@@ -32,7 +32,7 @@ $OpenBSD: patch-src_Makefile,v 1.4 2002/12/16 16:58:12 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk_gl.so.1.1: $(GLOBJECTS)
-+libfltk_gl.so.2.1: $(GLOBJECTS)
++libfltk_gl.so.3.0: $(GLOBJECTS)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(GLOBJECTS)
 -	-$(RM) libfltk_gl.so
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_Makefile,v 1.4 2002/12/16 16:58:12 wilfried Exp $
  	$(RANLIB) $@
  
 -libfltk_images.so.1.1: $(IMGOBJECTS)
-+libfltk_images.so.2.1: $(IMGOBJECTS)
++libfltk_images.so.3.0: $(IMGOBJECTS)
  	echo $(DSOCOMMAND) $@ ...
  	$(DSOCOMMAND) $@ $(IMGOBJECTS)
 -	-$(RM) libfltk_images.so
@@ -53,63 +53,63 @@ $OpenBSD: patch-src_Makefile,v 1.4 2002/12/16 16:58:12 wilfried Exp $
  
  libfltk_images.sl.1.1: $(IMGOBJECTS)
  	echo $(DSOCOMMAND) $@ ...
-@@ -411,11 +403,10 @@ install: $(LIBNAME) $(DSONAME) \
+@@ -412,11 +404,10 @@ install: $(LIBNAME) $(DSONAME) \
  		$(RANLIB) $(libdir)/$(GLLIBNAME); \
  	fi
  	$(RANLIB) $(libdir)/$(IMGLIBNAME)
 -	if test x$(DSONAME) = xlibfltk.so.1.1; then\
-+	if test x$(DSONAME) = xlibfltk.so.2.1; then\
++	if test x$(DSONAME) = xlibfltk.so.3.0; then\
  		$(RM) $(libdir)/libfltk.so*;\
 -		$(CP) libfltk.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk.so.1.1; \
 -		$(LN) libfltk.so.1.1 $(libdir)/libfltk.so;\
-+		$(CP) libfltk.so.2.1 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk.so.2.1; \
++		$(CP) libfltk.so.3.0 $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk.so.3.0; \
  	fi
  	if test x$(DSONAME) = xlibfltk.sl.1.1; then\
  		$(RM) $(libdir)/libfltk.sl*;\
-@@ -434,11 +425,10 @@ install: $(LIBNAME) $(DSONAME) \
+@@ -435,11 +426,10 @@ install: $(LIBNAME) $(DSONAME) \
  		$(CP) libfltk_s.a $(libdir); \
  		$(CHMOD) 755 $(libdir)/libfltk_s.a; \
  	fi
 -	if test x$(FLDSONAME) = xlibfltk_forms.so.1.1; then\
-+	if test x$(FLDSONAME) = xlibfltk_forms.so.2.1; then\
++	if test x$(FLDSONAME) = xlibfltk_forms.so.3.0; then\
  		$(RM) $(libdir)/libfltk_forms.so*;\
 -		$(CP) libfltk_forms.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk_forms.so.1.1; \
 -		$(LN) libfltk_forms.so.1.1 $(libdir)/libfltk_forms.so;\
-+		$(CP) libfltk_forms.so.2.1 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk_forms.so.2.1; \
++		$(CP) libfltk_forms.so.3.0 $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk_forms.so.3.0; \
  	fi
  	if test x$(FLDSONAME) = xlibfltk_forms.sl.1.1; then\
  		$(RM) $(libdir)/libfltk_forms.sl*;\
-@@ -457,11 +447,10 @@ install: $(LIBNAME) $(DSONAME) \
+@@ -458,11 +448,10 @@ install: $(LIBNAME) $(DSONAME) \
  		$(CP) libfltk_forms_s.a $(libdir); \
  		$(CHMOD) 755 $(libdir)/libfltk_forms.a; \
  	fi
 -	if test x$(GLDSONAME) = xlibfltk_gl.so.1.1; then\
-+	if test x$(GLDSONAME) = xlibfltk_gl.so.2.1; then\
++	if test x$(GLDSONAME) = xlibfltk_gl.so.3.0; then\
  		$(RM) $(libdir)/libfltk_gl.so*;\
 -		$(CP) libfltk_gl.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk_gl.so.1.1; \
 -		$(LN) libfltk_gl.so.1.1 $(libdir)/libfltk_gl.so;\
-+		$(CP) libfltk_gl.so.2.1 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk_gl.so.2.1; \
++		$(CP) libfltk_gl.so.3.0 $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk_gl.so.3.0; \
  	fi
  	if test x$(GLDSONAME) = xlibfltk_gl.sl.1.1; then\
  		$(RM) $(libdir)/libfltk_gl.sl*;\
-@@ -480,11 +469,10 @@ install: $(LIBNAME) $(DSONAME) \
+@@ -481,11 +470,10 @@ install: $(LIBNAME) $(DSONAME) \
  		$(CP) libfltk_gl_s.a $(libdir); \
  		$(CHMOD) 755 $(libdir)/libfltk_gl.a; \
  	fi
 -	if test x$(IMGDSONAME) = xlibfltk_images.so.1.1; then\
-+	if test x$(IMGDSONAME) = xlibfltk_images.so.2.1; then\
++	if test x$(IMGDSONAME) = xlibfltk_images.so.3.0; then\
  		$(RM) $(libdir)/libfltk_images.so*;\
 -		$(CP) libfltk_images.so.1.1 $(libdir); \
 -		$(CHMOD) 755 $(libdir)/libfltk_images.so.1.1; \
 -		$(LN) libfltk_images.so.1.1 $(libdir)/libfltk_images.so;\
-+		$(CP) libfltk_images.so.2.1 $(libdir); \
-+		$(CHMOD) 755 $(libdir)/libfltk_images.so.2.1; \
++		$(CP) libfltk_images.so.3.0 $(libdir); \
++		$(CHMOD) 755 $(libdir)/libfltk_images.so.3.0; \
  	fi
  	if test x$(IMGDSONAME) = xlibfltk_images.sl.1.1; then\
  		$(RM) $(libdir)/libfltk_images.sl*;\

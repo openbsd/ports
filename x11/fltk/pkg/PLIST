@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/11/04 16:59:05 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/04/02 12:58:43 wilfried Exp $
 bin/fltk-config
 bin/fluid
 include/FL/Enumerations.H
@@ -246,6 +246,9 @@ lib/libfltk_forms.a
 lib/libfltk_gl.a
 lib/libfltk_images.a
 %%SHARED%%
+@comment man/cat1/fltk-config.0
+@comment man/cat1/fluid.0
+@comment man/cat3/fltk.0
 man/man1/fltk-config.1
 man/man1/fluid.1
 man/man3/fltk.3

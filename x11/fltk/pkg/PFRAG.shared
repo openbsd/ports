@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2002/12/16 16:58:12 wilfried Exp $
-lib/libfltk.so.2.1
-lib/libfltk_forms.so.2.1
-lib/libfltk_gl.so.2.1
-lib/libfltk_images.so.2.1
+@comment $OpenBSD: PFRAG.shared,v 1.7 2003/04/02 12:58:43 wilfried Exp $
+lib/libfltk.so.3.0
+lib/libfltk_forms.so.3.0
+lib/libfltk_gl.so.3.0
+lib/libfltk_images.so.3.0
 DYNLIBDIR(%B)
