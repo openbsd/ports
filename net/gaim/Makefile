@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2004/06/25 20:52:10 brad Exp $
+# $OpenBSD: Makefile,v 1.62 2004/07/08 18:27:41 brad Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, and Zephyr client"
+COMMENT=	"Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, SILC and Zephyr client"
 
 DISTNAME=	gaim-0.79
 CATEGORIES=	net
@@ -22,7 +22,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim/}
 MODULES=	gettext
 
 LIB_DEPENDS+=	gdk-x11-2.0.0.0,gdk_pixbuf-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2 \
-		startup-notification-1.0.0::devel/startup-notification
+		startup-notification-1.0.0::devel/startup-notification \
+		silc::devel/silc-toolkit
 BUILD_DEPENDS+=	:pkgconfig-*:devel/pkgconfig
 
 USE_X11=	Yes
@@ -36,7 +37,7 @@ CONFIGURE_ARGS+= --disable-gevolution \
 		 --disable-tcl \
 		 --disable-tk \
 		 --enable-openssl
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/silc -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FLAVORS=	audio debug gtkspell

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2004/06/25 20:52:11 brad Exp $
+@comment $OpenBSD: PLIST,v 1.33 2004/07/08 18:27:41 brad Exp $
 bin/gaim
 bin/gaim-remote
 include/gaim/account.h
@@ -85,6 +85,7 @@ include/gaim/xmlnode.h
 @comment lib/gaim/libnapster.la
 @comment lib/gaim/libnovell.la
 @comment lib/gaim/liboscar.la
+@comment lib/gaim/libsilcgaim.la
 @comment lib/gaim/libyahoo.la
 @comment lib/gaim/libzephyr.la
 @comment lib/gaim/notify.la
