@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2004/02/24 15:52:17 jakob Exp $
+# $OpenBSD: Makefile,v 1.84 2004/03/06 23:44:28 jakob Exp $
 
 COMMENT=	"network protocol analyzer"
 COMMENT-x11=	"network protocol analyzer (X11 GUI)"
@@ -61,7 +61,7 @@ RUN_DEPENDS+=		gtk.1.2::x11/gtk+
 .else
 RUN_DEPENDS+=		gdk_pixbuf-2.0.0.0,gdk-x11-2.0.0.0,gtk-x11-2.0.0.0::x11/gtk+2
 .endif
-RUN_DEPENDS+=		:ethereal-${VERSION}:net/ethereal
+RUN_DEPENDS+=		:tethereal-${VERSION}${FLAVOR_EXT}:net/ethereal
 .endif
 
 .if ${FLAVOR:L:Msnmp}
