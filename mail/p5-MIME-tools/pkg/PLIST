@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/19 19:12:56 peter Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 17:12:12 shell Exp $
 libdata/perl5/site_perl/MIME/Body.pm
 libdata/perl5/site_perl/MIME/Decoder.pm
 libdata/perl5/site_perl/MIME/Decoder/Base64.pm
