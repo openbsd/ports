@@ -1,0 +1,21 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2000/06/02 12:36:44 espie Exp $
+
+DISTNAME=	DateManip-5.37
+PKGNAME=	p5-DateManip-5.37
+CATEGORIES=	converters perl5
+NEED_VERSION=	1.290
+
+MAINTAINER=	espie@openbsd.org
+
+# Artistic license
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Date
+
+CONFIGURE_STYLE=	perl
+
+.include <bsd.port.mk>
