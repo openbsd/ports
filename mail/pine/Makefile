@@ -1,20 +1,23 @@
-# $OpenBSD: Makefile,v 1.17 2000/03/22 16:15:12 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2000/07/10 22:54:33 brad Exp $
 
 DISTNAME=	pine4.21
 PKGNAME=	pine-4.21
 CATEGORIES=	mail news
-NEED_VERSION=	1.223
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.sunet.se/pub/unix/mail/pine/
 
+HOMEPAGE=	http://www.washington.edu/pine/
+
 MAINTAINER=	ports@openbsd.org
 
-LICENSE_TYPE=		NOFEE
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
-FAKE=			Yes
+
+do-configure:
+	@cp -f ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pine
