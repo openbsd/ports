@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/12/07 06:33:19 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/12/11 19:11:59 shell Exp $
 
 COMMENT=	"resource manager for PCSC"
 DISTNAME=	pcsc-lite-1.0.1
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/pth"	\
 		LDFLAGS="-L${LOCALBASE}/lib/pth"
 
 USE_GMAKE=	Yes
+NO_REGRESS=	Yes
 
 EXDIR=		${PREFIX}/share/examples/pcscd/
 

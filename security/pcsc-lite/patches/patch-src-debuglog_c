@@ -1,0 +1,99 @@
+$OpenBSD: patch-src-debuglog_c,v 1.1 2001/12/11 19:11:59 shell Exp $
+--- src/debuglog.c.orig	Thu Nov  8 06:54:30 2001
++++ src/debuglog.c	Wed Dec 12 02:58:45 2001
+@@ -18,15 +18,17 @@
+ #include <syslog.h>
+ #include <stdio.h>
+ 
++#define DEBUG_BUFFER_LENGTH 150
++
+ static LONG lSuppress = DEBUGLOG_LOG_ENTRIES;
+ 
+ void DebugLogA( LPCSTR pcMessage, LPCSTR pcFile, LONG liLine ) {
+ 
+   if ( lSuppress == DEBUGLOG_LOG_ENTRIES ) {
+ #ifdef	USE_SYSLOG
+-    syslog( LOG_DEBUG, "%15s %3d: %s", pcFile, (int)liLine, pcMessage );
++    syslog( LOG_INFO, "%15s %3d: %s", pcFile, (int)liLine, pcMessage );
+ #else
+-    printf("%15s %3d: %s", pcFile, (int)liLine, pcMessage);
++    printf("%15s %3d: %s\n", pcFile, (int)liLine, pcMessage);
+ #endif
+   }
+ 
+@@ -34,14 +36,16 @@
+ 
+ void DebugLogB( LPCSTR pcFormat, LONG liValue, LPCSTR pcFile, LONG liLine ) {
+ 
+-  char pcBuffer[150];
++  char pcBuffer[DEBUG_BUFFER_LENGTH];
+ 
+   if ( lSuppress == DEBUGLOG_LOG_ENTRIES ) {
+-    sprintf(pcBuffer, "%15s %3d: %s", pcFile, (int)liLine, pcFormat );
++    snprintf(pcBuffer, sizeof(pcBuffer), "%15s %3d: %s", pcFile,
++		(int)liLine, pcFormat );
+ #ifdef	USE_SYSLOG
+-    syslog( LOG_DEBUG, pcBuffer, liValue );
++    syslog( LOG_INFO, pcBuffer, liValue );
+ #else
+     printf(pcBuffer, liValue);
++	putchar('\n');
+ #endif
+   }
+ 
+@@ -50,14 +54,16 @@
+ void DebugLogC( LPCSTR pcFormat, LPCSTR pcMessage, LPCSTR pcFile, 
+ 		LONG liLine ) {
+ 
+-  char pcBuffer[150];
++  char pcBuffer[DEBUG_BUFFER_LENGTH];
+ 
+   if ( lSuppress == DEBUGLOG_LOG_ENTRIES ) {
+-    sprintf(pcBuffer, "%15s %3d: %s", pcFile, (int)liLine, pcFormat );
++    snprintf(pcBuffer,  sizeof(pcBuffer), "%15s %3d: %s", pcFile,
++		(int)liLine, pcFormat );
+ #ifdef  USE_SYSLOG
+-    syslog( LOG_DEBUG, pcBuffer, pcMessage );
++    syslog( LOG_INFO, pcBuffer, pcMessage );
+ #else
+     printf(pcBuffer, pcMessage);
++	putchar('\n');
+ #endif
+   }
+ 
+@@ -67,28 +73,26 @@
+ 		LPCSTR pcFile, LONG liLine ) {
+ 
+   int i;
+-  char pcBuffer[150];
++  char pcBuffer[DEBUG_BUFFER_LENGTH];
+   char *tmpBuffer;
+-  /* tmpBuffer = (char *)malloc( ( 4+liLength ) * sizeof( PUCHAR ) ); */
+ 
+   if ( lSuppress == DEBUGLOG_LOG_ENTRIES ) {
+-    sprintf(pcBuffer, "%15s %3d: %s", pcFile, (int)liLine, pcFormat );
++    snprintf(pcBuffer,  sizeof(pcBuffer), "%15s %3d: %s", pcFile,
++		(int)liLine, pcFormat );
+ #ifdef  USE_SYSLOG
+     tmpBuffer = (char *)malloc( liLength*3 + 1); 
+-    syslog( LOG_DEBUG, pcBuffer, pcFormat );
++    syslog( LOG_INFO, pcBuffer, pcFormat );
+     for (i=0; i < liLength; i++) {
+-      /* sprintf( tmpBuffer, "%x ", pucData[i] ); */
+       sprintf( tmpBuffer + i*3, "%02X ", pucData[i] );
+ 
+     } 
+-    /*    sprintf( tmpBuffer, "\n" ); */
+-    syslog( LOG_DEBUG, tmpBuffer );
++    syslog( LOG_INFO, tmpBuffer );
+     free( tmpBuffer );
+ #else
+     printf(pcBuffer, pcFormat);
+     for (i=0; i < liLength; i++) {
+-      printf("%x ", pucData[i]);
+-    } printf("\n");
++      printf("%02X ", pucData[i]);
++    } putchar('\n');
+ #endif
+   }
+ 

@@ -1,0 +1,33 @@
+$OpenBSD: patch-src-sys_generic_h,v 1.1 2001/12/11 19:11:59 shell Exp $
+--- src/sys_generic.h.orig	Thu Nov  8 06:54:32 2001
++++ src/sys_generic.h	Wed Dec 12 02:58:14 2001
+@@ -19,6 +19,8 @@
+ extern "C" {
+ #endif     
+ 
++#include <sys/stat.h>
++
+   int SYS_Initialize();
+ 
+   int SYS_Mkdir( char*, int );
+@@ -73,13 +75,19 @@
+   
+   int SYS_Wait( int, int );
+   
+-  int SYS_Stat( int );
++  int SYS_Stat( char *pcFile, struct stat *psStatus );
++
++  int SYS_Fstat( int );
+   
+   int SYS_Random( int, float, float );
+ 
+   int SYS_GetSeed();
+ 
+   int SYS_Exit( int );
++
++  int SYS_Rmdir( char *pcFile );
++
++  int SYS_Unlink( char *pcFile );
+ 
+ #ifdef __cplusplus
+ }

@@ -1,0 +1,41 @@
+$OpenBSD: patch-src-sys_unix_c,v 1.1 2001/12/11 19:11:59 shell Exp $
+--- src/sys_unix.c.orig	Thu Nov  8 06:54:32 2001
++++ src/sys_unix.c	Wed Dec 12 02:58:14 2001
+@@ -128,7 +128,7 @@
+   /* Here are some common error types:
+   switch( errno ) {
+   case EINVAL:
+-    printf("EINVAL\n");
++    printf("EINVAL");
+   case EBADF:
+     printf("EBADF");
+     break;
+@@ -169,7 +169,11 @@
+  return waitpid( -1, 0, WNOHANG );
+ }
+ 
+-int SYS_Stat( int iFd ) {
++int SYS_Stat( char *pcFile, struct stat *psStatus ) {
++  return stat( pcFile, psStatus );
++}
++
++int SYS_Fstat( int iFd ) {
+   struct stat sStatus;
+   return fstat( iFd, &sStatus );
+ }
+@@ -205,5 +209,15 @@
+ 
+ int SYS_Exit( int iRetVal ) {
+   _exit( iRetVal );
++}
++
++int SYS_Rmdir( char *pcFile )
++{
++	return rmdir(pcFile);
++}
++
++int SYS_Unlink( char *pcFile )
++{
++	return unlink(pcFile);
+ }
+ 
