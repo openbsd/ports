@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.557 2003/07/18 18:34:26 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.558 2003/07/18 18:54:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2153,10 +2153,10 @@ describe:
 
 README.html:
 	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@cd ${.CURDIR} && ${MAKE} depends-list FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS}>$@.tmp1
 .endif
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@cd ${.CURDIR} && ${MAKE} package-depends FULL_PACKAGE_NAME=Yes | ${_SORT_DEPENDS} >$@.tmp2
 .endif
 .if defined(HOMEPAGE)
@@ -2186,7 +2186,7 @@ README.html:
 	@rm -f $@.tmp*
 
 print-depends-list:
-.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP) || target(depends-list)
+.if !empty(_ALWAYS_DEP) || !empty(_BUILD_DEP)
 	@echo -n 'This port requires package(s) "'
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} depends-list | ${_SORT_DEPENDS}`
@@ -2194,7 +2194,7 @@ print-depends-list:
 .endif
 
 print-package-depends:
-.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP) || target(package-depends)
+.if !empty(_ALWAYS_DEP) || !empty(_RUN_DEP)
 	@echo -n 'This port requires package(s) "'
 	@unset FLAVOR SUBPACKAGE || true; \
 	echo -n `cd ${.CURDIR} && ${MAKE} ${_DEPEND_THRU} package-depends | ${_SORT_DEPENDS}`
