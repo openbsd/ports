@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/27 17:30:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/11 15:39:58 naddy Exp $
 
 COMMENT=	"aids with merging configuration files during an upgrade"
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://sites.inka.de/mips/unix/distfiles/
+MASTER_SITES=	http://sites.inka.de/mips/unix/distfiles/ \
+		ftp://rt.fm/pub/mergemaster/
 
 NO_BUILD=	Yes
 WRKDIST=	${WRKDIR}/mergemaster
