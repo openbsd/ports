@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/03/22 22:39:39 turan Exp $
+# $OpenBSD: Makefile,v 1.13 2000/03/23 08:29:59 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 DISTNAME=	epic4-2000
@@ -22,7 +22,6 @@ FAKE=	Yes
 
 SEPARATE_BUILD=	concurrent
 GNU_CONFIGURE=	Yes
-#CONFIGURE_ARGS=	--with-socks5="${LOCALBASE}/lib"
 
 FAKE_FLAGS=	IP="${WRKINST}"
 
