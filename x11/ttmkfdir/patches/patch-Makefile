@@ -1,21 +1,32 @@
-$OpenBSD: patch-Makefile,v 1.1 2004/02/12 01:32:03 kevlo Exp $
---- Makefile.orig	2004-02-11 17:04:40.000000000 +0000
-+++ Makefile	2004-02-11 17:05:49.000000000 +0000
-@@ -1,12 +1,9 @@
+$OpenBSD: patch-Makefile,v 1.2 2004/07/08 19:11:50 naddy Exp $
+--- Makefile.orig	Thu Nov  7 06:28:44 2002
++++ Makefile	Thu Jul  8 20:53:01 2004
+@@ -1,22 +1,19 @@
 -FREETYPE_BASE=/usr/include/freetype2
 -FREETYPE_INCL=-I$(FREETYPE_BASE)/.
 -FREETYPE_LIB=/usr/lib/libfreetype.so
--
--DEBUG=-ggdb
--CXX=g++
--CXXFLAGS=-Wall -pedantic $(FREETYPE_INCL) $(DEBUG)
 +FREETYPE_INCL=`freetype-config --cflags`
 +FREETYPE_LIB=`freetype-config --libs`
  
--LDFLAGS=$(FREETYPE_LIB) $(DEBUG)
+-DEBUG=-ggdb
+-CXX=g++
+-CXXFLAGS=-Wall -pedantic $(FREETYPE_INCL) $(DEBUG)
 +CXXFLAGS+=$(FREETYPE_INCL)
-+
+ 
+-LDFLAGS=$(FREETYPE_LIB) $(DEBUG)
 +LDFLAGS+=$(FREETYPE_LIB)
  
  .PHONY: clean
  
+ all: ttmkfdir
+ 
+ .cpp.o:
+-	libtool --mode=compile $(CXX) $(CXXFLAGS) -o $@ -c $^
++	libtool --mode=compile --tag=CXX $(CXX) $(CXXFLAGS) -o $@ -c $^
+ 
+ ttmkfdir: ttmkfdir.o directory.o commandline.o ttf.o encoding.o parser.o builtin.o
+-	libtool --mode=link $(CXX) -o $@ $^ $(LDFLAGS)
++	libtool --mode=link --tag=CXX $(CXX) -o $@ $^ $(LDFLAGS)
+ 
+ parser.cpp: encoding.l
+ 	    flex -i -8 -o$@ $<

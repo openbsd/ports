@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/02/18 13:24:37 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2004/07/08 19:11:50 naddy Exp $
 
 COMMENT=	"create fonts.scale file for the TrueType font server"
 
@@ -21,9 +21,14 @@ USE_X11=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
 NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/ttmkfdir2
+
+post-extract:
+	@rm ${WRKDIST}/ttmkfdir.cpp.orig ${WRKDIST}/*.lo
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin/ttmkfdir
