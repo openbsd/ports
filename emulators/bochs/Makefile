@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2003/01/13 14:55:46 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2003/03/12 12:56:22 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+= --enable-cpu-level="3" --disable-mmx
 .elif ${FLAVOR:L:Mi486}
 CONFIGURE_ARGS+= --enable-cpu-level="4" --disable-mmx
 .elif ${FLAVOR:L:Mi686}
-CONFIGURE_ARGS+= --enable-cpu-leve="6"
+CONFIGURE_ARGS+= --enable-cpu-level="6"
 .elif ${FLAVOR:L:Mx86_64}
 CONFIGURE_ARGS+= --enable-x86-64
 .else
