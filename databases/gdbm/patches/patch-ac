@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue May 18 23:16:06 1999
-+++ Makefile.in	Mon Dec  6 16:20:56 1999
++++ Makefile.in	Thu Dec  9 15:57:41 1999
 @@ -18,20 +18,20 @@
  BINOWN = bin
  BINGRP = bin
@@ -34,12 +34,13 @@
  
  progs: $(PROGS)
  
-@@ -187,7 +187,7 @@
+@@ -187,7 +187,8 @@
  
  info: gdbm.info
  
 -gdbm.info:
 +gdbm.info: gdbm.texinfo
++	@rm -f gdbm.info*
  	$(MAKEINFO) $(srcdir)/gdbm.texinfo
  
  dvi: gdbm.dvi
