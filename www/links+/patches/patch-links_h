@@ -1,11 +1,15 @@
-$OpenBSD: patch-links_h,v 1.9 2003/11/17 22:59:32 fgsch Exp $
---- links.h.orig	2003-09-18 08:46:34.000000000 -0300
-+++ links.h	2003-09-23 02:55:15.000000000 -0300
-@@ -137,6 +137,8 @@ x #endif*/
+$OpenBSD: patch-links_h,v 1.10 2005/02/24 22:24:55 fgsch Exp $
+--- links.h.orig	Sat Jan 22 17:51:55 2005
++++ links.h	Mon Feb 21 12:03:39 2005
+@@ -140,6 +140,12 @@ x #endif*/
  #define longlong long
  #endif
  
++#ifdef HAVE_INTTYPES_H
 +#include <inttypes.h>
++#else 
++#define intptr_t long
++#endif
 +
  #include <termios.h>
  

@@ -1,21 +1,21 @@
-$OpenBSD: patch-view_c,v 1.8 2004/12/04 01:01:42 fgsch Exp $
---- view.c.orig	Wed Apr 28 09:28:00 2004
-+++ view.c	Fri Dec  3 20:35:32 2004
-@@ -1953,7 +1953,7 @@ void back(struct session *ses, struct f_
+$OpenBSD: patch-view_c,v 1.9 2005/02/24 22:24:55 fgsch Exp $
+--- view.c.orig	Sat Jan 22 17:51:55 2005
++++ view.c	Mon Feb 21 12:09:39 2005
+@@ -2105,7 +2105,7 @@ void back(struct session *ses, struct f_
  
  void selected_item(struct terminal *term, void *pitem, struct session *ses)
  {
--	int item = (int)pitem;
-+	int item = (intptr_t)pitem;
- 	int old_item=item;
+-	long item = (long)pitem;
++	long item = (intptr_t)pitem;
+ 	long old_item=item;
  	struct f_data_c *f = current_frame(ses);
  	struct link *l;
-@@ -2903,7 +2903,7 @@ void send_event(struct session *ses, str
+@@ -3112,7 +3112,7 @@ void send_event(struct session *ses, str
  			goto x;
  		}
  		if ((upcase(ev->x) == 'Q' && !ev->y) || ev->x == KBD_CTRL_C) {
--			exit_prog(ses->term, (void *)(ev->x == KBD_CTRL_C), ses);
-+			exit_prog(ses->term, (void *)(intptr_t)(ev->x == KBD_CTRL_C), ses);
+-		  exit_prog(ses->term, (void *)(ev->x == KBD_CTRL_C), ses); /* 2989: warning: cast to pointer from integer of different size */
++		  exit_prog(ses->term, (void *)(intptr_t)(ev->x == KBD_CTRL_C), ses);
  			goto x;
  		}
  		if (ev->x == KBD_CLOSE){

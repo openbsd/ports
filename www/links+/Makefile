@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.19 2005/02/24 22:24:55 fgsch Exp $
 
 COMMENT=	"graphics and text browser with javascript support"
 
-VER=		2.1pre15
+VER=		2.1pre16
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
@@ -22,6 +22,7 @@ WANTLIB=		c crypto m ssl
 FLAVORS=	no_x11
 FLAVOR?=
 
+AUTOCONF_VERSION= 2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --enable-javascript --with-ssl
 

@@ -1,11 +1,11 @@
-$OpenBSD: patch-html_r_c,v 1.4 2004/12/04 01:01:42 fgsch Exp $
---- html_r.c.orig	Tue Apr 20 05:08:41 2004
-+++ html_r.c	Fri Dec  3 20:35:31 2004
-@@ -930,7 +930,7 @@ void *html_special(struct part *p, int c
+$OpenBSD: patch-html_r_c,v 1.5 2005/02/24 22:24:55 fgsch Exp $
+--- html_r.c.orig	Sat Jan 22 17:51:53 2005
++++ html_r.c	Mon Feb 21 12:06:55 2005
+@@ -944,7 +944,7 @@ void *html_special(struct part *p, int c
  		case SP_TABLE:
  			return convert_table;
  		case SP_USED:
--			return (void *)!!p->data;
+-			return (void *)!!p->data; /* cast to pointer from integer of different size */
 +			return (void *)(intptr_t)!!p->data;
  		case SP_FRAMESET:
  			fsp = va_arg(l, struct frameset_param *);

@@ -1,21 +1,12 @@
-$OpenBSD: patch-jsint_c,v 1.6 2004/12/04 01:01:42 fgsch Exp $
---- jsint.c.orig	Wed Apr 28 09:41:34 2004
-+++ jsint.c	Fri Dec  3 20:35:32 2004
-@@ -2836,7 +2836,7 @@ static void __js_upcall_goto_history_ok_
+$OpenBSD: patch-jsint_c,v 1.7 2005/02/24 22:24:55 fgsch Exp $
+--- jsint.c.orig	Sun Jan  2 17:17:26 2005
++++ jsint.c	Mon Feb 21 12:07:15 2005
+@@ -2849,7 +2849,7 @@ static void __js_upcall_goto_history_ok_
  
  	if (a<jsid->n&&(fd->js)&&jsid->js_id==fd->js->ctx->js_id){js_downcall_vezmi_null(fd->js->ctx);return;}   /* call downcall */
  
--	go_backwards(fd->ses->term,(void*)(jsid->n),fd->ses);
+-	go_backwards(fd->ses->term,(void*)(jsid->n),fd->ses); /* 2848: warning: cast to pointer from integer of different size */
 +	go_backwards(fd->ses->term,(void*)(intptr_t)(jsid->n),fd->ses);
  }
  
  
-@@ -2944,7 +2944,7 @@ void js_upcall_goto_history(void * data)
- 	{
- 		js_mem_free(s);
- 		mem_free(url);
--		go_backwards(term,(void*)(history_num),fd->ses);
-+		go_backwards(term,(void*)(intptr_t)(history_num),fd->ses);
- 	}
- 	return;
- goto_history_failed:
