@@ -3,14 +3,14 @@
 # Date created:		June 7 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.3 1999/07/14 10:58:37 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 1999/07/19 18:21:16 jakob Exp $
 #
 
 DISTNAME=	linux-ar-40
 PKGNAME=	acroread-4.0
 CATEGORIES=	print
 
-MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	angelos@openbsd.org
