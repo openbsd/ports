@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2003/05/02 04:07:41 margarida Exp $
+# $OpenBSD: Makefile,v 1.121 2003/06/14 15:06:45 sturm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -116,6 +116,7 @@
      SUBDIR += stunnel
      SUBDIR += swatch
      SUBDIR += tempwatch
+     SUBDIR += towitoko
      SUBDIR += uvscan
      SUBDIR += uvscan_dat
      SUBDIR += vomit
