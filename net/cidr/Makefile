@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/08/23 17:23:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/25 17:17:41 danh Exp $
 # Date created:        	2000-08-11
 # Whom:			Jonas Eriksson <je@sekure.net>
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://home.netcom.com/~naym/cidr/
 
 HOMEPAGE=	http://home.netcom.com/~naym/cidr.html
 
-MAINTAINER=	je@sekure.net
+MAINTAINER=	Jonas Eriksson <je@sekure.net>
 
 ALL_TARGET=	cidr
 WRKSRC=         ${WRKDIR}/${PKGNAME}

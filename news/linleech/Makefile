@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/07/11 10:20:24 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/25 17:17:41 danh Exp $
 # Original from: Curtiss Howard, cereal@schizo.com
 #
 
@@ -8,7 +8,7 @@ PKGNAME=		linleech-2.2.1
 CATEGORIES=     	news
 NEED_VERSION=		1.230
 
-MAINTAINER=		shoemaker@softhome.net
+MAINTAINER=		J Shoemaker <shoemaker@softhome.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

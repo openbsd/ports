@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 15:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/02/25 17:17:41 danh Exp $
 
 DISTNAME=	brs.4.00.l1
 
@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITE_SUBDIR=apps/religion
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 
-MAINTAINER=	shoemaker@softhome.net
+MAINTAINER=	J Shoemaker <shoemaker@softhome.net>
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
