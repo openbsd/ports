@@ -7,13 +7,13 @@
 
 all:
 	@for dir in @@NESSUS_DIRS@@ ; do \
-	   echo "===>   Building $$dir" ; \
+	   echo ">> Building $$dir" ; \
 	   (cd $$dir ; make $@) ; \
 	done
 
 install:
 	@for dir in @@NESSUS_DIRS@@ ; do \
-	   echo "===>   Installing $$dir" ; \
+	   echo ">> Installing $$dir" ; \
 	   (cd $$dir ; \
 	    make prefix=${PREFIX} \
 		localstatedir=${WRKINST}/var/nessus \
