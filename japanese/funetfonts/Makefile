@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 00:52:43 naddy Exp $
 
 COMMENT=	"extra japanese fonts, marumoji"
 
 CATEGORIES=	japanese x11
 DIST_SUBDIR=	ja-fonts
-NEED_VERSION=	1.515
 
 DISTNAME=		ja-fonts-funet
 PKGNAME=		${DISTNAME}-19911117
@@ -43,6 +42,7 @@ post-extract:
 	done
 	@for i in ${ALIASES} ${OTHER}; do cp $(FULLDISTDIR)/$$i ${WRKDIST}; done
 
+NO_REGRESS=	Yes
 
 post-install:
 	@cd ${FONTDIR} && mv fonts.alias fonts.alias-funet

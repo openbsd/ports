@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.41 2002/06/09 05:36:46 wilfried Exp $
+# $OpenBSD: Makefile,v 1.42 2002/10/27 00:52:43 naddy Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -18,7 +18,7 @@ DISTNAME=	Wnn4.2
 # on the command line, and thus avoid building all three languages
 
 MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo -data
-NEED_VERSION=	1.515
+
 PKGNAME=	ja-Wnn-4.2
 PKGNAME-dict=	ja-Wnndict-4.2
 PKGNAME-zh=	zh-Wnn-4.2
@@ -143,6 +143,7 @@ do-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} make ${MAKE_FLAGS} -f Makefile.inst ${ALL_TARGET}
 ALL_TARGET=World
 INSTALL_TARGET=install install.man
+NO_REGRESS=Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PORT_JDOCDIR}

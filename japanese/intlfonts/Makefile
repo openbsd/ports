@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/13 23:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2002/10/27 00:52:43 naddy Exp $
 
 COMMENT=	"extra japanese fonts"
 
 CATEGORIES=	japanese x11
-NEED_VERSION=	1.402
 DISTNAME=	intlfonts-1.2
 PKGNAME=	ja-fonts-gnu-1.2
 
@@ -23,6 +22,7 @@ EXTRACT_CASES=*) tar zxf ${FULLDISTDIR}/$$archive `sed <${FILESDIR}/list -e s,^,
 
 CONFIGURE_STYLE=	gnu dest
 NO_BUILD=		Yes
+NO_REGRESS=		Yes
 
 CONFIGURE_ARGS= --with-fontdir='$${DESTDIR}${FONTDIR}' \
 	--enable-compress='gzip -9' --with-bdf=no

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2002/06/17 05:14:19 itojun Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 00:52:43 naddy Exp $
 
 COMMENT=	"Japanese-capable xterm"
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
-NEED_VERSION=	1.515
+
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 # License: X
@@ -33,5 +33,7 @@ pre-configure:
 	perl -pi.bak -e 's/define KTERM_NOTEK/undef KTERM_NOTEK/;' \
 	  ${WRKSRC}/kterm.h
 .endif
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

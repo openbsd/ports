@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/06/09 05:36:46 wilfried Exp $
+# $OpenBSD: Makefile,v 1.17 2002/10/27 00:52:43 naddy Exp $
 
 COMMENT= 	'canna (kana-kanji converter) libraries'
 COMMENT-dict=	'canna (kana-kanji converter) dictionaries'
@@ -11,7 +11,6 @@ PKGNAME-dict=	cannadict-3.5b2
 PKGNAME-server=	cannaserver-3.5b2
 
 CATEGORIES=	japanese
-NEED_VERSION=	1.515
 
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna35/
 
@@ -48,5 +47,7 @@ DIFF_ARGS=-2
 
 MAKE_ENV+=      CANNAOWNER=${CANNAOWNER} CANNAGROUP=${CANNAGROUP} \
 		DICT_DIR=${DICT_DIR} CANNA_SPOOL=/var/spool/canna
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

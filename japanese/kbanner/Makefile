@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/27 00:52:43 naddy Exp $
 
 COMMENT=	"display kanji files in large letters"
 
 DISTNAME=	kbanner2
 PKGNAME=	kbanner-2
 CATEGORIES=	japanese
-NEED_VERSION=	1.515
+
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 EXTRACT_SUFX=	.tar.Z
 
@@ -17,5 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	kbanner
+
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 20:57:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/27 00:52:43 naddy Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	"Japanized Vim"
@@ -8,7 +8,7 @@ COMMENT-wnn-canna="Japanized Vim, canna or wnn input method"
 DISTNAME=	jvim2.0r+onew2.2.10
 PKGNAME=	ja-jvim-2.0r
 CATEGORIES=	japanese editors
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
@@ -70,6 +70,7 @@ ALL_TARGET=jvim jcat jfold jgrep
 MAKE_FLAGS=${BFLAGS} PREFIX='${PREFIX}'
 FAKE_FLAGS=${BFLAGS} PREFIX='${WRKINST}${PREFIX}'
 
+NO_REGRESS=	Yes
 
 post-install:
 	@for file in jcat jgrep jfold jvim; do \
