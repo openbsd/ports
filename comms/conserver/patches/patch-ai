@@ -1,0 +1,11 @@
+--- conserver.cf/conserver.cf.5l.orig	Mon Jan  4 08:22:08 1999
++++ conserver.cf/conserver.cf.5l	Mon Jan  4 08:22:26 1999
+@@ -4,7 +4,7 @@
+ .SH NAME
+ conserver.cf \- table of server console terminals used by conserver(8L)
+ .SH SYNOPSIS
+-.B /usr/local/lib/conserver.cf
++.B /usr/local/etc/conserver.cf
+ .br
+ \fIaccess hosts\fP
+ .br

@@ -1,0 +1,20 @@
+--- conserver/conserver.man.orig	Mon Jan  4 08:21:05 1999
++++ conserver/conserver.man	Mon Jan  4 08:21:24 1999
+@@ -38,7 +38,7 @@
+ .TP
+ .BI \-C config
+ With this option the invoker may specify an alternate confguration.
+-The default \fIconfig\fP is /usr/local/lib/conserver.cf.
++The default \fIconfig\fP is /usr/local/etc/conserver.cf.
+ .TP
+ .B \-h
+ Output a brief help message.
+@@ -65,7 +65,7 @@
+ .SH FILES
+ .TS
+ l l.
+-/usr/local/lib/conserver.cf	description of console terminal lines
++/usr/local/etc/conserver.cf	description of console terminal lines
+ /usr/adm/\fIhost\fP.console	log files for \fIhost\fP's console
+ /dev/tty??	terminal line device files
+ \fIstdout\fP	summary of unloved console errors
