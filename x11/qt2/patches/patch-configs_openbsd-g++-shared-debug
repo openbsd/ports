@@ -29,7 +29,7 @@
  SYSCONF_LIBS_QT_OPENGL	= 
  # OpenGL
 -SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
-+SYSCONF_LFLAGS_OPENGL	= -L/usr/local/lib
++SYSCONF_LFLAGS_OPENGL	= -L/usr/local/lib -L/usr/X11R6/lib
  SYSCONF_LIBS_OPENGL	= -lGLU -lGL -lXmu
  # Yacc
  SYSCONF_LIBS_YACC	= 
