@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/18 05:01:59 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:54 brad Exp $
 
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
@@ -7,8 +6,7 @@ CATEGORIES=	benchmarks
 
 #BROKEN=	"version changed; home site moved"
 
-MAINTAINER=	joey@OpenBSD.ORG
-
+MAINTAINER=	ports@openbsd.org
 
 # this is the new home site
 #
@@ -17,12 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 ALL_TARGET=	build
 MAKE_ENV=	PATH=${PATH}:${WRKSRC}/scripts
-MAN1=		bargraph.1 graph.1
-MAN8=		bw_file_rd.8 bw_mem_cp.8 bw_mem_rd.8 bw_mem_wr.8 \
-		bw_mmap_rd.8 bw_pipe.8 bw_tcp.8 lat_connect.8 lat_ctx.8 \
-		lat_fs.8 lat_mem_rd.8 lat_mmap.8 lat_pagefault.8 lat_pipe.8 \
-		lat_proc.8 lat_rpc.8 lat_syscall.8 lat_tcp.8 lat_udp.8 \
-		lmbench.8 lmdd.8 mhz.8
 
 test: build
 	@(cd ${WRKSRC}; make results)

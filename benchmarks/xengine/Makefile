@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/07 04:51:19 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:54 brad Exp $
 
 DISTNAME=	xengine-1.0.1
 CATEGORIES=	benchmarks x11

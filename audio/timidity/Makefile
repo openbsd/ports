@@ -1,9 +1,4 @@
-# New ports collection makefile for:    timidity
-# Homepage: http://www.cgs.fi/~tt/timidity/
-# Version required:     0.2i
-# Original port by:	ache
-# OpenBSD port by:	rys@glacid.com
-#
+# $OpenBSD: Makefile,v 1.2 1999/04/01 02:57:52 brad Exp $
 
 DISTNAME=       timidity-0.2i
 CATEGORIES=     audio
@@ -19,7 +14,6 @@ NO_CDROM=       "Uses copyrighted patches"
 
 EXTRACT_ONLY=   ${DISTNAME}.tar.gz
 INSTALL_TARGET= install.all
-MAN1=           timidity.1
 
 post-install:
 	cd ${PREFIX}/lib/timidity && \

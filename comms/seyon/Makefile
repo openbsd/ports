@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 19:22:18 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:56 brad Exp $
 
 DISTNAME=	Seyon-2.14b
 PKGNAME=	seyon-2.14b
 CATEGORIES=	comms x11
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 EXTRACT_SUFX=	-tar.Z

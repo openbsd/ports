@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 00:13:51 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:51 brad Exp $
 
 DISTNAME=	rsynth-2.0
 CATEGORIES=	audio

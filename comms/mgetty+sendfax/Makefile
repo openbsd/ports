@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/02/25 04:14:07 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/04/01 02:57:55 brad Exp $
 # $FreeBSD: Makefile,v 1.25 1998/07/16 06:44:37 vanilla Exp $
 
 DISTNAME=	mgetty1.1.20-Jan17
@@ -6,18 +6,12 @@ PKGNAME=	mgetty-1.1.20
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 MAKE_ENV+=	prefix=${PREFIX} spool=/var/spool \
 		CONFDIR=/etc/mgetty+sendfax \
 		PHONE_GROUP=wheel PHONE_PERMS=700
-
-MAN1=		coverpg.1 fax.1 faxq.1 faxrm.1 faxrunq.1 faxspool.1 g3cat.1 \
-		g32pbm.1 pbm2g3.1 pvf.1 zplay.1
-MAN4=		mgettydefs.4
-MAN5=		faxqueue.5
-MAN8=		callback.8 faxrunqd.8 mgetty.8 sendfax.8 
 
 post-build:
 	${SED} -e "s,@prefix@,${PREFIX},g" ${FILESDIR}/setup >${WRKDIR}/setup

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/06 22:48:01 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:50 brad Exp $
 
 DISTNAME=	amp-0.7.6
 CATEGORIES=	audio
@@ -12,8 +11,6 @@ MASTER_SITES=	ftp://ftp.clara.net/pub/unix/Audio/
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-MAN1=		amp.1
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/amp ${PREFIX}/bin

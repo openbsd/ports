@@ -1,10 +1,4 @@
-# ex:ts=8
-# New ports collection makefile for:    lrzsz
-# Version required:     0.12.x
-# Date created:         29 Sept 1996
-# Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
-#
-# $Id: Makefile,v 1.1.1.1 1998/12/18 06:09:59 form Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/01 02:57:55 brad Exp $
 
 DISTNAME=	lrzsz-0.12.19
 CATEGORIES=	comms
@@ -17,6 +11,5 @@ MAINTAINER=	obrien@FreeBSD.org
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all # vcheck
-MAN1=		lrz.1 lsz.1
 
 .include <bsd.port.mk>

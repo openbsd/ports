@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/02/17 03:57:12 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.11 1999/04/01 02:57:56 brad Exp $
 
 PKGNAME=	minicom-1.82
 DISTNAME=	${PKGNAME}.src
@@ -7,7 +6,8 @@ CATEGORIES=	comms
 
 BROKEN=		"can't find this version as of 16feb99"
 MIRROR_DISTFILE="can't find this version as of 16feb99"
-MAINTAINER=     form@OpenBSD.ORG
+
+MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
 		ftp://ftp.cistron.nl/pub/people/miquels/software/  \

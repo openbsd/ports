@@ -1,5 +1,4 @@
-#	$OpenBSD: Makefile,v 1.2 1998/10/06 23:28:07 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:51 brad Exp $
 
 DISTNAME=	nspmod-0.1
 CATEGORIES=	audio

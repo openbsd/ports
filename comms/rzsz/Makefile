@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/12/18 06:16:29 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:56 brad Exp $
 
 DISTNAME=       rzsz
 PKGNAME=        rzsz-3.48

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 00:27:17 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:52 brad Exp $
 
 DISTNAME=		WorkMan-1.3a
 PKGNAME=		workman-1.3a

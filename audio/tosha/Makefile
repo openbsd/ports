@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/04 05:28:48 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:52 brad Exp $
 
 DISTNAME=	tosha-0.6
 CATEGORIES=	audio

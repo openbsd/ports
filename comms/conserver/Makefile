@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/01/05 16:57:17 jason Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:55 brad Exp $
 
 DISTNAME=	conserver-5.21-Beta
 PKGNAME=	conserver-5.21

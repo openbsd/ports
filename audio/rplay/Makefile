@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 1998/12/22 05:24:12 form Exp $
-#
+# $OpenBSD: Makefile,v 1.6 1999/04/01 02:57:51 brad Exp $
 
 DISTNAME=       rplay-3.3.0
 CATEGORIES=	audio

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 18:58:10 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:56 brad Exp $
 
 DISTNAME=	pilot-link.0.9.0
 PKGNAME=	pilot-link-0.9.0

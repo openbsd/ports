@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 19:09:42 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:56 brad Exp $
 
 DISTNAME=	qpage-3.2
 CATEGORIES=	comms

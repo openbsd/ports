@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/19 05:22:31 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/04/01 02:57:54 brad Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 DISTNAME=	netpipe-2.3
@@ -9,7 +9,6 @@ MASTER_SITES=	ftp://ftp.ameslab.gov/pub/netpipe/ \
 MAINTAINER=	brad@openbsd.org
 
 ALL_TARGET=	NPtcp
-MAN1=		netpipe.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/NPtcp ${PREFIX}/bin/NPtcp

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 05:09:51 marc Exp $	
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:54 brad Exp $	
 
 DISTNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \
@@ -16,7 +15,6 @@ DISTFILES=	c2t.tar.gz TONEPY.tit
 EXTRACT_ONLY=	c2t.tar.gz
 
 NO_WRKSUBDIR=	yes
-MAN1=		c2t.1
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/chinese/gb

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1998/12/16 20:02:35 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.8 1999/04/01 02:57:55 brad Exp $
 
 DISTNAME=	hylafax-v4.0pl2
 PKGNAME=	hylafax-4.0.2

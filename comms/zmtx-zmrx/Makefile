@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 19:36:37 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:57 brad Exp $
 
 DISTNAME=	zmtx-zmrx
 PKGNAME=	zmtx-zmrx-1.02
@@ -7,7 +6,7 @@ CATEGORIES=	comms
 
 RESTRICTED=	"may not be used for commercial purposes"
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 		${MASTER_SITE_LOCAL}

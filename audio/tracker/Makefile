@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 1998/10/10 13:43:04 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/01 02:57:52 brad Exp $
 
 DISTNAME=       tracker-5.3
 CATEGORIES=     audio

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 19:27:38 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:57 brad Exp $
 
 DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
 

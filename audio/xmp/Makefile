@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/03/29 18:05:51 rohee Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:53 brad Exp $
 
 DISTNAME=		xmp-1.1.5
 CATEGORIES=		audio

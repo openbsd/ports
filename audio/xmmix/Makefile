@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1998/11/30 03:39:06 form Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/04/01 02:57:53 brad Exp $
 
 DISTNAME=		xmmix-1.2
 CATEGORIES=		audio

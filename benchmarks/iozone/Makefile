@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 04:35:52 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:53 brad Exp $
 
 DISTNAME=       iozone-2.01
 CATEGORIES=	benchmarks

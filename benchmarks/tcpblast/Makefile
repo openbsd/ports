@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 04:45:55 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:54 brad Exp $
 
 DISTNAME=		tcpblast
 PKGNAME=		tcpblast-1.0

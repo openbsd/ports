@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/02/21 04:26:09 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.9 1999/04/01 02:57:51 brad Exp $
 
 DISTNAME=       gsm-1.0.10
 CATEGORIES=	audio

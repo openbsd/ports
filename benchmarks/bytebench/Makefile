@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 04:31:41 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:53 brad Exp $
 
 DISTNAME=       bytebench-3.1
 CATEGORIES=	benchmarks

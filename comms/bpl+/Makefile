@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 05:14:56 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:55 brad Exp $
 
 DISTNAME=	bpl+
 PKGNAME=	bpl+-1.0
 CATEGORIES=	comms
 
-MAINTAINER=	joey@OpenBSD.ORG
+MAINTAINER=	ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/net/telnet/telnetx/
 

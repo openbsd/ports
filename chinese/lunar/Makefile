@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/10/07 05:12:28 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/01 02:57:54 brad Exp $
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
@@ -7,7 +6,7 @@ CATEGORIES=	chinese
 
 NO_CDROM=	"NOFEE:	Can not sell"
 
-MAINTAINER=     joey@OpenBSD.ORG
+MAINTAINER=     ports@openbsd.org
 
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \

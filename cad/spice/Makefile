@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1998/10/07 05:03:28 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/01 02:57:54 brad Exp $
 
 DISTNAME=		sp3f4.kit
 PKGNAME=		spice-3f5
