@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2002/06/10 10:49:07 jsyn Exp $
 
 COMMENT=	"promiscuous mode interface detector"
 
 PKGNAME=	antisniff-1.1.2
 
 CATEGORIES=	security
-NEED_VERSION=	1.515
+NEED_VERSION=	1.531
 
 MASTER_SITES=	http://www.securitysoftwaretech.com/antisniff/dist/
 HOMEPAGE=	http://www.securitysoftwaretech.com/antisniff/
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WRKDIST=	${WRKDIR}/anti_sniff
 
 ALL_TARGET=	OpenBSD-all
+
+MAKE_FLAGS=	CC="${CC}"
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/anti_sniffer \
