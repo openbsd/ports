@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.4 2000/04/22 12:05:58 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.5 2000/06/20 16:10:20 espie Exp $
 bin/katod
 bin/katof
 bin/kdtoa
@@ -21,13 +21,6 @@ include/kwnn/msg.h
 include/kwnn/rk_spclval.h
 include/kwnn/wnnerror.h
 lib/libkwnn.a
-lib/wnn/cvt_key_empty
-lib/wnn/cvt_key_tbl
-lib/wnn/cvt_key_tbl.ST
-lib/wnn/cvt_key_tbl.gm
-lib/wnn/cvt_key_tbl.kt
-lib/wnn/cvt_key_tbl.mv
-lib/wnn/cvt_key_tbl.vt
 lib/wnn/ko_KR/hinsi.data
 lib/wnn/ko_KR/kserverrc
 lib/wnn/ko_KR/libwnn.msg
