@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_lispbibl_d,v 1.4 2004/01/20 23:15:19 naddy Exp $
---- src/lispbibl.d.orig	2004-01-11 02:22:07.000000000 +0100
-+++ src/lispbibl.d	2004-01-11 02:23:43.000000000 +0100
-@@ -89,7 +89,7 @@
+$OpenBSD: patch-src_lispbibl_d,v 1.5 2004/05/10 18:32:41 naddy Exp $
+--- src/lispbibl.d.orig	2004-03-16 07:59:59.000000000 -0700
++++ src/lispbibl.d	2004-05-09 13:30:14.000000000 -0600
+@@ -90,7 +90,7 @@
+ */
  
- 
- # this machine: AMIGA or ACORN or OS2 or WIN32 or GENERIC_UNIX
+ # this machine: WIN32 or GENERIC_UNIX
 -#if (defined(__unix) || defined(__unix__) || defined(_AIX) || defined(sinix) || defined(__MACH__) || defined(__POSIX__) || defined(__NetBSD__) || defined(__BEOS__)) && !defined(unix)
 +#if (defined(__unix) || defined(__unix__) || defined(_AIX) || defined(sinix) || defined(__MACH__) || defined(__POSIX__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__BEOS__)) && !defined(unix)
    #define unix
  #endif
- #if (defined(amiga) || defined(AMIGA))
+ #if (defined(_WIN32) && (defined(_MSC_VER) || defined(__MINGW32__))) || (defined(__WIN32__) && defined(__BORLANDC__))

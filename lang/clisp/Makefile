@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2004/04/06 05:28:01 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2004/05/10 18:32:41 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"ANSI Common Lisp compiler"
 
-DISTNAME=	clisp-2.32
+DISTNAME=	clisp-2.33
 CATEGORIES=	lang
 HOMEPAGE=	http://clisp.cons.org/
 
