@@ -1,0 +1,16 @@
+Sipsak is a small command line tool for developers and administrators
+of Session Initiation Protocol (SIP) applications.  It can be used for
+some simple tests on SIP applications and devices.  Some of its features
+include the following:
+
+* Sending OPTIONS request.
+* Sending text files (which should contain SIP requests).
+* Traceroute (see section 11 in RFC3261).
+* User location test.
+* Flooding test.
+* Random character trashed test.
+* Interpret and react on response.
+* Authentication with qop supported.
+* Short notation supported for receiving (not for sending).
+
+WWW: ${HOMEPAGE}

@@ -1,0 +1,71 @@
+# $OpenBSD: patch-Makefile,v 1.1.1.1 2003/01/16 10:11:30 jakob Exp $
+--- Makefile.orig	Wed Nov 20 09:54:38 2002
++++ Makefile	Wed Jan 15 22:48:55 2003
+@@ -1,62 +1,13 @@
+-#
+-# Basic and crude Makefile...
+-#
+-
+-# Targets to build
+ PROGS= sipsak
+-MANPAGES=sipsak.1
+-
+-# Installation directory. By default, go in local.
+-# Distributions should probably use /usr/sbin, but they probably know better...
+-# Don't forget trailing slash to avoid issues
+-
+-INSTALL_DIR= /usr/local/bin/
+-INSTALL_MAN= /usr/local/man
+ 
+-# ------------ End of config --------------
+-
+-CC = gcc
+ RM = rm -f
+ 
+-OS = $(shell uname -s)
+-
+-RM_CMD = $(RM) *.BAK *.bak *.o ,* *~ *.a *.orig *.rej sipsak.exe
+-
+-WARNING = -Wall
+-DEFS =
+-
+-FLAGS = $(WARNING) $(DEFS)
+-
+-ifeq ($(DEFS), -DAUTH)
+-  LFLAGS = -lssl
+-  ifeq ($(OS), freebsd)
+-    LFLAGS+= -lcrypto
+-  endif
+-  ifeq ($(OS), netbsd)
+-    LFLAGS+= -lcrypto
+-  endif
+-  ifneq (,$(findstring CYGWIN, $(OS)))
+-    LFLAGS+= -lcrypto -static
+-  endif
+-endif
+-
+-all:: $(PROGS)
+-
+-%: %.o
+-	$(CC) -o $@ $^ $(LFLAGS)
+-%.o: %.c
+-	$(CC) $(FLAGS) -c $<
+-
+-sipsak: sipsak.o
++RM_CMD = $(RM) *.BAK *.bak *.o ,* *~ *.a *.rej sipsak.exe
+ 
+-auth:
+-	@make DEFS=-DAUTH
++all: $(PROGS)
+ 
+-# So crude but so effective ;-)
+-# Less crude thanks to many contributions ;-)
+-install::
+-	install -m 755 $(PROGS) $(INSTALL_DIR)
+-	install -m 644 $(MANPAGES) $(INSTALL_MAN)/man1/
++sipsak: sipsak.c
++	$(CC) $(CFLAGS) -DAUTH sipsak.c -o sipsak -lssl -lcrypto
+ 
+-clean::
++clean:
+ 	$(RM_CMD) $(PROGS)
