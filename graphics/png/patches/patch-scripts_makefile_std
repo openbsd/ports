@@ -1,6 +1,6 @@
 --- scripts/makefile.std.orig	Fri Jan  5 19:25:50 2001
-+++ scripts/makefile.std	Tue Apr  3 09:57:15 2001
-@@ -8,8 +8,6 @@
++++ scripts/makefile.std	Wed May 23 17:31:15 2001
+@@ -8,8 +8,6 @@ prefix=/usr/local
  # Where the zlib library and include files are located
  #ZLIBLIB=/usr/local/lib
  #ZLIBINC=/usr/local/include
@@ -9,7 +9,7 @@
  
  CC=cc
  CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
-@@ -21,31 +19,46 @@
+@@ -21,31 +19,46 @@ RANLIB=ranlib
  OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
  	pngwtran.o pngmem.o pngerror.o pngpread.o
@@ -22,7 +22,7 @@
 +	$(CC) $(CFLAGS) $(PICFLAG) -DPIC -c $? -o $@
 +
 +PICFLAG= -fpic
-+SHLIB=	libpng.so.1.10
++SHLIB=	libpng.so.2.0
  
  libpng.a: $(OBJS)
  	ar rc $@  $(OBJS)
