@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/25 19:17:49 matt Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/05 13:10:34 espie Exp $
 
 COMMENT=	"Fast-Light Tool Kit"
+
+BROKEN=		"Mess of a MESA test"
 
 VER=		1.0.10
 PKGNAME=	fltk-${VER}
