@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/10/25 18:13:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2000/11/27 20:45:17 espie Exp $
 @mode u+s 
 @owner root
 bin/konsole_grantpty
 bin/kcheckpass
 @mode
 @owner
+@group utmp
+@mode g+s
+bin/konsole
+@group
+@mode
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -43,7 +48,6 @@ bin/kman2html
 bin/kmatrix.kss
 bin/kmenuedit
 bin/konqueror
-bin/konsole
 bin/kpager
 bin/kpolygon.kss
 bin/kpyro.kss
@@ -67,6 +71,8 @@ bin/kxkb
 bin/kxmlrpcd
 bin/kxsconfig
 bin/kxsrun
+bin/nspluginscan
+bin/nspluginviewer
 bin/startkde
 include/KBackgroundIface.h
 include/KDesktopIface.h
@@ -157,6 +163,7 @@ lib/libkcm_kwinoptions.la
 lib/libkcm_layout.la
 lib/libkcm_locale.la
 lib/libkcm_midi.la
+lib/libkcm_nsplugin.la
 lib/libkcm_passwords.la
 lib/libkcm_samba.la
 lib/libkcm_screensaver.la
@@ -186,6 +193,7 @@ lib/libkwinmodernsys.la
 lib/libkwinriscos.la
 lib/libkwinsystem.la
 lib/libkwritepart.la
+lib/libnsplugin.la
 lib/libquicklauncher.la
 lib/libsmb++.la
 share/applnk/.directory
@@ -267,6 +275,7 @@ share/applnk/Settings/WebBrowsing/.directory
 share/applnk/Settings/WebBrowsing/cookies.desktop
 share/applnk/Settings/WebBrowsing/ebrowsing.desktop
 share/applnk/Settings/WebBrowsing/konqhtml.desktop
+share/applnk/Settings/WebBrowsing/nsplugin.desktop
 share/applnk/Settings/WebBrowsing/proxy.desktop
 share/applnk/Settings/WebBrowsing/useragent.desktop
 share/applnk/System/.directory
