@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/18 13:43:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/03/31 11:51:09 naddy Exp $
 bin/clisp
 lib/clisp/base/libavcall.a
 lib/clisp/base/libcallback.a
@@ -15,6 +15,7 @@ lib/clisp/base/modules.h
 lib/clisp/base/modules.o
 lib/clisp/clisp-link
 lib/clisp/data/UnicodeData.txt
+lib/clisp/data/clhs.txt
 lib/clisp/full/libavcall.a
 lib/clisp/full/libcallback.a
 lib/clisp/full/libiconv.a
@@ -34,31 +35,39 @@ lib/clisp/linkkit/modules.d
 man/man1/clisp.1
 man/man3/clreadline.3
 share/doc/clisp/ANNOUNCE
+share/doc/clisp/CLOS-guide.txt
 share/doc/clisp/COPYRIGHT
 share/doc/clisp/GNU-GPL
+share/doc/clisp/LISP-tutorial.txt
 share/doc/clisp/MAGIC.add
 share/doc/clisp/NEWS
 share/doc/clisp/README
 share/doc/clisp/README.de
 share/doc/clisp/README.es
 share/doc/clisp/SUMMARY
-share/doc/clisp/CLOS-guide.txt
-share/doc/clisp/LISP-tutorial.txt
+share/doc/clisp/clisp.1
 share/doc/clisp/clisp.dvi
 share/doc/clisp/clisp.gif
 share/doc/clisp/clisp.html
+share/doc/clisp/clreadline.3
 share/doc/clisp/clreadline.dvi
 share/doc/clisp/clreadline.html
 share/doc/clisp/editors.txt
 share/doc/clisp/impnotes.html
 share/doc/clisp/readline.dvi
 share/locale/de/LC_MESSAGES/clisp.mo
+share/locale/de/LC_MESSAGES/clisplow.mo
 share/locale/en/LC_MESSAGES/clisp.mo
+share/locale/en/LC_MESSAGES/clisplow.mo
 share/locale/es/LC_MESSAGES/clisp.mo
+share/locale/es/LC_MESSAGES/clisplow.mo
 share/locale/fr/LC_MESSAGES/clisp.mo
+share/locale/fr/LC_MESSAGES/clisplow.mo
 share/locale/nl/LC_MESSAGES/clisp.mo
-@dirrm lib/clisp/base
-@dirrm lib/clisp/data
-@dirrm lib/clisp/full
-@dirrm lib/clisp/linkkit
+share/locale/nl/LC_MESSAGES/clisplow.mo
 @dirrm share/doc/clisp
+@dirrm lib/clisp/linkkit
+@dirrm lib/clisp/full
+@dirrm lib/clisp/data
+@dirrm lib/clisp/base
+@dirrm lib/clisp
