@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/28 06:02:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/06 16:58:17 naddy Exp $
 
 COMMENT=		"new mail notification utility"
 
@@ -20,6 +20,8 @@ MASTER_SITES=		http://devel-home.kde.org/~granroth/kbiff/
 
 BUILD_DEPENDS=		uic::x11/qt2-designer
 LIB_DEPENDS=		kdecore.3.::x11/kde/libs2
+
+PATCH_LIST=		${PORTSDIR}/x11/kde/libs2/patches/p-*
 
 MAKE_ENV=		${CONFIGURE_ENV}
 MAKE_FLAGS=		CXXLD='--tag CXX ${CXX} -L${LOCALBASE}/lib/qt2'
