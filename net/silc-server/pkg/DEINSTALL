@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2003/10/31 16:40:06 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2004/02/12 06:34:22 brad Exp $
 #
 # silc-server de-installation
 
@@ -17,12 +17,12 @@ echo "| these steps as root:"
 echo "|"
 echo "|	      userdel $SILCDUSER"
 echo "|	      groupdel $SILCDGROUP"
-
 if [ "$PKG_DELETE_EXTRA" != Yes -a -d $CONFIG_DIR ]; then
     echo "|	      rm -rf $CONFIG_DIR"
+fi
+if [ "$PKG_DELETE_EXTRA" != Yes -a -d $LOG_DIR ]; then
     echo "|	      rm -rf $LOG_DIR"
 fi
-
 echo "|"
 echo "| Do not do this if you plan on re-installing $1"
 echo "| at some future time."
