@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/22 09:08:16 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/06/25 22:26:27 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.boutell.com/gd/http/ \
 HOMEPAGE=	http://www.boutell.com/gd/
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
-		png.1.6::graphics/png
+		png.1::graphics/png
 .if !defined(FLAVOR)
 LIB_DEPENDS+=	ttf.1.3::print/freetype
 .endif

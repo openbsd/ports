@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/11 08:47:54 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/25 22:30:08 brad Exp $
 
 DISTNAME=	xpaint-2.5.7
 CATEGORIES=	graphics x11
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		png.1.6::graphics/png
+		png.1::graphics/png
 
 CONFIGURE_STYLE=	imake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/20 17:34:14 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2000/06/25 22:30:07 brad Exp $
 # $NetBSD: Makefile,v 1.25 1999/03/04 14:18:54 tron Exp $
 
 DISTNAME=	netpbm-1mar1994
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}.tar.gz:0 pcxtoppm.tar.gz rletopnm.tar.gz \
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		tiff.35::graphics/tiff \
-		png.1.6::graphics/png
+		png.1::graphics/png
 
 MAINTAINER=	brad@openbsd.org
 

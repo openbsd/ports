@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/12 15:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/06/25 22:30:07 brad Exp $
 
 DISTNAME=	gif2png-2.3.2
 CATEGORIES=	graphics
@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/ \
 
 HOMEPAGE=	http://www.tuxedo.org/~esr/gif2png/
 
-LIB_DEPENDS=	png.1.6::graphics/png
+LIB_DEPENDS=	png.1::graphics/png
 
 MAINTAINER=	brad@openbsd.org
 
