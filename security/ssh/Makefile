@@ -1,24 +1,19 @@
-# $OpenBSD: Makefile,v 1.53 2000/03/24 23:28:34 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2000/03/25 05:53:20 brad Exp $
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
-NEED_VERSION=	 1.230
+NEED_VERSION=	1.230
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/ssh/SSH/ \
 		ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/ssh/
-
 MASTER_SITES0=	http://www.ssh.org/patches/ \
 		ftp://ftp2.inch.com/pub/FreeBSD/
 PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown:0
 PATCH_DIST_STRIP= -p1
 
-NO_CDROM=	"CRYPTO: Third party crypto not allowed."
-RESTRICTED=	"Crypto; export-controlled"
-
 MAINTAINER=	todd@openbsd.org
 
-LICENSE_TYPE=		"CRYPTO NONE"
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
@@ -30,10 +25,14 @@ CONFIGURE_ARGS+= --with-rsaref="${LOCALBASE}/lib"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 .endif
 
+FAKE=	Yes
+
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+=--with-etcdir="${ETCDIR}" \
 		--with-rsh="${RSHPROG}" \
 		--with-libwrap
+
+FAKE_FLAGS=	install_prefix="${WRKINST}"
 
 IS_INTERACTIVE=	Yes
 
@@ -94,20 +93,13 @@ fetch-depends:
 .endif
 .endif
 
-# Put the config files someplace where they can be found to
-# create a package.
 post-install:
-	@mkdir -p ${PREFIX}/lib/ssh
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ssh
 	@cat ${WRKSRC}/server_config.sample | \
 	  sed "s#_ETCDIR_#${ETCDIR}#g" > /tmp/ssh_inst.$$$$; \
 	  ${INSTALL_DATA} /tmp/ssh_inst.$$$$ ${PREFIX}/lib/ssh/server_config.sample
-	@${INSTALL_DATA} ${WRKSRC}/host_config.sample ${PREFIX}/lib/ssh
-	@if [ ! -f ${ETCDIR}/ssh_host_key ]; then \
-	 echo "Generating a secret host key..."; \
-	 ${PREFIX}/bin/ssh-keygen -f ${ETCDIR}/ssh_host_key -N ""; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/host_config.sample ${PREFIX}/lib/ssh
 	@rm -f ${PREFIX}/man/man1/slogin.1
-	@ln -sf ssh.1 ${PREFIX}/man/man1/slogin.1
-	@PKG_PREFIX="${PREFIX}" sh ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	cd ${PREFIX}/man/man1; ln -fs ssh.1 slogin.1
 
 .include <bsd.port.mk>
