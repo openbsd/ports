@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.8 2003/05/01 15:46:38 sturm Exp $
+# $OpenBSD: INSTALL,v 1.9 2003/06/23 19:11:11 sturm Exp $
 #
 # Pre/post-installation setup of postfix
 
@@ -13,32 +13,25 @@ SPOOL_DIR=/var/spool/postfix
 #
 do_accts()
 {
-    groupinfo -e postdrop
+    groupinfo -e _postdrop
     if [ $? -eq 0 ]; then
-	echo "-> Using group 'postdrop' for postdrop"
+	echo "-> Using group '_postdrop' for postdrop"
     else
-        groupinfo -e maildrop
-        if [ $? -eq 0 ]; then
-	    echo "-> Renaming group 'maildrop' to 'postdrop'"
-	    groupmod -n postdrop maildrop
-        else
-	    echo "-> Creating postdrop group"
-	    groupadd postdrop
-        fi
+	echo "-> Creating '_postdrop' group"
+	groupadd -g 508 _postdrop
     fi
 
-    userinfo -e postfix
+    userinfo -e _postfix
     if [ $? -eq 0 ]; then
-	echo "-> Using account/group 'postfix' for postfix"
+	echo "-> Using account/group '_postfix' for postfix"
     else
-	echo "-> Creating postfix user & group"
+	echo "-> Creating '_postfix' user & group"
 	useradd \
 	    -g =uid \
 	    -c "Postfix Daemon" \
 	    -d /nonexistent \
 	    -s /sbin/nologin \
-	    -p \* \
-	    postfix
+	    -u 507 _postfix
     fi
 }
 
@@ -148,6 +141,14 @@ do_notice()
     echo "| If you want to restore sendmail, this is done using the following command:"
     echo "|"
     echo "|     $PREFIX/sbin/postfix-disable"
+    echo "+---------------"
+    echo "| WARNING!"
+    echo "|"
+    echo "| This port has changed its user/groups from 'postfix' to '_postfix'"
+    echo "| and 'postdrop' to '_postdrop'. If you installed this port before,"
+    echo "| ensure all permissions are set correctly and then"
+    echo "|    rmuser postfix"
+    echo "|    groupdel postdrop"
     echo "+---------------"
     echo ""
 }

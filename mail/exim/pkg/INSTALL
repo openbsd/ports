@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2000/08/12 23:57:46 naddy Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/06/23 19:11:12 sturm Exp $
 #
 # Pre/post-installation setup of exim
 
@@ -21,8 +21,9 @@ do_notice()
     echo "| a UID and GID other that 0/0. You can do this by adding"
     echo "| lines to the configure file like this:"
     echo "| "
-    echo "|       exim_user = \"exim\""
-    echo "|       exim_group = \"mail\""
+    echo "|       exim_user = \"_exim\""
+    echo "|       exim_group = \"_exim\""
+    echo "|       with uid/gid = \"521\""
     echo "| "
     echo "| but you must remember to allow that user write"
     echo "| permissions to /var/spool/exim."

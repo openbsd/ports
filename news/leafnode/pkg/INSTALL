@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: INSTALL,v 1.6 2003/02/26 15:13:04 david Exp $
+# $OpenBSD: INSTALL,v 1.7 2003/06/23 19:11:10 sturm Exp $
 
 P_NAME=leafnode
 
@@ -28,12 +28,12 @@ PREFIX=${PKG_PREFIX:-/usr/local}
 
 do_create_user()
 {
-	if id -u news >/dev/null 2>/dev/null
+	if id -u _news >/dev/null 2>/dev/null
 	then
-		echo "User news already exists... ok"
+		echo "User _news already exists... ok"
 	else
-		echo -n "Adding user news..."
-		user add -m -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin news
+		echo -n "Adding user _news..."
+		user add -m -d /var/spool/news -g news -c 'NNTP server' -s /sbin/nologin -u 519 _news
 		echo "ok"
 	fi
 }
@@ -43,7 +43,7 @@ do_create_spool_dirs()
 	echo -n "Creating spool directories... "
 	for d in ${SPOOL_DIRS}; do
 		if [ ! -d "${SPOOLDIR}/$d" ]; then
-			install -d -o news -g news ${SPOOLDIR}/$d
+			install -d -o _news -g news ${SPOOLDIR}/$d
 		fi
 	done
 
@@ -51,7 +51,7 @@ do_create_spool_dirs()
 	for a in 0 1 2 3 4 5 6 7 8 9; do
 		for b in 0 1 2 3 4 5 6 7 8 9; do
 			for c in 0 1 2 3 4 5 6 7 8 9; do
-				install -d -o news -g news $a$b$c
+				install -d -o _news -g news $a$b$c
 			done
 		done
 	done
@@ -116,6 +116,20 @@ do_post()
 	echo 
 }
 
+do_warning()
+{
+	echo "+---------------"
+	echo "| WARNING!"
+	echo "|"
+	echo "| This port has changed its user from 'news' to '_news'. If you"
+	echo "| installed this port before, ensure all permissions are set"
+	echo "| correctly by running as root"
+	echo "|     find / -user news -exec chown _news {} \;"
+	echo "| and then"
+	echo "|     rmuser news"
+	echo "+---------------"
+}
+
 # verify proper execution
 #
 if [ $# -ne 2 ]; then
@@ -132,6 +146,7 @@ case $2 in
 	POST-INSTALL)
 		do_create_spool_dirs
 		do_post
+		do_warning
 		;;
 	*)
 		echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2

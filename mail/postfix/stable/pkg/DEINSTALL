@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2003/05/01 15:46:38 sturm Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2003/06/23 19:11:11 sturm Exp $
 #
 # De-installation setup of postfix
 
@@ -7,10 +7,6 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_DIR=${SYSCONFDIR}/postfix
 SPOOL_DIR=/var/spool/postfix
-
-POSTFIXUID=6
-POSTFIXGID=6
-MAILDROPGID=12
 
 if [ -f /etc/mailer.conf.postfix ]; then
     rm -f /etc/mailer.conf.postfix
@@ -22,10 +18,10 @@ do_accts()
 {
     echo ""
     echo "+---------------"
-    echo "| Delete the 'postfix' user account, and 'postfix' and 'postdrop'"
+    echo "| Delete the '_postfix' user account, and '_postfix' and '_postdrop'"
     echo "| group accounts manually for a full de-installation."
-    echo "| To do this: execute 'user del postfix', 'group del postfix' and"
-    echo "| 'group del postdrop' as root."
+    echo "| To do this: execute 'user del _postfix', 'group del _postfix' and"
+    echo "| 'group del _postdrop' as root."
     echo "+---------------"
     echo ""
 }

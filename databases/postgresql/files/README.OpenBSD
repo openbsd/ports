@@ -14,16 +14,16 @@ steps are required:
 1. Create the PostgreSQL user and group:
 
 	# useradd -c "PostgreSQL Admin User" -g =uid -m -d /var/postgresql \
-		-s /bin/sh postgresql
+		-s /bin/sh -u 503 _postgresql
 
 2. su to the postgresql account and initialize the database:
 
-       # su - postgresql
+       # su - _postgresql
        $ mkdir /var/postgresql/data
        $ initdb -D /var/postgresql/data
 
-If you are upgrading PostgreSQL then you may have a `pgsql' user.
-It is suggested that you follow the steps in
+If you are upgrading PostgreSQL then you may have a `pgsql' or `postgresql'
+user. It is suggested that you follow the steps in
 
 	!!PREFIX!!/share/doc/postgresql/INSTALL
 
@@ -39,7 +39,7 @@ If you wish to start PostgreSQL automatically during system startup,
 add the following lines to /etc/rc.local:
 
 if [ -x !!PREFIX!!/bin/pg_ctl ]; then
-	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl start \
+	su -l _postgresql -c "!!PREFIX!!/bin/pg_ctl start \
 		-D /var/postgresql/data -l /var/postgresql/logfile \
 		-o '-D /var/postgresql/data'"
 	echo -n ' postgresql'
@@ -49,7 +49,7 @@ To automatically shutdown the database as part of the system shutdown,
 add the following lines to /etc/rc.shutdown:
 
 if [ -f /var/postgresql/data/postmaster.pid ]; then
-	su -l postgresql -c "!!PREFIX!!/bin/pg_ctl stop -m fast \
+	su -l _postgresql -c "!!PREFIX!!/bin/pg_ctl stop -m fast \
 		-D /var/postgresql/data"
 	rm -f /var/postgresql/data/postmaster.pid
 fi

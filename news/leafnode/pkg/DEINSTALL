@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: DEINSTALL,v 1.7 2003/01/22 06:56:39 marcm Exp $
+# $OpenBSD: DEINSTALL,v 1.8 2003/06/23 19:11:10 sturm Exp $
 #
 
 set -e
@@ -18,9 +18,9 @@ echo "| To fully remove $1 from your system you should also"
 echo "| remove the configuration files from the ${SYSCONFDIR}/leafnode"
 echo "| directory as well as the news spool directory ${SPOOLDIR}."
 echo "|"
-echo "| You should also remove the 'news' user from the system by running:"
+echo "| You should also remove the '_news' user from the system by running:"
 echo "|"
-echo "|     userdel news"
+echo "|     userdel _news"
 echo "|"
 echo "| If you are planning on installing $1 again in the future"
 echo "| you can leave them as they are."

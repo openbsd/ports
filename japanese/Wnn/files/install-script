@@ -20,15 +20,15 @@ yesno() {
 
 create_wnn() {
 	local uname begin gid
-	uname='wnn'
-	begin=128
+	uname='_wnn'
+	begin=517
 	while [ X`id -u $begin 2>/dev/null` == X$begin ]
 	do
 		begin=`expr $begin + 1`
 	done
-	echo "Creating user wnn ($begin)"
+	echo "Creating user _wnn ($begin)"
 	gid=`id -g bin`
-	chpass -a "wnn:*:${begin}:${gid}::::Wnn server:/root:/sbin/nologin" || exit 1
+	chpass -a "_wnn:*:${begin}:${gid}::::Wnn server:/root:/sbin/nologin" || exit 1
 }
 	
 for i in japanese chinese korean
@@ -56,11 +56,11 @@ do
 # no base package present yet, bail out
     [ -e $wnntouch ] || continue
 
-    if id -u wnn >/dev/null 2>/dev/null
+    if id -u _wnn >/dev/null 2>/dev/null
     then
-	echo "So, user wnn already exists !"
+	echo "So, user _wnn already exists !"
     else
-	echo "You need a user named wnn"
+	echo "You need a user named _wnn"
 	if yesno "Would you like to create it automatically now"; then
 	    create_wnn
 	else
@@ -70,18 +70,18 @@ do
 	fi
     fi
 
-    chown wnn $wnnserver
+    chown _wnn $wnnserver
     chmod u+s $wnnserver
 
     # base directory not yet present, bail out
 
     for dir in $base; do
     	if [ -d $dir ]; then
-	    if [ `ls -ld $dir |awk '{print $3}'` == wnn ]; then
+	    if [ `ls -ld $dir |awk '{print $3}'` == _wnn ]; then
 	    # already installed
 		continue 2
 	    else
-		chown -R wnn $dir
+		chown -R _wnn $dir
 	    fi
 	else
 	    echo "For a complete server, you need $name-Wnn-dict-4.2 as well"
@@ -97,7 +97,7 @@ do
       if [ ! -d $dir/usr ]; then
 	mkdir -p $dir/usr
       fi
-      chown wnn $dir/usr
+      chown _wnn $dir/usr
       chmod u+w $dir/usr
     done
 done

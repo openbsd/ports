@@ -4,3 +4,9 @@
 | and you are advised to avoid using it as it presents a potential
 | security risk for your system.
 +----------------------------------------------------------------------
+| WARNING!
+|
+| This port has changed its user from 'wnn' to '_wnn'. If you installed
+| this port before, ensure all permissions are set correctly and then
+| "rmuser wnn".
++----------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2003/05/01 15:46:38 sturm Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2003/06/23 19:11:11 sturm Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -115,8 +115,8 @@ do-install:
 		sendmail_path=${TRUEPREFIX}/sbin/sendmail \
 		newalises_path=${TRUEPREFIX}/sbin/newaliases \
 		mailq_path=${TRUEPREFIX}/sbin/mailq \
-		mail_owner=postfix \
-		setgid_group=postdrop \
+		mail_owner=_postfix \
+		setgid_group=_postdrop \
 		manpage_directory=${TRUEPREFIX}/man \
 		readme_directory=${TRUEPREFIX}/share/doc/postfix/readme \
 		)

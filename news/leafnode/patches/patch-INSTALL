@@ -1,12 +1,68 @@
-$OpenBSD: patch-INSTALL,v 1.4 2003/05/21 06:51:43 marcm Exp $
---- INSTALL.orig	Thu Mar 13 04:31:32 2003
-+++ INSTALL	Fri May 16 09:45:41 2003
+$OpenBSD: patch-INSTALL,v 1.5 2003/06/23 19:11:10 sturm Exp $
+--- INSTALL.orig	Thu Mar 13 13:31:10 2003
++++ INSTALL	Sat Jun 21 21:18:40 2003
+@@ -26,7 +26,7 @@
+     the lock file (defaults to leaf.node/lock.file below the spooldir).
+ 
+     NOTE: DO MAKE SURE that the lock file is in a directory that is writable by
+-    the user "news". Leafnode will have dropped root privileges when it tries
++    the user "_news". Leafnode will have dropped root privileges when it tries
+     to obtain the lock file, and it needs write access. The new default (as of
+     1.9.37) should be fine in most cases.
+ 
+@@ -47,16 +47,16 @@
+ 
+     All tests must pass, otherwise, ask on the leafnode mailing list for help.
+ 
+-3a. (as root) Create a "news" user if you don't have one.
++3a. (as root) Create a "_news" user if you don't have one.
+ 
+ 3b. (as root) Create an alias in your mail system to forward mail addressed to
+-    "news" to the real user who looks after leafnode.
++    "_news" to the real user who looks after leafnode.
+ 
+     If you run qmail: get and install the fastforward package. It is available
+     from qmail distribution sites.
+ 
+     Find your aliases file (/etc/aliases or /etc/mail/aliases), add a line
+-    "news: joe" (assuming joe looks after your leafnode) and then type
++    "_news: joe" (assuming joe looks after your leafnode) and then type
+ 
+ 	newaliases.
+ 
+@@ -108,12 +108,12 @@
+     discarded at the upstream server, posts being discarded when Message-IDs of
+     different postings clash and other troubles.
+ 
+-8.  (as news) Set up a cron job to run texpire every night or maybe every week.
++8.  (as _news) Set up a cron job to run texpire every night or maybe every week.
+     Here is my crontab line, which runs nightly:
+ 
+     0 4 * * * /usr/local/sbin/texpire
+ 
+-    I did "crontab -u news -e" as root to edit the crontab file, and added this
++    I did "crontab -u _news -e" as root to edit the crontab file, and added this
+     line.  Substituting "1" for the third "*", thus:
+ 
+     0 4 * * 1 /usr/local/sbin/texpire
+@@ -122,9 +122,9 @@
+     details.
+ 
+ 9.  Make sure fetchnews is run at the appropriate time.  If you have a
+-    full-time link, run it from cron (as "news" again), if not, run it when
++    full-time link, run it from cron (as "_news" again), if not, run it when
+     your connection to the net is established.  If it is run as root, it will
+-    change its user ID to "news" automatically. If you use PPP, you can
++    change its user ID to "_news" automatically. If you use PPP, you can
+     probably run fetchnews from /etc/ppp/ip-up.local or /etc/ppp/ip-up.
+ 
+ 10. (as root) Edit /etc/hosts.deny to add a line:
 @@ -172,11 +172,10 @@
      incoming NNTP connections.  Here is my inetd.conf line (insert it at the
      leftmost column, without leading spaces!):
  
 -    nntp stream tcp nowait news /usr/sbin/tcpd /usr/local/sbin/leafnode
-+    nntp stream tcp nowait news /usr/libexec/tcpd /usr/local/sbin/leafnode
++    nntp stream tcp nowait _news /usr/libexec/tcpd /usr/local/sbin/leafnode
  
      This starts leafnode for all connections on the nntp port, subject to
 -    /etc/hosts.allow and /etc/hosts.deny screening.  If you don't have
@@ -15,3 +71,48 @@ $OpenBSD: patch-INSTALL,v 1.4 2003/05/21 06:51:43 marcm Exp $
  
      Using leafnode without tcpd is not supported and opens your computer to
      abuse (even happens on modem lines that are only connected during the
+@@ -214,7 +213,7 @@
+ 	    socket_type     = stream
+             protocol        = tcp
+ 	    wait            = no
+-	    user            = news
++	    user            = _news
+             server          = /usr/sbin/tcpd
+ 	    server_args     = /usr/local/sbin/leafnode
+             instances       = 7
+@@ -280,7 +279,7 @@
+        #! /bin/sh
+        exec 2>&1
+        exec /usr/local/bin/tcpserver -c10 -l0 -H -v 127.0.0.1 119 \
+-       /usr/local/bin/setuidgid news /usr/local/bin/argv0 /usr/sbin/tcpd \
++       /usr/local/bin/setuidgid _news /usr/local/bin/argv0 /usr/sbin/tcpd \
+        /usr/local/sbin/leafnode
+ 
+        You may need to adjust the paths if your software is in a non-standard
+@@ -296,7 +295,7 @@
+        exec 2>&1
+        exec /usr/local/bin/tcpserver -c10 -l0 -H -v -x nntp.cdb \
+        127.0.0.1 119 \
+-       /usr/local/bin/setuidgid news /usr/local/sbin/leafnode
++       /usr/local/bin/setuidgid _news /usr/local/sbin/leafnode
+ 
+        As above, adjust the paths and the IP.
+ 
+@@ -331,7 +330,7 @@
+     svscan should notice the new leafnode service within 5 seconds and
+     start it.
+ 
+-12. (as root or news) Run fetchnews.  The first run will take some time since
++12. (as root or _news) Run fetchnews.  The first run will take some time since
+     fetchnews reads a list of all newsgroups from your upstream server.  With
+     an 28.8 modem, it can take as long as 60 minutes (depending on how many
+     newsgroups your provider offers). To see fetchnews working, run it with
+@@ -348,7 +347,7 @@
+     After this, you should have empty files in
+     /var/spool/news/interesting.groups/ for every group you want to read.
+ 
+-14. (as root or news) Run fetchnews again. This run should pick up all the
++14. (as root or _news) Run fetchnews again. This run should pick up all the
+     groups you want to read.
+ 
+ 15. Note: for access from remote sites, outside of your LAN, additional

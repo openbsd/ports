@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.44 2003/04/14 15:02:09 wilfried Exp $
+# $OpenBSD: Makefile,v 1.45 2003/06/23 19:11:10 sturm Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -19,12 +19,12 @@ DISTNAME=	Wnn4.2
 
 MULTI_PACKAGES=-dict -zh -zhdict -ko -kodict -xwnmo -data
 
-PKGNAME=	ja-Wnn-4.2
-PKGNAME-dict=	ja-Wnndict-4.2
-PKGNAME-zh=	zh-Wnn-4.2
-PKGNAME-zhdict=	zh-Wnndict-4.2
-PKGNAME-ko=	ko-Wnn-4.2
-PKGNAME-kodict=	ko-Wnndict-4.2
+PKGNAME=	ja-Wnn-4.2p0
+PKGNAME-dict=	ja-Wnndict-4.2p0
+PKGNAME-zh=	zh-Wnn-4.2p0
+PKGNAME-zhdict=	zh-Wnndict-4.2p0
+PKGNAME-ko=	ko-Wnn-4.2p0
+PKGNAME-kodict=	ko-Wnndict-4.2p0
 PKGNAME-xwnmo=	Wnn-xwnmo-4.2
 PKGNAME-data=	Wnn-data-4.2
 
@@ -134,7 +134,7 @@ do-configure:
 
 
 # Xfree4 believes it can build html documentation, fat chance...
-MAKE_FLAGS=IMAKE='imake -DBuildHtmlManPages=0 -DPorts' WNNOWNER_INDIRECT=wnn
+MAKE_FLAGS=IMAKE='imake -DBuildHtmlManPages=0 -DPorts' WNNOWNER_INDIRECT=_wnn
 FAKE_FLAGS=DESTDIR=${WRKINST} WNNOWNER_INDIRECT=bin
 
 MAKE_ENV=IMAKEINCLUDE=-I${WRKSRC}/config
