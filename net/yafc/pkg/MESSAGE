@@ -1,0 +1,9 @@
+==============================================================
+A sample configuration file for Yafc has been installed into
+${PREFIX}/share/examples/yafc/yafcrc.sample
+
+You can copy this file to /etc to establish a default set of 
+options for Yafc.  If it is not present here, Yafc will also
+attempt to find it in ~/.yafc/yafcrc
+==============================================================
+

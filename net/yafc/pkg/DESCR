@@ -1,0 +1,8 @@
+YAFC stands for Yet Another FTP Client.  It is a modern, powerful
+console-based program designed for frequent users of FTP.
+
+Features include a directory cache, aliases, coloured ls, recursive
+get/put/ls/rm, background file transfers, multiple connections open
+simultaneously, queuing, autologin, and many configuration options.
+
+WWW: ${HOMEPAGE}
