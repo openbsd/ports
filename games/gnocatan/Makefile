@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/23 07:23:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/24 09:30:32 sturm Exp $
 
 COMMENT=	"Settlers of Catan for GNOME/Gtk"
 
@@ -23,7 +23,7 @@ USE_GMAKE=	Yes
 USE_X11=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
 		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
