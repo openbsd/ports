@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/04/17 10:58:12 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/01 09:48:48 xsa Exp $
 
 COMMENT=	"Rogue like adventure game"
 
@@ -20,5 +20,10 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=		Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/wanderer
+	${INSTALL_DATA} /dev/null \
+		${PREFIX}/share/examples/wanderer/wandererscores
 
 .include <bsd.port.mk>
