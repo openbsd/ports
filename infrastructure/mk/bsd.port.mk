@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.130 1999/10/08 11:38:05 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.131 1999/10/27 12:48:40 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -386,8 +386,8 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 ARCH!=	uname -m
 
 # Get the operating system type and version
-OPSYS!=	uname -s
-OPSYS_VER!=	uname -r
+OPSYS=	OpenBSD
+OPSYS_VER=	${OSREV}
 
 .if exists(${.CURDIR}/../Makefile.inc)
 .include "${.CURDIR}/../Makefile.inc"
