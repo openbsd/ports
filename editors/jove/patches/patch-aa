@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar 18 23:44:33 1996
-+++ Makefile	Sat Jan 16 07:37:40 1999
+--- Makefile.orig	Tue Mar 19 05:44:33 1996
++++ Makefile	Mon Mar 12 17:25:02 2001
 @@ -27,16 +27,16 @@
  # LIBDIR and SHAREDIR.  All others must already exist.
  
@@ -22,7 +22,7 @@
  
  # The install commands of BSD and System V differ in unpleasant ways:
  # -c: copy (BSD); -c dir: destination directory (SysV)
-@@ -50,12 +50,12 @@
+@@ -50,12 +50,12 @@ DFLTSHELL = /bin/csh
  INSTALLFLAGS = # -g bin -o root
  
  # to install executable files
@@ -39,16 +39,25 @@
  
  # These should all just be right if the above ones are.
  # You will confuse JOVE if you move anything from LIBDIR or SHAREDIR.
-@@ -79,7 +79,7 @@
+@@ -79,7 +79,7 @@ JOVETOOLM = $(MANDIR)/jovetool.$(MANEXT)
  # compiler, adding -Xa -v will increase compiler checking.
  # On DEC OSF/1, -std1 -O
  
 -OPTFLAGS = -O
-+OPTFLAGS = -O2
++#OPTFLAGS = -O
  
  # For making dependencies under BSD systems
  DEPENDFLAG = -M
-@@ -163,7 +163,7 @@
+@@ -115,7 +115,7 @@ LIBS = -ltermcap
+ #	PDP-11 without separate I&D: -n
+ 
+ 
+-LDFLAGS =
++#LDFLAGS =
+ 
+ # define a symbol for your OS if it hasn't got one.  See sysdep.h.
+ # Jove has very few defaults, you will almost certainly need to define
+@@ -163,13 +163,13 @@ LDFLAGS =
  #
  # You can just say 'make SYSDEFS=-Dwhatever' on these systems.
  
@@ -57,7 +66,14 @@
  
  # for SCO Xenix, set
  #	MEMFLAGS = -Mle
-@@ -213,7 +213,7 @@
+ #	CFLAGS = -LARGE -O -F 3000 -K -Mle  (say -Mle2 for an 80286)
+ 
+-CFLAGS = $(OPTFLAGS) $(SYSDEFS)
++CFLAGS += $(SYSDEFS)
+ 
+ # For SYSVR4 (/usr/ucb/cc will NOT work because of setjmp.h):
+ # CC = /usr/bin/cc
+@@ -213,7 +213,7 @@ NROFF = nroff
  TROFF = troff -Tpost
  TROFFPOST = | /usr/lib/lp/postscript/dpost - >troff.out.ps
  
@@ -66,7 +82,7 @@
  
  C_SRC = commands.c commands.tab abbrev.c argcount.c ask.c buf.c c.c case.c jctype.c \
  	delete.c disp.c extend.c fp.c fmt.c insert.c io.c iproc.c \
-@@ -329,8 +329,12 @@
+@@ -329,8 +329,12 @@ install: $(LIBDIR) $(SHAREDIR) \
  	 $(TEACH-JOVE) $(CMDS.DOC) $(TERMSDIR)docs \
  	 $(PORTSRVINST) $(RECOVER) $(JOVE) $(TEACHJOVE) $(MANUALS)
  	$(TINSTALL) doc/jove.rc $(JOVERC)
@@ -81,7 +97,7 @@
  
  $(LIBDIR)::
  	test -d $(LIBDIR) || mkdir $(LIBDIR)
-@@ -375,9 +379,8 @@
+@@ -375,9 +379,8 @@ $(JOVEM): doc/jove.nr
  	@sed -e 's;<TMPDIR>;$(TMPDIR);' \
  	     -e 's;<LIBDIR>;$(LIBDIR);' \
  	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
@@ -93,7 +109,7 @@
  
  # doc/jove.doc is the formatted manpage (only needed by DOS)
  # Building it should be like building $(JOVEM) except that we
-@@ -391,18 +394,16 @@
+@@ -391,18 +394,16 @@ $(TEACHJOVEM): doc/teachjove.nr
  	@sed -e 's;<TMPDIR>;$(TMPDIR);' \
  	     -e 's;<LIBDIR>;$(LIBDIR);' \
  	     -e 's;<SHAREDIR>;$(SHAREDIR);' \
@@ -116,7 +132,7 @@
  
  echo:
  	@echo $(C-FILES) $(HEADERS)
-@@ -500,6 +501,7 @@
+@@ -500,6 +501,7 @@ clean:
  	rm -f a.out core *.o keys.c jjove portsrv recover setmaps \
  		teachjove paths.h \#* *~ make.log *.map jjove.ico \
  		doc/cmds.doc doc/jove.man doc/jove.doc doc/troff.out.ps \
