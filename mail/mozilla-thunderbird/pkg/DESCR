@@ -1,0 +1,6 @@
+Mozilla Thunderbird is a redesign of the Mozilla mail component.
+Our goal is to produce a cross platform stand alone mail application
+using the XUL user interface language. Our intended customer is
+someone who uses Mozilla Firebird (or another stand alone browser)
+as their primary browser and wants a mail client based on mozilla
+that "plays nice" with the browser.

@@ -1,0 +1,37 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1.1.1 2004/01/18 11:48:09 wilfried Exp $
+#
+# Pre/post-installation setup of mozilla-thunderbird
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+MOZ=${PREFIX}/mozilla-thunderbird
+
+# Verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	cd ${MOZ}
+	LD_LIBRARY_PATH=${MOZ} ./regxpcom
+	LD_LIBRARY_PATH=${MOZ} ./regchrome
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,20 @@
+$OpenBSD: patch-mail_app_mozilla_in,v 1.1.1.1 2004/01/18 11:47:42 wilfried Exp $
+--- mail/app/mozilla.in.orig	2003-04-05 22:52:38.000000000 +0200
++++ mail/app/mozilla.in	2003-12-12 13:02:18.000000000 +0100
+@@ -33,6 +33,7 @@
+ #set -x
+ 
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
+ MRE_HOME=%MREDIR%
+ 
+ # honor MOZILLA_FIVE_HOME if it's there
+@@ -111,7 +112,7 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++export MOZ_PLUGIN_PATH MRE_HOME
+ eval "set -- $moreargs"
+ if [ $debugging = 1 ]
+ then
