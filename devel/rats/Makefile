@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2002/05/20 19:30:39 jsyn Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/08 02:07:19 jsyn Exp $
 
 COMMENT=		"source code auditing tool"
 
-DISTNAME=		rats-1.4
+DISTNAME=		rats-1.5
 CATEGORIES=     	devel security
-NEED_VERSION=		1.525
 
-HOMEPAGE=		http://www.securesw.com/rats/
+HOMEPAGE=		http://www.securesoftware.com/rats/
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
@@ -16,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.securesw.com/rats/
+MASTER_SITES=		http://www.securesoftware.com/rats/
 
-LIB_DEPENDS=		expat::textproc/expat
+LIB_DEPENDS=		expat.2::textproc/expat
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib \
