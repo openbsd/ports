@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.293 2000/06/09 16:18:42 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.294 2000/06/09 16:26:54 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -721,6 +721,7 @@ SED_PLIST?=
 
 FLAVOR?=
 
+# Build _FEXT, checking that no flavors are misspelled
 _FEXT:=
 .if defined(FLAVORS)
 .  if defined(FLAVOR)
@@ -733,6 +734,8 @@ _FEXT:=
 .      endif
 .    endfor
 .  endif
+# Create the basic sed substitution pipeline for fragments
+# (applies only to PLIST for now)
 .  for _i in ${FLAVORS:L}
 .    if empty(FLAVOR:L:M${_i})
 SED_PLIST+=|sed -e '/^!%%${_i}%%$$/r${PKGDIR}/PFRAG.no-${_i}' -e '//d' -e '/^%%${_i}%%$$/d'
@@ -742,21 +745,24 @@ SED_PLIST+=|sed -e '/^!%%${_i}%%$$/d' -e '/^%%${_i}%%$$/r${PKGDIR}/PFRAG.${_i}' 
 .    endif
 .  endfor
 .endif
-SED_PLIST+=|sed -e 's/@ARCH@/${ARCH}/' -e 's/@FLAVORS@/${_FEXT}/'
 
+# Create the generic variable substitution list, from subst vars
+SUBST_VARS+=ARCH HOMEPAGE PREFIX
+_SED_SUBST=sed
+.for _v in ${SUBST_VARS}
+_SED_SUBST+=-e 's,$${${_v}},${${_v}},g'
+.endfor
+_SED_SUBST+=-e 's,$${FLAVORS},${_FEXT},g' -e 's,$$\\,$$,g'
+# and append it to the PLIST substitution pipeline
+SED_PLIST+=|${_SED_SUBST}
+
+# compatibility kludge
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST.sed${SUBPACKAGE})
-PLIST=${WRKBUILD}/PLIST${SUBPACKAGE}
-
-${PLIST}: ${PKGDIR}/PLIST.sed${SUBPACKAGE}
-.  if defined(NO_SHARED_LIBS)
-	@sed -e '/^%%SHARED%%$$/d' <$? \
-		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
-.  else
-	@sed -e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' <$? \
-		${SED_PLIST} >${PLIST}.tmp && mv -f ${PLIST}.tmp ${PLIST}
-.  endif
+PLIST=${PKGDIR}/PLIST.sed${SUBPACKAGE}
+_SED_SUBST+=-e 's/@ARCH@/${ARCH}/g' -e 's/@FLAVORS@/${_FEXT}/g'
 .endif
 
+# find out the most appropriate PLIST  source
 .if !defined(PLIST) && exists(${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.${ARCH})
 PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}${_FEXT}.${ARCH}
 .endif
@@ -774,6 +780,7 @@ PLIST=		${PKGDIR}/PLIST${SUBPACKAGE}.noshared
 .endif
 PLIST?=		${PKGDIR}/PLIST${SUBPACKAGE}
 
+# Likewise for DESCR/MESSAGE/COMMENT
 .if !defined(COMMENT)
 .  if exists(${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT})
 COMMENT=${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT}
@@ -781,17 +788,43 @@ COMMENT=${PKGDIR}/COMMENT${SUBPACKAGE}${_FEXT}
 COMMENT=	${PKGDIR}/COMMENT${SUBPACKAGE}
 .  endif
 .endif
+
+.if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
+MESSAGE?= ${PKGDIR}/MESSAGE${SUBPACKAGE}
+.endif
+
 DESCR?=		${PKGDIR}/DESCR${SUBPACKAGE}
 
-_PKG_PREREQ=${PLIST} ${DESCR} ${COMMENT}
+# And create the actual files from sources
+${WRKBUILD}/PLIST${SUBPACKAGE}: ${PLIST}
+.  if defined(NO_SHARED_LIBS)
+	@sed -e '/^%%!SHARED%%$$/r${PKGDIR}/PFRAG.no-shared${SUBPACKAGE}' \
+		-e '//d' -e '/^%%SHARED%%$$/d' <$? \
+		${SED_PLIST} >$@.tmp && mv -f $@.tmp $@
+.  else
+	@sed -e '/^%%!SHARED%%$$/d' \
+		-e '/^%%SHARED%%$$/r${PKGDIR}/PFRAG.shared${SUBPACKAGE}' -e '//d' <$? \
+		${SED_PLIST} >$@.tmp && mv -f $@.tmp $@
+.  endif
+
+${WRKBUILD}/DESCR${SUBPACKAGE}: ${DESCR}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+
+.if defined(MESSAGE)
+${WRKBUILD}/MESSAGE${SUBPACKAGE}: ${MESSAGE}
+	@${_SED_SUBST} <$? >$@.tmp && mv -f $@.tmp $@
+.endif
 
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 _SORT_DEPENDS?=tsort|tail -r
 
+# Fill out package command, and package dependencies
+_PKG_PREREQ= ${WRKBUILD}/PLIST${SUBPACKAGE} ${WRKBUILD}/DESCR${SUBPACKAGE} ${COMMENT}
+# Note that if you override PKG_ARGS, you will not get correct dependencies
 .if !defined(PKG_ARGS)
-PKG_ARGS= -v -c '${COMMENT}' -d ${DESCR}
-PKG_ARGS+=-f ${PLIST} -p ${PREFIX} 
+PKG_ARGS= -v -c '${COMMENT}' -d ${WRKBUILD}/DESCR${SUBPACKAGE}
+PKG_ARGS+=-f ${WRKBUILD}/PLIST${SUBPACKAGE} -p ${PREFIX} 
 PKG_ARGS+=-P "`cd ${.CURDIR} && ${MAKE} SUBPACKAGE='${SUBPACKAGE}' package-depends|${_SORT_DEPENDS}`"
 .  if exists(${PKGDIR}/INSTALL${SUBPACKAGE})
 PKG_ARGS+=		-i ${PKGDIR}/INSTALL${SUBPACKAGE}
@@ -805,9 +838,9 @@ _PKG_PREREQ+=${PKGDIR}/DEINSTALL${SUBPACKAGE}
 PKG_ARGS+=		-r ${PKGDIR}/REQ${SUBPACKAGE}
 _PKG_PREREQ+=${PKGDIR}/REQ${SUBPACKAGE}
 .  endif
-.  if exists(${PKGDIR}/MESSAGE${SUBPACKAGE})
-PKG_ARGS+=		-D ${PKGDIR}/MESSAGE${SUBPACKAGE}
-_PKG_PREREQ+=${PKGDIR}/MESSAGE${SUBPACKAGE}
+.  if defined(MESSAGE)
+PKG_ARGS+=		-D ${WRKBUILD}/MESSAGE${SUBPACKAGE}
+_PKG_PREREQ+=${WRKBUILD}/MESSAGE${SUBPACKAGE}
 .  endif
 .endif
 .if ${FAKE:U} == "YES"
@@ -1675,8 +1708,8 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 .          endfor
 .      endif
 .    endif
-.    if exists(${PKGDIR}/MESSAGE)
-	@cat	${PKGDIR}/MESSAGE
+.    if defined(${MESSAGE})
+	@cat	${WRKBUILD}/MESSAGE${SUBPACKAGE}
 .    endif
 .    if !defined(NO_PKG_REGISTER)
 	@cd ${.CURDIR} && exec ${MAKE} fake-pkg
@@ -2038,6 +2071,7 @@ update-patches:
 	*) read i?'edit patches: '; \
 	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
 	
+
 ################################################################
 # The special package-building targets
 # You probably won't need to touch these
@@ -2595,7 +2629,7 @@ fake-pkg: ${_PKG_PREREQ}
 		${ECHO_MSG} "===>  Registering installation for ${PKGNAME}"; \
 		mkdir -p ${PKG_DBDIR}/${PKGNAME}; \
 		${PKG_CMD} ${PKG_ARGS} -O ${PKGFILE} > ${PKG_DBDIR}/${PKGNAME}/+CONTENTS; \
-		cp ${DESCR} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
+		cp ${WRKBUILD}/DESCR${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DESC; \
 		cp ${COMMENT} ${PKG_DBDIR}/${PKGNAME}/+COMMENT; \
 		if [ -f ${PKGDIR}/INSTALL ]; then \
 			cp ${PKGDIR}/INSTALL ${PKG_DBDIR}/${PKGNAME}/+INSTALL; \
@@ -2606,8 +2640,8 @@ fake-pkg: ${_PKG_PREREQ}
 		if [ -f ${PKGDIR}/REQ ]; then \
 			cp ${PKGDIR}/REQ ${PKG_DBDIR}/${PKGNAME}/+REQ; \
 		fi; \
-		if [ -f ${PKGDIR}/MESSAGE ]; then \
-			cp ${PKGDIR}/MESSAGE ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
+		if [ -f ${WRKBUILD}/MESSAGE${SUBPACKAGE} ]; then \
+			cp ${WRKBUILD}/MESSAGE${SUBPACKAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
 		for dep in `cd ${.CURDIR} && ${MAKE} package-depends ECHO_MSG=true | ${_SORT_DEPENDS}`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
