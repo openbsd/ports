@@ -1,4 +1,4 @@
 "gogo" is an version of the "lame" mp3 encoder heavily optomized for
 686 class intel CPU's. It makes use of MMX or 3DNOW stuff if your
-CPU has them. encodes *much* faster than bladeenc
+CPU has them. encodes *much* faster than bladeenc.
 

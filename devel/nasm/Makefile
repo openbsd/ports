@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/16 16:12:58 millert Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/26 02:29:58 espie Exp $
 
 DISTNAME=	nasm-0.98
 CATEGORIES=	devel lang
+NEED_VERSION=	1.233
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= devel/lang/assemblers
 
@@ -18,7 +19,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=	Yes
+FAKE=		Yes
+FAKE_FLAGS=	INSTALLROOT=${WRKINST}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nasm
@@ -29,6 +32,5 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/doc/nasmdoc.txt ${PREFIX}/share/doc/nasm
 	${INSTALL_DATA} ${WRKBUILD}/doc/html/*.html ${PREFIX}/share/doc/nasm
 	${INSTALL_DATA} ${WRKBUILD}/doc/info/nasm.info $(PREFIX)/info
-	@install-info ${PREFIX}/info/nasm.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
