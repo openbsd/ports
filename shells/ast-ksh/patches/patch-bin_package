@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_package,v 1.1.1.1 2001/07/12 19:17:24 naddy Exp $
---- bin/package.orig	Tue Jul 10 16:47:25 2001
-+++ bin/package	Tue Jul 10 16:47:34 2001
-@@ -12,7 +12,7 @@ version=2001-06-20
+$OpenBSD: patch-bin_package,v 1.2 2001/10/12 17:01:42 naddy Exp $
+--- bin/package.orig	Thu Aug 23 08:43:30 2001
++++ bin/package	Fri Oct 12 18:48:50 2001
+@@ -12,7 +12,7 @@ version=2001-08-11
  
  src="cmd contrib etc lib"
  use="/home /usr/common /exp /usr/local /usr/add-on /usr/addon /usr/tools /usr /opt"

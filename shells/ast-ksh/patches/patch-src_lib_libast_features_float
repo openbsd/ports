@@ -1,35 +1,30 @@
-$OpenBSD: patch-src_lib_libast_features_float,v 1.1 2001/10/11 01:39:15 naddy Exp $
+$OpenBSD: patch-src_lib_libast_features_float,v 1.2 2001/10/12 17:01:43 naddy Exp $
 --- src/lib/libast/features/float.orig	Wed Jun 13 21:50:59 2001
-+++ src/lib/libast/features/float	Wed Oct 10 15:35:57 2001
-@@ -125,6 +125,7 @@ tst	- output{
- 		else
- 			printf("#define UINTMAX_DIG		ULONG_DIG\n");
- 		printf("\n");
-+	#if !defined(__alpha__)		/* ksh93 doesn't use this */
- 		f = 1;
- 		w = 1;
- 		do
-@@ -145,6 +146,7 @@ tst	- output{
- 		}
- 		else
- 			printf("#define FLT_UINTMAX_MAX		FLT_ULONG_MAX\n");
-+	#endif
- 	#ifdef FLT_DIG
- 		s = FLT_DIG;
- 	#else
-@@ -256,6 +258,7 @@ tst	- output{
- 		printf("#endif\n");
- 
- 		printf("\n");
-+	#if !defined(__alpha__)		/* ksh93 doesn't use this */
- 		d = 1.0;
- 		w = 1;
- 		do
-@@ -276,6 +279,7 @@ tst	- output{
- 		}
- 		else
- 			printf("#define DBL_UINTMAX_MAX		DBL_ULONG_MAX\n");
-+	#endif
- 	#ifdef DBL_DIG
- 		s = DBL_DIG;
- 	#else
++++ src/lib/libast/features/float	Fri Oct 12 18:49:24 2001
+@@ -132,7 +132,7 @@ tst	- output{
+ 			f *= 2;
+ 			pw = w;
+ 			w *= 2;
+-		} while (w == (_ast_intmax_t)f);
++		} while (w == f);
+ 		w = (pw - 1) + pw;
+ 		u = ~0;
+ 		if (u > w)
+@@ -263,7 +263,7 @@ tst	- output{
+ 			d *= 2;
+ 			pw = w;
+ 			w *= 2;
+-		} while (w == (_ast_intmax_t)d);
++		} while (w == d);
+ 		w = (pw - 1) + pw;
+ 		u = ~0;
+ 		if (u > w)
+@@ -391,7 +391,7 @@ tst	- output{
+ 			l *= 2;
+ 			pw = w;
+ 			w *= 2;
+-		} while (w == (_ast_intmax_t)l);
++		} while (w == l);
+ 		w = (pw - 1) + pw;
+ 		u = ~0;
+ 		if (u > w)
