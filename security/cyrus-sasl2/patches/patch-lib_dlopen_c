@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_dlopen_c,v 1.1 2002/07/20 18:33:21 pvalchev Exp $
---- lib/dlopen.c.orig	Sun Jul  7 15:13:39 2002
-+++ lib/dlopen.c	Sun Jul  7 15:14:43 2002
-@@ -157,7 +157,7 @@ int _sasl_locate_entry(void *library, co
- {
+$OpenBSD: patch-lib_dlopen_c,v 1.2 2002/12/10 08:37:42 jakob Exp $
+--- lib/dlopen.c.orig	Thu Sep  5 21:21:14 2002
++++ lib/dlopen.c	Tue Dec 10 00:10:52 2002
+@@ -165,7 +165,7 @@ int _sasl_locate_entry(void *library, co
+ #ifdef DO_DLOPEN
  /* note that we still check for known problem systems in
   * case we are cross-compiling */
 -#if defined(DLSYM_NEEDS_UNDERSCORE) || defined(__OpenBSD__) || defined(__APPLE__)
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_dlopen_c,v 1.1 2002/07/20 18:33:21 pvalchev Exp $
      char adj_entryname[1024];
  #else
  #define adj_entryname entryname
-@@ -181,7 +181,7 @@ int _sasl_locate_entry(void *library, co
+@@ -189,7 +189,7 @@ int _sasl_locate_entry(void *library, co
  	return SASL_BADPARAM;
      }
  
