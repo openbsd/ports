@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2003/09/22 23:58:39 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/10/16 16:44:48 pvalchev Exp $
 @pkgcfl symon-*
 libexec/symon
 libexec/symux
@@ -8,24 +8,24 @@ share/examples/symon/symon.conf
 share/examples/symon/symux.conf
 share/symon/c_config.sh
 share/symon/c_smrrds.sh
-share/symon/web/class_cpu.inc        
-share/symon/web/class_graph.inc      
-share/symon/web/class_if.inc         
-share/symon/web/class_io.inc         
-share/symon/web/class_mem.inc        
-share/symon/web/class_pf.inc         
+share/symon/web/class_cpu.inc
+share/symon/web/class_graph.inc
+share/symon/web/class_if.inc
+share/symon/web/class_io.inc
+share/symon/web/class_mem.inc
+share/symon/web/class_pf.inc
 share/symon/web/class_debug.inc
 share/symon/web/class_proc.inc
-share/symon/web/datasources.inc      
-share/symon/web/graph_cpu.php        
-share/symon/web/graph_if.php         
-share/symon/web/graph_io.php         
-share/symon/web/graph_mem.php        
-share/symon/web/graph_pf.php         
-share/symon/web/index.php            
-share/symon/web/symon.css              
-share/symon/web/symon.png              
-share/symon/web/spacer.png           
+share/symon/web/datasources.inc
+share/symon/web/graph_cpu.php
+share/symon/web/graph_if.php
+share/symon/web/graph_io.php
+share/symon/web/graph_mem.php
+share/symon/web/graph_pf.php
+share/symon/web/index.php
+share/symon/web/symon.css
+share/symon/web/symon.png
+share/symon/web/spacer.png
 share/symon/web/test_config.php
 share/symon/client/getsymonitem.pl
 share/symon/client/SymuxClient.pm
