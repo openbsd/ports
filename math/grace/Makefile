@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2002/05/11 00:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2002/06/05 22:50:23 naddy Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	"GRaphing, Advanced Computation and Exploration of data"
 
-DISTNAME=	grace-5.1.7
+DISTNAME=	grace-5.1.8
 CATEGORIES=	math
 NEED_VERSION=	1.524
 
@@ -29,7 +29,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools
 CONFIGURE_ARGS+=	--with-bundled-xbae \
 			--with-extra-incpath=${LOCALBASE}/include \
 			--with-extra-ldpath=${LOCALBASE}/lib \
-			--enable-grace-home=${LOCALBASE}/grace
+			--enable-grace-home=${PREFIX}/grace
 
 LIB_DEPENDS=	jpeg.62::graphics/jpeg \
 		png.2::graphics/png \
