@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2000/04/09 16:26:13 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2000/04/18 13:40:27 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -13,8 +13,8 @@ _CMD+=key='${key}'
 .  if defined(category)
 _CMD+=category='${category}'
 .  endif
-.  if defined(author)
-_CMD+=author='${author}'
+.  if defined(maintainer)
+_CMD+=maintainer='${maintainer}'
 .  endif
 SUBDIR != ${_CMD}
 .else

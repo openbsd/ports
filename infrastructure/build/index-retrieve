@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: index-retrieve,v 1.1 2000/04/09 16:26:14 espie Exp $
+# $OpenBSD: index-retrieve,v 1.2 2000/04/18 13:40:27 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -28,7 +28,7 @@
 for (@ARGV) {
 	$index = $' if m/^index\=/;
 	$iscategory = $' if m/^category\=/;
-	$isauthor = $' if m/^author\=/;
+	$ismaintainer = $' if m/^maintainer\=/;
 	$iskey = $' if m/^key\=/;
 }
 
@@ -38,9 +38,9 @@ open(INDEX, $index);
 
 while(<INDEX>) {
 	chomp;
-	($key, $subdir, $author, $category) = (split(/\|/, $_) )[0, 1, 5, 6];
-	$author =~ s/\@.*//;
-	next if (defined($isauthor) && $author !~ m/$isauthor/);
+	($key, $subdir, $maintainer, $category) = (split(/\|/, $_) )[0, 1, 5, 6];
+	$maintainer =~ s/\@.*//;
+	next if (defined($ismaintainer) && $maintainer !~ m/$ismaintainer/);
 	next if (defined($iscategory) && $category !~ m/$iscategory/);
 	next if (defined($iskey) && $key !~ m/$iskey/);
 	print $subdir, " ";
