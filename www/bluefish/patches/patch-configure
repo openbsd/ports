@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2004/03/23 19:29:56 pvalchev Exp $
---- configure.orig	2004-03-17 20:43:37.000000000 +0100
-+++ configure	2004-03-17 20:48:36.000000000 +0100
-@@ -3300,31 +3300,6 @@ else
+$OpenBSD: patch-configure,v 1.2 2004/05/31 14:36:16 couderc Exp $
+--- configure.orig	2004-05-31 15:43:19.000000000 +0200
++++ configure	2004-05-31 15:44:22.000000000 +0200
+@@ -3286,44 +3286,6 @@ else
  	echo "no"
  fi
  
@@ -10,6 +10,7 @@ $OpenBSD: patch-configure,v 1.1 2004/03/23 19:29:56 pvalchev Exp $
 -	LIBS="$LIBS `pkg-config --libs gnome-vfs-2.0`"
 -	CFLAGS="$CFLAGS `pkg-config --cflags gnome-vfs-2.0`"
 -	echo "yes"
+-	HAVE_GNOME_VFS=1
 -	cat >>confdefs.h <<\_ACEOF
 -#define HAVE_GNOME_VFS 1
 -_ACEOF
@@ -17,12 +18,24 @@ $OpenBSD: patch-configure,v 1.1 2004/03/23 19:29:56 pvalchev Exp $
 -else
 -	echo "no"
 -	echo "gnome-vfs-2.0 not found, opening remote files will be disabled"
+-	HAVE_GNOME_VFS=0
 -fi
 -
 -echo -n "checking for gnome-vfs-2.2... "
 -if pkg-config gnome-vfs-2.0 --atleast-version=2.2 ; then
 -	cat >>confdefs.h <<\_ACEOF
 -#define HAVE_ATLEAST_GNOMEVFS_2_2 1
+-_ACEOF
+-
+-	echo "yes"
+-else
+-	echo "no"
+-fi
+-
+-echo -n "checking for gnome-vfs-2.5... "
+-if pkg-config gnome-vfs-2.0 --atleast-version=2.5 ; then
+-	cat >>confdefs.h <<\_ACEOF
+-#define HAVE_ATLEAST_GNOMEVFS_2_5 1
 -_ACEOF
 -
 -	echo "yes"

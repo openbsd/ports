@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/01/10 23:55:50 couderc Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/05/31 14:37:12 couderc Exp $
 bin/bluefish
 share/bluefish/bluefish_splash.png
 share/bluefish/custom_menu.default
 share/bluefish/encodings.default
 share/bluefish/filetypes.default
+share/bluefish/funcref_css.xml
 share/bluefish/funcref_html.xml
 share/bluefish/funcref_php.xml
+share/bluefish/funcref_python.xml
 share/bluefish/highlighting.default
 share/bluefish/icon_c.png
 share/bluefish/icon_cfml.png
@@ -19,11 +21,13 @@ share/bluefish/icon_python.png
 share/bluefish/icon_r.png
 share/bluefish/icon_unknown.png
 share/bluefish/icon_xml.png
+share/locale/bg/LC_MESSAGES/bluefish.mo
 share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
 share/locale/el/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
+share/locale/fi/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
 share/locale/hu/LC_MESSAGES/bluefish.mo
 share/locale/it/LC_MESSAGES/bluefish.mo
@@ -31,10 +35,14 @@ share/locale/ja/LC_MESSAGES/bluefish.mo
 share/locale/nl/LC_MESSAGES/bluefish.mo
 share/locale/no/LC_MESSAGES/bluefish.mo
 share/locale/pl/LC_MESSAGES/bluefish.mo
+share/locale/pt/LC_MESSAGES/bluefish.mo
 share/locale/pt_BR/LC_MESSAGES/bluefish.mo
 share/locale/ro/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
+share/locale/sr/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
-share/pixmaps/bluefish-icon.png
+share/locale/ta/LC_MESSAGES/bluefish.mo
+share/locale/zh_CN/LC_MESSAGES/bluefish.mo
+@exec mkdir -p %D/share/pixmaps
 @dirrm share/pixmaps
 @dirrm share/bluefish

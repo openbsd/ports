@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2004/04/02 19:07:05 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2004/05/31 14:37:12 couderc Exp $
 
 COMMENT=	"HTML editor for experienced web designers"
 
-VERSION=	0.12
+VERSION=	0.13
 DISTNAME=	bluefish-${VERSION}
 CATEGORIES=	www 
 HOMEPAGE=	http://bluefish.openoffice.nl/
@@ -26,8 +26,8 @@ LIB_DEPENDS=	gtk-x11-2.0.0.14,gdk-x11-2.0.0.14,gdk_pixbuf-2.0.0.14::x11/gtk+2 \
 		pcre::devel/pcre \
 		aspell::textproc/aspell/core
 
-CONFIGURE_STYLE=gnu dest
-CONFIGURE_ARGS=	--with-icon-path='$${DESTDIR}${PREFIX}/share/pixmaps/'
+CONFIGURE_STYLE=gnu
+#CONFIGURE_ARGS=	--with-icon-path='$${DESTDIR}${PREFIX}/share/pixmaps/'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
