@@ -1,0 +1,23 @@
+--- Makefile.in.old    Mon Aug 10 21:23:13 1998
++++ Makefile.in        Mon Aug 10 21:23:39 1998
+@@ -38,17 +38,17 @@
+ CC = @CC@
+ PROG = ntop
+ CCOPT = @V_CCOPT@
+-INCLS = -I. -I/usr/5include @V_INCLS@
++INCLS = -I. -I/usr/include @V_INCLS@
+ DEFS = @DEFS@
+ 
+ # Standard CFLAGS
+ CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
+ 
+ # Standard LDFLAGS
+-LDFLAGS = @LDFLAGS@ -L/usr/5lib
++LDFLAGS = @LDFLAGS@ -L/usr/lib
+ 
+ # Standard LIBS
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lcurses
+ 
+ INSTALL = @INSTALL@
+ 

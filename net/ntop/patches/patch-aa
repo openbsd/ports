@@ -1,0 +1,12 @@
+--- ntop.h.old Mon Aug 10 21:17:29 1998
++++ ntop.h     Mon Aug 10 21:17:50 1998
+@@ -38,7 +38,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++/*
+ #include <ethertype.h>
++*/ 
+ #include <setjmp.h>
+ #include <pcap.h>
+ 

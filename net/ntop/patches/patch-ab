@@ -1,0 +1,13 @@
+--- interface.h.old    Mon Aug 10 21:18:53 1998
++++ interface.h        Mon Aug 10 21:19:12 1998
+@@ -25,8 +25,9 @@
+  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  */
+ 
+-
++/*
+ #include <gnuc.h>
++*/
+ #ifdef HAVE_OS_PROTO_H
+ #include "os-proto.h"
+ #endif

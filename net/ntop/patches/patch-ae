@@ -1,0 +1,16 @@
+--- ntop.c.orig	Mon Aug 10 22:44:18 1998
++++ ntop.c	Mon Aug 10 22:45:29 1998
+@@ -298,11 +298,11 @@
+ usage()
+ {
+   extern char version[];
+-  extern char pcap_version[];
++/*  extern char pcap_version[]; */
+ 
+   (void)fprintf(stderr, "%s v.%s for %s\n", program_name, 
+ 		version, osName);
+-  (void)fprintf(stderr, "[libpcap version %s]\n", pcap_version);
++/*  (void)fprintf(stderr, "[libpcap version %s]\n", pcap_version); */
+   (void)fprintf(stderr, "Written by %s.\n", author);
+   (void)fprintf(stderr, "\nUsage: %s [-r (refresh time [default 3 secs]]\n\t"
+ 		"    [-n (numeric IP addresses)]\n\t"
