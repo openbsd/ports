@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 1998/05/19 06:39:14 angelos Exp $
+# $OpenBSD: Makefile,v 1.18 1998/05/19 06:43:56 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -94,7 +94,7 @@
      SUBDIR += xloadimage
 #    SUBDIR += xlockmore
      SUBDIR += xmascot
-#    SUBDIR += xmbdfed
+     SUBDIR += xmbdfed
      SUBDIR += xmold
      SUBDIR += xpostit
      SUBDIR += xpostitPlus
