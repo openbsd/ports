@@ -1,5 +1,5 @@
-Netscape stand-alone Navigator 4.51 for i386, fortified
------------------------------------------------------------
+Netscape stand-alone Navigator 4.51, fortified
+----------------------------------------------
 
 Release notes for this version of Netscape are available on-line.  After
 starting the program, select "Release Notes" from the "Help" menu.  This
@@ -13,4 +13,10 @@ This version of Netscape has been modified for OpenBSD using Fortify,
 a program that provides world-wide, unconditional, full strength
 128-bit cryptography to export-crippled Netscape browsers.
 
-NOTICE: Use of this port requires a kernel compiled with 'option COMPAT_BSDOS'
+NOTICE
+------
+i386:	Use of this port requires a kernel compiled with
+	'option COMPAT_BSDOS' and 'option COMPAT_43'
+SPARC:	Use of this port requires a kernel compiled with
+	'option COMPAT_SUNOS'
+

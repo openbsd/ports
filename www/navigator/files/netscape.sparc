@@ -1,0 +1,11 @@
+#!/bin/sh
+# $OpenBSD: netscape.sparc,v 1.1 1999/05/06 16:57:59 brad Exp $
+#
+# Wrapper for the fortified Netscape navigator program.
+# brad@openbsd.org
+
+XKEYSYMDB=@netscape_home@
+XNLSPATH=@netscape_home@/nls
+MOZILLA_HOME=@netscape_home@
+export XKEYSYMDB XNLSPATH MOZILLA_HOME
+exec $MOZILLA_HOME/netscape "$@"
