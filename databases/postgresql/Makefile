@@ -3,7 +3,7 @@
 # Date created:		6 May 1998
 # Whom:			Oleg Safiullin <form@vs.itam.nsc.ru>
 #
-# $OpenBSD: Makefile,v 1.5 1998/06/10 06:06:52 form Exp $
+# $OpenBSD: Makefile,v 1.6 1998/06/17 05:41:24 form Exp $
 # FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp
 #
 
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 # postgresql with tcl support by typing: make USE_TCL=yes
 .if defined(USE_TCL)
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
-LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
+		tk80\\.1\\.:${PORTSDIR}/x11/tk80
 WITH_TCL=	--with-tcl
 .endif
 
@@ -56,19 +57,13 @@ MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 
 MANPREFIX=	${PREFIX}/pgsql
 
-pre-fetch:
+pre-build:
 .if !defined(USE_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
 	@${ECHO_MSG} "    make USE_TCL=yes"
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
-
-post-build:
-	@ ${ECHO} "------------------------------------------------------------"
-	@ ${ECHO} "Dump existing databases, before installing new db version !!"
-	@ ${ECHO} "Detailed instructions, see INSTALL file under ${WRKDIR}...  "
-	@ ${ECHO} "------------------------------------------------------------"
 
 pre-install:
 .if defined(PACKAGE_BUILDING)
@@ -101,14 +96,17 @@ post-install:
 			>> ${PREFIX}/pgsql/.profile; \
 	fi
 	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
-	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
-	@ ${LDCONFIG} -m ${PREFIX}/pgsql/lib
-	@ su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
-	@ ${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/pgsql.sh
-	@ chmod 554 ${PREFIX}/etc/rc.d/pgsql.sh
-	@ chown root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
-	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
+	@ if [ ! -d ${PREFIX}/pgsql/data ]; then \
+		${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'; \
+		${LDCONFIG} -m ${PREFIX}/pgsql/lib; \
+		su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'; \
+	else \
+		${ECHO} 'Found existing PostgreSQL database(s) -- skipping database initializing...'; \
+	fi
+	${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl > ${PREFIX}/etc/rc.d/pgsql.sh
+	chmod 554 ${PREFIX}/etc/rc.d/pgsql.sh
+	chown root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
+	${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pgsql
 	${CP} -r ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/pgsql

@@ -14,62 +14,12 @@ pgsql/bin/pg_dumpall
 pgsql/bin/pg_id
 pgsql/bin/pg_passwd
 pgsql/bin/pg_version
-pgsql/bin/pgtclsh
-pgsql/bin/pgtksh
+@unexec rm -f %D/pgsql/bin/pgtclsh
+@unexec rm -f %D/pgsql/bin/pgtksh
 pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
-pgsql/data/PG_VERSION
-pgsql/data/base/template1/PG_VERSION
-pgsql/data/base/template1/pg_aggregate
-pgsql/data/base/template1/pg_am
-pgsql/data/base/template1/pg_amop
-pgsql/data/base/template1/pg_amproc
-pgsql/data/base/template1/pg_attrdef
-pgsql/data/base/template1/pg_attrdef_adrelid_index
-pgsql/data/base/template1/pg_attribute
-pgsql/data/base/template1/pg_attribute_attrelid_index
-pgsql/data/base/template1/pg_attribute_relid_attnam_index
-pgsql/data/base/template1/pg_attribute_relid_attnum_index
-pgsql/data/base/template1/pg_class
-pgsql/data/base/template1/pg_class_oid_index
-pgsql/data/base/template1/pg_class_relname_index
-pgsql/data/base/template1/pg_description
-pgsql/data/base/template1/pg_description_objoid_index
-pgsql/data/base/template1/pg_index
-pgsql/data/base/template1/pg_inheritproc
-pgsql/data/base/template1/pg_inherits
-pgsql/data/base/template1/pg_internal.init
-pgsql/data/base/template1/pg_ipl
-pgsql/data/base/template1/pg_language
-pgsql/data/base/template1/pg_listener
-pgsql/data/base/template1/pg_opclass
-pgsql/data/base/template1/pg_operator
-pgsql/data/base/template1/pg_parg
-pgsql/data/base/template1/pg_proc
-pgsql/data/base/template1/pg_proc_oid_index
-pgsql/data/base/template1/pg_proc_proname_index
-pgsql/data/base/template1/pg_proc_prosrc_index
-pgsql/data/base/template1/pg_relcheck
-pgsql/data/base/template1/pg_relcheck_rcrelid_index
-pgsql/data/base/template1/pg_rewrite
-pgsql/data/base/template1/pg_statistic
-pgsql/data/base/template1/pg_trigger
-pgsql/data/base/template1/pg_trigger_tgrelid_index
-pgsql/data/base/template1/pg_type
-pgsql/data/base/template1/pg_type_oid_index
-pgsql/data/base/template1/pg_type_typname_index
-pgsql/data/base/template1/pg_user
-pgsql/data/base/template1/pg_version
-pgsql/data/pg_database
-pgsql/data/pg_geqo.sample
-pgsql/data/pg_group
-pgsql/data/pg_hba.conf
-pgsql/data/pg_log
-pgsql/data/pg_pwd
-pgsql/data/pg_shadow
-pgsql/data/pg_variable
-pgsql/errlog
+@unexec rm -f %D/pgsql/errlog
 pgsql/include/access/attnum.h
 pgsql/include/c.h
 pgsql/include/commands/trigger.h
@@ -79,7 +29,7 @@ pgsql/include/ecpgtype.h
 pgsql/include/executor/spi.h
 pgsql/include/fmgr.h
 pgsql/include/lib/dllist.h
-pgsql/include/libpgtcl.h
+@unexec rm -f %D/pgsql/include/libpgtcl.h
 pgsql/include/libpq-fe.h
 pgsql/include/libpq/libpq-fs.h
 pgsql/include/libpq/pqcomm.h
@@ -95,9 +45,9 @@ pgsql/lib/global1.description
 pgsql/lib/libecpg.a
 pgsql/lib/libecpg.so
 pgsql/lib/libecpg.so.1.1
-pgsql/lib/libpgtcl.a
-pgsql/lib/libpgtcl.so.1.0
-pgsql/lib/libpgtcl.so
+@unexec rm -f %D/pgsql/lib/libpgtcl.a
+@unexec rm -f %D/pgsql/lib/libpgtcl.so.1.0
+@unexec rm -f %D/pgsql/lib/libpgtcl.so
 pgsql/lib/libpq.a
 pgsql/lib/libpq.so.1.1
 pgsql/lib/libpq.so
@@ -276,9 +226,6 @@ share/doc/pgsql/userguide.ps
 @dirrm share/doc/pgsql/src
 @dirrm share/doc/pgsql
 @dirrm pgsql/bin
-@dirrm pgsql/data/base/template1
-@dirrm pgsql/data/base
-@dirrm pgsql/data
 @dirrm pgsql/include/access
 @dirrm pgsql/include/commands
 @dirrm pgsql/include/executor
@@ -295,4 +242,9 @@ share/doc/pgsql/userguide.ps
 @dirrm pgsql/man/man5
 @dirrm pgsql/man/manl
 @dirrm pgsql/man
-@dirrm pgsql
+@unexec echo "***"
+@unexec echo "*** Please remove /usr/local/pgsql manually, if you don't"
+@unexec echo "*** want to keep existing databases. Also you should remove"
+@unexec echo "*** pgsql entries from /etc/master.passwd and /etc/group"
+@unexec echo "*** if won't install pgsql again."
+@unexec echo "***"
