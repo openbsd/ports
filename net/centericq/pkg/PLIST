@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2003/05/11 10:23:55 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.11 2003/10/09 17:59:11 pvalchev Exp $
 bin/centericq
 bin/cicqconv
 bin/cicqsync
 man/man1/centericq.1
+man/man1/cicqconv.1
+man/man1/cicqsync.1
 share/centericq/contrib/spanish/COPYING
 share/centericq/contrib/spanish/ChangeLog
 share/centericq/contrib/spanish/FAQ
@@ -15,6 +17,7 @@ share/centericq/sms.wav
 share/centericq/url.wav
 share/doc/centericq/FAQ
 share/doc/centericq/README
+share/locale/bg/LC_MESSAGES/centericq.mo
 share/locale/cs/LC_MESSAGES/centericq.mo
 share/locale/de/LC_MESSAGES/centericq.mo
 share/locale/es/LC_MESSAGES/centericq.mo

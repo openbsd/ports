@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2003/05/13 04:14:27 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.21 2003/10/09 17:59:10 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
-DISTNAME=	centericq-4.9.2
+DISTNAME=	centericq-4.9.7
 CATEGORIES=	net	
 MASTER_SITES=	http://konst.org.ua/download/ \
 		http://konst.home.welcomehome.org/ \
@@ -12,6 +12,7 @@ HOMEPAGE=	http://konst.org.ua/software.centericq.html
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -27,10 +28,7 @@ MODGCC3_LANGS=	c++
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 BUILD_DEPENDS=	:automake-*:devel/automake
-CONFIGURE_ENV=	PREFIX="${PREFIX}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-liconv"
+CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/centericq
