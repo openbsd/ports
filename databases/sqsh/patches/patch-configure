@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2004/02/16 18:18:25 jcs Exp $
---- configure.orig	Sun Dec 23 16:40:32 2001
-+++ configure	Sun Dec 23 16:41:14 2001
+$OpenBSD: patch-configure,v 1.4 2004/05/24 16:42:21 jcs Exp $
+--- configure.orig	Fri Nov  9 07:58:04 2001
++++ configure	Mon May 24 11:37:30 2004
 @@ -1209,6 +1209,8 @@
  				SYBASE_OS="-lm -ldl -ldgc";;
  			aix*)
@@ -10,3 +10,12 @@ $OpenBSD: patch-configure,v 1.3 2004/02/16 18:18:25 jcs Exp $
  			*)
  				SYBASE_OS="-lm -ldl";;
  		esac
+@@ -1493,7 +1495,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lreadline $LIBS"
++  LIBS="${READLINE_LIBS} $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
