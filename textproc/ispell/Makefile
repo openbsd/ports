@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2000/06/23 13:25:42 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/16 16:50:48 espie Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
-DISTNAME=	ispell-3.1.20
+COMMENT=	interactive spelling checker
+COMMENT-french=	ispell dictionary for French
+COMMENT-german=	ispell dictionary for German
+
+V=		3.1.20
+DISTNAME=	ispell-$V
 CATEGORIES=	textproc
-NEED_VERSION=	1.270
+NEED_VERSION=	1.361
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 MASTER_SITES0=	ftp://ftp.robot.ireq.ca/pub/ispell/
 MASTER_SITES1=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
@@ -19,6 +24,9 @@ PATCHFILES=	ispell-html-mode.patch:2
 MAINTAINER=	ports@openbsd.org
 
 MULTI_PACKAGES=	-french -german
+.for i in ${MULTI_PACKAGES}
+PKGNAME-$i=	ispell-$i-$V
+.endfor
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -85,7 +93,3 @@ do-install:
 	ln -s american.hash ${PREFIX}/lib/ispell/default.hash
 	
 .include <bsd.port.mk>
-
-.if defined(SUBPACKAGE)
-PKGNAME=ispell${SUBPACKAGE}-3.1.20
-.endif
