@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2004/07/06 21:04:49 msf Exp $
+# $OpenBSD: Makefile,v 1.244 2004/07/09 01:41:55 msf Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -125,6 +125,7 @@
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
+     SUBDIR += p5-Array-Compare
      SUBDIR += p5-B-Deobfuscate
      SUBDIR += p5-B-Graph
      SUBDIR += p5-B-Keywords
@@ -197,15 +198,18 @@
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Test-Builder-Tester
      SUBDIR += p5-Test-Differences
+     SUBDIR += p5-Test-Exception
      SUBDIR += p5-Test-Inline
      SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-MockObject
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Coverage
      SUBDIR += p5-Test-Taint
+     SUBDIR += p5-Test-Warn
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece
      SUBDIR += p5-Time-TimeDate
+     SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-YAML
