@@ -1,8 +1,9 @@
---- ltmain.sh.orig	Mon May 14 06:37:34 2001
-+++ ltmain.sh	Tue May 15 12:16:00 2001
-@@ -1079,6 +1079,17 @@ compiler."
- 	    # These systems don't actually have c library (as such)
- 	    continue
+$OpenBSD: patch-ltmain.sh,v 1.2 2001/08/16 16:49:46 brad Exp $
+--- ltmain.sh.orig	Mon Aug 13 18:44:40 2001
++++ ltmain.sh	Thu Aug 16 11:51:30 2001
+@@ -1031,12 +1031,27 @@ compiler."
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
  	    ;;
 +          *-*-openbsd*)
 +	    # Do not include libc due to us having libc/libc_r.
@@ -16,10 +17,9 @@
 +	    continue
 +	    ;;
  	  esac
- 	elif test "$arg" = "-lm"; then
- 	  case "$host" in
-@@ -1091,6 +1102,10 @@ compiler."
+ 	fi
  	deplibs="$deplibs $arg"
+ 	continue
  	;;
  
 +      -?thread)
@@ -29,19 +29,19 @@
        -module)
  	module=yes
  	continue
-@@ -1795,6 +1810,9 @@ compiler."
- 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
- 	  # these systems don't actually have a c library (as such)!
+@@ -3354,6 +3369,9 @@ static const void *lt_preloaded_setup() 
+ 	  compile_command=`$echo "X$compile_command" | $Xsed -e "s%@SYMFILE@%$output_objdir/${outputname}S.${objext}%"`
+ 	  finalize_command=`$echo "X$finalize_command" | $Xsed -e "s%@SYMFILE@%$output_objdir/${outputname}S.${objext}%"`
  	  ;;
 +        *-*-openbsd*) 
 +	  # Do not include libc due to us having libc/libc_r.
 +	  ;;
  	*)
- 	  # Add libc to deplibs on all other systems.
- 	  deplibs="$deplibs -lc"
-@@ -3555,40 +3573,6 @@ libdir='$install_libdir'\
+ 	  $echo "$modename: unknown suffix for \`$dlsyms'" 1>&2
+ 	  exit 1
+@@ -4412,40 +4430,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = : && exit 0
+     test "$show" = ":" && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
@@ -51,7 +51,7 @@
 -    echo
 -    echo "If you ever happen to want to link against installed libraries"
 -    echo "in a given directory, LIBDIR, you must either use libtool, and"
--    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "specify the full pathname of the library, or use the \`-LLIBDIR'"
 -    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"

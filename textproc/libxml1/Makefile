@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/29 12:59:27 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/16 16:49:45 brad Exp $
 
 COMMENT=	"XML parsing library for GNOME"
 
-VERSION=	1.8.14
+VERSION=	1.8.15
 DISTNAME=	libxml-${VERSION}
 PKGNAME=	libxml1-${VERSION}
 CATEGORIES=	textproc
-NEED_VERSION=	1.413
+NEED_VERSION=	1.435
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/libxml
 
