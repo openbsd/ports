@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2004/01/02 04:56:24 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2004/01/05 17:02:32 avsm Exp $
 
 FULLPKGNAME=	php4-extensions-${V}
 COMMENT=	"informational package about PHP4 extensions"
@@ -25,7 +25,8 @@ GRAPHIC_DEPENDS=	jpeg.62::graphics/jpeg \
 
 GRAPHIC_CONFIG=		--with-jpeg-dir=${LOCALBASE} \
 			--with-png-dir=${LOCALBASE} \
-			--with-tiff-dir=${LOCALBASE}
+			--with-tiff-dir=${LOCALBASE} \
+			--with-zlib-dir=/usr 
 
 # bz2
 PSEUDO_FLAVORS+=	no_bz2
