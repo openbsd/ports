@@ -1,6 +1,6 @@
---- gnats/internal.c.orig	Tue Mar  2 19:18:53 1999
-+++ gnats/internal.c	Thu Jan 11 10:56:08 2001
-@@ -32,28 +32,25 @@
+--- gnats/internal.c.orig	Tue Mar  2 17:18:53 1999
++++ gnats/internal.c	Wed May  8 21:41:29 2002
+@@ -32,28 +32,25 @@ write_index (index_start)
  
    FILE *fp;
    char *path, *workfile;
@@ -38,3 +38,11 @@
        xfree (workfile);
        return;
      }
+@@ -83,6 +80,7 @@ write_index (index_start)
+ #endif
+     }
+ 
++  fchmod (fileno(fp), 0644);
+   fclose (fp);
+ 
+   block_signals ();

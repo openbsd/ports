@@ -1,6 +1,6 @@
---- gnats/queue-pr.c.orig	Wed Nov 25 09:15:20 1998
-+++ gnats/queue-pr.c	Thu Jan 11 11:04:37 2001
-@@ -226,13 +226,10 @@
+--- gnats/queue-pr.c.orig	Wed Nov 25 07:15:20 1998
++++ gnats/queue-pr.c	Wed May  8 21:44:36 2002
+@@ -226,13 +226,10 @@ drop_msg ()
  {
    int fd[2];
    char *tmpdir;
@@ -15,7 +15,7 @@
  
    if (queue_file)
      {
-@@ -247,16 +244,10 @@
+@@ -247,18 +244,13 @@ drop_msg ()
    tmpdir = getenv ("TMPDIR");
    if (tmpdir == NULL)
      tmpdir = "/tmp"; /* FIXME */
@@ -34,4 +34,7 @@
 +  if ((fd[1] = mkstemp (bug_file)) < 0)
      punt (1, "%s: can't open queue file %s for writing: %s\n",
  	  program_name, bug_file, strerror (errno));
++  fchmod (fd[1], 0644);
    
+   while ((r = read (fd[0], buf, MAXBSIZE)) > 0)
+     if (write (fd[1], buf, r) < 0)
