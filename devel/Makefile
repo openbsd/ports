@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2001/08/07 05:15:45 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.96 2001/08/12 08:49:15 shell Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -85,6 +85,7 @@
      SUBDIR += p5-Storable
      SUBDIR += p5-Term-ReadKey
      SUBDIR += p5-Term-ReadLine-Gnu
+     SUBDIR += p5-Test-Simple
      SUBDIR += p5-Time-HiRes
      SUBDIR += p5-Time-TimeDate
      SUBDIR += pccts
