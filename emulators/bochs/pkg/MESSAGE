@@ -1,6 +1,16 @@
-Bochs requires a .bochsrc file to be present in either your current
-directory or your home directory before starting.  A sample of the
-.bochsrc file can be found in /usr/X11R6/share/bochs/bochsrc
+You must add the ${PREFIX}/share/bochs/fonts directory to your X server's
+font path.  For XFree86, add the line:
 
-*** BOCHS is commercial software ***
-Please read /usr/X11R6/share/doc/bochs/LICENSE for details.
+FontPath "${PREFIX}/share/bochs/fonts"
+
+in the "Files" section of your /etc/XF86Config file.
+If you use a different X server, please see its documentation on how to do
+this.
+
+Then re-start your X server.
+
++---------------
+| Bochs requires a .bochsrc file to be present in either your current
+| directory or your home directory before starting.  A sample of the
+| .bochsrc file can be found in ${PREFIX}/share/bochs/bochsrc
++---------------

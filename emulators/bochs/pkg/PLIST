@@ -5,10 +5,8 @@ share/bochs/bios/VGABIOS-elpin-2.20
 share/bochs/fonts/hercules.bdf
 share/bochs/fonts/vga.bdf
 share/bochs/fonts/vga.pcf
-share/bochs/fonts/fonts.dir
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/DOS.html
-share/doc/bochs/LICENSE
 share/doc/bochs/Linux.html
 share/doc/bochs/Minix.html
 share/doc/bochs/OldWindows95.html
@@ -24,11 +22,12 @@ share/doc/bochs/developers.html
 share/doc/bochs/faq.html
 share/doc/bochs/features.html
 share/doc/bochs/fpu.html
+share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
 share/doc/bochs/install.html
-share/doc/bochs/mtools.html
 share/doc/bochs/instrumentation.html
-share/doc/bochs/licensing.html
+share/doc/bochs/mtools.html
+share/doc/bochs/sound.html
 share/doc/bochs/undercon.gif
 share/doc/bochs/whatisbochs.html
 share/doc/bochs/win32.html
@@ -39,7 +38,3 @@ share/doc/bochs/win32.html
 @dirrm share/bochs/bios
 @dirrm share/bochs
 @dirrm share/doc/bochs
-@exec echo "***"
-@exec echo "*** Don't forget to add ${PREFIX}/share/bochs/fonts"
-@exec echo "*** to FontPath in /etc/XF86Config."
-@exec echo "***"
