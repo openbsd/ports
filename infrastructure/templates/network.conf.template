@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.10 2000/08/02 03:19:24 brad Exp $
+# $OpenBSD: network.conf.template,v 1.11 2000/09/24 14:13:47 espie Exp $
 
 #
 #
@@ -57,7 +57,8 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/
+	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/gnu/%SUBDIR%/ \
 
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
@@ -72,7 +73,8 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/
+	ftp://ftp.huji.ac.il/mirror/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
@@ -87,7 +89,8 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.archive.de.uu.net/pub/systems/Linux/Mirror.SunSITE/%SUBDIR%/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
 	ftp://uiarchive.cso.uiuc.edu/pub/systems/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/
+	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+=	\
 	ftp://download.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
@@ -107,7 +110,8 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp2.sinica.edu.tw/pub5/gnome/%SUBDIR%/ \
 	ftp://gnomeftp.blue-labs.org/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/%SUBDIR%/ \
-	ftp://ftp.tas.gov.au/gnome/%SUBDIR%
+	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/X11/gnome/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -128,7 +132,8 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/
+	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/perl/CPAN/modules/by-module/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=	\
 	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/ \
@@ -142,7 +147,8 @@ MASTER_SITE_TEX_CTAN+=	\
 	ftp://sunsite.auc.dk/pub/tex/ctan/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
-	ftp://ftp.dante.de/tex-archive/%SUBDIR%/
+	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/TeX/CTAN/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
@@ -157,7 +163,8 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://ftp.twoguys.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/
+	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/X11/kde/%SUBDIR%/
 
 MASTER_SITE_TCLTK+= \
 	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
@@ -175,7 +182,8 @@ MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
 	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
-	ftp://ftp.linux.co.za/pub/windowmanagers/afterstep/%SUBDIR%/
+	ftp://ftp.linux.co.za/pub/windowmanagers/afterstep/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/X11/window-managers/afterstep/%SUBDIR%/
 
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
@@ -183,4 +191,5 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/
+	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/X11/window-managers/windowmaker/%SUBDIR%/
