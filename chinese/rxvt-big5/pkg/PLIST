@@ -1,0 +1,85 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/24 03:17:26 kevlo Exp $
+@exec ln -sf %D/usr/X11R6/bin/rxvt /usr/local/bin/rxvt-big5
+@unexec rm -rf /usr/local/bin/rxvt-big5
+etc/X11/applnk/Utilities/rxvt.desktop
+etc/default/useradd
+etc/login.defs
+usr/X11R6/bin/rclock
+usr/X11R6/bin/rxvt
+usr/X11R6/lib/X11/ja/app-defaults/Rxvt
+usr/X11R6/lib/X11/ko/app-defaults/Rxvt
+usr/X11R6/lib/X11/zh_CN/app-defaults/Rxvt
+usr/X11R6/lib/X11/zh_CN/rxvt/rxvt.menu
+usr/X11R6/lib/X11/zh_TW/app-defaults/Rxvt
+usr/X11R6/lib/X11/zh_TW/rxvt/rxvt.menu
+usr/X11R6/man/man1/rclock.1.gz
+usr/X11R6/man/man1/rxvt.1.gz
+usr/bin/chage
+usr/bin/faillog
+usr/bin/gpasswd
+usr/bin/lastlog
+usr/bin/sg
+usr/include/utempter.h
+usr/lib/librxvt.a
+usr/lib/librxvt.la
+usr/lib/libutempter.so
+usr/lib/libutempter.so.0.5.2
+usr/sbin/adduser
+usr/sbin/chpasswd
+usr/sbin/groupadd
+usr/sbin/groupdel
+usr/sbin/groupmod
+usr/sbin/grpck
+usr/sbin/grpconv
+usr/sbin/grpunconv
+usr/sbin/newusers
+usr/sbin/pwck
+usr/sbin/pwconv
+usr/sbin/pwunconv
+usr/sbin/useradd
+usr/sbin/userdel
+usr/sbin/usermod
+usr/sbin/utempter
+usr/share/locale/el/LC_MESSAGES/shadow.mo
+usr/share/locale/fr/LC_MESSAGES/shadow.mo
+usr/share/locale/pl/LC_MESSAGES/shadow.mo
+usr/share/locale/sv/LC_MESSAGES/shadow.mo
+usr/share/man/man1/chage.1.gz
+usr/share/man/man1/gpasswd.1.gz
+usr/share/man/man3/shadow.3.gz
+usr/share/man/man5/faillog.5.gz
+usr/share/man/man5/shadow.5.gz
+usr/share/man/man8/adduser.8.gz
+usr/share/man/man8/chpasswd.8.gz
+usr/share/man/man8/faillog.8.gz
+usr/share/man/man8/groupadd.8.gz
+usr/share/man/man8/groupdel.8.gz
+usr/share/man/man8/groupmod.8.gz
+usr/share/man/man8/grpck.8.gz
+usr/share/man/man8/grpconv.8.gz
+usr/share/man/man8/grpunconv.8.gz
+usr/share/man/man8/lastlog.8.gz
+usr/share/man/man8/newusers.8.gz
+usr/share/man/man8/pwck.8.gz
+usr/share/man/man8/pwconv.8.gz
+usr/share/man/man8/pwunconv.8.gz
+usr/share/man/man8/useradd.8.gz
+usr/share/man/man8/userdel.8.gz
+usr/share/man/man8/usermod.8.gz
+@exec chroot %D /sbin/ldconfig
+@unexec chroot %D /sbin/ldconfig
+@dirrm usr/X11R6/lib/X11/zh_TW/rxvt
+@dirrm usr/X11R6/lib/X11/zh_TW/app-defaults
+@dirrm usr/X11R6/lib/X11/zh_TW
+@dirrm usr/X11R6/lib/X11/zh_CN/rxvt
+@dirrm usr/X11R6/lib/X11/zh_CN/app-defaults
+@dirrm usr/X11R6/lib/X11/zh_CN
+@dirrm usr/X11R6/lib/X11/ko/app-defaults
+@dirrm usr/X11R6/lib/X11/ko
+@dirrm usr/X11R6/lib/X11/ja/app-defaults
+@dirrm usr/X11R6/lib/X11/ja
+@dirrm usr/X11R6/bin
+@dirrm etc/default
+@dirrm etc/X11/applnk/Utilities
+@dirrm etc/X11/applnk
+@dirrm etc/X11

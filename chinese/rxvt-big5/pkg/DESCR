@@ -1,0 +1,4 @@
+Rxvt is a color VT102 terminal emulator for the X Window System. Rxvt
+is intended to be an xterm replacement for users who don't need the
+more esoteric features of xterm, like Tektronix 4014 emulation,
+session logging and toolkit style configurability. 
