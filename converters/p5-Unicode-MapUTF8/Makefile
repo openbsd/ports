@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/30 15:04:42 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2003/05/30 15:34:55 lebel Exp $
 
 COMMENT=	"conversions to and from arbitrary character sets and UTF8"
 
@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN:=Unicode/}
 
-BUILD_DEPENDS=	::converters/p5-Unicode-String \
+BUILD_DEPENDS=	::converters/p5-Jcode \
 		::converters/p5-Unicode-Map
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
