@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure,v 1.6 2004/06/02 12:40:42 sturm Exp $
+$OpenBSD: patch-configure,v 1.7 2004/08/12 15:02:25 naddy Exp $
 --- configure.orig	2004-05-31 13:55:42.000000000 +0200
 +++ configure	2004-05-31 13:57:44.000000000 +0200
+@@ -6855,7 +6860,7 @@ if test "${ac_cv_lib_intl_ngettext+set}"
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl ${LIBICONV} $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6908,7 +6913,7 @@ if test $ac_cv_lib_intl_ngettext = yes; 
+ echo $ECHO_N "checking whether libintl's ngettext works at runtime... $ECHO_C" >&6
+ 
+ templibs="$LIBS"
+-LIBS=""-lintl" $LIBS"
++LIBS=""-lintl" ${LIBICONV} $LIBS"
+ templang="$LANG"
+ LANG="de_DE"
+ if test "$cross_compiling" = yes; then
 @@ -11745,7 +11745,7 @@ if test "${ac_cv_lib_SDL_mixer_Mix_OpenA
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -10,12 +28,3 @@ $OpenBSD: patch-configure,v 1.6 2004/06/02 12:40:42 sturm Exp $
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -11802,7 +11802,7 @@ echo $ECHO_N "checking building SDL_mixe
-     if test "x$SDL_mixer_h" = "x1"; then
-       if test "x$SDL_mixer" = "xyes"; then
-         SOUND_CFLAGS="$SOUND_CFLAGS $SDL_CFLAGS"
--        SOUND_LIBS="$SOUND_LIBS $SDL_LIBS -lSDL_mixer"
-+        SOUND_LIBS="$SOUND_LIBS $SDL_LIBS -lSDL_mixer"
- 
- cat >>confdefs.h <<\_ACEOF
- #define SDL 1
