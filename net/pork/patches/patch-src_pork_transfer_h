@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_pork_transfer_h,v 1.1 2003/06/16 05:18:53 jolan Exp $
+--- src/pork_transfer.h.orig	Sat Jun 14 09:19:53 2003
++++ src/pork_transfer.h	Sun Jun 15 20:38:02 2003
+@@ -11,8 +11,8 @@
+ #define __PORK_TRANSFER_H
+ 
+ #include <sys/socket.h>
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ 
+ #include <pork_inet.h>
+ 

@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_pork_inet_c,v 1.1 2003/06/16 05:18:53 jolan Exp $
+--- src/pork_inet.c.orig	Sun Jun  8 09:49:33 2003
++++ src/pork_inet.c	Sun Jun 15 22:10:16 2003
+@@ -19,8 +19,8 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ 
+ #include <pork_missing.h>
+ #include <pork_inet.h>
+@@ -309,7 +309,7 @@ err_out:
+ 
+ int sock_is_error(int sock) {
+ 	int error;
+-	size_t errlen = sizeof(error);
++	socklen_t errlen = sizeof(error);
+ 	int ret;
+ 
+ 	ret = getsockopt(sock, SOL_SOCKET, SO_ERROR, &error, &errlen);

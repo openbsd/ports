@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/04/28 23:00:40 margarida Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/06/16 05:18:53 jolan Exp $
 bin/pork
 share/doc/pork/QUICK_START
 share/doc/pork/README
@@ -64,6 +64,10 @@ share/pork/help/event/del
 share/pork/help/event/del_refnum
 share/pork/help/event/list
 share/pork/help/event/purge
+share/pork/help/file/cancel
+share/pork/help/file/get
+share/pork/help/file/list
+share/pork/help/file/send
 share/pork/help/history/clear
 share/pork/help/history/next
 share/pork/help/history/prev
@@ -84,6 +88,7 @@ share/pork/help/input/prompt
 share/pork/help/input/right
 share/pork/help/input/send
 share/pork/help/input/start
+share/pork/help/main/acct
 share/pork/help/main/alias
 share/pork/help/main/away
 share/pork/help/main/bind
@@ -96,6 +101,7 @@ share/pork/help/main/disconnect
 share/pork/help/main/echo
 share/pork/help/main/eval
 share/pork/help/main/event
+share/pork/help/main/file
 share/pork/help/main/history
 share/pork/help/main/idle
 share/pork/help/main/input
@@ -116,19 +122,6 @@ share/pork/help/main/timer
 share/pork/help/main/unalias
 share/pork/help/main/unbind
 share/pork/help/main/win
-share/pork/help/perl/aim_get_acct_list
-share/pork/help/perl/aim_get_buddy_away
-share/pork/help/perl/aim_get_buddy_profile
-share/pork/help/perl/aim_get_profile
-share/pork/help/perl/aim_privacy_mode
-share/pork/help/perl/aim_report_idle
-share/pork/help/perl/aim_search
-share/pork/help/perl/aim_send_im
-share/pork/help/perl/aim_send_profile
-share/pork/help/perl/aim_set_away
-share/pork/help/perl/aim_set_idle
-share/pork/help/perl/aim_set_profile
-share/pork/help/perl/aim_warn
 share/pork/help/perl/alias
 share/pork/help/perl/alias_get
 share/pork/help/perl/bind
@@ -183,12 +176,18 @@ share/pork/help/perl/event_del
 share/pork/help/perl/event_del_refnum
 share/pork/help/perl/event_del_type
 share/pork/help/perl/event_purge
+share/pork/help/perl/get_acct_list
+share/pork/help/perl/get_buddy_away
+share/pork/help/perl/get_buddy_profile
 share/pork/help/perl/get_cur_user
 share/pork/help/perl/get_opt
+share/pork/help/perl/get_profile
 share/pork/help/perl/load
 share/pork/help/perl/load_perl
+share/pork/help/perl/privacy_mode
 share/pork/help/perl/quit
 share/pork/help/perl/refresh
+share/pork/help/perl/report_idle
 share/pork/help/perl/save
 share/pork/help/perl/scroll_by
 share/pork/help/perl/scroll_down
@@ -197,7 +196,14 @@ share/pork/help/perl/scroll_page_down
 share/pork/help/perl/scroll_page_up
 share/pork/help/perl/scroll_start
 share/pork/help/perl/scroll_up
+share/pork/help/perl/search
+share/pork/help/perl/send_msg
+share/pork/help/perl/send_msg_auto
+share/pork/help/perl/send_profile
+share/pork/help/perl/set_away
+share/pork/help/perl/set_idle
 share/pork/help/perl/set_opt
+share/pork/help/perl/set_profile
 share/pork/help/perl/status_msg
 share/pork/help/perl/timer_add
 share/pork/help/perl/timer_del
@@ -205,6 +211,7 @@ share/pork/help/perl/timer_del_refnum
 share/pork/help/perl/timer_purge
 share/pork/help/perl/unalias
 share/pork/help/perl/unbind
+share/pork/help/perl/warn
 share/pork/help/perl/win_bind
 share/pork/help/perl/win_clear
 share/pork/help/perl/win_close
@@ -248,6 +255,7 @@ share/pork/help/win/swap
 @dirrm share/pork/help/main
 @dirrm share/pork/help/input
 @dirrm share/pork/help/history
+@dirrm share/pork/help/file
 @dirrm share/pork/help/event
 @dirrm share/pork/help/chat
 @dirrm share/pork/help/buddy
