@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2002/01/21 07:47:32 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.17 2002/02/19 06:44:55 kevlo Exp $
 bin/xml2-config
 bin/xmlcatalog
 bin/xmllint
@@ -41,6 +41,11 @@ man/man1/xmlcatalog.1
 man/man1/xmllint.1
 man/man4/libxml.4
 share/aclocal/libxml.m4
+share/libxml2/Copyright
+share/libxml2/examples/testHTML.c
+share/libxml2/examples/testSAX.c
+share/libxml2/examples/testXPath.c
+share/libxml2/examples/xmllint.c
 share/libxml2/html/DOM.gif
 share/libxml2/html/FAQ.html
 share/libxml2/html/book1.html
@@ -76,5 +81,6 @@ share/libxml2/html/libxml-xpointer.html
 share/libxml2/html/structure.gif
 share/libxml2/html/xml.html
 @dirrm share/libxml2/html
+@dirrm share/libxml2/examples
 @dirrm share/libxml2
 @dirrm include/libxml
