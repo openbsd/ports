@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2004/02/25 22:24:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2004/04/14 22:33:07 brad Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"graphical debugger for KDE"
 

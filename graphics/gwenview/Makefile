@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2004/02/26 09:14:55 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2004/04/14 22:33:07 brad Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"image viewer for KDE"
 
@@ -17,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
+LIB_DEPENDS=	kdecore.6,DCOP,kdefx,kdeprint,kdesu,kparts,kdeui,kio::x11/kde/libs3
 
 MODULES=	kde
 
