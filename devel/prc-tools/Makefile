@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/10/28 13:05:46 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2002/01/31 20:34:38 pvalchev Exp $
 
 ONLY_FOR_ARCHS=	i386
 FAKE=No
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gdb-4.16${EXTRACT_SUFX}:1 \
 		gcc-2.7.2.2${EXTRACT_SUFX}:2
 
-HOMEPAGE=	http://www.palmos.com/dev/tech/tools/gcc/
+HOMEPAGE=	http://prc-tools.sourceforge.net/
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
