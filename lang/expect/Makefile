@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2000/07/18 17:59:48 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2000/07/18 21:51:17 espie Exp $
 
 DISTNAME=	expect-5.31
 CATEGORIES=	lang
@@ -24,6 +24,11 @@ CONFIGURE_ARGS+=--with-tclconfig=${PREFIX}/lib/tcl8.3 \
 		--with-tkinclude=${PREFIX}/include/tk8.3
 
 WRKDIST=	${WRKDIR}/${PKGNAME}
+
+# make sure configure is newer than Makefile.in, since we patch Makefile.in
+# as well.
+post-patch:
+	@touch ${WRKSRC}/configure
 
 test:	build
 	@cd ${WRKBUILD}; make test
