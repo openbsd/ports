@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 1999/07/26 00:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/08/17 12:28:45 downsj Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
-DISTNAME=	gd-1.6.2
+DISTNAME=	gd-1.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
