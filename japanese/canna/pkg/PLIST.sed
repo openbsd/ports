@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/04/22 13:01:12 espie Exp $
+@comment $OpenBSD: PLIST.sed,v 1.1 2000/04/25 22:53:10 espie Exp $
 include/canna/RK.h
 include/canna/jrkanji.h
 include/canna/keydef.h
@@ -19,14 +19,11 @@ lib/dic/tut.cbp
 lib/dic/vje.cbp
 lib/dic/wx2+.cbp
 lib/engine.cf
+%%SHARED%%
 lib/libRKC.a
-lib/libRKC.so.1.0
 lib/libRKC16.a
-lib/libRKC16.so.1.0
 lib/libcanna.a
-lib/libcanna.so.1.0
 lib/libcanna16.a
-lib/libcanna16.so.1.0
 lib/sample/1.1.canna
 lib/sample/1.2.canna
 lib/sample/default.canna

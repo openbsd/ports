@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/04/25 22:53:10 espie Exp $
+lib/libRKC.so.1.0
+lib/libRKC16.so.1.0
+lib/libcanna.so.1.0
+lib/libcanna16.so.1.0
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
