@@ -1,6 +1,7 @@
---- Makefile.in.orig	Mon Mar  6 09:53:10 2000
-+++ Makefile.in	Wed Apr  5 01:20:56 2000
-@@ -62,16 +62,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/08/06 12:53:29 fgsch Exp $
+--- Makefile.in.orig	Tue Feb 20 01:02:22 2001
++++ Makefile.in	Mon Aug  6 07:39:53 2001
+@@ -63,16 +63,14 @@ more: all pseudo-source info FAQ html dv
  
  install: installdirs xboard zic2xpm cmail pxboard xboard.man cmail.man \
  		zic2xpm.man
