@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2001/11/26 00:13:43 lebel Exp $
+# $OpenBSD: Makefile,v 1.27 2001/12/14 16:03:49 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=any
 .elif ${FLAVOR:L:Mathena} && \
-	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && ${FLAVOR:L:Mmotif}
+	!${FLAVOR:L:Mgtk} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 .elif ${FLAVOR:L:Mgtk} && \
 	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
