@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2004/02/12 01:32:01 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/18 13:24:37 kevlo Exp $
 
 COMMENT=	"create fonts.scale file for the TrueType font server"
 
@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 USE_X11=	Yes
 USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
 
 NO_REGRESS=	Yes
 
