@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2002/12/13 23:56:58 naddy Exp $
---- configure.orig	Wed Dec  4 18:12:04 2002
-+++ configure	Wed Dec  4 18:13:24 2002
+$OpenBSD: patch-configure,v 1.4 2003/04/18 01:22:53 naddy Exp $
+--- configure.orig	Sat Dec 28 00:30:26 2002
++++ configure	Fri Apr 18 03:19:09 2003
 @@ -8299,7 +8299,7 @@ if test -z "$aix_libpath"; then aix_libp
        hardcode_shlibpath_var=no
  
@@ -37,3 +37,17 @@ $OpenBSD: patch-configure,v 1.3 2002/12/13 23:56:58 naddy Exp $
  	   hardcode_libdir_flag_spec_GCJ='${wl}-rpath,$libdir'
  	   ;;
         esac
+@@ -19970,13 +19970,6 @@ echo "$as_me:19969: result: determined" 
+ echo "${ECHO_T}determined" >&6
+ 
+       fi
+-      case $host in
+-        *-*-openbsd*)
+-
+-echo 'define(<_GLOBAL_OFFSET_TABLE_>, <__GLOBAL_OFFSET_TABLE_>)' >>$gmp_tmpconfigm4
+-
+-          ;;
+-      esac
+       ;;
+   esac
+ fi
