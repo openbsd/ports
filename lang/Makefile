@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/02/27 01:21:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 1999/02/27 15:42:28 rohee Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -24,7 +24,7 @@
      SUBDIR += guavac
      SUBDIR += guile
 #    SUBDIR += hugs
-#    SUBDIR += icon
+     SUBDIR += icon
      SUBDIR += icon_lib
 #    SUBDIR += idl4
 #    SUBDIR += itcl
