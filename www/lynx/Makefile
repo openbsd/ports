@@ -4,11 +4,11 @@
 # Date created:         17 November 1997
 # Whom:                 gene
 #
-# $OpenBSD: Makefile,v 1.5 1997/11/30 13:22:04 deraadt Exp $
+# $OpenBSD: Makefile,v 1.6 1997/12/18 17:52:05 gene Exp $
 #
 
-DISTNAME=       lynx2.7.1ac-0.97
-PKGNAME=        lynx-2.7.1ac-0.97
+DISTNAME=       lynx2.7.1ac-0.101
+PKGNAME=        lynx-2.7.1ac-0.101
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
