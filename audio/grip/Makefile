@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/05/07 21:05:33 lebel Exp $
+# $OpenBSD: Makefile,v 1.7 2002/07/09 16:34:47 pvalchev Exp $
 
 COMMENT=	"front-end to external cd audio rippers and mp3 encoders"
 
@@ -29,8 +29,9 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I/usr/local/include -pthread" \
-			LDFLAGS="-L/usr/local/lib -pthread"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			LIBS="-pthread"
 
 CONFIGURE_ARGS+=	--disable-cdpar
 
