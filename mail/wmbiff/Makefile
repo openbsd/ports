@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.0 2000/07/10 00:43:20 
+# $OpenBSD: Makefile,v 1.2 2000/09/03 03:28:22 marc Exp $
 
 DISTNAME=	wmbiff-0.2
 CATEGORIES=	mail
