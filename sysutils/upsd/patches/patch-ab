@@ -1,0 +1,11 @@
+--- sample/upsd.conf.orig	Tue Jun 27 23:54:01 2000
++++ sample/upsd.conf	Tue Jun 27 23:54:36 2000
+@@ -7,7 +7,7 @@
+ #
+ 
+ ups "smart-ups" (230) proto "apc-smart" {
+-	device			"/dev/cuaa0"
++	device			"/dev/cua00"
+ 	speed			2400
+ 	read-timeout		2
+ 	write-block-size	1
