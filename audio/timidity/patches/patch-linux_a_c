@@ -1,6 +1,6 @@
-$OpenBSD: patch-linux_a_c,v 1.1 2001/07/05 10:48:22 espie Exp $
+$OpenBSD: patch-linux_a_c,v 1.2 2001/07/05 10:50:30 espie Exp $
 --- linux_a.c.orig	Mon May 20 15:09:46 1996
-+++ linux_a.c	Fri Apr 27 08:01:39 2001
++++ linux_a.c	Thu Jul  5 12:49:08 2001
 @@ -37,6 +37,11 @@
  #include <machine/soundcard.h>
  #endif
@@ -13,6 +13,15 @@ $OpenBSD: patch-linux_a_c,v 1.1 2001/07/05 10:48:22 espie Exp $
  #include "config.h"
  #include "output.h"
  #include "controls.h"
+@@ -56,7 +61,7 @@ PlayMode dpm = {
+   -1,
+   {0}, /* default: get all the buffer fragments you can */
+   "Linux dsp device", 'd',
+-  "/dev/dsp",
++  "/dev/audio",
+   open_output,
+   close_output,
+   output_data,
 @@ -71,12 +76,15 @@ PlayMode dpm = {
     then 8-bit unsigned if it fails. If you have a sound device that
     can't handle either, let me know. */
@@ -26,7 +35,7 @@ $OpenBSD: patch-linux_a_c,v 1.1 2001/07/05 10:48:22 espie Exp $
    
    /* Open the audio device */
 -  fd=open(dpm.name, O_RDWR | O_NDELAY);
-+  fd=open(dpm.name, O_RDWR);
++  fd=open(dpm.name, O_WRONLY);
    if (fd<0)
      {
        ctl->cmsg(CMSG_ERROR, VERB_NORMAL, "%s: %s",
