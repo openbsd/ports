@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.2 2001/04/03 22:25:01 naddy Exp $
-
-COMMENT=	"Window Maker dockapp to display wavelan statistics"
+# $OpenBSD: Makefile,v 1.3 2001/08/17 16:04:23 naddy Exp $
 
 PKGNAME=	wmwave-0.4
 DISTNAME=	wmwave-0-4
-HOMEPAGE=	http://www.schuermann.org/~dockapps/
-
 CATEGORIES=	net x11 x11/windowmaker
-NEED_VERSION=	1.363
-
-MAINTAINER=	Joshua Stein <jcs@rt.fm>
+NEED_VERSION=	1.439
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+COMMENT=	"Window Maker dockapp to display wavelan statistics"
+HOMEPAGE=	http://www.schuermann.org/~dockapps/
 MASTER_SITES=	ftp://rt.fm/pub/wmwave/
 EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
 USE_X11=	Yes
 WRKDIST=	${WRKDIR}/wmwave
