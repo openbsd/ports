@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdecore_kuniqueapp_cpp,v 1.1 2002/03/30 01:44:28 pvalchev Exp $
+--- kdecore/kuniqueapp.cpp.orig	Fri Mar 29 18:36:40 2002
++++ kdecore/kuniqueapp.cpp	Fri Mar 29 18:36:11 2002
+@@ -130,7 +130,7 @@ KUniqueApplication::start()
+   }
+   DCOPClient *dc;
+   int fd[2];
+-  char result;
++  int result;
+   if (0 > pipe(fd))
+   {
+      kdError() << "KUniqueApplication: pipe() failed!" << endl;
