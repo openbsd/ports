@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_smux_c,v 1.1 2004/10/13 03:10:49 danh Exp $
+--- lib/smux.c.orig	Tue Aug 12 22:54:44 2003
++++ lib/smux.c	Tue Oct 12 22:45:15 2004
+@@ -22,12 +22,14 @@
+ #include <zebra.h>
+ 
+ #ifdef HAVE_SNMP
+-#ifdef HAVE_NETSNMP
++#ifdef HAVE_NET_SNMP
+ #include <net-snmp/net-snmp-config.h>
+-#endif
++#include <net-snmp/net-snmp-includes.h>
++#else
+ #include <asn1.h>
+ #include <snmp.h>
+ #include <snmp_impl.h>
++#endif /* HAVE_NET_SNMP */
+ 
+ #include "log.h"
+ #include "thread.h"

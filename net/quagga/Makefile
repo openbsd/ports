@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/02 06:50:55 david Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/13 03:10:49 danh Exp $
 
 COMMENT=	"multi-threaded routing daemon"
 
@@ -37,8 +37,10 @@ FLAVORS=	snmp
 FLAVOR?=
 
 .if ${FLAVOR:L:Msnmp}
-LIB_DEPENDS=	snmp.42::net/ucd-snmp
+LIB_DEPENDS=	netsnmp.6.2::net/net-snmp
 CONFIGURE_ARGS+= --enable-snmp
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+= --disable-snmp
 .endif
