@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.325 2000/09/07 04:14:44 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.326 2000/09/07 04:20:54 brad Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -432,7 +432,7 @@ OPSYS_VER=	${OSREV}
 
 
 # Define NO_SHARED_LIBS for those machines that don't support shared libraries.
-.if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "vax") || \
+.if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "hppa") || \
     (${MACHINE_ARCH} == "vax")
 NO_SHARED_LIBS=	Yes
 .endif
