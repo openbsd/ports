@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/11/10 18:30:21 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/11/14 23:02:39 turan Exp $
 # $FreeBSD: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
 
 PKGNAME=	Mesa-3.0
@@ -22,7 +22,7 @@ WRKSRC=	${WRKDIR}/Mesa-3.0
 SHLIB_VERSION=	3.0
 GLUT_VERSION=	3.7
 
-configure:
+do-configure:
 	@cp ${FILESDIR}/mklib.openbsd-static ${WRKSRC}
 
 do-install:
