@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.106 1999/08/10 19:50:37 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.107 1999/08/10 19:54:17 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -397,7 +397,7 @@ OPSYS_VER!=	uname -r
 .include "${.CURDIR}/../Makefile.inc"
 .endif
 
-# Define SUPPORT_SHARES for those machines that support shared libraries.
+# Define NO_SHARED_LIBS for those machines that don't support shared libraries.
 #
 .if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "powerpc") || \
     (${MACHINE_ARCH} == "vax") || (${MACHINE_ARCH} == "hppa")
@@ -477,11 +477,6 @@ PREFIX?=		${LOCALBASE}
 
 # where configuration files should go
 SYSCONFDIR?=	/etc
-# The following 4 lines should go away as soon as the ports are all updated
-.if defined(EXEC_DEPENDS)
-BUILD_DEPENDS+=	${EXEC_DEPENDS}
-RUN_DEPENDS+=	${EXEC_DEPENDS}
-.endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		${GMAKE}:${PORTSDIR}/devel/gmake
 MAKE_PROGRAM=		${GMAKE}
@@ -649,12 +644,7 @@ EXTRACT_AFTER_ARGS?=   -d ${WRKDIR}
 .else
 # common tar case
 
-# Backwards compatibility.
-.if defined(EXTRACT_ARGS)
-EXTRACT_AFTER_ARGS?=	| ${TAR} ${EXTRACT_ARGS} -
-.else
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
-.endif
 EXTRACT_BEFORE_ARGS?=	-dc
 
 .if defined(USE_BZIP2)
@@ -1316,7 +1306,7 @@ describe:
 .if !target(do-fetch)
 do-fetch:
 	@${MKDIR} ${_DISTDIR}
-	@(cd ${_DISTDIR}; \
+	@cd ${_DISTDIR}; \
 	 for file in ${DISTFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
@@ -1345,9 +1335,9 @@ do-fetch:
 			${ECHO_MSG} ">> port manually into ${_DISTDIR} and try again."; \
 			exit 1; \
 	    fi \
-	 done)
+	 done
 .if defined(PATCHFILES)
-	@(cd ${_DISTDIR}; \
+	@cd ${_DISTDIR}; \
 	 for file in ${PATCHFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
@@ -1367,7 +1357,7 @@ do-fetch:
 			${ECHO_MSG} ">> port manually into ${_DISTDIR} and try again."; \
 			exit 1; \
 	    fi \
-	 done)
+	 done
 .endif
 .endif
 
