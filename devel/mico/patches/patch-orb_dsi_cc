@@ -1,0 +1,11 @@
+$OpenBSD: patch-orb_dsi_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/dsi.cc.orig	Sat Aug 14 16:32:56 2004
++++ orb/dsi.cc	Sat Aug 14 16:33:00 2004
+@@ -27,7 +27,6 @@
+ #ifndef _WINDOWS
+ #include <string.h>
+ #endif
+-#include <iostream.h>
+ #include <mico/intercept.h>
+ #include <mico/template_impl.h>
+ #include <mico/util.h>

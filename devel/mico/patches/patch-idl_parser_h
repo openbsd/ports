@@ -1,0 +1,12 @@
+$OpenBSD: patch-idl_parser_h,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- idl/parser.h.orig	Sun Sep  2 20:23:03 2001
++++ idl/parser.h	Sun Aug 15 19:37:56 2004
+@@ -23,7 +23,7 @@
+ #ifndef __PARSER_H__
+ #define __PARSER_H__
+ 
+-#include <fstream.h>
++#include <fstream>
+ 
+ #include "parsenode.h"
+ #include "prepro.h"

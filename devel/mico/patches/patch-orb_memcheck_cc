@@ -1,0 +1,12 @@
+$OpenBSD: patch-orb_memcheck_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/memcheck.cc.orig	Sun Sep  2 20:21:59 2001
++++ orb/memcheck.cc	Sun Aug 15 19:40:43 2004
+@@ -36,7 +36,7 @@ void operator delete[] (void *_p)
+ 
+ #else
+ 
+-#include <iostream.h>
++#include <iostream>
+ 
+ /*
+  * Simple memchecker -- outputs some stats

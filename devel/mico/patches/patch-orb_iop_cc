@@ -1,0 +1,12 @@
+$OpenBSD: patch-orb_iop_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/iop.cc.orig	Tue Sep 25 11:07:15 2001
++++ orb/iop.cc	Sun Aug 15 19:40:26 2004
+@@ -27,7 +27,7 @@
+ #ifndef _WINDOWS
+ #include <string.h>
+ #endif
+-#include <iostream.h>
++#include <iostream>
+ #include <mico/impl.h>
+ #include <mico/template_impl.h>
+ #include <mico/util.h>

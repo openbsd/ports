@@ -1,0 +1,37 @@
+$OpenBSD: patch-orb_dynany_impl_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/dynany_impl.cc.orig	Sun Sep  2 20:21:55 2001
++++ orb/dynany_impl.cc	Sun Aug 15 19:39:54 2004
+@@ -23,8 +23,8 @@
+ #define MICO_CONF_IMR
+ #define MICO_CONF_DYNANY
+ 
+-#include <strstream.h>
+ #include <CORBA-SMALL.h>
++#include <sstream>
+ #include <mico/dynany_impl.h>
+ #include <mico/impl.h>
+ #include <mico/throw.h>
+@@ -992,10 +992,9 @@ DynFixed_impl::get_value ()
+     CORBA::Boolean r = (_value >>= CORBA::Any::to_fixed (f, digits, scale));
+     assert (r);
+ 
+-    ostrstream ostr;
+-    ostr << f << ends;
+-    char *out = CORBA::string_dup (ostr.str());
+-    ostr.rdbuf()->freeze (0);
++    ostringstream ostr;
++    ostr << f;
++    char *out = CORBA::string_dup (ostr.str().c_str());
+ 
+     return out;
+ }
+@@ -1008,7 +1007,8 @@ DynFixed_impl::set_value (const char *in
+ 
+     Fixed f (digits, scale);
+ 
+-    istrstream istr (in);
++    string instr (in);
++    istringstream istr (instr);
+     // XXX check for bad input string...
+     istr >> f;
+ 

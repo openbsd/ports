@@ -1,0 +1,11 @@
+$OpenBSD: patch-orb_dii_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/dii.cc.orig	Sat Aug 14 16:32:28 2004
++++ orb/dii.cc	Sat Aug 14 16:32:33 2004
+@@ -27,7 +27,6 @@
+ #include <string.h>
+ #endif
+ #include <ctype.h>
+-#include <iostream.h>
+ #include <mico/throw.h>
+ #include <mico/impl.h>
+ #include <mico/intercept.h>

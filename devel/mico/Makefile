@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2004/07/31 21:17:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/09/26 12:11:00 espie Exp $
 
 COMMENT=	"free and complete CORBA-compliant implementation"
 
@@ -45,5 +45,8 @@ CONFIGURE_ARGS+=	--with-gtk
 LIB_DEPENDS+=		tcl.8::lang/tcl
 CONFIGURE_ARGS+=	--with-tcl
 .endif
+
+pre-build:
+	cd ${WRKSRC}/idl && ${GMAKE} generate
 
 .include <bsd.port.mk>

@@ -1,7 +1,15 @@
-$OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
+$OpenBSD: patch-codec_cc,v 1.3 2004/09/26 12:11:00 espie Exp $
 --- orb/codec.cc.orig	Fri Sep 21 17:05:51 2001
-+++ orb/codec.cc	Mon Jan  7 13:27:26 2002
-@@ -1014,13 +1014,13 @@ CORBA::DataDecoder::byteorder (CORBA::By
++++ orb/codec.cc	Fri Jul 30 16:27:43 2004
+@@ -26,7 +26,6 @@
+ #ifndef _WINDOWS
+ #include <string.h>
+ #endif
+-#include <iostream.h>
+ #include <mico/impl.h>
+ #include <mico/template_impl.h>
+ #include <mico/util.h>
+@@ -1014,13 +1013,13 @@ CORBA::DataDecoder::byteorder (CORBA::By
  
  /**************************** CDREncoder ******************************/
  
@@ -17,7 +25,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  {
      ((CORBA::Octet *)d)[0] = ((CORBA::Octet *)s)[3];
      ((CORBA::Octet *)d)[1] = ((CORBA::Octet *)s)[2];
-@@ -1028,7 +1028,7 @@ static inline void swap4 (void *d, const
+@@ -1028,7 +1027,7 @@ static inline void swap4 (void *d, const
      ((CORBA::Octet *)d)[3] = ((CORBA::Octet *)s)[0];
  }
  
@@ -26,7 +34,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  {
      ((CORBA::Octet *)d)[0] = ((CORBA::Octet *)s)[7];
      ((CORBA::Octet *)d)[1] = ((CORBA::Octet *)s)[6];
-@@ -1040,7 +1040,7 @@ static inline void swap8 (void *d, const
+@@ -1040,7 +1039,7 @@ static inline void swap8 (void *d, const
      ((CORBA::Octet *)d)[7] = ((CORBA::Octet *)s)[0];
  }
  
@@ -35,7 +43,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  {
      ((CORBA::Octet *)d)[0]  = ((CORBA::Octet *)s)[15];
      ((CORBA::Octet *)d)[1]  = ((CORBA::Octet *)s)[14];
-@@ -1096,7 +1096,7 @@ MICO::CDREncoder::put_short (CORBA::Shor
+@@ -1096,7 +1095,7 @@ MICO::CDREncoder::put_short (CORBA::Shor
  	buf->put2 (&s);
      } else {
  	CORBA::Short s2;
@@ -44,7 +52,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put2 (&s2);
      }
  }
-@@ -1108,7 +1108,7 @@ MICO::CDREncoder::put_ushort (CORBA::USh
+@@ -1108,7 +1107,7 @@ MICO::CDREncoder::put_ushort (CORBA::USh
  	buf->put2 (&us);
      } else {
  	CORBA::UShort us2;
@@ -53,7 +61,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put2 (&us2);
      }
  }
-@@ -1120,7 +1120,7 @@ MICO::CDREncoder::put_long (CORBA::Long 
+@@ -1120,7 +1119,7 @@ MICO::CDREncoder::put_long (CORBA::Long 
  	buf->put4 (&l);
      } else {
  	CORBA::Long l2;
@@ -62,7 +70,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put4 (&l2);
      }
  }
-@@ -1132,7 +1132,7 @@ MICO::CDREncoder::put_longlong (CORBA::L
+@@ -1132,7 +1131,7 @@ MICO::CDREncoder::put_longlong (CORBA::L
  	buf->put8 (&l);
      } else {
  	CORBA::LongLong l2;
@@ -71,7 +79,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put8 (&l2);
      }
  }
-@@ -1144,7 +1144,7 @@ MICO::CDREncoder::put_ulong (CORBA::ULon
+@@ -1144,7 +1143,7 @@ MICO::CDREncoder::put_ulong (CORBA::ULon
  	buf->put4 (&ul);
      } else {
  	CORBA::ULong ul2;
@@ -80,7 +88,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put4 (&ul2);
      }
  }
-@@ -1156,7 +1156,7 @@ MICO::CDREncoder::put_ulonglong (CORBA::
+@@ -1156,7 +1155,7 @@ MICO::CDREncoder::put_ulonglong (CORBA::
  	buf->put8 (&ul);
      } else {
  	CORBA::ULongLong ul2;
@@ -89,7 +97,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put8 (&ul2);
      }
  }
-@@ -1169,7 +1169,7 @@ MICO::CDREncoder::put_float (CORBA::Floa
+@@ -1169,7 +1168,7 @@ MICO::CDREncoder::put_float (CORBA::Floa
  	buf->put4 (&f);
      } else {
  	CORBA::Float f2;
@@ -98,7 +106,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put4 (&f2);
      }
  #else
-@@ -1179,7 +1179,7 @@ MICO::CDREncoder::put_float (CORBA::Floa
+@@ -1179,7 +1178,7 @@ MICO::CDREncoder::put_float (CORBA::Floa
  	buf->put4 (b);
      } else {
  	CORBA::Octet b2[4];
@@ -107,7 +115,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put4 (b2);
      }
  #endif
-@@ -1193,7 +1193,7 @@ MICO::CDREncoder::put_double (CORBA::Dou
+@@ -1193,7 +1192,7 @@ MICO::CDREncoder::put_double (CORBA::Dou
  	buf->put8 (&d);
      } else {
  	CORBA::Double d2;
@@ -116,7 +124,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put8 (&d2);
      }
  #else
-@@ -1203,7 +1203,7 @@ MICO::CDREncoder::put_double (CORBA::Dou
+@@ -1203,7 +1202,7 @@ MICO::CDREncoder::put_double (CORBA::Dou
  	buf->put8 (b);
      } else {
  	CORBA::Octet b2[8];
@@ -125,7 +133,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put8 (b2);
      }
  #endif
-@@ -1217,7 +1217,7 @@ MICO::CDREncoder::put_longdouble (CORBA:
+@@ -1217,7 +1216,7 @@ MICO::CDREncoder::put_longdouble (CORBA:
  	buf->put16 (&d);
      } else {
  	CORBA::LongDouble d2;
@@ -134,7 +142,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put16 (&d2);
      }
  #else
-@@ -1227,7 +1227,7 @@ MICO::CDREncoder::put_longdouble (CORBA:
+@@ -1227,7 +1226,7 @@ MICO::CDREncoder::put_longdouble (CORBA:
  	buf->put16 (b);
      } else {
  	CORBA::Octet b2[16];
@@ -143,7 +151,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->put16 (b2);
      }
  #endif
-@@ -1281,7 +1281,7 @@ MICO::CDREncoder::put_shorts (const CORB
+@@ -1281,7 +1280,7 @@ MICO::CDREncoder::put_shorts (const CORB
  	buf->resize (2*l);
  	CORBA::Short *d = (CORBA::Short *)buf->wdata();
  	for (CORBA::Long i = l; --i >= 0; ++d, ++p)
@@ -152,7 +160,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->wseek_rel (2*l);
      }
  }
-@@ -1296,7 +1296,7 @@ MICO::CDREncoder::put_ushorts (const COR
+@@ -1296,7 +1295,7 @@ MICO::CDREncoder::put_ushorts (const COR
  	buf->resize (2*l);
  	CORBA::UShort *d = (CORBA::UShort *)buf->wdata();
  	for (CORBA::Long i = l; --i >= 0; ++d, ++p)
@@ -161,7 +169,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->wseek_rel (2*l);
      }
  }
-@@ -1311,7 +1311,7 @@ MICO::CDREncoder::put_longs (const CORBA
+@@ -1311,7 +1310,7 @@ MICO::CDREncoder::put_longs (const CORBA
  	buf->resize (4*l);
  	CORBA::Long *d = (CORBA::Long *)buf->wdata();
  	for (CORBA::Long i = l; --i >= 0; ++d, ++p)
@@ -170,7 +178,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->wseek_rel (4*l);
      }
  }
-@@ -1326,7 +1326,7 @@ MICO::CDREncoder::put_longlongs (const C
+@@ -1326,7 +1325,7 @@ MICO::CDREncoder::put_longlongs (const C
  	buf->resize (8*l);
  	CORBA::LongLong *d = (CORBA::LongLong *)buf->wdata();
  	for (CORBA::Long i = l; --i >= 0; ++d, ++p)
@@ -179,7 +187,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->wseek_rel (8*l);
      }
  }
-@@ -1341,7 +1341,7 @@ MICO::CDREncoder::put_ulongs (const CORB
+@@ -1341,7 +1340,7 @@ MICO::CDREncoder::put_ulongs (const CORB
  	buf->resize (4*l);
  	CORBA::ULong *d = (CORBA::ULong *)buf->wdata();
  	for (CORBA::Long i = l; --i >= 0; ++d, ++p)
@@ -188,7 +196,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->wseek_rel (4*l);
      }
  }
-@@ -1356,7 +1356,7 @@ MICO::CDREncoder::put_ulonglongs (const 
+@@ -1356,7 +1355,7 @@ MICO::CDREncoder::put_ulonglongs (const 
  	buf->resize (8*l);
  	CORBA::ULongLong *d = (CORBA::ULongLong *)buf->wdata();
  	for (CORBA::Long i = l; --i >= 0; ++d, ++p)
@@ -197,7 +205,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  	buf->wseek_rel (8*l);
      }
  }
-@@ -1571,7 +1571,7 @@ MICO::CDRDecoder::get_short (CORBA::Shor
+@@ -1571,7 +1570,7 @@ MICO::CDRDecoder::get_short (CORBA::Shor
      CORBA::Short s2;
      if (!buf->get2 (&s2))
  	return FALSE;
@@ -206,7 +214,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      return TRUE;
  }
  
-@@ -1584,7 +1584,7 @@ MICO::CDRDecoder::get_ushort (CORBA::USh
+@@ -1584,7 +1583,7 @@ MICO::CDRDecoder::get_ushort (CORBA::USh
      CORBA::UShort us2;
      if (!buf->get2 (&us2))
  	return FALSE;
@@ -215,7 +223,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      return TRUE;
  }
  
-@@ -1597,7 +1597,7 @@ MICO::CDRDecoder::get_long (CORBA::Long 
+@@ -1597,7 +1596,7 @@ MICO::CDRDecoder::get_long (CORBA::Long 
      CORBA::Long l2;
      if (!buf->get4 (&l2))
  	return FALSE;
@@ -224,7 +232,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      return TRUE;
  }
  
-@@ -1610,7 +1610,7 @@ MICO::CDRDecoder::get_longlong (CORBA::L
+@@ -1610,7 +1609,7 @@ MICO::CDRDecoder::get_longlong (CORBA::L
      CORBA::LongLong l2;
      if (!buf->get8 (&l2))
  	return FALSE;
@@ -233,7 +241,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      return TRUE;
  }
  
-@@ -1623,7 +1623,7 @@ MICO::CDRDecoder::get_ulong (CORBA::ULon
+@@ -1623,7 +1622,7 @@ MICO::CDRDecoder::get_ulong (CORBA::ULon
      CORBA::ULong ul2;
      if (!buf->get4 (&ul2))
  	return FALSE;
@@ -242,7 +250,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      return TRUE;
  }
  
-@@ -1636,7 +1636,7 @@ MICO::CDRDecoder::get_ulonglong (CORBA::
+@@ -1636,7 +1635,7 @@ MICO::CDRDecoder::get_ulonglong (CORBA::
      CORBA::ULongLong ul2;
      if (!buf->get8 (&ul2))
  	return FALSE;
@@ -251,7 +259,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      return TRUE;
  }
  
-@@ -1650,7 +1650,7 @@ MICO::CDRDecoder::get_float (CORBA::Floa
+@@ -1650,7 +1649,7 @@ MICO::CDRDecoder::get_float (CORBA::Floa
      CORBA::Float f2;
      if (!buf->get4 (&f2))
  	return FALSE;
@@ -260,7 +268,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  #else
      CORBA::Octet b[4];
      if (data_bo == mach_bo) {
-@@ -1663,7 +1663,7 @@ MICO::CDRDecoder::get_float (CORBA::Floa
+@@ -1663,7 +1662,7 @@ MICO::CDRDecoder::get_float (CORBA::Floa
      CORBA::Octet b2[4];
      if (!buf->get4 (b2))
  	return FALSE;
@@ -269,7 +277,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      mico_ieee2float (b, f);
  #endif
      return TRUE;
-@@ -1679,7 +1679,7 @@ MICO::CDRDecoder::get_double (CORBA::Dou
+@@ -1679,7 +1678,7 @@ MICO::CDRDecoder::get_double (CORBA::Dou
      CORBA::Double d2;
      if (!buf->get8 (&d2))
  	return FALSE;
@@ -278,7 +286,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  #else
      CORBA::Octet b[8];
      if (data_bo == mach_bo) {
-@@ -1692,7 +1692,7 @@ MICO::CDRDecoder::get_double (CORBA::Dou
+@@ -1692,7 +1691,7 @@ MICO::CDRDecoder::get_double (CORBA::Dou
      CORBA::Octet b2[8];
      if (!buf->get8 (b2))
  	return FALSE;
@@ -287,7 +295,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      mico_ieee2double (b, d);
  #endif
      return TRUE;
-@@ -1708,7 +1708,7 @@ MICO::CDRDecoder::get_longdouble (CORBA:
+@@ -1708,7 +1707,7 @@ MICO::CDRDecoder::get_longdouble (CORBA:
      CORBA::LongDouble d2;
      if (!buf->get16 (&d2))
  	return FALSE;
@@ -296,7 +304,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
  #else
      CORBA::Octet b[16];
      if (data_bo == mach_bo) {
-@@ -1721,7 +1721,7 @@ MICO::CDRDecoder::get_longdouble (CORBA:
+@@ -1721,7 +1720,7 @@ MICO::CDRDecoder::get_longdouble (CORBA:
      CORBA::Octet b2[16];
      if (!buf->get16 (b2))
  	return FALSE;
@@ -305,7 +313,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      mico_ieee2ldouble (b, d);
  #endif
      return TRUE;
-@@ -1779,7 +1779,7 @@ MICO::CDRDecoder::get_shorts (CORBA::Sho
+@@ -1779,7 +1778,7 @@ MICO::CDRDecoder::get_shorts (CORBA::Sho
  
      CORBA::Short *s = (CORBA::Short *)buf->data();
      for (CORBA::Long i = l; --i >= 0; ++p, ++s)
@@ -314,7 +322,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      buf->rseek_rel (2*l);
  
      return TRUE;
-@@ -1799,7 +1799,7 @@ MICO::CDRDecoder::get_ushorts (CORBA::US
+@@ -1799,7 +1798,7 @@ MICO::CDRDecoder::get_ushorts (CORBA::US
  
      CORBA::UShort *s = (CORBA::UShort *)buf->data();
      for (CORBA::Long i = l; --i >= 0; ++p, ++s)
@@ -323,7 +331,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      buf->rseek_rel (2*l);
  
      return TRUE;
-@@ -1819,7 +1819,7 @@ MICO::CDRDecoder::get_longs (CORBA::Long
+@@ -1819,7 +1818,7 @@ MICO::CDRDecoder::get_longs (CORBA::Long
  
      CORBA::Long *s = (CORBA::Long *)buf->data();
      for (CORBA::Long i = l; --i >= 0; ++p, ++s)
@@ -332,7 +340,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      buf->rseek_rel (4*l);
  
      return TRUE;
-@@ -1839,7 +1839,7 @@ MICO::CDRDecoder::get_longlongs (CORBA::
+@@ -1839,7 +1838,7 @@ MICO::CDRDecoder::get_longlongs (CORBA::
  
      CORBA::LongLong *s = (CORBA::LongLong *)buf->data();
      for (CORBA::Long i = l; --i >= 0; ++p, ++s)
@@ -341,7 +349,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      buf->rseek_rel (8*l);
  
      return TRUE;
-@@ -1859,7 +1859,7 @@ MICO::CDRDecoder::get_ulongs (CORBA::ULo
+@@ -1859,7 +1858,7 @@ MICO::CDRDecoder::get_ulongs (CORBA::ULo
  
      CORBA::ULong *s = (CORBA::ULong *)buf->data();
      for (CORBA::Long i = l; --i >= 0; ++p, ++s)
@@ -350,7 +358,7 @@ $OpenBSD: patch-codec_cc,v 1.2 2002/01/08 12:33:23 naddy Exp $
      buf->rseek_rel (4*l);
  
      return TRUE;
-@@ -1879,7 +1879,7 @@ MICO::CDRDecoder::get_ulonglongs (CORBA:
+@@ -1879,7 +1878,7 @@ MICO::CDRDecoder::get_ulonglongs (CORBA:
  
      CORBA::ULongLong *s = (CORBA::ULongLong *)buf->data();
      for (CORBA::Long i = l; --i >= 0; ++p, ++s)

@@ -1,0 +1,18 @@
+$OpenBSD: patch-idl_parsenode_h,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- idl/parsenode.h.orig	Sun Sep  2 20:23:03 2001
++++ idl/parsenode.h	Sun Aug 15 19:37:47 2004
+@@ -27,12 +27,13 @@
+ #include <assert.h>
+ #endif
+ 
+-#include <fstream.h>
+ #ifdef _WINDOWS
+ #include <mico/config-win32.h>
+ #else
+ #include <mico/config.h>
+ #endif
++
++#include <fstream>
+ 
+ #include <string>
+ 

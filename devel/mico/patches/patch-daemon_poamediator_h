@@ -1,0 +1,11 @@
+$OpenBSD: patch-daemon_poamediator_h,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- daemon/poamediator.h.orig	Sat Aug 14 16:01:35 2004
++++ daemon/poamediator.h	Sat Aug 14 16:01:42 2004
+@@ -25,7 +25,6 @@
+ #ifndef __poamediator_h__
+ #define __poamediator_h__
+ 
+-#include <iostream.h>
+ #include <CORBA.h>
+ #include <mico/impl.h>
+ 

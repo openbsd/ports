@@ -1,0 +1,12 @@
+$OpenBSD: patch-idl_main_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- idl/main.cc.orig	Sun Sep  2 20:23:07 2001
++++ idl/main.cc	Sun Aug 15 19:37:22 2004
+@@ -23,7 +23,7 @@
+ 
+ #include <CORBA.h>
+ #include <stdio.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <unistd.h>
+ #include <mico/ir_creator.h>
+ #include <mico/util.h>

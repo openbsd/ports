@@ -1,0 +1,32 @@
+$OpenBSD: patch-idl_codegen-midl_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- idl/codegen-midl.cc.orig	Sun Sep  2 20:23:06 2001
++++ idl/codegen-midl.cc	Sun Aug 15 19:36:01 2004
+@@ -21,7 +21,8 @@
+  */
+ 
+ #include <CORBA.h>
+-#include <fstream.h>
++#include <fstream>
++#include <sstream>
+ #include <ctype.h>
+ #include <stdio.h>
+ #include "codegen-midl.h"
+@@ -73,7 +74,7 @@ void CodeGenMIDL::emit( string &fnbase )
+ 
+ string CodeGenMIDL::emit( CORBA::IRObject_ptr obj )
+ {
+-  ostrstream idl;
++  ostringstream idl;
+ 
+   CORBA::Contained_var contained = CORBA::Contained::_narrow( obj );
+   if( !CORBA::is_nil( contained ) ) {
+@@ -184,9 +185,7 @@ string CodeGenMIDL::emit( CORBA::IRObjec
+     assert( 0 );
+   }
+   o.stop_output();
+-  idl << ends;
+   string result = idl.str();
+-  idl.rdbuf()->freeze( 0 );
+   return result;
+ }
+ 

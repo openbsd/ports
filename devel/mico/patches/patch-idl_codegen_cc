@@ -1,0 +1,30 @@
+$OpenBSD: patch-idl_codegen_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- idl/codegen.cc.orig	Sun Sep  2 20:23:06 2001
++++ idl/codegen.cc	Sun Aug 15 19:36:30 2004
+@@ -21,6 +21,7 @@
+  */
+ 
+ #include <CORBA.h>
++#include <sstream>
+ #include <mico/util.h>
+ #include "codegen.h"
+ 
+@@ -32,7 +33,7 @@ OutputStream::OutputStream( int indent )
+   _indent = indent;
+   _current_indent = 0;
+   _bofl = true;
+-  _ostr = new ostrstream;
++  _ostr = new ostringstream;
+ }
+ 
+ 
+@@ -502,9 +503,7 @@ void Output::free_streams()
+     if( _streams[ i ] == NULL )
+       continue;
+     if( _ostr != NULL ) {
+-      *_streams[ i ]->_ostr << ends;
+       *_ostr << _streams[ i ]->_ostr->str();
+-      _streams[ i ]->_ostr->rdbuf()->freeze( 0 );
+     }
+     delete _streams[ i ];
+     _streams[ i ] = NULL;

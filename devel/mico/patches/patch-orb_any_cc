@@ -1,0 +1,11 @@
+$OpenBSD: patch-orb_any_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/any.cc.orig	Sat Aug 14 16:30:20 2004
++++ orb/any.cc	Sat Aug 14 16:30:27 2004
+@@ -26,7 +26,6 @@
+ #ifdef _WINDOWS
+ #include <string.h>
+ #endif
+-#include <iostream.h>
+ #include <mico/impl.h>
+ #include <mico/util.h>
+ #include <mico/throw.h>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_iordump_iordump_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- tools/iordump/iordump.cc.orig	Fri Apr  7 18:04:07 2000
++++ tools/iordump/iordump.cc	Sun Aug 15 19:41:49 2004
+@@ -1,7 +1,7 @@
+ #include <CORBA.h>
+ #include <string.h>
+ #include <mico/template_impl.h>
+-#include <iostream.h>
++#include <iostream>
+ 
+ void
+ usage (const char * argv0)

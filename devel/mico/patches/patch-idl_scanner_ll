@@ -1,0 +1,12 @@
+$OpenBSD: patch-idl_scanner_ll,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- idl/scanner.ll.orig	Fri Jul 30 17:12:21 2004
++++ idl/scanner.ll	Fri Jul 30 17:12:34 2004
+@@ -26,7 +26,7 @@
+ 
+ #include <iostream.h>
+ #include <fstream.h>
+-#include <strstream.h>
++#include <sstream>
+ #include <unistd.h>
+ #include <stdio.h>
+ #include <stdlib.h>

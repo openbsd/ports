@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_mico_fixed_h,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- include/mico/fixed.h.orig	Sun Sep  2 20:20:09 2001
++++ include/mico/fixed.h	Sun Aug 15 19:38:39 2004
+@@ -31,7 +31,7 @@
+  * a 114-bit mantissa allows for up to 31 exact digits.
+  */
+ 
+-#include <iostream.h>
++#include <iostream>
+ 
+ class FixedBase {
+     MICO_UShort _digits;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-orb_ior_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- orb/ior.cc.orig	Sun Sep  2 20:21:56 2001
++++ orb/ior.cc	Sun Aug 15 19:40:33 2004
+@@ -27,7 +27,7 @@
+ #include <string.h>
+ #endif
+ #include <ctype.h>
+-#include <iostream.h>
++#include <iostream>
+ #include <mico/impl.h>
+ #include <mico/template_impl.h>
+ #include <mico/util.h>

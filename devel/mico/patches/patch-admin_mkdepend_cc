@@ -1,0 +1,14 @@
+$OpenBSD: patch-admin_mkdepend_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- admin/mkdepend.cc.orig	Fri Jan 29 11:52:10 1999
++++ admin/mkdepend.cc	Sun Aug 15 19:30:04 2004
+@@ -24,8 +24,8 @@
+ #include <assert.h>
+ #include <stdio.h>
+ #include <unistd.h>
+-#include <iostream.h>
+-#include <fstream.h>
++#include <iostream>
++#include <fstream>
+ #include <string>
+ #include <vector>
+ #include <set>

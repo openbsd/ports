@@ -1,0 +1,14 @@
+$OpenBSD: patch-daemon_main_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- daemon/main.cc.orig	Sun Sep  2 20:31:54 2001
++++ daemon/main.cc	Sun Aug 15 19:32:40 2004
+@@ -22,8 +22,8 @@
+ 
+ #include <sys/types.h>
+ #include <signal.h>
+-#include <iostream.h>
+-#include <fstream.h>
++#include <iostream>
++#include <fstream>
+ #include <CORBA.h>
+ #include <mico/util.h>
+ #include <mico/template_impl.h>

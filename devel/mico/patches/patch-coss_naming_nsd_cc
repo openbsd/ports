@@ -1,0 +1,14 @@
+$OpenBSD: patch-coss_naming_nsd_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- coss/naming/nsd.cc.orig	Mon Jul  2 16:33:35 2001
++++ coss/naming/nsd.cc	Sun Aug 15 19:32:05 2004
+@@ -27,8 +27,8 @@
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <unistd.h>
+-#include <iostream.h>
+-#include <fstream.h>
++#include <iostream>
++#include <fstream>
+ #include <mico/template_impl.h>
+ #include <mico/util.h>
+ #include "Naming_impl.h"

@@ -1,0 +1,14 @@
+$OpenBSD: patch-coss_events_main_cc,v 1.1 2004/09/26 12:11:00 espie Exp $
+--- coss/events/main.cc.orig	Tue Nov 21 13:14:08 2000
++++ coss/events/main.cc	Sun Aug 15 19:30:44 2004
+@@ -26,8 +26,8 @@
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <unistd.h>
+-#include <iostream.h>
+-#include <fstream.h>
++#include <iostream>
++#include <fstream>
+ #include <mico/template_impl.h>
+ #include <mico/util.h>
+ #include <mico/CosNaming.h>
