@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2000/02/11 00:37:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2000/03/04 18:39:59 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
@@ -13,7 +13,13 @@ MAINTAINER=espie@openbsd.org
 DIST_SUBDIR=xanim
 MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES0=ftp://xanim.va.pubnix.com/modules/
-NEED_VERSION=	1.191
+NEED_VERSION=	1.218
+
+LICENSE_TYPE=	NOFEE
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	No
 
 BASEDISTFILE=xanim2801.tar.gz
 DISTFILES=${BASEDISTFILE}
@@ -63,6 +69,8 @@ post-extract:
 post-configure:
 	ln ${WRKSRC}/docs/xanim.man ${WRKSRC}
 
+FAKE=		Yes
+USE_IMAKE=	Yes
 DOCDIR=${PREFIX}/share/doc/xanim
 
 post-install:
@@ -72,6 +80,5 @@ post-install:
 		[ $$file == ${WRKSRC}/docs/xanim.man ] || ${INSTALL_DATA} $$file ${DOCDIR}; \
 	done
 
-USE_IMAKE=yes
 
 .include <bsd.port.mk>
