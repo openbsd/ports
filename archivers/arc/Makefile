@@ -3,12 +3,13 @@
 # Date created:         06 November 1997
 # Whom:                 ejovi
 #
-# $OpenBSD: Makefile,v 1.3 1998/02/19 21:27:37 marc Exp $
+# $OpenBSD: Makefile,v 1.4 1998/04/10 01:41:39 marc Exp $
 #
 
 DISTNAME=       arc521e.pl8
 PKGNAME=        arc-5.21e
 CATEGORIES=	archivers
+NO_CDROM=	"NOFEE: can not sell"
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tar.Z
 

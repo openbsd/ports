@@ -3,11 +3,12 @@
 # Date created:         24 November 1997
 # Whom:                 angelos
 #
-# $OpenBSD: Makefile,v 1.1 1997/11/24 20:53:44 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/10 01:41:44 marc Exp $
 #
 
 DISTNAME=       nulib-3.25
 CATEGORIES=	archivers
+NO_CDROM=	"NOFEE: Can not sell"
 MASTER_SITES=	ftp://apple2.caltech.edu//Zocalo/pub/apple2/ARCHIVERS/
 DISTFILES=	nulib325.tar.Z
 WRKSRC=		${WRKDIR}/nulib
