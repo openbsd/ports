@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Make_inc,v 1.1 2002/02/15 21:06:06 danh Exp $
+--- src/Make.inc.orig	Tue Jul 24 14:52:43 2001
++++ src/Make.inc	Fri Feb 15 15:55:40 2002
+@@ -127,7 +127,7 @@ install:
+ 	$(INSTALL) -m 755 -s raduse  $(BINDIR)
+ 	$(INSTALL) -m 755 -s radzap  $(BINDIR)
+ 	$(INSTALL) -m 755 -s radclient $(BINDIR)
+-	test -z "$(DBM)" || $(INSTALL) -m 755 -s builddbm $(BINDIR)
++	$(INSTALL) -m 755 -s builddbm $(BINDIR)
+ 	$(INSTALL) -m 755    checkrad.pl $(SBINDIR)/checkrad
+ 	$(INSTALL) -m 755    radlast $(BINDIR)
+ 	$(INSTALL) -m 755    radtest $(BINDIR)
+@@ -135,11 +135,10 @@ install:
+ 	@for section in 1 5 8; do \
+ 		$(DINSTALL) $(MANDIR)/man$$section; \
+ 		for manfile in ../doc/*.$$section*; do \
+-		    echo $(INSTALL) -m 644 $$manfile $(MANDIR)/man$$section; \
+-		    $(INSTALL) -m 644 $$manfile $(MANDIR)/man$$section; \
++		    echo $(INSTALL) -m 644 $$manfile $(MANDIR)/man$$section/`basename $$manfile rad`; \
++		    $(INSTALL) -m 644 $$manfile $(MANDIR)/man$$section/`basename $$manfile rad`; \
+ 		done ; \
+ 	done
+-	test -n "$(DBM)" || rm -f $(MANDIR)/man8/builddbm.8rad
+ 	@if [ -d /etc/pam.d/ ] && [ ! -f /etc/pam.d/radius ]; then \
+ 		$(INSTALL) -m 644 ../redhat/radiusd-pam /etc/pam.d/radius;\
+ 	fi

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2001/12/17 20:47:47 danh Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/02/15 21:06:06 danh Exp $
 @pkgcfl radiusd-lucent-*
+bin/builddbm
 bin/radclient
 bin/radlast
 bin/radtest
@@ -12,8 +13,9 @@ man/man1/radtest.1
 man/man1/raduse.1
 man/man1/radwho.1
 man/man1/radzap.1
-man/man5/clients.5rad
-man/man5/naslist.5rad
+man/man5/clients.5
+man/man5/naslist.5
+man/man8/builddbm.8
 man/man8/radiusd.8
 man/man8/radrelay.8
 man/man8/radwatch.8
