@@ -1,33 +1,38 @@
-# OpenBSD makefile for:	sp
-# Version required:	1.2.1
-# Date created:		May 21 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.13 2002/03/21 21:25:53 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/05/28 21:20:11 naddy Exp $
 
 COMMENT=	"OO toolkit for SGML parsing and entity management"
 
-DISTNAME=	sp-1.2.1
+DISTNAME=	sp-1.3.4
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.jclark.com/pub/sp/
-NEED_VERSION=	1.515
+NEED_VERSION=	1.516
 
-# License: BSD
+HOMEPAGE=	http://www.jclark.com/sp/
+
+MAINTAINER=	Gerardo Santana Gomez Garrido <santana@openbsd.org.mx>
+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE_FLAGS=PREFIX=${PREFIX}
+MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
-# The shared libsp only works on post 2.1.x systems.
-# shared C++ libraries appear to be broken on post 2.2.1 system too...
-#.if exists(/usr/lib/libstdc++.a)
-#PLIST=		${PKGDIR}/PLIST-shared
-#post-install:
-#	${LDCONFIG} -m ${PREFIX}/lib
-#.endif
+MAKE_FLAGS=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates -ansi" \
+		DEFINES="-DSP_HAVE_BOOL -DSP_ANSI_CLASS_INST -DSP_MULTI_BYTE \
+		         -DSP_HAVE_SOCKET" \
+		RANLIB="${RANLIB}"
+
+FAKE_FLAGS=	prefix=${DESTDIR}${PREFIX} \
+		INSTALL="${INSTALL_PROGRAM}"
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sp
+	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/sp
+	${INSTALL} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
+		${WRKBUILD}/lib/libsp.a ${PREFIX}/lib
+	${INSTALL_DATA_DIR} ${PREFIX}/include/sp
+	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
+	${INSTALL_DATA} ${WRKSRC}/generic/* ${PREFIX}/include/sp
 
 .include <bsd.port.mk>

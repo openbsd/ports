@@ -1,9 +1,0 @@
-PROG=	spam
-SRCS=	spam.cxx CopyEventHandler.cxx MarkupEventHandler.cxx spam_inst.cxx
-LDADD=	${CPPLIB} -L${.CURDIR}/../lib -lsp
-
-NOMAN=	noman
-
-DPSRCS=	spam_inst.cxx SpamMessages.h
-
-.include <bsd.prog.mk>

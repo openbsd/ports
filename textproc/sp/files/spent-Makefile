@@ -1,7 +1,0 @@
-PROG=	spent
-SRCS=	spent.cxx
-LDADD=	${CPPLIB} -L${.CURDIR}/../lib -lsp
-
-NOMAN=	noman
-
-.include <bsd.prog.mk>

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:53 naddy Exp $
-@pkgcfl jade-*
+@comment $OpenBSD: PLIST,v 1.4 2002/05/28 21:20:11 naddy Exp $
 bin/nsgmls
 bin/sgmlnorm
 bin/spam
 bin/spent
+bin/sx
 include/sp/Allocator.h
 include/sp/ArcEngine.h
 include/sp/Attribute.h
@@ -131,8 +131,9 @@ include/sp/UnivCharsetDesc.h
 include/sp/Vector.cxx
 include/sp/Vector.h
 include/sp/Win32CodingSystem.h
-include/sp/WinInetStorage.h
 include/sp/WinApp.h
+include/sp/WinInetStorage.h
+include/sp/XMLCodingSystem.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
@@ -143,7 +144,6 @@ include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
 lib/libsp.a
-@comment lib/libsp.so.1.4
 share/doc/sp/archform.htm
 share/doc/sp/build.htm
 share/doc/sp/catalog.htm
@@ -159,8 +159,9 @@ share/doc/sp/sgmlnorm.htm
 share/doc/sp/sgmlsout.htm
 share/doc/sp/spam.htm
 share/doc/sp/spent.htm
+share/doc/sp/sx.htm
 share/doc/sp/sysdecl.htm
 share/doc/sp/sysid.htm
-@comment @exec /sbin/ldconfig -m %D/lib
-@dirrm include/sp
+share/doc/sp/xml.htm
 @dirrm share/doc/sp
+@dirrm include/sp
