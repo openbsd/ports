@@ -1,0 +1,15 @@
+--- rec.c.~1~	Thu Mar  7 09:34:43 1996
++++ rec.c	Fri Jul 24 19:25:22 1998
+@@ -55,8 +55,12 @@
+ #endif
+ 		);
+ 	recfname = copystr(buf);
++#if 1
++	rec_fd = mkstemp(recfname);
++#else
+ 	recfname = mktemp(recfname);
+ 	rec_fd = creat(recfname, 0644);
++#endif
+ 	if (rec_fd == -1) {
+ 		complain("Cannot create \"%s\"; recovery disabled.", recfname);
+ 		/*NOTREACHED*/

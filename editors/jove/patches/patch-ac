@@ -1,0 +1,19 @@
+--- abbrev.c.~1~	Thu Mar  7 09:34:41 1996
++++ abbrev.c	Fri Jul 24 19:22:45 1998
+@@ -274,7 +274,16 @@
+ 		"jabbXXXXXX"
+ #endif
+ 		);
++#if 1
++	{
++		int fd = mkstemp(tname);
++		if ( fd == -1 )
++			err( 1, "can't create temp file %s", tname );
++		close( fd );
++	}
++#else
+ 	(void) mktemp(tname);
++#endif
+ 	save_abbrevs(tname);
+ 	setfname(ebuf, tname);
+ 	read_file(tname, NO);
