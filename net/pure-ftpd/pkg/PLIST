@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/01/27 05:58:37 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2002/03/29 03:30:00 brad Exp $
 bin/pure-pw
 bin/pure-pwconvert
 bin/pure-statsdecode
@@ -23,7 +23,7 @@ share/doc/pure-ftpd/README.Configuration-File
 share/doc/pure-ftpd/README.Contrib
 share/doc/pure-ftpd/README.Virtual-Users
 share/doc/pure-ftpd/README.Authentication-Modules
-share/doc/pure-ftpd/poweredby.jpg
+share/doc/pure-ftpd/pure-ftpd.png
 share/examples/pure-ftpd/pure-ftpd.conf.sample
 share/examples/pure-ftpd/xml_python_processors.txt
 share/examples/pure-ftpd/sfv-crc-check.pl

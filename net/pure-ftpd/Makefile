@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2002/03/23 08:51:15 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/29 03:30:00 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-.if ${MACHINE_ARCH} == "sparc"
-BROKEN=		"Broken on sparc"
-.endif
-
-DISTNAME=	pure-ftpd-1.0.10
+DISTNAME=	pure-ftpd-1.0.11
 CATEGORIES=	net
 NEED_VERSION=	1.500
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
+		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
+		ftp://ftp.za.pureftpd.org/pub/pure-ftpd/releases/ \
+		http://ftp.cn.pureftpd.org/pure-ftpd/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= pureftpd
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+= --without-banner
 .endif
 
 DOCS+=	README README.Configuration-File README.Contrib \
-	README.Virtual-Users README.Authentication-Modules poweredby.jpg
+	README.Virtual-Users README.Authentication-Modules pure-ftpd.png
 
 CONTRIB= xml_python_processors.txt sfv-crc-check.pl
 
