@@ -1,6 +1,6 @@
---- xengine.c.orig	Sun Mar  1 15:12:37 1998
-+++ xengine.c	Sun Mar  1 15:40:55 1998
-@@ -29,8 +29,8 @@
+--- xengine.c.orig	Sun Aug 20 15:56:04 2000
++++ xengine.c	Sun Aug 20 15:58:16 2000
+@@ -29,13 +29,13 @@
  
  #define	PI	3.141592654
  
@@ -11,6 +11,12 @@
  
  Widget          toplevel, base, rpm_info, engine;
  GC              gcPiston, gcShaft, gcCylinder, gcRoter, gcBack, gcDep, gcPre, gcEngine;
+ Pixmap          enginePixmap;
+-int             width, height;
++Dimension       width, height;
+ 
+ String          colors[] = {"gray", "lightseagreen", "dimgrey", "forestgreen", "black", "red", "cyan", "firebrick"};
+ 
 @@ -47,7 +47,7 @@
  	Arg             args[10];
  	XtTranslations  newTranslations;
