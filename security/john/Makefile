@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2003/09/27 06:47:52 marcm Exp $
+# $OpenBSD: Makefile,v 1.26 2004/04/16 17:26:16 naddy Exp $
 
 COMMENT=		"extremely fast password cracker"
 
-DISTNAME=		john-1.6.36
+DISTNAME=		john-1.6.37
 CATEGORIES=     	security
 
 HOMEPAGE=		http://www.openwall.com/john/
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.openwall.com/john/dl/
+MASTER_SITES=		${HOMEPAGE}a/
 
 DISTFILES=		${DISTNAME}.tar.gz \
 			john-1.6.tar.gz
@@ -23,9 +23,11 @@ NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
 OLDJOHN=		${WRKDIR}/john-1.6
+MAKE_FLAGS=		CC=${CC} AS=${CC} LD=${CC} \
+			CFLAGS="${CFLAGS} -c"
 
 .if ${MACHINE_ARCH} == "i386"
-ALL_TARGET=		openbsd-x86-any
+ALL_TARGET=		openbsd-x86-any-elf
 .elif ${MACHINE_ARCH} == "sparc"
 ALL_TARGET=		openbsd-sparc
 .elif ${MACHINE_ARCH} == "vax"
