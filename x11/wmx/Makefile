@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2000/12/21 21:20:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2001/04/23 13:20:49 jakob Exp $
 
-DISTNAME=	wmx-6pre6
+COMMENT=	minimal window manager
+
+DISTNAME=	wmx-6
 CATEGORIES=	x11
-NEED_VERSION=	1.305
+NEED_VERSION=	1.363
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 MASTER_SITES=	${HOMEPAGE}
