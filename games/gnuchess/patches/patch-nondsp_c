@@ -1,0 +1,25 @@
+$OpenBSD: patch-nondsp_c,v 1.1 2004/01/09 20:06:43 sturm Exp $
+--- nondsp.c.orig	1998-09-28 08:41:22.000000000 +0200
++++ nondsp.c	2004-01-09 20:33:29.000000000 +0100
+@@ -264,10 +264,10 @@ SetupBoard (void)
+ 
+   NewGame ();
+ 
+-  gets (s);			/* skip "setup" command */
++  fgets (s, 80, stdin);			/* skip "setup" command */
+   for (r = 7; r >= 0; r--)
+     {
+-      gets (s);
++      fgets (s, 80, stdin);
+       for (c = 0; c <= 7; c++)
+ 	{
+ 	  ch = s[c];
+@@ -617,7 +617,7 @@ SelectLevel (CHAR *sx)
+   if (!T[0])
+     {
+       printz (CP[61]);
+-      gets (T);
++      fgets (T, 64, stdin);
+     }
+   strcat (T, "XX");
+   /* skip whitespace */

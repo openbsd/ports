@@ -1,6 +1,7 @@
---- gnuan.c.orig	Sun Sep 27 23:41:21 1998
-+++ gnuan.c	Sun Feb  7 19:23:01 1999
-@@ -1348,12 +1348,12 @@
+$OpenBSD: patch-gnuan_c,v 1.1 2004/01/09 20:06:43 sturm Exp $
+--- gnuan.c.orig	1999-04-03 05:58:53.000000000 +0200
++++ gnuan.c	2004-01-09 20:33:29.000000000 +0100
+@@ -1348,12 +1348,12 @@ InputCommand (void)
      fpout = stderr;
      fprintf (fpout, "Input the file with the algebraic moves of the game.\n");
      fflush (fpout);
@@ -15,7 +16,7 @@
  	  search_depth = atoi (inbuf);
  	  if (search_depth < 0)
  	    {
-@@ -1369,7 +1369,7 @@
+@@ -1369,7 +1369,7 @@ InputCommand (void)
      do
        {
  	  fprintf (fpout, "Input the maximum number of minutes per move you want to use.\n");
@@ -24,7 +25,7 @@
  	  max_minutes = atoi (inbuf);
  	  if (max_minutes < 0)
  	    {
-@@ -1379,7 +1379,7 @@
+@@ -1379,7 +1379,7 @@ InputCommand (void)
        }
      while ((max_minutes + max_seconds) < 1);
      fprintf (fpout, "Post the search results(y/n).\n");
@@ -33,7 +34,7 @@
      if (inbuf[0] == 'y')
  	flag.post = true;
      else
-@@ -1559,7 +1559,7 @@
+@@ -1559,7 +1559,7 @@ InputCommand (void)
  	      while (true)
  		{
  		    printf (">");

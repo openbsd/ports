@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2004/01/09 20:06:43 sturm Exp $
+--- Makefile.in.orig	1998-09-28 08:41:13.000000000 +0200
++++ Makefile.in	2004-01-09 21:02:37.000000000 +0100
+@@ -43,7 +43,8 @@ LANGF= -DLANGFILE=\"$(LIBDIR)/gnuchess.l
+ 
+ # The hashfile is a record of positions seen. It is used by
+ # GNU Chess to avoid making the same mistakes, a form of learning.
+-HASH=	-DHASHFILE=\"$(LIBDIR)/gnuchess.hash\"
++# desturbs systrace and is not used due to missing permissions anyways
++#HASH=	-DHASHFILE=\"$(LIBDIR)/gnuchess.hash\"
+ 
+ # The "book" is a record of the first few moves, for playing good
+ # moves easily and quickly, saving time, and irritating the human
