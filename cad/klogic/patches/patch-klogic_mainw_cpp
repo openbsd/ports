@@ -1,0 +1,12 @@
+$OpenBSD: patch-klogic_mainw_cpp,v 1.1 2004/05/15 14:18:59 naddy Exp $
+--- klogic/mainw.cpp.orig	2004-05-15 14:43:47.000000000 +0200
++++ klogic/mainw.cpp	2004-05-15 14:44:02.000000000 +0200
+@@ -82,7 +82,7 @@ void MainWidget::setPATH(KApplication *a
+ /* methods of class MainWidget                     */
+ /***************************************************/
+ MainWidget::MainWidget(KApplication *_app, const char *file)
+-	:KMainWindow(NULL)
++	:KMainWindow(NULL, file)
+ {
+ 	app = _app;
+ 	setPATH(app);
