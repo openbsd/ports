@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/06/20 20:26:02 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/08/25 19:07:14 jakob Exp $
 lib/libsocks.la
 lib/libsocks.a
 %%SHARED%%
@@ -6,6 +6,6 @@ man/man5/sockd.conf.5
 man/man5/socks.conf.5
 man/man8/sockd.8
 sbin/sockd
-share/examples/socks/sockd.conf
-share/examples/socks/socks.conf
-@dirrm share/examples/socks
+share/examples/dante/sockd.conf
+share/examples/dante/socks.conf
+@dirrm share/examples/dante

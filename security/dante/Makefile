@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/07/04 01:29:29 krw Exp $
+# $OpenBSD: Makefile,v 1.10 2000/08/25 19:07:12 jakob Exp $
 
 DISTNAME=	dante-1.1.2
 CATEGORIES=	security
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/socks
-	${INSTALL_DATA} ${WRKSRC}/example/*.conf ${PREFIX}/share/examples/socks
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dante
+	${INSTALL_DATA} ${WRKSRC}/example/*.conf ${PREFIX}/share/examples/dante
 
 .include <bsd.port.mk>
