@@ -68,7 +68,6 @@ REGRESS_FLAGS+=EXTRA_RUNTEST_OPTS="--output-summary=${REGRESS_RESULT}"
 # where the first compilers will be built
 STAGE0=		${WRKDIR}/ghc-${BOOTVER}
 
-YACC?=		/usr/bin/yacc
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu dest
 CONFIGURE_ARGS=--with-ghc=${STAGE0}/ghc/driver/ghc-inplace
