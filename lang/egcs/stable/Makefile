@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2002/09/17 12:56:19 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2002/09/17 22:16:25 todd Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -141,6 +141,9 @@ MASTER_SITES=${SITES:S/%DATE%/${LATEST_DATE}/}
 #### 
 # Patch section
 
+ac_dirs=gcc libiberty libstdc++-v3 libf2c/libI77 libffi fastjar libjava
+rm_dirs=zlib texinfo #boehm-gc
+
 # get openbsd configuration files where they should be
 post-patch:
 #	cp -R ${FILESDIR}/config/* ${WRKSRC}
@@ -148,16 +151,11 @@ post-patch:
 	cd ${WRKSRC} && contrib/gcc_update --touch
 # rebuild configure files after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
-	cd ${WRKSRC}/gcc && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libiberty && PATH=${PORTPATH} autoconf
 	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoheader
-	cd ${WRKSRC}/libstdc++-v3 && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libf2c/libI77 && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libffi && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/fastjar && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC}/libjava && PATH=${PORTPATH} autoconf
-	cd ${WRKSRC} && rm -rf texinfo
-	cd ${WRKSRC} && rm -rf zlib
+.for ac_dir in ${ac_dirs}
+	cd ${WRKSRC}/${ac_dir} && PATH=${PORTPATH} autoconf
+.endfor
+	cd ${WRKSRC} && rm -rf ${rm_dirs}
 
 
 
@@ -215,6 +213,10 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}
 
 .if defined(MAKE_JAVA) && ${MAKE_JAVA:L} == "yes"
 CONFIGURE_ARGS+=--enable-sjlj-exceptions
+
+# For boehm-gc
+#CONFIGURE_ENV+= LDFLAGS="${LDFLAGS} -L/usr/local/lib -lgc"
+#CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS} -I/usr/local/include"
 .endif
 
 
