@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_SH,v 1.1 2004/01/14 21:06:19 sturm Exp $
+--- Makefile.SH.orig	2004-01-14 21:55:17.000000000 +0100
++++ Makefile.SH	2004-01-14 21:57:29.000000000 +0100
+@@ -223,17 +223,17 @@ $(h):
+ install: $(public) $(inewsexe) $(private) $(manpages) myinstall
+ # won't work with csh
+ 	export PATH || false # stop the make unless we are compatible
+-	- ./makedir `./filexp $(rnbin)`
++	- $(BSD_INSTALL_DATA_DIR) `./filexp $(rnbin)`
+ 	./myinstall -sox `./filexp $(rnbin)` $(public_backup)
+ 	./myinstall -dox `./filexp $(rnbin)` $(public_diff)
+ 	- if test $(installfilexp) = Rnfilexp; then\
+  ./myinstall -xf Rnfilexp `./filexp $(rnbin)` ./filexp; fi
+-	- ./makedir `./filexp $(rnlib)`
++	- $(BSD_INSTALL_DATA_DIR) `./filexp $(rnlib)`
+ 	- chmod o+r `./filexp $(rnlib)`
+ #INEWS	./myinstall -sox `./filexp $(inewsbin)` inews$(exe)
+ 	./myinstall -x   `./filexp $(rnlib)`    $(private_blast)
+ 	- if test "X$(mansrc)" != X -a "X`pwd`" != X`./filexp $(mansrc)`; then\
+-  ./makedir `./filexp $(mansrc)`;\
++  $(BSD_INSTALL_DATA_DIR) `./filexp $(mansrc)`;\
+   for page in $(manpages); do\
+    page=`basename $$page`;\
+    dest=$(mansrc)/`basename $$page .1`.$(manext);\
