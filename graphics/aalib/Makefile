@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2002/08/25 23:08:40 brad Exp $
-# $FreeBSD: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/06 01:15:10 margarida Exp $
 
 COMMENT=	"ascii art library"
 
 DISTNAME=	aalib-1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://openbsd.comstyle.com/pub/brad/source/
+
+HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
