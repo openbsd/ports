@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/10/10 00:40:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/10/22 15:28:18 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -77,7 +77,7 @@ do-install:
 	@for file in ${MAPLE_DIR}/man/man1/*; do \
 		ln -s ${TRUEMAPLE_DIR}/man/man1/`basename $$file` ${PREFIX}/man/man1; \
 	done
-	@cd ${MAPLE_DIR} && cat ${PATCHDIR}/patch-*| patch -s && \
+	@cd ${MAPLE_DIR} && cat ${PATCHDIR}/install-*| patch -s && \
 		rm ${MAPLE_DIR}/bin/*.orig
 	@${INSTALL_PROGRAM} ${WRKBUILD}/resolv_display ${MAPLE_DIR}/bin
 

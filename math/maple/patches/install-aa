@@ -1,3 +1,4 @@
+$OpenBSD: install-aa,v 1.1 2000/10/22 15:28:19 espie Exp $
 --- bin/maple.system.type.orig	Sat May 22 01:23:16 1999
 +++ bin/maple.system.type	Sat May 22 01:28:24 1999
 @@ -17,6 +17,14 @@
