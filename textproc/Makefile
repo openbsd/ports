@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2000/09/04 06:23:01 matthieu Exp $
+# $OpenBSD: Makefile,v 1.31 2000/09/12 12:14:01 avsm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += rman
      SUBDIR += rxp
      SUBDIR += sgmlformat
+     SUBDIR += sablotron
      SUBDIR += sp
      SUBDIR += spiff
      SUBDIR += texi2html
