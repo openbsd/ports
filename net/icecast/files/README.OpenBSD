@@ -17,7 +17,7 @@ privileges to an unprivileged account.
      I suggest something between 200 and 499.
 
      # useradd -c "Icecast Server" -d /nonexistent -g =uid \
-           -s /sbin/nologin -u 200 _icecast
+           -s /sbin/nologin -u 400 _icecast
 
   3. Create a working directory for Icecast.
 
@@ -27,7 +27,7 @@ privileges to an unprivileged account.
 
      # cp -R ##PREFIX##/share/examples/icecast/* /var/icecast
 
-  5. Create Icecast's log directory and logfiles, make them accessible
+  5. Create Icecast's log directory and -files, make them accessible
      to the Icecast user.
 
      # cd /var/icecast
@@ -68,7 +68,7 @@ privileges to an unprivileged account.
      http://www.oddsock.org/
      Remember to give your mountpoint a proper name - MP3 streams should
      use no extension, Ogg Vorbis streams should use .ogg, so that dumb or
-     broken players can send the stream to the correct decoder.
+     broken players can send the stream to the appropriate decoder.
      For starters, you should let the source client set the mountpoint;
      pre-defined mountpoints are an advanced feature and not necessary
      for basic streaming.

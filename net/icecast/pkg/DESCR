@@ -11,11 +11,16 @@ It was designed to be highly efficient and have low memory requirements.
 Additional features are, among others:
 
    * a web-based administration interface including simple file serving
+     (disabled by default on OpenBSD) - seeking in such served files is
+     possible
    * supports listing in stream directories
    * new relay system
-
-After many years of development, testing and even production use,
-Icecast v2 is also very stable.
+   * listener authentication
+   * multi-level fallbacks
+   * "burst-on-connect" to significantly reduce buffering latency on the
+     client side
+   * Shoutcast-style client support (allows use of Shoutcast DSP and
+     NSV support using their native tools)
 
 Security features include chroot()ing and dropping privileges, if
 configured to do so.

@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
---- Makefile.in.orig	2004-01-07 22:52:09.000000000 +0100
-+++ Makefile.in	2004-01-08 15:49:28.000000000 +0100
-@@ -120,7 +120,7 @@ EXTRA_DIST = HACKING m4/acx_pthread.m4 m
+$OpenBSD: patch-Makefile_in,v 1.2 2004/12/31 13:09:10 sturm Exp $
+--- Makefile.in.orig	Tue Dec 21 21:09:16 2004
++++ Makefile.in	Tue Dec 21 21:09:48 2004
+@@ -133,7 +133,7 @@ EXTRA_DIST = HACKING m4/acx_pthread.m4 m
  
  
  docdir = $(datadir)/doc/$(PACKAGE)
--doc_DATA = README AUTHORS COPYING NEWS TODO
+-doc_DATA = README AUTHORS COPYING NEWS TODO ChangeLog
 +doc_DATA = AUTHORS NEWS
  subdir = .
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:17:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/12/31 13:09:10 sturm Exp $
 bin/icecast
 share/doc/icecast/
 share/doc/icecast/AUTHORS
@@ -10,6 +10,7 @@ share/doc/icecast/icecast2_config_file.html
 share/doc/icecast/icecast2_faq.html
 share/doc/icecast/icecast2_glossary.html
 share/doc/icecast/icecast2_introduction.html
+share/doc/icecast/icecast2_listenerauth.html
 share/doc/icecast/icecast2_relay.html
 share/doc/icecast/icecast2_stats.html
 share/doc/icecast/icecast2_win32.html
@@ -19,10 +20,22 @@ share/examples/icecast/
 share/examples/icecast/admin/
 share/examples/icecast/admin/listclients.xsl
 share/examples/icecast/admin/listmounts.xsl
+share/examples/icecast/admin/manageauth.xsl
 share/examples/icecast/admin/moveclients.xsl
 share/examples/icecast/admin/response.xsl
 share/examples/icecast/admin/stats.xsl
+share/examples/icecast/admin/updatemetadata.xsl
 share/examples/icecast/icecast.xml.dist
+share/examples/icecast/icecast_minimal.xml.dist
+share/examples/icecast/icecast_shoutcast_compat.xml.dist
 share/examples/icecast/web/
+share/examples/icecast/web/auth.xsl
+share/examples/icecast/web/corner_bottomleft.jpg
+share/examples/icecast/web/corner_bottomright.jpg
+share/examples/icecast/web/corner_topleft.jpg
+share/examples/icecast/web/corner_topright.jpg
+share/examples/icecast/web/icecast.png
+share/examples/icecast/web/key.gif
 share/examples/icecast/web/status.xsl
 share/examples/icecast/web/status2.xsl
+share/examples/icecast/web/style.css

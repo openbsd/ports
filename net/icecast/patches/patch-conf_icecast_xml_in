@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_icecast_xml_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
---- conf/icecast.xml.in.orig	2004-01-08 15:13:21.000000000 +0100
-+++ conf/icecast.xml.in	2004-01-26 08:33:24.000000000 +0100
-@@ -78,7 +78,7 @@
+$OpenBSD: patch-conf_icecast_xml_in,v 1.2 2004/12/31 13:09:10 sturm Exp $
+--- conf/icecast.xml.in.orig	Tue Dec 21 18:17:55 2004
++++ conf/icecast.xml.in	Tue Dec 21 18:20:06 2004
+@@ -97,7 +97,7 @@
      </mount>
      -->
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-conf_icecast_xml_in,v 1.1 2004/02/02 19:32:37 fgsch Exp $
  
      <paths>
  		<!-- basedir is only used if chroot is enabled -->
-@@ -89,7 +89,7 @@
+@@ -108,7 +108,7 @@
          <logdir>@localstatedir@/log/@PACKAGE@</logdir>
          <webroot>@pkgdatadir@/web</webroot>
          <adminroot>@pkgdatadir@/admin</adminroot>
