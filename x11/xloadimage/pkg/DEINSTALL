@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2001/07/10 21:12:01 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/03/08 11:50:57 naddy Exp $
 #
 # De-installation setup of xloadimage
 
@@ -8,7 +8,7 @@
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=${SYSCONFDIR:-/etc}/xloadimagerc
+CONFIG_FILE=${SYSCONFDIR}/xloadimagerc
 
 # Function: tell the user what they need to do to delete the port completely
 #
