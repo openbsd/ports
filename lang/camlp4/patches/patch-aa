@@ -1,0 +1,13 @@
+--- config/Makefile.tpl.orig	Sun Nov 21 21:49:11 1999
++++ config/Makefile.tpl	Sun Nov 21 21:49:20 1999
+@@ -2,8 +2,8 @@
+ 
+ EXE=
+ COMP=../tools/compile
+-OCAMLC=ocamlc.opt
+-OCAMLOPT=ocamlopt.opt
++OCAMLC=ocamlc
++OCAMLOPT=ocamlopt
+ OCAMLCFLAGS=
+ MKDIR=mkdir -p
+ 
