@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2000/03/07 08:18:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.5 2000/03/07 08:25:52 jakob Exp $
 
 DISTNAME=	imap-4.7b
 PKGNAME=	imap-uw-4.7b
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
 		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
 EXTRACT_SUFX=	.tar.Z
+
+FAKE=	yes
 
 ALL_TARGET=	bso
 
