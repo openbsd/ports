@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 1999/08/01 15:44:34 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/08/18 00:14:17 brad Exp $
 
-DISTNAME=	curl-5.9.1
+DISTNAME=	curl-5.10
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
-		ftp://ftp.all.de/pub2/unix/network/www/curl/ \
-		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/ \
-		ftp://ftp.win.or.jp/pub/network/www/misc/
+MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
+		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
+		ftp://ftp.win.or.jp/pub/network/www/misc/ \
+		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 
 MAINTAINER=	markus.friedl@informatik.uni-erlangen.de
 
@@ -19,8 +19,7 @@ CURLDOCDIR=	${PREFIX}/share/doc/curl
 CURLDOCFILES=	CHANGES INSTALL LEGAL MPL-1.0.txt README RESOURCES TODO
 
 post-install:
-	${INSTALL_MAN} $(WRKSRC)/curl.1 $(PREFIX)/man/man1
-	${MKDIR} ${CURLDOCDIR}
+	@${MKDIR} ${CURLDOCDIR}
 	@set -e; for f in ${CURLDOCFILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${CURLDOCDIR}/; \
 	done
