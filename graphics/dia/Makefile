@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2001/07/20 16:22:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2001/10/05 18:27:35 obecian Exp $
 
 COMMENT=	visio-like technical drawing
 
@@ -6,7 +6,7 @@ DISTNAME=	dia-0.88.1
 CATEGORIES=	graphics
 NEED_VERSION=	1.409
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= stable/sources/dia
+MASTER_SITE_SUBDIR=	stable/sources/dia
 
 HOMEPAGE=	http://www.lysator.liu.se/~alla/dia/
 
@@ -22,11 +22,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static --disable-gnome
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GMAKE=		Yes
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	--enable-static --disable-gnome
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig
 
 .include <bsd.port.mk>
