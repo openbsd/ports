@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/07 03:12:57 lebel Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/09 01:12:21 lebel Exp $
 
 COMMENT=		"window manager theme utility"
 
-DISTNAME=		wmtheme-1.2.8
+DISTNAME=		wmtheme-1.2.9
 CATEGORIES=		x11 
 NEED_VERSION=		1.402
 

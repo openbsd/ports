@@ -1,25 +1,16 @@
-$OpenBSD: patch-wmtheme,v 1.1.1.1 2001/09/07 03:12:57 lebel Exp $
---- wmtheme.orig	Fri Aug 10 17:06:50 2001
-+++ wmtheme	Thu Sep  6 13:20:03 2001
-@@ -1368,7 +1368,7 @@ sub getuserchoice {
+$OpenBSD: patch-wmtheme,v 1.2 2001/09/09 01:12:21 lebel Exp $
+--- wmtheme.orig	Thu Sep  6 19:40:05 2001
++++ wmtheme	Sat Sep  8 21:04:15 2001
+@@ -1396,7 +1396,7 @@ sub screensize {
+   my ($rows, $cols);
+ 
+   $rows = ($sttyout =~ /\brows (\d+)/ and $1 > 4) ? $1 : 24;
+-  $cols = ($sttyout =~ /\bcolumns (\d+)/ and $1 > 49) ? $1 : 50;
++  $cols = ($sttyout =~ /\bcolumns (\d+)/ and $1 > 79) ? $1 : 80;
+   ($rows, $cols);
  }
  
- sub screensize {
--  my ($rows, $cols) = (24, 50);
-+  my ($rows, $cols) = (24, 80);
-   my $sttyout = `stty -a`;
- 
-   if ($sttyout =~ /\brows (\d+)/) {
-@@ -1376,7 +1376,7 @@ sub screensize {
-   }
- 
-   if ($sttyout =~ /\bcolumns (\d+)/) {
--    $cols = $1 < 50 ? 50 : $1;
-+    $cols = $1 < 80 ? 80 : $1;
-   }
- 
-   ($rows, $cols);
-@@ -1570,7 +1570,7 @@ sub getfiletypes {
+@@ -1585,7 +1585,7 @@ sub getfiletypes {
    $cleanups{getfiletypes} = $file_input;
  
    stowfile($file_input, join("\n", @files) . "\n");
