@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2000/05/18 18:37:59 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/06/28 13:51:24 espie Exp $
 
 DISTNAME=ruby-1.4.4
 CATEGORIES = lang
+NEED_VERSION=	1.308
 MASTER_SITES=ftp://ftp.netlab.co.jp/pub/lang/ruby/ \
     ftp://ftp.iij.ad.jp/pub/lang/ruby/ \
     ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/ \
@@ -25,9 +26,8 @@ NO_CDROM="st.[ch] is rumored to be public domain, copyright unclear"
 LIB_DEPENDS=tcl83.:${PORTSDIR}/lang/tcl/8.3 \
             tk83.:${PORTSDIR}/x11/tk/8.3
 
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=	concurrent
-FAKE=		Yes
 
 CONFIGURE_ENV=YACC=yacc
 CONFIGURE_ARGS=${CONFIGURE_SHARED} \
@@ -51,7 +51,8 @@ post-install:
 	tar -s/ruby-man-1.4/ruby/ -zxf ${FULLDISTDIR}/${MANARCH}
 
 
-.include <bsd.port.mk>
+REV=1.4
+SUB=${ARCH}-openbsd${OSREV}
+SUBST_VARS=SUB REV
 
-# Need to do this late, because I want to substitute the fragment as well.
-SED_PLIST+=|sed -e 's/REV/1.4/' -e 's/SUB/${ARCH}-openbsd${OSREV}/'
+.include <bsd.port.mk>

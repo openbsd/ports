@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/10 18:11:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2000/06/28 13:51:23 espie Exp $
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
-NEED_VERSION=	1.270
+NEED_VERSION=	1.302
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz

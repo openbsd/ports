@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST-tools,v 1.2 2000/06/28 13:51:24 espie Exp $
 @pkgdep python-1.5.2-*
 lib/python1.5/Tools/README
 lib/python1.5/Tools/audiopy/README

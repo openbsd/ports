@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.sed,v 1.1 2000/05/18 18:38:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.1 2000/06/28 13:51:25 espie Exp $
 bin/ruby
 @exec mkdir -p %D/lib/ruby/site_ruby/REV/SUB
 lib/ruby/REV/English.rb
