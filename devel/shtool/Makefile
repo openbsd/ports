@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 1999/06/02 15:18:10 brad Exp $
+# $OpenBSD: Makefile,v 1.9 1999/07/04 21:35:13 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1999/04/29 15:32:56 rse Exp $
 
-DISTNAME=	shtool-1.2.9
+DISTNAME=	shtool-1.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.engelschall.com/sw/shtool/ \
-		ftp://ftp.engelschall.com/sw/shtool/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	shtool
 
 MAINTAINER=	brad@openbsd.org
 
