@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2000/02/10 23:14:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/03/23 00:47:41 turan Exp $
 # $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 
 DISTNAME=	tcpshow-1.74
@@ -8,6 +8,11 @@ DISTFILES=	tcpshow.c tcpshow.1
 NEED_VERSION=	1.191
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no fee"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no fee"
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=	${WRKDIR}
 EXTRACT_CMD=	cp	

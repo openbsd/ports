@@ -3,7 +3,7 @@
 # Date created:		12 Nov 1999
 # Whom:			dugsong@monkey.org
 #
-# $OpenBSD: Makefile,v 1.2 2000/02/11 00:37:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/03/23 00:47:39 turan Exp $
 
 PKGNAME=	nsping-0.8
 
@@ -15,6 +15,11 @@ MASTER_SITES=	http://www.enteract.com/~tqbf/
 NEED_VERSION=	1.191
 
 MAINTAINER=	dugsong@monkey.org
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 

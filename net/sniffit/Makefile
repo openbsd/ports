@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/02/11 01:10:10 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/23 00:47:40 turan Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/04/04 04:58:25 obrien Exp $
 
 DISTNAME=	sniffit.0.3.5
@@ -13,6 +13,11 @@ BROKEN=		"Currently does not build on Alpha"
 .endif
 
 MAINTAINER=	ports@openbsd.org
+
+PERMIT_PACKAGE_CDROM=	"no obvious license"
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	"no obvious license"
+PERMIT_DISTFILES_FTP=	Yes
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=
