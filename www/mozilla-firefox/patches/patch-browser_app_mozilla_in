@@ -1,0 +1,24 @@
+$OpenBSD: patch-browser_app_mozilla_in,v 1.1.1.1 2004/02/15 19:37:25 wilfried Exp $
+--- browser/app/mozilla.in.orig	2003-07-26 09:51:05.000000000 +0200
++++ browser/app/mozilla.in	2004-01-19 15:19:46.000000000 +0100
+@@ -33,6 +33,7 @@
+ #set -x
+ 
+ moz_libdir=%MOZAPPDIR%
++MOZ_PLUGIN_PATH=_LOCALBASE_/lib/mozilla-plugins
+ MRE_HOME=%MREDIR%
+ 
+ # Use run-mozilla.sh in the current dir if it exists
+@@ -106,7 +107,11 @@ do
+   esac
+ done
+ 
+-export MRE_HOME
++if [ `_X11BASE_/bin/fc-list | wc -l` -eq 0 ]
++then export GDK_USE_XFT=0
++fi
++
++export MOZ_PLUGIN_PATH MRE_HOME
+ eval "set -- $moreargs"
+ if [ $debugging = 1 ]
+ then
