@@ -3,7 +3,7 @@
 # Date created:		1998-Jan-16
 # Whom:			dugsong@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1999/03/10 04:40:21 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/10 04:51:32 marc Exp $
 #
 
 PKGNAME=		firewalk-0.7
@@ -11,7 +11,7 @@ DISTNAME=		firewalk-final-0.7
 CATEGORIES=     	net
 
 BROKEN=			"es2.net nameserver(s) not working"
-MIRROR_DISTFILES=	no
+MIRROR_DISTFILE=	no
 
 MASTER_SITES=		http://www.es2.net/research/firewalk/
 
