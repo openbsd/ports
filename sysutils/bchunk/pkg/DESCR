@@ -1,0 +1,14 @@
+binchunker converts a CD image in a ".bin / .cue" format (sometimes
+".raw / .cue") to a set of .iso and .cdr tracks.
+
+The bin/cue format is used by some non-Unix cd-writing software, but is
+not supported on most other cd-writing programs.
+
+The .iso track contains an ISO file system, which can be vnconfiged and
+mounted, or written on a CD-R using cdrecord.
+
+The .cdr tracks are in the native CD audio format. They can be either
+written on a CD-R using cdrecord -audio, or converted to WAV (or any
+other sound format for that matter) using sox.
+
+WWW: ${HOMEPAGE}

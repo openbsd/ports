@@ -1,0 +1,25 @@
+$OpenBSD: patch-bchunk_1,v 1.1.1.1 2001/12/14 01:38:08 naddy Exp $
+--- bchunk.1.orig	Tue Aug  7 13:20:31 2001
++++ bchunk.1	Wed Dec 12 18:03:28 2001
+@@ -25,6 +25,12 @@ The .cdr tracks are in the native CD aud
+ be either written on a CD-R using cdrecord -audio, or converted
+ to WAV (or any other sound format for that matter) using
+ sox.
++.LP
++It is advisable to edit the .cue file to either MODE2/2352/2048 or
++MODE2/2352/2324 depending on whether an ISO filesystem or a VCD is
++desired, respectively.
++The format itself does not contain this feature and in an ambiguous
++case it can only guess.
+ .SH OPTIONS
+ .TP 10
+ .BI \-v
+@@ -51,7 +57,7 @@ Raw CD image file
+ TOC (Track index, Table Of Contents) file
+ .TP 5
+ .B *.iso
+-Tracks in ISO9110 CD filesystem format. Can be either written on a
++Tracks in ISO9660 CD filesystem format. Can be either written on a
+ CD-R using cdrecord, or mounted (on Linux platforms at least)
+ through a loop device ('mount track.iso /mnt/cdrom -o loop=/dev/loop0,blocksize=1024').
+ .TP 5
