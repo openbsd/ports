@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 1999/04/04 21:16:49 brad Exp $
+# $OpenBSD: Makefile,v 1.12 1999/04/22 21:54:34 brad Exp $
 
-DISTNAME=	glib-1.2.1
+DISTNAME=	glib-1.2.2
 CATEGORIES=	devel
 
 NEED_VERSION=	1.73
@@ -44,7 +44,7 @@ post-extract:
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/aclocal
 	@${INSTALL_DATA} ${WRKSRC}/glib.m4 ${LOCALBASE}/share/aclocal/
-	test -f ${PREFIX}/info/dir || \
+	@test -f ${PREFIX}/info/dir || \
 		sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir
 	@install-info ${PREFIX}/info/glib.info ${PREFIX}/info/dir
 	${LDCONFIG} -m ${PREFIX}/lib
