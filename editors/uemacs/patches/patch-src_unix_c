@@ -1,0 +1,87 @@
+$OpenBSD: patch-src_unix_c,v 1.1 2004/01/06 03:29:09 espie Exp $
+--- src/unix.c.orig	1995-11-18 16:36:58.000000000 +0100
++++ src/unix.c	2004-01-06 04:20:22.000000000 +0100
+@@ -81,7 +81,7 @@ int scnothing()
+ }
+ 
+ /** Only compile for UNIX machines **/
+-#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS)
++#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) || OPENBSD
+ 
+ /** Include files **/
+ #include "eproto.h"			/* Function definitions		*/
+@@ -98,7 +98,7 @@ int scnothing()
+ #include <sys/ioctl.h>			/* I/O control definitions	*/
+ 
+ /** Additional include files **/
+-#if	FREEBSD
++#if	FREEBSD || OPENBSD
+ #define TERMIOS 1
+ #include <sys/time.h>
+ #undef	BSD
+@@ -109,9 +109,9 @@ int scnothing()
+ #if (BSD && !TERMIOS)
+ #include <sys/time.h>			/* Timer definitions		*/
+ #endif /* (BSD && !TERMIOS) */
+-#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || AIX
++#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || AIX || OPENBSD
+ #include <signal.h>			/* Signal definitions		*/
+-#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) */
++#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || OPENBSD */
+ #if USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX
+ #include <termio.h>			/* Terminal I/O definitions	*/
+ #endif /* USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX */
+@@ -126,7 +126,7 @@ int scnothing()
+ 
+ /** Completion include files **/
+ /** Directory accessing: Try and figure this out... if you can! **/
+-#if ((BSD || FREEBSD) && !TERMIOS)
++#if ((BSD || FREEBSD || OPENBSD) && !TERMIOS)
+ #include <sys/dir.h>			/* Directory entry definitions	*/
+ #define DIRENTRY	direct
+ #endif /* (BSD && !TERMIOS) */
+@@ -485,7 +485,7 @@ int ttopen()
+ /** Close terminal device **/
+ int ttclose()
+ {
+-#if ((AIX == 0) && (TERMIOS == 0)) || (FREEBSD == 1)
++#if ((AIX == 0) && (TERMIOS == 0)) || FREEBSD || OPENBSD
+ 	/* Restore original terminal modes */
+ 	if (reset != (char*)NULL)
+ 		write(1, reset, strlen(reset));
+@@ -1202,7 +1202,7 @@ char * cmd;				/* Palette command		*/
+ 	return(0);
+ }
+ 
+-#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS)
++#if BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || OPENBSD
+ /* Surely more than just BSD systems do this */
+ 
+ /** Perform a stop signal **/
+@@ -1225,7 +1225,7 @@ int bktoshell(f, n)
+ 	return(0);
+ }
+ 
+-#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) */
++#endif /* BSD || FREEBSD || SUN || HPUX8 || HPUX9 || (AVVION || TERMIOS) || OPENBSD */
+ 
+ /** Get time of day **/
+ char * timeset()
+@@ -1327,9 +1327,9 @@ int n;					/* Argument count		*/
+ 	/* Get shell path */
+ 	sh = getenv("SHELL");
+ 	if (!sh)
+-#if BSD || FREEBSD || SUN
++#if BSD || FREEBSD || SUN || OPENBSD
+ 		sh = "/bin/csh";
+-#endif /* BSD || FREEBSD || SUN */
++#endif /* BSD || FREEBSD || SUN || OPENBSD */
+ #if USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || XENIX || (AVVION || TERMIOS)
+ 		sh = "/bin/sh";
+ #endif /* USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || XENIX || (AVVION || TERMIOS) */
+@@ -1726,4 +1726,4 @@ void winch_new_size()
+ }
+ #endif
+ 
+-#endif /* BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) */
++#endif /* BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || (AVVION || TERMIOS) || OPENBSD */

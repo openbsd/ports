@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_lock_c,v 1.1 2004/01/06 03:29:09 espie Exp $
+--- src/lock.c.orig	1995-11-19 03:09:22.000000000 +0100
++++ src/lock.c	2004-01-06 04:24:14.000000000 +0100
+@@ -10,7 +10,7 @@
+ 
+ #if	FILOCK
+ 
+-#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX
++#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX || OPENBSD
+ #include <sys/errno.h>
+ extern int sys_nerr;		/* number of system error messages defined */
+ extern char *sys_errlist[];	/* list of message texts */
+@@ -158,7 +158,7 @@ char *errstr;		/* lock error string to p
+ 
+ 	strcpy(obuf, errstr);
+ 	strcat(obuf, " - ");
+-#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX
++#if	BSD || FREEBSD || WMCS || SUN || XENIX || HPUX8 || HPUX9 || AVIION || USG || AIX || AUX || OPENBSD
+ 	if (errno < sys_nerr)
+ 		strcat(obuf, sys_errlist[errno]);
+ 	else

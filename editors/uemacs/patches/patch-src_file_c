@@ -1,0 +1,56 @@
+$OpenBSD: patch-src_file_c,v 1.1 2004/01/06 03:29:09 espie Exp $
+--- src/file.c.orig	1995-11-18 16:36:58.000000000 +0100
++++ src/file.c	2004-01-06 04:20:22.000000000 +0100
+@@ -11,7 +11,7 @@
+ #include	"eproto.h"
+ #include	"edef.h"
+ #include	"elang.h"
+-#if	BSD | FREEBSD | SUN | USG | AIX
++#if	BSD || FREEBSD || SUN || USG || AIX || OPENBSD
+ #include	<sys/types.h>
+ #include	<sys/stat.h>
+ #endif
+@@ -323,7 +323,7 @@ int	lockfl;		/* check for file locks? */
+ 	}
+ 	ffclose();				/* Ignore errors.	*/
+ 
+-#if	BSD || FREEBSD || USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVION
++#if	BSD || FREEBSD || USG || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVION || OPENBSD
+ 	/* if we don't have write priviledges, make this in VIEW mode */
+ 	if (s !=FIOERR && s != FIOFNF) {
+ 		if (access(fname, 2 /* W_OK*/) != 0)
+@@ -428,7 +428,7 @@ char *fname;
+ 	while (cp1!=&fname[0] && cp1[-1]!=':' && cp1[-1]!='\\'&&cp1[-1]!='/')
+ 		--cp1;
+ #endif
+-#if	USG | AIX | AUX | SMOS | HPUX8 | HPUX9 | BSD | FREEBSD | SUN | XENIX | AVIION
++#if	USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || BSD || FREEBSD || SUN || XENIX || AVIION || OPENBSD
+ 	while (cp1!=&fname[0] && cp1[-1]!='/')
+ 		--cp1;
+ #endif
+@@ -600,7 +600,7 @@ char *mode;	/* mode to open file (w = wr
+ 	int sflag;		/* are we safe saving? */
+ 	char tname[NSTRING];	/* temporary file name */
+ 	char buf[NSTRING];	/* message buffer */
+-#if	BSD | FREEBSD | SUN | XENIX | USG | AIX
++#if	BSD || FREEBSD || SUN || XENIX || USG || AIX || OPENBSD
+ 	struct stat st;		/* we need info about the file permisions */
+ #endif
+ 
+@@ -680,14 +680,14 @@ char *mode;	/* mode to open file (w = wr
+ 			strcat(buf, "s");
+ 
+ 		if (sflag) {
+-#if	BSD | FREEBSD | SUN | XENIX | USG | AIX
++#if	BSD || FREEBSD || SUN || XENIX || USG || AIX || OPENBSD
+ 			/* get the permisions on the original file */
+ 			stat(fn, &st);
+ #endif
+ 			/* erase original file */
+ 			/* rename temporary file to original name */
+ 			if (unlink(fn) == 0 && rename(tname, fn) == 0) {
+-#if	BSD | FREEBSD | SUN | XENIX | USG | AIX
++#if	BSD || FREEBSD || SUN || XENIX || USG || AIX || OPENBSD
+ 				chown(fn, (int)st.st_uid, (int)st.st_gid);
+ 				chmod(fn, (int)st.st_mode);
+ #else

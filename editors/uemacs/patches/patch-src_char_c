@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_char_c,v 1.1 2004/01/06 03:29:09 espie Exp $
+--- src/char.c.orig	1995-11-19 03:09:20.000000000 +0100
++++ src/char.c	2004-01-06 04:20:22.000000000 +0100
+@@ -142,14 +142,14 @@ VOID PASCAL NEAR initchars()	/* initiali
+ 		lowcase[index] = index ^ DIFCASE;
+ 		upcase[index ^ DIFCASE] = index;
+ 	}
+-#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION
++#if BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION || OPENBSD
+ 	/* and for those international characters! */
+ 	for (index = (unsigned char)'\340';
+ 	     index <= (unsigned char)'\375'; index++) {
+ 		lowcase[index] = index ^ DIFCASE;
+ 		upcase[index ^ DIFCASE] = index;
+ 	}
+-#endif /*  BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION */
++#endif /*  BSD || FREEBSD || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || SUN || XENIX || AVIION || OPENBSD */
+ 
+ #if	MSDOS
+ 	/* setup various extended IBM-PC characters */

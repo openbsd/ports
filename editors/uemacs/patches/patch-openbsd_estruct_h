@@ -1,6 +1,7 @@
---- freebsd/estruct.h.orig	Wed Mar 25 14:21:05 1998
-+++ freebsd/estruct.h	Wed Mar 25 14:25:34 1998
-@@ -0,0 +1,1254 @@
+$OpenBSD: patch-openbsd_estruct_h,v 1.1 2004/01/06 03:29:09 espie Exp $
+--- openbsd/estruct.h.orig	2004-01-06 04:20:22.000000000 +0100
++++ openbsd/estruct.h	2004-01-06 04:23:14.000000000 +0100
+@@ -0,0 +1,1255 @@
 +/*	ESTRUCT:	Structure and preprocesser defined for
 +			MicroEMACS 4.00
 +
@@ -50,12 +51,13 @@
 +#define AVIION	0			/* Data General AViiON		*/
 +#define BSD	0			/* UNIX BSD 4.2 and ULTRIX	*/
 +#define FINDER	0			/* Macintosh OS 		*/
-+#define	FREEBSD	1			/* FREEBSD 386 version 2 or +	*/
++#define	FREEBSD	0			/* FREEBSD 386 version 2 or +	*/
 +#define HPUX8	0			/* HPUX HP 9000 ver 8 or less	*/
 +#define HPUX9	0			/* HPUX HP 9000 ver 9           */
 +#define MPE	0			/* HP MPE/XL			*/
 +#define MSDOS	0			/* MS-DOS			*/
 +#define WINNT	0			/* MS-Win NT			*/
++#define OPENBSD	1			/* OpenBSD			*/
 +#define OS2	0			/* Microsoft or IBM OS/2	*/
 +#define SMOS	0			/* Supermax UNIX System V	*/
 +#define SUN	0			/* SUN v4.0			*/
@@ -227,7 +229,7 @@
 +
 +/*	Can we catch the SIGWINCH (the window size change signal)? */
 +
-+#if AIX || HPUX9 || FREEBSD
++#if AIX || HPUX9 || FREEBSD || OPENBSD
 +#define HANDLE_WINCH	1
 +#else
 +#define HANDLE_WINCH	0
@@ -235,7 +237,7 @@
 +
 +/*	Prototypes in use?	*/
 +
-+#if	MSC || TURBO || IC || VMS || GCC || ZTC
++#if	MSC || TURBO || IC || VMS || GCC || ZTC || OPENBSD
 +#define PROTO	1
 +#else
 +#define PROTO	0
@@ -257,7 +259,7 @@
 +#endif
 +
 +/* Mark Williams/Atari has no standard or varargs or directory functions */
-+#if	TOS & MWC
++#if	TOS && MWC
 +#undef VARARG
 +#define	VARARG	0
 +#undef	FILOCK
@@ -321,13 +323,13 @@
 +
 +#define DUMMYSZ     /* nothing */
 +
-+#if MSDOS & (TURBO | MSC | TIPC)
++#if MSDOS && (TURBO || MSC || TIPC)
 +#define	NEAR
 +#define	DNEAR
 +#define	PASCAL pascal
 +#define	CDECL cdecl
 +#else
-+#if MSDOS & ZTC
++#if MSDOS && ZTC
 +#define	NEAR
 +#define	DNEAR
 +#define	PASCAL _pascal
@@ -359,7 +361,7 @@
 +#define       poke(a,b,c,d)   movedata(FP_SEG(c),FP_OFF(c),a,b,d)
 +#endif
 +
-+#if	LATTICE & MSDOS
++#if	LATTICE && MSDOS
 +/* you may have to remove this one definition with LATTICE version
 +   3.2 and above						  */
 +#define unsigned
@@ -403,7 +405,7 @@
 +};
 +#endif
 +
-+#if	MSDOS & MWC
++#if	MSDOS && MWC
 +#include	<dos.h>
 +#define int86(a, b, c)	intcall(b, c, a)
 +#define intdos(a, b)	intcall(a, b, DOSINT)
@@ -426,7 +428,7 @@
 +};
 +#endif
 +
-+#if	MSDOS & MSC
++#if	MSDOS && MSC
 +#include	<dos.h>
 +#include	<memory.h>
 +#define peek(a,b,c,d)	movedata(a,b,FP_SEG(c),FP_OFF(c),d)
@@ -435,7 +437,7 @@
 +#define _strrev(a)	strrev(a)
 +#endif
 +
-+#if	MSDOS & LATTICE
++#if	MSDOS && LATTICE
 +#undef	CPM
 +#undef	LATTICE
 +#include	<dos.h>
@@ -443,7 +445,7 @@
 +#endif
 +
 +/* System V doesn't name this the same as others */
-+#if	USG | AIX | AUX | SUN | (OS2 & MSC)
++#if	USG || AIX || AUX || SUN || (OS2 && MSC)
 +#define movmem(a, b, c) 	memcpy(b, a, c)
 +#endif
 +
@@ -460,13 +462,13 @@
 +
 +/*	define some ability flags */
 +
-+#if	(IBMPC | Z309 | FMR | TIPC) & !(WINDOW_MSWIN | WINDOW_MSWIN32)
++#if	(IBMPC || Z309 || FMR || TIPC) && !(WINDOW_MSWIN || WINDOW_MSWIN32)
 +#define MEMMAP	1
 +#else
 +#define MEMMAP	0
 +#endif
 +
-+#if	MSDOS | WINNT | OS2 | USG | AIX | AUX | SMOS | HPUX8 | HPUX9 | BSD | FREEBSD | (TOS & MWC) | WMCS | SUN | MPE
++#if	MSDOS || WINNT || OS2 || USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || BSD || FREEBSD || (TOS && MWC) || WMCS || SUN || MPE || OPENBSD
 +#define ENVFUNC 1
 +#else
 +#define ENVFUNC 0
@@ -519,7 +521,7 @@
 +/*	internal constants	*/
 +
 +#define NBINDS	300			/* max # of bound keys		*/
-+#if	AOSVS | VMS | WINNT | SUN | BSD | FREEBSD | USG | ZENIX | HPUX8 | HPUX9 | OS2
++#if	AOSVS || VMS || WINNT || SUN || BSD || FREEBSD || USG || ZENIX || HPUX8 || HPUX9 || OS2 || OPENBSD
 +#define NFILEN	256
 +#else
 +#define NFILEN	80			/* # of bytes, file name	*/
@@ -626,7 +628,7 @@
 +#define BELL	0x07			/* a bell character		*/
 +#define TAB	0x09			/* a tab character		*/
 +
-+#if	USG | AIX | AUX | SMOS | HPUX8 | HPUX9 | BSD | FREEBSD | SUN | XENIX | AVIION
++#if	USG || AIX || AUX || SMOS || HPUX8 || HPUX9 || BSD || FREEBSD || SUN || XENIX || AVIION || OPENBSD
 +#define PATHCHR ':'
 +#else
 +#if	WMCS || MPE
@@ -675,7 +677,7 @@
 +#define malloc	allocate
 +#define free	release
 +#else
-+#if	VMS & OPTMEM
++#if	VMS && OPTMEM
 +#define malloc	VAXC$MALLOC_OPT
 +#define free	VAXC$FREE_OPT
 +#define calloc	VAXC$CALLOC_OPT
@@ -912,7 +914,7 @@
 +
 +#define lforw(lp)	((lp)->l_fp)
 +#define lback(lp)	((lp)->l_bp)
-+#if UNIX && (SUN || HPUX8 || HPUX9 || BSD || FREEBSD)
++#if UNIX && (SUN || HPUX8 || HPUX9 || BSD || FREEBSD || OPENBSD)
 +#define lgetc(lp, n)	((unsigned char)(lp)->l_text[(n)])
 +#else
 +#define lgetc(lp, n)	((lp)->l_text[(n)])
