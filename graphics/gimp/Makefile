@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1999/03/31 04:42:34 brad Exp $
+# $OpenBSD: Makefile,v 1.16 1999/03/31 08:00:24 marc Exp $
 
 DISTNAME=	gimp-1.1.4
 CATEGORIES=	graphics
@@ -16,8 +16,7 @@ LIB_DEPENDS=	aa:${PORTSDIR}/graphics/aalib \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg:${PORTSDIR}/graphics/mpeg-lib \
 		png:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff34 \
-		Xpm:${PORTSDIR}/graphics/xpm
+		tiff:${PORTSDIR}/graphics/tiff34
 
 USE_X11=	yes
 USE_GMAKE=	yes
