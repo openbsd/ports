@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/12/10 20:38:05 marcm Exp $
 include/gtksourceview-1.0/
 include/gtksourceview-1.0/gtksourceview/
 include/gtksourceview-1.0/gtksourceview/gtksourcebuffer.h
@@ -37,6 +37,7 @@ share/gtk-doc/html/gtksourceview/index.sgml
 share/gtk-doc/html/gtksourceview/left.png
 share/gtk-doc/html/gtksourceview/right.png
 share/gtk-doc/html/gtksourceview/rn01.html
+share/gtk-doc/html/gtksourceview/style.css
 share/gtk-doc/html/gtksourceview/up.png
 share/gtksourceview-1.0/
 share/gtksourceview-1.0/language-specs/
@@ -44,19 +45,28 @@ share/gtksourceview-1.0/language-specs/ada.lang
 share/gtksourceview-1.0/language-specs/c.lang
 share/gtksourceview-1.0/language-specs/cpp.lang
 share/gtksourceview-1.0/language-specs/csharp.lang
+share/gtksourceview-1.0/language-specs/css.lang
 share/gtksourceview-1.0/language-specs/desktop.lang
 share/gtksourceview-1.0/language-specs/diff.lang
+share/gtksourceview-1.0/language-specs/fortran.lang
+share/gtksourceview-1.0/language-specs/haskell.lang
 share/gtksourceview-1.0/language-specs/html.lang
 share/gtksourceview-1.0/language-specs/idl.lang
 share/gtksourceview-1.0/language-specs/java.lang
+share/gtksourceview-1.0/language-specs/javascript.lang
 share/gtksourceview-1.0/language-specs/language.dtd
 share/gtksourceview-1.0/language-specs/latex.lang
+share/gtksourceview-1.0/language-specs/lua.lang
 share/gtksourceview-1.0/language-specs/msil.lang
+share/gtksourceview-1.0/language-specs/pascal.lang
 share/gtksourceview-1.0/language-specs/perl.lang
 share/gtksourceview-1.0/language-specs/php.lang
 share/gtksourceview-1.0/language-specs/po.lang
 share/gtksourceview-1.0/language-specs/python.lang
+share/gtksourceview-1.0/language-specs/ruby.lang
 share/gtksourceview-1.0/language-specs/sql.lang
+share/gtksourceview-1.0/language-specs/texinfo.lang
+share/gtksourceview-1.0/language-specs/vbnet.lang
 share/gtksourceview-1.0/language-specs/verilog.lang
 share/gtksourceview-1.0/language-specs/xml.lang
 %%SHARED%%
