@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2001/10/25 01:46:18 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/25 18:59:10 brad Exp $
 
 COMMENT=	"convert files between character sets and usages"
 
@@ -19,13 +19,19 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= recode
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=--without-included-gettext
-CONFIGURE_ENV+=CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--without-included-gettext
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-REGRESS_DEPENDS=:python-*:lang/python
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.4-ltmain_sh \
+		patch-*
+
+REGRESS_DEPENDS=	:python-*:lang/python
 
 post-regress:
-	cd ${WRKBUILD}/tests && ${MAKE} PYTHON=${LOCALBASE}/bin/python bigtest
+	@cd ${WRKBUILD}/tests && ${MAKE} \
+		PYTHON=${LOCALBASE}/bin/python bigtest
 
 .include <bsd.port.mk>
