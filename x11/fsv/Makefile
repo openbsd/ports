@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/17 02:07:35 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/30 02:04:59 kevlo Exp $
 
 COMMENT=	"3D filesystem visualizer"
 
 DISTNAME=	fsv-0.9
 CATEGORIES=     x11
 NEED_VERSION=	1.396
-MASTER_SITES=	http://fox.mit.edu/skunk/soft/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	fsv
 
-HOMEPAGE=	http://fox.mit.edu/skunk/soft/fsv/
+HOMEPAGE=	http://fsv.sourceforge.net
 
 LIB_DEPENDS=	gtkgl.1::x11/gtkglarea
 
