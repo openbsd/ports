@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2003/04/06 00:20:11 margarida Exp $
+# $OpenBSD: Makefile,v 1.6 2003/11/02 01:56:51 margarida Exp $
 
 COMMENT=		"simple tcp re-engineering tool"
 
-VERSION=		1.2.2
+VERSION=		1.2.4
 DISTNAME=		tcpreen-${VERSION}
 CATEGORIES=		net
 
