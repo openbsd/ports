@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/02/24 09:08:58 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/07/09 00:37:41 fgsch Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/mtools.info
 bin/floppyd
 bin/floppyd_installtest
@@ -23,7 +23,6 @@ bin/mmount
 bin/mmove
 bin/mpartition
 bin/mrd
-bin/mread
 bin/mren
 bin/mshowfat
 bin/mtools
@@ -54,7 +53,6 @@ man/man1/mmount.1
 man/man1/mmove.1
 man/man1/mpartition.1
 man/man1/mrd.1
-man/man1/mread.1
 man/man1/mren.1
 man/man1/mshowfat.1
 man/man1/mtools.1
