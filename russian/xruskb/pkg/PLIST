@@ -14,6 +14,6 @@ share/xruskb/jcuken-cyr.xmm
 share/xruskb/yawerty-cp866.xmm
 share/xruskb/yawerty-koi8.xmm
 share/xruskb/yawerty-cp1251.xmm
-share/xruskb/xruskb.doc
-share/xruskb/xruskb.doc-koi8
+share/xruskb/xrus.doc
+share/xruskb/xrus.doc-koi8
 @dirrm share/xruskb
