@@ -1,0 +1,19 @@
+$OpenBSD: patch-installer_gnome-font-install_c,v 1.1.1.1 2002/05/21 19:17:54 nino Exp $
+--- installer/gnome-font-install.c.orig	Tue Jan 22 22:44:55 2002
++++ installer/gnome-font-install.c	Sun Mar 17 14:36:48 2002
+@@ -333,12 +333,12 @@ int main (int argc, char ** argv)
+ 		if (!gfi_target) gfi_target = g_concat_dir_and_file (g_get_home_dir (), ".gnome/fonts/gnome-print.fontmap");
+ 	}
+ 	g_assert (mastermap != NULL);
++        mastermap->path = gfi_target;
+ 
+ 	/* Verify fonts */
+ 	if (gfi_debug) fprintf (stderr, "Verifying fontmap entries\n");
+-	gfi_verify_fontmap (db->usermaps);
+-	gfi_verify_fontmap (db->dynamicmaps);
+-	gfi_verify_fontmap (db->staticmaps);
++	gfi_verify_fontmap (mastermap);
++
+ 	/* Vacuum mastermap */
+ 	mastermap->fonts = NULL;
+ 	if (gfi_debug) fprintf (stderr, "Done\n");

@@ -1,0 +1,12 @@
+$OpenBSD: patch-installer_Makefile_in,v 1.1.1.1 2002/05/21 19:17:54 nino Exp $
+--- installer/Makefile.in.orig	Sun Mar 17 13:27:51 2002
++++ installer/Makefile.in	Sun Mar 17 13:29:02 2002
+@@ -436,7 +436,7 @@ maintainer-clean-generic clean mostlycle
+ 
+ 
+ install-data-local: gnome-font-install
+-	$(PERL) $(top_srcdir)/run-gnome-font-install ./gnome-font-install $(datadir) $(top_srcdir) $(sysconfdir)
++	$(PERL) $(top_srcdir)/run-gnome-font-install ./gnome-font-install $(datadir) $(top_srcdir) $(DESTDIR)$(sysconfdir)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
