@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.251 2000/04/03 17:09:12 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.252 2000/04/03 17:32:42 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -403,7 +403,7 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 
 FAKE?=No
 .if ${FAKE:U} == "YES"
-WRKINST?=${WRKDIR}/fake-${ARCH}
+WRKINST?=${WRKDIR}/fake-${ARCH}${_FEXT}
 .endif
 
 # Get the architecture
@@ -638,10 +638,15 @@ EXTRACT_SUFX?=		.tar.gz
 
 MAKE_ENV+=	EXTRA_SYS_MK_INCLUDES="<bsd.own.mk>"
 
+
 .if defined(OBJMACHINE)
 WRKDIR?=		${.CURDIR}/work${_FEXT}.${MACHINE_ARCH}
 .else
+.  if defined(SEPARATE_BUILD) && ${SEPARATE_BUILD:L:Mflavored}
+WRKDIR?=		${.CURDIR}/work
+.  else
 WRKDIR?=		${.CURDIR}/work${_FEXT}
+.  endif
 .endif
 
 WRKDIST?=		${WRKDIR}/${DISTNAME}
@@ -649,7 +654,7 @@ WRKDIST?=		${WRKDIR}/${DISTNAME}
 WRKSRC?=	   ${WRKDIST}
 
 .if defined(SEPARATE_BUILD)
-WRKBUILD?=		${WRKDIR}/build-${ARCH}
+WRKBUILD?=		${WRKDIR}/build-${ARCH}${_FEXT}
 .else
 WRKBUILD?=		${WRKSRC}
 .endif
