@@ -3,11 +3,12 @@
 # Date created:		2 Apr 1997
 # Whom:			ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:41 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/12 22:51:12 marc Exp $
 #
 
 DISTNAME=	LPRng-3.2.3
 CATEGORIES=	sysutils print
+NO_CDROM=	"To many copyrights/licences to verify destribution OK"
 MASTER_SITES=	ftp://dickory.sdsu.edu/pub/LPRng/
 EXTRACT_SUFX=	.tgz
 

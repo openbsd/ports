@@ -3,11 +3,13 @@
 # Date created:	06 Nov 1997
 # Whom:	ejovi
 #
-# $OpenBSD: Makefile,v 1.2 1997/11/17 21:47:41 joey Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/12 22:51:16 marc Exp $
 #
 
 DISTNAME=	idled-1.16
 CATEGORIES=	sysutils
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=	ftp://ftp.cs.hope.edu/pub/idled/
 
 MAINTAINER=     joey@openbsd.org
