@@ -1,11 +1,6 @@
-# Makefile for:		fragrouter
-# Version required:	1.1
-# Date created:		14 May 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.4 1999/06/28 03:05:56 dugsong Exp $
+# $OpenBSD: Makefile,v 1.5 1999/08/03 00:08:59 fgsch Exp $
 
-DISTNAME=	fragrouter-1.3
+DISTNAME=	fragrouter-1.5
 
 CATEGORIES=	security
 
