@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2005/03/24 07:35:03 dons Exp $
+# $OpenBSD: Makefile,v 1.9 2005/03/28 08:10:00 dons Exp $
 
 COMMENT=	"Haskell 98 interpreter"
 
@@ -16,10 +16,10 @@ WRKDIST=	${WRKDIR}/${DISTNAME}-patched
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CC="${CC}"
-CONFIGURE_ARGS+=--with-pthreads --disable-ffi --libdir=${PREFIX}/lib
+CONFIGURE_ARGS+=--with-pthreads --libdir=${PREFIX}/lib
 
 do-regress:
-	@cd ${WRKDIST}/tests && sh testScript static tcheck rts libs
+	@cd ${WRKDIST}/tests && sh testScript static tcheck rts libs ffi
 
 # BSDish
 PERMIT_PACKAGE_CDROM=	Yes
