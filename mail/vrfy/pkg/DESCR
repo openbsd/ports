@@ -1,24 +1,17 @@
 [ from ftp://ftp.nikhef.nl/pub/network/README_FIRST ]
 
-vrfy.tar.Z              (Version 980820)
-        'vrfy' is a tool to verify email addresses and mailing lists.
-        In its simplest form it takes an address "user@domain", figures
-        out the MX hosts for "domain", and issues the SMTP command VRFY
-        at the primary MX host (optionally all), or at "domain" itself
-        if no MX hosts exist. Without "domain" it goes to "localhost".
-        More complex capabilities are: recursively expanding forward
-        files or mailing lists, and detecting mail forwarding loops.
-        Full-blown RFC822 address specifications are understood.
-        Syntax checking can be carried out either locally or remotely.
-        Various options are provided to exploit alternative protocol
-        suites if necessary, and to print many forms of verbose output.
-        Obvious limitations exist, but on average it works pretty well.
-        Needless to say you need internet (nameserver and SMTP) access.
-        See the man page and the extensive documentation in the source
-        for further details.
-
-        It runs at least on the following platforms:
-        HP/HPUX, SGI/IRIX, IBM/AIX, SUN/SunOS, SUN/Solaris,
-        DEC/Ultrix, DEC/Alpha, Apollo/DomainOS, NeXT/MACH,
-        BSDI/4.4BSD, Linux, Cray/Unicos
-        BIND 8.1.*, BIND 4.9.*, BIND 4.8.3, BIND 4.8.2
+'vrfy' is a tool to verify email addresses and mailing lists.
+In its simplest form it takes an address "user@domain", figures
+out the MX hosts for "domain", and issues the SMTP command VRFY
+at the primary MX host (optionally all), or at "domain" itself
+if no MX hosts exist. Without "domain" it goes to "localhost".
+More complex capabilities are: recursively expanding forward
+files or mailing lists, and detecting mail forwarding loops.
+Full-blown RFC822 address specifications are understood.
+Syntax checking can be carried out either locally or remotely.
+Various options are provided to exploit alternative protocol
+suites if necessary, and to print many forms of verbose output.
+Obvious limitations exist, but on average it works pretty well.
+Needless to say you need internet (nameserver and SMTP) access.
+See the man page and the extensive documentation in the source
+for further details.

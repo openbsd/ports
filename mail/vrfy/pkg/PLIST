@@ -1,2 +1,4 @@
 bin/vrfy
 man/man1/vrfy.1
+share/doc/vrfy/RELEASE_NOTES
+@dirrm share/doc/vrfy
