@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/11/04 15:13:49 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/06/19 21:34:58 jakob Exp $
 bin/flow-capture
 bin/flow-cat
 bin/flow-dscan
@@ -9,6 +9,7 @@ bin/flow-filter
 bin/flow-gen
 bin/flow-header
 bin/flow-import
+bin/flow-mask
 bin/flow-merge
 bin/flow-nfilter
 bin/flow-print
@@ -29,6 +30,7 @@ man/man1/flow-filter.1
 man/man1/flow-gen.1
 man/man1/flow-header.1
 man/man1/flow-import.1
+man/man1/flow-mask.1
 man/man1/flow-merge.1
 man/man1/flow-nfilter.1
 man/man1/flow-print.1
@@ -41,11 +43,16 @@ man/man1/flow-tag.1
 man/man1/flow-tools-examples.1
 man/man1/flow-tools.1
 man/man1/flow-xlate.1
-share/examples/flow-tools/cfg/filter-acl
-share/examples/flow-tools/cfg/map
-share/examples/flow-tools/sym/asn
-share/examples/flow-tools/sym/ip-prot
-share/examples/flow-tools/sym/tcp-port
+share/examples/flow-tools/cfg/filter.cfg
+share/examples/flow-tools/cfg/map.cfg
+share/examples/flow-tools/cfg/mask.cfg
+share/examples/flow-tools/cfg/stat.cfg
+share/examples/flow-tools/cfg/tag.cfg
+share/examples/flow-tools/sym/asn.sym
+share/examples/flow-tools/sym/ip-prot.sym
+share/examples/flow-tools/sym/ip-type.sym
+share/examples/flow-tools/sym/tag.sym
+share/examples/flow-tools/sym/tcp-port.sym
 @dirrm share/examples/flow-tools/sym
 @dirrm share/examples/flow-tools/cfg
 @dirrm share/examples/flow-tools
