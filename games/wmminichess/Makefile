@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:24:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-dockapp; chess game'
 
 DISTNAME=		miniCHESS-0.8
 PKGNAME=		wm${DISTNAME:L}
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.electricrain.com/edavis/miniCHESS/
 
@@ -20,9 +20,10 @@ MASTER_SITES=		${HOMEPAGE} \
 			ftp://ftp.funet.fi/pub/FreeBSD/distfiles/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-RUN_DEPENDS=		gnuchessx::games/gnuchess
+RUN_DEPENDS=		::games/gnuchess
 
 USE_X11=		Yes
+NO_REGRESS=		Tes
 
 ALL_TARGET=		minichess
 

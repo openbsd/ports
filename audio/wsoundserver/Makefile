@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2001/07/13 11:23:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'sound server for Window Maker'
 
 DISTNAME=		WSoundServer-0.4.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://shadowmere.student.utwente.nl/
 
@@ -19,13 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
-RUN_DEPENDS=		wmaker::x11/windowmaker
+RUN_DEPENDS=		::x11/windowmaker
 LIB_DEPENDS=		wraster.4::x11/windowmaker \
 			PropList.2::devel/libproplist \
 			audiofile::devel/libaudiofile \
 			dockapp::devel/libdockapp
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --enable-static
 

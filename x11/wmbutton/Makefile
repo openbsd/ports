@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2001/07/13 11:25:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'wm-dockapp; application launching program'
 
 DISTNAME=		wmbutton-0.4
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://members.access1.net/ehflora/
 
@@ -19,6 +19,7 @@ MASTER_SITES=		${HOMEPAGE}wmbutton/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 SAMPLE_DIR=		${PREFIX}/share/examples/wmbutton
 SUBST_VARS+=		SAMPLE_DIR

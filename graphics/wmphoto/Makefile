@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/28 10:05:04 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows photos and execute commands on that photo'
 
 DISTNAME=		wmphoto-0.3a
 CATEGORIES=		graphics x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.dcc.uchile.cl/~amartoq/wmphoto/
 
@@ -17,9 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
-RUN_DEPENDS=		convert::graphics/ImageMagick
+RUN_DEPENDS=		::graphics/ImageMagick
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 WRKSRC=			${WRKDIST}/wmphoto
 

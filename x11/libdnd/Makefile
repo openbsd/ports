@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:24:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'drag and drop library'
 
 DISTNAME=		dnd.1.1
 PKGNAME=		libdnd-1.1
 CATEGORIES=		x11 devel
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -23,6 +23,13 @@ CONFIGURE_STYLE=	gnu
 
 WRKDIST=		${WRKDIR}/DND
 WRKSRC=			${WRKDIST}/DNDlib
+
+# This regression test wants an X11 display
+REGRESS_FLAGS+=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= Yes
+
+do-regress:
+	@cd ${WRKBUILD} && ./dndtest
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libdnd

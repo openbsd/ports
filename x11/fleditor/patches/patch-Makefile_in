@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2001/08/29 07:44:47 wilfried Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2001/10/25 22:34:50 wilfried Exp $
 --- Makefile.in.orig	Wed Jan 10 00:11:25 2001
-+++ Makefile.in	Wed Aug 29 09:14:40 2001
++++ Makefile.in	Fri Oct 26 00:05:59 2001
 @@ -29,9 +29,9 @@ FLTKLIBDIR	=	@ac_fltk_libraries@
  # Program options...
  #
@@ -46,7 +46,46 @@ $OpenBSD: patch-Makefile_in,v 1.3 2001/08/29 07:44:47 wilfried Exp $
  
  #
  # Remove object and target files...
-@@ -124,12 +124,10 @@ EDITOR_OBJS = src/Fl_Editor.o src/Fl_Fan
+@@ -93,27 +93,32 @@ install: libfleditor.a
+ #
+ 
+ test: test/progress test/simple test/single test/status test/multiple
++	test/progress
++	test/simple
++	test/single
++	test/status
++	test/multiple
+ 
+ test/progress: test/progress.o 
+ 	echo Building $@ test program
+-	echo $(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
+-	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
++	echo $(CXX) $(LDFLAGS) test/progress.o libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/progress.o libfleditor.a $(LIBS) -o $@
+ 
+ test/simple: test/simple.o 
+ 	echo Building $@ test program
+-	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/simple.o libfleditor.a $(LIBS) -o $@
+ 
+ test/status: test/status.o 
+ 	echo Building $@ test program
+-	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/status.o libfleditor.a $(LIBS) -o $@
+ 
+ test/single: test/single.o 
+ 	echo Building $@ test program
+-	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/single.o libfleditor.a $(LIBS) -o $@
+ 
+ test/multiple: test/multiple.o test/multfunc.o
+ 	echo Building $@ test program
+-	$(CXX) $(LDFLAGS) $^ libfleditor.a $(LIBS) -o $@
++	$(CXX) $(LDFLAGS) test/multiple.o test/multfunc.o libfleditor.a $(LIBS) -o $@
+ 
+ #
+ # Make the editor widget library.
+@@ -124,12 +129,10 @@ EDITOR_OBJS = src/Fl_Editor.o src/Fl_Fan
          src/editengine.o src/lists.o src/wstring.o
  
  libfleditor.a:	$(EDITOR_OBJS)

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/30 14:08:08 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-dockapp; mail notifier'
 
 DISTNAME=		WMMail.app-0.64
 PKGNAME=		wmmail-0.64
 CATEGORIES=		mail x11 x11/windowmaker
-NEED_VERSION=		1.378
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.eecg.utoronto.ca/cgi-bin/cgiwrap/chanb/www/wmmail
 
@@ -18,12 +18,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.eecg.utoronto.ca/~chanb/WMMail.app/
 
-RUN_DEPENDS=		wmaker::x11/windowmaker
+RUN_DEPENDS=		::x11/windowmaker
 LIB_DEPENDS=		PropList.2::devel/libproplist
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
 USE_GMAKE=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-PL-libs="-L${LOCALBASE}/lib" \
 			--with-PL-incs="-I${LOCALBASE}/include"

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2001/03/28 10:08:59 wilfried Exp $
+# $OpenBSD: Makefile,v 1.19 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'color vt102 terminal emulator with transparency support'
 
 DISTNAME=		wterm-6.2.6
 CATEGORIES=		x11
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -16,10 +16,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		ftp://ftp.kddlabs.co.jp/X11/acontrib/wterm/ \
 			ftp://ftp.riken.go.jp/pub/X11/acontrib/wterm/
 
-BUILD_DEPENDS=		wmaker::x11/windowmaker
-RUN_DEPENDS=		wmaker::x11/windowmaker
+BUILD_DEPENDS=		::x11/windowmaker
+RUN_DEPENDS=		::x11/windowmaker
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-utmp --enable-wtmp \
 			--with-xpm --enable-xpm-background --enable-transparency \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2001/03/28 10:08:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'X11 file manager. Dockable in Window Maker'
 
 DISTNAME=		ASFiles-1.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=		Dnd::x11/libdnd
 FAKE_FLAGS=		NORMAL_INSTALL=""
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 
 post-configure:

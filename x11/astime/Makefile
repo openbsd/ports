@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2001/03/28 10:08:41 wilfried Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'wm-dockapp; Time/Date applet'
 
 DISTNAME=		astime-2.8
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.tigr.net/afterstep/as-apps/
 
@@ -20,6 +20,7 @@ MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/ \
 			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-jpeg
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/13 11:25:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows the current date'
 
 DISTNAME=		wmdate-0.7
 CATEGORIES=		x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://wit401310.student.utwente.nl/~dalroi/apps/wmdate.php
 
@@ -21,6 +21,7 @@ MASTER_SITES=		http://wit401310.student.utwente.nl/~dalroi/apps/apps/ \
 LIB_DEPENDS=		dockapp::devel/libdockapp
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake noman
 
 post-install:

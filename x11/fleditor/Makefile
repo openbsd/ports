@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2001/09/07 16:35:51 heko Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'Text Editor for FLTK'
 
 DISTNAME=		fl_editor-0.4.2
 PKGNAME=		fleditor-0.4.2
 CATEGORIES=		x11
-NEED_VERSION=		1.448
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.robertk.com/source/
 
@@ -20,15 +20,20 @@ MASTER_SITES=		http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
 LIB_DEPENDS=		fltk.::x11/fltk
-BUILD_DEPENDS=		${LOCALBASE}/lib/libflvw.a::x11/flvw
+BUILD_DEPENDS=		::x11/flvw
 
 USE_X11=		Yes
+REGRESS_TARGET=		test
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-fltk=${LOCALBASE}
 
 WRKDIST=		${WRKDIR}/fl_editor
+
+# This regression test wants an X11 display
+REGRESS_FLAGS+=         DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
+REGRESS_IS_INTERACTIVE= Yes
 
 post-patch:
 	@rmdir ${WRKSRC}/obj

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/24 12:48:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'wm-dockapp; clock application with clock, date and fish'
 
 DISTNAME=		wmfishtime-1.23
 CATEGORIES=     	x11 x11/windowmaker
-NEED_VERSION=		1.474
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 
@@ -25,6 +25,7 @@ MAKE_FLAGS=		CC="${CC}" \
 			LIBS="`gtk-config --libs`"
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 do-install:
 	$(INSTALL_PROGRAM) $(WRKBUILD)/wmfishtime $(PREFIX)/bin

@@ -1,0 +1,18 @@
+$OpenBSD: patch-1_0_test_Makefile,v 1.1 2001/10/25 22:34:50 wilfried Exp $
+--- 1.0/test/Makefile.orig	Sat Jan 22 14:34:26 2000
++++ 1.0/test/Makefile	Fri Oct 26 00:15:00 2001
+@@ -15,6 +15,14 @@ include ../makeinclude
+ 
+ all:	testlist testtable testtable2 basiclist exercise testedit
+ 
++check: all
++	./testlist
++	./testtable
++	./testtable2
++	./basiclist
++	./exercise
++	./testedit
++
+ #
+ # Remove object and target files...
+ #

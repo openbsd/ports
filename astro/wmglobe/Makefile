@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/28 14:45:47 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/25 22:34:48 wilfried Exp $
 
 COMMENT=		'wm-dockapp; displays the earth on an icon'
 
 DISTNAME=		wmglobe-1.3
 CATEGORIES=		astro x11 x11/windowmaker
-NEED_VERSION=		1.448
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://perso.linuxfr.org/jdumont/wmg/
 
@@ -24,5 +24,6 @@ LIB_DEPENDS=		jpeg.62::graphics/jpeg \
 			wraster.4::x11/windowmaker
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2001/08/02 10:20:31 wilfried Exp $
+# $OpenBSD: Makefile,v 1.8 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-dockapp; sound mixer'
 
 DISTNAME=		Mixer.app-1.7.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.427
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.fukt.hk-r.se/~per/mixer/
 
@@ -21,6 +21,7 @@ MASTER_SITES=		${HOMEPAGE} \
 			ftp://ftp.netis.com/pub/mirrors2/linuxberg/files/x11/dock/
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/GNUstep/Apps/Mixer.app

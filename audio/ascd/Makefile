@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:23:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
 # $FreeBSD: ports/audio/ascd/Makefile,v 1.17 2000/09/25 12:21:17 asami Exp $
 
 COMMENT= 		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.361
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://worldserver.oleane.com/rsn/ascd-en.html
 
@@ -23,6 +23,7 @@ DATAFILES=		ascd-0.13pr6-themes.tgz
 LIB_DEPENDS=		workman.1::audio/libworkman
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake
 
 post-extract:

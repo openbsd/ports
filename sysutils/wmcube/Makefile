@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2001/08/28 14:08:57 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/25 22:34:50 wilfried Exp $
 
 COMMENT=		'wm-dockapp; shows rotating 3d-object and CPU load'
 
 DISTNAME=		wmcube-0.98
 CATEGORIES=		sysutils x11 x11/windowmaker
-NEED_VERSION=		1.448
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://boombox.campus.luth.se/projects.php
 
@@ -20,6 +20,7 @@ MASTER_SITES=		http://boombox.campus.luth.se/files/ \
 			ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/x11/dock/
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 MAKE_FILE=		Makefile.OPENBSD
 WRKDIST=		${WRKDIR}/wmcube

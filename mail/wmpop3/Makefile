@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:24:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-dockapp; POP3 mail check'
 
 DISTNAME=		WMPop3-0.5.6a
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		mail x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.cs.mun.ca/~scotth/
 
@@ -20,6 +20,7 @@ MASTER_SITES=		${HOMEPAGE}download/ \
 			ftp://ftp.sra.co.jp/pub/os/FreeBSD/distfiles/
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/${PKGNAME}
 WRKSRC=			${WRKDIST}/wmpop3

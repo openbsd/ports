@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2001/09/24 09:29:54 wilfried Exp $
+# $OpenBSD: Makefile,v 1.9 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-app; minesweeper'
 
 DISTNAME=		wmtimebomb.20
 PKGNAME=		wmtimebomb-0.2.0
 CATEGORIES=		games x11 x11/windowmaker
-NEED_VERSION=		1.460
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.maliwan.org/wmtimebomb.shtml
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=		wraster.4::x11/windowmaker \
 			PropList.2::devel/libproplist
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake
 
 FLAVORS=		8bpp

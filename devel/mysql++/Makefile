@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/08/24 10:51:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		"C++ API for MySQL"
 COMMENT-docs=		"C++ API for MySQL documentation"
@@ -7,7 +7,7 @@ VERSION=		1.7.9
 DISTNAME=		mysql++-${VERSION}
 PKGNAME-docs=		mysql++-docs-${VERSION}
 CATEGORIES=		devel
-NEED_VERSION=		1.435
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.mysql.com/downloads/api-mysql++.html
 
@@ -28,6 +28,7 @@ SUBPACKAGE?=
 LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
 .endif
 
+NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 

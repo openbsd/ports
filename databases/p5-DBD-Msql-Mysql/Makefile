@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2001/06/03 05:19:01 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'mysql drivers for the perl DBI'
 
 DISTNAME=		Msql-Mysql-modules-1.2216
 PKGNAME=		p5-DBD-Msql-Mysql-1.22.16
 CATEGORIES=		databases perl5
-NEED_VERSION=		1.407
+NEED_VERSION=		1.482
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
@@ -22,6 +22,7 @@ BUILD_DEPENDS=		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
 RUN_DEPENDS=		${PERL_MODULES}/${MACHINE_ARCH}-openbsd/DBI.pm::databases/p5-DBI
 
 LIB_DEPENDS=		mysqlclient.10:mysql-client-3.23.*:databases/mysql
+REGRESS_DEPENDS=	:mysql-server-3.23.*:databases/mysql,-server
 
 CONFIGURE_STYLE=	perl
 CONFIGURE_ARGS+=	--noprompt \
@@ -39,5 +40,9 @@ RUN_DEPENDS+=		${PERL_MODULES}/Data/ShowTable.pm::devel/p5-Data-ShowTable \
 			${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Term/ReadKey.pm::devel/p5-Term-ReadKey \
 			${PERL_MODULES}/${MACHINE_ARCH}-openbsd/Term/ReadLine/Gnu.pm::devel/p5-Term-ReadLine-Gnu
 .endif
+
+pre-regress:
+	@mysqladmin ping >/dev/null 2>&1 || (echo 'mysql needs to be running'; exit 1)
+	-@mysqladmin create test >/dev/null 2>&1
 
 .include <bsd.port.mk>

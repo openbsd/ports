@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/07/13 11:23:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/25 22:34:49 wilfried Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
 DISTNAME=		wmmixer-1.0-beta1
 PKGNAME=		wmmixer-1.0b1
 CATEGORIES=		audio x11 x11/windowmaker
-NEED_VERSION=		1.364
+NEED_VERSION=		1.482
 
 HOMEPAGE=		http://www.geocities.com/SiliconValley/Vista/2471/wmmixer.html
 
@@ -22,6 +22,7 @@ MASTER_SITES=		http://www.geocities.com/SiliconValley/Vista/2471/files/ \
 EXTRACT_SUFX=		.tgz
 
 USE_X11=		Yes
+NO_REGRESS=		Yes
 CONFIGURE_STYLE=	imake
 
 WRKDIST=		${WRKDIR}/wmmixer
