@@ -1,4 +1,4 @@
-# $OpenBSD: old-install.mk,v 1.8 2001/07/30 14:13:17 espie Exp $
+# $OpenBSD: old-install.mk,v 1.9 2001/09/14 17:33:51 espie Exp $
 # Stuff that is needed for old, pre-fake, port installations.
 
 # If ${FAKE} == No
@@ -84,7 +84,7 @@ ${_INSTALL_COOKIE}: ${_BUILD_COOKIE}
 	@cd ${.CURDIR} && exec ${SUDO} ${MAKE} fake-pkg
 .  endif
 .endif
-	@${_MAKE_COOKIE} $@
+	@${SUDO} ${_MAKE_COOKIE} $@
 
 # Figure out where the local mtree file is
 .if ${PREFIX} == "/usr/local"
