@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/08/03 21:34:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.21 2004/08/08 09:29:01 xsa Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -34,7 +34,7 @@ FLAVOR?=
 LIB_DEPENDS=	expat.2::textproc/expat
 
 .if !${FLAVOR:L:Mpyexpat}
-BUILD_DEPENDS+=	:python-expat-${MODPY_VERSION}*:lang/python/${MODPY_VERSION},-expat
+BUILD_DEPENDS=	${MODPY_EXPAT_DEPENDS}
 .endif
 
 NO_REGRESS=	Yes
