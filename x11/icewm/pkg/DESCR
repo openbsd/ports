@@ -7,3 +7,4 @@ IceWM is a window manager for the X11 Window System. It it has been coded from s
 
 IceWM allows reasonably configurable look using themes and is fully GNOME and partially KDE compliant, but can also be used as a full featured standalone environment. 
 
+WWW: ${HOMEPAGE}

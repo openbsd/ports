@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 14:03:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/11/29 12:33:17 kevlo Exp $
 
 DISTNAME=		icewm-1.0.4
 CATEGORIES=     	x11	
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_FTP=	"Yes"
 MASTER_SITES=		http://download.sourceforge.net/icewm/ \
 			http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/	
 EXTRACT_SUFX=           .src.tar.gz
+
+HOMEPAGE=		http://icewm.sourceforge.net/
 
 LIB_DEPENDS=		Imlib.19::graphics/imlib
 
