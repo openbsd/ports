@@ -1,5 +1,5 @@
 --- libtiff/Makefile.in.orig	Sun Nov 28 15:15:36 1999
-+++ libtiff/Makefile.in	Tue Sep 26 02:09:07 2000
++++ libtiff/Makefile.in	Thu Oct 19 07:28:08 2000
 @@ -62,7 +62,6 @@
  #
  CONF_LIBRARY=@CONF_JPEG@ @CONF_ZIP@
@@ -13,7 +13,7 @@
  	${LD} -o libtiff.@DSOSUF@ -shared -error_unresolved ${OBJS} @LIBJPEG@ @LIBGZ@ -lc -lm
  
 +OPENBSDdso: ${OBJS}
-+	${CC} -shared -o libtiff.@DSOSUF_VERSION@ ${OBJS} @LIBJPEG@ @LIBGZ@
++	${CC} -shared @LIBCOPTS@ -o libtiff.@DSOSUF_VERSION@ ${OBJS} @LIBJPEG@ @LIBGZ@
 +	touch $@
  
  ${OBJS}: ${SRCDIR}/tiffio.h ${SRCDIR}/tiff.h ${SRCDIR}/tif_dir.h
