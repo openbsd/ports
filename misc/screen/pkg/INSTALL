@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.5 2000/09/28 01:05:21 brad Exp $
+# $OpenBSD: INSTALL,v 1.6 2001/05/06 00:46:51 brad Exp $
 #
 # Pre/post-installation setup of screen
 
@@ -20,6 +20,8 @@ do_notice()
     echo "| $SAMPLE_CONFIG_DIR/screenrc-sample"
     echo "| and add any desired (but missing) entries into your"
     echo "| current $CONFIG_FILE"
+    echo "+---------------"
+    echo
 }
 
 do_install()
@@ -29,15 +31,6 @@ do_install()
     echo "+---------------"
     echo "| The file $CONFIG_FILE has been created on your system."
     echo "| You may want to verify/edit its contents"
-}
-
-do_screencap()
-{
-    echo "|"
-    echo "| The file $SAMPLE_CONFIG_DIR/screencap contains a"
-    echo "| termcap like description of the screen virtual terminal."
-    echo "| You may use it to update your terminal database."
-    echo "| See termcap(5)."
     echo "+---------------"
     echo
 }
@@ -57,11 +50,10 @@ case $2 in
 	;;
     POST-INSTALL)
 	if [ -e $CONFIG_FILE ]; then
-	    do_notice $1
+	    do_notice
 	else
-	    do_install $1
+	    do_install
 	fi
-	do_screencap $1
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
