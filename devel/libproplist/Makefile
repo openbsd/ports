@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2000/04/03 03:00:03 jasoni Exp $
+# $OpenBSD: Makefile,v 1.13 2000/04/07 18:45:06 jasoni Exp $
 
-DISTNAME=	libPropList-0.10.0
-PKGNAME=	libproplist-0.10.0
+DISTNAME=	libPropList-0.10.1
+PKGNAME=	libproplist-0.10.1
 CATEGORIES=	devel
 NEED_VERSION=	1.223
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
