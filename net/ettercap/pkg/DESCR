@@ -1,6 +1,6 @@
 Ettercap is a multipurpose sniffer/interceptor/logger for switched
 LAN.  It supports active and passive dissection of many protocols
-(even ciphered ones) and includes many feature for network and host
+(even ciphered ones) and includes many features for network and host
 analysis. 
 
 It's possible to sniff in four modes.
@@ -33,4 +33,3 @@ Cool Features:
 * Kill a connection:
   from the connections list you can kill all the connections you
   want.
-WWW: ${HOMEPAGE}

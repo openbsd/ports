@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_interface_gtk_ec_gtk_factory_c,v 1.1 2003/06/18 14:38:19 avsm Exp $
---- src/interface/gtk/ec_gtk_factory.c.orig	Wed Sep  4 04:49:03 2002
-+++ src/interface/gtk/ec_gtk_factory.c	Wed Jun 18 15:14:24 2003
-@@ -442,7 +442,7 @@ int Ginterface_Factory_TCP(u_char *buf)
-    {
-       TCP_header *tcp;
-       IP_header *ip;
--      u_char tmp[8*50 + 5];
-+      u_char tmp[1500];
-       u_char payload[8*50];
-       int datalen, i;
-       char flags = 0;
+$OpenBSD: patch-src_interface_gtk_ec_gtk_factory_c,v 1.2 2003/11/02 00:38:32 margarida Exp $
+--- src/interface/gtk/ec_gtk_factory.c.orig	2003-08-03 02:23:22.000000000 +0100
++++ src/interface/gtk/ec_gtk_factory.c	2003-08-03 02:25:38.000000000 +0100
 @@ -654,7 +654,7 @@ int Ginterface_Factory_UDP(u_char *buf)
     {
        UDP_header *udp;
