@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/06/23 03:26:15 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/07/02 03:55:54 marcm Exp $
 
 COMMENT=		"user interface components for libgnomeprint"
 
@@ -21,7 +21,9 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.12.0p1:devel/pkgconfig \
-			:libglade2->=2.0.0:devel/libglade2
+			:libglade2->=2.0.0:devel/libglade2 \
+			:gnome-icon-theme->=1.2.0:x11/gnome/icon-theme
+RUN_DEPENDS=		:gnome-icon-theme->=1.2.0:x11/gnome/icon-theme
 LIB_DEPENDS=		gnomecanvas-2::x11/gnome/libgnomecanvas \
 			gnomeprint-2-2::x11/gnome/libgnomeprint
 
