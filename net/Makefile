@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1998/06/16 07:11:27 form Exp $
+# $OpenBSD: Makefile,v 1.15 1998/06/30 08:51:13 form Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -41,6 +41,7 @@
 #    SUBDIR += libsocket++
 #    SUBDIR += llnlxdir
 #    SUBDIR += llnlxftp
+     SUBDIR += micq
      SUBDIR += mirror
 #    SUBDIR += moxftp
 #    SUBDIR += mpd
