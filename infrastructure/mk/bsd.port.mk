@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.648 2004/09/18 13:48:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.649 2004/09/19 09:00:15 pvalchev Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -766,11 +766,10 @@ _SITE_SELECTOR+=*:${_I}) echo >&2 "Error: MASTER_SITES${_I} not defined";;
 _SITE_SELECTOR+=*) sites="${MASTER_SITES}";; esac
 
 
-# OpenBSD code to handle ports distfiles on a CDROM.  The distfiles
-# are located in /cdrom/distfiles/${DIST_SUBDIR}/ (assuming that the
-# CDROM is mounted on /cdrom).
+# OpenBSD code to handle ports distfiles on a CDROM.
 #
-CDROM_SITE?=	/cdrom/distfiles/${DIST_SUBDIR}
+#CDROM_SITE?=	/cdrom/distfiles/${DIST_SUBDIR}
+CDROM_SITE?=
 
 .if !empty(CDROM_SITE)
 .  if defined(FETCH_SYMLINK_DISTFILES)
