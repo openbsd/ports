@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2000/07/15 07:18:01 brad Exp $
+# $OpenBSD: Makefile,v 1.49 2000/07/23 22:08:23 brad Exp $
 
-DISTNAME=	fetchmail-5.4.3
+DISTNAME=	fetchmail-5.4.4
 CATEGORIES=	mail
 NEED_VERSION=	1.310
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS+= --disable-nls --enable-inet6
+CONFIGURE_STYLE= gnu dest
+CONFIGURE_ARGS=	--disable-nls --enable-inet6
 
 FLAVORS=	kerberos ssl
 FLAVOR?=
