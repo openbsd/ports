@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2001/12/16 21:57:47 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2002/01/10 10:48:44 jakob Exp $
 
 COMMENT=	"Program for Internet E-mail and News, with pico"
 COMMENT-pico=	"small text editor"
 COMMENT-pine=	"Program for Internet E-mail and News, without pico"
 
-VERSION=	4.43
+VERSION=	4.44
 PICO_VERSION=	4.2
 DISTNAME=	pine${VERSION}
 PKGNAME=	pine+pico-${VERSION}
