@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2001/10/10 11:05:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2001/10/31 20:31:25 wilfried Exp $
 
 COMMENT=	"command line gnutella client"
 
-DISTNAME=	gnut-0.4.27
+DISTNAME=	gnut-0.4.28
 CATEGORIES=	net
-NEED_VERSION=	1.448
+NEED_VERSION=	1.488
 
 HOMEPAGE=	http://www.gnutelliums.com/linux_unix/gnut
 
@@ -19,7 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://tesla.desy.de/~nsturm/distfiles/ \
 		${HOMEPAGE}/tars/
 
-RUN_DEPENDS=	${LOCALBASE}/bin/gfind:findutils-*:misc/findutils
+RUN_DEPENDS=	:findutils-*:misc/findutils
+
+NO_REGRESS=	Yes
 
 SEPARATE_BUILD=	concurrent
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/07 05:44:32 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/10/31 20:31:25 wilfried Exp $
 bin/gnut
 share/doc/gnut/README
 share/doc/gnut/TUTORIAL
@@ -9,8 +9,6 @@ share/doc/gnut/gnut-4.html
 share/doc/gnut/gnut-5.html
 share/doc/gnut/gnut-6.html
 share/doc/gnut/gnut.html
-share/doc/gnut/gnut.lyx
-share/doc/gnut/gnut.sgml
 share/examples/gnut/GDJ
 share/examples/gnut/gnutrc.sample
 @dirrm share/examples/gnut
