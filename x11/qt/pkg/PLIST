@@ -1,3 +1,4 @@
+bin/moc
 include/X11/qt/jri.h
 include/X11/qt/jri_md.h
 include/X11/qt/jritypes.h
@@ -190,8 +191,9 @@ include/X11/qt/qwindefs.h
 include/X11/qt/qwindow.h
 include/X11/qt/qwindowdefs.h
 include/X11/qt/qwmatrix.h
+lib/libqt.a
 lib/libqt.so.1.42
-lib/libqt.so
+@exec /sbin/ldconfig -m %B
 lib/qt/tutorial/t1
 lib/qt/tutorial/t2
 lib/qt/tutorial/t3
@@ -239,7 +241,6 @@ lib/qt/examples/validator
 lib/qt/examples/widgets
 lib/qt/examples/xform
 lib/qt/examples/README
-bin/moc
 man/man1/moc.1
 man/man3/QAccel.3qt
 man/man3/QApplication.3qt
@@ -600,4 +601,3 @@ share/doc/qt/README.QT
 @dirrm share/doc/qt
 @dirrm lib/qt/tutorial
 @dirrm include/X11/qt
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/X11R6/lib
