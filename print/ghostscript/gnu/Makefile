@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2003/06/04 16:02:52 margarida Exp $
+# $OpenBSD: Makefile,v 1.35 2004/01/29 19:11:04 pvalchev Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
@@ -9,12 +9,11 @@ CATEGORIES=	print lang
 
 DIR=		gnu/gs${VERSION:S/.//}
 MASTER_SITES=	${GS_SITES} ${MASTER_SITE_GNU:=ghostscript/}
-MASTER_SITES1= 	${MASTER_SITE_GNU:=ghostscript/}
-MASTER_SITES2=	${PDF_SITES}
+MASTER_SITES1=	${PDF_SITES}
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD}:1 pdf_sec.ps:2
+DISTFILES=	${GS_SOURCES} pdf_sec.ps:1
 
 SUBST_VARS=		OSREV	VERSION
 DIST_SUBDIR=	gs
@@ -30,6 +29,8 @@ JPEGDIR=graphics/jpeg
 PNGDIR=graphics/png
 
 BUILD_DEPENDS=	::${JPEGDIR}:patch ::${PNGDIR}:patch
+
+RUN_DEPENDS=	:ghostscript-fonts-*:print/ghostscript/gnu-fonts
 
 LIB_DEPENDS=	png.2::${PNGDIR}
 
@@ -106,11 +107,6 @@ MAKE_FLAGS=	${BASE_FLAGS} prefix=${PREFIX}
 #MAKE_FILE=	src/unix-gcc.mak
 
 GS_SOURCES=	ghostscript-${VERSION}.tar.gz
-#  Note: the following two are real files that have symlinks with
-#  later version numbers pointing to them.  To avoid unnecessarily
-#  downloading distfiles, do not change these when upgrading the port
-#  unless the files really change.
-GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install
@@ -154,8 +150,6 @@ pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
 	@${INSTALL_PROGRAM_DIR} ${PREFIX}/bin 
 	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1
-	cd ${PREFIX}/share/ghostscript  && \
-			tar xzf ${FULLDISTDIR}/${GS_FONTS_STD}
 
 post-install:
 	strip ${PREFIX}/bin/gs
