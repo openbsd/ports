@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.5 2004/05/21 12:16:21 brad Exp $
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.6 2004/05/24 22:40:28 brad Exp $
 --- scripts/mysqld_safe.sh.orig	2004-05-13 20:53:19.000000000 -0400
-+++ scripts/mysqld_safe.sh	2004-05-18 16:28:36.000000000 -0400
++++ scripts/mysqld_safe.sh	2004-05-24 18:35:56.000000000 -0400
 @@ -90,32 +90,12 @@ parse_arguments() {
  }
  
@@ -47,19 +47,15 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.5 2004/05/21 12:16:21 brad Exp $
  
  if test ! -x $ledir/$MYSQLD
  then
-@@ -300,10 +281,17 @@ fi
+@@ -299,11 +280,12 @@ fi
+ 
  echo "Starting $MYSQLD daemon with databases from $DATADIR"
  
- # Does this work on all systems?
+-# Does this work on all systems?
 -#if type ulimit | grep "shell builtin" > /dev/null
 -#then
 -#  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
 -#fi
-+if type ulimit | grep "shell builtin" > /dev/null
-+then
-+  ulimit -n 256 > /dev/null 2>&1		# Fix for BSD and FreeBSD systems
-+fi
-+
 +if test ! -d $socket_dir
 +then
 +   mkdir -p $socket_dir
@@ -69,7 +65,7 @@ $OpenBSD: patch-scripts_mysqld_safe_sh,v 1.5 2004/05/21 12:16:21 brad Exp $
  
  echo "`date +'%y%m%d %H:%M:%S  mysqld started'`" >> $err_log
  while true
-@@ -320,33 +308,6 @@ do
+@@ -320,33 +302,6 @@ do
      break
    fi
  
