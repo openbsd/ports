@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 1999/12/07 11:47:47 form Exp $
+# $OpenBSD: Makefile,v 1.20 1999/12/09 02:57:07 form Exp $
 # $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
 
 DISTNAME=	postgresql-6.5.3
@@ -55,7 +55,7 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
-.if defined(USE_TCL) || defined(USE_TK)
+.if defined(USE_TCL) && ${USE_TCL:U} == "YES"
 TCL_INCDIR=	${LOCALBASE}/include/tcl8.0
 TK_INCDIR=	${LOCALBASE}/include/tk8.0
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR} TK_INCDIR=${TK_INCDIR}
@@ -87,7 +87,7 @@ PGLIB=		${PREFIX}/pgsql/lib
 PGDATA=		/var/pgsql/data
 
 post-configure:
-.if defined(USE_TCL) || defined(USE_TK)
+.if defined(USE_TCL) && ${USE_TCL:U} == "YES"
 	@if [ x"${NO_SHARED_LIBS}" = "x" ]; then \
 		${CP} ${PKGDIR}/PLIST.tcl ${WRKDIR}/PLIST; \
 	else \
@@ -101,7 +101,7 @@ post-configure:
 	fi
 .endif
 
-.if defined(USE_TCL) || defined(USE_TK)
+.if defined(USE_TCL) && ${USE_TCL:U} == "YES"
 post-patch:
 	@${MV} ${WRKSRC}/bin/pgaccess/main.tcl \
 		${WRKSRC}/bin/pgaccess/main.tcl.orig

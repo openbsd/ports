@@ -1,4 +1,4 @@
-/*	$OpenBSD: pgwrap.c,v 1.1 1999/11/11 02:40:05 kevlo Exp $	*/
+/*	$OpenBSD: pgwrap.c,v 1.2 1999/12/09 02:57:07 form Exp $	*/
 
 /*
  * Copyright (c) 1999 Oleg Safiullin
@@ -37,7 +37,7 @@
  * OPTIONS:
  * 	-n	- Do not add PostgreSQL binary prefix to cmd.
  *	-o file	- Redirect stdout & stderr to file (write permissions
- *		  for PostgreSQL pseudo-user or group required.
+ *		  for PostgreSQL pseudo-user or group required).
  */
 
 #include <sys/types.h>
