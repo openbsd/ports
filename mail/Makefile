@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2002/06/08 05:59:15 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.91 2002/06/09 05:32:01 jsyn Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -15,14 +15,14 @@
      SUBDIR += elm
      SUBDIR += evolution
      SUBDIR += exim
-     SUBDIR += exim,mysql
-     SUBDIR += exim,postgresql
      SUBDIR += exim,ldap
-     SUBDIR += exim,no_x11
-     SUBDIR += exim,mysql,no_x11
-     SUBDIR += exim,postgresql,no_x11
      SUBDIR += exim,ldap,no_x11
+     SUBDIR += exim,mysql
+     SUBDIR += exim,mysql,no_x11
      SUBDIR += exim,mysql,postgresql,ldap,no_x11
+     SUBDIR += exim,no_x11
+     SUBDIR += exim,postgresql
+     SUBDIR += exim,postgresql,no_x11
      SUBDIR += exmh
      SUBDIR += exmh2
      SUBDIR += faces
@@ -48,6 +48,7 @@
      SUBDIR += mutt
      SUBDIR += nmh
      SUBDIR += openwebmail
+     SUBDIR += p5-MIME-tools
      SUBDIR += p5-Mail-Alias
      SUBDIR += p5-Mail-Audit
      SUBDIR += p5-Mail-Box
@@ -55,7 +56,6 @@
      SUBDIR += p5-Mail-POP3Client
      SUBDIR += p5-Mail-SpamAssassin
      SUBDIR += p5-Mail-Tools
-     SUBDIR += p5-MIME-tools
      SUBDIR += pgpsendmail
      SUBDIR += pine
      SUBDIR += popclient
