@@ -1,6 +1,6 @@
 	native-__sysctl: permit
 	native-accept: true then permit log
-	native-bind: sockaddr match "/tmp" then permit log
+	native-bind: sockaddr match "/tmp" then permit
 	native-break: permit
 	native-chdir: permit
 	native-chflags: permit
@@ -11,8 +11,9 @@
 	native-close: permit
 	native-compat_43_ogetpagesize: permit
 	native-compat_43_olseek: permit
-	native-connect: sockaddr match "/tmp" then permit log
-	native-connect: sockaddr eq "family(0)" then permit log
+	native-connect: sockaddr eq "family(0)" then permit
+	native-connect: sockaddr match "/dev/log" then permit
+	native-connect: sockaddr match "/tmp" then permit
 	native-dup2: permit
 	native-dup: permit
 	native-execve: permit
