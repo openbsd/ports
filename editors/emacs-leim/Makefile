@@ -1,0 +1,42 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/05/22 23:34:09 dugsong Exp $
+
+VERSION=	20.7
+PKGNAME=	emacs-leim-${VERSION}
+DISTNAME=	leim-${VERSION}
+CATEGORIES=	editors
+NEED_VERSION=	1.336
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= emacs
+
+MAINTAINER=	Sungman Cho <smcho@tsp.korea.ac.kr>
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+USE_GMAKE=	Yes
+BUILD_DEPENDS=	emacs-${VERSION}::editors/emacs
+RUN_DEPENDS=	emacs-${VERSION}::editors/emacs
+
+SUBST_VARS=	VERSION
+
+WRKSRC=		${WRKDIR}/emacs-${VERSION}/leim
+DATASUBDIR=	share/emacs/${VERSION}
+
+# this is what GNU configure script does plus two lines of patch to make it
+# work with the installed emacs.
+do-configure:
+	@cd ${WRKSRC} && cat Makefile.in | sed -e 's|@version@|${VERSION}|' \
+	-e 's|@prefix@|$${DESTDIR}${PREFIX}|' \
+	-e 's|@datadir@|$${prefix}/share|' \
+	-e 's|@srcdir@|${WRKSRC}|' \
+	-e 's|^BUILT-EMACS.*|BUILT-EMACS = ${PREFIX}/bin/emacs|' \
+	-e 's|buildlisppath=.*|buildlisppath=${PREFIX}/${DATASUBDIR}/lisp|' \
+	> Makefile
+
+# leim assumes that the target directory exists already.
+pre-fake:
+	@mkdir -p ${PREFIX}/${DATASUBDIR}/leim
+
+.include <bsd.port.mk>
