@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/07/05 18:38:38 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/29 18:21:30 espie Exp $
 
 COMMENT=	"multiple virtual desktop window manager, with icons"
 COMMENT-fvicons="multiple virtual desktop window manager icons"
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
 
-LIB_DEPENDS=	gtk.1.2:gtk-*:x11/gtk+
+LIB_DEPENDS=	gtk.1.2:gtk+-*:x11/gtk+
 
 MULTI_PACKAGES=	-fvwm2 -fvicons
 SUBPACKAGE?=
