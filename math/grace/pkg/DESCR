@@ -13,5 +13,3 @@ Flavors:
     netcdf - use math/netcdf for network common data form support
     xmhtml - use www/xmhtml to use grace's internal HTML browser
              for helpfiles etc.
-
-WWW: ${HOMEPAGE}

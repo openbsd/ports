@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_defines_h,v 1.1 2003/11/08 14:30:28 sturm Exp $
+--- src/defines.h.orig	2001-03-07 23:51:34.000000000 +0100
++++ src/defines.h	2003-11-08 15:22:33.000000000 +0100
+@@ -34,6 +34,7 @@
+ #ifndef __DEFINES_H_
+ #define __DEFINES_H_
+ 
++#include <sys/param.h>
+ #include <config.h>
+ 
+ /*
+@@ -42,7 +43,7 @@
+  */
+ 
+ /* max path length */
+-#define GR_MAXPATHLEN 256
++#define GR_MAXPATHLEN MAXPATHLEN
+ 
+ /* max length for strings */
+ #define MAX_STRING_LENGTH 512
