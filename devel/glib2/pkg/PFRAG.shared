@@ -1,6 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/07/25 09:14:13 nino Exp $
-lib/libglib-2.0.so.0.4
-lib/libgmodule-2.0.so.0.4
-lib/libgobject-2.0.so.0.4
-lib/libgthread-2.0.so.0.4
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/12/23 04:54:59 marcm Exp $
+lib/libglib-2.0.so.0.7
+lib/libgmodule-2.0.so.0.7
+lib/libgobject-2.0.so.0.7
+lib/libgthread-2.0.so.0.7
 DYNLIBDIR(%D/lib)

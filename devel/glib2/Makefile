@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2002/08/08 19:20:28 nino Exp $
+# $OpenBSD: Makefile,v 1.5 2002/12/23 04:54:59 marcm Exp $
 
 COMMENT=		"general-purpose utility library"
 COMMENT-docs=           "glib2 documentation"
 
-VERSION=		2.0.6
+VERSION=		2.0.7
 DISTNAME=		glib-${VERSION}
 PKGNAME=		glib2-${VERSION}
 PKGNAME-docs=           glib2-docs-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.gtk.org
-MAINTAINER=		Nils Nordman <nino@openbsd.org>
+MAINTAINER=		Marc Matteo <marcm@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,10 +30,10 @@ BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 .endif
 
 # library versions (major:minor)
-LIBGLIB_VERSION=	0:4
-LIBGOBJECT_VERSION=	0:4
-LIBGTHREAD_VERSION=	0:4
-LIBGMODULE_VERSION=	0:4
+LIBGLIB_VERSION=	0:7
+LIBGOBJECT_VERSION=	0:7
+LIBGTHREAD_VERSION=	0:7
+LIBGMODULE_VERSION=	0:7
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		simple
