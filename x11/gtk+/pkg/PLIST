@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.20 2000/06/11 17:56:03 brad Exp $
 bin/gtk-config
 include/gdk/gdk.h
 include/gdk/gdkcursors.h
@@ -127,11 +128,9 @@ info/gtk.info
 @exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk.a
 lib/libgdk.la
-lib/libgdk.so.1.2
 lib/libgtk.a
 lib/libgtk.la
-lib/libgtk.so.1.2
-@exec /sbin/ldconfig -m %B
+%%SHARED%%
 man/man1/gtk-config.1
 share/aclocal/gtk.m4
 share/locale/ca/LC_MESSAGES/gtk+.mo

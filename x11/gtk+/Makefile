@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.34 2000/05/28 01:24:04 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2000/06/11 17:56:03 brad Exp $
 
 DISTNAME=	gtk+-1.2.7
-CATEGORIES=     x11
-NEED_VERSION=	 1.230
+CATEGORIES=	x11
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
-HOMEPAGE=	http://www.gtk.org/
+HOMEPAGE=	http://www.gtk.org
+
+LIB_DEPENDS=	intl::devel/gettext \
+		glib.1.2::devel/glib
+
 MAINTAINER=	brad@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,12 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS=	intl::devel/gettext \
-		glib.1.2::devel/glib
-
-FAKE=		Yes
-
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
