@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 1998/11/09 01:49:55 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.7 1999/09/14 00:34:36 brad Exp $
 
-DISTNAME=	freeciv-1.7.1
+DISTNAME=	freeciv-1.8.1
 CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/ \
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-MAINTAINER=	mickey@openbsd.org
+MAINTAINER=	israfil@gmx.net
 
-MASTER_SITES=	ftp://freeciv.ultraviolet.org/pub/freeciv/
+LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
+		glib.1.2:${PORTSDIR}/devel/glib \
+		gtk.1.2:${PORTSDIR}/x11/gtk+ \
+		Imlib.1.9:${PORTSDIR}/graphics/imlib
 
-USE_IMAKE=      	yes
-NO_INSTALL_MANPAGES=	yes
-WRKSRC=		${WRKDIR}/freeciv-1.7.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk-config" \
+		CFLAGS="-O -g"
 
-post-install:
-	${MKDIR} ${PREFIX}/lib/X11/freeciv
-	${INSTALL_DATA} $(WRKSRC)/data/Freeciv $(WRKSRC)/data/*.xpm \
-	  ${PREFIX}/lib/X11/freeciv
+NO_INSTALL_MANPAGES= yes
 
 .include <bsd.port.mk>
