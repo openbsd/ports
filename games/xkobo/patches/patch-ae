@@ -1,0 +1,29 @@
+--- key.C.orig	Wed Dec  1 14:46:34 1999
++++ key.C	Wed Dec  1 14:47:37 1999
+@@ -51,7 +51,7 @@ void _key::clear()
+     right     = 0;
+     up        = 0;
+     down      = 0;
+-    shot      = 0;
++    shot      = 1;
+ }
+ 
+ void _key::press(KeySym sym)
+@@ -72,7 +72,7 @@ void _key::press(KeySym sym)
+     else if (sym == XK_Home  ) ul    = 1;
+     else if (sym == KEY_UR   ) ur    = 1;
+     else if (sym == XK_Prior ) ur    = 1;
+-    else if (sym == KEY_SHOT ) shot  = 1;
++    else if (sym == KEY_SHOT ) shot  = !shot;
+     else if (sym == KEY_EXIT ) manage.exit_key();
+     else if (sym == KEY_START) manage.start_key();
+     else if (sym == KEY_PLUS ) manage.plus_key();
+@@ -98,7 +98,7 @@ void _key::release(KeySym sym)
+     else if (sym == XK_Home  ) ul    = 0;
+     else if (sym == KEY_UR   ) ur    = 0;
+     else if (sym == XK_Prior ) ur    = 0;
+-    else if (sym == KEY_SHOT ) shot  = 0;
++    else if (sym == KEY_SHOT ) ;
+     _key::change();
+ }
+ 
