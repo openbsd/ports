@@ -11,7 +11,7 @@
 /* to implement on some architectures yet ... */
 #if defined(__i386__)
 #else
-#define NOCOEXPR
+#define NoCoexpr
 #endif
 
 #define GenericBSD
