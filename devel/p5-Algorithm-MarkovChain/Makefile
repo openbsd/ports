@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/10/14 05:08:15 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2004/12/01 03:24:11 kevlo Exp $
 
 COMMENT=	"module to create Markov chains and output based on them"
 
-DISTNAME=	Algorithm-MarkovChain-0.05
+DISTNAME=	Algorithm-MarkovChain-0.06
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
