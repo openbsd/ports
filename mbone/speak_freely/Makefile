@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.20 2004/10/01 05:05:01 jolan Exp $
 
 COMMENT=	"voice communication over data networks"
 
@@ -16,8 +16,8 @@ LIB_DEPENDS=	gsm.1.0::audio/gsm
 
 MAKE_ENV=	DUPLEX=-DHALF_DUPLEX
 
-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
-     ${MACHINE_ARCH} == "vax")
+.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
+     ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "vax")
 MAKE_ENV+=	CCFLAGS=-DM_LITTLE_ENDIAN
 .endif
 
