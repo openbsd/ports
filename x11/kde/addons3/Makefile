@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/12/16 07:25:25 alek Exp $
+# $OpenBSD: Makefile,v 1.32 2004/12/17 09:24:32 alek Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
@@ -21,8 +21,9 @@ SEPARATE_BUILD=flavored
 
 WANTLIB=	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c esd glib glib-2.0.0.0 gmodule gmodule-2.0.0.0 \
-		iconv intl jpeg kimproxy kmedia2_idl m mad mcop noatunarts ogg \
+		iconv intl jpeg kimproxy kmedia2_idl m mad mcop ogg \
 		ossaudio pcre pcreposix png pthread qtmcop soundserver_idl \
 		stdc++ usbhid util vorbis vorbisenc vorbisfile z gthread-2.0.0.0
+#WANTLIB+=	noatunarts 
 
 .include <bsd.port.mk>
