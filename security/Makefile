@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2003/01/24 23:30:04 sturm Exp $
+# $OpenBSD: Makefile,v 1.116 2003/01/30 05:13:03 kevlo Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += bounix
      SUBDIR += bsd-airtools
      SUBDIR += ccrypt
+     SUBDIR += ccrypt,emacs21
      SUBDIR += cfs
      SUBDIR += cgichk
      SUBDIR += chrootuid
