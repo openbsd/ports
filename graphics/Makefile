@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 1998/06/10 02:56:11 marc Exp $
+# $OpenBSD: Makefile,v 1.15 1998/09/25 03:36:15 marc Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -6,6 +6,7 @@
 #    SUBDIR += Mesa
 #    SUBDIR += aero
 #    SUBDIR += camediaplay
+     SUBDIR += compface
 #    SUBDIR += dc3play
 #    SUBDIR += dore
 #    SUBDIR += fxtv
