@@ -1,4 +1,4 @@
 nhttpd is a simple, fast, and secure http server which supports:
 
-html, cgi, chroot, setuid, basic authentication, virtual hosts, aliases and
-ssl.
+html, cgi, chroot, setuid, basic authentication, virtual hosts, aliases, ssl,
+and ipv6.
