@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/10/22 14:55:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2001/04/15 17:39:23 espie Exp $
 @pkgcfl icon_interp-*
+@pkgcfl icon-interp-*
 @pkgcfl icon_lib-*
+@pkgcfl icon-lib-*
 bin/icont
 bin/iconx
 bin/ivib
