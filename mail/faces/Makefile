@@ -3,15 +3,17 @@
 # Date created:		December 4, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/12/05 01:37:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/12 03:16:36 marc Exp $
 #
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
+NO_CDROM=	"NOFEE:	Can not sell"
+
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/ \
 		ftp://odie.physik2.uni-rostock.de/pub/
 EXTRACT_SUFX=	.tar.Z
-		
+
 MAINTAINER=	angelos@openbsd.org
 
 WRKSRC=		$(WRKDIR)/faces
