@@ -1,20 +1,23 @@
-$OpenBSD: patch-gpal_gpal_c,v 1.1 2004/01/30 01:01:11 naddy Exp $
---- gpal/gpal.c.orig	2004-01-26 10:36:51.000000000 +1100
-+++ gpal/gpal.c	2004-01-26 10:40:38.000000000 +1100
-@@ -68,9 +68,9 @@ add_file(char *name,
+$OpenBSD: patch-gpal_gpal_c,v 1.2 2004/04/20 12:32:53 avsm Exp $
+--- gpal/gpal.c.orig	2004-01-07 06:35:53.000000000 +0000
++++ gpal/gpal.c	2004-04-20 13:27:14.000000000 +0100
+@@ -67,10 +67,11 @@ add_file(char *name,
+   struct file_struct *file_data;
  
    if (extension != NULL) {
-     file_name = malloc(strlen(name) + strlen(extension)+ 2);
+-    file_name = malloc(strlen(name) + strlen(extension)+ 2);
 -    strcpy(file_name, name);
 -    strcat(file_name, ".");
 -    strcat(file_name, extension);
-+    strlcpy(file_name, name, sizeof(file_name));
-+    strlcat(file_name, ".", sizeof(file_name));
-+    strlcat(file_name, extension, sizeof(file_name));
++    size_t len = strlen(name) + strlen(extension) + 2;
++    file_name = malloc(len);
++    strlcpy(file_name, name, len);
++    strlcat(file_name, ".", len);
++    strlcat(file_name, extension, len);
    } else {
      file_name = strdup(name);
    }
-@@ -389,18 +389,18 @@ assemble(gp_boolean debug_info)
+@@ -389,18 +390,18 @@ assemble(gp_boolean debug_info)
      exit(1);
    }
  
@@ -38,7 +41,7 @@ $OpenBSD: patch-gpal_gpal_c,v 1.1 2004/01/30 01:01:11 naddy Exp $
  
    if (!gp_debug_disable) {
      printf("%s\n", command);
-@@ -438,38 +438,38 @@ combine_output(void)
+@@ -438,38 +439,38 @@ combine_output(void)
      return;
  
    if (state.archive == true) {
@@ -89,7 +92,7 @@ $OpenBSD: patch-gpal_gpal_c,v 1.1 2004/01/30 01:01:11 naddy Exp $
      list = list->next;
    }  
    
-@@ -477,8 +477,8 @@ combine_output(void)
+@@ -477,8 +478,8 @@ combine_output(void)
    while(list) {
      file_data = gp_list_get(list);
      if (file_data->is_link) {
