@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.98 1999/06/24 17:31:16 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.99 1999/06/24 18:39:48 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1615,7 +1615,6 @@ _PORT_USE: .USE
 	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} run-depends lib-depends
 .endif
 .if make(real-install)
-	@touch ${INSTALL_PRE_COOKIE}
 .if !defined(NO_MTREE)
 	@if [ `id -u` = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
@@ -1633,6 +1632,7 @@ _PORT_USE: .USE
 		${ECHO_MSG} "Become root and try again to ensure correct permissions."; \
 	fi
 .endif
+	@touch ${INSTALL_PRE_COOKIE}
 .endif
 	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
