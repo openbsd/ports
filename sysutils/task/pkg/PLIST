@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/09/18 07:21:48 jsyn Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/11/16 21:27:57 brad Exp $
 bin/dcalc
 bin/dcat
 bin/dls
@@ -11,6 +11,7 @@ bin/ifind
 bin/ils
 bin/istat
 bin/mactime
+bin/sorter
 man/man1/blockcalc.1
 man/man1/dcalc.1
 man/man1/dcat.1
@@ -26,7 +27,9 @@ man/man1/ifind.1
 man/man1/ils.1
 man/man1/istat.1
 man/man1/mactime.1
+man/man1/sorter.1
 man/man1/unrm.1
+share/doc/task/CHANGES.FROM.TCT
 share/doc/task/README
 share/doc/task/README.FIRST
 share/doc/task/additional-resources
