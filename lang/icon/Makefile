@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/05/09 21:55:37 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/07/13 20:37:14 espie Exp $
 
 DISTNAME=	icon-9.3.1
 CATEGORIES=	lang
@@ -8,7 +8,7 @@ DISTFILES=	unix.tgz
 
 MAINTAINER=	espie@openbsd.org
 
-NO_WRKDIR=	yes
+NO_WRKSUBDIR=	yes
 USE_X11=	yes
 
 SCRIPTS_ENV=	ARCH="${MACHINE_ARCH}"
