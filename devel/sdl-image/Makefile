@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/23 07:55:59 mark Exp $
+# $OpenBSD: Makefile,v 1.10 2002/09/03 06:19:18 mark Exp $
 
 COMMENT=	"SDL image library"
 
@@ -7,13 +7,13 @@ PROJ=		SDL_image
 DISTNAME=	${PROJ}-${VER}
 PKGNAME=	sdl-image-${VER}
 CATEGORIES=	devel graphics
-NEED_VERSION=	1.525
 MASTER_SITES=	http://www.libsdl.org/projects/${PROJ}/release/
 
 HOMEPAGE=	http://www.libsdl.org/
 
 MAINTAINER=	Mark Grimes <mark@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
