@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/04/01 02:16:41 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/04/02 06:39:47 marc Exp $
 
 DISTNAME=	unzip540
 PKGNAME=	unzip-5.40
@@ -11,6 +11,7 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
+MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 do-install:
 	cd ${WRKSRC} && \
