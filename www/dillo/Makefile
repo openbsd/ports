@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/03/18 14:31:20 couderc Exp $
+# $OpenBSD: Makefile,v 1.2 2002/03/20 11:43:52 couderc Exp $
 
-COMMENT=		"Dillo is a Gtk-based web browser"
+COMMENT=		"Fast and light gtk-based web browser"
 
 DISTNAME=		dillo-0.6.4
 CATEGORIES=     	www
