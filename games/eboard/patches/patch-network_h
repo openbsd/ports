@@ -1,0 +1,14 @@
+$OpenBSD: patch-network_h,v 1.1 2002/07/17 10:27:06 fgsch Exp $
+--- network.h.orig	Sat Jul  6 18:05:11 2002
++++ network.h	Wed Jul 17 06:44:19 2002
+@@ -47,6 +47,10 @@
+ #include "stl.h"
+ #include "eboard.h"
+ 
++#if defined(__OpenBSD__) 
++#define SOL_TCP		IPPROTO_TCP
++#endif
++
+ class PidIssuer {
+  public:
+   virtual void farewellPid(int dpid)=0;
