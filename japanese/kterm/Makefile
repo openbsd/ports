@@ -1,12 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2000/02/02 17:02:39 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/03/11 15:56:23 espie Exp $
 #
 
 DISTNAME=	kterm-6.2.0
 PKGNAME=	ja-kterm-6.2.0
 CATEGORIES=	japanese x11
+NEED_VERSION=	1.175
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
-NEED_VERSION=	1.175
+
+LICENSE_TYPE=	X
+PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE_FTP=Yes
+PERMIT_DISTFILES_CDROM=Yes
+PERMIT_DISTFILES_FTP=Yes
+
 
 
 MASTER_SITES0=	ftp://ftp.sra.co.jp/pub/x11/kterm/
@@ -15,11 +22,13 @@ PATCHFILES=	kterm-6.2.0.NFS-xauth.patch:0
 MAINTAINER=	ports@openbsd.org
 
 USE_IMAKE=	Yes
+FAKE=		Yes
 
-.if exists(/usr/X11R6/lib/libXaw3d.a) && !defined(PACKAGE_BUILDING)
-post-patch:
-	@${ECHO_MSG}  "===>  Applying Xaw3d scrollbar patch"
-	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-0
+XAW3D?=		No
+.if ${XAW3D:U} == "YES"
+PKGNAME:= ${PKGNAME}-Xaw3d
+LIB_DEPENDS=	Xaw3d.6.1:${PORTSDIR}/x11/Xaw3d
+MAKE_ENV=EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 
 .include <bsd.port.mk>
