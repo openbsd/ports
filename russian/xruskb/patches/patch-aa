@@ -1,0 +1,63 @@
+*** Xrus.ad.orig	Tue Jul 21 11:35:55 1998
+--- Xrus.ad	Tue Jul 21 11:37:36 1998
+***************
+*** 19,28 ****
+  !*modeButton1.labelType:	pixmap
+  !*modeButton1.labelPixmap:	/home/lav/xrus/rus.xpm
+  
+! *modeButton0.labelString:   LAT
+! *modeButton1.labelString:   RUS
+! *modeButton0.label:   LAT
+! *modeButton1.label:   RUS
+  
+  ! whether make the two buttons equal in size
+  *adjustModeButtons: True
+--- 19,28 ----
+  !*modeButton1.labelType:	pixmap
+  !*modeButton1.labelPixmap:	/home/lav/xrus/rus.xpm
+  
+! *modeButton0.labelString:   En
+! *modeButton1.labelString:   Ru
+! *modeButton0.label:   En
+! *modeButton1.label:   Ru
+  
+  ! whether make the two buttons equal in size
+  *adjustModeButtons: True
+***************
+*** 32,38 ****
+  *fontList: -*-helvetica-bold-r-*-*-14-*
+  
+  ! Display the button in the lower left corner
+! *geometry:	+0-0
+  
+  ! To load russian modmap automatically on xrus startup, specify this:
+  !*xmodmap: /path/russian.xmm
+--- 32,38 ----
+  *fontList: -*-helvetica-bold-r-*-*-14-*
+  
+  ! Display the button in the lower left corner
+! *geometry:	-0+0
+  
+  ! To load russian modmap automatically on xrus startup, specify this:
+  !*xmodmap: /path/russian.xmm
+***************
+*** 50,58 ****
+  ! The command to use as screen locker
+  !*locker:	exec xlock -remote >/dev/null 2>&1
+  ! Bell when switching keyboard mode
+! !*useBell:	false
+  
+! !*switchKeys:	Shift_L+Shift_R
+  !*switchKeys:	Shift_L+Control_L
+  
+  ! You can also specify non-triggering behavior by supplying
+--- 50,58 ----
+  ! The command to use as screen locker
+  !*locker:	exec xlock -remote >/dev/null 2>&1
+  ! Bell when switching keyboard mode
+! *useBell:	true
+  
+! *switchKeys:	Shift_L+Shift_R
+  !*switchKeys:	Shift_L+Control_L
+  
+  ! You can also specify non-triggering behavior by supplying
