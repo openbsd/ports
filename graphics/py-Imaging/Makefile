@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/05/25 19:50:31 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/10 14:25:56 shell Exp $
 
 COMMENT=		"python imaging library"
 
@@ -6,7 +6,7 @@ DISTNAME=		Imaging-1.1.2
 PKGNAME=		py-${DISTNAME}
 	
 CATEGORIES=		graphics
-NEED_VERSION=		1.413
+NEED_VERSION=		1.405
 
 HOMEPAGE=		http://www.pythonware.com/products/pil/
 
@@ -21,15 +21,44 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.pythonware.com/downloads/
 
-# will be flavored in future
-BUILD_DEPENDS=          python2.0::lang/python,tk
+# can be built with python2.x xor python1.5
+# change PY2 according to the current python port
+PY2=			2.1
+FLAVORS=		${PY2} 1.5
+
+# try to determine python version, if installed.
+.if exists(/usr/local/bin/python)
+V!= echo 'import sys, string; print string.split(sys.version)[0]' | python
+.endif
+FLAVOR?=		${V}
+
+# set -deps corresponding
+CHOICE=${FLAVOR:L:N"2.?":N"1.5"}
+.if ${CHOICE} == "${PY2}"
+BUILD_DEPENDS=          python${PY2}::lang/python,tk
+PYTHON_VER=		python${PY2}
+.elif ${CHOICE} == "1.5"
+BUILD_DEPENDS=          python1.5::lang/python15,tk
+PYTHON_VER=		python1.5
+.else
+# no FLAVOR has been set nor python is installed
+.BEGIN:
+	@echo "Conflicting flavor: ${FLAVOR}"
+	@echo "You have to select either ${PY2} or 1.5, not both."
+	@echo "This can also mean, you have no python installed at all."
+	@echo "If you specify FLAVOR, the corresponding python version"
+	@echo "will be installed. (man ports)"
+	@exit 1
+.endif
+
 RUN_DEPENDS=		${BUILD_DEPENDS}
 LIB_DEPENDS=		jpeg.6::graphics/jpeg
+
+SUBST_VARS=		PYTHON_VER
 
 ALL_TARGET=
 
 LIB_IMAGING=		${WRKSRC}/libImaging
-PYTHON_VER=		python2.0
 SITE_PACKAGES=		${PREFIX}/lib/${PYTHON_VER}/site-packages
 PYTHON_INCLUDE_DIR=	${PREFIX}/include/${PYTHON_VER}
 PIL_INCLUDES=		ImConfig.h ImPlatform.h Imaging.h
@@ -43,6 +72,7 @@ do-configure:
 	cd ${WRKSRC} && perl -pi -e 's/(^LDSHARED=.*)/$$1 -Bstatic/' Makefile
 
 do-install:
+# put all files in a subdir and just put a .pth file in ${SITE_PACKAGES}
 	${INSTALL_DATA_DIR} ${SITE_PACKAGES}/PIL
 	for a in ${WRKSRC}/*.so ${WRKSRC}/PIL/*; do \
 		${INSTALL_DATA} $$a ${SITE_PACKAGES}/PIL; done
