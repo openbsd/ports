@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 1999/12/13 00:34:11 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/12/26 10:09:41 fgsch Exp $
 # $FreeBSD: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 
 PKGNAME=	rsaref-2.0
@@ -26,17 +26,15 @@ pre-configure:
 		cp md5.h _md5.h
 
 do-install:
-	@mkdir -p ${PREFIX}/share/doc/rsaref
-.for f in rsa.h _des.h _md2.h _md5.h rsaref.h global.h
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/include
-.endfor
-.for f in info.txt rsaref.txt
-	${INSTALL_DATA} ${WRKDIR}/doc/${f} ${PREFIX}/share/doc/rsaref
-.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rsaref
+	cd ${WRKSRC} && ${INSTALL_DATA} rsa.h _des.h _md2.h _md5.h \
+	    rsaref.h global.h ${PREFIX}/include
+	cd ${WRKDIR}/doc && ${INSTALL_DATA} info.txt rsaref.txt \
+	    ${PREFIX}/share/doc/rsaref
 	${INSTALL_DATA} ${WRKSRC}/librsaref.a ${PREFIX}/lib
 	@if [ -f ${WRKSRC}/librsaref.so.2.0 ]; then \
-	 ${INSTALL_DATA} ${WRKSRC}/librsaref.so.2.0 ${PREFIX}/lib; \
-	 ${LDCONFIG} -m ${PREFIX}/lib; \
+	    ${INSTALL_DATA} ${WRKSRC}/librsaref.so.2.0 ${PREFIX}/lib; \
+	    ${LDCONFIG} -m ${PREFIX}/lib; \
 	fi
 
 .include <bsd.port.mk>
