@@ -1,6 +1,6 @@
-$OpenBSD: patch-xv_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
---- xv.c.orig	Tue Sep 21 06:49:20 2004
-+++ xv.c	Tue Sep 21 06:50:28 2004
+$OpenBSD: patch-xv_c,v 1.2 2005/03/15 01:16:47 naddy Exp $
+--- xv.c.orig	Tue Mar 15 00:20:23 2005
++++ xv.c	Tue Mar 15 00:28:24 2005
 @@ -1990,10 +1990,9 @@ static int openPic(filenum)
  #else /* it is VMS */
        sprintf(filename, "[]xvXXXXXX");
@@ -13,6 +13,15 @@ $OpenBSD: patch-xv_c,v 1.1 2004/09/21 18:46:04 sturm Exp $
        if (!fp) FatalError("openPic(): can't write temporary file");
      
        while ( (i=getchar()) != EOF) putc(i,fp);
+@@ -2219,7 +2218,7 @@ static int openPic(filenum)
+   SetISTR(ISTR_INFO,formatStr);
+ 	
+   SetInfoMode(INF_PART);
+-  SetISTR(ISTR_FILENAME, 
++  SetISTR(ISTR_FILENAME, "%s",
+ 	  (filenum==DFLTPIC || filenum==GRABBED || frompipe)
+ 	  ? "<none>" : basefname);
+ 
 @@ -2759,7 +2758,7 @@ int UncompressFile(name, uncompname)
    
  #ifndef VMS
