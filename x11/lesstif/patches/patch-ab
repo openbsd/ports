@@ -1,11 +1,11 @@
---- lib/config/Makefile.in.orig	Tue Aug 11 18:37:09 1998
-+++ lib/config/Makefile.in	Sun Aug 16 20:31:40 1998
-@@ -100,7 +100,7 @@
- MAINTAINERCLEANFILES=Makefile.in
- bin_SCRIPTS=	mxmkmf
+--- lib/config/Makefile.in.orig	Sat Mar 20 19:05:40 1999
++++ lib/config/Makefile.in	Sat Mar 20 19:06:04 1999
+@@ -110,7 +110,7 @@
+ MAINTAINERCLEANFILES = Makefile.in
+ bin_SCRIPTS = mxmkmf
  
--configdir=	$(libdir)/X11/config
-+configdir=	$(libdir)/X11/lesstif
- config_DATA=	Imake.tmpl Motif.rules Motif.tmpl
+-configdir = $(libdir)/X11/config
++configdir = $(libdir)/X11/lesstif
+ config_DATA = Imake.tmpl Motif.rules Motif.tmpl
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../include/LTconfig.h

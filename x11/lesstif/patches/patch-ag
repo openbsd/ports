@@ -1,11 +1,11 @@
---- doc/www.lesstif.org/images/Makefile.in.orig	Tue Aug 11 18:37:30 1998
-+++ doc/www.lesstif.org/images/Makefile.in	Sun Aug 16 20:31:41 1998
-@@ -106,7 +106,7 @@
+--- doc/www.lesstif.org/images/Makefile.in.orig	Sat Mar 20 19:18:29 1999
++++ doc/www.lesstif.org/images/Makefile.in	Sat Mar 20 19:18:57 1999
+@@ -116,7 +116,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # poluting /usr/local for default installs.
  #
--rootdir=	$(exec_prefix)/LessTif/doc/images
-+rootdir=	$(pkgdatadir)/doc/html/images
- root_DATA=	hungry.gif \
- 		lesstif-realsmall.gif lesstif-small.gif lesstif.gif \
- 		ltsunlogo.gif
+-rootdir = $(exec_prefix)/LessTif/doc/images
++rootdir = $(pkgdatadir)/doc/html/images
+ root_DATA = hungry.gif 		lesstif-realsmall.gif lesstif-small.gif lesstif.gif 		ltsunlogo.gif
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

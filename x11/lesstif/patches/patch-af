@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Aug 11 18:37:09 1998
-+++ Makefile.in	Sun Aug 16 20:31:40 1998
-@@ -106,7 +106,7 @@
+--- Makefile.in.orig	Sat Mar 20 19:17:06 1999
++++ Makefile.in	Sat Mar 20 19:17:34 1999
+@@ -118,7 +118,7 @@
  # Lets put the informational stuff in a sub directory to avoid 
  # poluting /usr/local for default installs.
  #
--rootdir=	$(exec_prefix)/LessTif
-+rootdir=	$(pkgdatadir)
- root_DATA=	AUTHORS BUG-REPORTING COPYING COPYING.LIB CREDITS \
- 	INSTALL KNOWN_BUGS NEWS README RELEASE-POLICY TODO
+-rootdir = $(exec_prefix)/LessTif
++rootdir = $(pkgdatadir)
+ root_DATA = AUTHORS BUG-REPORTING COPYING COPYING.LIB CREDITS 	INSTALL KNOWN_BUGS NEWS README RELEASE-POLICY TODO
+ 
  
