@@ -1,0 +1,12 @@
+$OpenBSD: patch-Configure,v 1.6 2002/01/29 19:40:51 pvalchev Exp $
+--- Configure.orig	Tue Jan 29 12:14:08 2002
++++ Configure	Tue Jan 29 12:14:59 2002
+@@ -2301,7 +2301,7 @@ kernel generation process.
+       exit 1
+       ;;
+     esac	# }
+-    LSOF_CFGF="-DOPENBSDV=$LSOF_VERS -DN_UNIXV=/bsd"
++    LSOF_CFGF="-DOPENBSDV=$LSOF_VERS"
+     if test -r ${LSOF_INCLUDE}/nfs/nfsproto.h	# {
+     then
+       LSOF_CFGF="$LSOF_CFGF -DHASNFSPROTO"

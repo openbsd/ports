@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2002/01/25 00:58:18 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.39 2002/01/29 19:40:51 pvalchev Exp $
 
 COMMENT=	"list information about open files"
 
 VERSION=	4.61
 DISTNAME=	lsof_${VERSION}
-PKGNAME=	${DISTNAME:S/_/-/}
+PKGNAME=	${DISTNAME:S/_/-/}p1
 CATEGORIES=	sysutils
 NEED_VERSION=	1.504
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/ \
