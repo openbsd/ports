@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2003/02/11 04:16:26 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2003/02/28 03:21:20 brad Exp $
 
 COMMENT=	"XML editor for KDE"
 
 DISTNAME=	kxmleditor-0.7.2
-CATEGORIES=	editors
+CATEGORIES=	editors x11 x11/kde
 
 HOMEPAGE=	http://kxmleditor.sourceforge.net/
 
@@ -19,6 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio,kparts::x11/kde/libs3
 
+AUTOCONF_VERSION= 2.52
 MODKDE_VERSION=	3.1
 MODULES=	kde
 
@@ -30,7 +31,6 @@ MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 USE_X11=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_NEW=	Yes
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
