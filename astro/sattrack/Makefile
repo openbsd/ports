@@ -1,17 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:20:11 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/09/06 18:01:12 brad Exp $
 
 DISTNAME=	sattrack-3.1.6
 CATEGORIES=	astro
-
 NO_CDROM=	"COPY: may not be bundled"
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
 MAINTAINER=	angelos@openbsd.org
 
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-
 WRKSRC=		${WRKDIR}/SatTrack-3.1.6/src
-
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
