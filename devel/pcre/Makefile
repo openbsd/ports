@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2000/10/04 21:54:07 jakob Exp $
+# $OpenBSD: Makefile,v 1.4 2001/01/01 19:08:11 jakob Exp $
 
-DISTNAME=		pcre-3.2
+DISTNAME=		pcre-3.4
 CATEGORIES=     	devel
 NEED_VERSION=		1.310
 
