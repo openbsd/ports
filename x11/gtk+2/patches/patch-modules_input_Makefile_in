@@ -1,8 +1,23 @@
-$OpenBSD: patch-modules_input_Makefile_in,v 1.5 2003/09/23 06:12:41 marcm Exp $
+$OpenBSD: patch-modules_input_Makefile_in,v 1.6 2003/12/08 06:08:43 marcm Exp $
 --- modules/input/Makefile.in.orig	2003-09-04 10:18:53.000000000 -0700
-+++ modules/input/Makefile.in	2003-09-05 13:45:46.000000000 -0700
-@@ -856,7 +856,8 @@ install-data-local:
-         fi
++++ modules/input/Makefile.in	2003-12-07 10:54:33.000000000 -0800
+@@ -841,22 +841,10 @@ maintainer-clean-generic clean mostlycle
+ # Running this if cross compiling or if DESTDIR is set is going to
+ # not work at all, so skip it.
+ install-data-local:
+-	@if $(RUN_QUERY_IMMODULES_TEST) ; then \
+-	  echo $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
+-	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
+-	  echo "$(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules" ; \
+-	  $(top_builddir)/gtk/gtk-query-immodules-2.0 > $(DESTDIR)$(sysconfdir)/gtk-2.0/gtk.immodules ; \
+-	else \
+-	  echo "***" ; \
+-	  echo "*** Warning: gtk.immodules not built" ; \
+-	  echo "***" ; \
+-	  echo "*** Generate this file manually on host" ; \
+-	  echo "*** system using gtk-query-immodules-2.0" ; \
+-	  echo "***" ; \
+-        fi
  
  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
 -	$(top_builddir)/gtk/gtk-query-immodules-2.0 *.la > gtk.immodules

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.4 2003/06/30 03:59:03 marcm Exp $
+@comment $OpenBSD: PLIST-docs,v 1.5 2003/12/08 06:08:43 marcm Exp $
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/apa.html
 share/gtk-doc/html/gdk-pixbuf/apas02.html
@@ -24,6 +24,7 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp
 share/gtk-doc/html/gdk-pixbuf/home.png
 share/gtk-doc/html/gdk-pixbuf/index.html
 share/gtk-doc/html/gdk-pixbuf/index.sgml
+share/gtk-doc/html/gdk-pixbuf/ix01.html
 share/gtk-doc/html/gdk-pixbuf/left.png
 share/gtk-doc/html/gdk-pixbuf/license.html
 share/gtk-doc/html/gdk-pixbuf/right.png
@@ -94,6 +95,7 @@ share/gtk-doc/html/gdk/icon.png
 share/gtk-doc/html/gdk/index.html
 share/gtk-doc/html/gdk/index.sgml
 share/gtk-doc/html/gdk/iron_cross.png
+share/gtk-doc/html/gdk/ix01.html
 share/gtk-doc/html/gdk/left.png
 share/gtk-doc/html/gdk/left_ptr.png
 share/gtk-doc/html/gdk/left_side.png
@@ -316,6 +318,7 @@ share/gtk-doc/html/gtk/gtkobjects.html
 share/gtk-doc/html/gtk/home.png
 share/gtk-doc/html/gtk/index.html
 share/gtk-doc/html/gtk/index.sgml
+share/gtk-doc/html/gtk/ix01.html
 share/gtk-doc/html/gtk/left.png
 share/gtk-doc/html/gtk/right.png
 share/gtk-doc/html/gtk/stock_add_24.png
@@ -392,3 +395,5 @@ share/gtk-doc/html/gtk/up.png
 @dirrm share/gtk-doc/html/gtk
 @dirrm share/gtk-doc/html/gdk-pixbuf
 @dirrm share/gtk-doc/html/gdk
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.3 2003/06/30 03:59:03 marcm Exp $
---- gdk-pixbuf/Makefile.in.orig	Mon Jun  9 14:26:02 2003
-+++ gdk-pixbuf/Makefile.in	Thu Jun 19 09:54:26 2003
+$OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.4 2003/12/08 06:08:43 marcm Exp $
+--- gdk-pixbuf/Makefile.in.orig	2003-09-04 10:18:11.000000000 -0700
++++ gdk-pixbuf/Makefile.in	2003-12-07 10:47:44.000000000 -0800
 @@ -429,7 +429,7 @@ libgdk_pixbuf_2_0_la_SOURCES = @STRIP_BE
  @STRIP_END@
  
@@ -10,7 +10,25 @@ $OpenBSD: patch-gdk-pixbuf_Makefile_in,v 1.3 2003/06/30 03:59:03 marcm Exp $
  	@LIBTOOL_EXPORT_OPTIONS@				\
  	$(no_undefined)						\
  	$(gdk_pixbuf_symbols)					\
-@@ -1360,7 +1360,7 @@ gdk-pixbuf.loaders: $(loader_LTLIBRARIES
+@@ -1342,17 +1342,6 @@ $(srcdir)/gdk-pixbuf-marshal.c: @REBUILD
+ # Running this if cross compiling or if DESTDIR is set is going to
+ # not work at all, so skip it
+ install-data-local: install-ms-lib install-libtool-import-lib
+-	@if $(RUN_QUERY_LOADER_TEST) ; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/gtk-2.0 ; \
+-	  $(top_builddir)/gdk-pixbuf/gdk-pixbuf-query-loaders > $(DESTDIR)$(sysconfdir)/gtk-2.0/gdk-pixbuf.loaders ; \
+-	else \
+-	  echo "***" ; \
+-	  echo "*** Warning: gdk-pixbuf.loaders not built" ; \
+-	  echo "***" ; \
+-	  echo "*** Generate this file manually on on host" ; \
+-	  echo "*** system using gdk-pixbuf-query-loaders" ; \
+-	  echo "***" ; \
+-	fi
+ 
+ @CROSS_COMPILING_FALSE@all-local: gdk-pixbuf.loaders
+ 
+@@ -1360,7 +1349,7 @@ gdk-pixbuf.loaders: $(loader_LTLIBRARIES
  	LOADERS=`echo libpixbufloader-*.la` ; \
  	if test "x$$LOADERS" != 'xlibpixbufloader-*.la' ; then \
            echo "Writing a gdk-pixbuf.loader file to use when running examples before installing gdk-pixbuf."; \

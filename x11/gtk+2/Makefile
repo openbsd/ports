@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2003/09/23 06:12:41 marcm Exp $
+# $OpenBSD: Makefile,v 1.12 2003/12/08 06:08:42 marcm Exp $
 
 NOT_FOR_ARCHS=			${NO_SHARED_ARCHS}
 
@@ -48,11 +48,5 @@ CONFIGURE_ENV=			CPPFLAGS="-I${X11BASE}/include/freetype2/ -I${LOCALBASE}/includ
 MAKE_ENV=			OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
 
 NO_SYSTRACE=			"normalize_filename: filename too long"
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+2/; \
-	src=`cd ${WRKSRC} && pwd -P`; \
-	sed s,$$src/modules/input,${LOCALBASE}/lib/gtk-2.0/2.2.0/immodules, ${WRKSRC}/modules/input/gtk.immodules > ${PREFIX}/share/examples/gtk+2/gtk.immodules; \
-	sed s,$$src/gdk-pixbuf,${LOCALBASE}/lib/gtk-2.0/2.2.0/loaders, ${WRKSRC}/gdk-pixbuf/gdk-pixbuf.loaders > ${PREFIX}/share/examples/gtk+2/gdk-pixbuf.loaders
 
 .include <bsd.port.mk>
