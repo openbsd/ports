@@ -1,7 +1,7 @@
 --- Makefile.orig	Wed Oct 28 09:42:43 1998
-+++ Makefile	Sat Jan 22 22:25:43 2000
++++ Makefile	Sat Jan 22 22:38:42 2000
 @@ -3,8 +3,6 @@
- # $Id: patch-ab,v 1.1 2000/01/23 03:29:56 brad Exp $
+ # $Id: patch-ab,v 1.2 2000/01/23 04:18:02 brad Exp $
  #
  
 -# Default C compiler: must be an ANSI C compiler
@@ -25,7 +25,7 @@
 +
  TCP:	NPtcp
 +
-+install:
++install: NPtcp
 +	$(BSD_INSTALL_PROGRAM) NPtcp ${PREFIX}/bin
 +	$(BSD_INSTALL_MAN) netpipe.1 ${PREFIX}/man/man1
 +	@ln -sf ${PREFIX}/bin/NPtcp ${PREFIX}/bin/netpipe
