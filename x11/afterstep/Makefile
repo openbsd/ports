@@ -3,7 +3,7 @@
 # Date created:		6 January 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/01/23 05:52:11 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/02/13 14:51:26 niklas Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -20,7 +20,7 @@ INSTALL_TARGET=	install install.man
 MAN1=		afterstep.1 asclock.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
 
 pre-build:
-		@ cd ${WRKSRC}; sh MakeMakefiles
+		@ cd ${WRKSRC}; ${SETENV} sh MakeMakefiles
 
 post-install:	
 		@ ${MKDIR} -p ${PREFIX}/lib/X11/afterstep/backgrounds/
