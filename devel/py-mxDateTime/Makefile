@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/10 15:00:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/02/01 14:49:11 shell Exp $
 
 COMMENT=	"Date and Time types for Python"
 
-VERSION=	2.0.2
+VERSION=	2.0.3
 DISTNAME=	egenix-mx-base-${VERSION}
 PKGNAME=	py-mxDateTime-${VERSION}
 CATEGORIES=	devel
-NEED_VERSION=	1.489
+NEED_VERSION=	1.504
 
 MASTER_SITES=	http://www.lemburg.com/files/python/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/07/20 17:41:50 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/02/01 14:49:11 shell Exp $
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/BeeBase.py
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/BeeBase.pyc
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/BeeBase.pyo
@@ -31,8 +31,10 @@ lib/python${PYTHON_VER}/site-packages/mx/BeeBase/__init__.pyo
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/__init__.py
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/__init__.pyo
+lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/btr.h
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.h
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/mxBeeBase.so
+lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/mxh.h
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/test.py
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/test.pyc
 lib/python${PYTHON_VER}/site-packages/mx/BeeBase/mxBeeBase/test.pyo
@@ -68,6 +70,9 @@ lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/alarm.pyo
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/lifespan.py
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/lifespan.pyc
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/lifespan.pyo
+lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/numdate.py
+lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/numdate.pyc
+lib/python${PYTHON_VER}/site-packages/mx/DateTime/Examples/numdate.pyo
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/Feasts.py
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/Feasts.pyc
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/Feasts.pyo
@@ -121,6 +126,9 @@ lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testnow.pyo
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/teststrftime.py
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/teststrftime.pyc
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/teststrftime.pyo
+lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testsubclassing.py
+lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testsubclassing.pyc
+lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testsubclassing.pyo
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testticks.py
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testticks.pyc
 lib/python${PYTHON_VER}/site-packages/mx/DateTime/mxDateTime/testticks.pyo
@@ -189,6 +197,7 @@ lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/__init__.pyo
 lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/mxProxy.h
 lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/mxProxy.so
+lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/mxh.h
 lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/test.py
 lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/test.pyc
 lib/python${PYTHON_VER}/site-packages/mx/Proxy/mxProxy/test.pyo
@@ -211,6 +220,7 @@ lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/__init__.pyo
 lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/mxQueue.h
 lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/mxQueue.so
+lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/mxh.h
 lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/test.py
 lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/test.pyc
 lib/python${PYTHON_VER}/site-packages/mx/Queue/mxQueue/test.pyo
@@ -291,6 +301,9 @@ lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/__init__.pyo
 lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/mxTextTools.h
 lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/mxTextTools.so
+lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/mxbmse.h
+lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/mxh.h
+lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/mxte.h
 lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/test.py
 lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/test.pyc
 lib/python${PYTHON_VER}/site-packages/mx/TextTools/mxTextTools/test.pyo
@@ -328,6 +341,7 @@ lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/hack.pyc
 lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/hack.pyo
 lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/mxTools.h
 lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/mxTools.so
+lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/mxh.h
 lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/test.py
 lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/test.pyc
 lib/python${PYTHON_VER}/site-packages/mx/Tools/mxTools/test.pyo
