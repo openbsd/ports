@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/11/17 06:49:52 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/07/21 03:11:49 brad Exp $
 
 COMMENT=		"library for tracking application startup"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/startup-notification/0.5/}
 EXTRACT_SUFX=		.tar.bz2
 
+USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
