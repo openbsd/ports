@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.274 2000/05/16 14:40:28 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.275 2000/05/16 15:13:28 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2587,7 +2587,7 @@ tags:
    fetch-list-recursive install lib-depends makesum mirror-distfiles \
    cdrom-packages ftp-packages \
    misc-depends package package-depends package-links package-name \
-   package-noinstall package-path patch plist post-build \
+   package-noinstall package-path patch plist update-patches post-build \
    post-configure post-extract post-fetch post-install post-package \
    post-patch pre-build pre-clean pre-configure pre-distclean \
    pre-extract pre-fetch pre-install pre-package pre-patch \
