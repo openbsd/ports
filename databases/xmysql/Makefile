@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/29 18:28:25 margarida Exp $
+# $OpenBSD: Makefile,v 1.20 2003/11/02 17:52:19 margarida Exp $
 
 COMMENT=	"X11 front end to the MySQL database engine"
 
 DISTNAME=	xmysql-1.10
 CATEGORIES=	databases
 
-MASTER_SITES=	http://linux.tucows.thenewsmonsters.com/files/x11/office/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
