@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/05 18:53:28 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/06 12:00:22 wilfried Exp $
 
 DISTNAME=	Mixer.app-1.5.0
 PKGNAME=	${DISTNAME:L}
-CATEGORIES=	audio x11/windowmaker
+CATEGORIES=	audio x11 x11/windowmaker
 NEED_VERSION=	1.340
 HOMEPAGE=	http://www.fukt.hk-r.se/~per/mixer/
 MASTER_SITES=	${HOMEPAGE}
