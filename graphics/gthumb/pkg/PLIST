@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/05/23 01:01:11 pvalchev Exp $
+bin/gthumb
+man/man1/gthumb.1
+share/application-registry/gthumb.applications
+share/gnome/apps/Graphics/gthumb.desktop
+share/gnome/help/gthumb/C/authors.html
+share/gnome/help/gthumb/C/browsing.html
+share/gnome/help/gthumb/C/bugs.html
+share/gnome/help/gthumb/C/catalogs.html
+share/gnome/help/gthumb/C/comments.html
+share/gnome/help/gthumb/C/create-index-image.html
+share/gnome/help/gthumb/C/docbook.css
+share/gnome/help/gthumb/C/find.html
+share/gnome/help/gthumb/C/images/find-images.gif
+share/gnome/help/gthumb/C/images/search-progress.gif
+share/gnome/help/gthumb/C/images/search-result.gif
+share/gnome/help/gthumb/C/index.html
+share/gnome/help/gthumb/C/intro.html
+share/gnome/help/gthumb/C/license.html
+share/gnome/help/gthumb/C/ln11.html
+share/gnome/help/gthumb/C/printing.html
+share/gnome/help/gthumb/C/shortcuts.html
+share/gnome/help/gthumb/C/tools.html
+share/gnome/help/gthumb/C/topic.dat
+share/gnome/help/gthumb/C/viewing.html
+share/gnome/help/gthumb/C/wallpaper.html
+share/gnome/help/gthumb/ru/authors.html
+share/gnome/help/gthumb/ru/bugs.html
+share/gnome/help/gthumb/ru/index.html
+share/gnome/help/gthumb/ru/license.html
+share/gnome/help/gthumb/ru/ln10.html
+share/gnome/help/gthumb/ru/shortcuts.html
+share/gnome/help/gthumb/ru/topic.dat
+share/gthumb/glade/gthumb.glade
+share/gthumb/glade/gthumb_comments.glade
+share/gthumb/glade/gthumb_png_exporter.glade
+share/gthumb/glade/gthumb_print.glade
+share/gthumb/glade/gthumb_search.glade
+share/gthumb/glade/gthumb_search_edit.glade
+share/locale/de/LC_MESSAGES/gthumb.mo
+share/locale/es/LC_MESSAGES/gthumb.mo
+share/locale/fr/LC_MESSAGES/gthumb.mo
+share/locale/it/LC_MESSAGES/gthumb.mo
+share/locale/ja/LC_MESSAGES/gthumb.mo
+share/locale/ko/LC_MESSAGES/gthumb.mo
+share/locale/nl/LC_MESSAGES/gthumb.mo
+share/locale/pt_BR/LC_MESSAGES/gthumb.mo
+share/locale/ru/LC_MESSAGES/gthumb.mo
+share/locale/sv/LC_MESSAGES/gthumb.mo
+share/pixmaps/gthumb.png
+@dirrm share/gthumb/glade
+@dirrm share/gthumb
+@dirrm share/gnome/help/gthumb/ru
+@dirrm share/gnome/help/gthumb/C/images
+@dirrm share/gnome/help/gthumb/C
+@dirrm share/gnome/help/gthumb
