@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/10/29 10:10:36 turan Exp $
-
-BROKEN=		problems with i386 obj file, xa1.0_cyuv_netbsd386.o.Z
+# $OpenBSD: Makefile,v 1.7 1999/10/29 10:28:22 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
@@ -55,9 +53,9 @@ DISTFILES   += ${SUPFILES}
 EXTRACT_ONLY=${BASEDISTFILE}
 post-extract:
 	@${ECHO_MSG} "===>  Adding ${MACHINE_ARCH} specific object files"
-	@for i in ${SUPFILES}; do \
+	@for i in ${SUPFILES:S/:0$//}; do \
 		j=`basename $$i`; \
-		cp ${DISTDIR}/$$i ${WRKSRC} && uncompress ${WRKSRC}/$$j; \
+		cp ${FULLDISTDIR}/$$i ${WRKSRC} && uncompress ${WRKSRC}/$$j; \
 	done
 .endif
 
