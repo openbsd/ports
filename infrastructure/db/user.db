@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: user.db,v 1.1.1.1 1999/05/18 16:39:03 espie Exp $
+# $OpenBSD: user.db,v 1.2 1999/05/18 17:19:53 brad Exp $
 
 # Used by install/createuser
 # fields for a user:
@@ -20,6 +20,11 @@
 		uid      => 70,
 		home     => "$ENV{'PREFIX'}/pgsql",
 		shell    => '/bin/sh'
+		},
+	  news =>
+		{
+		fullname => 'Leafnode pseudo user',
+		uid      => 75,
 		},
 	  nfr =>
 	   {
