@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/05 18:38:58 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/21 17:17:09 brad Exp $
 
 COMMENT=	"color management library"
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=	DESTDIR="${WRKINST}" PREFIX="${PREFIX}"
 
+MAKE_ENV=	CC="${CC}"
 MAKE_FILE=	Makefile.openbsd
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/src

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.openbsd,v 1.1.1.1 2001/12/03 16:35:47 brad Exp $
+# $OpenBSD: Makefile.openbsd,v 1.2 2002/02/21 17:17:09 brad Exp $
 # Makefile for lcms
 
 PREFIX?= /usr/local
@@ -25,9 +25,14 @@ beforeinstall:
 	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
 	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
 	fi
+	if [ ! -d ${DESTDIR}${LIBDIR}/debug ]; then \
+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}/debug; \
+	fi
 
 afterinstall:
 	@rm -f ${DESTDIR}${LIBDIR}/liblcms_pic.a
+	@rm -f ${DESTDIR}${LIBDIR}/debug/liblcms.a
+	@rmdir ${DESTDIR}${LIBDIR}/debug 2>/dev/null || true
 	cd ${.CURDIR}/../include; ${INSTALL} ${INSTALL_COPY} -o \
 		${SHAREOWN} -g ${SHAREGRP} -m ${NONBINMODE} ${HDRS} \
 			${DESTDIR}${PREFIX}/include
