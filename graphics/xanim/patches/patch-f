@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Mar 16 00:58:48 1999
-+++ Imakefile	Fri Mar 19 02:10:08 1999
+--- Imakefile.orig	Sun Mar 21 23:36:26 1999
++++ Imakefile	Mon Mar 22 18:13:13 1999
 @@ -96,7 +96,7 @@
  XCOMM   to link against symbols inside xanim.
  XCOMM 
@@ -9,18 +9,28 @@
  XCOMM ## SunOS/Solaris use:
  XCOMM  LD_FLAGS =
  
-@@ -109,8 +109,8 @@
- XCOMM  So far I've only tested this on Linux_x86, SunOS_Sparc and Solaris_Sparc
+@@ -111,17 +111,17 @@
+ XCOMM NOTE: not all machines need the XA_DLL_LIB define.
  XCOMM #########################################################################
  XCOMM 
--XA_DLL_DEF = -DXA_DLL
+-XA_DLL_DEF = -DXA_DLL -DXA_PRINT
++XCOMM XA_DLL_DEF = -DXA_DLL -DXA_PRINT
+ XCOMM ### Use this only if the above doesn't work
+ XCOMM XA_DLL_DEF = -DXA_DLL
+ XCOMM
+ XCOMM ### You may need this library.
 -XA_DLL_LIB = -ldl
-+XCOMM XA_DLL_DEF = -DXA_DLL
 +XCOMM XA_DLL_LIB = -ldl
+ XCOMM
+ XCOMM If you'd like to change the default directory that XAnim searches while
+ XCOMM looking for dlls, then change the directory below.
+ XCOMM
+-XA_DLL_PATH = /usr/local/xanim/mods
++XCOMM XA_DLL_PATH = /usr/local/xanim/mods
  
  
- XCOMM #########################################################################
-@@ -242,8 +242,8 @@
+ 
+@@ -267,8 +267,8 @@
  XCOMM  XA_AUDIO_DEFS =
  XCOMM 
  XCOMM ## -- Linux PCs ---------------------------------------------------------
@@ -31,7 +41,7 @@
  XCOMM 
  XCOMM  -- Linux PC's with OLD Rev sound drivers -------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_OLDER_SND
-@@ -284,6 +284,9 @@
+@@ -309,6 +309,9 @@
  XCOMM  -- NetBSD-current (as of 30/April 1995)---------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_NetBSD_AUDIO
  XCOMM 
@@ -41,7 +51,7 @@
  XCOMM  -- QNX 4.2 PC's --------------------------------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_SELECT
  XCOMM  XA_AUDIO_LIBS = -lc
-@@ -417,7 +420,7 @@
+@@ -442,7 +445,7 @@
  XCOMM    -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
  XCOMM    --  XmbufCreateBuffers).
  XCOMM    -- NOTE_8: HP-UX machines need to comment this out.
@@ -50,15 +60,7 @@
  XCOMM 
  XCOMM ###########
  XCOMM 
-@@ -433,14 +436,14 @@
- 
- XA_DEFS = $(XA_MISC_DEFS) $(XA_MOD_DEFS) $(XA_AUDIO_DEFS) -DXA_PETUNIA -DXA_KPCD
- XA_LIBS = $(XA_X11R6_LIBS) $(XA_MACH_LIBS) $(XA_MOD_LIBS) $(XA_AUDIO_LIBS) 
--XA_INCS = $(INCLUDE) -I./ $(XA_VIDEO_INCS) $(XA_AUDIO_INCS)
-+XA_INCS = $(INCLUDE) -I. $(XA_VIDEO_INCS) $(XA_AUDIO_INCS)
- 
- 
- DEFINES  = $(XA_DEFS)
+@@ -465,7 +468,7 @@
  
  PROGRAMS = $(XANIM)
  
@@ -67,130 +69,47 @@
  
     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
  DEPLIBS1 = $(DEPEXTENSIONLIB) $(DEPXTOOLLIB) $(DEPXLIB)
-@@ -479,126 +482,3 @@
+@@ -504,43 +507,3 @@
  xaclean::
  	$(RM) $(OBJS1)
  
 -
 -XCOMM  DO NOT DELETE THIS LINE
--xanim.o: Makefile xanim.h xa_config.h xa_x11.h xanim.c
+-xanim.o: Imakefile xanim.h xa_config.h xa_x11.h xanim.c
 -xa1.0_kpcd.o: xa1.0_kpcd.c
 -unpacker.o: unpacker.c
--xa_acodec.o: Makefile xanim.h xa_acodec.c
+-xa_acodec.o: Imakefile xanim.h xa_acodec.c
 -xa_act.o: xanim.h xa_config.h xa_act.c
 -xa_au.o: xanim.h xa_config.h xa_au.c
--xa_audio.o: Makefile xanim.h xa_config.h xa_audio.h xa_audio.c
--xa_avi.o: Makefile xanim.h xa_config.h xa_avi.h xa_codecs.h
--xa_avi.o: xa_xmpg.h
--xa_avi.o: xa_avi.c
--xa_cmap.o: xanim.h
--xa_cmap.o: xa_config.h
--xa_cmap.o: xa_cmap.c
--xa_color.o: xanim.h
--xa_color.o: xa_color.c
--xa_dl.o: xanim.h
--xa_dl.o: xa_config.h
--xa_dl.o: xa_dl.h
--xa_dl.o: xa_dl.c
--xa_dumfx.o: xanim.h
--xa_dumfx.o: xa_dumfx.c
--xa_fli.o: xanim.h
--xa_fli.o: xa_config.h
--xa_fli.o: xa_fli.h
--xa_fli.o: xa_fli.c
--xa_formats.o: xanim.h
--xa_formats.o: xa_formats.c
--xa_gif.o: xanim.h
--xa_gif.o: xa_config.h
--xa_gif.o: xa_gif.h
--xa_gif.o: xa_gif.c
--xa_iff.o: xanim.h
--xa_iff.o: xa_config.h
--xa_iff.o: xa_iff.h
--xa_iff.o: xa_iff.c
--xa_input.o: xanim.h
--xa_input.o: xa_input.c
--xa_ipc.o: Makefile
--xa_ipc.o: xanim.h
--xa_ipc.o: xa_config.h
--xa_ipc.o: xa_ipc.h
--xa_ipc.o: xa_ipc.c
--xa_jmov.o: xanim.h
--xa_jmov.o: xa_config.h
--xa_jmov.o: xa_jmov.h
--xa_jmov.o: xa_jmov.c
--xa_jpg.o: xanim.h
--xa_jpg.o: xa_config.h
--xa_jpg.o: xa_jpg.h
--xa_jpg.o: xa_jpg.c
--xa_j6i.o: xanim.h
--xa_j6i.o: xa_j6i.h
--xa_j6i.o: xa_j6i.c
--xa_movi.o: xanim.h
--xa_movi.o: xa_config.h
--xa_movi.o: xa_movi.h
--xa_movi.o: xa_movi.c
--xa_mpg.o: xanim.h
--xa_mpg.o: xa_config.h
--xa_mpg.o: xa_mpg.h
--xa_mpg.o: xa_xmpg.h
--xa_mpg.o: xa_mpg.c
--xa_mpg.o: xa_jpg.c
--xa_qt.o: Makefile
--xa_qt.o: xanim.h
--xa_qt.o: xa_config.h
--xa_qt.o: xa_qt.h
--xa_qt.o: xa_codecs.h
--xa_qt.o: xa_qt.c
--xa_qt_decs.o: Makefile
--xa_qt_decs.o: xanim.h
--xa_qt_decs.o: xa_config.h
--xa_qt_decs.o: xa_qt.h
--xa_qt_decs.o: xa_qt_decs.c
--xa_vid_codec.o: xa_avi.h
--xa_vid_codec.o: xa_qt.h
--xa_vid_codec.o: xa_codecs.h
--xa_vid_codec.o: xavid.h
--xa_vid_codec.o: xavid_mod.h
+-xa_audio.o: Imakefile xanim.h xa_config.h xa_audio.h xa_audio.c
+-xa_avi.o: Imakefile xanim.h xa_config.h xa_avi.h xa_codecs.h xa_xmpg.h xa_avi.c
+-xa_cmap.o: xanim.h xa_config.h xa_cmap.c
+-xa_color.o: xanim.h xa_color.c
+-xa_dl.o: xanim.h xa_config.h xa_dl.h xa_dl.c
+-xa_dumfx.o: xanim.h xa_dumfx.c
+-xa_fli.o: xanim.h xa_config.h xa_fli.h xa_fli.c
+-xa_formats.o: xanim.h xa_formats.c
+-xa_gif.o: xanim.h xa_config.h xa_gif.h xa_gif.c
+-xa_iff.o: xanim.h xa_config.h xa_iff.h xa_iff.c
+-xa_input.o: xanim.h xa_input.c
+-xa_ipc.o: Imakefile xanim.h xa_config.h xa_ipc.h xa_ipc.c
+-xa_jmov.o: xanim.h xa_config.h xa_jmov.h xa_jmov.c
+-xa_jpg.o: xanim.h xa_config.h xa_jpg.h xa_jpg.c
+-xa_j6i.o: xanim.h xa_j6i.h xa_j6i.c
+-xa_movi.o: xanim.h xa_config.h xa_movi.h xa_movi.c
+-xa_mpg.o: xanim.h xa_config.h xa_mpg.h xa_xmpg.h xa_mpg.c xa_jpg.c
+-xa_qt.o: Imakefile xanim.h xa_config.h xa_qt.h xa_codecs.h xa_qt.c
+-xa_qt_decs.o: Imakefile xanim.h xa_config.h xa_qt.h xa_qt_decs.c
+-xa_vid_codec.o: Imakefile xa_avi.h xa_qt.h xa_codecs.h xavid.h xavid_mod.h
 -xa_vid_codec.o: xa_vid_codec.c
--xa_replay.o: xanim.h
--xa_replay.o: xa_config.h
--xa_replay.o: xa_replay.h
--xa_replay.o: xa_replay.c
--xa_rle.o: xanim.h
--xa_rle.o: xa_config.h
--xa_rle.o: xa_rle.h
--xa_rle.o: xa_rle.c
--xa_set.o: xanim.h
--xa_set.o: xa_config.h
--xa_set.o: xa_iff.h
--xa_set.o: xa_iff.c
--xa_set.o: xa_set.h
--xa_set.o: xa_set.c
--xa_raw.o: xanim.h
--xa_raw.o: xa_raw.h
--xa_raw.o: xa_raw.c
--xa_show.o: Makefile
--xa_show.o: xanim.h
--xa_show.o: xa_show.c
--xa_txt.o: xanim.h
--xa_txt.o: xa_config.h
--xa_txt.o: xa_txt.c
--xa_utils.o: xanim.h
--xa_utils.o: xa_config.h
--xa_utils.o: xa_utils.c
--xa_wav.o: xanim.h
--xa_wav.o: xa_config.h
--xa_wav.o: xa_avi.h
--xa_wav.o: xa_wav.c
--xa_8svx.o: xanim.h
--xa_8svx.o: xa_8svx.h
--xa_8svx.o: xa_8svx.c
--xa_x11.o: Makefile
--xa_x11.o: xanim.h
--xa_x11.o: xa_config.h
--xa_x11.o: xa_x11.h
--xa_x11.o: xa_x11.c
--xa_gsm.o: xa_gsm_state.h
--xa_gsm.o: xa_gsm.h
--xa_gsm.o: xa_gsm.c
+-xa_replay.o: xanim.h xa_config.h xa_replay.h xa_replay.c
+-xa_rle.o: xanim.h xa_config.h xa_rle.h xa_rle.c
+-xa_set.o: xanim.h xa_config.h xa_iff.h xa_iff.c xa_set.h xa_set.c
+-xa_raw.o: xanim.h xa_raw.h xa_raw.c
+-xa_show.o: Imakefile xanim.h xa_show.c
+-xa_txt.o: xanim.h xa_config.h xa_txt.c
+-xa_utils.o: xanim.h xa_config.h xa_utils.c
+-xa_wav.o: xanim.h xa_config.h xa_avi.h xa_wav.c
+-xa_8svx.o: xanim.h xa_8svx.h xa_8svx.c
+-xa_x11.o: Imakefile xanim.h xa_config.h xa_x11.h xa_x11.c
+-xa_gsm.o: xanim.h xa_gsm_state.h xa_gsm.h xa_gsm.c

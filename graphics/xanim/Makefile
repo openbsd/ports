@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/19 01:28:40 espie Exp $
+# $OpenBSD: Makefile,v 1.3 1999/03/22 17:34:45 espie Exp $
 
 CDROM=        "NOFEE: can not sell"
 
-DISTNAME=xanim-2.80.0
-WRKSRC=${WRKDIR}/xanim2800
+DISTNAME=xanim-2.80.1
+WRKSRC=${WRKDIR}/xanim2801
 CATEGORIES= graphics x11
 
 MAINTAINER=espie@openbsd.org
@@ -12,7 +12,7 @@ MAINTAINER=espie@openbsd.org
 MASTER_SITES=ftp://xanim.va.pubnix.com/
 MASTER_SITES+=ftp://xanim.va.pubnix.com/modules/
 
-BASEDISTFILE=xanim2800.tar.gz
+BASEDISTFILE=xanim2801.tar.gz
 SUPFILES=
 DISTFILES=${BASEDISTFILE}
 PATCH_LIST=patch-*
@@ -51,7 +51,7 @@ post-extract:
 .endif
 
 post-configure:
-	cp ${FILESDIR}/xanim.man ${WRKSRC}
+	ln ${WRKSRC}/docs/xanim.man ${WRKSRC}
 
 DOCDIR=${PREFIX}/share/doc/xanim
 
@@ -59,7 +59,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	for file in ${WRKSRC}/docs/*; \
 	do \
-		${INSTALL_DATA} $$file ${DOCDIR}; \
+		[ $$file == ${WRKSRC}/docs/xanim.man ] || ${INSTALL_DATA} $$file ${DOCDIR}; \
 	done
 
 USE_IMAKE=yes
