@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2002/08/27 11:48:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2002/09/13 17:05:20 pvalchev Exp $
 # $FreeBSD: ports/math/grace/Makefile,v 1.18 2001/04/25 05:59:19 lkoeller Exp $
 # Original from: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
 
 COMMENT=	"GRaphing, Advanced Computation and Exploration of data"
 
-DISTNAME=	grace-5.1.9
+DISTNAME=	grace-5.1.10
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/grace/src/ \
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/grace/src/ \
 		ftp://freedom7.swmed.edu/pub/mirrors/grace/src/
 
 CONFIGURE_STYLE=	gnu dest
