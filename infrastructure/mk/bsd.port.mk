@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.248 2000/04/02 17:55:45 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.249 2000/04/02 18:08:31 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -959,11 +959,7 @@ MAINTAINER?=	ports@openbsd.org
 
 PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
-.if exists(${PACKAGES})
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
-.else
-PKGFILE?=		${PKGNAME}${PKG_SUFX}
-.endif
 
 CONFIGURE_SCRIPT?=	configure
 .if defined(SEPARATE_BUILD)
@@ -1530,7 +1526,7 @@ ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIE}
 		ln -sf /var/X11/app-defaults /usr/local/lib/X11/app-defaults; \
 	fi
 .endif
-	pkg_add ${PKGFILE}
+	PKG_PATH=${PKGREPOSITORY}:${PKG_PATH} pkg_add ${PKGFILE}
 	@${_MAKE_COOKIE} ${_INSTALL_COOKIE}
 
 .else
@@ -1626,19 +1622,15 @@ ${_PACKAGE_COOKIE}: ${_INSTALL_COOKIE} ${PLIST}
 .  else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
-	@if [ -d ${PACKAGES} ]; then \
-	  if [ ! -d ${PKGREPOSITORY} ]; then \
-	    if ! mkdir -p ${PKGREPOSITORY}; then \
+	@if [ ! -d ${PKGREPOSITORY} ]; then \
+	   if ! mkdir -p ${PKGREPOSITORY}; then \
 	      echo ">> Can't create directory ${PKGREPOSITORY}."; \
 		  exit 1; \
-		fi; \
-	  fi; \
+	   fi; \
 	fi
 	@cd ${.CURDIR} && \
 	  if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
-	    if [ -d ${PACKAGES} ]; then \
-	      make package-links; \
-	    fi; \
+	    make package-links; \
 	  else \
 	    make delete-package; \
 	    exit 1; \
