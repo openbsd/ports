@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_main_c,v 1.1 2002/11/20 01:51:42 jcs Exp $
+--- src/main.c.orig	Tue Nov 19 19:47:46 2002
++++ src/main.c	Tue Nov 19 19:48:35 2002
+@@ -1904,12 +1904,12 @@
+          * the folowing function should be performed here just for that reason.
+          */ 
+         solaris_list_harddisks();
++#endif /* __solaris__ */
+ 
+         if (setgid(getgid()) != 0) {
+ 		perror("Failed to drop setgid privilege");
+ 		return 1;
+         }
+-#endif /* __solaris__ */
+ 
+ #ifdef ENABLE_NLS
+ 	gtk_set_locale();

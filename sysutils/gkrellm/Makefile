@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2002/07/29 03:46:28 jcs Exp $
+# $OpenBSD: Makefile,v 1.20 2002/11/20 01:51:42 jcs Exp $
 
 DISTNAME=	gkrellm-1.2.13
+PKGNAME=	${DISTNAME}p1
 HOMEPAGE=	http://www.gkrellm.net/
 COMMENT=	"single process stack of system monitors"
 
