@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.apop,v 1.1 2000/11/20 22:31:53 danh Exp $
+bin/pop_auth
+man/man1/pop_auth.1
