@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/08 11:05:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2002/01/20 22:57:14 naddy Exp $
+
+NOT_FOR_ARCHS=	sparc
+
 CATEGORIES=	x11
 NEED_VERSION=	1.474
 
