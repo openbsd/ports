@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/12 22:13:27 espie Exp $
+%%SHARED%%
+bin/autogen
+bin/autoopts-config
+bin/columns
+bin/getdefs
+bin/xml2ag
+include/options.h
+include/usage-txt.h
+lib/libguileopts.a
+lib/libguileopts.la
+lib/libopts.a
+lib/libopts.la
+lib/pkgconfig/
+lib/pkgconfig/autoopts.pc
+@man man/man1/autogen.1
+@man man/man1/autoopts-config.1
+@man man/man1/columns.1
+@man man/man1/getdefs.1
+@man man/man1/xml2ag.1
+@man man/man3/optionFree.3
+@man man/man3/optionLoadLine.3
+@man man/man3/optionProcess.3
+@man man/man3/optionRestore.3
+@man man/man3/optionSaveFile.3
+@man man/man3/optionSaveState.3
+@man man/man3/optionVersion.3
+share/aclocal/
+share/aclocal/autoopts.m4
+share/autogen/
+share/autogen/aginfo.tpl
+share/autogen/aginfo3.tpl
+share/autogen/agman1.tpl
+share/autogen/agman3.tpl
+share/autogen/autoopts.m4
+share/autogen/confmacs.tpl
+share/autogen/conftest.tpl
+share/autogen/fsm-macro.tpl
+share/autogen/fsm-trans.tpl
+share/autogen/fsm.tpl
+share/autogen/getopt.tpl
+share/autogen/libopts-23.1.14.tar.gz
+share/autogen/optcode.tpl
+share/autogen/opthead.tpl
+share/autogen/options.tpl
+share/autogen/optlib.tpl
+share/autogen/optmain.tpl
+share/autogen/rc-sample.tpl
+share/autogen/stdoptions.def

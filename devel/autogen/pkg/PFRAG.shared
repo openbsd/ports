@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/03/12 22:13:27 espie Exp $
+@lib lib/libguileopts.so.0.1
+@lib lib/libopts.so.23.1
