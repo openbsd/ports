@@ -1,15 +1,15 @@
-$OpenBSD: patch-imap_mkimapdcert_in,v 1.3 2000/12/29 18:51:57 avsm Exp $
---- imap/mkimapdcert.in.orig	Mon Sep 18 11:14:24 2000
-+++ imap/mkimapdcert.in	Fri Dec 29 15:14:10 2000
-@@ -9,29 +9,27 @@
+$OpenBSD: patch-imap_mkimapdcert_in,v 1.4 2001/09/30 23:15:57 avsm Exp $
+--- imap/mkimapdcert.in.orig	Sun Aug 26 15:57:55 2001
++++ imap/mkimapdcert.in	Sun Sep 30 22:32:35 2001
+@@ -9,30 +9,29 @@
  # IMAP over SSL.  Normally this script would get called by an automatic
  # package installation routine.
  
 -test -x @OPENSSL@ || exit 0
-+SSLDIR=/etc/ssl/private
- 
--prefix="@prefix@"
 -
+ prefix="@prefix@"
++SSLDIR="/etc/ssl/private"
+ 
 -if test -f @datadir@/imapd.pem
 +if test -f ${SSLDIR}/imapd.pem
  then
@@ -33,7 +33,9 @@ $OpenBSD: patch-imap_mkimapdcert_in,v 1.3 2000/12/29 18:51:57 avsm Exp $
  	exit 1
  }
  
+-cd @datadir@
 -dd if=@RANDOMV@ of=@datadir@/imapd.rand count=1 2>/dev/null
++cd ${SSLDIR}
 +dd if=@RANDOMV@ of=${SSLDIR}/imapd.rand count=1 2>/dev/null
  @OPENSSL@ req -new -x509 -days 365 -nodes \
 -	-config @sysconfdir@/imapd.cnf -out @datadir@/imapd.pem -keyout @datadir@/imapd.pem || cleanup
@@ -41,6 +43,6 @@ $OpenBSD: patch-imap_mkimapdcert_in,v 1.3 2000/12/29 18:51:57 avsm Exp $
 -@OPENSSL@ x509 -subject -dates -fingerprint -noout -in @datadir@/imapd.pem || cleanup
 -rm -f @datadir@/imapd.rand
 +	-config @sysconfdir@/imapd.cnf -out ${SSLDIR}/imapd.pem -keyout ${SSLDIR}/imapd.pem || cleanup
-+@OPENSSL@ gendh -rand ${SSLDIR}/imapd.rand 512 >> ${SSLDIR}/imapd.pem || cleanup
++@OPENSSL@ gendh -rand ${SSLDIR}/imapd.rand 512 >>${SSLDIR}/imapd.pem || cleanup
 +@OPENSSL@ x509 -subject -dates -fingerprint -noout -in ${SSLDIR}/imapd.pem || cleanup
 +rm -f ${SSLDIR}/imapd.rand

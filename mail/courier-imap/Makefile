@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2001/09/28 19:06:30 jakob Exp $ 
+# $OpenBSD: Makefile,v 1.21 2001/09/30 23:15:57 avsm Exp $ 
 
 MULTI_PACKAGES=	-pop3
 
 COMMENT=	"imap server for maildir format mailboxes"
 COMMENT-pop3=	"pop3 server for maildir format mailboxes"
 
-COURIERVER=	1.3.8.2
+COURIERVER=	1.3.11
 DISTNAME=	courier-imap-${COURIERVER}
 PKGNAME-pop3=	courier-pop3-${COURIERVER}
 
 CATEGORIES=	mail
-NEED_VERSION=	1.422
+NEED_VERSION=	1.463
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -34,6 +34,8 @@ SUBST_VARS=	COURIERSTATE COURIERCONF COURIERVER
 EXAMPLE_DIR= 	${PREFIX}/share/examples/courier-imap
 USE_GMAKE=	Yes
 
+LIB_DEPENDS=	gdbm.2::databases/gdbm
+
 CONFIGURE_STYLE= gnu old
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CXXFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
@@ -42,7 +44,8 @@ CONFIGURE_ARGS=	--disable-root-check --datadir=${PREFIX}/sbin \
 		--with-userdb=${SYSCONFDIR}/userdb --with-authuserdb \
 		--sysconfdir=${COURIERCONF} --with-authdaemon \
 		--with-authdaemonvar=${COURIERSTATE} \
-		--enable-workarounds-for-imap-client-bugs 
+		--enable-workarounds-for-imap-client-bugs \
+		--with-db=gdbm
 
 .if ${FLAVOR:L:Mmysql} && ${FLAVOR:L:Mldap}
 ERRORS+= "Fatal: Conflicting flavor: You must choose either ldap or mysql."
@@ -70,6 +73,14 @@ post-install:
 .for i in imapd.cnf pop3d.cnf quotawarnmsg.example
 	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/$i ${EXAMPLE_DIR}
 .endfor
+.if ${FLAVOR:L:Mmysql}
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/authmysqlrc.dist \
+			${EXAMPLE_DIR}/authmysqlrc
+.endif
+.if ${FLAVOR:L:Mldap}
+	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/authldaprc.dist \
+			${EXAMPLE_DIR}/authldaprc
+.endif
 	${INSTALL_DATA} ${WRKINST}${COURIERCONF}/authdaemonrc.dist ${EXAMPLE_DIR}/authdaemonrc
 
 .include <bsd.port.mk>
