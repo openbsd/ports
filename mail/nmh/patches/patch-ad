@@ -1,13 +1,11 @@
---- uip/mshcmds.c.orig	Sun Feb  1 15:28:37 1998
-+++ uip/mshcmds.c	Wed Apr 29 11:31:15 1998
-@@ -929,8 +929,9 @@
-     }
+--- ./uip/mshcmds.c.orig	Sat Mar 20 15:41:58 1999
++++ ./uip/mshcmds.c	Sat Mar 20 15:42:22 1999
+@@ -932,7 +932,8 @@
  
  					/* foil search of .mh_profile */
--    sprintf (buf, "%sXXXXXX", invo_name);
+     snprintf (buf, sizeof(buf), "%sXXXXXX", invo_name);
 -    vec[0] = (char *)mktemp (buf);
-+    snprintf (buf, BUFSIZ, "%sXXXXXX", invo_name);
-+    close( mkstemp( buf ) );
++    close (mkstemp (buf));
 +    vec[0] = buf;
      vec[vecp++] = "-file";
      vec[vecp] = NULL;

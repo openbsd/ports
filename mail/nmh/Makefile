@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 1999/03/17 00:52:47 brad Exp $
+# $OpenBSD: Makefile,v 1.5 1999/03/26 08:48:27 marc Exp $
 
-DISTNAME=		nmh-0.27
+DISTNAME=		nmh-1.0
 CATEGORIES=     	mail
 
 MAINTAINER=		marc@openbsd.org

@@ -1,26 +1,24 @@
---- uip/spost.c.orig	Sat May 16 14:38:10 1998
-+++ uip/spost.c	Thu May 28 11:31:45 1998
-@@ -338,8 +338,9 @@
+--- ./uip/spost.c.orig	Sat Mar 20 15:45:06 1999
++++ ./uip/spost.c	Sat Mar 20 16:45:37 1999
+@@ -339,8 +339,8 @@
  	out = stdout;
      }
      else {
 -	    mktemp (tmpfil);
 -	    if ((out = fopen (tmpfil, "w")) == NULL)
-+	    int fd = mkstemp( tmpfil );
-+	    if (( fd == -1 ) ||
-+		((out = fdopen( fd, "w" )) == NULL))
++	    int fd = mkstemp (tmpfil);
++	    if ((fd == -1) || ((out = fdopen (fd, "w")) == NULL))
  		adios (tmpfil, "unable to create");
  	    chmod (tmpfil, 0600);
  	}
-@@ -699,8 +700,9 @@
+@@ -700,8 +700,8 @@
      char *vec[6];
      FILE * in, *out;
  
 -    mktemp (bccfil);
 -    if ((out = fopen (bccfil, "w")) == NULL)
-+    fd = mkstemp( bccfil );
-+    if (( fd == -1 ) ||
-+	((out = fdopen( fd, "w" )) == NULL))
++    fd = mkstemp (bccfil);
++    if ((fd == -1) || ((out = fdopen (fd, "w")) == NULL))
  	adios (bccfil, "unable to create");
      chmod (bccfil, 0600);
  

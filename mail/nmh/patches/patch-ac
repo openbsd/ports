@@ -1,20 +1,18 @@
---- sbr/m_tmpfil.c.~1~	Mon May 19 22:19:12 1997
-+++ sbr/m_tmpfil.c	Tue Apr 28 22:57:48 1998
-@@ -12,9 +12,15 @@
+--- ./sbr/m_tmpfil.c.orig	Thu Jul  9 13:52:24 1998
++++ ./sbr/m_tmpfil.c	Sat Mar 20 17:09:20 1999
+@@ -12,9 +12,14 @@
  m_tmpfil (char *template)
  {
      static char tmpfil[BUFSIZ];
 +    int fd;
  
--    sprintf(tmpfil, "/tmp/%sXXXXXX", template);
+     snprintf (tmpfil, sizeof(tmpfil), "/tmp/%sXXXXXX", template);
 -    unlink(mktemp(tmpfil));
-+    snprintf(tmpfil, BUFSIZ, "/tmp/%sXXXXXX", template);
-+    fd = mkstemp( tmpfil );
-+    if ( fd == -1 ) {
-+        return 0;
-+    }
-+    close( fd );
-+    unlink( tmpfil );
++    fd = mkstemp (tmpfil);
++    if (fd == -1)
++	return 0;
++    close (fd);
++    unlink (tmpfil);
  
      return tmpfil;
  }

@@ -1,14 +1,14 @@
---- uip/rcvtty.c.orig	Sat May 16 14:32:08 1998
-+++ uip/rcvtty.c	Thu May 28 11:31:44 1998
-@@ -192,8 +192,9 @@
+--- ./uip/rcvtty.c.orig	Sat Mar 20 15:43:23 1999
++++ ./uip/rcvtty.c	Sat Mar 20 15:44:27 1999
+@@ -189,8 +189,9 @@
      char tmpfil[BUFSIZ];
      struct stat st;
  
--    unlink (mktemp (strcpy (tmpfil, "/tmp/rcvttyXXXXX")));
+-    unlink (mktemp (strncpy (tmpfil, "/tmp/rcvttyXXXXX", sizeof(tmpfil))));
 -    if ((fd = open (tmpfil, O_RDWR | O_CREAT | O_TRUNC, 0600)) == NOTOK)
 +    strcpy (tmpfil, "/tmp/rcvttyXXXXX");
-+    fd = mkstemp( tmpfil );
-+    if ( fd == -1 )
++    fd = mkstemp (tmpfil);
++    if (fd == -1)
  	return header_fd ();
      unlink (tmpfil);
  

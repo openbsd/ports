@@ -1,5 +1,5 @@
---- config.h.in.orig	Sun May 31 17:46:56 1998
-+++ config.h.in	Sat Jul 25 21:02:17 1998
+--- ./config.h.in.orig	Sat Mar 20 15:30:51 1999
++++ ./config.h.in	Sat Mar 20 15:32:37 1999
 @@ -37,9 +37,9 @@
   *  OpenBSD 2.x
   *  BSD/OS 2.x
@@ -7,9 +7,9 @@
 -/* #define BIND     1 */
 -/* #define BSD42    1 */
 -/* #define BSD44    1 */
-+#define BIND     1
-+#define BSD42    1
-+#define BSD44    1
++#define BIND	1
++#define BSD42	1
++#define BSD44	1
  
  /*
   *  SCO 4.x
@@ -24,12 +24,3 @@
  /* #define LOCKF_LOCKING 1 */
  /* #define FLOCK_LOCKING 1 */
  
-@@ -146,7 +146,7 @@
-  * Define the default creation modes for folders and messages.
-  */
- #define DEFAULT_FOLDER_MODE "0700"
--#define DEFAULT_MESSAGE_MODE "0644"
-+#define DEFAULT_MESSAGE_MODE "0600"
- 
- /*
-  * The prefix which is prepended to the name of messages when they
