@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/05/03 09:38:21 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.8 2003/06/02 23:28:17 avsm Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
@@ -29,7 +29,7 @@ SUBST_VARS=	INSTDIR
 RUN_DEPENDS=	:php4-core->=4.3.1:www/php4/core \
 		:php4-mcrypt->=4.3.1:www/php4/extensions,-mcrypt \
 		:php4-domxml->=4.3.1:www/php4/extensions,-domxml \
-		:php4-pear->=4.3.1:www/php4/pear \
+		:php4-pear->=4.3.1:www/php4/core,-pear \
 		::devel/pear-Log \
 		::mail/pear-Mail-Mime
 
