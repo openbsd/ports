@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/20 00:15:23 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/08 06:03:09 pvalchev Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
@@ -9,7 +9,7 @@ NEED_VERSION=	1.504
 
 HOMEPAGE=	http://toppler.sourceforge.net
 
-MAINTAINER= 	Lurene Grenier <lurene@menagerie.tf>	
+MAINTAINER= 	Lurene Grenier <lurene@daemonkitty.net>	
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes

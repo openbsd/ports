@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/05/13 18:50:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2002/06/08 06:03:09 pvalchev Exp $
 COMMENT=	"computer simulation game"
 
 VERSION=	0.9.12
@@ -9,7 +9,7 @@ CATEGORIES=	games x11
 
 HOMEPAGE=	http://corewars.sourceforge.net/
 
-MAINTAINER=	Lurene Grenier <lurene@menagerie.tf>
+MAINTAINER=	Lurene Grenier <lurene@daemonkitty.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
