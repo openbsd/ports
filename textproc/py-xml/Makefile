@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/29 20:19:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2003/03/30 06:54:51 shell Exp $
 
 COMMENT=	"python module for writing basic XML applications"
 
@@ -18,11 +18,21 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
+# pyexpat - use our own pyexpat.so
+# otherwise use the python-expat version
+
+FLAVORS=pyexpat
+FLAVOR?=
+
 PYTHON_VER=     2.2
 
 LIB_DEPENDS=	expat.2::textproc/expat
 BUILD_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER}
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.if !${FLAVOR:L:Mpyexpat}
+BUILD_DEPENDS+=	:python-expat-${PYTHON_VER}*:lang/python/${PYTHON_VER},-expat
+.endif
 
 SUBST_VARS=     PYTHON_VER
 NO_REGRESS=	Yes

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/05/27 05:25:03 shell Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/03/30 06:54:51 shell Exp $
+%%pyexpat%%
 bin/xmlproc_parse
 bin/xmlproc_val
 lib/python${PYTHON_VER}/site-packages/_xmlplus/FtCore.py
@@ -224,7 +225,6 @@ lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/__init__.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/__init__.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/expat.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/expat.pyc
-lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/pyexpat.so
 lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/sgmllib.py
 lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/sgmllib.pyc
 lib/python${PYTHON_VER}/site-packages/_xmlplus/parsers/sgmlop.so
