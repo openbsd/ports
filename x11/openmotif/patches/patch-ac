@@ -1,0 +1,104 @@
+--- config/cf/site.def.orig	Fri Apr 28 08:03:58 2000
++++ config/cf/site.def	Sat Jun 10 16:23:46 2000
+@@ -62,11 +62,86 @@
+ 
+ #ifdef AfterVendorCF
+ 
+-# define X11ProjectRoot	/X11
+-# define ProjectRoot	/usr/dt
+-# define VirtualBindingsPath /usr/dt/lib/bindings
++# define X11ProjectRoot	/usr/X11R6
++# define ProjectRoot	%%PREFIX%%
++# define VirtualBindingsPath %%PREFIX%%/lib/Xm/bindings
+ 
+ # undef DefaultUserPath
+-# define DefaultUserPath /bin:/usr/bin:$(BINDIR):/usr/ucb:/usr/local/bin:/usr/local/bin/mh:/site/local/scripts
++# define DefaultUserPath /bin:/usr/bin:$(BINDIR):/usr/ucb:/usr/local/bin
+ 
++# define BuildMotifDemos NO
++
++/* Use the installed Imake but not the configuration files */
++# define ImakeCmd /usr/X11R6/bin/imake
++
++/*
++ * Actually, the macro MakeMakeSubdirs is identical to one that you find
++ * in Imake.rules, but to avoid using stupid 'bootstrap' imake, we need to
++ * change ImakeSubCmdHelper.  Unfortunately, there seems to be no way to
++ * redefine ImakeSubCmdHelper without defining MakeMakeSubdirs.
++ */
++#define MakeMakeSubdirs(dirs,target)					@@\
++$(ONESUBDIR)/Makefile:							@@\
++	@MakeFlagsToShellFlags(n,executeit="no"); \			@@\
++	cd $(ONESUBDIR) && \						@@\
++	if [ "$$executeit" != "no" ]; then \				@@\
++		ImakeSubCmdHelper -DTOPDIR=$(IMAKETOP) -DCURDIR=$(ONECURDIR)$(ONESUBDIR); \ @@\
++	fi;								@@\
++									@@\
++target::								@@\
++	-@MakeFlagsToShellFlags(ik,set +e); \				@@\
++	MakeFlagsToShellFlags(n,executeit="no"); \			@@\
++	for i in dirs ;\						@@\
++	do \								@@\
++		case "$(CURRENT_DIR)" in \				@@\
++		.) curdir= ;; \						@@\
++		*) curdir=$(CURRENT_DIR)/ ;; \				@@\
++		esac; \							@@\
++		echo "making Makefiles in $$curdir$$i..."; \		@@\
++		itmp=`echo $$i | sed -e 's;^\./;;g' -e 's;/\./;/;g'`; \	@@\
++		curtmp="$(CURRENT_DIR)" \				@@\
++		toptmp=""; \						@@\
++		case "$$itmp" in \					@@\
++		    ../?*) \ 						@@\
++			while echo "$$itmp" | grep '^\.\./' > /dev/null;\	@@\
++			  do \						@@\
++			     toptmp="/`basename $$curtmp`$$toptmp"; \	@@\
++			     curtmp="`dirname $$curtmp`"; \		@@\
++			     itmp="`echo $$itmp | sed 's;\.\./;;'`"; \	@@\
++			  done \					@@\
++		    ;; \						@@\
++		esac; \							@@\
++		case "$$itmp" in \					@@\
++		*/?*/?*/?*/?*)	newtop=../../../../..;; \		@@\
++		*/?*/?*/?*)	newtop=../../../..;; \			@@\
++		*/?*/?*)	newtop=../../..;; \			@@\
++		*/?*)		newtop=../..;; \			@@\
++		*)		newtop=..;; \				@@\
++		esac; \							@@\
++		newtop="$$newtop$$toptmp"; \				@@\
++		case "$(TOP)" in \					@@\
++		/?*) imaketop=$(TOP) \					@@\
++		     imakeprefix= ;; \					@@\
++		.) imaketop=$$newtop \					@@\
++		   imakeprefix=$$newtop/ ;; \				@@\
++		*) imaketop=$$newtop/$(TOP) \				@@\
++		   imakeprefix=$$newtop/ ;; \				@@\
++		esac; \							@@\
++		RemoveFile($$i/Makefile.bak); \				@@\
++		if [ -f $$i/Makefile ]; then \				@@\
++			echo "	$(MV) Makefile Makefile.bak"; \		@@\
++			if [ "$$executeit" != "no" ]; then \		@@\
++				$(MV) $$i/Makefile $$i/Makefile.bak; \	@@\
++			fi; \						@@\
++		fi; \							@@\
++		$(MAKE) $(MFLAGS) $(MAKE_OPTS) ONESUBDIR=$$i ONECURDIR=$$curdir IMAKETOP=$$imaketop IMAKEPREFIX=$$imakeprefix $$i/Makefile; \	@@\
++		if [ -d $$i ] ; then \					@@\
++			cd $$i; \					@@\
++			$(MAKE) $(MFLAGS) Makefiles; \			@@\
++			cd $$newtop; \					@@\
++		else \							@@\
++			exit 1; \					@@\
++		fi; \							@@\
++	done
++#define ImakeSubCmdHelper $(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES)
+ #endif /* AfterVendorCF */
+--- config/cf/Motif.rules.orig	Wed May  3 00:53:43 2000
++++ config/cf/Motif.rules	Wed Jun 14 16:58:53 2000
+@@ -655,7 +655,7 @@
+ #define Real_MessageCatalogRule(prefix)					@@\
+ prefix.cat Concat(prefix,MsgCatI.h):					@@\
+ 	$(RM) Concat(prefix,MsgCatI.h) prefix.cat $(MLOCSRC)/C/msg/prefix.msg	@@\
+-	$(MKCATTOOL) Concat(prefix,MsgCatI.h) prefix.msg > $(MLOCSRC)/C/msg/prefix.msg	@@\
++	$(MKCATTOOL) Concat(prefix,MsgCatI.h) prefix.msg | sed '/^[ 	]*$$/d' > $(MLOCSRC)/C/msg/prefix.msg	@@\
+ 	$(GENCAT) prefix.cat $(MLOCSRC)/C/msg/prefix.msg		@@\
+ 									@@\
+ includes:: prefix.cat Concat(prefix,MsgCatI.h)				@@\

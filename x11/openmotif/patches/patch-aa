@@ -1,0 +1,59 @@
+--- config/cf/Motif.tmpl.orig	Tue May  2 08:53:43 2000
++++ config/cf/Motif.tmpl	Sun Jun 18 23:07:48 2000
+@@ -396,7 +396,7 @@
+ /* hardcoded default path.  Contrary to the original duplicate of USRLIBDIR
+    in the Imakefiles. */
+ #ifndef VirtualBindingsPath
+-# define VirtualBindingsPath /usr/lib/Xm/bindings
++# define VirtualBindingsPath %%PREFIX%%/lib/Xm/bindings
+ #endif
+ 
+               MTOP = MTop
+@@ -458,7 +458,7 @@
+   AUTOCREATESRC = $(AUTOSRCLIB)/Create
+   AUTOVISUALSRC = $(AUTOSRCLIB)/Visual
+     AUTOUTILSRC = $(AUTOSRCLIB)/Util
+-  AUTOEXTRALIBS = -ll -ly -lm
++  AUTOEXTRALIBS = $(LEXLIB) -lm
+ #else
+      TESTCOMSRC = $(MANUALSRCLIB)/Common
+ #endif
+--- clients/mwm/WmIconBox.c.orig	Tue May  2 08:53:42 2000
++++ clients/mwm/WmIconBox.c	Sun Jun 18 23:09:23 2000
+@@ -2937,6 +2937,7 @@
+ 	if (majorDimension != pIBD->IPD.placementCols)
+ 	{
+ 	    pIBD->IPD.placementCols = majorDimension;
++            if (pIBD->IPD.placementCols == 0) pIBD->IPD.placementCols++;
+ 	}
+     }
+     else
+@@ -2954,6 +2955,7 @@
+ 	if (majorDimension != pIBD->IPD.placementRows)
+ 	{
+ 	    pIBD->IPD.placementRows = majorDimension;
++            if (pIBD->IPD.placementRows == 0) pIBD->IPD.placementRows++;
+ 	}
+     }
+ 
+--- bindings/Imakefile.orig	Wed May  3 02:12:34 2000
++++ bindings/Imakefile	Sat Jun 10 04:18:09 2000
+@@ -37,7 +37,6 @@
+ XCOMM HISTORY
+ XCOMM 
+ XCOMM   $TOG: Imakefile /main/8 1997/07/02 17:51:43 samborn $
+-INSTALLFLAGS = $(INSTINCFLAGS)
+ 
+ FILES = \
+ 	xmbind.alias \
+@@ -63,8 +62,8 @@
+ 	siemens_9733 \
+ 	siemens_wx200 \
+ 	sony \
+-	sun_mit \
+-	sun_news \
++	sun \
++	sun_at \
+ 	tek
+ 
+ 
