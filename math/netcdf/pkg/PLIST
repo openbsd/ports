@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/02/01 12:22:06 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:11:59 espie Exp $
 bin/ncdump
 bin/ncgen
 include/ncvalues.h
@@ -8,10 +8,10 @@ include/netcdf.hh
 include/netcdfcpp.h
 lib/libnetcdf.a
 lib/libnetcdf_c++.a
-man/man1/ncdump.1
-man/man1/ncgen.1
-man/man3/netcdf.3
-man/man3/netcdf.3f
-@comment man/man3f/netcdf.3f
+@man man/man1/ncdump.1
+@man man/man1/ncgen.1
+@man man/man3/netcdf.3
+@man man/man3/netcdf.3f
+@comment man/man3f/
+@comment @man man/man3f/netcdf.3f
 %%SHARED%%
-@comment @dirrm man/man3f

@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/07/25 00:17:40 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:11:59 espie Exp $
 bin/gnumeric
 bin/ssconvert
+lib/bonobo/
+lib/bonobo/servers/
 lib/bonobo/servers/GNOME_Gnumeric.server
 lib/gnumeric/
 lib/gnumeric/${VERSION}-bonobo/
@@ -116,10 +118,12 @@ lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/
 lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/plugin.xml
 lib/gnumeric/${VERSION}-bonobo/plugins/xml_sax/xml_sax.la
 libexec/gnumeric-component
-man/man1/gnumeric.1
-man/man1/ssconvert.1
+@man man/man1/gnumeric.1
+@man man/man1/ssconvert.1
 share/applications/
 share/applications/gnumeric.desktop
+share/gnome-2.0/
+share/gnome-2.0/ui/
 share/gnome-2.0/ui/GNOME_Gnumeric.xml
 share/gnome-2.0/ui/GNOME_Gnumeric_Component.xml
 share/gnumeric/
@@ -589,12 +593,18 @@ share/locale/cs/LC_MESSAGES/gnumeric.mo
 share/locale/da/LC_MESSAGES/gnumeric.mo
 share/locale/de/LC_MESSAGES/gnumeric.mo
 share/locale/el/LC_MESSAGES/gnumeric.mo
+share/locale/en_CA/
+share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gnumeric.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnumeric.mo
 share/locale/es/LC_MESSAGES/gnumeric.mo
 share/locale/et/LC_MESSAGES/gnumeric.mo
 share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
+share/locale/ga/
+share/locale/ga/LC_MESSAGES/
 share/locale/ga/LC_MESSAGES/gnumeric.mo
 share/locale/gl/LC_MESSAGES/gnumeric.mo
 share/locale/he/LC_MESSAGES/gnumeric.mo
@@ -604,7 +614,11 @@ share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric.mo
 share/locale/ko/LC_MESSAGES/gnumeric.mo
 share/locale/lv/LC_MESSAGES/gnumeric.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gnumeric.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gnumeric.mo
 share/locale/nl/LC_MESSAGES/gnumeric.mo
 share/locale/nn/LC_MESSAGES/gnumeric.mo
@@ -626,10 +640,12 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 share/mc/
 share/mc/templates/
 share/mc/templates/gnumeric.desktop
+share/mime-info/
 share/mime-info/gnumeric.keys
 share/mime-info/gnumeric.mime
 share/omf/gnumeric/
 share/omf/gnumeric/gnumeric-C.omf
+share/pixmaps/
 share/pixmaps/gnome-application-vnd.lotus-1-2-3.png
 share/pixmaps/gnome-application-x-applix-spreadsheet.png
 share/pixmaps/gnome-application-x-generic-spreadsheet.png
@@ -721,11 +737,12 @@ share/pixmaps/gnumeric/scatter.xpm
 share/pixmaps/gnumeric/stf-druid.png
 share/pixmaps/gnumeric/stock.xpm
 share/pixmaps/gnumeric/surface.xpm
+share/schemas/
 share/schemas/gnumeric/
 share/schemas/gnumeric/gnumeric-dialogs.schemas
 share/schemas/gnumeric/gnumeric-general.schemas
 share/schemas/gnumeric/gnumeric-plugins.schemas
-%%SHARED%%
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/gnumeric/*.schemas > /dev/null
+%%SHARED%%

@@ -1,7 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/11/23 07:25:59 pvalchev Exp $
-bin/xspread
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:12:00 espie Exp $
 bin/pxspread
+bin/xspread
+@man man/man1/pxspread.1
+@man man/man1/xspread.1
+share/examples/xspread/
+share/examples/xspread/demo_dates
+share/examples/xspread/demo_func
+share/examples/xspread/demo_math
+share/examples/xspread/demo_matrix
+share/examples/xspread/demo_strval
+share/examples/xspread/ex1
+share/examples/xspread/ex1o
+share/examples/xspread/ex2
+share/examples/xspread/ex2o
+share/examples/xspread/ex3
+share/examples/xspread/sample_files.tmp
+share/examples/xspread/tutorial
+share/xspread/
+share/xspread/README
+share/xspread/doc/
 share/xspread/doc/Sample_Run
+share/xspread/doc/doc.tmp
 share/xspread/doc/final_rpt
 share/xspread/doc/last_xspread
 share/xspread/doc/prog_rpt
@@ -15,6 +34,8 @@ share/xspread/doc/xspread.ps
 share/xspread/doc/xspread.tex
 share/xspread/doc/xspread.toc
 share/xspread/doc/xspread_prog.asc
+share/xspread/documents/
+share/xspread/documents/documents.tmp
 share/xspread/documents/progress.aux
 share/xspread/documents/progress.dvi
 share/xspread/documents/progress.log
@@ -25,17 +46,8 @@ share/xspread/documents/report.dvi
 share/xspread/documents/report.log
 share/xspread/documents/report.ps
 share/xspread/documents/report.tex
-share/examples/xspread/demo_dates
-share/examples/xspread/demo_func
-share/examples/xspread/demo_math
-share/examples/xspread/demo_matrix
-share/examples/xspread/demo_strval
-share/examples/xspread/ex1
-share/examples/xspread/ex1o
-share/examples/xspread/ex2
-share/examples/xspread/ex2o
-share/examples/xspread/ex3
-share/examples/xspread/tutorial
+share/xspread/notes
+share/xspread/tests/
 share/xspread/tests/Makefile
 share/xspread/tests/READ_ME
 share/xspread/tests/copy.cmp
@@ -56,11 +68,5 @@ share/xspread/tests/read.input
 share/xspread/tests/read.output
 share/xspread/tests/read.sc
 share/xspread/tests/tester.sh
+share/xspread/tests/tests.tmp
 share/xspread/tests/txt.sc
-man/man1/xspread.1
-man/man1/pxspread.1
-@dirrm share/examples/xspread
-@dirrm share/xspread/tests
-@dirrm share/xspread/documents
-@dirrm share/xspread/doc
-@dirrm share/xspread

@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:11:59 espie Exp $
 bin/maple
 bin/march
 bin/mint
 bin/updtsrc
-man/man1/maple.1
-man/man1/march.1
-man/man1/mint.1
-man/man1/updtsrc.1
+bin/xmaple
+@man man/man1/maple.1
+@man man/man1/march.1
+@man man/man1/mint.1
+@man man/man1/updtsrc.1
+maple/
 maple/README
+maple/X11_defaults/
 maple/X11_defaults/MapleVR5
 maple/X11_defaults/XKeysymDB
+maple/afm/
 maple/afm/Courier
 maple/afm/Courier-Bold
 maple/afm/Courier-BoldOblique
@@ -23,6 +27,7 @@ maple/afm/Times-Bold
 maple/afm/Times-BoldItalic
 maple/afm/Times-Italic
 maple/afm/Times-Roman
+maple/bin/
 maple/bin/TestMaple
 maple/bin/maple
 maple/bin/maple.system.type
@@ -32,6 +37,7 @@ maple/bin/resolv_display
 maple/bin/updt3to4
 maple/bin/updtsrc
 maple/bin/xmaple
+maple/bin_IBM_INTEL_LINUX/
 maple/bin_IBM_INTEL_LINUX/lks
 maple/bin_IBM_INTEL_LINUX/mapleTTY
 maple/bin_IBM_INTEL_LINUX/march
@@ -51,35 +57,30 @@ maple/bin_IBM_INTEL_LINUX/updt3to4
 maple/bin_IBM_INTEL_LINUX/updtsrc
 maple/bin_IBM_INTEL_LINUX/xmaplev5
 maple/bin_IBM_INTEL_LINUX/xmaplev5.res
+maple/etc/
 maple/etc/cmdline.txt
+maple/etc/inputs2e/
 maple/etc/inputs2e/maple2e.sty
 maple/etc/latex.txt
 maple/etc/march.txt
 maple/etc/mint.txt
 maple/etc/share.txt
 maple/etc/updtsrc.txt
+maple/lib/
 maple/lib/cmds
 maple/lib/maple.hdb
 maple/lib/maple.ind
 maple/lib/maple.lib
+maple/license/
 maple/license/...
 maple/license/.config
-maple/man/man1/maple.1
-maple/man/man1/march.1
-maple/man/man1/mint.1
-maple/man/man1/updtsrc.1
+@mandir maple/man/
+maple/man/man1/
+@man maple/man/man1/maple.1
+@man maple/man/man1/march.1
+@man maple/man/man1/mint.1
+@man maple/man/man1/updtsrc.1
+maple/test/
 maple/test/l00
 maple/test/l00.r
-@dirrm maple/bin
-@dirrm maple/bin_IBM_INTEL_LINUX
-@dirrm maple/X11_defaults
-@dirrm maple/afm
-@dirrm maple/etc/inputs2e
-@dirrm maple/etc
-@dirrm maple/lib
-@dirrm maple/license
-@dirrm maple/man/man1
-@dirrm maple/man
-@dirrm maple/test
-@dirrm maple/update
-@dirrm maple
+maple/update/

@@ -1,21 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/31 17:32:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 09:11:59 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Bit/
+${P5ARCH}/Bit/Vector/
 ${P5ARCH}/Bit/Vector.pm
 ${P5ARCH}/Bit/Vector.pod
 ${P5ARCH}/Bit/Vector/Overload.pm
 ${P5ARCH}/Bit/Vector/Overload.pod
+${P5ARCH}/Carp/
 ${P5ARCH}/Carp/Clan.pm
 ${P5ARCH}/Carp/Clan.pod
-@comment ${P5ARCH}/auto/Bit/Vector/.packlist
+${P5ARCH}/auto/
+${P5ARCH}/auto/Bit/
+${P5ARCH}/auto/Bit/Vector/
 ${P5ARCH}/auto/Bit/Vector/Vector.bs
 ${P5ARCH}/auto/Bit/Vector/Vector.so
-man/man3p/Bit::Vector.3p
-man/man3p/Bit::Vector::Overload.3p
-man/man3p/Carp::Clan.3p
-@dirrm man/man3p
-@dirrm ${P5ARCH}/auto/Bit/Vector
-@dirrm ${P5ARCH}/auto/Bit
-@dirrm ${P5ARCH}/auto
-@dirrm ${P5ARCH}/Carp
-@dirrm ${P5ARCH}/Bit/Vector
-@dirrm ${P5ARCH}/Bit
-@dirrm ${P5ARCH}
+@man man/man3p/Bit::Vector.3p
+@man man/man3p/Bit::Vector::Overload.3p
+@man man/man3p/Carp::Clan.3p

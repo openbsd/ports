@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/10/21 19:51:50 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:12:00 espie Exp $
+include/python${MODPY_VERSION}/Numeric/
 include/python${MODPY_VERSION}/Numeric/arrayobject.h
 include/python${MODPY_VERSION}/Numeric/f2c.h
 include/python${MODPY_VERSION}/Numeric/ranlib.h
 include/python${MODPY_VERSION}/Numeric/ufuncobject.h
+lib/python${MODPY_VERSION}/site-packages/Numeric/
 lib/python${MODPY_VERSION}/site-packages/Numeric.pth
 lib/python${MODPY_VERSION}/site-packages/Numeric/ArrayPrinter.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/ArrayPrinter.pyc
+lib/python${MODPY_VERSION}/site-packages/Numeric/FFT/
 lib/python${MODPY_VERSION}/site-packages/Numeric/FFT/FFT.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/FFT/FFT.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/FFT/__init__.py
@@ -13,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/Numeric/FFT/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/FFT/fftpack.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/LinearAlgebra.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/LinearAlgebra.pyc
+lib/python${MODPY_VERSION}/site-packages/Numeric/MA/
 lib/python${MODPY_VERSION}/site-packages/Numeric/MA/MA.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/MA/MA.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/MA/MA_version.py
@@ -27,6 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/Numeric/Numeric.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/Numeric.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/Precision.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/Precision.pyc
+lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/
 lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/RNG.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/Statistics.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/RNG/Statistics.pyc
@@ -44,8 +49,3 @@ lib/python${MODPY_VERSION}/site-packages/Numeric/numeric_version.py
 lib/python${MODPY_VERSION}/site-packages/Numeric/numeric_version.pyc
 lib/python${MODPY_VERSION}/site-packages/Numeric/ranlib.so
 lib/python${MODPY_VERSION}/site-packages/Numeric/umath.so
-@dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/RNG
-@dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/MA
-@dirrm lib/python${MODPY_VERSION}/site-packages/Numeric/FFT
-@dirrm lib/python${MODPY_VERSION}/site-packages/Numeric
-@dirrm include/python${MODPY_VERSION}/Numeric

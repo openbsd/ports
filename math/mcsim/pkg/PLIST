@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:11:59 espie Exp $
 bin/mcsim
 bin/mod
+share/doc/mcsim/
 share/doc/mcsim/About-Datasets.txt
 share/doc/mcsim/About-Doc.txt
 share/doc/mcsim/About-MCSim.txt
@@ -10,4 +11,3 @@ share/doc/mcsim/Manual-Update.txt
 share/doc/mcsim/Programming-notes.txt
 share/doc/mcsim/mcsim.dvi
 share/doc/mcsim/mcsim.html
-@dirrm share/doc/mcsim

@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/05/02 18:03:21 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/gnuplot.info
+@comment $OpenBSD: PLIST,v 1.10 2004/09/15 09:11:59 espie Exp $
 bin/gnuplot
-!%%no_x11%%
 bin/lasergnu
-info/gnuplot.info
-man/man1/gnuplot.1
-man/man1/lasergnu.1
+@info info/gnuplot.info
+@man man/man1/gnuplot.1
+@man man/man1/lasergnu.1
 share/gnuplot.gih
-@exec install-info --info-dir=%D/info %D/info/gnuplot.info
+!%%no_x11%%

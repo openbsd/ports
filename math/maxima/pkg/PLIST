@@ -1,28 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/03/31 04:34:00 pvalchev Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/maxima.info
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:11:59 espie Exp $
 bin/maxima
 bin/xmaxima
-info/maxima.info
-info/maxima.info-1
-info/maxima.info-10
-info/maxima.info-11
-info/maxima.info-12
-info/maxima.info-13
-info/maxima.info-14
-info/maxima.info-15
-info/maxima.info-2
-info/maxima.info-3
-info/maxima.info-4
-info/maxima.info-5
-info/maxima.info-6
-info/maxima.info-7
-info/maxima.info-8
-info/maxima.info-9
+@info info/maxima.info
+lib/maxima/
+lib/maxima/${VERSION}/
+lib/maxima/${VERSION}/binary-clisp/
 lib/maxima/${VERSION}/binary-clisp/maxima.mem
+libexec/maxima/
+libexec/maxima/${VERSION}/
 libexec/maxima/${VERSION}/maxima-run-lisp
 libexec/maxima/${VERSION}/mgnuplot
 libexec/maxima/${VERSION}/omplotdata
-man/man1/maxima.1
+@man man/man1/maxima.1
+share/maxima/
+share/maxima/${VERSION}/
+share/maxima/${VERSION}/demo/
 share/maxima/${VERSION}/demo/array.dem
 share/maxima/${VERSION}/demo/cf.dem
 share/maxima/${VERSION}/demo/demo.dem
@@ -39,7 +31,9 @@ share/maxima/${VERSION}/demo/rombrg.dem
 share/maxima/${VERSION}/demo/subscr.dem
 share/maxima/${VERSION}/demo/sumcon.dem
 share/maxima/${VERSION}/demo/trgsmp.dem
+share/maxima/${VERSION}/doc/
 share/maxima/${VERSION}/doc/EMaximaIntro.ps
+share/maxima/${VERSION}/doc/html/
 share/maxima/${VERSION}/doc/html/intromax.html
 share/maxima/${VERSION}/doc/html/maxima_1.html
 share/maxima/${VERSION}/doc/html/maxima_10.html
@@ -84,10 +78,12 @@ share/maxima/${VERSION}/doc/html/maxima_7.html
 share/maxima/${VERSION}/doc/html/maxima_8.html
 share/maxima/${VERSION}/doc/html/maxima_9.html
 share/maxima/${VERSION}/doc/html/maxima_toc.html
+share/maxima/${VERSION}/doc/share/
 share/maxima/${VERSION}/doc/share/bessel.usg
 share/maxima/${VERSION}/doc/share/brchre.txt
 share/maxima/${VERSION}/doc/share/rombrg.usg
 share/maxima/${VERSION}/doc/share/translation_hints.txt
+share/maxima/${VERSION}/emacs/
 share/maxima/${VERSION}/emacs/bookmode.el
 share/maxima/${VERSION}/emacs/dbl.el
 share/maxima/${VERSION}/emacs/emaxima.el
@@ -97,6 +93,9 @@ share/maxima/${VERSION}/emacs/maxima-font-lock.el
 share/maxima/${VERSION}/emacs/maxima.el
 share/maxima/${VERSION}/emacs/smart-complete.el
 share/maxima/${VERSION}/emacs/sshell.el
+share/maxima/${VERSION}/share/
+share/maxima/${VERSION}/share/algebra/
+share/maxima/${VERSION}/share/algebra/charsets/
 share/maxima/${VERSION}/share/algebra/charsets/README
 share/maxima/${VERSION}/share/algebra/charsets/charsets.mac
 share/maxima/${VERSION}/share/algebra/charsets/test1.mac
@@ -110,6 +109,7 @@ share/maxima/${VERSION}/share/algebra/recur.dem
 share/maxima/${VERSION}/share/algebra/recur.lisp
 share/maxima/${VERSION}/share/algebra/recur.mac
 share/maxima/${VERSION}/share/algebra/recur.transcript
+share/maxima/${VERSION}/share/algebra/solver/
 share/maxima/${VERSION}/share/algebra/solver/linsolve.mac
 share/maxima/${VERSION}/share/algebra/solver/misc.mac
 share/maxima/${VERSION}/share/algebra/solver/readme
@@ -119,6 +119,7 @@ share/maxima/${VERSION}/share/algebra/solver/solver.mac
 share/maxima/${VERSION}/share/algebra/solver/solver1-en.html
 share/maxima/${VERSION}/share/algebra/solver/solver1.pdf
 share/maxima/${VERSION}/share/algebra/solver/test.mac
+share/maxima/${VERSION}/share/calculus/
 share/maxima/${VERSION}/share/calculus/cartan.dem
 share/maxima/${VERSION}/share/calculus/cartan.lisp
 share/maxima/${VERSION}/share/calculus/fourie.dem
@@ -148,14 +149,17 @@ share/maxima/${VERSION}/share/calculus/qualsp.lisp
 share/maxima/${VERSION}/share/calculus/revert.mac
 share/maxima/${VERSION}/share/calculus/revert.usg
 share/maxima/${VERSION}/share/calculus/taylor1.mac
+share/maxima/${VERSION}/share/combinatorics/
 share/maxima/${VERSION}/share/combinatorics/comgen.lisp
 share/maxima/${VERSION}/share/combinatorics/permut.lisp
+share/maxima/${VERSION}/share/contrib/
 share/maxima/${VERSION}/share/contrib/diag.dem
 share/maxima/${VERSION}/share/contrib/diag.mac
 share/maxima/${VERSION}/share/contrib/diag.usg
 share/maxima/${VERSION}/share/contrib/impdiff.mac
 share/maxima/${VERSION}/share/contrib/lindstedt.mac
 share/maxima/${VERSION}/share/contrib/makeOrders.mac
+share/maxima/${VERSION}/share/diffequations/
 share/maxima/${VERSION}/share/diffequations/abel.mac
 share/maxima/${VERSION}/share/diffequations/desoln.mac
 share/maxima/${VERSION}/share/diffequations/desoln.usg
@@ -168,10 +172,13 @@ share/maxima/${VERSION}/share/diffequations/pdvtr.mac
 share/maxima/${VERSION}/share/diffequations/phypgm.mac
 share/maxima/${VERSION}/share/diffequations/pivtr.mac
 share/maxima/${VERSION}/share/diffequations/pmain.mac
+share/maxima/${VERSION}/share/graphics/
 share/maxima/${VERSION}/share/graphics/world.mac
+share/maxima/${VERSION}/share/integequations/
 share/maxima/${VERSION}/share/integequations/inteqn.mac
 share/maxima/${VERSION}/share/integequations/inteqn.usg
 share/maxima/${VERSION}/share/integequations/intexs.mac
+share/maxima/${VERSION}/share/integration/
 share/maxima/${VERSION}/share/integration/antid.dem
 share/maxima/${VERSION}/share/integration/antid.mac
 share/maxima/${VERSION}/share/integration/antid.usg
@@ -181,6 +188,7 @@ share/maxima/${VERSION}/share/integration/delta.mac
 share/maxima/${VERSION}/share/integration/delta.usg
 share/maxima/${VERSION}/share/integration/intsce.mac
 share/maxima/${VERSION}/share/integration/intsce.usg
+share/maxima/${VERSION}/share/macro/
 share/maxima/${VERSION}/share/macro/autolo.mac
 share/maxima/${VERSION}/share/macro/basic.mac
 share/maxima/${VERSION}/share/macro/caseq.mac
@@ -195,6 +203,7 @@ share/maxima/${VERSION}/share/macro/keyarg.dem
 share/maxima/${VERSION}/share/macro/keyarg.mac
 share/maxima/${VERSION}/share/macro/packg.mac
 share/maxima/${VERSION}/share/macro/sum1.mac
+share/maxima/${VERSION}/share/matrix/
 share/maxima/${VERSION}/share/matrix/determ.mac
 share/maxima/${VERSION}/share/matrix/determ.usg
 share/maxima/${VERSION}/share/matrix/eigen.dem
@@ -212,6 +221,7 @@ share/maxima/${VERSION}/share/matrix/pfaff.mac
 share/maxima/${VERSION}/share/matrix/pfaff.usg
 share/maxima/${VERSION}/share/matrix/rateig.mac
 share/maxima/${VERSION}/share/maxima-init.lisp
+share/maxima/${VERSION}/share/misc/
 share/maxima/${VERSION}/share/misc/arrfun.mac
 share/maxima/${VERSION}/share/misc/declin.dem
 share/maxima/${VERSION}/share/misc/declin.mac
@@ -228,6 +238,7 @@ share/maxima/${VERSION}/share/misc/seqopt.usg
 share/maxima/${VERSION}/share/misc/set.lisp
 share/maxima/${VERSION}/share/misc/set.usg
 share/maxima/${VERSION}/share/misc/smacro.mac
+share/maxima/${VERSION}/share/numeric/
 share/maxima/${VERSION}/share/numeric/bffac.lisp
 share/maxima/${VERSION}/share/numeric/bffac.usg
 share/maxima/${VERSION}/share/numeric/brmbrg.lisp
@@ -262,6 +273,7 @@ share/maxima/${VERSION}/share/numeric/simpsn.dem
 share/maxima/${VERSION}/share/numeric/simpsn.mac
 share/maxima/${VERSION}/share/numeric/submac.dem
 share/maxima/${VERSION}/share/numeric/submac.mac
+share/maxima/${VERSION}/share/physics/
 share/maxima/${VERSION}/share/physics/battex.sty
 share/maxima/${VERSION}/share/physics/dimen.dem
 share/maxima/${VERSION}/share/physics/dimen.mac
@@ -287,6 +299,7 @@ share/maxima/${VERSION}/share/physics/physconst.usg
 share/maxima/${VERSION}/share/physics/units.mac
 share/maxima/${VERSION}/share/physics/units.usg
 share/maxima/${VERSION}/share/share.usg
+share/maxima/${VERSION}/share/simplification/
 share/maxima/${VERSION}/share/simplification/absimp.dem
 share/maxima/${VERSION}/share/simplification/absimp.mac
 share/maxima/${VERSION}/share/simplification/absimp.usg
@@ -323,6 +336,7 @@ share/maxima/${VERSION}/share/simplification/sqdnst.usg
 share/maxima/${VERSION}/share/simplification/stopex.dem
 share/maxima/${VERSION}/share/simplification/stopex.mac
 share/maxima/${VERSION}/share/simplification/stopex.usg
+share/maxima/${VERSION}/share/specfunctions/
 share/maxima/${VERSION}/share/specfunctions/airy.lisp
 share/maxima/${VERSION}/share/specfunctions/airy.usg
 share/maxima/${VERSION}/share/specfunctions/ellipt.lisp
@@ -334,6 +348,7 @@ share/maxima/${VERSION}/share/specfunctions/specfun.mac
 share/maxima/${VERSION}/share/specfunctions/specfun.usg
 share/maxima/${VERSION}/share/specfunctions/test_specfun.mac
 share/maxima/${VERSION}/share/specfunctions/variational_method.dem
+share/maxima/${VERSION}/share/sym/
 share/maxima/${VERSION}/share/sym/arite.lisp
 share/maxima/${VERSION}/share/sym/chbase.lisp
 share/maxima/${VERSION}/share/sym/compile.lisp
@@ -361,6 +376,7 @@ share/maxima/${VERSION}/share/sym/sym1.mac
 share/maxima/${VERSION}/share/sym/treillis.lisp
 share/maxima/${VERSION}/share/sym/tri.lisp
 share/maxima/${VERSION}/share/sym/util.lisp
+share/maxima/${VERSION}/share/tensor/
 share/maxima/${VERSION}/share/tensor/aaricc.mac
 share/maxima/${VERSION}/share/tensor/aaricc_bsc.mac
 share/maxima/${VERSION}/share/tensor/aaricc_spl.mac
@@ -399,6 +415,7 @@ share/maxima/${VERSION}/share/tensor/swartz.dem
 share/maxima/${VERSION}/share/tensor/symtry.lisp
 share/maxima/${VERSION}/share/tensor/tensor-doc.txt
 share/maxima/${VERSION}/share/tensor/test1.mac
+share/maxima/${VERSION}/share/trigonometry/
 share/maxima/${VERSION}/share/trigonometry/atrig1.mac
 share/maxima/${VERSION}/share/trigonometry/atrig1.usg
 share/maxima/${VERSION}/share/trigonometry/ntrig.mac
@@ -406,6 +423,7 @@ share/maxima/${VERSION}/share/trigonometry/ntrig.usg
 share/maxima/${VERSION}/share/trigonometry/spangl.mac
 share/maxima/${VERSION}/share/trigonometry/spangl.usg
 share/maxima/${VERSION}/share/trigonometry/trigrat.lisp
+share/maxima/${VERSION}/share/utils/
 share/maxima/${VERSION}/share/utils/batch.dem
 share/maxima/${VERSION}/share/utils/batch.mac
 share/maxima/${VERSION}/share/utils/batch.transcript
@@ -415,6 +433,7 @@ share/maxima/${VERSION}/share/utils/dskuse.usg
 share/maxima/${VERSION}/share/utils/fileop.lisp
 share/maxima/${VERSION}/share/utils/fileop.usg
 share/maxima/${VERSION}/share/utils/mactex-utilities.lisp
+share/maxima/${VERSION}/share/vector/
 share/maxima/${VERSION}/share/vector/vect.dem
 share/maxima/${VERSION}/share/vector/vect.mac
 share/maxima/${VERSION}/share/vector/vect.usg
@@ -422,6 +441,7 @@ share/maxima/${VERSION}/share/vector/vect_transform.mac
 share/maxima/${VERSION}/share/vector/vector.dem
 share/maxima/${VERSION}/share/vector/vector.mac
 share/maxima/${VERSION}/share/vector/vector.usg
+share/maxima/${VERSION}/src/
 share/maxima/${VERSION}/src/SYS-DECLAIM.lisp
 share/maxima/${VERSION}/src/SYS-PROCLAIM.lisp
 share/maxima/${VERSION}/src/acall.lisp
@@ -519,8 +539,10 @@ share/maxima/${VERSION}/src/nparse.lisp
 share/maxima/${VERSION}/src/nrat4.lisp
 share/maxima/${VERSION}/src/nregex.lisp
 share/maxima/${VERSION}/src/numer.lisp
+share/maxima/${VERSION}/src/numerical/
 share/maxima/${VERSION}/src/numerical/f2cl-lib.lisp
 share/maxima/${VERSION}/src/numerical/f2cl-package.lisp
+share/maxima/${VERSION}/src/numerical/slatec/
 share/maxima/${VERSION}/src/numerical/slatec.lisp
 share/maxima/${VERSION}/src/numerical/slatec/d9aimp.lisp
 share/maxima/${VERSION}/src/numerical/slatec/d9b0mp.lisp
@@ -676,6 +698,7 @@ share/maxima/${VERSION}/src/trutil.lisp
 share/maxima/${VERSION}/src/ufact.lisp
 share/maxima/${VERSION}/src/utils.lisp
 share/maxima/${VERSION}/src/zero.lisp
+share/maxima/${VERSION}/tests/
 share/maxima/${VERSION}/tests/rexamples.mac
 share/maxima/${VERSION}/tests/rtest1.mac
 share/maxima/${VERSION}/tests/rtest10.mac
@@ -701,6 +724,7 @@ share/maxima/${VERSION}/tests/rtestflatten.mac
 share/maxima/${VERSION}/tests/rtestode.mac
 share/maxima/${VERSION}/tests/summarize-log
 share/maxima/${VERSION}/tests/tests.lisp
+share/maxima/${VERSION}/xmaxima/
 share/maxima/${VERSION}/xmaxima/demos.html
 share/maxima/${VERSION}/xmaxima/examples.html
 share/maxima/${VERSION}/xmaxima/intro.html
@@ -710,44 +734,3 @@ share/maxima/${VERSION}/xmaxima/maxima-new.gif
 share/maxima/${VERSION}/xmaxima/maxima-new.png
 share/maxima/${VERSION}/xmaxima/plotmaxima.html
 share/maxima/${VERSION}/xmaxima/server.lisp
-@dirrm share/maxima/${VERSION}/xmaxima
-@dirrm share/maxima/${VERSION}/tests
-@dirrm share/maxima/${VERSION}/src/numerical/slatec
-@dirrm share/maxima/${VERSION}/src/numerical
-@dirrm share/maxima/${VERSION}/src
-@dirrm share/maxima/${VERSION}/share/vector
-@dirrm share/maxima/${VERSION}/share/utils
-@dirrm share/maxima/${VERSION}/share/trigonometry
-@dirrm share/maxima/${VERSION}/share/tensor
-@dirrm share/maxima/${VERSION}/share/sym
-@dirrm share/maxima/${VERSION}/share/specfunctions
-@dirrm share/maxima/${VERSION}/share/simplification
-@dirrm share/maxima/${VERSION}/share/physics
-@dirrm share/maxima/${VERSION}/share/numeric
-@dirrm share/maxima/${VERSION}/share/misc
-@dirrm share/maxima/${VERSION}/share/matrix
-@dirrm share/maxima/${VERSION}/share/macro
-@dirrm share/maxima/${VERSION}/share/integration
-@dirrm share/maxima/${VERSION}/share/integequations
-@dirrm share/maxima/${VERSION}/share/graphics
-@dirrm share/maxima/${VERSION}/share/diffequations
-@dirrm share/maxima/${VERSION}/share/contrib
-@dirrm share/maxima/${VERSION}/share/combinatorics
-@dirrm share/maxima/${VERSION}/share/calculus
-@dirrm share/maxima/${VERSION}/share/algebra/solver
-@dirrm share/maxima/${VERSION}/share/algebra/charsets
-@dirrm share/maxima/${VERSION}/share/algebra
-@dirrm share/maxima/${VERSION}/share
-@dirrm share/maxima/${VERSION}/emacs
-@dirrm share/maxima/${VERSION}/doc/share
-@dirrm share/maxima/${VERSION}/doc/html
-@dirrm share/maxima/${VERSION}/doc
-@dirrm share/maxima/${VERSION}/demo
-@dirrm share/maxima/${VERSION}
-@dirrm share/maxima
-@dirrm libexec/maxima/${VERSION}
-@dirrm libexec/maxima
-@dirrm lib/maxima/${VERSION}/binary-clisp
-@dirrm lib/maxima/${VERSION}
-@dirrm lib/maxima
-@exec install-info --info-dir=%D/info %D/info/maxima.info

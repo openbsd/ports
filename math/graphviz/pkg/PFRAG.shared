@@ -1,8 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/06/09 20:38:01 espie Exp $
-lib/graphviz/libgdtclft.so.0.0
-lib/graphviz/libtcldgl.so.0.0
-lib/graphviz/libtcldgr.so.0.0
-lib/graphviz/libtcldot.so.0.0
-lib/graphviz/libtclpathplan.so.0.0
-lib/graphviz/libtkspline.so.0.0
-NEWDYNLIBDIR(%D/lib/graphviz)
+@comment $OpenBSD: PFRAG.shared,v 1.2 2004/09/15 09:11:59 espie Exp $
+@lib lib/graphviz/libgdtclft.so.0.0
+@lib lib/graphviz/libtcldgl.so.0.0
+@lib lib/graphviz/libtcldgr.so.0.0
+@lib lib/graphviz/libtcldot.so.0.0
+@lib lib/graphviz/libtclpathplan.so.0.0
+@lib lib/graphviz/libtkspline.so.0.0

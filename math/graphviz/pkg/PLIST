@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/09 20:38:01 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:11:59 espie Exp $
 bin/acyclic
 bin/ccomps
 bin/colorize
@@ -13,6 +13,8 @@ bin/nop
 bin/sccmap
 bin/tred
 bin/unflatten
+lib/graphviz/
+lib/graphviz/demo/
 lib/graphviz/demo/dge
 lib/graphviz/demo/dge.README
 lib/graphviz/demo/dge.example1.dot
@@ -27,6 +29,7 @@ lib/graphviz/demo/ihi.README
 lib/graphviz/demo/ihi.testdata
 lib/graphviz/demo/pathplan
 lib/graphviz/demo/pathplan.README
+lib/graphviz/demo/pathplan_data/
 lib/graphviz/demo/pathplan_data/boxes.dat
 lib/graphviz/demo/pathplan_data/dpd.dat
 lib/graphviz/demo/pathplan_data/funny.dat
@@ -41,6 +44,8 @@ lib/graphviz/demo/pathplan_data/u.dat
 lib/graphviz/demo/pathplan_data/unknown.dat
 lib/graphviz/demo/spline
 lib/graphviz/demo/spline.README
+lib/graphviz/graphs/
+lib/graphviz/graphs/directed/
 lib/graphviz/graphs/directed/KW91.dot
 lib/graphviz/graphs/directed/NaN.dot
 lib/graphviz/graphs/directed/abstract.dot
@@ -84,9 +89,11 @@ lib/graphviz/graphs/directed/unix.dot
 lib/graphviz/graphs/directed/unix2.dot
 lib/graphviz/graphs/directed/viewfile.dot
 lib/graphviz/graphs/directed/world.dot
+lib/graphviz/graphs/undirected/
 lib/graphviz/graphs/undirected/ER.dot
 lib/graphviz/graphs/undirected/ngk10_4.dot
 lib/graphviz/graphs/undirected/process.dot
+lib/graphviz/lefty/
 lib/graphviz/lefty/box.lefty
 lib/graphviz/lefty/def.lefty
 lib/graphviz/lefty/dotty.lefty
@@ -99,45 +106,44 @@ lib/graphviz/lefty/fractal2.lefty
 lib/graphviz/lefty/lefty.psp
 lib/graphviz/lefty/slides.lefty
 lib/graphviz/lefty/tree.lefty
+lib/graphviz/libgdtclft.a
 lib/graphviz/libgdtclft.la
+lib/graphviz/libtcldgl.a
 lib/graphviz/libtcldgl.la
+lib/graphviz/libtcldgr.a
 lib/graphviz/libtcldgr.la
+lib/graphviz/libtcldot.a
 lib/graphviz/libtcldot.la
+lib/graphviz/libtclpathplan.a
 lib/graphviz/libtclpathplan.la
+lib/graphviz/libtkspline.a
 lib/graphviz/libtkspline.la
 lib/graphviz/pkgIndex.tcl
-man/man1/acyclic.1
-man/man1/ccomps.1
-man/man1/colorize.1
-man/man1/dot.1
-man/man1/dotty.1
-man/man1/gc.1
-man/man1/gpr.1
-man/man1/lefty.1
-man/man1/neato.1
-man/man1/nop.1
-man/man1/sccmap.1
-man/man1/tred.1
-man/man1/unflatten.1
-man/man3/agraph.3
-man/man3/cdt.3
-man/man3/expr.3
-man/man3/graph.3
-man/man3/pathplan.3
-man/mann/gdtclft.n
-man/mann/tcldgl.n
-man/mann/tcldgr.n
-man/mann/tcldot.n
-man/mann/tkspline.n
+@man man/man1/acyclic.1
+@man man/man1/ccomps.1
+@man man/man1/colorize.1
+@man man/man1/dot.1
+@man man/man1/dotty.1
+@man man/man1/gc.1
+@man man/man1/gpr.1
+@man man/man1/lefty.1
+@man man/man1/neato.1
+@man man/man1/nop.1
+@man man/man1/sccmap.1
+@man man/man1/tred.1
+@man man/man1/unflatten.1
+@man man/man3/agraph.3
+@man man/man3/cdt.3
+@man man/man3/expr.3
+@man man/man3/graph.3
+@man man/man3/pathplan.3
+@man man/mann/gdtclft.n
+@man man/mann/tcldgl.n
+@man man/mann/tcldgr.n
+@man man/mann/tcldot.n
+@man man/mann/tkspline.n
+share/doc/graphviz/
 share/doc/graphviz/COPYING
 share/doc/graphviz/FAQ.txt
 share/doc/graphviz/MINTERMS.txt
 %%SHARED%%
-@dirrm share/doc/graphviz
-@dirrm lib/graphviz/lefty
-@dirrm lib/graphviz/graphs/undirected
-@dirrm lib/graphviz/graphs/directed
-@dirrm lib/graphviz/graphs
-@dirrm lib/graphviz/demo/pathplan_data
-@dirrm lib/graphviz/demo
-@dirrm lib/graphviz

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/08 15:06:24 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:11:58 espie Exp $
 bin/R
 lib/R/
 lib/R/AUTHORS
@@ -111,6 +111,7 @@ lib/R/bin/build
 lib/R/bin/check
 lib/R/bin/config
 lib/R/bin/f77
+@lib lib/R/bin/libRlapack.so.19.1
 lib/R/bin/libtool
 lib/R/bin/mkinstalldirs
 lib/R/bin/pager
@@ -153,9 +154,9 @@ lib/R/doc/manual/R-data.html
 lib/R/doc/manual/R-exts.html
 lib/R/doc/manual/R-intro.html
 lib/R/doc/manual/R-lang.html
-lib/R${SYSCONFDIR}/
-lib/R${SYSCONFDIR}/Makeconf
-lib/R${SYSCONFDIR}/Renviron
+lib/R/etc/
+lib/R/etc/Makeconf
+lib/R/etc/Renviron
 lib/R/include/
 lib/R/include/R.h
 lib/R/include/R_ext/
@@ -240,6 +241,7 @@ lib/R/library/KernSmooth/latex/dpik.tex
 lib/R/library/KernSmooth/latex/dpill.tex
 lib/R/library/KernSmooth/latex/locpoly.tex
 lib/R/library/KernSmooth/libs/
+lib/R/library/KernSmooth/libs/KernSmooth.so
 lib/R/library/KernSmooth/man/
 lib/R/library/KernSmooth/man/KernSmooth.Rd
 lib/R/library/MASS/
@@ -920,6 +922,7 @@ lib/R/library/MASS/latex/width.SJ.tex
 lib/R/library/MASS/latex/write.matrix.tex
 lib/R/library/MASS/latex/wtloss.tex
 lib/R/library/MASS/libs/
+lib/R/library/MASS/libs/MASS.so
 lib/R/library/MASS/man/
 lib/R/library/MASS/man/MASS.Rd
 lib/R/library/MASS/scripts/
@@ -3024,6 +3027,7 @@ lib/R/library/class/latex/olvq1.tex
 lib/R/library/class/latex/reduce.nn.tex
 lib/R/library/class/latex/somgrid.tex
 lib/R/library/class/libs/
+lib/R/library/class/libs/class.so
 lib/R/library/class/man/
 lib/R/library/class/man/class.Rd
 lib/R/library/cluster/
@@ -3240,6 +3244,7 @@ lib/R/library/cluster/latex/volume.ellipsoid.tex
 lib/R/library/cluster/latex/votes.repub.tex
 lib/R/library/cluster/latex/xclara.tex
 lib/R/library/cluster/libs/
+lib/R/library/cluster/libs/cluster.so
 lib/R/library/cluster/man/
 lib/R/library/cluster/man/cluster.Rd
 lib/R/library/ctest/
@@ -3304,6 +3309,7 @@ lib/R/library/foreign/latex/read.ssd.tex
 lib/R/library/foreign/latex/read.xport.tex
 lib/R/library/foreign/latex/write.dta.tex
 lib/R/library/foreign/libs/
+lib/R/library/foreign/libs/foreign.so
 lib/R/library/foreign/man/
 lib/R/library/foreign/man/foreign.Rd
 lib/R/library/graphics/
@@ -3723,18 +3729,29 @@ lib/R/library/grid/R/grid
 lib/R/library/grid/doc/
 lib/R/library/grid/doc/changes.txt
 lib/R/library/grid/doc/displaylist.Snw
+lib/R/library/grid/doc/displaylist.pdf
 lib/R/library/grid/doc/frame.Snw
+lib/R/library/grid/doc/frame.pdf
 lib/R/library/grid/doc/grid.Snw
 lib/R/library/grid/doc/grid.bib
+lib/R/library/grid/doc/grid.pdf
 lib/R/library/grid/doc/grobs.Snw
+lib/R/library/grid/doc/grobs.pdf
 lib/R/library/grid/doc/index.html
 lib/R/library/grid/doc/interactive.Snw
+lib/R/library/grid/doc/interactive.pdf
 lib/R/library/grid/doc/locndimn.Snw
+lib/R/library/grid/doc/locndimn.pdf
 lib/R/library/grid/doc/moveline.Snw
+lib/R/library/grid/doc/moveline.pdf
 lib/R/library/grid/doc/plotexample.Snw
+lib/R/library/grid/doc/plotexample.pdf
 lib/R/library/grid/doc/rotated.Snw
+lib/R/library/grid/doc/rotated.pdf
 lib/R/library/grid/doc/saveload.Snw
+lib/R/library/grid/doc/saveload.pdf
 lib/R/library/grid/doc/viewports.Snw
+lib/R/library/grid/doc/viewports.pdf
 lib/R/library/grid/help/
 lib/R/library/grid/help/AnIndex
 lib/R/library/grid/help/Grid
@@ -3915,6 +3932,7 @@ lib/R/library/grid/latex/viewports.tex
 lib/R/library/grid/latex/vpPath.tex
 lib/R/library/grid/latex/widthDetails.tex
 lib/R/library/grid/libs/
+lib/R/library/grid/libs/grid.so
 lib/R/library/grid/man/
 lib/R/library/grid/man/grid.Rd
 lib/R/library/lattice/
@@ -4094,6 +4112,7 @@ lib/R/library/lattice/latex/update.trellis.tex
 lib/R/library/lattice/latex/utilities.3d.tex
 lib/R/library/lattice/latex/xyplot.tex
 lib/R/library/lattice/libs/
+lib/R/library/lattice/libs/lattice.so
 lib/R/library/lattice/man/
 lib/R/library/lattice/man/lattice.Rd
 lib/R/library/lqs/
@@ -4299,6 +4318,7 @@ lib/R/library/methods/latex/substituteDirect.tex
 lib/R/library/methods/latex/validObject.tex
 lib/R/library/methods/latex/zBasicFunsList.tex
 lib/R/library/methods/libs/
+lib/R/library/methods/libs/methods.so
 lib/R/library/methods/man/
 lib/R/library/methods/man/methods.Rd
 lib/R/library/mgcv/
@@ -4471,6 +4491,7 @@ lib/R/library/mgcv/latex/tensor.prod.model.matrix.tex
 lib/R/library/mgcv/latex/uniquecombs.tex
 lib/R/library/mgcv/latex/vis.gam.tex
 lib/R/library/mgcv/libs/
+lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/mgcv/man/
 lib/R/library/mgcv/man/mgcv.Rd
 lib/R/library/mle/
@@ -5665,6 +5686,7 @@ lib/R/library/nlme/latex/varWeights.glsStruct.tex
 lib/R/library/nlme/latex/varWeights.lmeStruct.tex
 lib/R/library/nlme/latex/varWeights.tex
 lib/R/library/nlme/libs/
+lib/R/library/nlme/libs/nlme.so
 lib/R/library/nlme/man/
 lib/R/library/nlme/man/nlme.Rd
 lib/R/library/nlme/mlbook/
@@ -5727,6 +5749,7 @@ lib/R/library/nnet/latex/nnet.tex
 lib/R/library/nnet/latex/predict.nnet.tex
 lib/R/library/nnet/latex/which.is.max.tex
 lib/R/library/nnet/libs/
+lib/R/library/nnet/libs/nnet.so
 lib/R/library/nnet/man/
 lib/R/library/nnet/man/nnet.Rd
 lib/R/library/rpart/
@@ -5850,6 +5873,7 @@ lib/R/library/rpart/latex/summary.rpart.tex
 lib/R/library/rpart/latex/text.rpart.tex
 lib/R/library/rpart/latex/xpred.rpart.tex
 lib/R/library/rpart/libs/
+lib/R/library/rpart/libs/rpart.so
 lib/R/library/rpart/man/
 lib/R/library/rpart/man/rpart.Rd
 lib/R/library/spatial/
@@ -5954,6 +5978,7 @@ lib/R/library/spatial/latex/trls.influence.tex
 lib/R/library/spatial/latex/trmat.tex
 lib/R/library/spatial/latex/variogram.tex
 lib/R/library/spatial/libs/
+lib/R/library/spatial/libs/spatial.so
 lib/R/library/spatial/man/
 lib/R/library/spatial/man/spatial.Rd
 lib/R/library/spatial/ppdata/
@@ -6051,6 +6076,7 @@ lib/R/library/splines/latex/splineKnots.tex
 lib/R/library/splines/latex/splineOrder.tex
 lib/R/library/splines/latex/xyVector.tex
 lib/R/library/splines/libs/
+lib/R/library/splines/libs/splines.so
 lib/R/library/splines/man/
 lib/R/library/splines/man/splines.Rd
 lib/R/library/stats/
@@ -7408,6 +7434,7 @@ lib/R/library/stats/latex/zC.tex
 lib/R/library/stats/latex/zCO2.tex
 lib/R/library/stats/latex/zcbind.ts.tex
 lib/R/library/stats/libs/
+lib/R/library/stats/libs/stats.so
 lib/R/library/stats/man/
 lib/R/library/stats/man/stats.Rd
 lib/R/library/stats4/
@@ -7741,6 +7768,7 @@ lib/R/library/survival/latex/tobin.tex
 lib/R/library/survival/latex/untangle.specials.tex
 lib/R/library/survival/latex/veteran.tex
 lib/R/library/survival/libs/
+lib/R/library/survival/libs/survival.so
 lib/R/library/survival/man/
 lib/R/library/survival/man/survival.Rd
 lib/R/library/survival/survival.ps.gz
@@ -7879,6 +7907,7 @@ lib/R/library/tools/latex/tools-internal.tex
 lib/R/library/tools/latex/undoc.tex
 lib/R/library/tools/latex/vignetteDepends.tex
 lib/R/library/tools/libs/
+lib/R/library/tools/libs/tools.so
 lib/R/library/tools/man/
 lib/R/library/tools/man/tools.Rd
 lib/R/library/ts/
@@ -8120,6 +8149,10 @@ lib/R/library/utils/latex/vignette.tex
 lib/R/library/utils/man/
 lib/R/library/utils/man/utils.Rd
 lib/R/modules/
+lib/R/modules/R_X11.so
+lib/R/modules/internet.so
+lib/R/modules/lapack.so
+lib/R/modules/vfonts.so
 lib/R/share/
 lib/R/share/R/
 lib/R/share/R/firstlib.R
@@ -8157,25 +8190,3 @@ lib/R/share/texmf/omsaett.fd
 lib/R/share/texmf/omscmtt.fd
 lib/R/share/texmf/upquote.sty
 @man man/man1/R.1
-@lib lib/R/bin/libRlapack.so.19.1
-lib/R/library/KernSmooth/libs/KernSmooth.so
-lib/R/library/MASS/libs/MASS.so
-lib/R/library/class/libs/class.so
-lib/R/library/cluster/libs/cluster.so
-lib/R/library/foreign/libs/foreign.so
-lib/R/library/grid/libs/grid.so
-lib/R/library/lattice/libs/lattice.so
-lib/R/library/methods/libs/methods.so
-lib/R/library/mgcv/libs/mgcv.so
-lib/R/library/nlme/libs/nlme.so
-lib/R/library/nnet/libs/nnet.so
-lib/R/library/rpart/libs/rpart.so
-lib/R/library/spatial/libs/spatial.so
-lib/R/library/splines/libs/splines.so
-lib/R/library/stats/libs/stats.so
-lib/R/library/survival/libs/survival.so
-lib/R/library/tools/libs/tools.so
-lib/R/modules/R_X11.so
-lib/R/modules/internet.so
-lib/R/modules/lapack.so
-lib/R/modules/vfonts.so

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/03/03 03:08:45 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:12:00 espie Exp $
 bin/gist
 bin/yorick
 include/README
@@ -8,6 +8,7 @@ include/bound.h
 include/cgm.h
 include/cgmin.h
 include/clip.h
+@comment include/config.h
 include/defmem.h
 include/dg.h
 include/drat.h
@@ -59,8 +60,9 @@ include/ydata.h
 include/yio.h
 include/yversion.h
 lib/libyor.a
-man/man1/gist.1
-man/man1/yorick.1
+@man man/man1/gist.1
+@man man/man1/yorick.1
+share/doc/yorick/
 share/doc/yorick/drat.doc
 share/doc/yorick/drat.tex
 share/doc/yorick/graph.doc
@@ -74,6 +76,8 @@ share/doc/yorick/std.doc
 share/doc/yorick/yorick.pdf
 share/doc/yorick/yorick.ps
 share/doc/yorick/yorick.tex
+share/yorick/
+share/yorick/g/
 share/yorick/g/README
 share/yorick/g/axes.gs
 share/yorick/g/boxed.gs
@@ -93,6 +97,7 @@ share/yorick/g/vgbox.gs
 share/yorick/g/work.gs
 share/yorick/g/work2.gs
 share/yorick/g/yarg.gp
+share/yorick/i/
 share/yorick/i/README
 share/yorick/i/basfix.i
 share/yorick/i/bessel.i
@@ -164,6 +169,7 @@ share/yorick/i/testp.i
 share/yorick/i/txpath.i
 share/yorick/i/ylmdec.i
 share/yorick/i/zroots.i
+share/yorick/i0/
 share/yorick/i0/README
 share/yorick/i0/drat.i
 share/yorick/i0/fft.i
@@ -173,8 +179,3 @@ share/yorick/i0/matrix.i
 share/yorick/i0/paths.i
 share/yorick/i0/std.i
 share/yorick/i0/stdx.i
-@dirrm share/yorick/i0
-@dirrm share/yorick/i
-@dirrm share/yorick/g
-@dirrm share/yorick
-@dirrm share/doc/yorick

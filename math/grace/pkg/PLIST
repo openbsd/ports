@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/03/31 16:58:55 sturm Exp $
-%%no_x11%%
-!%%no_x11%%
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:11:59 espie Exp $
+grace/
+grace/auxiliary/
 grace/auxiliary/README
 grace/auxiliary/convcal.c
 grace/auxiliary/magic.grace
+grace/bin/
 grace/bin/convcal
 grace/bin/fdf2fit
 grace/bin/gracebat
 grace/bin/grconvert
+grace/doc/
 grace/doc/10.1.dat
 grace/doc/10a.dat
 grace/doc/10b.dat
@@ -34,6 +36,7 @@ grace/doc/nohelp.html
 grace/doc/philosophical-gnu-sm.jpg
 grace/doc/shiftdata.sh
 grace/doc/xmgrace.1
+grace/examples/
 grace/examples/altaxis.par
 grace/examples/arrows.agr
 grace/examples/au.agr
@@ -86,7 +89,9 @@ grace/examples/vmap.agr
 grace/examples/xycolor.agr
 grace/examples/xysize.agr
 grace/examples/xyz.agr
+grace/fonts/
 grace/fonts/FontDataBase
+grace/fonts/enc/
 grace/fonts/enc/CP1251.enc
 grace/fonts/enc/IsoLatin1.enc
 grace/fonts/enc/IsoLatin2.enc
@@ -98,6 +103,7 @@ grace/fonts/enc/MacRoman.enc
 grace/fonts/enc/PDFDoc.enc
 grace/fonts/enc/PSLatin1.enc
 grace/fonts/enc/WinAnsi.enc
+grace/fonts/type1/
 grace/fonts/type1/d050000l.afm
 grace/fonts/type1/d050000l.pfb
 grace/fonts/type1/n019003l.afm
@@ -128,17 +134,11 @@ grace/fonts/type1/s050000l.afm
 grace/fonts/type1/s050000l.pfb
 grace/gracerc
 grace/gracerc.user
+grace/include/
 grace/include/grace_np.h
+grace/lib/
 grace/lib/libgrace_np.a
+grace/templates/
 grace/templates/Default.agr
-@dirrm grace/templates
-@dirrm grace/lib
-@dirrm grace/include
-@dirrm grace/fonts/type1
-@dirrm grace/fonts/enc
-@dirrm grace/fonts
-@dirrm grace/examples
-@dirrm grace/doc
-@dirrm grace/bin
-@dirrm grace/auxiliary
-@dirrm grace
+%%no_x11%%
+!%%no_x11%%

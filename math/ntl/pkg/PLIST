@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/07/17 23:33:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:11:59 espie Exp $
+include/NTL/
 include/NTL/FFT.h
 include/NTL/FacVec.h
 include/NTL/GF2.h
@@ -24,6 +25,7 @@ include/NTL/ZZ_pX.h
 include/NTL/ZZ_pXFactoring.h
 include/NTL/c_lip.h
 include/NTL/config.h
+include/NTL/ctools.h
 include/NTL/def_config.h
 include/NTL/fileio.h
 include/NTL/g_lip.h
@@ -88,6 +90,7 @@ include/NTL/vector.h
 include/NTL/version.h
 include/NTL/xdouble.h
 lib/libntl.a
+share/doc/NTL/
 share/doc/NTL/GF2.txt
 share/doc/NTL/GF2E.txt
 share/doc/NTL/GF2EX.txt
@@ -166,5 +169,3 @@ share/doc/NTL/vec_lzz_pE.txt
 share/doc/NTL/vector.txt
 share/doc/NTL/version.txt
 share/doc/NTL/xdouble.txt
-@dirrm share/doc/NTL
-@dirrm include/NTL
