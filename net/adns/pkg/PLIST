@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/05 03:20:40 margarida Exp $
+bin/adnshost
+bin/adnslogres
+bin/adnsresfilter
+include/adns.h
+lib/libadns.a
+%%SHARED%%

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_dlist_h,v 1.1.1.1 2003/05/05 03:20:40 margarida Exp $
+--- src/dlist.h.orig	Sun May  4 14:19:01 2003
++++ src/dlist.h	Sun May  4 14:19:14 2003
+@@ -28,6 +28,7 @@
+ #ifndef ADNS_DLIST_H_INCLUDED
+ #define ADNS_DLIST_H_INCLUDED
+ 
++#undef LIST_INIT
+ #define LIST_INIT(list) ((list).head= (list).tail= 0)
+ #define LINK_INIT(link) ((link).next= (link).back= 0)
+ 
