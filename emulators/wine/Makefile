@@ -4,9 +4,9 @@
 # Whom:			todd@OpenBSD.org
 #
 
-DATE=		971116
+DATE=		980628
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-97.11.16
+PKGNAME=	wine-98.06.28
 CATEGORIES=	emulators x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -20,7 +20,7 @@ OS_HAS_XPM=	2.3
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 .endif
 
-WRKSRC=		${WRKDIR}/wine${DATE}
+WRKSRC=		${WRKDIR}/wine-${DATE}
 GNU_CONFIGURE=	yes
 MAN1=		wine.1
 
