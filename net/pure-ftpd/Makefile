@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/08/25 22:57:56 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2002/08/26 14:39:29 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp3.fr.pureftpd.org/pure-ftpd/releases/ \
-		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \        
+		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
 		ftp://ftp.es.pureftpd.org/mirror/pureftpd/latest/releases/ \
 		ftp://ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.cn.pureftpd.org/pub/pureftpd/pure-ftpd/releases/ \
