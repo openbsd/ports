@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/10/07 05:48:54 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/12/09 04:40:42 marcm Exp $
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-at-properties
 bin/gnome-background-properties
@@ -344,7 +344,7 @@ share/schemas/control-center2/desktop_gnome_font_rendering.schemas
 @dirrm share/control-center-2.0/icons
 @comment @dirrm share/control-center-2.0/capplets
 @comment @dirrm share/control-center-2.0
-@unexec rmdir %D/share/control-center 2>/dev/null || true
+@dirrm share/control-center
 @comment @dirrm share/applications
 @comment @dirrm share/application-registry
 @dirrm lib/window-manager-settings

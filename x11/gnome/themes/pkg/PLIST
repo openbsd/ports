@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2003/12/01 04:13:07 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2003/12/09 04:40:42 marcm Exp $
 @pkgcfl gtk-thinice-engine-*
 lib/gtk-2.0/2.2.0/engines/libcrux-engine.a
 lib/gtk-2.0/2.2.0/engines/libcrux-engine.la
@@ -1611,7 +1611,7 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Smokey-Blue
 @dirrm share/themes/Smokey
 @dirrm share/themes/Simple/gtk-2.0
-@unexec rmdir %D/share/themes/Simple 2>/dev/null || true
+@dirrm share/themes/Simple
 @dirrm share/themes/Sandwish/metacity-1
 @dirrm share/themes/Sandwish
 @dirrm share/themes/Ocean-Dream
@@ -1641,7 +1641,7 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Grand-Canyon/gtk-2.0
 @dirrm share/themes/Grand-Canyon
 @dirrm share/themes/Crux/gtk-2.0
-@unexec rmdir %D/share/themes/Crux 2>/dev/null || true
+@dirrm share/themes/Crux
 @comment @dirrm share/themes
 @comment @dirrm share/locale/zh_TW/LC_MESSAGES
 @comment @dirrm share/locale/zh_TW

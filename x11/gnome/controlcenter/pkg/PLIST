@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2003/10/16 16:55:11 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/12/09 04:40:42 marcm Exp $
 bin/background-properties-capplet
 bin/default-application-properties-capplet
 bin/file-types-capplet
@@ -249,8 +249,8 @@ share/pixmaps/control-center.png
 @dirrm share/control-center/Peripherals
 @dirrm share/control-center/Multimedia
 @dirrm share/control-center/Documents
-@unexec rmdir %D/share/control-center/Desktop 2>/dev/null || true
-@unexec rmdir %D/share/control-center 2>/dev/null || true
+@dirrm share/control-center/Desktop
+@dirrm share/control-center
 @dirrm include/libcapplet1
 @exec %D/bin/scrollkeeper-update -q
 @unexec %D/bin/scrollkeeper-update -q
