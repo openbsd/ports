@@ -1,88 +1,22 @@
-$OpenBSD: patch-configure,v 1.2 2003/10/12 02:08:14 brad Exp $
---- configure.orig	2003-01-20 05:31:25.000000000 -0500
-+++ configure	2003-10-11 18:45:23.000000000 -0400
-@@ -3694,32 +3694,6 @@ fi
- done
+$OpenBSD: patch-configure,v 1.3 2004/05/08 06:41:47 sturm Exp $
+--- configure.orig	2004-04-15 11:08:35.000000000 +0200
++++ configure	2004-04-17 16:44:56.000000000 +0200
+@@ -2213,8 +2213,12 @@ esac
  
-        working_db2any=no
--     if $ac_aux_dir/db2any --systemcheck; then
--	working_db2any=yes
--	DB2ANY=`cd $ac_aux_dir && pwd`/db2any
--     else
--	DB2ANY=": "
--	{ echo "$as_me:$LINENO: WARNING:
--***
--*** It seems that the Docbook environment is not installed as required.
--*** We will try to build everything,  but if you either touch some files
--*** or use a bogus make tool, you may run into problems.
--*** Docbook is normally only needed to build the documentation.
--*** To further investigate the problem you can run the command
--***    $ac_aux_dir/db2any --systemcheck --verbose
--***" >&5
--echo "$as_me: WARNING:
--***
--*** It seems that the Docbook environment is not installed as required.
--*** We will try to build everything,  but if you either touch some files
--*** or use a bogus make tool, you may run into problems.
--*** Docbook is normally only needed to build the documentation.
--*** To further investigate the problem you can run the command
--***    $ac_aux_dir/db2any --systemcheck --verbose
--***" >&2;}
--    fi
--
--
- 
- if test "$working_db2any" != yes ; then
-   WORKING_DB2ANY_TRUE=
-@@ -6897,6 +6871,8 @@ openbsd*)
-   version_type=sunos
-   need_lib_prefix=no
-   need_version=no
-+  sys_lib_search_path_spec="/usr/lib"
-+  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     case "$host_os" in
-     openbsd2.[89] | openbsd2.[89].*)
-@@ -8826,8 +8802,8 @@ fi
  
  case "${target}" in
-     *-openbsd* | *-netbsd*)
--        NAME_OF_DEV_RANDOM="/dev/srandom"
--        NAME_OF_DEV_URANDOM="/dev/urandom"
+-    *-openbsd* | *-netbsd*)
+-        # FIXME: Are these the best flags for OpenBSD?
++    *-openbsd*)
 +        NAME_OF_DEV_RANDOM="/dev/arandom"
 +        NAME_OF_DEV_URANDOM="/dev/arandom"
++#       DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
++        ;;
++    *-netbsd*)
+         NAME_OF_DEV_RANDOM="/dev/srandom"
+         NAME_OF_DEV_URANDOM="/dev/urandom"
  #       DYNLINK_MOD_CFLAGS="-shared -rdynamic $CFLAGS_PIC -Wl,-Bshareable -Wl,-x"
-         ;;
- 
-@@ -13031,13 +13007,13 @@ cat >>confdefs.h <<\_ACEOF
- _ACEOF
- 
- fi
--echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line $LINENO "configure"
- /* confdefs.h.  */
-@@ -13079,9 +13055,9 @@ else
- sed 's/^/| /' conftest.$ac_ext >&5
- 
- ac_cv_lib_pthread_pthread_create=no
-+LIBS=$ac_check_lib_save_LIBS
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
--LIBS=$ac_check_lib_save_LIBS
- fi
- echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
-@@ -13948,26 +13924,6 @@ fi
+@@ -25679,24 +25683,6 @@ fi
  
  
  
@@ -104,8 +38,6 @@ $OpenBSD: patch-configure,v 1.2 2003/10/12 02:08:14 brad Exp $
 -*** at all GNU archives.  It is always available from ftp.gnu.org:/gnu/make.
 -***" >&2;}
 -    fi
--
--
- if test "$GCC" = yes; then
-     if test "$MAINTAINER_MODE" = "yes"; then
-         CFLAGS="$CFLAGS -Wall -Wcast-align -Wshadow -Wstrict-prototypes"
+ 
+ 
+ # Check whether --enable-gcc-warnings or --disable-gcc-warnings was given.
