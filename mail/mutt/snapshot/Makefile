@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/15 21:14:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 14:37:00 lebel Exp $
 
 COMMENT=	"tty-based e-mail client, development version"
 
@@ -61,7 +61,7 @@ CONFIGURE_ARGS+= --enable-imap --with-ssl
 # limited.  If you need more functionality you should consider using a
 # specialized program, such as fetchmail.
 .if ${FLAVOR:L:Mpop}
-CONFIGURE_ARGS+= --enable-pop
+CONFIGURE_ARGS+= --enable-pop --with-ssl
 .endif
 
 .if ${FLAVOR:L:Mmixmaster}
