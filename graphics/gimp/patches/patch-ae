@@ -1,0 +1,13 @@
+--- plug-ins/url/url.c.orig	Fri Apr 30 06:35:50 1999
++++ plug-ins/url/url.c	Mon May 31 04:05:00 1999
+@@ -149,8 +149,8 @@
+     }
+   else if (pid == 0)
+     {
+-      execlp ("wget", "wget", filename, "-O", tmpname, NULL);
+-      g_message ("url: exec failed: wget: %s\n", g_strerror(errno));
++      execlp ("ftp", "ftp", "-o", tmpname, filename, NULL);
++      g_message ("url: exec failed: ftp: %s\n", g_strerror(errno));
+       _exit(127);
+     }
+   else
