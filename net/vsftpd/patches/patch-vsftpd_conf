@@ -1,0 +1,100 @@
+$OpenBSD: patch-vsftpd_conf,v 1.1 2003/05/20 11:12:08 couderc Exp $
+--- vsftpd.conf.orig	Mon Jul 30 23:51:07 2001
++++ vsftpd.conf	Sun May 11 21:56:55 2003
+@@ -4,13 +4,13 @@
+ # loosens things up a bit, to make the ftp daemon more usable.
+ #
+ # Allow anonymous FTP?
+-anonymous_enable=YES
++anonymous_enable=NO
+ #
+ # Uncomment this to allow local users to log in.
+-#local_enable=YES
++local_enable=YES
+ #
+ # Uncomment this to enable any form of FTP write command.
+-#write_enable=YES
++write_enable=YES
+ #
+ # Default umask for local users is 077. You may wish to change this to 022,
+ # if your users expect that (022 is used by most other ftpd's)
+@@ -27,13 +27,13 @@ anonymous_enable=YES
+ #
+ # Activate directory messages - messages given to remote users when they
+ # go into a certain directory.
+-dirmessage_enable=YES
++#dirmessage_enable=YES
+ #
+ # Activate logging of uploads/downloads.
+-xferlog_enable=YES
++#xferlog_enable=YES
+ #
+ # Make sure PORT transfer connections originate from port 20 (ftp-data).
+-connect_from_port_20=YES
++#connect_from_port_20=YES
+ #
+ # If you want, you can arrange for uploaded anonymous files to be owned by
+ # a different user. Note! Using "root" for uploaded files is not
+@@ -56,7 +56,7 @@ connect_from_port_20=YES
+ #
+ # It is recommended that you define on your system a unique user which the
+ # ftp server can use as a totally isolated and unprivileged user.
+-#nopriv_user=ftpsecure
++nopriv_user=vsftpd
+ #
+ # Enable this and the server will recognise asynchronous ABOR requests. Not
+ # recommended for security (the code is non-trivial). Not enabling it,
+@@ -74,7 +74,7 @@ connect_from_port_20=YES
+ # without the DoS risk of SIZE and ASCII downloads. ASCII mangling should be
+ # on the client anyway..
+ #ascii_upload_enable=YES
+-#ascii_download_enable=YES
++ascii_download_enable=YES
+ #
+ # You may fully customise the login banner string:
+ #ftpd_banner=Welcome to blah FTP service.
+@@ -88,13 +88,41 @@ connect_from_port_20=YES
+ # You may specify an explicit list of local users to chroot() to their home
+ # directory. If chroot_local_user is YES, then this list becomes a list of
+ # users to NOT chroot().
+-#chroot_list_enable=YES
++chroot_list_enable=YES
+ # (default follows)
+-#chroot_list_file=/etc/vsftpd.chroot_list
++chroot_list_file=/etc/ftpchroot
+ #
+ # You may activate the "-R" option to the builtin ls. This is disabled by
+ # default to avoid remote users being able to cause excessive I/O on large
+ # sites. However, some broken FTP clients such as "ncftp" and "mirror" assume
+ # the presence of the "-R" option, so there is a strong case for enabling it.
+ #ls_recurse_enable=YES
+-
++#
++# If enabled, vsftpd will load a list of usernames, from the filename
++# given by userlist_file. If a user tries to log in using a name in this
++# file, they will be denied before they are asked for a password.
++# This may be useful in preventing clear text passwords being transmitted.
++userlist_enable=YES
++#
++# This option is the name of the file loaded when the userlist_enable
++# option is active.
++userlist_file=/etc/ftpusers
++#
++# This option should be the name of a directory which is empty. Also,
++# the directory should not be writable by the ftp user. This directory
++# is used as a secure chroot() jail at times vsftpd does not require
++# filesystem access.
++secure_chroot_dir=/var/empty
++#
++# The minimum port to allocate for PASV style data connections.
++# Can be used to specify a narrow port range to assist firewalling.
++pasv_min_port=49152
++#
++# The maximum port to allocate for PASV style data connections.
++# Can be used to specify a narrow port range to assist firewalling.
++pasv_max_port=65535
++#
++# By default, numeric IDs are shown in the user and group fields of
++# directory listings. You can get textual names by enabling this parameter.
++# It is off by default for performance reasons.
++text_userdb_names=YES
