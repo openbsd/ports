@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/04/03 23:39:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/23 20:57:56 avsm Exp $
 
 COMMENT=	"base package for HTML handling in PHP"
 
-V=		1.0
+V=		1.2
 DISTNAME=	HTML_Common-${V}
 PKGNAME=	pear-HTML-Common-${V}
 CATEGORIES=	devel www pear
