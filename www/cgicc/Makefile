@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2002/05/15 17:58:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2002/06/10 08:33:04 shell Exp $
 
 COMMENT=	"c++ compliant CGI applications libraries"
 
-DISTNAME=	cgicc-3.1.5
+DISTNAME=	cgicc-3.2.1
 CATEGORIES=     www devel
 
 NEED_VERSION=	1.427
