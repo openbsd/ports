@@ -1,0 +1,15 @@
+$OpenBSD: patch-Imakefile,v 1.1 2003/12/31 03:39:36 espie Exp $
+--- Imakefile.orig	2003-12-31 04:34:34.000000000 +0100
++++ Imakefile	2003-12-31 04:34:44.000000000 +0100
+@@ -1,8 +1,8 @@
+ #include <XView.tmpl>
+ 
+-/**/##########################################################################
+-/**/# @(#)Imakefile 1.6 90/07/17 SMI
+-/**/# Imakefile for textedit
++XCOMM #########################################################################
++XCOMM  @(#)Imakefile 1.6 90/07/17 SMI
++XCOMM  Imakefile for textedit
+ 
+ DEFINES = -DSTANDALONE
+ INCLUDES = -I/usr/openwin/include -I$(HEADER_DEST) -I$(TOP)
