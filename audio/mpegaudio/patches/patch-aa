@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan  4 20:47:50 1994
-+++ Makefile	Mon Nov 29 09:14:40 1999
+--- Makefile.orig	Wed Jan  5 02:47:50 1994
++++ Makefile	Sat Apr  8 17:03:47 2000
 @@ -1,10 +1,18 @@
 -ALL : musicin musicout
 +CFLAGS += -DPREFIX=\"${PREFIX}\"
@@ -20,7 +20,7 @@
 +	rm -f *.core *.o musicin musicout
 +
 +install:
-+	mkdir -m 0755 -p ${PREFIX}/lib/mpegaudio/tables
-+	install -c -m 0755 -o root -g bin musicin ${PREFIX}/bin/mpeg_musicin
-+	install -c -m 0755 -o root -g bin musicout ${PREFIX}/bin/mpeg_musicout
-+	install -c -m 0644 -o bin -g bin tables/* ${PREFIX}/lib/mpegaudio/tables
++	${BSD_INSTALL_DATA_DIR} ${PREFIX}/lib/mpegaudio/tables
++	${BSD_INSTALL_DATA} tables/* ${PREFIX}/lib/mpegaudio/tables
++	${BSD_INSTALL_PROGRAM} musicin ${PREFIX}/bin/mpeg_musicin
++	${BSD_INSTALL_PROGRAM} musicout ${PREFIX}/bin/mpeg_musicout
