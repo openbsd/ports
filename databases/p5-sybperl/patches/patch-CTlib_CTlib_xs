@@ -1,0 +1,37 @@
+$OpenBSD: patch-CTlib_CTlib_xs,v 1.1 2002/10/31 01:32:08 jcs Exp $
+--- CTlib/CTlib.xs.orig	Tue Oct 22 13:10:54 2002
++++ CTlib/CTlib.xs	Wed Oct 30 19:22:52 2002
+@@ -92,6 +92,7 @@
+ */
+ #define MAX_CHAR_BUF	1024
+ 
++#define CS_COMPLETION_CB 1
+ 
+ typedef struct _col_data
+ {
+@@ -1952,7 +1953,6 @@
+     CS_INT      cs_ver;
+     dTHR;
+ 
+-#if 0
+     if((retcode = cs_ctx_alloc(CTLIB_VERSION, &context)) != CS_SUCCEED)
+ 	croak("Sybase::CTlib initialize: cs_ctx_alloc() failed");
+ 
+@@ -1962,8 +1962,8 @@
+ 	context = NULL;
+ 	croak("Sybase::CTlib initialize: ct_init() failed");
+     }
+-#endif
+ 
++#if 0
+ #if defined(CS_VERSION_125)
+     cs_ver = CS_VERSION_125;
+     retcode = cs_ctx_global(cs_ver, &context);
+@@ -1984,6 +1984,7 @@
+ 	cs_ver = CS_VERSION_100;
+ 	retcode = cs_ctx_global(cs_ver, &context);
+     }
++#endif
+ 
+     if(retcode != CS_SUCCEED)
+ 	croak("Sybase::CTlib initialize: cs_ctx_alloc(%d) failed", cs_ver);
