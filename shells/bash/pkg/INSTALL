@@ -1,7 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.2 2000/07/04 21:26:17 brad Exp $
-#
-# Pre/post-installation setup of bash
+# $OpenBSD: INSTALL,v 1.4 2004/07/30 17:02:49 naddy Exp $
 
 # exit on errors, use a sane path and install prefix
 #

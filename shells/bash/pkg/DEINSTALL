@@ -1,7 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.3 2000/12/07 18:05:29 todd Exp $
-#
-# bash2 de-installation
+# $OpenBSD: DEINSTALL,v 1.4 2004/07/30 17:02:49 naddy Exp $
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
