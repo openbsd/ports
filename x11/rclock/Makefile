@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2000/04/09 17:38:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/05/17 16:28:20 espie Exp $
 
 PKGNAME=	rclock-2.6.1
 DISTNAME=	rxvt-2.6.1
 CATEGORIES=	x11
-FAKE=No
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
 		${MASTER_SITE_SUNSITE}
@@ -16,8 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_X11=	yes
-GNU_CONFIGURE=  yes
+USE_X11=	Yes
+GNU_CONFIGURE=  Yes
+FAKE=		Yes
 
 ALL_TARGET=	clock
 
