@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 1999/04/13 21:36:25 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/13 21:47:50 brad Exp $
 
 DISTNAME=	xcolors
 PKGNAME=	xcolors-1.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/
+MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
+		ftp://ftp.weird.com/pub/mirror/
 
 MAINTAINER=	angelos@openbsd.org
 
