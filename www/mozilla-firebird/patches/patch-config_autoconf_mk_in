@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.2 2003/05/23 10:05:36 wilfried Exp $
+$OpenBSD: patch-config_autoconf_mk_in,v 1.3 2003/05/26 11:06:38 wilfried Exp $
 --- config/autoconf.mk.in.orig	Fri May  2 23:38:10 2003
 +++ config/autoconf.mk.in	Thu May 22 13:36:32 2003
 @@ -35,7 +35,7 @@ datadir		= @datadir@
@@ -15,7 +15,7 @@ $OpenBSD: patch-config_autoconf_mk_in,v 1.2 2003/05/23 10:05:36 wilfried Exp $
  OS_COMPILE_CXXFLAGS = $(OS_CPPFLAGS) @COMPILE_CXXFLAGS@
  
 -OS_INCLUDES	= $(NSPR_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(MNG_CFLAGS) $(ZLIB_CFLAGS)
-+OS_INCLUDES	= $(NSPR_CFLAGS) $(FT2_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(MNG_CFLAGS) $(ZLIB_CFLAGS)
++OS_INCLUDES	= $(NSPR_CFLAGS) $(FT2_CFLAGS) $(LIBIDL_CFLAGS) $(JPEG_CFLAGS) $(PNG_CFLAGS) $(MNG_CFLAGS) $(ZLIB_CFLAGS)
  OS_LIBS		= @LIBS@
  ACDEFINES	= @MOZ_DEFINES@
  

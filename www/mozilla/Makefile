@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2003/05/23 10:09:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.45 2003/05/26 11:06:48 wilfried Exp $
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
@@ -55,11 +55,13 @@ CONFIGURE_ARGS=					\
 		--with-pthreads			\
 		--enable-crypto			\
 		--enable-extensions=default	\
+		--disable-pedantic		\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-ldap
 
-CONFIGURE_ENV=	CFLAGS="" CXXFLAGS=""
+CONFIGURE_ENV=	CFLAGS="" CXXFLAGS="" \
+		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		CFLAGS="" CXXFLAGS=""
 

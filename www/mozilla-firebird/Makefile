@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2003/05/23 10:05:35 wilfried Exp $
+# $OpenBSD: Makefile,v 1.6 2003/05/26 11:06:38 wilfried Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -45,11 +45,13 @@ CONFIGURE_ARGS=					\
 		--enable-plaintext-editor-only	\
 		--enable-extensions=default,-inspector,-irc,-venkman,-content-packs,-help \
 		--enable-crypto			\
+		--disable-pedantic		\
 		--disable-debug			\
 		--disable-tests			\
 		--disable-ldap
 
-CONFIGURE_ENV=	CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1
+CONFIGURE_ENV=	CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1 \
+		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
 		CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1
 
