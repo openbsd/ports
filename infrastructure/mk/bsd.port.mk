@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.150 1999/12/01 22:39:44 ian Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.151 1999/12/03 14:24:39 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -193,8 +193,6 @@ _REVISION_NEEDED=${NEED_VERSION:C/.*\.//}
 # USE_PERL5		- Port uses perl5 for building and running.
 # USE_IMAKE		- Port uses imake.
 # USE_X11		- Port uses X11 and installs in ${X11BASE}
-# USE_EGCC		- Port needs the egcs C compiler
-# USE_EGXX		- Port needs the egcs C++ compiler
 # NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
 #						target.
 # HAS_CONFIGURE	- Says that the port has its own configure script.
@@ -487,20 +485,6 @@ BUILD_DEPENDS+=		${LIBTOOL}:${PORTSDIR}/devel/libtool
 CONFIGURE_ENV+=		LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 MAKE_ENV+=			LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}"
 .endif
-.if defined(USE_EGCC)
-_CC_VERSION!=/usr/bin/cc -dumpversion
-.if ${_CC_VERSION} == "2.8.0" || ${_CC_VERSION} == "2.8.1"
-BUILD_DEPENDS+= 	${EGCC}:${PORTSDIR}/lang/egcs/stable
-CC=${EGCC}
-.endif
-.endif
-.if defined(USE_EGXX)
-_CXX_VERSION!=/usr/bin/cc -dumpversion
-.if ${_CXX_VERSION} == "2.8.0" || ${_CXX_VERSION} == "2.8.1" 
-BUILD_DEPENDS+= 	${EGXX}:${PORTSDIR}/lang/egcs/stable
-CXX=${EGXX}
-.endif
-.endif
 .if defined(USE_MOTIF) && !defined(HAVE_MOTIF) && !defined(REQUIRES_MOTIF)
 LIB_DEPENDS+=		Xm.:${PORTSDIR}/x11/lesstif
 .endif
@@ -528,8 +512,6 @@ PACKAGE_COOKIE?=	${WRKDIR}/.package_done
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
-EGCC?=			egcc
-EGXX?=			eg++
 XMKMF?=			xmkmf -a
 
 # be paranoid about which ciphers we trust

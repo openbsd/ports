@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/10/28 07:43:36 turan Exp $
+# $OpenBSD: Makefile,v 1.13 1999/12/03 14:24:38 espie Exp $
 
 BROKEN=		bad packing lists
 
@@ -24,8 +24,6 @@ BUILD_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 LIB_DEPENDS=	tiff.3.4:${PORTSDIR}/graphics/tiff34
 
-USE_EGCC=	yes
-USE_EGXX=	yes
 USE_GMAKE=	yes
 
 .if !defined(A4)

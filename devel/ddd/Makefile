@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/12/03 08:03:28 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 1999/12/03 14:24:38 espie Exp $
 
 DISTNAME=	ddd-3.1.90
 CATEGORIES=	devel
@@ -11,8 +11,6 @@ MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 MAINTAINER=	marc@openbsd.org
 
 USE_MOTIF=	yes
-USE_EGCC=	yes
-USE_EGXX=	yes
 USE_GMAKE=	yes
 USE_X11=	yes
 GNU_CONFIGURE=	yes

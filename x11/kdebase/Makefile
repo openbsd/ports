@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 1999/11/09 04:58:34 brad Exp $
+# $OpenBSD: Makefile,v 1.10 1999/12/03 14:24:39 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 BROKEN=		bad packing lists, share/apps/kdisknav/CD-ROM.kdelnk
@@ -18,8 +18,6 @@ LIB_DEPENDS=	qt.1.44:${PORTSDIR}/x11/qt \
 
 MAINTAINER=	brad@openbsd.org
 
-USE_EGCC=	yes
-USE_EGXX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
