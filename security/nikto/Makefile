@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2004/10/19 05:52:56 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2005/02/06 17:11:03 sturm Exp $
 
 COMMENT=	"Web and CGI vulnerability scanner with SSL support"
 
 DISTNAME=	nikto-1.34
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	security www
 
 HOMEPAGE=	http://www.cirt.net/code/nikto.shtml
 
 MASTER_SITES=	http://www.cirt.net/nikto/ \
 		http://packetstormsecurity.org/UNIX/cgi-scanners/
-
-MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -33,6 +32,7 @@ do-install:
 	@perl -pi -e 's,config.txt,${SYSCONFDIR}/nikto.conf,' ${WRKSRC}/nikto.pl
 
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
+	@ln -s nikto ${PREFIX}/bin/nikto.pl
 	${INSTALL_DATA} ${WRKSRC}/config.txt \
 		${PREFIX}/share/examples/nikto/nikto.conf
 

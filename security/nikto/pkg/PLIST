@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:36:00 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2005/02/06 17:11:03 sturm Exp $
 bin/nikto
+bin/nikto.pl
 share/examples/nikto/
 share/examples/nikto/nikto.conf
 @sample ${SYSCONFDIR}/nikto.conf
