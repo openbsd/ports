@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2003/02/11 05:37:18 brad Exp $
+# $OpenBSD: Makefile,v 1.13 2004/02/25 22:24:12 espie Exp $
 
 COMMENT=	"graphical debugger for KDE"
 
@@ -18,7 +18,7 @@ MODULES=	kde
 
 LIB_DEPENDS=	kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= autoconf autoheader
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-kde-version=3
 
