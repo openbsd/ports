@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2002/12/29 20:19:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.33 2003/10/16 22:22:00 brad Exp $
 
 COMMENT=	"GNU parser generator"
 
 DISTNAME=       bison-1.35
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 
