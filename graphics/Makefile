@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.123 2004/07/07 09:44:03 xsa Exp $
+# $OpenBSD: Makefile,v 1.124 2004/07/10 23:55:20 brad Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
      SUBDIR += ImageMagick
+     SUBDIR += ImageMagick,no_x11
      SUBDIR += aalib
      SUBDIR += aalib,no_x11
 #    SUBDIR += aero
