@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2004/10/03 18:41:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2004/10/08 19:34:28 danh Exp $
 
 COMMENT=	"graphical MIB browser"
 
@@ -17,13 +17,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-snmp-style=ucd \
+CONFIGURE_ARGS+= --with-snmp-style=net \
 		--with-snmp-prefix=${LOCALBASE} \
 		--with-snmp-include=${LOCALBASE}/include \
 		--with-snmp-lib=${LOCALBASE}/lib
 
 LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
 		glib.1.2::devel/glib \
-		snmp.42::net/ucd-snmp
+		netsnmp.6.2::net/net-snmp
 
 .include <bsd.port.mk>

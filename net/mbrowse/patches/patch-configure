@@ -1,11 +1,12 @@
---- configure.orig	Wed Mar 12 10:37:41 2003
-+++ configure	Sun Jun 22 17:25:03 2003
-@@ -4071,7 +4071,7 @@
-     if test "x$snmp_lib" != "x" ; then
-       for trytype in libsnmp.sl libsnmp.so libsnmp.a  libnetsnmp.sl libnetsnmp.so libnetsnmp.a ; do
-         if test -r "$snmp_lib/$trytype" ; then
--	  SNMP_LIBS="-L$snmp_lib -lsnmp"
-+	  SNMP_LIBS="-L$snmp_lib -lsnmp -ldes"
- 	  found_snmp_lib="1"
-         fi
-       done
+$OpenBSD: patch-configure,v 1.2 2004/10/08 19:34:28 danh Exp $
+--- configure.orig	Wed Mar 12 11:37:41 2003
++++ configure	Fri Oct  8 11:39:24 2004
+@@ -4699,7 +4699,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+           }
+ 
+           #ifdef HAVE_NETSNMP
+-	    version2 = strdup( NetSnmpVersionInfo );
++	    version2 = strdup( netsnmp_get_version() );
+           #else
+             version2 = strdup( VersionInfo);
+           #endif
