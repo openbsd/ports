@@ -1,8 +1,8 @@
-# $OpenBSD: gcc3.port.mk,v 1.1 2002/11/12 03:50:56 pvalchev Exp $
+# $OpenBSD: gcc3.port.mk,v 1.2 2002/11/12 21:14:24 pvalchev Exp $
 
 MODGCC3_ARCHES?=
 # Supported languages for now
-_MODGCC3CC=	c
+_MODGCC3CC=	cc
 _MODGCC3CXX=	c++
 # Always include support for this
 MODGCC3_LANGS+=	${_MODGCC3CC}
