@@ -1,0 +1,11 @@
+--- kscreensaver/space.cpp.orig	Tue Jun 15 04:09:04 1999
++++ kscreensaver/space.cpp	Tue Jun 15 12:44:01 1999
+@@ -105,7 +105,7 @@
+ GLenum doubleBuffer, directRender;
+ GLint windW, windH;
+ 
+-GLenum flag = (GLenum)NORMAL;
++GLenum flag = NORMAL;
+ GLint starCount = MAXSTARS / 2;
+ float speed = 1.0;
+ float warpinterval = 30000.0;
