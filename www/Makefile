@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2001/03/04 17:23:16 danh Exp $
+# $OpenBSD: Makefile,v 1.44 2001/03/06 09:31:03 avsm Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -55,8 +55,15 @@
      SUBDIR += php3:mysql
      SUBDIR += php3:postgresql
      SUBDIR += php4
+     SUBDIR += php4:gd
+     SUBDIR += php4:imap
+     SUBDIR += php4:ldap
+     SUBDIR += php4:mcrypt
      SUBDIR += php4:mysql
+     SUBDIR += php4:no_x11
+     SUBDIR += php4:pdflib
      SUBDIR += php4:postgresql
+     SUBDIR += php4:snmp
      SUBDIR += squid
      SUBDIR += surfraw
      SUBDIR += thttpd
