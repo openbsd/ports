@@ -1,9 +1,4 @@
-# Makefile for:		cgichk
-# Version required:	3.0
-# Date created:		27 Oct 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.11 2002/03/21 21:25:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/24 10:20:24 jsyn Exp $
 
 COMMENT=	"scans webservers for vulnerable CGI programs"
 
@@ -15,10 +10,7 @@ EXTRACT_SUFX=	.tgz
 CATEGORIES=	security
 NEED_VERSION=	1.515
 
-MASTER_SITES=	http://web.singnet.com.sg/~cksss/ \
-		http://www.securityfocus.com/data/tools/auditing/network/
-
-HOMEPAGE=	http://web.singnet.com.sg/~cksss/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -29,7 +21,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=        ${WRKDIR}/cgichk3
 
-post-install:
-	@strip ${PREFIX}/bin/cgichk
+MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} \
+			-DCGICHK_CONF="\"${SYSCONFDIR}/cgichk.conf\""'
+MAKE_ENV=	SYSCONFDIR="${SYSCONFDIR}"
+
+NO_REGRESS=	Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cgichk ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cgichk
+	${INSTALL_DATA} ${WRKSRC}/cgi.conf \
+		${PREFIX}/share/examples/cgichk/cgichk.conf
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+$OpenBSD: patch-cgichk3_c,v 1.1 2002/03/24 10:20:24 jsyn Exp $
 --- cgichk3.c.orig	Tue Sep 12 21:12:21 2000
 +++ cgichk3.c	Tue Sep 12 21:18:42 2000
 @@ -119,20 +119,11 @@
