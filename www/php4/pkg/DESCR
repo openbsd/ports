@@ -22,7 +22,7 @@ PHP has a number of extra flavors available:
 
 In addition, the following database flavors are supported:
 
-   gdbm, dbase, filepro, mysql, postgresql, and iodbc
+   gdbm, dbase, filepro, mysql, postgresql, iodbc, and freetds
 
 If you wish to compile PHP without X, use the no_x11 flavor.
 

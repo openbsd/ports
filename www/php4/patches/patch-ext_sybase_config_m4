@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_sybase_config_m4,v 1.1 2002/06/16 23:26:20 jcs Exp $
+--- ext/sybase_ct/config.m4.orig	Fri Nov 30 16:12:31 2001
++++ ext/sybase_ct/config.m4	Sun Jun 16 12:04:35 2002
+@@ -28,7 +28,8 @@
+   PHP_ADD_LIBPATH($SYBASE_CT_LIBDIR, SYBASE_CT_SHARED_LIBADD)
+   if test -f $SYBASE_CT_INCDIR/tds.h; then
+     PHP_ADD_LIBRARY(ct,, SYBASE_CT_SHARED_LIBADD)
+-    SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lct"
++    PHP_ADD_LIBRARY(tds,, SYBASE_CT_SHARED_LIBADD)
++    SYBASE_CT_LIBS="-L$SYBASE_CT_LIBDIR -lct -ltds"
+   else
+     PHP_ADD_LIBRARY(cs,, SYBASE_CT_SHARED_LIBADD)
+     PHP_ADD_LIBRARY(ct,, SYBASE_CT_SHARED_LIBADD)
