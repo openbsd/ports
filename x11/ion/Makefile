@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2002/02/08 07:56:25 mark Exp $
+# $OpenBSD: Makefile,v 1.10 2002/05/31 03:04:33 mark Exp $
 
 COMMENT=	"light, keyboard friendly window manager"
 
 DISTNAME=	ion-20020207
-HOMEPAGE=	http://www.students.tut.fi/~tuomov/ion/
+HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
 
 CATEGORIES=	x11
 NEED_VERSION=	1.500
 MAINTAINER=	Brian J. Kifiak <bk@rt.fm>
 
-MASTER_SITES=	http://www.students.tut.fi/~tuomov/dl/ \
+MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/ \
 		ftp://rt.fm/pub/ion/
 
 PERMIT_PACKAGE_CDROM=	Yes
