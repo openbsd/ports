@@ -1,0 +1,3 @@
+tpwireless sets the magic bit in an IBM Thinkpad's BIOS to disable checking
+of a MiniPCI wireless NIC's PCI IDs against the inbuilt list of allowed ones.
+This allows one to use a non-IBM authorised NIC in a Thinkpad.
