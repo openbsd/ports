@@ -1,6 +1,7 @@
+$OpenBSD: patch-gui_widg_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
 --- gui_widg.c.orig	Thu Nov 25 14:11:15 1993
-+++ gui_widg.c	Thu Sep 11 13:08:30 1997
-@@ -330,12 +330,12 @@
++++ gui_widg.c	Tue Apr 17 14:30:50 2001
+@@ -330,12 +330,12 @@ unsigned int key_buttons;
  	            XtNfromHoriz, warnIcon, NULL);
     sprintf(textLabel, "msgText%d", abs((int)errcode));
     if (errcode >= 200){

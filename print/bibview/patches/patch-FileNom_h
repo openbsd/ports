@@ -1,5 +1,6 @@
---- FileNom.h.orig	Thu Nov 25 08:11:06 1993
-+++ FileNom.h	Tue Sep 23 20:03:16 1997
+$OpenBSD: patch-FileNom_h,v 1.1 2001/04/17 13:13:26 naddy Exp $
+--- FileNom.h.orig	Thu Nov 25 14:11:06 1993
++++ FileNom.h	Tue Apr 17 14:30:50 2001
 @@ -52,7 +52,9 @@
  
  #define XtNselectCallback "selectCallback"

@@ -1,0 +1,17 @@
+$OpenBSD: patch-bib_file_c,v 1.1 2001/04/17 13:13:30 naddy Exp $
+--- bib_file.c.orig	Thu May  4 18:19:36 1995
++++ bib_file.c	Tue Apr 17 14:30:51 2001
+@@ -466,10 +466,10 @@ Errcode bifFileRead(BibPtr bp)
+   bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
+   strcpy(bp->macrofile,tempName);
+ #else
+-  bp->tempfile = (char *)tempnam(NULL, NULL);
+-  bp->macrofile = (char *)tempnam(NULL, NULL);
++  bp->tempfile = strdup("/tmp/ax.XXXXXXXX"); close(mkstemp(bp->tempfile));
++  bp->macrofile = strdup("/tmp/ww.XXXXXXXX");
+ #endif
+-  tempDatei = fopen(bp->macrofile, "w" );
++  tempDatei = fdopen(mkstemp(bp->macrofile), "w" );
+ 
+   if ((erg = SetInputFile(bp->filepath)) == BIF_ENOTEXISTS){
+      glbbp = bp;

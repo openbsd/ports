@@ -1,0 +1,17 @@
+$OpenBSD: patch-ctl_serv_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
+--- ctl_serv.c.orig	Thu Nov 25 14:11:13 1993
++++ ctl_serv.c	Tue Apr 17 14:30:50 2001
+@@ -307,11 +307,11 @@ char *tempName;
+       bp->macrofile = (char *)XtMalloc(strlen(tempName)+1);
+       strcpy(bp->macrofile,tempName);
+ #else
+-      bp->macrofile = (char *)tempnam(NULL, NULL);
++      bp->macrofile = strdup("/tmp/aa.XXXXXXXX");
+ #endif
+       if (bp->macrofile == NULL)
+ 	 return(ERR_NOMALLOC);
+-      if ((fh = creat(bp->macrofile, 0700)) == -1)
++      if ((fh = mkstemp(bp->macrofile)) == -1)
+ 	 return(ERR_NO_OPEN_TMP);
+       close(fh);
+    }

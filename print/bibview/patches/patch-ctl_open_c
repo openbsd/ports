@@ -1,0 +1,15 @@
+$OpenBSD: patch-ctl_open_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
+--- ctl_open.c.orig	Thu Nov 25 14:11:12 1993
++++ ctl_open.c	Tue Apr 17 14:30:50 2001
+@@ -112,9 +112,9 @@ char *tempName;
+    bp->tempfile = (char *)XtMalloc(strlen(tempName)+1);
+    strcpy(bp->tempfile,tempName);
+ #else
+-   bp->tempfile = (char *)tempnam(NULL, NULL);
++   bp->tempfile = strdup("/tmp/aa.XXXXXXXX");
+ #endif
+-   tempFile = fopen(bp->tempfile, "w" );
++   tempFile = fdopen(mkstemp(bp->tempfile), "w" );
+    fclose(tempFile);
+ 
+    /* display window for bib */

@@ -1,0 +1,22 @@
+$OpenBSD: patch-Imakefile,v 1.1 2001/04/17 13:13:26 naddy Exp $
+--- Imakefile.orig	Mon Feb 27 14:41:19 1995
++++ Imakefile	Tue Apr 17 14:36:49 2001
+@@ -9,7 +9,6 @@
+ 
+ 
+ /* nothing needs to be modified below this point */
+-CFLAGS = $(STD_CPP_DEFINES)
+ #ifdef NeXTArchitecture
+ 
+ SYS_LIBRARIES = XawClientLibs -lm -lsys_s
+@@ -30,10 +29,6 @@ CDEBUGFLAGS =
+ CCOPTIONS = -float -Wf,-XNl3000
+ PROTO_DEFINES =
+ CC = cc
+-
+-#else /* Others */              /* END SGIArchitecture */
+-
+-CC = gcc -fstrength-reduce -fpcc-struct-return
+ 
+ #endif                         
+ #endif 

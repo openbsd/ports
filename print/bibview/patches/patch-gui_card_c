@@ -1,6 +1,7 @@
+$OpenBSD: patch-gui_card_c,v 1.1 2001/04/17 13:13:31 naddy Exp $
 --- gui_card.c.orig	Mon May  8 18:24:55 1995
-+++ gui_card.c	Thu Sep 11 13:08:31 1997
-@@ -370,15 +370,15 @@
++++ gui_card.c	Tue Apr 17 14:30:50 2001
+@@ -370,15 +370,15 @@ CardWinPtr cw;
  CardWidgetsPtr cwp;
  Dimension height;
    

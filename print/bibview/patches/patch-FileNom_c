@@ -1,6 +1,7 @@
+$OpenBSD: patch-FileNom_c,v 1.1 2001/04/17 13:13:26 naddy Exp $
 --- FileNom.c.orig	Thu May  4 18:15:11 1995
-+++ FileNom.c	Thu Sep 11 13:08:28 1997
-@@ -822,20 +822,20 @@
++++ FileNom.c	Tue Apr 17 14:30:50 2001
+@@ -822,20 +822,20 @@ FillWindow(fnw)
      Dimension height, internalHeight, rowSpacing;
      int num, newNum, idx;
      struct dirent  **namelist;
@@ -26,7 +27,7 @@
      /* Read the directory `CurrentDir(fnw)'
         and set the `dirent's in `namelist'. */
         dirp = opendir( CurrentDir(fnw) );
-@@ -860,7 +860,7 @@
+@@ -860,7 +860,7 @@ FillWindow(fnw)
  
      /* Sort the directory entries in `namelist'. */
         qsort( namelist, num, sizeof(struct dirent*), direntpcmp );
