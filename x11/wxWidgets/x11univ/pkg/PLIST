@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/16 21:01:36 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/19 08:54:44 pvalchev Exp $
 %%SHARED%%
-%%!SHARED%%
+!%%SHARED%%
 bin/wxx11univ-2.4-config
 include/wx/x11/app.h
 include/wx/x11/bitmap.h
