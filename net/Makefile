@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 1999/03/07 02:20:38 brad Exp $
+# $OpenBSD: Makefile,v 1.35 1999/03/12 14:49:26 brad Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -34,7 +34,7 @@
      SUBDIR += icb
      SUBDIR += icmpinfo
      SUBDIR += irc
-#    SUBDIR += ircII
+     SUBDIR += ircII
      SUBDIR += ircii-epic
 #    SUBDIR += isc-dhcp
 #    SUBDIR += ivs
