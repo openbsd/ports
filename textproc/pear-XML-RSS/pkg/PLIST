@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/23 21:19:29 avsm Exp $
+pear/lib/.registry/XML_RSS.reg
+pear/lib/XML/RSS.php
+pear/tests/XML_RSS/tests/01-parse.phpt
+pear/tests/XML_RSS/tests/test.rss
+@dirrm pear/tests/XML_RSS/tests
+@dirrm pear/tests/XML_RSS
