@@ -4,7 +4,7 @@ are in promiscuous mode. This is often a sign that a computer has been
 compromised. With AntiSniff, administrators and security teams can
 finally get a handle on who is watching network traffic at their site.
 
-Antisniff was designed to detect compromized machines with IP stacks
+AntiSniff was designed to detect compromized machines with IP stacks
 that a remote attacker could utilize to sniff network traffic. It was
 not designed to detect hardware based network probes or special
 purpose network analyzers which an attacker would need physical access

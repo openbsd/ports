@@ -1,3 +1,4 @@
+$OpenBSD: patch-ip_util_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
 --- ip_util.c.orig	Thu Oct 28 19:15:38 1999
 +++ ip_util.c	Thu Oct 28 19:16:21 1999
 @@ -35,8 +35,9 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-bpf_readwrite_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
 --- bpf_readwrite.c.orig	Wed Oct  1 15:51:36 1997
 +++ bpf_readwrite.c	Thu Oct 28 19:21:27 1999
 @@ -48,8 +48,10 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-etherping_c,v 1.1 2002/03/24 08:36:33 jsyn Exp $
 --- etherping.c.orig	Sat Dec 12 15:40:06 1998
 +++ etherping.c	Thu Oct 28 19:15:03 1999
 @@ -48,6 +48,7 @@
