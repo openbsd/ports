@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT=	Purdue Compiler Construction Tool Set 
+COMMENT=	"Purdue Compiler Construction Tool Set" 
 
 DISTNAME=	pccts133mr33
 PKGNAME=	pccts-1.33r33

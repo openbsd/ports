@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2002/12/19 15:43:25 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	zone transfer program from BIND v8
+COMMENT=	"zone transfer program from BIND v8"
 
 VERSION=	8.3.3
 PKGNAME=	named-xfer-${VERSION}

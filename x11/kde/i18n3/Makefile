@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/02/26 10:42:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2003/04/10 18:08:57 jsyn Exp $
 
 FLAVORS=af ar bg bs ca cs da de el en_GB eo es et eu fa fi fr he hu \
     it ja lt mt nb nl nn nso pl pt pt_BR ro ru sk sl sr sv ta th tr uk \
@@ -7,7 +7,7 @@ FLAVOR?=fr
 
 FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
 
-COMMENT=		${FLAVOR} translations for kde3
+COMMENT=		"${FLAVOR} translations for kde3"
 
 CATEGORIES=		x11 x11/kde
 VERSION=		3.1

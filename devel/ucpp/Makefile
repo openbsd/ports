@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2002/11/28 18:54:33 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2003/04/10 18:08:56 jsyn Exp $
 
 DISTNAME=	ucpp-1.2
-COMMENT=	C preprocessor and lexer
+COMMENT=	"C preprocessor and lexer"
 CATEGORIES=	devel
 HOMEPAGE=	http://pornin.nerim.net/ucpp/
 MASTER_SITES=	${HOMEPAGE}

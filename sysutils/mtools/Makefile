@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.39 2002/11/30 08:32:36 fgsch Exp $
+# $OpenBSD: Makefile,v 1.40 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	read/write/list/format DOS disks under Unix
+COMMENT=	"read/write/list/format DOS disks under Unix"
 
 DATE=		20021118
 DISTNAME=	mtools-3.9.8

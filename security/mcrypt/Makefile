@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2003/01/18 22:55:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=		extendable encryption program that supports many ciphers
+COMMENT=	"extendable encryption program that supports many ciphers"
 
 DISTNAME=		mcrypt-2.6.3
 CATEGORIES=     	security

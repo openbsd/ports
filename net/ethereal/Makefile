@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.70 2003/03/11 21:10:44 jakob Exp $
+# $OpenBSD: Makefile,v 1.71 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	network protocol analyzer
+COMMENT=	"network protocol analyzer"
 
 VERSION=	0.9.11
 DISTNAME=	ethereal-${VERSION}

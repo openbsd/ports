@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	designer for qt2
+COMMENT=	"designer for qt2"
 
 VERSION=	3.2
 DISTNAME=	qt-designer-2.${VERSION}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2003/01/13 08:48:14 jakob Exp $
+# $OpenBSD: Makefile,v 1.27 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	SSL encryption wrapper for standard network daemons
+COMMENT=	"SSL encryption wrapper for standard network daemons"
 
 DISTNAME=	stunnel-4.04
 CATEGORIES=	security

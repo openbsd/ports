@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/19 01:30:37 margarida Exp $
+# $OpenBSD: Makefile,v 1.20 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT=	visio-like technical drawing
+COMMENT=	"visio-like technical drawing"
 
 DISTNAME=	dia-0.90
 CATEGORIES=	graphics

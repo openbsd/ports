@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2002/12/30 12:34:06 jakob Exp $
+# $OpenBSD: Makefile,v 1.15 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	HTTP tunneling utility
+COMMENT=	"HTTP tunneling utility"
 
 DISTNAME=	httptunnel-3.3
 CATEGORIES=	net

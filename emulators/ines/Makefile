@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/10 18:08:56 jsyn Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	emulates the Nintendo Entertainment System
+COMMENT=	"emulates the Nintendo Entertainment System"
 
 PKGNAME=	ines-1.2
 DISTNAME=	iNES12-Linux-80x86-bin

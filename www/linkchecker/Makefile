@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/29 08:20:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	checks HTML documents for broken links
+COMMENT=	"checks HTML documents for broken links"
 
 DISTNAME=	linkchecker-1.6.4
 CATEGORIES=    	www

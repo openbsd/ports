@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.41 2003/02/03 13:37:46 jakob Exp $
+# $OpenBSD: Makefile,v 1.42 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT=	ISC BIND 9 libraries
-COMMENT-server=	ISC BIND 9 server
+COMMENT=	"ISC BIND 9 libraries"
+COMMENT-server=	"ISC BIND 9 server"
 
 VERSION=	9.2.2rc1
 DISTNAME=	bind-${VERSION}

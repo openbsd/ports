@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2002/09/19 11:57:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.92 2003/04/10 18:08:56 jsyn Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64
 
@@ -15,13 +15,13 @@ BROKEN=	Waiting for a recent snapshot that #??#@ works
 # This is a configuration file for gcc
 
 COM=		'GNU compiler collection'
-COMMENT=	${COM}: core C compiler
-COMMENT-c++ =	${COM}: C++ compiler
-COMMENT-chill=	${COM}: Chill compiler
-COMMENT-g77=	${COM}: f77 compiler
-COMMENT-java=	${COM}: java compiler
-COMMENT-objc=	${COM}: obj C compiler
-COMMENT-ada=	${COM}: Ada compiler
+COMMENT=	"${COM}: core C compiler"
+COMMENT-c++ =	"${COM}: C++ compiler"
+COMMENT-chill=	"${COM}: Chill compiler"
+COMMENT-g77=	"${COM}: f77 compiler"
+COMMENT-java=	"${COM}: java compiler"
+COMMENT-objc=	"${COM}: obj C compiler"
+COMMENT-ada=	"${COM}: Ada compiler"
 
 PKGNAME=	gcc-${FULLV}
 PKGNAME-c++ =	g++-${FULLV}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2003/04/05 14:53:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=		games for KDE
+COMMENT=		"games for KDE"
 
 CATEGORIES=		x11 x11/kde games
 VERSION=		3.1.1

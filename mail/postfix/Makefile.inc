@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.25 2003/03/16 05:55:51 pvalchev Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT=	fast, secure sendmail replacement
+COMMENT=	"fast, secure sendmail replacement"
 
 CATEGORIES=	mail
 

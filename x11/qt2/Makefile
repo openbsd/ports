@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2003/04/10 16:58:19 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.41 2003/04/10 18:08:57 jsyn Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
-COMMENT=		C++ X11 GUI toolkit
-COMMENT-examples=	examples and tutorial for qt2
-COMMENT-html=		off-line html documentation for qt2
+COMMENT=		"C++ X11 GUI toolkit"
+COMMENT-examples=	"examples and tutorial for qt2"
+COMMENT-html=		"off-line html documentation for qt2"
 
 VERSION=	3.2
 DISTNAME=	qt-2.${VERSION}

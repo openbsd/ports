@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2002/12/29 15:12:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT=	decode MS-TNEF MIME attachments
+COMMENT=	"decode MS-TNEF MIME attachments"
 
 DISTNAME=	tnef-1.1.1
 CATEGORIES=    	mail

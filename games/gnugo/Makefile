@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2002/10/05 21:11:09 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT=	GNU version of Go
+COMMENT=	"GNU version of Go"
 
 DISTNAME=	gnugo-3.2
 CATEGORIES=	games

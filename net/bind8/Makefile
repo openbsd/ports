@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2002/12/29 21:14:10 fgsch Exp $
+# $OpenBSD: Makefile,v 1.29 2003/04/10 18:08:56 jsyn Exp $
 
 BROKEN=		"Insecure, use net/bind9 instead"
 
-COMMENT=	Berkeley Internet Name Daemon
+COMMENT=	"Berkeley Internet Name Daemon"
 
 DISTNAME=	bind-openbsd-8.2.5-20011006
 PKGNAME=	bind-8.2.5

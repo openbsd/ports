@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2002/10/26 12:52:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2003/04/10 18:08:56 jsyn Exp $
 
 ONLY_FOR_ARCHS=	i386
 
-COMMENT=	emulates the Super Nintendo Entertainment System
+COMMENT=	"emulates the Super Nintendo Entertainment System"
 
 PKGNAME=	snes9x-1.37c
 DISTNAME=	s9x.linuxc6.137.i386

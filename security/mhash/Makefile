@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2003/01/18 17:43:23 avsm Exp $
+# $OpenBSD: Makefile,v 1.11 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	strong hash library
+COMMENT=	"strong hash library"
 
 DISTNAME=	mhash-0.8.17
 CATEGORIES=	security

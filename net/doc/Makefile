@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2003/04/01 16:21:54 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	automated domain testing tool
+COMMENT=	"automated domain testing tool"
 
 DISTNAME=	doc-2.2.3
 CATEGORIES=    	net

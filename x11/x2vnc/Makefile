@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/29 19:48:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
+COMMENT=	"one keyboard and/or mouse, multiple X and VNC displays"
 
 DISTNAME=	x2vnc-1.4
 CATEGORIES=     x11

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/10/27 00:52:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2003/04/10 18:08:56 jsyn Exp $
 
-COMMENT-canna=		X input method for Japanese, canna support
-COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
-COMMENT-wnn=		X input method for Japanese, wnn support
+COMMENT-canna=		"X input method for Japanese, canna support"
+COMMENT-canna-wnn=	"X input method for Japanese, canna and wnn support"
+COMMENT-wnn=		"X input method for Japanese, wnn support"
 
 DISTNAME=	kinput2-v3
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/

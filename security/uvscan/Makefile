@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/28 17:35:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2003/04/10 18:08:57 jsyn Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2000/06/05 12:01:24 rh Exp $
 
-COMMENT=	evaluation version of a DOS/Windows file virus scanner
+COMMENT=	"evaluation version of a DOS/Windows file virus scanner"
 
 VERSION=	4.16.0
 DISTNAME=	vlnx416e

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/21 16:55:56 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/10 18:08:57 jsyn Exp $
 
-COMMENT=	BIND 8 compatible stub resolver library
+COMMENT=	"BIND 8 compatible stub resolver library"
 
 VERSION=	9.2.2rc1
 DISTNAME=	bind-${VERSION}
