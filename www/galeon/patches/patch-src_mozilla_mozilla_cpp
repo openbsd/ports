@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mozilla_mozilla_cpp,v 1.1 2003/05/27 12:21:31 wilfried Exp $
+--- src/mozilla/mozilla.cpp.orig	Mon Mar 31 06:45:38 2003
++++ src/mozilla/mozilla.cpp	Tue May 27 14:14:12 2003
+@@ -843,7 +843,7 @@ struct nsKeyConverter {
+ };
+ 
+ /* From mozilla/widget/src/gtk/nsGtkEventHandler.cpp */
+-struct nsKeyConverter nsKeycodes[] = {
++static struct nsKeyConverter nsKeycodes[] = {
+ 
+ 	{ NS_VK_CANCEL,     GDK_Cancel },
+   	{ NS_VK_BACK,       GDK_BackSpace },
