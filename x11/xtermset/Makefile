@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/12/27 02:18:38 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/25 08:32:03 kevlo Exp $
 
 DISTNAME=	xtermset-0.5.1
 CATEGORIES=	x11
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	http://download.sourceforge.net/clts/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= clts
 
 CONFIGURE_STYLE=	gnu
 
