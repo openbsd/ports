@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/12/30 04:00:50 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/30 04:15:07 msf Exp $
 
 COMMENT=	"Porters stemming algorithm for Denmark"
 
@@ -18,5 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../authors/id/A/AS/ASKSH/}
 
 CONFIGURE_STYLE= perl
+
+PKG_ARCH= *
 
 .include <bsd.port.mk>
