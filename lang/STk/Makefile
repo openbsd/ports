@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2001/10/28 13:05:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2002/03/13 22:15:59 pvalchev Exp $
 
 COMMENT=	"scheme interpreter with Tk interface"
 
@@ -19,6 +19,7 @@ CONFIGURE_STYLE=gnu dest
 .if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "arc" || \
 ${MACHINE_ARCH} == "pmax" || ${MACHINE_ARCH} == "powerpc")
 CONFIGURE_ARGS+= --disable-dynload
+NO_SHARED_LIBS=	Yes
 .endif
 
 post-build:
