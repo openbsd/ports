@@ -1,0 +1,19 @@
+$OpenBSD: patch-common_hash_native_h,v 1.1 2003/07/31 17:15:02 naddy Exp $
+--- common/hash_native.h.orig	2003-07-31 17:25:43.000000000 +0200
++++ common/hash_native.h	2003-07-31 17:26:22.000000000 +0200
+@@ -59,15 +59,6 @@
+ 
+ #endif /* defined(HAVE_SHA1) */
+ 
+-#if defined(__OpenBSD__)
+-#include <pthread.h>
+-
+-static pthread_mutex_t __mtx_sha1_lock = PTHREAD_MUTEX_INITIALIZER;
+-
+-#define	SHA1_LOCK	pthread_mutex_lock(&__mtx_sha1_lock);
+-#define	SHA1_UNLOCK	pthread_mutex_unlock(&__mtx_sha1_lock);
+-#endif /* defined(__OpenBSD__) */
+-
+ #ifndef SHA1_LOCK
+ #define	SHA1_LOCK
+ #endif /* SHA1_LOCK */
