@@ -1,19 +1,19 @@
---- acconfig/ltmain.sh.orig	Mon Apr 19 22:54:38 1999
-+++ acconfig/ltmain.sh	Mon Apr 19 22:57:48 1999
-@@ -2024,37 +2024,6 @@
-       done
-     fi
+--- acconfig/ltmain.sh.orig	Sat Feb  5 11:38:56 2000
++++ acconfig/ltmain.sh	Sat Feb  5 11:40:44 2000
+@@ -3522,40 +3522,6 @@
+     # Exit here if they wanted silent mode.
+     test "$show" = : && exit 0
  
--    echo "------------------------------------------------------------------------------"
+-    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
 -    for libdir in $libdirs; do
 -      echo "   $libdir"
 -    done
 -    echo
--    echo "To link against installed libraries in a given directory, LIBDIR,"
--    echo "you must use the \`-LLIBDIR' flag during linking."
--    echo
--    echo " You will also need to do one of the following:"
+-    echo "If you ever happen to want to link against installed libraries"
+-    echo "in a given directory, LIBDIR, you must either use libtool, and"
+-    echo "specify the full pathname of the library, or use \`-LLIBDIR'"
+-    echo "flag during linking and do at least one of the following:"
 -    if test -n "$shlibpath_var"; then
 -      echo "   - add LIBDIR to the \`$shlibpath_var' environment variable"
 -      echo "     during execution"
@@ -24,9 +24,12 @@
 -    fi
 -    if test -n "$hardcode_libdir_flag_spec"; then
 -      libdir=LIBDIR
--      flag=`eval \\$echo \"$hardcode_libdir_flag_spec\"`
+-      eval flag=\"$hardcode_libdir_flag_spec\"
 -
 -      echo "   - use the \`$flag' linker flag"
+-    fi
+-    if test -n "$admincmds"; then
+-      echo "   - have your system administrator run these commands:$admincmds"
 -    fi
 -    if test -f /etc/ld.so.conf; then
 -      echo "   - have your system administrator add LIBDIR to \`/etc/ld.so.conf'"
@@ -34,7 +37,7 @@
 -    echo
 -    echo "See any operating system documentation about shared libraries for"
 -    echo "more information, such as the ld(1) and ld.so(8) manual pages."
--    echo "------------------------------------------------------------------------------"
+-    echo "----------------------------------------------------------------------"
      exit 0
      ;;
  

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 1999/12/28 06:13:05 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2000/02/05 03:50:34 kevlo Exp $
 
-DISTNAME=	lzo-1.04
+DISTNAME=	lzo-1.06
 CATEGORIES=	archivers devel
 MASTER_SITES=	ftp://ftp.rhrz.uni-bonn.de/pub-koeln/util/arc/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
