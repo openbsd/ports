@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2004/05/07 08:57:20 xsa Exp $
---- setup.py.orig	2004-02-17 00:49:06.000000000 +0100
-+++ setup.py	2004-04-27 14:56:13.000000000 +0200
+$OpenBSD: patch-setup_py,v 1.2 2005/01/16 14:26:19 espie Exp $
+--- setup.py.orig	Tue Feb 17 00:49:06 2004
++++ setup.py	Sun Jan 16 15:23:33 2005
 @@ -73,14 +73,14 @@ def check_dependencies():
      # means overwrite previous installations.  If the user has
      # forced an installation, should we also ignore dependencies?
@@ -22,3 +22,15 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2004/05/07 08:57:20 xsa Exp $
          ]
  
      for name, is_installed_fn, is_required, url in dependencies:
+@@ -125,10 +125,7 @@ class build_py_biopython(build_py):
+     def run(self):
+         if not check_dependencies_once():
+             return
+-        # Check to see if Martel is installed.  If not, then install
+-        # it automatically.
+-        if not is_Martel_installed():
+-            self.packages.append("Martel")
++	self.packages.append("Martel")
+         # Only install the clustering software if Numpy is installed.
+         if is_Numpy_installed():
+             self.packages.append("Bio.Cluster")
