@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2004/02/21 01:41:12 pvalchev Exp $
+--- Makefile.orig	2004-02-03 14:20:52.000000000 -0700
++++ Makefile	2004-02-03 14:20:52.000000000 -0700
+@@ -121,7 +121,7 @@ contrib:
+ # 	$(ELC) hilit-LaTeX.el         # Doesn't compile without X
+ 
+ install-lisp:	some
+-	if [ ! -d $(lispdir) ]; then mkdir $(lispdir); else true; fi ;
++	if [ ! -d $(lispdir) ]; then mkdir -p -m 755 $(lispdir); else true; fi ;
+ 	if [ -f $(lispdir)/tex-site.el ]; \
+ 	then \
+ 	    echo "Leaving old tex-site.el alone."; \

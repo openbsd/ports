@@ -1,0 +1,9 @@
++---------------
+|
+| To run AUC TeX on start up of emacs or xemacs add:
+|
+|	(require 'tex-site)
+|
+| to your ~/.emacs file.
+|
++---------------
