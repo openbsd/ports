@@ -1,13 +1,17 @@
-$OpenBSD: patch-Makefile_inc,v 1.1.1.1 2001/10/31 19:39:04 marc Exp $
---- Makefile.inc.orig	Tue Jun 26 16:41:15 2001
-+++ Makefile.inc	Wed Oct 31 11:25:08 2001
-@@ -2,9 +2,8 @@
+$OpenBSD: patch-Makefile_inc,v 1.2 2003/10/06 19:35:46 marc Exp $
+--- Makefile.inc.orig	Mon Oct  6 12:10:41 2003
++++ Makefile.inc	Mon Oct  6 12:29:44 2003
+@@ -2,13 +2,8 @@
  #
  # Default installation directories
  #
 -PREFIX?=	/usr/local
 -BINDIR?=	${PREFIX}/bin
+-.if !empty(unix:M*OpenBSD.)
 -MANDIR?=	${PREFIX}/man/cat
+-.else
+-MANDIR?=	${PREFIX}/man
+-.endif
 +BINDIR=		${TRUEPREFIX}/bin
 +MANDIR=		${TRUEPREFIX}/man/cat
  
