@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_preferences_c,v 1.1 2001/02/12 10:47:23 espie Exp $
+--- source/preferences.c.orig	Mon Feb 12 11:26:38 2001
++++ source/preferences.c	Mon Feb 12 11:26:46 2001
+@@ -25,6 +25,7 @@
+ *									       *
+ *******************************************************************************/
+ #include <stdlib.h>
++#include <stdio.h>
+ #include <ctype.h>
+ #ifdef VMS
+ #include "../util/VMSparam.h"
