@@ -1,14 +1,29 @@
---- ui/rules.c.orig	Tue Jun 13 19:14:27 2000
-+++ ui/rules.c	Tue Jun 13 19:15:19 2000
-@@ -1194,11 +1194,6 @@
+--- configure.orig	Mon May 29 05:14:05 2000
++++ configure	Tue Aug 22 03:34:09 2000
+@@ -2778,14 +2778,14 @@
+   echo "$ac_t""no" 1>&6
+ fi
  
-     new_rule = (struct _xf_rule *) xf_malloc(sizeof(struct _xf_rule));
-     
--    /* for some crappy distros only */    
--    new_rule->rx.buffer=(unsigned char *) NULL;
--    new_rule->rx.fastmap=(char *) NULL;
--    new_rule->rx.translate=(char *) NULL;
--    
-     strcpy(new_rule->name, p);
- 
- #ifdef HAVE_REGCOMP
+-			echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:2783: checking for pthread_create in -lpthread" >&5
++			echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
++echo "configure:2783: checking for pthread_create in -lc_r" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-lc_r  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2791 "configure"
+ #include "confdefs.h"
+@@ -2813,7 +2813,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  LIBS="$LIBS -lpthread"
++  LIBS="$LIBS -lc_r"
+ else
+   echo "$ac_t""no" 1>&6
+ fi

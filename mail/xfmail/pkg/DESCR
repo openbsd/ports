@@ -10,3 +10,5 @@ implements most of the mail functionality in one program and it does
 not require any additional tools.
 
 It makes use of the faces libraries, showing the faces when available.
+
+WWW: ${HOMEPAGE}

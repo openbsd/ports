@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.13 2000/06/13 03:59:25 kevlo Exp $
+# $OpenBSD: Makefile,v 1.14 2000/08/22 03:10:54 kevlo Exp $
 # $NetBSD: Makefile,v 1.2 1998/07/04 09:19:04 mycroft Exp $
 
 DISTNAME=       xfmail-1.4.6
 CATEGORIES=     mail x11
-NEED_VERSION=	1.301
-MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/1.4.6/source/
+NEED_VERSION=	1.319
+MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/1.4.6-3/src/
 
-MAINTAINER=	ports@openbsd.org
+HOMEPAGE=	http://xfmail.slappy.org/
+
+MAINTAINER=	kevlo@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-LIB_DEPENDS+=	forms::x11/xforms
+LIB_DEPENDS+=	forms::x11/xforms \
+		glib.1.2::devel/glib
 
 ONLY_FOR_ARCHS=	i386 sparc m68k hp300
 
@@ -23,8 +26,6 @@ USE_BZIP2=	Yes
 USE_X11=	Yes
 
 CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ARGS=	--without-threads	
 
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/X11" \
 		LDFLAGS="-L${LOCALBASE}/lib/X11"
