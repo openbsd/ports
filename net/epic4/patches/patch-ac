@@ -1,0 +1,11 @@
+--- source/functions.c.orig	Fri Dec 10 14:36:28 1999
++++ source/functions.c	Fri Dec 10 14:40:26 1999
+@@ -2411,7 +2411,7 @@
+ 	char *	text;
+ 	char *	keep_text;
+ 	char *	pointer;
+-	char *	retval;
++	char *	retval = NULL;
+ 	char *	(*func) (const char *, const char *) = strstr;
+ 	int	variable = 0, global = 0;
+ 	int	oldwindow = window_display;
