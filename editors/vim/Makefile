@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2004/07/12 19:32:59 lebel Exp $
+# $OpenBSD: Makefile,v 1.47 2004/08/05 11:56:30 espie Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -42,7 +42,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MODULES=	gettext iconv
+MODULES=	devel/gettext converters/libiconv
 
 MULTI_PACKAGES= -lang
 SUBPACKAGE?=
