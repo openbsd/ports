@@ -1,5 +1,6 @@
---- KTerm.ad.orig	Sun Jun 23 10:00:22 1996
-+++ KTerm.ad	Mon Apr 24 20:32:52 2000
+$OpenBSD: patch-KTerm_ad,v 1.1 2002/03/12 19:59:55 fgsch Exp $
+--- KTerm.ad.orig	Sun Jun 23 05:00:22 1996
++++ KTerm.ad	Tue Mar 12 16:14:08 2002
 @@ -73,7 +73,8 @@ KTerm.JoinSession:False
  *fontMenu*font4*Label:	Medium
  *VT100*fontList4:	-*-fixed-medium-r-normal--18-*,\

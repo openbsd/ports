@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/10/28 13:05:47 espie Exp $
-#
+# $OpenBSD: Makefile,v 1.14 2002/03/12 19:59:55 fgsch Exp $
 
 COMMENT=	"Japanese-capable xterm"
 
@@ -16,7 +15,6 @@ PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 
-
 MASTER_SITES0=	ftp://ftp.sra.co.jp/pub/x11/kterm/
 PATCHFILES=	kterm-6.2.0.NFS-xauth.patch:0
 
@@ -32,7 +30,8 @@ MAKE_ENV=EXTRA_DEFINES=-DKTERM_XAW3D
 
 .if ${FLAVOR:L:Mtek}
 pre-configure:
-	perl -pi.bak -e 's/define KTERM_NOTEK/undef KTERM_NOTEK/;' ${WRKSRC}/kterm.h
+	perl -pi.bak -e 's/define KTERM_NOTEK/undef KTERM_NOTEK/;' \
+	  ${WRKSRC}/kterm.h
 .endif
 
 .include <bsd.port.mk>
