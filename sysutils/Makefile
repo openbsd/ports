@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2001/05/30 14:08:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2001/06/09 18:40:55 lebel Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += rtty
      SUBDIR += safecat
      SUBDIR += sdd
+     SUBDIR += service-config
      SUBDIR += setquota
      SUBDIR += skill
      SUBDIR += socket
