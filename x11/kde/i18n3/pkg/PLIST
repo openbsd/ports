@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1 2005/03/07 23:09:53 espie Exp $
+share/apps/khangman/
+share/apps/khangman/data/
+share/apps/klettres/
+share/apps/ktuberling/
+share/apps/ktuberling/sounds/

@@ -1,50 +1,47 @@
-# $OpenBSD: Makefile,v 1.25 2004/08/15 22:31:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2005/03/07 23:09:53 espie Exp $
 
-FLAVORS=ar az bg bn bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
-	hr hsb hu is it ja lt mn ms nb nds nl nn pl pt pt_BR ro ru sk sl \
-	sr sr@Latn sv tg tr uk uz zh_CN zh_TW
-FLAVOR?=fr
+#FLAVORS=ar az bg bn bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
+#	hr hsb hu is it ja lt mn ms nb nds nl nn pl pt pt_BR ro ru sk sl \
+#	sr sr@Latn sv tg tr uk uz zh_CN zh_TW
+#FLAVOR?=fr
 
-.for i in ${FLAVORS}
-.  if ${FLAVOR:L} == ${i:L}
-FLAVOR=		${i}
-.  endif
+LANGS=  af ar bg bn bs ca cs cy da de el en_GB eo es et eu fa fi fr gl he hi \
+	hr hsb hu is it ja mn ms nb nds nl nn pa pl pt pt_BR ro ru sk sl \
+	sr sr@Latn sv ta tg tr uk uz zh_CN zh_TW
+
+# some extra vars to compact PLISTs
+I=index.docbook
+C=index.cache.bz2
+
+SUBST_VARS=I C
+.for l in ${LANGS}
+MULTI_PACKAGES += -$l
+FULLPKGNAME-$l = kde-i18n-$l-${VERSION}
+COMMENT-$l= "$l translations for KDE"
+DOC-$l=share/doc/HTML/$l/
+LOC-$l=share/locale/$l/LC_MESSAGES/
+SUBST_VARS+=DOC-$l LOC-$l
 .endfor
 
-FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
-
-COMMENT=		"${FLAVOR} translations for KDE"
+COMMENT="all translations for KDE"
 
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.3
-DISTNAME=		kde-i18n-${FLAVOR}-${VERSION}
+VERSION=		3.3.2
+DISTNAME=		kde-i18n-${VERSION}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/3.2.3/src/kde-i18n/@}
-
-SUPDISTFILES=
-.for i in ${FLAVORS}
-SUPDISTFILES+= kde-i18n-$i-${VERSION}${EXTRACT_SUFX}
-.endfor
+MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 
 BUILD_DEPENDS = ::x11/kde/libs3
 RUN_DEPENDS = ::x11/kde/libs3
 
-PLIST=${PKGDIR}/PLIST.${FLAVOR}
 PATCH_LIST=	patch-*
 MODKDE_VERSION=
 CONFIGURE_STYLE=gnu
 
 MAKE_FLAGS+=MEINPROC=
 FAKE_FLAGS=DESTDIR=${WRKINST} MEINPROC=
+CONFIGURE_ARGS+=-C
 
-# some extra vars to compact PLISTs
-DOC=share/doc/HTML/${FLAVOR}/
-LOC=share/locale/${FLAVOR}/LC_MESSAGES/
-I=index.docbook
-C=index.cache.bz2
-SUBST_VARS=DOC LOC I C
-.if ${FLAVOR:L} == "ta"
-PATCH_LIST=ta-patch-*
-.endif
+DESCR=${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
