@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/03/22 07:51:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2002/03/28 11:45:28 espie Exp $
 
 COMMENT=	"highly configurable webmail client"
 
@@ -46,7 +46,7 @@ do-configure:
 .endfor
 	@cd ${WRKSRC} && cp -Rp data htdocs
 	@find ${WRKSRC}/cgi-bin -name '*.orig' |xargs rm
-	@cd ${WRKSRC} && ${INSTALL_DATA_DIR} conf/openwebmail && \
+	@cd ${WRKSRC} && mkdir -p conf/openwebmail && \
 		cp -Rp cgi-bin/openwebmail/etc/* conf/openwebmail
 	@find ${WRKSRC}/cgi-bin -name 'etc' -type d |xargs rm -rf
 
