@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: pgsql.sh.tmpl,v 1.2 1998/03/23 15:34:08 mickey Exp $
+# $OpenBSD: pgsql.sh.tmpl,v 1.3 1998/03/23 15:35:44 mickey Exp $
 # from Id: pgsql.sh.tmpl,v 1.3 1997/10/05 21:00:49 andreas Exp
 
 # pgsql.sh - postgresql startup file for FreeBSD and possibly *BSD (untested)
@@ -17,8 +17,8 @@
 #   environment variable in !!PREFIX!!/pgsql/.profile
 #
 
-[ -x !!PREFIX!!/pgsql/bin/postmaster ] && {
-	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster \
-		-S -o -F > !!PREFIX!!/pgsql/errlog'
+[ -x !!PREFIX!!/bin/postmaster ] && {
+	su -l pgsql -c 'exec !!PREFIX!!/bin/postmaster \
+		-S -o -F > /var/log/postgresql.log'
 	echo -n ' pgsql' 
 }
