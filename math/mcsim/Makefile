@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2001/05/09 23:26:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/21 06:46:09 pvalchev Exp $
 
 COMMENT=	"monte carlo simulation software"
 
 DISTNAME=	mcsim-4.2.0
 CATEGORIES=	math
-NEED_VERSION=	1.363
+NEED_VERSION=	1.499
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= mcsim
 
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 do-build:
 	@(cd ${WRKSRC}/mod && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS})
 	@(cd ${WRKSRC}/sim && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS})
+
+do-regress:
 	@(cd ${WRKSRC}/sim && chmod 755 Test_mcsim && ./Test_mcsim)
 
 do-install:
