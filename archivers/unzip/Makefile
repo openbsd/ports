@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/04/02 06:39:47 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/09/06 17:40:58 brad Exp $
 
 DISTNAME=	unzip540
 PKGNAME=	unzip-5.40
@@ -14,15 +14,15 @@ MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 do-install:
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && \
 		${INSTALL_PROGRAM} unzip funzip unzipsfx ${PREFIX}/bin
-	ln -sf unzip ${PREFIX}/bin/zipinfo
-	cd ${WRKSRC}/unix && \
+	@${LN} -sf unzip ${PREFIX}/bin/zipinfo
+	@cd ${WRKSRC}/unix && \
 		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
-	cd ${WRKSRC}/unix && \
+	@cd ${WRKSRC}/unix && \
 		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 	${INSTALL} -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && \
 		${INSTALL_DATA} README COPYING WHERE ${PREFIX}/share/doc/unzip
 
 .include <bsd.port.mk>
