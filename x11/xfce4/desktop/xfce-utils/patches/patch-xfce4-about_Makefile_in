@@ -1,6 +1,6 @@
-$OpenBSD: patch-xfce4-about_Makefile_in,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp $
---- xfce4-about/Makefile.in.orig	2003-11-11 09:03:31.000000000 -0600
-+++ xfce4-about/Makefile.in	2003-12-02 22:07:27.000000000 -0600
+$OpenBSD: patch-xfce4-about_Makefile_in,v 1.2 2004/01/27 20:02:07 jolan Exp $
+--- xfce4-about/Makefile.in.orig	2004-01-07 13:42:22.000000000 -0600
++++ xfce4-about/Makefile.in	2004-01-27 13:46:23.000000000 -0600
 @@ -173,7 +173,7 @@ sbindir = @sbindir@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
@@ -10,3 +10,12 @@ $OpenBSD: patch-xfce4-about_Makefile_in,v 1.1.1.1 2003/12/15 06:11:34 jolan Exp 
  
  about_DATA = \
  	AUTHORS								\
+@@ -217,7 +217,7 @@ xfce4_about_CFLAGS = \
+ 	@LIBGTKHTML_CFLAGS@						\
+ 	@LIBXFCEGUI4_CFLAGS@						\
+ 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
+-	-DDATADIR=\"$(datadir)/xfce4\"
++	-DDATADIR=\"$(aboutdir)\"
+ 
+ 
+ xfce4_about_LDADD = \
