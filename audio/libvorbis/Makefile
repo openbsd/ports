@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/07/20 00:52:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/07/20 12:10:21 naddy Exp $
 
 COMMENT=	"audio compression codec library"
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
+MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
+		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
 		http://xiph.stratius.com/vorbis/unix/ \
 		http://www.oddsock.org/vorbis/unix/ \
 		http://www.casterclub.com/vorbis/unix/ \
