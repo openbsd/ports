@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/09/28 17:29:47 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2000/09/28 17:47:04 brad Exp $
 
 DISTNAME=	curl-7.3
 CATEGORIES=	net
@@ -10,7 +10,7 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 
 HOMEPAGE=	http://curl.haxx.se/
 
-MAINTAINER=	markus@openbsd.org
+MAINTAINER=	Brad Smith <brad@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
