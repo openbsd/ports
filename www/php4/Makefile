@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2001/12/18 12:48:32 avsm Exp $
+# $OpenBSD: Makefile,v 1.62 2001/12/27 22:09:32 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -10,7 +10,7 @@ COMMENT-pear=	"collection of base classes for common PHP tasks"
 # and has Apache that supports DSO's.
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-V=		4.1.0
+V=		4.1.1
 DISTNAME=	php-${V}
 PKGNAME=	php4-${V}
 FULLPKGNAME-pear= php4-pear-${V}
