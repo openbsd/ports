@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/06/01 07:55:45 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/06/01 09:09:24 shell Exp $
 
 COMMENT=		"c/c++ source code auditing tool"
 
@@ -8,7 +8,7 @@ NEED_VERSION=		1.413
 
 HOMEPAGE=		http://www.dwheeler.com/flawfinder/
 
-MAINTAINER=		ports@openbsd.org
+MAINTAINER=		Jason Peel <jsyn@nthought.com>
 
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes 
