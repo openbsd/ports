@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2000/03/12 13:51:52 form Exp $
+# $OpenBSD: Makefile,v 1.6 2000/06/15 05:20:02 form Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 
 DISTNAME=	deco383
@@ -12,11 +12,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=		Yes
-
 MAINTAINER=	form@openbsd.org
 
-GNU_CONFIGURE=	yes
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 do-install:
