@@ -1,0 +1,15 @@
+$OpenBSD: patch-binutils_dlltool_c,v 1.1 2002/05/06 20:57:40 drahn Exp $
+--- binutils/dlltool.c.orig	Wed Jan 23 10:12:55 2002
++++ binutils/dlltool.c	Mon May  6 15:49:40 2002
+@@ -1137,7 +1137,11 @@ run (what, args)
+   int i;
+   const char **argv;
+   char *errmsg_fmt, *errmsg_arg;
++#if defined(__MSDOS__) && !defined(__GO32__)
+   char *temp_base = choose_temp_base ();
++#else
++  char *temp_base = NULL;
++#endif
+ 
+   inform ("run: %s %s", what, args);
+ 
