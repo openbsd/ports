@@ -1,21 +1,40 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2001/03/31 22:41:49 brad Exp $
+# $OpenBSD: INSTALL,v 1.2 2002/08/10 01:14:04 naddy Exp $
 #
 # Pre/post-installation setup of opennap
 
-# exit on errors, use a sane path and install prefix
-#
-set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${SYSCONFDIR}/opennap
 SAMPLE_CONFIG_DIR=$PREFIX/share/examples/opennap
+OPENNAPUSER=opennap
+OPENNAPGROUP=opennap
+
+do_usergroup_install()
+{
+  # Create Opennap user and group
+  groupinfo -e $OPENNAPGROUP
+  if [ $? -eq 0 ]; then
+    echo "===> Using $OPENNAPGROUP group for Opennap"
+  else
+    echo "===> Creating $OPENNAPGROUP group for Opennap"
+    groupadd $OPENNAPGROUP
+  fi
+  userinfo -e $OPENNAPUSER
+  if [ $? -eq 0 ]; then
+    echo "===> Using $OPENNAPUSER user for Opennap"
+  else
+    echo "===> Creating $OPENNAPUSER user for Opennap"
+    useradd -g $OPENNAPGROUP -d /nonexistent -L daemon -c 'Opennap Account' -s /sbin/nologin $OPENNAPUSER
+  fi
+}
+
 
 do_notice()
 {
     echo
     echo "+---------------"
-    echo "| The existing $1 configuration files in $CONFIG_DIR,"
+    echo "| The existing opennap configuration files in $CONFIG_DIR,"
     echo "| have NOT been changed. You may want to compare them to the"
     echo "| current sample files in $SAMPLE_CONFIG_DIR,"
     echo "| and update your configuration as needed."
@@ -25,9 +44,9 @@ do_notice()
 
 do_install()
 {
-    install -d -o nobody -g nogroup -m 700 $CONFIG_DIR
+    install -d -o opennap -g opennap -m 700 $CONFIG_DIR
     echo "admin opennap email@here.com Elite 0 0" > $CONFIG_DIR/users
-    chown nobody:nogroup $CONFIG_DIR/users
+    chown opennap:opennap $CONFIG_DIR/users
     chmod 600 $CONFIG_DIR/users
     echo
     echo "+---------------"
@@ -54,7 +73,7 @@ fi
 #
 case $2 in
     PRE-INSTALL)
-	: nothing to pre-install for this port
+	do_usergroup_install
 	;;
     POST-INSTALL)
 	if [ ! -d $CONFIG_DIR ]; then

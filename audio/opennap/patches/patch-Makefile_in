@@ -1,0 +1,261 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- Makefile.in.orig	Sun Sep 30 17:13:45 2001
++++ Makefile.in	Tue Oct 16 18:14:04 2001
+@@ -65,16 +65,15 @@ REGEX = @REGEX@
+ SHAREDIR = @SHAREDIR@
+ VERSION = @VERSION@
+ 
+-sbin_PROGRAMS = opennap metaserver setup #mkpass
+-opennap_SOURCES = opennap.h main.c add_file.c search.c 	motd.c hash.h hash.c privmsg.c browse.c 	debug.c debug.h login.c whois.c free_user.c 	join.c part.c public.c part_channel.c 	announce.c kill_user.c remove_connection.c config.c download.c 	upload_complete.c topic.c muzzle.c 	level.c client_quit.c server_login.c server_connect.c synch.c util.c 	md5.c md5.h hotlist.c remove_file.c list_channels.c 	list_users.c ping.c resume.c change.c ban.c network.c buffer.c 	server_usage.c server_links.c init.c handler.c timer.c list.c 	list.h userdb.c serverlib.c kick.c usermode.c channel.c glob.c 	redirect.c filter.c hashlist.h hashlist.c class.c 	napigator.c win32-support.h #fast_snprintf.c
++sbin_PROGRAMS = opennap metaserver setup
++opennap_SOURCES = opennap.h main.c add_file.c discipline.c search.c 	motd.c hash.h hash.c privmsg.c browse.c 	debug.c debug.h login.c whois.c free_user.c 	join.c part.c public.c part_channel.c 	announce.c kill_user.c remove_connection.c config.c download.c 	upload_complete.c topic.c muzzle.c 	level.c client_quit.c server_login.c server_connect.c synch.c util.c 	md5.c md5.h hotlist.c remove_file.c list_channels.c 	list_users.c ping.c resume.c change.c ban.c network.c buffer.c 	server_usage.c server_links.c init.c handler.c timer.c list.c 	list.h userdb.c serverlib.c kick.c usermode.c channel.c glob.c 	redirect.c filter.c hashlist.h hashlist.c class.c 	napigator.c win32-support.h #fast_snprintf.c
+ 
+ opennap_LDADD = $(REGEX)
+ opennap_DEPENDENCIES = $(REGEX)
+-#mkpass_SOURCES=mkpass.c md5.c debug.c util.c
+ metaserver_SOURCES = metaserver.c
+ setup_SOURCES = setup.c
+ EXTRA_opennap_SOURCES = regex.c _regex.h
+-EXTRA_DIST = sample.config sample.motd napster.txt .indent.pro 	FAQ spyserv.c opennap.dsw opennap.dsp 	opennap.opt sample.users sample.servers opennap.spec 	getopt.c mkpass.dsp sample.channels 	napchk logchk setup.dsp opennap.init sample.filter mkpass.c 	manual.html start_opennap sample.block win98se_max_conn.reg 	notes.txt sample.block
++EXTRA_DIST = sample.config sample.motd napster.txt .indent.pro 	FAQ spyserv.c opennap.dsw opennap.dsp 	opennap.opt sample.users sample.servers opennap.spec 	getopt.c sample.channels 	napchk logchk setup.dsp opennap.init sample.filter 	manual.html start_opennap sample.block win98se_max_conn.reg 	notes.txt sample.block metaserver.dsp
+ 
+ INCLUDES = -DSHAREDIR=\"@SHAREDIR@\"
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -88,15 +87,15 @@ DEFS = @DEFS@ -I. -I$(srcdir) -I.
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-opennap_OBJECTS =  main.o add_file.o search.o motd.o hash.o privmsg.o \
+-browse.o debug.o login.o whois.o free_user.o join.o part.o public.o \
+-part_channel.o announce.o kill_user.o remove_connection.o config.o \
+-download.o upload_complete.o topic.o muzzle.o level.o client_quit.o \
+-server_login.o server_connect.o synch.o util.o md5.o hotlist.o \
+-remove_file.o list_channels.o list_users.o ping.o resume.o change.o \
+-ban.o network.o buffer.o server_usage.o server_links.o init.o handler.o \
+-timer.o list.o userdb.o serverlib.o kick.o usermode.o channel.o glob.o \
+-redirect.o filter.o hashlist.o class.o napigator.o
++opennap_OBJECTS =  main.o add_file.o discipline.o search.o motd.o hash.o \
++privmsg.o browse.o debug.o login.o whois.o free_user.o join.o part.o \
++public.o part_channel.o announce.o kill_user.o remove_connection.o \
++config.o download.o upload_complete.o topic.o muzzle.o level.o \
++client_quit.o server_login.o server_connect.o synch.o util.o md5.o \
++hotlist.o remove_file.o list_channels.o list_users.o ping.o resume.o \
++change.o ban.o network.o buffer.o server_usage.o server_links.o init.o \
++handler.o timer.o list.o userdb.o serverlib.o kick.o usermode.o \
++channel.o glob.o redirect.o filter.o hashlist.o class.o napigator.o
+ opennap_LDFLAGS = 
+ metaserver_OBJECTS =  metaserver.o
+ metaserver_LDADD = $(LDADD)
+@@ -119,6 +118,23 @@ DISTFILES = $(DIST_COMMON) $(SOURCES) $(
+ 
+ TAR = tar
+ GZIP_ENV = --best
++DEP_FILES =  .deps/add_file.P .deps/announce.P .deps/ban.P \
++.deps/browse.P .deps/buffer.P .deps/change.P .deps/channel.P \
++.deps/class.P .deps/client_quit.P .deps/config.P .deps/debug.P \
++.deps/discipline.P .deps/download.P .deps/filter.P .deps/free_user.P \
++.deps/glob.P .deps/handler.P .deps/hash.P .deps/hashlist.P \
++.deps/hotlist.P .deps/init.P .deps/join.P .deps/kick.P \
++.deps/kill_user.P .deps/level.P .deps/list.P .deps/list_channels.P \
++.deps/list_users.P .deps/login.P .deps/main.P .deps/md5.P \
++.deps/metaserver.P .deps/motd.P .deps/muzzle.P .deps/napigator.P \
++.deps/network.P .deps/part.P .deps/part_channel.P .deps/ping.P \
++.deps/privmsg.P .deps/public.P .deps/redirect.P .deps/regex.P \
++.deps/remove_connection.P .deps/remove_file.P .deps/resume.P \
++.deps/search.P .deps/server_connect.P .deps/server_links.P \
++.deps/server_login.P .deps/server_usage.P .deps/serverlib.P \
++.deps/setup.P .deps/synch.P .deps/timer.P .deps/topic.P \
++.deps/upload_complete.P .deps/userdb.P .deps/usermode.P .deps/util.P \
++.deps/whois.P
+ SOURCES = $(opennap_SOURCES) $(EXTRA_opennap_SOURCES) $(metaserver_SOURCES) $(setup_SOURCES)
+ OBJECTS = $(opennap_OBJECTS) $(metaserver_OBJECTS) $(setup_OBJECTS)
+ 
+@@ -126,9 +142,9 @@ all: all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .o .s
+ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
++	cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile
+ 
+-Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
++Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+ 	cd $(top_builddir) \
+ 	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+@@ -193,9 +209,6 @@ uninstall-sbinPROGRAMS:
+ 	  rm -f $(DESTDIR)$(sbindir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
+ 	done
+ 
+-.c.o:
+-	$(COMPILE) -c $<
+-
+ .s.o:
+ 	$(COMPILE) -c $<
+ 
+@@ -291,6 +304,11 @@ distdir: $(DISTFILES)
+ 	-rm -rf $(distdir)
+ 	mkdir $(distdir)
+ 	-chmod 777 $(distdir)
++	here=`cd $(top_builddir) && pwd`; \
++	top_distdir=`cd $(distdir) && pwd`; \
++	distdir=`cd $(distdir) && pwd`; \
++	cd $(top_srcdir) \
++	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu Makefile
+ 	@for file in $(DISTFILES); do \
+ 	  d=$(srcdir); \
+ 	  if test -d $$d/$$file; then \
+@@ -301,74 +319,38 @@ distdir: $(DISTFILES)
+ 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+ 	  fi; \
+ 	done
+-add_file.o: add_file.c config.h opennap.h hash.h list.h debug.h
+-announce.o: announce.c config.h opennap.h hash.h list.h debug.h
+-ban.o: ban.c config.h opennap.h hash.h list.h debug.h
+-browse.o: browse.c config.h opennap.h hash.h list.h debug.h
+-buffer.o: buffer.c config.h opennap.h hash.h list.h debug.h
+-change.o: change.c config.h opennap.h hash.h list.h debug.h
+-channel.o: channel.c config.h opennap.h hash.h list.h debug.h
+-class.o: class.c config.h opennap.h hash.h list.h hashlist.h debug.h
+-client_quit.o: client_quit.c opennap.h hash.h list.h debug.h
+-config.o: config.c config.h opennap.h hash.h list.h debug.h
+-debug.o: debug.c config.h debug.h
+-download.o: download.c config.h opennap.h hash.h list.h debug.h
+-filter.o: filter.c config.h opennap.h hash.h list.h debug.h
+-free_user.o: free_user.c config.h opennap.h hash.h list.h hashlist.h \
+-	debug.h
+-glob.o: glob.c config.h opennap.h hash.h list.h
+-handler.o: handler.c config.h opennap.h hash.h list.h debug.h
+-hash.o: hash.c config.h hash.h debug.h
+-hashlist.o: hashlist.c config.h list.h hash.h hashlist.h opennap.h \
+-	debug.h
+-hotlist.o: hotlist.c config.h opennap.h hash.h list.h hashlist.h debug.h
+-init.o: init.c config.h opennap.h hash.h list.h hashlist.h debug.h
+-join.o: join.c config.h opennap.h hash.h list.h debug.h
+-kick.o: kick.c config.h opennap.h hash.h list.h debug.h
+-kill_user.o: kill_user.c config.h opennap.h hash.h list.h debug.h
+-level.o: level.c config.h opennap.h hash.h list.h debug.h
+-list.o: list.c config.h list.h debug.h
+-list_channels.o: list_channels.c config.h opennap.h hash.h list.h \
+-	debug.h
+-list_users.o: list_users.c config.h opennap.h hash.h list.h debug.h
+-login.o: login.c config.h opennap.h hash.h list.h hashlist.h debug.h
+-main.o: main.c config.h opennap.h hash.h list.h debug.h
+-md5.o: md5.c config.h md5.h
+-metaserver.o: metaserver.c config.h
+-motd.o: motd.c config.h opennap.h hash.h list.h debug.h
+-muzzle.o: muzzle.c config.h opennap.h hash.h list.h debug.h
+-napigator.o: napigator.c config.h opennap.h hash.h list.h debug.h md5.h
+-network.o: network.c config.h opennap.h hash.h list.h debug.h
+-part.o: part.c config.h opennap.h hash.h list.h debug.h
+-part_channel.o: part_channel.c config.h opennap.h hash.h list.h debug.h
+-ping.o: ping.c config.h opennap.h hash.h list.h debug.h
+-privmsg.o: privmsg.c config.h opennap.h hash.h list.h debug.h
+-public.o: public.c config.h opennap.h hash.h list.h debug.h
+-redirect.o: redirect.c config.h opennap.h hash.h list.h
+-remove_connection.o: remove_connection.c config.h opennap.h hash.h \
+-	list.h hashlist.h debug.h
+-remove_file.o: remove_file.c config.h opennap.h hash.h list.h debug.h
+-resume.o: resume.c config.h opennap.h hash.h list.h debug.h
+-search.o: search.c config.h opennap.h hash.h list.h debug.h
+-server_connect.o: server_connect.c config.h opennap.h hash.h list.h \
+-	debug.h
+-server_links.o: server_links.c config.h opennap.h hash.h list.h debug.h
+-server_login.o: server_login.c config.h opennap.h hash.h list.h debug.h \
+-	md5.h
+-server_usage.o: server_usage.c config.h opennap.h hash.h list.h \
+-	hashlist.h debug.h
+-serverlib.o: serverlib.c config.h opennap.h hash.h list.h debug.h
+-setup.o: setup.c config.h
+-synch.o: synch.c config.h opennap.h hash.h list.h debug.h
+-timer.o: timer.c config.h opennap.h hash.h list.h debug.h
+-topic.o: topic.c config.h opennap.h hash.h list.h debug.h
+-upload_complete.o: upload_complete.c config.h opennap.h hash.h list.h \
+-	debug.h
+-userdb.o: userdb.c config.h opennap.h hash.h list.h debug.h
+-usermode.o: usermode.c config.h opennap.h hash.h list.h debug.h
+-util.o: util.c config.h md5.h opennap.h hash.h list.h debug.h
+-whois.o: whois.c config.h opennap.h hash.h list.h debug.h
+ 
++DEPS_MAGIC := $(shell mkdir .deps > /dev/null 2>&1 || :)
++
++-include $(DEP_FILES)
++
++mostlyclean-depend:
++
++clean-depend:
++
++distclean-depend:
++	-rm -rf .deps
++
++maintainer-clean-depend:
++
++%.o: %.c
++	@echo '$(COMPILE) -c $<'; \
++	$(COMPILE) -Wp,-MD,.deps/$(*F).pp -c $<
++	@-cp .deps/$(*F).pp .deps/$(*F).P; \
++	tr ' ' '\012' < .deps/$(*F).pp \
++	  | sed -e 's/^\\$$//' -e '/^$$/ d' -e '/:$$/ d' -e 's/$$/ :/' \
++	    >> .deps/$(*F).P; \
++	rm .deps/$(*F).pp
++
++%.lo: %.c
++	@echo '$(LTCOMPILE) -c $<'; \
++	$(LTCOMPILE) -Wp,-MD,.deps/$(*F).pp -c $<
++	@-sed -e 's/^\([^:]*\)\.o[ 	]*:/\1.lo \1.o :/' \
++	  < .deps/$(*F).pp > .deps/$(*F).P; \
++	tr ' ' '\012' < .deps/$(*F).pp \
++	  | sed -e 's/^\\$$//' -e '/^$$/ d' -e '/:$$/ d' -e 's/$$/ :/' \
++	    >> .deps/$(*F).P; \
++	rm -f .deps/$(*F).pp
+ info-am:
+ info: info-am
+ dvi-am:
+@@ -409,25 +391,27 @@ distclean-generic:
+ 
+ maintainer-clean-generic:
+ mostlyclean-am:  mostlyclean-hdr mostlyclean-sbinPROGRAMS \
+-		mostlyclean-compile mostlyclean-tags \
++		mostlyclean-compile mostlyclean-tags mostlyclean-depend \
+ 		mostlyclean-generic
+ 
+ mostlyclean: mostlyclean-am
+ 
+ clean-am:  clean-hdr clean-sbinPROGRAMS clean-compile clean-tags \
+-		clean-generic mostlyclean-am
++		clean-depend clean-generic mostlyclean-am
+ 
+ clean: clean-am
+ 
+ distclean-am:  distclean-hdr distclean-sbinPROGRAMS distclean-compile \
+-		distclean-tags distclean-generic clean-am
++		distclean-tags distclean-depend distclean-generic \
++		clean-am
+ 
+ distclean: distclean-am
+ 	-rm -f config.status
+ 
+ maintainer-clean-am:  maintainer-clean-hdr maintainer-clean-sbinPROGRAMS \
+ 		maintainer-clean-compile maintainer-clean-tags \
+-		maintainer-clean-generic distclean-am
++		maintainer-clean-depend maintainer-clean-generic \
++		distclean-am
+ 	@echo "This command is intended for maintainers to use;"
+ 	@echo "it deletes files that may require special tools to rebuild."
+ 
+@@ -439,10 +423,12 @@ mostlyclean-sbinPROGRAMS distclean-sbinP
+ maintainer-clean-sbinPROGRAMS uninstall-sbinPROGRAMS \
+ install-sbinPROGRAMS mostlyclean-compile distclean-compile \
+ clean-compile maintainer-clean-compile tags mostlyclean-tags \
+-distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
+-dvi-am dvi check check-am installcheck-am installcheck all-recursive-am \
+-install-exec-am install-exec install-data-am install-data install-am \
+-install uninstall-am uninstall all-redirect all-am all installdirs \
++distclean-tags clean-tags maintainer-clean-tags distdir \
++mostlyclean-depend distclean-depend clean-depend \
++maintainer-clean-depend info-am info dvi-am dvi check check-am \
++installcheck-am installcheck all-recursive-am install-exec-am \
++install-exec install-data-am install-data install-am install \
++uninstall-am uninstall all-redirect all-am all installdirs \
+ mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 

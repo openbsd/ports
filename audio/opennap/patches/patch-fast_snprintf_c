@@ -1,0 +1,239 @@
+$OpenBSD: patch-fast_snprintf_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- fast_snprintf.c.orig	Fri Aug  2 22:15:44 2002
++++ fast_snprintf.c	Tue Mar  6 00:49:52 2001
+@@ -0,0 +1,235 @@
++/* Copyright (C) 2000-1 drscholl@users.sourceforge.net
++   This is free software distributed under the terms of the
++   GNU Public License.  See the file COPYING for details.
++
++   fast_snprintf.c,v 1.12 2001/03/06 06:49:52 drscholl Exp */
++
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++#include <stdarg.h>
++#include <assert.h>
++#include <sys/types.h>
++#include <sys/time.h>
++#include <stdio.h>
++
++#define DIGIT(n,ui) \
++	if(ui>=(n)) { *out++ = '0' + (ui / (n)) % 10; if (--outsize == 0) break; }
++
++void fast_vsnprintf (char *out, size_t outsize, const char *fmt, va_list ap);
++void fast_snprintf (char *out, size_t outsize, const char *fmt, ...);
++
++void
++fast_vsnprintf (char *out, size_t outsize, const char *fmt, va_list ap)
++{
++    unsigned int ui;
++    unsigned short us;
++    int i, len;
++    char   *s;
++    char    c;
++
++    if (outsize == 0)
++	return;
++
++    outsize--;
++
++    while (*fmt && outsize > 0)
++    {
++	if ((c = *fmt++) != '%')
++	{
++	    *out++ = c;
++	    outsize--;
++	}
++	else
++	{
++	    c = *fmt++;
++	    if (c == 's')
++	    {
++		s = va_arg (ap, char *);
++
++		if (s == NULL)
++		{
++		    if (outsize < 6)
++			break;
++		    strcpy (out, "{null}");
++		    out+=6;
++		    outsize-=6;
++		}
++		else
++		    while (*s && outsize > 0)
++		    {
++			*out++ = *s++;
++			outsize--;
++		    }
++	    }
++	    else if (c == 'd')
++	    {
++		i = va_arg (ap, int);
++
++		if (i == 0)
++		{
++		    /* zero occurs often, so optimize for it */
++		    *out++ = '0';
++		    outsize--;
++		}
++		else
++		{
++		    /* optimized for small ints */
++		    if (i < 0)
++		    {
++			/* handle negative numbers */
++			*out++ = '-';
++			if (--outsize == 0)
++			    break;
++			i *= -1;
++		    }
++		    DIGIT (100000000, i);
++		    DIGIT (10000000, i);
++		    DIGIT (1000000, i);
++		    DIGIT (100000, i);
++		    DIGIT (10000, i);
++		    DIGIT (1000, i);
++		    DIGIT (100, i);
++		    DIGIT (10, i);
++		    *out++ = '0' + i % 10;
++		    outsize--;
++		}
++	    }
++	    else if (c == 'h' && *fmt == 'u')
++	    {
++		fmt++;
++		/* have to promote short to int */
++		us = (unsigned short) va_arg (ap, unsigned int);
++
++		DIGIT (10000, us);
++		DIGIT (1000, us);
++		DIGIT (100, us);
++		DIGIT (10, us);
++		*out++ = '0' + us % 10;
++		outsize--;
++	    }
++	    /* %u .  assume 10 digit number. this is typically used
++	     * to either print a time_t or an ip address.
++	     */
++	    else if (c == 'u')
++	    {
++		ui = va_arg (ap, unsigned int);
++
++#if 1
++		/* this appears to be faster than the other way.  my guess
++		 * is that the store of the leading 0's takes much longer
++		 * than doing ten if() evaluations.  The performance is only
++		 * slightly better, and solves the problem of those ugly
++		 * leading zeros
++		 */
++		DIGIT (1000000000, ui);
++		DIGIT (100000000, ui);
++		DIGIT (10000000, ui);
++		DIGIT (1000000, ui);
++		DIGIT (100000, ui);
++		DIGIT (10000, ui);
++		DIGIT (1000, ui);
++		DIGIT (100, ui);
++		DIGIT (10, ui);
++		*out++ = '0' + ui % 10;
++		outsize--;
++#else
++		if (outsize < 10)
++		    break;
++		*out++ = '0' + (ui / 1000000000) % 10;
++		*out++ = '0' + (ui / 100000000) % 10;
++		*out++ = '0' + (ui / 10000000) % 10;
++		*out++ = '0' + (ui / 1000000) % 10;
++		*out++ = '0' + (ui / 100000) % 10;
++		*out++ = '0' + (ui / 10000) % 10;
++		*out++ = '0' + (ui / 1000) % 10;
++		*out++ = '0' + (ui / 100) % 10;
++		*out++ = '0' + (ui / 10) % 10;
++		*out++ = '0' + ui % 10;
++		outsize -= 10;
++#endif
++	    }
++	    else if (c == 'c')
++	    {
++		/* va_arg only takes fully promoted types, so we need
++		 * a cast here
++		 */
++		c = (char) va_arg (ap, int);
++
++		*out++ = c;
++		outsize--;
++	    }
++	    /* %f is typically used to print an integer larger than a %u */
++	    else if (c == 'f')
++	    {
++		double f = va_arg (ap, double);
++
++		snprintf (out, outsize, "%.0f", f);
++		len = strlen (out);
++		out += len;
++		outsize -= len;
++	    }
++	    else
++		assert (0);	/* not supported */
++	}
++    }
++    *out = 0;
++}
++
++void
++fast_snprintf (char *out, size_t outsize, const char *fmt, ...)
++{
++    va_list ap;
++
++    va_start (ap, fmt);
++    fast_vsnprintf (out, outsize, fmt, ap);
++    va_end (ap);
++}
++
++#if TEST
++
++#if 1
++#define FUNC fast_snprintf
++#else
++#define FUNC snprintf
++#endif
++
++int
++main (int argc, char **argv)
++{
++    char    buf[1024];
++    char   *fmt1 = "The %s brown %s jumped %s the %s dogs.";
++    char   *fmt2 = "%d %d %d %d";
++    char   *fmt3 = "blah blah blah";
++    char *fmt4 = "%u %hu";
++    char *fmt5 = "%d";
++    char *fmt6 = "%u %u %u %u";
++    int     i;
++    struct timeval s, e;
++    char small[16];
++
++    memset(small,0xff,sizeof(small));
++    fast_snprintf(small,sizeof(small)-1,"this is a very long string");
++    memset(small,0xff,sizeof(small));
++    fast_snprintf(small,sizeof(small)-1,"this is a ver%d", 123456);
++    memset(small,0xff,sizeof(small));
++    fast_snprintf(small,sizeof(small)-1,"this is a ver%s", "blah blah blah");
++
++    gettimeofday (&s, 0);
++    for (i = 0; i < 10000; i++)
++    {
++	//FUNC (buf, sizeof (buf), fmt1, "quick", "fox", "over", "lazy");
++	//FUNC (buf, sizeof (buf), fmt2, 1, 11, 111, 1111);
++	//FUNC (buf, sizeof (buf), fmt3);
++	//FUNC (buf, sizeof (buf), fmt4, 0x7fffffff, 0xffff);
++	//FUNC (buf, sizeof (buf), fmt5, -10134);
++	FUNC(buf,sizeof(buf),fmt6,0x7fffffff,0x0fffffff,0x00ffffff,0x000fffff);
++	puts(buf);
++    }
++    gettimeofday (&e, 0);
++
++    printf ("%d\n",
++	    (e.tv_sec - s.tv_sec) * 1000000 + (e.tv_usec - s.tv_usec));
++}
++#endif

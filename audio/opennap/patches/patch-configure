@@ -1,12 +1,30 @@
-$OpenBSD: patch-configure,v 1.2 2001/07/11 02:10:06 brad Exp $
---- configure.orig	Tue Mar  6 01:49:52 2001
-+++ configure	Tue Jul 10 21:15:04 2001
-@@ -1875,7 +1875,7 @@ EOF
- 	
- else
-   rm -rf conftest*
--  SHAREDIR=\${pkgdatadir}
-+  SHAREDIR=\${sysconfdir}
+$OpenBSD: patch-configure,v 1.3 2002/08/10 01:14:04 naddy Exp $
+--- configure.orig	Sun Sep 30 17:12:46 2001
++++ configure	Mon Aug  5 19:59:27 2002
+@@ -1802,7 +1802,7 @@ else
+   echo "$ac_t""no" 1>&6
  fi
- rm -f conftest*
  
+-for ac_func in mlockall poll
++for ac_func in mlockall poll getloadavg
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:1809: checking for $ac_func" >&5
+@@ -2003,7 +2003,7 @@ EOF
+ 
+ else
+   cat >> confdefs.h <<EOF
+-#define USE_UID "nobody"
++#define USE_UID "opennap"
+ EOF
+ 
+ fi
+@@ -2017,7 +2017,7 @@ EOF
+ 
+ else
+   cat >> confdefs.h <<EOF
+-#define USE_GID "nobody"
++#define USE_GID "opennap"
+ EOF
+ 
+ fi

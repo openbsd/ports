@@ -1,0 +1,75 @@
+$OpenBSD: patch-search_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- search.c.orig	Fri Sep 28 23:34:23 2001
++++ search.c	Tue Oct 16 18:14:04 2001
+@@ -304,6 +304,9 @@ free_datum (DATUM * d)
+ {
+     int i;
+     TokenRef *ref;
++#if RESUME
++    FileList *flist;
++#endif
+ 
+     for (i = 0; i < d->numTokens; i++)
+     {
+@@ -342,13 +345,31 @@ free_datum (DATUM * d)
+ 
+     FREE (d->tokens);
+ 
+-    /* XXX broken */
+ #if RESUME
+     flist = hash_lookup (MD5, d->hash);
+     if (flist)
+     {
++	DList *list;
++
+ 	ASSERT (validate_flist (flist));
+-	flist->list = list_delete (flist->list, d);
++	for (list = flist->list; list; list = list->next)
++	{
++	    if (list->data == d)
++	    {
++		if (list->prev)
++		    list->prev->next =  list->next;
++		else
++		{
++		    /* element is head of list, update the flist pointer */
++		    flist->list = list->next;
++		}
++		if (list->next)
++		    list->next->prev = list->prev;
++		FREE (list);
++		break;
++	    }
++	}
++
+ 	flist->count--;
+ 	/* if there are no more files in this bin, erase it */
+ 	if (flist->count == 0)
+@@ -944,6 +965,13 @@ HANDLER (search)
+ 	return;
+     }
+ 
++    /* NO SOUP FOR YOU!!! */
++    if (con->user->level == LEVEL_LEECH)
++    {
++	send_cmd (con, MSG_SERVER_SEARCH_END, "");
++	return;
++    }
++
+     /* if Max_Searches is > 0, we only allow clients to have a certain small
+      * number of pending search requests.  Some abusive clients will tend
+      * to issues multiple search requests at a time.
+@@ -1015,6 +1043,13 @@ HANDLER (remote_search)
+     if (! option (ON_ALLOW_SHARE))
+     {
+ 	/* sharing is not allowed on this server */
++	send_cmd (con, MSG_SERVER_REMOTE_SEARCH_END, "%s", id);
++	return;
++    }
++
++    if (user->level == LEVEL_LEECH)
++    {
++	/* user is not allowed to search this server */
+ 	send_cmd (con, MSG_SERVER_REMOTE_SEARCH_END, "%s", id);
+ 	return;
+     }

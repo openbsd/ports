@@ -1,0 +1,14 @@
+Configuring Opennap on OpenBSD
+------------------------------
+
+- configuration files are in 		${SYSCONFDIR}/opennap
+- documentation is installed in		${PREFIX}/doc/opennap
+- sample configuration files are in	${PREFIX}/share/examples/opennap
+
+
+Additionally, you may wish to start opennap at system start-up
+via the /etc/rc.local script:
+
+if [ -x ${PREFIX}/sbin/opennap ]; then
+	echo -n ' opennap';	${PREFIX}/sbin/opennap -b > /dev/null
+fi

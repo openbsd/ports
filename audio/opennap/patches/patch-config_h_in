@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- config.h.in.orig	Sat Sep 22 02:23:14 2001
++++ config.h.in	Tue Oct 16 16:13:03 2001
+@@ -24,6 +24,9 @@
+ /* Define if you have the alarm function.  */
+ #undef HAVE_ALARM
+ 
++/* Define if you have the getloadavg function.  */
++#undef HAVE_GETLOADAVG
++
+ /* Define if you have the getopt function.  */
+ #undef HAVE_GETOPT
+ 

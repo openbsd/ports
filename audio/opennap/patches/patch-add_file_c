@@ -1,0 +1,134 @@
+$OpenBSD: patch-add_file_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- add_file.c.orig	Sat Sep 29 00:21:51 2001
++++ add_file.c	Wed Oct 17 13:19:27 2001
+@@ -233,6 +233,7 @@ sNewDatum (char *filename, char *hash)
+ 	FREE (info);
+ 	return 0;
+     }
++    strlower (info->hash);
+ #endif
+     return info;
+ }
+@@ -248,8 +249,8 @@ sBitrateToMask (int bitrate, USER * user
+ 	if (bitrate <= BitRate[i])
+ 	    return i;
+     }
+-    log_message ("sBitrateToMask(): invalid bit rate %d (%s, \"%s\")", bitrate,
+-		 user->nick, user->clientinfo);
++    log_message ("sBitrateToMask(): invalid bit rate %d (%s, \"%s\")",
++		 bitrate, user->nick, user->clientinfo);
+     return 0;			/* invalid bitrate */
+ }
+ 
+@@ -287,6 +288,8 @@ HANDLER (add_file)
+ 
+     if (!option (ON_ALLOW_SHARE))
+ 	return;
++    if(con->user->level==LEVEL_LEECH)
++	return;
+ 
+     if (Max_Shared && con->user->shared >= Max_Shared)
+     {
+@@ -376,6 +379,8 @@ HANDLER (share_file)
+ 
+     if (!option (ON_ALLOW_SHARE))
+ 	return;
++    if(con->user->level==LEVEL_LEECH)
++	return;
+     if (Max_Shared && con->user->shared >= Max_Shared)
+     {
+ 	log_message ("add_file(): %s is already sharing %d files",
+@@ -466,6 +471,8 @@ HANDLER (add_directory)
+     CHECK_USER_CLASS ("add_directory");
+     if (!option (ON_ALLOW_SHARE))
+ 	return;
++    if(con->user->level==LEVEL_LEECH)
++	return;
+     dir = next_arg (&pkt);	/* directory */
+     if (!dir)
+     {
+@@ -653,8 +660,40 @@ HANDLER (user_sharing)
+ 		       user->libsize);
+ }
+ 
++void
++unshare_all_internal (USER * user)
++{
++    if (user->shared)
++    {
++#ifndef ROUTING_ONLY
++	if (ISUSER (user->con))
++	{
++	    /* local user */
++	    free_hash (user->con->uopt->files);
++	    user->con->uopt->files = 0;
++	    ASSERT (Local_Files >= user->shared);
++	    Local_Files -= user->shared;
++	}
++#endif /* !ROUTING_ONLY */
++	if (user->libsize > Num_Gigs)
++	{
++	    log_message ("unshare_all: sender->libsize=%u Num_Gigs=%f",
++			 user->libsize, Num_Gigs);
++	    Num_Gigs = user->libsize;
++	}
++	ASSERT (Num_Gigs >= user->libsize);
++	Num_Gigs -= user->libsize;
++	ASSERT (Num_Files >= user->shared);
++	Num_Files -= user->shared;
++	user->libsize = 0;
++	user->shared = 0;
++    }
++}
++
+ /* 110 [:sender]
+- * unshare all files
++ * unshare all files.  this will handle the case of a remote server forcing
++ * a local client to unshare all files as well, so we can have the hub
++ * perform this action.
+  */
+ HANDLER (unshare_all)
+ {
+@@ -664,33 +703,18 @@ HANDLER (unshare_all)
+     (void) len;
+     if (pop_user_server (con, tag, &pkt, &sender_name, &sender))
+ 	return;
+-    ASSERT (sender != 0);
+-#ifndef ROUTING_ONLY
++    if (!sender)
++    {
++	log_message ("unshare_all: error: received unshare message from server %s",
++		     sender_name);
++	return;
++    }
+     if (ISUSER (con))
+     {
+-	if (!con->uopt->files)
+-	{
+-	    ASSERT (sender->shared == 0);
+-	    return;		/* nothing shared */
+-	}
++	if (sender->shared == 0)
++	    return;		/* nothing to unshare */
+ 	send_cmd (con, tag, "%d", sender->shared);
+-	free_hash (con->uopt->files);
+-	con->uopt->files = 0;
+-	ASSERT (Local_Files >= sender->shared);
+-	Local_Files -= sender->shared;
+     }
+-#endif /* !ROUTING_ONLY */
+-    if (sender->libsize > Num_Gigs)
+-    {
+-	log_message ("unshare_all: sender->libsize=%u Num_Gigs=%f",
+-		     sender->libsize, Num_Gigs);
+-	Num_Gigs = sender->libsize;
+-    }
+-    ASSERT (Num_Gigs >= sender->libsize);
+-    Num_Gigs -= sender->libsize;
+-    ASSERT (Num_Files >= sender->shared);
+-    Num_Files -= sender->shared;
+-    sender->libsize = 0;
+-    sender->shared = 0;
++    unshare_all_internal (sender);
+     pass_message_args (con, tag, ":%s", sender->nick);
+ }

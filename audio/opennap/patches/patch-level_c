@@ -1,0 +1,22 @@
+$OpenBSD: patch-level_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- level.c.orig	Sat Sep 22 00:54:13 2001
++++ level.c	Wed Oct 17 13:19:27 2001
+@@ -84,7 +84,8 @@ HANDLER (level)
+ 	else
+ 	{
+ 	    ASSERT (ISSERVER (con));
+-	    log_message ("level: invalid level %s from server %s", av[1], con->host);
++	    log_message ("level: invalid level %s from server %s", av[1],
++			 con->host);
+ 	}
+ 	return;
+     }
+@@ -144,7 +145,7 @@ HANDLER (level)
+ 	    {
+ 		log_message ("level: %s is desynched", con->host);
+ 		log_message ("level: %s -> %s %s", sender->nick, av[0],
+-		     Levels[level]);
++			     Levels[level]);
+ 		if (curlevel != -1)
+ 		{
+ 		    /* reset the user's level on the remote site

@@ -1,12 +1,14 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.1 2001/03/31 22:41:49 brad Exp $
+# $OpenBSD: DEINSTALL,v 1.2 2002/08/10 01:14:04 naddy Exp $
 #
 # opennap de-installation
 
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_DIR=${SYSCONFDIR}
+CONFIG_DIR=${SYSCONFDIR}/opennap
+OPENNAPUSER=opennap
+OPENNAPGROUP=opennap
 
 if [ -d $CONFIG_DIR ]; then
     echo
@@ -14,7 +16,9 @@ if [ -d $CONFIG_DIR ]; then
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|           rm -rf $CONFIG_DIR"
+    echo "|	      userdel $OPENNAPUSER"
+    echo "|	      groupdel $OPENNAPGROUP"
+    echo "|	      rm -rf $CONFIG_DIR"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

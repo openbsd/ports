@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_in,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- configure.in.orig	Sat Sep 29 00:21:51 2001
++++ configure.in	Sun Aug  4 00:09:53 2002
+@@ -28,7 +28,7 @@ fi
+ AC_CHECK_LIB(xnet,gethostbyname)
+ AC_CHECK_LIB(nsl,socket)
+ AC_CHECK_LIB(socket,gethostbyname)
+-AC_CHECK_FUNCS(mlockall poll)
++AC_CHECK_FUNCS(mlockall poll getloadavg)
+ 
+ dnl see if we are compiling under Win32 or Unix
+ AC_MSG_CHECKING(for default config directory)
+@@ -97,9 +97,9 @@ AC_ARG_ENABLE(chroot, [  --enable-chroot
+ 
+ AC_ARG_WITH(uid, [  --with-uid=UID	Switch to UID if run as root],
+ 	[AC_DEFINE_UNQUOTED(USE_UID,"$withval")],
+-	[AC_DEFINE_UNQUOTED(USE_UID,"nobody")])
++	[AC_DEFINE_UNQUOTED(USE_UID,"opennap")])
+ AC_ARG_WITH(gid, [  --with-gid=GID	Switch to GID if run as root],
+ 	[AC_DEFINE_UNQUOTED(USE_GID,"$withval")],
+-	[AC_DEFINE_UNQUOTED(USE_GID,"nobody")])
++	[AC_DEFINE_UNQUOTED(USE_GID,"opennap")])
+ 
+ AC_OUTPUT(Makefile)

@@ -1,0 +1,183 @@
+$OpenBSD: patch-proxy-client_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- proxy-client.c.orig	Fri Aug  2 22:15:44 2002
++++ proxy-client.c	Tue Mar  6 00:49:53 2001
+@@ -0,0 +1,179 @@
++/* Copyright (C) 2000-1 drscholl@users.sourceforge.net
++   This is free software distributed under the terms of the
++   GNU Public License.  See the file COPYING for details.
++
++   proxy-client.c,v 1.3 2001/03/06 06:49:53 drscholl Exp */
++
++/* a simple proxy server to spy on the traffic between clients.  this
++   is a lot easier than using tcpdump.  */
++
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <unistd.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <arpa/inet.h>
++#include <errno.h>
++
++unsigned char buf[2048];
++
++int
++pass_message (const char *id, int s, int d)
++{
++    int     len;
++    int     i;
++
++    len = read (s, buf, sizeof (buf));
++    if (len <= 0)
++    {
++	if (len == -1)
++	    printf ("%s: %s\n", id, strerror (errno));
++	else
++	    printf ("%s: EOF\n", id);
++	return -1;
++    }
++    buf[len] = 0;
++
++    for (i = 0; i < len; i++)
++	if (buf[i] == '\r')
++	    buf[i] = 'M';
++
++    printf ("%s: len=%d, data=%s\n", id, len, buf);
++
++    write (d, buf, len);
++
++    return 0;
++}
++
++static void
++usage (void)
++{
++    puts ("usage: spyserv [ -s client ] [ -p clientport ] [ -l localport ]");
++    exit (0);
++}
++
++int
++main (int argc, char **argv)
++{
++    int     s;
++    int     c;
++    int     r;
++    int     localport = 6699;
++    size_t  sinsize;
++    struct sockaddr_in sin;
++    fd_set  fds;
++    char   *host = "192.168.0.101";
++    int     port = 6699;
++
++    while ((r = getopt (argc, argv, "hs:p:l:")) != EOF)
++    {
++	switch (r)
++	{
++	case 'l':
++	    localport = atoi (optarg);
++	    break;
++	case 's':
++	    host = optarg;
++	    break;
++	case 'p':
++	    port = atoi (optarg);
++	    break;
++	default:
++	    usage ();
++	}
++    }
++
++    /* accept connection from client */
++    s = socket (PF_INET, SOCK_STREAM, IPPROTO_TCP);
++    if (s < 0)
++    {
++	perror ("socket");
++	exit (1);
++    }
++    c = 1;
++    if (setsockopt (s, SOL_SOCKET, SO_REUSEADDR, &c, sizeof (c)) != 0)
++    {
++	perror ("setsockopt");
++	exit (1);
++    }
++    memset (&sin, 0, sizeof (sin));
++    sin.sin_port = htons (localport);
++    sin.sin_family = AF_INET;
++    sin.sin_addr.s_addr = INADDR_ANY;
++    if (bind (s, &sin, sizeof (sin)) < 0)
++    {
++	perror ("bind");
++	exit (1);
++    }
++    if (listen (s, 1) < 0)
++    {
++	perror ("listen");
++	exit (1);
++    }
++
++    for (;;)
++    {
++	puts ("waiting for connection");
++	sinsize = sizeof (sin);
++	c = accept (s, &sin, &sinsize);
++	if (c < 0)
++	{
++	    perror ("accept");
++	    exit (1);
++	}
++	puts ("got incoming connection");
++
++	/* make connection to server */
++	printf ("connecting to client...");
++	fflush (stdout);
++	r = socket (PF_INET, SOCK_STREAM, IPPROTO_TCP);
++	if (r < 0)
++	{
++	    perror ("socket");
++	    exit (1);
++	}
++	memset (&sin, 0, sizeof (sin));
++	sin.sin_port = htons (port);
++	sin.sin_family = AF_INET;
++	sin.sin_addr.s_addr = inet_addr (host);
++	if (connect (r, &sin, sizeof (sin)) < 0)
++	{
++	    perror ("connect");
++	    exit (1);
++	}
++	puts ("connected");
++
++	for (;;)
++	{
++	    FD_ZERO (&fds);
++	    FD_SET (r, &fds);
++	    FD_SET (c, &fds);
++	    puts ("Waiting for input");
++	    if (select (((r > c) ? r : c) + 1, &fds, 0, 0, 0) < 0)
++	    {
++		perror ("select");
++		break;
++	    }
++	    if (FD_ISSET (c, &fds))
++	    {
++		if (pass_message ("remote", c, r) != 0)
++		    break;
++	    }
++	    if (FD_ISSET (r, &fds))
++	    {
++		if (pass_message ("local", r, c) != 0)
++		    break;
++	    }
++	}
++
++	close (r);
++	close (c);
++    }
++    close (s);
++
++    exit (0);
++}

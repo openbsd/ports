@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- config.c.orig	Sat Sep 22 01:04:26 2001
++++ config.c	Tue Oct 16 16:13:02 2001
+@@ -65,6 +65,7 @@ static struct config Vars[] = {
+ #endif
+     {"auto_link", VAR_TYPE_BOOL, ON_AUTO_LINK, 0, 0},
+     {"auto_register", VAR_TYPE_BOOL, ON_AUTO_REGISTER, 0, 0},
++    {"block_winmx", VAR_TYPE_INT, UL & gBlockWinMX, 0, 0},
+     {"client_queue_length", VAR_TYPE_INT, UL & Client_Queue_Length, 102400,
+      0},
+     {"compression_level", VAR_TYPE_INT, UL & Compression_Level, 1, CF_ONCE},

@@ -1,0 +1,16 @@
+$OpenBSD: patch-download_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- download.c.orig	Sat Sep 22 00:54:13 2001
++++ download.c	Tue Oct 16 18:14:04 2001
+@@ -35,6 +35,12 @@ HANDLER (download)
+ 	return;
+     }
+ 
++    if (sender->level == LEVEL_LEECH)
++    {
++	send_user (sender, MSG_SERVER_NOSUCH, "permission denied: you are a leech");
++	return;
++    }
++    
+     /* find the user to download from */
+     user = hash_lookup (Users, av[0]);
+     if (!user)

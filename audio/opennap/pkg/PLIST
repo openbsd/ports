@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2001/07/11 02:10:07 brad Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/08/10 01:14:04 naddy Exp $
 sbin/metaserver
 sbin/opennap
 sbin/setup
+share/doc/opennap/FAQ
 share/doc/opennap/README
+share/doc/opennap/manual.html
 share/doc/opennap/napster.txt
 share/examples/opennap/sample.block
 share/examples/opennap/sample.channels

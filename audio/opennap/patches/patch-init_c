@@ -1,0 +1,33 @@
+$OpenBSD: patch-init_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- init.c.orig	Sun Sep 23 18:09:04 2001
++++ init.c	Fri Aug  2 23:11:23 2002
+@@ -121,8 +121,8 @@ drop_privs (void)
+     struct passwd *pw;
+     struct group *gr;
+ 
+-    n = strtol (USE_GID, &p, 10);
+-    if (p)
++    n = strtoul (USE_GID, &p, 10);
++    if (*p)
+     {
+ 	/* probably a string */
+ 	gr = getgrnam (USE_GID);
+@@ -139,8 +139,8 @@ drop_privs (void)
+ 	return -1;
+     }
+ 
+-    n = strtol (USE_UID, &p, 10);
+-    if (p)
++    n = strtoul (USE_UID, &p, 10);
++    if (*p)
+     {
+ 	/* probably a string */
+ 	pw = getpwnam (USE_UID);
+@@ -317,6 +317,7 @@ init_server (void)
+     hash_set_hash_func (File_Table, hash_string, hash_compare_string);
+ #if RESUME
+     MD5 = hash_init (4001, 0);
++    hash_set_hash_func (MD5, hash_string, hash_compare_string);
+ #endif
+     load_bans ();
+     load_block ();

@@ -1,0 +1,43 @@
+$OpenBSD: patch-main_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
+--- main.c.orig	Sun Sep 30 17:12:37 2001
++++ main.c	Tue Oct 16 18:14:04 2001
+@@ -51,6 +51,7 @@ LIST   *UserClass = 0;
+ 
+ char    Buf[2048];		/* global scratch buffer */
+ 
++int	gBlockWinMX;
+ HASH   *Channel_Db;
+ int     Client_Queue_Length;
+ HASH   *Channels = 0;		/* global channel list */
+@@ -330,7 +331,7 @@ report_stats (int fd)
+     int     n;
+     struct sockaddr_in sin;
+     socklen_t sinsize = sizeof (sin);
+-    float   loadavg = 0;
++    double   loadavg = 0;
+ 
+     n = accept (fd, (struct sockaddr *) &sin, &sinsize);
+     if (n == -1)
+@@ -340,7 +341,10 @@ report_stats (int fd)
+     }
+     log_message ("report_stats: connection from %s:%d", inet_ntoa (sin.sin_addr),
+ 	 htons (sin.sin_port));
+-#ifdef linux
++#if HAVE_GETLOADAVG
++    if (getloadavg (&loadavg, 1) < 0)
++	log_message ("report_stats: getloadavg: %s (errno %d)", strerror (errno), errno);
++#elif defined(linux)
+     {
+ 	FILE   *f = fopen ("/proc/loadavg", "r");
+ 
+@@ -356,8 +360,8 @@ report_stats (int fd)
+ 	}
+     }
+ #endif /* linux */
+-    snprintf (Buf, sizeof (Buf), "%d %d %.2f %.0f 0\n", Users->dbsize,
+-	      Num_Files, loadavg, Num_Gigs * 1024.);
++    snprintf (Buf, sizeof (Buf), "%d %d %0.2f %.0f %d\n", Users->dbsize,
++	      Num_Files, loadavg, Num_Gigs * 1024., global.clients_num - list_count(Servers));
+     WRITE (n, Buf, strlen (Buf));
+     CLOSE (n);
+ }
