@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2003/08/23 05:31:25 jolan Exp $
+# $OpenBSD: Makefile,v 1.104 2003/10/08 01:29:19 marcm Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -17,6 +17,7 @@
 #    SUBDIR += figlet
      SUBDIR += gdiff
      SUBDIR += glimpse
+     SUBDIR += gpdf
      SUBDIR += gtkspell
      SUBDIR += hevea
      SUBDIR += hgrep
