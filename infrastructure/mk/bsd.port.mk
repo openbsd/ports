@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.413 2001/05/23 15:48:08 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.414 2001/06/03 14:42:07 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -898,9 +898,9 @@ EXTRACT_ONLY?=	${_DISTFILES}
 .if !empty(EXTRACT_ONLY:M*.zip)
 USE_ZIP?=	Yes
 .endif
-.if !empty(EXTRACT_ONLY:M*.tar.bz2)
+.if !empty(EXTRACT_ONLY:M*.tar.bz2) || (defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
 USE_BZIP2?=	Yes
-.endif
+.endif 
 USE_ZIP?= No
 USE_BZIP2?= No
 
@@ -919,6 +919,13 @@ EXTRACT_CASES+= *.tar) ${TAR} xf ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES+= *.shar.gz|*.shar.Z|*.sh.Z|*.sh.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 EXTRACT_CASES+= *.shar | *.sh) /bin/sh ${FULLDISTDIR}/$$archive;;
 EXTRACT_CASES+= *) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+
+PATCH_CASES?=
+.if ${USE_BZIP2:L} != "no"
+PATCH_CASES+= *.bz2) ${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+.endif
+PATCH_CASES+= *.Z|*.gz) ${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+PATCH_CASES+= *) ${PATCH} ${PATCH_DIST_ARGS} < $$patchfile;;
 
 # Documentation
 MAINTAINER?=	ports@openbsd.org
@@ -1464,18 +1471,13 @@ ${_DISTPATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .  if defined(_PATCHFILES)
 	@${ECHO_MSG} "===>  Applying distribution patches for ${FULLPKGNAME}"
 	@cd ${FULLDISTDIR}; \
-	  for i in ${_PATCHFILES}; do \
+	  for patchfile in ${_PATCHFILES}; do \
 	  	case "${PATCH_DEBUG:L}" in \
 			no) ;; \
-			*) ${ECHO_MSG} "===>   Applying distribution patch $$i" ;; \
+			*) ${ECHO_MSG} "===>   Applying distribution patch $$patchfile" ;; \
 		esac; \
-		case $$i in \
-			*.Z|*.gz) \
-				${GZCAT} $$i | ${PATCH} ${PATCH_DIST_ARGS}; \
-				;; \
-			*) \
-				${PATCH} ${PATCH_DIST_ARGS} < $$i; \
-				;; \
+		case $$patchfile in \
+			${PATCH_CASES} \
 		esac; \
 	  done
 .  endif
