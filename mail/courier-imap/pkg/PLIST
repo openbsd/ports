@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/07/01 12:19:35 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.16 2004/08/26 06:56:40 pvalchev Exp $
 @pkgcfl imap-uw-*
 bin/couriertls
-bin/deliverquota
+@comment bin/deliverquota
 bin/imapd
 bin/maildiracl
 bin/maildirkw
@@ -19,24 +19,24 @@ libexec/makedatprog
 man/man1/couriertcpd.1
 man/man1/maildiracl.1
 man/man1/maildirkw.1
-man/man1/maildirmake.1
+@comment man/man1/maildirmake.1
 @mode 0444
 man/man7/authlib.7
 @mode
-man/man8/deliverquota.8
+@comment man/man8/deliverquota.8
 man/man8/imapd.8
-man/man8/makeuserdb.8
+@comment man/man8/makeuserdb.8
 man/man8/mkimapdcert.8
-man/man8/userdb.8
-man/man8/userdbpw.8
+@comment man/man8/userdb.8
+@comment man/man8/userdbpw.8
 sbin/authenumerate
 sbin/courierlogger
 sbin/imaplogin
-sbin/makeuserdb
+@comment sbin/makeuserdb
 sbin/mkimapdcert
-sbin/pw2userdb
-sbin/userdbpw
-sbin/vchkpw2userdb
+@comment sbin/pw2userdb
+@comment sbin/userdbpw
+@comment sbin/vchkpw2userdb
 share/examples/courier-imap/authdaemonrc
 share/examples/courier-imap/imapd
 share/examples/courier-imap/imapd-ssl
