@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/07/03 19:54:35 naddy Exp $
+bin/zile
+info/zile.info
+man/man1/zile.1
+share/zile/zilerc.sample
+share/zile/FAQ
+share/zile/HELP
+share/zile/MINIHELP1
+share/zile/MINIHELP2
+share/zile/MINIHELP3
+share/zile/LATEST_VERSION
+share/zile/TUTORIAL
+share/zile/AUTODOC
