@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2002/10/29 19:48:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2003/07/05 18:25:54 sturm Exp $
 
 COMMENT=		"minimalist window manager for the X Window System"
 
-DISTNAME=		evilwm-0.99.7.orig
-PKGNAME=		evilwm-0.99.7
+DISTNAME=		${PKGNAME}.orig
+PKGNAME=		evilwm-0.99.14
 CATEGORIES=		x11
 HOMEPAGE=		http://evilwm.sourceforge.net/
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=evilwm/}
-DISTFILES=		evilwm_0.99.7.orig.tar.gz
+DISTFILES=		${DISTNAME:S,-,_,}.tar.gz
 
 USE_X11=		Yes
 ALL_TARGET=		allinone
@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/evilwm.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.multihead ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.vdesk ${DOCDIR}
 
 .include <bsd.port.mk>
