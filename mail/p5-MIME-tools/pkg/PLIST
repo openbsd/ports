@@ -1,25 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/MIME/Body.pm
-libdata/perl5/site_perl/MIME/Decoder.pm
-libdata/perl5/site_perl/MIME/Decoder/Base64.pm
-libdata/perl5/site_perl/MIME/Decoder/Binary.pm
-libdata/perl5/site_perl/MIME/Decoder/Gzip64.pm
-libdata/perl5/site_perl/MIME/Decoder/NBit.pm
-libdata/perl5/site_perl/MIME/Decoder/QuotedPrint.pm
-libdata/perl5/site_perl/MIME/Decoder/UU.pm
-libdata/perl5/site_perl/MIME/Entity.pm
-libdata/perl5/site_perl/MIME/Field/ConTraEnc.pm
-libdata/perl5/site_perl/MIME/Field/ContDisp.pm
-libdata/perl5/site_perl/MIME/Field/ContType.pm
-libdata/perl5/site_perl/MIME/Field/ParamVal.pm
-libdata/perl5/site_perl/MIME/Head.pm
-libdata/perl5/site_perl/MIME/Parser.pm
-libdata/perl5/site_perl/MIME/Parser/Filer.pm
-libdata/perl5/site_perl/MIME/Parser/Reader.pm
-libdata/perl5/site_perl/MIME/Parser/Results.pm
-libdata/perl5/site_perl/MIME/Tools.pm
-libdata/perl5/site_perl/MIME/WordDecoder.pm
-libdata/perl5/site_perl/MIME/Words.pm
+@comment $OpenBSD: PLIST,v 1.4 2004/01/17 16:45:01 naddy Exp $
+${P5SITE}/MIME/Body.pm
+${P5SITE}/MIME/Decoder.pm
+${P5SITE}/MIME/Decoder/Base64.pm
+${P5SITE}/MIME/Decoder/Binary.pm
+${P5SITE}/MIME/Decoder/Gzip64.pm
+${P5SITE}/MIME/Decoder/NBit.pm
+${P5SITE}/MIME/Decoder/QuotedPrint.pm
+${P5SITE}/MIME/Decoder/UU.pm
+${P5SITE}/MIME/Entity.pm
+${P5SITE}/MIME/Field/ConTraEnc.pm
+${P5SITE}/MIME/Field/ContDisp.pm
+${P5SITE}/MIME/Field/ContType.pm
+${P5SITE}/MIME/Field/ParamVal.pm
+${P5SITE}/MIME/Head.pm
+${P5SITE}/MIME/Parser.pm
+${P5SITE}/MIME/Parser/Filer.pm
+${P5SITE}/MIME/Parser/Reader.pm
+${P5SITE}/MIME/Parser/Results.pm
+${P5SITE}/MIME/Tools.pm
+${P5SITE}/MIME/WordDecoder.pm
+${P5SITE}/MIME/Words.pm
+@comment ${P5ARCH}/auto/MIME-tools/.packlist
 man/man3p/MIME::Body.3p
 man/man3p/MIME::Decoder.3p
 man/man3p/MIME::Decoder::Base64.3p
@@ -41,6 +42,10 @@ man/man3p/MIME::Parser::Results.3p
 man/man3p/MIME::Tools.3p
 man/man3p/MIME::WordDecoder.3p
 man/man3p/MIME::Words.3p
-@dirrm libdata/perl5/site_perl/MIME/Parser
-@dirrm libdata/perl5/site_perl/MIME/Field
-@dirrm libdata/perl5/site_perl/MIME/Decoder
+@comment @dirrm ${P5ARCH}/auto/MIME-tools
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/MIME/Parser
+@dirrm ${P5SITE}/MIME/Field
+@dirrm ${P5SITE}/MIME/Decoder
+@dirrm ${P5SITE}/MIME

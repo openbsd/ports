@@ -1,34 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/04/16 19:25:04 espie Exp $
-libdata/perl5/site_perl/Mail/Address.pm
-libdata/perl5/site_perl/Mail/Cap.pm
-libdata/perl5/site_perl/Mail/Field.pm
-libdata/perl5/site_perl/Mail/Field/AddrList.pm
-libdata/perl5/site_perl/Mail/Field/Date.pm
-libdata/perl5/site_perl/Mail/Filter.pm
-libdata/perl5/site_perl/Mail/Header.pm
-libdata/perl5/site_perl/Mail/Internet.pm
-libdata/perl5/site_perl/Mail/Mailer.pm
-libdata/perl5/site_perl/Mail/Mailer/mail.pm
-libdata/perl5/site_perl/Mail/Mailer/rfc822.pm
-libdata/perl5/site_perl/Mail/Mailer/sendmail.pm
-libdata/perl5/site_perl/Mail/Mailer/smtp.pm
-libdata/perl5/site_perl/Mail/Mailer/test.pm
-libdata/perl5/site_perl/Mail/Send.pm
-libdata/perl5/site_perl/Mail/Util.pm
-libdata/perl5/site_perl/auto/Mail/Internet/_prephdr.al
-libdata/perl5/site_perl/auto/Mail/Internet/add_signature.al
-libdata/perl5/site_perl/auto/Mail/Internet/autosplit.ix
-libdata/perl5/site_perl/auto/Mail/Internet/escape_from.al
-libdata/perl5/site_perl/auto/Mail/Internet/nntppost.al
-libdata/perl5/site_perl/auto/Mail/Internet/reply.al
-libdata/perl5/site_perl/auto/Mail/Internet/send.al
-libdata/perl5/site_perl/auto/Mail/Internet/sign.al
-libdata/perl5/site_perl/auto/Mail/Internet/smtpsend.al
-libdata/perl5/site_perl/auto/Mail/Internet/unescape_from.al
-libdata/perl5/site_perl/auto/Mail/Util/autosplit.ix
-libdata/perl5/site_perl/auto/Mail/Util/mailaddress.al
-libdata/perl5/site_perl/auto/Mail/Util/maildomain.al
-libdata/perl5/site_perl/auto/Mail/Util/read_mbox.al
+@comment $OpenBSD: PLIST,v 1.7 2004/01/17 16:45:01 naddy Exp $
+${P5SITE}/Mail/Address.pm
+${P5SITE}/Mail/Cap.pm
+${P5SITE}/Mail/Field.pm
+${P5SITE}/Mail/Field/AddrList.pm
+${P5SITE}/Mail/Field/Date.pm
+${P5SITE}/Mail/Filter.pm
+${P5SITE}/Mail/Header.pm
+${P5SITE}/Mail/Header.pm.orig
+${P5SITE}/Mail/Internet.pm
+${P5SITE}/Mail/Mailer.pm
+${P5SITE}/Mail/Mailer/mail.pm
+${P5SITE}/Mail/Mailer/rfc822.pm
+${P5SITE}/Mail/Mailer/sendmail.pm
+${P5SITE}/Mail/Mailer/smtp.pm
+${P5SITE}/Mail/Mailer/test.pm
+${P5SITE}/Mail/Send.pm
+${P5SITE}/Mail/Util.pm
+${P5SITE}/auto/Mail/Internet/_prephdr.al
+${P5SITE}/auto/Mail/Internet/add_signature.al
+${P5SITE}/auto/Mail/Internet/autosplit.ix
+${P5SITE}/auto/Mail/Internet/escape_from.al
+${P5SITE}/auto/Mail/Internet/nntppost.al
+${P5SITE}/auto/Mail/Internet/reply.al
+${P5SITE}/auto/Mail/Internet/send.al
+${P5SITE}/auto/Mail/Internet/sign.al
+${P5SITE}/auto/Mail/Internet/smtpsend.al
+${P5SITE}/auto/Mail/Internet/unescape_from.al
+${P5SITE}/auto/Mail/Util/autosplit.ix
+${P5SITE}/auto/Mail/Util/mailaddress.al
+${P5SITE}/auto/Mail/Util/maildomain.al
+${P5SITE}/auto/Mail/Util/read_mbox.al
+@comment ${P5ARCH}/auto/Mail/.packlist
 man/man3p/Mail::Address.3p
 man/man3p/Mail::Cap.3p
 man/man3p/Mail::Field.3p
@@ -44,7 +46,14 @@ share/examples/p5-MailTools/forwd_demo
 share/examples/p5-MailTools/rplyto_demo
 share/examples/p5-MailTools/send_demo
 @dirrm share/examples/p5-MailTools
-@dirrm libdata/perl5/site_perl/auto/Mail/Util
-@dirrm libdata/perl5/site_perl/auto/Mail/Internet
-@dirrm libdata/perl5/site_perl/Mail/Mailer
-@dirrm libdata/perl5/site_perl/Mail/Field
+@dirrm man/man3p
+@comment @dirrm ${P5ARCH}/auto/Mail
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/auto/Mail/Util
+@dirrm ${P5SITE}/auto/Mail/Internet
+@dirrm ${P5SITE}/auto/Mail
+@dirrm ${P5SITE}/auto
+@dirrm ${P5SITE}/Mail/Mailer
+@dirrm ${P5SITE}/Mail/Field
+@dirrm ${P5SITE}/Mail

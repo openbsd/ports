@@ -1,10 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/04/16 19:25:05 espie Exp $
-libdata/perl5/site_perl/Bundle/PlRPC.pm
-libdata/perl5/site_perl/RPC/PlClient.pm
-libdata/perl5/site_perl/RPC/PlServer.pm
-libdata/perl5/site_perl/RPC/PlServer/Comm.pm
-libdata/perl5/site_perl/RPC/PlServer/Test.pm
+@comment $OpenBSD: PLIST,v 1.3 2004/01/17 16:45:01 naddy Exp $
+${P5SITE}/Bundle/PlRPC.pm
+${P5SITE}/RPC/PlClient.pm
+${P5SITE}/RPC/PlServer.pm
+${P5SITE}/RPC/PlServer/Comm.pm
+${P5SITE}/RPC/PlServer/Test.pm
+@comment ${P5ARCH}/auto/RPC/PlServer/.packlist
 man/man3p/Bundle::PlRPC.3p
 man/man3p/RPC::PlClient.3p
 man/man3p/RPC::PlServer.3p
-@dirrm libdata/perl5/site_perl/RPC/PlServer
+@comment @dirrm ${P5ARCH}/auto/RPC/PlServer
+@comment @dirrm ${P5ARCH}/auto/RPC
+@comment @dirrm ${P5ARCH}/auto
+@comment @dirrm ${P5ARCH}
+@dirrm ${P5SITE}/RPC/PlServer
+@dirrm ${P5SITE}/RPC
+@dirrm ${P5SITE}/Bundle
