@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2004/01/02 04:56:24 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2004/05/03 15:59:36 naddy Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
 COMMENT=		"passive OS fingerprinting tool"
@@ -39,10 +39,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/p0f ${PREFIX}/bin/p0f
-	${INSTALL_PROGRAM} ${WRKSRC}/p0frep ${PREFIX}/bin/p0frep
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p0f
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p0f
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/p0f/README
+	${INSTALL_MAN} ${WRKSRC}/p0f.1 ${PREFIX}/man/man1/p0f.1
 .for file in ${EXAMPLES}
 .if ${FLAVOR:L} == "mysql"
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/p0f/mysql
