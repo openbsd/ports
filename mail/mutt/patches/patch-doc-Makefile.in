@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Thu Feb 11 06:34:52 1999
++++ doc/Makefile.in	Fri Apr 14 02:40:47 2000
+@@ -43,7 +43,7 @@
+ DOCFILES = manual.txt
+ 
+ 
+-all: mutt.man dotlock.man try-html try-txt
++all: mutt.man dotlock.man
+ 
+ complete: all html
+ 
