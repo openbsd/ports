@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2005/02/20 03:28:27 naddy Exp $
+--- configure.ac.orig	Mon Feb 14 17:17:36 2005
++++ configure.ac	Mon Feb 14 17:17:53 2005
+@@ -526,6 +526,9 @@ if test "${SYS}" != "mingw32"; then
+ dnl Check for pthreads - borrowed from XMMS
+ THREAD_LIB=error
+ if test "${THREAD_LIB}" = "error"; then
++  AC_CHECK_LIB(pthread,main,THREAD_LIB="-pthread")
++fi
++if test "${THREAD_LIB}" = "error"; then
+   AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
+ fi
+ if test "${THREAD_LIB}" = "error"; then

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2004/12/30 16:14:35 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2005/02/20 03:28:27 naddy Exp $
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 COMMENT=	"videolan client; multimedia player"
 V=		0.8.1
 DISTNAME=	vlc-${V}
-PKGNAME=	${DISTNAME}p0
+PKGNAME=	${DISTNAME}p1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_X11=	Yes
 
-WANTLIB=	GL GLU X11 Xext Xinerama Xv c freetype m pthread usbhid z
+WANTLIB=	GL GLU X11 Xext Xinerama Xv c freetype m mp3lame \
+		ossaudio pthread usbhid z
 
 MODULES=	devel/gettext
 
@@ -33,14 +34,14 @@ LIB_DEPENDS=	SDL.3.0::devel/sdl \
 		ogg.5.2::audio/libogg \
 		vorbis.3.0,vorbisenc.2.0::audio/libvorbis \
 		mpeg2.0.0::graphics/libmpeg2 \
-		avcodec.4.9,avformat.4.9::graphics/ffmpeg \
+		avcodec.5.0,avformat.5.0,postproc.5.0::graphics/ffmpeg \
 		fribidi.0.0::devel/fribidi \
 		faad.0.0::audio/faad
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-logg -lm" \
+		LIBS="-lpostproc -lmp3lame -la52 -lvorbisenc -lvorbis -logg -lossaudio -lm -lz -pthread" \
 		WXCONFIG="${LOCALBASE}/bin/wxgtk2-2.4-config" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
 CONFIGURE_ARGS+=--disable-altivec \
