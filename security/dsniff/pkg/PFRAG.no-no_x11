@@ -1,0 +1,3 @@
+@comment $Id: PFRAG.no-no_x11,v 1.1 2000/10/02 20:21:36 dugsong Exp $
+sbin/webspy
+man/man8/webspy.8
