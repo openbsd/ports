@@ -1,0 +1,22 @@
+$OpenBSD: patch-pear_PEAR_Installer_php,v 1.1 2003/08/21 15:05:21 espie Exp $
+--- pear/PEAR/Installer.php.orig	2003-08-21 16:57:40.000000000 +0200
++++ pear/PEAR/Installer.php	2003-08-21 16:58:58.000000000 +0200
+@@ -110,12 +110,16 @@ class PEAR_Installer extends PEAR_Common
+      *
+      * @access public
+      */
+-    function PEAR_Installer(&$ui)
++    function PEAR_Installer(&$ui, $options = array())
+     {
+         parent::PEAR_Common();
+         $this->setFrontendObject($ui);
+         $this->debug = $this->config->get('verbose');
+-        $this->registry = &new PEAR_Registry($this->config->get('php_dir'));
++	$v = $this->config->get('php_dir');
++        if (isset($options['installroot'])) {
++		$v = $this->_prependPath($v, $options['installroot']);
++	}
++        $this->registry = &new PEAR_Registry($v);
+     }
+ 
+     // }}}

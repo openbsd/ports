@@ -1,0 +1,12 @@
+$OpenBSD: patch-pear_install-pear_php,v 1.1 2003/08/21 15:05:21 espie Exp $
+--- pear/install-pear.php.orig	2003-08-21 16:59:24.000000000 +0200
++++ pear/install-pear.php	2003-08-21 16:59:41.000000000 +0200
+@@ -61,7 +61,7 @@ if (!empty($install_root)) {
+ 
+ $reg = &new PEAR_Registry($reg_dir);
+ $ui = &new PEAR_Frontend_CLI();
+-$installer = &new PEAR_Installer($ui);
++$installer = &new PEAR_Installer($ui, $options);
+ $installer->registry = &$reg;
+ 
+ foreach ($install_files as $package => $instfile) {
