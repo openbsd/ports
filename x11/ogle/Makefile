@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2002/01/20 22:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2002/03/17 20:05:07 brad Exp $
 
-NOT_FOR_ARCHS=	sparc
+ONLY_FOR_ARCHS=	alpha i386 powerpc sparc64
 
 CATEGORIES=	x11
-NEED_VERSION=	1.474
+NEED_VERSION=	1.500
 
 COMMENT=	"DVD player"
 DISTNAME=	ogle-0.8.2
@@ -21,13 +21,11 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_PACKAGE_CDROM=Yes
 PERMIT_PACKAGE_FTP=Yes
 
-
 BUILD_DEPENDS=	::audio/liba52
 
 LIB_DEPENDS=	dvdread::devel/libdvdread \
 		xml2::textproc/libxml \
 		jpeg.62::graphics/jpeg
-
 
 .if ${MACHINE_ARCH} == "i386"
 .  if exists(/usr/bin/as-static)
@@ -48,7 +46,6 @@ post-extract:
 		echo >&2 "Please make sure the ${BINUTILS} dir is populated and retry"; \
 		exit 1; }
 	@mkdir -p ${BINOBJ}
-
 
 post-configure:
 	@cd ${BINOBJ} && PATH="/bin:/usr/bin:/sbin:/usr/sbin" \
