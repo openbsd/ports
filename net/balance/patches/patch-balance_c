@@ -1,6 +1,6 @@
-$OpenBSD: patch-balance_c,v 1.2 2001/11/15 19:25:52 jsyn Exp $
---- balance.c.orig	Thu Nov 15 13:11:07 2001
-+++ balance.c	Thu Nov 15 13:14:27 2001
+$OpenBSD: patch-balance_c,v 1.3 2002/02/21 02:03:33 pvalchev Exp $
+--- balance.c.orig	Sat Sep 15 16:34:56 2001
++++ balance.c	Wed Feb 20 18:58:12 2002
 @@ -677,7 +677,7 @@ static usage() {
    if((revision_copy=(char*) malloc(strlen(revision)+1))==NULL) {
      fprintf(stderr,"malloc problem in usage()\n");
@@ -10,7 +10,47 @@ $OpenBSD: patch-balance_c,v 1.2 2001/11/15 19:25:52 jsyn Exp $
      token=strtok(revision_copy," ");
      token=strtok(NULL," ");
      version=token!=NULL?token:"*undefined*";
-@@ -1122,7 +1122,7 @@ char	*argv[];
+@@ -882,7 +882,8 @@ shell() {
+ 	printf("  version               show version id\n");
+ 
+       } else if(mycmp(command,"disable")) {
+-        char* arg, n; 
++        char* arg;
++	int n;
+         if((arg=strtok(NULL," \t\n")) != NULL) {
+ 	  n=atoi(arg);
+ 	  if(n<0 || n >= grp_nchannels(common,currentgroup)) {
+@@ -900,7 +901,8 @@ shell() {
+ 	  printf("syntax error\n");
+ 	}
+       } else if(mycmp(command,"group")) {
+-        char* arg, n; 
++        char* arg;
++	int n;
+         if((arg=strtok(NULL," \t\n")) != NULL) {
+ 	  n=atoi(arg);
+           if(n>=MAXGROUPS || n<0) {
+@@ -913,7 +915,8 @@ shell() {
+ 	}
+ 
+       } else if(mycmp(command,"reset")) {	// reset channel counters
+-        char* arg, n; 
++        char* arg;
++	int n;
+ 
+         if((arg=strtok(NULL," \t\n")) != NULL) {
+ 	  n=atoi(arg);
+@@ -931,7 +934,8 @@ shell() {
+ 
+       } else if(mycmp(command,"enable")) {
+ 
+-        char* arg, n; 
++        char* arg;
++	int n;
+         if((arg=strtok(NULL," \t\n")) != NULL) {
+ 	  n=atoi(arg);
+ 	  if(n<0 || n >= grp_nchannels(common,currentgroup)) {
+@@ -1122,7 +1126,7 @@ char	*argv[];
    serv_addr.sin_family      = AF_INET;
    if(bindhost != NULL) {
      setipaddress(&serv_addr.sin_addr, bindhost);
@@ -19,7 +59,7 @@ $OpenBSD: patch-balance_c,v 1.2 2001/11/15 19:25:52 jsyn Exp $
    } else {
      serv_addr.sin_addr.s_addr=htonl(INADDR_ANY);
      sprintf(bindhost_address,"0.0.0.0");
-@@ -1135,7 +1135,7 @@ char	*argv[];
+@@ -1135,7 +1139,7 @@ char	*argv[];
       struct stat buffer;
       int fd;
  
