@@ -1,0 +1,16 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/03/23 14:57:58 espie Exp $
+lib/libartsc.so.0.0
+lib/libartscbackend.so.0.0
+lib/libartsdsp.so.0.0
+lib/libartsdsp_st.so.0.0
+lib/libartsflow.so.1.0
+lib/libartsflow_idl.so.1.0
+lib/libartswavplayobject.so.0.0
+lib/libkmedia2.so.1.0
+lib/libkmedia2_idl.so.1.0
+lib/libmcop.so.1.0
+lib/libmcop_mt.so.1.0
+lib/libqtmcop.so.1.0
+lib/libsoundserver_idl.so.1.0
+lib/libx11globalcomm.so.1.0
+DYNLIBDIR(%D/lib)
