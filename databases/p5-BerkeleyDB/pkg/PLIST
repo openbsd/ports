@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 09:27:09 jakob Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/BerkeleyDB/
+${P5ARCH}/BerkeleyDB.pm
+${P5ARCH}/BerkeleyDB.pod
+${P5ARCH}/BerkeleyDB/Btree.pm
+${P5ARCH}/BerkeleyDB/Hash.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/BerkeleyDB/
+${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.bs
+${P5ARCH}/auto/BerkeleyDB/autosplit.ix
+@man man/man3p/BerkeleyDB.3p
