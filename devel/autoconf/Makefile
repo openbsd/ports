@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/03/24 20:48:19 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2000/03/30 01:46:58 espie Exp $
 
 DISTNAME=	autoconf-2.13
 CATEGORIES=	devel
@@ -26,7 +26,10 @@ pre-configure:
 		== "X1" ]; then \
 		exit 0; \
 	fi; \
-		echo >&2 "Your m4 is not current enough, sorry"; \
+		echo >&2 "Your m4 is not current enough, sorry."; \
+		echo >&2 "The turning point was March 18, 2000, a few months after 2.6 came out."; \
+		echo >&2 "Update m4 to a more recent version," ; \
+		echo >&2 "or retrieve an older version of the autoconf port."; \
 	    	exit 1
 
 .include <bsd.port.mk>
