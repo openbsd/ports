@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/05/13 08:18:20 wilfried Exp $
+# $OpenBSD: Makefile,v 1.13 2002/08/09 10:48:18 wilfried Exp $
 
 COMMENT=		"C++ interface for gtk+"
 COMMENT-docs=		"C++ interface for gtk+ documentation"
@@ -7,7 +7,6 @@ VERSION=		1.2.9
 DISTNAME=		gtkmm-${VERSION}
 PKGNAME-docs=		gtkmm-docs-${VERSION}
 CATEGORIES=		devel x11
-NEED_VERSION=		1.528
 
 HOMEPAGE=		http://gtkmm.sourceforge.net/
 
@@ -40,9 +39,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-docs
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
-
-post-extract:
-	@cp -f ${PORTSDIR}/infrastructure/db/config.guess ${WRKSRC}/scripts
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtkmm/gdk
