@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/12/28 23:25:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.3 2002/05/26 02:17:31 pvalchev Exp $
 
 COMMENT=	"image viewer for X"
 
 VERSION=	1.4
 DISTNAME=	iview-${VERSION}
 CATEGORIES=	graphics x11
-NEED_VERSION=	1.419
+NEED_VERSION=	1.531
 
 HOMEPAGE=	http://math.smsu.edu/~erik/software.php?id=63
 
@@ -23,8 +23,7 @@ LIB_DEPENDS=	SDL_image::devel/sdl-image
 USE_X11=	Yes
 
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_STYLE= autoconf
+CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib"
 
 .include <bsd.port.mk>
