@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2001/09/19 20:44:53 todd Exp $
+# $OpenBSD: Makefile,v 1.23 2002/05/08 17:19:36 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
@@ -9,7 +9,7 @@ MASTER_SITES=	http://prdownloads.sourceforge.net/bochs/
 
 HOMEPAGE=	http://bochs.sourceforge.net/
 
-MAINTAINER=	Todd T. Fries <todd@OpenBSD.org>
+MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2002/02/02 06:15:14 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.9 2002/05/08 17:19:36 todd Exp $
 # Original from: Yannick Cote
 
 DISTNAME=		lam-6.5.1
@@ -6,7 +6,7 @@ NEED_VERSION=		1.358
 CATEGORIES=     	devel math net comms
 COMMENT=		great implementation of the message passing interface
 
-MAINTAINER=		Todd Fries <todd@OpenBSD.org>
+MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
