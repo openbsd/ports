@@ -1,0 +1,21 @@
+$OpenBSD: patch-kstars_kstars_indielement_cpp,v 1.1 2005/02/27 09:09:14 brad Exp $
+--- kstars/kstars/indielement.cpp.orig	Fri Jun 25 05:10:00 2004
++++ kstars/kstars/indielement.cpp	Sun Feb 27 03:48:42 2005
+@@ -42,7 +42,7 @@ XMLAtt * findAtt (XMLEle *ep, const char
+ 	if (ap)
+ 	    return (ap);
+ 	if (errmsg)
+-	    sprintf (errmsg, "INDI: <%s> missing attribute '%s'", tagXMLEle(ep),name);
++	    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> missing attribute '%.64s'", tagXMLEle(ep),name);
+ 	return NULL;
+ }
+ 
+@@ -55,7 +55,7 @@ XMLEle * findEle (XMLEle *ep, INDI_P *pp
+ 	if (cp)
+ 	    return (cp);
+ 	if (errmsg)
+-	    sprintf (errmsg, "INDI: <%s %s %s> missing child '%s'", tagXMLEle(ep),
++	    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s %.64s %.64s> missing child '%.64s'", tagXMLEle(ep),
+ 						pp->pg->dp->name.ascii(), pp->name.ascii(), child);
+ 	return (NULL);
+ }

@@ -1,0 +1,39 @@
+$OpenBSD: patch-kstars_kstars_indiproperty_cpp,v 1.1 2005/02/27 09:09:14 brad Exp $
+--- kstars/kstars/indiproperty.cpp.orig	Sat Jul 17 13:52:57 2004
++++ kstars/kstars/indiproperty.cpp	Sun Feb 27 03:48:42 2005
+@@ -521,7 +521,7 @@ int INDI_P::buildMenuGUI(XMLEle *root, c
+ 
+ 	    if (pg->dp->crackSwitchState (pcdataXMLEle(sep), &(lp->state)) < 0)
+ 	    {
+-		sprintf (errmsg, "INDI: <%s> unknown state %s for %s %s %s",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> unknown state %.64s for %.64s %.64s %.64s",
+ 			    tagXMLEle(root), valuXMLAtt(ap), name.ascii(), lp->name.ascii(), name.ascii());
+ 		return (-1);
+ 	    }
+@@ -532,7 +532,7 @@ int INDI_P::buildMenuGUI(XMLEle *root, c
+ 	    {
+ 		if (onItem != -1)
+ 		{
+-		    sprintf (errmsg,"INDI: <%s> %s %s has multiple On switches",
++		    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> %.64s %.64s has multiple On switches",
+ 					tagXMLEle(root), name.ascii(), lp->name.ascii());
+ 		    return (-1);
+ 		}
+@@ -602,7 +602,7 @@ int INDI_P::buildSwitchesGUI(XMLEle *roo
+ 
+ 	    if (pg->dp->crackSwitchState (pcdataXMLEle(sep), &(lp->state)) < 0)
+ 	    {
+-		sprintf (errmsg, "INDI: <%s> unknown state %s for %s %s %s",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> unknown state %.64s for %.64s %.64s %.64s",
+ 			    tagXMLEle(root), valuXMLAtt(ap), name.ascii(), name.ascii(), lp->name.ascii());
+ 		return (-1);
+ 	    }
+@@ -700,7 +700,7 @@ int INDI_P::buildLightsGUI(XMLEle *root,
+ 
+ 	   if (pg->dp->crackLightState (pcdataXMLEle(lep), &lp->state) < 0)
+ 	    {
+-		sprintf (errmsg, "INDI: <%s> unknown state %s for %s %s %s",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> unknown state %.64s for %.64s %.64s %.64s",
+ 			    tagXMLEle(root), valuXMLAtt(ap), pg->dp->name.ascii(), name.ascii(), sname.ascii());
+ 		return (-1);
+ 	   }

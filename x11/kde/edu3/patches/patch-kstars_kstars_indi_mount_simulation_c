@@ -1,0 +1,16 @@
+$OpenBSD: patch-kstars_kstars_indi_mount_simulation_c,v 1.1 2005/02/27 09:09:14 brad Exp $
+--- kstars/kstars/indi/mount_simulation.c.orig	Sat May 22 16:28:29 2004
++++ kstars/kstars/indi/mount_simulation.c	Sun Feb 27 03:48:43 2005
+@@ -140,10 +140,10 @@ char *names[], int n)
+ 		targetDEC = newdec;
+ 		fs_sexa (r, targetRA, 2, 3600);
+ 		fs_sexa (d, targetDEC, 3, 3600);
+-		sprintf (msg, "Moving to RA Dec %s %s", r, d);
++		snprintf (msg, sizeof(msg), "Moving to RA Dec %.32s %.32s", r, d);
+ 	    } else {
+ 		eqNum.s = IPS_IDLE;
+-		sprintf (msg, "RA or Dec absent or bogus");
++		snprintf (msg, sizeof(msg), "RA or Dec absent or bogus");
+ 	    }
+ 	    sendeq (msg);
+ 	    return;

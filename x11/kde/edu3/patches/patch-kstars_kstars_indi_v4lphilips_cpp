@@ -1,0 +1,260 @@
+$OpenBSD: patch-kstars_kstars_indi_v4lphilips_cpp,v 1.1 2005/02/27 09:09:14 brad Exp $
+--- kstars/kstars/indi/v4lphilips.cpp.orig	Sun Oct  3 03:13:39 2004
++++ kstars/kstars/indi/v4lphilips.cpp	Sun Feb 27 03:48:43 2005
+@@ -52,8 +52,8 @@ void waitForData(int rp, int wp);
+ void updateDataChannel(void *p);
+ void updateStream(void * p);
+ void getBasicData(void);
+-void uploadFile(char * filename);
+-int  writeFITS(char *filename, char errmsg[]);
++void uploadFile(const char* filename);
++int  writeFITS(const char* filename, char errmsg[]);
+ int  grabImage(void);
+ int  checkPowerN(INumberVectorProperty *np);
+ int  checkPowerS(ISwitchVectorProperty *sp);
+@@ -286,7 +286,7 @@ void ISGetProperties (const char *dev)
+   
+ void ISNewSwitch (const char *dev, const char *name, ISState *states, char *names[], int n)
+ {
+-	char errmsg[1024];
++	char errmsg[ERRMSG_SIZE];
+ 	int index=0;
+ 	
+ 	/* ignore if not ours */
+@@ -364,7 +364,7 @@ void ISNewSwitch (const char *dev, const
+ 	 {
+ 	   AntiFlickerS[0].s = ISS_OFF;
+ 	   AntiFlickerS[1].s = ISS_ON;
+-	   IDSetSwitch(&AntiFlickerSP, errmsg);
++	   IDSetSwitch(&AntiFlickerSP, "%s", errmsg);
+ 	   return;
+ 	 }
+ 	 
+@@ -377,7 +377,7 @@ void ISNewSwitch (const char *dev, const
+ 	 {
+ 	   AntiFlickerS[0].s = ISS_ON;
+ 	   AntiFlickerS[1].s = ISS_OFF;
+-	   IDSetSwitch(&AntiFlickerSP, errmsg);
++	   IDSetSwitch(&AntiFlickerSP, "%s", errmsg);
+ 	   return;
+ 	 }
+ 	 
+@@ -403,7 +403,7 @@ void ISNewSwitch (const char *dev, const
+ 	 {
+ 	   BackLightS[0].s = ISS_OFF;
+ 	   BackLightS[1].s = ISS_ON;
+-	   IDSetSwitch(&BackLightSP, errmsg);
++	   IDSetSwitch(&BackLightSP, "%s", errmsg);
+ 	   return;
+ 	 }
+ 	 
+@@ -416,7 +416,7 @@ void ISNewSwitch (const char *dev, const
+ 	 {
+ 	   BackLightS[0].s = ISS_ON;
+ 	   BackLightS[1].s = ISS_OFF;
+-	   IDSetSwitch(&BackLightSP, errmsg);
++	   IDSetSwitch(&BackLightSP, "%s", errmsg);
+ 	   return;
+ 	 }
+ 	 
+@@ -447,7 +447,7 @@ void ISNewSwitch (const char *dev, const
+        {
+          IUResetSwitches(&NoiseReductionSP);
+ 	 NoiseReductionS[0].s = ISS_ON;
+-	 IDSetSwitch(&NoiseReductionSP, errmsg);
++	 IDSetSwitch(&NoiseReductionSP, "%s", errmsg);
+ 	 return;
+        }
+        
+@@ -482,7 +482,7 @@ void ISNewSwitch (const char *dev, const
+ 	   {
+ 	     IUResetSwitches(&WhiteBalanceModeSP),
+ 	     WhiteBalanceModeS[0].s = ISS_ON;
+-	     IDSetSwitch(&WhiteBalanceModeSP, errmsg);
++	     IDSetSwitch(&WhiteBalanceModeSP, "%s", errmsg);
+ 	     return;
+ 	   }
+ 	   break;
+@@ -493,7 +493,7 @@ void ISNewSwitch (const char *dev, const
+ 	   {
+ 	     IUResetSwitches(&WhiteBalanceModeSP),
+ 	     WhiteBalanceModeS[0].s = ISS_ON;
+-	     IDSetSwitch(&WhiteBalanceModeSP, errmsg);
++	     IDSetSwitch(&WhiteBalanceModeSP, "%s", errmsg);
+ 	     return;
+ 	   }
+ 	   break;
+@@ -504,7 +504,7 @@ void ISNewSwitch (const char *dev, const
+ 	   {
+ 	     IUResetSwitches(&WhiteBalanceModeSP),
+ 	     WhiteBalanceModeS[0].s = ISS_ON;
+-	     IDSetSwitch(&WhiteBalanceModeSP, errmsg);
++	     IDSetSwitch(&WhiteBalanceModeSP, "%s", errmsg);
+ 	     return;
+ 	   }
+ 	   break;
+@@ -515,7 +515,7 @@ void ISNewSwitch (const char *dev, const
+ 	   {
+ 	     IUResetSwitches(&WhiteBalanceModeSP),
+ 	     WhiteBalanceModeS[0].s = ISS_ON;
+-	     IDSetSwitch(&WhiteBalanceModeSP, errmsg);
++	     IDSetSwitch(&WhiteBalanceModeSP, "%s", errmsg);
+ 	     return;
+ 	   }
+ 	   break;
+@@ -526,7 +526,7 @@ void ISNewSwitch (const char *dev, const
+ 	   {
+ 	     IUResetSwitches(&WhiteBalanceModeSP),
+ 	     WhiteBalanceModeS[0].s = ISS_ON;
+-	     IDSetSwitch(&WhiteBalanceModeSP, errmsg);
++	     IDSetSwitch(&WhiteBalanceModeSP, "%s", errmsg);
+ 	     return;
+ 	   }
+ 	   break;
+@@ -555,7 +555,7 @@ void ISNewSwitch (const char *dev, const
+ 	  if (saveSettings(errmsg) < 0)
+ 	  {
+ 	    IUResetSwitches(&CamSettingSP);
+-	    IDSetSwitch(&CamSettingSP, errmsg);
++	    IDSetSwitch(&CamSettingSP, "%s", errmsg);
+ 	    return;
+ 	  }
+ 	  
+@@ -616,8 +616,7 @@ void ISNewText (const char *dev, const c
+ 
+ void ISNewNumber (const char *dev, const char *name, double values[], char *names[], int n)
+ {
+-
+-        char errmsg[1024];
++        char errmsg[ERRMSG_SIZE];
+ 	
+ 	/* ignore if not ours */
+ 	if (dev && strcmp (dev, mydev))
+@@ -672,7 +671,7 @@ void ISNewNumber (const char *dev, const
+      if (setFrameRate( (int) FrameRateN[0].value, errmsg) < 0)
+      {
+        FrameRateN[0].value = oldFP;
+-       IDSetNumber(&FrameRateNP, errmsg);
++       IDSetNumber(&FrameRateNP, "%s", errmsg);
+        return;
+      }
+        
+@@ -727,7 +726,7 @@ void ISNewNumber (const char *dev, const
+        		for (int i=0; i < 6; i++)
+          	ImageAdjustN[i].value = oldImgPar[i];
+ 	 
+-       		IDSetNumber(&ImageAdjustNP, errmsg);
++       		IDSetNumber(&ImageAdjustNP, "%s", errmsg);
+        		return;
+      	}
+ 	else
+@@ -745,7 +744,7 @@ void ISNewNumber (const char *dev, const
+        		for (int i=0; i < 6; i++)
+          		ImageAdjustN[i].value = oldImgPar[i];
+ 	 
+-       		IDSetNumber(&ImageAdjustNP, errmsg);
++       		IDSetNumber(&ImageAdjustNP, "%s", errmsg);
+        		return;
+      	}
+ 	else
+@@ -775,7 +774,7 @@ void ISNewNumber (const char *dev, const
+      
+      if (setExposure( (int) values[0], errmsg) < 0)
+      {
+-       IDSetNumber(&ShutterSpeedNP, errmsg);
++       IDSetNumber(&ShutterSpeedNP, "%s", errmsg);
+        return;
+      }
+      
+@@ -803,14 +802,14 @@ void ISNewNumber (const char *dev, const
+      {
+        WhiteBalanceN[0].value = oldBalance[0];
+        WhiteBalanceN[1].value = oldBalance[1];
+-       IDSetNumber(&WhiteBalanceNP, errmsg);
++       IDSetNumber(&WhiteBalanceNP, "%s", errmsg);
+        return;
+      }
+      if (setWhiteBalanceBlue( (int) WhiteBalanceN[1].value * 256, errmsg))
+      {
+        WhiteBalanceN[0].value = oldBalance[0];
+        WhiteBalanceN[1].value = oldBalance[1];
+-       IDSetNumber(&WhiteBalanceNP, errmsg);
++       IDSetNumber(&WhiteBalanceNP, "%s", errmsg);
+        return;
+      }
+      
+@@ -865,8 +864,8 @@ int grabImage()
+    
+    if ((fd = mkstemp(filename)) < 0)
+    { 
+-    IDMessage(mydev, "Error making temporary filename.", NULL);
+-    IDLog("Error making temporary filename.\n", NULL);
++    IDMessage(mydev, "Error making temporary filename.");
++    IDLog("Error making temporary filename.\n");
+     return -1;
+    }
+    close(fd);
+@@ -881,19 +880,17 @@ int grabImage()
+   return 0;
+ }
+ 
+-int writeFITS(char * filename, char errmsg[])
++int writeFITS(const char* filename, char errmsg[])
+ {
+   FITS_FILE* ofp;
+   int i, bpp, bpsl, width, height;
+   long nbytes;
+   FITS_HDU_LIST *hdu;
+   
+-  IDLog("in writeFITS with filename %s\n", filename);
+-  
+   ofp = fits_open (filename, "w");
+   if (!ofp)
+   {
+-    sprintf(errmsg, "Error: cannot open file for writing.");
++    strcpy(errmsg, "Error: cannot open file for writing.");
+     return (-1);
+   }
+   
+@@ -906,12 +903,12 @@ int writeFITS(char * filename, char errm
+   hdu = create_fits_header (ofp, width, height, bpp);
+   if (hdu == NULL)
+   {
+-     sprintf(errmsg, "Error: creating FITS header failed.");
++     strcpy(errmsg, "Error: creating FITS header failed.");
+      return (-1);
+   }
+   if (fits_write_header (ofp, hdu) < 0)
+   {
+-    sprintf(errmsg, "Error: writing to FITS header failed.");
++    strcpy(errmsg, "Error: writing to FITS header failed.");
+     return (-1);
+   }
+   
+@@ -930,7 +927,7 @@ int writeFITS(char * filename, char errm
+   
+   if (ferror (ofp->fp))
+   {
+-    sprintf(errmsg, "Error: write error occured");
++    strcpy(errmsg, "Error: write error occured");
+     return (-1);
+   }
+  
+@@ -997,7 +994,7 @@ void getBasicData()
+   if (setFrameRate( (int) FrameRateN[0].value, errmsg) < 0)
+   {
+     FrameRateNP.s = IPS_ALERT;
+-    IDSetNumber(&FrameRateNP, errmsg);
++    IDSetNumber(&FrameRateNP, "%s", errmsg);
+   }
+   else
+   {
+@@ -1295,7 +1292,7 @@ void updateStream(void *p)
+  // IDLog("Leaving update stream\n");
+ }
+ 
+-void uploadFile(char * filename)
++void uploadFile(const char* filename)
+ {
+    FILE * fitsFile;
+    char frameSize[FRAME_ILEN];

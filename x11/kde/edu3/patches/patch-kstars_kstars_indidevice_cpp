@@ -1,0 +1,120 @@
+$OpenBSD: patch-kstars_kstars_indidevice_cpp,v 1.1 2005/02/27 09:09:14 brad Exp $
+--- kstars/kstars/indidevice.cpp.orig	Fri Jun 25 05:10:00 2004
++++ kstars/kstars/indidevice.cpp	Sun Feb 27 03:48:42 2005
+@@ -172,7 +172,7 @@ int INDI_D::setAnyCmd (XMLEle *root, cha
+ 	pp = findProp (valuXMLAtt(ap));
+ 	if (!pp)
+ 	{
+-	    sprintf (errmsg,"INDI: <%s> device %s has no property named %s",
++	    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.32s> device %.32s has no property named %.64s",
+ 						tagXMLEle(root), name.ascii(), valuXMLAtt(ap));
+ 	    return (-1);
+ 	}
+@@ -197,7 +197,7 @@ int INDI_D::setValue (INDI_P *pp, XMLEle
+ 	      pp->drawLt (pp->state);
+ 	    else
+ 	    {
+-		sprintf (errmsg, "INDI: <%s> bogus state %s for %s %s",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> bogus state %.64s for %.64s %.64s",
+ 						tagXMLEle(root), valuXMLAtt(ap), name.ascii(), pp->name.ascii());
+ 		return (-1);
+ 	    }
+@@ -265,7 +265,7 @@ int INDI_D::setTextValue (INDI_P *pp, XM
+ 	    
+ 	    if (!lp)
+ 	    {
+-	      sprintf(errmsg, "Error: unable to find element '%s' in property '%s'", elementName.ascii(), pp->name.ascii());
++	      snprintf(errmsg, ERRMSG_SIZE, "Error: unable to find element '%.64s' in property '%.64s'", elementName.ascii(), pp->name.ascii());
+ 	      return (-1);
+ 	    }
+ 	    
+@@ -360,7 +360,7 @@ int INDI_D::setLabelState (INDI_P *pp, X
+ 	    /* no name */
+ 	    if (!ap)
+ 	    {
+-		sprintf (errmsg, "INDI: <%s> %s %s %s requires name",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> %.64s %.64s %.64s requires name",
+ 						    tagXMLEle(root), name.ascii(), pp->name.ascii(), tagXMLEle(ep));
+ 		return (-1);
+ 	    }
+@@ -368,7 +368,7 @@ int INDI_D::setLabelState (INDI_P *pp, X
+ 	    if ((islight && crackLightState (pcdataXMLEle(ep), &state) < 0)
+ 		    || (!islight && crackSwitchState (pcdataXMLEle(ep), &state) < 0))
+ 	    {
+-		sprintf (errmsg, "INDI: <%s> unknown state %s for %s %s %s",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> unknown state %.64s for %.64s %.64s %.64s",
+ 					    tagXMLEle(root), pcdataXMLEle(ep), name.ascii(), pp->name.ascii(), tagXMLEle(ep));
+ 		return (-1);
+ 	    }
+@@ -379,7 +379,7 @@ int INDI_D::setLabelState (INDI_P *pp, X
+ 
+ 	    if (!lp)
+ 	    {
+-		sprintf (errmsg,"INDI: <%s> %s %s has no choice named %s",
++		snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> %.64s %.64s has no choice named %.64s",
+ 						    tagXMLEle(root), name.ascii(), pp->name.ascii(), valuXMLAtt(ap));
+ 		return (-1);
+ 	    }
+@@ -409,7 +409,7 @@ int INDI_D::setLabelState (INDI_P *pp, X
+ 	       {
+ 	      	if (menuChoice)
+ 	      	{
+-	        	sprintf(errmsg, "INDI: <%s> %s %s has multiple ON states", tagXMLEle(root), name.ascii(), pp->name.ascii());
++	        	snprintf(errmsg, ERRMSG_SIZE, "INDI: <%.64s> %.64s %.64s has multiple ON states", tagXMLEle(root), name.ascii(), pp->name.ascii());
+ 			return (-1);
+               	}
+ 	      	menuChoice = 1;
+@@ -470,7 +470,7 @@ INDI_P * INDI_D::addProperty (XMLEle *ro
+ 
+ 	if (findProp (valuXMLAtt(ap)))
+ 	{
+-	    sprintf (errmsg, "INDI: <%s %s %s> already exists.\n", tagXMLEle(root),
++	    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s %.64s %.64s> already exists.\n", tagXMLEle(root),
+ 							name.ascii(), valuXMLAtt(ap));
+ 	    return NULL;
+ 	}
+@@ -492,7 +492,7 @@ INDI_P * INDI_D::addProperty (XMLEle *ro
+ 
+ 	if (crackLightState (valuXMLAtt(ap), &pp->state) < 0)
+ 	{
+-	    sprintf (errmsg, "INDI: <%s> bogus state %s for %s %s",
++	    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> bogus state %.64s for %.64s %.64s",
+ 				tagXMLEle(root), valuXMLAtt(ap), pp->pg->dp->name.ascii(), pp->name.ascii());
+ 	    delete(pp);
+ 	    return (NULL);
+@@ -544,7 +544,7 @@ INDI_G *  INDI_D::findGroup (QString gro
+         return curGroup;
+   }
+ 
+-  sprintf (errmsg, "INDI: group %s not found in %s", grouptag.ascii(), name.ascii());
++  snprintf (errmsg, ERRMSG_SIZE, "INDI: group %.64s not found in %.64s", grouptag.ascii(), name.ascii());
+   return NULL;
+ }
+ 
+@@ -559,7 +559,7 @@ INDI_G *  INDI_D::findGroup (QString gro
+ 
+ 	ap = findXMLAtt(root, "perm");
+ 	if (!ap) {
+-	    sprintf (errmsg, "INDI: <%s %s %s> missing attribute 'perm'",
++	    snprintf (errmsg, ERRMSG_SIZE,"INDI: <%.64s %.64s %.64s> missing attribute 'perm'",
+ 					tagXMLEle(root), pp->pg->dp->name.ascii(), pp->name.ascii());
+ 	    return (-1);
+ 	}
+@@ -570,7 +570,7 @@ INDI_G *  INDI_D::findGroup (QString gro
+ 	else if (!strcmp(valuXMLAtt(ap), "rw") || !strcmp(valuXMLAtt(ap), "w"))
+ 	    *permp = PP_RW;
+ 	else {
+-	    sprintf (errmsg, "INDI: <%s> unknown perm %s for %s %s",
++	    snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> unknown perm %.64s for %.64s %.64s",
+ 				tagXMLEle(root), valuXMLAtt(ap), pp->pg->dp->name.ascii(), pp->name.ascii());
+ 	    return (-1);
+ 	}
+@@ -769,7 +769,7 @@ int INDI_D::buildSwitchesGUI (XMLEle *ro
+ 	    return (err);
+ 	}
+ 	
+-	sprintf (errmsg, "INDI: <%s> unknown rule %s for %s %s",
++	snprintf (errmsg, ERRMSG_SIZE, "INDI: <%.64s> unknown rule %.64s for %.64s %.64s",
+ 				tagXMLEle(root), valuXMLAtt(ap), name.ascii(), pp->name.ascii());
+ 	    
+ 	delete(pp);

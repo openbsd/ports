@@ -1,0 +1,56 @@
+$OpenBSD: patch-kstars_kstars_indi_indiserver_c,v 1.1 2005/02/27 09:09:14 brad Exp $
+--- kstars/kstars/indi/indiserver.c.orig	Fri Jun 25 05:10:04 2004
++++ kstars/kstars/indi/indiserver.c	Sun Feb 27 03:48:43 2005
+@@ -288,10 +288,10 @@ indiListen ()
+ 	    exit(1);
+ 	}
+ 	
+-	/* bind to given port for any IP address */
++	/* bind to given port for local IP address */
+ 	memset (&serv_socket, 0, sizeof(serv_socket));
+ 	serv_socket.sin_family = AF_INET;
+-	serv_socket.sin_addr.s_addr = htonl (INADDR_ANY);
++	serv_socket.sin_addr.s_addr = htonl (INADDR_LOOPBACK);
+ 	serv_socket.sin_port = htons ((unsigned short)port);
+ 	if (setsockopt(sfd,SOL_SOCKET,SO_REUSEADDR,&reuse,sizeof(reuse)) < 0){
+ 	    fprintf (stderr, "%s: setsockopt: %s", me, strerror(errno));
+@@ -423,7 +423,7 @@ clientMsg (int cli)
+ 	int i, nr;
+ 
+ 	/* read client */
+-	nr = read (cp->s, buf, sizeof(buf));
++	nr = read (cp->s, buf, sizeof(buf)-1);
+ 	if (nr < 0) {
+ 	    fprintf (stderr, "Client %d: %s\n", cp->s, strerror(errno));
+ 	    closeClient (cli);
+@@ -435,6 +435,7 @@ clientMsg (int cli)
+ 	    closeClient (cli);
+ 	    return;
+ 	} 
++        buf[ sizeof( buf )-1 ] = '\0';
+ 	if (verbose > 1)
+ 	    fprintf (stderr, "Client %d: rcv from:\n%.*s", cp->s, nr, buf);
+ 
+@@ -464,7 +465,7 @@ driverMsg (int i)
+ 	int nr;
+ 
+ 	/* read driver */
+-	nr = read (dp->rfd, buf, sizeof(buf));
++	nr = read (dp->rfd, buf, sizeof(buf)-1);
+ 	if (nr < 0) {
+ 	    fprintf (stderr, "Driver %s: %s\n", dp->name, strerror(errno));
+ 	    restartDvr (i);
+@@ -475,6 +476,7 @@ driverMsg (int i)
+ 	    restartDvr (i);
+ 	    return;
+ 	}
++        buf[ sizeof( buf )-1 ]='\0';
+ 	if (verbose > 1)
+ 	    fprintf (stderr, "Driver %s: rcv from:\n%.*s", dp->name, nr, buf);
+ 
+@@ -591,4 +593,4 @@ newClSocket ()
+ }
+ 
+ /* For RCS Only -- Do Not Edit */
+-static char *rcsid[2] = {(char *)rcsid, "@(#) $RCSfile: patch-kstars_kstars_indi_indiserver_c,v $ $Date: 2005/02/27 09:09:14 $ $Revision: 1.1 $ $Name:  $"};
++static char *rcsid[2] = {(char *)rcsid, "@(#) $RCSfile: patch-kstars_kstars_indi_indiserver_c,v $ $Date: 2005/02/27 09:09:14 $ $Revision: 1.1 $ $Name:  $"};
