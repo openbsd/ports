@@ -1,6 +1,6 @@
-$OpenBSD: patch-galeon-config-tool_in,v 1.1.1.1 2003/05/23 10:39:29 wilfried Exp $
---- galeon-config-tool.in.orig	Thu Mar 14 08:37:24 2002
-+++ galeon-config-tool.in	Fri May 23 12:36:57 2003
+$OpenBSD: patch-galeon-config-tool_in,v 1.2 2004/01/18 10:49:52 wilfried Exp $
+--- galeon-config-tool.in.orig	2002-03-14 08:37:24.000000000 +0100
++++ galeon-config-tool.in	2003-12-12 16:54:12.000000000 +0100
 @@ -4,7 +4,7 @@ prefix=@prefix@
  
  clean () {

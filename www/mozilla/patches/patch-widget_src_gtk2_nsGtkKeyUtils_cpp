@@ -1,6 +1,6 @@
-$OpenBSD: patch-widget_src_gtk2_nsGtkKeyUtils_cpp,v 1.1 2003/05/27 12:21:31 wilfried Exp $
---- widget/src/gtk2/nsGtkKeyUtils.cpp.orig	Fri Nov  8 03:23:23 2002
-+++ widget/src/gtk2/nsGtkKeyUtils.cpp	Tue May 27 14:15:44 2003
+$OpenBSD: patch-widget_src_gtk2_nsGtkKeyUtils_cpp,v 1.2 2004/01/18 10:49:33 wilfried Exp $
+--- widget/src/gtk2/nsGtkKeyUtils.cpp.orig	2003-08-21 22:10:58.000000000 +0200
++++ widget/src/gtk2/nsGtkKeyUtils.cpp	2003-12-12 15:43:28.000000000 +0100
 @@ -51,7 +51,7 @@ struct nsKeyConverter {
  // Netscape keycodes are defined in widget/public/nsGUIEvent.h
  // GTK keycodes are defined in <gdk/gdkkeysyms.h>

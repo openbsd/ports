@@ -1,6 +1,6 @@
-$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.4 2003/05/22 12:04:49 wilfried Exp $
---- nsprpub/pr/src/misc/prinit.c.orig	Mon Jan 20 21:13:09 2003
-+++ nsprpub/pr/src/misc/prinit.c	Thu May 22 13:17:40 2003
+$OpenBSD: patch-nsprpub_pr_src_misc_prinit_c,v 1.5 2004/01/18 10:49:33 wilfried Exp $
+--- nsprpub/pr/src/misc/prinit.c.orig	2003-01-20 21:13:09.000000000 +0100
++++ nsprpub/pr/src/misc/prinit.c	2003-12-12 15:43:28.000000000 +0100
 @@ -430,6 +430,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
  	    _PR_LogCleanup();
  

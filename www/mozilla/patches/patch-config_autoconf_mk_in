@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.6 2003/12/04 15:01:38 wilfried Exp $
---- config/autoconf.mk.in.orig	Fri May  2 23:38:10 2003
-+++ config/autoconf.mk.in	Fri Jun  6 09:00:04 2003
+$OpenBSD: patch-config_autoconf_mk_in,v 1.7 2004/01/18 10:49:33 wilfried Exp $
+--- config/autoconf.mk.in.orig	2003-10-30 22:11:05.000000000 +0100
++++ config/autoconf.mk.in	2003-12-12 15:43:28.000000000 +0100
 @@ -29,13 +29,13 @@ MOZILLA_VERSION = @MOZILLA_VERSION@
  prefix		= @prefix@
  exec_prefix	= @exec_prefix@
@@ -17,7 +17,7 @@ $OpenBSD: patch-config_autoconf_mk_in,v 1.6 2003/12/04 15:01:38 wilfried Exp $
  mredir		= $(libdir)/mre/mre-$(MOZILLA_VERSION)
  mrelibdir	= $(mredir)/lib
  
-@@ -169,7 +169,7 @@ OS_LDFLAGS	= @LDFLAGS@
+@@ -172,7 +172,7 @@ OS_LDFLAGS	= @LDFLAGS@
  OS_COMPILE_CFLAGS = $(OS_CPPFLAGS) @COMPILE_CFLAGS@
  OS_COMPILE_CXXFLAGS = $(OS_CPPFLAGS) @COMPILE_CXXFLAGS@
  

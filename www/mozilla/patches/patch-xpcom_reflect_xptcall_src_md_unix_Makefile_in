@@ -1,6 +1,6 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.4 2003/08/18 14:22:13 wilfried Exp $
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2003-06-18 22:02:34.000000000 -0500
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2003-08-12 15:02:32.000000000 -0500
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.5 2004/01/18 10:49:33 wilfried Exp $
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2003-08-15 06:00:23.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	2003-12-12 15:43:29.000000000 +0100
 @@ -106,6 +106,12 @@ CPPSRCS		:= xptcinvoke_osf1_alpha.cpp xp
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
@@ -29,7 +29,7 @@ $OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.4 2003/08/18 1
  # Darwin/PPC
  #
  ifeq ($(OS_ARCH),Darwin)
-@@ -320,6 +334,20 @@ endif
+@@ -322,6 +336,20 @@ endif
  
  endif
  endif

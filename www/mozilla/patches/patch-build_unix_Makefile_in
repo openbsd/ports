@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_unix_Makefile_in,v 1.1 2003/12/04 15:01:38 wilfried Exp $
+$OpenBSD: patch-build_unix_Makefile_in,v 1.2 2004/01/18 10:49:33 wilfried Exp $
 --- build/unix/Makefile.in.orig	2002-12-12 01:08:35.000000000 +0100
-+++ build/unix/Makefile.in	2003-10-31 22:29:12.000000000 +0100
++++ build/unix/Makefile.in	2003-12-12 15:43:28.000000000 +0100
 @@ -55,7 +55,7 @@ mozilla-config:: mozilla-config.in Makef
  	-e "s|%prefix%|$(prefix)|" \
  	-e "s|%exec_prefix%|$(exec_prefix)|" \
