@@ -1,0 +1,6 @@
+This perl module is used to interact with "mon" clients. 
+It supports a protocol-independent API for retrieving the status
+of the mon server, and performing certain operations, such as
+disableing hosts and service checks. 
+
+WWW: ${HOMEPAGE}

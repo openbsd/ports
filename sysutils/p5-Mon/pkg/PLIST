@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/11/24 13:55:23 margarida Exp $
+${P5SITE}/Mon/Client.pm
+${P5SITE}/Mon/Protocol.pm
+${P5SITE}/Mon/SNMP.pm
+man/man3p/Mon::Client.3p
+man/man3p/Mon::Protocol.3p
+man/man3p/Mon::SNMP.3p
+@dirrm ${P5SITE}/Mon
