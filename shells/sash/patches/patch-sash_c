@@ -1,0 +1,12 @@
+$OpenBSD: patch-sash_c,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
+--- sash.c.orig	Sat Sep 25 00:03:29 1999
++++ sash.c	Fri Jul  6 09:21:42 2001
+@@ -312,7 +312,7 @@ static const CommandEntry	commandEntryTa
+ 	{
+ 		"-umount",	do_umount,	2,	2,
+ 		"Unmount a filesystem",
+-		"fileName"
++		"[-f] fileName"
+ 	},
+ 
+ 	{

@@ -1,0 +1,26 @@
+$OpenBSD: patch-sash_1,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
+--- sash.1.orig	Sat Oct  2 06:16:45 1999
++++ sash.1	Fri Jul  6 09:21:42 2001
+@@ -359,9 +359,10 @@ LINES and COLS can be used to set the pa
+ .TP
+ .B -mount [-t type] [-r] [-m] devName dirName
+ Mount a filesystem on a directory name.  The -t option specifies the
+-type of filesystem being mounted, and defaults to "ext2".
++type of filesystem being mounted, and defaults to "ffs".
+ The -r option indicates to mount the filesystem read-only.
+-The -m option indicates to remount an already mounted filesystem.
++The -s option indicates to mount the filesystem with nosuid.
++The -e option indicates to mount the filesystem with noexec.
+ .TP
+ .B -mv srcName ... destName
+ Moves one or more files from the
+@@ -443,7 +444,8 @@ current umask value is printed.  The mas
+ .B -umount fileName
+ Unmounts a file system.  The file name can either be the device name
+ which is mounted, or else the directory name which the file system
+-is mounted onto.
++is mounted onto. The -f option unmounts the filesystem even if it is
++being used.
+ .TP
+ .B unalias name
+ Remove the definition for the specified alias.

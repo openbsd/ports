@@ -1,0 +1,11 @@
+$OpenBSD: patch-sash_h,v 1.1.1.1 2001/07/06 13:33:48 lebel Exp $
+--- sash.h.orig	Sat Sep 25 00:03:29 1999
++++ sash.h	Fri Jul  6 09:21:42 2001
+@@ -16,7 +16,6 @@
+ #include <fcntl.h>
+ #include <string.h>
+ #include <memory.h>
+-#include <malloc.h>
+ #include <time.h>
+ #include <ctype.h>
+ 
