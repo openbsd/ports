@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2002/02/02 03:19:01 naddy Exp $
+$OpenBSD: patch-configure,v 1.7 2002/03/10 15:20:05 naddy Exp $
 --- configure.orig	Tue Jan 29 20:08:49 2002
-+++ configure	Sat Feb  2 03:40:55 2002
++++ configure	Sun Mar 10 14:58:23 2002
 @@ -980,6 +980,7 @@ Linux|linux|LINUX)
   ;;
  esac
@@ -17,3 +17,20 @@ $OpenBSD: patch-configure,v 1.6 2002/02/02 03:19:01 naddy Exp $
  
  case $sysname in
    linux|Linux|LINUX|aix|Aix|AIX)
+@@ -1733,6 +1735,7 @@ if $cc $cflags -o _zmachdep _zmachdep.c 
+ then
+   echo "You have setpgrp()."
+   def_have_setpgrp='#define HAVE_SETPGRP'
++  def_setpgrp='#define SETPGRP() setpgrp()'
+ else
+   cat > _zmachdep.c << EOF
+ #include <unistd.h>
+@@ -1746,7 +1749,7 @@ EOF
+   then
+     echo "You have setpgrp( pid, pgrp )."
+     def_have_setpgrp='#define HAVE_SETPGRP'
+-    def_setpgrp='#define setpgrp() setpgrp( 0, 0 )'
++    def_setpgrp='#define SETPGRP() setpgrp( 0, 0 )'
+   else
+     def_have_setpgrp=''
+   fi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2002/03/10 07:44:43 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2002/03/10 15:20:05 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc m68k powerpc
 
@@ -47,6 +47,8 @@ DOCS=	FAQ.html HISTORY MANUAL.html \
 	keymap.default keymap.lynx menu.default menu.submenu
 
 PATCH_LIST=	patch-configure \
+		patch-etc_c \
+		patch-search_c \
 		patch-gc_include_private_gcconfig_h \
 		patch-gc_dyn_load_c
 
@@ -55,6 +57,7 @@ PATCH_LIST=	patch-configure \
 PATCHFILES=	w3m-0.2.5-img-2.2.patch.gz:1
 PATCH_DIST_STRIP= -p1
 .  endif
+PATCH_LIST+=	patch-image_c
 LIB_DEPENDS=	Imlib.19::graphics/imlib
 CONFIGURE_ENV+=	use_image=y
 DOCS+=		README.img

@@ -1,0 +1,12 @@
+$OpenBSD: patch-image_c,v 1.1 2002/03/10 15:20:05 naddy Exp $
+--- image.c.orig	Wed Mar  6 00:54:59 2002
++++ image.c	Wed Mar  6 00:55:33 2002
+@@ -106,7 +106,7 @@ openImgdisplay()
+ 	reset_signals();
+ 	signal(SIGINT, SIG_IGN);
+ #ifdef HAVE_SETPGRP
+-	setpgrp();
++	SETPGRP();
+ #endif
+ 	close_tty();
+ 	close(fdr[0]);
