@@ -3,11 +3,12 @@
 # Date created:		3 Febuary 1998
 # Whom:			Don Schmidt
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/02/05 17:17:21 don Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/13 03:35:20 marc Exp $
 #
 
 DISTNAME=       STk-3.1
 CATEGORIES=	lang
+NO_CDROM=	"NOFEE:	Can not sell"
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
 MAINTAINER=	don@openBSD.ORG
