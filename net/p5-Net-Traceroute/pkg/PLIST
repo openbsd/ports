@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/20 13:12:00 heko Exp $
+libdata/perl5/site_perl/Net/Traceroute.pm
+man/man3/Net::Traceroute.3p
