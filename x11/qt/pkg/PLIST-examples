@@ -1,0 +1,432 @@
+@comment $OpenBSD: PLIST-examples,v 1.1 2000/06/23 09:45:14 brad Exp $
+@pkgdep qt-1.45
+lib/qt/examples/bin/aclock
+lib/qt/examples/bin/application
+lib/qt/examples/bin/biff
+lib/qt/examples/bin/connect
+lib/qt/examples/bin/cursor
+lib/qt/examples/bin/dclock
+lib/qt/examples/bin/desktop
+lib/qt/examples/bin/dirview
+lib/qt/examples/bin/dragdrop
+lib/qt/examples/bin/drawdemo
+lib/qt/examples/bin/forever
+lib/qt/examples/bin/hello
+lib/qt/examples/bin/layout
+lib/qt/examples/bin/life
+lib/qt/examples/bin/menu
+lib/qt/examples/bin/movies
+lib/qt/examples/bin/pref
+lib/qt/examples/bin/progress
+lib/qt/examples/bin/qdir
+lib/qt/examples/bin/qmag
+lib/qt/examples/bin/qwerty
+lib/qt/examples/bin/scrollview
+lib/qt/examples/bin/showimg
+lib/qt/examples/bin/splitter
+lib/qt/examples/bin/table
+lib/qt/examples/bin/tetrix
+lib/qt/examples/bin/tictac
+lib/qt/examples/bin/timestmp
+lib/qt/examples/bin/tooltip
+lib/qt/examples/bin/validator
+lib/qt/examples/bin/widgets
+lib/qt/examples/bin/xform
+lib/qt/examples/src/examples.pro
+lib/qt/examples/src/examples.t
+lib/qt/examples/src/README
+lib/qt/examples/src/Makefile.in
+lib/qt/examples/src/Makefile
+lib/qt/examples/src/picture/Makefile
+lib/qt/examples/src/picture/README
+lib/qt/examples/src/picture/car_orig.pic
+lib/qt/examples/src/picture/Makefile.in
+lib/qt/examples/src/picture/picture.cpp
+lib/qt/examples/src/picture/picture.pro
+lib/qt/examples/src/picture/picture.t
+lib/qt/examples/src/picture/flag.bmp
+lib/qt/examples/src/widgets/Makefile
+lib/qt/examples/src/widgets/README
+lib/qt/examples/src/widgets/qt.bmp
+lib/qt/examples/src/widgets/Makefile.in
+lib/qt/examples/src/widgets/trolltech.gif
+lib/qt/examples/src/widgets/widgets.cpp
+lib/qt/examples/src/widgets/widgets.pro
+lib/qt/examples/src/widgets/trolltech.bmp
+lib/qt/examples/src/validator/Makefile
+lib/qt/examples/src/validator/main.cpp
+lib/qt/examples/src/validator/motor.cpp
+lib/qt/examples/src/validator/Makefile.in
+lib/qt/examples/src/validator/validator.pro
+lib/qt/examples/src/validator/vw.cpp
+lib/qt/examples/src/validator/vw.h
+lib/qt/examples/src/validator/motor.h
+lib/qt/examples/src/tooltip/tooltip.cpp
+lib/qt/examples/src/tooltip/README
+lib/qt/examples/src/tooltip/main.cpp
+lib/qt/examples/src/tooltip/Makefile.in
+lib/qt/examples/src/tooltip/tooltip.h
+lib/qt/examples/src/tooltip/tooltip.pro
+lib/qt/examples/src/tooltip/Makefile
+lib/qt/examples/src/timestmp/Makefile.in
+lib/qt/examples/src/timestmp/README
+lib/qt/examples/src/timestmp/timestmp.cpp
+lib/qt/examples/src/timestmp/timestmp.pro
+lib/qt/examples/src/timestmp/Makefile
+lib/qt/examples/src/tictac/tictac.cpp
+lib/qt/examples/src/tictac/README
+lib/qt/examples/src/tictac/main.cpp
+lib/qt/examples/src/tictac/Makefile.in
+lib/qt/examples/src/tictac/tictac.h
+lib/qt/examples/src/tictac/tictac.pro
+lib/qt/examples/src/tictac/Makefile
+lib/qt/examples/src/tetrix/Makefile
+lib/qt/examples/src/tetrix/README
+lib/qt/examples/src/tetrix/gtetrix.cpp
+lib/qt/examples/src/tetrix/gtetrix.h
+lib/qt/examples/src/tetrix/qdragapp.cpp
+lib/qt/examples/src/tetrix/qdragapp.h
+lib/qt/examples/src/tetrix/qtetrix.cpp
+lib/qt/examples/src/tetrix/qtetrix.h
+lib/qt/examples/src/tetrix/qtetrixb.cpp
+lib/qt/examples/src/tetrix/qtetrixb.h
+lib/qt/examples/src/tetrix/tetrix.cpp
+lib/qt/examples/src/tetrix/tetrix.pro
+lib/qt/examples/src/tetrix/tpiece.cpp
+lib/qt/examples/src/tetrix/Makefile.in
+lib/qt/examples/src/tetrix/tpiece.h
+lib/qt/examples/src/table/table.cpp
+lib/qt/examples/src/table/README
+lib/qt/examples/src/table/main.cpp
+lib/qt/examples/src/table/Makefile.in
+lib/qt/examples/src/table/table.h
+lib/qt/examples/src/table/table.pro
+lib/qt/examples/src/table/Makefile
+lib/qt/examples/src/splitter/Makefile.in
+lib/qt/examples/src/splitter/splitter.cpp
+lib/qt/examples/src/splitter/splitter.pro
+lib/qt/examples/src/splitter/Makefile
+lib/qt/examples/src/showimg/showimg.cpp
+lib/qt/examples/src/showimg/README
+lib/qt/examples/src/showimg/main.cpp
+lib/qt/examples/src/showimg/Makefile.in
+lib/qt/examples/src/showimg/showimg.h
+lib/qt/examples/src/showimg/showimg.pro
+lib/qt/examples/src/showimg/Makefile
+lib/qt/examples/src/scrollview/Makefile.in
+lib/qt/examples/src/scrollview/README
+lib/qt/examples/src/scrollview/bg.ppm
+lib/qt/examples/src/scrollview/scrollview.cpp
+lib/qt/examples/src/scrollview/scrollview.pro
+lib/qt/examples/src/scrollview/Makefile
+lib/qt/examples/src/qwerty/Makefile.in
+lib/qt/examples/src/qwerty/main.cpp
+lib/qt/examples/src/qwerty/qwerty.cpp
+lib/qt/examples/src/qwerty/qwerty.h
+lib/qt/examples/src/qwerty/qwerty.pro
+lib/qt/examples/src/qwerty/Makefile
+lib/qt/examples/src/qmag/Makefile.in
+lib/qt/examples/src/qmag/README
+lib/qt/examples/src/qmag/qmag.cpp
+lib/qt/examples/src/qmag/qmag.pro
+lib/qt/examples/src/qmag/Makefile
+lib/qt/examples/src/qdir/Makefile.in
+lib/qt/examples/src/qdir/qdir.cpp
+lib/qt/examples/src/qdir/qdir.pro
+lib/qt/examples/src/qdir/Makefile
+lib/qt/examples/src/progress/Makefile.in
+lib/qt/examples/src/progress/README
+lib/qt/examples/src/progress/progress.cpp
+lib/qt/examples/src/progress/progress.pro
+lib/qt/examples/src/progress/Makefile
+lib/qt/examples/src/pref/Makefile.in
+lib/qt/examples/src/pref/main.cpp
+lib/qt/examples/src/pref/pref.cpp
+lib/qt/examples/src/pref/pref.h
+lib/qt/examples/src/pref/pref.pro
+lib/qt/examples/src/pref/Makefile
+lib/qt/examples/src/biff/biff.pro
+lib/qt/examples/src/biff/biff.cpp
+lib/qt/examples/src/biff/biff.h
+lib/qt/examples/src/biff/Makefile.in
+lib/qt/examples/src/biff/bmp.cpp
+lib/qt/examples/src/biff/main.cpp
+lib/qt/examples/src/biff/Makefile
+lib/qt/examples/src/movies/Makefile.in
+lib/qt/examples/src/movies/README
+lib/qt/examples/src/movies/main.cpp
+lib/qt/examples/src/movies/movies.pro
+lib/qt/examples/src/movies/trolltech.gif
+lib/qt/examples/src/movies/Makefile
+lib/qt/examples/src/menu/Makefile.in
+lib/qt/examples/src/menu/menu.cpp
+lib/qt/examples/src/menu/menu.h
+lib/qt/examples/src/menu/menu.pro
+lib/qt/examples/src/menu/Makefile
+lib/qt/examples/src/xform/image.any
+lib/qt/examples/src/xform/README
+lib/qt/examples/src/xform/aticatac.cpp
+lib/qt/examples/src/xform/Makefile.in
+lib/qt/examples/src/xform/xform.cpp
+lib/qt/examples/src/xform/xform.pro
+lib/qt/examples/src/xform/Makefile
+lib/qt/examples/src/layouts/Makefile
+lib/qt/examples/src/layouts/README
+lib/qt/examples/src/layouts/Makefile.in
+lib/qt/examples/src/layouts/layouts.pro
+lib/qt/examples/src/layouts/qtbuttonrow.cpp
+lib/qt/examples/src/layouts/qtbuttonrow.h
+lib/qt/examples/src/layouts/qtgrid.cpp
+lib/qt/examples/src/layouts/qtgrid.h
+lib/qt/examples/src/layouts/qthbox.cpp
+lib/qt/examples/src/layouts/qthbox.h
+lib/qt/examples/src/layouts/qtlabelled.cpp
+lib/qt/examples/src/layouts/qtlabelled.h
+lib/qt/examples/src/layouts/qtvbox.cpp
+lib/qt/examples/src/layouts/layouts.cpp
+lib/qt/examples/src/layouts/qtvbox.h
+lib/qt/examples/src/layout/Makefile.in
+lib/qt/examples/src/layout/layout.cpp
+lib/qt/examples/src/layout/layout.pro
+lib/qt/examples/src/layout/Makefile
+lib/qt/examples/src/hello/hello.h
+lib/qt/examples/src/hello/README
+lib/qt/examples/src/hello/hello.cpp
+lib/qt/examples/src/hello/Makefile.in
+lib/qt/examples/src/hello/hello.pro
+lib/qt/examples/src/hello/main.cpp
+lib/qt/examples/src/hello/Makefile
+lib/qt/examples/src/forever/Makefile.in
+lib/qt/examples/src/forever/README
+lib/qt/examples/src/forever/forever.cpp
+lib/qt/examples/src/forever/forever.pro
+lib/qt/examples/src/forever/Makefile
+lib/qt/examples/src/aclock/aclock.h
+lib/qt/examples/src/aclock/README
+lib/qt/examples/src/aclock/aclock.cpp
+lib/qt/examples/src/aclock/Makefile.in
+lib/qt/examples/src/aclock/aclock.pro
+lib/qt/examples/src/aclock/main.cpp
+lib/qt/examples/src/aclock/Makefile
+lib/qt/examples/src/application/Makefile
+lib/qt/examples/src/application/application.cpp
+lib/qt/examples/src/application/application.h
+lib/qt/examples/src/application/application.pro
+lib/qt/examples/src/application/fileopen.xpm
+lib/qt/examples/src/application/fileprint.xpm
+lib/qt/examples/src/application/filesave.xpm
+lib/qt/examples/src/application/Makefile.in
+lib/qt/examples/src/application/main.cpp
+lib/qt/examples/src/drawdemo/Makefile.in
+lib/qt/examples/src/drawdemo/README
+lib/qt/examples/src/drawdemo/drawdemo.cpp
+lib/qt/examples/src/drawdemo/drawdemo.pro
+lib/qt/examples/src/drawdemo/Makefile
+lib/qt/examples/src/dragdrop/Makefile
+lib/qt/examples/src/dragdrop/dragdrop.pro
+lib/qt/examples/src/dragdrop/dropsite.cpp
+lib/qt/examples/src/dragdrop/Makefile.in
+lib/qt/examples/src/dragdrop/main.cpp
+lib/qt/examples/src/dragdrop/secret.cpp
+lib/qt/examples/src/dragdrop/secret.h
+lib/qt/examples/src/dragdrop/dropsite.h
+lib/qt/examples/src/dirview/Makefile.in
+lib/qt/examples/src/dirview/dirview.cpp
+lib/qt/examples/src/dirview/dirview.h
+lib/qt/examples/src/dirview/dirview.pro
+lib/qt/examples/src/dirview/main.cpp
+lib/qt/examples/src/dirview/Makefile
+lib/qt/examples/src/desktop/Makefile.in
+lib/qt/examples/src/desktop/README
+lib/qt/examples/src/desktop/desktop.cpp
+lib/qt/examples/src/desktop/desktop.pro
+lib/qt/examples/src/desktop/Makefile
+lib/qt/examples/src/dclock/dclock.h
+lib/qt/examples/src/dclock/README
+lib/qt/examples/src/dclock/dclock.cpp
+lib/qt/examples/src/dclock/Makefile.in
+lib/qt/examples/src/dclock/dclock.pro
+lib/qt/examples/src/dclock/main.cpp
+lib/qt/examples/src/dclock/Makefile
+lib/qt/examples/src/cursor/Makefile.in
+lib/qt/examples/src/cursor/README
+lib/qt/examples/src/cursor/cursor.cpp
+lib/qt/examples/src/cursor/cursor.pro
+lib/qt/examples/src/cursor/Makefile
+lib/qt/examples/src/connect/Makefile.in
+lib/qt/examples/src/connect/README
+lib/qt/examples/src/connect/connect.cpp
+lib/qt/examples/src/connect/connect.pro
+lib/qt/examples/src/connect/Makefile
+lib/qt/examples/src/life/Makefile
+lib/qt/examples/src/life/life.cpp
+lib/qt/examples/src/life/life.h
+lib/qt/examples/src/life/life.pro
+lib/qt/examples/src/life/lifedlg.cpp
+lib/qt/examples/src/life/lifedlg.h
+lib/qt/examples/src/life/main.cpp
+lib/qt/examples/src/life/Makefile.in
+lib/qt/examples/src/life/patterns.cpp
+lib/qt/tutorial/bin/t1
+lib/qt/tutorial/bin/t10
+lib/qt/tutorial/bin/t11
+lib/qt/tutorial/bin/t12
+lib/qt/tutorial/bin/t13
+lib/qt/tutorial/bin/t14
+lib/qt/tutorial/bin/t2
+lib/qt/tutorial/bin/t3
+lib/qt/tutorial/bin/t4
+lib/qt/tutorial/bin/t5
+lib/qt/tutorial/bin/t6
+lib/qt/tutorial/bin/t7
+lib/qt/tutorial/bin/t8
+lib/qt/tutorial/bin/t9
+lib/qt/tutorial/src/Makefile
+lib/qt/tutorial/src/tutorial.pro
+lib/qt/tutorial/src/README
+lib/qt/tutorial/src/Makefile.in
+lib/qt/tutorial/src/tutorial.t
+lib/qt/tutorial/src/t1/Makefile.in
+lib/qt/tutorial/src/t1/main.cpp
+lib/qt/tutorial/src/t1/t1.pro
+lib/qt/tutorial/src/t1/Makefile
+lib/qt/tutorial/src/t2/Makefile.in
+lib/qt/tutorial/src/t2/main.cpp
+lib/qt/tutorial/src/t2/t2.pro
+lib/qt/tutorial/src/t2/Makefile
+lib/qt/tutorial/src/t3/Makefile.in
+lib/qt/tutorial/src/t3/main.cpp
+lib/qt/tutorial/src/t3/t3.pro
+lib/qt/tutorial/src/t3/Makefile
+lib/qt/tutorial/src/t4/Makefile.in
+lib/qt/tutorial/src/t4/main.cpp
+lib/qt/tutorial/src/t4/t4.pro
+lib/qt/tutorial/src/t4/Makefile
+lib/qt/tutorial/src/t5/Makefile.in
+lib/qt/tutorial/src/t5/main.cpp
+lib/qt/tutorial/src/t5/t5.pro
+lib/qt/tutorial/src/t5/Makefile
+lib/qt/tutorial/src/t6/Makefile.in
+lib/qt/tutorial/src/t6/main.cpp
+lib/qt/tutorial/src/t6/t6.pro
+lib/qt/tutorial/src/t6/Makefile
+lib/qt/tutorial/src/t7/Makefile.in
+lib/qt/tutorial/src/t7/lcdrange.cpp
+lib/qt/tutorial/src/t7/lcdrange.h
+lib/qt/tutorial/src/t7/main.cpp
+lib/qt/tutorial/src/t7/t7.pro
+lib/qt/tutorial/src/t7/Makefile
+lib/qt/tutorial/src/t8/Makefile
+lib/qt/tutorial/src/t8/cannon.cpp
+lib/qt/tutorial/src/t8/cannon.h
+lib/qt/tutorial/src/t8/Makefile.in
+lib/qt/tutorial/src/t8/lcdrange.h
+lib/qt/tutorial/src/t8/main.cpp
+lib/qt/tutorial/src/t8/t8.pro
+lib/qt/tutorial/src/t8/lcdrange.cpp
+lib/qt/tutorial/src/t9/Makefile
+lib/qt/tutorial/src/t9/cannon.cpp
+lib/qt/tutorial/src/t9/cannon.h
+lib/qt/tutorial/src/t9/Makefile.in
+lib/qt/tutorial/src/t9/lcdrange.h
+lib/qt/tutorial/src/t9/main.cpp
+lib/qt/tutorial/src/t9/t9.pro
+lib/qt/tutorial/src/t9/lcdrange.cpp
+lib/qt/tutorial/src/t10/Makefile
+lib/qt/tutorial/src/t10/cannon.cpp
+lib/qt/tutorial/src/t10/cannon.h
+lib/qt/tutorial/src/t10/Makefile.in
+lib/qt/tutorial/src/t10/lcdrange.h
+lib/qt/tutorial/src/t10/main.cpp
+lib/qt/tutorial/src/t10/t10.pro
+lib/qt/tutorial/src/t10/lcdrange.cpp
+lib/qt/tutorial/src/t11/Makefile
+lib/qt/tutorial/src/t11/cannon.cpp
+lib/qt/tutorial/src/t11/cannon.h
+lib/qt/tutorial/src/t11/Makefile.in
+lib/qt/tutorial/src/t11/lcdrange.h
+lib/qt/tutorial/src/t11/main.cpp
+lib/qt/tutorial/src/t11/t11.pro
+lib/qt/tutorial/src/t11/lcdrange.cpp
+lib/qt/tutorial/src/t12/Makefile
+lib/qt/tutorial/src/t12/cannon.cpp
+lib/qt/tutorial/src/t12/cannon.h
+lib/qt/tutorial/src/t12/Makefile.in
+lib/qt/tutorial/src/t12/lcdrange.h
+lib/qt/tutorial/src/t12/main.cpp
+lib/qt/tutorial/src/t12/t12.pro
+lib/qt/tutorial/src/t12/lcdrange.cpp
+lib/qt/tutorial/src/t13/Makefile
+lib/qt/tutorial/src/t13/cannon.cpp
+lib/qt/tutorial/src/t13/cannon.h
+lib/qt/tutorial/src/t13/gamebrd.cpp
+lib/qt/tutorial/src/t13/gamebrd.h
+lib/qt/tutorial/src/t13/lcdrange.cpp
+lib/qt/tutorial/src/t13/lcdrange.h
+lib/qt/tutorial/src/t13/main.cpp
+lib/qt/tutorial/src/t13/Makefile.in
+lib/qt/tutorial/src/t13/t13.pro
+lib/qt/tutorial/src/t14/Makefile
+lib/qt/tutorial/src/t14/cannon.cpp
+lib/qt/tutorial/src/t14/cannon.h
+lib/qt/tutorial/src/t14/gamebrd.cpp
+lib/qt/tutorial/src/t14/gamebrd.h
+lib/qt/tutorial/src/t14/lcdrange.cpp
+lib/qt/tutorial/src/t14/lcdrange.h
+lib/qt/tutorial/src/t14/main.cpp
+lib/qt/tutorial/src/t14/Makefile.in
+lib/qt/tutorial/src/t14/t14.pro
+@dirrm lib/qt/examples/bin
+@dirrm lib/qt/examples/src/aclock
+@dirrm lib/qt/examples/src/application
+@dirrm lib/qt/examples/src/biff
+@dirrm lib/qt/examples/src/connect
+@dirrm lib/qt/examples/src/cursor
+@dirrm lib/qt/examples/src/dclock
+@dirrm lib/qt/examples/src/desktop
+@dirrm lib/qt/examples/src/dirview
+@dirrm lib/qt/examples/src/dragdrop
+@dirrm lib/qt/examples/src/drawdemo
+@dirrm lib/qt/examples/src/forever
+@dirrm lib/qt/examples/src/hello
+@dirrm lib/qt/examples/src/layout
+@dirrm lib/qt/examples/src/layouts
+@dirrm lib/qt/examples/src/life
+@dirrm lib/qt/examples/src/menu
+@dirrm lib/qt/examples/src/movies
+@dirrm lib/qt/examples/src/picture
+@dirrm lib/qt/examples/src/pref
+@dirrm lib/qt/examples/src/progress
+@dirrm lib/qt/examples/src/qdir
+@dirrm lib/qt/examples/src/qmag
+@dirrm lib/qt/examples/src/qwerty
+@dirrm lib/qt/examples/src/scrollview
+@dirrm lib/qt/examples/src/showimg
+@dirrm lib/qt/examples/src/splitter
+@dirrm lib/qt/examples/src/table
+@dirrm lib/qt/examples/src/tetrix
+@dirrm lib/qt/examples/src/tictac
+@dirrm lib/qt/examples/src/timestmp
+@dirrm lib/qt/examples/src/tooltip
+@dirrm lib/qt/examples/src/validator
+@dirrm lib/qt/examples/src/widgets
+@dirrm lib/qt/examples/src/xform
+@dirrm lib/qt/examples/src
+@dirrm lib/qt/examples
+@dirrm lib/qt/tutorial/bin
+@dirrm lib/qt/tutorial/src/t1
+@dirrm lib/qt/tutorial/src/t2
+@dirrm lib/qt/tutorial/src/t3
+@dirrm lib/qt/tutorial/src/t4
+@dirrm lib/qt/tutorial/src/t5
+@dirrm lib/qt/tutorial/src/t6
+@dirrm lib/qt/tutorial/src/t7
+@dirrm lib/qt/tutorial/src/t8
+@dirrm lib/qt/tutorial/src/t9
+@dirrm lib/qt/tutorial/src/t10
+@dirrm lib/qt/tutorial/src/t11
+@dirrm lib/qt/tutorial/src/t12
+@dirrm lib/qt/tutorial/src/t13
+@dirrm lib/qt/tutorial/src/t14
+@dirrm lib/qt/tutorial/src
+@dirrm lib/qt/tutorial
