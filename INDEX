@@ -278,7 +278,7 @@ cvsweb-2.0.6|devel/cvsweb|/var/www|WWW CGI script to browse CVS repository trees
 ddd-3.3|devel/ddd||Data Display Debugger, graphical front-end for GDB, etc|devel/ddd/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|devel|Xm.2::x11/openmotif|:devel/gmake||any|y|y|y|y
 dejagnu-1.4.3|devel/dejagnu||framework to test programs|devel/dejagnu/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|devel|tk83.1.3::x11/tk/8.3||:lang/expect|any|y|y|y|y
 doc++-3.4.9|devel/doc++||documentation system for C, C++, IDL and Java|devel/doc++/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|devel|iconv.2::converters/libiconv intl.1:gettext->=0.10.38:devel/gettext|:devel/gmake gettext->=0.10.38:devel/gettext|gettext->=0.10.38:devel/gettext ghostscript-*:print/ghostscript/gnu teTeX_base-*:print/teTeX/base|any|y|y|y|y
-ectags-5.2.3|devel/ectags||multilanguage implementation of ctags|devel/ectags/pkg/DESCR|Jesper Louis Andersen <jlouis@jlouis.dk>|devel||||any|y|y|y|y
+ectags-5.2.3|devel/ectags||multilanguage implementation of ctags|devel/ectags/pkg/DESCR|Jesper Louis Andersen <jlouis@mongers.org>|devel||||any|y|y|y|y
 ffcall-1.8|devel/ffcall||foreign function call libraries|devel/ffcall/pkg/DESCR|Christian Edward Gruber <cgruber@israfil.net>|devel||:devel/libtool||any|y|y|y|y
 flawfinder-1.21|devel/flawfinder||c/c++ source code auditing tool|devel/flawfinder/pkg/DESCR|Jason Peel <jsyn@openbsd.org>|devel security|||python-2.2*:lang/python/2.2|any|y|y|y|y
 gal-0.22|devel/gal||GNOME Application Libs|devel/gal/pkg/DESCR|Marc Matteo <marcm@openbsd.org>|devel x11/gnome|glib.1.2,gmodule.1.2::devel/glib gtk.1.2,gdk.1.2::x11/gtk+ iconv.2::converters/libiconv intl.1:gettext->=0.10.38:devel/gettext|bzip2-*:archivers/bzip2 gettext->=0.10.38:devel/gettext gnome-libs->1.4:x11/gnome/libs gnome-print->=0.25:x11/gnome/print libglade->=0.13:devel/libglade,gnome libxml1->=1.8.8:textproc/libxml1|gettext->=0.10.38:devel/gettext|any|y|y|y|y
@@ -737,7 +737,7 @@ Wnn-xwnmo-4.2|japanese/Wnn,-xwnmo||X11 input method for Wnn|japanese/Wnn/pkg/DES
 Wnn-data-4.2|japanese/Wnn,-data||common files to all languages of Wnn|japanese/Wnn/pkg/DESCR-data|Marc Espie <espie@openbsd.org>|japanese chinese korean||ja-groff-*:japanese/groff||any|y|y|y|y
 cannalib-3.5b2p1|japanese/canna||canna (kana-kanji converter) libraries|japanese/canna/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese||ja-groff-*:japanese/groff||any|n|y|n|y
 cannadict-3.5b2|japanese/canna,-dict|/var/dict|canna (kana-kanji converter) dictionaries|japanese/canna/pkg/DESCR-dict|Marc Espie <espie@openbsd.org>|japanese||ja-groff-*:japanese/groff||any|n|y|n|y
-cannaserver-3.5b2|japanese/canna,-server||canna (kana-kanji converter) server|japanese/canna/pkg/DESCR-server|Marc Espie <espie@openbsd.org>|japanese||ja-groff-*:japanese/groff||any|n|y|n|y
+cannaserver-3.5b2p1|japanese/canna,-server||canna (kana-kanji converter) server|japanese/canna/pkg/DESCR-server|Marc Espie <espie@openbsd.org>|japanese||ja-groff-*:japanese/groff||any|n|y|n|y
 ja-fonts-funet-19911117|japanese/funetfonts||extra japanese fonts, marumoji|japanese/funetfonts/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese x11||||any|n|y|n|y
 ja-groff-1.10_0.99|japanese/groff||japanese groff|japanese/groff/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese textproc print||||any|y|y|y|y
 ja-fonts-gnu-1.2|japanese/intlfonts||extra japanese fonts|japanese/intlfonts/pkg/DESCR|Marc Espie <espie@openbsd.org>|japanese x11||||any|y|y|y|y
@@ -829,7 +829,7 @@ unicon-10.0beta|lang/unicon||programming language with generators, X11 graphics 
 abook-0.4.17|mail/abook||addressbook program with mutt support|mail/abook/pkg/DESCR|Reinhard J. Sammer <reinhard@openbsd.org>|mail||||any|y|y|y|y
 adcomplain-3.52|mail/adcomplain||complain about SPAM|mail/adcomplain/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail news||||any|y|y|y|y
 asmail-0.56|mail/asmail||biff-type program, designed to match AfterStep|mail/asmail/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|mail|jpeg.62::graphics/jpeg|||any|y|y|y|y
-bmf-0.9.4|mail/bmf||easy to use bayesonian spam filter|mail/bmf/pkg/DESCR|Han Boetes <han@mijncomputer.nl>|mail||||any|y|y|y|y
+bmf-0.9.4|mail/bmf||easy to use Bayesian spam filter|mail/bmf/pkg/DESCR|Han Boetes <han@mijncomputer.nl>|mail||||any|y|y|y|y
 bulk_mailer-1.13|mail/bulk_mailer||speed mail delivery by sorting & batching addresses|mail/bulk_mailer/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail||||any|y|y|y|y
 c-client-4.53|mail/c-client||University of Washington's c-client mail access routines|mail/c-client/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|mail devel||||any|n|y|n|y
 cmail-3.1|mail/cmail||simple mail counter|mail/cmail/pkg/DESCR|Kevin Lo <kevlo@openbsd.org>|mail||bzip2-*:archivers/bzip2||any|y|y|y|y
@@ -1095,15 +1095,15 @@ echoping-5.0.1|net/echoping||test performance of a remote TCP service|net/echopi
 edonkey-16.16.59p1|net/edonkey||file-sharing client (core)|net/edonkey/pkg/DESCR|Sebastian Stark <seb@todesplanet.de>|net||redhat_base->=6.2*:emulators/redhat/base||i386|n|n|n|n
 edonkey-gui-0.1|net/edonkey-gui||gui for edonkey|net/edonkey-gui/pkg/DESCR|Sebastian Stark <seb@todesplanet.de>|net x11||redhat_base->=6.2*:emulators/redhat/base|redhat_base->=6.2*:emulators/redhat/base|i386|n|n|n|n
 epic4-1.0.1|net/epic4||(E)nhanced (P)rogrammable (I)RC-II (C)lient|net/epic4/pkg/DESCR|Brad Smith <brad@openbsd.org>|net||:devel/autoconf/2.13 :devel/metaauto||any|y|y|y|y
-ethereal-0.9.9|net/ethereal||network protocol analyzer|net/ethereal/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net x11|gtk.1.2,gdk.1.2::x11/gtk+|:devel/gmake :devel/libtool||any|y|y|y|y
-ethereal-0.9.9-no_x11|net/ethereal,no_x11||network protocol analyzer|net/ethereal/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net x11|glib.1.2,gmodule.1.2::devel/glib|:devel/gmake :devel/libtool||any|y|y|y|y
+ethereal-0.9.11|net/ethereal||network protocol analyzer|net/ethereal/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net x11|gtk.1.2,gdk.1.2::x11/gtk+|:devel/gmake :devel/libtool||any|y|y|y|y
+ethereal-0.9.11-no_x11|net/ethereal,no_x11||network protocol analyzer|net/ethereal/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net x11|glib.1.2,gmodule.1.2::devel/glib|:devel/gmake :devel/libtool||any|y|y|y|y
 ettercap-0.6.9|net/ettercap||multi-purpose sniffer/interceptor/logger|net/ettercap/pkg/DESCR|Margarida Sequeira <margarida@openbsd.org>|net||||!hppa m88k vax|y|y|y|y
 everybuddy-0.2.1beta6|net/everybuddy||chat program that combines AIM, ICQ, and Yahoo! Chat|net/everybuddy/pkg/DESCR|Josh Rivel <dorqus@bsdfreek.com>|net|esd::audio/esound gtk.1.2,gdk.1.2::x11/gtk+|:devel/gmake||any|y|y|y|y
 firewalk-0.8|net/firewalk||gateway acl scanner (via static-source port traceroute)|net/firewalk/pkg/DESCR|Dug Song <dugsong@monkey.org>|net|net::net/libnet|||any|y|y|n|n
 flow-tools-0.62|net/flow-tools||cisco NetFlow utilities|net/flow-tools/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net||||any|y|y|y|y
 fping-2.2b1|net/fping||quickly ping N hosts w/o flooding the network|net/fping/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net||||any|y|y|y|y
 ftpcopy-0.3.9|net/ftpcopy||FTP listing and transfer tools|net/ftpcopy/pkg/DESCR|The OpenBSD ports mailing-list <ports@openbsd.org>|net||||any|n|n|n|n
-gabber-0.8.7|net/gabber||GNOME jabber client|net/gabber/pkg/DESCR|Alexander Yurchenko <grange@openbsd.org>|net x11/gnome|gal.19::devel/gal gnomemm.9::x11/gnomemm sigc.0::devel/libsigc++|gnupg-*:security/gnupg scrollkeeper->=0.1.4:textproc/scrollkeeper|gnupg-*:security/gnupg scrollkeeper->=0.1.4:textproc/scrollkeeper|any|y|y|y|y
+gabber-0.8.7|net/gabber||GNOME jabber client|net/gabber/pkg/DESCR|Alexander Yurchenko <grange@openbsd.org>|net x11/gnome|gal.19::devel/gal glade.5,glade-gnome.5::devel/libglade,gnome gnomemm.9::x11/gnomemm gnomeprint.16::x11/gnome/print sigc.0::devel/libsigc++|gnupg-*:security/gnupg scrollkeeper->=0.1.4:textproc/scrollkeeper|gnupg-*:security/gnupg scrollkeeper->=0.1.4:textproc/scrollkeeper|any|y|y|y|y
 gaim-0.59.8|net/gaim||Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, and Zephyr client|net/gaim/pkg/DESCR|Joshua Stein <jcs@rt.fm>|net|gdk_pixbuf.2::graphics/gdk-pixbuf gtk.1.2,glib.1.2::x11/gtk+||:textproc/ispell|any|y|y|y|y
 gaim-0.59.8-esd|net/gaim,esd||Gtk AIM, ICQ, IRC, Jabber, MSN, Yahoo, and Zephyr client|net/gaim/pkg/DESCR|Joshua Stein <jcs@rt.fm>|net|esd.2::audio/esound gdk_pixbuf.2::graphics/gdk-pixbuf gtk.1.2,glib.1.2::x11/gtk+||:textproc/ispell|any|y|y|y|y
 gated-3.6|net/gated||routing protocol daemon|net/gated/pkg/DESCR|Jakob Schlyter <jakob@openbsd.org>|net||:devel/autoconf/2.13 :devel/metaauto||any|n|n|n|y
