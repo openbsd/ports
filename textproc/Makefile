@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 1998/05/17 05:03:36 angelos Exp $
+# $OpenBSD: Makefile,v 1.16 1998/05/22 01:32:12 angelos Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -7,19 +7,19 @@
      SUBDIR += docbook
      SUBDIR += glimpse
      SUBDIR += html
-#    SUBDIR += info2html
+     SUBDIR += info2html
      SUBDIR += isearch
      SUBDIR += iso12083
      SUBDIR += iso8879
      SUBDIR += ispell
      SUBDIR += jade
      SUBDIR += linuxdoc
-#    SUBDIR += mgdiff
+     SUBDIR += mgdiff
      SUBDIR += par
      SUBDIR += pilot_makedoc
      SUBDIR += rman
      SUBDIR += sgmlformat
-#    SUBDIR += sp
+     SUBDIR += sp
      SUBDIR += texi2html
 #    SUBDIR += unroff
      SUBDIR += wdiff
