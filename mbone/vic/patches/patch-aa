@@ -225,22 +225,6 @@
   	if (cc < 0) {
   		if (errno != EWOULDBLOCK)
   			perror("recvfrom");
-*** ./grabber-x11.cc.orig	Thu Jul 15 11:52:06 1999
---- ./grabber-x11.cc	Thu Jul 15 11:53:09 1999
-***************
-*** 46,51 ****
---- 46,56 ----
-  #include <X11/Xutil.h>
-  #include <X11/Xatom.h>
-  #include <X11/cursorfont.h>
-+ 
-+ #ifdef USE_SHM
-+ #include <X11/extensions/XShm.h>
-+ #endif
-+ 
-  #include <tk.h>
-  /*** #include "sized_types.h" ***/
-  
 *** ./grabber-meteor.cc.orig	Thu Jul 15 11:53:27 1999
 --- ./grabber-meteor.cc	Thu Jul 15 11:57:22 1999
 ***************

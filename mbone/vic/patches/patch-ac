@@ -1,0 +1,24 @@
+--- grabber-x11.cc.orig	Fri Jun 11 12:34:19 1999
++++ grabber-x11.cc	Thu Jul 29 08:52:40 1999
+@@ -46,6 +46,11 @@
+ #include <X11/Xutil.h>
+ #include <X11/Xatom.h>
+ #include <X11/cursorfont.h>
++
++#ifdef USE_SHM
++#include <X11/extensions/XShm.h>
++#endif
++
+ #include <tk.h>
+ /*** #include "sized_types.h" ***/
+ 
+@@ -454,7 +459,9 @@
+     uint8 *vp= up + (framesize_ >> 2) ;
+     uint16 *data=(uint16 *)ximage_->image->data, p0, p1, p2, p3;
+ 
++#if 0
+     printf("R: %d, G: %d, B: %d;\n", ximage_->image->red_mask, ximage_->image->green_mask, ximage_->image->blue_mask);
++#endif
+ 
+     for (y=0; y<height_; y+=2) {
+         for (x=0; x<width_; x += 2) {
