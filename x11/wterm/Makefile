@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 23:28:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/04/03 20:38:32 espie Exp $
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
@@ -23,6 +23,7 @@ CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
 		--enable-xgetdefault
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+FAKE=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/wterm ${PREFIX}/bin
