@@ -1,5 +1,6 @@
---- src/sound.c.orig	Thu Jan  6 00:23:56 2000
-+++ src/sound.c	Sun Jul 15 12:52:17 2001
+$OpenBSD: patch-src-sound_c,v 1.2 2002/02/25 13:05:40 naddy Exp $
+--- src/sound.c.orig	Thu Jan  6 07:23:56 2000
++++ src/sound.c	Mon Feb 25 02:03:05 2002
 @@ -5,7 +5,7 @@
  #include <unistd.h>
  #include <fcntl.h>
@@ -18,3 +19,25 @@
  
  char dirlist[512];
  
+@@ -126,9 +126,10 @@ doall()
+ {
+ unsigned char clip[8192];
+ int i,j;
+-char commands[64],commandlen,com;
+-char *p;
++signed char commands[64];
++signed char *p;
+ int *ip;
++int com, commandlen;
+ int playing[MIXMAX],position[MIXMAX];
+ int which;
+ 
+@@ -207,7 +208,7 @@ int which;
+ 
+ void playsound(int n)
+ {
+-char c;
++signed char c;
+ 	c=n;
+ 	write(soundwrite,&c,1);
+ }
