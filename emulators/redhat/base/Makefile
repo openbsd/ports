@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/01/11 04:32:57 ish Exp $
+# $OpenBSD: Makefile,v 1.14 2003/03/18 06:04:00 ish Exp $
 
 COMMENT=	"Linux compatibility package based on RedHat 6.2"
 
@@ -33,7 +33,7 @@ RPMS=		ldconfig-1.9.5-16.i386.rpm \
 		ld.so-1.9.5-13.i386.rpm \
 		libc-5.3.12-31.i386.rpm \
 		libjpeg-6b-10.i386.rpm \
-		libpng-1.0.14-0.6x.3.i386.rpm:0
+		libpng-1.0.14-0.6x.4.i386.rpm:0
 
 REMOVE_DIRS=	/usr/doc /usr/info /usr/man /usr/share/zoneinfo
 REMOVE_FILES=	/etc/localtime
