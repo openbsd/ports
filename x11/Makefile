@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2003/02/24 23:23:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.162 2003/04/15 02:59:22 brad Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -86,7 +86,7 @@
 #    SUBDIR += mlvwm
      SUBDIR += mouseclock
      SUBDIR += mplayer
-     SUBDIR += mplayer,win32,sdl,faad
+     SUBDIR += mplayer,sdl,faad
      SUBDIR += mplayer,no_x11
      SUBDIR += mplayer-fontmaker
      SUBDIR += mplayer-fonts,luxi-sans
