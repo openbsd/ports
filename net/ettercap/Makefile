@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2002/12/09 15:37:24 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2002/12/22 01:24:49 margarida Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -7,11 +7,13 @@ COMMENT=	"multi-purpose sniffer/interceptor/logger"
 VER=		0.6.7
 DISTNAME=	ettercap-${VER}
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 
 HOMEPAGE=	http://ettercap.sourceforge.net/
 
-MAINTAINER=	Mark Grimes <mark@stateful.net>
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/} \
+		${MASTER_SITE_PACKETSTORM:=sniffers/ettercap/}
+
+MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
