@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/02/25 16:41:51 lebel Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2003/01/03 15:13:31 lebel Exp $
+lib/irssi/modules/libfe_icb.so
+lib/irssi/modules/libicb_core.so
 share/doc/irssi/icb-plugin.txt

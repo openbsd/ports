@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/02/24 03:42:03 lebel Exp $
-lib/irssi/modules/libfe_icb.so
-lib/irssi/modules/libicb_core.so
