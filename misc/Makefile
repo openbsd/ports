@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2000/09/26 19:34:44 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2000/11/23 02:22:31 kevlo Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -28,6 +28,7 @@
 #    SUBDIR += git
      SUBDIR += gnuls
 #    SUBDIR += ical
+     SUBDIR += impress
      SUBDIR += jive
 #    SUBDIR += kdeutils
 #    SUBDIR += kp
