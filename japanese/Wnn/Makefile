@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.42 2002/10/27 00:52:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2003/03/31 13:44:03 sturm Exp $
 
 COMMENT= 	"Japanese input method"
 COMMENT-dict=	"dictionaries for Japanese Wnn"
@@ -88,6 +88,8 @@ CDOC_FROM=	${WRKSRC}/cWnn
 BUILD_DEPENDS=	:ja-groff-*:japanese/groff
 # Run depends ensure this does not turn into infinite recursion, since
 # this is not needed before package build time.
+
+USE_X11=	Yes
 
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
