@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_mp4file_h,v 1.1.1.1 2004/12/16 16:37:14 jcs Exp $
+--- src/mp4file.h.orig	Sun Dec 12 23:15:03 2004
++++ src/mp4file.h	Sun Dec 12 23:17:00 2004
+@@ -34,3 +34,5 @@
+ gboolean mp4_write_file_info (gchar *filename, Track *track);
+ Track *mp4_get_file_info (gchar *name);
+ #endif
++
++#define HAVE_GLIB_H 1

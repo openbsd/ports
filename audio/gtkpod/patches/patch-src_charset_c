@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_charset_c,v 1.1.1.1 2004/12/16 16:37:14 jcs Exp $
+--- src/charset.c.orig	Sun Dec 12 13:35:40 2004
++++ src/charset.c	Sun Dec 12 13:39:42 2004
+@@ -439,7 +439,7 @@ gchar *charset_to_charset (const gchar *
+ 			     NULL);        /* GError **error    */
+ 	    if (bytes_read > br0)  br0 = bytes_read; /* max. nr. of
+ 							converted Bytes */
+-	    if (br == bytes_read)  ++bytes_read; /* don't do an
++	    if (br >= bytes_read)  bytes_read = ++br; /* don't do an
+ 						    infinite loop */
+ 	}
+ 	if (ret == NULL)

@@ -1,0 +1,5 @@
+gtkpod is a platform independent GUI for Apple's iPod using GTK2.  It
+allows one to upload songs and playlists to your iPod.  It supports
+ID3 tag editing, multiple charsets for ID3 tags, detects duplicate
+songs, allows offline modification of the database with later
+synchronization, and more.
