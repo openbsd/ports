@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2002/07/21 07:08:48 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.6 2004/03/13 15:40:01 sturm Exp $
 
 COMMENT=		"Desktop wallpaper manager and X11 screensaver"
 
@@ -34,6 +34,10 @@ USE_X11=		Yes
 CONFIGURE_STYLE=	gnu
 
 SEPARATE_BUILD=		concurrent
+
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=		patch-* gcc-*
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chbg
