@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"K Desktop Environment, libraries"
 CATEGORIES=		x11 x11/kde
@@ -16,7 +16,10 @@ LIB_DEPENDS=	art_lgpl_2::graphics/libart \
 		tiff.35::graphics/tiff \
 		jasper::graphics/jasper
 
-WANTLIB=c
+WANTLIB=	c ICE SM X11 Xext Xrender audiofile esd glib-2.0.0.0 \
+		gmodule-2.0.0.0 gthread-2.0.0.0 iconv intl jpeg m mad ogg \
+		ossaudio png pthread stdc++ util vorbis vorbisenc vorbisfile \
+		xml2 z
 CONFIGURE_ARGS+= --disable-cups
 
 SEPARATE_BUILD=	flavored

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"K Desktop Environment, games"
 
@@ -9,5 +9,11 @@ MODKDE_VERSION=		3.3.0
 
 LIB_DEPENDS= kdecore.6,artskde,DCOP,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
 SEPARATE_BUILD=flavored
+
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
+		audiofile c esd glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
+		jpeg kmedia2_idl kwalletclient m mad mcop ogg ossaudio png \
+		pthread qtmcop soundserver_idl stdc++ util vorbis vorbisenc \
+		vorbisfile z iconv intl
 
 .include <bsd.port.mk>

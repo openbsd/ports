@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/12/12 11:33:25 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2004/12/16 07:25:26 alek Exp $
 
 COMMENT= 		"web development tool"
 CATEGORIES=		x11 x11/kde
@@ -9,5 +9,9 @@ LIB_DEPENDS= kdecore.6,DCOP,kabc,katepartinterfaces,kdefx,kdeprint,kdesu,kdeui,k
     exslt::textproc/libxslt
 
 SEPARATE_BUILD=flavored
+
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c gcrypt gpg-error iconv \
+		intl jpeg kmdi knewstuff m pcre pcreposix png pthread stdc++ \
+		util xml2 xslt z
 
 .include <bsd.port.mk>

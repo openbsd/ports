@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	::devel/pkgconfig
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 PATCH_LIST=patch-*
 
+WANTLIB=	ICE SM X11 Xext c iconv intl jpeg m ossaudio png pthread \
+		stdc++ vorbisenc z
 		
 #pre-build:
 #	@if pkg dependencies check kdelibs-\*; then \

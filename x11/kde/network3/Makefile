@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2004/12/12 11:33:25 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2004/12/16 07:25:25 alek Exp $
 
 COMMENT= 		"K Desktop Environment, network applications"
 CATEGORIES=		x11 x11/kde
@@ -11,6 +11,10 @@ LIB_DEPENDS= kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts
 	xmms::audio/xmms
 
 SEPARATE_BUILD=	flavored
+
+WANTLIB=	ICE SM X11 Xext Xi Xrender Xss Xtst Xxf86vm art_lgpl_2 c \
+		crypto gdk glib gmodule gtk iconv intl jpeg m pcre pcreposix \
+		png pthread ssl stdc++ util xml2 xslt z
 
 post-configure:
 	@touch ${WRKSRC}/Makefile.in

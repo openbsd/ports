@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
@@ -11,5 +11,8 @@ LIB_DEPENDS= kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kutils,k
 SEPARATE_BUILD=flavored
 
 CONFIGURE_ARGS+=--disable-kig-python-scripting
+
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg katepartinterfaces \
+		knewstuff ktexteditor m pcre pcreposix png pthread stdc++ util z
 
 .include <bsd.port.mk>

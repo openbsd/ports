@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/10/26 09:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"office suite for KDE"
 
@@ -24,5 +24,12 @@ LIB_DEPENDS=	kdecore.4,DCOP,artskde,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjava,k
 		aspell::textproc/aspell/core \
 		Magick::graphics/ImageMagick \
 		jbig::graphics/jbigkit
+
+WANTLIB=	ICE SM X11 Xext Xrender artsflow artsflow_idl audiofile bz2 c \
+		esd freetype glib-2.0.0.0 gmodule-2.0.0.0 gobject-2.0.0.0 \
+		gsf-1 gthread-2.0.0.0 iconv intl jasper jpeg kmedia2_idl lcms \
+		m mad mcop ogg ossaudio pcre pcreposix png pthread qtmcop \
+		soundserver_idl stdc++ tiff util vorbis vorbisenc vorbisfile \
+		xml2 xslt z
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/07/30 17:42:21 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2004/12/16 07:25:25 alek Exp $
 
 COMMENT= 		"kde front end for ogle"
 CATEGORIES=		x11 x11/kde 
@@ -12,5 +12,8 @@ LIB_DEPENDS= kdecore.4,DCOP,kdefx,kdesu,kdeui,kio::x11/kde/libs3 \
 
 CONFIGURE_ARGS+=--with-ogle-libs='${LOCALBASE}/lib/ogle -L${LOCALBASE}/lib'
 CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
+
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c iconv jpeg kwalletclient \
+		m png pthread stdc++ util xml2 z
 
 .include <bsd.port.mk>

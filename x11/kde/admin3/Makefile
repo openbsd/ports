@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/12 11:33:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/16 07:25:25 alek Exp $
 
 COMMENT= 		"K Desktop Environment, admin tools"
 CATEGORIES=		x11 x11/kde
@@ -10,5 +10,8 @@ LIB_DEPENDS=	DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,kio,kparts::x11/kde/libs3
 FLAVORS=		debug
 
 SEPARATE_BUILD=	flavored
+
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg kabc kresources \
+		kwalletclient m png pthread stdc++ util vcard z
 
 .include <bsd.port.mk>

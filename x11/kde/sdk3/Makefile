@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/12/12 11:33:25 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2004/12/16 07:25:26 alek Exp $
 
 COMMENT= 		"K Desktop Environment, developer extensions"
 CATEGORIES=		x11 x11/kde devel
@@ -9,6 +9,9 @@ LIB_DEPENDS=	kdecore.6,DCOP,kabc,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kparts
 		kcal::x11/kde/pim3
 
 SEPARATE_BUILD=flavored
+
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c jpeg ktnef m pcre \
+		pcreposix png pthread qui-mt stdc++ util z
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck

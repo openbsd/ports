@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2004/12/16 07:25:25 alek Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
@@ -41,5 +41,11 @@ post-install:
 FAKE_FLAGS=DESTDIR=${WRKINST} sysconfdir=${SAMPLECONFDIR}
 
 CONFIGURE_ARGS+=--without-motif
+
+WANTLIB=	ICE SM X11 Xcursor Xext Xrandr Xrender Xss Xt Xtst Xxf86misc \
+		art_lgpl_2 artsflow artsflow_idl audiofile c crypto esd \
+		freetype iconv intl jpeg kmedia2_idl m mad mcop ogg ossaudio \
+		pcre pcreposix png pthread qtmcop soundserver_idl ssl stdc++ \
+		util vorbis vorbisenc vorbisfile xkbfile z
 
 .include <bsd.port.mk>

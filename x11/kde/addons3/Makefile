@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2004/12/12 11:33:23 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"K Desktop Environment, addons"
 CATEGORIES=		x11 x11/kde
@@ -18,4 +18,11 @@ LIB_DEPENDS= kdecore.6,DCOP,artskde,kabc,katepartinterfaces,kdefx,kdeprint,kdesu
 # XXX no version number on noatunarts
 
 SEPARATE_BUILD=flavored
+
+WANTLIB=	ICE SM X11 Xext Xi Xrender art_lgpl_2 artsflow artsflow_idl \
+		audiofile c esd glib glib-2.0.0.0 gmodule gmodule-2.0.0.0 \
+		iconv intl jpeg kimproxy kmedia2_idl m mad mcop noatunarts ogg \
+		ossaudio pcre pcreposix png pthread qtmcop soundserver_idl \
+		stdc++ usbhid util vorbis vorbisenc vorbisfile z gthread-2.0.0.0
+
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2004/12/12 11:33:24 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2004/12/16 07:25:25 alek Exp $
 
 COMMENT=		"K Desktop Environment, graphic applications"
 COMMENT-kamera=		"KDE interface to digital cameras"
@@ -47,5 +47,9 @@ post-patch:
 .if ${MACHINE_ARCH} == "sparc64"
 SUP_PATCH_LIST=	gcc-*
 .endif
+
+WANTLIB=	GL GLU ICE SM X11 Xext Xi Xmu Xrender Xxf86vm art_lgpl_2 c \
+		exif fontconfig freetype iconv intl jpeg lcms m pcre pcreposix \
+		png pthread stdc++ tiff util z
 
 .include <bsd.port.mk>
