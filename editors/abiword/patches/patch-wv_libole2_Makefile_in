@@ -1,0 +1,12 @@
+$OpenBSD: patch-wv_libole2_Makefile_in,v 1.1 2003/02/11 19:47:34 couderc Exp $
+--- wv/libole2/Makefile.in.orig	Wed Oct 31 18:07:39 2001
++++ wv/libole2/Makefile.in	Tue Feb 11 19:16:44 2003
+@@ -13,7 +13,7 @@ datadir=@datadir@
+ HAVE_GLIB = @HAVE_GLIB@
+ HAVE_GNOMEVFS= @HAVE_GNOMEVFS@
+ 
+-CFLAGS = @CPPFLAGS@ @CFLAGS@ @DEFS@ -I$(srcdir)/ -I$(srcdir)/.. -DTTFDIR=\"$(datadir)/wv/ttf\" -I$(srcdir)/../libole2 @WMF_CFLAGS@ @GLIB_CFLAGS@
++CFLAGS = @DEFS@ -I$(srcdir)/ -I$(srcdir)/.. -DTTFDIR=\"$(datadir)/wv/ttf\" -I$(srcdir)/../libole2 @WMF_CFLAGS@ @GLIB_CFLAGS@ @CPPFLAGS@ @CFLAGS@
+ ifneq ($(HAVE_GLIB), 1)
+ CFLAGS += -I$(srcdir)/../glib-wv/
+ endif

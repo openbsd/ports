@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2003/02/11 18:50:22 marcm Exp $
+# $OpenBSD: Makefile,v 1.27 2003/02/11 19:47:34 couderc Exp $
 
 COMMENT=	"open-source, cross-platform WYSIWYG word processor"
 
@@ -35,9 +35,8 @@ FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 
 MAKE_FILE=	GNUmakefile
 
-WRKDIST=	${WRKDIR}/abiword-${VERSION}/abi
-
-PFILE=		${WRKDIR}/abiword-${VERSION}/wv/generic.c
+WRKDIST=	${WRKDIR}/abiword-${VERSION}
+WRKSRC=		${WRKDIST}/abi
 
 FLAVORS=	gnome
 FLAVOR?=
@@ -49,17 +48,9 @@ LIB_DEPENDS+=		bonobo.2,bonobo-print.2,bonobox.2::x11/gnome/bonobo \
 			glade.5,glade-gnome.5::devel/libglade,gnome \
 			gnomevfs::x11/gnome/vfs
 .else
-CONFIGURE_ARGS+=	--disable-gnome
-CONFIGURE_ARGS+=	--with-libxml2
+CONFIGURE_ARGS+=	--disable-gnome --with-libxml2
 LIB_DEPENDS+=		xml2::textproc/libxml
 .endif
-
-post-patch:
-	@mv ${PFILE} ${PFILE}.orig
-	@sed -e s/tmpnam/mkstemp/ ${PFILE}.orig > ${PFILE}
-	@cd ${WRKDIR}/abiword-${VERSION}; \
-	patch -s < ${FILESDIR}/patch-wv_libole2_Makefile_in; \
-	patch -s < ${FILESDIR}/patch-psiconf_configure
 
 .if ${FLAVOR:L:Mgnome}
 post-install:

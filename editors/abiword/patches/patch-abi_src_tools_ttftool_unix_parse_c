@@ -1,0 +1,12 @@
+$OpenBSD: patch-abi_src_tools_ttftool_unix_parse_c,v 1.1 2003/02/11 19:47:34 couderc Exp $
+--- abi/src/tools/ttftool/unix/parse.c.orig	Thu Aug 15 21:59:18 2002
++++ abi/src/tools/ttftool/unix/parse.c	Tue Feb 11 19:16:43 2003
+@@ -77,7 +77,7 @@ readNamingTable(int fd)
+                 strings[records[i].nameID]);
+     }
+   }
+-  free(records);
++  free(&records);
+   free(data);
+   return strings;
+ }

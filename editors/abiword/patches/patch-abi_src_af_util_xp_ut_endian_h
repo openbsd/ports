@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_af_util_xp_ut_endian_h,v 1.1 2002/10/17 18:37:13 couderc Exp $
---- src/af/util/xp/ut_endian.h.orig	Fri Sep  6 22:42:32 2002
-+++ src/af/util/xp/ut_endian.h	Fri Sep  6 22:44:01 2002
+$OpenBSD: patch-abi_src_af_util_xp_ut_endian_h,v 1.1 2003/02/11 19:47:34 couderc Exp $
+--- abi/src/af/util/xp/ut_endian.h.orig	Mon May 13 18:11:45 2002
++++ abi/src/af/util/xp/ut_endian.h	Tue Feb 11 19:16:43 2003
 @@ -74,6 +74,13 @@
  	#elif BYTE_ORDER == BIG_ENDIAN
  		#define UT_BIG_ENDIAN

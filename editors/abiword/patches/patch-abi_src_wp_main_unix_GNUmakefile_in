@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_wp_main_unix_GNUmakefile_in,v 1.3 2003/02/03 15:13:11 couderc Exp $
---- src/wp/main/unix/GNUmakefile.in.orig	Fri Jan 31 17:49:52 2003
-+++ src/wp/main/unix/GNUmakefile.in	Fri Jan 31 17:51:48 2003
+$OpenBSD: patch-abi_src_wp_main_unix_GNUmakefile_in,v 1.1 2003/02/11 19:47:34 couderc Exp $
+--- abi/src/wp/main/unix/GNUmakefile.in.orig	Thu Jan 23 02:08:17 2003
++++ abi/src/wp/main/unix/GNUmakefile.in	Tue Feb 11 19:16:43 2003
 @@ -636,11 +636,13 @@ install-exec-local:	install-wrapper
  	@if test -f $(DESTDIR)/$(bindir)/abiword; then \
  	  echo "$(DESTDIR)/$(bindir)/abiword is a regular file - I'm not going to create a link."; \

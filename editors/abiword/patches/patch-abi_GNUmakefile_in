@@ -1,0 +1,12 @@
+$OpenBSD: patch-abi_GNUmakefile_in,v 1.1 2003/02/11 19:47:34 couderc Exp $
+--- abi/GNUmakefile.in.orig	Thu Jan 23 02:07:40 2003
++++ abi/GNUmakefile.in	Tue Feb 11 19:16:43 2003
+@@ -40,6 +40,8 @@ pkgincludedir = $(includedir)/@PACKAGE@
+ 
+ top_builddir = .
+ 
++DESTDIR =
++
+ ACLOCAL = @ACLOCAL@
+ AUTOCONF = @AUTOCONF@
+ AUTOMAKE = @AUTOMAKE@
