@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/09 17:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/17 21:54:19 espie Exp $
 
 DISTNAME=	xlbiff-3.0
 CATEGORIES=	mail x11
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_IMAKE=	yes
+USE_IMAKE=	Yes
+FAKE=		Yes
 
 .include <bsd.port.mk>
