@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2003/01/03 14:24:55 todd Exp $
+# $OpenBSD: Makefile,v 1.63 2003/01/08 21:33:21 todd Exp $
 
 COMMENT=	"PostgreSQL RDBMS"
 COMMENT-tcl=	"PostgreSQL RDBMS tcl libraries and utilities"
@@ -30,7 +30,10 @@ MASTER_SITES=	\
 	ftp://ftp.cz.postgresql.org/pub/ftp.postgresql.org/source/v${VERSION}/ \
 	ftp://ftp.dk.postgresql.org/mirrors/postgresql/source/v${VERSION}/
 
-MULTI_PACKAGES=	-clients -docs -tcl
+PSEUDO_FLAVORS=	no_tcl
+FLAVOR?=
+
+MULTI_PACKAGES=	-clients -docs
 SUBPACKAGE?=
 
 MAKE_FILE=	GNUmakefile
@@ -68,19 +71,24 @@ DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/doc/FAQ ${WRKSRC}/doc/FAQ_DEV ${WRKSRC}/doc/TODO
 
 # For tcl
+.if ${FLAVOR:L:Mno_tcl}
+CONFIGURE_ARGS+= --without-tcl
+.else
+MULTI_PACKAGES+= -tcl
 
 TCL_INCDIR=     ${LOCALBASE}/include/tcl8.3
 TK_INCDIR=      ${LOCALBASE}/include/tk8.3
 CONFIGURE_ENV+= WISH="${LOCALBASE}/bin/wish8.3"
 CONFIGURE_ARGS+= --with-tcl \
         --with-tclconfig="${LOCALBASE}/lib/tcl8.3 ${LOCALBASE}/lib/tk8.3" \
-        --with-includes="${LOCALBASE}/include ${TCL_INCDIR} ${TK_INCDIR}"
+        --with-includes="${TCL_INCDIR} ${TK_INCDIR} ${LOCALBASE}/include"
 BUILD_DEPENDS+=   tk83::x11/tk/8.3
 
-.if defined(PACKAGING)
-. if ${SUBPACKAGE} == "-tcl"
+. if defined(PACKAGING)
+.  if ${SUBPACKAGE} == "-tcl"
 RUN_DEPENDS=	::databases/postgresql
 LIB_DEPENDS+=   tk83::x11/tk/8.3
+.  endif
 . endif
 .endif
 
