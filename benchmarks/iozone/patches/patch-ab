@@ -1,5 +1,5 @@
---- iozone.c.orig	Tue Aug  3 17:25:04 1999
-+++ iozone.c	Sun Aug  8 12:55:56 1999
+--- iozone.c.orig	Wed Sep  8 10:41:00 1999
++++ iozone.c	Fri Sep 10 20:37:27 1999
 @@ -74,7 +74,7 @@
  int main();
  #ifndef __convex__
@@ -18,26 +18,27 @@
  #include <malloc.h>
  #endif
  /* SCO Unix System V */
-@@ -259,6 +259,11 @@
+@@ -263,6 +263,11 @@
  #ifdef bsd4_2
  #define BSDtime
  #endif
 +#ifdef bsd4_4
 +#define BSDtime
-+#include <stdlib.h>
-+#include <string.h>
++/*#include <stdlib.h>
++#include <string.h>*/
 +#endif
  #ifdef BSDtime
  #include <sys/time.h>
  #else
-@@ -277,6 +282,10 @@
- long long page_size = 4096;
+@@ -283,6 +288,11 @@
+ #define GOT_PAGESIZE 1
  #define MS_SYNC 0
  #define MS_ASYNC 0
 +#endif
 +
 +#ifdef bsd4_4
 +long long page_size = 4096;
++#define GOT_PAGESIZE 1
  #endif
  
  #ifdef solaris
