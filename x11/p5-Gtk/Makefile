@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2004/06/26 23:09:15 jcs Exp $
+# $OpenBSD: Makefile,v 1.16 2004/08/14 12:53:47 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -61,6 +61,7 @@ SED_PLIST+=     |sed -e '/^!%%gtkglarea%%/d'
 .endif
 
 .if ${FLAVOR:L:Mgnome}
+LIB_DEPENDS+=	zvt.5::x11/gnome/libs
 CONFIGURE_ARGS+= --with-gnome
 SED_PLIST+=     |sed -e '/^!%%gnome%%/r${PKGDIR}/PFRAG.gnome' -e '//d'
 .else
