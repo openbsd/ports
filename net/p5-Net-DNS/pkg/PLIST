@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/08 19:41:55 danh Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/01/08 20:17:33 danh Exp $
 libdata/perl5/site_perl/Net/DNS.pm
 libdata/perl5/site_perl/Net/DNS/Header.pm
 libdata/perl5/site_perl/Net/DNS/Packet.pm
@@ -67,7 +67,5 @@ man/man3/Net::DNS::RR::X25.3p
 man/man3/Net::DNS::Resolver.3p
 man/man3/Net::DNS::Update.3p
 @dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net/DNS
-@unexec rmdir %D/libdata/perl5/site_perl/${ARCH}-openbsd/auto/Net 2> /dev/null || true
 @dirrm libdata/perl5/site_perl/Net/DNS/RR
-@unexec rmdir %D/libdata/perl5/site_perl/Net/DNS 2> /dev/null || true
-@unexec rmdir %D/libdata/perl5/site_perl/Net 2> /dev/null || true
+@dirrm libdata/perl5/site_perl/Net/DNS
