@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/05/18 22:59:34 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/06/23 19:19:27 pvalchev Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://sunsite.auc.dk/pub/os/linux/loki/%SUBDIR%/ \
 MASTER_SITE_SUBDIR= open-source/smpeg
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		SDL.:sdl-*-!no_x11:devel/sdl
+		SDL.0.1:sdl-*-!no_x11:devel/sdl
 
 USE_X11=	Yes
 
