@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2002/03/21 20:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/24 22:46:16 naddy Exp $
 
 COMMENT=	"performance test of filesystem I/O"
 
 DISTNAME=	Bonnie
 PKGNAME=	bonnie-1.0
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.515
+
 MASTER_SITES=	ftp://ftp.sunet.se/pub/benchmark/Bonnie/ \
 		ftp://swedishchef.lerc.nasa.gov/drlabs/io/
 EXTRACT_SUFX=	.tar.Z
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
+NO_REGRESS=	Yes
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKBUILD}/bonnie.o -c ${WRKSRC}/Bonnie.c

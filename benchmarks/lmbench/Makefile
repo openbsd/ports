@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/03/21 20:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2002/10/24 22:46:16 naddy Exp $
 
 COMMENT=	"system performance measurement"
 DISTNAME=	lmbench
 PKGNAME=	lmbench-1.1
 CATEGORIES=	benchmarks
-NEED_VERSION=	1.515
 
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,11 +25,13 @@ MAN8=	lmbench.8 lat_proc.8 lat_mmap.8 lat_ctx.8 lat_syscall.8 lat_pipe.8 \
 	lat_mem_rd.8 bw_file_rd.8 bw_mem_cp.8 bw_mem_rd.8 bw_mem_wr.8 \
 	bw_mmap_rd.8 bw_pipe.8 bw_tcp.8 mhz.8 lmdd.8
 
+NO_REGRESS=	Yes
+
 test: build
-	@(cd ${WRKSRC}; make results)
+	@cd ${WRKSRC}; make results
 
 retest: build
-	@(cd ${WRKSRC}; make rerun)
+	@cd ${WRKSRC}; make rerun
 
 # This package comes with its own RCS directory which confuses patch.
 # Move it so patch doesn't get confused.

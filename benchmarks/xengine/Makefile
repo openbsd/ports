@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/07/31 06:10:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.22 2002/10/24 22:46:16 naddy Exp $
 
 COMMENT=	"reciprocating engine for X11"
 PKGNAME=	xengine-1.0.1
@@ -19,6 +19,8 @@ PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
 WRKDIST=	${WRKDIR}
 CONFIGURE_STYLE=	imake
+
+NO_REGRESS=	Yes
 
 do-distpatch:
 	@cd $(WRKSRC) && ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/07/30 14:36:50 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/24 22:46:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.2 1999/03/03 03:48:56 jkoshy Exp $
 
 COMMENT=	"self-scaling network benchmark"
@@ -13,8 +13,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_GETRUSAGE"
-
 ALL_TARGET=	NPtcp
+
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/NPtcp ${PREFIX}/bin

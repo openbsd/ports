@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/07/17 21:57:20 lebel Exp $
+# $OpenBSD: Makefile,v 1.16 2002/10/24 22:46:16 naddy Exp $
 
 COMMENT=	"BYTE magazine benchmark suite"
 DISTNAME=       bytebench-3.1
@@ -16,6 +16,8 @@ MASTER_SITES=   ftp://ftp.inria.fr/system/benchmark/
 EXTRACT_SUFX=	.tar.Z
 
 MAKE_ENV=	CC="${CC}"
+
+NO_REGRESS=	Yes
 
 do-install:
 		-${INSTALL_DATA_DIR} ${PREFIX}/lib/bytebench
