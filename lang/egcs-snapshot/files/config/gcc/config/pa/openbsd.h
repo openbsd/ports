@@ -1,21 +1,39 @@
-/* $OpenBSD: openbsd.h,v 1.6 1999/02/16 17:20:56 espie Exp $ */
+/* Configuration file for an hppa risc OpenBSD target.
+   Copyright (C) 1999 Free Software Foundation, Inc.
+
+This file is part of GNU CC.
+
+GNU CC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU CC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU CC; see the file COPYING.  If not, write to
+the Free Software Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.  */
 
 #include <pa/pa.h>
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #include <openbsd.h>
 
-/* run-time target specifications */
+/* Run-time target specifications. */
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) -Asystem(OpenBSD) -Amachine(hppa) -D__OpenBSD__ -D__hppa__ -D__hppa"
 
 #undef OVERRIDE_OPTIONS
 #define OVERRIDE_OPTIONS						 \
 {							                 \
-    override_options();					                 \
+    override_options ();				                 \
     if (! flag_pic)						         \
         target_flags |= MASK_PORTABLE_RUNTIME | MASK_FAST_INDIRECT_CALLS;\
 }
 	
-/* XXX why doesn't PA support -R  like everyone ??? */
+/* XXX Why doesn't PA support -R  like everyone ??? */
 #undef LINK_SPEC
 #define LINK_SPEC \
   "%{EB} %{EL} %{shared} %{non_shared} \
@@ -25,9 +43,9 @@
    %{!nostdlib:%{!r*:%{!e*:-e __start}}} -dc -dp \
    %{static:-Bstatic} %{!static:-Bdynamic} %{assert*}"
 
-/* layout of source language data types
-   ------------------------------------ */
-/* this must agree with <machine/ansi.h> */
+/* Layout of source language data types. */
+
+/* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
 
@@ -41,7 +59,7 @@
 #define WCHAR_TYPE_SIZE 32
 
 /* Output at beginning of assembler file.  */
-/* this is slightly changed from main pa.h to only output dyncall
+/* This is slightly changed from main pa.h to only output dyncall
    when compiling PIC. */
 #undef ASM_FILE_START
 #define ASM_FILE_START(FILE) \
@@ -60,6 +78,6 @@ do { fputs ("\t.SPACE $PRIVATE$\n\
        output_file_directive ((FILE), main_input_filename); \
    } while (0)
 
-/* remove hpux specific pa defines. */
+/* Remove hpux specific pa defines. */
 #undef LDD_SUFFIX
 #undef PARSE_LDD_OUTPUT

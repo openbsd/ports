@@ -1,6 +1,24 @@
-/* $OpenBSD: openbsd.h,v 1.2 1999/02/16 17:20:56 espie Exp $ */
+/* Configuration file for an m88k OpenBSD target.
+   Copyright (C) 1999 Free Software Foundation, Inc.
 
-/* a.out with DBX */
+This file is part of GNU CC.
+
+GNU CC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU CC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU CC; see the file COPYING.  If not, write to
+the Free Software Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.  */
+
+/* a.out with DBX. */
 #define DBX_DEBUGGING_INFO
 #define DEFAULT_GDB_EXTENSIONS 0
 
@@ -31,9 +49,9 @@
    mode (and a float in ansi mode).  */
 #undef TRADITIONAL_RETURN_FLOAT
 
-/* Layout of source language data types
-   ------------------------------------ */
-/* this must agree with <machine/ansi.h> */
+/* Layout of source language data types. */
+
+/* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
 
@@ -50,8 +68,8 @@
 #undef STRUCTURE_SIZE_BOUNDARY
 #define STRUCTURE_SIZE_BOUNDARY 16 
 
-/* Stack & calling: aggregate returns
-   ---------------------------------- */
+/* Stack & calling: aggregate returns. */
+
 /* Don't default to pcc-struct-return, because gcc is the only compiler, and
    we want to retain compatibility with older gcc versions.  */
 #define DEFAULT_PCC_STRUCT_RETURN 0

@@ -1,39 +1,55 @@
-/* GCC configuration for  OpenBSD Mips ABI32 */
-/* $OpenBSD: openbsd.h,v 1.5 1999/02/16 17:20:56 espie Exp $ */
+/* Configuration for  a Mips ABI32 OpenBSD target.
+   Copyright (C) 1999 Free Software Foundation, Inc.
 
-/* Default mips is little endian, unless otherwise specified */
+This file is part of GNU CC.
 
+GNU CC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
 
-/* Definitions needed for OpenBSD, avoid picking mips 'defaults' */
+GNU CC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-/* GAS must know this */
+You should have received a copy of the GNU General Public License
+along with GNU CC; see the file COPYING.  If not, write to
+the Free Software Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.  */
+
+/* Default mips is little endian, unless otherwise specified. */
+
+/* Definitions needed for OpenBSD, avoid picking mips 'defaults'. */
+
+/* GAS must know this. */
 #define SUBTARGET_ASM_SPEC "%{fPIC:-KPIC} %|"
 
-/* CPP specific OpenBSD specs */
+/* CPP specific OpenBSD specs. */
 #define SUBTARGET_CPP_SPEC OBSD_CPP_SPEC
 
-/* Needed for ELF (inspired by netbsd-elf) */
+/* Needed for ELF (inspired by netbsd-elf). */
 #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
 #define LOCAL_LABEL_PREFIX	"."
 
 #include <mips/mips.h>
 
-/* Get generic openbsd definitions */
+/* Get generic OpenBSD definitions. */
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #define OBSD_HAS_DECLARE_OBJECT
 #define OBSD_HAS_CORRECT_SPECS
 #include <openbsd.h>
 
 
-/* run-time target specifications */
+/* Run-time target specifications. */
 #define CPP_PREDEFINES "-D__MIPSEL__ -D_MIPSEL -D__SYSTYPE_BSD__ \
 -D__NO_LEADING_UNDERSCORES__ -D__GP_SUPPORT__ \
 -D__unix__  -D__OpenBSD__ -D__mips__ \
 -Asystem(unix) -Asystem(OpenBSD) -Amachine(mips)"
 
-/* layout of source language data types
-   ------------------------------------ */
-/* this must agree with <machine/ansi.h> */
+/* Layout of source language data types. */
+
+/* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
 
@@ -46,12 +62,11 @@
 #undef WCHAR_TYPE_SIZE
 #define WCHAR_TYPE_SIZE 32
 
-/* Controlling the compilation driver 
-   ---------------------------------- */
+/* Controlling the compilation driver. */
 
 /* LINK_SPEC appropriate for OpenBSD.  Support for GCC options 
    -static, -assert, and -nostdlib. Dynamic loader control.
-	XXX Why don't we offer -R support ? */
+   XXX Why don't we offer -R support ? */
 #undef LINK_SPEC
 #define LINK_SPEC \
   "%{G*} %{EB} %{EL} %{mips1} %{mips2} %{mips3} \
@@ -72,11 +87,11 @@
 #undef ASM_FINAL_SPEC
 #undef STARTFILE_SPEC
 
-/* A C statement to output something to the assembler file to switch to section
-   NAME for object DECL which is either a FUNCTION_DECL, a VAR_DECL or
-   NULL_TREE.  Some target formats do not support arbitrary sections.  Do not
-   define this macro in such cases. mips.h doesn't define this, do it here.
-*/
+/* A C statement to output something to the assembler file to switch to 
+   section NAME for object DECL which is either a FUNCTION_DECL, a VAR_DECL 
+   or NULL_TREE.  Some target formats do not support arbitrary sections.  
+   Do not define this macro in such cases. mips.h doesn't define this, 
+   do it here.  */
 #define ASM_OUTPUT_SECTION_NAME(F, DECL, NAME, RELOC)                        \
 do {                                                                         \
   extern FILE *asm_out_text_file;                                            \
@@ -88,8 +103,8 @@ do {                                                                         \
     fprintf (F, "\t.section %s,\"aw\",@progbits\n", (NAME));                 \
 } while (0)
 
-/* collect2 support (Macros for initialization)
-   -------------------------------------------- */
+/* collect2 support (Macros for initialization). */
+
 
 /* Mips default configuration is COFF-only, and confuses collect2. */
 #undef OBJECT_FORMAT_COFF

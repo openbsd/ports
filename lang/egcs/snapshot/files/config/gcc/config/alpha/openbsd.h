@@ -1,6 +1,24 @@
-/* $OpenBSD: openbsd.h,v 1.11 1999/02/16 17:20:55 espie Exp $ */
+/* Configuration file for an alpha OpenBSD target.
+   Copyright (C) 1999 Free Software Foundation, Inc.
 
-/* We settle for little endian for now */
+This file is part of GNU CC.
+
+GNU CC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU CC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU CC; see the file COPYING.  If not, write to
+the Free Software Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.  */
+
+/* We settle for little endian for now. */
 #define TARGET_ENDIAN_DEFAULT 0
 
 #include <alpha/alpha.h>
@@ -11,13 +29,13 @@
 #define OBSD_HAS_DECLARE_OBJECT
 
 /* alpha ecoff supports only weak aliases, see below. */
-#define ASM_WEAKEN_LABEL(FILE,NAME) ASM_OUTPUT_WEAK_ALIAS(FILE,NAME,0)
+#define ASM_WEAKEN_LABEL(FILE,NAME) ASM_OUTPUT_WEAK_ALIAS (FILE,NAME,0)
 
 #include <openbsd.h>
 
-/* Controlling the compilation driver
-   ---------------------------------- */
-/* alpha needs __start */
+/* Controlling the compilation driver. */
+
+/* alpha needs __start. */
 #undef LINK_SPEC
 #define LINK_SPEC \
   "%{!nostdlib:%{!r*:%{!e*:-e __start}}} -dc -dp %{assert*}"
@@ -26,9 +44,9 @@
 #define CPP_PREDEFINES "-D__unix__ -D__ANSI_COMPAT -Asystem(unix) \
 -D__OpenBSD__ -D__alpha__ -D__alpha"
 
-/* Layout of source language data types
-   ------------------------------------ */
-/* this must agree with <machine/ansi.h> */
+/* Layout of source language data types. */
+
+/* This must agree with <machine/ansi.h> */
 #undef SIZE_TYPE
 #define SIZE_TYPE "long unsigned int"
 
@@ -47,20 +65,20 @@
 
 #define LOCAL_LABEL_PREFIX	"."
 
-/* We don't have an init section yet */
+/* We don't have an init section yet. */
 #undef HAS_INIT_SECTION
 
-/* collect2 support (assembler format: macros for initialization) 
-   -------------------------------------------------------------- */
+/* collect2 support (assembler format: macros for initialization). */
+
 /* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
    library with the proper functions to handle this -> collect2 will
    default to using nm. */
 #undef OBJECT_FORMAT_COFF
 #undef EXTENDED_COFF
 
-/* Assembler format: exception region output 
-   ----------------------------------------- */
-/* all configurations that don't use elf must be explicit about not using
+/* Assembler format: exception region output. */
+
+/* All configurations that don't use elf must be explicit about not using
    dwarf unwind information. egcs doesn't try too hard to check internal
    configuration files...  */
 #ifdef INCOMING_RETURN_ADDR_RTX
@@ -68,9 +86,9 @@
 #define DWARF2_UNWIND_INFO 0
 #endif
 
-/* Assembler format: file framework 
-   -------------------------------- */
-/* taken from alpha/osf.h. This used to be common to all alpha
+/* Assembler format: file framework. */
+
+/* Taken from alpha/osf.h. This used to be common to all alpha
    configurations, but elf has departed from it.
    Check alpha/alpha.h, alpha/osf.h for it when egcs is upgraded.  */
 #ifndef ASM_FILE_START
@@ -91,8 +109,8 @@
 }
 #endif
 
-/* Assembler format: label output
-   ------------------------------ */
+/* Assembler format: label output. */
+
 #define ASM_OUTPUT_WEAK_ALIAS(FILE,NAME,VALUE)	\
  do {						\
   fputs ("\t.weakext\t", FILE);			\

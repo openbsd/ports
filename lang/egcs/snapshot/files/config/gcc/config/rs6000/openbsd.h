@@ -1,4 +1,22 @@
-/* OpenBSD specific configuration for rs6000 */
+/* Configuration file for an rs6000 OpenBSD target.
+   Copyright (C) 1999 Free Software Foundation, Inc.
+
+This file is part of GNU CC.
+
+GNU CC is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+GNU CC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GNU CC; see the file COPYING.  If not, write to
+the Free Software Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.  */
 
 #include <rs6000/sysv4.h>
 
@@ -8,9 +26,9 @@
 #define OBSD_HAS_DECLARE_OBJECT
 
 #include <openbsd.h>
-/* XXX need to check ASM_WEAKEN_LABEL/ASM_GLOBALIZE_LABEL */
+/* XXX need to check ASM_WEAKEN_LABEL/ASM_GLOBALIZE_LABEL. */
 
-/* run-time target specifications */
+/* Run-time target specifications. */
 #define CPP_PREDEFINES \
  "-D__PPC -D__unix__ -D__OpenBSD__ -D__powerpc -Asystem(unix) -Asystem(OpenBSD) -Acpu(powerpc) -Amachine(powerpc)"
 
@@ -52,8 +70,8 @@
 #undef	MULTILIB_DEFAULTS
 #define	MULTILIB_DEFAULTS { "mbig", "mcall-openbsd" }
 
-/* collect2 support (Macros for initialization)
-   -------------------------------------------- */
+/* collect2 support (Macros for initialization). */
+
 
 /* Don't tell collect2 we use COFF as we don't have (yet ?) a dynamic ld
    library with the proper functions to handle this -> collect2 will
