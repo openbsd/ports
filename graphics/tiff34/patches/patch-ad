@@ -1,0 +1,14 @@
+*** config.guess.orig	Sat Nov 22 17:02:00 1997
+--- config.guess	Sat Nov 22 17:03:06 1997
+***************
+*** 276,281 ****
+--- 276,284 ----
+      *:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+  	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++ 	exit 0 ;;
+      *:GNU:*:*)
+  	echo `echo ${UNAME_MACHINE}|sed -e 's,/.*$,,'`-unknown-gnu`echo ${UNAME_RELEASE}|sed -e 's,/.*$,,'`
+  	exit 0 ;;

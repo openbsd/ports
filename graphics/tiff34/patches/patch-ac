@@ -1,0 +1,26 @@
+--- configure.orig	Tue Apr 30 00:16:17 1996
++++ configure	Wed Feb 11 01:04:47 1998
+@@ -1140,6 +1140,23 @@
+ 	DSOOPTS='-shared'
+ 	DSO=OSF
+ 	;;
++    *-freebsd*)
++	DSOSUF=so
++	DSOSUF_VERSION=${DSOSUF}.1.0
++	LIBCOPTS='-fpic -DPIC'
++	DSOOPTS='-Bshareable'
++	DSO=FREEBSD
++	;;
++    alpha-*-openbsd*)
++	DSO=no
++	;;
++    *-openbsd*)
++	DSOSUF=so
++	DSOSUF_VERSION=${DSOSUF}.1.0
++	LIBCOPTS='-fpic -DPIC'
++	DSOOPTS='-Bshareable'
++	DSO=FREEBSD
++	;;
+     *)  DSO=no;;
+     esac
+     test -z "$DSOSUF_VERSION" && DSOSUF_VERSION=${DSOSUF}
