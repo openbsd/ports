@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/09/17 20:18:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2002/02/18 11:20:14 nino Exp $
 
      SUBDIR+= oaf
      SUBDIR+= libs
+     SUBDIR+= mime-data
      SUBDIR+= vfs
      SUBDIR+= controlcenter
      SUBDIR+= core
