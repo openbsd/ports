@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2001/05/21 05:54:39 obecian Exp $
+# $OpenBSD: Makefile,v 1.18 2001/07/27 02:38:27 obecian Exp $
 
 COMMENT=	"graphical frontend for LaTeX (nearly WYSIWYG)"
 
-DISTNAME=	lyx-1.1.6fix1
+DISTNAME=	lyx-1.1.6fix3
 CATEGORIES=	print
 NEED_VERSION=	1.364
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
