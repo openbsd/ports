@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/08/18 05:58:49 brad Exp $
+# $OpenBSD: Makefile,v 1.46 2001/09/16 17:44:21 brad Exp $
 # $FreeBSD: Makefile,v 1.13 1999/03/01 16:18:30 mph Exp $
 
 COMMENT=	"(E)nhanced (P)rogrammable (I)RC-II (C)lient"
@@ -9,8 +9,7 @@ CATEGORIES=	net
 NEED_VERSION=	1.435
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 MASTER_SITES0=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/ \
-		http://zuntum.net/patches/ \
-		http://flis.utech.lublin.pl/~zuntum/patches/
+		http://zuntum.utech.lublin.pl/patches/
 DISTFILES=	epic4-${VERSION}.tar.gz epic4-help-current.tar.gz
 EXTRACT_ONLY=	epic4-${VERSION}.tar.gz
 
