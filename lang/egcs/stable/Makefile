@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2003/06/26 00:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2003/06/26 15:00:14 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -13,8 +13,8 @@ MAKE_JAVA=No
 #MAKE_ADA=Yes
 MAKE_ADA=No
 MAKE_GXX=No
-MAKE_FORTRAN=No
-MAKE_OBJC=No
+MAKE_FORTRAN=Yes
+MAKE_OBJC=Yes
 #AS_PATH=/usr/bin/as
 #LD_PATH=/usr/bin/ld
 .else
