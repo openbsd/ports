@@ -1,0 +1,106 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2003/01/31 19:00:10 todd Exp $
+--- configure.orig	Mon Jul 22 11:20:16 2002
++++ configure	Fri Dec 27 01:48:27 2002
+@@ -5109,8 +5109,8 @@ else
+     hardcode_direct=yes
+     hardcode_shlibpath_var=no
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      hardcode_libdir_flag_spec='${wl}-R$libdir'
+       export_dynamic_flag_spec='${wl}-E'
+     else
+       case "$host_os" in
+@@ -5119,8 +5119,8 @@ else
+ 	hardcode_libdir_flag_spec='-R$libdir'
+         ;;
+       *)
+-        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
+-        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++        hardcode_libdir_flag_spec='${wl}-R$libdir'
+         ;;
+       esac
+     fi
+@@ -7339,21 +7339,21 @@ fi
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED" >&5
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED" >&5
+ echo $ECHO_N "checking for \
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED... $ECHO_C" >&6
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED... $ECHO_C" >&6
+ 
+         if $PKG_CONFIG --exists "\
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED" ; then
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED" ; then
+             echo "$as_me:7357: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+             succeeded=yes
+@@ -7361,10 +7361,10 @@ echo "${ECHO_T}yes" >&6
+             echo "$as_me:7361: checking LIBRSVG_CFLAGS" >&5
+ echo $ECHO_N "checking LIBRSVG_CFLAGS... $ECHO_C" >&6
+             LIBRSVG_CFLAGS=`$PKG_CONFIG --cflags "\
++	libxml-2.0 >= $LIBXML_REQUIRED \
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+ 	pangoft2 >= $PANGOFT2_REQUIRED"`
+             echo "$as_me:7369: result: $LIBRSVG_CFLAGS" >&5
+ echo "${ECHO_T}$LIBRSVG_CFLAGS" >&6
+@@ -7375,8 +7375,8 @@ echo $ECHO_N "checking LIBRSVG_LIBS... $
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED"`
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED"`
+             echo "$as_me:7380: result: $LIBRSVG_LIBS" >&5
+ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
+         else
+@@ -7388,8 +7388,8 @@ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED"`
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED"`
+             echo $LIBRSVG_PKG_ERRORS
+         fi
+ 
+@@ -7406,14 +7406,14 @@ echo "${ECHO_T}$LIBRSVG_LIBS" >&6
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&5
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&5
+ echo "$as_me: error: Library requirements (\
+ 	gdk-pixbuf-2.0 >= $GDK_PIXBUF_REQUIRED \
+ 	glib-2.0 >= $GLIB_REQUIRED \
+ 	libart-2.0 >= $LIBART_REQUIRED \
+-	libxml-2.0 >= $LIBXML_REQUIRED \
+-	pangoft2 >= $PANGOFT2_REQUIRED) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&2;}
++	pangoft2 >= $PANGOFT2_REQUIRED \
++	libxml-2.0 >= $LIBXML_REQUIRED) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+ 
