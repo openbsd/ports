@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/13 21:41:04 avsm Exp $
+# $OpenBSD: Makefile,v 1.9 2001/08/11 00:53:58 avsm Exp $
 
 COMMENT=	"powerful console ftp client with many features"
 
-DISTNAME=	yafc-0.7
+DISTNAME=	yafc-0.7.3
 CATEGORIES=	net
 NEED_VERSION=	1.387
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
