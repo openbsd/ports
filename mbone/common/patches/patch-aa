@@ -1,0 +1,37 @@
+--- configure.orig	Mon Jun 21 06:53:35 1999
++++ configure	Tue Nov 30 19:36:14 1999
+@@ -44,7 +44,7 @@
+                            ;;
+   HP-UX                  ) OSTYPE=HPUX
+                            ;;
+-  Linux | IRIX | IRIX64 | FreeBSD | NetBSD ) 
++  Linux | IRIX | IRIX64 | FreeBSD | NetBSD | OpenBSD) 
+                            ;;
+   *                      ) echo "$OSTYPE not supported. Sorry."
+                            exit
+@@ -118,6 +118,15 @@
+ 	    OPTIMIZE="-O4"
+ 	    PROFILE="-pg"
+             ;;
++  OpenBSD ) CC="gcc"
++            WFLAGS=$GCCWFLAGS
++	    INCLUDE="-I/usr/local/include"
++	    LDLIBS="-lm"
++	    DEBUG="-g"
++	    CHAR="-fsigned-char"
++	    OPTIMIZE="-O4"
++	    PROFILE="-pg"
++            ;;
+   NetBSD )  CC="gcc"
+             WFLAGS=$GCCWFLAGS
+ 	    INCLUDE="-I/usr/local/include"
+@@ -241,9 +250,6 @@
+ 		CHECK_FLAG=-fbounds-checking
+ 		CHECK_LIB=-lcheck
+ 		echo "Enabled bounds checking option" 
+-	else 
+-		DEFS="$DEFS $1"
+-		echo "Added $1 compile flag"
+ 	fi
+ 	shift
+ done
