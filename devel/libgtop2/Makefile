@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2004/10/02 13:56:42 sturm Exp $
+# $OpenBSD: Makefile,v 1.12 2004/11/23 21:34:27 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c kvm
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig

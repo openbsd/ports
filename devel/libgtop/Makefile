@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2004/09/15 19:38:49 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/23 21:34:27 espie Exp $
 
 COMMENT=		"portable library for obtaining system information"
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c kvm
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
@@ -29,6 +30,7 @@ LIB_DEPENDS=		glib.1.2::devel/glib
 
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=   	gnome.36,gnomesupport::x11/gnome/libs
+WANTLIB+=		m z
 .else
 CONFIGURE_ARGS+= 	--without-gnome
 .endif
@@ -37,6 +39,7 @@ CONFIGURE_ARGS+= 	--without-gnome
 BUILD_DEPENDS+= 	:guile-*:lang/guile
 RUN_DEPENDS+= 		:guile-*:lang/guile
 CONFIGURE_ARGS+=	--with-libgtop-guile=yes
+WANTLIB+=		m
 .else
 CONFIGURE_ARGS+=	--with-libgtop-guile=no
 .endif

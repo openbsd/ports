@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/10/12 20:46:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/23 21:34:27 espie Exp $
 # $FreeBSD: ports/java/jdk12/Makefile,v 1.11 2002/08/19 20:47:04 glewis Exp $
 
 # Requires existing JDK 1.3 to build
@@ -60,6 +60,8 @@ BUILD_DEPENDS+=		:jdk-linux->=1.3.1_10:devel/jdk/1.3-linux
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk1.3.1-linux"
 NO_SYSTRACE=		Yes
 .endif
+
+WANTLIB=		ICE SM X11 Xext Xp Xt Xtst c dps m ossaudio pthread
 
 .if !${FLAVOR:L:Mno_plugin}
 LIB_DEPENDS=		glib.1::devel/glib \
