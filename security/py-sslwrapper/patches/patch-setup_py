@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.3 2002/06/16 19:59:09 pvalchev Exp $
---- setup.py.orig	Thu Nov 22 17:44:34 2001
-+++ setup.py	Sun Jun 16 13:50:34 2002
+$OpenBSD: patch-setup_py,v 1.4 2004/01/05 03:54:03 espie Exp $
+--- setup.py.orig	2001-11-23 01:44:34.000000000 +0100
++++ setup.py	2004-01-05 04:30:59.000000000 +0100
 @@ -10,5 +10,5 @@ setup(name='POW',
        ext_modules=[  Extension('POW', 
                       ['POW.c'], 
                       libraries=['ssl', 'crypto'],
 -                     include_dirs=['/usr/local/lib']   )])
-+                     include_dirs=['/usr/include', '%%LOCALBASE%%/include']   )])
++                     include_dirs=['/usr/include', '/usr/local/include']   )])
  
