@@ -1,0 +1,14 @@
+$OpenBSD: patch-gdk_imlib_Makefile_in,v 1.1 2001/11/10 20:45:48 brad Exp $
+--- gdk_imlib/Makefile.in.orig	Tue Jul 31 19:34:50 2001
++++ gdk_imlib/Makefile.in	Tue Oct 30 22:39:49 2001
+@@ -175,8 +175,8 @@ libgdk_imlib_la_SOURCES = \
+ 	modules.c
+ 
+ 
+-libgdk_imlib_la_LDFLAGS = -version-info 10:11:9
+-libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
++libgdk_imlib_la_LDFLAGS = -version-info 19:11:0
++libgdk_imlib_la_LIBADD = $(GMODULE_LIBS) $(SUPPORT_LIBS)
+ 
+ include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h
+ 

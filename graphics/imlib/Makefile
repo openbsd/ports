@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.36 2001/11/10 11:13:49 heko Exp $
+# $OpenBSD: Makefile,v 1.37 2001/11/10 20:45:48 brad Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	"image manipulation library for X11"
 
-DISTNAME=	imlib-1.9.8.1
+DISTNAME=	imlib-1.9.11
 CATEGORIES=	devel graphics
 NEED_VERSION=	1.486
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= stable/sources/imlib
 
-LIB_DEPENDS=	gtk.1.2,gdk.1.2::x11/gtk+ \
+MODULES=	gettext
+LIB_DEPENDS= 	gtk.1.2,gdk.1.2::x11/gtk+ \
 		jpeg.62::graphics/jpeg \
 		ungif.5::graphics/libungif \
 		png.2::graphics/png \
 		tiff.35::graphics/tiff
-BUILD_DEPENDS=	::graphics/netpbm
-RUN_DEPENDS=	::graphics/jpeg \
-		::graphics/netpbm
+BUILD_DEPENDS=	::graphics/jpeg
+RUN_DEPENDS=	::graphics/jpeg
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
@@ -31,12 +31,10 @@ SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-modules
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	ac_cv_path_CONVERT_PROG="${LOCALBASE}/bin/convert" \
+		ac_cv_path_GIFTOPNM_PROG="${LOCALBASE}/bin/giftopnm" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-
-PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltconfig \
-		${PORTSDIR}/infrastructure/patches/patch-lt1.3.3-ltmain_sh \
-		patch-*
 
 pre-build:
 	@echo ""

@@ -1,0 +1,13 @@
+$OpenBSD: patch-gdk_imlib_io-png_c,v 1.1 2001/11/10 20:45:48 brad Exp $
+--- gdk_imlib/io-png.c.orig	Tue Oct 30 21:31:24 2001
++++ gdk_imlib/io-png.c	Tue Oct 30 21:42:53 2001
+@@ -297,7 +297,8 @@ inline_png(unsigned char *data, int data
+   im->rgb_width = ww;
+   im->rgb_height = hh;  
+   /* Setup Translators */
+-  if (color_type == PNG_COLOR_TYPE_PALETTE)
++  if ((color_type == PNG_COLOR_TYPE_PALETTE) ||
++      (color_type == PNG_COLOR_TYPE_GRAY))
+     png_set_expand(png_ptr);
+   png_set_strip_16(png_ptr);
+   png_set_packing(png_ptr);
