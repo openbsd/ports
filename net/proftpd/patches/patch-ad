@@ -1,5 +1,5 @@
---- src/log.c.orig	Sat Oct 17 22:24:41 1998
-+++ src/log.c	Mon Dec 14 15:14:12 1998
+--- src/log.c.orig	Sat Oct 17 20:24:41 1998
++++ src/log.c	Mon Aug 30 08:51:06 1999
 @@ -44,7 +44,7 @@
  static int syslog_discard = FALSE;
  static int logstderr = TRUE;
@@ -9,6 +9,15 @@
  static int set_facility = -1;
  static char *syslog_fn = NULL;
  static char *syslog_hostname;
+@@ -111,7 +111,7 @@
+   if(xferfd == -1)
+     return 0;
+ 
+-  sprintf(buf,"%s %d %s %lu %s %c _ %c %c %s ftp 0 *\n",
++  snprintf(buf,sizeof(buf),"%s %d %s %lu %s %c _ %c %c %s ftp 0 *\n",
+           fmt_time(time(NULL)),xfertime,remhost,fsize,
+           fname,xfertype,direction,access,user);
+ 
 @@ -718,7 +718,7 @@
  
    buf[1023] = '\0';
