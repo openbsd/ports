@@ -1,0 +1,27 @@
+$OpenBSD: patch-cowsay_1,v 1.1.1.1 2002/06/18 17:11:33 naddy Exp $
+--- cowsay.1.orig	Thu Jun 13 23:33:42 2002
++++ cowsay.1	Thu Jun 13 23:39:13 2002
+@@ -44,7 +44,7 @@ after all the switches have been process
+ .PP
+ The
+ .B \-W
+-specifies roughly (where the message should be wrapped.  The default
++specifies roughly where the message should be wrapped.  The default
+ is equivalent to
+ .B \-W 40
+ i.e. wrap words at or before the 40th column.
+@@ -149,7 +149,7 @@ much like
+ .B PATH or
+ .BR MANPATH .
+ It should always contain the
+-.B /usr/local/share/cows
++.B %PREFIX%/share/cows
+ directory, or at least a directory with a file called 
+ .B default.cow
+ in it.
+@@ -165,4 +165,4 @@ Tony Monroe (tony@nog.net), with suggest
+ Appel (appel@CSUA.Berkeley.EDU) and contributions from Anthony Polito
+ (aspolito@CSUA.Berkeley.EDU).
+ .SH SEE ALSO
+-perl(1), wall(1), nwrite(1), figlet(6)
++perl(1), wall(1), figlet(6)
