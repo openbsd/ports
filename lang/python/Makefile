@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2001/01/19 06:59:12 jasoni Exp $
+# $OpenBSD: Makefile,v 1.28 2001/03/22 00:28:33 espie Exp $
 
 VERSION=	2.0
 DISTNAME=	python-${VERSION}
 CATEGORIES=	lang
-NEED_VERSION=	1.310
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ 
 
 HOMEPAGE=	http://www.python.org/
@@ -22,6 +22,10 @@ FLAVOR?=	threads
 .if empty(FLAVOR:L:Mno_tools)
 MULTI_PACKAGES=	-tools
 .endif
+
+# The tools package is not flavor dependent.
+FULLPKGNAME-tools=python-tools-${VERSION}
+FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_tools//}
 
 .if ${FLAVOR:L:Mtk}
 LIB_DEPENDS=	tk83::x11/tk/8.3
@@ -73,14 +77,6 @@ post-install:
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; tar -xf -)
 	
 .include <bsd.port.mk>
-
-# The tools package is not flavor dependent.
-.if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
-PKGNAME=python-tools-${VERSION}
-.endif
-.if ${FLAVOR:L:Mno_tools}
-PKGNAME:=${PKGNAME:S/-no_tools//}
-.endif
 
 .if defined(NO64BIT)
 SED_PLIST+=-e '/%%mm%%/d'

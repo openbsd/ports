@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/01/19 06:53:13 jasoni Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/22 00:28:33 espie Exp $
 #
 # This port should remain Python 1.5.2.  Please do not upgrade.
 
 DISTNAME=	py152
 PKGNAME=	python-1.5.2
 CATEGORIES=	lang
-NEED_VERSION=	1.310
+NEED_VERSION=	1.363
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
@@ -26,6 +26,10 @@ FLAVOR?=	threads
 .if empty(FLAVOR:L:Mno_tools)
 MULTI_PACKAGES=	-tools
 .endif
+
+# The tools package is not flavor dependent.
+FULLPKGNAME-tools=python-tools-${VERSION}
+FULLPKGNAME=${PKGNAME}${FLAVOR_EXT:S/-no_tools//}
 
 .if ${FLAVOR:L:Mtk}
 LIB_DEPENDS=	tk80.1.5::x11/tk/8.0
@@ -77,12 +81,6 @@ post-install:
 .include <bsd.port.mk>
 
 # The tools package is not flavor dependent.
-.if defined(SUBPACKAGE) && ${SUBPACKAGE} == "-tools"
-PKGNAME=python-tools-1.5.2
-.endif
-.if ${FLAVOR:L:Mno_tools}
-PKGNAME:=${PKGNAME:S/-no_tools//}
-.endif
 
 .if defined(NO64BIT)
 SED_PLIST+=-e '/%%mm%%/d'
