@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2003/06/04 01:17:50 margarida Exp $
 
 COMMENT=	"X11 front-end for ghostscript"
 
@@ -12,6 +12,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+RUN_DEPENDS=    :ghostscript-*:print/ghostscript/gnu
 
 CONFIGURE_STYLE=	imake
 
