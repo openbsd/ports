@@ -1,7 +1,13 @@
-$OpenBSD: patch-admin_libtool_m4_in,v 1.2 2001/08/20 23:40:18 espie Exp $
---- admin/libtool.m4.in.orig	Tue Jul 31 21:00:04 2001
-+++ admin/libtool.m4.in	Fri Aug 17 00:02:40 2001
-@@ -617,19 +617,7 @@ netbsd*)
+$OpenBSD: p-aclocal_m4,v 1.1 2001/09/27 10:52:15 espie Exp $
+--- aclocal.m4.orig	Mon Aug  6 03:26:32 2001
++++ aclocal.m4	Mon Aug 20 01:09:01 2001
+@@ -1,4 +1,4 @@
+-dnl aclocal.m4 generated automatically by aclocal 1.4
++dnl aclocal.m4 generated automatically by aclocal 1.4-p4
+ 
+ dnl Copyright (C) 1994, 1995-8, 1999 Free Software Foundation, Inc.
+ dnl This file is free software; the Free Software Foundation
+@@ -4722,19 +4722,7 @@ netbsd*)
    ;;
  
  openbsd* )

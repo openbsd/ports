@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2001/09/19 15:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2001/09/27 10:52:15 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -39,6 +39,7 @@ CONFIGURE_ARGS+=	--disable-threading
 CONFIGURE_ARGS+=	--enable-mitshm
 CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--enable-final
+PATCH_LIST=	p-* patch-*
 #CONFIGURE_ARGS+=	--enable-debug
 #CONFIGURE_ARGS+=--enable-static --enable-debug --disable-shared
 

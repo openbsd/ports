@@ -1,4 +1,4 @@
-$OpenBSD: patch-admin_ltconfig,v 1.4 2001/08/20 23:40:18 espie Exp $
+$OpenBSD: p-admin_ltconfig,v 1.1 2001/09/27 10:52:15 espie Exp $
 --- admin/ltconfig.orig	Sat May 19 09:19:10 2001
 +++ admin/ltconfig	Mon Aug 20 18:56:38 2001
 @@ -625,7 +625,12 @@ old_postuninstall_cmds=
