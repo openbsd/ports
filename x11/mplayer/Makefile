@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2002/11/12 08:52:08 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.39 2002/11/13 17:54:35 espie Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
 
 COMMENT=		"Movie player supporting MPEG, DIVX, AVI, ASF, MOV & more"
-DISTNAME=		MPlayer-0.90pre9
+DISTNAME=		MPlayer-0.90pre10
 DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
@@ -19,10 +19,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www2.mplayerhq.hu/MPlayer/releases/
 MASTER_SITES+=		http://www.mplayerhq.hu/MPlayer/releases/
+MASTER_SITES+=		http://ftp.lug.udel.edu/MPlayer/releases/
 #MASTER_SITES0=		http://www2.mplayerhq.hu/MPlayer/Skin/
 MASTER_SITES0=		http://www.sightly.net/mplayer/
 
-MAINTAINER=     Björn Sandell <biorn@dce.chalmers.se>
+MAINTAINER=     Bjorn Sandell <biorn@dce.chalmers.se>
 
 SKIN=		default
 SKINVER=	1.1
@@ -47,7 +48,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/as \
 		--disable-alsa \
-		--disable-aa \
 		--disable-ossaudio \
 		--disable-arts \
 		--disable-dvdnav \
@@ -62,8 +62,15 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda
+FLAVORS=	sdl ggi debug mad win32 iconv no_x11 cdda faad
 FLAVOR?=
+
+.if ${FLAVOR:L:Mfaad}
+CONFIGURE_ARGS+=--enable-faad
+LIB_DEPENDS+=   faad::audio/faad
+.else
+CONFIGURE_ARGS+=--disable-faad
+.endif
 
 .if ${FLAVOR:L:Mno_x11}
 .  if ${FLAVOR:L:Msdl} || ${FLAVOR:L:Mggi} || ${FLAVOR:L:Mmad}
@@ -140,6 +147,9 @@ BUILD_DEPENDS+= cdda_paranoia,cdda_interface:cdparanoia->=3.a9.8:audio/cdparanoi
 .else
 CONFIGURE_ARGS+=--disable-cdparanoia
 .endif
+
+CONFIGURE_ARGS+=--disable-aa
+
 
 .if ${ELF_TOOLCHAIN} == "no"
 post-patch:
