@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2002/03/21 20:35:42 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2002/07/17 21:22:01 lebel Exp $
 
 COMMENT=	"MIDI to WAV renderer and player"
 DISTNAME=	timidity-0.2i
@@ -33,6 +33,7 @@ MAKE_FLAGS+=-DSLANG
 LIB_DEPENDS+=slang.::devel/libslang
 .endif
 
+MAKE_ENV=	CC="${CC}"
 INSTALL_TARGET= install.all
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST} ${MAKE_FLAGS}
 

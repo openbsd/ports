@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/12/22 15:15:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2002/07/17 21:19:12 lebel Exp $
 
 COMMENT=	"premier dockable radio tuner"
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}dl/
 
+MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes
 
 FLAVORS=		zoltrix

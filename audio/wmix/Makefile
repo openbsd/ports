@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/01/26 14:14:53 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2002/07/17 21:17:10 lebel Exp $
 
 COMMENT=		'wm-dockapp; audio mixer'
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}software/
 
+MAKE_ENV=		CC="${CC}"
 USE_X11=		Yes
 NO_REGRESS=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2002/07/17 21:17:10 lebel Exp $
 
 COMMENT=	"read CD digital audio data through the SCSI bus"
 DISTNAME=	tosha-0.6
@@ -13,6 +13,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_FREEBSD_LOCAL:=markp/}
 
-MAKE_ENV=	SYSCONFDIR='${SYSCONFDIR}'
+MAKE_ENV=	SYSCONFDIR='${SYSCONFDIR}' CC="${CC}"
 
 .include <bsd.port.mk>
