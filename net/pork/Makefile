@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2003/06/16 05:18:53 jolan Exp $
+# $OpenBSD: Makefile,v 1.7 2003/07/13 06:02:05 jolan Exp $
 
-COMMENT=	"programmable, ncurses-based AIM client"
-DISTNAME=	pork-0.99.0
+COMMENT=	"programmable ncurses-based AIM client"
+DISTNAME=	pork-0.99.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
