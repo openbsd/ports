@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/09/10 06:08:03 shell Exp $
+# $OpenBSD: Makefile,v 1.2 2001/11/05 17:04:11 shell Exp $
 
 COMMENT=		"OpenSSL Wrappers for Python"
 
@@ -22,8 +22,9 @@ MASTER_SITE_SUBDIR=	pow
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	python${PYTHON_VER}::lang/python
+RUN_DEPENDS=	${BUILD_DEPENDS}
+NO_REGRESS=	Yes
 
 PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 

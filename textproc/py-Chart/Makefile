@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/10/29 18:23:38 shell Exp $
+# $OpenBSD: Makefile,v 1.6 2001/11/05 17:04:11 shell Exp $
 
 
 COMMENT=		"python library for creating postscript or PDF charts"
@@ -22,9 +22,11 @@ MASTER_SITES=		${HOMEPAGE}
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	python${PYTHON_VER}::lang/python
+RUN_DEPENDS=	${BUILD_DEPENDS}
 SUBST_VARS=	PYTHON_VER
+NO_REGRESS=	Yes
+
 PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 
 do-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2001/11/04 05:45:14 shell Exp $
+# $OpenBSD: Makefile,v 1.5 2001/11/05 17:04:11 shell Exp $
 
 
 COMMENT=		"python module for GnuPG interface"
@@ -23,13 +23,14 @@ MASTER_SITE_SUBDIR=	py-gnupg
 
 PYTHON_VER=	2.1
 
-RUN_DEPENDS+=	python${PYTHON_VER}::lang/python \
+BUILD_DEPENDS+=	python${PYTHON_VER}::lang/python \
 		gpg::security/gnupg
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PY_CMD=		cd ${WRKSRC}; python${PYTHON_VER} ./setup.py
 
 SUBST_VARS=	PYTHON_VER
+NO_REGRESS=	Yes
 
 do-build:
 	${PY_CMD} build --build-base=${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/10/24 12:53:55 shell Exp $
+# $OpenBSD: Makefile,v 1.9 2001/11/05 17:04:11 shell Exp $
 
 
 COMMENT=		"python codes checker"
@@ -28,6 +28,7 @@ RUN_DEPENDS+=	python${PYTHON_VER}::lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS=	PYTHON_VER
+NO_REGRESS=	Yes
 
 PY_CMD= @cd ${WRKSRC} && python${PYTHON_VER} ./setup.py
 
