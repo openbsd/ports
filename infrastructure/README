@@ -43,3 +43,6 @@ fetch/check-license
 install/create-user
 	simple script to create new users account, based on db/users.db
 
+build/outdated-perl-ports
+	compare perl ports INDEX entries with the latest module
+	versions available from CPAN
