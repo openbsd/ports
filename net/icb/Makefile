@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1998/05/06 12:09:23 form Exp $
+# $OpenBSD: Makefile,v 1.2 1998/05/22 03:35:25 form Exp $
 # NetBSD: Makefile,v 1.6 1998/04/15 11:15:34 frueauf Exp
 #
 
 DISTNAME=		icb-5.0.9
 CATEGORIES=		net
-MASTER_SITES=		ftp://vs.itam.nsc.ru/pub/OpenBSD/distfiles/ ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+MASTER_SITES=		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 MAINTAINER=		form@vs.itam.nsc.ru
 
