@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2004/12/15 13:57:57 alek Exp $
+# $OpenBSD: Makefile,v 1.6 2004/12/26 21:19:08 sturm Exp $
 
 COMMENT=		"printing framework for GNOME"
 
 DISTNAME=		gnome-print-0.36
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		x11/gnome print
 HOMEPAGE=		http://www.gnome.org/projects/gnome-print/
 

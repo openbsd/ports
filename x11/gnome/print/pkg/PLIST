@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/10/11 04:27:24 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/12/26 21:19:08 sturm Exp $
 bin/gnome-font-install
 include/gnome-1.0/
 include/gnome-1.0/libgnomeprint/
@@ -28,11 +28,11 @@ include/gnome-1.0/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.la
 lib/printConf.sh
-share/fonts/
+@fontdir share/fonts/
 @comment share/fonts/README.binaries
 @comment share/fonts/README.installer
-share/fonts/afms/
-share/fonts/afms/adobe/
+@fontdir share/fonts/afms/
+@fontdir share/fonts/afms/adobe/
 share/fonts/afms/adobe/pagd8a.afm
 share/fonts/afms/adobe/pagdo8a.afm
 share/fonts/afms/adobe/pagk8a.afm
