@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2003/10/08 12:12:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2003/10/08 16:01:45 naddy Exp $
 
 COMMENT=	"portable audio output library"
 COMMENT-arts=	"aRts module for portable audio output library"
@@ -34,6 +34,7 @@ MULTI_PACKAGES+= -esd
 
 SUBPACKAGE?=
 
+SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static
 .if ${FLAVOR:L:Mno_arts}

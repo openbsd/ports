@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2003/09/24 21:25:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2003/10/08 16:01:45 naddy Exp $
 
 COMMENT=	"play, encode, and manage Ogg Vorbis files"
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
-		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
 		http://www.casterclub.com/vorbis/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
@@ -28,6 +27,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
+SEPARATE_BUILD=	simple
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vorbis-tools
