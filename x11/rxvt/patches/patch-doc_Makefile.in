@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Jul 21 03:17:46 2000
-+++ doc/Makefile.in	Fri Jul 21 03:22:01 2000
-@@ -38,7 +38,7 @@
+--- doc/Makefile.in.orig	Tue May  2 23:40:54 2000
++++ doc/Makefile.in	Fri Jun 22 13:33:38 2001
+@@ -38,7 +38,7 @@ DIST	  = Makefile.in README.greek README
  
  #-------------------------------------------------------------------------
  
