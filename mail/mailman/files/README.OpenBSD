@@ -1,4 +1,4 @@
-$OpenBSD: README.OpenBSD,v 1.3 2003/01/18 16:52:17 sturm Exp $
+$OpenBSD: README.OpenBSD,v 1.4 2003/05/12 04:30:44 sturm Exp $
 
 Throughout this document $mailmandir is the directory mailman is installed
 in. This defaults to /usr/local/lib/mailman. If you install your ports
@@ -55,6 +55,31 @@ OpenBSD specific comments added. It's a good time to become root, now.
 
   Now restart your web server.
 
+- Create a "site-wide" mailing list.  This is the one that
+  password reminders will appear to come from.  Usually this
+  should be the "mailman" mailing list, but if you need to change
+  this, be sure to change the MAILMAN_SITE_LIST variable in
+  mm_cfg.py (see below).
+
+     % bin/newlist mailman
+
+  Follow the prompts, and see the README file for more information.
+
+  Now configure your site list.  There is a convenient template
+  for a generic site list in misc/sitelist.cfg to help you with
+  this.  The template can be applied to your site list by running:
+
+     % bin/config_list -i data/sitelist.cfg mailman
+
+  Before doing this, review the configuration options in the
+  template (note that many options are not changed by
+  sitelist.cfg).  After you do this, be sure you review the
+  configurations via the admin pages for this list.
+
+  Be sure to subscribe yourself to the site list, but use the
+  admin interface because mailback subscription confirmations
+  won't work at this point.
+
 - Set up the crontab entries.  Mailman runs a number of cron jobs
   for its basic functionality. Add $mailmandir/cron/crontab.in as a 
   crontab entry by executing these commands:
@@ -88,18 +113,6 @@ OpenBSD specific comments added. It's a good time to become root, now.
   the mm_cfg.py file:
 
       add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
-
-- Create a "site-wide" mailing list.  This is the one that
-  password reminders will appear to come from.  Usually this
-  should be the "mailman" mailing list, but if you need to change
-  this, be sure to change the MAILMAN_SITE_LIST variable in
-  mm_cfg.py (see below).
-
-     % bin/newlist mailman
-
-  Follow the prompts, and see the README file for more information.
-
-- You should then subscribe yourself to the mailman list.
 
 2) Customize Mailman
 
@@ -185,7 +198,7 @@ system and version of Python.
 
 
    Problem:  I send mail to the list, and get back mail saying,
-             "sh: wrapper not available for sendmail programs"
+             "sh: mailman not available for sendmail programs"
 
    Solution: Your system uses sendmail restricted shell (smrsh).  You
              need to configure smrsh by creating a symbolic link from
