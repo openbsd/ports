@@ -1,6 +1,11 @@
---- makefile.orig	Wed Sep 16 15:16:23 1998
-+++ makefile	Wed Sep 16 15:23:27 1998
-@@ -5,7 +5,7 @@
+--- makefile.orig	Wed Oct 27 15:58:26 1999
++++ makefile	Wed Oct 27 16:01:24 1999
+@@ -1,11 +1,11 @@
+ YFLAGS = -d
+-CFLAGS = -g
++#CFLAGS = -g
+ 
+ SRC = hoc.y hoc.h code.c init.c math.c symbol.c
  OBJS = hoc.o code.o init.o math.o symbol.o
  
  hoc:	$(OBJS)
