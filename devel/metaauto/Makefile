@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/15 14:01:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2003/02/15 17:08:25 espie Exp $
 
 COMMENT=	"wrapper for gnu auto*"
 
-VERSION=	0.0
+VERSION=	0.1
 DISTNAME=	metaauto-${VERSION}
 CATEGORIES=	devel
 DISTFILES=
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-SCRIPTS=autoconf autoupdate autoheader
+SCRIPTS=autoconf autoupdate autoheader autoreconf
 WRKDIST=${WRKDIR}
 
 do-build:
