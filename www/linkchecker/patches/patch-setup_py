@@ -1,23 +1,17 @@
-$OpenBSD: patch-setup_py,v 1.5 2005/01/23 22:27:49 xsa Exp $
---- setup.py.orig	Tue Jan 11 13:04:34 2005
-+++ setup.py	Sat Jan 22 20:25:23 2005
-@@ -98,6 +98,7 @@ class MyInstall (install, object):
+$OpenBSD: patch-setup_py,v 1.6 2005/01/25 09:15:44 xsa Exp $
+--- setup.py.orig	Mon Jan 24 16:02:06 2005
++++ setup.py	Tue Jan 25 10:07:07 2005
+@@ -85,7 +85,9 @@ class MyInstall (install, object):
                  val = getattr(self, attr)[cutoff:]
              else:
                  val = getattr(self, attr)
 +            val = "!!SITEPKG!!"
-             if win_compiling and d in win_path_scheme:
-                 # look for placeholders to replace
-                 oldpath, newpath = win_path_scheme[d]
-@@ -105,6 +106,7 @@ class MyInstall (install, object):
-                 if oldpath in val:
-                     val = val.replace(oldpath, newpath)
              if attr == 'install_data':
 +                val = sys.prefix
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              data.append("%s = %r" % (attr, cnormpath(val)))
-@@ -242,7 +244,7 @@ data_files = [
+@@ -248,7 +250,7 @@ data_files = [
               ['share/locale/nl/LC_MESSAGES/linkchecker.mo']),
           ('share/linkchecker',
               ['config/linkcheckerrc', 'config/logging.conf', ]),
@@ -26,7 +20,7 @@ $OpenBSD: patch-setup_py,v 1.5 2005/01/23 22:27:49 xsa Exp $
               ['cgi/lconline/leer.html.en', 'cgi/lconline/leer.html.de',
                'cgi/lconline/index.html', 'cgi/lconline/lc_cgi.html.en',
                'cgi/lconline/lc_cgi.html.de', 'cgi/lconline/check.js',
-@@ -250,10 +252,10 @@ data_files = [
+@@ -256,10 +258,10 @@ data_files = [
        ]
  
  if os.name == 'posix':

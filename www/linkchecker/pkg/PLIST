@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2005/01/12 23:56:27 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.15 2005/01/25 09:15:44 xsa Exp $
 bin/linkchecker
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/_linkchecker_configdata.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/HtmlParser/
@@ -96,20 +94,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/renderer.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/resolver.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rrset.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/set.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_flags.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_message.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_name.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_namedict.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_ntoaaton.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_rdtypeandclass.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_resolver.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_rrset.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_set.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_tokenizer.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_update.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tests/test_zone.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tokenizer.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tsig.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/tsigkeyring.py
@@ -118,22 +102,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/update.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/version.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/zone.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/fcgi.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/httptest.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_anchor.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_base.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_error.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_fcgi.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_file.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_frames.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_ftp.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_http.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_https.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_mail.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_news.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_robotstxt.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/ftests/test_telnet.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/httplib2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/i18n.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/lc_cgi.py
@@ -153,17 +121,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/xmllog.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/mem.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/robotparser2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/strformat.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_cgi.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_containers.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_filenames.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_linkname.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_parser.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_robotparser.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_strformat.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_url.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/tests/test_urlbuild.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/threader.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/url.py
 @man man/man1/linkchecker.1
