@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/08/09 07:31:54 pvalchev Exp $
-
-BROKEN=		"relies on scsi API no longer part of libutil"
+# $OpenBSD: Makefile,v 1.22 2003/08/09 17:39:16 pvalchev Exp $
 
 COMMENT=	"read CD digital audio data through the SCSI bus"
 DISTNAME=	tosha-0.6
@@ -17,5 +15,8 @@ MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=markp/}
 MAKE_ENV=	SYSCONFDIR='${SYSCONFDIR}' CC="${CC}"
 
 NO_REGRESS=	Yes
+
+post-patch:
+	@cp ${FILESDIR}/libscsi* ${WRKSRC}
 
 .include <bsd.port.mk>
