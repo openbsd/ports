@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/10/25 22:37:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2003/02/15 14:26:03 espie Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -15,8 +15,10 @@ MAINTAINER=		Federico G. Schwindt <fgsch@openbsd.org>
 
 HOMEPAGE=		http://sources.redhat.com/
 
-BUILD_DEPENDS=		automake::devel/automake \
-			autoconf::devel/autoconf
+AUTOCONF_VERSION=	2.13
+BUILD_DEPENDS=		::devel/automake \
+			::devel/autoconf/${AUTOCONF_VERSION} \
+			::devel/metaauto
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
@@ -42,9 +44,9 @@ REGRESS_TARGET=		check
 FILES=			ar nm-new objdump ranlib size strings strip-new 
 
 post-patch:
-	@cd ${WRKSRC}/bfd && autoconf
-	@cd ${WRKSRC}/binutils && autoconf
-	@-cd ${WRKSRC}/gas && { automake; autoconf; }
+	@cd ${WRKSRC}/bfd && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	@cd ${WRKSRC}/binutils && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+	@-cd ${WRKSRC}/gas && { automake; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf; }
 	@cd ${WRKSRC}/ld && automake
 
 do-install:
