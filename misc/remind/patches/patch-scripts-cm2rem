@@ -1,0 +1,11 @@
+--- scripts/cm2rem.tcl.orig	Fri Jun 16 17:23:33 2000
++++ scripts/cm2rem.tcl	Fri Jun 16 17:23:55 2000
+@@ -16,7 +16,7 @@
+ # $Id: patch-scripts-cm2rem,v 1.1 2000/06/16 01:33:57 kevlo Exp $
+ 
+ # the next line restarts using tclsh \
+-exec tclsh "$0" "$@"
++exec tclsh8.3 "$0" "$@"
+ 
+ set i 0
+ foreach month {January February March April May June
