@@ -1,24 +1,59 @@
-$OpenBSD: patch-cfg_configure,v 1.1.1.1 2001/04/16 21:33:10 jakob Exp $
-
---- cfg/configure.orig	Fri Feb 18 21:45:03 2000
-+++ cfg/configure	Mon Apr 16 23:22:01 2001
-@@ -581,6 +581,7 @@ fi
+$OpenBSD: patch-cfg_configure,v 1.2 2002/10/04 19:20:24 naddy Exp $
+--- cfg/configure.orig	Mon Feb 12 17:40:04 2001
++++ cfg/configure	Wed Oct  2 00:42:49 2002
+@@ -584,6 +584,7 @@ fi
  
  OLD_CFLAGS="$CFLAGS"
  
-+ac_cv_prog_CC=gcc
++ac_cv_prog_CC=${CC-cc}
  if test -n "$ac_cv_prog_CC"; then
    echo "Using cached C compiler $ac_cv_prog_CC"
    echo "To change compilers, use \"make distclean\" then rerun configure"
-@@ -793,6 +794,7 @@ fi
+@@ -831,23 +832,12 @@ fi
+ 
+ 
+ 
+-if test "$ac_cv_prog_gcc" = yes ; then
+-  CFLAGS="$OLD_CFLAGS -Wall -O2"
+-else  
+-  if test `uname -s` = "HP-UX"; then
+-    CFLAGS="$OLD_CFLAGS -Ae +O2"
+-  elif test `uname -s` = "SunOS"; then
+-    CFLAGS="$OLD_CFLAGS -xO2"
+-  else
+-    CFLAGS="$OLD_CFLAGS -O2"
+-  fi
+-fi
+-
+ 
+ 
  
  OLD_CXXFLAGS="$CXXFLAGS"
  
-+ac_cv_prog_CXX=g++
++ac_cv_prog_CXX=${CXX-c++}
  if test -n "$ac_cv_prog_CXX"; then
    echo "Using cached C++ compiler $ac_cv_prog_CXX"
    echo "To change compilers, use \"make distclean\" then rerun configure"
-@@ -998,14 +1000,7 @@ fi
+@@ -1016,18 +1006,6 @@ fi
+ 
+ 
+ 
+-if test "$ac_cv_prog_gcc" = yes ; then
+-  CXXFLAGS="$OLD_CXXFLAGS -Wall -O2"
+-else  
+-  if test `uname -s` = "HP-UX"; then
+-    CXXFLAGS="$OLD_CXXFLAGS -Ae +O2"
+-  elif test `uname -s` = "SunOS"; then
+-    CXXFLAGS="$OLD_CXXFLAGS -xO2"
+-  else
+-    CXXFLAGS="$OLD_CXXFLAGS -O2"
+-  fi
+-fi
+-
+ 
+ # Extract the first word of "ranlib", so it can be a program name with args.
+ set dummy ranlib; ac_word=$2
+@@ -1065,14 +1043,7 @@ fi
  echo
  
  

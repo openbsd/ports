@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_PerfSocket_UDP_cpp,v 1.1 2002/10/04 19:20:24 naddy Exp $
+--- src/PerfSocket_UDP.cpp.orig	Wed Oct  2 00:12:24 2002
++++ src/PerfSocket_UDP.cpp	Wed Oct  2 00:14:06 2002
+@@ -375,11 +375,13 @@ void PerfSocket::Multicast_remove_client
+ 
+      extern vector<sockaddr_in> clients;
+ 
+-     for (int i=0; i < (int)(clients).size(); i++) {
+-         sockaddr_in t1 = clients[i];
++     vector<sockaddr_in>::iterator iter = clients.begin();
++
++     for (; iter != clients.end(); iter++) {
++         sockaddr_in t1 = *iter;
+          if ( ((long) t1.sin_addr.s_addr == (long) peer.sin_addr.s_addr)
+              && ( t1.sin_port == peer.sin_port)) {
+-              (clients).erase(&(clients[i]));
++              clients.erase(iter);
+ 
+               return;
+          }

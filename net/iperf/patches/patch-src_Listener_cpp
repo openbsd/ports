@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Listener_cpp,v 1.1 2002/10/04 19:20:24 naddy Exp $
+--- src/Listener.cpp.orig	Wed Oct  2 00:20:14 2002
++++ src/Listener.cpp	Wed Oct  2 00:22:19 2002
+@@ -213,8 +213,8 @@ void Listener::runAsDaemon(const char *p
+         fflush(stdout); 
+ 	/*umask(0);*/
+ 	
+-	close((int)stdout);
+-	close((int)stdin);
++	close(fileno(stdout));
++	close(fileno(stdin));
+ 	openlog(pname,LOG_CONS,facility);
+ #else
+         printf("Windows daemon not supported currently\n");
