@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure,v 1.3 2005/01/20 18:48:54 alek Exp $
+--- configure.orig	Wed Nov 17 02:17:20 2004
++++ configure	Tue Jan 18 16:29:35 2005
+@@ -4290,11 +4290,6 @@ if test "x$apr_preload_done" != "xyes" ;
+         ;;
+     *-openbsd*)
+ 
+-  if test "x$CPPFLAGS" = "x"; then
+-    test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
+-    CPPFLAGS="-D_POSIX_THREADS"
+-  else
+-    apr_addto_bugger="-D_POSIX_THREADS"
+     for i in $apr_addto_bugger; do
+       apr_addto_duplicate="0"
+       for j in $CPPFLAGS; do
+@@ -4308,7 +4303,6 @@ if test "x$apr_preload_done" != "xyes" ;
+         CPPFLAGS="$CPPFLAGS $i"
+       fi
+     done
+-  fi
+ 
+         # binding to an ephemeral port fails on OpenBSD so override
+         # the test for O_NONBLOCK inheritance across accept().

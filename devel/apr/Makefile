@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2004/12/09 01:12:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.3 2005/01/20 18:48:54 alek Exp $
 
 COMMENT=	"Apache Portable Runtime"
 
 DISTNAME=	apr-1.0.1
-PKGNAME=	apr-1.0.1p0
+PKGNAME=	apr-1.0.1p1
 CATEGORIES=	devel
 
 MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
@@ -22,6 +22,7 @@ MASTER_SITES=	http://www.apache.org/dist/apr/ \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
-		--enable-other-child
+		--enable-other-child \
+		--disable-threads
 
 .include <bsd.port.mk>
