@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.140 1999/11/22 23:44:01 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.141 1999/11/23 15:06:14 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1441,8 +1441,8 @@ do-extract:
 .endif
 	@PATH=${PORTPATH}; \
 	for file in ${EXTRACT_ONLY}; do \
-		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
-		then \
+		if cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${FULLDISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; then : ; \
+		else\
 			exit 1; \
 		fi \
 	done
@@ -1527,14 +1527,14 @@ ${WRKBUILD}:
 
 .if !target(do-build)
 do-build:
-	@(cd ${WRKBUILD}; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
 .endif
 
 # Install
 
 .if !target(do-install)
 do-install:
-	@(cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
 .endif
 
 # Package
@@ -1949,12 +1949,12 @@ fetch-list-one-pkg:
 makesum: fetch-all
 	@${MKDIR} ${FILESDIR}
 	@if [ -f ${CHECKSUM_FILE} ]; then ${RM} -f ${CHECKSUM_FILE}; fi
-	@(cd ${DISTDIR}; \
+	@cd ${DISTDIR} && \
 	 for file in ${_CKSUMFILES}; do \
 	 	for cipher in ${CIPHERS:R}; do \
 			$$cipher $$file >> ${CHECKSUM_FILE}; \
 		done; \
-	 done)
+	 done
 	@for file in ${_IGNOREFILES}; do \
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
@@ -1965,12 +1965,12 @@ makesum: fetch-all
 addsum: fetch-all
 	@${MKDIR} ${FILESDIR}
 	@touch ${CHECKSUM_FILE}
-	@(cd ${DISTDIR}; \
+	@cd ${DISTDIR} && \
 	 for file in ${_CKSUMFILES}; do \
 	 	for cipher in ${CIPHERS:R}; do \
 			$$cipher $$file >> ${CHECKSUM_FILE}; \
 		done; \
-	 done)
+	 done
 	@for file in ${_IGNOREFILES}; do \
 		echo "MD5 ($$file) = IGNORE" >> ${CHECKSUM_FILE}; \
 	done
@@ -1988,7 +1988,7 @@ checksum: fetch
 	@if [ ! -f ${CHECKSUM_FILE} ]; then \
 		${ECHO_MSG} ">> No checksum file."; \
 	else \
-		(cd ${DISTDIR}; OK="true"; \
+		cd ${DISTDIR}; OK="true"; \
 		  for file in ${_CKSUMFILES}; do \
 			for cipher_sig in ${PREFERRED_CIPHERS}; do \
 				sig=`${EXPR} $$cipher_sig : '.*\.\(.*\)'`; \
@@ -2033,7 +2033,7 @@ checksum: fetch
 			echo "are up to date.  If you want to override this check, type"; \
 			echo "\"make NO_CHECKSUM=Yes [other args]\"."; \
 			exit 1; \
-		  fi) ; \
+		  fi ; \
 	fi
 .endif
 
@@ -2317,10 +2317,10 @@ README.html:
 .endif
 .for I in 1 2
 	@if [ -s $@.tmp$I ]; then \
-		(${CAT} $@.tmp$I | while read n; do \
+		{ ${CAT} $@.tmp$I | while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
 			echo "<A HREF=\"${PKGDEPTH}/$$j/README.html\">$$k</A>"; \
-		 done;) >$@.tmp$Ia; \
+		 done; } >$@.tmp$Ia; \
     else \
     echo "(none)" > $@.tmp$Ia; \
 	fi
