@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.3 2000/08/16 16:34:19 naddy Exp $
+# $OpenBSD: DEINSTALL,v 1.4 2000/08/16 17:02:30 brad Exp $
 #
 # ytalk de-installation
 
@@ -8,13 +8,13 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/ytalkrc
 
-if [ -f ${CONFIG_FILE} ]; then
+if [ -f $CONFIG_FILE ]; then
     echo
     echo "+---------------"
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|           rm -f ${CONFIG_FILE}"
+    echo "|           rm -f $CONFIG_FILE"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."

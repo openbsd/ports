@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2000/08/16 16:34:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2000/08/16 17:02:29 brad Exp $
 
 DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
@@ -14,20 +14,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS= no_x11
+FLAVORS=	no_x11
 FLAVOR?=
 
-# No gnu-configure for now, need to set up DESTDIR in prefix/etc for fake
-# to work.
-CONFIGURE_STYLE=gnu dest
+SUBST_VARS=	SYSCONFDIR
+
+CONFIGURE_STYLE= gnu dest
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x
 .endif
-SUBST_VARS=	SYSCONFDIR
 
 INSTALL_TARGET=	install.bin install.man
 
 post-install:
-	${INSTALL_DATA} ${WRKBUILD}/ytalkrc ${PREFIX}/share/examples/ytalkrc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ytalk
+	${INSTALL_DATA} ${WRKBUILD}/ytalkrc ${PREFIX}/share/examples/ytalk/ytalkrc-sample
 
 .include <bsd.port.mk>
