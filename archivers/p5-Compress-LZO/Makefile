@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2000/08/21 00:16:40 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2000/08/21 02:20:10 brad Exp $
 
 DISTNAME=	perl-lzo-1.00
 PKGNAME=	p5-Compress-LZO-1.00
-CATEGORIES=	archivers
+CATEGORIES=	archivers perl5
 NEED_VERSION=	1.310
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/lzo-download/
 
