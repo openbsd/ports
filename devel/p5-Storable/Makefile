@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2002/09/20 02:10:36 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2002/10/29 01:59:14 kevlo Exp $
 
 COMMENT=	"persistency for perl data structures"
 
-DISTNAME=	Storable-2.04
+DISTNAME=	Storable-2.05
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
@@ -19,5 +19,7 @@ BUILD_DEPENDS=	:p5-Test-Simple-*:devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
+
+REGRESS_DEPENDS=	::devel/p5-Test-Harness
 
 .include <bsd.port.mk>
