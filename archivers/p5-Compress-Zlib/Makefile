@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2001/02/07 01:42:50 avsm Exp $
+# $OpenBSD: Makefile,v 1.20 2001/02/22 06:44:18 avsm Exp $
 
-DISTNAME=	Compress-Zlib-1.10
+DISTNAME=	Compress-Zlib-1.11
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	archivers perl5
 NEED_VERSION=	1.351
