@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 1999/03/14 16:31:51 rohee Exp $
+# $OpenBSD: Makefile,v 1.23 1999/08/09 05:20:29 fgsch Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
+     SUBDIR += TclXML
      SUBDIR += agrep
      SUBDIR += c2html
      SUBDIR += catdoc
@@ -22,12 +23,14 @@
      SUBDIR += par
      SUBDIR += pilot_makedoc
      SUBDIR += rman
+     SUBDIR += rxp
      SUBDIR += sgmlformat
      SUBDIR += sp
      SUBDIR += spiff
      SUBDIR += texi2html
 #    SUBDIR += unroff
      SUBDIR += wdiff
+     SUBDIR += xml2rfc
      SUBDIR += xpdf
 
 .include <bsd.port.subdir.mk>
