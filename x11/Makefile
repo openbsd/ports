@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 1997/12/02 23:13:42 niklas Exp $
+# $OpenBSD: Makefile,v 1.3 1997/12/03 03:57:23 angelos Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
 #    SUBDIR += FWF
 #    SUBDIR += XFree86
 #    SUBDIR += XFree86-contrib
-#    SUBDIR += Xaw3d
+     SUBDIR += Xaw3d
 #    SUBDIR += afterstep
 #    SUBDIR += amiwm
 #    SUBDIR += asclock
