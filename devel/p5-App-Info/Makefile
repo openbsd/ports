@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/23 08:54:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2005/01/12 08:47:54 kevlo Exp $
 
 COMMENT=	"interface for providing metadata about installed packages"
 
-DISTNAME=	App-Info-0.23
+DISTNAME=	App-Info-0.44
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
@@ -15,6 +15,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=App/}
 
-CONFIGURE_STYLE= perl
+CONFIGURE_STYLE= perl modbuild
 
 .include <bsd.port.mk>
