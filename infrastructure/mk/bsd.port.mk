@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.349 2001/01/08 22:09:24 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.350 2001/01/08 22:10:36 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -249,8 +249,8 @@ DEF_UMASK?=		022
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
-LOCALBASE?=		${DESTDIR}/usr/local
-X11BASE?=		${DESTDIR}/usr/X11R6
+LOCALBASE?=		/usr/local
+X11BASE?=		/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
 .if defined(DIST_SUBDIR)
 FULLDISTDIR?=	${DISTDIR}/${DIST_SUBDIR}
@@ -290,6 +290,8 @@ PKGDIR?=		${.CURDIR}/pkg
 .endif
 
 PREFIX?=		${LOCALBASE}
+TRUEPREFIX?=	${PREFIX}
+DESTDIR?=		${WRKINST}
 
 CONFIGURE_STYLE?=
 
@@ -879,12 +881,9 @@ SCRIPTS_ENV+= CURDIR=${.CURDIR} DISTDIR=${DISTDIR} \
 SCRIPTS_ENV+=	BATCH=yes
 .endif
 
-.if ${FAKE:U} == "YES" && !defined(TRUEPREFIX)
-MANPREFIX?=  ${WRKINST}${PREFIX}
-CATPREFIX?=  ${WRKINST}${PREFIX}
-.else
-MANPREFIX?=	${PREFIX}
-CATPREFIX?=	${PREFIX}
+.if ${FAKE:U} == "YES"
+MANPREFIX?=  ${WRKINST}${TRUEPREFIX}
+CATPREFIX?=  ${WRKINST}${TRUEPREFIX}
 .endif
 
 .for sect in 1 2 3 4 5 6 7 8 9 L N
