@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1999/04/01 02:16:37 brad Exp $
+# $OpenBSD: Makefile,v 1.4 1999/04/09 22:36:48 marc Exp $
 
 DISTNAME=	tar-1.12
 CATEGORIES=	archivers
@@ -17,11 +17,6 @@ post-install:
 	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	install-info ${PREFIX}/info/tar.info ${PREFIX}/info/dir
-	@echo
-	@echo "*** You might want to setup a link to /etc/rmt by issuing:"
-	@echo "*** ln -sf ${PREFIX}/libexec/grmt /etc/rmt"
-	@echo "*** If so, you should try to remember to reset that link"
-	@echo "*** to its former value if you ever pkg_delete this package."
-	@echo
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
