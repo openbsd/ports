@@ -1,0 +1,9 @@
+Todo is a program to display and manage a hierarchical list of outstanding 
+work, or just reminders.
+
+The program itself is assisted by a few shell scripts that override default
+builtins. Specifically, cd, pushd and popd are overridden so that when using
+one of these commands to enter a directory, the todo will display any
+outstanding items in that directory.
+
+WWW: ${HOMEPAGE}
