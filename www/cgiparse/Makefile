@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2000/06/09 20:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/07/03 22:49:31 krw Exp $
 
 DISTNAME=	cgiparse-0.8e
 CATEGORIES=	www
-NEED_VERSION=	1.295
+NEED_VERSION=	1.310
 
 MAINTAINER=	ports@openbsd.org
 
