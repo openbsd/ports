@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 1999/10/08 04:08:33 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/11/29 07:05:48 kevlo Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
-DISTNAME=	esound-0.2.15
+DISTNAME=	esound-0.2.16
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR= sources/esound

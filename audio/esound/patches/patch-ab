@@ -1,8 +1,8 @@
---- configure.orig	Thu Oct  7 23:56:12 1999
-+++ configure	Thu Oct  7 23:56:41 1999
-@@ -3851,6 +3851,7 @@
+--- configure.orig	Mon Nov 29 14:41:32 1999
++++ configure	Mon Nov 29 14:42:30 1999
+@@ -4077,6 +4077,7 @@
     cat > conftest.$ac_ext <<EOF
- #line 3853 "configure"
+ #line 4079 "configure"
  #include "confdefs.h"
 +#include <stdio.h>
  #include <tcpd.h>

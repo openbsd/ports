@@ -1,5 +1,5 @@
---- test-script.orig	Thu Oct  7 23:55:09 1999
-+++ test-script	Thu Oct  7 23:55:44 1999
+--- test-script.orig	Mon Nov 29 14:44:16 1999
++++ test-script	Mon Nov 29 14:44:45 1999
 @@ -1,4 +1,4 @@
 -#!/bin/tcsh
 +#!/usr/local/bin/tcsh

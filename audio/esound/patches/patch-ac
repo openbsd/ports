@@ -1,5 +1,5 @@
---- audio_oss.c.orig	Thu Oct  7 23:57:45 1999
-+++ audio_oss.c	Thu Oct  7 23:58:10 1999
+--- audio_oss.c.orig	Mon Nov 29 14:43:04 1999
++++ audio_oss.c	Mon Nov 29 14:43:41 1999
 @@ -36,7 +36,7 @@
          mode = O_RDWR;
  
