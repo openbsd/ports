@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2001/09/13 21:38:39 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2001/09/17 20:18:25 naddy Exp $
 
      SUBDIR+= oaf
-     SUBDIR+= vfs
      SUBDIR+= libs
-     SUBDIR+= core
+     SUBDIR+= vfs
      SUBDIR+= controlcenter
+     SUBDIR+= core
      SUBDIR+= users-guide
      SUBDIR+= applets
 
