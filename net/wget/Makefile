@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2001/10/02 03:15:03 brad Exp $
+# $OpenBSD: Makefile,v 1.32 2002/04/06 22:14:17 miod Exp $
 
 COMMENT=	"retrieve files from the 'net via HTTP and FTP"
 
@@ -22,6 +22,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+PATCH_LIST=	${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltconfig \
+		${PORTSDIR}/infrastructure/patches/patch-lt1.3.5-ltmain_sh \
+		patch-*
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

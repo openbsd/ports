@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2001/10/02 03:15:03 brad Exp $
+$OpenBSD: patch-configure,v 1.2 2002/04/06 22:14:19 miod Exp $
 --- configure.orig	Mon Oct  1 22:48:30 2001
 +++ configure	Mon Oct  1 22:51:47 2001
 @@ -3512,7 +3512,7 @@ else
@@ -28,3 +28,21 @@ $OpenBSD: patch-configure,v 1.1 2001/10/02 03:15:03 brad Exp $
  
  
  echo $ac_n "checking whether NLS is requested""... $ac_c" 1>&6
+@@ -4246,7 +4246,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lintl  $LIBS"
++LIBS="-lintl -liconv $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4252 "configure"
+ #include "confdefs.h"
+@@ -4275,7 +4275,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-                    LIBS="-lintl $LIBS"
++                    LIBS="-lintl -liconv $LIBS"
+ 	  cat >> confdefs.h <<\EOF
+ #define HAVE_GETTEXT 1
+ EOF
