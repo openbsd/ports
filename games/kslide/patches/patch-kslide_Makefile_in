@@ -1,0 +1,11 @@
+--- kslide/Makefile.in.orig	Fri Apr 19 14:19:16 2002
++++ kslide/Makefile.in	Fri Apr 19 14:21:22 2002
+@@ -237,7 +237,7 @@
+ kslide_SOURCES = puzzle.cpp puz_app.cpp kslide.cpp  cpreferences.cpp  playername.cpp score.cpp
+ 
+ kslide_LDFLAGS = @all_libraries@
+-kslide_LDADD = -lkdeui -lkdecore -lqt -lX11 -lXext -lkfile
++kslide_LDADD = -lkdeui -lkdecore -lqt -lX11 -lXext -lkio
+ 
+ noinst_HEADERS = puz_app.h puzzle.h cursors.h icons.h  cpreferences.h  playername.h score.h
+ 
