@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.5 2002/12/13 08:53:56 fgsch Exp $
---- configure.orig	Tue Nov 12 14:58:56 2002
-+++ configure	Fri Dec 13 05:47:30 2002
-@@ -12655,7 +12655,7 @@ echo "$as_me: checking kerberosIV for \`
- #define KERBEROS_V4 1
+$OpenBSD: patch-configure,v 1.6 2003/08/13 23:28:24 fgsch Exp $
+--- configure.orig	2003-07-17 16:14:21.000000000 -0300
++++ configure	2003-08-13 20:01:47.000000000 -0300
+@@ -12795,7 +12795,7 @@ _ACEOF
  _ACEOF
  
--  CEFLAGS="$CEFLAGS -I/usr/include/kerberosIV"
-+  CEFLAGS="$CEFLAGS -I/usr/include -I/usr/include/kerberosIV"
-   LIBS="$LIBS -lkrb -ldes"
+   CEFLAGS="$CEFLAGS -I/usr/include/kerberosV"
+-  LIBS="$LIBS -lasn1 -lkrb5 -lcom_err -lkafs"
++  LIBS="$LIBS -lkrb5"
  else
-   #we need to detect when we're building under a kerberosV compatibility
+   if test "$with_kerberos5" != "yes"
+   then
