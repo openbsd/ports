@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2004/01/11 11:44:18 wilfried Exp $
+# $OpenBSD: Makefile,v 1.107 2004/02/01 06:22:25 jolan Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -95,6 +95,7 @@
      SUBDIR += rocksndiamonds
      SUBDIR += sarien
      SUBDIR += scummvm
+     SUBDIR += scummvm-tools
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
      SUBDIR += slash
