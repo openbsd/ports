@@ -1,6 +1,6 @@
-$OpenBSD: patch-despoof_c,v 1.1.1.1 2001/01/05 23:25:07 danh Exp $
---- despoof.c.orig	Tue Jul 25 10:51:24 2000
-+++ despoof.c	Fri Jan  5 18:15:03 2001
+$OpenBSD: patch-despoof_c,v 1.2 2002/02/24 00:15:30 pvalchev Exp $
+--- despoof.c.orig	Tue Jul 25 08:51:24 2000
++++ despoof.c	Sat Feb 23 17:10:52 2002
 @@ -150,7 +150,7 @@ void grab_packet(u_char *data1, struct p
  
    if (targetaddr == ip->ip_src.s_addr) 
@@ -19,7 +19,13 @@ $OpenBSD: patch-despoof_c,v 1.1.1.1 2001/01/05 23:25:07 danh Exp $
    fprintf(stderr,"  -l local port to bind to, default is 80\n");
    fprintf(stderr,"  -p target port to send to, default is 80\n");
    fprintf(stderr,"  -i inquery packet type to send/receive, types include the following:\n");
-@@ -311,7 +311,7 @@ int main(int argc, char **argv)
+@@ -306,12 +306,12 @@ int main(int argc, char **argv)
+   extern int optind;
+   extern int optopt;
+   extern int opterr;
+-  char ch;
++  int ch;
+   int spoof = 0, setdev = 0, timeout = 10, ttl = 0;
    u_long dst_ip = 0;
    pid_t pid;
    
