@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1998/10/06 23:18:44 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/10/09 00:25:27 marc Exp $
 #
 
 DISTNAME=	mpg123-0.59o

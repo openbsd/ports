@@ -1,18 +1,14 @@
-# OpenBSD makefile for:		ha
-# Version required:     0.999beta
-# Date created:         24 November 1997
-# Whom:                 angelos
-#
-# $Id: Makefile,v 1.1 1997/11/24 20:31:13 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/10/09 00:24:55 marc Exp $
 #
 
 DISTNAME=       ha0999
 PKGNAME=        ha-0.999b
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
-EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     angelos@openbsd.org
+
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
+EXTRACT_SUFX=   .tgz
 
 NO_WRKSUBDIR=   yes
 MAKEFILE=       makefile.nix
