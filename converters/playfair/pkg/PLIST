@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/12 07:10:45 jolan Exp $
+bin/playfair
+include/drmserr.h
+include/mp4.h
+include/mp4ff.h
+include/mp4ff_int_types.h
+include/mp4ffint.h
+include/mpeg4ip.h
+include/systems.h
+%%SHARED%%
