@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2002/07/24 12:17:58 espie Exp $
+# $OpenBSD: Makefile,v 1.135 2002/07/25 09:23:29 nino Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR += ElectricFence
@@ -6,6 +6,7 @@
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
+     SUBDIR += atk
      SUBDIR += atlas
      SUBDIR += autobook
      SUBDIR += autoconf
@@ -36,6 +37,7 @@
      SUBDIR += glade
      SUBDIR += glade,gnome
      SUBDIR += glib
+     SUBDIR += glib2
      SUBDIR += gmake
      SUBDIR += gmp
      SUBDIR += gperf
@@ -113,6 +115,7 @@
      SUBDIR += p5-Test-Simple
      SUBDIR += p5-Time-HiRes
      SUBDIR += p5-Time-TimeDate
+     SUBDIR += pango
      SUBDIR += pccts
      SUBDIR += pcre
      SUBDIR += perltidy
