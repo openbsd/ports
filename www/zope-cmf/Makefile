@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/09 12:32:34 matt Exp $
+# $OpenBSD: Makefile,v 1.4 2003/05/14 21:50:36 krw Exp $
 
 COMMENT=	"Zope content management framework"
 
-VERSION=	1.2
+VERSION=	1.3.1
 PKGNAME=	zope-cmf-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE=	http://cmf.zope.org/
-
-MAINTAINER=	Chris Humphries <chumphries@drauku.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
