@@ -1,6 +1,6 @@
-$OpenBSD: patch-cvsweb_conf,v 1.1.1.1 2000/10/01 19:18:53 naddy Exp $
---- cvsweb.conf.orig	Fri Sep 22 13:13:18 2000
-+++ cvsweb.conf	Mon Sep 25 23:09:37 2000
+$OpenBSD: patch-cvsweb_conf,v 1.2 2000/12/30 15:39:13 naddy Exp $
+--- cvsweb.conf.orig	Sat Dec 30 00:42:29 2000
++++ cvsweb.conf	Sat Dec 30 15:00:14 2000
 @@ -26,12 +26,12 @@
  # 'symbolic_name' 'path_to_the_actual_repository'
  %CVSROOT = (
@@ -82,3 +82,12 @@ $OpenBSD: patch-cvsweb_conf,v 1.1.1.1 2000/10/01 19:18:53 naddy Exp $
  
  # quick mime-type lookup; maps file-suffices to
  # mime-types for displaying checkouts in the browser.
+@@ -438,7 +442,7 @@ $allow_tar = '';
+ #      GNU tar has some useful options against unexpected errors.
+ 
+ # Options to pass to cvs(1).
+-@cvs_options = qw(-l);
++@cvs_options = qw(-R -l);
+ # e.g. @cvs_options = qw(-R -l);
+ #      -R (read only access mode) is implemented only in FreeBSD's and
+ #      OpenBSD's cvs(1).
