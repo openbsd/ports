@@ -1,0 +1,18 @@
+$OpenBSD: patch-dsirc,v 1.1.1.1 2001/02/24 11:25:59 reinhard Exp $
+--- dsirc.orig	Tue Mar 10 12:55:50 1998
++++ dsirc	Fri Feb  9 22:50:08 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ 
+ # dsirc: dumb-mode small irc client in perl
+ # by orabidoo <roger.espel.llima@pobox.com>
+@@ -38,7 +38,7 @@ $version='2.211';
+ $date='10 Mar 1998';
+ $add_ons='';
+ 
+-$libdir=$ENV{"SIRCLIB"} || ".";
++$libdir=$ENV{"SIRCLIB"} || "PREFIX.SED/share/sirc/";
+ push(@INC, $libdir, $ENV{"HOME"});
+ @loadpath=($ENV{"HOME"}."/.sirc", $libdir, ".");
+ 

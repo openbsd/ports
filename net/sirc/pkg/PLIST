@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/24 11:25:59 reinhard Exp $
+bin/dsirc
+bin/sirc
+bin/ssfe
+man/man1/sirc.1
+man/man1/ssfe.1
+share/sirc/n0thing.pl
+share/sirc/sirc.help
+@dirrm share/sirc

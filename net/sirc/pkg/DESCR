@@ -1,0 +1,6 @@
+Sirc is an Internet Relay Chat programmable client written in 
+perl and C. It has a main perl script that can be run in 'dumb'
+mode, standalone, and a separate split-screen front end in C,
+called ssfe.
+
+WWW: ${HOMEPAGE}

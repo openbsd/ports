@@ -1,0 +1,16 @@
+#!/bin/sh
+
+PERL=/usr/bin/perl
+
+if test -z "$SIRCSERVER" && test -z "$IRCSERVER"
+then
+SIRCSERVER="irc.ef.net"
+export SIRCSERVER
+fi
+
+case "$1" in
+  -d) shift
+      exec ${PERL} PREFIX.SED/bin/dsirc "$@"
+      ;;
+  *)  eval exec PREFIX.SED/bin/ssfe $SSFE ${PERL} PREFIX.SED/bin/dsirc \"\$@\"
+esac
