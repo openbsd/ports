@@ -1,6 +1,7 @@
 @option no-default-conflict
 @pkgcfl egcs-*-core
 @unexec install-info --delete --info-dir=%D/info %D/info/ecpp.info
+@unexec install-info --delete --info-dir=%D/info %D/info/egcc.info
 bin/egcc
 bin/egccbug
 bin/ecpp
@@ -14,6 +15,7 @@ lib/gcc-lib/@GCCARCH@/@VERSION@/collect2
 lib/gcc-lib/@GCCARCH@/@VERSION@/cpp
 lib/gcc-lib/@GCCARCH@/@VERSION@/libgcc.a
 lib/gcc-lib/@GCCARCH@/@VERSION@/specs
+lib/gcc-lib/@GCCARCH@/@VERSION@/tradcpp
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/syslimits.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/limits.h
 lib/gcc-lib/@GCCARCH@/@VERSION@/include/float.h

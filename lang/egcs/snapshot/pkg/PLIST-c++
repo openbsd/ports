@@ -104,6 +104,7 @@ include/g++-3/std/bastring.cc
 include/g++-3/std/bastring.h
 include/g++-3/std/complext.cc
 include/g++-3/std/complext.h
+include/g++-3/std/cpp_type_traits.h
 include/g++-3/std/dcomplex.h
 include/g++-3/std/fcomplex.h
 include/g++-3/std/gslice.h

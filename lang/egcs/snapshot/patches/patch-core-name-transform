@@ -1,6 +1,6 @@
---- gcc/Makefile.in.orig	Sun May 28 04:17:58 2000
-+++ gcc/Makefile.in	Wed May 31 14:30:35 2000
-@@ -486,6 +486,10 @@ UNPROTOIZE_INSTALL_NAME = `t='$(program_
+--- gcc/Makefile.in.orig	Mon Jul 17 22:55:42 2000
++++ gcc/Makefile.in	Wed Jul 19 00:59:43 2000
+@@ -489,6 +489,10 @@ UNPROTOIZE_INSTALL_NAME = `t='$(program_
  GCOV_INSTALL_NAME = `t='$(program_transform_name)'; echo gcov | sed -e $$t`
  GCCBUG_INSTALL_NAME = `t='$(program_transform_name)'; echo gccbug | sed -e $$t`
  
@@ -11,7 +11,16 @@
  # Actual name to use when installing a cross-compiler.
  GCC_CROSS_NAME = `t='$(program_transform_cross_name)'; echo gcc | sed -e $$t`
  CPP_CROSS_NAME = `t='$(program_transform_cross_name)'; echo cpp | sed -e $$t`
-@@ -2058,12 +2062,14 @@ doc: $(BUILD_INFO) gccbug
+@@ -1826,7 +1830,7 @@ tradcpp$(exeext): tradcpp.o tradcif.o cp
+ 	tradcpp.o tradcif.o cppdefault.o version.o intl.o $(LIBS)
+ 
+ tradcpp.o: tradcpp.c $(CONFIG_H) system.h version.h cppdefault.h
+-tradcif.o: tradcif.c $(CONFIG_H) system.h
++tradcif.o: $(srcdir)/tradcif.c $(CONFIG_H) system.h
+ 
+ $(srcdir)/tradcif.c: $(srcdir)/tradcif.y
+ 	cd $(srcdir); $(BISON) $(BISONFLAGS) -o tradcif.c tradcif.y
+@@ -2076,12 +2080,14 @@ doc: $(BUILD_INFO) gccbug
  info: cpp.info gcc.info lang.info
  
  cpp.info: $(srcdir)/cpp.texi
@@ -28,7 +37,7 @@
  
  dvi: gcc.dvi cpp.dvi lang.dvi
  
-@@ -2203,6 +2209,7 @@ maintainer-clean:
+@@ -2222,6 +2228,7 @@ maintainer-clean:
  	-rm -f c-parse.c c-parse.h c-parse.output TAGS
  	-rm -f cpp.info* cpp.??s cpp.*aux
  	-rm -f gcc.info* gcc.??s gcc.*aux
@@ -36,7 +45,7 @@
  #
  # Entry points `install' and `uninstall'.
  # Also use `install-collect2' to install collect2 when the config files don't.
-@@ -2370,18 +2377,19 @@ install-driver: xgcc$(exeext)
+@@ -2391,18 +2398,19 @@ install-driver: xgcc$(exeext)
  # $(INSTALL_DATA) might be a relative pathname, so we can't cd into srcdir
  # to do the install.
  install-info: doc installdirs lang.install-info
@@ -60,7 +69,7 @@
  
  # Install the man pages.
  install-man: installdirs $(srcdir)/gcc.1 $(srcdir)/cpp.1 lang.install-man
-@@ -2394,9 +2402,9 @@ install-man: installdirs $(srcdir)/gcc.1
+@@ -2415,9 +2423,9 @@ install-man: installdirs $(srcdir)/gcc.1
  	  $(INSTALL_DATA) $(srcdir)/gcc.1 $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
  	  chmod a-x $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
  	fi
