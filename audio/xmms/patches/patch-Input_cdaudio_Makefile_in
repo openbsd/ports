@@ -1,0 +1,11 @@
+--- Input/cdaudio/Makefile.in.orig	Thu Jul 12 15:34:33 2001
++++ Input/cdaudio/Makefile.in	Thu Jul 12 15:35:18 2001
+@@ -166,7 +166,7 @@
+ 
+ libdir = $(plugindir)/$(INPUT_PLUGIN_DIR)
+ 
+-INCLUDES = @GTK_CFLAGS@ @XML_CFLAGS@ -I$(top_buiddir)/intl
++INCLUDES = @GTK_CFLAGS@ @XML_CFLAGS@ -I$(top_builddir)/intl
+ libcdaudio_la_LDFLAGS = $(cdaudioldflags)
+ libcdaudio_la_LIBADD = @GTK_LIBS@ @XML_LIBS@
+ libcdaudio_la_SOURCES = $(cdaudiosources)

@@ -1,0 +1,109 @@
+--- configure.in.orig	Mon Jun 18 15:58:21 2001
++++ configure.in	Wed Jul 11 11:02:52 2001
+@@ -43,10 +43,9 @@
+ AC_PROG_LN_S
+ AC_PROG_MAKE_SET
+ 
+-AC_CHECK_HEADER(pthread.h,,AC_MSG_ERROR([*** POSIX thread support not installed - please install first ***]))
+ 
+ AM_PATH_GLIB(1.2.2,,AC_MSG_ERROR([*** GLIB >= 1.2.2 not installed - please install first ***]))
+-AM_PATH_GTK(1.2.2,,AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***]),gthread)
++AM_PATH_GTK(1.2.2,,AC_MSG_ERROR([*** GTK+ >= 1.2.2 not installed - please install first ***]))
+ AC_PATH_PROG(XMMS_PATH,xmms,no)
+ 
+ LIBS_save=$LIBS
+@@ -73,7 +72,6 @@
+ LIBS=$LIBS_save
+ AC_SUBST(VM_LIBS)
+ 
+-PTHREAD_LIBS=error
+ AC_MSG_CHECKING(for old style FreeBSD -pthread flag)
+ AC_EGREP_CPP(yes,
+ 	[#if defined(__FreeBSD_cc_version) && __FreeBSD_cc_version <= 500001
+@@ -100,7 +98,6 @@
+ if test "x$PTHREAD_LIBS" = xerror; then
+ 	AC_MSG_ERROR(*** Unable to locate working posix thread library ***)
+ fi
+-AC_SUBST(PTHREAD_LIBS)
+ 
+ LIBS_save=$LIBS
+ LIBS="$LIBS $GTK_LIBS"
+@@ -112,7 +109,7 @@
+ fi
+ 
+ CPPFLAGS_save=$CPPFLAGS
+-CPPFLAGS="$GTK_CFLAGS $CPPFLAGS"
++CPPFLAGS="$GTK_CFLAGS $CPPFLAGS -I$X11BASE/include"
+ have_opengl_headers=yes
+ AC_CHECK_HEADERS(GL/gl.h GL/glx.h,,have_opengl_headers=no)
+ 
+@@ -335,13 +332,9 @@
+ 
+ arch_type=other
+ have_solaris=no
++have_sun=no
+ ARCH_DEFINES=""
+ case "$host" in 
+-	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
+-		CFLAGS="$CFLAGS -m486"
+-		ARCH_DEFINES="-DI386_ASSEM"
+-		arch_type=ix86
+-	;;
+ 	ppc-*-*)
+ 		arch_type=ppc
+ 	;;
+@@ -351,12 +344,29 @@
+ 	*-sun-*)
+ 		have_solaris=yes
+ 	;;
++	*-*-openbsd*)
++		have_sun=yes
++		ARCH_DEFINES="-DWITH_SYMBOL_UNDERSCORE"
++		PTHREAD_LIBS="-pthread"
++	;;
++	*-*-netbsd*)
++		have_sun=yes
++		ARCH_DEFINES="-DWITH_SYMBOL_UNDERSCORE"
++		PTHREAD_LIBS="-pthread"
++	;;
++	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
++		CFLAGS="$CFLAGS -m486"
++		ARCH_DEFINES="-DI386_ASSEM"
++		arch_type=ix86
++	;;
+ esac
+ 
+ AC_SUBST(ARCH_DEFINES)
++AC_SUBST(PTHREAD_LIBS)
+ AM_CONDITIONAL(ARCH_X86, test "x$arch_type" = "xix86")
+ AM_CONDITIONAL(ARCH_PPC, test "x$arch_type" = "xppc")
+ AM_CONDITIONAL(HAVE_SOLARIS, test "x$have_solaris" = xyes)
++AM_CONDITIONAL(HAVE_SUN, test "x$have_sun" = xyes)
+ 
+ plugindir=$libdir/xmms
+ AC_SUBST(plugindir)
+@@ -384,7 +394,7 @@
+ AC_SUBST(VISUALIZATION_PLUGIN_DIR)
+ AC_SUBST(pluginsubs)
+ 
+-XMMS_DEFINES="$CFLAGS -DDATA_DIR=\\\"$datadir/xmms\\\" -DPLUGIN_DIR=\\\"$plugindir\\\" -DPLUGINSUBS=$pluginsubs -DLOCALEDIR=\\\"$localedir\\\""
++XMMS_DEFINES="$CFLAGS -DDATA_DIR=\\\"$datadir/xmms\\\" -DPLUGIN_DIR=\\\"$plugindir\\\" -DPLUGINSUBS=$pluginsubs -DLOCALEDIR=\\\"$localedir\\\" -I$LOCALBASE/include"
+ 
+ if test "x$enable_user_plugin_dir" = "xno"; then
+ 	AC_DEFINE(DISABLE_USER_PLUGIN_DIR,, [Define to disable per user plugin directory])
+@@ -411,6 +421,7 @@
+ Output/esd/Makefile
+ Output/disk_writer/Makefile
+ Output/solaris/Makefile
++Output/sun/Makefile
+ Input/Makefile
+ Input/wav/Makefile
+ Input/mpg123/Makefile
+@@ -454,6 +465,7 @@
+ echo "  Build mikmod plugin:        $have_mikmod"
+ echo "  Build Ogg Vorbis plugin:    $have_oggvorbis"
+ echo "  Build Solaris plugin:       $have_solaris"
++echo "  Build Sun plugin:           $have_sun"
+ echo "  Build gnomexmms:            $have_gnome"
+ echo "  Build OpenGL plugins:       $have_opengl"
+ echo "  Pthread flag:               $PTHREAD_LIBS"

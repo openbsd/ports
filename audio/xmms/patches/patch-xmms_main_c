@@ -1,0 +1,33 @@
+--- xmms/main.c.orig	Thu Jul  5 21:58:03 2001
++++ xmms/main.c	Thu Jul  5 21:58:31 2001
+@@ -3204,14 +3204,6 @@
+ 	return FALSE;
+ }
+ 
+-void segfault_handler(int sig)
+-{
+-	printf(_("\nSegmentation fault\n\n"
+-	       "You've probably found a bug in XMMS, please visit\n"
+-	       "http://www.xmms.org/bugs and fill out a bug report.\n\n"));
+-	exit(1);
+-}
+-
+ static gboolean pposition_configure(GtkWidget *w, GdkEventConfigure *event, gpointer data)
+ {
+ 	gint x,y;
+@@ -3340,15 +3332,6 @@
+ 	textdomain(PACKAGE);
+ #endif
+ 
+-	signal(SIGSEGV, segfault_handler);
+-	g_thread_init(NULL);
+-	if (!g_thread_supported())
+-	{
+-		printf(_("Sorry, threads isn't supported on your platform.\n\n"
+-			 "If you're on a libc5 based linux system and installed GLIB & GTK+ before you\n"
+-			 "installed LinuxThreads you need to recompile GLIB & GTK+\n"));
+-		exit(1);
+-	}
+ 	parse_cmd_line(argc, argv, &options);
+ 
+ #if defined(HAVE_SRANDOMDEV)

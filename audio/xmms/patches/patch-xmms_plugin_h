@@ -1,0 +1,10 @@
+--- xmms/plugin.h.orig	Thu Jul  5 21:09:52 2001
++++ xmms/plugin.h	Thu Jul  5 21:10:20 2001
+@@ -58,6 +58,7 @@
+ 	int (*output_time) (void);	/* Return the current playing time */
+ 	int (*written_time) (void);	/* Return the length of all the data that has been written to
+ 					   the buffer */
++	void (*cleanup) (void);		/* Called when the plugin is unloaded */
+ }
+ OutputPlugin;
+ 

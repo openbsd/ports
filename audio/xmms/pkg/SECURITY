@@ -1,0 +1,6 @@
+$OpenBSD: SECURITY,v 1.1.1.1 2001/07/20 14:26:16 espie Exp $
+
+XMMS can be optionally installed setuid root in order to use its `Real
+time priority' feature, which drains resources but improve playback on
+extremely slow systems. Although XMMS will drop privileges, renice(8)
+is a better idea as a last resort.

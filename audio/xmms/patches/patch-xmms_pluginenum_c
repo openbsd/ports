@@ -1,0 +1,116 @@
+--- xmms/pluginenum.c.orig	Thu Jul  5 21:10:37 2001
++++ xmms/pluginenum.c	Thu Jul  5 21:14:57 2001
+@@ -33,6 +33,19 @@
+ # define RTLD_NOW 0
+ #endif
+ 
++#ifdef WITH_SYMBOL_UNDERSCORE
++# define IPLUGIN_SYM "_get_iplugin_info"
++# define OPLUGIN_SYM "_get_oplugin_info"
++# define EPLUGIN_SYM "_get_eplugin_info"
++# define GPLUGIN_SYM "_get_gplugin_info"
++# define VPLUGIN_SYM "_get_vplugin_info"
++#else
++# define IPLUGIN_SYM "get_iplugin_info"
++# define OPLUGIN_SYM "get_oplugin_info"
++# define EPLUGIN_SYM "get_eplugin_info"
++# define GPLUGIN_SYM "get_gplugin_info"
++# define VPLUGIN_SYM "get_vplugin_info"
++#endif
+ 
+ gchar *plugin_dir_list[] =
+ {
+@@ -264,9 +277,9 @@
+ #endif /* HPUX */
+ 	{
+ #ifdef HPUX
+- 		if ((shl_findsym(&h, "get_iplugin_info", TYPE_PROCEDURE, (void*) &gpi)) == 0)
++ 		if ((shl_findsym(&h, IPLUGIN_SYM, TYPE_PROCEDURE, (void*) &gpi)) == 0)
+ #else
+-		if ((gpi = dlsym(h, "get_iplugin_info")) != NULL)
++		if ((gpi = dlsym(h, IPLUGIN_SYM)) != NULL)
+ #endif
+ 		{
+ 			InputPlugin *p;
+@@ -282,9 +295,9 @@
+ 			ip_data->input_list = g_list_prepend(ip_data->input_list, p);
+ 		}
+ #ifdef HPUX
+-		else if ((shl_findsym(&h, "get_oplugin_info", TYPE_PROCEDURE, (void*) &gpi)) == 0)
++		else if ((shl_findsym(&h, OPLUGIN_SYM, TYPE_PROCEDURE, (void*) &gpi)) == 0)
+ #else
+-		else if ((gpi = dlsym(h, "get_oplugin_info")) != NULL)
++		else if ((gpi = dlsym(h, OPLUGIN_SYM)) != NULL)
+ #endif
+ 		{
+ 			OutputPlugin *p;
+@@ -295,9 +308,9 @@
+ 			op_data->output_list = g_list_prepend(op_data->output_list, p);
+ 		}
+ #ifdef HPUX
+-		else if ((shl_findsym(&h, "get_eplugin_info", TYPE_PROCEDURE, (void *) &gpi)) == 0)
++		else if ((shl_findsym(&h, EPLUGIN_SYM, TYPE_PROCEDURE, (void *) &gpi)) == 0)
+ #else
+-		else if ((gpi = dlsym(h, "get_eplugin_info")) != NULL)
++		else if ((gpi = dlsym(h, EPLUGIN_SYM)) != NULL)
+ #endif
+ 		{
+ 			EffectPlugin *p;
+@@ -308,9 +321,9 @@
+ 			ep_data->effect_list = g_list_prepend(ep_data->effect_list, p);
+ 		}
+ #ifdef HPUX
+-		else if ((shl_findsym(&h, "get_gplugin_info", TYPE_PROCEDURE, (void*) &gpi)) == 0)
++		else if ((shl_findsym(&h, GPLUGIN_SYM, TYPE_PROCEDURE, (void*) &gpi)) == 0)
+ #else
+-		else if ((gpi = dlsym(h, "get_gplugin_info")) != NULL)
++		else if ((gpi = dlsym(h, GPLUGIN_SYM)) != NULL)
+ #endif 
+ 		{
+ 			GeneralPlugin *p;
+@@ -322,9 +335,9 @@
+ 			gp_data->general_list = g_list_prepend(gp_data->general_list, p);
+ 		}
+ #ifdef HPUX
+-		else if ((shl_findsym(&h, "get_vplugin_info", TYPE_PROCEDURE, (void *) &gpi)) == 0)
++		else if ((shl_findsym(&h, VPLUGIN_SYM, TYPE_PROCEDURE, (void *) &gpi)) == 0)
+ #else
+-		else if ((gpi = dlsym(h, "get_vplugin_info")) != NULL)
++		else if ((gpi = dlsym(h, VPLUGIN_SYM)) != NULL)
+ #endif
+ 		{
+ 			VisPlugin *p;
+@@ -355,7 +368,7 @@
+ 
+ void scan_plugins(char *dirname)
+ {
+-	gchar *filename, *ext;
++	gchar *filename;
+ 	DIR *dir;
+ 	struct dirent *ent;
+ 	struct stat statbuf;
+@@ -368,9 +381,8 @@
+ 	{
+ 		filename = g_strdup_printf("%s/%s", dirname, ent->d_name);
+ 		if (!stat(filename, &statbuf) && S_ISREG(statbuf.st_mode) &&
+-		    (ext = strrchr(ent->d_name, '.')) != NULL)
+-			if (!strcmp(ext, SHARED_LIB_EXT))
+-				add_plugin(filename);
++		    strstr(ent->d_name, SHARED_LIB_EXT))
++			add_plugin(filename);
+ 		g_free(filename);
+ 	}
+ 	closedir(dir);
+@@ -422,6 +434,12 @@
+ 	while (node)
+ 	{
+ 		op = (OutputPlugin *) node->data;
++		if(op && op->cleanup) {
++		    op->cleanup();
++		    GDK_THREADS_LEAVE();
++		    while(g_main_iteration(FALSE));
++		    GDK_THREADS_ENTER();
++		}
+ #ifdef HPUX
+                 h = op->handle;
+                 shl_unload(*h);

@@ -1,0 +1,11 @@
+--- libxmms/configure.orig	Thu Jul  5 21:04:29 2001
++++ libxmms/configure	Thu Jul  5 21:06:48 2001
+@@ -2129,7 +2129,7 @@
+ fi
+ 
+ 
+-  for module in . gthread
++  for module in . 
+   do
+       case "$module" in
+          gthread) 
