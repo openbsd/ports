@@ -1,0 +1,9 @@
+Powerful webserver security scanner
+
++ netcraft fingerprints
++ many options for host/script scanning
++ cgi rulebase for easy additions
++ vhost settings
+
+WWW: ${HOMEPAGE}
+
