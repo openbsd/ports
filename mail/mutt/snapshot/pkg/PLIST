@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/02/18 18:56:57 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/08/12 02:19:45 lebel Exp $
 bin/flea
 bin/mutt
 bin/mutt_dotlock
@@ -6,12 +6,13 @@ bin/muttbug
 bin/pgpewrap
 bin/pgpring
 bin/smime_keys
-man/man1/flea.1
-man/man1/mutt.1
-man/man1/mutt_dotlock.1
-man/man1/muttbug.1
-man/man5/mbox.5
-man/man5/muttrc.5
+@man man/man1/flea.1
+@man man/man1/mutt.1
+@man man/man1/mutt_dotlock.1
+@man man/man1/muttbug.1
+@man man/man5/mbox.5
+@man man/man5/muttrc.5
+share/doc/mutt/
 share/doc/mutt/COPYRIGHT
 share/doc/mutt/ChangeLog
 share/doc/mutt/ChangeLog.old
@@ -25,6 +26,7 @@ share/doc/mutt/README.SSL
 share/doc/mutt/TODO
 share/doc/mutt/applying-patches.txt
 share/doc/mutt/devel-notes.txt
+share/doc/mutt/html/
 share/doc/mutt/html/manual-1.html
 share/doc/mutt/html/manual-2.html
 share/doc/mutt/html/manual-3.html
@@ -35,15 +37,20 @@ share/doc/mutt/html/manual-7.html
 share/doc/mutt/html/manual.html
 share/doc/mutt/manual.txt
 share/doc/mutt/patch-notes.txt
+share/doc/mutt/samples/
 share/doc/mutt/smime-notes.txt
+share/examples/mutt/
+@sample ${CONFDIR}/
 share/examples/mutt/Mush.rc
 share/examples/mutt/Muttrc.sample
+@sample ${CONFDIR}/Muttrc
 share/examples/mutt/Pine.rc
 share/examples/mutt/Tin.rc
 share/examples/mutt/ca-bundle.crt
 share/examples/mutt/colors.default
 share/examples/mutt/colors.linux
 share/examples/mutt/gpg.rc
+share/examples/mutt/iconv/
 share/examples/mutt/iconv/iconv.aix-3.2.5.rc
 share/examples/mutt/iconv/iconv.aix-4.1.5.rc
 share/examples/mutt/iconv/iconv.aix-4.2.0.rc
@@ -63,6 +70,7 @@ share/examples/mutt/iconv/iconv.solaris-2.6-cjk.rc
 share/examples/mutt/iconv/iconv.solaris-2.6.rc
 share/examples/mutt/iconv/iconv.solaris-2.7.rc
 share/examples/mutt/mime.types.sample
+@sample ${CONFDIR}/mime.types
 share/examples/mutt/pgp2.rc
 share/examples/mutt/pgp5.rc
 share/examples/mutt/pgp6.rc
@@ -71,89 +79,48 @@ share/examples/mutt/sample.muttrc
 share/examples/mutt/sample.muttrc-tlr
 share/examples/mutt/smime.rc
 share/examples/mutt/smime_keys_test.pl
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/mutt.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
 share/locale/el/LC_MESSAGES/mutt.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/mutt.mo
 share/locale/es/LC_MESSAGES/mutt.mo
 share/locale/et/LC_MESSAGES/mutt.mo
 share/locale/fr/LC_MESSAGES/mutt.mo
 share/locale/gl/LC_MESSAGES/mutt.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/mutt.mo
 share/locale/id/LC_MESSAGES/mutt.mo
 share/locale/it/LC_MESSAGES/mutt.mo
 share/locale/ja/LC_MESSAGES/mutt.mo
 share/locale/ko/LC_MESSAGES/mutt.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/mutt.mo
 share/locale/nl/LC_MESSAGES/mutt.mo
 share/locale/pl/LC_MESSAGES/mutt.mo
 share/locale/pt_BR/LC_MESSAGES/mutt.mo
 share/locale/ru/LC_MESSAGES/mutt.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/sv/LC_MESSAGES/mutt.mo
 share/locale/tr/LC_MESSAGES/mutt.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/mutt.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/mutt.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/mutt.mo
-@dirrm share/locale/zh_TW/LC_MESSAGES
-@dirrm share/locale/zh_TW
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale/uk/LC_MESSAGES
-@dirrm share/locale/uk
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/gl/LC_MESSAGES
-@dirrm share/locale/gl
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
-@dirrm share/examples/mutt/iconv
-@dirrm share/examples/mutt
-@dirrm share/doc/mutt/html
-@dirrm share/doc/mutt
-@extraunexec rm -rf ${CONFDIR}
