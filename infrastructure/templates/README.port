@@ -1,4 +1,8 @@
-<H1>The %%PORT%% port</H1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head><title>The %%PORT%% port</title></head>
+<body>
+
+<h1>The %%PORT%% port</h1>
 
 <H2>
 %%PKG%%
@@ -23,3 +27,5 @@
 <ul>
 %%RUN_DEPENDS%%
 </ul>
+
+</body></html>

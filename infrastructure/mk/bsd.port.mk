@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.500 2001/11/22 16:02:26 naddy Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.501 2001/12/13 15:40:27 naddy Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2396,10 +2396,10 @@ README.html:
 	@if [ -s $@.tmp$I ]; then \
 		{ cat $@.tmp$I | while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
-			echo "<A HREF=\"${PKGDEPTH}/$$j/README.html\">$$k</A>"; \
+			echo "<li><a href=\"${PKGDEPTH}/$$j/README.html\">$$k</a>"; \
 		 done; } >$@.tmp$Ia; \
     else \
-    echo "(none)" > $@.tmp$Ia; \
+    echo "<li>(none)" > $@.tmp$Ia; \
 	fi
 .endfor
 	@cat ${README_NAME} | \

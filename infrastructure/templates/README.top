@@ -1,4 +1,9 @@
-<H1>OpenBSD ports collection</H1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head><title>OpenBSD ports collection</title></head>
+<body>
+
+<h1>OpenBSD ports collection</h1>
 
 <h2>Description</h2>
 %%DESCR%%
@@ -7,3 +12,5 @@
 <dl COMPACT>
 %%SUBDIR%%
 </dl>
+
+</body></html>

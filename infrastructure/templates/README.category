@@ -1,4 +1,9 @@
-<H1>Ports in Category %%CATEGORY%%</H1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head><title>Ports in Category %%CATEGORY%%</title></head>
+<body>
+
+<h1>Ports in Category %%CATEGORY%%</h1>
 
 <h2>Description</h2>
 %%DESCR%%
@@ -7,3 +12,5 @@
 <dl>
 %%SUBDIR%%
 </dl>
+
+</body></html>
