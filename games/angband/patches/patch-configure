@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1 2001/08/11 17:18:50 lebel Exp $
---- configure.orig	Sat Aug 11 12:56:43 2001
-+++ configure	Sat Aug 11 12:57:29 2001
-@@ -843,10 +843,10 @@ fi
+--- configure	2005/02/24 20:36:35	1.1
++++ configure	2005/02/24 20:37:56
+@@ -1764,11 +1764,10 @@
  
  
- cat >> confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
 -#define DEFAULT_PATH "$game_datadir"
 +#define DEFAULT_PATH "$TRUEPREFIX/share/angband"
- EOF
+ _ACEOF
  
 -DEFAULT_PATH="$game_datadir"
-+DEFAULT_PATH="$TRUEPREFIX/share/angband"
+-
++#define DEFAULT_PATH "$TRUEPREFIX/share/angband"
  
- 
- # Extract the first word of "gcc", so it can be a program name with args.
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'

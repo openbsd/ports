@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/22 11:14:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2005/03/07 21:01:35 niallo Exp $
 bin/angband
 share/angband/
 @comment share/angband/apex/
@@ -8,6 +8,7 @@ share/angband/edit/
 share/angband/edit/artifact.txt
 share/angband/edit/cost_adj.txt
 share/angband/edit/ego_item.txt
+share/angband/edit/flavor.txt
 share/angband/edit/limits.txt
 share/angband/edit/monster.txt
 share/angband/edit/object.txt
@@ -32,6 +33,9 @@ share/angband/help/playing.txt
 share/angband/help/version.txt
 share/angband/info/
 share/angband/pref/
+share/angband/pref/flvr-dvg.prf
+share/angband/pref/flvr-new.prf
+share/angband/pref/flvr-xxx.prf
 share/angband/pref/font-ami.prf
 share/angband/pref/font-dos.prf
 share/angband/pref/font-ibm.prf
@@ -41,6 +45,7 @@ share/angband/pref/font-x11.prf
 share/angband/pref/font-xxx.prf
 share/angband/pref/font.prf
 share/angband/pref/graf-ami.prf
+share/angband/pref/graf-dvg.prf
 share/angband/pref/graf-gcu.prf
 share/angband/pref/graf-ibm.prf
 share/angband/pref/graf-lsl.prf
@@ -53,6 +58,7 @@ share/angband/pref/graf.prf
 share/angband/pref/message.prf
 share/angband/pref/pref-acn.prf
 share/angband/pref/pref-ami.prf
+share/angband/pref/pref-dos.prf
 share/angband/pref/pref-emx.prf
 share/angband/pref/pref-gcu.prf
 share/angband/pref/pref-mac.prf
@@ -61,8 +67,23 @@ share/angband/pref/pref-x11.prf
 share/angband/pref/pref.prf
 share/angband/pref/user-mac.prf
 share/angband/pref/user.prf
+share/angband/pref/xtra-dvg.prf
 share/angband/pref/xtra-new.prf
 share/angband/pref/xtra-xxx.prf
+@comment share/angband/save/
+share/angband/script/
+share/angband/script/birth.lua
+share/angband/script/event.lua
+share/angband/script/init.lua
+share/angband/script/object.lua
+share/angband/script/player.lua
+share/angband/script/spell.lua
+share/angband/script/store.lua
+share/angband/script/test.lua
+share/angband/script/trace.lua
+@comment share/angband/user/
+share/angband/xtra/font/
+share/angband/xtra/font/16x16.txt
 @comment share/angband/save/
 @comment share/angband/user/
 share/angband/xtra/
