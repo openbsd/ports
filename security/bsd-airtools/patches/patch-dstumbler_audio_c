@@ -1,13 +1,12 @@
-$OpenBSD: patch-dstumbler_audio_c,v 1.1 2003/01/14 23:52:40 pvalchev Exp $
+$OpenBSD: patch-dstumbler_audio_c,v 1.2 2003/01/18 20:49:26 pvalchev Exp $
 --- dstumbler/audio.c.orig	Tue Dec  4 19:34:40 2001
-+++ dstumbler/audio.c	Sat Nov 23 11:43:09 2002
-@@ -61,17 +61,20 @@ audio_graph(int pitch)
++++ dstumbler/audio.c	Sat Jan 18 13:45:02 2003
+@@ -61,17 +61,19 @@ audio_graph(int pitch)
    b = (pitch % 10) / 2;
  
    snprintf(audio_buf, AUDIO_BUF_LEN - 1, "L8o%dao%da", a, b);
 -  audio_play(audio_buf);
 +/*  audio_play(audio_buf); */
-+  audio_play();
  
    return;
  }
@@ -25,7 +24,7 @@ $OpenBSD: patch-dstumbler_audio_c,v 1.1 2003/01/14 23:52:40 pvalchev Exp $
    if((sp_fd = open(SPKR_DEV, O_WRONLY|O_NONBLOCK|O_SYNC)) < 0)
    {
      alert("error: unable to open speaker device: %s", strerror(errno));
-@@ -89,4 +92,5 @@ audio_play(char *string)
+@@ -89,4 +91,5 @@ audio_play(char *string)
      alert("error: error closing speaker device: %s", strerror(errno));
      return;
    }
