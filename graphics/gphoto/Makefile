@@ -1,16 +1,10 @@
-# Makefile for:		gphoto
-# Version required:	0.4.0
-# Date created:		7 Nov 1999
-# Whom:			dugsong@monkey.org
-#
-# $OpenBSD: Makefile,v 1.7 2000/10/22 15:42:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/11/30 04:41:55 dugsong Exp $
 
-DISTNAME=	gphoto-0.4.1
+DISTNAME=	gphoto-0.4.3
+
 CATEGORIES=	graphics
-NEED_VERSION=	1.305
-FAKE=No
 
-MASTER_SITES=	ftp://ftp.gphoto.org/projects/gphoto/pub/tar/0.4/
+MASTER_SITES=	http://www.gphoto.net/dist/
 
 MAINTAINER=	Dug Song <dugsong@monkey.org>
 
@@ -21,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
 		Imlib.19::graphics/imlib \
-		Magick.4::graphics/ImageMagick
+		Magick.5::graphics/ImageMagick
 
 CONFIGURE_STYLE=autoconf
 
