@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/08/21 13:52:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2002/10/26 11:45:52 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT=		C++ X11 GUI toolkit
@@ -7,7 +7,7 @@ COMMENT-html=		off-line html documentation for qt3
 COMMENT-postgresql=	PostgresSQL plugin for qt3
 COMMENT-mysql=		MySQL plugin for qt3
 
-VERSION=	0.5
+VERSION=	0.6
 DISTNAME=	qt-x11-free-3.${VERSION}
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 HOMEPAGE=	http://www.trolltech.com/qt/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
+
+FLAVORS=mt
 
 PSEUDO_FLAVORS=	no_mysql no_postgresql
 # Adjust for arches where MySQL/PostgreSQL don't work.
@@ -44,7 +46,7 @@ PORTHOME="${WRKDIST}"
 MAKE_FLAGS=	DESIGNER_SUBDIR=dummy
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
-		-system-zlib -no-thread -sm -no-g++-exceptions \
+		-system-zlib -sm -no-g++-exceptions \
 		-v -stl -xrender \
 		-no-sql-odbc \
 		-I${LOCALBASE}/include/libpng \
@@ -52,6 +54,16 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg \
 		-I${LOCALBASE}/include \
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
+
+.if ${FLAVOR:L:Mmt}
+FULLPKGNAME=		qt3-mt-${VERSION}
+CONFIGURE_ARGS+=-thread
+FLAVOR+=no_mysql no_postgresql
+ALL_TARGET=sub-src
+.else
+CONFIGURE_ARGS+=-no-thread
+MULTI_PACKAGES=	-examples -html
+.endif
 
 # This is needed to find plugins
 CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
@@ -63,7 +75,6 @@ CONFIGURE_ARGS+=	-prefix ${QT_LIBDIR}
 #CONFIGURE_ARGS+=-xft
 CONFIGURE_ENV=	QTDIR="${WRKSRC}" KDEDIR="${LOCALBASE}"
 
-MULTI_PACKAGES=	-examples -html
 SUBPACKAGE?=
 
 QTMODULES=	styles tools kernel widgets dialogs \
@@ -131,6 +142,19 @@ SUBST_VARS=	VERSION QT_LIBDIR QT_DOC
 DOCS=	FAQ LICENSE.GPL README README.QT \
 	changes-3*
 
+VMEM_WARNING=	Yes
+
+
+.if ${FLAVOR:L:Mmt}
+post-patch:
+	-rm -rf ${WRKSRC}/examples
+	-rm -rf ${WRKSRC}/tutorial
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt3
+	${INSTALL_DATA} ${WRKBUILD}/lib/libqt-mt.so.3.6 ${PREFIX}/lib/qt3
+	ln -sf qt3/libqt-mt.so.3.6 ${PREFIX}/lib
+.else
 post-configure:
 	@cd ${WRKSRC} && cp -R examples examples-src
 	@find ${WRKSRC}/examples-src -name '*.orig' |xargs rm
@@ -141,9 +165,7 @@ post-configure:
 	@find ${WRKSRC}/tutorial-src -name '.moc' |xargs rm -r
 	@find ${WRKSRC}/tutorial-src -name '.obj' |xargs rm -r
 
-VMEM_WARNING=	Yes
-
-LIBRARIES=qt.so.3.5 editor.so.1.0 qui.so.1.0
+LIBRARIES=qt.so.3.6 editor.so.1.0 qui.so.1.0
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic
 PROGRAMS=assistant linguist lrelease lupdate qm2ts qmake qtconfig 
 
@@ -156,7 +178,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${QT_TUTORIAL}
 	${INSTALL_DATA_DIR} ${QT_DOC}/html
 	# libraries
-.for l in ${LIBRARIES}
+.  for l in ${LIBRARIES}
 	@if [ -f ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ]; then \
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib${l:C/\.so\..*/.a/} ${PREFIX}/lib/qt3; \
 	fi
@@ -164,15 +186,15 @@ do-install:
 	 ${INSTALL_DATA} ${WRKBUILD}/lib/lib$l ${PREFIX}/lib/qt3; \
 	 ln -sf qt3/lib$l ${PREFIX}/lib; \
 	fi
-.endfor
+.  endfor
 	# programs
-.for p in ${PROGRAMS3}
+.  for p in ${PROGRAMS3}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${QT_LIBDIR}/bin
 	@ln -sf ${TRUEPREFIX}/lib/qt3/bin/$p ${PREFIX}/bin/$p3
-.endfor
-.for p in ${PROGRAMS}
+.  endfor
+.  for p in ${PROGRAMS}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/$p ${PREFIX}/bin
-.endfor
+.  endfor
 	# includes
 	@rm -f ${WRKSRC}/include/qt_{mac,windows}.h
 	${INSTALL_DATA_DIR} ${QT_INCDIR}/private
@@ -213,14 +235,14 @@ do-install:
 	    ${QT_PLUGINSDIR}/imageformats
 	${INSTALL_DATA} ${WRKBUILD}/plugins/imageformats/libqmng.so \
 	    ${QT_PLUGINSDIR}/imageformats
-.if empty(FLAVOR:L:Mno_postgresql)
+.  if empty(FLAVOR:L:Mno_postgresql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
-.endif
-.if empty(FLAVOR:L:Mno_mysql)
+.  endif
+.  if empty(FLAVOR:L:Mno_mysql)
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
-.endif
+.  endif
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libwizards.so \
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/libcppeditor.so \
@@ -229,6 +251,7 @@ do-install:
 	    ${QT_PLUGINSDIR}/designer
 	${INSTALL_DATA} ${WRKBUILD}/plugins/designer/librcplugin.so \
 	    ${QT_PLUGINSDIR}/designer
+.endif
 
 PKGNAME=		qt3-${VERSION}
 PKGNAME-examples=	qt3-examples-${VERSION}

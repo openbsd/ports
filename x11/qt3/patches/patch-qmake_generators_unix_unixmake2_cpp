@@ -1,16 +1,16 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2002/07/17 21:43:36 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Mon Jul  8 12:27:37 2002
-+++ qmake/generators/unix/unixmake2.cpp	Wed Jul 17 12:58:24 2002
-@@ -220,10 +220,14 @@ UnixMakefileGenerator::writeMakeParts(QT
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.6 2002/10/26 11:45:52 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Thu Oct 17 17:09:32 2002
++++ qmake/generators/unix/unixmake2.cpp	Thu Oct 24 12:15:28 2002
+@@ -219,10 +219,14 @@ UnixMakefileGenerator::writeMakeParts(QT
      } else if (!project->isActiveConfig("staticlib") && project->variables()["QMAKE_APP_FLAG"].isEmpty()) {
  	t << "TARGETA	= " << var("TARGETA") << endl;
- 	if(project->variables()["QMAKE_HPUX_SHLIBS"].isEmpty()) {
+ 	if(project->isEmpty("QMAKE_HPUX_SHLIBS")) {
 -	    t << "TARGETD	= " << var("TARGET_x.y.z") << endl;
 -	    t << "TARGET0	= " << var("TARGET_") << endl;
 -	    t << "TARGET1	= " << var("TARGET_x") << endl;
 -	    t << "TARGET2	= " << var("TARGET_x.y") << endl;
-+	    if (!project->variables()["QMAKE_OPENBSD_SHLIBS"].isEmpty()) {
-+		t << "TARGETD	= " << var("TARGET_x.y") << endl;
++ 	    if (!project->isEmpty("QMAKE_OPENBSD_SHLIBS")) {
++ 		t << "TARGETD	= " << var("TARGET_x.y") << endl;
 +	    } else {
 +		t << "TARGETD	= " << var("TARGET_x.y.z") << endl;
 +		t << "TARGET0	= " << var("TARGET_") << endl;
@@ -20,7 +20,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2002/07/17 21:43:36 es
  	}
  	else {
  	    t << "TARGETD	= " << var("TARGET_x") << endl;
-@@ -916,6 +920,7 @@ void UnixMakefileGenerator::init2()
+@@ -920,6 +924,7 @@ void UnixMakefileGenerator::init2()
  							    project->first("VER_PAT"));
  	    }
  	    project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
@@ -28,7 +28,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2002/07/17 21:43:36 es
  	} else {
  	    project->variables()["TARGET_"].append("lib" + project->first("TARGET") + "." +
  						   project->first("QMAKE_EXTENSION_SHLIB"));
-@@ -936,10 +941,19 @@ void UnixMakefileGenerator::init2()
+@@ -940,10 +945,19 @@ void UnixMakefileGenerator::init2()
  		project->variables()["TARGET_x"].append("lib" + project->first("TARGET") + "." +
  							project->first("QMAKE_EXTENSION_SHLIB") +
  							"." + project->first("VER_MAJ"));
@@ -52,7 +52,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2002/07/17 21:43:36 es
  		project->variables()["TARGET_x.y.z"].append("lib" + project->first("TARGET") +
  							    "." +
  							    project->variables()[
-@@ -948,7 +962,10 @@ void UnixMakefileGenerator::init2()
+@@ -952,7 +966,10 @@ void UnixMakefileGenerator::init2()
  							    project->first("VER_MIN") +  "." +
  							    project->first("VER_PAT"));
  	    }
@@ -62,5 +62,5 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.5 2002/07/17 21:43:36 es
 +	    else
 +		project->variables()["TARGET"] = project->variables()["TARGET_x.y.z"];
  	}
- 	project->variables()["QMAKE_LN_SHLIB"].append("-ln -s");
- 	project->variables()["DESTDIR_TARGET"].append("$(TARGET)");
+ 	if(project->isEmpty("QMAKE_LN_SHLIB"))
+ 	    project->variables()["QMAKE_LN_SHLIB"].append("ln -s");

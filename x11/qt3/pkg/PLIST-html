@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST-html,v 1.4 2002/07/17 21:43:37 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.5 2002/10/26 11:45:52 espie Exp $
 share/doc/qt3/html/aboutqt.html
 share/doc/qt3/html/abstract-connections.png
 share/doc/qt3/html/abstractwidgets.html
 share/doc/qt3/html/accelerators.html
 share/doc/qt3/html/aclock-example.html
-share/doc/qt3/html/actiongroup-example.html
-share/doc/qt3/html/actiongroup.html
 share/doc/qt3/html/addressbook-example.html
 share/doc/qt3/html/advanced.html
 share/doc/qt3/html/annotated.html
@@ -17,7 +15,6 @@ share/doc/qt3/html/assistant-2.html
 share/doc/qt3/html/assistant-3.html
 share/doc/qt3/html/assistant-4.html
 share/doc/qt3/html/assistant.html
-share/doc/qt3/html/assistant.xml
 share/doc/qt3/html/basic.html
 share/doc/qt3/html/bearings.png
 share/doc/qt3/html/biff-example.html
@@ -34,11 +31,26 @@ share/doc/qt3/html/callbacks.png
 share/doc/qt3/html/canvas-chart-example.html
 share/doc/qt3/html/canvas-example.html
 share/doc/qt3/html/canvas.html
+share/doc/qt3/html/chart-canvastext-h.html
+share/doc/qt3/html/chart-canvasview-cpp.html
+share/doc/qt3/html/chart-canvasview-h.html
+share/doc/qt3/html/chart-chart-pro.html
+share/doc/qt3/html/chart-chartform-cpp.html
+share/doc/qt3/html/chart-chartform-h.html
+share/doc/qt3/html/chart-chartform_canvas-cpp.html
+share/doc/qt3/html/chart-chartform_files-cpp.html
+share/doc/qt3/html/chart-element-cpp.html
+share/doc/qt3/html/chart-element-h.html
 share/doc/qt3/html/chart-forms.png
+share/doc/qt3/html/chart-main-cpp.html
 share/doc/qt3/html/chart-main.png
 share/doc/qt3/html/chart-main2.png
 share/doc/qt3/html/chart-options.png
+share/doc/qt3/html/chart-optionsform-cpp.html
+share/doc/qt3/html/chart-optionsform-h.html
 share/doc/qt3/html/chart-setdata.png
+share/doc/qt3/html/chart-setdataform-cpp.html
+share/doc/qt3/html/chart-setdataform-h.html
 share/doc/qt3/html/checklists-example.html
 share/doc/qt3/html/classchart.html
 share/doc/qt3/html/classes.html
@@ -78,7 +90,6 @@ share/doc/qt3/html/designer-manual-8.html
 share/doc/qt3/html/designer-manual-9.html
 share/doc/qt3/html/designer-manual.html
 share/doc/qt3/html/designer.png
-share/doc/qt3/html/designer.xml
 share/doc/qt3/html/designer1.jpg
 share/doc/qt3/html/designer2.jpg
 share/doc/qt3/html/designer3.jpg
@@ -119,21 +130,6 @@ share/doc/qt3/html/embedporting.html
 share/doc/qt3/html/environment.html
 share/doc/qt3/html/events.html
 share/doc/qt3/html/eventsandfilters.html
-share/doc/qt3/html/examples-chart-canvastext-h.html
-share/doc/qt3/html/examples-chart-canvasview-cpp.html
-share/doc/qt3/html/examples-chart-canvasview-h.html
-share/doc/qt3/html/examples-chart-chart-pro.html
-share/doc/qt3/html/examples-chart-chartform-cpp.html
-share/doc/qt3/html/examples-chart-chartform-h.html
-share/doc/qt3/html/examples-chart-chartform_canvas-cpp.html
-share/doc/qt3/html/examples-chart-chartform_files-cpp.html
-share/doc/qt3/html/examples-chart-element-cpp.html
-share/doc/qt3/html/examples-chart-element-h.html
-share/doc/qt3/html/examples-chart-main-cpp.html
-share/doc/qt3/html/examples-chart-optionsform-cpp.html
-share/doc/qt3/html/examples-chart-optionsform-h.html
-share/doc/qt3/html/examples-chart-setdataform-cpp.html
-share/doc/qt3/html/examples-chart-setdataform-h.html
 share/doc/qt3/html/examples.html
 share/doc/qt3/html/face.jpg
 share/doc/qt3/html/filechooser.png
@@ -196,11 +192,11 @@ share/doc/qt3/html/linguist-manual-3.html
 share/doc/qt3/html/linguist-manual-4.html
 share/doc/qt3/html/linguist-manual.html
 share/doc/qt3/html/linguist.png
-share/doc/qt3/html/linguist.xml
 share/doc/qt3/html/listbox-example.html
 share/doc/qt3/html/listboxcombo-example.html
 share/doc/qt3/html/listviews-example.html
 share/doc/qt3/html/logo32.png
+share/doc/qt3/html/mac-differences.html
 share/doc/qt3/html/mail-example.html
 share/doc/qt3/html/mailinglists.html
 share/doc/qt3/html/mainclasses.html
@@ -950,7 +946,6 @@ share/doc/qt3/html/qmake-manual-5.html
 share/doc/qt3/html/qmake-manual-6.html
 share/doc/qt3/html/qmake-manual-7.html
 share/doc/qt3/html/qmake-manual.html
-share/doc/qt3/html/qmake.xml
 share/doc/qt3/html/qmap-h.html
 share/doc/qt3/html/qmap-members.html
 share/doc/qt3/html/qmap.html
@@ -1328,7 +1323,6 @@ share/doc/qt3/html/qt-colors.png
 share/doc/qt3/html/qt-members.html
 share/doc/qt3/html/qt-template-lib.html
 share/doc/qt3/html/qt.html
-share/doc/qt3/html/qt.xml
 share/doc/qt3/html/qt30-class-chart.png
 share/doc/qt3/html/qtab-members.html
 share/doc/qt3/html/qtab.html
@@ -1573,6 +1567,7 @@ share/doc/qt3/html/rot-example.html
 share/doc/qt3/html/rsubtract.png
 share/doc/qt3/html/runion.png
 share/doc/qt3/html/rxor.png
+share/doc/qt3/html/scaling.png
 share/doc/qt3/html/scribble-example.html
 share/doc/qt3/html/scripts.html
 share/doc/qt3/html/scrollview-example.html
@@ -1583,11 +1578,9 @@ share/doc/qt3/html/shclass.html
 share/doc/qt3/html/showimg-example.html
 share/doc/qt3/html/signals-and-slots.png
 share/doc/qt3/html/signalsandslots.html
-share/doc/qt3/html/simple-application-action.html
 share/doc/qt3/html/simple-application-example.html
 share/doc/qt3/html/simple-application.html
 share/doc/qt3/html/simple-font-demo-example.html
-share/doc/qt3/html/simple-qfont-demo-walkthrough.html
 share/doc/qt3/html/simple_dd-example.html
 share/doc/qt3/html/small-table-example-example.html
 share/doc/qt3/html/smooth.png

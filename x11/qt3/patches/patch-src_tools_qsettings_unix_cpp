@@ -1,22 +1,12 @@
-$OpenBSD: patch-src_tools_qsettings_unix_cpp,v 1.1 2002/07/17 21:43:36 espie Exp $
---- src/tools/qsettings_unix.cpp.orig	Wed Jul 17 19:55:58 2002
-+++ src/tools/qsettings_unix.cpp	Wed Jul 17 23:32:50 2002
-@@ -212,6 +212,8 @@ static int openlock( const QString &name
-     int fd = open( QFile::encodeName( lockfile ),
- 		   O_RDWR | O_CREAT, S_IRUSR | S_IWUSR );
+$OpenBSD: patch-src_tools_qsettings_unix_cpp,v 1.2 2002/10/26 11:45:52 espie Exp $
+--- src/tools/qsettings_unix.cpp.orig	Thu Oct 17 17:08:57 2002
++++ src/tools/qsettings_unix.cpp	Thu Oct 24 12:13:00 2002
+@@ -218,6 +218,8 @@ static int openlock( const QString &name
+ 	return fd;
+     }
  
 +    if (fd == -1)
 +	return fd;
      struct flock fl;
      fl.l_type = type;
-     fl.l_whence = SEEK_SET;
-@@ -230,6 +232,9 @@ static int openlock( const QString &name
- */
- static void closelock( int fd )
- {
-+    if (fd == -1)
-+    	return;
-+
-     struct flock fl;
-     fl.l_type = F_UNLCK;
      fl.l_whence = SEEK_SET;

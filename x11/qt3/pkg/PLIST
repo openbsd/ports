@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/07/17 21:43:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2002/10/26 11:45:52 espie Exp $
 bin/assistant
 bin/designer3
 bin/findtr3
@@ -136,7 +136,6 @@ include/X11/qt3/qfocusdata.h
 include/X11/qt3/qfont.h
 include/X11/qt3/qfontdatabase.h
 include/X11/qt3/qfontdialog.h
-include/X11/qt3/qfontdta.h
 include/X11/qt3/qfontinf.h
 include/X11/qt3/qfontinfo.h
 include/X11/qt3/qfontmet.h
