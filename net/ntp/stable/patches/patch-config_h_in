@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
+$OpenBSD: patch-config_h_in,v 1.2 2003/02/26 15:54:17 danh Exp $
 --- config.h.in.orig	Tue Dec 31 00:02:35 2002
-+++ config.h.in	Sun Feb 23 12:26:38 2003
-@@ -334,6 +334,9 @@
++++ config.h.in	Tue Feb 25 23:26:07 2003
+@@ -334,11 +334,17 @@
  /* Define to 1 if you have the `getdtablesize' function. */
  #undef HAVE_GETDTABLESIZE
  
@@ -11,3 +11,11 @@ $OpenBSD: patch-config_h_in,v 1.1.1.1 2003/02/23 21:27:33 danh Exp $
  /* Define to 1 if you have the `getrusage' function. */
  #undef HAVE_GETRUSAGE
  
+ /* Define to 1 if you have the `getuid' function. */
+ #undef HAVE_GETUID
++
++/* Define to 1 if you have the `geteuid' function. */
++#undef HAVE_GETEUID
+ 
+ /* Define to 1 if you have the `hstrerror' function. */
+ #undef HAVE_HSTRERROR

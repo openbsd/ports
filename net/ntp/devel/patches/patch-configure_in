@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
+$OpenBSD: patch-configure_in,v 1.2 2003/02/26 15:54:17 danh Exp $
 --- configure.in.orig	Thu Feb 13 01:28:32 2003
-+++ configure.in	Sun Feb 23 14:43:02 2003
++++ configure.in	Tue Feb 25 23:34:59 2003
 @@ -223,23 +223,17 @@ AC_CHECK_LIB(kvm, main)		dnl We already 
  AC_CHECK_LIB(ld, nlist)
  AC_CHECK_LIB(mld, nlist)
@@ -33,7 +33,15 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
  
  dnl Digital UNIX V4.0 and Solaris 7 have POSIX.1c functions in -lrt
  dnl Solaris 2.6 only has -lposix4; in Solaris 7, this is a symlink to -lrt,
-@@ -682,6 +676,8 @@ case "$host" in
+@@ -665,6 +659,7 @@ case "$host" in
+  *-pc-cygwin*)
+     ;;
+  *) AC_CHECK_FUNCS(getuid)
++    AC_CHECK_FUNCS(geteuid)
+     ;;
+ esac
+ AC_CHECK_FUNCS(hstrerror K_open kvm_open memcpy memmove memset)
+@@ -682,6 +677,8 @@ case "$host" in
      ;;
   *-*-irix[[45]]*)
      # Just a stub in "old" Irix.  Idiots.

@@ -1,16 +1,21 @@
-$OpenBSD: patch-ntpd_ntpd_c,v 1.1.1.1 2003/02/23 21:27:28 danh Exp $
---- ntpd/ntpd.c.orig	Sun Feb 23 14:22:07 2003
-+++ ntpd/ntpd.c	Sun Feb 23 14:23:32 2003
-@@ -392,7 +392,11 @@ ntpdmain(
+$OpenBSD: patch-ntpd_ntpd_c,v 1.2 2003/02/26 15:54:17 danh Exp $
+--- ntpd/ntpd.c.orig	Sat Feb  8 18:02:39 2003
++++ ntpd/ntpd.c	Tue Feb 25 23:36:19 2003
+@@ -392,11 +392,16 @@ ntpdmain(
  	}
  #endif
  
 -#if defined(HAVE_GETUID) && !defined(MPE) /* MPE lacks the concept of root */
-+/* 
-+ * MPE lacks the concept of root;
-+ * OpenBSD can use privilege escalation via systrace.
-+ */
-+#if defined(HAVE_GETUID) && !defined(MPE) && !defined(__OpenBSD__)
++#if (defined(HAVE_GETUID) || defined(HAVE_GETEUID)) \
++    && !defined(MPE) /* MPE lacks the concept of root */
  	{
  		uid_t uid;
  
++#if defined(HAVE_GETEUID)
++		uid = geteuid();
++#else
+ 		uid = getuid();
++#endif
+ 		if (uid)
+ 		{
+ 			msyslog(LOG_ERR, "ntpd: must be run as root, not uid %ld", (long)uid);
