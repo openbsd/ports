@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2002/07/14 19:35:29 wilfried Exp $
+# $OpenBSD: Makefile,v 1.64 2002/08/27 22:59:47 lebel Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -45,6 +45,7 @@
 #    SUBDIR += less
      SUBDIR += libutf8
 #    SUBDIR += lile
+     SUBDIR += logjam
 #    SUBDIR += logsurfer
      SUBDIR += magicpoint
      SUBDIR += mc
