@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2004/08/10 10:26:50 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/09/28 01:10:35 jcs Exp $
 
-DISTNAME=	sybperl-2.16
-PKGNAME=	p5-${DISTNAME}p0
+DISTNAME=	sybperl-2.17
+PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	databases perl5
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +13,7 @@ NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Sybase database access in Perl"
 HOMEPAGE=	http://www.mbay.net/~mpeppler/
-MASTER_SITES=	http://www.peppler.org/downloads/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Sybase/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
