@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2004/01/02 11:26:19 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2004/01/02 12:18:05 jakob Exp $
 
 COMMENT=	"fast, secure sendmail replacement"
 
@@ -83,12 +83,13 @@ MAKE_CCARGS+=	-DHAS_SSL
 MAKE_AUXLIBS+=	-lssl -lcrypto
 
 post-patch-tls:
-	mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
-	cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
-	cd ${WRKDIST} && patch -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
-	mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
-	rm ${WRKDIST}/conf/master.cf.orig
-	cd ${WRKDIST} && patch -p0 < ${FILESDIR}/patch-tls-master.cf
+	@echo "===>  Applying TLS patches for ${FULLPKGNAME}"
+	@mv ${WRKDIST}/conf/master.cf ${WRKDIST}/conf/master.cf.save
+	@cp ${WRKDIST}/conf/master.cf.orig ${WRKDIST}/conf/master.cf
+	@cd ${WRKDIST} && ${PATCH} -s -p1 < ${WRKDIR}/${TLSDISTNAME}/pfixtls.diff
+	@mv ${WRKDIST}/conf/master.cf.save ${WRKDIST}/conf/master.cf
+	@rm ${WRKDIST}/conf/master.cf.orig
+	@cd ${WRKDIST} && ${PATCH} -s -p0 < ${FILESDIR}/patch-tls-master.cf
 
 post-install-tls:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfix/tls
@@ -103,7 +104,7 @@ post-install-tls:
 .endif
 
 post-patch: post-patch-tls
-	rm ${WRKDIST}/conf/*.orig
+	@rm ${WRKDIST}/conf/*.orig
 
 post-install: post-install-tls
 
