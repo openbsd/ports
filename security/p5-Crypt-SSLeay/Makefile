@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2001/01/30 10:31:20 avsm Exp $
+# $OpenBSD: Makefile,v 1.5 2001/03/17 00:38:34 avsm Exp $
 
-DISTNAME=	Crypt-SSLeay-0.22
+DISTNAME=	Crypt-SSLeay-0.23
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	security perl5
 NEED_VERSION=	1.351
