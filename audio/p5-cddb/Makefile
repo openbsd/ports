@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2004/02/28 19:17:44 xsa Exp $
+# $OpenBSD: Makefile,v 1.14 2004/09/23 20:31:01 sturm Exp $
 
 COMMENT=	"Perl5 module for CDDB"
 
-DISTNAME=	CDDB-1.12
+DISTNAME=	CDDB-1.15
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	audio perl5
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=CDDB/}
 
-CONFIGURE_STYLE= perl
+CONFIGURE_STYLE=perl
+
+PKG_ARCH=	*
 
 .include <bsd.port.mk>
