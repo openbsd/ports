@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2000/02/17 17:59:54 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2000/02/17 20:16:24 brad Exp $
 
 DISTNAME=	bzip-0.21
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_BACKUP}
+
+NO_CDROM=	"NOFEE: can not sell"
 
 MAINTAINER=	ports@openbsd.org
 
@@ -11,6 +13,10 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
+
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -fomit-frame-pointer -funroll-loops \
+		-Wall -Winline -Wshadow -W"
 
 pre-install:
 	@cat ${FILESDIR}/COPYRIGHT

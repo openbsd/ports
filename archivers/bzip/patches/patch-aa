@@ -1,14 +1,7 @@
---- Makefile.orig	Sat Aug 31 09:50:33 1996
-+++ Makefile	Fri Sep 27 13:57:55 1996
-@@ -1,29 +1,17 @@
--
--CC = gcc
--SH = /bin/sh
--
--CFLAGS = -O3 -fomit-frame-pointer -funroll-loops -Wall -Winline -Wshadow -W
--
--
-+CFLAGS+= -fomit-frame-pointer
+--- Makefile.orig	Sat Aug 31 03:50:33 1996
++++ Makefile	Fri Feb 18 10:07:35 2000
+@@ -7,22 +7,17 @@
+ 
  
  all:
 -	cat words0
@@ -40,4 +33,3 @@
  
  clean:
  	rm -f bzip bunzip sample*.tst sample*.rbz
--
