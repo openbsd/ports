@@ -1,0 +1,10 @@
+bin/plor
+man/man1/plor.1
+share/doc/plor/AUTHORS
+share/doc/plor/NEWS
+share/doc/plor/TODO
+share/doc/plor/plor-1.html
+share/doc/plor/plor-2.html
+share/doc/plor/plor.html
+share/doc/plor/plor.txt
+@dirrm share/doc/plor
