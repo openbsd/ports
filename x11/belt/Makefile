@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/12/29 20:31:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2003/07/16 17:37:47 naddy Exp $
 
 COMMENT=		"Small menubar for X11 written in Perl/Tk"
 V=			1.18
@@ -39,7 +39,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/belt-${V} ${PREFIX}/bin/belt
 	/usr/bin/pod2man ${WRKDIR}/belt-${V} > ${WRKDIR}/belt.1
-	${INSTALL_MAN} ${WRKDIR}/belt.1 ${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKDIR}/belt.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/belt
 	${INSTALL_DATA} ${FULLDISTDIR}/menu.conf.EXAMPLE ${PREFIX}/share/examples/belt/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/belt/icons

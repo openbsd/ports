@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/10/25 22:37:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2003/07/16 17:37:47 naddy Exp $
 
 COMMENT=	"library providing malloc debugging via VM protection"
 
@@ -19,6 +19,6 @@ NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/libefence.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKBUILD}/libefence.3 ${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKBUILD}/libefence.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>

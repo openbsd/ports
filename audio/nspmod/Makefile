@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2002/12/23 00:37:49 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.17 2003/07/16 17:37:46 naddy Exp $
 
 COMMENT=	"MOD/S3M/MTM tracker that does its own DSP"
 DISTNAME=	nspmod-0.1
@@ -17,6 +17,6 @@ NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nspmod ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nspmod.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nspmod.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
