@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/01/24 23:02:29 jsyn Exp $
+# $OpenBSD: Makefile,v 1.14 2002/11/25 03:16:12 margarida Exp $
 #
 
     SUBDIR += base64
@@ -11,7 +11,9 @@
     SUBDIR += mpack
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
+    SUBDIR += p5-Convert-TNEF
     SUBDIR += p5-Convert-UU
+    SUBDIR += p5-Convert-UUlib
     SUBDIR += p5-DateManip
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-Text-Iconv
