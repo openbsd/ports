@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2000/10/22 15:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2001/03/16 05:55:38 beck Exp $
 
 DISTNAME=	amanda-2.4.1p1
 CATEGORIES=	misc
@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
 		--with-gnutar_list_dir=/var/db/amanda/gnutar-lists \
 		--with-user=operator \
+		--with-mmap \
 		--with-group=operator
 
 EXAMPLE_DIR=	${PREFIX}/share/examples/amanda
