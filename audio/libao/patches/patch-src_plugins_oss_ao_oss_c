@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_plugins_oss_ao_oss_c,v 1.1.1.1 2001/03/14 01:54:09 todd Exp $
+$OpenBSD: patch-src_plugins_oss_ao_oss_c,v 1.2 2001/03/16 11:58:46 naddy Exp $
 --- src/plugins/oss/ao_oss.c.orig	Sat Feb 24 02:31:48 2001
-+++ src/plugins/oss/ao_oss.c	Tue Mar 13 15:27:15 2001
-@@ -113,28 +113,15 @@ ao_internal_t *plugin_open(uint_32 bits,
++++ src/plugins/oss/ao_oss.c	Thu Mar 15 21:27:15 2001
+@@ -112,29 +112,15 @@ ao_internal_t *plugin_open(uint_32 bits,
+ 			goto ERR;
  		}
  	} else {
- 		/* default: first try the devfs path */
+-		/* default: first try the devfs path */
 -		state->dev = strdup("/dev/sound/dsp");
 +		state->dev = strdup("/dev/sound");
  		state->fd=open(state->dev,O_WRONLY);
@@ -36,7 +37,7 @@ $OpenBSD: patch-src_plugins_oss_ao_oss_c,v 1.1.1.1 2001/03/14 01:54:09 todd Exp 
  		}
  	}
  
-@@ -198,7 +185,9 @@ void plugin_close(ao_internal_t *state)
+@@ -198,7 +184,9 @@ void plugin_close(ao_internal_t *state)
  int plugin_get_latency(ao_internal_t *state)
  {
  	int odelay = 0;

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.oss,v 1.1 2001/03/16 11:58:47 naddy Exp $
+lib/ao/liboss.so.1.0

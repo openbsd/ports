@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_plugins_esd_Makefile_am,v 1.1 2001/03/16 11:58:45 naddy Exp $
+--- src/plugins/esd/Makefile.am.orig	Thu Mar 15 18:48:53 2001
++++ src/plugins/esd/Makefile.am	Thu Mar 15 18:49:16 2001
+@@ -5,7 +5,8 @@ AUTOMAKE_OPTIONS = foreign
+ if HAVE_ESD
+ 
+ esdltlibs = libesd.la
+-esdldflags = -export-dynamic -avoid-version
++esdldflags = -export-dynamic \
++             -version-info @LIB_CURRENT@:@LIB_REVISION@:@LIB_AGE@
+ esdsources = ao_esd.c
+ 
+ else
