@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_tiffdump_c,v 1.1 2005/03/27 03:41:26 brad Exp $
+--- tools/tiffdump.c.orig	Sat Mar 26 22:06:37 2005
++++ tools/tiffdump.c	Sat Mar 26 22:07:43 2005
+@@ -316,6 +316,10 @@ ReadDirectory(int fd, unsigned ix, uint3
+ 			continue;
+ 		}
+ 		space = dp->tdir_count * datawidth[dp->tdir_type];
++		if (space <= 0) {
++			Error("Invalid count for tag %u", dp->tdir_tag);
++			goto done;
++		}
+ 		if (space <= 4) {
+ 			switch (dp->tdir_type) {
+ 			case TIFF_FLOAT:
