@@ -1,0 +1,12 @@
+$OpenBSD: patch-addressbook_backends_groupwise_e-book-backend-groupwise_c,v 1.3 2005/03/12 07:13:52 marcm Exp $
+--- addressbook/backends/groupwise/e-book-backend-groupwise.c.orig	Wed Mar  9 23:14:22 2005
++++ addressbook/backends/groupwise/e-book-backend-groupwise.c	Wed Mar  9 23:15:57 2005
+@@ -2005,7 +2005,7 @@ update_summary (EBookBackendGroupwise *e
+ 	stat (ebgw->priv->summary_file_name, &buf);
+ 	mod_time = buf.st_mtime;
+ 	tm = gmtime (&mod_time);
+-	strftime (time_string, 100, "%Y-%m-%dT%H:%M:%SZ", tm);
++	strftime (time_string, 25, "%Y-%m-%dT%H:%M:%SZ", tm);
+ 
+ 	filter = e_gw_filter_new ();
+ 	e_gw_filter_add_filter_component (filter, E_GW_FILTER_OP_GREATERTHAN, "modified", time_string);
