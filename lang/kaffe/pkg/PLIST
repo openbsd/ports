@@ -65,6 +65,30 @@ share/kaffe/pjava.jar
 share/kaffe/rmi.jar
 share/kaffe/servlet.jar
 share/kaffe/tools.jar
+share/kaffe/FAQ.BeOS
+share/kaffe/FAQ.Known-Bugs
+share/kaffe/FAQ.amigaos
+share/kaffe/FAQ.automake
+share/kaffe/FAQ.awt
+share/kaffe/FAQ.class-states
+share/kaffe/FAQ.classlibrary-compile
+share/kaffe/FAQ.depend
+share/kaffe/FAQ.gcblock
+share/kaffe/FAQ.gcstrategy
+share/kaffe/FAQ.hotjava
+share/kaffe/FAQ.install-root
+share/kaffe/FAQ.jsignal
+share/kaffe/FAQ.libtool
+share/kaffe/FAQ.linux
+share/kaffe/FAQ.locks
+share/kaffe/FAQ.nativemethods
+share/kaffe/FAQ.profiler
+share/kaffe/FAQ.pthreads
+share/kaffe/FAQ.requiredlibraries
+share/kaffe/FAQ.staticnative
+share/kaffe/FAQ.timing
+share/kaffe/FAQ.unicode
+share/kaffe/FAQ.win32
 @dirrm share/kaffe
 @dirrm lib/kaffe/security
 @dirrm lib/kaffe
