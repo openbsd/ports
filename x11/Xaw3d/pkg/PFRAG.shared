@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2000/06/14 17:16:29 brad Exp $
+lib/libXaw3d.so.6.1
+@exec /sbin/ldconfig -m %B
