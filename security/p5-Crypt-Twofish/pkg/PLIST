@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:05 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/09/23 01:47:25 kevlo Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/Twofish.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Crypt/Twofish.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Twofish/Twofish.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Twofish/Twofish.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Twofish/autosplit.ix
 man/man3p/Crypt::Twofish.3p
 @dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Crypt/Twofish
