@@ -1,6 +1,9 @@
 bin/nasm
 bin/ndisasm
+@unexec install-info --delete %D/info/glib.info %D/info/dir
 info/nasm.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/glib.info %D/info/dir
 man/man1/nasm.1
 man/man1/ndisasm.1
 share/doc/nasm/internal.doc
