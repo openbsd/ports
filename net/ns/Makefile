@@ -1,13 +1,13 @@
 #
 # $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
-# $OpenBSD: Makefile,v 1.12 2000/11/01 16:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/11/20 14:12:33 espie Exp $
 #
 
-BROKEN=		tclcl API for delay_bind_dispatch changed
+#BROKEN=		tclcl API for delay_bind_dispatch changed
 
-DISTNAME=	ns-2.1b5
-DISTFILES=	ns-src-2.1b5.tar.gz
-PKGNAME=	ns-2.1b5
+DISTNAME=	ns-2.1b6
+DISTFILES=	ns-src-2.1b6.tar.gz
+PKGNAME=	ns-2.1b6
 CATEGORIES=	net
 NEED_VERSION=	1.305
 MASTER_SITES= ftp://ftp.ee.surrey.ac.uk/pub/Mirrors/mash.cs.berkeley.edu/dist/vint/ \
