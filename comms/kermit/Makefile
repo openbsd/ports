@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2002/02/09 12:48:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2002/02/15 11:34:42 naddy Exp $
 
 COMMENT=	"serial and network communications package"
 
-PKGNAME=	kermit-8.0.200p1
-DISTNAME=	cku200
+PKGNAME=	kermit-8.0.201
+DISTNAME=	cku201
 CATEGORIES=	comms
 NEED_VERSION=	1.504
 HOMEPAGE=	http://www.kermit-project.org/
@@ -21,12 +21,13 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 WRKDIST=	${WRKDIR}
 
 MAKE_FILE=	makefile
-ALL_TARGET=	xermit
+ALL_TARGET=	krbmit
 MAKE_FLAGS=	KTARGET=openbsd \
 		CFLAGS="${CFLAGS} -DBSD44 -DCK_CURSES -DCK_NEWTERM \
 		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR \
-		-DCKHTTP" \
-		LIBS="-lcurses -lutil -lm"
+		-DCKHTTP \
+		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES" \
+		LIBS="-lssl -lcrypto -ldes -lcurses -lutil -lm"
 
 DOCDIR=		${PREFIX}/share/doc/kermit
 DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \
@@ -34,7 +35,7 @@ DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \
 EXAMPLEDIR=	${PREFIX}/share/examples/kermit
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/wermit ${PREFIX}/bin/kermit
+	${INSTALL_PROGRAM} ${WRKBUILD}/krbmit ${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	for file in ${DOCS}; do \
