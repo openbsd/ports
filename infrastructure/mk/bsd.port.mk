@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.664 2004/11/21 10:43:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.665 2004/11/21 11:26:22 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -172,6 +172,7 @@ clean=${_internal-clean}
 FAKE?=Yes
 _LIBLIST=${WRKDIR}/.liblist-${ARCH}${_FLAVOR_EXT2}
 _BUILDLIBLIST=${WRKDIR}/.buildliblist-${ARCH}${_FLAVOR_EXT2}
+_SYSBUILDLIBLIST=${WRKDIR}/.sysbuildliblist-${ARCH}${_FLAVOR_EXT2}
 
 
 # need to go through an extra var because clean is set in stone, 
@@ -1013,6 +1014,7 @@ _build_depends_fragment= \
 		found=true; \
 	fi
 _run_depends_fragment=${_build_depends_fragment}
+
 _regress_depends_fragment=${_build_depends_fragment}
 
 .if ${NO_SHARED_LIBS:L} == "yes"
@@ -1383,6 +1385,10 @@ ${_LIBLIST}: ${_FAKE_COOKIE}
 
 # list of libraries that can be used: libraries just built, and system libs.
 ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
+	@${SUDO} find ${WRKINST} -type f -o -type l | \
+		egrep '(\.so\.|\.so$$)'|${SUDO} xargs file -L|fgrep 'shared'|cut -d\: -f1|sort -u >$@
+
+${_SYSBUILDLIBLIST}: ${_FAKE_COOKIE}
 	@{ \
 		${SUDO} find ${WRKINST} -type f -o -type l; \
 		find /usr/lib -path /usr/lib -o -type d -prune -o -type f -print; \
@@ -1411,9 +1417,16 @@ _internal-package _internal-lib-depends-check _internal-manpages-check:
 # depend upon, but not the actual list of lib depends, since this list is
 # going to be tweaked as a result of running lib-depends-check.
 #
-_internal-lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
+_internal-lib-depends-check: ${_LIBLIST} ${_SYSBUILDLIBLIST}
 	@${_depfile_fragment}; \
 	LIB_DEPENDS="`${MAKE} _recurse-lib-depends-check`" \
+	PKG_DBDIR='${PKG_DBDIR}' \
+		perl ${PORTSDIR}/infrastructure/install/check-libs-elf \
+		${_LIBLIST} ${_SYSBUILDLIBLIST}
+
+_internal-newlib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
+	@LIB_DEPENDS='${LIB_DEPENDS:C/:.*//}' \
+	WANTLIB='${WANTLIB}' \
 	PKG_DBDIR='${PKG_DBDIR}' \
 		perl ${PORTSDIR}/infrastructure/install/check-libs-elf \
 		${_LIBLIST} ${_BUILDLIBLIST}
@@ -1544,7 +1557,8 @@ _internal-regress: ${_DEPregress_COOKIES} ${_REGRESS_COOKIE}
 
 _TOP_TARGETS=extract patch distpatch configure build all install fake package \
 fetch checksum regress depends lib-depends build-depends run-depends \
-regress-depends clean lib-depends-check manpages-check plist update-plist update
+regress-depends clean lib-depends-check newlib-depends-check manpages-check \
+plist update-plist update
 .if defined(_LOCK)
 .  for _t in ${_TOP_TARGETS}
 ${_t}:
@@ -2654,7 +2668,7 @@ uninstall deinstall:
 	fake fetch fetch-all \
 	fetch-makefile full-all-depends full-build-depends \
 	full-run-depends homepage-links install \
-	lib-depends lib-depends-check lib-depends-list \
+	lib-depends lib-depends-check newlib-depends-check lib-depends-list \
 	link-categories makesum manpages-check \
 	package patch \
 	plist post-build post-configure \
@@ -2677,5 +2691,6 @@ uninstall deinstall:
 	_internal-depends _internal-lib-depends _internal-build-depends \
 	_internal-run-depends _internal-regress-depends \
 	_internal-regress _internal-clean _internal-lib-depends-check \
+	_internal-newlib-depends-check \
 	_internal-manpages-check _internal-plist _internal-update-plist \
 	_internal-update update
