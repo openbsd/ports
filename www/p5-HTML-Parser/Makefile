@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.26 2005/02/04 05:35:46 kevlo Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"modules to parse and extract information from HTML"
  
-DISTNAME=	HTML-Parser-3.36
+DISTNAME=	HTML-Parser-3.45
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
