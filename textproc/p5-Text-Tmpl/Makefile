@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/11 01:22:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2003/10/08 21:47:20 naddy Exp $
 
 COMMENT=	"very fast Perl templating library"
 
-DISTNAME=	Text-Tmpl-0.28
+DISTNAME=	Text-Tmpl-0.29
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
 
