@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2002/03/22 08:17:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.78 2002/04/25 18:09:07 naddy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -31,6 +31,7 @@
      SUBDIR += libxml1
      SUBDIR += libxslt
      SUBDIR += linuxdoc
+     SUBDIR += lq-sp
      SUBDIR += mgdiff
      SUBDIR += openjade
      SUBDIR += p5-Blatte
