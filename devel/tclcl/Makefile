@@ -1,12 +1,13 @@
 #
 # $FreeBSD: ports/devel/tclcl/Makefile,v 1.4 1999/11/28 18:31:57 steve Exp $
-# $OpenBSD: Makefile,v 1.11 2001/05/06 00:13:35 lebel Exp $
+# $OpenBSD: Makefile,v 1.12 2001/11/12 16:24:10 espie Exp $
 #
 
 COMMENT=	"Tcl/C++ interface used by ns and nam"
 
-DISTNAME=	tclcl-src-1.0b9
-PKGNAME=	tclcl-1.0b9
+V=1.0b9
+DISTFILES=	tclcl-src-$V.tar.gz
+DISTNAME=	tclcl-$V
 CATEGORIES=	devel
 NEED_VERSION=	1.402
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
@@ -21,8 +22,6 @@ MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 LIB_DEPENDS=    tk83.1::x11/tk/8.3 \
 		otcl.1::lang/otcl
 
-WRKDIST=	${WRKDIR}/${PKGNAME}
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
@@ -32,4 +31,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
 	@ln -sf ${TRUEPREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
+
+NO_REGRESS=Yes
 .include <bsd.port.mk>

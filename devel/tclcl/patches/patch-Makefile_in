@@ -1,5 +1,6 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2001/11/12 16:24:10 espie Exp $
 --- Makefile.in.orig	Tue Nov 30 03:20:09 1999
-+++ Makefile.in	Fri Mar 16 19:31:07 2001
++++ Makefile.in	Mon Nov 12 17:04:58 2001
 @@ -66,7 +66,7 @@ INCLUDES = \
  LIB	= \
  	@V_LIBS@
@@ -17,7 +18,7 @@
 +	$(LIBRARY_TCL)/init.tcl \
 +	$(LIBRARY_TCL)/history.tcl \
 +	$(LIBRARY_TCL)/word.tcl \
-+	$(LIBRARY_TCL)/http2.3/http.tcl
++	$(LIBRARY_TCL)/http2.4/http.tcl
  TCL_76_LIBRARY_FILES = \
  	$(LIBRARY_TCL)/init.tcl
  
