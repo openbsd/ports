@@ -1,0 +1,14 @@
+$OpenBSD: patch-admin_libtool_m4_in,v 1.1 2001/04/22 15:02:30 espie Exp $
+--- admin/libtool.m4.in.orig	Mon Aug  7 00:20:11 2000
++++ admin/libtool.m4.in	Sun Apr 22 15:40:23 2001
+@@ -548,6 +548,10 @@ gnu*)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
++openbsd*)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
++
+ hpux10.20*)
+   # TODO:  Does this work for hpux-11 too?
+   changequote(,)dnl

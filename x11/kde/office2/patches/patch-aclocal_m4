@@ -1,0 +1,13 @@
+$OpenBSD: patch-aclocal_m4,v 1.1 2001/04/22 15:02:30 espie Exp $
+--- aclocal.m4.orig	Tue Nov 28 16:30:15 2000
++++ aclocal.m4	Sun Apr 22 15:39:41 2001
+@@ -4347,6 +4347,9 @@ freebsd* )
+     lt_cv_deplibs_check_method=pass_all
+   fi
+   ;;
++openbsd*)
++  lt_cv_deplibs_check_method=pass_all
++  ;;
+ 
+ gnu*)
+   lt_cv_deplibs_check_method=pass_all
