@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Thu Jun 25 18:16:03 1998
++++ Makefile.in	Sat Oct 10 03:20:05 1998
+@@ -33,7 +33,7 @@
+ INSTALL=@INSTALL@
+ CC=@CC@
+ XCPPFLAGS=-I. @CPPFLAGS@
+-CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" $(XCPPFLAGS)
++CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" -DHAVE_MKSTEMP $(XCPPFLAGS)
+ LDFLAGS=@LDFLAGS@
+ LIBS=@LIBS@
+ OPS=@OPS@
+@@ -67,8 +67,7 @@
+ 
+ install: mutt install.doc
+ 	$(srcdir)/mkinstalldirs $(bindir)
+-	-mv -f $(bindir)/mutt $(bindir)/mutt.old
+-	$(INSTALL) @MUTT_GROUP@ -m @MUTT_PERMISSION@ mutt $(bindir)
++	$(INSTALL) -m @MUTT_PERMISSION@ mutt $(bindir)
+ 	-if [ ! -f $(sharedir)/Muttrc ]; then \
+ 		$(srcdir)/mkinstalldirs $(sharedir); \
+ 		$(INSTALL) -m 644 $(srcdir)/Muttrc $(sharedir); \

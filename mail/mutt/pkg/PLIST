@@ -1,0 +1,10 @@
+@cwd /usr/local
+@name mutt-0.93.2i
+bin/mutt
+man/man1/mutt.1
+share/doc/mutt/manual.txt
+share/doc/mutt/PGP-Notes.txt
+share/mutt/Muttrc
+share/mutt/mime.types
+@dirrm share/mutt
+@dirrm share/doc/mutt

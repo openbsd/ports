@@ -1,0 +1,26 @@
+--- rfc1524.c.orig	Mon Jun  8 05:16:03 1998
++++ rfc1524.c	Sat Oct 10 03:25:02 1998
+@@ -431,7 +431,11 @@
+   if (s[0] == '\0')
+   {
+     sprintf (s, "%s/muttXXXXXX", buf);
++#ifdef HAVE_MKSTEMP
++    mkstemp (s);
++#elif
+     mktemp (s);
++#endif
+   }
+   else
+   {
+@@ -442,7 +446,11 @@
+     if ((period = strrchr (tmp, '.')) != NULL)
+       *period = 0;
+     sprintf (s, "%s/%s.XXXXXX", buf, tmp);
++#ifdef HAVE_MKSTEMP
++    mkstemp (s);
++#elif
+     mktemp (s);
++#endif
+     if (period != NULL)
+     {
+       *period = '.';
