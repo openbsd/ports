@@ -1,6 +1,7 @@
---- pty.c.orig	Fri Feb 14 08:44:20 2003
-+++ pty.c	Thu Apr 24 09:24:57 2003
-@@ -32,6 +32,23 @@ RCS_ID("$Id: pty.c,v 1.6 1994/05/31 12:3
+$OpenBSD: patch-pty_c,v 1.1 2003/09/26 23:50:55 brad Exp $
+--- pty.c.orig	2003-09-08 10:26:18.000000000 -0400
++++ pty.c	2003-09-13 04:18:35.000000000 -0400
+@@ -29,6 +29,23 @@
  #include "config.h"
  #include "screen.h"
  
@@ -24,7 +25,7 @@
  #ifndef sun
  # include <sys/ioctl.h>
  #endif
-@@ -340,25 +357,25 @@ int
+@@ -337,25 +354,25 @@ int
  OpenPTY(ttyn)
  char **ttyn;
  {
@@ -63,7 +64,7 @@
  	  if (eff_uid && access(TtyName, R_OK | W_OK))
  	    {
  	      close(f);
-@@ -381,9 +398,11 @@ char **ttyn;
+@@ -378,9 +395,11 @@ char **ttyn;
  #endif
  	  initmaster(f);
  	  *ttyn = TtyName;

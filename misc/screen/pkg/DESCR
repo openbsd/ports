@@ -9,5 +9,3 @@ regions between windows.
 
 Flavors:
 	static - Build with statically linked binaries.
-
-WWW: ${HOMEPAGE}

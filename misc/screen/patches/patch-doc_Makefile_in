@@ -1,5 +1,6 @@
---- doc/Makefile.in.orig	Thu Feb 14 08:36:33 2002
-+++ doc/Makefile.in	Thu Feb 14 19:11:58 2002
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2003/09/26 23:50:55 brad Exp $
+--- doc/Makefile.in.orig	2003-09-08 10:47:31.000000000 -0400
++++ doc/Makefile.in	2003-09-13 04:18:35.000000000 -0400
 @@ -11,7 +11,7 @@ infodir = @infodir@
  
  INSTALL = @INSTALL@
