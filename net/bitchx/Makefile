@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.35 2002/10/28 01:38:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2003/03/27 15:46:11 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 COMMENT=	"alternative ircII color client"
 
 VERSION=	1.0c18
 DISTNAME=	ircii-pana-${VERSION}
-PKGNAME=	BitchX-${VERSION}
+PKGNAME=	BitchX-${VERSION}p1
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
-		ftp://ftp.bitchx.org/pub/BitchX/source/
+MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/old/ \
+		ftp://ftp.bitchx.org/pub/BitchX/source/old/
 
 MAINTAINER=	Vincent Derrien <vincent.derrien@free.fr>
 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

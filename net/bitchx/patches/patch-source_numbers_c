@@ -1,7 +1,52 @@
-$OpenBSD: patch-source_numbers_c,v 1.1 2002/04/16 18:30:39 pvalchev Exp $
---- source/numbers.c.orig	Tue Apr 16 11:45:34 2002
-+++ source/numbers.c	Tue Apr 16 11:44:39 2002
-@@ -1454,7 +1454,7 @@ void numbered_command(char *from, int co
+$OpenBSD: patch-source_numbers_c,v 1.2 2003/03/27 15:46:11 brad Exp $
+--- source/numbers.c.orig	Mon Jan  8 01:24:22 2001
++++ source/numbers.c	Wed Mar 26 23:42:38 2003
+@@ -350,26 +350,29 @@ static	void cannot_join_channel(char *fr
+ 
+ 	set_display_target(chan, LOG_CURRENT);
+ 	PasteArgs(ArgList, 0);
+-	strcpy(buffer, ArgList[0]);
++	strlcpy(buffer, ArgList[0], sizeof buffer);
+ 	switch(-current_numeric)
+ 	{
+ 		case 437: 
+-			strcat(buffer, " (Channel is temporarily unavailable)");
++			strlcat(buffer, 
++				" (Channel is temporarily unavailable)",
++				sizeof buffer);
+ 			break;
+ 		case 471:
+-			strcat(buffer, " (Channel is full)");
++			strlcat(buffer, " (Channel is full)", sizeof buffer);
+ 			break;
+ 		case 473:
+-			strcat(buffer, " (You must be invited)");
++			strlcat(buffer, " (You must be invited)", 
++				sizeof buffer);
+ 			break;
+ 		case 474:
+-			strcat(buffer, " (You are banned)");
++			strlcat(buffer, " (You are banned)", sizeof buffer);
+ 			break;
+ 		case 475:
+-			strcat(buffer, " (Bad channel key)");
++			strlcat(buffer, " (Bad channel key)", sizeof buffer);
+ 			break;
+ 		case 476:
+-			strcat(buffer, " (Bad channel mask)");
++			strlcat(buffer, " (Bad channel mask)", sizeof buffer);
+ 			break;
+ 		default:
+ 			return;
+@@ -381,7 +384,6 @@ static	void cannot_join_channel(char *fr
+ 	reset_display_target();
+ }
+ 
+-
+ int handle_server_stats(char *from, char **ArgList, int comm)
+ {
+ static	int 	norm = 0, 
+@@ -1454,7 +1456,7 @@ void numbered_command(char *from, int co
  			
  			if (!ArgList[1] || !*ArgList[1])
  				break;
@@ -10,7 +55,7 @@ $OpenBSD: patch-source_numbers_c,v 1.1 2002/04/16 18:30:39 pvalchev Exp $
  			strcpy(this_sucks, ctime(&tme));
  			this_sucks[strlen(this_sucks)-1] = '\0';		
  
-@@ -1465,16 +1465,16 @@ void numbered_command(char *from, int co
+@@ -1465,16 +1467,16 @@ void numbered_command(char *from, int co
  			else
  			{
  				char cts[80], pts[80], ots[80];

@@ -1,0 +1,67 @@
+$OpenBSD: patch-source_banlist_c,v 1.1 2003/03/27 15:46:11 brad Exp $
+--- source/banlist.c.orig	Mon Jan  8 01:24:22 2001
++++ source/banlist.c	Wed Mar 26 23:00:45 2003
+@@ -260,9 +260,9 @@ char *p;
+ char * ban_it(char *nick, char *user, char *host, char *ip)
+ {
+ static char banstr[BIG_BUFFER_SIZE/4+1];
+-char *tmpstr = NULL;
+ char *t = user;
+ char *t1 = user;
++char *tmp;
+ 	
+ 	*banstr = 0;
+ 	while (strlen(t1)>9)
+@@ -273,32 +273,40 @@ char *t1 = user;
+ 		case 7:
+ 			if (ip)
+ 			{
+-				sprintf(banstr, "*!*@%s", cluster(ip));
++				snprintf(banstr, sizeof banstr, "*!*@%s",
++					cluster(ip));
+ 				break;
+ 			}
+ 		case 2: /* Better 	*/
+-			sprintf(banstr, "*!*%s@%s", t1, cluster(host));
++			snprintf(banstr, sizeof banstr, "*!*%s@%s", t1, 
++				cluster(host));
+ 			break;
+ 		case 3: /* Host 	*/
+-			sprintf(banstr, "*!*@%s", host);
++			snprintf(banstr, sizeof banstr, "*!*@%s", host);
+ 			break;
+ 		case 4: /* Domain	*/
+-			sprintf(banstr, "*!*@*%s", strrchr(host, '.'));
+-			break;
++			tmp = strrchr(host, '.');
++			if (tmp) {
++				snprintf(banstr, sizeof banstr, "*!*@*%s",
++					tmp);
++			} else {
++				snprintf(banstr, sizeof banstr, "*!*@%s", 
++					host);
++			}
++			break;	
+ 		case 5: /* User		*/
+-			sprintf(banstr, "*!%s@%s", t, cluster(host));
++			snprintf(banstr, sizeof banstr, "*!%s@%s", t, 
++				cluster(host));
+ 			break;
+ 		case 6: /* Screw 	*/
+-			malloc_sprintf(&tmpstr, "*!*%s@%s", t1, host);
+-			strcpy(banstr, screw(tmpstr));
+-			new_free(&tmpstr);
++			snprintf(banstr, sizeof banstr, "*!*%s@%s", t1, host);
++			screw(banstr);
+ 			break;
+ 		case 1:	/* Normal 	*/
+ 		default:
+-		{
+-			sprintf(banstr, "%s!*%s@%s", nick, t1, host);
++			snprintf(banstr, sizeof banstr, "%s!*%s@%s", nick, t1,
++				host);
+ 			break;
+-		}
+ 	}
+ 	return banstr;
+ }

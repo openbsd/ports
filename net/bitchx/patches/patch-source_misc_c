@@ -1,0 +1,107 @@
+$OpenBSD: patch-source_misc_c,v 1.1 2003/03/27 15:46:11 brad Exp $
+--- source/misc.c.orig	Mon Jan  8 01:24:22 2001
++++ source/misc.c	Wed Mar 26 23:00:45 2003
+@@ -3108,42 +3108,47 @@ char *cluster (char *hostname)
+ 	static char result[IRCD_BUFFER_SIZE/4 + 1];
+ 	char temphost[BIG_BUFFER_SIZE + 1];
+ 	char *host;
++	char *atsign;
+ 
+ 	if (!hostname)
+ 		return NULL;
+-	host = temphost;
+-	*result = 0;
+-	memset(result, 0, sizeof(result));
+-	memset(temphost, 0, sizeof(temphost));
+-	if (strchr(hostname, '@'))
+-	{
+-		if (*hostname == '~')
+-			hostname++;
+-		strcpy(result, hostname);
+-		*strchr(result, '@') = '\0';
+-		if (strlen(result) > 9)
+-		{
+-			result[8] = '*';
+-			result[9] = '\0';
++
++	atsign = strchr(hostname, '@');
++	if (atsign) {
++		if (*hostname == '~') {
++			strcpy(result, "~*@");
++		} else {
++			size_t ident_len = atsign - hostname;
++			
++			if (ident_len <= 9) {
++				/* copy ident@ */
++				strmcpy(result, hostname, ident_len + 1);
++			} else {
++				strmcpy(result, hostname, 8);
++				result[8] = '*';
++				result[9] = '@';
++				result[10] = '\0';
++			}
+ 		}
+-		strcat(result, "@");
+-		if (!(hostname = strchr(hostname, '@')))
+-			return NULL;
+-		hostname++;
++		hostname = atsign + 1;
++	} else {
++		*result = 0;
+ 	}
+-	strcpy(host, hostname);
+ 
+-	if (*host && isdigit(*(host + strlen(host) - 1)))
++	strlcpy(temphost, hostname, sizeof temphost);
++	host = temphost;
++
++	if (*host && isdigit((unsigned char)*(host + strlen(host) - 1)))
+ 	{
+ 		/* Thanks icebreak for this small patch which fixes this function */
+                 int i;
+                 char *tmp;
+-                char count=0;
++                char count = 0;
+ 
+                 tmp = host;
+-                while((tmp-host)<strlen(host))
++                while((tmp - host) < strlen(host))
+                 {
+-	                if((tmp=strchr(tmp,'.'))==NULL) 
++	                if((tmp = strchr(tmp,'.')) == NULL) 
+ 				break;
+         	        count++;
+                 	tmp++;
+@@ -3152,8 +3157,8 @@ char *cluster (char *hostname)
+                 for (i = 0; i < count; i++)
+                         tmp = strchr(tmp, '.') + 1;
+                 *tmp = '\0';
+-                strcat(result, host);
+-                strcat(result, "*");
++                strlcat(result, host, sizeof result);
++                strlcat(result, "*", sizeof result);
+ 	}
+ 	else
+ 	{
+@@ -3175,16 +3180,17 @@ char *cluster (char *hostname)
+ 			else
+ 				return (char *) NULL;
+ 		}
++		
++		/* We don't need strlcat for these first two, because
++		 * at this point the maximum length of the string in
++		 * result is 10 */
+ 		strcat(result, "*");
+ 		if (my_stricmp(host, temphost))
+ 			strcat(result, ".");
+-		strcat(result, host);
++		strlcat(result, host, sizeof result);
+ 	}
+ 	return result;
+ }
+-
+-
+-
+ 
+ struct _sock_manager
+ {

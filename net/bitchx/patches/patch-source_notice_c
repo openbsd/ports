@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_notice_c,v 1.1 2003/03/27 15:46:11 brad Exp $
+--- source/notice.c.orig	Mon Jan  8 01:24:22 2001
++++ source/notice.c	Wed Mar 26 23:00:45 2003
+@@ -421,7 +421,7 @@ irc.BitchX.com *** Notice -- Nick collis
+ 		int conn = !strncmp(line+7, "connect", 7) ? 1 : 0;
+ 		int dalnet = 0, ircnet = 0;
+ 
+-		if (*(line+18) == ':')
++		if (strlen(line) >= 19 && line[18] == ':')
+ 			q = NULL;
+ 		else
+ 			dalnet = (q == NULL);
