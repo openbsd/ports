@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2003/08/22 16:04:03 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.5 2003/08/22 18:57:49 naddy Exp $
 
 COMMENT=	"tty-based mail and news client"
 
@@ -7,8 +7,7 @@ DISTNAME=	tty-grin-${VERSION}
 PKGNAME=	ttygrin-${VERSION}
 CATEGORIES=	mail
 
-HOMEPAGE=	http://m-net.arbornet.org/~dlbeer/tty-grin/
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
