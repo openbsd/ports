@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2003/01/04 19:09:52 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2003/01/13 12:23:28 naddy Exp $
 
 COMMENT=		"interactive console id3 tag editor"
 
-DISTNAME=		id3ed-1.10.3
+DISTNAME=		id3ed-1.10.4
 CATEGORIES=     	audio
 
 HOMEPAGE=		http://www.azstarnet.com/~donut/programs/id3ed.html
