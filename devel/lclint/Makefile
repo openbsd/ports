@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/06/16 04:44:21 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/06/16 13:49:34 espie Exp $
 
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
@@ -13,6 +13,7 @@ MAINTAINER=	espie@cvs.openbsd.org
 AUTHOR=		evs@sds.lcs.mit.edu # David Evans
 BUGS=		lclint-bug@sds.lcs.mit.edu
 
+# Has to use bison because lclint uses pure parsers
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 USE_GMAKE=	yes
