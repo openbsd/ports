@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/16 13:09:30 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/02/15 23:30:17 naddy Exp $
 ${P5ARCH}/Apache/Cookie.pm
 ${P5ARCH}/Apache/Request.pm
 ${P5ARCH}/Apache/libapreq.pm
@@ -28,5 +28,7 @@ share/examples/p5-libapreq/perl/file_upload.pl
 @dirrm share/examples/p5-libapreq/c
 @dirrm share/examples/p5-libapreq
 @dirrm share/doc/libapreq
+@dirrm ${P5ARCH}/auto/Apache/Request
+@dirrm ${P5ARCH}/auto/Apache/Cookie
 @dirrm ${P5ARCH}/auto/libapreq/include
 @dirrm ${P5ARCH}/auto/libapreq
