@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2003/05/17 16:04:17 wilfried Exp $
+# $OpenBSD: Makefile,v 1.38 2003/05/17 16:58:35 wilfried Exp $
 # Uses pthreads
 
 COMMENT=	"open source version of the Netscape browser"
 
-VER=		1.4a
+VER=		1.4b
 DISTNAME=	mozilla
 PKGNAME=	mozilla-${VER}
 DISTFILES=	mozilla-source-${VER}.tar.bz2

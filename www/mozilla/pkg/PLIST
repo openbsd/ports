@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2003/05/16 19:11:30 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.10 2003/05/17 16:58:35 wilfried Exp $
 bin/mozilla
 bin/mozilla-config
 bin/run-mozilla.sh
@@ -69,9 +69,10 @@ mozilla/components/chatzilla-service.js
 mozilla/components/chrome.xpt
 mozilla/components/commandhandler.xpt
 mozilla/components/composer.xpt
-mozilla/components/content.xpt
 mozilla/components/content_base.xpt
 mozilla/components/content_html.xpt
+mozilla/components/content_htmldoc.xpt
+mozilla/components/content_xmldoc.xpt
 mozilla/components/content_xslt.xpt
 mozilla/components/cookie.xpt
 mozilla/components/directory.xpt
@@ -179,6 +180,7 @@ mozilla/components/timebomb.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
 mozilla/components/typeaheadfind.xpt
+mozilla/components/ucnative.xpt
 mozilla/components/uconv.xpt
 mozilla/components/unicharutil.xpt
 mozilla/components/uriloader.xpt
@@ -191,17 +193,12 @@ mozilla/components/walletpreview.xpt
 mozilla/components/webBrowser_core.xpt
 mozilla/components/webbrowserpersist.xpt
 mozilla/components/webshell_idls.xpt
+mozilla/components/websrvcs.xpt
 mozilla/components/widget.xpt
 mozilla/components/windowds.xpt
 mozilla/components/windowwatcher.xpt
-mozilla/components/wsdl.xpt
-mozilla/components/wsproxy.xpt
 mozilla/components/xml-rpc.xpt
 mozilla/components/xmlextras.xpt
-mozilla/components/xmlextras_interfaceinfo.xpt
-mozilla/components/xmlschema.xpt
-mozilla/components/xmlsecurity.xpt
-mozilla/components/xmlsoap.xpt
 mozilla/components/xpcom_base.xpt
 mozilla/components/xpcom_components.xpt
 mozilla/components/xpcom_ds.xpt
@@ -251,6 +248,7 @@ mozilla/defaults/wallet/VcardSchema.tbl
 mozilla/icons/mozicon16.xpm
 mozilla/icons/mozicon50.xpm
 mozilla/mozilla-bin
+mozilla/res/EditorOverride.css
 mozilla/res/arrow.gif
 mozilla/res/arrowd.gif
 mozilla/res/bloatcycle.html
@@ -493,6 +491,7 @@ mozilla/components/libvcard.so.1.0
 mozilla/components/libwallet.so.1.0
 mozilla/components/libwalletviewers.so.1.0
 mozilla/components/libwebbrwsr.so.1.0
+mozilla/components/libwebsrvcs.so.1.0
 mozilla/components/libwidget_gtk.so.1.0
 mozilla/components/libxmlextras.so.1.0
 mozilla/components/libxpcom_compat_c.so.1.0
@@ -823,8 +822,8 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/en-US/locale/en-US/content-packs
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xmlextras
-@dirrm mozilla/chrome/en-US/locale/en-US/communicator/xmlextras
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/webservices
+@dirrm mozilla/chrome/en-US/locale/en-US/communicator/webservices
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/wallet
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/wallet
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/timebomb
