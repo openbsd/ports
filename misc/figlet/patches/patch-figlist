@@ -1,4 +1,4 @@
-$OpenBSD: patch-figlist,v 1.1 2000/09/15 16:07:08 avsm Exp $
+$OpenBSD: patch-figlist,v 1.2 2002/08/26 23:38:15 avsm Exp $
 --- figlist.orig	Tue Feb 18 22:02:28 1997
 +++ figlist	Fri Sep 15 16:24:07 2000
 @@ -28,7 +28,7 @@ if [ "$1" = "-d" ]; then
@@ -6,7 +6,7 @@ $OpenBSD: patch-figlist,v 1.1 2000/09/15 16:07:08 avsm Exp $
    fi
  else
 -  FONTDIROPT=""
-+  FONTDIROPT="-d /usr/local/share/figlet"
++  FONTDIROPT="-d %%OPENBSDFIGLET%%"
    if [ $# -ne 0 ]; then
      echo "$USAGE"
      exit 1

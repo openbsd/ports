@@ -1,17 +1,7 @@
-$OpenBSD: patch-figlet,v 1.1 2000/09/15 16:07:08 avsm Exp $
---- figlet.6.orig	Thu Jun 10 03:51:37 1999
-+++ figlet.6	Wed Dec 15 04:21:35 1999
-@@ -34,8 +34,7 @@
- ]
- [
- .B \-w
--.IR outputwidth
--]
-+.IR outputwidth ]
- .PD 0
- .IP
- .PD
-@@ -50,7 +49,27 @@
+$OpenBSD: patch-figlet,v 1.2 2002/08/26 23:38:15 avsm Exp $
+--- figlet.6.orig	Sat Jul 13 10:57:21 2002
++++ figlet.6	Tue Aug 27 00:02:24 2002
+@@ -54,7 +54,27 @@ FIGlet \- display large characters made 
  [
  .I message
  ]
@@ -40,7 +30,7 @@ $OpenBSD: patch-figlet,v 1.1 2000/09/15 16:07:08 avsm Exp $
  .SH DESCRIPTION
  .B FIGlet
  prints its input using large characters
-@@ -94,6 +113,23 @@
+@@ -98,6 +118,23 @@ fonts and control files
  in compressed form.
  See
  .BR "COMPRESSED FONTS" .

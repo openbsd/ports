@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/09/15 16:07:08 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/08/26 23:38:15 avsm Exp $
 bin/chkfont
 bin/figlet
 bin/figlist
@@ -60,6 +60,7 @@ share/figlet/brite.flf
 share/figlet/briteb.flf
 share/figlet/britebi.flf
 share/figlet/britei.flf
+share/figlet/broadway.flf
 share/figlet/bubble.flf
 share/figlet/bulbhead.flf
 share/figlet/calgphy2.flf
@@ -94,16 +95,21 @@ share/figlet/cour.flf
 share/figlet/courb.flf
 share/figlet/courbi.flf
 share/figlet/couri.flf
+share/figlet/crawford.flf
 share/figlet/cricket.flf
+share/figlet/cursive.flf
 share/figlet/cyberlarge.flf
 share/figlet/cybermedium.flf
 share/figlet/cybersmall.flf
+share/figlet/decimal.flf
 share/figlet/diamond.flf
 share/figlet/digital.flf
 share/figlet/doh.flf
 share/figlet/doom.flf
 share/figlet/dotmatrix.flf
+share/figlet/double.flf
 share/figlet/drpepper.flf
+share/figlet/dwhistled.flf
 share/figlet/eftichess.flf
 share/figlet/eftifont.flf
 share/figlet/eftipiti.flf
@@ -118,11 +124,13 @@ share/figlet/frango.flc
 share/figlet/fuzzy.flf
 share/figlet/goofy.flf
 share/figlet/gothic.flf
+share/figlet/graceful.flf
 share/figlet/graffiti.flf
 share/figlet/helv.flf
 share/figlet/helvb.flf
 share/figlet/helvbi.flf
 share/figlet/helvi.flf
+share/figlet/hex.flf
 share/figlet/hollywood.flf
 share/figlet/hz.flc
 share/figlet/ilhebrew.flc
@@ -159,7 +167,9 @@ share/figlet/nancyj.flf
 share/figlet/nipples.flf
 share/figlet/null.flc
 share/figlet/o8.flf
+share/figlet/octal.flf
 share/figlet/ogre.flf
+share/figlet/os2.flf
 share/figlet/pawp.flf
 share/figlet/peaks.flf
 share/figlet/pebbles.flf
@@ -177,6 +187,7 @@ share/figlet/rot13.flf
 share/figlet/rounded.flf
 share/figlet/rowancap.flf
 share/figlet/rozzo.flf
+share/figlet/runyc.flf
 share/figlet/sans.flf
 share/figlet/sansb.flf
 share/figlet/sansbi.flf
@@ -200,6 +211,7 @@ share/figlet/smscript.flf
 share/figlet/smshadow.flf
 share/figlet/smslant.flf
 share/figlet/speed.flf
+share/figlet/stacey.flf
 share/figlet/stampatello.flf
 share/figlet/standard.flf
 share/figlet/starwars.flf
@@ -232,6 +244,7 @@ share/figlet/utopiab.flf
 share/figlet/utopiabi.flf
 share/figlet/utopiai.flf
 share/figlet/weird.flf
+share/figlet/whimsy.flf
 share/figlet/xbrite.flf
 share/figlet/xbriteb.flf
 share/figlet/xbritebi.flf
