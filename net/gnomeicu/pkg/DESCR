@@ -1,7 +1,0 @@
-GnomeICU is a program based on Mirabilis' ICQ protocol, and designed for use
-with the Gtk+ widget library.  It is meant to be a high speed, high quality
-alternative for Mirabilis' Java client (Mirabilis' only attempt at a Linux
-client).  Though GnomeICU is quite stable at this time, it is still
-development software, and most certainly contains bugs.
-
-For more information about gnomeicu, visit:
