@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2001/09/22 05:45:26 jcs Exp $
+# $OpenBSD: Makefile,v 1.15 2001/09/22 05:51:47 jcs Exp $
 
 DISTNAME=	gaim-0.44
 CATEGORIES=	net
@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR= gaim
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-USE_GMAKE=	Yes
 USE_X11=	Yes
 LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf
 RUN_DEPENDS=	ispell::textproc/ispell
