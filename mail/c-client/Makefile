@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/04/20 16:27:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2001/08/02 21:45:11 jakob Exp $
 
 COMMENT=	"University of Washington's c-client mail access routines"
 
@@ -7,7 +7,9 @@ PKGNAME=	c-client-2000c
 CATEGORIES=	mail devel
 NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.sunet.se/pub/unix/mail/imap/
+		ftp://ftp.cac.washington.edu/imap/old/ \
+		ftp://ftp.sunet.se/pub/unix/mail/imap/ \
+		ftp://ftp.sunet.se/pub/unix/mail/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
