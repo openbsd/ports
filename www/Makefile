@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2000/11/30 15:45:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.39 2001/01/04 10:32:33 kevlo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 #
 
@@ -36,7 +36,7 @@
      SUBDIR += netscape
      SUBDIR += nscache
      SUBDIR += p5-Apache-DBI
-#    SUBDIR += p5-CGI
+     SUBDIR += p5-CGI
 #    SUBDIR += p5-CGI_Lite
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-Parser
