@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:56 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/09/28 20:31:52 brad Exp $
 
 DISTNAME=	spider
 PKGNAME=	spider-1.1
 CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/ \
+		http://www.lovett.com/~ade/FreeBSD/
 
 MAINTAINER=	angelos@openbsd.org
-
-MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.doc

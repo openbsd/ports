@@ -1,5 +1,5 @@
---- ./Imakefile.org	Sat Sep 28 10:46:02 1991
-+++ ./Imakefile	Tue Oct  3 04:19:58 1995
+--- Imakefile.orig	Sat Sep 28 13:46:02 1991
++++ Imakefile	Tue Sep 28 16:01:52 1999
 @@ -8,7 +8,7 @@
          SPLIT = split
          CAT = cat
@@ -18,14 +18,12 @@
  #endif
  
  #if OverrideDefs
---- ./spider.man.org	Sat Sep 28 10:46:06 1991
-+++ ./spider.man	Tue Oct  3 04:16:19 1995
-@@ -53,7 +53,7 @@
- Specifies the time (in microseconds) to pause between each move when
- showing a Replay.  The default is 200.
- .TP 8
--.B "roundsCards (\fPclass\fB RoundCards)"
-+.B "roundCards (\fPclass\fB RoundCards)"
- Specifies whether to use rounded cards are not.  Rounded cards look
- better, but are considerably slower.  The default is "on".
- .TP 8
+@@ -235,7 +235,7 @@
+ # endif
+ #endif
+ 
+-INCLUDES = -I. $(TKINCLUDES)
++INCLUDES = -I. -I${X11BASE}/include $(TKINCLUDES)
+ 
+ CPPFLAGS = 
+ 
