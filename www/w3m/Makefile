@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2001/03/30 17:19:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2001/04/03 22:54:50 naddy Exp $
+
+ONLY_FOR_ARCHS=	i386 sparc m68k
 
 COMMENT=		"text-based web browser/pager"
 COMMENT-kanji=		"text-based web browser/pager, japanese flavor"
