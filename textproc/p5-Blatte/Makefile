@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2001/05/06 23:01:58 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/08/08 20:48:56 lebel Exp $
 
 COMMENT=	"text macro/markup/template language"
 
-DISTNAME=	Blatte-0.9.2
+DISTNAME=	Blatte-0.9.4
 PKGNAME=	p5-${DISTNAME}
 HOMEPAGE=	http://www.blatte.org/
 
