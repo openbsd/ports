@@ -1,19 +1,30 @@
-$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.1 2003/01/27 20:05:50 espie Exp $
---- klaptopdaemon/portable.cpp.orig	Sun Oct 27 00:23:22 2002
-+++ klaptopdaemon/portable.cpp	Wed Jan  1 15:36:18 2003
-@@ -1321,6 +1321,245 @@ int laptop_portable::poll_activity()
+$OpenBSD: patch-klaptopdaemon_portable_cpp,v 1.2 2003/03/17 21:00:59 ian Exp $
+--- klaptopdaemon/portable.cpp.orig	Fri Jan  3 00:07:53 2003
++++ klaptopdaemon/portable.cpp	Wed Feb 26 18:19:51 2003
+@@ -40,6 +40,7 @@
+ //	Linux 		(#if __linux__)
+ //	FreeBSD		(#elif __FreeBSD__)
+ //	NetBSD		(#elif __NetBSD_APM__)
++//	OpenBSD		(#elif __OpenBSD__)
+ //	generic nothing	(#else)
+ //
+ //
+@@ -1327,6 +1328,248 @@ int laptop_portable::poll_activity()
  {
         return(1);
  }
 +
-+#elif	(__OpenBSD__ && (__i386__ || __macppc__))
++#elif	(__OpenBSD__ && (__i386__ || __powerpc__))
++	/* This tries to get OpenBSD i386 and MacPPC, but will 
++	 * cause some grumpies on other PPC-based arches.
++	 */
 +
 +/*
 + * OpenBSD support for klaptopdaemon by Ian Darwin
 + * based on my KDE2 "kapm" program; some error handling
 + * patterned on the FreeBSD code above.
 + *
-+ * Note that you must NOT run apmd as this code uses the
++ * Note that you must NOT run apmd because this code uses the
 + * APM control device directly; maybe a later version
 + * will talk to apmd instead.
 + */
