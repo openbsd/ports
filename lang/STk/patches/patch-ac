@@ -1,0 +1,31 @@
+*** configure.orig	Wed Feb  4 20:44:28 1998
+--- configure	Wed Feb  4 20:50:12 1998
+***************
+*** 658,663 ****
+--- 658,664 ----
+    HP*)	     OS=HPUX; DFLGS="$DFLGS -Dhpux";;
+    Linux*)    OS=LINUX;;
+    NetBSD-1*) OS=NETBSD1;;
++   OpenBSD*)  OS=OPENBSD;;
+    FreeBSD*)  OS=FREEBSD;;
+    IRIX-5*)   OS=IRIX5;;
+    *)         OS=unknown_system;;
+***************
+*** 1526,1531 ****
+--- 1527,1542 ----
+       SH_LDFLAGS="-Bshareable -o"
+       SH_LOADER="ld"
+       SH_SUFFIX='so';;
++    OPENBSD)
++      case $machine in
++        alpha) 
++ 	echo "Alpha does not support shared libraries.";;
++        *)
++      	SH_CCFLAGS="-fpic"
++      	SH_LDFLAGS="-Bshareable -o"
++      	SH_LOADER="ld"
++      	SH_SUFFIX='so';;
++      esac;;
+     HPUX)
+       SH_CCFLAGS="+Z"
+       SH_LDFLAGS="-b -o"

@@ -1,0 +1,65 @@
+*** STk-3.1/Src/dynload.c.orig	Sun Jul 21 14:24:39 1996
+--- STk-3.1/Src/dynload.c	Wed Feb  4 22:56:09 1998
+***************
+*** 37,48 ****
+  #include <dld.h>
+  #endif
+  
+! #if defined(NETBSD1)	     
+  #include <sys/types.h>
+  #include <nlist.h>
+  #include <link.h>
+  #define dlerror() "dlerror"  /* dlerror() isn't implemented in NetBSD 1.0 */
+  #endif
+  
+  #ifdef HPUX
+  #include <dl.h>
+--- 37,50 ----
+  #include <dld.h>
+  #endif
+  
+! #if defined(NETBSD1) || defined(OPENBSD)	     
+  #include <sys/types.h>
+  #include <nlist.h>
+  #include <link.h>
++ #if defined(NETBSD1)
+  #define dlerror() "dlerror"  /* dlerror() isn't implemented in NetBSD 1.0 */
+  #endif
++ #endif
+  
+  #ifdef HPUX
+  #include <dl.h>
+***************
+*** 53,59 ****
+  #ifdef USE_DYNLOAD
+  static SCM list_of_files = NULL;
+  
+! #if defined(SUNOS4) || defined(SUNOS5) || defined(NETBSD1) || defined(FREEBSD) || defined(IRIX5) || defined(OSF1) ||defined(LINUX_ELF)
+  
+  static void load_and_call(char *path, char *fct_name)
+  {
+--- 55,61 ----
+  #ifdef USE_DYNLOAD
+  static SCM list_of_files = NULL;
+  
+! #if defined(SUNOS4) || defined(SUNOS5) || defined(NETBSD1) || defined(OPENBSD) || defined(FREEBSD) || defined(IRIX5) || defined(OSF1) ||defined(LINUX_ELF)
+  
+  static void load_and_call(char *path, char *fct_name)
+  {
+***************
+*** 224,230 ****
+    for (p = path, slash = p-1; *p; p++)		/* Find position of last '/' */
+      if (*p == '/') slash = p;
+  
+! #if defined(NETBSD1) || defined(FREEBSD)
+    sprintf(fct_name, "_STk_init_%s", slash + 1);
+  #else
+    sprintf(fct_name, "STk_init_%s", slash + 1);
+--- 226,232 ----
+    for (p = path, slash = p-1; *p; p++)		/* Find position of last '/' */
+      if (*p == '/') slash = p;
+  
+! #if defined(NETBSD1) || defined(OPENBSD) || defined(FREEBSD)
+    sprintf(fct_name, "_STk_init_%s", slash + 1);
+  #else
+    sprintf(fct_name, "STk_init_%s", slash + 1);
