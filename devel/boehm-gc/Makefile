@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2003/10/15 12:58:11 todd Exp $
+# $OpenBSD: Makefile,v 1.26 2003/10/15 17:11:35 todd Exp $
 # $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
 
 COMMENT=	"garbage collection and memory leak detection for C and C++"
@@ -22,7 +22,8 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.54
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} --enable-full-debug
 
 # XXX the below causes failures still

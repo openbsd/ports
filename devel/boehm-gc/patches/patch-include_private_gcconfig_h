@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.7 2003/10/15 12:58:11 todd Exp $
---- include/private/gcconfig.h.orig	2003-06-17 12:01:23.000000000 +1000
-+++ include/private/gcconfig.h	2003-10-15 13:40:09.000000000 +1000
+$OpenBSD: patch-include_private_gcconfig_h,v 1.8 2003/10/15 17:11:36 todd Exp $
+--- include/private/gcconfig.h.orig	2003-10-15 06:45:07.000000000 -0500
++++ include/private/gcconfig.h	2003-10-15 06:47:15.000000000 -0500
 @@ -59,6 +59,10 @@
  #    define FREEBSD
  # endif
@@ -89,18 +89,19 @@ $OpenBSD: patch-include_private_gcconfig_h,v 1.7 2003/10/15 12:58:11 todd Exp $
  #     define USE_GENERIC_PUSH_REGS
        /* Gcc and probably the DEC/Compaq compiler spill pointers to preserved */
        /* fp registers in some cases when the target is a 21264.  The assembly */
-@@ -1449,6 +1469,14 @@
+@@ -1449,6 +1469,7 @@
  #	define ELFCLASS32 32
  #	define ELFCLASS64 64
  #	define ELF_CLASS ELFCLASS64
 +#   	define CPP_WORDSZ 64
-+#       define DYNAMIC_LOADING
-+#   endif
-+#   ifdef OPENBSD
-+#	define OS_TYPE "OPENBSD"
-+#	define HEURISTIC2
-+#	define DATASTART GC_data_start
-+#	define ELF_CLASS ELFCLASS64
  #       define DYNAMIC_LOADING
  #   endif
  #   ifdef OPENBSD
+@@ -1459,6 +1480,7 @@
+ #   	   define ELFCLASS32 32
+ #   	   define ELFCLASS64 64
+ #   	   define ELF_CLASS ELFCLASS64
++#          define DYNAMIC_LOADING
+ #       else		/* ECOFF, until OpenBSD/Alpha 2.7 */
+ #   	   define DATASTART ((ptr_t) 0x140000000)
+ #   	endif
