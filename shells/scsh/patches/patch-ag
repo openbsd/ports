@@ -1,0 +1,19 @@
+*** dynload.c.orig	Fri Sep 26 21:18:21 1997
+--- dynload.c	Fri Sep 26 21:36:11 1997
+***************
+*** 36,42 ****
+  #include <dlfcn.h>
+  #endif
+  
+! #ifdef HAVE_LIBGEN_H
+  #include <libgen.h>
+  /* if we have pathfind, get the file name with $LD_LIBRARY_PATH or $S48_EXTERN_PATH */
+  static char *shared_object_name(char *name)
+--- 36,43 ----
+  #include <dlfcn.h>
+  #endif
+  
+! #if defined(HAVE_LIBGEN_H) && !defined(__OpenBSD__)
+  #include <libgen.h>
+  /* if we have pathfind, get the file name with $LD_LIBRARY_PATH or $S48_EXTERN_PATH */
+  static char *shared_object_name(char *name)

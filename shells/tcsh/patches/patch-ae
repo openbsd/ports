@@ -1,0 +1,67 @@
+*** tc.os.h.old	Sun May 14 00:49:26 1995
+--- tc.os.h	Sat Jun 17 06:02:53 1995
+***************
+*** 417,423 ****
+  # define NEEDgethostname
+  #endif /* _SEQUENT_ */
+  
+! #if defined(BSD) && defined(POSIXJOBS) && !defined(__hp_osf)
+  # define setpgid(pid, pgrp)	setpgrp(pid, pgrp)
+  #endif /* BSD && POSIXJOBS && !__hp_osf */
+  
+--- 417,423 ----
+  # define NEEDgethostname
+  #endif /* _SEQUENT_ */
+  
+! #if defined(BSD) && !defined(__FreeBSD__) && !defined(__OpenBSD__) && defined(POSIXJOBS) && !defined(__hp_osf)
+  # define setpgid(pid, pgrp)	setpgrp(pid, pgrp)
+  #endif /* BSD && POSIXJOBS && !__hp_osf */
+  
+***************
+*** 468,474 ****
+  #ifndef POSIX
+  # define mygetpgrp()    getpgrp(0)
+  #else /* POSIX */
+! # if defined(BSD) || defined(SUNOS4) || defined(IRIS4D) || defined(DGUX)
+  #  define mygetpgrp()    getpgrp(0)
+  # else /* !(BSD || SUNOS4 || IRIS4D || DGUX) */
+  #  define mygetpgrp()    getpgrp()
+--- 468,474 ----
+  #ifndef POSIX
+  # define mygetpgrp()    getpgrp(0)
+  #else /* POSIX */
+! # if (defined(BSD) && !defined(__FreeBSD__)) || defined(SUNOS4) || defined(IRIS4D) || defined(DGUX)
+  #  define mygetpgrp()    getpgrp(0)
+  # else /* !(BSD || SUNOS4 || IRIS4D || DGUX) */
+  #  define mygetpgrp()    getpgrp()
+***************
+*** 657,670 ****
+  # endif /* REMOTEHOST */
+  #endif /* SUNOS4 && __GNUC__ == 2 */
+  
+! #if (defined(BSD) && !defined(__386BSD__)) || defined(SUNOS4) 
+  # if defined(__alpha) && defined(__osf__) && DECOSF1 < 200
+  extern void bcopy	__P((const void *, void *, size_t));
+  #  define memmove(a, b, c) (bcopy((char *) (b), (char *) (a), (int) (c)), a)
+  # endif /* __alpha && __osf__ && DECOSF1 < 200 */
+  #endif /* (BSD && !__386BSD__) || SUNOS4 */
+  
+! #if !defined(hpux) && !defined(COHERENT) && ((SYSVREL < 4) || defined(_SEQUENT_)) && !defined(__386BSD__) && !defined(memmove)
+  # define NEEDmemmove
+  #endif /* !hpux && !COHERENT && (SYSVREL < 4 || _SEQUENT_) && !__386BSD__ && !memmove */
+  
+--- 657,670 ----
+  # endif /* REMOTEHOST */
+  #endif /* SUNOS4 && __GNUC__ == 2 */
+  
+! #if (defined(BSD) && !defined(__386BSD__) && !defined(__FreeBSD__)) || defined(SUNOS4)
+  # if defined(__alpha) && defined(__osf__) && DECOSF1 < 200
+  extern void bcopy	__P((const void *, void *, size_t));
+  #  define memmove(a, b, c) (bcopy((char *) (b), (char *) (a), (int) (c)), a)
+  # endif /* __alpha && __osf__ && DECOSF1 < 200 */
+  #endif /* (BSD && !__386BSD__) || SUNOS4 */
+  
+! #if !defined(hpux) && !defined(COHERENT) && ((SYSVREL < 4) || defined(_SEQUENT_)) && !defined(__386BSD__) && !defined(__FreeBSD__) && !defined(memmove)
+  # define NEEDmemmove
+  #endif /* !hpux && !COHERENT && (SYSVREL < 4 || _SEQUENT_) && !__386BSD__ && !memmove */
+  

@@ -1,0 +1,13 @@
+--- main.c.orig	Fri Sep 20 20:15:03 1996
++++ main.c	Tue Oct 29 19:20:24 1996
+@@ -482,9 +482,9 @@
+ 	s->u.shf = shf;
+ 	s->file = str_save(name, ATEMP);
+ 	i = shell(s, FALSE);
+-	quitenv();
+ 	source = sold;
+ 	shf_close(s->u.shf);
++	quitenv();
+ 	if (old_argv) {
+ 		e->loc->argv = old_argv;
+ 		e->loc->argc = old_argc;

@@ -1,0 +1,85 @@
+*** config.guess.orig	Fri Sep 26 19:31:53 1997
+--- config.guess	Fri Sep 26 19:31:57 1997
+***************
+*** 67,72 ****
+--- 67,75 ----
+      amiga:NetBSD:*:*)
+        echo m68k-cbm-netbsd${UNAME_RELEASE}
+        exit 0 ;;
++     amiga:OpenBSD:*:*)
++       echo m68k-cbm-openbsd${UNAME_RELEASE}
++       exit 0 ;;
+      arm:RISC*:1.[012]*:*|arm:riscix:1.[012]*:*)
+  	echo arm-acorn-riscix${UNAME_RELEASE}
+  	exit 0;;
+***************
+*** 104,115 ****
+--- 107,127 ----
+      atari*:NetBSD:*:*)
+  	echo m68k-atari-netbsd${UNAME_RELEASE}
+  	exit 0 ;;
++     atari*:OpenBSD:*:*)
++ 	echo m68k-atari-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
+      sun3*:NetBSD:*:*)
+  	echo m68k-sun-netbsd${UNAME_RELEASE}
+  	exit 0 ;;
++     sun3*:OpenBSD:*:*)
++ 	echo m68k-sun-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
+      mac68k:NetBSD:*:*)
+  	echo m68k-apple-netbsd${UNAME_RELEASE}
+  	exit 0 ;;
++     mac68k:OpenBSD:*:*)
++ 	echo m68k-apple-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
+      RISC*:ULTRIX:*:*)
+  	echo mips-dec-ultrix${UNAME_RELEASE}
+  	exit 0 ;;
+***************
+*** 313,318 ****
+--- 325,333 ----
+      hp3[0-9][05]:NetBSD:*:*)
+  	echo m68k-hp-netbsd${UNAME_RELEASE}
+  	exit 0 ;;
++     hp3[0-9][05]:OpenBSD:*:*)
++ 	echo m68k-hp-openbsd${UNAME_RELEASE}
++ 	exit 0 ;;
+      i[34]86:BSD/386:*:* | *:BSD/OS:*:*)
+  	echo ${UNAME_MACHINE}-pc-bsdi${UNAME_RELEASE}
+  	exit 0 ;;
+***************
+*** 321,326 ****
+--- 336,344 ----
+  	exit 0 ;;
+      *:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
++ 	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+  	exit 0 ;;
+      i*:CYGWIN*:*)
+  	echo i386-pc-cygwin32
+*** config.sub.orig	Fri Sep 26 20:00:51 1997
+--- config.sub	Fri Sep 26 20:01:43 1997
+***************
+*** 678,686 ****
+  	      | -amigados* | -msdos* | -newsos* | -unicos* | -aof* | -aos* \
+  	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+  	      | -riscos* | -uniplus* | -iris* | -rtu* | -xenix* \
+! 	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+! 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+! 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+  	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+  	      | -cygwin32* | -pe* | -psos* | -moss* | -proelf* \
+  	      | -linux-gnu*)
+--- 678,686 ----
+  	      | -amigados* | -msdos* | -newsos* | -unicos* | -aof* | -aos* \
+  	      | -nindy* | -vxworks* | -ebmon* | -hms* | -mvs* | -clix* \
+  	      | -riscos* | -uniplus* | -iris* | -rtu* | -xenix* \
+! 	      | -hiux* | -386bsd* | -netbsd* | -openbsd* | -freebsd* \
+! 	      | -riscix* | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* \
+! 	      | -elf* | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+  	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+  	      | -cygwin32* | -pe* | -psos* | -moss* | -proelf* \
+  	      | -linux-gnu*)

@@ -1,0 +1,19 @@
+*** sh.h.bak	Sat Oct 19 21:54:12 1996
+--- sh.h	Mon Dec 16 03:02:35 1996
+***************
+*** 1085,1091 ****
+  /*
+   * To print system call errors...
+   */
+! #ifdef __NetBSD__
+  # include <errno.h>
+  #else
+  # ifndef linux
+--- 1085,1091 ----
+  /*
+   * To print system call errors...
+   */
+! #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+  # include <errno.h>
+  #else
+  # ifndef linux

@@ -1,0 +1,44 @@
+*** sh.func.c.bak	Sat Oct  5 21:39:10 1996
+--- sh.func.c	Mon Dec 16 04:25:04 1996
+***************
+*** 1312,1319 ****
+  # ifdef LC_COLLATE
+  	(void) setlocale(LC_COLLATE, "");
+  # endif
+! # if defined(NLS_CATALOGS) && defined(LC_MESSAGES)
+  	(void) setlocale(LC_MESSAGES, "");
+  	(void) catclose(catd);
+  	nlsinit();
+  # endif /* NLS_CATALOGS && LC_MESSAGES */
+--- 1312,1321 ----
+  # ifdef LC_COLLATE
+  	(void) setlocale(LC_COLLATE, "");
+  # endif
+! # ifdef NLS_CATALOGS
+! # ifdef LC_MESSAGES
+  	(void) setlocale(LC_MESSAGES, "");
++ # endif
+  	(void) catclose(catd);
+  	nlsinit();
+  # endif /* NLS_CATALOGS && LC_MESSAGES */
+***************
+*** 1475,1482 ****
+  # ifdef LC_COLLATE
+  		    (void) setlocale(LC_COLLATE, "");
+  # endif
+! # if defined(NLS_CATALOGS) && defined(LC_MESSAGES)
+  		    (void) setlocale(LC_MESSAGES, "");
+  		    (void) catclose(catd);
+  		    nlsinit();
+  # endif /* NLS_CATALOGS && LC_MESSAGES */
+--- 1477,1486 ----
+  # ifdef LC_COLLATE
+  		    (void) setlocale(LC_COLLATE, "");
+  # endif
+! # ifdef NLS_CATALOGS
+! # ifdef LC_MESSAGES
+  		    (void) setlocale(LC_MESSAGES, "");
++ # endif
+  		    (void) catclose(catd);
+  		    nlsinit();
+  # endif /* NLS_CATALOGS && LC_MESSAGES */

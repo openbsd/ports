@@ -1,0 +1,56 @@
+*** configure.in.orig	Sun Oct 27 08:58:56 1996
+--- configure.in	Sat Apr 19 21:37:17 1997
+***************
+*** 76,81 ****
+--- 76,91 ----
+      tcsh_config_file=sysV88
+    ;;
+  
++   ## FreeBSD
++   *-*-freebsd*)
++     tcsh_config_file=bsd4.4
++   ;;
++ 
++   ## OpenBSD
++   *-*-openbsd*)
++     tcsh_config_file=bsd4.4
++   ;;
++ 
+    ## NetBSD systems
+    *-*-netbsd*)
+      tcsh_config_file=bsd4.4
+*** configure.orig	Sun Oct 27 08:58:55 1996
+--- configure	Sat Apr 19 21:39:29 1997
+***************
+*** 582,587 ****
+--- 582,597 ----
+      tcsh_config_file=sysV88
+    ;;
+  
++   ## FreeBSD
++   *-*-freebsd*)
++     tcsh_config_file=bsd4.4
++   ;;
++ 
++   ## OpenBSD
++   *-*-openbsd*)
++     tcsh_config_file=bsd4.4
++   ;;
++ 
+    ## NetBSD systems
+    *-*-netbsd*)
+      tcsh_config_file=bsd4.4
+*** config.guess.dist	Sat Oct 19 10:54:43 1996
+--- config.guess	Sat Apr 19 22:52:46 1997
+***************
+*** 308,313 ****
+--- 308,316 ----
+      *:FreeBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-freebsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+  	exit 0 ;;
++     *:OpenBSD:*:*)
++ 	echo ${UNAME_MACHINE}-unknown-openbsd`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
++ 	exit 0 ;;
+      *:NetBSD:*:*)
+  	echo ${UNAME_MACHINE}-unknown-netbsd`echo ${UNAME_RELEASE}|sed -e 's/[-_].*/\./'`
+  	exit 0 ;;
