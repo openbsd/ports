@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2000/10/04 21:54:03 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2000/11/01 18:41:35 jakob Exp $
 
-DISTNAME=	imap-4.7c2
-PKGNAME=	imap-uw-4.7c2
+DISTNAME=	imap-2000
+
+PKGNAME=	imap-uw-2000
 CATEGORIES=	mail
 NEED_VERSION=	1.302
 
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=     jakob@openbsd.org
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes
@@ -16,8 +17,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.cac.washington.edu/imap/old/
 EXTRACT_SUFX=	.tar.Z
 
-WRKDIST=	${WRKDIR}/imap-4.7c
 ALL_TARGET=	bso
+MAKE_FLAGS=	SPECIALAUTHENTICATORS=ssl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd  ${PREFIX}/libexec

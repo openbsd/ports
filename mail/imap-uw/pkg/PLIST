@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/07/18 21:58:50 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.4 2000/11/01 18:41:36 jakob Exp $
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
