@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/05/23 16:41:22 lebel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/06/07 15:16:25 lebel Exp $
 bin/pspell-config
 include/pspell/app_string.hh
-include/pspell/conf.h
 include/pspell/config.h
 include/pspell/config_impl.hh
 include/pspell/convert.hh
