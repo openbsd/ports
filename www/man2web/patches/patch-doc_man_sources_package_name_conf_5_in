@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_man_sources_package_name_conf_5_in,v 1.1.1.1 2003/04/20 19:04:17 naddy Exp $
+--- doc/man_sources/package_name_conf.5.in.orig	Sat Apr 19 00:11:07 2003
++++ doc/man_sources/package_name_conf.5.in	Sat Apr 19 00:11:33 2003
+@@ -152,7 +152,7 @@ FDL in the doc/ directory of the @packag
+ .IX Header "DESCRIPTION"
+ .RS 4
+ \&\fI@PACKAGE_NAME@.conf\fR contains configuration directives for
+-\&\fB@PACKAGE_NAME@\fR.  It is usually located in \fI/usr/local/etc\fR.
++\&\fB@PACKAGE_NAME@\fR.  It is usually located in \fI@sysconfdir@\fR.
+ .Sp
+ All directives are upper case, followed by whitespace, followed by the
+ value.  If a directive is not specified in the file, the compile time default

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/04/20 19:04:17 naddy Exp $
+bin/man2web
+man/man1/man2web.1
+man/man5/man2web.conf.5
+share/examples/man2web/man2web.conf.default
+@dirrm share/examples/man2web
