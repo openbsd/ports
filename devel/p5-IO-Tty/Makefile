@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/08/04 20:27:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		"provide an interface to create pseudo ttys"
 

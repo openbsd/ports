@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2004/01/02 18:02:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/01/17 15:58:07 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"terminal screen handling and optimisation"
 

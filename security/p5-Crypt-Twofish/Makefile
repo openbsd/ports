@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/23 01:47:21 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2004/01/17 15:58:09 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module to implement the Twofish cipher"
 

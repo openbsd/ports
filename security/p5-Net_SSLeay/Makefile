@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2004/01/17 01:55:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl module for using OpenSSL"
 

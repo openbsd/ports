@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2003/05/24 22:02:51 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2004/01/17 15:58:09 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module to calculate Nilsimsa digests"
 

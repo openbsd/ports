@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2003/10/18 19:44:53 sturm Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"embperl allows you to embed perl in your HTML documents"
 

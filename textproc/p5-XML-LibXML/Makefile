@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl interface to the libxml2 library"
 

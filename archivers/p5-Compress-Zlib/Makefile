@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2003/10/31 02:56:55 kevlo Exp $
+# $OpenBSD: Makefile,v 1.35 2004/01/17 15:58:06 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl interface to the zlib compression library"
 DISTNAME=	Compress-Zlib-1.31

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.27 2003/12/02 22:39:08 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2004/01/17 15:58:09 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Secure Internet Live Conferencing (SILC) client"
 

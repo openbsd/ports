@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/14 16:05:21 jcs Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/17 15:58:07 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Sybase database driver for the DBI module"
 

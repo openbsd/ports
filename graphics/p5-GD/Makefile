@@ -1,4 +1,6 @@
-#	$OpenBSD: Makefile,v 1.16 2002/11/30 17:17:35 couderc Exp $
+#	$OpenBSD: Makefile,v 1.17 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module to interface with the GD graphics library"
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2002/09/21 11:59:39 avsm Exp $
+# $OpenBSD: Makefile,v 1.10 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"high speed arbitrary-size integer math"
 

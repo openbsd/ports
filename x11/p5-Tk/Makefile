@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2003/10/08 17:13:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.18 2004/01/17 15:58:11 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"Tk 8.0 bindings for Perl"
 COMMENT-demo=	"demonstrate the features of ptk"

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/02 05:11:08 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/17 15:58:07 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		'MySQL drivers for the Perl DBI'
 

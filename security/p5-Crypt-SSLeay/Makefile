@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2002/09/21 12:06:06 avsm Exp $
+# $OpenBSD: Makefile,v 1.16 2004/01/17 15:58:09 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"library to provide LWP https support via OpenSSL"
 

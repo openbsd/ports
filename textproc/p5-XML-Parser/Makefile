@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl module for parsing XML documents"
 

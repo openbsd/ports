@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2004/01/11 19:12:46 wilfried Exp $
+# $OpenBSD: Makefile,v 1.3 2004/01/17 15:58:09 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"routines for accessing the OpenSSL prng"
 

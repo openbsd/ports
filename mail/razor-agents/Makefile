@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2003/11/18 20:57:49 millert Exp $
+# $OpenBSD: Makefile,v 1.12 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=		"agent for Razor spam filtering networks"
 

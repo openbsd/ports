@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.22 2004/01/12 00:17:45 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2004/01/17 15:58:09 naddy Exp $
 # Original from: Timo Sirainen <tss@iki.fi>
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"modular IRC client with many features (ipv6,socks,proxy)"
 

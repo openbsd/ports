@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/11/25 03:12:28 margarida Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:06 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"interface to the uulib library"
 

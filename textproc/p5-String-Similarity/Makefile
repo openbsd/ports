@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2003/11/15 15:12:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.6 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"calculate the similarity of two strings"
 

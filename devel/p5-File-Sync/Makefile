@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/01/15 14:15:21 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl interface to the sync() system functions"
 

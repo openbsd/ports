@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2003/10/18 19:44:56 sturm Exp $
+# $OpenBSD: Makefile,v 1.9 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"perl interface to the Gnome GHTTP library"
 

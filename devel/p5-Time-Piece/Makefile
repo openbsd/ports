@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/06 20:44:37 sturm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"object oriented time interface"
 

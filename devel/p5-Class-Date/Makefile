@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2003/10/14 05:15:08 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2004/01/17 15:58:07 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module for easy date and time manipulation"
 

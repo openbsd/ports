@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/02/21 13:44:19 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"calculate Fast Fourier Transforms in perl"
 

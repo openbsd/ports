@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/29 20:08:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2004/01/17 15:58:08 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"module for generating and manipulating images"
 

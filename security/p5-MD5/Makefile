@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 20:31:40 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2004/01/17 15:58:10 naddy Exp $
+
+NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 COMMENT=	"interface to md5 message-digest algorithm"
 
