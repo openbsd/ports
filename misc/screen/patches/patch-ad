@@ -1,0 +1,16 @@
+*** process.c.orig	Sat Sep 27 17:55:26 1997
+--- process.c	Sat Sep 27 17:57:12 1997
+***************
+*** 3031,3036 ****
+--- 3031,3041 ----
+  {
+    struct win **pp, *p;
+  
++ #if defined(__OpenBSD__)
++   /* First try killing off the window's process group... */
++   killpg(wi->w_pid, SIGKILL);
++ #endif
++ 
+    display = wi->w_display;
+    if (display)
+      {
