@@ -1,0 +1,19 @@
+libdvdread provides a simple foundation for reading DVD-Video images.
+It offers DVD applications:
+
+1. A simple abstraction for reading the files on a DVD image
+   (dvd_reader.h).
+2. A simple library for parsing the information (IFO) files
+   (ifo_read.h/ifo_types.h).
+3. A simple library for parsing the navigation (NAV) packets
+   (nav_read.h/nav_types.h).
+
+This allows application designers to access some of the more advanced
+features of the DVD format.
+
+libdvdread currently uses libdl to dynamically probe for libdvdcss at
+runtime.  If libdvdcss is found, then it will be used to decrypt the
+encrypted sections of a DVD.
+
+
+WWW: ${HOMEPAGE}
