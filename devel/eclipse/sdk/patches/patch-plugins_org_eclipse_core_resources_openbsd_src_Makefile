@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_org_eclipse_core_resources_openbsd_src_Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.core.resources.openbsd/src/Makefile.orig	Tue Dec 21 14:24:20 2004
++++ plugins/org.eclipse.core.resources.openbsd/src/Makefile	Tue Dec 21 14:23:24 2004
+@@ -10,8 +10,8 @@
+ 
+ CORE.C = core.c
+ CORE.O = core.o
+-LIB_NAME = libcore.so
+-LIB_NAME_FULL = libcore_2_1_0b.so
++LIB_NAME = libcore.so.1.0
++LIB_NAME_FULL = libcore_2_1_0b.so.1.0
+ 
+ core :
+ 	gcc -fPIC -g -c -I$(JDK_INCLUDE) $(CORE.C) -o $(CORE.O)

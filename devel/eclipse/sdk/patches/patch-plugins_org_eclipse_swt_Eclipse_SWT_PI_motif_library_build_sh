@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_motif_library_build_sh,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/motif/library/build.sh.orig	Thu Sep 16 11:48:36 2004
++++ plugins/org.eclipse.swt/Eclipse SWT PI/motif/library/build.sh	Tue Nov 23 21:11:31 2004
+@@ -30,6 +30,15 @@ case $OS in
+         fi
+         ;;
+ 
++    "OpenBSD")
++        if  [ "$1" = "clean" ]; then
++            gmake -f make_openbsd.mak clean
++        else
++            echo "Building OpenBSD version of SWT, Mozilla, GNOME and KDE DLLs."
++            gmake -f make_openbsd.mak ${1} ${2} ${3} ${4}
++        fi
++        ;;
++
+     "Linux")
+         if  [ "$1" = "clean" ]; then
+             make -f make_linux.mak clean

@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_motif_org_eclipse_swt_graphics_Font_java,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT/motif/org/eclipse/swt/graphics/Font.java.orig	Thu Sep 16 11:47:01 2004
++++ plugins/org.eclipse.swt/Eclipse SWT/motif/org/eclipse/swt/graphics/Font.java	Tue Nov 23 21:11:32 2004
+@@ -234,10 +234,7 @@ static String getCodePage (int xDisplay,
+ 			
+ 			/* Get code page for the font set locale */
+ 			OS.setlocale (OS.LC_CTYPE,  locale);
+-			int codesetPtr = OS.nl_langinfo (OS.CODESET);
+-			length = OS.strlen (codesetPtr);
+-			byte [] codeset = new byte [length];
+-			OS.memmove (codeset, codesetPtr, length);
++			byte [] codeset = "iso8859_1".getBytes();
+ 			codePage = new String(Converter.mbcsToWcs(null, codeset));
+ 			
+ 			/* Reset the locale */
+@@ -471,10 +468,7 @@ void init (Device device, FontData[] fds
+ 	if (fontListEntry != 0) {
+ 		handle = OS.XmFontListAppendEntry(0, fontListEntry);
+ 		OS.XmFontListEntryFree(new int[]{fontListEntry});
+-		int codesetPtr = OS.nl_langinfo(OS.CODESET);
+-		int length = OS.strlen(codesetPtr);
+-		buffer = new byte[length];
+-		OS.memmove(buffer, codesetPtr, length);
++		buffer = "iso8859_1".getBytes();
+ 		codePage = new String(Converter.mbcsToWcs(null, buffer));
+ 	} else {
+ 		Font systemFont = device.systemFont;

@@ -1,0 +1,14 @@
+$OpenBSD: patch-features_org_eclipse_pde_source_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- features/org.eclipse.pde.source/build.xml.orig	Thu Sep 16 11:45:46 2004
++++ features/org.eclipse.pde.source/build.xml	Tue Oct 19 16:53:10 2004
+@@ -84,6 +84,10 @@
+ 	</target>
+ 	<target name="rootFileslinux_motif_x86">
+ 	</target>
++	<target name="rootFilesopenbsd_gtk_x86">
++	</target>
++	<target name="rootFilesopenbsd_motif_x86">
++	</target>
+ 	<target name="rootFilessolaris_motif_sparc">
+ 	</target>
+ 	<target name="rootFilesaix_motif_ppc">

@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.update.core.openbsd/build.xml.orig	Thu Oct 21 09:19:28 2004
++++ plugins/org.eclipse.update.core.openbsd/build.xml	Thu Oct 21 09:20:05 2004
+@@ -59,7 +59,7 @@
+ 
+ 	<target name="gather.sources" depends="init" if="destination.temp.folder">
+ 		<copy todir="${destination.temp.folder}/org.eclipse.update.core.openbsd_3.0.1" failonerror="false">
+-			<fileset dir="${basedir}" includes="src/,fragment.xml,about.html"			/>
++			<fileset dir="${basedir}" includes="src/,fragment.xml,about.htm" excludes="**/*.orig"/>
+ 		</copy>
+ 	</target>
+ 

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.motif,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+@conflict eclipse-sdk-gtk2-*
+eclipse/plugins/org.eclipse.platform.source.openbsd.${ECLIPSE_WS}.x86_${ECLIPSE_VER}/src/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/ws/${ECLIPSE_WS}/swt-gtksrc.zip
+@lib eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/os/openbsd/x86/libswt-gtk-${ECLIPSE_WS}-${ECLIPSE_BUILD}.so.1.0
+eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/permissions.properties
+eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/ws/${ECLIPSE_WS}/swt-gtk.jar

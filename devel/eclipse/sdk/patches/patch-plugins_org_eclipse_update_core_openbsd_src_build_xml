@@ -1,0 +1,34 @@
+$OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_src_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.update.core.openbsd/src/build.xml.orig	Tue Dec 21 14:15:54 2004
++++ plugins/org.eclipse.update.core.openbsd/src/build.xml	Tue Dec 21 14:20:30 2004
+@@ -6,12 +6,12 @@
+   <property name="eclipse-home" value="${basedir}/../.."/>
+   <property name="jdk-path" value="${java.home}"/>  
+   <property name="destination" value="${eclipse-home}/org.eclipse.update.core.openbsd/os/openbsd/x86/"/>
+-  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core.openbsd/src/"/>
++  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core/src/"/>
+   <property name="src-path" value="${eclipse-home}/org.eclipse.update.core.openbsd/src/"/>  
+   
+   <!-- sets the properties -->
+   <property name="library-name" value="libupdate"/>  
+-  <property name="library-platform" value="so"/>    
++  <property name="library-platform" value="so.1.0"/>    
+   <property name="library-file" value="${library-name}.${library-platform}"/>
+   
+   <!-- This target holds all initialization code that needs to be done for -->
+@@ -44,12 +44,12 @@
+   <target name="build">
+     <echo message="Building ${library-file}"/>
+ 
+-    <property name="header-path" value="${jdk-path}/../include"/>
++    <property name="header-path" value="${jdk-path}/include"/>
+     <property name="header-openbsd-path" value="${header-path}/openbsd" />
+ 
+-	<echo message="gcc -o  ${library-file} -shared -I${src-path} -I${header-openbsd-path} ${library-file} -static -lc"/>
++	<echo message="${CC} -o  ${library-file} -shared -I${src-path} -I${header-path} -I${header-openbsd-path} ${library-file} -static -lc"/>
+ 
+-    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
++    <apply executable="${CC}" dest="${eclipse-home}/" parallel="false">
+       <arg value="-o"/>
+       <arg value="${library-file}"/>
+       <arg value="-shared"/>

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-mozilla,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+@lib eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/os/openbsd/x86/libswt-mozilla-${ECLIPSE_WS}-${ECLIPSE_BUILD}.so.1.0

@@ -1,0 +1,6 @@
+The Graphical Editing Framework (GEF) allows developers to create a rich
+graphical editor from an existing application model. GEF is completely
+application neutral and provides the groundwork to build almost any
+application, including but not limited to: flow builders, GUI builders,
+UML diagram editors (such as work-flow and class modeling diagrams), and
+even WYSIWYG text editors like HTML.

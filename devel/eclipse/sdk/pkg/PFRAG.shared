@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2005/02/04 17:18:10 kurt Exp $
+@lib eclipse/plugins/org.eclipse.core.resources.openbsd_${ECLIPSE_COREVER}/os/openbsd/x86/libcore_2_1_0b.so.1.0
+@lib eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/os/openbsd/x86/libswt-awt-${ECLIPSE_WS}-${ECLIPSE_BUILD}.so.1.0
+@lib eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_${ECLIPSE_VER}/os/openbsd/x86/libswt-${ECLIPSE_WS}-${ECLIPSE_BUILD}.so.1.0
+@lib eclipse/plugins/org.eclipse.update.core.openbsd_${ECLIPSE_VER}/os/openbsd/x86/libupdate.so.1.0

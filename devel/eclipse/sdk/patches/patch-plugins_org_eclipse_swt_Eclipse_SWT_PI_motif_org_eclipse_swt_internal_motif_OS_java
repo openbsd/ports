@@ -1,0 +1,19 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_motif_org_eclipse_swt_internal_motif_OS_java,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/motif/org/eclipse/swt/internal/motif/OS.java.orig	Thu Sep 16 11:48:03 2004
++++ plugins/org.eclipse.swt/Eclipse SWT PI/motif/org/eclipse/swt/internal/motif/OS.java	Tue Nov 23 21:11:31 2004
+@@ -36,7 +36,6 @@ public class OS {
+ 		IsAIX = isAIX;  IsSunOS = isSunOS;  IsLinux = isLinux;  IsHPUX = isHPUX;
+ 		IsDBLocale = OS.MB_CUR_MAX () != 1;
+ 	}
+-	public static final int CODESET = CODESET ();
+ 	public static final int LC_CTYPE = LC_CTYPE ();
+ 	
+ 	static final int RESOURCE_LENGTH = 1024 * 3;
+@@ -607,7 +606,6 @@ public class OS {
+ /** Natives */
+ public static final synchronized native int Call(int proc, int arg1, int arg2);
+ public static final synchronized native int ConnectionNumber(int display);
+-public static final native int CODESET();
+ public static final native boolean FD_ISSET(int fd, byte[] fd_set);
+ public static final native void FD_SET(int fd, byte[] fd_set);
+ public static final native void FD_ZERO(byte[] fd_set);

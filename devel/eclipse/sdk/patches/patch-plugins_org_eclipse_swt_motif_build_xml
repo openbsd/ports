@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_motif_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.swt.motif/build.xml.orig	Tue Oct 19 17:26:09 2004
++++ plugins/org.eclipse.swt.motif/build.xml	Tue Oct 19 17:26:48 2004
+@@ -10,7 +10,7 @@
+ 		<property name="build.result.folder" value="${basedir}"/>
+ 		<property name="plugindir" value="../org.eclipse.swt"/>
+ 		<property name="destination" value="${basedir}"/>
+-		<property name="os" value="linux"/>
++		<property name="os" value="${os}"/>
+ 		<property name="ws" value="motif"/>
+ 		<property name="arch" value="x86"/>
+ 		<property name="bootclasspath" value=""/>

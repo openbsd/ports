@@ -1,0 +1,93 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- Makefile.orig	Mon Jan  3 09:48:03 2005
++++ Makefile	Mon Jan  3 21:23:13 2005
+@@ -0,0 +1,89 @@
++# $OpenBSD: patch-Makefile,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
++# $FreeBSD: ports/java/eclipse/files/Makefile,v 1.7 2004/07/28 17:56:31 nork Exp $
++
++ECHO=		/bin/echo
++FIND=		/usr/bin/find
++MKDIR=		/bin/mkdir -p
++SED=		/usr/bin/sed
++CP=		/bin/cp
++CSH=		/bin/csh
++SH=		/bin/sh
++GMAKE=		$(LOCALBASE)/bin/gmake
++ANT=		$(LOCALBASE)/bin/ant
++UNZIP_CMD=	$(LOCALBASE)/bin/unzip
++
++PORTDESTDIR=	$(PREFIX)/eclipse
++
++CFLAGS+=	-I$(JAVA_HOME)/include		\
++		-I$(JAVA_HOME)/include/bsd	\
++		-I$(JAVA_HOME)/include/openbsd
++
++LIBUPDATE=	libupdate.so.1.0
++LIBUPDATE_DST=	plugins/org.eclipse.update.core.openbsd/os/openbsd/x86
++LIBUPDATE_SRC=	plugins/org.eclipse.update.core.openbsd/src
++ 
++SWT_VERSION=	$(ECLIPSE_BUILD)
++LIBSWT=		libswt-$(ECLIPSE_WS)-$(SWT_VERSION).so.1.0
++LIBSWTPI=	libswt-pi-$(ECLIPSE_WS)-$(SWT_VERSION).so.1.0
++LIBSWT_DST=	plugins/org.eclipse.swt.$(ECLIPSE_WS)/os/openbsd/x86
++LIBSWT_SRC=	plugins/org.eclipse.swt/Eclipse_SWT
++ 
++LAUNCHER=	eclipse
++LAUNCHER_DST=	plugins/platform-launcher/bin/openbsd/$(ECLIPSE_WS)
++LAUNCHER_SRC=	plugins/platform-launcher/library/$(ECLIPSE_WS)
++
++LAUNCHER_SRCS=	$(LAUNCHER_SRC)/../eclipse.c \
++		$(LAUNCHER_SRC)/../eclipseUtil.c \
++		$(LAUNCHER_SRC)/../eclipseShm.c \
++		$(LAUNCHER_SRC)/eclipseGtk.c
++LAUNCHER_OBJS=	$(LAUNCHER_SRCS:S/.c/.o/g)
++
++all:		binaries java
++
++binaries:	libswt launcher libupdate
++
++libswt:
++	@$(ECHO) "===> Building libswt."
++	cd "plugins/org.eclipse.swt/Eclipse SWT PI/$(ECLIPSE_WS)/library" && \
++		$(SH) ./build.sh && \
++		$(CP) *.so.1.0 ../../../../org.eclipse.swt.$(ECLIPSE_WS)/os/openbsd/x86/
++
++launcher:
++	@$(ECHO) "===> Building Eclipse launcher."
++	cd plugins/platform-launcher/library/$(ECLIPSE_WS) && \
++		$(CSH) build.csh -os openbsd && \
++		$(CP) eclipse ../../bin/openbsd/$(ECLIPSE_WS)/eclipse
++
++libupdate:
++	@$(ECHO) "===> Building libupdate."
++	cd plugins/org.eclipse.update.core.openbsd/src && \
++		$(ANT) -Djava.home=$(JAVA_HOME) -DCC=$(CC)
++	@$(ECHO) "===> Building libcore."
++	cd plugins/org.eclipse.core.resources.openbsd/src && \
++		env JDK_INCLUDE="$(JAVA_HOME)/include -I$(JAVA_HOME)/include/openbsd" $(GMAKE) && \
++		$(CP) *.so.1.0 ../../org.eclipse.core.resources.openbsd/os/openbsd/x86
++
++java:		build-install
++
++build-install:
++	@$(ECHO) "===> Building Eclipse platform."
++	./build -os $(ECLIPSE_OS) -ws $(ECLIPSE_WS) -arch $(ECLIPSE_ARCH)
++
++install:
++	@$(ECHO) "===> Installing Eclipse platform."
++	@$(MKDIR) $(PORTDESTDIR)
++	$(UNZIP_CMD) result/$(ECLIPSE_OS)-$(ECLIPSE_WS)-$(ECLIPSE_ARCH)-sdk.zip -d $(PREFIX)
++	@$(ECHO) "===> Installing a shell script..."
++	@$(SED) \
++	-e "s+%%ECLIPSE_HOME%%+$(TRUEPREFIX)/eclipse+g" \
++	-e "s+%%JAVA_HOME%%+$(JAVA_HOME)+g" \
++	-e "s+%%LOCALBASE%%+$(TRUEPREFIX)+g" \
++	eclipse.in > eclipse.tmp
++	$(BSD_INSTALL_SCRIPT) eclipse.tmp $(PREFIX)/bin/eclipse
++
++clean:
++	./build -os $(ECLIPSE_OS) -ws $(ECLIPSE_WS) -arch $(ECLIPSE_ARCH) clean
++	rm -rf $(LIBSWT_DST)/$(LIBSWTPI) $(LIBSWT_DST)/$(LIBSWT)
++	rm -rf $(LAUNCHER_DST)/$(LAUNCHER)
++	rm -rf $(LIBSWT_SRC)/*.o $(LAUNCHER_OBJS)
++	rm -rf $(LIBUPDATE_DST)/$(LIBUPDATE)

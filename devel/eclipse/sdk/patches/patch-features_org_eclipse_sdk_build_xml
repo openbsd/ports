@@ -1,0 +1,30 @@
+$OpenBSD: patch-features_org_eclipse_sdk_build_xml,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- features/org.eclipse.sdk/build.xml.orig	Wed Oct 20 10:53:58 2004
++++ features/org.eclipse.sdk/build.xml	Wed Oct 20 10:57:38 2004
+@@ -113,6 +113,13 @@
+ 			<fileset dir="${basedir}/../org.eclipse.platform/configuration.files" includes="**"			/>
+ 		</copy>
+ 	</target>
++	<target name="rootFilesopenbsd_motif_x86">
++		<mkdir dir="${feature.base}/openbsd.motif.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/openbsd.motif.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../org.eclipse.platform/configuration.files" includes="**"			/>
++		</copy>
++	</target>
+ 	<target name="rootFileslinux_motif_x86">
+ 		<mkdir dir="${feature.base}/linux.motif.x86/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.motif.x86/${collectingFolder}" failonerror="true">
+@@ -132,6 +139,12 @@
+ 		<copy todir="${feature.base}/aix.motif.ppc/${collectingFolder}" failonerror="true">
+ 			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
+ 			<fileset dir="${basedir}/../org.eclipse.platform/configuration.files" includes="**"			/>
++		</copy>
++	</target>
++	<target name="rootFilesopenbsd_gtk_x86">
++		<mkdir dir="${feature.base}/openbsd.gtk.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/openbsd.gtk.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
+ 		</copy>
+ 	</target>
+ 	<target name="rootFileshpux_motif_PA_RISC">

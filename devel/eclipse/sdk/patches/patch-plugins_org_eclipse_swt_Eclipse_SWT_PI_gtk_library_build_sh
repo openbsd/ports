@@ -1,0 +1,9 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Thu Sep 16 11:50:21 2004
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Tue Nov 23 21:11:31 2004
+@@ -13,4 +13,4 @@
+ 
+ #!/bin/sh
+ 
+-make -f make_gtk.mak ${1} ${2} ${3} ${4}
++gmake -f make_gtk.mak ${1} ${2} ${3} ${4}

@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_motif_org_eclipse_swt_internal_Converter_java,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT/motif/org/eclipse/swt/internal/Converter.java.orig	Thu Sep 16 11:49:53 2004
++++ plugins/org.eclipse.swt/Eclipse SWT/motif/org/eclipse/swt/internal/Converter.java	Tue Nov 23 21:11:32 2004
+@@ -58,22 +58,7 @@ public final class Converter {
+ 			UTF8 = getAsciiBytes("UTF-8");
+ 		}
+ 
+-		int length, item = OS.nl_langinfo (OS.CODESET);
+-		if (item != 0 && (length = OS.strlen (item)) > 0) {
+-			byte [] buffer = new byte [length];
+-			OS.memmove (buffer, item, length);
+-			CodePage = new String (buffer);
+-			if (OS.IsSunOS) {
+-				if (length > 3 && CodePage.indexOf ("ISO") == 0) {
+-					CodePage = CodePage.substring (3, length);
+-				}
+-			}
+-		} else {
+-			if (OS.IsLinux) CodePage = "ISO-8859-1";
+-			else if (OS.IsAIX) CodePage = "ISO8859-1";
+-			else if (OS.IsSunOS) CodePage = "8859-1";
+-			else CodePage = "iso8859_1";
+-		}
++		CodePage = "iso8859_1";
+ 		
+ 		/*
+ 		* The buffers can hold up to 512 unicode characters when converting

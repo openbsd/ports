@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_org_eclipse_update_core_openbsd_src_update_c,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/org.eclipse.update.core.openbsd/src/update.c.orig	Tue Jan  4 09:11:32 2005
++++ plugins/org.eclipse.update.core.openbsd/src/update.c	Tue Jan  4 09:17:00 2005
+@@ -10,8 +10,14 @@
+  *******************************************************************************/
+ 
+ # include <sys/types.h>
++#ifdef __OpenBSD__
++# include <sys/param.h>
++# include <sys/mount.h>
++# include "update.h"
++#else
+ # include <sys/statfs.h>
+ # include <update.h>
++#endif
+ 
+ /*
+  * Class:     org_eclipse_update_configuration_LocalSystemInfo

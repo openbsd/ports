@@ -1,0 +1,32 @@
+$OpenBSD: patch-plugins_platform-launcher_library_motif_build_csh,v 1.1.1.1 2005/02/04 17:18:13 kurt Exp $
+--- plugins/platform-launcher/library/motif/build.csh.orig	Thu Sep 16 11:48:26 2004
++++ plugins/platform-launcher/library/motif/build.csh	Tue Oct 19 17:15:54 2004
+@@ -48,6 +48,13 @@ switch ($OS )
+         set defaultWS     = "motif"
+         breaksw
+             
++    case OpenBSD:
++        set makefile      = "make_openbsd.mak"
++        set defaultOS     = "openbsd"
++        set defaultOSArch = "x86"
++        set defaultWS     = "motif"
++        breaksw
++
+     case Linux:
+         set makefile      = "make_linux.mak"
+         set defaultOS     = "linux"
+@@ -120,11 +127,11 @@ setenv DEFAULT_WS      "$defaultWS"
+ # If the OS is supported (a makefile exists)
+ if ("$makefile" != "") then
+     if ("$extraArgs" != "") then
+-        make -f $makefile $extraArgs
++        gmake -f $makefile $extraArgs
+     else
+         echo "Building $OS launcher. Defaults: -os $DEFAULT_OS -arch $DEFAULT_OS_ARCH -ws $DEFAULT_WS"
+-        make -f $makefile clean
+-        make -f $makefile all
++        gmake -f $makefile clean
++        gmake -f $makefile all
+     endif
+ else
+     echo "Unknown OS ($OS) -- build aborted"
