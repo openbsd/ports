@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
---- configure.orig	Tue Mar 19 09:28:29 2002
-+++ configure	Mon May 20 14:00:29 2002
-@@ -2865,7 +2865,7 @@ EOF
- fi
- 
- XML_I18N_MERGE_OAF_RULE='\%.oaf : \%.oaf.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
--	$(top_builddir)/xml-i18n-merge -o $(top_srcdir)/po $< $*.oaf'
-+	sed s/_value/value/ $< > $*.oaf'
- 
- XML_I18N_MERGE_SERVER_RULE='\%.server : \%.server.in $(top_builddir)/xml-i18n-merge $(top_srcdir)/po/*.po\
- 	$(top_builddir)/xml-i18n-merge -o $(top_srcdir)/po $< $*.server'
-@@ -5128,8 +5128,8 @@ else
+$OpenBSD: patch-configure,v 1.2 2002/07/14 20:02:16 nino Exp $
+--- configure.orig	Tue Jul  9 08:52:20 2002
++++ configure	Tue Jul  9 09:05:04 2002
+@@ -2867,7 +2867,7 @@ fi
+   XML_I18N_MERGE_DESKTOP_RULE='%.desktop:   %.desktop.in   $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -d          -p '
+ XML_I18N_MERGE_DIRECTORY_RULE='%.directory: %.directory.in $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -d          -p '
+      XML_I18N_MERGE_KEYS_RULE='%.keys:      %.keys.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -k  $(XML_I18N_KEYS_KIND) '
+-      XML_I18N_MERGE_OAF_RULE='%.oaf:       %.oaf.in       $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -o -p'
++      XML_I18N_MERGE_OAF_RULE='%.oaf:       %.oaf.in       $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; sed s/_value/value/ $< > $*.oaf'
+      XML_I18N_MERGE_PONG_RULE='%.pong:      %.pong.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -x          -p '
+    XML_I18N_MERGE_SERVER_RULE='%.server:    %.server.in    $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -o -u'
+     XML_I18N_MERGE_SHEET_RULE='%.sheet:     %.sheet.in     $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< $@ -x -u'
+@@ -5115,8 +5115,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -5138,8 +5138,8 @@ else
+@@ -5125,8 +5125,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
          ;;
        esac
      fi
-@@ -5655,6 +5655,8 @@ openbsd*)
+@@ -5642,6 +5642,8 @@ openbsd*)
    version_type=sunos
    need_lib_prefix=no
    need_version=no
@@ -41,14 +41,14 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
    if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case "$host_os" in
      openbsd2.[89] | openbsd2.[89].*)
-@@ -8600,6 +8602,10 @@ echo "${ECHO_T}$gt_cv_func_gettext_libin
+@@ -8586,6 +8588,10 @@ echo "$as_me:8585: result: $gt_cv_func_g
+ echo "${ECHO_T}$gt_cv_func_gettext_libintl" >&6
  fi
  
- 	   fi
++	   fi
 +
-+           if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+             LIBS="$LIBS -lintl";
-+           fi
++	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	      LIBS="$LIBS -lintl";
+ 	   fi
  
  	   if test "$gt_cv_func_gettext_libc" = "yes" \
- 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
+# $OpenBSD: Makefile,v 1.2 2002/07/14 20:02:16 nino Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
-DISTNAME=		gtkhtml-1.0.2
+DISTNAME=		gtkhtml-1.0.4
 CATEGORIES=    		www
 NEED_VERSION=		1.530
 HOMEPAGE=		http://www.gnome.org/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
-lib/libgtkhtml.so.21.1
+@comment $OpenBSD: PFRAG.shared,v 1.2 2002/07/14 20:02:16 nino Exp $
+lib/libgtkhtml.so.21.3
 lib/bonobo/plugin/libstorage_http.so
 DYNLIBDIR(%D/lib)

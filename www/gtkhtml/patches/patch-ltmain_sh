@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltmain_sh,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
---- ltmain.sh.orig	Thu May 16 12:39:32 2002
-+++ ltmain.sh	Thu May 16 12:38:59 2002
-@@ -1060,6 +1060,17 @@ compiler."
+$OpenBSD: patch-ltmain_sh,v 1.2 2002/07/14 20:02:16 nino Exp $
+--- ltmain.sh.orig	Thu Jun 13 09:30:56 2002
++++ ltmain.sh	Tue Jul  9 09:05:42 2002
+@@ -1249,6 +1249,17 @@ EOF
  	continue
  	;;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
        -module)
  	module=yes
  	continue
-@@ -1500,6 +1511,9 @@ compiler."
+@@ -1840,6 +1851,9 @@ EOF
  	  alldeplibs=yes
  	  continue
  	  ;;
@@ -27,11 +27,11 @@ $OpenBSD: patch-ltmain_sh,v 1.1.1.1 2002/05/30 20:23:13 nino Exp $
 +       continue
 +       ;;
  	esac # case $deplib
- 	if test $found = yes || test -f "$lib"; then :
+ 	if test "$found" = yes || test -f "$lib"; then :
  	else
-@@ -4446,40 +4460,6 @@ relink_command=\"$relink_command\""
+@@ -4951,40 +4965,6 @@ relink_command=\"$relink_command\""
      # Exit here if they wanted silent mode.
-     test "$show" = ":" && exit 0
+     test "$show" = : && exit 0
  
 -    echo "----------------------------------------------------------------------"
 -    echo "Libraries have been installed in:"
