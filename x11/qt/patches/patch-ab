@@ -7,7 +7,7 @@
  
  # Compiling with support libraries
 -SYSCONF_CXXFLAGS_X11	= -I/usr/X11R6/include
-+SYSCONF_CXXFLAGS_X11	= -I$(X11BASE)/include
++SYSCONF_CXXFLAGS_X11	= -I$(X11BASE)/include -I$(LOCALBASE)/include
  SYSCONF_CXXFLAGS_QT	= -I$(QTDIR)/include
 -SYSCONF_CXXFLAGS_OPENGL	= -I/usr/X11R6/include
 +SYSCONF_CXXFLAGS_OPENGL	= -I$(LOCALBASE)/include

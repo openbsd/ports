@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2000/05/19 13:36:21 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2000/05/22 10:48:55 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 DISTNAME=	qt-1.45
@@ -25,8 +25,17 @@ EXAMPLES=aclock application biff connect cursor dclock desktop dirview \
 	progress qdir qmag qwerty scrollview showimg splitter table \
 	tetrix tictac timestmp tooltip validator widgets xform
 
+# for the qt image extension
+BUILD_DEPENDS=${PREFIX}/include/libjpeg.h::graphics/jpeg
+
+IMAGEIODIR=${WRKSRC}/extensions/imageio/src
+
+post-build:
+	@cd ${IMAGEIODIR} && \
+		${SETENV} ${MAKE_ENV} SYS_CXXFLAGS='-I$(LOCALBASE)/include ${CXXFLAGS}' ${MAKE} ${MAKE_FLAGS}
+
 do-configure:
-	@cd ${WRKSRC} && env ${MAKE_ENV} make ${USE_TARGET}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${USE_TARGET}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/qt
@@ -39,8 +48,15 @@ do-install:
 	@if [ -f ${WRKSRC}/lib/libqt.so.1.45 ]; then \
 	 ${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.1.45 ${PREFIX}/lib; \
 	fi
+	@if [ -f ${WRKSRC}/lib/libqimgio.a ]; then \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqimgio.a ${PREFIX}/lib; \
+	fi
+	@if [ -f ${WRKSRC}/lib/libqimgio.so.1.45 ]; then \
+	 ${INSTALL_DATA} ${WRKSRC}/lib/libqimgio.so.1.45 ${PREFIX}/lib; \
+	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/X11/qt
+	${INSTALL_DATA} ${IMAGEIODIR}/*.h ${PREFIX}/include/X11/qt
 	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
 	@for i in ${WRKSRC}/man/man3/*; do \
 	  j=$${i%qt}; \
