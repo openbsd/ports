@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/10 08:36:46 espie Exp $
-lib/
-lib/php/
+@comment $OpenBSD: PLIST,v 1.5 2005/02/27 22:58:25 mbalmer Exp $
 pear/doc/Config/
 pear/doc/Config/docs/
 pear/doc/Config/docs/Apache.php
 pear/doc/Config/docs/IniCommented.php
 pear/doc/Config/docs/IniFromScratch.php
-@comment pear/lib/.filemap
-@comment pear/lib/.lock
 pear/lib/.registry/config.reg
 pear/lib/Config/
 pear/lib/Config.php
