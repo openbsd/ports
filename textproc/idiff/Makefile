@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 1998/09/29 22:20:22 ian Exp $
+# $OpenBSD: Makefile,v 1.4 1998/09/29 22:42:07 ian Exp $
 #
 
 PKGNAME=	idiff-1.0
@@ -10,6 +10,6 @@ MAINTAINER=	ian@openbsd.org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/idiff ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/idiff.cat ${PREFIX}/man/cat1/idiff.0
+	${INSTALL_MAN} ${WRKSRC}/idiff.cat1 ${PREFIX}/man/cat1/idiff.0
 
 .include <bsd.port.mk>
