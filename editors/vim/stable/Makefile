@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2002/03/24 20:26:24 lebel Exp $
+# $OpenBSD: Makefile,v 1.46 2002/03/28 16:50:02 lebel Exp $
 
 COMMENT=	"vi clone, many additional features"
 COMMENT-lang=	"vi clone, NLS subpackage"
@@ -48,7 +48,10 @@ MODULES=	gettext iconv
 MULTI_PACKAGES= -lang
 SUBPACKAGE?=
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-lang"
-RUN_DEPENDS=::editors/vim/stable
+.  for i in ${FLAVOR:L}
+_flavor:=${_flavor},$i
+.  endfor
+RUN_DEPENDS=::editors/vim/stable${_flavor}
 .endif
 
 .for i in ${MULTI_PACKAGES}
