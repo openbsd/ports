@@ -23,8 +23,10 @@ port' below.
 If you wish to start PostgreSQL automatically during system startup,
 add the following lines to /etc/rc.local:
 
-if [ -x @PREFIX@/bin/pgwrap -a -x @PREFIX@/pgsql/bin/postmaster ]; then
-	@PREFIX@/bin/pgwrap -o /var/pgsql/log postmaster -i -S -o -F
+if [ -x @PREFIX@/bin/pgwrap -a -x @PREFIX@/pgsql/bin/postmaster ]; \
+	then
+	@PREFIX@/bin/pgwrap -o /var/pgsql/log \
+		pg_ctl -w -o "-i -S -o -F" start
 	echo -n ' pgsql'
 fi
 
@@ -34,7 +36,17 @@ Don't forget to add @PREFIX@/pgsql/lib directory to shared libraries path in
 shlib_dirs="@PREFIX@/pgsql/lib"
 
 Add @PREFIX@/pgsql/man to ${MANPATH} if you wish to use PostgreSQL
-manual pages.
+manual pages or update your /etc/man.conf:
+
+	#PostgreSQL man pages
+	_whatdb		/usr/local/pgsql/man/whatis.db
+	_subdir		manl
+	_build		.l	/usr/bin/nroff -man %s
+	_default	/usr/local/pgsql/man/
+	pgsql		/usr/local/pgsql/man/
+	1		/usr/local/pgsql/man/man1
+	l		/usr/local/pgsql/man/manl
+
 
 Please note that OpenBSD port of PostgreSQL requires a kernel compiled
 with SYSVMSG, SYSVSEM and SYSVSHM options for proper operation.
@@ -79,4 +91,4 @@ unless already set):
 
 You must have root privilegies to run `pgwrap'.
 
-$OpenBSD: README.OpenBSD.in,v 1.2 1999/12/15 06:34:06 form Exp $
+$OpenBSD: README.OpenBSD.in,v 1.3 2000/05/23 16:31:41 form Exp $

@@ -1,0 +1,15 @@
+pgsql/lib/libecpg.so
+pgsql/lib/libecpg.so.3
+pgsql/lib/libecpg.so.3.1.0
+pgsql/lib/libpgeasy.so
+pgsql/lib/libpgeasy.so.2
+pgsql/lib/libpgeasy.so.2.1
+pgsql/lib/libpq++.so
+pgsql/lib/libpq++.so.3
+pgsql/lib/libpq++.so.3.1
+pgsql/lib/libpq.so
+pgsql/lib/libpq.so.2
+pgsql/lib/libpq.so.2.1
+pgsql/lib/plpgsql.so
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
+@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/pgsql/lib
