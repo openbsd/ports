@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2002/07/15 20:59:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.141 2002/07/19 22:44:36 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -200,7 +200,6 @@
      SUBDIR += xsnow
      SUBDIR += xtacy
      SUBDIR += xtattr
-     SUBDIR += xterm
      SUBDIR += xtermset
      SUBDIR += xtestpicture
 #    SUBDIR += xtide
