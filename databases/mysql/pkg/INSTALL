@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.6 2000/08/15 13:24:01 brad Exp $
+# $OpenBSD: INSTALL,v 1.7 2000/08/15 18:23:19 brad Exp $
 #
 # Pre/post-installation setup of MySQL
 
@@ -44,7 +44,7 @@ do_pre_install()
 	MYSQLUID=`echo $line | cut -f3 -d:`
     else
 	echo "===> Creating mysql user, uid $MYSQLUID"
-	user add -g $MYSQLGID -u $MYSQLUID -c 'MySQL Account' -s /sbin/nologin mysql
+	user add -g $MYSQLGID -u $MYSQLUID -d /nonexistent -c 'MySQL Account' -s /sbin/nologin mysql
     fi
     echo "===> Using account mysql for MySQL, uid $MYSQLUID, gid $MYSQLGID"
 }
