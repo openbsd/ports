@@ -3,7 +3,7 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/03/20 04:05:10 marc Exp $
+# $OpenBSD: Makefile,v 1.2 1998/03/23 01:40:06 marc Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -73,7 +73,10 @@ RSAOBJS=	rsaglue1.o
 # Before the build figure out if we are on a big endian machine or not
 #
 pre-build:
-	@if { grep -q 4321 /usr/include/machine/endian.h; } then \
+	@echo "#include <machine/endian.h>" > ${WRKDIR}/.endian.c
+	@echo "BYTE_ORDER" >> ${WRKDIR}/.endian.c
+	@${CC} -E ${WRKDIR}/.endian.c > ${WRKDIR}/.endian.out
+	@if { grep -q 4321 ${WRKDIR}/.endian.out; } then \
 	   echo -DHIGHFIRST > ${WRKDIR}/.endian; \
 	 else \
 	   ${CP} /dev/null ${WRKDIR}/.endian; \
