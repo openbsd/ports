@@ -1,7 +1,7 @@
-$OpenBSD: patch-ltconfig,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
---- ltconfig.orig	Sat Jul 17 23:11:50 1999
-+++ ltconfig	Sun May 27 17:28:52 2001
-@@ -1061,6 +1061,9 @@ cygwin* | mingw*)
+$OpenBSD: patch-ltconfig,v 1.2 2001/07/22 20:40:06 pvalchev Exp $
+--- ltconfig.orig	Thu Jul 13 23:54:59 2000
++++ ltconfig	Fri Jul 20 22:27:14 2001
+@@ -1105,6 +1105,9 @@ cygwin* | mingw*)
      with_gnu_ld=no
    fi
    ;;
@@ -11,7 +11,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
  
  esac
  
-@@ -1317,10 +1320,21 @@ else
+@@ -1402,10 +1405,21 @@ else
      ;;
  
    openbsd*)
@@ -35,7 +35,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
      ;;
  
    os2*)
-@@ -1857,13 +1871,10 @@ netbsd*)
+@@ -2021,13 +2035,11 @@ netbsd*)
  
  openbsd*)
    version_type=sunos
@@ -43,6 +43,7 @@ $OpenBSD: patch-ltconfig,v 1.1.1.1 2001/05/29 00:54:46 pvalchev Exp $
 -    need_lib_prefix=no
 -    need_version=no
 -  fi
++  need_version=no
    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH

@@ -1,15 +1,23 @@
-$OpenBSD: patch-SyncTime_Makefile_in,v 1.2 2001/06/03 17:45:00 pvalchev Exp $
+$OpenBSD: patch-SyncTime_Makefile_in,v 1.3 2001/07/22 20:40:06 pvalchev Exp $
 --- SyncTime/Makefile.in.orig	Thu Dec  7 15:44:26 2000
-+++ SyncTime/Makefile.in	Wed May 30 19:42:14 2001
-@@ -52,13 +52,15 @@ distclean: clean
++++ SyncTime/Makefile.in	Sun Jul 22 13:57:01 2001
+@@ -28,7 +28,8 @@ libsynctime.so: synctime.o
+ 	$(CC) $(OPTIONS) -o libsynctime.la \
+ 	synctime.lo \
+ 	-rpath $(prefix)/lib/jpilot/plugins \
+-	-version-info 1:1
++	-version-info 1:1 \
++	-avoid-version
+ #	-L. -lplugin
+ #	ld -shared -ldl -o libsynctime.so synctime.o -L. -lplugin
+ 
+@@ -52,13 +53,13 @@ distclean: clean
  install:
  	./install-sh -d -m 755 $(prefix)/lib/jpilot; \
  	./install-sh -d -m 755 $(prefix)/lib/jpilot/plugins; \
 -	../libtool --mode=install ./install-sh \
 +	../libtool --mode=install ./install-sh -c \
  	libsynctime.la $(prefix)/lib/jpilot/plugins
-+	ln $(prefix)/lib/jpilot/plugins/libsynctime.so.1.1 \
-+	$(prefix)/lib/jpilot/plugins/libsynctime.so
  
  local_install:
  	./install-sh -d -m 755 $(HOME)/.jpilot; \
