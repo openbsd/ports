@@ -1,10 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 1999/03/15 06:36:38 jasoni Exp $
-#
+# $OpenBSD: Makefile,v 1.10 1999/03/27 02:49:31 brad Exp $
 
 DISTNAME=	WindowMaker-0.51.2
 CATEGORIES=	x11
-
-MAINTAINER=	jasoni@openbsd.org
 
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/
@@ -13,13 +10,15 @@ DATAFILES=	WindowMaker-data.tar.gz
 
 NEED_VERSION=	1.67
 
-LIB_DEPENDS=	PropList\\.1\\.:${PORTSDIR}/devel/libproplist \
-		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-                tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
-                png\\.1\\.:${PORTSDIR}/graphics/png \
-		gif\\.3\\.:${PORTSDIR}/graphics/giflib
+MAINTAINER=	jasoni@openbsd.org
 
-GNU_CONFIGURE=	YES
+LIB_DEPENDS=	PropList:${PORTSDIR}/devel/libproplist \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+                tiff:${PORTSDIR}/graphics/tiff34 \
+                png:${PORTSDIR}/graphics/png \
+		gif:${PORTSDIR}/graphics/giflib
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib" \
 		CPPFLAGS="-I${PREFIX}/include"
@@ -38,5 +37,3 @@ post-install:
 		@echo
 
 .include <bsd.port.mk>
-		
-
