@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2001/05/06 03:05:18 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/05/11 10:03:39 camield Exp $
 
-COMMENT=	"clone of the Plan9 editor `acme'"
+COMMENT=	"clone of the Plan9 editor 'acme'"
 
 DISTNAME=	wily-0.13.41
 CATEGORIES=	plan9 editors
