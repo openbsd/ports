@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2000/08/22 15:37:05 brad Exp $
+# $OpenBSD: Makefile,v 1.3 2000/08/28 20:11:19 brad Exp $
 
-DISTNAME=	larswm-5.6.3
+DISTNAME=	larswm-5.6.4
 CATEGORIES=	plan9
 NEED_VERSION=	1.319
 MASTER_SITES=	http://www.fnurt.net/larswm/
