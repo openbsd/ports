@@ -1,12 +1,8 @@
-$OpenBSD: patch-states_hl_Makefile_am,v 1.1 2002/05/11 22:31:24 matt Exp $
-
-        This patch has been sent to the author (Markku Rossi
-        <mtr@iki.fi>).
-
---- states/hl/Makefile.am.orig	Tue Apr  3 12:46:17 2001
-+++ states/hl/Makefile.am	Sat May 11 18:10:09 2002
-@@ -45,11 +45,11 @@ states = $(misc) $(styles) $(languages) 
- EXTRA_DIST = $(states)
+$OpenBSD: patch-states_hl_Makefile_in,v 1.1 2005/02/11 17:57:31 naddy Exp $
+--- states/hl/Makefile.in.orig	Thu Jan 24 08:39:40 2002
++++ states/hl/Makefile.in	Fri Feb 11 18:48:57 2005
+@@ -234,14 +234,14 @@ maintainer-clean-generic clean mostlycle
+ 
  
  install-data-local:
 -	$(top_srcdir)/mkinstalldirs $(datadir)/enscript
@@ -21,3 +17,6 @@ $OpenBSD: patch-states_hl_Makefile_am,v 1.1 2002/05/11 22:31:24 matt Exp $
  uninstall-local:
 -	rm -rf $(datadir)/enscript/hl
 +	rm -rf $(DESTDIR)$(datadir)/enscript/hl
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
