@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2002/05/12 18:50:46 niklas Exp $
+# $OpenBSD: Makefile,v 1.11 2002/05/14 03:10:19 pvalchev Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc
@@ -27,7 +27,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SKIN}${EXTRACT_SUFX}:0
 BUILD_DEPENDS=	::devel/binutils/stable
 LIB_DEPENDS=	png::graphics/png \
 		jpeg::graphics/jpeg \
-		gtk,gdk::x11/gtk+
+		gtk,gdk::x11/gtk+ \
+		dvdread.::devel/libdvdread
 
 MAKE_ENV=	AR=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bin/ar
 
@@ -50,7 +51,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 CONFIGURE_ARGS+=--target=ppc-openbsd
 .endif
 
-FLAVORS=	sdl ggi debug mad win32 dvd
+FLAVORS=	sdl ggi debug mad win32
 FLAVOR?=
 
 .if ${FLAVOR:L:Msdl}
@@ -101,12 +102,6 @@ CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/win32
 .endif
 .else
 CONFIGURE_ARGS+=--disable-win32
-.endif
-
-.if ${FLAVOR:L:Mdvd}
-LIB_DEPENDS+=	dvdread.::devel/libdvdread
-.else
-CONFIGURE_ARGS+=--disable-dvdread
 .endif
 
 post-patch:

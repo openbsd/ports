@@ -30,6 +30,4 @@ Flavors:
 
   win32: enables win32 codecs (i386-only)
 
-  dvd: enables dvd reading, requires devel/libdvdread
-
 WWW: ${HOMEPAGE}
