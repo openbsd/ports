@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/02/11 20:13:35 sturm Exp $
+bin/cgi-fcgi
+include/fastcgi.h
+include/fcgi_config.h
+include/fcgi_stdio.h
+include/fcgiapp.h
+include/fcgimisc.h
+include/fcgio.h
+include/fcgios.h
+lib/libfcgi.a
+lib/libfcgi.la
+man/man1/cgi-fcgi.1
+man/man3/FCGI_Accept.3
+man/man3/FCGI_Finish.3
+man/man3/FCGI_SetExitStatus.3
+man/man3/FCGI_StartFilterData.3
+share/doc/fcgi/fcgi-devel-kit.htm
+share/doc/fcgi/fcgi-java.htm
+share/doc/fcgi/fcgi-perf.htm
+share/doc/fcgi/fcgi-perl.htm
+share/doc/fcgi/fcgi-spec.html
+share/doc/fcgi/fcgi-tcl.htm
+share/doc/fcgi/omi-logo.gif
+share/doc/fcgi/overview.html
+share/doc/fcgi/www5-api-workshop.html
+%%SHARED%%
+@dirrm share/doc/fcgi
