@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2001/02/21 18:09:38 danh Exp $
+# $OpenBSD: Makefile,v 1.88 2001/02/21 18:36:21 danh Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 #
 
@@ -75,6 +75,7 @@
      SUBDIR += rep-gtk
      SUBDIR += root-tail
      SUBDIR += rxvt
+     SUBDIR += sawfish
      SUBDIR += sliderule
 #    SUBDIR += slingshot
      SUBDIR += swisswatch
