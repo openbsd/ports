@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/08 21:00:55 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/25 17:40:16 brad Exp $
+
+COMMENT=	"high-quality MP3 encoder"
 
 DISTNAME=	bladeenc-0.94.0-src-stable
 PKGNAME=	bladeenc-0.94.0
 CATEGORIES=	audio
-NEED_VERSION=	1.336
+NEED_VERSION=	1.363
 MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
