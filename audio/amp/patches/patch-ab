@@ -1,19 +1,11 @@
-*** Makefile.in.orig	Sun May  3 21:27:55 1998
---- Makefile.in	Sun May  3 21:28:09 1998
-***************
-*** 24,30 ****
-  OBJ = dump.o formats.o getbits.o huffman.o layer3.o getdata.o misc2.o transform.o audio.o \
-        args.o buffer.o audioIO.o position.o layer2.o rtbuf.o guicontrol.o util.o getopt.o getopt1.o
-  
-! LIBS = -lm
-  
-  all: amp
-  
---- 24,30 ----
-  OBJ = dump.o formats.o getbits.o huffman.o layer3.o getdata.o misc2.o transform.o audio.o \
-        args.o buffer.o audioIO.o position.o layer2.o rtbuf.o guicontrol.o util.o getopt.o getopt1.o
-  
-! LIBS = -lm -lossaudio
-  
-  all: amp
-  
+--- Makefile.in.orig	Sat Aug 23 05:54:35 1997
++++ Makefile.in	Thu Mar 23 12:14:00 2000
+@@ -24,7 +24,7 @@
+ OBJ = dump.o formats.o getbits.o huffman.o layer3.o getdata.o misc2.o transform.o audio.o \
+       args.o buffer.o audioIO.o position.o layer2.o rtbuf.o guicontrol.o util.o getopt.o getopt1.o
+ 
+-LIBS = -lm
++LIBS = -lm -lossaudio
+ 
+ all: amp
+ 

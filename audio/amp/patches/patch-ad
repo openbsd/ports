@@ -1,14 +1,12 @@
-*** audioIO.c.orig	Sun May  3 21:29:40 1998
---- audioIO.c	Sun May  3 21:29:47 1998
-***************
-*** 6,14 ****
-    #include "audioIO_Linux.c"
-  #endif
-  
-- #ifdef OS_BSD
-    #include "audioIO_Linux.c"
-- #endif
-  
-  #if defined(OS_IRIX) || defined(OS_IRIX64)
-    #include "audioIO_IRIX.c"
---- 6,12 ----
+--- audioIO.c.orig	Sat May 31 13:47:58 1997
++++ audioIO.c	Thu Mar 23 12:14:01 2000
+@@ -6,9 +6,7 @@
+   #include "audioIO_Linux.c"
+ #endif
+ 
+-#ifdef OS_BSD
+   #include "audioIO_Linux.c"
+-#endif
+ 
+ #if defined(OS_IRIX) || defined(OS_IRIX64)
+   #include "audioIO_IRIX.c"

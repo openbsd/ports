@@ -1,20 +1,13 @@
-*** audioIO.h.orig	Mon Sep  1 19:33:43 1997
---- audioIO.h	Mon Sep  1 19:34:04 1997
-*************** extern int AUSIZ;
-*** 12,18 ****
-  #endif
-  
-! #ifdef OS_BSD
-!   #define AUSIZ 32768
-! #endif
-  
-  #if defined(OS_IRIX) || defined(OS_IRIX64)
---- 12,19 ----
-  #endif
-  
-! /* #ifdef OS_BSD */
-! /*  #define AUSIZ 32768 */
-! extern int AUSIZ;
-! /* #endif */
-  
-  #if defined(OS_IRIX) || defined(OS_IRIX64)
+--- audioIO.h.orig	Sat May 31 13:47:58 1997
++++ audioIO.h	Thu Mar 23 12:39:13 2000
+@@ -11,9 +11,7 @@
+ extern int AUSIZ;
+ #endif
+ 
+-#ifdef OS_BSD
+-  #define AUSIZ 32768
+-#endif
++extern int AUSIZ;
+ 
+ #if defined(OS_IRIX) || defined(OS_IRIX64)
+   #define AUSIZ 32768
