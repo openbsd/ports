@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2000/09/15 12:54:44 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/12/19 15:23:28 espie Exp $
 
 ONLY_FOR_ARCHS=	i386 sparc
 
@@ -56,13 +56,12 @@ post-extract:
 	mv DEFAULT.SFX default.sfx && mv Rar_FAQ.Txt Rar_FAQ.txt
 .endif
 
-DOCS=	Rar_FAQ.txt TechNote.Txt License.Txt Internet.Txt
+DOCS=	Rar_FAQ.txt TechNote.Txt License.Txt Internet.Txt Rar.Txt
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rar
 	${INSTALL_DATA_DIR} ${PREFIX}/share/rar
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
-	${INSTALL_MAN} ${WRKSRC}/Rar.Txt ${PREFIX}/man/cat1/rar.1
 	cd ${WRKSRC}; ${INSTALL_MAN} ${DOCS} ${PREFIX}/share/doc/rar
 	${INSTALL_DATA} ${WRKSRC}/RarFiles.Lst ${PREFIX}/share/rar/rarfiles.lst
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/share/rar
