@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 1999/02/07 02:44:31 jasoni Exp $
+# $OpenBSD: Makefile,v 1.14 1999/02/27 15:36:02 rohee Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -30,6 +30,7 @@
 #    SUBDIR += gdbtk
      SUBDIR += gindent
      SUBDIR += gettext
+     SUBDIR += glib
      SUBDIR += gmake
      SUBDIR += id-utils
 #    SUBDIR += ilu
@@ -93,7 +94,7 @@
 #    SUBDIR += sfio
      SUBDIR += swig
 #    SUBDIR += tclcheck
-#    SUBDIR += tkcvs
+     SUBDIR += tkcvs
 #    SUBDIR += tkref
 #    SUBDIR += tvision
 #    SUBDIR += vtcl
