@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.1 2003/02/11 12:03:20 couderc Exp $
---- configure.orig	Tue Feb 11 12:52:20 2003
-+++ configure	Tue Feb 11 12:52:53 2003
-@@ -8140,9 +8140,9 @@ else
-   echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
+$OpenBSD: patch-configure,v 1.2 2003/05/27 14:16:48 couderc Exp $
+--- configure.orig	Tue Feb 18 19:21:36 2003
++++ configure	Tue May 27 16:07:07 2003
+@@ -8461,9 +8461,9 @@ else
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
  ac_cv_lib_pthread_pthread_create=no
 +LIBS=$ac_check_lib_save_LIBS
  fi

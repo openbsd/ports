@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2002/12/15 14:48:09 couderc Exp $
+# $OpenBSD: Makefile,v 1.10 2003/05/27 14:16:48 couderc Exp $
 
 COMMENT=		"GnuPG Made Easy"
 
-DISTNAME=		gpgme-0.3.14
+DISTNAME=		gpgme-0.3.15
 CATEGORIES=     	security devel
 
 HOMEPAGE=		http://www.gnupg.org/gpgme.html
