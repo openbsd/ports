@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_glut_Imakefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
+--- lib/glut/Imakefile.orig	Fri Aug  7 20:20:30 1998
++++ lib/glut/Imakefile	Wed Jun 20 12:11:38 2001
+@@ -117,6 +117,11 @@ NormalLibraryObjectRule()
+ #endif
+ 
+ NormalLibraryTarget(glut,$(OBJS))
++InstallLibrary(glut,$(USRLIBDIR))
++
++SharedDepLibraryTarget(glut,3.7,.,$(OBJS),.,.)
++InstallSharedLibrary(glut,3.7,$(USRLIBDIR))
++
+ 
+ /* I've gotten too many complaints from people (mostly Linux users)
+    trying to build GLUT that have problems using lex and yacc to

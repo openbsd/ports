@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_mui_Imakefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
+--- lib/mui/Imakefile.orig	Fri Aug  7 20:20:30 1998
++++ lib/mui/Imakefile	Wed Jun 20 12:11:38 2001
+@@ -22,5 +22,9 @@ NormalLibraryObjectRule()
+ #endif
+ 
+ NormalLibraryTarget(mui,$(OBJS))
++InstallLibrary(mui,$(USRLIBDIR))
++
++SharedDepLibraryTarget(mui,3.7,.,$(OBJS),.,.)
++InstallSharedLibrary(mui,3.7,$(USRLIBDIR))
+ 
+ DependTarget()

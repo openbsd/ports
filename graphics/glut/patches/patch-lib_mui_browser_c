@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_mui_browser_c,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
+--- lib/mui/browser.c.orig	Fri Aug  7 20:15:07 1998
++++ lib/mui/browser.c	Wed Jun 20 12:11:38 2001
+@@ -176,7 +176,7 @@ void handletextbox(muiObject *obj, enum 
+ 	    strncpy(directory, s, slash-s);
+ 	    directory[slash-s] = 0;
+ 	} else {
+-	    strcat(directory, "/");
++	    strlcat(directory, "/", sizeof(directory));
+ 	    strncat(directory, s, slash-s);
+ 	}
+     }
+@@ -233,7 +233,7 @@ void maketestui(void)
+     muiSetCallback(tl, handlefileselection);
+     
+     cd(directory);
+-    strcpy(originaldir, directory);
++    strlcpy(originaldir, directory, sizeof(originaldir));
+ }
+ 
+ void main(int argc, char **argv)
+@@ -243,7 +243,7 @@ void main(int argc, char **argv)
+     f = fopen(BROWSEFILE, "r");
+     parsebrowsefile(f);
+     fclose(f);
+-    strcpy(directory, currentdirectoryname);
++    strlcpy(directory, currentdirectoryname, sizeof(directory));
+     maketestui();
+     glutInit(&argc, argv);
+     if (argc > 1) mui_singlebuffered = 1;

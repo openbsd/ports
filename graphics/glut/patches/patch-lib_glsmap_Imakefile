@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_glsmap_Imakefile,v 1.1.1.1 2001/06/20 18:55:24 lebel Exp $
+--- lib/glsmap/Imakefile.orig	Fri Aug  7 20:20:29 1998
++++ lib/glsmap/Imakefile	Wed Jun 20 12:11:38 2001
+@@ -28,5 +28,9 @@ NormalLibraryObjectRule()
+ #endif
+ 
+ NormalLibraryTarget(glsmap,$(OBJS))
++InstallLibrary(glsmap,$(USRLIBDIR))
++
++SharedDepLibraryTarget(glsmap,3.7,.,$(OBJS),.,.)
++InstallSharedLibrary(glsmap,3.7,$(USRLIBDIR))
+ 
+ DependTarget()
