@@ -1,32 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/04/16 19:25:06 espie Exp $
-libdata/perl5/site_perl/XML/DOM.pm
-libdata/perl5/site_perl/XML/DOM/AttDef.pod
-libdata/perl5/site_perl/XML/DOM/AttlistDecl.pod
-libdata/perl5/site_perl/XML/DOM/Attr.pod
-libdata/perl5/site_perl/XML/DOM/CDATASection.pod
-libdata/perl5/site_perl/XML/DOM/CharacterData.pod
-libdata/perl5/site_perl/XML/DOM/Comment.pod
-libdata/perl5/site_perl/XML/DOM/DOMException.pm
-libdata/perl5/site_perl/XML/DOM/DOMImplementation.pod
-libdata/perl5/site_perl/XML/DOM/Document.pod
-libdata/perl5/site_perl/XML/DOM/DocumentFragment.pod
-libdata/perl5/site_perl/XML/DOM/DocumentType.pod
-libdata/perl5/site_perl/XML/DOM/Element.pod
-libdata/perl5/site_perl/XML/DOM/ElementDecl.pod
-libdata/perl5/site_perl/XML/DOM/Entity.pod
-libdata/perl5/site_perl/XML/DOM/EntityReference.pod
-libdata/perl5/site_perl/XML/DOM/NamedNodeMap.pm
-libdata/perl5/site_perl/XML/DOM/NamedNodeMap.pod
-libdata/perl5/site_perl/XML/DOM/Node.pod
-libdata/perl5/site_perl/XML/DOM/NodeList.pm
-libdata/perl5/site_perl/XML/DOM/NodeList.pod
-libdata/perl5/site_perl/XML/DOM/Notation.pod
-libdata/perl5/site_perl/XML/DOM/Parser.pod
-libdata/perl5/site_perl/XML/DOM/PerlSAX.pm
-libdata/perl5/site_perl/XML/DOM/ProcessingInstruction.pod
-libdata/perl5/site_perl/XML/DOM/Text.pod
-libdata/perl5/site_perl/XML/DOM/XMLDecl.pod
-libdata/perl5/site_perl/XML/Handler/BuildDOM.pm
+@comment $OpenBSD: PLIST,v 1.5 2002/07/15 08:36:57 shell Exp $
+${P5SITE}/XML/DOM.pm
+${P5SITE}/XML/DOM/AttDef.pod
+${P5SITE}/XML/DOM/AttlistDecl.pod
+${P5SITE}/XML/DOM/Attr.pod
+${P5SITE}/XML/DOM/CDATASection.pod
+${P5SITE}/XML/DOM/CharacterData.pod
+${P5SITE}/XML/DOM/Comment.pod
+${P5SITE}/XML/DOM/DOMException.pm
+${P5SITE}/XML/DOM/DOMImplementation.pod
+${P5SITE}/XML/DOM/Document.pod
+${P5SITE}/XML/DOM/DocumentFragment.pod
+${P5SITE}/XML/DOM/DocumentType.pod
+${P5SITE}/XML/DOM/Element.pod
+${P5SITE}/XML/DOM/ElementDecl.pod
+${P5SITE}/XML/DOM/Entity.pod
+${P5SITE}/XML/DOM/EntityReference.pod
+${P5SITE}/XML/DOM/NamedNodeMap.pm
+${P5SITE}/XML/DOM/NamedNodeMap.pod
+${P5SITE}/XML/DOM/Node.pod
+${P5SITE}/XML/DOM/NodeList.pm
+${P5SITE}/XML/DOM/NodeList.pod
+${P5SITE}/XML/DOM/Notation.pod
+${P5SITE}/XML/DOM/Parser.pod
+${P5SITE}/XML/DOM/PerlSAX.pm
+${P5SITE}/XML/DOM/ProcessingInstruction.pod
+${P5SITE}/XML/DOM/Text.pod
+${P5SITE}/XML/DOM/XMLDecl.pod
+${P5SITE}/XML/Handler/BuildDOM.pm
 man/man3p/XML::DOM.3p
 man/man3p/XML::DOM::AttDef.3p
 man/man3p/XML::DOM::AttlistDecl.3p
@@ -52,4 +52,4 @@ man/man3p/XML::DOM::ProcessingInstruction.3p
 man/man3p/XML::DOM::Text.3p
 man/man3p/XML::DOM::XMLDecl.3p
 man/man3p/XML::Handler::BuildDOM.3p
-@dirrm libdata/perl5/site_perl/XML/DOM
+@dirrm ${P5SITE}/XML/DOM
