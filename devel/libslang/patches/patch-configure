@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 13 17:43:55 2000
-+++ configure	Tue Jun 13 17:45:13 2000
-@@ -2208,7 +2208,8 @@
+--- configure.orig	Mon Sep  4 22:16:58 2000
++++ configure	Mon Sep  4 22:18:04 2000
+@@ -2240,7 +2240,8 @@
  slang_mminor_version=`echo $slang_version $slang_major_version $slang_minor_version |
   awk '{ print ($1 - $2*10000 - $3*100) }'`
  
