@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2004/06/19 23:37:41 jolan Exp $
+# $OpenBSD: Makefile,v 1.33 2004/09/15 20:38:07 brad Exp $
 
 COMMENT=	"mpeg audio 1/2 layer 1, 2 and 3 player"
 
@@ -18,10 +18,8 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
 		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
-MASTER_SITES1=	http://www.unix-ag.org/Linux-Alpha/Packages/
 
-PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:0 \
-		l3.diff.gz:1
+PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
 FLAVORS=	esd
