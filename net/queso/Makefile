@@ -1,18 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 1999/05/07 21:00:19 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/07/27 04:30:06 brad Exp $
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
-MASTER_SITES=	ftp://apostols.org/AposTools/snapshots/  \
-		ftp://ftp.ee.lbl.gov/  \
-		ftp://freebsd.ntu.edu.tw/freebsd/_distfiles/
-DISTFILES=	${DISTNAME}.tar.gz libpcap-0.4.tar.Z
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/FreeBSD/distfiles/
 
 MAINTAINER=	brad@openbsd.org
 
-USE_AUTOCONF=   yes
-
-post-patch:
-	@cd ${WRKSRC}/../libpcap-0.4/; ./configure; make
+GNU_CONFIGURE=   yes
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/queso
