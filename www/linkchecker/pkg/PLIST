@@ -1,8 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/12/16 19:52:23 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/02/04 17:33:50 xsa Exp $
 bin/linkchecker
 lib/python${MODPY_VERSION}/site-packages/_linkchecker_configdata.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/CSV.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/AnsiColor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/Config.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Base.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Class.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Lib.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Opcode.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Status.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/Type.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/__init__.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/lazy.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS/winreg.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/FileUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/FtpUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/GopherUrlData.py
@@ -10,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/HostCheckingUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/HttpUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/HttpsUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/IgnoredUrlData.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/LRU.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/MailtoUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/NntpUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/ProxyUrlData.py
@@ -18,32 +28,45 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/TelnetUrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/Threader.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/UrlData.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/__init__.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/debuglevels.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/debug.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/fcgi.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/httplib2.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/i18n.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/lc_cgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/linkname.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/linkparse.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/BlacklistLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/CSVLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/ColoredLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/GMLLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/HtmlLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/Logger.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/log/NoneLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/SQLLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/StandardLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/XMLLogger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/log/__init__.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/optcomplete.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/__init__.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/htmllib.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/parser/htmlsax.so
+lib/python${MODPY_VERSION}/site-packages/linkcheck/robotparser2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/sz_fcgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/test_support.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/timeoutsocket.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/util1.py
 man/man1/linkchecker.1
-share/linkchecker/examples/index.html
-share/linkchecker/examples/lc.cgi
-share/linkchecker/examples/lc.fcgi
-share/linkchecker/examples/lc.sz_fcgi
-share/linkchecker/examples/lc_cgi.html
-share/linkchecker/examples/leer.html
-share/linkchecker/examples/linkchecker.bat
+share/examples/linkchecker/check.js
+share/examples/linkchecker/index.html
+share/examples/linkchecker/lc.cgi
+share/examples/linkchecker/lc.fcgi
+share/examples/linkchecker/lc.sz_fcgi
+share/examples/linkchecker/lc_cgi.html.de
+share/examples/linkchecker/lc_cgi.html.en
+share/examples/linkchecker/leer.html.de
+share/examples/linkchecker/leer.html.en
+share/examples/linkchecker/linkcheck-cron.sh
+share/examples/linkchecker/linkchecker-completion
+share/examples/linkchecker/linkchecker.bat
 share/linkchecker/linkcheckerrc
 share/locale/de/LC_MESSAGES/linkcheck.mo
 share/locale/fr/LC_MESSAGES/linkcheck.mo
@@ -55,7 +78,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 @dirrm share/locale/de/LC_MESSAGES
 @dirrm share/locale/de
 @dirrm share/locale
-@dirrm share/linkchecker/examples
 @dirrm share/linkchecker
+@dirrm share/examples/linkchecker
+@dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck/parser
 @dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck/log
+@dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck/DNS
 @dirrm lib/python${MODPY_VERSION}/site-packages/linkcheck

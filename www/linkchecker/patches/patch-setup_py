@@ -1,11 +1,19 @@
-$OpenBSD: patch-setup_py,v 1.1 2002/11/10 09:34:59 jakob Exp $
---- setup.py.orig	Sun Oct 13 23:56:05 2002
-+++ setup.py	Sun Nov 10 10:32:42 2002
-@@ -171,6 +171,6 @@ o a (Fast)CGI web interface (requires HT
-              ['lconline/leer.html',
-               'lconline/index.html', 'lconline/lc_cgi.html',
-               'lc.cgi','lc.fcgi','lc.sz_fcgi','linkchecker.bat']),
+$OpenBSD: patch-setup_py,v 1.2 2004/02/04 17:33:50 xsa Exp $
+--- setup.py.orig	2004-01-29 20:14:40.000000000 +0100
++++ setup.py	2004-02-04 01:46:42.000000000 +0100
+@@ -194,13 +194,13 @@ o a (Fast)CGI web interface (requires HT
+          ('share/locale/nl/LC_MESSAGES',
+              ['share/locale/nl/LC_MESSAGES/linkcheck.mo']),
+          ('share/linkchecker', ['linkcheckerrc']),
+-         ('share/linkchecker/examples',
++         ('share/examples/linkchecker',
+              ['lconline/leer.html.en', 'lconline/leer.html.de',
+               'lconline/index.html', 'lconline/lc_cgi.html.en',
+               'lconline/lc_cgi.html.de', 'lconline/check.js',
+               'lc.cgi', 'lc.fcgi', 'lc.sz_fcgi', 'linkchecker.bat',
+               'linkchecker-completion', 'linkcheck-cron.sh']),
 -         ('share/man/man1', ['linkchecker.1']),
 +         ('man/man1', ['linkchecker.1']),
        ],
- )
+       classifiers = [
+         'Topic :: Internet :: WWW/HTTP :: Site Management :: Link Checking',
