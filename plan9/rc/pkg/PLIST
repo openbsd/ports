@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2000/08/19 01:47:55 brad Exp $
 bin/rc
 bin/-
 bin/--
