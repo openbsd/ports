@@ -1,0 +1,20 @@
+--- Make-config.orig	Sat Aug 29 23:27:56 1998
++++ Make-config	Sat Mar  6 23:20:12 1999
+@@ -817,6 +817,17 @@
+ 	"MAKELIB = ../mklib.openbsd" \
+ 	"XLIBS = -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXi"
+ 
++openbsd-386:
++	$(MAKE) $(MFLAGS) targets \
++	"GL_LIB = libMesaGL.so" \
++	"GLU_LIB = libMesaGLU.so" \
++	"GLUT_LIB = libglut.so" \
++	"CC = cc" \
++	"CFLAGS = -O3 -ffast-math -fPIC -I/usr/X11R6/include -DSHM -DHZ=100" -DUSE_X86_ASM\
++	"MAKELIB = ../mklib.openbsd" \
++	"XLIBS = -L/usr/X11R6/lib -lX11 -lXext -lXmu -lXi"
++	"ASM_SOURCES = asm_386.S"
++
+ openstep:	
+ 	$(MAKE)	-f Makefile.OpenStep targets \
+ 	"GL_LIB = libMesaGL.a" \
