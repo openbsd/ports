@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2002/06/03 14:51:26 naddy Exp $
---- Makefile.orig	Fri May 17 15:25:39 2002
-+++ Makefile	Fri May 17 15:26:28 2002
+$OpenBSD: patch-Makefile,v 1.2 2004/02/09 00:09:54 naddy Exp $
+--- Makefile.orig	2002-05-16 09:20:17.000000000 +0200
++++ Makefile	2004-02-09 01:04:54.000000000 +0100
 @@ -9,14 +9,10 @@
  CPP=g++
  INSTDIR=`xmms-config --plugin-dir`/Input
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2002/06/03 14:51:26 naddy Exp $
 -else
 -  CFLAGS=-Wall -O2 -fno-exceptions -ffast-math -D_REENTRANT `gtk-config --cflags`
 -endif
-+CXXFLAGS+= -fno-exceptions -ffast-math -D_REENTRANT `xmms-config --cflags`
++CXXFLAGS+= -fPIC -fno-exceptions -ffast-math `xmms-config --cflags`
  
  libbonk.so : bonk-xmms.cc
 -	$(CPP) $(CFLAGS) -shared -o libbonk.so bonk-xmms.cc -lstdc++
