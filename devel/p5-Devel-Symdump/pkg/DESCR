@@ -1,0 +1,1 @@
+Devel::Symdump provides a convenient way to inspect perl's symbol table and the class hierarchy within a running program.
