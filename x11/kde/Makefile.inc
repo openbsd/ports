@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2004/09/18 09:30:06 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2005/01/26 10:56:11 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -11,6 +11,7 @@ MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/3.3/src/@}
 MASTER_SITES?=	${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/@}
 .endif
 EXTRACT_SUFX?=	.tar.bz2
+MASTER_SITES0=	${MASTER_SITE_KDE:=security_patches/}
 
 # Parts of kde want shared libraries to work, as some symbols are
 # duplicated over the place.
@@ -41,5 +42,3 @@ PERMIT_DISTFILES_CDROM?=	Yes
 PERMIT_DISTFILES_FTP?=		Yes
 PERMIT_PACKAGE_CDROM?=		Yes
 PERMIT_PACKAGE_FTP?=		Yes
-CFLAGS+=-fno-stack-protector
-CXXFLAGS+=-fno-stack-protector
