@@ -20,18 +20,15 @@
  LFLAGS = $(LFLAGS_ADD) $(LFLAGS_QT_DIR) -lqt $(LFLAGS_PISOCK_DIR) -lpisock
  
  # uncomment the following line on HP-UX
-@@ -41,11 +41,11 @@
- RM_OPT = -f
- 
+@@ -43,9 +43,9 @@
  # Edited for Debian GNU/Linux
--DESTDIR = 
-+DESTDIR = $(LOCALBASE)
+ DESTDIR = 
  
 -prefix = $(DESTDIR)/usr/X11R6
 -doc_prefix = $(DESTDIR)/usr/doc
 -conf_prefix = $(DESTDIR)/etc
-+prefix = $(DESTDIR)
-+doc_prefix = $(DESTDIR)/share/doc
++prefix = $(PREFIX)
++doc_prefix = $(PREFIX)/share/doc
 +conf_prefix = $(doc_prefix)/$(TARGET)
  
  ####### Files

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/05 23:00:31 jakob Exp $
+# $OpenBSD: Makefile,v 1.8 2000/03/20 22:30:47 jakob Exp $
 
-DISTNAME=	pi-address-0.3.3
+DISTNAME=	pi-address-0.3.4
 CATEGORIES=	misc x11
 NEED_VERSION=	1.223
 
@@ -18,5 +18,7 @@ LIB_DEPENDS=	pisock:comms/pilot-link \
 		kde:x11/kdelibs
 
 MAKE_ENV+=	QTDIR=${X11BASE} PILOT_LINK=${LOCALBASE}
+
+FAKE=		yes
 
 .include <bsd.port.mk>
