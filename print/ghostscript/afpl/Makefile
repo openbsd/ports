@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2005/01/24 16:00:14 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2005/01/25 17:19:33 alek Exp $
 
 COMMENT=	"AFPL PostScript interpreter"
 
 VERSION=	8.14
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p2
+PKGNAME=	${DISTNAME}p3
 CATEGORIES=	print lang
 
 DIR=		AFPL/gs${VERSION:S/.//}
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_CDROM=	"Aladdin wants fee for commercial redistribution"
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	"Aladdin wants fee for commercial redistribution"
 PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		c m z pthread
 
 
 JPEGDIR=graphics/jpeg
@@ -107,7 +108,9 @@ CFLAGS+=	-DA4
 .if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
+MODULES=	devel/gettext
 LIB_DEPENDS+=	gtk.1,gdk::x11/gtk+
+WANTLIB+=	Xi glib gmodule
 ALL_TARGET+=so
 INSTALL_TARGET+=soinstall
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
@@ -117,6 +120,7 @@ end_install=
 
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
+WANTLIB+=	X11 Xt SM ICE Xext
 BASE_FLAGS+=	DEVICE_DEVS1='${X11_DEVICE_DEVS1} ${BASE_DEVICE_DEVS1}'
 .else
 BASE_FLAGS+=	DEVICE_DEVS1='${BASE_DEVICE_DEVS1}'

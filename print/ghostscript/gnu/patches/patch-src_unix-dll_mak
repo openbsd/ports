@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_unix-dll_mak,v 1.1 2002/12/03 13:17:07 espie Exp $
---- src/unix-dll.mak.orig	Tue Dec  3 13:25:33 2002
-+++ src/unix-dll.mak	Tue Dec  3 13:37:36 2002
-@@ -70,7 +70,7 @@ $(GSSOX_XE): $(GS_SO) $(GLSRC)dxmain.c
+$OpenBSD: patch-src_unix-dll_mak,v 1.2 2005/01/25 17:19:33 alek Exp $
+--- src/unix-dll.mak.orig	Fri Apr 19 03:10:40 2002
++++ src/unix-dll.mak	Tue Jan 25 12:19:16 2005
+@@ -70,11 +70,11 @@ $(GSSOX_XE): $(GS_SO) $(GLSRC)dxmain.c
  	$(GLCC) -g `gtk-config --cflags` -o $(GSSOX_XE) $(GLSRC)dxmain.c -L$(BINDIR) -l$(GS) `gtk-config --libs`
  
  $(GSSOC_XE): $(GS_SO) $(GLSRC)dxmainc.c
@@ -10,3 +10,8 @@ $OpenBSD: patch-src_unix-dll_mak,v 1.1 2002/12/03 13:17:07 espie Exp $
  
  # ------------------------- Recursive make targets ------------------------- #
  
+-SODEFS=LDFLAGS='$(LDFLAGS) $(CFLAGS_SO) -shared -Wl,-soname,$(GS_SONAME_MAJOR)'\
++SODEFS=LDFLAGS='$(LDFLAGS) $(CFLAGS_SO) -shared '\
+  GS_XE=$(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR)\
+  STDIO_IMPLEMENTATION=c\
+  DISPLAY_DEV=$(DD)$(SOOBJRELDIR)/display.dev\

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2005/01/24 16:00:14 brad Exp $
+# $OpenBSD: Makefile,v 1.41 2005/01/25 17:19:33 alek Exp $
 
 COMMENT=	"GNU PostScript interpreter"
 
 VERSION=	7.05
 DISTNAME=	ghostscript-${VERSION}
-PKGNAME=	${DISTNAME}p4
+PKGNAME=	${DISTNAME}p5
 CATEGORIES=	print lang
 
 DIR=		gnu/gs${VERSION:S/.//}
@@ -23,6 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+WANTLIB=		m c z pthread
 
 
 JPEGDIR=graphics/jpeg
@@ -107,7 +108,9 @@ CFLAGS+=	-DA4
 .if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
+MODULES=	devel/gettext
 LIB_DEPENDS+=	gtk.1,gdk::x11/gtk+
+WANTLIB+=	Xi glib gmodule
 ALL_TARGET+=so
 INSTALL_TARGET+=soinstall
 NOT_FOR_ARCHS=${NO_SHARED_ARCHS}
@@ -119,6 +122,7 @@ end_install=
 .if !${FLAVOR:L:Mno_x11}
 USE_X11=	Yes
 BASE_FLAGS+=	DEVICE_DEVS1='${X11_DEVICE_DEVS1} ${BASE_DEVICE_DEVS1}'
+WANTLIB+=	X11 Xt SM Xext ICE
 .else
 BASE_FLAGS+=	DEVICE_DEVS1='${BASE_DEVICE_DEVS1}'
 .endif
