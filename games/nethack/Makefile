@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2003/02/25 00:15:02 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2004/08/10 09:33:59 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT=	"dungeon explorin', hackin', game.  Piece of cake"
@@ -23,7 +23,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 
-NHDIR=	${PREFIX}/lib/nethackdir
+GAMEDIR=lib/nethackdir
+NHDIR=	${PREFIX}/${GAMEDIR}
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
 FLAVORS=no_x11 qt
@@ -44,6 +45,7 @@ USE_X11=	Yes
 RUN_DEPENDS=:hackdata-*:games/hackdata
 
 NO_REGRESS=	Yes
+SUBST_VARS=GAMEDIR
 
 do-configure:
 	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks
@@ -59,6 +61,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && cp NetHack.ad NetHack && \
 	    ${INSTALL_DATA} NetHack ${PREFIX}/lib/X11/app-defaults
+	install -g games -m 0664 /dev/null ${NHDIR}/logfile
+	install -g games -m 0664 /dev/null ${NHDIR}/perm
+	install -g games -m 0664 /dev/null ${NHDIR}/record
 .endif
 
 .include <bsd.port.mk>
