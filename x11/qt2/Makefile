@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2004/02/25 02:35:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2004/04/07 03:19:23 brad Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 COMMENT=		"C++ X11 GUI toolkit"
 COMMENT-examples=	"examples and tutorial for qt2"
@@ -145,6 +145,6 @@ PKGNAME-html=		qt2-html-${VERSION}
 
 .include <bsd.port.mk>
 
-.if (${MACHINE_ARCH} == alpha) || (${MACHINE_ARCH} == sparc64)
+.if ${MACHINE_ARCH} == "alpha"
 CXXFLAGS:=	${CXXFLAGS:N-O*}
 .endif
