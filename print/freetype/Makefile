@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/02/04 07:39:18 sturm Exp $
+# $OpenBSD: Makefile,v 1.32 2005/01/24 15:04:13 alek Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT=	"free and portable TrueType font rendering engine"
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		m
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
