@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.2 2001/05/05 21:05:06 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2001/05/05 21:30:48 espie Exp $
 #
-GS_SITES=  ftp://ftp.cs.wisc.edu/ghost/${DIR}/
+GS_SITES=  ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/${DIR}/
+GS_SITES+= ftp://ftp.cs.wisc.edu/ghost/${DIR}/
 GS_SITES+= ftp://ftp.mirror.ac.uk/sites/ftp.cs.wisc.edu/ghost/${DIR}/
 GS_SITES+= ftp://ftp.medasys-digital-systems.fr/pub/unix/ghostscript/${DIR}/
 GS_SITES+= ftp://ftp.fh-koblenz.de/pub/Ghostscript/${DIR}/
