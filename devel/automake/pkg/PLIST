@@ -77,5 +77,4 @@ share/aclocal/sanity.m4
 share/aclocal/strtod.m4
 share/aclocal/termios.m4
 share/aclocal/winsz.m4
-@dirrm share/aclocal
 @dirrm share/automake
