@@ -1,6 +1,6 @@
---- pine/pine.hlp.orig	Fri Dec  1 19:12:53 2000
-+++ pine/pine.hlp	Sun Dec 10 13:07:28 2000
-@@ -580,9 +580,9 @@
+--- pine/pine.hlp.orig	Thu Jan 11 14:08:06 2001
++++ pine/pine.hlp	Thu Jan 18 10:43:52 2001
+@@ -596,9 +596,9 @@
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
   except cfg     ~/.pinercex
@@ -13,7 +13,7 @@
  
   interrupted    ~/.pine-interrupted-mail
   debug          ~/.pine-debugN
-@@ -1052,9 +1052,9 @@
+@@ -1069,9 +1069,9 @@
  this link now to send a message to it:<BR>
  <A HREF="X-Pine-Gripe:_LOCAL_ADDRESS_?local"><!--#echo var="_LOCAL_FULLNAME_"--></A><P>
  <!--chtml endif-->
@@ -25,7 +25,7 @@
  <HR WIDTH="75%">
  <!--chtml endif-->
  <P> 
-@@ -1142,7 +1142,7 @@
+@@ -1159,7 +1159,7 @@
  <OL>
    <LI> <A HREF="#intro">Introduction</A>
    <LI> <A HREF="#pine_help">Pine Help</A>
@@ -34,7 +34,7 @@
    <LI> <A HREF="#local_support">Local Support Contacts</A>
  <!--chtml endif-->
    <LI> <A HREF="#giving_cmds">Giving Commands in Pine</A>
-@@ -1251,9 +1251,9 @@
+@@ -1268,9 +1268,9 @@
  at your site.)
  
  
@@ -46,7 +46,7 @@
  <!--chtml endif-->
  
  <H2><A NAME="giving_cmds">Giving Commands in Pine</A></H2>
-@@ -1907,7 +1907,7 @@
+@@ -1924,7 +1924,7 @@
  file, execute
  
  <PRE><CODE>
@@ -55,7 +55,7 @@
  </CODE></PRE>
  <P>
  
-@@ -1915,7 +1915,7 @@
+@@ -1932,7 +1932,7 @@
  system configuration file, execute
  
  <PRE><CODE>
@@ -64,7 +64,7 @@
  </CODE></PRE>
  <P>
  A system configuration file is not required.
-@@ -2066,7 +2066,7 @@
+@@ -2083,7 +2083,7 @@
  <DT> -P <EM>pinerc</EM>
  
  <DD> Uses the named file as the system wide configuration file instead of
@@ -73,7 +73,7 @@
  Pinerc may be either a local file or a remote configuration folder.
  <P>
  
-@@ -2767,10 +2767,10 @@
+@@ -2784,10 +2784,10 @@
  </OL>
  <P>
  The fixed configuration file is normally

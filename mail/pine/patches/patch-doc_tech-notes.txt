@@ -1,6 +1,6 @@
---- doc/tech-notes.txt.orig	Sun Dec 10 12:50:19 2000
-+++ doc/tech-notes.txt	Sun Dec 10 12:50:23 2000
-@@ -216,14 +216,14 @@
+--- doc/tech-notes.txt.orig	Fri Jan  5 18:58:37 2001
++++ doc/tech-notes.txt	Thu Jan 18 10:30:55 2001
+@@ -327,14 +327,14 @@
            sendmail-path, smtp-server, and compile-time options. The first
            MTA specified in the following list is used:
            
@@ -19,7 +19,7 @@
           9. DF_SENDMAIL_PATH defined at compile time.
          10. SENDMAIL and SENDMAILFLAGS defined at compile time.
              
-@@ -540,20 +540,20 @@
+@@ -651,20 +651,20 @@
     SENDMAIL
     SENDMAILFLAGS
            Sets the name and flags for the local program that will be
@@ -43,7 +43,7 @@
            
     There are a couple of more obscure options which are in the source
     code because a few people have asked for them or because we changed
-@@ -684,24 +684,24 @@
+@@ -795,24 +795,24 @@
     Installing _Pine_ and _Pico_ is remarkably simple. You take the
     program files which you have just transferred or built and you move
     them to the correct directory on your system. Most often the binaries
@@ -83,7 +83,7 @@
       _________________________________________________________________
     
  Installing PC-Pine
-@@ -776,13 +776,14 @@
+@@ -887,13 +887,14 @@
  
     When the _Pine_ distribution is built on a UNIX system, the IMAP
     server binary, imapd, is compiled. Installing imapd requires placing
@@ -101,7 +101,7 @@
  
     The /etc/inetd.conf file entry may vary on different versions of UNIX.
     Some have a slightly different set of fields. Also the pathname in
-@@ -811,11 +812,11 @@
+@@ -922,11 +923,11 @@
     This section lists the various files which _Pine_ uses which are not
     email folders. All of these are the default names of files, they may
     vary based on _Pine_'s configuration.
@@ -116,7 +116,7 @@
            Local pointer to system administrator.
     ~/.pinerc
            Personal configuration file for each user.
-@@ -1028,10 +1029,10 @@
+@@ -1143,10 +1144,10 @@
            Configuration: Prints a sample system configuration file to the
            screen or standard output. To generate an initial system
            configuration file, execute
@@ -129,7 +129,7 @@
            A system configuration file is not required.
     -copy_abook _<local_abook_file> <remote_abook_folder>_
            Copy an address book file to a remote address book folder. If
-@@ -1131,9 +1132,9 @@
+@@ -1246,9 +1247,9 @@
            configuration folder.
     -P _pinerc_
            Uses the named file as the system wide configuration file
@@ -142,7 +142,7 @@
     -pinerc _file_
            Output fresh pinerc configuration to _file_, preserving the
            settings of variables that the user has made. Use _file_ set to
-@@ -1313,8 +1314,8 @@
+@@ -1428,8 +1429,8 @@
     configuration. In most cases, the compiled-in preferences will suit
     users and administrators just fine. When running _Pine_ on a UNIX
     system, the default built-in configuration can be changed by setting
@@ -153,7 +153,7 @@
     the definitions for SYSTEM_PINERC and SYSTEM_PINERC_FIXED in
     pine/osdep/os-xxx.h are set to.) The location of the pine.conf file
     can be changed with the -P command line argument. Both _Pine_ and
-@@ -6371,8 +6372,8 @@
+@@ -6505,8 +6506,8 @@
       * A program that implements the SMTP or ESMTP protocol via stdio.
       * An entry in /etc/services for the alternate service.
       * An entry in /etc/inetd.conf for the alternate service.
@@ -164,7 +164,7 @@
       _________________________________________________________________
     
  MIME.Types file
-@@ -7561,7 +7562,7 @@
+@@ -7698,7 +7699,7 @@
     
     The second selection is the standard UNIX print command. The default
     is _lpr_, but it can be changed on a system basis to anything so
@@ -173,7 +173,7 @@
     
     The third selection is the user's personal choice for a UNIX print
     command. The text to be printed is piped into the command. _Enscript_
-@@ -8015,9 +8016,9 @@
+@@ -8152,9 +8153,9 @@
            Error messages for incorrect terminal types (try "foo" and
            "vt52")
     ___

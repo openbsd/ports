@@ -1,6 +1,6 @@
---- build.orig	Fri Dec  8 12:21:34 2000
-+++ build	Fri Dec  8 12:23:39 2000
-@@ -304,18 +304,6 @@
+--- build.orig	Thu Jan  4 13:13:11 2001
++++ build	Thu Jan 18 10:30:01 2001
+@@ -309,18 +309,6 @@
  	  echo "Including SSL functionality"
  	fi
  
@@ -19,7 +19,7 @@
          echo "Making Pico and Pilot"
          cd $PHOME/pico
          eval echo make "$makeargs" -f makefile.$picotarg
-@@ -331,14 +319,12 @@
+@@ -336,14 +324,12 @@
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -35,7 +35,7 @@
  	case $maketarg in
  	    mnt)    echo "Fixing stacksizes ..."
  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
-@@ -348,15 +334,12 @@
+@@ -353,15 +339,12 @@
  
  
      clean) # This only sort of works 
