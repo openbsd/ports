@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2000/04/12 04:16:43 marc Exp $
+# $OpenBSD: Makefile,v 1.5 2000/04/19 17:16:17 marc Exp $
 
-DISTNAME=		sslUSA-2.7a
+DISTNAME=		sslUSA-2.7b
 PKGNAME=		ssl-2.7-USA
 CATEGORIES=     	security
 
@@ -9,9 +9,16 @@ MAINTAINER=		ports@openbsd.org
 PERMIT_PACKAGE_CDROM=	Only valid in USA
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Patent issues
-PERMIT_DISTFILES_FTP=	Patent issues
+PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		ftp://ftp.snafu.org/pub/
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+
+MASTER_SITES0=		ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/rsa/ \
+		http://the.wiretapped.net/security/cryptography/libs/rsa/ \
+		ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/
+DISTFILES+=		rsaref20.1996.tar.Z:0
+
 WRKDIST=		${WRKDIR}/sslUSA
 
 MAKE_ENV=		PORTSDIR=${PORTSDIR}
@@ -29,11 +36,5 @@ pre-build:
 	@echo ""
 	@false
 .endif
-
-# Clean up the rsaref sources, too.
-#
-pre-clean:
-	@cd ${PORTSDIR}/security/rsaref && \
-	 OBJMACHINE= WRKOBJDIR= unset OBJMACHINE WRKOBJDIR && make clean
 
 .include <bsd.port.mk>
