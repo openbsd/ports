@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2002/05/31 17:14:35 couderc Exp $
+# $OpenBSD: Makefile,v 1.6 2002/09/14 23:20:19 naddy Exp $
 
-COMMENT=		"Fast and light window manager with plug-ins"
+COMMENT=		"fast and light window manager with plug-ins"
 
 DISTNAME=		golem-0.0.5
-CATEGORIES=     	X11
-NEED_VERSION=		1.531
+CATEGORIES=     	x11
 
 HOMEPAGE=		http://golem.sourceforge.net/
 
