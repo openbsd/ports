@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2004/04/15 19:23:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2004/04/18 14:19:02 robert Exp $
 
 COMMENT=		"Multimedia player for the X Window System"
 COMMENT-esd=		"Esound output plugin for XMMS"
@@ -15,7 +15,7 @@ PKGNAME-mp3=		xmms-mp3-${VERSION}
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
 
-MAINTAINER=		Robert Nagy <thuglife@bsd.hu>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
