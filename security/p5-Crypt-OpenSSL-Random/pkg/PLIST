@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/15 11:16:26 wilfried Exp $
+${P5ARCH}/Crypt/OpenSSL/Random.pm
+${P5ARCH}/auto/Crypt/OpenSSL/Random/Random.bs
+${P5ARCH}/auto/Crypt/OpenSSL/Random/Random.so
+${P5ARCH}/auto/Crypt/OpenSSL/Random/autosplit.ix
+man/man3p/Crypt::OpenSSL::Random.3p
+@dirrm ${P5ARCH}/auto/Crypt/OpenSSL/Random
