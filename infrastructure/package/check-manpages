@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: check-manpages,v 1.1 2000/11/12 17:06:26 espie Exp $
+# $OpenBSD: check-manpages,v 1.2 2004/02/10 20:37:45 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -28,7 +28,7 @@
 
 : ${PORTSDIR=/usr/ports}
 : ${ARCH=`uname -m`}
-: ${PACKAGES=${PORTSDIR}/packages/${ARCH}/All}
+: ${PACKAGES=${PORTSDIR}/packages/${ARCH}/all}
 
 rm -rf man
 for i in ${PACKAGES}/*
