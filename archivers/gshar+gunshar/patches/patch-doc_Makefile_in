@@ -1,6 +1,7 @@
---- doc/Makefile.in.orig	Fri Nov 24 21:44:35 1995
-+++ doc/Makefile.in	Tue Dec 28 18:44:07 1999
-@@ -26,7 +26,7 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2004/04/10 20:28:00 naddy Exp $
+--- doc/Makefile.in.orig	1995-11-25 03:44:35.000000000 +0100
++++ doc/Makefile.in	2004-04-10 22:21:45.000000000 +0200
+@@ -26,7 +26,7 @@ VPATH = @srcdir@
  transform = @program_transform_name@
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
@@ -9,7 +10,7 @@
  TEXI2DVI = texi2dvi
  TOUCH = echo timestamp >
  
-@@ -52,9 +52,11 @@
+@@ -52,9 +52,11 @@ default: all
  all info check: sharutils.info remsync.info
  
  sharutils.info: sharutils.texi version.texi
@@ -21,7 +22,7 @@
  	cd $(srcdir) && $(MAKEINFO) remsync.texi
  
  dvi: sharutils.dvi remsync.dvi
-@@ -79,7 +81,7 @@
+@@ -79,7 +81,7 @@ stamp-vti: sharutils.texi $(top_srcdir)/
  	$(TOUCH) $(srcdir)/stamp-vti
  
  install install-exec install-data: all

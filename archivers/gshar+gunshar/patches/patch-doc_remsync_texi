@@ -1,3 +1,4 @@
+$OpenBSD: patch-doc_remsync_texi,v 1.2 2004/04/10 20:28:00 naddy Exp $
 --- doc/remsync.texi.orig	Thu Nov 30 18:15:37 1995
 +++ doc/remsync.texi	Tue Dec 14 22:37:13 1999
 @@ -2,6 +2,11 @@

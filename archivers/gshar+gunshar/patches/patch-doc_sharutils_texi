@@ -1,5 +1,6 @@
---- doc/sharutils.texi.orig	Fri Nov 24 21:42:52 1995
-+++ doc/sharutils.texi	Tue Dec 14 22:37:13 1999
+$OpenBSD: patch-doc_sharutils_texi,v 1.2 2004/04/10 20:28:00 naddy Exp $
+--- doc/sharutils.texi.orig	1995-11-25 03:42:52.000000000 +0100
++++ doc/sharutils.texi	2004-04-10 22:21:45.000000000 +0200
 @@ -2,6 +2,16 @@
  @c %**start of header
  @setfilename sharutils.info
@@ -39,7 +40,7 @@
  This file documents the GNU set of shar utilities.
  
  Copyright (C) 1994 Free Software Foundation, Inc.
-@@ -157,8 +152,8 @@
+@@ -157,8 +152,8 @@ for these programs to @file{bug-gnu-util
  The format of the @code{shar} command is one of:
  
  @example
@@ -50,7 +51,7 @@
  @end example
  
  In the first form, the file list is given as command arguments.  In the
-@@ -548,7 +543,7 @@
+@@ -548,7 +543,7 @@ restored whether @code{-f} is specified 
  The format of the @code{unshar} command is:
  
  @example
@@ -59,7 +60,7 @@
  @end example
  
  Each @var{file} is processed in turn, as a shell archive or a
-@@ -635,10 +630,10 @@
+@@ -635,10 +630,10 @@ archive process considerably.
  Let us conclude by a showing a few examples of @code{shar} usage:
  
  @example
