@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2005/03/30 07:19:30 jolan Exp $
+# $OpenBSD: Makefile,v 1.131 2005/04/03 17:32:24 msf Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR += TclXML
@@ -51,7 +51,7 @@
      SUBDIR += p5-Lingua-EN-Inflect
      SUBDIR += p5-Lingua-EN-Inflect-Number
      SUBDIR += p5-Lingua-PT-Stemmer
-#    SUBDIR += p5-Lingua-Stem
+     SUBDIR += p5-Lingua-Stem
      SUBDIR += p5-Lingua-Stem-Fr
      SUBDIR += p5-Lingua-Stem-It
      SUBDIR += p5-Lingua-Stem-Ru
@@ -73,6 +73,7 @@
      SUBDIR += p5-Text-Autoformat
      SUBDIR += p5-Text-CSV_XS
      SUBDIR += p5-Text-Diff
+     SUBDIR += p5-Text-German
      SUBDIR += p5-Text-Glob
      SUBDIR += p5-Text-PDF
      SUBDIR += p5-Text-Quoted
