@@ -1,6 +1,6 @@
 --- Makefile.in.orig	Fri Jun 23 12:35:23 2000
-+++ Makefile.in	Sat Jul  1 19:06:31 2000
-@@ -72,7 +72,7 @@
++++ Makefile.in	Sun Aug 26 13:20:35 2001
+@@ -72,7 +72,7 @@ GLOBDIR = @GLOBDIR@
  GLOBINC = @GLOBINC@
  GLOBLIB = @GLOBLIB@
  LIBOBJS = @LIBOBJS@
@@ -9,17 +9,3 @@
  MOFILES = @MOFILES@
  PACKAGE = @PACKAGE@
  PERL = @PERL@
-@@ -346,13 +346,6 @@
- 	  done; \
- 	done
- 	@$(POST_INSTALL)
--	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
--	  list='$(INFO_DEPS)'; \
--	  for file in $$list; do \
--	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
--	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
--	  done; \
--	else : ; fi
- 
- uninstall-info:
- 	$(PRE_UNINSTALL)
