@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2004/10/31 20:30:15 sturm Exp $
+# $OpenBSD: Makefile,v 1.26 2004/11/15 21:35:43 sturm Exp $
 
 COMMENT=	"POP3 mail retriever"
 
-V=		4.2.2
-DISTNAME=	getmail-${V}
+DISTNAME=	getmail-4.2.2
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.qcc.ca/~charlesc/software/getmail-4/
@@ -22,8 +22,7 @@ MODULES=	lang/python
 
 NO_REGRESS=	Yes
 
-EXDIR=		${PREFIX}/share/examples/getmail-${V}
-SUBST_VARS+=	V
+EXDIR=		${PREFIX}/share/examples/getmail
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR}

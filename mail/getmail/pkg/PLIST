@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/10/31 20:30:16 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/11/15 21:35:43 sturm Exp $
 bin/getmail
 bin/getmail_maildir
 bin/getmail_mbox
@@ -30,22 +30,22 @@ lib/python${MODPY_VERSION}/site-packages/getmailcore/utilities.pyc
 @man man/man1/getmail.1
 @man man/man1/getmail_maildir.1
 @man man/man1/getmail_mbox.1
-share/doc/getmail-${V}/
-share/doc/getmail-${V}/BUGS
-share/doc/getmail-${V}/CHANGELOG
-share/doc/getmail-${V}/COPYING
-share/doc/getmail-${V}/README
-share/doc/getmail-${V}/THANKS
-share/doc/getmail-${V}/TODO
-share/doc/getmail-${V}/configuration.html
-share/doc/getmail-${V}/configuration.txt
-share/doc/getmail-${V}/documentation.html
-share/doc/getmail-${V}/documentation.txt
-share/doc/getmail-${V}/faq.html
-share/doc/getmail-${V}/faq.txt
-share/doc/getmail-${V}/getmaildocs.css
-share/doc/getmail-${V}/getmailrc-examples
-share/doc/getmail-${V}/troubleshooting.html
-share/doc/getmail-${V}/troubleshooting.txt
-share/examples/getmail-${V}/
-share/examples/getmail-${V}/getmailrc-examples
+share/doc/getmail/
+share/doc/getmail/BUGS
+share/doc/getmail/CHANGELOG
+share/doc/getmail/COPYING
+share/doc/getmail/README
+share/doc/getmail/THANKS
+share/doc/getmail/TODO
+share/doc/getmail/configuration.html
+share/doc/getmail/configuration.txt
+share/doc/getmail/documentation.html
+share/doc/getmail/documentation.txt
+share/doc/getmail/faq.html
+share/doc/getmail/faq.txt
+share/doc/getmail/getmaildocs.css
+share/doc/getmail/getmailrc-examples
+share/doc/getmail/troubleshooting.html
+share/doc/getmail/troubleshooting.txt
+share/examples/getmail/
+share/examples/getmail/getmailrc-examples
