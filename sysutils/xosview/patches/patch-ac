@@ -1,4 +1,4 @@
-# $OpenBSD: patch-ac,v 1.2 1999/07/01 22:07:44 form Exp $
+# $OpenBSD: patch-ac,v 1.3 1999/09/15 03:17:23 brad Exp $
 
 --- configure.orig	Fri Jul  2 04:36:11 1999
 +++ configure	Fri Jul  2 04:41:31 1999
@@ -7,8 +7,8 @@
  	  host_dir=linux
            host_os=linux ;;
 +
-+##  Check for OpenBSD 2.0-2.4
-+openbsd2.[01234]*)
++##  Check for OpenBSD 2.0-2.5
++openbsd2.[012345]*)
 +        EXTRALIBS="-lkvm $XPMLIB"
 +        INSTALL_ARGS='-s -g kmem -m 02555'
 +	cat >> confdefs.h <<\EOF

@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 1999/07/29 09:30:22 form Exp $
+# $OpenBSD: Makefile,v 1.9 1999/09/15 03:17:22 brad Exp $
 # $NetBSD: Makefile,v 1.9 1998/04/15 10:38:50 agc Exp $
 
-DISTNAME=       xosview-1.7.2
+DISTNAME=	xosview-1.7.2
 CATEGORIES=	sysutils
-MASTER_SITES=   http://www.ece.utexas.edu/~bgrayson/xosview/
+MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	form@openbsd.org
 
-GNU_CONFIGURE=	yes
 USE_X11=	yes
-CONFIGURE_ENV+= CPPFLAGS="-I/usr/X11R6/include -L/usr/X11R6/lib"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 
 MAKE_ENV+=	UVM=${UVM}
 MAKE_FLAGS=	ARCH=${ARCH} -f
