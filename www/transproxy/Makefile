@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/09 20:41:11 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/05 21:48:09 jakob Exp $
 
-DISTNAME=	transproxy-0.4
+DISTNAME=	transproxy-1.3
 CATEGORIES=	www net
-MASTER_SITES=	ftp://ftp.nlc.net.au/pub/linux/www/
+MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-LICENSE_TYPE=		GPL
+HOMEPAGE=	http://www.transproxy.nlc.net.au/
+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-ALL_TARGET=	tproxy
-
-do-install:
-	cd ${WRKSRC}; ${INSTALL_PROGRAM} ${WRKSRC}/tproxy ${PREFIX}/sbin
+FAKE_FLAGS+=	PREFIX=${WRKINST}${PREFIX}
 
 .include <bsd.port.mk>

@@ -9,15 +9,3 @@ server and transports data between the two sockets.
 
 Unlike some other transparent proxy solutions, this does not require the
 proxy run on the machine itself.
-
-Use something like:
-/usr/local/sbin/tproxy -b 127.0.0.1 -s 8081 [squidip] [squidport]
-
-(bind to localhost for safety), and the following ipnat rules:
-
-rdr ppp0 0.0.0.0/0 port 80 -> 127.0.0.1 port 8081
-rdr ppp1 0.0.0.0/0 port 80 -> 127.0.0.1 port 8081
-[..etc..]
-
----
-Ported to OpenBSD by Oleg Safiullin <form@vs.itam.nsc.ru>
