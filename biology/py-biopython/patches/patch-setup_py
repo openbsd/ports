@@ -1,0 +1,24 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2004/05/07 08:57:20 xsa Exp $
+--- setup.py.orig	2004-02-17 00:49:06.000000000 +0100
++++ setup.py	2004-04-27 14:56:13.000000000 +0200
+@@ -73,14 +73,14 @@ def check_dependencies():
+     # means overwrite previous installations.  If the user has
+     # forced an installation, should we also ignore dependencies?
+     dependencies = [
+-        ("mxTextTools", is_mxTextTools_installed, 1,
+-         "http://www.egenix.com/files/python/eGenix-mx-Extensions.html"),
++        #("mxTextTools", is_mxTextTools_installed, 1,
++        # "http://www.egenix.com/files/python/eGenix-mx-Extensions.html"),
+         #("Martel", is_Martel_installed, 1,
+         # "http://www.biopython.org/~dalke/Martel/"),
+-        ("Numerical Python", is_Numpy_installed, 0,
+-         "http://numpy.sourceforge.net/"),
+-        ("Reportlab", is_reportlab_installed, 0,
+-         "http://www.reportlab.org/downloads.html"),
++        #("Numerical Python", is_Numpy_installed, 0,
++        # "http://numpy.sourceforge.net/"),
++        #("Reportlab", is_reportlab_installed, 0,
++        # "http://www.reportlab.org/downloads.html"),
+         ]
+ 
+     for name, is_installed_fn, is_required, url in dependencies:
