@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 1999/12/09 02:50:41 brad Exp $
+# $OpenBSD: Makefile,v 1.13 1999/12/12 22:01:15 dugsong Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -6,9 +6,6 @@ CATEGORIES=	security
 MASTER_SITES=	http://the.wiretapped.net/security/cryptography/pgp/2.x/src/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.dk.pgpi.com/mirrors/ftp.ifi.uio.no/pub/pgp/2.x/src/
-MASTER_SITES0=	http://the.wiretapped.net/security/cryptography/libs/rsa/ \
-		ftp://idea.dsi.unimi.it/pub/security/crypt/math/ \
-		ftp://ftp.it.net.au/mirrors/crypto/misc
 
 PATCH_LIST=	patch-doc
 
@@ -25,13 +22,10 @@ CFLAGS+=-DUNIX -DPORTABLE -DMERIT -DIDEA32 -DMAX_NAMELEN=255 \
 	-DPGP_DOC_DIR=\\\"${PGP_DOC_DIR}\\\"
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-DISTFILES= ${DISTNAME}.tar.gz rsaref2.tar.gz:0
-PATCH_LIST+= patch-rsaref2 patch-rsaref2-2
+BUILD_DEPENDS=	${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
 RSAOBJS= rsaglue2.o
-RSADIR=	../rsaref2
-RSAINCDIR= -I$(RSADIR)/source -I$(RSADIR)/test
-RSALIBDIR= $(RSADIR)/install/unix
-RSALIBS= $(RSALIBDIR)/rsaref.a
+RSAINCDIR= -I${PREFIX}/include
+RSALIBS= ${PREFIX}/lib/librsaref.a
 CFLAGS+= -DUSA ${RSAINCDIR}
 .else
 RSAOBJS= rsaglue1.o
@@ -82,14 +76,9 @@ pre-build:
 	 fi
 
 do-build:
-.if defined(USA_RESIDENT) && ${USA_RESIDENT:U} == YES
-	@(cd ${WRKDIR}/rsaref2/install/unix && \
-	  env ${MAKE_ENV} make -f makefile rsaref.a)
-.endif
 	@(cd ${WRKSRC} && \
 	  env ${MAKE_ENV} make -f makefile all \
-	  RSAOBJS="${RSAOBJS}" RSADIR="${RSADIR}" RSAINCDIR="${RSAINCDIR}" \
-	  RSALIBDIR="${RSALIBDIR}" RSALIBS="${RSALIBS}" \
+	  RSAOBJS="${RSAOBJS}" RSAINCDIR="${RSAINCDIR}" RSALIBS="${RSALIBS}" \
 	  CFLAGS="${CFLAGS} `cat ${WRKDIR}/.endian`" )
 
 do-install:
