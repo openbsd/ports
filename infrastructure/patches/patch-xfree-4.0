@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: patch-xfree-4.0,v 1.3 2000/12/15 08:05:45 angelos Exp $
+# $OpenBSD: patch-xfree-4.0,v 1.4 2003/03/28 22:25:00 david Exp $
 #
 X11BASE=${X11BASE:-/usr/X11R6}
 if [ -f ${X11BASE}/lib/X11/config/ports.cf ]; then
@@ -12,7 +12,7 @@ read answer?"Patch the XFree installation under ${X11BASE} ? "
 case "$answer" in
 	[yY]*)
 	    if cat $0 | patch -p0 -N -s -d ${X11BASE} ; then
-	    	echo "Installation patched succesfully"
+	    	echo "Installation patched successfully"
 	    else
 	    	echo "Problem with patching"
 	    fi;;

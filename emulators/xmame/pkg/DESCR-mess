@@ -10,6 +10,6 @@ Packages can be built with additional FLAVORs:
   gl:   built with GL support.
 
   sdl:  built with SDL support.
-        This FLAVOR requiers the sdl package.
+        This FLAVOR requires the sdl package.
 
 WWW: ${HOMEPAGE}

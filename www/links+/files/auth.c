@@ -10,7 +10,7 @@ void init_auth()
     need_auth=0;
 }
 
-/* Returns a valid host url for http authentification or NULL. */
+/* Returns a valid host url for http authentication or NULL. */
 /* FIXME: This really belongs to url.c, but it would look alien there. */
 static unsigned char *
 get_auth_url(unsigned char *url)
