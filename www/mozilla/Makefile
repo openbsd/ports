@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2003/06/19 19:07:59 jolan Exp $
+# $OpenBSD: Makefile,v 1.50 2003/06/25 12:01:16 wilfried Exp $
 
 COMMENT=	"open source version of the Netscape browser"
 COMMENT-devel=	"devel files for Gecko"
@@ -86,6 +86,6 @@ do-install:
 	${INSTALL_DATA} ${MOB}/bin/LICENSE ${MOZ}
 	${INSTALL_SCRIPT} ${MOB}/bin/mozilla ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/bin/run-mozilla.sh ${MOB}/bin/mozilla-config ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/bin/regxpcom ${MOB}/bin/mozilla-bin ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/bin/regchrome ${MOB}/bin/regxpcom ${MOB}/bin/mozilla-bin ${MOZ}
 
 .include <bsd.port.mk>

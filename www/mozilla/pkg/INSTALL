@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2003/05/18 15:22:45 wilfried Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/06/25 12:01:16 wilfried Exp $
 #
 # Pre/post-installation setup of mozilla
 
@@ -26,6 +26,7 @@ case $2 in
     POST-INSTALL)
 	cd ${MOZ}
 	LD_LIBRARY_PATH=${MOZ} ./regxpcom
+	LD_LIBRARY_PATH=${MOZ} ./regchrome
 	;;
     *)
 	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
