@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2000/08/16 17:02:31 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2001/02/23 17:35:19 brad Exp $
 bin/ytalk
 man/man1/ytalk.1
 share/examples/ytalk/ytalkrc-sample
+@dirrm share/examples/ytalk
