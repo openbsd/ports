@@ -1,0 +1,7 @@
+@cwd /usr/local
+@name libPropList-0.8.3
+lib/libPropList.so.1.1
+lib/libPropList.la
+lib/libPropList.a
+include/proplist.h
+@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m /usr/local/lib
