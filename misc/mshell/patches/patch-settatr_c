@@ -1,0 +1,28 @@
+$OpenBSD: patch-settatr_c,v 1.1 2002/12/23 07:42:00 pvalchev Exp $
+--- settatr.c.orig	Sun Dec 22 23:47:32 2002
++++ settatr.c	Sun Dec 22 23:47:32 2002
+@@ -15,7 +15,7 @@ set_terminal_attributes()
+ 	ioctl ( 0, TIOCGETP, &sg );
+ 	if (access(".stty", 0) == -1) {	/* not already set up */
+ 		sg.sg_erase = '';
+-		sg.sg_kill  = '';
++		sg.sg_kill  = 21; /* ^U */
+ 		sg.sg_flags |= XTABS;
+ 	}
+ 	sg.sg_flags |= ECHO;
+@@ -25,12 +25,12 @@ set_terminal_attributes()
+ 	ioctl ( 0, TIOCSETP, &sg );
+ 
+ 	ioctl ( 0, TIOCGETC, &tc );
+-	tc.t_intrc  = '';
++	tc.t_intrc  = 3; /* ^C */
+ 	ioctl ( 0, TIOCSETC, &tc );
+ 
+ 	ioctl ( 0, TIOCGLTC, &lt );
+-	lt.t_werasc = '';
+-	lt.t_rprntc = '';
++	lt.t_werasc = 23; /* ^W */
++	lt.t_rprntc = 18; /* ^R */
+ 	ioctl ( 0, TIOCSLTC, &lt );
+ #endif
+ #ifdef SYSV

@@ -1,0 +1,21 @@
+$OpenBSD: patch-string_c,v 1.1 2002/12/23 07:42:00 pvalchev Exp $
+--- string.c.orig	Sun Dec 22 23:50:21 2002
++++ string.c	Sun Dec 22 23:50:27 2002
+@@ -4,6 +4,17 @@
+ #define strchr	index
+ #endif
+ 
++char *
++gets (char *s)
++{
++    char *x = fgets (s, WORDLEN, stdin);
++    if (x) {
++	char *p = strchr (x, '\n');
++	if (p) 
++	    *p = 0;
++    }
++    return x;
++}
+ 
+ /* function to find the position of sub_string in main_string 
+  * ---------------------------------------------------------- */

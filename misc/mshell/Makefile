@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 00:37:51 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.16 2002/12/23 07:42:00 pvalchev Exp $
 
 COMMENT=	"Unix menuing shell"
 
@@ -12,9 +12,9 @@ WRKDIST=	${WRKDIR}
 EXTRACT_ONLY=	
 
 PERMIT_PACKAGE_CDROM=	"no explict license"
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_FTP=	"no explict license"
 PERMIT_DISTFILES_CDROM=	"no explict license"
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_DISTFILES_FTP=	"no explict license"
 
 post-extract:
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
