@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2001/10/26 23:39:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2001/11/07 00:40:45 naddy Exp $
 
 COMMENT=	"command line interface to popular WWW search engines"
 
-DISTNAME=	surfraw-1.0.4
+DISTNAME=	surfraw-1.0.5
 CATEGORIES=	www
 NEED_VERSION=	1.363
 HOMEPAGE=	http://surfraw.sourceforge.net/
@@ -23,6 +23,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/surfraw
 	${INSTALL_DATA} ${WRKSRC}/surfraw.conf ${PREFIX}/share/examples/surfraw
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/surfraw
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING ${PREFIX}/share/doc/surfraw
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/HACKING \
+		${PREFIX}/share/doc/surfraw
 
 .include <bsd.port.mk>
