@@ -1,6 +1,6 @@
---- fig2dev/Imakefile.orig	Tue Aug  1 21:07:45 2000
-+++ fig2dev/Imakefile	Tue Aug  1 21:15:03 2000
-@@ -28,13 +28,13 @@
+--- fig2dev/Imakefile.orig	Thu Apr 19 13:19:38 2001
++++ fig2dev/Imakefile	Tue Jun 19 12:08:19 2001
+@@ -28,13 +28,13 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.  This will be made automatic in the future.
  
@@ -16,7 +16,7 @@
  
  XCOMM The following probably only applies to Windows 9x/NT:
  XCOMM If your system can open files in text and binary modes and has the
-@@ -47,7 +47,7 @@
+@@ -47,7 +47,7 @@ XCOMM Uncomment the following line if yo
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -25,7 +25,18 @@
  
  XCOMM ****************
  XCOMM Change RGB if necessary, to point to your rgb.txt color database
-@@ -67,11 +67,11 @@
+@@ -65,8 +65,8 @@ XCOMM PNG (Portable Network Graphics) fi
+ #define USEPNG
+ 
+ #ifdef USEPNG
+-PNGLIBDIR = $(USRLIBDIR)
+-PNGINC = -I/usr/include/X11
++PNGLIBDIR = ${LOCALBASE}/lib
++PNGINC = -I${LOCALBASE}/include
+ #endif
+ 
+ XCOMM ****************
+@@ -78,11 +78,11 @@ XCOMM Change XPMLIBDIR if necessary to p
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  XCOMM
  
@@ -33,27 +44,25 @@
 +#define USEXPM
  
  #ifdef USEXPM
- XPMLIBDIR = $(USRLIBDIR)
+-XPMLIBDIR = $(USRLIBDIR)
 -XPMINC = -I/usr/include/X11
-+XPMINC = -I/usr/X11R6/include/X11 -I$(INCDIR)/X11
++XPMLIBDIR = ${X11BASE}/lib
++XPMINC = -I${X11BASE}/include/X11 -I$(INCDIR)/X11
  #endif
  
  XCOMM ****************
-@@ -92,7 +92,7 @@
+@@ -104,8 +104,8 @@ XCOMM You must have version 5b or newer 
+ 
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
- JPEGLIBDIR = /usr/local/lib
+-JPEGLIBDIR = /usr/local/lib
 -JPEGINCDIR = /usr/include/X11
-+JPEGINCDIR = /usr/local/include
++JPEGLIBDIR = ${LOCALBASE}/lib
++JPEGINCDIR = ${LOCALBASE}/include
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINCDIR = $(JPEGLIBDIR)
-@@ -141,12 +141,12 @@
- XCOMM ****************
- XCOMM Uncomment the next line if you want use Japanese (i18n) on xfig.
- 
--XCOMM #define I18N
-+#define I18N
+@@ -158,8 +158,8 @@ XCOMM Uncomment the next line if you wan
  
  #ifdef I18N
  I18N_DEFS = -DI18N 

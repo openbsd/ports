@@ -1,6 +1,6 @@
---- fig2dev/Imakefile.orig	Sun Aug  6 15:29:14 2000
-+++ fig2dev/Imakefile	Sun Aug  6 15:29:54 2000
-@@ -101,7 +101,7 @@
+--- fig2dev/Imakefile.orig	Tue Jun 19 12:36:02 2001
++++ fig2dev/Imakefile	Tue Jun 19 12:36:02 2001
+@@ -114,7 +114,7 @@
  
  XCOMM ****************
  XCOMM Uncomment the following to set paper size to A4
