@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2004/03/02 21:20:12 xsa Exp $
+# $OpenBSD: Makefile,v 1.15 2004/03/02 23:10:29 xsa Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
-TIDYDATE=	040205
+TIDYDATE=	040301
 DISTNAME=	tidy_src_${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
 
