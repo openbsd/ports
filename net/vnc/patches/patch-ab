@@ -1,0 +1,74 @@
+--- vncserver.orig	Wed Jul 15 08:40:23 1998
++++ vncserver	Wed Oct  7 20:05:26 1998
+@@ -46,13 +46,23 @@
+        "xterm -geometry 80x24+10+10 -ls -title \"\$VNCDESKTOP Desktop\" &\n".
+        "twm &\n");
+ 
++$defaultFontPath
++    = (
++	"/usr/X11R6/lib/X11/fonts/Type1/,".
++	"/usr/X11R6/lib/X11/fonts/Speedo/,".
++	"/usr/X11R6/lib/X11/fonts/cyrillic/,".
++	"/usr/X11R6/lib/X11/fonts/misc/,".
++	"/usr/X11R6/lib/X11/fonts/75dpi/,".
++	"/usr/X11R6/lib/X11/fonts/100dpi/"
++	);
++
+ chop($host = `uname -n`);
+ 
+ 
+ # Check command line options
+ 
+ &ParseOptions("-geometry",1,"-depth",1,"-pixelformat",1,"-name",1,"-help",0,
+-	      "-kill",1);
++	      "-kill",1,"-fp",1);
+ 
+ &Usage() if ($opt{'-help'});
+ 
+@@ -74,6 +84,26 @@
+ }
+ 
+ &CheckGeometryAndDepth();
++# bmah: Construct font path.  Starting from a list of possible font directorie
++
++# bmah: make up the set of those that have fonts.dir files we can read.
++# bmah: Probably there are way better methods of doing this.
++
++if (!$opt{'-fp'}) {
++    $opt{'-fp'} = $defaultFontPath;
++}
++
++@fontPathElements = split(/,/, "$opt{'-fp'}");
++
++$fontPath = '';
++
++foreach $i (0.."$#fontPathElements") {
++    if (-r "$fontPathElements[$i]/fonts.dir") {
++      $fontPath .= "$fontPathElements[$i],";
++    }
++}
++chop $fontPath;
++
+ 
+ if ($opt{'-name'}) {
+     $desktopName = $opt{'-name'};
+@@ -143,8 +173,8 @@
+ $cmd .= " -rfbport $vncPort";
+ 
+ # Add font path and color database stuff here, e.g.:
+-#
+-# $cmd .= " -fp /usr/lib/X11/fonts/misc/,/usr/lib/X11/fonts/75dpi/";
++# bmah: Bring in the fontpath we computed earlier.
++$cmd .= " -fp $fontPath";
+ # $cmd .= " -co /usr/lib/X11/rgb";
+ #
+ 
+@@ -237,7 +267,7 @@
+ {
+     foreach $n (1..99) {
+ 	if (&CheckDisplayNumber($n)) {
+-	    return $n;
++	    return $n+0;
+ 	}
+     }
+     
