@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2004/11/06 22:25:48 david Exp $
+# $OpenBSD: Makefile,v 1.10 2004/11/23 23:23:47 alek Exp $
 
 COMMENT=	"Web intrusion detection and prevention engine"
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 
 DISTNAME=	mod_security-1.8.6
+PKGNAME=	${DISTNAME}p0
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.modsecurity.org/download/
