@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 1999/12/01 16:22:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/01/12 15:47:13 ho Exp $
 
-DISTNAME=	mpg123-0.59q
+DISTNAME=	mpg123-0.59r
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mpg123.de/mpg123 \
+MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/audio/mpg123/ \
 		http://ftp.tu-clausthal.de/pub/unix/audio/mpg123

@@ -108,8 +108,6 @@ int audio_open(struct audio_info_struct *ai)
 
 int audio_reset_parameters(struct audio_info_struct *ai)
 {
-  int ret;
-
   if(ai->rate != -1)
     ainfo.play.sample_rate = ai->rate;
   if(ai->channels >= 0)

@@ -1,5 +1,5 @@
---- audio.h.orig	Mon Jan 11 17:21:38 1999
-+++ audio.h	Tue Mar 23 01:58:01 1999
+--- audio.h.orig	Wed Jan 12 11:35:24 2000
++++ audio.h	Wed Jan 12 11:36:34 2000
 @@ -24,7 +24,7 @@
  #define AUDIO_RATE_TOLERANCE	  3
  
@@ -9,11 +9,3 @@
  #endif
  #endif
  
-@@ -85,6 +85,6 @@
- extern int audio_write_sample(struct audio_info_struct *,short *,int);
- extern int audio_close(struct audio_info_struct *);
- extern void audio_info_struct_init(struct audio_info_struct *);
--#if defined(SOLARIS) || defined(__NetBSD__)
-+#if defined(SOLARIS) || defined(__NetBSD__) || defined(__OpenBSD__)
- extern void audio_queueflush(struct audio_info_struct *ai);
- #endif

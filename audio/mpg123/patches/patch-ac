@@ -1,6 +1,6 @@
---- audio.c.orig	Mon Nov 23 17:16:24 1998
-+++ audio.c	Tue Mar 23 22:25:08 1999
-@@ -68,42 +68,43 @@
+--- audio.c.orig	Tue Apr  6 17:53:05 1999
++++ audio.c	Wed Jan 12 12:10:25 2000
+@@ -68,41 +68,42 @@
  {
  	int fmts;
  	int i,j,k,k1=NUM_RATES-1;
@@ -59,12 +59,10 @@
 -	audio_close(&ai1);
  
 -	if(param.verbose > 1) {
--		fprintf(stderr,"\nAudio capabilties:\n        |");
 +		audio_close(&ai1);
-+		fprintf(stderr,"\nAudio capabilities:\n        |");
+ 		fprintf(stderr,"\nAudio capabilities:\n        |");
  		for(j=0;j<NUM_ENCODINGS;j++) {
  			fprintf(stderr," %5s |",audio_val2name[j].sname);
- 		}
 @@ -144,7 +145,19 @@
  
          if(rn >= 0) {
@@ -123,3 +121,12 @@
  char *audio_encoding_name(int format)
  {
  	int i;
+@@ -258,7 +292,7 @@
+ 	return "Unknown";
+ }
+ 
+-#if !defined(SOLARIS) && !defined(__NetBSD__) || defined(NAS)
++#if !defined(SOLARIS) && !defined(__NetBSD__) && !defined(__OpenBSD__) || defined(NAS)
+ void audio_queueflush(struct audio_info_struct *ai)
+ {
+ }

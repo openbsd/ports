@@ -1,4 +1,4 @@
-/* $OpenBSD: term.c,v 1.1 1999/12/01 16:22:01 espie Exp $ */
+/* $OpenBSD: term.c,v 1.2 2000/01/12 15:47:14 ho Exp $ */
 /*-
  * Copyright (c) 1999 Marc Espie.
  *
@@ -110,7 +110,7 @@ static void set_raw(int sig)
 		zap.c_cc[VMIN] = 0;     /* can't work with old */
 		zap.c_cc[VTIME] = 0; /* FreeBSD versions    */
 		zap.c_lflag &= ~(ICANON|ECHO|ECHONL);
-		tcsetattr(fileno(stdin), TCSADRAIN, &zap);
+		tcsetattr(fileno(stdin), TCSADRAIN, &zap);	
 		is_fg = TRUE;
 	} else
 		is_fg = FALSE;
@@ -145,7 +145,7 @@ static int may_getchar(void)
 	       set_raw(0);
 	if (run_in_fg() && read(fileno(stdin), &buffer, 1))
 	       return buffer;
-	return EOF;
+	return 0;
 }
 
 void term_control(void)
@@ -155,5 +155,10 @@ void term_control(void)
 	if (val == 'b' || val == 'B')
 		rd->rewind(rd);
 }
-	
+
+void term_restore(void)
+{
+        sane_tty();
+}
+
 #endif
