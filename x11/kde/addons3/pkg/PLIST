@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2002/05/23 14:37:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2003/01/06 13:40:25 espie Exp $
 bin/dcop_kate
 bin/noatunsynaescope.bin
 bin/noatuntippecanoe.bin
@@ -148,7 +148,7 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
-@dirrm share/apps/noatun
+@comment @dirrm share/doc/HTML
 @dirrm share/apps/knewsticker/scripts
 @dirrm share/apps/khtml/kpartplugins
 @dirrm share/apps/katexmltools
@@ -159,3 +159,4 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/kate/plugins/kateinsertcommand
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins
+@comment @dirrm share/apps

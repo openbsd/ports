@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/12/15 13:08:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2003/01/06 13:40:25 espie Exp $
 bin/karbon
 bin/kchart
 bin/kformula
@@ -310,8 +310,8 @@ share/apps/kformula/symbol.font
 share/apps/kformula/unicode.tbl
 share/apps/kivio/autoloadStencils/Text.sml
 share/apps/kivio/autoloadStencils/Text.xpm
-share/apps/kivio/autoloadStencils/straight_connector.xpm
 share/apps/kivio/autoloadStencils/straight_connector.ksp
+share/apps/kivio/autoloadStencils/straight_connector.xpm
 share/apps/kivio/icons/hicolor/16x16/actions/add_stencil.xpm
 share/apps/kivio/icons/hicolor/16x16/actions/bring_stencil_to_front.xpm
 share/apps/kivio/icons/hicolor/16x16/actions/color_fill.png
@@ -1759,9 +1759,6 @@ share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 %%SHARED%%
-@exec mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
-@dirrm share/doc/HTML/en/koffice-apidocs/lib/html
-@dirrm share/doc/HTML/en/koffice-apidocs/lib
 @dirrm share/icons/locolor/32x32/mimetypes
 @dirrm share/icons/locolor/22x22/mimetypes
 @dirrm share/icons/locolor/22x22/apps
@@ -1774,10 +1771,14 @@ share/templates/TextDocument.desktop
 @dirrm share/doc/HTML/en/kspread
 @dirrm share/doc/HTML/en/kpresenter
 @dirrm share/doc/HTML/en/koshell
+@exec mkdir -p %D/share/doc/HTML/en/koffice-apidocs/lib/html
+@dirrm share/doc/HTML/en/koffice-apidocs/lib/html
+@dirrm share/doc/HTML/en/koffice-apidocs/lib
 @dirrm share/doc/HTML/en/koffice-apidocs
 @dirrm share/doc/HTML/en/koffice
 @dirrm share/doc/HTML/en/kformula
 @dirrm share/doc/HTML/en/kchart
+@comment @dirrm share/doc/HTML
 @dirrm share/apps/xsltfilter/export/kword/xslfo
 @dirrm share/apps/xsltfilter/export/kword
 @dirrm share/apps/xsltfilter/export
@@ -1930,3 +1931,4 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/karbon/icons/hicolor
 @dirrm share/apps/karbon/icons
 @dirrm share/apps/karbon
+@comment @dirrm share/apps

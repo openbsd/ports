@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/23 14:37:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/01/06 13:40:25 espie Exp $
 bin/aktion
 bin/artsbuilder
 bin/artscontrol
@@ -875,6 +875,8 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/doc/HTML/en/aktion
+@comment @dirrm share/doc/HTML
+@comment @dirrm share/config
 @dirrm share/apps/noatun/skins/winamp/Winamp
 @dirrm share/apps/noatun/skins/winamp
 @dirrm share/apps/noatun/skins/kaiman/k9
@@ -900,6 +902,7 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/noatun/eq.preset
 @dirrm share/apps/noatun
 @dirrm share/apps/kscd/pics
+@dirrm share/apps/kscd
 @exec mkdir -p %D/share/apps/kscd/cddb/soundtrack
 @dirrm share/apps/kscd/cddb/soundtrack
 @exec mkdir -p %D/share/apps/kscd/cddb/rock
@@ -923,7 +926,6 @@ share/servicetypes/audiomidi.desktop
 @exec mkdir -p %D/share/apps/kscd/cddb/blues
 @dirrm share/apps/kscd/cddb/blues
 @dirrm share/apps/kscd/cddb
-@dirrm share/apps/kscd
 @dirrm share/apps/kmix/pics
 @dirrm share/apps/kmix
 @dirrm share/apps/kmidi/pics
@@ -956,6 +958,7 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/artsbuilder
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
+@comment @dirrm share/apps
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Multimedia
 @dirrm lib/mcop/Noatun
