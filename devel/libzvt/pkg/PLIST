@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:38:37 todd Exp $
+include/libzvt-2.0/libzvt/background.h
+include/libzvt-2.0/libzvt/libzvt.h
+include/libzvt-2.0/libzvt/lists.h
+include/libzvt-2.0/libzvt/vt.h
+include/libzvt-2.0/libzvt/vtx.h
+lib/libzvt-2.0.a
+lib/libzvt-2.0.la
+lib/pkgconfig/libzvt-2.0.pc
+libexec/libzvt-2.0/gnome-pty-helper
+%%SHARED%%
+@dirrm libexec/libzvt-2.0
+@comment @dirrm lib/pkgconfig
+@dirrm include/libzvt-2.0/libzvt
+@dirrm include/libzvt-2.0
