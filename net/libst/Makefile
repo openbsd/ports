@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/01/25 16:33:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2002/01/25 20:09:28 naddy Exp $
 
 COMMENT=		"threaded library for writing Internet applications"
 
@@ -24,6 +24,7 @@ MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
 
 USE_GMAKE=		Yes
 ALL_TARGET=		openbsd-optimized
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/OPENBSD_${OPSYS_VER}_OPT/libst.so.1.3 \
