@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 1998/11/09 01:49:57 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1999/01/14 02:26:27 angelos Exp $
 #
 
-DISTNAME=	xcubes-5.4.1
+DISTNAME=	xcubes-5.4.4
 CATEGORIES=	games
-
-#BROKEN=	"newer version available"
 
 MAINTAINER=	angelos@openbsd.org
 
