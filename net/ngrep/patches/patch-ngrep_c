@@ -1,0 +1,14 @@
+$OpenBSD: patch-ngrep_c,v 1.1 2003/04/17 18:59:49 wilfried Exp $
+--- ngrep.c.orig	Mon Dec 31 16:11:00 2001
++++ ngrep.c	Wed Apr  2 02:26:17 2003
+@@ -385,10 +385,6 @@ int main(int argc, char **argv) {
+     link_offset = LOOPHDR_SIZE;
+     break;
+ 
+-  case DLT_LINUX_SLL:
+-    link_offset = ISDNHDR_SIZE;
+-    break;
+-
+   default:
+     fprintf(stderr, "fatal: unsupported interface type %d\n", pcap_datalink(pd));
+     clean_exit(-1);
