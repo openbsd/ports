@@ -1,3 +1,6 @@
+# $OpenBSD: Makefile,v 1.42 2001/02/23 02:41:00 brad Exp $
+# $FreeBSD: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
+
 VERSION=	7.0.3
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	pgsql-${VERSION}
