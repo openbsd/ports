@@ -1,13 +1,13 @@
-$OpenBSD: patch-radius_src_Makefile,v 1.1 2001/08/14 18:05:19 danh Exp $
---- radius/src/Makefile.orig	Tue Aug 14 13:39:26 2001
-+++ radius/src/Makefile	Tue Aug 14 13:41:12 2001
+$OpenBSD: patch-radius_src_Makefile,v 1.2 2002/03/08 15:03:35 danh Exp $
+--- radius/src/Makefile.orig	Wed Mar  6 09:06:40 2002
++++ radius/src/Makefile	Wed Mar  6 09:06:59 2002
 @@ -83,8 +83,7 @@ RAD_OBJS1        = $(OBJDIR)/radiusd.o \
  		  $(OBJDIR)/ipass.o $(OBJDIR)/vports.o \
  		  $(OBJDIR)/log.o $(OBJDIR)/md5.o $(OBJDIR)/menu.o \
  		  $(OBJDIR)/proxy.o $(OBJDIR)/users.o $(OBJDIR)/util.o \
 -                  $(OBJDIR)/snprintf.o $(OBJDIR)/strlcat.o \
 -                  $(OBJDIR)/strlcpy.o
-+                  $(OBJDIR)/snprintf.o 
++                  $(OBJDIR)/snprintf.o
  RAD_OBJS2	 = $(OBJDIR)/pass.o $(OBJDIR)/version.o
  RAD_OBJS	 = $(RAD_OBJS1) $(RAD_OBJS2)
  SRAD_OBJS        = $(OBJDIR)/sradiusd.o $(OBJDIR)/acct.o $(OBJDIR)/dict.o \
@@ -43,27 +43,26 @@ $OpenBSD: patch-radius_src_Makefile,v 1.1 2001/08/14 18:05:19 danh Exp $
 -        $(OBJDIR)/strlcat.o $(OBJDIR)/strlcpy.o
 +        $(OBJDIR)/log.o $(HEADERS) $(OBJDIR)/snprintf.o
  	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(OBJDIR)/builddbm.o \
--                $(OBJDIR)/version.o $(OBJDIR)/log.o $(OBJDIR)/snprintf.o \
+                 $(OBJDIR)/version.o $(OBJDIR)/log.o $(OBJDIR)/snprintf.o \
 -                $(OBJDIR)/strlcat.o $(OBJDIR)/strlcpy.o $(LIBS)
-+                $(OBJDIR)/version.o $(OBJDIR)/log.o $(OBJDIR)/snprintf.o
++                $(LIBS)
  
  $(OBJDIR)/md5test: $(SRCDIR)/md5test.c $(HEADERS) $(OBJDIR)/md5.o \
--        $(OBJDIR)/snprintf.o $(OBJDIR)/snprintf.o $(OBJDIR)/strlcat.o
-+        $(OBJDIR)/snprintf.o 
+-        $(OBJDIR)/snprintf.o $(OBJDIR)/strlcat.o $(OBJDIR)/strlcpy.o
++        $(OBJDIR)/snprintf.o
  	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(SRCDIR)/md5test.c $(OBJDIR)/md5.o \
 -                $(OBJDIR)/snprintf.o $(OBJDIR)/strlcat.o $(OBJDIR)/strlcpy.o
-+                $(OBJDIR)/snprintf.o 
++                $(OBJDIR)/snprintf.o
  
  $(OBJDIR)/radtest: $(SRCDIR)/radtest.c $(HEADERS) $(OBJDIR)/md5.o \
          $(OBJDIR)/dict.o $(OBJDIR)/util.o $(OBJDIR)/log.o \
 -        $(OBJDIR)/snprintf.o $(OBJDIR)/strlcat.o $(OBJDIR)/strlcpy.o
-+        $(OBJDIR)/snprintf.o 
++        $(OBJDIR)/snprintf.o
  	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(SRCDIR)/radtest.c \
                  $(OBJDIR)/md5.o $(OBJDIR)/dict.o $(OBJDIR)/util.o \
 -                $(OBJDIR)/log.o $(OBJDIR)/snprintf.o \
 -                $(OBJDIR)/strlcat.o $(OBJDIR)/strlcpy.o $(LIBS)
-+                $(OBJDIR)/log.o $(OBJDIR)/snprintf.o 
-+
++                $(OBJDIR)/log.o $(OBJDIR)/snprintf.o $(LIBS)
  $(OBJDIR)/testuser: $(SRCDIR)/testuser.c $(HEADERS) $(TEST_OBJS)
  	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(SRCDIR)/testuser.c \
                  $(TEST_OBJS) $(LIBS)
@@ -74,11 +73,11 @@ $OpenBSD: patch-radius_src_Makefile,v 1.1 2001/08/14 18:05:19 danh Exp $
  	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(SRCDIR)/dbmkeys.c \
 -                $(OBJDIR)/snprintf.o $(OBJDIR)/strlcat.o \
 -                $(OBJDIR)/strlcpy.o $(LIBS)
-+                $(OBJDIR)/snprintf.o 
++                $(OBJDIR)/snprintf.o
  
  $(OBJDIR)/dbmrec: $(SRCDIR)/dbmrec.c $(HEADERS) $(TEST_OBJS)
  	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $(SRCDIR)/dbmrec.c \
-@@ -208,10 +200,6 @@ $(OBJDIR)/vports.o:	$(SRCDIR)/vports.c
+@@ -209,10 +201,6 @@ $(OBJDIR)/vports.o:	$(SRCDIR)/vports.c
  	$(CC) -c -o $@ $(CFLAGS) $(INCLUDES) $(SRCDIR)/vports.c
  $(OBJDIR)/snprintf.o:	$(SRCDIR)/snprintf.c
  	$(CC) -c -o $@ $(CFLAGS) $(INCLUDES) $(SRCDIR)/snprintf.c
