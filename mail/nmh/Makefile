@@ -1,28 +1,15 @@
-# OpenBSD makefile for:	nmh
-# Version required:	0.27
-# Date created:		1998-Apr-28
-# Whom:			marc@OpenBSD.ORG
-#
-# $OpenBSD: Makefile,v 1.3 1998/07/26 05:17:09 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/03/17 00:52:47 brad Exp $
 
-# What port/package will be created
-#
 DISTNAME=		nmh-0.27
 CATEGORIES=     	mail
 
-# where to send bitches about this port
-#
 MAINTAINER=		marc@openbsd.org
 
-# where the source files and patches can be fetched
-#
 MASTER_SITES=		ftp://ftp.math.gatech.edu/pub/nmh/
 
-# build/configuration variables
-#
+SYSCONFDIR=		${PREFIX}/lib/nmh
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/libexec \
-			--sysconfdir=${PREFIX}/lib/nmh
+			--sysconfdir=${SYSCONFDIR}
 
 .include <bsd.port.mk>
