@@ -7,10 +7,13 @@ Policy: ${WRKDIR}/fake-i386/usr/local/netscape/vreg, Emulation: bsdos
 	bsdos-exit: permit
 	bsdos-fcntl: permit
 	bsdos-fstat: permit
+	bsdos-fstat35: permit
 	bsdos-getdirentries: permit
 	bsdos-lseek: permit
 	bsdos-lstat: permit
+	bsdos-lstat35: permit
 	bsdos-open: permit
 	bsdos-read: permit
 	bsdos-stat: permit
+	bsdos-stat35: permit
 	bsdos-write: permit
