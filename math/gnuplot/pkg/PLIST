@@ -4,6 +4,6 @@
 bin/lasergnu
 bin/gnuplot
 bin/gnuplot_x11
-lib/gnuplot.gih
+share/gnuplot.gih
 man/man1/lasergnu.1
 man/man1/gnuplot.1

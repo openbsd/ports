@@ -1,9 +1,4 @@
-# OpenBSD makefile for: gnuplot
-# Version required:     3.7
-# Date created:         May 16 1998
-# Whom:                 Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.5 1999/03/07 01:38:59 brad Exp $
+# $OpenBSD: Makefile,v 1.6 1999/03/12 17:13:57 marc Exp $
 #
 
 DISTNAME=	gnuplot-3.7
@@ -17,7 +12,7 @@ MASTER_SITE_SUBDIR= gnuplot
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	png\\.1\\.1:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.1:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
