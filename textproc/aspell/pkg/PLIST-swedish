@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-swedish,v 1.1.1.1 2001/05/23 21:25:43 lebel Exp $
+@comment $OpenBSD: PLIST-swedish,v 1.2 2001/05/27 21:46:07 lebel Exp $
 @pkgdep aspell-*
 lib/aspell/svenska
 lib/aspell/swedish
 share/aspell/swedish.dat
 share/aspell/swedish_phonet.dat
-share/pspell/se-aspell.pwli
+share/pspell/sv-aspell.pwli
