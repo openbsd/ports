@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/06/22 03:15:03 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2004/06/22 18:01:24 marcm Exp $
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
@@ -91,8 +91,6 @@ man/man1/gobject-query.1
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/glib-2.0/gettext/po/Makefile.in.in
-share/gtk-doc/html/glib/style.css
-share/gtk-doc/html/gobject/style.css
 share/locale/am/LC_MESSAGES/glib20.mo
 share/locale/ar/LC_MESSAGES/glib20.mo
 share/locale/az/LC_MESSAGES/glib20.mo
