@@ -1,0 +1,20 @@
+Fixes start-up problems with aa-fonts
+--- src/Font.cc.orig	Fri Oct 25 23:06:45 2002
++++ src/Font.cc	Sun Nov 24 07:21:51 2002
+@@ -139,14 +139,8 @@ void Font::setAntialias(bool flag) {
+ bool Font::load(const char *name) {
+ 	if (name == 0)
+ 		return false;
+-	bool ret_val = m_fontimp->load(name);
+-	if (ret_val && name == 0) { //prevent from having a bad fontimp
+-		m_fontstr = name; // if the load really succeded then set font string
+-	} else {
+-		m_fontstr = "";
+-	}
+-
+-	return ret_val;
++	m_fontstr = name;
++	return m_fontimp->load(name);
+ }
+ 
+ unsigned int Font::textWidth(const char * const text, unsigned int size) const {
