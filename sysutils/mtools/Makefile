@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.34 2001/02/24 09:08:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.35 2001/05/05 22:43:34 fgsch Exp $
 
-DATE=		20001213
+COMMENT=	read/write/list/format DOS disks under Unix
+
+DATE=		20010330
 DISTNAME=	mtools-3.9.7
 PKGNAME=	mtools-3.9.7.${DATE}
 CATEGORIES=	sysutils
-NEED_VERSION=	1.355
+NEED_VERSION=	1.406
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/knaff/mtools/
 
 PATCHFILES=	mtools-3.9.7-${DATE}.diff.gz
