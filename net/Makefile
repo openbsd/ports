@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2000/12/24 14:11:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.103 2000/12/26 22:44:51 reinhard Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -39,6 +39,7 @@
      SUBDIR += ipfm
      SUBDIR += irc
      SUBDIR += ircII
+     SUBDIR += irssi
      SUBDIR += jftpgw
      SUBDIR += lftp
      SUBDIR += libnet
