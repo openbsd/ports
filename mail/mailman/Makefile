@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2003/01/18 16:52:17 sturm Exp $
+# $OpenBSD: Makefile,v 1.17 2003/01/18 18:25:10 sturm Exp $
 
 COMMENT=	"mailing list manager with web interface"
 
 DISTNAME=	mailman-2.1
 CATEGORIES=     mail www
 
-HOMEPAGE=	http://www.gnu.org/software/mailman/mailman.html
+HOMEPAGE=	http://www.gnu.org/software/mailman/
 
 MAINTAINER=	Nikolay Sturm <sturm@openbsd.org>
 
