@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2001/12/31 12:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/01/01 12:51:05 shell Exp $
 
 COMMENT=	"fast XSLT module for perl"
 
-VERSION=	1.09
+VERSION=	1.31
 DISTNAME=	XML-LibXSLT-${VERSION}
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	textproc perl5
-NEED_VERSION=	1.489
+NEED_VERSION=	1.504
 
 HOMEPAGE=	http://www.axkit.org/
 
@@ -15,13 +15,10 @@ MASTER_SITE_SUBDIR=	XML
 
 MAINTAINER=	Shell Hung <shell@openbsd.org>
 
-
-PERL_MODULE=	${LOCALBASE}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
 BUILD_DEPENDS=	::textproc/p5-XML-LibXML
 RUN_DPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	xml2.6::textproc/libxml \
 		xslt::textproc/libxslt
-		
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
