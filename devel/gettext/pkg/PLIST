@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2001/05/07 22:41:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2001/05/14 20:59:23 brad Exp $
 bin/gettext
 bin/gettextize
 bin/msgcmp
@@ -21,6 +21,22 @@ share/aclocal/iconv.m4
 share/aclocal/isc-posix.m4
 share/aclocal/lcmessage.m4
 share/aclocal/progtest.m4
+share/doc/gettext/gettext_1.html
+share/doc/gettext/gettext_10.html
+share/doc/gettext/gettext_11.html
+share/doc/gettext/gettext_12.html
+share/doc/gettext/gettext_13.html
+share/doc/gettext/gettext_14.html
+share/doc/gettext/gettext_2.html
+share/doc/gettext/gettext_3.html
+share/doc/gettext/gettext_4.html
+share/doc/gettext/gettext_5.html
+share/doc/gettext/gettext_6.html
+share/doc/gettext/gettext_7.html
+share/doc/gettext/gettext_8.html
+share/doc/gettext/gettext_9.html
+share/doc/gettext/gettext_foot.html
+share/doc/gettext/gettext_toc.html
 share/gettext/ABOUT-NLS
 share/gettext/intl/ChangeLog
 share/gettext/intl/Makefile.in
@@ -69,9 +85,11 @@ share/locale/nn/LC_MESSAGES/gettext.mo
 share/locale/no/LC_MESSAGES/gettext.mo
 share/locale/pl/LC_MESSAGES/gettext.mo
 share/locale/pt/LC_MESSAGES/gettext.mo
+share/locale/pt_BR/LC_MESSAGES/gettext.mo
 share/locale/sl/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
 share/locale/tr/LC_MESSAGES/gettext.mo
 @dirrm share/gettext/po
 @dirrm share/gettext/intl
 @dirrm share/gettext
+@dirrm share/doc/gettext

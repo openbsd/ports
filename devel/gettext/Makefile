@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2001/05/07 22:41:42 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/05/14 20:59:20 brad Exp $
 # $FreeBSD: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
 
 COMMENT=	"GNU gettext"
 
-DISTNAME=	gettext-0.10.36
+DISTNAME=	gettext-0.10.37
 CATEGORIES=	devel
-NEED_VERSION=	1.384
+NEED_VERSION=	1.402
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= gettext
 

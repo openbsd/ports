@@ -1,6 +1,6 @@
---- misc/Makefile.in.orig	Tue Mar 27 12:24:00 2001
-+++ misc/Makefile.in	Tue Apr  3 22:16:07 2001
-@@ -212,13 +212,13 @@ installcheck: installcheck-am
+--- misc/Makefile.in.orig	Thu Apr 19 14:12:18 2001
++++ misc/Makefile.in	Mon May 14 14:57:33 2001
+@@ -215,13 +215,13 @@ installcheck: installcheck-am
  install-exec-am: install-binSCRIPTS
  install-exec: install-exec-am
  
