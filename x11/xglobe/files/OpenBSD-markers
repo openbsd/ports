@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD-markers,v 1.48 2004/10/06 13:27:42 henning Exp $
+# $OpenBSD: OpenBSD-markers,v 1.49 2004/11/09 07:18:37 alek Exp $
 # This is a list of OpenBSD developers and related people.
 #
 -37.457132	144.580589	"Miller"	# Damien
@@ -60,6 +60,7 @@
 51.6		-114.1		"de Raadt"	# Theo
 52.26		4.63		"Dobbelaar"	# Camiel
 52.35		4.62		"Moerbeek"	# Otto
+52.5		21		"Piotrowski"	# Aleksander
 53.13		9		"Finck"		# Jan-Uwe
 53.22		10.00		"Brauer"	# Henning	
 53.56		-113.51		"Beck"		# Bob
