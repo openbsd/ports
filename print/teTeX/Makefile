@@ -3,7 +3,7 @@
 # Date created:		April 28, 1997
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/04/28 04:16:40 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1998/08/04 00:13:40 marc Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -40,7 +40,11 @@ INSTALL_INFO=	/usr/bin/install-info
 pre-install:
 	@${RM} -f ${PREFIX}/share/texmf/ls-R
 	@chown -R bin:bin ${WRKLIB}/info ${WRKLIB}/man
-	@${RM} -f ${WRKLIB}/info/dir ${WRKLIB}/info/localdir ${WRKLIB}/info/*.orig
+	@${RM} -f ${WRKLIB}/info/dir \
+		${WRKLIB}/info/localdir \
+		${WRKLIB}/info/*.orig \
+		${WRKLIB}/info/makeinfo.info \
+		${WRKLIB}/info/texinfo*
 	@chmod 444 ${WRKLIB}/info/* ${WRKLIB}/man/man1/* ${WRKLIB}/man/man5/*
 	@find ${WRKLIB}/texmf/fonts -type d -perm 1755 -exec chmod 755 {} \;
 	@ (cd ${WRKLIB}; tar cf - info man/man1 man/man5) | (cd ${PREFIX}; tar -xpvf -)

@@ -1,8 +1,5 @@
 bin/MakeTeXMF
-bin/makeinfo
-bin/texindex
 bin/pslatex
-bin/install-info
 bin/makeindex.bin
 bin/kpsetool
 bin/makeindex
@@ -90,28 +87,14 @@ info/kpathsea.info-2
 info/kpathsea.info-3
 info/kpathsea.info
 info/latex-1
-info/makeinfo.info
-info/texinfo-10
-info/texinfo-2
-info/texinfo-3
-info/texinfo-4
-info/texinfo-5
-info/texinfo-6
-info/texinfo-7
-info/texinfo-8
-info/texinfo-9
-info/texinfo
 info/latex-3
 info/latex
-info/texinfo-1
-info/texinfo-11
 info/fontname.info-5
 info/fontname.info
 info/latex-2
 info/dvips.info-1
 info/fontname.info-4
 info/kpathsea.info-1
-info/texinfo-12
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/latex %D/info/dir
 @exec install-info %D/info/kpathsea.info %D/info/dir
@@ -3720,3 +3703,16 @@ share/texmf/ls-R
 @dirrm share/texmf/bibtex/bib
 @dirrm share/texmf/bibtex
 @dirrm share/texmf
+@exec echo ""
+@exec echo "--------------------------------------------------------"
+@exec echo "Final touch:"
+@exec echo ""
+@exec echo "1. Run %D/bin/texconfig"
+@exec echo "   to adjust for your local environment."
+@exec echo "2. Chmod 1777 %D/share/texmf/fonts/{pk,tfm}"
+@exec echo "   and all subdirectories if you did not configure"
+@exec echo "   font generation to use a temporary directory."
+@exec echo "3. For further information have a look at"
+@exec echo "   %D/share/texmf/doc/tetex/."
+@exec echo "--------------------------------------------------------"
+@exec echo ""

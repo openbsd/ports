@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Feb 14 02:58:11 1997
-+++ Makefile	Sun Jul 12 20:13:08 1998
++++ Makefile	Mon Aug  3 10:51:05 1998
 @@ -8,10 +8,10 @@
  #=========================================================================
  VERSION = 0.4
@@ -62,7 +62,7 @@
  
  # change the true/false definition of FOIL, if you get an error with wchar_t
  FOIL		= false
-@@ -111,9 +111,9 @@
+@@ -111,17 +111,17 @@
  platform	= $(shell ./config.guess | sed 's/-.*-/-/')
  CWD		:= $(shell pwd)
  INSTALL		= $(CWD)/$(KPSEDIR)/bin/install -c
@@ -75,6 +75,16 @@
  override PATH	:= $(bindir):$(CWD)/bin-extra:$(CWD)/$(KPSEDIR)/bin:$(PATH)
  
  CONFDIRS   = $(KPSEDIR) $(TEXIDIR)
+ ifeq ($(USE_DIALOG),true)
+-SUBDIRS    = $(TEXIDIR) $(MKINDEXDIR) $(KPSEDIR) $(DIALOGDIR) bin-extra
++SUBDIRS    = $(MKINDEXDIR) $(KPSEDIR) $(DIALOGDIR) bin-extra
+ CONFDIRS   += $(DIALOGDIR)
+ else
+-SUBDIRS    = $(TEXIDIR) $(MKINDEXDIR) $(KPSEDIR) bin-extra
++SUBDIRS    = $(MKINDEXDIR) $(KPSEDIR) bin-extra
+ override USE_NCURSES = no
+ endif
+ 
 @@ -205,7 +205,6 @@
  	for i in $(SUBDIRS); do \
  	  (set -x; cd $$i; $(MAKE) $(PASSENV) $@ || exit 1); \
