@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 1999/06/18 03:31:35 marc Exp $
+# $OpenBSD: Makefile,v 1.9 1999/06/18 04:06:16 marc Exp $
 
 DISTNAME=	db-2.7.5
 CATEGORIES=	databases
@@ -36,6 +36,8 @@ do-fetch:
 	fi
 
 post-install:
+	@mv ${PREFIX}/include/db.h ${PREFIX}/include/db2.h
+	@mv ${PREFIX}/lib/libdb.a ${PREFIX}/lib/libdb2.a
 	@${MKDIR} ${PREFIX}/share/examples/db
 	@echo Installing samples: ${PREFIX}/share/examples/db ...
 .for example in ${EXAMPLES}

@@ -7,9 +7,9 @@ bin/db_deadlock
 bin/db_checkpoint
 bin/db_archive
 bin/db_stat
-lib/libdb.a
+lib/libdb2.a
 include/db_185.h
-include/db.h
+include/db2.h
 include/db_cxx.h
 share/doc/db/api_c/DbTxn/abort.html
 share/doc/db/api_c/DbTxn/commit.html
