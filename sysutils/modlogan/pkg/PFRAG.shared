@@ -1,6 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2003/12/14 18:12:23 margarida Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2004/06/24 21:39:44 mjc Exp $
 lib/modlogan/libmla_input_bsdftpd.so
 lib/modlogan/libmla_input_clf.so
+lib/modlogan/libmla_input_cp_ims_login.so
+lib/modlogan/libmla_input_cp_ims_smtp.so
 lib/modlogan/libmla_input_flowraw.so
 lib/modlogan/libmla_input_ipchains.so
 lib/modlogan/libmla_input_ippl.so
@@ -53,3 +55,4 @@ lib/modlogan/libmla_processor_mail.so
 lib/modlogan/libmla_processor_null.so
 lib/modlogan/libmla_processor_telecom.so
 lib/modlogan/libmla_processor_web.so
+NEWDYNLIBDIR(%D/lib/modlogan)

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/12/16 21:16:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/06/24 21:39:44 mjc Exp $
 bin/modlogan
-@comment lib/modlogan/charset.alias
 lib/modlogan/libmla_input_bsdftpd.la
 lib/modlogan/libmla_input_clf.la
+lib/modlogan/libmla_input_cp_ims_login.la
+lib/modlogan/libmla_input_cp_ims_smtp.la
 lib/modlogan/libmla_input_flowraw.la
 lib/modlogan/libmla_input_ipchains.la
 lib/modlogan/libmla_input_ippl.la
@@ -83,7 +84,6 @@ share/locale/es/LC_MESSAGES/modlogan.mo
 share/locale/fr/LC_MESSAGES/modlogan.mo
 share/locale/hu/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
-@comment share/locale/locale.alias
 share/locale/pl/LC_MESSAGES/modlogan.mo
 share/locale/ru/LC_MESSAGES/modlogan.mo
 %%SHARED%%

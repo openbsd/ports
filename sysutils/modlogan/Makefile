@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2004/02/25 13:59:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/24 21:39:44 mjc Exp $
 
 COMMENT=	"modular log analyzer"
 
-DISTNAME=	modlogan-0.8.10
+DISTNAME=	modlogan-0.8.11
 CATEGORIES=	sysutils www
 
-HOMEPAGE=	http://www.modlogan.org/
+HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=modlogan/}
+MASTER_SITES=	${HOMEPAGE}/download/
 
 MAINTAINER=	Michael Coulter <mjc@bitz.ca>
 
