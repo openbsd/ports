@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/08/21 03:39:57 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2003/09/27 14:40:32 jolan Exp $
 
 COMMENT=	"cooperative file distribution system implemented in Python"
-DISTNAME=	BitTorrent-3.2.1b
+DISTNAME=	BitTorrent-3.3
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}
 
@@ -24,7 +24,7 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/BitTorrent
-	${INSTALL_DATA} ${WRKSRC}/{FAQ,README}.txt ${FILESDIR}/README.OpenBSD \
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/BitTorrent
 
 do-regress:

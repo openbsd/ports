@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/08/21 03:39:57 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/09/27 14:40:32 jolan Exp $
 bin/btcompletedir.py
 bin/btdownloadcurses.py
 bin/btdownloadheadless.py
@@ -23,8 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/DownloaderFeedback.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/DownloaderFeedback.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Encrypter.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/Encrypter.pyc
-lib/python${MODPY_VERSION}/site-packages/BitTorrent/EndgameDownloader.py
-lib/python${MODPY_VERSION}/site-packages/BitTorrent/EndgameDownloader.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/HTTPHandler.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/HTTPHandler.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/NatCheck.py
@@ -65,7 +63,6 @@ lib/python${MODPY_VERSION}/site-packages/BitTorrent/track.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/track.pyc
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/zurllib.py
 lib/python${MODPY_VERSION}/site-packages/BitTorrent/zurllib.pyc
-share/doc/BitTorrent/FAQ.txt
 share/doc/BitTorrent/README.OpenBSD
 share/doc/BitTorrent/README.txt
 @dirrm share/doc/BitTorrent
