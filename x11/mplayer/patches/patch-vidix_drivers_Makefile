@@ -1,15 +1,15 @@
-$OpenBSD: patch-vidix_drivers_Makefile,v 1.4 2002/10/14 09:50:48 pvalchev Exp $
---- vidix/drivers/Makefile.orig	Fri Aug 23 01:29:46 2002
-+++ vidix/drivers/Makefile	Thu Sep  5 17:38:41 2002
+$OpenBSD: patch-vidix_drivers_Makefile,v 1.5 2003/01/03 23:06:36 brad Exp $
+--- vidix/drivers/Makefile.orig	Sat Dec 21 14:06:23 2002
++++ vidix/drivers/Makefile	Wed Dec 25 21:55:52 2002
 @@ -3,6 +3,7 @@
  include ../../config.mak
  
  BINDIR = $(LIBDIR)/mplayer/vidix
 +PATH = /bin:/usr/bin
  
- 
- RADEON_VID=radeon_vid.so
-@@ -109,7 +110,7 @@ depend:
+ CYBERBLADE_VID=cyberblade_vid.so
+ CYBERBLADE_SRCS=cyberblade_vid.c
+@@ -120,7 +121,7 @@ depend:
  
  install:
  	mkdir -p $(LIBDIR)/mplayer/vidix

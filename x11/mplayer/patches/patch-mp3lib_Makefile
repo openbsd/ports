@@ -1,7 +1,7 @@
-$OpenBSD: patch-mp3lib_Makefile,v 1.3 2002/12/22 14:19:47 espie Exp $
---- mp3lib/Makefile.orig	Sun Sep  1 20:25:24 2002
-+++ mp3lib/Makefile	Sun Dec 22 14:50:51 2002
-@@ -38,9 +38,6 @@ libMP3.a:	$(OBJS)
+$OpenBSD: patch-mp3lib_Makefile,v 1.4 2003/01/03 23:06:36 brad Exp $
+--- mp3lib/Makefile.orig	Tue Dec 24 01:05:43 2002
++++ mp3lib/Makefile	Wed Dec 25 21:55:52 2002
+@@ -43,9 +43,6 @@ libMP3.a:	$(OBJS)
  ifeq ($(TARGET_OS),CYGWIN)
  	./mp3lib_objfix.sh
  endif

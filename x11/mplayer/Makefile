@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2002/12/22 14:19:47 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2003/01/03 23:06:35 brad Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS=		i386 macppc sparc64
 
-COMMENT=		"Movie player supporting MPEG, DIVX, AVI, ASF, MOV & more"
-DISTNAME=		MPlayer-0.90rc1
+COMMENT=		"Movie player supporting MPEG, DivX, AVI, ASF, MOV & more"
+DISTNAME=		MPlayer-0.90rc2
 DIST_SUBDIR=		mplayer
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		x11
@@ -12,6 +12,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.mplayerhq.hu
 
+# GPL
 PERMIT_PACKAGE_CDROM=	"patents"
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -54,6 +55,7 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--enable-select \
 		--enable-vidix \
 		--enable-vorbis \
+		--enable-menu \
 		--with-extraincdir=${LOCALBASE}/include/libpng:${LOCALBASE}/include \
 		--with-extralibdir=${LOCALBASE}/lib \
 		--confdir=${LOCALBASE}/share/mplayer
@@ -81,7 +83,6 @@ CONFIGURE_ARGS+=--disable-gui \
 	--disable-xv \
 	--disable-x11 \
 	--disable-sunaudio
-PLIST=pkg/PLIST-no_x11
 .  endif
 .else
 CONFIGURE_ARGS+=--enable-gui \

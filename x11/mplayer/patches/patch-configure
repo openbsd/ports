@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.17 2002/12/22 14:19:47 espie Exp $
---- configure.orig	Sat Dec  7 00:54:02 2002
-+++ configure	Sun Dec  8 21:08:07 2002
-@@ -3278,7 +3278,7 @@ echores "$_sgiaudio"
+$OpenBSD: patch-configure,v 1.18 2003/01/03 23:06:36 brad Exp $
+--- configure.orig	Mon Dec 23 01:33:05 2002
++++ configure	Wed Dec 25 21:55:52 2002
+@@ -3296,7 +3296,7 @@ echores "$_sgiaudio"
  
  
  echocheck "VCD support"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.17 2002/12/22 14:19:47 espie Exp $
    _inputmodules="vcd $_inputmodules"
    _def_vcd='#define HAVE_VCD 1'
    echores "ok"
-@@ -3840,7 +3840,7 @@ fi
+@@ -3858,7 +3858,7 @@ fi
  
  
  echocheck "iconv"
