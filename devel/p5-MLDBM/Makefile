@@ -1,0 +1,23 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2001/02/01 17:38:29 avsm Exp $
+
+DISTNAME=	MLDBM-2.00
+PKGNAME=	p5-${DISTNAME}
+CATEGORIES=	devel perl5
+NEED_VERSION=	1.351
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR= MLDBM
+
+MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/perl5/site_perl/FreezeThaw.pm::devel/p5-FreezeThaw
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+CONFIGURE_STYLE= perl
+
+.include <bsd.port.mk>

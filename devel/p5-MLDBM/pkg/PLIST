@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/01 17:38:29 avsm Exp $
+libdata/perl5/site_perl/MLDBM.pm
+libdata/perl5/site_perl/MLDBM/Serializer/Data/Dumper.pm
+libdata/perl5/site_perl/MLDBM/Serializer/FreezeThaw.pm
+libdata/perl5/site_perl/MLDBM/Serializer/Storable.pm
+man/man3/MLDBM.3p
+@dirrm libdata/perl5/site_perl/MLDBM/Serializer/Data
+@dirrm libdata/perl5/site_perl/MLDBM/Serializer
+@dirrm libdata/perl5/site_perl/MLDBM

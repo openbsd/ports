@@ -1,0 +1,6 @@
+This module can be used to store multidimensional hash structures
+in tied hashes (including DBM files).
+
+Optionally, you can also switch to other serializing packages such
+as FreezeThaw and Storable.  Storable provides much greater speeds,
+and the performance of FreezeThaw is comparable to Data::Dumper.
