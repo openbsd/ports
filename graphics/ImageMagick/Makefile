@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2001/03/07 22:47:50 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2001/04/06 17:33:28 brad Exp $
+
+COMMENT=	"display and manipulate images under X11"
 
 DISTNAME=	ImageMagick-5.2.9
 CATEGORIES=     graphics
-NEED_VERSION=	1.336
-MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
-		ftp://ftp.cdrom.com/pub/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
-		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
-		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
+NEED_VERSION=	1.384
+MASTER_SITES=	ftp://ftp.dqc.org/pub/brad/source/
 
 HOMEPAGE=	http://www.simplesystems.org/ImageMagick/
 
@@ -20,8 +16,8 @@ LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype \
 		xml2.5::textproc/libxml
-BUILD_DEPENDS=	fig2dev::print/transfig \
-		picttoppm::graphics/netpbm
+BUILD_DEPENDS=	fig2dev:transfig-*:print/transfig \
+		picttoppm:netpbm-*:graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
