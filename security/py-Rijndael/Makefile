@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2003/08/29 20:34:54 sturm Exp $
+# $OpenBSD: Makefile,v 1.8 2004/02/04 07:38:59 xsa Exp $
 
 COMMENT=	"python implementation of the Rijndael encryption algorithm"
 
-VERSION=	1.1
-DISTNAME=	pyrijndael-snapshot
+VERSION=	1.3
+DISTNAME=	pyrijndael-${VERSION}-src
 PKGNAME=	py-Rijndael-${VERSION}
 CATEGORIES=     security devel
 
@@ -18,11 +18,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
-DIST_SUBDIR=	${PKGNAME}
 
 MODULES=	python
 
-WRKSRC=	${WRKDIR}/pyrijndael
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 do-build:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}
