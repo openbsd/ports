@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_client_opencm_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/client/opencm.c.orig	Mon Aug  5 23:58:07 2002
++++ base/src/client/opencm.c	Tue Aug 27 12:25:26 2002
+@@ -334,7 +334,7 @@ client_doDupBranchMut(Repository *r, Res
+ 		      unsigned mutFlags)
+ {
+   Mutable *dupM = NULL;
+-  unsigned long version = 0ul;
++  u_int32_t version = 0ul;
+ 
+   /* By default, we want to copy the ACLs when we duplicate the mutable.
+    * The --private command line option overrides this and sets the ACLs of

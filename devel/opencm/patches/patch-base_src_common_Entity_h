@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_src_common_Entity_h,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/common/Entity.h.orig	Thu Jul 18 20:30:51 2002
++++ base/src/common/Entity.h	Tue Aug 27 12:25:27 2002
+@@ -58,7 +58,7 @@ struct Entity {
+    */
+   
+   const char *contentTrueName;
+-  unsigned long length;		/* length of object */
++  u_int32_t length;		/* length of object */
+ 
+   /* Miscellaneous per-entity meta information. Much of this is
+    * contained in the Change record, but it isn't accessable to the
+@@ -72,7 +72,7 @@ struct Entity {
+   
+   unsigned char entityType;	/* type of content */
+ 
+-  unsigned long entityPerms;	/* permissions flags */
++  u_int32_t entityPerms;	/* permissions flags */
+ 
+   const char *parent;	       /* preceding Entity (on same Branch) */
+   const char *mergeParent;     /* merged, preceding Entity (if any) */

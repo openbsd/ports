@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_repos_fs_FSRepos_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/repos/fs/FSRepos.c.orig	Mon Aug  5 20:06:47 2002
++++ base/src/repos/fs/FSRepos.c	Tue Aug 27 12:25:27 2002
+@@ -1005,7 +1005,7 @@ fsrepos_GetMutable(Repository *r, const 
+ }
+ 
+ static Mutable *
+-fsrepos_ReviseMutable(Repository *r, const char *mURI, unsigned long
++fsrepos_ReviseMutable(Repository *r, const char *mURI, u_int32_t
+ 		      long curTopRev, void *s)
+ {
+   Mutable *m = repos_GetMutable(r, mURI);

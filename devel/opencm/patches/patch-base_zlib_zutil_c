@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_zlib_zutil_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/zlib/zutil.c.orig	Mon Jul 22 01:37:42 2002
++++ base/zlib/zutil.c	Tue Aug 27 12:25:27 2002
+@@ -211,6 +211,8 @@ voidpf zcalloc (opaque, items, size)
+     unsigned size;
+ {
+     if (opaque) items += size - size; /* make compiler happy */
++    if (items * size == 0)
++	return (NULL);
+     return (voidpf)calloc(items, size);
+ }
+ 

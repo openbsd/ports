@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_repos_net_NetRepository_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/repos/net/NetRepository.c.orig	Mon Jul 22 02:02:48 2002
++++ base/src/repos/net/NetRepository.c	Tue Aug 27 12:25:27 2002
+@@ -41,7 +41,7 @@
+ #include <opencm.h>
+ #include <repos/opencmrepos.h>
+ 
+-static unsigned long request_id = 0;
++static u_int32_t request_id = 0;
+ 
+ #define make_request(x) do_make_request(OP_##x)
+ static Request *

@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_src_common_ServerRequest_h,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/common/ServerRequest.h.orig	Tue Jul 16 21:49:02 2002
++++ base/src/common/ServerRequest.h	Tue Aug 27 12:25:27 2002
+@@ -41,7 +41,7 @@
+  * POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-typedef unsigned long reqlen_t;
++typedef u_int32_t reqlen_t;
+ 
+ typedef struct Request {
+   Serializable ser;

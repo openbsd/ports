@@ -1,0 +1,92 @@
+$OpenBSD: patch-base_tools_cvsconvert_py,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/tools/cvsconvert.py.orig	Mon Jul 29 22:48:41 2002
++++ base/tools/cvsconvert.py	Tue Aug 27 12:25:27 2002
+@@ -12,9 +12,9 @@ files = []
+ versions = []
+ commits = {}
+ 
+-scratch_dir = "/tmp/scratchme.$$"
++scratch_dir = "$sd/workspace"
+ co_scratchfile = "%s.%d" % ("/tmp/cvscvt-coscratch", os.getpid())
+-msg_scratchfile = "/tmp/cvscvt-msgscratch.$$"
++msg_scratchfile = "$sd/cvscvt-msgscratch.$$"
+ startup_dir = os.getcwd()
+ verbose = 0
+ 
+@@ -202,6 +202,9 @@ class CvtSink:
+         # a branch was created and the file was immediately deleted on the
+         # branch. 
+         v.operation = "I"
++      elif (v.state == "dead" and brstate[br] == "dead"):
++	# I dont know why this happened, but it exists in OpenBSD cvs.
++	v.operation = "D"
+       else:
+         raise "%s:%s: Unknown object state transition (%s -> %s)!" % (self.rcsname, v.revision, brstate[br], v.state)
+     
+@@ -554,7 +557,7 @@ class AppGui(Frame):
+     if len(adds) > 0:
+       avec = adds
+       while len(avec) > 0:
+-        self.text.insert(END, "${OPENCM} --flush-io -C %s add" % scratch_dir, "CMD")
++        self.text.insert(END, "cd %s && ${OPENCM} --flush-io add" % scratch_dir, "CMD")
+         map (lambda x, self=self: self.text.insert(END, " '%s'" % x.opencmname, "INPUT"), avec[0:10])
+         self.text.insert(END, "\n", "CMD")
+         self.text.insert(END, "checkstatus $? \"add failed\"\n", "CMD")
+@@ -563,7 +566,7 @@ class AppGui(Frame):
+     if len(deletes) > 0:
+       dvec = deletes
+       while len(dvec) > 0:
+-        self.text.insert(END, "${OPENCM} --flush-io -C %s rm" % scratch_dir, "CMD")
++        self.text.insert(END, "cd %s && ${OPENCM} --flush-io rm" % scratch_dir, "CMD")
+         map (lambda x, self=self: self.text.insert(END, " '%s'" % x.opencmname, "INPUT"), dvec[0:10])
+         self.text.insert(END, "\n", "CMD")
+         self.text.insert(END, "checkstatus $? \"remove failed\"\n", "CMD")
+@@ -578,7 +581,7 @@ class AppGui(Frame):
+     # Note: Following activity is illegal in 17 states.
+     avec = active
+     while len(avec) > 0:
+-      self.text.insert(END, "${OPENCM} --flush-io -C %s --force-hash status" % scratch_dir, "CMD")
++      self.text.insert(END, "cd %s && ${OPENCM} --flush-io --force-hash status" % scratch_dir, "CMD")
+       map (lambda x, self=self: self.text.insert(END, " %s" % x.opencmname, "INPUT"), avec[0:10])
+       self.text.insert(END, "\n", "CMD")
+       self.text.insert(END, "checkstatus $? \"status check failed\"\n", "CMD")
+@@ -593,7 +596,7 @@ class AppGui(Frame):
+     
+     # re_squote.sub("'\"'\"'", cmtmsg))
+ 
+-    self.text.insert(END, "${OPENCM} --flush-io -C %s commit --messagefile %s\n" %
++    self.text.insert(END, "cd %s && ${OPENCM} --flush-io commit --messagefile %s\n" %
+                      (scratch_dir, msg_scratchfile), "CMD")
+     self.text.insert(END, "checkstatus $? \"commit failed\"\n", "CMD")
+     self.text.insert(END, "rm %s\n" % msg_scratchfile, "CMD")
+@@ -636,9 +639,11 @@ class AppGui(Frame):
+ 
+     self.text.insert(END, "OPENCM=${OPENCM:-cm}\n", "CMD")
+     self.text.insert(END, "export OPENCM\n", "CMD")
++    self.text.insert(END, "TMPDIR=${TMPDIR:-/tmp}\n", "CMD")
++    self.text.insert(END, "sd=$(mktemp -d ${TMPDIR}/scratchme.XXXXXX)\n", "CMD")
+     self.text.insert(END, "\n")
+ 
+-    self.text.insert(END, "function checkstatus()\n");
++    self.text.insert(END, "checkstatus()\n");
+     self.text.insert(END, "{\n");
+     self.text.insert(END, "  if [ $1 -ne 0 ]\n");
+     self.text.insert(END, "  then\n");
+@@ -647,7 +652,7 @@ class AppGui(Frame):
+     self.text.insert(END, "  fi\n");
+     self.text.insert(END, "}\n");
+     self.text.insert(END, "\n")
+-    self.text.insert(END, "function process_cvsignore()\n");
++    self.text.insert(END, "process_cvsignore()\n");
+     self.text.insert(END, "{\n");
+     self.text.insert(END, "  echo CONVERTING .cvsignore: $1 '->' $2\n");
+     self.text.insert(END, "  sed 's/^/exclude /' $1 > $2\n");
+@@ -660,7 +665,7 @@ class AppGui(Frame):
+     self.text.insert(END, "checkstatus $? \"create project failed\"\n", "CMD");
+ 
+     self.text.insert(END, "rm -rf %s\n" % scratch_dir, "CMD")
+-    self.text.insert(END, "mkdir %s\n" % scratch_dir, "CMD")
++    self.text.insert(END, "mkdir -p %s\n" % scratch_dir, "CMD")
+     self.text.insert(END, "\n")
+     self.text.insert(END, "# Check out empty project so we have something to work with\n", "COMMENT")
+     self.text.insert(END, "(cd %s;${OPENCM} checkout %s)\n" % (scratch_dir, self.petName.get()), "CMD")

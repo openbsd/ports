@@ -1,6 +1,6 @@
---- base/src/client/command.c.orig	Wed Aug 14 17:54:02 2002
-+++ base/src/client/command.c	Wed Aug 14 17:54:18 2002
-@@ -154,7 +154,7 @@
+--- base/src/client/command.c.orig	Mon Aug  5 16:03:03 2002
++++ base/src/client/command.c	Tue Aug 27 12:30:49 2002
+@@ -154,7 +154,7 @@ struct command top_cmds[] = {
    { "add",       opencm_add_file,   1, CF_OPTARGS|CF_NOCONNECT|CF_WSINIT, 0,
      "add.help" },
    { "adduser",   opencm_add_user,   2, CF_ADMIN, 0,

@@ -1,0 +1,297 @@
+$OpenBSD: patch-base_src_common_SDR_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/common/SDR.c.orig	Mon Jul 29 22:48:31 2002
++++ base/src/common/SDR.c	Tue Aug 27 12:27:10 2002
+@@ -82,8 +82,8 @@ struct serializer {
+   void           (*w_u16)(const char *, SDR_stream *, unsigned short);
+   unsigned short (*r_u16)(const char *, SDR_stream *);
+ 
+-  void           (*w_u32)(const char *, SDR_stream *, unsigned long);
+-  unsigned long  (*r_u32)(const char *, SDR_stream *);
++  void           (*w_u32)(const char *, SDR_stream *, u_int32_t);
++  u_int32_t  (*r_u32)(const char *, SDR_stream *);
+ 
+   void           (*w_u64)(const char *, SDR_stream *, 
+ 			  oc_uint64_t);
+@@ -92,8 +92,8 @@ struct serializer {
+   void           (*w_buffer)(const char *elem, SDR_stream *, const Buffer*);
+   Buffer *       (*r_buffer)(const char *elem, SDR_stream *, ocmoff_t len);
+ 
+-  void           (*w_bytes)(const char *, SDR_stream *, unsigned long len, const void *);
+-  void *         (*r_bytes)(const char *, SDR_stream *, unsigned long len);
++  void           (*w_bytes)(const char *, SDR_stream *, u_int32_t len, const void *);
++  void *         (*r_bytes)(const char *, SDR_stream *, u_int32_t len);
+ 
+   void           (*w_string)(const char *, SDR_stream *, const char *);
+   char *         (*r_string)(const char *, SDR_stream *);
+@@ -568,8 +568,8 @@ stream_ungetc(SDR_stream *strm, int c)
+ size_t
+ stream_vprintf(SDR_stream *s, const char *fmt, va_list ap)
+ {
+-  unsigned long len;
+-  unsigned long width = 0;
++  u_int32_t len;
++  u_int32_t width = 0;
+   OC_bool sign;
+   OC_bool rightAdjust;
+   char fillchar;
+@@ -584,7 +584,7 @@ stream_vprintf(SDR_stream *s, const char
+       continue;
+     }
+ 
+-    /* largest thing we might convert fits in 20 digits (unsigned long
++    /* largest thing we might convert fits in 20 digits (u_int32_t
+      * long as decimal */
+     
+     pend = &buf[20];
+@@ -647,7 +647,7 @@ stream_vprintf(SDR_stream *s, const char
+     case 'd':
+       {
+ 	long l;
+-	unsigned long ul;
++	u_int32_t ul;
+ 
+ 	l = va_arg(ap, long);
+ 	      
+@@ -661,7 +661,7 @@ stream_vprintf(SDR_stream *s, const char
+ 	  ul = (l < 0) ? (unsigned) -l : (unsigned) l;
+ 
+ 	  if (l == LONG_MIN)
+-	    ul = ((unsigned long) LONG_MAX) + 1ul;
++	    ul = ((u_int32_t) LONG_MAX) + 1ul;
+ 
+ 	  while(ul) {
+ 	    *(--p) = '0' + (ul % 10);
+@@ -675,9 +675,9 @@ stream_vprintf(SDR_stream *s, const char
+       }
+     case 'u':
+       {
+-	unsigned long ul;
++	u_int32_t ul;
+ 
+-	ul = va_arg(ap, unsigned long);
++	ul = va_arg(ap, u_int32_t);
+ 	      
+ 	if (ul == 0) {
+ 	  *(--p) = '0';
+@@ -692,11 +692,11 @@ stream_vprintf(SDR_stream *s, const char
+       }
+     case 'x':
+       {
+-	unsigned long ul;
++	u_int32_t ul;
+ 
+ 	char *hexout = "0123456789abcdef";
+ 
+-	ul = va_arg(ap, unsigned long);
++	ul = va_arg(ap, u_int32_t);
+ 	      
+ 	if (ul == 0) {
+ 	  *(--p) = '0';
+@@ -826,7 +826,7 @@ stream_scanf(SDR_stream *s, const char *
+     case 'u':
+     case 'U':
+       {
+-	unsigned long ull = 0;
++	u_int32_t ull = 0;
+ 
+ 	do {
+ 	  c = stream_getc(s);
+@@ -852,10 +852,10 @@ stream_scanf(SDR_stream *s, const char *
+ 	--input_count;
+ 
+ 	if (*fmt == 'u') {
+-	  unsigned long *ulp;
++	  u_int32_t *ulp;
+ 
+-	  ulp = va_arg(ap, unsigned long *);
+-	  *ulp = (unsigned long) ull;
++	  ulp = va_arg(ap, u_int32_t *);
++	  *ulp = (u_int32_t) ull;
+ 	  assert(ull <= ULONG_MAX);
+ 	}
+ 	else {
+@@ -869,10 +869,10 @@ stream_scanf(SDR_stream *s, const char *
+       }
+     case 'x':
+       {
+-	unsigned long ul = 0;
+-	unsigned long *ulp;
++	u_int32_t ul = 0;
++	u_int32_t *ulp;
+ 
+-	ulp = va_arg(ap, unsigned long *);
++	ulp = va_arg(ap, u_int32_t *);
+ 
+ 	do {
+ 	  c = stream_getc(s);
+@@ -1345,13 +1345,13 @@ sdr_r_u16(const char *elem, SDR_stream *
+ }
+ 
+ void
+-sdr_w_u32(const char *elem, SDR_stream *strm, unsigned long u)
++sdr_w_u32(const char *elem, SDR_stream *strm, u_int32_t u)
+ {
+   assert(sermodes[strm->format].w_u32);
+   sermodes[strm->format].w_u32(elem, strm, u);  
+ }
+ 
+-unsigned long
++u_int32_t
+ sdr_r_u32(const char *elem, SDR_stream *strm)
+ {
+   assert(sermodes[strm->format].r_u32);
+@@ -1387,14 +1387,14 @@ sdr_r_buffer(const char *elem, SDR_strea
+ }
+ 
+ void
+-sdr_w_bytes(const char *elem, SDR_stream *strm, unsigned long len, const void *v)
++sdr_w_bytes(const char *elem, SDR_stream *strm, u_int32_t len, const void *v)
+ {
+   assert(sermodes[strm->format].w_bytes);
+   sermodes[strm->format].w_bytes(elem, strm, len, v);  
+ }
+ 
+ void *
+-sdr_r_bytes(const char *elem, SDR_stream *strm, unsigned long len)
++sdr_r_bytes(const char *elem, SDR_stream *strm, u_int32_t len)
+ {
+   assert(sermodes[strm->format].r_bytes);
+   return sermodes[strm->format].r_bytes(elem, strm, len);  
+@@ -1496,7 +1496,7 @@ bin_r_u16(const char *elem, SDR_stream *
+   u = 0;
+ 
+   do {
+-    unsigned long bu;
++    u_int32_t bu;
+     
+     i--;
+     u = u << 8;
+@@ -1508,7 +1508,7 @@ bin_r_u16(const char *elem, SDR_stream *
+ }
+ 
+ static void
+-bin_w_u32(const char *elem, SDR_stream *strm, unsigned long u)
++bin_w_u32(const char *elem, SDR_stream *strm, u_int32_t u)
+ {
+   int i;
+   unsigned char bytes[sizeof(u)];
+@@ -1522,11 +1522,11 @@ bin_w_u32(const char *elem, SDR_stream *
+     THROW(ExTruncated, "Serialization write error");
+ }
+ 
+-static unsigned long
++static u_int32_t
+ bin_r_u32(const char *elem, SDR_stream *strm)
+ {
+   int i;
+-  unsigned long u;
++  u_int32_t u;
+   unsigned char bytes[sizeof(u)];
+ 
+   if (stream_read(strm, bytes, sizeof(u)) < sizeof(u))
+@@ -1536,7 +1536,7 @@ bin_r_u32(const char *elem, SDR_stream *
+   u = 0;
+ 
+   do {
+-    unsigned long bu;
++    u_int32_t bu;
+     
+     i--;
+     u = u << 8;
+@@ -1589,7 +1589,7 @@ bin_r_u64(const char *elem, SDR_stream *
+ 
+ /* Note that these do NOT read/write the actual length! */
+ static void
+-bin_w_bytes(const char *elem, SDR_stream *strm, unsigned long len, 
++bin_w_bytes(const char *elem, SDR_stream *strm, u_int32_t len, 
+ 	    const void *v)
+ {
+   const char *s = (const char *) v;
+@@ -1599,7 +1599,7 @@ bin_w_bytes(const char *elem, SDR_stream
+ }
+ 
+ static void *
+-bin_r_bytes(const char *elem, SDR_stream *strm, unsigned long len)
++bin_r_bytes(const char *elem, SDR_stream *strm, u_int32_t len)
+ {
+   char * s = (char *) GC_MALLOC_ATOMIC(sizeof(char) * (len+1));
+   s[len] = 0;
+@@ -1935,7 +1935,7 @@ texty_w_u16(const char *elem, SDR_stream
+ }
+ 
+ static void
+-texty_w_u32(const char *elem, SDR_stream *strm, unsigned long num)
++texty_w_u32(const char *elem, SDR_stream *strm, u_int32_t num)
+ {
+   texty_do_indent(strm);
+   stream_printf(strm, "%s I %u\n", elem, num);
+@@ -1955,7 +1955,7 @@ texty_r_u16(const char *elem, SDR_stream
+   return fld->value;
+ }
+ 
+-static unsigned long
++static u_int32_t
+ texty_r_u32(const char *elem, SDR_stream *strm)
+ {
+   texty_field *fld = texty_get_field(elem, 'I', strm);
+@@ -1978,7 +1978,7 @@ texty_r_u64(const char *elem, SDR_stream
+ 
+ static void
+ texty_w_bytestring(const char *elem, SDR_stream *strm, const char ty, 
+-		   unsigned long len, const void *vp)
++		   u_int32_t len, const void *vp)
+ {
+   texty_do_indent(strm);
+ 
+@@ -2019,14 +2019,14 @@ texty_r_buffer(const char *elem, SDR_str
+ }
+ 
+ static void
+-texty_w_bytes(const char *elem, SDR_stream *strm, unsigned long len,
++texty_w_bytes(const char *elem, SDR_stream *strm, u_int32_t len,
+               const void *obj)
+ {
+   texty_w_bytestring(elem, strm, 'B', len, obj);
+ }
+ 
+ static void *
+-texty_r_bytes(const char *elem, SDR_stream *strm, unsigned long len)
++texty_r_bytes(const char *elem, SDR_stream *strm, u_int32_t len)
+ {
+   texty_field *fld = texty_get_field(elem, 'B', strm);
+   return fld->rep;
+@@ -2169,7 +2169,7 @@ encodeString(const void *vp, ocmoff_t le
+ 
+ static void
+ dtexty_w_bytestring(const char *elem, SDR_stream *strm, const char ty, 
+-                    unsigned long len, const void *vp)
++                    u_int32_t len, const void *vp)
+ {
+   ocmoff_t elen = len;		/* encoded length */
+   const void *evp = vp;		/* encoded string */
+@@ -2334,7 +2334,7 @@ dtexty_get_field(const char *name, char 
+ #if 0
+ static void
+ dtexty_w_bytestring(const char *elem, SDR_stream *strm, const char ty, 
+-                    unsigned long len, const void *vp)
++                    u_int32_t len, const void *vp)
+ {
+   texty_do_indent(strm);
+ 
+@@ -2415,14 +2415,14 @@ dtexty_r_buffer(const char *elem, SDR_st
+    dtexty_w_bytestring and dtexty_get_field. Yuck.
+ */
+ static void
+-dtexty_w_bytes(const char *elem, SDR_stream *strm, unsigned long len,
++dtexty_w_bytes(const char *elem, SDR_stream *strm, u_int32_t len,
+                const void *s)
+ {
+   dtexty_w_bytestring(elem, strm, 'B', len, s);
+ }
+ 
+ static void *
+-dtexty_r_bytes(const char *elem, SDR_stream *strm, unsigned long len)
++dtexty_r_bytes(const char *elem, SDR_stream *strm, u_int32_t len)
+ {
+   texty_field *fld = dtexty_get_field(elem, 'B', strm);
+   return fld->rep;

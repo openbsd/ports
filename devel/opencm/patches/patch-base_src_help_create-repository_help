@@ -1,0 +1,9 @@
+$OpenBSD: patch-base_src_help_create-repository_help,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/help/create-repository.help.orig	Mon Jul  8 16:31:55 2002
++++ base/src/help/create-repository.help	Tue Aug 27 12:25:27 2002
+@@ -44,4 +44,4 @@ repository, via @i{local-path}.  The fir
+ is specified via @i{admin-user}, which must be the local path to a PEM file
+ representing the admin user's X.509 certificate.
+ 
+-See also:  @b{add user}, @b{create user}
++See also:  @b{adduser}, @b{create user}

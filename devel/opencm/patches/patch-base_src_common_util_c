@@ -1,0 +1,66 @@
+$OpenBSD: patch-base_src_common_util_c,v 1.1 2002/08/27 17:43:14 todd Exp $
+--- base/src/common/util.c.orig	Mon Aug  5 16:03:07 2002
++++ base/src/common/util.c	Tue Aug 27 12:25:27 2002
+@@ -179,8 +179,8 @@ nmequal(const char *s1, const char *s2)
+ size_t
+ xprintf(const char *fmt, ...)
+ {
+-  unsigned long len;
+-  unsigned long width = 0;
++  u_int32_t len;
++  u_int32_t width = 0;
+   OC_bool sign;
+   OC_bool rightAdjust;
+   char fillchar;
+@@ -199,7 +199,7 @@ xprintf(const char *fmt, ...)
+       continue;
+     }
+ 
+-    /* largest thing we might convert fits in 20 digits (unsigned long
++    /* largest thing we might convert fits in 20 digits (u_int32_t
+      * long as decimal */
+     
+     pend = &buf[20];
+@@ -263,7 +263,7 @@ xprintf(const char *fmt, ...)
+     case 'd':
+       {
+ 	long l;
+-	unsigned long ul;
++	u_int32_t ul;
+ 
+ 	l = va_arg(ap, long);
+ 	      
+@@ -277,7 +277,7 @@ xprintf(const char *fmt, ...)
+ 	  ul = (l < 0) ? (unsigned) -l : (unsigned) l;
+ 
+ 	  if (l == LONG_MIN)
+-	    ul = ((unsigned long) LONG_MAX) + 1ul;
++	    ul = ((u_int32_t) LONG_MAX) + 1ul;
+ 
+ 	  while(ul) {
+ 	    *(--p) = '0' + (ul % 10);
+@@ -288,9 +288,9 @@ xprintf(const char *fmt, ...)
+       }
+     case 'u':
+       {
+-	unsigned long ul;
++	u_int32_t ul;
+ 
+-	ul = va_arg(ap, unsigned long);
++	ul = va_arg(ap, u_int32_t);
+ 	      
+ 	if (ul == 0) {
+ 	  *(--p) = '0';
+@@ -305,10 +305,10 @@ xprintf(const char *fmt, ...)
+       }
+     case 'x':
+       {
+-	unsigned long ul;
++	u_int32_t ul;
+ 	static char *hex_digits = "0123456789abcdef";
+ 
+-	ul = va_arg(ap, unsigned long);
++	ul = va_arg(ap, u_int32_t);
+ 	      
+ 	if (ul == 0) {
+ 	  *(--p) = '0';

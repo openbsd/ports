@@ -1,6 +1,6 @@
---- base/src/help/revert.help.orig	Thu Aug 15 02:27:03 2002
-+++ base/src/help/revert.help	Thu Aug 15 02:27:48 2002
-@@ -43,7 +43,7 @@
+--- base/src/help/revert.help.orig	Sun Aug  4 11:51:40 2002
++++ base/src/help/revert.help	Tue Aug 27 12:30:49 2002
+@@ -43,7 +43,7 @@ Removes all modifications to a user's Wo
  the last @b{commit}.
  
  If you only want to revert a single file, or a group of files, delete

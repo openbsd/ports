@@ -1,6 +1,6 @@
---- base/src/help/bind.help.orig	Wed Aug 14 17:51:38 2002
-+++ base/src/help/bind.help	Wed Aug 14 17:51:48 2002
-@@ -43,5 +43,5 @@
+--- base/src/help/bind.help.orig	Sun Aug  4 11:51:35 2002
++++ base/src/help/bind.help	Tue Aug 27 12:30:49 2002
+@@ -43,5 +43,5 @@ Adds an entry in the user's directory th
  In most cases @i{value} is the truename of some archived object and
  @i{key} is the more user-friendly name associated with that object.
  

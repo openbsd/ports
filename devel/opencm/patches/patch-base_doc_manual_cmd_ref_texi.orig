@@ -1,6 +1,6 @@
---- base/doc/manual/cmd-ref.texi.orig	Wed Jul 17 12:10:30 2002
-+++ base/doc/manual/cmd-ref.texi	Tue Aug 27 12:36:18 2002
-@@ -21,7 +21,7 @@ specified @cmdarg{member} must either be
+--- base/doc/manual/cmd-ref.texi.orig	Wed Aug 14 17:50:36 2002
++++ base/doc/manual/cmd-ref.texi	Wed Aug 14 17:50:46 2002
+@@ -21,7 +21,7 @@
  have write access on the group in order to add members to it.
  
  @item

@@ -1,6 +1,7 @@
---- base/src/help/gadd.help.orig	Wed Aug 14 17:51:19 2002
-+++ base/src/help/gadd.help	Wed Aug 14 17:51:26 2002
-@@ -43,4 +43,4 @@
+$OpenBSD: patch-base_src_help_gadd_help,v 1.2 2002/08/27 17:43:14 todd Exp $
+--- base/src/help/gadd.help.orig	Mon Jul 29 22:48:34 2002
++++ base/src/help/gadd.help	Tue Aug 27 12:25:27 2002
+@@ -43,4 +43,4 @@ Add @i{member} to the specified (existin
  @i{member} must either be a user or group and must be defined in executing
  user's directory.
  
