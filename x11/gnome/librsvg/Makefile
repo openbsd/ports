@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/01/31 19:00:10 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2003/04/11 05:05:02 marcm Exp $
 
 COMMENT=		"SAX-based render library for SVG files"
 
@@ -19,7 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		gettext
 
-BUILD_DEPENDS= 		:pkgconfig->=0.12.0p1:devel/pkgconfig
+BUILD_DEPENDS= 		:gtk+2->=2.0.0:x11/gtk+2 \
+			:libart->=2.3.10:graphics/libart \
+			:libxml->=2.4.7:textproc/libxml \
+			:pkgconfig->=0.12.0p1:devel/pkgconfig \
+			:popt->=1.5.0:devel/popt
+						
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
