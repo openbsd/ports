@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_platform_h,v 1.1 2004/03/02 21:20:12 xsa Exp $
---- include/platform.h.orig	2004-01-11 08:57:03.000000000 +0100
-+++ include/platform.h	2004-03-03 00:15:26.000000000 +0100
+$OpenBSD: patch-include_platform_h,v 1.2 2004/07/14 14:07:45 xsa Exp $
+--- include/platform.h.orig	Fri Mar 19 09:00:57 2004
++++ include/platform.h	Wed Jul 14 15:51:59 2004
 @@ -33,7 +33,7 @@ extern "C" {
    It enables tidy to find config files named ~/.tidyrc if 
    the HTML_TIDY environment variable is not set.
@@ -19,8 +19,8 @@ $OpenBSD: patch-include_platform_h,v 1.1 2004/03/02 21:20:12 xsa Exp $
  
  
  /* Enable/disable support for Big5 and Shift_JIS character encodings */
-@@ -496,7 +496,7 @@ extern "C" {
- #if !defined(HPUX_OS) && !defined(CYGWIN_OS) && !defined(MAC_OS_X) && !defined(BE_OS) && !defined(SOLARIS_OS) && !defined(BSD_BASED_OS) && !defined(OSF_OS) && !defined(IRIX_OS) && !defined(AIX_OS)
+@@ -497,7 +497,7 @@ extern "C" {
+ #if !defined(HPUX_OS) && !defined(CYGWIN_OS) && !defined(MAC_OS_X) && !defined(BE_OS) && !defined(SOLARIS_OS) && !defined(BSD_BASED_OS) && !defined(OSF_OS) && !defined(IRIX_OS) && !defined(AIX_OS) && !defined(LINUX_OS)
  typedef unsigned int uint;
  #endif
 -#if defined(HPUX_OS) || defined(CYGWIN_OS) || defined(MAC_OS) || defined(BSD_BASED_OS) || defined(_WIN32)

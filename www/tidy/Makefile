@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2004/03/02 23:10:29 xsa Exp $
+# $OpenBSD: Makefile,v 1.16 2004/07/14 14:07:45 xsa Exp $
 
 COMMENT=	"validate, correct, and pretty-print HTML files"
 
-TIDYDATE=	040301
+TIDYDATE=	040706
 DISTNAME=	tidy_src_${TIDYDATE}
 PKGNAME=	tidy-${TIDYDATE}
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${HOMEPAGE}src/ \
 MASTER_SITES0=	${HOMEPAGE}docs/
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		tidy_docs_030610${EXTRACT_SUFX}:0
+		tidy_docs_040317${EXTRACT_SUFX}:0
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
