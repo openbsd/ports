@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2001/11/15 06:14:06 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.12 2002/02/19 06:28:31 pvalchev Exp $
 
 COMMENT=	"simple gtk+ pool simulation game"
 
-DISTNAME=	gtkpool-0.3.4
+DISTNAME=	gtkpool-0.4.1
 CATEGORIES=	games x11
-NEED_VERSION=	1.474
+NEED_VERSION=	1.504
 MASTER_SITES=	${HOMEPAGE}	
 
 HOMEPAGE=	http://gtkpool.seul.org/
@@ -18,15 +18,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MAKE_FLAGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="-lossaudio"
-
 USE_X11=	Yes
 NO_REGRESS=	Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtkpool
-	${INSTALL_PROGRAM} ${WRKSRC}/gtkpool ${PREFIX}/bin/gtkpool
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/lib/gtkpool
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	LDFLAGS="-lossaudio"
+
+post-extract:
+	@touch ${WRKSRC}/configure* ${WRKSRC}/*.{in,m4}
 
 .include <bsd.port.mk>

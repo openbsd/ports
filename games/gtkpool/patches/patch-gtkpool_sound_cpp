@@ -1,7 +1,7 @@
-$OpenBSD: patch-sound_cc,v 1.1.1.1 2001/02/04 18:35:52 reinhard Exp $
---- sound.cc.orig	Wed Dec 15 23:35:44 1999
-+++ sound.cc	Sat Jan 20 16:52:19 2001
-@@ -3,7 +3,13 @@
+$OpenBSD: patch-gtkpool_sound_cpp,v 1.1 2002/02/19 06:28:31 pvalchev Exp $
+--- gtkpool/sound.cpp.orig	Mon Jan 14 02:23:39 2002
++++ gtkpool/sound.cpp	Mon Feb 18 23:07:08 2002
+@@ -20,7 +20,13 @@
  #include <sys/stat.h>
  #include <fcntl.h>
  #include <unistd.h>
@@ -14,4 +14,4 @@ $OpenBSD: patch-sound_cc,v 1.1.1.1 2001/02/04 18:35:52 reinhard Exp $
 +#endif
  #include <sys/ioctl.h>
  #include <errno.h>
- #include "sound.hh"
+ #include "sound.h"
