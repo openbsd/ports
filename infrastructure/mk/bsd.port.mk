@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.573 2003/08/01 09:02:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.574 2003/08/01 09:07:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2122,7 +2122,7 @@ readme readmes:
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 ${FULLPKGNAME${SUBPACKAGE}}.html:
-	@echo ${_COMMENT} >$@.tmp-comment
+	@echo ${_COMMENT} | ${HTMLIFY} >$@.tmp-comment
 	@echo ${FULLPKGNAME${SUBPACKAGE}} | ${HTMLIFY} > $@.tmp3
 .if defined(HOMEPAGE)
 	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >$@.tmp4
@@ -2137,14 +2137,14 @@ ${FULLPKGNAME${SUBPACKAGE}}.html:
 			echo "<li><a href=\"${PKGDEPTH}/$$j/$$k.html\">$$k</a>"; \
 		 done  >$@.tmp-${_I}
 .  else
-	@echo "<li>none" >$@.tmp${_I}
+	@echo "<li>none" >$@.tmp-${_I}
 .  endif
 .endfor
 	@cat ${README_NAME} | \
-		sed -e 's|%%PORT%%|'"`echo ${PKGPATH}  | ${HTMLIFY}`"'|g' \
+		sed -e 's|%%PORT%%|'"`echo ${FULLPKGPATH}  | ${HTMLIFY}`"'|g' \
 			-e '/%%PKG%%/r$@.tmp3' -e '//d' \
 			-e '/%%COMMENT%%/r$@.tmp-comment' -e '//d' \
-			-e '/%%DESCR%%/r${PKGDIR}/DESCR' -e '//d' \
+			-e '/%%DESCR%%/r${PKGDIR}/DESCR${SUBPACKAGE}' -e '//d' \
 			-e '/%%HOMEPAGE%%/r$@.tmp4' -e '//d' \
 			-e '/%%BUILD_DEPENDS%%/r$@.tmp-build' -e '//d' \
 			-e '/%%RUN_DEPENDS%%/r$@.tmp-run' -e '//d' \
