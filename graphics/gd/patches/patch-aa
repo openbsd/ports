@@ -1,19 +1,19 @@
 --- Makefile.orig	Sat Jun  3 15:26:12 2000
-+++ Makefile	Thu Jun 22 02:01:40 2000
++++ Makefile	Thu Jun 22 04:52:01 2000
 @@ -51,13 +51,13 @@
  LIBDIRS=-L. -L/usr/local/lib -L/usr/lib/X11 -L/usr/X11R6/lib
  
  #Location where libgd.a should be installed by "make install".
 -INSTALL_LIB=/usr/local/lib
-+INSTALL_LIB=$(PREFIX)/lib
++INSTALL_LIB=$(prefix)/lib
  
  #Location where .h files should be installed by "make install".
 -INSTALL_INCLUDE=/usr/local/include
-+INSTALL_INCLUDE=$(PREFIX)/include
++INSTALL_INCLUDE=$(prefix)/include
  
  #Location where useful non-test programs should be installed by "make install".
 -INSTALL_BIN=/usr/local/bin
-+INSTALL_BIN=$(PREFIX)/bin
++INSTALL_BIN=$(prefix)/bin
  
  #
  #
@@ -38,23 +38,23 @@
 -	sh ./install-item 644 gdfontmb.h $(INSTALL_INCLUDE)/gdfontmb.h
 -	sh ./install-item 644 gdfonts.h $(INSTALL_INCLUDE)/gdfonts.h
 -	sh ./install-item 644 gdfontt.h $(INSTALL_INCLUDE)/gdfontt.h
-+	libtool $(BSD_INSTALL_DATA) libgd.la $(INSTALL_LIB)
-+	libtool $(BSD_INSTALL_PROGRAM) pngtogd $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) pngtogd2 $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gdtopng $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gd2topng $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gd2copypal $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) gdparttopng $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) webpng $(INSTALL_BIN)
-+	libtool $(BSD_INSTALL_PROGRAM) bdftogd $(INSTALL_BIN)
-+	$(BSD_INSTALL_DATA) gd.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gdcache.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gd_io.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gdfontg.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gdfontl.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gdfontmb.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gdfonts.h $(INSTALL_INCLUDE)
-+	$(BSD_INSTALL_DATA) gdfontt.h $(INSTALL_INCLUDE)
++	libtool $(BSD_INSTALL_DATA) libgd.la $(DESTDIR)$(INSTALL_LIB)
++	libtool $(BSD_INSTALL_PROGRAM) pngtogd $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) pngtogd2 $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) gdtopng $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) gd2topng $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) gd2copypal $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) gdparttopng $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) webpng $(DESTDIR)$(INSTALL_BIN)
++	libtool $(BSD_INSTALL_PROGRAM) bdftogd $(DESTDIR)$(INSTALL_BIN)
++	$(BSD_INSTALL_DATA) gd.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gdcache.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gd_io.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gdfontg.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gdfontl.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gdfontmb.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gdfonts.h $(DESTDIR)$(INSTALL_INCLUDE)
++	$(BSD_INSTALL_DATA) gdfontt.h $(DESTDIR)$(INSTALL_INCLUDE)
  
  gddemo: gddemo.o libgd.a
 -	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2000/06/22 06:18:38 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2000/06/22 09:08:16 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
 
 DISTNAME=	gd-1.8.3
@@ -23,7 +23,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
-MAKE_FLAGS=	COMPILER="${CC}"
+MAKE_FLAGS=	COMPILER="${CC}" prefix="${PREFIX}"
+FAKE_FLAGS=	DESTDIR="${WRKINST}"
 
 FLAVORS=	no_x11
 
