@@ -13,7 +13,7 @@ then
     echo "| To completely deinstall the $1 package you need to perform"
     echo "| this step as root:"
     echo "|"
-    echo "|         rm -f ${CONFFILE} ${MASQFILE}
+    echo "|         rm -f ${CONFFILE} ${MASQFILE}"
     echo "|"
     echo "| Do not do this if you plan on re-installing $1"
     echo "| at some future time."
