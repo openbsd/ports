@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/05/29 16:46:51 reinhard Exp $
+# $OpenBSD: Makefile,v 1.2 2000/05/29 17:15:37 reinhard Exp $
 # Original from: Jaakko Heinonen <jheinonen@bigfoot.com>
 
 DISTNAME=		abook-0.4.7
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 DISTFILES=		abook-0.4.7
 
-USE_GMAKE=		Yes
 USE_AUTOCONF=		Yes
 
 do-install:
