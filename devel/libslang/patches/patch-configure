@@ -1,5 +1,5 @@
---- configure.orig	Sun Feb  4 01:32:53 2001
-+++ configure	Wed Feb  7 15:50:48 2001
+--- configure.orig	Tue Feb 20 21:17:29 2001
++++ configure	Sun Mar  4 00:51:51 2001
 @@ -2017,6 +2017,18 @@
         CC_SHARED="cc \$(CFLAGS) -shared -K pic"
       fi
@@ -8,10 +8,10 @@
 +    DYNAMIC_LINK_FLAGS=""
 +    ELF_CC="$CC"
 +    ELF_CFLAGS="$CFLAGS -fpic"
-+    ELF_LINK="$CC -shared -fpic"
++    ELF_LINK="$CC -shared $ELF_CFLAGS"
 +    ELF_LINK_CMD="\$(ELF_LINK)"
-+    ELF_DEP_LIBS=
-+    CC_SHARED="$CC $CFLAGS -shared -fpic"
++    ELF_DEP_LIBS="\$(DL_LIB) -lm"
++    CC_SHARED="$CC -shared $ELF_CFLAGS"
 +    if test "`/usr/bin/file /usr/lib/libc.so.* | grep ELF`" != ""; then
 +      DYNAMIC_LINK_FLAGS="-Wl,-E"
 +    fi
