@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/06/18 16:27:41 avsm Exp $
+# $OpenBSD: Makefile,v 1.43 2001/06/23 23:36:35 avsm Exp $
 
 MULTI_PACKAGES=	-pear
 SUBPACKAGE?=
@@ -9,7 +9,7 @@ COMMENT-pear=	"collection of base classes for common PHP tasks"
 # This port current only works with archs supporting dynamic loading
 ONLY_FOR_ARCHS=	i386 m68k sparc
 
-V=		4.0.5
+V=		4.0.6
 DISTNAME=	php-${V}
 PKGNAME=	php4-${V}
 FULLPKGNAME-pear= php4-pear-${V}
@@ -21,7 +21,7 @@ MAINTAINER=     Anil Madhavapeddy <avsm@openbsd.org>, Jakob Schlyter <jakob@open
 
 HOMEPAGE=	http://www.php.net/
 
-MASTER_SITES=	http://www.php.net:8000/ \
+MASTER_SITES=	http://www.php.net:8000/distributions/ \
 		http://se.php.net/distributions/ \
 		http://no.php.net/distributions/ \
 		http://uk.php.net/distributions/
@@ -44,7 +44,9 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-openssl \
 			--with-zlib \
 			--enable-sysvsem \
-			--enable-sysvshm
+			--enable-sysvshm \
+			--enable-inline-optimization \
+			--disable-debug
 
 USE_LIBTOOL=	Yes
 
@@ -56,6 +58,7 @@ FLAVOR?=
 .if ${FLAVOR:L:Mcurl}
 CONFIGURE_ARGS+=	--with-curl
 LIB_DEPENDS+=		curl.2::net/curl
+BROKEN= 	"sorry, curl flavor is broken until net/curl is upgraded to 7.8"
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif
