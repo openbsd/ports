@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/07/24 03:18:45 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2003/11/03 07:44:04 kevlo Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	"Chinese input method Linux binary"
 
-PKGNAME=	zh-xcin25-2.5.3
+PKGNAME=	zh-xcin25-2.5.3p0
 CATEGORIES=	chinese
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

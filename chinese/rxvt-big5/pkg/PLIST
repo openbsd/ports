@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/10/29 03:04:56 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/11/03 07:43:59 kevlo Exp $
 @exec ln -sf %D/usr/X11R6/bin/rxvt /usr/local/bin/rxvt-big5
 @unexec rm -rf /usr/local/bin/rxvt-big5
-@exec ln -sf %D/usr/lib/libutempter.so.0.5.2 %D/usr/lib/libutempter.so.0
-@unexec rm -rf %D/usr/lib/libutempter.so.0
+@unexec rm -f %D/usr/lib/libutempter.so.0
 etc/X11/applnk/Utilities/rxvt.desktop
 etc/default/useradd
 etc/login.defs
@@ -24,6 +23,7 @@ usr/bin/sg
 usr/include/utempter.h
 usr/lib/librxvt.a
 usr/lib/librxvt.la
+usr/lib/libutempter.so
 usr/lib/libutempter.so.0.5.2
 usr/sbin/adduser
 usr/sbin/chpasswd
@@ -67,6 +67,8 @@ usr/share/man/man8/pwunconv.8.gz
 usr/share/man/man8/useradd.8.gz
 usr/share/man/man8/userdel.8.gz
 usr/share/man/man8/usermod.8.gz
+@exec %D/sbin/ldconfig
+@unexec %D/sbin/ldconfig
 @dirrm usr/X11R6/lib/X11/zh_TW/rxvt
 @dirrm usr/X11R6/lib/X11/zh_TW/app-defaults
 @dirrm usr/X11R6/lib/X11/zh_TW
