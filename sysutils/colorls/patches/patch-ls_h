@@ -1,0 +1,13 @@
+$OpenBSD: patch-ls_h,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
+--- ls.h.orig	Tue Oct 16 20:48:35 2001
++++ ls.h	Tue Oct 16 20:49:27 2001
+@@ -53,6 +53,9 @@ extern int f_size;		/* list size in shor
+ extern int f_statustime;	/* use time of last mode change */
+ extern int f_type;		/* add type character for non-regular files */
+ extern int f_typedir;		/* add type character for directories */
++#ifdef COLORLS
++extern int f_color;		/* add type in color for non-regular files */
++#endif
+ 
+ typedef struct {
+ 	FTSENT *list;

@@ -1,0 +1,10 @@
+This is a simple hack, taken from FreeBSD, to OpenBSD's ls(1) to
+use ANSI sequences to display file attributes in color.  There is
+a -G flag (somewhat similar to the -F flag).  Take a look at the
+man page for details.  The program is called "colorls", so you may
+want to use an alias such as ls=${PREFIX}/bin/colorls.
+
+Note that you need a color-capable terminal to enable colorls.  This
+means you should set your TERM to "wsvt25" on the wscons(4) console
+and to "xterm-xfree86" when using normal xterm, not "vt220" and
+"xterm", respectively, which are not color-capable in termcap(5).

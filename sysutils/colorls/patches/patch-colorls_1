@@ -1,0 +1,170 @@
+$OpenBSD: patch-colorls_1,v 1.1.1.1 2001/11/05 18:55:28 naddy Exp $
+--- colorls.1.orig	Mon Nov  5 19:34:51 2001
++++ colorls.1	Mon Nov  5 19:38:51 2001
+@@ -45,9 +45,17 @@
+ .Nd list directory contents
+ .Sh SYNOPSIS
+ .Nm ls
+-.Op Fl 1ACFLRSTWacdfgiklmnopqrstux
++.Op Fl 1ACFGLRSTWacdfgiklmnopqrstux
+ .Op Ar file ...
+ .Sh DESCRIPTION
++(Note: This man page describes the color version of the program.
++To minimize the differences from the original, the program is referred to as
++.Nm ls
++in this manual.
++The new option
++.Fl G
++is for color display.)
++.Pp
+ For each operand that names a
+ .Ar file
+ of a type other than directory,
+@@ -96,6 +104,12 @@ after each socket,
+ and a vertical bar
+ .Pq Sq \&|
+ after each that is a FIFO.
++.It Fl G
++Enable colorized output.
++This option is equivalent to defining
++.Ev CLICOLOR
++in the environment.
++(See below).
+ .It Fl L
+ If argument is a symbolic link, list the file or directory the link references
+ rather than the link itself.
+@@ -422,6 +436,44 @@ option is not specified, the block count
+ (see
+ .Fl s )
+ will be displayed in units of that size block.
++.It Ev CLICOLOR
++Use
++.Tn ANSI
++color sequences to distinguish file types.
++See
++.Ev LSCOLORS
++below.
++In addition to the file types mentioned in the
++.Fl F
++option some extra attributes (setuid bit set, etc.) are also displayed.
++The colorization is dependent on a terminal type with the proper
++.Xr termcap 5
++capabilities.
++To display the colors on the
++.Xr wscons 4
++console, for example,
++the
++.Ev TERM
++variable must be set to
++.Dq wsvt25
++and in an
++.Xr xterm 1
++to
++.Dq xterm-xfree86 .
++Other terminal types may require similar adjustments.
++Colorization is silently disabled if the output isn't directed to a terminal
++unless the
++.Ev CLICOLOR_FORCE
++variable is defined.
++.It Ev CLICOLOR_FORCE
++Color sequences are normally disabled if the output isn't directed to
++a terminal.
++This can be overridden by setting this flag.
++The
++.Ev TERM
++variable still needs to reference a color capable terminal however
++otherwise it is not possible to determine which color sequences to
++use.
+ .It COLUMNS
+ If this variable contains a string representing a
+ decimal integer, it is used as the
+@@ -434,6 +486,81 @@ many pathname text columns to display
+ based on the width provided
+ (see
+ .Fl C ) .
++.It Ev LSCOLORS
++The value of this variable describes what color to use for which
++attribute when colors are enabled with
++.Ev CLICOLOR .
++This string is a concatenation of pairs of the format
++.Sy fb ,
++where
++.Sy f
++is the foreground color and
++.Sy b
++is the background color.
++.Pp
++The color designators are as follows:
++.Pp
++.Bl -tag -width 4n -offset indent -compact
++.It Sy 0
++black
++.It Sy 1
++red
++.It Sy 2
++green
++.It Sy 3
++brown
++.It Sy 4
++blue
++.It Sy 5
++magenta
++.It Sy 6
++cyan
++.It Sy 7
++light grey
++.It Sy x
++default foreground or background
++.El
++.Pp
++Note that the above are standard
++.Tn ANSI
++colors.
++The actual display may differ
++depending on the color capabilities of the terminal in use.
++.Pp
++The order of the attributes are as follows:
++.Pp
++.Bl -enum -offset indent -compact
++.It
++directory
++.It
++symbolic link
++.It
++socket
++.It
++pipe
++.It
++executable
++.It
++block special
++.It
++character special
++.It
++executable with setuid bit set
++.It
++executable with setgid bit set
++.It
++directory writable to others, with sticky bit
++.It
++directory writable to others, without sticky bit
++.El
++.Pp
++The default is "4x5x2x3x1x464301060203", i.e. blue foreground and
++default background for regular directories, black foreground and red
++background for setuid executables, etc.
++.It Ev TERM
++The
++.Ev CLICOLOR
++functionality depends on a terminal type with color capabilities.
+ .It Ev TZ
+ The timezone to use when displaying dates.
+ See
+@@ -448,6 +575,7 @@ specification.
+ .Sh SEE ALSO
+ .Xr chflags 1 ,
+ .Xr chmod 1 ,
++.Xr termcap 5 ,
+ .Xr symlink 7 ,
+ .Xr sticky 8
+ .Sh STANDARDS
