@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2001/11/17 00:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2001/11/18 19:57:25 brad Exp $
 
 COMMENT=	"server-side HTML-embedded scripting language"
 
@@ -39,7 +39,7 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mimap}
 CONFIGURE_ARGS+=	--with-imap=${LOCALBASE}
-LIB_DEPENDS+=		c-client.3::mail/c-client
+LIB_DEPENDS+=		c-client.3:c-client->=4.40p1:mail/c-client
 .else
 CONFIGURE_ARGS+=	--without-imap
 .endif
