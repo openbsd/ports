@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
+$OpenBSD: patch-doc_nc_man,v 1.5 2004/11/04 08:07:11 djm Exp $
 --- doc/nc.man.orig	Fri Oct  1 07:03:59 2004
 +++ doc/nc.man	Sat Oct 16 17:45:26 2004
 @@ -128,13 +128,13 @@
@@ -7,15 +7,15 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
  .\"
 -.IX Title "NC 1"
 -.TH NC 1 "2004-07-21" "NEdit 5.5" "NEdit documentation"
-+.IX Title "NC1 1"
-+.TH NC1 1 "2004-07-21" "NEdit 5.5" "NEdit documentation"
++.IX Title "NCL 1"
++.TH NCL 1 "2004-07-21" "NEdit 5.5" "NEdit documentation"
  .SH "NAME"
 -nc \- Client program for NEdit text editor
-+nc1 \- Client program for NEdit text editor
++ncl \- Client program for NEdit text editor
  .SH "SYNOPSYS"
  .IX Header "SYNOPSYS"
 -nc [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\fR | \fB+\fR\fIn\fR] [\fB\-do\fR \fIcommand\fR] 
-+nc1 [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\fR | \fB+\fR\fIn\fR] [\fB\-do\fR \fIcommand\fR] 
++ncl [\fB\-read\fR] [\fB\-create\fR] [\fB\-line\fR \fIn\fR | \fB+\fR\fIn\fR] [\fB\-do\fR \fIcommand\fR] 
     [\fB\-ask\fR] [\fB\-noask\fR] [\fB\-svrname\fR \fIname\fR] [\fB\-svrcmd\fR \fIcommand\fR] 
     [\fB\-lm\fR \fIlanguagemode\fR] 
     [\fB\-geometry\fR \fIgeometry\fR | \fB\-g\fR \fIgeometry\fR] [\fB\-icon\fR | \fB\-iconic\fR] 
@@ -24,7 +24,7 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
  .SH "DESCRIPTION"
  .IX Header "DESCRIPTION"
 -\&\fBnc\fR is the client interface to the NEdit text editor. A server can be started
-+\&\fBnc1\fR is the client interface to the NEdit text editor. A server can be started
++\&\fBncl\fR is the client interface to the NEdit text editor. A server can be started
  explicitly by running NEdit in server mode:
  .PP
  .Vb 1
@@ -32,7 +32,7 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
  .Ve
  .PP
 -If no server is running, \fBnc\fR will start one unless configured otherwise.
-+If no server is running, \fBnc1\fR will start one unless configured otherwise.
++If no server is running, \fBncl\fR will start one unless configured otherwise.
  Client/server mode is useful for integrating NEdit with software development
  environments, mailers, and other programs; or just as a quick way to open files
  from the shell command line without starting a new NEdit session.
@@ -41,24 +41,24 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
  command line.
  .Sp
 -If you use this command without a filename, \fBnc\fR would randomly choose one
-+If you use this command without a filename, \fBnc1\fR would randomly choose one
++If you use this command without a filename, \fBncl\fR would randomly choose one
  window to focus and execute the macro in.
  .IP "\fB\-ask\fR, \fB\-noask\fR" 4
  .IX Item "-ask, -noask"
 -Instructs \fBnc\fR whether to automatically start a server if one is not
-+Instructs \fBnc1\fR whether to automatically start a server if one is not
++Instructs \fBncl\fR whether to automatically start a server if one is not
  available. This overrides the X resource `nc.autoStart'.
  .IP "\fB\-svrname\fR \fIname\fR" 4
  .IX Item "-svrname name"
 -Explicitly instructs \fBnc\fR which server to connect to, an instance of
-+Explicitly instructs \fBnc1\fR which server to connect to, an instance of
++Explicitly instructs \fBncl\fR which server to connect to, an instance of
  \&\fInedit\fR\|(1) with a corresponding \fB\-svrname\fR argument.  By naming servers, you
  can run several simultaneously, and direct files and commands specifically to
  any one.
  .IP "\fB\-svrcmd\fR \fIcommand\fR" 4
  .IX Item "-svrcmd command"
 -The command which \fBnc\fR uses to start an NEdit server. It is also settable via
-+The command which \fBnc1\fR uses to start an NEdit server. It is also settable via
++The command which \fBncl\fR uses to start an NEdit server. It is also settable via
  the X resource `nc.serverCommand', by default, \fI\*(L"nedit \-server\*(R"\fR.
  .IP "\fB\-lm\fR \fIlanguagemode\fR" 4
  .IX Item "-lm languagemode"
@@ -67,13 +67,13 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
  .IP "\fB\-wait\fR" 4
  .IX Item "-wait"
 -Instructs \fBnc\fR not to return to the shell until all files given
-+Instructs \fBnc1\fR not to return to the shell until all files given
++Instructs \fBncl\fR not to return to the shell until all files given
  are closed.
  .Sp
 -Normally, \fBnc\fR returns once the files given in its command line
 -are opened by the server. When this option is given, nc returns
-+Normally, \fBnc1\fR returns once the files given in its command line
-+are opened by the server. When this option is given, nc1 returns
++Normally, \fBncl\fR returns once the files given in its command line
++are opened by the server. When this option is given, ncl returns
  only after the last file given in this call is closed.
  Note that this option affects all files, not only the ones
  following this option in the command line.
@@ -84,12 +84,12 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
 -Communication between \fInc\fR\|(1) and \fInedit\fR\|(1) is through the X display. So as
 -long as X windows is set up and working properly, \fBnc\fR will work properly
 -as well. \fBnc\fR uses the `\s-1DISPLAY\s0' environment variable, the machine name and
-+Communication between \fInc1\fR\|(1) and \fInedit\fR\|(1) is through the X display. So as
-+long as X windows is set up and working properly, \fBnc1\fR will work properly
-+as well. \fBnc1\fR uses the `\s-1DISPLAY\s0' environment variable, the machine name and
++Communication between \fIncl\fR\|(1) and \fInedit\fR\|(1) is through the X display. So as
++long as X windows is set up and working properly, \fBncl\fR will work properly
++as well. \fBncl\fR uses the `\s-1DISPLAY\s0' environment variable, the machine name and
  your user name to find the appropriate server, meaning, if you have several
 -machines sharing a common file system, \fBnc\fR will not be able to find a server
-+machines sharing a common file system, \fBnc1\fR will not be able to find a server
++machines sharing a common file system, \fBncl\fR will not be able to find a server
  that is running on a machine with a different host name, even though it may be
  perfectly appropriate for editing a given file.
  .PP
@@ -98,13 +98,13 @@ $OpenBSD: patch-doc_nc_man,v 1.4 2004/10/17 21:23:50 djm Exp $
  .IX Item "incorrect:"
  .Vb 1
 -\&  nc file.c -line 25
-+\&  nc1 file.c -line 25
++\&  ncl file.c -line 25
  .Ve
  .IP "correct:" 4
  .IX Item "correct:"
  .Vb 1
 -\&  nc -line 25 file.c
-+\&  nc1 -line 25 file.c
++\&  ncl -line 25 file.c
  .Ve
  .PP
  For more information see NEdit's online help, or \fInedit.doc\fR in the NEdit

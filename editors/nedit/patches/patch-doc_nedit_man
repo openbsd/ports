@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_nedit_man,v 1.3 2004/10/17 21:23:50 djm Exp $
+$OpenBSD: patch-doc_nedit_man,v 1.4 2004/11/04 08:07:11 djm Exp $
 --- doc/nedit.man.orig	Fri Oct  1 07:03:59 2004
 +++ doc/nedit.man	Sat Oct 16 17:44:11 2004
 @@ -168,14 +168,14 @@ Go to line number \fIn\fR.
@@ -6,7 +6,7 @@ $OpenBSD: patch-doc_nedit_man,v 1.3 2004/10/17 21:23:50 djm Exp $
  .IX Item "-server"
  Designate this session as an NEdit server, for processing commands from the
 -\&\fInc\fR\|(1) program. \fInc\fR\|(1) can be used to interface NEdit to code development
-+\&\fInc1\fR\|(1) program. \fInc1\fR\|(1) can be used to interface NEdit to code development
++\&\fIncl\fR\|(1) program. \fIncl\fR\|(1) can be used to interface NEdit to code development
  environments, mailers, etc., or just as a quick way to open files from the
  shell command line without starting a new NEdit session.
  .IP "\fB\-do\fR \fIcommand\fR" 4
@@ -14,8 +14,8 @@ $OpenBSD: patch-doc_nedit_man,v 1.3 2004/10/17 21:23:50 djm Exp $
  Execute an NEdit macro or action on the file following the \-do argument on the
 -command line. \fB\-do\fR is particularly useful from the \fInc\fR\|(1) program, where
 -`nc \-do' can remotely execute commands in an nedit \fB\-server\fR session.
-+command line. \fB\-do\fR is particularly useful from the \fInc1\fR\|(1) program, where
-+`nc1 \-do' can remotely execute commands in an nedit \fB\-server\fR session.
++command line. \fB\-do\fR is particularly useful from the \fIncl\fR\|(1) program, where
++`ncl \-do' can remotely execute commands in an nedit \fB\-server\fR session.
  .IP "\fB\-tags\fR \fIfile\fR" 4
  .IX Item "-tags file"
  Load a file of directions for finding definitions of program subroutines and
@@ -24,7 +24,7 @@ $OpenBSD: patch-doc_nedit_man,v 1.3 2004/10/17 21:23:50 djm Exp $
  .IX Item "-svrname name"
  When starting nedit in server mode, name the server, such that it responds to
 -requests only when \fInc\fR\|(1) is given a corresponding \fB\-svrname\fR argument. By
-+requests only when \fInc1\fR\|(1) is given a corresponding \fB\-svrname\fR argument. By
++requests only when \fIncl\fR\|(1) is given a corresponding \fB\-svrname\fR argument. By
  naming servers, you can run several simultaneously, and direct files and
  commands specifically to any one. Specifying a non-empty name automatically
  designates this session as an NEdit server, as though \fB\-server\fR were specified.
@@ -33,7 +33,7 @@ $OpenBSD: patch-doc_nedit_man,v 1.3 2004/10/17 21:23:50 djm Exp $
  .SH "SEE ALSO"
  .IX Header "SEE ALSO"
 -\&\fInc\fR\|(1), X(1), \fImwm\fR\|(1), \fIctags\fR\|(1), \fIetags\fR\|(1)
-+\&\fInc1\fR\|(1), X(1), \fImwm\fR\|(1), \fIctags\fR\|(1), \fIetags\fR\|(1)
++\&\fIncl\fR\|(1), X(1), \fImwm\fR\|(1), \fIctags\fR\|(1), \fIetags\fR\|(1)
  .SH "AUTHORS"
  .IX Header "AUTHORS"
  NEdit was written by Mark Edel, Joy Kyriakopulos, Christopher Conrad, Jim
