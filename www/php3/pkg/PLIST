@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2001/01/03 21:35:26 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2001/01/03 21:36:49 brad Exp $
 @pkgcfl php4-*
 lib/libphp3.so
+sbin/php3-enable
 share/doc/php3/README
 share/doc/php3/appendixes.html
 share/doc/php3/calling-user-functions.html
@@ -1346,5 +1347,4 @@ share/doc/php3/types.html
 share/doc/php3/variables.html
 share/doc/php3/x2176.html
 share/doc/php3/php3.ini-dist
-sbin/php3-enable
 @dirrm share/doc/php3
