@@ -1,6 +1,7 @@
---- lib/arch/unix/Makefile.in.orig	Wed Jan 19 18:08:23 2000
-+++ lib/arch/unix/Makefile.in	Wed Jan 19 18:09:09 2000
-@@ -197,7 +197,7 @@
+$OpenBSD: patch-lib_arch_unix_Makefile_in,v 1.1 2001/02/19 20:04:10 danh Exp $
+--- lib/arch/unix/Makefile.in.orig	Sat Jul 31 02:48:17 1999
++++ lib/arch/unix/Makefile.in	Mon Feb 19 14:57:25 2001
+@@ -197,7 +197,7 @@ freetype.lo: $(SRC_S) $(SRC_M)
  libttf.la: $(LIB_FILES)
  	$(LIBTOOL) --mode=link $(CC) -o libttf.la $(LIB_FILES) \
                                 -rpath $(libdir) \
