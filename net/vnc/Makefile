@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/03/28 10:38:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2000/07/16 05:49:12 brad Exp $
 # $FreeBSD: Makefile,v 1.10 1999/02/18 16:05:47 steve Exp $
 
 DISTNAME=       vnc-3.3.2r3_unixsrc
@@ -8,7 +8,7 @@ NEED_VERSION=	1.191
 MASTER_SITES=   http://www.uk.research.att.com/vnc/dist/
 DISTFILES=	vnc-3.3.2r3_unixsrc.tgz vnc-3.3.2_doc.tgz
 
-MAINTAINER=	brad@openbsd.org
+MAINTAINER=	ports@openbsd.org
 
 LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
