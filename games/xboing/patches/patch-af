@@ -1,7 +1,9 @@
-*** editor.c.orig	Tue May 19 22:49:40 1998
---- editor.c	Tue May 19 22:51:44 1998
+*** editor.c.orig	Wed Jan 13 22:23:04 1999
+--- editor.c	Wed Jan 13 22:27:18 1999
 ***************
-*** 654,660 ****
+*** 652,660 ****
+      Display *display;
+  #endif
   {
   	EditState = EDIT_TEST;
   
@@ -9,12 +11,19 @@
     	if (SaveLevelDataFile(display, tempName) == False)
      		ShutDown(display, 1, "Sorry, cannot save test play level.");
   
---- 654,661 ----
+--- 652,666 ----
+      Display *display;
+  #endif
   {
++ 	int fd;
++ 
   	EditState = EDIT_TEST;
   
-! 	sprintf(tempName, "/tmp/xboing-XXXXXXXX");
-! 	close(mkstemp(tempName));
+! 	sprintf(tempName, "/tmp/xboing-XXXXXXXXXX");
+! 	if ((fd = mkstemp(tempName)) < 0)
+! 	  ShutDown(display, 1, "Sorry, cannot save test play level.");
+! 
+! 	close(fd);
     	if (SaveLevelDataFile(display, tempName) == False)
      		ShutDown(display, 1, "Sorry, cannot save test play level.");
   
