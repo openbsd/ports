@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2001/01/17 02:38:20 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2001/03/14 14:39:54 brad Exp $
 
 DISTNAME=	squid-2.3.STABLE4
 PKGNAME=	squid-2.3
@@ -15,7 +15,8 @@ PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch:0 \
 		squid-2.3.stable4-invalid_ip_acl_entry.patch:0 \
 		squid-2.3.stable4-accel_only_access.patch:0 \
 		squid-2.3.stable4-html_quoting.patch:0 \
-		squid-2.3.stable4-carp-assertion.patch:0
+		squid-2.3.stable4-carp-assertion.patch:0 \
+		squid-2.3.stable4-snmp-community-null-pointer.patch:0
 
 HOMEPAGE=	http://www.squid-cache.org/
 
