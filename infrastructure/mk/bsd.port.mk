@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.505 2002/02/27 00:25:35 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.506 2002/03/01 00:49:03 naddy Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1115,7 +1115,7 @@ _CATPAGES+=	${CAT${sect}:S%^%${CAT${sect}PREFIX}/man/${lang}/cat${sect:L}/%}
 .if !defined(NO_IGNORE)
 .  if (defined(REGRESS_IS_INTERACTIVE) && defined(BATCH))
 _IGNORE_REGRESS=	"has interactive tests"
-.  elif (!defined(IS_INTERACTIVE) && defined(INTERACTIVE))
+.  elif (!defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE))
 _IGNORE_REGRESS=	"does not have interactive tests"
 .  endif
 .  if (defined(IS_INTERACTIVE) && defined(BATCH))
