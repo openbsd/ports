@@ -1,14 +1,13 @@
-$OpenBSD: patch-innobase_Makefile_in,v 1.5 2004/05/21 12:16:21 brad Exp $
---- innobase/Makefile.in.orig	2004-05-13 20:54:33.000000000 -0400
-+++ innobase/Makefile.in	2004-05-18 16:28:25.000000000 -0400
-@@ -486,10 +486,10 @@ distcleancheck: distclean
+$OpenBSD: patch-innobase_Makefile_in,v 1.6 2005/01/14 01:42:58 brad Exp $
+--- innobase/Makefile.in.orig	Sat Dec 18 12:25:56 2004
++++ innobase/Makefile.in	Wed Dec 22 10:49:19 2004
+@@ -527,9 +527,9 @@ distcleancheck: distclean
  check-am: all-am
  check: check-recursive
  all-am: Makefile $(HEADERS) ib_config.h
 -installdirs: installdirs-recursive
 +installdirs:
  installdirs-am:
- 
 -install: install-recursive
 +install:
  install-exec: install-exec-recursive

@@ -1,35 +1,47 @@
-$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp $
---- scripts/mysql_install_db.sh.orig	2004-05-13 20:53:23.000000000 -0400
-+++ scripts/mysql_install_db.sh	2004-05-19 11:14:59.000000000 -0400
-@@ -7,12 +7,9 @@
+$OpenBSD: patch-scripts_mysql_install_db.sh,v 1.17 2005/01/14 01:42:58 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Mon Sep  6 18:29:38 2004
++++ scripts/mysql_install_db.sh	Wed Sep 15 15:38:38 2004
+@@ -7,16 +7,12 @@
  #
  # All unrecognized arguments to this script are passed to mysqld.
  
--IN_RPM=0
--case "$1" in
--    -IN-RPM)
--      IN_RPM="1"; shift
--      ;;
--esac
+-in_rpm=0
+-windows=0
+ defaults=""
+ user=""
 +user=_mysql
 +group=_mysql
 +
- defaults=
  case "$1" in
+-    -IN-RPM)
+-      in_rpm="1"; shift
+-      ;;
+-esac
+-case "$1" in
      --no-defaults|--defaults-file=*|--defaults-extra-file=*)
-@@ -33,10 +30,10 @@ parse_arguments() {
+       defaults="$1"; shift
+       ;;
+@@ -35,7 +31,6 @@ parse_arguments() {
  
    for arg do
      case "$arg" in
 -      --force) force=1 ;;
        --basedir=*) basedir=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --ldata=*|--datadir=*) ldata=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
-       --user=*) user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
+       --user=*)
+@@ -43,10 +38,9 @@ parse_arguments() {
+         # as 'user' (crucial e.g. if log-bin=/some_other_path/
+         # where a chown of datadir won't help)
+ 	 user=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
 +      --group=*) group=`echo "$arg" | sed -e 's/^[^=]*=//'` ;;
        --skip-name-resolve) ip_only=1 ;;
+       --verbose) verbose=1 ;;
+-      --rpm) in_rpm=1 ;;
+-      --windows) windows=1 ;;
        *)
          if test -n "$pick_args"
-@@ -70,7 +67,6 @@ ldata=
+         then
+@@ -82,7 +76,6 @@ ldata=
  execdir=
  bindir=
  basedir=
@@ -37,20 +49,29 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
  parse_arguments `$print_defaults $defaults mysqld mysql_install_db`
  parse_arguments PICK-ARGS-FROM-ARGV "$@"
  
-@@ -97,43 +93,33 @@ mdata=$ldata/mysql
+@@ -111,52 +104,35 @@ mysqld=$execdir/mysqld
+ mysqld_opt=""
+ scriptdir=$bindir
  
- if test ! -x $execdir/mysqld
+-if test "$windows" = 1
+-then
+-  mysqld="./sql/mysqld"
+-  mysqld_opt="--language=./sql/share/english"
+-  scriptdir="./scripts"
+-fi
+-
+ if test ! -x $mysqld
  then
--  if test "$IN_RPM" = "1"
+-  if test "$in_rpm" = 1
 -  then
--    echo "FATAL ERROR $execdir/mysqld not found!"
+-    echo "FATAL ERROR $mysqld not found!"
 -    exit 1
 -  else
--    echo "Didn't find $execdir/mysqld"
+-    echo "Didn't find $mysqld"
 -    echo "You should do a 'make install' before executing this script"
 -    exit 1
 -  fi
-+  echo "FATAL ERROR $execdir/mysqld not found!"
++  echo "FATAL ERROR $mysqld not found!"
 +  exit 1
  fi
  
@@ -58,7 +79,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
  hostname=`@HOSTNAME@`
  
  # Check if hostname is valid
--if test "$IN_RPM" = "0" -a $force = "0"
+-if test "$windows" = 0 -a "$in_rpm" = 0 -a $force = 0
 +resolved=`$bindir/resolveip $hostname 2>&1`
 +if [ $? -ne 0 ]
  then
@@ -69,7 +90,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
 -    resolved=`$bindir/resolveip localhost 2>&1`
 -    if [ $? -ne 0 ]
 -    then
--      echo "Neither host '$hostname' and 'localhost' could not be looked up with"
+-      echo "Neither host '$hostname' nor 'localhost' could not be looked up with"
 -      echo "$bindir/resolveip"
 -      echo "Please configure the 'hostname' command to return a correct hostname."
 -      echo "If you want to solve this at a later stage, restart this script with"
@@ -82,7 +103,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
 -    echo "normally with the exception that host name resolving will not work."
 -    echo "This means that you should use IP addresses instead of hostnames"
 -    echo "when specifying MySQL privileges !"
-+    echo "Neither host '$hostname' and 'localhost' could not be looked up with"
++    echo "Neither host '$hostname' nor 'localhost' could not be looked up with"
 +    echo "$bindir/resolveip"
 +    echo "Please configure the 'hostname' command to return a correct hostname."
 +    echo "If you want to solve this at a later stage, restart this script with"
@@ -98,7 +119,7 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
  fi
  
  if test "$ip_only" = "1"
-@@ -143,12 +129,10 @@ then
+@@ -166,12 +142,10 @@ then
  fi
  
  # Create database directories mysql & test
@@ -115,11 +136,11 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
  
  # Initialize variables
  c_d="" i_d=""
-@@ -333,12 +317,6 @@ $c_c
+@@ -361,12 +335,6 @@ $c_c
  END_OF_DATA
  then
    echo ""
--  if test "$IN_RPM" = "0"
+-  if test "$in_rpm" = "0"
 -  then
 -    echo "To start mysqld at boot time you have to copy support-files/mysql.server"
 -    echo "to the right place for your system"
@@ -128,11 +149,11 @@ $OpenBSD: patch-scripts_mysql_install_db.sh,v 1.16 2004/05/21 12:16:21 brad Exp 
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "To do so, start the server, then issue the following commands:"
    echo "$bindir/mysqladmin -u root password 'new-password'"
-@@ -354,15 +332,6 @@ then
+@@ -382,15 +350,6 @@ then
      echo "able to use the new GRANT command!"
    fi
    echo
--  if test "$IN_RPM" = "0"
+-  if test "$in_rpm" = "0"
 -  then
 -    echo "You can start the MySQL daemon with:"
 -    echo "cd @prefix@ ; $bindir/mysqld_safe &"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2004/11/22 16:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.103 2005/01/14 01:42:58 brad Exp $
 # Uses pthreads
 
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "m88k"
@@ -9,10 +9,10 @@ COMMENT=	"multithreaded SQL database (client)"
 COMMENT-server=	"multithreaded SQL database (server)"
 COMMENT-tests=	"multithreaded SQL database (regression test suite)"
 
-VERSION=	4.0.20
+VERSION=	4.0.23
 DISTNAME=	mysql-${VERSION}
-FULLPKGNAME=	mysql-client-${VERSION}p1
-PKGNAME-server=	mysql-server-${VERSION}p1
+FULLPKGNAME=	mysql-client-${VERSION}
+PKGNAME-server=	mysql-server-${VERSION}
 FULLPKGNAME-tests= mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-4.0
@@ -42,7 +42,7 @@ VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.57
+AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-thread-safe-client \
 		 --localstatedir="${DB_DIR}" \

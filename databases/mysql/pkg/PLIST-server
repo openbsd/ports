@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.14 2004/10/12 21:14:42 espie Exp $
+@comment $OpenBSD: PLIST-server,v 1.15 2005/01/14 01:42:58 brad Exp $
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
 bin/comp_err
@@ -181,6 +181,7 @@ share/mysql/korean/errmsg.txt
 share/mysql/mi_test_all
 share/mysql/mi_test_all.res
 share/mysql/my-huge.cnf
+share/mysql/my-innodb-heavy-4G.cnf
 share/mysql/my-large.cnf
 share/mysql/my-medium.cnf
 share/mysql/my-small.cnf

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.10 2004/08/10 00:52:43 espie Exp $
+@comment $OpenBSD: PLIST-tests,v 1.11 2005/01/14 01:42:58 brad Exp $
 share/mysql-test/
 share/mysql-test/README
 share/mysql-test/include/
@@ -45,6 +45,7 @@ share/mysql-test/r/convert.result
 share/mysql-test/r/count_distinct.result
 share/mysql-test/r/count_distinct2.result
 share/mysql-test/r/create.result
+share/mysql-test/r/create_select_tmp.result
 share/mysql-test/r/ctype_cp1251.result
 share/mysql-test/r/ctype_latin1_de.result
 share/mysql-test/r/ctype_tis620.result
@@ -59,6 +60,8 @@ share/mysql-test/r/empty_table.result
 share/mysql-test/r/errors.result
 share/mysql-test/r/explain.result
 share/mysql-test/r/flush.result
+share/mysql-test/r/flush_block_commit.result
+share/mysql-test/r/flush_table.result
 share/mysql-test/r/foreign_key.result
 share/mysql-test/r/fulltext.result
 share/mysql-test/r/fulltext_cache.result
@@ -98,6 +101,7 @@ share/mysql-test/r/have_crypt.require
 share/mysql-test/r/have_innodb.require
 share/mysql-test/r/have_isam.require
 share/mysql-test/r/have_met_timezone.require
+share/mysql-test/r/have_moscow_leap_timezone.require
 share/mysql-test/r/have_openssl.require
 share/mysql-test/r/have_openssl_1.require
 share/mysql-test/r/have_query_cache.require
@@ -181,11 +185,14 @@ share/mysql-test/r/rpl_EE_error.result
 share/mysql-test/r/rpl_alter.result
 share/mysql-test/r/rpl_chain_temp_table.result
 share/mysql-test/r/rpl_change_master.result
+share/mysql-test/r/rpl_commit_after_flush.result
 share/mysql-test/r/rpl_do_grant.result
+share/mysql-test/r/rpl_drop.result
 share/mysql-test/r/rpl_empty_master_crash.result
 share/mysql-test/r/rpl_error_ignored_table.result
 share/mysql-test/r/rpl_failsafe.result
 share/mysql-test/r/rpl_flush_log_loop.result
+share/mysql-test/r/rpl_free_items.result
 share/mysql-test/r/rpl_get_lock.result
 share/mysql-test/r/rpl_heap.result
 share/mysql-test/r/rpl_ignore_grant.result
@@ -210,8 +217,10 @@ share/mysql-test/r/rpl_reset_slave.result
 share/mysql-test/r/rpl_rotate_logs.result
 share/mysql-test/r/rpl_server_id1.result
 share/mysql-test/r/rpl_server_id2.result
+share/mysql-test/r/rpl_set_charset.result
 share/mysql-test/r/rpl_skip_error.result
 share/mysql-test/r/rpl_sporadic_master.result
+share/mysql-test/r/rpl_start_stop_slave.result
 share/mysql-test/r/rpl_trunc_binlog.result
 share/mysql-test/r/sel000001.result
 share/mysql-test/r/sel000002.result
@@ -233,6 +242,7 @@ share/mysql-test/r/system_mysql_db_refs.result
 share/mysql-test/r/tablelock.result
 share/mysql-test/r/temp_table.result
 share/mysql-test/r/timezone.result
+share/mysql-test/r/timezone3.result
 share/mysql-test/r/true.require
 share/mysql-test/r/truncate.result
 share/mysql-test/r/type_blob.result
@@ -254,14 +264,17 @@ share/mysql-test/r/varbinary.result
 share/mysql-test/r/variables.result
 share/mysql-test/r/warnings.result
 share/mysql-test/std_data/
+share/mysql-test/std_data/Moscow_leap
 share/mysql-test/std_data/des_key_file
 share/mysql-test/std_data/init_file.dat
 share/mysql-test/std_data/loaddata1.dat
 share/mysql-test/std_data/loaddata2.dat
 share/mysql-test/std_data/loaddata3.dat
 share/mysql-test/std_data/loaddata4.dat
+share/mysql-test/std_data/master-bin.001
 share/mysql-test/std_data/rpl_loaddata.dat
 share/mysql-test/std_data/rpl_loaddata2.dat
+share/mysql-test/std_data/trunc_binlog.001
 share/mysql-test/std_data/words.dat
 share/mysql-test/t/
 share/mysql-test/t/alias.test
@@ -296,6 +309,7 @@ share/mysql-test/t/count_distinct.test
 share/mysql-test/t/count_distinct2-master.opt
 share/mysql-test/t/count_distinct2.test
 share/mysql-test/t/create.test
+share/mysql-test/t/create_select_tmp.test
 share/mysql-test/t/ctype_cp1251-master.opt
 share/mysql-test/t/ctype_cp1251.test
 share/mysql-test/t/ctype_latin1_de-master.opt
@@ -314,6 +328,7 @@ share/mysql-test/t/empty_table.test
 share/mysql-test/t/errors.test
 share/mysql-test/t/explain.test
 share/mysql-test/t/flush.test
+share/mysql-test/t/flush_block_commit.test
 share/mysql-test/t/flush_table.test
 share/mysql-test/t/foreign_key.test
 share/mysql-test/t/fulltext.test
@@ -384,6 +399,7 @@ share/mysql-test/t/lowercase_table2.test
 share/mysql-test/t/lowercase_table3-master.opt
 share/mysql-test/t/lowercase_table3.test
 share/mysql-test/t/merge.test
+share/mysql-test/t/mix_innodb_myisam_binlog-master.opt
 share/mysql-test/t/mix_innodb_myisam_binlog.test
 share/mysql-test/t/multi_update-master.opt
 share/mysql-test/t/multi_update.test
@@ -444,7 +460,9 @@ share/mysql-test/t/rpl_EE_error.test
 share/mysql-test/t/rpl_alter.test
 share/mysql-test/t/rpl_chain_temp_table.test
 share/mysql-test/t/rpl_change_master.test
+share/mysql-test/t/rpl_commit_after_flush.test
 share/mysql-test/t/rpl_do_grant.test
+share/mysql-test/t/rpl_drop.test
 share/mysql-test/t/rpl_empty_master_crash.test
 share/mysql-test/t/rpl_error_ignored_table-slave.opt
 share/mysql-test/t/rpl_error_ignored_table.test
@@ -454,6 +472,8 @@ share/mysql-test/t/rpl_flush_log_loop-master.sh
 share/mysql-test/t/rpl_flush_log_loop-slave.opt
 share/mysql-test/t/rpl_flush_log_loop-slave.sh
 share/mysql-test/t/rpl_flush_log_loop.test
+share/mysql-test/t/rpl_free_items-slave.opt
+share/mysql-test/t/rpl_free_items.test
 share/mysql-test/t/rpl_get_lock.test
 share/mysql-test/t/rpl_heap.test
 share/mysql-test/t/rpl_ignore_grant-slave.opt
@@ -491,10 +511,12 @@ share/mysql-test/t/rpl_rotate_logs.test
 share/mysql-test/t/rpl_server_id1.test
 share/mysql-test/t/rpl_server_id2-slave.opt
 share/mysql-test/t/rpl_server_id2.test
+share/mysql-test/t/rpl_set_charset.test
 share/mysql-test/t/rpl_skip_error-slave.opt
 share/mysql-test/t/rpl_skip_error.test
 share/mysql-test/t/rpl_sporadic_master-master.opt
 share/mysql-test/t/rpl_sporadic_master.test
+share/mysql-test/t/rpl_start_stop_slave.test
 share/mysql-test/t/rpl_trunc_binlog.test
 share/mysql-test/t/sel000001.test
 share/mysql-test/t/sel000002.test
@@ -517,6 +539,8 @@ share/mysql-test/t/tablelock.test
 share/mysql-test/t/temp_table.test
 share/mysql-test/t/timezone-master.opt
 share/mysql-test/t/timezone.test
+share/mysql-test/t/timezone3-master.opt
+share/mysql-test/t/timezone3.test
 share/mysql-test/t/truncate.test
 share/mysql-test/t/type_blob.test
 share/mysql-test/t/type_date.test
