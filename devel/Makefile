@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2001/12/31 09:37:23 espie Exp $
+# $OpenBSD: Makefile,v 1.115 2002/01/24 23:33:30 jsyn Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 #
 
@@ -49,13 +49,13 @@
      SUBDIR += lclint
      SUBDIR += libaudiofile
      SUBDIR += libavl
-     SUBDIR += libdvdread
      SUBDIR += libdockapp
+     SUBDIR += libdvdread
      SUBDIR += libevent
-     SUBDIR += libgtop
-     SUBDIR += libgtop,gnome
      SUBDIR += libglade
      SUBDIR += libglade,gnome
+     SUBDIR += libgtop
+     SUBDIR += libgtop,gnome
      SUBDIR += libproplist
      SUBDIR += libsigc++
      SUBDIR += libslang
@@ -118,11 +118,11 @@
      SUBDIR += rats
      SUBDIR += sdl
      SUBDIR += sdl,esd
-     SUBDIR += sdlmm
      SUBDIR += sdl-image
      SUBDIR += sdl-mixer
      SUBDIR += sdl-net
      SUBDIR += sdl-ttf
+     SUBDIR += sdlmm
      SUBDIR += shtool
      SUBDIR += slib
      SUBDIR += smpeg
