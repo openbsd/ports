@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	afterstep
-# Version required:	1.0
-# Date created:		6 January 1998
-# Whom:			Don Schmidt
-#
-# $OpenBSD: Makefile,v 1.3 1998/06/13 23:27:04 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/09 02:27:17 brad Exp $
 
 DISTNAME=	AfterStep-1.0
 PKGNAME=	afterstep-1.0
@@ -12,12 +6,6 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
 
 MAINTAINER=	don@OpenBSD.ORG
-
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
 
 USE_X11=	yes
 INSTALL_TARGET=	install install.man

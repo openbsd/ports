@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	xfig
-# Version required:	3.2
-# Date created:		December 2, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.4 1998/07/04 06:41:03 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.5 1999/04/09 02:27:14 brad Exp $
 
 DISTNAME=	xfig.3.2.2
 PKGNAME=	xfig-3.2.2
@@ -14,13 +8,8 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-		Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		Xaw3d:${PORTSDIR}/x11/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		gv:${PORTSDIR}/print/gv
 

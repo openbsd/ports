@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	xfaces-3.3
-# Version required:	1.6.1
-# Date created:		December 4, 1997
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:27:01 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/09 02:27:15 brad Exp $
 
 DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
@@ -16,13 +10,7 @@ DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
 MAINTAINER=	angelos@openbsd.org
 
-LIB_DEPENDS=	compface\\.1\\.:${PORTSDIR}/mail/faces
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
-
+LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
 USE_IMAKE=	YES
 

@@ -1,15 +1,5 @@
-# New ports collection makefile for:	fxtv
-# Version required:	0.48
-# Date created:		Tue Mar 23 18:07:47 PST 1999
-# Whom:			Jason Downs <downsj@downsj.com>
-#
-# From FreeBSD:
-# Date created:		Sun Sep  7 17:55:07 EDT 1997
-# Whom:			Randall Hopper <aa8vb@ipass.net>
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/09 02:27:12 brad Exp $
 # $FreeBSD: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
-# $OpenBSD: Makefile,v 1.2 1999/03/24 02:20:21 downsj Exp $
-#
 
 DISTNAME=	fxtv-0.48
 CATEGORIES=	graphics
@@ -18,10 +8,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	downsj@downsj.com
 
-LIB_DEPENDS=	tiff\\.3\\.4:${PORTSDIR}/graphics/tiff34 \
-		jpeg\\.62\\.:${PORTSDIR}/graphics/jpeg \
-		Xaw3d\\.6:${PORTSDIR}/x11/Xaw3d \
-		Xpm\\.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff34 \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		Xaw3d:${PORTSDIR}/x11/Xaw3d
 
 # This program does not actually require the programs below, but they are 
 # needed if you use digital video recording and playback.

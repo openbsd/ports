@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	bricons
-# Version required:	3.0 with colour icons
-# Date created:		May 19 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.3 1999/04/05 10:36:43 rohee Exp $
-#
+# $OpenBSD: Makefile,v 1.4 1999/04/09 02:27:17 brad Exp $
 
 DISTNAME=	bricons
 PKGNAME=	bricons-3.0
@@ -14,12 +8,6 @@ MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
 EXTRACT_SUFX=	-athena-3.0.tar.gz
 
 MAINTAINER=     angelos@openbsd.org
-
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
 
 USE_IMAKE=	yes
 

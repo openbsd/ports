@@ -1,10 +1,4 @@
-# OpenBSD makefile for:	asmail
-# Version required:	0.50
-# Date created:		16 May 1998
-# Whom:			Angelos D. Keromytis
-#
-# $OpenBSD: Makefile,v 1.2 1998/06/13 23:27:00 marc Exp $
-#
+# $OpenBSD: Makefile,v 1.3 1999/04/09 02:27:15 brad Exp $
 
 DISTNAME=	asmail-0.50
 CATEGORIES=	mail x11
@@ -12,12 +6,6 @@ MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/apps/asmail/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/asmail/
 
 MAINTAINER=	angelos@openbsd.org
-
-OS_RELEASE!=	uname -r
-OS_HAS_XPM=	2.3
-.if ( ${OS_RELEASE} < ${OS_HAS_XPM} )
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-.endif
 
 USE_IMAKE=	yes
 
