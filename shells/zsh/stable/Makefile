@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2001/06/03 01:01:36 lebel Exp $
+# $OpenBSD: Makefile,v 1.3 2001/06/03 15:42:38 brad Exp $
 
 COMMENT=	"the Z shell, Bourne shell-compatible, release flavor"
 COMMENT-modules="the Z shell modules (without zftp)"
@@ -16,12 +16,11 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.zsh.org/
 
 MAINTAINER=	David Lebel <lebel@openbsd.org>
-
-USE_BZIP2=	Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
@@ -40,8 +39,9 @@ CONFIGURE_ARGS+=--disable-dynamic
 .else
 # we only enable sub-packages if the FLAVOR is not static
 MULTI_PACKAGES=	-modules -zftp
+SUBPACKAGE?=
 .for i in ${MULTI_PACKAGES}
-PKGNAME$i=              zsh$i-${VERSION}
+PKGNAME$i=	zsh$i-${VERSION}
 .endfor
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED:S/shared/dynamic/}
 .endif
