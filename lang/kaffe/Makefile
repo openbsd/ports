@@ -5,6 +5,8 @@
 #
 # Relevant URLs:	ftp://ftp.kaffe.org/pub/kaffe/
 
+BROKEN=		In file included from System.c:31: ../../../include/system.h:33: #error "Seperators undefined for this system"
+
 DISTNAME=	kaffe-1.0.b2
 CATEGORIES=     lang
 DIST_SUBDIR=	${PKGNAME}
