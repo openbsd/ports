@@ -1,9 +1,9 @@
-$OpenBSD: patch-conversions_c,v 1.1 2003/10/10 21:56:13 jolan Exp $
---- conversions.c.orig	2003-10-03 05:18:19.000000000 -0500
-+++ conversions.c	2003-10-10 16:50:16.000000000 -0500
-@@ -27,7 +27,7 @@
- #include <unistd.h>
- #include <errno.h>
+$OpenBSD: patch-conversions_c,v 1.2 2003/11/05 01:13:53 jolan Exp $
+--- conversions.c.orig	2003-11-02 14:41:22.000000000 -0600
++++ conversions.c	2003-11-04 18:27:51.000000000 -0600
+@@ -33,7 +33,7 @@
+ #include "config.h"
+ #include "interface.h"
  
 -char * iconvert (char * inbuf, char * from, char * to) {
 +char * iconvert (const char * inbuf, char * from, char * to) {
