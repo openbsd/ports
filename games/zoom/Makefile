@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/01/13 15:54:21 jose Exp $
-
-# dumps core
-NOT_FOR_ARCHS=		sparc64
+# $OpenBSD: Makefile,v 1.5 2004/03/10 17:32:46 naddy Exp $
 
 COMMENT=		"Z-code interpreter for X11"
 
