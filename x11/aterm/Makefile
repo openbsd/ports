@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2000/10/17 11:55:52 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/04/17 03:40:57 kevlo Exp $
 # $FreeBSD: Makefile,v 1.3 1999/03/08 20:59:19 steve Exp $
+
+COMMENT=	"color vt102 terminal emulator with transparency support"
 
 DISTNAME=	aterm-0.4.0
 CATEGORIES=	x11
-NEED_VERSION=	1.330
+NEED_VERSION=	1.384
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= aterm
 
@@ -24,6 +26,10 @@ CONFIGURE_ARGS+=--enable-utmp --enable-wtmp \
 		--with-xpm --enable-transparency \
 		--enable-xgetdefault --enable-ttygid \
 		--enable-background-image --enable-fading \
-		--with-jpeg --with-png
+		--with-jpeg --with-png --enable-big5
+
+post-patch:
+	cd ${FILESDIR}; cp -f {cli_xcin.c,protocol.h,state.h} \
+		${WRKSRC}/src
 
 .include <bsd.port.mk>
