@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2003/05/11 10:23:55 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2003/05/13 02:32:54 pvalchev Exp $
 
 COMMENT=	"curses-based icq client implementation"
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://konst.org.ua/download/ \
 
 HOMEPAGE=	http://konst.org.ua/software.centericq.html
 
-MODULES=	gettext
-
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
@@ -19,9 +17,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-LIB_DEPENDS=	sigc.0:libsigc++-*:devel/libsigc++
+LIB_DEPENDS=	sigc.0:libsigc++-*:devel/libsigc++ \
+		glib.::devel/glib \
+		iconv.::converters/libiconv
 
-MODULES=	gcc3
+MODULES=	gcc3 gettext
 MODGCC3_ARCHES=	sparc64
 MODGCC3_LANGS=	c++
 
