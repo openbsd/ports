@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2001/07/06 00:13:51 rohee Exp $
+# $OpenBSD: Makefile,v 1.22 2001/07/26 21:37:31 rohee Exp $
 
 COMMENT=	"filtering local mail delivery agent"
 
@@ -28,6 +28,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+FLAVORS=	lmtp
+FLAVOR?=
+
+.if ${FLAVOR:L:Mlmtp}
+CFLAGS+=	-DLMTP
+.endif
 
 MAKE_FLAGS=	BASENAME="${PREFIX}" CFLAGS0="${CFLAGS}" LOCKINGTEST="110"
 
