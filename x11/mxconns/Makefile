@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2000/10/22 15:43:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2000/10/22 22:52:34 dbt Exp $
 
 DISTNAME=	mxconns-3.1.4
 CATEGORIES=	x11 security
 NEED_VERSION=	1.305
 MASTER_SITES=	http://c.home.cern.ch/c/cons/www/mxconns/
 
-MAINTAINER=	dbt@meat.net
+MAINTAINER=	David Terrell <dbt@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	"no fee"
 PERMIT_PACKAGE_FTP=	Yes
