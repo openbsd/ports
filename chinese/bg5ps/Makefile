@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/18 02:59:18 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2001/10/24 12:10:24 espie Exp $
 
 COMMENT=	"convert Big5/GB encoded files to postscript"
 
 DISTNAME=       bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}
 CATEGORIES=     chinese x11
-NEED_VERSION=	1.364
+NEED_VERSION=	1.475
 
 MAINTAINER=     Kevin Lo <kevlo@openbsd.org>
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=     Yes
 
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf::chinese/arphicttf \
-		python2.0::lang/python
+RUN_DEPENDS=	::chinese/arphicttf \
+		::lang/python
 LIB_DEPENDS=	ttf.1::print/freetype
 
 post-install:

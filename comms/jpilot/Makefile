@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2001/09/23 06:34:16 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.18 2001/10/24 12:10:24 espie Exp $
 
 COMMENT=	"desktop organizer software for the palm pilot"
 
 DISTNAME=	jpilot-0.99
 PKGNAME=	${DISTNAME}p1
 CATEGORIES=	comms palm
-NEED_VERSION=	1.460
+NEED_VERSION=	1.475
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 LIB_DEPENDS=	pisock.3:pilot-link-*:comms/pilot-link \
-		gtk.1.2:gtk+-*:x11/gtk+
+		gtk.1.2,gdk.1.2:gtk+-*:x11/gtk+
 
 USE_X11=	Yes
 CONFIGURE_STYLE= autoconf dest
