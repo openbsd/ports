@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 1999/12/21 20:36:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.28 1999/12/25 06:48:46 fgsch Exp $
 
 DISTNAME=       fetchmail-5.2.1
 CATEGORIES=	mail
@@ -13,8 +13,7 @@ CONFIGURE_ARGS+= --disable-nls
     ${WITH_KERBEROS:U} == YES
 CONFIGURE_ARGS+= --with-kerberos=yes
 .endif
-.if exists(/usr/local/lib/libssl.a) && defined(WITH_SSL) && \
-    ${WITH_SSL:U} == YES
+.if defined(WITH_SSL) && ${WITH_SSL:U} == YES
 CONFIGURE_ARGS+= --with-ssl=yes
 .endif
 
