@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2004/11/20 17:59:17 alek Exp $
 bin/extdgts
 bin/mkstrip
 lib/wwwcount/
 lib/wwwcount/Count.cgi
+@group bin
+@mode 111
+@sample /var/www/cgi-bin/Count.cgi
+@mode
+@group
+@sample /var/www/wwwcount/
+@sample /var/www/wwwcount/conf/
+@sample /var/www/wwwcount/data/
 lib/wwwcount/count.cfg.sample
+@sample /var/www/wwwcount/conf/count.cfg
 lib/wwwcount/digits/
 lib/wwwcount/digits/A/
 lib/wwwcount/digits/A/peng.gif
@@ -171,6 +180,5 @@ share/doc/wwwcount/prehtml/test.prehtml
 share/doc/wwwcount/prehtml/toc.prehtml
 share/doc/wwwcount/prehtml/us_mirrors.prehtml
 share/doc/wwwcount/prehtml/whatsnew.prehtml
-@cwd /var/www/logs
-@extra Count.log
-@extraunexec rm -rf /var/www/wwwcount
+@extra /var/www/logs/Count.log
+@extraunexec rm -rf /var/www/wwwcount/data/*
