@@ -1,14 +1,5 @@
 --- main/rfc1867.c:1.38	Sat Aug  5 23:40:28 2000
 +++ main/rfc1867.c	Sun Sep  3 22:09:46 2000
-@@ -15,7 +15,7 @@
-    | Authors: Rasmus Lerdorf &lt;rasmus@php.net&gt;                             |
-    +----------------------------------------------------------------------+
-  */
--/* $Id: patch-rfc1867.c,v 1.1 2000/09/04 06:57:12 jakob Exp $ */
-+/* $Id: patch-rfc1867.c,v 1.1 2000/09/04 06:57:12 jakob Exp $ */
- 
- #include &lt;stdio.h&gt;
- #include "php.h"
 @@ -64,7 +64,7 @@
  	int eolsize;
  	long bytes, max_file_size = 0;
