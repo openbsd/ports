@@ -1,0 +1,3 @@
+A Python interface to XMMS consisting of all the xmms_remote_* functions
+from libxmms plus some higher-level functions. This should provide anything
+needed to control XMMS from an external program.
