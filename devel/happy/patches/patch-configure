@@ -1,0 +1,18 @@
+--- configure.orig     Wed Jun 19 07:28:24 2002
++++ configure  Fri Nov  7 21:33:44 2003
+@@ -960,6 +960,15 @@
+         HostVendor_CPP='sun'
+         HostOS_CPP='solaris2'
+         ;;
++sparc-unknown-openbsd*)
++      HostPlatform=sparc-unknown-openbsd
++      TargetPlatform=sparc-unknown-openbsd
++      BuildPlatform=sparc-unknown-openbsd
++        HostPlatform_CPP='sparc_unknown_openbsd'
++        HostArch_CPP='sparc'
++        HostVendor_CPP='unknown'
++        HostOS_CPP='openbsd'
++        ;;
+ *)
+         echo "Unrecognised platform: $HostPlatform"
+         exit 1
