@@ -1,0 +1,11 @@
+--- gthread/Makefile.in.orig	Tue Mar 16 15:29:59 1999
++++ gthread/Makefile.in	Tue Mar 16 15:30:23 1999
+@@ -97,7 +97,7 @@
+ lib_LTLIBRARIES = libgthread.la
+ 
+ libgthread_la_SOURCES = gthread.c
+-libgthread_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) 	-release $(LT_RELEASE)
++libgthread_la_LDFLAGS =  	-version-info 1:2:0
+ 
+ 
+ libgthread_la_LIBADD = @G_THREAD_LIBS@

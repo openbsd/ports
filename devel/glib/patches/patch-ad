@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Tue Mar 16 15:31:39 1999
++++ docs/Makefile.in	Tue Mar 16 15:31:48 1999
+@@ -81,7 +81,7 @@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ NM = @NM@
+ PACKAGE = @PACKAGE@
+ RANLIB = @RANLIB@
