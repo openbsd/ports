@@ -1,4 +1,4 @@
-# $Id: full-list.mk,v 1.3 2000/04/18 12:26:31 turan Exp $
+# $Id: full-list.mk,v 1.4 2000/11/02 16:05:15 brad Exp $
 
 SUBDIR += archivers/bzip2
 SUBDIR += archivers/gshar+gunshar
@@ -29,12 +29,12 @@ SUBDIR += graphics/mpeg-lib
 SUBDIR += graphics/mpeg_play
 SUBDIR += graphics/netpbm
 SUBDIR += graphics/png
-SUBDIR += graphics/tiff34
+SUBDIR += graphics/tiff
 SUBDIR += graphics/xfig
 SUBDIR += graphics/xpaint
 SUBDIR += graphics/xv
 SUBDIR += lang/expect
-SUBDIR += lang/tcl80
+SUBDIR += lang/tcl/8.0
 SUBDIR += mail/cucipop
 SUBDIR += mail/fetchmail
 SUBDIR += mail/metamail
@@ -56,15 +56,12 @@ SUBDIR += print/a2ps:letter
 SUBDIR += print/afm
 SUBDIR += print/enscript
 SUBDIR += print/freetype
-SUBDIR += print/ghostscript5
+SUBDIR += print/ghostscript/gnu
 SUBDIR += print/gv
 SUBDIR += print/psutils
 SUBDIR += print/teTeX/base
 SUBDIR += print/transfig
-SUBDIR += security/pgp:usa
-SUBDIR += security/pgp:intl
-SUBDIR += security/ssh:usa
-SUBDIR += security/ssh:intl
+SUBDIR += security/pgp
 SUBDIR += shells/bash2
 SUBDIR += shells/tcsh
 SUBDIR += shells/zsh
@@ -79,10 +76,11 @@ SUBDIR += x11/Xaw3d
 SUBDIR += x11/gtk+
 SUBDIR += x11/lesstif
 SUBDIR += x11/rxvt
-SUBDIR += x11/tk80
+SUBDIR += x11/tk/8.0
 SUBDIR += x11/viewfax
 SUBDIR += x11/xcolors
 SUBDIR += x11/qt
+SUBDIR += x11/qt2
 SUBDIR += x11/kde/base
 SUBDIR += x11/kde/libs
 

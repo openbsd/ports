@@ -1,4 +1,4 @@
-# $Id: essentials,v 1.7 1999/09/28 21:55:25 espie Exp $ 
+# $Id: essentials,v 1.8 2000/11/02 16:05:14 brad Exp $ 
 # This is the list of packages that will be on the CD
 # there can be some omissions, as long as build-depends/run-depends work
 archivers/bzip2
@@ -25,8 +25,8 @@ graphics/gimp
 graphics/jpeg
 graphics/mpeg-lib
 graphics/png
-graphics/tiff34
-lang/tcl80
+graphics/tiff
+lang/tcl/8.0
 mail/fetchmail
 mail/metamail
 mail/nmh
@@ -36,13 +36,13 @@ math/gnuplot
 misc/cdrecord
 misc/screen
 net/ethereal
-net/ircii-epic
+net/epic4
 net/netpipe
 net/samba
 net/sniffit
-#net/wget
+net/wget
 print/enscript
-print/ghostscript5
+print/ghostscript/gnu
 print/gv
 shells/bash2
 shells/tcsh
@@ -50,5 +50,5 @@ shells/zsh
 sysutils/xntpd
 x11/Xaw3d
 x11/gtk+
-x11/tk80
+x11/tk/8.0
 x11/xcolors
