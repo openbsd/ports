@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2003/05/20 12:46:45 wilfried Exp $
 
 COMMENT=	"redesign of Mozilla's browser component"
 
@@ -40,15 +40,18 @@ CONFIGURE_ARGS=					\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
+		--disable-composer		\
+		--disable-mailnews		\
+		--enable-plaintext-editor-only	\
+		--enable-extensions=default,-inspector,-irc,-venkman,-content-packs,-help \
 		--enable-crypto			\
 		--disable-debug			\
 		--disable-tests			\
-		--disable-profilesharing	\
 		--disable-ldap
 
-CONFIGURE_ENV=	CFLAGS="" CXXFLAGS=""
+CONFIGURE_ENV=	CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/dist/bin" \
-		CFLAGS="" CXXFLAGS=""
+		CFLAGS="" CXXFLAGS="" MOZ_PHOENIX=1
 
 MOB=		${WRKSRC}/dist/bin
 MOZ=		${PREFIX}/mozilla
@@ -58,14 +61,13 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${MOZ}
-.for dir in chrome components defaults icons res plugins searchplugins
+.for dir in chrome components defaults icons ipc plugins res searchplugins
 	@cd ${MOB} && ${TAR} -chf - ${dir} | \
 		${TAR} -xf - -C ${MOZ}
 .endfor
 	@cd ${MOB} && ${TAR} -chf - *.so.1.0 | \
 		${TAR} -xf - -C ${MOZ}
-	${INSTALL_SCRIPT} ${MOB}/mozilla ${MOB}/run-mozilla.sh ${PREFIX}/bin/
-	${INSTALL_DATA} ${MOB}/LICENSE ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/mozilla-bin ${MOZ}
+	${INSTALL_SCRIPT} ${MOB}/MozillaFirebird ${MOB}/run-mozilla.sh ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOB}/MozillaFirebird-bin ${MOZ}
 
 .include <bsd.port.mk>

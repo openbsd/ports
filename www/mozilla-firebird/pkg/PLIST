@@ -1,71 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/18 20:43:49 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/05/20 12:46:46 wilfried Exp $
 @pkgcfl mozilla-1.*
-bin/mozilla
+bin/MozillaFirebird
 bin/run-mozilla.sh
-mozilla/LICENSE
+mozilla/MozillaFirebird-bin
 mozilla/chrome/US.jar
-mozilla/chrome/chatzilla.jar
+mozilla/chrome/browser.jar
 mozilla/chrome/chromelist.txt
 mozilla/chrome/classic.jar
 mozilla/chrome/comm.jar
-mozilla/chrome/content-packs.jar
 mozilla/chrome/embed-sample.jar
 mozilla/chrome/en-US.jar
 mozilla/chrome/en-mac.jar
 mozilla/chrome/en-unix.jar
 mozilla/chrome/en-win.jar
-mozilla/chrome/help.jar
-mozilla/chrome/icons/default/abcardWindow.xpm
-mozilla/chrome/icons/default/abcardWindow16.xpm
-mozilla/chrome/icons/default/addressbookWindow.xpm
-mozilla/chrome/icons/default/addressbookWindow16.xpm
-mozilla/chrome/icons/default/bmPropsWindow.xpm
-mozilla/chrome/icons/default/bmPropsWindow16.xpm
-mozilla/chrome/icons/default/bookmark-window.xpm
-mozilla/chrome/icons/default/bookmark-window16.xpm
-mozilla/chrome/icons/default/calendar-window.xpm
-mozilla/chrome/icons/default/calendar-window16.xpm
-mozilla/chrome/icons/default/chatzilla-window.xpm
-mozilla/chrome/icons/default/chatzilla-window16.xpm
-mozilla/chrome/icons/default/downloadManager.xpm
-mozilla/chrome/icons/default/downloadManager16.xpm
-mozilla/chrome/icons/default/editorWindow.xpm
-mozilla/chrome/icons/default/editorWindow16.xpm
-mozilla/chrome/icons/default/findBookmarkWindow.xpm
-mozilla/chrome/icons/default/findBookmarkWindow16.xpm
-mozilla/chrome/icons/default/findHistoryWindow.xpm
-mozilla/chrome/icons/default/findHistoryWindow16.xpm
-mozilla/chrome/icons/default/history-window.xpm
-mozilla/chrome/icons/default/history-window16.xpm
-mozilla/chrome/icons/default/jsconsoleWindow.xpm
-mozilla/chrome/icons/default/jsconsoleWindow16.xpm
-mozilla/chrome/icons/default/main-window.xpm
-mozilla/chrome/icons/default/main-window16.xpm
-mozilla/chrome/icons/default/messengerWindow.xpm
-mozilla/chrome/icons/default/messengerWindow16.xpm
-mozilla/chrome/icons/default/msgcomposeWindow.xpm
-mozilla/chrome/icons/default/msgcomposeWindow16.xpm
-mozilla/chrome/icons/default/venkman-window.xpm
-mozilla/chrome/icons/default/venkman-window16.xpm
-mozilla/chrome/icons/default/winInspectorMain.xpm
-mozilla/chrome/icons/default/winInspectorMain16.xpm
-mozilla/chrome/inspector.jar
 mozilla/chrome/installed-chrome.txt
-mozilla/chrome/messenger.jar
 mozilla/chrome/modern.jar
 mozilla/chrome/pipnss.jar
 mozilla/chrome/pippki.jar
 mozilla/chrome/toolkit.jar
-mozilla/chrome/venkman.jar
 mozilla/components/accessibility.xpt
-mozilla/components/addrbook.xpt
 mozilla/components/appshell.xpt
 mozilla/components/autocomplete.xpt
 mozilla/components/autoconfig.xpt
 mozilla/components/bookmarks.xpt
 mozilla/components/caps.xpt
 mozilla/components/chardet.xpt
-mozilla/components/chatzilla-service.js
 mozilla/components/chrome.xpt
 mozilla/components/commandhandler.xpt
 mozilla/components/composer.xpt
@@ -90,7 +49,7 @@ mozilla/components/dom_views.xpt
 mozilla/components/dom_xbl.xpt
 mozilla/components/dom_xpath.xpt
 mozilla/components/dom_xul.xpt
-mozilla/components/downloadmanager.xpt
+mozilla/components/downloads.xpt
 mozilla/components/editor.xpt
 mozilla/components/embed_base.xpt
 mozilla/components/exthandler.xpt
@@ -101,10 +60,8 @@ mozilla/components/helperAppDlg.xpt
 mozilla/components/history.xpt
 mozilla/components/htmlparser.xpt
 mozilla/components/imglib2.xpt
-mozilla/components/impComm4xMail.xpt
-mozilla/components/import.xpt
-mozilla/components/inspector.xpt
 mozilla/components/intl.xpt
+mozilla/components/ipcd.xpt
 mozilla/components/jar.xpt
 mozilla/components/jsconsole-clhandler.js
 mozilla/components/jsconsole.xpt
@@ -115,21 +72,9 @@ mozilla/components/layout_xul.xpt
 mozilla/components/layout_xul_tree.xpt
 mozilla/components/locale.xpt
 mozilla/components/lwbrk.xpt
-mozilla/components/mailnews.xpt
-mozilla/components/mailview.xpt
-mozilla/components/mdn-service.js
-mozilla/components/mime.xpt
 mozilla/components/mimetype.xpt
 mozilla/components/mozbrwsr.xpt
 mozilla/components/mozfind.xpt
-mozilla/components/msgbase.xpt
-mozilla/components/msgcompose.xpt
-mozilla/components/msgdb.xpt
-mozilla/components/msgimap.xpt
-mozilla/components/msglocal.xpt
-mozilla/components/msgnews.xpt
-mozilla/components/msgsearch.xpt
-mozilla/components/msgsmime.xpt
 mozilla/components/necko.xpt
 mozilla/components/necko_about.xpt
 mozilla/components/necko_cache.xpt
@@ -167,16 +112,18 @@ mozilla/components/pref.xpt
 mozilla/components/prefetch.xpt
 mozilla/components/prefmigr.xpt
 mozilla/components/profile.xpt
+mozilla/components/profilesharingsetup.xpt
 mozilla/components/progressDlg.xpt
 mozilla/components/proxyObjInst.xpt
 mozilla/components/rdf.xpt
 mozilla/components/related.xpt
+mozilla/components/satchel.xpt
 mozilla/components/search.xpt
 mozilla/components/shistory.xpt
 mozilla/components/sidebar.xpt
 mozilla/components/signonviewer.xpt
-mozilla/components/smime-service.js
 mozilla/components/timebomb.xpt
+mozilla/components/transmngr.xpt
 mozilla/components/txmgr.xpt
 mozilla/components/txtsvc.xpt
 mozilla/components/typeaheadfind.xpt
@@ -184,9 +131,7 @@ mozilla/components/ucnative.xpt
 mozilla/components/uconv.xpt
 mozilla/components/unicharutil.xpt
 mozilla/components/uriloader.xpt
-mozilla/components/urlbarhistory.xpt
 mozilla/components/util.xpt
-mozilla/components/venkman-service.js
 mozilla/components/wallet.xpt
 mozilla/components/walleteditor.xpt
 mozilla/components/walletpreview.xpt
@@ -213,15 +158,11 @@ mozilla/components/xuldoc.xpt
 mozilla/components/xultmpl.xpt
 mozilla/defaults/autoconfig/platform.js
 mozilla/defaults/autoconfig/prefcalls.js
-mozilla/defaults/messenger/US/mailViews.dat
-mozilla/defaults/messenger/mailViews.dat
 mozilla/defaults/pref/all.js
 mozilla/defaults/pref/editor.js
-mozilla/defaults/pref/inspector.js
 mozilla/defaults/pref/mailnews.js
-mozilla/defaults/pref/mdn.js
+mozilla/defaults/pref/non-shared.txt
 mozilla/defaults/pref/security-prefs.js
-mozilla/defaults/pref/smime.js
 mozilla/defaults/pref/unix.js
 mozilla/defaults/pref/xpinstall.js
 mozilla/defaults/profile/US/bookmarks.html
@@ -247,9 +188,7 @@ mozilla/defaults/wallet/StateSchema.tbl
 mozilla/defaults/wallet/VcardSchema.tbl
 mozilla/icons/mozicon16.xpm
 mozilla/icons/mozicon50.xpm
-mozilla/mozilla-bin
 mozilla/regxpcom
-mozilla/res/EditorOverride.css
 mozilla/res/arrow.gif
 mozilla/res/arrowd.gif
 mozilla/res/bloatcycle.html
@@ -288,8 +227,6 @@ mozilla/res/html/gopher-sound.gif
 mozilla/res/html/gopher-telnet.gif
 mozilla/res/html/gopher-text.gif
 mozilla/res/html/gopher-unknown.gif
-mozilla/res/inspector/search-registry.rdf
-mozilla/res/inspector/viewer-registry.rdf
 mozilla/res/langGroups.properties
 mozilla/res/language.properties
 mozilla/res/loading-image.gif
@@ -416,26 +353,16 @@ mozilla/res/ua.css
 mozilla/res/unixcharset.properties
 mozilla/res/viewer.properties
 mozilla/res/viewsource.css
-mozilla/searchplugins/NetscapeSearch.gif
-mozilla/searchplugins/NetscapeSearch.src
-mozilla/searchplugins/bugzilla.gif
-mozilla/searchplugins/bugzilla.src
 mozilla/searchplugins/dmoz.gif
 mozilla/searchplugins/dmoz.src
 mozilla/searchplugins/google.gif
 mozilla/searchplugins/google.src
-mozilla/searchplugins/lxrmozilla.gif
-mozilla/searchplugins/lxrmozilla.src
-mozilla/searchplugins/mozilla.gif
-mozilla/searchplugins/mozilla.src
 mozilla/components/libaccessibility.so.1.0
-mozilla/components/libaddrbook.so.1.0
 mozilla/components/libappcomps.so.1.0
 mozilla/components/libautoconfig.so.1.0
-mozilla/components/libbayesflt.so.1.0
+mozilla/components/libbrowsercomps.so.1.0
 mozilla/components/libcaps.so.1.0
 mozilla/components/libchrome.so.1.0
-mozilla/components/libcomposer.so.1.0
 mozilla/components/libcookie.so.1.0
 mozilla/components/libdocshell.so.1.0
 mozilla/components/libeditor.so.1.0
@@ -450,26 +377,12 @@ mozilla/components/libhtmlpars.so.1.0
 mozilla/components/libi18n.so.1.0
 mozilla/components/libimglib2.so.1.0
 mozilla/components/libimgmng.so.1.0
-mozilla/components/libimpComm4xMail.so.1.0
-mozilla/components/libimpText.so.1.0
-mozilla/components/libimport.so.1.0
-mozilla/components/libinspector.so.1.0
+mozilla/components/libipcdc.so.1.0
 mozilla/components/libjar50.so.1.0
 mozilla/components/libjsd.so.1.0
 mozilla/components/libjsdom.so.1.0
-mozilla/components/liblocalmail.so.1.0
-mozilla/components/libmailnews.so.1.0
-mozilla/components/libmailview.so.1.0
-mozilla/components/libmime.so.1.0
-mozilla/components/libmimeemitter.so.1.0
 mozilla/components/libmork.so.1.0
 mozilla/components/libmozfind.so.1.0
-mozilla/components/libmsgcompose.so.1.0
-mozilla/components/libmsgdb.so.1.0
-mozilla/components/libmsgimap.so.1.0
-mozilla/components/libmsgmdn.so.1.0
-mozilla/components/libmsgnews.so.1.0
-mozilla/components/libmsgsmime.so.1.0
 mozilla/components/libnecko.so.1.0
 mozilla/components/libnecko2.so.1.0
 mozilla/components/libnsappshell.so.1.0
@@ -482,13 +395,14 @@ mozilla/components/libpippki.so.1.0
 mozilla/components/libpref.so.1.0
 mozilla/components/libprofile.so.1.0
 mozilla/components/librdf.so.1.0
+mozilla/components/libtoolkitcomps.so.1.0
 mozilla/components/libtransformiix.so.1.0
+mozilla/components/libtransmngr_client.so.1.0
 mozilla/components/libtxmgr.so.1.0
 mozilla/components/libtypeaheadfind.so.1.0
 mozilla/components/libuconv.so.1.0
 mozilla/components/libucvmath.so.1.0
 mozilla/components/libuniversalchardet.so.1.0
-mozilla/components/libvcard.so.1.0
 mozilla/components/libwallet.so.1.0
 mozilla/components/libwalletviewers.so.1.0
 mozilla/components/libwebbrwsr.so.1.0
@@ -500,13 +414,15 @@ mozilla/components/libxpconnect.so.1.0
 mozilla/components/libxpinstall.so.1.0
 mozilla/components/libxremote_client.so.1.0
 mozilla/components/libxremoteservice.so.1.0
+mozilla/ipc/modules/liblockmodule.so.1.0
+mozilla/ipc/modules/libtestmodule.so.1.0
+mozilla/ipc/modules/libtransmngr.so.1.0
 mozilla/libgkgfx.so.1.0
 mozilla/libgtkembedmoz.so.1.0
 mozilla/libgtksuperwin.so.1.0
 mozilla/libgtkxtbin.so.1.0
 mozilla/libjsj.so.1.0
 mozilla/libmozjs.so.1.0
-mozilla/libmsgbaseutil.so.1.0
 mozilla/libnspr4.so.1.0
 mozilla/libnss3.so.1.0
 mozilla/libnssckbi.so.1.0
@@ -525,7 +441,6 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/res/samples/sampleimages
 @dirrm mozilla/res/samples
 @dirrm mozilla/res/rdf
-@dirrm mozilla/res/inspector
 @dirrm mozilla/res/html
 @dirrm mozilla/res/fonts
 @dirrm mozilla/res/entityTables
@@ -533,6 +448,8 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/res/builtin
 @dirrm mozilla/res
 @dirrm mozilla/plugins
+@dirrm mozilla/ipc/modules
+@dirrm mozilla/ipc
 @dirrm mozilla/icons
 @dirrm mozilla/defaults/wallet
 @dirrm mozilla/defaults/profile/chrome
@@ -540,25 +457,11 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/defaults/profile/US
 @dirrm mozilla/defaults/profile
 @dirrm mozilla/defaults/pref
-@dirrm mozilla/defaults/messenger/US
-@dirrm mozilla/defaults/messenger
 @dirrm mozilla/defaults/autoconfig
 @dirrm mozilla/defaults
 @dirrm mozilla/components
-@exec mkdir -p %D/mozilla/chrome/venkman/skin/modern/venkman/images
-@dirrm mozilla/chrome/venkman/skin/modern/venkman/images
-@dirrm mozilla/chrome/venkman/skin/modern/venkman
-@dirrm mozilla/chrome/venkman/skin/modern
-@dirrm mozilla/chrome/venkman/skin
-@exec mkdir -p %D/mozilla/chrome/venkman/locale/en-US/venkman
-@dirrm mozilla/chrome/venkman/locale/en-US/venkman
-@dirrm mozilla/chrome/venkman/locale/en-US
-@dirrm mozilla/chrome/venkman/locale
-@exec mkdir -p %D/mozilla/chrome/venkman/content/venkman/tests
-@dirrm mozilla/chrome/venkman/content/venkman/tests
-@dirrm mozilla/chrome/venkman/content/venkman
-@dirrm mozilla/chrome/venkman/content
-@dirrm mozilla/chrome/venkman
+@exec mkdir -p %D/mozilla/chrome/toolkit/content/global/widgets
+@dirrm mozilla/chrome/toolkit/content/global/widgets
 @exec mkdir -p %D/mozilla/chrome/toolkit/content/global/bindings
 @dirrm mozilla/chrome/toolkit/content/global/bindings
 @exec mkdir -p %D/mozilla/chrome/toolkit/content/global-region
@@ -576,191 +479,14 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/pipnss/content/pipnss
 @dirrm mozilla/chrome/pipnss/content
 @dirrm mozilla/chrome/pipnss
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/toolbar
-@dirrm mozilla/chrome/modern/skin/modern/navigator/toolbar
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/icons
-@dirrm mozilla/chrome/modern/skin/modern/navigator/icons
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/navigator/btn1
-@dirrm mozilla/chrome/modern/skin/modern/navigator/btn1
-@dirrm mozilla/chrome/modern/skin/modern/navigator
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/smime/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/smime/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/smime
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/messengercompose/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/messengercompose/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/messengercompose
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/icons
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/messenger/addressbook/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/addressbook/icons
-@dirrm mozilla/chrome/modern/skin/modern/messenger/addressbook
-@dirrm mozilla/chrome/modern/skin/modern/messenger
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/tree
-@dirrm mozilla/chrome/modern/skin/modern/global/tree
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/toolbar
-@dirrm mozilla/chrome/modern/skin/modern/global/toolbar
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/splitter
-@dirrm mozilla/chrome/modern/skin/modern/global/splitter
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/scrollbar
-@dirrm mozilla/chrome/modern/skin/modern/global/scrollbar
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/radio
-@dirrm mozilla/chrome/modern/skin/modern/global/radio
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/progressmeter
-@dirrm mozilla/chrome/modern/skin/modern/global/progressmeter
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/menulist
-@dirrm mozilla/chrome/modern/skin/modern/global/menulist
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/menu
-@dirrm mozilla/chrome/modern/skin/modern/global/menu
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/icons
-@dirrm mozilla/chrome/modern/skin/modern/global/icons
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/filepicker
-@dirrm mozilla/chrome/modern/skin/modern/global/filepicker
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/console
-@dirrm mozilla/chrome/modern/skin/modern/global/console
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/checkbox
-@dirrm mozilla/chrome/modern/skin/modern/global/checkbox
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/button
-@dirrm mozilla/chrome/modern/skin/modern/global/button
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/global/arrow
-@dirrm mozilla/chrome/modern/skin/modern/global/arrow
-@dirrm mozilla/chrome/modern/skin/modern/global
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/editor/icons
-@dirrm mozilla/chrome/modern/skin/modern/editor/icons
-@dirrm mozilla/chrome/modern/skin/modern/editor
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/xpinstall
-@dirrm mozilla/chrome/modern/skin/modern/communicator/xpinstall
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/toolbar
-@dirrm mozilla/chrome/modern/skin/modern/communicator/toolbar
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/taskbar
-@dirrm mozilla/chrome/modern/skin/modern/communicator/taskbar
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/sidebar
-@dirrm mozilla/chrome/modern/skin/modern/communicator/sidebar
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/search
-@dirrm mozilla/chrome/modern/skin/modern/communicator/search
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/related
-@dirrm mozilla/chrome/modern/skin/modern/communicator/related
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/profile
-@dirrm mozilla/chrome/modern/skin/modern/communicator/profile
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/icons
-@dirrm mozilla/chrome/modern/skin/modern/communicator/icons
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/help
-@dirrm mozilla/chrome/modern/skin/modern/communicator/help
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/directory
-@dirrm mozilla/chrome/modern/skin/modern/communicator/directory
 @exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/cookie
 @dirrm mozilla/chrome/modern/skin/modern/communicator/cookie
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/brand
-@dirrm mozilla/chrome/modern/skin/modern/communicator/brand
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/bookmarks
-@dirrm mozilla/chrome/modern/skin/modern/communicator/bookmarks
-@exec mkdir -p %D/mozilla/chrome/modern/skin/modern/communicator/alerts
-@dirrm mozilla/chrome/modern/skin/modern/communicator/alerts
 @dirrm mozilla/chrome/modern/skin/modern/communicator
 @dirrm mozilla/chrome/modern/skin/modern
 @dirrm mozilla/chrome/modern/skin
 @dirrm mozilla/chrome/modern
-@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger/messengercompose
-@dirrm mozilla/chrome/messenger/content/messenger/messengercompose
-@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger/addressbook
-@dirrm mozilla/chrome/messenger/content/messenger/addressbook
-@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-views
-@dirrm mozilla/chrome/messenger/content/messenger-views
-@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-smime
-@dirrm mozilla/chrome/messenger/content/messenger-smime
-@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-region
-@dirrm mozilla/chrome/messenger/content/messenger-region
-@exec mkdir -p %D/mozilla/chrome/messenger/content/messenger-mdn
-@dirrm mozilla/chrome/messenger/content/messenger-mdn
-@dirrm mozilla/chrome/messenger/content/messenger
-@dirrm mozilla/chrome/messenger/content
-@dirrm mozilla/chrome/messenger
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/xblBindings
-@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/xblBindings
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/styleRules
-@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/styleRules
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/domNode
-@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/domNode
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/dom
-@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/dom
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/modern/inspector/viewers/boxModel
-@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers/boxModel
-@dirrm mozilla/chrome/inspector/skin/modern/inspector/viewers
-@dirrm mozilla/chrome/inspector/skin/modern/inspector
-@dirrm mozilla/chrome/inspector/skin/modern
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/xblBindings
-@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/xblBindings
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/styleRules
-@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/styleRules
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/domNode
-@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/domNode
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/dom
-@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/dom
-@exec mkdir -p %D/mozilla/chrome/inspector/skin/classic/inspector/viewers/boxModel
-@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers/boxModel
-@dirrm mozilla/chrome/inspector/skin/classic/inspector/viewers
-@dirrm mozilla/chrome/inspector/skin/classic/inspector
-@dirrm mozilla/chrome/inspector/skin/classic
-@dirrm mozilla/chrome/inspector/skin
-@exec mkdir -p %D/mozilla/chrome/inspector/locale/en-US/inspector/viewers
-@dirrm mozilla/chrome/inspector/locale/en-US/inspector/viewers
-@exec mkdir -p %D/mozilla/chrome/inspector/locale/en-US/inspector/search
-@dirrm mozilla/chrome/inspector/locale/en-US/inspector/search
-@dirrm mozilla/chrome/inspector/locale/en-US/inspector
-@dirrm mozilla/chrome/inspector/locale/en-US
-@dirrm mozilla/chrome/inspector/locale
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/xblBindings
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/xblBindings
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/stylesheets
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/stylesheets
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/styleRules
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/styleRules
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/jsObject
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/jsObject
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/domNode
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/domNode
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/dom
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/dom
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/computedStyle
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/computedStyle
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/viewers/boxModel
-@dirrm mozilla/chrome/inspector/content/inspector/viewers/boxModel
-@dirrm mozilla/chrome/inspector/content/inspector/viewers
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/tests
-@dirrm mozilla/chrome/inspector/content/inspector/tests
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/search/modules/junkImgs
-@dirrm mozilla/chrome/inspector/content/inspector/search/modules/junkImgs
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/search/modules/findFiles
-@dirrm mozilla/chrome/inspector/content/inspector/search/modules/findFiles
-@dirrm mozilla/chrome/inspector/content/inspector/search/modules
-@dirrm mozilla/chrome/inspector/content/inspector/search
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/prefs
-@dirrm mozilla/chrome/inspector/content/inspector/prefs
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/xul
-@dirrm mozilla/chrome/inspector/content/inspector/jsutil/xul
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/xpcom
-@dirrm mozilla/chrome/inspector/content/inspector/jsutil/xpcom
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/system
-@dirrm mozilla/chrome/inspector/content/inspector/jsutil/system
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/rdf
-@dirrm mozilla/chrome/inspector/content/inspector/jsutil/rdf
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/jsutil/events
-@dirrm mozilla/chrome/inspector/content/inspector/jsutil/events
-@dirrm mozilla/chrome/inspector/content/inspector/jsutil
-@exec mkdir -p %D/mozilla/chrome/inspector/content/inspector/extensions
-@dirrm mozilla/chrome/inspector/content/inspector/extensions
-@dirrm mozilla/chrome/inspector/content/inspector
-@dirrm mozilla/chrome/inspector/content
-@dirrm mozilla/chrome/inspector
-@dirrm mozilla/chrome/icons/default
-@dirrm mozilla/chrome/icons
-@exec mkdir -p %D/mozilla/chrome/help/content/help
-@dirrm mozilla/chrome/help/content/help
-@dirrm mozilla/chrome/help/content
-@dirrm mozilla/chrome/help
 @exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/navigator-platform
 @dirrm mozilla/chrome/en-win/locale/en-US/navigator-platform
-@exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/messenger-mapi
-@dirrm mozilla/chrome/en-win/locale/en-US/messenger-mapi
 @exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/global-platform
 @dirrm mozilla/chrome/en-win/locale/en-US/global-platform
 @exec mkdir -p %D/mozilla/chrome/en-win/locale/en-US/communicator-platform/pref
@@ -801,26 +527,10 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/en-US/locale/en-US/necko
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/navigator
 @dirrm mozilla/chrome/en-US/locale/en-US/navigator
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger/messengercompose
-@dirrm mozilla/chrome/en-US/locale/en-US/messenger/messengercompose
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger/addressbook
-@dirrm mozilla/chrome/en-US/locale/en-US/messenger/addressbook
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger-smime
-@dirrm mozilla/chrome/en-US/locale/en-US/messenger-smime
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/messenger-mdn
-@dirrm mozilla/chrome/en-US/locale/en-US/messenger-mdn
-@dirrm mozilla/chrome/en-US/locale/en-US/messenger
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/help/images
-@dirrm mozilla/chrome/en-US/locale/en-US/help/images
-@dirrm mozilla/chrome/en-US/locale/en-US/help
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/global
 @dirrm mozilla/chrome/en-US/locale/en-US/global
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/editor
-@dirrm mozilla/chrome/en-US/locale/en-US/editor
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/cookie
 @dirrm mozilla/chrome/en-US/locale/en-US/cookie
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/content-packs
-@dirrm mozilla/chrome/en-US/locale/en-US/content-packs
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/xpinstall
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/webservices
@@ -843,15 +553,20 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/layout
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/history
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/history
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/downloadmanager
-@dirrm mozilla/chrome/en-US/locale/en-US/communicator/downloadmanager
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/dom
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/dom
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/directory
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator/directory
-@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/communicator/bookmarks
-@dirrm mozilla/chrome/en-US/locale/en-US/communicator/bookmarks
 @dirrm mozilla/chrome/en-US/locale/en-US/communicator
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/browser/pref
+@dirrm mozilla/chrome/en-US/locale/en-US/browser/pref
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/browser/history
+@dirrm mozilla/chrome/en-US/locale/en-US/browser/history
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/browser/downloads
+@dirrm mozilla/chrome/en-US/locale/en-US/browser/downloads
+@exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/browser/bookmarks
+@dirrm mozilla/chrome/en-US/locale/en-US/browser/bookmarks
+@dirrm mozilla/chrome/en-US/locale/en-US/browser
 @exec mkdir -p %D/mozilla/chrome/en-US/locale/en-US/autoconfig
 @dirrm mozilla/chrome/en-US/locale/en-US/autoconfig
 @dirrm mozilla/chrome/en-US/locale/en-US
@@ -869,10 +584,6 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/embed-sample/content/embed
 @dirrm mozilla/chrome/embed-sample/content
 @dirrm mozilla/chrome/embed-sample
-@exec mkdir -p %D/mozilla/chrome/content-packs/content/content-packs
-@dirrm mozilla/chrome/content-packs/content/content-packs
-@dirrm mozilla/chrome/content-packs/content
-@dirrm mozilla/chrome/content-packs
 @exec mkdir -p %D/mozilla/chrome/comm/content/xbl-marquee
 @dirrm mozilla/chrome/comm/content/xbl-marquee
 @exec mkdir -p %D/mozilla/chrome/comm/content/wallet
@@ -887,11 +598,6 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/comm/content/navigator-platform
 @exec mkdir -p %D/mozilla/chrome/comm/content/navigator
 @dirrm mozilla/chrome/comm/content/navigator
-@exec mkdir -p %D/mozilla/chrome/comm/content/editor/images
-@dirrm mozilla/chrome/comm/content/editor/images
-@exec mkdir -p %D/mozilla/chrome/comm/content/editor-region
-@dirrm mozilla/chrome/comm/content/editor-region
-@dirrm mozilla/chrome/comm/content/editor
 @exec mkdir -p %D/mozilla/chrome/comm/content/cookie
 @dirrm mozilla/chrome/comm/content/cookie
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/xpinstall
@@ -916,12 +622,8 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/comm/content/communicator/p3p
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/history
 @dirrm mozilla/chrome/comm/content/communicator/history
-@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/downloadmanager
-@dirrm mozilla/chrome/comm/content/communicator/downloadmanager
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/directory
 @dirrm mozilla/chrome/comm/content/communicator/directory
-@exec mkdir -p %D/mozilla/chrome/comm/content/communicator/bookmarks
-@dirrm mozilla/chrome/comm/content/communicator/bookmarks
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator/alerts
 @dirrm mozilla/chrome/comm/content/communicator/alerts
 @exec mkdir -p %D/mozilla/chrome/comm/content/communicator-region
@@ -955,7 +657,8 @@ mozilla/plugins/libnullplugin.so.1.0
 @dirrm mozilla/chrome/classic/skin/classic/global/toolbar
 @exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/splitter
 @dirrm mozilla/chrome/classic/skin/classic/global/splitter
-@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/scrollbar
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/scrollbar/slider
+@dirrm mozilla/chrome/classic/skin/classic/global/scrollbar/slider
 @dirrm mozilla/chrome/classic/skin/classic/global/scrollbar
 @exec mkdir -p %D/mozilla/chrome/classic/skin/classic/global/radio
 @dirrm mozilla/chrome/classic/skin/classic/global/radio
@@ -1002,39 +705,36 @@ mozilla/plugins/libnullplugin.so.1.0
 @exec mkdir -p %D/mozilla/chrome/classic/skin/classic/communicator/alerts
 @dirrm mozilla/chrome/classic/skin/classic/communicator/alerts
 @dirrm mozilla/chrome/classic/skin/classic/communicator
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/browser/pref
+@dirrm mozilla/chrome/classic/skin/classic/browser/pref
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/browser/downloads
+@dirrm mozilla/chrome/classic/skin/classic/browser/downloads
+@exec mkdir -p %D/mozilla/chrome/classic/skin/classic/browser/bookmarks
+@dirrm mozilla/chrome/classic/skin/classic/browser/bookmarks
+@dirrm mozilla/chrome/classic/skin/classic/browser
 @dirrm mozilla/chrome/classic/skin/classic
 @dirrm mozilla/chrome/classic/skin
 @dirrm mozilla/chrome/classic
-@exec mkdir -p %D/mozilla/chrome/chatzilla/skin/modern/chatzilla/images
-@dirrm mozilla/chrome/chatzilla/skin/modern/chatzilla/images
-@dirrm mozilla/chrome/chatzilla/skin/modern/chatzilla
-@dirrm mozilla/chrome/chatzilla/skin/modern
-@dirrm mozilla/chrome/chatzilla/skin
-@exec mkdir -p %D/mozilla/chrome/chatzilla/locale/en-US/chatzilla
-@dirrm mozilla/chrome/chatzilla/locale/en-US/chatzilla
-@dirrm mozilla/chrome/chatzilla/locale/en-US
-@dirrm mozilla/chrome/chatzilla/locale
-@exec mkdir -p %D/mozilla/chrome/chatzilla/content/chatzilla/prefpanel
-@dirrm mozilla/chrome/chatzilla/content/chatzilla/prefpanel
-@exec mkdir -p %D/mozilla/chrome/chatzilla/content/chatzilla/lib/xul
-@dirrm mozilla/chrome/chatzilla/content/chatzilla/lib/xul
-@exec mkdir -p %D/mozilla/chrome/chatzilla/content/chatzilla/lib/js
-@dirrm mozilla/chrome/chatzilla/content/chatzilla/lib/js
-@dirrm mozilla/chrome/chatzilla/content/chatzilla/lib
-@dirrm mozilla/chrome/chatzilla/content/chatzilla
-@dirrm mozilla/chrome/chatzilla/content
-@dirrm mozilla/chrome/chatzilla
+@exec mkdir -p %D/mozilla/chrome/browser/content/browser/pref
+@dirrm mozilla/chrome/browser/content/browser/pref
+@exec mkdir -p %D/mozilla/chrome/browser/content/browser/history
+@dirrm mozilla/chrome/browser/content/browser/history
+@exec mkdir -p %D/mozilla/chrome/browser/content/browser/downloads
+@dirrm mozilla/chrome/browser/content/browser/downloads
+@exec mkdir -p %D/mozilla/chrome/browser/content/browser/bookmarks
+@dirrm mozilla/chrome/browser/content/browser/bookmarks
+@dirrm mozilla/chrome/browser/content/browser
+@dirrm mozilla/chrome/browser/content
+@dirrm mozilla/chrome/browser
 @exec mkdir -p %D/mozilla/chrome/US/locale/US/navigator-region
 @dirrm mozilla/chrome/US/locale/US/navigator-region
-@exec mkdir -p %D/mozilla/chrome/US/locale/US/messenger-region
-@dirrm mozilla/chrome/US/locale/US/messenger-region
 @exec mkdir -p %D/mozilla/chrome/US/locale/US/global-region
 @dirrm mozilla/chrome/US/locale/US/global-region
-@exec mkdir -p %D/mozilla/chrome/US/locale/US/editor-region
-@dirrm mozilla/chrome/US/locale/US/editor-region
 @exec mkdir -p %D/mozilla/chrome/US/locale/US/communicator-region/wallet
 @dirrm mozilla/chrome/US/locale/US/communicator-region/wallet
 @dirrm mozilla/chrome/US/locale/US/communicator-region
+@exec mkdir -p %D/mozilla/chrome/US/locale/US/browser-region
+@dirrm mozilla/chrome/US/locale/US/browser-region
 @dirrm mozilla/chrome/US/locale/US
 @dirrm mozilla/chrome/US/locale
 @dirrm mozilla/chrome/US
