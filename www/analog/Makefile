@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2001/03/29 09:56:40 form Exp $
+# $OpenBSD: Makefile,v 1.26 2001/05/20 05:56:36 form Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
-DISTNAME=	analog-4.16
+DISTNAME=	analog-5.01
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.statslab.cam.ac.uk/~sret1/analog/ \
@@ -35,6 +35,7 @@ CFLAGS+=	-DANALOGDIR=\"${ANALOGDIR}/\" \
 		-DDEFAULTCONFIGFILE=\"${CONFIGFILE}\" \
 		-DHTTPDIR=\"${HTTPDIR}/\" \
 		-DIMAGEDIR=\"${IMAGEDIR}/\" \
+		-DLANGDIR=\"${ANALOGDIR}/lang/\" \
 		-DANALOG=\"${PREFIX}/bin/analog\"
 
 ALL_TARGET=	analog
@@ -49,12 +50,12 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/analog
 	${INSTALL_DATA_DIR} ${ANALOGDIR}/lang
 	${INSTALL_DATA_DIR} ${ANALOGDIR}/images
-	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKBUILD}/analog ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/analog
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg \
+		${PREFIX}/share/examples/analog
 	${INSTALL_DATA} ${WRKSRC}/images/* ${ANALOGDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
-	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${ANALOGDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${ANALOGDIR}
 	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${ANALOGDIR}
 

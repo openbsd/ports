@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.4 2001/02/27 03:48:50 form Exp $
+# $OpenBSD: INSTALL,v 1.5 2001/05/20 05:56:37 form Exp $
 #
 # Pre/post-installation setup of analog
 
@@ -19,7 +19,8 @@ set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
 CONFIG_FILE=${SYSCONFDIR}/analog.cfg
-SAMPLE_CONFIG_FILE=${PREFIX}/share/analog/analog.cfg
+SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/analog
+SAMPLE_CONFIG_FILE=${SAMPLE_CONFIG_DIR}/big.cfg
 
 # verify proper execution
 #
@@ -35,8 +36,8 @@ do_notice()
     echo
     echo "+---------------"
     echo "| The existing $1 configuration file, ${CONFIG_FILE},"
-    echo "| has NOT been changed.  You may want to compare it to the"
-    echo "| current sample file, ${SAMPLE_CONFIG_FILE},"
+    echo "| has NOT been changed.  You may want to compare it to one"
+    echo "| of the sample files in ${SAMPLE_CONFIG_DIR},"
     echo "| and update your configuration as needed."
     echo "+---------------"
     echo
