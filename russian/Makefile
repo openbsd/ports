@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 1999/07/05 16:36:02 form Exp $
+# $OpenBSD: Makefile,v 1.3 2000/01/26 07:40:45 form Exp $
 #
 
-    SUBDIR += wget-msgs
-    SUBDIR += xcyrillic
-    SUBDIR += xruskb
+	SUBDIR += cyrproxy
+	SUBDIR += wget-msgs
+	SUBDIR += xcyrillic
+	SUBDIR += xruskb
 
 .include <bsd.port.subdir.mk>
