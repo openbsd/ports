@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2001/03/24 19:55:30 jakob Exp $
+# $OpenBSD: Makefile,v 1.12 2001/07/15 18:37:01 jakob Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-3.14
+DISTNAME=	stunnel-3.15
 CATEGORIES=	security
 NEED_VERSION=	1.363
 
@@ -26,6 +26,7 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 BUILD_DEPENDS=  sdf::textproc/p5-sdf
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--with-tcp-wrappers
 ALL_TARGET=		stunnel stunnel.8
 
 post-configure:
