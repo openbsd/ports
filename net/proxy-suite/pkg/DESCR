@@ -11,7 +11,7 @@ FTP-Proxy
 - Provides extensive auditing (via syslog or rotating log files) 
 - Can separate user related from system triggered audit events 
 - Provides command restriction based on logged in user name 
-- Allows command argument checking with regular expressions (*)
+- Allows command argument checking with regular expressions
 - Is able to retrieve configuration data from an LDAP directory (*)
 - Has been thoroughly tested against buffer overflow attacks 
 - Fully conforms to RFC 959 and 1123 (the basic FTP RFCs) 
