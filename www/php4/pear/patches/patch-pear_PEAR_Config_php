@@ -1,12 +1,21 @@
-$OpenBSD: patch-pear_PEAR_Config_php,v 1.1 2003/04/03 10:29:03 avsm Exp $
---- pear/PEAR/Config.php.orig	Sat Feb 15 21:08:35 2003
-+++ pear/PEAR/Config.php	Sun Feb 16 01:20:55 2003
+$OpenBSD: patch-pear_PEAR_Config_php,v 1.2 2003/05/02 19:50:22 avsm Exp $
+--- pear/PEAR/Config.php.orig	Sun Dec 22 01:43:20 2002
++++ pear/PEAR/Config.php	Fri May  2 16:33:52 2003
+@@ -65,7 +65,7 @@ if (isset($_ENV['PHP_PEAR_INSTALL_DIR'])
+         define('PEAR_CONFIG_DEFAULT_PHP_DIR',
+                PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'lib');
+     } else {
+-        define('PEAR_CONFIG_DEFAULT_PHP_DIR', PEAR_INSTALL_DIR);
++        define('PEAR_CONFIG_DEFAULT_PHP_DIR', OPENBSD_PEAR_ROOT.'/lib');
+     }
+ }
+ 
 @@ -81,7 +81,7 @@ if (isset($_ENV['PHP_PEAR_DOC_DIR'])) {
      define('PEAR_CONFIG_DEFAULT_DOC_DIR', $_ENV['PHP_PEAR_DOC_DIR']);
  } else {
      define('PEAR_CONFIG_DEFAULT_DOC_DIR',
 -           PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'docs');
-+           PHP_PREFIX.'/share/doc/pear');
++           OPENBSD_PEAR_ROOT.'/doc');
  }
  
  // Default for bin_dir
@@ -15,7 +24,7 @@ $OpenBSD: patch-pear_PEAR_Config_php,v 1.1 2003/04/03 10:29:03 avsm Exp $
  } else {
      define('PEAR_CONFIG_DEFAULT_DATA_DIR',
 -           PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'data');
-+           PHP_PREFIX.'/share/pear');
++           OPENBSD_PEAR_ROOT.'/data');
  }
  
  // Default for test_dir
@@ -24,7 +33,7 @@ $OpenBSD: patch-pear_PEAR_Config_php,v 1.1 2003/04/03 10:29:03 avsm Exp $
  } else {
      define('PEAR_CONFIG_DEFAULT_TEST_DIR',
 -           PEAR_INSTALL_DIR.DIRECTORY_SEPARATOR.'tests');
-+           PHP_PREFIX.'/share/pear/tests');
++           OPENBSD_PEAR_ROOT.'/tests');
  }
  
  // Default for cache_dir
@@ -34,7 +43,7 @@ $OpenBSD: patch-pear_PEAR_Config_php,v 1.1 2003/04/03 10:29:03 avsm Exp $
      define('PEAR_CONFIG_DEFAULT_CACHE_DIR',
 -           System::tmpdir() . DIRECTORY_SEPARATOR . 'pear' .
 -           DIRECTORY_SEPARATOR . 'cache');
-+           '/var/www/pear/cache');
++           OPENBSD_PEAR_ROOT.'/cache');
  }
  
  // Default for php_bin

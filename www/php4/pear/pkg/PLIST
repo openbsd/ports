@@ -1,380 +1,376 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/03 10:29:03 avsm Exp $
-bin/pear
-bin/php-config
-bin/phpextdist
-bin/phpize
-include/php/TSRM/TSRM.h
-include/php/TSRM/acconfig.h
-include/php/TSRM/readdir.h
-include/php/TSRM/tsrm_config.h
-include/php/TSRM/tsrm_config.nw.h
-include/php/TSRM/tsrm_config.w32.h
-include/php/TSRM/tsrm_config_common.h
-include/php/TSRM/tsrm_nw.h
-include/php/TSRM/tsrm_strtok_r.h
-include/php/TSRM/tsrm_virtual_cwd.h
-include/php/TSRM/tsrm_win32.h
-include/php/Zend/FlexLexer.h
-include/php/Zend/acconfig.h
-include/php/Zend/zend.h
-include/php/Zend/zend_API.h
-include/php/Zend/zend_alloc.h
-include/php/Zend/zend_builtin_functions.h
-include/php/Zend/zend_compile.h
-include/php/Zend/zend_config.h
-include/php/Zend/zend_config.w32.h
-include/php/Zend/zend_constants.h
-include/php/Zend/zend_dynamic_array.h
-include/php/Zend/zend_errors.h
-include/php/Zend/zend_execute.h
-include/php/Zend/zend_execute_globals.h
-include/php/Zend/zend_execute_locks.h
-include/php/Zend/zend_extensions.h
-include/php/Zend/zend_fast_cache.h
-include/php/Zend/zend_globals.h
-include/php/Zend/zend_globals_macros.h
-include/php/Zend/zend_hash.h
-include/php/Zend/zend_highlight.h
-include/php/Zend/zend_indent.h
-include/php/Zend/zend_ini.h
-include/php/Zend/zend_ini_parser.h
-include/php/Zend/zend_ini_scanner.h
-include/php/Zend/zend_istdiostream.h
-include/php/Zend/zend_language_parser.h
-include/php/Zend/zend_language_scanner.h
-include/php/Zend/zend_list.h
-include/php/Zend/zend_llist.h
-include/php/Zend/zend_modules.h
-include/php/Zend/zend_multibyte.h
-include/php/Zend/zend_operators.h
-include/php/Zend/zend_ptr_stack.h
-include/php/Zend/zend_qsort.h
-include/php/Zend/zend_stack.h
-include/php/Zend/zend_static_allocator.h
-include/php/Zend/zend_types.h
-include/php/Zend/zend_variables.h
-include/php/acconfig.h
-include/php/ext/mbstring/cp932_table.h
-include/php/ext/mbstring/mbfilter.h
-include/php/ext/mbstring/mbfilter_cn.h
-include/php/ext/mbstring/mbfilter_ja.h
-include/php/ext/mbstring/mbfilter_kr.h
-include/php/ext/mbstring/mbfilter_ru.h
-include/php/ext/mbstring/mbfilter_tw.h
-include/php/ext/mbstring/mbregex.h
-include/php/ext/mbstring/mbstring.h
-include/php/ext/mbstring/php_mbregex.h
-include/php/ext/mbstring/php_unicode.h
-include/php/ext/mbstring/unicode_data.h
-include/php/ext/mbstring/unicode_table.h
-include/php/ext/mbstring/unicode_table_cn.h
-include/php/ext/mbstring/unicode_table_ja.h
-include/php/ext/mbstring/unicode_table_kr.h
-include/php/ext/mbstring/unicode_table_ru.h
-include/php/ext/mbstring/unicode_table_tw.h
-include/php/ext/pgsql/php_pgsql.h
-include/php/ext/session/mod_files.h
-include/php/ext/session/mod_mm.h
-include/php/ext/session/mod_user.h
-include/php/ext/session/php_session.h
-include/php/ext/standard/aggregation.h
-include/php/ext/standard/base64.h
-include/php/ext/standard/basic_functions.h
-include/php/ext/standard/crc32.h
-include/php/ext/standard/credits.h
-include/php/ext/standard/credits_ext.h
-include/php/ext/standard/credits_sapi.h
-include/php/ext/standard/css.h
-include/php/ext/standard/cyr_convert.h
-include/php/ext/standard/datetime.h
-include/php/ext/standard/dl.h
-include/php/ext/standard/dns.h
-include/php/ext/standard/exec.h
-include/php/ext/standard/file.h
-include/php/ext/standard/flock_compat.h
-include/php/ext/standard/fsock.h
-include/php/ext/standard/head.h
-include/php/ext/standard/html.h
-include/php/ext/standard/info.h
-include/php/ext/standard/md5.h
-include/php/ext/standard/microtime.h
-include/php/ext/standard/pack.h
-include/php/ext/standard/pageinfo.h
-include/php/ext/standard/parsedate.h
-include/php/ext/standard/php_array.h
-include/php/ext/standard/php_assert.h
-include/php/ext/standard/php_browscap.h
-include/php/ext/standard/php_crypt.h
-include/php/ext/standard/php_dir.h
-include/php/ext/standard/php_ext_syslog.h
-include/php/ext/standard/php_filestat.h
-include/php/ext/standard/php_fopen_wrappers.h
-include/php/ext/standard/php_ftok.h
-include/php/ext/standard/php_image.h
-include/php/ext/standard/php_incomplete_class.h
-include/php/ext/standard/php_iptc.h
-include/php/ext/standard/php_lcg.h
-include/php/ext/standard/php_link.h
-include/php/ext/standard/php_mail.h
-include/php/ext/standard/php_math.h
-include/php/ext/standard/php_metaphone.h
-include/php/ext/standard/php_parsedate.h
-include/php/ext/standard/php_rand.h
-include/php/ext/standard/php_smart_str.h
-include/php/ext/standard/php_smart_str_public.h
-include/php/ext/standard/php_standard.h
-include/php/ext/standard/php_string.h
-include/php/ext/standard/php_type.h
-include/php/ext/standard/php_var.h
-include/php/ext/standard/php_versioning.h
-include/php/ext/standard/quot_print.h
-include/php/ext/standard/reg.h
-include/php/ext/standard/scanf.h
-include/php/ext/standard/sha1.h
-include/php/ext/standard/uniqid.h
-include/php/ext/standard/url.h
-include/php/ext/standard/url_scanner.h
-include/php/ext/standard/url_scanner_ex.h
-include/php/ext/xml/expat/ascii.h
-include/php/ext/xml/expat/asciitab.h
-include/php/ext/xml/expat/expat.h
-include/php/ext/xml/expat/iasciitab.h
-include/php/ext/xml/expat/latin1tab.h
-include/php/ext/xml/expat/nametab.h
-include/php/ext/xml/expat/utf8tab.h
-include/php/ext/xml/expat/winconfig.h
-include/php/ext/xml/expat/xmlrole.h
-include/php/ext/xml/expat/xmltok.h
-include/php/ext/xml/expat/xmltok_impl.h
-include/php/ext/xml/php_xml.h
-include/php/main/SAPI.h
-include/php/main/build-defs.h
-include/php/main/config.nw.h
-include/php/main/fopen_wrappers.h
-include/php/main/internal_functions_registry.h
-include/php/main/logos.h
-include/php/main/php.h
-include/php/main/php3_compat.h
-include/php/main/php_compat.h
-include/php/main/php_config.h
-include/php/main/php_content_types.h
-include/php/main/php_embed.h
-include/php/main/php_globals.h
-include/php/main/php_ini.h
-include/php/main/php_logos.h
-include/php/main/php_main.h
-include/php/main/php_memory_streams.h
-include/php/main/php_network.h
-include/php/main/php_open_temporary_file.h
-include/php/main/php_output.h
-include/php/main/php_reentrancy.h
-include/php/main/php_regex.h
-include/php/main/php_streams.h
-include/php/main/php_syslog.h
-include/php/main/php_ticks.h
-include/php/main/php_variables.h
-include/php/main/php_version.h
-include/php/main/rfc1867.h
-include/php/main/safe_mode.h
-include/php/main/snprintf.h
-include/php/main/spprintf.h
-include/php/main/win95nt.h
-include/php/php_version.h
-include/php/regex/cclass.h
-include/php/regex/cname.h
-include/php/regex/regex.h
-include/php/regex/regex2.h
-include/php/regex/regex_extra.h
-include/php/regex/utils.h
-lib/php/.registry/Archive_Tar.reg
-lib/php/.registry/Console_Getopt.reg
-lib/php/.registry/DB.reg
-lib/php/.registry/HTTP.reg
-lib/php/.registry/Mail.reg
-lib/php/.registry/Net_SMTP.reg
-lib/php/.registry/Net_Socket.reg
-lib/php/.registry/PEAR.reg
-lib/php/.registry/XML_Parser.reg
-lib/php/.registry/XML_RPC.reg
-lib/php/Archive/Tar.php
-lib/php/Console/Getopt.php
-lib/php/DB.php
-lib/php/DB/common.php
-lib/php/DB/dbase.php
-lib/php/DB/fbsql.php
-lib/php/DB/ibase.php
-lib/php/DB/ifx.php
-lib/php/DB/msql.php
-lib/php/DB/mssql.php
-lib/php/DB/mysql.php
-lib/php/DB/oci8.php
-lib/php/DB/odbc.php
-lib/php/DB/pgsql.php
-lib/php/DB/storage.php
-lib/php/DB/sybase.php
-lib/php/HTTP.php
-lib/php/Mail.php
-lib/php/Mail/RFC822.php
-lib/php/Mail/mail.php
-lib/php/Mail/sendmail.php
-lib/php/Mail/smtp.php
-lib/php/Net/SMTP.php
-lib/php/Net/Socket.php
-lib/php/OS/Guess.php
-lib/php/PEAR.php
-lib/php/PEAR/Autoloader.php
-lib/php/PEAR/Builder.php
-lib/php/PEAR/Command.php
-lib/php/PEAR/Command/Auth.php
-lib/php/PEAR/Command/Build.php
-lib/php/PEAR/Command/Common.php
-lib/php/PEAR/Command/Config.php
-lib/php/PEAR/Command/Install.php
-lib/php/PEAR/Command/Package.php
-lib/php/PEAR/Command/Registry.php
-lib/php/PEAR/Command/Remote.php
-lib/php/PEAR/Common.php
-lib/php/PEAR/Config.php
-lib/php/PEAR/Dependency.php
-lib/php/PEAR/Frontend/CLI.php
-lib/php/PEAR/Installer.php
-lib/php/PEAR/Packager.php
-lib/php/PEAR/Registry.php
-lib/php/PEAR/Remote.php
-lib/php/System.php
-lib/php/XML/Parser.php
-lib/php/XML/RPC.php
-lib/php/XML/RPC/Server.php
-lib/php/build/Makefile.global
-lib/php/build/acinclude.m4
-lib/php/build/mkdep.awk
-lib/php/build/pear.m4
-lib/php/build/scan_makefile_in.awk
-lib/php/build/shtool
-share/doc/pear/Archive_Tar/docs/Archive_Tar.txt
-share/doc/pear/DB/DB/IDEAS
-share/doc/pear/DB/DB/MAINTAINERS
-share/doc/pear/DB/DB/STATUS
-share/doc/pear/DB/DB/TESTERS
-share/pear/PEAR/package.dtd
-share/pear/PEAR/template.spec
-share/pear/tests/DB/tests/db_error.phpt
-share/pear/tests/DB/tests/db_error2.phpt
-share/pear/tests/DB/tests/db_factory.phpt
-share/pear/tests/DB/tests/db_ismanip.phpt
-share/pear/tests/DB/tests/db_parsedsn.phpt
-share/pear/tests/DB/tests/driver/01connect.phpt
-share/pear/tests/DB/tests/driver/02fetch.phpt
-share/pear/tests/DB/tests/driver/03simplequery.phpt
-share/pear/tests/DB/tests/driver/04numcols.phpt
-share/pear/tests/DB/tests/driver/05sequences.phpt
-share/pear/tests/DB/tests/driver/06prepexec.phpt
-share/pear/tests/DB/tests/driver/08affectedrows.phpt
-share/pear/tests/DB/tests/driver/09numrows.phpt
-share/pear/tests/DB/tests/driver/10errormap.phpt
-share/pear/tests/DB/tests/driver/13limit.phpt
-share/pear/tests/DB/tests/driver/14fetchmode_object.phpt
-share/pear/tests/DB/tests/driver/15quote.phpt
-share/pear/tests/DB/tests/ibase/01connect.phpt
-share/pear/tests/DB/tests/ibase/02fetch.phpt
-share/pear/tests/DB/tests/ibase/03simplequery.phpt
-share/pear/tests/DB/tests/ibase/04numcols.phpt
-share/pear/tests/DB/tests/ibase/05sequences.phpt
-share/pear/tests/DB/tests/ibase/06prepexec.phpt
-share/pear/tests/DB/tests/ibase/10errormap.phpt
-share/pear/tests/DB/tests/mysql/01connect.phpt
-share/pear/tests/DB/tests/mysql/02fetch.phpt
-share/pear/tests/DB/tests/mysql/03simplequery.phpt
-share/pear/tests/DB/tests/mysql/04numcols.phpt
-share/pear/tests/DB/tests/mysql/05sequences.phpt
-share/pear/tests/DB/tests/mysql/06prepexec.phpt
-share/pear/tests/DB/tests/mysql/07errornative.phpt
-share/pear/tests/DB/tests/mysql/08affectedrows.phpt
-share/pear/tests/DB/tests/mysql/09numrows.phpt
-share/pear/tests/DB/tests/mysql/10errormap.phpt
-share/pear/tests/DB/tests/mysql/12tableinfo.phpt
-share/pear/tests/DB/tests/mysql/13limit.phpt
-share/pear/tests/DB/tests/mysql/14fetchmode_object.phpt
-share/pear/tests/DB/tests/oci8/01connect.phpt
-share/pear/tests/DB/tests/oci8/02fetch.phpt
-share/pear/tests/DB/tests/oci8/03simplequery.phpt
-share/pear/tests/DB/tests/oci8/04numcols.phpt
-share/pear/tests/DB/tests/oci8/05sequences.phpt
-share/pear/tests/DB/tests/oci8/06prepexec.phpt
-share/pear/tests/DB/tests/oci8/07errornative.phpt
-share/pear/tests/DB/tests/oci8/08affectedrows.phpt
-share/pear/tests/DB/tests/oci8/09numrows.phpt
-share/pear/tests/DB/tests/oci8/10errormap.phpt
-share/pear/tests/DB/tests/oci8/13limit.phpt
-share/pear/tests/DB/tests/odbc/01connect.phpt
-share/pear/tests/DB/tests/odbc/02fetch.phpt
-share/pear/tests/DB/tests/odbc/03simplequery.phpt
-share/pear/tests/DB/tests/odbc/04numcols.phpt
-share/pear/tests/DB/tests/odbc/06prepexec.phpt
-share/pear/tests/DB/tests/odbc/07errornative.phpt
-share/pear/tests/DB/tests/odbc/09numrows.phpt
-share/pear/tests/DB/tests/odbc/10errormap.phpt
-share/pear/tests/DB/tests/pgsql/01connect.phpt
-share/pear/tests/DB/tests/pgsql/02fetch.phpt
-share/pear/tests/DB/tests/pgsql/03simplequery.phpt
-share/pear/tests/DB/tests/pgsql/04numcols.phpt
-share/pear/tests/DB/tests/pgsql/05sequences.phpt
-share/pear/tests/DB/tests/pgsql/06prepexec.phpt
-share/pear/tests/DB/tests/pgsql/07errornative.phpt
-share/pear/tests/DB/tests/pgsql/08affectedrows.phpt
-share/pear/tests/DB/tests/pgsql/09numrows.phpt
-share/pear/tests/DB/tests/pgsql/10errormap.phpt
-share/pear/tests/DB/tests/pgsql/11transact.phpt
-share/pear/tests/DB/tests/pgsql/13limit.phpt
-share/pear/tests/DB/tests/pgsql/14fetchmode_object.phpt
-share/pear/tests/XML_Parser/tests/001.phpt
-share/pear/tests/XML_Parser/tests/002.phpt
-share/pear/tests/XML_Parser/tests/003.phpt
-share/pear/tests/XML_Parser/tests/004.phpt
-share/pear/tests/XML_Parser/tests/005.phpt
-share/pear/tests/XML_Parser/tests/test2.xml
-share/pear/tests/XML_Parser/tests/test3.xml
-@dirrm share/pear/tests/XML_Parser/tests
-@dirrm share/pear/tests/XML_Parser
-@dirrm share/pear/tests/DB/tests/pgsql
-@dirrm share/pear/tests/DB/tests/odbc
-@dirrm share/pear/tests/DB/tests/oci8
-@dirrm share/pear/tests/DB/tests/mysql
-@dirrm share/pear/tests/DB/tests/ibase
-@dirrm share/pear/tests/DB/tests/driver
-@dirrm share/pear/tests/DB/tests
-@dirrm share/pear/tests/DB
-@dirrm share/pear/tests
-@dirrm share/pear/PEAR
-@dirrm share/pear
-@dirrm share/doc/pear/DB/DB
-@dirrm share/doc/pear/DB
-@dirrm share/doc/pear/Archive_Tar/docs
-@dirrm share/doc/pear/Archive_Tar
-@dirrm share/doc/pear
-@dirrm lib/php/build
-@dirrm lib/php/XML/RPC
-@dirrm lib/php/XML
-@dirrm lib/php/PEAR/Frontend
-@dirrm lib/php/PEAR/Command
-@dirrm lib/php/PEAR
-@dirrm lib/php/OS
-@dirrm lib/php/Net
-@dirrm lib/php/Mail
-@dirrm lib/php/DB
-@dirrm lib/php/Console
-@dirrm lib/php/Archive
-@dirrm lib/php/.registry
-@dirrm lib/php
-@dirrm include/php/regex
-@dirrm include/php/main
-@dirrm include/php/ext/xml/expat
-@dirrm include/php/ext/xml
-@dirrm include/php/ext/standard
-@dirrm include/php/ext/session
-@dirrm include/php/ext/pgsql
-@dirrm include/php/ext/mbstring
-@dirrm include/php/ext
-@dirrm include/php/Zend
-@dirrm include/php/TSRM
-@dirrm include/php
+@comment $OpenBSD: PLIST,v 1.4 2003/05/02 19:50:22 avsm Exp $
+pear/data/PEAR/package.dtd
+pear/data/PEAR/template.spec
+pear/doc/Archive_Tar/docs/Archive_Tar.txt
+pear/doc/DB/DB/IDEAS
+pear/doc/DB/DB/MAINTAINERS
+pear/doc/DB/DB/STATUS
+pear/doc/DB/DB/TESTERS
+pear/include/TSRM/TSRM.h
+pear/include/TSRM/acconfig.h
+pear/include/TSRM/readdir.h
+pear/include/TSRM/tsrm_config.h
+pear/include/TSRM/tsrm_config.nw.h
+pear/include/TSRM/tsrm_config.w32.h
+pear/include/TSRM/tsrm_config_common.h
+pear/include/TSRM/tsrm_nw.h
+pear/include/TSRM/tsrm_strtok_r.h
+pear/include/TSRM/tsrm_virtual_cwd.h
+pear/include/TSRM/tsrm_win32.h
+pear/include/Zend/FlexLexer.h
+pear/include/Zend/acconfig.h
+pear/include/Zend/zend.h
+pear/include/Zend/zend_API.h
+pear/include/Zend/zend_alloc.h
+pear/include/Zend/zend_builtin_functions.h
+pear/include/Zend/zend_compile.h
+pear/include/Zend/zend_config.h
+pear/include/Zend/zend_config.w32.h
+pear/include/Zend/zend_constants.h
+pear/include/Zend/zend_dynamic_array.h
+pear/include/Zend/zend_errors.h
+pear/include/Zend/zend_execute.h
+pear/include/Zend/zend_execute_globals.h
+pear/include/Zend/zend_execute_locks.h
+pear/include/Zend/zend_extensions.h
+pear/include/Zend/zend_fast_cache.h
+pear/include/Zend/zend_globals.h
+pear/include/Zend/zend_globals_macros.h
+pear/include/Zend/zend_hash.h
+pear/include/Zend/zend_highlight.h
+pear/include/Zend/zend_indent.h
+pear/include/Zend/zend_ini.h
+pear/include/Zend/zend_ini_parser.h
+pear/include/Zend/zend_ini_scanner.h
+pear/include/Zend/zend_istdiostream.h
+pear/include/Zend/zend_language_parser.h
+pear/include/Zend/zend_language_scanner.h
+pear/include/Zend/zend_list.h
+pear/include/Zend/zend_llist.h
+pear/include/Zend/zend_modules.h
+pear/include/Zend/zend_multibyte.h
+pear/include/Zend/zend_operators.h
+pear/include/Zend/zend_ptr_stack.h
+pear/include/Zend/zend_qsort.h
+pear/include/Zend/zend_stack.h
+pear/include/Zend/zend_static_allocator.h
+pear/include/Zend/zend_types.h
+pear/include/Zend/zend_variables.h
+pear/include/acconfig.h
+pear/include/ext/mbstring/cp932_table.h
+pear/include/ext/mbstring/mbfilter.h
+pear/include/ext/mbstring/mbfilter_cn.h
+pear/include/ext/mbstring/mbfilter_ja.h
+pear/include/ext/mbstring/mbfilter_kr.h
+pear/include/ext/mbstring/mbfilter_ru.h
+pear/include/ext/mbstring/mbfilter_tw.h
+pear/include/ext/mbstring/mbregex.h
+pear/include/ext/mbstring/mbstring.h
+pear/include/ext/mbstring/php_mbregex.h
+pear/include/ext/mbstring/php_unicode.h
+pear/include/ext/mbstring/unicode_data.h
+pear/include/ext/mbstring/unicode_table.h
+pear/include/ext/mbstring/unicode_table_cn.h
+pear/include/ext/mbstring/unicode_table_ja.h
+pear/include/ext/mbstring/unicode_table_kr.h
+pear/include/ext/mbstring/unicode_table_ru.h
+pear/include/ext/mbstring/unicode_table_tw.h
+pear/include/ext/pgsql/php_pgsql.h
+pear/include/ext/session/mod_files.h
+pear/include/ext/session/mod_mm.h
+pear/include/ext/session/mod_user.h
+pear/include/ext/session/php_session.h
+pear/include/ext/standard/aggregation.h
+pear/include/ext/standard/base64.h
+pear/include/ext/standard/basic_functions.h
+pear/include/ext/standard/crc32.h
+pear/include/ext/standard/credits.h
+pear/include/ext/standard/credits_ext.h
+pear/include/ext/standard/credits_sapi.h
+pear/include/ext/standard/css.h
+pear/include/ext/standard/cyr_convert.h
+pear/include/ext/standard/datetime.h
+pear/include/ext/standard/dl.h
+pear/include/ext/standard/dns.h
+pear/include/ext/standard/exec.h
+pear/include/ext/standard/file.h
+pear/include/ext/standard/flock_compat.h
+pear/include/ext/standard/fsock.h
+pear/include/ext/standard/head.h
+pear/include/ext/standard/html.h
+pear/include/ext/standard/info.h
+pear/include/ext/standard/md5.h
+pear/include/ext/standard/microtime.h
+pear/include/ext/standard/pack.h
+pear/include/ext/standard/pageinfo.h
+pear/include/ext/standard/parsedate.h
+pear/include/ext/standard/php_array.h
+pear/include/ext/standard/php_assert.h
+pear/include/ext/standard/php_browscap.h
+pear/include/ext/standard/php_crypt.h
+pear/include/ext/standard/php_dir.h
+pear/include/ext/standard/php_ext_syslog.h
+pear/include/ext/standard/php_filestat.h
+pear/include/ext/standard/php_fopen_wrappers.h
+pear/include/ext/standard/php_ftok.h
+pear/include/ext/standard/php_image.h
+pear/include/ext/standard/php_incomplete_class.h
+pear/include/ext/standard/php_iptc.h
+pear/include/ext/standard/php_lcg.h
+pear/include/ext/standard/php_link.h
+pear/include/ext/standard/php_mail.h
+pear/include/ext/standard/php_math.h
+pear/include/ext/standard/php_metaphone.h
+pear/include/ext/standard/php_parsedate.h
+pear/include/ext/standard/php_rand.h
+pear/include/ext/standard/php_smart_str.h
+pear/include/ext/standard/php_smart_str_public.h
+pear/include/ext/standard/php_standard.h
+pear/include/ext/standard/php_string.h
+pear/include/ext/standard/php_type.h
+pear/include/ext/standard/php_var.h
+pear/include/ext/standard/php_versioning.h
+pear/include/ext/standard/quot_print.h
+pear/include/ext/standard/reg.h
+pear/include/ext/standard/scanf.h
+pear/include/ext/standard/sha1.h
+pear/include/ext/standard/uniqid.h
+pear/include/ext/standard/url.h
+pear/include/ext/standard/url_scanner.h
+pear/include/ext/standard/url_scanner_ex.h
+pear/include/ext/xml/expat/ascii.h
+pear/include/ext/xml/expat/asciitab.h
+pear/include/ext/xml/expat/expat.h
+pear/include/ext/xml/expat/iasciitab.h
+pear/include/ext/xml/expat/latin1tab.h
+pear/include/ext/xml/expat/nametab.h
+pear/include/ext/xml/expat/utf8tab.h
+pear/include/ext/xml/expat/winconfig.h
+pear/include/ext/xml/expat/xmlrole.h
+pear/include/ext/xml/expat/xmltok.h
+pear/include/ext/xml/expat/xmltok_impl.h
+pear/include/ext/xml/php_xml.h
+pear/include/main/SAPI.h
+pear/include/main/build-defs.h
+pear/include/main/config.nw.h
+pear/include/main/fopen_wrappers.h
+pear/include/main/internal_functions_registry.h
+pear/include/main/logos.h
+pear/include/main/php.h
+pear/include/main/php3_compat.h
+pear/include/main/php_compat.h
+pear/include/main/php_config.h
+pear/include/main/php_content_types.h
+pear/include/main/php_embed.h
+pear/include/main/php_globals.h
+pear/include/main/php_ini.h
+pear/include/main/php_logos.h
+pear/include/main/php_main.h
+pear/include/main/php_memory_streams.h
+pear/include/main/php_network.h
+pear/include/main/php_open_temporary_file.h
+pear/include/main/php_output.h
+pear/include/main/php_reentrancy.h
+pear/include/main/php_regex.h
+pear/include/main/php_streams.h
+pear/include/main/php_syslog.h
+pear/include/main/php_ticks.h
+pear/include/main/php_variables.h
+pear/include/main/php_version.h
+pear/include/main/rfc1867.h
+pear/include/main/safe_mode.h
+pear/include/main/snprintf.h
+pear/include/main/spprintf.h
+pear/include/main/win95nt.h
+pear/include/php_version.h
+pear/include/regex/cclass.h
+pear/include/regex/cname.h
+pear/include/regex/regex.h
+pear/include/regex/regex2.h
+pear/include/regex/regex_extra.h
+pear/include/regex/utils.h
+pear/lib/.registry/Archive_Tar.reg
+pear/lib/.registry/Console_Getopt.reg
+pear/lib/.registry/DB.reg
+pear/lib/.registry/HTTP.reg
+pear/lib/.registry/Mail.reg
+pear/lib/.registry/Net_SMTP.reg
+pear/lib/.registry/Net_Socket.reg
+pear/lib/.registry/PEAR.reg
+pear/lib/.registry/XML_Parser.reg
+pear/lib/.registry/XML_RPC.reg
+pear/lib/Archive/Tar.php
+pear/lib/Console/Getopt.php
+pear/lib/DB.php
+pear/lib/DB/common.php
+pear/lib/DB/dbase.php
+pear/lib/DB/fbsql.php
+pear/lib/DB/ibase.php
+pear/lib/DB/ifx.php
+pear/lib/DB/msql.php
+pear/lib/DB/mssql.php
+pear/lib/DB/mysql.php
+pear/lib/DB/oci8.php
+pear/lib/DB/odbc.php
+pear/lib/DB/pgsql.php
+pear/lib/DB/storage.php
+pear/lib/DB/sybase.php
+pear/lib/HTTP.php
+pear/lib/Mail.php
+pear/lib/Mail/RFC822.php
+pear/lib/Mail/mail.php
+pear/lib/Mail/sendmail.php
+pear/lib/Mail/smtp.php
+pear/lib/Net/SMTP.php
+pear/lib/Net/Socket.php
+pear/lib/OS/Guess.php
+pear/lib/PEAR.php
+pear/lib/PEAR/Autoloader.php
+pear/lib/PEAR/Builder.php
+pear/lib/PEAR/Command.php
+pear/lib/PEAR/Command/Auth.php
+pear/lib/PEAR/Command/Build.php
+pear/lib/PEAR/Command/Common.php
+pear/lib/PEAR/Command/Config.php
+pear/lib/PEAR/Command/Install.php
+pear/lib/PEAR/Command/Package.php
+pear/lib/PEAR/Command/Registry.php
+pear/lib/PEAR/Command/Remote.php
+pear/lib/PEAR/Common.php
+pear/lib/PEAR/Config.php
+pear/lib/PEAR/Dependency.php
+pear/lib/PEAR/Frontend/CLI.php
+pear/lib/PEAR/Installer.php
+pear/lib/PEAR/Packager.php
+pear/lib/PEAR/Registry.php
+pear/lib/PEAR/Remote.php
+pear/lib/System.php
+pear/lib/XML/Parser.php
+pear/lib/XML/RPC.php
+pear/lib/XML/RPC/Server.php
+pear/build/Makefile.global
+pear/build/acinclude.m4
+pear/build/mkdep.awk
+pear/build/pear.m4
+pear/build/scan_makefile_in.awk
+pear/build/shtool
+pear/tests/DB/tests/db_error.phpt
+pear/tests/DB/tests/db_error2.phpt
+pear/tests/DB/tests/db_factory.phpt
+pear/tests/DB/tests/db_ismanip.phpt
+pear/tests/DB/tests/db_parsedsn.phpt
+pear/tests/DB/tests/driver/01connect.phpt
+pear/tests/DB/tests/driver/02fetch.phpt
+pear/tests/DB/tests/driver/03simplequery.phpt
+pear/tests/DB/tests/driver/04numcols.phpt
+pear/tests/DB/tests/driver/05sequences.phpt
+pear/tests/DB/tests/driver/06prepexec.phpt
+pear/tests/DB/tests/driver/08affectedrows.phpt
+pear/tests/DB/tests/driver/09numrows.phpt
+pear/tests/DB/tests/driver/10errormap.phpt
+pear/tests/DB/tests/driver/13limit.phpt
+pear/tests/DB/tests/driver/14fetchmode_object.phpt
+pear/tests/DB/tests/driver/15quote.phpt
+pear/tests/DB/tests/ibase/01connect.phpt
+pear/tests/DB/tests/ibase/02fetch.phpt
+pear/tests/DB/tests/ibase/03simplequery.phpt
+pear/tests/DB/tests/ibase/04numcols.phpt
+pear/tests/DB/tests/ibase/05sequences.phpt
+pear/tests/DB/tests/ibase/06prepexec.phpt
+pear/tests/DB/tests/ibase/10errormap.phpt
+pear/tests/DB/tests/mysql/01connect.phpt
+pear/tests/DB/tests/mysql/02fetch.phpt
+pear/tests/DB/tests/mysql/03simplequery.phpt
+pear/tests/DB/tests/mysql/04numcols.phpt
+pear/tests/DB/tests/mysql/05sequences.phpt
+pear/tests/DB/tests/mysql/06prepexec.phpt
+pear/tests/DB/tests/mysql/07errornative.phpt
+pear/tests/DB/tests/mysql/08affectedrows.phpt
+pear/tests/DB/tests/mysql/09numrows.phpt
+pear/tests/DB/tests/mysql/10errormap.phpt
+pear/tests/DB/tests/mysql/12tableinfo.phpt
+pear/tests/DB/tests/mysql/13limit.phpt
+pear/tests/DB/tests/mysql/14fetchmode_object.phpt
+pear/tests/DB/tests/oci8/01connect.phpt
+pear/tests/DB/tests/oci8/02fetch.phpt
+pear/tests/DB/tests/oci8/03simplequery.phpt
+pear/tests/DB/tests/oci8/04numcols.phpt
+pear/tests/DB/tests/oci8/05sequences.phpt
+pear/tests/DB/tests/oci8/06prepexec.phpt
+pear/tests/DB/tests/oci8/07errornative.phpt
+pear/tests/DB/tests/oci8/08affectedrows.phpt
+pear/tests/DB/tests/oci8/09numrows.phpt
+pear/tests/DB/tests/oci8/10errormap.phpt
+pear/tests/DB/tests/oci8/13limit.phpt
+pear/tests/DB/tests/odbc/01connect.phpt
+pear/tests/DB/tests/odbc/02fetch.phpt
+pear/tests/DB/tests/odbc/03simplequery.phpt
+pear/tests/DB/tests/odbc/04numcols.phpt
+pear/tests/DB/tests/odbc/06prepexec.phpt
+pear/tests/DB/tests/odbc/07errornative.phpt
+pear/tests/DB/tests/odbc/09numrows.phpt
+pear/tests/DB/tests/odbc/10errormap.phpt
+pear/tests/DB/tests/pgsql/01connect.phpt
+pear/tests/DB/tests/pgsql/02fetch.phpt
+pear/tests/DB/tests/pgsql/03simplequery.phpt
+pear/tests/DB/tests/pgsql/04numcols.phpt
+pear/tests/DB/tests/pgsql/05sequences.phpt
+pear/tests/DB/tests/pgsql/06prepexec.phpt
+pear/tests/DB/tests/pgsql/07errornative.phpt
+pear/tests/DB/tests/pgsql/08affectedrows.phpt
+pear/tests/DB/tests/pgsql/09numrows.phpt
+pear/tests/DB/tests/pgsql/10errormap.phpt
+pear/tests/DB/tests/pgsql/11transact.phpt
+pear/tests/DB/tests/pgsql/13limit.phpt
+pear/tests/DB/tests/pgsql/14fetchmode_object.phpt
+pear/tests/XML_Parser/tests/001.phpt
+pear/tests/XML_Parser/tests/002.phpt
+pear/tests/XML_Parser/tests/003.phpt
+pear/tests/XML_Parser/tests/004.phpt
+pear/tests/XML_Parser/tests/005.phpt
+pear/tests/XML_Parser/tests/test2.xml
+pear/tests/XML_Parser/tests/test3.xml
+@dirrm pear/tests/XML_Parser/tests
+@dirrm pear/tests/XML_Parser
+@dirrm pear/tests/DB/tests/pgsql
+@dirrm pear/tests/DB/tests/odbc
+@dirrm pear/tests/DB/tests/oci8
+@dirrm pear/tests/DB/tests/mysql
+@dirrm pear/tests/DB/tests/ibase
+@dirrm pear/tests/DB/tests/driver
+@dirrm pear/tests/DB/tests
+@dirrm pear/tests/DB
+@dirrm pear/tests
+@dirrm pear/build
+@dirrm pear/lib/XML/RPC
+@dirrm pear/lib/XML
+@dirrm pear/lib/PEAR/Frontend
+@dirrm pear/lib/PEAR/Command
+@dirrm pear/lib/PEAR
+@dirrm pear/lib/OS
+@dirrm pear/lib/Net
+@dirrm pear/lib/Mail
+@dirrm pear/lib/DB
+@dirrm pear/lib/Console
+@dirrm pear/lib/Archive
+@dirrm pear/lib/.registry
+@dirrm pear/lib
+@dirrm pear/include/regex
+@dirrm pear/include/main
+@dirrm pear/include/ext/xml/expat
+@dirrm pear/include/ext/xml
+@dirrm pear/include/ext/standard
+@dirrm pear/include/ext/session
+@dirrm pear/include/ext/pgsql
+@dirrm pear/include/ext/mbstring
+@dirrm pear/include/ext
+@dirrm pear/include/Zend
+@dirrm pear/include/TSRM
+@dirrm pear/include
+@dirrm pear/doc/DB/DB
+@dirrm pear/doc/DB
+@dirrm pear/doc/Archive_Tar/docs
+@dirrm pear/doc/Archive_Tar
+@dirrm pear/doc
+@dirrm pear/data/PEAR
+@dirrm pear/data
