@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.445 2001/08/26 21:42:18 brad Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.446 2001/08/27 08:47:37 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1247,15 +1247,16 @@ MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 _print-packagename:
 	@echo ${FULLPKGNAME${SUBPACKAGE}}
 
-_EARLY_EXIT?=false
 .for _DEP in fetch build run lib misc
 ${_DEP}-depends:
 .  if defined(${_DEP:U}_DEPENDS) && ${NO_DEPENDS:L} == "no"
 .    for _i in ${${_DEP:U}_DEPENDS}
-	@unset _EARLY_EXIT PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
+	@unset PACKAGING DEPENDS_TARGET FLAVOR SUBPACKAGE || true; \
 	echo '${_i}'|{ \
 		IFS=:; read dep pkg dir target; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+		case "X$$target" in Xinstall|Xreinstall) early_exit=false;; \
+		*) early_exit=true;; esac; \
 		${_flavor_fragment}; \
 		case "X$$pkg" in X) pkg=`cd ${PORTSDIR} && cd $$dir && \
 			eval $$toset ${MAKE} _print-packagename`;; esac; \
@@ -1274,8 +1275,8 @@ ${_DEP}-depends:
 			fi; \
 			found=false; \
 			case "$$dep" in \
-			"/nonexistent") earlyexit=true;; \
-			*) earlyexit=${_EARLY_EXIT}; \
+			"/nonexistent") ;; \
+			*) \
 				${_${_DEP}_depends_fragment}; \
 				if $$found; then \
 					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} depends on: $$dep - found"; \
@@ -1708,7 +1709,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE} ${WRKPKG}/mtree.spec
 # The real install
 
 ${_INSTALL_COOKIE}:  ${_PACKAGE_COOKIES}
-	@cd ${.CURDIR} && DEPENDS_TARGET=package _EARLY_EXIT=true exec ${MAKE} run-depends lib-depends
+	@cd ${.CURDIR} && DEPENDS_TARGET=package exec ${MAKE} run-depends lib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${SUBPACKAGE}} from ${PKGFILE${SUBPACKAGE}}"
 .  for _m in ${MODULES}
 .    if defined(MOD${_m:U}_pre_install)
