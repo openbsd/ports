@@ -1,0 +1,12 @@
+diff -urN Makefile.in.orig Makefile.in
+--- Makefile.in.orig	Fri Jun 13 13:18:41 1997
++++ Makefile.in	Mon Dec 22 19:14:58 1997
+@@ -52,7 +52,7 @@
+ #   prefix='$(prefix)' exec_prefix='$(exec_prefix)' \
+ #   bindir='$(bindir)' infodir='$(infodir)' mandir='$(mandir)'
+ 
+-SUBDIRS = common compiler man doc checks
++SUBDIRS = common compiler man checks # doc
+ 
+ DISTFILES = README NEWS TODO THANKS COPYING RELEASE ChangeLog \
+ 	configure.in mkinstalldirs install-sh Makefile.in \
