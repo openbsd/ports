@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/10/29 20:59:59 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.19 2005/01/17 19:08:01 naddy Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
@@ -30,6 +30,8 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} --enable-static
 CONFIGURE_ARGS+= --without-gmp
+# Don't try to run aclocal
+CONFIGURE_ARGS+=--with-aclocaldir='$${datadir}/aclocal'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
