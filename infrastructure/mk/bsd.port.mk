@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.474 2001/10/07 11:30:30 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.475 2001/10/11 00:01:27 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1313,7 +1313,7 @@ ${WRKDIR}/.${_DEP}${_i:C,[|:./<=>*],-,g}: ${_WRKDIR_COOKIE}
 			else \
 				exit 1; \
 			fi; \
-			if $$earlyexit; then \
+			if $$early_exit; then \
 				break; \
 			fi; \
 		done; \
