@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/04/11 12:11:11 sturm Exp $
+${P5SITE}/Net/ICal.pm
+${P5SITE}/Net/ICal/Alarm.pm
+${P5SITE}/Net/ICal/Attendee.pm
+${P5SITE}/Net/ICal/Calendar.pm
+${P5SITE}/Net/ICal/Component.pm
+${P5SITE}/Net/ICal/Daylight.pm
+${P5SITE}/Net/ICal/Duration.pm
+${P5SITE}/Net/ICal/ETJ.pm
+${P5SITE}/Net/ICal/Event.pm
+${P5SITE}/Net/ICal/Freebusy.pm
+${P5SITE}/Net/ICal/FreebusyItem.pm
+${P5SITE}/Net/ICal/Journal.pm
+${P5SITE}/Net/ICal/Period.pm
+${P5SITE}/Net/ICal/Property.pm
+${P5SITE}/Net/ICal/Recurrence.pm
+${P5SITE}/Net/ICal/Standard.pm
+${P5SITE}/Net/ICal/Time.pm
+${P5SITE}/Net/ICal/Timezone.pm
+${P5SITE}/Net/ICal/Todo.pm
+${P5SITE}/Net/ICal/Trigger.pm
+${P5SITE}/Net/ICal/Util.pm
+@comment ${P5ARCH}/auto/Net/ICal/.packlist
+man/man3p/Net::ICal.3p
+man/man3p/Net::ICal::Alarm.3p
+man/man3p/Net::ICal::Attendee.3p
+man/man3p/Net::ICal::Calendar.3p
+man/man3p/Net::ICal::Component.3p
+man/man3p/Net::ICal::Daylight.3p
+man/man3p/Net::ICal::Duration.3p
+man/man3p/Net::ICal::ETJ.3p
+man/man3p/Net::ICal::Event.3p
+man/man3p/Net::ICal::Freebusy.3p
+man/man3p/Net::ICal::FreebusyItem.3p
+man/man3p/Net::ICal::Journal.3p
+man/man3p/Net::ICal::Period.3p
+man/man3p/Net::ICal::Property.3p
+man/man3p/Net::ICal::Recurrence.3p
+man/man3p/Net::ICal::Standard.3p
+man/man3p/Net::ICal::Time.3p
+man/man3p/Net::ICal::Timezone.3p
+man/man3p/Net::ICal::Todo.3p
+man/man3p/Net::ICal::Trigger.3p
+man/man3p/Net::ICal::Util.3p
+share/examples/p5-Net-ICal/README
+share/examples/p5-Net-ICal/cal2fb.pl
+share/examples/p5-Net-ICal/freebusy_demo.pl
+share/examples/p5-Net-ICal/gtk_todo.pl
+share/examples/p5-Net-ICal/html_calendar.pl
+share/examples/p5-Net-ICal/lunchtime.pl
+share/examples/p5-Net-ICal/recurrence_test.pl
+share/examples/p5-Net-ICal/reply.perl
+share/examples/p5-Net-ICal/showical.perl
+share/examples/p5-Net-ICal/test_alarm.pl
+share/examples/p5-Net-ICal/test_duration.pl
+share/examples/p5-Net-ICal/test_journal.pl
+share/examples/p5-Net-ICal/test_todo.pl
+share/examples/p5-Net-ICal/testcal.pl
+share/examples/p5-Net-ICal/timezone_test.pl
+@dirrm share/examples/p5-Net-ICal
+@comment @dirrm ${P5ARCH}/auto/Net/ICal
+@comment @dirrm ${P5ARCH}/auto/Net
+@dirrm ${P5SITE}/Net/ICal
+@dirrm ${P5SITE}/Net
