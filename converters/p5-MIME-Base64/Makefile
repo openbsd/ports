@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2002/05/13 18:50:37 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2002/11/27 06:50:49 pvalchev Exp $
+
+IGNORE=		"comes with ${OPSYS} as of release 3.3"
 
 COMMENT=	"Base64 and Quoted-Printable encodings"
 
 DISTNAME=	MIME-Base64-2.12
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	converters perl5
-NEED_VERSION=	1.515
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=MIME/}
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
