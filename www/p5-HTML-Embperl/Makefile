@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/03/19 17:31:35 peter Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/22 09:48:59 peter Exp $
 
 DISTNAME=	HTML-Embperl-1.3.1
 PKGNAME=	p5-HTML-Embperl-1.3.1
@@ -7,7 +7,7 @@ NEED_VERSION=	1.362
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= HTML
 
-MAINTAINER=	peter.galbavy@knowledge.com
+MAINTAINER=	Peter Galbavy <peter.galbavy@knowledge.com>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
