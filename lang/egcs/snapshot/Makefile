@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.28 1999/02/09 10:47:44 espie Exp $
+# $OpenBSD: Makefile,v 1.29 1999/02/13 00:53:48 espie Exp $
 #
 # This is a configuration file for egcs, snapshot flavor
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -220,7 +220,7 @@ PATCH_LIST+=patch-java-*
 # get openbsd configuration files where they should be
 post-patch:
 		# avoid packaging include copies along...
-	find ${WRKSRC} -name \*.orig|xargs ${RM}
+	#find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
 	${MV} ${WRKSRC}/libiberty/mkstemp.c ${WRKSRC}/libiberty/mkstemps.c

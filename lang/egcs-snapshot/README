@@ -1,8 +1,15 @@
-$OpenBSD: README,v 1.4 1999/02/03 18:02:53 espie Exp $
+$OpenBSD: README,v 1.5 1999/02/13 00:53:48 espie Exp $
 
 Warning: highly experimental port.
 
 It is assumed you know what you are doing by playing with this.
+
+Some common problems:
+- this port has no bison/yacc dependency. post-patch DOES fix the
+timestamps so that the generated parser files are newer than the
+corresponding yacc source. If this fails for you, blame your setup. *RUN*
+a time protocol over NFS networks, heck, get a clue.
+
 
 I am currently rewriting the openbsd configuration files, mostly from
 scratch, in order to clean them up.  Goal is to have something I can
@@ -64,9 +71,12 @@ This seems to be fixed as of 19990131
 
 As of 19990117, I personally built egcs for m68k, i386, alpha, and sparc.
 So all those archs *do* work. If it doesn't work for you, you've been doing
-something wrong.
+something wrong. Other arches are well along the way...
 
 As of 19990131, I checked that i386 and m68k did work.
+I don't recommend 19990208 for production uses. There are fairly recent
+changes to the loop handling code that breaks useful stuff, such as
+gnu-grep...
 
 Once you get through all those caveats, and manage to build egcs, one
 nice point is that you get fairly good C, C++, f77, objective-C, and
