@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_makemake_in,v 1.1.1.1 2000/11/18 13:43:27 naddy Exp $
+--- src/makemake.in.orig	Mon Mar  6 12:37:21 2000
++++ src/makemake.in	Tue Oct 10 02:20:33 2000
+@@ -1626,6 +1626,12 @@ case "$fsstnd" in
+     echol "docdir = \$(exec_prefix)${NEXT_}doc"
+     echol "lispdocdir = \$(docdir)${NEXT_}clisp"
+     ;;
++  bsd)
++    echol "docdir = \$(exec_prefix)${NEXT_}share${NEXT_}doc"
++    echol "lispdocdir = \$(docdir)${NEXT_}clisp"
++    echol "htmldir = \$(lispdocdir)"
++    echol "dvidir = \$(lispdocdir)"
++    ;;                                 
+   suse)
+     echol "docdir = \$(exec_prefix)${NEXT_}doc"
+     echol "lispdocdir = \$(docdir)${NEXT_}packages${NEXT_}clisp"
+@@ -1647,7 +1653,7 @@ if [ -n "$USE_GETTEXT" ] ; then
+ fi
+ echol "# The value of following variable is prepended to all the paths for"
+ echol "# installation. This is useful when preparing a binary distribution."
+-echol "install_root ="
++echol "install_root =${WRKINST}"
+ echol
+ echol     "# List of add-on modules:"
+ echol     "# queens               the queens function as a separate module"
+@@ -3136,7 +3142,6 @@ if [ $CROSS = false ] ; then
+     esac
+     echotab "if [ ! -d \$(install_root)\$(docdir) ] ; then mkdir \$(install_root)\$(docdir) ; fi"
+     echotab "if [ ! -d \$(install_root)\$(lispdocdir) ] ; then mkdir \$(install_root)\$(lispdocdir) ; fi"
+-    echotab "if [ ! -d \$(install_root)\$(lispdocdir)/doc ] ; then mkdir \$(install_root)\$(lispdocdir)/doc ; fi"
+     echol
+     echol "install-bin : lisp${LEXE} lispinit.mem clisp.c force"
+     echotab "if [ ! -d \$(install_root)\$(prefix) ] ; then mkdir \$(install_root)\$(prefix) ; fi"
+@@ -3198,9 +3203,8 @@ if [ $CROSS = false ] ; then
+     echotab "if [ ! -d \$(install_root)\$(exec_prefix) ] ; then mkdir \$(install_root)\$(exec_prefix) ; fi"
+     echotab "if [ ! -d \$(install_root)\$(docdir) ] ; then mkdir \$(install_root)\$(docdir) ; fi"
+     echotab "if [ ! -d \$(install_root)\$(lispdocdir) ] ; then mkdir \$(install_root)\$(lispdocdir) ; fi"
+-    echotab "if [ ! -d \$(install_root)\$(lispdocdir)/doc ] ; then mkdir \$(install_root)\$(lispdocdir)/doc ; fi"
+     echotab "\$(INSTALL_DATA) \$(READMES) \$(install_root)\$(lispdocdir)/"
+-    echotab "\$(INSTALL_DATA) \$(MANUALS)${manual_dvi} \$(install_root)\$(lispdocdir)/doc/"
++    echotab "\$(INSTALL_DATA) \$(MANUALS)${manual_dvi} \$(install_root)\$(lispdocdir)/"
+     echol
+     echol
+     echol "installcheck : ${TESTSDIR} force"
+@@ -3238,7 +3242,7 @@ if [ $CROSS = false ] ; then
+         ;;
+     esac
+     echotab "for f in \$(READMES); do \$(RM) \$(install_root)\$(lispdocdir)/\$\$f; done"
+-    echotab "for f in \$(MANUALS)${manual_dvi}; do \$(RM) \$(install_root)\$(lispdocdir)/doc/\$\$f; done"
++    echotab "for f in \$(MANUALS)${manual_dvi}; do \$(RM) \$(install_root)\$(lispdocdir)/\$\$f; done"
+     echol
+     echol
+   fi

@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_lispbibl_d,v 1.1.1.1 2000/11/18 13:43:27 naddy Exp $
+--- src/lispbibl.d.orig	Tue Feb 29 23:22:55 2000
++++ src/lispbibl.d	Mon Oct  9 19:30:02 2000
+@@ -79,7 +79,36 @@
+ # Für ANSI-C-Compiler: verwende Präprozessoren comment5, ansidecl
+ #   (und evtl. gcc-cpp, ccpaux).
+ 
+-
++#ifdef __OpenBSD__
++#ifdef __i386__
++#define i386
++#endif
++#ifdef __alpha__
++#define alpha
++#endif
++#ifdef __powerpc__
++#define powerpc
++#define RS6000
++#endif
++#ifdef __m68__
++#define m68
++#endif
++#ifdef __sparc__
++#define sparc
++#endif
++#ifdef __sun3__
++#define sun3
++#endif
++#ifdef __m88k__
++#define m88k
++#endif
++#ifdef __mips__
++#define mips
++#endif
++#ifdef __vax__
++#define vax
++#endif
++#endif
+ # diese Maschine: AMIGA oder ACORN oder DOSPC oder WIN32 oder GENERIC_UNIX
+ #if (defined(__unix) || defined(__unix__) || defined(_AIX) || defined(sinix) || defined(__MACH__) || defined(__POSIX__)) && !defined(unix)
+   #define unix
