@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2001/11/01 02:39:05 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2002/04/19 20:48:48 jakob Exp $
 
-COMMENT=	"Lame Ain't an MP3 Encoder"
+COMMENT=	"lame ain't an MP3 encoder"
 
-VERSION=	3.89
+VERSION=	3.91
 
-DISTNAME=	lame${VERSION}beta
-PKGNAME=	lame-${VERSION}b
+DISTNAME=	lame-${VERSION}
 CATEGORIES=	audio
-NEED_VERSION=	1.487
+NEED_VERSION=	1.507
 
-MASTER_SITES=	ftp://lame.sourceforge.net/pub/lame/src/
+MASTER_SITES=	http://prdownloads.sourceforge.net/lame/
 
-HOMEPAGE=	http://www.sulaco.org/mp3/
+HOMEPAGE=	http://www.mp3dev.org/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
