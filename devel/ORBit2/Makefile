@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2003/06/14 05:59:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.4 2003/08/06 06:16:59 marcm Exp $
 
 COMMENT=		"a high-performance CORBA Object Request Broker"
 
-DISTNAME=		ORBit2-2.6.1
+DISTNAME=		ORBit2-2.6.3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.labs.redhat.com/orbit/
@@ -21,8 +21,6 @@ EXTRACT_SUFX=		.tar.bz2
 .if (${MACHINE_ARCH} == "alpha")
 PATCH_LIST=		patch-* sup-alpha-*
 .endif
-
-MODULES=		gettext
 
 BUILD_DEPENDS=		:pkgconfig->=0.14.0:devel/pkgconfig
 LIB_DEPENDS=		IDL-2::devel/libIDL \
