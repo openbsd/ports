@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/12/01 15:42:04 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/24 00:01:25 espie Exp $
+@pkgcfl kdeedu-*
 bin/ktouch
 share/applnk/Applications/ktouch.desktop
 share/apps/ktouch/english.ktouch

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/10/29 04:40:01 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2002/03/24 00:01:25 espie Exp $
+@pkgcfl kdeedu-*
 bin/kmessedwords
 share/applnk/Applications/kmessedwords.desktop
 share/apps/kmessedwords/easy.txt
