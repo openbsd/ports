@@ -1,0 +1,44 @@
+--- etc/afpd/volume.h.orig	Sat May  4 01:57:24 1996
++++ etc/afpd/volume.h	Fri Oct 15 08:53:00 1999
+@@ -14,12 +14,13 @@
+ #else __svr4__
+     void		*v_gvs;
+ #endif __svr4__
+-    u_long		v_time;
+-    int			v_lastdid;
+-    u_short		v_vid;
++    u_int32_t		v_time;
++    int32_t		v_lastdid;
++    u_int16_t		v_vid;
+ };
+ 
+ extern struct vol	*getvolbyvid();
++extern void		setvoltime();
+ 
+ #define AFPVOL_OPEN	(1<<0)
+ #define AFPVOL_DT	(1<<1)
+@@ -29,6 +30,24 @@
+ #define AFPVOL_AFSGVS	(1<<2)
+ #define AFPVOL_USTATFS	(2<<2)
+ #define AFPVOL_UQUOTA	(4<<2)
++
++ /* If I may be so bold...  Grab some unused flag bits to control
++    behavior towards Apple 2 clients.  These are configured by placing
++    a digit in [0..3] after the exported Apple name in AppleVolumes -
++    delimited with whitespace.
++ 
++    0 or none = Normal netatalk defaults
++    1         = This volume to be compatible with ProDOS-8
++    2         = Force all file and directory names to uppercase
++                from clients point of view.  Note that this
++ 	       only really makes sense when the volume will
++ 	       not be shared with GSOS or Mac.
++    3         = Both of the above..
++ 
++    <shirsch@ibm.net> */
++#define AFPVOL_A2MASK   (3<<5)
++#define AFPVOL_A2VOL    (1<<5)
++#define AFPVOL_TOUPPER  (2<<5)
+ 
+ #define AFPVOLSIG_FIX	2
+ 

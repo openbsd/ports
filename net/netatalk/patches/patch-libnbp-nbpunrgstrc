@@ -1,0 +1,92 @@
+--- libatalk/nbp/nbp_unrgstr.c.orig	Wed Oct  8 07:22:39 1997
++++ libatalk/nbp/nbp_unrgstr.c	Wed Nov 10 14:30:47 1999
+@@ -3,13 +3,14 @@
+  * All Rights Reserved.  See COPYRIGHT.
+  */
+ 
++#include <string.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/param.h>
+ #include <sys/socket.h>
+ #include <sys/signal.h>
+ #include <sys/time.h>
+ #include <sys/errno.h>
+-#include <strings.h>
+ #include <netdb.h>
+ 
+ #include <netatalk/endian.h>
+@@ -19,6 +20,7 @@
+ 
+ #include  "nbp_conf.h"
+ 
++int
+ nbp_unrgstr( obj, type, zone )
+     char		*obj, *type, *zone;
+ {
+@@ -36,7 +38,7 @@
+ 	return( -1 );
+     }
+ 
+-    bzero( &to, sizeof( struct sockaddr_at ));
++    memset( &to, 0, sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+     to.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -50,19 +52,19 @@
+     nh.nh_op = NBPOP_UNRGSTR;
+     nh.nh_cnt = 1;
+     nh.nh_id = 0;
+-    bcopy( &nh, data, SZ_NBPHDR );
++    memcpy( data, &nh, SZ_NBPHDR );
+     data += SZ_NBPHDR;
+ 
+     nt.nt_net = 0;
+     nt.nt_node = 0;
+     nt.nt_port = 0;
+-    bcopy( &nt, data, SZ_NBPTUPLE);
++    memcpy( data, &nt, SZ_NBPTUPLE);
+     data += SZ_NBPTUPLE;
+ 
+     if ( obj ) {
+ 	if (( cc = strlen( obj )) > NBPSTRLEN ) return( -1 );
+ 	*data++ = cc;
+-	bcopy( obj, data, cc );
++	memcpy( data, obj, cc );
+ 	data += cc;
+     } else {
+ 	*data++ = 0;
+@@ -71,7 +73,7 @@
+     if ( type ) {
+ 	if (( cc = strlen( type )) > NBPSTRLEN ) return( -1 );
+ 	*data++ = cc;
+-	bcopy( type, data, cc );
++	memcpy( data, type, cc );
+ 	data += cc;
+     } else {
+ 	*data++ = 0;
+@@ -80,13 +82,13 @@
+     if ( zone ) {
+ 	if (( cc = strlen( zone )) > NBPSTRLEN ) return( -1 );
+ 	*data++ = cc;
+-	bcopy( zone, data, cc );
++	memcpy( data, zone, cc );
+ 	data += cc;
+     } else {
+ 	*data++ = 0;
+     }
+ 
+-    bzero( &to, sizeof( struct sockaddr_at ));
++    memset( &to, 0, sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+     to.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -130,7 +132,7 @@
+     if ( *data++ != DDPTYPE_NBP ) {
+ 	return( -1 );
+     }
+-    bcopy( data, &nh, SZ_NBPHDR );
++    memcpy( &nh, data, SZ_NBPHDR );
+     if ( nh.nh_op != NBPOP_OK ) {
+ 	return( -1 );
+     }

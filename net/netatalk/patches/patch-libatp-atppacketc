@@ -1,0 +1,187 @@
+--- libatalk/atp/atp_packet.c.orig	Thu Sep 19 05:29:36 1996
++++ libatalk/atp/atp_packet.c	Thu Nov 18 15:50:05 1999
+@@ -21,6 +21,8 @@
+  *	netatalk@itd.umich.edu
+  */
+ 
++#include <stdio.h>
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
+@@ -33,14 +35,11 @@
+ #include <atalk/atp.h>
+ #include "atp_internals.h"
+ 
+-#ifdef EBUG
+-#include <stdio.h>
+-#endif
+-
++void
+ build_req_packet( pktbuf, tid, ctrl, atpb )
+     struct atpbuf	*pktbuf;
+-    u_char		ctrl;
+-    u_short		tid;
++    u_int8_t		ctrl;
++    u_int16_t		tid;
+     struct atp_block	*atpb;
+ {
+     struct atphdr	hdr;
+@@ -51,20 +50,21 @@
+     hdr.atphd_bitmap = atpb->atp_bitmap;
+     hdr.atphd_tid = htons( tid );
+     *(pktbuf->atpbuf_info.atpbuf_data) = DDPTYPE_ATP;
+-    bcopy( (char *) &hdr, (char *) pktbuf->atpbuf_info.atpbuf_data + 1,
+-	sizeof( struct atphdr ));
+-    bcopy( (char *) atpb->atp_sreqdata, (char *) pktbuf->atpbuf_info.atpbuf_data
+-      + ATP_HDRSIZE,  atpb->atp_sreqdlen ); 
++    memcpy( (char *) pktbuf->atpbuf_info.atpbuf_data + 1,
++		(char *) &hdr, sizeof( struct atphdr ));
++    memcpy( (char *) pktbuf->atpbuf_info.atpbuf_data + ATP_HDRSIZE,
++		(char *) atpb->atp_sreqdata, atpb->atp_sreqdlen ); 
+ 
+     /* set length
+     */
+     pktbuf->atpbuf_dlen = ATP_HDRSIZE + atpb->atp_sreqdlen;
+ }
+ 
++void
+ build_resp_packet( pktbuf, tid, ctrl, atpb, seqnum )
+     struct atpbuf	*pktbuf;
+-    u_short		tid;
+-    u_char		ctrl;
++    u_int16_t		tid;
++    u_int8_t		ctrl;
+     struct atp_block	*atpb;
+     short		seqnum;
+ {
+@@ -76,18 +76,18 @@
+     hdr.atphd_ctrlinfo = ctrl;
+     hdr.atphd_bitmap = seqnum;
+     hdr.atphd_tid = htons( tid );
+-    bcopy( (char *) &hdr, (char *) pktbuf->atpbuf_info.atpbuf_data + 1,
+-	sizeof( struct atphdr ));
+-    bcopy( (char *) atpb->atp_sresiov[ seqnum ].iov_base,
+-      (char *) pktbuf->atpbuf_info.atpbuf_data + ATP_HDRSIZE,
+-      atpb->atp_sresiov[ seqnum ].iov_len ); 
++    memcpy( (char *) pktbuf->atpbuf_info.atpbuf_data + 1,
++		(char *) &hdr, sizeof( struct atphdr ));
++    memcpy( (char *) pktbuf->atpbuf_info.atpbuf_data + ATP_HDRSIZE,
++		(char *) atpb->atp_sresiov[ seqnum ].iov_base,
++      			atpb->atp_sresiov[ seqnum ].iov_len ); 
+ 
+     /* set length
+     */
+     pktbuf->atpbuf_dlen = ATP_HDRSIZE + atpb->atp_sresiov[ seqnum ].iov_len;
+ }
+ 
+-
++void
+ dump_packet( buf, len )
+     char	*buf;
+     int		len;
+@@ -104,8 +104,8 @@
+ recv_atp( ah, fromaddr, func, tid, rbuf, wait )
+     ATP			ah;
+     struct sockaddr_at	*fromaddr;
+-    u_char		*func;
+-    u_short		tid;
++    u_int8_t		*func;
++    u_int16_t		tid;
+     char		*rbuf;
+     int			wait;
+ {
+@@ -120,8 +120,8 @@
+ */
+     struct atpbuf	*pq, *cq;
+     struct atphdr	ahdr;
+-    u_short		rfunc;
+-    u_short		rtid;
++    u_int16_t		rfunc;
++    u_int16_t		rtid;
+     int			i;
+     int			dlen = -1;
+     int			recvlen;
+@@ -138,7 +138,7 @@
+ #endif
+     for ( pq = NULL, cq = ah->atph_queue; cq != NULL;
+       pq = cq, cq = cq->atpbuf_next ) {
+-	bcopy( (char *) cq->atpbuf_info.atpbuf_data + 1, (char *)&ahdr,
++	memcpy( (char *)&ahdr, (char *) cq->atpbuf_info.atpbuf_data + 1,
+ 	    sizeof( struct atphdr ));
+ 	rfunc = ahdr.atphd_ctrlinfo & ATP_FUNCMASK;
+ #ifdef EBUG
+@@ -159,9 +159,9 @@
+ 	*/
+ 	dlen = cq->atpbuf_dlen;
+ 	*func = rfunc;
+-	bcopy( (char *) &cq->atpbuf_addr, (char *) fromaddr,
++	memcpy( (char *) fromaddr, (char *) &cq->atpbuf_addr,
+ 	  sizeof( struct sockaddr_at ));
+-	bcopy( (char *) cq->atpbuf_info.atpbuf_data, (char *) rbuf,
++	memcpy( (char *) rbuf, (char *) cq->atpbuf_info.atpbuf_data,
+ 	  cq->atpbuf_dlen );
+ 
+ 	/* remove packet from queue and free buffer
+@@ -191,13 +191,13 @@
+     fflush( stdout );
+ #endif
+ 	faddrlen = sizeof( struct sockaddr_at );
+-	bzero( (char *) &faddr, sizeof( struct sockaddr_at ));
++	memset( (char *) &faddr, 0, sizeof( struct sockaddr_at ));
+ 
+ 	if (( recvlen = recvfrom( ah->atph_socket, rbuf, ATP_BUFSIZ, 0,
+ 	  (struct sockaddr *) &faddr, &faddrlen )) < 0 ) {
+ 	    return -1;
+ 	}
+-	bcopy( rbuf + 1, (char *)&ahdr, sizeof( struct atphdr ));
++	memcpy( (char *)&ahdr, rbuf + 1, sizeof( struct atphdr ));
+ 	if ( recvlen >= ATP_HDRSIZE && *rbuf == DDPTYPE_ATP) {
+ 	    /* this is a valid ATP packet -- check for a match */
+ 	    rfunc = ahdr.atphd_ctrlinfo & ATP_FUNCMASK;
+@@ -240,7 +240,7 @@
+ 		    at_addr_eq( fromaddr, &faddr )) { /* got what we wanted */
+ 		*func = rfunc;
+ 		dlen = recvlen;
+-		bcopy( (char *) &faddr, (char *) fromaddr,
++		memcpy( (char *) fromaddr, (char *) &faddr,
+ 		  sizeof( struct sockaddr_at ));
+ 
+ 	    } else {
+@@ -251,12 +251,12 @@
+ 		if (( inbuf = alloc_buf()) == NULL ) {
+ 		    return -1;
+ 		}
+-		bcopy( (char *)&faddr, (char *)&inbuf->atpbuf_addr,
++		memcpy( (char *)&inbuf->atpbuf_addr, (char *)&faddr,
+ 		  sizeof( struct sockaddr_at ));
+ 		inbuf->atpbuf_next = ah->atph_queue;
+ 		inbuf->atpbuf_dlen = recvlen;
+-		bcopy( (char *)rbuf,
+-		    (char *)inbuf->atpbuf_info.atpbuf_data, recvlen );
++		memcpy( (char *)inbuf->atpbuf_info.atpbuf_data, 
++			(char *)rbuf, recvlen );
+ 	    }
+ 	}
+ 	if ( !wait && dlen < 0 ) {
+@@ -284,7 +284,7 @@
+ 	      paddr->sat_addr.s_node == saddr->sat_addr.s_node ));
+ }
+ 
+-
++void
+ print_addr( s, saddr )
+     char		*s;
+     struct sockaddr_at	*saddr;
+@@ -300,9 +300,9 @@
+       printf( "%d", saddr->sat_port );
+ }
+ 
+-
++void
+ print_func( ctrlinfo )
+-    u_char	ctrlinfo;
++    u_int8_t	ctrlinfo;
+ {
+     switch ( ctrlinfo & ATP_FUNCMASK ) {
+     case ATP_TREQ:

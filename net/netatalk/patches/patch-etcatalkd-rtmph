@@ -1,0 +1,49 @@
+--- etc/atalkd/rtmp.h.orig	Tue Oct 19 12:01:33 1999
++++ etc/atalkd/rtmp.h	Tue Oct 19 12:03:24 1999
+@@ -28,24 +28,24 @@
+ 			*rt_prev;
+     struct rtmptab	*rt_inext,
+ 			*rt_iprev;
+-    u_short		rt_firstnet, rt_lastnet;
+-    u_char		rt_hops;
+-    u_char		rt_state;
+-    u_char		rt_flags;
+-    u_char		rt_nzq;		/* number of zip queries issued */
++    u_int16_t		rt_firstnet, rt_lastnet;
++    u_int8_t		rt_hops;
++    u_int8_t		rt_state;
++    u_int8_t		rt_flags;
++    u_int8_t		rt_nzq;		/* number of zip queries issued */
+     struct gate		*rt_gate;	/* gate is NULL for interfaces */
+     struct list		*rt_zt;
+ };
+ 
+ struct rtmp_head {
+-    u_short	rh_net;
+-    u_char	rh_nodelen;
+-    u_char	rh_node;
++    u_int16_t	rh_net;
++    u_int8_t	rh_nodelen;
++    u_int8_t	rh_node;
+ };
+ 
+ struct rtmp_tuple {
+-    u_short	rt_net;
+-    u_char	rt_dist;
++    u_int16_t	rt_net;
++    u_int8_t	rt_dist;
+ };
+ #define SZ_RTMPTUPLE	3
+ 
+@@ -73,3 +73,11 @@
+ 
+ extern int	rtfd;
+ struct rtmptab	*newrt();
++
++void		rtmp_request();
++int		looproute(), gateroute(), route();
++void		rtmp_config(), rtmp_new(), rtmp_free();
++int		rtmp_replace();
++
++void		rtmp_delinuse(), rtmp_addinuse();
++void		rtmp_copyzones();

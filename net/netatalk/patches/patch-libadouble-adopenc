@@ -1,0 +1,120 @@
+--- libatalk/adouble/ad_open.c.orig	Thu Jul  9 23:13:58 1998
++++ libatalk/adouble/ad_open.c	Wed Nov 10 15:10:13 1999
+@@ -28,7 +28,7 @@
+ #include <netatalk/endian.h>
+ #include <sys/syslog.h>
+ #include <atalk/adouble.h>
+-#include <strings.h>
++#include <string.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ 
+@@ -50,16 +50,16 @@
+     char	c, *slash;
+ 
+     if ( adflags & ADFLAGS_DIR ) {
+-	strcpy( pathbuf, path );
++	(void)strlcpy( pathbuf, path, sizeof( pathbuf ) );
+ 	if ( *path != '\0' ) {
+ 	    strcat( pathbuf, "/" );
+ 	}
+ 	slash = ".Parent";
+     } else {
+-	if (( slash = rindex( path, '/' )) != NULL ) {
++	if (( slash = strrchr( path, '/' )) != NULL ) {
+ 	    c = *++slash;
+ 	    *slash = '\0';
+-	    strcpy( pathbuf, path );
++	    (void)strlcpy( pathbuf, path, sizeof ( pathbuf ) );
+ 	    *slash = c;
+ 	} else {
+ 	    pathbuf[ 0 ] = '\0';
+@@ -102,8 +102,8 @@
+      * (path or subdirectory name) to get the name we want to stat.
+      * For a path which is just a filename, use "." instead.
+      */
+-    strcpy( modebuf, path );
+-    if (( slash = rindex( modebuf, '/' )) != NULL ) {
++    (void)strlcpy( modebuf, path, sizeof (modebuf) );
++    if (( slash = strrchr( modebuf, '/' )) != NULL ) {
+ 	*slash = '\0';		/* remove pathname component */
+     } else {
+ 	modebuf[0] = '.';	/* use current directory */
+@@ -132,6 +132,7 @@
+  * It's not possible to open the header file O_RDONLY -- the read
+  * will fail and return an error.
+  */
++int
+ ad_open( path, adflags, oflags, mode, ad )
+     char		*path;
+     int			adflags, oflags, mode;
+@@ -171,7 +172,7 @@
+ 		     * mkdir it.
+ 		     */
+ 		    if ( errno == ENOENT ) {
+-			if (( slash = rindex( ad_p, '/' )) == NULL ) {
++			if (( slash = strrchr( ad_p, '/' )) == NULL ) {
+ 			    ad_close( ad, adflags );
+ 			    return( -1 );
+ 			}
+@@ -206,12 +207,12 @@
+ 	 * This is a new adouble header file. Initialize the structure,
+ 	 * instead of reading it.
+ 	 */
+-	bzero( (char *)ad->ad_eid, sizeof( ad->ad_eid ));
++	memset( (char *)ad->ad_eid, 0, sizeof( ad->ad_eid ));
+ 	if ( ad->ad_hf.adf_flags & ( O_TRUNC | O_CREAT )) {
+ 	    ad->ad_magic = AD_MAGIC;
+ 	    ad->ad_version = AD_VERSION;
+-	    bzero( ad->ad_homefs, sizeof( ad->ad_homefs ));
+-	    bzero( ad->ad_data, sizeof( ad->ad_data ));
++	    memset( ad->ad_homefs, 0, sizeof( ad->ad_homefs ));
++	    memset( ad->ad_data, 0, sizeof( ad->ad_data ));
+ 
+ 	    ad->ad_eid[ ADEID_RFORK ].ade_off = ADEDOFF_RFORK;
+ 	    ad->ad_eid[ ADEID_RFORK ].ade_len = ADEDLEN_RFORK;
+@@ -237,6 +238,7 @@
+     return( 0 );
+ }
+ 
++int
+ ad_refresh( ad )
+     struct adouble	*ad;
+ {
+@@ -271,15 +273,15 @@
+      * we know that magic, version, homefs, and nentries are less
+      * than data, so we don't check whether we exceed end.
+      */
+-    bcopy( buf, (char *)&ad->ad_magic, sizeof( ad->ad_magic ));
++    memcpy( (char *)&ad->ad_magic, buf, sizeof( ad->ad_magic ));
+     ad->ad_magic = ntohl( ad->ad_magic );
+     buf += sizeof( ad->ad_magic );
+-    bcopy( buf, (char *)&ad->ad_version, sizeof( ad->ad_version ));
++    memcpy( (char *)&ad->ad_version, buf, sizeof( ad->ad_version ));
+     ad->ad_version = ntohl( ad->ad_version );
+     buf += sizeof( ad->ad_version );
+-    bcopy( buf, ad->ad_homefs, sizeof( ad->ad_homefs ));
++    memcpy( ad->ad_homefs, buf, sizeof( ad->ad_homefs ));
+     buf += sizeof( ad->ad_homefs );
+-    bcopy( buf, (char *)&nentries, sizeof( nentries ));
++    memcpy( (char *)&nentries, buf, sizeof( nentries ));
+     nentries = ntohs( nentries );
+     buf += sizeof( nentries );
+ 
+@@ -289,13 +291,13 @@
+ 	    return( -1 );
+ 	}
+ 
+-	bcopy( buf, (char *)&eid, sizeof( eid ));
++	memcpy( (char *)&eid, buf, sizeof( eid ));
+ 	eid = ntohl( eid );
+ 	buf += sizeof( eid );
+-	bcopy( buf, (char *)&off, sizeof( off ));
++	memcpy( (char *)&off, buf, sizeof( off ));
+ 	off = ntohl( off );
+ 	buf += sizeof( off );
+-	bcopy( buf, (char *)&len, sizeof( len ));
++	memcpy( (char *)&len, buf, sizeof( len ));
+ 	len = ntohl( len );
+ 	buf += sizeof( len );
+ 

@@ -1,0 +1,34 @@
+--- libatalk/asp/asp_shutdown.c.orig	Sun Sep 29 14:52:14 1996
++++ libatalk/asp/asp_shutdown.c	Thu Nov 18 16:03:13 1999
+@@ -10,7 +10,10 @@
+ #include <netatalk/at.h>
+ #include <atalk/atp.h>
+ #include <atalk/asp.h>
++#include <string.h>
+ 
++
++int
+ asp_shutdown( asp )
+     ASP			asp;
+ {
+@@ -18,16 +21,15 @@
+     struct iovec	iov;
+     char		*p;
+     char		buf[ ATP_MAXDATA ];
+-    int			iovcnt = 8;
+-    u_short		blen, seq;
+-    u_char		oport;
++    u_int16_t		seq;
++    u_int8_t		oport;
+ 
+     p = buf;
+     *p++ = ASPFUNC_CLOSE;
+     *p++ = asp->asp_sid;
+     seq = 0;
+-    bcopy( &seq, p, sizeof( u_short ));
+-    p += sizeof( u_short );
++    memcpy( p, &seq, sizeof( seq ));
++    p += sizeof( seq );
+ 
+     oport = asp->asp_sat.sat_port;
+     atpb.atp_saddr = &asp->asp_sat;

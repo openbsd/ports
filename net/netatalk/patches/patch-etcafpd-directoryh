@@ -1,0 +1,28 @@
+--- etc/afpd/directory.h.orig	Fri Jul 26 06:14:39 1996
++++ etc/afpd/directory.h	Mon Sep 27 17:12:57 1999
+@@ -24,7 +24,7 @@
+ struct dir {
+     struct dir	*d_left, *d_right, *d_parent, *d_child, *d_next;
+     int		d_balance;
+-    int		d_did;
++    int32_t	d_did;
+     int		d_flags;
+     char	*d_name;
+ };
+@@ -49,6 +49,7 @@
+ #define DIRPBIT_UID	10
+ #define DIRPBIT_GID	11
+ #define DIRPBIT_ACCESS	12
++#define DIRPBIT_PDINFO  13			  /* ProDOS Info */
+ 
+ struct maccess {
+     u_char	ma_user;
+@@ -66,3 +67,8 @@
+ extern struct dir	*adddir();
+ extern char		*cname();
+ extern char		*ctoupath();
++extern int		dirinsert();
++extern int		movecwd();
++extern int		getfilparams(), setfilparams();
++extern int		getdirparams(), setdirparams();
++extern int		renamedir(), deletecurdir();

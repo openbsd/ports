@@ -1,0 +1,88 @@
+--- libatalk/nbp/nbp_lkup.c.orig	Wed Oct  8 07:21:57 1997
++++ libatalk/nbp/nbp_lkup.c	Wed Nov 10 14:27:59 1999
+@@ -6,9 +6,9 @@
+ #include <sys/types.h>
+ #include <sys/param.h>
+ #include <sys/socket.h>
+-#include <sys/signal.h>
+ #include <sys/time.h>
+-#include <strings.h>
++#include <string.h>
++#include <unistd.h>
+ #include <netdb.h>
+ 
+ #include <netatalk/endian.h>
+@@ -21,6 +21,7 @@
+ 
+ extern int errno;
+ 
++int
+ nbp_lookup( obj, type, zone, nn, nncnt )
+     char		*obj, *type, *zone;
+     struct nbpnve	*nn;
+@@ -40,7 +41,7 @@
+ 	return( -1 );
+     }
+ 
+-    bzero( &addr, sizeof( struct sockaddr_at ));
++    memset( &addr, 0,  sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+     addr.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -63,19 +64,19 @@
+     nh.nh_op = NBPOP_BRRQ;
+     nh.nh_cnt = 1;
+     nh.nh_id = 0;
+-    bcopy( &nh, data, SZ_NBPHDR );
++    memcpy( data, &nh, SZ_NBPHDR );
+     data += SZ_NBPHDR;
+ 
+     nt.nt_net = addr.sat_addr.s_net;
+     nt.nt_node = addr.sat_addr.s_node;
+     nt.nt_port = addr.sat_port;
+-    bcopy( &nt, data, SZ_NBPTUPLE);
++    memcpy( data, &nt, SZ_NBPTUPLE);
+     data += SZ_NBPTUPLE;
+ 
+     if ( obj ) {
+ 	if (( cc = strlen( obj )) > NBPSTRLEN ) return( -1 );
+ 	*data++ = cc;
+-	bcopy( obj, data, cc );
++	memcpy( data, obj, cc );
+ 	data += cc;
+     } else {
+ 	*data++ = 0;
+@@ -84,7 +85,7 @@
+     if ( type ) {
+ 	if (( cc = strlen( type )) > NBPSTRLEN ) return( -1 );
+ 	*data++ = cc;
+-	bcopy( type, data, cc );
++	memcpy( data, type, cc );
+ 	data += cc;
+     } else {
+ 	*data++ = 0;
+@@ -93,13 +94,13 @@
+     if ( zone ) {
+ 	if (( cc = strlen( zone )) > NBPSTRLEN ) return( -1 );
+ 	*data++ = cc;
+-	bcopy( zone, data, cc );
++	memcpy( data, zone, cc );
+ 	data += cc;
+     } else {
+ 	*data++ = 0;
+     }
+ 
+-    bzero( &addr, sizeof( struct sockaddr_at ));
++    memset( &addr, 0, sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+     addr.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -165,7 +166,7 @@
+ 	    }
+ 	    cc--;
+ 
+-	    bcopy( data, &nh, SZ_NBPHDR );
++	    memcpy( &nh, data, SZ_NBPHDR );
+ 	    data += SZ_NBPHDR;
+ 	    if ( nh.nh_op != NBPOP_LKUPREPLY ) {
+ 		continue;

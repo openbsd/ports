@@ -1,0 +1,22 @@
+--- libatalk/asp/asp_close.c.orig	Sun Oct  5 02:38:49 1997
++++ libatalk/asp/asp_close.c	Wed Nov 10 14:35:23 1999
+@@ -9,7 +9,10 @@
+ #include <netatalk/at.h>
+ #include <atalk/atp.h>
+ #include <atalk/asp.h>
++#include <string.h>
++#include <stdlib.h>
+ 
++int
+ asp_close( asp )
+     ASP		asp;
+ {
+@@ -18,7 +21,7 @@
+     char		data[ 4 ];
+     int			err = 0;
+ 
+-    bzero( data, sizeof( data ));
++    memset( data, 0, sizeof( data ));
+     atpb.atp_saddr = &asp->asp_sat;
+     iov[ 0 ].iov_base = data;
+     iov[ 0 ].iov_len = sizeof( data );

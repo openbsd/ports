@@ -1,0 +1,5 @@
+--- VERSION.orig	Fri Oct 15 17:33:50 1999
++++ VERSION	Fri Oct 15 17:34:23 1999
+@@ -1 +1 @@
+-990130
++990130-OpenBSD-1.0

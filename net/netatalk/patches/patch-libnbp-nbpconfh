@@ -1,0 +1,8 @@
+--- libatalk/nbp/nbp_conf.h.orig	Mon Oct 18 16:21:40 1999
++++ libatalk/nbp/nbp_conf.h	Mon Oct 18 16:22:01 1999
+@@ -23,4 +23,4 @@
+ 
+ extern char		nbp_send[ 1024 ];
+ extern char		nbp_recv[ 1024 ];
+-extern u_char		nbp_port;
++extern u_int8_t		nbp_port;

@@ -1,0 +1,280 @@
+--- bin/megatron/hqx.c.orig	Sun Sep 27 01:15:07 1998
++++ bin/megatron/hqx.c	Thu Nov 11 17:21:52 1999
+@@ -10,10 +10,12 @@
+ #endif
+ #endif notdef
+ #include <fcntl.h>
+-#include <strings.h>
++#include <string.h>
+ #include <syslog.h>
+ #include <ctype.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
+ #include <atalk/adouble.h>
+ #include <netatalk/endian.h>
+ #include "megatron.h"
+@@ -54,8 +56,11 @@
+ #define HEADSIZ		21
+ 
+ char		*malloc();
+-u_short		updcrc();
++u_int16_t	updcrc();
+ char		*mtoupath();
++int		skip_junk();
++int		hqx_header_read(), hqx_header_write();
++int		hqx_7tobin();
+ 
+ #if HEXOUTPUT
+ FILE		*rawhex, *expandhex;
+@@ -63,16 +68,16 @@
+ 
+ struct hqx_file_data {
+     long		forklen[ NUMFORKS ];
+-    u_short		forkcrc[ NUMFORKS ];
++    u_int16_t		forkcrc[ NUMFORKS ];
+     char		path[ MAXPATHLEN ];
+-    u_short		headercrc;
++    u_int16_t		headercrc;
+     int			filed;
+ } 		hqx;
+ 
+ extern char	*forkname[];
+-u_char		hqx7_buf[8192];
+-u_char		*hqx7_first;
+-u_char		*hqx7_last;
++u_int8_t	hqx7_buf[8192];
++u_int8_t	*hqx7_first;
++u_int8_t	*hqx7_last;
+ int		first_flag;
+ 
+ /* 
+@@ -82,6 +87,7 @@
+ here; skip_junk leaves hqx7_first and hqx7_last set.
+  */
+ 
++int
+ hqx_open( hqxfile, flags, fh )
+     char		*hqxfile;
+     int			flags;
+@@ -146,6 +152,7 @@
+  * Otherwise, a value of -1 is returned.
+  */
+ 
++int
+ hqx_close( keepflag )
+     int			keepflag;
+ {
+@@ -168,12 +175,13 @@
+  * return zero and no more than that.
+  */
+ 
++int
+ hqx_read( fork, buffer, length )
+     int			fork;
+     char		*buffer;
+     int			length;
+ {
+-    u_short		storedcrc;
++    u_int16_t		storedcrc;
+     int			readlen;
+     int			cc;
+ 
+@@ -221,7 +229,7 @@
+     cc = hqx_7tobin( buffer, readlen );
+     if ( cc > 0 ) {
+ 	hqx.forkcrc[ fork ] = 
+-		updcrc( hqx.forkcrc[ fork ], (u_char *)buffer, cc );
++		updcrc( hqx.forkcrc[ fork ], (u_int8_t *)buffer, cc );
+ 	hqx.forklen[ fork ] -= cc;
+     }
+ #if DEBUG >= 3
+@@ -238,13 +246,14 @@
+  * to fill the hqx_header fields.
+  */
+ 
++int
+ hqx_header_read( fh )
+     struct FHeader	*fh;
+ {
+     char		*headerbuf, *headerptr;
+-    u_long		time_seconds;
+-    u_short		mask;
+-    u_short		header_crc;
++    u_int32_t		time_seconds;
++    u_int16_t		mask;
++    u_int16_t		header_crc;
+     char		namelen;
+ 
+ #if HEXOUTPUT
+@@ -259,7 +268,7 @@
+ 	fprintf( stderr, "Premature end of file :" );
+ 	return( -2 );
+     }
+-    hqx.headercrc = updcrc( hqx.headercrc, (u_char *)&namelen, 
++    hqx.headercrc = updcrc( hqx.headercrc, (u_int8_t *)&namelen, 
+ 	    sizeof( namelen ));
+ 
+ #if HEXOUTPUT
+@@ -277,7 +286,7 @@
+     }
+     headerptr = headerbuf;
+     hqx.headercrc = updcrc( hqx.headercrc, 
+-	    (u_char *)headerbuf, ( namelen + HEADSIZ - CRCSIZ ));
++	    (u_int8_t *)headerbuf, ( namelen + HEADSIZ - CRCSIZ ));
+ 
+ #if HEXOUTPUT
+     write( headerfork, headerbuf, ( namelen + HEADSIZ ));
+@@ -287,21 +296,21 @@
+  * stuff from the hqx file header
+  */
+ 
+-    bcopy( headerptr, fh->name, (int)namelen );
++    memcpy( fh->name, headerptr, (int)namelen );
+     headerptr += namelen;
+     headerptr += VERSION;
+-    bcopy( headerptr, (char *)&fh->finder_info, TCSIZ );
++    memcpy( (char *)&fh->finder_info, headerptr, TCSIZ );
+     headerptr += TCSIZ;
+-    bcopy( headerptr, (char *)&fh->finder_info.fdFlags, FLAGSIZ );
++    memcpy( (char *)&fh->finder_info.fdFlags, headerptr, FLAGSIZ );
+     fh->finder_info.fdFlags = fh->finder_info.fdFlags & mask;
+     headerptr += FLAGSIZ;
+-    bcopy( headerptr, (char *)&fh->forklen[ DATA ], DATASIZ );
++    memcpy( (char *)&fh->forklen[ DATA ], headerptr, DATASIZ );
+     hqx.forklen[ DATA ] = ntohl( fh->forklen[ DATA ] );
+     headerptr += DATASIZ;
+-    bcopy( headerptr, (char *)&fh->forklen[ RESOURCE ], RESSIZ );
++    memcpy( (char *)&fh->forklen[ RESOURCE ], headerptr, RESSIZ );
+     hqx.forklen[ RESOURCE ] = ntohl( fh->forklen[ RESOURCE ] );
+     headerptr += RESSIZ;
+-    bcopy( headerptr, (char *)&header_crc, CRCSIZ );
++    memcpy( (char *)&header_crc, headerptr, CRCSIZ );
+     headerptr += CRCSIZ;
+     header_crc = ntohs( header_crc );
+ 
+@@ -310,8 +319,8 @@
+  */
+ 
+     fh->comment[0] = '\0';
+-    bzero( &fh->finder_info.fdLocation, sizeof( fh->finder_info.fdLocation ));
+-    bzero( &fh->finder_info.fdFldr, sizeof( fh->finder_info.fdFldr ));
++    memset( &fh->finder_info.fdLocation, 0, sizeof( fh->finder_info.fdLocation ));
++    memset( &fh->finder_info.fdFldr, 0, sizeof( fh->finder_info.fdFldr ));
+ 
+ #if DEBUG >= 5
+     {
+@@ -326,7 +335,7 @@
+ 	fprintf( stderr, "creator\t\t\t%.*s\n", 
+ 		sizeof( fh->finder_info.fdCreator ), 
+ 		&fh->finder_info.fdCreator );
+-	bcopy( (char *)&fh->finder_info.fdFlags, (char *)&flags, 
++	memcpy( (char *)&flags, (char *)&fh->finder_info.fdFlags, 
+ 		sizeof( flags ));
+ 	flags = ntohs( flags );
+ 	fprintf( stderr, "flags\t\t\t%x\n", flags );
+@@ -343,9 +352,9 @@
+  */
+ 
+     time_seconds = htonl( time( NULL ) + TIME_DIFF );
+-    bcopy( (char *)&time_seconds, (char *)&fh->create_date, 
++    memcpy( (char *)&fh->create_date, (char *)&time_seconds, 
+ 	    sizeof( fh->create_date ));
+-    bcopy( (char *)&time_seconds, (char *)&fh->mod_date, 
++    memcpy( (char *)&fh->mod_date, (char *)&time_seconds, 
+ 	    sizeof( fh->mod_date ));
+     fh->backup_date = htonl( TIME_ZERO );
+ 
+@@ -354,8 +363,8 @@
+  */
+ 
+     fh->comment[0] = '\0';
+-    bzero( &fh->finder_info.fdLocation, sizeof( fh->finder_info.fdLocation ));
+-    bzero( &fh->finder_info.fdFldr, sizeof( fh->finder_info.fdFldr ));
++    memset( &fh->finder_info.fdLocation, 0, sizeof( fh->finder_info.fdLocation ));
++    memset( &fh->finder_info.fdFldr, 0, sizeof( fh->finder_info.fdFldr ));
+ 
+     hqx.forkcrc[ DATA ] = 0;
+     hqx.forkcrc[ RESOURCE ] = 0;
+@@ -372,6 +381,7 @@
+  * hqx_header_write.
+  */
+ 
++int
+ hqx_header_write( fh )
+     struct FHeader	*fh;
+ {
+@@ -385,8 +395,9 @@
+  * it sets the pointers to the hqx7 buffer up to point to the valid data.
+  */
+ 
++int
+ hqx7_fill( hqx7_ptr )
+-    u_char		*hqx7_ptr;
++    u_int8_t		*hqx7_ptr;
+ {
+     int			cc;
+     int			cs;
+@@ -413,7 +424,7 @@
+ 0xFC signals a whitespace character.
+ */
+ 
+-u_char hqxlookup[] = {
++u_int8_t hqxlookup[] = {
+     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+     0xFF, 0xFC, 0xFE, 0xFF, 0xFF, 0xFE, 0xFF, 0xFF,
+     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+@@ -456,14 +467,15 @@
+  * OTHER when looking for any subsequent line.
+  */
+ 
++int
+ skip_junk( line )
+ int			line;
+ {
+     int			found = NOWAY;
+     int			stopflag;
+     int			nc = 0;
+-    u_char		c;
+-    u_char		prevchar;
++    u_int8_t		c;
++    u_int8_t		prevchar;
+ 
+     if ( line == FIRST ) {
+ 	if ( hqx7_fill( hqx7_buf  ) <= 0 ) {
+@@ -535,7 +547,7 @@
+ 	    if ( line == FIRST ) {
+ 		*hqx7_buf = ':';
+ 	    } else *hqx7_buf = '\n';
+-	    bcopy( (char *)hqx7_first, (char *)&hqx7_buf[1], nc );
++	    memcpy( (char *)&hqx7_buf[1], (char *)hqx7_first, nc );
+ 	    hqx7_first = hqx7_buf + ( ++nc );
+ 	    if ( hqx7_fill( hqx7_first ) <= 0 ) {
+ 		fprintf( stderr, "Premature end of file :" );
+@@ -558,18 +570,19 @@
+  * file is reached.
+  */
+ 
++int
+ hqx_7tobin( outbuf, datalen ) 
+     char		*outbuf;
+     int			datalen;
+ {
+-    static u_char	hqx8[3];
+-    static char		hqx8i;
+-    static u_char	prev_hqx8;
+-    static u_char	prev_out;
+-    static u_char	prev_hqx7;
++    static u_int8_t	hqx8[3];
++    static int8_t		hqx8i;
++    static u_int8_t	prev_hqx8;
++    static u_int8_t	prev_out;
++    static u_int8_t	prev_hqx7;
+     static int		eofflag;
+-    u_char		hqx7[4];
+-    char		hqx7i = 0;
++    u_int8_t		hqx7[4];
++    int8_t		hqx7i = 0;
+     char		*out_first;
+     char		*out_last;
+ 

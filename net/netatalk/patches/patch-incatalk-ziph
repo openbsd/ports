@@ -1,0 +1,13 @@
+--- include/atalk/zip.h.orig	Fri Oct 15 15:57:25 1999
++++ include/atalk/zip.h	Fri Oct 15 15:58:17 1999
+@@ -30,8 +30,8 @@
+ };
+ 
+ struct zipreplent {
+-    u_short	zre_net;
+-    u_char	zre_zonelen;
++    u_int16_t	zre_net;
++    u_int8_t	zre_zonelen;
+ };
+ 
+ #define ZIPOP_QUERY	1

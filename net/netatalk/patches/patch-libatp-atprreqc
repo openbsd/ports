@@ -1,0 +1,62 @@
+--- libatalk/atp/atp_rreq.c.orig	Thu Jun  1 03:47:58 1995
++++ libatalk/atp/atp_rreq.c	Thu Nov 18 15:56:25 1999
+@@ -21,6 +21,7 @@
+  *	netatalk@itd.umich.edu
+  */
+ 
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
+@@ -43,9 +44,9 @@
+     struct atphdr	req_hdr;	/* request header overlay */
+     struct sockaddr_at	faddr;		/* sender's address */
+     int			recvlen;	/* length of received packet */
+-    u_short		tid;
+-    int			rc, trelcode;
+-    u_char		func;
++    u_int16_t		tid;
++    int			rc;
++    u_int8_t		func;
+ 
+ #ifdef EBUG
+     print_bufuse( ah, "atp_rreq" );
+@@ -68,7 +69,7 @@
+ 	return -1;
+     }
+ 
+-    bcopy( (char *)atpb->atp_saddr, (char *)&faddr,
++    memcpy( (char *)&faddr, (char *)atpb->atp_saddr,
+ 	    sizeof( struct sockaddr_at ));
+     func = ATP_TREQ;
+     if (( recvlen = recv_atp( ah, &faddr, &func, ATP_TIDANY,
+@@ -77,7 +78,7 @@
+ 	return -1;
+     }
+ 
+-    bcopy( req_buf->atpbuf_info.atpbuf_data + 1, (char *)&req_hdr,
++    memcpy( (char *)&req_hdr, req_buf->atpbuf_info.atpbuf_data + 1,
+ 	    sizeof( struct atphdr ));
+     tid = ntohs( req_hdr.atphd_tid );
+ 
+@@ -87,7 +88,7 @@
+ 		( 1 << ( req_hdr.atphd_ctrlinfo & ATP_TRELMASK ));
+     }
+ 
+-    bcopy( (char *)&faddr, (char *)atpb->atp_saddr,
++    memcpy( (char *)atpb->atp_saddr, (char *)&faddr,
+ 	    sizeof( struct sockaddr_at ));
+ 
+     if ( recvlen - ATP_HDRSIZE > atpb->atp_rreqdlen ) {
+@@ -97,8 +98,9 @@
+     }
+ 
+     atpb->atp_rreqdlen = recvlen - ATP_HDRSIZE;
+-    bcopy( (char *)req_buf->atpbuf_info.atpbuf_data + ATP_HDRSIZE,
+-	    (char *)atpb->atp_rreqdata, recvlen - ATP_HDRSIZE );
++    memcpy( (char *)atpb->atp_rreqdata,
++		(char *)req_buf->atpbuf_info.atpbuf_data + ATP_HDRSIZE,
++	    		recvlen - ATP_HDRSIZE );
+     atpb->atp_bitmap = req_hdr.atphd_bitmap;
+     free_buf( req_buf );
+     return( 0 );

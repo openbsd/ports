@@ -1,0 +1,34 @@
+--- include/atalk/asp.h.orig	Fri Oct 15 15:41:25 1999
++++ include/atalk/asp.h	Fri Oct 15 15:43:36 1999
+@@ -30,7 +30,7 @@
+ 	    char			*as_status;
+ 	    int				as_slen;
+ 	}			asu_status;
+-	u_short			asu_seq;
++	u_int16_t			asu_seq;
+     }			asp_u;
+ #define asp_status	asp_u.asu_status.as_status
+ #define asp_slen	asp_u.asu_status.as_slen
+@@ -63,13 +63,12 @@
+ #define ASPERR_TOOMANY	0xfbce
+ #define ASPERR_NOACK	0xfbcd
+ 
+-extern ASP asp_init();
+-extern int asp_setstatus();
+-extern ASP asp_getsession();
+-extern int asp_closesession();
+-extern int asp_attention();
+-extern int asp_getrequest();
+-extern int asp_cmdreply();
+-extern int asp_wrtcontinue();
+-extern int asp_wrtreply();
+-extern int asp_kill();
++extern ASP	asp_init();
++extern int	asp_close();
++extern void	asp_setstatus();
++extern ASP	asp_getsession(), asp_closesession();
++extern int	asp_attention(), asp_attentionall();
++extern int	asp_getrequest();
++extern int	asp_cmdreply();
++extern int	asp_wrtreply(), asp_wrtcont();
++extern int	asp_kill(), asp_shutdown();

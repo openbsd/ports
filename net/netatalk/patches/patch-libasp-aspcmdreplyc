@@ -1,0 +1,41 @@
+--- libatalk/asp/asp_cmdreply.c.orig	Thu Mar 19 08:43:17 1992
++++ libatalk/asp/asp_cmdreply.c	Wed Nov 10 14:38:11 1999
+@@ -21,6 +21,7 @@
+  *	netatalk@itd.umich.edu
+  */
+ 
++#include <string.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/uio.h>
+@@ -37,6 +38,7 @@
+ 
+ char	rbuf[ 8 ][ ATP_MAXDATA + 4 ];
+ 
++int
+ asp_cmdreply( asp, result, buf, buflen )
+     ASP		asp;
+     int		result;
+@@ -52,18 +54,18 @@
+ 	iov[ iovcnt ].iov_base = rbuf[ iovcnt ];
+ 
+ 	if ( iovcnt == 0 ) {
+-	    bcopy( (char *)&result, iov[ iovcnt ].iov_base, 4 );
++	    memcpy( iov[ iovcnt ].iov_base, (char *)&result, 4 );
+ 	} else {
+-	    bzero( iov[ iovcnt ].iov_base, 4 );
++	    memset( iov[ iovcnt ].iov_base, 0, 4 );
+ 	}
+ 
+ 	if ( buflen > ATP_MAXDATA ) {
+-	    bcopy( buf, iov[ iovcnt ].iov_base + 4, ATP_MAXDATA );
++	    memcpy( iov[ iovcnt ].iov_base + 4, buf, ATP_MAXDATA );
+ 	    buf += ATP_MAXDATA;
+ 	    buflen -= ATP_MAXDATA;
+ 	    iov[ iovcnt ].iov_len = ATP_MAXDATA + 4;
+ 	} else {
+-	    bcopy( buf, iov[ iovcnt ].iov_base + 4, buflen );
++	    memcpy( iov[ iovcnt ].iov_base + 4, buf, buflen );
+ 	    iov[ iovcnt ].iov_len = buflen + 4;
+ 	    buflen = 0;
+ 	}

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 1999/08/28 10:27:10 maja Exp $
+# $OpenBSD: Makefile,v 1.8 1999/12/15 02:54:39 kevlo Exp $
 
-DISTNAME=       netatalk-1.4b2
+DISTNAME=       netatalk-990130
 CATEGORIES=	net
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/
 
@@ -24,8 +24,6 @@ pre-fetch:
 
 
 pre-configure:
-	@${MKDIR} ${WRKSRC}/sys/openbsd
-	@${CP} ${FILESDIR}/sys-OpenBSD-Makefile ${WRKSRC}/sys/openbsd/Makefile
 	@${RM} -rf ${WRKSRC}/include/netatalk
 	@${LN} -sf /usr/src/sys/netatalk ${WRKSRC}/include/netatalk
 	@${RM} -f ${WRKSRC}/sys/netatalk/*.h

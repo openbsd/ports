@@ -1,0 +1,585 @@
+--- etc/afpd/volume.c.orig	Tue Mar 31 02:57:11 1998
++++ etc/afpd/volume.c	Wed Nov 24 15:09:21 1999
+@@ -16,10 +16,13 @@
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ #include <ctype.h>
+-#include <strings.h>
++#include <string.h>
+ #include <pwd.h>
++#include <utime.h>
+ 
++#include "unix.h"
+ #include "directory.h"
+ #include "file.h"
+ #include "volume.h"
+@@ -30,6 +33,14 @@
+ char		*Trash = "\02\024Network Trash Folder";
+ struct extmap	*extmap = NULL, *defextmap = NULL;
+ 
++void		creatvol(), setextmap(), freedir();
++int		readvolfile();
++int		initline(), parseline();
++int		getvolparams();
++
++int		strdiacasecmp();
++
++void
+ initvolumes()
+ {
+     struct passwd	*pwent;
+@@ -69,6 +80,7 @@
+     return;
+ }
+ 
++int
+ afp_getsrvrparms( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -76,9 +88,9 @@
+     struct timeval	tv;
+     struct stat		st;
+     struct vol		*volume;
+-    struct passwd	*pwent;
+     char		*data;
+     int			vcnt, len;
++    u_int32_t		secs;
+ 
+     initvolumes();
+ 
+@@ -91,11 +103,20 @@
+ 	if (( st.st_mode & S_IFDIR ) == 0 ) {
+ 	    continue;		/* not a dir */
+ 	}
+-
++ 	
++ 	/* Apple 2 clients running ProDOS-8 expect one volume to have
++ 	   bit 0 of this byte set.  They will not recognize anything
++ 	   on the server unless this is the case.  I have not
++ 	   completely worked this out, but it's related to booting
++ 	   from the server.  Support for that function is a ways
++ 	   off.. <shirsch@ibm.net> */
++ 	if ( volume->v_flags & AFPVOL_A2VOL )
++ 	  *data++ = (u_char) 1;
++ 	else
+ 	*data++ = 0;
+ 	len = strlen( volume->v_name );
+ 	*data++ = len;
+-	bcopy( volume->v_name, data, len );
++	memcpy( data, volume->v_name, len );
+ 	data += len;
+ 	vcnt++;
+     }
+@@ -106,21 +127,27 @@
+ 	syslog( LOG_ERR, "afp_getsrvrparms: gettimeofday: %m" );
+ 	exit( 1 );
+     }
+-    tv.tv_sec = htonl( tv.tv_sec );
+-    bcopy( &tv.tv_sec, data, sizeof( tv.tv_sec ));
+-    data += sizeof( tv.tv_sec );
++    secs = tv.tv_sec;
++    secs = htonl( secs );
++    memcpy( data, &secs, sizeof( secs ));
++    data += sizeof( secs );
+     *data = vcnt;
+     return( AFP_OK );
+ }
+ 
+-creatvol( path, name )
++ /* Allow volume-specific flag setting to be passed in on mount. Not
++    specific to P8; this will be needed for parameter support from the
++    Applevolumes file. */
++void
++creatvol( path, name, flags )
+     char	*path, *name;
++    int		flags;
+ {
+     struct vol	*volume;
+-    int		vlen;
++    size_t	vlen, len;
+ 
+     if ( name == NULL || *name == '\0' ) {
+-	if (( name = rindex( path, '/' )) == NULL ) {
++	if (( name = strrchr( path, '/' )) == NULL ) {
+ 	    return;	/* Obviously not a fully qualified path */
+ 	}
+ 	name++;
+@@ -147,18 +174,21 @@
+ 	syslog( LOG_ERR, "creatvol: malloc: %m" );
+ 	exit( 1 );
+     }
++	len = (strlen( path ) + 1);
+     if (( volume->v_path =
+-	    (char *)malloc( strlen( path ) + 1 )) == NULL ) {
++	    (char *)malloc( len )) == NULL ) {
+ 	syslog( LOG_ERR, "creatvol: malloc: %m" );
+ 	exit( 1 );
+     }
+ 
+-    strcpy( volume->v_name, name );
+-    strcpy( volume->v_path, path );
++    (void)strlcpy( volume->v_name, name, (vlen + 1) );
++    (void)strlcpy( volume->v_path, path, len );
+ 
+     volume->v_dir = NULL;
+     volume->v_did = NULL;
+-    volume->v_flags = 0;
++
++     /* Start with flag settings parsed from AppleVolumes */
++    volume->v_flags = flags;
+ #ifdef __svr4__
+     volume->v_qfd = -1;
+ #else __svr4__
+@@ -209,6 +239,7 @@
+  *		<unix path> [<volume name> [<flags>,...]]
+  *		<extension> TYPE [CREATOR]
+  */
++int
+ readvolfile( p1, p2, user )
+     char	*p1, *p2;
+     int		user;
+@@ -218,13 +249,13 @@
+ 			volname[ 28 ], buf[ BUFSIZ ],
+ 			type[ 5 ], creator[ 5 ];
+     char		*u, *p;
+-    int			quoted = 0;
+     struct passwd	*pw;
++    int			flags;
+ 
+-    strcpy( path, p1 );
++    (void)strlcpy( path, p1, sizeof(path) );
+     if ( p2 != NULL ) {
+-	strcat( path, "/" );
+-	strcat( path, p2 );
++	(void)strlcat( path, "/", sizeof(path) );
++	(void)strlcat( path, p2, sizeof(path) );
+     }
+ 
+     if (( fp = fopen( path, "r" )) == NULL ) {
+@@ -240,7 +271,7 @@
+ 	    continue;
+ 
+ 	case '~' :
+-	    if (( p = index( path, '/' )) != NULL ) {
++	    if (( p = strchr( path, '/' )) != NULL ) {
+ 		*p++ = '\0';
+ 	    }
+ 	    u = path;
+@@ -251,17 +282,24 @@
+ 	    if ( u == NULL || ( pw = getpwnam( u )) == NULL ) {
+ 		continue;
+ 	    }
+-	    strcpy( tmp, pw->pw_dir );
++	    (void)strlcpy( tmp, pw->pw_dir, sizeof(tmp) );
+ 	    if ( p != NULL && *p != '\0' ) {
+-		strcat( tmp, "/" );
+-		strcat( tmp, p );
++		(void)strlcat( tmp, "/", sizeof(tmp) );
++		(void)strlcat( tmp, p, sizeof(tmp) );
+ 	    }
+-	    strcpy( path, tmp );
++	    (void)strlcpy( path, tmp, sizeof(path) );
+ 	    /* fall through */
+ 
+ 	case '/' :
+ 	    parseline( sizeof( volname ) - 1, volname );
+-	    creatvol( path, volname );
++ 
++ 	    /* FIXME!! Real crude and quick way to grab a
++ 	       user-supplied integer in [0..3] and shift it into the
++ 	       ProDOS bits of the volume flag.  Obviously some room
++ 	       for improvement here.  <shirsch@ibm.net> */
++ 	    parseline( sizeof( tmp ) - 1, tmp );
++ 	    flags = ( atoi ( tmp ) & 3 ) << 5;
++	    creatvol( path, volname, flags );
+ 	    break;
+ 
+ 	case '.' :
+@@ -280,6 +318,7 @@
+     return( 0 );
+ }
+ 
++void
+ setextmap( ext, type, creator, user )
+     char		*ext, *type, *creator;
+     int			user;
+@@ -304,17 +343,17 @@
+ 	return;
+     }
+ 
+-    strcpy( em->em_ext, ext );
++    (void)strlcpy( em->em_ext, ext, sizeof(em->em_ext) );
+ 
+     if ( *type == '\0' ) {
+-	bcopy( "????", em->em_type, sizeof( em->em_type ));
++	memcpy( em->em_type, "????", sizeof( em->em_type ));
+     } else {
+-	bcopy( type, em->em_type, sizeof( em->em_type ));
++	memcpy( em->em_type, type, sizeof( em->em_type ));
+     }
+     if ( *creator == '\0' ) {
+-	bcopy( "UNIX", em->em_creator, sizeof( em->em_creator ));
++	memcpy( em->em_creator, "UNIX", sizeof( em->em_creator ));
+     } else {
+-	bcopy( creator, em->em_creator, sizeof( em->em_creator ));
++	memcpy( em->em_creator, creator, sizeof( em->em_creator ));
+     }
+ 
+     if ( strcmp( ext, "." ) == 0 ) {
+@@ -329,7 +368,7 @@
+     char	*p;
+     struct extmap	*em;
+ 
+-    if (( p = rindex( path, '.' )) == NULL ) {
++    if (( p = strrchr( path, '.' )) == NULL ) {
+ 	return( defextmap );
+     }
+ 
+@@ -345,6 +384,7 @@
+     }
+ }
+ 
++int
+ afp_openvol( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -354,19 +394,20 @@
+     struct vol	*volume;
+     struct dir	*dir;
+     int		len, ret, buflen;
+-    u_short	bitmap;
++    u_int16_t	bitmap;
++    size_t	dlen;
+ 
+     ibuf += 2;
+-    bcopy( ibuf, &bitmap, sizeof( u_short ));
++    memcpy( &bitmap, ibuf, sizeof( bitmap ));
+     bitmap = ntohs( bitmap );
+-    ibuf += sizeof( u_short );
++    ibuf += sizeof( bitmap );
+     if (( bitmap & (1<<VOLPBIT_VID)) == 0 ) {
+ 	*rbuflen = 0;
+ 	return( AFPERR_BITMAP );
+     }
+ 
+     len = *ibuf++;
+-    bcopy( ibuf, volname, len );
++    memcpy( volname, ibuf, len );
+     volname[ len ] = '\0';
+ 
+     initvolumes();
+@@ -394,12 +435,13 @@
+ 	dir->d_balance = 0;
+ 	dir->d_did = htonl( 2 );
+ 	dir->d_flags = 0;
+-	if (( dir->d_name = (char *)malloc( strlen( volume->v_name ) + 1 ))
++	dlen = (strlen( volume->v_name ) + 1);
++	if (( dir->d_name = (char *)malloc( dlen ))
+ 		== NULL ) {
+ 	    syslog( LOG_ERR, "afp_openvol: malloc: %m" );
+ 	    exit( 1 );
+ 	}
+-	strcpy( dir->d_name, volume->v_name );
++	(void)strlcpy( dir->d_name, volume->v_name, dlen );
+ 	volume->v_dir = dir;
+ 	volume->v_did = dir;
+ 	volume->v_flags |= AFPVOL_OPEN;
+@@ -410,15 +452,15 @@
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    buflen = *rbuflen - sizeof( u_short );
++    buflen = *rbuflen - sizeof( bitmap );
+     if (( ret = getvolparams( bitmap, volume, &st,
+-	    rbuf + sizeof( u_short ), &buflen )) != AFP_OK ) {
++	    rbuf + sizeof( bitmap ), &buflen )) != AFP_OK ) {
+ 	*rbuflen = 0;
+ 	return( ret );
+     }
+-    *rbuflen = buflen + sizeof( u_short );
++    *rbuflen = buflen + sizeof( bitmap );
+     bitmap = htons( bitmap );
+-    bcopy( &bitmap, rbuf, sizeof( u_short ));
++    memcpy( rbuf, &bitmap, sizeof( bitmap ));
+ 
+     /*
+      * If you mount a volume twice, the second time the trash appears on
+@@ -438,16 +480,17 @@
+     return( AFP_OK );
+ }
+ 
++int
+ afp_closevol( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+ {
+     struct vol	*vol, *ovol;
+-    u_short	vid;
++    u_int16_t	vid;
+ 
+     *rbuflen = 0;
+     ibuf += 2;
+-    bcopy( ibuf, &vid, sizeof( u_short ));
++    memcpy( &vid, ibuf, sizeof( vid ));
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+ 	return( AFPERR_PARAM );
+     }
+@@ -471,6 +514,7 @@
+     return( AFP_OK );
+ }
+ 
++void
+ freedir( dir )
+     struct dir	*dir;
+ {
+@@ -484,6 +528,7 @@
+     free( dir );
+ }
+ 
++int
+ afp_getvolparams( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -491,12 +536,12 @@
+     struct stat	st;
+     struct vol	*vol;
+     int		buflen, ret;
+-    u_short	vid, bitmap;
++    u_int16_t	vid, bitmap;
+ 
+     ibuf += 2;
+-    bcopy( ibuf, &vid, sizeof( u_short ));
+-    ibuf += sizeof( u_short );
+-    bcopy( ibuf, &bitmap, sizeof( u_short ));
++    memcpy( &vid, ibuf, sizeof( vid ));
++    ibuf += sizeof( vid );
++    memcpy( &bitmap, ibuf, sizeof( bitmap ));
+     bitmap = ntohs( bitmap );
+ 
+     if (( vol = getvolbyvid( vid )) == NULL ) {
+@@ -509,24 +554,25 @@
+ 	return( AFPERR_PARAM );
+     }
+ 
+-    buflen = *rbuflen - sizeof( u_short );
++    buflen = *rbuflen - sizeof( bitmap );
+     if (( ret = getvolparams( bitmap, vol, &st,
+-	    rbuf + sizeof( u_short ), &buflen )) != AFP_OK ) {
++	    rbuf + sizeof( bitmap ), &buflen )) != AFP_OK ) {
+ 	*rbuflen = 0;
+ 	return( ret );
+     }
+-    *rbuflen = buflen + sizeof( u_short );
++    *rbuflen = buflen + sizeof( bitmap );
+     bitmap = htons( bitmap );
+-    bcopy( &bitmap, rbuf, sizeof( u_short ));
++    memcpy( rbuf, &bitmap, sizeof( bitmap ));
+     return( AFP_OK );
+ }
+ 
++int
+ getvolspace( vol, bfree, btotal )
+     struct vol	*vol;
+-    u_long	*bfree, *btotal;
++    u_int32_t	*bfree, *btotal;
+ {
+     int		spaceflag, rc;
+-    u_long	qfree, qtotal;
++    u_int32_t	qfree, qtotal;
+ 
+     spaceflag = AFPVOL_GVSMASK & vol->v_flags;
+ 
+@@ -555,14 +601,26 @@
+     }
+ #endif linux
+ 
+-    *bfree = min( *bfree, 0x7fffffff );
+-    *btotal = min( *btotal, 0x7fffffff );
++     /* If this is designated as a ProDOS-8 volume, make sure to avoid
++        wrap-around by capping reported free space under 64k blocks. */
++     if ( vol->v_flags & AFPVOL_A2VOL )
++         {
++ 	  *bfree = min( *bfree, 0x01fffe00 );
++ 	  *btotal = min( *btotal, 0x01fffe00 );
++ 	} 
++     else 
++         {
++ 	  *bfree = min( *bfree, 0x7fffffff );
++ 	  *btotal = min( *btotal, 0x7fffffff );
++ 	}
++
+     vol->v_flags = ( ~AFPVOL_GVSMASK & vol->v_flags ) | AFPVOL_USTATFS;
+     return( AFP_OK );
+ }
+ 
++int
+ getvolparams( bitmap, vol, st, buf, buflen )
+-    u_short	bitmap;
++    u_int16_t	bitmap;
+     struct vol	*vol;
+     struct stat	*st;
+     char	*buf;
+@@ -570,15 +628,44 @@
+ {
+     struct adouble	ad;
+     int			bit = 0, aint, isad = 1;
+-    u_short		ashort;
+-    u_long		bfree, btotal;
++    u_int16_t		ashort;
++    u_int32_t		bfree, btotal;
+     char		*data, *nameoff = 0;
++    char              *fi, *slash;
++ 
++     /*
++      * For MacOS8.x support we need to create the
++      * .Parent file here if it doesn't exists - we
++      * need to set the FILERINFO bit that says
++      * we have a custom icon before MacOS8.x sees it.
++      */
+ 
+     if ( ad_open( vol->v_path, ADFLAGS_HF|ADFLAGS_DIR,
+-	    O_RDONLY, 0, &ad ) < 0 ) {
++	    O_RDWR|O_CREAT, 0666, &ad ) < 0 ) {
+ 	isad = 0;
+     }
+ 
++     /*
++      * If we did create the .Parent file here then we need to
++      * set the pathname and filerinfo bit to say we have a 
++      * custom icon for MacOS8.x.
++      */
++ 
++     if ( isad && (ad_getoflags( &ad, ADFLAGS_HF ) & O_CREAT )) {
++           fi = ad_entry(&ad, ADEID_FINDERI);
++           slash = strrchr( vol->v_path, '/' );
++             if(slash)
++               slash++;
++           else
++               slash = vol->v_path;
++ 
++             ad_setentrylen( &ad, ADEID_NAME, strlen( slash ));
++             memcpy( ad_entry( &ad, ADEID_NAME ),
++                    slash, ad_getentrylen( &ad, ADEID_NAME ));
++ 
++           fi[8] |= FINDERINFO_CUSTOMICON;
++     }
++
+     if (( bitmap & ( (1<<VOLPBIT_BFREE)|(1<<VOLPBIT_BTOTAL) )) != 0 ) {
+ 	if ( getvolspace( vol, &bfree, &btotal ) < 0 ) {
+ 	    if ( isad ) {
+@@ -598,28 +685,28 @@
+ 	switch ( bit ) {
+ 	case VOLPBIT_ATTR :
+ 	    ashort = 0;
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case VOLPBIT_SIG :
+ 	    ashort = htons( AFPVOLSIG_FIX );
+-	    bcopy( &ashort, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &ashort, sizeof( ashort ));
++	    data += sizeof( ashort );
+ 	    break;
+ 
+ 	case VOLPBIT_CDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE, &aint,
+-			sizeof( int ));
++		memcpy( &aint, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_CREATE,
++			sizeof( aint ));
+ 		if ( aint == 0 ) {
+ 		    aint = htonl( st->st_mtime );
+ 		}
+ 	    } else {
+ 		aint = htonl( st->st_mtime );
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case VOLPBIT_MDATE :
+@@ -629,41 +716,41 @@
+ 	    } else {
+ 		aint = htonl( vol->v_time );
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case VOLPBIT_BDATE :
+ 	    if ( isad ) {
+-		bcopy( ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_BACKUP, &aint,
+-			sizeof( int ));
++		memcpy( &aint, ad_entry( &ad, ADEID_FILEI ) + FILEIOFF_BACKUP,
++			sizeof( aint ));
+ 	    } else {
+ 		aint = 0;
+ 	    }
+-	    bcopy( &aint, data, sizeof( int ));
+-	    data += sizeof( int );
++	    memcpy( data, &aint, sizeof( aint ));
++	    data += sizeof( aint );
+ 	    break;
+ 
+ 	case VOLPBIT_VID :
+-	    bcopy( &vol->v_vid, data, sizeof( vol->v_vid ));
++	    memcpy( data, &vol->v_vid, sizeof( vol->v_vid ));
+ 	    data += sizeof( vol->v_vid );
+ 	    break;
+ 
+ 	case VOLPBIT_BFREE :
+ 	    bfree = htonl( bfree );
+-	    bcopy( &bfree, data, sizeof( int ));
++	    memcpy( data, &bfree, sizeof( int ));
+ 	    data += sizeof( int );
+ 	    break;
+ 
+ 	case VOLPBIT_BTOTAL :
+ 	    btotal = htonl( btotal );
+-	    bcopy( &btotal, data, sizeof( int ));
++	    memcpy( data, &btotal, sizeof( int ));
+ 	    data += sizeof( int );
+ 	    break;
+ 
+ 	case VOLPBIT_NAME :
+ 	    nameoff = data;
+-	    data += sizeof( u_short );
++	    data += sizeof( u_int16_t );
+ 	    break;
+ 
+ 	default :
+@@ -677,13 +764,14 @@
+     }
+     if ( nameoff != 0 ) {
+ 	ashort = htons( data - buf );
+-	bcopy( &ashort, nameoff, sizeof( u_short ));
++	memcpy( nameoff, &ashort, sizeof( ashort ));
+ 	aint = strlen( vol->v_name );
+ 	*data++ = aint;
+-	bcopy( vol->v_name, data, aint );
++	memcpy( data, vol->v_name, aint );
+ 	data += aint;
+     }
+     if ( isad ) {
++	ad_flush( &ad, ADFLAGS_HF );
+ 	ad_close( &ad, ADFLAGS_HF );
+     }
+     *buflen = data - buf;
+@@ -708,6 +796,7 @@
+     return( vol );
+ }
+ 
++void
+ setvoltime( vol )
+     struct vol	*vol;
+ {

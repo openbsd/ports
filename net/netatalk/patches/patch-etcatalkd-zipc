@@ -1,0 +1,438 @@
+--- etc/atalkd/zip.c.orig	Fri Jan 23 07:15:56 1998
++++ etc/atalkd/zip.c	Wed Nov 10 16:10:20 1999
+@@ -14,6 +14,8 @@
+ #include <net/route.h>
+ #include <netatalk/endian.h>
+ #include <netatalk/at.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #ifdef __svr4__
+ #include <sys/sockio.h>
+@@ -31,8 +33,13 @@
+ #include "list.h"
+ #include "multicast.h"
+ 
++extern	int	strndiacasecmp(), setaddr(), bootaddr();
++
+ struct ziptab	*ziptab = NULL, *ziplast = NULL;
+ 
++int		zonecheck(), ladd();
++
++void
+ zip_packet( ap, from, data, len )
+     struct atport	*ap;
+     struct sockaddr_at	*from;
+@@ -46,11 +53,11 @@
+     struct rtmptab	*rtmp;
+     struct list		*l;
+     struct ziptab	*zt;
+-    u_short		firstnet, lastnet, tonet, index, nz;
++    u_int16_t		firstnet, lastnet, index, nz;
+     char		*end, zname[ 32 ], packet[ 587 ], *nzones, *lastflag;
+     char		*reply, *rend, *ziphdr;
+     int			zlen, n, zipop, rcnt, qcnt, zcnt, zsz;
+-    extern int		debug, stabletimer;
++    extern int		stabletimer;
+ 
+     end = data + len;
+ 
+@@ -68,7 +75,7 @@
+ 	    syslog( LOG_INFO, "zip_packet malformed packet" );
+ 	    return;
+ 	}
+-	bcopy( data, &zh, sizeof( struct ziphdr ));
++	memcpy( &zh, data, sizeof( struct ziphdr ));
+ 	data += sizeof( struct ziphdr );
+ 
+ 	switch ( zh.zh_op ) {
+@@ -83,9 +90,9 @@
+ 
+ 	    qcnt = zh.zh_count;
+ 
+-	    while ( data + sizeof( u_short ) <= end && qcnt-- > 0 ) {
+-		bcopy( data, &firstnet, sizeof( u_short ));
+-		data += sizeof( u_short );
++	    while ( data + sizeof( u_int16_t ) <= end && qcnt-- > 0 ) {
++		memcpy( &firstnet, data, sizeof( firstnet ));
++		data += sizeof( firstnet );
+ 
+ 		/*
+ 		 * Look for the given network number (firstnet).
+@@ -112,7 +119,7 @@
+ 		for ( zsz = 0, zcnt = 0, l = rtmp->rt_zt; l; l = l->l_next ) {
+ 		    zcnt++;
+ 		    zt = (struct ziptab *)l->l_data;
+-		    zsz += sizeof( u_short ) + 1 + zt->zt_len;
++		    zsz += sizeof( u_int16_t ) + 1 + zt->zt_len;
+ 		}
+ 
+ 		/*
+@@ -123,7 +130,7 @@
+ 		    if ( rcnt > 0 ) {
+ 			zh.zh_op = ZIPOP_REPLY;
+ 			zh.zh_cnt = rcnt;
+-			bcopy( &zh, ziphdr, sizeof( struct ziphdr ));
++			memcpy( ziphdr, &zh, sizeof( struct ziphdr ));
+ 			if ( sendto( ap->ap_fd, packet, reply - packet, 0,
+ 				(struct sockaddr *)from,
+ 				sizeof( struct sockaddr_at )) < 0 ) {
+@@ -138,11 +145,11 @@
+ 			/* ereply */
+ 			for ( l = rtmp->rt_zt; l; l = l->l_next, rcnt++ ) {
+ 			    zt = (struct ziptab *)l->l_data;
+-			    if ( reply + sizeof( u_short ) + 1 + zt->zt_len >
++			    if ( reply + sizeof( u_int16_t ) + 1 + zt->zt_len >
+ 				    rend ) {
+ 				zh.zh_op = ZIPOP_EREPLY;
+ 				zh.zh_cnt = zcnt;
+-				bcopy( &zh, ziphdr, sizeof( struct ziphdr ));
++				memcpy( ziphdr, &zh, sizeof( struct ziphdr ));
+ 				if ( sendto( ap->ap_fd, packet, reply - packet,
+ 					0, (struct sockaddr *)from,
+ 					sizeof( struct sockaddr_at )) < 0 ) {
+@@ -153,17 +160,17 @@
+ 				rcnt = 0;
+ 			    }
+ 
+-			    bcopy( &firstnet, reply, sizeof( u_short ));
+-			    reply += sizeof( u_short );
++			    memcpy( reply, &firstnet, sizeof( firstnet ));
++			    reply += sizeof( firstnet );
+ 			    *reply++ = zt->zt_len;
+-			    bcopy( zt->zt_name, reply, zt->zt_len );
++			    memcpy( reply, zt->zt_name, zt->zt_len );
+ 			    reply += zt->zt_len;
+ 			}
+ 
+ 			if ( rcnt > 0 ) {
+ 			    zh.zh_op = ZIPOP_EREPLY;
+ 			    zh.zh_cnt = zcnt;
+-			    bcopy( &zh, ziphdr, sizeof( struct ziphdr ));
++			    memcpy( ziphdr, &zh, sizeof( struct ziphdr ));
+ 			    if ( sendto( ap->ap_fd, packet, reply - packet, 0,
+ 				    (struct sockaddr *)from,
+ 				    sizeof( struct sockaddr_at )) < 0 ) {
+@@ -179,10 +186,10 @@
+ 
+ 		for ( l = rtmp->rt_zt; l; l = l->l_next, rcnt++ ) {
+ 		    zt = (struct ziptab *)l->l_data;
+-		    bcopy( &firstnet, reply, sizeof( u_short ));
+-		    reply += sizeof( u_short );
++		    memcpy( reply, &firstnet, sizeof( firstnet ));
++		    reply += sizeof( firstnet );
+ 		    *reply++ = zt->zt_len;
+-		    bcopy( zt->zt_name, reply, zt->zt_len );
++		    memcpy( reply, zt->zt_name, zt->zt_len );
+ 		    reply += zt->zt_len;
+ 		}
+ 	    }
+@@ -190,7 +197,7 @@
+ 	    if ( rcnt > 0 ) {
+ 		zh.zh_op = ZIPOP_REPLY;
+ 		zh.zh_cnt = rcnt;
+-		bcopy( &zh, ziphdr, sizeof( struct ziphdr ));
++		memcpy( ziphdr, &zh, sizeof( struct ziphdr ));
+ 		if ( sendto( ap->ap_fd, packet, reply - packet, 0,
+ 			(struct sockaddr *)from,
+ 			sizeof( struct sockaddr_at )) < 0 ) {
+@@ -216,12 +223,12 @@
+ 	    rtmp = 0;
+ 
+ 	    do {
+-		if ( data + sizeof( u_short ) + 1 > end ) {	/* + strlen */
++		if ( data + sizeof( u_int16_t ) + 1 > end ) {	/* + strlen */
+ 		    syslog( LOG_INFO, "zip reply short (%d)", len );
+ 		    return;
+ 		}
+-		bcopy( data, &firstnet, sizeof( u_short ));
+-		data += sizeof( u_short );
++		memcpy( &firstnet, data, sizeof( firstnet ));
++		data += sizeof( firstnet );
+ 
+ 		if ( rtmp && rtmp->rt_firstnet != firstnet ) {
+ 		    /* XXX */
+@@ -262,7 +269,7 @@
+ 		    syslog( LOG_INFO, "zip reply short (%d)", len );
+ 		    return;
+ 		}
+-		bcopy( data, zname, zlen );
++		memcpy( zname, data, zlen );
+ 		data += zlen;
+ 
+ 		/*
+@@ -331,11 +338,11 @@
+ 	     * Note that we're not advancing "data" here.  We do that
+ 	     * at the top of the do-while loop, below.
+ 	     */
+-	    if ( data + sizeof( u_short ) + 1 > end ) {	/* + strlen */
++	    if ( data + sizeof( u_int16_t ) + 1 > end ) {	/* + strlen */
+ 		syslog( LOG_INFO, "zip ereply short (%d)", len );
+ 		return;
+ 	    }
+-	    bcopy( data, &firstnet, sizeof( u_short ));
++	    memcpy( &firstnet, data, sizeof( firstnet ));
+ 
+ 	    /* Check if this is the interface's route. */
+ 	    if ( firstnet == gate->g_iface->i_rt->rt_firstnet ) {
+@@ -383,12 +390,12 @@
+ 		 * We copy out firstnet, twice (see above).  Not
+ 		 * a big deal, and it makes the end condition cleaner.
+ 		 */
+-		if ( data + sizeof( u_short ) + 1 > end ) {	/* + strlen */
++		if ( data + sizeof( u_int16_t ) + 1 > end ) {	/* + strlen */
+ 		    syslog( LOG_INFO, "zip ereply short (%d)", len );
+ 		    return;
+ 		}
+-		bcopy( data, &firstnet, sizeof( u_short ));
+-		data += sizeof( u_short );
++		memcpy( &firstnet, data, sizeof( firstnet ));
++		data += sizeof( firstnet );
+ 
+ 		/* check route */
+ 		if ( firstnet != rtmp->rt_firstnet ) {
+@@ -405,7 +412,7 @@
+ 		    syslog( LOG_INFO, "zip ereply short (%d)", len );
+ 		    return;
+ 		}
+-		bcopy( data, zname, zlen );
++		memcpy( zname, data, zlen );
+ 		data += zlen;
+ 		addzone( rtmp, zlen, zname );
+ 	    } while ( data < end );
+@@ -438,15 +445,15 @@
+ 		return;
+ 	    }
+ 
+-	    if ( zh.zh_zero != 0 || data + 2 * sizeof( u_short ) > end ) {
++	    if ( zh.zh_zero != 0 || data + 2 * sizeof( u_int16_t ) > end ) {
+ 		syslog( LOG_INFO, "zip_packet malformed packet" );
+ 		return;
+ 	    }
+ 
+-	    bcopy( data, &firstnet, sizeof( u_short ));
+-	    data += sizeof( u_short );
+-	    bcopy( data, &lastnet, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( &firstnet, data, sizeof( firstnet ));
++	    data += sizeof( firstnet );
++	    memcpy( &lastnet, data, sizeof( lastnet ));
++	    data += sizeof( lastnet );
+ 	    if ( firstnet != 0 || lastnet != 0 || data >= end ) {
+ 		syslog( LOG_INFO, "zip_packet malformed packet" );
+ 		return;
+@@ -457,7 +464,7 @@
+ 		syslog( LOG_INFO, "zip_packet malformed packet" );
+ 		return;
+ 	    }
+-	    bcopy( data, zname, zlen );
++	    memcpy( zname, data, zlen );
+ 
+ 	    data = packet;
+ 	    end = data + sizeof( packet );
+@@ -468,13 +475,13 @@
+ 	     * Skip to the nets.  Fill in header when we're done.
+ 	     */
+ 	    data += 1 + sizeof( struct ziphdr );
+-	    bcopy( &iface->i_rt->rt_firstnet, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
+-	    bcopy( &iface->i_rt->rt_lastnet, data, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( data, &iface->i_rt->rt_firstnet, sizeof( u_int16_t ));
++	    data += sizeof( u_int16_t );
++	    memcpy( data, &iface->i_rt->rt_lastnet, sizeof( u_int16_t ));
++	    data += sizeof( u_int16_t );
+ 
+ 	    *data++ = zlen;
+-	    bcopy( zname, data, zlen );
++	    memcpy( data, zname, zlen );
+ 	    data += zlen;
+ 
+ 	    /*
+@@ -502,7 +509,7 @@
+ 
+ 	    /* multicast */
+ 	    *data++ = 6;	/* sizeof ??? */
+-	    bcopy( zone_mcast( zt->zt_name, zt->zt_len ), data, 6 );
++	    memcpy( data, zone_mcast( zt->zt_name, zt->zt_len ), 6 );
+ 	    data += 6;
+ 
+ 	    /*
+@@ -510,13 +517,13 @@
+ 	     */
+ 	    if ( zh.zh_flags & ZIPGNI_INVALID ) {
+ 		*data++ = zt->zt_len;
+-		bcopy( zt->zt_name, data, zt->zt_len );
++		memcpy( data, zt->zt_name, zt->zt_len );
+ 		data += zt->zt_len;
+ 	    }
+ 
+ 	    /* fill in header */
+ 	    *packet = DDPTYPE_ZIP;
+-	    bcopy( &zh, packet + 1, sizeof( struct ziphdr ));
++	    memcpy( packet + 1, &zh, sizeof( struct ziphdr ));
+ 
+ 	    /*
+ 	     * If the address we received this request from isn't correct
+@@ -555,10 +562,10 @@
+ 		syslog( LOG_INFO, "zip_packet malformed packet" );
+ 		return;
+ 	    }
+-	    bcopy( data, &firstnet, sizeof( u_short ));
+-	    data += sizeof( u_short );
+-	    bcopy( data, &lastnet, sizeof( u_short ));
+-	    data += sizeof( u_short );
++	    memcpy( &firstnet, data, sizeof( firstnet ));
++	    data += sizeof( firstnet );
++	    memcpy( &lastnet, data, sizeof( lastnet ));
++	    data += sizeof( lastnet );
+ 
+ 	    /*
+ 	     * We never ask for a zone, so we can get back what the
+@@ -685,7 +692,7 @@
+ 	    syslog( LOG_INFO, "zip atp malformed packet" );
+ 	    return;
+ 	}
+-	bcopy( data, &ah, sizeof( struct atphdr ));
++	memcpy( &ah, data, sizeof( struct atphdr ));
+ 	data += sizeof( struct atphdr );
+ 	if ( ah.atphd_ctrlinfo != ATP_TREQ ) {
+ 	    syslog( LOG_INFO, "zip atp bad control" );
+@@ -700,8 +707,8 @@
+ 
+ 	zipop = *data++;
+ 	data++;
+-	bcopy( data, &index, sizeof( u_short ));
+-	data += sizeof( u_short );
++	memcpy( &index, data, sizeof( index ));
++	data += sizeof( index );
+ 	index = ntohs( index );
+ 	if ( data != end ) {
+ 	    syslog( LOG_INFO, "zip atp malformed packet" );
+@@ -711,12 +718,12 @@
+ 	data = packet;
+ 	end = data + sizeof( packet );
+ 	*data++ = DDPTYPE_ATP;
+-	bcopy( &ah, data, sizeof( struct atphdr ));
++	memcpy( data, &ah, sizeof( struct atphdr ));
+ 	data += sizeof( struct atphdr );
+ 	lastflag = data++;		/* mark and space for last flag */
+ 	*data++ = 0;
+ 	nzones = data;			/* mark and space for zone count */
+-	data += sizeof( u_short );
++	data += sizeof( u_int16_t );
+ 
+ 	switch ( zipop ) {
+ 	case ZIPOP_GETMYZONE :
+@@ -743,7 +750,7 @@
+ 		return;
+ 	    }
+ 	    *data++ = zt->zt_len;
+-	    bcopy( zt->zt_name, data, zt->zt_len );
++	    memcpy( data, zt->zt_name, zt->zt_len );
+ 	    data += zt->zt_len;
+ 
+ 	    *lastflag = 0;
+@@ -758,7 +765,7 @@
+ 		    break;
+ 		}
+ 		*data++ = zt->zt_len;
+-		bcopy( zt->zt_name, data, zt->zt_len );
++		memcpy( data, zt->zt_name, zt->zt_len );
+ 		data += zt->zt_len;
+ 	    }
+ 
+@@ -784,7 +791,7 @@
+ 		    break;
+ 		}
+ 		*data++ = zt->zt_len;
+-		bcopy( zt->zt_name, data, zt->zt_len );
++		memcpy( data, zt->zt_name, zt->zt_len );
+ 		data += zt->zt_len;
+ 	    }
+ 
+@@ -799,7 +806,7 @@
+ 	/* send reply */
+ 	if ( nz > 0 ) {
+ 	    nz = htons( nz );
+-	    bcopy( &nz, nzones, sizeof( u_short ));
++	    memcpy( nzones, &nz, sizeof( nz ));
+ 	    if ( sendto( ap->ap_fd, packet, data - packet, 0,
+ 		    (struct sockaddr *)from,
+ 		    sizeof( struct sockaddr_at )) < 0 ) {
+@@ -817,6 +824,7 @@
+     }
+ }
+ 
++void
+ zip_getnetinfo( iface )
+     struct interface	*iface;
+ {
+@@ -824,13 +832,12 @@
+     struct ziphdr	zh;
+     struct sockaddr_at	sat;
+     char		*data, packet[ 40 ];
+-    u_short		net;
+-    int			i;
++    u_int16_t		net;
+ 
+     syslog( LOG_INFO, "zip_getnetinfo for %s", iface->i_name );
+ 
+     for ( ap = iface->i_ports; ap; ap = ap->ap_next ) {
+-	if ( ap->ap_packet == zip_packet ) {
++	if ( (void *) ap->ap_packet ==  (void *) zip_packet ) {
+ 	    break;
+ 	}
+     }
+@@ -845,13 +852,13 @@
+ 
+     zh.zh_op = ZIPOP_GNI;
+     zh.zh_zero = 0;
+-    bcopy( &zh, data, sizeof( struct ziphdr ));
++    memcpy( data, &zh, sizeof( struct ziphdr ));
+     data += sizeof( struct ziphdr );
+     net = 0;
+-    bcopy( &net, data, sizeof( u_short ));
+-    data += sizeof( u_short );
+-    bcopy( &net, data, sizeof( u_short ));
+-    data += sizeof( u_short );
++    memcpy( data, &net, sizeof( net ));
++    data += sizeof( net );
++    memcpy( data, &net, sizeof( net ));
++    data += sizeof( net );
+ 
+     /*
+      * Set our requesting zone to NULL, so the response will contain
+@@ -889,7 +896,7 @@
+     if (( zt->zt_name = (char *)malloc( len )) == NULL ) {
+ 	return( NULL );
+     }
+-    bcopy( name, zt->zt_name, len );
++    memcpy( zt->zt_name, name, len );
+     zt->zt_rt = NULL;
+     zt->zt_bcast = NULL;
+     zt->zt_next = NULL;
+@@ -898,6 +905,7 @@
+     return( zt );
+ }
+ 
++void
+ addzone( rt, len, zone )
+     struct rtmptab	*rt;
+     int			len;
+@@ -951,6 +959,7 @@
+ /*
+  * Insert at the end.  Return < 0 if a mapping already exists, 0 otherwise.
+  */
++int
+ ladd( head, data )
+     struct list	**head;
+     void	*data;
+@@ -982,6 +991,7 @@
+     return( 0 );
+ }
+ 
++int
+ zonecheck( rtmp, iface )
+     struct rtmptab	*rtmp;
+     struct interface	*iface;

@@ -1,0 +1,197 @@
+--- config/AppleVolumes.system.orig	Sat Mar 15 05:05:53 1997
++++ config/AppleVolumes.system	Wed Nov 24 15:57:06 1999
+@@ -7,44 +7,172 @@
+ # files of type TEXT.  The first line turns off translation for files of
+ # unknown type, the second turns this translation on.
+ .       BINA    UNIX
+-# .       TEXT    UNIX
++#.	TEXT    UNIX
++#.     TEXT    ttxt
++
+ 
+ # sounds
++.aif	AIFF    TVOD
++.aifc	AIFC    TVOD
++.aiff	AIFF    TVOD
++.au	ULAW    TVOD
++.med	STrk    STrk
+ .mod	STrk	STrk
+ .mid	Midi	ttxt
+-.aiff	AIFF	SNdm
+-.wav	WAVE 	SNdm
+-.au	ULAW	SNdm
++.svx	SVXB    BSnd
++.voc	ovc     BSnd
++.wav	WAVE 	TVOD
+ 
+ # video
+-.moov	MooV	mMPG
+-.mov	MooV	mMPG
+-.mpg	MPEG	mMPG
+-.mpeg	MPEG	mMPG
++.asf	ASF_	Ms01
++.asx	ASX_	Ms01
++.avi	VfW     TVOD
++.fli	FLI     TVOD
++.gl	BINA    TVOD
++.moov	MooV	TVOD
++.mov	MooV	TVOD
++.mpg	MPG	TVOD
++.mpeg	MPEG	TVOD
++.qt	MooV    TVOD
+ 
+ # formatted text
++.asc	TEXT	ttxt   
++.ascii	TEXT	ttxt 
++.bat	TEXT	ttxt
++.bok	FBok	Fra5
++.book	FBok	Fra5
++.c	TEXT	CWIE
++.cp	TEXT	CWIE
++.cpp	TEXT	CWIE
++.dbf	COMP	FOX
++.doc	WDBN	MSWD
++.dvi	ODVI	OTEX
++.evy	ENYD	ENVY
++.eps	EPSF	vgrd
++.epsf	EPSF	vgrd
++.epsf	EPSF	vgrd
++.etx	TEXT	R*ch
++.faq	TEXT	ttxt
++.fm	FMPR	FMPR
++.fm5	FASL	Fra5
++.h	TEXT	CWIE
++.hp	TEXT	CWIE
++.hpp	TEXT	CWIE
++.htm	TEXT	MOS!
+ .html	TEXT	MOS!
++.java	TEXT	ALFA
++.latex	TEXT	OTEX
++.mif	TEXT	Fram
++.mswd	WDBN	MSWD
++.mw	WORD	MWII
++.mwii	WORD	MWII
++.oda	ODIF	ODA 
++.p	TEXT	CWIE
++.pas	TEXT	CWIE
++.ps	TEXT	vgrd
++.pdf	PDF	CARO
++.pl	TEXT	McPL
++.pm3	ALB3	ALD3
++.pm4	ALB4	ALD4
++.pm5	ALB5	ALD5
++.ppd	TEXT	R*ch
++.pt4	ALT4	ALD4
++.pt5	ALT5	ALD5
++.readme	TEXT	R*ch
+ .rtf	TEXT	MSWD
+-.doc	WDBN	MSWD
+-.pdf	CARO	PDF 
++.rpl	FRL!	REP!
++.rtx	TEXT	R*ch
++.sty	TEXT	*TEX
++.sylk	TEXT	XCEL
++.syk	TEXT	XCEL
++.tex	TEXT	OTEX
++.texi	TEXT	OTEX
++.texinfo	TEXT	OTEX
++.tsv	TEXT	R*ch
++.txt	TEXT	R*ch
++.url	AURL	Arch
++.wk1	TEXT	XCEL
++.wks	TEXT	XCEL
++.w51	WPPC	WPC2
++.wp5	WPPC	WPC2
++.wp	WPPC	WPC2
++.xl	XLS4	XCEL
++.xlc	XLC4	XCEL
++.xlm	XLM4	XCEL
++.xls	XLS4	XCEL
+ 
+ # compressed archives
+-.bin	BINA	MB2P
+-.zip	ZIP 	ZIP 
+-.tar	TARF	TAR!
+-.gz	Gzip	Gzip
+-.Z	ZIVM	LZIV
+-.sea	????	SITx
++.arc	BINA	arc=A9
++.bar	BARF	S6+1
++.bin	BINA	SITx
+ .cpt	PACT	CPCT
+-.sit	SIT!	SIT!
++.gz	Gzip	Gzip
+ .hqx	TEXT	SITx
++.lha	LHA	LARC
++.lzh	LHA	LARC
++.pit	PIT	SITx
++.sea	APPL	????  
++.sit	SIT!	SIT!
++.sithqx	TEXT	SITx
++.tar	TARF	TAR!  
++#.tar	TARF	S6+1
++.taz	ZIVM	SITx
++.tgz	Gzip	SITx
++.uu	TEXT	uuUN
++.uue	TEXT	uuUN
++.zip	ZIP	ZIP 
++.Z	ZIVM	LZIV
+ 
+ # graphics
+-.tiff	TIFF	JVWR
+-.tif	TIFF	JVWR
++.arr	ARR 	GKON
+ .bmp	BMPp	JVWR
+-.pct	PICT	ttxt
+-.pict	PICT	ttxt
++.gif	GIFf	JVWR
++.ic1	IMAG	GKON
++.ic2	IMAG	GKON
++.ic3	IMAG	GKON
++.ief	IEF	GKON
++.iff	ILBM	GKON
++.ilbm	ILBM	GKON
++.img	IMGg	GKON
+ .jpeg	JPEG	JVWR
++.jpe	JPEG	JVWM
+ .jpg	JPEG	JVWR
+-.gif	GIFf	JVWR
++.lbm	ILBM	GKON
++.msp	MSPp	GKON
++.pbm	PPGM	GKON 
++.pgm	PPGM	GKON
++.pc1	Dega	GKON
++.pc2	Dega	GKON
++.pc3	Dega	GKON
++.pct	PICT	ttxt
++.pcx	PCXx	GKON
++.pi1	Dega	GKON
++.pi2	Dega	GKON
++.pi3	Dega	GKON
++.pict	PICT	ttxt
++.pm	PMpm	GKON
++.png	PNG	ogle
++.ppm	PPGM	GKON
++.psd	8BPS	8BIM
++.pxr	PXR 	8BIM
++.rle	RLE	GKON
++.scc	MSX 	GKON
++.sci	RIX3	GKON
++.scg	RIX3	GKON
++.scp	RIX3	GKON
++.scr	RIX3	GKON
++.scu	RIX3	GKON
++.shp	SHPp	GKON  
++.tiff	TIFF	JVWR
++.tif	TIFF	JVWR
++.tny	TINY	GKON
++.xbm	XBM	GKON
++
++#Misc Binary Files 
++.com	PCFA	PCXT
++.dll	PCFL	PCXT
++.exe	PCFA	PCXT
++.image	dImg	ddsk
++.obj	PCFL	PCXT
++.ovl	PCFL	PCXT  
++

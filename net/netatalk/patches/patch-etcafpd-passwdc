@@ -1,0 +1,80 @@
+--- etc/afpd/passwd.c.orig	Sat May 21 08:02:28 1994
++++ etc/afpd/passwd.c	Thu Nov 11 15:13:52 1999
+@@ -23,6 +23,7 @@
+ 
+ #include <itc.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <r/xdr.h>
+ #include <r/r.h>
+ #include <afs/comauth.h>
+@@ -34,6 +35,7 @@
+ 
+ extern int r_errno;
+ 
++int
+ afs_changepw( ibuf, ibuflen, rbuf, rbuflen )
+     char	*ibuf, *rbuf;
+     int		ibuflen, *rbuflen;
+@@ -41,27 +43,27 @@
+     char	cell[ MAXCELLCHARS ], name[ 20 ], oldpw[ 10 ], newpw[ 10 ];
+     char	*p;
+     int		len;
+-    short	clen;
++    int16_t	clen;
+ 
+     len = *ibuf++;
+     ibuf[ len ] = '\0';
+-    if (( p = index( ibuf, '@' )) != NULL ) {
++    if (( p = strchr( ibuf, '@' )) != NULL ) {
+ 	*p++ = '\0';
+-	strcpy( cell, p );
++	(void)strlcpy( cell, p, sizeof(cell) );
+ 	ucase( cell );
+     } else {
+ 	if ( GetLocalCellName() != CCONF_SUCCESS ) {
+ 	    *rbuflen = 0;
+ 	    return( AFPERR_BADUAM );
+ 	}
+-	strcpy( cell, LclCellName );
++	(void)strlcpy( cell, LclCellName, sizeof(cell) );
+     }
+ 
+     if ( strlen( ibuf ) > 20 ) {
+ 	*rbuflen = 0;
+ 	return( AFPERR_PARAM );
+     }
+-    strcpy( name, ibuf );
++    (void)strlcpy( name, ibuf, sizeof(name) );
+     ibuf += len;
+ 
+ 
+@@ -70,8 +72,8 @@
+ 	return( AFPERR_BADUAM );
+     }
+ 
+-    bcopy( ibuf, &clen, sizeof( short ));
+-    ibuf += sizeof( short );
++    memcpy( &clen, ibuf, sizeof( clen ));
++    ibuf += sizeof( clen );
+     pcbc_encrypt((C_Block *)ibuf, (C_Block *)ibuf,
+ 	    clen, seskeysched, seskey, 0 );
+ 
+@@ -80,7 +82,7 @@
+ 	*rbuflen = 0;
+ 	return( AFPERR_PARAM );
+     }
+-    bcopy( ibuf, oldpw, len );
++    memcpy( oldpw, ibuf, len );
+     oldpw[ len ] = '\0';
+ 
+     len = *ibuf++;
+@@ -88,7 +90,7 @@
+ 	*rbuflen = 0;
+ 	return( AFPERR_PARAM );
+     }
+-    bcopy( ibuf, newpw, len );
++    memcpy( newpw, ibuf, len );
+     newpw[ len ] = '\0';
+ 
+     rc = U_CellChangePassword( name, newpw, name, oldpw, cell ) != 0 ) {

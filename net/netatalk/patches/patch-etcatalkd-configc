@@ -1,0 +1,240 @@
+--- etc/atalkd/config.c.orig	Tue Oct  7 01:43:08 1997
++++ etc/atalkd/config.c	Tue Nov 30 17:19:12 1999
+@@ -15,7 +15,8 @@
+ #include <atalk/paths.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <strings.h>
++#include <unistd.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <fcntl.h>
+ 
+@@ -28,8 +29,10 @@
+ #include "rtmp.h"
+ #include "zip.h"
+ #include "list.h"
++#include "multicast.h"
+ 
+ int	seed(), phase(), net(), addr(), zone();
++int	atalk_aton();
+ 
+ struct param {
+     char	*p_name;
+@@ -56,7 +59,7 @@
+     }
+     argc = 0;
+ 
+-    strcpy( buf, line );
++    (void)strlcpy( buf, line, sizeof ( buf ) );
+     p = buf;
+ 
+     /*
+@@ -91,6 +94,7 @@
+     return( argv );
+ }
+ 
++int
+ writeconf( cf )
+     char	*cf;
+ {
+@@ -117,10 +121,10 @@
+ 	 mode = st.st_mode;
+     }
+ 
+-    if (( p = rindex( path, '/' )) == NULL ) {
+-	strcpy( newpath, _PATH_ATALKDTMP );
++    if (( p = strrchr( path, '/' )) == NULL ) {
++	(void)strlcpy( newpath, _PATH_ATALKDTMP, sizeof( newpath ) );
+     } else {
+-	sprintf( newpath, "%.*s/%s", p - path, path, _PATH_ATALKDTMP );
++	snprintf( newpath, sizeof ( newpath ),  "%.*s/%s", (int) (p - path), path, _PATH_ATALKDTMP );
+     }
+     if (( fd = open( newpath, O_WRONLY|O_CREAT|O_TRUNC, mode )) < 0 ) {
+ 	syslog( LOG_ERR, "%s: %m", newpath );
+@@ -209,6 +213,7 @@
+  * zone for an interface is the first zone encountered for that
+  * interface.
+  */
++int
+ readconf( cf )
+     char		*cf;
+ {
+@@ -228,6 +233,7 @@
+ 	if ( cf != NULL ) {
+ #endif __svr4__
+ 	    perror( p );
++	    fclose(conf);	
+ 	    exit( 1 );
+ #ifndef __svr4__
+ 	} else {
+@@ -239,6 +245,7 @@
+ #ifndef __svr4__
+     if (( s = socket( AF_APPLETALK, SOCK_DGRAM, 0 )) < 0 ) {
+ 	perror( "socket" );
++	fclose(conf);
+ 	exit( 3 );
+     }
+ #endif __svr4__
+@@ -253,7 +260,7 @@
+ 	 * Check that av[ 0 ] is a valid interface.
+ 	 * Not possible under sysV.
+ 	 */
+-	strcpy( ifr.ifr_name, argv[ 0 ] );
++	(void)strlcpy( ifr.ifr_name, argv[ 0 ], sizeof (ifr.ifr_name) );
+ 	if ( ioctl( s, SIOCGIFFLAGS, &ifr ) < 0 ) {
+ 	    perror( argv[ 0 ] );
+ 	    exit( 1 );
+@@ -335,6 +342,8 @@
+ }
+ 
+ /*ARGSUSED*/
++
++int
+ seed( iface, av )
+     struct interface	*iface;
+     char		**av;
+@@ -351,6 +360,7 @@
+     return( 1 );
+ }
+ 
++int
+ phase( iface, av )
+     struct interface	*iface;
+     char		**av;
+@@ -379,6 +389,7 @@
+     return( 2 );
+ }
+ 
++int
+ net( iface, av )
+     struct interface	*iface;
+     char		**av;
+@@ -392,12 +403,12 @@
+ 	exit( 1 );
+     }
+ 
+-    if (( stop = index( nrange, '-' )) != 0 ) {
++    if (( stop = strchr( nrange, '-' )) != 0 ) {
+ 	stop++;
+     }
+     net = atoi( nrange );
+     if ( net < 0 || net >= 0xffff ) {
+-	fprintf( stderr, "Bad network: %d\n" );
++	fprintf( stderr, "Bad network: %d\n", net );
+ 	exit( 1 );
+     }
+ 
+@@ -423,7 +434,7 @@
+ 	if ( stop != 0 ) {
+ 	    net = atoi( stop );
+ 	    if ( net < 0 || net >= 0xffff ) {
+-		fprintf( stderr, "Bad network: %d\n" );
++		fprintf( stderr, "Bad network: %d\n", net );
+ 		exit( 1 );
+ 	    }
+ 	}
+@@ -449,6 +460,7 @@
+     return( 2 );
+ }
+ 
++int
+ addr( iface, av )
+     struct interface	*iface;
+     char		**av;
+@@ -485,6 +497,7 @@
+     return( 2 );
+ }
+ 
++int
+ zone( iface, av )
+     struct interface	*iface;
+     char		**av;
+@@ -526,6 +539,7 @@
+  * Get the configuration from the kernel. Only called if there's no
+  * configuration.
+  */
++int
+ getifconf()
+ {
+     struct ifconf	ifc;
+@@ -550,12 +564,13 @@
+ 	exit( 3 );
+     }
+ 
+-    bzero( &ifc, sizeof( struct ifconf ));
++    memset( &ifc, 0, sizeof( struct ifconf ));
+     ifc.ifc_len = sizeof( ifrs );
+-    bzero( ifrs, sizeof( ifrs ));
++    memset( ifrs, 0, sizeof( ifrs ));
+     ifc.ifc_buf = (caddr_t)ifrs;
+     if ( ioctl( s, SIOCGIFCONF, &ifc ) < 0 ) {
+ 	perror( "gifconf" );
++	close(s);
+ 	exit( 1 );
+     }
+ 
+@@ -574,6 +589,7 @@
+ 
+ 	if ( ioctl( s, SIOCGIFFLAGS, ifr ) < 0 ) {
+ 	    perror( ifr->ifr_name );
++	    close(s);
+ 	    exit( 1 );
+ 	}
+ 	if ( ifr->ifr_flags & ( IFF_LOOPBACK | IFF_POINTOPOINT )) {
+@@ -596,6 +612,7 @@
+ 
+ 	if (( niface = newiface( ifr->ifr_name )) == NULL ) {
+ 	    perror( "newiface" );
++	    close(s);
+ 	    exit( 1 );
+ 	}
+ 	/*
+@@ -613,6 +630,7 @@
+     }
+     if ( ifc.ifc_len != 0 ) {
+ 	fprintf( stderr, "Funky gifconf return.\n" );
++	close(s);
+ 	exit( 1 );
+     }
+ 
+@@ -636,7 +654,7 @@
+ 	return( NULL );
+     }
+     niface->i_next = NULL;
+-    strcpy( niface->i_name, name );
++    (void)strlcpy( niface->i_name, name, sizeof ( niface->i_name ) );
+     niface->i_flags = 0;
+     niface->i_time = 0;
+ #ifdef BSD4_4
+@@ -671,8 +689,8 @@
+ 	    continue;
+ 	}
+ 
+-	strcpy( device, "/dev/" );
+-	strcat( device, iface->i_name );
++	(void)strlcpy( device, "/dev/", sizeof ( device ) );
++	(void)strlcat( device, iface->i_name, sizeof ( device ) );
+ 	if (( p = strpbrk( device, "0123456789" )) == NULL ) {
+ 	    syslog( LOG_ERR, "plumb: invalid device: %s", device );
+ 	    exit( 1 );
+@@ -690,15 +708,19 @@
+ 	}
+ 	if ( ioctl( fd, IF_UNITSEL, ppa ) < 0 ) {
+ 	    syslog( LOG_ERR, "IF_UNITSEL: %m" );
++	    close(fd);
+ 	    exit( 1 );
+ 	}
+ 
+ 	syslog( LOG_INFO, "plumbed %s%d", device, ppa );
+ 
+ 	if ( addmulti( iface->i_name, NULL ) < 0 ) {
++	    perror(iface->i_name);
+ 	    syslog( LOG_ERR, "plumb addmulti %s: %m", iface->i_name );
++	    close(fd);
+ 	    exit( 2 );
+ 	}
++	syslog( LOG_INFO, "plumbed %s%d", device, ppa);
+     }
+ 
+     return( 0 );

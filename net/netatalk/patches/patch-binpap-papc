@@ -1,0 +1,169 @@
+--- bin/pap/pap.c.orig	Sun Oct  4 02:18:31 1998
++++ bin/pap/pap.c	Thu Nov 18 16:21:45 1999
+@@ -13,8 +13,10 @@
+ #include <atalk/nbp.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <strings.h>
+ #include <errno.h>
++#include <unistd.h>
+ 
+ #define FUCKED
+ 
+@@ -27,12 +29,16 @@
+ #define DEBUG(x,y)
+ #endif EBUG
+ 
++void	updatestatus();
++int	sendfile();
++
++int
+ usage( path )
+     char	*path;
+ {
+     char	*p;
+ 
+-    if (( p = rindex( path, '/' )) == NULL ) {
++    if (( p = strrchr( path, '/' )) == NULL ) {
+ 	p = path;
+     } else {
+ 	p++;
+@@ -126,6 +132,7 @@
+     { nbuf[ 7 ] + 4,	0 },
+ };
+ 
++int
+ main( ac, av )
+     int		ac;
+     char	**av;
+@@ -137,8 +144,8 @@
+     struct timeval	stv, tv;
+     char		rbuf[ ATP_MAXDATA ];
+     struct iovec	iov;
+-    unsigned short	waiting, result;
+-    int			connattempts = 10, lkupattempts;
++    u_int16_t		waiting, result;
++    int			connattempts = 10;
+     int			waitforidle = 0;
+     extern char		*optarg;
+     extern int		optind, errno;
+@@ -268,9 +275,9 @@
+ 
+ DEBUG( printf( "< STATUS\n" ), fflush( stdout ));
+ 
+-	bcopy( rniov[ 0 ].iov_base + 9, st_buf,
++	memcpy( st_buf ,rniov[ 0 ].iov_base + 9,
+ 		((char *)rniov[ 0 ].iov_base)[ 8 ] );
+-	st_buf[ ((char *)rniov[ 0 ].iov_base)[ 8 ]] = '\0';
++	st_buf[ ((int *)rniov[ 0 ].iov_base)[ 8 ]] = '\0';
+ 	if ( strstr( st_buf, "idle" ) != NULL ) {
+ 	    waitforidle = 0;
+ 	} else {
+@@ -299,7 +306,7 @@
+ 	    }
+ 	    waiting = htons( tv.tv_sec - stv.tv_sec );
+ 	}
+-	bcopy( &waiting, &cbuf[ 6 ], sizeof( waiting ));
++	memcpy( &cbuf[ 6 ], &waiting, sizeof( waiting ));
+ 
+ 	atpb.atp_saddr = &nn.nn_sat;
+ 	atpb.atp_sreqdata = cbuf;
+@@ -336,15 +343,15 @@
+ DEBUG( printf( "< OPENREPLY\n" ), fflush( stdout ));
+ 
+ 	if ( isatty( 1 )) {
+-	    printf( "%.*s\n", iov.iov_len - 9, iov.iov_base + 9 );
++	    printf( "%.*s\n", (int)iov.iov_len - 9, (char *)iov.iov_base + 9 );
+ 	}
+ 	updatestatus( iov.iov_base + 9, iov.iov_len - 9 );
+ 
+-	bcopy( &rbuf[ 6 ], &result, sizeof( result ));
++	memcpy( &result, &rbuf[ 6 ], sizeof( result ));
+ 	if ( result != 0 ) {
+ 	    sleep( 2 );
+ 	} else {
+-	    bcopy( &nn.nn_sat, &sat, sizeof( struct sockaddr_at ));
++	    memcpy( &sat, &nn.nn_sat, sizeof( struct sockaddr_at ));
+ 	    sat.sat_port = rbuf[ 4 ];
+ 	    quantum = rbuf[ 5 ];
+ 	    break;
+@@ -428,10 +435,10 @@
+ }
+ 
+ int		data = 0;
+-unsigned char	port;
+-unsigned short	seq = 0;
+-unsigned short	rseq = 1;
++u_int8_t	port;
++u_int16_t	seq = 0, resq = 1;
+ 
++int
+ sendfile( fd, atp, lastfile )
+     int			fd;
+     ATP			atp;
+@@ -441,9 +448,9 @@
+     struct sockaddr_at	ssat;
+     struct atp_block	atpb;
+     fd_set		fds;
+-    int			fiovcnt = 0, niovcnt = 0, eof = 0, senteof = 0, to = 0;
++    int			fiovcnt = 0, eof = 0, senteof = 0, to = 0;
+     int			cc, i;
+-    unsigned short	netseq;
++    u_int16_t		netseq;
+ 
+     if ( gettimeofday( &stv, 0 ) < 0 ) {
+ 	perror( "gettimeofday" );
+@@ -455,9 +462,9 @@
+      */
+     cbuf[ 0 ] = connid;
+     cbuf[ 1 ] = PAP_READ;
+-    if ( seq++ == 0xffff ) seq = 1;
++    if ( ++seq == 0 ) seq = 1;
+     netseq = htons( seq );
+-    bcopy( &netseq, &cbuf[ 2 ], sizeof( netseq ));
++    memcpy( &cbuf[ 2 ], &netseq, sizeof( netseq ));
+     atpb.atp_saddr = &sat;
+     atpb.atp_sreqdata = cbuf;
+     atpb.atp_sreqdlen = 4;		/* bytes in SendData request */
+@@ -567,7 +574,7 @@
+ 		switch ( cbuf[ 1 ] ) {
+ 		case PAP_READ :
+ 
+-		    bcopy( &netseq, &cbuf[ 2 ], sizeof( netseq ));
++		    memcpy( &cbuf[ 2 ], &netseq, sizeof( netseq ));
+ DEBUG( printf( "< READ %d\n", ntohs( netseq )), fflush( stdout ));
+ #ifdef notdef
+ 		    if ( netseq != 0 ) {
+@@ -673,9 +680,9 @@
+ 		 */
+ 		cbuf[ 0 ] = connid;
+ 		cbuf[ 1 ] = PAP_READ;
+-		if ( seq++ == 0xffff ) seq = 1;
++		if ( ++seq == 0 ) seq = 1;
+ 		netseq = htons( seq );
+-		bcopy( &netseq, &cbuf[ 2 ], sizeof( netseq ));
++		memcpy( &cbuf[ 2 ], &netseq, sizeof( netseq ));
+ 		atpb.atp_saddr = &sat;
+ 		atpb.atp_sreqdata = cbuf;
+ 		atpb.atp_sreqdlen = 4;		/* bytes in SendData request */
+@@ -795,9 +802,9 @@
+ 	    if ( waitforprinter ) {
+ 		char	st_buf[ 1024 ];	/* XXX too big */
+ 
+-		bcopy( rniov[ 0 ].iov_base + 9, st_buf,
++		memcpy( st_buf, rniov[ 0 ].iov_base + 9,
+ 			((char *)rniov[ 0 ].iov_base)[ 8 ] );
+-		st_buf[ ((char *)rniov[ 0 ].iov_base)[ 8 ]] = '\0';
++		st_buf[ ((int *)rniov[ 0 ].iov_base)[ 8 ]] = '\0';
+ 		if ( strstr( st_buf, "waiting" ) != NULL ) {
+ 		    waitforprinter = 0;
+ 		}
+@@ -810,6 +817,7 @@
+     }
+ }
+ 
++void
+ updatestatus( s, len )
+     char	*s;
+     int		len;

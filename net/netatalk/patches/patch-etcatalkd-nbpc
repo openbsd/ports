@@ -1,0 +1,244 @@
+--- etc/atalkd/nbp.c.orig	Tue Oct 28 09:28:43 1997
++++ etc/atalkd/nbp.c	Wed Nov 10 15:55:22 1999
+@@ -12,6 +12,8 @@
+ #include <stdlib.h>
+ #include <atalk/ddp.h>
+ #include <atalk/nbp.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #ifdef __svr4__
+ #include <sys/sockio.h>
+@@ -27,9 +29,13 @@
+ #include "multicast.h"
+ 
+ extern int	transition;
++extern int	strndiacasecmp();
+ 
+ struct nbptab	*nbptab = 0;
+ 
++void		nbp_ack();
++
++void
+ nbp_packet( ap, from, data, len )
+     struct atport	*ap;
+     struct sockaddr_at	*from;
+@@ -39,7 +45,6 @@
+     struct nbphdr	nh;
+     struct nbptuple	nt;
+     struct nbpnve	nn;
+-    struct sockaddr	sa;
+     struct sockaddr_at	sat;
+     struct nbptab	*ntab;
+     struct ziptab	*zt;
+@@ -48,7 +53,6 @@
+     struct rtmptab	*rtmp;
+     char		*end, *nbpop, *zonep, packet[ 587 ];
+     int			n, i, cc, locallkup = 0;
+-    u_short		tonet;
+ 
+     end = data + len;
+     if ( data >= end ) {
+@@ -64,7 +68,7 @@
+ 	syslog( LOG_INFO, "nbp_packet: malformed packet" );
+ 	return;
+     }
+-    bcopy( data, &nh, SZ_NBPHDR );
++    memcpy( &nh, data, SZ_NBPHDR );
+     nbpop = data;			/* remember for fwd and brrq */
+     data += SZ_NBPHDR;
+     if ( nh.nh_cnt != 1 ) {
+@@ -73,10 +77,10 @@
+ 	return;
+     }
+ 
+-    bcopy( data, &nt, SZ_NBPTUPLE );
++    memcpy( &nt, data, SZ_NBPTUPLE );
+     data += SZ_NBPTUPLE;
+ 
+-    bzero( &nn.nn_sat, sizeof( struct sockaddr_at ));
++    memset( &nn.nn_sat, 0, sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+     nn.nn_sat.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -91,7 +95,7 @@
+ 	return;
+     }
+     nn.nn_objlen = *data++;
+-    bcopy( data, nn.nn_obj, nn.nn_objlen );
++    memcpy( nn.nn_obj, data, nn.nn_objlen );
+     data += nn.nn_objlen;
+ 
+     /* type */
+@@ -100,7 +104,7 @@
+ 	return;
+     }
+     nn.nn_typelen = *data++;
+-    bcopy( data, nn.nn_type, nn.nn_typelen );
++    memcpy( nn.nn_type, data, nn.nn_typelen );
+     data += nn.nn_typelen;
+ 
+     /* zone */
+@@ -110,7 +114,7 @@
+     }
+     zonep = data;			/* remember for fwd */
+     nn.nn_zonelen = *data++;
+-    bcopy( data, nn.nn_zone, nn.nn_zonelen );
++    memcpy( nn.nn_zone, data, nn.nn_zonelen );
+     data += nn.nn_zonelen;
+ 
+     if ( data != end ) {
+@@ -173,7 +177,7 @@
+ 		syslog( LOG_ERR, "nbp rgstr malloc: %m" );
+ 		exit( 1 );
+ 	    }
+-	    bcopy( zone_mcast( zt->zt_name, zt->zt_len ), zt->zt_bcast,
++	    memcpy( zt->zt_bcast, zone_mcast( zt->zt_name, zt->zt_len ),
+ 		    sizeof( ethermulti ));
+ 
+ 	    for ( iface = interfaces; iface; iface = iface->i_next ) {
+@@ -197,7 +201,7 @@
+ 	    syslog( LOG_ERR, "malloc: %m" );
+ 	    exit( 1 );
+ 	}
+-	bcopy( &nn, &ntab->nt_nve, sizeof( struct nbpnve ));
++	memcpy( &ntab->nt_nve, &nn, sizeof( struct nbpnve ));
+ 	ntab->nt_next = nbptab;
+ 	ntab->nt_prev = 0;
+ 	if ( nbptab != 0 ) {
+@@ -287,11 +291,11 @@
+ 	     * of this packet.
+ 	     */
+ 	    if ( zt ) {
+-		bcopy( data - len, packet, len );
++		memcpy( packet, data - len, len );
+ 		nbpop = packet + ( len - ( data - nbpop ));
+ 		data = packet + ( len - ( data - zonep ));
+ 		*data++ = zt->zt_len;
+-		bcopy( zt->zt_name, data, zt->zt_len );
++		memcpy( data, zt->zt_name, zt->zt_len );
+ 		data += zt->zt_len;
+ 		len = data - packet;
+ 	    }
+@@ -322,7 +326,7 @@
+ 	    sat.sat_port = ap->ap_port;
+ 
+ 	    nh.nh_op = NBPOP_LKUP;
+-	    bcopy( &nh, nbpop, SZ_NBPHDR );
++	    memcpy( nbpop, &nh, SZ_NBPHDR );
+ 	    sat.sat_addr.s_net = 0;			/* XXX */
+ 	    sat.sat_addr.s_node = ATADDR_BCAST;
+ 
+@@ -336,7 +340,7 @@
+ 		return;
+ 	    }
+ 	    for ( ap = iface->i_ports; ap; ap = ap->ap_next ) {
+-		if ( ap->ap_packet == nbp_packet ) {
++		if ( (void *) ap->ap_packet == (void *) nbp_packet ) {
+ 		    break;
+ 		}
+ 	    }
+@@ -372,7 +376,7 @@
+ 		    ap = rtmp->rt_gate->g_iface->i_ports;
+ 		}
+ 		for ( ; ap; ap = ap->ap_next ) {
+-		    if ( ap->ap_packet == nbp_packet ) {
++		    if ( (void *) ap->ap_packet == (void *)nbp_packet ) {
+ 			break;
+ 		    }
+ 		}
+@@ -387,19 +391,19 @@
+ 			locallkup = 1;
+ 		    }
+ 		    nh.nh_op = NBPOP_LKUP;
+-		    bcopy( &nh, nbpop, SZ_NBPHDR );
++		    memcpy( nbpop, &nh, SZ_NBPHDR );
+ 		    sat.sat_addr.s_net = rtmp->rt_firstnet;
+ 		    sat.sat_addr.s_node = ATADDR_BCAST;
+ 		} else {
+ 		    if ( rtmp->rt_gate == 0 ) {
+ 			nh.nh_op = NBPOP_LKUP;
+-			bcopy( &nh, nbpop, SZ_NBPHDR );
++			memcpy( nbpop, &nh, SZ_NBPHDR );
+ 			sat.sat_addr.s_net = 0;
+ 			sat.sat_addr.s_node = ATADDR_BCAST;
+ 			locallkup = 1;
+ 		    } else {
+ 			nh.nh_op = NBPOP_FWD;
+-			bcopy( &nh, nbpop, SZ_NBPHDR );
++			memcpy( nbpop, &nh, SZ_NBPHDR );
+ 			sat.sat_addr.s_net = rtmp->rt_firstnet;
+ 			sat.sat_addr.s_node = 0;
+ 		    }
+@@ -425,7 +429,7 @@
+ 	/* should we check that we're a router? XXX */
+ 	if ( !locallkup && ninterfaces > IFBASE ) {
+ 	    nh.nh_op = NBPOP_LKUP;
+-	    bcopy( &nh, nbpop, SZ_NBPHDR );
++	    memcpy( nbpop, &nh, SZ_NBPHDR );
+ 	    from->sat_addr.s_net = 0;
+ 	    from->sat_addr.s_node = ATADDR_BCAST;
+ 	    if ( sendto( ap->ap_fd, data - len, len, 0, (struct sockaddr *)from,
+@@ -494,7 +498,7 @@
+ 		cc = data - packet;
+ 		data = packet;
+ 		*data++ = DDPTYPE_NBP;
+-		bcopy( &nh, data, SZ_NBPHDR );
++		memcpy( data, &nh, SZ_NBPHDR );
+ 
+ 		if ( sendto( ap->ap_fd, packet, cc, 0,
+ 			(struct sockaddr *)&nn.nn_sat,
+@@ -522,15 +526,15 @@
+ 	     */
+ 	    nt.nt_enum = i++;
+ 
+-	    bcopy( &nt, data, SZ_NBPTUPLE );
++	    memcpy( data, &nt, SZ_NBPTUPLE );
+ 	    data += SZ_NBPTUPLE;
+ 
+ 	    *data++ = ntab->nt_nve.nn_objlen;
+-	    bcopy( ntab->nt_nve.nn_obj, data, ntab->nt_nve.nn_objlen );
++	    memcpy( data, ntab->nt_nve.nn_obj, ntab->nt_nve.nn_objlen );
+ 	    data += ntab->nt_nve.nn_objlen;
+ 
+ 	    *data++ = ntab->nt_nve.nn_typelen;
+-	    bcopy( ntab->nt_nve.nn_type, data, ntab->nt_nve.nn_typelen );
++	    memcpy( data, ntab->nt_nve.nn_type, ntab->nt_nve.nn_typelen );
+ 	    data += ntab->nt_nve.nn_typelen;
+ 
+ 	    /*
+@@ -540,7 +544,7 @@
+ 	     */
+ 	    if ( ntab->nt_nve.nn_zonelen ) {
+ 		*data++ = ntab->nt_nve.nn_zonelen;
+-		bcopy( ntab->nt_nve.nn_zone, data, ntab->nt_nve.nn_zonelen );
++		memcpy( data, ntab->nt_nve.nn_zone, ntab->nt_nve.nn_zonelen );
+ 		data += ntab->nt_nve.nn_zonelen;
+ 	    } else {
+ 		*data++ = 1;
+@@ -556,7 +560,7 @@
+ 	    cc = data - packet;
+ 	    data = packet;
+ 	    *data++ = DDPTYPE_NBP;
+-	    bcopy( &nh, data, SZ_NBPHDR );
++	    memcpy( data, &nh, SZ_NBPHDR );
+ 
+ 	    if ( sendto( ap->ap_fd, packet, cc, 0,
+ 		    (struct sockaddr *)&nn.nn_sat,
+@@ -574,6 +578,7 @@
+     }
+ }
+ 
++void
+ nbp_ack( fd, nh_op, nh_id, to )
+     int			fd;
+     int			nh_op;
+@@ -588,7 +593,7 @@
+     nh.nh_id = nh_id;
+     data = packet;
+     *data++ = DDPTYPE_NBP;
+-    bcopy( &nh, data, SZ_NBPHDR );
++    memcpy( data, &nh, SZ_NBPHDR );
+     data += SZ_NBPHDR;
+     if ( sendto( fd, packet, data - packet, 0, (struct sockaddr *)to,
+ 	    sizeof( struct sockaddr_at )) < 0 ) {

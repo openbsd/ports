@@ -1,0 +1,15 @@
+--- etc/afpd/desktop.h.orig	Mon Sep 27 17:03:31 1999
++++ etc/afpd/desktop.h	Mon Sep 27 17:06:49 1999
+@@ -25,10 +25,11 @@
+     u_char	sdt_creator[ 4 ];
+     int		sdt_fd;
+     int		sdt_index;
+-    short	sdt_vid;
++    u_int16_t	sdt_vid;
+ };
+ 
+ extern char	*dtfile();
+ extern char	*mtoupath();
+ extern char	*utompath();
++extern int	setdeskowner();
+ extern u_char	ucreator[];

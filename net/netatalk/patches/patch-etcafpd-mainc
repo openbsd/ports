@@ -1,0 +1,130 @@
+--- etc/afpd/main.c.orig	Sun Oct  5 04:26:10 1997
++++ etc/afpd/main.c	Thu Nov 11 15:11:29 1999
+@@ -5,6 +5,8 @@
+ 
+ #include <sys/errno.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
++#include <sys/ioctl.h>
+ #include <sys/param.h>
+ #include <sys/uio.h>
+ #if defined( sun ) && defined( __svr4__ )
+@@ -20,7 +22,7 @@
+ #include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <strings.h>
++#include <string.h>
+ #include <netdb.h>
+ #include <unistd.h>
+ 
+@@ -29,6 +31,7 @@
+ #include <atalk/compat.h>
+ #include <atalk/atp.h>
+ #include <atalk/asp.h>
++#include <atalk/nbp.h>
+ #include <atalk/afp.h>
+ #include <atalk/adouble.h>
+ #include <atalk/paths.h>
+@@ -37,6 +40,7 @@
+ #include "icon.h"
+ #include "globals.h"
+ #include "fork.h"
++#include "auth.h"
+ 
+ #ifdef ATP_MAXDATA
+ #undef ATP_MAXDATA
+@@ -55,6 +59,11 @@
+ char	*version = VERSION;
+ ASP	child;
+ 
++void		status_flags(), status_server(), status_machine();
++int		status_icon();
++extern int	status_versions(), status_uams();
++extern int	bprint();
++
+ extern struct oforks	*writtenfork;
+ 
+ #if !defined( ibm032 ) && !defined( _IBMR2 )
+@@ -96,7 +105,7 @@
+ #endif ibm032 _IBMR2
+ afp_die()
+ {
+-    syslog( LOG_DEBUG, "afp_die: child %X", child );
++    syslog( LOG_DEBUG, "afp_die: child %p", child );
+     if ( asp_shutdown( child ) < 0 ) {
+ 	syslog( LOG_ERR, "afp_die: asp_shutdown: %m" );
+     }
+@@ -134,6 +143,7 @@
+     }
+ }
+ 
++int
+ main( ac, av )
+     int		ac;
+     char	**av;
+@@ -153,11 +163,11 @@
+ 	perror( "gethostname" );
+ 	exit( 1 );
+     }
+-    if (( p = index( hostname, '.' )) != 0 ) {
++    if (( p = strchr( hostname, '.' )) != 0 ) {
+ 	*p = '\0';
+     }
+ 
+-    if (( p = rindex( av[ 0 ], '/' )) == NULL ) {
++    if (( p = strrchr( av[ 0 ], '/' )) == NULL ) {
+ 	p = av[ 0 ];
+     } else {
+ 	p++;
+@@ -461,6 +471,7 @@
+     }
+ }
+ 
++void
+ status_server( data, server )
+     char	*data, *server;
+ {
+@@ -471,11 +482,12 @@
+     data += sizeof( struct afp_status );
+     len = strlen( server );
+     *data++ = len;
+-    bcopy( server, data, len );
++    memcpy( data, server, len );
+     data += len;
+     status->as_machoff = htons( data - (char *)status );
+ }
+ 
++void
+ status_machine( data )
+     char	*data;
+ {
+@@ -491,11 +503,12 @@
+     data += ntohs( status->as_machoff );
+     len = strlen( machine );
+     *data++ = len;
+-    bcopy( machine, data, len );
++    memcpy( data, machine, len );
+     data += len;
+     status->as_versoff = htons( data - (char *)status );
+ }
+ 
++int
+ status_icon( data )
+     char	*data;
+ {
+@@ -509,12 +522,13 @@
+ 	return( ret );
+     } else {
+ 	data += ntohs( status->as_iconoff );
+-	bcopy( icon, data, sizeof( icon ));
++	memcpy( data, icon, sizeof( icon ));
+ 	data += sizeof( icon );
+ 	return( data - (char *)status );
+     }
+ }
+ 
++void
+ status_flags( data )
+     char	*data;
+ {

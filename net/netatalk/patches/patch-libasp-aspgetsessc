@@ -1,0 +1,91 @@
+--- libatalk/asp/asp_getsess.c.orig	Sun Aug 17 09:20:31 1997
++++ libatalk/asp/asp_getsess.c	Wed Nov 10 14:54:49 1999
+@@ -6,7 +6,6 @@
+ #include <sys/errno.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+-#include <sys/signal.h>
+ #include <sys/uio.h>
+ #include <sys/wait.h>
+ #include <sys/syslog.h>
+@@ -16,8 +15,11 @@
+ #include <atalk/compat.h>
+ #include <atalk/atp.h>
+ #include <atalk/asp.h>
++#include <signal.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
+ 
+ #include "asp_child.h"
+ 
+@@ -143,7 +145,7 @@
+     ASP			aspret;
+     char		rdata[ ATP_MAXDATA ];
+     int			sid, csid, pid;
+-    u_short		asperr;
++    u_int16_t		asperr;
+     extern int		errno;
+ 
+     if (( asp_ac =
+@@ -180,7 +182,7 @@
+     }
+ 
+     for (;;) {
+-	bzero( &sat, sizeof( struct sockaddr_at ));
++	memset( &sat, 0, sizeof( struct sockaddr_at ));
+ #ifdef BSD4_4
+ 	sat.sat_len = sizeof( struct sockaddr_at );
+ #endif BSD4_4
+@@ -205,7 +207,7 @@
+ #endif EBUG
+ 	    if ( asp->asp_slen > 0 ) {
+ 		rdata[ 0 ] = 0;
+-		bcopy( asp->asp_status, &rdata[ 4 ], asp->asp_slen );
++		memcpy( &rdata[ 4 ], asp->asp_status, asp->asp_slen );
+ 		iov[ 0 ].iov_base = rdata;
+ 		iov[ 0 ].iov_len = 4 + asp->asp_slen;
+ 		atpb.atp_sresiov = iov;
+@@ -284,7 +286,7 @@
+ 		    break;
+ 		}
+ 	    }
+-	    bcopy( &asperr, &rdata[ 2 ], sizeof( u_short ));
++	    memcpy( &rdata[ 2 ], &asperr, sizeof( asperr ));
+ 	    iov[ 0 ].iov_base = rdata;
+ 	    iov[ 0 ].iov_len = 4;
+ 	    atpb.atp_sresiov = iov;
+@@ -309,6 +311,7 @@
+  * itself, since once asp_getsess() gets into control, it will never
+  * return.
+  */
++int
+ asp_kill( signal )
+     int		signal;
+ {
+@@ -326,6 +329,7 @@
+     return( 0 );
+ }
+ 
++int
+ asp_attentionall( code )
+     short	code;
+ {
+@@ -346,6 +350,7 @@
+ /*
+  * Note that code is passed in network byte-order (foolishly).
+  */
++int
+ asp_attention( code, sid )
+     short	code, sid;
+ {
+@@ -354,7 +359,7 @@
+     char		sdata[ 4 ], rdata[ 4 ];
+ 
+     sdata[ 0 ] = ASPFUNC_ATTN;
+-    bcopy( &code, &sdata[ 2 ], sizeof( short ));
++    memcpy( &sdata[ 2 ], &code, sizeof( code ));
+     iov[ 0 ].iov_base = rdata;
+     iov[ 0 ].iov_len = sizeof( rdata );
+ 
