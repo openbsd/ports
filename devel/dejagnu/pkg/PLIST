@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/12/14 09:02:02 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2002/12/30 07:37:55 fgsch Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/dejagnu.info
 bin/runtest
 include/dejagnu.h
@@ -30,8 +30,8 @@ share/dejagnu/baseboards/frv-tomcat.exp
 share/dejagnu/baseboards/gdbserver-sample.exp
 share/dejagnu/baseboards/h8300-sim.exp
 share/dejagnu/baseboards/h8300.exp
-share/dejagnu/baseboards/${MACHINE_ARCH}-bozo.exp
-share/dejagnu/baseboards/${MACHINE_ARCH}-sid.exp
+share/dejagnu/baseboards/i386-bozo.exp
+share/dejagnu/baseboards/i386-sid.exp
 share/dejagnu/baseboards/i960-cyclone.exp
 share/dejagnu/baseboards/i960-sim.exp
 share/dejagnu/baseboards/jmr3904-sim.exp
@@ -114,7 +114,7 @@ share/dejagnu/config/dve.exp
 share/dejagnu/config/gdb-comm.exp
 share/dejagnu/config/gdb_stub.exp
 share/dejagnu/config/h8300.exp
-share/dejagnu/config/${MACHINE_ARCH}-bozo.exp
+share/dejagnu/config/i386-bozo.exp
 share/dejagnu/config/i960.exp
 share/dejagnu/config/m32r-stub.exp
 share/dejagnu/config/m32r.exp
