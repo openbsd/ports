@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2002/09/22 18:55:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2002/10/28 21:44:31 espie Exp $
 
 COMMENT=		"X11 toolkit, addons"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.3
+VERSION=		3.0.4
 DISTNAME=		kdeaddons-${VERSION}
 
 LIB_DEPENDS= kdecore.4,DCOP,artskde,kdeui,khtml,kio,kparts::x11/kde/libs3 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2002/09/01 08:25:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/10/28 21:44:32 espie Exp $
 
 FLAVORS=af ar az bg bs ca cs da de el en_GB eo es et fi fr he hr hu id is \
     it ja ko lt lv mt nb nl nn pl pt pt_BR ro ru sk sl sv ta th tr uk ven \
@@ -10,7 +10,7 @@ FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
 COMMENT=		${FLAVOR} translations for kde3
 
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.3
+VERSION=		3.0.4
 DISTNAME=		kde-i18n-${FLAVOR}-${VERSION}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
 MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/${VERSION}/src/kde-i18n/@}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2002/09/01 08:25:25 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/28 21:44:32 espie Exp $
 
 COMMENT=		"X11 toolkit, multimedia hub"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.3
-DISTNAME=		arts-1.0.3
+VERSION=		3.0.4
+DISTNAME=		arts-1.0.4
 #PKGNAME=		${DISTNAME}p1
 
 NOT_FOR_ARCHS=
