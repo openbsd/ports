@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2003/08/16 02:36:48 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2003/08/22 04:52:53 jolan Exp $
 
 COMMENT=	"powerful Gtk+2 newsreader"
 
-VER=		0.14.0.95
+VER=		0.14.0.96
 DISTNAME=	pan-${VER}
 CATEGORIES=	news x11
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${VER}/SOURCE/
