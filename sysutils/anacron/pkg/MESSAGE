@@ -1,0 +1,31 @@
+To start using anacron:
+
+Create the file ${SYSCONFDIR}/anacrontab (see anacrontab(5) for
+information about its format).
+
+The following is a simple example which runs the standard
+OpenBSD daily, weekly, and monthly scripts:
+
+-----Cut
+# ${SYSCONFDIR}/anacrontab example
+SHELL=/bin/sh
+PATH=${PREFIX}/sbin:${PREFIX}/bin:/sbin:/bin:/usr/sbin:/usr/bin
+# format: period delay job-identifier command
+1  5  cron.daily   sh /etc/daily 2>&1   | tee /var/log/daily.out
+7  10 cron.weekly  sh /etc/weekly 2>&1  | tee /var/log/weekly.out
+30 15 cron.monthly sh /etc/monthly 2>&1 | tee /var/log/monthly.out
+-----Cut
+
+Comment out the invocation of these jobs in root's crontab.
+
+Invoke anacron from /etc/rc.local like this:
+
+if [ X"\${anacron}" == X"YES" -a -x ${PREFIX}/sbin/anacron ]; then
+    echo -n ' anacron'
+    ${PREFIX}/sbin/anacron -s
+fi
+
+(and add "anacron=YES" to /etc/rc.conf.local)
+
+If your machine is left running for more than 24h at a time, you
+might also want to invoke anacron from an early morning cron job.
