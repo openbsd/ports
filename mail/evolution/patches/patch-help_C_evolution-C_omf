@@ -1,29 +1,24 @@
-$OpenBSD: patch-help_C_evolution-C_omf,v 1.1 2002/09/14 04:18:35 marcm Exp $
---- help/C/evolution-C.omf.orig	Thu Sep 12 15:43:24 2002
-+++ help/C/evolution-C.omf	Thu Sep 12 15:43:59 2002
-@@ -1,14 +1,19 @@
--<?xml version="1.0" standalone="no"?>
-+<?xml version="1.0"?>
+$OpenBSD: patch-help_C_evolution-C_omf,v 1.2 2003/01/03 21:53:07 marcm Exp $
+--- help/C/evolution-C.omf.orig	Tue Nov 12 09:45:01 2002
++++ help/C/evolution-C.omf	Sat Dec 14 20:20:50 2002
+@@ -2,9 +2,9 @@
+ <!DOCTYPE omf PUBLIC "-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" "http://scrollkeeper.sourceforge.net/dtds/scrollkeeper-omf-1.0/scrollkeeper-omf.dtd">
  <omf>
    <resource>
+-   <creator>
+-     Ximian, Inc.
+-   </creator>
 +    <creator>
-+      marcm@openbsd.org
++      Ximian, Inc.
 +    </creator>
      <title>
        Evolution Manual
      </title>
--    <subject>
--      <category>GNOME|Applications</category>
--    </subject>
--    <format mime="text/html"/>
--    <identifier url="index.html"/>
-+    <date>
-+      2002-09-08
-+    </date>
-+    <subject category="GNOME|Applications"/>
-+    <format  mime="text/html"/>
-+    <identifier url="file:/usr/local/share/gnome/help/evolution/C/index.html"/>
+@@ -13,6 +13,7 @@
+     <format mime="text/html"/>
+     <identifier url="index.html"/>
      <language code="C"/>
 +    <relation seriesid="37999fc8-c399-11d6-9fad-eb695898362a"/>
+     <relation seriesid="6a2207d8-8aa4-11d6-8cb4-f0bb5a765891"/>
    </resource>
  </omf>

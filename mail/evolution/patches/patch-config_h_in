@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- config.h.in.orig	Sun May 26 21:48:43 2002
-+++ config.h.in	Sun May 26 21:49:34 2002
-@@ -147,6 +147,9 @@
+$OpenBSD: patch-config_h_in,v 1.2 2003/01/03 21:53:07 marcm Exp $
+--- config.h.in.orig	Mon Nov 18 10:08:44 2002
++++ config.h.in	Sat Dec 14 20:20:50 2002
+@@ -165,6 +165,9 @@
  /* Define if you have the <argz.h> header file.  */
  #undef HAVE_ARGZ_H
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/09/14 04:18:35 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/01/03 21:53:07 marcm Exp $
 bin/csv2vcard
 bin/evolution
 bin/evolution-addressbook
@@ -11,8 +11,10 @@ bin/evolution-calendar-importer
 bin/evolution-elm-importer
 bin/evolution-executive-summary
 bin/evolution-gnomecard-importer
+bin/evolution-launch-composer
 bin/evolution-ldif-importer
 bin/evolution-mail
+bin/evolution-mail-upgrade
 bin/evolution-move-tasks
 bin/evolution-netscape-importer
 bin/evolution-pine-importer
@@ -23,11 +25,17 @@ bin/load-pine-addressbook
 bin/wombat
 include/camel/broken-date-parser.h
 include/camel/camel-address.h
+include/camel/camel-arg.h
+include/camel/camel-block-file.h
+include/camel/camel-certdb.h
 include/camel/camel-charset-map.h
 include/camel/camel-cipher-context.h
 include/camel/camel-cms-context.h
+include/camel/camel-data-cache.h
 include/camel/camel-data-wrapper.h
 include/camel/camel-digest-folder.h
+include/camel/camel-digest-store.h
+include/camel/camel-digest-summary.h
 include/camel/camel-disco-diary.h
 include/camel/camel-disco-folder.h
 include/camel/camel-disco-store.h
@@ -40,15 +48,19 @@ include/camel/camel-folder-search.h
 include/camel/camel-folder-summary.h
 include/camel/camel-folder-thread.h
 include/camel/camel-folder.h
+include/camel/camel-gpg-context.h
+include/camel/camel-http-stream.h
 include/camel/camel-imap-command.h
 include/camel/camel-imap-folder.h
 include/camel/camel-imap-message-cache.h
 include/camel/camel-imap-search.h
+include/camel/camel-imap-store-summary.h
 include/camel/camel-imap-store.h
 include/camel/camel-imap-summary.h
 include/camel/camel-imap-types.h
 include/camel/camel-imap-utils.h
 include/camel/camel-imap-wrapper.h
+include/camel/camel-index.h
 include/camel/camel-internet-address.h
 include/camel/camel-local-folder.h
 include/camel/camel-local-store.h
@@ -67,13 +79,16 @@ include/camel/camel-mh-store.h
 include/camel/camel-mh-summary.h
 include/camel/camel-mime-filter-basic.h
 include/camel/camel-mime-filter-bestenc.h
+include/camel/camel-mime-filter-canon.h
 include/camel/camel-mime-filter-charset.h
+include/camel/camel-mime-filter-chomp.h
 include/camel/camel-mime-filter-crlf.h
 include/camel/camel-mime-filter-from.h
 include/camel/camel-mime-filter-html.h
 include/camel/camel-mime-filter-index.h
 include/camel/camel-mime-filter-linewrap.h
 include/camel/camel-mime-filter-save.h
+include/camel/camel-mime-filter-tohtml.h
 include/camel/camel-mime-filter.h
 include/camel/camel-mime-message.h
 include/camel/camel-mime-parser.h
@@ -81,20 +96,24 @@ include/camel/camel-mime-part-utils.h
 include/camel/camel-mime-part.h
 include/camel/camel-mime-utils.h
 include/camel/camel-movemail.h
+include/camel/camel-multipart-encrypted.h
+include/camel/camel-multipart-signed.h
 include/camel/camel-multipart.h
 include/camel/camel-object.h
 include/camel/camel-operation.h
-include/camel/camel-pgp-context.h
+include/camel/camel-partition-table.h
 include/camel/camel-pgp-mime.h
+include/camel/camel-pop3-engine.h
 include/camel/camel-pop3-folder.h
 include/camel/camel-pop3-store.h
+include/camel/camel-pop3-stream.h
 include/camel/camel-provider.h
-include/camel/camel-remote-store.h
 include/camel/camel-sasl-anonymous.h
 include/camel/camel-sasl-cram-md5.h
 include/camel/camel-sasl-digest-md5.h
 include/camel/camel-sasl-kerberos4.h
 include/camel/camel-sasl-login.h
+include/camel/camel-sasl-ntlm.h
 include/camel/camel-sasl-plain.h
 include/camel/camel-sasl-popb4smtp.h
 include/camel/camel-sasl.h
@@ -109,6 +128,7 @@ include/camel/camel-smtp-transport.h
 include/camel/camel-spool-folder.h
 include/camel/camel-spool-store.h
 include/camel/camel-spool-summary.h
+include/camel/camel-store-summary.h
 include/camel/camel-store.h
 include/camel/camel-stream-buffer.h
 include/camel/camel-stream-filter.h
@@ -119,10 +139,12 @@ include/camel/camel-stream.h
 include/camel/camel-tcp-stream-raw.h
 include/camel/camel-tcp-stream-ssl.h
 include/camel/camel-tcp-stream.h
+include/camel/camel-text-index.h
 include/camel/camel-transport.h
 include/camel/camel-types.h
 include/camel/camel-uid-cache.h
 include/camel/camel-url.h
+include/camel/camel-utf8.h
 include/camel/camel-vee-folder.h
 include/camel/camel-vee-store.h
 include/camel/camel-vtrash-folder.h
@@ -142,6 +164,39 @@ include/evolution/cal-util/cal-component.h
 include/evolution/cal-util/cal-recur.h
 include/evolution/cal-util/cal-util.h
 include/evolution/cal-util/timeutil.h
+include/evolution/e-conduit/e-pilot-map.h
+include/evolution/e-conduit/e-pilot-settings.h
+include/evolution/e-conduit/e-pilot-util.h
+include/evolution/e-db3util/e-db3-utils.h
+include/evolution/e-db3util/e-dbhash.h
+include/evolution/e-util/e-bonobo-factory-util.h
+include/evolution/e-util/e-categories-config.h
+include/evolution/e-util/e-categories-master-list-wombat.h
+include/evolution/e-util/e-component-listener.h
+include/evolution/e-util/e-config-listener.h
+include/evolution/e-util/e-corba-utils.h
+include/evolution/e-util/e-dialog-utils.h
+include/evolution/e-util/e-dialog-widgets.h
+include/evolution/e-util/e-gtk-utils.h
+include/evolution/e-util/e-gui-utils.h
+include/evolution/e-util/e-host-utils.h
+include/evolution/e-util/e-html-utils.h
+include/evolution/e-util/e-iterator.h
+include/evolution/e-util/e-lang-utils.h
+include/evolution/e-util/e-list-iterator.h
+include/evolution/e-util/e-list.h
+include/evolution/e-util/e-memory.h
+include/evolution/e-util/e-mktemp.h
+include/evolution/e-util/e-msgport.h
+include/evolution/e-util/e-passwords.h
+include/evolution/e-util/e-path.h
+include/evolution/e-util/e-proxy.h
+include/evolution/e-util/e-request.h
+include/evolution/e-util/e-sexp.h
+include/evolution/e-util/e-time-utils.h
+include/evolution/e-util/e-url.h
+include/evolution/e-util/md5-utils.h
+include/evolution/ebook/addressbook.h
 include/evolution/ebook/e-book-listener.h
 include/evolution/ebook/e-book-types.h
 include/evolution/ebook/e-book-util.h
@@ -160,9 +215,31 @@ include/evolution/importer/evolution-importer-client.h
 include/evolution/importer/evolution-importer-listener.h
 include/evolution/importer/evolution-importer.h
 include/evolution/importer/evolution-intelligent-importer.h
+include/evolution/pas/addressbook.h
+include/evolution/pas/pas-backend-card-sexp.h
+include/evolution/pas/pas-backend-summary.h
+include/evolution/pas/pas-backend.h
+include/evolution/pas/pas-book-factory.h
+include/evolution/pas/pas-book-view.h
+include/evolution/pas/pas-book.h
+include/evolution/pas/pas-card-cursor.h
+include/evolution/pcs/cal-backend-util.h
+include/evolution/pcs/cal-backend.h
+include/evolution/pcs/cal-common.h
+include/evolution/pcs/cal-factory.h
+include/evolution/pcs/cal.h
+include/evolution/pcs/evolution-calendar.h
+include/evolution/pcs/job.h
+include/evolution/pcs/query-backend.h
+include/evolution/pcs/query.h
 include/evolution/shell/Evolution.h
+include/evolution/shell/e-folder-list.h
 include/evolution/shell/e-folder-tree.h
+include/evolution/shell/e-folder.h
+include/evolution/shell/e-shell-corba-icon-utils.h
 include/evolution/shell/evolution-activity-client.h
+include/evolution/shell/evolution-config-control.h
+include/evolution/shell/evolution-folder-selector-button.h
 include/evolution/shell/evolution-session.h
 include/evolution/shell/evolution-shell-client.h
 include/evolution/shell/evolution-shell-component-client.h
@@ -174,34 +251,67 @@ include/evolution/shell/evolution-storage-listener.h
 include/evolution/shell/evolution-storage-set-view-listener.h
 include/evolution/shell/evolution-storage.h
 include/evolution/shell/evolution-wizard.h
+include/evolution/widgets/e-bonobo-widget.h
+include/evolution/widgets/e-calendar-item.h
+include/evolution/widgets/e-calendar.h
+include/evolution/widgets/e-cell-date-edit.h
+include/evolution/widgets/e-cell-percent.h
+include/evolution/widgets/e-charset-picker.h
+include/evolution/widgets/e-clipped-label.h
+include/evolution/widgets/e-combo-button.h
+include/evolution/widgets/e-config-page.h
+include/evolution/widgets/e-dateedit.h
+include/evolution/widgets/e-dropdown-button.h
+include/evolution/widgets/e-map.h
+include/evolution/widgets/e-messagebox.h
+include/evolution/widgets/e-multi-config-dialog.h
+include/evolution/widgets/e-search-bar.h
+include/evolution/widgets/e-title-bar.h
+include/evolution/widgets/e-url-entry.h
 include/evolution/wombat/wombat-client.h
-lib/evolution/camel-providers/1.0/libcamelimap.a
-lib/evolution/camel-providers/1.0/libcamelimap.la
-lib/evolution/camel-providers/1.0/libcamelimap.urls
-lib/evolution/camel-providers/1.0/libcamellocal.a
-lib/evolution/camel-providers/1.0/libcamellocal.la
-lib/evolution/camel-providers/1.0/libcamellocal.urls
-lib/evolution/camel-providers/1.0/libcamelpop3.a
-lib/evolution/camel-providers/1.0/libcamelpop3.la
-lib/evolution/camel-providers/1.0/libcamelpop3.urls
-lib/evolution/camel-providers/1.0/libcamelsendmail.a
-lib/evolution/camel-providers/1.0/libcamelsendmail.la
-lib/evolution/camel-providers/1.0/libcamelsendmail.urls
-lib/evolution/camel-providers/1.0/libcamelsmtp.a
-lib/evolution/camel-providers/1.0/libcamelsmtp.la
-lib/evolution/camel-providers/1.0/libcamelsmtp.urls
-lib/evolution/evolution-mail-importers/1.0.8/libmbox.a
-lib/evolution/evolution-mail-importers/1.0.8/libmbox.la
-lib/evolution/evolution-mail-importers/1.0.8/liboutlook.a
-lib/evolution/evolution-mail-importers/1.0.8/liboutlook.la
+lib/camelConf.sh
+lib/evolution/1.2/camel-providers/libcamelimap.a
+lib/evolution/1.2/camel-providers/libcamelimap.la
+lib/evolution/1.2/camel-providers/libcamelimap.urls
+lib/evolution/1.2/camel-providers/libcamellocal.a
+lib/evolution/1.2/camel-providers/libcamellocal.la
+lib/evolution/1.2/camel-providers/libcamellocal.urls
+lib/evolution/1.2/camel-providers/libcamelpop3.a
+lib/evolution/1.2/camel-providers/libcamelpop3.la
+lib/evolution/1.2/camel-providers/libcamelpop3.urls
+lib/evolution/1.2/camel-providers/libcamelsendmail.a
+lib/evolution/1.2/camel-providers/libcamelsendmail.la
+lib/evolution/1.2/camel-providers/libcamelsendmail.urls
+lib/evolution/1.2/camel-providers/libcamelsmtp.a
+lib/evolution/1.2/camel-providers/libcamelsmtp.la
+lib/evolution/1.2/camel-providers/libcamelsmtp.urls
+lib/evolution/1.2/evolution-mail-importers/libmbox.a
+lib/evolution/1.2/evolution-mail-importers/libmbox.la
+lib/evolution/1.2/evolution-mail-importers/liboutlook.a
+lib/evolution/1.2/evolution-mail-importers/liboutlook.la
+lib/evolution/1.2/libcal-util-static.a
+lib/evolution/1.2/libcal-util-static.la
+lib/evolution/1.2/libebook-static.a
+lib/evolution/1.2/libebook-static.la
+lib/evolution/1.2/libebook.a
+lib/evolution/1.2/libebook.la
+lib/evolution/1.2/libedb3util.a
+lib/evolution/1.2/libedb3util.la
+lib/evolution/1.2/libemiscwidgets.a
+lib/evolution/1.2/libeutil.a
+lib/evolution/1.2/libeutil.la
+lib/evolution/1.2/libpas.a
+lib/evolution/1.2/libpcs.a
+lib/evolution/1.2/libversit.a
+lib/evolution_addressbookConf.sh
+lib/evolution_calendarConf.sh
+lib/evolution_shellConf.sh
 lib/libcal-client.a
 lib/libcal-client.la
 lib/libcal-util.a
 lib/libcal-util.la
 lib/libcamel.a
 lib/libcamel.la
-lib/libebook.a
-lib/libebook.la
 lib/libename.a
 lib/libename.la
 lib/libeselectnames.a
@@ -212,9 +322,12 @@ lib/libevolution-importer.a
 lib/libevolution-importer.la
 lib/libical-evolution.a
 lib/libical-evolution.la
+lib/libicalvcal-evolution.a
+lib/libicalvcal-evolution.la
 lib/libwombat.a
 lib/libwombat.la
 man/man1/evolution.1
+sbin/camel-index-control
 sbin/camel-lock-helper
 share/evolution/Locations
 share/evolution/addresstypes.xml
@@ -234,17 +347,23 @@ share/evolution/default_user/local/Sent/mbox
 share/evolution/default_user/local/Tasks/folder-metadata.xml
 share/evolution/default_user/local/Trash/folder-metadata.xml
 share/evolution/default_user/searches.xml
+share/evolution/default_user/vfolders.xml
 share/evolution/ecps/medbook.ecps
 share/evolution/ecps/phonelist.ecps
 share/evolution/ecps/smallbook.ecps
+share/evolution/etspec/addressbook-config.etspec
+share/evolution/etspec/e-addressbook-view.etspec
 share/evolution/etspec/e-calendar-table.etspec
+share/evolution/etspec/e-contact-list-editor.etspec
 share/evolution/etspec/e-meeting-time-sel.etspec
+share/evolution/etspec/e-select-names.etspec
 share/evolution/etspec/e-storage-set-view.etspec
+share/evolution/etspec/mail-accounts.etspec
 share/evolution/etspec/meeting-page.etspec
 share/evolution/etspec/message-list.etspec
 share/evolution/etspec/subscribe-dialog.etspec
+share/evolution/evolutionperson.schema
 share/evolution/filtertypes.xml
-share/evolution/glade/addressbook-config.glade
 share/evolution/glade/alarm-notify.glade
 share/evolution/glade/alarm-options.glade
 share/evolution/glade/alarm-page.glade
@@ -257,20 +376,25 @@ share/evolution/glade/e-card-merging-book-commit-duplicate-detected.glade
 share/evolution/glade/e-contact-editor-confirm-delete.glade
 share/evolution/glade/e-contact-print.glade
 share/evolution/glade/e-delegate-dialog.glade
+share/evolution/glade/e-folder-list.glade
 share/evolution/glade/e-itip-control.glade
 share/evolution/glade/e-msg-composer-attachment.glade
+share/evolution/glade/e-shell-config-default-folders.glade
 share/evolution/glade/e-shell-folder-creation-dialog.glade
+share/evolution/glade/e-shell-shared-folder-picker-dialog.glade
 share/evolution/glade/e-timezone-dialog.glade
 share/evolution/glade/event-page.glade
 share/evolution/glade/evolution-startup-wizard.glade
 share/evolution/glade/evolution.png
 share/evolution/glade/file-exists.glade
 share/evolution/glade/filter.glade
+share/evolution/glade/flag-for-followup-48.png
 share/evolution/glade/fulladdr.glade
 share/evolution/glade/fullname.glade
 share/evolution/glade/goto-dialog.glade
 share/evolution/glade/import.glade
 share/evolution/glade/import.png
+share/evolution/glade/ldap-config.glade
 share/evolution/glade/local-config.glade
 share/evolution/glade/mail-config-druid-account-name.png
 share/evolution/glade/mail-config-druid-identity.png
@@ -279,7 +403,7 @@ share/evolution/glade/mail-config-druid-send.png
 share/evolution/glade/mail-config-druid.png
 share/evolution/glade/mail-config.glade
 share/evolution/glade/meeting-page.glade
-share/evolution/glade/meeting_widget.png
+share/evolution/glade/message-tags.glade
 share/evolution/glade/my-evolution.glade
 share/evolution/glade/recurrence-page.glade
 share/evolution/glade/schedule-page.glade
@@ -289,11 +413,15 @@ share/evolution/glade/task-details-page.glade
 share/evolution/glade/task-page.glade
 share/evolution/glade/thankyou.png
 share/evolution/glade/timezone-48.png
+share/evolution/sounds/default_alarm.wav
 share/evolution/vfoldertypes.xml
+share/evolution/views/addressbook/Address_Cards.galview
 share/evolution/views/addressbook/By_Company.galview
 share/evolution/views/addressbook/Phone_List.galview
 share/evolution/views/addressbook/galview.xml
 share/evolution/views/calendar/galview.xml
+share/evolution/views/mail/As_Sent_Folder.galview
+share/evolution/views/mail/By_Follow_Up_Flag.galview
 share/evolution/views/mail/By_Sender.galview
 share/evolution/views/mail/By_Status.galview
 share/evolution/views/mail/By_Subject.galview
@@ -304,7 +432,9 @@ share/evolution/views/tasks/With_Category.galview
 share/evolution/views/tasks/galview.xml
 share/gnome/apps/Applications/evolution.desktop
 share/gnome/help/evolution/C/access.html
+share/gnome/help/evolution/C/apx-fdl.html
 share/gnome/help/evolution/C/apx-gloss.html
+share/gnome/help/evolution/C/apx-gpl.html
 share/gnome/help/evolution/C/authors.html
 share/gnome/help/evolution/C/bugs.html
 share/gnome/help/evolution/C/config-prefs-cal.html
@@ -318,6 +448,18 @@ share/gnome/help/evolution/C/contact-search.html
 share/gnome/help/evolution/C/customizing-summary.html
 share/gnome/help/evolution/C/docbook.css
 share/gnome/help/evolution/C/encryption.html
+share/gnome/help/evolution/C/fdl-section1.html
+share/gnome/help/evolution/C/fdl-section10.html
+share/gnome/help/evolution/C/fdl-section2.html
+share/gnome/help/evolution/C/fdl-section3.html
+share/gnome/help/evolution/C/fdl-section4.html
+share/gnome/help/evolution/C/fdl-section5.html
+share/gnome/help/evolution/C/fdl-section6.html
+share/gnome/help/evolution/C/fdl-section7.html
+share/gnome/help/evolution/C/fdl-section8.html
+share/gnome/help/evolution/C/fdl-section9.html
+share/gnome/help/evolution/C/fdl-using.html
+share/gnome/help/evolution/C/features.html
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/config-cal.png
 share/gnome/help/evolution/C/figures/config-mail.png
@@ -341,7 +483,6 @@ share/gnome/help/evolution/C/figures/mail-inbox.png
 share/gnome/help/evolution/C/figures/mail-threaded.png
 share/gnome/help/evolution/C/figures/mainwindow-pic.png
 share/gnome/help/evolution/C/figures/newmsg.png
-share/gnome/help/evolution/C/figures/outline.png
 share/gnome/help/evolution/C/figures/print-dest.png
 share/gnome/help/evolution/C/figures/print-preview.png
 share/gnome/help/evolution/C/figures/replymsg.png
@@ -356,6 +497,8 @@ share/gnome/help/evolution/C/install.html
 share/gnome/help/evolution/C/introduction.html
 share/gnome/help/evolution/C/ln20.html
 share/gnome/help/evolution/C/menuref.html
+share/gnome/help/evolution/C/organization.html
+share/gnome/help/evolution/C/other-help.html
 share/gnome/help/evolution/C/print-destination.html
 share/gnome/help/evolution/C/quickref-cal.html
 share/gnome/help/evolution/C/quickref-contact.html
@@ -363,15 +506,17 @@ share/gnome/help/evolution/C/quickref-mail.html
 share/gnome/help/evolution/C/rsvp-stuff.html
 share/gnome/help/evolution/C/sgml/apx-authors.sgml
 share/gnome/help/evolution/C/sgml/apx-bugs.sgml
+share/gnome/help/evolution/C/sgml/apx-fdl.sgml
 share/gnome/help/evolution/C/sgml/apx-gloss.sgml
+share/gnome/help/evolution/C/sgml/apx-gpl.sgml
 share/gnome/help/evolution/C/sgml/config-prefs.sgml
 share/gnome/help/evolution/C/sgml/config-sync.sgml
-share/gnome/help/evolution/C/sgml/evolution-faq.sgml
 share/gnome/help/evolution/C/sgml/evolution.sgml
 share/gnome/help/evolution/C/sgml/menuref.sgml
 share/gnome/help/evolution/C/sgml/preface.sgml
 share/gnome/help/evolution/C/sgml/usage-calendar.sgml
 share/gnome/help/evolution/C/sgml/usage-contact.sgml
+share/gnome/help/evolution/C/sgml/usage-exchange.sgml
 share/gnome/help/evolution/C/sgml/usage-exec-summary.sgml
 share/gnome/help/evolution/C/sgml/usage-mail-org.sgml
 share/gnome/help/evolution/C/sgml/usage-mail.sgml
@@ -390,6 +535,7 @@ share/gnome/help/evolution/C/stylesheet-images/toc-minus.gif
 share/gnome/help/evolution/C/stylesheet-images/toc-plus.gif
 share/gnome/help/evolution/C/stylesheet-images/up.gif
 share/gnome/help/evolution/C/stylesheet-images/warning.gif
+share/gnome/help/evolution/C/terms.html
 share/gnome/help/evolution/C/topic.dat
 share/gnome/help/evolution/C/typography.html
 share/gnome/help/evolution/C/ui-intro.html
@@ -417,6 +563,7 @@ share/gnome/help/evolution/C/usage-print.html
 share/gnome/help/evolution/C/usage-summary.html
 share/gnome/help/evolution/C/usage-sync.html
 share/gnome/help/evolution/C/usage.html
+share/gnome/help/evolution/C/whats-new-in-one-two.html
 share/gnome/ui/evolution-addressbook.xml
 share/gnome/ui/evolution-calendar.xml
 share/gnome/ui/evolution-comp-editor.xml
@@ -437,7 +584,9 @@ share/gnome/ui/evolution.xml
 share/gnome/ui/my-evolution.xml
 share/idl/Composer.idl
 share/idl/Evolution-Activity.idl
+share/idl/Evolution-Addressbook-SelectNames.idl
 share/idl/Evolution-Composer.idl
+share/idl/Evolution-ConfigControl.idl
 share/idl/Evolution-Offline.idl
 share/idl/Evolution-Session.idl
 share/idl/Evolution-Shell.idl
@@ -448,9 +597,11 @@ share/idl/Evolution-Shortcuts.idl
 share/idl/Evolution-Storage.idl
 share/idl/Evolution-StorageSetView.idl
 share/idl/Evolution-Wizard.idl
+share/idl/Evolution-Wombat.idl
 share/idl/Evolution-common.idl
 share/idl/Evolution.idl
 share/idl/GNOME_Evolution_Importer.idl
+share/idl/Mailer.idl
 share/idl/addressbook.idl
 share/idl/evolution-calendar.idl
 share/images/evolution/16_copy.png
@@ -495,8 +646,10 @@ share/images/evolution/buttons/send-24.png
 share/images/evolution/buttons/weekview.xpm
 share/images/evolution/buttons/workweekview.xpm
 share/images/evolution/buttons/yearview.xpm
+share/images/evolution/calendar-and-tasks-settings.png
 share/images/evolution/cellphone.png
 share/images/evolution/compose-message.png
+share/images/evolution/composer-settings.png
 share/images/evolution/conduits/evo-16-address-conduit.png
 share/images/evolution/conduits/evo-16-calendar-conduit.png
 share/images/evolution/conduits/evo-16-todo-conduit.png
@@ -507,7 +660,9 @@ share/images/evolution/configure_16_addressbook.xpm
 share/images/evolution/configure_16_calendar.xpm
 share/images/evolution/configure_16_folder.xpm
 share/images/evolution/configure_16_mail.xpm
+share/images/evolution/connect_to_url-16.xpm
 share/images/evolution/contact-is-a-list.png
+share/images/evolution/contact-list-16.png
 share/images/evolution/copy_16_message.xpm
 share/images/evolution/edit.xpm
 share/images/evolution/empty.gif
@@ -536,9 +691,14 @@ share/images/evolution/faq-16.png
 share/images/evolution/fetch-mail.png
 share/images/evolution/find_contact.xpm
 share/images/evolution/find_message.xpm
+share/images/evolution/flag-for-followup-16.png
 share/images/evolution/folder-copy-16.png
+share/images/evolution/folder-mini.png
 share/images/evolution/folder-move-16.png
+share/images/evolution/folder-settings.png
+share/images/evolution/folder.png
 share/images/evolution/folder.xpm
+share/images/evolution/font.png
 share/images/evolution/forward.xpm
 share/images/evolution/globe.png
 share/images/evolution/goto-16.png
@@ -552,18 +712,26 @@ share/images/evolution/ico-rdf.png
 share/images/evolution/ico-weather.png
 share/images/evolution/import.png
 share/images/evolution/import.xpm
-share/images/evolution/inbox-16.png
-share/images/evolution/inbox-full-16.png
+share/images/evolution/inbox-mini.png
+share/images/evolution/inbox.png
+share/images/evolution/info-bulb.png
 share/images/evolution/ldap-mini.png
+share/images/evolution/ldap-settings.png
 share/images/evolution/ldap.png
+share/images/evolution/mail-accounts-settings.png
 share/images/evolution/mail-config-druid-account-name.png
 share/images/evolution/mail-config-druid-identity.png
 share/images/evolution/mail-config-druid-receive.png
 share/images/evolution/mail-config-druid-send.png
 share/images/evolution/mail-config-druid.png
+share/images/evolution/mail-new.xpm
+share/images/evolution/mail-read.xpm
+share/images/evolution/mail.png
 share/images/evolution/malehead.png
 share/images/evolution/mark-as-important-16.png
+share/images/evolution/meeting-request-16.png
 share/images/evolution/meeting-request.png
+share/images/evolution/monkey-16.png
 share/images/evolution/move_message.xpm
 share/images/evolution/myevo-appointments.png
 share/images/evolution/myevo-mail-summary.png
@@ -576,26 +744,34 @@ share/images/evolution/myweather-storm.png
 share/images/evolution/myweather-sun.png
 share/images/evolution/myweather-suncloud.png
 share/images/evolution/new-message.xpm
+share/images/evolution/new_all_day_event.png
 share/images/evolution/new_appointment.xpm
 share/images/evolution/new_contact.xpm
 share/images/evolution/new_task-16.png
 share/images/evolution/offline.png
 share/images/evolution/online.png
 share/images/evolution/open-in-new-window-16.png
-share/images/evolution/outbox-16.png
-share/images/evolution/outbox-full-16.png
+share/images/evolution/outbox-mini.png
+share/images/evolution/outbox.png
 share/images/evolution/pattern.png
 share/images/evolution/pgp-signature-bad.png
 share/images/evolution/pgp-signature-nokey.png
 share/images/evolution/pgp-signature-ok.png
+share/images/evolution/post-message-16.png
+share/images/evolution/post-reply-24.png
 share/images/evolution/print-preview.xpm
 share/images/evolution/print.xpm
+share/images/evolution/priority-high.xpm
+share/images/evolution/public-folder-mini.png
+share/images/evolution/public-folder.png
 share/images/evolution/rdf.png
 share/images/evolution/reply.xpm
 share/images/evolution/reply_to_all.xpm
 share/images/evolution/save-16.png
 share/images/evolution/save-as-16.png
 share/images/evolution/save.xpm
+share/images/evolution/schedule-meeting-16.xpm
+share/images/evolution/schedule-meeting-24.png
 share/images/evolution/search-16.png
 share/images/evolution/search-and-replace-16.png
 share/images/evolution/send-16.png
@@ -611,8 +787,12 @@ share/images/evolution/service-right-disabled.png
 share/images/evolution/service-right.png
 share/images/evolution/service-up-disabled.png
 share/images/evolution/service-up.png
+share/images/evolution/settings-16.png
+share/images/evolution/settings.png
 share/images/evolution/show_all_messages.xpm
 share/images/evolution/splash.png
+share/images/evolution/summary-settings.png
+share/images/evolution/summary_preferences-16.png
 share/images/evolution/talking-heads.png
 share/images/evolution/task.png
 share/images/evolution/task.xpm
@@ -624,6 +804,7 @@ share/images/evolution/wax-seal-broken.png
 share/images/evolution/wax-seal.png
 share/images/evolution/work_offline.xpm
 share/images/evolution/work_online-16.png
+share/images/evolution/working-16.png
 share/images/evolution/world_map-960.png
 share/libical-evolution/zoneinfo/Africa/Abidjan.ics
 share/libical-evolution/zoneinfo/Africa/Accra.ics
@@ -849,20 +1030,16 @@ share/libical-evolution/zoneinfo/Asia/Kuala_Lumpur.ics
 share/libical-evolution/zoneinfo/Asia/Kuching.ics
 share/libical-evolution/zoneinfo/Asia/Kuwait.ics
 share/libical-evolution/zoneinfo/Asia/Macao.ics
-share/libical-evolution/zoneinfo/Asia/Macau.ics
 share/libical-evolution/zoneinfo/Asia/Magadan.ics
-share/libical-evolution/zoneinfo/Asia/Makassar.ics
 share/libical-evolution/zoneinfo/Asia/Manila.ics
 share/libical-evolution/zoneinfo/Asia/Muscat.ics
 share/libical-evolution/zoneinfo/Asia/Nicosia.ics
 share/libical-evolution/zoneinfo/Asia/Novosibirsk.ics
 share/libical-evolution/zoneinfo/Asia/Omsk.ics
-share/libical-evolution/zoneinfo/Asia/Oral.ics
 share/libical-evolution/zoneinfo/Asia/Phnom_Penh.ics
 share/libical-evolution/zoneinfo/Asia/Pontianak.ics
 share/libical-evolution/zoneinfo/Asia/Pyongyang.ics
 share/libical-evolution/zoneinfo/Asia/Qatar.ics
-share/libical-evolution/zoneinfo/Asia/Qyzylorda.ics
 share/libical-evolution/zoneinfo/Asia/Rangoon.ics
 share/libical-evolution/zoneinfo/Asia/Riyadh.ics
 share/libical-evolution/zoneinfo/Asia/Saigon.ics
@@ -1011,6 +1188,7 @@ share/libical-evolution/zoneinfo/zones.tab
 share/locale/az/LC_MESSAGES/evolution.mo
 share/locale/bg/LC_MESSAGES/evolution.mo
 share/locale/ca/LC_MESSAGES/evolution.mo
+share/locale/cs/LC_MESSAGES/evolution.mo
 share/locale/da/LC_MESSAGES/evolution.mo
 share/locale/de/LC_MESSAGES/evolution.mo
 share/locale/el/LC_MESSAGES/evolution.mo
@@ -1069,7 +1247,6 @@ share/pixmaps/evolution.png
 %%SHARED%%
 @comment @dirrm share/pixmaps
 @dirrm share/omf/evolution
-@comment @dirrm share/omf
 @comment @dirrm share/mime-info
 @comment @dirrm share/locale/zh_TW/LC_MESSAGES
 @comment @dirrm share/locale/zh_TW
@@ -1139,6 +1316,8 @@ share/pixmaps/evolution.png
 @comment @dirrm share/locale/de
 @comment @dirrm share/locale/da/LC_MESSAGES
 @comment @dirrm share/locale/da
+@comment @dirrm share/locale/cs/LC_MESSAGES
+@comment @dirrm share/locale/cs
 @comment @dirrm share/locale/ca/LC_MESSAGES
 @comment @dirrm share/locale/ca
 @comment @dirrm share/locale/bg/LC_MESSAGES
@@ -1188,6 +1367,7 @@ share/pixmaps/evolution.png
 @dirrm share/evolution/views/calendar
 @dirrm share/evolution/views/addressbook
 @dirrm share/evolution/views
+@dirrm share/evolution/sounds
 @dirrm share/evolution/glade
 @dirrm share/evolution/etspec
 @dirrm share/evolution/ecps
@@ -1204,19 +1384,24 @@ share/pixmaps/evolution.png
 @dirrm share/evolution/default_user/local
 @dirrm share/evolution/default_user
 @dirrm share/evolution
-@dirrm lib/evolution/evolution-mail-importers/1.0.8
-@dirrm lib/evolution/evolution-mail-importers
-@dirrm lib/evolution/camel-providers/1.0
-@dirrm lib/evolution/camel-providers
+@dirrm lib/evolution/1.2/evolution-mail-importers
+@dirrm lib/evolution/1.2/camel-providers
+@dirrm lib/evolution/1.2
 @dirrm lib/evolution
 @dirrm include/evolution/wombat
+@dirrm include/evolution/widgets
 @dirrm include/evolution/shell
+@dirrm include/evolution/pcs
+@dirrm include/evolution/pas
 @dirrm include/evolution/importer
 @dirrm include/evolution/ebook
+@dirrm include/evolution/e-util
+@dirrm include/evolution/e-db3util
+@dirrm include/evolution/e-conduit
 @dirrm include/evolution/cal-util
 @dirrm include/evolution/cal-client
 @dirrm include/evolution
 @dirrm include/ename
 @dirrm include/camel
-@exec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)
-@unexec %D/bin/scrollkeeper-update -p $(%D/bin/scrollkeeper-config --pkglocalstatedir)
+@exec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q
+@unexec XML_CATALOG_FILES=%D/share/xml/catalog.scrollkeeper %D/bin/scrollkeeper-update -q

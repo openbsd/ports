@@ -1,0 +1,16 @@
+$OpenBSD: patch-mail_upgrade-mailer_c,v 1.1 2003/01/03 21:53:07 marcm Exp $
+--- mail/upgrade-mailer.c.orig	Sat Nov  2 00:32:03 2002
++++ mail/upgrade-mailer.c	Sat Nov  2 00:32:14 2002
+@@ -41,9 +41,9 @@
+ #include <bonobo.h>
+ #include <bonobo-conf/bonobo-config-database.h>
+ #include <gal/util/e-xml-utils.h>
+-#include <libxml/xmlmemory.h>
+-#include <libxml/parser.h>
+-#include <libxml/tree.h>
++#include <xmlmemory.h>
++#include <parser.h>
++#include <tree.h>
+ 
+ #include <camel/camel-file-utils.h>
+ #include <camel/camel-store.h>

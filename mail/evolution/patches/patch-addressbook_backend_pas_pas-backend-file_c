@@ -1,16 +1,15 @@
-$OpenBSD: patch-addressbook_backend_pas_pas-backend-file_c,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- addressbook/backend/pas/pas-backend-file.c.orig	Tue Feb 26 15:54:13 2002
-+++ addressbook/backend/pas/pas-backend-file.c	Sun May 26 21:28:24 2002
-@@ -13,7 +13,12 @@
+$OpenBSD: patch-addressbook_backend_pas_pas-backend-file_c,v 1.2 2003/01/03 21:53:07 marcm Exp $
+--- addressbook/backend/pas/pas-backend-file.c.orig	Mon Aug 19 21:00:38 2002
++++ addressbook/backend/pas/pas-backend-file.c	Wed Oct  9 17:28:24 2002
+@@ -13,7 +13,11 @@
  #include <unistd.h>
  #include <fcntl.h>
  #include <time.h>
-+
 +#ifdef HAVE_DB3_H
 +#include <db3.h>
 +#else
  #include <db.h>
 +#endif
+ #include <sys/stat.h>
  
  #include <libgnome/gnome-defs.h>
- #include <libgnome/gnome-i18n.h>

@@ -12,4 +12,14 @@ Eudora and other email managers.
 The ldap flavor adds support for using LDAP to access corporate
 address books and address servers.
 
+Note: Evolution might fail due to a lack of shared memory.  The
+simplest workaround is to run Evolution with the --no-xshm flag.
+Alternatively, MIT-SHM shared memory use by imlib can be disabled
+by turning it off in imlib_config and if necesary you can disable
+XFree86 "big font" support to free up additional shared memory by
+setting the XF86BIGFONT_DISABLE environment variable.
+
+The shared memory limits can, of course, be globally set in the
+kernel via the config(8) command as well.
+
 WWW: ${HOMEPAGE}

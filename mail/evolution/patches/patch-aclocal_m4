@@ -1,7 +1,7 @@
-$OpenBSD: patch-aclocal_m4,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- aclocal.m4.orig	Mon May  6 11:29:34 2002
-+++ aclocal.m4	Mon May 20 14:59:04 2002
-@@ -202,7 +202,7 @@ AC_DEFUN(AC_PROG_XML_I18N_TOOLS,
+$OpenBSD: patch-aclocal_m4,v 1.2 2003/01/03 21:53:07 marcm Exp $
+--- aclocal.m4.orig	Wed Oct  9 11:57:21 2002
++++ aclocal.m4	Wed Oct 23 14:38:58 2002
+@@ -402,7 +402,7 @@ AC_DEFUN(AC_PROG_XML_I18N_TOOLS,
    XML_I18N_MERGE_DESKTOP_RULE='%.desktop:   %.desktop.in   $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -d X18T_PFORG1'
  XML_I18N_MERGE_DIRECTORY_RULE='%.directory: %.directory.in $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -d X18T_PFORG1'
       XML_I18N_MERGE_KEYS_RULE='%.keys:      %.keys.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -k X18T_KEYS_KIND'
@@ -10,7 +10,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
       XML_I18N_MERGE_PONG_RULE='%.pong:      %.pong.in      $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -x X18T_PFORG1'
     XML_I18N_MERGE_SERVER_RULE='%.server:    %.server.in    $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -o -u'
      XML_I18N_MERGE_SHEET_RULE='%.sheet:     %.sheet.in     $(top_builddir)/xml-i18n-merge $(wildcard $(top_srcdir)/po/*.po) ; $(top_builddir)/xml-i18n-merge $(top_srcdir)/po $< [$]@ -x -u'
-@@ -1920,8 +1920,8 @@ else
+@@ -2119,8 +2119,8 @@ else
      hardcode_direct=yes
      hardcode_shlibpath_var=no
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
@@ -21,7 +21,7 @@ $OpenBSD: patch-aclocal_m4,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
        export_dynamic_flag_spec='${wl}-E'
      else
        case "$host_os" in
-@@ -1930,8 +1930,8 @@ else
+@@ -2129,8 +2129,8 @@ else
  	hardcode_libdir_flag_spec='-R$libdir'
          ;;
        *)
@@ -32,7 +32,16 @@ $OpenBSD: patch-aclocal_m4,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
          ;;
        esac
      fi
-@@ -4477,6 +4477,10 @@ AC_DEFUN([AM_GNOME_WITH_NLS],
+@@ -4603,7 +4603,7 @@ AC_DEFUN([GNOME_PTHREAD_CHECK],[
+ 	PTHREAD_LIB=""
+ 	AC_CHECK_LIB(pthread, pthread_create, PTHREAD_LIB="-lpthread",
+ 		[AC_CHECK_LIB(pthreads, pthread_create, PTHREAD_LIB="-lpthreads",
+-		    [AC_CHECK_LIB(c_r, pthread_create, PTHREAD_LIB="-lc_r",
++		    [AC_CHECK_LIB(c_r, pthread_create, PTHREAD_LIB="-pthread",
+ 			[AC_CHECK_LIB(pthread, __pthread_attr_init_system, PTHREAD_LIB="-lpthread",
+ 				[AC_CHECK_FUNC(pthread_create)]
+ 			)]
+@@ -4674,6 +4674,10 @@ AC_DEFUN([AM_GNOME_WITH_NLS],
  		  gt_cv_func_gettext_libintl=yes,
  		  gt_cv_func_gettext_libintl=no)],
  		 gt_cv_func_gettext_libintl=no)])

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libical_configure,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
---- libical/configure.orig	Sat Mar 23 10:28:44 2002
-+++ libical/configure	Sun May  5 14:01:31 2002
-@@ -1654,7 +1654,7 @@ if test "${enable_shared+set}" = set; th
+$OpenBSD: patch-libical_configure,v 1.2 2003/01/03 21:53:07 marcm Exp $
+--- libical/configure.orig	Fri Sep 13 14:38:13 2002
++++ libical/configure	Wed Oct  9 16:57:56 2002
+@@ -1655,7 +1655,7 @@ if test "${enable_shared+set}" = set; th
    enableval="$enable_shared"
    p=${PACKAGE-default}
  case $enableval in
@@ -10,7 +10,7 @@ $OpenBSD: patch-libical_configure,v 1.1.1.1 2002/05/31 11:49:40 nino Exp $
  no) enable_shared=no ;;
  *)
    enable_shared=no
-@@ -1669,7 +1669,7 @@ no) enable_shared=no ;;
+@@ -1670,7 +1670,7 @@ no) enable_shared=no ;;
    ;;
  esac
  else
