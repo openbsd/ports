@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2000/06/28 13:31:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2000/07/04 01:57:18 krw Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 DISTNAME=	kakasi-2.3.1
 CATEGORIES=	japanese
-NEED_VERSION=	1.307
+NEED_VERSION=	1.310
 MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/
 
 PATCH_DIST_STRIP=	-p1
