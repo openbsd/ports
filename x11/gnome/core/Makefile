@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2002/05/31 10:15:40 nino Exp $
+# $OpenBSD: Makefile,v 1.16 2002/07/18 16:11:24 brad Exp $
 
 COMMENT=		"core GNOME system"
 
 DISTNAME=		gnome-core-1.4.0.6
 CATEGORIES=		x11 x11/gnome
-NEED_VERSION=   	1.504
 HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Nils Nordman <nino@nforced.com>
@@ -33,7 +32,7 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= 	--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ARGS+= 	--with-kde-docdir=${LOCALBASE}/share
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lm"
 
 pre-build:
