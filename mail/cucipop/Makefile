@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2001/02/23 02:10:20 itojun Exp $
+# $OpenBSD: Makefile,v 1.14 2001/02/23 02:31:35 brad Exp $
 
 DISTNAME=	cucipop-1.31
 CATEGORIES=	mail
@@ -16,14 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	"no fee"
 PERMIT_DISTFILES_FTP=	Yes
 
-FLAVORS=	no_ipv6
-FLAVOR?=
-
-.if ${FLAVOR:L:Mno_ipv6}
-MAKE_FLAGS=	CFLAGS="${CFLAGS}" LDFLAGS="" MD5_OBJ=""
-.else
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""
-.endif
 
 post-patch:
 .for f in cucipop.8 makevpopdb.8

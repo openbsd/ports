@@ -3,7 +3,3 @@ It supports both BSD-type and SysV-type mailbox formats. cucipop
 assumes that the mailbox it serves is not simultaneously accessed
 by a mailreader. Concurrency and locking issues are handled
 graciously if they restrict themselves to the mail delivery agent.
-
-Flavors:
-	no_ipv6	- build without IPv6 patch from Kame.  This allows
-		  cucipop to run without inetd.
