@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.361 2005/03/30 07:45:54 jolan Exp $
+# $OpenBSD: Makefile,v 1.362 2005/04/03 02:35:01 msf Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -250,6 +250,7 @@
      SUBDIR += smokeping
      SUBDIR += sniffit
      SUBDIR += snort
+     SUBDIR += softflowd
      SUBDIR += ssldump
      SUBDIR += sslsniffer
      SUBDIR += synergy
