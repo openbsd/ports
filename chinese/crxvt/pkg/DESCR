@@ -1,0 +1,4 @@
+Crxvt is a Chinese (Big5) VT100 terminal emulator for X.
+It is based on rxvt, which is intended  as  a  replacement
+for  xterm for  users who do not require the more esoteric
+features of  xterm.
