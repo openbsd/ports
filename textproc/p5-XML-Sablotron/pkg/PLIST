@@ -1,14 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2002/05/16 03:52:30 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/06/29 23:15:23 avsm Exp $
 ${P5ARCH}/XML/Sablotron.pm
 ${P5ARCH}/XML/Sablotron/DOM.pm
+${P5ARCH}/XML/Sablotron/DOM/DOMHandler.pm
+${P5ARCH}/XML/Sablotron/Processor.pm
 ${P5ARCH}/XML/Sablotron/SAXBuilder.pm
-${P5ARCH}/auto/XML/Sablotron/DOM/DOM.bs
-${P5ARCH}/auto/XML/Sablotron/DOM/DOM.so
+${P5ARCH}/XML/Sablotron/SXP.pm
+${P5ARCH}/XML/Sablotron/Situation.pm
+${P5ARCH}/XML/Sablotron/Situation/DOMHandlerDispatcher.pm
 ${P5ARCH}/auto/XML/Sablotron/Sablotron.bs
 ${P5ARCH}/auto/XML/Sablotron/Sablotron.so
 man/man3p/XML::Sablotron.3p
 man/man3p/XML::Sablotron::DOM.3p
+man/man3p/XML::Sablotron::DOM::DOMHandler.3p
 man/man3p/XML::Sablotron::SAXBuilder.3p
-@dirrm ${P5ARCH}/auto/XML/Sablotron/DOM
+man/man3p/XML::Sablotron::Situation::DOMHandlerDispatcher.3p
 @dirrm ${P5ARCH}/auto/XML/Sablotron
+@dirrm ${P5ARCH}/XML/Sablotron/Situation
+@dirrm ${P5ARCH}/XML/Sablotron/DOM
 @dirrm ${P5ARCH}/XML/Sablotron
