@@ -1,39 +1,39 @@
-$OpenBSD: patch-pango_Makefile_in,v 1.2 2003/04/17 05:58:47 marcm Exp $
---- pango/Makefile.in.orig	Wed Jan 29 09:59:21 2003
-+++ pango/Makefile.in	Tue Feb 25 15:37:59 2003
-@@ -217,7 +217,7 @@ libpangox_1_0_la_SOURCES = \
+$OpenBSD: patch-pango_Makefile_in,v 1.3 2003/06/30 03:57:38 marcm Exp $
+--- pango/Makefile.in.orig	Sun Jun  8 21:41:45 2003
++++ pango/Makefile.in	Thu Jun 19 09:18:58 2003
+@@ -223,7 +223,7 @@ libpangox_1_0_la_SOURCES = \
  
  
  libpango_1_0_la_LDFLAGS = \
 -	-version-info $(LT_VERSION_INFO)	\
-+	-version-info $(LIBPANGO_VERSION)	\
++	-version-info $(OBSD_LIB_VERSION)	\
  	$(GLIB_LIBS)				\
  	$(no_undefined) $(pango_export_symbols)
  
-@@ -225,7 +225,7 @@ libpango_1_0_la_LDFLAGS = \
+@@ -231,7 +231,7 @@ libpango_1_0_la_LDFLAGS = \
  @HAVE_FRIBIDI_FALSE@libpango_1_0_la_LIBADD = @HAVE_FRIBIDI_FALSE@mini-fribidi/libmini-fribidi.la $(pango_win32res)
  libpango_1_0_la_DEPENDENCIES = $(pango_win32res)
  
 -libpangox_1_0_la_LDFLAGS = -version-info $(LT_VERSION_INFO)
-+libpangox_1_0_la_LDFLAGS = -version-info $(LIBPANGOX_VERSION)
++libpangox_1_0_la_LDFLAGS = -version-info $(OBSD_LIB_VERSION)
  libpangox_1_0_la_LIBADD = libpango-$(PANGO_API_VERSION).la $(INCLUDED_X_MODULES) $(X_LIBS) $(X_EXTRA_LIBS)
  libpangox_1_0_la_DEPENDENCIES = $(INCLUDED_X_MODULES) libpango-$(PANGO_API_VERSION).la
  
-@@ -252,7 +252,7 @@ libpangoxft_1_0_la_SOURCES = \
+@@ -258,7 +258,7 @@ libpangoxft_1_0_la_SOURCES = \
  	module-defs-xft.c
  
  
 -libpangoxft_1_0_la_LDFLAGS = -version-info $(LT_VERSION_INFO)
-+libpangoxft_1_0_la_LDFLAGS = -version-info $(LIBPANGOXFT_VERSION)
++libpangoxft_1_0_la_LDFLAGS = -version-info $(OBSD_LIB_VERSION)
  libpangoxft_1_0_la_LIBADD = opentype/libpango-ot.la libpango-$(PANGO_API_VERSION).la $(INCLUDED_XFT_MODULES) $(XFT_LIBS) 
  libpangoxft_1_0_la_DEPENDENCIES = $(INCLUDED_XFT_MODULES) libpango-$(PANGO_API_VERSION).la
  
-@@ -264,7 +264,7 @@ libpangoft2_1_0_la_SOURCES = \
+@@ -270,7 +270,7 @@ libpangoft2_1_0_la_SOURCES = \
  	module-defs-ft2.c
  
  
 -libpangoft2_1_0_la_LDFLAGS = -version-info $(LT_VERSION_INFO)	\
-+libpangoft2_1_0_la_LDFLAGS = -version-info $(LIBPANGOFT2_VERSION)	\
++libpangoft2_1_0_la_LDFLAGS = -version-info $(OBSD_LIB_VERSION)	\
  	$(GLIB_LIBS)						\
  	$(no_undefined) $(pangoft2_export_symbols)
  

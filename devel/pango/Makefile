@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2003/04/17 05:58:47 marcm Exp $
+# $OpenBSD: Makefile,v 1.5 2003/06/30 03:57:38 marcm Exp $
 
 COMMENT=		"library for layout and rendering of text"
 
-DISTNAME=		pango-1.2.1
+DISTNAME=		pango-1.2.3
 CATEGORIES=		devel x11
 
 HOMEPAGE=		http://www.gtk.org
@@ -21,10 +21,7 @@ LIB_DEPENDS=		glib-2.0.0.8,gmodule-2.0.0.8,gobject-2.0.0.8::devel/glib2
 BUILD_DEPENDS=          :pkgconfig-*:devel/pkgconfig
 
 # library versions (major:minor)
-LIBPANGO_VERSION=	0:7
-LIBPANGOFT2_VERSION=	0:7
-LIBPANGOX_VERSION=	0:7
-LIBPANGOXFT_VERSION=	0:7
+OBSD_LIB_VERSION=	0:9
 
 SEPARATE_BUILD=		concurrent
 USE_X11=		Yes
@@ -36,10 +33,7 @@ CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--without-qt
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
 			PKG_CONFIG_PATH="${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig"
-MAKE_ENV=		LIBPANGO_VERSION="${LIBPANGO_VERSION}" \
-			LIBPANGOFT2_VERSION="${LIBPANGOFT2_VERSION}" \
-			LIBPANGOX_VERSION="${LIBPANGOX_VERSION}" \
-			LIBPANGOXFT_VERSION="${LIBPANGOXFT_VERSION}"
+MAKE_ENV=		OBSD_LIB_VERSION="${OBSD_LIB_VERSION}"
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pango; \
