@@ -1,7 +1,6 @@
-diff -ur doc/pine-ports
---- doc/pine-ports	Thu Jul 16 11:18:17 1998
-+++ doc/pine-ports	Sat Aug  1 21:54:10 1998
-@@ -80,6 +80,9 @@
+--- doc/pine-ports.orig	Fri Sep 11 11:18:29 1998
++++ doc/pine-ports	Tue Jan 19 19:51:09 1999
+@@ -81,6 +81,9 @@
      NeXT
  	nxt	NeXT 68030's and 68040's Mach 2.0
  

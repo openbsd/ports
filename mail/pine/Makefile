@@ -1,14 +1,8 @@
-# OpenBSD makefile for:	pine
-# http://www.washington.edu/pine/
-# Version required:     4.02
-# Date created:		10 Nov 1997
-# Whom:			ejovi
-#
-# $OpenBSD: Makefile,v 1.7 1998/09/13 18:23:27 marc Exp $
+# $OpenBSD: Makefile,v 1.8 1999/01/20 05:10:55 marc Exp $
 #
 
-DISTNAME=       	pine4.03
-PKGNAME=        	pine-4.03
+DISTNAME=       	pine4.05
+PKGNAME=        	pine-4.05
 CATEGORIES=     	mail news
 
 MAINTAINER=		marc@OpenBSD.ORG

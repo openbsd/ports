@@ -1,6 +1,6 @@
---- pine/pine.hlp.~1~	Tue Jul 21 15:04:04 1998
-+++ pine/pine.hlp	Sun Aug  2 20:01:24 1998
-@@ -750,9 +750,9 @@
+--- pine/pine.hlp.orig	Wed Sep 23 12:22:43 1998
++++ pine/pine.hlp	Tue Jan 19 19:51:17 1999
+@@ -847,9 +847,9 @@
  
   executable     &lt;Unix search path&gt;/pine
   persnl cfg     ~/.pinerc
