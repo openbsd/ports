@@ -3,7 +3,7 @@
 # Date created:		19 Mar 1998
 # Whom:			marc@OpenBSD.ORG
 #
-# $OpenBSD: Makefile,v 1.2 1998/03/23 01:40:06 marc Exp $
+# $OpenBSD: Makefile,v 1.3 1998/04/03 02:31:40 marc Exp $
 
 DISTNAME=       pgp263is
 PKGNAME=	pgp-2.6.3
@@ -68,6 +68,22 @@ RSALIBS=	$(RSALIBDIR)/rsaref.a
 CFLAGS+=	-DUSA ${RSAINCDIR}
 .else
 RSAOBJS=	rsaglue1.o
+.endif
+
+# RSAREF2 doesn't work as is when sizeof( long) != 4 -- fix it
+#
+pre-patch:
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+	@${MKDIR} ${PATCHDIR}
+	@${CP} ${FILESDIR}/patch-rsaref2 ${PATCHDIR}
+.endif
+
+# We don't need the rsaref patch any more
+#
+post-patch:
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+	@${RM} ${PATCHDIR}/patch-rsaref2
+	@${RMDIR} ${PATCHDIR}
 .endif
 
 # Before the build figure out if we are on a big endian machine or not
