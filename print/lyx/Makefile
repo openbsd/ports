@@ -3,10 +3,10 @@
 # Date created:		July 12 1998
 # Whom:			Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1998/07/12 07:08:40 angelos Exp $
+# $OpenBSD: Makefile,v 1.2 1999/02/23 06:02:33 turan Exp $
 #
 
-DISTNAME=	lyx-0.12.0
+DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/
 
