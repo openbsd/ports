@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_pv_sh,v 1.1 2004/10/24 20:58:47 brad Exp $
+--- lib/pv.sh.orig	Thu Mar  9 03:40:40 2000
++++ lib/pv.sh	Sun Oct 24 16:56:08 2004
+@@ -29,9 +29,10 @@ TEMPDIR=.
+ PAGE=$1
+ shift
+ FILE=$1
++TEMPFILE=`mktemp -t ${FILE}XXXXXXXXXX` || exit 1
+ shift
+-trap "rm -rf $TEMPDIR/$FILE.$$.pv" 0 1 2 15
++trap "rm -rf $TEMPFILE" 0 1 2 15
+ #dvips -D$RESOLUTION -p $PAGE -n 1 $FILE $* -o $FILE.$$.pv
+-dvips -p $PAGE -n 1 $FILE $* -o $FILE.$$.pv
+-gs $FILE.$$.pv
++dvips -p $PAGE -n 1 $FILE $* -o $TEMPFILE
++gs $TEMPFILE
+ exit 0
