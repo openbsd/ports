@@ -1,0 +1,3 @@
+Library of Emacs Input Method is an emacs lisp package
+which provides multilingual input methods, including
+CJKV, Cyrillic and many more.
