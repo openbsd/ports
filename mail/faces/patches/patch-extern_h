@@ -1,0 +1,11 @@
+$OpenBSD: patch-extern_h,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- extern.h.orig	Tue Nov 19 05:00:48 1991
++++ extern.h	Mon Jun  5 00:48:26 2000
+@@ -82,6 +82,7 @@ extern int dontshowuser ;  /* Set if use
+ extern int facetype ;      /* Type of face file found. */
+ extern int firsttime ;     /* Zeroised after first mail/printer check. */
+ extern int flashes ;       /* Number of flashes for arrival of new mail. */
++extern int border_width ;  /* Border width of window. */
+ extern int fromc_found ;   /* Set if "From:" line found during processing. */
+ extern int froms_found ;   /* Set if "From " line found during processing. */
+ extern int height ;        /* Height in pixels of faces display. */

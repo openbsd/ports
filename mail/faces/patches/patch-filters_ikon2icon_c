@@ -1,0 +1,21 @@
+$OpenBSD: patch-filters_ikon2icon_c,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- filters/ikon2icon.c.orig	Mon Apr 15 05:40:02 1991
++++ filters/ikon2icon.c	Mon Jun  5 00:48:26 2000
+@@ -18,7 +18,7 @@
+ 
+ #define  PATCHLEVEL  1
+ 
+-#define  GETS        (void) gets     /* To make lint happy. */
++#define  GETS        (void) fgets     /* To make lint happy. */
+ #define  PRINTF      (void) printf
+ #define  SPRINTF     (void) sprintf
+ #define  SSCANF      (void) sscanf
+@@ -65,7 +65,7 @@ read_blit()                         /* R
+ 
+   for (i = 0; i < BLITHEIGHT; i++)
+     {
+-      GETS(nextline) ;
++      GETS(nextline, MAXLINE - 1, stdin) ;
+       ptr = nextline ;
+       for (j = 0; j < 3; j++)
+         {

@@ -1,0 +1,34 @@
+$OpenBSD: patch-compface_compface_1,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- compface/compface.1.orig	Fri Mar 15 06:10:29 1991
++++ compface/compface.1	Mon Jun  5 00:48:26 2000
+@@ -12,6 +12,8 @@ compface, uncompface \- compress and exp
+ .LP
+ .B uncompface
+ [
++.B \-X
++] [
+ .I infile
+ [
+ .I outfile
+@@ -25,7 +27,7 @@ is a filter for generating highly compre
+ face image files.
+ .I uncompface
+ is an inverse filter which performs an inverse transformation with no
+-loss of data.
++loss of data. 
+ The algorithm used is highly tuned for its purpose and achieves better
+ than a five to one compression ratio on average.
+ Arguments operate identically for both programmes.
+@@ -56,6 +58,12 @@ the output of
+ .I compface
+ averages less than 200 characters.
+ The average number of output lines is three.
++.SH OPTIONS
++.TP 12
++.B \-X
++The same as
++.I uncompface
++| ikon2xbm. Usefull for exmh!
+ .SH DIAGNOSTICS
+ Exit status is normally 0.
+ Possible errors include IO errors when opening, reading or writing

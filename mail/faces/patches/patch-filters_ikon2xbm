@@ -1,0 +1,12 @@
+$OpenBSD: patch-filters_ikon2xbm,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- filters/ikon2xbm.orig	Tue May  7 00:51:50 1991
++++ filters/ikon2xbm	Mon Jun  5 00:48:26 2000
+@@ -26,7 +26,7 @@ sed -e 's/\(0x....\),\(0x....\),\(0x....
+ \2\
+ \3/' > $tmp
+ 
+-dim=`wc -l < $tmp | awk '{ print 4 * sqrt }'`
++dim=`wc -l < $tmp | awk '{ print 4 * sqrt(144) }'`
+ 
+ pr -l1 -t -8 -s, < $tmp |
+ (cat << EOF

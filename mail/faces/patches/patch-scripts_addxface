@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_addxface,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- scripts/addxface.orig	Tue Nov 19 05:05:58 1991
++++ scripts/addxface	Mon Jun  5 00:48:26 2000
+@@ -15,7 +15,7 @@
+ # than version v1.6.0:
+ #$olddb = 1;
+ 
+-$faces = '/usr/local/faces';
++$faces = '/usr/local/share/faces';
+ $umask = 000;
+ 
+ # addxface - install any X-Face: in the header of the given mail message

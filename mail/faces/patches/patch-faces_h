@@ -1,0 +1,38 @@
+$OpenBSD: patch-faces_h,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- faces.h.orig	Tue Nov 19 05:00:49 1991
++++ faces.h	Mon Jun  5 00:48:26 2000
+@@ -102,9 +102,10 @@ enum min_type { ICON_NOTFOUND,  ICON_MIS
+ enum mon_type { MONNEW, MONALL, MONPRINTER, MONPROG, MONUSERS } ;
+ 
+ /* X resources used by faces. */
+-enum res_type { R_WINGEOM, R_ICONGEOM, R_FGCOLOR, R_BGCOLOR,
+-                R_FONT,    R_BGICON,   R_PERIOD,  R_BELL,
+-                R_FLASH,   R_LOWER,    R_RAISE,   R_BUT1CLR, R_DISPHOST,
++enum res_type { R_WINGEOM, R_ICONGEOM,    R_FGCOLOR, R_BGCOLOR,
++                R_FONT,    R_BGICON,      R_PERIOD,  R_BELL,
++                R_FLASH,   R_BORDERWIDTH, R_LOWER,   R_RAISE,
++		R_BUT1CLR, R_DISPHOST,
+ #ifdef AUDIO_SUPPORT
+                 R_AUDIO,   R_AUDIOCMD, R_BELLFILE
+ #endif /*AUDIO_SUPPORT*/
+@@ -193,8 +194,6 @@ struct utimbuf {      /* Make a utime() 
+ #endif /*NOUTIME*/
+ 
+ extern char *getenv P(()) ;
+-extern char *malloc P(()) ;
+-extern char *realloc P(()) ;
+ extern char *index P(()) ;
+ extern char *rindex P(()) ;
+ extern char *strcpy P(()) ;
+@@ -217,7 +216,11 @@ extern FILE *popen P(()) ;
+ #define  PRINTDEF   "lpq -P %s"
+ 
+ /* Updating the faces database:   %s replaced with mail update alias name. */
++#ifdef __FreeBSD__
++#define  UPDATEDEF  "/usr/sbin/sendmail -oeq -oi %s"
++#else
+ #define  UPDATEDEF  "/usr/lib/sendmail -oeq -oi %s"
++#endif
+ 
+ /* Monitoring users on a machine: %s replaced with hostname. */
+ #define  USERSDEF   "rusers -l %s"

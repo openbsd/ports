@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_facesall,v 1.1 2000/06/04 23:08:34 espie Exp $
+--- scripts/facesall.orig	Mon Nov 25 01:30:24 1991
++++ scripts/facesall	Mon Jun  5 00:48:26 2000
+@@ -20,7 +20,7 @@
+ #$olddb = 1;
+ 
+ $cols = 15; $rows = 13;
+-$FACEDIR = '/usr/local/faces';
++$FACEDIR = '/usr/local/share/faces';
+ 
+ # facesall - show all available faces in the given faces bitmap directory
+ # usage: facesall [ -a ] [ bitmap_directory ]

@@ -1,0 +1,15 @@
+$OpenBSD: patch-y_tab_h,v 1.1 2000/06/04 23:08:35 espie Exp $
+--- y.tab.h.orig	Mon Jun  5 00:48:26 2000
++++ y.tab.h	Mon Jun  5 00:48:26 2000
+@@ -0,0 +1,11 @@
++#define EOL 257
++#define ATOM 258
++#define LIT_DOMAIN 259
++#define QUOTED_STRING 260
++typedef union {
++   char	 yChar;
++   char	*yString;
++   Dom	*yDom;
++   Addr	*yAddr;
++} YYSTYPE;
++extern YYSTYPE yylval;
