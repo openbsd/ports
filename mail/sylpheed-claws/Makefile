@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/08/10 09:14:48 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/30 23:41:33 alek Exp $
 
 COMMENT=		"lightweight GTK+ based mail/news client"
 COMMENT-dillo=		"Dillo plugin for sylpheed-claws"
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	yes
 PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
+WANTLIB=		X11 Xext Xi crypto glib gmodule m ssl 
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sylpheed-claws/}
 DISTFILES=		$(DISTNAME).tar.bz2 \
@@ -88,12 +89,22 @@ FULLPKGNAME$i=		sylpheed-claws${i}-${VERSION}
 
 SUBPACKAGE?=
 
+.if !defined(PACKAGING) || $(SUBPACKAGE) == "-imageviewer"
+WANTLIB+=		ungif tiff png jpeg z
+.endif
+.if empty(SUBPACKAGE)
+WANTLIB+=		c pthread
+.endif
+
 .if defined(PACKAGING) && !empty(SUBPACKAGE)
 RUN_DEPENDS=            ::mail/sylpheed-claws
 .endif
 
 .if defined(PACKAGING) && ${SUBPACKAGE} == "-themes"
 PKG_ARCH=		*
+LIB_DEPENDS=
+WANTLIB=
+MODULES=
 .endif
 
 .if ${SUBPACKAGE:M-spamassassin}
