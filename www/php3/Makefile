@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2000/06/20 20:30:34 jakob Exp $
+# $OpenBSD: Makefile,v 1.17 2000/07/18 21:55:43 jakob Exp $
 
 DISTNAME=	php-3.0.16
 PKGNAME=	php3-3.0.16
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-config-file-path=/var/www/conf
 
 BUILD_DEPENDS+=		${PREFIX}/lib/libexpat.a::textproc/expat \
-			${PREFIX}/lib/libimap.a::mail/imap-uw
+			${PREFIX}/lib/libc-client.a::mail/c-client
 
 FLAVORS=	mysql postgresql
 
