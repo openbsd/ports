@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2005/01/25 14:30:38 xsa Exp $
+# $OpenBSD: Makefile,v 1.3 2005/03/29 07:41:18 xsa Exp $
 
 COMMENT=	"facility for activation/deactivation of CMF compliant products"
 
-V=		1.5.1
+V=		1.5.2
 DISTNAME=	CMFQuickInstallerTool-${V}
 PKGNAME=	zope-cmfquickinstaller-${V}
 CATEGORIES=	www
