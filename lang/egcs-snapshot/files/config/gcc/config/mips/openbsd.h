@@ -18,38 +18,48 @@ along with GNU CC; see the file COPYING.  If not, write to
 the Free Software Foundation, 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.  */
 
-/* Default mips is little endian, unless otherwise specified. */
+/* Default mips is little endian, unless otherwise specified.  */
 
-/* Definitions needed for OpenBSD, avoid picking mips 'defaults'. */
+/* Definitions needed for OpenBSD, avoid picking mips 'defaults'.  */
 
-/* GAS must know this. */
+/* GAS must know this.  */
 #define SUBTARGET_ASM_SPEC "%{fPIC:-KPIC} %|"
 
-/* CPP specific OpenBSD specs. */
+/* CPP specific OpenBSD specs.  */
 #define SUBTARGET_CPP_SPEC OBSD_CPP_SPEC
 
-/* Needed for ELF (inspired by netbsd-elf). */
+/* Needed for ELF (inspired by netbsd-elf).  */
 #define PREFERRED_DEBUGGING_TYPE DBX_DEBUG
 #define LOCAL_LABEL_PREFIX	"."
 
+/* The profiling lib spec here is not really correct but we leave
+   it as it is until we have some kind of profiling working.  */
+#define LIB_SPEC OBSD_LIB_SPEC
+
+
 #include <mips/mips.h>
 
-/* Get generic OpenBSD definitions. */
+/* Get generic OpenBSD definitions.  */
 #define OBSD_HAS_DECLARE_FUNCTION_NAME
 #define OBSD_HAS_DECLARE_OBJECT
 #define OBSD_HAS_CORRECT_SPECS
 #include <openbsd.h>
 
 
-/* Run-time target specifications. */
-#define CPP_PREDEFINES "-D__MIPSEL__ -D_MIPSEL -D__SYSTYPE_BSD__ \
--D__NO_LEADING_UNDERSCORES__ -D__GP_SUPPORT__ \
--D__unix__  -D__OpenBSD__ -D__mips__ \
--Asystem(unix) -Asystem(OpenBSD) -Amachine(mips)"
+/* Run-time target specifications.  */
+#if TARGET_ENDIAN_DEFAULT != 0
+#define CPP_PREDEFINES "-D__SYSTYPE_BSD__ -D__NO_LEADING_UNDERSCORES__ \
+-D__GP_SUPPORT__ -D__MIPSEB__ -D__unix__  -D__OpenBSD__ -D__mips__ \
+-Asystem(unix) -Asystem(OpenBSD) -Acpu(mips) -Amachine(mips) -Aendian(big)"
+#else
+#define CPP_PREDEFINES "-D__SYSTYPE_BSD__ -D__NO_LEADING_UNDERSCORES__ \
+-D__GP_SUPPORT__ -D__MIPSEL__ -D__unix__  -D__OpenBSD__ -D__mips__ \
+-Asystem(unix) -Asystem(OpenBSD) -Acpu(mips) -Amachine(mips) -Aendian(little)"
+#endif
 
-/* Layout of source language data types. */
+/* Layout of source language data types.  */
 
-/* This must agree with <machine/ansi.h> */
+/* This must agree with <machine/ansi.h>  */
 #undef SIZE_TYPE
 #define SIZE_TYPE "unsigned int"
 
@@ -83,7 +93,7 @@ Boston, MA 02111-1307, USA.  */
 #define MIPS_DEFAULT_GVALUE 0
 
 
-/* Since gas and gld are standard on OpenBSD, we don't need these. */
+/* Since gas and gld are standard on OpenBSD, we don't need these.  */
 #undef ASM_FINAL_SPEC
 #undef STARTFILE_SPEC
 
@@ -103,9 +113,8 @@ do {                                                                         \
     fprintf (F, "\t.section %s,\"aw\",@progbits\n", (NAME));                 \
 } while (0)
 
-/* collect2 support (Macros for initialization). */
+/* collect2 support (Macros for initialization).  */
 
-
-/* Mips default configuration is COFF-only, and confuses collect2. */
+/* Mips default configuration is COFF-only, and confuses collect2.  */
 #undef OBJECT_FORMAT_COFF
 #undef EXTENDED_COFF
