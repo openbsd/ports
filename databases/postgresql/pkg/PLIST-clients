@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-clients,v 1.1 2001/02/22 19:28:14 danh Exp $
-@pkgcfl pgsql-${VERSION}-*
+@comment $OpenBSD: PLIST-clients,v 1.2 2001/04/15 16:48:44 espie Exp $
+@pkgcfl pgsql-[0-9]*
 bin/createdb
 bin/createlang
 bin/createuser
