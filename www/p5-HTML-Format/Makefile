@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2004/06/26 07:35:10 xsa Exp $
+# $OpenBSD: Makefile,v 1.8 2004/12/10 04:06:06 kevlo Exp $
 
 COMMENT=	"HTML text formating class"
 
-DISTNAME=	HTML-Format-1.23
+DISTNAME=	HTML-Format-2.04
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5 
 
-MAINTAINER=	Marco S Hyman <marc@openbsd.org>
+MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
 
-RUN_DEPENDS=	:p5-HTML-Tree-*:www/p5-HTML-Tree
+RUN_DEPENDS=	:p5-HTML-Tree-*:www/p5-HTML-Tree \
+		:p5-Font-AFM-*:textproc/p5-Font-AFM
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
