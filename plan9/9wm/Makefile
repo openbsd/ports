@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2000/08/19 01:41:23 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/12 23:46:14 markus Exp $
 
-DISTNAME=	9wm-1.1
+PKGNAME=	9wm-1.2pre
+DISTNAME=	pre-9wm-1.2
 CATEGORIES=	plan9
 NEED_VERSION=	1.310
-MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
+MASTER_SITES=	ftp://ftp.cs.su.oz.au/dhog/9wm/
 EXTRACT_SUFX=	.shar.gz
 
 EXTRACT_CMD=	gzcat
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS= | ${SH}
 
-MAINTAINER=	ports@openbsd.org
+MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

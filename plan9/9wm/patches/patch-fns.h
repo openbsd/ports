@@ -1,11 +1,11 @@
---- fns.h.orig	Fri Aug 18 21:27:33 2000
-+++ fns.h	Fri Aug 18 21:27:34 2000
-@@ -31,7 +31,7 @@
- Window  getwprop();
- int     getiprop();
- int     getstate();
--void    setstate();
-+void    _setstate();
- void    setlabel();
- void    getproto();
- void    gettrans();
+--- fns.h.orig	Wed Nov 29 22:09:24 2000
++++ fns.h	Wed Nov 29 22:09:24 2000
+@@ -47,7 +47,7 @@
+ Window	getwprop();
+ int 	getiprop();
+ int 	getstate();
+-void	setstate();
++void	_setstate();
+ void	setlabel();
+ void	getproto();
+ void	gettrans();
