@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2003/05/05 03:37:09 margarida Exp $
+# $OpenBSD: Makefile,v 1.3 2003/08/22 23:07:48 naddy Exp $
 
 COMMENT=		"modular log analyzer"
 
@@ -21,6 +21,11 @@ LIB_DEPENDS=	expat.3::textproc/expat \
 		gd.18::graphics/gd \
 		pcre::devel/pcre \
 		adns.1::net/adns
+
+# work around optimizer bug in gcc 2.95
+.if ${MACHINE_ARCH} == "sparc64"
+PATCH_LIST=	patch-* gcc-*
+.endif
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir=${PREFIX}/lib/modlogan
