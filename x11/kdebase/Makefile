@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 1999/06/20 16:14:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 1999/06/24 17:09:07 espie Exp $
 # Original Author: Yanick Cote <yanick@fries.net>
 
 DISTNAME=	kdebase-1.1.1
@@ -28,5 +28,13 @@ pre-build:
 	@echo "*** your limits.  See the man page for your shell and look"
 	@echo "*** for the 'limit' or 'ulimit' command."
 	@echo ""
+
+KSS= kattraction.kss kbanner.kss kbat.kss kblankscrn.kss kblob.kss \
+kbouboule.kss kbsod.kss kflame.kss kforest.kss khop.kss klaser.kss \
+klines.kss klissie.kss kmorph3d.kss kpipes.kss kpolygon.kss kpyro.kss \
+krock.kss kscience.kss kslidescreen.kss kslip.kss kspace.kss kswarm.kss
+
+post-install:
+	@cd ${PREFIX}/bin && chmod u+s ${KSS}
 
 .include <bsd.port.mk>

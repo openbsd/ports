@@ -23,30 +23,7 @@ bin/kpager
 bin/krootwm
 bin/kdm
 bin/kdmdesktop
-bin/kpolygon.kss
-bin/kswarm.kss
-bin/klissie.kss
-bin/kbanner.kss
-bin/klines.kss
-bin/kblankscrn.kss
-bin/krock.kss
-bin/kflame.kss
-bin/klaser.kss
-bin/kpyro.kss
-bin/khop.kss
-bin/kbat.kss
-bin/kmorph3d.kss
-bin/kspace.kss
-bin/kpipes.kss
-bin/kslip.kss
-bin/kforest.kss
 bin/klock
-bin/kblob.kss
-bin/kbouboule.kss
-bin/kscience.kss
-bin/kattraction.kss
-bin/kslidescreen.kss
-bin/kbsod.kss
 bin/kmenuedit
 bin/maudio
 bin/kaudioserver
@@ -2161,6 +2138,31 @@ share/applnk/Krefresh.kdelnk
 share/applnk/Trash.kdelnk
 share/applnk/KControl.kdelnk
 share/applnk/.directory
+@owner root
+@mode 04555
+bin/kpolygon.kss
+bin/kswarm.kss
+bin/klissie.kss
+bin/kbanner.kss
+bin/klines.kss
+bin/kblankscrn.kss
+bin/krock.kss
+bin/kflame.kss
+bin/klaser.kss
+bin/kpyro.kss
+bin/khop.kss
+bin/kbat.kss
+bin/kmorph3d.kss
+bin/kspace.kss
+bin/kpipes.kss
+bin/kslip.kss
+bin/kforest.kss
+bin/kblob.kss
+bin/kbouboule.kss
+bin/kscience.kss
+bin/kattraction.kss
+bin/kslidescreen.kss
+bin/kbsod.kss
 @dirrm share/applnk/Settings/Keys
 @dirrm share/applnk/Settings/Applications
 @dirrm share/applnk/Settings/Information
