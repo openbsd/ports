@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2002/06/22 23:58:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2002/06/23 11:58:48 naddy Exp $
 
 COMMENT=	"official AT&T release of KornShell 93"
 
@@ -21,15 +21,15 @@ DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
 FLAVORS=	static
 FLAVOR?=
 
-MAKE_FLAGS=	CC="\"${CC}\"" CCFLAGS="\"${CFLAGS}\""
+MAKE_ENV=	CC="${CC}" CCFLAGS="${CFLAGS}" SHELL="/bin/sh"
 .if ${FLAVOR:L} == "static"
-MAKE_FLAGS+=	LDFLAGS=-static
+MAKE_ENV+=	LDFLAGS=-static
 .endif
 
 WRKDIST=	${WRKDIR}
 
 do-build:
-	cd ${WRKBUILD} && SHELL=/bin/sh ./bin/package make ${MAKE_FLAGS}
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ./bin/package make ksh93
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
