@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2001/03/27 23:27:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2001/04/15 00:39:43 naddy Exp $
 
 COMMENT=	"mail/news client in gtk+"
 
-DISTNAME=	sylpheed-0.4.62
+DISTNAME=	sylpheed-0.4.63
 CATEGORIES=    	mail news x11
 NEED_VERSION=	1.364
 HOMEPAGE=	http://sylpheed.good-day.net
@@ -18,7 +18,7 @@ MASTER_SITES=	${HOMEPAGE}/sylpheed/
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS= --disable-gpgme
+CONFIGURE_ARGS= --disable-gpgme --disable-glibtest
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
 
