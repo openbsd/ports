@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2003/10/06 19:35:46 marc Exp $
+# $OpenBSD: Makefile,v 1.8 2004/11/27 23:23:26 marc Exp $
 
 COMMENT=	"Garmin GPS upload/download utilities"
 
-DISTNAME=	garmin-utils-2.0
+DISTNAME=	garmin-utils-2.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
