@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2000/05/23 00:41:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2000/05/23 21:28:56 espie Exp $
 bin/kabalone
 bin/kasteroids
 bin/kblackbox
@@ -486,7 +486,7 @@ share/apps/kreversi/pics/zoomout.xpm
 share/apps/kreversi/sounds/click.wav
 share/apps/kreversi/sounds/lost.wav
 share/apps/kreversi/sounds/won.wav
-share/apps/ksame/pics/stones.bmp
+share/apps/ksame/pics/stones.gif
 share/apps/ksame/pics/stones_mask.gif
 share/apps/kshisen/pics/kshisen.xpm
 share/apps/kshisen/pics/kshisen_bgnd.xpm
