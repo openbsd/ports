@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:51:03 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/03/30 06:33:18 marcm Exp $
 bin/echo-client-2
 include/libbonobo-2.0/bonobo/Bonobo.h
 include/libbonobo-2.0/bonobo/bonobo-arg.h
@@ -183,7 +183,7 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @comment @dirrm share/gtk-doc/html
 @comment @dirrm share/gtk-doc
 @comment @dirrm lib/pkgconfig
-@comment (conflicts w/bonobo) @dirrm lib/bonobo/monikers
+@dirrm lib/bonobo/monikers
 @dirrm lib/bonobo-2.0/samples
 @dirrm lib/bonobo-2.0
 @dirrm include/libbonobo-2.0/bonobo

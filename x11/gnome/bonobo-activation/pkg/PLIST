@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/01/31 18:43:33 todd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/03/30 06:33:18 marcm Exp $
 bin/activation-client
 bin/bonobo-activation-empty-server
 bin/bonobo-activation-run-query
@@ -189,6 +189,6 @@ share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @dirrm share/examples/bonobo-activation
 @comment @dirrm lib/pkgconfig
 @dirrm lib/bonobo/servers
-@comment (conflicts w/bonobo) @dirrm lib/bonobo
+@dirrm lib/bonobo
 @dirrm include/bonobo-activation-2.0/bonobo-activation
 @dirrm include/bonobo-activation-2.0
