@@ -1,0 +1,7 @@
+aewm is a minimalistic window manager for X11.  It has no nifty
+features, but is light on resources and extremely simple in appearance.
+
+A few separate programs are included to handle running programs,
+switching between windows, etc.
+
+WWW: ${HOMEPAGE}
