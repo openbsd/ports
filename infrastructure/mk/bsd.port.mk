@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.587 2003/08/28 23:42:44 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.588 2003/09/28 10:57:01 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2312,7 +2312,7 @@ run-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
 		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends; \
+		self=${FULLPKGPATH} PACKAGING='${SUBPACKAGE}' ${MAKE} _recurse-run-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
