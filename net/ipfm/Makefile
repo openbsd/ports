@@ -1,5 +1,5 @@
 # $FreeBSD: ports/net/ipfm/Makefile,v 1.2 2000/04/09 18:11:44 cpiazza Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2000/06/23 18:44:42 form Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/09 06:13:36 form Exp $
 
 DISTNAME=	ipfm-0.10.4
 CATEGORIES=     net
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.via.ecp.fr/~tibob/ipfm/archive/
 
 HOMEPAGE=	http://www.via.ecp.fr/~tibob/ipfm/
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 

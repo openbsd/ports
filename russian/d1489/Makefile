@@ -1,5 +1,5 @@
 # $FreeBSD: ports/russian/d1489/Makefile,v 1.12 1999/08/31 06:49:57 mharo Exp $
-# $OpenBSD: Makefile,v 1.3 2000/06/15 05:31:53 form Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/09 06:09:53 form Exp $
 
 DISTNAME=       d1489-1.4
 CATEGORIES=     russian
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/todos ${PREFIX}/bin

@@ -1,6 +1,6 @@
 # $NetBSD: Makefile,v 1.3 2000/01/10 14:35:22 hubertf Exp $
 # $FreeBSD: ports/www/hypermail/Makefile,v 1.4 1999/08/31 02:42:53 peter Exp $
-# $OpenBSD: Makefile,v 1.3 2000/09/10 05:52:52 form Exp $
+# $OpenBSD: Makefile,v 1.4 2000/10/09 06:16:57 form Exp $
 
 DISTNAME=	hypermail-2b30
 CATEGORIES=	mail www
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail

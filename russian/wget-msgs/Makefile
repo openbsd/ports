@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2000/06/15 05:31:53 form Exp $
+# $OpenBSD: Makefile,v 1.8 2000/10/09 06:09:53 form Exp $
 
 PKGNAME=	wget-msgs-1.5.3-ru
 CATEGORIES=	russian net
@@ -9,7 +9,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAINTAINER=	form@OpenBSD.ORG
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 BUILD_DEPENDS=	msgfmt::devel/gettext
 RUN_DEPENDS=	wget::net/wget

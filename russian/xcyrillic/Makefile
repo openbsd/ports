@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2000/06/26 22:20:40 form Exp $
+# $OpenBSD: Makefile,v 1.16 2000/10/09 06:09:53 form Exp $
 
 DISTNAME=	xcyrillic-2.0
 CATEGORIES=	russian x11
 MASTER_SITES=	ftp://vell.nsc.ru/pub/X11/cyrillic/ \
 		ftp://ftp.styx.org/users/ww/cyrillic/
 
-MAINTAINER=	form@openbsd.org
+MAINTAINER=	Oleg Safiullin <form@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
