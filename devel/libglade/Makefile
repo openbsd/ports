@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2004/09/15 19:38:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/17 18:23:50 espie Exp $
 
 COMMENT=		"library for loading GLADE interface files at runtime"
 
@@ -34,6 +34,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${FLAVOR:L:Mgnome}
 LIB_DEPENDS+=		gnome.36,art_lgpl,gnomesupport,gnomeui::x11/gnome/libs
 CONFIGURE_ARGS+=	--with-gnome
+PKGNAME=		${DISTNAME}p0
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif
