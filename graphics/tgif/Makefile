@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2000/04/09 17:36:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2000/06/02 18:30:45 espie Exp $
+
+BROKEN=	"All sorts of mktemp warnings, most of them genuine"
 
 DISTNAME=	tgif-4.1.27
 CATEGORIES=	graphics
 NEED_VERSION=	 1.230
-FAKE=No
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
 
@@ -13,6 +14,7 @@ PERMIT_DISTFILES_CDROM=	no
 PERMIT_DISTFILES_FTP=	yes
 
 MAINTAINER=	jakob@openbsd.org
+HOMEPAGE=	http://bourbon.cs.umd.edu:8001/tgif/
 
 RUN_DEPENDS=	giftopnm::graphics/netpbm
 
