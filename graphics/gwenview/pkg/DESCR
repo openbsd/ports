@@ -1,0 +1,16 @@
+Gwenview is a simple image viewer for KDE which offers a folder tree
+window and a file list window for navigating easily through your image
+file heirarchy.
+
+Features:   
+- correct rendering of alpha-channel in images
+- docked windows for a configurable layout
+- full screen mode
+- a thumbnail view
+- background thumbnail generation
+- center images in view
+- zooming (including fit-to-window)
+- advanced keyboard navigation, Opera-like next / previous mouse nagiation
+				and customizable mouse-wheel navigation
+
+WWW: ${HOMEPAGE}

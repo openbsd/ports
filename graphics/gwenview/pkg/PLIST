@@ -1,0 +1,64 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/08/05 05:02:55 brad Exp $
+bin/gwenview
+man/man1/gwenview.1
+share/applnk/Graphics/gwenview.desktop
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd1.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd2.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd3.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd4.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd5.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd6.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd7.png
+share/apps/gwenview/icons/hicolor/16x16/actions/dnd8.png
+share/apps/gwenview/icons/hicolor/22x22/actions/actualsize.png
+share/apps/gwenview/icons/hicolor/22x22/actions/autozoom.png
+share/apps/gwenview/icons/hicolor/22x22/actions/largethumbnails.png
+share/apps/gwenview/icons/hicolor/22x22/actions/lockzoom.png
+share/apps/gwenview/icons/hicolor/22x22/actions/medthumbnails.png
+share/apps/gwenview/icons/hicolor/22x22/actions/smallthumbnails.png
+share/apps/gwenview/icons/hicolor/22x22/actions/zoomin.png
+share/apps/gwenview/icons/hicolor/22x22/actions/zoomout.png
+share/apps/gwenview/icons/hicolor/32x32/actions/actualsize.png
+share/apps/gwenview/icons/hicolor/32x32/actions/autozoom.png
+share/apps/gwenview/icons/hicolor/32x32/actions/largethumbnails.png
+share/apps/gwenview/icons/hicolor/32x32/actions/lockzoom.png
+share/apps/gwenview/icons/hicolor/32x32/actions/medthumbnails.png
+share/apps/gwenview/icons/hicolor/32x32/actions/smallthumbnails.png
+share/apps/gwenview/icons/hicolor/32x32/actions/zoomin.png
+share/apps/gwenview/icons/hicolor/32x32/actions/zoomout.png
+share/apps/gwenview/icons/locolor/16x16/actions/actualsize.png
+share/apps/gwenview/icons/locolor/16x16/actions/autozoom.png
+share/apps/gwenview/icons/locolor/16x16/actions/largethumbnails.png
+share/apps/gwenview/icons/locolor/16x16/actions/lockzoom.png
+share/apps/gwenview/icons/locolor/16x16/actions/medthumbnails.png
+share/apps/gwenview/icons/locolor/16x16/actions/smallthumbnails.png
+share/apps/gwenview/icons/locolor/16x16/actions/zoomin.png
+share/apps/gwenview/icons/locolor/16x16/actions/zoomout.png
+share/apps/konqueror/servicemenus/konqgwenview.desktop
+share/icons/hicolor/16x16/apps/gwenview.png
+share/icons/hicolor/32x32/apps/gwenview.png
+share/icons/locolor/16x16/apps/gwenview.png
+share/icons/locolor/32x32/apps/gwenview.png
+share/locale/de/LC_MESSAGES/gwenview.mo
+share/locale/es/LC_MESSAGES/gwenview.mo
+share/locale/fr/LC_MESSAGES/gwenview.mo
+share/locale/hu/LC_MESSAGES/gwenview.mo
+share/locale/it/LC_MESSAGES/gwenview.mo
+share/locale/ja/LC_MESSAGES/gwenview.mo
+share/locale/ko/LC_MESSAGES/gwenview.mo
+share/locale/nl/LC_MESSAGES/gwenview.mo
+share/locale/no/LC_MESSAGES/gwenview.mo
+share/locale/pl/LC_MESSAGES/gwenview.mo
+share/locale/sv/LC_MESSAGES/gwenview.mo
+@dirrm share/apps/gwenview/icons/locolor/16x16/actions
+@dirrm share/apps/gwenview/icons/locolor/16x16
+@dirrm share/apps/gwenview/icons/locolor
+@dirrm share/apps/gwenview/icons/hicolor/32x32/actions
+@dirrm share/apps/gwenview/icons/hicolor/32x32
+@dirrm share/apps/gwenview/icons/hicolor/22x22/actions
+@dirrm share/apps/gwenview/icons/hicolor/22x22
+@dirrm share/apps/gwenview/icons/hicolor/16x16/actions
+@dirrm share/apps/gwenview/icons/hicolor/16x16
+@dirrm share/apps/gwenview/icons/hicolor
+@dirrm share/apps/gwenview/icons
+@dirrm share/apps/gwenview
