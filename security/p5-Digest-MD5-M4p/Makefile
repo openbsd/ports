@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/30 02:51:33 jolan Exp $
-
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+# $OpenBSD: Makefile,v 1.2 2005/03/30 21:16:18 jolan Exp $
+SHARED_ONLY=	Yes
 
 COMMENT=	"perl interface to a variant of the MD5 algorithm"
 DISTNAME=	Digest-MD5-M4p-0.01
