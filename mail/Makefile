@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 1999/12/05 18:28:28 jakob Exp $
+# $OpenBSD: Makefile,v 1.22 2000/01/28 13:00:00 kevlo Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
      SUBDIR += adcomplain
      SUBDIR += asmail
      SUBDIR += bulk_mailer
+     SUBDIR += checkpassword
      SUBDIR += cucipop
 #    SUBDIR += cyrus
      SUBDIR += elm
      SUBDIR += exim
      SUBDIR += exmh
      SUBDIR += exmh2
+     SUBDIR += ezmlm
      SUBDIR += faces
      SUBDIR += fetchmail
      SUBDIR += imap-uw
@@ -37,6 +39,10 @@
 #    SUBDIR += premail
      SUBDIR += procmail
 #    SUBDIR += qpopper
+     SUBDIR += qmail
+     SUBDIR += qmailanalog
+     SUBDIR += rblsmtpd
+     SUBDIR += serialmail
 #    SUBDIR += smail
 #    SUBDIR += tkrat
      SUBDIR += vrfy
