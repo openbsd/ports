@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2004/07/26 10:21:12 peter Exp $
+# $OpenBSD: Makefile,v 1.14 2004/08/11 20:53:40 sturm Exp $
 
 COMMENT=	"PostgreSQL database adapter for Python"
 
@@ -21,8 +21,8 @@ FLAVOR?=
 PYTHON_VER=	2.1
 DATETIME_PATH=	${LOCALBASE}/lib/python${PYTHON_VER}/site-packages/mx/DateTime
 
-LIB_DEPENDS=	pq.3:postgresql-client-*:databases/postgresql
-RUN_DEPENDS=	:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
+RUN_DEPENDS=	:postgresql-server-*:databases/postgresql,-server \
+		:python-${PYTHON_VER}*:lang/python/${PYTHON_VER} \
 		:py-mxDateTime->=2.0.0-py2.1:devel/py-mxDateTime,py2.1
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
