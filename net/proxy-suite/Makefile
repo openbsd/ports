@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/02/28 09:27:02 camield Exp $
+# $OpenBSD: Makefile,v 1.2 2000/03/06 13:34:09 camield Exp $
 
 DISTNAME=	proxy-suite-1.7
 CATEGORIES=    	net security
 MAINTAINER=	cd@sentia.nl
 HOMEPAGE=	http://proxy-suite.suse.de
 
-LICENSE_TYPE=		GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,14 +16,29 @@ MASTER_SITES= \
 	ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.suse.com/pub/projects/proxy-suite/
 
+NEED_VERSION=	1.218
+
 USE_GMAKE=	Yes
-GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--with-libwrap=/usr/lib/
+HAS_CONFIGURE=	Yes
+CONFIGURE_ARGS=	--prefix='$${DESTDIR}${PREFIX}' \
+		--sysconfdir='$${DESTDIR}/etc' \
+		--with-libwrap=/usr/lib/
+
+# Take care with sysconfdir:
+# - the port will install configuration in fake/etc/ (will be discarded)
+# - post-install copies it from WRKSRC to PREFIX/share/proxy-suite/
+# - pkg/INSTALL installs them in /etc/proxy-suite/
+#   (which is where ftp-proxy defaults to, this discrepance has been
+#    mailed to the authors)
+
+FAKE=	Yes
 
 pre-install:
-	${STRIP} ${WRKSRC}/ftp-proxy/ftp-proxy
+	@strip ${WRKSRC}/ftp-proxy/ftp-proxy
 
 post-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${DISTNAME} POST-INSTALL
+	${INSTALL_DATA_DIR} ${PREFIX}/share/proxy-suite
+	${INSTALL_DATA} ${WRKSRC}/ftp-proxy/ftp-proxy.conf.sample \
+		${PREFIX}/share/proxy-suite
 
 .include <bsd.port.mk>
