@@ -1,0 +1,12 @@
+$OpenBSD: patch-asmrun_alpha_S,v 1.1 2002/09/11 04:41:40 pvalchev Exp $
+--- asmrun/alpha.S.orig	Tue Sep 10 21:01:35 2002
++++ asmrun/alpha.S	Tue Sep 10 21:01:53 2002
+@@ -426,7 +426,7 @@ $111:   ldgp    $gp, 0($27)
+         br      caml_c_call             /* never returns */
+         .end    caml_array_bound_error
+ 
+-#if defined(SYS_digital) || defined(SYS_openbsd)
++#if defined(SYS_digital)
+         .rdata
+ #else
+         .section .rodata
