@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2000/03/24 22:11:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2000/06/11 17:49:35 brad Exp $
 
 DISTNAME=	glib-1.2.7
 CATEGORIES=	devel
-NEED_VERSION=	1.223
+NEED_VERSION=	1.301
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
 
+HOMEPAGE=	http://www.gtk.org
 
 MAINTAINER=	brad@openbsd.org
 
@@ -15,10 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-FAKE=	Yes
-
 SEPARATE_BUILD=	concurrent
-GNU_CONFIGURE=	Yes
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-threads \
 		--includedir="${PREFIX}/include/glib"
