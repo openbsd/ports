@@ -35,6 +35,7 @@ share/gettext/intl-textdomain.c
 share/gettext/intl-xopen-msg.sed
 share/gettext/po-Makefile.in.in
 share/gettext/root-ABOUT-NLS
+share/emacs/site-lisp/po-mode.elc
 share/locale/de/LC_MESSAGES/gettext.mo
 share/locale/fr/LC_MESSAGES/gettext.mo
 share/locale/locale.alias
@@ -42,13 +43,3 @@ share/locale/no/LC_MESSAGES/gettext.mo
 share/locale/no@nynorsk/LC_MESSAGES/gettext.mo
 share/locale/sv/LC_MESSAGES/gettext.mo
 @dirrm share/gettext
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/no@nynorsk/LC_MESSAGES
-@dirrm share/locale/no@nynorsk
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
