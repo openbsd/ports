@@ -1,0 +1,3 @@
+@comment $Id: PLIST.no-no_x11,v 1.1 2000/10/02 20:06:08 dugsong Exp $
+sbin/webspy
+man/man8/webspy.8

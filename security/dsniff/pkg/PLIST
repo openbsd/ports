@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2000/08/11 08:59:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2000/10/02 20:06:08 dugsong Exp $
 sbin/arpredirect
 sbin/dsniff
 sbin/filesnarf
@@ -7,7 +7,6 @@ sbin/mailsnarf
 sbin/tcpkill
 sbin/tcpnice
 sbin/urlsnarf
-sbin/webspy
 lib/dsniff.magic
 lib/dsniff.services
 man/man8/arpredirect.8
@@ -18,4 +17,4 @@ man/man8/mailsnarf.8
 man/man8/tcpkill.8
 man/man8/tcpnice.8
 man/man8/urlsnarf.8
-man/man8/webspy.8
+!%%no_x11%%
