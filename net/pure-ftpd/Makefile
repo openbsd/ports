@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/01/10 20:56:15 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2002/01/27 05:58:36 brad Exp $
 
 COMMENT=	"small, easy to set up, fast and very secure FTP server"
 
-DISTNAME=	pure-ftpd-1.0.7
+DISTNAME=	pure-ftpd-1.0.8
 CATEGORIES=	net
 NEED_VERSION=	1.500
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -51,9 +51,9 @@ CONFIGURE_ARGS+= --without-banner
 .endif
 
 DOCS+=	README README.Configuration-File README.Contrib \
-	README.Virtual-Users poweredby.jpg
+	README.Virtual-Users README.Authentication-Modules poweredby.jpg
 
-CONTRIB= xml_python_processors.txt
+CONTRIB= xml_python_processors.txt sfv-crc-check.pl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pure-ftpd

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/12/27 20:13:45 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/27 05:58:37 brad Exp $
 bin/pure-pw
 bin/pure-pwconvert
 bin/pure-statsdecode
+man/man8/pure-authd.8
 man/man8/pure-ftpd.8
 man/man8/pure-ftpwho.8
 man/man8/pure-mrtginfo.8
@@ -10,6 +11,7 @@ man/man8/pure-pwconvert.8
 man/man8/pure-quotacheck.8
 man/man8/pure-statsdecode.8
 man/man8/pure-uploadscript.8
+sbin/pure-authd
 sbin/pure-config.pl
 sbin/pure-ftpd
 sbin/pure-ftpwho
@@ -20,9 +22,11 @@ share/doc/pure-ftpd/README
 share/doc/pure-ftpd/README.Configuration-File
 share/doc/pure-ftpd/README.Contrib
 share/doc/pure-ftpd/README.Virtual-Users
+share/doc/pure-ftpd/README.Authentication-Modules
 share/doc/pure-ftpd/poweredby.jpg
 share/examples/pure-ftpd/pure-ftpd.conf.sample
 share/examples/pure-ftpd/xml_python_processors.txt
+share/examples/pure-ftpd/sfv-crc-check.pl
 %%ldap%%
 %%mysql%%
 %%postgresql%%
