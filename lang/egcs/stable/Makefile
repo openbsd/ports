@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.6 1998/12/10 12:24:21 d Exp $
+# $OpenBSD: Makefile,v 1.7 1998/12/19 00:57:57 espie Exp $
 #
 
 # This is a configuration file for egcs, stable release
@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS = i386 sparc m68k
 # user configuration section
 
 # see files/tests for testing procedure
-MAKE_TESTS=yes
+MAKE_TESTS=no
 MAKE_GXX=yes
 MAKE_FORTRAN=yes
 MAKE_OBJC=yes
@@ -37,13 +37,17 @@ BUILD_DEPENDS+=	runtest:${PORTSDIR}/devel/dejagnu
 .endif
 
 # if you want/need to use the mammoth archive
-#ONE_ARCHIVE=yes
+ONE_ARCHIVE=yes
 
 VERSION=1.1.1
 DISTNAME=	egcs-${VERSION}
 DIRECTORY=egcs/releases/%SUBDIR%/
 DIST_SUBDIR=egcs
 MASTER_SITE_SUBDIR=${DISTNAME}
+
+.if defined(ONE_ARCHIVE)
+DISTFILES= egcs-${VERSION}${EXTRACT_SUFX}
+.else
 
 DISTFILES=	egcs-core-${VERSION}${EXTRACT_SUFX}
 .if defined(MAKE_GXX)
@@ -59,7 +63,9 @@ DISTFILES+=egcs-g77-${VERSION}${EXTRACT_SUFX}
 .if defined(MAKE_OBJC)
 DISTFILES+=egcs-objc-${VERSION}${EXTRACT_SUFX}
 .endif
+.endif
 
+MAKE_ENV+=LANGUAGES="c proto gcov objc"
 
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/${DIRECTORY} 
 MASTER_SITES+=	ftp://ftp.lip6.fr/pub/${DIRECTORY}
@@ -72,41 +78,40 @@ MASTER_SITES+= ftp://sunsite.doc.ic.ac.uk/Mirrors/egcs.cygnus.com/pub/${DIRECTOR
 MASTER_SITES+= ftp://gd.tuwien.ac.at/gnu/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.ilog.fr/pub/Mirrors/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.irisa.fr/pub/mirrors/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.gts.cz/pub/MIRRORS/ftp.cygnus.com/pub/${DIRECTORY}
 MASTER_SITES+= ftp://sunsite.auc.dk/pub/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.fu-berlin.de/unix/languages/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.gwdg.de/pub/cygnus/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/egcs.cygnus.com/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.uni-trier.de/pub/languages/c/implementation/${DIRECTORY}
-MASTER_SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.sunet.se/pub/gnu/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.unicamp.br/pub/gnu/=EXTRA=/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.lbi.ro/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://moshpit.cygnus.com/pub/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.ntua.gr/pub/gnu/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.nluug.nl/pub/languages/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.dti.ad.jp/pub/lang/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.win.or.jp/pub/lang/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.telewaynet.ad.jp/pub/lang/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.lab.kdd.co.jp/lang/${DIRECTORY}
-MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.crc.ca/pub/packages/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.crc.ca/pub/packages/egcs/%SUBDIR%/
 MASTER_SITES+= ftp://ftp.nc.orc.ru/pub/${DIRECTORY}
-MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
-MASTER_SITES+= ftp://ftp.goof.com/pub/pcg/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.u-aizu.ac.jp/pub/lang/C/pcg/${DIRECTORY}
-MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
 MASTER_SITES+= ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://unix.hensa.ac.uk/mirrors/egcs.cygnus.com/pub/${DIRECTORY}
 
-PATCH_SITE= ${MASTER_SITES}
+# couldn't contact those, maybe they work ?
+MASTER_SITES+= ftp://sunsite.mff.cuni.cz/pub/GNU/${DIRECTORY}
+MASTER_SITES+= ftp://sunsite.icm.edu.pl/pub/programming/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.task.gda.pl/mirror/egcs.cygnus.com/pub/${DIRECTORY}
+MASTER_SITES+= ftp://ftp.lca.uevora.pt/pub/${DIRECTORY}
+MASTER_SITES+= ftp://cair-archive.kaist.ac.kr/pub/gnu/${DIRECTORY}
+MASTER_SITES+= ftp://linux.ihep.su/pub/cygnus/${DIRECTORY}
+MASTER_SITES+= ftp://linux.cis.nctu.edu.tw/pub/packages/pcg/${DIRECTORY}
+
+PATCH_SITES= ${MASTER_SITES}
 PATCH_DIST_STRIP=-p1
-#PATCHFILES= egcs-1.1b-1.1.1-prerelease.diff.gz
-#PATCHFILES+= egcs-1.1.1-prerelease-1.1.1-prerelease-2.diff.gz
-#PATCHFILES+= egcs-1.1.1-prerelease-2-1.1.1-prerelease-3.diff.gz
 
 #### 
 # Patch section
