@@ -1,4 +1,4 @@
-IceWM is a window manager for the X11 Window System. It it has been
+IceWM is a window manager for the X11 Window System. It has been
 coded from scratch in C++ for performance and size and attempts to
 achieve the following goals:
 
