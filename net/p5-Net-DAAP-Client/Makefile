@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/30 03:08:02 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/30 21:15:21 jolan Exp $
+PKG_ARCH=	*
 
 COMMENT=	"perl client for Apple iTunes DAAP service"
 DISTNAME=	Net-DAAP-Client-0.42
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	net perl5
-
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/}
 
 # same as perl

@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/30 03:12:22 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/30 21:15:21 jolan Exp $
+PKG_ARCH=	*
 
 COMMENT=	"presents a DAAP share as a VFS"
 DISTNAME=	Filesys-Virtual-DAAP-0.04

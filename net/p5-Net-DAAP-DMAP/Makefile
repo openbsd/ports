@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2005/03/30 03:05:23 jolan Exp $
+# $OpenBSD: Makefile,v 1.2 2005/03/30 21:15:21 jolan Exp $
+PKG_ARCH=	*
 
 COMMENT=	"perl module for reading and writing DAAP structures"
 DISTNAME=	Net-DAAP-DMAP-1.26
