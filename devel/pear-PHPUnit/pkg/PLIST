@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/24 18:39:25 avsm Exp $
-pear/lib/.registry/PHPUnit.reg
+@comment $OpenBSD: PLIST,v 1.2 2003/08/28 22:31:56 avsm Exp $
+pear/lib/.registry/phpunit.reg
 pear/lib/PHPUnit.php
 pear/lib/PHPUnit/Assert.php
 pear/lib/PHPUnit/GUI/HTML.php

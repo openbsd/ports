@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/05/02 19:52:11 avsm Exp $
-pear/lib/.registry/Date.reg
+@comment $OpenBSD: PLIST,v 1.3 2003/08/28 22:31:56 avsm Exp $
+pear/lib/.registry/date.reg
 pear/lib/Date.php
 pear/lib/Date/Calc.php
 pear/lib/Date/Human.php

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/24 18:47:18 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2003/08/28 22:31:56 avsm Exp $
 pear/doc/Config/docs/Apache.php
 pear/doc/Config/docs/IniCommented.php
 pear/doc/Config/docs/IniFromScratch.php
-pear/lib/.registry/Config.reg
+pear/lib/.registry/config.reg
 pear/lib/Config.php
 pear/lib/Config/Container.php
 pear/lib/Config/Container/Apache.php
