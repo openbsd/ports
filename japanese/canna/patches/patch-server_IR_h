@@ -1,0 +1,29 @@
+$OpenBSD: patch-server_IR_h,v 1.1 2002/03/26 19:58:37 espie Exp $
+--- server/IR.h.orig	Tue Mar 26 20:33:53 2002
++++ server/IR.h	Tue Mar 26 20:34:33 2002
+@@ -32,13 +32,17 @@
+ #  include    <memory.h>
+ # endif
+-# ifndef __EMX__
+-#  ifndef bcopy
+-#   define bcopy(src, dst, size) memcpy((char *)(dst), (char *)(src), (size))
+-#  endif
+-#  ifndef bzero
+-#   define bzero(buf, size) memset((char *)(buf), 0x00, (size))
+-#  endif
++# ifdef __OpenBSD__
++#  include <string.h>
+ # else
+-#  include    <sys/types.h>
++#  ifndef __EMX__
++#   ifndef bcopy
++#    define bcopy(src, dst, size) memcpy((char *)(dst), (char *)(src), (size))
++#   endif
++#   ifndef bzero
++#    define bzero(buf, size) memset((char *)(buf), 0x00, (size))
++#   endif
++#  else
++#   include    <sys/types.h>
++#  endif
+ # endif
+ #endif

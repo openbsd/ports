@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_canna_canna_h,v 1.1 2002/03/26 19:58:37 espie Exp $
+--- lib/canna/canna.h.orig	Tue Mar 26 20:32:09 2002
++++ lib/canna/canna.h	Tue Mar 26 20:33:34 2002
+@@ -110,7 +110,11 @@ extern CANNA_wcstombs pro((char *, wchar
+ #  include <memory.h>
+ # endif
+-# ifndef __EMX__
+-#  define bzero(buf, size) memset((char *)(buf), 0x00, (size))
+-#  define bcopy(src, dst, size) memcpy((char *)(dst), (char *)(src), (size))
++# ifdef __OpenBSD__
++#  include <string.h>
++# else
++#  ifndef __EMX__
++#   define bzero(buf, size) memset((char *)(buf), 0x00, (size))
++#   define bcopy(src, dst, size) memcpy((char *)(dst), (char *)(src), (size))
++#  endif
+ # endif
+ #endif
