@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2004/06/24 23:57:20 marcm Exp $
+# $OpenBSD: Makefile,v 1.7 2004/08/15 01:25:38 brad Exp $
 
 COMMENT=		"Shared mime database for desktops"
 
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 
+BUILD_DEPENDS=		:p5-XML-Parser-*:textproc/p5-XML-Parser
 LIB_DEPENDS=		glib-2.0.0.0,gmodule-2.0.0.0,gobject-2.0.0.0::devel/glib2 \
 			xml2::textproc/libxml
 
