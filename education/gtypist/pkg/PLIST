@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/10/24 12:08:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2002/01/22 13:32:14 naddy Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gtypist.info
 bin/gtypist
 info/gtypist.info
@@ -25,5 +25,6 @@ share/gtypist/v.typ
 share/locale/de/LC_MESSAGES/gtypist.mo
 share/locale/es/LC_MESSAGES/gtypist.mo
 share/locale/fi/LC_MESSAGES/gtypist.mo
+share/locale/fr/LC_MESSAGES/gtypist.mo
 @dirrm share/gtypist
 @exec install-info --info-dir=%D/info %D/info/gtypist.info
