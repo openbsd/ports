@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2003/02/15 14:26:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2003/02/16 15:17:58 espie Exp $
 
 COMMENT=		"GNU development tools"
 
@@ -17,8 +17,7 @@ HOMEPAGE=		http://sources.redhat.com/
 
 AUTOCONF_VERSION=	2.13
 BUILD_DEPENDS=		::devel/automake \
-			::devel/autoconf/${AUTOCONF_VERSION} \
-			::devel/metaauto
+			${MODGNU_AUTOCONF_DEPENDS}
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		--with-prefix=${PREFIX} \
