@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2005/03/03 00:10:54 espie Exp $
+#	$OpenBSD: Makefile,v 1.2 2005/03/11 17:01:28 alek Exp $
 
 COMMENT=	"perl interface to the ACEDB database"
 
@@ -31,6 +31,7 @@ SUBST_VARS=	P5ACE
 SHARED_ONLY=Yes
 CONFIGURE_ENV+=	CHOICE1=2
 P5ACE=${P5ARCH}
+WANTLIB=c
 .else
 PKG_ARCH=	*
 CONFIGURE_ENV+= CHOICE1=1
