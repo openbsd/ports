@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2002/04/19 14:57:03 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/06/26 23:09:15 jcs Exp $
 !%%gtkglarea%%
+!%%gnome%%
 ${P5ARCH}/Gtk.pm
 ${P5ARCH}/Gtk/Atoms.pm
 ${P5ARCH}/Gtk/CListModel.pm
@@ -47,14 +48,18 @@ ${P5ARCH}/Gtk/Types.pm
 ${P5ARCH}/Gtk/TypesLazy.pm
 ${P5ARCH}/Gtk/io.pm
 ${P5ARCH}/Gtk/lazy.pm
+@comment ${P5ARCH}/perllocal.pod
+@comment ${P5ARCH}/auto/Gtk/Gdk/ImlibImage/.packlist
 ${P5ARCH}/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
 ${P5ARCH}/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
+@comment ${P5ARCH}/auto/Gtk/Gdk/Pixbuf/.packlist
 ${P5ARCH}/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
 ${P5ARCH}/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
 ${P5ARCH}/auto/Gtk/Gdk/autosplit.ix
 ${P5ARCH}/auto/Gtk/Gtk.bs
 ${P5ARCH}/auto/Gtk/Gtk.so
 ${P5ARCH}/auto/Gtk/autosplit.ix
+@comment ${P5ARCH}/auto/Gtk/base/.packlist
 man/man3p/Gtk.3p
 man/man3p/Gtk::CListModel.3p
 man/man3p/Gtk::Gdk::ImlibImage::reference.3p

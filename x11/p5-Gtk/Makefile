@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/06/26 07:35:11 xsa Exp $
-
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+# $OpenBSD: Makefile,v 1.15 2004/06/26 23:09:15 jcs Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -34,7 +32,7 @@ RUN_DEPENDS=	:p5-XML-Parser-*:textproc/p5-XML-Parser \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
-CONFIGURE_ARGS=	--without-gtkhtml --without-gtkxmhtml --without-gnome \
+CONFIGURE_ARGS=	--without-gtkhtml --without-gtkxmhtml \
 		--without-gnomeprint --without-applets --without-glade
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -50,14 +48,24 @@ FAKE_FLAGS=	${MAKE_FLAGS} \
 		INSTALLMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p" \
 		INSTALLSITEMAN3DIR="${DESTDIR}/${PREFIX}/man/man3p"
 
-FLAVORS=	gtkglarea
+FLAVORS=	gtkglarea gnome
 FLAVOR?=	
 
 .if ${FLAVOR:L:Mgtkglarea}
 LIB_DEPENDS+=	gtkgl.1.2::x11/gtkglarea
 CONFIGURE_ARGS+= --with-gtkglarea-force
+SED_PLIST+=     |sed -e '/^!%%gtkglarea%%/r${PKGDIR}/PFRAG.gtkglarea' -e '//d'
 .else
 CONFIGURE_ARGS+= --without-gtkglarea
+SED_PLIST+=     |sed -e '/^!%%gtkglarea%%/d'
+.endif
+
+.if ${FLAVOR:L:Mgnome}
+CONFIGURE_ARGS+= --with-gnome
+SED_PLIST+=     |sed -e '/^!%%gnome%%/r${PKGDIR}/PFRAG.gnome' -e '//d'
+.else
+CONFIGURE_ARGS+= --without-gnome
+SED_PLIST+=     |sed -e '/^!%%gnome%%/d'
 .endif
 
 .include <bsd.port.mk>
