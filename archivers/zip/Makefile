@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2000/07/24 01:31:33 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2000/07/24 01:56:45 brad Exp $
 # $FreeBSD: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 
 DISTNAME=	zip23
@@ -11,9 +11,9 @@ HOMEPAGE=	http://www.freesoftware.com/pub/infozip/
 
 MAINTAINER=	ports@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	"No commercial use"
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	"No commercial use"
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -DUNIX"
