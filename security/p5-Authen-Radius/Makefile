@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2002/05/15 17:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2002/06/07 21:30:43 wilfried Exp $
 
 DISTNAME=	RadiusPerl-0.05
 PKGNAME=	p5-Authen-Radius-0.05
@@ -15,15 +15,14 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
 
 MAINTAINER=	Joshua Stein <jcs@rt.fm>
 
-PERL_MODULES=	libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
-BUILD_DEPENDS=	::security/p5-MD5
+BUILD_DEPENDS=	:p5-MD5->=1.7:security/p5-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFIGURE_STYLE= perl
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/${PERL_MODULES}/Authen/
+	${INSTALL_DATA_DIR} ${PREFIX}/${P5SITE}/Authen/
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/Authen/Radius.pm \
-		${PREFIX}/${PERL_MODULES}/Authen/Radius.pm
+		${PREFIX}/${P5SITE}/Authen/Radius.pm
 
 .include <bsd.port.mk>
