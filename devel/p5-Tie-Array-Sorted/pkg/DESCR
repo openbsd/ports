@@ -1,0 +1,3 @@
+This presents an ordinary array, but is kept sorted. All pushes and
+unshifts cause the elements in question to be inserted in the
+appropriate location to maintain order.

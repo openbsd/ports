@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 03:16:15 msf Exp $
+${P5SITE}/Tie/
+${P5SITE}/Tie/Array/
+${P5SITE}/Tie/Array/Sorted/
+${P5SITE}/Tie/Array/Sorted.pm
+${P5SITE}/Tie/Array/Sorted/Lazy.pm
+@man man/man3p/Tie::Array::Sorted.3p
+@man man/man3p/Tie::Array::Sorted::Lazy.3p
