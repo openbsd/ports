@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Jul 18 12:35:17 2000
++++ Makefile.in	Sun Aug  6 03:25:18 2000
+@@ -135,7 +135,7 @@
+ 	genrand.h
+ 
+ 
+-libesd_la_LDFLAGS = -version-info @ESD_VERSION_INFO@
++libesd_la_LDFLAGS = -version-info 2:19:0
+ 
+ libesd_la_LIBADD = @AUDIOFILE_LIBS@ -lm
+ 
+@@ -143,7 +143,7 @@
+ 	libesddsp.la
+ 
+ 
+-libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info @ESD_VERSION_INFO@
++libesddsp_la_LDFLAGS = -rpath $(libdir) -version-info 2:19:0
+ 
+ libesddsp_la_LIBADD = @DL_LIB@ -lm
+ 

@@ -1,7 +1,7 @@
---- audio_oss.c.orig	Mon Nov 29 14:43:04 1999
-+++ audio_oss.c	Mon Nov 29 14:43:41 1999
-@@ -36,7 +36,7 @@
-         mode = O_RDWR;
+--- audio_oss.c.orig	Tue Jul 18 12:34:13 2000
++++ audio_oss.c	Sun Aug  6 03:27:01 2000
+@@ -38,7 +38,7 @@
+     mode |= O_NONBLOCK;
  
      /* open the sound device */
 -    device = esd_audio_device ? esd_audio_device : "/dev/dsp";

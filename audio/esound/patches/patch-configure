@@ -1,5 +1,5 @@
---- configure.orig	Mon Nov 29 14:41:32 1999
-+++ configure	Mon Nov 29 14:42:30 1999
+--- configure.orig	Mon Nov 15 12:23:06 1999
++++ configure	Sun Aug  6 03:02:12 2000
 @@ -4077,6 +4077,7 @@
     cat > conftest.$ac_ext <<EOF
  #line 4079 "configure"
