@@ -2,3 +2,4 @@ sbin/pchar
 share/doc/pchar/FAQ
 share/doc/pchar/README
 man/man8/pchar.8
+@dirrm share/doc/pchar
