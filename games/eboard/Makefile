@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/10/24 12:17:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2001/12/17 21:20:58 fgsch Exp $
 
 COMMENT=	"gtk+ chess board interface"
 
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eboard
 
-LIB_DEPENDS=	gtk.1.2::x11/gtk+ \
-		Imlib.19,gdk_imlib::graphics/imlib
+LIB_DEPENDS=	Imlib.19,gdk_imlib::graphics/imlib
 
 USE_X11=	Yes
 CONFIGURE_STYLE= gnu
