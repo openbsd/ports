@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/09/23 14:44:41 danh Exp $
+# $OpenBSD: Makefile,v 1.4 2002/09/26 18:22:15 pvalchev Exp $
 
 COMMENT=		"Bomberman clone for GNOME"
 
@@ -20,10 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://freesoftware.fsf.org/download/bombermaze/
 
 MODULES=	gettext
-LIB_DEPENDS=	gdk_pixbuf::graphics/gdk-pixbuf \
-		audiofile::devel/libaudiofile \
+LIB_DEPENDS=	gdk_pixbuf.2::graphics/gdk-pixbuf \
+		audiofile.0::devel/libaudiofile \
 		glib.1,gmodule.1::devel/glib \
-	 	gif.5::graphics/libungif
+	 	gif.5::graphics/libungif \
+		art_lgpl.so.4,gnome.36,gnomeui.46,gnomesupport.0::x11/gnome/libs
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
