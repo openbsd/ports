@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_ogg_Makefile_in,v 1.4 2003/12/14 00:52:22 naddy Exp $
---- doc/ogg/Makefile.in.orig	2003-11-17 17:33:58.000000000 +0100
-+++ doc/ogg/Makefile.in	2003-11-24 17:26:40.000000000 +0100
-@@ -101,7 +101,7 @@ install_sh = @install_sh@
- 
- AUTOMAKE_OPTIONS = foreign
- 
+$OpenBSD: patch-doc_ogg_Makefile_in,v 1.5 2004/09/23 22:46:06 naddy Exp $
+--- doc/ogg/Makefile.in.orig	Fri Sep 24 00:32:01 2004
++++ doc/ogg/Makefile.in	Fri Sep 24 00:32:13 2004
+@@ -159,7 +159,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/ogg
 +docdir = $(datadir)/doc/$(PACKAGE)/ogg
- 
  doc_DATA = bitpacking.html datastructures.html decoding.html encoding.html\
  	general.html index.html ogg_packet.html ogg_packet_clear.html\
+ 	ogg_page.html ogg_page_bos.html ogg_page_checksum_set.html\
