@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2003/02/03 19:18:14 lebel Exp $
+bin/oinkmaster
+share/examples/oinkmaster/oinkmaster.conf
+@dirrm share/examples/oinkmaster
