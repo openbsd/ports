@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2004/11/21 17:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2005/01/02 20:33:43 jakob Exp $
 
 COMMENT=	"lame ain't an MP3 encoder"
 
-VERSION=	3.96
+VERSION=	3.96.1
 
 DISTNAME=	lame-${VERSION}
 CATEGORIES=	audio
