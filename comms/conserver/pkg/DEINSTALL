@@ -1,33 +1,13 @@
 #!/bin/sh
-# $OpenBSD: DEINSTALL,v 1.4 2004/04/14 10:44:13 xsa Exp $
+# $OpenBSD: DEINSTALL,v 1.5 2004/08/09 16:27:13 espie Exp $
 #
 # conserver de-installation
 
 set -e
-PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/local}
-CONFIG_FILE=${SYSCONFDIR}/conserver.cf
-PASSWD_FILE=${SYSCONFDIR}/conserver.passwd
-LOG_DIR=/var/consoles
 SERVICES=/etc/services
 
-if [ ${PKG_DELETE_EXTRA} != Yes -a -f $CONFIG_FILE ]; then
-    echo
-    echo "+---------------"
-    echo "| To completely deinstall the $1 package you need to perform"
-    echo "| these steps as root:"
-    echo "|"
-    echo "|           rm -f $CONFIG_FILE"
-    echo "|           rm -f $PASSWD_FILE"
-    echo "|           rm -rf $LOG_DIR"
-    echo "|"
-    echo "| Do not do this if you plan on re-installing $1"
-    echo "| at some future time."
-    echo "+---------------"
-    echo
-fi
 echo "+---------------"
-echo "| The conserver line should also be removed from $SERVICES"
+echo "| The conserver line should be removed from $SERVICES"
 echo "| to completely deinstall the $1 package."
 echo "+---------------"
 

@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/04/14 10:44:13 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.15 2004/08/09 16:27:13 espie Exp $
 bin/ascii-xfr
 @mode 555
 bin/minicom
 @mode
 bin/runscript
-man/man1/ascii-xfr.1
-man/man1/minicom.1
-man/man1/runscript.1
+@man man/man1/ascii-xfr.1
+@man man/man1/minicom.1
+@man man/man1/runscript.1
+share/doc/minicom/
 share/doc/minicom/AUTHORS
 share/doc/minicom/Announce-1.78
 share/doc/minicom/Announce-1.82
@@ -39,56 +40,51 @@ share/doc/minicom/modemu.README
 share/doc/minicom/pl-translation.txt
 share/doc/minicom/portugues-brasil
 share/doc/minicom/suomeksi
+share/examples/minicom/
+share/examples/minicom/extras/
 share/examples/minicom/extras/htsalogin
+share/examples/minicom/extras/linux/
 share/examples/minicom/extras/linux/INSTALL
 share/examples/minicom/extras/linux/README-FIRST
 share/examples/minicom/extras/linux/mtelnet
 share/examples/minicom/extras/saralogin
 share/examples/minicom/extras/scriptdemo
+share/examples/minicom/extras/tables/
 share/examples/minicom/extras/tables/mc.iso
 share/examples/minicom/extras/tables/mc.noconv
 share/examples/minicom/extras/tables/mc.pc8
 share/examples/minicom/extras/tables/mc.sf7
+share/examples/minicom/extras/termcap/
 share/examples/minicom/extras/termcap/README
 share/examples/minicom/extras/termcap/termcap.long
 share/examples/minicom/extras/termcap/termcap.short
+share/examples/minicom/extras/terminfo/
 share/examples/minicom/extras/terminfo/README
 share/examples/minicom/extras/terminfo/minicom
 share/examples/minicom/extras/unixlogin
 share/examples/minicom/minicom.users.sample
+@owner uucp
+@group dialer
+@mode 0750
+@sample ${SYSCONFDIR}/minicom/
+@owner
+@group
+@mode 0644
+@sample ${SYSCONFDIR}/minicom/minicom.users
+@mode
+share/locale/cs_CZ/
+share/locale/cs_CZ/LC_MESSAGES/
 share/locale/cs_CZ/LC_MESSAGES/minicom.mo
 share/locale/es/LC_MESSAGES/minicom.mo
+share/locale/fi_FI/
+share/locale/fi_FI/LC_MESSAGES/
 share/locale/fi_FI/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
 share/locale/ja/LC_MESSAGES/minicom.mo
+share/locale/ja_JP.SJIS/
+share/locale/ja_JP.SJIS/LC_MESSAGES/
 share/locale/ja_JP.SJIS/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
 share/locale/ru/LC_MESSAGES/minicom.mo
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/ja_JP.SJIS/LC_MESSAGES
-@dirrm share/locale/ja_JP.SJIS
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi_FI/LC_MESSAGES
-@dirrm share/locale/fi_FI
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/cs_CZ/LC_MESSAGES
-@dirrm share/locale/cs_CZ
-@dirrm share/locale
-@dirrm share/examples/minicom/extras/terminfo
-@dirrm share/examples/minicom/extras/termcap
-@dirrm share/examples/minicom/extras/tables
-@dirrm share/examples/minicom/extras/linux
-@dirrm share/examples/minicom/extras
-@dirrm share/examples/minicom
-@dirrm share/doc/minicom
-@extraunexec rm -rf ${SYSCONFDIR}/minicom
+@extraunexec rm -rf ${SYSCONFDIR}/minicom/*
