@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/10/26 20:44:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2004/10/01 07:48:42 xsa Exp $
 
 COMMENT=	"dropping jewels game for X11"
 
@@ -28,5 +28,7 @@ post-install:
 	  echo "xset +fp ${TRUEPREFIX}/lib/xjewel.font"	>> ${PREFIX}/bin/xjewel; \
 	  echo "xjewel_"				>> ${PREFIX}/bin/xjewel; \
 	  ${CHMOD} ugo+x ${PREFIX}/bin/xjewel)
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xjewel
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/xjewel/xjewel.scores
 
 .include <bsd.port.mk>
