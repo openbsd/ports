@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 1999/09/14 21:04:29 brad Exp $
+# $OpenBSD: Makefile,v 1.11 1999/09/17 09:39:06 turan Exp $
+
+BROKEN=		"sources changed.  checksums differ."
 
 DISTNAME=	iozone
 PKGNAME=	iozone-3.7
