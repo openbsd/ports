@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2002/12/29 19:49:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2003/02/18 16:12:52 sturm Exp $
+
+IGNORE=		"is part of teTeX as of version 2.0"
 
 COMMENT=	"converts DVI files to PDF format"
 
