@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2002/09/25 17:20:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.66 2002/09/25 19:44:32 lebel Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc
 
@@ -10,7 +10,7 @@ MAKE_OBJC=Yes
 # Java is still mostly broken (boehm-gc)
 MAKE_JAVA=Yes
 
-.if ${MACHINE_ARCH:Msparc64} 
+.if ${MACHINE_ARCH} != "i386"
 MAKE_JAVA=No
 MAKE_ADA=No
 .endif
