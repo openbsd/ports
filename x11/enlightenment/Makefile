@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2001/03/07 21:56:54 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2001/03/15 14:42:40 brad Exp $
 
 DISTNAME=	enlightenment-0.16.5
 CATEGORIES=     x11
 NEED_VERSION=	1.336
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
+		http://www.shellhung.org/download/Mirror/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
 		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
 		ftp://beaver.its.vu.edu.au/pub/enlightenment/
