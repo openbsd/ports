@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_event_c,v 1.1 2002/03/24 22:23:06 couderc Exp $
+--- src/event.c.orig	Sun Mar 24 13:08:01 2002
++++ src/event.c	Sun Mar 24 13:09:55 2002
+@@ -225,7 +225,7 @@ static void event_button_press(XEvent *e
+ 		 * XXX: the buttons that do which for mouse_modifier should
+ 		 * be configurable.
+ 		 */
+-		if (e->state == options.mouse_modifier) {
++		if ((e->state & ~(numlock_mask | scroll_mask | LockMask)) == options.mouse_modifier) {
+ 			if (e->button == Button3)
+ 				action_resize(client);
+ 			else
