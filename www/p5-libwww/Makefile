@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2001/01/14 23:26:59 avsm Exp $
+# $OpenBSD: Makefile,v 1.4 2001/03/17 00:42:06 avsm Exp $
 
-DISTNAME=	libwww-perl-5.50
+DISTNAME=	libwww-perl-5.51
 PKGNAME=	p5-libwww-5.50
 CATEGORIES=	www perl5
 NEED_VERSION=	1.348
