@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2000/10/22 15:42:30 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2000/12/19 15:27:54 espie Exp $
 
 DISTNAME=	asmail-0.56
 CATEGORIES=	mail
@@ -32,7 +32,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/pixmaps/cloud-e
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asmail
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asmail
-	${INSTALL_MAN} ${WRKSRC}/asmail.man ${PREFIX}/man/man1/asmail.1
+	${INSTALL_MAN} ${WRKSRC}/asmail.man ${PREFIX}/man/cat1/asmail.0
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/cloud-e/*.xpm ${PREFIX}/include/X11/pixmaps/cloud-e
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/include/X11/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/examples/asmail
