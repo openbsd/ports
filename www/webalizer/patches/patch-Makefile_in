@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2002/03/25 14:56:55 brad Exp $
---- Makefile.in.orig	Tue Oct 17 00:15:53 2000
-+++ Makefile.in	Mon Mar 25 09:28:43 2002
+$OpenBSD: patch-Makefile_in,v 1.6 2002/04/17 16:17:45 danh Exp $
+--- Makefile.in.orig	Wed Apr 17 11:40:20 2002
++++ Makefile.in	Wed Apr 17 11:41:02 2002
 @@ -86,9 +86,9 @@ distclean: clean
  install: all
  	$(INSTALL_PROGRAM) webalizer ${BINDIR}/webalizer

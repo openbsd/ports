@@ -1,0 +1,208 @@
+$OpenBSD: patch-preserve_c,v 1.1 2002/04/17 16:17:45 danh Exp $
+--- preserve.c.orig	Wed Apr 17 11:52:17 2002
++++ preserve.c	Wed Apr 17 11:58:14 2002
+@@ -196,38 +196,38 @@ int save_state()
+    /* Saving current run data... */
+    if (verbose>1)
+    {
+-      sprintf(buffer,"%02d/%02d/%04d %02d:%02d:%02d",
++      snprintf(buffer,sizeof buffer,"%02d/%02d/%04d %02d:%02d:%02d",
+        cur_month,cur_day,cur_year,cur_hour,cur_min,cur_sec);
+       printf("%s [%s]\n",msg_put_data,buffer);
+    }
+ 
+    /* first, save the easy stuff */
+    /* Header record */
+-   sprintf(buffer,
++   snprintf(buffer,sizeof buffer,
+      "# Webalizer V%s-%s Incremental Data - %02d/%02d/%04d %02d:%02d:%02d\n",
+       version,editlvl,cur_month,cur_day,cur_year,cur_hour,cur_min,cur_sec);
+    if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+ 
+    /* Current date/time          */
+-   sprintf(buffer,"%d %d %d %d %d %d\n",
++   snprintf(buffer,sizeof buffer,"%d %d %d %d %d %d\n",
+         cur_year, cur_month, cur_day, cur_hour, cur_min, cur_sec);
+    if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+ 
+    /* Monthly totals for sites, urls, etc... */
+-   sprintf(buffer,"%lu %lu %lu %lu %lu %lu %.0f %lu %lu %lu\n",
++   snprintf(buffer,sizeof buffer,"%lu %lu %lu %lu %lu %lu %.0f %lu %lu %lu\n",
+         t_hit, t_file, t_site, t_url,
+         t_ref, t_agent, t_xfer, t_page, t_visit, t_user);
+    if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+ 
+    /* Daily totals for sites, urls, etc... */
+-   sprintf(buffer,"%lu %lu %lu %d %d\n",
++   snprintf(buffer,sizeof buffer,"%lu %lu %lu %d %d\n",
+         dt_site, ht_hit, mh_hit, f_day, l_day);
+    if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+ 
+    /* Monthly (by day) total array */
+    for (i=0;i<31;i++)
+    {
+-      sprintf(buffer,"%lu %lu %.0f %lu %lu %lu\n",
++      snprintf(buffer,sizeof buffer,"%lu %lu %.0f %lu %lu %lu\n",
+         tm_hit[i],tm_file[i],tm_xfer[i],tm_site[i],tm_page[i],tm_visit[i]);
+       if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+    }
+@@ -235,7 +235,7 @@ int save_state()
+    /* Daily (by hour) total array */
+    for (i=0;i<24;i++)
+    {
+-      sprintf(buffer,"%lu %lu %.0f %lu\n",
++      snprintf(buffer,sizeof buffer,"%lu %lu %.0f %lu\n",
+         th_hit[i],th_file[i],th_xfer[i],th_page[i]);
+       if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+    }
+@@ -243,7 +243,7 @@ int save_state()
+    /* Response codes */
+    for (i=0;i<TOTAL_RC;i++)
+    {
+-      sprintf(buffer,"%lu\n",response[i].count);
++      snprintf(buffer,sizeof buffer,"%lu\n",response[i].count);
+       if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+    }
+ 
+@@ -255,7 +255,7 @@ int save_state()
+       uptr=um_htab[i];
+       while (uptr!=NULL)
+       {
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n", uptr->string,
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n", uptr->string,
+               uptr->flag, uptr->count, uptr->files, uptr->xfer,
+               uptr->entry, uptr->exit);
+          if (fputs(buffer,fp)==EOF) return 1;
+@@ -272,7 +272,7 @@ int save_state()
+       hptr=sm_htab[i];
+       while (hptr!=NULL)
+       {
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
+               hptr->string,
+               hptr->flag,
+               hptr->count,
+@@ -294,7 +294,7 @@ int save_state()
+       hptr=sd_htab[i];
+       while (hptr!=NULL)
+       {
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n%s\n",
+               hptr->string,
+               hptr->flag,
+               hptr->count,
+@@ -318,7 +318,7 @@ int save_state()
+          rptr=rm_htab[i];
+          while (rptr!=NULL)
+          {
+-            sprintf(buffer,"%s\n%d %lu\n", rptr->string,
++            snprintf(buffer,sizeof buffer,"%s\n%d %lu\n", rptr->string,
+                  rptr->flag, rptr->count);
+             if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+             rptr=rptr->next;
+@@ -336,7 +336,7 @@ int save_state()
+          aptr=am_htab[i];
+          while (aptr!=NULL)
+          {
+-            sprintf(buffer,"%s\n%d %lu\n", aptr->string,
++            snprintf(buffer,sizeof buffer,"%s\n%d %lu\n", aptr->string,
+                  aptr->flag, aptr->count);
+             if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+             aptr=aptr->next;
+@@ -352,7 +352,7 @@ int save_state()
+       sptr=sr_htab[i];
+       while (sptr!=NULL)
+       {
+-         sprintf(buffer,"%s\n%lu\n", sptr->string,sptr->count);
++         snprintf(buffer,sizeof buffer,"%s\n%lu\n", sptr->string,sptr->count);
+          if (fputs(buffer,fp)==EOF) return 1;  /* error exit */
+          sptr=sptr->next;
+       }
+@@ -367,7 +367,7 @@ int save_state()
+       iptr=im_htab[i];
+       while (iptr!=NULL)
+       {
+-         sprintf(buffer,"%s\n%d %lu %lu %.0f %lu %lu\n",
++         snprintf(buffer,sizeof buffer,"%s\n%d %lu %lu %.0f %lu %lu\n",
+               iptr->string,
+               iptr->flag,
+               iptr->count,
+@@ -417,7 +417,7 @@ int restore_state()
+    if (verbose>1) printf("%s %s\n",msg_get_data,state_fname);
+ 
+    /* get easy stuff */
+-   sprintf(tmp_buf,"# Webalizer V%s    ",version);
++   snprintf(tmp_buf,sizeof tmp_buf,"# Webalizer V%s    ",version);
+    if ((fgets(buffer,BUFSIZE,fp)) != NULL)                 /* Header record */
+      {if (strncmp(buffer,tmp_buf,17)) return 99;} /* bad magic? */
+    else return 1;   /* error exit */
+@@ -493,8 +493,7 @@ int restore_state()
+    while ((fgets(buffer,BUFSIZE,fp)) != NULL)
+    {
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXURLH);
+-      tmp_buf[strlen(tmp_buf)-1]=0;
++      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 10;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 10;  /* error exit */
+@@ -524,8 +523,7 @@ int restore_state()
+    {
+       /* Check for end of table */
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXHOST);
+-      tmp_buf[strlen(buffer)-1]=0;
++      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 8;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 8;  /* error exit */
+@@ -564,8 +562,7 @@ int restore_state()
+    {
+       /* Check for end of table */
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXHOST);
+-      tmp_buf[strlen(buffer)-1]=0;
++      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 9;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 9;  /* error exit */
+@@ -603,8 +600,7 @@ int restore_state()
+    while ((fgets(buffer,BUFSIZE,fp)) != NULL)
+    {
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXREFH);
+-      tmp_buf[strlen(buffer)-1]=0;
++      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 11;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 11;  /* error exit */
+@@ -628,8 +624,7 @@ int restore_state()
+    while ((fgets(buffer,BUFSIZE,fp)) != NULL)
+    {
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXAGENT);
+-      tmp_buf[strlen(buffer)-1]=0;
++      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 12;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 12;  /* error exit */
+@@ -653,8 +648,7 @@ int restore_state()
+    while ((fgets(buffer,BUFSIZE,fp)) != NULL)
+    {
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXSRCH);
+-      tmp_buf[strlen(buffer)-1]=0;
++      strlcpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 13;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 13;  /* error exit */
+@@ -678,8 +672,7 @@ int restore_state()
+    {
+       /* Check for end of table */
+       if (!strncmp(buffer,"# End Of Table ",15)) break;
+-      strncpy(tmp_buf,buffer,MAXIDENT);
+-      tmp_buf[strlen(buffer)-1]=0;
++      strncpy(tmp_buf,buffer,sizeof tmp_buf);
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 14;  /* error exit */
+       if (!isdigit((int)buffer[0])) return 14;  /* error exit */

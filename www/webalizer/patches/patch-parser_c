@@ -1,0 +1,23 @@
+$OpenBSD: patch-parser_c,v 1.1 2002/04/17 16:17:45 danh Exp $
+--- parser.c.orig	Wed Apr 17 11:26:51 2002
++++ parser.c	Wed Apr 17 11:33:35 2002
+@@ -162,7 +162,7 @@ int parse_record_ftp(char *buffer)
+    if (i<1 || i>31) return 0;
+ 
+    /* format date/time field         */
+-   sprintf(log_rec.datetime,"[%02d/%s/%4d:%s -0000]",i,cpx,j,cpy);
++   snprintf(log_rec.datetime,sizeof log_rec.datetime,"[%02d/%s/%4d:%s -0000]",i,cpx,j,cpy);
+ 
+    /* skip seconds... */
+    while (*cp1!=0 && cp1<eob) cp1++;
+@@ -196,8 +196,8 @@ int parse_record_ftp(char *buffer)
+    while (*cp1==0) cp1++;
+ 
+    /* fabricate an appropriate request string based on direction */
+-   if (*cp1=='i') sprintf(log_rec.url,"\"POST %s HTTP/1.0\"",cpx);
+-      else        sprintf(log_rec.url,"\"GET %s HTTP/1.0\"",cpx);
++   if (*cp1=='i') snprintf(log_rec.url,sizeof log_rec.url,"\"POST %s HTTP/1.0\"",cpx);
++      else        snprintf(log_rec.url,sizeof log_rec.url,"\"GET %s HTTP/1.0\"",cpx);
+ 
+    if (cp1<eob) cp1++;
+    if (cp1<eob) cp1++;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sample_conf,v 1.1 2000/11/20 00:46:32 danh Exp $
---- sample.conf.orig	Sun Nov 19 19:32:10 2000
-+++ sample.conf	Sun Nov 19 19:33:39 2000
+$OpenBSD: patch-sample_conf,v 1.2 2002/04/17 16:17:45 danh Exp $
+--- sample.conf.orig	Wed Apr 17 11:41:44 2002
++++ sample.conf	Wed Apr 17 11:42:47 2002
 @@ -25,7 +25,7 @@
  # the log filename ends in '.gz' (ie: a gzip compressed file), it will
  # be decompressed on the fly as it is being read.
@@ -19,3 +19,12 @@ $OpenBSD: patch-sample_conf,v 1.1 2000/11/20 00:46:32 danh Exp $
  
  # HistoryName allows you to specify the name of the history file produced
  # by the Webalizer.  The history file keeps the data for up to 12 months
+@@ -540,7 +540,7 @@ SearchEngine	northernlight.com  qr=
+ # it will default to the current output directory.  Do not use a
+ # trailing slash ('/').
+ 
+-#DumpPath	/var/lib/httpd/logs
++#DumpPath	/var/www/logs
+ 
+ # The DumpHeader keyword specifies if a header record should be
+ # written to the file.  A header record is the first record of the
