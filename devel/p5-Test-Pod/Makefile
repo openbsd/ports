@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/06/10 01:33:45 msf Exp $
+# $OpenBSD: Makefile,v 1.2 2004/12/08 22:20:23 msf Exp $
 
 COMMENT= 	"check for POD errors in files"
 
-DISTNAME=	Test-Pod-1.16
+DISTNAME=	Test-Pod-1.20
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel perl5
 
@@ -19,7 +19,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Test/}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	::devel/p5-Test-Builder-Tester \
 		::textproc/p5-Pod-Simple
-		
 
 CONFIGURE_STYLE= perl
 
