@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2002/05/30 08:54:03 wcobb Exp $
+# $OpenBSD: Makefile,v 1.88 2002/06/03 14:52:59 naddy Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 #
 
@@ -101,6 +101,7 @@
      SUBDIR += xmix
      SUBDIR += xmmix
      SUBDIR += xmms
+     SUBDIR += xmms-bonk
      SUBDIR += xmms-flac
      SUBDIR += xmms-fmradio
      SUBDIR += xmms-shn
