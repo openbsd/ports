@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2001/08/16 03:23:21 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2002/02/21 12:34:57 naddy Exp $
+
+NOT_FOR_ARCHS=	powerpc		# char is unsigned
 
 COMMENT=	"File and Print Services for AppleTalk Networks"
 
