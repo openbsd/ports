@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2001/05/20 12:49:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2001/07/05 23:09:45 jsyn Exp $
 # $FreeBSD: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
 
 COMMENT=	"graphical toolkit for Tcl"
@@ -40,5 +40,8 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/unix
 
 test:	build
 	@cd ${WRKBUILD} && make test
+
+post-install:
+	@strip ${PREFIX}/bin/wish8.0
 
 .include <bsd.port.mk>
