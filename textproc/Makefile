@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2002/03/12 00:13:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2002/03/22 08:17:43 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -27,6 +27,7 @@
      SUBDIR += latex2html
      SUBDIR += lgrind
      SUBDIR += libxml
+     SUBDIR += libxml,python
      SUBDIR += libxml1
      SUBDIR += libxslt
      SUBDIR += linuxdoc
