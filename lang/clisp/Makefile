@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/11/18 13:43:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/02/12 13:54:25 espie Exp $
 # $FreeBSD: ports/lang/clisp/Makefile,v 1.4 2000/05/14 05:40:46 billf Exp $
 
 DISTNAME=	clisp-2000-03-06
@@ -30,5 +30,9 @@ post-configure:
 		--prefix=${PREFIX} --with-readline --with-gettext \
 		--with-dynamic-ffi >Makefile && \
     	    make config.lsp
+
+MAKE_FLAGS= INSTALL='install -c' \
+	    INSTALL_PROGRAM='install -c -s -m 555' \
+	    INSTALL_DATA='install -c -m 644'
 
 .include <bsd.port.mk>
