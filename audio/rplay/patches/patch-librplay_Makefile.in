@@ -1,5 +1,5 @@
---- librplay/Makefile.in.orig	Mon Feb  5 21:54:11 2001
-+++ librplay/Makefile.in	Mon Feb  5 21:54:19 2001
+--- librplay/Makefile.in.orig	Tue Mar 23 02:38:38 1999
++++ librplay/Makefile.in	Mon Jun  4 17:12:05 2001
 @@ -9,7 +9,7 @@
  MKINSTALLDIRS= @srcdir@/../mkinstalldirs
  
@@ -9,3 +9,35 @@
  
  .c.o:
  		$(CC) -c $(CPPFLAGS) $(CFLAGS) $<
+@@ -23,7 +23,7 @@
+ OBJS=		rplay.o rptp.o async.o
+ SHAREDOBJS=	rplay.lo rptp.lo async.lo
+ 
+-all:		$(TARGET) librplay.so
++all:		$(TARGET) librplay.so.0.0
+ 
+ #
+ # Use the following for SunOS 4.1.x, Solaris 2.x, Linux, NetBSD
+@@ -32,7 +32,7 @@
+ 		$(AR) rcv $@ $?
+ 		$(RANLIB) $@
+ 
+-librplay.so:	$(SHAREDOBJS)
++librplay.so.0.0:	$(SHAREDOBJS)
+ 		$(CC) -o $@ $(SHAREDOBJS) $(LDFLAGS)
+ 
+ #
+@@ -50,11 +50,11 @@
+ install:	all
+ 		$(MKINSTALLDIRS) $(libdir)
+ 		$(INSTALL_DATA) $(TARGET) $(libdir)
+-		$(INSTALL_DATA) librplay.so $(libdir)
++		$(INSTALL_DATA) librplay.so.0.0 $(libdir)
+ 
+ uninstall:
+ 		$(RM) $(libdir)/$(TARGET)
+-		$(RM) $(libdir)/librplay.so
++		$(RM) $(libdir)/librplay.so.0.0
+ 
+ clean:
+ 		$(RM) $(OBJS) $(SHAREDOBJS) $(TARGET) librplay.so a.out core *~ *.bak *.orig TAGS
