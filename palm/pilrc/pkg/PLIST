@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/08/17 02:49:57 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.2 2001/08/18 21:30:35 pvalchev Exp $
 bin/pilrc
+!%%no_x11%%
 share/doc/pilrc/archive.html
 share/doc/pilrc/contrib.html
 share/doc/pilrc/download.html

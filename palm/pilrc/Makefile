@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/17 02:49:57 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.2 2001/08/18 21:30:35 pvalchev Exp $
 
 COMMENT=	"generate resources for PalmOS applications from text descr"
 
@@ -19,9 +19,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.hig.se/~ardiri/download/palm/
 
+FLAVORS=	no_x11
+FLAVOR?=
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
+
+.if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS=	--disable-pilrcui
+.else
+LIB_DEPENDS=	gtk.1.2:gtk+-*:x11/gtk+
+CONFIGURE_ARGS= --enable-pilrcui
+.endif
 
 DOCDIR=		${PREFIX}/share/doc/pilrc
 
