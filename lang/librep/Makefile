@@ -1,15 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2002/11/28 16:34:29 margarida Exp $
-# Original from: John Harper <jsh@users.sourceforge.net>
+# $OpenBSD: Makefile,v 1.13 2003/05/15 05:26:58 margarida Exp $
 
 COMMENT=	"Emacs Lisp-like runtime library"
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
-.if ${MACHINE_ARCH} == "powerpc"
-BROKEN=		A bug in GCC on powerpc
-.endif
-
-VERSION=	0.13.4
+VERSION=	0.16.2
 DISTNAME=	librep-${VERSION}
 CATEGORIES=	lang
 
@@ -22,6 +17,7 @@ LIB_DEPENDS=	gdbm.2::databases/gdbm
 
 MAINTAINER=	Margarida Sequeira <margarida@openbsd.org>
 
+# GPL
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,6 +27,10 @@ SUBST_VARS=	OPSYS_VER VERSION
 
 .if ${MACHINE_ARCH:Msparc64}
 CFLAGS+=	-O0
+.endif
+
+.if ${MACHINE_ARCH:Mpowerpc}
+PATCH_LIST=	gcc-* patch-*
 .endif
 
 USE_GMAKE=	Yes

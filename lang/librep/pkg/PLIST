@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/02/21 17:56:28 danh Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/05/15 05:26:58 margarida Exp $
 bin/rep
 bin/rep-config
 bin/rep-remote
@@ -13,41 +13,44 @@ info/librep.info
 @exec install-info --info-dir=%D/info %D/info/librep.info
 lib/librep.a
 lib/librep.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/DOC
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gettext.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gettext.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/readline.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/readline.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/tables.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/tables.la
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/timers.a
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/timers.la
-libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/install-aliases
-libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/libtool
-libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/rep_config.h
-libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}/rules.mk
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/DOC
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/emulate-gnu-tar
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gettext.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gettext.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/readline.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/readline.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/util/md5.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/util/md5.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/tables.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/tables.la
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/timers.a
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/timers.la
+libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/install-aliases
+libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/libtool
+libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep_config.h
+libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rules.mk
 share/aclocal/rep.m4
 share/rep/${VERSION}/lisp/cgi-get.jl
 share/rep/${VERSION}/lisp/cgi-get.jlc
@@ -93,6 +96,8 @@ share/rep/${VERSION}/lisp/rep/data/string-util.jl
 share/rep/${VERSION}/lisp/rep/data/string-util.jlc
 share/rep/${VERSION}/lisp/rep/data/symbol-table.jl
 share/rep/${VERSION}/lisp/rep/data/symbol-table.jlc
+share/rep/${VERSION}/lisp/rep/data/trie.jl
+share/rep/${VERSION}/lisp/rep/data/trie.jlc
 share/rep/${VERSION}/lisp/rep/i18n/xgettext.jl
 share/rep/${VERSION}/lisp/rep/i18n/xgettext.jlc
 share/rep/${VERSION}/lisp/rep/io/file-handlers.jl
@@ -125,6 +130,8 @@ share/rep/${VERSION}/lisp/rep/lang/define.jl
 share/rep/${VERSION}/lisp/rep/lang/define.jlc
 share/rep/${VERSION}/lisp/rep/lang/doc.jl
 share/rep/${VERSION}/lisp/rep/lang/doc.jlc
+share/rep/${VERSION}/lisp/rep/lang/error-helper.jl
+share/rep/${VERSION}/lisp/rep/lang/error-helper.jlc
 share/rep/${VERSION}/lisp/rep/lang/interpreter.jl
 share/rep/${VERSION}/lisp/rep/lang/interpreter.jlc
 share/rep/${VERSION}/lisp/rep/lang/math.jl
@@ -137,6 +144,8 @@ share/rep/${VERSION}/lisp/rep/module-system.jl
 share/rep/${VERSION}/lisp/rep/module-system.jlc
 share/rep/${VERSION}/lisp/rep/net/domain-name.jl
 share/rep/${VERSION}/lisp/rep/net/domain-name.jlc
+share/rep/${VERSION}/lisp/rep/net/rpc.jl
+share/rep/${VERSION}/lisp/rep/net/rpc.jlc
 share/rep/${VERSION}/lisp/rep/regexp.jl
 share/rep/${VERSION}/lisp/rep/regexp.jlc
 share/rep/${VERSION}/lisp/rep/structures.jl
@@ -147,10 +156,19 @@ share/rep/${VERSION}/lisp/rep/system/environ.jl
 share/rep/${VERSION}/lisp/rep/system/environ.jlc
 share/rep/${VERSION}/lisp/rep/system/pwd-prompt.jl
 share/rep/${VERSION}/lisp/rep/system/pwd-prompt.jlc
+share/rep/${VERSION}/lisp/rep/test/autoload.jl
+share/rep/${VERSION}/lisp/rep/test/data.jl
+share/rep/${VERSION}/lisp/rep/test/data.jlc
+share/rep/${VERSION}/lisp/rep/test/framework.jl
+share/rep/${VERSION}/lisp/rep/test/framework.jlc
 share/rep/${VERSION}/lisp/rep/threads/condition-variable.jl
 share/rep/${VERSION}/lisp/rep/threads/condition-variable.jlc
+share/rep/${VERSION}/lisp/rep/threads/message-port.jl
+share/rep/${VERSION}/lisp/rep/threads/message-port.jlc
 share/rep/${VERSION}/lisp/rep/threads/mutex.jl
 share/rep/${VERSION}/lisp/rep/threads/mutex.jlc
+share/rep/${VERSION}/lisp/rep/threads/proxy.jl
+share/rep/${VERSION}/lisp/rep/threads/proxy.jlc
 share/rep/${VERSION}/lisp/rep/threads/utils.jl
 share/rep/${VERSION}/lisp/rep/threads/utils.jlc
 share/rep/${VERSION}/lisp/rep/user.jl
@@ -211,6 +229,10 @@ share/rep/${VERSION}/lisp/rep/www/fetch-url.jl
 share/rep/${VERSION}/lisp/rep/www/fetch-url.jlc
 share/rep/${VERSION}/lisp/rep/www/quote-url.jl
 share/rep/${VERSION}/lisp/rep/www/quote-url.jlc
+share/rep/${VERSION}/lisp/rep/xml/printer.jl
+share/rep/${VERSION}/lisp/rep/xml/printer.jlc
+share/rep/${VERSION}/lisp/rep/xml/reader.jl
+share/rep/${VERSION}/lisp/rep/xml/reader.jlc
 share/rep/${VERSION}/lisp/ring.jl
 share/rep/${VERSION}/lisp/ring.jlc
 share/rep/${VERSION}/lisp/scheme.jl
@@ -240,11 +262,13 @@ share/rep/${VERSION}/lisp/unscheme/syntax.jlc
 %%SHARED%%
 @dirrm share/rep/${VERSION}/lisp/unscheme
 @dirrm share/rep/${VERSION}/lisp/scheme
+@dirrm share/rep/${VERSION}/lisp/rep/xml
 @dirrm share/rep/${VERSION}/lisp/rep/www
 @dirrm share/rep/${VERSION}/lisp/rep/vm/compiler
 @dirrm share/rep/${VERSION}/lisp/rep/vm
 @dirrm share/rep/${VERSION}/lisp/rep/util
 @dirrm share/rep/${VERSION}/lisp/rep/threads
+@dirrm share/rep/${VERSION}/lisp/rep/test
 @dirrm share/rep/${VERSION}/lisp/rep/system
 @dirrm share/rep/${VERSION}/lisp/rep/net
 @dirrm share/rep/${VERSION}/lisp/rep/mail
@@ -258,14 +282,15 @@ share/rep/${VERSION}/lisp/unscheme/syntax.jlc
 @dirrm share/rep/${VERSION}/lisp
 @dirrm share/rep/${VERSION}
 @dirrm share/rep
-@dirrm libexec/rep/${ARCH}-unknown-openbsd${OPSYS_VER}
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/data
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep
-@dirrm libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}
+@dirrm libexec/rep/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/util
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/data
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep
+@dirrm libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}
 @dirrm libexec/rep/${VERSION}
 @dirrm libexec/rep

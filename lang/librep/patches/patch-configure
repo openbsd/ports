@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.1 2003/05/15 05:26:58 margarida Exp $
+--- configure.orig	Wed May 14 01:21:58 2003
++++ configure	Wed May 14 01:22:35 2003
+@@ -3986,15 +3986,6 @@ echo "$ac_t""$hardcode_action" 1>&6
+ 
+ striplib=
+ old_striplib=
+-echo $ac_n "checking whether stripping libraries is possible""... $ac_c" 1>&6
+-echo "configure:3991: checking whether stripping libraries is possible" >&5
+-if test -n "$STRIP" && $STRIP -V 2>&1 | grep "GNU strip" >/dev/null; then
+-  test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
+-  test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+-  echo "$ac_t""yes" 1>&6
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+ 
+ reload_cmds='$LD$reload_flag -o $output$reload_objs'
+ test -z "$deplibs_check_method" && deplibs_check_method=unknown

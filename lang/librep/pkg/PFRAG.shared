@@ -1,18 +1,19 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2001/02/21 17:56:28 danh Exp $
-lib/librep.so.10.3
-DYNLIBDIR(%B)
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/gettext.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/readline.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/tables.so
-libexec/rep/${VERSION}/${ARCH}-unknown-openbsd${OPSYS_VER}/timers.so
+@comment $OpenBSD: PFRAG.shared,v 1.3 2003/05/15 05:26:58 margarida Exp $
+lib/librep.so.12.0
+DYNLIBDIR(%D/lib)
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gdbm.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/gettext.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/readline.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/data/tables.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/i18n/gettext.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/gdbm.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/db/sdbm.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/readline.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/sockets.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/io/timers.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/lang/record-profile.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/util/md5.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/rep/vm/safe-interpreter.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/sdbm.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/tables.so
+libexec/rep/${VERSION}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/timers.so
