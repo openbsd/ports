@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_acct_c,v 1.4 2002/09/30 15:19:40 danh Exp $
+--- src/acct.c.orig	Wed Feb  6 08:44:35 2002
++++ src/acct.c	Sun Sep 29 23:43:18 2002
+@@ -931,11 +931,11 @@ static int rad_check_ts(struct radutmp *
+ 
+ 	s = CHECKRAD2;
+ 	execl(CHECKRAD2, "checkrad", nas->nastype, address, port,
+-		ut->login, session_id, NULL);
++		ut->login, session_id, (void *)NULL);
+ 	if (errno == ENOENT) {
+ 		s = CHECKRAD1;
+ 		execl(CHECKRAD1, "checklogin", nas->nastype, address, port,
+-			ut->login, session_id, NULL);
++			ut->login, session_id, (void *)NULL);
+ 	}
+ 	log(L_ERR, "Check-TS: exec %s: %s", s, strerror(errno));
+ 
