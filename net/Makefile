@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2001/02/27 17:42:16 brad Exp $
+# $OpenBSD: Makefile,v 1.126 2001/02/28 23:59:39 naddy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -67,6 +67,8 @@
      SUBDIR += nmap:no_x11
      SUBDIR += ns
      SUBDIR += nsping
+     SUBDIR += nslint
+     SUBDIR += nslint:static
      SUBDIR += ntop
      SUBDIR += ntp
      SUBDIR += p5-Net-DNS
