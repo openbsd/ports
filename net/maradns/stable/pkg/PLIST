@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:41 espie Exp $
-@pkgcfl maradns-1.1.*
+@comment $OpenBSD: PLIST,v 1.3 2004/09/18 13:01:47 espie Exp $
+@conflict maradns->=1.1
 bin/askmara
 bin/getzone
 @man man/man1/askmara.1

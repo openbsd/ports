@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/15 18:17:45 espie Exp $
-@pkgcfl radiusd-lucent-*
+@comment $OpenBSD: PLIST,v 1.10 2004/09/18 13:01:48 espie Exp $
+@conflict radiusd-lucent-*
 bin/builddbm
 bin/radclient
 bin/radlast

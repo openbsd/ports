@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2004/09/15 18:17:48 espie Exp $
-@pkgcfl quagga-*
+@comment $OpenBSD: PLIST,v 1.15 2004/09/18 13:01:48 espie Exp $
+@conflict quagga-*
 bin/vtysh
 @info info/zebra.info
 @man man/man1/vtysh.1

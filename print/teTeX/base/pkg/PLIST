@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2004/08/11 10:42:55 espie Exp $
-@pkgcfl dvipdfm-*
+@comment $OpenBSD: PLIST,v 1.16 2004/09/18 13:03:22 espie Exp $
+@conflict dvipdfm-*
 bin/MakeTeXPK
 bin/access
 bin/afm2tfm

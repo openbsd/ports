@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:45 espie Exp $
-@pkgcfl radiusd-cistron-*
+@comment $OpenBSD: PLIST,v 1.6 2004/09/18 13:01:48 espie Exp $
+@conflict radiusd-cistron-*
 bin/builddbm
 bin/dbmkeys
 bin/dbmrec

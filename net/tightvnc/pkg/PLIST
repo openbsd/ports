@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/09/15 18:17:46 espie Exp $
-@pkgcfl vnc-*
-@pkgcfl tightvnc-viewer-*
+@comment $OpenBSD: PLIST,v 1.11 2004/09/18 13:01:48 espie Exp $
+@conflict vnc-*
+@conflict tightvnc-viewer-*
 bin/Xvnc
 bin/vncconnect
 bin/vncpasswd

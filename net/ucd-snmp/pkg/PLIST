@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2004/09/15 18:17:47 espie Exp $
-@pkgcfl net-snmp-*
+@comment $OpenBSD: PLIST,v 1.14 2004/09/18 13:01:48 espie Exp $
+@conflict net-snmp-*
 @unexec rm -f %D/share/snmp/mibs/.index
 @mode 0555
 bin/encode_keychange
