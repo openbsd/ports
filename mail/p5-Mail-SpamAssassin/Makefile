@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2003/03/06 21:23:47 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/03/27 14:51:29 lebel Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-2.50
+DISTNAME=		Mail-SpamAssassin-2.52
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
