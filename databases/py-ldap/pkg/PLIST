@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/13 08:08:34 espie Exp $
-@comment @option no-default-conflict
-@comment @pkgcfl py-ldap-*-${MODPY_VERSION}
+@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:29:07 espie Exp $
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/dsml.py
 lib/python${MODPY_VERSION}/site-packages/dsml.pyc
 lib/python${MODPY_VERSION}/site-packages/dsml.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/
 lib/python${MODPY_VERSION}/site-packages/ldap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ldap/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/__init__.pyo
@@ -29,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/ldap/modlist.pyo
 lib/python${MODPY_VERSION}/site-packages/ldap/sasl.py
 lib/python${MODPY_VERSION}/site-packages/ldap/sasl.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/sasl.pyo
+lib/python${MODPY_VERSION}/site-packages/ldap/schema/
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/schema/__init__.pyo
@@ -47,27 +47,3 @@ lib/python${MODPY_VERSION}/site-packages/ldapurl.pyo
 lib/python${MODPY_VERSION}/site-packages/ldif.py
 lib/python${MODPY_VERSION}/site-packages/ldif.pyc
 lib/python${MODPY_VERSION}/site-packages/ldif.pyo
-share/examples/py-ldap/Demo/Lib/ldap/res/deltree.py
-share/examples/py-ldap/Demo/Lib/ldap/res/ldifwriter.py
-share/examples/py-ldap/Demo/Lib/ldap/res/sizelimit.py
-share/examples/py-ldap/Demo/Lib/ldapurl/urlsearch.py
-share/examples/py-ldap/Demo/Lib/ldif/ldifcopy.py
-share/examples/py-ldap/Demo/initialize.py
-share/examples/py-ldap/Demo/options.py
-share/examples/py-ldap/Demo/pickle_ldapobject.py
-share/examples/py-ldap/Demo/reconnect.py
-share/examples/py-ldap/Demo/rename.py
-share/examples/py-ldap/Demo/sasl_bind.py
-share/examples/py-ldap/Demo/schema.py
-share/examples/py-ldap/Demo/schema_tree.py
-share/examples/py-ldap/Demo/simple.py
-share/examples/py-ldap/Demo/simplebrowse.py
-@dirrm share/examples/py-ldap/Demo/Lib/ldif
-@dirrm share/examples/py-ldap/Demo/Lib/ldapurl
-@dirrm share/examples/py-ldap/Demo/Lib/ldap/res
-@dirrm share/examples/py-ldap/Demo/Lib/ldap
-@dirrm share/examples/py-ldap/Demo/Lib
-@dirrm share/examples/py-ldap/Demo
-@dirrm share/examples/py-ldap
-@dirrm lib/python${MODPY_VERSION}/site-packages/ldap/schema
-@dirrm lib/python${MODPY_VERSION}/site-packages/ldap
