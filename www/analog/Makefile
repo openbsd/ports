@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2002/03/01 10:07:25 form Exp $
+# $OpenBSD: Makefile,v 1.31 2002/03/20 13:09:29 form Exp $
 
 COMMENT=	"extremely fast program for analysing WWW logfiles"
 
-DISTNAME=	analog-5.21
+DISTNAME=	analog-5.22
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.statslab.cam.ac.uk/~sret1/analog/ \
