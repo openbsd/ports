@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 22:02:21 avsm Exp $
+libdata/perl5/site_perl/Image/Info.pm
+libdata/perl5/site_perl/Image/Info/ASCII.pm
+libdata/perl5/site_perl/Image/Info/BMP.pm
+libdata/perl5/site_perl/Image/Info/GIF.pm
+libdata/perl5/site_perl/Image/Info/JPEG.pm
+libdata/perl5/site_perl/Image/Info/PNG.pm
+libdata/perl5/site_perl/Image/Info/PPM.pm
+libdata/perl5/site_perl/Image/Info/SVG.pm
+libdata/perl5/site_perl/Image/Info/XBM.pm
+libdata/perl5/site_perl/Image/Info/XPM.pm
+libdata/perl5/site_perl/Image/TIFF.pm
+man/man3/Image::Info.3p
+man/man3/Image::Info::ASCII.3p
+man/man3/Image::Info::BMP.3p
+man/man3/Image::Info::SVG.3p
+man/man3/Image::Info::XBM.3p
+man/man3/Image::Info::XPM.3p
+@dirrm libdata/perl5/site_perl/Image/Info
