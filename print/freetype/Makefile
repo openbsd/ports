@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 1999/03/31 21:42:11 brad Exp $
+# $OpenBSD: Makefile,v 1.3 1999/04/08 04:17:05 brad Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 DISTNAME=	freetype-1.2
@@ -20,8 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls
 
-# People that installed an older version of freetype wound up with
-# libttf.a and libttf.so.2 in /usr/local/lib... these files
+# People that installed an older version of freetype wound up with a
+# shared lib with just a major (FreeBSD ELF versioning)... these files
 # MUST be removed as the version was incorrect (it came from 1.1
 # sources). Check that out here (and bitch if necessary).
 #
@@ -34,7 +34,6 @@ pre-extract:
 	   echo "|"; \
 	   echo "|      pkg_delete -f `pkg_info -e 'freetype-*'`"; \
 	   echo "|      ldconfig ${LOCALBASE}/lib"; \
-	   echo "|      ldconfig -m ${LOCALBASE}/lib"; \
 	   echo "|"; \
 	   echo "+-------------------"; \
 	   exit 1; \
