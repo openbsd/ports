@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2001/02/14 15:46:40 wilfried Exp $
+# $OpenBSD: Makefile,v 1.46 2001/02/18 22:08:01 jakob Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += fetchmail:kerberos
      SUBDIR += hypermail
      SUBDIR += imap-uw
+     SUBDIR += imaputils-uw
      SUBDIR += maildrop
      SUBDIR += majordomo
      SUBDIR += mess822
