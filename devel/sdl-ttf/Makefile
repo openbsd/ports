@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/08/05 19:41:43 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.4 2001/08/10 23:16:27 pvalchev Exp $
 
 COMMENT=	"SDL TrueType fonts library"
 
@@ -25,7 +25,11 @@ USE_X11=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+# Cheat on freetype-config for now due to it not being included in 2.9
+CONFIGURE_ENV+=		FREETYPE_CONFIG=/usr/bin/false \
+			CPPFLAGS="-I${X11BASE}/include/freetype2" \
+			LIBS="-lfreetype"
 
 .include <bsd.port.mk>
