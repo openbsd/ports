@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/12 22:52:05 jsyn Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/18 12:10:25 jsyn Exp $
 
 COMMENT=		"source code auditing tool"
 
 DISTNAME=		rats-1.3
 CATEGORIES=     	devel security
-NEED_VERSION=		1.496
+NEED_VERSION=		1.498
 
 HOMEPAGE=		http://www.securesw.com/rats/
 
@@ -21,10 +21,11 @@ LIB_DEPENDS=		expat::textproc/expat
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib \
-			--with-expat-include=${LOCALBASE}/include
+			--with-expat-include=${LOCALBASE}/include \
+			--libdir=${WRKINST}${PREFIX}/share/rats
 MAKE_FLAGS=		CFLAGS='${CFLAGS} -I${LOCALBASE}/include \
 			  -DHAVE_LIBEXPAT=1 -DHAVE_EXPAT_H=1 \
-			  -DLIBDIR=\"${LOCALBASE}/lib\"'
+			  -DLIBDIR=\"${LOCALBASE}/share/rats\"' 
 
 ALL_TARGET=		rats
 NO_REGRESS=		Yes
