@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_mail_c,v 1.1 2003/06/17 00:52:12 avsm Exp $
+--- src/mail.c.orig	Tue Jun 17 01:37:32 2003
++++ src/mail.c	Tue Jun 17 01:40:52 2003
+@@ -895,7 +895,7 @@ check_pop3(Mailbox *mbox)
+ 		/* Set the new_mail_count only if the UIDL is changed to avoid
+ 		|  re-reporting mail is new after MUA button has been clicked.
+ 		*/
+-		if (   sscanf(mbox->tcp_in->str, "+OK %*d %128s", line) == 1
++		if (   sscanf(mbox->tcp_in->str, "+OK %*d %127s", line) == 1
+ 			&& (   gkrellm_dup_string((gchar **) (&mbox->private), line)
+ 				|| unseen_is_new
+ 			   )
+@@ -1665,16 +1665,16 @@ make_fetch_tooltip(gchar *line, gint msg
+ 
+ 	if ((s = strstr(line, "sequence unseen")) != NULL)	/* flist */
+ 		{
+-		sscanf(line, "%64s", buf);
++		sscanf(line, "%63s", buf);
+ 		account->username = g_strdup(buf);
+ 		}
+ 	else if ((s = strstr(line, " for ")) != NULL)		/* fetchmail */
+ 		{
+-		sscanf(s + 5, "%64s", buf);
++		sscanf(s + 5, "%63s", buf);
+ 		account->username = g_strdup(buf);
+ 		if ((s = strstr(line, " at ")) != NULL)
+ 			{
+-			sscanf(s + 4, "%64s", buf);
++			sscanf(s + 4, "%63s", buf);
+ 			account->server = g_strdup(buf);
+ 			}
+ 		if ((s = strstr(line, "(folder ")) != NULL)
+@@ -2493,10 +2493,10 @@ load_mail_config(gchar *arg)
+ 			account = g_new0(MailAccount, 1);
+ 			account_prev = NULL;
+ 			account->mboxtype = MBOX_REMOTE;
+-			n = sscanf(item, "%32s %256s \"%64[^\"]\" \"%64[^\"]\" %d %64s",
++			n = sscanf(item, "%31s %255s \"%63[^\"]\" \"%63[^\"]\" %d %63s",
+ 					auth, server, username, password, &account->port, folder);
+ 			if (n < 5)
+-				n = sscanf(item, "%32s %256s %64s %64s %d %64s",
++				n = sscanf(item, "%31s %255s %63s %63s %d %63s",
+ 					auth, server, username, password, &account->port, folder);
+ 			if (n >= 5)
+ 				{
