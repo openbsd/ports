@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Sun Nov 14 01:21:11 1999
-+++ src/Makefile.in	Sun Nov 21 15:51:22 1999
+--- src/Makefile.in.orig	Sun Jan  9 14:38:29 2000
++++ src/Makefile.in	Sat Mar 25 11:04:23 2000
 @@ -2,8 +2,8 @@
  #---------------------------------------------------------------------------
  # ANSI C compiler
@@ -13,7 +13,7 @@
  # System library that contains functions for dynamic linking (-ldl)
 @@ -13,9 +13,9 @@
  #---------------------------------------------------------------------------
- # ELF specific (Linux)
+ # Compiler for producing a shared library (ELF)
  #---------------------------------------------------------------------------
 -ELF_CC 		= @ELF_CC@
 -ELF_CFLAGS	= @ELF_CFLAGS@
