@@ -1,0 +1,4 @@
+wmclockmon is a nice digital clock Window Maker dockapp with 7
+different styles in either LCD style or LED style. It uses
+locales to display week-day and month names. It also features 
+Internet time display.
