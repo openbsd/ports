@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2000/10/22 14:03:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2000/11/02 15:19:34 espie Exp $
 
 PKGNAME=	wordperfect-8.0
 CATEGORIES=     editors
@@ -35,10 +35,10 @@ do-fetch:
 	   echo "" ; \
 	   echo "  The source to this port may not be automatically fetched" ; \
 	   echo "  due to licensing restrictions. You MUST fetch the source" ; \
-	   echo "(http://linux.corel.com/products/linuxproducts_wp8_download.htm)" ; \
+	   echo "  (http://linux.corel.com/products/wp8/download.htm)" ; \
 	   echo "  manually after reading and agreeing to the license at:" ; \
 	   echo "" ; \
-	   echo "	http://linux.corel.com/wp8_agreement.htm" ; \
+	   echo "    http://linux.corel.com/products/wp8/download_eula.htm" ; \
 	   echo "" ; \
 	   echo "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" ; \
 	   echo "  and then restart this build." ; \
