@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.260 2000/04/10 00:42:02 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.261 2000/04/10 01:11:36 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -457,8 +457,8 @@ FULLDISTDIR?=	${DISTDIR}
 PACKAGES?=		${PORTSDIR}/packages/${ARCH}
 TEMPLATES?=		${PORTSDIR}/infrastructure/templates
 
-CDROM_PACKAGES?=	${PORTSDIR}/cdrom-packages
-FTP_PACKAGES?=		${PORTSDIR}/ftp-packages
+CDROM_PACKAGES?=	${PORTSDIR}/cdrom-packages/${ARCH}
+FTP_PACKAGES?=		${PORTSDIR}/ftp-packages/${ARCH}
 
 .if exists(${.CURDIR}/patches.${ARCH})
 PATCHDIR?=		${.CURDIR}/patches.${ARCH}
@@ -1703,42 +1703,39 @@ mirror-distfiles:
 	@cd ${.CURDIR} && make __FETCH_ALL=Yes __ARCH_OK=Yes NO_IGNORE=Yes NO_WARNINGS=Yes fetch
 .endif
 
-all-packages:
-.if !exists(${PKGFILE})
-	cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes
-.endif
+all-package: ${PKGFILE}
 
 # Invoke "make cdrom-packages CDROM_PACKAGES=/cdrom/snapshots/packages"
+.if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
+cdrom-packages: ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}
+.else
 cdrom-packages:
-.if defined(PERMIT_PACKAGE_CDROM) && (${PERMIT_PACKAGE_CDROM:L} == "yes") && \
-    !exists(${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}})
-	@if [ ! -f ${PKGFILE} ]; then \
-	   mkdir -p ${PORTSDIR}/logs ;\
-	   cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes \
-	      2>&1 | tee ${PORTSDIR}/logs/${PKGNAME}.log ;\
-	fi
-	@if [ -f ${PKGFILE} ]; then \
-	   mkdir -p ${CDROM_PACKAGES} ;\
-	   rm -f ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX} ;\
-	   ln ${PKGFILE} ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX} ;\
-	fi
 .endif
 
 # Invoke "make ftp-packages FTP_PACKAGES=/pub/OpenBSD/snapshots/packages"
+.if defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
+ftp-packages: ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}
+.else
 ftp-packages:
-.if defined(PERMIT_PACKAGE_FTP) && (${PERMIT_PACKAGE_FTP:L} == "yes") && \
-    !exists(${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}})
-	@if [ ! -f ${PKGFILE} ]; then \
-	   mkdir -p ${PORTSDIR}/logs ;\
-	   cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes \
-	      2>&1 | tee  ${PORTSDIR}/logs/${PKGNAME}.log ;\
-	fi
-	@if [ -f ${PKGFILE} ]; then \
-	   mkdir -p ${FTP_PACKAGES} ;\
-	   rm -f ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX} ;\
-	   ln ${PKGFILE} ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX} ;\
-	fi
 .endif
+
+
+${PKGFILE}:
+	@mkdir -p ${PORTSDIR}/logs/${ARCH}
+	@cd ${.CURDIR} && make package ALWAYS_PACKAGE=Yes 2>&1 | \
+		tee ${PORTSDIR}/logs/${ARCH}/${PKGNAME}.log
+
+${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}: ${PKGFILE}
+	@mkdir -p ${FTP_PACKAGES}
+	@rm -f ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}
+	@ln ${PKGFILE} ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX} 2>/dev/null || \
+	cp -p ${PKGFILE} ${FTP_PACKAGES}/${PKGNAME}${PKG_SUFX}
+
+${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}: ${PKGFILE}
+	@mkdir -p ${CDROM_PACKAGES}
+	@rm -f ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}
+	@ln ${PKGFILE} ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX} 2>/dev/null || \
+	cp -p ${PKGFILE} ${CDROM_PACKAGES}/${PKGNAME}${PKG_SUFX}
 
 # list the distribution and patch files used by a port.  Typical
 # use is		make ECHO_MSG=: list-distfiles | tee some-file
