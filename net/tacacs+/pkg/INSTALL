@@ -1,10 +1,11 @@
 #!/bin/sh
-# $OpenBSD: INSTALL,v 1.1 2003/06/09 07:19:31 sturm Exp $
+# $OpenBSD: INSTALL,v 1.2 2003/06/22 17:08:08 sturm Exp $
 #
 # Pre/post-installation setup of tacacs
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 PREFIX=${PKG_PREFIX:-/usr/local}
+ID=511
 
 do_usergroup_install()
 {
@@ -14,7 +15,7 @@ do_usergroup_install()
     echo "===> Using ${TACACSGROUP} group for tacacs"
   else
     echo "===> Creating ${TACACSGROUP} group for tacacs"
-    groupadd ${TACACSGROUP}
+    groupadd -g ${ID} ${TACACSGROUP}
   fi
   userinfo -e ${TACACSUSER}
   if [ $? -eq 0 ]; then
@@ -22,7 +23,7 @@ do_usergroup_install()
   else
     echo "===> Creating ${TACACSUSER} user for tacacs"
     useradd -g ${TACACSGROUP} -d /nonexistent -c 'TACACS+ user' \
-        -s /sbin/nologin ${TACACSUSER}
+        -s /sbin/nologin -u ${ID} ${TACACSUSER}
   fi
 }
 
