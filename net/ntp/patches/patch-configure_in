@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1 2002/05/11 20:58:14 danh Exp $
+$OpenBSD: patch-configure_in,v 1.2 2002/05/17 15:58:10 danh Exp $
 --- configure.in.orig	Tue Dec 18 21:00:59 2001
 +++ configure.in	Mon May  6 15:07:08 2002
 @@ -190,10 +190,16 @@ AC_CHECK_LIB(kvm, main)		dnl We already 
@@ -19,13 +19,3 @@ $OpenBSD: patch-configure_in,v 1.1 2002/05/11 20:58:14 danh Exp $
  
  dnl Digital UNIX V4.0 and Solaris 7 have POSIX.1c functions in -lrt
  dnl Solaris 2.6 only has -lposix4; in Solaris 7, this is a symlink to -lrt,
-@@ -608,6 +614,9 @@ case "$target" in
- esac
- AC_REPLACE_FUNCS(mktime)
- case "$target" in
-+ i386-*-openbsd*)
-+    # mlockall broken
-+    ;;
-  *-*-aix4*)
-     # Just a stub.  Idiots.
-     ;;
