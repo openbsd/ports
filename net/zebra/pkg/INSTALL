@@ -1,0 +1,60 @@
+#!/bin/sh
+# $OpenBSD: INSTALL,v 1.1 2000/08/23 16:05:42 peter Exp $
+#
+# Pre/post-installation setup of zebra
+
+SAMPLES="bgpd.conf.sample bgpd.conf.sample2 ripd.conf.sample
+	 ripngd.conf.sample zebra.conf.sample ospfd.conf.sample
+	 ospf6d.conf.sample README.mbgp"
+
+# exit on errors, use a sane path and install prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=/etc/zebra
+SAMPLE_CONFIG_DIR=${PREFIX}/share/zebra
+
+# verify proper execution
+#
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+# Function: tell the user what s/he needs to do to use the port just installed
+#
+do_notice()
+{
+    echo
+    echo "+---------------"
+    echo "| Sample $1 configuration files have been installed in"
+    echo "| ${CONFIG_DIR}.  Please review and rename these files and change"
+    echo "| the configuration to meet your needs."
+    echo "+---------------"
+    echo
+
+}
+
+# Verify/process the command
+#
+case $2 in
+    PRE-INSTALL)
+	: nothing to pre-install for this port
+	;;
+    POST-INSTALL)
+	install -d -o root -g bin -m 755 /etc/zebra
+	for file in ${SAMPLES}; do
+		install -o root -g bin -m 444 \
+			${PREFIX}/share/zebra/${file} \
+			${CONFIG_DIR}
+	done
+	do_notice $1
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0

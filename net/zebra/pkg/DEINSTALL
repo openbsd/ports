@@ -1,0 +1,26 @@
+#!/bin/sh
+# $OpenBSD: DEINSTALL,v 1.1 2000/08/23 16:05:42 peter Exp $
+#
+# zebra deinstallation
+
+# exit on errors, use a sane path and prefix
+#
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+CONFIG_DIR=/etc/zebra
+
+if [ -d ${CONFIG_DIR} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need to perform"
+    echo "| this step as root:"
+    echo "|"
+    echo "|           rm -rf ${CONFIG_DIR}"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0
