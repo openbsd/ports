@@ -1,0 +1,11 @@
+This module uses Data::Flow interface, thus one uses it in
+the following fashion:
+
+     $c = new C::Scan(attr1 => $value1, attr2 => $value2);
+     $c->set( attr3 => $value3 );
+
+     $value4 = $c->get('attr4');
+
+Attributes are depending on some other attributes. The
+only required attribute, i.e., the attribute which should
+be set, is filename, which denotes which file to parse.

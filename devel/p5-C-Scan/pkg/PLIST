@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/09 06:25:11 kevlo Exp $
+libdata/perl5/site_perl/C/Scan.pm
+man/man3/C::Scan.3p
