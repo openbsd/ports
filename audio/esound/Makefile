@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 1999/11/29 07:05:48 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 1999/12/10 19:04:02 brad Exp $
 # $FreeBSD: Makefile,v 1.8 1999/03/09 01:08:46 nectar Exp $
 
 DISTNAME=	esound-0.2.16
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR= sources/esound
+MASTER_SITE_SUBDIR= stable/sources/esound
 
 NEED_VERSION=	1.78
 
@@ -18,7 +18,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-libwrap
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/aclocal/
+	@mkdir -p ${LOCALBASE}/share/aclocal
 	${INSTALL_DATA} ${WRKSRC}/esd.m4 ${LOCALBASE}/share/aclocal/
 	@${LDCONFIG} -m ${PREFIX}/lib
 
