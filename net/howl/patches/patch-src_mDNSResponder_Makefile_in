@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mDNSResponder_Makefile_in,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
+--- src/mDNSResponder/Makefile.in.orig	Mon Nov 22 19:13:03 2004
++++ src/mDNSResponder/Makefile.in	Thu Jan 20 19:46:27 2005
+@@ -98,7 +98,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ SUBDIRS = Posix Win32
+ INCLUDES = -I$(top_srcdir)/include/ -I$(top_srcdir)/src/lib/howl -I$(top_srcdir)/src/lib/mDNSResponder
+-CFLAGS = -DHOWL_KERNEL
++CFLAGS += -DHOWL_KERNEL
+ LDADD = $(top_srcdir)/src/lib/mDNSResponder/libmDNSResponder.la $(top_srcdir)/src/lib/howl/libhowl.la $(PLATFORM_LIBS)
+ AM_LDFLAGS = -static
+ bin_PROGRAMS = mDNSResponder

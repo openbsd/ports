@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_howl_time_c,v 1.1.1.1 2005/01/21 02:11:57 jolan Exp $
+--- src/lib/howl/time.c.orig	Sat Jul 31 17:26:06 2004
++++ src/lib/howl/time.c	Thu Jan 20 02:44:36 2005
+@@ -29,7 +29,7 @@
+ #include "time_i.h"
+ #include <salt/debug.h>
+ #include <stdio.h>
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #	include <sys/time.h>
+ #elif defined(WIN32)
+ #	include <time.h>
