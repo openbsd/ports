@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2001/08/29 05:27:40 kevlo Exp $
+# $OpenBSD: Makefile,v 1.19 2001/08/29 15:23:36 kevlo Exp $
 
 COMMENT=	"shell-like command line ftp client"
 
 DISTNAME=	lftp-2.4.2
 CATEGORIES=     net
 NEED_VERSION=	1.448
-MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/
+MASTER_SITE_SUBDIR= system/network/file-transfer/
 
 HOMEPAGE=	http://lftp.yar.ru/
 
