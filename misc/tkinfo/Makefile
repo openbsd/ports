@@ -3,15 +3,17 @@
 # Date created:         May 20 1998
 # Whom:                 Angelos D. Keromytis
 #
-# $OpenBSD: Makefile,v 1.10 2001/05/06 02:31:06 lebel Exp $
+# $OpenBSD: Makefile,v 1.11 2001/09/08 06:39:34 kevlo Exp $
 #
 
 COMMENT=	"Tk script to read GNU info files and display them"
 
 DISTNAME=	tkinfo-2.5
 CATEGORIES=	misc 
-NEED_VERSION=	1.402
-MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
+NEED_VERSION=	1.454
+MASTER_SITES=	${HOMEPAGE}
+
+HOMEPAGE=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	Angelos D. Keromytis <angelos@openbsd.org>
 
