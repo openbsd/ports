@@ -1,0 +1,9 @@
+--- i18n.h.orig	Mon Nov 23 02:41:44 1998
++++ i18n.h	Mon Jan 18 21:59:08 1999
+@@ -1,5 +1,6 @@
+ /* Dummy header for libintl.h */
+ 
++#undef _
+ #ifdef ENABLE_NLS
+ #undef __OPTIMIZE__
+ #include <libintl.h>

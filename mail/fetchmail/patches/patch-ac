@@ -1,4 +1,4 @@
---- configure.ori	Thu Jan  7 14:13:45 1999
+--- configure.orig	Thu Jan  7 14:13:45 1999
 +++ configure	Mon Jan 18 03:07:35 1999
 @@ -5160,10 +5160,10 @@
  # The "elif" arm (nonempty $with_kerberos) is kind of a crock.  It works for
