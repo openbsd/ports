@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/09/14 14:41:29 todd Exp $
+# $OpenBSD: Makefile,v 1.4 2001/09/19 14:37:49 naddy Exp $
 
 COMMENT=		"portable library for obtaining system information"
 V=			1.0.12
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -DUVM" \
+CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mgnome}
@@ -40,12 +40,5 @@ CONFIGURE_ARGS+=	--with-libgtop-guile=yes
 .else
 CONFIGURE_ARGS+=	--with-libgtop-guile=no
 .endif
-
-pre-fetch:
-        @echo \
-        echo "  WARNING: This application requires a kernel compiled" \
-        echo "  with 'option UVM' for proper operation.  The GENERIC" \
-        echo "  kernel contains this option." \
-        echo
 
 .include <bsd.port.mk>

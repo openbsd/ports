@@ -1,6 +1,0 @@
-
-*=================[ libgtop
-* libgtop_server has now been installed into ${PREFIX}/bin/
-* with setgid kmem.
-*================= libgtop ]
-

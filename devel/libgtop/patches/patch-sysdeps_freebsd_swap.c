@@ -1,3 +1,4 @@
+$OpenBSD: patch-sysdeps_freebsd_swap.c,v 1.2 2001/09/19 14:37:49 naddy Exp $
 --- sysdeps/freebsd/swap.c.orig	Sun Feb 13 16:47:59 2000
 +++ sysdeps/freebsd/swap.c	Mon Aug 27 17:02:38 2001
 @@ -69,9 +69,9 @@ static struct nlist nlst [] = {

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2001/09/19 14:37:49 naddy Exp $
+--- configure.orig	Tue Feb 27 14:25:33 2001
++++ configure	Wed Sep 19 16:14:06 2001
+@@ -8334,6 +8334,10 @@ fi
+ 
+ 	   fi
+ 
++	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	     LIBS="$LIBS -lintl";
++	   fi
++
+ 	   if test "$gt_cv_func_gettext_libc" = "yes" \
+ 	      || test "$gt_cv_func_gettext_libintl" = "yes"; then
+ 	      cat >> confdefs.h <<\EOF

@@ -1,3 +1,4 @@
+$OpenBSD: patch-sysdeps_freebsd_mem.c,v 1.2 2001/09/19 14:37:49 naddy Exp $
 --- sysdeps/freebsd/mem.c.orig	Sun Feb 13 16:47:58 2000
 +++ sysdeps/freebsd/mem.c	Mon Aug 27 17:02:38 2001
 @@ -31,7 +31,7 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-sysdeps_freebsd_procmem.c,v 1.2 2001/09/19 14:37:49 naddy Exp $
 --- sysdeps/freebsd/procmem.c.orig	Thu May 27 20:56:49 1999
 +++ sysdeps/freebsd/procmem.c	Mon Aug 27 17:24:33 2001
 @@ -31,8 +31,6 @@

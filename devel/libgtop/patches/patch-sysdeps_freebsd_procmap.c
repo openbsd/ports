@@ -1,3 +1,4 @@
+$OpenBSD: patch-sysdeps_freebsd_procmap.c,v 1.2 2001/09/19 14:37:49 naddy Exp $
 --- sysdeps/freebsd/procmap.c.orig	Thu May 27 20:56:48 1999
 +++ sysdeps/freebsd/procmap.c	Mon Aug 27 17:26:53 2001
 @@ -32,9 +32,6 @@

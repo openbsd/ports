@@ -1,8 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2001/09/13 20:45:46 todd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2001/09/19 14:37:49 naddy Exp $
 lib/libgtop.so.1.11
 lib/libgtop_common.so.1.11
 lib/libgtop_names.so.1.11
 lib/libgtop_suid_common.so.1.11
 lib/libgtop_sysdeps.so.1.11
 lib/libgtop_sysdeps_suid.so.1.11
-DYNLIBDIR(%D/lib)
+DYNLIBDIR(%B)
