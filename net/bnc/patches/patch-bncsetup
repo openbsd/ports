@@ -1,0 +1,37 @@
+--- bncsetup.orig	Tue Feb 27 11:25:23 2001
++++ bncsetup	Tue Feb 27 11:29:02 2001
+@@ -63,15 +63,8 @@
+ 
+ }
+ 
+-if ! [ -e ./mkpasswd ]
+-then
+-  echo "You need to Make the package before you can use this script"
+-  echo "(required ./mkpasswd)"
+-  bsclean 0
+-fi
+-
+ echo "BAD\$" > $TMPFILE
+-echo "Test" | ./mkpasswd -s >> $TMPFILE
++echo "Test" | !!PREFIX!!/bin/mkpasswd -s >> $TMPFILE
+ CRCYS=$(cat $TMPFILE | grep '\$' | tail -1 )
+ 
+ 
+@@ -201,13 +194,13 @@
+ 
+ if [ x$ERRORLEVEL = x0 ]
+ then 
+-  if [ -x ./mkpasswd ]
++  if [ -x !!PREFIX!!/bin/mkpasswd ]
+   then
+-    SUPERPASS="+"$(echo "$SUPERPASS" | ./mkpasswd -s)
+-    BNCPASS="+"$(echo "$BNCPASS" | ./mkpasswd -s)
++    SUPERPASS="+"$(echo "$SUPERPASS" | !!PREFIX!!/bin/mkpasswd -s)
++    BNCPASS="+"$(echo "$BNCPASS" | !!PREFIX!!/bin/mkpasswd -s)
+   else
+     clear
+-    echo "You have not did ./configure and make so there is no ./mkpasswd"
++    echo "You have not did ./configure and make so there is no mkpasswd"
+     echo "This program is required to produce the encryption"
+     bsclean 0
+   fi

@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sun Dec 31 03:19:39 2000
++++ Makefile.in	Tue Feb 27 11:50:17 2001
+@@ -1,12 +1,12 @@
+ OBJS = bnc.o conf.o server.o cmds.o mtype.o
+ LIBS = @LIBS@
+-OPTS = -O3
++OPTS = @CFLAGS@
+ COPT = -Wall
+ OOPT =
+ STRIP = strip
+-CC = gcc
++CC = @CC@
+ 
+-ALL: bnc mkpasswd
++all: bnc mkpasswd
+ 
+ mkpasswd:mkpasswd.c
+ 	${CC} ${OPTS} ${COPT} ${LIBS} -o mkpasswd mkpasswd.c

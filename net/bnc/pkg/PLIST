@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/02/27 17:29:48 brad Exp $
+bin/bnc
+bin/bncchk
+bin/bncsetup
+bin/mkpasswd
+share/doc/bnc/README
+share/examples/bnc/bnc.conf.sample
+@dirrm share/doc/bnc
+@dirrm share/examples/bnc
