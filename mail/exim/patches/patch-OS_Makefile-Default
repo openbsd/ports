@@ -1,0 +1,12 @@
+$OpenBSD: patch-OS_Makefile-Default,v 1.1 2000/08/02 15:44:12 naddy Exp $
+--- OS/Makefile-Default.orig	Thu Jul 27 14:37:08 2000
++++ OS/Makefile-Default	Thu Jul 27 14:37:22 2000
+@@ -53,7 +53,7 @@
+ 
+ # CC contains the name of the C compiler to be used.
+ 
+-CC=gcc
++# CC=gcc
+ 
+ 
+ # CFLAGS contains flags to be passed to the compiler. Nothing is defaulted

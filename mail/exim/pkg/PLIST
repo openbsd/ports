@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/06/04 22:42:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2000/08/02 15:44:12 naddy Exp $
 sbin/exim
-sbin/eximon
-sbin/eximon.bin
+!%%no_x11%%
 sbin/exim_dumpdb
 sbin/exim_fixdb
 sbin/exim_tidydb
@@ -22,8 +21,8 @@ info/exim_filter.info
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir
 @unexec install-info --delete %D/info/exim_filter.info %D/info/dir
-lib/exim/configure.sample
+share/examples/exim/configure.sample
 @exec [ -d /etc/exim ] || mkdir /etc/exim
 @exec [ -f /etc/exim/configure ] || install -m 644 %D/%F /etc/exim/configure
-@dirrm lib/exim
+@dirrm share/examples/exim
 @unexec echo "Please remove the /etc/exim directory manually"

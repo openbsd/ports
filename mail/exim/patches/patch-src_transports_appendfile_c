@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_transports_appendfile_c,v 1.1 2000/08/02 15:44:12 naddy Exp $
 --- src/transports/appendfile.c.orig	Wed Apr 12 11:44:59 2000
 +++ src/transports/appendfile.c	Mon Jun  5 00:14:52 2000
 @@ -2330,9 +2330,16 @@ opened, so that it goes away on closure.
