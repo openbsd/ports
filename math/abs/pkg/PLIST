@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/12/28 13:55:13 kevlo Exp $
+bin/abs
+share/examples/abs/benchmarck.abs
+share/examples/abs/call.abs
+share/examples/abs/case.abs
+share/examples/abs/charts.abs
+share/examples/abs/color.abs
+share/examples/abs/data
+share/examples/abs/example.abs
+share/examples/abs/file.abs
+share/examples/abs/font.abs
+share/examples/abs/fractal.abs
+share/examples/abs/graphics.abs
+share/examples/abs/if.abs
+share/examples/abs/life.abs
+share/examples/abs/loop.abs
+share/examples/abs/project.abs
+share/examples/abs/system.abs
+@dirrm share/examples/abs

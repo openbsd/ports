@@ -1,0 +1,47 @@
+--- Makefile.orig	Thu Dec 28 20:27:29 2000
++++ Makefile	Thu Dec 28 21:10:28 2000
+@@ -1,7 +1,7 @@
+ CURRENT_DIR = 	.
+ 
+ 
+-SUBDIRS =	Xpm ABV X11 Kernel Plot Database Fig Interface X11/xedit SAMCEF 
++SUBDIRS =	ABV X11 Kernel Plot Database Fig Interface X11/xedit SAMCEF 
+ 
+ SUBDIRS2 =	ABV X11 Kernel Plot Database Fig Interface
+ MAKE =	make
+@@ -10,7 +10,7 @@
+ #for silicon: LIBS = -lXaw -lX11 -lm -lXt -lXmu -lXext
+ #for hp LIBS = -L /lib/X11 -L /usr/X11R6/lib -L /usr/contrib/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
+ #for netBSD LIBS = -L /usr/lib -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
+-LIBS = -L /lib/X11 -L /usr/X11R6/lib -L /usr/contrib/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext
++LIBS = -L${X11BASE}/lib -lXaw -lXpm -lX11 -lm -lXt -lXmu -lXext
+ 
+ #for hp DEFINE = -D_HPUX_SOURCE
+ DEFINE = 
+@@ -19,10 +19,10 @@
+ 
+ #for hp IncludeDir = /usr/contrib/X11R6/include
+ #for net-BSD IncludeDir = /usr/X11R6/include
+-IncludeDir = .
++IncludeDir = ${X11BASE}/include
+ 
+ #for hp Ccompiler = c89
+-Ccompiler = cc
++Ccompiler = ${CC}
+ 
+ all::
+ 	rm -f ./abs;\
+@@ -34,10 +34,10 @@
+ 	$(MAKE) TOPCFLAGS=$(CFLAGS) IncludeDir=$(IncludeDir) Ccompiler=$(Ccompiler) DEFINE=$(DEFINE) all); \
+ 	fi \
+ 	done
+-	cc -o abs  ./Plot/*.o ./ABV/*.o \
++	${CC} -o abs  ./Plot/*.o ./ABV/*.o \
+         Fig/*.o Interface/*.o X11/xedit/*.o \
+-        ./Kernel/*.o ./X11/*.o ./Database/*.o ./Xpm/libxpm.a\
+-        $(LIBS) $(DEFINE)
++        ./Kernel/*.o ./X11/*.o ./Database/*.o \
++	${LIBS} ${DEFINE}
+ 
+ 
+ 
