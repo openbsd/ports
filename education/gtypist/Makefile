@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/08/01 20:41:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2001/10/24 12:08:58 naddy Exp $
 
 COMMENT=	"interactive typing tutor"
 
-DISTNAME=	gtypist-2.3.2
+DISTNAME=	gtypist-2.4
 CATEGORIES=	education
-NEED_VERSION=	1.433
+NEED_VERSION=	1.474
 HOMEPAGE=	http://www.gnu.org/software/gtypist/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -18,9 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gtypist
 
-LIB_DEPENDS=	intl.1::devel/gettext
+MODULE=	gettext
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
