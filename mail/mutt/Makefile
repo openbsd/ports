@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 1999/05/07 05:31:56 turan Exp $
+# $OpenBSD: Makefile,v 1.16 1999/07/15 02:42:28 brad Exp $
 
-DISTNAME=	mutt-0.95.5i
+DISTNAME=	mutt-0.95.6i
 CATEGORIES=     mail
-WRKSRC=		${WRKDIR}/mutt-0.95.5
-
-MAINTAINER=	turan@openbsd.org
-
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ 
+
+MAINTAINER=	turan@openbsd.org
+
+LIB_DEPENDS=	slang.13:${PORTSDIR}/devel/libslang
 
 GNU_CONFIGURE=	yes
 SYSCONFDIR=	${PREFIX}/share/mutt
@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--prefix=/usr/local \
 		--with-docdir=/usr/local/share/doc/mutt \
 		--with-sharedir=/usr/local/share/mutt
 
-LIB_DEPENDS=	slang.1.22:${PORTSDIR}/devel/libslang
+WRKSRC=		${WRKDIR}/mutt-0.95.6
 
 pre-fetch:
 .if !defined(NO_WARNINGS)
