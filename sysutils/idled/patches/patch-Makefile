@@ -1,5 +1,6 @@
---- Makefile.orig	Fri May 17 00:05:28 1996
-+++ Makefile	Mon Mar 12 16:10:10 2001
+$OpenBSD: patch-Makefile,v 1.1 2001/06/14 03:18:28 pvalchev Exp $
+--- Makefile.orig	Thu May 16 16:05:28 1996
++++ Makefile	Tue Jun 12 19:44:17 2001
 @@ -2,7 +2,6 @@
  #
  
@@ -8,7 +9,7 @@
  RM = rm
  INCLUDE = 
  
-@@ -165,27 +164,27 @@ INCLUDE = 
+@@ -165,16 +164,17 @@ INCLUDE = 
  #        If you add it, '-lkvm' must also be added to the SPECLIBS line
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
@@ -26,32 +27,14 @@
 -#LOGDEST = /var/log
 +DEST    = ${DESTDIR}${PREFIX}/libexec
 +CFLIB   = ${DESTDIR}${PREFIX}/lib
-+CFDEST  = ${DESTDIR}/etc
++CFDEST  = ${DESTDIR}${PREFIX}/share/examples/idled
++SYSCONF = ${SYSCONFDIR}
 +MDEST   = ${DESTDIR}${PREFIX}/man
 +LOGDEST = /var/log
  #
--#OWNER   = root
--#CFOWNER = root
--#MOWNER  = man
-+OWNER   = root
-+CFOWNER = root
-+MOWNER  = root
- #
--#GROUP   = daemon
--#CFGROUP = daemon
-+GROUP   = daemon
-+CFGROUP = daemon
- #
--#MODE    = 750
--#CFMODE  = 664
--#MMODE   = 444
-+MODE    = 755
-+CFMODE  = 664
-+MMODE   = 444
- 
- ######################################################################
- ######################################################################
-@@ -215,25 +214,25 @@ INCLUDE = 
+ #OWNER   = root
+ #CFOWNER = root
+@@ -215,14 +215,14 @@ INCLUDE = 
  # SVR4  --  Solaris 2.x
  # Use install3 for /usr/sbin/install
  # and install1 for /usr/ucb/install
@@ -66,34 +49,22 @@
 +#DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
 +#SPECLIBS = 
 +#INSTTYPE = install3
- 
--OWNER   = root
--CFOWNER = root
--MOWNER  = root
++
 +#DEST    = /usr/local/bin
 +#CFDEST  = /usr/local/lib
 +#MDEST   = /usr/local/man
 +#LOGDEST = /var/log
  
--GROUP   = root
--CFGROUP = root
-+#OWNER   = root
-+#CFOWNER = root
-+#MOWNER  = root
+ OWNER   = root
+ CFOWNER = root
+@@ -422,13 +422,13 @@ CFMAN   = idled.cf.5
+ PMAN    = idled.8
  
--MODE    = 750
--CFMODE  = 664
--MMODE   = 644
-+#GROUP   = root
-+#CFGROUP = root
-+
-+#MODE    = 750
-+#CFMODE  = 664
-+#MMODE   = 644
+ # Names of config and log files
+-CONFIG  = ${CFDEST}/${COMMFILE}
++CONFIG  = ${SYSCONF}/${COMMFILE}
+ LOGFILE = ${LOGDEST}/idled.log
  
- ######################################################################
- ######################################################################
-@@ -428,7 +427,7 @@ LOGFILE = ${LOGDEST}/idled.log
  # HERE are the big CFLAGS
  # Add -g if you want debugging
  # Add -O or whatever variant for optimization
@@ -102,31 +73,35 @@
  
  # For HP's ANSI C compiler (use -g instead of +O3 for debugging)
  # CFLAGS = +O3 -Aa -D_HPUX_SOURCE ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
-@@ -479,18 +478,16 @@ install1: all 
+@@ -479,18 +479,17 @@ install1: all 
  	@echo "file can serve as a guide, as well as the man pages."
  
  # BSD like, but with some enhancements like: install -s -> strip binary
 -#                                            gzip manual pages
  install1a: all
- 	install -s -c -m ${MODE} -o ${OWNER} -g ${GROUP} ${BINARY} ${DEST}
+-	install -s -c -m ${MODE} -o ${OWNER} -g ${GROUP} ${BINARY} ${DEST}
 -	install -c -m ${CFMODE} -o ${CFOWNER} -g ${CFGROUP} ${COMMFILE}.template ${CFDEST}
-+	install -c -m ${CFMODE} -o ${CFOWNER} -g ${CFGROUP} ${COMMFILE}.template ${CFLIB}
- 	install -c -m ${MMODE} -o ${MOWNER} ${CFMAN} ${MDEST}/man5
+-	install -c -m ${MMODE} -o ${MOWNER} ${CFMAN} ${MDEST}/man5
 -	gzip -f ${MDEST}/man5/${CFMAN}
- 	install -c -m ${MMODE} -o ${MOWNER} ${PMAN} ${MDEST}/man8
+-	install -c -m ${MMODE} -o ${MOWNER} ${PMAN} ${MDEST}/man8
 -	gzip -f ${MDEST}/man8/${PMAN}
++	${BSD_INSTALL_PROGRAM} ${BINARY} ${DEST}
++	${BSD_INSTALL_DATA_DIR} ${CFDEST}
++	${BSD_INSTALL_DATA} ${COMMFILE}.template ${CFDEST}
++	${BSD_INSTALL_MAN} ${CFMAN} ${MDEST}/man5
++	${BSD_INSTALL_MAN} ${PMAN} ${MDEST}/man8
++	@echo ""
++	@echo "*** Be sure to edit/create the file ${CONFIG} based on"
++	@echo "*** the needs for your system. The ${CFLIB}/${COMMFILE}.template"
++	@echo "*** file can serve as a guide, as well as the man pages."
  	@echo ""
 -	@echo "Be sure to edit/create the file ${CONFIG} based on"
 -	@echo "the needs for your system. The ${CONFIG}.template"
 -	@echo "file can serve as a guide, as well as the man pages."
-+	@echo "*** Be sure to edit/create the file ${CONFIG} based on"
-+	@echo "*** the needs for your system. The ${CFLIB}/${COMMFILE}.template"
-+	@echo "*** file can serve as a guide, as well as the man pages."
-+	@echo ""
  
  # Aix Prefers install2
  install2: all 
-@@ -527,7 +524,7 @@ ${MAN}: idled.man.form idled.cf.man.form
+@@ -527,7 +526,7 @@ ${MAN}: idled.man.form idled.cf.man.form
  
  lint: ${SRC} ${SRCg}
  	lint -hxn ${DEFS} ${SRC} ${SRCg}
