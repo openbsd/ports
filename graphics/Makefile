@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2004/07/05 21:49:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.123 2004/07/07 09:44:03 xsa Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -85,6 +85,7 @@
      SUBDIR += p5-GD-TextUtil
      SUBDIR += p5-Graphics-ColorNames
      SUBDIR += p5-Image-EXIF
+     SUBDIR += p5-Image-Imlib2
      SUBDIR += p5-Image-Info
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
