@@ -1,0 +1,11 @@
+$OpenBSD: patch-transfig_transfig_c,v 1.1 2003/04/04 14:28:36 naddy Exp $
+--- transfig/transfig.c.orig	Thu Apr  3 01:42:55 2003
++++ transfig/transfig.c	Thu Apr  3 01:43:09 2003
+@@ -25,6 +25,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "patchlevel.h"
+ #include "transfig.h"
+ 

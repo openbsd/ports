@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2002/10/28 13:40:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2003/04/04 14:28:36 naddy Exp $
 
 COMMENT=	"tools to convert Xfig's .fig files"
 
-VERSION=	3.2.3d
+VERSION=	3.2.4
 DISTNAME=	transfig.${VERSION}
 PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
@@ -19,15 +19,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MAKE_FLAGS=	LOCALBASE="${LOCALBASE}" X11BASE="${X11BASE}"
-FAKE_FLAGS+=	${MAKE_FLAGS} DESTDIR="${WRKINST}"
-
 CONFIGURE_STYLE= imake
 
 FLAVORS=	a4
 FLAVOR?=
 
-.if ${FLAVOR:L} == "a4"
+.if ${FLAVOR:L:Ma4}
 PATCH_LIST=	patch-* a4-*
 .endif
 

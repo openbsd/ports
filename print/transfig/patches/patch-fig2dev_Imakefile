@@ -1,8 +1,9 @@
---- fig2dev/Imakefile.orig	Thu Apr 19 19:19:38 2001
-+++ fig2dev/Imakefile	Fri Jul 19 09:22:56 2002
-@@ -28,13 +28,13 @@ XCOMM ******
+$OpenBSD: patch-fig2dev_Imakefile,v 1.5 2003/04/04 14:28:36 naddy Exp $
+--- fig2dev/Imakefile.orig	Thu Dec 19 18:33:44 2002
++++ fig2dev/Imakefile	Thu Apr  3 01:33:40 2003
+@@ -20,13 +20,13 @@ XCOMM ******
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
- XCOMM and installed xfig.  This will be made automatic in the future.
+ XCOMM and installed xfig.
  
 -XFIGLIBDIR =	/usr/local/lib/X11/xfig
 +XFIGLIBDIR =	$(LIBDIR)/xfig
@@ -16,7 +17,7 @@
  
  XCOMM The following probably only applies to Windows 9x/NT:
  XCOMM If your system can open files in text and binary modes and has the
-@@ -47,7 +47,7 @@ XCOMM Uncomment the following line if yo
+@@ -39,7 +39,7 @@ XCOMM Uncomment the following line if yo
  XCOMM inline functions. With the "INLINE" keyword, you should notice that
  XCOMM the display will be a bit faster in complex figures
  
@@ -25,8 +26,8 @@
  
  XCOMM ****************
  XCOMM Change RGB if necessary, to point to your rgb.txt color database
-@@ -65,8 +65,8 @@ XCOMM PNG (Portable Network Graphics) fi
- #define USEPNG
+@@ -60,8 +60,8 @@ XCOMM Redefine the following if your PNG
+ XCOMM are in different places
  
  #ifdef USEPNG
 -PNGLIBDIR = $(USRLIBDIR)
@@ -36,7 +37,7 @@
  #endif
  
  XCOMM ****************
-@@ -78,11 +78,11 @@ XCOMM Change XPMLIBDIR if necessary to p
+@@ -73,11 +73,11 @@ XCOMM Change XPMLIBDIR if necessary to p
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  XCOMM
  
@@ -51,29 +52,16 @@
  #endif
  
  XCOMM ****************
-@@ -104,8 +104,8 @@ XCOMM You must have version 5b or newer 
- 
- #ifdef USEJPEG
- #ifdef USEINSTALLEDJPEG
--JPEGLIBDIR = /usr/local/lib
--JPEGINCDIR = /usr/include/X11
-+JPEGLIBDIR = ${LOCALBASE}/lib
-+JPEGINCDIR = ${LOCALBASE}/include
- #else
- JPEGLIBDIR = ../jpeg
- JPEGINCDIR = $(JPEGLIBDIR)
-@@ -158,8 +158,8 @@ XCOMM Uncomment the next line if you wan
+@@ -126,7 +126,7 @@ XCOMM Comment out the next line if you h
  
  #ifdef I18N
  I18N_DEFS = -DI18N 
 -FIG2DEV_LIBDIR = /usr/local/lib/fig2dev
--I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=\\\"$(FIG2DEV_LIBDIR)\\\"
 +FIG2DEV_LIBDIR = $(LIBDIR)/fig2dev
-+I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR='\"$(FIG2DEV_LIBDIR)\"'
+ I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=\\\"$(FIG2DEV_LIBDIR)\\\"
  
  install::
- 	[ -d $(DESTDIR)$(FIG2DEV_LIBDIR) ] || mkdir $(DESTDIR)$(FIG2DEV_LIBDIR)
-@@ -185,7 +185,7 @@ XCOMM **********************************
+@@ -154,7 +154,7 @@ XCOMM **********************************
  XCOMM *** You shouldn't have to change anything below this point ***
  XCOMM **************************************************************
  
@@ -82,12 +70,12 @@
  
  #ifdef USEPNG
  DUSEPNG = -DUSE_PNG
-@@ -218,7 +218,7 @@ DEPLIBJPEG = $(JPEGLIBDIR)/libjpeg.a
+@@ -177,7 +177,7 @@ DEFINES = $(NEED_STRERROR) $(HAVE_NO_STR
  
- IMAKE_DEFINES = $(DUSEPNG) $(DUSEJPEG) $(DUSEXPM)
+ IMAKE_DEFINES = $(DUSEPNG) $(DUSEXPM)
  
--DEVDEFINES = $(DUSEPNG) $(DUSEJPEG) $(DUSEXPM) $(XPMINC) $(JPEGINC) $(DDNFSS) $(DDA4) \
-+DEVDEFINES = $(DUSEPNG) $(DUSEJPEG) $(DUSEXPM) $(PNGINC) $(XPMINC) $(JPEGINC) $(DDNFSS) $(DDA4) \
+-DEVDEFINES = $(DUSEPNG) $(DUSEXPM) $(XPMINC) $(DDNFSS) $(DDA4) \
++DEVDEFINES = $(DUSEPNG) $(DUSEXPM) $(PNGINC) $(XPMINC) $(DDNFSS) $(DDA4) \
  		$(DDLATEX2E_GRAPHICS) $(DDEPSFIG) $(DDIBMGEC) $(DDDVIPS) $(I18N_DEV_DEFS)
  
  #define IHaveSubdirs

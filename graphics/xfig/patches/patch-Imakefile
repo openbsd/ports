@@ -1,17 +1,29 @@
---- Imakefile.orig	Tue May 29 12:32:11 2001
-+++ Imakefile	Fri Jul 19 16:46:08 2002
-@@ -47,8 +47,8 @@ XCOMM You must have version 5b or newer 
+$OpenBSD: patch-Imakefile,v 1.6 2003/04/04 14:28:36 naddy Exp $
+--- Imakefile.orig	Tue Apr  1 02:15:40 2003
++++ Imakefile	Tue Apr  1 02:20:35 2003
+@@ -48,8 +48,8 @@ XCOMM XAPPLOADDIR = /home/user/xfig
+ XCOMM Redefine the following if your PNG library and/or include file
+ XCOMM are in different places
+ 
+-PNGLIBDIR = $(USRLIBDIR)
+-PNGINC = -I/usr/local/include
++PNGLIBDIR = ${LOCALBASE}/lib
++PNGINC = -I${LOCALBASE}/include/libpng
+ 
+ XCOMM If don't want JPEG support, comment out the #define USEJPEG line
+ XCOMM Uncomment the #define for USEJPEG if you want to be able to import
+@@ -68,8 +68,8 @@ XCOMM You must have version 5b or newer 
  
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
 -JPEGLIBDIR = /usr/local/lib
--JPEGINCDIR = /usr/include/X11
+-JPEGINC = -I/usr/include/X11
 +JPEGLIBDIR = ${LOCALBASE}/lib
-+JPEGINCDIR = ${LOCALBASE}/include
++JPEGINC = -I${LOCALBASE}/include
  #else
  JPEGLIBDIR = ../jpeg
- JPEGINCDIR = $(JPEGLIBDIR)
-@@ -72,12 +72,12 @@ XCOMM   in /contrib/libraries.
+ JPEGINC = -I$(JPEGLIBDIR)
+@@ -87,12 +87,12 @@ XCOMM   in /contrib/libraries.
  XCOMM Change XPMLIBDIR if necessary to point to the xpm library (libXpm)
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  
@@ -28,12 +40,7 @@
  #endif
  
  XCOMM Uncomment the following definiton if you want to use the small icons
-@@ -120,18 +120,20 @@ XCOMM Uncomment the next line if you wan
- XCOMM If your setlocale() dosen't support the locale, you should
- XCOMM add -DSETLOCALE to I18N_DEFS.
- 
--XCOMM #define I18N
-+#define I18N
+@@ -147,14 +147,16 @@ XCOMM add -DSETLOCALE to I18N_DEFS.
  
  XCOMM If using an input tablet uncomment the following
  
@@ -51,7 +58,7 @@
  
  XCOMM use (and change) the following if you want the multi-key data base file
  XCOMM somewhere other than the standard X11 library directory
-@@ -220,7 +222,7 @@ DEPLIBJPEG = $(JPEGLIBDIR)/libjpeg.a
+@@ -234,7 +236,7 @@ DEPLIBJPEG = $(JPEGLIBDIR)/libjpeg.a
  #endif /* USEJPEG */
  
  #ifdef I18N
@@ -60,20 +67,3 @@
  I18N_SRC = w_i18n.c
  I18N_OBJ = w_i18n.o
  #endif
-@@ -256,6 +258,7 @@ READJPEGO = f_readjpg.o
- #ifdef USEPNG
- DUSEPNG = -DUSE_PNG
- PNGLIBS = -lpng -lz
-+PNGINC = -I${LOCALBASE}/include/libpng
- READPNGS = f_readpng.c
- READPNGO = f_readpng.o
- #endif /* USEPNG */
-@@ -325,7 +328,7 @@ MAINDEPFILES =  patchlevel.h version.h
- SRCS = $(XFIGSRC)
- OBJS = $(XFIGOBJ)
- 
--EXTRA_INCLUDES = $(JPEGINC) $(XPMINC) $(XAW3DINC)
-+EXTRA_INCLUDES = $(JPEGINC) $(XPMINC) $(XAW3DINC) $(PNGINC)
- DEPLIBS = XawClientDepLibs
- 
- LOCAL_LIBRARIES = 	$(JPEGLIB)

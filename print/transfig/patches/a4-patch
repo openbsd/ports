@@ -1,9 +1,10 @@
---- fig2dev/Imakefile.orig	Tue Jun 19 12:36:02 2001
-+++ fig2dev/Imakefile	Tue Jun 19 12:36:02 2001
-@@ -114,7 +114,7 @@
+$OpenBSD: a4-patch,v 1.4 2003/04/04 14:28:36 naddy Exp $
+--- fig2dev/Imakefile.orig	Thu Apr  3 01:29:22 2003
++++ fig2dev/Imakefile	Thu Apr  3 01:29:32 2003
+@@ -82,7 +82,7 @@ XPMINC = -I${X11BASE}/include/X11
  
  XCOMM ****************
- XCOMM Uncomment the following to set paper size to A4
+ XCOMM Uncomment the following to set default paper size to A4
 -XCOMM DDA4 = -DA4
 +DDA4 = -DA4
  

@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2001/06/19 16:41:04 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/04/04 14:28:36 naddy Exp $
 bin/fig2dev
 bin/fig2ps2tex
 bin/fig2ps2tex.sh
 bin/pic2tpic
 bin/transfig
 lib/X11/fig2dev/cs_CZ.ps
+lib/X11/fig2dev/hr_HR.ps
+lib/X11/fig2dev/hu_HU.ps
 lib/X11/fig2dev/ja.ps
 lib/X11/fig2dev/ja_JP.EUC.ps
 lib/X11/fig2dev/ja_JP.eucJP.ps
@@ -16,6 +18,10 @@ lib/X11/fig2dev/ko_KR.EUC.ps
 lib/X11/fig2dev/ko_KR.eucKR.ps
 lib/X11/fig2dev/ko_KR.ps
 lib/X11/fig2dev/korean.ps
+lib/X11/fig2dev/pl_PL.ps
+lib/X11/fig2dev/ro_RO.ps
+lib/X11/fig2dev/sk_SK.ps
+lib/X11/fig2dev/sl_SI.ps
 lib/X11/xfig/bitmaps/bricks.bmp
 lib/X11/xfig/bitmaps/circles.bmp
 lib/X11/xfig/bitmaps/crosshatch.bmp
