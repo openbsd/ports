@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 1999/08/20 19:59:29 espie Exp $
+# $OpenBSD: Makefile,v 1.19 1999/08/22 16:57:38 espie Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -11,8 +11,7 @@
 #    SUBDIR += cim
 #    SUBDIR += cmucl
 #    SUBDIR += eiffel
-     SUBDIR += egcs-snapshot
-     SUBDIR += egcs-stable
+     SUBDIR += egcs
 #    SUBDIR += elk
 #    SUBDIR += eperl
      SUBDIR += erlang
