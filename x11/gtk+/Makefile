@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2001/03/07 22:59:15 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2001/04/04 19:50:21 brad Exp $
 
-DISTNAME=	gtk+-1.2.9
+COMMENT=	"General Toolkit for X11 GUI"
+
+DISTNAME=	gtk+-1.2.10
 CATEGORIES=	x11 devel
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
@@ -26,7 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
-	@rm -f ${WRKSRC}/docs/gtk.info*
-	@rm -f ${WRKSRC}/docs/gdk.info*
+	@cd ${WRKSRC}/docs; rm -f gtk.info* gdk.info*
 
 .include <bsd.port.mk>
