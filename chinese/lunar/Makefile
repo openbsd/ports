@@ -3,12 +3,13 @@
 # Date created:			  Nov 26 1997
 # Whom:				  ejovi
 #
-# $OpenBSD: Makefile,v 1.1.1.1 1997/11/26 22:13:06 joey Exp $
+# $OpenBSD: Makefile,v 1.2 1998/04/10 05:38:29 marc Exp $
 #
 
 DISTNAME=	lunar-2.1
 PKGNAME=	zh-lunar-2.1
 CATEGORIES=	chinese
+NO_CDROM=	"NOFEE:	Can not sell"
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
