@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2000/04/28 23:33:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.7 2000/04/28 23:37:14 fgsch Exp $
 
 DISTNAME=		mc-4.1.35
 CATEGORIES=		misc
@@ -16,6 +16,6 @@ FAKE=			No
 
 GNU_CONFIGURE=		Yes
 
-#BROKEN=			"security is bad; auditing on the way"
+BROKEN=			"security is bad; auditing on the way"
 
 .include <bsd.port.mk>
