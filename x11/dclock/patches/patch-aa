@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Nov  3 11:01:58 1999
++++ Makefile	Wed Nov  3 11:03:52 1999
+@@ -3,12 +3,12 @@
+ OBJS= Dclock.o dclock.o
+ HFILES= Dclock.h DclockP.h patchlevel.h
+ 
+-CFLAGS= -O
+-LDFLAGS= 
++CFLAGS+= -I${X11BASE}/include
++LDFLAGS= -L${X11BASE}/lib
+ LIBS= -lXt -lX11
+ 
+ dclock: ${OBJS}
+-	cc ${LDFLAGS} ${OBJS} ${LIBS} -o dclock
++	cc -o dclock ${OBJS} ${LDFLAGS} ${LIBS}
+ 
+ clean: ; rm -f ${OBJS} core dclock
+ 
