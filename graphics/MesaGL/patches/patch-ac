@@ -1,6 +1,6 @@
---- mklib.openbsd.orig	Sun Mar  7 16:36:30 1999
-+++ mklib.openbsd	Sun Mar  7 16:39:26 1999
-@@ -40,12 +40,11 @@
+--- mklib.openbsd.orig	Tue Oct 21 19:34:34 1997
++++ mklib.openbsd	Tue Apr 13 23:18:42 1999
+@@ -40,12 +40,10 @@
  
  VERSION="${MAJOR}.${MINOR}"
  
@@ -16,5 +16,5 @@
 +ld -x -Bshareable -Bforcearchive -o ${LIBRARY}.so.${VERSION} ${LIBRARY}.a
  
 -cp ${LIBRARY}_pic.a ${LIBRARY}.so.${VERSION} ../lib
+-ln -s ../lib/${LIBRARY}.so.${VERSION} ../lib/${LIBRARY}.so
 +cp ${LIBRARY}.a ${LIBRARY}.so.${VERSION} ../lib
- ln -s ../lib/${LIBRARY}.so.${VERSION} ../lib/${LIBRARY}.so
