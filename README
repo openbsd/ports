@@ -112,9 +112,10 @@ recursively built.
 * `make distclean CLEANDEPENDS=Yes', guess what this does.
 
 Please note that, in normal use, the OpenBSD ports tree will grow quite
-a lot.  Careful use of make clean and make distclean will help you.
-`find /usr/ports -type d -name work\* -print' can be useful to find out
-ports you forgot to clean out.
+a lot.  Careful use of make clean and make distclean will help you. You
+can also redirect ports activity elsewhere by making use of WRKOBJDIR
+and DISTDIR.  `find /usr/ports -type d -name work\* -print' 
+can be useful to find out ports you forgot to clean out.
 
 There are a few kinks in the building of ports with options yet. Namely,
 all such ports should produce distinct package names if built with
@@ -179,7 +180,7 @@ make MASTER_SITE_OPENBSD=Yes
 
 Continuing our CD-Rom example, you could also fetch files off a CD-Rom into
 your repository for safe-keeping by using the following incantation:
-make fetch MASTER_SITE_OVERRIDE='file:/cdrom/{$DIST_SUBDIR}/' 
+make fetch MASTER_SITE_OVERRIDE='file:/cdrom/${DIST_SUBDIR}/' 
 This is equivalent to using CDROM_SITE.
 
 Some common sites have their own variables. It is strongly recommended
@@ -329,4 +330,4 @@ please visit
 
 	http://www.openbsd.org/porting.html
 
-$OpenBSD: README,v 1.7 1999/10/07 14:35:52 espie Exp $
+$OpenBSD: README,v 1.8 1999/10/07 16:44:28 espie Exp $
