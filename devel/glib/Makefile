@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2001/04/03 14:42:47 brad Exp $
+# $OpenBSD: Makefile,v 1.39 2001/06/03 04:24:53 brad Exp $
 
 COMMENT=	"useful routines for C programming"
 
 DISTNAME=	glib-1.2.10
 CATEGORIES=	devel
-NEED_VERSION=	1.384
+NEED_VERSION=	1.402
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
 		http://www.ameth.org/gimp/gtk/v1.2/
@@ -31,8 +31,8 @@ post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
 
 post-patch:
-	@mv -f ${WRKSRC}/glib-config.in ${WRKSRC}/glib-config.in.orig
+	@mv -f ${WRKSRC}/glib-config.in ${WRKSRC}/glib-config.in.new
 	@sed -e s#!!PTHREAD_LIBDIR!!#${LOCALBASE}/lib/pth#g \
-		${WRKSRC}/glib-config.in.orig > ${WRKSRC}/glib-config.in
+		${WRKSRC}/glib-config.in.new > ${WRKSRC}/glib-config.in
 
 .include <bsd.port.mk>
