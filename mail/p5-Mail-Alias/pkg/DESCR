@@ -1,0 +1,15 @@
+This module allows direct manipulation of various types of e-mail
+alias files.
+
+The primary use of Mail::Alias is for manipulating alias files in
+the SENDMAIL alias file format. Additionally it is possible to read
+some other formats and to convert between various alias file formats.
+
+The following actions are available:
+
+o Set the name of the current aliases file being accessed
+o Verify the presence of aliases
+o Retrieve an alias line from the file
+o Add aliases
+o Change the addresses for aliases
+o Delete aliases

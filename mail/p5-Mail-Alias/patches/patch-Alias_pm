@@ -1,0 +1,21 @@
+$OpenBSD: patch-Alias_pm,v 1.1.1.1 2001/01/07 21:58:35 avsm Exp $
+--- Alias.pm.orig	Sun Jan  7 21:28:02 2001
++++ Alias.pm	Sun Jan  7 21:30:34 2001
+@@ -684,7 +684,7 @@ sub write {
+ 
+ =head1 NAME
+ 
+-Mail::Alias - Maniulates mail alias files of various formats. Works on files directly or loads files into memory and works on the buffer.
++Mail::Alias - Manipulates mail alias files of various formats. Works on files directly or loads files into memory and works on the buffer.
+ 
+ =head1 SYNOPSIS
+ 
+@@ -738,7 +738,7 @@ Indicates the presence of the passed ali
+  
+ =item B<expand ()>
+ Expands the passed alias into a list of addresses. Expansion properly handles
+- :include: files, recursion, and continuation lines.Only works when memory
++ :include: files, recursion, and continuation lines. Only works when memory
+   access is being used. If the alias is not found in the object, you get back
+   what you sent.
+ 
