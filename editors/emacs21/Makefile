@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2002/03/12 09:03:42 mark Exp $
+# $OpenBSD: Makefile,v 1.3 2002/03/18 01:58:03 espie Exp $
 # Original from A B <obsdfaq30@yahoo.com>
 
 COMMENT=	"GNU editor: extensible, customizable, self documenting"
@@ -6,7 +6,7 @@ COMMENT=	"GNU editor: extensible, customizable, self documenting"
 VERSION=	21.1
 DISTNAME=	emacs-${VERSION}
 CATEGORIES=	editors
-NEED_VERSION=	1.509
+NEED_VERSION=	1.514
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= emacs
 
@@ -25,17 +25,35 @@ CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include" \
 	       LDFLAGS="-L${LOCALBASE}/lib"
 
 # X11 flavors
-FLAVORS=	no_x11 no_tiff no_png no_jpeg x11
+FLAVORS=	no_x11 no_tiff no_png no_jpeg
 # X toolkit styles
-FLAVORS+=	athena lucid motif
+FLAVORS+=	athena lucid motif lesstif
 # Misc options
 FLAVORS+=	pop kerberos kerberos5 hesiod
 # Default
-FLAVOR?=	x11
+FLAVOR?=
 
 M_ARCH=		${MACHINE_ARCH}
 
 GCCARCH=	${M_ARCH}-unknown-openbsd${OPSYS_VER}
+
+# Bad flavor combinations
+.if ${FLAVOR:L:Mno_x11}
+.   if ${FLAVOR:L:Mno_jpeg} || ${FLAVOR:L:Mno_png} || ${FLAVOR:L:Mno_tiff} || ${FLAVOR:L:Mathena} || ${FLAVOR:L:Mlucid} || ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
+ERRORS+="Fatal: bad flavor combination ${FLAVOR}"
+.   endif
+.endif
+.if ${FLAVOR:L:Mathena}
+.  if ${FLAVOR:L:Mlucid} || ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
+ERRORS+="Fatal: bad flavor combination ${FLAVOR}"
+.  endif
+.endif
+.if ${FLAVOR:L:Mlucid}
+.  if ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
+ERRORS+="Fatal: bad flavor combination ${FLAVOR}"
+.  endif
+.endif
+
 
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x --without-jpeg --without-png \
@@ -45,63 +63,54 @@ CONFIGURE_ARGS+= --without-x --without-jpeg --without-png \
 USE_X11=Yes
 CONFIGURE_ARGS+= --with-x
 
-.if ${FLAVOR:L:Mno_jpeg}
+.  if ${FLAVOR:L:Mno_jpeg}
 CONFIGURE_ARGS+= --without-jpeg
-.endif
-
-.if ${FLAVOR:L:Mno_png}
-CONFIGURE_ARGS+= --without-png
-.endif 
-
-.if ${FLAVOR:L:Mno_tiff}
-CONFIGURE_ARGS+= --without-tiff
-.endif
-
-.if ${FLAVOR:L:Mpop}
-CONFIGURE_ARGS+= --with-pop
-.endif 
-
-.if ${FLAVOR:L:Mkerberos}
-CONFIGURE_ARGS+= --with-kerberos
-.endif 
-
-.if ${FLAVOR:L:Mkerberos5}
-CONFIGURE_ARGS+= --with-kerberos5
-.endif
-
-.if ${FLAVOR:L:Mhesiod}
-CONFIGURE_ARGS+= --with-hesiod
-.endif
-
-.if ${FLAVOR:L:Mathena}
-LIB_DEPENDS+=	Xaw3d::x11/Xaw3d
-CONFIGURE_ARGS+= --with-x-toolkit=athena --with-toolkit-scroll-bars
-.elif ${FLAVOR:L:Mlucid}
-CONFIGURE_ARGS+= --with-x-toolkit=lucid --with-toolkit-scroll-bars
-.elif ${FLAVOR:L:Mmotif}
-USE_MOTIF=any
-CONFIGURE_ARGS+= --with-x-toolkit=motif --with-toolkit-scroll-bars
-.else
-CONFIGURE_ARGS+= --with-x-toolkit=no
-.endif
-
-.if ${FLAVOR:L:Mx11}
-
-.if !${FLAVOR:L:Mno_jpeg}
+.  else
 LIB_DEPENDS+= jpeg.62::graphics/jpeg
 CONFIGURE_ARGS+= --with-jpeg
-.endif
+.  endif
 
-.if !${FLAVOR:L:Mno_png}
+.  if ${FLAVOR:L:Mno_png}
+CONFIGURE_ARGS+= --without-png
+.  else
 LIB_DEPENDS+= png.2::graphics/png
 CONFIGURE_ARGS+= --with-png
-.endif
+.  endif 
 
-.if !${FLAVOR:L:Mno_tiff}
+.  if ${FLAVOR:L:Mno_tiff}
+CONFIGURE_ARGS+= --without-tiff
+.  else
 LIB_DEPENDS+= tiff.35::graphics/tiff
 CONFIGURE_ARGS+= --with-tiff
-.endif
-.endif
+.  endif
+
+.  if ${FLAVOR:L:Mpop}
+CONFIGURE_ARGS+= --with-pop
+.  endif 
+
+.  if ${FLAVOR:L:Mkerberos}
+CONFIGURE_ARGS+= --with-kerberos
+.  endif 
+
+.  if ${FLAVOR:L:Mkerberos5}
+CONFIGURE_ARGS+= --with-kerberos5
+.  endif
+
+.  if ${FLAVOR:L:Mhesiod}
+CONFIGURE_ARGS+= --with-hesiod
+.  endif
+
+.  if ${FLAVOR:L:Mathena}
+LIB_DEPENDS+=	Xaw3d::x11/Xaw3d
+CONFIGURE_ARGS+= --with-x-toolkit=athena --with-toolkit-scroll-bars
+.  elif ${FLAVOR:L:Mlucid}
+CONFIGURE_ARGS+= --with-x-toolkit=lucid --with-toolkit-scroll-bars
+.  elif ${FLAVOR:L:Mmotif} || ${FLAVOR:L:Mlesstif}
+USE_MOTIF=any
+CONFIGURE_ARGS+= --with-x-toolkit=motif --with-toolkit-scroll-bars
+.  else
+CONFIGURE_ARGS+= --with-x-toolkit=no
+.  endif
 .endif
 
 # Do NOT strip on install.  We will strip those things that can be
