@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2004/08/20 15:20:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2004/11/24 00:11:04 espie Exp $
 
 COMMENT=		"simplified wrapper and interface generator"
 COMMENT-examples=	"examples for swig"
@@ -18,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m stdc++
 
 PYTHON_VER=	2.3
 LIB_DEPENDS=	guile.9::lang/guile

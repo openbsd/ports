@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2003/05/12 08:23:46 jolan Exp $
+# $OpenBSD: Makefile,v 1.14 2004/11/24 00:11:03 espie Exp $
 
 COMMENT=	"SDL cross-platform networking library"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext usbhid
 
 LIB_DEPENDS=	SDL::devel/sdl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2004/09/14 23:43:56 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2004/11/24 00:11:03 espie Exp $
 
 COMMENT=		"OpenCM change management system"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c crypto ncurses readline ssl z
 
 # where the source files and patches can be fetched
 #

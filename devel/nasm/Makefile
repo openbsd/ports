@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2004/04/07 22:54:23 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2004/11/24 00:11:03 espie Exp $
 
 COMMENT=	"general-purpose multi-platform x86 assembler"
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu

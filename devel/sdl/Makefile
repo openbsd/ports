@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2004/11/18 17:48:50 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2004/11/24 00:11:03 espie Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext m usbhid
 
 MASTER_SITES=	${HOMEPAGE}release/ \
 		http://www.devolution.com/~slouken/SDL/release/

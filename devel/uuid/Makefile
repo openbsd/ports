@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2004/10/16 23:21:31 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2004/11/24 00:11:04 espie Exp $
 
 COMMENT=	"ISO-C API and CLI for generating Universally Unique Identifiers"
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 

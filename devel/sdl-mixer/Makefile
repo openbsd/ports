@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2003/09/25 04:17:33 jolan Exp $
+# $OpenBSD: Makefile,v 1.21 2004/11/24 00:11:03 espie Exp $
 
 COMMENT=	"SDL multi-channel audio mixer library"
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext c ogg pthread usbhid
 
 USE_X11=	Yes
 

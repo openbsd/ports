@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2003/12/29 13:45:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2004/11/24 00:11:04 espie Exp $
 
 COMMENT=	"mpeg video player library with sound support"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+WANTLIB=		X11 Xext Xi c glib gmodule iconv intl m pthread usbhid
 
 MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 		ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \

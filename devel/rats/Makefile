@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/17 21:08:26 jsyn Exp $
+# $OpenBSD: Makefile,v 1.13 2004/11/24 00:11:03 espie Exp $
 
 COMMENT=		"source code auditing tool"
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c
 
 MASTER_SITES=		http://www.securesoftware.com/rats/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
