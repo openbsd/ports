@@ -1,5 +1,0 @@
-bin/nmap
-man/man1/nmap.1
-lib/nmap/nmap-os-fingerprints 
-lib/nmap/nmap-services
-@dirrm lib/nmap
