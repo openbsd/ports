@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2004/04/09 06:42:42 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2004/06/19 23:16:32 robert Exp $
 
 COMMENT=	"spell checker designed to eventually replace Ispell"
 DISTNAME=	aspell-0.50.5
+PKGNAME=	${DISTNAME}p1
 DICT=		en-0.51-1
 DIST_SUBDIR=	aspell
 CATEGORIES=	textproc
