@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2002/01/27 18:28:32 lebel Exp $
+# $OpenBSD: Makefile,v 1.6 2002/02/05 22:56:12 pvalchev Exp $
 # $NetBSD: Makefile,v 1.1.1.2 2001/03/26 11:59:15 hubertf Exp $
 
 COMMENT=		"passive OS fingerprinting tool"
 
-DISTNAME=		p0f-1.8.1
+DISTNAME=		p0f-1.8.2
 CATEGORIES=     	security
-NEED_VERSION=   	1.500
+NEED_VERSION=   	1.504
 
 HOMEPAGE=		http://www.stearns.org/p0f/
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://lcamtuf.coredump.cx/soft/
-DISTFILES=		${DISTNAME:C/-.*//}.tgz
+MASTER_SITES=		${HOMEPAGE}
+DISTFILES=		${DISTNAME}.tgz
 DIST_SUBDIR=		${DISTNAME}
 
 MAKE_FLAGS=		CC='${CC}' \
