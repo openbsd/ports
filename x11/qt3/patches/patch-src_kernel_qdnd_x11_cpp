@@ -1,17 +1,33 @@
-$OpenBSD: patch-src_kernel_qdnd_x11_cpp,v 1.1 2003/01/19 17:36:51 espie Exp $
---- src/kernel/qdnd_x11.cpp.orig	Mon Dec  9 10:40:44 2002
-+++ src/kernel/qdnd_x11.cpp	Sun Jan 19 16:00:29 2003
-@@ -567,6 +567,13 @@ void qt_handle_xdnd_enter( QWidget *, co
+$OpenBSD: patch-src_kernel_qdnd_x11_cpp,v 1.2 2003/02/09 19:16:17 espie Exp $
+--- src/kernel/qdnd_x11.cpp.orig	Thu Feb  6 12:26:53 2003
++++ src/kernel/qdnd_x11.cpp	Thu Feb  6 18:59:58 2003
+@@ -246,7 +246,6 @@ static const char* const default_pm[] = 
+ };
  
- void qt_handle_xdnd_position( QWidget *w, const XEvent * xe, bool passive )
- {
-+    if (qt_xdnd_deco)
-+    {
-+	qt_xdnd_deco->raise();
-+    }
-+
-+
-+
-     const unsigned long *l = (const unsigned long *)xe->xclient.data.l;
+ class QShapedPixmapWidget : public QWidget {
+-    QPixmap pixmap;
+ public:
+     QShapedPixmapWidget(int screen = -1) :
+ 	QWidget(QApplication::desktop()->screen( screen ),
+@@ -256,18 +255,13 @@ public:
  
-     QPoint p( (l[2] & 0xffff0000) >> 16, l[2] & 0x0000ffff );
+     void setPixmap(QPixmap pm)
+     {
+-	pixmap = pm;
+-	if ( pixmap.mask() ) {
+-	    setMask( *pixmap.mask() );
++	if ( pm.mask() ) {
++	    setMask( *pm.mask() );
+ 	} else {
+ 	    clearMask();
+ 	}
+ 	resize(pm.width(),pm.height());
+-    }
+-
+-    void paintEvent(QPaintEvent*)
+-    {
+-	bitBlt(this,0,0,&pixmap);
++	setErasePixmap(pm);
+     }
+ };
+ 
