@@ -1,15 +1,15 @@
 --- Makefile.in.orig	Thu Jul 27 04:19:17 2000
-+++ Makefile.in	Tue Aug  1 16:52:30 2000
++++ Makefile.in	Fri Oct  5 02:06:21 2001
 @@ -37,10 +37,10 @@ SYSTEM_LIBDIR   = "/usr/include"
  ### 
  
  ### directory for lclint libraries
 -LIBDIR     = @installdir@/lib
-+LIBDIR     = @installdir@/share/lclint-2.5q/lib
++LIBDIR     = @installdir@/share/lclint-2.5r/lib
  
  ### directory for lclint standard imports
 -IMPORTSDIR = @installdir@/imports
-+IMPORTSDIR = @installdir@/share/lclint-2.5q/imports
++IMPORTSDIR = @installdir@/share/lclint-2.5r/imports
  
  ### directory for lclint binary
  INSTALLDIR = @installdir@/bin
