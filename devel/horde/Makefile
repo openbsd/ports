@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2002/07/09 20:37:11 avsm Exp $ 
+# $OpenBSD: Makefile,v 1.4 2002/08/12 00:56:51 avsm Exp $ 
 
 COMMENT=	"modular framework for web-based applications"
 
@@ -28,9 +28,7 @@ INSTDIR=	${PREFIX}/horde
 SUBST_VARS=	INSTDIR
 
 RUN_DEPENDS=	:php4-core->=4.2.1:www/php4/core \
-		:php4-imap->=4.2.1:www/php4/extensions,-imap \
 		:php4-mcrypt->=4.2.1:www/php4/extensions,-mcrypt \
-		:php4-mysql->=4.2.1:www/php4/extensions,-mysql \
 		:php4-pear->=4.2.1:www/php4/pear
 
 do-install:
