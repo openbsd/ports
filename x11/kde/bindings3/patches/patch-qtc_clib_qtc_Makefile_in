@@ -1,21 +1,12 @@
-$OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.3 2003/12/07 20:19:14 espie Exp $
---- qtc/clib/qtc/Makefile.in.orig	2003-09-03 03:25:52.000000000 +0200
-+++ qtc/clib/qtc/Makefile.in	2003-12-04 23:59:23.000000000 +0100
-@@ -332,7 +332,7 @@ include_HEADERS = 
- # here you should add all header files, which shouldn´t be installed
- noinst_HEADERS = 
- 
--libqtc_la_LDFLAGS = $(all_libraries) -no-undefined -version-info $(SOMAJOR):$(SOMINOR):$(SOSUBMINOR)
-+libqtc_la_LDFLAGS = -pthread $(all_libraries) -no-undefined -version-info $(SOMAJOR):$(SOMINOR):$(SOSUBMINOR)
- 
- # add here the libraries which have to be include
- # for building the shared lib
-@@ -344,7 +344,7 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
+$OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.4 2004/02/02 13:04:35 espie Exp $
+--- qtc/clib/qtc/Makefile.in.orig	2004-01-18 13:58:27.000000000 +0100
++++ qtc/clib/qtc/Makefile.in	2004-02-02 11:50:13.000000000 +0100
+@@ -385,7 +385,7 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
  #  in here.
  #  The following line is only a suggestion!
  #
 -libqtc_la_LIBADD = -lqt-mt -lXext -lX11 -lqui
 +libqtc_la_LIBADD = -lqt-mt -lXext -lX11 -lqui-mt
  subdir = qtc/clib/qtc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h

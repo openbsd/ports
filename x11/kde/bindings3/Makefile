@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2003/12/07 20:19:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2004/02/02 13:04:34 espie Exp $
 
 COMMENT= 		"X11 toolkit, extra language support"
 CATEGORIES=		x11 x11/kde devel
-VERSION=		3.1.4
+VERSION=		3.1.95
 DISTNAME=		kdebindings-${VERSION}
+MODKDE_VERSION=		3.2
 
-LIB_DEPENDS=kdecore.4,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmid,kparts,kscript,kspell,kutils,DCOP::x11/kde/libs3 \
-	gtk,gdk::x11/gtk+ \
-	lib/qt3/qui-mt:qt3-mt->=1.1p0:x11/qt3,mt
+LIB_DEPENDS=DCOP,kdecore.6,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kjs,kmid,kparts,kscript,kspell,kutils,kwalletclient::x11/kde/libs3 \
 
 SEPARATE_BUILD=flavored
 

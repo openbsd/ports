@@ -1,12 +1,21 @@
-$OpenBSD: patch-qtc_clib_Makefile_in,v 1.3 2003/12/07 20:19:14 espie Exp $
---- qtc/clib/Makefile.in.orig	2003-09-03 03:25:51.000000000 +0200
-+++ qtc/clib/Makefile.in	2003-12-04 23:59:23.000000000 +0100
-@@ -311,7 +311,7 @@ SOURCES = qtc/qt_QAccessibleInterface.cp
+$OpenBSD: patch-qtc_clib_Makefile_in,v 1.4 2004/02/02 13:04:35 espie Exp $
+--- qtc/clib/Makefile.in.orig	2004-01-18 13:58:27.000000000 +0100
++++ qtc/clib/Makefile.in	2004-02-02 12:29:40.000000000 +0100
+@@ -350,7 +350,7 @@ SOURCES = qtc/qt_QAccessibleInterface.cp
  INTERFACES = 
  TRANSLATIONS = 
  KDE_OPTIONS = qtonly
--clib_LDADD = ./qtc/libqtc.la -lqt-mt -lXext -lX11 -lqui $(LIBSOCKET)
-+clib_LDADD = ./qtc/libqtc.la -lqt-mt -lXext -lX11 -lqui-mt $(LIBSOCKET)
+-clib_LDADD = ./qtc/libqtc.la $(QT_LIBS) -lqui $(LIBSOCKET)
++clib_LDADD = ./qtc/libqtc.la $(QT_LIBS) -lqui-mt $(LIBSOCKET) -lstdc++
  
  SUBDIRS = qtc 
  
+@@ -364,7 +364,7 @@ INCLUDES = $(all_includes)
+ #>- clib_METASOURCES = AUTO
+ 
+ # the library search path. 
+-clib_LDFLAGS = $(all_libraries) 
++clib_LDFLAGS = $(all_libraries) -pthread
+ 
+ # them while "make clean", use CLEANFILES
+ DISTCLEANFILES = $(clib_METASOURCES)

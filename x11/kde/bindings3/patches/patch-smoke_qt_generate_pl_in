@@ -1,0 +1,20 @@
+$OpenBSD: patch-smoke_qt_generate_pl_in,v 1.1 2004/02/02 13:04:35 espie Exp $
+--- smoke/qt/generate.pl.in.orig	2004-02-02 12:34:05.000000000 +0100
++++ smoke/qt/generate.pl.in	2004-02-02 12:34:30.000000000 +0100
+@@ -16,7 +16,6 @@ my $finaloutdir = $here;
+ my $defines = "qtdefines";
+ my $headerlist = "@srcdir@/header_list";
+ my $definespath = "$here/$defines";
+-my $headerlistpath = "$here/$headerlist";
+ 
+ ## Note: outdir and finaloutdir should NOT be the same dir!
+ 
+@@ -70,7 +69,7 @@ my %excludes = (
+ # We need a complete list
+ 
+ my %includes;
+-open(HEADERS, $headerlistpath) or die "Couldn't open $headerlistpath: $!\n";
++open(HEADERS, $headerlist) or die "Couldn't open $headerlist: $!\n";
+ map { chomp ; $includes{$_} = 1 } <HEADERS>;
+ close HEADERS;
+ 

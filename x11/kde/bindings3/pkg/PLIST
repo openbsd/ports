@@ -1,32 +1,56 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/04/05 14:53:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/02/02 13:04:35 espie Exp $
 bin/clib
-bin/shell_xparthost
-bin/xp_notepad
-include/dcopc/dcopc.h
-include/dcopc/dcopobject.h
-include/dcopc/marshal.h
-include/dcopc/util.h
-include/kjsembed/dialogfactory.h
-include/kjsembed/jsconsolepart.h
+bin/kjscmd
+include/kjsembed/customobject_imp.h
+include/kjsembed/jsbinding.h
+include/kjsembed/jsbindingplugin.h
+include/kjsembed/jsbuiltin.h
+include/kjsembed/jsbuiltin_imp.h
 include/kjsembed/jsconsolewidget.h
-include/kjsembed/jshookloader.h
+include/kjsembed/jseventmapper.h
+include/kjsembed/jseventutils.h
+include/kjsembed/jsfactory.h
+include/kjsembed/jsfactory_imp.h
+include/kjsembed/jsobjecteventproxy.h
 include/kjsembed/jsobjectproxy.h
-include/kjsembed/messagelogwidget.h
+include/kjsembed/jsobjectproxy_imp.h
+include/kjsembed/jsopaqueproxy.h
+include/kjsembed/jsopaqueproxy_imp.h
+include/kjsembed/jsproxy.h
+include/kjsembed/jsproxy_imp.h
+include/kjsembed/jssecuritypolicy.h
+include/kjsembed/jsvalueproxy.h
+include/kjsembed/jsvalueproxy_imp.h
+include/kjsembed/kjsembedpart.h
+include/kjsembed/kjsembedpart_imp.h
+include/kjsembed/slotproxy.h
+include/kjsembed/slotutils.h
+include/kjsembed/xmlactionclient.h
 include/smoke.h
-include/xkparts/gtkbrowserextension.h
-include/xkparts/gtkpart.h
-include/xkparts/xpart.h
-include/xkparts/xparthost.h
-lib/libdcopc.la
-lib/libgtkxparts.la
+${KDE}/libcustomobjectplugin.la
+${KDE}/libcustomqobjectplugin.la
+${KDE}/libimagefxplugin.la
+${KDE}/libjsconsoleplugin.la
 lib/libkdec.la
-lib/libkdexparts.la
 lib/libkjsembed.la
 lib/libqtc.la
 lib/libsmokeqt.la
-lib/libxp_notepadpart.la
-share/services/xp_notepad.desktop
+lib/python2.3/pydcop.py
+lib/python2.3/site-packages/pcop.la
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DCOP/.packlist
+share/applications/kde/kjscmd.desktop
+share/apps/konqueror/kpartplugins/plugin_jsconsole.rc
+share/mimelnk/application/x-javascript.desktop
+share/services/customobject_plugin.desktop
+share/services/customqobject_plugin.desktop
+share/services/imagefx_plugin.desktop
+share/servicetypes/binding_type.desktop
 %%SHARED%%
-@dirrm include/xkparts
+@dirrm share/apps/konqueror/kpartplugins
+@dirrm share/apps/konqueror
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DCOP
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
+@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
+@dirrm lib/python2.3/site-packages
+@dirrm lib/python2.3
 @dirrm include/kjsembed
-@dirrm include/dcopc

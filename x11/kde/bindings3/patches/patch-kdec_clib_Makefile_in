@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdec_clib_Makefile_in,v 1.1 2004/02/02 13:04:35 espie Exp $
+--- kdec/clib/Makefile.in.orig	2004-02-02 13:01:27.000000000 +0100
++++ kdec/clib/Makefile.in	2004-02-02 13:01:46.000000000 +0100
+@@ -344,7 +344,7 @@ xparts_SUBDIR_included_FALSE = @xparts_S
+ xparts_SUBDIR_included_TRUE = @xparts_SUBDIR_included_TRUE@
+ bin_PROGRAMS = clib
+ clib_SOURCES = main.c
+-clib_LDADD = ./kdec/libkdec.la ../../qtc/clib/qtc/libqtc.la  $(LIB_KHTML) $(LIB_KSPELL) -lkparts -lkmid  $(LIB_KIO) $(LIB_KDEUI) -lkscript $(LIB_QT) -lXext -lX11 $(LIBSOCKET)
++clib_LDADD = ./kdec/libkdec.la ../../qtc/clib/qtc/libqtc.la  $(LIB_KHTML) $(LIB_KSPELL) -lkparts -lkmid  $(LIB_KIO) $(LIB_KDEUI) -lkscript $(LIB_QT) -lXext -lX11 $(LIBSOCKET) -lstdc++
+ 
+ SUBDIRS = kdec 
+ 
