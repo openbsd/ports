@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.516 2002/03/21 21:28:29 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.517 2002/04/02 15:55:55 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1374,7 +1374,7 @@ ${_BUILDLIBLIST}: ${_FAKE_COOKIE}
 
 .if defined(IGNORE) && !defined(NO_IGNORE)
 fetch checksum extract patch configure all build install regress \
-uninstall deinstall fake package lib-depends-check:
+uninstall deinstall fake package lib-depends-check manpages-check:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}} ${IGNORE}."
 .  endif
@@ -1393,7 +1393,10 @@ lib-depends-check: ${_LIBLIST} ${_BUILDLIBLIST}
 		perl ${PORTSDIR}/infrastructure/install/check-libs \
 		${_LIBLIST} ${_BUILDLIBLIST}
 
-
+manpages-check: ${_FAKE_COOKIE}
+	@cd ${WRKINST}${TRUEPREFIX}/man && \
+		${SUDO} /usr/libexec/makewhatis -p . && \
+		cat whatis.db
 
 # Most standard port targets create a cookie to avoid being re-run.
 #
@@ -2777,4 +2780,4 @@ homepage-links:
    dir-depends _recurse-dir-depends package-dir-depends \
    _package-recurse-dir-depends recursebuild-depends-list run-depends-list \
    bulk-packages bulk-do _recurse-lib-depends lib-depends-check \
-   homepage-links
+   homepage-links manpages-check
