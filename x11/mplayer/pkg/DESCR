@@ -28,7 +28,7 @@ Flavors:
 
   arts: enables arts, requires x11/kde/arts3
 
-  esd: enables arts, requires audio/esound
+  esd: enables esd, requires audio/esound
 
   sdl: enables sdl, requires devel/sdl
 
