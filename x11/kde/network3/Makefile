@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/07/16 12:20:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2002/09/01 08:25:26 espie Exp $
 
 COMMENT= 		"X11 toolkit, network applications"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.2
+VERSION=		3.0.3
 DISTNAME=		kdenetwork-${VERSION}
 #PATCHFILES=		post-3.0.1-kdenetwork.diff
 #PATCH_DIST_STRIP=	-p1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2002/07/16 12:20:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2002/09/01 08:25:25 espie Exp $
 bin/appletproxy
 bin/chooser
 bin/conttest
@@ -2261,7 +2261,6 @@ share/services/searchproviders/msdn.desktop
 share/services/searchproviders/nl-teletekst.desktop
 share/services/searchproviders/php.desktop
 share/services/searchproviders/python.desktop
-share/services/searchproviders/realnames.desktop
 share/services/searchproviders/rfc.desktop
 share/services/searchproviders/rpmfind.desktop
 share/services/searchproviders/ruby_application_archive.desktop

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.uk,v 1.4 2002/07/16 13:04:38 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.5 2002/09/01 08:25:26 espie Exp $
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -278,7 +278,6 @@ ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
 ${LOC}kpilot.mo
 ${LOC}kpixmap2bitmap.mo
-${LOC}kpm.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo

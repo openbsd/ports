@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2002/08/16 19:49:27 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/01 08:25:26 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.0.2
+VERSION=		3.0.3
 DISTNAME=		kdelibs-${VERSION}
-PKGNAME=		${DISTNAME}p1
 
 LIB_DEPENDS= 	png.2::graphics/png \
 		jpeg.62::graphics/jpeg \
@@ -20,7 +19,7 @@ SEPARATE_BUILD=	simple
 # To investigate
 #CONFIGURE_ARGS=--enable-fast-malloc=full
 
-BUILD_DEPENDS=	:qt3-html-*:x11/qt3,-html
+#BUILD_DEPENDS=	:qt3-html-*:x11/qt3,-html
 
 EXTRA_DIRECTORIES= \
 	share/applnk/Editors \
