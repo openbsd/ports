@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2001/03/19 20:17:03 avsm Exp $
+# $OpenBSD: Makefile,v 1.3 2001/03/29 17:37:40 avsm Exp $
+
+COMMENT=		"modules for parsing (and creating!) MIME entities"
 
 DISTNAME=		MIME-tools-5.410
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		converters perl5
-NEED_VERSION=		1.362
+NEED_VERSION=		1.364
 
 MAINTAINER=		Shell Hung <i@shellhung.org>
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2001/02/22 19:44:20 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2001/03/29 17:38:59 avsm Exp $
+
+COMMENT=	"perl module for accessing NNTP articles"
 
 DISTNAME=	News-Article-1.13
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	news perl5
-NEED_VERSION=	1.352
+NEED_VERSION=	1.364
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR= News
 
