@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2000/08/03 23:44:36 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2001/11/02 21:22:08 brad Exp $
+@pkgcfl libungif-[0-9]*
 bin/gif2epsn
 bin/gif2ps
 bin/gif2rgb
