@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2000/09/24 07:04:05 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2000/10/03 02:15:31 brad Exp $
 
 DISTNAME=	ImageMagick-5.2.2
 CATEGORIES=     graphics
@@ -14,18 +14,14 @@ HOMEPAGE=	http://www.wizards.dupont.com/cristy/ImageMagick.html
 
 LIB_DEPENDS=	bz2.10::archivers/bzip2 \
 		jbig.1.2::graphics/jbigkit \
-		jpeg.62::graphics/jpeg \
 		mpeg.13::graphics/mpeg-lib \
 		png.1::graphics/png \
 		tiff.35::graphics/tiff \
 		ttf.1.3::print/freetype \
 		xml.4::textproc/libxml
 BUILD_DEPENDS=	fig2dev::print/transfig \
-		gs::print/ghostscript/gnu \
 		picttoppm::graphics/netpbm
-RUN_DEPENDS=	fig2dev::print/transfig \
-		gs::print/ghostscript/gnu \
-		picttoppm::graphics/netpbm
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAINTAINER=	Brad Smith <brad@openbsd.org>
 
