@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2003/11/18 19:26:08 david Exp $
+# $OpenBSD: Makefile,v 1.26 2004/01/02 06:36:32 david Exp $
 # KAME Id: Makefile,v 1.5 1999/09/13 16:27:41 itojun Exp
 # Originally by: peter.galbavy@knowledge.com
 
 COMMENT=	"multi-threaded routing daemon"
 
 DISTNAME=	zebra-0.93a
-PKGNAME=	${DISTNAME}p1
+PKGNAME=	${DISTNAME}p2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.knowledge.com/pub/mirrors/zebra/ \
