@@ -1,9 +1,7 @@
 bin/editcap
 bin/ethereal
 bin/tethereal
-lib/ethereal/plugins/0.8.9/libgryphon.so.0.0
-lib/ethereal/plugins/0.8.9/gryphon.la
-lib/ethereal/plugins/0.8.9/libgryphon.a
+%%SHARED%%
 man/man1/editcap.1
 man/man1/ethereal.1
 man/man1/tethereal.1
@@ -12,4 +10,3 @@ share/ethereal/manuf
 @dirrm lib/ethereal/plugins/0.8.9
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal
-@exec ln -s libgryphon.so.0.0 %D/lib/ethereal/plugins/0.8.9/libgryphon.so
