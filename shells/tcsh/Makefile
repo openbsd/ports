@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2001/02/08 18:29:39 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2001/04/04 01:44:51 brad Exp $
+
+COMMENT=	"extended C-shell with many useful features"
 
 DISTNAME=	${PKGNAME:R}
 PKGNAME=	tcsh-6.10.00
 CATEGORIES=	shells
-NEED_VERSION=	1.336
+NEED_VERSION=	1.384
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
 		http://www2.wbs.ne.jp/~znc/tcsh/
 
@@ -28,8 +30,6 @@ ALL_TARGET=	all catalogs
 WRKDIST=	${WRKDIR}/tcsh-6.10.00
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/el_GR.ISO_8859-7
-	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/uk_UA.KOI8-U
 	${INSTALL_PROGRAM} ${WRKSRC}/tcsh ${PREFIX}/bin/tcsh
 	${INSTALL_MAN} ${WRKSRC}/tcsh.man ${PREFIX}/man/man1/tcsh.1
 	${INSTALL_DATA} ${WRKSRC}/tcsh.C.cat ${PREFIX}/share/nls/C/tcsh.cat
