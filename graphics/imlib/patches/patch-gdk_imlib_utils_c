@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdk_imlib_utils_c,v 1.1 2003/06/20 14:53:12 avsm Exp $
+--- gdk_imlib/utils.c.orig	Wed Jun 18 15:46:18 2003
++++ gdk_imlib/utils.c	Wed Jun 18 15:46:51 2003
+@@ -1336,7 +1336,7 @@ gdk_imlib_create_image_from_xpm_data(cha
+ 		{
+ 		  if (line[k] != ' ')
+ 		    {
+-		      sscanf(&line[k], "%65536s", s);
++		      sscanf(&line[k], "%255s", s);
+ 		      k += strlen(s);
+ 		      if (!strcmp(s, "c"))
+ 			iscolor = 1;

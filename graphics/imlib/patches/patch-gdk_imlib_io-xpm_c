@@ -1,0 +1,12 @@
+$OpenBSD: patch-gdk_imlib_io-xpm_c,v 1.1 2003/06/20 14:53:12 avsm Exp $
+--- gdk_imlib/io-xpm.c.orig	Wed Jun 18 15:47:27 2003
++++ gdk_imlib/io-xpm.c	Wed Jun 18 15:47:56 2003
+@@ -136,7 +136,7 @@ loader_xpm(FILE *file, int *w, int *h, i
+ 			  if (line[k] != ' ')
+ 			    {
+ 			      s[0] = 0;
+-			      sscanf(&line[k], "%256s", s);
++			      sscanf(&line[k], "%255s", s);
+ 			      slen = strlen(s);
+ 			      k += slen;
+ 			      if (!strcmp(s, "c"))

@@ -1,0 +1,69 @@
+$OpenBSD: patch-Imlib_utils_c,v 1.1 2003/06/20 14:53:12 avsm Exp $
+--- Imlib/utils.c.orig	Fri Mar 22 14:43:04 2002
++++ Imlib/utils.c	Wed Jun 18 20:59:57 2003
+@@ -801,6 +801,7 @@ Imlib_crop_and_clone_image(ImlibData * i
+   unsigned char      *ptr1, *ptr2;
+   ImlibImage         *im2;
+   char               *s;
++  size_t              s_size;
+ 
+   if (!im)
+     return NULL;
+@@ -872,10 +873,11 @@ Imlib_crop_and_clone_image(ImlibData * i
+   im2->rgb_width = w;
+   im2->rgb_height = h;
+   im2->alpha_data = NULL;
+-  s = malloc(strlen(im->filename) + 320);
++  s_size = strlen(im->filename + 320);
++  s = malloc(s_size);
+   if (s)
+     {
+-      snprintf(s, sizeof(s), "%s_%x_%x", im->filename, (int)time(NULL), (int)rand());
++      snprintf(s, s_size, "%s_%x_%x", im->filename, (int)time(NULL), (int)rand());
+       im2->filename = malloc(strlen(s) + 1);
+       if (im2->filename)
+ 	strcpy(im2->filename, s);
+@@ -1211,6 +1213,7 @@ Imlib_clone_image(ImlibData * id, ImlibI
+ {
+   ImlibImage         *im2;
+   char               *s;
++  size_t              s_size;
+ 
+   if (!im)
+     return NULL;
+@@ -1239,10 +1242,11 @@ Imlib_clone_image(ImlibData * id, ImlibI
+     }
+   else
+     im2->alpha_data = NULL;
+-  s = malloc(strlen(im->filename) + 320);
++  s_size = strlen(im->filename) + 320;
++  s = malloc(s_size);
+   if (s)
+     {
+-      snprintf(s, sizeof(s), "%s_%x_%x", im->filename, (int)time(NULL), (int)rand());
++      snprintf(s, s_size, "%s_%x_%x", im->filename, (int)time(NULL), (int)rand());
+       im2->filename = malloc(strlen(s) + 1);
+       if (im2->filename)
+ 	strcpy(im2->filename, s);
+@@ -1285,6 +1289,7 @@ Imlib_clone_scaled_image(ImlibData * id,
+ {
+   ImlibImage         *im2;
+   char               *s;
++  size_t              s_size;
+ 
+   if ((!im) || (w <= 0) || (h <= 0))
+     return NULL;
+@@ -1417,10 +1422,11 @@ Imlib_clone_scaled_image(ImlibData * id,
+     }
+   else
+     im2->alpha_data = NULL;
+-  s = malloc(strlen(im->filename) + 320);
++  s_size = strlen(im->filename) + 320;
++  s = malloc(s_size);
+   if (s)
+     {
+-      snprintf(s, sizeof(s), "%s_%x_%x_%x_%x", im->filename, (int)time(NULL), w, h, (int)rand());
++      snprintf(s, s_size, "%s_%x_%x_%x_%x", im->filename, (int)time(NULL), w, h, (int)rand());
+       im2->filename = malloc(strlen(s) + 1);
+       if (im2->filename)
+ 	strcpy(im2->filename, s);

@@ -1,5 +1,5 @@
---- Imlib/load.c.orig	Fri Mar 22 09:43:04 2002
-+++ Imlib/load.c	Thu May 16 22:12:55 2002
+--- Imlib/load.c.orig	Fri Mar 22 14:43:04 2002
++++ Imlib/load.c	Wed Jun 18 15:49:01 2003
 @@ -254,7 +254,8 @@ _LoadPNG(ImlibData * id, FILE * f, int *
    png_read_image(png_ptr, lines);
    png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
@@ -38,3 +38,34 @@
        return NULL;
      }
    fread(dbuf, 4, 4, file);
+@@ -1061,7 +1064,7 @@ _LoadXPM(ImlibData * id, FILE *file, int
+ 			  if (line[k] != ' ')
+ 			    {
+ 			      s[0] = 0;
+-			      sscanf(&line[k], "%256s", s);
++			      sscanf(&line[k], "%255s", s);
+ 			      slen = strlen(s);
+ 			      k += slen;
+ 			      if (!strcmp(s, "c"))
+@@ -1861,7 +1864,7 @@ Imlib_load_image(ImlibData * id, char *f
+ 	  free(im);
+ 	  return NULL;
+ 	}
+-      sscanf(s, "%256s %i", s1, &num);
++      sscanf(s, "%255s %i", s1, &num);
+       if (num <= 0)
+ 	{
+ 	  fclose(p);
+@@ -1870,10 +1873,10 @@ Imlib_load_image(ImlibData * id, char *f
+ 	}
+       while (fgets(s, 4096, p))
+ 	{
+-	  sscanf(s, "%256s", s1);
++	  sscanf(s, "%255s", s1);
+ 	  if (!strcmp("IMAGE", s1))
+ 	    {
+-	      sscanf(s, "%256s %i %256s %i %i %i %i %i %i %i %i %i", s1, &size,
++	      sscanf(s, "%255s %i %255s %i %i %i %i %i %i %i %i %i", s1, &size,
+ 		     s2, &w, &h, &r, &g, &b, &bl, &br, &bt, &bb);
+ 	      if (!iden[0])
+ 		break;
