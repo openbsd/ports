@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/09/13 20:23:11 todd Exp $
+bin/oaf-client
+bin/oaf-config
+bin/oaf-run-query
+bin/oaf-slay
+bin/oaf-sysconf
+bin/oafd
+include/liboaf/liboaf-version.h
+include/liboaf/liboaf.h
+include/liboaf/oaf-actid.h
+include/liboaf/oaf-activate.h
+include/liboaf/oaf-async.h
+include/liboaf/oaf-factory-suppress.h
+include/liboaf/oaf-factory.h
+include/liboaf/oaf-mainloop.h
+include/liboaf/oaf-plugin.h
+include/liboaf/oaf-registration.h
+include/liboaf/oaf-servreg.h
+include/liboaf/oaf-util.h
+include/liboaf/oaf.h
+lib/liboaf.la
+lib/locale/da/LC_MESSAGES/oaf.mo
+lib/locale/de/LC_MESSAGES/oaf.mo
+lib/locale/es/LC_MESSAGES/oaf.mo
+lib/locale/fi/LC_MESSAGES/oaf.mo
+lib/locale/fr/LC_MESSAGES/oaf.mo
+lib/locale/ga/LC_MESSAGES/oaf.mo
+lib/locale/gl/LC_MESSAGES/oaf.mo
+lib/locale/hu/LC_MESSAGES/oaf.mo
+lib/locale/it/LC_MESSAGES/oaf.mo
+lib/locale/ja/LC_MESSAGES/oaf.mo
+lib/locale/ko/LC_MESSAGES/oaf.mo
+lib/locale/no/LC_MESSAGES/oaf.mo
+lib/locale/pl/LC_MESSAGES/oaf.mo
+lib/locale/pt_BR/LC_MESSAGES/oaf.mo
+lib/locale/ro/LC_MESSAGES/oaf.mo
+lib/locale/ru/LC_MESSAGES/oaf.mo
+lib/locale/sk/LC_MESSAGES/oaf.mo
+lib/locale/sl/LC_MESSAGES/oaf.mo
+lib/locale/sv/LC_MESSAGES/oaf.mo
+lib/locale/tr/LC_MESSAGES/oaf.mo
+lib/locale/uk/LC_MESSAGES/oaf.mo
+lib/oafConf.sh
+share/aclocal/oaf.m4
+share/idl/oaf-factory.idl
+share/idl/oaf.idl
+share/oaf/OAF_naming-service.oaf
+share/oaf/empty.oafinfo
+share/oaf/oaf/oaf-config.xml
+share/oaf/oaf/oaf-config.xml.sample
+%%SHARED%%
+@exec mkdir -p %D/share/oaf/html/liboaf
+@dirrm share/oaf/html/liboaf
+@dirrm share/oaf/html
+@dirrm share/oaf/oaf
+@dirrm share/oaf
+@dirrm include/liboaf
