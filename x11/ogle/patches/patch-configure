@@ -1,23 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2002/06/15 23:09:34 espie Exp $
---- configure.orig	Wed Jun 12 00:11:32 2002
-+++ configure	Sun Jun 16 00:51:03 2002
-@@ -6255,6 +6255,7 @@ else
-   cat > conftest.$ac_ext <<EOF
- #line 6257 "configure"
- #include "confdefs.h"
-+#include <X11/Xlib.h>
- #include <X11/extensions/XShm.h>
- EOF
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-@@ -7795,6 +7796,7 @@ else
-   cat > conftest.$ac_ext <<EOF
- #line 7797 "configure"
- #include "confdefs.h"
-+#include <X11/Xlib.h>
- #include <X11/extensions/xf86vmode.h>
- EOF
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-@@ -8075,8 +8077,11 @@ EOF
+$OpenBSD: patch-configure,v 1.5 2002/07/16 13:38:04 espie Exp $
+--- configure.orig	Sun Jun 30 02:54:14 2002
++++ configure	Tue Jul 16 15:17:38 2002
+@@ -11804,8 +11804,11 @@ _ACEOF
  powerpc|ppc)
  	if test "x$GCC" = xyes; then
  	  CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-loops"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2002/06/15 23:09:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2002/07/16 13:38:05 espie Exp $
 bin/ifo_dump
 bin/ogle
 include/ogle/dvd.h
