@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.7 2003/12/30 05:57:30 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2003/12/30 20:07:27 brad Exp $
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -8,7 +8,6 @@ bin/my_print_defaults
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
-bin/mysql_config
 bin/mysql_convert_table_format
 bin/mysql_explain_log
 bin/mysql_find_rows
