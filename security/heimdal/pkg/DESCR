@@ -1,0 +1,13 @@
+Heimdal is a free implementation of Kerberos 5. The goals are to:
+
+- have an implementation that can be freely used by anyone
+- be protocol compatible with existing implementations and,
+  if not in conflict, with RFC 1510 (and any future updated RFC)
+- be reasonably compatible with the M.I.T Kerberos V5 API
+- have support for Kerberos V5 over GSS-API (RFC1964)
+- include the most important and useful application programs
+  (rsh, telnet, popper, etc.)
+- include enough backwards compatibility with Kerberos V4
+
+
+More information availible at ${HOMEPAGE}
