@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2002/10/10 13:00:23 lebel Exp $
+# $OpenBSD: Makefile,v 1.13 2002/10/17 17:46:31 lebel Exp $
 
 COMMENT=		"mailfilter to identify and mark spam"
 
-DISTNAME=		Mail-SpamAssassin-2.42
+DISTNAME=		Mail-SpamAssassin-2.43
 PKGNAME=		p5-${DISTNAME}
 CATEGORIES=		mail perl5
 
@@ -28,7 +28,7 @@ CONFIGURE_STYLE=	perl
 
 SAMPLE_CONFIG_DIR=	${PREFIX}/share/examples/SpamAssassin
 CONFIG_DIR=		${SYSCONFDIR}/mail/spamassassin
-INSTALL_TARGET=		LOCAL_RULES_DIR=${WRKINST}${SAMPLE_CONFIG_DIR} install
+INSTALL_TARGET=		PKG_LOCAL_RULES_DIR=${WRKINST}${SAMPLE_CONFIG_DIR} install
 
 # regress insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home
