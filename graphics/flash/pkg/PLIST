@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/02 12:04:18 reinhard Exp $
+bin/swfplayer
+share/doc/flash/README
+@dirrm share/doc/flash

@@ -1,0 +1,6 @@
+Standalone open source flash(tm) player, that comes with the 
+FlashLib (libflash) distribution.
+You can use it to quickly play movies without starting Netscape.
+It can also play movies on root window (suitable for xscreensaver).
+
+WWW: ${HOMEPAGE}
