@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2002/10/30 09:14:56 mark Exp $
---- Makefile.in~	Wed Oct 30 01:07:35 2002
-+++ Makefile.in	Wed Oct 30 01:10:00 2002
+$OpenBSD: patch-Makefile_in,v 1.4 2003/06/03 01:26:50 margarida Exp $
+--- Makefile.in.orig	Mon Dec  3 18:08:30 2001
++++ Makefile.in	Tue Jun  3 02:10:18 2003
 @@ -1,4 +1,4 @@
 -CC = @CC@ -ggdb -Wall -ansi -pedantic
 +CC = @CC@

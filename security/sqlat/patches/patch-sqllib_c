@@ -1,0 +1,211 @@
+$OpenBSD: patch-sqllib_c,v 1.1 2003/06/03 01:26:50 margarida Exp $
+--- sqllib.c.orig	Mon Dec  3 18:08:30 2001
++++ sqllib.c	Tue Jun  3 01:10:57 2003
+@@ -32,6 +32,8 @@ const char *TEMPDIRS[5] = {"c:\\temp", "
+ int ifExistsXP(TDSSOCKET *tds, char *pXP) {
+ 
+   int nResult;
++  TDS_INT result_type;
++  TDS_INT rowtype;
+   char *sQuery;
+   int nRows = 0;
+ 
+@@ -40,8 +42,8 @@ int ifExistsXP(TDSSOCKET *tds, char *pXP
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while( tds_process_row_tokens(tds) ==TDS_SUCCEED ) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while( tds_process_row_tokens(tds, &rowtype, NULL) == TDS_SUCCEED ) {
+ 	nRows ++;
+       }
+     }
+@@ -355,14 +357,15 @@ void freeExtendedStoredProcedures(EXTEND
+ EXTENDEDSP* getExtendedStoredProcedures(TDSSOCKET *tds) {
+ 
+   int nResult, rowc;
++  TDS_INT result_type, rowtype;
+   EXTENDEDSP *pExtendedSP = NULL;
+   char *sQuery = "select name from master..sysobjects where name like \'xp_%\'";
+   char *pXPName;
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL))==TDS_SUCCEED) {
+ 	pXPName = value_as_string(tds, 0);
+ 	pExtendedSP = addExtendedSP(pExtendedSP, pXPName);
+ 
+@@ -383,14 +386,15 @@ EXTENDEDSP* getExtendedStoredProcedures(
+ DATABASE *getDatabases(TDSSOCKET *tds) {
+ 
+   int nResult, rowc;
++  TDS_INT result_type, rowtype;
+   char *sQuery = "select name, filename from master..sysdatabases";
+   DATABASE *pDB = NULL;
+   char *pDBName, *pDBPath;
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL))==TDS_SUCCEED) {
+ 
+ 	pDBName = value_as_string(tds, 0);
+ 	pDBPath = value_as_string(tds, 1);
+@@ -447,6 +451,7 @@ void outputTablesForDB(FILE *fd, SQLTABL
+ SQLTABLE *getTablesForDB(TDSSOCKET *tds, char *pDBname) {
+ 
+   int nResult, rowc;
++  TDS_INT result_type, rowtype;
+   SQLTABLE *pTable = NULL;
+   char *pQuery;
+   char *pTableName;
+@@ -457,8 +462,8 @@ SQLTABLE *getTablesForDB(TDSSOCKET *tds,
+ 
+   if ( tds_submit_query(tds,pQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL))==TDS_SUCCEED) {
+ 	pTableName = value_as_string(tds, 0);
+ 	pTable = addTable(pTable, pTableName);
+ 
+@@ -482,6 +487,7 @@ SQLTABLE *getTablesForDB(TDSSOCKET *tds,
+ SQLLOGIN *getLoginsForDB(TDSSOCKET *tds, DATABASE *pDB) {
+ 
+   int nResult, rowc;
++  TDS_INT result_type, rowtype;
+   char *sQuery;
+   SQLLOGIN *pLogin;
+   char *pLoginName;
+@@ -498,8 +504,8 @@ SQLLOGIN *getLoginsForDB(TDSSOCKET *tds,
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL))==TDS_SUCCEED) {
+ 	pLoginName = value_as_string(tds, 0);
+ 	strncpy(pLogin->name, pLoginName, sizeof(pLogin->name));
+ 	pDB->pLogin = addLogin(pDB->pLogin, pLogin);
+@@ -523,6 +529,7 @@ SQLLOGIN *getLoginsForDB(TDSSOCKET *tds,
+ int dirExists(TDSSOCKET *tds, char *pDir) {
+ 
+   int i, nResult, rowc, nCount = 0;
++  TDS_INT result_type, rowtype; 
+   char sLastRow[256];
+   char sQuery[128];
+ 
+@@ -531,8 +538,8 @@ int dirExists(TDSSOCKET *tds, char *pDir
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL))==TDS_SUCCEED) {
+ 	for (i=0; i<tds->res_info->num_cols; i++) {
+ 	  /* 
+ 	     Tubby patch for bug in TDS library
+@@ -730,11 +737,12 @@ int sqlExec(TDSSOCKET *tds, char *sQuery
+ 
+ 
+   int nResult;
++  TDS_INT result_type, rowtype;
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while( tds_process_row_tokens(tds) ==TDS_SUCCEED ) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while( tds_process_row_tokens(tds, &rowtype, NULL) == TDS_SUCCEED ) {
+ 
+       }
+     }
+@@ -751,6 +759,7 @@ int sqlExec(TDSSOCKET *tds, char *sQuery
+ int xp_dirtree(FILE *fd, TDSSOCKET *tds, char *pDir) {
+ 
+   int nDepth, nResult, rowc, i;
++  TDS_INT result_type, rowtype; 
+   char sQuery[1024];
+   char *temp;
+   char *pPath;
+@@ -760,8 +769,8 @@ int xp_dirtree(FILE *fd, TDSSOCKET *tds,
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+     printf("%s\n", pDir);
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL)) == TDS_SUCCEED) {
+ 	  /* 
+ 	     Tubby patch for bug in TDS library
+ 	     Seems to be a problem when there is a <empty> last row,
+@@ -793,6 +802,7 @@ int xp_dirtree(FILE *fd, TDSSOCKET *tds,
+ char *xp_regread(FILE *fd, TDSSOCKET *tds, char *pRegKey, char *pValue) {
+ 
+   int nResult, rowc;
++  TDS_INT result_type, rowtype;
+   char sQuery[1024];
+   char *pRootKey, *pKey;
+   char *pVal = NULL;
+@@ -805,8 +815,8 @@ char *xp_regread(FILE *fd, TDSSOCKET *td
+ 	  pRootKey, pKey, pValue);
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL)) == TDS_SUCCEED) {
+ 	pVal = value_as_string(tds, 1);
+       }
+     }
+@@ -828,6 +838,7 @@ char *xp_regread(FILE *fd, TDSSOCKET *td
+ int xp_regenumvalues(FILE *fd, TDSSOCKET *tds, char *pRegKey) {
+ 
+   int nResult, rowc;
++  TDS_INT result_type, rowtype;
+   char sQuery[1024];
+   char *pRootKey, *pKey;
+   char *pValue, *pData;
+@@ -840,8 +851,8 @@ int xp_regenumvalues(FILE *fd, TDSSOCKET
+ 	  pRootKey, pKey);
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL)) == TDS_SUCCEED) {
+ 	pValue = value_as_string(tds, 0);
+ 	pData  = value_as_string(tds, 1);
+ 	fprintf(fd, "%s=%s\n", pValue, pData);
+@@ -899,11 +910,12 @@ char *getFilenameFromPath(char *pFullFil
+ int sqlGetResult(FILE *fd, TDSSOCKET *tds, char *sQuery, int pMode) {
+ 
+   int i, nResult, rowc;
++  TDS_INT result_type, rowtype;
+   char *pValue;
+ 
+   if ( tds_submit_query(tds,sQuery) != TDS_FAIL ) {
+ 
+-    while( ( nResult = tds_process_result_tokens(tds) ) == TDS_SUCCEED) {
++    while( ( nResult = tds_process_result_tokens(tds, &result_type) ) == TDS_SUCCEED) {
+ 
+       if ( pMode == 3 )
+ 	fprintf(fd, "<table border=\"1\">\n");
+@@ -926,7 +938,7 @@ int sqlGetResult(FILE *fd, TDSSOCKET *td
+ 	printf("\n");
+       }
+       
+-      while((rowc=tds_process_row_tokens(tds))==TDS_SUCCEED) {
++      while((rowc=tds_process_row_tokens(tds, &rowtype, NULL))==TDS_SUCCEED) {
+ 
+ 	/* Should we output as HTML */	  
+ 	if ( pMode == 3 ) {
