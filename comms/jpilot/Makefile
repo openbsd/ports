@@ -3,6 +3,7 @@
 # Date created:        23 August 1999
 # Whom:                Alex Varju <varju@webct.com>
 #
+# $OpenBSD: Makefile,v 1.2 2000/01/05 23:42:20 dugsong Exp $
 # $FreeBSD: ports/palm/jpilot/Makefile,v 1.6 1999/11/11 22:40:39 sumikawa Exp $
 
 DISTNAME=	jpilot-0.96
