@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 1999/03/07 02:13:13 brad Exp $
+# $OpenBSD: Makefile,v 1.2 1999/03/08 03:59:09 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	ircii-pana-75p3
@@ -7,6 +7,10 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/
 
 MAINTAINER=	brad@openbsd.org
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=                "Currently does not build properly"
+.endif
 
 GNU_CONFIGURE=	yes
 

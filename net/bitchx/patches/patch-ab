@@ -1,5 +1,23 @@
---- configure.orig	Thu Mar  4 20:18:38 1999
-+++ configure	Thu Mar  4 20:19:20 1999
+--- configure.orig	Tue Feb 23 10:08:42 1999
++++ configure	Sun Mar  7 20:13:33 1999
+@@ -4887,7 +4887,7 @@
+ 
+ if test ! -n "$IRCLIB";
+ then
+-	IRCLIB=\${prefix}/lib/bx
++	IRCLIB=\${prefix}/lib/bitchx
+ fi
+ 
+ if test -n "$nextstep"; then
+@@ -5274,7 +5274,7 @@
+ if test -z "$CFLAGS"; then CFLAGS=-g -O; fi
+ if test -z "$LDFLAGS"; then LDFLAGS= ; fi
+ if test -z "$bindir"; then bindir=\${exec_prefix}/bin; fi
+-if test -z "$IRCLIB"; then IRCLIB=\${prefix}/lib/bx; fi
++if test -z "$IRCLIB"; then IRCLIB=\${prefix}/lib/bitchx; fi
+ 
+ 
+ 
 @@ -5657,22 +5657,22 @@
    echo "To include the CD-ROM player in your bin, edit \"Makefile\" and search for"
    echo "the CD_* defines and remove the \"#\" in front of each line."
