@@ -1,0 +1,11 @@
+SNG (Scriptable Network Graphics) is a textual mini-language designed
+specifically to reflect the data and structure of PNG (Portable
+Network Graphics) files in an editable form.
+
+The sng program translates between SNG and PNG. It can be useful
+especially for viewing and editing data in obscure ancillary chunks
+that graphics editors won't handle. Also, since SNG is easy to
+generate from scripts, sng may be useful at the end of a pipeline
+that programmatically generates PNG images.
+
+WWW: ${HOMEPAGE}

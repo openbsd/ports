@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2003/04/28 09:25:42 wilfried Exp $
+--- Makefile.in.orig	Wed Jul 31 03:51:41 2002
++++ Makefile.in	Tue Apr 15 22:07:44 2003
+@@ -66,7 +66,7 @@ VERSION = @VERSION@
+ bin_PROGRAMS = sng
+ bin_SCRIPTS = sng_regress
+ sng_SOURCES = main.c sngc.c sngd.c sng.h
+-sng_LDFLAGS = -static
++sng_LDFLAGS = #-static
+ man_MANS = sng.1
+ # The man pages and script are here because automake has a bug
+ EXTRA_DIST = Makefile sng.spec.in sng.spec sng.xml sng.1 sng_regress indexgen.sh lsmgen.sh test.sng
+@@ -388,7 +388,7 @@ installcheck: installcheck-am
+ all-recursive-am: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS
++install-exec-am: install-binPROGRAMS #install-binSCRIPTS
+ install-exec: install-exec-am
+ 
+ install-data-am: install-man
