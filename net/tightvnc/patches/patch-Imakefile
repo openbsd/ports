@@ -1,11 +1,10 @@
-$OpenBSD: patch-Imakefile,v 1.2 2002/03/25 11:57:45 wilfried Exp $
---- Imakefile.orig	Sun Mar 24 19:19:15 2002
-+++ Imakefile	Sun Mar 24 19:18:12 2002
+--- Imakefile.orig	Tue Apr 30 07:07:30 2002
++++ Imakefile	Sat Jan  4 13:19:29 2003
 @@ -11,6 +11,7 @@
  	@echo Built $(SUBDIRS).
- 	@echo 'To build Xvnc, do "cd Xvnc", followed by "make World"'
+ 	@echo 'To build Xvnc, do "cd Xvnc", followed by "./configure" then "make"'
  	@echo ""
-+	(cd Xvnc; make World)
-
++	(cd Xvnc; ./configure; make)
+ 
  libs:
-	@echo 'Building libraries...'
+ 	@echo 'No libraries included.'

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2002/04/15 06:55:57 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2003/01/12 21:37:49 millert Exp $
 @pkgcfl vnc-*
 @pkgcfl tightvnc-viewer-*
 bin/Xvnc
@@ -6,7 +6,6 @@ bin/vncconnect
 bin/vncpasswd
 bin/vncserver
 bin/vncviewer
-man/cat1/vncviewer.0
 man/man1/Xvnc.1
 man/man1/vncconnect.1
 man/man1/vncpasswd.1
@@ -121,6 +120,7 @@ share/doc/vnc/vnc_docs/vnchistory.html
 share/doc/vnc/vnc_docs/vncpeople.html
 share/doc/vnc/vnc_docs/vncpeoplebutton.gif
 share/doc/vnc/vnc_docs/vnctitle.gif
+share/doc/vnc/vnc_docs/vnctm.gif
 share/doc/vnc/vnc_docs/winhistory.html
 share/doc/vnc/vnc_docs/winviewer1.gif
 share/doc/vnc/vnc_docs/winviewer1_small.gif
@@ -136,16 +136,15 @@ share/vnc/classes/ButtonPanel.class
 share/vnc/classes/ClipboardFrame.class
 share/vnc/classes/DesCipher.class
 share/vnc/classes/OptionsFrame.class
+share/vnc/classes/RecordingFrame.class
+share/vnc/classes/ReloginPanel.class
 share/vnc/classes/RfbProto.class
+share/vnc/classes/SessionRecorder.class
+share/vnc/classes/SocketFactory.class
 share/vnc/classes/VncCanvas.class
 share/vnc/classes/VncViewer.class
 share/vnc/classes/VncViewer.jar
-share/vnc/classes/hextile.vnc
 share/vnc/classes/index.vnc
-share/vnc/classes/noshared.vnc
-share/vnc/classes/shared.vnc
-share/vnc/classes/tight.vnc
-share/vnc/classes/zlib.vnc
 @dirrm share/vnc/classes
 @dirrm share/vnc
 @dirrm share/doc/vnc/vnc_docs
