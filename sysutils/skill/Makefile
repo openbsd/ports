@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2000/10/22 15:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2000/11/20 17:00:52 espie Exp $
 
 DISTNAME=		skill-3.7@P8
 PKGNAME=		skill-3.7.9
 CATEGORIES=     	sysutils
 
-MAINTAINER=		jakob@openbsd.org
+MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	no
 PERMIT_PACKAGE_FTP=	yes
