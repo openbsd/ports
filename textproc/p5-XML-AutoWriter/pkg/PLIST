@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 06:01:36 kevlo Exp $
+${P5SITE}/XML/
+${P5SITE}/XML/AutoWriter.pm
+${P5SITE}/XML/Doctype/
+${P5SITE}/XML/Doctype.pm
+${P5SITE}/XML/Doctype/AttDef.pm
+${P5SITE}/XML/Doctype/ElementDecl.pm
+${P5SITE}/XML/ValidWriter.pm
+@man man/man3p/XML::AutoWriter.3p
+@man man/man3p/XML::Doctype.3p
+@man man/man3p/XML::Doctype::AttDef.3p
+@man man/man3p/XML::Doctype::ElementDecl.3p
+@man man/man3p/XML::ValidWriter.3p
