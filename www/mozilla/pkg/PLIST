@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2003/05/18 17:06:05 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.15 2003/05/18 20:44:04 wilfried Exp $
+@pkgcfl mozilla-firebird-*
 bin/mozilla
 bin/run-mozilla.sh
 mozilla/LICENSE
