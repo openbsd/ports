@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2003/11/19 01:40:23 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2003/11/19 10:07:04 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 
@@ -6,7 +6,6 @@ MAKE_GXX=Yes
 MAKE_FORTRAN=Yes
 MAKE_OBJC=Yes
 # Java is still mostly broken (boehm-gc)
-
 
 .if ${MACHINE_ARCH} == "i386"
 MAKE_JAVA=Yes
@@ -291,13 +290,8 @@ pre-build:
 post-build:
 		# avoid packaging include copies along...
 	find ${WRKBUILD} -name \*.orig|xargs rm
-	mkdir -p ${WRKBUILD}/gcc/include/machine
-	cp ${FILESDIR}/include/machine/ansi.h ${WRKBUILD}/gcc/include/machine
 .if ${MAKE_ADA:L} == "yes"
 	cd ${WRKBUILD}/gcc && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} gnatlib_and_tools
-.endif
-.if ${MAKE_JAVA:L} == "yes"
-	cd ${WRKBUILD} && env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_ARGS} all-target-libjava
 .endif
 
 
