@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2001/06/08 07:45:43 kevlo Exp $
 bin/piewm
 bin/ssetroot
 lib/X11/piewm/system.twmrc
