@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/28 15:28:55 avsm Exp $
+libdata/perl5/site_perl/${ARCH}-openbsd/Math/GMP.pm
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Math/GMP/GMP.bs
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Math/GMP/GMP.so
+libdata/perl5/site_perl/${ARCH}-openbsd/auto/Math/GMP/autosplit.ix
+man/man3/Math::GMP.3p
+@dirrm libdata/perl5/site_perl/${ARCH}-openbsd/auto/Math/GMP

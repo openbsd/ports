@@ -1,0 +1,9 @@
+Math::GMP is designed to be a drop-in replacement both for Math::BigInt
+and for regular integer arithmetic. Unlike BigInt, though, Math::GMP
+uses the GNU gmp library for all of its calculations, as opposed
+to straight Perl functions. This results in a speed increase of
+anywhere from 5 to 30 times.
+
+A Math::GMP object can be used just as a normal numeric scalar would
+be -- the module overloads the normal arithmetic operators to provide
+as seamless an interface as possible.
