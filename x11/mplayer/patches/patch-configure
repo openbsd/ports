@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2002/05/12 18:50:46 niklas Exp $
+$OpenBSD: patch-configure,v 1.5 2002/05/14 03:05:31 pvalchev Exp $
 --- configure.orig	Sat May  4 00:13:06 2002
-+++ configure	Sun May 12 20:08:33 2002
++++ configure	Mon May 13 19:44:26 2002
 @@ -1390,8 +1390,8 @@ if test "$_malloc" = yes ; then
  else
    _def_malloc='#undef HAVE_MALLOC_H'
@@ -21,21 +21,28 @@ $OpenBSD: patch-configure,v 1.4 2002/05/12 18:50:46 niklas Exp $
  echocheck "soundcard.h"
  cat > $TMPC << EOF
  #include <soundcard.h>
-@@ -3522,8 +3522,11 @@ test "$_xanim" = yes && _ld_dl_dynamic='
+@@ -2500,6 +2500,7 @@ if test "$_ossaudio" = yes ; then
+   else
+      if netbsd || openbsd ; then
+        _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/sound"'
++       _ld_arch="$_ld_arch -lossaudio"
+      else
+        _def_ossaudio_devdsp='#define PATH_DEV_DSP "/dev/dsp"'
+      fi
+@@ -3522,8 +3523,10 @@ test "$_xanim" = yes && _ld_dl_dynamic='
  
  _ld_arch="$_ld_arch $_ld_pthread $_ld_dl $_ld_dl_dynamic"
  bsdos && _ld_arch="$_ld_arch -ldvd"
 -netbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
 -openbsd && _ld_arch="$_ld_arch -li386 -lossaudio"
 +
-+if netbsd ; then
-+  _ld_arch="$_ld_arch -lossaudio"
++if netbsd || openbsd ; then
 +  x86  && _ld_arch="$_ld_arch -li386"
 +fi
  
  _def_debug='#undef MP_DEBUG'
  test "$_debug" && _def_debug='#define MP_DEBUG 1'
-@@ -3590,11 +3593,11 @@ cat > config.mak << EOF
+@@ -3590,11 +3593,10 @@ cat > config.mak << EOF
  
  LANG = C
  TARGET_OS = $system_name
@@ -44,7 +51,6 @@ $OpenBSD: patch-configure,v 1.4 2002/05/12 18:50:46 niklas Exp $
 -CONFDIR = $_confdir
 -LIBDIR = $_libdir
 -AR = ar
-+TARGET_ARCH = $host_arch
 +prefix = \$(DESTDIR)$_prefix
 +DATADIR = \$(DESTDIR)$_datadir
 +CONFDIR = \$(DESTDIR)$_confdir
