@@ -1,0 +1,13 @@
+--- ui/version.h.in.orig	Wed Sep 13 00:27:48 2000
++++ ui/version.h.in	Wed Sep 13 00:28:08 2000
+@@ -16,6 +16,10 @@
+ #define XF_OS		"NetBSD"
+ #endif
+ 
++#ifdef __OpenBSD__
++#define XF_OS		"OpenBSD"
++#endif
++
+ #ifdef __linux__
+ #define XF_OS		"Linux"
+ #endif
