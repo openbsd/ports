@@ -1,6 +1,6 @@
---- plug-ins/common/Makefile.in.orig	Sat Oct 16 23:01:14 1999
-+++ plug-ins/common/Makefile.in	Sat Oct 16 23:04:24 1999
-@@ -228,7 +228,7 @@
+--- plug-ins/common/Makefile.in.orig	Thu Dec 16 14:21:01 1999
++++ plug-ins/common/Makefile.in	Wed Jan  5 14:33:40 2000
+@@ -229,7 +229,7 @@
  animoptimize_SOURCES =  	animoptimize.c
  
  
@@ -9,7 +9,7 @@
  
  
  apply_lens_SOURCES =  	apply_lens.c
-@@ -240,13 +240,13 @@
+@@ -241,13 +241,13 @@
  autocrop_SOURCES =  	autocrop.c
  
  
@@ -25,7 +25,7 @@
  
  
  blinds_SOURCES =  	blinds.c
-@@ -270,13 +270,13 @@
+@@ -271,13 +271,13 @@
  bz2_SOURCES =  	bz2.c
  
  
@@ -41,7 +41,7 @@
  
  
  checkerboard_SOURCES =  	checkerboard.c
-@@ -474,7 +474,7 @@
+@@ -481,7 +481,7 @@
  gradmap_SOURCES =  	gradmap.c
  
  
@@ -50,7 +50,7 @@
  
  
  grid_SOURCES =  	grid.c
-@@ -492,19 +492,19 @@
+@@ -499,13 +499,13 @@
  guillotine_SOURCES =  	guillotine.c
  
  
@@ -66,14 +66,7 @@
  
  
  header_SOURCES =  	header.c
- 
- 
--header_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GLIB_LIBS)					$(INTLLIBS)
-+header_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GTK_LIBS)					$(INTLLIBS)
- 
- 
- hot_SOURCES =  	hot.c
-@@ -546,7 +546,7 @@
+@@ -553,7 +553,7 @@
  laplace_SOURCES =  	laplace.c
  
  
@@ -82,7 +75,7 @@
  
  
  lic_SOURCES =  	lic.c
-@@ -606,7 +606,7 @@
+@@ -613,7 +613,7 @@
  normalize_SOURCES =  	normalize.c
  
  
@@ -91,23 +84,7 @@
  
  
  nova_SOURCES =  	nova.c
-@@ -636,13 +636,13 @@
- pcx_SOURCES =  	pcx.c
- 
- 
--pcx_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GLIB_LIBS)					$(INTLLIBS)
-+pcx_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GTK_LIBS)					$(INTLLIBS)
- 
- 
- pix_SOURCES =  	pix.c
- 
- 
--pix_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GLIB_LIBS)					$(INTLLIBS)
-+pix_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GTK_LIBS)					$(INTLLIBS)
- 
- 
- pixelize_SOURCES =  	pixelize.c
-@@ -690,7 +690,7 @@
+@@ -697,7 +697,7 @@
  psd_SOURCES =  	psd.c
  
  
@@ -116,16 +93,16 @@
  
  
  psp_SOURCES =  	psp.c
-@@ -720,7 +720,7 @@
- rotators_SOURCES =  	rotators.c
+@@ -721,7 +721,7 @@
+ rotate_SOURCES =  	rotate.c
  
  
--rotators_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GLIB_LIBS)					$(INTLLIBS)
-+rotators_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GTK_LIBS)					$(INTLLIBS)
+-rotate_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GLIB_LIBS)					$(INTLLIBS)
++rotate_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GTK_LIBS)					$(INTLLIBS)
  
  
  sample_colorize_SOURCES =  	sample_colorize.c
-@@ -750,7 +750,7 @@
+@@ -751,7 +751,7 @@
  semiflatten_SOURCES =  	semiflatten.c
  
  
@@ -134,7 +111,7 @@
  
  
  sharpen_SOURCES =  	sharpen.c
-@@ -840,13 +840,13 @@
+@@ -841,13 +841,13 @@
  tiler_SOURCES =  	tiler.c
  
  
@@ -150,7 +127,7 @@
  
  
  video_SOURCES =  	video.c
-@@ -858,7 +858,7 @@
+@@ -859,7 +859,7 @@
  vinvert_SOURCES =  	vinvert.c
  
  
@@ -159,14 +136,7 @@
  
  
  vpropagate_SOURCES =  	vpropagate.c
-@@ -912,13 +912,13 @@
- xwd_SOURCES =  	xwd.c
- 
- 
--xwd_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GLIB_LIBS)					$(INTLLIBS)
-+xwd_LDADD =  	$(top_builddir)/libgimp/libgimp.la		$(GTK_LIBS)					$(INTLLIBS)
- 
- 
+@@ -919,7 +919,7 @@
  zealouscrop_SOURCES =  	zealouscrop.c
  
  

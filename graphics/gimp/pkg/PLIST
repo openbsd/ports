@@ -13,6 +13,8 @@ include/libgimp/color_display.h
 include/libgimp/color_selector.h
 include/libgimp/gimp.h
 include/libgimp/gimpchainbutton.h
+include/libgimp/gimpcolorbutton.h
+include/libgimp/gimpcompat.h
 include/libgimp/gimpenums.h
 include/libgimp/gimpenv.h
 include/libgimp/gimpexport.h
@@ -70,6 +72,7 @@ lib/gimp/1.1/plug-ins/c_astretch
 lib/gimp/1.1/plug-ins/checkerboard
 lib/gimp/1.1/plug-ins/color_enhance
 lib/gimp/1.1/plug-ins/colorify
+lib/gimp/1.1/plug-ins/colortoalpha
 lib/gimp/1.1/plug-ins/compose
 lib/gimp/1.1/plug-ins/convmatrix
 lib/gimp/1.1/plug-ins/csource
@@ -94,7 +97,9 @@ lib/gimp/1.1/plug-ins/flame
 lib/gimp/1.1/plug-ins/flarefx
 lib/gimp/1.1/plug-ins/fp
 lib/gimp/1.1/plug-ins/fractaltrace
+lib/gimp/1.1/plug-ins/gap_decode_mpeg
 lib/gimp/1.1/plug-ins/gap_filter
+lib/gimp/1.1/plug-ins/gap_frontends
 lib/gimp/1.1/plug-ins/gap_plugins
 lib/gimp/1.1/plug-ins/gauss_iir
 lib/gimp/1.1/plug-ins/gauss_rle
@@ -159,7 +164,6 @@ lib/gimp/1.1/plug-ins/randomize
 lib/gimp/1.1/plug-ins/rcm
 lib/gimp/1.1/plug-ins/ripple
 lib/gimp/1.1/plug-ins/rotate
-lib/gimp/1.1/plug-ins/rotators
 lib/gimp/1.1/plug-ins/sample_colorize
 lib/gimp/1.1/plug-ins/scatter_hsv
 lib/gimp/1.1/plug-ins/screenshot
@@ -486,29 +490,41 @@ share/gimp/gradients/Yellow_Contrast
 share/gimp/gradients/Yellow_Orange
 share/gimp/gtkrc
 share/gimp/gtkrc.forest2
-share/gimp/help/C/dialogs/layers/add_mask.html
-share/gimp/help/C/dialogs/layers/apply_mask.html
-share/gimp/help/C/dialogs/layers/edit_layer_attributes.html
-share/gimp/help/C/dialogs/layers/index.html
-share/gimp/help/C/dialogs/layers/layers.html
-share/gimp/help/C/dialogs/layers/merge_visible_layers.html
-share/gimp/help/C/dialogs/layers/new_layer.html
-share/gimp/help/C/dialogs/layers/resize_layer.html
-share/gimp/help/C/dialogs/layers/scale_layer.html
+share/gimp/help/C/channels/channel_to_selection.html
+share/gimp/help/C/channels/channels.html
+share/gimp/help/C/channels/delete_channel.html
+share/gimp/help/C/channels/duplicate_channel.html
+share/gimp/help/C/channels/index.html
+share/gimp/help/C/channels/lower_channel.html
+share/gimp/help/C/channels/raise_channel.html
+share/gimp/help/C/contents.html
+share/gimp/help/C/dialogs/about.html
+share/gimp/help/C/dialogs/border_selection.html
+share/gimp/help/C/dialogs/brush_editor.html
+share/gimp/help/C/dialogs/brush_selection.html
 share/gimp/help/C/dialogs/channels/channels.html
 share/gimp/help/C/dialogs/channels/edit_channel_attributes.html
 share/gimp/help/C/dialogs/channels/index.html
 share/gimp/help/C/dialogs/channels/new_channel.html
-share/gimp/help/C/dialogs/paths/export_path.html
-share/gimp/help/C/dialogs/paths/import_path.html
-share/gimp/help/C/dialogs/paths/index.html
-share/gimp/help/C/dialogs/paths/paths.html
-share/gimp/help/C/dialogs/paths/rename_path.html
-share/gimp/help/C/dialogs/palette_editor/import_palette.html
-share/gimp/help/C/dialogs/palette_editor/index.html
-share/gimp/help/C/dialogs/palette_editor/merge_palette.html
-share/gimp/help/C/dialogs/palette_editor/new_palette.html
-share/gimp/help/C/dialogs/palette_editor/palette_editor.html
+share/gimp/help/C/dialogs/color_selectors/built_in.html
+share/gimp/help/C/dialogs/color_selectors/gtk.html
+share/gimp/help/C/dialogs/color_selectors/index.html
+share/gimp/help/C/dialogs/color_selectors/triangle.html
+share/gimp/help/C/dialogs/color_selectors/watercolor.html
+share/gimp/help/C/dialogs/convert_to_indexed.html
+share/gimp/help/C/dialogs/copy_named.html
+share/gimp/help/C/dialogs/cut_named.html
+share/gimp/help/C/dialogs/device_status.html
+share/gimp/help/C/dialogs/display_filters/display_filters.html
+share/gimp/help/C/dialogs/display_filters/gamma.html
+share/gimp/help/C/dialogs/display_filters/index.html
+share/gimp/help/C/dialogs/document_index.html
+share/gimp/help/C/dialogs/edit_qmask_attributes.html
+share/gimp/help/C/dialogs/error_console.html
+share/gimp/help/C/dialogs/feather_selection.html
+share/gimp/help/C/dialogs/file_new.html
+share/gimp/help/C/dialogs/file_open.html
+share/gimp/help/C/dialogs/file_save.html
 share/gimp/help/C/dialogs/gradient_editor/copy_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/delete_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/gradient_editor.html
@@ -518,14 +534,39 @@ share/gimp/help/C/dialogs/gradient_editor/rename_gradient.html
 share/gimp/help/C/dialogs/gradient_editor/replicate_segment.html
 share/gimp/help/C/dialogs/gradient_editor/save_as_pov_ray.html
 share/gimp/help/C/dialogs/gradient_editor/split_segments_uniformly.html
-share/gimp/help/C/dialogs/display_filters/display_filters.html
-share/gimp/help/C/dialogs/display_filters/gamma.html
-share/gimp/help/C/dialogs/display_filters/index.html
-share/gimp/help/C/dialogs/color_selectors/built_in.html
-share/gimp/help/C/dialogs/color_selectors/gtk.html
-share/gimp/help/C/dialogs/color_selectors/index.html
-share/gimp/help/C/dialogs/color_selectors/triangle.html
-share/gimp/help/C/dialogs/color_selectors/watercolor.html
+share/gimp/help/C/dialogs/gradient_selection.html
+share/gimp/help/C/dialogs/grow_selection.html
+share/gimp/help/C/dialogs/help.html
+share/gimp/help/C/dialogs/index.html
+share/gimp/help/C/dialogs/indexed_palette.html
+share/gimp/help/C/dialogs/info_window.html
+share/gimp/help/C/dialogs/input_devices.html
+share/gimp/help/C/dialogs/layers/add_mask.html
+share/gimp/help/C/dialogs/layers/apply_mask.html
+share/gimp/help/C/dialogs/layers/edit_layer_attributes.html
+share/gimp/help/C/dialogs/layers/index.html
+share/gimp/help/C/dialogs/layers/layers.html
+share/gimp/help/C/dialogs/layers/merge_visible_layers.html
+share/gimp/help/C/dialogs/layers/new_layer.html
+share/gimp/help/C/dialogs/layers/resize_layer.html
+share/gimp/help/C/dialogs/layers/scale_layer.html
+share/gimp/help/C/dialogs/layers_and_channels.html
+share/gimp/help/C/dialogs/module_browser.html
+share/gimp/help/C/dialogs/navigation_window.html
+share/gimp/help/C/dialogs/offset.html
+share/gimp/help/C/dialogs/palette_editor/import_palette.html
+share/gimp/help/C/dialogs/palette_editor/index.html
+share/gimp/help/C/dialogs/palette_editor/merge_palette.html
+share/gimp/help/C/dialogs/palette_editor/new_palette.html
+share/gimp/help/C/dialogs/palette_editor/palette_editor.html
+share/gimp/help/C/dialogs/palette_selection.html
+share/gimp/help/C/dialogs/paste_named.html
+share/gimp/help/C/dialogs/paths/export_path.html
+share/gimp/help/C/dialogs/paths/import_path.html
+share/gimp/help/C/dialogs/paths/index.html
+share/gimp/help/C/dialogs/paths/paths.html
+share/gimp/help/C/dialogs/paths/rename_path.html
+share/gimp/help/C/dialogs/pattern_selection.html
 share/gimp/help/C/dialogs/preferences/directories.html
 share/gimp/help/C/dialogs/preferences/display.html
 share/gimp/help/C/dialogs/preferences/environment.html
@@ -535,35 +576,6 @@ share/gimp/help/C/dialogs/preferences/monitor.html
 share/gimp/help/C/dialogs/preferences/new_file.html
 share/gimp/help/C/dialogs/preferences/preferences.html
 share/gimp/help/C/dialogs/preferences/session.html
-share/gimp/help/C/dialogs/about.html
-share/gimp/help/C/dialogs/border_selection.html
-share/gimp/help/C/dialogs/brush_editor.html
-share/gimp/help/C/dialogs/brush_selection.html
-share/gimp/help/C/dialogs/convert_to_indexed.html
-share/gimp/help/C/dialogs/copy_named.html
-share/gimp/help/C/dialogs/cut_named.html
-share/gimp/help/C/dialogs/device_status.html
-share/gimp/help/C/dialogs/document_index.html
-share/gimp/help/C/dialogs/edit_qmask_attributes.html
-share/gimp/help/C/dialogs/error_console.html
-share/gimp/help/C/dialogs/feather_selection.html
-share/gimp/help/C/dialogs/file_new.html
-share/gimp/help/C/dialogs/file_open.html
-share/gimp/help/C/dialogs/file_save.html
-share/gimp/help/C/dialogs/gradient_selection.html
-share/gimp/help/C/dialogs/grow_selection.html
-share/gimp/help/C/dialogs/help.html
-share/gimp/help/C/dialogs/index.html
-share/gimp/help/C/dialogs/indexed_palette.html
-share/gimp/help/C/dialogs/info_window.html
-share/gimp/help/C/dialogs/input_devices.html
-share/gimp/help/C/dialogs/layers_and_channels.html
-share/gimp/help/C/dialogs/module_browser.html
-share/gimp/help/C/dialogs/navigation_window.html
-share/gimp/help/C/dialogs/offset.html
-share/gimp/help/C/dialogs/palette_selection.html
-share/gimp/help/C/dialogs/paste_named.html
-share/gimp/help/C/dialogs/pattern_selection.html
 share/gimp/help/C/dialogs/really_close.html
 share/gimp/help/C/dialogs/really_quit.html
 share/gimp/help/C/dialogs/resize_image.html
@@ -572,118 +584,11 @@ share/gimp/help/C/dialogs/shrink_selection.html
 share/gimp/help/C/dialogs/tip_of_the_day.html
 share/gimp/help/C/dialogs/tool_options.html
 share/gimp/help/C/dialogs/undo_history.html
-share/gimp/help/C/tools/airbrush.html
-share/gimp/help/C/tools/bezier_select.html
-share/gimp/help/C/tools/blend.html
-share/gimp/help/C/tools/brightness_contrast.html
-share/gimp/help/C/tools/bucket_fill.html
-share/gimp/help/C/tools/by_color_select.html
-share/gimp/help/C/tools/clone.html
-share/gimp/help/C/tools/color_balance.html
-share/gimp/help/C/tools/color_picker.html
-share/gimp/help/C/tools/convolve.html
-share/gimp/help/C/tools/crop.html
-share/gimp/help/C/tools/curves.html
-share/gimp/help/C/tools/dodgeburn.html
-share/gimp/help/C/tools/ellipse_select.html
-share/gimp/help/C/tools/eraser.html
-share/gimp/help/C/tools/flip.html
-share/gimp/help/C/tools/free_select.html
-share/gimp/help/C/tools/fuzzy_select.html
-share/gimp/help/C/tools/histogram.html
-share/gimp/help/C/tools/hue_saturation.html
-share/gimp/help/C/tools/index.html
-share/gimp/help/C/tools/ink.html
-share/gimp/help/C/tools/intelligent_scissors.html
-share/gimp/help/C/tools/levels.html
-share/gimp/help/C/tools/magnify.html
-share/gimp/help/C/tools/measure.html
-share/gimp/help/C/tools/move.html
-share/gimp/help/C/tools/paintbrush.html
-share/gimp/help/C/tools/path.html
-share/gimp/help/C/tools/pencil.html
-share/gimp/help/C/tools/posterize.html
-share/gimp/help/C/tools/rect_select.html
-share/gimp/help/C/tools/smudge.html
-share/gimp/help/C/tools/text.html
-share/gimp/help/C/tools/threshold.html
-share/gimp/help/C/tools/transform.html
-share/gimp/help/C/tools/transform_perspective.html
-share/gimp/help/C/tools/transform_rotate.html
-share/gimp/help/C/tools/transform_scale.html
-share/gimp/help/C/tools/transform_shear.html
-share/gimp/help/C/tools/xinput_airbrush.html
-share/gimp/help/C/layers/stack/index.html
-share/gimp/help/C/layers/stack/stack.html
-share/gimp/help/C/layers/add_alpha_channel.html
-share/gimp/help/C/layers/alpha_to_selection.html
-share/gimp/help/C/layers/anchor_layer.html
-share/gimp/help/C/layers/delete_layer.html
-share/gimp/help/C/layers/duplicate_layer.html
-share/gimp/help/C/layers/flatten_image.html
-share/gimp/help/C/layers/index.html
-share/gimp/help/C/layers/mask_to_selection.html
-share/gimp/help/C/layers/merge_down.html
-share/gimp/help/C/channels/channel_to_selection.html
-share/gimp/help/C/channels/channels.html
-share/gimp/help/C/channels/delete_channel.html
-share/gimp/help/C/channels/duplicate_channel.html
-share/gimp/help/C/channels/index.html
-share/gimp/help/C/channels/lower_channel.html
-share/gimp/help/C/channels/raise_channel.html
-share/gimp/help/C/paths/copy_path.html
-share/gimp/help/C/paths/delete_path.html
-share/gimp/help/C/paths/duplicate_path.html
-share/gimp/help/C/paths/index.html
-share/gimp/help/C/paths/new_path.html
-share/gimp/help/C/paths/paste_path.html
-share/gimp/help/C/paths/path_to_selection.html
-share/gimp/help/C/paths/stroke_path.html
-share/gimp/help/C/toolbox/index.html
-share/gimp/help/C/toolbox/toolbox.html
-share/gimp/help/C/image/edit/clear.html
-share/gimp/help/C/image/edit/copy.html
-share/gimp/help/C/image/edit/cut.html
-share/gimp/help/C/image/edit/fill.html
-share/gimp/help/C/image/edit/index.html
-share/gimp/help/C/image/edit/paste.html
-share/gimp/help/C/image/edit/paste_as_new.html
-share/gimp/help/C/image/edit/paste_into.html
-share/gimp/help/C/image/edit/redo.html
-share/gimp/help/C/image/edit/stroke.html
-share/gimp/help/C/image/edit/undo.html
-share/gimp/help/C/image/select/all.html
-share/gimp/help/C/image/select/float.html
-share/gimp/help/C/image/select/index.html
-share/gimp/help/C/image/select/invert.html
-share/gimp/help/C/image/select/none.html
-share/gimp/help/C/image/select/save_to_channel.html
-share/gimp/help/C/image/select/sharpen.html
-share/gimp/help/C/image/view/dot_for_dot.html
-share/gimp/help/C/image/view/index.html
-share/gimp/help/C/image/view/new_view.html
-share/gimp/help/C/image/view/shrink_wrap.html
-share/gimp/help/C/image/view/snap_to_guides.html
-share/gimp/help/C/image/view/toggle_guides.html
-share/gimp/help/C/image/view/toggle_rulers.html
-share/gimp/help/C/image/view/toggle_selection.html
-share/gimp/help/C/image/view/toggle_statusbar.html
-share/gimp/help/C/image/view/zoom.html
-share/gimp/help/C/image/image/transforms/index.html
-share/gimp/help/C/image/image/colors/desaturate.html
-share/gimp/help/C/image/image/colors/equalize.html
-share/gimp/help/C/image/image/colors/index.html
-share/gimp/help/C/image/image/colors/invert.html
-share/gimp/help/C/image/image/convert_to_grayscale.html
-share/gimp/help/C/image/image/convert_to_rgb.html
-share/gimp/help/C/image/image/duplicate.html
-share/gimp/help/C/image/image/index.html
-share/gimp/help/C/image/image_window.html
-share/gimp/help/C/image/index.html
-share/gimp/help/C/open/index.html
-share/gimp/help/C/open/open_by_extension.html
-share/gimp/help/C/save/index.html
-share/gimp/help/C/save/save_by_extension.html
+share/gimp/help/C/file/close.html
+share/gimp/help/C/file/index.html
+share/gimp/help/C/file/last_opened.html
+share/gimp/help/C/file/quit.html
+share/gimp/help/C/file/revert.html
 share/gimp/help/C/filters/alienmap.html
 share/gimp/help/C/filters/alienmap2.html
 share/gimp/help/C/filters/align_layers.html
@@ -703,7 +608,6 @@ share/gimp/help/C/filters/cel.html
 share/gimp/help/C/filters/checkerboard.html
 share/gimp/help/C/filters/cml_explorer.html
 share/gimp/help/C/filters/color_enhance.html
-share/gimp/help/C/filters/fp.html
 share/gimp/help/C/filters/colorify.html
 share/gimp/help/C/filters/compose.html
 share/gimp/help/C/filters/convmatrix.html
@@ -727,6 +631,7 @@ share/gimp/help/C/filters/film.html
 share/gimp/help/C/filters/fits.html
 share/gimp/help/C/filters/flame.html
 share/gimp/help/C/filters/flarefx.html
+share/gimp/help/C/filters/fp.html
 share/gimp/help/C/filters/fractalexplorer.html
 share/gimp/help/C/filters/fractaltrace.html
 share/gimp/help/C/filters/gap_filter.html
@@ -771,8 +676,8 @@ share/gimp/help/C/filters/max_rgb.html
 share/gimp/help/C/filters/maze.html
 share/gimp/help/C/filters/mblur.html
 share/gimp/help/C/filters/mosaic.html
-share/gimp/help/C/filters/nlfilt.html
 share/gimp/help/C/filters/newsprint.html
+share/gimp/help/C/filters/nlfilt.html
 share/gimp/help/C/filters/noisify.html
 share/gimp/help/C/filters/normalize.html
 share/gimp/help/C/filters/nova.html
@@ -840,13 +745,113 @@ share/gimp/help/C/filters/xjt.html
 share/gimp/help/C/filters/xpm.html
 share/gimp/help/C/filters/xwd.html
 share/gimp/help/C/filters/zealouscrop.html
-share/gimp/help/C/file/close.html
-share/gimp/help/C/file/index.html
-share/gimp/help/C/file/last_opened.html
-share/gimp/help/C/file/quit.html
-share/gimp/help/C/file/revert.html
-share/gimp/help/C/contents.html
+share/gimp/help/C/image/edit/clear.html
+share/gimp/help/C/image/edit/copy.html
+share/gimp/help/C/image/edit/cut.html
+share/gimp/help/C/image/edit/fill.html
+share/gimp/help/C/image/edit/index.html
+share/gimp/help/C/image/edit/paste.html
+share/gimp/help/C/image/edit/paste_as_new.html
+share/gimp/help/C/image/edit/paste_into.html
+share/gimp/help/C/image/edit/redo.html
+share/gimp/help/C/image/edit/stroke.html
+share/gimp/help/C/image/edit/undo.html
+share/gimp/help/C/image/image/colors/desaturate.html
+share/gimp/help/C/image/image/colors/equalize.html
+share/gimp/help/C/image/image/colors/index.html
+share/gimp/help/C/image/image/colors/invert.html
+share/gimp/help/C/image/image/convert_to_grayscale.html
+share/gimp/help/C/image/image/convert_to_rgb.html
+share/gimp/help/C/image/image/duplicate.html
+share/gimp/help/C/image/image/index.html
+share/gimp/help/C/image/image/transforms/index.html
+share/gimp/help/C/image/image_window.html
+share/gimp/help/C/image/index.html
+share/gimp/help/C/image/select/all.html
+share/gimp/help/C/image/select/float.html
+share/gimp/help/C/image/select/index.html
+share/gimp/help/C/image/select/invert.html
+share/gimp/help/C/image/select/none.html
+share/gimp/help/C/image/select/save_to_channel.html
+share/gimp/help/C/image/select/sharpen.html
+share/gimp/help/C/image/view/dot_for_dot.html
+share/gimp/help/C/image/view/index.html
+share/gimp/help/C/image/view/new_view.html
+share/gimp/help/C/image/view/shrink_wrap.html
+share/gimp/help/C/image/view/snap_to_guides.html
+share/gimp/help/C/image/view/toggle_guides.html
+share/gimp/help/C/image/view/toggle_rulers.html
+share/gimp/help/C/image/view/toggle_selection.html
+share/gimp/help/C/image/view/toggle_statusbar.html
+share/gimp/help/C/image/view/zoom.html
 share/gimp/help/C/index.html
+share/gimp/help/C/layers/add_alpha_channel.html
+share/gimp/help/C/layers/alpha_to_selection.html
+share/gimp/help/C/layers/anchor_layer.html
+share/gimp/help/C/layers/delete_layer.html
+share/gimp/help/C/layers/duplicate_layer.html
+share/gimp/help/C/layers/flatten_image.html
+share/gimp/help/C/layers/index.html
+share/gimp/help/C/layers/mask_to_selection.html
+share/gimp/help/C/layers/merge_down.html
+share/gimp/help/C/layers/stack/index.html
+share/gimp/help/C/layers/stack/stack.html
+share/gimp/help/C/modes.html
+share/gimp/help/C/open/index.html
+share/gimp/help/C/open/open_by_extension.html
+share/gimp/help/C/paths/copy_path.html
+share/gimp/help/C/paths/delete_path.html
+share/gimp/help/C/paths/duplicate_path.html
+share/gimp/help/C/paths/index.html
+share/gimp/help/C/paths/new_path.html
+share/gimp/help/C/paths/paste_path.html
+share/gimp/help/C/paths/path_to_selection.html
+share/gimp/help/C/paths/stroke_path.html
+share/gimp/help/C/save/index.html
+share/gimp/help/C/save/save_by_extension.html
+share/gimp/help/C/toolbox/index.html
+share/gimp/help/C/toolbox/toolbox.html
+share/gimp/help/C/tools/airbrush.html
+share/gimp/help/C/tools/bezier_select.html
+share/gimp/help/C/tools/blend.html
+share/gimp/help/C/tools/brightness_contrast.html
+share/gimp/help/C/tools/bucket_fill.html
+share/gimp/help/C/tools/by_color_select.html
+share/gimp/help/C/tools/clone.html
+share/gimp/help/C/tools/color_balance.html
+share/gimp/help/C/tools/color_picker.html
+share/gimp/help/C/tools/convolve.html
+share/gimp/help/C/tools/crop.html
+share/gimp/help/C/tools/curves.html
+share/gimp/help/C/tools/dodgeburn.html
+share/gimp/help/C/tools/ellipse_select.html
+share/gimp/help/C/tools/eraser.html
+share/gimp/help/C/tools/flip.html
+share/gimp/help/C/tools/free_select.html
+share/gimp/help/C/tools/fuzzy_select.html
+share/gimp/help/C/tools/histogram.html
+share/gimp/help/C/tools/hue_saturation.html
+share/gimp/help/C/tools/index.html
+share/gimp/help/C/tools/ink.html
+share/gimp/help/C/tools/intelligent_scissors.html
+share/gimp/help/C/tools/levels.html
+share/gimp/help/C/tools/magnify.html
+share/gimp/help/C/tools/measure.html
+share/gimp/help/C/tools/move.html
+share/gimp/help/C/tools/paintbrush.html
+share/gimp/help/C/tools/path.html
+share/gimp/help/C/tools/pencil.html
+share/gimp/help/C/tools/posterize.html
+share/gimp/help/C/tools/rect_select.html
+share/gimp/help/C/tools/smudge.html
+share/gimp/help/C/tools/text.html
+share/gimp/help/C/tools/threshold.html
+share/gimp/help/C/tools/transform.html
+share/gimp/help/C/tools/transform_perspective.html
+share/gimp/help/C/tools/transform_rotate.html
+share/gimp/help/C/tools/transform_scale.html
+share/gimp/help/C/tools/transform_shear.html
+share/gimp/help/C/tools/xinput_airbrush.html
 share/gimp/help/C/welcome.html
 share/gimp/help/images/eek.png
 share/gimp/help/images/wilber.png
@@ -1048,6 +1053,8 @@ share/gimp/tips/gimp_conseils.fr.txt
 share/gimp/tips/gimp_tips.de.txt
 share/gimp/tips/gimp_tips.it.txt
 share/gimp/tips/gimp_tips.ja.txt
+share/gimp/tips/gimp_tips.ko.txt
+share/gimp/tips/gimp_tips.pl.txt
 share/gimp/tips/gimp_tips.ru.txt
 share/gimp/tips/gimp_tips.txt
 share/gimp/unitrc
@@ -1080,10 +1087,21 @@ share/locale/ru/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/ru/LC_MESSAGES/gimp.mo
 share/locale/sv/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/sv/LC_MESSAGES/gimp.mo
-@dirrm share/gimp/tips
-@dirrm share/gimp/scripts
-@dirrm share/gimp/patterns
-@dirrm share/gimp/palettes
+@dirrm include/gck
+@dirrm include/libgimp
+@dirrm lib/gimp/1.1/modules
+@dirrm lib/gimp/1.1/plug-ins
+@dirrm lib/gimp/1.1
+@dirrm lib/gimp
+@dirrm share/gimp/brushes
+@dirrm share/gimp/fractalexplorer
+@dirrm share/gimp/gfig
+@dirrm share/gimp/gflare
+@dirrm share/gimp/gimpressionist/Brushes
+@dirrm share/gimp/gimpressionist/Paper
+@dirrm share/gimp/gimpressionist/Presets
+@dirrm share/gimp/gimpressionist
+@dirrm share/gimp/gradients
 @dirrm share/gimp/help/C/channels
 @dirrm share/gimp/help/C/dialogs/channels
 @dirrm share/gimp/help/C/dialogs/color_selectors
@@ -1113,19 +1131,8 @@ share/locale/sv/LC_MESSAGES/gimp.mo
 @dirrm share/gimp/help/C
 @dirrm share/gimp/help/images
 @dirrm share/gimp/help
-@dirrm share/gimp/gradients
-@dirrm share/gimp/gimpressionist/Presets
-@dirrm share/gimp/gimpressionist/Paper
-@dirrm share/gimp/gimpressionist/Brushes
-@dirrm share/gimp/gimpressionist
-@dirrm share/gimp/gflare
-@dirrm share/gimp/gfig
-@dirrm share/gimp/fractalexplorer
-@dirrm share/gimp/brushes
+@dirrm share/gimp/palettes
+@dirrm share/gimp/patterns
+@dirrm share/gimp/scripts
+@dirrm share/gimp/tips
 @dirrm share/gimp
-@dirrm lib/gimp/1.1/plug-ins
-@dirrm lib/gimp/1.1/modules
-@dirrm lib/gimp/1.1
-@dirrm lib/gimp
-@dirrm include/libgimp
-@dirrm include/gck

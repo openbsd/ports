@@ -1,6 +1,6 @@
---- plug-ins/common/url.c.orig	Sun Jul 18 19:37:09 1999
-+++ plug-ins/common/url.c	Sun Jul 18 19:39:39 1999
-@@ -149,8 +149,8 @@
+--- plug-ins/common/url.c.orig	Wed Oct 27 22:02:32 1999
++++ plug-ins/common/url.c	Wed Jan  5 14:27:40 2000
+@@ -151,8 +151,8 @@
      }
    else if (pid == 0)
      {
@@ -8,15 +8,15 @@
 -      g_message ("url: exec failed: wget: %s\n", g_strerror(errno));
 +      execlp ("ftp", "ftp", "-o", tmpname, filename, NULL);
 +      g_message ("url: exec failed: ftp: %s\n", g_strerror(errno));
+       g_free (tmpname);
        _exit(127);
      }
-   else
-@@ -168,7 +168,7 @@
+@@ -172,7 +172,7 @@
        if (!WIFEXITED(status) ||
  	  WEXITSTATUS(status) != 0)
  	{
 -	  g_message ("url: wget exited abnormally on URL %s\n", filename);
 +	  g_message ("url: ftp exited abnormally on URL %s\n", filename);
+ 	  g_free (tmpname);
  	  return -1;
  	}
-     }

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 1999/11/10 13:17:05 jakob Exp $
+# $OpenBSD: Makefile,v 1.26 2000/01/06 03:10:56 brad Exp $
 
-DISTNAME=	gimp-1.1.10
+DISTNAME=	gimp-1.1.14
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/old/v1.1.10/ \
-		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/old/v1.1.10/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/unstable/old/v1.1.10/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v1.1.14/ \
+		ftp://ftp.sunet.se/pub/gnu/gimp/unstable/v1.1.14/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/unstable/v1.1.14/
 
 MAINTAINER=	brad@openbsd.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
-		glib.1.2:${PORTSDIR}/devel/glib \
-		gtk.1.2:${PORTSDIR}/x11/gtk+ \
+LIB_DEPENDS=	gtk.1.2:${PORTSDIR}/x11/gtk+ \
 		aa.1.3:${PORTSDIR}/graphics/aalib \
 		jpeg.62:${PORTSDIR}/graphics/jpeg \
 		mpeg.1.2:${PORTSDIR}/graphics/mpeg-lib \
@@ -45,8 +43,8 @@ pre-extract:
 	fi
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/share/aclocal
-	@${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${LOCALBASE}/share/aclocal/
+	${INSTALL_DATA_DIR} ${LOCALBASE}/share/aclocal
+	${INSTALL_DATA} ${WRKSRC}/gimp.m4 ${LOCALBASE}/share/aclocal/
 	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
