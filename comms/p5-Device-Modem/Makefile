@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/03 14:46:22 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2005/02/24 16:10:31 todd Exp $
 
 COMMENT=	"talk to modem devices connected via serial port"
 
-DISTNAME=	Device-Modem-1.36
+DISTNAME=	Device-Modem-1.43
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	comms perl5
 
