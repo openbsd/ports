@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2002/11/28 23:36:32 pvalchev Exp $
---- Makefile.orig	Wed Mar 28 02:11:39 2001
-+++ Makefile	Thu Nov 28 16:30:40 2002
-@@ -3,8 +3,7 @@
+$OpenBSD: patch-Makefile,v 1.6 2003/01/21 21:59:51 pvalchev Exp $
+--- Makefile.orig	Mon Mar 25 12:11:27 2002
++++ Makefile	Tue Jan 21 14:50:05 2003
+@@ -3,14 +3,13 @@
  #===============
  
  # Install Paths
@@ -9,9 +9,7 @@ $OpenBSD: patch-Makefile,v 1.5 2002/11/28 23:36:32 pvalchev Exp $
 -INSTALL_DIR := ${PREFIX}/games/amph
 +INSTALL_DIR := ${PREFIX}/share/amph
  
- # Endianess:
- # LITTLE_ENDIAN    (for Intel) 
-@@ -15,7 +14,7 @@ BYTE_ORDER := LITTLE_ENDIAN
+ # Libraries
  USE_LIB_XPM := TRUE
  
  SDL_CONFIG := sdl-config
@@ -20,7 +18,7 @@ $OpenBSD: patch-Makefile,v 1.5 2002/11/28 23:36:32 pvalchev Exp $
  SDL_LIBS := $(shell $(SDL_CONFIG) --libs)
  
  #=======================================================
-@@ -31,19 +30,19 @@ SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADE
+@@ -26,19 +25,19 @@ SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADE
  
  # makemake variables
  
@@ -34,18 +32,27 @@ $OpenBSD: patch-Makefile,v 1.5 2002/11/28 23:36:32 pvalchev Exp $
 -CC     := gcc
 -CFLAGS  = ${DEPENDFLAGS}
 +CC     ?= gcc
-+CFLAGS += ${DEPENDFLAGS}
++CFLAGS  += ${DEPENDFLAGS}
  
  # C++
  
--CXX      := g++ 
+-CXX      := g++
 -CXXFLAGS  = ${DEPENDFLAGS} -O9 -funroll-loops -fomit-frame-pointer -ffast-math -Wcast-align
-+CXX      ?= g++ 
-+CXXFLAGS += ${DEPENDFLAGS} -funroll-loops -fomit-frame-pointer -ffast-math -Wcast-align
++CXX      ?= g++
++CXXFLAGS  += ${DEPENDFLAGS} -funroll-loops -fomit-frame-pointer -ffast-math -Wcast-align
  
  %.o : %.cpp
  	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS} -o $@
-@@ -204,7 +203,7 @@ jdepend:
+@@ -47,7 +46,7 @@ CXXFLAGS  = ${DEPENDFLAGS} -O9 -funroll-
+ 	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS}
+ 
+ # C preprocessor (C, C++, FORTRAN)
+-CPPFLAGS = -DINSTALL_DIR="\"${INSTALL_DIR}\""
++CPPFLAGS += -DINSTALL_DIR="\"${INSTALL_DIR}\""
+ 
+ ifeq ($(USE_LIB_XPM), TRUE)
+     CPPFLAGS := $(CPPFLAGS) -D_USE_LIB_XPM 
+@@ -194,7 +193,7 @@ jdepend:
  
  ./src/Surface.o: ./src/AmpHead.hpp ./src/Clut.hpp ./src/ConstVal.hpp ./src/Graphfil.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
  

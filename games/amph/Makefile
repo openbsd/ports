@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2002/12/29 15:10:07 fgsch Exp $
+# $OpenBSD: Makefile,v 1.9 2003/01/21 21:59:50 pvalchev Exp $
 
 COMMENT=	"jump'n run game with unique video effects"
 
-VERSION=	0.8.9
+VERSION=	0.8.10
 DVERSION=	0.8.6
 DISTNAME=	amphetamine-${VERSION}
 PKGNAME=	amph-${VERSION}
