@@ -1,1 +1,3 @@
 Perl module to tie hashes to DBI relational databases
+
+WWW: ${HOMEPAGE}
