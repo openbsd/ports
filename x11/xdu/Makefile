@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2000/06/20 20:01:40 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2000/07/27 08:14:06 kevlo Exp $
 
-DISTNAME=		xdu-2.1
+DISTNAME=		xdu-3.0
 CATEGORIES=     	x11
 NEED_VERSION=		1.302
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		ftp://ftp.x.org/R5contrib/
+MASTER_SITES=		ftp://ftp.arl.mil/pub/
 EXTRACT_SUFX=		.tar.Z
 
 CONFIGURE_STYLE=	imake
