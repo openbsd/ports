@@ -1,0 +1,2 @@
+The perl module File::MMagic guesses the file type from its contents
+like the file(1) command.
