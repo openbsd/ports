@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2004/05/15 14:35:01 sturm Exp $
+# $OpenBSD: Makefile,v 1.15 2004/08/12 04:43:19 sturm Exp $
 
 COMMENT=		"Gtk-based GUI client for the Gnutella Network"
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=		-d  -e \
 			-D privlib="${PREFIX}/share/gtk-gnutella" \
 			-D cc="${CC}" \
 			-D ccflags="${CFLAGS} -I${LOCALBASE}/include" \
+			-D ldflags="-liconv" \
 			-D official="true" \
 			-U optimize
 
