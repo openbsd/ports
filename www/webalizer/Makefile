@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2002/04/17 16:17:45 danh Exp $
+# $OpenBSD: Makefile,v 1.15 2002/09/12 14:15:07 danh Exp $
 
 COMMENT=	"web server log file analysis program"
 
 DISTNAME=	webalizer-2.01-10-src
 PKGNAME=	webalizer-2.01.10
 CATEGORIES=     www
-NEED_VERSION=	1.522
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/
 EXTRACT_SUFX=	.tgz
 
@@ -32,10 +31,11 @@ NO_REGRESS=	Yes
 post-install:
 	cd ${PREFIX}/bin && ln -s webalizer webazolver
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/webalizer
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/webalizer
-	${INSTALL_DATA} ${WRKSRC}/README.FIRST ${PREFIX}/share/doc/webalizer
+	${INSTALL_DATA} ${WRKSRC}/DNS.README ${PREFIX}/share/doc/webalizer/
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/webalizer/
+	${INSTALL_DATA} ${WRKSRC}/README.FIRST ${PREFIX}/share/doc/webalizer/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/webalizer
 	${INSTALL_DATA} ${WRKSRC}/sample.conf \
-		${PREFIX}/share/examples/webalizer
+		${PREFIX}/share/examples/webalizer/
 
 .include <bsd.port.mk>
