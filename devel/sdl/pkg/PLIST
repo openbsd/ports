@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/08/14 00:59:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2003/09/29 05:41:37 pvalchev Exp $
 bin/sdl-config
 include/SDL/SDL.h
 include/SDL/SDL_active.h
@@ -13,6 +13,7 @@ include/SDL/SDL_getenv.h
 include/SDL/SDL_joystick.h
 include/SDL/SDL_keyboard.h
 include/SDL/SDL_keysym.h
+include/SDL/SDL_loadso.h
 include/SDL/SDL_main.h
 include/SDL/SDL_mouse.h
 include/SDL/SDL_mutex.h
@@ -207,4 +208,5 @@ man/man3/SDL_keysym.3
 man/man3/SDL_mutexP.3
 man/man3/SDL_mutexV.3
 share/aclocal/sdl.m4
+@comment @dirrm share/aclocal
 @dirrm include/SDL

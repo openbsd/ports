@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.2 2003/04/22 00:16:53 wcobb Exp $
---- src/video/x11/SDL_x11modes.c.orig	Sun Sep 29 21:35:25 2002
-+++ src/video/x11/SDL_x11modes.c	Mon Apr 21 20:37:47 2003
+$OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.3 2003/09/29 05:41:37 pvalchev Exp $
+--- src/video/x11/SDL_x11modes.c.orig	2003-08-30 21:13:12.000000000 +0200
++++ src/video/x11/SDL_x11modes.c	2003-09-21 14:51:18.000000000 +0200
 @@ -44,6 +44,8 @@ static char rcsid =
  #endif 
  
@@ -93,39 +93,39 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.2 2003/04/22 00:16:53 wcobb Exp
  static void get_real_resolution(_THIS, int* w, int* h);
  
  static void set_best_resolution(_THIS, int width, int height)
-@@ -101,10 +179,11 @@ static void set_best_resolution(_THIS, i
-         SDL_NAME(XF86VidModeModeInfo) **modes;
+@@ -102,9 +180,11 @@ static void set_best_resolution(_THIS, i
          int i;
+         int best_width = 0, best_height = 0;
          int nmodes;
-+        char *bitmap;
++	char *bitmap;
  
          if ( SDL_NAME(XF86VidModeGetModeLine)(SDL_Display, SDL_Screen, &i, &mode) &&
 -             SDL_NAME(XF86VidModeGetAllModeLines)(SDL_Display,SDL_Screen,&nmodes,&modes)){
--            qsort(modes, nmodes, sizeof *modes, cmpmodes);
 +             SDL_NAME(XF86VidModeGetAllModeLines)(SDL_Display,SDL_Screen,&nmodes,&modes) &&
-+             get_vidmode_filter(modes, nmodes, &bitmap) ) {
++	     get_vidmode_filter(modes, nmodes, &bitmap) ){
  #ifdef XFREE86_DEBUG
-             printf("Available modes:\n");
+             printf("Available modes (unsorted):\n");
              for ( i = 0; i < nmodes; ++i ) {
-@@ -113,15 +192,24 @@ static void set_best_resolution(_THIS, i
-             }
+@@ -116,14 +196,16 @@ static void set_best_resolution(_THIS, i
  #endif
-             for ( i = nmodes-1; i > 0 ; --i ) {
-+                if ( (modes[i]->hdisplay == width) &&
+             for ( i = 0; i < nmodes ; i++ ) {
+                 if ( (modes[i]->hdisplay == width) &&
+-                     (modes[i]->vdisplay == height) )
 +                     (modes[i]->vdisplay == height) &&
-+                     (bitmap[i] == 1) )
-+                    goto match;
-+            }
-+            for ( i = nmodes-1; i > 0 ; --i ) {
-                 if ( (modes[i]->hdisplay >= width) &&
--                     (modes[i]->vdisplay >= height) )
-+                     (modes[i]->vdisplay >= height) &&
-+                     (bitmap[i] == 1) )
-                     break;
++		     (bitmap[i] == 1) )
+                     goto match;
              }
-+       match:
-             if ( (modes[i]->hdisplay != mode.hdisplay) ||
-                  (modes[i]->vdisplay != mode.vdisplay) ) {
+             qsort(modes, nmodes, sizeof *modes, cmpmodes);
+             for ( i = nmodes-1; i >= 0 ; i-- ) {
+ 		if ( ! best_width ) {
+                     if ( (modes[i]->hdisplay >= width) &&
+-                         (modes[i]->vdisplay >= height) ) {
++                         (modes[i]->vdisplay >= height) &&
++			 (bitmap[i] == 1) ) {
+                         best_width = modes[i]->hdisplay;
+                         best_height = modes[i]->vdisplay;
+                     }
+@@ -141,6 +223,7 @@ static void set_best_resolution(_THIS, i
                  SDL_NAME(XF86VidModeSwitchToMode)(SDL_Display, SDL_Screen, modes[i]);
              }
              XFree(modes);
@@ -133,7 +133,7 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.2 2003/04/22 00:16:53 wcobb Exp
          }
      }
  #endif /* XFREE86_VM */
-@@ -269,6 +357,7 @@ int X11_GetVideoModes(_THIS)
+@@ -288,6 +371,7 @@ int X11_GetVideoModes(_THIS)
      int vm_major, vm_minor;
      int nmodes;
      SDL_NAME(XF86VidModeModeInfo) **modes;
@@ -141,29 +141,17 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.2 2003/04/22 00:16:53 wcobb Exp
  #endif
  #ifdef HAVE_XIGXME
      int xme_major, xme_minor;
-@@ -304,8 +393,8 @@ int X11_GetVideoModes(_THIS)
-             fclose(metro_fp);
-         }
-     }
--#if defined(__alpha__) || defined(__powerpc__)
--    /* The alpha and PPC XFree86 servers are also buggy */
-+#if defined(__alpha__) || defined(__powerpc__) || defined(__sparc64__)
-+    /* The alpha, sparc64 and PPC XFree86 servers are also buggy */
-     buggy_X11 = 1;
- #endif
-     /* Enumerate the available fullscreen modes */
-@@ -330,15 +419,18 @@ int X11_GetVideoModes(_THIS)
+@@ -349,7 +433,8 @@ int X11_GetVideoModes(_THIS)
          }
      }
      if ( ! buggy_X11 &&
 -         SDL_NAME(XF86VidModeGetAllModeLines)(SDL_Display, SDL_Screen,&nmodes,&modes) ) {
-+         SDL_NAME(XF86VidModeGetAllModeLines)(SDL_Display, SDL_Screen,&nmodes,&modes) &&
++         SDL_NAME(XF86VidModeGetAllModeLines)(SDL_Display, SDL_Screen,&nmodes,&modes)  &&
 +         get_vidmode_filter(modes, nmodes, &bitmap) ) {
  
--        qsort(modes, nmodes, sizeof *modes, cmpmodes);
-         SDL_modelist = (SDL_Rect **)malloc((nmodes+2)*sizeof(SDL_Rect *));
-         if ( SDL_modelist ) {
-             n = 0;
+ #ifdef XFREE86_DEBUG
+         printf("Available modes: (sorted)\n");
+@@ -368,6 +453,9 @@ int X11_GetVideoModes(_THIS)
              for ( i=0; i<nmodes; ++i ) {
                  int w, h;
  
@@ -173,7 +161,7 @@ $OpenBSD: patch-src_video_x11_SDL_x11modes_c,v 1.2 2003/04/22 00:16:53 wcobb Exp
                  /* Check to see if we should add the screen size (Xinerama) */
                  w = modes[i]->hdisplay;
                  h = modes[i]->vdisplay;
-@@ -371,6 +463,7 @@ int X11_GetVideoModes(_THIS)
+@@ -400,6 +488,7 @@ int X11_GetVideoModes(_THIS)
              SDL_modelist[n] = NULL;
          }
          XFree(modes);

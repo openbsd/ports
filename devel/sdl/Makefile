@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.27 2002/11/30 11:17:26 wcobb Exp $
+# $OpenBSD: Makefile,v 1.28 2003/09/29 05:41:37 pvalchev Exp $
 # Uses pthreads
 
 COMMENT=	"cross-platform multimedia library"
 
-VERSION=	1.2.5
+VERSION=	1.2.6
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.libsdl.org
+HOMEPAGE=	http://www.libsdl.org/
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 
+# LGPL
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=	${HOMEPAGE}/release/ \
+MASTER_SITES=	${HOMEPAGE}release/ \
 		http://www.devolution.com/~slouken/SDL/release/
 
 FLAVORS=	sun esd arts aa no_x11
@@ -77,7 +78,7 @@ USE_X11=	Yes
 
 NO_REGRESS=	Yes
 
-MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 1:0:0"
+MAKE_FLAGS=	libSDL_la_LDFLAGS="-version-info 2:0:0"
 
 post-patch:
 	@touch ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure

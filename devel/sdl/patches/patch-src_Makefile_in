@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2002/11/30 11:17:26 wcobb Exp $
---- src/Makefile.in.orig	Sun Oct  6 17:34:55 2002
-+++ src/Makefile.in	Fri Nov  1 21:54:11 2002
-@@ -135,7 +135,7 @@ DIST_SUBDIRS = $(CORE_SUBDIRS) $(EXTRA_S
+$OpenBSD: patch-src_Makefile_in,v 1.6 2003/09/29 05:41:37 pvalchev Exp $
+--- src/Makefile.in.orig	2003-08-30 21:13:19.000000000 +0200
++++ src/Makefile.in	2003-09-21 14:43:28.000000000 +0200
+@@ -140,7 +140,7 @@ DIST_SUBDIRS = $(CORE_SUBDIRS) $(EXTRA_S
  lib_LTLIBRARIES = libSDL.la
  
  libSDL_la_SOURCES = $(GENERAL_SRCS)

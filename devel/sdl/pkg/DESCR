@@ -17,5 +17,3 @@ Packages can be built with additional FLAVORs:
 	This FLAVOR requires the aalib package.
 
   no_x11: Built without X11.
-
-WWW: ${HOMEPAGE}
