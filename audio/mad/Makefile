@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2001/11/20 07:16:30 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.7 2001/11/20 14:55:29 pvalchev Exp $
 
 COMMENT=	"high-quality mpeg audio decoder"
 
@@ -38,7 +38,6 @@ LIB_DEPENDS+=	esd.2::audio/esound
 CONFIGURE_ARGS+= --without-esd
 .endif
 
-USE_GMAKE=	Yes
 SEPARATE_BUILD=	concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
