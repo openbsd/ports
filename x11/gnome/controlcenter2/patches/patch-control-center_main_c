@@ -1,0 +1,12 @@
+$OpenBSD: patch-control-center_main_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- control-center/main.c.orig	Sun Mar  2 11:34:48 2003
++++ control-center/main.c	Sun Mar  2 11:34:55 2003
+@@ -149,7 +149,7 @@ main (int argc, char **argv) 
+ 			    NULL);
+ 
+ 	if (!use_shell && is_nautilus_running ())
+-		execlp ("nautilus", "nautilus", "preferences:///", NULL);
++		execlp ("nautilus", "nautilus", "preferences:///", (void *)NULL);
+ 	
+ 	gnomecc_init ();
+ 	dir = get_root_capplet_dir ();

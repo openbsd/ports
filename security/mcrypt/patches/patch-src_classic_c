@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_classic_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- src/classic.c.orig	Sun Mar  2 12:21:20 2003
++++ src/classic.c	Sun Mar  2 12:21:43 2003
+@@ -904,7 +904,7 @@ decrypt_general(char *algorithm, char *f
+ 	    if (pid == 0) {
+ 	       if (gzipflag == TRUE) {
+ 		  err_warn(_("Decompressing the output file...\n"));
+-		  i = execlp(GZIP, GZIP, "-d", tofile, NULL);
++		  i = execlp(GZIP, GZIP, "-d", tofile, (void *)NULL);
+ 		  if (i == -1) {
+ 		     perror("exec");
+ 		     return 1;
+@@ -913,7 +913,7 @@ decrypt_general(char *algorithm, char *f
+ 	       }
+ 	       if (bzipflag == TRUE) {
+ 		  err_warn(_("Decompressing the output file...\n"));
+-		  i = execlp(BZIP2, BZIP2, "-d", tofile, NULL);
++		  i = execlp(BZIP2, BZIP2, "-d", tofile, (void *)NULL);
+ 		  if (i == -1) {
+ 		     perror("exec");
+ 		     return 1;

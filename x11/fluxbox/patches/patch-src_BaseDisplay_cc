@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_BaseDisplay_cc,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- src/BaseDisplay.cc.orig	Sun Mar  2 11:38:30 2003
++++ src/BaseDisplay.cc	Sun Mar  2 11:38:48 2003
+@@ -123,7 +123,7 @@ void bexec(const char *command, char *di
+ 	if (! fork()) {
+ 		setsid();
+ 		putenv(displaystring);
+-		execl("/bin/sh", "/bin/sh", "-c", command, 0);
++		execl("/bin/sh", "/bin/sh", "-c", command, (void *)NULL);
+ 		exit(0);
+ 	}
+ }

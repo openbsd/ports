@@ -1,0 +1,21 @@
+$OpenBSD: patch-mpeg2_video_xscreensaver-comm_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- mpeg2_video/xscreensaver-comm.c.orig	Sun Mar  2 12:30:20 2003
++++ mpeg2_video/xscreensaver-comm.c	Sun Mar  2 12:30:43 2003
+@@ -60,7 +60,7 @@ look_for_good_xscreensaver()
+       dup2(mypipe[1], STDOUT_FILENO); /* make 1 same as write-to end of pipe  */
+       dup2(mypipe[1], STDERR_FILENO); /* make 2 same as write-to end of pipe  */
+       close(mypipe[1]);               /* close excess fildes                  */
+-      execlp("xscreensaver-command", "xscreensaver-command", "--version", NULL);
++      execlp("xscreensaver-command", "xscreensaver-command", "--version", (void *)NULL);
+ 
+       /* still around?  exec failed. */
+ 
+@@ -158,7 +158,7 @@ nudge_xscreensaver()
+       close(STDERR_FILENO);       /* close stderr. I'm not interested.    */
+       close(STDOUT_FILENO);       /* close stdout. I'm not interested.    */
+       execlp("xscreensaver-command",
+-             "xscreensaver-command", "-deactivate", NULL);
++             "xscreensaver-command", "-deactivate", (void *)NULL);
+       perror("exec");       /* still around?  exec failed           */
+       _exit(EXIT_FAILURE);  /* no flush                             */
+       break;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-xfiler_Main_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- xfiler/Main.c.orig	Sun Mar  2 12:51:11 2003
++++ xfiler/Main.c	Sun Mar  2 12:51:24 2003
+@@ -316,7 +316,7 @@ int shell_test(UserInfo *ui)
+       perror("(child) Can't close pipe");
+       exit(1);
+     }
+-    execlp(ui->shell, ui->shell, "-c", "echo $*", "1", NULL);
++    execlp(ui->shell, ui->shell, "-c", "echo $*", "1", (void *)NULL);
+     perror("Exec failed");
+     exit(1);
+   } else {        /* parent; read and check the child's output */

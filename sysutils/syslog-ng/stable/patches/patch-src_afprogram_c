@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_afprogram_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- src/afprogram.c.orig	Sun Mar  2 12:59:10 2003
++++ src/afprogram.c	Sun Mar  2 12:59:23 2003
+@@ -89,7 +89,7 @@ do_init_afprogram_dest(struct log_handle
+ 		dup2(fd, 2);
+ 		close(fd);
+ 		close(msgpipe[1]);
+-		execl("/bin/sh", "/bin/sh", "-c", self->progname->data, NULL);
++		execl("/bin/sh", "/bin/sh", "-c", self->progname->data, (void *)NULL);
+ 		_exit(127);
+ 	}
+ 	else {

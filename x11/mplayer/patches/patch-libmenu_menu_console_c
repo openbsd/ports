@@ -1,0 +1,12 @@
+$OpenBSD: patch-libmenu_menu_console_c,v 1.1 2003/03/02 21:22:22 pvalchev Exp $
+--- libmenu/menu_console.c.orig	Sun Mar  2 12:27:10 2003
++++ libmenu/menu_console.c	Sun Mar  2 12:27:22 2003
+@@ -301,7 +301,7 @@ static int run_shell_cmd(menu_t* menu, c
+     dup2(in[0],0);
+     dup2(out[1],1);
+     dup2(err[1],2);
+-    execl("/bin/sh","sh","-c",cmd,NULL);
++    execl("/bin/sh","sh","-c",cmd,(void *)NULL);
+     fprintf(errf,"exec failed : %s\n",strerror(errno));
+     exit(1);
+   }
