@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/03/20 20:16:38 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2000/03/21 20:17:09 espie Exp $
 # $FreeBSD: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 
 DISTNAME=	tcl8.0.5
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	concurrent
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 FAKE=		Yes
+FAKE_FLAGS=INSTALL_ROOT=${WRKINST}
 
 .if (${MACHINE_ARCH} == "mips")
 CONFIGURE_ARGS+= --disable-load
@@ -29,10 +29,6 @@ CONFIGURE_ARGS+= --disable-load
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
-
-# Sneaky
-post-install:
-	perl -pi.bak -e 's/\$$\{DESTDIR\}//;' ${PREFIX}/lib/tcl8.0/tclConfig.sh 
 
 test:	build
 	@cd ${WRKSRC} && make test

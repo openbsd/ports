@@ -1,5 +1,5 @@
 # $FreeBSD: Makefile,v 1.32 2000/01/05 07:12:09 jseger Exp $
-# $OpenBSD: Makefile,v 1.6 2000/03/20 20:16:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2000/03/21 20:17:10 espie Exp $
 
 DISTNAME=	tk8.2.3
 PKGNAME=	tk-8.2.3
@@ -19,18 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 LIB_DEPENDS=	tcl82.1.3:lang/tcl82
 
 SEPARATE_BUILD=	concurrent
-HAS_CONFIGURE=	Yes
-CONFIGURE_ARGS+=--prefix='$${DESTDIR}${PREFIX}' --sysconfdir='$${DESTDIR}/etc'
+GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-tcl="${PREFIX}/lib/tcl8.2"
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 FAKE=		Yes
+FAKE_FLAGS=INSTALL_ROOT=${WRKINST}
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/unix
-
-# Sneaky
-post-install:
-	perl -pi.bak -e 's/\$$\{DESTDIR\}//;' ${PREFIX}/lib/tk8.2/tkConfig.sh 
 
 test:	build
 	@cd ${WRKSRC} && make test
