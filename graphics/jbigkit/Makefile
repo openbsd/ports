@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2001/04/13 23:46:11 brad Exp $
+# $OpenBSD: Makefile,v 1.21 2001/04/21 14:59:31 brad Exp $
 # $FreeBSD: Makefile,v 1.5 1998/09/14 22:19:05 smace Exp $
 
 COMMENT=	"lossless image compression library"
@@ -31,5 +31,5 @@ test:	build
 .include <bsd.port.mk>
 
 .if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-MAKE_ENV=	NO_SHARED_LIBS=Yes
+MAKE_ENV+=	NO_SHARED_LIBS=Yes
 .endif
