@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2002/05/30 09:08:28 wcobb Exp $
+@comment $OpenBSD: PLIST,v 1.3 2003/12/16 15:31:22 naddy Exp $
+%%gnome%%
 bin/soundtracker
 share/doc/soundtracker/FAQ
 share/doc/soundtracker/NEWS
@@ -10,9 +11,30 @@ share/locale/es/LC_MESSAGES/soundtracker.mo
 share/locale/fr/LC_MESSAGES/soundtracker.mo
 share/locale/gl/LC_MESSAGES/soundtracker.mo
 share/locale/it/LC_MESSAGES/soundtracker.mo
-share/locale/pl/LC_MESSAGES/soundtracker.mo
 share/locale/ja/LC_MESSAGES/soundtracker.mo
+share/locale/pl/LC_MESSAGES/soundtracker.mo
 share/locale/ru/LC_MESSAGES/soundtracker.mo
 share/locale/sl/LC_MESSAGES/soundtracker.mo
-%%gnome%%
+share/locale/sv/LC_MESSAGES/soundtracker.mo
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/gl/LC_MESSAGES
+@dirrm share/locale/gl
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale
 @dirrm share/doc/soundtracker

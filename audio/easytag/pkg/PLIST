@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2003/04/16 13:43:09 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/16 15:31:22 naddy Exp $
 bin/easytag
 man/man1/easytag.1
 share/doc/easytag/README
@@ -19,4 +19,35 @@ share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/pixmaps/EasyTAG.xpm
 share/pixmaps/EasyTAG_logo.xpm
+@dirrm share/pixmaps
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale
+@dirrm share/gnome/apps/Multimedia
+@dirrm share/gnome/apps
+@dirrm share/gnome
 @dirrm share/doc/easytag

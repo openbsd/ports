@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/11/25 22:39:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2003/12/16 15:31:22 naddy Exp $
 !%%no_curses%%
 bin/aumix
 man/man1/aumix.1
@@ -18,4 +18,31 @@ share/locale/ru/LC_MESSAGES/aumix.mo
 share/locale/sv/LC_MESSAGES/aumix.mo
 share/locale/uk/LC_MESSAGES/aumix.mo
 share/locale/zh_CN/LC_MESSAGES/aumix.mo
+@dirrm share/locale/zh_CN/LC_MESSAGES
+@dirrm share/locale/zh_CN
+@dirrm share/locale/uk/LC_MESSAGES
+@dirrm share/locale/uk
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/gl/LC_MESSAGES
+@dirrm share/locale/gl
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/el/LC_MESSAGES
+@dirrm share/locale/el
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale
 @dirrm share/aumix
