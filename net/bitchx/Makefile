@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 1999/09/21 17:49:24 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/09/27 01:41:50 brad Exp $
 # $FreeBSD: Makefile,v 1.3 1998/07/21 11:38:44 eivind Exp $
 
 DISTNAME=	ircii-pana-75p3
@@ -10,10 +10,6 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 NEED_VERSION=	1.114
 
 MAINTAINER=	brad@openbsd.org
-
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=                "Currently does not build on Alpha"
-.endif
 
 GNU_CONFIGURE=	yes
 
