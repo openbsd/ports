@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2002/12/10 08:37:42 jakob Exp $
+# $OpenBSD: Makefile,v 1.7 2003/02/03 08:54:04 jakob Exp $
 
 COMMENT=	"RFC 2222 SASL (Simple Authentication and Security Layer)"
 
-DISTNAME=	cyrus-sasl-2.1.10
+DISTNAME=	cyrus-sasl-2.1.11
 CATEGORIES=     security
 
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -37,10 +37,6 @@ CONFIGURE_ARGS+=	--with-saslauthd="/var/sasl2" \
 			--disable-sample
 CFLAGS+=		-I/usr/include/kerberosV
 
-
-post-extract:
-	(cd ${WRKSRC}/config; \
-	rm kerberos_v4.m4~ kerberos_v4.m4.orig)
 
 post-build:
 	(cd ${WRKBUILD}/saslauthd; \
