@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_ypost_usenet_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+--- src/ypost/usenet.c.orig	Fri Mar 15 12:10:49 2002
++++ src/ypost/usenet.c	Sat Jan 22 22:18:35 2005
+@@ -159,7 +159,7 @@ usenet_message_id(void)
+ 
+ 	if (uname(&uts))
+ 		ErrERR(_("unable to determine hostname"));
+-	snprintf(id, sizeof(id), "<%lx%x%x@%s>", time(NULL), getpid(), idcount++, uts.nodename);
++	snprintf(id, sizeof(id), "<%x%x%x@%s>", time(NULL), getpid(), idcount++, uts.nodename);
+ 	return (id);
+ }
+ /*--- usenet_message_id() -----------------------------------------------------------------------*/
+@@ -268,11 +268,11 @@ usenet_make_subject(YENCFILE *y, int par
+ 	sdprintf(&subj, "\"%s\" ", STRIP_PATH(y->input_filename));
+ 
+ 	if (y->totalparts < 2)										/* Single part subject */
+-		sdprintf(&subj, "%u yEnc bytes", y->filesize);
++		sdprintf(&subj, "%zu yEnc bytes", y->filesize);
+ 	else																/* Multi part subject */
+ 	{
+ 		/* Get part number as a string */
+-		sdprintf(&subj, "yEnc (%s/%d) %u bytes", pad_number(part, y->totalparts, 1), y->totalparts, y->filesize);
++		sdprintf(&subj, "yEnc (%s/%zd) %zu bytes", pad_number(part, y->totalparts, 1), y->totalparts, y->filesize);
+ 	}
+ 	if (opt_comment)
+ 		sdprintf(&subj, " [%s]", opt_comment);

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_ydecode_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+--- src/ydecode.c.orig	Sat Jan 22 21:53:56 2005
++++ src/ydecode.c	Sat Jan 22 22:02:31 2005
+@@ -573,7 +573,7 @@ ydecode_single(YDECFILE *y)
+ 				  _("ybegin"), comma1(*y->header->size),
+ 				  _("actual"), comma2(decodedsize));
+ 		errors++;
+-		snprintf(errmsg, sizeof(errmsg), "size-%u", decodedsize);
++		snprintf(errmsg, sizeof(errmsg), "size-%zu", decodedsize);
+ 	}
+ 	if (y->footer->crc32 && (*y->footer->crc32 != crc32))
+ 	{
+@@ -814,7 +814,7 @@ ydecode_multi(int *first_pos)
+ 					  "(%s=%s %s=%s)",
+ 					  _("yend"), comma1(*y->footer->size),
+ 					  _("actual"), comma2(decpart));
+-			snprintf(errmsg, sizeof(errmsg), "psize-%u", decpart);
++			snprintf(errmsg, sizeof(errmsg), "psize-%zu", decpart);
+ 			errors++;
+ 		}
+ 		if (y->footer->pcrc32 && (*y->footer->pcrc32 != pcrc32))
+@@ -847,7 +847,7 @@ ydecode_multi(int *first_pos)
+ 				  "(%s=%s %s=%s)",
+ 				  _("ybegin"), comma1(*y->header->size),
+ 				  _("actual"), comma2(decodedsize));
+-		snprintf(errmsg, sizeof(errmsg), "size-%u", decodedsize);
++		snprintf(errmsg, sizeof(errmsg), "size-%zu", decodedsize);
+ 		errors++;
+ 	}
+ 	if (y->footer->crc32 && (*y->footer->crc32 != crc32))

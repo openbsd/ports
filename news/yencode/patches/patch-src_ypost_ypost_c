@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_ypost_ypost_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+--- src/ypost/ypost.c.orig	Sat Jan 22 21:54:17 2005
++++ src/ypost/ypost.c	Sat Jan 22 21:59:11 2005
+@@ -733,7 +733,7 @@ output_file_info(void)
+ 		}
+ 		printf("       support data: %s\n", y->support_data ? "yes" : "no");
+ 		for (part = 0; part < y->totalparts; part++)
+-			printf("           part %03d: begin=%lu end=%lu size=%u\n", part + 1, y->part[part]->begin,
++			printf("           part %03d: begin=%lu end=%lu size=%zu\n", part + 1, y->part[part]->begin,
+ 					 y->part[part]->end, y->part[part]->size);
+ 	}
+ 	charline('-');
+@@ -818,10 +818,10 @@ post_file(YENCFILE *y)
+ 		**  Write the yEnc "=ybegin" line
+ 		*/
+ 		if (y->totalparts == 1)
+-			sock_printf("=ybegin line=%d size=%u name=%s\n",
++			sock_printf("=ybegin line=%d size=%zu name=%s\n",
+ 							opt_line_length, y->filesize, STRIP_PATH(y->input_filename));
+ 		else
+-			sock_printf("=ybegin part=%d total=%d line=%d size=%u name=%s\n",
++			sock_printf("=ybegin part=%d total=%zd line=%d size=%zu name=%s\n",
+ 							part_current, y->totalparts, opt_line_length, y->filesize, STRIP_PATH(y->input_filename));
+ 
+ 		/*
+@@ -924,13 +924,13 @@ post_file(YENCFILE *y)
+ 		**  Write the yEnc "=yend" line
+ 		*/
+ 		if (y->totalparts == 1)
+-			sock_printf("=yend size=%u crc32=%08X\n", y->filesize, y->crc);
++			sock_printf("=yend size=%zu crc32=%08X\n", y->filesize, y->crc);
+ 		else
+ 		{
+ 			if (part_current == y->totalparts)
+-				sock_printf("=yend size=%u part=%d pcrc32=%08X crc32=%08X\n", y->part[part_current-1]->size, part_current, pcrc, y->crc);
++				sock_printf("=yend size=%zu part=%d pcrc32=%08X crc32=%08X\n", y->part[part_current-1]->size, part_current, pcrc, y->crc);
+ 			else
+-				sock_printf("=yend size=%u part=%d pcrc32=%08X\n", y->part[part_current-1]->size, part_current, pcrc);
++				sock_printf("=yend size=%zu part=%d pcrc32=%08X\n", y->part[part_current-1]->size, part_current, pcrc);
+ 		}
+ 
+ 		/*

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+bin/ydecode
+bin/yencode
+bin/ypost
+@man man/man1/ydecode.1
+@man man/man1/yencode.1
+@man man/man1/ypost.1
+@man man/man5/ypostrc.5

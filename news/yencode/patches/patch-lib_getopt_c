@@ -1,0 +1,35 @@
+$OpenBSD: patch-lib_getopt_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+--- lib/getopt.c.orig	Mon Mar 11 03:31:47 2002
++++ lib/getopt.c	Sat Jan 22 21:51:01 2005
+@@ -55,11 +55,11 @@ extern int strncmp();
+ 
+ /* This needs to come after some library #include
+    to get __GNU_LIBRARY__ defined.  */
+-#ifdef	__GNU_LIBRARY__
++#if defined(__GNU_LIBRARY__) || defined(__OpenBSD__)
+ /* Don't include stdlib.h for non-GNU C libraries because some of them
+    contain conflicting prototypes for getopt.  */
+ #include <stdlib.h>
+-#endif	/* GNU C library.  */
++#endif	/* GNU C library. || OpenBSD */
+ 
+ /* This version of `getopt' appears to the caller like standard Unix `getopt'
+    but it behaves differently for the user, since it allows the user
+@@ -157,7 +157,7 @@ static enum
+ /* Value of POSIXLY_CORRECT environment variable.  */
+ static char *posixly_correct;
+ 
+-#ifdef	__GNU_LIBRARY__
++#if defined(__GNU_LIBRARY__) || defined(__OpenBSD__)
+ /* We want to avoid inclusion of string.h with non-GNU libraries
+    because there are many ways it can cause trouble.
+    On some systems, it contains special magic macros that don't work
+@@ -197,7 +197,7 @@ extern int strlen (const char *);
+ #endif /* not __STDC__ */
+ #endif /* __GNUC__ */
+ 
+-#endif /* not __GNU_LIBRARY__ */
++#endif /* not (__GNU_LIBRARY__) || (__OpenBSD__) */
+ 
+ /* Handle permutation of arguments.  */
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_support_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+--- src/support.c.orig	Sat Jan 22 21:52:35 2005
++++ src/support.c	Sat Jan 22 21:53:14 2005
+@@ -38,7 +38,7 @@ yencode_and_write_buffer(FILE *out, cons
+ 	register int linect = 0;
+ 	register unsigned char c;
+ 
+-	fprintf(out, "=ybegin line=%d size=%u name=%s\r\n", opt_line_length, buflen, filename);
++	fprintf(out, "=ybegin line=%d size=%zu name=%s\r\n", opt_line_length, buflen, filename);
+ 	CRC_START(crc);
+ 	for (ct = 0; ct < buflen; ct++)
+ 	{
+@@ -66,7 +66,7 @@ yencode_and_write_buffer(FILE *out, cons
+ 		fputc('\n', out);
+ 	}
+ 	CRC_FINISH(crc);
+-	fprintf(out, "=yend size=%u crc32=%08x\r\n", buflen, crc);
++	fprintf(out, "=yend size=%zu crc32=%08x\r\n", buflen, crc);
+ }
+ /*--- yencode_and_write_buffer() ----------------------------------------------------------------*/
+ 

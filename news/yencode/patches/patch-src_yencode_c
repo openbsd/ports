@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_yencode_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
+--- src/yencode.c.orig	Sat Jan 22 21:53:50 2005
++++ src/yencode.c	Sat Jan 22 22:01:09 2005
+@@ -370,7 +370,7 @@ yencode_file(YENCFILE *f, FILE *in, size
+ 		/* Write headers */
+ 		if (opt_multipart_size)
+ 		{
+-			headers = fprintf(out, "=ybegin part=%d total=%d line=%d size=%u name=%s\r\n",
++			headers = fprintf(out, "=ybegin part=%d total=%d line=%d size=%zu name=%s\r\n",
+ 					  part, totalparts, opt_line_length, insize, STRIP_PATH(f->input_filename));
+ 			{
+ 				size_t remaining = insize - decsize;
+@@ -386,7 +386,7 @@ yencode_file(YENCFILE *f, FILE *in, size
+ 		}
+ 		else
+ 		{
+-			headers = fprintf(out, "=ybegin line=%d size=%u name=%s\r\n",
++			headers = fprintf(out, "=ybegin line=%d size=%zu name=%s\r\n",
+ 										 opt_line_length, insize, STRIP_PATH(f->input_filename));
+ 		}
+ 
+@@ -400,13 +400,13 @@ yencode_file(YENCFILE *f, FILE *in, size
+ 		/* Write footers */
+ 		if (opt_multipart_size)
+ 		{
+-			headers += fprintf(out, "=yend part=%d total=%d size=%u pcrc32=%08X",
++			headers += fprintf(out, "=yend part=%d total=%d size=%zu pcrc32=%08X",
+ 										  part, totalparts, decpart, pcrc32);
+ 		}
+ 		else
+ 		{
+ 			CRC_FINISH(crc32);
+-			headers += fprintf(out, "=yend size=%u crc32=%08X\r\n", insize, crc32);
++			headers += fprintf(out, "=yend size=%zu crc32=%08X\r\n", insize, crc32);
+ 			f->ok = 1;
+ 			f->crc = crc32;
+ 		}
