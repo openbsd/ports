@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2002/08/27 20:51:04 lebel Exp $
+# $OpenBSD: Makefile,v 1.145 2002/09/01 09:29:08 couderc Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
 #    SUBDIR += FWF
@@ -140,6 +140,7 @@
      SUBDIR += type1inst
      SUBDIR += unclutter
      SUBDIR += viewfax
+     SUBDIR += waimea
      SUBDIR += windowmaker
      SUBDIR += windowmaker-extra
      SUBDIR += wmbutton
