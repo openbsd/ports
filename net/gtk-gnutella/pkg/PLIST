@@ -1,2 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/06/07 18:45:32 lebel Exp $
-bin/gtk_gnutella
+@comment $OpenBSD: PLIST,v 1.2 2001/10/25 21:42:32 heko Exp $
+bin/gtk-gnutella
+man/man1/gtk-gnutella.1
+share/doc/gtk-gnutella/README
+@dirrm share/doc/gtk-gnutella

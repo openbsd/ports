@@ -1,15 +1,11 @@
-What is Gtk-Gnutella ?
+What is Gtk-Gnutella?
 
-Gtk-Gnutella is a clone of Gnutella (see gnutella.wego.com).  It's
-a Unix clone, and it needs GTK+ (1.2 or above). Gnome is not needed.
-It is currently developed and tested under Linux (Redhat 6).  It
-is known to run at least on Linux and FreeBSD (on 80x86 machines).
-It is released under the GNU Public License (GPL).
+Gtk-Gnutella is a clone of Gnutella (see gnutella.wego.com). It's a
+clone for Unix, and needs GTK+ (1.2 or above). It is released under the
+GNU General Public License (GPL).
 
-Is it finished ?
+Is it finished? 
 
-No. Currently it lacks all sharing support, as well as many other
-(minor) features. But you should already be able to search for any
-files you want and to download them.
+No. But it is fully functional: you may share, search, and download. 
 
 WWW: ${HOMEPAGE}
