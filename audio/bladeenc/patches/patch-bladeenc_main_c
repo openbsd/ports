@@ -1,0 +1,11 @@
+$OpenBSD: patch-bladeenc_main_c,v 1.1 2003/02/12 00:22:21 brad Exp $
+--- bladeenc/main.c.orig	Tue Feb 11 19:15:37 2003
++++ bladeenc/main.c	Tue Feb 11 19:15:57 2003
+@@ -41,6 +41,7 @@
+ #include    <stdlib.h>
+ #include    <string.h>
+ #include    <time.h>
++#include    <sys/types.h>
+ 
+ #include    "system.h"
+ #include	"common.h"

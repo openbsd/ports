@@ -1,0 +1,14 @@
+$OpenBSD: patch-bladeenc_system_h,v 1.1 2003/02/12 00:22:21 brad Exp $
+--- bladeenc/system.h.orig	Tue Feb 11 19:16:31 2003
++++ bladeenc/system.h	Tue Feb 11 19:17:06 2003
+@@ -321,10 +321,4 @@
+ 
+ typedef		unsigned	char 	uchar;
+ 
+-#if (defined(UNIX_SYSTEM) && !defined(SYS_TYPES_H) && !defined(_SYS_TYPES_H)) || (!defined UNIX_SYSTEM  && !defined(__GNUC__))
+-		typedef		unsigned short	ushort;
+-		typedef		unsigned int	uint;
+-#endif
+-
+-
+ #endif		/* __SYSTEM__ */

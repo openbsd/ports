@@ -1,0 +1,11 @@
+$OpenBSD: patch-bladeenc_samplein_c,v 1.1 2003/02/12 00:22:21 brad Exp $
+--- bladeenc/samplein.c.orig	Tue Feb 11 19:17:30 2003
++++ bladeenc/samplein.c	Tue Feb 11 19:17:54 2003
+@@ -31,6 +31,7 @@
+ #include	<stdio.h>
+ #include	<stdlib.h>
+ #include	<string.h>
++#include        <sys/types.h>
+ 
+ #include	"system.h"
+ #include	"samplein.h"
