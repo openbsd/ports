@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2002/03/01 10:07:25 form Exp $
+@comment $OpenBSD: PLIST,v 1.17 2002/05/15 02:14:19 form Exp $
 bin/analog
 share/analog/anlgform.html
 share/analog/anlgform.pl
@@ -247,8 +247,12 @@ share/analog/lang/ptdom.tab
 share/analog/lang/ro.lng
 share/analog/lang/rodom.tab
 share/analog/lang/ru.lng
-share/analog/lang/rua.lng
+share/analog/lang/ru1.lng
+share/analog/lang/ru1desc.txt
+share/analog/lang/ru1dom.tab
+share/analog/lang/rudesc.txt
 share/analog/lang/rudom.tab
+share/analog/lang/ruform.html
 share/analog/lang/se.lng
 share/analog/lang/se2.lng
 share/analog/lang/se2a.lng
