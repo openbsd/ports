@@ -5,9 +5,8 @@ bin/bzip2recover
 include/bzlib.h
 lib/libbz2.a
 lib/libbz2.so.9.5
+@exec /sbin/ldconfig -m %B
 man/man1/bunzip2.1
 man/man1/bzcat.1
 man/man1/bzip2.1
 man/man1/bzip2recover.1
-@exec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
-@unexec [ ! -x /sbin/ldconfig ] || /sbin/ldconfig -m %D/lib
