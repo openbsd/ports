@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2004/02/02 10:53:21 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2004/07/24 12:47:16 espie Exp $
 ${KDE}/ark.so
 ${KDE}/irkick.so
 ${KDE}/kcalc.so

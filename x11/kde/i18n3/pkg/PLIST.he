@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST.he,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.he,v 1.14 2004/07/24 12:47:15 espie Exp $
+share/doc/HTML/he/
+${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -50,6 +52,7 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}khelpcenter/
 ${DOC}khelpcenter/background.png
 ${DOC}khelpcenter/bgtable.png
 ${DOC}khelpcenter/khelpcenter.png
@@ -69,6 +72,8 @@ ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
+${LOC}audiorename_plugin.mo
+${LOC}autorefresh.mo
 ${LOC}babelfish.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
@@ -76,22 +81,6 @@ ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -104,6 +93,7 @@ ${LOC}ffrs.mo
 ${LOC}filetypes.mo
 ${LOC}flashkard.mo
 ${LOC}fontinst.mo
+${LOC}fsview.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
@@ -128,12 +118,14 @@ ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
+${LOC}katecppsymbolviewer.mo
 ${LOC}katedefaultproject.mo
 ${LOC}katefll_initplugin.mo
 ${LOC}katefll_plugin.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateinsertcommand.mo
+${LOC}katemake.mo
 ${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
@@ -147,6 +139,7 @@ ${LOC}katomic.mo
 ${LOC}kaudiocreator.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
+${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kcalc.mo
@@ -184,6 +177,7 @@ ${LOC}kcmkmix.mo
 ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
+${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
@@ -349,6 +343,7 @@ ${LOC}knotify.mo
 ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
+${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -448,6 +443,7 @@ ${LOC}kxconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
+${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkdegames.mo
@@ -472,6 +468,7 @@ ${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
 ${LOC}megami.mo
+${LOC}minitoolsplugin.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -495,6 +492,3 @@ ${LOC}webarchiver.mo
 share/locale/he/charset
 share/locale/he/entry.desktop
 share/locale/he/flag.png
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}common
-@dirrm share/doc/HTML/he

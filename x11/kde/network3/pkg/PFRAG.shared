@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2004/02/01 14:59:24 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.11 2004/07/24 12:47:15 espie Exp $
 ${KDE}/kcm_kopete_accountconfig.so
 ${KDE}/kcm_kopete_appearanceconfig.so
 ${KDE}/kcm_kopete_autoreplace.so
@@ -25,6 +25,7 @@ ${KDE}/kopete_chatwindow.so
 ${KDE}/kopete_connectionstatus.so
 ${KDE}/kopete_contactnotes.so
 ${KDE}/kopete_cryptography.so
+${KDE}/kopete_gadu.so
 ${KDE}/kopete_highlight.so
 ${KDE}/kopete_history.so
 ${KDE}/kopete_icq.so

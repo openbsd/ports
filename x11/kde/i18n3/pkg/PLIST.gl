@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.gl,v 1.3 2004/03/08 11:10:15 espie Exp $
+@comment $OpenBSD: PLIST.gl,v 1.4 2004/07/24 12:47:15 espie Exp $
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
@@ -13,21 +13,6 @@ ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -40,6 +25,7 @@ ${LOC}flashkard.mo
 ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
+${LOC}irkick.mo
 ${LOC}kabc_dir.mo
 ${LOC}kabc_file.mo
 ${LOC}kabc_ldap.mo
@@ -59,7 +45,10 @@ ${LOC}katedefaultproject.mo
 ${LOC}katehelloworld.mo
 ${LOC}kateprojectmanager.mo
 ${LOC}kbattleship.mo
+${LOC}kbounce.mo
 ${LOC}kcalc.mo
+${LOC}kcardchooser.mo
+${LOC}kcharselecapplet.mo
 ${LOC}kcm_kviewgeneralconfig.mo
 ${LOC}kcm_kviewpluginsconfig.mo
 ${LOC}kcm_kviewviewerpluginsconfig.mo
@@ -69,6 +58,7 @@ ${LOC}kcmarts.mo
 ${LOC}kcmaudiocd.mo
 ${LOC}kcmbackground.mo
 ${LOC}kcmbell.mo
+${LOC}kcmcddb.mo
 ${LOC}kcmcgi.mo
 ${LOC}kcmcolors.mo
 ${LOC}kcmcomponentchooser.mo
@@ -97,6 +87,7 @@ ${LOC}kcmkonsole.mo
 ${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
 ${LOC}kcmkvaio.mo
+${LOC}kcmkwallet.mo
 ${LOC}kcmkwindecoration.mo
 ${LOC}kcmkwintheme.mo
 ${LOC}kcmkwm.mo
@@ -182,6 +173,7 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfontinst.mo
+${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
@@ -257,9 +249,11 @@ ${LOC}kreadconfig.mo
 ${LOC}krec.mo
 ${LOC}kruler.mo
 ${LOC}krunapplet.mo
+${LOC}ksame.mo
 ${LOC}kscreensaver.mo
 ${LOC}ksig.mo
 ${LOC}ksim.mo
+${LOC}ksirtet.mo
 ${LOC}ksmiletris.mo
 ${LOC}ksmserver.mo
 ${LOC}ksnake.mo
@@ -305,6 +299,7 @@ ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
+${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo

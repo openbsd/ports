@@ -1,0 +1,16 @@
+$OpenBSD: patch-admin_cvs_sh,v 1.1 2004/07/24 12:47:15 espie Exp $
+--- admin/cvs.sh.orig	Sat Feb 28 10:58:06 2004
++++ admin/cvs.sh	Fri Jul 16 02:04:25 2004
+@@ -621,8 +621,10 @@ if test -f Makefile.am.in; then
+   rm -f $makefile_wo
+ fi
+ 
+-# Suck in the AUTOCONF detection code
+-. $admindir/detect-autoconf.sh
++AUTOCONF=autoconf
++AUTOHEADER=autoheader
++AUTOM4TE=autom4te-2.59
++ACLOCAL=aclocal
+ 
+ ###
+ ### Main

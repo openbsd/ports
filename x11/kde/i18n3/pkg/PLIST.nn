@@ -1,16 +1,4 @@
-@comment $OpenBSD: PLIST.nn,v 1.14 2004/02/07 12:29:13 espie Exp $
-${DOC}kaddressbook/common
-${DOC}kaddressbook/${C}
-${DOC}kaddressbook/${I}
-${DOC}khelpcenter/common
-${DOC}khelpcenter/contact.docbook
-${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
-${DOC}khelpcenter/${I}
-${DOC}khelpcenter/links.docbook
-${DOC}khelpcenter/support.docbook
-${DOC}khelpcenter/welcome.docbook
-${DOC}khelpcenter/whatiskde.docbook
+@comment $OpenBSD: PLIST.nn,v 1.15 2004/07/24 12:47:15 espie Exp $
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}amor.mo
@@ -26,22 +14,6 @@ ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -55,6 +27,7 @@ ${LOC}fontinst.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
 ${LOC}imgalleryplugin.mo
+${LOC}irkick.mo
 ${LOC}juk.mo
 ${LOC}kab3.mo
 ${LOC}kabc2mutt.mo
@@ -158,6 +131,7 @@ ${LOC}kcmmidi.mo
 ${LOC}kcmnewsticker.mo
 ${LOC}kcmnic.mo
 ${LOC}kcmnotify.mo
+${LOC}kcmperformance.mo
 ${LOC}kcmprintmgr.mo
 ${LOC}kcmsamba.mo
 ${LOC}kcmscreensaver.mo
@@ -169,6 +143,8 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
 ${LOC}kcmusb.mo
+${LOC}kcmview1394.mo
+${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kcron.mo
@@ -185,6 +161,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
@@ -237,6 +214,7 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfmexec.mo
+${LOC}kfontinst.mo
 ${LOC}kfontviewpart.mo
 ${LOC}kfortune.mo
 ${LOC}kfouleggs.mo
@@ -308,6 +286,8 @@ ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmobile.mo
 ${LOC}kmoon.mo
+${LOC}kmousetool.mo
+${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knewsticker.mo
@@ -344,6 +324,7 @@ ${LOC}kpoker.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
+${LOC}krandr.mo
 ${LOC}krdb.mo
 ${LOC}krdc.mo
 ${LOC}kreadconfig.mo
@@ -408,6 +389,7 @@ ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
 ${LOC}kviewviewer.mo
 ${LOC}kvoctrain.mo
+${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
@@ -421,6 +403,7 @@ ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_plastik_config.mo
 ${LOC}kwin_quartz_config.mo
 ${LOC}kworldclock.mo
+${LOC}kwriteconfig.mo
 ${LOC}kwuftpd.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
@@ -475,6 +458,3 @@ ${LOC}webarchiver.mo
 share/locale/nn/charset
 share/locale/nn/entry.desktop
 share/locale/nn/flag.png
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}kaddressbook
-@dirrm share/doc/HTML/nn

@@ -1,7 +1,7 @@
-$OpenBSD: patch-flow_gsl_Makefile_in,v 1.1 2004/02/02 00:53:26 espie Exp $
---- flow/gsl/Makefile.in.orig	2004-01-19 13:00:56.000000000 +0100
-+++ flow/gsl/Makefile.in	2004-01-19 13:06:16.000000000 +0100
-@@ -514,13 +514,13 @@ clean-noinstPROGRAMS:
+$OpenBSD: patch-flow_gsl_Makefile_in,v 1.2 2004/07/24 12:47:13 espie Exp $
+--- flow/gsl/Makefile.in.orig	Sun May 30 18:24:53 2004
++++ flow/gsl/Makefile.in	Fri Jul 16 00:35:53 2004
+@@ -560,13 +560,13 @@ clean-noinstPROGRAMS:
  	done
  gslffttest$(EXEEXT): $(gslffttest_OBJECTS) $(gslffttest_DEPENDENCIES) 
  	@rm -f gslffttest$(EXEEXT)
@@ -17,4 +17,4 @@ $OpenBSD: patch-flow_gsl_Makefile_in,v 1.1 2004/02/02 00:53:26 espie Exp $
 +	$(CXXLINK) $(gslwchunk_LDFLAGS) $(gslwchunk_OBJECTS) $(gslwchunk_LDADD) $(LIBS)
  
  mostlyclean-compile:
- 	-rm -f *.$(OBJEXT) core *.core
+ 	-rm -f *.$(OBJEXT)

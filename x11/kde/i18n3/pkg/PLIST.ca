@@ -1,269 +1,4 @@
-@comment $OpenBSD: PLIST.ca,v 1.14 2004/03/08 11:10:15 espie Exp $
-${DOC}katomic/common
-${DOC}katomic/${C}
-${DOC}katomic/${I}
-${DOC}kbugbuster/common
-${DOC}kbugbuster/${C}
-${DOC}kbugbuster/${I}
-${DOC}kcharselect/common
-${DOC}kcharselect/${C}
-${DOC}kcharselect/${I}
-${DOC}kcontrol/bell/common
-${DOC}kcontrol/bell/${C}
-${DOC}kcontrol/bell/${I}
-${DOC}kcontrol/kalarmd/common
-${DOC}kcontrol/kalarmd/${C}
-${DOC}kcontrol/kalarmd/${I}
-${DOC}kcontrol/kcmktalkd/common
-${DOC}kcontrol/kcmktalkd/${C}
-${DOC}kcontrol/kcmktalkd/${I}
-${DOC}kcontrol/khtml/nsplugin.docbook
-${DOC}kcontrol/kmixcfg/common
-${DOC}kcontrol/kmixcfg/${C}
-${DOC}kcontrol/kmixcfg/${I}
-${DOC}kcontrol/lanbrowser/common
-${DOC}kcontrol/lanbrowser/${C}
-${DOC}kcontrol/lanbrowser/${I}
-${DOC}kdf/common
-${DOC}kdf/${C}
-${DOC}kdf/${I}
-${DOC}kdf/kdf_config.png
-${DOC}keduca/common
-${DOC}keduca/${C}
-${DOC}keduca/${I}
-${DOC}keduca/screenshot.png
-${DOC}kgpgcertmanager/common
-${DOC}kgpgcertmanager/${C}
-${DOC}kgpgcertmanager/${I}
-${DOC}khangman/common
-${DOC}khangman/${C}
-${DOC}khangman/${I}
-${DOC}khelpcenter/background.png
-${DOC}khelpcenter/bgtable.png
-${DOC}khelpcenter/common
-${DOC}khelpcenter/contact.docbook
-${DOC}khelpcenter/faq/about.docbook
-${DOC}khelpcenter/faq/common
-${DOC}khelpcenter/faq/configkde.docbook
-${DOC}khelpcenter/faq/contrib.docbook
-${DOC}khelpcenter/faq/desktop.docbook
-${DOC}khelpcenter/faq/filemng.docbook
-${DOC}khelpcenter/faq/getkde.docbook
-${DOC}khelpcenter/faq/${C}
-${DOC}khelpcenter/faq/${I}
-${DOC}khelpcenter/faq/install.docbook
-${DOC}khelpcenter/faq/intro.docbook
-${DOC}khelpcenter/faq/kdeapps.docbook
-${DOC}khelpcenter/faq/misc.docbook
-${DOC}khelpcenter/faq/moreinfo.docbook
-${DOC}khelpcenter/faq/nonkdeapps.docbook
-${DOC}khelpcenter/faq/notrelated.docbook
-${DOC}khelpcenter/faq/panel.docbook
-${DOC}khelpcenter/faq/tips.docbook
-${DOC}khelpcenter/faq/winmng.docbook
-${DOC}khelpcenter/glossary/common
-${DOC}khelpcenter/glossary/${C}
-${DOC}khelpcenter/glossary/${I}
-${DOC}khelpcenter/glossary/kdeprintingglossary.docbook
-${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
-${DOC}khelpcenter/${I}
-${DOC}khelpcenter/kdelogo2.png
-${DOC}khelpcenter/khelpcenter.png
-${DOC}khelpcenter/konq.css
-${DOC}khelpcenter/lines.png
-${DOC}khelpcenter/lines2.png
-${DOC}khelpcenter/links.docbook
-${DOC}khelpcenter/pointers.png
-${DOC}khelpcenter/quickstart/common
-${DOC}khelpcenter/quickstart/${C}
-${DOC}khelpcenter/quickstart/${I}
-${DOC}khelpcenter/shadow1.png
-${DOC}khelpcenter/support.docbook
-${DOC}khelpcenter/userguide/about-desktop.docbook
-${DOC}khelpcenter/userguide/common
-${DOC}khelpcenter/userguide/first-impressions.docbook
-${DOC}khelpcenter/userguide/getting-started.docbook
-${DOC}khelpcenter/userguide/history.docbook
-${DOC}khelpcenter/userguide/${C}
-${DOC}khelpcenter/userguide/${I}
-${DOC}khelpcenter/userguide/installation.docbook
-${DOC}khelpcenter/userguide/intro.docbook
-${DOC}khelpcenter/userguide/more-help.docbook
-${DOC}khelpcenter/userguide/notices-trademarks.docbook
-${DOC}khelpcenter/userguide/shortcuts.docbook
-${DOC}khelpcenter/userguide/staff.docbook
-${DOC}khelpcenter/userguide/ug-faq.docbook
-${DOC}khelpcenter/visualdict/common
-${DOC}khelpcenter/visualdict/${C}
-${DOC}khelpcenter/visualdict/${I}
-${DOC}khelpcenter/welcome.docbook
-${DOC}khelpcenter/whatiskde.docbook
-${DOC}kinfocenter/blockdevices/common
-${DOC}kinfocenter/blockdevices/${C}
-${DOC}kinfocenter/blockdevices/${I}
-${DOC}kioslave/audiocd.docbook
-${DOC}kioslave/bzip.docbook
-${DOC}kioslave/bzip2.docbook
-${DOC}kioslave/cgi.docbook
-${DOC}kioslave/common
-${DOC}kioslave/data.docbook
-${DOC}kioslave/file.docbook
-${DOC}kioslave/finger.docbook
-${DOC}kioslave/fish.docbook
-${DOC}kioslave/floppy.docbook
-${DOC}kioslave/ftp.docbook
-${DOC}kioslave/gopher.docbook
-${DOC}kioslave/gzip.docbook
-${DOC}kioslave/help.docbook
-${DOC}kioslave/http.docbook
-${DOC}kioslave/https.docbook
-${DOC}kioslave/imap.docbook
-${DOC}kioslave/imaps.docbook
-${DOC}kioslave/${C}
-${DOC}kioslave/${I}
-${DOC}kioslave/info.docbook
-${DOC}kioslave/lan.docbook
-${DOC}kioslave/ldap.docbook
-${DOC}kioslave/mac.docbook
-${DOC}kioslave/mailto.docbook
-${DOC}kioslave/man.docbook
-${DOC}kioslave/mrml.docbook
-${DOC}kioslave/news.docbook
-${DOC}kioslave/nfs.docbook
-${DOC}kioslave/nntp.docbook
-${DOC}kioslave/pop3.docbook
-${DOC}kioslave/pop3s.docbook
-${DOC}kioslave/print.docbook
-${DOC}kioslave/rlan.docbook
-${DOC}kioslave/rlogin.docbook
-${DOC}kioslave/sftp.docbook
-${DOC}kioslave/smb.docbook
-${DOC}kioslave/smtp.docbook
-${DOC}kioslave/tar.docbook
-${DOC}kioslave/telnet.docbook
-${DOC}kioslave/thumbnail.docbook
-${DOC}kioslave/webdav.docbook
-${DOC}kioslave/webdavs.docbook
-${DOC}klickety/common
-${DOC}klickety/${C}
-${DOC}klickety/${I}
-${DOC}kmail/common
-${DOC}kmail/configure.docbook
-${DOC}kmail/credits-and-licenses.docbook
-${DOC}kmail/faq.docbook
-${DOC}kmail/getting-started.docbook
-${DOC}kmail/importing.docbook
-${DOC}kmail/${C}
-${DOC}kmail/${I}
-${DOC}kmail/intro.docbook
-${DOC}kmail/menus.docbook
-${DOC}kmail/using-kmail.docbook
-${DOC}kmoon/common
-${DOC}kmoon/${C}
-${DOC}kmoon/${I}
-${DOC}kompare/common
-${DOC}kompare/${C}
-${DOC}kompare/${I}
-${DOC}kpercentage/answer.png
-${DOC}kpercentage/commands.docbook
-${DOC}kpercentage/common
-${DOC}kpercentage/credits.docbook
-${DOC}kpercentage/devel.docbook
-${DOC}kpercentage/edu-logo.png
-${DOC}kpercentage/faq.docbook
-${DOC}kpercentage/help.png
-${DOC}kpercentage/${C}
-${DOC}kpercentage/${I}
-${DOC}kpercentage/install.docbook
-${DOC}kpercentage/introduction.docbook
-${DOC}kpercentage/main.png
-${DOC}kpercentage/using.docbook
-${DOC}kpercentage/welcome.png
-${DOC}kpf/common
-${DOC}kpf/${C}
-${DOC}kpf/${I}
-${DOC}krfb/common
-${DOC}krfb/${C}
-${DOC}krfb/${I}
-${DOC}ksim/common
-${DOC}ksim/${C}
-${DOC}ksim/${I}
-${DOC}kspell/common
-${DOC}kspell/${C}
-${DOC}kspell/${I}
-${DOC}kstars/ai-contents.docbook
-${DOC}kstars/altvstime.docbook
-${DOC}kstars/astroinfo.docbook
-${DOC}kstars/blackbody.docbook
-${DOC}kstars/calc-apcoords.docbook
-${DOC}kstars/calc-dayduration.docbook
-${DOC}kstars/calc-eqgal.docbook
-${DOC}kstars/calc-geodetic.docbook
-${DOC}kstars/calc-horizontal.docbook
-${DOC}kstars/calc-julianday.docbook
-${DOC}kstars/calc-precess.docbook
-${DOC}kstars/calc-sidereal.docbook
-${DOC}kstars/calculator.docbook
-${DOC}kstars/cequator.docbook
-${DOC}kstars/colorandtemp.docbook
-${DOC}kstars/commands.docbook
-${DOC}kstars/common
-${DOC}kstars/config.docbook
-${DOC}kstars/cpoles.docbook
-${DOC}kstars/credits.docbook
-${DOC}kstars/csphere.docbook
-${DOC}kstars/darkmatter.docbook
-${DOC}kstars/dcop.docbook
-${DOC}kstars/details.docbook
-${DOC}kstars/dumpmode.docbook
-${DOC}kstars/ecliptic.docbook
-${DOC}kstars/ellipticalgalaxies.docbook
-${DOC}kstars/equinox.docbook
-${DOC}kstars/faq.docbook
-${DOC}kstars/flux.docbook
-${DOC}kstars/geocoords.docbook
-${DOC}kstars/greatcircle.docbook
-${DOC}kstars/horizon.docbook
-${DOC}kstars/hourangle.docbook
-${DOC}kstars/${C}
-${DOC}kstars/${I}
-${DOC}kstars/indi.docbook
-${DOC}kstars/install.docbook
-${DOC}kstars/jmoons.docbook
-${DOC}kstars/julianday.docbook
-${DOC}kstars/leapyear.docbook
-${DOC}kstars/lightcurves.docbook
-${DOC}kstars/luminosity.docbook
-${DOC}kstars/magnitude.docbook
-${DOC}kstars/meridian.docbook
-${DOC}kstars/parallax.docbook
-${DOC}kstars/precession.docbook
-${DOC}kstars/quicktour.docbook
-${DOC}kstars/retrograde.docbook
-${DOC}kstars/scriptbuilder.docbook
-${DOC}kstars/sidereal.docbook
-${DOC}kstars/skycoords.docbook
-${DOC}kstars/solarsys.docbook
-${DOC}kstars/spiralgalaxies.docbook
-${DOC}kstars/stars.docbook
-${DOC}kstars/timezones.docbook
-${DOC}kstars/tools.docbook
-${DOC}kstars/utime.docbook
-${DOC}kstars/wut.docbook
-${DOC}kstars/zenith.docbook
-${DOC}ktimer/common
-${DOC}ktimer/${C}
-${DOC}ktimer/${I}
-${DOC}kwallet/common
-${DOC}kwallet/${C}
-${DOC}kwallet/${I}
-${DOC}kweather/common
-${DOC}kweather/${C}
-${DOC}kweather/${I}
-${DOC}kworldclock/common
-${DOC}kworldclock/${C}
-${DOC}kworldclock/${I}
+@comment $OpenBSD: PLIST.ca,v 1.15 2004/07/24 12:47:14 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -285,24 +20,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_kdevelop.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -464,6 +181,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
@@ -526,6 +244,7 @@ ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
+${LOC}kgreet_classic.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -533,6 +252,7 @@ ${LOC}khotkeys.mo
 ${LOC}khtmlsettingsplugin.mo
 ${LOC}kicker.mo
 ${LOC}kiconedit.mo
+${LOC}kig.mo
 ${LOC}kinetd.mo
 ${LOC}kio.mo
 ${LOC}kio_audiocd.mo
@@ -572,11 +292,15 @@ ${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
+${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
+${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
+${LOC}kmilo_generic.mo
+${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
@@ -667,6 +391,7 @@ ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktnef.mo
 ${LOC}ktouch.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
@@ -685,6 +410,7 @@ ${LOC}kviewscannerplugin.mo
 ${LOC}kviewshell.mo
 ${LOC}kviewtemplateplugin.mo
 ${LOC}kviewviewer.mo
+${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
@@ -764,41 +490,3 @@ ${LOC}webarchiver.mo
 share/locale/ca/charset
 share/locale/ca/entry.desktop
 share/locale/ca/flag.png
-@dirrm ${DOC}kworldclock
-@dirrm ${DOC}kweather
-@dirrm ${DOC}kwallet
-@dirrm ${DOC}ktimer
-@dirrm ${DOC}kstars
-@dirrm ${DOC}kspell
-@dirrm ${DOC}ksim
-@dirrm ${DOC}krfb
-@dirrm ${DOC}kpf
-@dirrm ${DOC}kpercentage
-@dirrm ${DOC}kompare
-@dirrm ${DOC}kmoon
-@dirrm ${DOC}kmail
-@dirrm ${DOC}klickety
-@dirrm ${DOC}kioslave
-@dirrm ${DOC}kinfocenter/blockdevices
-@dirrm ${DOC}kinfocenter
-@dirrm ${DOC}khelpcenter/visualdict
-@dirrm ${DOC}khelpcenter/userguide
-@dirrm ${DOC}khelpcenter/quickstart
-@dirrm ${DOC}khelpcenter/glossary
-@dirrm ${DOC}khelpcenter/faq
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}khangman
-@dirrm ${DOC}kgpgcertmanager
-@dirrm ${DOC}keduca
-@dirrm ${DOC}kdf
-@dirrm ${DOC}kcontrol/lanbrowser
-@dirrm ${DOC}kcontrol/kmixcfg
-@dirrm ${DOC}kcontrol/khtml
-@dirrm ${DOC}kcontrol/kcmktalkd
-@dirrm ${DOC}kcontrol/kalarmd
-@dirrm ${DOC}kcontrol/bell
-@dirrm ${DOC}kcontrol
-@dirrm ${DOC}kcharselect
-@dirrm ${DOC}kbugbuster
-@dirrm ${DOC}katomic
-@dirrm share/doc/HTML/ca

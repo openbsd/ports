@@ -1,0 +1,58 @@
+$OpenBSD: patch-admin_libtool_m4_in,v 1.1 2004/07/24 12:47:15 espie Exp $
+--- admin/libtool.m4.in.orig	Sun Apr  4 11:10:39 2004
++++ admin/libtool.m4.in	Mon Jul 19 17:00:13 2004
+@@ -2214,11 +2214,7 @@ nto-qnx*)
+ openbsd*)
+   lt_cv_file_magic_cmd=/usr/bin/file
+   lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
+-  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-    lt_cv_deplibs_check_method='file_magic ELF [[0-9]][[0-9]]*-bit [[LM]]SB shared object'
+-  else
+-    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
+-  fi
++  lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+ osf3* | osf4* | osf5*)
+@@ -3170,6 +3166,14 @@ case $host_os in
+     # Workaround some broken pre-1.5 toolchains
+     output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
+     ;;
++  openbsd*)
++      _LT_AC_TAGVAR(hardcode_direct, $1)=yes
++      _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
++      _LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      _LT_AC_TAGVAR(hardcode_libdir_flag_spec, $1)='${wl}-rpath,$libdir'
++      _LT_AC_TAGVAR(remove_libsearchpath, $1)='yes'
++      _LT_AC_TAGVAR(remove_lgcc, $1)='yes'
++      ;;
+   osf3*)
+     case $cc_basename in
+       KCC)
+@@ -3547,15 +3551,24 @@ if AC_TRY_EVAL(ac_compile); then
+ 	   else
+ 	     _LT_AC_TAGVAR(compiler_lib_search_path, $1)="${_LT_AC_TAGVAR(compiler_lib_search_path, $1)} ${prev}${p}"
+ 	   fi
++	   if test "x$_LT_AC_TAGVAR(remove_libsearchpath, $1)" = "xyes"; then
++	     _LT_AC_TAGVAR(compiler_lib_search_path, $1)=""
++	   fi
+ 	   ;;
+ 	 # The "-l" case would never come before the object being
+ 	 # linked, so don't bother handling this case.
+ 	 esac
+        else
++         add="${prev}$p"
++	 if test x$_LT_AC_TAGVAR(remove_lgcc, $1) = "xyes"; then
++	   case "$add" in
++	     -lgcc ) add="" ;;
++	   esac
++	 fi
+ 	 if test -z "$_LT_AC_TAGVAR(postdeps, $1)"; then
+-	   _LT_AC_TAGVAR(postdeps, $1)="${prev}${p}"
++	   _LT_AC_TAGVAR(postdeps, $1)="$add"
+ 	 else
+-	   _LT_AC_TAGVAR(postdeps, $1)="${_LT_AC_TAGVAR(postdeps, $1)} ${prev}${p}"
++	   _LT_AC_TAGVAR(postdeps, $1)="${_LT_AC_TAGVAR(postdeps, $1)} $add"
+ 	 fi
+        fi
+        ;;

@@ -1,16 +1,4 @@
-@comment $OpenBSD: PLIST.lt,v 1.12 2004/03/08 11:10:15 espie Exp $
-${DOC}khelpcenter/common
-${DOC}khelpcenter/contact.docbook
-${DOC}khelpcenter/help.docbook
-${DOC}khelpcenter/${C}
-${DOC}khelpcenter/${I}
-${DOC}khelpcenter/links.docbook
-${DOC}khelpcenter/support.docbook
-${DOC}khelpcenter/visualdict/common
-${DOC}khelpcenter/visualdict/${C}
-${DOC}khelpcenter/visualdict/${I}
-${DOC}khelpcenter/welcome.docbook
-${DOC}khelpcenter/whatiskde.docbook
+@comment $OpenBSD: PLIST.lt,v 1.13 2004/07/24 12:47:15 espie Exp $
 ${LOC}aktion.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
@@ -21,18 +9,6 @@ ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdeutils.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -316,8 +292,3 @@ ${LOC}webarchiver.mo
 share/locale/lt/charset
 share/locale/lt/entry.desktop
 share/locale/lt/flag.png
-@dirrm share/locale/lt/LC_MESSAGES
-@dirrm share/locale/lt
-@dirrm ${DOC}khelpcenter/visualdict
-@dirrm ${DOC}khelpcenter
-@dirrm share/doc/HTML/lt

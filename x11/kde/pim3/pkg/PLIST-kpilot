@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-kpilot,v 1.3 2004/02/01 16:18:32 espie Exp $
+@comment $OpenBSD: PLIST-kpilot,v 1.4 2004/07/24 12:47:16 espie Exp $
 bin/kpilot
 bin/kpilotDaemon
+include/kpilot/
 include/kpilot/kpilotlink.h
 include/kpilot/pilotDatabase.h
 include/kpilot/pilotLocalDatabase.h
@@ -10,19 +11,32 @@ include/kpilot/plugin.h
 include/kpilot/syncAction.h
 include/kpilot/uiDialog.h
 lib/libkpilot.la
+share/apps/kpilot/
+share/apps/kpilot/icons/
+share/apps/kpilot/icons/crystalsvg/
+share/apps/kpilot/icons/crystalsvg/16x16/
+share/apps/kpilot/icons/crystalsvg/16x16/actions/
 share/apps/kpilot/icons/crystalsvg/16x16/actions/backup.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/busysync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/fastsync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/hotsync.png
 share/apps/kpilot/icons/crystalsvg/16x16/actions/restore.png
+share/apps/kpilot/icons/crystalsvg/16x16/apps/
 share/apps/kpilot/icons/crystalsvg/16x16/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/22x22/
+share/apps/kpilot/icons/crystalsvg/22x22/actions/
 share/apps/kpilot/icons/crystalsvg/22x22/actions/backup.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/busysync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/fastsync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/hotsync.png
 share/apps/kpilot/icons/crystalsvg/22x22/actions/restore.png
+share/apps/kpilot/icons/crystalsvg/22x22/apps/
 share/apps/kpilot/icons/crystalsvg/22x22/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/32x32/
+share/apps/kpilot/icons/crystalsvg/32x32/apps/
 share/apps/kpilot/icons/crystalsvg/32x32/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/48x48/
+share/apps/kpilot/icons/crystalsvg/48x48/apps/
 share/apps/kpilot/icons/crystalsvg/48x48/apps/kpalmdoc.png
 share/apps/kpilot/kpilot-address.png
 share/apps/kpilot/kpilot-calendar.png
@@ -33,12 +47,7 @@ share/apps/kpilot/kpilot-knotes.png
 share/apps/kpilot/kpilot-splash.png
 share/apps/kpilot/kpilot-todo.png
 share/apps/kpilot/kpilotui.rc
+share/apps/kpilot/sysinfoconduit/
 share/apps/kpilot/sysinfoconduit/Template.html
 share/apps/kpilot/sysinfoconduit/Template.txt
 %%SHARED%%
-@dirrm share/apps/kpilot/icons/crystalsvg/16x16/actions
-@dirrm share/apps/kpilot/icons/crystalsvg/16x16
-@dirrm share/apps/kpilot/icons/crystalsvg
-@dirrm share/apps/kpilot/icons
-@dirrm share/apps/kpilot
-@dirrm include/kpilot

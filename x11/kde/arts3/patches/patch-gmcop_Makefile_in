@@ -1,7 +1,7 @@
-$OpenBSD: patch-gmcop_Makefile_in,v 1.3 2004/02/01 14:59:21 espie Exp $
---- gmcop/Makefile.in.orig	2004-01-18 18:32:59.000000000 +0100
-+++ gmcop/Makefile.in	2004-01-19 01:58:15.000000000 +0100
-@@ -80,7 +80,7 @@ F77 = @F77@
+$OpenBSD: patch-gmcop_Makefile_in,v 1.4 2004/07/24 12:47:13 espie Exp $
+--- gmcop/Makefile.in.orig	Sun May 30 18:24:53 2004
++++ gmcop/Makefile.in	Fri Jul 16 00:35:53 2004
+@@ -136,7 +136,7 @@ F77 = @F77@
  FFLAGS = @FFLAGS@
  FRAMEWORK_COREAUDIO = @FRAMEWORK_COREAUDIO@
  GLIB_CFLAGS = @GLIB_CFLAGS@

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2004/02/01 22:40:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2004/07/24 12:47:13 espie Exp $
 @pkgcfl kdelibs-2.*
 bin/artsc-config
 bin/artscat
@@ -9,6 +9,7 @@ bin/artsrec
 bin/artsshell
 bin/artswrapper
 bin/mcopidl
+include/arts/
 include/arts/anyref.h
 include/arts/artsflow.h
 include/arts/artsflow.idl
@@ -38,6 +39,7 @@ include/arts/factory.h
 include/arts/fft.h
 include/arts/flowsystem.h
 include/arts/giomanager.h
+include/arts/gsl/
 include/arts/gsl/gslcommon.h
 include/arts/gsl/gslconfig.h
 include/arts/gsl/gslconvert.h
@@ -89,6 +91,7 @@ include/arts/type.h
 include/arts/unixconnection.h
 include/arts/unixserver.h
 include/arts/weakreference.h
+include/artsc/
 include/artsc/artsc.h
 lib/libartsc.la
 lib/libartscbackend.la
@@ -106,6 +109,8 @@ lib/libmcop_mt.la
 lib/libqtmcop.la
 lib/libsoundserver_idl.la
 lib/libx11globalcomm.la
+lib/mcop/
+lib/mcop/Arts/
 lib/mcop/Arts/DataHandlePlay.mcopclass
 lib/mcop/Arts/FileInputStream.mcopclass
 lib/mcop/Arts/GSLPlayObject.mcopclass
@@ -133,8 +138,3 @@ lib/mcop/soundserver.mcoptype
 lib/mcop/x11globalcomm.mcopclass
 lib/mcop/x11globalcomm.mcoptype
 %%SHARED%%
-@dirrm lib/mcop/Arts
-@dirrm lib/mcop
-@dirrm include/artsc
-@dirrm include/arts/gsl
-@dirrm include/arts

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST.tr,v 1.12 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.tr,v 1.13 2004/07/24 12:47:15 espie Exp $
+share/doc/HTML/tr/
+${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -47,6 +49,7 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}khelpcenter/
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -56,9 +59,12 @@ ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}kinfocenter/
+${DOC}kinfocenter/protocols/
 ${DOC}kinfocenter/protocols/common
 ${DOC}kinfocenter/protocols/${C}
 ${DOC}kinfocenter/protocols/${I}
+${DOC}kioslave/
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
 ${DOC}kioslave/bzip2.docbook
@@ -122,24 +128,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_kdevelop.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -302,6 +290,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
@@ -609,9 +598,3 @@ ${LOC}webarchiver.mo
 share/locale/tr/charset
 share/locale/tr/entry.desktop
 share/locale/tr/flag.png
-@dirrm ${DOC}kioslave
-@dirrm ${DOC}kinfocenter/protocols
-@dirrm ${DOC}kinfocenter
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}common
-@dirrm share/doc/HTML/tr

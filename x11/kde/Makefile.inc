@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2004/02/07 10:59:43 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2004/07/24 12:47:13 espie Exp $
 DIST_SUBDIR?=	kde
 HOMEPAGE?=	http://www.kde.org
 .if defined(VERSION) && ${VERSION} == "3.1.95"
@@ -19,6 +19,9 @@ MODULES?=	kde
 MODGNU_CONFIG_GUESS_DIRS?=	${MODKDE_CONFIG_GUESS_DIRS}
 
 CONFIGURE_STYLE?=	autoconf
+.if defined(MODKDE_VERSION) && ${MODKDE_VERSION} == "3.2.3"
+AUTOCONF_VERSION?=	2.59
+.endif
 AUTOCONF_VERSION?=	2.57
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE?=		Yes

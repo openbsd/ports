@@ -1,44 +1,32 @@
-$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
---- kscd/libwm/Makefile.in.orig	2004-02-29 22:47:09.000000000 +0100
-+++ kscd/libwm/Makefile.in	2004-03-02 23:36:46.000000000 +0100
-@@ -384,11 +384,11 @@ subdirs = include
- SUBDIRS = audio
- INCLUDES = $(all_includes) 
- 
--lib_LTLIBRARIES = libworkman.la
-+lib_LTLIBRARIES = libkworkman.la
- 
--libworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
-+libkworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
- 
--libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
-+libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
- database.c index.c scsi.c cdda.c\
- plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
- plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
-@@ -396,15 +396,15 @@ plat_osf1.c plat_sun.c plat_scor5.c \
- drv_sony.c drv_toshiba.c
+$OpenBSD: patch-kscd_libwm_Makefile_in,v 1.10 2004/07/24 12:47:15 espie Exp $
+--- kscd/libwm/Makefile.in.orig	Sun May 30 18:55:28 2004
++++ kscd/libwm/Makefile.in	Tue Jul 20 07:48:13 2004
+@@ -22,7 +22,7 @@
  
  
--libworkmanincludedir = $(includedir)/libwm
--libworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
-+libkworkmanincludedir = $(includedir)/libwm
-+libkworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
  
- @libwm_with_cdda_TRUE@CDDA_SLAVE = cddaslave
+-SOURCES = $(libworkman_la_SOURCES) $(cddaslave_SOURCES)
++SOURCES = $(libkworkman_la_SOURCES) $(cddaslave_SOURCES)
  
- bin_PROGRAMS = $(CDDA_SLAVE)
- cddaslave_SOURCES = cddaslave.c plat_linux_cdda.c plat_sun_cdda.c
- 
--cddaslave_LDADD = audio/libworkmanaudio.la libworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
-+cddaslave_LDADD = audio/libworkmanaudio.la libkworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -49,7 +49,7 @@ host_triplet = @host@
+ target_triplet = @target@
+ bin_PROGRAMS = $(am__EXEEXT_1)
  subdir = kscd/libwm
+-DIST_COMMON = README $(libworkmaninclude_HEADERS) \
++DIST_COMMON = README $(libkworkmaninclude_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+@@ -59,27 +59,27 @@ am__configure_deps = $(am__aclocal_m4_de
  mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
-@@ -412,24 +412,24 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
+-am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libworkmanincludedir)"
++am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libkworkmanincludedir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES)
- 
 -libworkman_la_LIBADD =
 -am_libworkman_la_OBJECTS = cddb.lo cdinfo.lo cdrom.lo wm_helpers.lo \
 +libkworkman_la_LIBADD =
@@ -64,43 +52,68 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
 -@KDE_USE_FINAL_TRUE@libworkman_la_OBJECTS = $(libworkman_la_final_OBJECTS)
 +@KDE_USE_FINAL_FALSE@libkworkman_la_OBJECTS = $(libkworkman_la_nofinal_OBJECTS)
 +@KDE_USE_FINAL_TRUE@libkworkman_la_OBJECTS = $(libkworkman_la_final_OBJECTS)
- @libwm_with_cdda_TRUE@bin_PROGRAMS = cddaslave$(EXEEXT)
- @libwm_with_cdda_FALSE@bin_PROGRAMS =
+ @libwm_with_cdda_TRUE@am__EXEEXT_1 = cddaslave$(EXEEXT)
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  PROGRAMS = $(bin_PROGRAMS)
-@@ -443,7 +443,7 @@ cddaslave_nofinal_OBJECTS = cddaslave.$(
- 	plat_sun_cdda.$(OBJEXT)
+@@ -93,7 +93,7 @@ cddaslave_nofinal_OBJECTS = cddaslave.$(
  @KDE_USE_FINAL_FALSE@cddaslave_OBJECTS = $(cddaslave_nofinal_OBJECTS)
  @KDE_USE_FINAL_TRUE@cddaslave_OBJECTS = $(cddaslave_final_OBJECTS)
--cddaslave_DEPENDENCIES = audio/libworkmanaudio.la libworkman.la
-+cddaslave_DEPENDENCIES = audio/libworkmanaudio.la libkworkman.la
- cddaslave_LDFLAGS =
- 
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
-@@ -495,8 +495,8 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
+ am__DEPENDENCIES_1 =
+-cddaslave_DEPENDENCIES = audio/libworkmanaudio.la libworkman.la \
++cddaslave_DEPENDENCIES = audio/libworkmanaudio.la libkworkman.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/admin/depcomp
+@@ -149,8 +149,8 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(
  CCLD = $(CC)
  LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
--DIST_SOURCES = $(libworkman_la_SOURCES) $(cddaslave_SOURCES)
--HEADERS = $(libworkmaninclude_HEADERS)
-+DIST_SOURCES = $(libkworkman_la_SOURCES) $(cddaslave_SOURCES)
-+HEADERS = $(libkworkmaninclude_HEADERS)
- 
- 
- #>- RECURSIVE_TARGETS = info-recursive dvi-recursive pdf-recursive \
-@@ -510,10 +510,10 @@ RECURSIVE_TARGETS = info-recursive dvi-r
- 	all-recursive install-data-recursive install-exec-recursive \
- 	installdirs-recursive install-recursive uninstall-recursive \
- 	check-recursive installcheck-recursive nmcheck-recursive bcheck-recursive
--DIST_COMMON = README $(libworkmaninclude_HEADERS) Makefile.am \
-+DIST_COMMON = README $(libkworkmaninclude_HEADERS) Makefile.am \
- 	Makefile.in
- DIST_SUBDIRS = $(SUBDIRS)
 -SOURCES = $(libworkman_la_SOURCES) $(cddaslave_SOURCES)
+-DIST_SOURCES = $(libworkman_la_SOURCES) $(cddaslave_SOURCES)
 +SOURCES = $(libkworkman_la_SOURCES) $(cddaslave_SOURCES)
++DIST_SOURCES = $(libkworkman_la_SOURCES) $(cddaslave_SOURCES)
+ #>- RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+ #>- 	html-recursive info-recursive install-data-recursive \
+ #>- 	install-exec-recursive install-info-recursive \
+@@ -164,8 +164,8 @@ RECURSIVE_TARGETS = all-recursive check-
+ 	install-recursive installcheck-recursive installdirs-recursive \
+ 	pdf-recursive ps-recursive uninstall-info-recursive \
+ 	uninstall-recursive nmcheck-recursive bcheck-recursive
+-libworkmanincludeHEADERS_INSTALL = $(INSTALL_HEADER)
+-HEADERS = $(libworkmaninclude_HEADERS)
++libkworkmanincludeHEADERS_INSTALL = $(INSTALL_HEADER)
++HEADERS = $(libkworkmaninclude_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ DIST_SUBDIRS = $(SUBDIRS)
+@@ -511,20 +511,20 @@ xine_artsplugin_SUBDIR_included_TRUE = @
+ subdirs = include
+ SUBDIRS = audio
+ INCLUDES = $(all_includes) 
+-lib_LTLIBRARIES = libworkman.la
+-libworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
+-libworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
++lib_LTLIBRARIES = libkworkman.la
++libkworkman_la_LDFLAGS = -version-info 6:0:0 $(all_libraries)
++libkworkman_la_SOURCES = cddb.c cdinfo.c cdrom.c wm_helpers.c cdtext.c\
+ database.c index.c scsi.c cdda.c\
+ plat_aix.c plat_bsd386.c plat_freebsd.c plat_hpux.c plat_irix.c \
+ plat_linux.c plat_svr4.c plat_ultrix.c plat_news.c plat_openbsd.c \
+ plat_osf1.c plat_sun.c plat_scor5.c \
+ drv_sony.c drv_toshiba.c
  
+-libworkmanincludedir = $(includedir)/libwm
+-libworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
++libkworkmanincludedir = $(includedir)/libwm
++libkworkmaninclude_HEADERS = include/wm_cdrom.h include/wm_cdtext.h
+ @libwm_with_cdda_TRUE@CDDA_SLAVE = cddaslave
+ cddaslave_SOURCES = cddaslave.c plat_linux_cdda.c plat_sun_cdda.c
+-cddaslave_LDADD = audio/libworkmanaudio.la libworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
++cddaslave_LDADD = audio/libworkmanaudio.la libkworkman.la $(ARTSC_LIBS) $(ARTS_LIBASOUND)
  #>- all: all-recursive
  #>+ 1
-@@ -558,8 +558,8 @@ clean-libLTLIBRARIES:
+ all: docs-am  all-recursive
+@@ -600,8 +600,8 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
@@ -108,28 +121,26 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
 -	$(LINK) -rpath $(libdir) $(libworkman_la_LDFLAGS) $(libworkman_la_OBJECTS) $(libworkman_la_LIBADD) $(LIBS)
 +libkworkman.la: $(libkworkman_la_OBJECTS) $(libkworkman_la_DEPENDENCIES) 
 +	$(LINK) -rpath $(libdir) $(libkworkman_la_LDFLAGS) $(libkworkman_la_OBJECTS) $(libkworkman_la_LIBADD) $(LIBS)
- binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  install-binPROGRAMS: $(bin_PROGRAMS)
  	@$(NORMAL_INSTALL)
-@@ -672,23 +672,23 @@ clean-libtool:
+ 	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
+@@ -701,22 +701,22 @@ clean-libtool:
  distclean-libtool:
  	-rm -f libtool
  uninstall-info-am:
--libworkmanincludeHEADERS_INSTALL = $(INSTALL_HEADER)
 -install-libworkmanincludeHEADERS: $(libworkmaninclude_HEADERS)
-+libkworkmanincludeHEADERS_INSTALL = $(INSTALL_HEADER)
 +install-libkworkmanincludeHEADERS: $(libkworkmaninclude_HEADERS)
  	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(libworkmanincludedir)
+-	test -z "$(libworkmanincludedir)" || $(mkdir_p) "$(DESTDIR)$(libworkmanincludedir)"
 -	@list='$(libworkmaninclude_HEADERS)'; for p in $$list; do \
-+	$(mkinstalldirs) $(DESTDIR)$(libkworkmanincludedir)
++	test -z "$(libkworkmanincludedir)" || $(mkdir_p) "$(DESTDIR)$(libkworkmanincludedir)"
 +	@list='$(libkworkmaninclude_HEADERS)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " $(libworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libworkmanincludedir)/$$f"; \
--	  $(libworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libworkmanincludedir)/$$f; \
-+	  echo " $(libkworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libkworkmanincludedir)/$$f"; \
-+	  $(libkworkmanincludeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(libkworkmanincludedir)/$$f; \
+-	  echo " $(libworkmanincludeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(libworkmanincludedir)/$$f'"; \
+-	  $(libworkmanincludeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(libworkmanincludedir)/$$f"; \
++	  echo " $(libkworkmanincludeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(libkworkmanincludedir)/$$f'"; \
++	  $(libkworkmanincludeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(libkworkmanincludedir)/$$f"; \
  	done
  
 -uninstall-libworkmanincludeHEADERS:
@@ -138,23 +149,23 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
 -	@list='$(libworkmaninclude_HEADERS)'; for p in $$list; do \
 +	@list='$(libkworkmaninclude_HEADERS)'; for p in $$list; do \
  	  f="`echo $$p | sed -e 's|^.*/||'`"; \
--	  echo " rm -f $(DESTDIR)$(libworkmanincludedir)/$$f"; \
--	  rm -f $(DESTDIR)$(libworkmanincludedir)/$$f; \
-+	  echo " rm -f $(DESTDIR)$(libkworkmanincludedir)/$$f"; \
-+	  rm -f $(DESTDIR)$(libkworkmanincludedir)/$$f; \
+-	  echo " rm -f '$(DESTDIR)$(libworkmanincludedir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(libworkmanincludedir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(libkworkmanincludedir)/$$f'"; \
++	  rm -f "$(DESTDIR)$(libkworkmanincludedir)/$$f"; \
  	done
  
  # This directory's subdirectories are mostly independent; you can cd
-@@ -869,7 +869,7 @@ install-binPROGRAMS: install-libLTLIBRAR
+@@ -883,7 +883,7 @@ install-binPROGRAMS: install-libLTLIBRAR
  
  installdirs: installdirs-recursive
  installdirs-am:
--	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(libworkmanincludedir)
-+	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(libkworkmanincludedir)
- 
+-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libworkmanincludedir)"; do \
++	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libkworkmanincludedir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
  install: install-recursive
- install-exec: install-exec-recursive
-@@ -918,7 +918,7 @@ info: info-recursive
+@@ -936,7 +936,7 @@ info: info-recursive
  
  info-am:
  
@@ -163,7 +174,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
  
  install-exec-am: install-binPROGRAMS install-libLTLIBRARIES
  
-@@ -946,7 +946,7 @@ ps: ps-recursive
+@@ -965,7 +965,7 @@ ps: ps-recursive
  ps-am:
  
  uninstall-am: uninstall-binPROGRAMS uninstall-info-am \
@@ -172,25 +183,24 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
  
  uninstall-info: uninstall-info-recursive
  
-@@ -960,7 +960,7 @@ uninstall-info: uninstall-info-recursive
- 	install-data-recursive install-exec install-exec-am \
- 	install-exec-recursive install-info install-info-am \
- 	install-info-recursive install-libLTLIBRARIES \
--	install-libworkmanincludeHEADERS install-man install-recursive \
-+	install-libkworkmanincludeHEADERS install-man install-recursive \
- 	install-strip installcheck installcheck-am installdirs \
- 	installdirs-am installdirs-recursive maintainer-clean \
- 	maintainer-clean-generic maintainer-clean-recursive mostlyclean \
-@@ -969,7 +969,7 @@ uninstall-info: uninstall-info-recursive
- 	ps-recursive tags tags-recursive uninstall uninstall-am \
+@@ -977,14 +977,14 @@ uninstall-info: uninstall-info-recursive
+ 	html-am info info-am install install-am install-binPROGRAMS \
+ 	install-data install-data-am install-exec install-exec-am \
+ 	install-info install-info-am install-libLTLIBRARIES \
+-	install-libworkmanincludeHEADERS install-man install-strip \
++	install-libkworkmanincludeHEADERS install-man install-strip \
+ 	installcheck installcheck-am installdirs installdirs-am \
+ 	maintainer-clean maintainer-clean-generic \
+ 	maintainer-clean-recursive mostlyclean mostlyclean-compile \
+ 	mostlyclean-generic mostlyclean-libtool mostlyclean-recursive \
+ 	pdf pdf-am ps ps-am tags tags-recursive uninstall uninstall-am \
  	uninstall-binPROGRAMS uninstall-info-am \
- 	uninstall-info-recursive uninstall-libLTLIBRARIES \
--	uninstall-libworkmanincludeHEADERS uninstall-recursive
-+	uninstall-libkworkmanincludeHEADERS uninstall-recursive
+-	uninstall-libLTLIBRARIES uninstall-libworkmanincludeHEADERS
++	uninstall-libLTLIBRARIES uninstall-libkworkmanincludeHEADERS
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
-@@ -995,7 +995,7 @@ clean-bcheck: 
+@@ -1019,7 +1019,7 @@ clean-bcheck: 
  bcheck: bcheck-recursive
  
  bcheck-am:
@@ -199,7 +209,7 @@ $OpenBSD: patch-kscd_libwm_Makefile_in,v 1.9 2004/03/07 21:08:44 espie Exp $
  	    if test $(srcdir)/$$i -nt $$i.bchecktest.cc; then \
  	        echo "int main() {return 0;}" > $$i.bchecktest.cc ; \
  	        echo "#include \"$$i\"" >> $$i.bchecktest.cc ; \
-@@ -1012,19 +1012,19 @@ bcheck-am:
+@@ -1036,19 +1036,19 @@ bcheck-am:
  
  #>+ 3
  final:

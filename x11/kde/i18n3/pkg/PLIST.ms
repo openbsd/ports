@@ -1,22 +1,9 @@
-@comment $OpenBSD: PLIST.ms,v 1.2 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.ms,v 1.3 2004/07/24 12:47:15 espie Exp $
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}cupsdconf.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
 ${LOC}devicesapplet.mo
 ${LOC}display.mo
 ${LOC}dockbarextension.mo

@@ -1,12 +1,12 @@
-$OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.4 2004/02/02 13:04:35 espie Exp $
---- qtc/clib/qtc/Makefile.in.orig	2004-01-18 13:58:27.000000000 +0100
-+++ qtc/clib/qtc/Makefile.in	2004-02-02 11:50:13.000000000 +0100
-@@ -385,7 +385,7 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
+$OpenBSD: patch-qtc_clib_qtc_Makefile_in,v 1.5 2004/07/24 12:47:14 espie Exp $
+--- qtc/clib/qtc/Makefile.in.orig	Sun May 30 18:36:10 2004
++++ qtc/clib/qtc/Makefile.in	Tue Jul 20 19:39:19 2004
+@@ -1671,7 +1671,7 @@ libqtc_la_LDFLAGS = $(all_libraries) -no
  #  in here.
  #  The following line is only a suggestion!
  #
 -libqtc_la_LIBADD = -lqt-mt -lXext -lX11 -lqui
 +libqtc_la_LIBADD = -lqt-mt -lXext -lX11 -lqui-mt
- subdir = qtc/clib/qtc
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am

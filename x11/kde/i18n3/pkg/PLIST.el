@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST.el,v 1.13 2004/03/08 11:10:15 espie Exp $
+@comment $OpenBSD: PLIST.el,v 1.14 2004/07/24 12:47:14 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -6,6 +6,7 @@ ${LOC}appletproxy.mo
 ${LOC}ark.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
+${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}audiorename_plugin.mo
 ${LOC}autorefresh.mo
@@ -17,24 +18,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_kdevelop.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -64,6 +47,7 @@ ${LOC}kabcformat_binary.mo
 ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
+${LOC}kalarmdgui.mo
 ${LOC}kalzium.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -116,13 +100,13 @@ ${LOC}kcmcss.mo
 ${LOC}kcmemail.mo
 ${LOC}kcmenergy.mo
 ${LOC}kcmfileshare.mo
-${LOC}kcmfontinst.mo
 ${LOC}kcmfonts.mo
 ${LOC}kcmhtmlsearch.mo
 ${LOC}kcmicons.mo
 ${LOC}kcminfo.mo
 ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
+${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkded.mo
 ${LOC}kcmkeys.mo
@@ -162,6 +146,7 @@ ${LOC}kcmtaskbar.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
 ${LOC}kcmxinerama.mo
+${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
 ${LOC}kdat.mo
 ${LOC}kdcop.mo
@@ -177,6 +162,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdf.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
@@ -227,13 +213,13 @@ ${LOC}kfindpart.mo
 ${LOC}kfloppy.mo
 ${LOC}kfmclient.mo
 ${LOC}kfontinst.mo
-${LOC}kfontviewpart.mo
 ${LOC}kfouleggs.mo
 ${LOC}kgamma.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
+${LOC}kgreet_classic.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -247,7 +233,6 @@ ${LOC}kio_devices.mo
 ${LOC}kio_finger.mo
 ${LOC}kio_fish.mo
 ${LOC}kio_floppy.mo
-${LOC}kio_fonts.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
@@ -359,6 +344,7 @@ ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
 ${LOC}kuick_plugin.mo
+${LOC}kuickshow.mo
 ${LOC}kuiviewer.mo
 ${LOC}kview.mo
 ${LOC}kview_scale.mo

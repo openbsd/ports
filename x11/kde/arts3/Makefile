@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2004/04/13 04:22:37 brad Exp $
+# $OpenBSD: Makefile,v 1.31 2004/07/24 12:47:13 espie Exp $
 
 COMMENT=		"K Desktop Environment, aRTs"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.1
-DISTNAME=		arts-1.2.1
-MODKDE_VERSION?=	3.2
+VERSION=		3.2.3
+DISTNAME=		arts-1.2.3
+MODKDE_VERSION?=	3.2.3
 
 NOT_FOR_ARCHS=
 LIB_DEPENDS= 	audiofile::devel/libaudiofile \
@@ -19,6 +19,7 @@ SEPARATE_BUILD=flavored
 BUILD_DEPENDS=	::devel/pkgconfig
 
 CONFIGURE_ENV=LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
+PATCH_LIST=patch-*
 
 		
 pre-build:

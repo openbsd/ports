@@ -1,13 +1,9 @@
-@comment $OpenBSD: PLIST.fa,v 1.8 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.fa,v 1.9 2004/07/24 12:47:15 espie Exp $
 share/locale/fa/COPYING
 ${LOC}appletproxy.mo
 ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}cupsdconf.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}display.mo
 ${LOC}dockbarextension.mo
@@ -103,6 +99,7 @@ ${LOC}kfindpart.mo
 ${LOC}kfmclient.mo
 ${LOC}kfontinst.mo
 ${LOC}kfontviewpart.mo
+${LOC}kgreet_classic.mo
 ${LOC}khelpcenter.mo
 ${LOC}khotkeys.mo
 ${LOC}kicker.mo

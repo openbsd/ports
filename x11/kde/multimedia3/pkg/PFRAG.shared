@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.8 2004/03/07 21:08:44 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.9 2004/07/24 12:47:15 espie Exp $
+lib/libarts_mpeglib.so.0.3
+lib/libmpeg.so
 ${KDE}/kcm_audiocd.so
 ${KDE}/kcm_cddb.so
 ${KDE}/kcm_kmix.so
@@ -37,7 +39,6 @@ ${KDE}/noatun_voiceprint.so
 ${KDE}/noatun_winskin.so
 ${KDE}/noatunsimple.so
 lib/libarts_mpeglib-0.3.0.so.0.3
-lib/libarts_mpeglib.so.0.3
 lib/libarts_splay.so.0.0
 lib/libartsbuilder.so.0.0
 lib/libartscontrolapplet.so.1.0
@@ -62,7 +63,6 @@ lib/libkdeinit_noatun.so
 lib/libkmidlib.so.0.0
 lib/libkworkman.so.6.0
 lib/libmpeg-0.3.0.so
-lib/libmpeg.so
 lib/libnoatun.so.3.0
 lib/libnoatunarts.so
 lib/libnoatuncontrols.so.3.0

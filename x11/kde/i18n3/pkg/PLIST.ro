@@ -1,19 +1,30 @@
-@comment $OpenBSD: PLIST.ro,v 1.13 2004/02/07 12:29:13 espie Exp $
+@comment $OpenBSD: PLIST.ro,v 1.14 2004/07/24 12:47:15 espie Exp $
+share/apps/ktuberling/
+share/apps/ktuberling/sounds/
+share/apps/ktuberling/sounds/ro/
 share/apps/ktuberling/sounds/ro/ceas.wav
 share/apps/ktuberling/sounds/ro/cercel.wav
+share/apps/ktuberling/sounds/ro/colier.wav
+share/apps/ktuberling/sounds/ro/corn.wav
+share/apps/ktuberling/sounds/ro/cravata.wav
+share/apps/ktuberling/sounds/ro/domnul-cartof.wav
+share/apps/ktuberling/sounds/ro/fular.wav
 share/apps/ktuberling/sounds/ro/gura.wav
 share/apps/ktuberling/sounds/ro/insigna.wav
 share/apps/ktuberling/sounds/ro/mustata.wav
 share/apps/ktuberling/sounds/ro/nas.wav
+share/apps/ktuberling/sounds/ro/ochelari-de-soare.wav
 share/apps/ktuberling/sounds/ro/ochelari.wav
-share/apps/ktuberling/sounds/ro/ochelaridesoare.wav
 share/apps/ktuberling/sounds/ro/ochi.wav
 share/apps/ktuberling/sounds/ro/palarie.wav
 share/apps/ktuberling/sounds/ro/papion.wav
+share/apps/ktuberling/sounds/ro/par.wav
+share/apps/ktuberling/sounds/ro/pinguin.wav
 share/apps/ktuberling/sounds/ro/sprinceana.wav
 share/apps/ktuberling/sounds/ro/tigara.wav
-share/apps/ktuberling/sounds/ro/tuberling.wav
 share/apps/ktuberling/sounds/ro/ureche.wav
+share/doc/HTML/ro/
+${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -65,6 +76,7 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}khelpcenter/
 ${DOC}khelpcenter/background.png
 ${DOC}khelpcenter/bgtable.png
 ${DOC}khelpcenter/common
@@ -81,6 +93,7 @@ ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/pointers.png
 ${DOC}khelpcenter/shadow1.png
 ${DOC}khelpcenter/support.docbook
+${DOC}khelpcenter/visualdict/
 ${DOC}khelpcenter/visualdict/common
 ${DOC}khelpcenter/visualdict/${C}
 ${DOC}khelpcenter/visualdict/${I}
@@ -106,8 +119,29 @@ ${DOC}khelpcenter/visualdict/pict8.png
 ${DOC}khelpcenter/visualdict/pict9.png
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}kioslave/
+${DOC}kioslave/bzip.docbook
+${DOC}kioslave/bzip2.docbook
 ${DOC}kioslave/cgi.docbook
+${DOC}kioslave/data.docbook
 ${DOC}kioslave/file.docbook
+${DOC}kioslave/imaps.docbook
+${DOC}kioslave/ldap.docbook
+${DOC}kioslave/mrml.docbook
+${DOC}kioslave/nntp.docbook
+${DOC}kioslave/pop3.docbook
+${DOC}kioslave/pop3s.docbook
+${DOC}kioslave/rlan.docbook
+${DOC}kioslave/rlogin.docbook
+${DOC}kioslave/sftp.docbook
+${DOC}kioslave/smtp.docbook
+${DOC}kioslave/tar.docbook
+${DOC}kioslave/telnet.docbook
+${DOC}kioslave/webdavs.docbook
+share/doc/kinfocenter/
+share/doc/kinfocenter/common
+share/doc/kinfocenter/${C}
+share/doc/kinfocenter/${I}
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -129,24 +163,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_kdevelop.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -309,6 +325,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
@@ -371,6 +388,7 @@ ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
+${LOC}kgreet_classic.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -426,6 +444,10 @@ ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
+${LOC}kmilo_generic.mo
+${LOC}kmilo_kvaio.mo
+${LOC}kmilo_powerbook.mo
+${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
@@ -443,6 +465,7 @@ ${LOC}knotify.mo
 ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
+${LOC}kommander.mo
 ${LOC}kompare.mo
 ${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
@@ -616,11 +639,3 @@ ${LOC}webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
-@dirrm ${DOC}kioslave
-@dirrm ${DOC}khelpcenter/visualdict
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}common
-@dirrm share/doc/HTML/ro
-@dirrm share/apps/ktuberling/sounds/ro
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling

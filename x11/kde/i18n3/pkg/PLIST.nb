@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST.nb,v 1.13 2004/03/08 11:10:15 espie Exp $
-${DOC}kcontrol/common
-${DOC}kcontrol/${C}
-${DOC}kcontrol/${I}
-${DOC}khelpcenter/contact.docbook
+@comment $OpenBSD: PLIST.nb,v 1.14 2004/07/24 12:47:15 espie Exp $
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 ${LOC}aktion.mo
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
@@ -14,6 +12,8 @@ ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
 ${LOC}atlantik.mo
 ${LOC}atlantikdesigner.mo
+${LOC}audiorename_plugin.mo
+${LOC}autorefresh.mo
 ${LOC}babelfish.mo
 ${LOC}cervisia.mo
 ${LOC}charlatanui.mo
@@ -23,23 +23,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_kdevelop.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -52,6 +35,7 @@ ${LOC}ffrs.mo
 ${LOC}filetypes.mo
 ${LOC}flashkard.mo
 ${LOC}fontinst.mo
+${LOC}fsview.mo
 ${LOC}gideon.mo
 ${LOC}htmlsearch.mo
 ${LOC}imagerename_plugin.mo
@@ -82,12 +66,14 @@ ${LOC}karm.mo
 ${LOC}kasbarextension.mo
 ${LOC}kasteroids.mo
 ${LOC}kate.mo
+${LOC}katecppsymbolviewer.mo
 ${LOC}katedefaultproject.mo
 ${LOC}katefll_initplugin.mo
 ${LOC}katefll_plugin.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateinsertcommand.mo
+${LOC}katemake.mo
 ${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
 ${LOC}katepart.mo
@@ -102,6 +88,7 @@ ${LOC}kaudiocreator.mo
 ${LOC}kbabel.mo
 ${LOC}kbackgammon.mo
 ${LOC}kbattleship.mo
+${LOC}kbinaryclock.mo
 ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbruch.mo
@@ -149,6 +136,7 @@ ${LOC}kcmkmrml.mo
 ${LOC}kcmkonq.mo
 ${LOC}kcmkonqhtml.mo
 ${LOC}kcmkonsole.mo
+${LOC}kcmkontactnt.mo
 ${LOC}kcmktalkd.mo
 ${LOC}kcmkuick.mo
 ${LOC}kcmkurifilt.mo
@@ -184,6 +172,7 @@ ${LOC}kcmtaskbar.mo
 ${LOC}kcmthemes.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
+${LOC}kcmvim.mo
 ${LOC}kcmwifi.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
@@ -203,8 +192,10 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
+${LOC}kdgantt.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
 ${LOC}kdictapplet.mo
@@ -266,6 +257,7 @@ ${LOC}kgantt.mo
 ${LOC}kgeo.mo
 ${LOC}kget.mo
 ${LOC}kghostview.mo
+${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
 ${LOC}khangman.mo
@@ -316,6 +308,7 @@ ${LOC}klock.mo
 ${LOC}klogic.mo
 ${LOC}klpq.mo
 ${LOC}klprfax.mo
+${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
@@ -331,6 +324,8 @@ ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
 ${LOC}kmobile.mo
 ${LOC}kmoon.mo
+${LOC}kmousetool.mo
+${LOC}kmouth.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
 ${LOC}knewsticker.mo
@@ -342,6 +337,7 @@ ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
+${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
@@ -386,6 +382,7 @@ ${LOC}kscd.mo
 ${LOC}kscoreapplet.mo
 ${LOC}kscreensaver.mo
 ${LOC}kshisen.mo
+${LOC}ksig.mo
 ${LOC}ksim.mo
 ${LOC}ksirc.mo
 ${LOC}ksirtet.mo
@@ -460,6 +457,7 @@ ${LOC}kxmlrpcd.mo
 ${LOC}kxsconfig.mo
 ${LOC}kxsldbg.mo
 ${LOC}libcalendarresources.mo
+${LOC}libkaddrbk_geo_xxport.mo
 ${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
@@ -486,6 +484,7 @@ ${LOC}lskat.mo
 ${LOC}lyrics.mo
 ${LOC}mediacontrol.mo
 ${LOC}megami.mo
+${LOC}minitoolsplugin.mo
 ${LOC}naughtyapplet.mo
 ${LOC}nexscope.mo
 ${LOC}noatun.mo
@@ -508,6 +507,7 @@ ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo
 ${LOC}userinfo.mo
 ${LOC}validatorsplugin.mo
+${LOC}vimpart.mo
 ${LOC}wakeup.mo
 ${LOC}wavecapture.mo
 ${LOC}webarchiver.mo
@@ -515,8 +515,3 @@ share/locale/nb/README
 share/locale/nb/charset
 share/locale/nb/entry.desktop
 share/locale/nb/flag.png
-@dirrm share/locale/nb/LC_MESSAGES
-@dirrm share/locale/nb
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}kcontrol
-@dirrm share/doc/HTML/nb

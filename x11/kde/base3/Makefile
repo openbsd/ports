@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2004/04/13 04:22:37 brad Exp $
+# $OpenBSD: Makefile,v 1.30 2004/07/24 12:47:14 espie Exp $
 
 COMMENT= 		"K Desktop Environment, basic applications"
 COMMENT-plugins=	"Konqueror nsplugins, essentially native JDK"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.1
+VERSION=		3.2.3
 DISTNAME=		kdebase-${VERSION}
-MODKDE_VERSION?=	3.2
+MODKDE_VERSION?=	3.2.3
 
 FLAVORS=		debug
 LIB_DEPENDS= kdecore.6,kabc,katepartinterfaces,kdefakes,kdefx,kdeprint,kdeprint_management,kdesasl,kdesu,kdeui,khtml,kio,kjs,kmdi,kmid,kparts,kresources,kscreensaver,kscript,ktexteditor,kutils,kwalletclient,DCOP,vcard,artskde::x11/kde/libs3 \

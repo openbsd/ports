@@ -1,16 +1,16 @@
-$OpenBSD: patch-qtc_clib_Makefile_in,v 1.4 2004/02/02 13:04:35 espie Exp $
---- qtc/clib/Makefile.in.orig	2004-01-18 13:58:27.000000000 +0100
-+++ qtc/clib/Makefile.in	2004-02-02 12:29:40.000000000 +0100
-@@ -350,7 +350,7 @@ SOURCES = qtc/qt_QAccessibleInterface.cp
+$OpenBSD: patch-qtc_clib_Makefile_in,v 1.5 2004/07/24 12:47:14 espie Exp $
+--- qtc/clib/Makefile.in.orig	Sun May 30 18:36:09 2004
++++ qtc/clib/Makefile.in	Tue Jul 20 19:39:41 2004
+@@ -404,7 +404,7 @@ SOURCES = qtc/qt_QAccessibleInterface.cp
  INTERFACES = 
  TRANSLATIONS = 
  KDE_OPTIONS = qtonly
 -clib_LDADD = ./qtc/libqtc.la $(QT_LIBS) -lqui $(LIBSOCKET)
 +clib_LDADD = ./qtc/libqtc.la $(QT_LIBS) -lqui-mt $(LIBSOCKET) -lstdc++
- 
  SUBDIRS = qtc 
+ EXTRA_DIST = main.c
  
-@@ -364,7 +364,7 @@ INCLUDES = $(all_includes)
+@@ -415,7 +415,7 @@ INCLUDES = $(all_includes)
  #>- clib_METASOURCES = AUTO
  
  # the library search path. 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2004/03/08 11:10:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2004/07/24 12:47:14 espie Exp $
 
-FLAVORS=az bg bn bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
-	hu is it ja lt mn ms nb nds nl nn pl pt pt_BR ro ru se sk sl sr \
-	sr@Latn sv ta tg tr uk uz zh_CN zh_TW
+FLAVORS=ar az bg bn bs ca cs cy da de el en_GB es et eu fa fi fr gl he hi \
+	hr hsb hu is it ja lt mn ms nb nds nl nn pl pt pt_BR ro ru sk sl \
+	sr sr@Latn sv tg tr uk uz zh_CN zh_TW
 FLAVOR?=fr
 
 FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
@@ -10,10 +10,10 @@ FULLPKGNAME=	kde-i18n-${FLAVOR}-${VERSION}
 COMMENT=		"${FLAVOR} translations for KDE"
 
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.1
+VERSION=		3.2.3
 DISTNAME=		kde-i18n-${FLAVOR}-${VERSION}
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}
-MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/3.2.1/src/kde-i18n/@}
+MASTER_SITES= ${MASTER_SITE_KDE:S@$@stable/3.2.3/src/kde-i18n/@}
 
 SUPDISTFILES=
 .for i in ${FLAVORS}
@@ -26,7 +26,7 @@ RUN_DEPENDS = ::x11/kde/libs3
 PLIST=${PKGDIR}/PLIST.${FLAVOR}
 PATCH_LIST=	patch-*
 MODKDE_VERSION=
-MODKDE_NODEBUG=Yes
+CONFIGURE_STYLE=gnu
 
 MAKE_FLAGS+=MEINPROC=
 FAKE_FLAGS=DESTDIR=${WRKINST} MEINPROC=
@@ -37,5 +37,8 @@ LOC=share/locale/${FLAVOR}/LC_MESSAGES/
 I=index.docbook
 C=index.cache.bz2
 SUBST_VARS=DOC LOC I C
+.if ${FLAVOR:L} == "ta"
+PATCH_LIST=ta-patch-*
+.endif
 
 .include <bsd.port.mk>

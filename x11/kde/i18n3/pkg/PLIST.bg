@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST.bg,v 1.12 2004/02/07 12:29:12 espie Exp $
-${DOC}kcalc/common
-${DOC}kcalc/${C}
-${DOC}kcalc/${I}
+@comment $OpenBSD: PLIST.bg,v 1.13 2004/07/24 12:47:14 espie Exp $
 ${LOC}alarmdaemonctrl.mo
 ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
@@ -19,21 +16,6 @@ ${LOC}childpanelextension.mo
 ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -192,6 +174,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdf.mo
 ${LOC}kdialog.mo
 ${LOC}kdict.mo
@@ -462,5 +445,3 @@ ${LOC}webarchiver.mo
 share/locale/bg/charset
 share/locale/bg/entry.desktop
 share/locale/bg/flag.png
-@dirrm ${DOC}kcalc
-@dirrm share/doc/HTML/bg

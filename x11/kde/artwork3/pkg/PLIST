@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/03/07 21:08:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/07/24 12:47:13 espie Exp $
 bin/kbanner.kss
 bin/kblob.kss
 bin/kclock.kss
@@ -222,12 +222,15 @@ share/applnk/System/ScreenSavers/xspirograph.desktop
 share/applnk/System/ScreenSavers/xsublim.desktop
 share/applnk/System/ScreenSavers/xteevee.desktop
 share/applnk/System/ScreenSavers/zoom.desktop
+share/apps/kscreensaver/
 share/apps/kscreensaver/image.png
 share/apps/kscreensaver/kscience.png
 share/apps/kscreensaver/particle.png
 share/apps/kstyle/themes/dotnet.themerc
 share/apps/kstyle/themes/plastik.themerc
 share/apps/kwin/cde.desktop
+share/apps/kwin/glow-themes/
+share/apps/kwin/glow-themes/default/
 share/apps/kwin/glow-themes/default/background.png
 share/apps/kwin/glow-themes/default/close.png
 share/apps/kwin/glow-themes/default/close_glow.png
@@ -244,6 +247,7 @@ share/apps/kwin/glow-themes/default/stickyoff.png
 share/apps/kwin/glow-themes/default/stickyoff_glow.png
 share/apps/kwin/glow-themes/default/stickyon.png
 share/apps/kwin/glow-themes/default/stickyon_glow.png
+share/apps/kwin/glow-themes/glass/
 share/apps/kwin/glow-themes/glass/background.png
 share/apps/kwin/glow-themes/glass/close.png
 share/apps/kwin/glow-themes/glass/close_glow.png
@@ -260,6 +264,7 @@ share/apps/kwin/glow-themes/glass/stickyoff.png
 share/apps/kwin/glow-themes/glass/stickyoff_glow.png
 share/apps/kwin/glow-themes/glass/stickyon.png
 share/apps/kwin/glow-themes/glass/stickyon_glow.png
+share/apps/kwin/glow-themes/glass_huge/
 share/apps/kwin/glow-themes/glass_huge/background.png
 share/apps/kwin/glow-themes/glass_huge/close.png
 share/apps/kwin/glow-themes/glass_huge/close_glow.png
@@ -276,6 +281,7 @@ share/apps/kwin/glow-themes/glass_huge/stickyoff.png
 share/apps/kwin/glow-themes/glass_huge/stickyoff_glow.png
 share/apps/kwin/glow-themes/glass_huge/stickyon.png
 share/apps/kwin/glow-themes/glass_huge/stickyon_glow.png
+share/apps/kwin/glow-themes/glass_large/
 share/apps/kwin/glow-themes/glass_large/background.png
 share/apps/kwin/glow-themes/glass_large/close.png
 share/apps/kwin/glow-themes/glass_large/close_glow.png
@@ -292,6 +298,7 @@ share/apps/kwin/glow-themes/glass_large/stickyoff.png
 share/apps/kwin/glow-themes/glass_large/stickyoff_glow.png
 share/apps/kwin/glow-themes/glass_large/stickyon.png
 share/apps/kwin/glow-themes/glass_large/stickyon_glow.png
+share/apps/kwin/glow-themes/glass_verylarge/
 share/apps/kwin/glow-themes/glass_verylarge/background.png
 share/apps/kwin/glow-themes/glass_verylarge/close.png
 share/apps/kwin/glow-themes/glass_verylarge/close_glow.png
@@ -308,6 +315,7 @@ share/apps/kwin/glow-themes/glass_verylarge/stickyoff.png
 share/apps/kwin/glow-themes/glass_verylarge/stickyoff_glow.png
 share/apps/kwin/glow-themes/glass_verylarge/stickyon.png
 share/apps/kwin/glow-themes/glass_verylarge/stickyon_glow.png
+share/apps/kwin/glow-themes/square/
 share/apps/kwin/glow-themes/square/background.png
 share/apps/kwin/glow-themes/square/close.png
 share/apps/kwin/glow-themes/square/close_glow.png
@@ -325,6 +333,8 @@ share/apps/kwin/glow-themes/square/stickyoff_glow.png
 share/apps/kwin/glow-themes/square/stickyon.png
 share/apps/kwin/glow-themes/square/stickyon_glow.png
 share/apps/kwin/glow.desktop
+share/apps/kwin/icewm-themes/
+share/apps/kwin/icewm-themes/MenschMaschine/
 share/apps/kwin/icewm-themes/MenschMaschine/closeA.xpm
 share/apps/kwin/icewm-themes/MenschMaschine/closeI.xpm
 share/apps/kwin/icewm-themes/MenschMaschine/default.theme
@@ -362,6 +372,7 @@ share/apps/kwin/icewm-themes/MenschMaschine/titleIL.xpm
 share/apps/kwin/icewm-themes/MenschMaschine/titleIM.xpm
 share/apps/kwin/icewm-themes/MenschMaschine/titleIR.xpm
 share/apps/kwin/icewm-themes/MenschMaschine/titleIT.xpm
+share/apps/kwin/icewm-themes/Model/
 share/apps/kwin/icewm-themes/Model/closeA.xpm
 share/apps/kwin/icewm-themes/Model/closeI.xpm
 share/apps/kwin/icewm-themes/Model/default.theme
@@ -436,33 +447,42 @@ share/apps/kwin/kstep.desktop
 share/apps/kwin/openlook.desktop
 share/apps/kwin/plastik.desktop
 share/apps/kwin/system.desktop
+share/apps/kworldclock/
+share/apps/kworldclock/maps/
+share/apps/kworldclock/maps/alt/
 share/apps/kworldclock/maps/alt/1200.jpg
 share/apps/kworldclock/maps/alt/200.jpg
 share/apps/kworldclock/maps/alt/400.jpg
 share/apps/kworldclock/maps/alt/800.jpg
 share/apps/kworldclock/maps/alt/alt.desktop
+share/apps/kworldclock/maps/bio/
 share/apps/kworldclock/maps/bio/1600.jpg
 share/apps/kworldclock/maps/bio/200.jpg
 share/apps/kworldclock/maps/bio/400.jpg
 share/apps/kworldclock/maps/bio/800.jpg
 share/apps/kworldclock/maps/bio/bio.desktop
+share/apps/kworldclock/maps/caida/
 share/apps/kworldclock/maps/caida/1280.jpg
 share/apps/kworldclock/maps/caida/200.jpg
 share/apps/kworldclock/maps/caida/400.jpg
 share/apps/kworldclock/maps/caida/800.jpg
 share/apps/kworldclock/maps/caida/caida.desktop
+share/apps/kworldclock/maps/caida_bw/
 share/apps/kworldclock/maps/caida_bw/1280.jpg
 share/apps/kworldclock/maps/caida_bw/200.jpg
 share/apps/kworldclock/maps/caida_bw/400.jpg
 share/apps/kworldclock/maps/caida_bw/800.jpg
 share/apps/kworldclock/maps/caida_bw/caida_bw.desktop
+share/apps/kworldclock/maps/depths/
 share/apps/kworldclock/maps/depths/1440.jpg
 share/apps/kworldclock/maps/depths/200.jpg
+share/apps/kworldclock/maps/mggd/
 share/apps/kworldclock/maps/mggd/1440.jpg
 share/apps/kworldclock/maps/mggd/200.jpg
 share/apps/kworldclock/maps/mggd/400.jpg
 share/apps/kworldclock/maps/mggd/800.jpg
 share/apps/kworldclock/maps/mggd/mggd.desktop
+share/apps/kworldclock/maps/rainfall/
 share/apps/kworldclock/maps/rainfall/1600.jpg
 share/apps/kworldclock/maps/rainfall/200.jpg
 share/apps/kworldclock/maps/rainfall/400.jpg
@@ -495,6 +515,9 @@ share/config/lissierc
 share/config/penroserc
 share/config/rocksrc
 share/config/sliprc
+share/icons/Locolor/
+share/icons/Locolor/16x16/
+share/icons/Locolor/16x16/actions/
 share/icons/Locolor/16x16/actions/1downarrow.png
 share/icons/Locolor/16x16/actions/1leftarrow.png
 share/icons/Locolor/16x16/actions/1rightarrow.png
@@ -637,6 +660,7 @@ share/icons/Locolor/16x16/actions/window_fullscreen.png
 share/icons/Locolor/16x16/actions/window_new.png
 share/icons/Locolor/16x16/actions/window_nofullscreen.png
 share/icons/Locolor/16x16/actions/wizard.png
+share/icons/Locolor/16x16/apps/
 share/icons/Locolor/16x16/apps/abbrowser.png
 share/icons/Locolor/16x16/apps/access.png
 share/icons/Locolor/16x16/apps/acroread.png
@@ -863,6 +887,7 @@ share/icons/Locolor/16x16/apps/xmag.png
 share/icons/Locolor/16x16/apps/xosview.png
 share/icons/Locolor/16x16/apps/xpaint.png
 share/icons/Locolor/16x16/apps/xv.png
+share/icons/Locolor/16x16/devices/
 share/icons/Locolor/16x16/devices/3floppy_mount.png
 share/icons/Locolor/16x16/devices/3floppy_unmount.png
 share/icons/Locolor/16x16/devices/5floppy_mount.png
@@ -882,6 +907,7 @@ share/icons/Locolor/16x16/devices/scanner.png
 share/icons/Locolor/16x16/devices/tablet.png
 share/icons/Locolor/16x16/devices/zip_mount.png
 share/icons/Locolor/16x16/devices/zip_unmount.png
+share/icons/Locolor/16x16/filesystems/
 share/icons/Locolor/16x16/filesystems/blockdevice.png
 share/icons/Locolor/16x16/filesystems/chardevice.png
 share/icons/Locolor/16x16/filesystems/desktop.png
@@ -915,6 +941,7 @@ share/icons/Locolor/16x16/filesystems/trashcan_empty.png
 share/icons/Locolor/16x16/filesystems/trashcan_full.png
 share/icons/Locolor/16x16/filesystems/www.png
 share/icons/Locolor/16x16/filesystems/zip.png
+share/icons/Locolor/16x16/mimetypes/
 share/icons/Locolor/16x16/mimetypes/applix.png
 share/icons/Locolor/16x16/mimetypes/binary.png
 share/icons/Locolor/16x16/mimetypes/binary2.png
@@ -970,8 +997,11 @@ share/icons/Locolor/16x16/mimetypes/unknown.png
 share/icons/Locolor/16x16/mimetypes/vcalendar.png
 share/icons/Locolor/16x16/mimetypes/vcard.png
 share/icons/Locolor/16x16/mimetypes/video.png
+share/icons/Locolor/32x32/
+share/icons/Locolor/32x32/actions/
 share/icons/Locolor/32x32/actions/gear.png
 share/icons/Locolor/32x32/actions/misc.png
+share/icons/Locolor/32x32/apps/
 share/icons/Locolor/32x32/apps/access.png
 share/icons/Locolor/32x32/apps/acroread.png
 share/icons/Locolor/32x32/apps/agent.png
@@ -1187,6 +1217,7 @@ share/icons/Locolor/32x32/apps/xmms.png
 share/icons/Locolor/32x32/apps/xosview.png
 share/icons/Locolor/32x32/apps/xpaint.png
 share/icons/Locolor/32x32/apps/xv.png
+share/icons/Locolor/32x32/devices/
 share/icons/Locolor/32x32/devices/3floppy_mount.png
 share/icons/Locolor/32x32/devices/3floppy_unmount.png
 share/icons/Locolor/32x32/devices/5floppy_mount.png
@@ -1206,6 +1237,7 @@ share/icons/Locolor/32x32/devices/scanner.png
 share/icons/Locolor/32x32/devices/tablet.png
 share/icons/Locolor/32x32/devices/zip_mount.png
 share/icons/Locolor/32x32/devices/zip_unmount.png
+share/icons/Locolor/32x32/filesystems/
 share/icons/Locolor/32x32/filesystems/blockdevice.png
 share/icons/Locolor/32x32/filesystems/chardevice.png
 share/icons/Locolor/32x32/filesystems/desktop.png
@@ -1239,6 +1271,7 @@ share/icons/Locolor/32x32/filesystems/trashcan_empty.png
 share/icons/Locolor/32x32/filesystems/trashcan_full.png
 share/icons/Locolor/32x32/filesystems/www.png
 share/icons/Locolor/32x32/filesystems/zip.png
+share/icons/Locolor/32x32/mimetypes/
 share/icons/Locolor/32x32/mimetypes/applix.png
 share/icons/Locolor/32x32/mimetypes/binary.png
 share/icons/Locolor/32x32/mimetypes/binary2.png
@@ -1296,6 +1329,9 @@ share/icons/Locolor/32x32/mimetypes/vcalendar.png
 share/icons/Locolor/32x32/mimetypes/vcard.png
 share/icons/Locolor/32x32/mimetypes/video.png
 share/icons/Locolor/index.theme
+share/icons/Technical/
+share/icons/Technical/32x32/
+share/icons/Technical/32x32/actions/
 share/icons/Technical/32x32/actions/1downarrow.png
 share/icons/Technical/32x32/actions/1leftarrow.png
 share/icons/Technical/32x32/actions/1rightarrow.png
@@ -1342,14 +1378,22 @@ share/icons/Technical/32x32/actions/unlock.png
 share/icons/Technical/32x32/actions/up.png
 share/icons/Technical/32x32/actions/viewmag+.png
 share/icons/Technical/32x32/actions/viewmag-.png
+share/icons/Technical/32x32/filesystems/
 share/icons/Technical/32x32/filesystems/exec.png
 share/icons/Technical/32x32/filesystems/folder.png
+share/icons/Technical/32x32/mimetypes/
 share/icons/Technical/32x32/mimetypes/txt.png
+share/icons/Technical/48x48/
+share/icons/Technical/48x48/filesystems/
 share/icons/Technical/48x48/filesystems/exec.png
 share/icons/Technical/48x48/filesystems/exec1.png
 share/icons/Technical/48x48/filesystems/folder.png
+share/icons/Technical/48x48/mimetypes/
 share/icons/Technical/48x48/mimetypes/txt.png
 share/icons/Technical/index.theme
+share/icons/ikons/
+share/icons/ikons/16x16/
+share/icons/ikons/16x16/actions/
 share/icons/ikons/16x16/actions/1day.png
 share/icons/ikons/16x16/actions/1downarrow.png
 share/icons/ikons/16x16/actions/1leftarrow.png
@@ -1430,6 +1474,7 @@ share/icons/ikons/16x16/actions/viewmag.png
 share/icons/ikons/16x16/actions/whatsnext.png
 share/icons/ikons/16x16/actions/window_new.png
 share/icons/ikons/16x16/actions/wizard.png
+share/icons/ikons/16x16/apps/
 share/icons/ikons/16x16/apps/exec.png
 share/icons/ikons/16x16/apps/gimp.png
 share/icons/ikons/16x16/apps/go_old.png
@@ -1447,6 +1492,7 @@ share/icons/ikons/16x16/apps/printer1.png
 share/icons/ikons/16x16/apps/printer2.png
 share/icons/ikons/16x16/apps/printmgr.png
 share/icons/ikons/16x16/apps/wcspeedtouch.png
+share/icons/ikons/16x16/devices/
 share/icons/ikons/16x16/devices/3floppy_mount.png
 share/icons/ikons/16x16/devices/3floppy_unmount.png
 share/icons/ikons/16x16/devices/5floppy_mount.png
@@ -1467,6 +1513,7 @@ share/icons/ikons/16x16/devices/phone.png
 share/icons/ikons/16x16/devices/speedtouch_ADSL_modem.png
 share/icons/ikons/16x16/devices/zip_mount.png
 share/icons/ikons/16x16/devices/zip_unmount.png
+share/icons/ikons/16x16/filesystems/
 share/icons/ikons/16x16/filesystems/exec.png
 share/icons/ikons/16x16/filesystems/folder.png
 share/icons/ikons/16x16/filesystems/folder_blue.png
@@ -1487,7 +1534,10 @@ share/icons/ikons/16x16/filesystems/folder_sound.png
 share/icons/ikons/16x16/filesystems/folder_tar.png
 share/icons/ikons/16x16/filesystems/folder_violet.png
 share/icons/ikons/16x16/filesystems/folder_yellow.png
+share/icons/ikons/16x16/mimetypes/
 share/icons/ikons/16x16/mimetypes/image.png
+share/icons/ikons/22x22/
+share/icons/ikons/22x22/actions/
 share/icons/ikons/22x22/actions/1day.png
 share/icons/ikons/22x22/actions/1leftarrow.png
 share/icons/ikons/22x22/actions/1rightarrow.png
@@ -1560,10 +1610,13 @@ share/icons/ikons/22x22/actions/viewmag+.png
 share/icons/ikons/22x22/actions/viewmag-.png
 share/icons/ikons/22x22/actions/viewmag.png
 share/icons/ikons/22x22/actions/whatsnext.png
+share/icons/ikons/22x22/apps/
 share/icons/ikons/22x22/apps/kpilot.png
 share/icons/ikons/22x22/apps/kpilot2.png
 share/icons/ikons/22x22/apps/kpilot3.png
 share/icons/ikons/22x22/apps/wcspeedtouch.png
+share/icons/ikons/32x32/
+share/icons/ikons/32x32/apps/
 share/icons/ikons/32x32/apps/HancomOffice.png
 share/icons/ikons/32x32/apps/HancomPainter.png
 share/icons/ikons/32x32/apps/HancomPresenter.png
@@ -1580,6 +1633,7 @@ share/icons/ikons/32x32/apps/konsole.png
 share/icons/ikons/32x32/apps/kpilot.png
 share/icons/ikons/32x32/apps/printmgr.png
 share/icons/ikons/32x32/apps/tux_config.png
+share/icons/ikons/32x32/devices/
 share/icons/ikons/32x32/devices/3floppy_mount.png
 share/icons/ikons/32x32/devices/3floppy_unmount.png
 share/icons/ikons/32x32/devices/cdaudio_unmount.png
@@ -1604,6 +1658,7 @@ share/icons/ikons/32x32/devices/screen_green.png
 share/icons/ikons/32x32/devices/speedtouch_ADSL_modem.png
 share/icons/ikons/32x32/devices/zip_mount.png
 share/icons/ikons/32x32/devices/zip_unmount.png
+share/icons/ikons/32x32/filesystems/
 share/icons/ikons/32x32/filesystems/desktop.png
 share/icons/ikons/32x32/filesystems/desktop_new.png
 share/icons/ikons/32x32/filesystems/desktop_old.png
@@ -1639,6 +1694,7 @@ share/icons/ikons/32x32/filesystems/folder_yellow_open.png
 share/icons/ikons/32x32/filesystems/link.png
 share/icons/ikons/32x32/filesystems/trashcan_empty.png
 share/icons/ikons/32x32/filesystems/trashcan_full.png
+share/icons/ikons/32x32/mimetypes/
 share/icons/ikons/32x32/mimetypes/apple_macintosh.png
 share/icons/ikons/32x32/mimetypes/configuration.png
 share/icons/ikons/32x32/mimetypes/gimp.png
@@ -1654,6 +1710,8 @@ share/icons/ikons/32x32/mimetypes/script.png
 share/icons/ikons/32x32/mimetypes/sql.png
 share/icons/ikons/32x32/mimetypes/wav.png
 share/icons/ikons/32x32/mimetypes/windows_config.png
+share/icons/ikons/48x48/
+share/icons/ikons/48x48/apps/
 share/icons/ikons/48x48/apps/go.png
 share/icons/ikons/48x48/apps/kandy.png
 share/icons/ikons/48x48/apps/kcontrol.png
@@ -1663,6 +1721,7 @@ share/icons/ikons/48x48/apps/kmail_tmp.png
 share/icons/ikons/48x48/apps/konsole.png
 share/icons/ikons/48x48/apps/kpilot.png
 share/icons/ikons/48x48/apps/tux_config.png
+share/icons/ikons/48x48/devices/
 share/icons/ikons/48x48/devices/3floppy_mount.png
 share/icons/ikons/48x48/devices/3floppy_unmount.png
 share/icons/ikons/48x48/devices/5floppy_mount.png
@@ -1698,6 +1757,7 @@ share/icons/ikons/48x48/devices/screen_green.png
 share/icons/ikons/48x48/devices/speedtouch_ADSL_modem.png
 share/icons/ikons/48x48/devices/zip_mount.png
 share/icons/ikons/48x48/devices/zip_unmount.png
+share/icons/ikons/48x48/filesystems/
 share/icons/ikons/48x48/filesystems/desktop.png
 share/icons/ikons/48x48/filesystems/desktop_old.png
 share/icons/ikons/48x48/filesystems/documents.png
@@ -1737,6 +1797,7 @@ share/icons/ikons/48x48/filesystems/folder_yellow_open.png
 share/icons/ikons/48x48/filesystems/link.png
 share/icons/ikons/48x48/filesystems/trashcan_empty.png
 share/icons/ikons/48x48/filesystems/trashcan_full.png
+share/icons/ikons/48x48/mimetypes/
 share/icons/ikons/48x48/mimetypes/apple_macintosh.png
 share/icons/ikons/48x48/mimetypes/hancompainter.png
 share/icons/ikons/48x48/mimetypes/hancompresenter.png
@@ -1745,12 +1806,15 @@ share/icons/ikons/48x48/mimetypes/hancomword.png
 share/icons/ikons/48x48/mimetypes/image.png
 share/icons/ikons/48x48/mimetypes/mime_empty.png
 share/icons/ikons/48x48/mimetypes/rpm.png
+share/icons/ikons/64x64/
+share/icons/ikons/64x64/apps/
 share/icons/ikons/64x64/apps/Kpilot_FileInstaller.png
 share/icons/ikons/64x64/apps/Kpilot_Notes.png
 share/icons/ikons/64x64/apps/tux_business.png
 share/icons/ikons/64x64/apps/tux_config.png
 share/icons/ikons/64x64/apps/tux_diagnostic.png
 share/icons/ikons/64x64/apps/tux_network.png
+share/icons/ikons/64x64/filesystems/
 share/icons/ikons/64x64/filesystems/folder.png
 share/icons/ikons/64x64/filesystems/folder_blue.png
 share/icons/ikons/64x64/filesystems/folder_blue_flat.png
@@ -1762,6 +1826,9 @@ share/icons/ikons/64x64/filesystems/folder_red.png
 share/icons/ikons/64x64/filesystems/folder_violet.png
 share/icons/ikons/64x64/filesystems/folder_yellow.png
 share/icons/ikons/index.theme
+share/icons/kdeclassic/
+share/icons/kdeclassic/16x16/
+share/icons/kdeclassic/16x16/actions/
 share/icons/kdeclassic/16x16/actions/14_layer_deletelayer.png
 share/icons/kdeclassic/16x16/actions/14_layer_lowerlayer.png
 share/icons/kdeclassic/16x16/actions/14_layer_newlayer.png
@@ -2355,6 +2422,7 @@ share/icons/kdeclassic/16x16/actions/window_fullscreen.png
 share/icons/kdeclassic/16x16/actions/window_new.png
 share/icons/kdeclassic/16x16/actions/window_nofullscreen.png
 share/icons/kdeclassic/16x16/actions/wizard.png
+share/icons/kdeclassic/16x16/apps/
 share/icons/kdeclassic/16x16/apps/access.png
 share/icons/kdeclassic/16x16/apps/acroread.png
 share/icons/kdeclassic/16x16/apps/agent.png
@@ -2648,6 +2716,7 @@ share/icons/kdeclassic/16x16/apps/xmms.png
 share/icons/kdeclassic/16x16/apps/xosview.png
 share/icons/kdeclassic/16x16/apps/xpaint.png
 share/icons/kdeclassic/16x16/apps/xv.png
+share/icons/kdeclassic/16x16/devices/
 share/icons/kdeclassic/16x16/devices/3floppy_mount.png
 share/icons/kdeclassic/16x16/devices/3floppy_unmount.png
 share/icons/kdeclassic/16x16/devices/5floppy_mount.png
@@ -2677,6 +2746,7 @@ share/icons/kdeclassic/16x16/devices/scanner.png
 share/icons/kdeclassic/16x16/devices/tablet.png
 share/icons/kdeclassic/16x16/devices/zip_mount.png
 share/icons/kdeclassic/16x16/devices/zip_unmount.png
+share/icons/kdeclassic/16x16/filesystems/
 share/icons/kdeclassic/16x16/filesystems/blockdevice.png
 share/icons/kdeclassic/16x16/filesystems/chardevice.png
 share/icons/kdeclassic/16x16/filesystems/desktop.png
@@ -2730,6 +2800,7 @@ share/icons/kdeclassic/16x16/filesystems/trashcan_empty.png
 share/icons/kdeclassic/16x16/filesystems/trashcan_full.png
 share/icons/kdeclassic/16x16/filesystems/www.png
 share/icons/kdeclassic/16x16/filesystems/zip.png
+share/icons/kdeclassic/16x16/mimetypes/
 share/icons/kdeclassic/16x16/mimetypes/applix.png
 share/icons/kdeclassic/16x16/mimetypes/binary.png
 share/icons/kdeclassic/16x16/mimetypes/binary2.png
@@ -2796,6 +2867,8 @@ share/icons/kdeclassic/16x16/mimetypes/vectorgfx.png
 share/icons/kdeclassic/16x16/mimetypes/video.png
 share/icons/kdeclassic/16x16/mimetypes/widget_doc.png
 share/icons/kdeclassic/16x16/mimetypes/wordprocessing.png
+share/icons/kdeclassic/22x22/
+share/icons/kdeclassic/22x22/actions/
 share/icons/kdeclassic/22x22/actions/14_ellipse.png
 share/icons/kdeclassic/22x22/actions/14_gradient.png
 share/icons/kdeclassic/22x22/actions/14_group.png
@@ -3469,13 +3542,17 @@ share/icons/kdeclassic/22x22/actions/window_fullscreen.png
 share/icons/kdeclassic/22x22/actions/window_nofullscreen.png
 share/icons/kdeclassic/22x22/actions/wizard.png
 share/icons/kdeclassic/22x22/actions/xdays.png
+share/icons/kdeclassic/22x22/apps/
 share/icons/kdeclassic/22x22/apps/kaboodle.png
 share/icons/kdeclassic/22x22/apps/kivio.png
 share/icons/kdeclassic/22x22/apps/konqsidebar_mediaplayer.png
 share/icons/kdeclassic/22x22/apps/kpilot.png
 share/icons/kdeclassic/22x22/apps/kugar.png
 share/icons/kdeclassic/22x22/apps/noatun.png
+share/icons/kdeclassic/22x22/mimetypes/
 share/icons/kdeclassic/22x22/mimetypes/kugardata.png
+share/icons/kdeclassic/32x32/
+share/icons/kdeclassic/32x32/actions/
 share/icons/kdeclassic/32x32/actions/1day.png
 share/icons/kdeclassic/32x32/actions/1downarrow.png
 share/icons/kdeclassic/32x32/actions/1leftarrow.png
@@ -3728,6 +3805,7 @@ share/icons/kdeclassic/32x32/actions/volume.png
 share/icons/kdeclassic/32x32/actions/window_fullscreen.png
 share/icons/kdeclassic/32x32/actions/window_nofullscreen.png
 share/icons/kdeclassic/32x32/actions/wizard.png
+share/icons/kdeclassic/32x32/apps/
 share/icons/kdeclassic/32x32/apps/access.png
 share/icons/kdeclassic/32x32/apps/acroread.png
 share/icons/kdeclassic/32x32/apps/agent.png
@@ -4007,6 +4085,7 @@ share/icons/kdeclassic/32x32/apps/xmms.png
 share/icons/kdeclassic/32x32/apps/xosview.png
 share/icons/kdeclassic/32x32/apps/xpaint.png
 share/icons/kdeclassic/32x32/apps/xv.png
+share/icons/kdeclassic/32x32/devices/
 share/icons/kdeclassic/32x32/devices/3floppy_mount.png
 share/icons/kdeclassic/32x32/devices/3floppy_unmount.png
 share/icons/kdeclassic/32x32/devices/5floppy_mount.png
@@ -4037,6 +4116,7 @@ share/icons/kdeclassic/32x32/devices/scanner.png
 share/icons/kdeclassic/32x32/devices/tablet.png
 share/icons/kdeclassic/32x32/devices/zip_mount.png
 share/icons/kdeclassic/32x32/devices/zip_unmount.png
+share/icons/kdeclassic/32x32/filesystems/
 share/icons/kdeclassic/32x32/filesystems/blockdevice.png
 share/icons/kdeclassic/32x32/filesystems/camera.png
 share/icons/kdeclassic/32x32/filesystems/chardevice.png
@@ -4089,6 +4169,7 @@ share/icons/kdeclassic/32x32/filesystems/trashcan_empty.png
 share/icons/kdeclassic/32x32/filesystems/trashcan_full.png
 share/icons/kdeclassic/32x32/filesystems/www.png
 share/icons/kdeclassic/32x32/filesystems/zip.png
+share/icons/kdeclassic/32x32/mimetypes/
 share/icons/kdeclassic/32x32/mimetypes/applix.png
 share/icons/kdeclassic/32x32/mimetypes/binary.png
 share/icons/kdeclassic/32x32/mimetypes/binary2.png
@@ -4160,6 +4241,8 @@ share/icons/kdeclassic/32x32/mimetypes/vectorgfx.png
 share/icons/kdeclassic/32x32/mimetypes/video.png
 share/icons/kdeclassic/32x32/mimetypes/widget_doc.png
 share/icons/kdeclassic/32x32/mimetypes/wordprocessing.png
+share/icons/kdeclassic/48x48/
+share/icons/kdeclassic/48x48/actions/
 share/icons/kdeclassic/48x48/actions/effect.png
 share/icons/kdeclassic/48x48/actions/exit.png
 share/icons/kdeclassic/48x48/actions/fileclose.png
@@ -4170,6 +4253,7 @@ share/icons/kdeclassic/48x48/actions/lock.png
 share/icons/kdeclassic/48x48/actions/misc.png
 share/icons/kdeclassic/48x48/actions/share.png
 share/icons/kdeclassic/48x48/actions/unindent.png
+share/icons/kdeclassic/48x48/apps/
 share/icons/kdeclassic/48x48/apps/access.png
 share/icons/kdeclassic/48x48/apps/agent.png
 share/icons/kdeclassic/48x48/apps/ark.png
@@ -4363,6 +4447,7 @@ share/icons/kdeclassic/48x48/apps/xedit.png
 share/icons/kdeclassic/48x48/apps/xemacs.png
 share/icons/kdeclassic/48x48/apps/xmag.png
 share/icons/kdeclassic/48x48/apps/xv.png
+share/icons/kdeclassic/48x48/devices/
 share/icons/kdeclassic/48x48/devices/3floppy_mount.png
 share/icons/kdeclassic/48x48/devices/3floppy_unmount.png
 share/icons/kdeclassic/48x48/devices/5floppy_mount.png
@@ -4388,6 +4473,7 @@ share/icons/kdeclassic/48x48/devices/scanner.png
 share/icons/kdeclassic/48x48/devices/tablet.png
 share/icons/kdeclassic/48x48/devices/zip_mount.png
 share/icons/kdeclassic/48x48/devices/zip_unmount.png
+share/icons/kdeclassic/48x48/filesystems/
 share/icons/kdeclassic/48x48/filesystems/blockdevice.png
 share/icons/kdeclassic/48x48/filesystems/chardevice.png
 share/icons/kdeclassic/48x48/filesystems/desktop.png
@@ -4436,6 +4522,7 @@ share/icons/kdeclassic/48x48/filesystems/trashcan_empty.png
 share/icons/kdeclassic/48x48/filesystems/trashcan_full.png
 share/icons/kdeclassic/48x48/filesystems/www.png
 share/icons/kdeclassic/48x48/filesystems/zip.png
+share/icons/kdeclassic/48x48/mimetypes/
 share/icons/kdeclassic/48x48/mimetypes/applix.png
 share/icons/kdeclassic/48x48/mimetypes/binary.png
 share/icons/kdeclassic/48x48/mimetypes/binary2.png
@@ -4504,9 +4591,12 @@ share/icons/kdeclassic/48x48/mimetypes/vectorgfx.png
 share/icons/kdeclassic/48x48/mimetypes/video.png
 share/icons/kdeclassic/48x48/mimetypes/widget_doc.png
 share/icons/kdeclassic/48x48/mimetypes/wordprocessing.png
+share/icons/kdeclassic/64x64/
+share/icons/kdeclassic/64x64/filesystems/
 share/icons/kdeclassic/64x64/filesystems/folder.png
 share/icons/kdeclassic/64x64/filesystems/folder_html.png
 share/icons/kdeclassic/64x64/filesystems/link.png
+share/icons/kdeclassic/64x64/mimetypes/
 share/icons/kdeclassic/64x64/mimetypes/binary2.png
 share/icons/kdeclassic/64x64/mimetypes/cdtrack.png
 share/icons/kdeclassic/64x64/mimetypes/core.png
@@ -4545,6 +4635,9 @@ share/icons/kdeclassic/64x64/mimetypes/unknown.png
 share/icons/kdeclassic/64x64/mimetypes/video.png
 share/icons/kdeclassic/64x64/mimetypes/widget_doc.png
 share/icons/kdeclassic/index.theme
+share/icons/kids/
+share/icons/kids/16x16/
+share/icons/kids/16x16/actions/
 share/icons/kids/16x16/actions/Untitled.png
 share/icons/kids/16x16/actions/about_kde.png
 share/icons/kids/16x16/actions/appearance.png
@@ -4617,6 +4710,7 @@ share/icons/kids/16x16/actions/viewmagfit.png
 share/icons/kids/16x16/actions/window_fullscreen.png
 share/icons/kids/16x16/actions/window_new.png
 share/icons/kids/16x16/actions/window_nofullscreen.png
+share/icons/kids/16x16/apps/
 share/icons/kids/16x16/apps/Untitled.png
 share/icons/kids/16x16/apps/agent.png
 share/icons/kids/16x16/apps/agt_action_fail.png
@@ -4748,6 +4842,7 @@ share/icons/kids/16x16/apps/xcalc.png
 share/icons/kids/16x16/apps/xmail.png
 share/icons/kids/16x16/apps/xmms.png
 share/icons/kids/16x16/apps/xpaint.png
+share/icons/kids/16x16/devices/
 share/icons/kids/16x16/devices/3floppy_mount.png
 share/icons/kids/16x16/devices/3floppy_unmount.png
 share/icons/kids/16x16/devices/camera.png
@@ -4761,6 +4856,7 @@ share/icons/kids/16x16/devices/nfs_unmount.png
 share/icons/kids/16x16/devices/print_printer.png
 share/icons/kids/16x16/devices/printer.png
 share/icons/kids/16x16/devices/printer2.png
+share/icons/kids/16x16/filesystems/
 share/icons/kids/16x16/filesystems/connect_to_network.png
 share/icons/kids/16x16/filesystems/desktop.png
 share/icons/kids/16x16/filesystems/exec.png
@@ -4784,6 +4880,7 @@ share/icons/kids/16x16/filesystems/network_local.png
 share/icons/kids/16x16/filesystems/socket.png
 share/icons/kids/16x16/filesystems/trashcan_empty.png
 share/icons/kids/16x16/filesystems/trashcan_full.png
+share/icons/kids/16x16/mimetypes/
 share/icons/kids/16x16/mimetypes/cdimage.png
 share/icons/kids/16x16/mimetypes/document.png
 share/icons/kids/16x16/mimetypes/empty.png
@@ -4795,6 +4892,8 @@ share/icons/kids/16x16/mimetypes/midi.png
 share/icons/kids/16x16/mimetypes/netscape_doc.png
 share/icons/kids/16x16/mimetypes/sound.png
 share/icons/kids/16x16/mimetypes/unknown.png
+share/icons/kids/22x22/
+share/icons/kids/22x22/actions/
 share/icons/kids/22x22/actions/Untitled.png
 share/icons/kids/22x22/actions/about_kde.png
 share/icons/kids/22x22/actions/appearance.png
@@ -4867,6 +4966,7 @@ share/icons/kids/22x22/actions/viewmagfit.png
 share/icons/kids/22x22/actions/window_fullscreen.png
 share/icons/kids/22x22/actions/window_new.png
 share/icons/kids/22x22/actions/window_nofullscreen.png
+share/icons/kids/22x22/apps/
 share/icons/kids/22x22/apps/Untitled.png
 share/icons/kids/22x22/apps/agent.png
 share/icons/kids/22x22/apps/agt-family-off.png
@@ -4996,6 +5096,7 @@ share/icons/kids/22x22/apps/xcalc.png
 share/icons/kids/22x22/apps/xmail.png
 share/icons/kids/22x22/apps/xmms.png
 share/icons/kids/22x22/apps/xpaint.png
+share/icons/kids/22x22/devices/
 share/icons/kids/22x22/devices/3floppy_mount.png
 share/icons/kids/22x22/devices/3floppy_unmount.png
 share/icons/kids/22x22/devices/camera.png
@@ -5009,6 +5110,7 @@ share/icons/kids/22x22/devices/nfs_unmount.png
 share/icons/kids/22x22/devices/print_printer.png
 share/icons/kids/22x22/devices/printer.png
 share/icons/kids/22x22/devices/printer2.png
+share/icons/kids/22x22/filesystems/
 share/icons/kids/22x22/filesystems/connect_to_network.png
 share/icons/kids/22x22/filesystems/desktop.png
 share/icons/kids/22x22/filesystems/exec.png
@@ -5031,6 +5133,7 @@ share/icons/kids/22x22/filesystems/network_local.png
 share/icons/kids/22x22/filesystems/socket.png
 share/icons/kids/22x22/filesystems/trashcan_empty.png
 share/icons/kids/22x22/filesystems/trashcan_full.png
+share/icons/kids/22x22/mimetypes/
 share/icons/kids/22x22/mimetypes/cdimage.png
 share/icons/kids/22x22/mimetypes/document.png
 share/icons/kids/22x22/mimetypes/empty.png
@@ -5042,6 +5145,8 @@ share/icons/kids/22x22/mimetypes/midi.png
 share/icons/kids/22x22/mimetypes/netscape_doc.png
 share/icons/kids/22x22/mimetypes/sound.png
 share/icons/kids/22x22/mimetypes/unknown.png
+share/icons/kids/32x32/
+share/icons/kids/32x32/actions/
 share/icons/kids/32x32/actions/Untitled.png
 share/icons/kids/32x32/actions/about_kde.png
 share/icons/kids/32x32/actions/appearance.png
@@ -5114,6 +5219,7 @@ share/icons/kids/32x32/actions/viewmagfit.png
 share/icons/kids/32x32/actions/window_fullscreen.png
 share/icons/kids/32x32/actions/window_new.png
 share/icons/kids/32x32/actions/window_nofullscreen.png
+share/icons/kids/32x32/apps/
 share/icons/kids/32x32/apps/Untitled.png
 share/icons/kids/32x32/apps/agent.png
 share/icons/kids/32x32/apps/agt-family-off.png
@@ -5256,6 +5362,7 @@ share/icons/kids/32x32/apps/xcalc.png
 share/icons/kids/32x32/apps/xmail.png
 share/icons/kids/32x32/apps/xmms.png
 share/icons/kids/32x32/apps/xpaint.png
+share/icons/kids/32x32/devices/
 share/icons/kids/32x32/devices/3floppy_mount.png
 share/icons/kids/32x32/devices/3floppy_unmount.png
 share/icons/kids/32x32/devices/camera.png
@@ -5269,6 +5376,7 @@ share/icons/kids/32x32/devices/nfs_unmount.png
 share/icons/kids/32x32/devices/print_printer.png
 share/icons/kids/32x32/devices/printer.png
 share/icons/kids/32x32/devices/printer2.png
+share/icons/kids/32x32/filesystems/
 share/icons/kids/32x32/filesystems/connect_to_network.png
 share/icons/kids/32x32/filesystems/desktop.png
 share/icons/kids/32x32/filesystems/exec.png
@@ -5292,6 +5400,7 @@ share/icons/kids/32x32/filesystems/network_local.png
 share/icons/kids/32x32/filesystems/socket.png
 share/icons/kids/32x32/filesystems/trashcan_empty.png
 share/icons/kids/32x32/filesystems/trashcan_full.png
+share/icons/kids/32x32/mimetypes/
 share/icons/kids/32x32/mimetypes/cdimage.png
 share/icons/kids/32x32/mimetypes/document.png
 share/icons/kids/32x32/mimetypes/empty.png
@@ -5303,6 +5412,8 @@ share/icons/kids/32x32/mimetypes/midi.png
 share/icons/kids/32x32/mimetypes/netscape_doc.png
 share/icons/kids/32x32/mimetypes/sound.png
 share/icons/kids/32x32/mimetypes/unknown.png
+share/icons/kids/48x48/
+share/icons/kids/48x48/actions/
 share/icons/kids/48x48/actions/Untitled.png
 share/icons/kids/48x48/actions/about_kde.png
 share/icons/kids/48x48/actions/appearance.png
@@ -5375,6 +5486,7 @@ share/icons/kids/48x48/actions/viewmagfit.png
 share/icons/kids/48x48/actions/window_fullscreen.png
 share/icons/kids/48x48/actions/window_new.png
 share/icons/kids/48x48/actions/window_nofullscreen.png
+share/icons/kids/48x48/apps/
 share/icons/kids/48x48/apps/Untitled.png
 share/icons/kids/48x48/apps/agent.png
 share/icons/kids/48x48/apps/agt-family-off.png
@@ -5508,6 +5620,7 @@ share/icons/kids/48x48/apps/xcalc.png
 share/icons/kids/48x48/apps/xmail.png
 share/icons/kids/48x48/apps/xmms.png
 share/icons/kids/48x48/apps/xpaint.png
+share/icons/kids/48x48/devices/
 share/icons/kids/48x48/devices/3floppy_mount.png
 share/icons/kids/48x48/devices/3floppy_unmount.png
 share/icons/kids/48x48/devices/48x48.png
@@ -5522,6 +5635,7 @@ share/icons/kids/48x48/devices/nfs_unmount.png
 share/icons/kids/48x48/devices/print_printer.png
 share/icons/kids/48x48/devices/printer.png
 share/icons/kids/48x48/devices/printer2.png
+share/icons/kids/48x48/filesystems/
 share/icons/kids/48x48/filesystems/connect_to_network.png
 share/icons/kids/48x48/filesystems/desktop.png
 share/icons/kids/48x48/filesystems/exec.png
@@ -5545,6 +5659,7 @@ share/icons/kids/48x48/filesystems/network_local.png
 share/icons/kids/48x48/filesystems/socket.png
 share/icons/kids/48x48/filesystems/trashcan_empty.png
 share/icons/kids/48x48/filesystems/trashcan_full.png
+share/icons/kids/48x48/mimetypes/
 share/icons/kids/48x48/mimetypes/cdimage.png
 share/icons/kids/48x48/mimetypes/document.png
 share/icons/kids/48x48/mimetypes/empty.png
@@ -5556,6 +5671,8 @@ share/icons/kids/48x48/mimetypes/midi.png
 share/icons/kids/48x48/mimetypes/netscape_doc.png
 share/icons/kids/48x48/mimetypes/sound.png
 share/icons/kids/48x48/mimetypes/unknown.png
+share/icons/kids/64x64/
+share/icons/kids/64x64/actions/
 share/icons/kids/64x64/actions/Untitled.png
 share/icons/kids/64x64/actions/about_kde.png
 share/icons/kids/64x64/actions/appearance.png
@@ -5627,6 +5744,7 @@ share/icons/kids/64x64/actions/viewmagfit.png
 share/icons/kids/64x64/actions/window_fullscreen.png
 share/icons/kids/64x64/actions/window_new.png
 share/icons/kids/64x64/actions/window_nofullscreen.png
+share/icons/kids/64x64/apps/
 share/icons/kids/64x64/apps/Untitled.png
 share/icons/kids/64x64/apps/agent.png
 share/icons/kids/64x64/apps/agt-family-off.png
@@ -5758,6 +5876,7 @@ share/icons/kids/64x64/apps/xcalc.png
 share/icons/kids/64x64/apps/xmail.png
 share/icons/kids/64x64/apps/xmms.png
 share/icons/kids/64x64/apps/xpaint.png
+share/icons/kids/64x64/devices/
 share/icons/kids/64x64/devices/3floppy_mount.png
 share/icons/kids/64x64/devices/3floppy_unmount.png
 share/icons/kids/64x64/devices/camera.png
@@ -5771,6 +5890,7 @@ share/icons/kids/64x64/devices/nfs_unmount.png
 share/icons/kids/64x64/devices/print_printer.png
 share/icons/kids/64x64/devices/printer.png
 share/icons/kids/64x64/devices/printer2.png
+share/icons/kids/64x64/filesystems/
 share/icons/kids/64x64/filesystems/connect_to_network.png
 share/icons/kids/64x64/filesystems/desktop.png
 share/icons/kids/64x64/filesystems/exec.png
@@ -5794,6 +5914,7 @@ share/icons/kids/64x64/filesystems/network_local.png
 share/icons/kids/64x64/filesystems/socket.png
 share/icons/kids/64x64/filesystems/trashcan_empty.png
 share/icons/kids/64x64/filesystems/trashcan_full.png
+share/icons/kids/64x64/mimetypes/
 share/icons/kids/64x64/mimetypes/cdimage.png
 share/icons/kids/64x64/mimetypes/document.png
 share/icons/kids/64x64/mimetypes/empty.png
@@ -5806,6 +5927,9 @@ share/icons/kids/64x64/mimetypes/netscape_doc.png
 share/icons/kids/64x64/mimetypes/sound.png
 share/icons/kids/64x64/mimetypes/unknown.png
 share/icons/kids/index.theme
+share/icons/slick/
+share/icons/slick/16x16/
+share/icons/slick/16x16/actions/
 share/icons/slick/16x16/actions/1downarrow.png
 share/icons/slick/16x16/actions/1leftarrow.png
 share/icons/slick/16x16/actions/1rightarrow.png
@@ -6002,6 +6126,7 @@ share/icons/slick/16x16/actions/window_new.png
 share/icons/slick/16x16/actions/window_nofullscreen.png
 share/icons/slick/16x16/actions/wizard.png
 share/icons/slick/16x16/actions/yellowled.png
+share/icons/slick/16x16/apps/
 share/icons/slick/16x16/apps/ark.png
 share/icons/slick/16x16/apps/background.png
 share/icons/slick/16x16/apps/bell.png
@@ -6142,6 +6267,7 @@ share/icons/slick/16x16/apps/window_list.png
 share/icons/slick/16x16/apps/xapp.png
 share/icons/slick/16x16/apps/xmms.png
 share/icons/slick/16x16/apps/xpaint.png
+share/icons/slick/16x16/devices/
 share/icons/slick/16x16/devices/3floppy_mount.png
 share/icons/slick/16x16/devices/3floppy_unmount.png
 share/icons/slick/16x16/devices/camera.png
@@ -6175,6 +6301,7 @@ share/icons/slick/16x16/devices/nfs_unmount.png
 share/icons/slick/16x16/devices/print_printer.png
 share/icons/slick/16x16/devices/printer1.png
 share/icons/slick/16x16/devices/printer2.png
+share/icons/slick/16x16/filesystems/
 share/icons/slick/16x16/filesystems/blockdevice.png
 share/icons/slick/16x16/filesystems/chardevice.png
 share/icons/slick/16x16/filesystems/connecting.png
@@ -6302,6 +6429,7 @@ share/icons/slick/16x16/filesystems/trashcan_empty.png
 share/icons/slick/16x16/filesystems/trashcan_full.png
 share/icons/slick/16x16/filesystems/www.png
 share/icons/slick/16x16/filesystems/zip.png
+share/icons/slick/16x16/mimetypes/
 share/icons/slick/16x16/mimetypes/applix.png
 share/icons/slick/16x16/mimetypes/archive.png
 share/icons/slick/16x16/mimetypes/archive_2.png
@@ -6386,6 +6514,8 @@ share/icons/slick/16x16/mimetypes/war.png
 share/icons/slick/16x16/mimetypes/widget_doc.png
 share/icons/slick/16x16/mimetypes/wordprocessing.png
 share/icons/slick/16x16/mimetypes/xcf.png
+share/icons/slick/22x22/
+share/icons/slick/22x22/actions/
 share/icons/slick/22x22/actions/1downarrow.png
 share/icons/slick/22x22/actions/1leftarrow.png
 share/icons/slick/22x22/actions/1rightarrow.png
@@ -6535,6 +6665,7 @@ share/icons/slick/22x22/actions/window_fullscreen.png
 share/icons/slick/22x22/actions/window_new.png
 share/icons/slick/22x22/actions/window_nofullscreen.png
 share/icons/slick/22x22/actions/wizard.png
+share/icons/slick/22x22/apps/
 share/icons/slick/22x22/apps/bell.png
 share/icons/slick/22x22/apps/date.png
 share/icons/slick/22x22/apps/kcmsystem.png
@@ -6547,6 +6678,8 @@ share/icons/slick/22x22/apps/kmixdocked1.png
 share/icons/slick/22x22/apps/knotes.png
 share/icons/slick/22x22/apps/noatun.png
 share/icons/slick/22x22/apps/personal.png
+share/icons/slick/32x32/
+share/icons/slick/32x32/actions/
 share/icons/slick/32x32/actions/1downarrow.png
 share/icons/slick/32x32/actions/1leftarrow.png
 share/icons/slick/32x32/actions/1rightarrow.png
@@ -6701,6 +6834,7 @@ share/icons/slick/32x32/actions/window_fullscreen.png
 share/icons/slick/32x32/actions/window_new.png
 share/icons/slick/32x32/actions/window_nofullscreen.png
 share/icons/slick/32x32/actions/wizard.png
+share/icons/slick/32x32/apps/
 share/icons/slick/32x32/apps/ark.png
 share/icons/slick/32x32/apps/bell.png
 share/icons/slick/32x32/apps/camera.png
@@ -6787,6 +6921,7 @@ share/icons/slick/32x32/apps/vmware.png
 share/icons/slick/32x32/apps/window_list.png
 share/icons/slick/32x32/apps/xapp.png
 share/icons/slick/32x32/apps/xmms.png
+share/icons/slick/32x32/devices/
 share/icons/slick/32x32/devices/3floppy_mount.png
 share/icons/slick/32x32/devices/3floppy_unmount.png
 share/icons/slick/32x32/devices/camera.png
@@ -6812,6 +6947,7 @@ share/icons/slick/32x32/devices/nfs_unmount.png
 share/icons/slick/32x32/devices/print_printer.png
 share/icons/slick/32x32/devices/printer1.png
 share/icons/slick/32x32/devices/printer2.png
+share/icons/slick/32x32/filesystems/
 share/icons/slick/32x32/filesystems/blockdevice.png
 share/icons/slick/32x32/filesystems/chardevice.png
 share/icons/slick/32x32/filesystems/connecting.png
@@ -6927,6 +7063,7 @@ share/icons/slick/32x32/filesystems/trashcan_empty.png
 share/icons/slick/32x32/filesystems/trashcan_full.png
 share/icons/slick/32x32/filesystems/www.png
 share/icons/slick/32x32/filesystems/zip.png
+share/icons/slick/32x32/mimetypes/
 share/icons/slick/32x32/mimetypes/applix.png
 share/icons/slick/32x32/mimetypes/archive.png
 share/icons/slick/32x32/mimetypes/ascii.png
@@ -6999,6 +7136,8 @@ share/icons/slick/32x32/mimetypes/war.png
 share/icons/slick/32x32/mimetypes/widget_doc.png
 share/icons/slick/32x32/mimetypes/wordprocessing.png
 share/icons/slick/32x32/mimetypes/xcf.png
+share/icons/slick/48x48/
+share/icons/slick/48x48/actions/
 share/icons/slick/48x48/actions/cdcopy.png
 share/icons/slick/48x48/actions/fork.png
 share/icons/slick/48x48/actions/gear.png
@@ -7009,6 +7148,7 @@ share/icons/slick/48x48/actions/messagebox_critical.png
 share/icons/slick/48x48/actions/messagebox_info.png
 share/icons/slick/48x48/actions/messagebox_warning.png
 share/icons/slick/48x48/actions/share.png
+share/icons/slick/48x48/apps/
 share/icons/slick/48x48/apps/ark.png
 share/icons/slick/48x48/apps/background.png
 share/icons/slick/48x48/apps/bell.png
@@ -7108,6 +7248,7 @@ share/icons/slick/48x48/apps/vmware.png
 share/icons/slick/48x48/apps/window_list.png
 share/icons/slick/48x48/apps/xapp.png
 share/icons/slick/48x48/apps/xmms.png
+share/icons/slick/48x48/devices/
 share/icons/slick/48x48/devices/3floppy_mount.png
 share/icons/slick/48x48/devices/3floppy_unmount.png
 share/icons/slick/48x48/devices/cd.png
@@ -7132,6 +7273,7 @@ share/icons/slick/48x48/devices/nfs_mount.png
 share/icons/slick/48x48/devices/nfs_unmount.png
 share/icons/slick/48x48/devices/print_printer.png
 share/icons/slick/48x48/devices/printer1.png
+share/icons/slick/48x48/filesystems/
 share/icons/slick/48x48/filesystems/blockdevice.png
 share/icons/slick/48x48/filesystems/chardevice.png
 share/icons/slick/48x48/filesystems/connecting.png
@@ -7263,6 +7405,7 @@ share/icons/slick/48x48/filesystems/trashcan_empty.png
 share/icons/slick/48x48/filesystems/trashcan_full.png
 share/icons/slick/48x48/filesystems/www.png
 share/icons/slick/48x48/filesystems/zip.png
+share/icons/slick/48x48/mimetypes/
 share/icons/slick/48x48/mimetypes/applix.png
 share/icons/slick/48x48/mimetypes/archive.png
 share/icons/slick/48x48/mimetypes/ascii.png
@@ -7350,6 +7493,8 @@ share/icons/slick/48x48/mimetypes/widget_doc.png
 share/icons/slick/48x48/mimetypes/wordprocessing.png
 share/icons/slick/48x48/mimetypes/xcf.png
 share/icons/slick/48x48/mimetypes/zip.png
+share/icons/slick/64x64/
+share/icons/slick/64x64/actions/
 share/icons/slick/64x64/actions/bookmark.png
 share/icons/slick/64x64/actions/bookmark_add.png
 share/icons/slick/64x64/actions/cdcopy.png
@@ -7361,10 +7506,12 @@ share/icons/slick/64x64/actions/launch.png
 share/icons/slick/64x64/actions/lock.png
 share/icons/slick/64x64/actions/share.png
 share/icons/slick/64x64/actions/share1.png
+share/icons/slick/64x64/apps/
 share/icons/slick/64x64/apps/komba2.png
 share/icons/slick/64x64/apps/konsole.png
 share/icons/slick/64x64/apps/samba.png
 share/icons/slick/64x64/apps/terminal.png
+share/icons/slick/64x64/filesystems/
 share/icons/slick/64x64/filesystems/chardevice.png
 share/icons/slick/64x64/filesystems/desktop.png
 share/icons/slick/64x64/filesystems/exec.png
@@ -7419,6 +7566,7 @@ share/icons/slick/64x64/filesystems/trashcan_empty.png
 share/icons/slick/64x64/filesystems/trashcan_full.png
 share/icons/slick/64x64/filesystems/www.png
 share/icons/slick/64x64/filesystems/zip.png
+share/icons/slick/64x64/mimetypes/
 share/icons/slick/64x64/mimetypes/applix.png
 share/icons/slick/64x64/mimetypes/archive.png
 share/icons/slick/64x64/mimetypes/ascii.png
@@ -7537,151 +7685,3 @@ share/wallpapers/sunday_brunch.jpg
 share/wallpapers/vegetative_fog.jpg
 share/wallpapers/winter_theme_1.jpg
 %%SHARED%%
-@dirrm share/icons/slick/64x64/mimetypes
-@dirrm share/icons/slick/64x64/filesystems
-@dirrm share/icons/slick/64x64/apps
-@dirrm share/icons/slick/64x64/actions
-@dirrm share/icons/slick/64x64
-@dirrm share/icons/slick/48x48/mimetypes
-@dirrm share/icons/slick/48x48/filesystems
-@dirrm share/icons/slick/48x48/devices
-@dirrm share/icons/slick/48x48/apps
-@dirrm share/icons/slick/48x48/actions
-@dirrm share/icons/slick/48x48
-@dirrm share/icons/slick/32x32/mimetypes
-@dirrm share/icons/slick/32x32/filesystems
-@dirrm share/icons/slick/32x32/devices
-@dirrm share/icons/slick/32x32/apps
-@dirrm share/icons/slick/32x32/actions
-@dirrm share/icons/slick/32x32
-@dirrm share/icons/slick/22x22/apps
-@dirrm share/icons/slick/22x22/actions
-@dirrm share/icons/slick/22x22
-@dirrm share/icons/slick/16x16/mimetypes
-@dirrm share/icons/slick/16x16/filesystems
-@dirrm share/icons/slick/16x16/devices
-@dirrm share/icons/slick/16x16/apps
-@dirrm share/icons/slick/16x16/actions
-@dirrm share/icons/slick/16x16
-@dirrm share/icons/slick
-@dirrm share/icons/kids/64x64/mimetypes
-@dirrm share/icons/kids/64x64/filesystems
-@dirrm share/icons/kids/64x64/devices
-@dirrm share/icons/kids/64x64/apps
-@dirrm share/icons/kids/64x64/actions
-@dirrm share/icons/kids/64x64
-@dirrm share/icons/kids/48x48/mimetypes
-@dirrm share/icons/kids/48x48/filesystems
-@dirrm share/icons/kids/48x48/devices
-@dirrm share/icons/kids/48x48/apps
-@dirrm share/icons/kids/48x48/actions
-@dirrm share/icons/kids/48x48
-@dirrm share/icons/kids/32x32/mimetypes
-@dirrm share/icons/kids/32x32/filesystems
-@dirrm share/icons/kids/32x32/devices
-@dirrm share/icons/kids/32x32/apps
-@dirrm share/icons/kids/32x32/actions
-@dirrm share/icons/kids/32x32
-@dirrm share/icons/kids/22x22/mimetypes
-@dirrm share/icons/kids/22x22/filesystems
-@dirrm share/icons/kids/22x22/devices
-@dirrm share/icons/kids/22x22/apps
-@dirrm share/icons/kids/22x22/actions
-@dirrm share/icons/kids/22x22
-@dirrm share/icons/kids/16x16/mimetypes
-@dirrm share/icons/kids/16x16/filesystems
-@dirrm share/icons/kids/16x16/devices
-@dirrm share/icons/kids/16x16/apps
-@dirrm share/icons/kids/16x16/actions
-@dirrm share/icons/kids/16x16
-@dirrm share/icons/kids
-@dirrm share/icons/kdeclassic/64x64/mimetypes
-@dirrm share/icons/kdeclassic/64x64/filesystems
-@dirrm share/icons/kdeclassic/64x64
-@dirrm share/icons/kdeclassic/48x48/mimetypes
-@dirrm share/icons/kdeclassic/48x48/filesystems
-@dirrm share/icons/kdeclassic/48x48/devices
-@dirrm share/icons/kdeclassic/48x48/apps
-@dirrm share/icons/kdeclassic/48x48/actions
-@dirrm share/icons/kdeclassic/48x48
-@dirrm share/icons/kdeclassic/32x32/mimetypes
-@dirrm share/icons/kdeclassic/32x32/filesystems
-@dirrm share/icons/kdeclassic/32x32/devices
-@dirrm share/icons/kdeclassic/32x32/apps
-@dirrm share/icons/kdeclassic/32x32/actions
-@dirrm share/icons/kdeclassic/32x32
-@dirrm share/icons/kdeclassic/22x22/mimetypes
-@dirrm share/icons/kdeclassic/22x22/apps
-@dirrm share/icons/kdeclassic/22x22/actions
-@dirrm share/icons/kdeclassic/22x22
-@dirrm share/icons/kdeclassic/16x16/mimetypes
-@dirrm share/icons/kdeclassic/16x16/filesystems
-@dirrm share/icons/kdeclassic/16x16/devices
-@dirrm share/icons/kdeclassic/16x16/apps
-@dirrm share/icons/kdeclassic/16x16/actions
-@dirrm share/icons/kdeclassic/16x16
-@dirrm share/icons/kdeclassic
-@dirrm share/icons/ikons/64x64/filesystems
-@dirrm share/icons/ikons/64x64/apps
-@dirrm share/icons/ikons/64x64
-@dirrm share/icons/ikons/48x48/mimetypes
-@dirrm share/icons/ikons/48x48/filesystems
-@dirrm share/icons/ikons/48x48/devices
-@dirrm share/icons/ikons/48x48/apps
-@dirrm share/icons/ikons/48x48
-@dirrm share/icons/ikons/32x32/mimetypes
-@dirrm share/icons/ikons/32x32/filesystems
-@dirrm share/icons/ikons/32x32/devices
-@dirrm share/icons/ikons/32x32/apps
-@dirrm share/icons/ikons/32x32
-@dirrm share/icons/ikons/22x22/apps
-@dirrm share/icons/ikons/22x22/actions
-@dirrm share/icons/ikons/22x22
-@dirrm share/icons/ikons/16x16/mimetypes
-@dirrm share/icons/ikons/16x16/filesystems
-@dirrm share/icons/ikons/16x16/devices
-@dirrm share/icons/ikons/16x16/apps
-@dirrm share/icons/ikons/16x16/actions
-@dirrm share/icons/ikons/16x16
-@dirrm share/icons/ikons
-@dirrm share/icons/Technical/48x48/mimetypes
-@dirrm share/icons/Technical/48x48/filesystems
-@dirrm share/icons/Technical/48x48
-@dirrm share/icons/Technical/32x32/mimetypes
-@dirrm share/icons/Technical/32x32/filesystems
-@dirrm share/icons/Technical/32x32/actions
-@dirrm share/icons/Technical/32x32
-@dirrm share/icons/Technical
-@dirrm share/icons/Locolor/32x32/mimetypes
-@dirrm share/icons/Locolor/32x32/filesystems
-@dirrm share/icons/Locolor/32x32/devices
-@dirrm share/icons/Locolor/32x32/apps
-@dirrm share/icons/Locolor/32x32/actions
-@dirrm share/icons/Locolor/32x32
-@dirrm share/icons/Locolor/16x16/mimetypes
-@dirrm share/icons/Locolor/16x16/filesystems
-@dirrm share/icons/Locolor/16x16/devices
-@dirrm share/icons/Locolor/16x16/apps
-@dirrm share/icons/Locolor/16x16/actions
-@dirrm share/icons/Locolor/16x16
-@dirrm share/icons/Locolor
-@dirrm share/apps/kworldclock/maps/rainfall
-@dirrm share/apps/kworldclock/maps/mggd
-@dirrm share/apps/kworldclock/maps/depths
-@dirrm share/apps/kworldclock/maps/caida_bw
-@dirrm share/apps/kworldclock/maps/caida
-@dirrm share/apps/kworldclock/maps/bio
-@dirrm share/apps/kworldclock/maps/alt
-@dirrm share/apps/kworldclock/maps
-@dirrm share/apps/kworldclock
-@dirrm share/apps/kwin/icewm-themes/Model
-@dirrm share/apps/kwin/icewm-themes/MenschMaschine
-@dirrm share/apps/kwin/icewm-themes
-@dirrm share/apps/kwin/glow-themes/square
-@dirrm share/apps/kwin/glow-themes/glass_verylarge
-@dirrm share/apps/kwin/glow-themes/glass_large
-@dirrm share/apps/kwin/glow-themes/glass_huge
-@dirrm share/apps/kwin/glow-themes/glass
-@dirrm share/apps/kwin/glow-themes/default
-@dirrm share/apps/kwin/glow-themes
-@dirrm share/apps/kscreensaver

@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST.nl,v 1.14 2004/03/08 11:10:15 espie Exp $
+@comment $OpenBSD: PLIST.nl,v 1.15 2004/07/24 12:47:15 espie Exp $
+share/apps/ktuberling/
+share/apps/ktuberling/sounds/
+share/apps/ktuberling/sounds/nl/
 share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
@@ -20,8 +23,15 @@ share/apps/ktuberling/sounds/nl/strik.wav
 share/apps/ktuberling/sounds/nl/stropdas.wav
 share/apps/ktuberling/sounds/nl/wenkbrauw.wav
 share/apps/ktuberling/sounds/nl/zonnebril.wav
+share/doc/HTML/nl/
+${DOC}amor/
+${DOC}amor/common
+${DOC}amor/${C}
+${DOC}amor/${I}
+${DOC}artsbuilder/
 ${DOC}artsbuilder/digitalaudio.docbook
 ${DOC}artsbuilder/gui.docbook
+${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -73,13 +83,33 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}kaddressbook/
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kalzium/
 ${DOC}kalzium/common
 ${DOC}kalzium/${C}
 ${DOC}kalzium/${I}
+${DOC}kalzium/screenshot1.png
+${DOC}kalzium/screenshot2.png
+${DOC}kalzium/screenshot3.png
+${DOC}kalzium/settings.png
+${DOC}kandy/
+${DOC}kandy/common
+${DOC}kandy/${C}
+${DOC}kandy/${I}
+${DOC}karm/
+${DOC}karm/common
+${DOC}karm/${C}
+${DOC}karm/${I}
+${DOC}karm/screenshot.png
+${DOC}kate/
+${DOC}kate-plugins/
+${DOC}kate-plugins/common
 ${DOC}kate-plugins/htmltools.docbook
+${DOC}kate-plugins/${C}
+${DOC}kate-plugins/${I}
 ${DOC}kate-plugins/insertcommand.docbook
 ${DOC}kate-plugins/openheader.docbook
 ${DOC}kate-plugins/projectmanager.docbook
@@ -98,132 +128,203 @@ ${DOC}kate/menus.docbook
 ${DOC}kate/part.docbook
 ${DOC}kate/plugins.docbook
 ${DOC}kate/regular-expressions.docbook
+${DOC}kbabel/
+${DOC}kbabel/catman.docbook
+${DOC}kbabel/faq.docbook
+${DOC}kbabel/kbabeldict.docbook
+${DOC}kbruch/
+${DOC}kbruch/common
+${DOC}kbruch/${C}
+${DOC}kbruch/${I}
+${DOC}kbugbuster/
 ${DOC}kbugbuster/common
 ${DOC}kbugbuster/${C}
 ${DOC}kbugbuster/${I}
+${DOC}kcmktalkd/
+${DOC}kcmktalkd/common
+${DOC}kcmktalkd/${C}
+${DOC}kcmktalkd/${I}
+${DOC}kcontrol/
+${DOC}kcontrol/arts/
 ${DOC}kcontrol/arts/common
 ${DOC}kcontrol/arts/${C}
 ${DOC}kcontrol/arts/${I}
 ${DOC}kcontrol/arts/midi.docbook
+${DOC}kcontrol/bell/
 ${DOC}kcontrol/bell/common
 ${DOC}kcontrol/bell/${C}
 ${DOC}kcontrol/bell/${I}
+${DOC}kcontrol/cache/
+${DOC}kcontrol/cache/common
+${DOC}kcontrol/cache/${C}
+${DOC}kcontrol/cache/${I}
+${DOC}kcontrol/clock/
 ${DOC}kcontrol/clock/common
 ${DOC}kcontrol/clock/${C}
 ${DOC}kcontrol/clock/${I}
+${DOC}kcontrol/colors/
 ${DOC}kcontrol/colors/common
 ${DOC}kcontrol/colors/${C}
 ${DOC}kcontrol/colors/${I}
 ${DOC}kcontrol/common
+${DOC}kcontrol/cookies/
 ${DOC}kcontrol/cookies/common
 ${DOC}kcontrol/cookies/${C}
 ${DOC}kcontrol/cookies/${I}
+${DOC}kcontrol/crypto/
 ${DOC}kcontrol/crypto/common
 ${DOC}kcontrol/crypto/${C}
 ${DOC}kcontrol/crypto/${I}
+${DOC}kcontrol/ebrowsing/
 ${DOC}kcontrol/ebrowsing/common
 ${DOC}kcontrol/ebrowsing/${C}
 ${DOC}kcontrol/ebrowsing/${I}
+${DOC}kcontrol/email/
 ${DOC}kcontrol/email/common
 ${DOC}kcontrol/email/${C}
 ${DOC}kcontrol/email/${I}
+${DOC}kcontrol/energy/
+${DOC}kcontrol/energy/common
+${DOC}kcontrol/energy/${C}
+${DOC}kcontrol/energy/${I}
+${DOC}kcontrol/filetypes/
 ${DOC}kcontrol/filetypes/common
 ${DOC}kcontrol/filetypes/${C}
 ${DOC}kcontrol/filetypes/${I}
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
+${DOC}kcontrol/kalarmd/
 ${DOC}kcontrol/kalarmd/common
 ${DOC}kcontrol/kalarmd/${C}
 ${DOC}kcontrol/kalarmd/${I}
+${DOC}kcontrol/kcmaccess/
 ${DOC}kcontrol/kcmaccess/common
 ${DOC}kcontrol/kcmaccess/${C}
 ${DOC}kcontrol/kcmaccess/${I}
+${DOC}kcontrol/kcmcss/
 ${DOC}kcontrol/kcmcss/common
 ${DOC}kcontrol/kcmcss/${C}
 ${DOC}kcontrol/kcmcss/${I}
+${DOC}kcontrol/kcmlaunch/
 ${DOC}kcontrol/kcmlaunch/common
 ${DOC}kcontrol/kcmlaunch/${C}
 ${DOC}kcontrol/kcmlaunch/${I}
+${DOC}kcontrol/kcmlowbatcrit/
 ${DOC}kcontrol/kcmlowbatcrit/common
 ${DOC}kcontrol/kcmlowbatcrit/${C}
 ${DOC}kcontrol/kcmlowbatcrit/${I}
+${DOC}kcontrol/kcmlowbatwarn/
 ${DOC}kcontrol/kcmlowbatwarn/common
 ${DOC}kcontrol/kcmlowbatwarn/${C}
 ${DOC}kcontrol/kcmlowbatwarn/${I}
+${DOC}kcontrol/kcmsmserver/
 ${DOC}kcontrol/kcmsmserver/common
 ${DOC}kcontrol/kcmsmserver/${C}
 ${DOC}kcontrol/kcmsmserver/${I}
+${DOC}kcontrol/kcmtaskbar/
 ${DOC}kcontrol/kcmtaskbar/common
 ${DOC}kcontrol/kcmtaskbar/${C}
 ${DOC}kcontrol/kcmtaskbar/${I}
+${DOC}kcontrol/keyboard/
 ${DOC}kcontrol/keyboard/common
 ${DOC}kcontrol/keyboard/${C}
 ${DOC}kcontrol/keyboard/${I}
+${DOC}kcontrol/keys/
 ${DOC}kcontrol/keys/common
 ${DOC}kcontrol/keys/${C}
 ${DOC}kcontrol/keys/${I}
+${DOC}kcontrol/khtml/
 ${DOC}kcontrol/khtml/common
 ${DOC}kcontrol/khtml/${C}
 ${DOC}kcontrol/khtml/${I}
 ${DOC}kcontrol/khtml/nsplugin.docbook
+${DOC}kcontrol/kmixcfg/
 ${DOC}kcontrol/kmixcfg/common
 ${DOC}kcontrol/kmixcfg/${C}
 ${DOC}kcontrol/kmixcfg/${I}
+${DOC}kcontrol/kthememgr/
 ${DOC}kcontrol/kthememgr/common
 ${DOC}kcontrol/kthememgr/${C}
 ${DOC}kcontrol/kthememgr/${I}
+${DOC}kcontrol/kwindecoration/
 ${DOC}kcontrol/kwindecoration/common
 ${DOC}kcontrol/kwindecoration/${C}
 ${DOC}kcontrol/kwindecoration/${I}
+${DOC}kcontrol/laptop/
 ${DOC}kcontrol/laptop/common
 ${DOC}kcontrol/laptop/${C}
 ${DOC}kcontrol/laptop/${I}
+${DOC}kcontrol/mouse/
 ${DOC}kcontrol/mouse/common
 ${DOC}kcontrol/mouse/${C}
 ${DOC}kcontrol/mouse/${I}
+${DOC}kcontrol/netpref/
 ${DOC}kcontrol/netpref/common
 ${DOC}kcontrol/netpref/${C}
 ${DOC}kcontrol/netpref/${I}
+${DOC}kcontrol/powerctrl/
 ${DOC}kcontrol/powerctrl/common
 ${DOC}kcontrol/powerctrl/${C}
 ${DOC}kcontrol/powerctrl/${I}
+${DOC}kcontrol/proxy/
 ${DOC}kcontrol/proxy/common
 ${DOC}kcontrol/proxy/${C}
 ${DOC}kcontrol/proxy/${I}
 ${DOC}kcontrol/proxy/socks.docbook
 ${DOC}kcontrol/screenshot.png
+${DOC}kcontrol/smb/
 ${DOC}kcontrol/smb/common
 ${DOC}kcontrol/smb/${C}
 ${DOC}kcontrol/smb/${I}
+${DOC}kcontrol/spellchecking/
 ${DOC}kcontrol/spellchecking/common
 ${DOC}kcontrol/spellchecking/${C}
 ${DOC}kcontrol/spellchecking/${I}
+${DOC}kcontrol/useragent/
 ${DOC}kcontrol/useragent/common
 ${DOC}kcontrol/useragent/${C}
 ${DOC}kcontrol/useragent/${I}
+${DOC}kcontrol/windowmanagement/
 ${DOC}kcontrol/windowmanagement/common
 ${DOC}kcontrol/windowmanagement/${C}
 ${DOC}kcontrol/windowmanagement/${I}
+${DOC}kdebugdialog/
 ${DOC}kdebugdialog/common
 ${DOC}kdebugdialog/${C}
 ${DOC}kdebugdialog/${I}
+${DOC}kdeprint/
+${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/extensions.docbook
 ${DOC}kdeprint/external-command.docbook
+${DOC}kdeprint/final-word.docbook
 ${DOC}kdeprint/lpd.docbook
 ${DOC}kdeprint/lpr-bsd.docbook
 ${DOC}kdeprint/lprng.docbook
 ${DOC}kdeprint/rlpr.docbook
+${DOC}kdesu/
 ${DOC}kdesu/common
 ${DOC}kdesu/${C}
 ${DOC}kdesu/${I}
-${DOC}kfouleggs/common
-${DOC}kfouleggs/${C}
-${DOC}kfouleggs/${I}
+${DOC}keduca/
+${DOC}keduca/common
+${DOC}keduca/${C}
+${DOC}keduca/${I}
+${DOC}kgamma/
 ${DOC}kgamma/common
 ${DOC}kgamma/${C}
 ${DOC}kgamma/${I}
+${DOC}kgpgcertmanager/
+${DOC}kgpgcertmanager/common
+${DOC}kgpgcertmanager/${C}
+${DOC}kgpgcertmanager/${I}
+${DOC}khangman/
+${DOC}khangman/common
+${DOC}khangman/${C}
+${DOC}khangman/${I}
+${DOC}khelpcenter/
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
+${DOC}khelpcenter/faq/
 ${DOC}khelpcenter/faq/about.docbook
 ${DOC}khelpcenter/faq/configkde.docbook
 ${DOC}khelpcenter/faq/desktop.docbook
@@ -241,6 +342,7 @@ ${DOC}khelpcenter/${C}
 ${DOC}khelpcenter/${I}
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
+${DOC}khelpcenter/userguide/
 ${DOC}khelpcenter/userguide/about-desktop.docbook
 ${DOC}khelpcenter/userguide/common
 ${DOC}khelpcenter/userguide/first-impressions.docbook
@@ -264,6 +366,7 @@ ${DOC}khelpcenter/userguide/more-help.docbook
 ${DOC}khelpcenter/userguide/shortcuts.docbook
 ${DOC}khelpcenter/userguide/staff.docbook
 ${DOC}khelpcenter/userguide/ug-faq.docbook
+${DOC}khelpcenter/visualdict/
 ${DOC}khelpcenter/visualdict/common
 ${DOC}khelpcenter/visualdict/${C}
 ${DOC}khelpcenter/visualdict/${I}
@@ -289,49 +392,107 @@ ${DOC}khelpcenter/visualdict/pict8.png
 ${DOC}khelpcenter/visualdict/pict9.png
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}kicker-applets/
+${DOC}kicker-applets/common
+${DOC}kicker-applets/${C}
+${DOC}kicker-applets/${I}
 ${DOC}kicker-applets/kolourpicker.docbook
 ${DOC}kicker-applets/ktimemon.docbook
+${DOC}kig/
+${DOC}kig/common
+${DOC}kig/constructed_a_point.png
+${DOC}kig/constructed_script_object.png
+${DOC}kig/constructing_a_circle.png
+${DOC}kig/constructing_a_circle_2.png
+${DOC}kig/edit_types_dialog.png
+${DOC}kig/${C}
+${DOC}kig/${I}
+${DOC}kig/macro_wizard.png
+${DOC}kig/macros_at_work.png
+${DOC}kig/selecting_objects.png
+${DOC}kig/simple_locus_construction.png
+${DOC}kig/test_run_macro.png
+${DOC}kig/text_label_attaching.png
+${DOC}kig/text_label_wizard.png
+${DOC}kinfocenter/
+${DOC}kinfocenter/blockdevices/
 ${DOC}kinfocenter/blockdevices/common
 ${DOC}kinfocenter/blockdevices/${C}
 ${DOC}kinfocenter/blockdevices/${I}
+${DOC}kinfocenter/common
+${DOC}kinfocenter/devices/
+${DOC}kinfocenter/devices/common
+${DOC}kinfocenter/devices/${C}
+${DOC}kinfocenter/devices/${I}
+${DOC}kinfocenter/dma/
 ${DOC}kinfocenter/dma/common
 ${DOC}kinfocenter/dma/${C}
 ${DOC}kinfocenter/dma/${I}
+${DOC}kinfocenter/${C}
+${DOC}kinfocenter/${I}
+${DOC}kinfocenter/interrupts/
+${DOC}kinfocenter/interrupts/common
+${DOC}kinfocenter/interrupts/${C}
+${DOC}kinfocenter/interrupts/${I}
+${DOC}kinfocenter/ioports/
+${DOC}kinfocenter/ioports/common
+${DOC}kinfocenter/ioports/${C}
+${DOC}kinfocenter/ioports/${I}
+${DOC}kinfocenter/memory/
+${DOC}kinfocenter/memory/common
+${DOC}kinfocenter/memory/${C}
+${DOC}kinfocenter/memory/${I}
+${DOC}kinfocenter/nics/
+${DOC}kinfocenter/nics/common
+${DOC}kinfocenter/nics/${C}
+${DOC}kinfocenter/nics/${I}
+${DOC}kinfocenter/partitions/
 ${DOC}kinfocenter/partitions/common
 ${DOC}kinfocenter/partitions/${C}
 ${DOC}kinfocenter/partitions/${I}
+${DOC}kinfocenter/pci/
 ${DOC}kinfocenter/pci/common
 ${DOC}kinfocenter/pci/${C}
 ${DOC}kinfocenter/pci/${I}
+${DOC}kinfocenter/pcmcia/
 ${DOC}kinfocenter/pcmcia/common
 ${DOC}kinfocenter/pcmcia/${C}
 ${DOC}kinfocenter/pcmcia/${I}
+${DOC}kinfocenter/processor/
 ${DOC}kinfocenter/processor/common
 ${DOC}kinfocenter/processor/${C}
 ${DOC}kinfocenter/processor/${I}
+${DOC}kinfocenter/protocols/
 ${DOC}kinfocenter/protocols/common
 ${DOC}kinfocenter/protocols/${C}
 ${DOC}kinfocenter/protocols/${I}
+${DOC}kinfocenter/samba/
 ${DOC}kinfocenter/samba/common
 ${DOC}kinfocenter/samba/${C}
 ${DOC}kinfocenter/samba/${I}
+${DOC}kinfocenter/scsi/
 ${DOC}kinfocenter/scsi/common
 ${DOC}kinfocenter/scsi/${C}
 ${DOC}kinfocenter/scsi/${I}
+${DOC}kinfocenter/sound/
 ${DOC}kinfocenter/sound/common
 ${DOC}kinfocenter/sound/${C}
 ${DOC}kinfocenter/sound/${I}
+${DOC}kinfocenter/usb/
 ${DOC}kinfocenter/usb/common
 ${DOC}kinfocenter/usb/${C}
 ${DOC}kinfocenter/usb/${I}
+${DOC}kinfocenter/xserver/
 ${DOC}kinfocenter/xserver/common
 ${DOC}kinfocenter/xserver/${C}
 ${DOC}kinfocenter/xserver/${I}
+${DOC}kioslave/
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
 ${DOC}kioslave/bzip2.docbook
 ${DOC}kioslave/cgi.docbook
 ${DOC}kioslave/common
+${DOC}kioslave/data.docbook
 ${DOC}kioslave/file.docbook
 ${DOC}kioslave/finger.docbook
 ${DOC}kioslave/fish.docbook
@@ -352,6 +513,7 @@ ${DOC}kioslave/ldap.docbook
 ${DOC}kioslave/mac.docbook
 ${DOC}kioslave/mailto.docbook
 ${DOC}kioslave/man.docbook
+${DOC}kioslave/mrml.docbook
 ${DOC}kioslave/news.docbook
 ${DOC}kioslave/nfs.docbook
 ${DOC}kioslave/nntp.docbook
@@ -369,55 +531,280 @@ ${DOC}kioslave/telnet.docbook
 ${DOC}kioslave/thumbnail.docbook
 ${DOC}kioslave/webdav.docbook
 ${DOC}kioslave/webdavs.docbook
+${DOC}klettres/
+${DOC}klettres/common
+${DOC}klettres/${C}
+${DOC}klettres/${I}
+${DOC}kmag/
+${DOC}kmag/common
+${DOC}kmag/${C}
+${DOC}kmag/${I}
+${DOC}kmag/screenshot.png
+${DOC}kmail/
+${DOC}kmail/common
+${DOC}kmail/configure.docbook
+${DOC}kmail/credits-and-licenses.docbook
+${DOC}kmail/faq.docbook
+${DOC}kmail/getting-started.docbook
+${DOC}kmail/importing.docbook
+${DOC}kmail/${C}
+${DOC}kmail/${I}
+${DOC}kmail/intro.docbook
+${DOC}kmail/menus.docbook
+${DOC}kmail/using-kmail.docbook
+${DOC}kmathtool/
+${DOC}kmathtool/common
+${DOC}kmathtool/${C}
+${DOC}kmathtool/${I}
+${DOC}kmessedwords/
+${DOC}kmessedwords/common
+${DOC}kmessedwords/${C}
+${DOC}kmessedwords/${I}
+${DOC}kmoon/
 ${DOC}kmoon/common
 ${DOC}kmoon/${C}
 ${DOC}kmoon/${I}
+${DOC}kmousetool/
+${DOC}kmousetool/common
+${DOC}kmousetool/${C}
+${DOC}kmousetool/${I}
+${DOC}kmouth/
+${DOC}kmouth/common
+${DOC}kmouth/${C}
+${DOC}kmouth/${I}
+${DOC}kmouth/kmouthcpref.png
+${DOC}kmouth/kmouthctts.png
+${DOC}kmouth/kmouthedit.png
+${DOC}kmouth/kmouthmain.png
+${DOC}kmouth/kmouthwizard.png
+${DOC}kmplot/
 ${DOC}kmplot/commands.docbook
+${DOC}kmplot/common
 ${DOC}kmplot/configuration.docbook
 ${DOC}kmplot/credits.docbook
 ${DOC}kmplot/developer.docbook
+${DOC}kmplot/edu-logo.png
+${DOC}kmplot/${C}
+${DOC}kmplot/${I}
+${DOC}kmplot/install.docbook
+${DOC}kmplot/introduction.docbook
+${DOC}kmplot/menu.docbook
+${DOC}kmplot/reference.docbook
+${DOC}kmplot/threeplots.png
+${DOC}kmplot/using.docbook
+${DOC}knode/
+${DOC}knode/commands.docbook
+${DOC}knode/credits.docbook
+${DOC}knode/faq.docbook
+${DOC}knode/gloss.docbook
+${DOC}knode/install.docbook
+${DOC}knode/introduction.docbook
+${DOC}knode/journey.docbook
+${DOC}knotes/
+${DOC}knotes/common
+${DOC}knotes/${C}
+${DOC}knotes/${I}
+${DOC}kodo/
+${DOC}kodo/common
+${DOC}kodo/${C}
+${DOC}kodo/${I}
+${DOC}kompare/
 ${DOC}kompare/common
 ${DOC}kompare/${C}
 ${DOC}kompare/${I}
+${DOC}konqueror/
+${DOC}konqueror/basics.docbook
+${DOC}konqueror/bookmarks.docbook
+${DOC}konqueror/browser.docbook
+${DOC}konqueror/cmndline.png
+${DOC}konqueror/commands.docbook
+${DOC}konqueror/common
+${DOC}konqueror/config.docbook
+${DOC}konqueror/credits.docbook
+${DOC}konqueror/dirtree.png
+${DOC}konqueror/dragdrop.png
+${DOC}konqueror/faq.docbook
+${DOC}konqueror/filemanager.docbook
+${DOC}konqueror/${C}
+${DOC}konqueror/${I}
+${DOC}konqueror/introduction.docbook
+${DOC}konqueror/konqorg.png
+${DOC}konqueror/parts.png
+${DOC}konqueror/path-complete.docbook
+${DOC}konqueror/plugins.docbook
+${DOC}konqueror/save-settings.docbook
+${DOC}konqueror/shortcut1.png
+${DOC}konqueror/shortcut2.png
+${DOC}konqueror/sidebar.docbook
+${DOC}konsole/
+${DOC}konsole/common
+${DOC}konsole/${C}
+${DOC}konsole/${I}
 ${DOC}konsole/konsole.png
+${DOC}konsolekalendar/
+${DOC}konsolekalendar/common
+${DOC}konsolekalendar/${C}
+${DOC}konsolekalendar/${I}
+${DOC}kontact/
+${DOC}kontact/common
+${DOC}kontact/${C}
+${DOC}kontact/${I}
+${DOC}korganizer/
+${DOC}korganizer/common
+${DOC}korganizer/exchange-plugin.docbook
+${DOC}korganizer/group-scheduling.docbook
+${DOC}korganizer/${C}
+${DOC}korganizer/${I}
+${DOC}korganizer/outlook-to-vcalendar.docbook
+${DOC}korn/
+${DOC}korn/common
+${DOC}korn/${C}
+${DOC}korn/${I}
+${DOC}kpager/
+${DOC}kpager/common
+${DOC}kpager/${C}
+${DOC}kpager/${I}
+${DOC}kpercentage/
+${DOC}kpercentage/answer.png
+${DOC}kpercentage/commands.docbook
+${DOC}kpercentage/common
+${DOC}kpercentage/credits.docbook
+${DOC}kpercentage/devel.docbook
+${DOC}kpercentage/edu-logo.png
+${DOC}kpercentage/faq.docbook
+${DOC}kpercentage/help.png
+${DOC}kpercentage/${C}
+${DOC}kpercentage/${I}
+${DOC}kpercentage/install.docbook
+${DOC}kpercentage/introduction.docbook
+${DOC}kpercentage/main.png
+${DOC}kpercentage/using.docbook
+${DOC}kpercentage/welcome.png
+${DOC}kpilot/
+${DOC}kpilot/common
+${DOC}kpilot/${C}
+${DOC}kpilot/${I}
+${DOC}kspell/
 ${DOC}kspell/common
 ${DOC}kspell/${C}
 ${DOC}kspell/${I}
+${DOC}kstars/
+${DOC}kstars/aavso.png
 ${DOC}kstars/ai-contents.docbook
 ${DOC}kstars/altvstime.docbook
+${DOC}kstars/altvstime.png
 ${DOC}kstars/astroinfo.docbook
 ${DOC}kstars/blackbody.docbook
+${DOC}kstars/blackbody.png
 ${DOC}kstars/calc-apcoords.docbook
+${DOC}kstars/calc-apcoords.png
 ${DOC}kstars/calc-dayduration.docbook
+${DOC}kstars/calc-daylength.png
 ${DOC}kstars/calc-eqgal.docbook
+${DOC}kstars/calc-eqgal.png
 ${DOC}kstars/calc-geodetic.docbook
+${DOC}kstars/calc-geodetic.png
 ${DOC}kstars/calc-horizontal.docbook
+${DOC}kstars/calc-horizontal.png
+${DOC}kstars/calc-julian.png
 ${DOC}kstars/calc-julianday.docbook
 ${DOC}kstars/calc-precess.docbook
+${DOC}kstars/calc-precess.png
 ${DOC}kstars/calc-sidereal.docbook
+${DOC}kstars/calc-sidereal.png
 ${DOC}kstars/calculator.docbook
 ${DOC}kstars/cequator.docbook
+${DOC}kstars/color_indices.png
 ${DOC}kstars/colorandtemp.docbook
 ${DOC}kstars/commands.docbook
+${DOC}kstars/common
 ${DOC}kstars/config.docbook
 ${DOC}kstars/cpoles.docbook
 ${DOC}kstars/credits.docbook
 ${DOC}kstars/csphere.docbook
 ${DOC}kstars/darkmatter.docbook
 ${DOC}kstars/dcop.docbook
+${DOC}kstars/detaildialog.png
 ${DOC}kstars/details.docbook
+${DOC}kstars/devicemanager.png
 ${DOC}kstars/dumpmode.docbook
 ${DOC}kstars/ecliptic.docbook
 ${DOC}kstars/ellipticalgalaxies.docbook
 ${DOC}kstars/equinox.docbook
+${DOC}kstars/faq.docbook
+${DOC}kstars/find.png
 ${DOC}kstars/flux.docbook
+${DOC}kstars/flux.png
+${DOC}kstars/fovdialog.png
 ${DOC}kstars/geocoords.docbook
+${DOC}kstars/geolocator.png
+${DOC}kstars/greatcircle.docbook
+${DOC}kstars/horizon.docbook
+${DOC}kstars/hourangle.docbook
+${DOC}kstars/${C}
+${DOC}kstars/${I}
+${DOC}kstars/indi.docbook
+${DOC}kstars/indiclient.png
+${DOC}kstars/indicontrolpanel.png
+${DOC}kstars/install.docbook
+${DOC}kstars/jmoons.docbook
+${DOC}kstars/jmoons.png
+${DOC}kstars/julianday.docbook
+${DOC}kstars/kepler2nd.png
+${DOC}kstars/leapyear.docbook
+${DOC}kstars/lightcurve.png
+${DOC}kstars/lightcurves.docbook
+${DOC}kstars/luminosity.docbook
+${DOC}kstars/magnitude.docbook
+${DOC}kstars/meridian.docbook
+${DOC}kstars/newfov.png
+${DOC}kstars/parallax.docbook
+${DOC}kstars/popup.png
+${DOC}kstars/precession.docbook
+${DOC}kstars/quicktour.docbook
+${DOC}kstars/retrograde.docbook
+${DOC}kstars/screen1.png
+${DOC}kstars/scriptbuilder.docbook
+${DOC}kstars/scriptbuilder.png
+${DOC}kstars/sidereal.docbook
+${DOC}kstars/skycoords.docbook
+${DOC}kstars/skymapdevice.png
+${DOC}kstars/solarsys.docbook
+${DOC}kstars/solarsystem.png
+${DOC}kstars/spiralgalaxies.docbook
+${DOC}kstars/star_colors.png
+${DOC}kstars/stars.docbook
+${DOC}kstars/timezones.docbook
+${DOC}kstars/tools.docbook
+${DOC}kstars/utime.docbook
+${DOC}kstars/viewops.png
+${DOC}kstars/wut.docbook
+${DOC}kstars/wut.png
+${DOC}kstars/zenith.docbook
+${DOC}kteatime/
+${DOC}kteatime/common
+${DOC}kteatime/${C}
+${DOC}kteatime/${I}
+${DOC}ktouch/
 ${DOC}ktouch/common
 ${DOC}ktouch/${C}
 ${DOC}ktouch/${I}
+${DOC}ktouch/screenshot1.png
+${DOC}ktouch/screenshot2.png
+${DOC}ktouch/screenshot3.png
+${DOC}kuser/
+${DOC}kuser/common
+${DOC}kuser/${C}
+${DOC}kuser/${I}
+${DOC}kverbos/
+${DOC}kverbos/common
+${DOC}kverbos/${C}
+${DOC}kverbos/${I}
+${DOC}kweather/
 ${DOC}kweather/common
 ${DOC}kweather/${C}
 ${DOC}kweather/${I}
+${DOC}kworldclock/
 ${DOC}kworldclock/common
 ${DOC}kworldclock/${C}
 ${DOC}kworldclock/${I}
@@ -442,24 +829,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_kdevelop.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -526,6 +895,7 @@ ${LOC}kblackbox.mo
 ${LOC}kbounce.mo
 ${LOC}kbruch.mo
 ${LOC}kbugbuster.mo
+${LOC}kcachegrind.mo
 ${LOC}kcalc.mo
 ${LOC}kcardchooser.mo
 ${LOC}kcharselect.mo
@@ -621,6 +991,7 @@ ${LOC}kdesktop.mo
 ${LOC}kdessh.mo
 ${LOC}kdesu.mo
 ${LOC}kdesud.mo
+${LOC}kdevelop.mo
 ${LOC}kdevtipofday.mo
 ${LOC}kdf.mo
 ${LOC}kdgantt.mo
@@ -683,6 +1054,7 @@ ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
+${LOC}kgreet_classic.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -738,6 +1110,10 @@ ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
+${LOC}kmilo_generic.mo
+${LOC}kmilo_kvaio.mo
+${LOC}kmilo_powerbook.mo
+${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
@@ -755,6 +1131,7 @@ ${LOC}knotify.mo
 ${LOC}kodo.mo
 ${LOC}kolf.mo
 ${LOC}kolourpicker.mo
+${LOC}kommander.mo
 ${LOC}kompare.mo
 ${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
@@ -928,80 +1305,3 @@ ${LOC}webarchiver.mo
 share/locale/nl/charset
 share/locale/nl/entry.desktop
 share/locale/nl/flag.png
-@dirrm ${DOC}kworldclock
-@dirrm ${DOC}kweather
-@dirrm ${DOC}ktouch
-@dirrm ${DOC}kstars
-@dirrm ${DOC}kspell
-@dirrm ${DOC}konsole
-@dirrm ${DOC}kompare
-@dirrm ${DOC}kmplot
-@dirrm ${DOC}kmoon
-@dirrm ${DOC}kioslave
-@dirrm ${DOC}kinfocenter/xserver
-@dirrm ${DOC}kinfocenter/usb
-@dirrm ${DOC}kinfocenter/sound
-@dirrm ${DOC}kinfocenter/scsi
-@dirrm ${DOC}kinfocenter/samba
-@dirrm ${DOC}kinfocenter/protocols
-@dirrm ${DOC}kinfocenter/processor
-@dirrm ${DOC}kinfocenter/pcmcia
-@dirrm ${DOC}kinfocenter/pci
-@dirrm ${DOC}kinfocenter/partitions
-@dirrm ${DOC}kinfocenter/dma
-@dirrm ${DOC}kinfocenter/blockdevices
-@dirrm ${DOC}kinfocenter
-@dirrm ${DOC}kicker-applets
-@dirrm ${DOC}khelpcenter/visualdict
-@dirrm ${DOC}khelpcenter/userguide
-@dirrm ${DOC}khelpcenter/faq
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}kgamma
-@dirrm ${DOC}kfouleggs
-@dirrm ${DOC}kdesu
-@dirrm ${DOC}kdeprint
-@dirrm ${DOC}kdebugdialog
-@dirrm ${DOC}kcontrol/windowmanagement
-@dirrm ${DOC}kcontrol/useragent
-@dirrm ${DOC}kcontrol/spellchecking
-@dirrm ${DOC}kcontrol/smb
-@dirrm ${DOC}kcontrol/proxy
-@dirrm ${DOC}kcontrol/powerctrl
-@dirrm ${DOC}kcontrol/netpref
-@dirrm ${DOC}kcontrol/mouse
-@dirrm ${DOC}kcontrol/laptop
-@dirrm ${DOC}kcontrol/kwindecoration
-@dirrm ${DOC}kcontrol/kthememgr
-@dirrm ${DOC}kcontrol/kmixcfg
-@dirrm ${DOC}kcontrol/khtml
-@dirrm ${DOC}kcontrol/keys
-@dirrm ${DOC}kcontrol/keyboard
-@dirrm ${DOC}kcontrol/kcmtaskbar
-@dirrm ${DOC}kcontrol/kcmsmserver
-@dirrm ${DOC}kcontrol/kcmlowbatwarn
-@dirrm ${DOC}kcontrol/kcmlowbatcrit
-@dirrm ${DOC}kcontrol/kcmlaunch
-@dirrm ${DOC}kcontrol/kcmcss
-@dirrm ${DOC}kcontrol/kcmaccess
-@dirrm ${DOC}kcontrol/kalarmd
-@dirrm ${DOC}kcontrol/filetypes
-@dirrm ${DOC}kcontrol/email
-@dirrm ${DOC}kcontrol/ebrowsing
-@dirrm ${DOC}kcontrol/crypto
-@dirrm ${DOC}kcontrol/cookies
-@dirrm ${DOC}kcontrol/colors
-@dirrm ${DOC}kcontrol/clock
-@dirrm ${DOC}kcontrol/bell
-@dirrm ${DOC}kcontrol/arts
-@dirrm ${DOC}kcontrol
-@dirrm ${DOC}kbugbuster
-@dirrm ${DOC}kate-plugins
-@dirrm ${DOC}kate
-@dirrm ${DOC}kalzium
-@dirrm ${DOC}kaddressbook
-@dirrm ${DOC}common
-@dirrm ${DOC}artsbuilder
-@dirrm share/doc/HTML/nl
-@dirrm share/apps/ktuberling/sounds/nl
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2004/02/07 01:46:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2004/07/24 12:47:13 espie Exp $
 bin/atlantikdesigner
 bin/exif.py
 bin/fsview
@@ -84,21 +84,34 @@ share/applnk/.hidden/smbmounterplugin.desktop
 share/applnk/.hidden/uachangerplugin.desktop
 share/applnk/.hidden/validatorsplugin.desktop
 share/applnk/.hidden/webarchiverplugin.desktop
+@dir share/apps/atlantikdesigner
 share/apps/atlantikdesigner/atlantikdesignerui.rc
+@dir share/apps/fsview
 share/apps/fsview/fsview_part.rc
 share/apps/kaddressbook/geo_xxportui.rc
+@dir share/apps/kate/plugins/katecppsymbolviewer
 share/apps/kate/plugins/katecppsymbolviewer/ui.rc
+@dir share/apps/kate/plugins/katefll
 share/apps/kate/plugins/katefll/ui.rc
+@dir share/apps/kate/plugins/katehtmltools
 share/apps/kate/plugins/katehtmltools/ui.rc
+@dir share/apps/kate/plugins/kateinsertcommand
 share/apps/kate/plugins/kateinsertcommand/ui.rc
+@dir share/apps/kate/plugins/katemodeline
 share/apps/kate/plugins/katemodeline/ui.rc
+@dir share/apps/kate/plugins/kateopenheader
 share/apps/kate/plugins/kateopenheader/ui.rc
+@dir share/apps/kate/plugins/katepybrowse
 share/apps/kate/plugins/katepybrowse/ui.rc
+@dir share/apps/kate/plugins/katetextfilter
 share/apps/kate/plugins/katetextfilter/ui.rc
+@dir share/apps/kate/plugins/katexmlcheck
 share/apps/kate/plugins/katexmlcheck/ui.rc
+@dir share/apps/kate/plugins/katexmltools
 share/apps/kate/plugins/katexmltools/ui.rc
 share/apps/kate/scripts/html-tidy.desktop
 share/apps/kate/scripts/html-tidy.sh
+@dir share/apps/katexmltools
 share/apps/katexmltools/html4-loose.dtd.xml
 share/apps/katexmltools/html4-strict.dtd.xml
 share/apps/katexmltools/kde-docbook.dtd.xml
@@ -111,6 +124,7 @@ share/apps/katexmltools/xhtml1-strict.dtd.xml
 share/apps/katexmltools/xhtml1-transitional.dtd.xml
 share/apps/katexmltools/xslt-1.0.dtd.xml
 share/apps/kcontrol/pics/kvim.png
+@dir share/apps/khtml/kpartplugins
 share/apps/khtml/kpartplugins/autorefresh.rc
 share/apps/khtml/kpartplugins/crashesplugin.rc
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
@@ -124,6 +138,8 @@ share/apps/kicker/applets/kbinaryclock.desktop
 share/apps/kicker/applets/kolourpicker.desktop
 share/apps/kicker/applets/ktimemon.desktop
 share/apps/kicker/applets/mediacontrol.desktop
+@dir share/apps/knewsticker
+@dir share/apps/knewsticker/scripts
 share/apps/knewsticker/scripts/Generic.Newsticker.Error
 share/apps/knewsticker/scripts/Readme.ErrorHandling
 share/apps/knewsticker/scripts/Readme.newsrss
@@ -144,17 +160,22 @@ share/apps/konqsidebartng/entries/mplayer.desktop
 share/apps/konqsidebartng/kicker_entries/mplayer.desktop
 share/apps/konqueror/servicemenus/imageconverter.desktop
 share/apps/konqueror/servicemenus/jpegorient.desktop
+@dir share/apps/ksig
 share/apps/ksig/ksigui.rc
+@dir share/apps/mediacontrol
+@dir share/apps/mediacontrol/blueish
 share/apps/mediacontrol/blueish/next.png
 share/apps/mediacontrol/blueish/pause.png
 share/apps/mediacontrol/blueish/play.png
 share/apps/mediacontrol/blueish/prev.png
 share/apps/mediacontrol/blueish/stop.png
+@dir share/apps/mediacontrol/default
 share/apps/mediacontrol/default/next.png
 share/apps/mediacontrol/default/pause.png
 share/apps/mediacontrol/default/play.png
 share/apps/mediacontrol/default/prev.png
 share/apps/mediacontrol/default/stop.png
+@dir share/apps/noatun
 share/apps/noatun/alsaplayerui.plugin
 share/apps/noatun/blurscope.plugin
 share/apps/noatun/charlatanui.plugin
@@ -171,11 +192,13 @@ share/apps/noatun/tyler.plugin
 share/apps/noatun/tylerstates
 share/apps/noatun/wakeup.plugin
 share/apps/noatun/wavecapture.plugin
+@dir share/apps/vimpart
 share/apps/vimpart/kvim.vim
 share/apps/vimpart/vimpartui.rc
 share/apps/vimpart/vimpartuibrowser.rc
 share/apps/vimpart/vimpartuireadonly.rc
 share/config.kcfg/kbinaryclock.kcfg
+@dir share/doc/HTML/en/kate-plugins
 share/doc/HTML/en/kate-plugins/common
 share/doc/HTML/en/kate-plugins/htmltools.docbook
 share/doc/HTML/en/kate-plugins/index.cache.bz2
@@ -185,51 +208,66 @@ share/doc/HTML/en/kate-plugins/openheader.docbook
 share/doc/HTML/en/kate-plugins/textfilter.docbook
 share/doc/HTML/en/kate-plugins/xmlcheck.docbook
 share/doc/HTML/en/kate-plugins/xmltools.docbook
+@dir share/doc/HTML/en/kicker-applets
 share/doc/HTML/en/kicker-applets/common
 share/doc/HTML/en/kicker-applets/index.cache.bz2
 share/doc/HTML/en/kicker-applets/index.docbook
 share/doc/HTML/en/kicker-applets/kolourpicker.docbook
 share/doc/HTML/en/kicker-applets/ktimemon.docbook
+@dir share/doc/HTML/en/konq-plugins
+@dir share/doc/HTML/en/konq-plugins/babel
 share/doc/HTML/en/konq-plugins/babel/common
 share/doc/HTML/en/konq-plugins/babel/cr16-action-babelfish.png
 share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/en/konq-plugins/babel/index.docbook
 share/doc/HTML/en/konq-plugins/common
+@dir share/doc/HTML/en/konq-plugins/crashes
 share/doc/HTML/en/konq-plugins/crashes/common
 share/doc/HTML/en/konq-plugins/crashes/index.cache.bz2
 share/doc/HTML/en/konq-plugins/crashes/index.docbook
+@dir share/doc/HTML/en/konq-plugins/dirfilter
 share/doc/HTML/en/konq-plugins/dirfilter/common
 share/doc/HTML/en/konq-plugins/dirfilter/index.cache.bz2
 share/doc/HTML/en/konq-plugins/dirfilter/index.docbook
+@dir share/doc/HTML/en/konq-plugins/domtreeviewer
 share/doc/HTML/en/konq-plugins/domtreeviewer/common
 share/doc/HTML/en/konq-plugins/domtreeviewer/index.cache.bz2
 share/doc/HTML/en/konq-plugins/domtreeviewer/index.docbook
+@dir share/doc/HTML/en/konq-plugins/fsview
 share/doc/HTML/en/konq-plugins/fsview/common
 share/doc/HTML/en/konq-plugins/fsview/index.cache.bz2
 share/doc/HTML/en/konq-plugins/fsview/index.docbook
+@dir share/doc/HTML/en/konq-plugins/imgallery
 share/doc/HTML/en/konq-plugins/imgallery/common
 share/doc/HTML/en/konq-plugins/imgallery/index.cache.bz2
 share/doc/HTML/en/konq-plugins/imgallery/index.docbook
 share/doc/HTML/en/konq-plugins/index.cache.bz2
 share/doc/HTML/en/konq-plugins/index.docbook
+@dir share/doc/HTML/en/konq-plugins/khtmlsettings
 share/doc/HTML/en/konq-plugins/khtmlsettings/common
 share/doc/HTML/en/konq-plugins/khtmlsettings/index.cache.bz2
 share/doc/HTML/en/konq-plugins/khtmlsettings/index.docbook
+@dir share/doc/HTML/en/konq-plugins/kuick
 share/doc/HTML/en/konq-plugins/kuick/common
 share/doc/HTML/en/konq-plugins/kuick/index.cache.bz2
 share/doc/HTML/en/konq-plugins/kuick/index.docbook
+@dir share/doc/HTML/en/konq-plugins/mediaplayer
 share/doc/HTML/en/konq-plugins/mediaplayer/common
 share/doc/HTML/en/konq-plugins/mediaplayer/index.cache.bz2
 share/doc/HTML/en/konq-plugins/mediaplayer/index.docbook
+@dir share/doc/HTML/en/konq-plugins/smbmounter
 share/doc/HTML/en/konq-plugins/smbmounter/common
 share/doc/HTML/en/konq-plugins/smbmounter/index.cache.bz2
 share/doc/HTML/en/konq-plugins/smbmounter/index.docbook
+@dir share/doc/HTML/en/konq-plugins/uachanger
 share/doc/HTML/en/konq-plugins/uachanger/common
 share/doc/HTML/en/konq-plugins/uachanger/index.cache.bz2
 share/doc/HTML/en/konq-plugins/uachanger/index.docbook
+@dir share/doc/HTML/en/konq-plugins/validators
 share/doc/HTML/en/konq-plugins/validators/common
 share/doc/HTML/en/konq-plugins/validators/index.cache.bz2
 share/doc/HTML/en/konq-plugins/validators/index.docbook
+@dir share/doc/HTML/en/konq-plugins/webarchiver
 share/doc/HTML/en/konq-plugins/webarchiver/common
 share/doc/HTML/en/konq-plugins/webarchiver/index.cache.bz2
 share/doc/HTML/en/konq-plugins/webarchiver/index.docbook
@@ -257,6 +295,8 @@ share/icons/crystalsvg/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/crystalsvg/32x32/apps/ktimemon.png
 share/icons/crystalsvg/48x48/apps/konqsidebar_mediaplayer.png
 share/icons/hicolor/16x16/apps/ksig.png
+@dir share/icons/hicolor/22x22
+@dir share/icons/hicolor/22x22/apps
 share/icons/hicolor/22x22/apps/fsview.png
 share/icons/hicolor/32x32/apps/fsview.png
 share/icons/hicolor/32x32/apps/ksig.png
@@ -290,42 +330,3 @@ share/services/renimagedlg.desktop
 share/services/vimpart.desktop
 share/services/webarchivethumbnail.desktop
 %%SHARED%%
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/doc/HTML/en/konq-plugins/webarchiver
-@dirrm share/doc/HTML/en/konq-plugins/validators
-@dirrm share/doc/HTML/en/konq-plugins/uachanger
-@dirrm share/doc/HTML/en/konq-plugins/smbmounter
-@dirrm share/doc/HTML/en/konq-plugins/mediaplayer
-@dirrm share/doc/HTML/en/konq-plugins/kuick
-@dirrm share/doc/HTML/en/konq-plugins/khtmlsettings
-@dirrm share/doc/HTML/en/konq-plugins/imgallery
-@dirrm share/doc/HTML/en/konq-plugins/fsview
-@dirrm share/doc/HTML/en/konq-plugins/domtreeviewer
-@dirrm share/doc/HTML/en/konq-plugins/dirfilter
-@dirrm share/doc/HTML/en/konq-plugins/crashes
-@dirrm share/doc/HTML/en/konq-plugins/babel
-@dirrm share/doc/HTML/en/konq-plugins
-@dirrm share/doc/HTML/en/kicker-applets
-@dirrm share/doc/HTML/en/kate-plugins
-@dirrm share/apps/vimpart
-@dirrm share/apps/mediacontrol/default
-@dirrm share/apps/mediacontrol/blueish
-@dirrm share/apps/mediacontrol
-@dirrm share/apps/ksig
-@dirrm share/apps/knewsticker/scripts
-@dirrm share/apps/knewsticker
-@dirrm share/apps/khtml/kpartplugins
-@dirrm share/apps/katexmltools
-@dirrm share/apps/kate/plugins/katexmltools
-@dirrm share/apps/kate/plugins/katexmlcheck
-@dirrm share/apps/kate/plugins/katetextfilter
-@dirrm share/apps/kate/plugins/katepybrowse
-@dirrm share/apps/kate/plugins/kateopenheader
-@dirrm share/apps/kate/plugins/katemodeline
-@dirrm share/apps/kate/plugins/kateinsertcommand
-@dirrm share/apps/kate/plugins/katehtmltools
-@dirrm share/apps/kate/plugins/katefll
-@dirrm share/apps/kate/plugins/katecppsymbolviewer
-@dirrm share/apps/fsview
-@dirrm share/apps/atlantikdesigner

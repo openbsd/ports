@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST.cs,v 1.14 2004/03/08 11:10:15 espie Exp $
+@comment $OpenBSD: PLIST.cs,v 1.15 2004/07/24 12:47:14 espie Exp $
+share/doc/HTML/cs/
+${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -50,48 +52,64 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}kcontrol/
+${DOC}kcontrol/arts/
 ${DOC}kcontrol/arts/midi.docbook
+${DOC}kcontrol/bell/
 ${DOC}kcontrol/bell/common
 ${DOC}kcontrol/bell/${C}
 ${DOC}kcontrol/bell/${I}
+${DOC}kcontrol/clock/
 ${DOC}kcontrol/clock/common
 ${DOC}kcontrol/clock/${C}
 ${DOC}kcontrol/clock/${I}
 ${DOC}kcontrol/common
+${DOC}kcontrol/crypto/
 ${DOC}kcontrol/crypto/common
 ${DOC}kcontrol/crypto/${C}
 ${DOC}kcontrol/crypto/${I}
+${DOC}kcontrol/email/
 ${DOC}kcontrol/email/common
 ${DOC}kcontrol/email/${C}
 ${DOC}kcontrol/email/${I}
 ${DOC}kcontrol/${C}
 ${DOC}kcontrol/${I}
+${DOC}kcontrol/kcmaccess/
 ${DOC}kcontrol/kcmaccess/common
 ${DOC}kcontrol/kcmaccess/${C}
 ${DOC}kcontrol/kcmaccess/${I}
+${DOC}kcontrol/kcmlowbatcrit/
 ${DOC}kcontrol/kcmlowbatcrit/common
 ${DOC}kcontrol/kcmlowbatcrit/${C}
 ${DOC}kcontrol/kcmlowbatcrit/${I}
+${DOC}kcontrol/kcmsmserver/
 ${DOC}kcontrol/kcmsmserver/common
 ${DOC}kcontrol/kcmsmserver/${C}
 ${DOC}kcontrol/kcmsmserver/${I}
+${DOC}kcontrol/kcmstyle/
 ${DOC}kcontrol/kcmstyle/common
 ${DOC}kcontrol/kcmstyle/${C}
 ${DOC}kcontrol/kcmstyle/${I}
+${DOC}kcontrol/kdm/
 ${DOC}kcontrol/kdm/common
 ${DOC}kcontrol/kdm/${C}
 ${DOC}kcontrol/kdm/${I}
+${DOC}kcontrol/khtml/
 ${DOC}kcontrol/khtml/nsplugin.docbook
+${DOC}kcontrol/kmixcfg/
 ${DOC}kcontrol/kmixcfg/common
 ${DOC}kcontrol/kmixcfg/${C}
 ${DOC}kcontrol/kmixcfg/${I}
+${DOC}kcontrol/laptop/
 ${DOC}kcontrol/laptop/common
 ${DOC}kcontrol/laptop/${C}
 ${DOC}kcontrol/laptop/${I}
+${DOC}kcontrol/passwords/
 ${DOC}kcontrol/passwords/common
 ${DOC}kcontrol/passwords/${C}
 ${DOC}kcontrol/passwords/${I}
 ${DOC}kcontrol/screenshot.png
+${DOC}kdeprint/
 ${DOC}kdeprint/add-printer-wiz.docbook
 ${DOC}kdeprint/common
 ${DOC}kdeprint/cups-config.docbook
@@ -109,53 +127,70 @@ ${DOC}kdeprint/lprng.docbook
 ${DOC}kdeprint/rlpr.docbook
 ${DOC}kdeprint/tech-overview.docbook
 ${DOC}kdeprint/theory.docbook
+${DOC}kdm/
 ${DOC}kdm/common
 ${DOC}kdm/${C}
 ${DOC}kdm/${I}
+${DOC}kgamma/
 ${DOC}kgamma/common
 ${DOC}kgamma/${C}
 ${DOC}kgamma/${I}
+${DOC}khelpcenter/
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}kinfocenter/
+${DOC}kinfocenter/devices/
 ${DOC}kinfocenter/devices/common
 ${DOC}kinfocenter/devices/${C}
 ${DOC}kinfocenter/devices/${I}
+${DOC}kinfocenter/dma/
 ${DOC}kinfocenter/dma/common
 ${DOC}kinfocenter/dma/${C}
 ${DOC}kinfocenter/dma/${I}
+${DOC}kinfocenter/interrupts/
 ${DOC}kinfocenter/interrupts/common
 ${DOC}kinfocenter/interrupts/${C}
 ${DOC}kinfocenter/interrupts/${I}
+${DOC}kinfocenter/ioports/
 ${DOC}kinfocenter/ioports/common
 ${DOC}kinfocenter/ioports/${C}
 ${DOC}kinfocenter/ioports/${I}
+${DOC}kinfocenter/memory/
 ${DOC}kinfocenter/memory/common
 ${DOC}kinfocenter/memory/${C}
 ${DOC}kinfocenter/memory/${I}
+${DOC}kinfocenter/partitions/
 ${DOC}kinfocenter/partitions/common
 ${DOC}kinfocenter/partitions/${C}
 ${DOC}kinfocenter/partitions/${I}
+${DOC}kinfocenter/pci/
 ${DOC}kinfocenter/pci/common
 ${DOC}kinfocenter/pci/${C}
 ${DOC}kinfocenter/pci/${I}
+${DOC}kinfocenter/pcmcia/
 ${DOC}kinfocenter/pcmcia/common
 ${DOC}kinfocenter/pcmcia/${C}
 ${DOC}kinfocenter/pcmcia/${I}
+${DOC}kinfocenter/processor/
 ${DOC}kinfocenter/processor/common
 ${DOC}kinfocenter/processor/${C}
 ${DOC}kinfocenter/processor/${I}
+${DOC}kinfocenter/scsi/
 ${DOC}kinfocenter/scsi/common
 ${DOC}kinfocenter/scsi/${C}
 ${DOC}kinfocenter/scsi/${I}
+${DOC}kinfocenter/sound/
 ${DOC}kinfocenter/sound/common
 ${DOC}kinfocenter/sound/${C}
 ${DOC}kinfocenter/sound/${I}
+${DOC}kinfocenter/xserver/
 ${DOC}kinfocenter/xserver/common
 ${DOC}kinfocenter/xserver/${C}
 ${DOC}kinfocenter/xserver/${I}
+${DOC}konsole/
 ${DOC}konsole/common
 ${DOC}konsole/${C}
 ${DOC}konsole/${I}
@@ -164,6 +199,7 @@ ${LOC}alsaplayerui.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}ark.mo
+${LOC}ark_plugin.mo
 ${LOC}artsbuilder.mo
 ${LOC}artscontrol.mo
 ${LOC}artsmodules.mo
@@ -180,23 +216,6 @@ ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}cvsservice.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaccessibility.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdeedu.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
-${LOC}desktop_quanta.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -243,6 +262,7 @@ ${LOC}katefll_plugin.mo
 ${LOC}katehelloworld.mo
 ${LOC}katehtmltools.mo
 ${LOC}kateinsertcommand.mo
+${LOC}katekjswrapper.mo
 ${LOC}katemake.mo
 ${LOC}katemodeline.mo
 ${LOC}kateopenheader.mo
@@ -250,6 +270,7 @@ ${LOC}katepart.mo
 ${LOC}kateprojectmanager.mo
 ${LOC}katepybrowse.mo
 ${LOC}katespell.mo
+${LOC}katetabbarextension.mo
 ${LOC}katetextfilter.mo
 ${LOC}katexmlcheck.mo
 ${LOC}katexmltools.mo
@@ -336,6 +357,7 @@ ${LOC}kcmsocks.mo
 ${LOC}kcmspellchecking.mo
 ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
+${LOC}kcmthinkpad.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
 ${LOC}kcmvim.mo
@@ -379,6 +401,7 @@ ${LOC}kfile_deb.mo
 ${LOC}kfile_desktop.mo
 ${LOC}kfile_diff.mo
 ${LOC}kfile_dvi.mo
+${LOC}kfile_exr.mo
 ${LOC}kfile_flac.mo
 ${LOC}kfile_folder.mo
 ${LOC}kfile_font.mo
@@ -389,6 +412,7 @@ ${LOC}kfile_jpeg.mo
 ${LOC}kfile_m3u.mo
 ${LOC}kfile_mp3.mo
 ${LOC}kfile_ogg.mo
+${LOC}kfile_palm.mo
 ${LOC}kfile_pcx.mo
 ${LOC}kfile_pdf.mo
 ${LOC}kfile_png.mo
@@ -396,7 +420,9 @@ ${LOC}kfile_pnm.mo
 ${LOC}kfile_po.mo
 ${LOC}kfile_ps.mo
 ${LOC}kfile_rfc822.mo
+${LOC}kfile_rgb.mo
 ${LOC}kfile_rpm.mo
+${LOC}kfile_sid.mo
 ${LOC}kfile_tga.mo
 ${LOC}kfile_tiff.mo
 ${LOC}kfile_ts.mo
@@ -418,6 +444,7 @@ ${LOC}kghostview.mo
 ${LOC}kgoldrunner.mo
 ${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
+${LOC}kgreet_classic.mo
 ${LOC}khangman.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
@@ -435,9 +462,11 @@ ${LOC}kio_floppy.mo
 ${LOC}kio_help.mo
 ${LOC}kio_imap4.mo
 ${LOC}kio_lan.mo
+${LOC}kio_ldap.mo
 ${LOC}kio_mac.mo
 ${LOC}kio_man.mo
 ${LOC}kio_mobile.mo
+${LOC}kio_newimap4.mo
 ${LOC}kio_nfs.mo
 ${LOC}kio_nntp.mo
 ${LOC}kio_pop3.mo
@@ -455,6 +484,7 @@ ${LOC}kjots.mo
 ${LOC}kjumpingcube.mo
 ${LOC}klaptopdaemon.mo
 ${LOC}klegacyimport.mo
+${LOC}kleopatra.mo
 ${LOC}klettres.mo
 ${LOC}klickety.mo
 ${LOC}klines.mo
@@ -464,6 +494,7 @@ ${LOC}kmag.mo
 ${LOC}kmahjongg.mo
 ${LOC}kmail.mo
 ${LOC}kmailcvt.mo
+${LOC}kmathapplet.mo
 ${LOC}kmathtool.mo
 ${LOC}kmcop.mo
 ${LOC}kmenuapplet.mo
@@ -471,6 +502,11 @@ ${LOC}kmenuedit.mo
 ${LOC}kmessedwords.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
+${LOC}kmilo_generic.mo
+${LOC}kmilo_kvaio.mo
+${LOC}kmilo_powerbook.mo
+${LOC}kmilo_thinkpad.mo
+${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
@@ -490,6 +526,7 @@ ${LOC}kolourpicker.mo
 ${LOC}kompare.mo
 ${LOC}konq_smbmounterplugin.mo
 ${LOC}konqsidebar_mediaplayer.mo
+${LOC}konqsidebar_news.mo
 ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
@@ -553,9 +590,11 @@ ${LOC}ksysv.mo
 ${LOC}ktalkd.mo
 ${LOC}ktaskbarapplet.mo
 ${LOC}kteatime.mo
+${LOC}ktexteditor_autobookmarker.mo
 ${LOC}ktexteditor_insertfile.mo
 ${LOC}ktexteditor_isearch.mo
 ${LOC}ktexteditor_kdatatool.mo
+${LOC}kthememanager.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
@@ -581,6 +620,7 @@ ${LOC}kviewtemplateplugin.mo
 ${LOC}kviewviewer.mo
 ${LOC}kvoctrain.mo
 ${LOC}kwalletmanager.mo
+${LOC}kwatchgnupg.mo
 ${LOC}kweather.mo
 ${LOC}kwifimanager.mo
 ${LOC}kwin.mo
@@ -615,6 +655,8 @@ ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
 ${LOC}libkickermenu_prefmenu.mo
 ${LOC}libkickermenu_recentdocs.mo
+${LOC}libkickermenu_tom.mo
+${LOC}libkleopatra.mo
 ${LOC}libkonq.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
@@ -635,9 +677,11 @@ ${LOC}noatun.mo
 ${LOC}nsplugin.mo
 ${LOC}passwords.mo
 ${LOC}pitchablespeed.mo
+${LOC}ppdtranslations.mo
 ${LOC}privacy.mo
 ${LOC}qeditor.mo
 ${LOC}quicklauncher.mo
+${LOC}searchbarplugin.mo
 ${LOC}secpolicy.mo
 ${LOC}spy.mo
 ${LOC}synaescope.mo
@@ -647,6 +691,7 @@ ${LOC}tippecanoe.mo
 ${LOC}tyler.mo
 ${LOC}uachangerplugin.mo
 ${LOC}umbrello.mo
+${LOC}useraccount.mo
 ${LOC}userinfo.mo
 ${LOC}validatorsplugin.mo
 ${LOC}vimpart.mo
@@ -656,38 +701,3 @@ ${LOC}webarchiver.mo
 share/locale/cs/charset
 share/locale/cs/entry.desktop
 share/locale/cs/flag.png
-@dirrm ${DOC}konsole
-@dirrm ${DOC}kinfocenter/xserver
-@dirrm ${DOC}kinfocenter/sound
-@dirrm ${DOC}kinfocenter/scsi
-@dirrm ${DOC}kinfocenter/processor
-@dirrm ${DOC}kinfocenter/pcmcia
-@dirrm ${DOC}kinfocenter/pci
-@dirrm ${DOC}kinfocenter/partitions
-@dirrm ${DOC}kinfocenter/memory
-@dirrm ${DOC}kinfocenter/ioports
-@dirrm ${DOC}kinfocenter/interrupts
-@dirrm ${DOC}kinfocenter/dma
-@dirrm ${DOC}kinfocenter/devices
-@dirrm ${DOC}kinfocenter
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}kgamma
-@dirrm ${DOC}kdm
-@dirrm ${DOC}kdeprint
-@dirrm ${DOC}kcontrol/passwords
-@dirrm ${DOC}kcontrol/laptop
-@dirrm ${DOC}kcontrol/kmixcfg
-@dirrm ${DOC}kcontrol/khtml
-@dirrm ${DOC}kcontrol/kdm
-@dirrm ${DOC}kcontrol/kcmstyle
-@dirrm ${DOC}kcontrol/kcmsmserver
-@dirrm ${DOC}kcontrol/kcmlowbatcrit
-@dirrm ${DOC}kcontrol/kcmaccess
-@dirrm ${DOC}kcontrol/email
-@dirrm ${DOC}kcontrol/crypto
-@dirrm ${DOC}kcontrol/clock
-@dirrm ${DOC}kcontrol/bell
-@dirrm ${DOC}kcontrol/arts
-@dirrm ${DOC}kcontrol
-@dirrm ${DOC}common
-@dirrm share/doc/HTML/cs

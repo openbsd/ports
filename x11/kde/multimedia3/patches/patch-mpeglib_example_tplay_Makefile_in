@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.9 2004/02/19 22:40:42 espie Exp $
---- mpeglib/example/tplay/Makefile.in.orig	2004-01-25 20:08:31.000000000 +0100
-+++ mpeglib/example/tplay/Makefile.in	2004-02-19 22:16:33.000000000 +0100
-@@ -120,7 +120,7 @@ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET
+$OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.10 2004/07/24 12:47:15 espie Exp $
+--- mpeglib/example/tplay/Makefile.in.orig	Sun May 30 18:55:29 2004
++++ mpeglib/example/tplay/Makefile.in	Mon Jul 19 17:13:01 2004
+@@ -173,7 +173,7 @@ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET
  LAME_INCS = @LAME_INCS@
  LAME_LIBS = @LAME_LIBS@
  LAME_RPATH = @LAME_RPATH@
@@ -10,12 +10,12 @@ $OpenBSD: patch-mpeglib_example_tplay_Makefile_in,v 1.9 2004/02/19 22:40:42 espi
  LIBALIB = @LIBALIB@
  LIBASOUND = @LIBASOUND@
  LIBAUDIO = @LIBAUDIO@
-@@ -387,7 +387,7 @@ tplay_SOURCES = tplay.cpp
- 
+@@ -434,7 +434,7 @@ INCLUDES = -I../../include $(all_include
+ EXTRA_DIST = 
+ tplay_SOURCES = tplay.cpp
  noinst_HEADERS = 
- 
 -tplay_LDFLAGS = $(all_libraries) 
 +tplay_LDFLAGS = $(all_libraries) -pthread
- 
  tplay_LDADD = ../../lib/libmpeg.la \
  				$(THIS_LIB_LIBS)
+ 

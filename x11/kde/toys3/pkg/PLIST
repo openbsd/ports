@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/02/01 14:59:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2004/07/24 12:47:16 espie Exp $
 bin/amor
 bin/kmoon
 bin/kodo
@@ -21,7 +21,12 @@ share/applications/kde/kmoon.desktop
 share/applications/kde/kodo.desktop
 share/applications/kde/kteatime.desktop
 share/applications/kde/kworldclock.desktop
+share/applnk/
+share/applnk/System/
+share/applnk/System/ScreenSavers/
 share/applnk/System/ScreenSavers/ktux.desktop
+share/apps/amor/
+share/apps/amor/b/
 share/apps/amor/b/b-f.png
 share/apps/amor/b/b-f2.png
 share/apps/amor/b/b1-r.png
@@ -64,6 +69,7 @@ share/apps/amor/b/sa2c.png
 share/apps/amor/b/salut.png
 share/apps/amor/b/salut1.png
 share/apps/amor/billyrc
+share/apps/amor/blob/
 share/apps/amor/blob/blob.png
 share/apps/amor/blob/blob_BeamDown1.png
 share/apps/amor/blob/blob_BeamDown2.png
@@ -145,6 +151,7 @@ share/apps/amor/blob/blob_z3.png
 share/apps/amor/blobrc
 share/apps/amor/brc
 share/apps/amor/bsdrc
+share/apps/amor/eyes/
 share/apps/amor/eyes/eye_1.png
 share/apps/amor/eyes/eye_2.png
 share/apps/amor/eyes/eye_b.png
@@ -173,6 +180,7 @@ share/apps/amor/eyes/eye_z3.png
 share/apps/amor/eyes/eye_z4.png
 share/apps/amor/eyes/eye_z5.png
 share/apps/amor/eyesrc
+share/apps/amor/ghost/
 share/apps/amor/ghost/ghost_1.png
 share/apps/amor/ghost/ghost_2.png
 share/apps/amor/ghost/ghost_e.png
@@ -189,6 +197,7 @@ share/apps/amor/ghost/ghost_z3.png
 share/apps/amor/ghost/ghost_z4.png
 share/apps/amor/ghost/ghost_z5.png
 share/apps/amor/ghostrc
+share/apps/amor/neko/
 share/apps/amor/neko/claw1.png
 share/apps/amor/neko/claw2.png
 share/apps/amor/neko/jump1.png
@@ -217,6 +226,7 @@ share/apps/amor/neko/surprise.png
 share/apps/amor/neko/tail.png
 share/apps/amor/neko/yawn.png
 share/apps/amor/nekorc
+share/apps/amor/pingu/
 share/apps/amor/pingu/bash_l1.png
 share/apps/amor/pingu/bash_l10.png
 share/apps/amor/pingu/bash_l11.png
@@ -319,9 +329,11 @@ share/apps/amor/pingu/walk_r6.png
 share/apps/amor/pingu/walk_r7.png
 share/apps/amor/pingu/walk_r8.png
 share/apps/amor/pingurc
+share/apps/amor/static/
 share/apps/amor/static/billy.png
 share/apps/amor/static/bsd.png
 share/apps/amor/static/tux.png
+share/apps/amor/tao/
 share/apps/amor/tao/yy-1.png
 share/apps/amor/tao/yy-2.png
 share/apps/amor/tao/yy-3.png
@@ -372,6 +384,7 @@ share/apps/amor/taorc
 share/apps/amor/tips
 share/apps/amor/tips-en
 share/apps/amor/tuxrc
+share/apps/amor/worm/
 share/apps/amor/worm/w-a1.png
 share/apps/amor/worm/w-a2.png
 share/apps/amor/worm/w-b1.png
@@ -409,11 +422,17 @@ share/apps/amor/worm/w-wl2.png
 share/apps/amor/worm/w-wr1.png
 share/apps/amor/worm/w-wr2.png
 share/apps/amor/wormrc
+share/apps/kdesktop/
+share/apps/kdesktop/programs/
 share/apps/kdesktop/programs/kdeworld.desktop
+share/apps/kicker/
+share/apps/kicker/applets/
 share/apps/kicker/applets/eyesapplet.desktop
 share/apps/kicker/applets/kfifteenapplet.desktop
 share/apps/kicker/applets/kweather.desktop
 share/apps/kicker/applets/kwwapplet.desktop
+share/apps/kmoon/
+share/apps/kmoon/pics/
 share/apps/kmoon/pics/moon1.png
 share/apps/kmoon/pics/moon10.png
 share/apps/kmoon/pics/moon11.png
@@ -443,13 +462,23 @@ share/apps/kmoon/pics/moon6.png
 share/apps/kmoon/pics/moon7.png
 share/apps/kmoon/pics/moon8.png
 share/apps/kmoon/pics/moon9.png
+share/apps/kodo/
 share/apps/kodo/numbers.png
+share/apps/kteatime/
 share/apps/kteatime/eventsrc
+share/apps/kteatime/icons/
+share/apps/kteatime/icons/crystalsvg/
+share/apps/kteatime/icons/crystalsvg/16x16/
+share/apps/kteatime/icons/crystalsvg/16x16/apps/
 share/apps/kteatime/icons/crystalsvg/16x16/apps/kteatime.png
+share/apps/kteatime/icons/crystalsvg/22x22/
+share/apps/kteatime/icons/crystalsvg/22x22/actions/
 share/apps/kteatime/icons/crystalsvg/22x22/actions/mug.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_anim1.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_anim2.png
 share/apps/kteatime/icons/crystalsvg/22x22/actions/tea_not_ready.png
+share/apps/ktux/
+share/apps/ktux/sprites/
 share/apps/ktux/sprites/anim0001.png
 share/apps/ktux/sprites/anim0002.png
 share/apps/ktux/sprites/anim0003.png
@@ -466,6 +495,7 @@ share/apps/ktux/sprites/flare0002.png
 share/apps/ktux/sprites/spriterc
 share/apps/ktux/sprites/star0001.png
 share/apps/ktux/sprites/star0002.png
+share/apps/kweather/
 share/apps/kweather/cloudy1.png
 share/apps/kweather/cloudy1_night.png
 share/apps/kweather/cloudy2.png
@@ -504,16 +534,22 @@ share/apps/kweather/tstorm1_night.png
 share/apps/kweather/tstorm2.png
 share/apps/kweather/tstorm2_night.png
 share/apps/kweather/tstorm3.png
+share/apps/kweatherservice/
 share/apps/kweatherservice/stations.dat
+share/apps/kworldclock/
+share/apps/kworldclock/maps/
+share/apps/kworldclock/maps/depths/
 share/apps/kworldclock/maps/depths/400.jpg
 share/apps/kworldclock/maps/depths/800.jpg
 share/apps/kworldclock/maps/depths/depths.desktop
+share/apps/kworldclock/pics/
 share/apps/kworldclock/pics/flag-blue.png
 share/apps/kworldclock/pics/flag-green.png
 share/apps/kworldclock/pics/flag-mask.xpm
 share/apps/kworldclock/pics/flag-red.png
 share/apps/kworldclock/pics/flag.png
 share/apps/kworldclock/zone.tab
+share/doc/HTML/en/amor/
 share/doc/HTML/en/amor/billy.png
 share/doc/HTML/en/amor/bonhomme.png
 share/doc/HTML/en/amor/bsd.png
@@ -528,91 +564,55 @@ share/doc/HTML/en/amor/spot.png
 share/doc/HTML/en/amor/tao.png
 share/doc/HTML/en/amor/tux.png
 share/doc/HTML/en/amor/worm.png
+share/doc/HTML/en/kmoon/
 share/doc/HTML/en/kmoon/carlosmail
 share/doc/HTML/en/kmoon/common
 share/doc/HTML/en/kmoon/index.cache.bz2
 share/doc/HTML/en/kmoon/index.docbook
+share/doc/HTML/en/kodo/
 share/doc/HTML/en/kodo/common
 share/doc/HTML/en/kodo/guide.png
 share/doc/HTML/en/kodo/index.cache.bz2
 share/doc/HTML/en/kodo/index.docbook
+share/doc/HTML/en/kteatime/
 share/doc/HTML/en/kteatime/common
 share/doc/HTML/en/kteatime/config.png
 share/doc/HTML/en/kteatime/index.cache.bz2
 share/doc/HTML/en/kteatime/index.docbook
+share/doc/HTML/en/kweather/
 share/doc/HTML/en/kweather/common
 share/doc/HTML/en/kweather/index.cache.bz2
 share/doc/HTML/en/kweather/index.docbook
+share/doc/HTML/en/kworldclock/
 share/doc/HTML/en/kworldclock/common
 share/doc/HTML/en/kworldclock/index.cache.bz2
 share/doc/HTML/en/kworldclock/index.docbook
+share/icons/crystalsvg/16x16/apps/
 share/icons/crystalsvg/16x16/apps/amor.png
 share/icons/crystalsvg/16x16/apps/kmoon.png
 share/icons/crystalsvg/16x16/apps/kodo.png
 share/icons/crystalsvg/16x16/apps/kteatime.png
 share/icons/crystalsvg/16x16/apps/kweather.png
 share/icons/crystalsvg/16x16/apps/kworldclock.png
+share/icons/crystalsvg/32x32/apps/
 share/icons/crystalsvg/32x32/apps/amor.png
 share/icons/crystalsvg/32x32/apps/kmoon.png
 share/icons/crystalsvg/32x32/apps/kodo.png
 share/icons/crystalsvg/32x32/apps/kweather.png
 share/icons/crystalsvg/32x32/apps/kworldclock.png
+share/icons/crystalsvg/48x48/apps/
 share/icons/crystalsvg/48x48/apps/kmoon.png
 share/icons/crystalsvg/48x48/apps/kodo.png
 share/icons/crystalsvg/48x48/apps/kweather.png
 share/icons/crystalsvg/48x48/apps/kworldclock.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/ktux.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/ktux.png
 share/services/kcmweather.desktop
 share/services/kcmweatherservice.desktop
 share/services/kweatherservice.desktop
 %%SHARED%%
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/doc/HTML/en/kworldclock
-@dirrm share/doc/HTML/en/kweather
-@dirrm share/doc/HTML/en/kteatime
-@dirrm share/doc/HTML/en/kodo
-@dirrm share/doc/HTML/en/kmoon
-@dirrm share/doc/HTML/en/amor
-@dirrm share/apps/kworldclock/pics
-@dirrm share/apps/kworldclock/maps/depths
-@dirrm share/apps/kworldclock/maps
-@dirrm share/apps/kworldclock
-@dirrm share/apps/kweatherservice
-@dirrm share/apps/kweather
-@dirrm share/apps/ktux/sprites
-@dirrm share/apps/ktux
-@dirrm share/apps/kteatime/icons/crystalsvg/22x22/actions
-@dirrm share/apps/kteatime/icons/crystalsvg/22x22
-@dirrm share/apps/kteatime/icons/crystalsvg/16x16/apps
-@dirrm share/apps/kteatime/icons/crystalsvg/16x16
-@dirrm share/apps/kteatime/icons/crystalsvg
-@dirrm share/apps/kteatime/icons
-@dirrm share/apps/kteatime
-@dirrm share/apps/kodo
-@dirrm share/apps/kmoon/pics
-@dirrm share/apps/kmoon
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
-@dirrm share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop
-@dirrm share/apps/amor/worm
-@dirrm share/apps/amor/tao
-@dirrm share/apps/amor/static
-@dirrm share/apps/amor/pingu
-@dirrm share/apps/amor/neko
-@dirrm share/apps/amor/ghost
-@dirrm share/apps/amor/eyes
-@dirrm share/apps/amor/blob
-@dirrm share/apps/amor/b
-@dirrm share/apps/amor
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/03/07 21:08:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/07/24 12:47:14 espie Exp $
 bin/clib
 bin/kjscmd
+include/kjsembed/
 include/kjsembed/customobject_imp.h
 include/kjsembed/jsbinding.h
 include/kjsembed/jsbindingplugin.h
@@ -35,9 +36,14 @@ lib/libkdec.la
 lib/libkjsembed.la
 lib/libqtc.la
 lib/libsmokeqt.la
+lib/python2.3/
 lib/python2.3/pydcop.py
+lib/python2.3/site-packages/
 lib/python2.3/site-packages/pcop.la
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DCOP/.packlist
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DCOP/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DCOP/.packlist
 share/applications/kde/kjscmd.desktop
 share/mimelnk/application/x-javascript.desktop
 share/services/customobject_plugin.desktop
@@ -45,9 +51,3 @@ share/services/customqobject_plugin.desktop
 share/services/imagefx_plugin.desktop
 share/servicetypes/binding_type.desktop
 %%SHARED%%
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/DCOP
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto
-@dirrm libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd
-@dirrm lib/python2.3/site-packages
-@dirrm lib/python2.3
-@dirrm include/kjsembed

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2004/02/03 00:16:43 espie Exp $
---- configure.in.orig	2004-02-03 00:45:23.000000000 +0100
-+++ configure.in	2004-02-03 00:45:35.000000000 +0100
-@@ -795,7 +795,7 @@ AC_DEFUN(AC_GSL_REQUIREMENTS,
+$OpenBSD: patch-configure_in,v 1.2 2004/07/24 12:47:13 espie Exp $
+--- configure.in.orig	Sun May 30 18:24:10 2004
++++ configure.in	Fri Jul 16 00:35:53 2004
+@@ -797,7 +797,7 @@ AC_DEFUN(AC_GSL_REQUIREMENTS,
        [AC_CHECK_HEADER(ogg/ogg.h, ov_headers=`expr $ov_headers + 1`)]
        [AC_CHECK_HEADER(vorbis/vorbisfile.h, ov_headers=`expr $ov_headers + 1`)]
        ,

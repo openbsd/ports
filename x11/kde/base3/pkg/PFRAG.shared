@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.16 2004/03/07 21:08:43 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.17 2004/07/24 12:47:14 espie Exp $
 ${KDE}/appletproxy.so
 ${KDE}/childpanel_panelextension.so
 ${KDE}/clock_panelapplet.so
@@ -123,6 +123,7 @@ ${KDE}/konqsidebar_web.so
 ${KDE}/konqueror.so
 ${KDE}/konsole.so
 ${KDE}/kprinter.so
+${KDE}/krandrinithack.so
 ${KDE}/ksmserver.so
 ${KDE}/ksplashdefault.so
 ${KDE}/ksplashredmond.so
@@ -166,7 +167,6 @@ ${KDE}/systemtray_panelapplet.so
 ${KDE}/taskbar_panelapplet.so
 ${KDE}/taskbar_panelextension.so
 ${KDE}/textthumbnail.so
-lib/krandrinithack.so
 lib/libkateinterfaces.so.0.0
 lib/libkateutils.so.0.0
 lib/libkdecorations.so.1.0
@@ -189,6 +189,7 @@ lib/libkdeinit_kmenuedit.so
 lib/libkdeinit_konqueror.so
 lib/libkdeinit_konsole.so
 lib/libkdeinit_kprinter.so
+lib/libkdeinit_krandrinithack.so
 lib/libkdeinit_ksmserver.so
 lib/libkdeinit_kwin.so
 lib/libkdeinit_kwrite.so

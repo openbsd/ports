@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST.uk,v 1.16 2004/03/08 11:10:15 espie Exp $
+@comment $OpenBSD: PLIST.uk,v 1.17 2004/07/24 12:47:15 espie Exp $
+share/doc/HTML/uk/
+${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png
 ${DOC}common/2.png
@@ -47,10 +49,13 @@ ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html
 ${DOC}common/xml.dcl
+${DOC}kaddressbook/
 ${DOC}kaddressbook/common
 ${DOC}kaddressbook/${C}
 ${DOC}kaddressbook/${I}
+${DOC}kdeaccessibility/
 ${DOC}kdeaccessibility/kmouth.po
+${DOC}khelpcenter/
 ${DOC}khelpcenter/common
 ${DOC}khelpcenter/contact.docbook
 ${DOC}khelpcenter/help.docbook
@@ -60,9 +65,12 @@ ${DOC}khelpcenter/links.docbook
 ${DOC}khelpcenter/support.docbook
 ${DOC}khelpcenter/welcome.docbook
 ${DOC}khelpcenter/whatiskde.docbook
+${DOC}kinfocenter/
+${DOC}kinfocenter/protocols/
 ${DOC}kinfocenter/protocols/common
 ${DOC}kinfocenter/protocols/${C}
 ${DOC}kinfocenter/protocols/${I}
+${DOC}kioslave/
 ${DOC}kioslave/audiocd.docbook
 ${DOC}kioslave/bzip.docbook
 ${DOC}kioslave/bzip2.docbook
@@ -122,20 +130,6 @@ ${LOC}clockapplet.mo
 ${LOC}crashesplugin.mo
 ${LOC}cupsdconf.mo
 ${LOC}dcopservice.mo
-${LOC}desktop_kde-i18n.mo
-${LOC}desktop_kdeaddons.mo
-${LOC}desktop_kdeadmin.mo
-${LOC}desktop_kdeartwork.mo
-${LOC}desktop_kdebase.mo
-${LOC}desktop_kdegames.mo
-${LOC}desktop_kdegraphics.mo
-${LOC}desktop_kdelibs.mo
-${LOC}desktop_kdemultimedia.mo
-${LOC}desktop_kdenetwork.mo
-${LOC}desktop_kdepim.mo
-${LOC}desktop_kdesdk.mo
-${LOC}desktop_kdetoys.mo
-${LOC}desktop_kdeutils.mo
 ${LOC}devicesapplet.mo
 ${LOC}dirfilterplugin.mo
 ${LOC}display.mo
@@ -166,6 +160,7 @@ ${LOC}kaboodle.mo
 ${LOC}kaccess.mo
 ${LOC}kaddressbook.mo
 ${LOC}kalarm.mo
+${LOC}kalarmdgui.mo
 ${LOC}kandy.mo
 ${LOC}kappfinder.mo
 ${LOC}karm.mo
@@ -223,6 +218,7 @@ ${LOC}kcmicons.mo
 ${LOC}kcminfo.mo
 ${LOC}kcminput.mo
 ${LOC}kcmioslaveinfo.mo
+${LOC}kcmkabconfig.mo
 ${LOC}kcmkamera.mo
 ${LOC}kcmkclock.mo
 ${LOC}kcmkded.mo
@@ -266,6 +262,7 @@ ${LOC}kcmstyle.mo
 ${LOC}kcmtaskbar.mo
 ${LOC}kcmusb.mo
 ${LOC}kcmview1394.mo
+${LOC}kcmwifi.mo
 ${LOC}kcmxinerama.mo
 ${LOC}kcoloredit.mo
 ${LOC}kcontrol.mo
@@ -343,6 +340,7 @@ ${LOC}kget.mo
 ${LOC}kghostview.mo
 ${LOC}kgpg.mo
 ${LOC}kgpgcertmanager.mo
+${LOC}kgreet_classic.mo
 ${LOC}khelpcenter.mo
 ${LOC}khexedit.mo
 ${LOC}khotkeys.mo
@@ -369,6 +367,7 @@ ${LOC}kio_pop3.mo
 ${LOC}kio_print.mo
 ${LOC}kio_settings.mo
 ${LOC}kio_sftp.mo
+${LOC}kio_sieve.mo
 ${LOC}kio_smb.mo
 ${LOC}kio_smbro.mo
 ${LOC}kio_smtp.mo
@@ -390,9 +389,14 @@ ${LOC}kmenuapplet.mo
 ${LOC}kmenuedit.mo
 ${LOC}kmid.mo
 ${LOC}kmidi.mo
+${LOC}kmilo_generic.mo
+${LOC}kmilo_kvaio.mo
+${LOC}kmilo_powerbook.mo
+${LOC}kmilod.mo
 ${LOC}kmines.mo
 ${LOC}kminipagerapplet.mo
 ${LOC}kmix.mo
+${LOC}kmobile.mo
 ${LOC}kmoon.mo
 ${LOC}kmplot.mo
 ${LOC}kmrml.mo
@@ -407,7 +411,9 @@ ${LOC}konqueror.mo
 ${LOC}konquest.mo
 ${LOC}konsole.mo
 ${LOC}konsolekalendar.mo
+${LOC}kontact.mo
 ${LOC}kooka.mo
+${LOC}kopete.mo
 ${LOC}korganizer.mo
 ${LOC}korn.mo
 ${LOC}kpackage.mo
@@ -419,8 +425,6 @@ ${LOC}kpat.mo
 ${LOC}kpdf.mo
 ${LOC}kpersonalizer.mo
 ${LOC}kpf.mo
-${LOC}kpilot.mo
-${LOC}kpovmodeler.mo
 ${LOC}kppp.mo
 ${LOC}kppplogview.mo
 ${LOC}kprinter.mo
@@ -455,6 +459,7 @@ ${LOC}kstartperf.mo
 ${LOC}kstyle_keramik_config.mo
 ${LOC}kstyle_plastik_config.mo
 ${LOC}ksvgplugin.mo
+${LOC}ksync.mo
 ${LOC}ksysguard.mo
 ${LOC}ksystemtrayapplet.mo
 ${LOC}ksystraycmd.mo
@@ -468,6 +473,7 @@ ${LOC}ktexteditor_kdatatool.mo
 ${LOC}ktimemon.mo
 ${LOC}ktimer.mo
 ${LOC}ktip.mo
+${LOC}ktnef.mo
 ${LOC}ktron.mo
 ${LOC}ktuberling.mo
 ${LOC}ktux.mo
@@ -486,6 +492,7 @@ ${LOC}kviewtemplateplugin.mo
 ${LOC}kviewviewer.mo
 ${LOC}kwalletmanager.mo
 ${LOC}kweather.mo
+${LOC}kwifimanager.mo
 ${LOC}kwin.mo
 ${LOC}kwin4.mo
 ${LOC}kwin_b2_config.mo
@@ -496,18 +503,20 @@ ${LOC}kwin_icewm_config.mo
 ${LOC}kwin_keramik_config.mo
 ${LOC}kwin_modernsys_config.mo
 ${LOC}kwin_quartz_config.mo
+${LOC}kwireless.mo
 ${LOC}kworldclock.mo
 ${LOC}kwriteconfig.mo
 ${LOC}kxkb.mo
 ${LOC}kxmlrpcd.mo
-${LOC}kxsconfig.mo
 ${LOC}libcalendarresources.mo
 ${LOC}libkaddrbk_geo_xxport.mo
+${LOC}libkcal.mo
 ${LOC}libkcalsystem.mo
 ${LOC}libkcddb.mo
 ${LOC}libkdegames.mo
 ${LOC}libkdehighscores.mo
 ${LOC}libkdenetwork.mo
+${LOC}libkdepim.mo
 ${LOC}libkicker.mo
 ${LOC}libkickermenu_kdeprint.mo
 ${LOC}libkickermenu_konsole.mo
@@ -517,6 +526,7 @@ ${LOC}libkonq.mo
 ${LOC}libkpimexchange.mo
 ${LOC}libkscan.mo
 ${LOC}libkscreensaver.mo
+${LOC}libksieve.mo
 ${LOC}libksync.mo
 ${LOC}libtaskbar.mo
 ${LOC}libtaskmanager.mo
@@ -550,11 +560,3 @@ ${LOC}webarchiver.mo
 share/locale/uk/charset
 share/locale/uk/entry.desktop
 share/locale/uk/flag.png
-@dirrm ${DOC}kioslave
-@dirrm ${DOC}kinfocenter/protocols
-@dirrm ${DOC}kinfocenter
-@dirrm ${DOC}khelpcenter
-@dirrm ${DOC}kdeaccessibility
-@dirrm ${DOC}kaddressbook
-@dirrm ${DOC}common
-@dirrm share/doc/HTML/uk

@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.9 2004/05/10 10:12:29 brad Exp $
+# $OpenBSD: kde.port.mk,v 1.10 2004/07/24 12:47:13 espie Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -42,6 +42,10 @@ SUP_PATCH_LIST?=
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.1/patch-* patch-* ${SUP_PATCH_LIST}
 .elif ${MODKDE_VERSION} == "3.2"
 PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2/patch-* patch-* ${SUP_PATCH_LIST}
+AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
+LIB_DEPENDS+=lib/qt3/qt-mt.3.20::x11/qt3,mt
+.elif ${MODKDE_VERSION} == "3.2.3"
+PATCH_LIST=	${PORTSDIR}/x11/kde/patches-3.2.3/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 LIB_DEPENDS+=lib/qt3/qt-mt.3.20::x11/qt3,mt
 .elif ${MODKDE_VERSION} == "2.2.2"

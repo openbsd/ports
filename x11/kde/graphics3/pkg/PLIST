@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/03/07 21:08:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2004/07/24 12:47:14 espie Exp $
 bin/kcolorchooser
 bin/kcoloredit
 bin/kdvi
@@ -167,12 +167,14 @@ include/dom/SVGWindow.h
 include/dom/SVGZoomAndPan.h
 include/dom/SVGZoomEvent.h
 include/kmultipageInterface.h
+include/ksvg/
 include/ksvg/CanvasFactory.h
 include/ksvg/CanvasItem.h
 include/ksvg/CanvasItems.h
 include/ksvg/DocumentFactory.h
 include/ksvg/KSVGCanvas.h
 include/ksvg/ksvg_plugin.h
+include/libtext2path-0.1/
 include/libtext2path-0.1/BezierPath.h
 include/libtext2path-0.1/Glyph.h
 include/libtext2path-0.1/GlyphTracer.h
@@ -236,18 +238,28 @@ share/applications/kde/kruler.desktop
 share/applications/kde/ksnapshot.desktop
 share/applications/kde/kuickshow.desktop
 share/applications/kde/kview.desktop
+share/applnk/
+share/applnk/.hidden/
 share/applnk/.hidden/kgamma.desktop
+share/applnk/Graphics/
 share/applnk/Graphics/kruler.desktop
+share/apps/kcoloredit/
 share/apps/kcoloredit/kcoloreditui.rc
+share/apps/kdvi/
 share/apps/kdvi/kdvi_part.rc
 share/apps/kdvi/tips
+share/apps/kdvi/toolbar/
 share/apps/kdvi/toolbar/forwpage.xpm
 share/apps/kdvi/toolbar/largetext.xpm
 share/apps/kdvi/toolbar/smalltext.xpm
+share/apps/kfax/
 share/apps/kfax/kfax_part.rc
 share/apps/kfax/kfaxui.rc
+share/apps/kfax/pics/
 share/apps/kfax/pics/kfax.tif
 share/apps/kfax/pics/kfaxlogo.xpm
+share/apps/kgamma/
+share/apps/kgamma/pics/
 share/apps/kgamma/pics/background.png
 share/apps/kgamma/pics/cmyscale.png
 share/apps/kgamma/pics/darkgrey.png
@@ -255,13 +267,17 @@ share/apps/kgamma/pics/greyscale.png
 share/apps/kgamma/pics/lightgrey.png
 share/apps/kgamma/pics/midgrey.png
 share/apps/kgamma/pics/rgbscale.png
+share/apps/kghostview/
 share/apps/kghostview/kghostviewui.rc
 share/apps/kghostview/kgv_part.rc
 share/apps/kghostview/pdf_sec.ps
+share/apps/kiconedit/
 share/apps/kiconedit/kiconeditui.rc
+share/apps/kiconedit/pics/
 share/apps/kiconedit/pics/compressed.png
 share/apps/kiconedit/pics/source.png
 share/apps/kiconedit/pics/standard.png
+share/apps/kiconedit/toolbar/
 share/apps/kiconedit/toolbar/aim-cursor.xpm
 share/apps/kiconedit/toolbar/aim.png
 share/apps/kiconedit/toolbar/airbrush-cursor.xpm
@@ -286,8 +302,12 @@ share/apps/kiconedit/toolbar/rectangle.png
 share/apps/kiconedit/toolbar/selectcircle.png
 share/apps/kiconedit/toolbar/selectrect.png
 share/apps/kiconedit/toolbar/transform.png
+share/apps/konqueror/
+share/apps/konqueror/servicemenus/
 share/apps/konqueror/servicemenus/mrml-servicemenu.desktop
+share/apps/kpaint/
 share/apps/kpaint/kpaintui.rc
+share/apps/kpaint/toolbar/
 share/apps/kpaint/toolbar/areaselect.png
 share/apps/kpaint/toolbar/brush.png
 share/apps/kpaint/toolbar/circle.png
@@ -295,8 +315,14 @@ share/apps/kpaint/toolbar/ellipse.png
 share/apps/kpaint/toolbar/line.png
 share/apps/kpaint/toolbar/rectangle.png
 share/apps/kpaint/toolbar/roundangle.png
+share/apps/kpdf/
 share/apps/kpdf/kpdf_shell.rc
+share/apps/kpdfpart/
 share/apps/kpdfpart/kpdf_part.rc
+share/apps/kpovmodeler/
+share/apps/kpovmodeler/examples/
+share/apps/kpovmodeler/examples/includes/
+share/apps/kpovmodeler/examples/includes/inlined/
 share/apps/kpovmodeler/examples/includes/inlined/chars.kpm
 share/apps/kpovmodeler/examples/includes/inlined/finish.kpm
 share/apps/kpovmodeler/examples/includes/inlined/glass.kpm
@@ -311,6 +337,7 @@ share/apps/kpovmodeler/examples/includes/inlined/stones1.kpm
 share/apps/kpovmodeler/examples/includes/inlined/stones2.kpm
 share/apps/kpovmodeler/examples/includes/inlined/textures.kpm
 share/apps/kpovmodeler/examples/includes/inlined/woods.kpm
+share/apps/kpovmodeler/examples/includes/original/
 share/apps/kpovmodeler/examples/includes/original/chars.kpm
 share/apps/kpovmodeler/examples/includes/original/finish.kpm
 share/apps/kpovmodeler/examples/includes/original/glass.kpm
@@ -325,21 +352,27 @@ share/apps/kpovmodeler/examples/includes/original/stones1.kpm
 share/apps/kpovmodeler/examples/includes/original/stones2.kpm
 share/apps/kpovmodeler/examples/includes/original/textures.kpm
 share/apps/kpovmodeler/examples/includes/original/woods.kpm
+share/apps/kpovmodeler/examples/scenes/
+share/apps/kpovmodeler/examples/scenes/advanced/
 share/apps/kpovmodeler/examples/scenes/advanced/ants.kpm
 share/apps/kpovmodeler/examples/scenes/advanced/bee.kpm
 share/apps/kpovmodeler/examples/scenes/advanced/ink.kpm
 share/apps/kpovmodeler/examples/scenes/advanced/table.kpm
+share/apps/kpovmodeler/examples/scenes/csg/
 share/apps/kpovmodeler/examples/scenes/csg/cheese.kpm
 share/apps/kpovmodeler/examples/scenes/csg/emptybox.kpm
 share/apps/kpovmodeler/examples/scenes/csg/heightfield.kpm
+share/apps/kpovmodeler/examples/scenes/interior/
 share/apps/kpovmodeler/examples/scenes/interior/cubes.kpm
 share/apps/kpovmodeler/examples/scenes/interior/media1.kpm
 share/apps/kpovmodeler/examples/scenes/interior/media2.kpm
 share/apps/kpovmodeler/examples/scenes/interior/media3.kpm
 share/apps/kpovmodeler/examples/scenes/interior/spheres.kpm
+share/apps/kpovmodeler/examples/scenes/lights/
 share/apps/kpovmodeler/examples/scenes/lights/arealight.kpm
 share/apps/kpovmodeler/examples/scenes/lights/arealight2.kpm
 share/apps/kpovmodeler/examples/scenes/lights/spotlight.kpm
+share/apps/kpovmodeler/examples/scenes/objects/
 share/apps/kpovmodeler/examples/scenes/objects/allobjects.kpm
 share/apps/kpovmodeler/examples/scenes/objects/fractals.kpm
 share/apps/kpovmodeler/examples/scenes/objects/lathe.kpm
@@ -347,6 +380,10 @@ share/apps/kpovmodeler/examples/scenes/objects/prism.kpm
 share/apps/kpovmodeler/examples/scenes/objects/sor.kpm
 share/apps/kpovmodeler/examples/scenes/objects/superellipsoid.kpm
 share/apps/kpovmodeler/examples/scenes/objects/text.kpm
+share/apps/kpovmodeler/icons/
+share/apps/kpovmodeler/icons/crystalsvg/
+share/apps/kpovmodeler/icons/crystalsvg/16x16/
+share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/
 share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmaddpoint.png
 share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmaddsubprism.png
 share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmbicubicpatch.png
@@ -450,6 +487,8 @@ share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmtreeview.png
 share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmtriangle.png
 share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmunion.png
 share/apps/kpovmodeler/icons/crystalsvg/16x16/actions/pmwarp.png
+share/apps/kpovmodeler/icons/crystalsvg/22x22/
+share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/
 share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmbicubicpatch.png
 share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmblendmapmodifiers.png
 share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmblob.png
@@ -544,6 +583,9 @@ share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmtranslate.png
 share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmtriangle.png
 share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmunion.png
 share/apps/kpovmodeler/icons/crystalsvg/22x22/actions/pmwarp.png
+share/apps/kpovmodeler/icons/locolor/
+share/apps/kpovmodeler/icons/locolor/16x16/
+share/apps/kpovmodeler/icons/locolor/16x16/actions/
 share/apps/kpovmodeler/icons/locolor/16x16/actions/pmaddpoint.png
 share/apps/kpovmodeler/icons/locolor/16x16/actions/pmaddsubprism.png
 share/apps/kpovmodeler/icons/locolor/16x16/actions/pmbicubicpatch.png
@@ -621,14 +663,20 @@ share/apps/kpovmodeler/kpovmodelerbrowser.rc
 share/apps/kpovmodeler/kpovmodelershell.rc
 share/apps/kpovmodeler/kpovmodelerui.rc
 share/apps/kpovmodeler/povraydocmap.xml
+share/apps/kruler/
 share/apps/kruler/eventsrc
+share/apps/kruler/pics/
 share/apps/kruler/pics/kruler-east.png
 share/apps/kruler/pics/kruler-north.png
 share/apps/kruler/pics/kruler-south.png
 share/apps/kruler/pics/kruler-west.png
+share/apps/kruler/sounds/
 share/apps/kruler/sounds/move.wav
+share/apps/ksvg/
 share/apps/ksvg/ksvgplugin.rc
+share/apps/kuickshow/
 share/apps/kuickshow/im_palette.pal
+share/apps/kuickshow/pics/
 share/apps/kuickshow/pics/about.png
 share/apps/kuickshow/pics/calibrate.png
 share/apps/kuickshow/pics/handcursor.png
@@ -638,6 +686,8 @@ share/apps/kuickshow/pics/ksslide.png
 share/apps/kuickshow/pics/kuickshow-day.jpg
 share/apps/kuickshow/pics/kuickshow-night.jpg
 share/apps/kuickshow/pics/logo.png
+share/apps/kview/
+share/apps/kview/kpartplugins/
 share/apps/kview/kpartplugins/kvieweffects.desktop
 share/apps/kview/kpartplugins/kvieweffects.rc
 share/apps/kview/kpartplugins/kviewpresenter.desktop
@@ -646,19 +696,26 @@ share/apps/kview/kpartplugins/kviewscanner.desktop
 share/apps/kview/kpartplugins/kviewscanner.rc
 share/apps/kview/kview.setdlg
 share/apps/kview/kviewui.rc
+share/apps/kviewerpart/
 share/apps/kviewerpart/kviewerpart.rc
+share/apps/kviewshell/
 share/apps/kviewshell/kviewshell.rc
+share/apps/kviewviewer/
+share/apps/kviewviewer/kpartplugins/
 share/apps/kviewviewer/kpartplugins/kviewbrowser.desktop
 share/apps/kviewviewer/kpartplugins/kviewbrowser.rc
 share/apps/kviewviewer/kviewpopup.rc
 share/apps/kviewviewer/kviewviewer.rc
 share/apps/kviewviewer/kviewviewer_ro.rc
+share/doc/HTML/en/kamera/
 share/doc/HTML/en/kamera/common
 share/doc/HTML/en/kamera/index.cache.bz2
 share/doc/HTML/en/kamera/index.docbook
+share/doc/HTML/en/kcoloredit/
 share/doc/HTML/en/kcoloredit/common
 share/doc/HTML/en/kcoloredit/index.cache.bz2
 share/doc/HTML/en/kcoloredit/index.docbook
+share/doc/HTML/en/kdvi/
 share/doc/HTML/en/kdvi/KDVI-features.dvi
 share/doc/HTML/en/kdvi/KDVI-features.tex
 share/doc/HTML/en/kdvi/aboutkde.ps
@@ -670,15 +727,19 @@ share/doc/HTML/en/kdvi/optionrequester1.png
 share/doc/HTML/en/kdvi/optionrequester2.png
 share/doc/HTML/en/kdvi/srcltx.sty
 share/doc/HTML/en/kdvi/srctex.sty
+share/doc/HTML/en/kgamma/
 share/doc/HTML/en/kgamma/common
 share/doc/HTML/en/kgamma/index.cache.bz2
 share/doc/HTML/en/kgamma/index.docbook
+share/doc/HTML/en/kghostview/
 share/doc/HTML/en/kghostview/common
 share/doc/HTML/en/kghostview/index.cache.bz2
 share/doc/HTML/en/kghostview/index.docbook
+share/doc/HTML/en/kiconedit/
 share/doc/HTML/en/kiconedit/common
 share/doc/HTML/en/kiconedit/index.cache.bz2
 share/doc/HTML/en/kiconedit/index.docbook
+share/doc/HTML/en/kooka/
 share/doc/HTML/en/kooka/common
 share/doc/HTML/en/kooka/index.cache.bz2
 share/doc/HTML/en/kooka/index.docbook
@@ -691,12 +752,15 @@ share/doc/HTML/en/kooka/shortcut1.png
 share/doc/HTML/en/kooka/toolbar.png
 share/doc/HTML/en/kooka/toolbar1.png
 share/doc/HTML/en/kooka/toolbar2.png
+share/doc/HTML/en/kpaint/
 share/doc/HTML/en/kpaint/common
 share/doc/HTML/en/kpaint/index.cache.bz2
 share/doc/HTML/en/kpaint/index.docbook
+share/doc/HTML/en/kpdf/
 share/doc/HTML/en/kpdf/common
 share/doc/HTML/en/kpdf/index.cache.bz2
 share/doc/HTML/en/kpdf/index.docbook
+share/doc/HTML/en/kpovmodeler/
 share/doc/HTML/en/kpovmodeler/cameraview.png
 share/doc/HTML/en/kpovmodeler/common
 share/doc/HTML/en/kpovmodeler/controlpoints.png
@@ -749,18 +813,22 @@ share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-finish.png
 share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-nocolor.png
 share/doc/HTML/en/kpovmodeler/tutorial01-sphere-render-solidcolor.png
 share/doc/HTML/en/kpovmodeler/tutorial01-sphere-solid-color.png
+share/doc/HTML/en/kruler/
 share/doc/HTML/en/kruler/common
 share/doc/HTML/en/kruler/index.cache.bz2
 share/doc/HTML/en/kruler/index.docbook
+share/doc/HTML/en/ksnapshot/
 share/doc/HTML/en/ksnapshot/common
 share/doc/HTML/en/ksnapshot/index.cache.bz2
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/preview.png
 share/doc/HTML/en/ksnapshot/window.png
+share/doc/HTML/en/kuickshow/
 share/doc/HTML/en/kuickshow/common
 share/doc/HTML/en/kuickshow/index.cache.bz2
 share/doc/HTML/en/kuickshow/index.docbook
 share/doc/HTML/en/kuickshow/screenshot.png
+share/doc/HTML/en/kview/
 share/doc/HTML/en/kview/common
 share/doc/HTML/en/kview/index.cache.bz2
 share/doc/HTML/en/kview/index.docbook
@@ -773,8 +841,10 @@ share/doc/HTML/en/kview/snapshot6.png
 share/doc/HTML/en/kview/snapshot7.png
 share/doc/HTML/en/kview/snapshot8.png
 share/doc/HTML/en/kview/snapshot9.png
+share/icons/crystalsvg/128x128/apps/
 share/icons/crystalsvg/128x128/apps/kghostview.png
 share/icons/crystalsvg/16x16/actions/camera_test.png
+share/icons/crystalsvg/16x16/apps/
 share/icons/crystalsvg/16x16/apps/camera.png
 share/icons/crystalsvg/16x16/apps/kcolorchooser.png
 share/icons/crystalsvg/16x16/apps/kcoloredit.png
@@ -791,7 +861,9 @@ share/icons/crystalsvg/16x16/apps/kview.png
 share/icons/crystalsvg/16x16/apps/kviewshell.png
 share/icons/crystalsvg/16x16/devices/camera.png
 share/icons/crystalsvg/16x16/mimetypes/kpovmodeler_doc.png
+share/icons/crystalsvg/22x22/apps/
 share/icons/crystalsvg/22x22/apps/kcolorchooser.png
+share/icons/crystalsvg/32x32/apps/
 share/icons/crystalsvg/32x32/apps/kcoloredit.png
 share/icons/crystalsvg/32x32/apps/kdvi.png
 share/icons/crystalsvg/32x32/apps/kfax.png
@@ -807,6 +879,7 @@ share/icons/crystalsvg/32x32/apps/kviewshell.png
 share/icons/crystalsvg/32x32/devices/camera.png
 share/icons/crystalsvg/32x32/filesystems/camera.png
 share/icons/crystalsvg/32x32/mimetypes/kpovmodeler_doc.png
+share/icons/crystalsvg/48x48/apps/
 share/icons/crystalsvg/48x48/apps/kdvi.png
 share/icons/crystalsvg/48x48/apps/kfax.png
 share/icons/crystalsvg/48x48/apps/kghostview.png
@@ -816,21 +889,34 @@ share/icons/crystalsvg/48x48/apps/kruler.png
 share/icons/crystalsvg/48x48/apps/ksnapshot.png
 share/icons/crystalsvg/48x48/apps/kview.png
 share/icons/crystalsvg/48x48/apps/kviewshell.png
+share/icons/crystalsvg/64x64/apps/
 share/icons/crystalsvg/64x64/apps/kghostview.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kgamma.png
 share/icons/hicolor/16x16/apps/kpdf.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kgamma.png
 share/icons/hicolor/32x32/apps/kpdf.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kgamma.png
 share/icons/hicolor/48x48/apps/kpdf.png
+share/icons/locolor/
+share/icons/locolor/16x16/
+share/icons/locolor/16x16/apps/
 share/icons/locolor/16x16/apps/kcoloredit.png
 share/icons/locolor/16x16/apps/kpovmodeler.png
 share/icons/locolor/16x16/apps/kuickshow.png
+share/icons/locolor/32x32/
+share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/kcoloredit.png
 share/icons/locolor/32x32/apps/kpovmodeler.png
 share/icons/locolor/32x32/apps/kuickshow.png
 share/mimelnk/text/mrml.desktop
 share/services/kamera.protocol
+share/services/kconfiguredialog/
 share/services/kconfiguredialog/kviewcanvasconfig.desktop
 share/services/kconfiguredialog/kviewgeneralconfig.desktop
 share/services/kconfiguredialog/kviewpluginsconfig.desktop
@@ -860,90 +946,3 @@ share/services/svgthumbnail.desktop
 share/servicetypes/kimageviewer.desktop
 share/servicetypes/kimageviewercanvas.desktop
 share/servicetypes/ksvgrenderer.desktop
-%%SHARED%%
-@dirrm share/services/kconfiguredialog
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/crystalsvg/64x64/apps
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/128x128/apps
-@dirrm share/doc/HTML/en/kview
-@dirrm share/doc/HTML/en/kuickshow
-@dirrm share/doc/HTML/en/ksnapshot
-@dirrm share/doc/HTML/en/kruler
-@dirrm share/doc/HTML/en/kpovmodeler
-@dirrm share/doc/HTML/en/kpdf
-@dirrm share/doc/HTML/en/kpaint
-@dirrm share/doc/HTML/en/kooka
-@dirrm share/doc/HTML/en/kiconedit
-@dirrm share/doc/HTML/en/kghostview
-@dirrm share/doc/HTML/en/kgamma
-@dirrm share/doc/HTML/en/kdvi
-@dirrm share/doc/HTML/en/kcoloredit
-@dirrm share/doc/HTML/en/kamera
-@dirrm share/apps/kviewviewer/kpartplugins
-@dirrm share/apps/kviewviewer
-@dirrm share/apps/kviewshell
-@dirrm share/apps/kviewerpart
-@dirrm share/apps/kview/kpartplugins
-@dirrm share/apps/kview
-@dirrm share/apps/kuickshow/pics
-@dirrm share/apps/kuickshow
-@dirrm share/apps/ksvg
-@dirrm share/apps/kruler/sounds
-@dirrm share/apps/kruler/pics
-@dirrm share/apps/kruler
-@dirrm share/apps/kpovmodeler/icons/locolor/16x16/actions
-@dirrm share/apps/kpovmodeler/icons/locolor/16x16
-@dirrm share/apps/kpovmodeler/icons/locolor
-@dirrm share/apps/kpovmodeler/icons/crystalsvg/22x22/actions
-@dirrm share/apps/kpovmodeler/icons/crystalsvg/22x22
-@dirrm share/apps/kpovmodeler/icons/crystalsvg/16x16/actions
-@dirrm share/apps/kpovmodeler/icons/crystalsvg/16x16
-@dirrm share/apps/kpovmodeler/icons/crystalsvg
-@dirrm share/apps/kpovmodeler/icons
-@dirrm share/apps/kpovmodeler/examples/scenes/objects
-@dirrm share/apps/kpovmodeler/examples/scenes/lights
-@dirrm share/apps/kpovmodeler/examples/scenes/interior
-@dirrm share/apps/kpovmodeler/examples/scenes/csg
-@dirrm share/apps/kpovmodeler/examples/scenes/advanced
-@dirrm share/apps/kpovmodeler/examples/scenes
-@dirrm share/apps/kpovmodeler/examples/includes/original
-@dirrm share/apps/kpovmodeler/examples/includes/inlined
-@dirrm share/apps/kpovmodeler/examples/includes
-@dirrm share/apps/kpovmodeler/examples
-@dirrm share/apps/kpovmodeler
-@dirrm share/apps/kpdfpart
-@dirrm share/apps/kpdf
-@dirrm share/apps/kpaint/toolbar
-@dirrm share/apps/kpaint
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
-@dirrm share/apps/kiconedit/toolbar
-@dirrm share/apps/kiconedit/pics
-@dirrm share/apps/kiconedit
-@dirrm share/apps/kghostview
-@dirrm share/apps/kgamma/pics
-@dirrm share/apps/kgamma
-@dirrm share/apps/kfax/pics
-@dirrm share/apps/kfax
-@dirrm share/apps/kdvi/toolbar
-@dirrm share/apps/kdvi
-@dirrm share/apps/kcoloredit
-@dirrm share/applnk/Graphics
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
-@dirrm include/libtext2path-0.1
-@dirrm include/ksvg

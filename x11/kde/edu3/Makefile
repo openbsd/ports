@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2004/04/13 04:22:37 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2004/07/24 12:47:14 espie Exp $
 
 COMMENT=		"K Desktop Environment, edutainment"
 CATEGORIES=		x11 x11/kde
-VERSION=		3.2.1
+VERSION=		3.2.3
 DISTNAME=		kdeedu-${VERSION}
-MODKDE_VERSION?=	3.2
+MODKDE_VERSION?=	3.2.3
 FLAVORS=debug
 
 LIB_DEPENDS= kdecore.6,DCOP,kdefx,kdeprint,kdesu,kdeui,khtml,kio,kparts,kutils,kjs,kwalletclient::x11/kde/libs3
