@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2000/10/04 21:22:24 jakob Exp $
+# $OpenBSD: Makefile,v 1.2 2000/10/05 15:54:37 jakob Exp $
 
 MULTI_PACKAGES=	-client
 SUBPACKAGE?=
 
-VERSION=	2.0.4
+VERSION=	2.0.6
 DISTNAME=	openldap-${VERSION}
 CATEGORIES=	databases net
 NEED_VERSION=	1.338

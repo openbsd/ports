@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2000/10/04 21:22:25 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.2 2000/10/05 15:54:37 jakob Exp $
 bin/ldapadd
 bin/ldapdelete
 bin/ldapmodify
@@ -259,9 +259,6 @@ share/examples/openldap/schema/cosine.schema
 share/examples/openldap/schema/inetorgperson.schema
 share/examples/openldap/schema/java.schema
 share/examples/openldap/schema/krb5-kdc.schema
-share/examples/openldap/schema/microsoft.ext.schema
-share/examples/openldap/schema/microsoft.schema
-share/examples/openldap/schema/microsoft.std.schema
 share/examples/openldap/schema/misc.schema
 share/examples/openldap/schema/nadf.schema
 share/examples/openldap/schema/nis.schema
