@@ -1,0 +1,10 @@
+--- acconfig/ltconfig.orig	Thu Aug  3 08:46:37 2000
++++ acconfig/ltconfig	Thu Aug  3 08:47:04 2000
+@@ -1962,6 +1962,7 @@
+   library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
+   shlibpath_var=LD_LIBRARY_PATH
++  deplibs_check_method='pass_all'
+   ;;
+ 
+ os2*)
