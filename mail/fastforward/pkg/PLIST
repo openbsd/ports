@@ -1,0 +1,23 @@
+bin/fastforward
+bin/newaliases
+bin/newinclude
+bin/printforward
+bin/printmaillist
+bin/setforward
+bin/setmaillist
+doc/fastforward/ALIASES
+man/cat1/fastforward.0
+man/cat1/newaliases.0
+man/cat1/newinclude.0
+man/cat1/printforward.0
+man/cat1/printmaillist.0
+man/cat1/setforward.0
+man/cat1/setmaillist.0
+man/man1/fastforward.1
+man/man1/newaliases.1
+man/man1/newinclude.1
+man/man1/printforward.1
+man/man1/printmaillist.1
+man/man1/setforward.1
+man/man1/setmaillist.1
+@dirrm doc/fastforward
