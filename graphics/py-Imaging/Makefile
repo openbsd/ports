@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2001/07/18 10:59:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2001/07/29 07:14:59 pvalchev Exp $
 
 COMMENT=		"python imaging library"
 
@@ -27,7 +27,7 @@ PY2=			2.1
 FLAVORS=		${PY2} 1.5
 
 # try to determine python version, if installed.
-.if exists(/usr/local/bin/python)
+.if exists(${LOCALBASE}/bin/python)
 V!= echo 'import sys, string; print string.split(sys.version)[0]' | python
 .endif
 FLAVOR?=		${V}
