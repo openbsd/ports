@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 17:54:16 espie Exp $
+share/${PKGNAME}/
 share/${PKGNAME}/README
 share/${PKGNAME}/migrate_aliases.pl
 share/${PKGNAME}/migrate_all_netinfo_offline.sh
@@ -25,4 +26,3 @@ share/${PKGNAME}/migrate_protocols.pl
 share/${PKGNAME}/migrate_rpc.pl
 share/${PKGNAME}/migrate_services.pl
 share/${PKGNAME}/migrate_slapd_conf.pl
-@dirrm share/${PKGNAME}

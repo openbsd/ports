@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/12/16 19:24:40 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/sh-utils.info
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 17:54:17 espie Exp $
 bin/gbasename
 bin/gchroot
 bin/gdate
@@ -34,39 +33,39 @@ bin/gusers
 bin/gwho
 bin/gwhoami
 bin/gyes
-info/sh-utils.info
-man/man1/gbasename.1
-man/man1/gchroot.1
-man/man1/gdate.1
-man/man1/gdirname.1
-man/man1/gecho.1
-man/man1/genv.1
-man/man1/gexpr.1
-man/man1/gfalse.1
-man/man1/ggid.1
-man/man1/ggroups.1
-man/man1/ghostid.1
-man/man1/ghostname.1
-man/man1/glogname.1
-man/man1/gnice.1
-man/man1/gnohup.1
-man/man1/gpathchk.1
-man/man1/gpinky.1
-man/man1/gprintenv.1
-man/man1/gprintf.1
-man/man1/gpwd.1
-man/man1/gsleep.1
-man/man1/gstty.1
-@comment man/man1/gsu.1
-man/man1/gtee.1
-man/man1/gtest.1
-man/man1/gtrue.1
-man/man1/gtty.1
-man/man1/guname.1
-man/man1/gusers.1
-man/man1/gwho.1
-man/man1/gwhoami.1
-man/man1/gyes.1
+@info info/sh-utils.info
+@man man/man1/gbasename.1
+@man man/man1/gchroot.1
+@man man/man1/gdate.1
+@man man/man1/gdirname.1
+@man man/man1/gecho.1
+@man man/man1/genv.1
+@man man/man1/gexpr.1
+@man man/man1/gfalse.1
+@man man/man1/ggid.1
+@man man/man1/ggroups.1
+@man man/man1/ghostid.1
+@man man/man1/ghostname.1
+@man man/man1/glogname.1
+@man man/man1/gnice.1
+@man man/man1/gnohup.1
+@man man/man1/gpathchk.1
+@man man/man1/gpinky.1
+@man man/man1/gprintenv.1
+@man man/man1/gprintf.1
+@man man/man1/gpwd.1
+@man man/man1/gsleep.1
+@man man/man1/gstty.1
+@man man/man1/gsu.1
+@man man/man1/gtee.1
+@man man/man1/gtest.1
+@man man/man1/gtrue.1
+@man man/man1/gtty.1
+@man man/man1/guname.1
+@man man/man1/gusers.1
+@man man/man1/gwho.1
+@man man/man1/gwhoami.1
+@man man/man1/gyes.1
 share/locale/cs/LC_MESSAGES/sh-utils.mo
 share/locale/de/LC_MESSAGES/sh-utils.mo
 share/locale/el/LC_MESSAGES/sh-utils.mo
@@ -82,6 +81,3 @@ share/locale/ru/LC_MESSAGES/sh-utils.mo
 share/locale/sk/LC_MESSAGES/sh-utils.mo
 share/locale/sv/LC_MESSAGES/sh-utils.mo
 share/locale/zh/LC_MESSAGES/sh-utils.mo
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@exec install-info --info-dir=%D/info %D/info/sh-utils.info

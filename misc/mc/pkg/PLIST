@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/03 14:43:39 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 17:54:16 espie Exp $
 bin/mc
 bin/mcedit
 bin/mcmfmt
@@ -6,33 +6,31 @@ bin/mcview
 @comment lib/mc/
 man/es/
 man/es/man1/
-man/es/man1/mc.1
+@man man/es/man1/mc.1
 man/hu/
 man/hu/man1/
-man/hu/man1/mc.1
+@man man/hu/man1/mc.1
 man/it/
 man/it/man1/
-man/it/man1/mc.1
+@man man/it/man1/mc.1
 @man man/man1/mc.1
 @man man/man1/mcedit.1
 @man man/man1/mcview.1
 man/pl/
 man/pl/man1/
-man/pl/man1/mc.1
+@man man/pl/man1/mc.1
 man/ru/
 man/ru/man1/
-man/ru/man1/mc.1
+@man man/ru/man1/mc.1
 man/sr/
 man/sr/man1/
-man/sr/man1/mc.1
+@man man/sr/man1/mc.1
 share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
 share/locale/be/
 share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/mc.mo
-share/locale/bg/
-share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/mc.mo
 share/locale/ca/
 share/locale/ca/LC_MESSAGES/
@@ -45,12 +43,8 @@ share/locale/es/LC_MESSAGES/mc.mo
 share/locale/eu/
 share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/mc.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
@@ -58,8 +52,6 @@ share/locale/ko/LC_MESSAGES/mc.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/mc.mo
-share/locale/lv/
-share/locale/lv/LC_MESSAGES/
 share/locale/lv/LC_MESSAGES/mc.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
@@ -69,12 +61,8 @@ share/locale/no/LC_MESSAGES/mc.mo
 share/locale/pl/LC_MESSAGES/mc.mo
 share/locale/pt/LC_MESSAGES/mc.mo
 share/locale/pt_BR/LC_MESSAGES/mc.mo
-share/locale/ro/
-share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/mc.mo
 share/locale/sl/LC_MESSAGES/mc.mo
 share/locale/sr/
@@ -85,17 +73,11 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mc.mo
 share/locale/tr/LC_MESSAGES/mc.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/mc.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/mc.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/mc.mo
 share/mc/
 @comment share/mc/bin/

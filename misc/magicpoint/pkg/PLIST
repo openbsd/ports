@@ -1,24 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/08/13 01:43:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 17:54:16 espie Exp $
+bin/eqn2eps
 bin/mgp
+bin/mgp2html
+bin/mgp2latex
 bin/mgp2ps
 bin/mgpembed
 bin/mgpnet
+bin/tex2eps
 bin/xmindpath
 bin/xwintoppm
-bin/eqn2eps
-bin/mgp2html
-bin/mgp2latex
-bin/tex2eps
+lib/X11/mgp/
 lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.jpg
 lib/X11/mgp/mgp2.jpg
 lib/X11/mgp/mgp3.jpg
-man/cat1/mgp.0
-man/cat1/mgp2ps.0
-man/cat1/mgpembed.0
-man/cat1/mgpnet.0
-man/cat1/xwintoppm.0
-man/man1/xmindpath.1
+@man man/cat1/mgp.0
+@man man/cat1/mgp2ps.0
+@man man/cat1/mgpembed.0
+@man man/cat1/mgpnet.0
+@man man/cat1/xwintoppm.0
+@man man/man1/xmindpath.1
+share/doc/mgp/
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
 share/doc/mgp/FAQ
@@ -30,6 +32,7 @@ share/doc/mgp/SYNTAX
 share/doc/mgp/TODO.jp
 share/doc/mgp/USAGE
 share/doc/mgp/USAGE.jp
+share/doc/mgp/sample/
 share/doc/mgp/sample/README
 share/doc/mgp/sample/README.jp
 share/doc/mgp/sample/cloud.jpg
@@ -61,13 +64,10 @@ share/doc/mgp/sample/v6-jp.mgp
 share/doc/mgp/sample/v6.mgp
 share/doc/mgp/sample/v6header.eps
 share/doc/mgp/sample/v6header.jpg
+share/mgp/
+share/mgp/emacs/
 share/mgp/emacs/README
+share/mgp/emacs/mgp-mode.el
 share/mgp/emacs/mgp.el
 share/mgp/emacs/mgp.sty
 share/mgp/emacs/sample.tex
-share/mgp/emacs/mgp-mode.el
-@dirrm share/mgp/emacs
-@dirrm share/mgp
-@dirrm share/doc/mgp/sample
-@dirrm share/doc/mgp
-@dirrm lib/X11/mgp

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/08/26 23:38:15 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:16 espie Exp $
 bin/chkfont
 bin/figlet
 bin/figlist
 bin/showfigfonts
-man/man6/figlet.6
+@man man/man6/figlet.6
+share/figlet/
 share/figlet/3-d.flf
 share/figlet/3x5.flf
 share/figlet/5lineoblique.flf
@@ -270,4 +271,3 @@ share/figlet/xsbooki.flf
 share/figlet/xtimes.flf
 share/figlet/xtty.flf
 share/figlet/xttyb.flf
-@dirrm share/figlet

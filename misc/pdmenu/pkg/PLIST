@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2001/05/08 00:09:40 matt Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:16 espie Exp $
 bin/pdmenu
-man/man1/pdmenu.1
-man/man5/pdmenurc.5
+@man man/man1/pdmenu.1
+@man man/man5/pdmenurc.5
+share/examples/pdmenu/
 share/examples/pdmenu/README
 share/examples/pdmenu/ba.lpd
 share/examples/pdmenu/editdir.pl
+share/examples/pdmenu/newbie/
 share/examples/pdmenu/newbie/modem-check
 share/examples/pdmenu/newbie/pdmenurc.newbie
 share/examples/pdmenu/newbie/rpm-info-on-command
@@ -12,5 +14,3 @@ share/examples/pdmenu/pdmenurc
 share/examples/pdmenu/pdmenurc.complex
 share/examples/pdmenu/pdmenurc.monitor
 share/examples/pdmenu/showdir.pl
-@dirrm share/examples/pdmenu/newbie
-@dirrm share/examples/pdmenu

@@ -1,5 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2000/09/10 12:42:50 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2004/09/15 17:54:16 espie Exp $
 bin/pi-address
+share/doc/pi-address/
+share/doc/pi-address/BUGS
+share/doc/pi-address/NEWS
+share/doc/pi-address/README
+share/doc/pi-address/THANKS
+share/doc/pi-address/TODO
+share/doc/pi-address/html/
 share/doc/pi-address/html/pia-faq-1.html
 share/doc/pi-address/html/pia-faq-2.html
 share/doc/pi-address/html/pia-faq-3.html
@@ -11,14 +18,7 @@ share/doc/pi-address/html/pia-faq.html
 share/doc/pi-address/html/pia-faq.ps.gz
 share/doc/pi-address/html/pia-faq.txt
 share/doc/pi-address/pi-address.lsm
-share/doc/pi-address/NEWS
-share/doc/pi-address/TODO
-share/doc/pi-address/README
-share/doc/pi-address/BUGS
-share/doc/pi-address/THANKS
 share/doc/pi-address/pia-faq.txt
 share/doc/pi-address/pilot-addresses.dtd
-@dirrm share/doc/pi-address/html
-@dirrm share/doc/pi-address
+share/examples/pi-address/
 share/examples/pi-address/pi-addressrc
-@dirrm share/examples/pi-address

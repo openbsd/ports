@@ -1,19 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/12/15 17:33:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:16 espie Exp $
+${P5SITE}/Finance/
+${P5SITE}/Finance/QuoteHist/
 ${P5SITE}/Finance/QuoteHist.pm
 ${P5SITE}/Finance/QuoteHist/Generic.pm
+${P5SITE}/Finance/QuoteHist/Generic.pm.orig
 ${P5SITE}/Finance/QuoteHist/SiliconInvestor.pm
 ${P5SITE}/Finance/QuoteHist/WallStreetCity.pm
 ${P5SITE}/Finance/QuoteHist/Yahoo.pm
-@comment ${P5ARCH}/auto/Finance-QuoteHist/.packlist
-@comment ${P5ARCH}/perllocal.pod
-man/man3p/Finance::QuoteHist.3p
-man/man3p/Finance::QuoteHist::Generic.3p
-man/man3p/Finance::QuoteHist::SiliconInvestor.3p
-man/man3p/Finance::QuoteHist::WallStreetCity.3p
-man/man3p/Finance::QuoteHist::Yahoo.3p
-@dirrm man/man3p
-@comment @dirrm ${P5ARCH}/auto/Finance-QuoteHist
-@comment @dirrm ${P5ARCH}/auto
-@comment @dirrm ${P5ARCH}
-@dirrm ${P5SITE}/Finance/QuoteHist
-@dirrm ${P5SITE}/Finance
+${P5SITE}/Finance/QuoteHist/Yahoo.pm.orig
+@man man/man3p/Finance::QuoteHist.3p
+@man man/man3p/Finance::QuoteHist::Generic.3p
+@man man/man3p/Finance::QuoteHist::SiliconInvestor.3p
+@man man/man3p/Finance::QuoteHist::WallStreetCity.3p
+@man man/man3p/Finance::QuoteHist::Yahoo.3p

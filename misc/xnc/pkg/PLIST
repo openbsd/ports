@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2003/03/05 22:48:08 pvalchev Exp $
+@comment $OpenBSD: PLIST,v 1.8 2004/09/15 17:54:17 espie Exp $
 @pkgcfl es-[0-9]*
 bin/bzip.xnc
 bin/groups.xnc
@@ -6,20 +6,22 @@ bin/gzip.xnc
 bin/iedit
 bin/ives
 bin/rpm.xnc
-bin/vs
 bin/users.xnc
+bin/vs
 bin/xjpegroot
 bin/xnc
 bin/xncloader
 bin/xncsetup
 bin/xnlaunch
 bin/zips.xnc
-man/cat1/xnlaunch.0
-man/man1/es.1
-man/man1/ives.1
-man/man1/vs.1
-man/man1/xjpegroot.1
-man/man1/xnc.1
+lib/xnc/
+@man man/cat1/xnlaunch.0
+@man man/man1/es.1
+@man man/man1/ives.1
+@man man/man1/vs.1
+@man man/man1/xjpegroot.1
+@man man/man1/xnc.1
+share/examples/xnc/
 share/examples/xnc/.launch.menu
 share/examples/xnc/.xnlaunch.ini
 share/examples/xnc/graphs.gif
@@ -30,5 +32,3 @@ share/examples/xnc/netscape.gif
 share/examples/xnc/term.gif
 share/examples/xnc/tnet.gif
 %%SHARED%%
-@dirrm share/examples/xnc
-@dirrm lib/xnc

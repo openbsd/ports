@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-client,v 1.2 2001/10/11 19:25:21 espie Exp $
+@comment $OpenBSD: PLIST-client,v 1.3 2004/09/15 17:54:15 espie Exp $
 @pkgcfl amanda-*
+libexec/amanda/
 libexec/amanda/amandad
 libexec/amanda/calcsize
 libexec/amanda/killpgrp
@@ -10,15 +11,14 @@ libexec/amanda/selfcheck
 libexec/amanda/sendbackup
 libexec/amanda/sendsize
 libexec/amanda/versionsuffix
-man/man8/amanda.8
-man/man8/amrecover.8
-man/man8/amrestore.8
+@man man/man8/amanda.8
+@man man/man8/amrecover.8
+@man man/man8/amrestore.8
 sbin/amrecover
 sbin/amrestore
+share/doc/amanda/
 share/doc/amanda/AUTHORS
 share/doc/amanda/COPYRIGHT
 share/doc/amanda/COPYRIGHT-REGEX
 share/doc/amanda/NEWS
 share/doc/amanda/README
-@dirrm share/doc/amanda
-@dirrm libexec/amanda

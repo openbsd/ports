@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/06/24 23:57:20 marcm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 17:54:17 espie Exp $
 bin/update-mime-database
+lib/pkgconfig/
 lib/pkgconfig/shared-mime-info.pc
-man/man1/update-mime-database.1
+@man man/man1/update-mime-database.1
+share/mime/
 share/mime/XMLnamespaces
+share/mime/application/
 share/mime/application/andrew-inset.xml
 share/mime/application/illustrator.xml
 share/mime/application/mac-binhex40.xml
@@ -201,6 +204,7 @@ share/mime/application/x-zerosize.xml
 share/mime/application/x-zoo.xml
 share/mime/application/xhtml+xml.xml
 share/mime/application/zip.xml
+share/mime/audio/
 share/mime/audio/ac3.xml
 share/mime/audio/basic.xml
 share/mime/audio/midi.xml
@@ -228,6 +232,7 @@ share/mime/audio/x-wav.xml
 share/mime/audio/x-xi.xml
 share/mime/audio/x-xm.xml
 share/mime/globs
+share/mime/image/
 share/mime/image/bmp.xml
 share/mime/image/cgm.xml
 share/mime/image/dpx.xml
@@ -281,6 +286,7 @@ share/mime/image/x-xcf.xml
 share/mime/image/x-xfig.xml
 share/mime/image/x-xpixmap.xml
 share/mime/image/x-xwindowdump.xml
+share/mime/inode/
 share/mime/inode/blockdevice.xml
 share/mime/inode/chardevice.xml
 share/mime/inode/directory.xml
@@ -289,6 +295,7 @@ share/mime/inode/mount-point.xml
 share/mime/inode/socket.xml
 share/mime/inode/symlink.xml
 share/mime/magic
+share/mime/message/
 share/mime/message/delivery-status.xml
 share/mime/message/disposition-notification.xml
 share/mime/message/external-body.xml
@@ -296,7 +303,9 @@ share/mime/message/news.xml
 share/mime/message/partial.xml
 share/mime/message/rfc822.xml
 share/mime/message/x-gnu-rmail.xml
+share/mime/model/
 share/mime/model/vrml.xml
+share/mime/multipart/
 share/mime/multipart/alternative.xml
 share/mime/multipart/appledouble.xml
 share/mime/multipart/digest.xml
@@ -306,7 +315,9 @@ share/mime/multipart/related.xml
 share/mime/multipart/report.xml
 share/mime/multipart/signed.xml
 share/mime/multipart/x-mixed-replace.xml
+share/mime/packages/
 share/mime/packages/freedesktop.org.xml
+share/mime/text/
 share/mime/text/calendar.xml
 share/mime/text/css.xml
 share/mime/text/directory.xml
@@ -373,6 +384,7 @@ share/mime/text/x-xslfo.xml
 share/mime/text/x-xslt.xml
 share/mime/text/xmcd.xml
 share/mime/text/xml.xml
+share/mime/video/
 share/mime/video/isivideo.xml
 share/mime/video/mpeg.xml
 share/mime/video/quicktime.xml
@@ -388,14 +400,3 @@ share/mime/video/x-msvideo.xml
 share/mime/video/x-nsv.xml
 share/mime/video/x-real-video.xml
 share/mime/video/x-sgi-movie.xml
-@dirrm share/mime/video
-@dirrm share/mime/text
-@dirrm share/mime/packages
-@dirrm share/mime/multipart
-@dirrm share/mime/model
-@dirrm share/mime/message
-@dirrm share/mime/inode
-@dirrm share/mime/image
-@dirrm share/mime/audio
-@dirrm share/mime/application
-@dirrm share/mime

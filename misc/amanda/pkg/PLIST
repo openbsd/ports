@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/04/14 08:07:15 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2004/09/15 17:54:15 espie Exp $
 @pkgcfl amanda-client-*
+libexec/amanda/
 libexec/amanda/amandad
 libexec/amanda/amcat.awk
 libexec/amanda/amcleanupdisk
@@ -32,25 +33,25 @@ libexec/amanda/sendbackup
 libexec/amanda/sendsize
 libexec/amanda/taper
 libexec/amanda/versionsuffix
-man/man8/amadmin.8
-man/man8/amanda.8
-man/man8/amcheck.8
-man/man8/amcheckdb.8
-man/man8/amcleanup.8
-man/man8/amdump.8
-man/man8/amflush.8
-man/man8/amgetconf.8
-man/man8/amlabel.8
-man/man8/amoverview.8
-man/man8/amplot.8
-man/man8/amrecover.8
-man/man8/amreport.8
-man/man8/amrestore.8
-man/man8/amrmtape.8
-man/man8/amstatus.8
-man/man8/amtape.8
-man/man8/amtoc.8
-man/man8/amverify.8
+@man man/man8/amadmin.8
+@man man/man8/amanda.8
+@man man/man8/amcheck.8
+@man man/man8/amcheckdb.8
+@man man/man8/amcleanup.8
+@man man/man8/amdump.8
+@man man/man8/amflush.8
+@man man/man8/amgetconf.8
+@man man/man8/amlabel.8
+@man man/man8/amoverview.8
+@man man/man8/amplot.8
+@man man/man8/amrecover.8
+@man man/man8/amreport.8
+@man man/man8/amrestore.8
+@man man/man8/amrmtape.8
+@man man/man8/amstatus.8
+@man man/man8/amtape.8
+@man man/man8/amtoc.8
+@man man/man8/amverify.8
 sbin/amadmin
 sbin/amcheck
 sbin/amcheckdb
@@ -69,6 +70,7 @@ sbin/amstatus
 sbin/amtape
 sbin/amtoc
 sbin/amverify
+share/doc/amanda/
 share/doc/amanda/AUTHORS
 share/doc/amanda/COPYRIGHT
 share/doc/amanda/COPYRIGHT-REGEX
@@ -93,6 +95,7 @@ share/doc/amanda/WHATS.NEW
 share/doc/amanda/WISHLIST
 share/doc/amanda/YEAR2000
 share/doc/amanda/ZFTAPE
+share/examples/amanda/
 share/examples/amanda/3hole.ps
 share/examples/amanda/8.5x11.ps
 share/examples/amanda/DIN-A4.ps
@@ -108,7 +111,4 @@ share/examples/amanda/chg-scsi-solaris.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/crontab.sample
 share/examples/amanda/disklist
-@dirrm share/examples/amanda
-@dirrm share/doc/amanda
-@dirrm libexec/amanda
 @extraunexec rm -rf ${SYSCONFDIR}/amanda

@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/07 01:54:51 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:15 espie Exp $
 bin/cal2ct
 bin/calencheck
 bin/calentool
 bin/month2ct
 bin/mt2ct
+lib/calentool/
 lib/calentool/CREDITS
 lib/calentool/README
 lib/calentool/ancient
@@ -40,10 +41,10 @@ lib/calentool/usa_other
 lib/calentool/usa_states
 lib/calentool/witchcraft
 lib/calentool/world
+lib/help/
 lib/help/calentool.info
-man/cat1/cal2ct.0
-man/cat1/calencheck.0
-man/cat1/calentool.0
-man/cat1/month2ct.0
-man/cat1/mt2ct.0
-@dirrm lib/calentool
+@man man/cat1/cal2ct.0
+@man man/cat1/calencheck.0
+@man man/cat1/calentool.0
+@man man/cat1/month2ct.0
+@man man/cat1/mt2ct.0

@@ -1,16 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.3 2002/04/08 21:13:49 naddy Exp $
-@unexec install-info --delete --info-dir=%D/info %D/info/find.info
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:16 espie Exp $
 bin/gfind
 bin/glocate
 bin/gupdatedb
 bin/gxargs
-info/find.info
+@info info/find.info
 libexec/gbigram
 libexec/gcode
 libexec/gfrcode
-man/man1/gfind.1
-man/man1/glocate.1
-man/man1/gupdatedb.1
-man/man1/gxargs.1
-man/man5/glocatedb.5
-@exec install-info --info-dir=%D/info %D/info/find.info
+man/cat1/gfind.1
+man/cat1/glocate.1
+man/cat1/gupdatedb.1
+man/cat1/gxargs.1
+man/cat5/glocatedb.5
+@man man/man1/gfind.1
+@man man/man1/glocate.1
+@man man/man1/gupdatedb.1
+@man man/man1/gxargs.1
+@man man/man5/glocatedb.5
+var/

@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/06/15 05:23:49 form Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:15 espie Exp $
 bin/deco
-man/man1/deco.1
+@man man/man1/deco.1
+share/deco/
+share/deco/help/
 share/deco/help/d.edit
 share/deco/help/d.general
 share/deco/help/d.hexview
@@ -23,5 +25,3 @@ share/deco/help/u.hexview
 share/deco/help/u.view
 share/deco/menu
 share/deco/profile
-@dirrm share/deco/help
-@dirrm share/deco

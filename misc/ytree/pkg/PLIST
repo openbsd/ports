@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/01/03 18:54:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/09/15 17:54:17 espie Exp $
 bin/ytree
-man/man1/ytree.1
+@man man/man1/ytree.1
+share/examples/ytree/
 share/examples/ytree/ytree.conf
-@dirrm share/examples/ytree

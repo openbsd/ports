@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2004/08/02 16:08:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2004/09/15 17:54:15 espie Exp $
 
 COMMENT=	"access software for a blind person using a braille terminal"
 
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
+SHARED_ONLY=	Yes
 DISTNAME=	brltty-3.5
 CATEGORIES=	misc
 HOMEPAGE=	http://mielke.cc/brltty
