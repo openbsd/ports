@@ -1,0 +1,12 @@
+$OpenBSD: patch-devel-docs_gnomeui_Makefile_in,v 1.1 2001/09/21 12:15:32 naddy Exp $
+--- devel-docs/gnomeui/Makefile.in.orig	Fri Sep 21 13:41:44 2001
++++ devel-docs/gnomeui/Makefile.in	Fri Sep 21 13:42:01 2001
+@@ -338,7 +338,7 @@ install-data-local: 
+ 	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
+ 	  done; \
+ 	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
++	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || true; \
+ 	  echo '-- Fixing Crossreferences' ; \
+ 	  gtkdoc-fixxref --module=$(DOC_MODULE) --html-dir=$(HTML_DIR)|| true; \
+ 	fi)
