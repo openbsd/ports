@@ -1,6 +1,6 @@
-$OpenBSD: patch-gkrellsun_c,v 1.2 2004/05/18 14:49:56 naddy Exp $
---- gkrellsun.c.orig	2004-05-15 17:20:37.000000000 -0500
-+++ gkrellsun.c	2004-05-15 17:21:50.000000000 -0500
+$OpenBSD: patch-gkrellsun_c,v 1.3 2004/06/04 01:45:58 naddy Exp $
+--- gkrellsun.c.orig	2004-05-07 00:16:38.000000000 -0600
++++ gkrellsun.c	2004-06-03 19:44:08.000000000 -0600
 @@ -194,8 +194,8 @@ struct _Sun
     SunData data;
  };
@@ -33,3 +33,20 @@ $OpenBSD: patch-gkrellsun_c,v 1.2 2004/05/18 14:49:56 naddy Exp $
     if (time_struc == NULL) {
        g_message("Error: localtime returned NULL\n"); exit(EXIT_FAILURE);
     }
+@@ -839,6 +839,7 @@ update_tooltip(Sun *sun)
+    double      val, altnoon;
+    int         H,M;
+    int         ampm_digit;
++   gint        moonphase;
+ 
+    if (tooltip == NULL)
+       return;
+@@ -932,7 +933,7 @@ update_tooltip(Sun *sun)
+          (void)g_string_append_printf(mboxes, _("\nMoon Altitude: %4.1f"), sun->data.h_moon);
+          (void)g_string_append_printf(mboxes, _("\nMoon Phase: %4.1f\n"), sun->data.MoonPhase);
+          /* MoonPhase: 0 -> 1; there are 8 phase names */
+-         gint moonphase = (gint) ((sun->data.MoonPhase * 8.0) + 0.4);
++         moonphase = (gint) ((sun->data.MoonPhase * 8.0) + 0.4);
+          (void)g_string_append_printf(mboxes, _("Moon Phase: %s"), moonPhases[moonphase]);
+    }
+ 
