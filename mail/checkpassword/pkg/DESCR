@@ -1,9 +1,10 @@
 checkpassword provides a simple, uniform password-checking interface
-to all root applications. It is suitable for use by applications such as
-login, ftpd, and pop3d.
+to all root applications. It is suitable for use by applications
+such as login, ftpd, and pop3d.
 
-There are checkpassword-compatible tools that support alternate password
-databases, secret login names, long passwords, subaccounts, one-time
-passwords, detailed accounting, and many other features. Applications
-that use the checkpassword interface will work with all of these tools.
-Several tools have been specifically designed to support POP toasters.
+There are checkpassword-compatible tools that support alternate
+password databases, secret login names, long passwords, subaccounts,
+one-time passwords, detailed accounting, and many other features.
+Applications that use the checkpassword interface will work with
+all of these tools.  Several tools have been specifically designed
+to support POP toasters.
