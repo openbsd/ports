@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/10/01 12:51:40 xsa Exp $
 bin/toppler
 share/doc/toppler/
 share/doc/toppler/README
+share/examples/toppler/
+share/examples/toppler/toppler.hsc
+@mode g+w
+@group games
+@sample /var/games/toppler.hsc
+@mode
+@group
 share/toppler/
 share/toppler/alarm.wav
 share/toppler/boing.wav
@@ -26,4 +33,3 @@ share/toppler/water.wav
 @comment var/
 @comment var/toppler/
 @comment var/toppler/toppler.hsc
-@extra /var/games/toppler.hsc

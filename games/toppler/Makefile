@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2004/04/09 09:52:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2004/10/01 12:51:40 xsa Exp $
 
 COMMENT=	"Nebulous rewrite of Tower Toppler"
 
@@ -27,5 +27,7 @@ USE_X11=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/toppler
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/toppler
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/toppler
+	${INSTALL_DATA} /dev/null ${PREFIX}/share/examples/toppler/toppler.hsc
 
 .include <bsd.port.mk>
