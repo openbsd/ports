@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/01/09 16:15:04 fgsch Exp $
-!%%no_x11%%
+@comment $OpenBSD: PLIST,v 1.13 2004/01/22 14:43:01 todd Exp $
 bin/bochs
 bin/bximage
 man/man1/bochs-dlx.1
 man/man1/bochs.1
+man/man1/bxcommit.1
 man/man1/bximage.1
 man/man5/bochsrc.5
 share/bochs/bios/BIOS-bochs-2-processors
@@ -18,29 +18,12 @@ share/bochs/bochsrc
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/Linux.html
 share/doc/bochs/Minix.html
-share/doc/bochs/OldWindows95.html
-share/doc/bochs/Windows95.html
 share/doc/bochs/changelog.html
 share/doc/bochs/codingguidelines.html
-share/doc/bochs/configure.html
-share/doc/bochs/construction.html
 share/doc/bochs/cosimulation.html
-share/doc/bochs/cvs-status.html
-share/doc/bochs/developers.html
-share/doc/bochs/faq.html
-share/doc/bochs/features.html
-share/doc/bochs/fpu.html
 share/doc/bochs/guestNT.html
 share/doc/bochs/index.html
-share/doc/bochs/install.html
-share/doc/bochs/instrumentation.html
 share/doc/bochs/iodebug.html
-share/doc/bochs/mtools.html
-share/doc/bochs/smp-simulation.html
-share/doc/bochs/sound.html
-share/doc/bochs/undercon.gif
-share/doc/bochs/whatisbochs.html
-share/doc/bochs/win32.html
 @dirrm share/doc/bochs
 @dirrm share/bochs/bios
 @dirrm share/bochs

@@ -1,6 +1,0 @@
-@comment
-share/bochs/fonts/fonts.dir
-share/bochs/fonts/hercules.bdf
-share/bochs/fonts/vga.bdf
-share/bochs/fonts/vga.pcf
-@dirrm share/bochs/fonts

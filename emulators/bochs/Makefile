@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2004/01/12 12:32:29 grange Exp $
+# $OpenBSD: Makefile,v 1.34 2004/01/22 14:43:01 todd Exp $
 # $NetBSD: Makefile,v 1.2 1998/09/22 06:11:36 garbled Exp $
 
 COMMENT=	"x86 machine simulator"
 
-DISTNAME=	bochs-2.0.2
+DISTNAME=	bochs-2.1
 CATEGORIES=	emulators
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
@@ -23,9 +23,11 @@ CONFIGURE_ARGS=	--enable-cdrom \
 		--enable-fpu \
 		--enable-ne2000 \
 		--with-nogui \
-		--with-term
+		--with-term \
+		--enable-all-optimizations
 
-FLAVORS=	debug i386 i486 i686 x86_64 pci smp smp_4 smp_8 no_x11
+FLAVORS=	debug i386 i486 i686 x86_64 pci smp smp_4 smp_8 \
+		no_x11 no_mmx no_comp
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
@@ -64,10 +66,7 @@ ERRORS +=	"Fatal: cannot use i386 or i486 flavors with i686"
 .endif
 
 .if ${FLAVOR:L:Mx86_64}
-CONFIGURE_ARGS+= --enable-x86-64 --enable-all-optimizations
-. if ! ${FLAVOR:L:Mi686}
-ERRORS +=	"Fatal: x86_64 emulation requires i686 flavor"
-. endif
+CONFIGURE_ARGS+= --enable-x86-64 --enable-cpu-level="6"
 .else
 CONFIGURE_ARGS+= --disable-x86-64
 .endif
@@ -92,6 +91,17 @@ CONFIGURE_ARGS+= --enable-apic
 CONFIGURE_ARGS+= --disable-apic
 .endif
 
+.if !${FLAVOR:L:Mno_mmx}
+CONFIGURE_ARGS+= --enable-mmx
+. if ${FLAVOR:L:Mi386} || ${FLAVOR:L:Mi486}
+ERRORS +=	"Fatal: cannot use i386 or i486 with mmx"
+. endif
+.endif
+
+.if !${FLAVOR:L:Mno_comp}
+CONFIGURE_ARGS+= --enable-compressed-hd
+.endif
+
 post-configure:
 	@sed -e 's@!!PREFIX!!@${PREFIX}@' \
 		< ${WRKSRC}/.bochsrc > ${WRKSRC}/bochsrc
@@ -113,14 +123,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${PREFIX}/man/man5
 	${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs
-	${INSTALL_DATA} ${WRKSRC}/docs-html/*.gif ${PREFIX}/share/doc/bochs
 	${INSTALL_DATA} ${WRKSRC}/bochsrc ${PREFIX}/share/bochs
-.if !${FLAVOR:L:Mno_x11}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/bochs/fonts
-	${INSTALL_DATA} ${WRKSRC}/font/hercules.bdf ${PREFIX}/share/bochs/fonts
-	${INSTALL_DATA} ${WRKSRC}/font/vga.bdf ${PREFIX}/share/bochs/fonts
-	${INSTALL_DATA} ${WRKSRC}/font/vga.pcf ${PREFIX}/share/bochs/fonts
-	${X11BASE}/bin/mkfontdir ${PREFIX}/share/bochs/fonts
-.endif
 
 .include <bsd.port.mk>

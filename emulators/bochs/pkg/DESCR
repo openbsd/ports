@@ -14,3 +14,5 @@ Flavors:
 	smp_4  - build with support for SMP (4 CPUs)
 	smp_8  - build with support for SMP (8 CPUs)
 	no_x11 - do not build with X support
+	no_mmx - do not build with mmx support
+	no_comp- do not build with compressed hard drive support

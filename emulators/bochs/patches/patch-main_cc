@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_cc,v 1.4 2002/12/28 06:20:20 todd Exp $
---- main.cc.orig	Fri Dec 27 22:16:47 2002
-+++ main.cc	Fri Dec 27 22:16:50 2002
-@@ -2179,6 +2179,7 @@ bx_init_hardware()
+$OpenBSD: patch-main_cc,v 1.5 2004/01/22 14:43:01 todd Exp $
+--- main.cc.orig	2004-01-06 01:18:01.000000000 +0300
++++ main.cc	2004-01-13 22:39:33.000000000 +0300
+@@ -2501,6 +2501,7 @@ bx_init_hardware()
  #if !BX_DEBUGGER
    signal(SIGINT, bx_signal_handler);
  #endif
