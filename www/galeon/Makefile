@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2004/12/19 12:22:24 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2004/12/21 11:34:00 espie Exp $
 
 COMMENT=		"GNOME web browser based on gecko"
 
 V=			1.2.13
 DISTNAME=		galeon-${V}
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=		www
 MOZ=			1.6
 
@@ -32,7 +33,7 @@ BUILD_DEPENDS=		:mozilla-${MOZ}:www/mozilla \
 RUN_DEPENDS=		:scrollkeeper->=0.3.12:textproc/scrollkeeper
 LIB_DEPENDS=		art_lgpl,gnomesupport,gnomeui::x11/gnome/libs \
 			gdk_pixbuf::graphics/gdk-pixbuf \
-			glade,glade-gnome::devel/libglade,gnome \
+			glade,glade-gnome:libglade-*-gnome:devel/libglade,gnome \
 			gnomevfs::x11/gnome/vfs
 LIB_DEPENDS+= 		mozilla/gtkembedmoz,mozilla/gtksuperwin,mozilla/xpcom,mozilla/nspr4,mozilla/plc4,mozilla/plds4:mozilla-${MOZ}:www/mozilla
 

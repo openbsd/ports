@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2004/12/11 13:29:21 alek Exp $
+# $OpenBSD: Makefile,v 1.9 2004/12/21 11:35:05 espie Exp $
 
 COMMENT=		"lightweight HTML rendering/printing/editing engine"
 
 DISTNAME=		gtkhtml-1.1.10
+PKGNAME=		${DISTNAME}p0
 CATEGORIES=    		www
 HOMEPAGE=		http://www.gnome.org/
 
@@ -29,7 +30,7 @@ LIB_DEPENDS=		bonobo.2,bonobox.2::x11/gnome/bonobo \
 			capplet::x11/gnome/controlcenter \
 			gal.22::devel/gal \
 			ghttp.1::www/libghttp \
-			glade.5,glade-gnome.5::devel/libglade,gnome
+			glade.5,glade-gnome.5:libglade-*-gnome:devel/libglade,gnome
 
 USE_X11=		Yes
 USE_GMAKE=		Yes
