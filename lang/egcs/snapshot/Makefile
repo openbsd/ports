@@ -3,7 +3,7 @@
 # Date created:		25 sep 98
 # Whom:			Marc Espie
 #
-# $OpenBSD: Makefile,v 1.5 1998/11/25 00:54:02 espie Exp $
+# $OpenBSD: Makefile,v 1.6 1998/12/03 02:33:34 espie Exp $
 #
 # This is a configuration file for egcs, recent snapshot
 # PLEASE use the regular egcs-stable for serious work, resort to this one
@@ -12,7 +12,11 @@
 
 # we could remove this dependency by patching configure, but this is not
 # reasonable...
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
+# we HAVE to provide configure NOW, since the autoconf people have not 
+# released autoconf 2.12.1, BUT egcs uses that ANYWAY. Fuck !!!
+#BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
 
 CATEGORIES=	lang 
 MAINTAINER=	Marc.Espie@openbsd.org
@@ -49,8 +53,8 @@ LATEST_DATE=1998-11-22
 # configuration is built so that you can test the next snapshot easily,
 # define NEXT_DATE to the next snapshot... you lose the ability to check
 # md5 sums, though.
-#NEXT_DATE=1998-11-22
-#PATCH_DEBUG=yes
+NEXT_DATE=1998-11-30
+PATCH_DEBUG=yes
 
 LATEST != echo ${LATEST_DATE} | sed -e s/-//g;
 DIRECTORY=egcs/snapshots/%SUBDIR%/
@@ -176,15 +180,39 @@ PATCH_LIST+=patch-g77-*
 PATCH_LIST+=patch-java-*
 .endif
 
-PATCH_LIST+=
-
 # get openbsd configuration files where they should be
 post-patch:
+		# avoid packaging include copies along...
+	find ${WRKSRC} -name \*.orig|xargs ${RM}
 	${CP} -R ${FILESDIR}/config/* ${WRKSRC}
 	-${RM} -rf ${WRKSRC}/texinfo 
 .if !defined(MAKE_CHILL)
 	-${RM} -rf ${WRKSRC}/gcc/ch ${WRKSRC}/libchill
 .endif
+	cd ${WRKSRC}; \
+	for f in gcc/c-parse.y \
+		 gcc/cstamp-h.in \
+		 gcc/c-gperf.h \
+		 gcc/c-parse.c \
+		 gcc/c-parse.h \
+		 gcc/cexp.c \
+		 gcc/cp/parse.c \
+		 gcc/cp/parse.h \
+		 gcc/objc/objc-parse.c \
+		 gcc/objc/objc-parse.y \
+		 gcc/java/parse.h \
+		 gcc/java/parse.c \
+		 gcc/java/parse-scan.c \
+		 libf2c/libU77/stamp-h.in \
+		 contrib/fixinc/fixincl.x \
+		 contrib/fixinc/inclhack.sh \
+		 contrib/fixinc/fixincl.sh \
+		 gcc/fixinc/fixincl.x \
+		 gcc/fixinc/inclhack.sh \
+		 gcc/fixinc/fixincl.sh; \
+	do \
+		[ -f $$f ] && touch $$f; \
+	done 
 
 
 
@@ -223,8 +251,9 @@ CONFIGURE_ARGS+=--enable-shared
 
 # rebuild configure file after patching, then move source around !!!
 # XXX: don't try to autoconf the main configure file, it's not autoconf.
+# DON'T invoke autoconf unless you have autoconf >= 2.12.1
 pre-configure:
-	cd ${WRKSRC}/gcc && autoconf
+#	cd ${WRKSRC}/gcc && autoconf
 	-${MV} ${WRKSRC} ${WRKDIR}/source
 	${MKDIR} ${WRKSRC}
 
@@ -275,7 +304,7 @@ M4FLAGS+= -DDYNAMIC
 .endif
 
 pre-install:
-	m4 ${M4FLAGS} -DARCH=`${WRKDIR}/source/config.guess` \
+	${M4} ${M4FLAGS} -DARCH=`${WRKDIR}/source/config.guess` \
 	-DVERSION=`${SED} -e 's/.*\(egcs-[0-9.]*\) .*/\1/' <${WRKDIR}/source/gcc/version.c` \
 	<${FILESDIR}/PLIST.template >${PLIST}
 

@@ -1,0 +1,21 @@
+--- gcc/reload1.c.orig	Fri Nov 27 12:59:29 1998
++++ gcc/reload1.c	Fri Nov 27 13:00:01 1998
+@@ -1085,7 +1085,7 @@
+   reload_completed = 1;
+ 
+   /* Make a pass over all the insns and delete all USEs which we inserted
+-     only to tag a REG_EQUAL note on them.  Remove all REG_DEAD and REG_UNUSED
++     only to tag a REG_EQUAL note on them.  Remove all REG_DEAD 
+      notes.  Delete all CLOBBER insns and simplify (subreg (reg)) operands.  */
+ 
+   for (insn = first; insn; insn = NEXT_INSN (insn))
+@@ -1106,8 +1106,7 @@
+ 	pnote = &REG_NOTES (insn);
+ 	while (*pnote != 0)
+ 	  {
+-	    if (REG_NOTE_KIND (*pnote) == REG_DEAD
+-		|| REG_NOTE_KIND (*pnote) == REG_UNUSED)
++	    if (REG_NOTE_KIND (*pnote) == REG_DEAD)
+ 	      *pnote = XEXP (*pnote, 1);
+ 	    else
+ 	      pnote = &XEXP (*pnote, 1);

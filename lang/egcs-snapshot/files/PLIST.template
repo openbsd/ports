@@ -73,6 +73,7 @@ include/g++-2/algo.h
 include/g++-2/algobase.h
 include/g++-2/algorithm
 include/g++-2/alloc.h
+include/g++-2/bitset
 include/g++-2/builtinbuf.h
 include/g++-2/bvector.h
 include/g++-2/cassert

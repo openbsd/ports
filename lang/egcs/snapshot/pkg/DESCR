@@ -10,12 +10,6 @@ architecture.
 There is some on-going work in egcs that makes it interesting to make
 a recent snapshot available. 
 
-As of ss-19980921, there are some problems: gmake bootstrap fails during the
-build of libstdc++. Restarting gmake from that point finishes
-the build. Accordingly, the tests show a regression in libstdc++... it
-seems that either the build is not truely okay, or eg++ has trouble finding
-some of its files...
-
 Notably, the standard C++ library has been updated to a version much closer 
 to the ANSI standard.  The namespace support is much better than the
 release version.
