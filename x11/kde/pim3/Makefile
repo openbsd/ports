@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2002/12/23 16:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2003/01/07 15:36:35 espie Exp $
 
 COMMENT= 		"kde personal information applications"
 COMMENT-kpilot=		"synch with palm pilot"
@@ -16,5 +16,5 @@ SUBPACKAGE?=
 LIB_DEPENDS+=	pisock::comms/pilot-link
 .endif
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	flavored
 .include <bsd.port.mk>

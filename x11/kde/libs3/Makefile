@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2003/01/06 23:31:31 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2003/01/07 15:36:35 espie Exp $
 
 COMMENT=		"X11 toolkit, libraries"
 CATEGORIES=		x11 x11/kde
@@ -16,7 +16,7 @@ LIB_DEPENDS= 	png.2::graphics/png \
 		bz2::archivers/bzip2 \
 		artsflow.1.0,artsflow_idl.1.0,kmedia2_idl.1.0,mcop.1.0,qtmcop.1.0,soundserver_idl.1.0::x11/kde/arts3
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	flavored
 # To investigate
 #CONFIGURE_ARGS=--enable-fast-malloc=full
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2002/12/23 14:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2003/01/07 15:36:35 espie Exp $
 
 COMMENT= 		"X11 toolkit, basic applications"
 CATEGORIES=		x11 x11/kde
@@ -11,7 +11,7 @@ LIB_DEPENDS= kdecore.4,DCOP,artskde,kabc,katepartinterfaces,kdefakes,kdefx,kdepr
 		cdda_paranoia,cdda_interface::audio/cdparanoia
 
 BUILD_DEPENDS=	::audio/lame
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	flavored
 
 post-install:
 	rm -rf ${PREFIX}/share/config/kdm

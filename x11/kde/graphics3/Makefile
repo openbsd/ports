@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2002/12/23 14:22:32 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2003/01/07 15:36:35 espie Exp $
 
 COMMENT=		"X11 toolkit, graphic applications"
 CATEGORIES=		x11 x11/kde
@@ -11,6 +11,6 @@ LIB_DEPENDS=Imlib::graphics/imlib \
 
 RUN_DEPENDS= :ghostscript-*:print/ghostscript/gnu
 
-SEPARATE_BUILD=simple
+SEPARATE_BUILD=flavored
 
 .include <bsd.port.mk>

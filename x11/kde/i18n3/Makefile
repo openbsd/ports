@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2003/01/06 07:34:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2003/01/07 15:36:35 espie Exp $
 
 FLAVORS=af ar az bg bs ca cs da de el en_GB eo es et fi fr he hr hu id is \
     it ja ko lt lv mt nb nl nn pl pt pt_BR ro ru sk sl sv ta th tr uk ven \
@@ -32,5 +32,6 @@ LOC=share/locale/${FLAVOR}/LC_MESSAGES/
 I=index.docbook
 C=index.cache.bz2
 SUBST_VARS=DOC LOC I C
+NO_DEBUG=Yes
 
 .include <bsd.port.mk>
