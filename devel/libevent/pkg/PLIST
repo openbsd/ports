@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2000/11/23 15:17:55 dugsong Exp $
+man/man3/event.3
+include/event.h
+lib/libevent.a
