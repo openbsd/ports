@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2004/09/18 12:54:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2004/12/06 22:50:20 mbalmer Exp $
 @conflict imap-uw-*
 bin/couriertls
 @comment bin/deliverquota
@@ -35,10 +35,10 @@ libexec/makedatprog
 @man man/man8/imapd.8
 @comment @man man/man8/makeuserdb.8
 @man man/man8/mkimapdcert.8
-@man man/man8/pw2userdb.8
+@comment @man man/man8/pw2userdb.8
 @comment @man man/man8/userdb.8
 @comment @man man/man8/userdbpw.8
-@man man/man8/vchkpw2userdb.8
+@comment @man man/man8/vchkpw2userdb.8
 sbin/authenumerate
 sbin/courierlogger
 sbin/imaplogin
