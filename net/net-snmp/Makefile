@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+# $OpenBSD: Makefile,v 1.2 2004/08/09 15:04:17 danh Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,6 @@ SUBPACKAGE?=
 .if ${SUBPACKAGE} == "-perl"
 CATEGORIES=	net perl5
 RUN_DEPENDS=	::net/net-snmp
-MODULES=	perl
 .endif
 
 NET_SNMP_MIB_LIST= host disman/event-mib smux mibII/mta_sendmail

@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
-lib/libnetsnmp.so.6.1
-lib/libnetsnmpagent.so.6.1
-lib/libnetsnmphelpers.so.6.1
-lib/libnetsnmpmibs.so.6.1
-lib/libnetsnmptrapd.so.6.1
-DYNLIBDIR(%B)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
+@comment $OpenBSD: PLIST,v 1.2 2004/08/09 15:04:17 danh Exp $
 @pkgcfl ucd-snmp-*
 @unexec rm -f %D/share/snmp/mibs/.index
 bin/encode_keychange
@@ -166,14 +166,19 @@ include/net-snmp/varbind_api.h
 include/net-snmp/version.h
 lib/libnetsnmp.a
 lib/libnetsnmp.la
+@lib lib/libnetsnmp.so.6.1
 lib/libnetsnmpagent.a
 lib/libnetsnmpagent.la
+@lib lib/libnetsnmpagent.so.6.1
 lib/libnetsnmphelpers.a
 lib/libnetsnmphelpers.la
+@lib lib/libnetsnmphelpers.so.6.1
 lib/libnetsnmpmibs.a
 lib/libnetsnmpmibs.la
+@lib lib/libnetsnmpmibs.so.6.1
 lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
+@lib lib/libnetsnmptrapd.so.6.1
 @man man/man1/mib2c.1
 @man man/man1/snmpbulkget.1
 @man man/man1/snmpbulkwalk.1
@@ -288,8 +293,8 @@ share/doc/net-snmp/AGENT.txt
 share/doc/net-snmp/FAQ
 share/doc/net-snmp/README
 share/doc/net-snmp/README.snmpv3
-@exec /usr/bin/install -d -m 755 -o root -g wheel ${SYSCONFDIR}/snmp
 share/examples/net-snmp/
+@sample ${SYSCONFDIR}/snmp/
 share/examples/net-snmp/EXAMPLE.conf
 @sample ${SYSCONFDIR}/snmp/snmpd.conf
 share/snmp/
@@ -381,7 +386,7 @@ share/snmp/snmpconf-data/snmptrapd-data/
 share/snmp/snmpconf-data/snmptrapd-data/formatting
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
-%%SHARED%%
-@extraunexec rm -rf ${SYSCONFDIR}/snmp
-@extraunexec rm -rf /var/net-snmp
 @exec /usr/bin/install -d -m 755 -o root -g wheel /var/net-snmp
+@extra ${SYSCONFDIR}/snmp/snmp.conf
+@extra ${SYSCONFDIR}/snmp/snmptrapd.conf
+@extraunexec rm -rf /var/net-snmp

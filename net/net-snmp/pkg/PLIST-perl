@@ -1,50 +1,49 @@
-@comment $OpenBSD: PLIST-perl,v 1.1.1.1 2004/08/03 17:47:12 danh Exp $
-@comment ${P5ARCH}/
-@comment ${P5ARCH}/Bundle/
-@comment ${P5ARCH}/Bundle/Makefile.subs.pl
-${P5ARCH}/NetSNMP/
-${P5ARCH}/NetSNMP/ASN.pm
-${P5ARCH}/NetSNMP/OID.pm
-${P5ARCH}/NetSNMP/agent/
-${P5ARCH}/NetSNMP/agent.pm
-${P5ARCH}/NetSNMP/agent/default_store.pm
-${P5ARCH}/NetSNMP/agent/netsnmp_request_infoPtr.pm
-${P5ARCH}/NetSNMP/default_store.pm
-${P5ARCH}/SNMP.pm
-@comment ${P5ARCH}/auto/
-@comment ${P5ARCH}/auto/Bundle/
-@comment ${P5ARCH}/auto/Bundle/NetSNMP/
-@comment ${P5ARCH}/auto/Bundle/NetSNMP/.packlist
-${P5ARCH}/auto/NetSNMP/
-${P5ARCH}/auto/NetSNMP/ASN/
-${P5ARCH}/auto/NetSNMP/ASN/ASN.bs
-${P5ARCH}/auto/NetSNMP/ASN/ASN.so
-@comment ${P5ARCH}/auto/NetSNMP/ASN/autosplit.ix
-${P5ARCH}/auto/NetSNMP/OID/
-${P5ARCH}/auto/NetSNMP/OID/OID.bs
-${P5ARCH}/auto/NetSNMP/OID/OID.so
-@comment ${P5ARCH}/auto/NetSNMP/OID/autosplit.ix
-${P5ARCH}/auto/NetSNMP/agent/
-${P5ARCH}/auto/NetSNMP/agent/agent.bs
-${P5ARCH}/auto/NetSNMP/agent/agent.so
-@comment ${P5ARCH}/auto/NetSNMP/agent/autosplit.ix
-${P5ARCH}/auto/NetSNMP/agent/default_store/
-${P5ARCH}/auto/NetSNMP/agent/default_store/autosplit.ix
-${P5ARCH}/auto/NetSNMP/agent/default_store/default_store.bs
-${P5ARCH}/auto/NetSNMP/agent/default_store/default_store.so
-${P5ARCH}/auto/NetSNMP/default_store/
-@comment ${P5ARCH}/auto/NetSNMP/default_store/autosplit.ix
-${P5ARCH}/auto/NetSNMP/default_store/default_store.bs
-${P5ARCH}/auto/NetSNMP/default_store/default_store.so
-${P5ARCH}/auto/SNMP/
-${P5ARCH}/auto/SNMP/SNMP.bs
-${P5ARCH}/auto/SNMP/SNMP.so
-@comment ${P5ARCH}/auto/SNMP/autosplit.ix
-@comment man/man3p/
+@comment $OpenBSD: PLIST-perl,v 1.2 2004/08/09 15:04:17 danh Exp $
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Bundle/Makefile.subs.pl
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/ASN.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/OID.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/default_store.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/netsnmp_request_infoPtr.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/default_store.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SNMP.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Bundle/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Bundle/NetSNMP/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Bundle/NetSNMP/.packlist
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/agent.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/default_store.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/agent/default_store/default_store.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/autosplit.ix
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/default_store.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/default_store/default_store.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/SNMP.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/SNMP.so
+@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/SNMP/autosplit.ix
 @man man/man3p/NetSNMP::ASN.3p
 @man man/man3p/NetSNMP::OID.3p
 @man man/man3p/NetSNMP::agent.3p
 @man man/man3p/NetSNMP::agent::default_store.3p
 @man man/man3p/NetSNMP::default_store.3p
 @man man/man3p/NetSNMP::netsnmp_request_infoPtr.3p
-@man man/man3p/SNMP.3
+@man man/man3p/SNMP.3p

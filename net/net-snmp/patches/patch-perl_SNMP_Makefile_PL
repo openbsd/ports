@@ -1,0 +1,12 @@
+$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.1 2004/08/09 15:04:17 danh Exp $
+--- perl/SNMP/Makefile.PL.orig	Mon Aug  9 10:24:28 2004
++++ perl/SNMP/Makefile.PL	Mon Aug  9 10:24:36 2004
+@@ -18,7 +18,7 @@ sub InitMakeParams {
+     my %Params = (
+ 		  NAME         => 'SNMP',
+ 		  dist         => { SUFFIX => "gz", COMPRESS => "gzip -9f"},
+-		  MAN3PODS => { 'SNMP.pm' => '$(INST_MAN3DIR)/SNMP.3' },
++		  MAN3PODS => { 'SNMP.pm' => '$(INST_MAN3DIR)/SNMP.3p' },
+ 		  XSPROTOARG   => '-noprototypes', 	# XXX remove later?
+ 		  VERSION_FROM => 'SNMP.pm',
+ 		  realclean        => { FILES => 'host' },
