@@ -1,3 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2001/03/07 16:24:58 brad Exp $
-lib/librpm.so.0.1
-DYNLIBDIR(%B)
+@comment $OpenBSD: PFRAG.shared,v 1.6 2004/08/10 11:05:57 espie Exp $
+@comment @lib lib/libpopt.so.0.0
+@lib lib/librpm.so.0.1
+@comment @lib lib/librpmbuild.so.0.0

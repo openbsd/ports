@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2000/12/06 09:45:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2004/08/10 11:05:58 espie Exp $
 @pkgcfl rpm2cpio-*
 bin/gendiff
 bin/rpm
 bin/rpm2cpio
+@comment include/popt.h
+include/rpm/
 include/rpm/dbindex.h
 include/rpm/header.h
 include/rpm/misc.h
@@ -13,11 +15,20 @@ include/rpm/rpmmacro.h
 include/rpm/rpmspec.h
 include/rpm/rpmurl.h
 include/rpm/stringbuf.h
+@comment lib/libpopt.a
+@comment lib/libpopt.la
 lib/librpm.a
 lib/librpm.la
 lib/librpmbuild.a
 lib/librpmbuild.la
-%%SHARED%%
+@comment lib/locale/
+@comment lib/locale/ro/
+@comment lib/locale/ro/LC_MESSAGES/
+@comment lib/locale/ro/LC_MESSAGES/popt.mo
+@comment lib/locale/sk/
+@comment lib/locale/sk/LC_MESSAGES/
+@comment lib/locale/sk/LC_MESSAGES/popt.mo
+lib/rpm/
 lib/rpm/brp-compress
 lib/rpm/brp-redhat
 lib/rpm/brp-sparc64-linux
@@ -55,9 +66,24 @@ lib/rpm/vpkg-provides.sh
 lib/rpm/vpkg-provides2.sh
 lib/rpmpopt
 lib/rpmrc
-man/man1/gendiff.1
-man/man8/rpm.8
-man/man8/rpm2cpio.8
+@comment man/ja/
+@comment man/ja/man8/
+@comment @man man/ja/man8/rpm.8
+@comment @man man/ja/man8/rpm2cpio.8
+@man man/man1/gendiff.1
+@comment @man man/man3/popt.3
+@man man/man8/rpm.8
+@man man/man8/rpm2cpio.8
+@comment man/pl/
+@comment man/pl/man8/
+@comment @man man/pl/man8/rpm.8
+@comment man/ru/
+@comment man/ru/man8/
+@comment @man man/ru/man8/rpm.8
+@comment @man man/ru/man8/rpm2cpio.8
+@comment man/sk/
+@comment man/sk/man8/
+@comment @man man/sk/man8/rpm.8
 share/locale/cs/LC_MESSAGES/rpm.mo
 share/locale/de/LC_MESSAGES/rpm.mo
 share/locale/fi/LC_MESSAGES/rpm.mo
@@ -68,23 +94,22 @@ share/locale/pt_BR/LC_MESSAGES/rpm.mo
 share/locale/ru/LC_MESSAGES/rpm.mo
 share/locale/sk/LC_MESSAGES/rpm.mo
 share/locale/sl/LC_MESSAGES/rpm.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/rpm.mo
 share/locale/sv/LC_MESSAGES/rpm.mo
 share/locale/tr/LC_MESSAGES/rpm.mo
-@exec mkdir -p %D/src/redhat/SRPMS
-@dirrm src/redhat/SRPMS
-@exec mkdir -p %D/src/redhat/SPECS
-@dirrm src/redhat/SPECS
-@exec mkdir -p %D/src/redhat/SOURCES
-@dirrm src/redhat/SOURCES
-@exec mkdir -p %D/src/redhat/RPMS/noarch
-@dirrm src/redhat/RPMS/noarch
-@exec mkdir -p %D/src/redhat/RPMS/i386
-@dirrm src/redhat/RPMS/i386
-@dirrm src/redhat/RPMS
-@exec mkdir -p %D/src/redhat/BUILD
-@dirrm src/redhat/BUILD
-@dirrm src/redhat
-@dirrm src
-@dirrm lib/rpm
-@dirrm include/rpm
+src/
+src/redhat/
+src/redhat/BUILD/
+src/redhat/RPMS/
+@comment src/redhat/RPMS/athlon/
+src/redhat/RPMS/i386/
+@comment src/redhat/RPMS/i486/
+@comment src/redhat/RPMS/i586/
+@comment src/redhat/RPMS/i686/
+src/redhat/RPMS/noarch/
+src/redhat/SOURCES/
+src/redhat/SPECS/
+src/redhat/SRPMS/
+%%SHARED%%
