@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
---- configure.orig	Sat May  4 00:13:06 2002
-+++ configure	Wed May  8 01:19:24 2002
+$OpenBSD: patch-configure,v 1.2 2002/05/12 08:16:24 pvalchev Exp $
+--- configure.orig	Fri May  3 16:13:06 2002
++++ configure	Sun May 12 01:38:59 2002
 @@ -1390,8 +1390,8 @@ if test "$_malloc" = yes ; then
  else
    _def_malloc='#undef HAVE_MALLOC_H'
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
  
  _def_debug='#undef MP_DEBUG'
  test "$_debug" && _def_debug='#define MP_DEBUG 1'
-@@ -3590,11 +3593,10 @@ cat > config.mak << EOF
+@@ -3590,11 +3593,11 @@ cat > config.mak << EOF
  
  LANG = C
  TARGET_OS = $system_name
@@ -35,6 +35,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
 -CONFDIR = $_confdir
 -LIBDIR = $_libdir
 -AR = ar
++TARGET_ARCH = $host_arch
 +prefix = \$(DESTDIR)$_prefix
 +DATADIR = \$(DESTDIR)$_datadir
 +CONFDIR = \$(DESTDIR)$_confdir

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libdha_sysdep_AsmMacros_powerpc_h,v 1.1 2002/05/12 08:16:24 pvalchev Exp $
+--- libdha/sysdep/AsmMacros_powerpc.h.orig	Sun May 12 00:45:44 2002
++++ libdha/sysdep/AsmMacros_powerpc.h	Sun May 12 00:46:13 2002
+@@ -7,7 +7,7 @@
+ #ifndef __ASM_MACROS_POWERPC_H
+ #define __ASM_MACROS_POWERPC_H
+ 
+-#if defined(Lynx)
++#if defined(Lynx) || defined(__OpenBSD__)
+ 
+ extern unsigned char *ioBase;
+ 
+@@ -18,7 +18,7 @@ static __inline__ volatile void eieio()
+ 
+ static __inline__ void outb(short port, unsigned char value)
+ {
+-	*(uchar *)(ioBase + port) = value; eieio();
++	*(unsigned char *)(ioBase + port) = value; eieio();
+ }
+ 
+ static __inline__ void outw(short port, unsigned short value)

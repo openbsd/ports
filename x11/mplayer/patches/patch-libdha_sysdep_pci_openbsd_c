@@ -1,12 +1,20 @@
-$OpenBSD: patch-libdha_sysdep_pci_openbsd_c,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
---- libdha/sysdep/pci_openbsd.c.orig	Sat May  4 02:47:39 2002
-+++ libdha/sysdep/pci_openbsd.c	Sat May  4 02:48:08 2002
-@@ -5,6 +5,8 @@
+$OpenBSD: patch-libdha_sysdep_pci_openbsd_c,v 1.2 2002/05/12 08:16:24 pvalchev Exp $
+--- libdha/sysdep/pci_openbsd.c.orig	Tue Jan 15 08:59:53 2002
++++ libdha/sysdep/pci_openbsd.c	Sun May 12 00:36:47 2002
+@@ -4,7 +4,11 @@
+    Modified for readability by Nick Kurshev
  */
  
++#ifdef __i386__
++
  #include <errno.h>
 +#include <sys/types.h>
 +#include <machine/sysarch.h>
  
  static __inline__ int enable_os_io(void)
  {
+@@ -20,3 +24,4 @@ static __inline__ int disable_os_io(void
+  /* Nothing to do */
+     return(0);
+ }
++#endif

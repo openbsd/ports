@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2002/05/10 19:50:31 pvalchev Exp $
+# $OpenBSD: Makefile,v 1.8 2002/05/12 08:16:24 pvalchev Exp $
 
-# XXX might not be hard to add more (macppc at least)
-ONLY_FOR_ARCHS=		i386
+# May not be hard to add more.
+ONLY_FOR_ARCHS=		i386 macppc
 
 COMMENT=		"Movie player"
 DISTNAME=		MPlayer-0.90pre3
@@ -41,8 +41,13 @@ CONFIGURE_ARGS+=--as=${LOCALBASE}/${MACHINE_ARCH}-unknown-openbsd${OPSYS_VER}/bi
 		--enable-select \
 		--enable-gl \
 		--enable-gui \
+		--enable-vidix \
 		--with-extraincdir="${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		--with-extralibdir=${LOCALBASE}/lib
+
+.if ${MACHINE_ARCH:Mpowerpc}
+CONFIGURE_ARGS+=--target=ppc-openbsd
+.endif
 
 FLAVORS=	sdl ggi debug mad oss win32 dvd
 FLAVOR?=

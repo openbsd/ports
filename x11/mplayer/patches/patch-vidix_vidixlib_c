@@ -1,77 +1,14 @@
-$OpenBSD: patch-vidix_vidixlib_c,v 1.1.1.1 2002/05/09 05:19:10 pvalchev Exp $
---- vidix/vidixlib.c.orig	Tue May  7 23:32:03 2002
-+++ vidix/vidixlib.c	Tue May  7 23:33:45 2002
-@@ -62,24 +62,24 @@ extern unsigned   vdlGetVersion( void )
+$OpenBSD: patch-vidix_vidixlib_c,v 1.2 2002/05/12 08:16:24 pvalchev Exp $
+--- vidix/vidixlib.c.orig	Sun May 12 01:24:01 2002
++++ vidix/vidixlib.c	Sun May 12 01:24:58 2002
+@@ -24,6 +24,10 @@
+ #include <dlfcn.h> /* GLIBC specific. Exists under cygwin too! */
+ #include <dirent.h>
  
- static int vdl_fill_driver(VDL_HANDLE stream)
- {
--  t_vdl(stream)->init		= dlsym(t_vdl(stream)->handle,"vixInit");
--  t_vdl(stream)->destroy	= dlsym(t_vdl(stream)->handle,"vixDestroy");
--  t_vdl(stream)->get_caps	= dlsym(t_vdl(stream)->handle,"vixGetCapability");
--  t_vdl(stream)->query_fourcc	= dlsym(t_vdl(stream)->handle,"vixQueryFourcc");
--  t_vdl(stream)->config_playback= dlsym(t_vdl(stream)->handle,"vixConfigPlayback");
--  t_vdl(stream)->playback_on	= dlsym(t_vdl(stream)->handle,"vixPlaybackOn");
--  t_vdl(stream)->playback_off	= dlsym(t_vdl(stream)->handle,"vixPlaybackOff");
--  t_vdl(stream)->frame_sel	= dlsym(t_vdl(stream)->handle,"vixPlaybackFrameSelect");
--  t_vdl(stream)->get_eq	= dlsym(t_vdl(stream)->handle,"vixPlaybackGetEq");
--  t_vdl(stream)->set_eq	= dlsym(t_vdl(stream)->handle,"vixPlaybackSetEq");
--  t_vdl(stream)->get_gkey	= dlsym(t_vdl(stream)->handle,"vixGetGrKeys");
--  t_vdl(stream)->set_gkey	= dlsym(t_vdl(stream)->handle,"vixSetGrKeys");
--  t_vdl(stream)->get_deint	= dlsym(t_vdl(stream)->handle,"vixPlaybackGetDeint");
--  t_vdl(stream)->set_deint	= dlsym(t_vdl(stream)->handle,"vixPlaybackSetDeint");
--  t_vdl(stream)->copy_frame	= dlsym(t_vdl(stream)->handle,"vixPlaybackCopyFrame");
--  t_vdl(stream)->get_num_fx	= dlsym(t_vdl(stream)->handle,"vixQueryNumOemEffects");
--  t_vdl(stream)->get_fx		= dlsym(t_vdl(stream)->handle,"vixGetOemEffect");
--  t_vdl(stream)->set_fx		= dlsym(t_vdl(stream)->handle,"vixSetOemEffect");
-+  t_vdl(stream)->init		= dlsym(t_vdl(stream)->handle,"_vixInit");
-+  t_vdl(stream)->destroy	= dlsym(t_vdl(stream)->handle,"_vixDestroy");
-+  t_vdl(stream)->get_caps	= dlsym(t_vdl(stream)->handle,"_vixGetCapability");
-+  t_vdl(stream)->query_fourcc	= dlsym(t_vdl(stream)->handle,"_vixQueryFourcc");
-+  t_vdl(stream)->config_playback= dlsym(t_vdl(stream)->handle,"_vixConfigPlayback");
-+  t_vdl(stream)->playback_on	= dlsym(t_vdl(stream)->handle,"_vixPlaybackOn");
-+  t_vdl(stream)->playback_off	= dlsym(t_vdl(stream)->handle,"_vixPlaybackOff");
-+  t_vdl(stream)->frame_sel	= dlsym(t_vdl(stream)->handle,"_vixPlaybackFrameSelect");
-+  t_vdl(stream)->get_eq	= dlsym(t_vdl(stream)->handle,"_vixPlaybackGetEq");
-+  t_vdl(stream)->set_eq	= dlsym(t_vdl(stream)->handle,"_vixPlaybackSetEq");
-+  t_vdl(stream)->get_gkey	= dlsym(t_vdl(stream)->handle,"_vixGetGrKeys");
-+  t_vdl(stream)->set_gkey	= dlsym(t_vdl(stream)->handle,"_vixSetGrKeys");
-+  t_vdl(stream)->get_deint	= dlsym(t_vdl(stream)->handle,"_vixPlaybackGetDeint");
-+  t_vdl(stream)->set_deint	= dlsym(t_vdl(stream)->handle,"_vixPlaybackSetDeint");
-+  t_vdl(stream)->copy_frame	= dlsym(t_vdl(stream)->handle,"_vixPlaybackCopyFrame");
-+  t_vdl(stream)->get_num_fx	= dlsym(t_vdl(stream)->handle,"_vixQueryNumOemEffects");
-+  t_vdl(stream)->get_fx		= dlsym(t_vdl(stream)->handle,"_vixGetOemEffect");
-+  t_vdl(stream)->set_fx		= dlsym(t_vdl(stream)->handle,"_vixSetOemEffect");
-   /* check driver viability */
-   if(!( t_vdl(stream)->get_caps && t_vdl(stream)->query_fourcc &&
- 	t_vdl(stream)->config_playback && t_vdl(stream)->playback_on &&
-@@ -112,9 +112,9 @@ static int vdl_probe_driver(VDL_HANDLE s
-     if(verbose) printf("vidixlib: %s not driver: %s\n",drv_name,dlerror());
-     return 0;
-   }
--  _ver = dlsym(t_vdl(stream)->handle,"vixGetVersion");
--  _probe = dlsym(t_vdl(stream)->handle,"vixProbe");
--  _cap = dlsym(t_vdl(stream)->handle,"vixGetCapability");
-+  _ver = dlsym(t_vdl(stream)->handle,"_vixGetVersion");
-+  _probe = dlsym(t_vdl(stream)->handle,"_vixProbe");
-+  _cap = dlsym(t_vdl(stream)->handle,"_vixGetCapability");
-   if(_ver) 
-   {
-     if((*_ver)() != VIDIX_VERSION) 
-@@ -186,7 +186,7 @@ VDL_HANDLE vdlOpen(const char *path,cons
-       free(stream);
-       return NULL;
-     }
--    ver = dlsym(t_vdl(stream)->handle,"vixGetVersion");
-+    ver = dlsym(t_vdl(stream)->handle,"_vixGetVersion");
-     if(ver) version = (*ver)();
-     if(version != VIDIX_VERSION)
-     {
-@@ -194,7 +194,7 @@ VDL_HANDLE vdlOpen(const char *path,cons
-       if(t_vdl(stream)->handle) dlclose(t_vdl(stream)->handle);
-       goto err;
-     }
--    probe = dlsym(t_vdl(stream)->handle,"vixProbe");
-+    probe = dlsym(t_vdl(stream)->handle,"_vixProbe");
-     if(probe) { if((*probe)(verbose,PROBE_FORCE)!=0) goto drv_err; }
-     else goto drv_err;
-     fill:
++#if defined(__OpenBSD__) && !defined(__ELF__)
++#define dlsym(h,s) dlsym(h, "_" s)
++#endif
++
+ #include "vidixlib.h"
+ #include "../bswap.h"
+ 
