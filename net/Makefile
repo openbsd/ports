@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2001/09/13 21:38:39 todd Exp $
+# $OpenBSD: Makefile,v 1.172 2001/09/20 11:39:04 shell Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -108,6 +108,7 @@
      SUBDIR += popa3d,apop
      SUBDIR += proxy-suite
      SUBDIR += pptp
+     SUBDIR += py-libpcap
      SUBDIR += queso
      SUBDIR += quirc
      SUBDIR += radiusd-cistron
