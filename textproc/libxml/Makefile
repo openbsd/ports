@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2002/12/02 12:23:46 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2003/01/02 16:55:28 marcm Exp $
 
 COMMENT=	"XML parsing library"
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	:pkgconfig-*:devel/pkgconfig
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MODULES=	iconv
 
