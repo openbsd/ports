@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2000/03/24 01:24:35 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2000/03/25 13:39:26 espie Exp $
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
@@ -9,9 +9,11 @@ MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/%SUBDIR%/
 HOMEPAGE=	http://world.std.com/~xforms/
 MAINTAINER=	ports@openbsd.org
 
-PERMIT_PACKAGE_CDROM=	No Fee
+# I asked the author and I got permission (OpenBSD is a similar enough case
+# to Linux) -- espie@
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	No Fee
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 .if (${MACHINE_ARCH} == "hp300")
