@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2000/04/16 21:09:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2000/06/23 15:05:34 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 DISTNAME=	nethack-3.3.0
@@ -24,13 +24,17 @@ FAKE_FLAGS=PREFIX=${PREFIX} DESTDIR=${WRKINST}
 NHDIR=	${DESTDIR}${PREFIX}/lib/nethackdir
 MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
 
-FLAVORS=X11
+FLAVORS=X11 qt
 # Old text interface
 FLAVOR?=
 
 .if ${FLAVOR:U} == "X11"
 NETHACKCONFIG=${FILESDIR}/x-config
 USE_X11=	Yes
+.elif ${FLAVOR:U} == "QT"
+NETHACKCONFIG=${FILESDIR}/qt-config
+PORTPATH=${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
+LIB_DEPENDS=qt.2.::x11/qt2
 .else
 NETHACKCONFIG=${FILESDIR}/simple-config
 .endif

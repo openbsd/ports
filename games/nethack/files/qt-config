@@ -1,11 +1,12 @@
 # Not yet:
 # qt flavor needs qt 2.0 to work
+VARDATND = x11tiles pet_mark.xbm rip.xpm
 VARDAT = $(VARDATD) $(VARDATND)
-CFLAGS+=-DQT_GRAPHICS -I$(LOCALBASE)/include/X11/qt
-LFLAGS =
+CFLAGS+=-DQT_GRAPHICS -I$(LOCALBASE)/include/X11/qt2
+LFLAGS =-L$(LOCALBASE)/lib/qt2 -L$(X11BASE)/lib -L$(LOCALBASE)/lib
 
 WINSRC = $(WINTTYSRC) $(WINQTSRC)
 WINOBJ = $(WINTTYOBJ) $(WINQTOBJ)
-WINLIB = $(WINTTYLIB) $(WINQTLIB)
+WINLIB = $(WINTTYLIB) -lqt -lSM
 QTDIR  = $(LOCALBASE)
 LD = g++
