@@ -3,8 +3,10 @@
 # Date created:         25 January 1998
 # Whom:                 Angelos
 #
-# $OpenBSD: Makefile,v 1.2 1998/01/25 22:01:44 angelos Exp $
+# $OpenBSD: Makefile,v 1.3 1999/10/31 08:28:22 turan Exp $
 #
+
+BROKEN=		port wants to open display during build.
 
 DISTNAME=	xgrabsc.2_41
 PKGNAME=	xgrab-2.41
