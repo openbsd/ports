@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.381 2001/04/02 11:32:32 espie Exp $$
+FULL_REVISION=$$OpenBSD: bsd.port.mk,v 1.382 2001/04/02 11:45:11 espie Exp $$
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1049,6 +1049,9 @@ addsum: fetch-all
 ################################################################
 # Dependency checking
 ################################################################
+
+# Code to invoke to split dir,-multi,flavor
+
 _flavor_fragment= \
 		multi=''; flavor=''; sawflavor=false; \
 		case "$$dir" in \
@@ -1075,6 +1078,7 @@ _flavor_fragment= \
 			toset="$$toset FLAVOR=\"$$flavor\""; \
 		fi
 
+# Various dependency styles
 
 _fetch_depends_fragment= \
 	case $$dep in \
@@ -1116,6 +1120,8 @@ depends: lib-depends misc-depends fetch-depends build-depends run-depends
 .if defined(DEPENDS)
 MISC_DEPENDS=${DEPENDS:S/^/nonexistent::/}
 .endif
+
+# and the rules for the actual dependencies
 
 .for _DEP in fetch build run lib misc
 ${_DEP}-depends:
