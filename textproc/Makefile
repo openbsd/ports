@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2001/01/31 10:03:23 kevlo Exp $
+# $OpenBSD: Makefile,v 1.43 2001/02/20 02:57:10 kevlo Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 #
 
@@ -28,6 +28,7 @@
      SUBDIR += linuxdoc
      SUBDIR += mgdiff
      SUBDIR += openjade
+     SUBDIR += p5-Text-PDF
      SUBDIR += p5-XML-DOM
      SUBDIR += p5-XML-Parser
      SUBDIR += p5-XML-Simple
