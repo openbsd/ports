@@ -1,18 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 1999/12/15 21:58:47 brad Exp $
+# $OpenBSD: Makefile,v 1.8 1999/12/29 00:28:41 brad Exp $
 
 DISTNAME=	sharutils-4.2
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sharutils
 
-NEED_VERSION=	1.114
-
 MAINTAINER=	ports@openbsd.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode --disable-nls
-
-INSTALL_TARGET=	install install-man
 
 post-patch:
 	@touch ${WRKSRC}/po/sharutils.pot

@@ -1,5 +1,5 @@
 --- doc/Makefile.in.orig	Fri Nov 24 21:44:35 1995
-+++ doc/Makefile.in	Wed Dec 15 16:32:21 1999
++++ doc/Makefile.in	Tue Dec 28 18:44:07 1999
 @@ -26,7 +26,7 @@
  transform = @program_transform_name@
  INSTALL = @INSTALL@
@@ -21,3 +21,12 @@
  	cd $(srcdir) && $(MAKEINFO) remsync.texi
  
  dvi: sharutils.dvi remsync.dvi
+@@ -79,7 +81,7 @@
+ 	$(TOUCH) $(srcdir)/stamp-vti
+ 
+ install install-exec install-data: all
+-install: install-exec install-data
++install: install-exec install-data install-man
+ install-exec:
+ install-data:
+ 	$(top_srcdir)/mkinstalldirs $(infodir)
