@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
+$OpenBSD: patch-php_ini-recommended,v 1.2 2002/06/26 22:17:09 avsm Exp $
 --- php.ini-recommended.orig	Wed Apr 24 02:51:50 2002
-+++ php.ini-recommended	Sun Jun 23 18:59:37 2002
++++ php.ini-recommended	Wed Jun 26 23:27:43 2002
 @@ -361,9 +361,6 @@ default_mimetype = "text/html"
  ; UNIX: "/path1:/path2"  
  ;include_path = ".:/php/includes"
@@ -42,7 +42,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
  ;
  ;   extension=msql.so
  ;
-@@ -444,57 +437,25 @@ allow_url_fopen = On
+@@ -444,57 +437,26 @@ allow_url_fopen = On
  ; needs to go here.  Specify the location of the extension with the
  ; extension_dir directive above.
  
@@ -109,6 +109,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
 +;extension=mcrypt.so
 +;extension=mhash.so
 +;extension=mysql.so
++;extension=ncurses.so
 +;extension=odbc.so
 +;extension=pdf.so
 +;extension=pgsql.so
@@ -119,7 +120,7 @@ $OpenBSD: patch-php_ini-recommended,v 1.1.1.1 2002/06/24 19:23:41 avsm Exp $
  
  ;;;;;;;;;;;;;;;;;;;
  ; Module Settings ;
-@@ -507,11 +468,6 @@ allow_url_fopen = On
+@@ -507,11 +469,6 @@ allow_url_fopen = On
  define_syslog_variables  = Off
  
  [mail function]
