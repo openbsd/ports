@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2003/03/31 14:20:03 sturm Exp $
+# $OpenBSD: Makefile,v 1.20 2003/06/17 00:27:46 avsm Exp $
 
 COMMENT=	"biff-type program, designed to match AfterStep"
 
 DISTNAME=	asmail-0.56
+PKGNAME=	asmail-0.56p1
 CATEGORIES=	mail
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asmail/} \
