@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_hu_po,v 1.1 2001/05/14 20:17:27 naddy Exp $
+--- po/hu.po.orig	Mon May 14 22:07:03 2001
++++ po/hu.po	Mon May 14 22:11:16 2001
+@@ -10,7 +10,7 @@ msgstr ""
+ "Last-Translator: Horvath Szabolcs <horvathsz@penguinpowered.com>\n"
+ "Language-Team: Hungarian <hu@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=CHARSET\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8-bit\n"
+ 
+ #: src/fe-gtk/gtkutil.c:194 src/fe-gtk/settings.c:1645

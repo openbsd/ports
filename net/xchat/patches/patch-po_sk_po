@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_sk_po,v 1.1 2001/05/14 20:17:27 naddy Exp $
+--- po/sk.po.orig	Mon May 14 22:05:05 2001
++++ po/sk.po	Mon May 14 22:05:12 2001
+@@ -10,7 +10,7 @@ msgstr ""
+ "Last-Translator: Stanislav Visnovsky <visnovsky@nenya.ms.mff.cuni.cz>\n"
+ "Language-Team: Slovak <sk-i18n@rak.isternet.sk>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO 8859-2\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: KBabel 0.6\n"
+ 
