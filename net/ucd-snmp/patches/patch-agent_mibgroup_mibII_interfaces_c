@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_mibgroup_mibII_interfaces_c,v 1.1 2001/12/11 15:36:03 danh Exp $
---- agent/mibgroup/mibII/interfaces.c.orig	Tue Dec 11 10:01:18 2001
-+++ agent/mibgroup/mibII/interfaces.c	Tue Dec 11 10:05:10 2001
-@@ -1663,15 +1663,16 @@ static int Interface_Scan_By_Index(int I
+$OpenBSD: patch-agent_mibgroup_mibII_interfaces_c,v 1.2 2002/06/16 20:01:20 pvalchev Exp $
+--- agent/mibgroup/mibII/interfaces.c.orig	Wed Nov 28 15:30:33 2001
++++ agent/mibgroup/mibII/interfaces.c	Sun Jun 16 13:44:49 2002
+@@ -1684,15 +1684,16 @@ static int Interface_Scan_By_Index(int I
  }
  
  
@@ -19,5 +19,5 @@ $OpenBSD: patch-agent_mibgroup_mibII_interfaces_c,v 1.1 2001/12/11 15:36:03 danh
              scan_time = time_now;
 +	    Interface_Count = 0;
  	    Interface_Scan_Init();
+ 	    Interface_Count = 0;
  	    while (Interface_Scan_Next(NULL, NULL, NULL, NULL) != 0) {
- 		Interface_Count++;
