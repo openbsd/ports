@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2004/02/15 19:37:14 wilfried Exp $
+# $OpenBSD: Makefile,v 1.2 2004/02/23 17:58:56 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -42,7 +42,6 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
-		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\

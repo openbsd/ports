@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2004/02/15 19:41:58 wilfried Exp $
+# $OpenBSD: Makefile,v 1.4 2004/02/23 17:58:56 wilfried Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 sparc sparc64
 
@@ -31,8 +31,7 @@ LIB_DEPENDS=	gtk.1,gdk.1::x11/gtk+ \
 		glib.1,gmodule.1::devel/glib \
 		IDL.4::devel/ORBit \
 		jpeg.62::graphics/jpeg \
-		png.3::graphics/png \
-		mng.1::graphics/libmng
+		png.3::graphics/png
 
 VMEM_WARNING=	Yes
 
@@ -43,7 +42,6 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--with-system-jpeg=${LOCALBASE}	\
-		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-system-zlib=/usr/lib	\
 		--with-pthreads			\
