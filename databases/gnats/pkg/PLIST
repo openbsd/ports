@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2003/06/22 10:05:28 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2004/04/18 08:50:33 xsa Exp $
 @unexec install-info --delete --info-dir=%D/info %D/info/gnats.info
 @unexec install-info --delete --info-dir=%D/info %D/info/send-pr.info
 @unexec install-info --delete --info-dir=%D/info %D/info/standards.info
@@ -94,3 +94,7 @@ share/gnats/gnats-db/gnats-adm/submitters
 @exec install-info --info-dir=%D/info %D/info/gnats.info
 @exec install-info --info-dir=%D/info %D/info/send-pr.info
 @exec install-info --info-dir=%D/info %D/info/standards.info
+@cwd ${SYSCONFDIR}
+@extra gnats-db.conf
+@extraunexec crontab -u _gnats -r > /dev/null 2>&1
+@extraunexec userdel _gnats
