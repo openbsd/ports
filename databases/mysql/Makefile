@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2000/04/07 19:07:20 brad Exp $
+# $OpenBSD: Makefile,v 1.23 2000/04/08 05:40:07 brad Exp $
 # $FreeBSD: Makefile,v 1.44 1999/03/04 21:27:58 dirk Exp $
 
 #BROKEN=	installs files automatically in /etc
@@ -53,7 +53,8 @@ pre-build:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mysql/Img
-	@sed -e "s|@PREFIX@|${PREFIX}|" ${FILESDIR}/startup.sh > ${WRKDIR}/startup.sh
+	@rm -f ${WRKDIR}/startup.sh
+	@sed -e "s|@PREFIX@|${TRUEPREFIX}|" ${FILESDIR}/startup.sh > ${WRKDIR}/startup.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${PREFIX}/lib/mysql
 	cd ${WRKSRC}/Docs; ${INSTALL_DATA} manual.html manual.ps \
 	manual_toc.html manual.txt ${PREFIX}/share/doc/mysql
