@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.543 2003/03/02 17:54:27 pvalchev Exp $
+#	$OpenBSD: bsd.port.mk,v 1.544 2003/04/06 14:34:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -353,7 +353,9 @@ MAKE_PROGRAM=		${MAKE}
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || ${CONFIGURE_STYLE:L:Mautoupdate}
+.  if !${CONFIGURE_STYLE:L:Mgnu}
 CONFIGURE_STYLE+=gnu
+.  endif
 .endif
 
 USE_LIBTOOL?=No
