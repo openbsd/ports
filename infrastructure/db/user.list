@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.16 2004/08/03 10:17:50 xsa Exp $
+$OpenBSD: user.list,v 1.17 2004/09/21 16:44:04 naddy Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -43,3 +43,4 @@ id  user		group		port options
 532 _milter-spamd	_milter-spamd	mail/milter-spamd
 533 _jabberd		_jabberd	net/jabberd
 534 _zope		_zope		www/zope
+535 _symon		_symon		sysutils/symon
