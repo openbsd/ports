@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2002/10/16 12:56:22 wilfried Exp $
+${P5SITE}/Error.pm
+man/man3p/Error.3p
